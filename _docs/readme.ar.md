@@ -139,182 +139,182 @@
 
 <div dir="rtl">فيما يلي قائمة بجميع الملفات التي ينبغي أن تدرج في النسخة المحفوظة من هذا البرنامج النصي عند تحميله، أي الملفات التي يمكن أن يحتمل أن تكون نشأت نتيجة استعمالك لهذا البرنامج النصي، بالإضافة إلى وصفا موجزا لدور و وظيفة كل ملف.<br /><br /></div>
 
-&nbsp; <div dir="rtl" style="display:inline;">الوصف</div> | <div dir="rtl" style="display:inline;">الملف</div>
+&nbsp; <div dir="rtl" style="display:inline">الوصف</div> | <div dir="rtl" style="display:inline">الملف</div>
 ----|----
-&nbsp; <div dir="rtl" style="display:inline;">دليل الوثائق (يحتوي على ملفات مختلفة).</div> | /_docs/
-&nbsp; <div dir="rtl" style="display:inline;">الوثائق العربية.</div> | /_docs/readme.ar.md
-&nbsp; <div dir="rtl" style="display:inline;">الوثائق الألمانية.</div> | /_docs/readme.de.md
-&nbsp; <div dir="rtl" style="display:inline;">الوثائق الإنجليزية.</div> | /_docs/readme.en.md
-&nbsp; <div dir="rtl" style="display:inline;">الوثائق الأسبانية.</div> | /_docs/readme.es.md
-&nbsp; <div dir="rtl" style="display:inline;">الوثائق الفرنسية.</div> | /_docs/readme.fr.md
-&nbsp; <div dir="rtl" style="display:inline;">الوثائق الاندونيسية.</div> | /_docs/readme.id.md
-&nbsp; <div dir="rtl" style="display:inline;">الوثائق الايطالية.</div> | /_docs/readme.it.md
-&nbsp; <div dir="rtl" style="display:inline;">الوثائق اليابانية.</div> | /_docs/readme.ja.md
-&nbsp; <div dir="rtl" style="display:inline;">الوثائق الكورية.</div> | /_docs/readme.ko.md
-&nbsp; <div dir="rtl" style="display:inline;">الوثائق الهولندية.</div> | /_docs/readme.nl.md
-&nbsp; <div dir="rtl" style="display:inline;">الوثائق البرتغالية.</div> | /_docs/readme.pt.md
-&nbsp; <div dir="rtl" style="display:inline;">الوثائق الروسية.</div> | /_docs/readme.ru.md
-&nbsp; <div dir="rtl" style="display:inline;">الوثائق الأردية.</div> | /_docs/readme.ur.md
-&nbsp; <div dir="rtl" style="display:inline;">الوثائق الفيتنامية.</div> | /_docs/readme.vi.md
-&nbsp; <div dir="rtl" style="display:inline;">الوثائق الصينية (المبسطة).</div> | /_docs/readme.zh.md
-&nbsp; <div dir="rtl" style="display:inline;">الوثائق الصينية (التقليدية).</div> | /_docs/readme.zh-TW.md
-&nbsp; <div dir="rtl" style="display:inline;">دليل /vault/ (يحتوي على ملفات متنوعة).</div> | /vault/
-&nbsp; <div dir="rtl" style="display:inline;">الأصول front-end.</div> | /vault/fe_assets/
-&nbsp; <div dir="rtl" style="display:inline;">ملف وصول النص التشعبي (في هذه الحالة، لحماية الملفات الحساسة التي تنتمي إلى البرنامج من أن يتم الوصول إليها عن طريق مصادر غير مصرح لها).</div> | /vault/fe_assets/.htaccess
-&nbsp; <div dir="rtl" style="display:inline;">ملف قالب HTML المستخدم عند طلب المستخدم للحصول على كود 2FA.</div> | /vault/fe_assets/_2fa.html
-&nbsp; <div dir="rtl" style="display:inline;">ملف قالب HTML لfront-end صفحة الحسابات.</div> | /vault/fe_assets/_accounts.html
-&nbsp; <div dir="rtl" style="display:inline;">ملف قالب HTML لfront-end صفحة الحسابات.</div> | /vault/fe_assets/_accounts_row.html
-&nbsp; <div dir="rtl" style="display:inline;">ملف قالب HTML لfront-end صفحة القواعد المساعدة.</div> | /vault/fe_assets/_aux.html
-&nbsp; <div dir="rtl" style="display:inline;">ملف قالب HTML لfront-end صفحة بيانات ذاكرة التخزين المؤقت.</div> | /vault/fe_assets/_cache.html
-&nbsp; <div dir="rtl" style="display:inline;">ملف قالب HTML لآلة حاسبة CIDR.</div> | /vault/fe_assets/_cidr_calc.html
-&nbsp; <div dir="rtl" style="display:inline;">ملف قالب HTML لآلة حاسبة CIDR.</div> | /vault/fe_assets/_cidr_calc_row.html
-&nbsp; <div dir="rtl" style="display:inline;">ملف قالب HTML لfront-end صفحة التكوين.</div> | /vault/fe_assets/_config.html
-&nbsp; <div dir="rtl" style="display:inline;">ملف قالب HTML لfront-end صفحة التكوين.</div> | /vault/fe_assets/_config_row.html
-&nbsp; <div dir="rtl" style="display:inline;">قالب HTML لمدير الملفات.</div> | /vault/fe_assets/_files.html
-&nbsp; <div dir="rtl" style="display:inline;">قالب HTML لمدير الملفات.</div> | /vault/fe_assets/_files_edit.html
-&nbsp; <div dir="rtl" style="display:inline;">قالب HTML لمدير الملفات.</div> | /vault/fe_assets/_files_rename.html
-&nbsp; <div dir="rtl" style="display:inline;">قالب HTML لمدير الملفات.</div> | /vault/fe_assets/_files_row.html
-&nbsp; <div dir="rtl" style="display:inline;">ملف قالب HTML لfront-end صفحة الرئيسية.</div> | /vault/fe_assets/_home.html
-&nbsp; <div dir="rtl" style="display:inline;">ملف قالب HTML لIP aggregator.</div> | /vault/fe_assets/_ip_aggregator.html
-&nbsp; <div dir="rtl" style="display:inline;">ملف قالب HTML لصفحة الاختبار IP.</div> | /vault/fe_assets/_ip_test.html
-&nbsp; <div dir="rtl" style="display:inline;">ملف قالب HTML لصفحة الاختبار IP.</div> | /vault/fe_assets/_ip_test_row.html
-&nbsp; <div dir="rtl" style="display:inline;">ملف قالب HTML لصفحة التتبع IP.</div> | /vault/fe_assets/_ip_tracking.html
-&nbsp; <div dir="rtl" style="display:inline;">ملف قالب HTML لصفحة التتبع IP.</div> | /vault/fe_assets/_ip_tracking_row.html
-&nbsp; <div dir="rtl" style="display:inline;">ملف قالب HTML لfront-end صفحة تسجيل الدخول.</div> | /vault/fe_assets/_login.html
-&nbsp; <div dir="rtl" style="display:inline;">ملف قالب HTML لfront-end صفحة السجلات.</div> | /vault/fe_assets/_logs.html
-&nbsp; <div dir="rtl" style="display:inline;">ملف قالب HTML لfront-end ارتباطات التنقل، يستخدم لهؤلاء مع وصول كامل.</div> | /vault/fe_assets/_nav_complete_access.html
-&nbsp; <div dir="rtl" style="display:inline;">ملف قالب HTML لfront-end ارتباطات التنقل، يستخدم لهؤلاء مع سجلات الوصول فقط.</div> | /vault/fe_assets/_nav_logs_access_only.html
-&nbsp; <div dir="rtl" style="display:inline;">ملف قالب HTML لfront-end صفحة الجداول الشبكة الفرعية.</div> | /vault/fe_assets/_range.html
-&nbsp; <div dir="rtl" style="display:inline;">ملف قالب HTML لfront-end صفحة الجداول الشبكة الفرعية.</div> | /vault/fe_assets/_range_row.html
-&nbsp; <div dir="rtl" style="display:inline;">ملف قالب HTML لقائمة الأقسام.</div> | /vault/fe_assets/_sections.html
-&nbsp; <div dir="rtl" style="display:inline;">ملف قالب HTML لfront-end صفحة الإحصاء.</div> | /vault/fe_assets/_statistics.html
-&nbsp; <div dir="rtl" style="display:inline;">ملف قالب HTML لfront-end صفحة التحديثات.</div> | /vault/fe_assets/_updates.html
-&nbsp; <div dir="rtl" style="display:inline;">ملف قالب HTML لfront-end صفحة التحديثات.</div> | /vault/fe_assets/_updates_row.html
-&nbsp; <div dir="rtl" style="display:inline;">ملف CSS (صفحات الطرز المتراصة) لfront-end.</div> | /vault/fe_assets/frontend.css
-&nbsp; <div dir="rtl" style="display:inline;">قاعدة البيانات لfront-end (يحتوي على معلومات الحسابات، الجلسات، وذاكرة التخزين المؤقت؛ خلق فقط اذا front-end يتم تمكين واستخدامها).</div> | /vault/fe_assets/frontend.dat
-&nbsp; <div dir="rtl" style="display:inline;">يتم توليدها كآلية سلامة عند الحاجة.</div> | /vault/fe_assets/frontend.dat.safety
-&nbsp; <div dir="rtl" style="display:inline;">ملف قالب HTML الرئيسي لfront-end.</div> | /vault/fe_assets/frontend.html
-&nbsp; <div dir="rtl" style="display:inline;">الرموز معالج (التي يستخدمها مدير الملفات الأمامية).</div> | /vault/fe_assets/icons.php
-&nbsp; <div dir="rtl" style="display:inline;">بالنقاط معالج (التي يستخدمها مدير الملفات الأمامية).</div> | /vault/fe_assets/pips.php
-&nbsp; <div dir="rtl" style="display:inline;">يحتوي على بيانات JavaScript front-end.</div> | /vault/fe_assets/scripts.js
-&nbsp; <div dir="rtl" style="display:inline;">يحتوي على بيانات اللغة لـ CIDRAM.</div> | /vault/lang/
-&nbsp; <div dir="rtl" style="display:inline;">ملف وصول النص التشعبي (في هذه الحالة، لحماية الملفات الحساسة التي تنتمي إلى البرنامج من أن يتم الوصول إليها عن طريق مصادر غير مصرح لها).</div> | /vault/lang/.htaccess
-&nbsp; <div dir="rtl" style="display:inline;">ملفات اللغة العربية لCLI.</div> | /vault/lang/lang.ar.cli.php
-&nbsp; <div dir="rtl" style="display:inline;">ملفات اللغة العربية لfront-end.</div> | /vault/lang/lang.ar.fe.php
-&nbsp; <div dir="rtl" style="display:inline;">ملفات اللغة العربية.</div> | /vault/lang/lang.ar.php
-&nbsp; <div dir="rtl" style="display:inline;">ملفات اللغة البنغالية لCLI.</div> | /vault/lang/lang.bn.cli.php
-&nbsp; <div dir="rtl" style="display:inline;">ملفات اللغة البنغالية لfront-end.</div> | /vault/lang/lang.bn.fe.php
-&nbsp; <div dir="rtl" style="display:inline;">ملفات اللغة البنغالية.</div> | /vault/lang/lang.bn.php
-&nbsp; <div dir="rtl" style="display:inline;">ملفات اللغة الألمانية لCLI.</div> | /vault/lang/lang.de.cli.php
-&nbsp; <div dir="rtl" style="display:inline;">ملفات اللغة الألمانية لfront-end.</div> | /vault/lang/lang.de.fe.php
-&nbsp; <div dir="rtl" style="display:inline;">ملفات اللغة الألمانية.</div> | /vault/lang/lang.de.php
-&nbsp; <div dir="rtl" style="display:inline;">ملفات اللغة الإنجليزية لCLI.</div> | /vault/lang/lang.en.cli.php
-&nbsp; <div dir="rtl" style="display:inline;">ملفات اللغة الإنجليزية لfront-end.</div> | /vault/lang/lang.en.fe.php
-&nbsp; <div dir="rtl" style="display:inline;">ملفات اللغة الإنجليزية.</div> | /vault/lang/lang.en.php
-&nbsp; <div dir="rtl" style="display:inline;">ملفات اللغة الاسبانية لCLI.</div> | /vault/lang/lang.es.cli.php
-&nbsp; <div dir="rtl" style="display:inline;">ملفات اللغة الاسبانية لfront-end.</div> | /vault/lang/lang.es.fe.php
-&nbsp; <div dir="rtl" style="display:inline;">ملفات اللغة الاسبانية.</div> | /vault/lang/lang.es.php
-&nbsp; <div dir="rtl" style="display:inline;">ملفات اللغة الفرنسية لCLI.</div> | /vault/lang/lang.fr.cli.php
-&nbsp; <div dir="rtl" style="display:inline;">ملفات اللغة الفرنسية لfront-end.</div> | /vault/lang/lang.fr.fe.php
-&nbsp; <div dir="rtl" style="display:inline;">ملفات اللغة الفرنسية.</div> | /vault/lang/lang.fr.php
-&nbsp; <div dir="rtl" style="display:inline;">ملفات اللغة الهندية لCLI.</div> | /vault/lang/lang.hi.cli.php
-&nbsp; <div dir="rtl" style="display:inline;">ملفات اللغة الهندية لfront-end.</div> | /vault/lang/lang.hi.fe.php
-&nbsp; <div dir="rtl" style="display:inline;">ملفات اللغة الهندية.</div> | /vault/lang/lang.hi.php
-&nbsp; <div dir="rtl" style="display:inline;">ملفات اللغة الاندونيسية لCLI.</div> | /vault/lang/lang.id.cli.php
-&nbsp; <div dir="rtl" style="display:inline;">ملفات اللغة الاندونيسية لfront-end.</div> | /vault/lang/lang.id.fe.php
-&nbsp; <div dir="rtl" style="display:inline;">ملفات اللغة الاندونيسية.</div> | /vault/lang/lang.id.php
-&nbsp; <div dir="rtl" style="display:inline;">ملفات اللغة الايطالية لCLI.</div> | /vault/lang/lang.it.cli.php
-&nbsp; <div dir="rtl" style="display:inline;">ملفات اللغة الايطالية لfront-end.</div> | /vault/lang/lang.it.fe.php
-&nbsp; <div dir="rtl" style="display:inline;">ملفات اللغة الايطالية.</div> | /vault/lang/lang.it.php
-&nbsp; <div dir="rtl" style="display:inline;">ملفات اللغة اليابانية لCLI.</div> | /vault/lang/lang.ja.cli.php
-&nbsp; <div dir="rtl" style="display:inline;">ملفات اللغة اليابانية لfront-end.</div> | /vault/lang/lang.ja.fe.php
-&nbsp; <div dir="rtl" style="display:inline;">ملفات اللغة اليابانية.</div> | /vault/lang/lang.ja.php
-&nbsp; <div dir="rtl" style="display:inline;">ملفات اللغة الكورية لCLI.</div> | /vault/lang/lang.ko.cli.php
-&nbsp; <div dir="rtl" style="display:inline;">ملفات اللغة الكورية لfront-end.</div> | /vault/lang/lang.ko.fe.php
-&nbsp; <div dir="rtl" style="display:inline;">ملفات اللغة الكورية.</div> | /vault/lang/lang.ko.php
-&nbsp; <div dir="rtl" style="display:inline;">ملفات اللغة الهولندية لCLI.</div> | /vault/lang/lang.nl.cli.php
-&nbsp; <div dir="rtl" style="display:inline;">ملفات اللغة الهولندية لfront-end.</div> | /vault/lang/lang.nl.fe.php
-&nbsp; <div dir="rtl" style="display:inline;">ملفات اللغة الهولندية.</div> | /vault/lang/lang.nl.php
-&nbsp; <div dir="rtl" style="display:inline;">ملفات اللغة النرويجيةة لCLI.</div> | /vault/lang/lang.no.cli.php
-&nbsp; <div dir="rtl" style="display:inline;">ملفات اللغة النرويجيةة لfront-end.</div> | /vault/lang/lang.no.fe.php
-&nbsp; <div dir="rtl" style="display:inline;">ملفات اللغة النرويجيةة.</div> | /vault/lang/lang.no.php
-&nbsp; <div dir="rtl" style="display:inline;">ملفات اللغة البرتغالية لCLI.</div> | /vault/lang/lang.pt.cli.php
-&nbsp; <div dir="rtl" style="display:inline;">ملفات اللغة البرتغالية لfront-end.</div> | /vault/lang/lang.pt.fe.php
-&nbsp; <div dir="rtl" style="display:inline;">ملفات اللغة البرتغالية.</div> | /vault/lang/lang.pt.php
-&nbsp; <div dir="rtl" style="display:inline;">ملفات اللغة الروسية لCLI.</div> | /vault/lang/lang.ru.cli.php
-&nbsp; <div dir="rtl" style="display:inline;">ملفات اللغة الروسية لfront-end.</div> | /vault/lang/lang.ru.fe.php
-&nbsp; <div dir="rtl" style="display:inline;">ملفات اللغة الروسية.</div> | /vault/lang/lang.ru.php
-&nbsp; <div dir="rtl" style="display:inline;">ملفات اللغة السويدية لCLI.</div> | /vault/lang/lang.sv.cli.php
-&nbsp; <div dir="rtl" style="display:inline;">ملفات اللغة السويدية لfront-end.</div> | /vault/lang/lang.sv.fe.php
-&nbsp; <div dir="rtl" style="display:inline;">ملفات اللغة السويدية.</div> | /vault/lang/lang.sv.php
-&nbsp; <div dir="rtl" style="display:inline;">ملفات اللغة التايلاندية لCLI.</div> | /vault/lang/lang.th.cli.php
-&nbsp; <div dir="rtl" style="display:inline;">ملفات اللغة التايلاندية لfront-end.</div> | /vault/lang/lang.th.fe.php
-&nbsp; <div dir="rtl" style="display:inline;">ملفات اللغة التايلاندية.</div> | /vault/lang/lang.th.php
-&nbsp; <div dir="rtl" style="display:inline;">ملفات اللغة اللغة التركية لCLI.</div> | /vault/lang/lang.tr.cli.php
-&nbsp; <div dir="rtl" style="display:inline;">ملفات اللغة اللغة التركية لfront-end.</div> | /vault/lang/lang.tr.fe.php
-&nbsp; <div dir="rtl" style="display:inline;">ملفات اللغة اللغة التركية.</div> | /vault/lang/lang.tr.php
-&nbsp; <div dir="rtl" style="display:inline;">ملفات اللغة الأردية لCLI.</div> | /vault/lang/lang.ur.cli.php
-&nbsp; <div dir="rtl" style="display:inline;">ملفات اللغة الأردية لfront-end.</div> | /vault/lang/lang.ur.fe.php
-&nbsp; <div dir="rtl" style="display:inline;">ملفات اللغة الأردية.</div> | /vault/lang/lang.ur.php
-&nbsp; <div dir="rtl" style="display:inline;">ملفات اللغة الفيتنامية لCLI.</div> | /vault/lang/lang.vi.cli.php
-&nbsp; <div dir="rtl" style="display:inline;">ملفات اللغة الفيتنامية لfront-end.</div> | /vault/lang/lang.vi.fe.php
-&nbsp; <div dir="rtl" style="display:inline;">ملفات اللغة الفيتنامية.</div> | /vault/lang/lang.vi.php
-&nbsp; <div dir="rtl" style="display:inline;">ملفات اللغة الصينية (التقليدية) لCLI.</div> | /vault/lang/lang.zh-tw.cli.php
-&nbsp; <div dir="rtl" style="display:inline;">ملفات اللغة الصينية (التقليدية) لfront-end.</div> | /vault/lang/lang.zh-tw.fe.php
-&nbsp; <div dir="rtl" style="display:inline;">ملفات اللغة الصينية (التقليدية).</div> | /vault/lang/lang.zh-tw.php
-&nbsp; <div dir="rtl" style="display:inline;">ملفات اللغة الصينية (المبسطة) لCLI.</div> | /vault/lang/lang.zh.cli.php
-&nbsp; <div dir="rtl" style="display:inline;">ملفات اللغة الصينية (المبسطة) لfront-end.</div> | /vault/lang/lang.zh.fe.php
-&nbsp; <div dir="rtl" style="display:inline;">ملفات اللغة الصينية (المبسطة).</div> | /vault/lang/lang.zh.php
-&nbsp; <div dir="rtl" style="display:inline;">ملف وصول النص التشعبي (في هذه الحالة، لحماية الملفات الحساسة التي تنتمي إلى البرنامج من أن يتم الوصول إليها عن طريق مصادر غير مصرح لها).</div> | /vault/.htaccess
-&nbsp; <div dir="rtl" style="display:inline;">المستخدمة من قبل Travis CI للاختبار (غير مطلوب لتشغيل سليم للبرنامج).</div> | /vault/.travis.php
-&nbsp; <div dir="rtl" style="display:inline;">المستخدمة من قبل Travis CI للاختبار (غير مطلوب لتشغيل سليم للبرنامج).</div> | /vault/.travis.yml
-&nbsp; <div dir="rtl" style="display:inline;">IP aggregator.</div> | /vault/aggregator.php
-&nbsp; <div dir="rtl" style="display:inline;">يحتوي على قواعد مساعدة. غير المدرجة في الحزمة. يتم توليدها بواسطة صفحة القواعد المساعدة.</div> | /vault/auxiliary.yaml
-&nbsp; <div dir="rtl" style="display:inline;">بيانات ذاكرة التخزين المؤقت.</div> | /vault/cache.dat
-&nbsp; <div dir="rtl" style="display:inline;">يتم توليدها كآلية سلامة عند الحاجة.</div> | /vault/cache.dat.safety
-&nbsp; <div dir="rtl" style="display:inline;">ملف البيانات الوصفية لقوائم Macmathan الاختيارية؛ المستخدمة من قبل صفحة التحديثات.</div> | /vault/cidramblocklists.dat
-&nbsp; <div dir="rtl" style="display:inline;">معالج CLI.</div> | /vault/cli.php
-&nbsp; <div dir="rtl" style="display:inline;">حدات ملف البيانات الوصفية؛ المستخدمة من قبل صفحة التحديثات.</div> | /vault/components.dat
-&nbsp; <div dir="rtl" style="display:inline;">ملف التكوين. يحتوي على جميع خيارات تهيئة CIDRAM، يخبرك ماذا يفعل وكيف يعمل بشكل صحيح (إعادة تسمية لتفعيل)!</div> | /vault/config.ini.RenameMe
-&nbsp; <div dir="rtl" style="display:inline;">معالج التكوين.</div> | /vault/config.php
-&nbsp; <div dir="rtl" style="display:inline;">ملف التخلف التكوين؛ يحتوي على قيم التكوين الافتراضي لCIDRAM.</div> | /vault/config.yaml
-&nbsp; <div dir="rtl" style="display:inline;">معالج front-end.</div> | /vault/frontend.php
-&nbsp; <div dir="rtl" style="display:inline;">ملف وظائف front-end.</div> | /vault/frontend_functions.php
-&nbsp; <div dir="rtl" style="display:inline;">ملف وظائف (ضروري).</div> | /vault/functions.php
-&nbsp; <div dir="rtl" style="display:inline;">يحتوي على قائمة من علامات الرقم المقبولة (وثيقة الصلة ميزة اختبار reCAPTCHA؛ فقط إنشاء إذا تم تمكين ميزة اختبار reCAPTCHA).</div> | /vault/hashes.dat
-&nbsp; <div dir="rtl" style="display:inline;">تستخدم لتحديد أقسام توقيع التي CIDRAM يجب تجاهل.</div> | /vault/ignore.dat
-&nbsp; <div dir="rtl" style="display:inline;">يحتوي على قائمة من الالتفافية IP (وثيقة الصلة ميزة اختبار reCAPTCHA؛ فقط إنشاء إذا تم تمكين ميزة اختبار reCAPTCHA).</div> | /vault/ipbypass.dat
-&nbsp; <div dir="rtl" style="display:inline;">عناوين IPv4 ملف التوقيعات (نقاط الوصول غير البشرية و الخدمات السحابية غير المرغوب فيها).</div> | /vault/ipv4.dat
-&nbsp; <div dir="rtl" style="display:inline;">عناوين IPv4 ملف التوقيعات (bogon/المريخ CIDRs).</div> | /vault/ipv4_bogons.dat
-&nbsp; <div dir="rtl" style="display:inline;">عناوين IPv4 ملف التوقيعات المخصصة (إعادة تسمية لتفعيل).</div> | /vault/ipv4_custom.dat.RenameMe
-&nbsp; <div dir="rtl" style="display:inline;">عناوين IPv4 ملف التوقيعات (مزودي خدمات الإنترنت خطيرة ومزعجة).</div> | /vault/ipv4_isps.dat
-&nbsp; <div dir="rtl" style="display:inline;">عناوين IPv4 ملف التوقيعات (CIDRs الوكلاء، والشبكات الخاصة الإفتراضية، وغيرها من الخدمات غير المرغوب فيها المتنوعة).</div> | /vault/ipv4_other.dat
-&nbsp; <div dir="rtl" style="display:inline;">عناوين IPv6 ملف التوقيعات (نقاط الوصول غير البشرية و الخدمات السحابية غير المرغوب فيها).</div> | /vault/ipv6.dat
-&nbsp; <div dir="rtl" style="display:inline;">عناوين IPv6 ملف التوقيعات (bogon/المريخ CIDRs).</div> | /vault/ipv6_bogons.dat
-&nbsp; <div dir="rtl" style="display:inline;">عناوين IPv6 ملف التوقيعات المخصصة (إعادة تسمية لتفعيل).</div> | /vault/ipv6_custom.dat.RenameMe
-&nbsp; <div dir="rtl" style="display:inline;">عناوين IPv6 ملف التوقيعات (مزودي خدمات الإنترنت خطيرة ومزعجة).</div> | /vault/ipv6_isps.dat
-&nbsp; <div dir="rtl" style="display:inline;">عناوين IPv6 ملف التوقيعات (CIDRs الوكلاء، والشبكات الخاصة الإفتراضية، وغيرها من الخدمات غير المرغوب فيها المتنوعة).</div> | /vault/ipv6_other.dat
-&nbsp; <div dir="rtl" style="display:inline;">ملف لغة.</div> | /vault/lang.php
-&nbsp; <div dir="rtl" style="display:inline;">ملف البيانات الوصفية وحدات؛ المستخدمة من قبل صفحة التحديثات.</div> | /vault/modules.dat
-&nbsp; <div dir="rtl" style="display:inline;">الناتج معالج.</div> | /vault/outgen.php
-&nbsp; <div dir="rtl" style="display:inline;">Polyfills لPHP 5.4.X (اللازمة لالتوافق PHP 5.4.X؛ لإصدارات أحدث PHP، آمنة للحذف).</div> | /vault/php5.4.x.php
-&nbsp; <div dir="rtl" style="display:inline;">وحدة reCAPTCHA.</div> | /vault/recaptcha.php
-&nbsp; <div dir="rtl" style="display:inline;">ملف قواعد العرف لAS6939.</div> | /vault/rules_as6939.php
-&nbsp; <div dir="rtl" style="display:inline;">ملف قواعد العرف لSoft Layer.</div> | /vault/rules_softlayer.php
-&nbsp; <div dir="rtl" style="display:inline;">ملف قواعد العرف لبعض CIDRs محددة.</div> | /vault/rules_specific.php
-&nbsp; <div dir="rtl" style="display:inline;">ملف الملح (المستخدمة من قبل بعض وظائف هامشية؛ فقط تم إنشاؤها إذا لزم الأمر).</div> | /vault/salt.dat
-&nbsp; <div dir="rtl" style="display:inline;">ملف القالب. قالب لمخرجات HTML التي تنتجها CIDRAM لرسالة حظر تحميل الملفات (الرسالة التي يراها القائم بالتحميل).</div> | /vault/template_custom.html
-&nbsp; <div dir="rtl" style="display:inline;">ملف القالب. قالب لمخرجات HTML التي تنتجها CIDRAM لرسالة حظر تحميل الملفات (الرسالة التي يراها القائم بالتحميل).</div> | /vault/template_default.html
-&nbsp; <div dir="rtl" style="display:inline;">ملف البيانات الوصفية للسمات؛ المستخدمة من قبل صفحة التحديثات.</div> | /vault/themes.dat
-&nbsp; <div dir="rtl" style="display:inline;">بيانات التحقق لمحركات البحث والشبكات الاجتماعية.</div> | /vault/verification.yaml
-&nbsp; <div dir="rtl" style="display:inline;">أ ملف المشروع GitHub (غير مطلوب لتشغيل سليم للبرنامج).</div> | /.gitattributes
-&nbsp; <div dir="rtl" style="display:inline;">سجل للتغييرات التي أجريت على البرنامج بين التحديثات المختلفة (غير مطلوب لتشغيل سليم للبرنامج).</div> | /Changelog.txt
-&nbsp; <div dir="rtl" style="display:inline;">معلومات Composer/Packagist (غير مطلوب لتشغيل سليم للبرنامج).</div> | /composer.json
-&nbsp; <div dir="rtl" style="display:inline;">معلومات حول كيفية المساهمة في المشروع.</div> | /CONTRIBUTING.md
-&nbsp; <div dir="rtl" style="display:inline;">نسخة من GNU/GPLv2 رخصة (غير مطلوب لتشغيل سليم للبرنامج).</div> | /LICENSE.txt
-&nbsp; <div dir="rtl" style="display:inline;">الملف المحمل (المسئول عن التحميل): يحمل البرنامج الرئيسي و التحديث و، إلى آخره. هذا هو الذي من المفترض أن تكون على علاقة به و تقوم بتركيبه (أساسي)!</div> | /loader.php
-&nbsp; <div dir="rtl" style="display:inline;">معلومات موجزة المشروع.</div> | /README.md
-&nbsp; <div dir="rtl" style="display:inline;">ملف تكوين ASP.NET (في هذه الحالة، لحماية دليل /vault من أن يتم الوصول إليه بواسطة مصادر غير مأذون لها في حالة إذا ما تم تثبيت البرنامج النصي على ملقم يستند إلى تقنيات ASP.NET</div> | /web.config
+&nbsp; <div dir="rtl" style="display:inline">دليل الوثائق (يحتوي على ملفات مختلفة).</div> | /_docs/
+&nbsp; <div dir="rtl" style="display:inline">الوثائق العربية.</div> | /_docs/readme.ar.md
+&nbsp; <div dir="rtl" style="display:inline">الوثائق الألمانية.</div> | /_docs/readme.de.md
+&nbsp; <div dir="rtl" style="display:inline">الوثائق الإنجليزية.</div> | /_docs/readme.en.md
+&nbsp; <div dir="rtl" style="display:inline">الوثائق الأسبانية.</div> | /_docs/readme.es.md
+&nbsp; <div dir="rtl" style="display:inline">الوثائق الفرنسية.</div> | /_docs/readme.fr.md
+&nbsp; <div dir="rtl" style="display:inline">الوثائق الاندونيسية.</div> | /_docs/readme.id.md
+&nbsp; <div dir="rtl" style="display:inline">الوثائق الايطالية.</div> | /_docs/readme.it.md
+&nbsp; <div dir="rtl" style="display:inline">الوثائق اليابانية.</div> | /_docs/readme.ja.md
+&nbsp; <div dir="rtl" style="display:inline">الوثائق الكورية.</div> | /_docs/readme.ko.md
+&nbsp; <div dir="rtl" style="display:inline">الوثائق الهولندية.</div> | /_docs/readme.nl.md
+&nbsp; <div dir="rtl" style="display:inline">الوثائق البرتغالية.</div> | /_docs/readme.pt.md
+&nbsp; <div dir="rtl" style="display:inline">الوثائق الروسية.</div> | /_docs/readme.ru.md
+&nbsp; <div dir="rtl" style="display:inline">الوثائق الأردية.</div> | /_docs/readme.ur.md
+&nbsp; <div dir="rtl" style="display:inline">الوثائق الفيتنامية.</div> | /_docs/readme.vi.md
+&nbsp; <div dir="rtl" style="display:inline">الوثائق الصينية (المبسطة).</div> | /_docs/readme.zh.md
+&nbsp; <div dir="rtl" style="display:inline">الوثائق الصينية (التقليدية).</div> | /_docs/readme.zh-TW.md
+&nbsp; <div dir="rtl" style="display:inline">دليل /vault/ (يحتوي على ملفات متنوعة).</div> | /vault/
+&nbsp; <div dir="rtl" style="display:inline">الأصول front-end.</div> | /vault/fe_assets/
+&nbsp; <div dir="rtl" style="display:inline">ملف وصول النص التشعبي (في هذه الحالة، لحماية الملفات الحساسة التي تنتمي إلى البرنامج من أن يتم الوصول إليها عن طريق مصادر غير مصرح لها).</div> | /vault/fe_assets/.htaccess
+&nbsp; <div dir="rtl" style="display:inline">ملف قالب HTML المستخدم عند طلب المستخدم للحصول على كود 2FA.</div> | /vault/fe_assets/_2fa.html
+&nbsp; <div dir="rtl" style="display:inline">ملف قالب HTML لfront-end صفحة الحسابات.</div> | /vault/fe_assets/_accounts.html
+&nbsp; <div dir="rtl" style="display:inline">ملف قالب HTML لfront-end صفحة الحسابات.</div> | /vault/fe_assets/_accounts_row.html
+&nbsp; <div dir="rtl" style="display:inline">ملف قالب HTML لfront-end صفحة القواعد المساعدة.</div> | /vault/fe_assets/_aux.html
+&nbsp; <div dir="rtl" style="display:inline">ملف قالب HTML لfront-end صفحة بيانات ذاكرة التخزين المؤقت.</div> | /vault/fe_assets/_cache.html
+&nbsp; <div dir="rtl" style="display:inline">ملف قالب HTML لآلة حاسبة CIDR.</div> | /vault/fe_assets/_cidr_calc.html
+&nbsp; <div dir="rtl" style="display:inline">ملف قالب HTML لآلة حاسبة CIDR.</div> | /vault/fe_assets/_cidr_calc_row.html
+&nbsp; <div dir="rtl" style="display:inline">ملف قالب HTML لfront-end صفحة التكوين.</div> | /vault/fe_assets/_config.html
+&nbsp; <div dir="rtl" style="display:inline">ملف قالب HTML لfront-end صفحة التكوين.</div> | /vault/fe_assets/_config_row.html
+&nbsp; <div dir="rtl" style="display:inline">قالب HTML لمدير الملفات.</div> | /vault/fe_assets/_files.html
+&nbsp; <div dir="rtl" style="display:inline">قالب HTML لمدير الملفات.</div> | /vault/fe_assets/_files_edit.html
+&nbsp; <div dir="rtl" style="display:inline">قالب HTML لمدير الملفات.</div> | /vault/fe_assets/_files_rename.html
+&nbsp; <div dir="rtl" style="display:inline">قالب HTML لمدير الملفات.</div> | /vault/fe_assets/_files_row.html
+&nbsp; <div dir="rtl" style="display:inline">ملف قالب HTML لfront-end صفحة الرئيسية.</div> | /vault/fe_assets/_home.html
+&nbsp; <div dir="rtl" style="display:inline">ملف قالب HTML لIP aggregator.</div> | /vault/fe_assets/_ip_aggregator.html
+&nbsp; <div dir="rtl" style="display:inline">ملف قالب HTML لصفحة الاختبار IP.</div> | /vault/fe_assets/_ip_test.html
+&nbsp; <div dir="rtl" style="display:inline">ملف قالب HTML لصفحة الاختبار IP.</div> | /vault/fe_assets/_ip_test_row.html
+&nbsp; <div dir="rtl" style="display:inline">ملف قالب HTML لصفحة التتبع IP.</div> | /vault/fe_assets/_ip_tracking.html
+&nbsp; <div dir="rtl" style="display:inline">ملف قالب HTML لصفحة التتبع IP.</div> | /vault/fe_assets/_ip_tracking_row.html
+&nbsp; <div dir="rtl" style="display:inline">ملف قالب HTML لfront-end صفحة تسجيل الدخول.</div> | /vault/fe_assets/_login.html
+&nbsp; <div dir="rtl" style="display:inline">ملف قالب HTML لfront-end صفحة السجلات.</div> | /vault/fe_assets/_logs.html
+&nbsp; <div dir="rtl" style="display:inline">ملف قالب HTML لfront-end ارتباطات التنقل، يستخدم لهؤلاء مع وصول كامل.</div> | /vault/fe_assets/_nav_complete_access.html
+&nbsp; <div dir="rtl" style="display:inline">ملف قالب HTML لfront-end ارتباطات التنقل، يستخدم لهؤلاء مع سجلات الوصول فقط.</div> | /vault/fe_assets/_nav_logs_access_only.html
+&nbsp; <div dir="rtl" style="display:inline">ملف قالب HTML لfront-end صفحة الجداول الشبكة الفرعية.</div> | /vault/fe_assets/_range.html
+&nbsp; <div dir="rtl" style="display:inline">ملف قالب HTML لfront-end صفحة الجداول الشبكة الفرعية.</div> | /vault/fe_assets/_range_row.html
+&nbsp; <div dir="rtl" style="display:inline">ملف قالب HTML لقائمة الأقسام.</div> | /vault/fe_assets/_sections.html
+&nbsp; <div dir="rtl" style="display:inline">ملف قالب HTML لfront-end صفحة الإحصاء.</div> | /vault/fe_assets/_statistics.html
+&nbsp; <div dir="rtl" style="display:inline">ملف قالب HTML لfront-end صفحة التحديثات.</div> | /vault/fe_assets/_updates.html
+&nbsp; <div dir="rtl" style="display:inline">ملف قالب HTML لfront-end صفحة التحديثات.</div> | /vault/fe_assets/_updates_row.html
+&nbsp; <div dir="rtl" style="display:inline">ملف CSS (صفحات الطرز المتراصة) لfront-end.</div> | /vault/fe_assets/frontend.css
+&nbsp; <div dir="rtl" style="display:inline">قاعدة البيانات لfront-end (يحتوي على معلومات الحسابات، الجلسات، وذاكرة التخزين المؤقت؛ خلق فقط اذا front-end يتم تمكين واستخدامها).</div> | /vault/fe_assets/frontend.dat
+&nbsp; <div dir="rtl" style="display:inline">يتم توليدها كآلية سلامة عند الحاجة.</div> | /vault/fe_assets/frontend.dat.safety
+&nbsp; <div dir="rtl" style="display:inline">ملف قالب HTML الرئيسي لfront-end.</div> | /vault/fe_assets/frontend.html
+&nbsp; <div dir="rtl" style="display:inline">الرموز معالج (التي يستخدمها مدير الملفات الأمامية).</div> | /vault/fe_assets/icons.php
+&nbsp; <div dir="rtl" style="display:inline">بالنقاط معالج (التي يستخدمها مدير الملفات الأمامية).</div> | /vault/fe_assets/pips.php
+&nbsp; <div dir="rtl" style="display:inline">يحتوي على بيانات JavaScript front-end.</div> | /vault/fe_assets/scripts.js
+&nbsp; <div dir="rtl" style="display:inline">يحتوي على بيانات اللغة لـ CIDRAM.</div> | /vault/lang/
+&nbsp; <div dir="rtl" style="display:inline">ملف وصول النص التشعبي (في هذه الحالة، لحماية الملفات الحساسة التي تنتمي إلى البرنامج من أن يتم الوصول إليها عن طريق مصادر غير مصرح لها).</div> | /vault/lang/.htaccess
+&nbsp; <div dir="rtl" style="display:inline">ملفات اللغة العربية لCLI.</div> | /vault/lang/lang.ar.cli.php
+&nbsp; <div dir="rtl" style="display:inline">ملفات اللغة العربية لfront-end.</div> | /vault/lang/lang.ar.fe.php
+&nbsp; <div dir="rtl" style="display:inline">ملفات اللغة العربية.</div> | /vault/lang/lang.ar.php
+&nbsp; <div dir="rtl" style="display:inline">ملفات اللغة البنغالية لCLI.</div> | /vault/lang/lang.bn.cli.php
+&nbsp; <div dir="rtl" style="display:inline">ملفات اللغة البنغالية لfront-end.</div> | /vault/lang/lang.bn.fe.php
+&nbsp; <div dir="rtl" style="display:inline">ملفات اللغة البنغالية.</div> | /vault/lang/lang.bn.php
+&nbsp; <div dir="rtl" style="display:inline">ملفات اللغة الألمانية لCLI.</div> | /vault/lang/lang.de.cli.php
+&nbsp; <div dir="rtl" style="display:inline">ملفات اللغة الألمانية لfront-end.</div> | /vault/lang/lang.de.fe.php
+&nbsp; <div dir="rtl" style="display:inline">ملفات اللغة الألمانية.</div> | /vault/lang/lang.de.php
+&nbsp; <div dir="rtl" style="display:inline">ملفات اللغة الإنجليزية لCLI.</div> | /vault/lang/lang.en.cli.php
+&nbsp; <div dir="rtl" style="display:inline">ملفات اللغة الإنجليزية لfront-end.</div> | /vault/lang/lang.en.fe.php
+&nbsp; <div dir="rtl" style="display:inline">ملفات اللغة الإنجليزية.</div> | /vault/lang/lang.en.php
+&nbsp; <div dir="rtl" style="display:inline">ملفات اللغة الاسبانية لCLI.</div> | /vault/lang/lang.es.cli.php
+&nbsp; <div dir="rtl" style="display:inline">ملفات اللغة الاسبانية لfront-end.</div> | /vault/lang/lang.es.fe.php
+&nbsp; <div dir="rtl" style="display:inline">ملفات اللغة الاسبانية.</div> | /vault/lang/lang.es.php
+&nbsp; <div dir="rtl" style="display:inline">ملفات اللغة الفرنسية لCLI.</div> | /vault/lang/lang.fr.cli.php
+&nbsp; <div dir="rtl" style="display:inline">ملفات اللغة الفرنسية لfront-end.</div> | /vault/lang/lang.fr.fe.php
+&nbsp; <div dir="rtl" style="display:inline">ملفات اللغة الفرنسية.</div> | /vault/lang/lang.fr.php
+&nbsp; <div dir="rtl" style="display:inline">ملفات اللغة الهندية لCLI.</div> | /vault/lang/lang.hi.cli.php
+&nbsp; <div dir="rtl" style="display:inline">ملفات اللغة الهندية لfront-end.</div> | /vault/lang/lang.hi.fe.php
+&nbsp; <div dir="rtl" style="display:inline">ملفات اللغة الهندية.</div> | /vault/lang/lang.hi.php
+&nbsp; <div dir="rtl" style="display:inline">ملفات اللغة الاندونيسية لCLI.</div> | /vault/lang/lang.id.cli.php
+&nbsp; <div dir="rtl" style="display:inline">ملفات اللغة الاندونيسية لfront-end.</div> | /vault/lang/lang.id.fe.php
+&nbsp; <div dir="rtl" style="display:inline">ملفات اللغة الاندونيسية.</div> | /vault/lang/lang.id.php
+&nbsp; <div dir="rtl" style="display:inline">ملفات اللغة الايطالية لCLI.</div> | /vault/lang/lang.it.cli.php
+&nbsp; <div dir="rtl" style="display:inline">ملفات اللغة الايطالية لfront-end.</div> | /vault/lang/lang.it.fe.php
+&nbsp; <div dir="rtl" style="display:inline">ملفات اللغة الايطالية.</div> | /vault/lang/lang.it.php
+&nbsp; <div dir="rtl" style="display:inline">ملفات اللغة اليابانية لCLI.</div> | /vault/lang/lang.ja.cli.php
+&nbsp; <div dir="rtl" style="display:inline">ملفات اللغة اليابانية لfront-end.</div> | /vault/lang/lang.ja.fe.php
+&nbsp; <div dir="rtl" style="display:inline">ملفات اللغة اليابانية.</div> | /vault/lang/lang.ja.php
+&nbsp; <div dir="rtl" style="display:inline">ملفات اللغة الكورية لCLI.</div> | /vault/lang/lang.ko.cli.php
+&nbsp; <div dir="rtl" style="display:inline">ملفات اللغة الكورية لfront-end.</div> | /vault/lang/lang.ko.fe.php
+&nbsp; <div dir="rtl" style="display:inline">ملفات اللغة الكورية.</div> | /vault/lang/lang.ko.php
+&nbsp; <div dir="rtl" style="display:inline">ملفات اللغة الهولندية لCLI.</div> | /vault/lang/lang.nl.cli.php
+&nbsp; <div dir="rtl" style="display:inline">ملفات اللغة الهولندية لfront-end.</div> | /vault/lang/lang.nl.fe.php
+&nbsp; <div dir="rtl" style="display:inline">ملفات اللغة الهولندية.</div> | /vault/lang/lang.nl.php
+&nbsp; <div dir="rtl" style="display:inline">ملفات اللغة النرويجيةة لCLI.</div> | /vault/lang/lang.no.cli.php
+&nbsp; <div dir="rtl" style="display:inline">ملفات اللغة النرويجيةة لfront-end.</div> | /vault/lang/lang.no.fe.php
+&nbsp; <div dir="rtl" style="display:inline">ملفات اللغة النرويجيةة.</div> | /vault/lang/lang.no.php
+&nbsp; <div dir="rtl" style="display:inline">ملفات اللغة البرتغالية لCLI.</div> | /vault/lang/lang.pt.cli.php
+&nbsp; <div dir="rtl" style="display:inline">ملفات اللغة البرتغالية لfront-end.</div> | /vault/lang/lang.pt.fe.php
+&nbsp; <div dir="rtl" style="display:inline">ملفات اللغة البرتغالية.</div> | /vault/lang/lang.pt.php
+&nbsp; <div dir="rtl" style="display:inline">ملفات اللغة الروسية لCLI.</div> | /vault/lang/lang.ru.cli.php
+&nbsp; <div dir="rtl" style="display:inline">ملفات اللغة الروسية لfront-end.</div> | /vault/lang/lang.ru.fe.php
+&nbsp; <div dir="rtl" style="display:inline">ملفات اللغة الروسية.</div> | /vault/lang/lang.ru.php
+&nbsp; <div dir="rtl" style="display:inline">ملفات اللغة السويدية لCLI.</div> | /vault/lang/lang.sv.cli.php
+&nbsp; <div dir="rtl" style="display:inline">ملفات اللغة السويدية لfront-end.</div> | /vault/lang/lang.sv.fe.php
+&nbsp; <div dir="rtl" style="display:inline">ملفات اللغة السويدية.</div> | /vault/lang/lang.sv.php
+&nbsp; <div dir="rtl" style="display:inline">ملفات اللغة التايلاندية لCLI.</div> | /vault/lang/lang.th.cli.php
+&nbsp; <div dir="rtl" style="display:inline">ملفات اللغة التايلاندية لfront-end.</div> | /vault/lang/lang.th.fe.php
+&nbsp; <div dir="rtl" style="display:inline">ملفات اللغة التايلاندية.</div> | /vault/lang/lang.th.php
+&nbsp; <div dir="rtl" style="display:inline">ملفات اللغة اللغة التركية لCLI.</div> | /vault/lang/lang.tr.cli.php
+&nbsp; <div dir="rtl" style="display:inline">ملفات اللغة اللغة التركية لfront-end.</div> | /vault/lang/lang.tr.fe.php
+&nbsp; <div dir="rtl" style="display:inline">ملفات اللغة اللغة التركية.</div> | /vault/lang/lang.tr.php
+&nbsp; <div dir="rtl" style="display:inline">ملفات اللغة الأردية لCLI.</div> | /vault/lang/lang.ur.cli.php
+&nbsp; <div dir="rtl" style="display:inline">ملفات اللغة الأردية لfront-end.</div> | /vault/lang/lang.ur.fe.php
+&nbsp; <div dir="rtl" style="display:inline">ملفات اللغة الأردية.</div> | /vault/lang/lang.ur.php
+&nbsp; <div dir="rtl" style="display:inline">ملفات اللغة الفيتنامية لCLI.</div> | /vault/lang/lang.vi.cli.php
+&nbsp; <div dir="rtl" style="display:inline">ملفات اللغة الفيتنامية لfront-end.</div> | /vault/lang/lang.vi.fe.php
+&nbsp; <div dir="rtl" style="display:inline">ملفات اللغة الفيتنامية.</div> | /vault/lang/lang.vi.php
+&nbsp; <div dir="rtl" style="display:inline">ملفات اللغة الصينية (التقليدية) لCLI.</div> | /vault/lang/lang.zh-tw.cli.php
+&nbsp; <div dir="rtl" style="display:inline">ملفات اللغة الصينية (التقليدية) لfront-end.</div> | /vault/lang/lang.zh-tw.fe.php
+&nbsp; <div dir="rtl" style="display:inline">ملفات اللغة الصينية (التقليدية).</div> | /vault/lang/lang.zh-tw.php
+&nbsp; <div dir="rtl" style="display:inline">ملفات اللغة الصينية (المبسطة) لCLI.</div> | /vault/lang/lang.zh.cli.php
+&nbsp; <div dir="rtl" style="display:inline">ملفات اللغة الصينية (المبسطة) لfront-end.</div> | /vault/lang/lang.zh.fe.php
+&nbsp; <div dir="rtl" style="display:inline">ملفات اللغة الصينية (المبسطة).</div> | /vault/lang/lang.zh.php
+&nbsp; <div dir="rtl" style="display:inline">ملف وصول النص التشعبي (في هذه الحالة، لحماية الملفات الحساسة التي تنتمي إلى البرنامج من أن يتم الوصول إليها عن طريق مصادر غير مصرح لها).</div> | /vault/.htaccess
+&nbsp; <div dir="rtl" style="display:inline">المستخدمة من قبل Travis CI للاختبار (غير مطلوب لتشغيل سليم للبرنامج).</div> | /vault/.travis.php
+&nbsp; <div dir="rtl" style="display:inline">المستخدمة من قبل Travis CI للاختبار (غير مطلوب لتشغيل سليم للبرنامج).</div> | /vault/.travis.yml
+&nbsp; <div dir="rtl" style="display:inline">IP aggregator.</div> | /vault/aggregator.php
+&nbsp; <div dir="rtl" style="display:inline">يحتوي على قواعد مساعدة. غير المدرجة في الحزمة. يتم توليدها بواسطة صفحة القواعد المساعدة.</div> | /vault/auxiliary.yaml
+&nbsp; <div dir="rtl" style="display:inline">بيانات ذاكرة التخزين المؤقت.</div> | /vault/cache.dat
+&nbsp; <div dir="rtl" style="display:inline">يتم توليدها كآلية سلامة عند الحاجة.</div> | /vault/cache.dat.safety
+&nbsp; <div dir="rtl" style="display:inline">ملف البيانات الوصفية لقوائم Macmathan الاختيارية؛ المستخدمة من قبل صفحة التحديثات.</div> | /vault/cidramblocklists.dat
+&nbsp; <div dir="rtl" style="display:inline">معالج CLI.</div> | /vault/cli.php
+&nbsp; <div dir="rtl" style="display:inline">حدات ملف البيانات الوصفية؛ المستخدمة من قبل صفحة التحديثات.</div> | /vault/components.dat
+&nbsp; <div dir="rtl" style="display:inline">ملف التكوين. يحتوي على جميع خيارات تهيئة CIDRAM، يخبرك ماذا يفعل وكيف يعمل بشكل صحيح (إعادة تسمية لتفعيل)!</div> | /vault/config.ini.RenameMe
+&nbsp; <div dir="rtl" style="display:inline">معالج التكوين.</div> | /vault/config.php
+&nbsp; <div dir="rtl" style="display:inline">ملف التخلف التكوين؛ يحتوي على قيم التكوين الافتراضي لCIDRAM.</div> | /vault/config.yaml
+&nbsp; <div dir="rtl" style="display:inline">معالج front-end.</div> | /vault/frontend.php
+&nbsp; <div dir="rtl" style="display:inline">ملف وظائف front-end.</div> | /vault/frontend_functions.php
+&nbsp; <div dir="rtl" style="display:inline">ملف وظائف (ضروري).</div> | /vault/functions.php
+&nbsp; <div dir="rtl" style="display:inline">يحتوي على قائمة من علامات الرقم المقبولة (وثيقة الصلة ميزة اختبار reCAPTCHA؛ فقط إنشاء إذا تم تمكين ميزة اختبار reCAPTCHA).</div> | /vault/hashes.dat
+&nbsp; <div dir="rtl" style="display:inline">تستخدم لتحديد أقسام توقيع التي CIDRAM يجب تجاهل.</div> | /vault/ignore.dat
+&nbsp; <div dir="rtl" style="display:inline">يحتوي على قائمة من الالتفافية IP (وثيقة الصلة ميزة اختبار reCAPTCHA؛ فقط إنشاء إذا تم تمكين ميزة اختبار reCAPTCHA).</div> | /vault/ipbypass.dat
+&nbsp; <div dir="rtl" style="display:inline">عناوين IPv4 ملف التوقيعات (نقاط الوصول غير البشرية و الخدمات السحابية غير المرغوب فيها).</div> | /vault/ipv4.dat
+&nbsp; <div dir="rtl" style="display:inline">عناوين IPv4 ملف التوقيعات (bogon/المريخ CIDRs).</div> | /vault/ipv4_bogons.dat
+&nbsp; <div dir="rtl" style="display:inline">عناوين IPv4 ملف التوقيعات المخصصة (إعادة تسمية لتفعيل).</div> | /vault/ipv4_custom.dat.RenameMe
+&nbsp; <div dir="rtl" style="display:inline">عناوين IPv4 ملف التوقيعات (مزودي خدمات الإنترنت خطيرة ومزعجة).</div> | /vault/ipv4_isps.dat
+&nbsp; <div dir="rtl" style="display:inline">عناوين IPv4 ملف التوقيعات (CIDRs الوكلاء، والشبكات الخاصة الإفتراضية، وغيرها من الخدمات غير المرغوب فيها المتنوعة).</div> | /vault/ipv4_other.dat
+&nbsp; <div dir="rtl" style="display:inline">عناوين IPv6 ملف التوقيعات (نقاط الوصول غير البشرية و الخدمات السحابية غير المرغوب فيها).</div> | /vault/ipv6.dat
+&nbsp; <div dir="rtl" style="display:inline">عناوين IPv6 ملف التوقيعات (bogon/المريخ CIDRs).</div> | /vault/ipv6_bogons.dat
+&nbsp; <div dir="rtl" style="display:inline">عناوين IPv6 ملف التوقيعات المخصصة (إعادة تسمية لتفعيل).</div> | /vault/ipv6_custom.dat.RenameMe
+&nbsp; <div dir="rtl" style="display:inline">عناوين IPv6 ملف التوقيعات (مزودي خدمات الإنترنت خطيرة ومزعجة).</div> | /vault/ipv6_isps.dat
+&nbsp; <div dir="rtl" style="display:inline">عناوين IPv6 ملف التوقيعات (CIDRs الوكلاء، والشبكات الخاصة الإفتراضية، وغيرها من الخدمات غير المرغوب فيها المتنوعة).</div> | /vault/ipv6_other.dat
+&nbsp; <div dir="rtl" style="display:inline">ملف لغة.</div> | /vault/lang.php
+&nbsp; <div dir="rtl" style="display:inline">ملف البيانات الوصفية وحدات؛ المستخدمة من قبل صفحة التحديثات.</div> | /vault/modules.dat
+&nbsp; <div dir="rtl" style="display:inline">الناتج معالج.</div> | /vault/outgen.php
+&nbsp; <div dir="rtl" style="display:inline">Polyfills لPHP 5.4.X (اللازمة لالتوافق PHP 5.4.X؛ لإصدارات أحدث PHP، آمنة للحذف).</div> | /vault/php5.4.x.php
+&nbsp; <div dir="rtl" style="display:inline">وحدة reCAPTCHA.</div> | /vault/recaptcha.php
+&nbsp; <div dir="rtl" style="display:inline">ملف قواعد العرف لAS6939.</div> | /vault/rules_as6939.php
+&nbsp; <div dir="rtl" style="display:inline">ملف قواعد العرف لSoft Layer.</div> | /vault/rules_softlayer.php
+&nbsp; <div dir="rtl" style="display:inline">ملف قواعد العرف لبعض CIDRs محددة.</div> | /vault/rules_specific.php
+&nbsp; <div dir="rtl" style="display:inline">ملف الملح (المستخدمة من قبل بعض وظائف هامشية؛ فقط تم إنشاؤها إذا لزم الأمر).</div> | /vault/salt.dat
+&nbsp; <div dir="rtl" style="display:inline">ملف القالب. قالب لمخرجات HTML التي تنتجها CIDRAM لرسالة حظر تحميل الملفات (الرسالة التي يراها القائم بالتحميل).</div> | /vault/template_custom.html
+&nbsp; <div dir="rtl" style="display:inline">ملف القالب. قالب لمخرجات HTML التي تنتجها CIDRAM لرسالة حظر تحميل الملفات (الرسالة التي يراها القائم بالتحميل).</div> | /vault/template_default.html
+&nbsp; <div dir="rtl" style="display:inline">ملف البيانات الوصفية للسمات؛ المستخدمة من قبل صفحة التحديثات.</div> | /vault/themes.dat
+&nbsp; <div dir="rtl" style="display:inline">بيانات التحقق لمحركات البحث والشبكات الاجتماعية.</div> | /vault/verification.yaml
+&nbsp; <div dir="rtl" style="display:inline">أ ملف المشروع GitHub (غير مطلوب لتشغيل سليم للبرنامج).</div> | /.gitattributes
+&nbsp; <div dir="rtl" style="display:inline">سجل للتغييرات التي أجريت على البرنامج بين التحديثات المختلفة (غير مطلوب لتشغيل سليم للبرنامج).</div> | /Changelog.txt
+&nbsp; <div dir="rtl" style="display:inline">معلومات Composer/Packagist (غير مطلوب لتشغيل سليم للبرنامج).</div> | /composer.json
+&nbsp; <div dir="rtl" style="display:inline">معلومات حول كيفية المساهمة في المشروع.</div> | /CONTRIBUTING.md
+&nbsp; <div dir="rtl" style="display:inline">نسخة من GNU/GPLv2 رخصة (غير مطلوب لتشغيل سليم للبرنامج).</div> | /LICENSE.txt
+&nbsp; <div dir="rtl" style="display:inline">الملف المحمل (المسئول عن التحميل): يحمل البرنامج الرئيسي و التحديث و، إلى آخره. هذا هو الذي من المفترض أن تكون على علاقة به و تقوم بتركيبه (أساسي)!</div> | /loader.php
+&nbsp; <div dir="rtl" style="display:inline">معلومات موجزة المشروع.</div> | /README.md
+&nbsp; <div dir="rtl" style="display:inline">ملف تكوين ASP.NET (في هذه الحالة، لحماية دليل /vault من أن يتم الوصول إليه بواسطة مصادر غير مأذون لها في حالة إذا ما تم تثبيت البرنامج النصي على ملقم يستند إلى تقنيات ASP.NET</div> | /web.config
 
 ---
 
@@ -387,15 +387,15 @@
 
 <div dir="rtl">القيم الموصى بها ل "ipaddr":<br /><br /></div>
 
-&nbsp; <div dir="rtl" style="display:inline;">القيمة</div> | &nbsp; <div dir="rtl" style="display:inline;">استعمال</div>
+&nbsp; <div dir="rtl" style="display:inline">القيمة</div> | &nbsp; <div dir="rtl" style="display:inline">استعمال</div>
 ---|---
 `HTTP_INCAP_CLIENT_IP` | Incapsula reverse proxy (إنكابسولا عكس الوكيل).
 `HTTP_CF_CONNECTING_IP` | Cloudflare reverse proxy (كلودفلاري عكس الوكيل).
 `CF-Connecting-IP` | Cloudflare reverse proxy (كلودفلاري عكس الوكيل؛ لبديل؛ إذا كان ما سبق لا يعمل).
 `HTTP_X_FORWARDED_FOR` | Cloudbric reverse proxy.
 `X-Forwarded-For` | [Squid reverse proxy (عكس الوكيل)](http://www.squid-cache.org/Doc/config/forwarded_for/).
-&nbsp; <div dir="rtl" style="display:inline;"><em>يحددها تكوين الخادم.</em></div> | [Nginx reverse proxy (إنجن إكس عكس الوكيل)](https://www.nginx.com/resources/admin-guide/reverse-proxy/).
-`REMOTE_ADDR` | &nbsp; <div dir="rtl" style="display:inline;">لا يوجد عكس الوكيل (الافتراضي).</div>
+&nbsp; <div dir="rtl" style="display:inline"><em>يحددها تكوين الخادم.</em></div> | [Nginx reverse proxy (إنجن إكس عكس الوكيل)](https://www.nginx.com/resources/admin-guide/reverse-proxy/).
+`REMOTE_ADDR` | &nbsp; <div dir="rtl" style="display:inline">لا يوجد عكس الوكيل (الافتراضي).</div>
 
 ##### <div dir="rtl">"forbid_on_block"<br /></div>
 <div dir="rtl"><ul>
@@ -1169,19 +1169,19 @@ if ($CIDRAM['Hostname'] && $CIDRAM['Hostname'] !== $CIDRAM['BlockInfo']['IPAddr'
 
 <div dir="rtl">فيما يلي بعض المتغيرات الشائعة التي قد تكون مفيدة للوحدة النمطية الخاصة بك:<br /><br /></div>
 
-&nbsp; <div dir="rtl" style="display:inline;">وصف</div> | <div dir="rtl" style="display:inline;">متغير</div>
+&nbsp; <div dir="rtl" style="display:inline">وصف</div> | <div dir="rtl" style="display:inline">متغير</div>
 ----|----
-&nbsp; <div dir="rtl" style="display:inline;">التاريخ والوقت الحاليان.</div> | `$CIDRAM['BlockInfo']['DateTime']`
-&nbsp; <div dir="rtl" style="display:inline;">عنوان IP للطلب الحالي.</div> | `$CIDRAM['BlockInfo']['IPAddr']`
-&nbsp; <div dir="rtl" style="display:inline;">إصدار النص البرمجي CIDRAM.</div> | `$CIDRAM['BlockInfo']['ScriptIdent']`
-&nbsp; <div dir="rtl" style="display:inline;">الاستعلام عن الطلب الحالي.</div> | `$CIDRAM['BlockInfo']['Query']`
-&nbsp; <div dir="rtl" style="display:inline;">المحيل للطلب الحالي (إذا كان موجودا).</div> | `$CIDRAM['BlockInfo']['Referrer']`
-&nbsp; <div dir="rtl" style="display:inline;">وكيل المستخدم (user agent) للطلب الحالي.</div> | `$CIDRAM['BlockInfo']['UA']`
-&nbsp; <div dir="rtl" style="display:inline;">وكيل المستخدم (user agent) للطلب الحالي (في حالة أقل).</div> | `$CIDRAM['BlockInfo']['UALC']`
-&nbsp; <div dir="rtl" style="display:inline;">الرسالة المراد عرضها للمستخدم عند حظرها.</div> | `$CIDRAM['BlockInfo']['ReasonMessage']`
-&nbsp; <div dir="rtl" style="display:inline;">عدد التوقيعات التي أدت إلى الطلب الحالي.</div> | `$CIDRAM['BlockInfo']['SignatureCount']`
-&nbsp; <div dir="rtl" style="display:inline;">المعلومات المرجعية عن أي توقيعات أثارت للطلب الحالي.</div> | `$CIDRAM['BlockInfo']['Signatures']`
-&nbsp; <div dir="rtl" style="display:inline;">المعلومات المرجعية عن أي توقيعات أثارت للطلب الحالي.</div> | `$CIDRAM['BlockInfo']['WhyReason']`
+&nbsp; <div dir="rtl" style="display:inline">التاريخ والوقت الحاليان.</div> | `$CIDRAM['BlockInfo']['DateTime']`
+&nbsp; <div dir="rtl" style="display:inline">عنوان IP للطلب الحالي.</div> | `$CIDRAM['BlockInfo']['IPAddr']`
+&nbsp; <div dir="rtl" style="display:inline">إصدار النص البرمجي CIDRAM.</div> | `$CIDRAM['BlockInfo']['ScriptIdent']`
+&nbsp; <div dir="rtl" style="display:inline">الاستعلام عن الطلب الحالي.</div> | `$CIDRAM['BlockInfo']['Query']`
+&nbsp; <div dir="rtl" style="display:inline">المحيل للطلب الحالي (إذا كان موجودا).</div> | `$CIDRAM['BlockInfo']['Referrer']`
+&nbsp; <div dir="rtl" style="display:inline">وكيل المستخدم (user agent) للطلب الحالي.</div> | `$CIDRAM['BlockInfo']['UA']`
+&nbsp; <div dir="rtl" style="display:inline">وكيل المستخدم (user agent) للطلب الحالي (في حالة أقل).</div> | `$CIDRAM['BlockInfo']['UALC']`
+&nbsp; <div dir="rtl" style="display:inline">الرسالة المراد عرضها للمستخدم عند حظرها.</div> | `$CIDRAM['BlockInfo']['ReasonMessage']`
+&nbsp; <div dir="rtl" style="display:inline">عدد التوقيعات التي أدت إلى الطلب الحالي.</div> | `$CIDRAM['BlockInfo']['SignatureCount']`
+&nbsp; <div dir="rtl" style="display:inline">المعلومات المرجعية عن أي توقيعات أثارت للطلب الحالي.</div> | `$CIDRAM['BlockInfo']['Signatures']`
+&nbsp; <div dir="rtl" style="display:inline">المعلومات المرجعية عن أي توقيعات أثارت للطلب الحالي.</div> | `$CIDRAM['BlockInfo']['WhyReason']`
 
 ---
 
@@ -1267,10 +1267,10 @@ $Trigger(strpos($CIDRAM['BlockInfo']['UA'], 'Foobar') !== false, 'Foobar-UA', 'U
 
 <div dir="rtl">هذا يمكن تلخيصها حسب الجدول أدناه:<br /><br /></div>
 
-&nbsp; <div dir="rtl" style="display:inline;">CIDRAM لا ينبغي منع عنوان IP</div> | &nbsp; <div dir="rtl" style="display:inline;">CIDRAM يجب منع عنوان IP</div> | &nbsp;
+&nbsp; <div dir="rtl" style="display:inline">CIDRAM لا ينبغي منع عنوان IP</div> | &nbsp; <div dir="rtl" style="display:inline">CIDRAM يجب منع عنوان IP</div> | &nbsp;
 ---|---|---
-&nbsp; <div dir="rtl" style="display:inline;">سلبي صحيح (الاستدلال الصحيح)</div> | <div dir="rtl" style="display:inline;">افتقد (التناظرية من سلبي خاطئة)</div> | <div dir="rtl" style="display:inline;"><strong>CIDRAM لا يمنع عنوان IP</strong></div>
-&nbsp; <div dir="rtl" style="display:inline;"><strong>إيجابية خاطئة</strong></div> | <div dir="rtl" style="display:inline;">إيجابية صحيح (الاستدلال الصحيح)</div> | <div dir="rtl" style="display:inline;"><strong>CIDRAM منع عنوان IP</strong></div>
+&nbsp; <div dir="rtl" style="display:inline">سلبي صحيح (الاستدلال الصحيح)</div> | <div dir="rtl" style="display:inline">افتقد (التناظرية من سلبي خاطئة)</div> | <div dir="rtl" style="display:inline"><strong>CIDRAM لا يمنع عنوان IP</strong></div>
+&nbsp; <div dir="rtl" style="display:inline"><strong>إيجابية خاطئة</strong></div> | <div dir="rtl" style="display:inline">إيجابية صحيح (الاستدلال الصحيح)</div> | <div dir="rtl" style="display:inline"><strong>CIDRAM منع عنوان IP</strong></div>
 
 #### <div dir="rtl"><a name="BLOCK_ENTIRE_COUNTRIES"></a>يمكن CIDRAM منع الدول؟<br /><br /></div>
 
@@ -1468,7 +1468,7 @@ IP | المشغل
 
 Logging is an important part of CIDRAM for a number of reasons. It may be difficult to diagnose and resolve false positives when the block events that cause them aren't logged. Without logging block events, it may be difficult to ascertain exactly how performant CIDRAM is in any particular context, and it may be difficult to determine where its shortfalls may be, and what changes may be required to its configuration or signatures accordingly, in order for it to continue functioning as intended. Regardless, logging mightn't be desirable for all users, and remains entirely optional. In CIDRAM, logging is disabled by default. To enable it, CIDRAM must be configured accordingly.
 
-Additionally, whether logging is legally permissible, and to the extent that it is legally permissible (e.g., the types of information that may logged, for how long, and under what circumstances), may vary, depending on jurisdiction and on the context where CIDRAM is implemented (e.g., whether you're operating as an individual, as a corporate entity, and whether on a commercial or non-commercial basis). It may therefore be useful for you to read through this section carefully.
+Additionally, whether logging is legally permissible, and to the extent that it is legally permissible (e.g., the types of information that may be logged, for how long, and under what circumstances), may vary, depending on jurisdiction and on the context where CIDRAM is implemented (e.g., whether you're operating as an individual, as a corporate entity, and whether on a commercial or non-commercial basis). It may therefore be useful for you to read through this section carefully.
 
 There are multiple types of logging that CIDRAM can perform. Different types of logging involves different types of information, for different reasons.
 
@@ -1533,33 +1533,33 @@ A reCAPTCHA log entry contains the IP address of the user attempting to complete
 IP Address: x.x.x.x - Date/Time: Day, dd Mon 20xx hh:ii:ss +0000 - reCAPTCHA State: Passed!
 ```
 
-<div dir="rtl">توجيه التكوين ذات الصلة:</div>
+<div dir="rtl">توجيه التكوين ذات الصلة:<br /></div>
 <div dir="rtl"><ul>
  <li><code dir="ltr">logfile</code> &lt;- <code dir="ltr">recaptcha</code></li>
 </ul></div>
 
 ##### 11.3.2 FRONT-END LOGGING
 
-This type of logging relates front-end login attempts, and occurs only when a user attempts to log into the front-end (assuming front-end access is enabled).
+This logging relates front-end login attempts. It occurs only when a user attempts to log into the front-end, and only when front-end access is enabled.
 
 A front-end log entry contains the IP address of the user attempting to log in, the date and time that the attempt occurred, and the results of the attempt (successfully logged in, or failed to log in). A front-end log entry typically looks something like this (as an example):
 
 ```
-x.x.x.x - Day, dd Mon 20xx hh:ii:ss +0000 - "admin" - Logged in.
+x.x.x.x - Day, dd Mon 20xx hh:ii:ss +0000 - "admin" - حاليا على.
 ```
 
-<div dir="rtl">توجيه التكوين ذات الصلة:</div>
+<div dir="rtl">توجيه التكوين ذات الصلة:<br /></div>
 <div dir="rtl"><ul>
  <li><code dir="ltr">FrontEndLog</code> &lt;- <code dir="ltr">general</code></li>
 </ul></div>
 
-##### 11.3.3 LOG ROTATION
+##### <div dir="rtl">١١.٣.٣ دوران السجل<br /><br /></div>
 
-You may want to purge logs after a period of time, or may be required to do so by law (i.e., the amount of time that it's legally permissible for you to retain logs may be limited by law). You can achieve this by including date/time markers in the names of your logfiles as per specified by your package configuration (e.g., `{yyyy}-{mm}-{dd}.log`), and then enabling log rotation (log rotation allows you to perform some action on logfiles when specified limits are exceeded).
+<div dir="rtl">قد ترغب في تطهير السجلات بعد فترة من الوقت، أو قد تكون مطلوبة للقيام بذلك بموجب القانون (أي أن مقدار الوقت المسموح به قانونًا لك للاحتفاظ بالسجلات قد يكون محدودًا بموجب القانون). يمكنك تحقيق ذلك عن طريق تضمين علامات التاريخ/الوقت في أسماء ملفات السجل الخاصة بك كما هو محدد بواسطة تكوين الحزمة الخاصة بك (على سبيل المثال، <code dir="ltr">{yyyy}-{mm}-{dd}.log</code>)، ثم تمكين دوران السجل (يسمح لك تدوير السجل بتنفيذ بعض الإجراءات على ملفات السجل عندما يتم تجاوز الحدود المحددة).<br /><br /></div>
 
-For example: If I was legally required to delete logs after 30 days, I could specify `{dd}.log` in the names of my logfiles (`{dd}` represents days), set the value of `log_rotation_limit` to 30, and set the value of `log_rotation_action` to `Delete`.
+<div dir="rtl">فمثلا: إذا كان من الضروري قانونًا حذف السجلات بعد 30 يومًا، يمكنني تحديد <code dir="ltr">{dd}.log</code> في أسماء ملفات السجل الخاصة بي (<code dir="ltr">{dd}</code> يمثل عدد الأيام)، قم بتعيين قيمة <code dir="ltr">log_rotation_limit</code> إلى 30، وقم بتعيين قيمة <code dir="ltr">log_rotation_action</code> إلى <code dir="ltr">Delete</code>.<br /><br /></div>
 
-Conversely, if you're required to retain logs for an extended period of time, you could either not use log rotation at all, or you could set the value of `log_rotation_action` to `Archive`, to compress logfiles, thereby reducing the total amount of disk space that they occupy.
+<div dir="rtl">على العكس من ذلك، إذا كنت مطالبًا بالاحتفاظ بالسجلات لفترة زمنية طويلة، فيمكنك تعطيل تدوير السجل، أو يمكنك تعيين قيمة <code dir="ltr">log_rotation_action</code> إلى <code dir="ltr">Archive</code>، لضغط ملفات السجل، وبالتالي تقليل إجمالي مساحة القرص التي يشغلونها.<br /><br /></div>
 
 <div dir="rtl">خيارات التكوين ذات الصلة:<br /></div>
 <div dir="rtl"><ul>
@@ -1567,9 +1567,9 @@ Conversely, if you're required to retain logs for an extended period of time, yo
  <li><code dir="ltr">log_rotation_action</code> &lt;- <code dir="ltr">general</code></li>
 </ul></div>
 
-##### 11.3.4 LOG TRUNCATION
+##### <div dir="rtl">١١.٣.٤ سجل اقتطاع<br /><br /></div>
 
-It's also possible to truncate individual logfiles when they exceed a certain size, if this is something you might need or want to do.
+<div dir="rtl">إذا أردت، يمكنك اقتطاع ملفات السجل الفردية عندما تتجاوز حجمًا معينًا.<br /><br /></div>
 
 <div dir="rtl">خيارات التكوين ذات الصلة:<br /></div>
 <div dir="rtl"><ul>
@@ -1674,4 +1674,4 @@ It's also possible to truncate individual logfiles when they exceed a certain si
 ---
 
 
-<div dir="rtl">آخر تحديث: 26 سبتمبر 2018 (2018.09.26).</div>
+<div dir="rtl">آخر تحديث: 20 اكتوبر 2018 (2018.10.20).</div>

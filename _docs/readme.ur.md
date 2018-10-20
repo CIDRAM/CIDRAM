@@ -139,182 +139,182 @@
 
 <div dir="rtl">مندرجہ ذیل اس سکرپٹ کے ذخیرہ کردہ کاپی میں شامل کیا گیا ہے کہ آپ ان فائلوں کے مقصد کی ایک مختصر وضاحت کے ساتھ ساتھ، یہ ڈاؤن لوڈ، جب تمام فائلوں کی ایک فہرست ہے.<br /><br /></div>
 
-&nbsp; <div dir="rtl" style="display:inline;">تفصیل</div> | <div dir="rtl" style="display:inline;">فائل</div>
+&nbsp; <div dir="rtl" style="display:inline">تفصیل</div> | <div dir="rtl" style="display:inline">فائل</div>
 ----|----
-&nbsp; <div dir="rtl" style="display:inline;">دستاویزی ڈائریکٹری (مختلف فائلوں پر مشتمل ہے).</div> | /_docs/
-&nbsp; <div dir="rtl" style="display:inline;">عربی دستاویزات.</div> | /_docs/readme.ar.md
-&nbsp; <div dir="rtl" style="display:inline;">جرمن دستاویزات.</div> | /_docs/readme.de.md
-&nbsp; <div dir="rtl" style="display:inline;">انگریزی دستاویزات.</div> | /_docs/readme.en.md
-&nbsp; <div dir="rtl" style="display:inline;">ہسپانوی دستاویزات.</div> | /_docs/readme.es.md
-&nbsp; <div dir="rtl" style="display:inline;">فرانسیسی دستاویزات.</div> | /_docs/readme.fr.md
-&nbsp; <div dir="rtl" style="display:inline;">انڈونیشیا دستاویزات.</div> | /_docs/readme.id.md
-&nbsp; <div dir="rtl" style="display:inline;">اطالوی دستاویزات.</div> | /_docs/readme.it.md
-&nbsp; <div dir="rtl" style="display:inline;">جاپانی دستاویزات.</div> | /_docs/readme.ja.md
-&nbsp; <div dir="rtl" style="display:inline;">کوریا دستاویزات.</div> | /_docs/readme.ko.md
-&nbsp; <div dir="rtl" style="display:inline;">ڈچ دستاویزات.</div> | /_docs/readme.nl.md
-&nbsp; <div dir="rtl" style="display:inline;">پرتگالی دستاویزات.</div> | /_docs/readme.pt.md
-&nbsp; <div dir="rtl" style="display:inline;">روسی دستاویزات.</div> | /_docs/readme.ru.md
-&nbsp; <div dir="rtl" style="display:inline;">اردو دستاویزات.</div> | /_docs/readme.ur.md
-&nbsp; <div dir="rtl" style="display:inline;">ویتنامی دستاویزات.</div> | /_docs/readme.vi.md
-&nbsp; <div dir="rtl" style="display:inline;">چینی (روایتی) دستاویزات.</div> | /_docs/readme.zh-TW.md
-&nbsp; <div dir="rtl" style="display:inline;">چینی (آسان کردہ) دستاویزات.</div> | /_docs/readme.zh.md
-&nbsp; <div dir="rtl" style="display:inline;">والٹ ڈائریکٹری (مختلف فائلوں پر مشتمل ہے).</div> | /vault/
-&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کے اثاثے.</div> | /vault/fe_assets/
-&nbsp; <div dir="rtl" style="display:inline;">ایک ہایپر ٹیکسٹ رسائی فائل (اس مثال میں، غیر مجاز ذرائع کی طرف سے حاصل کیا جا رہا ہے سے سکرپٹ سے تعلق رکھنے والے حساس فائلوں کی حفاظت کے لئے).</div> | /vault/fe_assets/.htaccess
-&nbsp; <div dir="rtl" style="display:inline;">صارف کو 2FA کوڈ کے لئے پوچھتے وقت ایک HTML ٹیمپلیٹ استعمال کیا جاتا ہے.</div> | /vault/fe_assets/_2fa.html
-&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کے لئے ایک HTML سانچے اکاؤنٹس صفحہ.</div> | /vault/fe_assets/_accounts.html
-&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کے لئے ایک HTML سانچے اکاؤنٹس صفحہ.</div> | /vault/fe_assets/_accounts_row.html
-&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کے لئے ایک HTML سانچے اضافی قواعد صفحہ.</div> | /vault/fe_assets/_aux.html
-&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کیش ڈیٹا صفحے کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_cache.html
-&nbsp; <div dir="rtl" style="display:inline;">CIDR کیلکولیٹر کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_cidr_calc.html
-&nbsp; <div dir="rtl" style="display:inline;">CIDR کیلکولیٹر کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_cidr_calc_row.html
-&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں ترتیب کے صفحے کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_config.html
-&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں ترتیب کے صفحے کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_config_row.html
-&nbsp; <div dir="rtl" style="display:inline;">فائل مینیجر کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_files.html
-&nbsp; <div dir="rtl" style="display:inline;">فائل مینیجر کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_files_edit.html
-&nbsp; <div dir="rtl" style="display:inline;">فائل مینیجر کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_files_rename.html
-&nbsp; <div dir="rtl" style="display:inline;">فائل مینیجر کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_files_row.html
-&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کے ہوم پیج کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_home.html
-&nbsp; <div dir="rtl" style="display:inline;">IP مجموعی طور پر کے صفحے کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_ip_aggregator.html
-&nbsp; <div dir="rtl" style="display:inline;">IP ٹیسٹ کے صفحے کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_ip_test.html
-&nbsp; <div dir="rtl" style="display:inline;">IP ٹیسٹ کے صفحے کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_ip_test_row.html
-&nbsp; <div dir="rtl" style="display:inline;">IP باخبر رہنے کے صفحے کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_ip_tracking.html
-&nbsp; <div dir="rtl" style="display:inline;">IP باخبر رہنے کے صفحے کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_ip_tracking_row.html
-&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں لاگ ان کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_login.html
-&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر لاگز صفحے کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_logs.html
-&nbsp; <div dir="rtl" style="display:inline;">مکمل رسائی کے ساتھ ان لوگوں کے لئے سامنے کے آخر نیویگیشن روابط کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_nav_complete_access.html
-&nbsp; <div dir="rtl" style="display:inline;">لاگز کے ساتھ ان لوگوں کے لئے سامنے کے آخر نیویگیشن روابط کے لئے ایک HTML سانچے، صرف تک رسائی.</div> | /vault/fe_assets/_nav_logs_access_only.html
-&nbsp; <div dir="rtl" style="display:inline;">رینج میزیں لئے ایک HTML سانچے.</div> | /vault/fe_assets/_range.html
-&nbsp; <div dir="rtl" style="display:inline;">رینج میزیں لئے ایک HTML سانچے.</div> | /vault/fe_assets/_range_row.html
-&nbsp; <div dir="rtl" style="display:inline;">حصوں کی فہرست کے لئے ایک HTML ٹیمپلیٹ.</div> | /vault/fe_assets/_sections.html
-&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں اعداد و شمار صفحے کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_statistics.html
-&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں اپ ڈیٹس صفحے کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_updates.html
-&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں اپ ڈیٹس صفحے کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_updates_row.html
-&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کے لئے سی ایس ایس سٹائل شیٹ.</div> | /vault/fe_assets/frontend.css
-&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کے لئے ڈیٹا بیس (اکاؤنٹ کی معلومات، سیشن کی معلومات، اور کیشے پر مشتمل ہے؛ سامنے کے آخر میں فعال اور استعمال کیا جاتا ہے تو صرف پیدا).</div> | /vault/fe_assets/frontend.dat
-&nbsp; <div dir="rtl" style="display:inline;">جب ضرورت ہو تو ایک حفاظتی میکانزم کی حیثیت سے پیدا.</div> | /vault/fe_assets/frontend.dat.safety
-&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کے لئے اہم HTML سانچے کی فائل.</div> | /vault/fe_assets/frontend.html
-&nbsp; <div dir="rtl" style="display:inline;">شبیہیں کے ہینڈلر (سامنے کے آخر میں فائل مینیجر کی طرف سے استعمال کیا جاتا).</div> | /vault/fe_assets/icons.php
-&nbsp; <div dir="rtl" style="display:inline;">پپس کے ہینڈلر (سامنے کے آخر میں فائل مینیجر کی طرف سے استعمال کیا جاتا).</div> | /vault/fe_assets/pips.php
-&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر جاوا اسکرپٹ ڈیٹا پر مشتمل ہے.</div> | /vault/fe_assets/scripts.js
-&nbsp; <div dir="rtl" style="display:inline;">CIDRAM زبان کے اعداد و شمار پر مشتمل ہے.</div> | /vault/lang/
-&nbsp; <div dir="rtl" style="display:inline;">ایک ہایپر ٹیکسٹ رسائی فائل (اس مثال میں، غیر مجاز ذرائع کی طرف سے حاصل کیا جا رہا ہے سے سکرپٹ سے تعلق رکھنے والے حساس فائلوں کی حفاظت کے لئے).</div> | /vault/lang/.htaccess
-&nbsp; <div dir="rtl" style="display:inline;">CLI کے لئے عربی زبان کے اعداد و شمار.</div> | /vault/lang/lang.ar.cli.php
-&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کے لئے عربی زبان کے اعداد و شمار.</div> | /vault/lang/lang.ar.fe.php
-&nbsp; <div dir="rtl" style="display:inline;">عربی زبان کے اعداد و شمار.</div> | /vault/lang/lang.ar.php
-&nbsp; <div dir="rtl" style="display:inline;">CLI کے لئے بنگلا زبان کے اعداد و شمار.</div> | /vault/lang/lang.bn.cli.php
-&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کے لئے بنگلا زبان کے اعداد و شمار.</div> | /vault/lang/lang.bn.fe.php
-&nbsp; <div dir="rtl" style="display:inline;">بنگلا زبان کے اعداد و شمار.</div> | /vault/lang/lang.bn.php
-&nbsp; <div dir="rtl" style="display:inline;">CLI کے لئے جرمن زبان کے اعداد و شمار.</div> | /vault/lang/lang.de.cli.php
-&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کے لئے جرمن زبان کے اعداد و شمار.</div> | /vault/lang/lang.de.fe.php
-&nbsp; <div dir="rtl" style="display:inline;">جرمن زبان کے اعداد و شمار.</div> | /vault/lang/lang.de.php
-&nbsp; <div dir="rtl" style="display:inline;">CLI کے لئے انگریزی زبان کے اعداد و شمار.</div> | /vault/lang/lang.en.cli.php
-&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کے لئے انگریزی زبان کے اعداد و شمار.</div> | /vault/lang/lang.en.fe.php
-&nbsp; <div dir="rtl" style="display:inline;">انگریزی زبان کے اعداد و شمار.</div> | /vault/lang/lang.en.php
-&nbsp; <div dir="rtl" style="display:inline;">CLI کے لئے ہسپانوی زبان کے اعداد و شمار.</div> | /vault/lang/lang.es.cli.php
-&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کے لئے ہسپانوی زبان کے اعداد و شمار.</div> | /vault/lang/lang.es.fe.php
-&nbsp; <div dir="rtl" style="display:inline;">ہسپانوی زبان کے اعداد و شمار.</div> | /vault/lang/lang.es.php
-&nbsp; <div dir="rtl" style="display:inline;">CLI کے لئے فرانسیسی زبان کے اعداد و شمار.</div> | /vault/lang/lang.fr.cli.php
-&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کے لئے فرانسیسی زبان کے اعداد و شمار.</div> | /vault/lang/lang.fr.fe.php
-&nbsp; <div dir="rtl" style="display:inline;">فرانسیسی زبان کے اعداد و شمار.</div> | /vault/lang/lang.fr.php
-&nbsp; <div dir="rtl" style="display:inline;">CLI کے لئے ہندی زبان کے اعداد و شمار.</div> | /vault/lang/lang.hi.cli.php
-&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کے لئے ہندی زبان کے اعداد و شمار.</div> | /vault/lang/lang.hi.fe.php
-&nbsp; <div dir="rtl" style="display:inline;">ہندی زبان کے اعداد و شمار.</div> | /vault/lang/lang.hi.php
-&nbsp; <div dir="rtl" style="display:inline;">CLI لئے انڈونیشی زبان کے اعداد و شمار.</div> | /vault/lang/lang.id.cli.php
-&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کے لئے انڈونیشی زبان کے اعداد و شمار.</div> | /vault/lang/lang.id.fe.php
-&nbsp; <div dir="rtl" style="display:inline;">انڈونیشی زبان کے اعداد و شمار.</div> | /vault/lang/lang.id.php
-&nbsp; <div dir="rtl" style="display:inline;">CLI کے لئے اطالوی زبان کے اعداد و شمار.</div> | /vault/lang/lang.it.cli.php
-&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کے لئے اطالوی زبان کے اعداد و شمار.</div> | /vault/lang/lang.it.fe.php
-&nbsp; <div dir="rtl" style="display:inline;">اطالوی زبان کے اعداد و شمار.</div> | /vault/lang/lang.it.php
-&nbsp; <div dir="rtl" style="display:inline;">CLI کے لئے جاپانی زبان کے اعداد و شمار.</div> | /vault/lang/lang.ja.cli.php
-&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کے لئے جاپانی زبان کے اعداد و شمار.</div> | /vault/lang/lang.ja.fe.php
-&nbsp; <div dir="rtl" style="display:inline;">جاپانی زبان کے اعداد و شمار.</div> | /vault/lang/lang.ja.php
-&nbsp; <div dir="rtl" style="display:inline;">CLI لیے کوریائی زبان کے اعداد و شمار.</div> | /vault/lang/lang.ko.cli.php
-&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کے لئے کوریائی زبان کے اعداد و شمار.</div> | /vault/lang/lang.ko.fe.php
-&nbsp; <div dir="rtl" style="display:inline;">کورین زبان کے اعداد و شمار.</div> | /vault/lang/lang.ko.php
-&nbsp; <div dir="rtl" style="display:inline;">CLI کے لئے ڈچ زبان کے اعداد و شمار.</div> | /vault/lang/lang.nl.cli.php
-&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کے لئے ڈچ زبان کے اعداد و شمار.</div> | /vault/lang/lang.nl.fe.php
-&nbsp; <div dir="rtl" style="display:inline;">ڈچ زبان کے اعداد و شمار.</div> | /vault/lang/lang.nl.php
-&nbsp; <div dir="rtl" style="display:inline;">CLI کے لئے ناروے زبان کے اعداد و شمار.</div> | /vault/lang/lang.no.cli.php
-&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کے لئے ناروے زبان کے اعداد و شمار.</div> | /vault/lang/lang.no.fe.php
-&nbsp; <div dir="rtl" style="display:inline;">ناروے زبان کے اعداد و شمار.</div> | /vault/lang/lang.no.php
-&nbsp; <div dir="rtl" style="display:inline;">CLI کے لئے پرتگالی زبان کے اعداد و شمار.</div> | /vault/lang/lang.pt.cli.php
-&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کے لئے پرتگالی زبان کے اعداد و شمار.</div> | /vault/lang/lang.pt.fe.php
-&nbsp; <div dir="rtl" style="display:inline;">پرتگالی زبان کے اعداد و شمار.</div> | /vault/lang/lang.pt.php
-&nbsp; <div dir="rtl" style="display:inline;">CLI کے لئے روسی زبان کے اعداد و شمار.</div> | /vault/lang/lang.ru.cli.php
-&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کے لئے روسی زبان کے اعداد و شمار.</div> | /vault/lang/lang.ru.fe.php
-&nbsp; <div dir="rtl" style="display:inline;">روسی زبان کے اعداد و شمار.</div> | /vault/lang/lang.ru.php
-&nbsp; <div dir="rtl" style="display:inline;">CLI کے لئے سویڈش زبان کے اعداد و شمار.</div> | /vault/lang/lang.sv.cli.php
-&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کے لئے سویڈش زبان کے اعداد و شمار.</div> | /vault/lang/lang.sv.fe.php
-&nbsp; <div dir="rtl" style="display:inline;">سویڈش زبان کے اعداد و شمار.</div> | /vault/lang/lang.sv.php
-&nbsp; <div dir="rtl" style="display:inline;">CLI کے لئے تھائی زبان کے اعداد و شمار.</div> | /vault/lang/lang.th.cli.php
-&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کے لئے تھائی زبان کے اعداد و شمار.</div> | /vault/lang/lang.th.fe.php
-&nbsp; <div dir="rtl" style="display:inline;">تھائی زبان کے اعداد و شمار.</div> | /vault/lang/lang.th.php
-&nbsp; <div dir="rtl" style="display:inline;">CLI کے لئے ترکی زبان کے اعداد و شمار.</div> | /vault/lang/lang.tr.cli.php
-&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کے لئے ترکی زبان کے اعداد و شمار.</div> | /vault/lang/lang.tr.fe.php
-&nbsp; <div dir="rtl" style="display:inline;">ترکی زبان کے اعداد و شمار.</div> | /vault/lang/lang.tr.php
-&nbsp; <div dir="rtl" style="display:inline;">CLI کے لئے اردو زبان کے اعداد و شمار.</div> | /vault/lang/lang.ur.cli.php
-&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کے لئے اردو زبان کے اعداد و شمار.</div> | /vault/lang/lang.ur.fe.php
-&nbsp; <div dir="rtl" style="display:inline;">اردو زبان کے اعداد و شمار.</div> | /vault/lang/lang.ur.php
-&nbsp; <div dir="rtl" style="display:inline;">CLI لئے ویتنامی زبان کے اعداد و شمار.</div> | /vault/lang/lang.vi.cli.php
-&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کے لئے ویتنامی زبان کے اعداد و شمار.</div> | /vault/lang/lang.vi.fe.php
-&nbsp; <div dir="rtl" style="display:inline;">ویتنامی زبان کے اعداد و شمار.</div> | /vault/lang/lang.vi.php
-&nbsp; <div dir="rtl" style="display:inline;">CLI کے لئے چینی (روایتی) زبان کے اعداد و شمار.</div> | /vault/lang/lang.zh-tw.cli.php
-&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کے لئے چینی (روایتی) زبان کے اعداد و شمار.</div> | /vault/lang/lang.zh-tw.fe.php
-&nbsp; <div dir="rtl" style="display:inline;">چینی (روایتی) زبان کے اعداد و شمار.</div> | /vault/lang/lang.zh-tw.php
-&nbsp; <div dir="rtl" style="display:inline;">چینی (آسان کردہ) CLI کے لئے زبان کو ڈیٹا کے.</div> | /vault/lang/lang.zh.cli.php
-&nbsp; <div dir="rtl" style="display:inline;">چینی کے سامنے کے آخر کے لئے (آسان کردہ) زبان کے اعداد و شمار.</div> | /vault/lang/lang.zh.fe.php
-&nbsp; <div dir="rtl" style="display:inline;">چینی (آسان کردہ) زبان کے اعداد و شمار.</div> | /vault/lang/lang.zh.php
-&nbsp; <div dir="rtl" style="display:inline;">ایک ہایپر ٹیکسٹ رسائی فائل (اس مثال میں، غیر مجاز ذرائع کی طرف سے حاصل کیا جا رہا ہے سے سکرپٹ سے تعلق رکھنے والے حساس فائلوں کی حفاظت کے لئے).</div> | /vault/.htaccess
-&nbsp; <div dir="rtl" style="display:inline;">جانچ کے لئے Travis CI کی طرف سے استعمال کیا جاتا ہے (رسم الخط کی مناسب تقریب کے لئے ضروری نہیں).</div> | /vault/.travis.php
-&nbsp; <div dir="rtl" style="display:inline;">جانچ کے لئے Travis CI کی طرف سے استعمال کیا جاتا ہے (رسم الخط کی مناسب تقریب کے لئے ضروری نہیں).</div> | /vault/.travis.yml
-&nbsp; <div dir="rtl" style="display:inline;">IP مجموعی طور پر.</div> | /vault/aggregator.php
-&nbsp; <div dir="rtl" style="display:inline;">معاون قوانین پر مشتمل ہے. پیکیج میں شامل نہیں. معاون قواعد کے صفحے کی طرف سے پیدا.</div> | /vault/auxiliary.yaml
-&nbsp; <div dir="rtl" style="display:inline;">کیشے کے اعداد و شمار.</div> | /vault/cache.dat
-&nbsp; <div dir="rtl" style="display:inline;">جب ضرورت ہو تو ایک حفاظتی میکانزم کی حیثیت سے پیدا.</div> | /vault/cache.dat.safety
-&nbsp; <div dir="rtl" style="display:inline;">Macmathan طرف سے فراہم اختیاری ملک blocklists سے متعلق معلومات پر مشتمل ہے؛ سامنے کے آخر میں اپ ڈیٹس صفحہ کے ذریعہ استعمال کیا جاتا ہے.</div> | /vault/cidramblocklists.dat
-&nbsp; <div dir="rtl" style="display:inline;">CLI ہینڈلر.</div> | /vault/cli.php
-&nbsp; <div dir="rtl" style="display:inline;">جزو میٹا ڈیٹا فائل؛ سامنے کے آخر میں اپ ڈیٹس صفحہ کے ذریعہ استعمال کیا جاتا ہے.</div> | /vault/components.dat
-&nbsp; <div dir="rtl" style="display:inline;">کنفگریشن فائل؛ CIDRAM کے تمام ترتیب کے اختیارات، کیا کرنا ہے یہ کہہ رہا ہے اور صحیح طریقے سے کام کرنے کے طریقے پر مشتمل ہے (چالو کرنے کا نام تبدیل).</div> | /vault/config.ini.RenameMe
-&nbsp; <div dir="rtl" style="display:inline;">کنفگریشن ہینڈلر.</div> | /vault/config.php
-&nbsp; <div dir="rtl" style="display:inline;">کنفگریشن ڈیفالٹس فائل؛ CIDRAM لئے پہلے سے طے شدہ ترتیب کے اقدار پر مشتمل ہے.</div> | /vault/config.yaml
-&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں ہینڈلر.</div> | /vault/frontend.php
-&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر افعال فائل.</div> | /vault/frontend_functions.php
-&nbsp; <div dir="rtl" style="display:inline;">افعال فائل (ضروری).</div> | /vault/functions.php
-&nbsp; <div dir="rtl" style="display:inline;">قبول کر لیا hashes کی ایک فہرست پر مشتمل ہے (ہیتی خصوصیت کرنا مناسب؛ صرف reCAPTCHA کے خصوصیت فعال ہے تو پیدا کیا).</div> | /vault/hashes.dat
-&nbsp; <div dir="rtl" style="display:inline;">ائل (CIDRAM کی پروا نہ کرے جس کے دستخط حصوں کی وضاحت کرنے کے لئے استعمال) کو نظر انداز.</div> | /vault/ignore.dat
-&nbsp; <div dir="rtl" style="display:inline;">IP بائ پاس کی ایک فہرست پر مشتمل ہے (ہیتی خصوصیت کرنا مناسب؛ صرف reCAPTCHA کے خصوصیت فعال ہے تو پیدا کیا).</div> | /vault/ipbypass.dat
-&nbsp; <div dir="rtl" style="display:inline;">IPv4 کی دستخط فائل (ناپسندیدہ کلاؤڈ سروسز اور غیر انسانی endpoints کے).</div> | /vault/ipv4.dat
-&nbsp; <div dir="rtl" style="display:inline;">IPv4 کی دستخط فائل (bogon/martian کی CIDR).</div> | /vault/ipv4_bogons.dat
-&nbsp; <div dir="rtl" style="display:inline;">IPv4 کی اپنی مرضی کے دستخط فائل (چالو کرنے کا نام تبدیل).</div> | /vault/ipv4_custom.dat.RenameMe
-&nbsp; <div dir="rtl" style="display:inline;">IPv4 کی دستخط فائل (خطرناک اور سپام آئی ایس پیز).</div> | /vault/ipv4_isps.dat
-&nbsp; <div dir="rtl" style="display:inline;">IPv4 کی دستخط فائل (کے لئے پراکسی جنگ لڑ، وپ، اور دیگر متفرق ناپسندیدہ خدمات CIDR).</div> | /vault/ipv4_other.dat
-&nbsp; <div dir="rtl" style="display:inline;">IPv6 کی دستخط فائل (ناپسندیدہ کلاؤڈ سروسز اور غیر انسانی endpoints کے).</div> | /vault/ipv6.dat
-&nbsp; <div dir="rtl" style="display:inline;">IPv6 کی دستخط فائل (bogon/martian کی CIDR).</div> | /vault/ipv6_bogons.dat
-&nbsp; <div dir="rtl" style="display:inline;">IPv6 کی اپنی مرضی کے دستخط فائل (چالو کرنے کا نام تبدیل).</div> | /vault/ipv6_custom.dat.RenameMe
-&nbsp; <div dir="rtl" style="display:inline;">IPv6 کی دستخط فائل (خطرناک اور سپام آئی ایس پیز).</div> | /vault/ipv6_isps.dat
-&nbsp; <div dir="rtl" style="display:inline;">IPv6 کی دستخط فائل (کے لئے پراکسی جنگ لڑ، وپ، اور دیگر متفرق ناپسندیدہ خدمات CIDR).</div> | /vault/ipv6_other.dat
-&nbsp; <div dir="rtl" style="display:inline;">زبان ہینڈلر.</div> | /vault/lang.php
-&nbsp; <div dir="rtl" style="display:inline;">ماڈیولز میٹا ڈیٹا فائل؛ سامنے کے آخر میں اپ ڈیٹس صفحہ کے ذریعہ استعمال کیا جاتا ہے.</div> | /vault/modules.dat
-&nbsp; <div dir="rtl" style="display:inline;">آؤٹ پٹ جنریٹر.</div> | /vault/outgen.php
-&nbsp; <div dir="rtl" style="display:inline;">PHP 5.4.X کے لئے Polyfills (PHP 5.4.X پیچھے کی طرف مطابقت کے لئے ضروری؛ محفوظ نئے PHP ورژن کے لئے حذف کرنا).</div> | /vault/php5.4.x.php
-&nbsp; <div dir="rtl" style="display:inline;">reCAPTCHA کے ماڈیول.</div> | /vault/recaptcha.php
-&nbsp; <div dir="rtl" style="display:inline;">اپنی مرضی کے قوانین AS6939 لئے دائر.</div> | /vault/rules_as6939.php
-&nbsp; <div dir="rtl" style="display:inline;">اپنی مرضی کے قوانین نرم پرت کے لئے دائر.</div> | /vault/rules_softlayer.php
-&nbsp; <div dir="rtl" style="display:inline;">اپنی مرضی کے قوانین میں کچھ مخصوص CIDR لئے دائر.</div> | /vault/rules_specific.php
-&nbsp; <div dir="rtl" style="display:inline;">سالٹ فائل (کچھ پردیی فعالیت کی طرف سے استعمال کیا جاتا؛ صرف ضرورت پڑنے پر پیدا).</div> | /vault/salt.dat
-&nbsp; <div dir="rtl" style="display:inline;">سانچہ فائل؛ CIDRAM پیداوار جنریٹر کی طرف سے تیار HTML پیداوار کے لئے سانچہ.</div> | /vault/template_custom.html
-&nbsp; <div dir="rtl" style="display:inline;">سانچہ فائل؛ CIDRAM پیداوار جنریٹر کی طرف سے تیار HTML پیداوار کے لئے سانچہ.</div> | /vault/template_default.html
-&nbsp; <div dir="rtl" style="display:inline;">موضوعات میٹا ڈیٹا فائل؛ سامنے کے آخر میں اپ ڈیٹس صفحہ کے ذریعہ استعمال کیا جاتا ہے.</div> | /vault/themes.dat
-&nbsp; <div dir="rtl" style="display:inline;">تلاش کے انجن اور سوشل میڈیا کے لئے توثیقی ڈیٹا.</div> | /vault/verification.yaml
-&nbsp; <div dir="rtl" style="display:inline;">A GitHub کے منصوبے فائل (رسم الخط کی مناسب تقریب کے لئے ضروری نہیں).</div> | /.gitattributes
-&nbsp; <div dir="rtl" style="display:inline;">مختلف ورژن کے درمیان سکرپٹ کی گئی تبدیلیوں کا ایک ریکارڈ (رسم الخط کی مناسب تقریب کے لئے ضروری نہیں).</div> | /Changelog.txt
-&nbsp; <div dir="rtl" style="display:inline;">کمپوزر / Packagist معلومات (رسم الخط کی مناسب تقریب کے لئے ضروری نہیں).</div> | /composer.json
-&nbsp; <div dir="rtl" style="display:inline;">اس منصوبے میں شراکت کے لئے کس طرح کے بارے میں معلومات.</div> | /CONTRIBUTING.md
-&nbsp; <div dir="rtl" style="display:inline;">GNU/GPLv2 اجازت نامے کی ایک نقل (رسم الخط کی مناسب تقریب کے لئے ضروری نہیں).</div> | /LICENSE.txt
-&nbsp; <div dir="rtl" style="display:inline;">لوڈر. اس سے آپ میں hooking ہونا چاہیے رہے ہیں کیا ہوتا ہے (ضروری)!</div> | /loader.php
-&nbsp; <div dir="rtl" style="display:inline;">پروجیکٹ کے خلاصے کی معلومات.</div> | /README.md
-&nbsp; <div dir="rtl" style="display:inline;">ایک ASP.NET کنفیگریشن فائل (اس مثال میں، ایونٹ میں غیر مجاز ذرائع سکرپٹ ASP.NET ٹیکنالوجیز کی بنیاد پر ایک سرور پر نصب کیا جاتا ہے کہ کی طرف سے حاصل کیا جا رہا ہے سے "/vault" ڈائریکٹری کی حفاظت کے لئے).</div> | /web.config
+&nbsp; <div dir="rtl" style="display:inline">دستاویزی ڈائریکٹری (مختلف فائلوں پر مشتمل ہے).</div> | /_docs/
+&nbsp; <div dir="rtl" style="display:inline">عربی دستاویزات.</div> | /_docs/readme.ar.md
+&nbsp; <div dir="rtl" style="display:inline">جرمن دستاویزات.</div> | /_docs/readme.de.md
+&nbsp; <div dir="rtl" style="display:inline">انگریزی دستاویزات.</div> | /_docs/readme.en.md
+&nbsp; <div dir="rtl" style="display:inline">ہسپانوی دستاویزات.</div> | /_docs/readme.es.md
+&nbsp; <div dir="rtl" style="display:inline">فرانسیسی دستاویزات.</div> | /_docs/readme.fr.md
+&nbsp; <div dir="rtl" style="display:inline">انڈونیشیا دستاویزات.</div> | /_docs/readme.id.md
+&nbsp; <div dir="rtl" style="display:inline">اطالوی دستاویزات.</div> | /_docs/readme.it.md
+&nbsp; <div dir="rtl" style="display:inline">جاپانی دستاویزات.</div> | /_docs/readme.ja.md
+&nbsp; <div dir="rtl" style="display:inline">کوریا دستاویزات.</div> | /_docs/readme.ko.md
+&nbsp; <div dir="rtl" style="display:inline">ڈچ دستاویزات.</div> | /_docs/readme.nl.md
+&nbsp; <div dir="rtl" style="display:inline">پرتگالی دستاویزات.</div> | /_docs/readme.pt.md
+&nbsp; <div dir="rtl" style="display:inline">روسی دستاویزات.</div> | /_docs/readme.ru.md
+&nbsp; <div dir="rtl" style="display:inline">اردو دستاویزات.</div> | /_docs/readme.ur.md
+&nbsp; <div dir="rtl" style="display:inline">ویتنامی دستاویزات.</div> | /_docs/readme.vi.md
+&nbsp; <div dir="rtl" style="display:inline">چینی (روایتی) دستاویزات.</div> | /_docs/readme.zh-TW.md
+&nbsp; <div dir="rtl" style="display:inline">چینی (آسان کردہ) دستاویزات.</div> | /_docs/readme.zh.md
+&nbsp; <div dir="rtl" style="display:inline">والٹ ڈائریکٹری (مختلف فائلوں پر مشتمل ہے).</div> | /vault/
+&nbsp; <div dir="rtl" style="display:inline">سامنے کے آخر میں کے اثاثے.</div> | /vault/fe_assets/
+&nbsp; <div dir="rtl" style="display:inline">ایک ہایپر ٹیکسٹ رسائی فائل (اس مثال میں، غیر مجاز ذرائع کی طرف سے حاصل کیا جا رہا ہے سے سکرپٹ سے تعلق رکھنے والے حساس فائلوں کی حفاظت کے لئے).</div> | /vault/fe_assets/.htaccess
+&nbsp; <div dir="rtl" style="display:inline">صارف کو 2FA کوڈ کے لئے پوچھتے وقت ایک HTML ٹیمپلیٹ استعمال کیا جاتا ہے.</div> | /vault/fe_assets/_2fa.html
+&nbsp; <div dir="rtl" style="display:inline">سامنے کے آخر میں کے لئے ایک HTML سانچے اکاؤنٹس صفحہ.</div> | /vault/fe_assets/_accounts.html
+&nbsp; <div dir="rtl" style="display:inline">سامنے کے آخر میں کے لئے ایک HTML سانچے اکاؤنٹس صفحہ.</div> | /vault/fe_assets/_accounts_row.html
+&nbsp; <div dir="rtl" style="display:inline">سامنے کے آخر میں کے لئے ایک HTML سانچے اضافی قواعد صفحہ.</div> | /vault/fe_assets/_aux.html
+&nbsp; <div dir="rtl" style="display:inline">سامنے کے آخر میں کیش ڈیٹا صفحے کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_cache.html
+&nbsp; <div dir="rtl" style="display:inline">CIDR کیلکولیٹر کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_cidr_calc.html
+&nbsp; <div dir="rtl" style="display:inline">CIDR کیلکولیٹر کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_cidr_calc_row.html
+&nbsp; <div dir="rtl" style="display:inline">سامنے کے آخر میں ترتیب کے صفحے کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_config.html
+&nbsp; <div dir="rtl" style="display:inline">سامنے کے آخر میں ترتیب کے صفحے کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_config_row.html
+&nbsp; <div dir="rtl" style="display:inline">فائل مینیجر کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_files.html
+&nbsp; <div dir="rtl" style="display:inline">فائل مینیجر کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_files_edit.html
+&nbsp; <div dir="rtl" style="display:inline">فائل مینیجر کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_files_rename.html
+&nbsp; <div dir="rtl" style="display:inline">فائل مینیجر کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_files_row.html
+&nbsp; <div dir="rtl" style="display:inline">سامنے کے آخر میں کے ہوم پیج کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_home.html
+&nbsp; <div dir="rtl" style="display:inline">IP مجموعی طور پر کے صفحے کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_ip_aggregator.html
+&nbsp; <div dir="rtl" style="display:inline">IP ٹیسٹ کے صفحے کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_ip_test.html
+&nbsp; <div dir="rtl" style="display:inline">IP ٹیسٹ کے صفحے کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_ip_test_row.html
+&nbsp; <div dir="rtl" style="display:inline">IP باخبر رہنے کے صفحے کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_ip_tracking.html
+&nbsp; <div dir="rtl" style="display:inline">IP باخبر رہنے کے صفحے کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_ip_tracking_row.html
+&nbsp; <div dir="rtl" style="display:inline">سامنے کے آخر میں لاگ ان کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_login.html
+&nbsp; <div dir="rtl" style="display:inline">سامنے کے آخر لاگز صفحے کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_logs.html
+&nbsp; <div dir="rtl" style="display:inline">مکمل رسائی کے ساتھ ان لوگوں کے لئے سامنے کے آخر نیویگیشن روابط کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_nav_complete_access.html
+&nbsp; <div dir="rtl" style="display:inline">لاگز کے ساتھ ان لوگوں کے لئے سامنے کے آخر نیویگیشن روابط کے لئے ایک HTML سانچے، صرف تک رسائی.</div> | /vault/fe_assets/_nav_logs_access_only.html
+&nbsp; <div dir="rtl" style="display:inline">رینج میزیں لئے ایک HTML سانچے.</div> | /vault/fe_assets/_range.html
+&nbsp; <div dir="rtl" style="display:inline">رینج میزیں لئے ایک HTML سانچے.</div> | /vault/fe_assets/_range_row.html
+&nbsp; <div dir="rtl" style="display:inline">حصوں کی فہرست کے لئے ایک HTML ٹیمپلیٹ.</div> | /vault/fe_assets/_sections.html
+&nbsp; <div dir="rtl" style="display:inline">سامنے کے آخر میں اعداد و شمار صفحے کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_statistics.html
+&nbsp; <div dir="rtl" style="display:inline">سامنے کے آخر میں اپ ڈیٹس صفحے کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_updates.html
+&nbsp; <div dir="rtl" style="display:inline">سامنے کے آخر میں اپ ڈیٹس صفحے کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_updates_row.html
+&nbsp; <div dir="rtl" style="display:inline">سامنے کے آخر میں کے لئے سی ایس ایس سٹائل شیٹ.</div> | /vault/fe_assets/frontend.css
+&nbsp; <div dir="rtl" style="display:inline">سامنے کے آخر میں کے لئے ڈیٹا بیس (اکاؤنٹ کی معلومات، سیشن کی معلومات، اور کیشے پر مشتمل ہے؛ سامنے کے آخر میں فعال اور استعمال کیا جاتا ہے تو صرف پیدا).</div> | /vault/fe_assets/frontend.dat
+&nbsp; <div dir="rtl" style="display:inline">جب ضرورت ہو تو ایک حفاظتی میکانزم کی حیثیت سے پیدا.</div> | /vault/fe_assets/frontend.dat.safety
+&nbsp; <div dir="rtl" style="display:inline">سامنے کے آخر میں کے لئے اہم HTML سانچے کی فائل.</div> | /vault/fe_assets/frontend.html
+&nbsp; <div dir="rtl" style="display:inline">شبیہیں کے ہینڈلر (سامنے کے آخر میں فائل مینیجر کی طرف سے استعمال کیا جاتا).</div> | /vault/fe_assets/icons.php
+&nbsp; <div dir="rtl" style="display:inline">پپس کے ہینڈلر (سامنے کے آخر میں فائل مینیجر کی طرف سے استعمال کیا جاتا).</div> | /vault/fe_assets/pips.php
+&nbsp; <div dir="rtl" style="display:inline">سامنے کے آخر جاوا اسکرپٹ ڈیٹا پر مشتمل ہے.</div> | /vault/fe_assets/scripts.js
+&nbsp; <div dir="rtl" style="display:inline">CIDRAM زبان کے اعداد و شمار پر مشتمل ہے.</div> | /vault/lang/
+&nbsp; <div dir="rtl" style="display:inline">ایک ہایپر ٹیکسٹ رسائی فائل (اس مثال میں، غیر مجاز ذرائع کی طرف سے حاصل کیا جا رہا ہے سے سکرپٹ سے تعلق رکھنے والے حساس فائلوں کی حفاظت کے لئے).</div> | /vault/lang/.htaccess
+&nbsp; <div dir="rtl" style="display:inline">CLI کے لئے عربی زبان کے اعداد و شمار.</div> | /vault/lang/lang.ar.cli.php
+&nbsp; <div dir="rtl" style="display:inline">سامنے کے آخر میں کے لئے عربی زبان کے اعداد و شمار.</div> | /vault/lang/lang.ar.fe.php
+&nbsp; <div dir="rtl" style="display:inline">عربی زبان کے اعداد و شمار.</div> | /vault/lang/lang.ar.php
+&nbsp; <div dir="rtl" style="display:inline">CLI کے لئے بنگلا زبان کے اعداد و شمار.</div> | /vault/lang/lang.bn.cli.php
+&nbsp; <div dir="rtl" style="display:inline">سامنے کے آخر میں کے لئے بنگلا زبان کے اعداد و شمار.</div> | /vault/lang/lang.bn.fe.php
+&nbsp; <div dir="rtl" style="display:inline">بنگلا زبان کے اعداد و شمار.</div> | /vault/lang/lang.bn.php
+&nbsp; <div dir="rtl" style="display:inline">CLI کے لئے جرمن زبان کے اعداد و شمار.</div> | /vault/lang/lang.de.cli.php
+&nbsp; <div dir="rtl" style="display:inline">سامنے کے آخر میں کے لئے جرمن زبان کے اعداد و شمار.</div> | /vault/lang/lang.de.fe.php
+&nbsp; <div dir="rtl" style="display:inline">جرمن زبان کے اعداد و شمار.</div> | /vault/lang/lang.de.php
+&nbsp; <div dir="rtl" style="display:inline">CLI کے لئے انگریزی زبان کے اعداد و شمار.</div> | /vault/lang/lang.en.cli.php
+&nbsp; <div dir="rtl" style="display:inline">سامنے کے آخر میں کے لئے انگریزی زبان کے اعداد و شمار.</div> | /vault/lang/lang.en.fe.php
+&nbsp; <div dir="rtl" style="display:inline">انگریزی زبان کے اعداد و شمار.</div> | /vault/lang/lang.en.php
+&nbsp; <div dir="rtl" style="display:inline">CLI کے لئے ہسپانوی زبان کے اعداد و شمار.</div> | /vault/lang/lang.es.cli.php
+&nbsp; <div dir="rtl" style="display:inline">سامنے کے آخر میں کے لئے ہسپانوی زبان کے اعداد و شمار.</div> | /vault/lang/lang.es.fe.php
+&nbsp; <div dir="rtl" style="display:inline">ہسپانوی زبان کے اعداد و شمار.</div> | /vault/lang/lang.es.php
+&nbsp; <div dir="rtl" style="display:inline">CLI کے لئے فرانسیسی زبان کے اعداد و شمار.</div> | /vault/lang/lang.fr.cli.php
+&nbsp; <div dir="rtl" style="display:inline">سامنے کے آخر میں کے لئے فرانسیسی زبان کے اعداد و شمار.</div> | /vault/lang/lang.fr.fe.php
+&nbsp; <div dir="rtl" style="display:inline">فرانسیسی زبان کے اعداد و شمار.</div> | /vault/lang/lang.fr.php
+&nbsp; <div dir="rtl" style="display:inline">CLI کے لئے ہندی زبان کے اعداد و شمار.</div> | /vault/lang/lang.hi.cli.php
+&nbsp; <div dir="rtl" style="display:inline">سامنے کے آخر میں کے لئے ہندی زبان کے اعداد و شمار.</div> | /vault/lang/lang.hi.fe.php
+&nbsp; <div dir="rtl" style="display:inline">ہندی زبان کے اعداد و شمار.</div> | /vault/lang/lang.hi.php
+&nbsp; <div dir="rtl" style="display:inline">CLI لئے انڈونیشی زبان کے اعداد و شمار.</div> | /vault/lang/lang.id.cli.php
+&nbsp; <div dir="rtl" style="display:inline">سامنے کے آخر میں کے لئے انڈونیشی زبان کے اعداد و شمار.</div> | /vault/lang/lang.id.fe.php
+&nbsp; <div dir="rtl" style="display:inline">انڈونیشی زبان کے اعداد و شمار.</div> | /vault/lang/lang.id.php
+&nbsp; <div dir="rtl" style="display:inline">CLI کے لئے اطالوی زبان کے اعداد و شمار.</div> | /vault/lang/lang.it.cli.php
+&nbsp; <div dir="rtl" style="display:inline">سامنے کے آخر میں کے لئے اطالوی زبان کے اعداد و شمار.</div> | /vault/lang/lang.it.fe.php
+&nbsp; <div dir="rtl" style="display:inline">اطالوی زبان کے اعداد و شمار.</div> | /vault/lang/lang.it.php
+&nbsp; <div dir="rtl" style="display:inline">CLI کے لئے جاپانی زبان کے اعداد و شمار.</div> | /vault/lang/lang.ja.cli.php
+&nbsp; <div dir="rtl" style="display:inline">سامنے کے آخر میں کے لئے جاپانی زبان کے اعداد و شمار.</div> | /vault/lang/lang.ja.fe.php
+&nbsp; <div dir="rtl" style="display:inline">جاپانی زبان کے اعداد و شمار.</div> | /vault/lang/lang.ja.php
+&nbsp; <div dir="rtl" style="display:inline">CLI لیے کوریائی زبان کے اعداد و شمار.</div> | /vault/lang/lang.ko.cli.php
+&nbsp; <div dir="rtl" style="display:inline">سامنے کے آخر میں کے لئے کوریائی زبان کے اعداد و شمار.</div> | /vault/lang/lang.ko.fe.php
+&nbsp; <div dir="rtl" style="display:inline">کورین زبان کے اعداد و شمار.</div> | /vault/lang/lang.ko.php
+&nbsp; <div dir="rtl" style="display:inline">CLI کے لئے ڈچ زبان کے اعداد و شمار.</div> | /vault/lang/lang.nl.cli.php
+&nbsp; <div dir="rtl" style="display:inline">سامنے کے آخر میں کے لئے ڈچ زبان کے اعداد و شمار.</div> | /vault/lang/lang.nl.fe.php
+&nbsp; <div dir="rtl" style="display:inline">ڈچ زبان کے اعداد و شمار.</div> | /vault/lang/lang.nl.php
+&nbsp; <div dir="rtl" style="display:inline">CLI کے لئے ناروے زبان کے اعداد و شمار.</div> | /vault/lang/lang.no.cli.php
+&nbsp; <div dir="rtl" style="display:inline">سامنے کے آخر میں کے لئے ناروے زبان کے اعداد و شمار.</div> | /vault/lang/lang.no.fe.php
+&nbsp; <div dir="rtl" style="display:inline">ناروے زبان کے اعداد و شمار.</div> | /vault/lang/lang.no.php
+&nbsp; <div dir="rtl" style="display:inline">CLI کے لئے پرتگالی زبان کے اعداد و شمار.</div> | /vault/lang/lang.pt.cli.php
+&nbsp; <div dir="rtl" style="display:inline">سامنے کے آخر میں کے لئے پرتگالی زبان کے اعداد و شمار.</div> | /vault/lang/lang.pt.fe.php
+&nbsp; <div dir="rtl" style="display:inline">پرتگالی زبان کے اعداد و شمار.</div> | /vault/lang/lang.pt.php
+&nbsp; <div dir="rtl" style="display:inline">CLI کے لئے روسی زبان کے اعداد و شمار.</div> | /vault/lang/lang.ru.cli.php
+&nbsp; <div dir="rtl" style="display:inline">سامنے کے آخر میں کے لئے روسی زبان کے اعداد و شمار.</div> | /vault/lang/lang.ru.fe.php
+&nbsp; <div dir="rtl" style="display:inline">روسی زبان کے اعداد و شمار.</div> | /vault/lang/lang.ru.php
+&nbsp; <div dir="rtl" style="display:inline">CLI کے لئے سویڈش زبان کے اعداد و شمار.</div> | /vault/lang/lang.sv.cli.php
+&nbsp; <div dir="rtl" style="display:inline">سامنے کے آخر میں کے لئے سویڈش زبان کے اعداد و شمار.</div> | /vault/lang/lang.sv.fe.php
+&nbsp; <div dir="rtl" style="display:inline">سویڈش زبان کے اعداد و شمار.</div> | /vault/lang/lang.sv.php
+&nbsp; <div dir="rtl" style="display:inline">CLI کے لئے تھائی زبان کے اعداد و شمار.</div> | /vault/lang/lang.th.cli.php
+&nbsp; <div dir="rtl" style="display:inline">سامنے کے آخر میں کے لئے تھائی زبان کے اعداد و شمار.</div> | /vault/lang/lang.th.fe.php
+&nbsp; <div dir="rtl" style="display:inline">تھائی زبان کے اعداد و شمار.</div> | /vault/lang/lang.th.php
+&nbsp; <div dir="rtl" style="display:inline">CLI کے لئے ترکی زبان کے اعداد و شمار.</div> | /vault/lang/lang.tr.cli.php
+&nbsp; <div dir="rtl" style="display:inline">سامنے کے آخر میں کے لئے ترکی زبان کے اعداد و شمار.</div> | /vault/lang/lang.tr.fe.php
+&nbsp; <div dir="rtl" style="display:inline">ترکی زبان کے اعداد و شمار.</div> | /vault/lang/lang.tr.php
+&nbsp; <div dir="rtl" style="display:inline">CLI کے لئے اردو زبان کے اعداد و شمار.</div> | /vault/lang/lang.ur.cli.php
+&nbsp; <div dir="rtl" style="display:inline">سامنے کے آخر میں کے لئے اردو زبان کے اعداد و شمار.</div> | /vault/lang/lang.ur.fe.php
+&nbsp; <div dir="rtl" style="display:inline">اردو زبان کے اعداد و شمار.</div> | /vault/lang/lang.ur.php
+&nbsp; <div dir="rtl" style="display:inline">CLI لئے ویتنامی زبان کے اعداد و شمار.</div> | /vault/lang/lang.vi.cli.php
+&nbsp; <div dir="rtl" style="display:inline">سامنے کے آخر میں کے لئے ویتنامی زبان کے اعداد و شمار.</div> | /vault/lang/lang.vi.fe.php
+&nbsp; <div dir="rtl" style="display:inline">ویتنامی زبان کے اعداد و شمار.</div> | /vault/lang/lang.vi.php
+&nbsp; <div dir="rtl" style="display:inline">CLI کے لئے چینی (روایتی) زبان کے اعداد و شمار.</div> | /vault/lang/lang.zh-tw.cli.php
+&nbsp; <div dir="rtl" style="display:inline">سامنے کے آخر میں کے لئے چینی (روایتی) زبان کے اعداد و شمار.</div> | /vault/lang/lang.zh-tw.fe.php
+&nbsp; <div dir="rtl" style="display:inline">چینی (روایتی) زبان کے اعداد و شمار.</div> | /vault/lang/lang.zh-tw.php
+&nbsp; <div dir="rtl" style="display:inline">چینی (آسان کردہ) CLI کے لئے زبان کو ڈیٹا کے.</div> | /vault/lang/lang.zh.cli.php
+&nbsp; <div dir="rtl" style="display:inline">چینی کے سامنے کے آخر کے لئے (آسان کردہ) زبان کے اعداد و شمار.</div> | /vault/lang/lang.zh.fe.php
+&nbsp; <div dir="rtl" style="display:inline">چینی (آسان کردہ) زبان کے اعداد و شمار.</div> | /vault/lang/lang.zh.php
+&nbsp; <div dir="rtl" style="display:inline">ایک ہایپر ٹیکسٹ رسائی فائل (اس مثال میں، غیر مجاز ذرائع کی طرف سے حاصل کیا جا رہا ہے سے سکرپٹ سے تعلق رکھنے والے حساس فائلوں کی حفاظت کے لئے).</div> | /vault/.htaccess
+&nbsp; <div dir="rtl" style="display:inline">جانچ کے لئے Travis CI کی طرف سے استعمال کیا جاتا ہے (رسم الخط کی مناسب تقریب کے لئے ضروری نہیں).</div> | /vault/.travis.php
+&nbsp; <div dir="rtl" style="display:inline">جانچ کے لئے Travis CI کی طرف سے استعمال کیا جاتا ہے (رسم الخط کی مناسب تقریب کے لئے ضروری نہیں).</div> | /vault/.travis.yml
+&nbsp; <div dir="rtl" style="display:inline">IP مجموعی طور پر.</div> | /vault/aggregator.php
+&nbsp; <div dir="rtl" style="display:inline">معاون قوانین پر مشتمل ہے. پیکیج میں شامل نہیں. معاون قواعد کے صفحے کی طرف سے پیدا.</div> | /vault/auxiliary.yaml
+&nbsp; <div dir="rtl" style="display:inline">کیشے کے اعداد و شمار.</div> | /vault/cache.dat
+&nbsp; <div dir="rtl" style="display:inline">جب ضرورت ہو تو ایک حفاظتی میکانزم کی حیثیت سے پیدا.</div> | /vault/cache.dat.safety
+&nbsp; <div dir="rtl" style="display:inline">Macmathan طرف سے فراہم اختیاری ملک blocklists سے متعلق معلومات پر مشتمل ہے؛ سامنے کے آخر میں اپ ڈیٹس صفحہ کے ذریعہ استعمال کیا جاتا ہے.</div> | /vault/cidramblocklists.dat
+&nbsp; <div dir="rtl" style="display:inline">CLI ہینڈلر.</div> | /vault/cli.php
+&nbsp; <div dir="rtl" style="display:inline">جزو میٹا ڈیٹا فائل؛ سامنے کے آخر میں اپ ڈیٹس صفحہ کے ذریعہ استعمال کیا جاتا ہے.</div> | /vault/components.dat
+&nbsp; <div dir="rtl" style="display:inline">کنفگریشن فائل؛ CIDRAM کے تمام ترتیب کے اختیارات، کیا کرنا ہے یہ کہہ رہا ہے اور صحیح طریقے سے کام کرنے کے طریقے پر مشتمل ہے (چالو کرنے کا نام تبدیل).</div> | /vault/config.ini.RenameMe
+&nbsp; <div dir="rtl" style="display:inline">کنفگریشن ہینڈلر.</div> | /vault/config.php
+&nbsp; <div dir="rtl" style="display:inline">کنفگریشن ڈیفالٹس فائل؛ CIDRAM لئے پہلے سے طے شدہ ترتیب کے اقدار پر مشتمل ہے.</div> | /vault/config.yaml
+&nbsp; <div dir="rtl" style="display:inline">سامنے کے آخر میں ہینڈلر.</div> | /vault/frontend.php
+&nbsp; <div dir="rtl" style="display:inline">سامنے کے آخر افعال فائل.</div> | /vault/frontend_functions.php
+&nbsp; <div dir="rtl" style="display:inline">افعال فائل (ضروری).</div> | /vault/functions.php
+&nbsp; <div dir="rtl" style="display:inline">قبول کر لیا hashes کی ایک فہرست پر مشتمل ہے (ہیتی خصوصیت کرنا مناسب؛ صرف reCAPTCHA کے خصوصیت فعال ہے تو پیدا کیا).</div> | /vault/hashes.dat
+&nbsp; <div dir="rtl" style="display:inline">ائل (CIDRAM کی پروا نہ کرے جس کے دستخط حصوں کی وضاحت کرنے کے لئے استعمال) کو نظر انداز.</div> | /vault/ignore.dat
+&nbsp; <div dir="rtl" style="display:inline">IP بائ پاس کی ایک فہرست پر مشتمل ہے (ہیتی خصوصیت کرنا مناسب؛ صرف reCAPTCHA کے خصوصیت فعال ہے تو پیدا کیا).</div> | /vault/ipbypass.dat
+&nbsp; <div dir="rtl" style="display:inline">IPv4 کی دستخط فائل (ناپسندیدہ کلاؤڈ سروسز اور غیر انسانی endpoints کے).</div> | /vault/ipv4.dat
+&nbsp; <div dir="rtl" style="display:inline">IPv4 کی دستخط فائل (bogon/martian کی CIDR).</div> | /vault/ipv4_bogons.dat
+&nbsp; <div dir="rtl" style="display:inline">IPv4 کی اپنی مرضی کے دستخط فائل (چالو کرنے کا نام تبدیل).</div> | /vault/ipv4_custom.dat.RenameMe
+&nbsp; <div dir="rtl" style="display:inline">IPv4 کی دستخط فائل (خطرناک اور سپام آئی ایس پیز).</div> | /vault/ipv4_isps.dat
+&nbsp; <div dir="rtl" style="display:inline">IPv4 کی دستخط فائل (کے لئے پراکسی جنگ لڑ، وپ، اور دیگر متفرق ناپسندیدہ خدمات CIDR).</div> | /vault/ipv4_other.dat
+&nbsp; <div dir="rtl" style="display:inline">IPv6 کی دستخط فائل (ناپسندیدہ کلاؤڈ سروسز اور غیر انسانی endpoints کے).</div> | /vault/ipv6.dat
+&nbsp; <div dir="rtl" style="display:inline">IPv6 کی دستخط فائل (bogon/martian کی CIDR).</div> | /vault/ipv6_bogons.dat
+&nbsp; <div dir="rtl" style="display:inline">IPv6 کی اپنی مرضی کے دستخط فائل (چالو کرنے کا نام تبدیل).</div> | /vault/ipv6_custom.dat.RenameMe
+&nbsp; <div dir="rtl" style="display:inline">IPv6 کی دستخط فائل (خطرناک اور سپام آئی ایس پیز).</div> | /vault/ipv6_isps.dat
+&nbsp; <div dir="rtl" style="display:inline">IPv6 کی دستخط فائل (کے لئے پراکسی جنگ لڑ، وپ، اور دیگر متفرق ناپسندیدہ خدمات CIDR).</div> | /vault/ipv6_other.dat
+&nbsp; <div dir="rtl" style="display:inline">زبان ہینڈلر.</div> | /vault/lang.php
+&nbsp; <div dir="rtl" style="display:inline">ماڈیولز میٹا ڈیٹا فائل؛ سامنے کے آخر میں اپ ڈیٹس صفحہ کے ذریعہ استعمال کیا جاتا ہے.</div> | /vault/modules.dat
+&nbsp; <div dir="rtl" style="display:inline">آؤٹ پٹ جنریٹر.</div> | /vault/outgen.php
+&nbsp; <div dir="rtl" style="display:inline">PHP 5.4.X کے لئے Polyfills (PHP 5.4.X پیچھے کی طرف مطابقت کے لئے ضروری؛ محفوظ نئے PHP ورژن کے لئے حذف کرنا).</div> | /vault/php5.4.x.php
+&nbsp; <div dir="rtl" style="display:inline">reCAPTCHA کے ماڈیول.</div> | /vault/recaptcha.php
+&nbsp; <div dir="rtl" style="display:inline">اپنی مرضی کے قوانین AS6939 لئے دائر.</div> | /vault/rules_as6939.php
+&nbsp; <div dir="rtl" style="display:inline">اپنی مرضی کے قوانین نرم پرت کے لئے دائر.</div> | /vault/rules_softlayer.php
+&nbsp; <div dir="rtl" style="display:inline">اپنی مرضی کے قوانین میں کچھ مخصوص CIDR لئے دائر.</div> | /vault/rules_specific.php
+&nbsp; <div dir="rtl" style="display:inline">سالٹ فائل (کچھ پردیی فعالیت کی طرف سے استعمال کیا جاتا؛ صرف ضرورت پڑنے پر پیدا).</div> | /vault/salt.dat
+&nbsp; <div dir="rtl" style="display:inline">سانچہ فائل؛ CIDRAM پیداوار جنریٹر کی طرف سے تیار HTML پیداوار کے لئے سانچہ.</div> | /vault/template_custom.html
+&nbsp; <div dir="rtl" style="display:inline">سانچہ فائل؛ CIDRAM پیداوار جنریٹر کی طرف سے تیار HTML پیداوار کے لئے سانچہ.</div> | /vault/template_default.html
+&nbsp; <div dir="rtl" style="display:inline">موضوعات میٹا ڈیٹا فائل؛ سامنے کے آخر میں اپ ڈیٹس صفحہ کے ذریعہ استعمال کیا جاتا ہے.</div> | /vault/themes.dat
+&nbsp; <div dir="rtl" style="display:inline">تلاش کے انجن اور سوشل میڈیا کے لئے توثیقی ڈیٹا.</div> | /vault/verification.yaml
+&nbsp; <div dir="rtl" style="display:inline">A GitHub کے منصوبے فائل (رسم الخط کی مناسب تقریب کے لئے ضروری نہیں).</div> | /.gitattributes
+&nbsp; <div dir="rtl" style="display:inline">مختلف ورژن کے درمیان سکرپٹ کی گئی تبدیلیوں کا ایک ریکارڈ (رسم الخط کی مناسب تقریب کے لئے ضروری نہیں).</div> | /Changelog.txt
+&nbsp; <div dir="rtl" style="display:inline">کمپوزر / Packagist معلومات (رسم الخط کی مناسب تقریب کے لئے ضروری نہیں).</div> | /composer.json
+&nbsp; <div dir="rtl" style="display:inline">اس منصوبے میں شراکت کے لئے کس طرح کے بارے میں معلومات.</div> | /CONTRIBUTING.md
+&nbsp; <div dir="rtl" style="display:inline">GNU/GPLv2 اجازت نامے کی ایک نقل (رسم الخط کی مناسب تقریب کے لئے ضروری نہیں).</div> | /LICENSE.txt
+&nbsp; <div dir="rtl" style="display:inline">لوڈر. اس سے آپ میں hooking ہونا چاہیے رہے ہیں کیا ہوتا ہے (ضروری)!</div> | /loader.php
+&nbsp; <div dir="rtl" style="display:inline">پروجیکٹ کے خلاصے کی معلومات.</div> | /README.md
+&nbsp; <div dir="rtl" style="display:inline">ایک ASP.NET کنفیگریشن فائل (اس مثال میں، ایونٹ میں غیر مجاز ذرائع سکرپٹ ASP.NET ٹیکنالوجیز کی بنیاد پر ایک سرور پر نصب کیا جاتا ہے کہ کی طرف سے حاصل کیا جا رہا ہے سے "/vault" ڈائریکٹری کی حفاظت کے لئے).</div> | /web.config
 
 ---
 
@@ -387,15 +387,15 @@
 
 <div dir="rtl">"ipaddr" کے لئے سفارش کی اقدار:<br /><br /></div>
 
-&nbsp; <div dir="rtl" style="display:inline;">قدر</div> | &nbsp; <div dir="rtl" style="display:inline;">استعمال</div>
+&nbsp; <div dir="rtl" style="display:inline">قدر</div> | &nbsp; <div dir="rtl" style="display:inline">استعمال</div>
 ---|---
 `HTTP_INCAP_CLIENT_IP` | Incapsula reverse proxy (ریورس پراکسی).
 `HTTP_CF_CONNECTING_IP` | Cloudflare reverse proxy (ریورس پراکسی).
 `CF-Connecting-IP` | Cloudflare reverse proxy (ریورس پراکسی؛ متبادل؛ مندرجہ بالا کام نہیں کرتا تو).
 `HTTP_X_FORWARDED_FOR` | Cloudbric reverse proxy (ریورس پراکسی).
 `X-Forwarded-For` | [Squid reverse proxy (ریورس پراکسی)](http://www.squid-cache.org/Doc/config/forwarded_for/).
-&nbsp; <div dir="rtl" style="display:inline;"><em>سرور کی ترتیب کی طرف سے وضاحت کی گئی.</em></div> | [Nginx reverse proxy (ریورس پراکسی)](https://www.nginx.com/resources/admin-guide/reverse-proxy/).
-`REMOTE_ADDR` | &nbsp; <div dir="rtl" style="display:inline;">نہیں کسی بھی ریورس پراکسی (پہلے سے طے شدہ قیمت).</div>
+&nbsp; <div dir="rtl" style="display:inline"><em>سرور کی ترتیب کی طرف سے وضاحت کی گئی.</em></div> | [Nginx reverse proxy (ریورس پراکسی)](https://www.nginx.com/resources/admin-guide/reverse-proxy/).
+`REMOTE_ADDR` | &nbsp; <div dir="rtl" style="display:inline">نہیں کسی بھی ریورس پراکسی (پہلے سے طے شدہ قیمت).</div>
 
 ##### <div dir="rtl">"forbid_on_block"<br /></div>
 <div dir="rtl"><ul>
@@ -1169,19 +1169,19 @@ if ($CIDRAM['Hostname'] && $CIDRAM['Hostname'] !== $CIDRAM['BlockInfo']['IPAddr'
 
 <div dir="rtl">مندرجہ ذیل فہرست کچھ عام متغیر ہیں جو آپ کے ماڈیول کے لئے مفید ہوسکتے ہیں:<br /><br /></div>
 
-&nbsp; <div dir="rtl" style="display:inline;">تفصیل</div> | <div dir="rtl" style="display:inline;">متغیر</div>
+&nbsp; <div dir="rtl" style="display:inline">تفصیل</div> | <div dir="rtl" style="display:inline">متغیر</div>
 ----|----
-&nbsp; <div dir="rtl" style="display:inline;">موجودہ تاریخ اور وقت.</div> | `$CIDRAM['BlockInfo']['DateTime']`
-&nbsp; <div dir="rtl" style="display:inline;">موجودہ درخواست کے لئے IP ایڈریس.</div> | `$CIDRAM['BlockInfo']['IPAddr']`
-&nbsp; <div dir="rtl" style="display:inline;">CIDRAM سکرپٹ ورژن.</div> | `$CIDRAM['BlockInfo']['ScriptIdent']`
-&nbsp; <div dir="rtl" style="display:inline;">موجودہ درخواست کے لئے سوال.</div> | `$CIDRAM['BlockInfo']['Query']`
-&nbsp; <div dir="rtl" style="display:inline;">موجودہ درخواست کے لئے ریفرر (اگر ایک موجود ہے).</div> | `$CIDRAM['BlockInfo']['Referrer']`
-&nbsp; <div dir="rtl" style="display:inline;">موجودہ درخواست کے لئے صارف ایجنٹ (user agent).</div> | `$CIDRAM['BlockInfo']['UA']`
-&nbsp; <div dir="rtl" style="display:inline;">موجودہ درخواست کے لئے کم کیس میں صارف ایجنٹ (user agent).</div> | `$CIDRAM['BlockInfo']['UALC']`
-&nbsp; <div dir="rtl" style="display:inline;">جب صارف کو بلاک کردیا جاتا ہے تو صارف کو ظاہر کرنے کا پیغام.</div> | `$CIDRAM['BlockInfo']['ReasonMessage']`
-&nbsp; <div dir="rtl" style="display:inline;">دستخط کی تعداد موجودہ درخواست کے لئے شروع ہوگئی ہے.</div> | `$CIDRAM['BlockInfo']['SignatureCount']`
-&nbsp; <div dir="rtl" style="display:inline;">کسی بھی دستخط کے لئے حوالہ کی معلومات موجودہ درخواست کے لئے تیار ہوئی.</div> | `$CIDRAM['BlockInfo']['Signatures']`
-&nbsp; <div dir="rtl" style="display:inline;">کسی بھی دستخط کے لئے حوالہ کی معلومات موجودہ درخواست کے لئے تیار ہوئی.</div> | `$CIDRAM['BlockInfo']['WhyReason']`
+&nbsp; <div dir="rtl" style="display:inline">موجودہ تاریخ اور وقت.</div> | `$CIDRAM['BlockInfo']['DateTime']`
+&nbsp; <div dir="rtl" style="display:inline">موجودہ درخواست کے لئے IP ایڈریس.</div> | `$CIDRAM['BlockInfo']['IPAddr']`
+&nbsp; <div dir="rtl" style="display:inline">CIDRAM سکرپٹ ورژن.</div> | `$CIDRAM['BlockInfo']['ScriptIdent']`
+&nbsp; <div dir="rtl" style="display:inline">موجودہ درخواست کے لئے سوال.</div> | `$CIDRAM['BlockInfo']['Query']`
+&nbsp; <div dir="rtl" style="display:inline">موجودہ درخواست کے لئے ریفرر (اگر ایک موجود ہے).</div> | `$CIDRAM['BlockInfo']['Referrer']`
+&nbsp; <div dir="rtl" style="display:inline">موجودہ درخواست کے لئے صارف ایجنٹ (user agent).</div> | `$CIDRAM['BlockInfo']['UA']`
+&nbsp; <div dir="rtl" style="display:inline">موجودہ درخواست کے لئے کم کیس میں صارف ایجنٹ (user agent).</div> | `$CIDRAM['BlockInfo']['UALC']`
+&nbsp; <div dir="rtl" style="display:inline">جب صارف کو بلاک کردیا جاتا ہے تو صارف کو ظاہر کرنے کا پیغام.</div> | `$CIDRAM['BlockInfo']['ReasonMessage']`
+&nbsp; <div dir="rtl" style="display:inline">دستخط کی تعداد موجودہ درخواست کے لئے شروع ہوگئی ہے.</div> | `$CIDRAM['BlockInfo']['SignatureCount']`
+&nbsp; <div dir="rtl" style="display:inline">کسی بھی دستخط کے لئے حوالہ کی معلومات موجودہ درخواست کے لئے تیار ہوئی.</div> | `$CIDRAM['BlockInfo']['Signatures']`
+&nbsp; <div dir="rtl" style="display:inline">کسی بھی دستخط کے لئے حوالہ کی معلومات موجودہ درخواست کے لئے تیار ہوئی.</div> | `$CIDRAM['BlockInfo']['WhyReason']`
 
 ---
 
@@ -1267,10 +1267,10 @@ $Trigger(strpos($CIDRAM['BlockInfo']['UA'], 'Foobar') !== false, 'Foobar-UA', 'U
 
 <div dir="rtl">یہ مندرجہ ذیل ٹیبل کی طرف سے بیان کیا جا سکتا ہے:<br /><br /></div>
 
-&nbsp; <div dir="rtl" style="display:inline;">CIDRAM چاہئے <strong>نہیں</strong> ایک IP ایڈریس بلاک</div> | &nbsp; <div dir="rtl" style="display:inline;">CIDRAM ایک IP ایڈریس مسدود کرنا <strong>چاہئے</strong></div> | &nbsp;
+&nbsp; <div dir="rtl" style="display:inline">CIDRAM چاہئے <strong>نہیں</strong> ایک IP ایڈریس بلاک</div> | &nbsp; <div dir="rtl" style="display:inline">CIDRAM ایک IP ایڈریس مسدود کرنا <strong>چاہئے</strong></div> | &nbsp;
 ---|---|---
-&nbsp; <div dir="rtl" style="display:inline;">یہ سچ ہے کہ منفی (صحیح اندازہ)</div> | &nbsp; <div dir="rtl" style="display:inline;">فوت شدہ کا پتہ لگانے (جھوٹے منفی کے مطابق)</div> | <div dir="rtl" style="display:inline;">CIDRAM <strong>نہیں</strong> بلاک ایک IP ایڈریس کراسکتا</div>
-&nbsp; <div dir="rtl" style="display:inline;"><strong>جھوٹی مثبت</strong></div> | &nbsp; <div dir="rtl" style="display:inline;">یہ سچ ہے کہ مثبت (صحیح اندازہ)</div> | &nbsp; <div dir="rtl" style="display:inline;">CIDRAM <strong>ہے</strong> ایک IP ایڈریس بلاک</div>
+&nbsp; <div dir="rtl" style="display:inline">یہ سچ ہے کہ منفی (صحیح اندازہ)</div> | &nbsp; <div dir="rtl" style="display:inline">فوت شدہ کا پتہ لگانے (جھوٹے منفی کے مطابق)</div> | <div dir="rtl" style="display:inline">CIDRAM <strong>نہیں</strong> بلاک ایک IP ایڈریس کراسکتا</div>
+&nbsp; <div dir="rtl" style="display:inline"><strong>جھوٹی مثبت</strong></div> | &nbsp; <div dir="rtl" style="display:inline">یہ سچ ہے کہ مثبت (صحیح اندازہ)</div> | &nbsp; <div dir="rtl" style="display:inline">CIDRAM <strong>ہے</strong> ایک IP ایڈریس بلاک</div>
 
 #### <div dir="rtl"><a name="BLOCK_ENTIRE_COUNTRIES"></a>بلاک تمام ممالک CIDRAM کر سکتا ہوں؟<br /><br /></div>
 
@@ -1468,7 +1468,7 @@ IP | آپریٹر
 
 Logging is an important part of CIDRAM for a number of reasons. It may be difficult to diagnose and resolve false positives when the block events that cause them aren't logged. Without logging block events, it may be difficult to ascertain exactly how performant CIDRAM is in any particular context, and it may be difficult to determine where its shortfalls may be, and what changes may be required to its configuration or signatures accordingly, in order for it to continue functioning as intended. Regardless, logging mightn't be desirable for all users, and remains entirely optional. In CIDRAM, logging is disabled by default. To enable it, CIDRAM must be configured accordingly.
 
-Additionally, whether logging is legally permissible, and to the extent that it is legally permissible (e.g., the types of information that may logged, for how long, and under what circumstances), may vary, depending on jurisdiction and on the context where CIDRAM is implemented (e.g., whether you're operating as an individual, as a corporate entity, and whether on a commercial or non-commercial basis). It may therefore be useful for you to read through this section carefully.
+Additionally, whether logging is legally permissible, and to the extent that it is legally permissible (e.g., the types of information that may be logged, for how long, and under what circumstances), may vary, depending on jurisdiction and on the context where CIDRAM is implemented (e.g., whether you're operating as an individual, as a corporate entity, and whether on a commercial or non-commercial basis). It may therefore be useful for you to read through this section carefully.
 
 There are multiple types of logging that CIDRAM can perform. Different types of logging involves different types of information, for different reasons.
 
@@ -1514,7 +1514,7 @@ A logged block event typically includes the following information:
 - A reconstruction of the identifier for the resource originally requested.
 - The reCAPTCHA state for the current request (when relevant).
 
-<div dir="rtl">متعلقہ ترتیب ہدایات:</div>
+<div dir="rtl">متعلقہ ترتیب ہدایات:<br /></div>
 <div dir="rtl"><ul>
  <li><code dir="ltr">logfile</code> &lt;- <code dir="ltr">general</code></li>
  <li><code dir="ltr">logfileApache</code> &lt;- <code dir="ltr">general</code></li>
@@ -1533,14 +1533,14 @@ A reCAPTCHA log entry contains the IP address of the user attempting to complete
 IP Address: x.x.x.x - Date/Time: Day, dd Mon 20xx hh:ii:ss +0000 - reCAPTCHA State: Passed!
 ```
 
-<div dir="rtl">متعلقہ ترتیب ہدایات:</div>
+<div dir="rtl">متعلقہ ترتیب ہدایات:<br /></div>
 <div dir="rtl"><ul>
  <li><code dir="ltr">logfile</code> &lt;- <code dir="ltr">recaptcha</code></li>
 </ul></div>
 
 ##### 11.3.2 FRONT-END LOGGING
 
-This type of logging relates front-end login attempts, and occurs only when a user attempts to log into the front-end (assuming front-end access is enabled).
+This logging relates front-end login attempts. It occurs only when a user attempts to log into the front-end, and only when front-end access is enabled.
 
 A front-end log entry contains the IP address of the user attempting to log in, the date and time that the attempt occurred, and the results of the attempt (successfully logged in, or failed to log in). A front-end log entry typically looks something like this (as an example):
 
@@ -1548,12 +1548,12 @@ A front-end log entry contains the IP address of the user attempting to log in, 
 x.x.x.x - Day, dd Mon 20xx hh:ii:ss +0000 - "admin" - لاگ ان.
 ```
 
-<div dir="rtl">متعلقہ ترتیب ہدایات:</div>
+<div dir="rtl">متعلقہ ترتیب ہدایات:<br /></div>
 <div dir="rtl"><ul>
  <li><code dir="ltr">FrontEndLog</code> &lt;- <code dir="ltr">general</code></li>
 </ul></div>
 
-##### 11.3.3 LOG ROTATION
+##### <div dir="rtl">١١.٣.٣ لاگ گرد گھومنے<br /><br /></div>
 
 You may want to purge logs after a period of time, or may be required to do so by law (i.e., the amount of time that it's legally permissible for you to retain logs may be limited by law). You can achieve this by including date/time markers in the names of your logfiles as per specified by your package configuration (e.g., `{yyyy}-{mm}-{dd}.log`), and then enabling log rotation (log rotation allows you to perform some action on logfiles when specified limits are exceeded).
 
@@ -1567,9 +1567,9 @@ Conversely, if you're required to retain logs for an extended period of time, yo
  <li><code dir="ltr">log_rotation_action</code> &lt;- <code dir="ltr">general</code></li>
 </ul></div>
 
-##### 11.3.4 LOG TRUNCATION
+##### <div dir="rtl">١١.٣.٤ ٹرنک ریکارڈ<br /><br /></div>
 
-It's also possible to truncate individual logfiles when they exceed a certain size, if this is something you might need or want to do.
+<div dir="rtl">اگر آپ چاہتے ہیں تو، آپ انفرادی ریکارڈز کو چھوٹ سکتے ہیں جب وہ مخصوص سائز سے کہیں زیادہ ہیں.<br /><br /></div>
 
 <div dir="rtl">متعلقہ ترتیب ہدایات:<br /></div>
 <div dir="rtl"><ul>
@@ -1600,8 +1600,7 @@ It's also possible to truncate individual logfiles when they exceed a certain si
 
 ##### <div dir="rtl">١١.٣.٦ لاگ ان معلومات کو چھوڑ دیں<br /><br /></div>
 
-<div dir="rtl"><br /><br /></div>
-اگر آپ مخصوص قسم کی معلومات کو مکمل طور پر لاگ ان کرنے سے روکنا چاہتے ہیں تو، آپ ایسا کرسکتے ہیں. CIDRAM provides configuration directives to control whether IP addresses, hostnames, and user agents are included in logs. By default, and when available, all three of these data points are logged. Setting any of these configuration directives to `true` will omit the corresponding information from logs.
+<div dir="rtl">اگر آپ مخصوص قسم کی معلومات کو مکمل طور پر لاگ ان کرنے سے روکنا چاہتے ہیں تو، آپ ایسا کرسکتے ہیں. CIDRAM ترتیبات ہدایات فراہم کرتا ہے جس پر کنٹرول کرتا ہے کہ آئی پی ایڈریس، ہوسٹ نام، اور صارف کے ایجنٹوں لاگ ان ہوتے ہیں. عام طور پر، اور جب دستیاب ہے، یہ سب کچھ لاگ ان ہوتے ہیں. جب ان ترتیبات کے ہدایات <code dir="ltr">true</code> میں مقرر ہوتے ہیں، تو متعلقہ معلومات لاگ ان نہیں کی جائیں گی.<br /><br /></div>
 
 <div dir="rtl"><em>نوٹ: IP پتے کے لئے pseudonymisation کا استعمال کرنے کی کوئی وجہ نہیں ہے جب IP پتے کو مکمل طور پر لاگ ان سے لے کر.</em><br /><br /></div>
 
@@ -1674,4 +1673,4 @@ It's also possible to truncate individual logfiles when they exceed a certain si
 ---
 
 
-<div dir="rtl">آخری تازہ کاری: 26 اگست 2018 (2018.09.26).</div>
+<div dir="rtl">آخری تازہ کاری: 20 اکتوبر 2018 (2018.10.20).</div>

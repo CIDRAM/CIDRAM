@@ -1277,85 +1277,85 @@ CIDRAMは、このＡＰＩを利用するオプションモジュールを提�
 
 #### 11.3 ロギング
 
-ロギングは、多くの理由からCIDRAMの重要な部分です。​ブロックイベントをロギングせずに、偽陽性が発生した場合、それを診断して解決することは困難です。​ロギングせずに、CIDRAMがいかに効果的に実行されているかを確かめること、その潜在的な問題を確認すること、機能させるために必要なコンフィギュレーションやシグネチャの変更を決定するのが難しいことがあります。​いずれにせよ、ロギングは一部のユーザーには望ましくなく、完全にオプションです。​CIDRAMでは、デフォルトでロギングは無効になっています。​これを有効にするには、それに応じてCIDRAMを設定する必要があります。
+ロギングは、多くの理由からCIDRAMの重要な部分です。​ブロック・イベントをロギングせずに、偽陽性が発生した場合、それを診断して解決することは困難です。​ロギングせずに、CIDRAMがいかに効果的に実行されているかを確かめること、その潜在的な問題を確認すること、機能させるために必要なコンフィギュレーションやシグネチャの変更を決定するのが難しいことがあります。​いずれにせよ、ロギングは一部のユーザーには望ましくなく、完全にオプションです。​CIDRAMでは、デフォルトでロギングは無効になっています。​これを有効にするには、それに応じてCIDRAMを設定する必要があります。
 
-Additionally, whether logging is legally permissible, and to the extent that it is legally permissible (e.g., the types of information that may logged, for how long, and under what circumstances), may vary, depending on jurisdiction and on the context where CIDRAM is implemented (e.g., whether you're operating as an individual, as a corporate entity, and whether on a commercial or non-commercial basis). It may therefore be useful for you to read through this section carefully.
+ロギングが法的に許可されているかどうか、および法的に許容される範囲で​（例えば、ログに記録される可能性があるタイプの情報、期間、および状況）、​管轄区域およびCIDRAMが実施されている状況に応じて変わる可能性がある​（例えば、あなたが個人として、企業として、商業的または非商業的に動作しているかどうか）。​したがって、このセクションを注意深く読んで役に立つかもしれない。
 
-There are multiple types of logging that CIDRAM can perform. Different types of logging involves different types of information, for different reasons.
+CIDRAMが実行できる複数のタイプのロギングがあります。​異なるタイプのロギングには、さまざまな理由で異なるタイプの情報が含まれます。
 
-##### 11.3.0 BLOCK EVENTS
+##### 11.3.0 ブロック・イベント
 
-The primary type of logging that CIDRAM can perform relates to "block events". This type of logging relates to when CIDRAM blocks a request, and can be provided in three different formats:
-- Human readable logfiles.
-- Apache-style logfiles.
-- Serialised logfiles.
+CIDRAMが実行できる主なタイプのロギングは、「ブロック・イベント」に関係します。​このタイプのロギングは、CIDRAMが要求をブロックする時期に関係し、３つの異なる形式で提供できます：
+- 人間が読めるログ・ファイル。
+- Apacheスタイル・ログ・ファイル。
+- シリアライズされたログ・ファイル。
 
-A block event, logged to a human readable logfile, typically looks something like this (as an example):
+人間が読めるログ・ファイルに記録されたブロック・イベントは、通常次のようになります（例として）：
 
 ```
-ID: 1234
-Script Version: CIDRAM v1.6.0
-Date/Time: Day, dd Mon 20xx hh:ii:ss +0000
-IP Address: x.x.x.x
-Hostname: dns.hostname.tld
-Signatures Count: 1
-Signatures Reference: x.x.x.x/xx
-Why Blocked: Cloud service ("Network Name", Lxx:Fx, [XX])!
-User Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36
-Reconstructed URI: http://your-site.tld/index.php
-reCAPTCHA State: Enabled.
+ＩＤ：1234
+スクリプトのバージョン：CIDRAM v1.6.0
+日/月/年/時刻：Day, dd Mon 20xx hh:ii:ss +0000
+ＩＰアドレス：x.x.x.x
+ホスト名：dns.hostname.tld
+シグネチャの数：1
+シグネチャリファレンス：x.x.x.x/xx
+なぜブロックされましたか：クラウド・サービス ("Network Name", Lxx:Fx, [XX])!
+ユーザーエージェント：Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36
+ＵＲＩ再構築された：http://your-site.tld/index.php
+reCAPTCHAのステータス：オン。
 ```
 
-That same block event, logged to an Apache-style logfile, would look something like this:
+Apacheスタイル・ログ・ファイルに記録された同じブロック・イベントは、次のようになります：
 
 ```
 x.x.x.x - - [Day, dd Mon 20xx hh:ii:ss +0000] "GET /index.php HTTP/1.1" 200 xxxx "-" "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36"
 ```
 
-A logged block event typically includes the following information:
-- An ID number referencing the block event.
-- The version of CIDRAM currently in use.
-- The date and time that the block event occurred.
-- The IP address of the blocked request.
-- The hostname of the IP address of the blocked request (when available).
-- The number of signatures triggered by the request.
-- References to the signatures triggered.
-- References to the reasons for the block event and some basic, related debug information.
-- The user agent of the blocked request (i.e., how the requesting entity identified itself to the request).
-- A reconstruction of the identifier for the resource originally requested.
-- The reCAPTCHA state for the current request (when relevant).
+ログに記録されたブロック・イベントには、通常、次の情報が含まれます。
+- ブロック・イベントを参照するＩＤ番号。
+- 現在使用中のCIDRAMのバージョン。
+- ブロック・イベントが発生した日時。
+- ブロックされた要求のＩＰアドレス。
+- ブロックされた要求のＩＰアドレスのホスト名（使用可能な場合）。
+- 要求によってトリガーされたシグネチャの数。
+- トリガされたシグネチャへの参照。
+- ブロック・イベントの理由、およびいくつかの基本的な関連するデバッグ情報。
+- ブロックされた要求のユーザー・エージェント（すなわち、要求側エンティティが要求に対してどのように自身を識別する）。
+- 要求されたリソースの識別子の再構成。
+- 現在のリクエストのreCAPTCHAのステータス（該当する場合）。
 
 *このタイプのロギングを担当するコンフィグレーション・ディレクティブは、利用可能な３つのフォーマットのそれぞれについて。*
 - `general` -> `logfile`
 - `general` -> `logfileApache`
 - `general` -> `logfileSerialized`
 
-When these directives are left empty, this type of logging will remain disabled.
+これらのディレクティブを空のままにすると、このタイプのロギングは無効のままです。
 
-##### 11.3.1 reCAPTCHA LOGGING
+##### 11.3.1 reCAPTCHAロギング
 
-This type of logging relates specifically to reCAPTCHA instances, and occurs only when a user attempts to complete a reCAPTCHA instance.
+このタイプのロギングは、特にreCAPTCHAインスタンスに関連し、ユーザーがreCAPTCHAインスタンスを完了しようとした場合にのみ発生します。
 
-A reCAPTCHA log entry contains the IP address of the user attempting to complete a reCAPTCHA instance, the date and time that the attempt occurred, and the reCAPTCHA state. A reCAPTCHA log entry typically looks something like this (as an example):
+reCAPTCHAログ・エントリには、reCAPTCHAインスタンスを完了しようとしているユーザーのＩＰアドレス、試行が行われた日時、およびreCAPTCHAのステータスが含まれます。​reCAPTCHAログ・エントリは通常、次のようになります（例として）。
 
 ```
-IP Address: x.x.x.x - Date/Time: Day, dd Mon 20xx hh:ii:ss +0000 - reCAPTCHA State: Passed!
+ＩＰアドレス：x.x.x.x - 日/月/年/時刻：Day, dd Mon 20xx hh:ii:ss +0000 - reCAPTCHAのステータス：合格！
 ```
 
-*The configuration directive responsible for reCAPTCHA logging is:*
+*reCAPTCHAロギングを担当するコンフィギュレーション・ディレクティブ：*
 - `recaptcha` -> `logfile`
 
-##### 11.3.2 FRONT-END LOGGING
+##### 11.3.2 フロントエンド・ロギング
 
-This type of logging relates front-end login attempts, and occurs only when a user attempts to log into the front-end (assuming front-end access is enabled).
+このロギングは、フロントエンドのログイン試行に関係します。​これは、ユーザーがフロントエンドにログインしようとするとき、およびフロントエンド・アクセスが有効な場合にのみ発生します。
 
-A front-end log entry contains the IP address of the user attempting to log in, the date and time that the attempt occurred, and the results of the attempt (successfully logged in, or failed to log in). A front-end log entry typically looks something like this (as an example):
+フロントエンドのログ・エントリには、ログインしようとしているユーザーのＩＰアドレス、試行が行われた日時、試行の結果が含まれます（正常にログインしたか、ログインに失敗しました）。​フロントエンドのログ・エントリは通常、次のようになります（例として）。
 
 ```
 x.x.x.x - Day, dd Mon 20xx hh:ii:ss +0000 - "admin" - ログインしました。
 ```
 
-*The configuration directive responsible for front-end logging is:*
+*フロントエンド・ロギングを担当するコンフィギュレーション・ディレクティブ：*
 - `general` -> `FrontEndLog`
 
 ##### 11.3.3 ログ・ローテーション
@@ -1364,7 +1364,7 @@ x.x.x.x - Day, dd Mon 20xx hh:ii:ss +0000 - "admin" - ログインしました�
 
 例えば：法的に３０日後にログを削除する必要がある場合は、ログ・ファイルの名前に`{dd}.log`を（`{dd}`は日を表す）指定し、`log_rotation_limit`の値を`30`に設定し、`log_rotation_action`の値を`Delete`に設定することができます。
 
-Conversely, if you're required to retain logs for an extended period of time, you could either not use log rotation at all, or you could set the value of `log_rotation_action` to `Archive`, to compress logfiles, thereby reducing the total amount of disk space that they occupy.
+逆に、長期間ログを保持する必要がある場合は、ログ・ローテーションを無効にするか、ログ・ファイルを圧縮するために`log_rotation_action`の値を`Archive`に設定することができます（占有するディスク・スペースの総量が削減されます）。
 
 *関連するコンフィギュレーション・ディレクティブ：*
 - `general` -> `log_rotation_limit`
@@ -1463,4 +1463,4 @@ CIDRAMは、マーケティングやアドバタイジング目的で情報を�
 ---
 
 
-最終アップデート：2018年9月26日。
+最終アップデート：2018年10月20日。

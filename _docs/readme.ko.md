@@ -1279,9 +1279,9 @@ CIDRAM은이 API를 활용하는 선택적 모듈을 제공합니다. 인바운�
 
 로깅은 여러 가지 이유로 CIDRAM의 중요한 부분입니다. 로깅 차단 이벤트가 없으면 오탐 (false positive)이 발생하면이를 진단하고 해결하기 어려울 수 있습니다. 로깅 블록 이벤트가 없으면 CIDRAM이 얼마나 효과적으로 수행되는지를 확인하기 어려울 수 있습니다. 그것의 부족을 확인하는 것은 어려울 수 있으며 의도 한대로 기능을 계속 수행하려면 구성이나 서명에 어떤 변경이 필요할 수 있습니다. 어쨌든 로깅은 일부 사용자가 원하지 않는 경우도 있으며 전체적으로 선택 사항입니다. CIDRAM에서 로깅은 기본적으로 사용되지 않습니다. 이를 사용하려면 CIDRAM을 적절히 구성해야합니다.
 
-Additionally, whether logging is legally permissible, and to the extent that it is legally permissible (e.g., the types of information that may logged, for how long, and under what circumstances), may vary, depending on jurisdiction and on the context where CIDRAM is implemented (e.g., whether you're operating as an individual, as a corporate entity, and whether on a commercial or non-commercial basis). It may therefore be useful for you to read through this section carefully.
+또한, 관할권 및 구현 컨텍스트에 따라 (예 : 당신이 개인으로서 또는 기업체로서 및 상업적 또는 비상업적 기반 여부 운영되고 있는지 여부), 로깅의 법적인 허용이 달라질 수 있습니다 (예 : 로깅의 할 수있는 정보의 유형, 기간 및 상황). 따라서, 이 섹션을주의 깊게 읽는 것이 유용 할 수 있습니다.
 
-There are multiple types of logging that CIDRAM can perform. Different types of logging involves different types of information, for different reasons.
+CIDRAM이 수행 할 수있는 로깅에는 여러 유형이 있습니다. 서로 다른 유형의 로깅에는 여러 가지 다른 유형의 정보가 포함됩니다.
 
 ##### 11.3.0 BLOCK EVENTS
 
@@ -1332,39 +1332,39 @@ A logged block event typically includes the following information:
 
 When these directives are left empty, this type of logging will remain disabled.
 
-##### 11.3.1 reCAPTCHA LOGGING
+##### 11.3.1 reCAPTCHA 로깅
 
-This type of logging relates specifically to reCAPTCHA instances, and occurs only when a user attempts to complete a reCAPTCHA instance.
+이 유형의 로깅은 reCAPTCHA 인스턴스와 관련이 있으며 사용자가 reCAPTCHA 인스턴스를 완료하려고 할 때만 발생합니다.
 
-A reCAPTCHA log entry contains the IP address of the user attempting to complete a reCAPTCHA instance, the date and time that the attempt occurred, and the reCAPTCHA state. A reCAPTCHA log entry typically looks something like this (as an example):
+reCAPTCHA 로그 항목에는 reCAPTCHA 인스턴스를 완료하려는 사용자의 IP 주소, 시도가 발생한 날짜 및 시간 및 reCAPTCHA 상태가 들어 있습니다. reCAPTCHA 로그 항목은 일반적으로 다음과 같이 표시됩니다 (예로서) :
 
 ```
-IP Address: x.x.x.x - Date/Time: Day, dd Mon 20xx hh:ii:ss +0000 - reCAPTCHA State: Passed!
+IP 주소 : x.x.x.x - 일·월·년·시간 : Day, dd Mon 20xx hh:ii:ss +0000 - reCAPTCHA의 상태 : 합격!
 ```
 
-*The configuration directive responsible for reCAPTCHA logging is:*
+*reCAPTCHA 로깅을 담당하는 구성 지시문 :*
 - `recaptcha` -> `logfile`
 
-##### 11.3.2 FRONT-END LOGGING
+##### 11.3.2 프론트 엔드 로깅
 
-This type of logging relates front-end login attempts, and occurs only when a user attempts to log into the front-end (assuming front-end access is enabled).
+이 로깅은 프런트 엔드 로그인 시도와 관련이 있습니다. 사용자가 프런트 엔드에 로그인을 시도 할 때 및 프런트 엔드 액세스가 활성화 된 경우에만 발생합니다.
 
-A front-end log entry contains the IP address of the user attempting to log in, the date and time that the attempt occurred, and the results of the attempt (successfully logged in, or failed to log in). A front-end log entry typically looks something like this (as an example):
+프런트 엔드 로그 항목에는 로그인을 시도하는 사용자의 IP 주소, 시도가 발생한 날짜와 시간 및 시도의 결과가 포함됩니다 (로그인 성공 또는 로그인 실패). 프론트 엔드 로그 항목은 일반적으로 다음과 같이 표시됩니다 (예로서) :
 
 ```
 x.x.x.x - Day, dd Mon 20xx hh:ii:ss +0000 - "admin" - 로그인 했습니다.
 ```
 
-*The configuration directive responsible for front-end logging is:*
+*프런트 엔드 로깅을 담당하는 구성 지시문 :*
 - `general` -> `FrontEndLog`
 
-##### 11.3.3 LOG ROTATION
+##### 11.3.3 로그 회전
 
-You may want to purge logs after a period of time, or may be required to do so by law (i.e., the amount of time that it's legally permissible for you to retain logs may be limited by law). You can achieve this by including date/time markers in the names of your logfiles as per specified by your package configuration (e.g., `{yyyy}-{mm}-{dd}.log`), and then enabling log rotation (log rotation allows you to perform some action on logfiles when specified limits are exceeded).
+일정 기간 후에 로그를 제거하려고 할 수 있습니다, 또는 법에 따라 그렇게해야 할 수도 있습니다 (즉, 로그를 보관하는 것이 법적으로 허용되는 시간은 법률에 의해 제한 될 수 있습니다). 로그 파일의 이름에 날짜/시간 표시자를 (예를 들어, `{yyyy}-{mm}-{dd}.log`) 포함하고 (패키지 구성에 지정된대로) 로그 회전을 활성화하여이 작업을 수행 할 수 있습니다 (로그 회전을 사용하면 지정된 제한을 초과하면 로그 파일에 대해 몇 가지 작업을 수행 할 수 있습니다).
 
-For example: If I was legally required to delete logs after 30 days, I could specify `{dd}.log` in the names of my logfiles (`{dd}` represents days), set the value of `log_rotation_limit` to 30, and set the value of `log_rotation_action` to `Delete`.
+예 : 법적으로 30 일 후에 로그를 삭제해야한다면, 로그 파일 이름에 `{dd}.log`를 지정하고 (`{dd}`는 일 수를 나타냅니다), `log_rotation_limit` 값을 30으로 설정하고, `log_rotation_action` 값을 `Delete`로 설정할 수 있습니다.
 
-Conversely, if you're required to retain logs for an extended period of time, you could either not use log rotation at all, or you could set the value of `log_rotation_action` to `Archive`, to compress logfiles, thereby reducing the total amount of disk space that they occupy.
+또는, 오랜 시간 동안 로그를 유지해야하는 경우, 로그 회전을 비활성화하거나, 로그 파일을 압축하기 위해 `log_rotation_action` 값을 `Archive`로 설정하십시오 (이렇게하면 점유하는 디스크 공간의 총량이 줄어 듭니다).
 
 *관련 설정 지시어 :*
 - `general` -> `log_rotation_limit`
@@ -1461,4 +1461,4 @@ CIDRAM은 마케팅이나 광고 목적으로 정보를 수집하거나 처리�
 ---
 
 
-최종 업데이트 : 2018년 9월 26일.
+최종 업데이트 : 2018년 10월 20일.

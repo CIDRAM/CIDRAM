@@ -1,20 +1,19 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6.dat
 
-# Version: 2018.286.284
-# Last modified: 2018.10.14
+# Version: 2018.298.141
+# Last modified: 2018.10.26
 
 
 # ---
 # ASN 46844 ("Sharktech").
-# %Listed, Google Malware Dashboard: 1.52%.
-# Stop Forum Spam (SFS) listings: 285.
-# Updated: 2018.06.06
+# %Listed, Google Malware Dashboard: 1.00%.
+# Stop Forum Spam (SFS) listings: 197.
+# Updated: 2018.10.25
 
 2a00:c2c0:ffff::/48 Deny Cloud
 Origin: NL
 2610:150::/32 Deny Cloud
-2a0d:ec00::/29 Deny Cloud
 Origin: US
 Tag: Sharktech
 
@@ -156,9 +155,9 @@ Tag: New Dream Network
 
 
 # ASN 33182 ("HostDime.com, Inc").
-# %Listed, Google Malware Dashboard: 0.35%.
-# Stop Forum Spam (SFS) listings: 503.
-# Updated: 2018.02.23 / Checked: 2018.06.06
+# %Listed, Google Malware Dashboard: 0.38%.
+# Stop Forum Spam (SFS) listings: 506.
+# Updated: 2018.10.25
 
 2804:9c4::/32 Deny Cloud
 2804:cf8:8000::/48 Deny Cloud
@@ -171,8 +170,6 @@ Origin: GB
 Origin: IN
 2806:213::/32 Deny Cloud
 Origin: MX
-2a0d:bf00::/29 Deny Cloud
-Origin: RU
 2605:2080::/33 Deny Cloud
 2607:fcd8::/43 Deny Cloud
 2607:fcd8:20::/44 Deny Cloud
@@ -682,7 +679,7 @@ Tag: AS42807
 
 # ASNs 34360, 41079, 48760, 198414 ("H88 S.A").
 # Webhosting company based in Poland.
-# Updated: 2016.01.18 / Checked: 2018.06.09
+# Updated: 2016.01.18 / Checked: 2018.10.26
 
 2a01:4660::/32 Deny Cloud
 2a02:1778::/32 Deny Cloud
@@ -1689,12 +1686,9 @@ Tag: RAM Host
 
 
 # "Host Europe GmbH", "HEG Managed", "PlusServer GmbH" (all three combined due to heavy interlacing).
-# ASNs 5521, 8972, 20621, 20738, 20773, 25074, 31100, 50932, 61157.
-# Note: When updating, check for both "Host Europe" and "HostEurope" (no space). There are some additional CIDRs in use
-# that aren't tied to any particular ASN.
-# Updated: 2018.06.02
+# ASNs 5521, 8972, 15891, 20621, 20738, 20773, 25074, 31100, 34011, 34088, 35329, 50932, 61157, 200386.
+# Updated: 2018.10.26
 
-2001:67c:1164::/48 Deny Cloud
 2001:830::/32 Deny Cloud
 2001:aa8::/32 Deny Cloud
 2001:1520::/32 Deny Cloud
@@ -1709,7 +1703,9 @@ Tag: RAM Host
 2a02:cbf7:100::/48 Deny Cloud
 2a02:e740::/29 Deny Cloud
 2a04:2f80::/29 Deny Cloud
+2a04:e0c0::/29 Deny Cloud
 2a04:e540::/32 Deny Cloud
+2a0c:de40::/29 Deny Cloud
 Origin: DE
 2001:2000:3080:551::/64 Deny Cloud
 Origin: EU
@@ -3282,7 +3278,7 @@ Tag: Sia Nano IT
 # Don't include: ASN 264167 ("Amazon Wifi Servicos de Internet Ltda") - False positive risk.
 # Remove from final aggregate: 203.83.220.0/22 ("Amazon.com Tech Telecom") - False positive risk.
 # Also check out the Amazon blocklist provided by Macmathan. It can be installed via the front-end updates page.
-# Updated: 2018.09.13
+# Updated: 2018.10.26
 
 2403:b300::/32 Run rules_specific.php
 Origin: AU
@@ -3357,6 +3353,12 @@ Origin: SG
 2600:1f00:1000::/40 Run rules_specific.php
 2600:1f00:5000::/40 Run rules_specific.php
 2600:1f00:6000::/40 Run rules_specific.php
+2600:1f01:4830::/47 Run rules_specific.php
+2600:1f01:4840::/47 Run rules_specific.php
+2600:1f01:4850::/47 Run rules_specific.php
+2600:1f01:4870::/47 Run rules_specific.php
+2600:1f01:4890::/47 Run rules_specific.php
+2600:1f01:48a0::/47 Run rules_specific.php
 2600:1f11::/36 Run rules_specific.php
 2600:1f12::/36 Run rules_specific.php
 2600:1f14::/35 Run rules_specific.php
@@ -3402,7 +3404,9 @@ Origin: SG
 2600:9000:1002::/47 Run rules_specific.php
 2600:9000:1004::/48 Run rules_specific.php
 2600:9000:1006::/47 Run rules_specific.php
-2600:9000:1008::/45 Run rules_specific.php
+2600:9000:1008::/46 Run rules_specific.php
+2600:9000:100c::/47 Run rules_specific.php
+2600:9000:100f::/48 Run rules_specific.php
 2600:9000:1010::/46 Run rules_specific.php
 2600:9000:1015::/48 Run rules_specific.php
 2600:9000:1016::/47 Run rules_specific.php
@@ -3412,7 +3416,7 @@ Origin: SG
 2600:9000:1027::/48 Run rules_specific.php
 2600:9000:1028::/46 Run rules_specific.php
 2600:9000:102d::/48 Run rules_specific.php
-2600:9000:102e::/47 Run rules_specific.php
+2600:9000:102f::/48 Run rules_specific.php
 2600:9000:1030::/47 Run rules_specific.php
 2600:9000:1035::/48 Run rules_specific.php
 2600:9000:1036::/47 Run rules_specific.php
@@ -3426,10 +3430,7 @@ Origin: SG
 2600:9000:1089::/48 Run rules_specific.php
 2600:9000:108a::/48 Run rules_specific.php
 2600:9000:108c::/46 Run rules_specific.php
-2600:9000:1090::/45 Run rules_specific.php
-2600:9000:1098::/46 Run rules_specific.php
-2600:9000:109c::/47 Run rules_specific.php
-2600:9000:109f::/48 Run rules_specific.php
+2600:9000:1090::/44 Run rules_specific.php
 2600:9000:10a0::/46 Run rules_specific.php
 2600:9000:10a4::/48 Run rules_specific.php
 2600:9000:10a6::/47 Run rules_specific.php
@@ -3437,13 +3438,21 @@ Origin: SG
 2600:9000:10aa::/48 Run rules_specific.php
 2600:9000:10ac::/46 Run rules_specific.php
 2600:9000:10b0::/46 Run rules_specific.php
-2600:9000:10ba::/48 Run rules_specific.php
+2600:9000:10b4::/48 Run rules_specific.php
+2600:9000:10b8::/46 Run rules_specific.php
+2600:9000:10bc::/48 Run rules_specific.php
+2600:9000:10be::/47 Run rules_specific.php
+2600:9000:10c6::/47 Run rules_specific.php
+2600:9000:10ce::/48 Run rules_specific.php
+2600:9000:10d6::/48 Run rules_specific.php
+2600:9000:10da::/48 Run rules_specific.php
 2600:9000:2000::/47 Run rules_specific.php
 2600:9000:2002::/48 Run rules_specific.php
 2600:9000:2004::/46 Run rules_specific.php
 2600:9000:2008::/47 Run rules_specific.php
 2600:9000:200a::/48 Run rules_specific.php
-2600:9000:200c::/46 Run rules_specific.php
+2600:9000:200c::/47 Run rules_specific.php
+2600:9000:200f::/48 Run rules_specific.php
 2600:9000:2010::/46 Run rules_specific.php
 2600:9000:2015::/48 Run rules_specific.php
 2600:9000:2016::/47 Run rules_specific.php
@@ -3512,7 +3521,6 @@ Origin: SG
 2600:9000:2104::/47 Run rules_specific.php
 2600:9000:2109::/48 Run rules_specific.php
 2600:9000:210a::/47 Run rules_specific.php
-2600:9000:210c::/48 Run rules_specific.php
 2600:9000:2110::/48 Run rules_specific.php
 2600:9000:2114::/47 Run rules_specific.php
 2600:9000:2116::/48 Run rules_specific.php
@@ -4447,9 +4455,13 @@ Tag: DediPower
 
 # ASNs 12637, 20522 ("Seeweb S.r.l").
 # %Listed, Google Malware Dashboard: 0.15% (AS12637).
-# Stop Forum Spam (SFS) listings: 10 (AS12637).
-# Updated: 2018.06.06
+# Stop Forum Spam (SFS) listings: 20 (AS12637).
+# Updated: 2018.10.25
 
+2a0b:fd40::/29 Deny Cloud
+Origin: CH
+2a05:b6c0::/31 Deny Cloud
+Origin: HR
 2001:4b78::/29 Deny Cloud
 2a04:2700::/29 Deny Cloud
 2a07:50c0::/29 Deny Cloud
@@ -4483,9 +4495,9 @@ Tag: Desync Networks
 
 
 # ASN 3064 ("Affinity Internet, Inc").
-# %Listed, Google Malware Dashboard: 0.33%.
-# Stop Forum Spam (SFS) listings: 3.
-# Updated: 2017.10.23 / Checked: 2018.06.06
+# %Listed, Google Malware Dashboard: 0.27%.
+# Stop Forum Spam (SFS) listings: 36.
+# Updated: 2017.10.23 / Checked: 2018.10.25
 
 2407:2080::/32 Deny Cloud
 Origin: AU
@@ -4539,9 +4551,9 @@ Tag: Net Access Corp
 
 
 # ASN 19318 ("Interserver, Inc").
-# %Listed, Google Malware Dashboard: 0.42%.
-# Stop Forum Spam (SFS) listings: 1,848.
-# Updated: 2018.06.09
+# %Listed, Google Malware Dashboard: 0.56%.
+# Stop Forum Spam (SFS) listings: 1,212.
+# Updated: 2018.06.09 / Checked: 2018.10.25
 
 2604:a00::/32 Deny Cloud
 Origin: US
@@ -4722,9 +4734,9 @@ Tag: meerfarbig
 
 # ASN 29066 ("velia.net Internetdienste GmbH").
 # Note when updating: Also contains "proxy" signatures.
-# %Listed, Google Malware Dashboard: 1.23%.
-# Stop Forum Spam (SFS) listings: 78,433.
-# Updated: 2018.10.05
+# %Listed, Google Malware Dashboard: 0.94%.
+# Stop Forum Spam (SFS) listings: 78,825.
+# Updated: 2018.10.05 / Checked: 2018.10.26
 
 2a00:fa40:3000::/36 Deny Cloud
 2a00:fa40:4000::/36 Deny Cloud
@@ -5364,7 +5376,7 @@ Tag: Infium, UAB
 # "Aruba S.p.A" / "Aruba SAS" / "ARUBA NETWORKS, INC" / "ArubaCloud Limited".
 # Caught attempting to hack honeypots.
 # Ranges change frequently / Should update often.
-# Updated: 2018.02.24 / Checked: 2018.06.09
+# Updated: 2018.02.24 / Checked: 2018.10.26
 
 2a03:2c40::/32 Deny Cloud
 2a03:a140::/32 Deny Cloud
@@ -5558,7 +5570,7 @@ Tag: Seznam.cz
 # I'm including just the one ASN (AS27435) that I've seen send unwanted/suspect requests to websites. May expand this
 # section to include other ASNs in the future if similar traffic or problems emerge from those ASNs. Activity seen from
 # the ASN in question includes spamming and probing.
-# Updated: 2018.06.09
+# Updated: 2018.06.09 / Checked: 2018.10.25
 
 2402:9900::/48 Deny Cloud
 2402:9900:100::/47 Deny Cloud

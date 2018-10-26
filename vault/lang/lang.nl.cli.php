@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Dutch language data for CLI (last modified: 2018.01.20).
+ * This file: Dutch language data for CLI (last modified: 2018.10.15).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -27,8 +27,8 @@ $CIDRAM['lang']['CLI_H'] = "
  -c Controleer of een IP-adres is geblokkeerd door de CIDRAM signature
     bestanden.
  -g Genereer CIDRs van een IP-adres.
- -v Een signature bestanden valideren.
- -f Een signature bestanden repareren.
+ -v Een signatuurbestanden valideren.
+ -f Een signatuurbestanden repareren.
 
  Voorbeelden:
  php.exe /cidram/loader.php -c 192.168.0.0
@@ -41,22 +41,22 @@ $CIDRAM['lang']['CLI_H'] = "
 ";
 
 $CIDRAM['lang']['CLI_Bad_IP'] = ' Het opgegeven IP-adres, "{IP}", is geen geldig IPv4 of IPv6 IP-adres!';
-$CIDRAM['lang']['CLI_IP_Blocked'] = ' Het opgegeven IP-adres, "{IP}", *IS* geblokkeerd door een of meer van de CIDRAM signature bestanden.';
-$CIDRAM['lang']['CLI_IP_Not_Blocked'] = ' Het opgegeven IP-adres, "{IP}", is *NIET* geblokkeerd door een van de CIDRAM signature bestanden.';
+$CIDRAM['lang']['CLI_IP_Blocked'] = ' Het opgegeven IP-adres, "{IP}", *IS* geblokkeerd door een of meer van de CIDRAM signatuurbestanden.';
+$CIDRAM['lang']['CLI_IP_Not_Blocked'] = ' Het opgegeven IP-adres, "{IP}", is *NIET* geblokkeerd door een van de CIDRAM signatuurbestanden.';
 
 $CIDRAM['lang']['CLI_F_Finished'] = 'Signature fixeer heeft voltooid, met %s veranderingen in %s operaties (%s).';
 $CIDRAM['lang']['CLI_F_Started'] = 'Signature fixeer heeft begonnen (%s).';
-$CIDRAM['lang']['CLI_VF_Empty'] = 'Het opgegeven signature bestand is leeg of niet bestaat.';
+$CIDRAM['lang']['CLI_VF_Empty'] = 'Het opgegeven signatuurbestand is leeg of niet bestaat.';
 $CIDRAM['lang']['CLI_VF_Level_0'] = 'Kennisgeving';
 $CIDRAM['lang']['CLI_VF_Level_1'] = 'Waarschuwing';
 $CIDRAM['lang']['CLI_VF_Level_2'] = 'Fout';
 $CIDRAM['lang']['CLI_VF_Level_3'] = 'Fatale Fout';
 
-$CIDRAM['lang']['CLI_V_CRLF'] = 'Gedetecteerd CR/CRLF in de signature bestand; Deze zijn toegestaan en zal geen problemen veroorzaken, maar de LF heeft de voorkeur.';
-$CIDRAM['lang']['CLI_V_Finished'] = 'Signature validatie heeft voltooid (%s). Als er geen waarschuwingen of fouten, uw signature bestand is *waarschijnlijk* goed. :-)';
+$CIDRAM['lang']['CLI_V_CRLF'] = 'Gedetecteerd CR/CRLF in de signatuurbestand; Deze zijn toegestaan en zal geen problemen veroorzaken, maar de LF heeft de voorkeur.';
+$CIDRAM['lang']['CLI_V_Finished'] = 'Signature validatie heeft voltooid (%s). Als er geen waarschuwingen of fouten, uw signatuurbestand is *waarschijnlijk* goed. :-)';
 $CIDRAM['lang']['CLI_V_LineByLine'] = 'Lijn-bij-lijn validatie heeft begonnen.';
 $CIDRAM['lang']['CLI_V_Started'] = 'Signature validatie heeft begonnen (%s).';
-$CIDRAM['lang']['CLI_V_Terminal_LF'] = 'Signature bestanden moet eindigen met een LF regeleinde.';
+$CIDRAM['lang']['CLI_V_Terminal_LF'] = 'Signatuurbestanden moet eindigen met een LF regeleinde.';
 
 $CIDRAM['lang']['CLI_VL_CC'] = 'L%s: Controle karakters gedetecteerd; Dit kan duiden corruptie en moet worden onderzocht.';
 $CIDRAM['lang']['CLI_VL_Duplicated'] = 'L%s: Signature "%s" is gedupliceerd (%s tellingen)!';

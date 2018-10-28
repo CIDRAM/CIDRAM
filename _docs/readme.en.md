@@ -331,7 +331,17 @@ General CIDRAM configuration.
 ##### "logfileSerialized"
 - Serialised file for logging all blocked access attempts. Specify a filename, or leave blank to disable.
 
-*Useful tip: If you want, you can append date/time information to the names of your logfiles by including these in the name: `{yyyy}` for complete year, `{yy}` for abbreviated year, `{mm}` for month, `{dd}` for day, `{hh}` for hour.*
+*Useful tip: If you want, you can append date/time information to the names of your logfiles by including these in the name.*
+
+Placeholder|Explanation|Example
+--- | --- | ---
+`{yyyy}`|Entire Year|2018
+`{yy}`|Shortened Year|18
+`{mm}`|Month|08
+`{dd}`|Day|20
+`{hh}`|Hour|12
+
+_Examples are based on the 20.08.2018 at 12:06_
 
 *Examples:*
 - *`logfile='logfile.{yyyy}-{mm}-{dd}-{hh}.txt'`*

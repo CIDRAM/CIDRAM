@@ -528,9 +528,9 @@ Tag: DataCorpore Servios
 
 
 # ASN 53850 ("GorillaServers, Inc").
-# %Listed, Google Malware Dashboard: 2.00%.
-# Stop Forum Spam (SFS) listings: 818.
-# Updated: 2016.09.15 / Checked: 2018.06.10
+# %Listed, Google Malware Dashboard: 0.03%.
+# Stop Forum Spam (SFS) listings: 744.
+# Updated: 2016.09.15 / Checked: 2018.11.02
 
 2606:c700::/32 Deny Cloud
 Origin: US
@@ -974,14 +974,11 @@ Origin: CA
 Tag: iWeb
 
 
-# ASNs 13926, 22781, 29713, 54203, 62651, 63128 ("Reliable Hosting Services", "Strong Technology, LLC").
-# Updated: 2018.02.18 / Checked: 2018.06.02
+# ASNs 22781, 29713 ("Reliable Hosting Services", "Strong Technology, LLC").
+# Stop Forum Spam (SFS) listings: 55 (AS22781), 7 (AS29713).
+# Updated: 2018.11.02
 
 2604:4100::/36 Deny Cloud
-2604:c980::/32 Deny Cloud
-2604:ea80::/32 Deny Cloud
-2604:fc80::/32 Deny Cloud
-2606:b300::/32 Deny Cloud
 2607:fb50::/32 Deny Cloud
 Origin: US
 Tag: Reliable Hosting
@@ -3240,12 +3237,11 @@ Tag: Nazwa.pl
 
 
 # ASN 18450 ("WebNX, Inc").
-# %Listed, Google Malware Dashboard: 1.55%.
-# Stop Forum Spam (SFS) listings: 53.
-# Updated: 2018.03.28 / Checked: 2018.04.04
+# Contains proxy entries (careful when updating).
+# %Listed, Google Malware Dashboard: 0.80%.
+# Stop Forum Spam (SFS) listings: 58.
+# Updated: 2018.11.02
 
-2a0d:5100::/29 Deny Cloud
-Origin: RU
 2607:f2d8::/32 Deny Cloud
 Origin: US
 Tag: WebNX, Inc
@@ -4430,7 +4426,7 @@ Tag: Ecommerce Corporation
 
 
 # ASNs 132412, 135511, 136565, 136566 ("CyberWorld Data Center").
-# Updated: 2018.06.10
+# Updated: 2018.06.10 / Checked: 2018.11.02
 
 2405:2500:5::/48 Deny Cloud
 2405:2500:11::/48 Deny Cloud
@@ -5232,7 +5228,7 @@ Tag: 24 SHELLS
 
 
 # ASNs 11588, 12989, 18607, 20446, 33438 ("Highwinds Network Group, Inc").
-# Updated: 2018.06.10
+# Updated: 2018.11.02
 
 2804:266c::/32 Deny Cloud
 Origin: BR
@@ -5248,18 +5244,33 @@ Origin: GB
 2403:f880:6300::/40 Deny Cloud
 2404:5d80:6000::/39 Deny Cloud
 2404:5d80:6300::/40 Deny Cloud
+2404:5d80:6600::/40 Deny Cloud
 Origin: JP
 2001:4de0::/32 Deny Cloud
 2a0a:e200:1100::/40 Deny Cloud
-2a0a:e200:1600::/40 Deny Cloud
+2a0a:e200:1300::/40 Deny Cloud
+2a0a:e200:1400::/38 Deny Cloud
+2a0a:e200:1800::/39 Deny Cloud
 Origin: NL
 2001:1938::/32 Deny Cloud
+2407:1580:1100::/40 Deny Cloud
 2407:1580:1200::/40 Deny Cloud
 2407:1580:1500::/40 Deny Cloud
-2407:1580:1700::/40 Deny Cloud
-2604:6840:1300::/40 Deny Cloud
-2604:6840:1400::/40 Deny Cloud
-2606:ce80::/32 Deny Cloud
+2407:1580:1600::/39 Deny Cloud
+2604:6840:1200::/39 Deny Cloud
+2604:6840:1400::/38 Deny Cloud
+2604:6840:1800::/38 Deny Cloud
+2604:6840:1c00::/40 Deny Cloud
+2604:6840:1e00::/40 Deny Cloud
+2604:c980::/32 Deny Cloud
+2604:ea80::/32 Deny Cloud
+2604:fc80::/32 Deny Cloud
+2606:b300::/32 Deny Cloud
+2606:ce80:6100::/40 Deny Cloud
+2606:ce80:6200::/39 Deny Cloud
+2606:ce80:6400::/39 Deny Cloud
+2606:ce80:6600::/40 Deny Cloud
+2606:ce80:6900::/40 Deny Cloud
 Origin: US
 Tag: Highwinds
 
@@ -6189,3 +6200,12 @@ Tag: Cogeco Peer 1
 2a07:a6c0::/29 Deny Cloud
 Origin: RU
 Tag: TakeWYN
+
+
+# ASN 206898 ("Server Hosting Pty Ltd").
+# Stop Forum Spam (SFS) listings: 61.
+# Updated: 2018.11.02
+
+2a05:9f06::/31 Deny Cloud
+Origin: PT
+Tag: AS206898

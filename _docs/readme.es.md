@@ -67,7 +67,7 @@ O esto en el archivo `.htaccess`:
 
 #### 2.1 INSTALACIÓN CON COMPOSER
 
-[CIDRAM está registrado con Packagist](https://packagist.org/packages/cidram/cidram), y por lo tanto, si está familiarizado con Composer, puede utilizar Composer para instalar CIDRAM (sin embargo, usted todavía necesitará preparar la configuración y los ganchos; consulte "INSTALACIÓN MANUAL" pasos 2 y 5).
+[CIDRAM está registrado con Packagist](https://packagist.org/packages/cidram/cidram), y por lo tanto, si está familiarizado con Composer, puede utilizar Composer para instalar CIDRAM (sin embargo, usted todavía necesitará preparar la configuración, los permisos y los ganchos; consulte "INSTALACIÓN MANUAL" pasos 2, 4, y 5).
 
 `composer require cidram/cidram`
 
@@ -1465,4 +1465,4 @@ Alternativamente, hay una breve descripción (no autoritativa) de GDPR/DSGVO dis
 ---
 
 
-Última Actualización: 26 Septiembre de 2018 (2018.09.26).
+Última Actualización: 4 Noviembre de 2018 (2018.11.04).

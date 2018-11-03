@@ -67,7 +67,7 @@ Of dit in het `.htaccess` bestand:
 
 #### 2.1 INSTALLEREN MET COMPOSER
 
-[CIDRAM is geregistreerd bij Packagist](https://packagist.org/packages/cidram/cidram), en dus, als u bekend bent met Composer, kunt u Composer gebruiken om CIDRAM installeren (u zult nog steeds nodig om de configuratie en haken te bereiden niettemin; zie "handmatig installeren" stappen 2 en 5).
+[CIDRAM is geregistreerd bij Packagist](https://packagist.org/packages/cidram/cidram), en dus, als u bekend bent met Composer, kunt u Composer gebruiken om CIDRAM installeren (u zult nog steeds nodig om de configuratie, rechten en haken te bereiden niettemin; zie "handmatig installeren" stappen 2, 4, en 5).
 
 `composer require cidram/cidram`
 
@@ -1466,4 +1466,4 @@ Als alternatief is er een kort (niet-gezaghebbende) overzicht van GDPR/DSGVO/AVG
 ---
 
 
-Laatste Bijgewerkt: 15 Oktober 2018 (2018.10.15).
+Laatste Bijgewerkt: 4 November 2018 (2018.11.04).

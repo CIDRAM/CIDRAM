@@ -67,7 +67,7 @@ Or this in the `.htaccess` file:
 
 #### 2.1 INSTALLING WITH COMPOSER
 
-[CIDRAM is registered with Packagist](https://packagist.org/packages/cidram/cidram), and so, if you're familiar with Composer, you can use Composer to install CIDRAM (you'll still need to prepare the configuration and hooks though; see "installing manually" steps 2 and 5).
+[CIDRAM is registered with Packagist](https://packagist.org/packages/cidram/cidram), and so, if you're familiar with Composer, you can use Composer to install CIDRAM (you'll still need to prepare the configuration, permissions and hooks though; see "installing manually" steps 2, 4, and 5).
 
 `composer require cidram/cidram`
 
@@ -333,15 +333,15 @@ General CIDRAM configuration.
 
 *Useful tip: If you want, you can append date/time information to the names of your logfiles by including these in the name.*
 
-Placeholder|Explanation|Example
---- | --- | ---
-`{yyyy}`|Entire Year|2018
-`{yy}`|Shortened Year|18
-`{mm}`|Month|08
-`{dd}`|Day|20
-`{hh}`|Hour|12
+Placeholder | Explanation | Example
+---|---|---
+`{yyyy}` | Entire year | 2018
+`{yy}` | Shortened year | 18
+`{mm}` | Month| 08
+`{dd}` | Day | 20
+`{hh}` | Hour | 12
 
-_Examples are based on the 20.08.2018 at 12:06_
+_Examples are based on the date 20.08.2018, at 12:06._
 
 *Examples:*
 - *`logfile='logfile.{yyyy}-{mm}-{dd}-{hh}.txt'`*
@@ -1478,4 +1478,4 @@ Alternatively, there's a brief (non-authoritative) overview of GDPR/DSGVO availa
 ---
 
 
-Last Updated: 26 September 2018 (2018.09.26).
+Last Updated: 4 November 2018 (2018.11.04).

@@ -67,7 +67,7 @@ Atau ini di file `.htaccess`:
 
 #### 2.1 MENGINSTAL DENGAN COMPOSER
 
-[CIDRAM terdaftar dengan Packagist](https://packagist.org/packages/cidram/cidram). Jika Anda akrab dengan Composer, Anda dapat menggunakan Composer untuk menginstal CIDRAM (Anda masih perlu mempersiapkan konfigurasi dan kait meskipun; melihat "menginstal secara manual" langkah 2 dan 5).
+[CIDRAM terdaftar dengan Packagist](https://packagist.org/packages/cidram/cidram). Jika Anda akrab dengan Composer, Anda dapat menggunakan Composer untuk menginstal CIDRAM (Anda masih perlu mempersiapkan konfigurasi, izin dan kait meskipun; melihat "menginstal secara manual" langkah 2, 4, dan 5).
 
 `composer require cidram/cidram`
 
@@ -1458,4 +1458,4 @@ Beberapa sumber bacaan yang direkomendasikan untuk mempelajari informasi lebih l
 ---
 
 
-Terakhir Diperbarui: 26 September 2018 (2018.09.26).
+Terakhir Diperbarui: 4 November 2018 (2018.11.04).

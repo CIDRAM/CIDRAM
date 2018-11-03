@@ -70,7 +70,7 @@
 
 #### <div dir="rtl">٢.١ تثبيت مع COMPOSER</div>
 
-<div dir="rtl"><a href="https://packagist.org/packages/cidram/cidram">يتم تسجيل CIDRAM مع Packagist</a>، و بالتالي، إذا كنت على دراية به، يمكنك استخدامه لتثبيت CIDRAM (ستظل بحاجة إلى إعداده على الرغم من ذلك؛ نرى "تثبيت يدويا" الخطوتين ٢ و ٥).<br /><br /></div>
+<div dir="rtl"><a href="https://packagist.org/packages/cidram/cidram">يتم تسجيل CIDRAM مع Packagist</a>، و بالتالي، إذا كنت على دراية به، يمكنك استخدامه لتثبيت CIDRAM (ستظل بحاجة إلى إعداده على الرغم من ذلك؛ نرى "تثبيت يدويا" الخطوتين ٢، ٤ و ٥).<br /><br /></div>
 
 `composer require cidram/cidram`
 
@@ -1674,4 +1674,4 @@ x.x.x.x - Day, dd Mon 20xx hh:ii:ss +0000 - "admin" - حاليا على.
 ---
 
 
-<div dir="rtl">آخر تحديث: 20 اكتوبر 2018 (2018.10.20).</div>
+<div dir="rtl">آخر تحديث: 4 نوفمبر 2018 (2018.11.04).</div>

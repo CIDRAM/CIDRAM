@@ -67,7 +67,7 @@ CIDRAM COPYRIGHT 2016 and beyond GNU/GPLv2 by Caleb M (Maikuolan)。
 
 #### 2.1 與COMPOSER安裝
 
-[CIDRAM是在Packagist上](https://packagist.org/packages/cidram/cidram)，​所以，​如果您熟悉Composer，​您可以使用Composer安裝CIDRAM（您仍然需要準備配置和鉤子；參考『安裝手工』步驟2和5）。
+[CIDRAM是在Packagist上](https://packagist.org/packages/cidram/cidram)，​所以，​如果您熟悉Composer，​您可以使用Composer安裝CIDRAM（您仍然需要準備配置，權限，和鉤子。參考『安裝手工』步驟2，4，和5）。
 
 `composer require cidram/cidram`
 
@@ -1467,4 +1467,4 @@ CIDRAM不收集或處理任何信息用於營銷或廣告目的，既不銷售�
 ---
 
 
-最後更新：2018年9月26日。
+最後更新：2018年11月4日。

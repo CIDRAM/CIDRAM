@@ -7,7 +7,7 @@
  <li>٣. <a href="#SECTION3">کس طرح استعمال</a></li>
  <li>٤. <a href="#SECTION4">سامنے کے آخر میں انتظام</a></li>
  <li>٥. <a href="#SECTION5">فائل اس پیکیج میں شامل</a></li>
- <li>٦. <a href="#SECTION6">ترتیب کے اختیارات</a></li>
+ <li>f. <a href="#SECTION6">ترتیب کے اختیارات</a></li>
  <li>٧. <a href="#SECTION7">دستخط فارمیٹ</a></li>
  <li>٨. <a href="#SECTION8">جانا جاتا مطابقت کے مسائل</a></li>
  <li>٩. <a href="#SECTION9">اکثر پوچھے گئے سوالات (FAQ)</a></li>
@@ -70,7 +70,7 @@
 
 #### <div dir="rtl">٢.١ COMPOSER کے ساتھ نصب</div>
 
-<div dir="rtl"><a href="https://packagist.org/packages/cidram/cidram">CIDRAM Packagist ساتھ رجسٹرڈ ہے</a>، اور اسی طرح، آپ کمپوزر سے واقف ہیں تو، آپ (CIDRAM انسٹال کرنے کے کمپوزر استعمال کر سکتے ہیں اگر آپ اب بھی تیار کرنے کے لئے کی ضرورت ہو گی ترتیب اور ہکس اگرچہ؛ "دستی طور پر نصب کرنے" دیکھیں 2 اقدامات اور 5).<br /><br /></div>
+<div dir="rtl"><a href="https://packagist.org/packages/cidram/cidram">CIDRAM Packagist ساتھ رجسٹرڈ ہے</a>، اور اسی طرح، آپ کمپوزر سے واقف ہیں تو، آپ (تاہم، آپ اب بھی پیکیج تیار کرنے کی ضرورت ہوگی؛ "دستی طور پر نصب کرنے" دیکھیں اقدامات ٢، ٤ اور ٥).<br /><br /></div>
 
 `composer require cidram/cidram`
 
@@ -1673,4 +1673,4 @@ Conversely, if you're required to retain logs for an extended period of time, yo
 ---
 
 
-<div dir="rtl">آخری تازہ کاری: 20 اکتوبر 2018 (2018.10.20).</div>
+<div dir="rtl">آخری تازہ کاری: 4 نومبر 2018 (2018.11.04).</div>

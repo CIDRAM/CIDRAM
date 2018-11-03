@@ -67,7 +67,7 @@ Apache 웹서버를 이용하고있어, 한편`php.ini`를 편집 할 수 있도
 
 #### 2.1 COMPOSER를 사용하여 설치한다
 
-[CIDRAM는 Packagist에 등록되어 있습니다](https://packagist.org/packages/cidram/cidram). Composer를 익숙한 경우 Composer를 사용하여 CIDRAM를 설치할 수 있습니다 (당신은 아직 설정과 후크를 준비해야합니다; "수동 설치"의 2 단계와 5 단계를 참조하십시오).
+[CIDRAM는 Packagist에 등록되어 있습니다](https://packagist.org/packages/cidram/cidram). Composer를 익숙한 경우 Composer를 사용하여 CIDRAM를 설치할 수 있습니다 (그러나, 당신은 설정 옵션, 권한 및 후크를 준비해야합니다. "수동 설치"의 2, 4 단계와 5 단계를 참조하십시오).
 
 `composer require cidram/cidram`
 
@@ -1461,4 +1461,4 @@ CIDRAM은 마케팅이나 광고 목적으로 정보를 수집하거나 처리�
 ---
 
 
-최종 업데이트 : 2018년 10월 20일.
+최종 업데이트 : 2018년 11월 4일.

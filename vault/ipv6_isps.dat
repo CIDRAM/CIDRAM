@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_isps.dat
 
-# Version: 2018.297.722
-# Last modified: 2018.10.25
+# Version: 2018.313.090
+# Last modified: 2018.11.10
 
 
 # ---
@@ -1156,9 +1156,8 @@ recaptcha:
 # not ignore this section, but to ensure that the reCAPTCHA feature is enabled in their configuration.
 # - When updating, be careful about bogons (remove them prior to aggregating)!
 # - When updating, before aggregating, remove these (they don't belong to Bharti and shouldn't be being announced)!
-#   - 155.144.144.0/24 (AU), 80.81.192.0/22 (DE), 193.239.116.0/22 (NL), plus anything from Singapore (SG),
-#     Ireland (IE), or the United States (US).
-# Updated: 2018.06.14
+#   - 155.144.144.0/24 (AU), 193.239.116.0/22 (NL), anything from Singapore (SG), Ireland (IE), United States (US).
+# Updated: 2018.11.08
 
 2401:4900:50::/48 Deny Spam
 2401:4900:808::/45 Deny Spam
@@ -1166,13 +1165,17 @@ recaptcha:
 2401:4900:840::/44 Deny Spam
 2401:4900:880::/44 Deny Spam
 2401:4900:900::/40 Deny Spam
-2401:4900:a00::/39 Deny Spam
-2401:4900:c00::/40 Deny Spam
-2401:4900:d00::/41 Deny Spam
+2401:4900:a00::/40 Deny Spam
+2401:4900:b00::/41 Deny Spam
+2401:4900:b80::/43 Deny Spam
+2401:4900:ba0::/44 Deny Spam
+2401:4900:c00::/43 Deny Spam
+2401:4900:c80::/41 Deny Spam
 2401:4900:1000::/41 Deny Spam
 2401:4900:1100::/41 Deny Spam
-2401:4900:1200::/40 Deny Spam
-2401:4900:1300::/41 Deny Spam
+2401:4900:1200::/42 Deny Spam
+2401:4900:1260::/44 Deny Spam
+2401:4900:1280::/41 Deny Spam
 2401:4900:1680::/41 Deny Spam
 2401:4900:1710::/44 Deny Spam
 2401:4900:1720::/43 Deny Spam
@@ -1181,25 +1184,31 @@ recaptcha:
 2401:4900:1d00::/41 Deny Spam
 2401:4900:2000::/48 Deny Spam
 2401:4900:2080::/48 Deny Spam
-2401:4900:2100::/48 Deny Spam
-2401:4900:2180::/41 Deny Spam
-2401:4900:2280::/48 Deny Spam
-2401:4900:2300::/42 Deny Spam
-2401:4900:2340::/48 Deny Spam
+2401:4900:2100::/46 Deny Spam
+2401:4900:2104::/47 Deny Spam
+2401:4900:2180::/46 Deny Spam
+2401:4900:2184::/47 Deny Spam
+2401:4900:22f0::/44 Deny Spam
+2401:4900:2300::/43 Deny Spam
+2401:4900:2340::/43 Deny Spam
 2401:4900:2500::/46 Deny Spam
 2401:4900:2504::/47 Deny Spam
 2401:4900:2580::/41 Deny Spam
 2401:4900:2600::/39 Deny Spam
 2401:4900:2e80::/41 Deny Spam
 2401:4900:2f00::/40 Deny Spam
-2401:4900:30c0::/44 Deny Spam
-2401:4900:3130::/44 Deny Spam
+2401:4900:3050::/44 Deny Spam
+2401:4900:30b0::/44 Deny Spam
+2401:4900:30c0::/43 Deny Spam
+2401:4900:3100::/42 Deny Spam
+2401:4900:3140::/43 Deny Spam
 2401:4900:35f0::/44 Deny Spam
 2401:4900:3600::/43 Deny Spam
 2401:4900:3620::/44 Deny Spam
-2401:4900:3670::/45 Deny Spam
-2401:4900:3727::/48 Deny Spam
-2401:4900:372d::/48 Deny Spam
+2401:4900:3670::/44 Deny Spam
+2401:4900:3680::/42 Deny Spam
+2401:4900:36c0::/44 Deny Spam
+2403:c00:3::/48 Deny Spam
 2404:a800::/32 Deny Spam
 2405:a700:14::/47 Deny Spam
 2407:7400::/48 Deny Spam

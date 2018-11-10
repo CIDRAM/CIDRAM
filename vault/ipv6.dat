@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6.dat
 
-# Version: 2018.298.141
-# Last modified: 2018.10.26
+# Version: 2018.313.090
+# Last modified: 2018.11.10
 
 
 # ---
@@ -1125,6 +1125,12 @@ Origin: IN
 2607:f8f8::/32 Deny Cloud
 Origin: US
 Tag: Wowrack.com
+
+
+# 2a0c:46c0::/29 is not announced by any ASNs via BGP, but whois confirms it belongs to IDEAL HOSTING. Updated: 2018.11.08
+2a0c:46c0::/29 Deny Cloud
+Origin: TR
+Tag: IDEAL HOSTING
 
 
 # ASN 11051 ("Cyberverse, Inc").
@@ -5915,9 +5921,9 @@ Tag: Radore Veri Merkezi
 
 # ASNs 44066, 203833 ("First Colo GmbH").
 # Malware detected on network; Future C&C risk.
-# %Listed, Google Malware Dashboard: 0.34% (AS44066), 1.14% (AS203833).
-# Stop Forum Spam (SFS) listings: 550 (AS44066), 74 (AS203833).
-# Updated: 2018.06.19
+# %Listed, Google Malware Dashboard: 0.09% (AS44066), 1.45% (AS203833).
+# Stop Forum Spam (SFS) listings: 362 (AS44066), 164 (AS203833).
+# Updated: 2018.11.10
 
 2a00:11c0:38::/48 Deny Cloud
 Origin: AT
@@ -5931,10 +5937,13 @@ Origin: CZ
 2a05:8b80::/29 Deny Cloud
 2a07:b800::/29 Deny Cloud
 2a0a:7bc0::/32 Deny Cloud
+2a0a:7bc7::/32 Deny Cloud
 2a0a:b800::/29 Deny Cloud
 2a0b:8dc0::/29 Deny Cloud
+2a0c:4ac0:1100::/40 Deny Cloud
 2a0c:75c0::/45 Deny Cloud
 2a0d:3580::/32 Deny Cloud
+2a0d:5940::/29 Deny Cloud
 Origin: DE
 2a02:6b40::/32 Deny Cloud
 Origin: ES
@@ -5943,12 +5952,10 @@ Tag: First Colo GmbH
 
 # ASN 62088 ("Sinarohost LTD").
 # Malware detected on network; Future C&C risk.
-# %Listed, Google Malware Dashboard: 8.09%.
-# Stop Forum Spam (SFS) listings: 398.
-# Updated: 2018.06.19
+# %Listed, Google Malware Dashboard: 4.75%.
+# Stop Forum Spam (SFS) listings: 616.
+# Updated: 2018.11.08
 
-2a0c:46c0::/29 Deny Cloud
-Origin: DK
 2a01:9520::/32 Deny Cloud
 2a01:9521:1::/48 Deny Cloud
 Origin: GB
@@ -5959,9 +5966,9 @@ Tag: Sinarohost LTD
 
 # ASN 197695 ("Domain names registrar REG.RU").
 # Malware detected on network; Future C&C risk.
-# %Listed, Google Malware Dashboard: 0.36%.
-# Stop Forum Spam (SFS) listings: 79.
-# Updated: 2018.06.19
+# %Listed, Google Malware Dashboard: 0.27%.
+# Stop Forum Spam (SFS) listings: 210.
+# Updated: 2018.06.19 / Checked: 2018.11.08
 
 2a00:1b48::/32 Deny Cloud
 2a00:f940:1::/48 Deny Cloud
@@ -5975,7 +5982,7 @@ Tag: REG.RU
 # ASNs 4769, 46015, 55405, 136170 ("Exa Bytes Network Sdn.Bhd").
 # Careful when updating; Also contains some proxies and VPNs (should be marked differently).
 # Malware detected on network; Future C&C risk.
-# Updated: 2018.06.19
+# Updated: 2018.06.19 / Checked: 2018.11.10
 
 2402:6c00::/32 Deny Cloud
 Origin: MY
@@ -5984,9 +5991,9 @@ Tag: Exa Bytes Network
 
 # ASN 45731 ("ARDH GLOBAL INDONESIA, PT").
 # Malware detected on network; Future C&C risk.
-# %Listed, Google Malware Dashboard: 0.92%.
-# Stop Forum Spam (SFS) listings: 3.
-# Updated: 2018.06.19
+# %Listed, Google Malware Dashboard: 0.71%.
+# Stop Forum Spam (SFS) listings: 21.
+# Updated: 2018.06.19 / Checked: 2018.11.08
 
 2001:df0:bc::/48 Deny Cloud
 Origin: ID
@@ -5995,8 +6002,8 @@ Tag: ARDH GLOBAL
 
 # ASN 23881 ("UDomain Web Hosting Company Ltd").
 # Malware detected on network; Future C&C risk.
-# %Listed, Google Malware Dashboard: 0.58%.
-# Updated: 2018.06.19
+# %Listed, Google Malware Dashboard: 0.12%.
+# Updated: 2018.06.19 / Checked: 2018.11.08
 
 2400:c300::/47 Deny Cloud
 Origin: HK
@@ -6006,23 +6013,21 @@ Tag: UDomain
 # ASN 24971 ("Master Internet s.r.o").
 # Careful when updating; Also contains some proxies and VPNs (should be marked differently).
 # Malware detected on network; Future C&C risk.
-# %Listed, Google Malware Dashboard: 1.13%.
-# Stop Forum Spam (SFS) listings: 304.
-# Updated: 2018.06.19
+# %Listed, Google Malware Dashboard: 0.87%.
+# Stop Forum Spam (SFS) listings: 259.
+# Updated: 2018.11.08
 
 2001:67c:68::/48 Deny Cloud
 2001:67c:2d30::/48 Deny Cloud
 2a00:8220::/32 Deny Cloud
+2a00:a5a0::/32 Deny Cloud
 2a01:430::/32 Deny Cloud
 2a02:6c20::/32 Deny Cloud
-2a03:3b40::/38 Deny Proxy
+2a03:3b40::/38 Deny Cloud
 2a03:7460::/32 Deny Cloud
 2a07:4880::/29 Deny Cloud
-2a0a:7780::/29 Deny Cloud
 2a0c:6380::/29 Deny Cloud
 Origin: CZ
-2a0c:8c40::/29 Deny Cloud
-Origin: RU
 Tag: Master Internet
 
 
@@ -6115,8 +6120,8 @@ Tag: White Sands Hosting
 
 
 # ASN 64267 ("Sprious LLC").
-# Stop Forum Spam (SFS) listings: 3,663.
-# Updated: 2018.09.07
+# Stop Forum Spam (SFS) listings: 7,007.
+# Updated: 2018.09.07 / Checked: 2018.11.04
 
 2602:fefa::/32 Deny Cloud
 Origin: US

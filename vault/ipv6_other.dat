@@ -1,8 +1,8 @@
 # IPv6 signatures file (CIDRs for proxies, VPNs and other miscellaneous unwanted services).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_other.dat
 
-# Version: 2018.265.525
-# Last modified: 2018.09.23
+# Version: 2018.316.567
+# Last modified: 2018.11.13
 
 
 # ---
@@ -43,14 +43,14 @@ Tag: Cogent VPNs+Proxies
 # Ranges change frequently / Should update often.
 # Careful when updating; Signatures reflect varying block reasons, separated by different tags in different files.
 # Section is split across multiple files.
-# %Listed, Google Malware Dashboard: 0.19%.
-# Stop Forum Spam (SFS) listings: 14,739.
+# %Listed, Google Malware Dashboard: 0.25%.
+# Stop Forum Spam (SFS) listings: 8,079.
 
 # SoftLayer VPNs and proxies.
 # Includes: Anything citing "TEFINCOM", "VPN", "proxy", "Privat Kommunikation", "Secure Internet".
 # ^(.*(TEFINCOM|VPN|Proxy|Privat Kommunikation|Secure Internet).*)$
 # Excludes: Everything else.
-# Updated: 2018.06.24
+# Updated: 2018.06.24 / Checked: 2018.11.13
 
 2400:bb40:1000::/40 Deny Proxy
 Origin: PA

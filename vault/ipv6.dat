@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6.dat
 
-# Version: 2018.313.090
-# Last modified: 2018.11.10
+# Version: 2018.316.567
+# Last modified: 2018.11.13
 
 
 # ---
@@ -377,8 +377,8 @@ Tag: Agava Ltd
 # Ranges change frequently / Should update often.
 # Careful when updating; Signatures reflect varying block reasons, separated by different tags in different files.
 # Section is split across multiple files.
-# %Listed, Google Malware Dashboard: 0.19%.
-# Stop Forum Spam (SFS) listings: 14,739.
+# %Listed, Google Malware Dashboard: 0.25%.
+# Stop Forum Spam (SFS) listings: 8,079.
 
 # SoftLayer cloud services, webhosting providers, etc.
 # This section all as "Run rules_softlayer.php".
@@ -391,7 +391,7 @@ Tag: Agava Ltd
 # Excludes: Anything citing "Vonex" (well-behaved; zero bad history; not necessary to block).
 # ^(.*(Vonex).*)$
 # Includes: Everything else.
-# Updated: 2018.06.24
+# Updated: 2018.11.13
 
 2402:2f80::/48 Run rules_softlayer.php
 2403:1480:1000::/36 Run rules_softlayer.php
@@ -403,6 +403,8 @@ Origin: BZ
 Origin: CN
 2a01:6f0:fffe::/48 Run rules_softlayer.php
 Origin: DE
+2a04:f400:3000::/48 Run rules_softlayer.php
+Origin: EU
 2a02:2498:3::/48 Run rules_softlayer.php
 Origin: GB
 2402:9e80::/47 Run rules_softlayer.php
@@ -416,11 +418,14 @@ Origin: IN
 2a03:8180:1600::/40 Run rules_softlayer.php
 2a03:8180:1800::/39 Run rules_softlayer.php
 2a03:8180:1c00::/39 Run rules_softlayer.php
+2a03:8180:1f00::/40 Run rules_softlayer.php
 Origin: NL
 2401:c900:1000::/38 Run rules_softlayer.php
 2401:c900:1400::/39 Run rules_softlayer.php
 2401:c900:1600::/40 Run rules_softlayer.php
 2401:c900:1800::/40 Run rules_softlayer.php
+2401:c900:1f00::/40 Run rules_softlayer.php
+2401:c900:2000::/39 Run rules_softlayer.php
 2402:b180:1::/48 Run rules_softlayer.php
 Origin: SG
 2402:e380::/48 Run rules_softlayer.php
@@ -439,9 +444,9 @@ Origin: SG
 2606:2e00:8024::/48 Run rules_softlayer.php
 2607:6980:e000::/44 Run rules_softlayer.php
 2607:f0d0::/32 Run rules_softlayer.php
+2620:11b:3002::/48 Run rules_softlayer.php
 2620:121:5000::/47 Run rules_softlayer.php
 2620:121:5002::/48 Run rules_softlayer.php
-2620:121:7000::/47 Run rules_softlayer.php
 Origin: US
 2803:2f40:ffff::/48 Run rules_softlayer.php
 Origin: UY
@@ -1659,9 +1664,9 @@ Tag: UOL DIVEO S.A
 
 
 # ASN 46562 ("Total Server Solutions L.L.C").
-# %Listed, Google Malware Dashboard: 0.15%.
-# Stop Forum Spam (SFS) listings: 52,918.
-# Updated: 2018.06.28
+# %Listed, Google Malware Dashboard: 0.30%.
+# Stop Forum Spam (SFS) listings: 50,934.
+# Updated: 2018.11.13
 
 2602:fff6:5::/48 Deny Cloud
 2604:2880::/48 Deny Cloud
@@ -1671,8 +1676,7 @@ Tag: UOL DIVEO S.A
 2607:f7a0:2::/47 Deny Cloud
 2607:f7a0:4::/46 Deny Cloud
 2607:f7a0:8::/45 Deny Cloud
-2607:f7a0:10::/46 Deny Cloud
-2607:f7a0:14::/47 Deny Cloud
+2607:f7a0:10::/45 Deny Cloud
 Origin: US
 Tag: AS46562
 
@@ -3224,8 +3228,9 @@ Tag: OOO TimeWeb
 
 
 # ASN 10098 ("Henderson Data Centre Limited").
-# %Listed, Google Malware Dashboard: 1.94%.
-# Updated: 2016.04.23 / Checked: 2018.04.04
+# %Listed, Google Malware Dashboard: 0.32%.
+# Stop Forum Spam (SFS) listings: 1.
+# Updated: 2016.04.23 / Checked: 2018.11.13
 
 2407:7200::/32 Deny Cloud
 Origin: HK
@@ -3589,13 +3594,12 @@ Tag: InMotion Hosting, Inc
 
 
 # ASN 45638 ("SYNERGY WHOLESALE PTY LTD").
-# %Listed, Google Malware Dashboard: 0.24%.
-# Updated: 2018.06.28
+# %Listed, Google Malware Dashboard: 0.22%.
+# Updated: 2018.11.13
 
 2400:8f80::/47 Deny Cloud
 2400:b800::/46 Deny Cloud
-2400:b800:4::/48 Deny Cloud
-2404:2780::/48 Deny Cloud
+2400:b800:4::/47 Deny Cloud
 Origin: AU
 Tag: SYNERGY WHOLESALE
 
@@ -4542,9 +4546,9 @@ Tag: Strato AG
 
 
 # ASN 8001 ("Net Access Corporation").
-# %Listed, Google Malware Dashboard: 0.46%.
-# Stop Forum Spam (SFS) listings: 168.
-# Updated: 2016.09.10 / Checked: 2018.06.28
+# %Listed, Google Malware Dashboard: 0.34%.
+# Stop Forum Spam (SFS) listings: 53.
+# Updated: 2016.09.10 / Checked: 2018.11.13
 
 2001:518::/32 Deny Cloud
 2620:4d:4002::/48 Deny Cloud

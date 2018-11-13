@@ -1,8 +1,8 @@
 # IPv4 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv4_isps.dat
 
-# Version: 2018.313.090
-# Last modified: 2018.11.10
+# Version: 2018.316.567
+# Last modified: 2018.11.13
 
 
 # ---
@@ -1508,12 +1508,13 @@ Tag: Trend Micro
 # hacktools, scrapers, etc). Those whose websites anticipate human internet traffic from Israel should include this
 # section in their "ignore.dat" file, or else risk false positives by way of blocking innocents connecting from Israel.
 # Those whose don't anticipate any human internet traffic from Israel to their websites can safely block this ASN.
-# %Listed, Google Malware Dashboard: 0.28%.
-# %Listed, abuseat.org (CBL-Listed): 0.30%.
-# Stop Forum Spam (SFS) listings: 6,769.
-# Updated: 2018.06.28
+# %Listed, Google Malware Dashboard: 0.29%.
+# %Listed, abuseat.org (CBL-Listed): 0.35%.
+# Stop Forum Spam (SFS) listings: 9,844.
+# Updated: 2018.11.13
 
 92.122.128.0/20 Deny Generic
+95.100.204.0/22 Deny Generic
 95.101.4.0/22 Deny Generic
 Origin: EU
 31.168.0.0/16 Deny Generic
@@ -1540,7 +1541,6 @@ Origin: EU
 192.117.232.0/21 Deny Generic
 212.25.64.0/18 Deny Generic
 212.179.0.0/16 Deny Generic
-217.194.200.0/24 Deny Generic
 Origin: IL
 8.253.255.0/24 Deny Generic
 23.34.224.0/20 Deny Generic
@@ -8779,28 +8779,31 @@ recaptcha:
 
 
 # ASN 8708 ("RCS & RDS SA").
-# %Listed, Google Malware Dashboard: 3.43%.
-# %Listed, abuseat.org (CBL-Listed): 1.15%.
-# Stop Forum Spam (SFS) listings: 1,551.
-# Updated: 2018.06.24
+# %Listed, Google Malware Dashboard: 2.76%.
+# %Listed, abuseat.org (CBL-Listed): 0.88%.
+# Stop Forum Spam (SFS) listings: 2,026.
+# Updated: 2018.11.13
 
 2.16.166.0/23 Deny Generic
 2.17.116.0/22 Deny Generic
 2.20.96.0/19 Deny Generic
 Origin: EU
+92.114.16.0/20 Deny Generic
+Origin: IR 
 5.2.128.0/17 Deny Generic
 5.12.0.0/14 Deny Generic
 62.231.64.0/18 Deny Generic
 79.112.0.0/13 Deny Generic
 80.96.32.0/19 Deny Generic
 80.96.64.0/19 Deny Generic
+80.96.204.0/23 Deny Generic
 80.96.219.0/24 Deny Generic
 80.97.128.0/19 Deny Generic
 80.97.160.0/20 Deny Generic
 81.18.64.0/19 Deny Generic
 81.180.32.0/19 Deny Generic
 81.180.128.0/19 Deny Generic
-81.181.72.0/23 Deny Generic
+81.181.74.0/24 Deny Generic
 81.181.112.0/20 Deny Generic
 81.181.128.0/22 Deny Generic
 81.181.136.0/21 Deny Generic
@@ -8811,11 +8814,11 @@ Origin: EU
 84.232.128.0/17 Deny Generic
 85.120.0.0/19 Deny Generic
 85.120.96.0/19 Deny Generic
-85.121.80.0/21 Deny Generic
 85.204.70.0/24 Deny Generic
 85.204.72.0/24 Deny Generic
 85.204.241.0/24 Deny Generic
 85.204.242.0/24 Deny Generic
+86.105.3.0/24 Deny Generic
 86.105.4.0/24 Deny Generic
 86.105.27.0/24 Deny Generic
 86.105.233.0/24 Deny Generic
@@ -8829,7 +8832,6 @@ Origin: EU
 89.36.137.0/24 Deny Generic
 89.37.235.0/24 Deny Generic
 89.38.236.0/24 Deny Generic
-89.39.67.0/24 Deny Generic
 89.40.65.0/24 Deny Generic
 89.40.66.0/24 Deny Generic
 89.43.33.0/24 Deny Generic
@@ -8846,7 +8848,6 @@ Origin: EU
 94.176.212.0/24 Deny Generic
 94.177.119.0/24 Deny Generic
 128.0.60.0/22 Deny Generic
-185.170.124.0/22 Deny Generic
 185.178.228.0/22 Deny Generic
 185.240.253.0/24 Deny Generic
 185.248.136.0/23 Deny Generic
@@ -8856,8 +8857,7 @@ Origin: EU
 188.26.192.0/20 Deny Generic
 188.26.224.0/19 Deny Generic
 188.27.0.0/16 Deny Generic
-188.214.58.0/24 Deny Generic
-188.241.14.0/23 Deny Generic
+188.241.15.0/24 Deny Generic
 193.22.173.0/24 Deny Generic
 193.111.161.0/24 Deny Generic
 193.201.20.0/23 Deny Generic
@@ -8899,7 +8899,6 @@ Origin: EU
 194.102.183.0/24 Deny Generic
 194.102.190.0/24 Deny Generic
 194.102.229.0/24 Deny Generic
-194.102.233.0/24 Deny Generic
 194.102.244.0/23 Deny Generic
 194.102.247.0/24 Deny Generic
 194.105.19.0/24 Deny Generic
@@ -8911,7 +8910,6 @@ Origin: EU
 194.153.245.0/24 Deny Generic
 194.153.248.0/23 Deny Generic
 194.176.173.0/24 Deny Generic
-194.176.181.0/24 Deny Generic
 195.47.194.0/24 Deny Generic
 212.54.96.0/19 Deny Generic
 212.93.128.0/19 Deny Generic
@@ -8949,14 +8947,14 @@ recaptcha:
 # Ranges change frequently / Should update often.
 # Careful when updating; Signatures reflect varying block reasons, separated by different tags in different files.
 # Section is split across multiple files.
-# %Listed, Google Malware Dashboard: 0.19%.
-# Stop Forum Spam (SFS) listings: 14,739.
+# %Listed, Google Malware Dashboard: 0.25%.
+# Stop Forum Spam (SFS) listings: 8,079.
 
 # SoftLayer questionable multi-play networks, spammy ISPs, etc.
 # Includes: Anything citing "Starry".
 # ^(.*(Starry).*)$
 # Excludes: Everything else.
-# Updated: 2018.06.24
+# Updated: 2018.06.24 / Checked: 2018.11.13
 
 103.56.216.0/24 Deny Spam
 103.56.218.0/23 Deny Spam

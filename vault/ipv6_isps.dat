@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_isps.dat
 
-# Version: 2018.313.090
-# Last modified: 2018.11.10
+# Version: 2018.316.567
+# Last modified: 2018.11.13
 
 
 # ---
@@ -277,10 +277,10 @@ Tag: Trend Micro
 # hacktools, scrapers, etc). Those whose websites anticipate human internet traffic from Israel should include this
 # section in their "ignore.dat" file, or else risk false positives by way of blocking innocents connecting from Israel.
 # Those whose don't anticipate any human internet traffic from Israel to their websites can safely block this ASN.
-# %Listed, Google Malware Dashboard: 0.28%.
-# %Listed, abuseat.org (CBL-Listed): 0.30%.
-# Stop Forum Spam (SFS) listings: 6,769.
-# Updated: 2018.03.08 / Checked: 2018.06.28
+# %Listed, Google Malware Dashboard: 0.29%.
+# %Listed, abuseat.org (CBL-Listed): 0.35%.
+# Stop Forum Spam (SFS) listings: 9,844.
+# Updated: 2018.03.08 / Checked: 2018.11.13
 
 2a02:26f0:8000::/48 Deny Generic
 Origin: EU
@@ -1516,10 +1516,10 @@ recaptcha:
 
 
 # ASN 8708 ("RCS & RDS SA").
-# %Listed, Google Malware Dashboard: 3.43%.
-# %Listed, abuseat.org (CBL-Listed): 1.15%.
-# Stop Forum Spam (SFS) listings: 1,551.
-# Updated: 2018.06.24
+# %Listed, Google Malware Dashboard: 2.76%.
+# %Listed, abuseat.org (CBL-Listed): 0.88%.
+# Stop Forum Spam (SFS) listings: 2,026.
+# Updated: 2018.06.24 / Checked: 2018.11.13
 
 2a02:2f00::/28 Deny Generic
 Origin: RO
@@ -1533,14 +1533,14 @@ recaptcha:
 # Ranges change frequently / Should update often.
 # Careful when updating; Signatures reflect varying block reasons, separated by different tags in different files.
 # Section is split across multiple files.
-# %Listed, Google Malware Dashboard: 0.19%.
-# Stop Forum Spam (SFS) listings: 14,739.
+# %Listed, Google Malware Dashboard: 0.25%.
+# Stop Forum Spam (SFS) listings: 8,079.
 
 # SoftLayer questionable multi-play networks, spammy ISPs, etc.
 # Includes: Anything citing "Starry".
 # ^(.*(Starry).*)$
 # Excludes: Everything else.
-# Updated: 2018.06.24
+# Updated: 2018.06.24 / Checked: 2018.11.13
 
 2403:ad80:10::/48 Deny Spam
 2403:ad80:20::/48 Deny Spam

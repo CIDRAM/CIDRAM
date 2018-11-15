@@ -1466,18 +1466,20 @@ IP | آپریٹر
 
 #### <div dir="rtl">١١.٣ لاگ<br /><br /></div>
 
-Logging is an important part of CIDRAM for a number of reasons. It may be difficult to diagnose and resolve false positives when the block events that cause them aren't logged. Without logging block events, it may be difficult to ascertain exactly how performant CIDRAM is in any particular context, and it may be difficult to determine where its shortfalls may be, and what changes may be required to its configuration or signatures accordingly, in order for it to continue functioning as intended. Regardless, logging mightn't be desirable for all users, and remains entirely optional. In CIDRAM, logging is disabled by default. To enable it, CIDRAM must be configured accordingly.
+Logging is an important part of CIDRAM for a number of reasons. It may be difficult to diagnose and resolve false positives when the block events that cause them aren't logged. Without logging block events, it may be difficult to ascertain how well CIDRAM performs, and it may be difficult to determine where its shortcomings, and what changes may be required to its configuration or signatures, in order for it to continue functioning as intended. Regardless, logging mightn't be desirable for all users, and remains entirely optional. In CIDRAM, logging is disabled by default. To enable it, CIDRAM must be configured accordingly.
 
 Additionally, whether logging is legally permissible, and to the extent that it is legally permissible (e.g., the types of information that may be logged, for how long, and under what circumstances), may vary, depending on jurisdiction and on the context where CIDRAM is implemented (e.g., whether you're operating as an individual, as a corporate entity, and whether on a commercial or non-commercial basis). It may therefore be useful for you to read through this section carefully.
 
 There are multiple types of logging that CIDRAM can perform. Different types of logging involves different types of information, for different reasons.
 
-##### 11.3.0 BLOCK EVENTS
+##### <div dir="rtl">١١.٣.٠ بلاک کے واقعات<br /><br /></div>
 
-The primary type of logging that CIDRAM can perform relates to "block events". This type of logging relates to when CIDRAM blocks a request, and can be provided in three different formats:
-- Human readable logfiles.
-- Apache-style logfiles.
-- Serialised logfiles.
+<div dir="rtl">لاگ کا بنیادی قسم جس میں CIDRAM انجام دیتا ہے "بلاک کے واقعات" سے متعلق ہے. اس سے متعلق ہے کہ جب CIDRAM کسی درخواست کو روکتا ہے، اور تین مختلف فارمیٹس میں فراہم کی جاسکتی ہے:<br /></div>
+<div dir="rtl"><ul>
+ <li>لاگ جو انسان کی طرف سے پڑھ سکتے ہیں.</li>
+ <li>Apache سٹائل لاگ.</li>
+ <li>سیریلائزڈ لاگ.</li>
+</ul></div>
 
 A block event, logged to a human readable logfile, typically looks something like this (as an example):
 
@@ -1523,7 +1525,7 @@ A logged block event typically includes the following information:
 
 When these directives are left empty, this type of logging will remain disabled.
 
-##### 11.3.1 reCAPTCHA LOGGING
+##### <div dir="rtl">١١.٣.١ reCAPTCHA لاگ<br /><br /></div>
 
 This type of logging relates specifically to reCAPTCHA instances, and occurs only when a user attempts to complete a reCAPTCHA instance.
 
@@ -1538,7 +1540,7 @@ IP Address: x.x.x.x - Date/Time: Day, dd Mon 20xx hh:ii:ss +0000 - reCAPTCHA Sta
  <li><code dir="ltr">logfile</code> &lt;- <code dir="ltr">recaptcha</code></li>
 </ul></div>
 
-##### 11.3.2 FRONT-END LOGGING
+##### <div dir="rtl">١١.٣.٢ سامنے کے آخر لاگ<br /><br /></div>
 
 This logging relates front-end login attempts. It occurs only when a user attempts to log into the front-end, and only when front-end access is enabled.
 
@@ -1553,7 +1555,7 @@ x.x.x.x - Day, dd Mon 20xx hh:ii:ss +0000 - "admin" - لاگ ان.
  <li><code dir="ltr">FrontEndLog</code> &lt;- <code dir="ltr">general</code></li>
 </ul></div>
 
-##### <div dir="rtl">١١.٣.٣ لاگ گرد گھومنے<br /><br /></div>
+##### <div dir="rtl">١١.٣.٣ لاگ گھومنے<br /><br /></div>
 
 You may want to purge logs after a period of time, or may be required to do so by law (i.e., the amount of time that it's legally permissible for you to retain logs may be limited by law). You can achieve this by including date/time markers in the names of your logfiles as per specified by your package configuration (e.g., `{yyyy}-{mm}-{dd}.log`), and then enabling log rotation (log rotation allows you to perform some action on logfiles when specified limits are exceeded).
 
@@ -1567,7 +1569,7 @@ Conversely, if you're required to retain logs for an extended period of time, yo
  <li><code dir="ltr">log_rotation_action</code> &lt;- <code dir="ltr">general</code></li>
 </ul></div>
 
-##### <div dir="rtl">١١.٣.٤ ٹرنک ریکارڈ<br /><br /></div>
+##### <div dir="rtl">١١.٣.٤ ٹرنک لاگ<br /><br /></div>
 
 <div dir="rtl">اگر آپ چاہتے ہیں تو، آپ انفرادی ریکارڈز کو چھوٹ سکتے ہیں جب وہ مخصوص سائز سے کہیں زیادہ ہیں.<br /><br /></div>
 

@@ -1466,18 +1466,20 @@ IP | المشغل
 
 #### <div dir="rtl">١١.٣ تسجيل<br /><br /></div>
 
-Logging is an important part of CIDRAM for a number of reasons. It may be difficult to diagnose and resolve false positives when the block events that cause them aren't logged. Without logging block events, it may be difficult to ascertain exactly how performant CIDRAM is in any particular context, and it may be difficult to determine where its shortfalls may be, and what changes may be required to its configuration or signatures accordingly, in order for it to continue functioning as intended. Regardless, logging mightn't be desirable for all users, and remains entirely optional. In CIDRAM, logging is disabled by default. To enable it, CIDRAM must be configured accordingly.
+<div dir="rtl">التسجيل هو جزء مهم من CIDRAM لعدد من الأسباب. قد يكون من الصعب تشخيص وحل إيجابيات خاطئة عندما لا يتم تسجيل أحداث الحظر التي تسبب لهم. بدون تسجيل أحداث الحظر، قد يكون من الصعب التأكد من أداء CIDRAM بشكل جيد، وقد يكون من الصعب تحديد مواطن ضعفها، وما هي التغييرات التي قد تكون مطلوبة لتكوينها أو توقيعاتها، لكي تستمر في العمل على النحو المنشود. بغض النظر، ربما لا يريد الجميع التسجيل، لذلك يبقى اختياريًا تمامًا. في CIDRAM، يتم تعطيل التسجيل افتراضيًا. لتمكينه، يجب تكوين CIDRAM وفقًا لذلك.<br /><br /></div>
 
 Additionally, whether logging is legally permissible, and to the extent that it is legally permissible (e.g., the types of information that may be logged, for how long, and under what circumstances), may vary, depending on jurisdiction and on the context where CIDRAM is implemented (e.g., whether you're operating as an individual, as a corporate entity, and whether on a commercial or non-commercial basis). It may therefore be useful for you to read through this section carefully.
 
 There are multiple types of logging that CIDRAM can perform. Different types of logging involves different types of information, for different reasons.
 
-##### 11.3.0 BLOCK EVENTS
+##### <div dir="rtl">١١.٣.٠ حظر الأحداث<br /><br /></div>
 
-The primary type of logging that CIDRAM can perform relates to "block events". This type of logging relates to when CIDRAM blocks a request, and can be provided in three different formats:
-- Human readable logfiles.
-- Apache-style logfiles.
-- Serialised logfiles.
+<div dir="rtl">النوع الأساسي من التسجيل الذي يمكن أن يؤديه CIDRAM يتعلق بـ "حظر الأحداث". يتعلق هذا عندما يقوم CIDRAM بحظر الطلب، ويمكن توفيره في ثلاثة تنسيقات مختلفة:<br /></div>
+<div dir="rtl"><ul>
+ <li>السجلات التي يمكن قراءتها من قبل البشر.</li>
+ <li>سجلات في اسلوب اباتشي.</li>
+ <li>سجلات مسلسلة.</li>
+</ul></div>
 
 A block event, logged to a human readable logfile, typically looks something like this (as an example):
 
@@ -1521,16 +1523,16 @@ A logged block event typically includes the following information:
  <li><code dir="ltr">logfileSerialized</code> &lt;- <code dir="ltr">general</code></li>
 </ul></div>
 
-When these directives are left empty, this type of logging will remain disabled.
+<div dir="rtl">عندما يتم ترك هذه التوجيهات فارغة، سيظل هذا النوع من التسجيل معطلاً.<br /><br /></div>
 
-##### 11.3.1 reCAPTCHA LOGGING
+##### <div dir="rtl">١١.٣.١ تسجيل reCAPTCHA<br /><br /></div>
 
-This type of logging relates specifically to reCAPTCHA instances, and occurs only when a user attempts to complete a reCAPTCHA instance.
+<div dir="rtl">هذا النوع من التسجيل يتعلق بشكل خاص بمثيلات reCAPTCHA. يحدث فقط عندما يحاول مستخدم لإكمال reCAPTCHA.<br /><br /></div>
 
-A reCAPTCHA log entry contains the IP address of the user attempting to complete a reCAPTCHA instance, the date and time that the attempt occurred, and the reCAPTCHA state. A reCAPTCHA log entry typically looks something like this (as an example):
+<div dir="rtl">يحتوي إدخال سجل reCAPTCHA على عنوان IP الخاص بالمستخدم الذي يحاول إكمال reCAPTCHA، وتاريخ ووقت حدوث المحاولة، وحالة reCAPTCHA. عادةً ما تبدو الإدخالات كما يلي (كمثال):<br /><br /></div>
 
 ```
-IP Address: x.x.x.x - Date/Time: Day, dd Mon 20xx hh:ii:ss +0000 - reCAPTCHA State: Passed!
+عنوان IP: x.x.x.x - الوقت/التاريخ: Day, dd Mon 20xx hh:ii:ss +0000 - الحالة reCAPTCHA: نجحت!
 ```
 
 <div dir="rtl">توجيه التكوين ذات الصلة:<br /></div>
@@ -1538,11 +1540,11 @@ IP Address: x.x.x.x - Date/Time: Day, dd Mon 20xx hh:ii:ss +0000 - reCAPTCHA Sta
  <li><code dir="ltr">logfile</code> &lt;- <code dir="ltr">recaptcha</code></li>
 </ul></div>
 
-##### 11.3.2 FRONT-END LOGGING
+##### <div dir="rtl">١١.٣.٢ سجلات الواجهة الأمامية<br /><br /></div>
 
-This logging relates front-end login attempts. It occurs only when a user attempts to log into the front-end, and only when front-end access is enabled.
+<div dir="rtl">هذا التسجيل يتصل محاولات تسجيل الدخول الأمامية. يحدث فقط عندما يحاول مستخدم تسجيل الدخول إلى الواجهة الأمامية، وفقط عندما يتم تمكين الوصول للجهة الأمامية.<br /><br /></div>
 
-A front-end log entry contains the IP address of the user attempting to log in, the date and time that the attempt occurred, and the results of the attempt (successfully logged in, or failed to log in). A front-end log entry typically looks something like this (as an example):
+<div dir="rtl">يحتوي إدخال سجل الواجهة الأمامية على عنوان IP الخاص بالمستخدم الذي يحاول تسجيل الدخول وتاريخ ووقت حدوث المحاولة ونتائج المحاولة (تم تسجيل الدخول بنجاح، أو فشل في تسجيل الدخول). يبدو عادة مثل هذا (كمثال):<br /><br /></div>
 
 ```
 x.x.x.x - Day, dd Mon 20xx hh:ii:ss +0000 - "admin" - حاليا على.

@@ -1283,54 +1283,54 @@ CIDRAM은이 API를 활용하는 선택적 모듈을 제공합니다. 인바운�
 
 CIDRAM이 수행 할 수있는 로깅에는 여러 유형이 있습니다. 서로 다른 유형의 로깅에는 여러 가지 다른 유형의 정보가 포함됩니다.
 
-##### 11.3.0 BLOCK EVENTS
+##### 11.3.0 블록 이벤트
 
-The primary type of logging that CIDRAM can perform relates to "block events". This type of logging relates to when CIDRAM blocks a request, and can be provided in three different formats:
-- Human readable logfiles.
-- Apache-style logfiles.
-- Serialised logfiles.
+CIDRAM에서의 주요 로깅 유형은 "블록 이벤트"와 관련이 있습니다. 이 유형의 로깅은 CIDRAM이 요청을 차단하는시기와 관련이 있습니다. 그것은 세 가지 다른 형식으로 제공 될 수 있습니다 :
+- 사람이 읽을 수있는 로그 파일.
+- Apache 스타일의 로그 파일.
+- 직렬화 된 로그 파일.
 
-A block event, logged to a human readable logfile, typically looks something like this (as an example):
+블록 이벤트 로그 항목은 일반적으로 다음과 같습니다 (예로서) :
 
 ```
-ID: 1234
-Script Version: CIDRAM v1.6.0
-Date/Time: Day, dd Mon 20xx hh:ii:ss +0000
-IP Address: x.x.x.x
-Hostname: dns.hostname.tld
-Signatures Count: 1
-Signatures Reference: x.x.x.x/xx
-Why Blocked: Cloud service ("Network Name", Lxx:Fx, [XX])!
-User Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36
-Reconstructed URI: http://your-site.tld/index.php
-reCAPTCHA State: Enabled.
+신분증 : 1234
+스크립트 버전 : CIDRAM v1.6.0
+일·월·년·시간 : Day, dd Mon 20xx hh:ii:ss +0000
+IP 주소 : x.x.x.x
+호스트 이름 : dns.hostname.tld
+서명수 : 1
+서명 참조 : x.x.x.x/xx
+왜 차단이 되셨나요 : 클라우드 서비스 ("네트워크 이름", Lxx:Fx, [XX])!
+사용자 에이전트 : Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36
+URI 재구성 된 : http://your-site.tld/index.php
+reCAPTCHA의 상태 : 온.
 ```
 
-That same block event, logged to an Apache-style logfile, would look something like this:
+Apache 스타일의 로그 파일에 기록하면, 다음과 같이 보입니다 :
 
 ```
 x.x.x.x - - [Day, dd Mon 20xx hh:ii:ss +0000] "GET /index.php HTTP/1.1" 200 xxxx "-" "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36"
 ```
 
-A logged block event typically includes the following information:
-- An ID number referencing the block event.
-- The version of CIDRAM currently in use.
-- The date and time that the block event occurred.
-- The IP address of the blocked request.
-- The hostname of the IP address of the blocked request (when available).
-- The number of signatures triggered by the request.
-- References to the signatures triggered.
-- References to the reasons for the block event and some basic, related debug information.
-- The user agent of the blocked request (i.e., how the requesting entity identified itself to the request).
-- A reconstruction of the identifier for the resource originally requested.
-- The reCAPTCHA state for the current request (when relevant).
+로깅 된 블록 이벤트는 일반적으로 다음 정보를 포함합니다 :
+- 블록 이벤트를 참조하는 ID 번호입니다.
+- 현재 사용중인 CIDRAM의 버전입니다.
+- 블록 이벤트가 발생한 날짜와 시간입니다.
+- 차단 된 요청의 IP 주소입니다.
+- 차단 된 요청의 IP 주소의 호스트 이름 (유효한 때).
+- 요청에 의해 트리거 된 서명 수입니다.
+- 트리거 된 서명 참조.
+- 블록 이벤트의 이유 및 일부 관련 디버그 정보.
+- 차단 된 요청의 사용자 에이전트 (즉, how요청 엔터티가 요청에 자신을 식별했습니다).
+- 원래 요청 된 자원에 대한 식별자의 재구성.
+- 현재 요청에 대한 reCAPTCHA 상태 (관련성이있는 경우).
 
 *다음 세 가지 형식 각각에 대해 이러한 유형의 로깅을 담당하는 구성 지시문입니다.*
 - `general` -> `logfile`
 - `general` -> `logfileApache`
 - `general` -> `logfileSerialized`
 
-When these directives are left empty, this type of logging will remain disabled.
+이러한 지시문을 비워두면이, 유형의 로깅은 비활성화 된 상태로 유지됩니다.
 
 ##### 11.3.1 reCAPTCHA 로깅
 

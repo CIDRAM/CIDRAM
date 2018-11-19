@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6.dat
 
-# Version: 2018.316.567
-# Last modified: 2018.11.13
+# Version: 2018.322.293
+# Last modified: 2018.11.19
 
 
 # ---
@@ -830,9 +830,9 @@ Tag: Hurricane Electric
 
 
 # ASNs 49532, 62904 ("Eonix Corporation").
-# %Listed, Google Malware Dashboard: 1.14% (AS49532), 0.54% (AS62904).
-# Stop Forum Spam (SFS) listings: 11,626 (AS49532), 17,538 (AS62904).
-# Updated: 2018.08.25
+# %Listed, Google Malware Dashboard: 0.39% (AS49532), 0.34% (AS62904).
+# Stop Forum Spam (SFS) listings: 6,471 (AS49532), 14,432 (AS62904).
+# Updated: 2018.08.25 / Checked: 2018.11.18
 
 2a07:440::/31 Deny Cloud
 Origin: DE
@@ -1898,9 +1898,9 @@ Tag: HZ Hosting Ltd
 # ASN 53889 ("Micfo, LLC").
 # Exclude: Anything citing "Telecom" (ISP), "KAOS" (ISP), "Level3" (infrastructure).
 # ^.*(Telecom|KAOS|Level3).*$\n
-# %Listed, Google Malware Dashboard: 1.06%.
-# Stop Forum Spam (SFS) listings: 9,905.
-# Updated: 2017.09.20 / Checked: 2018.06.25
+# %Listed, Google Malware Dashboard: 0.82%.
+# Stop Forum Spam (SFS) listings: 10,779.
+# Updated: 2017.09.20 / Checked: 2018.11.19
 
 2605:3e80::/32 Deny Cloud
 Origin: US
@@ -1937,16 +1937,14 @@ Tag: Continuum
 
 
 # ASN 51167 ("Contabo GmbH").
-# %Listed, Google Malware Dashboard: 0.66%.
-# Stop Forum Spam (SFS) listings: 20,740.
-# Updated: 2018.01.07 / Checked: 2018.04.17
+# %Listed, Google Malware Dashboard: 0.37%.
+# Stop Forum Spam (SFS) listings: 16,026.
+# Updated: 2018.11.19
 
 2a02:c200::/32 Deny Cloud
 2a02:c205::/32 Deny Cloud
 2a02:c207::/32 Deny Cloud
 Origin: DE
-2a0c:ab00::/29 Deny Cloud
-Origin: RU
 Tag: Contabo GmbH
 
 
@@ -4218,13 +4216,14 @@ Tag: Incero LLC
 
 
 # ASNs 48337, 63949 ("Linode, LLC").
-# %Listed, Google Malware Dashboard: 0.12% (AS63949).
-# Stop Forum Spam (SFS) listings: 14,692 (AS63949).
-# Updated: 2018.06.25
+# %Listed, Google Malware Dashboard: 0.17% (AS63949).
+# Stop Forum Spam (SFS) listings: 12,043 (AS63949).
+# Updated: 2018.11.19
 
 2a01:7e00::/31 Deny Cloud
 Origin: GB
 2400:8901::/32 Deny Cloud
+Origin: SG
 2400:8902::/31 Deny Cloud
 2400:8905::/32 Deny Cloud
 2600:3c00::/30 Deny Cloud
@@ -4913,14 +4912,26 @@ Origin: ZA
 Tag: NetStack Ltd
 
 
-# ASNs 13354, 32952 ("zColo").
-# %Listed, Google Malware Dashboard: 0.30% (AS13354).
-# Stop Forum Spam (SFS) listings: 11 (AS13354).
-# Updated: 2017.02.08 / Checked: 2018.04.05
+# ASNs 3595, 13354, 14313, 16626, 27325, 32952 ("zColo").
+# Remove prior to aggregation due to false positives (not a cloud service):
+# - "Time Warner Cable Internet LLC" (^.*Time Warner Cable.*$\n)
+# Updated: 2018.11.17
 
+2a0c:1dc0::/29 Deny Cloud
+Origin: RU
+2604:9100:1001::/48 Deny Cloud
+2604:a100:200::/48 Deny Cloud
+2604:b900::/34 Deny Cloud
+2604:b900:5000::/36 Deny Cloud
+2604:b900:7000::/36 Deny Cloud
+2604:b900:8000::/33 Deny Cloud
+2605:7680::/32 Deny Cloud
+2606:4300:1::/48 Deny Cloud
+2606:ef80:6::/48 Deny Cloud
 2606:fe80:10::/44 Deny Cloud
 2607:1400::/48 Deny Cloud
 2607:f348::/32 Deny Cloud
+2610:160::/32 Deny Cloud
 2620:110:6001::/48 Deny Cloud
 Origin: US
 Tag: zColo
@@ -4941,6 +4952,15 @@ Origin: NZ
 2c0f:f530:20::/44 Deny Cloud
 Origin: SC
 Tag: Zappie Host LLC
+
+
+# ASN 58923 ("InterCloud ltd").
+# Stop Forum Spam (SFS) listings: 37.
+# Updated: 2018.11.19
+
+2406:f100::/32 Deny Cloud
+Origin: BD
+Tag: InterCloud ltd
 
 
 # ASN 197540 ("netcup GmbH").
@@ -5056,13 +5076,14 @@ Tag: Global Layer B.V
 
 
 # ASN 50113 ("MediaServicePlus LLC").
-# %Listed, Google Malware Dashboard: 0.10%.
-# Stop Forum Spam (SFS) listings: 1,518.
-# Updated: 2018.06.25
+# %Listed, Google Malware Dashboard: 0.36%.
+# Stop Forum Spam (SFS) listings: 1,558.
+# Updated: 2018.11.17
 
-2a03:e2c0::/32 Deny Cloud
-2a04:5200::/32 Deny Cloud
-2a0b:ac80::/29 Deny Cloud
+2a0d:8340::/32 Deny Cloud
+Origin: CZ
+2a04:5200::/29 Deny Cloud
+2a0a:f080::/29 Deny Cloud
 Origin: RU
 Tag: MediaServicePlus LLC
 
@@ -5079,9 +5100,9 @@ Tag: DATAPRO
 # Careful when updating; Contains some prefixes that should be marked differently.
 # Anything citing "VPN", "VPS" should be marked as "proxy".
 # Exclude (clean; don't need to list them): ^.*(Infinity|St Joseph|Brisbane Public|Decision North|Scholer LLP).*$\n
-# %Listed, Google Malware Dashboard: 0.57%.
-# Stop Forum Spam (SFS) listings: 7.
-# Updated: 2018.06.25
+# %Listed, Google Malware Dashboard: 0.32%.
+# Stop Forum Spam (SFS) listings: 11.
+# Updated: 2018.06.25 / Checked: 2018.11.19
 
 2a05:9800:4::/48 Deny Cloud
 2a05:9800:ff00::/40 Deny Cloud
@@ -6036,9 +6057,9 @@ Tag: Master Internet
 
 
 # ASN 200651 ("Flokinet Ltd").
-# %Listed, Google Malware Dashboard: 0.46%.
-# Stop Forum Spam (SFS) listings: 31,283.
-# Updated: 2018.06.25
+# %Listed, Google Malware Dashboard: 0.62%.
+# Stop Forum Spam (SFS) listings: 38,229.
+# Updated: 2018.06.25 / Checked: 2018.11.17
 
 2a06:1700::/47 Deny Cloud
 2a06:1700:2::/48 Deny Cloud

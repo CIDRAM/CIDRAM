@@ -1,8 +1,8 @@
 # IPv4 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv4_isps.dat
 
-# Version: 2018.316.567
-# Last modified: 2018.11.13
+# Version: 2018.326.341
+# Last modified: 2018.11.23
 
 
 # ---
@@ -310,8 +310,9 @@ Tag: Vautron Rech. AG
 
 
 # ASN 38955 ("World4You Internet Services").
-# %Listed, Google Malware Dashboard: 0.53%.
-# Updated: 2016.11.03 / Checked: 2018.04.14
+# %Listed, Google Malware Dashboard: 0.30%.
+# Stop Forum Spam (SFS) listings: 1.
+# Updated: 2016.11.03 / Checked: 2018.11.19
 
 81.19.144.0/20 Deny Generic
 178.23.80.0/21 Deny Generic
@@ -1088,9 +1089,9 @@ Tag: Voxility LLC
 
 
 # ASN 41665 ("Tehnologii Budushego LLC").
-# %Listed, Google Malware Dashboard: 1.29%.
-# Stop Forum Spam (SFS) listings: 5,545.
-# Updated: 2017.08.25 / Checked: 2018.04.14
+# %Listed, Google Malware Dashboard: 0.59%.
+# Stop Forum Spam (SFS) listings: 155.
+# Updated: 2017.08.25 / Checked: 2018.11.19
 
 78.109.16.0/20 Deny Generic
 185.207.136.0/22 Deny Generic
@@ -1675,7 +1676,7 @@ Tag: PP SKS-LUGAN
 
 
 # ASN 48226 ("INFOKOM Ltd").
-# Updated: 2016.03.10 / Checked: 2018.04.14
+# Updated: 2016.03.10 / Checked: 2018.11.19
 
 81.161.32.0/20 Deny Generic
 91.241.68.0/23 Deny Generic
@@ -1949,9 +1950,9 @@ Tag: 10dencehispahard
 # ^.*(Simcentric|DATAPLUGS\.COM|Ethr\.Net|CLOUD LIMITED|NETSEC).*$\n
 # Confirmed data hosters split to the cloud services signature files.
 # Everything else remains in the ISPs signature files.
-# %Listed, Google Malware Dashboard: 7.00%.
-# Stop Forum Spam (SFS) listings: 37.
-# Updated: 2018.06.30
+# %Listed, Google Malware Dashboard: 4.26%.
+# Stop Forum Spam (SFS) listings: 27.
+# Updated: 2018.11.21
 
 103.42.104.0/22 Deny Generic
 103.71.144.0/23 Deny Generic
@@ -1962,28 +1963,28 @@ Tag: 10dencehispahard
 183.182.12.0/22 Deny Generic
 Origin: CN
 45.121.140.0/22 Deny Generic
-52.128.253.0/24 Deny Generic
 103.30.24.0/22 Deny Generic
 103.61.240.0/22 Deny Generic
 103.70.76.0/23 Deny Generic
 103.80.168.0/22 Deny Generic
 103.84.84.0/22 Deny Generic
 103.91.8.0/22 Deny Generic
+103.117.144.0/22 Deny Generic
 103.199.104.0/22 Deny Generic
 103.203.48.0/22 Deny Generic
 103.212.96.0/22 Deny Generic
-103.240.40.0/22 Deny Generic
 110.173.48.0/20 Deny Generic
 111.68.0.0/20 Deny Generic
 116.213.36.0/22 Deny Generic
 119.42.144.0/21 Deny Generic
 137.59.20.0/22 Deny Generic
 139.5.200.0/22 Deny Generic
+141.193.152.0/21 Deny Generic
 175.41.16.0/20 Deny Generic
+182.16.127.0/24 Deny Generic
 202.61.97.0/24 Deny Generic
 202.61.111.0/24 Deny Generic
 203.33.189.0/24 Deny Generic
-216.118.240.0/20 Deny Generic
 Origin: HK
 63.216.57.0/24 Deny Generic
 63.220.4.0/24 Deny Generic
@@ -1991,7 +1992,6 @@ Origin: HK
 63.221.138.0/24 Deny Generic
 69.176.88.0/23 Deny Generic
 103.72.82.0/23 Deny Generic
-141.193.152.0/21 Deny Generic
 192.252.176.0/20 Deny Generic
 192.253.224.0/20 Deny Generic
 216.83.58.0/24 Deny Generic
@@ -8789,7 +8789,7 @@ recaptcha:
 2.20.96.0/19 Deny Generic
 Origin: EU
 92.114.16.0/20 Deny Generic
-Origin: IR 
+Origin: IR
 5.2.128.0/17 Deny Generic
 5.12.0.0/14 Deny Generic
 62.231.64.0/18 Deny Generic
@@ -9010,7 +9010,7 @@ recaptcha:
 # Detected spammy ranges belonging to otherwise benign and clean networks.
 
 # Belongs to ASN 24532 ("PT. Inet Global Indo").
-# Updated: 2018.06.30
+# Updated: 2018.06.30 / Checked: 2018.11.21
 
 27.111.32.0/20 Deny Spam
 Origin: ID
@@ -9028,9 +9028,9 @@ recaptcha:
 # - "corporate internet gate".
 # ^.*(residential|trade center|campus connectivity|bank campus|corporate internet gate).*$
 # Everything else in the cloud services signature files.
-# %Listed, Google Malware Dashboard: 2.15%.
-# Stop Forum Spam (SFS) listings: 142.
-# Updated: 2018.06.30
+# %Listed, Google Malware Dashboard: 5.31%.
+# Stop Forum Spam (SFS) listings: 255.
+# Updated: 2018.06.30 / Checked: 2018.11.21
 
 188.225.8.0/21 Deny Generic
 188.225.40.0/21 Deny Generic

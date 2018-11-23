@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6.dat
 
-# Version: 2018.322.293
-# Last modified: 2018.11.19
+# Version: 2018.326.341
+# Last modified: 2018.11.23
 
 
 # ---
@@ -88,9 +88,11 @@ Tag: Global Frag Networks
 
 
 # ASN 54600 ("PEG TECH INC").
-# %Listed, Google Malware Dashboard: 4.16%.
-# Stop Forum Spam (SFS) listings: 1,164.
-# Updated: 2018.06.30
+# %Listed, Google Malware Dashboard: 4.13%.
+# Stop Forum Spam (SFS) listings: 2,759.
+# Updated: 2018.06.30 / Checked: 2018.11.23
+# Did not change IPv6 listings at last check. All but one range dropped as of last check, but whois reports the dropped
+# CIDRs are still being actively used. Drops could be temporary, maybe. Will investigate again at next check.
 
 2a0c:36c6::/32 Deny Cloud
 Origin: EE
@@ -870,13 +872,14 @@ Tag: A2B IP B.V
 
 # ASNs 20860, 21130, 25108 ("IOMart").
 # Careful when updating; Also contains some proxies and VPNs (should be marked differently).
-# %Listed, Google Malware Dashboard: 0.30% (AS20860).
-# Stop Forum Spam (SFS) listings: 12,219 (AS20860).
-# Updated: 2018.06.30
+# %Listed, Google Malware Dashboard: 0.27% (AS20860).
+# Stop Forum Spam (SFS) listings: 11,637 (AS20860), 22 (AS25108).
+# Updated: 2018.11.23
 
 2607:bd00:100::/48 Deny Cloud
 Origin: CA
 2001:1b40::/32 Deny Cloud
+2a00:42a0::/32 Deny Cloud
 2a00:5d80::/32 Deny Cloud
 2a00:e120::/32 Deny Cloud
 2a01:61c0::/40 Deny Cloud
@@ -1166,25 +1169,24 @@ Origin: GB
 Tag: Black Lotus
 
 
-# ASNs 8100, 29761, 62639 ("QuadraNet, Inc").
+# ASNs 8100, 29761 ("QuadraNet, Inc").
 # Ranges change frequently / Should update often.
-# %Listed, Google Malware Dashboard: 0.99% (AS8100).
-# Stop Forum Spam (SFS) listings: 87,388 (AS8100).
-# Updated: 2018.06.30
+# %Listed, Google Malware Dashboard: 1.51% (AS8100).
+# Stop Forum Spam (SFS) listings: 63,894 (AS8100).
+# Updated: 2018.11.23
 
 2a07:1c44:1820::/48 Deny Cloud
 Origin: AT
 2a06:e800::/29 Deny Cloud
 Origin: DK
 2a07:9944:1a::/47 Deny Cloud
-2a0a:f9c6::/32 Deny Cloud
 Origin: EU
 2400:30c0:1::/48 Deny Cloud
 2400:30c0:2::/48 Deny Cloud
 2a05:b0c6:300::/40 Deny Cloud
 Origin: GB
-2a07:ca06::/32 Deny Cloud
-Origin: RU
+2404:bd80:c1::/48 Deny Cloud
+Origin: MM
 2a05:4240::/29 Deny Cloud
 Origin: TR
 2a04:6ac0::/29 Deny Cloud
@@ -1202,7 +1204,6 @@ Origin: UA
 2607:fcd0::/32 Deny Cloud
 2607:ff48::/32 Deny Cloud
 2620:134:8004::/47 Deny Cloud
-2a0a:f8c0::/29 Deny Cloud
 Origin: US
 Tag: QuadraNet, Inc
 
@@ -3214,13 +3215,13 @@ Tag: OJSC RTComm.RU
 # - "corporate internet gate".
 # ^.*(residential|trade center|campus connectivity|bank campus|corporate internet gate).*$
 # Everything else in the cloud services signature files.
-# %Listed, Google Malware Dashboard: 2.15%.
-# Stop Forum Spam (SFS) listings: 142.
-# Updated: 2016.11.18 / Checked: 2018.06.30
+# %Listed, Google Malware Dashboard: 5.31%.
+# Stop Forum Spam (SFS) listings: 255.
+# Updated: 2018.11.21
 
 2a03:6f00:1::/48 Deny Cloud
 2a03:6f00:2::/47 Deny Cloud
-2a03:6f00:4::/48 Deny Cloud
+2a03:6f00:4::/46 Deny Cloud
 Origin: RU
 Tag: OOO TimeWeb
 
@@ -3650,12 +3651,11 @@ Tag: ShenZhen Sunrise
 
 # ASN 39572 ("DataWeb Global Group B.V").
 # All the ranges from South Africa in this network seem to be proxies. Should mark accordingly.
-# %Listed, Google Malware Dashboard: 0.06%.
-# Stop Forum Spam (SFS) listings: 163.
-# Updated: 2018.06.30
+# %Listed, Google Malware Dashboard: 0.15%.
+# Stop Forum Spam (SFS) listings: 376.
+# Updated: 2018.11.21
 
 2a02:b48::/31 Deny Cloud
-2a02:b4a::/32 Deny Cloud
 Origin: NL
 Tag: DataWeb Global
 
@@ -6072,9 +6072,9 @@ Tag: Flokinet Ltd
 # ^.*(Simcentric|DATAPLUGS\.COM|Ethr\.Net|CLOUD LIMITED|NETSEC).*$\n
 # Confirmed data hosters split to the cloud services signature files.
 # Everything else remains in the ISPs signature files.
-# %Listed, Google Malware Dashboard: 7.00%.
-# Stop Forum Spam (SFS) listings: 37.
-# Updated: 2018.06.30
+# %Listed, Google Malware Dashboard: 4.26%.
+# Stop Forum Spam (SFS) listings: 27.
+# Updated: 2018.06.30 / Checked: 2018.11.21
 
 2401:4c00::/32 Deny Cloud
 Origin: HK

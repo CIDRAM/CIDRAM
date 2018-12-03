@@ -319,6 +319,12 @@ Bestand | Beschrijving
 ### 6. <a name="SECTION6"></a>CONFIGURATIE-OPTIES
 Het volgende is een lijst van variabelen die in de `config.ini` configuratiebestand van CIDRAM, samen met een beschrijving van hun doel en functie.
 
+[general](#general-categorie) | [signatures](#signatures-categorie) | [recaptcha](#recaptcha-categorie) | [legal](#legal-categorie) | [template_data](#template_data-categorie)
+:--|:--|:--|:--|:--
+[logfile](#logfile)<br />[logfileApache](#logfileapache)<br />[logfileSerialized](#logfileserialized)<br />[truncate](#truncate)<br />[log_rotation_limit](#log_rotation_limit)<br />[log_rotation_action](#log_rotation_action)<br />[timezone](#timezone)<br />[timeOffset](#timeoffset)<br />[timeFormat](#timeformat)<br />[ipaddr](#ipaddr)<br />[forbid_on_block](#forbid_on_block)<br />[silent_mode](#silent_mode)<br />[lang](#lang)<br />[numbers](#numbers)<br />[emailaddr](#emailaddr)<br />[emailaddr_display_style](#emailaddr_display_style)<br />[disable_cli](#disable_cli)<br />[disable_frontend](#disable_frontend)<br />[max_login_attempts](#max_login_attempts)<br />[FrontEndLog](#frontendlog)<br />[ban_override](#ban_override)<br />[log_banned_ips](#log_banned_ips)<br />[default_dns](#default_dns)<br />[search_engine_verification](#search_engine_verification)<br />[social_media_verification](#social_media_verification)<br />[protect_frontend](#protect_frontend)<br />[disable_webfonts](#disable_webfonts)<br />[maintenance_mode](#maintenance_mode)<br />[default_algo](#default_algo)<br />[statistics](#statistics)<br />[force_hostname_lookup](#force_hostname_lookup)<br />[allow_gethostbyaddr_lookup](#allow_gethostbyaddr_lookup)<br />[hide_version](#hide_version)<br />[empty_fields](#empty_fields)<br /> | [ipv4](#ipv4)<br />[ipv6](#ipv6)<br />[block_cloud](#block_cloud)<br />[block_bogons](#block_bogons)<br />[block_generic](#block_generic)<br />[block_legal](#block_legal)<br />[block_malware](#block_malware)<br />[block_proxies](#block_proxies)<br />[block_spam](#block_spam)<br />[modules](#modules)<br />[default_tracktime](#default_tracktime)<br />[infraction_limit](#infraction_limit)<br />[track_mode](#track_mode)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> | [usemode](#usemode)<br />[lockip](#lockip)<br />[lockuser](#lockuser)<br />[sitekey](#sitekey)<br />[secret](#secret)<br />[expiry](#expiry)<br />[logfile](#logfile)<br />[signature_limit](#signature_limit)<br />[api](#api)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> | [pseudonymise_ip_addresses](#pseudonymise_ip_addresses)<br />[omit_ip](#omit_ip)<br />[omit_hostname](#omit_hostname)<br />[omit_ua](#omit_ua)<br />[privacy_policy](#privacy_policy)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> | [theme](#theme)<br />[Magnification](#magnification)<br />[css_url](#css_url)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+[PHPMailer](#phpmailer-categorie) | [rate_limiting](#rate_limiting-categorie)
+[EventLog](#eventlog)<br />[SkipAuthProcess](#skipauthprocess)<br />[Enable2FA](#enable2fa)<br />[Host](#host)<br />[Port](#port)<br />[SMTPSecure](#smtpsecure)<br />[SMTPAuth](#smtpauth)<br />[Username](#username)<br />[Password](#password)<br />[setFromAddress](#setfromaddress)<br />[setFromName](#setfromname)<br />[addReplyToAddress](#addreplytoaddress)<br />[addReplyToName](#addreplytoname)<br /> | [max_bandwidth](#max_bandwidth)<br />[max_requests](#max_requests)<br />[precision_ipv4](#precision_ipv4)<br />[precision_ipv6](#precision_ipv6)<br />[allowance_period](#allowance_period)<br /><br /><br /><br /><br /><br /><br /><br /><br />
+
 #### "general" (Categorie)
 Algemene configuratie voor CIDRAM.
 
@@ -348,6 +354,9 @@ Algemene configuratie voor CIDRAM.
 - Logrotatie beperkt het aantal logbestanden dat op elk moment zou moeten bestaan. Wanneer nieuwe logbestanden worden gemaakt en het totale aantal logbestanden de opgegeven limiet overschrijdt, wordt de opgegeven actie uitgevoerd. U kunt hier de gewenste actie opgeven. Delete = Verwijder de oudste logbestanden, totdat de limiet niet langer wordt overschreden. Archive = Eerst archiveer en verwijder vervolgens de oudste logbestanden, totdat de limiet niet langer wordt overschreden.
 
 *Technische verduidelijking: In deze context, de "oudste" betekent de minste recentelijk gewijzigd.*
+
+##### "timezone"
+- Dit wordt gebruikt om op te geven welke tijdzone CIDRAM moet gebruiken voor de datum/tijd-bewerkingen. Als je het niet nodig hebt, negeer het. Mogelijke waarden worden bepaald door PHP. Het is in het algemeen in plaats aanbevolen de tijdzone richtlijn in uw bestand `php.ini` aan te passen, maar somtijds (zoals bij het werken met beperkte shared hosting providers) dit is niet altijd mogelijk om te voldoen, en dus, Dit optie is hier voorzien.
 
 ##### "timeOffset"
 - Als uw server tijd niet overeenkomt met uw lokale tijd, u kunt opgeven hier een offset om de datum/tijd informatie gegenereerd door CIDRAM aan te passen volgens uw behoeften. Het is in het algemeen in plaats aanbevolen de tijdzone richtlijn in uw bestand `php.ini` aan te passen, maar somtijds (zoals bij het werken met beperkte shared hosting providers) dit is niet altijd mogelijk om te voldoen, en dus, Dit optie is hier voorzien. Offset is in een minuten.
@@ -623,6 +632,8 @@ Betreft de HTML-uitvoer gebruikt om de "Toegang Geweigerd" pagina te genereren. 
 #### "PHPMailer" (Categorie)
 PHPMailer-configuratie.
 
+Op dit moment gebruikt CIDRAM alleen PHPMailer voor front-end two-factor authenticatie. Als u de front-end niet gebruikt, of als u geen twee-factorenauthenticatie gebruikt voor de front-end, kunt u deze richtlijnen negeren.
+
 ##### "EventLog"
 - Een bestand voor het loggen van alle evenementen met betrekking tot PHPMailer. Geef een bestandsnaam, of laat leeg om uit te schakelen.
 
@@ -661,6 +672,34 @@ PHPMailer-configuratie.
 
 ##### "addReplyToName"
 - De antwoordnaam voor het verzenden van e-mail via SMTP.
+
+#### "rate_limiting" (Categorie)
+Optionele configuratie-instructies voor tarieflimiet.
+
+Deze functie is geïmplementeerd in CIDRAM omdat deze door voldoende gebruikers is aangevraagd om de implementatie te rechtvaardigen. Omdat het echter enigszins buiten de reikwijdte van het oorspronkelijk bedoelde doel voor CIDRAM, zal het waarschijnlijk niet nodig zijn voor de meeste gebruikers. Als u specifiek CIDRAM nodig hebt om de tarieflimiet voor uw website te handelen, kan deze functie nuttig voor u zijn. Er zijn echter enkele belangrijke zaken die u moet overwegen:
+- Deze functie werkt, net als alle andere CIDRAM-functies, alleen voor pagina's die worden beschermd door CIDRAM. Daarom kunnen website assets die niet specifiek via CIDRAM worden gerouteerd, niet worden beperkt door CIDRAM.
+- Vergeet niet dat CIDRAM het cache en andere gegevens rechtstreeks naar de schijf schrijft (d.w.z. slaat zijn gegevens op in bestanden), en gebruikt geen extern databasesysteem zoals MySQL, PostgreSQL, Access, of iets dergelijks. Dit betekent dus dat het voor het volgen van het gebruik voor tarieflimiet effectief naar schijf moet schrijven voor elk mogelijk potentieel beperkt verzoek. Dit zou kunnen bijdragen aan een lagere levensduur van de schijflevensduur op de lange termijn en wordt niet ideaal aanbevolen. Idealiter zou een tool die wordt gebruikt voor tarieflimiet een databasesysteem kunnen gebruiken dat bedoeld is voor veelvuldige, kleine lees/schrijf-bewerkingen, of kon informatie blijven behouden in alle verzoeken, zonder de noodzaak om gegevens tussen aanvragen naar schijf te schrijven (b.v., geschreven als een onafhankelijke servermodule, in plaats van een PHP-pakket).
+- Als u een servermodule, cPanel, of een andere netwerktool kunt gebruiken om tarieflimiet af te dwingen, is het beter om die te gebruiken voor tarieflimiet in plaats van CIDRAM.
+- Als een bepaalde gebruiker graag toegang blijft houden tot uw website nadat hij tarieflimiet is, in de meeste gevallen is het voor hen heel gemakkelijk om tarieflimiet te omzeilen (b.v., als ze hun IP-adres wijzigen, of als ze een proxy of VPN gebruiken, en ervan uitgaande dat u CIDRAM hebt geconfigureerd om geen proxy's en VPN's te blokkeren, of dat CIDRAM niet op de hoogte is van de proxy of VPN die ze gebruiken).
+- Tarieflimiet kan erg vervelend zijn voor echte, eindgebruikers. Het kan nodig zijn als uw beschikbare bandbreedte zeer beperkt is, en als u ontdekt dat er bepaalde specifieke verkeersbronnen zijn, die niet al op andere wijze zijn geblokkeerd, die het grootste deel van uw beschikbare bandbreedte verbruiken. Als dit echter niet nodig is, moet dit waarschijnlijk worden vermeden.
+- U loopt af en toe het risico legitieme gebruikers of uzelf te blokkeren.
+
+Als u vindt dat u CIDRAM niet nodig hebt om tarieflimiet voor uw website af te dwingen, houd dan de onderstaande richtlijnen als hun standaardwaarden. Anders kunt u hun waarden aanpassen aan uw behoeften.
+
+##### "max_bandwidth"
+- De maximale hoeveelheid toegestane bandbreedte binnen de toeslagperiode voordat tarieflimiet voor toekomstige verzoeken wordt ingeschakeld. Een waarde van 0 schakelt dit type tarieflimiet uit. Standaard = 0KB.
+
+##### "max_requests"
+- Het maximale aantal toegestane verzoeken binnen de toeslagperiode voordat de tarieflimiet voor toekomstige verzoeken wordt ingeschakeld. Een waarde van 0 schakelt dit type tarieflimiet uit. Standaard = 0.
+
+##### "precision_ipv4"
+- De precisie om te gebruiken bij het monitoren op het gebruik van IPv4. Waarde weerspiegelt de CIDR-blokgrootte. Stel in op 32 voor de beste precisie. Standaard = 32.
+
+##### "precision_ipv6"
+- De precisie om te gebruiken bij het monitoren op het gebruik van IPv6. Waarde weerspiegelt de CIDR-blokgrootte. Stel in op 128 voor de beste precisie. Standaard = 128.
+
+##### "allowance_period"
+- Het aantal uren om het gebruik te controleren. Standaard = 0.
 
 ---
 
@@ -1466,4 +1505,4 @@ Als alternatief is er een kort (niet-gezaghebbende) overzicht van GDPR/DSGVO/AVG
 ---
 
 
-Laatste Bijgewerkt: 4 November 2018 (2018.11.04).
+Laatste Bijgewerkt: 1 December 2018 (2018.12.01).

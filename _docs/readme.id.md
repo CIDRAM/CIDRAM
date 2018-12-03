@@ -319,6 +319,12 @@ Data | Deskripsi
 ### 6. <a name="SECTION6"></a>OPSI KONFIGURASI
 Berikut list variabel yang ditemukan pada file konfigurasi CIDRAM `config.ini`, dengan deskripsi dari tujuan dan fungsi.
 
+[general](#general-kategori) | [signatures](#signatures-kategori) | [recaptcha](#recaptcha-kategori) | [legal](#legal-kategori) | [template_data](#template_data-kategori)
+:--|:--|:--|:--|:--
+[logfile](#logfile)<br />[logfileApache](#logfileapache)<br />[logfileSerialized](#logfileserialized)<br />[truncate](#truncate)<br />[log_rotation_limit](#log_rotation_limit)<br />[log_rotation_action](#log_rotation_action)<br />[timezone](#timezone)<br />[timeOffset](#timeoffset)<br />[timeFormat](#timeformat)<br />[ipaddr](#ipaddr)<br />[forbid_on_block](#forbid_on_block)<br />[silent_mode](#silent_mode)<br />[lang](#lang)<br />[numbers](#numbers)<br />[emailaddr](#emailaddr)<br />[emailaddr_display_style](#emailaddr_display_style)<br />[disable_cli](#disable_cli)<br />[disable_frontend](#disable_frontend)<br />[max_login_attempts](#max_login_attempts)<br />[FrontEndLog](#frontendlog)<br />[ban_override](#ban_override)<br />[log_banned_ips](#log_banned_ips)<br />[default_dns](#default_dns)<br />[search_engine_verification](#search_engine_verification)<br />[social_media_verification](#social_media_verification)<br />[protect_frontend](#protect_frontend)<br />[disable_webfonts](#disable_webfonts)<br />[maintenance_mode](#maintenance_mode)<br />[default_algo](#default_algo)<br />[statistics](#statistics)<br />[force_hostname_lookup](#force_hostname_lookup)<br />[allow_gethostbyaddr_lookup](#allow_gethostbyaddr_lookup)<br />[hide_version](#hide_version)<br />[empty_fields](#empty_fields)<br /> | [ipv4](#ipv4)<br />[ipv6](#ipv6)<br />[block_cloud](#block_cloud)<br />[block_bogons](#block_bogons)<br />[block_generic](#block_generic)<br />[block_legal](#block_legal)<br />[block_malware](#block_malware)<br />[block_proxies](#block_proxies)<br />[block_spam](#block_spam)<br />[modules](#modules)<br />[default_tracktime](#default_tracktime)<br />[infraction_limit](#infraction_limit)<br />[track_mode](#track_mode)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> | [usemode](#usemode)<br />[lockip](#lockip)<br />[lockuser](#lockuser)<br />[sitekey](#sitekey)<br />[secret](#secret)<br />[expiry](#expiry)<br />[logfile](#logfile)<br />[signature_limit](#signature_limit)<br />[api](#api)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> | [pseudonymise_ip_addresses](#pseudonymise_ip_addresses)<br />[omit_ip](#omit_ip)<br />[omit_hostname](#omit_hostname)<br />[omit_ua](#omit_ua)<br />[privacy_policy](#privacy_policy)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> | [theme](#theme)<br />[Magnification](#magnification)<br />[css_url](#css_url)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+[PHPMailer](#phpmailer-kategori) | [rate_limiting](#rate_limiting-kategori)
+[EventLog](#eventlog)<br />[SkipAuthProcess](#skipauthprocess)<br />[Enable2FA](#enable2fa)<br />[Host](#host)<br />[Port](#port)<br />[SMTPSecure](#smtpsecure)<br />[SMTPAuth](#smtpauth)<br />[Username](#username)<br />[Password](#password)<br />[setFromAddress](#setfromaddress)<br />[setFromName](#setfromname)<br />[addReplyToAddress](#addreplytoaddress)<br />[addReplyToName](#addreplytoname)<br /> | [max_bandwidth](#max_bandwidth)<br />[max_requests](#max_requests)<br />[precision_ipv4](#precision_ipv4)<br />[precision_ipv6](#precision_ipv6)<br />[allowance_period](#allowance_period)<br /><br /><br /><br /><br /><br /><br /><br /><br />
+
 #### "general" (Kategori)
 Konfigurasi umum dari CIDRAM.
 
@@ -348,6 +354,9 @@ Konfigurasi umum dari CIDRAM.
 - Rotasi log membatasi jumlah file log yang seharusnya ada pada satu waktu. Ketika file log baru dibuat, jika jumlah total file log melebihi batas yang ditentukan, tindakan yang ditentukan akan dilakukan. Anda dapat menentukan tindakan yang diinginkan disini. Delete = Hapus file log tertua, hingga batasnya tidak lagi terlampaui. Archive = Pertama arsipkan, lalu hapus file log tertua, hingga batasnya tidak lagi terlampaui.
 
 *Klarifikasi teknis: Dalam konteks ini, "tertua" berarti tidak dimodifikasi baru-baru.*
+
+##### "timezone"
+- Ini digunakan untuk menentukan zona waktu mana yang harus digunakan oleh CIDRAM untuk operasi tanggal/waktu. Jika Anda tidak membutuhkannya, abaikan saja. Nilai yang mungkin ditentukan oleh PHP. Ini umumnya direkomendasikan sebagai gantinya untuk menyesuaikan direktif zona waktu dalam file `php.ini` Anda, tapi terkadang (seperti ketika bekerja dengan terbatas penyedia shared hosting) ini tidak selalu mungkin untuk melakukan, dan demikian, opsi ini disediakan disini.
 
 ##### "timeOffset"
 - Jika waktu server Anda tidak cocok waktu lokal Anda, Anda dapat menentukan offset sini untuk menyesuaikan informasi tanggal/waktu dihasilkan oleh CIDRAM sesuai dengan kebutuhan Anda. Ini umumnya direkomendasikan sebagai gantinya untuk menyesuaikan direktif zona waktu dalam file `php.ini` Anda, tapi terkadang (seperti ketika bekerja dengan terbatas penyedia shared hosting) ini tidak selalu mungkin untuk melakukan, dan demikian, opsi ini disediakan disini. Offset adalah dalam menit.
@@ -623,6 +632,8 @@ Berkaitan dengan HTML digunakan untuk menghasilkan halaman "Akses Ditolak". Jika
 #### "PHPMailer" (Kategori)
 Konfigurasi PHPMailer.
 
+Saat ini, CIDRAM menggunakan PHPMailer hanya untuk otentikasi dua faktor untuk bagian depan. Jika Anda tidak menggunakan bagian depan, atau jika Anda tidak menggunakan otentikasi dua-faktor untuk bagian depan, Anda dapat mengabaikan direktif ini.
+
 ##### "EventLog"
 - File untuk mencatat semua kejadian yang terkait dengan PHPMailer. Spesifikasikan nama file, atau biarkan kosong untuk menonaktifkan.
 
@@ -661,6 +672,34 @@ Konfigurasi PHPMailer.
 
 ##### "addReplyToName"
 - Nama balasan yang dikutip saat mengirim email melalui SMTP.
+
+#### "rate_limiting" (Kategori)
+Direktif konfigurasi opsional untuk pembatasan laju.
+
+Fitur ini diimplementasikan ke CIDRAM karena diminta oleh pengguna yang cukup untuk membenarkan diimplementasikan. Namun, karena agak tidak terkait dengan tujuan yang awalnya ditujukan untuk CIDRAM, kemungkinan besar tidak akan dibutuhkan oleh sebagian besar pengguna. Jika Anda secara khusus membutuhkan CIDRAM untuk menangani pembatasan laju untuk situs web Anda, fitur ini dapat bermanfaat bagi Anda. Namun, ada beberapa hal penting yang harus Anda pertimbangkan:
+- Fitur ini, seperti semua fitur CIDRAM lainnya, hanya akan berfungsi untuk halaman yang dilindungi oleh CIDRAM. Demikian, aset situs web apapun yang tidak dirutekan secara khusus melalui CIDRAM tidak dapat dibatasi oleh CIDRAM.
+- Jangan lupa bahwa CIDRAM menulisnya cache dan data lain secara langsung ke disk (yaitu, menyimpan data ke dalam file), dan tidak menggunakan sistem basis data eksternal seperti MySQL, PostgreSQL, Access, atau yang serupa. Ini berarti bahwa untuk melacak penggunaan untuk membatasi laju, itu akan secara efektif perlu menulis ke disk untuk setiap permintaan yang berpotensi terbatas. Ini dapat berkontribusi untuk menurunkan harapan masa pakai disk dalam jangka panjang, dan idealnya tidak disarankan. Sebaliknya, idealnya, alat yang digunakan untuk membatasi laju dapat menggunakan sistem basis data yang ditujukan untuk operasi baca/tulis yang kecil dan sering, atau dapat menyimpan informasi secara terus-menerus di seluruh permintaan, tanpa perlu menulis data ke disk antara permintaan (misalnya, ditulis sebagai modul server independen, sebagai alternatif untuk paket PHP).
+- Jika Anda dapat menggunakan modul server, cPanel, atau beberapa alat jaringan lain untuk menerapkan pembatasan laju, akan lebih baik menggunakan itu untuk membatasi laju, sebagai alternatif untuk CIDRAM.
+- Jika pengguna tertentu sangat tertarik untuk terus mengakses situs web Anda setelah dibatasi, dalam banyak kasus, akan sangat mudah bagi mereka untuk menghindari pembatasan laju (misalnya, jika mereka mengubah alamat IP mereka, atau jika mereka menggunakan proxy atau VPN, dan dengan asumsi Anda telah mengonfigurasi CIDRAM untuk tidak memblokir proxy dan VPN, atau bahwa CIDRAM tidak mengetahui proxy atau VPN yang mereka gunakan).
+- Pembatasan laju bisa sangat mengganggu bagi pengguna sebenarnya. Mungkin diperlukan jika bandwidth yang tersedia sangat terbatas, dan jika Anda menemukan bahwa ada beberapa sumber lalu lintas khusus, yang belum diblokir, yang menghabiskan sebagian besar bandwidth yang tersedia. Namun jika tidak perlu, itu mungkin harus dihindari.
+- Terkadang Anda berisiko memblokir pengguna yang sah, atau bahkan diri Anda sendiri.
+
+Jika Anda merasa bahwa Anda tidak perlu CIDRAM untuk menerapkan pembatasan laju untuk situs web Anda, pastikan direktif dibawah ini ditetapkan sebagai nilai default. Sebaliknya, Anda dapat mengubah nilainya sesuai dengan kebutuhan Anda.
+
+##### "max_bandwidth"
+- Jumlah maksimum bandwidth yang diizinkan dalam periode tunjangan sebelum mengaktifkan pembatasan laju untuk permintaan di masa mendatang. Nilai 0 menonaktifkan jenis pembatasan laju ini. Default = 0KB.
+
+##### "max_requests"
+- Jumlah maksimum permintaan yang diizinkan dalam periode tunjangan sebelum mengaktifkan pembatasan laju untuk permintaan di masa mendatang. Nilai 0 menonaktifkan jenis pembatasan laju ini. Default = 0.
+
+##### "precision_ipv4"
+- Presisi yang akan digunakan saat memonitor penggunaan IPv4. Nilai mencerminkan ukuran blok CIDR. Atur ke 32 untuk presisi terbaik. Default = 32.
+
+##### "precision_ipv6"
+- Presisi yang akan digunakan saat memonitor penggunaan IPv6. Nilai mencerminkan ukuran blok CIDR. Atur ke 128 untuk presisi terbaik. Default = 128.
+
+##### "allowance_period"
+- Jumlah jam untuk memonitor penggunaan. Default = 0.
 
 ---
 
@@ -1155,7 +1194,7 @@ Ya. Untuk melakukan ini, Anda harus membuat file modul disesuaikan. *Lihat: [DAS
 
 #### <a name="WHAT_CAN_I_USE_FOR_DEFAULT_DNS"></a>Apa yang bisa saya gunakan untuk "default_dns"?
 
-Jika Anda mencari saran, [public-dns.info](https://public-dns.info/) dan [OpenNIC](https://servers.opennic.org/) berikan daftar ekstensif dari server DNS publik yang dikenal. Atau, lihat tabel di bawah ini:
+Jika Anda mencari saran, [public-dns.info](https://public-dns.info/) dan [OpenNIC](https://servers.opennic.org/) berikan daftar ekstensif dari server DNS publik yang dikenal. Atau, lihat tabel dibawah ini:
 
 IP | Operator
 ---|---
@@ -1237,7 +1276,7 @@ Tergantung pada konfigurasi dan implementasinya yang tepat, paket dapat berkomun
 
 Bagaimana informasi ini dapat digunakan oleh pihak ketiga ini, tunduk pada berbagai kebijakan yang ditetapkan oleh pihak ketiga ini, dan berada di luar ruang lingkup dokumentasi ini. Namun, dalam semua kasus tersebut, berbagi informasi dengan pihak ketiga ini dapat dinonaktifkan. Dalam semua kasus semacam itu, jika Anda memilih untuk mengaktifkannya, Anda bertanggung jawab untuk meneliti setiap kekhawatiran yang mungkin Anda miliki tentang privasi, keamanan, dan penggunaan PII oleh pihak ketiga ini. Jika ada keraguan, atau jika Anda tidak puas dengan perilaku pihak ketiga ini sehubungan dengan PII, mungkin terbaik adalah menonaktifkan semua pembagian informasi dengan pihak ketiga ini.
 
-Untuk tujuan transparansi, jenis informasi yang dibagikan, dan dengan siapa, dijelaskan di bawah ini.
+Untuk tujuan transparansi, jenis informasi yang dibagikan, dan dengan siapa, dijelaskan dibawah ini.
 
 ##### 11.2.0 PENCARIAN NAMA HOST
 
@@ -1269,7 +1308,7 @@ Ketika verifikasi mesin pencari diaktifkan, CIDRAM mencoba melakukan "pencarian 
 
 CIDRAM secara opsional mendukung [Google reCAPTCHA](https://www.google.com/recaptcha/), menyediakan sarana bagi pengguna untuk melewati halaman "Akses Ditolak" dengan menyelesaikan instance reCAPTCHA (informasi lebih lanjut tentang fitur ini dijelaskan sebelumnya dalam dokumentasi, terutama di bagian konfigurasi). Google reCAPTCHA membutuhkan kunci API agar berfungsi dengan benar, dan karenanya dinonaktifkan secara default. Ini dapat diaktifkan dengan menentukan kunci API yang diperlukan dalam konfigurasi paket. Ketika diaktifkan, komunikasi langsung antara browser pengguna dan layanan reCAPTCHA terjadi. Ini mungkin melibatkan mengkomunikasikan informasi seperti alamat IP pengguna, agen pengguna, sistem operasi, dan detail lainnya yang tersedia untuk permintaan tersebut. Alamat IP pengguna juga dapat dibagi dalam komunikasi antara CIDRAM dan layanan reCAPTCHA ketika memverifikasi validitas instance reCAPTCHA dan memverifikasi apakah itu berhasil diselesaikan.
 
-*Direktif konfigurasi yang relevan: Apapun yang tercantum di bawah kategori konfigurasi "recaptcha".*
+*Direktif konfigurasi yang relevan: Apapun yang tercantum dibawah kategori konfigurasi "recaptcha".*
 
 ##### 11.2.4 STOP FORUM SPAM
 
@@ -1458,4 +1497,4 @@ Beberapa sumber bacaan yang direkomendasikan untuk mempelajari informasi lebih l
 ---
 
 
-Terakhir Diperbarui: 4 November 2018 (2018.11.04).
+Terakhir Diperbarui: 1 Desember 2018 (2018.12.01).

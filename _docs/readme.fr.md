@@ -319,6 +319,12 @@ Fichier | Description
 ### 6. <a name="SECTION6"></a>OPTIONS DE CONFIGURATION
 Ce qui suit est une liste des directives disponibles pour CIDRAM dans le `config.ini` fichier de configuration, avec une description de leur objectif et leur fonction.
 
+[general](#general-catégorie) | [signatures](#signatures-catégorie) | [recaptcha](#recaptcha-catégorie) | [legal](#legal-catégorie) | [template_data](#template_data-catégorie)
+:--|:--|:--|:--|:--
+[logfile](#logfile)<br />[logfileApache](#logfileapache)<br />[logfileSerialized](#logfileserialized)<br />[truncate](#truncate)<br />[log_rotation_limit](#log_rotation_limit)<br />[log_rotation_action](#log_rotation_action)<br />[timezone](#timezone)<br />[timeOffset](#timeoffset)<br />[timeFormat](#timeformat)<br />[ipaddr](#ipaddr)<br />[forbid_on_block](#forbid_on_block)<br />[silent_mode](#silent_mode)<br />[lang](#lang)<br />[numbers](#numbers)<br />[emailaddr](#emailaddr)<br />[emailaddr_display_style](#emailaddr_display_style)<br />[disable_cli](#disable_cli)<br />[disable_frontend](#disable_frontend)<br />[max_login_attempts](#max_login_attempts)<br />[FrontEndLog](#frontendlog)<br />[ban_override](#ban_override)<br />[log_banned_ips](#log_banned_ips)<br />[default_dns](#default_dns)<br />[search_engine_verification](#search_engine_verification)<br />[social_media_verification](#social_media_verification)<br />[protect_frontend](#protect_frontend)<br />[disable_webfonts](#disable_webfonts)<br />[maintenance_mode](#maintenance_mode)<br />[default_algo](#default_algo)<br />[statistics](#statistics)<br />[force_hostname_lookup](#force_hostname_lookup)<br />[allow_gethostbyaddr_lookup](#allow_gethostbyaddr_lookup)<br />[hide_version](#hide_version)<br />[empty_fields](#empty_fields)<br /> | [ipv4](#ipv4)<br />[ipv6](#ipv6)<br />[block_cloud](#block_cloud)<br />[block_bogons](#block_bogons)<br />[block_generic](#block_generic)<br />[block_legal](#block_legal)<br />[block_malware](#block_malware)<br />[block_proxies](#block_proxies)<br />[block_spam](#block_spam)<br />[modules](#modules)<br />[default_tracktime](#default_tracktime)<br />[infraction_limit](#infraction_limit)<br />[track_mode](#track_mode)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> | [usemode](#usemode)<br />[lockip](#lockip)<br />[lockuser](#lockuser)<br />[sitekey](#sitekey)<br />[secret](#secret)<br />[expiry](#expiry)<br />[logfile](#logfile)<br />[signature_limit](#signature_limit)<br />[api](#api)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> | [pseudonymise_ip_addresses](#pseudonymise_ip_addresses)<br />[omit_ip](#omit_ip)<br />[omit_hostname](#omit_hostname)<br />[omit_ua](#omit_ua)<br />[privacy_policy](#privacy_policy)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> | [theme](#theme)<br />[Magnification](#magnification)<br />[css_url](#css_url)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+[PHPMailer](#phpmailer-catégorie) | [rate_limiting](#rate_limiting-catégorie)
+[EventLog](#eventlog)<br />[SkipAuthProcess](#skipauthprocess)<br />[Enable2FA](#enable2fa)<br />[Host](#host)<br />[Port](#port)<br />[SMTPSecure](#smtpsecure)<br />[SMTPAuth](#smtpauth)<br />[Username](#username)<br />[Password](#password)<br />[setFromAddress](#setfromaddress)<br />[setFromName](#setfromname)<br />[addReplyToAddress](#addreplytoaddress)<br />[addReplyToName](#addreplytoname)<br /> | [max_bandwidth](#max_bandwidth)<br />[max_requests](#max_requests)<br />[precision_ipv4](#precision_ipv4)<br />[precision_ipv6](#precision_ipv6)<br />[allowance_period](#allowance_period)<br /><br /><br /><br /><br /><br /><br /><br /><br />
+
 #### « general » (Catégorie)
 Configuration générale pour CIDRAM.
 
@@ -348,6 +354,9 @@ Configuration générale pour CIDRAM.
 - La rotation du journal limite le nombre de fichiers journaux qui doivent exister à un moment donné. Lorsque de nouveaux fichiers journaux sont créés, si le nombre total de fichiers journaux dépasse la limite spécifiée, l'action spécifiée sera effectuée. Vous pouvez spécifier l'action souhaitée ici. Delete = Supprimez les fichiers journaux les plus anciens, jusqu'à ce que la limite ne soit plus dépassée. Archive = Tout d'abord archiver, puis supprimez les fichiers journaux les plus anciens, jusqu'à ce que la limite ne soit plus dépassée.
 
 *Clarification technique : Dans ce contexte, « plus ancien » signifie moins récemment modifié.*
+
+##### « timezone »
+- Ceci est utilisé pour spécifier le fuseau horaire que CIDRAM doit utiliser pour les opérations de date/heure. Si vous n'en avez pas besoin, l'ignorer. Les valeurs possibles sont déterminées par PHP. Il est généralement recommandé à la place pour ajuster la directive de fuseau horaire dans votre fichier `php.ini`, mais parfois (tels que lorsque l'on travaille avec des fournisseurs d'hébergement partagé limitées) ce n'est pas toujours possible de faire, et donc, cette option est disponible ici.
 
 ##### « timeOffset »
 - Si votre temps serveur ne correspond pas à votre temps locale, vous pouvez spécifier un offset ici pour régler l'information en date/temps généré par CIDRAM selon vos besoins. Il est généralement recommandé à la place pour ajuster la directive de fuseau horaire dans votre fichier `php.ini`, mais parfois (tels que lorsque l'on travaille avec des fournisseurs d'hébergement partagé limitées) ce n'est pas toujours possible de faire, et donc, cette option est disponible ici. Offset est en minutes.
@@ -623,6 +632,8 @@ Correspond à la sortie HTML utilisé pour générer la page « Accès Refusé�
 #### « PHPMailer » (Catégorie)
 Configuration de PHPMailer.
 
+Actuellement, CIDRAM utilise PHPMailer uniquement pour l'authentification à deux facteurs de l'interface frontale. Si vous n'utilisez pas l'interface frontale, ou si vous n'utilisez pas l'authentification à deux facteurs pour l'interface frontale, vous pouvez ignorer ces directives.
+
 ##### « EventLog »
 - Fichier pour l'enregistrement de tous les événements relatifs à PHPMailer. Spécifier un fichier, ou laisser vide à désactiver.
 
@@ -661,6 +672,34 @@ Configuration de PHPMailer.
 
 ##### « addReplyToName »
 - Le nom pour répondre à citer lors de l'envoi d'e-mail via SMTP.
+
+#### « rate_limiting » (Catégorie)
+Directives de configuration facultatives pour la limitation de débit.
+
+Cette fonctionnalité a été implémentée dans CIDRAM car elle a été demandée par suffisamment d'utilisateurs pour justifier son implémentation. Cependant, parce que c'est un peu en dehors de l'objectif initial prévu pour le CIDRAM, la plupart des utilisateurs n'en auront probablement pas besoin. Si vous avez spécifiquement besoin de CIDRAM pour gérer la limitation du débit de votre site Web, cette fonctionnalité pourrait vous être utile. Cependant, il y a quelques points importants à considérer :
+- Cette fonctionnalité, comme toutes les autres fonctionnalités de CIDRAM, fonctionnera seulement pour les pages protégées par CIDRAM. Par conséquent, les actifs de site Web qui ne sont pas spécifiquement acheminés via CIDRAM ne peuvent pas être limités par CIDRAM.
+- N'oubliez pas que CIDRAM écrit le cache et d'autres données directement sur le disque (c'est-à-dire, enregistre ses données dans des fichiers), et n'utilise aucun système de base de données externe tel que MySQL, PostgreSQL, Access ou similaire. Cela signifie que pour pouvoir suivre l'utilisation pour la limitation de débit, il serait nécessaire d'écrire sur le disque pour chaque requête potentiellement limité. Cela pourrait contribuer à réduire l'espérance de vie des disques à long terme, et n'est pas recommandé de manière idéale. Alternativement, idéalement, un outil utilisé pour la limitation de débit pourrait utiliser un système de base de données destiné à de opérations de lecture/écriture petites et fréquentes, ou pourrait conserver des informations de manière persistante d'une requête à l'autre, sans avoir besoin d'écrire des données sur le disque entre les requêtes (par exemple, écrit en tant que module de serveur indépendant, au lieu d'un paquet PHP).
+- Si vous pouvez utiliser un module serveur, cPanel, ou un autre outil réseau pour appliquer la limitation de débit, il serait préférable de l'utiliser pour limitation de débit, au lieu de CIDRAM.
+- Si un utilisateur particulier souhaite vivement continuer à accéder à votre site Web après avoir été limité, dans la plupart des cas, il leur sera très facile de contourner la limitation de débit (par exemple, s'ils changent d'adresse IP, ou s'ils utilisent un proxy ou un VPN, et en supposant que vous avez configuré CIDRAM pour ne pas bloquer les proxy et les VPN, ou que CIDRAM n'est pas au courant du proxy ou du VPN qu'ils utilisent).
+- La limitation de débit peut être très gênante pour les vrais utilisateurs. Cela peut être nécessaire si votre bande passante disponible est très limitée, et si vous découvrez qu'il existe des sources de trafic spécifiques, non encore bloquées, qui utilisent la majeure partie de votre bande passante disponible. Donc, si ce n'est pas nécessaire, cela devrait probablement être évité.
+- Vous pouvez parfois risquer de bloquer des utilisateurs légitimes, voire vous-même.
+
+Si vous estimez que vous n'avez pas besoin de CIDRAM pour imposer une limitation de débit à votre site Web, conservez les directives ci-dessous définies comme leurs valeurs par défaut. Sinon, vous pouvez modifier leurs valeurs pour répondre à vos besoins.
+
+##### « max_bandwidth »
+- La quantité maximale de bande passante autorisée dans la période de tolérance avant de permettre la limitation de débit pour les requêtes futures. Une valeur de 0 désactive ce type de limitation de débit. Défaut = 0KB.
+
+##### « max_requests »
+- Le nombre maximal de requêtes autorisées dans la période de tolérance avant de permettre la limitation de débit pour les requêtes futures. Une valeur de 0 désactive ce type de limitation de débit. Défaut = 0.
+
+##### « precision_ipv4 »
+- La précision à utiliser lors de la surveillance de l'utilisation d'IPv4. La valeur reflète la taille du bloc CIDR. Réglez sur 32 pour une meilleure précision. Défaut = 32.
+
+##### « precision_ipv6 »
+- La précision à utiliser lors de la surveillance de l'utilisation d'IPv6. La valeur reflète la taille du bloc CIDR. Réglez sur 128 pour une meilleure précision. Défaut = 128.
+
+##### « allowance_period »
+- Le nombre d'heures pour surveiller l'utilisation. Défaut = 0.
 
 ---
 
@@ -1464,4 +1503,4 @@ Alternativement, il y a un bref aperçu (non autorisé) de GDPR/DSGVO disponible
 ---
 
 
-Dernière mise à jour : 4 Novembre 2018 (2018.11.04).
+Dernière mise à jour : 1 Décembre 2018 (2018.12.01).

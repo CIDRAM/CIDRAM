@@ -320,6 +320,12 @@ CIDRAM可以手動或通過前端更新。​CIDRAM也可以通過Composer或Wor
 ### 6. <a name="SECTION6"></a>配置選項
 下列是一個列表的變量發現在`config.ini`配置文件的CIDRAM，​以及一個說明的他們的目的和功能。
 
+[general](#general-類別) | [signatures](#signatures-類別) | [recaptcha](#recaptcha-類別) | [legal](#legal-類別) | [template_data](#template_data-類別)
+:--|:--|:--|:--|:--
+[logfile](#logfile)<br />[logfileApache](#logfileapache)<br />[logfileSerialized](#logfileserialized)<br />[truncate](#truncate)<br />[log_rotation_limit](#log_rotation_limit)<br />[log_rotation_action](#log_rotation_action)<br />[timezone](#timezone)<br />[timeOffset](#timeoffset)<br />[timeFormat](#timeformat)<br />[ipaddr](#ipaddr)<br />[forbid_on_block](#forbid_on_block)<br />[silent_mode](#silent_mode)<br />[lang](#lang)<br />[numbers](#numbers)<br />[emailaddr](#emailaddr)<br />[emailaddr_display_style](#emailaddr_display_style)<br />[disable_cli](#disable_cli)<br />[disable_frontend](#disable_frontend)<br />[max_login_attempts](#max_login_attempts)<br />[FrontEndLog](#frontendlog)<br />[ban_override](#ban_override)<br />[log_banned_ips](#log_banned_ips)<br />[default_dns](#default_dns)<br />[search_engine_verification](#search_engine_verification)<br />[social_media_verification](#social_media_verification)<br />[protect_frontend](#protect_frontend)<br />[disable_webfonts](#disable_webfonts)<br />[maintenance_mode](#maintenance_mode)<br />[default_algo](#default_algo)<br />[statistics](#statistics)<br />[force_hostname_lookup](#force_hostname_lookup)<br />[allow_gethostbyaddr_lookup](#allow_gethostbyaddr_lookup)<br />[hide_version](#hide_version)<br />[empty_fields](#empty_fields)<br /> | [ipv4](#ipv4)<br />[ipv6](#ipv6)<br />[block_cloud](#block_cloud)<br />[block_bogons](#block_bogons)<br />[block_generic](#block_generic)<br />[block_legal](#block_legal)<br />[block_malware](#block_malware)<br />[block_proxies](#block_proxies)<br />[block_spam](#block_spam)<br />[modules](#modules)<br />[default_tracktime](#default_tracktime)<br />[infraction_limit](#infraction_limit)<br />[track_mode](#track_mode)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> | [usemode](#usemode)<br />[lockip](#lockip)<br />[lockuser](#lockuser)<br />[sitekey](#sitekey)<br />[secret](#secret)<br />[expiry](#expiry)<br />[logfile](#logfile)<br />[signature_limit](#signature_limit)<br />[api](#api)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> | [pseudonymise_ip_addresses](#pseudonymise_ip_addresses)<br />[omit_ip](#omit_ip)<br />[omit_hostname](#omit_hostname)<br />[omit_ua](#omit_ua)<br />[privacy_policy](#privacy_policy)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> | [theme](#theme)<br />[Magnification](#magnification)<br />[css_url](#css_url)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+[PHPMailer](#phpmailer-類別) | [rate_limiting](#rate_limiting-類別)
+[EventLog](#eventlog)<br />[SkipAuthProcess](#skipauthprocess)<br />[Enable2FA](#enable2fa)<br />[Host](#host)<br />[Port](#port)<br />[SMTPSecure](#smtpsecure)<br />[SMTPAuth](#smtpauth)<br />[Username](#username)<br />[Password](#password)<br />[setFromAddress](#setfromaddress)<br />[setFromName](#setfromname)<br />[addReplyToAddress](#addreplytoaddress)<br />[addReplyToName](#addreplytoname)<br /> | [max_bandwidth](#max_bandwidth)<br />[max_requests](#max_requests)<br />[precision_ipv4](#precision_ipv4)<br />[precision_ipv6](#precision_ipv6)<br />[allowance_period](#allowance_period)<br /><br /><br /><br /><br /><br /><br /><br /><br />
+
 #### 『general』 （類別）
 基本CIDRAM配置。
 
@@ -349,6 +355,9 @@ CIDRAM可以手動或通過前端更新。​CIDRAM也可以通過Composer或Wor
 - 日誌輪轉限制了任何時候應該存在的日誌文件的數量。​當新的日誌文件被創建時，如果日誌文件的指定的最大數量已經超過，將執行指定的操作。​您可以在此處指定所需的操作。​『Delete』=刪除最舊的日誌文件，直到不再超出限制。​『Archive』=首先歸檔，然後刪除最舊的日誌文件，直到不再超出限制。
 
 *技術澄清：在這種情況下，『最舊』意味著『不是最近被修改』。*
+
+##### 『timezone』
+- 這用於指定CIDRAM應用於日期/時間操作的時區。​如果您不需要它，請忽略它。​可能的值由PHP確定。​它一般建議，​而不是，​調整時區指令的文件`php.ini`，​但是有時（例如，​當利用有限的共享主機提供商）這並不總是可能做到，​所以，​此選項在這裡是提供。
 
 ##### 『timeOffset』
 - 如果您的服務器時間不符合您的本地時間，​您可以在這裡指定的偏移調整日期/時間信息該產生通過CIDRAM根據您的需要。​它一般建議，​而不是，​調整時區指令的文件`php.ini`，​但是有時（例如，​當利用有限的共享主機提供商）這並不總是可能做到，​所以，​此選項在這裡是提供。​偏移量是在分鐘。
@@ -624,6 +633,8 @@ CIDRAM可以手動或通過前端更新。​CIDRAM也可以通過Composer或Wor
 #### 『PHPMailer』 （類別）
 PHPMailer配置。
 
+目前，CIDRAM僅將PHPMailer用於前端雙因素身份驗證。​如果不使用前端，或者如果為前端不用雙因素身份驗證，則可以忽略這些指令。
+
 ##### 『EventLog』
 - 用於記錄與PHPMailer相關的所有事件的文件。​指定一個文件名，​或留空以禁用。
 
@@ -662,6 +673,34 @@ PHPMailer配置。
 
 ##### 『addReplyToName』
 - 通過SMTP發送電子郵件時引用的回複姓名。
+
+#### 『rate_limiting』 （類別）
+用於速率限制的可選配置指令。
+
+此功能已實施到CIDRAM，因為有足夠的用戶請求它來辯解它的實施。​但是，因為它與之無關CIDRAM的最初的預期目的，大多數用戶很可能不需要它。​如果您特別需要CIDRAM來處理您網站的速率限制，此功能可能是有用給您的。​但是，您應該考慮一些重要的事情：
+- 與所有其他CIDRAM功能一樣，此功能僅適用於受CIDRAM保護的頁面。​因此，任何未通過CIDRAM特定路由的網站資產都不能被CIDRAM限制。
+- 不要忘記CIDRAM將緩存和其他數據直接寫入磁盤（即，它將它的數據保存到文件中），並且它不使用任何外部數據庫系統，如MySQL，PostgreSQL，Access，或類似系統。​這意味著為了跟踪速率限制的使用情況，它實際上需要為每個可能的速率限制請求寫入磁盤。​這可能有助於長期降低磁盤壽命，並且不是理想的推薦。​相反，理想情況下，速率限制工具可以利用用於頻繁，小型讀/寫操作的數據庫系統，或者可以在請求之間持久保留信息，而無需在請求之間將數據寫入磁盤（例如，編寫為獨立的服務器模塊，而不是PHP包）。
+- 如果您能夠使用服務器模塊，cPanel，或其他一些網絡工具來強制執行速率限制，最好將其用於速率限制，而不是CIDRAM。
+- 如果特定用戶非常希望在受到限制後繼續訪問您的網站，在大多數情況下，他們很容易繞過速率限制（例如，如果他們改變他們的IP地址，或者如果他們使用代理或VPN，並假設您已將CIDRAM配置為不阻止代理和VPN，或者假設CIDRAM不知道他們正在使用的代理或VPN）。
+- 對於真實用戶來說，速率限制可能非常煩人。​如果您的可用帶寬非常有限，並且如果您發現有一些特定的流量來源，尚未被阻止，並且它佔用大部分可用帶寬，速率限制可能是必要的。​然而，如果沒有必要，應該避免它。
+- 您可能偶爾冒險阻止合法用戶，甚至是您自己。
+
+如果您不需要CIDRAM來對您的網站進行速率限制，請將以下指令設置為默認值。​否則，您可以更改其值以滿足您的需求。
+
+##### 『max_bandwidth』
+- 在為將來的請求啟用速率限制之前的最大允許帶寬量。​值為0將禁用此類速率限制。​標準=0KB。
+
+##### 『max_requests』
+- 在為將來的請求啟用速率限制之前允許的最大請求數。​值為0將禁用此類速率限制。​標準=0。
+
+##### 『precision_ipv4』
+- 監視IPv4使用時的精度。​值鏡像CIDR塊大小。​設置為32以獲得最佳精度。​標準=32。
+
+##### 『precision_ipv6』
+- 監視IPv6使用時的精度。​值鏡像CIDR塊大小。​設置為128以獲得最佳精度。​標準=128。
+
+##### 『allowance_period』
+- 監視使用情況的小時數。​標準=0。
 
 ---
 
@@ -1467,4 +1506,4 @@ CIDRAM不收集或處理任何信息用於營銷或廣告目的，既不銷售�
 ---
 
 
-最後更新：2018年11月4日。
+最後更新：2018年12月1日。

@@ -319,6 +319,12 @@ Tập tin | Chi tiết
 ### 6. <a name="SECTION6"></a>TÙY CHỌN CHO CẤU HÌNH
 Sau đây là danh sách các biến tìm thấy trong tập tin cấu hình cho CIDRAM `config.ini`, cùng với một mô tả về mục đích và chức năng của chúng.
 
+[general](#general-thể-loại) | [signatures](#signatures-thể-loại) | [recaptcha](#recaptcha-thể-loại) | [legal](#legal-thể-loại) | [template_data](#template_data-thể-loại)
+:--|:--|:--|:--|:--
+[logfile](#logfile)<br />[logfileApache](#logfileapache)<br />[logfileSerialized](#logfileserialized)<br />[truncate](#truncate)<br />[log_rotation_limit](#log_rotation_limit)<br />[log_rotation_action](#log_rotation_action)<br />[timezone](#timezone)<br />[timeOffset](#timeoffset)<br />[timeFormat](#timeformat)<br />[ipaddr](#ipaddr)<br />[forbid_on_block](#forbid_on_block)<br />[silent_mode](#silent_mode)<br />[lang](#lang)<br />[numbers](#numbers)<br />[emailaddr](#emailaddr)<br />[emailaddr_display_style](#emailaddr_display_style)<br />[disable_cli](#disable_cli)<br />[disable_frontend](#disable_frontend)<br />[max_login_attempts](#max_login_attempts)<br />[FrontEndLog](#frontendlog)<br />[ban_override](#ban_override)<br />[log_banned_ips](#log_banned_ips)<br />[default_dns](#default_dns)<br />[search_engine_verification](#search_engine_verification)<br />[social_media_verification](#social_media_verification)<br />[protect_frontend](#protect_frontend)<br />[disable_webfonts](#disable_webfonts)<br />[maintenance_mode](#maintenance_mode)<br />[default_algo](#default_algo)<br />[statistics](#statistics)<br />[force_hostname_lookup](#force_hostname_lookup)<br />[allow_gethostbyaddr_lookup](#allow_gethostbyaddr_lookup)<br />[hide_version](#hide_version)<br />[empty_fields](#empty_fields)<br /> | [ipv4](#ipv4)<br />[ipv6](#ipv6)<br />[block_cloud](#block_cloud)<br />[block_bogons](#block_bogons)<br />[block_generic](#block_generic)<br />[block_legal](#block_legal)<br />[block_malware](#block_malware)<br />[block_proxies](#block_proxies)<br />[block_spam](#block_spam)<br />[modules](#modules)<br />[default_tracktime](#default_tracktime)<br />[infraction_limit](#infraction_limit)<br />[track_mode](#track_mode)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> | [usemode](#usemode)<br />[lockip](#lockip)<br />[lockuser](#lockuser)<br />[sitekey](#sitekey)<br />[secret](#secret)<br />[expiry](#expiry)<br />[logfile](#logfile)<br />[signature_limit](#signature_limit)<br />[api](#api)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> | [pseudonymise_ip_addresses](#pseudonymise_ip_addresses)<br />[omit_ip](#omit_ip)<br />[omit_hostname](#omit_hostname)<br />[omit_ua](#omit_ua)<br />[privacy_policy](#privacy_policy)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> | [theme](#theme)<br />[Magnification](#magnification)<br />[css_url](#css_url)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+[PHPMailer](#phpmailer-thể-loại) | [rate_limiting](#rate_limiting-thể-loại)
+[EventLog](#eventlog)<br />[SkipAuthProcess](#skipauthprocess)<br />[Enable2FA](#enable2fa)<br />[Host](#host)<br />[Port](#port)<br />[SMTPSecure](#smtpsecure)<br />[SMTPAuth](#smtpauth)<br />[Username](#username)<br />[Password](#password)<br />[setFromAddress](#setfromaddress)<br />[setFromName](#setfromname)<br />[addReplyToAddress](#addreplytoaddress)<br />[addReplyToName](#addreplytoname)<br /> | [max_bandwidth](#max_bandwidth)<br />[max_requests](#max_requests)<br />[precision_ipv4](#precision_ipv4)<br />[precision_ipv6](#precision_ipv6)<br />[allowance_period](#allowance_period)<br /><br /><br /><br /><br /><br /><br /><br /><br />
+
 #### "general" (Thể loại)
 Cấu hình chung cho CIDRAM.
 
@@ -348,6 +354,9 @@ Cấu hình chung cho CIDRAM.
 - Xoay vòng nhật ký giới hạn số lượng của tập tin nhật ký có cần tồn tại cùng một lúc. Khi các tập tin nhật ký mới được tạo, nếu tổng số lượng tập tin nhật ký vượt quá giới hạn được chỉ định, hành động được chỉ định sẽ được thực hiện. Bạn có thể chỉ định hành động mong muốn tại đây. Delete = Xóa các tập tin nhật ký cũ nhất, cho đến khi giới hạn không còn vượt quá. Archive = Trước tiên lưu trữ, và sau đó xóa các tập tin nhật ký cũ nhất, cho đến khi giới hạn không còn vượt quá.
 
 *Làm rõ kỹ thuật: Trong ngữ cảnh này, "cũ nhất" có nghĩa là không được sửa đổi gần đây.*
+
+##### "timezone"
+- Điều này được sử dụng để xác định múi giờ nào CIDRAM nên sử dụng cho ngày/giờ. Nếu bạn không cần nó, bỏ qua nó. Các giá trị có thể được xác định bởi PHP. Nó thường được đề nghị thay vì để điều chỉnh các chỉ thị múi giờ trong tập tin `php.ini` của bạn, nhưng đôi khi (như ví dụ, khi làm việc với giới hạn cung cấp lưu trữ chia sẻ) đây không phải là luôn luôn có thể làm, và như vậy, tùy chọn này được cung cấp ở đây.
 
 ##### "timeOffset"
 - Nếu thời gian máy chủ của bạn không phù hợp với thời gian địa phương của bạn, bạn có thể chỉ định một bù đắp đây để điều chỉnh thông tin ngày/giờ được tạo ra bởi CIDRAM theo yêu cầu của bạn. Nó thường được đề nghị thay vì để điều chỉnh các chỉ thị múi giờ trong tập tin `php.ini` của bạn, nhưng đôi khi (như ví dụ, khi làm việc với giới hạn cung cấp lưu trữ chia sẻ) đây không phải là luôn luôn có thể làm, và như vậy, tùy chọn này được cung cấp ở đây. Bù đắp được đo bằng phút.
@@ -623,6 +632,8 @@ Liên quan đến đầu ra HTML sử dụng để tạo ra các trang "Truy c�
 #### "PHPMailer" (Thể loại)
 Cấu hình PHPMailer.
 
+Hiện tại, CIDRAM chỉ sử dụng PHPMailer để xác thực hai yếu tố front-end. Nếu bạn không sử dụng các front-end, hoặc nếu bạn không sử dụng xác thực hai yếu tố cho các front-end, bạn có thể bỏ qua các chỉ thị này.
+
 ##### "EventLog"
 - Một tập tin để ghi nhật ký tất cả các sự kiện liên quan đến PHPMailer. Chỉ định một tên tập tin, hoặc để trống để vô hiệu hóa.
 
@@ -661,6 +672,34 @@ Cấu hình PHPMailer.
 
 ##### "addReplyToName"
 - Tên trả lời để trích dẫn khi gửi email qua SMTP.
+
+#### "rate_limiting" (Thể loại)
+Các chỉ thị cấu hình tùy chọn để giới hạn tốc độ.
+
+Tính năng này được thực hiện cho CIDRAM bởi vì nó được yêu cầu bởi đủ người dùng để biện minh cho việc thực hiện. Tuy nhiên, bởi vì nó không liên quan đến mục đích dự định ban đầu cho CIDRAM, rất có thể sẽ không cần thiết cho hầu hết người dùng. Nếu bạn đặc biệt cần CIDRAM để xử lý giới hạn tốc độ cho trang web của mình, tính năng này có thể hữu ích cho bạn. Tuy nhiên, có một số điều quan trọng bạn nên cân nhắc:
+- Tính năng này, giống như tất cả các tính năng CIDRAM khác, sẽ chỉ hoạt động đối với các trang được bảo vệ bởi CIDRAM. Do đó, bất kỳ tài sản trang web nào không được định tuyến cụ thể thông qua CIDRAM không thể bị giới hạn bởi CIDRAM.
+- Đừng quên rằng CIDRAM ghi cache và các dữ liệu khác trực tiếp vào đĩa (nói cách khác, lưu dữ liệu của nó vào tập tin), và không sử dụng bất kỳ hệ thống cơ sở dữ liệu bên ngoài nào như MySQL, PostgreSQL, Access, hay tương tự. Điều này có nghĩa là để có thể theo dõi việc sử dụng cho giới hạn tốc độ, nó sẽ có hiệu quả cần phải được ghi vào đĩa cho mỗi yêu cầu được giới hạn. Điều này có thể góp phần làm giảm tuổi thọ ổ đĩa trong dài hạn, và không được khuyến khích. Thay vào đó, lý tưởng, một công cụ được sử dụng để giới hạn tốc độ có thể sử dụng một hệ thống cơ sở dữ liệu dành cho các hoạt động đọc/ghi nhỏ và thường xuyên, hoặc có thể giữ lại thông tin liên tục qua các yêu cầu, mà không cần phải ghi dữ liệu vào đĩa giữa các yêu cầu (v.d., được viết dưới dạng mô-đun máy chủ độc lập, thay vì gói PHP).
+- Nếu bạn có thể sử dụng mô-đun máy chủ, cPanel, hoặc một số công cụ mạng khác để thực thi giới hạn tốc độ, nó sẽ là tốt hơn để sử dụng mà thay vì CIDRAM.
+- Nếu một người dùng cụ thể rất muốn tiếp tục truy cập trang web của bạn sau khi bị giới hạn, trong hầu hết các trường hợp, sẽ rất dễ dàng để họ vượt qua giới hạn tốc độ (v.d., nếu họ thay đổi địa chỉ IP của họ, hoặc nếu họ sử dụng proxy hoặc VPN, và giả định rằng bạn đã định cấu hình CIDRAM để không chặn proxy và VPN, hoặc CIDRAM đó không biết về proxy hoặc VPN mà họ đang sử dụng).
+- Giới hạn tốc độ có thể rất khó chịu đối với người dùng cuối thực tế. Có thể cần thiết nếu băng thông có sẵn của bạn rất hạn chế, và nếu bạn phát hiện ra rằng có một số nguồn lưu lượng truy cập cụ thể, chưa bị chặn, điều đó sẽ tiêu tốn phần lớn băng thông có sẵn của bạn. Nếu không cần thiết tuy nhiên, nó có lẽ nên tránh.
+- Đôi khi, bạn có thể có nguy cơ chặn người dùng hợp pháp, hay thậm chí là chính bạn.
+
+Nếu bạn cảm thấy rằng bạn không cần CIDRAM để thực thi giới hạn tốc độ cho trang web của bạn, giữ các chỉ thị bên dưới được đặt làm giá trị mặc định của chúng. Nếu không, bạn có thể thay đổi giá trị của chúng cho phù hợp với nhu cầu của bạn.
+
+##### "max_bandwidth"
+- Số lượng băng thông tối đa được phép trong khoảng thời gian cho phép trước khi cho phép giới hạn tốc độ cho các yêu cầu trong tương lai. Giá trị 0 sẽ vô hiệu hóa loại giới hạn tốc độ này. Mặc định = 0KB.
+
+##### "max_requests"
+- Số lượng yêu cầu tối đa được phép trong khoảng thời gian cho phép trước khi cho phép giới hạn tốc độ cho các yêu cầu trong tương lai. Giá trị 0 sẽ vô hiệu hóa loại giới hạn tốc độ này. Mặc định = 0.
+
+##### "precision_ipv4"
+- Độ chính xác để sử dụng khi theo dõi việc sử dụng IPv4. Giá trị phản ánh kích thước khối CIDR. Đặt thành 32 để có độ chính xác cao nhất. Mặc định = 32.
+
+##### "precision_ipv6"
+- Độ chính xác để sử dụng khi theo dõi việc sử dụng IPv6. Giá trị phản ánh kích thước khối CIDR. Đặt thành 128 để có độ chính xác cao nhất. Mặc định = 128.
+
+##### "allowance_period"
+- Số giờ để theo dõi việc sử dụng. Mặc định = 0.
 
 ---
 
@@ -1458,4 +1497,4 @@ Một số tài nguyên được đề xuất để tìm hiểu thêm thông tin
 ---
 
 
-Lần cuối cập nhật: 4 Tháng Mười Một 2018 (2018.11.04).
+Lần cuối cập nhật: 1 Tháng Mười Hai 2018 (2018.12.01).

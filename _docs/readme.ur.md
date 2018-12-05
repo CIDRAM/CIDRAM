@@ -322,6 +322,12 @@
 ### <div dir="rtl">٦. <a name="SECTION6"></a>ترتیب کے اختیارات</div>
 <div dir="rtl">ندرجہ ذیل ان ہدایات کے مقصد کی وضاحت کے ساتھ ساتھ، <code dir="ltr">"config.ini"</code> ترتیب فائل میں CIDRAM کو دستیاب ہدایات کی ایک فہرست ہے.<br /><br /></div>
 
+[general](#general-قسم) | [signatures](#signatures-قسم) | [recaptcha](#recaptcha-قسم) | [legal](#legal-قسم) | [template_data](#template_data-قسم)
+--:|--:|--:|--:|--:
+[logfile](#logfile)<br />[logfileApache](#logfileapache)<br />[logfileSerialized](#logfileserialized)<br />[truncate](#truncate)<br />[log_rotation_limit](#log_rotation_limit)<br />[log_rotation_action](#log_rotation_action)<br />[timezone](#timezone)<br />[timeOffset](#timeoffset)<br />[timeFormat](#timeformat)<br />[ipaddr](#ipaddr)<br />[forbid_on_block](#forbid_on_block)<br />[silent_mode](#silent_mode)<br />[lang](#lang)<br />[numbers](#numbers)<br />[emailaddr](#emailaddr)<br />[emailaddr_display_style](#emailaddr_display_style)<br />[disable_cli](#disable_cli)<br />[disable_frontend](#disable_frontend)<br />[max_login_attempts](#max_login_attempts)<br />[FrontEndLog](#frontendlog)<br />[ban_override](#ban_override)<br />[log_banned_ips](#log_banned_ips)<br />[default_dns](#default_dns)<br />[search_engine_verification](#search_engine_verification)<br />[social_media_verification](#social_media_verification)<br />[protect_frontend](#protect_frontend)<br />[disable_webfonts](#disable_webfonts)<br />[maintenance_mode](#maintenance_mode)<br />[default_algo](#default_algo)<br />[statistics](#statistics)<br />[force_hostname_lookup](#force_hostname_lookup)<br />[allow_gethostbyaddr_lookup](#allow_gethostbyaddr_lookup)<br />[hide_version](#hide_version)<br />[empty_fields](#empty_fields)<br /> | [ipv4](#ipv4)<br />[ipv6](#ipv6)<br />[block_cloud](#block_cloud)<br />[block_bogons](#block_bogons)<br />[block_generic](#block_generic)<br />[block_legal](#block_legal)<br />[block_malware](#block_malware)<br />[block_proxies](#block_proxies)<br />[block_spam](#block_spam)<br />[modules](#modules)<br />[default_tracktime](#default_tracktime)<br />[infraction_limit](#infraction_limit)<br />[track_mode](#track_mode)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> | [usemode](#usemode)<br />[lockip](#lockip)<br />[lockuser](#lockuser)<br />[sitekey](#sitekey)<br />[secret](#secret)<br />[expiry](#expiry)<br />[logfile](#logfile)<br />[signature_limit](#signature_limit)<br />[api](#api)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> | [pseudonymise_ip_addresses](#pseudonymise_ip_addresses)<br />[omit_ip](#omit_ip)<br />[omit_hostname](#omit_hostname)<br />[omit_ua](#omit_ua)<br />[privacy_policy](#privacy_policy)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> | [theme](#theme)<br />[Magnification](#magnification)<br />[css_url](#css_url)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+[PHPMailer](#phpmailer-قسم) | [rate_limiting](#rate_limiting-قسم)
+[EventLog](#eventlog)<br />[SkipAuthProcess](#skipauthprocess)<br />[Enable2FA](#enable2fa)<br />[Host](#host)<br />[Port](#port)<br />[SMTPSecure](#smtpsecure)<br />[SMTPAuth](#smtpauth)<br />[Username](#username)<br />[Password](#password)<br />[setFromAddress](#setfromaddress)<br />[setFromName](#setfromname)<br />[addReplyToAddress](#addreplytoaddress)<br />[addReplyToName](#addreplytoname)<br /> | [max_bandwidth](#max_bandwidth)<br />[max_requests](#max_requests)<br />[precision_ipv4](#precision_ipv4)<br />[precision_ipv6](#precision_ipv6)<br />[allowance_period](#allowance_period)<br /><br /><br /><br /><br /><br /><br /><br /><br />
+
 #### <div dir="rtl">"general" (قسم)<br /></div>
 <div dir="rtl">جنرل CIDRAM کنفیگریشن.<br /><br /></div>
 
@@ -365,9 +371,14 @@
 
 <div dir="rtl">تکنیکی وضاحت: اس تناظر میں "سب سے پرانی" کا مطلب "کم از کم ترمیم شدہ" ہے.<br /><br /></div>
 
+##### <div dir="rtl">"timezone"<br /></div>
+<div dir="rtl"><ul>
+ <li>یہ استعمال کیا جاتا ہے کہ کون سا ٹائم زون CIDRAM کو تاریخ/وقت کے آپریشن کے لئے استعمال کرنا چاہئے. اگر آپ کو اس کی ضرورت نہیں ہے تو اسے نظر انداز کریں. ممکنہ اقدار PHP کی طرف سے مقرر ہیں. یہ عام طور پر یہ کرنا ہمیشہ ممکن نہیں ہے، اور تو، اس اختیار کو یہاں فراہم کی جاتی ہے (جیسا محدود مشترکہ ہوسٹنگ فراہم کرنے والے کے ساتھ کام کرتے وقت کے طور پر) آپ <code dir="ltr">php.ini</code> فائل میں ٹائم زون ہدایت کو ایڈجسٹ کرنے کی بجائے سفارش، لیکن کبھی کبھی رہا ہے.</li>
+</ul></div>
+
 ##### <div dir="rtl">"timeOffset"<br /></div>
 <div dir="rtl"><ul>
- <li>آپ کے سرور کے وقت آپ کے مقامی وقت کے مماثل نہیں ہے تو، آپ کو آپ کی ضروریات کے مطابق CIDRAM طرف سے پیدا تاریخ / وقت کی معلومات کو ایڈجسٹ کرنے کے لئے یہاں آفسیٹ ایک وضاحت کر سکتے ہیں. یہ عام طور پر یہ کرنا ہمیشہ ممکن نہیں ہے، اور تو، اس اختیار کو یہاں فراہم کی جاتی ہے (جیسا محدود مشترکہ ہوسٹنگ فراہم کرنے والے کے ساتھ کام کرتے وقت کے طور پر) آپ "php.ini" فائل میں ٹائم زون ہدایت کو ایڈجسٹ کرنے کی بجائے سفارش، لیکن کبھی کبھی رہا ہے. آف سیٹ منٹ میں ہے.<br /></li>
+ <li>آپ کے سرور کے وقت آپ کے مقامی وقت کے مماثل نہیں ہے تو، آپ کو آپ کی ضروریات کے مطابق CIDRAM طرف سے پیدا تاریخ / وقت کی معلومات کو ایڈجسٹ کرنے کے لئے یہاں آفسیٹ ایک وضاحت کر سکتے ہیں. یہ عام طور پر یہ کرنا ہمیشہ ممکن نہیں ہے، اور تو، اس اختیار کو یہاں فراہم کی جاتی ہے (جیسا محدود مشترکہ ہوسٹنگ فراہم کرنے والے کے ساتھ کام کرتے وقت کے طور پر) آپ <code dir="ltr">php.ini</code> فائل میں ٹائم زون ہدایت کو ایڈجسٹ کرنے کی بجائے سفارش، لیکن کبھی کبھی رہا ہے. آف سیٹ منٹ میں ہے.<br /></li>
  <li>مثال (ایک گھنٹے کا اضافہ کرنے کے لئے):</li>
 </ul></div>
 
@@ -762,6 +773,8 @@
 #### <div dir="rtl">"PHPMailer" (قسم)<br /></div>
 <div dir="rtl">PHPMailer ترتیب.<br /><br /></div>
 
+<div dir="rtl">فی الحال، CIDRAM صرف 2FA کے لئے صرف PHPMailer کا استعمال کرتا ہے. اگر آپ سامنے کے اختتام کا استعمال نہیں کرتے ہیں، یا اگر آپ 2FA استعمال نہیں کرتے ہیں، تو آپ ان ہدایات کو نظر انداز کر سکتے ہیں.<br /><br /></div>
+
 ##### <div dir="rtl">"EventLog"<br /></div>
 <div dir="rtl"><ul>
  <li>PHPMailer کے سلسلے میں تمام واقعات کو لاگ ان کرنے کے لئے ایک فائل. ایک فائل کا نام کی وضاحت کریں، یا غیر فعال کرنے کو خالی چھوڑ.</li>
@@ -825,6 +838,46 @@
 ##### <div dir="rtl">"addReplyToName"<br /></div>
 <div dir="rtl"><ul>
  <li>ای میل بھیجنے پر جواب کا نام.</li>
+</ul></div>
+
+#### <div dir="rtl">"rate_limiting" (التصنيف)<br /></div>
+<div dir="rtl">شرح محدود کرنے کے اختیارات.<br /><br /></div>
+
+<div dir="rtl">یہ خصوصیت بہت سے صارفین کی درخواستوں کے سبب CIDRAM پر لاگو کیا گیا تھا. البتہ، کیونکہ یہ خاص طور پر CIDRAM کے مطلوبہ مقاصد سے متعلق نہیں ہے، زیادہ سے زیادہ امکانات زیادہ سے زیادہ صارفین کی طرف سے ضرورت نہیں ہوگی. اگر آپ کی حد محدود کرنے کے لئے CIDRAM کی ضرورت ہو تو، یہ خصوصیت آپ کے لئے مفید ثابت ہوسکتا ہے. تاہم، کچھ ضروری چیزیں جنہیں آپ پر غور کرنا چاہئے:</div>
+<div dir="rtl"><ul>
+ <li>یہ خصوصیت، تمام دیگر CIDRAM کی خصوصیات، صرف CIDRAM کی طرف سے محفوظ صفحات کے لئے کام کریں گے. لہذا، ویب سائٹ کے اثاثوں کو محدود نہیں ہوسکتا ہے اگر وہ CIDRAM کے ذریعہ نہیں رہیں.</li>
+ <li>یہ نہ بھولنا کہ CIDRAM ڈیٹا کو براہ راست ڈسک میں لکھتا ہے. یہ کسی بیرونی ڈیٹا بیس کا نظام استعمال نہیں کرتا (مثال کے طور پر، MySQL، PostgreSQL، Access، وغیرہ). لہذا، استعمال کا سراغ لگانا، ہر ممکنہ محدود درخواست کے لئے ڈسک لکھنے کی ضرورت ہوگی. یہ طویل عرصے میں ڈسک زندگی کی توقع کو منفی اثر انداز کر سکتا ہے، اور مثالی طور پر سفارش کی نہیں ہے. مثالی طور پر، شرح محدود کرنے کے لئے ایک وقف ڈیٹا بیس کا نظام استعمال کیا جا سکتا ہے، یا درخواست ہر ایک درخواست کے لئے ڈسک میں لکھنے کے بجائے مسلسل درخواستوں میں مسلسل برقرار رکھا جا سکتا ہے (مثال کے طور پر، ایک آزاد سرور ماڈیول لکھ کر، PHP پیکج کے بجائے).</li>
+ <li>اگر آپ سرور ماڈیول، cPanel، یا محدود نیٹ ورک کا آلہ محدود کرنے کے لۓ استعمال کرتے ہیں تو آپ کو حد تک محدود کرنے کیلئے CIDRAM کے بجائے استعمال کرنا چاہئے.</li>
+ <li>اگر، محدود ہونے کے بعد، ایک خاص صارف آپ کی ویب سائٹ تک رسائی جاری رکھنے کے لئے چاہتا ہے، پھر زیادہ تر معاملات میں، ان کے لئے حد تک محدود کرنے کے لئے بہت آسان ہو جائے گا (مثال کے طور پر، اگر وہ اپنے IP ایڈریس کو تبدیل کرتے ہیں، یا اگر وہ پراکسی یا VPN استعمال کرتے ہیں، اور یہ فرض کریں کہ آپ نے پراکس اور وی پی این کو بلاک نہیں کرنے کے لئے CIDRAM کو تشکیل دیا ہے، یا CIDRAM پراکسی یا VPN سے متعلق نہیں ہے کہ وہ استعمال کرتے ہیں).</li>
+ <li>یہ خصوصیت صارفین کیلئے بہت پریشانی ہوسکتی ہے. اگر آپ دستیاب دستیاب بینڈوڈتھ بہت محدود ہے تو یہ ضروری ہوسکتا ہے، اور اگر آپ کو معلوم ہوتا ہے کہ ٹریفک کے کچھ مخصوص ذرائع موجود ہیں، پہلے ہی دوسری صورت میں بند نہیں ہوسکتا ہے، تو یہ آپ کے دستیاب بینڈوڈتھ کی اکثریت کو استعمال کر رہے ہیں. اگرچہ ضروری نہیں ہے تو، شاید اس سے بچنا چاہئے.</li>
+ <li>آپ کبھی کبھار اپنے آپ کو یا جائز صارفین کو روکنے کا خطرہ کر سکتے ہیں.</li>
+</ul></div>
+
+<div dir="rtl">اگر آپ کو اپنی ویب سائٹ کے لئے محدود کرنے کی شرح کو لاگو کرنے کے لئے CIDRAM کی ضرورت نہیں ہے تو ذیل میں ہدایات کو ان کے ڈیفالٹ اقدار کے طور پر مقرر کریں. دوسری صورت میں، آپ اپنی ضروریات کو پورا کرنے کے لئے اپنے اقدار تبدیل کرسکتے ہیں.<br /><br /></div>
+
+##### <div dir="rtl">"max_bandwidth"<br /></div>
+<div dir="rtl"><ul>
+ <li>بینڈوڈتھ کی زیادہ سے زیادہ رقم کی اجازت کے عرصے میں اجازت دی گئی ہے. جب سے تجاوز کی گئی، مستقبل کی درخواستوں کی شرح محدود ہے. جب 0، اس قسم کی محدود استعمال نہیں کی جائے گی. پہلے سے طے شدہ = 0KB.</li>
+</ul></div>
+
+##### <div dir="rtl">"max_requests"<br /></div>
+<div dir="rtl"><ul>
+ <li>الاؤنس کی مدت کے اندر اندر زیادہ سے زیادہ درخواستوں کی اجازت دی گئی ہے. جب سے تجاوز کی گئی، مستقبل کی درخواستوں کی شرح محدود ہے. جب 0، اس قسم کی محدود استعمال نہیں کی جائے گی. پہلے سے طے شدہ = 0.</li>
+</ul></div>
+
+##### <div dir="rtl">"precision_ipv4"<br /></div>
+<div dir="rtl"><ul>
+ <li>IPv4 استعمال کی نگرانی کرتے وقت استعمال کرنے کی صحت سے متعلق. قیمت CIDR بلاک سائز کی عکاسی کرتا ہے. بہترین صحت سے متعلق کے لئے 32 پر مقرر کریں. پہلے سے طے شدہ = 32.</li>
+</ul></div>
+
+##### <div dir="rtl">"precision_ipv6"<br /></div>
+<div dir="rtl"><ul>
+ <li>IPv6 استعمال کی نگرانی کرتے وقت استعمال کرنے کی صحت سے متعلق. قیمت CIDR بلاک سائز کی عکاسی کرتا ہے. بہترین صحت سے متعلق کے لئے 128 پر مقرر کریں. پہلے سے طے شدہ = 128.</li>
+</ul></div>
+
+##### <div dir="rtl">"allowance_period"<br /></div>
+<div dir="rtl"><ul>
+ <li>استعمال کی نگرانی کے لئے گھنٹوں کی تعداد. پہلے سے طے شدہ = 0.</li>
 </ul></div>
 
 ---
@@ -1557,9 +1610,9 @@ x.x.x.x - Day, dd Mon 20xx hh:ii:ss +0000 - "admin" - لاگ ان.
 
 ##### <div dir="rtl">١١.٣.٣ لاگ گھومنے<br /><br /></div>
 
-You may want to purge logs after a period of time, or may be required to do so by law (i.e., the amount of time that it's legally permissible for you to retain logs may be limited by law). You can achieve this by including date/time markers in the names of your logfiles as per specified by your package configuration (e.g., `{yyyy}-{mm}-{dd}.log`), and then enabling log rotation (log rotation allows you to perform some action on logfiles when specified limits are exceeded).
+<div dir="rtl">آپ چاہتے ہیں، یا قانونی طور پر ہو سکتا ہے، کچھ وقت کے بعد لاگ ان کو صاف کرنے کے لئے (کتنی دیر تک آپ لاگ ان کو برقرار رکھ سکتے ہیں قانون کی طرف سے محدود ہوسکتے ہیں). یہ لاگ ان کے مطابق لاگ ان کی ترتیب میں تاریخ/وقت مارکر مقرر کرنے کی طرف سے کیا جا سکتا ہے (مثال کے طور پر، <code dir="ltr">{yyyy}-{mm}-{dd}.log</code>)، اور پھر لاگ گرد گھومنے کو چالو کرنے (لاگ گرد کی گردش آپ کو لاگ ان کی حد سے زیادہ حد تک زیادہ سے زیادہ لاگ ان پر لاگو کرنے کی اجازت دیتا ہے).<br /><br /></div>
 
-For example: If I was legally required to delete logs after 30 days, I could specify `{dd}.log` in the names of my logfiles (`{dd}` represents days), set the value of `log_rotation_limit` to 30, and set the value of `log_rotation_action` to `Delete`.
+<div dir="rtl">مثال کے طور پر: اگر مجھے 30 دنوں کے بعد لاگز کو خارج کرنے کی ضرورت ہوتی ہے تو میں  <code dir="ltr">{dd}.log</code> اپنے لاگ ان کے نام میں ڈال سکتا ہوں (<code dir="ltr">{dd}</code> دن کی نمائندگی کرتا ہے)، <code dir="ltr">log_rotation_limit</code> کو 30 مقرر کریں، اور <code dir="ltr">log_rotation_action</code> کو <code dir="ltr">Delete</code> مقرر کریں.<br /><br /></div>
 
 Conversely, if you're required to retain logs for an extended period of time, you could either not use log rotation at all, or you could set the value of `log_rotation_action` to `Archive`, to compress logfiles, thereby reducing the total amount of disk space that they occupy.
 
@@ -1675,4 +1728,4 @@ Conversely, if you're required to retain logs for an extended period of time, yo
 ---
 
 
-<div dir="rtl">آخری تازہ کاری: 4 نومبر 2018 (2018.11.04).</div>
+<div dir="rtl">آخری تازہ کاری: 5 دسمبر 2018 (2018.12.05).</div>

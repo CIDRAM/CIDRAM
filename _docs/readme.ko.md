@@ -319,6 +319,12 @@ PHPMailer를 설치 한 후 CIDRAM 구성 페이지 또는 구성 파일을 통�
 ### 6. <a name="SECTION6"></a>설정 옵션
 다음은 `config.ini`설정 파일에있는 변수 및 그 목적과 기능의 목록입니다.
 
+[general](#general-카테고리) | [signatures](#signatures-카테고리) | [recaptcha](#recaptcha-카테고리) | [legal](#legal-카테고리) | [template_data](#template_data-카테고리)
+:--|:--|:--|:--|:--
+[logfile](#logfile)<br />[logfileApache](#logfileapache)<br />[logfileSerialized](#logfileserialized)<br />[truncate](#truncate)<br />[log_rotation_limit](#log_rotation_limit)<br />[log_rotation_action](#log_rotation_action)<br />[timezone](#timezone)<br />[timeOffset](#timeoffset)<br />[timeFormat](#timeformat)<br />[ipaddr](#ipaddr)<br />[forbid_on_block](#forbid_on_block)<br />[silent_mode](#silent_mode)<br />[lang](#lang)<br />[numbers](#numbers)<br />[emailaddr](#emailaddr)<br />[emailaddr_display_style](#emailaddr_display_style)<br />[disable_cli](#disable_cli)<br />[disable_frontend](#disable_frontend)<br />[max_login_attempts](#max_login_attempts)<br />[FrontEndLog](#frontendlog)<br />[ban_override](#ban_override)<br />[log_banned_ips](#log_banned_ips)<br />[default_dns](#default_dns)<br />[search_engine_verification](#search_engine_verification)<br />[social_media_verification](#social_media_verification)<br />[protect_frontend](#protect_frontend)<br />[disable_webfonts](#disable_webfonts)<br />[maintenance_mode](#maintenance_mode)<br />[default_algo](#default_algo)<br />[statistics](#statistics)<br />[force_hostname_lookup](#force_hostname_lookup)<br />[allow_gethostbyaddr_lookup](#allow_gethostbyaddr_lookup)<br />[hide_version](#hide_version)<br />[empty_fields](#empty_fields)<br /> | [ipv4](#ipv4)<br />[ipv6](#ipv6)<br />[block_cloud](#block_cloud)<br />[block_bogons](#block_bogons)<br />[block_generic](#block_generic)<br />[block_legal](#block_legal)<br />[block_malware](#block_malware)<br />[block_proxies](#block_proxies)<br />[block_spam](#block_spam)<br />[modules](#modules)<br />[default_tracktime](#default_tracktime)<br />[infraction_limit](#infraction_limit)<br />[track_mode](#track_mode)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> | [usemode](#usemode)<br />[lockip](#lockip)<br />[lockuser](#lockuser)<br />[sitekey](#sitekey)<br />[secret](#secret)<br />[expiry](#expiry)<br />[logfile](#logfile)<br />[signature_limit](#signature_limit)<br />[api](#api)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> | [pseudonymise_ip_addresses](#pseudonymise_ip_addresses)<br />[omit_ip](#omit_ip)<br />[omit_hostname](#omit_hostname)<br />[omit_ua](#omit_ua)<br />[privacy_policy](#privacy_policy)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> | [theme](#theme)<br />[Magnification](#magnification)<br />[css_url](#css_url)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+[PHPMailer](#phpmailer-카테고리) | [rate_limiting](#rate_limiting-카테고리)
+[EventLog](#eventlog)<br />[SkipAuthProcess](#skipauthprocess)<br />[Enable2FA](#enable2fa)<br />[Host](#host)<br />[Port](#port)<br />[SMTPSecure](#smtpsecure)<br />[SMTPAuth](#smtpauth)<br />[Username](#username)<br />[Password](#password)<br />[setFromAddress](#setfromaddress)<br />[setFromName](#setfromname)<br />[addReplyToAddress](#addreplytoaddress)<br />[addReplyToName](#addreplytoname)<br /> | [max_bandwidth](#max_bandwidth)<br />[max_requests](#max_requests)<br />[precision_ipv4](#precision_ipv4)<br />[precision_ipv6](#precision_ipv6)<br />[allowance_period](#allowance_period)<br /><br /><br /><br /><br /><br /><br /><br /><br />
+
 #### "general" (카테고리)
 일반 설정.
 
@@ -348,6 +354,9 @@ PHPMailer를 설치 한 후 CIDRAM 구성 페이지 또는 구성 파일을 통�
 - 로그 회전은 한 번에 존재해야하는 로그 파일 수를 제한합니다. 새 로그 파일을 만들 때 총 로그, 파일 수가 지정된 제한을 초과하면, 지정된 작업이 수행됩니다. 여기서 원하는 동작을 지정할 수 있습니다. Delete = 제한이 더 이상 초과되지 않을 때까지, 가장 오래된 로그 파일을 삭제하십시오. Archive = 제한이 더 이상 초과되지 않을 때까지, 가장 오래된 로그 파일을 보관 한 다음 삭제하십시오.
 
 *기술적 설명 : 이 문맥에서 "가장 오래된"은 "최근에 수정되지 않은"을 의미합니다.*
+
+##### "timezone"
+- 이것은 CIDRAM이 날짜/시간 작업에 사용해야하는 시간대를 지정하는 데 사용됩니다. 필요하지 않으면 무시하십시오. 가능한 값은 PHP에 의해 결정됩니다. 하지만 그 대신에 일반적으로 시간대 지시문 (당신의`php.ini` 파일)을 조정 る 것이 좋습니다,하지만 때때로 (같은 제한 공유 호스팅 제공 업체에서 작업 할 때) 이것은 무엇을하는 것이 항상 가능하지는 않습니다 따라서이 옵션은 여기에서 볼 수 있습니다.
 
 ##### "timeOffset"
 - 귀하의 서버 시간은 로컬 시간과 일치하지 않는 경우, 당신의 요구에 따라 시간을 조정하기 위해, 당신은 여기에 오프셋을 지정할 수 있습니다. 하지만 그 대신에 일반적으로 시간대 지시문 (당신의`php.ini` 파일)을 조정 る 것이 좋습니다,하지만 때때로 (같은 제한 공유 호스팅 제공 업체에서 작업 할 때) 이것은 무엇을하는 것이 항상 가능하지는 않습니다 따라서이 옵션은 여기에서 볼 수 있습니다. 오프셋 분이며 있습니다.
@@ -623,6 +632,8 @@ PHPMailer를 설치 한 후 CIDRAM 구성 페이지 또는 구성 파일을 통�
 #### "PHPMailer" (카테고리)
 PHPMailer 구성.
 
+현재 CIDRAM은 프런트 엔드 2FA (이중 인증)만 PHPMailer를 사용합니다. 프런트 엔드를 사용하지, 않거나 프런트 엔드에 2FA (이중 인증)을 사용하지 않는 경우, 이러한 지침을 무시할 수 있습니다.
+
 ##### "EventLog"
 - PHPMailer와 관련된 모든 이벤트를 기록하는 파일입니다. 파일 이름을 지정하십시오. 비활성화하려면 비워 둡니다.
 
@@ -661,6 +672,34 @@ PHPMailer 구성.
 
 ##### "addReplyToName"
 - SMTP를 통해 이메일을 보낼 때 인용 할 회신 이름입니다.
+
+#### "rate_limiting" (카테고리)
+속도 제한을위한 선택적 구성 지시어.
+
+이 기능은 구현되는 것을 정당화하기에 충분한 사용자가 요청했기 때문에 CIDRAM에 구현되었습니다. 그러나이, 기능은 원래 CIDRAM 용으로 의도 된 목적과 관련이 없습니다, 따라서 대부분의 사용자가 필요하지는 않을 것입니다. 웹 사이트의 속도 제한을 처리하기 위해 특별히 CIDRAM이 필요한 경우이 기능이 유용 할 수 있습니다. 그러나, 고려해야 할 몇 가지 중요한 사항이 있습니다 :
+- 이 기능은 다른 모든 CIDRAM 기능과 마찬가지로 CIDRAM으로 보호되는 페이지에만 작동합니다. 따라서, CIDRAM을 통해 특별히 라우팅되지 않은 웹 사이트 자산은 CIDRAM에 의해 요금이 제한 될 수 없습니다.
+- CIDRAM이 캐시 및 기타 데이터를 직접 디스크에 기록한다는 사실을 잊지 마십시오. CIDRAM은 MySQL, PostgreSQL, Access 등과 같은 외부 데이터베이스 시스템을 사용하지 않습니다. 따라서, 속도 제한에 대한 사용을 추적하려면, 잠재적으로 제한된 모든 요청에 대해 디스크에 기록해야합니다. 이는 장기적으로 디스크 수명에 부정적인 영향을 줄 수 있으므로; 이상적으로 권장하지는 않습니다. 대안으로서, 속도 제한에 사용되는 도구는 빈번하고 작은 읽기/쓰기 작업을위한 데이터베이스 시스템을 활용할 수 있습니다, 또는 정보는 요청간에 지속적으로 유지 될 수있다, 요청간에 디스크에 데이터를 쓸 필요없이 (PHP 패키지 대신 독립적 인 서버 모듈로 작성할 수 있습니다).
+- 서버 모듈, cPanel 또는 기타 네트워크 도구를 사용하여 속도 제한을 적용 할 수 있다면, 속도 제한을 위해 그것을 사용하는 것이 더 낫습니다 (CIDRAM에 대한 대안으로).
+- 제한된 후에 특정 사용자가 귀하의 웹 사이트에 계속 액세스하고 싶어한다면, 대부분의 경우 속도 제한을 우회하는 것은 매우 쉽습니다 (예 : 그들이 그들의 IP 주소를 바꾼다면, 또는 프록시 또는 VPN을 사용하는 경우, 프록시 및 VPN을 차단하지 않도록 CIDRAM을 구성했거나 CIDRAM이 사용중인 프록시 또는 VPN을 인식하지 못한다고 가정합니다).
+- 속도 제한은 사용자에게 매우 성가신 일입니다. 사용 가능한 대역폭이 매우 제한된 경우과 특정 아직 차단되지 않은 트래픽 소스가 사용 가능한 대역폭의 대부분을 차지하고 있음을 발견하면, 어쩌면 필요하다. 그러나 필요하지 않은 경우, 너는 그것을 피해야한다.
+- 너 자신 또는 합법적 인 사용자를 차단할 위험이 때때로 있습니다.
+
+웹 사이트에 속도 제한을 적용하기 위해 CIDRAM이 필요하지 않은 경우, 지시문을 기본값으로 설정하십시오. 그렇지 않으면, 필요에 맞게 값을 변경할 수 있습니다.
+
+##### "max_bandwidth"
+- 향후 요청에 대해 속도 제한을 사용하기 전에 허용 기간 내에 허용되는 최대 대역폭입니다. 0 값은 이러한 유형의 속도 제한을 비활성화합니다. Default (기본 설정) = 0KB.
+
+##### "max_requests"
+- 향후 요청에 대해 속도 제한을 사용하도록 설정하기 전에 허용 기간 내에 허용되는 최대 요청 수입니다. 0 값은 이러한 유형의 속도 제한을 비활성화합니다. Default (기본 설정) = 0.
+
+##### "precision_ipv4"
+- IPv4 사용을 모니터링 할 때 사용할 정밀도입니다. 값은 CIDR 블록 크기와 동일합니다. 최상의 정밀도를 위해 32로 설정하십시오. Default (기본 설정) = 32.
+
+##### "precision_ipv6"
+- IPv6 사용을 모니터링 할 때 사용할 정밀도입니다. 값은 CIDR 블록 크기와 동일합니다. 최상의 정밀도를 위해 128로 설정하십시오. Default (기본 설정) = 128.
+
+##### "allowance_period"
+- 사용량을 모니터 할 시간입니다. Default (기본 설정) = 0.
 
 ---
 
@@ -1461,4 +1500,4 @@ CIDRAM은 마케팅이나 광고 목적으로 정보를 수집하거나 처리�
 ---
 
 
-최종 업데이트 : 2018년 11월 4일.
+최종 업데이트 : 2018년 12월 5일.

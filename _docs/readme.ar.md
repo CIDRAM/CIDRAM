@@ -322,6 +322,12 @@
 ### <div dir="rtl">٦. <a name="SECTION6"></a>خياراتالتكوين/التهيئة</div>
 <div dir="rtl">وفيما يلي قائمة من المتغيرات الموجودة في ملف تكوين "config.ini"، بالإضافة إلى وصف الغرض منه و وظيفته.<br /><br /></div>
 
+[general](#general-التصنيف) | [signatures](#signatures-التصنيف) | [recaptcha](#recaptcha-التصنيف) | [legal](#legal-التصنيف) | [template_data](#template_data-التصنيف)
+--:|--:|--:|--:|--:
+[logfile](#logfile)<br />[logfileApache](#logfileapache)<br />[logfileSerialized](#logfileserialized)<br />[truncate](#truncate)<br />[log_rotation_limit](#log_rotation_limit)<br />[log_rotation_action](#log_rotation_action)<br />[timezone](#timezone)<br />[timeOffset](#timeoffset)<br />[timeFormat](#timeformat)<br />[ipaddr](#ipaddr)<br />[forbid_on_block](#forbid_on_block)<br />[silent_mode](#silent_mode)<br />[lang](#lang)<br />[numbers](#numbers)<br />[emailaddr](#emailaddr)<br />[emailaddr_display_style](#emailaddr_display_style)<br />[disable_cli](#disable_cli)<br />[disable_frontend](#disable_frontend)<br />[max_login_attempts](#max_login_attempts)<br />[FrontEndLog](#frontendlog)<br />[ban_override](#ban_override)<br />[log_banned_ips](#log_banned_ips)<br />[default_dns](#default_dns)<br />[search_engine_verification](#search_engine_verification)<br />[social_media_verification](#social_media_verification)<br />[protect_frontend](#protect_frontend)<br />[disable_webfonts](#disable_webfonts)<br />[maintenance_mode](#maintenance_mode)<br />[default_algo](#default_algo)<br />[statistics](#statistics)<br />[force_hostname_lookup](#force_hostname_lookup)<br />[allow_gethostbyaddr_lookup](#allow_gethostbyaddr_lookup)<br />[hide_version](#hide_version)<br />[empty_fields](#empty_fields)<br /> | [ipv4](#ipv4)<br />[ipv6](#ipv6)<br />[block_cloud](#block_cloud)<br />[block_bogons](#block_bogons)<br />[block_generic](#block_generic)<br />[block_legal](#block_legal)<br />[block_malware](#block_malware)<br />[block_proxies](#block_proxies)<br />[block_spam](#block_spam)<br />[modules](#modules)<br />[default_tracktime](#default_tracktime)<br />[infraction_limit](#infraction_limit)<br />[track_mode](#track_mode)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> | [usemode](#usemode)<br />[lockip](#lockip)<br />[lockuser](#lockuser)<br />[sitekey](#sitekey)<br />[secret](#secret)<br />[expiry](#expiry)<br />[logfile](#logfile)<br />[signature_limit](#signature_limit)<br />[api](#api)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> | [pseudonymise_ip_addresses](#pseudonymise_ip_addresses)<br />[omit_ip](#omit_ip)<br />[omit_hostname](#omit_hostname)<br />[omit_ua](#omit_ua)<br />[privacy_policy](#privacy_policy)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> | [theme](#theme)<br />[Magnification](#magnification)<br />[css_url](#css_url)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+[PHPMailer](#phpmailer-التصنيف) | [rate_limiting](#rate_limiting-التصنيف)
+[EventLog](#eventlog)<br />[SkipAuthProcess](#skipauthprocess)<br />[Enable2FA](#enable2fa)<br />[Host](#host)<br />[Port](#port)<br />[SMTPSecure](#smtpsecure)<br />[SMTPAuth](#smtpauth)<br />[Username](#username)<br />[Password](#password)<br />[setFromAddress](#setfromaddress)<br />[setFromName](#setfromname)<br />[addReplyToAddress](#addreplytoaddress)<br />[addReplyToName](#addreplytoname)<br /> | [max_bandwidth](#max_bandwidth)<br />[max_requests](#max_requests)<br />[precision_ipv4](#precision_ipv4)<br />[precision_ipv6](#precision_ipv6)<br />[allowance_period](#allowance_period)<br /><br /><br /><br /><br /><br /><br /><br /><br />
+
 #### <div dir="rtl">"general" (التصنيف)<br /></div>
 <div dir="rtl">التكوين العام لـ CIDRAM.<br /><br /></div>
 
@@ -364,6 +370,11 @@
 </ul></div>
 
 <div dir="rtl">التوضيح الفني: في هذا السياق، تعني كلمة "أقدم"، هذا يعني "الأقل معدلة مؤخرا".<br /><br /></div>
+
+##### <div dir="rtl">"timezone"<br /></div>
+<div dir="rtl"><ul>
+ <li>يتم استخدام هذا لتحديد المنطقة الزمنية التي يجب أن يستخدمها CIDRAM لعمليات التاريخ / الوقت. إذا لم تكن بحاجة إليه، فتجاهله. يتم تحديد القيم المحتملة بواسطة PHP. يُوصى بشكل عام بدلاً من ضبط توجيه المنطقة الزمنية في ملف <code dir="ltr">php.ini</code>. على الرغم من أنه في بعض الأحيان (على سبيل المثال عند العمل مع موفري استضافة مشتركة محدودة)، لا يكون ذلك ممكنًا دائمًا، وهكذا، يتم توفير هذا الخيار هنا.</li>
+</ul></div>
 
 ##### <div dir="rtl">"timeOffset"<br /></div>
 <div dir="rtl"><ul>
@@ -762,6 +773,8 @@
 #### <div dir="rtl">"PHPMailer" (التصنيف)<br /></div>
 <div dir="rtl">تكوين PHPMailer.<br /><br /></div>
 
+<div dir="rtl">حاليا، يستخدم CIDRAM PHPMailer فقط من أجل 2FA. إذا لم تستخدم الواجهة الأمامية، أو إذا لم تستخدم 2FA، فيمكنك تجاهل هذه التوجيهات.<br /><br /></div>
+
 ##### <div dir="rtl">"EventLog"<br /></div>
 <div dir="rtl"><ul>
  <li>ملف لتسجيل جميع الأحداث المتعلقة ب PHPMailer. تحديد اسم الملف، أو اتركه فارغا لتعطيل.</li>
@@ -825,6 +838,46 @@
 ##### <div dir="rtl">"addReplyToName"<br /></div>
 <div dir="rtl"><ul>
  <li>اسم الرد للاستشهاد عند إرسال البريد الإلكتروني عبر SMTP.</li>
+</ul></div>
+
+#### <div dir="rtl">"rate_limiting" (التصنيف)<br /></div>
+<div dir="rtl">توجيهات اختيارية للتهيئة للحد من المعدل.<br /><br /></div>
+
+<div dir="rtl">تم تنفيذ هذه الميزة في CIDRAM بسبب طلبات من العديد من المستخدمين. ومع ذلك، لأنها ليست ذات صلة بالغرض المقصود أصلاً لـ CIDRAM، على الأرجح لن تكون مطلوبة من قبل معظم المستخدمين. إذا كنت تحتاج بشكل خاص إلى CIDRAM للتعامل مع تحديد معدل لموقعك على الويب، فقد تكون هذه الميزة مفيدة لك. ومع ذلك، هناك بعض الأمور المهمة التي يجب وضعها في الاعتبار:</div>
+<div dir="rtl"><ul>
+ <li>هذه الميزة، مثل جميع ميزات CIDRAM الأخرى، لن تعمل إلا للصفحات المحمية بواسطة CIDRAM. لذلك، لا يمكن تحديد أصول موقع الويب إذا لم يتم توجيهها من خلال CIDRAM.</li>
+ <li>لا تنس أن CIDRAM يكتب البيانات مباشرة إلى القرص. لا يستخدم أي نظام قاعدة بيانات خارجي مثل MySQL أو PostgreSQL أو Access أو ما شابه. لذلك، لتتبع الاستخدام للحد من معدل، ستكون هناك حاجة إلى كتابة القرص لكل طلب محدود محتمل. هذا يمكن أن يؤثر سلبًا على العمر المتوقع للقرص على المدى الطويل، وليس موصى به بشكل مثالي. من الناحية المثالية، يمكن استخدام نظام قاعدة بيانات مخصص للتعامل مع الحد من المعدل، أو يمكن الاحتفاظ بالمعلومات باستمرار عبر الطلبات، بدلاً من الكتابة على القرص لكل طلب (على سبيل المثال، عن طريق كتابة وحدة خادم مستقلة، بدلاً من حزمة PHP).</li>
+ <li>إذا كنت قادرًا على استخدام وحدة الخادم، أو cPanel، أو بعض أدوات الشبكة الأخرى لفرض قيود على المعدل، يجب عليك استخدام ذلك بدلاً من CIDRAM للحد من المعدل.</li>
+ <li>إذا أراد مستخدم معين، بعد أن يكون محدودًا، الاستمرار في الوصول إلى موقع الويب الخاص بك، في معظم الحالات، سيكون من السهل جدًا عليهم التحايل على معدل الحد (على سبيل المثال، إذا قاموا بتغيير عنوان IP الخاص بهم، أو إذا كانوا يستخدمون بروكسي أو VPN، وافتراض أنك قمت بتكوين CIDRAM لعدم حظر الوكلاء و VPN، أو أن CIDRAM ليس على علم بالبروكسي أو VPN الذي يستخدمونه).</li>
+ <li>يمكن أن يكون الحد من المعدل مزعجًا جدًا للمستخدمين. قد يكون من الضروري إذا كان النطاق الترددي المتوفر محدودًا جدًا، وإذا اكتشفت وجود بعض مصادر الزيارات المحددة، والتي لم يتم حظرها بالفعل، والتي تستهلك معظم النطاق الترددي المتوفر لديك. إذا لم يكن ضروريا على الرغم من ذلك، ربما ينبغي تجنبها.</li>
+ <li>قد تخاطر أحيانًا بمنع نفسك أو المستخدمين الشرعيين.</li>
+</ul></div>
+
+<div dir="rtl">إذا كنت تشعر بأنك لست بحاجة إلى CIDRAM لفرض قيود على معدل لموقعك على الويب، فاحفظ التوجيهات أدناه المحددة كقيمها الافتراضية. خلاف ذلك، يمكنك تغيير قيمها لتناسب احتياجاتك.<br /><br /></div>
+
+##### <div dir="rtl">"max_bandwidth"<br /></div>
+<div dir="rtl"><ul>
+ <li>أقصى قدر من عرض النطاق الترددي المسموح به خلال فترة السماح. عندما يتم تجاوزت، يتم تمكين حدود السعر للطلبات المستقبلية. تعمل القيمة 0 على تعطيل هذا النوع من تحديد السرعة. افتراضي = 0KB.</li>
+</ul></div>
+
+##### <div dir="rtl">"max_requests"<br /></div>
+<div dir="rtl"><ul>
+ <li>الحد الأقصى لعدد الطلبات المسموح بها خلال فترة السماح. عندما يتم تجاوزت، يتم تمكين حدود السعر للطلبات المستقبلية. تعمل القيمة 0 على تعطيل هذا النوع من تحديد السرعة. افتراضي = 0.</li>
+</ul></div>
+
+##### <div dir="rtl">"precision_ipv4"<br /></div>
+<div dir="rtl"><ul>
+ <li>الدقة المستخدمة عند مراقبة استخدام IPv4. قيمة تعكس حجم كتلة CIDR. تعيين إلى 32 للحصول على أفضل دقة. افتراضي = 32.</li>
+</ul></div>
+
+##### <div dir="rtl">"precision_ipv6"<br /></div>
+<div dir="rtl"><ul>
+ <li>الدقة المستخدمة عند مراقبة استخدام IPv6. قيمة تعكس حجم كتلة CIDR. تعيين إلى 128 للحصول على أفضل دقة. افتراضي = 128.</li>
+</ul></div>
+
+##### <div dir="rtl">"allowance_period"<br /></div>
+<div dir="rtl"><ul>
+ <li>عدد الساعات لمراقبة الاستخدام. افتراضي = 0.</li>
 </ul></div>
 
 ---
@@ -1497,24 +1550,26 @@ Reconstructed URI: http://your-site.tld/index.php
 reCAPTCHA State: Enabled.
 ```
 
-That same block event, logged to an Apache-style logfile, would look something like this:
+<div dir="rtl">نفس الشيء، المسجل في ملف السجل على نمط Apache، سيبدو كالتالي:<br /><br /></div>
 
 ```
 x.x.x.x - - [Day, dd Mon 20xx hh:ii:ss +0000] "GET /index.php HTTP/1.1" 200 xxxx "-" "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36"
 ```
 
-A logged block event typically includes the following information:
-- An ID number referencing the block event.
-- The version of CIDRAM currently in use.
-- The date and time that the block event occurred.
-- The IP address of the blocked request.
-- The hostname of the IP address of the blocked request (when available).
-- The number of signatures triggered by the request.
-- References to the signatures triggered.
-- References to the reasons for the block event and some basic, related debug information.
-- The user agent of the blocked request (i.e., how the requesting entity identified itself to the request).
-- A reconstruction of the identifier for the resource originally requested.
-- The reCAPTCHA state for the current request (when relevant).
+<div dir="rtl">عادةً ما يتضمن إدخال سجل أحداث الحظر المعلومات التالية:</div>
+<div dir="rtl"><ul>
+ <li>رقم ID يشير إلى الحدث.</li>
+ <li>إصدار CIDRAM قيد الاستخدام حاليًا.</li>
+ <li>تاريخ ووقت وقوع الحدث.</li>
+ <li>عنوان IP الخاص بالطلب المحظور.</li>
+ <li>اسم المضيف لعنوان IP الخاص بالطلب المحظور (عندما يكون متاحًا).</li>
+ <li>عدد التوقيعات التي أثارها الطلب.</li>
+ <li>المراجع إلى التوقيعات أثار.</li>
+ <li>تشير إلى أسباب الحدث وبعض المعلومات الأساسية المتعلقة بالتصحيح.</li>
+ <li>وكيل المستخدم للطلب المحظور (أي كيف حدد الكيان الذي أرسل الطلب نفسه).</li>
+ <li>إعادة بناء معرف المورد.</li>
+ <li>حالة reCAPTCHA للطلب الحالي (عند الضرورة).</li>
+</ul></div>
 
 <div dir="rtl">توجيهات التهيئة ذات الصلة:</div>
 <div dir="rtl"><ul>
@@ -1676,4 +1731,4 @@ x.x.x.x - Day, dd Mon 20xx hh:ii:ss +0000 - "admin" - حاليا على.
 ---
 
 
-<div dir="rtl">آخر تحديث: 4 نوفمبر 2018 (2018.11.04).</div>
+<div dir="rtl">آخر تحديث: 5 ديسمبر 2018 (2018.12.05).</div>

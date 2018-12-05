@@ -20,7 +20,7 @@
 
 ### １.<a name="SECTION1"></a>序文
 
-CIDRAM（シドラム、​クラスレス・ドメイン間・ルーティング・アクセス・マネージャー 『Classless Inter-Domain Routing Access Manager』）は、​ＰＨＰスクリプトです。​ウェブサイトを保護するように設計されて、​ＩＰアドレス（望ましくないトラフィックのあるソースとみなします）から、​発信リクエストをブロックすることによって（ヒト以外のアクセスエンドポイント、​クラウドサービス、​スパムロボット、​スクレーパー、​等）。​ＩＰアドレスの可能ＣＩＤＲを計算することにより、​ＣＩＤＲは、​そのシグネチャファイルと比較することができます（これらのシグネチャファイルは不要なIPアドレスに対応するCIDRのリストが含まれています）；​一致が見つかった場合、​リクエストはブロックされます。
+CIDRAM（シドラム、​クラスレス・ドメイン間・ルーティング・アクセス・マネージャー 『Classless Inter-Domain Routing Access Manager』）は、​ＰＨＰスクリプトです。​ウェブサイトを保護するように設計されて、​ＩＰアドレス（望ましくないトラフィックのあるソースとみなします）から、​発信リクエストをブロックすることによって（ヒト以外のアクセスエンドポイント、​クラウドサービス、​スパムロボット、​スクレーパー、​等）。​ＩＰアドレスの可能ＣＩＤＲを計算することにより、​ＣＩＤＲは、​そのシグネチャファイルと比較することができます（これらのシグネチャファイルは不要なＩＰアドレスに対応するCIDRのリストが含まれています）；​一致が見つかった場合、​リクエストはブロックされます。
 
 *（参照する：​[「ＣＩＤＲ」とは何ですか？​](#WHAT_IS_A_CIDR)）。*
 
@@ -319,6 +319,12 @@ PHPMailerをインストールしたら、CIDRAMコンフィギュレーショ�
 ### ６.<a name="SECTION6"></a>コンフィギュレーション（設定オプション）
 以下は`config.ini`設定ファイルにある変数ならびにその目的と機能のリストです。
 
+[general](#general-全般カテゴリー) | [signatures](#signatures) | [recaptcha](#recaptcha) | [legal](#legal) | [template_data](#template_data)
+:--|:--|:--|:--|:--
+[logfile](#logfile-ログファイル)<br />[logfileApache](#logfileapache-ログファイルアパッチ)<br />[logfileSerialized](#logfileserialized-ログファイルシリアライズ)<br />[truncate](#truncate-トランケート)<br />[log_rotation_limit](#log_rotation_limit-ログローテーションリミット)<br />[log_rotation_action](#log_rotation_action-ログローテーションアクション)<br />[timezone](#timezone-タイムゾーン)<br />[timeOffset](#timeoffset-タイムオフセット)<br />[timeFormat](#timeformat-タイムフォーマット)<br />[ipaddr](#ipaddr-アイピーアドレス)<br />[forbid_on_block](#forbid_on_block-フォービッドオンブロック)<br />[silent_mode](#silent_mode-サイレントモード)<br />[lang](#lang-ラング)<br />[numbers](#numbers-ナンバーズ)<br />[emailaddr](#emailaddr-ｅメールアドレス)<br />[emailaddr_display_style](#emailaddr_display_style-ｅメールアドレスディスプレイスタイル)<br />[disable_cli](#disable_cli-ディスエイブルシーエルアイ)<br />[disable_frontend](#disable_frontend-ディスエイブルフロントエンド)<br />[max_login_attempts](#max_login_attempts-マクスログインアテンプト)<br />[FrontEndLog](#frontendlog-フロントエンドログ)<br />[ban_override](#ban_override-バンオーバーライド)<br />[log_banned_ips](#log_banned_ips-ログバンドアイピーズ)<br />[default_dns](#default_dns-ディフォールトディーエンエス)<br />[search_engine_verification](#search_engine_verification-サーチエンジンベリフィケーション)<br />[social_media_verification](#social_media_verification-ソーシャルメディアベリフィケーション)<br />[protect_frontend](#protect_frontend-プロテクトフロントエンド)<br />[disable_webfonts](#disable_webfonts-ディスエイブルウェブフォンツ)<br />[maintenance_mode](#maintenance_mode-メンテナンスモード)<br />[default_algo](#default_algo-ディフォールトアルゴ)<br />[statistics](#statistics-スタティスティックス統計)<br />[force_hostname_lookup](#force_hostname_lookup-フォースホストネームルックアップ)<br />[allow_gethostbyaddr_lookup](#allow_gethostbyaddr_lookup-アラウゲットホーストバイエイディディアールックアップ)<br />[hide_version](#hide_version-ハイドバージョン)<br />[empty_fields](#empty_fields-エンプティーフィールズ)<br /> | [ipv4](#ipv4-アイピーブイ４)<br />[ipv6](#ipv6-アイピーブイ６)<br />[block_cloud](#block_cloud-ブロッククラウド)<br />[block_bogons](#block_bogons-ブロックぼごん)<br />[block_generic](#block_generic-ブロックジェネリック)<br />[block_legal](#block_legal-ブロックリーガル)<br />[block_malware](#block_malware-ブロックマルウェア)<br />[block_proxies](#block_proxies-ブロックプロキシ)<br />[block_spam](#block_spam-ブロックスパム)<br />[modules](#modules-モジュールス)<br />[default_tracktime](#default_tracktime-デフォルトトラックタイム)<br />[infraction_limit](#infraction_limit-インフラクションリミット)<br />[track_mode](#track_mode-トラックモード)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> | [usemode](#usemode-ユースモード)<br />[lockip](#lockip-ロックｉｐ)<br />[lockuser](#lockuser-ロックユーザー)<br />[sitekey](#sitekey-サイトキー)<br />[secret](#secret-シークレット)<br />[expiry](#expiry-シークレット)<br />[logfile](#logfile-ログファイル-1)<br />[signature_limit](#signature_limit-シグネチャリミット)<br />[api](#api-エイピーアイ)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> | [pseudonymise_ip_addresses](#pseudonymise_ip_addresses-プセユードニマイズアイピーアドレセズ)<br />[omit_ip](#omit_ip-オミットアイピー)<br />[omit_hostname](#omit_hostname-オミットホストネーム)<br />[omit_ua](#omit_ua-オミットユーエイ)<br />[privacy_policy](#privacy_policy-プライバシーポリシー)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> | [theme](#theme-シームテーマ)<br />[Magnification](#magnification-マグニフィケーション)<br />[css_url](#css_url-シーエスエスユーアールエル)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+[PHPMailer](#phpmailer-ピーエイチピーメーラーカテゴリ) | [rate_limiting](#rate_limiting-レートリミッティングカテゴリ)
+[EventLog](#eventlog-イベントログ)<br />[SkipAuthProcess](#skipauthprocess-スキップオスプロセス)<br />[Enable2FA](#enable2fa-イネーブル２ｆａ)<br />[Host](#host-ホスト)<br />[Port](#port-ポート)<br />[SMTPSecure](#smtpsecure-ｓｍｔｐセキュア)<br />[SMTPAuth](#smtpauth-ｓｍｔｐオス)<br />[Username](#username-ユーザーネーム)<br />[Password](#password-パスワード)<br />[setFromAddress](#setfromaddress-セットフロムアドレス)<br />[setFromName](#setfromname-セットフロムネーム)<br />[addReplyToAddress](#addreplytoaddress-アッドリプライアドレス)<br />[addReplyToName](#addreplytoname-アッドリプライネーム)<br /> | [max_bandwidth](#max_bandwidth-マックスバンドウィツ)<br />[max_requests](#max_requests-マックスレクェスツ)<br />[precision_ipv4](#precision_ipv4-プリシジョンアイピーブイ４)<br />[precision_ipv6](#precision_ipv6-プリシジョンアイピーブイ６)<br />[allowance_period](#allowance_period-アラワンスピアリアド)<br /><br /><br /><br /><br /><br /><br /><br /><br />
+
 #### "general" （全般、カテゴリー）
 全般的な設定。
 
@@ -348,6 +354,9 @@ PHPMailerをインストールしたら、CIDRAMコンフィギュレーショ�
 - ログ・ローテーションは、一度に存在する必要があるログ・ファイルの数を制限します。​新しいログ・ファイルが作成されると、ログ・ファイルの総数が指定された制限を超えると、指定されたアクションが実行されます。​ここで希望のアクションを指定できます。 「Delete」 = 最も古いログ・ファイルを削除して、制限を超過しないようにします。 「Archive」 = 最初にアーカイブしてから、最も古いログ・ファイルを削除して、制限を超過しないようにします。
 
 *技術的な説明：この文脈では、「最も古い」とは「最近変更されていない」という意味です。*
+
+##### "timezone" （タイムゾーン）
+- これは、CIDRAMが日付/時刻操作に使用するタイムゾーンを指定するために使用されます。​あなたがそれを必要としないなら、それを無視してください。​可能な値はＰＨＰによって決定されます。​しかし、​その代わりに、​一般的にタイムゾーンディレクティブ（あなたの`php.ini`ファイルで）を調整ーることをお勧めします、​でも時々（といった、​限ら共有ホスティングプロバイダでの作業時）これは何をすることは必ずしも可能ではありません、​したがって、​このオプションは、​ここで提供されています。
 
 ##### "timeOffset" （タイム・オフセット）
 - お使いのサーバーの時刻は、​ローカル時刻と一致しない場合、​あなたのニーズに応じて、​時間を調整するために、​あなたはここにオフセットを指定することができます。​しかし、​その代わりに、​一般的にタイムゾーンディレクティブ（あなたの`php.ini`ファイルで）を調整ーることをお勧めします、​でも時々（といった、​限ら共有ホスティングプロバイダでの作業時）これは何をすることは必ずしも可能ではありません、​したがって、​このオプションは、​ここで提供されています。​オフセット分であります。
@@ -592,7 +601,7 @@ PHPMailerをインストールしたら、CIDRAMコンフィギュレーショ�
 *法律要件とこれがコンフィギュレーション要件に与える影響の詳細については、ドキュメントの「[法律情報](#SECTION11)」セクションを参照してください。*
 
 ##### "pseudonymise_ip_addresses" （プセユードニマイズ・アイピー・アドレセズ）
-- ログ・ファイルを書き込むときにIPアドレス偽名化するか「プセユードニマイズ」？​True = はい；​False = いいえ（Default/デフォルルト）。
+- ログ・ファイルを書き込むときにＩＰアドレス偽名化するか「プセユードニマイズ」？​True = はい；​False = いいえ（Default/デフォルルト）。
 
 ##### "omit_ip" （オミット・アイピー）
 - ログからＩＰアドレスを省略しますか？​True = はい；​False = いいえ（Default/デフォルルト）。​注：「omit_ip」が「true」の場合、「pseudonymise_ip_addresses」は冗長になります。
@@ -622,6 +631,8 @@ PHPMailerをインストールしたら、CIDRAMコンフィギュレーショ�
 
 #### "PHPMailer" （ピー・エイチ・ピー・メーラー、カテゴリ）
 PHPMailerコンフィギュレーション。
+
+現在、CIDRAMはフロントエンドの２ＦＡ（二要素認証）にのみPHPMailerを使用しています。​フロントエンドを使用しない場合、またはフロントエンドに２ＦＡ（二要素認証）を使用しない場合は、これらのディレクティブを無視できます。
 
 ##### "EventLog" （イベント・ログ）
 - PHPMailerに関連してすべてのイベントを記録するためのファイル。​ファイル名指定するか、​無効にしたい場合は空白のままにして下さい。
@@ -661,6 +672,34 @@ PHPMailerコンフィギュレーション。
 
 ##### "addReplyToName" （アッド・リプライ・ネーム）
 - ＳＭＴＰ経由で電子Ｅメールを送信するときに引用する返信名。
+
+#### "rate_limiting" （レート・リミッティング、カテゴリ）
+レート制限のオプショナル・コンフィギュレーション・ディレクティブ。
+
+この機能は、実装が正当化されるのに十分なユーザーから要求されたため、CIDRAMに実装されました。​しかし、この機能はCIDRAMのもともとの目的とは多少関係がありません、したがって、ほとんどのユーザーはほとんど必要としません。​ウェブサイトのレート制限を処理するためにCIDRAMが特に必要な場合は、この機能が役立ちます。​ただし、考慮すべき重要な事項がいくつかあります。
+- この機能は、他のすべてのCIDRAM機能と同様に、CIDRAMで保護されたページでのみ機能します。​このため、CIDRAM経由で特別にルーティングされていないウェブサイト資産は、CIDRAMによってレート制限されません。
+- CIDRAMがキャッシュやその他のデータを直接ディスクに書き込むことを忘れないでください。​MySQL、PostgreSQL、Accessなどの外部データベース・システムは使用しません。​したがって、レート制限の使用状況を追跡するには、潜在的に制限された要求ごとにディスクに書き込む必要があります。​これは長期的にディスクの寿命に悪影響を与える可能性があり、理想的には推奨されません。​代わりに、理想的には、レート制限に使用されるツールは、頻繁で小さな読み取り/書き込み操作を意図したデータベース・システムを利用することができる、または、要求間でディスクにデータを書き込むことなく、要求全体にわたって情報を永続的に保持することができます（例えば、ＰＨＰパッケージの代わりに、独立したサーバー・モジュールとして書かれている）。
+- サーバー・モジュール、cPanel、またはその他のネットワークツールを使用してレート制限を適用できる場合、レート制限に使用する方が良いでしょう（CIDRAMを使用する代わりに）。
+- 制限された後、特定のユーザーがあなたのウェブサイトへのアクセスを続けたいと願っている場合、ほとんどの場合、レート制限を回避するのは非常に簡単です（例えば、彼らは彼らのＩＰアドレスを変更する場合、または、プロキシまたはＶＰＮを使用している場合、プロキシやＶＰＮをブロックしないようにCIDRAMを設定していること、またはCIDRAMが使用しているプロキシやＶＰＮを認識していないことを前提としています）。
+- レート制限は、ユーザーにとって非常に迷惑になる可能性があります。​使用可能な帯域幅が非常に限られている場合、そして、まだブロックされていないトラフィックの一部のソースが大部分の帯域幅を消費していることがわかった場合、おそらくそれは必要です。​しかし、必要でない場合は、それはおそらく避けるべきです。
+- あなた自身または合法的なユーザーをブロックする危険性があります。
+
+あなたのウェブサイトにレート制限を適用するためにCIDRAMが必要ない場合、ディレクティブをデフォルト値のままにしてください。​それ以外の場合は、ニーズに合わせて値を変更できます。
+
+##### "max_bandwidth" （マックス・バンドウィツ）
+- 将来の要求に対してレート制限を有効にする前の許容期間内に許容される最大帯域幅。​０の値は、このタイプのレート制限を無効にします。​Default/デフォルルト = 0KB。
+
+##### "max_requests" （マックス・レクェスツ）
+- 将来の要求に対してレート制限を有効にする前に、許容期間内に許可される要求の最大数。​０の値は、このタイプのレート制限を無効にします。​Default/デフォルルト = 0。
+
+##### "precision_ipv4" （プリシジョン・アイピーブイ４）
+- ＩＰｖ４の使用状況を監視する際の精度。​値はＣＩＤＲブロック・サイズを反映します。​最高の精度を得るには３２に設定します。​Default/デフォルルト = 32。
+
+##### "precision_ipv6" （プリシジョン・アイピーブイ６）
+- ＩＰｖ６の使用状況を監視する際の精度。​値はＣＩＤＲブロック・サイズを反映します。​最高の精度を得るには１２８に設定します。​Default/デフォルルト = 128。
+
+##### "allowance_period" （アラワンス・ピアリアド）
+- 使用状況を監視する時間数。​Default/デフォルルト = 0.
 
 ---
 
@@ -1273,7 +1312,7 @@ CIDRAMは[Google reCAPTCHA](https://www.google.com/recaptcha/)をサポートし
 
 [Stop Forum Spam](https://www.stopforumspam.com/)は、スパマーからフォーラム、ブログ、ウェブサイトを保護するのに役立つ、無料で利用できる素晴らしいサービスです。​これは、既知のスパマーのデータベースと、ＩＰアドレス、ユーザー名、または電子Ｅメール・アドレスがそのデータベースにリストされているかどうかを確認するために利用できるＡＰＩを提供することによってこれを行います。
 
-CIDRAMは、このＡＰＩを利用するオプションモジュールを提供します。​インバウンド・リクエストのＩＰアドレスが疑わしいスパマーに属するかどうかをチェックします。​モジュールはデフォルトではインストールされません。​インストールすると、ユーザーのIPアドレスをStop Forum Spam APIと共有できます。​モジュールがインストールされると、インバウンド・リクエストがスパマーによって頻繁にターゲットとされるリソースを（ログイン・ページ、登録ページ、電子Ｅメール確認ページ、コメント・フォーム、など）要求するたびに、CIDRAMはこのAPIと通信します。
+CIDRAMは、このＡＰＩを利用するオプションモジュールを提供します。​インバウンド・リクエストのＩＰアドレスが疑わしいスパマーに属するかどうかをチェックします。​モジュールはデフォルトではインストールされません。​インストールすると、ユーザーのＩＰアドレスをStop Forum Spam APIと共有できます。​モジュールがインストールされると、インバウンド・リクエストがスパマーによって頻繁にターゲットとされるリソースを（ログイン・ページ、登録ページ、電子Ｅメール確認ページ、コメント・フォーム、など）要求するたびに、CIDRAMはこのAPIと通信します。
 
 #### 11.3 ロギング
 
@@ -1463,4 +1502,4 @@ CIDRAMは、マーケティングやアドバタイジング目的で情報を�
 ---
 
 
-最終アップデート：2018年11月4日。
+最終アップデート：２０１８年１２月５日。

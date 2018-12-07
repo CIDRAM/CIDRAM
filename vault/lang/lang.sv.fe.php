@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Swedish language data for the front-end (last modified: 2018.09.30).
+ * This file: Swedish language data for the front-end (last modified: 2018.12.07).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -108,6 +108,11 @@ $CIDRAM['lang']['config_legal_omit_ip'] = 'Utelämna IP-adresser från loggar? T
 $CIDRAM['lang']['config_legal_omit_ua'] = 'Utelämna användaragenter från loggar? True = Ja; False = Nej [Standard].';
 $CIDRAM['lang']['config_legal_privacy_policy'] = 'Adressen till en relevant integritetspolicy som ska visas i sidfoten av genererade sidor. Ange en webbadress, eller lämna tomt för att inaktivera.';
 $CIDRAM['lang']['config_legal_pseudonymise_ip_addresses'] = 'Pseudonymisera IP-adresser när loggning? True = Ja; False = Nej [Standard].';
+$CIDRAM['lang']['config_rate_limiting_allowance_period'] = 'Antalet timmar att spåra användningen. Standard = 0.';
+$CIDRAM['lang']['config_rate_limiting_max_bandwidth'] = 'Den maximala bandbreddsmängden som tillåts inom tillåten-perioden före hastighetsbegränsar framtida förfrågningar. Ett värde av 0 avaktiverar denna typ av hastighetsbegränsande. Standard = 0KB.';
+$CIDRAM['lang']['config_rate_limiting_max_requests'] = 'Det maximala antalet förfrågningar som tillåts inom tillåten-perioden före hastighetsbegränsar framtida förfrågningar. Ett värde av 0 avaktiverar denna typ av hastighetsbegränsande. Standard = 0.';
+$CIDRAM['lang']['config_rate_limiting_precision_ipv4'] = 'Den precision som ska användas för att spåra IPv4-användning. Värdet speglar CIDR-blockstorleken. Ställ in till 32 för bästa precision. Standard = 32.';
+$CIDRAM['lang']['config_rate_limiting_precision_ipv6'] = 'Den precision som ska användas för att spåra IPv6-användning. Värdet speglar CIDR-blockstorleken. Ställ in till 128 för bästa precision. Standard = 128.';
 $CIDRAM['lang']['config_recaptcha_api'] = 'Vilket API ska användas? V2 eller Invisible?';
 $CIDRAM['lang']['config_recaptcha_expiry'] = 'Antal timmar för att komma ihåg reCAPTCHA-instanser.';
 $CIDRAM['lang']['config_recaptcha_lockip'] = 'Låsa reCAPTCHA till IP-adresser?';

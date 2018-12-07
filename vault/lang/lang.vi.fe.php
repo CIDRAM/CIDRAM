@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Vietnamese language data for the front-end (last modified: 2018.09.30).
+ * This file: Vietnamese language data for the front-end (last modified: 2018.12.06).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -108,6 +108,11 @@ $CIDRAM['lang']['config_legal_omit_ip'] = 'Bỏ qua địa chỉ IP từ nhật 
 $CIDRAM['lang']['config_legal_omit_ua'] = 'Bỏ qua đại lý người dùng từ nhật ký? True = Vâng; False = Không [Mặc định].';
 $CIDRAM['lang']['config_legal_privacy_policy'] = 'Địa chỉ của chính sách bảo mật liên quan được hiển thị ở chân trang của bất kỳ trang nào được tạo. Chỉ định URL, hoặc để trống để vô hiệu hóa.';
 $CIDRAM['lang']['config_legal_pseudonymise_ip_addresses'] = 'Pseudonymise địa chỉ IP khi viết các tập tin nhật ký? True = Vâng; False = Không [Mặc định].';
+$CIDRAM['lang']['config_rate_limiting_allowance_period'] = 'Số giờ để theo dõi việc sử dụng. Mặc định = 0.';
+$CIDRAM['lang']['config_rate_limiting_max_bandwidth'] = 'Số lượng băng thông tối đa được phép trong khoảng thời gian cho phép trước khi cho phép giới hạn tốc độ cho các yêu cầu trong tương lai. Giá trị 0 sẽ vô hiệu hóa loại giới hạn tốc độ này. Mặc định = 0KB.';
+$CIDRAM['lang']['config_rate_limiting_max_requests'] = 'Số lượng yêu cầu tối đa được phép trong khoảng thời gian cho phép trước khi cho phép giới hạn tốc độ cho các yêu cầu trong tương lai. Giá trị 0 sẽ vô hiệu hóa loại giới hạn tốc độ này. Mặc định = 0.';
+$CIDRAM['lang']['config_rate_limiting_precision_ipv4'] = 'Độ chính xác để sử dụng khi theo dõi việc sử dụng IPv4. Giá trị phản ánh kích thước khối CIDR. Đặt thành 32 để có độ chính xác cao nhất. Mặc định = 32.';
+$CIDRAM['lang']['config_rate_limiting_precision_ipv6'] = 'Độ chính xác để sử dụng khi theo dõi việc sử dụng IPv6. Giá trị phản ánh kích thước khối CIDR. Đặt thành 128 để có độ chính xác cao nhất. Mặc định = 128.';
 $CIDRAM['lang']['config_recaptcha_api'] = 'API nào để sử dụng? V2 hoặc Invisible?';
 $CIDRAM['lang']['config_recaptcha_expiry'] = 'Số giờ để nhớ reCAPTCHA.';
 $CIDRAM['lang']['config_recaptcha_lockip'] = 'Khóa reCAPTCHA để IP?';

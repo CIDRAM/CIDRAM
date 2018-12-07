@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Arabic language data for CLI (last modified: 2018.06.19).
+ * This file: Arabic language data for CLI (last modified: 2018.12.07).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -40,8 +40,8 @@ $CIDRAM['lang']['CLI_H'] = "
 ";
 
 $CIDRAM['lang']['CLI_Bad_IP'] = ' عنوان IP، "{IP}"، ليس عنوانا صالحا IPv4 أو IPv6!';
-$CIDRAM['lang']['CLI_IP_Blocked'] = ' هذا العنوان , "{IP}", فد تم حظره بواسطه CIDRAM';
-$CIDRAM['lang']['CLI_IP_Not_Blocked'] = ' هذا العنوان , "{IP}", غير محظور بواسطة CIDRAM';
+$CIDRAM['lang']['CLI_IP_Blocked'] = ' هذا العنوان، "{IP}"، فد تم حظره بواسطه CIDRAM';
+$CIDRAM['lang']['CLI_IP_Not_Blocked'] = ' هذا العنوان، "{IP}"، غير محظور بواسطة CIDRAM';
 
 $CIDRAM['lang']['CLI_F_Finished'] = 'مصحح التوقيع قد انتهي مع %s تغييرات تمت علي %s عمليات (%s)';
 $CIDRAM['lang']['CLI_F_Started'] = 'لقد بدء مصحح التوقيع';
@@ -51,7 +51,7 @@ $CIDRAM['lang']['CLI_VF_Level_1'] = 'تحذير';
 $CIDRAM['lang']['CLI_VF_Level_2'] = 'خطأ';
 $CIDRAM['lang']['CLI_VF_Level_3'] = 'خطأ في النظام';
 
-$CIDRAM['lang']['CLI_V_CRLF'] = 'تم العثور علي CR/CRLF في ملف التوقيعات , ان لك تصريح ولن يتسبب في الأخطاء ولكن يفضل ان يكون LF';
+$CIDRAM['lang']['CLI_V_CRLF'] = 'تم العثور علي CR/CRLF في ملف التوقيعات، ان لك تصريح ولن يتسبب في الأخطاء ولكن يفضل ان يكون LF';
 $CIDRAM['lang']['CLI_V_Finished'] = 'لقد انتهي التأكد من صحة التوقيع (%s). اذا لم يظهر لك اي تحذيرات او أخطا * قمن الممكن * ان يكون التوقيع صحيحا :-)';
 $CIDRAM['lang']['CLI_V_LineByLine'] = 'لقد بدأ التأكد من صحه سطر تلو سطر';
 $CIDRAM['lang']['CLI_V_Started'] = 'لقد بدأت أداة التأكد من صحة التوقيع (%s).';

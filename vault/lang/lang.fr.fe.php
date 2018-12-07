@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: French language data for the front-end (last modified: 2018.09.30).
+ * This file: French language data for the front-end (last modified: 2018.12.06).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -108,6 +108,11 @@ $CIDRAM['lang']['config_legal_omit_ip'] = 'Omettre les adresses IP de la journal
 $CIDRAM['lang']['config_legal_omit_ua'] = 'Omettre les agents utilisateurs de la journalisation ? True = Oui ; False = Non [Défaut].';
 $CIDRAM['lang']['config_legal_privacy_policy'] = 'L\'adresse d\'une politique de confidentialité pertinente à afficher dans le pied de page des pages générées. Spécifier une URL, ou laisser vide à désactiver.';
 $CIDRAM['lang']['config_legal_pseudonymise_ip_addresses'] = 'Pseudonymiser les adresses IP lors de la journalisation ? True = Oui ; False = Non [Défaut].';
+$CIDRAM['lang']['config_rate_limiting_allowance_period'] = 'Le nombre d\'heures pour surveiller l\'utilisation. Défaut = 0.';
+$CIDRAM['lang']['config_rate_limiting_max_bandwidth'] = 'La quantité maximale de bande passante autorisée dans la période de tolérance avant de permettre la limitation de débit pour les requêtes futures. Une valeur de 0 désactive ce type de limitation de débit. Défaut = 0KB.';
+$CIDRAM['lang']['config_rate_limiting_max_requests'] = 'Le nombre maximal de requêtes autorisées dans la période de tolérance avant de permettre la limitation de débit pour les requêtes futures. Une valeur de 0 désactive ce type de limitation de débit. Défaut = 0.';
+$CIDRAM['lang']['config_rate_limiting_precision_ipv4'] = 'La précision à utiliser lors de la surveillance de l\'utilisation d\'IPv4. La valeur reflète la taille du bloc CIDR. Réglez sur 32 pour une meilleure précision. Défaut = 32.';
+$CIDRAM['lang']['config_rate_limiting_precision_ipv6'] = 'La précision à utiliser lors de la surveillance de l\'utilisation d\'IPv6. La valeur reflète la taille du bloc CIDR. Réglez sur 128 pour une meilleure précision. Défaut = 128.';
 $CIDRAM['lang']['config_recaptcha_api'] = 'Quelle API utiliser ? V2 ou Invisible ?';
 $CIDRAM['lang']['config_recaptcha_expiry'] = 'Nombre d\'heures à retenir des instances reCAPTCHA.';
 $CIDRAM['lang']['config_recaptcha_lockip'] = 'Verrouiller reCAPTCHA aux adresses IP ?';

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Turkish language data for the front-end (last modified: 2018.09.30).
+ * This file: Turkish language data for the front-end (last modified: 2018.12.07).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -108,6 +108,11 @@ $CIDRAM['lang']['config_legal_omit_ip'] = 'IP adreslerini günlük dosyalardan h
 $CIDRAM['lang']['config_legal_omit_ua'] = 'Kullanıcı aracılarını günlük dosyalardan hariç tutuluyor mu? Doğru/True = Evet; Yanlış/False = Hayır [Varsayılan].';
 $CIDRAM['lang']['config_legal_privacy_policy'] = 'Oluşturulan sayfaların alt kısmında görüntülenecek ilgili gizlilik politikasının adresi. Bir URL belirtin veya devre dışı bırakmak için boş bırakın.';
 $CIDRAM['lang']['config_legal_pseudonymise_ip_addresses'] = 'Günlük dosyaları yazarken IP adresi "pseudonymize" edilir? Doğru/True = Evet; Yanlış/False = Hayır [Varsayılan].';
+$CIDRAM['lang']['config_rate_limiting_allowance_period'] = 'Kullanımı izlemek için saat sayısı. Varsayılan = 0.';
+$CIDRAM['lang']['config_rate_limiting_max_bandwidth'] = 'Gelecekteki talepleri sınırlayan orandan önce izin süresi içinde izin verilen maksimum bant genişliği miktarı. 0 değeri bu oran sınırlamasını devre dışı bırakır. Varsayılan = 0KB.';
+$CIDRAM['lang']['config_rate_limiting_max_requests'] = 'Gelecekteki istekleri sınırlayan orandan önce izin süresi içinde izin verilen maksimum istek sayısı. 0 değeri bu oran sınırlamasını devre dışı bırakır. Varsayılan = 0.';
+$CIDRAM['lang']['config_rate_limiting_precision_ipv4'] = 'IPv4 kullanımını izlemek için hassaslık. Değer, CIDR blok boyutunu yansıtır. En iyi hassasiyet için 32\'ye ayarlayın. Varsayılan = 32.';
+$CIDRAM['lang']['config_rate_limiting_precision_ipv6'] = 'IPv6 kullanımını izlemek için hassaslık. Değer, CIDR blok boyutunu yansıtır. En iyi hassasiyet için 128\'e ayarlayın. Varsayılan = 128.';
 $CIDRAM['lang']['config_recaptcha_api'] = 'Hangi API\'yı kullanacaksınız? V2 veya Invisible?';
 $CIDRAM['lang']['config_recaptcha_expiry'] = 'reCAPTCHA örneklerini hatırlamak için saat sayısı.';
 $CIDRAM['lang']['config_recaptcha_lockip'] = 'reCAPTCHA\'yı IP\'lere kilitle?';

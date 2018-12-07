@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: German language data for the front-end (last modified: 2018.09.30).
+ * This file: German language data for the front-end (last modified: 2018.12.06).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -108,6 +108,11 @@ $CIDRAM['lang']['config_legal_omit_ip'] = 'IP-Adressen aus Protokollen auslassen
 $CIDRAM['lang']['config_legal_omit_ua'] = 'Benutzeragenten aus Protokollen auslassen? True = Ja; False = Nein [Standardeinstellung].';
 $CIDRAM['lang']['config_legal_privacy_policy'] = 'Die Adresse einer relevanten Datenschutz-Bestimmungen, die in der Fußzeile aller generierten Seiten angezeigt werden soll. Geben Sie eine URL, oder lassen Sie sie leer, um sie zu deaktivieren.';
 $CIDRAM['lang']['config_legal_pseudonymise_ip_addresses'] = 'Pseudonymisieren IP-Adressen beim Schreiben der Protokolldateien? True = Ja; False = Nein [Standardeinstellung].';
+$CIDRAM['lang']['config_rate_limiting_allowance_period'] = 'Die Anzahl der Stunden, um die Nutzung zu überwachen. Standardeinstellung = 0.';
+$CIDRAM['lang']['config_rate_limiting_max_bandwidth'] = 'Die maximal zulässige Bandbreite innerhalb der Zulassungsperiode, bevor die Ratenbegrenzung für zukünftige Anforderungen aktiviert wird. Ein Wert von 0 deaktiviert diese Art der Ratenbegrenzung. Standardeinstellung = 0KB.';
+$CIDRAM['lang']['config_rate_limiting_max_requests'] = 'Die maximale Anzahl von Anforderungen, die innerhalb der Zulassungsperiode zulässig sind, bevor die Ratenbegrenzung für zukünftige Anforderungen aktiviert wird. Ein Wert von 0 deaktiviert diese Art der Ratenbegrenzung. Standardeinstellung = 0.';
+$CIDRAM['lang']['config_rate_limiting_precision_ipv4'] = 'Die Präzision für das Monitoring der IPv4-Nutzung. Der Wert spiegelt die CIDR-Blockgröße. Für beste Präzision auf 32 einstellen. Standardeinstellung = 32.';
+$CIDRAM['lang']['config_rate_limiting_precision_ipv6'] = 'Die Präzision für das Monitoring der IPv6-Nutzung. Der Wert spiegelt die CIDR-Blockgröße. Für beste Präzision auf 128 einstellen. Standardeinstellung = 128.';
 $CIDRAM['lang']['config_recaptcha_api'] = 'Welche API soll verwendet werden? V2 oder Invisible?';
 $CIDRAM['lang']['config_recaptcha_expiry'] = 'Anzahl der Stunden an die sich reCAPTCHA-Instanzen erinnern sollten.';
 $CIDRAM['lang']['config_recaptcha_lockip'] = 'Sperren Sie reCAPTCHA auf IPs?';

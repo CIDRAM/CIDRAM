@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: English language data for the front-end (last modified: 2018.09.30).
+ * This file: English language data for the front-end (last modified: 2018.12.06).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -108,6 +108,11 @@ $CIDRAM['lang']['config_legal_omit_ip'] = 'Omit IP addresses from logs? True = Y
 $CIDRAM['lang']['config_legal_omit_ua'] = 'Omit user agents from logs? True = Yes; False = No [Default].';
 $CIDRAM['lang']['config_legal_privacy_policy'] = 'The address of a relevant privacy policy to be displayed in the footer of any generated pages. Specify a URL, or leave blank to disable.';
 $CIDRAM['lang']['config_legal_pseudonymise_ip_addresses'] = 'Pseudonymise IP addresses when logging? True = Yes; False = No [Default].';
+$CIDRAM['lang']['config_rate_limiting_allowance_period'] = 'The number of hours to track usage. Default = 0.';
+$CIDRAM['lang']['config_rate_limiting_max_bandwidth'] = 'The maximum amount of bandwidth allowed within the allowance period before rate limiting future requests. A value of 0 disables this type of rate limiting. Default = 0KB.';
+$CIDRAM['lang']['config_rate_limiting_max_requests'] = 'The maximum number of requests allowed within the allowance period before rate limiting future requests. A value of 0 disables this type of rate limiting. Default = 0.';
+$CIDRAM['lang']['config_rate_limiting_precision_ipv4'] = 'The precision to use for tracking IPv4 usage. Value mirrors CIDR block size. Set to 32 for best precision. Default = 32.';
+$CIDRAM['lang']['config_rate_limiting_precision_ipv6'] = 'The precision to use for tracking IPv6 usage. Value mirrors CIDR block size. Set to 128 for best precision. Default = 128.';
 $CIDRAM['lang']['config_recaptcha_api'] = 'Which API to use? V2 or Invisible?';
 $CIDRAM['lang']['config_recaptcha_expiry'] = 'Number of hours to remember reCAPTCHA instances.';
 $CIDRAM['lang']['config_recaptcha_lockip'] = 'Lock reCAPTCHA to IPs?';

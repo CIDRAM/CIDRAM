@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (simplified) language data for the front-end (last modified: 2018.09.30).
+ * This file: Chinese (simplified) language data for the front-end (last modified: 2018.12.06).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -108,6 +108,11 @@ $CIDRAM['lang']['config_legal_omit_ip'] = '从日志文件中排除IP地址？�
 $CIDRAM['lang']['config_legal_omit_ua'] = '从日志文件中排除用户代理？​True（真）=排除；False（假）=不排除【标准】。';
 $CIDRAM['lang']['config_legal_privacy_policy'] = '要显示在任何生成的页面的页脚中的相关隐私政策的地址。​指定一个URL，或留空以禁用。';
 $CIDRAM['lang']['config_legal_pseudonymise_ip_addresses'] = '编写日志文件时使用假名的IP地址吗？​True（真）=使用假名；False（假）=不使用假名【标准】。';
+$CIDRAM['lang']['config_rate_limiting_allowance_period'] = '监视使用情况的小时数。​标准=0。';
+$CIDRAM['lang']['config_rate_limiting_max_bandwidth'] = '在为将来的请求启用速率限制之前的最大允许带宽量。​值为0将禁用此类速率限制。​标准=0KB。';
+$CIDRAM['lang']['config_rate_limiting_max_requests'] = '在为将来的请求启用速率限制之前允许的最大请求数。​值为0将禁用此类速率限制。​标准=0。';
+$CIDRAM['lang']['config_rate_limiting_precision_ipv4'] = '监视IPv4使用时的精度。​值镜像CIDR块大小。​设置为32以获得最佳精度。​标准=32。';
+$CIDRAM['lang']['config_rate_limiting_precision_ipv6'] = '监视IPv6使用时的精度。​值镜像CIDR块大小。​设置为128以获得最佳精度。​标准=128。';
 $CIDRAM['lang']['config_recaptcha_api'] = '使用哪个API？V2或Invisible？';
 $CIDRAM['lang']['config_recaptcha_expiry'] = '记得reCAPTCHA多少小时？';
 $CIDRAM['lang']['config_recaptcha_lockip'] = '应该reCAPTCHA锁定到IP？';

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Russian language data for the front-end (last modified: 2018.09.30).
+ * This file: Russian language data for the front-end (last modified: 2018.12.06).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -108,6 +108,11 @@ $CIDRAM['lang']['config_legal_omit_ip'] = 'Опустить IP-адреса из
 $CIDRAM['lang']['config_legal_omit_ua'] = 'Опустить пользовательские агенты из журналов? True = Да; False = Нет [Стандарт].';
 $CIDRAM['lang']['config_legal_privacy_policy'] = 'Адрес соответствующей политики конфиденциальности, отображаемый в нижнем колонтитуле любых сгенерированных страниц. Укажите URL-адрес, или оставьте пустым для отключения.';
 $CIDRAM['lang']['config_legal_pseudonymise_ip_addresses'] = 'Псевдонимный IP-адреса при записи файлов журнала? True = Да; False = Нет [Стандарт].';
+$CIDRAM['lang']['config_rate_limiting_allowance_period'] = 'Количество часов для мониторинга использования. Стандарт = 0.';
+$CIDRAM['lang']['config_rate_limiting_max_bandwidth'] = 'Максимальный размер полосы пропускания, разрешенный в течение периода пособия, до включения ограничения скорости для будущих запросов. Значение 0 отключает этот тип ограничения скорости. Стандарт = 0KB.';
+$CIDRAM['lang']['config_rate_limiting_max_requests'] = 'Максимальное количество запросов, разрешенных в течение периода пособия, до включения ограничения скорости для будущих запросов. Значение 0 отключает этот тип ограничения скорости. Стандарт = 0.';
+$CIDRAM['lang']['config_rate_limiting_precision_ipv4'] = 'Точность использования при мониторинге использования IPv4. Значение отражает размер блока CIDR. Установить как 32 для наилучшей точности. Стандарт = 32.';
+$CIDRAM['lang']['config_rate_limiting_precision_ipv6'] = 'Точность использования при мониторинге использования IPv6. Значение отражает размер блока CIDR. Установить как 128 для наилучшей точности. Стандарт = 128.';
 $CIDRAM['lang']['config_recaptcha_api'] = 'Какой API использовать? V2 или Invisible?';
 $CIDRAM['lang']['config_recaptcha_expiry'] = 'Количество часов, чтобы вспомнить инстанция reCAPTCHA.';
 $CIDRAM['lang']['config_recaptcha_lockip'] = 'Свяжите reCAPTCHA к IP-адреса?';

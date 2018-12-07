@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for the front-end (last modified: 2018.10.06).
+ * This file: Japanese language data for the front-end (last modified: 2018.12.06).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -107,7 +107,12 @@ $CIDRAM['lang']['config_legal_omit_hostname'] = 'ログからホスト名を省�
 $CIDRAM['lang']['config_legal_omit_ip'] = 'ログからＩＰアドレスを省略しますか？​True = はい；​False = いいえ（Default/デフォルルト）。​注：「omit_ip」が「true」の場合、「pseudonymise_ip_addresses」は冗長になります。';
 $CIDRAM['lang']['config_legal_omit_ua'] = 'ログからユーザー・エージェント（ユーエイ）を省略しますか？​True = はい；​False = いいえ（Default/デフォルルト）。';
 $CIDRAM['lang']['config_legal_privacy_policy'] = '生成されたページのフッターに表示される関連プライバシー・ポリシーのアドレス。​ＵＲＬを指定するか、無効にしたい場合は空白のままにして下さい。';
-$CIDRAM['lang']['config_legal_pseudonymise_ip_addresses'] = 'ログ・ファイルを書き込むときにIPアドレス偽名化するか「プセユードニマイズ」？​True = はい；​False = いいえ（Default/デフォルルト）。';
+$CIDRAM['lang']['config_legal_pseudonymise_ip_addresses'] = 'ログ・ファイルを書き込むときにＩＰアドレス偽名化するか「プセユードニマイズ」？​True = はい；​False = いいえ（Default/デフォルルト）。';
+$CIDRAM['lang']['config_rate_limiting_allowance_period'] = '使用状況を監視する時間数。​Default/デフォルルト = 0.';
+$CIDRAM['lang']['config_rate_limiting_max_bandwidth'] = '将来の要求に対してレート制限を有効にする前の許容期間内に許容される最大帯域幅。​０の値は、このタイプのレート制限を無効にします。​Default/デフォルルト = 0KB。';
+$CIDRAM['lang']['config_rate_limiting_max_requests'] = '将来の要求に対してレート制限を有効にする前に、許容期間内に許可される要求の最大数。​０の値は、このタイプのレート制限を無効にします。​Default/デフォルルト = 0。';
+$CIDRAM['lang']['config_rate_limiting_precision_ipv4'] = 'ＩＰｖ４の使用状況を監視する際の精度。​値はＣＩＤＲブロック・サイズを反映します。​最高の精度を得るには３２に設定します。​Default/デフォルルト = 32。';
+$CIDRAM['lang']['config_rate_limiting_precision_ipv6'] = 'ＩＰｖ６の使用状況を監視する際の精度。​値はＣＩＤＲブロック・サイズを反映します。​最高の精度を得るには１２８に設定します。​Default/デフォルルト = 128。';
 $CIDRAM['lang']['config_recaptcha_api'] = 'どのＡＰＩを使用するのですか？​「V2」または「invisible」？';
 $CIDRAM['lang']['config_recaptcha_expiry'] = 'reCAPTCHAインスタンスを覚えておく時間数。';
 $CIDRAM['lang']['config_recaptcha_lockip'] = 'reCAPTCHAをＩＰにロックしますか？';

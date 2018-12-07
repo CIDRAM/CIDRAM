@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Portuguese language data for the front-end (last modified: 2018.09.30).
+ * This file: Portuguese language data for the front-end (last modified: 2018.12.06).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -108,6 +108,11 @@ $CIDRAM['lang']['config_legal_omit_ip'] = 'Omitir endereços IP de logs? True = 
 $CIDRAM['lang']['config_legal_omit_ua'] = 'Omitir agentes de usuários de logs? True = Sim; False = Não [Padrão].';
 $CIDRAM['lang']['config_legal_privacy_policy'] = 'O endereço de uma política de privacidade relevante a ser exibida no rodapé de qualquer página gerada. Especifique um URL, ou deixe em branco para desabilitar.';
 $CIDRAM['lang']['config_legal_pseudonymise_ip_addresses'] = 'Pseudonimiza endereços IP ao escrever os arquivos de log? True = Sim; False = Não [Padrão].';
+$CIDRAM['lang']['config_rate_limiting_allowance_period'] = 'O número de horas para monitorar o uso. Padrão = 0.';
+$CIDRAM['lang']['config_rate_limiting_max_bandwidth'] = 'A quantidade máxima de largura de banda permitida dentro do período de tolerância antes de ativar a limitação de taxa para solicitações futuras. Um valor de 0 desativa esse tipo de limitação de taxa. Padrão = 0KB.';
+$CIDRAM['lang']['config_rate_limiting_max_requests'] = 'O número máximo de solicitações permitido dentro do período de tolerância antes de ativar a limitação de taxa para solicitações futuras. Um valor de 0 desativa esse tipo de limitação de taxa. Padrão = 0.';
+$CIDRAM['lang']['config_rate_limiting_precision_ipv4'] = 'A precisão a ser usada ao monitorar o uso do IPv4. Valor espelha o tamanho do bloco CIDR. Defina para 32 para melhor precisão. Padrão = 32.';
+$CIDRAM['lang']['config_rate_limiting_precision_ipv6'] = 'A precisão a ser usada ao monitorar o uso do IPv6. Valor espelha o tamanho do bloco CIDR. Defina para 128 para melhor precisão. Padrão = 128.';
 $CIDRAM['lang']['config_recaptcha_api'] = 'Qual API usar? V2 ou Invisible?';
 $CIDRAM['lang']['config_recaptcha_expiry'] = 'Número de horas para lembrar instâncias reCAPTCHA.';
 $CIDRAM['lang']['config_recaptcha_lockip'] = 'Ligar reCAPTCHA para IPs?';

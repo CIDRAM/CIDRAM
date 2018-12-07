@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Urdu language data for the front-end (last modified: 2018.09.30).
+ * This file: Urdu language data for the front-end (last modified: 2018.12.06).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -108,6 +108,11 @@ $CIDRAM['lang']['config_legal_omit_ip'] = 'لاگ فائلوں سے IP پتے ک
 $CIDRAM['lang']['config_legal_omit_ua'] = 'لاگ فائلوں سے صارف کے ایجنٹوں کو خارج کردیں؟ True (سچے) = جی ہاں؛ False (جھوٹی) = نہیں [پہلے سے طے شدہ].';
 $CIDRAM['lang']['config_legal_privacy_policy'] = 'کسی بھی پیدا کردہ صفحات کے فوٹر میں ظاہر ہونے والی متعلقہ رازداری کی پالیسی کا پتہ. ایک URL کی وضاحت کریں، یا غیر فعال کرنے کیلئے خالی چھوڑ دیں.';
 $CIDRAM['lang']['config_legal_pseudonymise_ip_addresses'] = 'لاگ ان کرتے وقت پی ایس ڈی نامناسب IP پتے؟ True (سچے) = جی ہاں؛ False (جھوٹی) = نہیں [پہلے سے طے شدہ].';
+$CIDRAM['lang']['config_rate_limiting_allowance_period'] = 'استعمال کی نگرانی کے لئے گھنٹوں کی تعداد. پہلے سے طے شدہ = 0.';
+$CIDRAM['lang']['config_rate_limiting_max_bandwidth'] = 'بینڈوڈتھ کی زیادہ سے زیادہ رقم کی اجازت کے عرصے میں اجازت دی گئی ہے. جب سے تجاوز کی گئی، مستقبل کی درخواستوں کی شرح محدود ہے. جب 0، اس قسم کی محدود استعمال نہیں کی جائے گی. پہلے سے طے شدہ = 0KB.';
+$CIDRAM['lang']['config_rate_limiting_max_requests'] = 'الاؤنس کی مدت کے اندر اندر زیادہ سے زیادہ درخواستوں کی اجازت دی گئی ہے. جب سے تجاوز کی گئی، مستقبل کی درخواستوں کی شرح محدود ہے. جب 0، اس قسم کی محدود استعمال نہیں کی جائے گی. پہلے سے طے شدہ = 0.';
+$CIDRAM['lang']['config_rate_limiting_precision_ipv4'] = 'IPv4 استعمال کی نگرانی کرتے وقت استعمال کرنے کی صحت سے متعلق. قیمت CIDR بلاک سائز کی عکاسی کرتا ہے. بہترین صحت سے متعلق کے لئے 32 پر مقرر کریں. پہلے سے طے شدہ = 32.';
+$CIDRAM['lang']['config_rate_limiting_precision_ipv6'] = 'IPv6 استعمال کی نگرانی کرتے وقت استعمال کرنے کی صحت سے متعلق. قیمت CIDR بلاک سائز کی عکاسی کرتا ہے. بہترین صحت سے متعلق کے لئے 128 پر مقرر کریں. پہلے سے طے شدہ = 128.';
 $CIDRAM['lang']['config_recaptcha_api'] = 'کون سا API استعمال کرنے کے لئے؟ V2 یا Invisible؟';
 $CIDRAM['lang']['config_recaptcha_expiry'] = 'گھنٹوں کی تعداد reCAPTCHA کے واقعات کو یاد کرنے.';
 $CIDRAM['lang']['config_recaptcha_lockip'] = 'ئی پی ایس کے لئے ہیتی لاک؟';

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Output generator (last modified: 2018.09.22).
+ * This file: Output generator (last modified: 2018.12.10).
  */
 
 /** Initialise cache. */
@@ -85,12 +85,21 @@ if (substr($CIDRAM['BlockInfo']['IPAddr'], 0, 5) === '2002:') {
 /** Initialise page output and block event logfile fields. */
 $CIDRAM['FieldTemplates'] = ['Logs' => '', 'Output' => []];
 
+/** Maximum bandwidth for rate limiting. */
+$CIDRAM['RL_MaxBandwidth'] = $CIDRAM['ReadBytes']($CIDRAM['Config']['rate_limiting']['max_bandwidth']);
+
+/** Check whether rate limiting is active. */
+$CIDRAM['RL_Active'] = (
+    ($CIDRAM['Config']['rate_limiting']['max_requests'] > 0 || $CIDRAM['RL_MaxBandwidth'] > 0) &&
+    ($CIDRAM['Protect'] && !$CIDRAM['Config']['general']['maintenance_mode'] && empty($CIDRAM['Whitelisted']))
+);
+
 /** The normal blocking procedures should occur. */
 if ($CIDRAM['Protect'] && !$CIDRAM['Config']['general']['maintenance_mode']) {
 
     /** Run all IPv4/IPv6 tests. */
     try {
-        $CIDRAM['TestResults'] = $CIDRAM['RunTests']($CIDRAM['BlockInfo']['IPAddr']);
+        $CIDRAM['TestResults'] = $CIDRAM['RunTests']($CIDRAM['BlockInfo']['IPAddr'], $CIDRAM['RL_Active']);
     } catch (\Exception $e) {
         die($e->getMessage());
     }
@@ -98,7 +107,7 @@ if ($CIDRAM['Protect'] && !$CIDRAM['Config']['general']['maintenance_mode']) {
     /** Run all IPv4/IPv6 tests for resolved IP address if necessary. */
     if (!empty($CIDRAM['BlockInfo']['IPAddrResolved']) && $CIDRAM['TestResults'] && empty($CIDRAM['Whitelisted'])) {
         try {
-            $CIDRAM['TestResults'] = $CIDRAM['RunTests']($CIDRAM['BlockInfo']['IPAddrResolved']);
+            $CIDRAM['TestResults'] = $CIDRAM['RunTests']($CIDRAM['BlockInfo']['IPAddrResolved'], $CIDRAM['RL_Active']);
         } catch (\Exception $e) {
             die($e->getMessage());
         }
@@ -243,6 +252,58 @@ if (!empty($CIDRAM['TestResults']) && $CIDRAM['BlockInfo']['SignatureCount'] && 
 
     /** Cleanup. */
     unset($CIDRAM['TrackCount'], $CIDRAM['TrackTime']);
+}
+
+/**
+ * Process rate limiting, if it's active. This feature exists for those that
+ * need it, but I really don't recommend using this feature if at all possible.
+ */
+if ($CIDRAM['RL_Active'] && isset($CIDRAM['Factors'])) {
+    if (
+        $CIDRAM['LastTestIP'] === 4 &&
+        $CIDRAM['Config']['rate_limiting']['precision_ipv4'] > 0 &&
+        $CIDRAM['Config']['rate_limiting']['precision_ipv4'] < 33 &&
+        isset($CIDRAM['Factors'][$CIDRAM['Config']['rate_limiting']['precision_ipv4'] - 1])
+    ) {
+        $CIDRAM['RL_Capture'] = $CIDRAM['Factors'][$CIDRAM['Config']['rate_limiting']['precision_ipv4'] - 1];
+    } elseif (
+        $CIDRAM['LastTestIP'] === 6 &&
+        $CIDRAM['Config']['rate_limiting']['precision_ipv6'] > 0 &&
+        $CIDRAM['Config']['rate_limiting']['precision_ipv6'] < 129 &&
+        isset($CIDRAM['Factors'][$CIDRAM['Config']['rate_limiting']['precision_ipv6'] - 1])
+    ) {
+        $CIDRAM['RL_Capture'] = $CIDRAM['Factors'][$CIDRAM['Config']['rate_limiting']['precision_ipv6'] - 1];
+    }
+    if (!empty($CIDRAM['RL_Capture'])) {
+        $CIDRAM['RL_Capture'] = pack('l*', strlen($CIDRAM['RL_Capture'])) . $CIDRAM['RL_Capture'];
+        $CIDRAM['RL_Data'] = $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'rl.dat');
+        if (strlen($CIDRAM['RL_Data']) > 4) {
+            $CIDRAM['RL_Expired'] = $CIDRAM['Now'] - ($CIDRAM['Config']['rate_limiting']['allowance_period'] * 3600);
+            $CIDRAM['RL_Oldest'] = unpack('l*', substr($CIDRAM['RL_Data'], 0, 4));
+            if ($CIDRAM['RL_Oldest'][1] < $CIDRAM['RL_Expired']) {
+                $CIDRAM['RL_Clean']();
+            }
+            $CIDRAM['RL_Usage'] = $CIDRAM['RL_Get_Usage']();
+            if ($CIDRAM['Trigger']((
+                ($CIDRAM['RL_MaxBandwidth'] > 0 && $CIDRAM['RL_Usage']['Bytes'] >= $CIDRAM['RL_MaxBandwidth']) ||
+                ($CIDRAM['Config']['rate_limiting']['max_requests'] > 0 && $CIDRAM['RL_Usage']['Requests'] >= $CIDRAM['Config']['rate_limiting']['max_requests'])
+            ), $CIDRAM['lang']['Short_RL'])) {
+                $CIDRAM['Config']['recaptcha']['usemode'] = 0;
+                $CIDRAM['Config']['recaptcha']['enabled'] = false;
+                $CIDRAM['RL_Status'] = $CIDRAM['GetStatusHTTP'](429);
+            }
+            unset($CIDRAM['RL_Usage'], $CIDRAM['RL_Oldest'], $CIDRAM['RL_Expired']);
+        }
+        $CIDRAM['RL_Size'] = 0;
+        ob_start(function ($In) use (&$CIDRAM) {
+            $CIDRAM['RL_Size'] += strlen($In);
+            return $In;
+        }, 1);
+        register_shutdown_function(function () use (&$CIDRAM) {
+            $CIDRAM['RL_WriteEvent']($CIDRAM['RL_Capture'], $CIDRAM['RL_Size']);
+            ob_end_flush();
+        });
+    }
 }
 
 /** This code block only executed if signatures were triggered. */
@@ -524,7 +585,7 @@ if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
     /** Parsed to the template file upon generating HTML output. */
     $CIDRAM['Parsables'] = $CIDRAM['FieldTemplates'] + $CIDRAM['Config']['template_data'] + $CIDRAM['lang'] + $CIDRAM['BlockInfo'];
 
-    if (!empty($CIDRAM['Banned']) && (
+    if (!empty($CIDRAM['Banned']) && $CIDRAM['Config']['general']['ban_override'] !== 200 && (
         $CIDRAM['ThisStatusHTTP'] = $CIDRAM['GetStatusHTTP']($CIDRAM['Config']['general']['ban_override'])
     )) {
 
@@ -532,6 +593,14 @@ if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
         header('HTTP/1.0 ' . $CIDRAM['errCode'] . ' ' . $CIDRAM['ThisStatusHTTP']);
         header('HTTP/1.1 ' . $CIDRAM['errCode'] . ' ' . $CIDRAM['ThisStatusHTTP']);
         header('Status: ' . $CIDRAM['errCode'] . ' ' . $CIDRAM['ThisStatusHTTP']);
+        $CIDRAM['HTML'] = '';
+
+    } elseif (!empty($CIDRAM['RL_Status']) && ($CIDRAM['BlockInfo']['SignatureCount'] * 1) === 1) {
+
+        header('HTTP/1.0 429 ' . $CIDRAM['RL_Status']);
+        header('HTTP/1.1 429 ' . $CIDRAM['RL_Status']);
+        header('Status: 429 ' . $CIDRAM['RL_Status']);
+        header('Retry-After: ' . floor($CIDRAM['Config']['rate_limiting']['allowance_period'] * 3600));
         $CIDRAM['HTML'] = '';
 
     } elseif (!$CIDRAM['Config']['general']['silent_mode']) {
@@ -608,9 +677,10 @@ if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
     } else {
 
         $CIDRAM['errCode'] = 301;
-        header('HTTP/1.0 301 Moved Permanently');
-        header('HTTP/1.1 301 Moved Permanently');
-        header('Status: 301 Moved Permanently');
+        $CIDRAM['Status'] = $CIDRAM['GetStatusHTTP'](301);
+        header('HTTP/1.0 301 ' . $CIDRAM['Status']);
+        header('HTTP/1.1 301 ' . $CIDRAM['Status']);
+        header('Status: 301 ' . $CIDRAM['Status']);
         header('Location: ' . $CIDRAM['Config']['general']['silent_mode']);
         $CIDRAM['HTML'] = '';
 
@@ -735,7 +805,7 @@ if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
 
     }
 
-    /** All necessary processing and logging has completed; Now we send html output die. */
+    /** All necessary processing and logging has completed; Now we send HTML output and die. */
     die($CIDRAM['HTML']);
 
 }

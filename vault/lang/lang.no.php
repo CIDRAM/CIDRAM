@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Norwegian language data (last modified: 2018.08.10).
+ * This file: Norwegian language data (last modified: 2018.12.10).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -37,6 +37,7 @@ $CIDRAM['lang']['Short_Generic'] = 'Generisk';
 $CIDRAM['lang']['Short_Legal'] = 'Juridiske';
 $CIDRAM['lang']['Short_Malware'] = 'Skadelig programvare';
 $CIDRAM['lang']['Short_Proxy'] = 'Proxy';
+$CIDRAM['lang']['Short_RL'] = 'Hastighetsbegrenset';
 $CIDRAM['lang']['Short_Spam'] = 'Spam risiko';
 $CIDRAM['lang']['Support_Email'] = 'Hvis du tror dette er en feil, eller å søke hjelp, {ClickHereLink} for å sende en e-postsupportbillett til webansvarlig for dette nettstedet (vennligst ikke endre preamble eller emnelinje i e-posten).';
 $CIDRAM['lang']['Support_Email_2'] = 'Hvis du tror dette er en feil, send en e-post til {EmailAddr} for å søke hjelp.';

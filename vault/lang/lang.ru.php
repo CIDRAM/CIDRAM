@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Russian language data (last modified: 2018.08.10).
+ * This file: Russian language data (last modified: 2018.12.10).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -45,6 +45,7 @@ $CIDRAM['lang']['Short_Generic'] = 'Общий';
 $CIDRAM['lang']['Short_Legal'] = 'Юридический';
 $CIDRAM['lang']['Short_Malware'] = 'Вредоносные программы';
 $CIDRAM['lang']['Short_Proxy'] = 'Прокси';
+$CIDRAM['lang']['Short_RL'] = 'Скорость ограничена';
 $CIDRAM['lang']['Short_Spam'] = 'Спам риск';
 $CIDRAM['lang']['Support_Email'] = 'Если Вы считаете, что это ошибка, или для того, попросить о помощи, {ClickHereLink}, чтобы отправить билет поддержки по электронной почте его на веб-мастеру этого сайта (пожалуйста, не изменить преамбулу или электронная почта тема линия).';
 $CIDRAM['lang']['Support_Email_2'] = 'Если Вы считаете, что это ошибка, отправьте электронное письмо в {EmailAddr}, чтобы обратиться за помощью.';

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2018.09.30).
+ * This file: Functions file (last modified: 2018.12.10).
  */
 
 /**
@@ -29,12 +29,6 @@ if (substr(PHP_VERSION, 0, 4) === '5.4.') {
 $CIDRAM['ReadFile'] = function ($File) {
     if (!is_file($File) || !is_readable($File)) {
         return false;
-    }
-    /**
-     * An alternative/fix to avoid dodgy fread operations via the phar wrapper.
-     */
-    if (strpos($File, 'phar:') === 0) {
-        return file_get_contents($File) ?: false;
     }
     /** Default blocksize (128KB). */
     static $Blocksize = 131072;
@@ -470,9 +464,10 @@ $CIDRAM['CheckFactors'] = function ($Files, $Factors) use (&$CIDRAM) {
  * Initialises all IPv4/IPv6 tests.
  *
  * @param string $Addr The IP address to check.
+ * @param int $Retain Specifies whether we need to retain factors for later.
  * @return bool Returns false if all tests fail, and otherwise, returns true.
  */
-$CIDRAM['RunTests'] = function ($Addr) use (&$CIDRAM) {
+$CIDRAM['RunTests'] = function ($Addr, $Retain = false) use (&$CIDRAM) {
     if (!isset($CIDRAM['BlockInfo'])) {
         return false;
     }
@@ -492,6 +487,9 @@ $CIDRAM['RunTests'] = function ($Addr) use (&$CIDRAM) {
         }
         if ($IPv4Test) {
             $CIDRAM['LastTestIP'] = 4;
+            if ($Retain) {
+                $CIDRAM['Factors'] = $IPv4Factors;
+            }
         }
     } else {
         $IPv4Test = false;
@@ -507,6 +505,9 @@ $CIDRAM['RunTests'] = function ($Addr) use (&$CIDRAM) {
         }
         if ($IPv6Test) {
             $CIDRAM['LastTestIP'] = 6;
+            if ($Retain) {
+                $CIDRAM['Factors'] = $IPv6Factors;
+            }
         }
     } else {
         $IPv6Test = false;
@@ -1767,9 +1768,11 @@ $CIDRAM['Pseudonymise-IP'] = function ($IP) {
  */
 $CIDRAM['GetStatusHTTP'] = function ($Status) {
     $Message = [
+        301 => 'Moved Permanently',
         403 => 'Forbidden',
         410 => 'Gone',
         418 => 'I\'m a teapot',
+        429 => 'Too Many Requests',
         451 => 'Unavailable For Legal Reasons',
         503 => 'Service Unavailable'
     ];
@@ -2030,4 +2033,75 @@ $CIDRAM['Aux'] = function () use (&$CIDRAM) {
 
     }
 
+};
+
+/**
+ * Write an access event to the rate limiting cache.
+ *
+ * @param string $RL_Capture What we've captured to identify the requesting entity.
+ * @param int $RL_Size The size of the output served to the requesting entity.
+ */
+$CIDRAM['RL_WriteEvent'] = function ($RL_Capture, $RL_Size) use (&$CIDRAM) {
+    $TimePacked = pack('l*', $CIDRAM['Now']);
+    $SizePacked = pack('l*', $RL_Size);
+    $Data = $TimePacked . $SizePacked . $RL_Capture;
+    $Handle = fopen($CIDRAM['Vault'] . 'rl.dat', 'ab');
+    fwrite($Handle, $Data);
+    fclose($Handle);
+};
+
+/** Remove outdated access events from the rate limiting cache. */
+$CIDRAM['RL_Clean'] = function () use (&$CIDRAM) {
+    $Pos = 0;
+    $EoS = strlen($CIDRAM['RL_Data']);
+    while ($Pos < $EoS) {
+        $Time = substr($CIDRAM['RL_Data'], $Pos, 4);
+        if (strlen($Time) !== 4) {
+            break;
+        }
+        $Time = unpack('l*', $Time);
+        if ($Time[1] > $CIDRAM['RL_Expired']) {
+            break;
+        }
+        $Pos += 8;
+        $Block = substr($CIDRAM['RL_Data'], $Pos, 4);
+        if (strlen($Block) !== 4) {
+            $CIDRAM['RL_Data'] = '';
+            break;
+        }
+        $Block = unpack('l*', $Block);
+        $Pos += 4 + $Block[1];
+    }
+    if ($Pos) {
+        if ($CIDRAM['RL_Data']) {
+            $CIDRAM['RL_Data'] = substr($CIDRAM['RL_Data'], $Pos);
+        }
+        $Handle = fopen($CIDRAM['Vault'] . 'rl.dat', 'wb');
+        fwrite($Handle, $CIDRAM['RL_Data']);
+        fclose($Handle);
+    }
+};
+
+/**
+ * Count the requesting entity's requests and bandwidth usage for this period.
+ *
+ * @return int The requesting entity's requests and bandwidth usage for this period.
+ */
+$CIDRAM['RL_Get_Usage'] = function () use (&$CIDRAM) {
+    $Pos = 0;
+    $Bytes = 0;
+    $Requests = 0;
+    while (strlen($CIDRAM['RL_Data']) > $Pos && $Pos = strpos($CIDRAM['RL_Data'], $CIDRAM['RL_Capture'], $Pos + 1)) {
+        if ($Pos === false) {
+            break;
+        }
+        $Size = substr($CIDRAM['RL_Data'], $Pos - 4, 4);
+        if (strlen($Size) !== 4) {
+            break;
+        }
+        $Size = unpack('l*', $Size);
+        $Bytes += $Size[1];
+        $Requests++;
+    }
+    return ['Bytes' => $Bytes, 'Requests' => $Requests];
 };

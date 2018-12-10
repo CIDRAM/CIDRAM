@@ -400,4 +400,23 @@ Config Defaults:
   addReplyToName:
    type: string
    default: ""
+ rate_limiting:
+  max_bandwidth:
+   type: kb
+   default: "0KB"
+   preview: kb
+  max_requests:
+   type: int
+   default: 0
+  precision_ipv4:
+   type: int
+   default: 32
+  precision_ipv6:
+   type: int
+   default: 128
+  allowance_period:
+   type: real
+   step: any
+   default: 0
+   preview: hours
 

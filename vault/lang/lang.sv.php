@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Swedish language data (last modified: 2018.08.10).
+ * This file: Swedish language data (last modified: 2018.12.10).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -37,6 +37,7 @@ $CIDRAM['lang']['Short_Generic'] = 'Generisk';
 $CIDRAM['lang']['Short_Legal'] = 'Lagliga';
 $CIDRAM['lang']['Short_Malware'] = 'Skadlig kod';
 $CIDRAM['lang']['Short_Proxy'] = 'Proxy';
+$CIDRAM['lang']['Short_RL'] = 'Hastighetsbegränsad';
 $CIDRAM['lang']['Short_Spam'] = 'Spam risk';
 $CIDRAM['lang']['Support_Email'] = 'Om du tror att det här är felaktigt, eller att söka hjälp, {ClickHereLink} för att skicka en e-post support biljett till webmaster på denna webbplats (vänligen ändra inte ingressen eller ämnesraden i e-postmeddelandet).';
 $CIDRAM['lang']['Support_Email_2'] = 'Om du tror att det här är felaktigt, skicka ett mail till {EmailAddr} för att söka hjälp.';

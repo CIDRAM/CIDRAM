@@ -354,3 +354,27 @@ addReplyToAddress=''
 addReplyToName=''
 
 
+[rate_limiting]
+
+; The maximum amount of bandwidth allowed within the allowance period before
+; rate limiting future requests. A value of 0 disables this type of rate
+; limiting. Default = 0KB.
+max_bandwidth='0KB'
+
+; The maximum number of requests allowed within the allowance period before
+; rate limiting future requests. A value of 0 disables this type of rate
+; limiting. Default = 0.
+max_requests=0
+
+; The precision to use for tracking IPv4 usage. Value mirrors CIDR block size.
+; Set to 32 for best precision. Default = 32.
+precision_ipv4=32
+
+; The precision to use for tracking IPv6 usage. Value mirrors CIDR block size.
+; Set to 128 for best precision. Default = 128.
+precision_ipv6=128
+
+; The number of hours to track usage. Default = 0.
+allowance_period=0
+
+

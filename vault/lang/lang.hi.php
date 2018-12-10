@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Hindi language data (last modified: 2018.08.10).
+ * This file: Hindi language data (last modified: 2018.12.10).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -37,6 +37,7 @@ $CIDRAM['lang']['Short_Generic'] = 'सामान्य';
 $CIDRAM['lang']['Short_Legal'] = 'कानूनी';
 $CIDRAM['lang']['Short_Malware'] = 'मैलवेयर';
 $CIDRAM['lang']['Short_Proxy'] = 'प्रॉक्सी';
+$CIDRAM['lang']['Short_RL'] = 'सीमित दर';
 $CIDRAM['lang']['Short_Spam'] = 'स्पैम जोखिम';
 $CIDRAM['lang']['Support_Email'] = 'यदि आपको लगता है कि यह त्रुटि है, या सहायता प्राप्त करने के लिए, इस वेबसाइट के वेबमास्टर को ईमेल समर्थन टिकट भेजने के लिए {ClickHereLink} (कृपया प्रस्तावना या विषय रेखा को न बदलें)।';
 $CIDRAM['lang']['Support_Email_2'] = 'यदि आपको लगता है कि यह त्रुटि है, सहायता प्राप्त करने के लिए {EmailAddr} पर एक ईमेल भेजें।';

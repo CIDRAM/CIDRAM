@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Bangla language data (last modified: 2018.08.10).
+ * This file: Bangla language data (last modified: 2018.12.10).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -37,6 +37,7 @@ $CIDRAM['lang']['Short_Generic'] = 'জাতিবাচক';
 $CIDRAM['lang']['Short_Legal'] = 'আইনি';
 $CIDRAM['lang']['Short_Malware'] = 'ম্যালওয়ারের';
 $CIDRAM['lang']['Short_Proxy'] = 'প্রক্সি';
+$CIDRAM['lang']['Short_RL'] = 'হার সীমিত';
 $CIDRAM['lang']['Short_Spam'] = 'স্প্যাম ঝুঁকি';
 $CIDRAM['lang']['Support_Email'] = 'যদি এটি একটি ত্রুটি, বা সহায়তার সন্ধান, {ClickHereLink} এই ওয়েবসাইটের ওয়েবমাস্টার একটি ইমেইল সমর্থন টিকেট পাঠাতে (দয়া করে ইমেলের প্রস্তাবনা বা বিষয় লাইন পরিবর্তন করবেন না)।';
 $CIDRAM['lang']['Support_Email_2'] = 'আপনি যদি বিশ্বাস করেন এটি একটি ত্রুটি, তাহলে সাহায্যের জন্য {EmailAddr} এ একটি ইমেল পাঠান।';

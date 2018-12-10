@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Arabic language data (last modified: 2018.08.10).
+ * This file: Arabic language data (last modified: 2018.12.10).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -40,6 +40,7 @@ $CIDRAM['lang']['Short_Generic'] = 'عام';
 $CIDRAM['lang']['Short_Legal'] = 'قانوني';
 $CIDRAM['lang']['Short_Malware'] = 'البرمجيات الخبيثة';
 $CIDRAM['lang']['Short_Proxy'] = 'خدمة بروكسي';
+$CIDRAM['lang']['Short_RL'] = 'معدل محدود';
 $CIDRAM['lang']['Short_Spam'] = 'خطر البريد المزعج';
 $CIDRAM['lang']['Support_Email'] = 'لطلب المساعدة أو لأي إستفسار يمكنك التواصل معنا عبر البريد الإلكتروني ({ClickHereLink}).';
 $CIDRAM['lang']['Support_Email_2'] = 'لطلب المساعدة أو لأي إستفسار يمكنك التواصل معنا عبر البريد الإلكتروني ({EmailAddr}).';

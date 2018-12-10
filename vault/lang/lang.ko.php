@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Korean language data (last modified: 2018.08.10).
+ * This file: Korean language data (last modified: 2018.12.10).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -37,6 +37,7 @@ $CIDRAM['lang']['Short_Generic'] = '일반';
 $CIDRAM['lang']['Short_Legal'] = '적법한';
 $CIDRAM['lang']['Short_Malware'] = '멀웨어';
 $CIDRAM['lang']['Short_Proxy'] = '프록시';
+$CIDRAM['lang']['Short_RL'] = '제한 속도';
 $CIDRAM['lang']['Short_Spam'] = '스팸 위험';
 $CIDRAM['lang']['Support_Email'] = '이메일 지원 티켓을 제출 내용이나 지원 내용은 {ClickHereLink}하십시오 (프리앰블을 변경하지 마십시오).';
 $CIDRAM['lang']['Support_Email_2'] = '이것이 잘못되었다고 생각되면 {EmailAddr}에게 이메일을 보내 도움을 요청하십시오.';

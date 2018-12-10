@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Dutch language data (last modified: 2018.08.10).
+ * This file: Dutch language data (last modified: 2018.12.10).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -37,6 +37,7 @@ $CIDRAM['lang']['Short_Generic'] = 'Algemeen';
 $CIDRAM['lang']['Short_Legal'] = 'Wettelijke';
 $CIDRAM['lang']['Short_Malware'] = 'Malware';
 $CIDRAM['lang']['Short_Proxy'] = 'Proxy';
+$CIDRAM['lang']['Short_RL'] = 'Tarief beperkt';
 $CIDRAM['lang']['Short_Spam'] = 'Spam risico';
 $CIDRAM['lang']['Support_Email'] = 'Als u denkt dat deze melding een fout is, of u heeft een vraag, {ClickHereLink} om een email sturen naar de webmaster van dit site (Wijzig a.u.b. het onderwerp veld van de email niet).';
 $CIDRAM['lang']['Support_Email_2'] = 'Als u denkt dat deze melding een fout is, stuur een email naar {EmailAddr} om hulp te zoeken.';

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Thai language data (last modified: 2018.08.10).
+ * This file: Thai language data (last modified: 2018.12.10).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -37,6 +37,7 @@ $CIDRAM['lang']['Short_Generic'] = 'ทั่วไป';
 $CIDRAM['lang']['Short_Legal'] = 'ทางกฎหมาย';
 $CIDRAM['lang']['Short_Malware'] = 'มัลแวร์';
 $CIDRAM['lang']['Short_Proxy'] = 'ผู้รับมอบฉันทะ';
+$CIDRAM['lang']['Short_RL'] = 'อัตรา จำกัด';
 $CIDRAM['lang']['Short_Spam'] = 'ความเสี่ยงของสแปม';
 $CIDRAM['lang']['Support_Email'] = 'หากคุณเชื่อว่านี่เป็นข้อผิดพลาด หรือเพื่อขอความช่วยเหลือ {ClickHereLink}เพื่อส่งอีเมลสนับสนุนไปยังเว็บมาสเตอร์ของเว็บไซต์นี้ (โปรดอย่าเปลี่ยนบรรทัดคำนำหรือหัวเรื่องของอีเมล).';
 $CIDRAM['lang']['Support_Email_2'] = 'หากคุณเชื่อว่านี่เป็นข้อผิดพลาด ส่งอีเมลไปที่ {EmailAddr} เพื่อขอความช่วยเหลือ.';

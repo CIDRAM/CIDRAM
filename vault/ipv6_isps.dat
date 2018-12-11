@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_isps.dat
 
-# Version: 2018.326.341
-# Last modified: 2018.11.23
+# Version: 2018.344.419
+# Last modified: 2018.12.11
 
 
 # ---
@@ -60,9 +60,9 @@ Tag: AS12880
 
 
 # ASNs 24940, 37153 ("Hetzner Online GmbH").
-# %Listed, Google Malware Dashboard: 0.16% (AS24940), 0.19% (AS37153).
-# Stop Forum Spam (SFS) listings: 44,144 (AS24940), 456 (AS37153).
-# Updated: 2017.12.30 / Checked: 2018.07.09
+# %Listed, Google Malware Dashboard: 0.31% (AS24940), 0.25% (AS37153).
+# Stop Forum Spam (SFS) listings: 38,790 (AS24940), 513 (AS37153).
+# Updated: 2017.12.30 / Checked: 2018.12.09
 
 2001:67c:1164::/48 Deny Generic
 2a01:4f8::/29 Deny Generic
@@ -91,8 +91,8 @@ Tag: AS51559
 
 
 # ASN 45727 ("Hutchison CP Telecommunications, PT").
-# Stop Forum Spam (SFS) listings: 499.
-# Updated: 2018.07.16
+# Stop Forum Spam (SFS) listings: 612.
+# Updated: 2018.12.09
 
 2400:8b00:100::/42 Deny Spam
 2400:8b00:200::/42 Deny Spam
@@ -114,6 +114,7 @@ Tag: AS51559
 2400:8b00:f00::/42 Deny Spam
 2400:8b00:f80::/42 Deny Spam
 2400:8b00:1000::/44 Deny Spam
+2400:8b00:2000::/42 Deny Spam
 Origin: ID
 Tag: PT Hutchison
 ---
@@ -250,11 +251,13 @@ recaptcha:
 
 
 # ASN 44050 ("Petersburg Internet Network ltd").
-# %Listed, Google Malware Dashboard: 0.15%.
-# Stop Forum Spam (SFS) listings: 2,945,058.
-# Updated: 2018.01.07 / Checked: 2018.07.04
+# %Listed, Google Malware Dashboard: 0.19%.
+# Stop Forum Spam (SFS) listings: 2,917,346.
+# Updated: 2018.12.09
 
 2a00:1d78::/32 Deny Generic
+2a01:48a0:4030::/48 Deny Generic
+2a0b:d000::/29 Deny Generic
 Origin: RU
 Tag: PIN-AS
 
@@ -341,19 +344,10 @@ Tag: PP SKS-LUGAN
 
 
 # ASN 13030 ("Init7").
-# %Listed, Google Malware Dashboard: 0.22%.
-# Stop Forum Spam (SFS) listings: 455.
-# Updated: 2018.07.16
+# %Listed, Google Malware Dashboard: 0.10%.
+# Stop Forum Spam (SFS) listings: 142.
+# Updated: 2018.12.09
 
-2a05:f4c0::/34 Deny Generic
-2a05:f4c1::/34 Deny Generic
-2a05:f4c2::/34 Deny Generic
-2a05:f4c3::/34 Deny Generic
-2a05:f4c4::/34 Deny Generic
-2a05:f4c5::/34 Deny Generic
-2a05:f4c6::/34 Deny Generic
-2a05:f4c7::/34 Deny Generic
-Origin: BG
 2001:67c:7ac::/48 Deny Generic
 2001:67c:2648::/48 Deny Generic
 2001:1620::/32 Deny Generic
@@ -370,6 +364,7 @@ Origin: BG
 2a0b:5400:1::/48 Deny Generic
 Origin: CH
 2a00:5640::/32 Deny Generic
+2a00:5646::/32 Deny Generic
 Origin: DE
 2001:67c:1388::/48 Deny Generic
 Origin: GB
@@ -459,9 +454,9 @@ Tag: DGN TEKNOLOJI
 
 
 # ASN 38731 ("Vietel - CHT Compamy Ltd").
-# %Listed, Google Malware Dashboard: 0.10%.
-# Stop Forum Spam (SFS) listings: 465.
-# Updated: 2016.12.24 / Checked: 2018.07.04
+# %Listed, Google Malware Dashboard: 0.12%.
+# Stop Forum Spam (SFS) listings: 569.
+# Updated: 2016.12.24 / Checked: 2018.12.09
 
 2401:5f80::/34 Deny Generic
 2401:5f80:4000::/35 Deny Generic

@@ -1074,7 +1074,8 @@ Các mô-đun đã được cung cấp để đảm bảo rằng các gói và s
 - [Tần suất cập nhật chữ ký là bao nhiêu?](#SIGNATURE_UPDATE_FREQUENCY)
 - [Tôi đã gặp một vấn đề trong khi sử dụng CIDRAM và tôi không biết phải làm gì về nó! Hãy giúp tôi!](#ENCOUNTERED_PROBLEM_WHAT_TO_DO)
 - [Tôi đã bị chặn bởi CIDRAM từ một trang web mà tôi muốn ghé thăm! Hãy giúp tôi!](#BLOCKED_WHAT_TO_DO)
-- [Tôi muốn sử dụng CIDRAM với phiên bản PHP cũ hơn 5.4.0; Bạn có thể giúp?](#MINIMUM_PHP_VERSION)
+- [Tôi muốn sử dụng CIDRAM (trước v2) với phiên bản PHP cũ hơn 5.4.0; Bạn có thể giúp?](#MINIMUM_PHP_VERSION)
+- [Tôi muốn sử dụng CIDRAM (v2) với phiên bản PHP cũ hơn 7.2.0; Bạn có thể giúp?](#MINIMUM_PHP_VERSION_V2)
 - [Tôi có thể sử dụng một cài đặt CIDRAM để bảo vệ nhiều tên miền?](#PROTECT_MULTIPLE_DOMAINS)
 - [Tôi không muốn lãng phí thời gian bằng cách cài đặt này và đảm bảo rằng nó hoạt động với trang web của tôi; Tôi có thể trả tiền cho bạn để làm điều đó cho tôi?](#PAY_YOU_TO_DO_IT)
 - [Tôi có thể thuê bạn hay bất kỳ nhà phát triển nào của dự án này cho công việc riêng tư?](#HIRE_FOR_PRIVATE_WORK)
@@ -1150,9 +1151,13 @@ Tần suất cập nhật thay đổi tùy thuộc vào các tập tin chữ ký
 
 CIDRAM cung cấp một cách cho chủ sở hữu trang web để chặn lưu lượng không mong muốn, nhưng đó là trách nhiệm của chủ sở hữu trang web tự quyết định cách mà họ muốn sử dụng CIDRAM. Trong trường hợp của sai tích cực liên quan đến các tập tin chữ ký thường trong gói CIDRAM, đính chính có thể được thực hiện, nhưng để được bỏ chặn từ các trang web cụ thể, bạn sẽ cần phải liên hệ với chủ sở hữu của các trang web được đề cập. Trong trường hợp đính chính được thực hiện, ít nhất, họ sẽ cần phải cập nhật các tập tin chữ ký hay cài đặt của họ, và trong các trường hợp khác (chẳng hạn như, ví dụ, khi họ đã sửa đổi cài đặt của họ, đã tạo ra chữ ký riêng của họ, vv), trách nhiệm của giải quyết vấn đề của bạn hoàn toàn là của họ, và hoàn toàn nằm ngoài tầm kiểm soát của chúng tôi.
 
-#### <a name="MINIMUM_PHP_VERSION"></a>Tôi muốn sử dụng CIDRAM với phiên bản PHP cũ hơn 5.4.0; Bạn có thể giúp?
+#### <a name="MINIMUM_PHP_VERSION"></a>Tôi muốn sử dụng CIDRAM (trước v2) với phiên bản PHP cũ hơn 5.4.0; Bạn có thể giúp?
 
-Không. PHP 5.4.0 đạt EoL ("End of Life", hoặc sự kết thúc của cuộc sống) chính thức vào năm 2014, và hỗ trợ an ninh mở rộng đã được chấm dứt vào năm 2015. Khi viết này, nó là năm 2017, và PHP 7.1.0 đã có sẵn. Tại thời điểm này, hỗ trợ được cung cấp để sử dụng CIDRAM với PHP 5.4.0 và tất cả các phiên bản PHP có sẵn mới hơn, nhưng nếu bạn cố gắng sử dụng CIDRAM với bất kỳ phiên bản PHP lớn hơn, hỗ trợ sẽ không được cung cấp.
+Không. PHP >= 5.4.0 là yêu cầu tối thiểu đối với CIDRAM < v2.
+
+#### <a name="MINIMUM_PHP_VERSION_V2"></a>Tôi muốn sử dụng CIDRAM (v2) với phiên bản PHP cũ hơn 7.2.0; Bạn có thể giúp?
+
+Không. PHP >= 7.2.0 là yêu cầu tối thiểu đối với CIDRAM v2.
 
 *Xem thêm: [Biểu đồ tương thích](https://maikuolan.github.io/Compatibility-Charts/).*
 
@@ -1497,4 +1502,4 @@ Một số tài nguyên được đề xuất để tìm hiểu thêm thông tin
 ---
 
 
-Lần cuối cập nhật: 1 Tháng Mười Hai 2018 (2018.12.01).
+Lần cuối cập nhật: 14 Tháng Mười Hai 2018 (2018.12.14).

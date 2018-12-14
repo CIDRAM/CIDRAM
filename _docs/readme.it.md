@@ -1074,7 +1074,8 @@ I moduli sono stati resi disponibili per garantire che i seguenti pacchetti e pr
 - [Con quale frequenza vengono aggiornate le firme?](#SIGNATURE_UPDATE_FREQUENCY)
 - [Ho incontrato un problema durante l'utilizzo CIDRAM e non so che cosa fare al riguardo! Aiutami!](#ENCOUNTERED_PROBLEM_WHAT_TO_DO)
 - [CIDRAM mi ha bloccato da un sito web che voglio visitare! Aiutami!](#BLOCKED_WHAT_TO_DO)
-- [Voglio usare CIDRAM con una versione di PHP più vecchio di 5.4.0; Puoi aiutami?](#MINIMUM_PHP_VERSION)
+- [Voglio usare CIDRAM (prima della v2) con una versione di PHP più vecchio di 5.4.0; Puoi aiutami?](#MINIMUM_PHP_VERSION)
+- [Voglio usare CIDRAM (v2) con una versione di PHP più vecchio di 7.2.0; Puoi aiutami?](#MINIMUM_PHP_VERSION_V2)
 - [Posso utilizzare un'installazione singola di CIDRAM per proteggere più domini?](#PROTECT_MULTIPLE_DOMAINS)
 - [Non voglio perdere tempo con l'installazione di questo e farlo funzionare con il mio sito web; Posso pagarti per farlo per me?](#PAY_YOU_TO_DO_IT)
 - [Posso assumere voi o uno degli sviluppatori di questo progetto per lavori privati?](#HIRE_FOR_PRIVATE_WORK)
@@ -1150,9 +1151,13 @@ Frequenza di aggiornamento varia a seconda delle file di firma in questione. Tut
 
 CIDRAM fornisce un mezzo per proprietari di siti web per bloccare il traffico indesiderato, ma è la responsabilità dei proprietari di siti web di decidere per se stessi come vogliono usare CIDRAM. Nel caso dei falsi positivi relativi alla firma file normalmente incluso con CIDRAM, correzioni possono essere fatte, ma per essere sbloccato da siti web specifici, è necessario prendere quella con i proprietari dei siti web in questione. Nei casi in cui vengono effettuate correzioni, almeno, avranno bisogno di aggiornare i propri file di firma e/o installazione, e in altri casi (come ad esempio, dove hanno modificato il loro installazione, creato le proprie firme personalizzate, ecc), la responsabilità di risolvere il problema è tutto loro, ed è completamente al di fuori del nostro controllo.
 
-#### <a name="MINIMUM_PHP_VERSION"></a>Voglio usare CIDRAM con una versione di PHP più vecchio di 5.4.0; Puoi aiutami?
+#### <a name="MINIMUM_PHP_VERSION"></a>Voglio usare CIDRAM (prima della v2) con una versione di PHP più vecchio di 5.4.0; Puoi aiutami?
 
-No. PHP 5.4.0 raggiunto EoL ("End of Life", o fine della vita) ufficiale nel 2014, e il supporto di sicurezza esteso è stato terminato nel 2015. Come della stesura di questo, è il 2017, e PHP 7.1.0 è già disponibile. In questo momento, il supporto è fornito per l'utilizzo di CIDRAM con PHP 5.4.0 e tutte le versioni di PHP più recenti disponibili, ma se si tenta di utilizzare CIDRAM con le versioni di PHP più vecchie, supporto non sarà fornito.
+No. PHP >= 5.4.0 è un requisito minimo per CIDRAM < v2.
+
+#### <a name="MINIMUM_PHP_VERSION_V2"></a>Voglio usare CIDRAM (v2) con una versione di PHP più vecchio di 7.2.0; Puoi aiutami?
+
+No. PHP >= 7.2.0 è un requisito minimo per CIDRAM v2.
 
 *Guarda anche: [Grafici di Compatibilità](https://maikuolan.github.io/Compatibility-Charts/).*
 
@@ -1502,4 +1507,4 @@ In alternativa, è disponibile una breve panoramica (non autorevole) di GDPR/DSG
 ---
 
 
-Ultimo Aggiornamento: 1 Dicembre 2018 (2018.12.01).
+Ultimo Aggiornamento: 14 Dicembre 2018 (2018.12.14).

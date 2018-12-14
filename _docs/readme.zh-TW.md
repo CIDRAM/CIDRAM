@@ -1075,7 +1075,8 @@ if ($CIDRAM['Hostname'] && $CIDRAM['Hostname'] !== $CIDRAM['BlockInfo']['IPAddr'
 - [什麼是簽名更新頻率？](#SIGNATURE_UPDATE_FREQUENCY)
 - [我在使用CIDRAM時遇到問題和我不知道該怎麼辦！​請幫忙！](#ENCOUNTERED_PROBLEM_WHAT_TO_DO)
 - [因為CIDRAM，​我被阻止從我想訪問的網站！​請幫忙！](#BLOCKED_WHAT_TO_DO)
-- [我想使用CIDRAM與早於5.4.0的PHP版本；​您能幫我嗎？](#MINIMUM_PHP_VERSION)
+- [我想使用CIDRAM（在v2之前）與早於5.4.0的PHP版本；​您能幫我嗎？](#MINIMUM_PHP_VERSION)
+- [我想使用CIDRAM（在v2期间）與早於7.2.0的PHP版本；​您能幫我嗎？](#MINIMUM_PHP_VERSION_V2)
 - [我可以使用單個CIDRAM安裝來保護多個域嗎？](#PROTECT_MULTIPLE_DOMAINS)
 - [我不想浪費時間安裝這個和確保它在我的網站上功能正常；我可以僱用您這樣做嗎？](#PAY_YOU_TO_DO_IT)
 - [我可以聘請您或這個項目的任何開發者私人工作嗎？](#HIRE_FOR_PRIVATE_WORK)
@@ -1151,9 +1152,13 @@ CIDRAM會阻止IP地址 | __假陽性__ | 真陽性（正確的推理）
 
 CIDRAM使網站所有者能夠阻止不良流量，​但網站所有者有責任為自己決定如何使用CIDRAM。​在關於默認簽名文件假陽性的情況下，​可以進行校正。​但關於從特定網站解除阻止，​您需要與相關網站的所有者進行溝通。​當進行校正時，​至少，​他們需要更新他們的簽名文件和/或安裝。​在其他情況下（例如，​當他們修改了他們的安裝，​當他們創建自己的自定義簽名，​等等），​解決您的問題的責任完全是他們的，​並完全不在我們的控制之內。
 
-#### <a name="MINIMUM_PHP_VERSION"></a>我想使用CIDRAM與早於5.4.0的PHP版本；​您能幫我嗎？
+#### <a name="MINIMUM_PHP_VERSION"></a>我想使用CIDRAM（在v2之前）與早於5.4.0的PHP版本；​您能幫我嗎？
 
-不能。​PHP 5.4.0於2014年達到官方EoL（『生命終止』）。​延長的安全支持在2015年終止。​這時候目前，​它是2017年，​和PHP 7.1.0已經可用。​目前，​有支持使用CIDRAM與PHP 5.4.0和所有可用的較新的PHP版本，​但不有支持使用CIDRAM與任何以前的PHP版本。
+不能。PHP >= 5.4.0是CIDRAM < v2的最低要求。
+
+#### <a name="MINIMUM_PHP_VERSION_V2"></a>我想使用CIDRAM（在v2期间）與早於7.2.0的PHP版本；​您能幫我嗎？
+
+不能。PHP >= 7.2.0是CIDRAM v2的最低要求。
 
 *也可以看看：​[兼容性圖表](https://maikuolan.github.io/Compatibility-Charts/)。*
 
@@ -1506,4 +1511,4 @@ CIDRAM不收集或處理任何信息用於營銷或廣告目的，既不銷售�
 ---
 
 
-最後更新：2018年12月1日。
+最後更新：2018年12月14日。

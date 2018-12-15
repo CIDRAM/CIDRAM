@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6.dat
 
-# Version: 2018.344.419
-# Last modified: 2018.12.11
+# Version: 2018.348.362
+# Last modified: 2018.12.15
 
 
 # ---
@@ -513,9 +513,8 @@ Tag: Webzilla B.V
 
 
 # ASN 53225 ("IPGLOBE DATACENTER").
-# %Listed, Google Malware Dashboard: 1.96%.
-# Stop Forum Spam (SFS) listings: 18.
-# Updated: 2016.05.15 / Checked: 2018.04.25
+# Stop Forum Spam (SFS) listings: 3.
+# Updated: 2016.05.15 / Checked: 2018.12.15
 
 2804:644::/32 Deny Cloud
 Origin: BR
@@ -2893,19 +2892,22 @@ Tag: Bradler & Krantz
 
 
 # ASN 34762 ("Combell NV").
-# %Listed, Google Malware Dashboard: 0.33%.
-# Updated: 2018.03.18 / Checked: 2018.04.25
+# %Listed, Google Malware Dashboard: 0.28%.
+# Updated: 2018.12.15
 
 2a00:1c98::/32 Deny Cloud
 2a00:7000::/32 Deny Cloud
 2a02:d08::/32 Deny Cloud
 2a06:efc0::/32 Deny Cloud
 2a07:ca80::/29 Deny Cloud
+2a0d:5040::/32 Deny Cloud
 Origin: BE
 2a00:1bd8::/32 Deny Cloud
+2a01:40e0::/32 Deny Cloud
 2a02:2858::/40 Deny Cloud
 2a02:2858:200::/39 Deny Cloud
 2a02:2858:400::/40 Deny Cloud
+2a03:5500::/31 Deny Cloud
 2a0a:640::/32 Deny Cloud
 Origin: NL
 Tag: Combell NV
@@ -2991,16 +2993,44 @@ Tag: ClaraNET LTD
 
 
 # ASN 43289 ("Trabia-Network S.R.L").
-# %Listed, Google Malware Dashboard: 0.36%.
-# Stop Forum Spam (SFS) listings: 26,364.
-# Updated: 2018.07.14
+# %Listed, Google Malware Dashboard: 0.05%.
+# Stop Forum Spam (SFS) listings: 36,310.
+# Updated: 2018.12.15
 
+2a02:e00:ffe8::/48 Deny Cloud
+Origin: DE
+2a05:bc00::/29 Deny Cloud
+2a06:80c0::/29 Deny Cloud
+2a06:8e40::/29 Deny Cloud
+2a06:8e80::/29 Deny Cloud
+2a06:a240::/29 Deny Cloud
+2a06:a2c0::/29 Deny Cloud
+2a06:e800::/29 Deny Cloud
+2a07:640::/29 Deny Cloud
+2a07:c80::/29 Deny Cloud
+2a07:17c0::/29 Deny Cloud
+2a07:2680::/29 Deny Cloud
+2a07:2880::/29 Deny Cloud
+2a07:2f40::/29 Deny Cloud
+2a07:3dc0::/29 Deny Cloud
+2a07:41c0::/29 Deny Cloud
+2a07:4240::/29 Deny Cloud
+2a07:5200::/29 Deny Cloud
+2a07:8000::/29 Deny Cloud
+2a07:8240::/29 Deny Cloud
+2a07:9d00::/29 Deny Cloud
+2a0a:3400::/29 Deny Cloud
+2a0a:cf80::/29 Deny Cloud
+2a0b:200::/29 Deny Cloud
+2a0b:7f40::/29 Deny Cloud
+2a0c:2b00::/29 Deny Cloud
+Origin: DK
 2403:280::/32 Deny Cloud
 Origin: HK
 2a00:1dc0::/29 Deny Cloud
 Origin: MD
-2a05:27c0::/29 Deny Cloud
-Origin: RU
+2a07:8800::/29 Deny Cloud
+Origin: UA
 Tag: Trabia-Network
 
 
@@ -4393,7 +4423,8 @@ Tag: vXchnge
 
 
 # ASN 34309 ("Link11 GmbH").
-# Updated: 2018.01.10 / Checked: 2018.04.30
+# No recent reports or bad activity detected. Possible candidate for future removal.
+# Updated: 2018.01.10 / Checked: 2018.12.15
 
 2001:678:3a8::/48 Deny Cloud
 2001:4d50::/32 Deny Cloud
@@ -4683,9 +4714,9 @@ Tag: Cloudie Limited
 
 
 # ASNs 31727, 62401 ("Node4 Limited").
-# %Listed, Google Malware Dashboard: 0.11% (AS31727).
-# Stop Forum Spam (SFS) listings: 248 (AS31727).
-# Updated: 2016.11.18 / Checked: 2018.07.14
+# %Listed, Google Malware Dashboard: 0.41% (AS31727).
+# Stop Forum Spam (SFS) listings: 267 (AS31727).
+# Updated: 2016.11.18 / Checked: 2018.12.15
 
 2a00:5600::/32 Deny Cloud
 2a00:f9c0::/32 Deny Cloud
@@ -4695,17 +4726,9 @@ Tag: Node4 Limited
 
 
 # ASN 200557 ("REGION40 LLC").
-# Stop Forum Spam (SFS) listings: 73,869.
-# Updated: 2016.11.25 / Checked: 2018.07.14
+# Stop Forum Spam (SFS) listings: 93,819.
+# Updated: 2018.12.15
 
-2a00:fd40:5::/48 Deny Cloud
-2a05:35c0::/48 Deny Cloud
-2a06:a600::/48 Deny Cloud
-2a06:bf40::/48 Deny Cloud
-2a07:4500::/48 Deny Cloud
-2a07:7700::/48 Deny Cloud
-2a07:8200::/48 Deny Cloud
-Origin: NL
 2a01:81a0::/48 Deny Cloud
 2a02:d0c2:2::/48 Deny Cloud
 2a02:ec41::/48 Deny Cloud
@@ -4720,12 +4743,11 @@ Tag: REGION40 LLC
 
 
 # ASN 29757 ("Webline Services Inc").
-# %Listed, Google Malware Dashboard: 1.08%.
-# Stop Forum Spam (SFS) listings: 13.
-# Updated: 2018.07.14
+# %Listed, Google Malware Dashboard: 1.19%.
+# Stop Forum Spam (SFS) listings: 10.
+# Updated: 2018.12.15
 
 2604:d680::/32 Deny Cloud
-2a0b:58c0::/29 Deny Cloud
 Origin: US
 Tag: Webline Services Inc
 
@@ -4786,9 +4808,9 @@ Tag: velia.net
 
 
 # ASN 38719 ("Dreamscape Networks Pty Ltd").
-# %Listed, Google Malware Dashboard: 0.34%.
-# Stop Forum Spam (SFS) listings: 409.
-# Updated: 2018.07.16
+# %Listed, Google Malware Dashboard: 0.25%.
+# Stop Forum Spam (SFS) listings: 570.
+# Updated: 2018.12.15
 
 2402:af00::/32 Deny Cloud
 2404:8280::/32 Deny Cloud
@@ -4799,6 +4821,8 @@ Origin: AU
 Origin: GB
 2405:df80::/32 Deny Cloud
 Origin: PH
+2a04:8b40::/29 Deny Cloud
+Origin: RU
 2400:8240::/32 Deny Cloud
 Origin: SG
 Tag: Dreamscape Networks
@@ -5771,14 +5795,15 @@ Tag: Cyberdyne S.A
 
 
 # ASN 2635 ("Automattic, Inc").
-# Unwanted requests detected by modsecurity, mostly in 192.0.64.0/18, reported to AbuseIPDB. No listings on SFS et al
-# currently though. Provides various cloud services; Low chance of false positives AFAICT. Added here by user request.
-# May potentially block mShot (deprecated WordPress plugin). Won't block any humans though. ASN also announces bogons
-# via 10.12.*.* (these should be removed from the final aggregate when updating).
-# Updated: 2018.04.22 / Modified: 2018.04.25
+# Unwanted requests first detected by ModSecurity, mostly in 192.0.64.0/18. Low chance of false positives AFAICT. Added
+# here by user request. May potentially block mShot (deprecated WordPress plugin). Shouldn't block humans though. ASN
+# also announces bogons via 10.12.*.* (these should be removed from the final aggregate when updating). Signatures run
+# through rules_specific.php to avoid mistakenly blocking JetPack (WordPress plugin; still actively used throughout).
+# Stop Forum Spam (SFS) listings: 1.
+# Updated: 2018.12.15
 
-2403:6b80::/46 Run rules_specific.php
-2403:6b80:4::/48 Run rules_specific.php
+2403:6b80::/45 Run rules_specific.php
+2403:6b80:8::/47 Run rules_specific.php
 2403:6b80:ffff::/48 Run rules_specific.php
 Origin: AU
 2801:80:1610::/48 Run rules_specific.php
@@ -5786,8 +5811,7 @@ Origin: BR
 2a04:fa80::/45 Run rules_specific.php
 2a04:fa87:fffe::/47 Run rules_specific.php
 Origin: IE
-2620:115:c000::/47 Run rules_specific.php
-2620:115:c002::/48 Run rules_specific.php
+2620:115:c000::/46 Run rules_specific.php
 2620:115:c008::/45 Run rules_specific.php
 Origin: US
 2001:43f8:bf0::/48 Run rules_specific.php

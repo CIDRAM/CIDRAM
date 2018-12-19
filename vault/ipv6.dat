@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6.dat
 
-# Version: 2018.348.362
-# Last modified: 2018.12.15
+# Version: 2018.352.270
+# Last modified: 2018.12.19
 
 
 # ---
@@ -709,7 +709,7 @@ Tag: Limestone Networks
 # ASN 13301 ("United Gameserver GmbH").
 # Caught trying to DDoS SFS.
 # %Listed, Google Malware Dashboard: 0.17%.
-# Updated: 2016.05.13 / Checked: 2018.04.26
+# Updated: 2016.05.13 / Checked: 2018.12.19
 
 2a01:480::/32 Deny Cloud
 Origin: DE
@@ -1287,9 +1287,9 @@ Tag: Private Layer INC
 
 # ASN 40676 ("Psychz Networks").
 # Ranges change frequently / Should update often.
-# %Listed, Google Malware Dashboard: 4.31%.
-# Stop Forum Spam (SFS) listings: 13,466.
-# Updated: 2018.07.21
+# %Listed, Google Malware Dashboard: 2.60%.
+# Stop Forum Spam (SFS) listings: 14,538.
+# Updated: 2018.12.19
 
 2001:df2:c600::/48 Deny Cloud
 Origin: AU
@@ -1297,21 +1297,24 @@ Origin: AU
 Origin: CL
 2a07:9944:1c::/48 Deny Cloud
 Origin: EU
-2a0a:6700:7::/48 Deny Cloud
 2a0a:6700::/45 Deny Cloud
 Origin: GB
 2a06:a006:c5::/48 Deny Cloud
 2a06:a006:f1::/48 Deny Cloud
 Origin: IS
-2402:d0c0::/32 Deny Cloud
+2402:d0c0::/47 Deny Cloud
 Origin: SG
 2602:fe90::/40 Deny Cloud
+2602:fea5:ffd::/48 Deny Cloud
 2602:ff96:5::/48 Deny Cloud
 2602:ff96:9::/48 Deny Cloud
 2602:ff96:12::/48 Deny Cloud
 2602:ff96:15::/48 Deny Cloud
 2602:ff96:16::/48 Deny Cloud
+2602:ff96:1a::/48 Deny Cloud
 2602:ff96:1f::/48 Deny Cloud
+2602:ff96:81::/48 Deny Cloud
+2602:ff96:82::/47 Deny Cloud
 2602:ff96:1fe::/48 Deny Cloud
 2602:ffb0:11::/48 Deny Cloud
 2602:ffc5:10b::/48 Deny Cloud
@@ -1320,7 +1323,6 @@ Origin: SG
 2602:ffc5:120::/43 Deny Cloud
 2604:980:1::/48 Deny Cloud
 2604:6600::/32 Deny Cloud
-2605:5200:c91a::/48 Deny Cloud
 2605:6c80:6::/47 Deny Cloud
 2605:6c80:a::/48 Deny Cloud
 2606:1780::/32 Deny Cloud
@@ -3231,6 +3233,17 @@ Origin: US
 Tag: VegasNAP, LLC
 
 
+# ASN 34702 ("Aktsiaselts WaveCom").
+# %Listed, Google Malware Dashboard: 0.21%.
+# Stop Forum Spam (SFS) listings: 1,587.
+# Updated: 2018.12.19
+
+2a01:97a0::/32 Deny Cloud
+2a0c:36c7::/32 Deny Cloud
+Origin: EE
+Tag: Aktsiaselts
+
+
 # ASN 54290 ("Hostwinds LLC").
 # %Listed, Google Malware Dashboard: 0.88%.
 # Stop Forum Spam (SFS) listings: 1,277.
@@ -3283,9 +3296,9 @@ Tag: Henderson
 
 
 # ASN 15967 ("Nazwa.pl Sp.z.o.o").
-# %Listed, Google Malware Dashboard: 1.99%.
-# Stop Forum Spam (SFS) listings: 89.
-# Updated: 2016.04.23 / Checked: 2018.04.26
+# %Listed, Google Malware Dashboard: 0.89%.
+# Stop Forum Spam (SFS) listings: 101.
+# Updated: 2016.04.23 / Checked: 2018.12.19
 
 2a01:6100::/32 Deny Cloud
 Origin: PL
@@ -3867,9 +3880,9 @@ Tag: 23Media GmbH
 
 
 # ASN 49544 ("i3d B.V").
-# %Listed, Google Malware Dashboard: 0.20%.
-# Stop Forum Spam (SFS) listings: 138.
-# Updated: 2018.07.21
+# %Listed, Google Malware Dashboard: 0.09%.
+# Stop Forum Spam (SFS) listings: 242.
+# Updated: 2018.12.19
 
 2403:1480:9000::/36 Deny Cloud
 Origin: AU
@@ -3877,20 +3890,18 @@ Origin: AU
 Origin: EU
 2402:c080::/31 Deny Cloud
 Origin: JP
-2001:678:198::/48 Deny Cloud
 2a00:1630::/29 Deny Cloud
 2a00:1708::/32 Deny Cloud
 2a00:1d20::/32 Deny Cloud
 2a03:3a60::/32 Deny Cloud
 2a04:c600::/29 Deny Cloud
 2a05:6440::/29 Deny Cloud
+2a09:4f80:1::/48 Deny Cloud
 2a0a:5980::/29 Deny Cloud
 2a0b:1b00::/29 Deny Cloud
-2a0b:2640::/31 Deny Cloud
 2a0b:f380::/48 Deny Cloud
+2a0b:f380:3e8::/48 Deny Cloud
 Origin: NL
-2a0c:d480::/29 Deny Cloud
-Origin: RU
 2402:b180:9000::/36 Deny Cloud
 Origin: SG
 2605:7300::/31 Deny Cloud

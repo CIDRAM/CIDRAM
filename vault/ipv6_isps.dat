@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_isps.dat
 
-# Version: 2018.352.270
-# Last modified: 2018.12.19
+# Version: 2019.1.175
+# Last modified: 2019.01.02
 
 
 # ---
@@ -137,8 +137,8 @@ recaptcha:
 
 
 # ASN 48359 ("Hesabgar Pardaz Gharb Company").
-# Stop Forum Spam (SFS) listings: 5.
-# Updated: 2018.07.25
+# Stop Forum Spam (SFS) listings: 183.
+# Updated: 2018.07.25 / Checked: 2019.01.02
 
 2a04:acc0::/29 Deny Spam
 Origin: IR
@@ -634,7 +634,7 @@ Tag: ALEXHOST SRL
 
 
 # ASNs 29656, 57872, 60558, 207134 ("PHOENIX NAP, LLC").
-# Updated: 2017.07.08 / Checked: 2018.07.25
+# Updated: 2017.07.08 / Checked: 2019.01.02
 
 2a00:8860::/32 Deny Generic
 Origin: EU
@@ -1285,11 +1285,11 @@ recaptcha:
 
 
 # ASN 8402 ("OJSC Vimpelcom").
-# %Listed, Google Malware Dashboard: 0.32%.
-# Stop Forum Spam (SFS) listings: 5,075.
+# %Listed, Google Malware Dashboard: 0.69%.
+# Stop Forum Spam (SFS) listings: 2,128.
 # Similarly to with the Rostelecom CIDRs, blocking the entirety of all "Vimpelcom" ASNs could be problematic. Instead,
 # we'll try to limit listings to those CIDRs known to be problematic (hacking events, spamming events, etc).
-# Updated: 2017.06.08 / Checked: 2018.05.11
+# Updated: 2017.06.08 / Checked: 2019.01.01
 
 2a00:18c0::/32 Deny Generic
 Origin: RU
@@ -1358,7 +1358,7 @@ recaptcha:
 
 # ASNs 42682, 51570 ('JSC "ER-Telecom Holding"').
 # Stop Forum Spam (SFS) listings: 17,958 (AS42682), 1,886 (AS51570).
-# Updated: 2018.07.25
+# Updated: 2018.07.25 / Checked: 2019.01.02
 
 2a02:2698:4c00::/38 Deny Spam
 2a02:2698:6c00::/38 Deny Spam
@@ -1446,15 +1446,17 @@ recaptcha:
 # Some risk of false positives exists. To reduce this, when updating:
 # - Remove all subordinates of 38.0.0.0/8 from final aggregate (already blocked elsewhere and don't want duplicates).
 # - "Secure Internet LLC" mark as proxy (not generic).
-# - Section still under review, and further work needed to minimise false positives.
-# %Listed, Google Malware Dashboard: 0.52%.
-# Stop Forum Spam (SFS) listings: 51,186.
-# Updated: 2018.07.16
+# Stop Forum Spam (SFS) listings: 101,346.
+# Updated: 2019.01.01
 
+2a03:f80:65::/48 Deny Generic
+Origin: AT
 2001:978:2305::/48 Deny Generic
 2001:978:3400::/48 Deny Generic
 2a0b:9040::/29 Deny Generic
 Origin: DE
+2a0c:36c2::/32 Deny Generic
+Origin: EE
 2a01:300::/29 Deny Generic
 2a05:9f41:1a::/48 Deny Generic
 Origin: EU
@@ -1482,16 +1484,19 @@ Origin: GB
 2a00:55a0:f900::/40 Deny Generic
 2a00:55a0:ff00::/40 Deny Generic
 Origin: IL
+2a03:f80:81::/48 Deny Generic
+Origin: JP
+2a0d:db00::/32 Deny Generic
+Origin: LT
+2001:678:8b4::/48 Deny Generic
 2a04:9dc0::/29 Deny Generic
-2a07:9200::/46 Deny Generic
+2a07:9200::/47 Deny Generic
+2a07:9200:3::/48 Deny Generic
 2a07:9200:4::/47 Deny Generic
 2a07:9200:6::/48 Deny Generic
+2a0d:9980::/29 Deny Generic
 Origin: RO
-2a0d:db00::/32 Deny Generic
-Origin: RU
 2001:550:1d05::/48 Deny Generic
-2604:17c0::/41 Deny Generic
-2604:17c0:80::/42 Deny Generic
 2607:6980:e710::/44 Deny Generic
 2a0d:5600:1::/48 Deny Generic
 2a0d:5600:2::/47 Deny Generic
@@ -1502,6 +1507,9 @@ Origin: RU
 2a0d:5600:14::/46 Deny Generic
 2a0d:5600:18::/48 Deny Generic
 2a0d:5600:20::/46 Deny Generic
+2a0d:5600:24::/47 Deny Generic
+2a0d:5600:32::/48 Deny Generic
+2a0d:5600:a32::/48 Deny Generic
 Origin: US
 Tag: M247 Ltd
 ---
@@ -1562,15 +1570,12 @@ recaptcha:
 
 # ASN 13249 ("IT Systems LLC").
 # Caught trying to hack into WordPress sites.
-# Stop Forum Spam (SFS) listings: 2.
-# Updated: 2018.07.28
+# Stop Forum Spam (SFS) listings: 4.
+# Updated: 2018.07.28 / Checked: 2019.01.02
 
 2a00:1d88::/32 Deny Generic
 Origin: UA
 Tag: IT Systems LLC
----
-recaptcha:
- enabled: true
 
 
 # ASN 31343 ("Intertelecom Ltd").

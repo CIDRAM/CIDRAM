@@ -4,7 +4,7 @@
 - 1. [VORWORT](#SECTION1)
 - 2. [INSTALLATION](#SECTION2)
 - 3. [BENUTZUNG](#SECTION3)
-- 4. [FRONT-END-MANAGEMENT](#SECTION4)
+- 4. [FRONTEND-MANAGEMENT](#SECTION4)
 - 5. [IM PAKET ENTHALTENE DATEIEN](#SECTION5)
 - 6. [EINSTELLUNGEN](#SECTION6)
 - 7. [SIGNATURENFORMAT](#SECTION7)
@@ -67,15 +67,15 @@ Oder in der `.htaccess` Datei:
 
 #### 2.1 INSTALLATION MIT COMPOSER
 
-Da [CIDRAM bei Packagist registriert ist](https://packagist.org/packages/cidram/cidram), können sie CIDRAM auch mittels composer installieren. Allerdings müssen sie immernoch die Hooks und die Konfiguration vorbereiten. Siehe manuell installieren, Schritt 2, 4, und 5.
+Da [CIDRAM bei Packagist registriert ist](https://packagist.org/packages/cidram/cidram), können Sie CIDRAM auch mittels Composer installieren. Allerdings müssen sie immernoch die Hooks und die Konfiguration vorbereiten. Siehe manuell installieren, Schritt 2, 4 und 5.
 
 `composer require cidram/cidram`
 
 #### 2.2 FÜR WORDPRESS INSTALLIEREN
 
-Wenn Sie CIDRAM mit WordPress verwenden möchten, können Sie alle oben genannten Anweisungen ignorieren. Da [CIDRAM als Plugin in der WordPress Plugin Datenbank registriert ist](https://wordpress.org/plugins/cidram/) können Sie CIDRAM direkt aus dem Plugins-Dashboard installieren. CIRDAM kann auf dem selben Wege wie jedes andere Plugin installiert werden, es sind keine weiteren Schritte erforderlich. Genauso wie bei den anderen Installationsmethoden, können Ihre Installation anpassen, indem Sie den Inhalt der `config.ini`-Datei anpassen. Alternativ können sie auch die Front-End-Konfigurationsseite verwenden. Wenn Sie das Front-End für CIDRAM aktivieren und CIDRAM mit der Front-End-Aktualisierungen-Seite aktualisieren, dies wird automatisch mit den Plugin-Versionsinformationen synchronisiert, die im Plugins-Dashboard angezeigt werden.
+Wenn Sie CIDRAM mit WordPress verwenden möchten, können Sie alle oben genannten Anweisungen ignorieren. Da [CIDRAM als Plugin in der WordPress Plugin Datenbank registriert ist](https://wordpress.org/plugins/cidram/) können Sie CIDRAM direkt aus dem Plugins-Dashboard installieren. CIRDAM kann auf dem selben Wege wie jedes andere Plugin installiert werden, es sind keine weiteren Schritte erforderlich. Genauso wie bei den anderen Installationsmethoden, können Ihre Installation anpassen, indem Sie den Inhalt der `config.ini`-Datei anpassen. Alternativ können Sie auch die Frontend-Konfigurationsseite verwenden. Wenn Sie das Frontend für CIDRAM aktivieren und CIDRAM mit der Frontend-Aktualisierungsseite aktualisieren, dies wird automatisch mit den Plugin-Versionsinformationen synchronisiert, die im Plugins-Dashboard angezeigt werden.
 
-*Warnung: Die Aktualisierung von CIDRAM über das Plugins-Dashboard führt zu einer sauberen Installation! Wenn Sie Ihre Installation angepasst haben (modifizierte Konfiguration, installierte Module, u.s.w.), gehen Anpassungen bei einer Aktualisierung über das Plugins-Dashboard verloren! Protokolldateien werden dabei ebenfalls gelöscht! Um Protokolldateien und Anpassungen zu erhalten, aktualisieren Sie CIDRAM über die CIDRAM-Front-End-Aktualisierungen-Seite.*
+*Warnung: Die Aktualisierung von CIDRAM über das Plugins-Dashboard führt zu einer sauberen Installation! Wenn Sie Ihre Installation angepasst haben (modifizierte Konfiguration, installierte Module, u.s.w.), gehen Anpassungen bei einer Aktualisierung über das Plugins-Dashboard verloren! Protokolldateien werden dabei ebenfalls gelöscht! Um Protokolldateien und Anpassungen zu erhalten, aktualisieren Sie CIDRAM über die CIDRAM-Frontend-Aktualisierungsseite.*
 
 ---
 
@@ -88,20 +88,20 @@ Sie können Ihre Konfiguration anpassen, und Sie können welche CIDRs blockiert 
 
 Wenn Sie Falsch-Positivs begegnen, bitte kontaktieren Sie mich zu informieren. *(Beziehen auf: [Was ist ein "Falsch-Positiv"?](#WHAT_IS_A_FALSE_POSITIVE)).*
 
-CIDRAM kann manuell oder über das Front-End aktualisiert werden. CIDRAM kann auch über Composer oder WordPress aktualisiert werden, wenn es ursprünglich mit diesen Mitteln installiert wurde.
+CIDRAM kann manuell oder über das Frontend aktualisiert werden. CIDRAM kann auch über Composer oder WordPress aktualisiert werden, wenn es ursprünglich mit diesen Mitteln installiert wurde.
 
 ---
 
 
-### 4. <a name="SECTION4"></a>FRONT-END-MANAGEMENT
+### 4. <a name="SECTION4"></a>FRONTEND-MANAGEMENT
 
-#### 4.0 WAS IST DAS FRONT-END.
+#### 4.0 WAS IST DAS FRONTEND.
 
-Das Front-End bietet eine bequeme und einfache Möglichkeit, für Ihre CIDRAM-Installation zu pflegen, zu verwalten und zu aktualisieren. Sie können Protokolldateien über die Protokollseite anzeigen, teilen und herunterladen, Sie können die Konfiguration über die Konfigurationsseite ändern, Sie können Komponenten über die Updates-Seite installieren und deinstallieren, und Sie können Dateien in Ihrem vault über den Dateimanager hochladen, herunterladen und ändern.
+Das Frontend bietet eine bequeme und einfache Möglichkeit, für Ihre CIDRAM-Installation zu pflegen, zu verwalten und zu aktualisieren. Sie können Protokolldateien über die Protokollseite anzeigen, teilen und herunterladen, Sie können die Konfiguration über die Konfigurationsseite ändern, Sie können Komponenten über die Aktualisierungsseite installieren und deinstallieren, und Sie können Dateien in Ihrem vault über den Dateimanager hochladen, herunterladen und ändern.
 
-Das Front-End ist standardmäßig deaktiviert, um unautorisiert Zugriff zu verhindern (unautorisiert Zugriff könnte erhebliche Konsequenzen für Ihre Website und ihre Sicherheit haben). Aktivieren Sie es, indem Sie die unten aufgeführten Anweisungen befolgen.
+Das Frontend ist standardmäßig deaktiviert, um unautorisiert Zugriff zu verhindern (unautorisiert Zugriff könnte erhebliche Konsequenzen für Ihre Website und ihre Sicherheit haben). Aktivieren Sie es, indem Sie die unten aufgeführten Anweisungen befolgen.
 
-#### 4.1 WIE AKTIVIEREN SIE DAS FRONT-END.
+#### 4.1 WIE AKTIVIEREN SIE DAS FRONTEND.
 
 1) Finden Sie die `disable_frontend`-Direktive in der Datei `config.ini`, und setzen Sie diese auf `false` (standardmäßig `true`).
 
@@ -109,19 +109,19 @@ Das Front-End ist standardmäßig deaktiviert, um unautorisiert Zugriff zu verhi
 
 3) Loggen Sie sich mit dem standardmäßig Benutzernamen und Passwort ein (admin/password).
 
-Hinweis: **Um unautorisierten zugriff auf das Front-End zu verhindern, sollten sie sofort nach dem ersten Login ihren Benutzernamen und Passwort ändern. Dies ist notwendig, da mithilfe des Front-End möglich ist, beliebigen PHP-Code auf ihre Webseite hochzuladen.**
+Hinweis: **Um unautorisierten zugriff auf das Frontend zu verhindern, sollten sie sofort nach dem ersten Login ihren Benutzernamen und Passwort ändern. Dies ist notwendig, da mithilfe des Frontend möglich ist, beliebigen PHP-Code auf Ihre Webseite hochzuladen.**
 
-Für eine optimale Sicherheit wird außerdem empfohlen, die "Zwei-Faktor-Authentifizierung" für alle Front-End-Konten zu aktivieren (Anweisungen unten).
+Für eine optimale Sicherheit wird außerdem empfohlen, die "Zwei-Faktor-Authentifizierung" für alle Frontend-Konten zu aktivieren (Anweisungen unten).
 
-#### 4.2 WIE MAN DAS FRONT-END BENUTZT.
+#### 4.2 WIE MAN DAS FRONTEND BENUTZT.
 
-Anweisungen sind auf jeder Seite des Front-Ends vorhanden, um die richtige Verwendung und den vorgesehenen Zweck zu erläutern. Wenn Sie weitere Erklärungen oder spezielle Hilfe benötigen, wenden Sie sich bitte an den Support. Alternativ gibt es einige Videos auf YouTube, die durch Demonstration helfen könnten.
+Anweisungen sind auf jeder Seite des Frontends vorhanden, um die richtige Verwendung und den vorgesehenen Zweck zu erläutern. Wenn Sie weitere Erklärungen oder spezielle Hilfe benötigen, wenden Sie sich bitte an den Support. Alternativ gibt es einige Videos auf YouTube, die durch Demonstration helfen könnten.
 
 #### 4.3 ZWEI-FAKTOR-AUTHENTIFIZIERUNG
 
-Es ist möglich, das Front-End sicherer zu machen, indem Sie die Zwei-Faktor-Authentifizierung ("2FA") aktivieren. Wenn Sie sich bei einem 2FA-aktivierten Konto eingeloggt, wird eine E-Mail an die zugehörige E-Mail-Adresse gesendet. Diese E-Mail enthält einen "2FA-Code", den der Nutzer zusätzlich zum Benutzernamen und Passwort eingeben muss, um sich mit diesem Konto einloggen zu können. Das bedeutet, dass das Erlangen eines Kontopassworts nicht ausreicht, um ein Konto zu übernehmen, da sie auch bereits Zugriff auf die mit diesem Konto verknüpfte E-Mail-Adresse haben müssen, um den mit der Sitzung verbundenen 2FA-Code empfangen und verwenden zu können, dadurch wird das Front-End sicherer.
+Es ist möglich, das Frontend sicherer zu machen, indem Sie die Zwei-Faktor-Authentifizierung ("2FA") aktivieren. Wenn Sie sich bei einem 2FA-aktivierten Konto eingeloggt, wird eine E-Mail an die zugehörige E-Mail-Adresse gesendet. Diese E-Mail enthält einen "2FA-Code", den der Nutzer zusätzlich zum Benutzernamen und Passwort eingeben muss, um sich mit diesem Konto einloggen zu können. Das bedeutet, dass das Erlangen eines Kontopassworts nicht ausreicht, um ein Konto zu übernehmen, da sie auch bereits Zugriff auf die mit diesem Konto verknüpfte E-Mail-Adresse haben müssen, um den mit der Sitzung verbundenen 2FA-Code empfangen und verwenden zu können, dadurch wird das Frontend sicherer.
 
-Um die Zwei-Faktor-Authentifizierung zu aktivieren, verwenden Sie zunächst die Front-End-Aktualisierungsseite, um die PHPMailer-Komponente zu installieren. CIDRAM verwendet PHPMailer zum Senden von E-Mails. Hinweis: Obwohl CIDRAM selbst mit `PHP >= 5.4.0` kompatibel ist, benötigt PHPMailer `PHP >= 5.5.0`. Daher ist eine Zwei-Faktor-Authentifizierung für das CIDRAM-Front-End auf `PHP 5.4` CIDRAM Installationen nicht möglich.
+Um die Zwei-Faktor-Authentifizierung zu aktivieren, verwenden Sie zunächst die Frontend-Aktualisierungsseite, um die PHPMailer-Komponente zu installieren. CIDRAM verwendet PHPMailer zum Senden von E-Mails. Hinweis: Obwohl CIDRAM selbst mit `PHP >= 5.4.0` kompatibel ist, benötigt PHPMailer `PHP >= 5.5.0`. Daher ist eine Zwei-Faktor-Authentifizierung für das CIDRAM-Frontend auf `PHP 5.4` CIDRAM Installationen nicht möglich.
 
 Nachdem Sie PHPMailer installiert haben, müssen Sie die Konfigurationsdirektiven für PHPMailer über die CIDRAM-Konfigurationsseite oder Konfigurationsdatei ausfüllen. Weitere Informationen zu diesen Konfigurationsanweisungen finden Sie im [Konfigurationsabschnitt](#SECTION6) dieses Dokuments. Nachdem Sie die PHPMailer-Konfigurationsdirektiven gefüllt haben, setzen Sie `Enable2FA` auf `true`. Die Zwei-Faktor-Authentifizierung sollte jetzt aktiviert sein.
 
@@ -156,111 +156,111 @@ Datei | Beschreibung
 /_docs/readme.zh-TW.md | Chinesische Dokumentation (traditionell).
 /_docs/readme.zh.md | Chinesische Dokumentation (vereinfacht).
 /vault/ | Vault-Verzeichnis (beinhaltet verschiedene Dateien).
-/vault/fe_assets/ | Front-End-Daten.
+/vault/fe_assets/ | Frontend-Daten.
 /vault/fe_assets/.htaccess | Ein Hypertext-Access-Datei (in diesem Fall zum Schutz von sensiblen Dateien des Scripts vor einem nicht authorisierten Zugriff).
 /vault/fe_assets/_2fa.html | Ein HTML-Template die verwendet wird wenn der Benutzer nach einem 2FA-Code gefragt wird.
-/vault/fe_assets/_accounts.html | Ein HTML-Template für das Front-End Konten-Seite.
-/vault/fe_assets/_accounts_row.html | Ein HTML-Template für das Front-End Konten-Seite.
-/vault/fe_assets/_aux.html | Ein HTML-Template für das Front-End Hilfsregeln-Seite.
-/vault/fe_assets/_cache.html | Ein HTML-Template für die Front-End Datencache-Seite.
+/vault/fe_assets/_accounts.html | Ein HTML-Template für das Frontend Kontenseite.
+/vault/fe_assets/_accounts_row.html | Ein HTML-Template für das Frontend Kontenseite.
+/vault/fe_assets/_aux.html | Ein HTML-Template für das Frontend Hilfsregeln-Seite.
+/vault/fe_assets/_cache.html | Ein HTML-Template für die Frontend Datencache-Seite.
 /vault/fe_assets/_cidr_calc.html | Ein HTML-Template für den CIDR-Rechner.
 /vault/fe_assets/_cidr_calc_row.html | Ein HTML-Template für den CIDR-Rechner.
-/vault/fe_assets/_config.html | Ein HTML-Template für die Front-End Konfiguration-Seite.
-/vault/fe_assets/_config_row.html | Ein HTML-Template für die Front-End Konfiguration-Seite.
+/vault/fe_assets/_config.html | Ein HTML-Template für die Frontend-Konfigurationsseite.
+/vault/fe_assets/_config_row.html | Ein HTML-Template für die Frontend-Konfigurationsseite.
 /vault/fe_assets/_files.html | Ein HTML-Template für den Dateimanager.
 /vault/fe_assets/_files_edit.html | Ein HTML-Template für den Dateimanager.
 /vault/fe_assets/_files_rename.html | Ein HTML-Template für den Dateimanager.
 /vault/fe_assets/_files_row.html | Ein HTML-Template für den Dateimanager.
-/vault/fe_assets/_home.html | Ein HTML-Template für das Front-End Startseite.
+/vault/fe_assets/_home.html | Ein HTML-Template für das Frontend Startseite.
 /vault/fe_assets/_ip_aggregator.html | Ein HTML-Template für den IP-Aggregator.
 /vault/fe_assets/_ip_test.html | Ein HTML-Template für die IP-Test-Seite.
 /vault/fe_assets/_ip_test_row.html | Ein HTML-Template für die IP-Test-Seite.
 /vault/fe_assets/_ip_tracking.html | Ein HTML-Template für die IP-Tracking-Seite.
 /vault/fe_assets/_ip_tracking_row.html | Ein HTML-Template für die IP-Tracking-Seite.
-/vault/fe_assets/_login.html | Ein HTML-Template für die Front-End Einloggen-Seite.
-/vault/fe_assets/_logs.html | Ein HTML-Template für die Front-End Protokolldateien-Seite.
-/vault/fe_assets/_nav_complete_access.html | Ein HTML-Template für die Front-End Navigation-Links, für alle mit vollständiger Zugriff.
-/vault/fe_assets/_nav_logs_access_only.html | Ein HTML-Template für die Front-End Navigation-Links, für alle mit Zugriff nur auf Protokolldateien.
-/vault/fe_assets/_range.html | Ein HTML-Template für die Front-End Bereichstische-Seite.
-/vault/fe_assets/_range_row.html | Ein HTML-Template für die Front-End Bereichstische-Seite.
+/vault/fe_assets/_login.html | Ein HTML-Template für die Frontend Einloggen-Seite.
+/vault/fe_assets/_logs.html | Ein HTML-Template für die Frontend Protokolldateien-Seite.
+/vault/fe_assets/_nav_complete_access.html | Ein HTML-Template für die Frontend-Navigationslinks, für alle mit vollständiger Zugriff.
+/vault/fe_assets/_nav_logs_access_only.html | Ein HTML-Template für die Frontend-Navigationslinks, für alle mit Zugriff nur auf Protokolldateien.
+/vault/fe_assets/_range.html | Ein HTML-Template für die Frontend-Bereichstische-Seite.
+/vault/fe_assets/_range_row.html | Ein HTML-Template für die Frontend-Bereichstische-Seite.
 /vault/fe_assets/_sections.html | Eine HTML-Template für die Sektionsliste.
-/vault/fe_assets/_statistics.html | Ein HTML-Template für die Front-End Statistikseite.
-/vault/fe_assets/_updates.html | Ein HTML-Template für die Front-End Aktualisierungen-Seite.
-/vault/fe_assets/_updates_row.html | Ein HTML-Template für die Front-End Aktualisierungen-Seite.
-/vault/fe_assets/frontend.css | CSS-Stylesheet für das Front-End.
-/vault/fe_assets/frontend.dat | Datenbank für das Front-End (Enthält Kontoinformationen, Sitzungsinformationen, und dem Cache; nur erzeugt wenn das Frontend aktiviert und verwendet wird).
+/vault/fe_assets/_statistics.html | Ein HTML-Template für die Frontend-Statistikseite.
+/vault/fe_assets/_updates.html | Ein HTML-Template für die Frontend-Aktualisierungsseite.
+/vault/fe_assets/_updates_row.html | Ein HTML-Template für die Frontend-Aktualisierungsseite.
+/vault/fe_assets/frontend.css | CSS-Stylesheet für das Frontend.
+/vault/fe_assets/frontend.dat | Datenbank für das Frontend (Enthält Kontoinformationen, Sitzungsinformationen, und dem Cache; nur erzeugt wenn das Frontend aktiviert und verwendet wird).
 /vault/fe_assets/frontend.dat.safety | Als Sicherheitsmechanismus generiert wenn es benötigt wird.
-/vault/fe_assets/frontend.html | Die Haupt-HTML-Template-Datei für das Front-End.
-/vault/fe_assets/icons.php | Ikonen-Handler (die vom Front-End-Dateimanager verwendet wird).
-/vault/fe_assets/pips.php | Pips-Handler (die vom Front-End-Dateimanager verwendet wird).
-/vault/fe_assets/scripts.js | Enthält Front-End-JavaScript-Daten.
+/vault/fe_assets/frontend.html | Die Haupt-HTML-Template-Datei für das Frontend.
+/vault/fe_assets/icons.php | Ikonen-Handler (die vom Frontend-Dateimanager verwendet wird).
+/vault/fe_assets/pips.php | Pips-Handler (die vom Frontend-Dateimanager verwendet wird).
+/vault/fe_assets/scripts.js | Enthält Frontend-JavaScript-Daten.
 /vault/lang/ | Enthält Sprachdaten für CIDRAM.
 /vault/lang/.htaccess | Ein Hypertext-Access-Datei (in diesem Fall zum Schutz von sensiblen Dateien des Scripts vor einem nicht authorisierten Zugriff).
 /vault/lang/lang.ar.cli.php | Arabische Sprachdateien für CLI.
-/vault/lang/lang.ar.fe.php | Arabische Sprachdateien für das Front-End.
+/vault/lang/lang.ar.fe.php | Arabische Sprachdateien für das Frontend.
 /vault/lang/lang.ar.php | Arabische Sprachdateien.
 /vault/lang/lang.bn.cli.php | Bangla Sprachdateien für CLI.
-/vault/lang/lang.bn.fe.php | Bangla Sprachdateien für das Front-End.
+/vault/lang/lang.bn.fe.php | Bangla Sprachdateien für das Frontend.
 /vault/lang/lang.bn.php | Bangla Sprachdateien.
 /vault/lang/lang.de.cli.php | Deutsche Sprachdateien für CLI.
-/vault/lang/lang.de.fe.php | Deutsche Sprachdateien für das Front-End.
+/vault/lang/lang.de.fe.php | Deutsche Sprachdateien für das Frontend.
 /vault/lang/lang.de.php | Deutsche Sprachdateien.
 /vault/lang/lang.en.cli.php | Englische Sprachdateien für CLI.
-/vault/lang/lang.en.fe.php | Englische Sprachdateien für das Front-End.
+/vault/lang/lang.en.fe.php | Englische Sprachdateien für das Frontend.
 /vault/lang/lang.en.php | Englische Sprachdateien.
 /vault/lang/lang.es.cli.php | Spanische Sprachdateien für CLI.
-/vault/lang/lang.es.fe.php | Spanische Sprachdateien für das Front-End.
+/vault/lang/lang.es.fe.php | Spanische Sprachdateien für das Frontend.
 /vault/lang/lang.es.php | Spanische Sprachdateien.
 /vault/lang/lang.fr.cli.php | Französische Sprachdateien für CLI.
-/vault/lang/lang.fr.fe.php | Französische Sprachdateien für das Front-End.
+/vault/lang/lang.fr.fe.php | Französische Sprachdateien für das Frontend.
 /vault/lang/lang.fr.php | Französische Sprachdateien.
 /vault/lang/lang.hi.cli.php | Hindi Sprachdateien für CLI.
-/vault/lang/lang.hi.fe.php | Hindi Sprachdateien für das Front-End.
+/vault/lang/lang.hi.fe.php | Hindi Sprachdateien für das Frontend.
 /vault/lang/lang.hi.php | Hindi Sprachdateien.
 /vault/lang/lang.id.cli.php | Indonesische Sprachdateien für CLI.
-/vault/lang/lang.id.fe.php | Indonesische Sprachdateien für das Front-End.
+/vault/lang/lang.id.fe.php | Indonesische Sprachdateien für das Frontend.
 /vault/lang/lang.id.php | Indonesische Sprachdateien.
 /vault/lang/lang.it.cli.php | Italienische Sprachdateien für CLI.
-/vault/lang/lang.it.fe.php | Italienische Sprachdateien für das Front-End.
+/vault/lang/lang.it.fe.php | Italienische Sprachdateien für das Frontend.
 /vault/lang/lang.it.php | Italienische Sprachdateien.
 /vault/lang/lang.ja.cli.php | Japanische Sprachdateien für CLI.
-/vault/lang/lang.ja.fe.php | Japanische Sprachdateien für das Front-End.
+/vault/lang/lang.ja.fe.php | Japanische Sprachdateien für das Frontend.
 /vault/lang/lang.ja.php | Japanische Sprachdateien.
 /vault/lang/lang.ko.cli.php | Koreanische Sprachdateien für CLI.
-/vault/lang/lang.ko.fe.php | Koreanische Sprachdateien für das Front-End.
+/vault/lang/lang.ko.fe.php | Koreanische Sprachdateien für das Frontend.
 /vault/lang/lang.ko.php | Koreanische Sprachdateien.
 /vault/lang/lang.nl.cli.php | Niederländische Sprachdateien für CLI.
-/vault/lang/lang.nl.fe.php | Niederländische Sprachdateien für das Front-End.
+/vault/lang/lang.nl.fe.php | Niederländische Sprachdateien für das Frontend.
 /vault/lang/lang.nl.php | Niederländische Sprachdateien.
 /vault/lang/lang.no.cli.php | Norwegische Sprachdateien für CLI.
-/vault/lang/lang.no.fe.php | Norwegische Sprachdateien für das Front-End.
+/vault/lang/lang.no.fe.php | Norwegische Sprachdateien für das Frontend.
 /vault/lang/lang.no.php | Norwegische Sprachdateien.
 /vault/lang/lang.pt.cli.php | Portugiesische Sprachdateien für CLI.
-/vault/lang/lang.pt.fe.php | Portugiesische Sprachdateien für das Front-End.
+/vault/lang/lang.pt.fe.php | Portugiesische Sprachdateien für das Frontend.
 /vault/lang/lang.pt.php | Portugiesische Sprachdateien.
 /vault/lang/lang.ru.cli.php | Russische Sprachdateien für CLI.
-/vault/lang/lang.ru.fe.php | Russische Sprachdateien für das Front-End.
+/vault/lang/lang.ru.fe.php | Russische Sprachdateien für das Frontend.
 /vault/lang/lang.ru.php | Russische Sprachdateien.
 /vault/lang/lang.sv.cli.php | Schwedische Sprachdateien für CLI.
-/vault/lang/lang.sv.fe.php | Schwedische Sprachdateien für das Front-End.
+/vault/lang/lang.sv.fe.php | Schwedische Sprachdateien für das Frontend.
 /vault/lang/lang.sv.php | Schwedische Sprachdateien.
 /vault/lang/lang.th.cli.php | Thai Sprachdateien für CLI.
-/vault/lang/lang.th.fe.php | Thai Sprachdateien für das Front-End.
+/vault/lang/lang.th.fe.php | Thai Sprachdateien für das Frontend.
 /vault/lang/lang.th.php | Thai Sprachdateien.
 /vault/lang/lang.tr.cli.php | Türkische Sprachdateien für CLI.
-/vault/lang/lang.tr.fe.php | Türkische Sprachdateien für das Front-End.
+/vault/lang/lang.tr.fe.php | Türkische Sprachdateien für das Frontend.
 /vault/lang/lang.tr.php | Türkische Sprachdateien.
 /vault/lang/lang.ur.cli.php | Urdu Sprachdateien für CLI.
-/vault/lang/lang.ur.fe.php | Urdu Sprachdateien für das Front-End.
+/vault/lang/lang.ur.fe.php | Urdu Sprachdateien für das Frontend.
 /vault/lang/lang.ur.php | Urdu Sprachdateien.
 /vault/lang/lang.vi.cli.php | Vietnamesische Sprachdateien für CLI.
-/vault/lang/lang.vi.fe.php | Vietnamesische Sprachdateien für das Front-End.
+/vault/lang/lang.vi.fe.php | Vietnamesische Sprachdateien für das Frontend.
 /vault/lang/lang.vi.php | Vietnamesische Sprachdateien.
 /vault/lang/lang.zh-tw.cli.php | Chinesische Sprachdateien (traditionell) für CLI.
-/vault/lang/lang.zh-tw.fe.php | Chinesische Sprachdateien (traditionell) für das Front-End.
+/vault/lang/lang.zh-tw.fe.php | Chinesische Sprachdateien (traditionell) für das Frontend.
 /vault/lang/lang.zh-tw.php | Chinesische Sprachdateien (traditionell).
 /vault/lang/lang.zh.cli.php | Chinesische Sprachdateien (vereinfacht) für CLI.
-/vault/lang/lang.zh.fe.php | Chinesische Sprachdateien (vereinfacht) für das Front-End.
+/vault/lang/lang.zh.fe.php | Chinesische Sprachdateien (vereinfacht) für das Frontend.
 /vault/lang/lang.zh.php | Chinesische Sprachdateien (vereinfacht).
 /vault/.htaccess | Ein Hypertext-Access-Datei (in diesem Fall zum Schutz von sensiblen Dateien des Scripts vor einem nicht authorisierten Zugriff).
 /vault/.travis.php | Wird von Travis CI zum Testen verwendet (für die korrekte Funktion des Scripts nicht notwendig).
@@ -269,14 +269,14 @@ Datei | Beschreibung
 /vault/auxiliary.yaml | Enthält Hilfsregeln. Nicht im Paket enthalten. Erstellt von der Hilfsregeln-Seite.
 /vault/cache.dat | Cache-Daten.
 /vault/cache.dat.safety | Als Sicherheitsmechanismus generiert wenn es benötigt wird.
-/vault/cidramblocklists.dat | Metadaten-Datei für die optionalen Blocklisten von Macmathan; Wird von der Front-End-Updates-Seite verwendet.
+/vault/cidramblocklists.dat | Metadaten-Datei für die optionalen Blocklisten von Macmathan; Wird von der Frontend-Aktualisierungsseite verwendet.
 /vault/cli.php | CLI-Handler.
-/vault/components.dat | Komponenten-Metadaten-Datei; Wird von der Front-End-Updates-Seite verwendet.
+/vault/components.dat | Komponenten-Metadaten-Datei; Wird von der Frontend-Aktualisierungsseite verwendet.
 /vault/config.ini.RenameMe | Konfigurationsdatei; Beinhaltet alle Konfigurationsmöglichkeiten von CIDRAM (umbenennen zu aktivieren).
 /vault/config.php | Konfiguration-Handler.
 /vault/config.yaml | Standardkonfigurationsdatei; Beinhaltet Standardkonfigurationswerte für CIDRAM.
-/vault/frontend.php | Front-End-Handler.
-/vault/frontend_functions.php | Front-End-Funktionen-Datei.
+/vault/frontend.php | Frontend-Handler.
+/vault/frontend_functions.php | Frontend-Funktionen-Datei.
 /vault/functions.php | Funktionen-Datei.
 /vault/hashes.dat | Enthält eine Liste der akzeptierten Hashes (relevant für die reCAPTCHA-Funktion; nur dann erzeugt wird, wenn die reCAPTCHA-Funktion aktiviert ist).
 /vault/ignore.dat | Ignoriert Datei (zu spezifizieren welche Signatur-Sektionen CIDRAM sollte ignorieren es ist benutzt).
@@ -292,7 +292,7 @@ Datei | Beschreibung
 /vault/ipv6_isps.dat | IPv6 Signaturdatei (gefährliche und spam-anfällig ISPs).
 /vault/ipv6_other.dat | IPv6 Signaturdatei (CIDRs für Proxies, VPNs und andere verschiedene unerwünschte Dienste).
 /vault/lang.php | Sprachdateien.
-/vault/modules.dat | Modul-Metadaten-Datei; Wird von der Front-End-Updates-Seite verwendet.
+/vault/modules.dat | Modul-Metadaten-Datei; Wird von der Frontend-Aktualisierungsseite verwendet.
 /vault/outgen.php | Ausgabe-Generator.
 /vault/php5.4.x.php | Polyfills für PHP 5.4.X (erforderlich für Abwärtskompatibilität mit PHP 5.4.X; sicher zu löschen für neuere PHP-Versionen).
 /vault/recaptcha.php | reCAPTCHA-Modul.
@@ -302,7 +302,7 @@ Datei | Beschreibung
 /vault/salt.dat | Salz-Datei (durch einigen periphere Funktionalität verwendet; nur dann erzeugt wenn erforderlich).
 /vault/template_custom.html | Template Datei; Template für die HTML-Ausgabe durch der CIDRAM Ausgabe-Generator erzeugt.
 /vault/template_default.html | Template Datei; Template für die HTML-Ausgabe durch der CIDRAM Ausgabe-Generator erzeugt.
-/vault/themes.dat | Themes-Metadaten-Datei; Wird von der Front-End-Updates-Seite verwendet.
+/vault/themes.dat | Themes-Metadaten-Datei; Wird von der Frontend-Aktualisierungsseite verwendet.
 /vault/verification.yaml | Verifikationsdaten für Suchmaschinen und Social Media.
 /.gitattributes | Ein GitHub Projektdatei (für die korrekte Funktion des Scripts nicht notwendig).
 /Changelog.txt | Eine Auflistung der Änderungen des Scripts der verschiedenen Versionen (für die korrekte Funktion des Scripts nicht notwendig).
@@ -329,10 +329,10 @@ Nachfolgend finden Sie eine Liste der Variablen in der Konfigurationsdatei (`con
 Generelle Konfiguration von CIDRAM.
 
 ##### "logfile"
-- Name einer Datei in welcher Menschenlesbar alle blockierten zugriffsversuche Protokolliert werden. Geben Sie einen Dateinamen an oder lassen Sie die Option zum Deaktivieren leer.
+- Name einer Datei in welcher Menschenlesbar alle blockierten zugriffsversuche protokolliert werden. Geben Sie einen Dateinamen an oder lassen Sie die Option zum Deaktivieren leer.
 
 ##### "logfileApache"
-- Name einer Apache-Stil-Datei in welcher alle blockierten zugriffsversuche Protokolliert werden. Geben Sie einen Dateinamen an oder lassen Sie die Option zum Deaktivieren leer.
+- Name einer Apache-Stil-Datei in welcher alle blockierten zugriffsversuche protokolliert werden. Geben Sie einen Dateinamen an oder lassen Sie die Option zum Deaktivieren leer.
 
 ##### "logfileSerialized"
 - Name einer Datei zu protokollieren alle blockierten Zugriffsversuche (Format ist serialisiert). Geben Sie einen Dateinamen an oder lassen Sie die Option zum Deaktivieren leer.
@@ -434,19 +434,19 @@ Wert | Produziert | Beschreibung
 - CLI-Modus deaktivieren? CLI-Modus ist standardmäßig aktiviert, kann aber manchmal bestimmte Test-Tools (Beispielsweise PHPUnit) und andere CLI-basierte Anwendungen beeinträchtigen. Wenn Sie den CLI-Modus nicht deaktivieren müssen, sollten Sie diese Anweisung ignorieren. False = CLI-Modus aktivieren [Standardeinstellung]; True = CLI-Modus deaktivieren.
 
 ##### "disable_frontend"
-- Front-End-Access deaktivieren? Front-End-Access kann CIDRAM einfacher zu handhaben machen, aber es kann auch ein potentielles Sicherheitsrisiko sein. Es wird empfohlen, wenn möglich, CIDRAM über die Back-End-Access zu verwalten, aber Front-End-Access ist für den Fall vorgesehen, wenn dies nicht möglich ist. Halten Sie es deaktiviert außer wenn Sie es brauchen. False = Front-End-Access aktivieren; True = Front-End-Access deaktivieren [Standardeinstellung].
+- Frontend-Access deaktivieren? Frontend-Access kann CIDRAM einfacher zu handhaben machen, aber es kann auch ein potentielles Sicherheitsrisiko sein. Es wird empfohlen, wenn möglich, CIDRAM über die Back-End-Access zu verwalten, aber Frontend-Access ist für den Fall vorgesehen, wenn dies nicht möglich ist. Halten Sie es deaktiviert außer wenn Sie es brauchen. False = Frontend-Access aktivieren; True = Frontend-Access deaktivieren [Standardeinstellung].
 
 ##### "max_login_attempts"
-- Maximale Anzahl der Versucht zum Anmelden (Front-End). Standardeinstellung = 5.
+- Maximale Anzahl der Versucht zum Anmelden (Frontend). Standardeinstellung = 5.
 
 ##### "FrontEndLog"
-- Datei für die Protokollierung von Front-End Anmelde-Versuchen. Geben Sie einen Dateinamen an oder lassen Sie die Option zum Deaktivieren leer.
+- Datei für die Protokollierung von Frontend Anmelde-Versuchen. Geben Sie einen Dateinamen an oder lassen Sie die Option zum Deaktivieren leer.
 
 ##### "ban_override"
 - Überschreiben "forbid_on_block" Wenn "infraction_limit" überschritten wird? Beim überschreiben: Blockierte Anfragen geben eine leere Seite zurück (Template-Dateien werden nicht verwendet). 200 = Nicht überschreiben [Standardeinstellung]. Andere Werte entsprechen den verfügbaren Werten für "forbid_on_block".
 
 ##### "log_banned_ips"
-- Sollen auch blockierte Anfragen von verbotenen IPs Protokolliert werden? True = Ja [Standardeinstellung]; False = Nein.
+- Sollen auch blockierte Anfragen von verbotenen IPs protokolliert werden? True = Ja [Standardeinstellung]; False = Nein.
 
 ##### "default_dns"
 - Eine durch Kommata getrennte Liste von DNS-Servern, die für Hostnamen-Lookups verwendet werden sollen. Standardeinstellung = "8.8.8.8,8.8.4.4" (Google DNS). ACHTUNG: Ändern Sie diesen Wert nur, wenn Sie wissen, was Sie tun!
@@ -486,7 +486,7 @@ Derzeit unterstützt:
 - Web-Fonts deaktivieren? True = Ja [Standardeinstellung]; False = Nein.
 
 ##### "maintenance_mode"
-- Deaktiviert alles andere als das Front-End. Manchmal nützlich für die Aktualisierung Ihrer CMS, Frameworks, u.s.w. Wartungsmodus aktivieren? True = Ja; False = Nein [Standardeinstellung].
+- Deaktiviert alles andere als das Frontend. Manchmal nützlich für die Aktualisierung Ihrer CMS, Frameworks, u.s.w. Wartungsmodus aktivieren? True = Ja; False = Nein [Standardeinstellung].
 
 ##### "default_algo"
 - Definiert den Algorithmus für alle zukünftigen Passwörter und Sitzungen. Optionen: PASSWORD_DEFAULT (Standardeinstellung), PASSWORD_BCRYPT, PASSWORD_ARGON2I (erfordert PHP >= 7.2.0).
@@ -517,7 +517,7 @@ Konfiguration der Signaturen.
 - Eine Liste der IPv6-Signaturdateien, die CIDRAM zu analysieren versuchen sollte, getrennt durch Kommas. Hier können Sie Einträge hinzufügen, wenn Sie zusätzliche IPv6-Signaturdateien in CIDRAM aufnehmen möchten.
 
 ##### "block_cloud"
-- CIDRs blockieren, welche zu Web-/Server- Hostern gehören. Wenn sie eine API betreiben oder erwarten, dass sie oft Aufrufe von solchen Servern bekommen sollten sie diese Option auf false (nicht blockieren) setzen. Wenn sie solche Anfragen blockieren möchen, setzen sie diese Option auf true [Standarteinstellung].
+- CIDRs blockieren, welche zu Web-/Server- Hostern gehören. Wenn Sie eine API betreiben oder erwarten, dass Sie oft Aufrufe von solchen Servern bekommen sollten Sie diese Option auf false (nicht blockieren) setzen. Wenn Sie solche Anfragen blockieren möchten, setzen Sie diese Option auf true [Standarteinstellung].
 
 ##### "block_bogons"
 - Blockieren Sie Bogon/Martian CIDRs? Wenn Sie Verbindungen zu Ihrer Website von localhost, von Ihrem LAN, oder von innerhalb Ihres lokalen Netzwerks erwarten, diese Richtlinie auf false sollte gesetzt werden. Wenn Sie diese Verbindungen nicht erwarten, dies auf true sollte gesetzt werden.
@@ -532,7 +532,7 @@ Konfiguration der Signaturen.
 - Blockieren Sie IP-Adressen in Verbindung mit Malware? Dazu gehören C&C-Server, infizierte Computer, Malware-Verteilung beteiligte Computer, u.s.w.
 
 ##### "block_proxies"
-- Blockieren Sie CIDRs identifiziert als zu Proxy-Dienste oder VPNs gehören? Wenn Sie möchten dass Benutzer von Proxy-Diensten und VPNs auf ihre Webseiten zugreifen können, diese Richtlinie auf false sollte gesetzt werden. Andernfalls, Wenn Sie Proxy-Dienste oder VPNs nicht benötigen, sollte diese Richtlinie auf true gesetzt werden, als Mittel zur Verbesserung der Sicherheit.
+- Blockieren Sie CIDRs identifiziert als zu Proxy-Dienste oder VPNs gehören? Wenn Sie möchten dass Benutzer von Proxy-Diensten und VPNs auf Ihre Webseiten zugreifen können, diese Richtlinie auf false sollte gesetzt werden. Andernfalls, Wenn Sie Proxy-Dienste oder VPNs nicht benötigen, sollte diese Richtlinie auf true gesetzt werden, als Mittel zur Verbesserung der Sicherheit.
 
 ##### "block_spam"
 - Blockieren Sie CIDRs welche als hohes Spam Risiko identifiziert wurden? Solange Sie keine Probleme haben während Sie dies tun, ist es empfohlen diese Einstellung auf true zu lassen.
@@ -552,8 +552,8 @@ Konfiguration der Signaturen.
 #### "recaptcha" (Kategorie)
 Wenn Sie möchten, können sie blockierten Benutzern mithilfe des google reCAPTCHA eine Möglichkeit bieten, durch den Beweis dass diese ein Mensch sind, auf die Seite zuzugreifen.
 
-Aufgrund der Risiken im Zusammenhang mit der Bereitstellung eines Wegs um die Blockierung zu umgehen, ist es nicht empfohlen diese Methode bereitzustellen. Es ist Empfohlen, diese Methode nur zu aktivieren wenn Sie diese unbedingt benötigen. Dies könnten beispielsweise diese Situatuinen seien:
-- Bestimmte Kunden/Benutzer müssen ihre Webseite auch aus blockierten Netzwerken erreichen können.
+Aufgrund der Risiken im Zusammenhang mit der Bereitstellung eines Weges um die Blockierung zu umgehen, ist es nicht empfohlen diese Methode bereitzustellen. Es ist empfohlen, diese Methode nur zu aktivieren wenn Sie diese unbedingt benötigen. Dies könnten beispielsweise diese Situationen sein:
+- Bestimmte Kunden/Benutzer müssen Ihre Webseite auch aus blockierten Netzwerken erreichen können.
 - Einzelne Nutzer nutzen zum Schutz ihrer Daten einen VPN oder Proxy.
 
 *Hinweis: reCAPTCHA schützt nur gegen Maschinelle Aufrufe, nicht gegen Menschliche Angreifer.*
@@ -636,7 +636,7 @@ Template-Daten bezieht sich auf die HTML-Ausgabe die verwendet wird, um die "Zug
 #### "PHPMailer" (Kategorie)
 PHPMailer Konfiguration.
 
-Derzeit verwendet CIDRAM PHPMailer nur für die Front-End-Zwei-Faktor-Authentifizierung. Wenn Sie das Front-End oder Zwei-Faktor-Authentifizierung für das Front-End nicht verwenden, können Sie diese Anweisungen ignorieren.
+Derzeit verwendet CIDRAM PHPMailer nur für die Frontend-Zwei-Faktor-Authentifizierung. Wenn Sie das Frontend oder Zwei-Faktor-Authentifizierung für das Frontend nicht verwenden, können Sie diese Anweisungen ignorieren.
 
 ##### "EventLog"
 - Eine Datei zum Protokollieren aller Ereignisse in Bezug auf PHPMailer. Geben Sie einen Dateinamen an oder lassen Sie die Option zum Deaktivieren leer.
@@ -645,7 +645,7 @@ Derzeit verwendet CIDRAM PHPMailer nur für die Front-End-Zwei-Faktor-Authentifi
 - Wenn Sie diese Direktive auf `true` setzen, wird PHPMailer angewiesen, den normalen Authentifizierungsprozess zu überspringen, der normalerweise beim Senden von E-Mails über SMTP auftritt. Dies sollte vermieden werden, da das Überspringen dieses Prozesses ausgehende E-Mails MITM-Angriffen aussetzen kann. Dies kann jedoch in Fällen erforderlich sein, in denen dieser Prozess die Verbindung von PHPMailer zu einem SMTP-Server verhindert.
 
 ##### "Enable2FA"
-- Diese Direktive bestimmt, ob 2FA für Front-End-Konten verwendet werden soll.
+- Diese Direktive bestimmt, ob 2FA für Frontend-Konten verwendet werden soll.
 
 ##### "Host"
 - Der SMTP-Host zum Senden von ausgehende E-Mails.
@@ -680,15 +680,15 @@ Derzeit verwendet CIDRAM PHPMailer nur für die Front-End-Zwei-Faktor-Authentifi
 #### "rate_limiting" (Kategorie)
 Optionale Konfigurationsanweisungen zur Ratenbegrenzung.
 
-Dieses Feature wurde in CIDRAM implementiert, da es von genügend Benutzern angefordert wurde um es zu rechtfertigen. Da dies jedoch etwas außerhalb des Umfangs des ursprünglich vorgesehene Zwecks für, es wird höchstwahrscheinlich von den meisten Benutzern nicht benötigt. Wenn Sie speziell CIDRAM benötigen, um die Ratenbegrenzung für Ihre Website zu steuern, kann diese Funktion für Sie nützlich sein. Es gibt jedoch einige wichtige Dinge, die Sie beachten sollten:
-- This feature, like all other CIDRAM features, will only work for pages protected by CIDRAM. Therefore, any website assets not specifically routed through CIDRAM can't be rate limited by CIDRAM.
-- Don't forget that CIDRAM writes it cache and other data directly to disk (i.e., saves its data onto files), and doesn't use any external database system like MySQL, PostgreSQL, Access, or similar. This means that in order for it to track usage for rate limiting, it would effectively need to be writing to disk for every single potentially rate limited request. This could contribute to lower disk life expectancy in the longterm, and is not ideally recommended. Instead, ideally, a tool used for rate limiting could utilise a database system intended for frequent, small read/write operations, or could retain information persistently across requests, without the need to write data to disk between requests (e.g., written as an independent server module, instead of a PHP package).
-- If you're able to use a server module, cPanel, or some other network tool to enforce rate limiting, it would be better to use that for rate limiting, instead of CIDRAM.
-- If a particular user is very keen to continue accessing your website after being rate limited, in most cases, it will be very easy for them to circumvent rate limiting (e.g., if they change their IP address, or if they use a proxy or VPN, and assuming that you've configured CIDRAM to not block proxies and VPNs, or that CIDRAM isn't aware of the proxy or VPN that they're using).
-- Rate limiting can be very annoying for actual, real end-users. It may be necessary if your available bandwidth is very limited, and if you discover that there are some specific sources of traffic, not already otherwise blocked, that are consuming the majority of your available bandwidth. If not necessary though, it should probably be avoided.
-- You may occasionally risk blocking legitimate users, or even yourself.
+Dieses Feature wurde in CIDRAM implementiert, da es von genügend Benutzern angefordert wurde um, es zu rechtfertigen. Da dies jedoch etwas außerhalb des Umfangs des ursprünglich vorgesehene Zwecks für, es wird höchstwahrscheinlich von den meisten Benutzern nicht benötigt. Wenn Sie speziell CIDRAM benötigen, um die Ratenbegrenzung für Ihre Website zu steuern, kann diese Funktion für Sie nützlich sein. Es gibt jedoch einige wichtige Dinge, die Sie beachten sollten:
+- Diese Funktion funktioniert, wie alle anderen CIDRAM-Funktionen nur für Seiten, die durch CIDRAM geschützt werden. Daher können Website-Assets, die nicht speziell über CIDRAM geleitet werden, nicht durch CIDRAM ratenbegrenzt werden.
+- Vergessen Sie nicht, dass CIDRAM den Cache und andere Daten direkt auf die Festplatte schreibt (d.h., speichert seine Daten in Dateien), und verwendet kein externes Datenbanksystem wie MySQL, PostgreSQL, Access oder ähnliches. Daher um die Verwendung zur Ratenbegrenzung zu verfolgen, es müsste effektiv für jede einzelne potentiell ratenbegrenzt Anforderung auf die Festplatte schreiben. Dies könnte langfristig zu einer niedrigeren Lebensdauer der Festplatten beitragen, und nicht ideal empfohlen ist. Im Idealfall stattdessen könnte ein zur Ratenbegrenzung verwendetes Werkzeug ein Datenbanksystem verwenden, das für häufige kleine Lese-/Schreibvorgänge vorgesehen ist, oder möglicherweise Informationen persistent über Anforderungen pflegen, ohne dass zwischen den Anforderungen Daten auf die Festplatte geschrieben werden müssen (z.B., als unabhängiges Servermodul anstelle eines PHP-Pakets geschrieben).
+- Wenn Sie um die Ratenbegrenzung durchzusetzen ein Servermodul, cPanel oder ein anderes Netzwerktool verwenden können, dies zur Ratenbegrenzung anstelle von CIDRAM zu verwenden wäre besser ist.
+- Wenn nachdem sie ratenbegrenzt sind, ein bestimmter Benutzer weiterhin beharrlich auf Ihre Website zugreifen möchte, in den meisten Fällen wird es ihnen leicht fallen, die Ratenbegrenzung zu umgehen (z.B., wenn sie ihre IP-Adresse ändern, oder wenn sie einen Proxy oder ein VPN verwenden, und vorausgesetzt, Sie haben CIDRAM so konfiguriert, dass es keine Proxy oder VPN blockiert, oder dass CIDRAM den von ihnen verwendeten Proxy oder VPN nicht kennt).
+- Die Ratenbegrenzung kann für tatsächliche, echte Endbenutzer sehr ärgerlich sein. Dies kann erforderlich sein, wenn Ihre verfügbare Bandbreite sehr begrenzt ist, und wenn Sie feststellen, dass bestimmte Verkehrsquellen, die nicht bereits anderweitig blockiert sind, den Großteil Ihrer verfügbaren Bandbreite beanspruchen. Wenn jedoch nicht notwendig, es wahrscheinlich vermieden sollte werden.
+- Sie riskieren gelegentlich die Blockierung legitimer Benutzer oder sich selbst.
 
-If you feel that you don't need CIDRAM to enforce rate limiting for your website, keep the directives below set as their default values. Otherwise, you can change their values to suit your needs.
+Wenn Sie der Meinung sind, dass Sie CIDRAM nicht benötigen, um die Ratenbegrenzung für Ihre Website durchzusetzen, behalten Sie die Direktiven unterhalb als ihrer Standardwerte. Ansonsten können Sie deren Werte an Ihre Bedürfnisse anpassen.
 
 ##### "max_bandwidth"
 - Die maximal zulässige Bandbreite innerhalb der Zulassungsperiode, bevor die Ratenbegrenzung für zukünftige Anforderungen aktiviert wird. Ein Wert von 0 deaktiviert diese Art der Ratenbegrenzung. Standardeinstellung = 0KB.
@@ -801,7 +801,7 @@ In dem obigen Beispiel, wird `1.2.3.4/32` und `2.3.4.5/32` als "IPv4" markiert w
 
 Die gleiche Logik kann auch zum Trennen anderer Arten von Tags angewendet werden.
 
-Insbesondere, Sektion-Tags können beim Debuggen sehr nützlich sein, wenn Falsche-Positives auftreten, durch Bereitstellung einer Möglichkeit, die genaue Ursache des Problems zu finden, und können beim Filtern von Protokolleinträgen beim Anzeigen von Protokolldateien über die Front-End-Protokollseite sehr nützlich sein (Sektionsnamen sind über die Front-End-Protokollseite anklickbar und können als Filterkriterien verwendet werden). Wenn für bestimmte Signaturen Sektion-Tags weggelassen werden, verwendet CIDRAM beim Auslösen dieser Signaturen den Namen der Signaturdatei zusammen mit dem Typ der blockierten IP-Adresse (IPv4 oder IPv6) als Fallback, daher sind Sektion-Tags völlig optional. Sie können jedoch in einigen Fällen empfohlen werden, z.B. wenn die Signaturdateien vage benannt werden oder wenn es sonst schwierig ist, die Quelle der Signaturen eindeutig zu identifizieren, die eine gesperrte Anforderung verursachen.
+Insbesondere, Sektion-Tags können beim Debuggen sehr nützlich sein, wenn Falsche-Positives auftreten, durch Bereitstellung einer Möglichkeit, die genaue Ursache des Problems zu finden, und können beim Filtern von Protokolleinträgen beim Anzeigen von Protokolldateien über die Frontend-Protokollseite sehr nützlich sein (Sektionsnamen sind über die Frontend-Protokollseite anklickbar und können als Filterkriterien verwendet werden). Wenn für bestimmte Signaturen Sektion-Tags weggelassen werden, verwendet CIDRAM beim Auslösen dieser Signaturen den Namen der Signaturdatei zusammen mit dem Typ der blockierten IP-Adresse (IPv4 oder IPv6) als Fallback, daher sind Sektion-Tags völlig optional. Sie können jedoch in einigen Fällen empfohlen werden, z.B. wenn die Signaturdateien vage benannt werden oder wenn es sonst schwierig ist, die Quelle der Signaturen eindeutig zu identifizieren, die eine gesperrte Anforderung verursachen.
 
 ##### 7.1.1 ABLAUF-TAGS
 
@@ -820,7 +820,7 @@ Abgelaufene Signaturen werden niemals in Reaktion irgendeine Anfrage ausgelöst,
 
 Wenn Sie das Herkunftsland für eine bestimmte Signatur angeben möchten, können Sie dies mit einem "Ursprungs-Tag" tun. Ein Ursprungs-Tag akzeptiert einen "[ISO 3166-1 Alpha-2](https://de.wikipedia.org/wiki/ISO-3166-1-Kodierliste)"-Code, der dem Ursprungsland für die Signaturen entspricht, auf die es angewendet wird. Diese Codes müssen in Großbuchstaben geschrieben werden (Kleinbuchstaben oder Groß-/Kleinschreibung werden nicht korrekt dargestellt). Wenn ein Ursprungs-Tag verwendet wird, wird es zum Log-Feld für alle Anfragen "Warum blockiert" hinzugefügt, die aufgrund der Signaturen blockiert wurden, auf die das Tag angewendet wurde.
 
-Wenn die optionale Komponente "flags CSS" installiert ist, und Log-Dateien im Front-End angezeigt werden, werden die angehängten Ursprungs-Informationen in die Flaggen der entsprechenden Länder umgewandelt. Diese Information ist anklickbar um nach Ähnlichen Logeinträgen  zu filtern (denjenigen, die auf die Protokollseite zugreifen, die Möglichkeit zu geben, nach dem Herkunftsland zu filtern).
+Wenn die optionale Komponente "flags CSS" installiert ist, und Log-Dateien im Frontend angezeigt werden, werden die angehängten Ursprungs-Informationen in die Flaggen der entsprechenden Länder umgewandelt. Diese Information ist anklickbar um nach Ähnlichen Logeinträgen  zu filtern (denjenigen, die auf die Protokollseite zugreifen, die Möglichkeit zu geben, nach dem Herkunftsland zu filtern).
 
 Hinweis: Technisch gesehen ist, dies keine Form von Geolokalisierung, weil es keine spezifischen Informationen sucht in Bezug auf eingehende IPs, aber stattdessen, erlaubt uns einfach, ein Herkunftsland für alle Anfragen anzugeben, die durch bestimmte Signaturen blockiert werden. Innerhalb der selben Signatur-Sektionen sind mehrere Ursprungs-Tags zulässig.
 
@@ -870,9 +870,9 @@ Defers to: preferred_signatures.dat
 
 Eine vereinfachte Form von YAML-Markup kann in Signaturdateien verwendet werden, um Verhalten und Einstellungen spezifisch für einzelne Signatur-Sektionen zu definieren. Dies kann nützlich sein wenn Sie den Wert von Ihrer Konfiguration-Richtlinien variieren möchten auf der Grundlage von individuellen Signaturen und Signatur-Sektionen (beispielsweise; wenn Sie eine E-Mail-Adresse für Support-Tickets anbieten möchten, für irgendein Benutzer welche durch eine spezifische Signatur blockiert sind, aber Sie diese E-Mail-Adresse nicht für Nutzer welche durch andere Signaturen blockiert sind bieten möchten; wenn Sie möchten dass bestimmte Signaturen eine Seitenumleitung auslösen; wenn Sie einen Signatur-Sektion für die Verwendung mit reCAPTCHA freischalten möchten; wenn Sie um blockierte Zugriffsversuche zu protokollieren in einzelne Dateien auf der Grundlage von einzelnen Signaturen und/oder Signatur-Sektionen möchten).
 
-Die Verwendung von YAML-Markup in den Signaturdateien ist völlig optional (dh, Sie können YAML-Markup verwenden, wenn Sie dies möchten, aber Sie sind nicht verpflichtet dies zu tun), und ist in der Lage die meisten (aber nicht alles) Konfigurations-Richtlinien zu nutzen.
+Die Verwendung von YAML-Markup in den Signaturdateien ist völlig optional (d.h., Sie können YAML-Markup verwenden, wenn Sie dies möchten, aber Sie sind nicht verpflichtet dies zu tun), und ist in der Lage die meisten (aber nicht alles) Konfigurations-Richtlinien zu nutzen.
 
-*Beachten: Die YAML-Markup-Implementierung in CIDRAM ist sehr einfach und sehr begrenzt; Es ist ausgelegt um die Anforderungen zu erfüllen welche spezifisch für CIDRAM sind, in einer Weise dass die Vertrautheit mit YAML-Markup gegeben ist, aber folgt nicht den offiziellen Spezifikationen (und wird sich daher nicht in der gleichen Weisewie wie gründlichere Implementierungen anderswo verhalten, und möglicherweise nicht für andere Projekte anderswo geeignet seien).*
+*Beachten: Die YAML-Markup-Implementierung in CIDRAM ist sehr einfach und sehr begrenzt; Es ist ausgelegt um die Anforderungen zu erfüllen welche spezifisch für CIDRAM sind, in einer Weise dass die Vertrautheit mit YAML-Markup gegeben ist, aber folgt nicht den offiziellen Spezifikationen (und wird sich daher nicht in der gleichen Weisewie wie gründlichere Implementierungen anderswo verhalten, und möglicherweise nicht für andere Projekte anderswo geeignet sein).*
 
 In CIDRAM werden YAML-Markup-Segmente durch drei Bindestriche ("---") gegenüber dem Skript identifiziert und enden neben ihren enthaltenen Signaturabschnitten durch doppelte Zeilenumbrüche. Ein typisches YAML-Markup-Segment innerhalb eines Signaturabschnitts besteht aus drei Strichen in einer Zeile unmittelbar nach der Liste der CIDRS und aller Tags, gefolgt von einer zweidimensionalen Liste der Schlüssel-Wert-Paare (erste Dimension, Konfigurationsanweisungskategorien; zweite Dimension, Konfigurationsanweisungen), für die Konfigurationsanweisungen geändert werden sollten (und auf welche Werte), wenn eine Signatur innerhalb dieses Signaturabschnitts ausgelöst wird (siehe die folgenden Beispiele).
 
@@ -949,11 +949,11 @@ In Ergänzung, wenn Sie möchten dass CIDRAM wird bestimmte Sektionen innerhalb 
 Ignore Sektion 1
 ```
 
-Dies kann auch erreicht werden, indem die Schnittstelle verwendet wird, die auf der Seite "Sektionsliste" des CIDRAM-Front-End bereitgestellt wird.
+Dies kann auch erreicht werden, indem die Schnittstelle verwendet wird, die auf der Seite "Sektionsliste" des CIDRAM-Frontend bereitgestellt wird.
 
 ##### 7.3.1 HILFSREGELN
 
-Wenn Sie das Schreiben Ihrer eigenen benutzerdefinierten Signaturdateien oder benutzerdefinierten Module für zu kompliziert halten, könnte die Verwendung der unter "Hilfsregeln" im CIDRAM-Front-End bereitgestellten Schnittstelle eine hilfe seien. Indem Sie die entsprechenden Optionen auswählen und Details zu bestimmten Anforderungsarten angeben, können Sie CIDRAM anweisen, wie auf diese Anfragen zu reagieren ist. "Hilfsregeln" werden ausgeführt, nachdem die Ausführung alle der Signaturdateien und Module bereits abgeschlossen ist.
+Wenn Sie das Schreiben Ihrer eigenen benutzerdefinierten Signaturdateien oder benutzerdefinierten Module für zu kompliziert halten, könnte die Verwendung der unter "Hilfsregeln" im CIDRAM-Frontend bereitgestellten Schnittstelle eine hilfe sein. Indem Sie die entsprechenden Optionen auswählen und Details zu bestimmten Anforderungsarten angeben, können Sie CIDRAM anweisen, wie auf diese Anfragen zu reagieren ist. "Hilfsregeln" werden ausgeführt, nachdem die Ausführung alle der Signaturdateien und Module bereits abgeschlossen ist.
 
 #### 7.4 <a name="MODULE_BASICS"></a>GRUNDLAGEN (FÜR MODULE)
 
@@ -1095,7 +1095,7 @@ Module wurden zur Verfügung gestellt, um sicherzustellen, dass die folgenden Pa
 - [Kann ich CIDRAM verwenden, um andere Dinge als Websites zu schützen (z.B. E-Mail-Server, FTP, SSH, IRC u.s.w.)?](#PROTECT_OTHER_THINGS)
 - [Werden Probleme auftreten, wenn ich CIDRAM gleichzeitig mit CDNs oder Caching-Diensten verwende?](#CDN_CACHING_PROBLEMS)
 - [Wird CIDRAM meine Website vor DDoS-Angriffen schützen?](#DDOS_ATTACKS)
-- [Wenn ich Module oder Signaturdateien über die Update-Seite aktiviere oder deaktiviere, sortiert sie diese alphanumerisch in der Konfiguration. Kann ich die Art der Sortierung ändern?](#CHANGE_COMPONENT_SORT_ORDER)
+- [Wenn ich Module oder Signaturdateien über die Aktualisierungsseite aktiviere oder deaktiviere, sortiert sich diese alphanumerisch in der Konfiguration. Kann ich die Art der Sortierung ändern?](#CHANGE_COMPONENT_SORT_ORDER)
 
 #### <a name="WHAT_IS_A_SIGNATURE"></a>Was ist eine "Signatur"?
 
@@ -1125,9 +1125,9 @@ Obwohl diese doppelte Bedeutung von "CIDR" in einigen Fällen mehrdeutig werden 
 
 #### <a name="WHAT_IS_A_FALSE_POSITIVE"></a>Was ist ein "Falsch-Positiv"?
 
-Der Begriff "Falsch-Positiv" (*Alternative: "falsch-positiv Fehler"; "falscher Alarm"*; Englisch: *false positive*; *false positive error*; *false alarm*), sehr einfach beschrieben, und in einem verallgemeinerten Kontext, wird verwendet, wenn eine Bedingung zu testen ist und wenn die Ergebnisse positiv sind (also wenn die Bedingung als positiv bewertet wird) jedoch die Bedingung als negativ erwartet (oder negativ seien sollte) wird. In der Medizin ist ein "falsch Positiv" ein Begriff dafür, wenn Patienten mit einer Krankheit identifiziert wurden
+Der Begriff "Falsch-Positiv" (*Alternative: "falsch-positiv Fehler"; "falscher Alarm"*; Englisch: *false positive*; *false positive error*; *false alarm*), sehr einfach beschrieben, und in einem verallgemeinerten Kontext, wird verwendet, wenn eine Bedingung zu testen ist und wenn die Ergebnisse positiv sind (also wenn die Bedingung als positiv bewertet wird) jedoch die Bedingung als negativ erwartet (oder negativ sein sollte) wird. In der Medizin ist ein "falsch Positiv" ein Begriff dafür, wenn Patienten mit einer Krankheit identifiziert wurden
 
-Einige andere Begriffe verwendet: "Wahr-Positiv", "Wahr-Negativ" und "Falsch-Negativ". Eine "Wahr-Positiv" ist, wenn die Ergebnisse des Tests und der wahren Zustand beide wahr sind (oder "Positiv"), und eine "Wahr-Negativ" ist, wenn die Ergebnisse des Tests und der wahren Zustand beide falsch sind (oder "Negativ"); Eine "Wahr-Positiv" oder Eine "Wahr-Negativ" gilt als eine "korrekte Folgerung". Die Antithese von einem "Falsch-Positiv" ist ein "Falsch-Negativ"; Ein "Falsch-Negativ" ist, wenn die Ergebnisse des Tests negativ sind (dh, die Bedingung bestimmt wird negativ oder falsch zu sein), aber ein positives Resultat zu erwarten ist (oder sollte gewesen, dh, der Zustand, in Wirklichkeit, ist "positiv", oder "wahr").
+Einige andere Begriffe verwendet: "Wahr-Positiv", "Wahr-Negativ" und "Falsch-Negativ". Eine "Wahr-Positiv" ist, wenn die Ergebnisse des Tests und der wahren Zustand beide wahr sind (oder "Positiv"), und eine "Wahr-Negativ" ist, wenn die Ergebnisse des Tests und der wahren Zustand beide falsch sind (oder "Negativ"); Eine "Wahr-Positiv" oder Eine "Wahr-Negativ" gilt als eine "korrekte Folgerung". Die Antithese von einem "Falsch-Positiv" ist ein "Falsch-Negativ"; Ein "Falsch-Negativ" ist, wenn die Ergebnisse des Tests negativ sind (d.h., die Bedingung bestimmt wird negativ oder falsch zu sein), aber ein positives Resultat zu erwarten ist (oder sollte gewesen, d.h., der Zustand, in Wirklichkeit, ist "positiv", oder "wahr").
 
 Im Kontext der CIDRAM, Diese Begriffe beziehen sich auf der Signaturen von CIDRAM, und was/wen sie blockieren. Wenn CIDRAM Blöcke eine IP-Adresse wegen schlechten, veralteten oder falschen Signaturen blockieren, sollten dies aber nicht so getan haben, oder wenn sie es aus den falschen Gründen, beziehen wir uns auf dieses Ergebnis als "Falsch-Positiv". Wenn CIDRAM, aufgrund unvorhergesehener Bedrohungen, fehlenden Signaturen oder Defiziten in ihren Signaturen, versagt eine IP-Adresse zu blockieren, die blockiert werden sollte, beziehen wir uns auf dieses Ereignis als eine "verpasste Erkennung" (das entspricht einem "Falsch-Negativ").
 
@@ -1140,7 +1140,7 @@ CIDRAM blockiert eine IP-Adresse | __Falsch-Positiv__ | True-Positiv (korrekte F
 
 #### <a name="BLOCK_ENTIRE_COUNTRIES"></a>Kann CIDRAM ganze Länder blockieren?
 
-Ja. Der einfachste Weg für dies zu erreichen wäre einige der von Macmathan bereitgestellten optionalen Landblocklisten zu installieren. Dies kann mit einigen Klicks direkt aus der Aktualisierungsseite des Front-End erfolgen, oder, wenn Sie es vorziehen dass das Front-End deaktiviert bleibt, indem Sie Sie diese Blocklisten direkt aus der **[optionalen Blocklisten-Download-Seite](https://bitbucket.org/macmathan/blocklists)** herunterladen und zum vault hochladen. Sie müssen lediglich die Namen dieser Blocklisten in der Konfigurationsdatei einfügen.
+Ja. Der einfachste Weg für dies zu erreichen wäre einige der von Macmathan bereitgestellten optionalen Landblocklisten zu installieren. Dies kann mit einigen Klicks direkt aus der Aktualisierungsseite des Frontend erfolgen, oder, wenn Sie es vorziehen dass das Frontend deaktiviert bleibt, indem Sie Sie diese Blocklisten direkt aus der **[optionalen Blocklisten-Download-Seite](https://bitbucket.org/macmathan/blocklists)** herunterladen und zum vault hochladen. Sie müssen lediglich die Namen dieser Blocklisten in der Konfigurationsdatei einfügen.
 
 #### <a name="SIGNATURE_UPDATE_FREQUENCY"></a>Wie häufig werden Signaturen aktualisiert?
 
@@ -1193,7 +1193,7 @@ Ja. Beiträge zum Projekt sind sehr willkommen. Bitte beachten Sie "CONTRIBUTING
 
 #### <a name="CRON_TO_UPDATE_AUTOMATICALLY"></a>Kann ich cron verwenden, um automatisch zu aktualisieren?
 
-Ja. Eine API ist in das Front-End integriert, um über externe Skripte mit der Update-Seite zu interagieren. Ein separates Skript, "[Cronable](https://github.com/Maikuolan/Cronable)", ist verfügbar, und kann von Ihrem Cron-Manager oder Cron-Scheduler verwendet werden, um dieses und andere unterstützte Pakete automatisch zu aktualisieren (dieses Skript enthält eine eigene Dokumentation).
+Ja. Eine API ist in das Frontend integriert, um über externe Skripte mit der Aktualisierungsseite zu interagieren. Ein separates Skript, "[Cronable](https://github.com/Maikuolan/Cronable)", ist verfügbar, und kann von Ihrem Cron-Manager oder Cron-Scheduler verwendet werden, um dieses und andere unterstützte Pakete automatisch zu aktualisieren (dieses Skript enthält eine eigene Dokumentation).
 
 #### <a name="WHAT_ARE_INFRACTIONS"></a>Was sind "Verstöße"?
 
@@ -1248,9 +1248,9 @@ Erstens ist CIDRAM ein PHP-Paket, und arbeitet daher auf dem Rechner, auf dem PH
 
 Dies kann mit dedizierten Vor-Ort-Hardware-Lösungen, und/oder Cloud-basierte Lösungen wie dedizierten DDoS-Mitigationsdiensten, routing des DNS einer Domain über DDoS-resistente Netzwerke, Cloud-basierte Filterung, oder eine Kombination davon implementiert werden. Auf jeden Fall ist dieses Thema ein wenig zu komplex, um es mit nur ein oder zwei Paragraphen gründlich zu erklären, also würde ich empfehlen, weitere Nachforschungen anzustellen, wenn dies ein Thema ist, dem Sie nachgehen wollen. Wenn die wahre Natur von DDoS-Angriffen richtig verstanden wird, wird diese Antwort mehr Sinn machen.
 
-#### <a name="CHANGE_COMPONENT_SORT_ORDER"></a>Wenn ich Module oder Signaturdateien über die Update-Seite aktiviere oder deaktiviere, sortiert sie diese alphanumerisch in der Konfiguration. Kann ich die Art der Sortierung ändern?
+#### <a name="CHANGE_COMPONENT_SORT_ORDER"></a>Wenn ich Module oder Signaturdateien über die Aktualisierungsseite aktiviere oder deaktiviere, sortiert sich diese alphanumerisch in der Konfiguration. Kann ich die Art der Sortierung ändern?
 
-Ja. Wenn Sie einige Dateien zwingen müssen, in einer bestimmten Reihenfolge ausgeführt zu werden, können Sie einige beliebige Daten vor ihren Namen in der Konfigurationsdirektive in der sie aufgeführt sind hinzufügen, durch einen Doppelpunkt getrennt. Wenn die Updates-Seite anschließend die Dateien erneut sortiert, wirken sich diese zusätzlichen Daten auf die Sortierreihenfolge aus und führen dazu, dass sie in der von Ihnen gewünschten Reihenfolge ausgeführt werden, ohne diese umbenennen zu müssen.
+Ja. Wenn Sie einige Dateien zwingen müssen, in einer bestimmten Reihenfolge ausgeführt zu werden, können Sie einige beliebige Daten vor ihren Namen in der Konfigurationsdirektive in der sie aufgeführt sind hinzufügen, durch einen Doppelpunkt getrennt. Wenn die Aktualisierungsseite anschließend die Dateien erneut sortiert, wirken sich diese zusätzlichen Daten auf die Sortierreihenfolge aus und führen dazu, dass sie in der von Ihnen gewünschten Reihenfolge ausgeführt werden, ohne diese umbenennen zu müssen.
 
 z.B., angenommen dass eine Konfigurationsdirektive mit den folgenden Dateien ist aufgeführt:
 
@@ -1260,7 +1260,7 @@ Wenn Sie `file3.php` zuerst ausführen möchten, Sie könnten etwas wie `aaa:` v
 
 `file1.php,file2.php,aaa:file3.php,file4.php,file5.php`
 
-Wenn dann eine neue Datei `file6.php` aktiviert wird, wenn die Updates-Seite sie alle wieder sortiert, sollte es so enden:
+Wenn dann eine neue Datei `file6.php` aktiviert wird, wenn die Aktualisierungsseite sie alle wieder sortiert, sollte es so enden:
 
 `aaa:file3.php,file1.php,file2.php,file4.php,file5.php,file6.php`
 
@@ -1302,7 +1302,7 @@ Wenn Sie Funktionen oder Module verwenden, die mit Hostnamen arbeiten (z.B., "Sc
 
 ##### 11.2.1 WEBFONTS
 
-Einige benutzerdefinierte Themen sowie die Standard-UI (oder Benutzerschnittstelle) für das CIDRAM-Front-End und die Seite "Zugriff verweigert" können Webfonts aus ästhetischen Gründen verwenden. Webfonts sind standardmäßig deaktiviert. Wenn sie jedoch aktiviert sind, erfolgt eine direkte Kommunikation zwischen dem Browser des Benutzers und dem Dienst, der die Webfonts hostet. Dies kann möglicherweise die Übermittlung von Informationen wie die IP-Adresse des Benutzers, den Benutzeragenten ("User-Agent"), das Betriebssystem und andere Details übermitteln. Die meisten dieser Webfonts werden vom [Google Fonts](https://fonts.google.com/)-Service gehostet.
+Einige benutzerdefinierte Themen sowie die Standard-UI (oder Benutzerschnittstelle) für das CIDRAM-Frontend und die Seite "Zugriff verweigert" können Webfonts aus ästhetischen Gründen verwenden. Webfonts sind standardmäßig deaktiviert. Wenn sie jedoch aktiviert sind, erfolgt eine direkte Kommunikation zwischen dem Browser des Benutzers und dem Dienst, der die Webfonts hostet. Dies kann möglicherweise die Übermittlung von Informationen wie die IP-Adresse des Benutzers, den Benutzeragenten ("User-Agent"), das Betriebssystem und andere Details übermitteln. Die meisten dieser Webfonts werden vom [Google Fonts](https://fonts.google.com/)-Service gehostet.
 
 *Relevante Konfigurationsdirektiven:*
 - `general` -> `disable_webfonts`
@@ -1397,17 +1397,17 @@ IP-Adresse: x.x.x.x - Date/Time: Day, dd Mon 20xx hh:ii:ss +0000 - Status der re
 *Die für die reCAPTCHA-Protokollierung verantwortliche Konfigurationsdirektiven lautet:*
 - `recaptcha` -> `logfile`
 
-##### 11.3.2 FRONT-END PROTOKOLLIERUNG
+##### 11.3.2 FRONTEND PROTOKOLLIERUNG
 
-Diese Art der Protokollierung bezieht sich auf Front-End-Einloggen-Versuchen und tritt nur auf, wenn ein Benutzer versucht, sich am Front-End anzumelden (vorausgesetzt, der Front-End-Zugriff ist aktiviert).
+Diese Art der Protokollierung bezieht sich auf Frontend-Einloggen-Versuchen und tritt nur auf, wenn ein Benutzer versucht, sich am Frontend anzumelden (vorausgesetzt, der Frontend-Zugriff ist aktiviert).
 
-Ein Front-End-Protokolleintrag enthält die IP-Adresse des Benutzers, der sich anzumelden versucht, das Datum und die Uhrzeit des Versuchs, und die Ergebnisse des Versuchs (erfolgreich eingeloggt oder könnte sich nicht einloggen). Ein Front-End-Protokolleintrag sieht in etwa wie folgt aus (als Beispiel):
+Ein Frontend-Protokolleintrag enthält die IP-Adresse des Benutzers, der sich anzumelden versucht, das Datum und die Uhrzeit des Versuchs, und die Ergebnisse des Versuchs (erfolgreich eingeloggt oder könnte sich nicht einloggen). Ein Frontend-Protokolleintrag sieht in etwa wie folgt aus (als Beispiel):
 
 ```
 x.x.x.x - Day, dd Mon 20xx hh:ii:ss +0000 - "admin" - Eingeloggt.
 ```
 
-*Die für die Front-End-Protokollierung verantwortliche Konfigurationsdirektiven lautet:*
+*Die für die Frontend-Protokollierung verantwortliche Konfigurationsdirektiven lautet:*
 - `general` -> `FrontEndLog`
 
 ##### 11.3.3 PROTOKOLLROTATION
@@ -1472,7 +1472,7 @@ CIDRAM verwendet keine [Kryptografie](https://de.wikipedia.org/wiki/Kryptographi
 
 #### 11.4 COOKIES
 
-CIDRAM setzt [Cookies](https://de.wikipedia.org/wiki/HTTP-Cookie) an zwei Stellen in seiner Codebasis. Erstens, wenn ein Benutzer eine reCAPTCHA-Instanz erfolgreich abgeschlossen hat (und angenommen, dass `lockuser` auf `true` gesetzt ist), CIDRAM setzt einen Cookie, um sich bei nachfolgenden Anfragen daran erinnern zu können, dass der Benutzer bereits eine reCAPTCHA-Instanz abgeschlossen hat, damit muss der Benutzer nicht ständig aufgefordert werden, eine reCAPTCHA-Instanz bei nachfolgenden Anfragen zu vervollständigen. Zweitens, wenn sich ein Benutzer erfolgreich am Front-End eingeloggt, CIDRAM setzt eine einen Cookie, um sich den Benutzer für nachfolgende Anfragen merken zu können (d.h., Cookies dienen zur Authentifizierung des Benutzers bei einer Einloggen-Sitzung).
+CIDRAM setzt [Cookies](https://de.wikipedia.org/wiki/HTTP-Cookie) an zwei Stellen in seiner Codebasis. Erstens, wenn ein Benutzer eine reCAPTCHA-Instanz erfolgreich abgeschlossen hat (und angenommen, dass `lockuser` auf `true` gesetzt ist), CIDRAM setzt einen Cookie, um sich bei nachfolgenden Anfragen daran erinnern zu können, dass der Benutzer bereits eine reCAPTCHA-Instanz abgeschlossen hat, damit muss der Benutzer nicht ständig aufgefordert werden, eine reCAPTCHA-Instanz bei nachfolgenden Anfragen zu vervollständigen. Zweitens, wenn sich ein Benutzer erfolgreich am Frontend eingeloggt, CIDRAM setzt eine einen Cookie, um sich den Benutzer für nachfolgende Anfragen merken zu können (d.h., Cookies dienen zur Authentifizierung des Benutzers bei einer Einloggen-Sitzung).
 
 In beiden Fällen werden Cookie-Warnungen angezeigt (falls zutreffend), die den Benutzer warnen, dass Cookies gesetzt werden, wenn sie die relevanten Aktionen ausführt. An anderen Stellen in der Codebasis werden keine Cookies gesetzt.
 
@@ -1518,4 +1518,4 @@ Alternativ gibt es einen kurzen (nicht autoritativen) Überblick über die GDPR/
 ---
 
 
-Zuletzt aktualisiert: 3 Januar 2019 (2019.01.03).
+Zuletzt aktualisiert: 4 Januar 2019 (2019.01.04).

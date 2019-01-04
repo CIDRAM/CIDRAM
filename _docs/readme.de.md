@@ -109,7 +109,7 @@ Das Front-End ist standardmäßig deaktiviert, um unautorisiert Zugriff zu verhi
 
 3) Loggen Sie sich mit dem standardmäßig Benutzernamen und Passwort ein (admin/password).
 
-Hinweis: **Um unautorisierten zugriff auf das Font-End zu verhindern, sollten sie sofort nach dem ersten Login ihren Benutzernamen und Passwort ändern. Dies ist notwendig, da mithilfe des Font-End möglich ist, beliebigen PhP Code auf ihre Webseite hochzuladen.**
+Hinweis: **Um unautorisierten zugriff auf das Front-End zu verhindern, sollten sie sofort nach dem ersten Login ihren Benutzernamen und Passwort ändern. Dies ist notwendig, da mithilfe des Front-End möglich ist, beliebigen PHP-Code auf ihre Webseite hochzuladen.**
 
 Für eine optimale Sicherheit wird außerdem empfohlen, die "Zwei-Faktor-Authentifizierung" für alle Front-End-Konten zu aktivieren (Anweisungen unten).
 
@@ -119,9 +119,9 @@ Anweisungen sind auf jeder Seite des Front-Ends vorhanden, um die richtige Verwe
 
 #### 4.3 ZWEI-FAKTOR-AUTHENTIFIZIERUNG
 
-Es ist möglich, das Front-End sicherer zu machen, indem Sie die Zwei-Faktor-Authentifizierung ("2FA") aktivieren. Wenn Sie sich bei einem 2FA-aktivierten Konto eingeloggt, wird eine E-Mail an die zugehörige E-Mail-Adresse gesendet. Diese E-Mail enthält einen "2FA-Code", den der Nutzer zusätzlich zum Benutzernamen und Passwort eingeben muss, um sich mit diesem Konto einloggen zu können. Das bedeutet, dass das Erlangen eines Kontopassworts nicht ausreicht, um eine Konto zu übernehmen, da sie auch bereits Zugriff auf die mit diesem Konto verknüpfte E-Mail-Adresse haben müssen, um den mit der Sitzung verbundenen 2FA-Code empfangen und verwenden zu können, dadurch wird das Front-End sicherer.
+Es ist möglich, das Front-End sicherer zu machen, indem Sie die Zwei-Faktor-Authentifizierung ("2FA") aktivieren. Wenn Sie sich bei einem 2FA-aktivierten Konto eingeloggt, wird eine E-Mail an die zugehörige E-Mail-Adresse gesendet. Diese E-Mail enthält einen "2FA-Code", den der Nutzer zusätzlich zum Benutzernamen und Passwort eingeben muss, um sich mit diesem Konto einloggen zu können. Das bedeutet, dass das Erlangen eines Kontopassworts nicht ausreicht, um ein Konto zu übernehmen, da sie auch bereits Zugriff auf die mit diesem Konto verknüpfte E-Mail-Adresse haben müssen, um den mit der Sitzung verbundenen 2FA-Code empfangen und verwenden zu können, dadurch wird das Front-End sicherer.
 
-Um die Zwei-Faktor-Authentifizierung zu aktivieren, verwenden Sie zunächst die Front-End-Aktualisierungsseite, um die PHPMailer-Komponente zu installieren. CIDRAM verwendet PHPMailer zum Senden von E-Mails. Hinweis: Obwohl CIDRAM selbst mit `PHP >= 5.4.0` kompatibel ist, benötigt PHPMailer `PHP >= 5.5.0.` Daher ist eine Zwei-Faktor-Authentifizierung für das CIDRAM-Front-End auf `PHP 5.4` CIDRA Installationen nicht möglich.
+Um die Zwei-Faktor-Authentifizierung zu aktivieren, verwenden Sie zunächst die Front-End-Aktualisierungsseite, um die PHPMailer-Komponente zu installieren. CIDRAM verwendet PHPMailer zum Senden von E-Mails. Hinweis: Obwohl CIDRAM selbst mit `PHP >= 5.4.0` kompatibel ist, benötigt PHPMailer `PHP >= 5.5.0`. Daher ist eine Zwei-Faktor-Authentifizierung für das CIDRAM-Front-End auf `PHP 5.4` CIDRAM Installationen nicht möglich.
 
 Nachdem Sie PHPMailer installiert haben, müssen Sie die Konfigurationsdirektiven für PHPMailer über die CIDRAM-Konfigurationsseite oder Konfigurationsdatei ausfüllen. Weitere Informationen zu diesen Konfigurationsanweisungen finden Sie im [Konfigurationsabschnitt](#SECTION6) dieses Dokuments. Nachdem Sie die PHPMailer-Konfigurationsdirektiven gefüllt haben, setzen Sie `Enable2FA` auf `true`. Die Zwei-Faktor-Authentifizierung sollte jetzt aktiviert sein.
 
@@ -355,6 +355,9 @@ _Beispiele anhand des 20.08.2018 um 12:06_
 
 *Technische Erläuterung: "Ältesten" bedeutet, in diesem Zusammenhang, letzte Änderung liegt am meisten zurück.*
 
+##### "timezone"
+- Damit wird festgelegt welche Zeitzone CIDRAM für Datums/Uhrzeit-Operationen verwenden soll. Wenn Sie es nicht brauchen, ignorieren Sie es. Mögliche Werte werden von PHP bestimmt. Es ist in der Regel statt zur Einstellung der Zeitzone Richtlinie in Ihrer Datei `php.ini` empfohlen, aber manchmal (wie wenn Sie mit begrenzten Shared-Hosting-Provider arbeiten) dies ist nicht immer möglich zu tun, und so, ist diese Option hier zur Verfügung gestellt.
+
 ##### "timeOffset"
 - Wenn Ihr Server-Zeit nicht mit Ihrer Ortszeit, Sie können einen Offset hier angeben (Dies ist das Datum/Zeit-Informationen anpassen, die durch CIDRAM erzeugt wird). Es ist in der Regel statt zur Einstellung der Zeitzone Richtlinie in Ihrer Datei `php.ini` empfohlen, aber manchmal (wie wenn Sie mit begrenzten Shared-Hosting-Provider arbeiten) dies ist nicht immer möglich zu tun, und so, ist diese Option hier zur Verfügung gestellt. Offset ist in Minuten.
 - Beispiel (eine Stunde hinzufügen): `timeOffset=60`
@@ -392,7 +395,7 @@ Status-Code | Status-Message | Beschreibung
 `503` | `Service Unavailable` | Am robustesten, aber am wenigsten benutzerfreundlich.
 
 ##### "silent_mode"
-- Anstatt die "Zugriff verweigert" meldung auszugeben, sollte CIDRAM leise die Zugriffe umleiten? Wenn ja, geben Sie den Speicherort an auf welchen die Zugriffe umgeleitet werden sollen. Wenn nein, diese Variable leer lassen.
+- Anstatt die "Zugriff verweigert" Meldung auszugeben, sollte CIDRAM leise die Zugriffe umleiten? Wenn ja, geben Sie den Speicherort an auf welchen die Zugriffe umgeleitet werden sollen. Wenn nein, diese Variable leer lassen.
 
 ##### "lang"
 - Gibt die Standardsprache für CIDRAM an.
@@ -422,13 +425,13 @@ Wert | Produziert | Beschreibung
 *Beachten: Diese Werte sind nirgends standardisiert und werden wahrscheinlich nicht über das Paket hinaus relevant sein. Auch unterstützte Werte können sich in Zukunft ändern.*
 
 ##### "emailaddr"
-- Wenn sie möchten, können sie hier eine E-Mail-Adresse angeben welche den Benutzern angezeigt wird, welche diese im fall einer falschen Sperrung oder im Fehlerfall kontaktieren können. **Achtung:** diese E-Mail wird nahezu garantiert von diversen Spambots o.ä. gefunden. Daher ist es empfehlenswert eine "wegwerf" E-Mail-Adresse zu nutzen bei welcher es keine Probleme birgt wenn diese Spam erhält. Daher sollten im bessten fall keine Persönlichen / regulär genutzten Adressen eingesetzt werden.
+- Wenn Sie möchten, können Sie hier eine E-Mail-Adresse angeben, welche den Benutzern angezeigt wird, welche diese im fall einer falschen Sperrung oder im Fehlerfall kontaktieren können. **Achtung:** Diese E-Mail wird nahezu garantiert von diversen Spambots o.ä. gefunden. Daher ist es empfehlenswert eine "wegwerf" E-Mail-Adresse zu nutzen bei welcher es keine Probleme birgt wenn diese Spam erhält. Daher sollten im besten fall keine Persönlichen oder regulär genutzten Adressen eingesetzt werden.
 
 ##### "emailaddr_display_style"
 - Wie möchten Sie die E-Mail-Adresse für die Nutzer anzeigen? "default" = Klickbarer Link (mailto Link). "noclick" = Nicht klickbarer Text.
 
 ##### "disable_cli"
-- CLI-Modus deaktivieren? CLI-Modus ist standardmäßig aktiviert, kann aber manchmal bestimmte Test-Tools (Beispielsweise PHPUnit) und andere CLI-basierte Anwendungen beeinträchtigen. Wenn Sie den CLI-Modus nicht deaktiveren müssen, solltesn Sie diese Anweisung ignorieren. False = CLI-Modus aktivieren [Standardeinstellung]; True = CLI-Modus deaktivieren.
+- CLI-Modus deaktivieren? CLI-Modus ist standardmäßig aktiviert, kann aber manchmal bestimmte Test-Tools (Beispielsweise PHPUnit) und andere CLI-basierte Anwendungen beeinträchtigen. Wenn Sie den CLI-Modus nicht deaktivieren müssen, sollten Sie diese Anweisung ignorieren. False = CLI-Modus aktivieren [Standardeinstellung]; True = CLI-Modus deaktivieren.
 
 ##### "disable_frontend"
 - Front-End-Access deaktivieren? Front-End-Access kann CIDRAM einfacher zu handhaben machen, aber es kann auch ein potentielles Sicherheitsrisiko sein. Es wird empfohlen, wenn möglich, CIDRAM über die Back-End-Access zu verwalten, aber Front-End-Access ist für den Fall vorgesehen, wenn dies nicht möglich ist. Halten Sie es deaktiviert außer wenn Sie es brauchen. False = Front-End-Access aktivieren; True = Front-End-Access deaktivieren [Standardeinstellung].
@@ -443,7 +446,7 @@ Wert | Produziert | Beschreibung
 - Überschreiben "forbid_on_block" Wenn "infraction_limit" überschritten wird? Beim überschreiben: Blockierte Anfragen geben eine leere Seite zurück (Template-Dateien werden nicht verwendet). 200 = Nicht überschreiben [Standardeinstellung]. Andere Werte entsprechen den verfügbaren Werten für "forbid_on_block".
 
 ##### "log_banned_ips"
-- Sollen auch blockierte Anfragen von blockierten IP's Protokolliert werden? True = Ja [Standardeinstellung]; False = Nein.
+- Sollen auch blockierte Anfragen von verbotenen IPs Protokolliert werden? True = Ja [Standardeinstellung]; False = Nein.
 
 ##### "default_dns"
 - Eine durch Kommata getrennte Liste von DNS-Servern, die für Hostnamen-Lookups verwendet werden sollen. Standardeinstellung = "8.8.8.8,8.8.4.4" (Google DNS). ACHTUNG: Ändern Sie diesen Wert nur, wenn Sie wissen, was Sie tun!
@@ -514,7 +517,7 @@ Konfiguration der Signaturen.
 - Eine Liste der IPv6-Signaturdateien, die CIDRAM zu analysieren versuchen sollte, getrennt durch Kommas. Hier können Sie Einträge hinzufügen, wenn Sie zusätzliche IPv6-Signaturdateien in CIDRAM aufnehmen möchten.
 
 ##### "block_cloud"
-- CIDRs blockieren, welche zu Web-/Server- Hostern gehören. Wenn sie eine API betreiben oder erwarten, dass sie oft Aufrufe von solchen Servern bekommen sollten sie diese option auf false (nicht blockieren) setzen. Wenn sie solche Anfragen blockieren möchen, setzen sie diese Option auf true [Standarteinstellung]
+- CIDRs blockieren, welche zu Web-/Server- Hostern gehören. Wenn sie eine API betreiben oder erwarten, dass sie oft Aufrufe von solchen Servern bekommen sollten sie diese Option auf false (nicht blockieren) setzen. Wenn sie solche Anfragen blockieren möchen, setzen sie diese Option auf true [Standarteinstellung].
 
 ##### "block_bogons"
 - Blockieren Sie Bogon/Martian CIDRs? Wenn Sie Verbindungen zu Ihrer Website von localhost, von Ihrem LAN, oder von innerhalb Ihres lokalen Netzwerks erwarten, diese Richtlinie auf false sollte gesetzt werden. Wenn Sie diese Verbindungen nicht erwarten, dies auf true sollte gesetzt werden.
@@ -549,7 +552,7 @@ Konfiguration der Signaturen.
 #### "recaptcha" (Kategorie)
 Wenn Sie möchten, können sie blockierten Benutzern mithilfe des google reCAPTCHA eine Möglichkeit bieten, durch den Beweis dass diese ein Mensch sind, auf die Seite zuzugreifen.
 
-Aufgrund der Risiken im Zusammenhang mit der Bereitstellung eines Wegs um die blockierung zu umgehen, ist es nicht empfohlen diese Methode bereitzustellen. Es ist Empfohlen, diese Methode nur zu aktivieren wenn Sie diese unbedingt benötigen. Dies könnten beispielsweise diese Situatuinen seien:
+Aufgrund der Risiken im Zusammenhang mit der Bereitstellung eines Wegs um die Blockierung zu umgehen, ist es nicht empfohlen diese Methode bereitzustellen. Es ist Empfohlen, diese Methode nur zu aktivieren wenn Sie diese unbedingt benötigen. Dies könnten beispielsweise diese Situatuinen seien:
 - Bestimmte Kunden/Benutzer müssen ihre Webseite auch aus blockierten Netzwerken erreichen können.
 - Einzelne Nutzer nutzen zum Schutz ihrer Daten einen VPN oder Proxy.
 
@@ -817,7 +820,7 @@ Abgelaufene Signaturen werden niemals in Reaktion irgendeine Anfrage ausgelöst,
 
 Wenn Sie das Herkunftsland für eine bestimmte Signatur angeben möchten, können Sie dies mit einem "Ursprungs-Tag" tun. Ein Ursprungs-Tag akzeptiert einen "[ISO 3166-1 Alpha-2](https://de.wikipedia.org/wiki/ISO-3166-1-Kodierliste)"-Code, der dem Ursprungsland für die Signaturen entspricht, auf die es angewendet wird. Diese Codes müssen in Großbuchstaben geschrieben werden (Kleinbuchstaben oder Groß-/Kleinschreibung werden nicht korrekt dargestellt). Wenn ein Ursprungs-Tag verwendet wird, wird es zum Log-Feld für alle Anfragen "Warum blockiert" hinzugefügt, die aufgrund der Signaturen blockiert wurden, auf die das Tag angewendet wurde.
 
-Wenn die optionale Komponennte "frags CSS" installiert ist, und Log-Dateien im Front-End angezeigt werden, werden die angehängten Urspungs-Informationen in die Flaggen der entsprechenden Länder umgewandelt. Diese Information ist anklickbar um nach nach Ähnlichen Logeinträgen  zu filtern (denjenigen, die auf die Protokollseite zugreifen, die Möglichkeit zu geben, nach dem Herkunftsland zu filtern).
+Wenn die optionale Komponente "flags CSS" installiert ist, und Log-Dateien im Front-End angezeigt werden, werden die angehängten Ursprungs-Informationen in die Flaggen der entsprechenden Länder umgewandelt. Diese Information ist anklickbar um nach Ähnlichen Logeinträgen  zu filtern (denjenigen, die auf die Protokollseite zugreifen, die Möglichkeit zu geben, nach dem Herkunftsland zu filtern).
 
 Hinweis: Technisch gesehen ist, dies keine Form von Geolokalisierung, weil es keine spezifischen Informationen sucht in Bezug auf eingehende IPs, aber stattdessen, erlaubt uns einfach, ein Herkunftsland für alle Anfragen anzugeben, die durch bestimmte Signaturen blockiert werden. Innerhalb der selben Signatur-Sektionen sind mehrere Ursprungs-Tags zulässig.
 
@@ -1092,7 +1095,7 @@ Module wurden zur Verfügung gestellt, um sicherzustellen, dass die folgenden Pa
 - [Kann ich CIDRAM verwenden, um andere Dinge als Websites zu schützen (z.B. E-Mail-Server, FTP, SSH, IRC u.s.w.)?](#PROTECT_OTHER_THINGS)
 - [Werden Probleme auftreten, wenn ich CIDRAM gleichzeitig mit CDNs oder Caching-Diensten verwende?](#CDN_CACHING_PROBLEMS)
 - [Wird CIDRAM meine Website vor DDoS-Angriffen schützen?](#DDOS_ATTACKS)
-- [Wenn ich Module oder Signaturdateien über die Update-Seite aktiviere oder deaktiviere, sortiert siche diese alphanumerisch in der Konfiguration. Kann ich die Art der Sortierung ändern?](#CHANGE_COMPONENT_SORT_ORDER)
+- [Wenn ich Module oder Signaturdateien über die Update-Seite aktiviere oder deaktiviere, sortiert sie diese alphanumerisch in der Konfiguration. Kann ich die Art der Sortierung ändern?](#CHANGE_COMPONENT_SORT_ORDER)
 
 #### <a name="WHAT_IS_A_SIGNATURE"></a>Was ist eine "Signatur"?
 
@@ -1245,7 +1248,7 @@ Erstens ist CIDRAM ein PHP-Paket, und arbeitet daher auf dem Rechner, auf dem PH
 
 Dies kann mit dedizierten Vor-Ort-Hardware-Lösungen, und/oder Cloud-basierte Lösungen wie dedizierten DDoS-Mitigationsdiensten, routing des DNS einer Domain über DDoS-resistente Netzwerke, Cloud-basierte Filterung, oder eine Kombination davon implementiert werden. Auf jeden Fall ist dieses Thema ein wenig zu komplex, um es mit nur ein oder zwei Paragraphen gründlich zu erklären, also würde ich empfehlen, weitere Nachforschungen anzustellen, wenn dies ein Thema ist, dem Sie nachgehen wollen. Wenn die wahre Natur von DDoS-Angriffen richtig verstanden wird, wird diese Antwort mehr Sinn machen.
 
-#### <a name="CHANGE_COMPONENT_SORT_ORDER"></a>Wenn ich Module oder Signaturdateien über die Update-Seite aktiviere oder deaktiviere, sortiert siche diese alphanumerisch in der Konfiguration. Kann ich die Art der Sortierung ändern?
+#### <a name="CHANGE_COMPONENT_SORT_ORDER"></a>Wenn ich Module oder Signaturdateien über die Update-Seite aktiviere oder deaktiviere, sortiert sie diese alphanumerisch in der Konfiguration. Kann ich die Art der Sortierung ändern?
 
 Ja. Wenn Sie einige Dateien zwingen müssen, in einer bestimmten Reihenfolge ausgeführt zu werden, können Sie einige beliebige Daten vor ihren Namen in der Konfigurationsdirektive in der sie aufgeführt sind hinzufügen, durch einen Doppelpunkt getrennt. Wenn die Updates-Seite anschließend die Dateien erneut sortiert, wirken sich diese zusätzlichen Daten auf die Sortierreihenfolge aus und führen dazu, dass sie in der von Ihnen gewünschten Reihenfolge ausgeführt werden, ohne diese umbenennen zu müssen.
 

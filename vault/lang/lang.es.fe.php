@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Spanish language data for the front-end (last modified: 2018.12.06).
+ * This file: Spanish language data for the front-end (last modified: 2019.01.05).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -107,7 +107,7 @@ $CIDRAM['lang']['config_legal_omit_hostname'] = 'Omitir nombres de host de los a
 $CIDRAM['lang']['config_legal_omit_ip'] = 'Omitir direcciones IP de los archivos de registro? True = Sí; False = No [Predefinido]. Nota: "pseudonymise_ip_addresses" se vuelve redundante cuando "omit_ip" es "true".';
 $CIDRAM['lang']['config_legal_omit_ua'] = 'Omitir agentes de usuario de los archivos de registro? True = Sí; False = No [Predefinido].';
 $CIDRAM['lang']['config_legal_privacy_policy'] = 'La dirección de una política de privacidad relevante que se mostrará en el pie de página de cualquier página generada. Especificar una URL, o dejar en blanco para desactivar.';
-$CIDRAM['lang']['config_legal_pseudonymise_ip_addresses'] = '¿Seudonimizar las direcciones IP cuando al escribir archivos de registro? True = Sí; False = No [Predefinido].';
+$CIDRAM['lang']['config_legal_pseudonymise_ip_addresses'] = '¿Seudonimizar las direcciones IP cuando al escribir archivos de registro? True = Sí [Predefinido]; False = No.';
 $CIDRAM['lang']['config_rate_limiting_allowance_period'] = 'El número de horas para monitorear el uso. Predefinido = 0.';
 $CIDRAM['lang']['config_rate_limiting_max_bandwidth'] = 'La cantidad máxima de ancho de banda permitida dentro del período de asignación antes de habilitar los límites de tarifas para solicitudes futuras. Un valor de 0 desactiva este tipo de limitación de la tarifa. Predefinido = 0KB.';
 $CIDRAM['lang']['config_rate_limiting_max_requests'] = 'El número máximo de solicitudes permitido dentro del período de asignación antes de habilitar los límites de tarifas para solicitudes futuras. Un valor de 0 desactiva este tipo de limitación de la tarifa. Predefinido = 0.';

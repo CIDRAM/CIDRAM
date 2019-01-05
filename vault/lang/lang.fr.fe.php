@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: French language data for the front-end (last modified: 2018.12.06).
+ * This file: French language data for the front-end (last modified: 2019.01.05).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -107,7 +107,7 @@ $CIDRAM['lang']['config_legal_omit_hostname'] = 'Omettre les noms d\'hôtes de l
 $CIDRAM['lang']['config_legal_omit_ip'] = 'Omettre les adresses IP de la journalisation ? True = Oui ; False = Non [Défaut]. Remarque : « pseudonymise_ip_addresses » devient redondant lorsque « omit_ip » est « true ».';
 $CIDRAM['lang']['config_legal_omit_ua'] = 'Omettre les agents utilisateurs de la journalisation ? True = Oui ; False = Non [Défaut].';
 $CIDRAM['lang']['config_legal_privacy_policy'] = 'L\'adresse d\'une politique de confidentialité pertinente à afficher dans le pied de page des pages générées. Spécifier une URL, ou laisser vide à désactiver.';
-$CIDRAM['lang']['config_legal_pseudonymise_ip_addresses'] = 'Pseudonymiser les adresses IP lors de la journalisation ? True = Oui ; False = Non [Défaut].';
+$CIDRAM['lang']['config_legal_pseudonymise_ip_addresses'] = 'Pseudonymiser les adresses IP lors de la journalisation ? True = Oui [Défaut] ; False = Non.';
 $CIDRAM['lang']['config_rate_limiting_allowance_period'] = 'Le nombre d\'heures pour surveiller l\'utilisation. Défaut = 0.';
 $CIDRAM['lang']['config_rate_limiting_max_bandwidth'] = 'La quantité maximale de bande passante autorisée dans la période de tolérance avant de permettre la limitation de débit pour les requêtes futures. Une valeur de 0 désactive ce type de limitation de débit. Défaut = 0KB.';
 $CIDRAM['lang']['config_rate_limiting_max_requests'] = 'Le nombre maximal de requêtes autorisées dans la période de tolérance avant de permettre la limitation de débit pour les requêtes futures. Une valeur de 0 désactive ce type de limitation de débit. Défaut = 0.';

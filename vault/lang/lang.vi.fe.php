@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Vietnamese language data for the front-end (last modified: 2018.12.06).
+ * This file: Vietnamese language data for the front-end (last modified: 2019.01.05).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -107,7 +107,7 @@ $CIDRAM['lang']['config_legal_omit_hostname'] = 'Bỏ qua tên máy chủ từ n
 $CIDRAM['lang']['config_legal_omit_ip'] = 'Bỏ qua địa chỉ IP từ nhật ký? True = Vâng; False = Không [Mặc định]. Lưu ý: "pseudonymise_ip_addresses" trở nên dư thừa khi "omit_ip" là "true".';
 $CIDRAM['lang']['config_legal_omit_ua'] = 'Bỏ qua đại lý người dùng từ nhật ký? True = Vâng; False = Không [Mặc định].';
 $CIDRAM['lang']['config_legal_privacy_policy'] = 'Địa chỉ của chính sách bảo mật liên quan được hiển thị ở chân trang của bất kỳ trang nào được tạo. Chỉ định URL, hoặc để trống để vô hiệu hóa.';
-$CIDRAM['lang']['config_legal_pseudonymise_ip_addresses'] = 'Pseudonymise địa chỉ IP khi viết các tập tin nhật ký? True = Vâng; False = Không [Mặc định].';
+$CIDRAM['lang']['config_legal_pseudonymise_ip_addresses'] = 'Pseudonymise địa chỉ IP khi viết các tập tin nhật ký? True = Vâng [Mặc định]; False = Không.';
 $CIDRAM['lang']['config_rate_limiting_allowance_period'] = 'Số giờ để theo dõi việc sử dụng. Mặc định = 0.';
 $CIDRAM['lang']['config_rate_limiting_max_bandwidth'] = 'Số lượng băng thông tối đa được phép trong khoảng thời gian cho phép trước khi cho phép giới hạn tốc độ cho các yêu cầu trong tương lai. Giá trị 0 sẽ vô hiệu hóa loại giới hạn tốc độ này. Mặc định = 0KB.';
 $CIDRAM['lang']['config_rate_limiting_max_requests'] = 'Số lượng yêu cầu tối đa được phép trong khoảng thời gian cho phép trước khi cho phép giới hạn tốc độ cho các yêu cầu trong tương lai. Giá trị 0 sẽ vô hiệu hóa loại giới hạn tốc độ này. Mặc định = 0.';

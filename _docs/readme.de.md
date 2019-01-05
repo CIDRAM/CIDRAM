@@ -27,8 +27,8 @@ CIDRAM (Classless Inter-Domain Routing Access Manager) ist ein PHP-Skript gestal
 CIDRAM COPYRIGHT 2016 und darüber hinaus GNU/GPLv2 by Caleb M (Maikuolan).
 
 Dieses Skript ist freie Software; Sie können Sie weitergeben und/oder modifizieren unter den Bedingungen der GNU General Public License, wie von der Free Software Foundation veröffentlicht; entweder unter Version 2 der Lizenz oder (nach Ihrer Wahl) jeder späteren Version. Dieses Skript wird in der Hoffnung verteilt, dass es nützlich sein wird, allerdings OHNE JEGLICHE GARANTIE; ohne implizite Garantien für VERMARKTUNG/VERKAUF/VERTRIEB oder FÜR EINEN BESTIMMTEN ZWECK. Lesen Sie die GNU General Public License für weitere Details, in der Datei `LICENSE.txt`, ebenfalls verfügbar auf:
-- <http://www.gnu.org/licenses/>.
-- <http://opensource.org/licenses/>.
+- <https://www.gnu.org/licenses/>.
+- <https://opensource.org/licenses/>.
 
 Dieses Dokument und das zugehörige Paket kann von auf folgenden Seiten kostenlos heruntergeladen werden [GitHub](https://cidram.github.io/).
 
@@ -597,7 +597,7 @@ Ein `site_key` und `secret_key` (für die Verwendung von reCAPTCHA erforderlich)
 ##### "api"
 - Welche API soll verwendet werden? V2 oder Invisible?
 
-*Hinweis für Benutzer in der Europäischen Union: Wenn CIDRAM für die Verwendung von Cookies konfiguriert ist (z.B. wenn "lockuser" true/wahr ist), wir auf den Seiten gemäß der [EU-Cookie-Gesetzgebung](http://ec.europa.eu/ipg/basics/legal/cookies/index_en.htm) eine Cookie-Warnung angezeigt. CIDRAM Versucht bei der Invisible API allerdings das reCAPTCHA Automatisch zu Lösen. Unter umständen wird dabei die Seite automatisch neu geladen, was dem Nutzer nicht genug Zeit geben könnte um diese Cookie-Warnung zu lesen. Wenn dies für Sie ein rechtliches Risiko darstellt, ist es möglicherweise besser, die V2 API anstelle der invisible API zu verwenden (die V2 API ist nicht automatisiert und erfordert, dass der Benutzer die reCAPTCHA-Aufgabe selbst abschließt; dies bietet die Möglichkeit, die Cookie-Warnung zu sehen).*
+*Hinweis für Benutzer in der Europäischen Union: Wenn CIDRAM für die Verwendung von Cookies konfiguriert ist (z.B. wenn "lockuser" true/wahr ist), wir auf den Seiten gemäß der [EU-Cookie-Gesetzgebung](https://www.cookielaw.org/the-cookie-law/) eine Cookie-Warnung angezeigt. CIDRAM Versucht bei der Invisible API allerdings das reCAPTCHA Automatisch zu Lösen. Unter umständen wird dabei die Seite automatisch neu geladen, was dem Nutzer nicht genug Zeit geben könnte um diese Cookie-Warnung zu lesen. Wenn dies für Sie ein rechtliches Risiko darstellt, ist es möglicherweise besser, die V2 API anstelle der invisible API zu verwenden (die V2 API ist nicht automatisiert und erfordert, dass der Benutzer die reCAPTCHA-Aufgabe selbst abschließt; dies bietet die Möglichkeit, die Cookie-Warnung zu sehen).*
 
 #### "legal" (Kategorie)
 Konfiguration für gesetzliche Anforderungen.
@@ -605,7 +605,7 @@ Konfiguration für gesetzliche Anforderungen.
 *Für weitere Informationen zu gesetzlichen Anforderungen und wie sich dies auf Ihre Konfiguration-Anforderungen auswirken können, beachten Sie bitte die Sektion "[RECHTSINFORMATION](#SECTION11)" der Dokumentation.*
 
 ##### "pseudonymise_ip_addresses"
-- Pseudonymisieren IP-Adressen beim Schreiben der Protokolldateien? True = Ja; False = Nein [Standardeinstellung].
+- Pseudonymisieren IP-Adressen beim Schreiben der Protokolldateien? True = Ja [Standardeinstellung]; False = Nein.
 
 ##### "omit_ip"
 - IP-Adressen aus Protokollen auslassen? True = Ja; False = Nein [Standardeinstellung]. Hinweis: "pseudonymise_ip_addresses" wird überflüssig, wenn "omit_ip" "true" ist.
@@ -675,7 +675,7 @@ Derzeit verwendet CIDRAM PHPMailer nur für die Frontend-Zwei-Faktor-Authentifiz
 - Die Antwortadresse, die beim Senden von E-Mails über SMTP verwendet werden soll.
 
 ##### "addReplyToName"
-- Der Name für der Antwort, die beim Senden von E-Mails über SMTP anzugeben werden soll.
+- Der Name für der Antwort, die beim Senden von E-Mails über SMTP verwendet werden soll.
 
 #### "rate_limiting" (Kategorie)
 Optionale Konfigurationsanweisungen zur Ratenbegrenzung.
@@ -1117,7 +1117,7 @@ Oft (aber nicht immer) werden Signaturen in Gruppen zusammengebunden, um "Signat
 
 #### <a name="WHAT_IS_A_CIDR"></a>Was ist ein "CIDR"?
 
-"CIDR" ist ein Akronym für "Classless Inter-Domain Routing" *[[1](https://de.wikipedia.org/wiki/Classless_Inter-Domain_Routing), [2](http://whatismyipaddress.com/cidr)]*, und es ist dieses Akronym, das als Teil des Namens für dieses Paket, "CIDRAM", verwendet wird, um ein größeres Akronym zu bilden, "Classless Inter-Domain Routing Access Manager".
+"CIDR" ist ein Akronym für "Classless Inter-Domain Routing" *[[1](https://de.wikipedia.org/wiki/Classless_Inter-Domain_Routing), [2](https://whatismyipaddress.com/cidr)]*, und es ist dieses Akronym, das als Teil des Namens für dieses Paket, "CIDRAM", verwendet wird, um ein größeres Akronym zu bilden, "Classless Inter-Domain Routing Access Manager".
 
 Aber, im Kontext von CIDRAM (sowie, in dieser Dokumentation, in Diskussionen über CIDRAM, oder in den CIDRAM-Sprachdaten), wann immer ein "CIDR" (Singular) oder "CIDRs" (Plural) ist erwähnt (und somit, wobei wir diese Wörter als Substantive in ihrem eigenen Recht verwenden, im Gegensatz zu Akronymen), was beabsichtigt und gemeint ist ein Subnetz (oder Subnetze), ausgedrückt mit CIDR-Notation. Der Grund dafür, dass CIDR (oder CIDRs) verwendet wird, anstelle von Subnetz (oder Subnetze) ist um zu klären, es ist Subnetze mit CIDR-Notation ausgedrückt auf die wir uns beziehen (weil CIDR-Notation ist nur eine von verschiedenen Möglichkeiten, wie Subnetze ausgedrückt werden können). CIDRAM könnte daher als "Subnetz Access Manager" betrachtet werden.
 
@@ -1338,11 +1338,11 @@ Es gibt mehrere Arten der Protokollierung, die CIDRAM ausführen kann. Verschied
 ##### 11.3.0 BLOCKEREIGNISSE
 
 Der primäre Art der Protokollierung, den CIDRAM ausführen kann, bezieht sich auf "Blockereignisse". Diese Art der Protokollierung bezieht sich auf das Blockieren einer Anforderung durch CIDRAM und kann in drei verschiedenen Formaten bereitgestellt werden:
-- Menschen lesbar oder benutzerfreundliche Protokolldateien.
+- Menschenlesbar oder benutzerfreundliche Protokolldateien.
 - Apache-Stil Protokolldateien.
 - Serialisierte Protokolldateien.
 
-Ein Blockereignis, das in einer für Menschen lesbaren Protokolldatei protokolliert wird, sieht in etwa wie folgt aus (als Beispiel):
+Ein Blockereignis, das in einer für menschenlesbaren Protokolldatei protokolliert wird, sieht in etwa wie folgt aus (als Beispiel):
 
 ```
 ID: 1234
@@ -1518,4 +1518,4 @@ Alternativ gibt es einen kurzen (nicht autoritativen) Überblick über die GDPR/
 ---
 
 
-Zuletzt aktualisiert: 4 Januar 2019 (2019.01.04).
+Zuletzt aktualisiert: 5 Januar 2019 (2019.01.05).

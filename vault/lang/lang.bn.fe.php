@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Bangla language data for the front-end (last modified: 2018.12.07).
+ * This file: Bangla language data for the front-end (last modified: 2019.01.05).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -107,7 +107,7 @@ $CIDRAM['lang']['config_legal_omit_hostname'] = 'লগগুলি থেকে
 $CIDRAM['lang']['config_legal_omit_ip'] = 'লগগুলি থেকে IP ঠিকানাগুলি বাদ দিন? True = হাঁ; False = না [ডিফল্ট]। দ্রষ্টব্য: "pseudonymise_ip_addresses" অপ্রয়োজনীয় হয় যখন "omit_ip" হল "true"।';
 $CIDRAM['lang']['config_legal_omit_ua'] = 'লগগুলি থেকে ব্যবহারকারী এজেন্ট বাদ দিন? True = হাঁ; False = না [ডিফল্ট]।';
 $CIDRAM['lang']['config_legal_privacy_policy'] = 'কোন প্রযোজ্য পৃষ্ঠাগুলির পাদলেখ প্রদর্শিত একটি প্রাসঙ্গিক গোপনীয়তা নীতির ঠিকানা। একটি URL উল্লেখ করুন, বা অক্ষম করতে ফাঁকা রাখুন।';
-$CIDRAM['lang']['config_legal_pseudonymise_ip_addresses'] = 'লগ লেখার সময় IP ঠিকানাগুলি pseudonymize? True = হাঁ; False = না [ডিফল্ট]।';
+$CIDRAM['lang']['config_legal_pseudonymise_ip_addresses'] = 'লগ লেখার সময় IP ঠিকানাগুলি pseudonymize? True = হাঁ [ডিফল্ট]; False = না।';
 $CIDRAM['lang']['config_rate_limiting_allowance_period'] = 'ব্যবহারের ট্র্যাক কত ঘন্টা। ডিফল্ট = "0"।';
 $CIDRAM['lang']['config_rate_limiting_max_bandwidth'] = 'ভবিষ্যতের অনুরোধগুলির সীমিত হারের আগে ভাতা সময়ের মধ্যে ব্যান্ডউইথের সর্বোচ্চ পরিমাণ অনুমোদিত। 0 এর একটি মান এই ধরনের হার সীমাবদ্ধ করে অক্ষম করে। ডিফল্ট = "0KB"।';
 $CIDRAM['lang']['config_rate_limiting_max_requests'] = 'ভার্চুয়াল অনুরোধ সীমিত করার আগে ভাতা সময়ের মধ্যে অনুমোদিত সর্বোচ্চ সংখ্যক অনুরোধ। 0 এর একটি মান এই ধরনের হার সীমাবদ্ধ করে অক্ষম করে। ডিফল্ট = "0"।';

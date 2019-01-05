@@ -27,8 +27,8 @@ CIDRAM (시도라무 클래스없는 도메인 간 라우팅 액세스 매니저
 CIDRAM 저작권 2016 년 이후 Caleb M (Maikuolan)의 GNU/GPLv2.
 
 본 스크립트는 프리웨어입니다. 자유 소프트웨어 재단에서 발행 한 GNU 일반 공중 라이선스 버전 2 (또는 이후 버전)에 따라 재배포 및 가공이 가능합니다. 배포의 목적은 도움이되기를 바랍니다 것이지만 "보증 아니며 상품성 또는 특정 목적에 적합한 것을 시사하는 것이기도 없습니다." "LICENSE.txt"에있는 "GNU General Public License" (일반 라이선스)을 참조하십시오. 다음 URL에서도 볼 수 있습니다 :
-- <http://www.gnu.org/licenses/>.
-- <http://opensource.org/licenses/>.
+- <https://www.gnu.org/licenses/>.
+- <https://opensource.org/licenses/>.
 
 본 문서 및 관련 패키지 [GitHub](https://cidram.github.io/)에서 다운로드 할 수 있습니다.
 
@@ -593,7 +593,7 @@ PHPMailer를 설치 한 후 CIDRAM 구성 페이지 또는 구성 파일을 통�
 ##### "api"
 - 어떤 API를 사용할 수 있습니까? V2 또는 Invisible?
 
-*유럽 연합 사용자를위한 참고 사항 : 쿠키를 사용하도록 CIDRAM을 구성한 경우 (예 : lockuser가 true 인 경우), 쿠키 경고가 [EU 쿠키 법안](http://ec.europa.eu/ipg/basics/legal/cookies/index_en.htm)의 요구 사항에 따라 페이지에 눈에 띄게 표시됩니다. 그러나, invisible API를 사용할 때 CIDRAM은 자동으로 사용자의 reCAPTCHA를 완료하려고 시도합니다. 성공하면 페이지가 다시로드되고 실제로 쿠키 경고를 볼 적절한 시간이 주어지지 않고 쿠키가 생성 될 수 있습니다. 이 문제로 인해 법적 위험이있는 경우, invisible API 대신 V2 API를 사용하는 것이 좋습니다 (V2 API는 자동화되어 있지 않으므로, 사용자가 reCAPTCHA 챌린지를 완료해야하므로 쿠키 경고를 볼 수 있습니다).*
+*유럽 연합 사용자를위한 참고 사항 : 쿠키를 사용하도록 CIDRAM을 구성한 경우 (예 : lockuser가 true 인 경우), 쿠키 경고가 [EU 쿠키 법안](https://www.cookielaw.org/the-cookie-law/)의 요구 사항에 따라 페이지에 눈에 띄게 표시됩니다. 그러나, invisible API를 사용할 때 CIDRAM은 자동으로 사용자의 reCAPTCHA를 완료하려고 시도합니다. 성공하면 페이지가 다시로드되고 실제로 쿠키 경고를 볼 적절한 시간이 주어지지 않고 쿠키가 생성 될 수 있습니다. 이 문제로 인해 법적 위험이있는 경우, invisible API 대신 V2 API를 사용하는 것이 좋습니다 (V2 API는 자동화되어 있지 않으므로, 사용자가 reCAPTCHA 챌린지를 완료해야하므로 쿠키 경고를 볼 수 있습니다).*
 
 #### "legal" (카테고리)
 법적 요구 사항과 관련된 구성.
@@ -601,7 +601,7 @@ PHPMailer를 설치 한 후 CIDRAM 구성 페이지 또는 구성 파일을 통�
 *법적 요구 사항 및 이것이 구성 요구 사항에 미치는 영향에 대한 자세한 내용은 설명서의 "[법률 정보](#SECTION11)"절을 참조하십시오.*
 
 ##### "pseudonymise_ip_addresses"
-- 로그 파일을 쓸 때 가명으로하다 IP 주소? True = 예; False = 아니오 (Default / 기본 설정).
+- 로그 파일을 쓸 때 가명으로 하다 IP 주소? True = 예 (Default / 기본 설정); False = 아니오.
 
 ##### "omit_ip"
 - 로그에서 IP 주소를 생략 하시겠습니까? True = 예; False = 아니오 (Default / 기본 설정). 참고 : "pseudonymise_ip_addresses"는 "omit_ip"가 "true"일 때 중복됩니다.
@@ -1111,7 +1111,7 @@ $Trigger(strpos($CIDRAM['BlockInfo']['UA'], 'Foobar') !== false, 'Foobar-UA', 'U
 
 #### <a name="WHAT_IS_A_CIDR"></a>"CIDR"이란 무엇입니까?
 
-"CIDR"은 "Classless Inter-Domain Routing"의 두문자어 입니다 *[[1](https://ko.wikipedia.org/wiki/%EC%82%AC%EC%9D%B4%EB%8D%94_(%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%82%B9)), [2](http://whatismyipaddress.com/cidr)]*. 이 두문자어 패키지의 이름의 일부로 사용됩니다 (CIDRAM). "CIDRAM"은 "Classless Inter-Domain Routing Access Manager"의 두문자어 입니다.
+"CIDR"은 "Classless Inter-Domain Routing"의 두문자어 입니다 *[[1](https://ko.wikipedia.org/wiki/%EC%82%AC%EC%9D%B4%EB%8D%94_(%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%82%B9)), [2](https://whatismyipaddress.com/cidr)]*. 이 두문자어 패키지의 이름의 일부로 사용됩니다 (CIDRAM). "CIDRAM"은 "Classless Inter-Domain Routing Access Manager"의 두문자어 입니다.
 
 그러나 CIDRAM의 맥락에서 (예를 들어, 이 문서, CIDRAM 관한 논의에서, CIDRAM 언어 데이터에), "CIDR"또는 "CIDRs"이 언급 될 때마다, 우리가 의도 한 의미는 CIDR 표기법을 사용하여 표현 된 서브넷입니다. 이 목적은 우리의 의미를 분명히하기위한 것입니다 (서브넷이 여러 가지 방법으로 표현 될 수 있기 때문에). 따라서 CIDRAM은 "서브넷 액세스 관리자"로 간주 될 수 있습니다.
 
@@ -1505,4 +1505,4 @@ CIDRAM은 마케팅이나 광고 목적으로 정보를 수집하거나 처리�
 ---
 
 
-최종 업데이트 : 2018년 12월 14일.
+최종 업데이트 : 2019년 1월 5일.

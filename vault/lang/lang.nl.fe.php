@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Dutch language data for the front-end (last modified: 2018.12.06).
+ * This file: Dutch language data for the front-end (last modified: 2019.01.05).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -107,7 +107,7 @@ $CIDRAM['lang']['config_legal_omit_hostname'] = 'Hostnamen uit logbestanden wegl
 $CIDRAM['lang']['config_legal_omit_ip'] = 'IP-adressen uit logbestanden weglaten? True = Ja; False = Nee [Standaard]. Opmerking: "pseudonymise_ip_addresses" wordt overbodig zijn wanneer "omit_ip" "true" is.';
 $CIDRAM['lang']['config_legal_omit_ua'] = 'Gebruikersagenten uit logbestanden weglaten? True = Ja; False = Nee [Standaard].';
 $CIDRAM['lang']['config_legal_privacy_policy'] = 'Het adres van een relevant privacybeleid dat moet worden weergegeven in de voettekst van eventuele gegenereerde pagina\'s. Geef een URL, of laat leeg om uit te schakelen.';
-$CIDRAM['lang']['config_legal_pseudonymise_ip_addresses'] = 'Pseudonimiseren de IP-adressen bij het schrijven van logbestanden? True = Ja; False = Nee [Standaard].';
+$CIDRAM['lang']['config_legal_pseudonymise_ip_addresses'] = 'Pseudonimiseren de IP-adressen bij het schrijven van logbestanden? True = Ja [Standaard]; False = Nee.';
 $CIDRAM['lang']['config_rate_limiting_allowance_period'] = 'Het aantal uren om het gebruik te controleren. Standaard = 0.';
 $CIDRAM['lang']['config_rate_limiting_max_bandwidth'] = 'De maximale hoeveelheid toegestane bandbreedte binnen de toeslagperiode voordat tarieflimiet voor toekomstige verzoeken wordt ingeschakeld. Een waarde van 0 schakelt dit type tarieflimiet uit. Standaard = 0KB.';
 $CIDRAM['lang']['config_rate_limiting_max_requests'] = 'Het maximale aantal toegestane verzoeken binnen de toeslagperiode voordat de tarieflimiet voor toekomstige verzoeken wordt ingeschakeld. Een waarde van 0 schakelt dit type tarieflimiet uit. Standaard = 0.';

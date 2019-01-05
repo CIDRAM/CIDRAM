@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Korean language data for the front-end (last modified: 2018.12.06).
+ * This file: Korean language data for the front-end (last modified: 2019.01.05).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -107,7 +107,7 @@ $CIDRAM['lang']['config_legal_omit_hostname'] = '로그에서 호스트 이름�
 $CIDRAM['lang']['config_legal_omit_ip'] = '로그에서 IP 주소를 생략 하시겠습니까? True = 예; False = 아니오 (Default / 기본 설정). 참고 : "pseudonymise_ip_addresses"는 "omit_ip"가 "true"일 때 중복됩니다.';
 $CIDRAM['lang']['config_legal_omit_ua'] = '로그에서 사용자 에이전트를 생략 하시겠습니까? True = 예; False = 아니오 (Default / 기본 설정).';
 $CIDRAM['lang']['config_legal_privacy_policy'] = '생성 된 페이지의 꼬리말에 표시 할 관련 개인 정보 정책 방침의 주소입니다. URL 지정, 또는 사용하지 않으려면 비워 두십시오.';
-$CIDRAM['lang']['config_legal_pseudonymise_ip_addresses'] = '로그 파일을 쓸 때 가명으로하다 IP 주소? True = 예; False = 아니오 (Default / 기본 설정).';
+$CIDRAM['lang']['config_legal_pseudonymise_ip_addresses'] = '로그 파일을 쓸 때 가명으로 하다 IP 주소? True = 예 (Default / 기본 설정); False = 아니오.';
 $CIDRAM['lang']['config_rate_limiting_allowance_period'] = '사용량을 모니터 할 시간입니다. Default (기본 설정) = 0.';
 $CIDRAM['lang']['config_rate_limiting_max_bandwidth'] = '향후 요청에 대해 속도 제한을 사용하기 전에 허용 기간 내에 허용되는 최대 대역폭입니다. 0 값은 이러한 유형의 속도 제한을 비활성화합니다. Default (기본 설정) = 0KB.';
 $CIDRAM['lang']['config_rate_limiting_max_requests'] = '향후 요청에 대해 속도 제한을 사용하도록 설정하기 전에 허용 기간 내에 허용되는 최대 요청 수입니다. 0 값은 이러한 유형의 속도 제한을 비활성화합니다. Default (기본 설정) = 0.';

@@ -27,8 +27,8 @@ CIDRAM (Classless Inter-Domain Routing Access Manager) là một kịch bản PH
 BẢN QUYỀN CIDRAM 2016 và hơn GNU/GPLv2 by Caleb M (Maikuolan).
 
 Bản này là chương trình miễn phí; bạn có thể phân phối lại hoạc sửa đổi dưới điều kiện của GNU Giấy Phép Công Cộng xuất bản bởi Free Software Foundation; một trong giấy phép phần hai, hoạc (tùy theo sự lựa chọn của bạn) bất kỳ phiên bản nào sau này. Bản này được phân phối với hy vọng rằng nó sẽ có hữu ích, nhưng mà KHÔNG CÓ BẢO HÀNH; ngay cả những bảo đảm ngụ ý KHẢ NĂNG BÁN HÀNG hoạc PHÙ HỢP VỚI MỤC ĐÍT VÀO. Hảy xem GNU Giấy Phép Công Cộng để biết them chi tiết, nằm trong tập tin `LICENSE.txt`, và kho chứa của tập tin này có thể tiềm đước tại:
-- <http://www.gnu.org/licenses/>.
-- <http://opensource.org/licenses/>.
+- <https://www.gnu.org/licenses/>.
+- <https://opensource.org/licenses/>.
 
 Tài liệu này và các gói liên quan của nó có thể được tải về miễn phí từ [GitHub](https://cidram.github.io/).
 
@@ -593,7 +593,7 @@ Do những rủi ro liên quan đến việc cung cấp một cách cho người
 ##### "api"
 - API nào để sử dụng? V2 hoặc Invisible?
 
-*Lưu ý đối với người dùng ở Liên minh châu Âu: Khi CIDRAM được định cấu hình để sử dụng cookie (v.d., khi "lockuser" là true/đúng), cảnh báo cookie được hiển thị trên trang theo quy định của [pháp luật về cookie của EU](http://ec.europa.eu/ipg/basics/legal/cookies/index_en.htm). Tuy nhiên, khi sử dụng API invisible, CIDRAM cố gắng hoàn thành reCAPTCHA cho người dùng tự động, và khi thành công, điều này có thể dẫn đến việc trang được tải lại và một cookie được tạo ra mà không có người dùng được cho đủ thời gian để thực sự xem cảnh báo cookie. Nếu điều này đặt ra rủi ro hợp pháp cho bạn, bạn nên sử dụng API V2 thay vì API invisible (API V2 không phải là tự động và yêu cầu người dùng tự hoàn thành reCAPTCHA, do đó cung cấp cơ hội để xem cảnh báo cookie).*
+*Lưu ý đối với người dùng ở Liên minh châu Âu: Khi CIDRAM được định cấu hình để sử dụng cookie (v.d., khi "lockuser" là true/đúng), cảnh báo cookie được hiển thị trên trang theo quy định của [pháp luật về cookie của EU](https://www.cookielaw.org/the-cookie-law/). Tuy nhiên, khi sử dụng API invisible, CIDRAM cố gắng hoàn thành reCAPTCHA cho người dùng tự động, và khi thành công, điều này có thể dẫn đến việc trang được tải lại và một cookie được tạo ra mà không có người dùng được cho đủ thời gian để thực sự xem cảnh báo cookie. Nếu điều này đặt ra rủi ro hợp pháp cho bạn, bạn nên sử dụng API V2 thay vì API invisible (API V2 không phải là tự động và yêu cầu người dùng tự hoàn thành reCAPTCHA, do đó cung cấp cơ hội để xem cảnh báo cookie).*
 
 #### "legal" (Thể loại)
 Cấu hình mà liên quan đến các nghĩa vụ hợp pháp.
@@ -601,7 +601,7 @@ Cấu hình mà liên quan đến các nghĩa vụ hợp pháp.
 *Để biết thêm thông tin về các nghĩa vụ hợp pháp và cách nó có thể ảnh hưởng đến các nghĩa vụ cấu hình của bạn, vui lòng tham khảo phần "[THÔNG TIN HỢP PHÁP](#SECTION11)" của các tài liệu.*
 
 ##### "pseudonymise_ip_addresses"
-- Pseudonymise địa chỉ IP khi viết các tập tin nhật ký? True = Vâng; False = Không [Mặc định].
+- Pseudonymise địa chỉ IP khi viết các tập tin nhật ký? True = Vâng [Mặc định]; False = Không.
 
 ##### "omit_ip"
 - Bỏ qua địa chỉ IP từ nhật ký? True = Vâng; False = Không [Mặc định]. Lưu ý: "pseudonymise_ip_addresses" trở nên dư thừa khi "omit_ip" là "true".
@@ -1111,7 +1111,7 @@ Thông thường (nhưng không phải luôn luôn), chữ ký sẽ được nh�
 
 #### <a name="WHAT_IS_A_CIDR"></a>"CIDR" là gì?
 
-"CIDR" là một từ viết tắt cho "Classless Inter-Domain Routing" *[[1](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing), [2](http://whatismyipaddress.com/cidr)]*, và nó là từ viết tắt này được sử dụng như là một phần của tên cho gói này, "CIDRAM", đó là một từ viết tắt cho "Classless Inter-Domain Routing Access Manager".
+"CIDR" là một từ viết tắt cho "Classless Inter-Domain Routing" *[[1](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing), [2](https://whatismyipaddress.com/cidr)]*, và nó là từ viết tắt này được sử dụng như là một phần của tên cho gói này, "CIDRAM", đó là một từ viết tắt cho "Classless Inter-Domain Routing Access Manager".
 
 Tuy nhiên, trong bối cảnh của CIDRAM (như là, trong tài liệu này, trong các cuộc thảo luận liên quan đến CIDRAM, hay trong dữ liệu ngôn ngữ CIDRAM), bất cứ khi nào một "CIDR" (số ít) hoặc "CIDRs" (số nhiều) được đề cập hoặc tham khảo (và như vậy khi chúng ta sử dụng những từ này như danh từ, ngược lại với từ viết tắt), những gì được dự định và có ý nghĩa bởi đây là một subnet, bày tỏ bằng cách sử dụng ký hiệu CIDR. Lý do mà CIDR (hoặc CIDRs) được sử dụng thay vì subnet là để làm rõ mà nó là các subnet bày tỏ bằng cách sử dụng ký hiệu CIDR mà được đề cập đến (bởi vì ký hiệu CIDR chỉ là một trong một số cách khác nhau mà các subnet có thể được bày tỏ). Như vậy, CIDRAM có thể được coi là quản lý truy cập cho subnet.
 
@@ -1277,7 +1277,7 @@ Theo như đã nêu trong giấy phép gói, gói được cung cấp mà không
 
 #### 11.2 BÊN THỨ BA
 
-Tùy thuộc vào cấu hình và triển khai chính xác của nó, gói có thể giao tiếp và chia sẻ thông tin với bên thứ ba trong một số trường hợp. Thông tin này có thể được định nghĩa là "[thông tin nhận dạng cá nhân](http://www.pcworld.com.vn/articles/cong-nghe/an-ninh-mang/2016/05/1248000/thong-tin-ca-nhan-tai-san-rieng-cung-la-tien/)" (PII) trong một số ngữ cảnh, bởi một số khu vực pháp lý.
+Tùy thuộc vào cấu hình và triển khai chính xác của nó, gói có thể giao tiếp và chia sẻ thông tin với bên thứ ba trong một số trường hợp. Thông tin này có thể được định nghĩa là "[thông tin nhận dạng cá nhân](https://www.pcworld.com.vn/articles/cong-nghe/an-ninh-mang/2016/05/1248000/thong-tin-ca-nhan-tai-san-rieng-cung-la-tien/)" (PII) trong một số ngữ cảnh, bởi một số khu vực pháp lý.
 
 Thông tin này có thể được các bên thứ ba này sử dụng như thế nào, là tuân theo của chính sách của các bên thứ ba, và nằm ngoài phạm vi của tài liệu này. Tuy nhiên, trong tất cả các trường hợp như vậy, việc chia sẻ thông tin với các bên thứ ba này có thể bị vô hiệu hóa. Trong tất cả các trường hợp như vậy, nếu bạn chọn kích hoạt nó, bạn có trách nhiệm nghiên cứu bất kỳ mối lo ngại nào về sự riêng tư, bảo mật, và việc sử dụng PII của các bên thứ ba này. Nếu có bất kỳ nghi ngờ nào, hoặc nếu bạn không hài lòng với hành vi của các bên thứ ba liên quan đến PII, tốt nhất là nên vô hiệu hóa tất cả việc chia sẻ thông tin với các bên thứ ba này.
 
@@ -1502,4 +1502,4 @@ Một số tài nguyên được đề xuất để tìm hiểu thêm thông tin
 ---
 
 
-Lần cuối cập nhật: 14 Tháng Mười Hai 2018 (2018.12.14).
+Lần cuối cập nhật: 5 Tháng Một 2019 (2019.01.05).

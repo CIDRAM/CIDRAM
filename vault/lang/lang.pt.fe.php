@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Portuguese language data for the front-end (last modified: 2018.12.06).
+ * This file: Portuguese language data for the front-end (last modified: 2019.01.05).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -107,7 +107,7 @@ $CIDRAM['lang']['config_legal_omit_hostname'] = 'Omitir nomes de host de logs? T
 $CIDRAM['lang']['config_legal_omit_ip'] = 'Omitir endereços IP de logs? True = Sim; False = Não [Padrão]. Nota: "pseudonymise_ip_addresses" se torna redundante quando "omit_ip" é "true".';
 $CIDRAM['lang']['config_legal_omit_ua'] = 'Omitir agentes de usuários de logs? True = Sim; False = Não [Padrão].';
 $CIDRAM['lang']['config_legal_privacy_policy'] = 'O endereço de uma política de privacidade relevante a ser exibida no rodapé de qualquer página gerada. Especifique um URL, ou deixe em branco para desabilitar.';
-$CIDRAM['lang']['config_legal_pseudonymise_ip_addresses'] = 'Pseudonimiza endereços IP ao escrever os arquivos de log? True = Sim; False = Não [Padrão].';
+$CIDRAM['lang']['config_legal_pseudonymise_ip_addresses'] = 'Pseudonimiza endereços IP ao escrever os arquivos de log? True = Sim [Padrão]; False = Não.';
 $CIDRAM['lang']['config_rate_limiting_allowance_period'] = 'O número de horas para monitorar o uso. Padrão = 0.';
 $CIDRAM['lang']['config_rate_limiting_max_bandwidth'] = 'A quantidade máxima de largura de banda permitida dentro do período de tolerância antes de ativar a limitação de taxa para solicitações futuras. Um valor de 0 desativa esse tipo de limitação de taxa. Padrão = 0KB.';
 $CIDRAM['lang']['config_rate_limiting_max_requests'] = 'O número máximo de solicitações permitido dentro do período de tolerância antes de ativar a limitação de taxa para solicitações futuras. Um valor de 0 desativa esse tipo de limitação de taxa. Padrão = 0.';

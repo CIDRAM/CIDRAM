@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (simplified) language data for the front-end (last modified: 2018.12.06).
+ * This file: Chinese (simplified) language data for the front-end (last modified: 2019.01.05).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -107,7 +107,7 @@ $CIDRAM['lang']['config_legal_omit_hostname'] = '从日志文件中排除主机�
 $CIDRAM['lang']['config_legal_omit_ip'] = '从日志文件中排除IP地址？​True（真）=排除；False（假）=不排除【标准】。​注意：“omit_ip”为“true”时，“pseudonymise_ip_addresses”变得不必要。';
 $CIDRAM['lang']['config_legal_omit_ua'] = '从日志文件中排除用户代理？​True（真）=排除；False（假）=不排除【标准】。';
 $CIDRAM['lang']['config_legal_privacy_policy'] = '要显示在任何生成的页面的页脚中的相关隐私政策的地址。​指定一个URL，或留空以禁用。';
-$CIDRAM['lang']['config_legal_pseudonymise_ip_addresses'] = '编写日志文件时使用假名的IP地址吗？​True（真）=使用假名；False（假）=不使用假名【标准】。';
+$CIDRAM['lang']['config_legal_pseudonymise_ip_addresses'] = '编写日志文件时使用假名的IP地址吗？​True（真）=使用假名【标准】；False（假）=不使用假名。';
 $CIDRAM['lang']['config_rate_limiting_allowance_period'] = '监视使用情况的小时数。​标准=0。';
 $CIDRAM['lang']['config_rate_limiting_max_bandwidth'] = '在为将来的请求启用速率限制之前的最大允许带宽量。​值为0将禁用此类速率限制。​标准=0KB。';
 $CIDRAM['lang']['config_rate_limiting_max_requests'] = '在为将来的请求启用速率限制之前允许的最大请求数。​值为0将禁用此类速率限制。​标准=0。';

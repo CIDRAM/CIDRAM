@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Arabic language data for the front-end (last modified: 2018.12.06).
+ * This file: Arabic language data for the front-end (last modified: 2019.01.05).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -107,7 +107,7 @@ $CIDRAM['lang']['config_legal_omit_hostname'] = 'حذف أسماء المضيف 
 $CIDRAM['lang']['config_legal_omit_ip'] = 'حذف عناوين IP من السجلات؟ صحيح/True = نعم؛ زائفة/False = لا [افتراضي]. ملاحظة: يصبح "pseudonymise_ip_addresses" مكررًا عندما يكون "omit_ip" هو "true".';
 $CIDRAM['lang']['config_legal_omit_ua'] = 'حذف وكلاء المستخدم من السجلات؟ صحيح/True = نعم؛ زائفة/False = لا [افتراضي].';
 $CIDRAM['lang']['config_legal_privacy_policy'] = 'عنوان سياسة الخصوصية ذات الصلة ليتم عرضها في تذييل الصفحات التي تم إنشاؤها. حدد عنوان URL، أو اتركه فارغًا لتعطيله.';
-$CIDRAM['lang']['config_legal_pseudonymise_ip_addresses'] = 'إخفاء عناوين IP عند كتابة السجلات؟ صحيح/True = نعم؛ زائفة/False = لا [افتراضي].';
+$CIDRAM['lang']['config_legal_pseudonymise_ip_addresses'] = 'إخفاء عناوين IP عند كتابة السجلات؟ صحيح/True = نعم [افتراضي]؛ زائفة/False = لا.';
 $CIDRAM['lang']['config_rate_limiting_allowance_period'] = 'عدد الساعات لمراقبة الاستخدام. افتراضي = 0.';
 $CIDRAM['lang']['config_rate_limiting_max_bandwidth'] = 'أقصى قدر من عرض النطاق الترددي المسموح به خلال فترة السماح. عندما يتم تجاوزت، يتم تمكين حدود السعر للطلبات المستقبلية. تعمل القيمة 0 على تعطيل هذا النوع من تحديد السرعة. افتراضي = 0KB.';
 $CIDRAM['lang']['config_rate_limiting_max_requests'] = 'الحد الأقصى لعدد الطلبات المسموح بها خلال فترة السماح. عندما يتم تجاوزت، يتم تمكين حدود السعر للطلبات المستقبلية. تعمل القيمة 0 على تعطيل هذا النوع من تحديد السرعة. افتراضي = 0.';

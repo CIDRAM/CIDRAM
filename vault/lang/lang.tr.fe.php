@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Turkish language data for the front-end (last modified: 2018.12.07).
+ * This file: Turkish language data for the front-end (last modified: 2019.01.05).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -107,7 +107,7 @@ $CIDRAM['lang']['config_legal_omit_hostname'] = 'Ana bilgisayar adlarını günl
 $CIDRAM['lang']['config_legal_omit_ip'] = 'IP adreslerini günlük dosyalardan hariç tutuluyor mu? Doğru/True = Evet; Yanlış/False = Hayır [Varsayılan]. Not: "omit_ip" "true" olduğunda "pseudonymise_ip_addresses" gereksiz hale gelir.';
 $CIDRAM['lang']['config_legal_omit_ua'] = 'Kullanıcı aracılarını günlük dosyalardan hariç tutuluyor mu? Doğru/True = Evet; Yanlış/False = Hayır [Varsayılan].';
 $CIDRAM['lang']['config_legal_privacy_policy'] = 'Oluşturulan sayfaların alt kısmında görüntülenecek ilgili gizlilik politikasının adresi. Bir URL belirtin veya devre dışı bırakmak için boş bırakın.';
-$CIDRAM['lang']['config_legal_pseudonymise_ip_addresses'] = 'Günlük dosyaları yazarken IP adresi "pseudonymize" edilir? Doğru/True = Evet; Yanlış/False = Hayır [Varsayılan].';
+$CIDRAM['lang']['config_legal_pseudonymise_ip_addresses'] = 'Günlük dosyaları yazarken IP adresi "pseudonymize" edilir? Doğru/True = Evet [Varsayılan]; Yanlış/False = Hayır.';
 $CIDRAM['lang']['config_rate_limiting_allowance_period'] = 'Kullanımı izlemek için saat sayısı. Varsayılan = 0.';
 $CIDRAM['lang']['config_rate_limiting_max_bandwidth'] = 'Gelecekteki talepleri sınırlayan orandan önce izin süresi içinde izin verilen maksimum bant genişliği miktarı. 0 değeri bu oran sınırlamasını devre dışı bırakır. Varsayılan = 0KB.';
 $CIDRAM['lang']['config_rate_limiting_max_requests'] = 'Gelecekteki istekleri sınırlayan orandan önce izin süresi içinde izin verilen maksimum istek sayısı. 0 değeri bu oran sınırlamasını devre dışı bırakır. Varsayılan = 0.';

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: English language data for the front-end (last modified: 2018.12.06).
+ * This file: English language data for the front-end (last modified: 2019.01.05).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -107,7 +107,7 @@ $CIDRAM['lang']['config_legal_omit_hostname'] = 'Omit hostnames from logs? True 
 $CIDRAM['lang']['config_legal_omit_ip'] = 'Omit IP addresses from logs? True = Yes; False = No [Default]. Note: "pseudonymise_ip_addresses" becomes redundant when "omit_ip" is "true".';
 $CIDRAM['lang']['config_legal_omit_ua'] = 'Omit user agents from logs? True = Yes; False = No [Default].';
 $CIDRAM['lang']['config_legal_privacy_policy'] = 'The address of a relevant privacy policy to be displayed in the footer of any generated pages. Specify a URL, or leave blank to disable.';
-$CIDRAM['lang']['config_legal_pseudonymise_ip_addresses'] = 'Pseudonymise IP addresses when logging? True = Yes; False = No [Default].';
+$CIDRAM['lang']['config_legal_pseudonymise_ip_addresses'] = 'Pseudonymise IP addresses when logging? True = Yes [Default]; False = No.';
 $CIDRAM['lang']['config_rate_limiting_allowance_period'] = 'The number of hours to track usage. Default = 0.';
 $CIDRAM['lang']['config_rate_limiting_max_bandwidth'] = 'The maximum amount of bandwidth allowed within the allowance period before rate limiting future requests. A value of 0 disables this type of rate limiting. Default = 0KB.';
 $CIDRAM['lang']['config_rate_limiting_max_requests'] = 'The maximum number of requests allowed within the allowance period before rate limiting future requests. A value of 0 disables this type of rate limiting. Default = 0.';

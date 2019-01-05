@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Swedish language data for the front-end (last modified: 2018.12.07).
+ * This file: Swedish language data for the front-end (last modified: 2019.01.05).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -107,7 +107,7 @@ $CIDRAM['lang']['config_legal_omit_hostname'] = 'Utelämna värdnamn från logga
 $CIDRAM['lang']['config_legal_omit_ip'] = 'Utelämna IP-adresser från loggar? True = Ja; False = Nej [Standard]. Obs: "pseudonymise_ip_addresses" blir överflödigt när "omit_ip" är "true".';
 $CIDRAM['lang']['config_legal_omit_ua'] = 'Utelämna användaragenter från loggar? True = Ja; False = Nej [Standard].';
 $CIDRAM['lang']['config_legal_privacy_policy'] = 'Adressen till en relevant integritetspolicy som ska visas i sidfoten av genererade sidor. Ange en webbadress, eller lämna tomt för att inaktivera.';
-$CIDRAM['lang']['config_legal_pseudonymise_ip_addresses'] = 'Pseudonymisera IP-adresser när loggning? True = Ja; False = Nej [Standard].';
+$CIDRAM['lang']['config_legal_pseudonymise_ip_addresses'] = 'Pseudonymisera IP-adresser när loggning? True = Ja [Standard]; False = Nej.';
 $CIDRAM['lang']['config_rate_limiting_allowance_period'] = 'Antalet timmar att spåra användningen. Standard = 0.';
 $CIDRAM['lang']['config_rate_limiting_max_bandwidth'] = 'Den maximala bandbreddsmängden som tillåts inom tillåten-perioden före hastighetsbegränsar framtida förfrågningar. Ett värde av 0 avaktiverar denna typ av hastighetsbegränsande. Standard = 0KB.';
 $CIDRAM['lang']['config_rate_limiting_max_requests'] = 'Det maximala antalet förfrågningar som tillåts inom tillåten-perioden före hastighetsbegränsar framtida förfrågningar. Ett värde av 0 avaktiverar denna typ av hastighetsbegränsande. Standard = 0.';

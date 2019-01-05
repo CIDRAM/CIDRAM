@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data for the front-end (last modified: 2018.12.06).
+ * This file: Indonesian language data for the front-end (last modified: 2019.01.05).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -107,7 +107,7 @@ $CIDRAM['lang']['config_legal_omit_hostname'] = 'Jangan memasukkan nama host di 
 $CIDRAM['lang']['config_legal_omit_ip'] = 'Jangan memasukkan alamat IP di log? True = Ya; False = Tidak [Default]. Catat: "pseudonymise_ip_addresses" menjadi tidak perlu ketika "omit_ip" adalah "true".';
 $CIDRAM['lang']['config_legal_omit_ua'] = 'Jangan memasukkan agen pengguna di log? True = Ya; False = Tidak [Default].';
 $CIDRAM['lang']['config_legal_privacy_policy'] = 'Alamat dari kebijakan privasi yang relevan untuk ditampilkan di footer dari setiap halaman yang dihasilkan. Spesifikasikan URL, atau biarkan kosong untuk menonaktifkan.';
-$CIDRAM['lang']['config_legal_pseudonymise_ip_addresses'] = 'Pseudonymise alamat IP saat menulis file log? True = Ya; False = Tidak [Default].';
+$CIDRAM['lang']['config_legal_pseudonymise_ip_addresses'] = 'Pseudonymise alamat IP saat menulis file log? True = Ya [Default]; False = Tidak.';
 $CIDRAM['lang']['config_rate_limiting_allowance_period'] = 'Jumlah jam untuk memonitor penggunaan. Default = 0.';
 $CIDRAM['lang']['config_rate_limiting_max_bandwidth'] = 'Jumlah maksimum bandwidth yang diizinkan dalam periode tunjangan sebelum mengaktifkan pembatasan laju untuk permintaan di masa mendatang. Nilai 0 menonaktifkan jenis pembatasan laju ini. Default = 0KB.';
 $CIDRAM['lang']['config_rate_limiting_max_requests'] = 'Jumlah maksimum permintaan yang diizinkan dalam periode tunjangan sebelum mengaktifkan pembatasan laju untuk permintaan di masa mendatang. Nilai 0 menonaktifkan jenis pembatasan laju ini. Default = 0.';

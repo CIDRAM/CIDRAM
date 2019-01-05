@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Italian language data for the front-end (last modified: 2018.12.06).
+ * This file: Italian language data for the front-end (last modified: 2019.01.05).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -107,7 +107,7 @@ $CIDRAM['lang']['config_legal_omit_hostname'] = 'Ometti nomi host dai log? True 
 $CIDRAM['lang']['config_legal_omit_ip'] = 'Ometti gli indirizzi IP dai log? True = Sì; False = No [Predefinito]. Nota: "pseudonymise_ip_addresses" diventa ridondante quando "omit_ip" è "true".';
 $CIDRAM['lang']['config_legal_omit_ua'] = 'Ometti l\'agente utente dai log? True = Sì; False = No [Predefinito].';
 $CIDRAM['lang']['config_legal_privacy_policy'] = 'L\'indirizzo di una politica sulla privacy pertinente da visualizzare nel piè di pagina delle pagine generate. Specificare un URL, o lasciare vuoto per disabilitare.';
-$CIDRAM['lang']['config_legal_pseudonymise_ip_addresses'] = 'Pseudonimizzare gli indirizzi IP durante la scrivono i file di registro? True = Sì; False = No [Predefinito].';
+$CIDRAM['lang']['config_legal_pseudonymise_ip_addresses'] = 'Pseudonimizzare gli indirizzi IP durante la scrivono i file di registro? True = Sì [Predefinito]; False = No.';
 $CIDRAM['lang']['config_rate_limiting_allowance_period'] = 'Il numero di ore per monitorare l\'utilizzo. Predefinito = 0.';
 $CIDRAM['lang']['config_rate_limiting_max_bandwidth'] = 'La quantità massima di larghezza di banda consentita entro il periodo di tolleranza prima di abilitare la limitazione della velocità per le richieste future. Un valore pari a 0 disabilita questo tipo di limitazione della velocità. Predefinito = 0KB.';
 $CIDRAM['lang']['config_rate_limiting_max_requests'] = 'Il numero massimo di richieste consentite entro il periodo di tolleranza prima di abilitare la limitazione della velocità per le richieste future. Un valore pari a 0 disabilita questo tipo di limitazione della velocità. Predefinito = 0.';

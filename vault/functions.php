@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2018.12.19).
+ * This file: Functions file (last modified: 2019.01.05).
  */
 
 /**
@@ -18,6 +18,17 @@
 if (substr(PHP_VERSION, 0, 4) === '5.4.') {
     require $CIDRAM['Vault'] . 'php5.4.x.php';
 }
+
+/** Autoloader for CIDRAM classes. */
+spl_autoload_register(function ($Class) {
+    $Vendor = (($Pos = strpos($Class, "\\", 1)) === false) ? '' : substr($Class, 0, $Pos);
+    $File = __DIR__ . '/classes/' . ($Vendor === 'CIDRAM' ? '' : $Vendor . '/') . (
+        (($Pos = strrpos($Class, "\\")) === false) ? $Class : substr($Class, $Pos + 1)
+    ) . '.php';
+    if (is_readable($File)) {
+        require $File;
+    }
+});
 
 /**
  * Reads and returns the contents of files.
@@ -747,7 +758,7 @@ $CIDRAM['YAML-ProcessLine'] = function (&$ThisLine, &$ThisTab, &$Key, &$Value, &
         $KeyLen = strlen($Key);
         $KeyLow = strtolower($Key);
         $CIDRAM['YAML-Normalise-Value']($Key, $KeyLen, $KeyLow);
-        if (!$Key && $Key !== 0) {
+        if (!$Key) {
             if (substr($ThisLine, $ThisTab, $DelPos - $ThisTab + 2) !== '0: ') {
                 return false;
             }

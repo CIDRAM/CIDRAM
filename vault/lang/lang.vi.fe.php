@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Vietnamese language data for the front-end (last modified: 2019.01.05).
+ * This file: Vietnamese language data for the front-end (last modified: 2019.01.06).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -371,6 +371,8 @@ $CIDRAM['lang']['switch-hide-non-outdated-set-false'] = 'Đừng ẩn các khôn
 $CIDRAM['lang']['switch-hide-non-outdated-set-true'] = 'Ẩn các không hết hạn';
 $CIDRAM['lang']['switch-hide-unused-set-false'] = 'Đừng ẩn các không cài đặt';
 $CIDRAM['lang']['switch-hide-unused-set-true'] = 'Ẩn các không cài đặt';
+$CIDRAM['lang']['switch-tracking-aux-set-false'] = 'Không kiểm tra đối với quy tắc phụ trợ';
+$CIDRAM['lang']['switch-tracking-aux-set-true'] = 'Kiểm tra đối với quy tắc phụ trợ';
 $CIDRAM['lang']['switch-tracking-blocked-already-set-false'] = 'Không kiểm tra đối với tập tin chữ ký';
 $CIDRAM['lang']['switch-tracking-blocked-already-set-true'] = 'Kiểm tra đối với tập tin chữ ký';
 $CIDRAM['lang']['switch-tracking-hide-banned-blocked-set-false'] = 'Không ẩn các IP bị cấm/chặn';

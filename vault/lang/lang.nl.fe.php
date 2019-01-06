@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Dutch language data for the front-end (last modified: 2019.01.05).
+ * This file: Dutch language data for the front-end (last modified: 2019.01.06).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -371,6 +371,8 @@ $CIDRAM['lang']['switch-hide-non-outdated-set-false'] = 'De al bijgewerkt niet v
 $CIDRAM['lang']['switch-hide-non-outdated-set-true'] = 'De al bijgewerkt verbergen';
 $CIDRAM['lang']['switch-hide-unused-set-false'] = 'De ongebruikte niet verbergen';
 $CIDRAM['lang']['switch-hide-unused-set-true'] = 'De ongebruikte verbergen';
+$CIDRAM['lang']['switch-tracking-aux-set-false'] = 'Controleer niet tegen aanvullende regels';
+$CIDRAM['lang']['switch-tracking-aux-set-true'] = 'Controleer tegen aanvullende regels';
 $CIDRAM['lang']['switch-tracking-blocked-already-set-false'] = 'Controleer niet tegen signatuurbestanden';
 $CIDRAM['lang']['switch-tracking-blocked-already-set-true'] = 'Controleer tegen signatuurbestanden';
 $CIDRAM['lang']['switch-tracking-hide-banned-blocked-set-false'] = 'Verberg verboden/geblokkeerde IP\'s niet';

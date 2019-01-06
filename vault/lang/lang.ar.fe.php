@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Arabic language data for the front-end (last modified: 2019.01.05).
+ * This file: Arabic language data for the front-end (last modified: 2019.01.06).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -371,6 +371,8 @@ $CIDRAM['lang']['switch-hide-non-outdated-set-false'] = 'لا يخفون غير 
 $CIDRAM['lang']['switch-hide-non-outdated-set-true'] = 'يخفون غير عفا عليها الزمن';
 $CIDRAM['lang']['switch-hide-unused-set-false'] = 'لا يخفون غير مستعمل';
 $CIDRAM['lang']['switch-hide-unused-set-true'] = 'يخفون غير مستعمل';
+$CIDRAM['lang']['switch-tracking-aux-set-false'] = 'لا تحقق من القواعد المساعدة';
+$CIDRAM['lang']['switch-tracking-aux-set-true'] = 'تحقق من القواعد المساعدة';
 $CIDRAM['lang']['switch-tracking-blocked-already-set-false'] = 'لا تحقق من ملفات التوقيع';
 $CIDRAM['lang']['switch-tracking-blocked-already-set-true'] = 'تحقق من ملفات التوقيع';
 $CIDRAM['lang']['switch-tracking-hide-banned-blocked-set-false'] = 'لا تخفي عناوين IP المحظورة';

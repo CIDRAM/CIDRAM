@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data for the front-end (last modified: 2019.01.05).
+ * This file: Indonesian language data for the front-end (last modified: 2019.01.06).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -371,6 +371,8 @@ $CIDRAM['lang']['switch-hide-non-outdated-set-false'] = 'Tidak menyembunyikan te
 $CIDRAM['lang']['switch-hide-non-outdated-set-true'] = 'Menyembunyikan terbaru';
 $CIDRAM['lang']['switch-hide-unused-set-false'] = 'Tidak menyembunyikan non-digunakan';
 $CIDRAM['lang']['switch-hide-unused-set-true'] = 'Menyembunyikan non-digunakan';
+$CIDRAM['lang']['switch-tracking-aux-set-false'] = 'Jangan cek terhadap aturan tambahan';
+$CIDRAM['lang']['switch-tracking-aux-set-true'] = 'Cek terhadap aturan tambahan';
 $CIDRAM['lang']['switch-tracking-blocked-already-set-false'] = 'Jangan cek terhadap file tanda tangan';
 $CIDRAM['lang']['switch-tracking-blocked-already-set-true'] = 'Cek terhadap file tanda tangan';
 $CIDRAM['lang']['switch-tracking-hide-banned-blocked-set-false'] = 'Jangan sembunyikan IP yang dilarang/diblokir';

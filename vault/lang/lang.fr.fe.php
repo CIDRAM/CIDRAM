@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: French language data for the front-end (last modified: 2019.01.05).
+ * This file: French language data for the front-end (last modified: 2019.01.06).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -371,6 +371,8 @@ $CIDRAM['lang']['switch-hide-non-outdated-set-false'] = 'Ne masquer pas non dép
 $CIDRAM['lang']['switch-hide-non-outdated-set-true'] = 'Masquer non dépassé';
 $CIDRAM['lang']['switch-hide-unused-set-false'] = 'Ne masquer pas inutilisé';
 $CIDRAM['lang']['switch-hide-unused-set-true'] = 'Masquer inutilisé';
+$CIDRAM['lang']['switch-tracking-aux-set-false'] = 'Ne vérifier pas les règles auxiliaires';
+$CIDRAM['lang']['switch-tracking-aux-set-true'] = 'Vérifier les règles auxiliaires';
 $CIDRAM['lang']['switch-tracking-blocked-already-set-false'] = 'Ne vérifier pas les fichiers de signature';
 $CIDRAM['lang']['switch-tracking-blocked-already-set-true'] = 'Vérifier les fichiers de signature';
 $CIDRAM['lang']['switch-tracking-hide-banned-blocked-set-false'] = 'Ne pas omettre les IP interdites/bloquées';

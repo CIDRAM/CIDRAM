@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Russian language data for the front-end (last modified: 2019.01.05).
+ * This file: Russian language data for the front-end (last modified: 2019.01.06).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -371,8 +371,10 @@ $CIDRAM['lang']['switch-hide-non-outdated-set-false'] = 'Не скрывают �
 $CIDRAM['lang']['switch-hide-non-outdated-set-true'] = 'Скрывают не-устаревший';
 $CIDRAM['lang']['switch-hide-unused-set-false'] = 'Не скрывают не-установлена';
 $CIDRAM['lang']['switch-hide-unused-set-true'] = 'Скрывают не-установлена';
-$CIDRAM['lang']['switch-tracking-blocked-already-set-false'] = 'Не проверять файлы сигнатуры';
-$CIDRAM['lang']['switch-tracking-blocked-already-set-true'] = 'Проверять файлы сигнатуры';
+$CIDRAM['lang']['switch-tracking-aux-set-false'] = 'Не проверять вспомогательным правилам';
+$CIDRAM['lang']['switch-tracking-aux-set-true'] = 'Проверять вспомогательным правилам';
+$CIDRAM['lang']['switch-tracking-blocked-already-set-false'] = 'Не проверять файлами сигнатуры';
+$CIDRAM['lang']['switch-tracking-blocked-already-set-true'] = 'Проверять файлами сигнатуры';
 $CIDRAM['lang']['switch-tracking-hide-banned-blocked-set-false'] = 'Не скрывайте запрещенные/заблокированные IP-адреса';
 $CIDRAM['lang']['switch-tracking-hide-banned-blocked-set-true'] = 'Скрывайте запрещенные/заблокированные IP-адреса';
 $CIDRAM['lang']['tip_2fa_sent'] = 'На ваш адрес электронной почты отправлено электронное письмо с двухфакторным кодом аутентификации. Пожалуйста, подтвердите этот код ниже, чтобы получить доступ к фронтенд. Если Вы не получили это письмо, попробуйте выйти из системы, ожидая 10 минут, и снова войдите в систему, чтобы получить новое электронное письмо, содержащее новый код.';

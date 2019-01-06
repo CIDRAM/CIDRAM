@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Korean language data for the front-end (last modified: 2019.01.05).
+ * This file: Korean language data for the front-end (last modified: 2019.01.06).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -371,6 +371,8 @@ $CIDRAM['lang']['switch-hide-non-outdated-set-false'] = '비 구형을 숨기지
 $CIDRAM['lang']['switch-hide-non-outdated-set-true'] = '비 구식 숨기기';
 $CIDRAM['lang']['switch-hide-unused-set-false'] = '미사용을 숨기지 않고';
 $CIDRAM['lang']['switch-hide-unused-set-true'] = '미사용 숨기기';
+$CIDRAM['lang']['switch-tracking-aux-set-false'] = '보조 규칙을 확인하지 마십시오';
+$CIDRAM['lang']['switch-tracking-aux-set-true'] = '보조 규칙을 확인';
 $CIDRAM['lang']['switch-tracking-blocked-already-set-false'] = '서명 파일을 확인하지 마십시오';
 $CIDRAM['lang']['switch-tracking-blocked-already-set-true'] = '서명 파일을 확인';
 $CIDRAM['lang']['switch-tracking-hide-banned-blocked-set-false'] = '금지/차단 된 IP를 숨기지 마십시오';

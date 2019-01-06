@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2018.10.04).
+ * This file: Front-end handler (last modified: 2019.01.06).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -2657,7 +2657,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-tracking' && $CIDRAM['FE']['
     $CIDRAM['FE']['TrackingFilterControls'] = '';
     $CIDRAM['StateModified'] = false;
     $CIDRAM['FilterSwitch'](
-        ['tracking-blocked-already', 'tracking-hide-banned-blocked'],
+        ['tracking-blocked-already', 'tracking-aux', 'tracking-hide-banned-blocked'],
         isset($_POST['FilterSelector']) ? $_POST['FilterSelector'] : '',
         $CIDRAM['StateModified'],
         $CIDRAM['FE']['TrackingFilter'],
@@ -2668,6 +2668,16 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-tracking' && $CIDRAM['FE']['
         die;
     }
     unset($CIDRAM['StateModified']);
+
+    /** Temporarily mute signature files if "tracking-blocked-already" is false. */
+    if (!$CIDRAM['FE']['tracking-blocked-already']) {
+        $CIDRAM['TempMuted'] = [
+            'IPv4' => $CIDRAM['Config']['signatures']['ipv4'],
+            'IPv6' => $CIDRAM['Config']['signatures']['ipv6']
+        ];
+        $CIDRAM['Config']['signatures']['ipv4'] = '';
+        $CIDRAM['Config']['signatures']['ipv6'] = '';
+    }
 
     if (!$CIDRAM['FE']['ASYNC']) {
 
@@ -2728,14 +2738,15 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-tracking' && $CIDRAM['FE']['
                 }
                 return ($A['Time'] < $B['Time']) ? -1 : 1;
             });
+
             foreach ($CIDRAM['Cache']['Tracking'] as $CIDRAM['ThisTracking']['IPAddr'] => $CIDRAM['ThisTrackingArr']) {
                 if (!isset($CIDRAM['ThisTrackingArr']['Time'], $CIDRAM['ThisTrackingArr']['Count'])) {
                     continue;
                 }
 
-                /** Check whether normally blocked by signature files. */
-                if ($CIDRAM['FE']['tracking-blocked-already']) {
-                    $CIDRAM['SimulateBlockEvent']($CIDRAM['ThisTracking']['IPAddr']);
+                /** Check whether normally blocked by signature files and/or auxiliary rules. */
+                if ($CIDRAM['FE']['tracking-blocked-already'] || $CIDRAM['FE']['tracking-aux']) {
+                    $CIDRAM['SimulateBlockEvent']($CIDRAM['ThisTracking']['IPAddr'], false, $CIDRAM['FE']['tracking-aux']);
                     $CIDRAM['ThisTracking']['Blocked'] = ($CIDRAM['Caught'] || $CIDRAM['BlockInfo']['SignatureCount']);
                 } else {
                     $CIDRAM['ThisTracking']['Blocked'] = false;
@@ -2788,6 +2799,13 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-tracking' && $CIDRAM['FE']['
             }
 
         }
+    }
+
+    /** Restore muted values. */
+    if (isset($CIDRAM['TempMuted']['IPv4'], $CIDRAM['TempMuted']['IPv6'])) {
+        $CIDRAM['Config']['signatures']['ipv4'] = $CIDRAM['TempMuted']['IPv4'];
+        $CIDRAM['Config']['signatures']['ipv6'] = $CIDRAM['TempMuted']['IPv6'];
+        unset($CIDRAM['TempMuted']);
     }
 
     /** Cleanup. */

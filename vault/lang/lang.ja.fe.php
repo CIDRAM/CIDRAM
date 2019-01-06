@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for the front-end (last modified: 2019.01.05).
+ * This file: Japanese language data for the front-end (last modified: 2019.01.06).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -371,8 +371,10 @@ $CIDRAM['lang']['switch-hide-non-outdated-set-false'] = '非時代遅れを隠�
 $CIDRAM['lang']['switch-hide-non-outdated-set-true'] = '非時代遅れを隠す';
 $CIDRAM['lang']['switch-hide-unused-set-false'] = '未使用を隠さないで';
 $CIDRAM['lang']['switch-hide-unused-set-true'] = '未使用を隠す';
+$CIDRAM['lang']['switch-tracking-aux-set-false'] = '補助ルールをチェックしない';
+$CIDRAM['lang']['switch-tracking-aux-set-true'] = '補助ルールをチェックして';
 $CIDRAM['lang']['switch-tracking-blocked-already-set-false'] = 'シグネチャ・ファイルをチェックしない';
-$CIDRAM['lang']['switch-tracking-blocked-already-set-true'] = 'シグネチャ・ファイルをチェックする';
+$CIDRAM['lang']['switch-tracking-blocked-already-set-true'] = 'シグネチャ・ファイルをチェックして';
 $CIDRAM['lang']['switch-tracking-hide-banned-blocked-set-false'] = '禁止/ブロックされたＩＰを隠さないでください';
 $CIDRAM['lang']['switch-tracking-hide-banned-blocked-set-true'] = '禁止/ブロックされたＩＰを隠す';
 $CIDRAM['lang']['tip_2fa_sent'] = '２ＦＡコードを含むＥメールがあなたのＥメール・アドレスに送信されました。​フロントエンドにアクセスするには、このコードを確認してください。​このＥメールを受信しなかった場合は、新しいコードを含む新しい電子Ｅメールを受け取るために、ログアウトして、１０分待ってからもう一度ログインしてください。';

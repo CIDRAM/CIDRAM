@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Bangla language data for the front-end (last modified: 2019.01.05).
+ * This file: Bangla language data for the front-end (last modified: 2019.01.06).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -371,6 +371,8 @@ $CIDRAM['lang']['switch-hide-non-outdated-set-false'] = 'অ-আউটডেট�
 $CIDRAM['lang']['switch-hide-non-outdated-set-true'] = 'অ-আউটডেটেড লুকান';
 $CIDRAM['lang']['switch-hide-unused-set-false'] = 'অব্যবহৃত লুকান না';
 $CIDRAM['lang']['switch-hide-unused-set-true'] = 'অব্যবহৃত লুকান';
+$CIDRAM['lang']['switch-tracking-aux-set-false'] = 'অক্সিলিয়ারি নিয়ম বিরুদ্ধে পরীক্ষা করুন না';
+$CIDRAM['lang']['switch-tracking-aux-set-true'] = 'অক্সিলিয়ারি নিয়ম বিরুদ্ধে পরীক্ষা করুন';
 $CIDRAM['lang']['switch-tracking-blocked-already-set-false'] = 'স্বাক্ষর ফাইলগুলির বিরুদ্ধে পরীক্ষা করুন না';
 $CIDRAM['lang']['switch-tracking-blocked-already-set-true'] = 'স্বাক্ষর ফাইলগুলির বিরুদ্ধে পরীক্ষা করুন';
 $CIDRAM['lang']['switch-tracking-hide-banned-blocked-set-false'] = 'নিষিদ্ধ/ব্লক করা আছে IP ঠিকানা লুকান না';

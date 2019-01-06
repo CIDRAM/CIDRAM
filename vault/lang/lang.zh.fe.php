@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (simplified) language data for the front-end (last modified: 2019.01.05).
+ * This file: Chinese (simplified) language data for the front-end (last modified: 2019.01.06).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -371,6 +371,8 @@ $CIDRAM['lang']['switch-hide-non-outdated-set-false'] = '不要隐藏非过时';
 $CIDRAM['lang']['switch-hide-non-outdated-set-true'] = '隐藏非过时';
 $CIDRAM['lang']['switch-hide-unused-set-false'] = '不要隐藏非用过';
 $CIDRAM['lang']['switch-hide-unused-set-true'] = '隐藏非用过';
+$CIDRAM['lang']['switch-tracking-aux-set-false'] = '不要检查辅助规则';
+$CIDRAM['lang']['switch-tracking-aux-set-true'] = '检查辅助规则';
 $CIDRAM['lang']['switch-tracking-blocked-already-set-false'] = '不要检查签名文件';
 $CIDRAM['lang']['switch-tracking-blocked-already-set-true'] = '检查签名文件';
 $CIDRAM['lang']['switch-tracking-hide-banned-blocked-set-false'] = '不要隐藏被禁止/阻止的IP';

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Thai language data for the front-end (last modified: 2019.01.05).
+ * This file: Thai language data for the front-end (last modified: 2019.01.06).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -371,6 +371,8 @@ $CIDRAM['lang']['switch-hide-non-outdated-set-false'] = 'อย่าซ่อ�
 $CIDRAM['lang']['switch-hide-non-outdated-set-true'] = 'ซ่อนไม่ใช่ล้าสมัย';
 $CIDRAM['lang']['switch-hide-unused-set-false'] = 'อย่าซ่อนไม่ได้ใช้';
 $CIDRAM['lang']['switch-hide-unused-set-true'] = 'ซ่อนไม่ได้ใช้';
+$CIDRAM['lang']['switch-tracking-aux-set-false'] = 'อย่าตรวจสอบกับกฎเสริม';
+$CIDRAM['lang']['switch-tracking-aux-set-true'] = 'ตรวจสอบกับกฎเสริม';
 $CIDRAM['lang']['switch-tracking-blocked-already-set-false'] = 'อย่าตรวจสอบกับไฟล์ลายเซ็น';
 $CIDRAM['lang']['switch-tracking-blocked-already-set-true'] = 'ตรวจสอบกับไฟล์ลายเซ็น';
 $CIDRAM['lang']['switch-tracking-hide-banned-blocked-set-false'] = 'อย่าซ่อน IP ที่ถูกแบน/ถูกบล็อก';

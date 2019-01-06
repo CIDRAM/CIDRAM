@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Urdu language data for the front-end (last modified: 2019.01.05).
+ * This file: Urdu language data for the front-end (last modified: 2019.01.06).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -371,6 +371,8 @@ $CIDRAM['lang']['switch-hide-non-outdated-set-false'] = 'غیر فرسودہ م�
 $CIDRAM['lang']['switch-hide-non-outdated-set-true'] = 'غیر فرسودہ چھپائیں';
 $CIDRAM['lang']['switch-hide-unused-set-false'] = 'غیر استعمال شدہ مت چھپاو';
 $CIDRAM['lang']['switch-hide-unused-set-true'] = 'غیر استعمال شدہ چھپائیں';
+$CIDRAM['lang']['switch-tracking-aux-set-false'] = 'اضافی قواعد کے خلاف چیک نہ کریں';
+$CIDRAM['lang']['switch-tracking-aux-set-true'] = 'اضافی قواعد کے خلاف چیک کریں';
 $CIDRAM['lang']['switch-tracking-blocked-already-set-false'] = 'دستخط فائلوں کے خلاف چیک نہ کریں';
 $CIDRAM['lang']['switch-tracking-blocked-already-set-true'] = 'دستخط فائلوں کے خلاف چیک کریں';
 $CIDRAM['lang']['switch-tracking-hide-banned-blocked-set-false'] = 'ممنوعہ/بلاک شدہ IP کو چھپانا مت چھوڑیں';

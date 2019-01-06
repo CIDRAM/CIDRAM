@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Swedish language data for the front-end (last modified: 2019.01.05).
+ * This file: Swedish language data for the front-end (last modified: 2019.01.06).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -371,6 +371,8 @@ $CIDRAM['lang']['switch-hide-non-outdated-set-false'] = 'Göm inte icke-föråld
 $CIDRAM['lang']['switch-hide-non-outdated-set-true'] = 'Göm icke-föråldrade';
 $CIDRAM['lang']['switch-hide-unused-set-false'] = 'Göm inte oanvänd';
 $CIDRAM['lang']['switch-hide-unused-set-true'] = 'Göm oanvänd';
+$CIDRAM['lang']['switch-tracking-aux-set-false'] = 'Kontrollera inte hjälpregler';
+$CIDRAM['lang']['switch-tracking-aux-set-true'] = 'Kontrollera hjälpregler';
 $CIDRAM['lang']['switch-tracking-blocked-already-set-false'] = 'Kontrollera inte signaturfiler';
 $CIDRAM['lang']['switch-tracking-blocked-already-set-true'] = 'Kontrollera signaturfiler';
 $CIDRAM['lang']['switch-tracking-hide-banned-blocked-set-false'] = 'Göm inte förbjudna/blockerade IP-adresser';

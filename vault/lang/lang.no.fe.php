@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Norwegian language data for the front-end (last modified: 2019.01.05).
+ * This file: Norwegian language data for the front-end (last modified: 2019.01.06).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -371,6 +371,8 @@ $CIDRAM['lang']['switch-hide-non-outdated-set-false'] = 'Ikke skjul hvis ikke ut
 $CIDRAM['lang']['switch-hide-non-outdated-set-true'] = 'Skjul hvis ikke utdatert';
 $CIDRAM['lang']['switch-hide-unused-set-false'] = 'Ikke skjul ubrukte';
 $CIDRAM['lang']['switch-hide-unused-set-true'] = 'Skjul ubrukte';
+$CIDRAM['lang']['switch-tracking-aux-set-false'] = 'Ikke sjekk mot tilleggsregler';
+$CIDRAM['lang']['switch-tracking-aux-set-true'] = 'Sjekk mot tilleggsregler';
 $CIDRAM['lang']['switch-tracking-blocked-already-set-false'] = 'Ikke sjekk mot signaturfiler';
 $CIDRAM['lang']['switch-tracking-blocked-already-set-true'] = 'Sjekk mot signaturfiler';
 $CIDRAM['lang']['switch-tracking-hide-banned-blocked-set-false'] = 'Ikke skjul utestengt/blokkert IP-adresser';

@@ -368,7 +368,7 @@ $CIDRAM['FileManager-RecursiveList'] = function ($Base) use (&$CIDRAM) {
                     if ($Component === 'CIDRAM') {
                         $Component .= ' (' . $CIDRAM['lang']['field_component'] . ')';
                     }
-                } elseif (preg_match('/(?:^\.ht|\.safety$|^salt\.dat$)/i', $ThisNameFixed)) {
+                } elseif (preg_match('~(?:[^|/]\.ht|\.safety$|^salt\.dat$)~i', $ThisNameFixed)) {
                     $Component = $CIDRAM['lang']['label_fmgr_safety'];
                 } elseif (preg_match('/^config\.ini$/i', $ThisNameFixed)) {
                     $Component = $CIDRAM['lang']['link_config'];
@@ -376,7 +376,7 @@ $CIDRAM['FileManager-RecursiveList'] = function ($Base) use (&$CIDRAM) {
                     $Component = $CIDRAM['lang']['link_logs'];
                 } elseif (preg_match('/(?:^auxiliary\.yaml|^ignore\.dat|_custom\.dat|\.sig|\.inc)$/i', $ThisNameFixed)) {
                     $Component = $CIDRAM['lang']['label_fmgr_other_sig'];
-                } elseif (preg_match('~(?:\.tmp|\.rollback|^(?:cache|ipbypass|fe_assets/frontend)\.dat)$~i', $ThisNameFixed)) {
+                } elseif (preg_match('~(?:\.tmp|\.rollback|^(?:cache|hashes|ipbypass|fe_assets/frontend)\.dat)$~i', $ThisNameFixed)) {
                     $Component = $CIDRAM['lang']['label_fmgr_cache_data'];
                 } elseif (preg_match('/\.(?:dat|ya?ml)$/i', $ThisNameFixed)) {
                     $Component = $CIDRAM['lang']['label_fmgr_updates_metadata'];

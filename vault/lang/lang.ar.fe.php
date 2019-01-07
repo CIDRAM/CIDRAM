@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Arabic language data for the front-end (last modified: 2019.01.06).
+ * This file: Arabic language data for the front-end (last modified: 2019.01.07).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -208,7 +208,7 @@ $CIDRAM['lang']['label_aux_actByp'] = 'تجنب';
 $CIDRAM['lang']['label_aux_actGrl'] = 'قائمة رمادية';
 $CIDRAM['lang']['label_aux_actWhl'] = 'القائمة البيضاء';
 $CIDRAM['lang']['label_aux_create_new_rule'] = 'قم بإنشاء قاعدة جديدة';
-$CIDRAM['lang']['label_aux_logic_all'] = 'من أجل تحريك القاعدة ، يجب استيفاء جميع الشروط.';
+$CIDRAM['lang']['label_aux_logic_all'] = 'من أجل تحريك القاعدة، يجب استيفاء جميع الشروط.';
 $CIDRAM['lang']['label_aux_logic_any'] = 'قد تؤدي أي شروط "يساوي" (=) إلى تشغيل القاعدة، طالما تم استيفاء جميع الشروط "غير متساوية" (≠) أيضًا.';
 $CIDRAM['lang']['label_aux_menu_action'] = 'إذا تم استيفاء الشروط التالية، %s الطلب.';
 $CIDRAM['lang']['label_aux_menu_method'] = 'استخدم %s لاختبار الشروط.';
@@ -233,6 +233,8 @@ $CIDRAM['lang']['label_false_positive_risk'] = 'خطر إيجابية كاذبة
 $CIDRAM['lang']['label_fmgr_cache_data'] = 'بيانات ذاكرة التخزين المؤقت والملفات المؤقتة';
 $CIDRAM['lang']['label_fmgr_disk_usage'] = 'CIDRAM إستخدام القرص: ';
 $CIDRAM['lang']['label_fmgr_free_space'] = 'مساحة حرة: ';
+$CIDRAM['lang']['label_fmgr_other_sig'] = 'القواعد الأخرى وملفات التوقيع الأخرى';
+$CIDRAM['lang']['label_fmgr_safety'] = 'آليات السلامة';
 $CIDRAM['lang']['label_fmgr_total_disk_usage'] = 'إجمالي استخدام القرص: ';
 $CIDRAM['lang']['label_fmgr_total_space'] = 'إجمالي مساحة القرص: ';
 $CIDRAM['lang']['label_fmgr_updates_metadata'] = 'تحديثات البيانات الوصفية للمكون';
@@ -397,6 +399,7 @@ $CIDRAM['lang']['tip_ip_test_switches'] = '(عند عدم تحديده، سيت�
 $CIDRAM['lang']['tip_ip_tracking'] = 'مرحبا، {username}.<br />التتبع IP يسمح لك للتحقق من حالة تتبع عناوين IP، تحقق محظورة، و إلغاء تتبع إذا كنت تريد أن تفعل ذلك.';
 $CIDRAM['lang']['tip_login'] = 'الافتراضي اسم المستخدم: <span class="txtRd">admin</span> – الافتراضي كلمه السر: <span class="txtRd">password</span>';
 $CIDRAM['lang']['tip_logs'] = 'مرحبا، {username}.<br />اختار سجلات من القائمة أدناه لعرضها.';
+$CIDRAM['lang']['tip_pie_html'] = 'انقر فوق اسم المكون لمزيد من التفاصيل.';
 $CIDRAM['lang']['tip_range'] = 'مرحبا، {username}.<br />تعرض هذه الصفحة بعض المعلومات الإحصائية الأساسية حول نطاقات IP التي تغطيها ملفات التوقيع النشطة حاليًا.';
 $CIDRAM['lang']['tip_sections_list'] = 'مرحبا، {username}.<br />تسرد هذه الصفحة الأقسام الموجودة في ملفات التوقيع النشطة حاليا.';
 $CIDRAM['lang']['tip_see_the_documentation'] = 'راجع <a href="https://github.com/CIDRAM/CIDRAM/blob/master/_docs/readme.ar.md#SECTION6">وثائق</a> للحصول على معلومات حول مختلف توجيهات التكوين ونيتهم.';

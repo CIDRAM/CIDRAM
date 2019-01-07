@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Vietnamese language data for the front-end (last modified: 2019.01.06).
+ * This file: Vietnamese language data for the front-end (last modified: 2019.01.07).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -233,6 +233,8 @@ $CIDRAM['lang']['label_false_positive_risk'] = 'Nguy cơ sai tích cực: ';
 $CIDRAM['lang']['label_fmgr_cache_data'] = 'Dữ liệu bộ nhớ cache và các tập tin tạm thời';
 $CIDRAM['lang']['label_fmgr_disk_usage'] = 'Số lượng sử dụng đĩa bởi CIDRAM: ';
 $CIDRAM['lang']['label_fmgr_free_space'] = 'Không gian đĩa có sẵn: ';
+$CIDRAM['lang']['label_fmgr_other_sig'] = 'Các quy tắc và tập tin chữ ký khác, vv';
+$CIDRAM['lang']['label_fmgr_safety'] = 'Cơ chế an toàn';
 $CIDRAM['lang']['label_fmgr_total_disk_usage'] = 'Số lượng sử dụng đĩa trong tổng số: ';
 $CIDRAM['lang']['label_fmgr_total_space'] = 'Số lượng không gian đĩa trong tổng số: ';
 $CIDRAM['lang']['label_fmgr_updates_metadata'] = 'Siêu dữ liệu cho cập nhật thành phần';
@@ -397,6 +399,7 @@ $CIDRAM['lang']['tip_ip_test_switches'] = '(Khi không được chọn, chỉ c�
 $CIDRAM['lang']['tip_ip_tracking'] = 'Xin chào, {username}.<br />Các trang cho giám sát IP cho phép bạn kiểm tra tình trạng giám sát các địa chỉ IP, để kiểm tra mà trong số họ đã bị cấm, và hủy bỏ giám sát họ nếu bạn muốn làm như vậy.';
 $CIDRAM['lang']['tip_login'] = 'Tên người dùng mặc định: <span class="txtRd">admin</span> – Mật khẩu mặc định: <span class="txtRd">password</span>';
 $CIDRAM['lang']['tip_logs'] = 'Xin chào, {username}.<br />Chọn một bản ghi từ danh sách dưới đây để xem nội dung của bản ghi này.';
+$CIDRAM['lang']['tip_pie_html'] = 'Nhấp vào tên thành phần để biết thêm chi tiết.';
 $CIDRAM['lang']['tip_range'] = 'Xin chào, {username}.<br />Trang này hiển thị một số thông tin thống kê cơ bản về các dãy IP được bao phủ bởi các tập tin chữ ký đang hoạt động.';
 $CIDRAM['lang']['tip_sections_list'] = 'Xin chào, {username}.<br />Trang này liệt kê những phần nào tồn tại trong các tập tin chữ ký đang kích hoạt.';
 $CIDRAM['lang']['tip_see_the_documentation'] = 'Xem <a href="https://github.com/CIDRAM/CIDRAM/blob/master/_docs/readme.vi.md#SECTION6">tài liệu</a> để biết thông tin về các chỉ thị cấu hình khác nhau và mục đích của họ.';

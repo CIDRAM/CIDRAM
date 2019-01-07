@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: English language data for the front-end (last modified: 2019.01.06).
+ * This file: English language data for the front-end (last modified: 2019.01.07).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -233,6 +233,8 @@ $CIDRAM['lang']['label_false_positive_risk'] = 'False positive risk: ';
 $CIDRAM['lang']['label_fmgr_cache_data'] = 'Cache data and temporary files';
 $CIDRAM['lang']['label_fmgr_disk_usage'] = 'CIDRAM disk usage: ';
 $CIDRAM['lang']['label_fmgr_free_space'] = 'Free disk space: ';
+$CIDRAM['lang']['label_fmgr_other_sig'] = 'Other rules, signature files, etc';
+$CIDRAM['lang']['label_fmgr_safety'] = 'Safety mechanisms';
 $CIDRAM['lang']['label_fmgr_total_disk_usage'] = 'Total disk usage: ';
 $CIDRAM['lang']['label_fmgr_total_space'] = 'Total disk space: ';
 $CIDRAM['lang']['label_fmgr_updates_metadata'] = 'Component updates metadata';
@@ -397,6 +399,7 @@ $CIDRAM['lang']['tip_ip_test_switches'] = '(When not selected, only the signatur
 $CIDRAM['lang']['tip_ip_tracking'] = 'Hello, {username}.<br />The IP tracking page allows you to check the tracking status of IP addresses, to check which of them have been banned, and to unban/untrack them if you want to do so.';
 $CIDRAM['lang']['tip_login'] = 'Default username: <span class="txtRd">admin</span> – Default password: <span class="txtRd">password</span>';
 $CIDRAM['lang']['tip_logs'] = 'Hello, {username}.<br />Select a logfile from the list below to view the contents of that logfile.';
+$CIDRAM['lang']['tip_pie_html'] = 'Click the component name for more details.';
 $CIDRAM['lang']['tip_range'] = 'Hello, {username}.<br />This page shows some basic statistical information about the IP ranges covered by the currently active signature files.';
 $CIDRAM['lang']['tip_sections_list'] = 'Hello, {username}.<br />This page lists which sections exist in the currently active signature files.';
 $CIDRAM['lang']['tip_see_the_documentation'] = 'See the <a href="https://github.com/CIDRAM/CIDRAM/blob/master/_docs/readme.en.md#SECTION6">documentation</a> for information about the various configuration directives and their purposes.';

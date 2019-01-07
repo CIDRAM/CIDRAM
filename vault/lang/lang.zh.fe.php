@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (simplified) language data for the front-end (last modified: 2019.01.06).
+ * This file: Chinese (simplified) language data for the front-end (last modified: 2019.01.07).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -233,6 +233,8 @@ $CIDRAM['lang']['label_false_positive_risk'] = '假阳性风险：';
 $CIDRAM['lang']['label_fmgr_cache_data'] = '缓存数据和临时文件';
 $CIDRAM['lang']['label_fmgr_disk_usage'] = 'CIDRAM使用的磁盘空间： ';
 $CIDRAM['lang']['label_fmgr_free_space'] = '可用磁盘空间： ';
+$CIDRAM['lang']['label_fmgr_other_sig'] = '其他规则，签名文件，等等';
+$CIDRAM['lang']['label_fmgr_safety'] = '安全机制';
 $CIDRAM['lang']['label_fmgr_total_disk_usage'] = '总共使用的磁盘空间： ';
 $CIDRAM['lang']['label_fmgr_total_space'] = '总磁盘空间： ';
 $CIDRAM['lang']['label_fmgr_updates_metadata'] = '组件更新元数据';
@@ -397,6 +399,7 @@ $CIDRAM['lang']['tip_ip_test_switches'] = '（如果未选中的，只有签名�
 $CIDRAM['lang']['tip_ip_tracking'] = '你好，​{username}。​<br />IP跟踪页面允许您检查IP地址跟踪状态，​检查哪些IP已被禁止，​而如果您想这样做，​对撤消他们的跟踪。';
 $CIDRAM['lang']['tip_login'] = '标准用户名：<span class="txtRd">admin</span> – 标准密码：<span class="txtRd">password</span>';
 $CIDRAM['lang']['tip_logs'] = '你好，​{username}。​<br />选择一个日志从下面的列表以查看那个日志的内容。';
+$CIDRAM['lang']['tip_pie_html'] = '单击组件名称以获取更多详细信息。';
 $CIDRAM['lang']['tip_range'] = '你好，​{username}。<br />本页面显示了有关当前活性签名文件覆盖的IP范围的一些基本统计信息。';
 $CIDRAM['lang']['tip_sections_list'] = '你好，​{username}。<br />此页面列出当前活动签名文件中存在哪些章节。';
 $CIDRAM['lang']['tip_see_the_documentation'] = '请参阅<a href="https://github.com/CIDRAM/CIDRAM/blob/master/_docs/readme.zh.md#SECTION6">文档</a>以获取有关各种配置指令的信息和他们的目的。';

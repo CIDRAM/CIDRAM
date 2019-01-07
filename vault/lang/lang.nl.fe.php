@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Dutch language data for the front-end (last modified: 2019.01.06).
+ * This file: Dutch language data for the front-end (last modified: 2019.01.07).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -233,6 +233,8 @@ $CIDRAM['lang']['label_false_positive_risk'] = 'Vals positieve risico: ';
 $CIDRAM['lang']['label_fmgr_cache_data'] = 'Cache data en tijdelijke bestanden';
 $CIDRAM['lang']['label_fmgr_disk_usage'] = 'CIDRAM-schijfgebruik: ';
 $CIDRAM['lang']['label_fmgr_free_space'] = 'Vrije schijfruimte: ';
+$CIDRAM['lang']['label_fmgr_other_sig'] = 'Andere regels, signatuurbestanden, enz';
+$CIDRAM['lang']['label_fmgr_safety'] = 'Veiligheidsmechanismen';
 $CIDRAM['lang']['label_fmgr_total_disk_usage'] = 'Totaal schijfgebruik: ';
 $CIDRAM['lang']['label_fmgr_total_space'] = 'Totale schijfruimte: ';
 $CIDRAM['lang']['label_fmgr_updates_metadata'] = 'Component updates metadata';
@@ -397,6 +399,7 @@ $CIDRAM['lang']['tip_ip_test_switches'] = '(Wanneer niet geselecteerd, worden al
 $CIDRAM['lang']['tip_ip_tracking'] = 'Hallo, {username}.<br />Met het IP-Tracking pagina, is het mogelijk om de tracking status van IP-adressen te controleren, en u kunt zien welke zijn verboden, en om te annuleren de tracking van hen als u wilt doen.';
 $CIDRAM['lang']['tip_login'] = 'Standaard gebruikersnaam: <span class="txtRd">admin</span> – Standaard wachtwoord: <span class="txtRd">password</span>';
 $CIDRAM['lang']['tip_logs'] = 'Hallo, {username}.<br />Selecteer een logbestand uit de onderstaande lijst om de inhoud van de logbestand te bekijken.';
+$CIDRAM['lang']['tip_pie_html'] = 'Klik op de componentnaam voor meer details.';
 $CIDRAM['lang']['tip_range'] = 'Hallo, {username}.<br />Deze pagina toont enige statistische basisinformatie over de IP-reeksen die worden bestreken door de actieve signatuurbestanden.';
 $CIDRAM['lang']['tip_sections_list'] = 'Hallo, {username}.<br />Deze pagina geeft een overzicht van de secties die bestaan in de actieve signatuurbestanden.';
 $CIDRAM['lang']['tip_see_the_documentation'] = 'Zie de <a href="https://github.com/CIDRAM/CIDRAM/blob/master/_docs/readme.nl.md#SECTION6">documentatie</a> voor informatie over de verschillende configuratie richtlijnen en hun doeleinden.';

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Swedish language data for the front-end (last modified: 2019.01.06).
+ * This file: Swedish language data for the front-end (last modified: 2019.01.07).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -233,6 +233,8 @@ $CIDRAM['lang']['label_false_positive_risk'] = 'Falsk positiv risk: ';
 $CIDRAM['lang']['label_fmgr_cache_data'] = 'Cacherdata och tillfälliga filer';
 $CIDRAM['lang']['label_fmgr_disk_usage'] = 'CIDRAM-diskanvändning: ';
 $CIDRAM['lang']['label_fmgr_free_space'] = 'Gratis diskutrymme: ';
+$CIDRAM['lang']['label_fmgr_other_sig'] = 'Andra regler, signaturfiler, etc';
+$CIDRAM['lang']['label_fmgr_safety'] = 'Säkerhetsmekanismer';
 $CIDRAM['lang']['label_fmgr_total_disk_usage'] = 'Totalt diskanvändning: ';
 $CIDRAM['lang']['label_fmgr_total_space'] = 'Totalt diskutrymme: ';
 $CIDRAM['lang']['label_fmgr_updates_metadata'] = 'Komponentuppdateringsmetadata';
@@ -397,6 +399,7 @@ $CIDRAM['lang']['tip_ip_test_switches'] = '(När den inte är vald, endast signa
 $CIDRAM['lang']['tip_ip_tracking'] = 'Hallå, {username}.<br />Med hjälp av IP-spårningssidan, du kan kontrollera vilka IP-adresser som spåras, vilka har blivit förbjudna, och du kan återkalla spårning och förbud om du vill.';
 $CIDRAM['lang']['tip_login'] = 'Standard användarnamn: <span class="txtRd">admin</span> – Standard lösenord: <span class="txtRd">password</span>';
 $CIDRAM['lang']['tip_logs'] = 'Hallå, {username}.<br />Välj en loggfil från listan nedan för att se innehållet i den loggfilen.';
+$CIDRAM['lang']['tip_pie_html'] = 'Klicka på komponentnamnet för mer information.';
 $CIDRAM['lang']['tip_range'] = 'Hallå, {username}.<br />Den här sidan visar några grundläggande statistiska uppgifter om de signaturer som omfattas av de aktuella aktiva signaturfilerna.';
 $CIDRAM['lang']['tip_sections_list'] = 'Hallå, {username}.<br />Den här sidan visar vilka sektioner som finns i de aktuella aktiva signaturfilerna.';
 $CIDRAM['lang']['tip_see_the_documentation'] = 'Se <a href="https://github.com/CIDRAM/CIDRAM/blob/master/_docs/readme.en.md#SECTION6">dokumentationen</a> för information om de olika konfigurationsdirektiven och deras ändamål.';

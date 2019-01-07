@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for the front-end (last modified: 2019.01.06).
+ * This file: Japanese language data for the front-end (last modified: 2019.01.07).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -233,6 +233,8 @@ $CIDRAM['lang']['label_false_positive_risk'] = 'オプション： ';
 $CIDRAM['lang']['label_fmgr_cache_data'] = 'キャッシュ・データとテンポラリ・ファイル';
 $CIDRAM['lang']['label_fmgr_disk_usage'] = 'CIDRAMディスク使用量： ';
 $CIDRAM['lang']['label_fmgr_free_space'] = '空きディスク容量：';
+$CIDRAM['lang']['label_fmgr_other_sig'] = 'その他の規則、シグネチャ・ファイル、など';
+$CIDRAM['lang']['label_fmgr_safety'] = '安全メカニズム';
 $CIDRAM['lang']['label_fmgr_total_disk_usage'] = 'ディスク使用量の合計： ';
 $CIDRAM['lang']['label_fmgr_total_space'] = 'ディスク容量の合計： ';
 $CIDRAM['lang']['label_fmgr_updates_metadata'] = 'コンポーネント・アップデート・メタデータ';
@@ -397,6 +399,7 @@ $CIDRAM['lang']['tip_ip_test_switches'] = '（選択されていない場合は�
 $CIDRAM['lang']['tip_ip_tracking'] = 'こんにちは、​{username}。​<br />ＩＰトラッキング・ページでは、​ＩＰアドレスのトラッキングステータスを確認できます。​あなたは禁止されているものを確認することができ、​望むならばあなたはトラッキングをキャンセルことができます。';
 $CIDRAM['lang']['tip_login'] = 'デフォルト・ユーザー名：​<span class="txtRd">admin</span> – デフォルト・パスワード：​<span class="txtRd">password</span>';
 $CIDRAM['lang']['tip_logs'] = 'こんにちは、​{username}。​<br />そのログの内容を表示するために、​次のリストからログを選択します。';
+$CIDRAM['lang']['tip_pie_html'] = '詳細についてはコンポーネント名をクリックしてください。';
 $CIDRAM['lang']['tip_range'] = 'こんにちは、​{username}。​<br />このページには、現在アクティブな・シグネチャ・ファイルが対象とするＩＰ範囲に関する基本的な統計情報が表示されます。';
 $CIDRAM['lang']['tip_sections_list'] = 'こんにちは、​{username}。<br />このページには、現在アクティブなシグネチャ・ファイルに存在するセクションが一覧表示されます。';
 $CIDRAM['lang']['tip_see_the_documentation'] = '設定ディレクティブの詳細については、​<a href="https://github.com/CIDRAM/CIDRAM/blob/master/_docs/readme.ja.md#SECTION6">ドキュメント</a>を参照してください。';

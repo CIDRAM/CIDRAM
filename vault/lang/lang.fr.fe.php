@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: French language data for the front-end (last modified: 2019.01.06).
+ * This file: French language data for the front-end (last modified: 2019.01.07).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -233,6 +233,8 @@ $CIDRAM['lang']['label_false_positive_risk'] = 'Risque de faux positifs : ';
 $CIDRAM['lang']['label_fmgr_cache_data'] = 'Données cache et fichiers temporaires';
 $CIDRAM['lang']['label_fmgr_disk_usage'] = 'Utilisation du disque par CIDRAM : ';
 $CIDRAM['lang']['label_fmgr_free_space'] = 'Espace disque libre : ';
+$CIDRAM['lang']['label_fmgr_other_sig'] = 'Autres règles, fichiers de signature, etc';
+$CIDRAM['lang']['label_fmgr_safety'] = 'Mécanismes de sécurité';
 $CIDRAM['lang']['label_fmgr_total_disk_usage'] = 'Utilisation du disque totale : ';
 $CIDRAM['lang']['label_fmgr_total_space'] = 'Espace disque total : ';
 $CIDRAM['lang']['label_fmgr_updates_metadata'] = 'Métadonnées pour la mise à jour des composants';
@@ -397,6 +399,7 @@ $CIDRAM['lang']['tip_ip_test_switches'] = '(Lorsque cette option n\'est pas sél
 $CIDRAM['lang']['tip_ip_tracking'] = 'Bonjour, {username}.<br />La page de surveillance IP vous permet de vérifier l\'état de surveillance des adresses IP, pour vérifier lesquels d\'entre eux ont été interdits, et d\'annuler la surveillance si vous voulez le faire.';
 $CIDRAM['lang']['tip_login'] = 'Nom d\'utilisateur défaut : <span class="txtRd">admin</span> – Mot de passe défaut : <span class="txtRd">password</span>';
 $CIDRAM['lang']['tip_logs'] = 'Bonjour, {username}.<br />Sélectionnez un fichier journal dans la liste ci-dessous pour afficher le contenu de ce fichier journal.';
+$CIDRAM['lang']['tip_pie_html'] = 'Cliquez sur le nom du composant pour plus de détails.';
 $CIDRAM['lang']['tip_range'] = 'Bonjour, {username}.<br />Cette page affiche des informations statistiques sur les plages IP couvertes par les fichiers de signatures actuellement actifs.';
 $CIDRAM['lang']['tip_sections_list'] = 'Bonjour, {username}.<br />Cette page répertorie les sections qui existent dans les fichiers de signatures actuellement actifs.';
 $CIDRAM['lang']['tip_see_the_documentation'] = 'Voir la <a href="https://github.com/CIDRAM/CIDRAM/blob/master/_docs/readme.fr.md#SECTION6">documentation</a> pour information sur les différentes directives de la configuration et leurs objectifs.';

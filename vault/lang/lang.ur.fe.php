@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Urdu language data for the front-end (last modified: 2019.01.06).
+ * This file: Urdu language data for the front-end (last modified: 2019.01.07).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -233,6 +233,8 @@ $CIDRAM['lang']['label_false_positive_risk'] = 'غلط مثبت خطرہ: ';
 $CIDRAM['lang']['label_fmgr_cache_data'] = 'کیش کردہ ڈیٹا اور عارضی فائلیں';
 $CIDRAM['lang']['label_fmgr_disk_usage'] = 'CIDRAM ڈسک استعمال: ';
 $CIDRAM['lang']['label_fmgr_free_space'] = 'مفت ڈسک کی جگہ: ';
+$CIDRAM['lang']['label_fmgr_other_sig'] = 'دیگر قواعد، دستخط فائلیں، وغیرہ';
+$CIDRAM['lang']['label_fmgr_safety'] = 'سیفٹی کے طریقہ کار';
 $CIDRAM['lang']['label_fmgr_total_disk_usage'] = 'کل ڈسک استعمال: ';
 $CIDRAM['lang']['label_fmgr_total_space'] = 'کل ڈسک کی جگہ: ';
 $CIDRAM['lang']['label_fmgr_updates_metadata'] = 'اجزاء اپ ڈیٹ میٹا ڈیٹا';
@@ -397,6 +399,7 @@ $CIDRAM['lang']['tip_ip_test_switches'] = '(جب منتخب نہ ہو، صرف �
 $CIDRAM['lang']['tip_ip_tracking'] = 'ہیلو، {username}.<br />IP باخبر رہنے کے صفحے آپ/ان میں سے جو پابندی عائد کی گئی ہے کو چیک کرنے کے، اور پابندی ہٹانے کی، IP پتوں میں سے باخبر رہنے کے کی حیثیت کی جانچ کرنا اگر آپ ایسا کرنا چاہتے ہیں تو انہیں untrack کی اجازت دیتا ہے.';
 $CIDRAM['lang']['tip_login'] = 'پہلے سے طے شدہ صارف نام: <span class="txtRd">admin</span> – ڈیفالٹ پاس ورڈ: <span class="txtRd">password</span>';
 $CIDRAM['lang']['tip_logs'] = 'ہیلو، {username}.<br />کہ لاگ فائل کے مواد کو دیکھنے کے لئے ذیل کی فہرست سے ایک لاگ فائل منتخب کریں.';
+$CIDRAM['lang']['tip_pie_html'] = 'مزید تفصیلات کے لئے جزو کا نام پر کلک کریں.';
 $CIDRAM['lang']['tip_range'] = 'ہیلو، {username}.<br />یہ صفحہ فی الحال فعال دستخط شدہ فائلوں کی طرف سے احاطہ کرتا IP حدود کے بارے میں کچھ بنیادی اعداد و شمار کی معلومات کو ظاہر کرتا ہے.';
 $CIDRAM['lang']['tip_sections_list'] = 'ہیلو، {username}.<br />اس صفحے کی فہرست اس فہرست میں موجود ہے جس میں فی الحال فعال دستخط فائلوں میں موجود ہیں.';
 $CIDRAM['lang']['tip_see_the_documentation'] = 'ملاحظہ کریں <a href="https://github.com/CIDRAM/CIDRAM/blob/master/_docs/readme.ur.md#SECTION6">دستاویزی</a> مختلف ترتیب ہدایات اور ان کے مقاصد کے بارے میں معلومات کے لئے.';

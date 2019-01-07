@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Turkish language data for the front-end (last modified: 2019.01.06).
+ * This file: Turkish language data for the front-end (last modified: 2019.01.07).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -233,6 +233,8 @@ $CIDRAM['lang']['label_false_positive_risk'] = 'Yalancı pozitif risk: ';
 $CIDRAM['lang']['label_fmgr_cache_data'] = 'Önbellek verileri ve geçici dosyalar';
 $CIDRAM['lang']['label_fmgr_disk_usage'] = 'CIDRAM disk kullanımı: ';
 $CIDRAM['lang']['label_fmgr_free_space'] = 'Boş disk alanı: ';
+$CIDRAM['lang']['label_fmgr_other_sig'] = 'Diğer kurallar, imza dosyaları, vb';
+$CIDRAM['lang']['label_fmgr_safety'] = 'Güvenlik mekanizmaları';
 $CIDRAM['lang']['label_fmgr_total_disk_usage'] = 'Toplam disk kullanımı: ';
 $CIDRAM['lang']['label_fmgr_total_space'] = 'Toplam disk alanı: ';
 $CIDRAM['lang']['label_fmgr_updates_metadata'] = 'Bileşen güncellemeleri meta verileri';
@@ -397,6 +399,7 @@ $CIDRAM['lang']['tip_ip_test_switches'] = '(Seçilmediğinde, yalnızca imza dos
 $CIDRAM['lang']['tip_ip_tracking'] = 'Merhaba, {username}.<br />IP izleme sayfası, IP adreslerinin izleme durumunu kontrol etmenizi, hangilerinin yasak olduğunu kontrol etmenizi ve isterseniz bunların yasaklanmasını/izlemensini kaldırmanızı kontrol etmenizi sağlar.';
 $CIDRAM['lang']['tip_login'] = 'Varsayılan kullanıcı adı: <span class="txtRd">admin</span> – Varsayılan şifre: <span class="txtRd">password</span>';
 $CIDRAM['lang']['tip_logs'] = 'Merhaba, {username}.<br />Bu günlük dosyasının içeriğini görüntülemek için aşağıdaki listeden bir günlük dosyası seçin.';
+$CIDRAM['lang']['tip_pie_html'] = 'Daha fazla ayrıntı için bileşen adına tıklayın.';
 $CIDRAM['lang']['tip_range'] = 'Merhaba, {username}.<br />Bu sayfa, şu anda aktif imza dosyalarının kapsadığı IP aralıkları hakkında bazı temel istatistiksel bilgileri göstermektedir.';
 $CIDRAM['lang']['tip_sections_list'] = 'Merhaba, {username}.<br />Bu sayfa şu anda etkin olan imza dosyalarında hangi bölümlerin bulunduğunu listeler.';
 $CIDRAM['lang']['tip_see_the_documentation'] = 'Çeşitli yapılandırma yönergeleri ve amaçlarıyla ilgili bilgi için <a href="https://github.com/CIDRAM/CIDRAM/blob/master/_docs/readme.en.md#SECTION6">belgelere</a> bakın.';

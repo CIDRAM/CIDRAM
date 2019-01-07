@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data for the front-end (last modified: 2019.01.06).
+ * This file: Indonesian language data for the front-end (last modified: 2019.01.07).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -233,6 +233,8 @@ $CIDRAM['lang']['label_false_positive_risk'] = 'Risiko positif palsu: ';
 $CIDRAM['lang']['label_fmgr_cache_data'] = 'Data cache dan file sementara';
 $CIDRAM['lang']['label_fmgr_disk_usage'] = 'Penggunaan disk CIDRAM: ';
 $CIDRAM['lang']['label_fmgr_free_space'] = 'Ruang disk kosong: ';
+$CIDRAM['lang']['label_fmgr_other_sig'] = 'Aturan dan file tanda tangan lain, dll';
+$CIDRAM['lang']['label_fmgr_safety'] = 'Mekanisme keamanan';
 $CIDRAM['lang']['label_fmgr_total_disk_usage'] = 'Penggunaan disk total: ';
 $CIDRAM['lang']['label_fmgr_total_space'] = 'Ruang disk total: ';
 $CIDRAM['lang']['label_fmgr_updates_metadata'] = 'Komponen memperbarui metadata';
@@ -397,6 +399,7 @@ $CIDRAM['lang']['tip_ip_test_switches'] = '(Bila tidak dipilih, hanya file tanda
 $CIDRAM['lang']['tip_ip_tracking'] = 'Salam, {username}.<br />Halaman pelacakan IP memungkinkan Anda untuk memeriksa status pelacakan alamat IP, untuk memeriksa yang mereka telah dilarang, dan mencabut pelacakan untuk mereka jika Anda ingin melakukan.';
 $CIDRAM['lang']['tip_login'] = 'Nama pengguna standar: <span class="txtRd">admin</span> – Kata sandi standar: <span class="txtRd">password</span>';
 $CIDRAM['lang']['tip_logs'] = 'Salam, {username}.<br />Pilih log dari daftar dibawah untuk melihat isi log.';
+$CIDRAM['lang']['tip_pie_html'] = 'Klik nama komponen untuk detail lebih lanjut.';
 $CIDRAM['lang']['tip_range'] = 'Salam, {username}.<br />Halaman ini menunjukkan beberapa informasi statistik dasar tentang rentang IP yang dicakup oleh file tanda tangan yang saat ini aktif.';
 $CIDRAM['lang']['tip_sections_list'] = 'Salam, {username}.<br />Halaman ini mencantumkan bagian yang ada di file tanda tangan yang aktif saat ini.';
 $CIDRAM['lang']['tip_see_the_documentation'] = 'Lihat <a href="https://github.com/CIDRAM/CIDRAM/blob/master/_docs/readme.id.md#SECTION6">dokumentasi</a> untuk informasi tentang berbagai direktif konfigurasi dan tujuan mereka.';

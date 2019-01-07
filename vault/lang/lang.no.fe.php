@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Norwegian language data for the front-end (last modified: 2019.01.06).
+ * This file: Norwegian language data for the front-end (last modified: 2019.01.07).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -233,6 +233,8 @@ $CIDRAM['lang']['label_false_positive_risk'] = 'Falsk positiv risiko: ';
 $CIDRAM['lang']['label_fmgr_cache_data'] = 'Cache data og midlertidige filer';
 $CIDRAM['lang']['label_fmgr_disk_usage'] = 'CIDRAM diskbruk: ';
 $CIDRAM['lang']['label_fmgr_free_space'] = 'Ledig diskplass: ';
+$CIDRAM['lang']['label_fmgr_other_sig'] = 'Andre regler, signaturfiler, etc';
+$CIDRAM['lang']['label_fmgr_safety'] = 'Sikkerhetsmekanismer';
 $CIDRAM['lang']['label_fmgr_total_disk_usage'] = 'Totalt diskbruk: ';
 $CIDRAM['lang']['label_fmgr_total_space'] = 'Totalt diskplass: ';
 $CIDRAM['lang']['label_fmgr_updates_metadata'] = 'Komponentoppdateringsmetadata';
@@ -397,6 +399,7 @@ $CIDRAM['lang']['tip_ip_test_switches'] = '(Når ikke valgt, blir bare signaturf
 $CIDRAM['lang']['tip_ip_tracking'] = 'Hallo, {username}.<br />IP-sporing-siden lar deg sjekke sporingsstatus for IP-adresser, for å sjekke hvilken av dem som er blitt utestengt, og å oppheve utestengt status eller slutte å spore hvis du vil gjøre det.';
 $CIDRAM['lang']['tip_login'] = 'Standard brukernavn: <span class="txtRd">admin</span> – Standard passord: <span class="txtRd">password</span>';
 $CIDRAM['lang']['tip_logs'] = 'Hallo, {username}.<br />Velg en loggfil fra listen nedenfor for å se innholdet i den loggfilen.';
+$CIDRAM['lang']['tip_pie_html'] = 'Klikk på komponentnavnet for flere detaljer.';
 $CIDRAM['lang']['tip_range'] = 'Hallo, {username}.<br />Denne siden viser noen grunnleggende statistiske opplysninger om signaturene som dekkes av de aktive signaturfilene.';
 $CIDRAM['lang']['tip_sections_list'] = 'Hallo, {username}.<br />Denne siden viser hvilke seksjoner som finnes i de aktive signaturfilene.';
 $CIDRAM['lang']['tip_see_the_documentation'] = 'Se <a href="https://github.com/CIDRAM/CIDRAM/blob/master/_docs/readme.en.md#SECTION6">dokumentasjonen</a> for informasjon om de ulike konfigurasjonsdirektiver og deres formål.';

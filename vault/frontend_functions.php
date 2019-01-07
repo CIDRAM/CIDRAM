@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2018.09.30).
+ * This file: Front-end functions file (last modified: 2019.01.07).
  */
 
 /**
@@ -368,27 +368,27 @@ $CIDRAM['FileManager-RecursiveList'] = function ($Base) use (&$CIDRAM) {
                     if ($Component === 'CIDRAM') {
                         $Component .= ' (' . $CIDRAM['lang']['field_component'] . ')';
                     }
-                } elseif (substr($ThisNameFixed, -10) === 'config.ini') {
+                } elseif (preg_match('/(?:^\.ht|\.safety$|^salt\.dat$)/i', $ThisNameFixed)) {
+                    $Component = $CIDRAM['lang']['label_fmgr_safety'];
+                } elseif (preg_match('/^config\.ini$/i', $ThisNameFixed)) {
                     $Component = $CIDRAM['lang']['link_config'];
                 } elseif ($CIDRAM['FileManager-IsLogFile']($ThisNameFixed)) {
                     $Component = $CIDRAM['lang']['link_logs'];
-                } else {
-                    $LastFour = strtolower(substr($ThisNameFixed, -4));
-                    if (
-                        $LastFour === '.tmp' ||
-                        $ThisNameFixed === 'cache.dat' ||
-                        $ThisNameFixed === 'fe_assets/frontend.dat' ||
-                        substr($ThisNameFixed, -9) === '.rollback'
-                    ) {
-                        $Component = $CIDRAM['lang']['label_fmgr_cache_data'];
-                    } elseif (preg_match('/^\.(?:dat|inc|ya?ml)$/i', $LastFour)) {
-                        $Component = $CIDRAM['lang']['label_fmgr_updates_metadata'];
-                    }
+                } elseif (preg_match('/(?:^auxiliary\.yaml|^ignore\.dat|_custom\.dat|\.sig|\.inc)$/i', $ThisNameFixed)) {
+                    $Component = $CIDRAM['lang']['label_fmgr_other_sig'];
+                } elseif (preg_match('~(?:\.tmp|\.rollback|^(?:cache|ipbypass|fe_assets/frontend)\.dat)$~i', $ThisNameFixed)) {
+                    $Component = $CIDRAM['lang']['label_fmgr_cache_data'];
+                } elseif (preg_match('/\.(?:dat|ya?ml)$/i', $ThisNameFixed)) {
+                    $Component = $CIDRAM['lang']['label_fmgr_updates_metadata'];
                 }
                 if (!isset($CIDRAM['Components']['Components'][$Component])) {
                     $CIDRAM['Components']['Components'][$Component] = 0;
                 }
                 $CIDRAM['Components']['Components'][$Component] += $Arr[$Key]['Filesize'];
+                if (!isset($CIDRAM['Components']['ComponentFiles'][$Component])) {
+                    $CIDRAM['Components']['ComponentFiles'][$Component] = [];
+                }
+                $CIDRAM['Components']['ComponentFiles'][$Component][$ThisNameFixed] = $Arr[$Key]['Filesize'];
             }
             if (($ExtDel = strrpos($Item, '.')) !== false) {
                 $Ext = strtoupper(substr($Item, $ExtDel + 1));

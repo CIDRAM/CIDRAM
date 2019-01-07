@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2019.01.06).
+ * This file: Front-end handler (last modified: 2019.01.07).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -2029,7 +2029,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'file-manager' && $CIDRAM['FE'][
     $CIDRAM['FE']['VaultPath'] = str_replace("\\", '/', $CIDRAM['Vault']) . '*';
 
     /** Prepare components metadata working array. */
-    $CIDRAM['Components'] = ['Files', 'Components', 'Names'];
+    $CIDRAM['Components'] = ['Files' => [], 'Components' => [], 'ComponentFiles' => [], 'Names' => []];
 
     /** Show/hide pie charts link and etc. */
     if (!$CIDRAM['PieFile']) {
@@ -2285,7 +2285,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'file-manager' && $CIDRAM['FE'][
         $CIDRAM['FE']['PieChartColours'] = [];
 
         /** Initialise pie chart legend. */
-        $CIDRAM['FE']['PieChartHTML'] = '';
+        $CIDRAM['FE']['PieChartHTML'] = '<ul class="pieul">' . $CIDRAM['lang']['tip_pie_html'];
 
         /** Building pie chart values. */
         foreach ($CIDRAM['Components']['Components'] as $CIDRAM['Components']['ThisName'] => $CIDRAM['Components']['ThisData']) {
@@ -2294,6 +2294,21 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'file-manager' && $CIDRAM['FE'][
             }
             $CIDRAM['Components']['ThisSize'] = $CIDRAM['Components']['ThisData'];
             $CIDRAM['FormatFilesize']($CIDRAM['Components']['ThisSize']);
+            $CIDRAM['Components']['ThisListed'] = '';
+            if (!empty($CIDRAM['Components']['ComponentFiles'][$CIDRAM['Components']['ThisName']])) {
+                $CIDRAM['Components']['ThisComponentFiles'] = &$CIDRAM['Components']['ComponentFiles'][$CIDRAM['Components']['ThisName']];
+                arsort($CIDRAM['Components']['ThisComponentFiles']);
+                $CIDRAM['Components']['ThisListed'] .= '<ul class="comSub txtBl">';
+                foreach ($CIDRAM['Components']['ThisComponentFiles'] as $CIDRAM['Components']['ThisFile'] => $CIDRAM['Components']['ThisFileSize']) {
+                    $CIDRAM['FormatFilesize']($CIDRAM['Components']['ThisFileSize']);
+                    $CIDRAM['Components']['ThisListed'] .= sprintf(
+                        '<li style="font-size:0.9em">%1$s – %2$s</li>',
+                        $CIDRAM['Components']['ThisFile'],
+                        $CIDRAM['Components']['ThisFileSize']
+                    );
+                }
+                $CIDRAM['Components']['ThisListed'] .= '</ul>';
+            }
             $CIDRAM['Components']['ThisName'] .= ' – ' . $CIDRAM['Components']['ThisSize'];
             $CIDRAM['FE']['PieChartValues'][] = $CIDRAM['Components']['ThisData'];
             $CIDRAM['FE']['PieChartLabels'][] = $CIDRAM['Components']['ThisName'];
@@ -2304,16 +2319,29 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'file-manager' && $CIDRAM['FE'][
                     hexdec(substr($CIDRAM['Components']['ThisColour'], 2, 2)) . ',' .
                     hexdec(substr($CIDRAM['Components']['ThisColour'], 4, 2));
                 $CIDRAM['FE']['PieChartColours'][] = '#' . $CIDRAM['Components']['ThisColour'];
-                $CIDRAM['FE']['PieChartHTML'] .=
-                    '<span style="background:linear-gradient(90deg,rgba(' .
-                    $CIDRAM['Components']['RGB'] . ',0.3),rgba(' .
-                    $CIDRAM['Components']['RGB'] . ',0))"><span style="color:#' .
-                    $CIDRAM['Components']['ThisColour'] . '">➖</span> ' .
-                    $CIDRAM['Components']['ThisName'] . "</span><br />\n";
+                $CIDRAM['FE']['PieChartHTML'] .= sprintf(
+                    '<li style="background:linear-gradient(90deg,rgba(%1$s,0.3),rgba(%1$s,0));color:#%2$s"><span class="comCat" style="cursor:pointer"><span class="txtBl">%3$s</span></span>%4$s</li>',
+                    $CIDRAM['Components']['RGB'],
+                    $CIDRAM['Components']['ThisColour'],
+                    $CIDRAM['Components']['ThisName'],
+                    $CIDRAM['Components']['ThisListed']
+                ) . "\n";
             } else {
-                $CIDRAM['FE']['PieChartHTML'] .= '➖ ' . $CIDRAM['Components']['ThisName'] . "<br />\n";
+                $CIDRAM['FE']['PieChartHTML'] .= sprintf(
+                    '<li><span class="comCat" style="cursor:pointer">%1$s</span>%2$s</li>',
+                    $CIDRAM['Components']['ThisName'],
+                    $CIDRAM['Components']['ThisListed']
+                ) . "\n";
             }
         }
+
+        /** Close pie chart legend and append necessary JavaScript for pie chart sub-items selector. */
+        $CIDRAM['FE']['PieChartHTML'] .= '</ul><script type="text/javascript">' .
+            'var i,toggler=document.getElementsByClassName("comCat");for(i=0;i<toggle' .
+            'r.length;i++)toggler[i].addEventListener("click",function(){this.parentE' .
+            'lement.querySelector(".comSub").classList.toggle("active"),!this.classLi' .
+            'st.toggle("caret-down")&&this.classList.toggle("caret-up")&&setTimeout(f' .
+            'unction(t){t.classList.toggle("caret-up")},200,this)});</script>';
 
         /** Finalise pie chart values. */
         $CIDRAM['FE']['PieChartValues'] = '[' . implode(', ', $CIDRAM['FE']['PieChartValues']) . ']';

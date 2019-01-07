@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Korean language data for the front-end (last modified: 2019.01.06).
+ * This file: Korean language data for the front-end (last modified: 2019.01.07).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -233,6 +233,8 @@ $CIDRAM['lang']['label_false_positive_risk'] = '거짓 양성 위험 : ';
 $CIDRAM['lang']['label_fmgr_cache_data'] = '캐시 데이터 및 임시 파일 ';
 $CIDRAM['lang']['label_fmgr_disk_usage'] = 'CIDRAM 디스크 사용 : ';
 $CIDRAM['lang']['label_fmgr_free_space'] = '사용 가능한 디스크 공간 : ';
+$CIDRAM['lang']['label_fmgr_other_sig'] = '기타 규칙, 서명 파일, 등';
+$CIDRAM['lang']['label_fmgr_safety'] = '안전 장치';
 $CIDRAM['lang']['label_fmgr_total_disk_usage'] = '총 디스크 사용 : ';
 $CIDRAM['lang']['label_fmgr_total_space'] = '총 디스크 공간 : ';
 $CIDRAM['lang']['label_fmgr_updates_metadata'] = '구성 요소 업데이트 메타 데이터';
@@ -397,6 +399,7 @@ $CIDRAM['lang']['tip_ip_test_switches'] = '(선택하지 않으면 서명 파일
 $CIDRAM['lang']['tip_ip_tracking'] = '안녕하세요, {username}.<br />IP 추적 페이지에서 IP 주소 추적 상태를 확인할 수 있습니다. 당신이 금지되어있는 것을 확인 할 수 있으며, 원한다면 당신은 추적을 취소 할 수 있습니다.';
 $CIDRAM['lang']['tip_login'] = '기본 사용자 이름 : <span class="txtRd">admin</span> – 기본 암호 : <span class="txtRd">password</span>';
 $CIDRAM['lang']['tip_logs'] = '안녕하세요, {username}.<br />로그의 내용을 보려면 다음 목록에서 로그를 선택합니다.';
+$CIDRAM['lang']['tip_pie_html'] = '자세한 내용은 구성 요소 이름을 클릭하십시오.';
 $CIDRAM['lang']['tip_range'] = '안녕하세요, {username}.<br />이 페이지는 현재 활성화 된 서명 파일에서 다루는 IP 범위에 대한 몇 가지 기본 통계 정보를 보여줍니다.';
 $CIDRAM['lang']['tip_sections_list'] = '안녕하세요, {username}.<br />이 페이지는 현재 활성화 된 서명 파일에 존재하는 섹션을 나열합니다.';
 $CIDRAM['lang']['tip_see_the_documentation'] = '설정 지시어에 대한 자세한 내용은 <a href="https://github.com/CIDRAM/CIDRAM/blob/master/_docs/readme.ko.md#SECTION6">문서를</a> 참조하십시오.';

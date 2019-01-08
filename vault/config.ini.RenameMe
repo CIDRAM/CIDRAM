@@ -161,7 +161,7 @@ statistics=false
 force_hostname_lookup=false
 
 ; Allow gethostbyaddr lookups when UDP is unavailable? True = Yes [Default];
-; False = No. Note: IPv6 isn't supported by gethostbyaddr.
+; False = No.
 allow_gethostbyaddr_lookup=true
 
 ; Hide version information from logs and page output? True = Yes; False = No
@@ -276,7 +276,7 @@ api='V2'
 
 [legal]
 
-; Pseudonymise IP addresses when logging? True = Yes; False = No [Default].
+; Pseudonymise IP addresses when logging? True = Yes [Default]; False = No.
 pseudonymise_ip_addresses=false
 
 ; Omit IP addresses from logs? True = Yes; False = No [Default]. Note:

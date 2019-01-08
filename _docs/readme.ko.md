@@ -157,7 +157,7 @@ PHPMailer를 설치 한 후 CIDRAM 구성 페이지 또는 구성 파일을 통�
 /_docs/readme.zh.md | 중국어 간체 문서.
 /vault/ | 보루 토 디렉토리 (다양한 파일을 포함합니다).
 /vault/fe_assets/ | 프론트 엔드 자산.
-/vault/fe_assets/.htaccess | 하이퍼 텍스트 액세스 파일 (이 경우, 본 스크립트의 중요한 파일을 권한이없는 소스의 액세스로부터 보호하기위한 것입니다).
+/vault/fe_assets/.htaccess | 하이퍼 텍스트 액세스 파일 (이 경우, 본 스크립트의 중요한 파일을 권한이 없는 소스의 액세스로부터 보호하기 위한 것입니다).
 /vault/fe_assets/_2fa.html | 사용자에게 2FA 코드를 요청할 때 사용되는 HTML 템플릿입니다.
 /vault/fe_assets/_accounts.html | 프론트 엔드의 계정 페이지의 HTML 템플릿.
 /vault/fe_assets/_accounts_row.html | 프론트 엔드의 계정 페이지의 HTML 템플릿.
@@ -195,7 +195,7 @@ PHPMailer를 설치 한 후 CIDRAM 구성 페이지 또는 구성 파일을 통�
 /vault/fe_assets/pips.php | 핍 핸들러 (프론트 엔드 파일 관리자에 의해 사용된다).
 /vault/fe_assets/scripts.js | 프런트 엔드 JavaScript 데이터가 들어 있습니다.
 /vault/lang/ | CIDRAM 언어 데이터가 포함되어 있습니다.
-/vault/lang/.htaccess | 하이퍼 텍스트 액세스 파일 (이 경우, 본 스크립트의 중요한 파일을 권한이없는 소스의 액세스로부터 보호하기위한 것입니다).
+/vault/lang/.htaccess | 하이퍼 텍스트 액세스 파일 (이 경우, 본 스크립트의 중요한 파일을 권한이 없는 소스의 액세스로부터 보호하기 위한 것입니다).
 /vault/lang/lang.ar.cli.php | CLI 아랍어 언어 데이터.
 /vault/lang/lang.ar.fe.php | 프론트 엔드 아랍어 언어 데이터.
 /vault/lang/lang.ar.php | 아랍어 언어 데이터.
@@ -262,7 +262,7 @@ PHPMailer를 설치 한 후 CIDRAM 구성 페이지 또는 구성 파일을 통�
 /vault/lang/lang.zh.cli.php | CLI 중국어 간체 언어 데이터.
 /vault/lang/lang.zh.fe.php | 프론트 엔드 중국어 간체 언어 데이터.
 /vault/lang/lang.zh.php | 중국어 간체 언어 데이터.
-/vault/.htaccess | 하이퍼 텍스트 액세스 파일 (이 경우, 본 스크립트의 중요한 파일을 권한이없는 소스의 액세스로부터 보호하기위한 것입니다).
+/vault/.htaccess | 하이퍼 텍스트 액세스 파일 (이 경우, 본 스크립트의 중요한 파일을 권한이 없는 소스의 액세스로부터 보호하기 위한 것입니다).
 /vault/.travis.php | 테스트를 위해 Travis CI에서 사용됩니다. (기능에 관계없는 파일입니다).
 /vault/.travis.yml | 테스트를 위해 Travis CI에서 사용됩니다. (기능에 관계없는 파일입니다).
 /vault/aggregator.php | IP 애그리게이터.

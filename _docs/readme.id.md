@@ -265,11 +265,13 @@ Data | Deskripsi
 /vault/.htaccess | File akses hiperteks (pada instansi ini, untuk melindungi file-file sensitif dari skrip untuk diakses dari sumber yang tidak terautorisasi).
 /vault/.travis.php | Digunakan oleh Travis CI untuk pengujian (tidak dibutuhkan untuk fungsi teratur dari skrip).
 /vault/.travis.yml | Digunakan oleh Travis CI untuk pengujian (tidak dibutuhkan untuk fungsi teratur dari skrip).
-/vault/aggregator.php | Agregator IP.
 /vault/auxiliary.yaml | Berisi aturan tambahan. Tidak termasuk dalam paket. Dihasilkan oleh halaman aturan tambahan.
 /vault/cache.dat | Cache data.
 /vault/cache.dat.safety | Dihasilkan sebagai mekanisme keamanan bila diperlukan.
 /vault/cidramblocklists.dat | File metadata untuk daftar-daftar blokir yang opsional dari Macmathan; Digunakan oleh halaman pembaruan untuk bagian depan.
+/vault/classes/ | Direktori kelas. Berisi berbagai kelas yang digunakan oleh CIDRAM.
+/vault/classes/.htaccess | File akses hiperteks (pada instansi ini, untuk melindungi file-file sensitif dari skrip untuk diakses dari sumber yang tidak terautorisasi).
+/vault/classes/Aggregator.php | Agregator IP.
 /vault/cli.php | Modul CLI.
 /vault/components.dat | File metadata komponen; Digunakan oleh halaman pembaruan untuk bagian depan.
 /vault/config.ini.RenameMe | File konfigurasi CIDRAM; Berisi semua opsi konfigurasi dari CIDRAM, memberitahukannya apa yang harus dilakukan dan bagaimana mengoperasikannya dengan benar (mengubah nama untuk mengaktifkan).
@@ -1502,4 +1504,4 @@ Beberapa sumber bacaan yang direkomendasikan untuk mempelajari informasi lebih l
 ---
 
 
-Terakhir Diperbarui: 5 Januari 2019 (2019.01.05).
+Terakhir Diperbarui: 9 Januari 2019 (2019.01.09).

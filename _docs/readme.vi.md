@@ -265,11 +265,13 @@ Tập tin | Chi tiết
 /vault/.htaccess | Tập tin "hypertext access" / tập tin truy cập siêu văn bản (bảo vệ tập tin bí mật khỏi bị truy cập bởi nguồn không được ủy quyền).
 /vault/.travis.php | Được sử dụng bởi Travis CI để thử nghiệm (không cần thiết cho chức năng phù hợp của kịch bản).
 /vault/.travis.yml | Được sử dụng bởi Travis CI để thử nghiệm (không cần thiết cho chức năng phù hợp của kịch bản).
-/vault/aggregator.php | Tập hợp IP.
 /vault/auxiliary.yaml | Chứa các quy tắc phụ trợ. Không bao gồm trong gói. Được tạo bởi trang quy tắc phụ trợ.
 /vault/cache.dat | Dữ liệu bộ nhớ cache.
 /vault/cache.dat.safety | Được tạo ra như một cơ chế an toàn khi cần thiết.
 /vault/cidramblocklists.dat | Tập tin siêu dữ liệu cho danh sách chặn tùy chọn của Macmathan; Được sử dụng bởi trang cập nhật front-end.
+/vault/classes/ | Thư mục lớp học. Chứa các lớp học khác nhau được sử dụng bởi CIDRAM.
+/vault/classes/.htaccess | Tập tin "hypertext access" / tập tin truy cập siêu văn bản (bảo vệ tập tin bí mật khỏi bị truy cập bởi nguồn không được ủy quyền).
+/vault/classes/Aggregator.php | Tập hợp IP.
 /vault/cli.php | Tập tin cho xử lý CLI.
 /vault/components.dat | Tập tin siêu dữ liệu thành phần; Được sử dụng bởi trang cập nhật front-end.
 /vault/config.ini.RenameMe | Tập tin cho cấu hình; Chứa tất cả các tùy chọn cho cấu hình của CIDRAM, nói cho nó biết phải làm gì và làm thế nào để hoạt động (đổi tên để kích hoạt).
@@ -1502,4 +1504,4 @@ Một số tài nguyên được đề xuất để tìm hiểu thêm thông tin
 ---
 
 
-Lần cuối cập nhật: 5 Tháng Một 2019 (2019.01.05).
+Lần cuối cập nhật: 9 Tháng Một 2019 (2019.01.09).

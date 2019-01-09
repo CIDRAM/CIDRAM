@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Italian language data for the front-end (last modified: 2019.01.07).
+ * This file: Italian language data for the front-end (last modified: 2019.01.09).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -145,6 +145,7 @@ $CIDRAM['lang']['field_activate'] = 'Attivarlo';
 $CIDRAM['lang']['field_add_more_conditions'] = 'Aggiungi più condizioni';
 $CIDRAM['lang']['field_banned'] = 'Vietato';
 $CIDRAM['lang']['field_blocked'] = 'Bloccato';
+$CIDRAM['lang']['field_cidr'] = 'Genera output utilizzando la notazione CIDR';
 $CIDRAM['lang']['field_clear'] = 'Revocarlo';
 $CIDRAM['lang']['field_clear_all'] = 'Revoca tutto';
 $CIDRAM['lang']['field_clickable_link'] = 'Link cliccabile';
@@ -169,6 +170,7 @@ $CIDRAM['lang']['field_install'] = 'Installarlo';
 $CIDRAM['lang']['field_ip_address'] = 'Indirizzo IP';
 $CIDRAM['lang']['field_latest_version'] = 'Ultima Versione';
 $CIDRAM['lang']['field_log_in'] = 'Accedi';
+$CIDRAM['lang']['field_netmask'] = 'Genera output utilizzando la notazione netmask';
 $CIDRAM['lang']['field_new_name'] = 'Nuovo nome:';
 $CIDRAM['lang']['field_nonclickable_text'] = 'Testo non cliccabile';
 $CIDRAM['lang']['field_ok'] = 'OK';

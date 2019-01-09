@@ -265,11 +265,13 @@ PHPMailerをインストールしたら、CIDRAMコンフィギュレーショ�
 /vault/.htaccess | ハイパーテキスト・アクセスファイル（この場合、​本スクリプトの重要なファイルを権限のないソースのアクセスから保護するためです）。
 /vault/.travis.php | テストのためにTravis CIによって使用される​（機能には関係のないファイルです）。
 /vault/.travis.yml | テストのためにTravis CIによって使用される​（機能には関係のないファイルです）。
-/vault/aggregator.php | ＩＰアグリゲータ。
 /vault/auxiliary.yaml | 補助ルールが含まれています。​パッケージには含まれていません。​補助ルール・ページによって生成されます。
 /vault/cache.dat | キャッシュ・データ。
 /vault/cache.dat.safety | 必要に応じて安全機構として生成されます。
 /vault/cidramblocklists.dat | Macmathanのオプションのブロックリストのメタデータ・ファイル。​フロントエンドのアップデート・ページで使用されます。
+/vault/classes/ | クラス・ディレクトリ。​CIDRAMによって使用されるさまざまなクラスが含まれています。
+/vault/classes/.htaccess | ハイパーテキスト・アクセスファイル（この場合、​本スクリプトの重要なファイルを権限のないソースのアクセスから保護するためです）。
+/vault/classes/Aggregator.php | ＩＰアグリゲータ。
 /vault/cli.php | ＣＬＩハンドラ。
 /vault/components.dat | コンポーネントのメタデータ・ファイル。​フロントエンドのアップデート・ページで使用されます。
 /vault/config.ini.RenameMe | CIDRAM設定ファイル；​CIDRAMの全オプション設定を記載しています。​それぞれのオプションの機能と動作手法の説明です（アクティブにするために名前を変更します）。
@@ -1507,4 +1509,4 @@ CIDRAMは、マーケティングやアドバタイジング目的で情報を�
 ---
 
 
-最終アップデート：２０１９年１月５日。
+最終アップデート：２０１９年１月９日。

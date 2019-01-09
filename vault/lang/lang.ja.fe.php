@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for the front-end (last modified: 2019.01.07).
+ * This file: Japanese language data for the front-end (last modified: 2019.01.09).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -145,6 +145,7 @@ $CIDRAM['lang']['field_activate'] = 'アクティブにする';
 $CIDRAM['lang']['field_add_more_conditions'] = '条件を追加する';
 $CIDRAM['lang']['field_banned'] = '禁止された';
 $CIDRAM['lang']['field_blocked'] = 'ブロックされましたか？';
+$CIDRAM['lang']['field_cidr'] = 'ＣＩＤＲを使って出力を生成する';
 $CIDRAM['lang']['field_clear'] = 'キャンセル';
 $CIDRAM['lang']['field_clear_all'] = 'すべてキャンセル';
 $CIDRAM['lang']['field_clickable_link'] = 'クリック可能なリンク';
@@ -169,6 +170,7 @@ $CIDRAM['lang']['field_install'] = 'インストール';
 $CIDRAM['lang']['field_ip_address'] = 'ＩＰアドレス';
 $CIDRAM['lang']['field_latest_version'] = '最新バージョン';
 $CIDRAM['lang']['field_log_in'] = 'ログイン';
+$CIDRAM['lang']['field_netmask'] = 'ネットマスクを使って出力を生成する';
 $CIDRAM['lang']['field_new_name'] = '新しい名前：';
 $CIDRAM['lang']['field_nonclickable_text'] = 'クリックできないテキスト';
 $CIDRAM['lang']['field_ok'] = 'ＯＫ';

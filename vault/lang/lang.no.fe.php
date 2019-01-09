@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Norwegian language data for the front-end (last modified: 2019.01.07).
+ * This file: Norwegian language data for the front-end (last modified: 2019.01.09).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -145,6 +145,7 @@ $CIDRAM['lang']['field_activate'] = 'Aktiver';
 $CIDRAM['lang']['field_add_more_conditions'] = 'Legg til en ny betingelse';
 $CIDRAM['lang']['field_banned'] = 'Utestengt';
 $CIDRAM['lang']['field_blocked'] = 'Blokkert';
+$CIDRAM['lang']['field_cidr'] = 'Generer utdata som CIDRer';
 $CIDRAM['lang']['field_clear'] = 'Rydde';
 $CIDRAM['lang']['field_clear_all'] = 'Rydde alt';
 $CIDRAM['lang']['field_clickable_link'] = 'Klikkbar lenke';
@@ -169,6 +170,7 @@ $CIDRAM['lang']['field_install'] = 'Installer';
 $CIDRAM['lang']['field_ip_address'] = 'IP-Adresse';
 $CIDRAM['lang']['field_latest_version'] = 'Siste Versjon';
 $CIDRAM['lang']['field_log_in'] = 'Logg Inn';
+$CIDRAM['lang']['field_netmask'] = 'Generer utdata som nettmasker';
 $CIDRAM['lang']['field_new_name'] = 'Nytt navn:';
 $CIDRAM['lang']['field_nonclickable_text'] = 'Ikke-klikkbar tekst';
 $CIDRAM['lang']['field_ok'] = 'OK';

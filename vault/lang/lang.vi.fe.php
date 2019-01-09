@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Vietnamese language data for the front-end (last modified: 2019.01.07).
+ * This file: Vietnamese language data for the front-end (last modified: 2019.01.09).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -145,6 +145,7 @@ $CIDRAM['lang']['field_activate'] = 'Kích hoạt';
 $CIDRAM['lang']['field_add_more_conditions'] = 'Thêm các điều kiện khác';
 $CIDRAM['lang']['field_banned'] = 'Bị cấm';
 $CIDRAM['lang']['field_blocked'] = 'Bị Chặn';
+$CIDRAM['lang']['field_cidr'] = 'Tạo đầu ra dưới dạng CIDR';
 $CIDRAM['lang']['field_clear'] = 'Hủy bỏ';
 $CIDRAM['lang']['field_clear_all'] = 'Hủy bỏ tất cả';
 $CIDRAM['lang']['field_clickable_link'] = 'Liên kết có thể nhấp';
@@ -169,6 +170,7 @@ $CIDRAM['lang']['field_install'] = 'Cài đặt';
 $CIDRAM['lang']['field_ip_address'] = 'Địa Chỉ IP';
 $CIDRAM['lang']['field_latest_version'] = 'Phiên bản mới nhất';
 $CIDRAM['lang']['field_log_in'] = 'Đăng Nhập';
+$CIDRAM['lang']['field_netmask'] = 'Tạo đầu ra dưới dạng netmask';
 $CIDRAM['lang']['field_new_name'] = 'Tên mới:';
 $CIDRAM['lang']['field_nonclickable_text'] = 'Văn bản không thể nhấp';
 $CIDRAM['lang']['field_ok'] = 'OK';

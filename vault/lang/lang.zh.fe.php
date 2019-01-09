@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (simplified) language data for the front-end (last modified: 2019.01.07).
+ * This file: Chinese (simplified) language data for the front-end (last modified: 2019.01.09).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -145,6 +145,7 @@ $CIDRAM['lang']['field_activate'] = '启用';
 $CIDRAM['lang']['field_add_more_conditions'] = '添加更多条件';
 $CIDRAM['lang']['field_banned'] = '禁止';
 $CIDRAM['lang']['field_blocked'] = '已阻止';
+$CIDRAM['lang']['field_cidr'] = '以CIDR的形式生成输出';
 $CIDRAM['lang']['field_clear'] = '撤销';
 $CIDRAM['lang']['field_clear_all'] = '撤销所有';
 $CIDRAM['lang']['field_clickable_link'] = '可点击的链接';
@@ -169,6 +170,7 @@ $CIDRAM['lang']['field_install'] = '安装';
 $CIDRAM['lang']['field_ip_address'] = 'IP地址';
 $CIDRAM['lang']['field_latest_version'] = '最新版本';
 $CIDRAM['lang']['field_log_in'] = '登录';
+$CIDRAM['lang']['field_netmask'] = '以子网掩码的形式生成输出';
 $CIDRAM['lang']['field_new_name'] = '新名称：';
 $CIDRAM['lang']['field_nonclickable_text'] = '不可点击的文字';
 $CIDRAM['lang']['field_ok'] = 'OK';

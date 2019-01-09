@@ -265,11 +265,13 @@ Bestand | Beschrijving
 /vault/.htaccess | Een hypertext toegang bestand (in dit geval, om gevoelige bestanden die behoren tot het script te beschermen tegen toegang door niet-geautoriseerde bronnen).
 /vault/.travis.php | Gebruikt door Travis CI voor het testen (niet vereist voor een goede werking van het script).
 /vault/.travis.yml | Gebruikt door Travis CI voor het testen (niet vereist voor een goede werking van het script).
-/vault/aggregator.php | IP-aggregator.
 /vault/auxiliary.yaml | Bevat aanvullende regels. Niet inbegrepen in het pakket. Gegenereerd op de hulpregels pagina.
 /vault/cache.dat | Cache data/gegevens.
 /vault/cache.dat.safety | Gegenereerd als veiligheidsmechanisme indien nodig.
 /vault/cidramblocklists.dat | Metadata bestand voor de optionele blokkaderlijsten van Macmathan; Gebruikt door de frontend updates pagina.
+/vault/classes/ | Klasse bestandsmap. Bevat verschillende klassen die worden gebruikt door CIDRAM.
+/vault/classes/.htaccess | Een hypertext toegang bestand (in dit geval, om gevoelige bestanden die behoren tot het script te beschermen tegen toegang door niet-geautoriseerde bronnen).
+/vault/classes/Aggregator.php | IP-aggregator.
 /vault/cli.php | CLI-handler.
 /vault/components.dat | Componenten metadata bestand; Gebruikt door de frontend updates pagina.
 /vault/config.ini.RenameMe | Configuratiebestand; Bevat alle configuratie-opties van CIDRAM, het vertellen wat te doen en hoe om te werken correct (hernoemen om te activeren).
@@ -1510,4 +1512,4 @@ Als alternatief is er een kort (niet-gezaghebbende) overzicht van GDPR/DSGVO/AVG
 ---
 
 
-Laatste Bijgewerkt: 5 Januari 2019 (2019.01.05).
+Laatste Bijgewerkt: 9 Januari 2019 (2019.01.09).

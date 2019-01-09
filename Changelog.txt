@@ -3,11 +3,13 @@ CIDRAM (Classless Inter-Domain Routing Access Manager) Changelog.
 === VERSIONING GUIDELINES ===
 CIDRAM adheres to the SemVer guidelines for versioning.
 
-Versioning guidelines for SemVer can be found at: http://www.semver.org/
+Versioning guidelines for SemVer can be found at: https://semver.org/
 
 === Changes made since last versioned release ===
 
-(none)
+- [2019.01.09; Maikuolan]: The IP aggregator now sorts its input differently,
+  as such that IPv4 and IPv6 output isn't thoroughly mixed together anymore.
+  The IP aggregator now supports netmasks, both as input and as output.
 
 === Version/Release 1.9.0 ===
 MINOR RELEASE.

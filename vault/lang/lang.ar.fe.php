@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Arabic language data for the front-end (last modified: 2019.01.07).
+ * This file: Arabic language data for the front-end (last modified: 2019.01.09).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -145,6 +145,7 @@ $CIDRAM['lang']['field_activate'] = 'جعله نشطة';
 $CIDRAM['lang']['field_add_more_conditions'] = 'إضافة المزيد من الشروط';
 $CIDRAM['lang']['field_banned'] = 'محظور';
 $CIDRAM['lang']['field_blocked'] = 'مسدود';
+$CIDRAM['lang']['field_cidr'] = 'توليد الإخراج باستخدام تدوين CIDR';
 $CIDRAM['lang']['field_clear'] = 'إلغاء';
 $CIDRAM['lang']['field_clear_all'] = 'امسح الكل';
 $CIDRAM['lang']['field_clickable_link'] = 'رابط قابل للنقر';
@@ -169,6 +170,7 @@ $CIDRAM['lang']['field_install'] = 'تثبيت';
 $CIDRAM['lang']['field_ip_address'] = 'عنوان IP';
 $CIDRAM['lang']['field_latest_version'] = 'احدث اصدار';
 $CIDRAM['lang']['field_log_in'] = 'تسجيل الدخول';
+$CIDRAM['lang']['field_netmask'] = 'توليد الإخراج باستخدام تدوين قناع الشبكة';
 $CIDRAM['lang']['field_new_name'] = 'اسم جديد:';
 $CIDRAM['lang']['field_nonclickable_text'] = 'نص غير قابل للنقر';
 $CIDRAM['lang']['field_ok'] = 'حسنا';

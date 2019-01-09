@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Urdu language data for the front-end (last modified: 2019.01.07).
+ * This file: Urdu language data for the front-end (last modified: 2019.01.09).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -145,6 +145,7 @@ $CIDRAM['lang']['field_activate'] = 'فعال کریں';
 $CIDRAM['lang']['field_add_more_conditions'] = 'مزید شرائط شامل کریں';
 $CIDRAM['lang']['field_banned'] = 'کالعدم';
 $CIDRAM['lang']['field_blocked'] = 'بلاک';
+$CIDRAM['lang']['field_cidr'] = 'CIDR کی تشخیص کا استعمال کرتے ہوئے پیدا کریں';
 $CIDRAM['lang']['field_clear'] = 'صاف';
 $CIDRAM['lang']['field_clear_all'] = 'تمام کو صاف کریں';
 $CIDRAM['lang']['field_clickable_link'] = 'کلک کرنے والے لنک';
@@ -169,6 +170,7 @@ $CIDRAM['lang']['field_install'] = 'انسٹال کریں';
 $CIDRAM['lang']['field_ip_address'] = 'IP پتہ';
 $CIDRAM['lang']['field_latest_version'] = 'تازہ ترین ورژن';
 $CIDRAM['lang']['field_log_in'] = 'لاگ ان';
+$CIDRAM['lang']['field_netmask'] = 'نیٹ ورک ماسٹر کا استعمال کرتے ہوئے پیدا کریں';
 $CIDRAM['lang']['field_new_name'] = 'نیا نام:';
 $CIDRAM['lang']['field_nonclickable_text'] = 'متن جو کلک نہیں کیا جا سکتا';
 $CIDRAM['lang']['field_ok'] = 'ٹھیک ہے';

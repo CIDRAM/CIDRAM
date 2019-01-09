@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data for the front-end (last modified: 2019.01.07).
+ * This file: Indonesian language data for the front-end (last modified: 2019.01.09).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -145,6 +145,7 @@ $CIDRAM['lang']['field_activate'] = 'Mengaktifkan';
 $CIDRAM['lang']['field_add_more_conditions'] = 'Tambahkan lebih banyak kondisi';
 $CIDRAM['lang']['field_banned'] = 'Dilarang';
 $CIDRAM['lang']['field_blocked'] = 'Diblokir';
+$CIDRAM['lang']['field_cidr'] = 'Hasilkan keluaran menggunakan notasi CIDR';
 $CIDRAM['lang']['field_clear'] = 'Cabut';
 $CIDRAM['lang']['field_clear_all'] = 'Cabut semua';
 $CIDRAM['lang']['field_clickable_link'] = 'Link yang dapat diklik';
@@ -169,6 +170,7 @@ $CIDRAM['lang']['field_install'] = 'Instal';
 $CIDRAM['lang']['field_ip_address'] = 'Alamat IP';
 $CIDRAM['lang']['field_latest_version'] = 'Versi Terbaru';
 $CIDRAM['lang']['field_log_in'] = 'Masuk';
+$CIDRAM['lang']['field_netmask'] = 'Hasilkan keluaran menggunakan notasi netmask';
 $CIDRAM['lang']['field_new_name'] = 'Nama baru:';
 $CIDRAM['lang']['field_nonclickable_text'] = 'Teks yang tidak dapat diklik';
 $CIDRAM['lang']['field_ok'] = 'OK';

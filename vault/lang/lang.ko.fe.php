@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Korean language data for the front-end (last modified: 2019.01.07).
+ * This file: Korean language data for the front-end (last modified: 2019.01.09).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -145,6 +145,7 @@ $CIDRAM['lang']['field_activate'] = '활성화';
 $CIDRAM['lang']['field_add_more_conditions'] = '조건 추가';
 $CIDRAM['lang']['field_banned'] = '금지 된';
 $CIDRAM['lang']['field_blocked'] = '차단 된셨습니까?';
+$CIDRAM['lang']['field_cidr'] = 'CIDR을 사용하여 출력 생성';
 $CIDRAM['lang']['field_clear'] = '취소';
 $CIDRAM['lang']['field_clear_all'] = '모두 취소';
 $CIDRAM['lang']['field_clickable_link'] = '클릭 가능한 링크';
@@ -169,6 +170,7 @@ $CIDRAM['lang']['field_install'] = '설치';
 $CIDRAM['lang']['field_ip_address'] = 'IP 주소';
 $CIDRAM['lang']['field_latest_version'] = '최신 버전';
 $CIDRAM['lang']['field_log_in'] = '로그인';
+$CIDRAM['lang']['field_netmask'] = '넷 마스크 사용하여 출력 생성';
 $CIDRAM['lang']['field_new_name'] = '새 이름 :';
 $CIDRAM['lang']['field_nonclickable_text'] = '클릭 할 수없는 텍스트';
 $CIDRAM['lang']['field_ok'] = '확인';

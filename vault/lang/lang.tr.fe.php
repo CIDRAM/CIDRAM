@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Turkish language data for the front-end (last modified: 2019.01.07).
+ * This file: Turkish language data for the front-end (last modified: 2019.01.09).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -145,6 +145,7 @@ $CIDRAM['lang']['field_activate'] = 'Etkinleştir';
 $CIDRAM['lang']['field_add_more_conditions'] = 'Daha fazla koşul ekle';
 $CIDRAM['lang']['field_banned'] = 'Yasaklandı';
 $CIDRAM['lang']['field_blocked'] = 'Engellendi';
+$CIDRAM['lang']['field_cidr'] = 'CIDR\'ler olarak çıktı üretmek';
 $CIDRAM['lang']['field_clear'] = 'Temiz';
 $CIDRAM['lang']['field_clear_all'] = 'Hepsini temizle';
 $CIDRAM['lang']['field_clickable_link'] = 'Tıklanabilir bağlantı';
@@ -169,6 +170,7 @@ $CIDRAM['lang']['field_install'] = 'Yükle';
 $CIDRAM['lang']['field_ip_address'] = 'İP Adresi';
 $CIDRAM['lang']['field_latest_version'] = 'En son sürüm';
 $CIDRAM['lang']['field_log_in'] = 'Oturum Aç';
+$CIDRAM['lang']['field_netmask'] = 'Ağ maskeler olarak çıktı üretmek';
 $CIDRAM['lang']['field_new_name'] = 'Yeni isim:';
 $CIDRAM['lang']['field_nonclickable_text'] = 'Tıklanmayan metin';
 $CIDRAM['lang']['field_ok'] = 'Tamam';

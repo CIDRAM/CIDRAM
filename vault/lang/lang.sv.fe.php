@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Swedish language data for the front-end (last modified: 2019.01.07).
+ * This file: Swedish language data for the front-end (last modified: 2019.01.09).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -145,6 +145,7 @@ $CIDRAM['lang']['field_activate'] = 'Aktivera';
 $CIDRAM['lang']['field_add_more_conditions'] = 'Lägg till fler villkor';
 $CIDRAM['lang']['field_banned'] = 'Förbjudna';
 $CIDRAM['lang']['field_blocked'] = 'Blockerad';
+$CIDRAM['lang']['field_cidr'] = 'Generera utgång som CIDR';
 $CIDRAM['lang']['field_clear'] = 'Rensa';
 $CIDRAM['lang']['field_clear_all'] = 'Rensa alla';
 $CIDRAM['lang']['field_clickable_link'] = 'Klickbar länk';
@@ -169,6 +170,7 @@ $CIDRAM['lang']['field_install'] = 'Installera';
 $CIDRAM['lang']['field_ip_address'] = 'IP-Adress';
 $CIDRAM['lang']['field_latest_version'] = 'Senaste versionen';
 $CIDRAM['lang']['field_log_in'] = 'Logga in';
+$CIDRAM['lang']['field_netmask'] = 'Generera utgång som nätmasker';
 $CIDRAM['lang']['field_new_name'] = 'Nytt namn:';
 $CIDRAM['lang']['field_nonclickable_text'] = 'Icke-klickbar text';
 $CIDRAM['lang']['field_ok'] = 'OK';

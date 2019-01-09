@@ -268,11 +268,13 @@
 &nbsp; <div dir="rtl" style="display:inline">ملف وصول النص التشعبي (في هذه الحالة، لحماية الملفات الحساسة التي تنتمي إلى البرنامج من أن يتم الوصول إليها عن طريق مصادر غير مصرح لها).</div> | /vault/.htaccess
 &nbsp; <div dir="rtl" style="display:inline">المستخدمة من قبل Travis CI للاختبار (غير مطلوب لتشغيل سليم للبرنامج).</div> | /vault/.travis.php
 &nbsp; <div dir="rtl" style="display:inline">المستخدمة من قبل Travis CI للاختبار (غير مطلوب لتشغيل سليم للبرنامج).</div> | /vault/.travis.yml
-&nbsp; <div dir="rtl" style="display:inline">IP aggregator.</div> | /vault/aggregator.php
 &nbsp; <div dir="rtl" style="display:inline">يحتوي على قواعد مساعدة. غير المدرجة في الحزمة. يتم توليدها بواسطة صفحة القواعد المساعدة.</div> | /vault/auxiliary.yaml
 &nbsp; <div dir="rtl" style="display:inline">بيانات ذاكرة التخزين المؤقت.</div> | /vault/cache.dat
 &nbsp; <div dir="rtl" style="display:inline">يتم توليدها كآلية سلامة عند الحاجة.</div> | /vault/cache.dat.safety
 &nbsp; <div dir="rtl" style="display:inline">ملف البيانات الوصفية لقوائم Macmathan الاختيارية؛ المستخدمة من قبل صفحة التحديثات.</div> | /vault/cidramblocklists.dat
+&nbsp; <div dir="rtl" style="display:inline">مجلد الطبقات. يحتوي على ملفات فئة مختلفة يستخدمها CIDRAM.</div> | /vault/classes/
+&nbsp; <div dir="rtl" style="display:inline">ملف وصول النص التشعبي (في هذه الحالة، لحماية الملفات الحساسة التي تنتمي إلى البرنامج من أن يتم الوصول إليها عن طريق مصادر غير مصرح لها).</div> | /vault/classes/.htaccess
+&nbsp; <div dir="rtl" style="display:inline">IP aggregator.</div> | /vault/classes/Aggregator.php
 &nbsp; <div dir="rtl" style="display:inline">معالج CLI.</div> | /vault/cli.php
 &nbsp; <div dir="rtl" style="display:inline">حدات ملف البيانات الوصفية؛ المستخدمة من قبل صفحة التحديثات.</div> | /vault/components.dat
 &nbsp; <div dir="rtl" style="display:inline">ملف التكوين. يحتوي على جميع خيارات تهيئة CIDRAM، يخبرك ماذا يفعل وكيف يعمل بشكل صحيح (إعادة تسمية لتفعيل)!</div> | /vault/config.ini.RenameMe
@@ -1736,4 +1738,4 @@ x.x.x.x - Day, dd Mon 20xx hh:ii:ss +0000 - "admin" - حاليا على.
 ---
 
 
-<div dir="rtl">آخر تحديث: 5 يناير 2019 (2019.01.05).</div>
+<div dir="rtl">آخر تحديث: 9 يناير 2019 (2019.01.09).</div>

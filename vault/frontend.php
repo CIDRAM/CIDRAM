@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2019.01.07).
+ * This file: Front-end handler (last modified: 2019.01.09).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -2538,11 +2538,23 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-aggregator' && $CIDRAM['FE']
     /** Results counts. */
     $CIDRAM['Results'] = ['In' => 0, 'Rejected' => 0, 'Accepted' => 0, 'Merged' => 0, 'Out' => 0];
 
+    /** Output format. */
+    $CIDRAM['OutputFormat'] = (isset($_POST['format']) && $_POST['format'] === 'Netmask') ? 1 : 0;
+
+    /** Output format menu. */
+    $CIDRAM['FE']['OutputFormat'] = sprintf(
+        '%1$sCIDR" value="CIDR"%2$s /><label for="formatCIDR">%3$s</label><br />%1$sNetmask" value="Netmask"%4$s /><label for="formatNetmask">%5$s</label>',
+        '<input type="radio" class="auto" name="format" id="format',
+        $CIDRAM['OutputFormat'] !== 1 ? ' checked' : '',
+        $CIDRAM['lang']['field_cidr'],
+        $CIDRAM['OutputFormat'] === 1 ? ' checked' : '',
+        $CIDRAM['lang']['field_netmask']
+    );
+
     /** Data was submitted for aggregation. */
     if (isset($_POST['input'])) {
         $CIDRAM['FE']['input'] = $_POST['input'];
-        require $CIDRAM['Vault'] . 'aggregator.php';
-        $CIDRAM['Aggregator'] = new Aggregator($CIDRAM);
+        $CIDRAM['Aggregator'] = new \CIDRAM\Aggregator\Aggregator($CIDRAM, $CIDRAM['OutputFormat']);
         $CIDRAM['FE']['output'] = $CIDRAM['Aggregator']->aggregate($_POST['input']);
         unset($CIDRAM['Aggregator']);
         $CIDRAM['FE']['ResultLine'] = sprintf(

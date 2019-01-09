@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Dutch language data for the front-end (last modified: 2019.01.07).
+ * This file: Dutch language data for the front-end (last modified: 2019.01.09).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -145,6 +145,7 @@ $CIDRAM['lang']['field_activate'] = 'Activeren';
 $CIDRAM['lang']['field_add_more_conditions'] = 'Voeg meer voorwaarden';
 $CIDRAM['lang']['field_banned'] = 'Verboden';
 $CIDRAM['lang']['field_blocked'] = 'Geblokkeerd';
+$CIDRAM['lang']['field_cidr'] = 'Genereer uitvoer als CIDR\'s';
 $CIDRAM['lang']['field_clear'] = 'Annuleer';
 $CIDRAM['lang']['field_clear_all'] = 'Annuleer alles';
 $CIDRAM['lang']['field_clickable_link'] = 'Klikbare link';
@@ -169,6 +170,7 @@ $CIDRAM['lang']['field_install'] = 'Installeren';
 $CIDRAM['lang']['field_ip_address'] = 'IP-Adres';
 $CIDRAM['lang']['field_latest_version'] = 'Laatste Versie';
 $CIDRAM['lang']['field_log_in'] = 'Inloggen';
+$CIDRAM['lang']['field_netmask'] = 'Genereer uitvoer als netmaskers';
 $CIDRAM['lang']['field_new_name'] = 'Nieuwe naam:';
 $CIDRAM['lang']['field_nonclickable_text'] = 'Niet-klikbare tekst';
 $CIDRAM['lang']['field_ok'] = 'OK';

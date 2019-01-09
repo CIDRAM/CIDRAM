@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Spanish language data for the front-end (last modified: 2019.01.07).
+ * This file: Spanish language data for the front-end (last modified: 2019.01.09).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -145,6 +145,7 @@ $CIDRAM['lang']['field_activate'] = 'Activar';
 $CIDRAM['lang']['field_add_more_conditions'] = 'Añadir más condiciones';
 $CIDRAM['lang']['field_banned'] = 'Prohibido';
 $CIDRAM['lang']['field_blocked'] = 'Bloqueado';
+$CIDRAM['lang']['field_cidr'] = 'Generar salida como CIDRs';
 $CIDRAM['lang']['field_clear'] = 'Anular';
 $CIDRAM['lang']['field_clear_all'] = 'Anular todo';
 $CIDRAM['lang']['field_clickable_link'] = 'Enlace que se puede hacer clic';
@@ -169,6 +170,7 @@ $CIDRAM['lang']['field_install'] = 'Instalar';
 $CIDRAM['lang']['field_ip_address'] = 'Dirección IP';
 $CIDRAM['lang']['field_latest_version'] = 'Ultima Versión';
 $CIDRAM['lang']['field_log_in'] = 'Iniciar Sesión';
+$CIDRAM['lang']['field_netmask'] = 'Generar salida como netmasks';
 $CIDRAM['lang']['field_new_name'] = 'Nuevo nombre:';
 $CIDRAM['lang']['field_nonclickable_text'] = 'Texto que no se puede hacer clic';
 $CIDRAM['lang']['field_ok'] = 'OK';

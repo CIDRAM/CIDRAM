@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Thai language data for the front-end (last modified: 2019.01.07).
+ * This file: Thai language data for the front-end (last modified: 2019.01.09).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -145,6 +145,7 @@ $CIDRAM['lang']['field_activate'] = 'เปิดใช้งาน';
 $CIDRAM['lang']['field_add_more_conditions'] = 'เพิ่มเงื่อนไขเพิ่มเติม';
 $CIDRAM['lang']['field_banned'] = 'ถูกห้าม';
 $CIDRAM['lang']['field_blocked'] = 'ถูกบล็อก';
+$CIDRAM['lang']['field_cidr'] = 'สร้างเอาต์พุตเป็น CIDR';
 $CIDRAM['lang']['field_clear'] = 'ล้าง';
 $CIDRAM['lang']['field_clear_all'] = 'ล้างทั้งหมด';
 $CIDRAM['lang']['field_clickable_link'] = 'ลิงก์คลิกได้';
@@ -169,6 +170,7 @@ $CIDRAM['lang']['field_install'] = 'ติดตั้ง';
 $CIDRAM['lang']['field_ip_address'] = 'ที่อยู่ IP';
 $CIDRAM['lang']['field_latest_version'] = 'รุ่นล่าสุด';
 $CIDRAM['lang']['field_log_in'] = 'เข้าสู่ระบบ';
+$CIDRAM['lang']['field_netmask'] = 'สร้างเอาต์พุตเป็น netmask';
 $CIDRAM['lang']['field_new_name'] = 'ชื่อใหม่:';
 $CIDRAM['lang']['field_nonclickable_text'] = 'ข้อความที่ไม่สามารถคลิกได้';
 $CIDRAM['lang']['field_ok'] = 'ตกลง';

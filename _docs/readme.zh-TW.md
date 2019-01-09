@@ -266,11 +266,13 @@ CIDRAM可以手動或通過前端更新。​CIDRAM也可以通過Composer或Wor
 /vault/.htaccess | 超文本訪問文件（在這種情況，​以保護敏感文件屬於腳本從被訪問由非授權來源）。
 /vault/.travis.php | 由Travis CI用於測試（不需要為正確經營腳本）。
 /vault/.travis.yml | 由Travis CI用於測試（不需要為正確經營腳本）。
-/vault/aggregator.php | IP聚合器。
 /vault/auxiliary.yaml | 包含輔助規則。不包括在包中。由輔助規則頁面生成。
 /vault/cache.dat | 緩存數據。
 /vault/cache.dat.safety | 在需要時為安全目的而生成。
 /vault/cidramblocklists.dat | Macmathan的可選阻止列表的元數據文件。​由前端更新頁面使用。
+/vault/classes/ | 類目錄。包含CIDRAM使用的各種類。
+/vault/classes/.htaccess | 超文本訪問文件（在這種情況，​以保護敏感文件屬於腳本從被訪問由非授權來源）。
+/vault/classes/Aggregator.php | IP聚合器。
 /vault/cli.php | CLI處理文件。
 /vault/components.dat | 組件元數據文件。由前端更新頁面使用。
 /vault/config.ini.RenameMe | 配置文件；包含所有配置指令為CIDRAM，​告訴它什麼做和怎麼正確地經營（重命名為激活）。
@@ -1511,4 +1513,4 @@ CIDRAM不收集或處理任何信息用於營銷或廣告目的，既不銷售�
 ---
 
 
-最後更新：2019年1月5日。
+最後更新：2019年1月9日。

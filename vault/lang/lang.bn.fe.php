@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Bangla language data for the front-end (last modified: 2019.01.07).
+ * This file: Bangla language data for the front-end (last modified: 2019.01.09).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -145,6 +145,7 @@ $CIDRAM['lang']['field_activate'] = 'সক্রিয় করা';
 $CIDRAM['lang']['field_add_more_conditions'] = 'আরো শর্ত যোগ করুন';
 $CIDRAM['lang']['field_banned'] = 'নিষিদ্ধ';
 $CIDRAM['lang']['field_blocked'] = 'ব্লক করা আছে';
+$CIDRAM['lang']['field_cidr'] = 'CIDR নোটেশন ব্যবহার করে আউটপুট তৈরি করুন';
 $CIDRAM['lang']['field_clear'] = 'পরিষ্কার করুন';
 $CIDRAM['lang']['field_clear_all'] = 'সব পরিষ্কার করুন';
 $CIDRAM['lang']['field_clickable_link'] = 'ক্লিকযোগ্য লিঙ্ক';
@@ -169,6 +170,7 @@ $CIDRAM['lang']['field_install'] = 'ইনস্টল করুন';
 $CIDRAM['lang']['field_ip_address'] = 'IP ঠিকানা';
 $CIDRAM['lang']['field_latest_version'] = 'সবচেয়ে সাম্প্রতিক সংস্করণ';
 $CIDRAM['lang']['field_log_in'] = 'লগ ইন করুন';
+$CIDRAM['lang']['field_netmask'] = 'নেটমাস্ক নোটেশন ব্যবহার করে আউটপুট তৈরি করুন';
 $CIDRAM['lang']['field_new_name'] = 'নতুন নাম:';
 $CIDRAM['lang']['field_nonclickable_text'] = 'অ-ক্লিকযোগ্য পাঠ্য';
 $CIDRAM['lang']['field_ok'] = 'OK';

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2019.01.09).
+ * This file: Front-end handler (last modified: 2019.01.15).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -23,15 +23,6 @@ if (!file_exists($CIDRAM['Vault'] . 'frontend_functions.php')) {
 }
 /** Load the front-end functions file. */
 require $CIDRAM['Vault'] . 'frontend_functions.php';
-
-/** Load PHPMailer classes if they've been installed. */
-if (file_exists($CIDRAM['Vault'] . '/phpmailer/PHPMailer.php')) {
-    require $CIDRAM['Vault'] . '/phpmailer/PHPMailer.php';
-    require $CIDRAM['Vault'] . '/phpmailer/Exception.php';
-    require $CIDRAM['Vault'] . '/phpmailer/OAuth.php';
-    require $CIDRAM['Vault'] . '/phpmailer/POP3.php';
-    require $CIDRAM['Vault'] . '/phpmailer/SMTP.php';
-}
 
 /** Set page selector if not already set. */
 if (empty($CIDRAM['QueryVars']['cidram-page'])) {

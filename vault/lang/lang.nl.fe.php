@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Dutch language data for the front-end (last modified: 2019.01.09).
+ * This file: Dutch language data for the front-end (last modified: 2019.01.17).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -208,6 +208,7 @@ $CIDRAM['lang']['label_actual'] = 'Actueel';
 $CIDRAM['lang']['label_aux_actBlk'] = 'blokkeer';
 $CIDRAM['lang']['label_aux_actByp'] = 'omzeil';
 $CIDRAM['lang']['label_aux_actGrl'] = 'beschouwen als op de grijze lijst';
+$CIDRAM['lang']['label_aux_actLog'] = 'log niet';
 $CIDRAM['lang']['label_aux_actWhl'] = 'beschouwen als op de witte lijst';
 $CIDRAM['lang']['label_aux_create_new_rule'] = 'Maak een nieuwe regel';
 $CIDRAM['lang']['label_aux_logic_all'] = 'Om de regel te activeren, moet aan alle voorwaarden zijn voldaan.';

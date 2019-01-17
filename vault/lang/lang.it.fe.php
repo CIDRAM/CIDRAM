@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Italian language data for the front-end (last modified: 2019.01.09).
+ * This file: Italian language data for the front-end (last modified: 2019.01.17).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -208,6 +208,7 @@ $CIDRAM['lang']['label_actual'] = 'Effettivo';
 $CIDRAM['lang']['label_aux_actBlk'] = 'bloccare';
 $CIDRAM['lang']['label_aux_actByp'] = 'bypassare';
 $CIDRAM['lang']['label_aux_actGrl'] = 'lista grigia';
+$CIDRAM['lang']['label_aux_actLog'] = 'non registrare';
 $CIDRAM['lang']['label_aux_actWhl'] = 'lista bianca';
 $CIDRAM['lang']['label_aux_create_new_rule'] = 'Crea una nuova regola';
 $CIDRAM['lang']['label_aux_logic_all'] = 'Per innescare la regola, devono essere soddisfatte tutte le condizioni.';

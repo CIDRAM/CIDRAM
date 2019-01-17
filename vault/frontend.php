@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2019.01.15).
+ * This file: Front-end handler (last modified: 2019.01.17).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -3067,16 +3067,16 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'aux' && $CIDRAM['FE']['Permissi
             $CIDRAM['AuxData'][$_POST['ruleName']]['Reason'] = $_POST['ruleReason'];
         }
 
+        /** Possible actions (other than block). */
+        $CIDRAM['Actions'] = [
+            'actWhl' => 'Whitelist',
+            'actGrl' => 'Greylist',
+            'actByp' => 'Bypass',
+            'actLog' => 'Don\'t log'
+        ];
+
         /** Determine appropriate action for new rule. */
-        if ($_POST['act'] === 'actWhl') {
-            $CIDRAM['Action'] = 'Whitelist';
-        } elseif ($_POST['act'] === 'actGrl') {
-            $CIDRAM['Action'] = 'Greylist';
-        } elseif ($_POST['act'] === 'actByp') {
-            $CIDRAM['Action'] = 'Bypass';
-        } else {
-            $CIDRAM['Action'] = 'Block';
-        }
+        $CIDRAM['Action'] = isset($CIDRAM['Actions'][$_POST['act']]) ? $CIDRAM['Actions'][$_POST['act']] : 'Block';
 
         /** Construct new rule action array. */
         $CIDRAM['AuxData'][$_POST['ruleName']][$CIDRAM['Action']] = ['If matches' => [], 'But not if matches' => []];
@@ -3192,6 +3192,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'aux' && $CIDRAM['FE']['Permissi
         $CIDRAM['FE']['optActGrl'] = sprintf($CIDRAM['lang']['label_aux_menu_action'], $CIDRAM['lang']['label_aux_actGrl']);
         $CIDRAM['FE']['optActBlk'] = sprintf($CIDRAM['lang']['label_aux_menu_action'], $CIDRAM['lang']['label_aux_actBlk']);
         $CIDRAM['FE']['optActByp'] = sprintf($CIDRAM['lang']['label_aux_menu_action'], $CIDRAM['lang']['label_aux_actByp']);
+        $CIDRAM['FE']['optActLog'] = sprintf($CIDRAM['lang']['label_aux_menu_action'], $CIDRAM['lang']['label_aux_actLog']);
 
         /** Populate sources. */
         $CIDRAM['FE']['conSources'] = $CIDRAM['GenerateOptions']([

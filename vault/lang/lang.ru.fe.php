@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Russian language data for the front-end (last modified: 2019.01.09).
+ * This file: Russian language data for the front-end (last modified: 2019.01.17).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -208,6 +208,7 @@ $CIDRAM['lang']['label_actual'] = 'Текущий';
 $CIDRAM['lang']['label_aux_actBlk'] = 'заблокируйте';
 $CIDRAM['lang']['label_aux_actByp'] = 'обходите';
 $CIDRAM['lang']['label_aux_actGrl'] = 'серый список';
+$CIDRAM['lang']['label_aux_actLog'] = 'не регистрируйте';
 $CIDRAM['lang']['label_aux_actWhl'] = 'белый список';
 $CIDRAM['lang']['label_aux_create_new_rule'] = 'Создать новое правило';
 $CIDRAM['lang']['label_aux_logic_all'] = 'Чтобы вызвать правило, все условия должны быть выполнены.';

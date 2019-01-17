@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Korean language data for the front-end (last modified: 2019.01.09).
+ * This file: Korean language data for the front-end (last modified: 2019.01.17).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -208,6 +208,7 @@ $CIDRAM['lang']['label_actual'] = '현재';
 $CIDRAM['lang']['label_aux_actBlk'] = '차단하';
 $CIDRAM['lang']['label_aux_actByp'] = '우회하';
 $CIDRAM['lang']['label_aux_actGrl'] = '그레이리스트';
+$CIDRAM['lang']['label_aux_actLog'] = '기록하지 마십시오';
 $CIDRAM['lang']['label_aux_actWhl'] = '화이트리스트';
 $CIDRAM['lang']['label_aux_create_new_rule'] = '새 규칙 만들기';
 $CIDRAM['lang']['label_aux_logic_all'] = '규칙을 실행하려면 모든 조건이 충족되어야합니다.';

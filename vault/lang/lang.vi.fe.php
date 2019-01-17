@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Vietnamese language data for the front-end (last modified: 2019.01.09).
+ * This file: Vietnamese language data for the front-end (last modified: 2019.01.17).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -208,6 +208,7 @@ $CIDRAM['lang']['label_actual'] = 'Thực tế';
 $CIDRAM['lang']['label_aux_actBlk'] = 'chặn';
 $CIDRAM['lang']['label_aux_actByp'] = 'đi qua';
 $CIDRAM['lang']['label_aux_actGrl'] = 'danh sách xám';
+$CIDRAM['lang']['label_aux_actLog'] = 'không ghi';
 $CIDRAM['lang']['label_aux_actWhl'] = 'danh sách trắng';
 $CIDRAM['lang']['label_aux_create_new_rule'] = 'Tạo quy tắc mới';
 $CIDRAM['lang']['label_aux_logic_all'] = 'Để kích hoạt quy tắc, tất cả các điều kiện phải được đáp ứng.';

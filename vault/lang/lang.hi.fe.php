@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Hindi language data for the front-end (last modified: 2019.01.09).
+ * This file: Hindi language data for the front-end (last modified: 2019.01.17).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -208,6 +208,7 @@ $CIDRAM['lang']['label_actual'] = 'वास्तविक';
 $CIDRAM['lang']['label_aux_actBlk'] = 'ब्लॉक';
 $CIDRAM['lang']['label_aux_actByp'] = 'बाईपास';
 $CIDRAM['lang']['label_aux_actGrl'] = 'धूसर सूची';
+$CIDRAM['lang']['label_aux_actLog'] = 'लॉग न करें';
 $CIDRAM['lang']['label_aux_actWhl'] = 'सफेद सूची';
 $CIDRAM['lang']['label_aux_create_new_rule'] = 'नया नियम बनाएं';
 $CIDRAM['lang']['label_aux_logic_all'] = 'नियम को ट्रिगर करने के लिए, सभी शर्तों को पूरा किया जाना चाहिए।';

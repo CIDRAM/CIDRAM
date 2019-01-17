@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2019.01.07).
+ * This file: Front-end functions file (last modified: 2019.01.17).
  */
 
 /**
@@ -793,6 +793,9 @@ $CIDRAM['SimulateBlockEvent'] = function ($Addr, $Modules = false, $Aux = false)
 
     /** Reset bypass flags (needed to prevent falsing due to search engine verification). */
     $CIDRAM['ResetBypassFlags']();
+
+    /** Reset "don't log" flag. */
+    $CIDRAM['Flag Don\'t Log'] = false;
 
     /** Reset hostname (needed to prevent falsing due to repeat module calls involving hostname lookups). */
     $CIDRAM['Hostname'] = '';
@@ -2865,7 +2868,13 @@ $CIDRAM['AuxGenerateFEData'] = function () use (&$CIDRAM) {
         }
 
         /** Iterate through actions. */
-        foreach ([['Whitelist', 'optActWhl'], ['Greylist', 'optActGrl'], ['Block', 'optActBlk'], ['Bypass', 'optActByp']] as $Action) {
+        foreach ([
+            ['Whitelist', 'optActWhl'],
+            ['Greylist', 'optActGrl'],
+            ['Block', 'optActBlk'],
+            ['Bypass', 'optActByp'],
+            ['Don\'t log', 'optActLog']
+        ] as $Action) {
 
             /** Skip action if the current rule doesn't use this action. */
             if (empty($Data[$Action[0]])) {
@@ -2876,17 +2885,11 @@ $CIDRAM['AuxGenerateFEData'] = function () use (&$CIDRAM) {
             $Output .= '<span class="s">' . $CIDRAM['FE'][$Action[1]] . '</span><br />';
 
             /** Show the method to be used. */
-            if (isset($Data['Method'])) {
-                if ($Data['Method'] === 'RegEx') {
-                    $Output .= '<span class="s">' . $CIDRAM['FE']['optMtdReg'] . '</span><br />';
-                } elseif ($Data['Method'] === 'WinEx') {
-                    $Output .= '<span class="s">' . $CIDRAM['FE']['optMtdWin'] . '</span><br />';
-                } else {
-                    $Output .= '<span class="s">' . $CIDRAM['FE']['optMtdStr'] . '</span><br />';
-                }
-            } else {
-                $Output .= '<span class="s">' . $CIDRAM['FE']['optMtdStr'] . '</span><br />';
-            }
+            $Output .= '<span class="s">' . (isset($Data['Method']) ? (
+                $Data['Method'] === 'RegEx' ? $CIDRAM['FE']['optMtdReg'] : (
+                    $Data['Method'] === 'WinEx' ? $CIDRAM['FE']['optMtdWin'] : $CIDRAM['FE']['optMtdStr']
+                )
+            ) : $CIDRAM['FE']['optMtdStr']) . '</span><br />';
 
             /** Begin writing conditions list. */
             $Output .= '<ul>';

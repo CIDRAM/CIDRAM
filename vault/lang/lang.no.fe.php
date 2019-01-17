@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Norwegian language data for the front-end (last modified: 2019.01.09).
+ * This file: Norwegian language data for the front-end (last modified: 2019.01.17).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -208,6 +208,7 @@ $CIDRAM['lang']['label_actual'] = 'Faktiske';
 $CIDRAM['lang']['label_aux_actBlk'] = 'blokkere';
 $CIDRAM['lang']['label_aux_actByp'] = 'omgå';
 $CIDRAM['lang']['label_aux_actGrl'] = 'grå liste';
+$CIDRAM['lang']['label_aux_actLog'] = 'ikke logg';
 $CIDRAM['lang']['label_aux_actWhl'] = 'hvit liste';
 $CIDRAM['lang']['label_aux_create_new_rule'] = 'Opprett ny regel';
 $CIDRAM['lang']['label_aux_logic_all'] = 'For å utløse regelen må alle betingelser være oppfylt.';

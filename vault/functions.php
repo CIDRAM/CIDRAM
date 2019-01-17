@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2019.01.09).
+ * This file: Functions file (last modified: 2019.01.17).
  */
 
 /**
@@ -1889,6 +1889,11 @@ $CIDRAM['AuxAction'] = function ($Action, $Name, $Reason = '') use (&$CIDRAM) {
         $CIDRAM['Bypass'](true, $Name);
     }
 
+    /** Don't log the request instance. */
+    elseif ($Action === 'Don\'t log') {
+        $CIDRAM['Flag Don\'t Log'] = true;
+    }
+
     /** Exit. */
     return false;
 
@@ -1927,7 +1932,7 @@ $CIDRAM['Aux'] = function () use (&$CIDRAM) {
     ];
 
     /** Potential modes. */
-    static $Modes = ['Whitelist', 'Greylist', 'Block', 'Bypass'];
+    static $Modes = ['Whitelist', 'Greylist', 'Block', 'Bypass', 'Don\'t log'];
 
     if (!isset($CIDRAM['AuxData'])) {
         /** Array to contain auxiliary rules. */

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Turkish language data for the front-end (last modified: 2019.01.09).
+ * This file: Turkish language data for the front-end (last modified: 2019.01.17).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -208,6 +208,7 @@ $CIDRAM['lang']['label_actual'] = 'Şimdiki';
 $CIDRAM['lang']['label_aux_actBlk'] = 'engelleyin';
 $CIDRAM['lang']['label_aux_actByp'] = 'atlayın';
 $CIDRAM['lang']['label_aux_actGrl'] = 'gri listeye ekleyin';
+$CIDRAM['lang']['label_aux_actLog'] = 'kaydetme';
 $CIDRAM['lang']['label_aux_actWhl'] = 'beyaz listeye ekleyin';
 $CIDRAM['lang']['label_aux_create_new_rule'] = 'Yeni kural oluştur';
 $CIDRAM['lang']['label_aux_logic_all'] = 'Kuralı tetiklemek için tüm şartlar yerine getirilmelidir.';

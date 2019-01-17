@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Output generator (last modified: 2018.12.10).
+ * This file: Output generator (last modified: 2019.01.17).
  */
 
 /** Initialise cache. */
@@ -342,11 +342,11 @@ if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
     )) {
 
         /** If logging is enabled, increment the counter. */
-        if (
+        if (empty($CIDRAM['Flag Don\'t Log']) && (
             $CIDRAM['Config']['general']['logfile'] ||
             $CIDRAM['Config']['general']['logfileApache'] ||
             $CIDRAM['Config']['general']['logfileSerialized']
-        ) {
+        )) {
             $CIDRAM['Cache']['Counter']++;
             $CIDRAM['CacheModified'] = true;
         }
@@ -690,7 +690,9 @@ if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
      * Skip this section if the IP has been banned and logging banned IPs has
      * been disabled.
      */
-    if ($CIDRAM['Config']['general']['log_banned_ips'] || empty($CIDRAM['Banned'])) {
+    if (empty($CIDRAM['Flag Don\'t Log']) && (
+        $CIDRAM['Config']['general']['log_banned_ips'] || empty($CIDRAM['Banned'])
+    )) {
 
         /** Determining date/time information for logfile names. */
         if (

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Bangla language data for the front-end (last modified: 2019.01.09).
+ * This file: Bangla language data for the front-end (last modified: 2019.01.17).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -208,6 +208,7 @@ $CIDRAM['lang']['label_actual'] = 'আসল';
 $CIDRAM['lang']['label_aux_actBlk'] = 'ব্লক';
 $CIDRAM['lang']['label_aux_actByp'] = 'বাইপাস';
 $CIDRAM['lang']['label_aux_actGrl'] = 'ধূসর তালিকা';
+$CIDRAM['lang']['label_aux_actLog'] = 'লগ করবেন না';
 $CIDRAM['lang']['label_aux_actWhl'] = 'সাদা তালিকা';
 $CIDRAM['lang']['label_aux_create_new_rule'] = 'নতুন নিয়ম তৈরি করুন';
 $CIDRAM['lang']['label_aux_logic_all'] = 'নিয়ম ট্রিগার করার জন্য, সব শর্ত পূরণ করা আবশ্যক।';

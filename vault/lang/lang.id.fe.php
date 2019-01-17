@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data for the front-end (last modified: 2019.01.09).
+ * This file: Indonesian language data for the front-end (last modified: 2019.01.17).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -208,6 +208,7 @@ $CIDRAM['lang']['label_actual'] = 'Sebenarnya';
 $CIDRAM['lang']['label_aux_actBlk'] = 'blokir';
 $CIDRAM['lang']['label_aux_actByp'] = 'bypass';
 $CIDRAM['lang']['label_aux_actGrl'] = 'daftar abu-abu';
+$CIDRAM['lang']['label_aux_actLog'] = 'jangan mencatat';
 $CIDRAM['lang']['label_aux_actWhl'] = 'daftar putih';
 $CIDRAM['lang']['label_aux_create_new_rule'] = 'Buat aturan baru';
 $CIDRAM['lang']['label_aux_logic_all'] = 'Untuk memicu aturan, semua kondisi harus dipenuhi.';

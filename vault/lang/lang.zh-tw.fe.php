@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (traditional) language data for the front-end (last modified: 2019.01.09).
+ * This file: Chinese (traditional) language data for the front-end (last modified: 2019.01.17).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -30,6 +30,7 @@ foreach (['IPv4', 'IPv6'] as $CIDRAM['IPvX']) {
 }
 unset($CIDRAM['Pre'], $CIDRAM['IPvX']);
 
+$CIDRAM['lang']['label_aux_actLog'] = '不記錄';
 $CIDRAM['lang']['Extended Description: Bypasses'] = '標準簽名旁路文件通常包括在主包。';
 $CIDRAM['lang']['Extended Description: CIDRAM'] = '主包（沒有簽名文件，文檔，和配置）。';
 $CIDRAM['lang']['Extended Description: Chart.js'] = '使前端能夠生成餅圖。<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a>可通過<a href="https://opensource.org/licenses/MIT">MIT license</a>獲得。';

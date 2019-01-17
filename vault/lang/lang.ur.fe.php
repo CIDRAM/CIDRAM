@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Urdu language data for the front-end (last modified: 2019.01.09).
+ * This file: Urdu language data for the front-end (last modified: 2019.01.17).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -208,6 +208,7 @@ $CIDRAM['lang']['label_actual'] = 'اس وقت';
 $CIDRAM['lang']['label_aux_actBlk'] = 'بلاک';
 $CIDRAM['lang']['label_aux_actByp'] = 'بائی پاس';
 $CIDRAM['lang']['label_aux_actGrl'] = 'گرینسٹسٹ';
+$CIDRAM['lang']['label_aux_actLog'] = 'لاگ نہ کریں';
 $CIDRAM['lang']['label_aux_actWhl'] = 'وائٹسٹسٹ';
 $CIDRAM['lang']['label_aux_create_new_rule'] = 'نیا قاعدہ بنائیں';
 $CIDRAM['lang']['label_aux_logic_all'] = 'حکمران کو ٹرگر کرنے کے لئے، تمام حالات لازمی ہوسکتی ہیں.';

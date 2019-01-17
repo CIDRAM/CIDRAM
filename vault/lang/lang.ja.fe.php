@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for the front-end (last modified: 2019.01.09).
+ * This file: Japanese language data for the front-end (last modified: 2019.01.17).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -208,6 +208,7 @@ $CIDRAM['lang']['label_actual'] = '現在';
 $CIDRAM['lang']['label_aux_actBlk'] = 'ブロック';
 $CIDRAM['lang']['label_aux_actByp'] = 'バイパス';
 $CIDRAM['lang']['label_aux_actGrl'] = 'グレイリストに登録';
+$CIDRAM['lang']['label_aux_actLog'] = '記録しない';
 $CIDRAM['lang']['label_aux_actWhl'] = 'ホワイトリストに登録';
 $CIDRAM['lang']['label_aux_create_new_rule'] = '新しいルールを作成する';
 $CIDRAM['lang']['label_aux_logic_all'] = 'ルールをトリガーするには、すべての条件を満たす必要があります。';

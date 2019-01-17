@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6.dat
 
-# Version: 2019.6.606
-# Last modified: 2019.01.07
+# Version: 2019.15.346
+# Last modified: 2019.01.16
 
 
 # ---
@@ -142,16 +142,14 @@ Tag: Royal Rainbow
 
 
 # ASN 26347 ("New Dream Network, LLC").
-# %Listed, Google Malware Dashboard: 0.95%.
-# Stop Forum Spam (SFS) listings: 72.
-# Updated: 2017.10.23 / Checked: 2018.05.25
+# %Listed, Google Malware Dashboard: 0.70%.
+# Stop Forum Spam (SFS) listings: 186.
+# Updated: 2019.01.16
 
-2607:f298:1::/48 Deny Cloud
 2607:f298:4::/47 Deny Cloud
 2607:f298:6::/48 Deny Cloud
 2607:f298:a::/47 Deny Cloud
 2607:f298:6050::/44 Deny Cloud
-2607:f298:7000::/48 Deny Cloud
 Origin: US
 Tag: New Dream Network
 
@@ -243,9 +241,9 @@ Tag: 1&1 Internet SE
 
 
 # ASNs 16276, 35540 ("OVH Systems").
-# %Listed, Google Malware Dashboard: 0.28% (AS16276).
-# Stop Forum Spam (SFS) listings: 864,815 (AS16276), 3 (AS35540).
-# Updated: 2017.05.06 / Checked: 2018.05.19
+# %Listed, Google Malware Dashboard: 0.31% (AS16276).
+# Stop Forum Spam (SFS) listings: 373,873 (AS16276), 8 (AS35540).
+# Updated: 2017.05.06 / Checked: 2019.01.06
 
 2607:5300::/32 Deny Cloud
 Origin: CA
@@ -771,9 +769,9 @@ Tag: Swiftway
 
 
 # ASN 6939 ("Hurricane Electric, Inc").
-# %Listed, Google Malware Dashboard: 0.78%.
-# Stop Forum Spam (SFS) listings: 4,064.
-# Updated: 2018.09.17
+# %Listed, Google Malware Dashboard: 0.33%.
+# Stop Forum Spam (SFS) listings: 3,061.
+# Updated: 2019.01.16
 
 # Note for when updating: Some CIDRs appear in the announces that we don't want to be including here as signatures!
 # - "2001::/32" (provides "Teredo" tunneling).
@@ -793,31 +791,19 @@ Tag: Swiftway
 2620:10a:80fd::/48 Run rules_as6939.php
 2620:10a:80ff::/48 Run rules_as6939.php
 Origin: CA
-2a06:e881:160f::/48 Run rules_as6939.php
-2a06:e881:4201::/48 Run rules_as6939.php
-Origin: CH
 2001:df2:7900::/48 Run rules_as6939.php
 2400:7a00::/32 Run rules_as6939.php
 Origin: HK
-2402:f4c0::/34 Run rules_as6939.php
-2402:f4c0:4000::/35 Run rules_as6939.php
-2402:f4c0:6000::/36 Run rules_as6939.php
-Origin: IN
 2a06:1c80::/32 Run rules_as6939.php
 Origin: NL
-2a03:f7c3:31fe::/48 Run rules_as6939.php
-2a03:f7c5:2967::/48 Run rules_as6939.php
-2a03:f7c5:3c9a::/48 Run rules_as6939.php
-2a03:f7c6:b78::/48 Run rules_as6939.php
-2a03:f7c7:3f4e::/48 Run rules_as6939.php
-2a0c:c646::/32 Run rules_as6939.php
-Origin: RU
 2001:470::/32 Run rules_as6939.php
 2001:49e8::/32 Run rules_as6939.php
 2600:7000::/24 Run rules_as6939.php
+2602:feca::/36 Run rules_as6939.php
 2602:ff06:725::/48 Run rules_as6939.php
 2604:a100:100::/48 Run rules_as6939.php
 2604:c800:ffff::/48 Run rules_as6939.php
+2605:4c0::/32 Run rules_as6939.php
 2620:0:50c0::/48 Run rules_as6939.php
 2620:138:c001::/48 Run rules_as6939.php
 2620:138:c002::/48 Run rules_as6939.php
@@ -1486,8 +1472,8 @@ Tag: Choopa, LLC
 
 
 # ASN 7162 ("UOL DIVEO S.A").
-# %Listed, Google Malware Dashboard: 0.65%.
-# Updated: 2017.09.20 / Checked: 2018.05.25
+# %Listed, Google Malware Dashboard: 0.34%.
+# Updated: 2017.09.20 / Checked: 2019.01.16
 
 2804:49c:13::/48 Deny Cloud
 2804:49c:31::/48 Deny Cloud
@@ -2637,9 +2623,9 @@ Tag: Akamai Technologies
 
 
 # ASN 6428 ("Rose Hosting").
-# %Listed, Google Malware Dashboard: 0.93%.
-# Stop Forum Spam (SFS) listings: 36.
-# Updated: 2017.10.30 / Checked: 2018.08.05
+# %Listed, Google Malware Dashboard: 0.97%.
+# Stop Forum Spam (SFS) listings: 23.
+# Updated: 2017.10.30 / Checked: 2019.01.16
 
 2606:9200::/32 Deny Cloud
 Origin: US
@@ -3886,9 +3872,9 @@ Tag: RouteLabel V.O.F
 
 
 # ASN 42632 ("MnogoByte LLC").
-# %Listed, Google Malware Dashboard: 0.10%.
-# Stop Forum Spam (SFS) listings: 75.
-# Updated: 2018.08.05
+# %Listed, Google Malware Dashboard: 0.16%.
+# Stop Forum Spam (SFS) listings: 59.
+# Updated: 2018.08.05 / Checked: 2019.01.16
 
 2001:67c:1688::/48 Deny Cloud
 2a02:878:1::/48 Deny Cloud
@@ -4246,8 +4232,7 @@ Tag: Data Room, Inc
 
 
 # ASN 7151 ("vXchnge Operating, LLC").
-# Stop Forum Spam (SFS) listings: 15.
-# Updated: 2016.07.20 / Checked: 2018.05.25
+# Updated: 2016.07.20 / Checked: 2019.01.16
 
 2607:fce0::/32 Deny Cloud
 Origin: US
@@ -5218,7 +5203,7 @@ Tag: CyrusOne LLC
 
 # Announcing as: "WEBSITEWELCOME".
 # Various ASNs; Sourced from HE.
-# Updated: 2017.09.25 / Checked: 2018.05.23
+# Updated: 2017.09.25 / Checked: 2019.01.16
 
 2605:f300:ffff::/48 Deny Cloud
 Origin: US
@@ -5575,12 +5560,11 @@ Tag: Trader soft LLC
 
 
 # ASN 51395 ("SOFTplus Entwicklungen GmbH").
-# Stop Forum Spam (SFS) listings: 57,604.
-# Updated: 2018.08.05
+# Stop Forum Spam (SFS) listings: 48,788.
+# Updated: 2019.01.16
 
 2001:67c:2f0::/48 Deny Cloud
 2a00:bd80::/32 Deny Cloud
-2a04:e8c0::/29 Deny Cloud
 2a05:6a00::/29 Deny Cloud
 2a05:ad00::/29 Deny Cloud
 2a0a:5dc0::/29 Deny Cloud

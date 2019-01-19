@@ -1106,15 +1106,15 @@ general:
 
 <div dir="rtl">جب <code dir="ltr">"usemode"</code> 2 ہے، "خاص نشان" reCAPTCHA کے ساتھ استعمال کے لئے دستخط حصوں، ایک اندراج ہے کہ دستخط کے حصے کے لیے YAML طبقہ میں (ذیل کی مثال ملاحظہ کریں) شامل ہے کرنے کے لئے.<br /><br /></div>
 
-```
-# یہ حصہ reCAPTCHA کے استعمال کریں گے.
+<pre dir="ltr">
+# <code dir="rtl">یہ حصہ reCAPTCHA کے استعمال کریں گے.</code>
 1.2.3.4/32 Deny Generic
 2.3.4.5/32 Deny Generic
 Tag: reCAPTCHA-Enabled
 ---
 recaptcha:
  enabled: true
-```
+</pre>
 
 <div dir="rtl"><em>نوٹ: ڈیفالٹ کے مطابق، ایک reCAPTCHA مثال صرف (یا تو کے ساتھ 2 کے طور پر "usemode" کے طور پر 1، یا "usemode" "چالو حالت میں" کے طور پر سچ کے ساتھ) تو reCAPTCHA کے چالو حالت میں ہے صارف کو پیش کیا جائے گا، اور بالکل ایک دستخطی متحرک کیا گیا ہے (کوئی زیادہ، کم نہیں؛ ایک سے زیادہ دستخط متحرک کر رہے ہیں تو، ایک reCAPTCHA مثال پیش کیا جائے نہیں کرے گا). تاہم، یہ رویہ "signature_limit" ہدایت کے ذریعے نظر ثانی کی جا سکتی ہے.</em><br /><br /></div>
 
@@ -1541,21 +1541,21 @@ There are multiple types of logging that CIDRAM can perform. Different types of 
  <li>سیریلائزڈ لاگ.</li>
 </ul></div>
 
-A block event, logged to a human readable logfile, typically looks something like this (as an example):
+<div dir="rtl">جب ریکارڈ کیا جاتا ہے تو لوگ پڑھ سکتے ہیں، ایک بلاک ایونٹ عام طور پر اس طرح لگ رہا ہے (ایک مثال کے طور):<br /><br /></div>
 
-```
-ID: 1234
-Script Version: CIDRAM v1.6.0
-Date/Time: Day, dd Mon 20xx hh:ii:ss +0000
-IP Address: x.x.x.x
-Hostname: dns.hostname.tld
-Signatures Count: 1
-Signatures Reference: x.x.x.x/xx
-Why Blocked: Cloud service ("Network Name", Lxx:Fx, [XX])!
-User Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36
-Reconstructed URI: http://your-site.tld/index.php
-reCAPTCHA State: Enabled.
-```
+<pre dir="rtl">
+ID: <code dir="ltr">1234</code>
+اسکرپٹ ورژن: <code dir="ltr">CIDRAM v1.6.0</code>
+تاریخ وقت: <code dir="ltr">Day, dd Mon 20xx hh:ii:ss +0000</code>
+IP پتہ: <code dir="ltr">x.x.x.x</code>
+میزبان کا نام: <code dir="ltr">dns.hostname.tld</code>
+دستخط شمار: <code dir="ltr">1</code>
+دستخط حوالہ: <code dir="ltr">x.x.x.x/xx</code>
+کیوں بلاک شدہ: کلاؤڈ سروس ("نیٹ ورک کا نام", <code dir="ltr">Lxx:Fx</code>, <code dir="ltr">[XX]</code>)!
+صارف ایجنٹ: <code dir="ltr">Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36</code>
+دوبارہ تعمیر URI: <code dir="ltr">http://your-site.tld/index.php</code>
+reCAPTCHA کے ریاست: فعال کردہ.
+</pre>
 
 That same block event, logged to an Apache-style logfile, would look something like this:
 
@@ -1735,4 +1735,4 @@ Conversely, if you're required to retain logs for an extended period of time, yo
 ---
 
 
-<div dir="rtl">آخری تازہ کاری: 9 جنوری 2019 (2019.01.09).</div>
+<div dir="rtl">آخری تازہ کاری: 19 جنوری 2019 (2019.01.19).</div>

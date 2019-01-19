@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2019.01.17).
+ * This file: Front-end handler (last modified: 2019.01.19).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -738,7 +738,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === '' && !$CIDRAM['FE']['CronMode']
     $CIDRAM['FE']['Warnings'] = '';
     if (($CIDRAM['FE']['VersionWarning'] = $CIDRAM['VersionWarning']()) > 0) {
         if ($CIDRAM['FE']['VersionWarning'] >= 2) {
-            $CIDRAM['FE']['VersionWarning'] = $CIDRAM['FE']['VersionWarning'] % 2;
+            $CIDRAM['FE']['VersionWarning'] %= 2;
             $CIDRAM['FE']['Warnings'] .= '<li><a href="https://www.cvedetails.com/version-list/74/128/1/PHP-PHP.html">' . $CIDRAM['lang']['warning_php_2'] . '</a></li>';
         }
         if ($CIDRAM['FE']['VersionWarning'] >= 1) {

@@ -966,7 +966,7 @@
 4.5.6.7/32 Deny Generic
 5.6.7.8/32 Deny Spam
 6.7.8.9/32 Deny Proxy
-Tag: القسم 1
+Tag: القسم ١
 ```
 
 <div dir="rtl">خطوط مزدوجة يمكن استخدامها لأقسام منفصلة (راجع الأمثلة أدناه).<br /><br /></div>
@@ -1106,15 +1106,15 @@ general:
 
 <div dir="rtl">عندما "usemode" هو 2، من أجل دلالة أقسام توقيع للاستخدام مع اختبار reCAPTCHA، تشير إلى أن في YAML لهذا القسم التوقيع (راجع الأمثلة أدناه).<br /><br /></div>
 
-```
-# وسيكون هذا القسم استخدام اختبار reCAPTCHA.
+<pre dir="ltr">
+# <code dir="rtl">وسيكون هذا القسم استخدام اختبار reCAPTCHA.</code>
 1.2.3.4/32 Deny Generic
 2.3.4.5/32 Deny Generic
 Tag: reCAPTCHA-Enabled
 ---
 recaptcha:
  enabled: true
-```
+</pre>
 
 <div dir="rtl"><em>ملحوظة: وفقا الافتراضي، سيتم فقط عرض على اختبار reCAPTCHA إذا تم تمكين اختبار reCAPTCHA (مع "usemode" ك 1، أو "usemode" ك 2 مع "enabled" ك true)، و إذا بالضبط واحد يتم تشغيل توقيع (لا أكثر ولا أقل؛ إذا يتم تشغيلها توقيعات متعددة، لن يتم عرض على اختبار reCAPTCHA). ومع ذلك، يمكن تعديل هذا السلوك عن طريق التوجيه "signature_limit".</em><br /><br /></div>
 
@@ -1541,21 +1541,21 @@ There are multiple types of logging that CIDRAM can perform. Different types of 
  <li>سجلات مسلسلة.</li>
 </ul></div>
 
-A block event, logged to a human readable logfile, typically looks something like this (as an example):
+<div dir="rtl">حدث كتلة، سجلت إلى ملف سجل الإنسان مقروء، يبدو عادة مثل هذا (على سبيل المثال):<br /><br /></div>
 
-```
-ID: 1234
-Script Version: CIDRAM v1.6.0
-Date/Time: Day, dd Mon 20xx hh:ii:ss +0000
-IP Address: x.x.x.x
-Hostname: dns.hostname.tld
-Signatures Count: 1
-Signatures Reference: x.x.x.x/xx
-Why Blocked: Cloud service ("Network Name", Lxx:Fx, [XX])!
-User Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36
-Reconstructed URI: http://your-site.tld/index.php
-reCAPTCHA State: Enabled.
-```
+<pre dir="rtl">
+الهوية الشخصية: <code dir="ltr">1234</code>
+النسخة النصية: <code dir="ltr">CIDRAM v1.6.0</code>
+الوقت/التاريخ: <code dir="ltr">Day, dd Mon 20xx hh:ii:ss +0000</code>
+عنوان IP: <code dir="ltr">x.x.x.x</code>
+اسم المضيف: <code dir="ltr">dns.hostname.tld</code>
+عدد التوقيعات: <code dir="ltr">1</code>
+مرجع التوقيعات: <code dir="ltr">x.x.x.x/xx</code>
+سبب الحظر: الخدمات السحابية ("اسم الشبكة", <code dir="ltr">Lxx:Fx</code>, <code dir="ltr">[XX]</code>)!
+وكيل المستخدم: <code dir="ltr">Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36</code>
+أعيد بناؤها URI: <code dir="ltr">http://your-site.tld/index.php</code>
+الحالة reCAPTCHA: تمكين.
+</pre>
 
 <div dir="rtl">نفس الشيء، المسجل في ملف السجل على نمط Apache، سيبدو كالتالي:<br /><br /></div>
 
@@ -1738,4 +1738,4 @@ x.x.x.x - Day, dd Mon 20xx hh:ii:ss +0000 - "admin" - حاليا على.
 ---
 
 
-<div dir="rtl">آخر تحديث: 9 يناير 2019 (2019.01.09).</div>
+<div dir="rtl">آخر تحديث: 19 يناير 2019 (2019.01.19).</div>

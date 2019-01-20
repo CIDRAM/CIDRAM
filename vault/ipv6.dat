@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6.dat
 
-# Version: 2019.15.346
-# Last modified: 2019.01.16
+# Version: 2019.19.176
+# Last modified: 2019.01.20
 
 
 # ---
@@ -243,7 +243,7 @@ Tag: 1&1 Internet SE
 # ASNs 16276, 35540 ("OVH Systems").
 # %Listed, Google Malware Dashboard: 0.31% (AS16276).
 # Stop Forum Spam (SFS) listings: 373,873 (AS16276), 8 (AS35540).
-# Updated: 2017.05.06 / Checked: 2019.01.06
+# Updated: 2017.05.06 / Checked: 2019.01.16
 
 2607:5300::/32 Deny Cloud
 Origin: CA
@@ -896,19 +896,31 @@ Tag: Bytemark Limited
 # ASNs 14061, 46652 ("DigitalOcean, LLC", "ServerStack, Inc").
 # Ranges change frequently / Should update often.
 # Remove unassigned prior to aggregating (e.g., 10.0.0.0/8).
-# %Listed, Google Malware Dashboard: 0.36% (AS14061).
-# Stop Forum Spam (SFS) listings: 80,872 (AS14061).
-# Updated: 2018.12.06
+# %Listed, Google Malware Dashboard: 0.34% (AS14061).
+# Stop Forum Spam (SFS) listings: 71,943 (AS14061).
+# Updated: 2019.01.20
 
-2a03:b0c0::/46 Deny Cloud
-Origin: NL
+2001:7f8:7f::/64 Deny Cloud
+Origin: CZ
+2001:7f8::/64 Deny Cloud
+Origin: DE
+2001:7f8:4::/63 Deny Cloud
+Origin: GB
+2001:de8:4::/64 Deny Cloud
+Origin: JP
+2001:504:f::/64 Deny Cloud
+2001:504:17:115::/64 Deny Cloud
+2001:504:36::/64 Deny Cloud
+2001:7f8:13::/64 Deny Cloud
+2001:ded::/64 Deny Cloud
 2400:6180::/48 Deny Cloud
 2400:6180:100::/40 Deny Cloud
-Origin: SG
 2604:a880::/46 Deny Cloud
 2604:a880:400::/48 Deny Cloud
 2604:a880:800::/47 Deny Cloud
 2604:a880:cad::/48 Deny Cloud
+2620:107:4008:357::/64 Deny Cloud
+2a03:b0c0::/46 Deny Cloud
 Origin: US
 Tag: Digital Ocean, Inc
 
@@ -1048,9 +1060,9 @@ Tag: Ready Server
 
 
 # ASN 42655 ("ON-LINE Ltd").
-# %Listed, Google Malware Dashboard: 0.35%.
-# Stop Forum Spam (SFS) listings: 363.
-# Updated: 2016.01.21 / Checked: 2018.05.27
+# %Listed, Google Malware Dashboard: 0.38%.
+# Stop Forum Spam (SFS) listings: 80.
+# Updated: 2016.01.21 / Checked: 2019.01.20
 
 2001:67c:2224::/48 Deny Cloud
 Origin: UA
@@ -1122,10 +1134,11 @@ Tag: IDEAL HOSTING
 
 
 # ASN 11051 ("Cyberverse, Inc").
-# %Listed, Google Malware Dashboard: 0.60%.
-# Stop Forum Spam (SFS) listings: 1,388.
-# Updated: 2016.01.22 / Checked: 2018.05.27
+# %Listed, Google Malware Dashboard: 0.19%.
+# Stop Forum Spam (SFS) listings: 197.
+# Updated: 2019.01.20
 
+2602:fe6b:1000::/36 Deny Cloud
 2607:f820::/32 Deny Cloud
 Origin: US
 Tag: Cyberverse, Inc
@@ -4293,16 +4306,6 @@ Origin: HK
 Tag: Powerbase DataCenter
 
 
-# ASN 32392 ("Ecommerce Corporation").
-# %Listed, Google Malware Dashboard: 0.94%.
-# Stop Forum Spam (SFS) listings: 1.
-# Updated: 2016.08.28 / Checked: 2018.05.27
-
-2604:7800::/32 Deny Cloud
-Origin: US
-Tag: Ecommerce Corporation
-
-
 # ASNs 132412, 135511, 136565, 136566 ("CyberWorld Data Center").
 # Updated: 2018.06.10 / Checked: 2018.11.02
 
@@ -5228,11 +5231,11 @@ Origin: IN
 Tag: CtrlS Datacenters
 
 
-# ASNs 25234, 41499 ("ACTIVE 24 Sp. z o.o.").
+# ASN 25234 ("ACTIVE 24 Sp. z o.o.").
 # Note when updating: Also contains "proxy" signatures.
 # Some IPs on these ASNs caught probing for database dumps.
-# %Listed, Google Malware Dashboard: 0.43% (AS25234), 0.60% (AS41499).
-# Updated: 2017.09.25 / Checked: 2018.06.01
+# %Listed, Google Malware Dashboard: 0.22%.
+# Updated: 2017.09.25 / Checked: 2019.01.20
 
 2a02:4a8::/32 Deny Cloud
 Origin: CZ

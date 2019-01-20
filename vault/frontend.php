@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2019.01.19).
+ * This file: Front-end handler (last modified: 2019.01.20).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -2658,11 +2658,19 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-test' && $CIDRAM['FE']['Perm
                 $CIDRAM['ThisIP']['YesNo'] = $CIDRAM['lang']['response_no'];
                 $CIDRAM['ThisIP']['StatClass'] = 'txtGn';
             }
+            $CIDRAM['ThisIP']['NegateFlags'] = '';
+            if ($CIDRAM['Flag Don\'t Log']) {
+                $CIDRAM['ThisIP']['NegateFlags'] .= '📓';
+            }
+            if ($CIDRAM['ThisIP']['NegateFlags']) {
+                $CIDRAM['ThisIP']['YesNo'] .= ' – 🚫' . $CIDRAM['ThisIP']['NegateFlags'];
+            }
             $CIDRAM['FE']['IPTestResults'] .= $CIDRAM['ParseVars'](
                 $CIDRAM['lang'] + $CIDRAM['ThisIP'],
                 $CIDRAM['FE']['IPTestRow']
             );
         }
+        unset($CIDRAM['ThisIP']);
     } else {
         $CIDRAM['FE']['ip-addr'] = '';
     }

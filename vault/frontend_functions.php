@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2019.01.19).
+ * This file: Front-end functions file (last modified: 2019.01.25).
  */
 
 /**
@@ -30,9 +30,8 @@ $CIDRAM['Congruency'] = function ($Base, $Model, $Validate = false) use (&$CIDRA
     if (empty($Base) || empty($Model)) {
         return $Validate ? false : '';
     }
-    $BaseArr = $ModelArr = [];
-    $CIDRAM['YAML']($Base, $BaseArr);
-    $CIDRAM['YAML']($Model, $ModelArr);
+    $BaseArr = (new \Maikuolan\Common\YAML($Base))->Data;
+    $ModelArr = (new \Maikuolan\Common\YAML($Model))->Data;
     foreach ($BaseArr as $Element => $Data) {
         if (!isset($Data['Version']) && !isset($Data['Files']) && !isset($ModelArr[$Element])) {
             if ($Validate) {
@@ -480,7 +479,7 @@ $CIDRAM['FetchComponentsLists'] = function ($Base, &$Arr) use (&$CIDRAM) {
         if (!empty($ThisFile) && preg_match('/\.(?:dat|inc|ya?ml)$/i', $ThisFile)) {
             $Data = $CIDRAM['ReadFile']($Base . $ThisFile);
             if (substr($Data, 0, 4) === "---\n" && ($EoYAML = strpos($Data, "\n\n")) !== false) {
-                $CIDRAM['YAML'](substr($Data, 4, $EoYAML - 4), $Arr);
+                $CIDRAM['YAML-Object']->process(substr($Data, 4, $EoYAML - 4), $Arr);
             }
         }
     }
@@ -1511,7 +1510,7 @@ $CIDRAM['UpdatesHandler-Update'] = function ($ID) use (&$CIDRAM) {
             ($CIDRAM['Components']['EoYAML'] = strpos(
                 $CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['RemoteData'], "\n\n"
             )) !== false &&
-            $CIDRAM['YAML'](
+            $CIDRAM['YAML-Object']->process(
                 substr($CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['RemoteData'], 4, $CIDRAM['Components']['EoYAML'] - 4),
                 $CIDRAM['Components']['RemoteMeta']
             ) &&
@@ -1645,10 +1644,12 @@ $CIDRAM['UpdatesHandler-Update'] = function ($ID) use (&$CIDRAM) {
                     preg_match('~\.(?:css|dat|gif|inc|jpe?g|php|png|ya?ml|[a-z]{0,2}db)$~i', $ThisFileName) &&
                     !$CIDRAM['CheckFileUpdate']($ThisFile)
                 ) {
-                    $CIDRAM['FE']['state_msg'] .=
-                        '<code>' . $CIDRAM['Components']['ThisTarget'] . '</code> – ' .
-                        '<code>' . $ThisFileName . '</code> – ' .
-                        $CIDRAM['lang']['response_sanity_1'] . '<br />';
+                    $CIDRAM['FE']['state_msg'] .= sprintf(
+                        '<code>%s</code> – <code>%s</code> – %s<br />',
+                        $CIDRAM['Components']['ThisTarget'],
+                        $ThisFileName,
+                        $CIDRAM['lang']['response_sanity_1']
+                    );
                     if (!empty($CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['On Sanity Error'])) {
                         $CIDRAM['FE_Executor']($CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['On Sanity Error']);
                     }
@@ -1967,17 +1968,7 @@ $CIDRAM['UpdatesHandler-Deactivate'] = function ($ID) use (&$CIDRAM) {
 $CIDRAM['UpdatesHandler-Verify'] = function ($ID) use (&$CIDRAM) {
     $CIDRAM['Arrayify']($ID);
     foreach ($ID as $ThisID) {
-        $Ident = strtolower(preg_replace('~[^\da-z]~i', '', $ThisID));
-        $HideLinkClass = 'hl_' . $Ident;
-        $ShowLinkClass = 'sl_' . $Ident;
-        $Ident = 'v_' . $Ident;
-        $Table = sprintf(
-            '<span class="v %1$s" style="display:none"><table><tr><td class="h4"><div class="s">%2$s</div></td><td class="h2"><div class="s">%3$s</div></td><td class="h2f"><div class="s">%4$s</div></td></tr>',
-            $Ident,
-            $CIDRAM['lang']['field_file'],
-            $CIDRAM['lang']['label_actual'],
-            $CIDRAM['lang']['label_expected']
-        );
+        $Table = '<blockquote class="ng1 comSub">';
         if (!empty($CIDRAM['Components']['Meta'][$ThisID]['Files'])) {
             $TheseFiles = $CIDRAM['Components']['Meta'][$ThisID]['Files'];
         }
@@ -1991,11 +1982,9 @@ $CIDRAM['UpdatesHandler-Verify'] = function ($ID) use (&$CIDRAM) {
         $Passed = true;
         for ($Iterate = 0; $Iterate < $Count; $Iterate++) {
             $ThisFile = $TheseFiles['To'][$Iterate];
-            $FileFailMsg = '<code>' . $ThisID . '</code> – <code>' . $ThisFile . '</code> – ' . $CIDRAM['lang']['response_possible_problem_found'] . '<br />';
             $Checksum = empty($TheseFiles['Checksum'][$Iterate]) ? false : $TheseFiles['Checksum'][$Iterate];
             $Class = 's';
             if (!$ThisFileData = $CIDRAM['ReadFile']($CIDRAM['Vault'] . $ThisFile)) {
-                $CIDRAM['FE']['state_msg'] .= $FileFailMsg;
                 $Passed = false;
                 $Actual = '';
             } else {
@@ -2010,7 +1999,6 @@ $CIDRAM['UpdatesHandler-Verify'] = function ($ID) use (&$CIDRAM) {
                     preg_match('~\.(?:css|dat|gif|inc|jpe?g|php|png|ya?ml|[a-z]{0,2}db)$~i', $ThisFile) &&
                     !$CIDRAM['CheckFileUpdate']($ThisFileData)
                 )) {
-                    $CIDRAM['FE']['state_msg'] .= $FileFailMsg;
                     $Passed = false;
                 }
                 if ($Checksum && $Class !== 'txtRd') {
@@ -2018,29 +2006,24 @@ $CIDRAM['UpdatesHandler-Verify'] = function ($ID) use (&$CIDRAM) {
                 }
             }
             $Table .= sprintf(
-                '<tr><td class="h3"><code class="s">%1$s</code></td><td class="h1"><code class="%2$s">%3$s</code></td><td class="h1f"><code class="%2$s">%4$s</code></td></tr>',
+                '<code>%1$s</code> – %7$s<br />%2$s – <code class="%6$s">%3$s</code><br />%4$s – <code class="%6$s">%5$s</code><hr />',
                 $ThisFile,
-                $Class,
+                $CIDRAM['lang']['label_actual'],
                 $Actual,
-                $Checksum
+                $CIDRAM['lang']['label_expected'],
+                $Checksum,
+                $Class,
+                ($Class === 'txtGn' ? $CIDRAM['lang']['field_ok'] : $CIDRAM['lang']['response_possible_problem_found'])
             );
         }
-        $Table .= '</table></span>';
-        $CIDRAM['FE']['state_msg'] .= '<code>' . $ThisID . '</code> – ' . (
-            $Passed ? $CIDRAM['lang']['response_verification_success'] : $CIDRAM['lang']['response_verification_failed']
-        ) . sprintf(
-            ' %1$ssl_ %3$s%2$shide(\'v\');%10$sshow%5$shide(\'%3$s\');show(\'%4$s\');%6$s%7$s%8$s%1$shl_ %4$s%2$shide(\'v\');%10$s" style="display:none;%6$s%9$s%8$s',
-            '<a class="',
-            '" href="javascript:void(0);" onclick="javascript:',
-            $ShowLinkClass,
-            $HideLinkClass,
-            "('" . $Ident . "');",
-            '"><code>[',
-            $CIDRAM['lang']['label_show_hash_table'],
-            ']</code></a>',
-            $CIDRAM['lang']['label_hide_hash_table'],
-            'hide(\'hl_\');show(\'sl_\');'
-        ) . '<br />' . $Table;
+        $Table .= '</blockquote>';
+        $CIDRAM['FE']['state_msg'] .= sprintf(
+            '<div><span class="comCat" style="cursor:pointer"><code>%s</code> – <span class="%s">%s</span></span>%s</div>',
+            $ThisID,
+            ($Passed ? 's' : 'txtRd'),
+            ($Passed ? $CIDRAM['lang']['response_verification_success'] : $CIDRAM['lang']['response_verification_failed']),
+            $Table
+        );
     }
 };
 
@@ -2839,12 +2822,9 @@ $CIDRAM['AuxGenerateFEData'] = function () use (&$CIDRAM) {
     /** Potential modes. */
     static $Modes = ['Whitelist', 'Greylist', 'Block', 'Bypass'];
 
+    /** Attempt to parse the auxiliary rules file. */
     if (!isset($CIDRAM['AuxData'])) {
-        /** Array to contain auxiliary rules. */
-        $CIDRAM['AuxData'] = [];
-
-        /** Attempt to parse the auxiliary rules file. */
-        $CIDRAM['YAML']($CIDRAM['ReadFile']($CIDRAM['Vault'] . 'auxiliary.yaml'), $CIDRAM['AuxData']);
+        $CIDRAM['AuxData'] = (new \Maikuolan\Common\YAML($CIDRAM['ReadFile']($CIDRAM['Vault'] . 'auxiliary.yaml')))->Data;
     }
 
     /** Iterate through the auxiliary rules. */

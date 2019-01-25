@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: CLI handler (last modified: 2018.08.26).
+ * This file: CLI handler (last modified: 2019.01.25).
  */
 
 /** Fallback for missing $_SERVER superglobal. */
@@ -132,13 +132,14 @@ if ($CIDRAM['argv'][1] === '-h') {
             continue;
         }
         if ($YAMLM) {
-            $YAMLA = [];
             $YAMLD .= $ArrayToValidate[$i] . "\n";
             if (empty($ArrayToValidate[$i + 1])) {
                 $YAMLM = false;
-                if (!$YAMLD = $CIDRAM['YAML']($YAMLD, $YAMLA, true)) {
+                $YAMLO = new \Maikuolan\Common\YAML();
+                if (!($YAMLO->process($YAMLD, $YAMLO->Data))) {
                     echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_2'], sprintf($CIDRAM['lang']['CLI_VL_YAML'], $YAMLL));
                 }
+                unset($YAMLO);
             }
             continue;
         }

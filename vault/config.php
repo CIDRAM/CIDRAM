@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Configuration handler (last modified: 2019.01.09).
+ * This file: Configuration handler (last modified: 2019.01.25).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -88,12 +88,14 @@ if (isset($CIDRAM['Overrides']) && $CIDRAM['Overrides'] === false) {
 }
 
 /** Attempts to parse the CIDRAM configuration defaults file. */
-$CIDRAM['YAML']($CIDRAM['ReadFile']($CIDRAM['Vault'] . 'config.yaml'), $CIDRAM['Config']);
+$CIDRAM['Config']['Config Defaults'] = (new \Maikuolan\Common\YAML($CIDRAM['ReadFile']($CIDRAM['Vault'] . 'config.yaml')))->Data;
 
 /** Kills the script if parsing the configuration defaults file fails. */
-if (empty($CIDRAM['Config']['Config Defaults'])) {
+if (empty($CIDRAM['Config']['Config Defaults']['Config Defaults'])) {
     header('Content-Type: text/plain');
     die('[CIDRAM] Configuration defaults file is corrupt! Please reinstall CIDRAM.');
+} else {
+    $CIDRAM['Config']['Config Defaults'] = $CIDRAM['Config']['Config Defaults']['Config Defaults'];
 }
 
 /** Perform fallbacks and autotyping for missing configuration directives. */

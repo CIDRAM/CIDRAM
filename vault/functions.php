@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2019.01.17).
+ * This file: Functions file (last modified: 2019.01.25).
  */
 
 /**
@@ -391,7 +391,10 @@ $CIDRAM['CheckFactors'] = function ($Files, $Factors) use (&$CIDRAM) {
                     ($PosY = strpos($Files[$FileIndex], "\n\n", ($PosX + 1))) &&
                     !substr_count($Files[$FileIndex], "\n\n", $PosA, ($PosX - $PosA + 1))
                 ) {
-                    $YAML = $CIDRAM['YAML'](substr($Files[$FileIndex], ($PosX + 5), ($PosY - $PosX - 5)), $CIDRAM['Config']);
+                    if (!isset($YAML)) {
+                        $YAML = new \Maikuolan\Common\YAML();
+                    }
+                    $YAML->process(substr($Files[$FileIndex], ($PosX + 5), ($PosY - $PosX - 5)), $CIDRAM['Config']);
                 }
                 $LN = ' ("' . $Tag . '", L' . substr_count($Files[$FileIndex], "\n", 0, $PosA) . ':F' . $FileIndex . $Origin . ')';
                 $Signature = substr($Files[$FileIndex], $PosA, ($PosB - $PosA));
@@ -612,225 +615,6 @@ $CIDRAM['TimeFormat'] = function ($Time, $In) use (&$CIDRAM) {
     return is_array($In) ? array_map(function ($Item) use (&$values, &$CIDRAM) {
         return $CIDRAM['ParseVars']($values, $Item);
     }, $In) : $CIDRAM['ParseVars']($values, $In);
-};
-
-/**
- * Normalises values defined by the YAML closure.
- *
- * @param string|int|bool $Value The value to be normalised.
- * @param int $ValueLen The length of the value to be normalised.
- * @param string|int|bool $ValueLow The value to be normalised, lowercased.
- */
-$CIDRAM['YAML-Normalise-Value'] = function (&$Value, $ValueLen, $ValueLow) {
-    if (substr($Value, 0, 1) === '"' && substr($Value, $ValueLen - 1) === '"') {
-        $Value = substr($Value, 1, $ValueLen - 2);
-    } elseif (substr($Value, 0, 1) === '\'' && substr($Value, $ValueLen - 1) === '\'') {
-        $Value = substr($Value, 1, $ValueLen - 2);
-    } elseif ($ValueLow === 'true' || $ValueLow === 'y') {
-        $Value = true;
-    } elseif ($ValueLow === 'false' || $ValueLow === 'n') {
-        $Value = false;
-    } elseif (substr($Value, 0, 2) === '0x' && ($HexTest = substr($Value, 2)) && !preg_match('/[^\da-f]/i', $HexTest) && !($ValueLen % 2)) {
-        $Value = hex2bin($HexTest);
-    } else {
-        $ValueInt = (int)$Value;
-        if (strlen($ValueInt) === $ValueLen && $Value == $ValueInt && $ValueLen > 1) {
-            $Value = $ValueInt;
-        }
-    }
-    if (!$Value) {
-        $Value = false;
-    }
-};
-
-/**
- * A simplified YAML-like parser. Note: This is intended to adequately serve
- * the needs of this package in a way that should feel familiar to users of
- * YAML, but it isn't a true YAML implementation and it doesn't adhere to any
- * specifications, official or otherwise.
- *
- * @param string $In The data to parse.
- * @param array $Arr Where to save the results.
- * @param bool $VM Validator Mode (if true, results won't be saved).
- * @param int $Depth Tab depth (inherited through recursion; ignore it).
- * @return bool Returns false if errors are encountered, and true otherwise.
- */
-$CIDRAM['YAML'] = function ($In, &$Arr, $VM = false, $Depth = 0) use (&$CIDRAM) {
-    if (!is_array($Arr)) {
-        if ($VM) {
-            return false;
-        }
-        $Arr = [];
-    }
-    if (strpos($In, "\n") === false) {
-        return false;
-    }
-    $In = str_replace("\r", '', $In);
-    $Key = $Value = $SendTo = '';
-    $TabLen = $SoL = 0;
-    while ($SoL !== false) {
-        $ThisLine = (
-            ($EoL = strpos($In, "\n", $SoL)) === false
-        ) ? substr($In, $SoL) : substr($In, $SoL, $EoL - $SoL);
-        $SoL = ($EoL === false) ? false : $EoL + 1;
-        $ThisLine = preg_replace(['/#.*$/', '/\s+$/'], '', $ThisLine);
-        if (empty($ThisLine) || $ThisLine === "\n") {
-            continue;
-        }
-        $ThisTab = 0;
-        while (($Chr = substr($ThisLine, $ThisTab, 1)) && ($Chr === ' ' || $Chr === "\t")) {
-            $ThisTab++;
-        }
-        if ($ThisTab > $Depth) {
-            if ($TabLen === 0) {
-                $TabLen = $ThisTab;
-            }
-            $SendTo .= $ThisLine . "\n";
-            continue;
-        } elseif ($ThisTab < $Depth) {
-            return false;
-        } elseif (!empty($SendTo)) {
-            if (empty($Key)) {
-                return false;
-            }
-            if (!isset($Arr[$Key])) {
-                if ($VM) {
-                    return false;
-                }
-                $Arr[$Key] = false;
-            }
-            if (!$CIDRAM['YAML']($SendTo, $Arr[$Key], $VM, $TabLen)) {
-                return false;
-            }
-            $SendTo = '';
-        }
-        if (!$CIDRAM['YAML-ProcessLine']($ThisLine, $ThisTab, $Key, $Value, $Arr, $VM)) {
-            return false;
-        }
-    }
-    if (!empty($SendTo) && !empty($Key)) {
-        if (!isset($Arr[$Key])) {
-            if ($VM) {
-                return false;
-            }
-            $Arr[$Key] = [];
-        }
-        if (!$CIDRAM['YAML']($SendTo, $Arr[$Key], $VM, $TabLen)) {
-            return false;
-        }
-    }
-    return true;
-};
-
-/**
- * Process one line of YAML. Parameters reference variables set by calling closure.
- *
- * @param string $ThisLine
- * @param string $ThisTab
- * @param string|int $Key
- * @param string|int|bool $Value
- * @param array $Arr
- * @param bool $VM
- * @return bool Usable by validator mode.
- */
-$CIDRAM['YAML-ProcessLine'] = function (&$ThisLine, &$ThisTab, &$Key, &$Value, &$Arr, &$VM) use (&$CIDRAM) {
-    if (substr($ThisLine, -1) === ':') {
-        $Key = substr($ThisLine, $ThisTab, -1);
-        $KeyLen = strlen($Key);
-        $KeyLow = strtolower($Key);
-        $CIDRAM['YAML-Normalise-Value']($Key, $KeyLen, $KeyLow);
-        if (!isset($Arr[$Key])) {
-            if ($VM) {
-                return false;
-            }
-            $Arr[$Key] = false;
-        }
-    } elseif (substr($ThisLine, $ThisTab, 2) === '- ') {
-        $Value = substr($ThisLine, $ThisTab + 2);
-        $ValueLen = strlen($Value);
-        $ValueLow = strtolower($Value);
-        $CIDRAM['YAML-Normalise-Value']($Value, $ValueLen, $ValueLow);
-        if (!$VM && $ValueLen > 0) {
-            $Arr[] = $Value;
-        }
-    } elseif (($DelPos = strpos($ThisLine, ': ')) !== false) {
-        $Key = substr($ThisLine, $ThisTab, $DelPos - $ThisTab);
-        $KeyLen = strlen($Key);
-        $KeyLow = strtolower($Key);
-        $CIDRAM['YAML-Normalise-Value']($Key, $KeyLen, $KeyLow);
-        if (!$Key) {
-            if (substr($ThisLine, $ThisTab, $DelPos - $ThisTab + 2) !== '0: ') {
-                return false;
-            }
-            $Key = 0;
-        }
-        $Value = substr($ThisLine, $ThisTab + $KeyLen + 2);
-        $ValueLen = strlen($Value);
-        $ValueLow = strtolower($Value);
-        $CIDRAM['YAML-Normalise-Value']($Value, $ValueLen, $ValueLow);
-        if (!$VM && $ValueLen > 0) {
-            $Arr[$Key] = $Value;
-        }
-    } elseif (strpos($ThisLine, ':') === false && strlen($ThisLine) > 1) {
-        $Key = $ThisLine;
-        $KeyLen = strlen($Key);
-        $KeyLow = strtolower($Key);
-        $CIDRAM['YAML-Normalise-Value']($Key, $KeyLen, $KeyLow);
-        if (!isset($Arr[$Key])) {
-            if ($VM) {
-                return false;
-            }
-            $Arr[$Key] = false;
-        }
-    }
-    return true;
-};
-
-/**
- * Reconstruct an inner level of YAML (shouldn't be called directly).
- *
- * @param array $Arr The array to reconstruct from.
- * @param string $Out The reconstructed YAML.
- * @param int $Depth The level depth.
- */
-$CIDRAM['YAML-Inner'] = function ($Arr, &$Out, $Depth = 0) use (&$CIDRAM) {
-    foreach ($Arr as $Key => $Value) {
-        if ($Key === '---' && $Value === false) {
-            $Out .= "---\n";
-            continue;
-        }
-        if (!isset($List)) {
-            $List = ($Key === 0);
-        }
-        $Out .= str_repeat(' ', $Depth) . (($List && is_int($Key)) ? '-' : $Key . ':');
-        if (is_array($Value)) {
-            $Depth++;
-            $Out .= "\n";
-            $CIDRAM['YAML-Inner']($Value, $Out, $Depth);
-            $Depth--;
-            continue;
-        }
-        if ($Value === true) {
-            $Out .= ' true';
-        } elseif ($Value === false) {
-            $Out .= ' false';
-        } else {
-            $Out .= ' ' . $Value;
-        }
-        $Out .= "\n";
-    }
-};
-
-/**
- * Reconstruct YAML.
- *
- * @param array $Arr The array to reconstruct from.
- * @return string The reconstructed YAML.
- */
-$CIDRAM['YAML-Reconstruct'] = function ($Arr) use (&$CIDRAM) {
-    $Out = '';
-    $CIDRAM['YAML-Inner']($Arr, $Out);
-    return $Out . "\n";
 };
 
 /**
@@ -1572,8 +1356,7 @@ $CIDRAM['SearchEngineVerification'] = function () use (&$CIDRAM) {
             $CIDRAM['VerificationDataReadFailure'] = true;
             return;
         }
-        $CIDRAM['VerificationData'] = [];
-        $CIDRAM['YAML']($Raw, $CIDRAM['VerificationData']);
+        $CIDRAM['VerificationData'] = (new \Maikuolan\Common\YAML($Raw))->Data;
     }
     if (empty($CIDRAM['VerificationData']['Search Engine Verification'])) {
         return;
@@ -1621,8 +1404,7 @@ $CIDRAM['SocialMediaVerification'] = function () use (&$CIDRAM) {
             $CIDRAM['VerificationDataReadFailure'] = true;
             return;
         }
-        $CIDRAM['VerificationData'] = [];
-        $CIDRAM['YAML']($Raw, $CIDRAM['VerificationData']);
+        $CIDRAM['VerificationData'] = (new \Maikuolan\Common\YAML($Raw))->Data;
     }
     if (empty($CIDRAM['VerificationData']['Social Media Verification'])) {
         return;
@@ -1934,12 +1716,9 @@ $CIDRAM['Aux'] = function () use (&$CIDRAM) {
     /** Potential modes. */
     static $Modes = ['Whitelist', 'Greylist', 'Block', 'Bypass', 'Don\'t log'];
 
+    /** Attempt to parse the auxiliary rules file. */
     if (!isset($CIDRAM['AuxData'])) {
-        /** Array to contain auxiliary rules. */
-        $CIDRAM['AuxData'] = [];
-
-        /** Attempt to parse the auxiliary rules file. */
-        $CIDRAM['YAML']($CIDRAM['ReadFile']($CIDRAM['Vault'] . 'auxiliary.yaml'), $CIDRAM['AuxData']);
+        $CIDRAM['AuxData'] = (new \Maikuolan\Common\YAML($CIDRAM['ReadFile']($CIDRAM['Vault'] . 'auxiliary.yaml')))->Data;
     }
 
     /** Iterate through the auxiliary rules. */

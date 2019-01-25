@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2019.01.20).
+ * This file: Front-end handler (last modified: 2019.01.25).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -123,11 +123,22 @@ $CIDRAM['FE'] = [
 
 ];
 
+/** Menu toggle JavaScript, needed by some front-end pages. */
+$CIDRAM['MenuToggle'] = '<script type="text/javascript">' .
+    'var i,toggler=document.getElementsByClassName("comCat");for(i=0;i<toggl' .
+    'er.length;i++)toggler[i].addEventListener("click",function(){this.paren' .
+    'tElement.querySelector(".comSub").classList.toggle("active"),!this.clas' .
+    'sList.toggle("caret-down")&&this.classList.toggle("caret-up")&&setTimeo' .
+    'ut(function(t){t.classList.toggle("caret-up")},200,this)});</script>';
+
 /** Fetch pips data. */
 $CIDRAM['Pips_Path'] = $CIDRAM['GetAssetPath']('pips.php', true);
 if (!empty($CIDRAM['Pips_Path']) && is_readable($CIDRAM['Pips_Path'])) {
     require $CIDRAM['Pips_Path'];
 }
+
+/** Instantiate YAML object for accessing data reconstruction. */
+$CIDRAM['YAML-Object'] = new \Maikuolan\Common\YAML();
 
 /** Handle webfonts. */
 if (empty($CIDRAM['Config']['general']['disable_webfonts'])) {
@@ -665,8 +676,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === '' && !$CIDRAM['FE']['CronMode']
 
     } else {
 
-        $CIDRAM['Remote-YAML-CIDRAM-Array'] = [];
-        $CIDRAM['YAML']($CIDRAM['Remote-YAML-CIDRAM'], $CIDRAM['Remote-YAML-CIDRAM-Array']);
+        $CIDRAM['Remote-YAML-CIDRAM-Array'] = (new \Maikuolan\Common\YAML($CIDRAM['Remote-YAML-CIDRAM']))->Data;
 
         /** CIDRAM latest stable. */
         $CIDRAM['FE']['info_cidram_stable'] = empty($CIDRAM['Remote-YAML-CIDRAM-Array']['Stable']) ?
@@ -706,8 +716,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === '' && !$CIDRAM['FE']['CronMode']
 
     } else {
 
-        $CIDRAM['Remote-YAML-PHP-Array'] = [];
-        $CIDRAM['YAML']($CIDRAM['Remote-YAML-PHP'], $CIDRAM['Remote-YAML-PHP-Array']);
+        $CIDRAM['Remote-YAML-PHP-Array'] = (new \Maikuolan\Common\YAML($CIDRAM['Remote-YAML-PHP']))->Data;
 
         /** PHP latest stable. */
         $CIDRAM['FE']['info_php_stable'] = empty($CIDRAM['Remote-YAML-PHP-Array']['Stable']) ?
@@ -1568,7 +1577,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && ($CIDRAM['FE']['Per
 
                 /** Process remote components metadata. */
                 if (!isset($CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']])) {
-                    $CIDRAM['YAML'](
+                    $CIDRAM['YAML-Object']->process(
                         substr($CIDRAM['Components']['ThisComponent']['RemoteData'], 4, $CIDRAM['Components']['EoYAML'] - 4),
                         $CIDRAM['Components']['RemoteMeta']
                     );
@@ -1960,7 +1969,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && ($CIDRAM['FE']['Per
     $CIDRAM['FE']['FE_Content'] = $CIDRAM['ParseVars'](
         $CIDRAM['lang'] + $CIDRAM['FE'],
         $CIDRAM['ReadFile']($CIDRAM['GetAssetPath']('_updates.html'))
-    );
+    ) . $CIDRAM['MenuToggle'];
 
     /** Inject dependencies into update instructions for core package component. */
     if (count($CIDRAM['Components']['Dependencies'])) {
@@ -2326,13 +2335,8 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'file-manager' && $CIDRAM['FE'][
             }
         }
 
-        /** Close pie chart legend and append necessary JavaScript for pie chart sub-items selector. */
-        $CIDRAM['FE']['PieChartHTML'] .= '</ul><script type="text/javascript">' .
-            'var i,toggler=document.getElementsByClassName("comCat");for(i=0;i<toggle' .
-            'r.length;i++)toggler[i].addEventListener("click",function(){this.parentE' .
-            'lement.querySelector(".comSub").classList.toggle("active"),!this.classLi' .
-            'st.toggle("caret-down")&&this.classList.toggle("caret-up")&&setTimeout(f' .
-            'unction(t){t.classList.toggle("caret-up")},200,this)});</script>';
+        /** Close pie chart legend and append necessary JavaScript for pie chart menu toggle. */
+        $CIDRAM['FE']['PieChartHTML'] .= '</ul>' . $CIDRAM['MenuToggle'];
 
         /** Finalise pie chart values. */
         $CIDRAM['FE']['PieChartValues'] = '[' . implode(', ', $CIDRAM['FE']['PieChartValues']) . ']';
@@ -3043,15 +3047,9 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'statistics' && $CIDRAM['FE']['P
 /** Auxiliary Rules. */
 elseif ($CIDRAM['QueryVars']['cidram-page'] === 'aux' && $CIDRAM['FE']['Permissions'] === 1) {
 
-    /** Fetch and parse auxiliary rule data. */
+    /** Attempt to parse the auxiliary rules file. */
     if (!isset($CIDRAM['AuxData'])) {
-        /** Array to contain auxiliary rules. */
-        $CIDRAM['AuxData'] = [];
-
-        /** Attempt to parse the auxiliary rules file. */
-        if (file_exists($CIDRAM['Vault'] . 'auxiliary.yaml')) {
-            $CIDRAM['YAML']($CIDRAM['ReadFile']($CIDRAM['Vault'] . 'auxiliary.yaml'), $CIDRAM['AuxData']);
-        }
+        $CIDRAM['AuxData'] = (new \Maikuolan\Common\YAML($CIDRAM['ReadFile']($CIDRAM['Vault'] . 'auxiliary.yaml')))->Data;
     }
 
     /** Create new auxiliary rule. */
@@ -3136,7 +3134,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'aux' && $CIDRAM['FE']['Permissi
         }
 
         /** Reconstruct and update auxiliary rules data. */
-        if ($CIDRAM['NewAuxData'] = $CIDRAM['YAML-Reconstruct']($CIDRAM['AuxData'])) {
+        if ($CIDRAM['NewAuxData'] = $CIDRAM['YAML-Object']->reconstruct($CIDRAM['AuxData'])) {
             $CIDRAM['Handle'] = fopen($CIDRAM['Vault'] . 'auxiliary.yaml', 'w');
             fwrite($CIDRAM['Handle'], $CIDRAM['NewAuxData']);
             fclose($CIDRAM['Handle']);
@@ -3242,7 +3240,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'aux' && $CIDRAM['FE']['Permissi
             unset($CIDRAM['AuxData'][$_POST['auxD']]);
 
             /** Reconstruct and update auxiliary rules data. */
-            if (($CIDRAM['NewAuxData'] = $CIDRAM['YAML-Reconstruct']($CIDRAM['AuxData'])) && strlen($CIDRAM['NewAuxData']) > 2) {
+            if (($CIDRAM['NewAuxData'] = $CIDRAM['YAML-Object']->reconstruct($CIDRAM['AuxData'])) && strlen($CIDRAM['NewAuxData']) > 2) {
                 $CIDRAM['Handle'] = fopen($CIDRAM['Vault'] . 'auxiliary.yaml', 'w');
                 fwrite($CIDRAM['Handle'], $CIDRAM['NewAuxData']);
                 fclose($CIDRAM['Handle']);

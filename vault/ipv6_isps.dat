@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_isps.dat
 
-# Version: 2019.15.346
-# Last modified: 2019.01.16
+# Version: 2019.26.597
+# Last modified: 2019.01.27
 
 
 # ---
@@ -320,9 +320,9 @@ Tag: Websupport s.r.o
 
 
 # ASN 51191 ("Xirra GmbH").
-# %Listed, Google Malware Dashboard: 1.98%.
-# Stop Forum Spam (SFS) listings: 84.
-# Updated: 2016.01.21 / Checked: 2018.06.02
+# %Listed, Google Malware Dashboard: 0.92%.
+# Stop Forum Spam (SFS) listings: 74.
+# Updated: 2016.01.21 / Checked: 2019.01.27
 
 2a01:4a0:2000::/47 Deny Generic
 2a01:4a0:2002::/48 Deny Generic
@@ -332,9 +332,8 @@ Tag: Xirra GmbH
 
 
 # ASN 35804 ("PP SKS-LUGAN").
-# %Listed, Google Malware Dashboard: 5.89%.
-# Stop Forum Spam (SFS) listings: 184.
-# Updated: 2016.03.30 / Checked: 2018.08.05
+# Stop Forum Spam (SFS) listings: 54.
+# Updated: 2016.03.30 / Checked: 2019.01.27
 
 2a00:ede0::/32 Deny Generic
 Origin: UA
@@ -556,9 +555,9 @@ recaptcha:
 
 
 # ASNs 12530, 15895, 35081 ('"Kyivstar" PJSC').
-# %Listed, Google Malware Dashboard: 1.69% (AS12530).
-# Stop Forum Spam (SFS) listings: 1,012,088 (AS12530), 5,423,869 (AS15895).
-# Updated: 2016.09.06 / Checked: 2018.06.02
+# %Listed, Google Malware Dashboard: 2.48% (AS12530).
+# Stop Forum Spam (SFS) listings: 539,459 (AS12530), 8,739,304 (AS15895).
+# Updated: 2016.09.06 / Checked: 2019.01.27
 
 2a02:8a8::/32 Deny Spam
 2a02:2378::/32 Deny Spam
@@ -1299,11 +1298,11 @@ recaptcha:
 
 
 # ASN 3216 ("PJSC Vimpelcom").
-# %Listed, Google Malware Dashboard: 7.19%.
-# Stop Forum Spam (SFS) listings: 11,832.
+# %Listed, Google Malware Dashboard: 5.52%.
+# Stop Forum Spam (SFS) listings: 8,482.
 # Similarly to with the Rostelecom CIDRs, blocking the entirety of all "Vimpelcom" ASNs could be problematic. Instead,
 # we'll try to limit listings to those CIDRs known to be problematic (hacking events, spamming events, etc).
-# Updated: 2017.09.30 / Checked: 2018.06.02
+# Updated: 2017.09.30 / Checked: 2019.01.27
 
 2a00:1248::/32 Deny Generic
 Origin: RU

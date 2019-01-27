@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Italian language data for the front-end (last modified: 2019.01.17).
+ * This file: Italian language data for the front-end (last modified: 2019.01.27).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -242,7 +242,6 @@ $CIDRAM['lang']['label_fmgr_total_disk_usage'] = 'Utilizzo del disco totale: ';
 $CIDRAM['lang']['label_fmgr_total_space'] = 'Spazio totale su disco: ';
 $CIDRAM['lang']['label_fmgr_updates_metadata'] = 'Componente aggiorna metadati';
 $CIDRAM['lang']['label_hide'] = 'Nascondere';
-$CIDRAM['lang']['label_hide_hash_table'] = 'Nascondi tabella hash';
 $CIDRAM['lang']['label_ignore'] = 'Ignoralo';
 $CIDRAM['lang']['label_never'] = 'Mai';
 $CIDRAM['lang']['label_os'] = 'Sistema operativo utilizzata:';
@@ -257,7 +256,6 @@ $CIDRAM['lang']['label_results'] = 'Risultati (%s in – %s rifiutato – %s acc
 $CIDRAM['lang']['label_sapi'] = 'SAPI utilizzata:';
 $CIDRAM['lang']['label_show'] = 'Mostrare';
 $CIDRAM['lang']['label_show_by_origin'] = 'Mostra per origine';
-$CIDRAM['lang']['label_show_hash_table'] = 'Mostra tabella hash';
 $CIDRAM['lang']['label_signature_type'] = 'Tipo di firma:';
 $CIDRAM['lang']['label_stable'] = 'Più recente stabile:';
 $CIDRAM['lang']['label_sysinfo'] = 'Informazioni sul sistema:';

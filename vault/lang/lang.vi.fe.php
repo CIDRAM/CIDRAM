@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Vietnamese language data for the front-end (last modified: 2019.01.17).
+ * This file: Vietnamese language data for the front-end (last modified: 2019.01.27).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -242,7 +242,6 @@ $CIDRAM['lang']['label_fmgr_total_disk_usage'] = 'Số lượng sử dụng đĩ
 $CIDRAM['lang']['label_fmgr_total_space'] = 'Số lượng không gian đĩa trong tổng số: ';
 $CIDRAM['lang']['label_fmgr_updates_metadata'] = 'Siêu dữ liệu cho cập nhật thành phần';
 $CIDRAM['lang']['label_hide'] = 'Che giấu';
-$CIDRAM['lang']['label_hide_hash_table'] = 'Ẩn bảng băm';
 $CIDRAM['lang']['label_ignore'] = 'Bỏ qua điều này';
 $CIDRAM['lang']['label_never'] = 'Không bao giờ';
 $CIDRAM['lang']['label_os'] = 'Hệ điều hành đang được dùng:';
@@ -257,7 +256,6 @@ $CIDRAM['lang']['label_results'] = 'Các kết quả (%s trong – %s từ chố
 $CIDRAM['lang']['label_sapi'] = 'SAPI đang được dùng:';
 $CIDRAM['lang']['label_show'] = 'Hiển thị';
 $CIDRAM['lang']['label_show_by_origin'] = 'Hiển thị theo nguồn gốc';
-$CIDRAM['lang']['label_show_hash_table'] = 'Hiển thị bảng băm';
 $CIDRAM['lang']['label_signature_type'] = 'Loại chữ ký';
 $CIDRAM['lang']['label_stable'] = 'Ổn định mới nhất:';
 $CIDRAM['lang']['label_sysinfo'] = 'Thông tin hệ thống:';

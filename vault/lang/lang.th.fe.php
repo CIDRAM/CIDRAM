@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Thai language data for the front-end (last modified: 2019.01.17).
+ * This file: Thai language data for the front-end (last modified: 2019.01.27).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -242,7 +242,6 @@ $CIDRAM['lang']['label_fmgr_total_disk_usage'] = 'เนื้อที่ดิ
 $CIDRAM['lang']['label_fmgr_total_space'] = 'เนื้อที่ดิสก์ทั้งหมด: ';
 $CIDRAM['lang']['label_fmgr_updates_metadata'] = 'เมตาดาต้าสำหรับอัพเดตคอมโพเนนต์';
 $CIDRAM['lang']['label_hide'] = 'ปิดบัง';
-$CIDRAM['lang']['label_hide_hash_table'] = 'ซ่อนตารางแฮช';
 $CIDRAM['lang']['label_ignore'] = 'ไม่สนใจเรื่องนี้';
 $CIDRAM['lang']['label_never'] = 'ไม่เคย';
 $CIDRAM['lang']['label_os'] = 'ระบบปฏิบัติการในการใช้งาน:';
@@ -257,7 +256,6 @@ $CIDRAM['lang']['label_results'] = 'ผล (%s ใน – %s ปฏิเสธ 
 $CIDRAM['lang']['label_sapi'] = 'SAPI ในการใช้งาน:';
 $CIDRAM['lang']['label_show'] = 'แสดง';
 $CIDRAM['lang']['label_show_by_origin'] = 'แสดงตามแหล่งที่มา';
-$CIDRAM['lang']['label_show_hash_table'] = 'แสดงตารางแฮช';
 $CIDRAM['lang']['label_signature_type'] = 'ประเภทลายเซ็น:';
 $CIDRAM['lang']['label_stable'] = 'เสถียรล่าสุด:';
 $CIDRAM['lang']['label_sysinfo'] = 'ข้อมูลระบบ:';

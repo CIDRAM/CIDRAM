@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Swedish language data for the front-end (last modified: 2019.01.17).
+ * This file: Swedish language data for the front-end (last modified: 2019.01.27).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -242,7 +242,6 @@ $CIDRAM['lang']['label_fmgr_total_disk_usage'] = 'Totalt diskanvändning: ';
 $CIDRAM['lang']['label_fmgr_total_space'] = 'Totalt diskutrymme: ';
 $CIDRAM['lang']['label_fmgr_updates_metadata'] = 'Komponentuppdateringsmetadata';
 $CIDRAM['lang']['label_hide'] = 'Dölja';
-$CIDRAM['lang']['label_hide_hash_table'] = 'Dölj hashbord';
 $CIDRAM['lang']['label_ignore'] = 'Ignorera detta';
 $CIDRAM['lang']['label_never'] = 'Aldrig';
 $CIDRAM['lang']['label_os'] = 'Operativsystem som används:';
@@ -257,7 +256,6 @@ $CIDRAM['lang']['label_results'] = 'Resultat (%s i – %s avvisade – %s accept
 $CIDRAM['lang']['label_sapi'] = 'SAPI som används:';
 $CIDRAM['lang']['label_show'] = 'Visa';
 $CIDRAM['lang']['label_show_by_origin'] = 'Visa efter ursprung';
-$CIDRAM['lang']['label_show_hash_table'] = 'Visa hashbord';
 $CIDRAM['lang']['label_signature_type'] = 'Signaturtyp:';
 $CIDRAM['lang']['label_stable'] = 'Senaste stabila:';
 $CIDRAM['lang']['label_sysinfo'] = 'Systeminformation:';

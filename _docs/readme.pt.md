@@ -156,6 +156,11 @@ Arquivo | Descrição
 /_docs/readme.zh-TW.md | Documentação Chinês (tradicional).
 /_docs/readme.zh.md | Documentação Chinês (simplificado).
 /vault/ | Vault diretório (contém vários arquivos).
+/vault/classes/ | Diretório de classes. Contém várias classes usadas pelo CIDRAM.
+/vault/classes/Maikuolan/ | Diretório de classes. Contém várias classes usadas pelo CIDRAM.
+/vault/classes/Maikuolan/YAML.php | Manipulador para o YAML.
+/vault/classes/.htaccess | Um hipertexto acesso arquivo (neste caso, para proteger confidenciais arquivos pertencentes ao script contra serem acessados por fontes não autorizadas).
+/vault/classes/Aggregator.php | Agregador IP.
 /vault/fe_assets/ | Dados front-end.
 /vault/fe_assets/.htaccess | Um hipertexto acesso arquivo (neste caso, para proteger confidenciais arquivos pertencentes ao script contra serem acessados por fontes não autorizadas).
 /vault/fe_assets/_2fa.html | Um modelo HTML usado ao solicitar ao usuário para um código 2FA.
@@ -269,9 +274,6 @@ Arquivo | Descrição
 /vault/cache.dat | Dados de cache.
 /vault/cache.dat.safety | Gerado como um mecanismo de segurança quando necessário.
 /vault/cidramblocklists.dat | Arquivo de metadados para as listas de bloqueio opcionais da Macmathan; Usado pela página de atualizações do front-end.
-/vault/classes/ | Diretório de classes. Contém várias classes usadas pelo CIDRAM.
-/vault/classes/.htaccess | Um hipertexto acesso arquivo (neste caso, para proteger confidenciais arquivos pertencentes ao script contra serem acessados por fontes não autorizadas).
-/vault/classes/Aggregator.php | Agregador IP.
 /vault/cli.php | Módulo de CLI.
 /vault/components.dat | Arquivo de metadados de componentes; Usado pela página de atualizações do front-end.
 /vault/config.ini.RenameMe | Arquivo de configuração; Contém todas as opções de configuração para CIDRAM, dizendo-lhe o que fazer e como operar corretamente (renomear para ativar).
@@ -1506,4 +1508,4 @@ Alternativamente, há uma breve visão geral (não autoritativa) do GDPR/DSGVO d
 ---
 
 
-Última Atualização: 9 Janeiro de 2019 (2019.01.09).
+Última Atualização: 27 Janeiro de 2019 (2019.01.27).

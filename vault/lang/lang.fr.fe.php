@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: French language data for the front-end (last modified: 2019.01.17).
+ * This file: French language data for the front-end (last modified: 2019.01.27).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -242,7 +242,6 @@ $CIDRAM['lang']['label_fmgr_total_disk_usage'] = 'Utilisation du disque totale 
 $CIDRAM['lang']['label_fmgr_total_space'] = 'Espace disque total : ';
 $CIDRAM['lang']['label_fmgr_updates_metadata'] = 'Métadonnées pour la mise à jour des composants';
 $CIDRAM['lang']['label_hide'] = 'Cacher';
-$CIDRAM['lang']['label_hide_hash_table'] = 'Masquer la table de hachage';
 $CIDRAM['lang']['label_ignore'] = 'Ignorez ceci';
 $CIDRAM['lang']['label_never'] = 'Jamais';
 $CIDRAM['lang']['label_os'] = 'Système opérateur utilisée :';
@@ -257,7 +256,6 @@ $CIDRAM['lang']['label_results'] = 'Résultats (%s entré – %s rejeté – %s 
 $CIDRAM['lang']['label_sapi'] = 'SAPI utilisée :';
 $CIDRAM['lang']['label_show'] = 'Montrer';
 $CIDRAM['lang']['label_show_by_origin'] = 'Montrer par origine';
-$CIDRAM['lang']['label_show_hash_table'] = 'Afficher la table de hachage';
 $CIDRAM['lang']['label_signature_type'] = 'Type de signature :';
 $CIDRAM['lang']['label_stable'] = 'Dernier stable :';
 $CIDRAM['lang']['label_sysinfo'] = 'Informations sur le système :';

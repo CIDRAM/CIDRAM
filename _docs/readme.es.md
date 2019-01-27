@@ -156,6 +156,11 @@ Archivo | Descripción
 /_docs/readme.zh-TW.md | Documentación Chino (tradicional).
 /_docs/readme.zh.md | Documentación Chino (simplificado).
 /vault/ | Vault directorio (contiene varios archivos).
+/vault/classes/ | Directorio de clases. Contiene varias clases utilizadas por CIDRAM.
+/vault/classes/Maikuolan/ | Directorio de clases. Contiene varias clases utilizadas por CIDRAM.
+/vault/classes/Maikuolan/YAML.php | Controlador para YAML.
+/vault/classes/.htaccess | Un hipertexto acceso archivo (en este caso, para proteger confidenciales archivos perteneciente a la script contra el acceso de fuentes no autorizadas).
+/vault/classes/Aggregator.php | Agregador IP.
 /vault/fe_assets/ | Archivos del front-end.
 /vault/fe_assets/.htaccess | Un hipertexto acceso archivo (en este caso, para proteger confidenciales archivos perteneciente a la script contra el acceso de fuentes no autorizadas).
 /vault/fe_assets/_2fa.html | Un archivo HTML utilizada al pedirle al usuario un código 2FA.
@@ -269,15 +274,12 @@ Archivo | Descripción
 /vault/cache.dat | Cache data.
 /vault/cache.dat.safety | Generado como un mecanismo de seguridad cuando es necesario.
 /vault/cidramblocklists.dat | Archivo de metadatos para las listas de bloqueo opcionales de Macmathan; Utilizado por la página de actualizaciones del front-end.
-/vault/classes/ | Directorio de clases. Contiene varias clases utilizadas por CIDRAM.
-/vault/classes/.htaccess | Un hipertexto acceso archivo (en este caso, para proteger confidenciales archivos perteneciente a la script contra el acceso de fuentes no autorizadas).
-/vault/classes/Aggregator.php | Agregador IP.
-/vault/cli.php | Módulo de la CLI.
+/vault/cli.php | Controlador para el CLI modo.
 /vault/components.dat | Archivo de metadatos de componentes; Utilizado por la página de actualizaciones del front-end.
 /vault/config.ini.RenameMe | Archivo de configuración; Contiene todas las opciones de configuración para CIDRAM, instruyendo para qué hacer y cómo operar correctamente (cambiar el nombre para activar).
 /vault/config.php | Módulo de configuración.
 /vault/config.yaml | Archivo de valores predefinidos para la configuración; Contiene valores predefinidos para la configuración de CIDRAM.
-/vault/frontend.php | Módulo del front-end.
+/vault/frontend.php | Controlador para el front-end.
 /vault/frontend_functions.php | Archivo de funciones del front-end.
 /vault/functions.php | Archivo de funciones (esencial).
 /vault/hashes.dat | Contiene una lista de hashes aceptadas (pertinente a la función de reCAPTCHA; sólo se genera si la función de reCAPTCHA está habilitada).
@@ -1511,4 +1513,4 @@ Alternativamente, hay una breve descripción (no autoritativa) de GDPR/DSGVO dis
 ---
 
 
-Última Actualización: 9 Enero de 2019 (2019.01.09).
+Última Actualización: 27 Enero de 2019 (2019.01.27).

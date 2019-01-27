@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Russian language data for the front-end (last modified: 2019.01.17).
+ * This file: Russian language data for the front-end (last modified: 2019.01.27).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -242,7 +242,6 @@ $CIDRAM['lang']['label_fmgr_total_disk_usage'] = 'Все использован�
 $CIDRAM['lang']['label_fmgr_total_space'] = 'Емкость диска: ';
 $CIDRAM['lang']['label_fmgr_updates_metadata'] = 'Метаданные обновлений компонентов';
 $CIDRAM['lang']['label_hide'] = 'Скрывать';
-$CIDRAM['lang']['label_hide_hash_table'] = 'Скрыть хэш-таблицы';
 $CIDRAM['lang']['label_ignore'] = 'Игнорировать это';
 $CIDRAM['lang']['label_never'] = 'Никогда';
 $CIDRAM['lang']['label_os'] = 'Используемая операционная система:';
@@ -257,7 +256,6 @@ $CIDRAM['lang']['label_results'] = 'Результаты (%s вход – %s о�
 $CIDRAM['lang']['label_sapi'] = 'Используемая SAPI:';
 $CIDRAM['lang']['label_show'] = 'Показать';
 $CIDRAM['lang']['label_show_by_origin'] = 'Показать по происхождению';
-$CIDRAM['lang']['label_show_hash_table'] = 'Показать хэш-таблицы';
 $CIDRAM['lang']['label_signature_type'] = 'Тип сигнатуры:';
 $CIDRAM['lang']['label_stable'] = 'Последние стабильный:';
 $CIDRAM['lang']['label_sysinfo'] = 'Системная информация:';

@@ -156,6 +156,11 @@ Tập tin | Chi tiết
 /_docs/readme.zh-TW.md | Tài liệu tiếng Trung Quốc (truyền thống).
 /_docs/readme.zh.md | Tài liệu tiếng Trung Quốc (giản thể).
 /vault/ | Vault thư mục (chứa các tập tin khác nhau).
+/vault/classes/ | Thư mục lớp học. Chứa các lớp học khác nhau được sử dụng bởi CIDRAM.
+/vault/classes/Maikuolan/ | Thư mục lớp học. Chứa các lớp học khác nhau được sử dụng bởi CIDRAM.
+/vault/classes/Maikuolan/YAML.php | Tập tin cho xử lý YAML.
+/vault/classes/.htaccess | Tập tin "hypertext access" / tập tin truy cập siêu văn bản (bảo vệ tập tin bí mật khỏi bị truy cập bởi nguồn không được ủy quyền).
+/vault/classes/Aggregator.php | Tập hợp IP.
 /vault/fe_assets/ | Các tài sản front-end.
 /vault/fe_assets/.htaccess | Tập tin "hypertext access" / tập tin truy cập siêu văn bản (bảo vệ tập tin bí mật khỏi bị truy cập bởi nguồn không được ủy quyền).
 /vault/fe_assets/_2fa.html | Tập tin mẫu HTML được sử dụng khi yêu cầu người dùng cho mã 2FA.
@@ -269,9 +274,6 @@ Tập tin | Chi tiết
 /vault/cache.dat | Dữ liệu bộ nhớ cache.
 /vault/cache.dat.safety | Được tạo ra như một cơ chế an toàn khi cần thiết.
 /vault/cidramblocklists.dat | Tập tin siêu dữ liệu cho danh sách chặn tùy chọn của Macmathan; Được sử dụng bởi trang cập nhật front-end.
-/vault/classes/ | Thư mục lớp học. Chứa các lớp học khác nhau được sử dụng bởi CIDRAM.
-/vault/classes/.htaccess | Tập tin "hypertext access" / tập tin truy cập siêu văn bản (bảo vệ tập tin bí mật khỏi bị truy cập bởi nguồn không được ủy quyền).
-/vault/classes/Aggregator.php | Tập hợp IP.
 /vault/cli.php | Tập tin cho xử lý CLI.
 /vault/components.dat | Tập tin siêu dữ liệu thành phần; Được sử dụng bởi trang cập nhật front-end.
 /vault/config.ini.RenameMe | Tập tin cho cấu hình; Chứa tất cả các tùy chọn cho cấu hình của CIDRAM, nói cho nó biết phải làm gì và làm thế nào để hoạt động (đổi tên để kích hoạt).
@@ -1504,4 +1506,4 @@ Một số tài nguyên được đề xuất để tìm hiểu thêm thông tin
 ---
 
 
-Lần cuối cập nhật: 9 Tháng Một 2019 (2019.01.09).
+Lần cuối cập nhật: 27 Tháng Một 2019 (2019.01.27).

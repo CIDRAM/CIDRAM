@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Dutch language data for the front-end (last modified: 2019.01.17).
+ * This file: Dutch language data for the front-end (last modified: 2019.01.27).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -242,7 +242,6 @@ $CIDRAM['lang']['label_fmgr_total_disk_usage'] = 'Totaal schijfgebruik: ';
 $CIDRAM['lang']['label_fmgr_total_space'] = 'Totale schijfruimte: ';
 $CIDRAM['lang']['label_fmgr_updates_metadata'] = 'Component updates metadata';
 $CIDRAM['lang']['label_hide'] = 'Verbergen';
-$CIDRAM['lang']['label_hide_hash_table'] = 'Verberg hash-tabel';
 $CIDRAM['lang']['label_ignore'] = 'Negeer dit';
 $CIDRAM['lang']['label_never'] = 'Nooit';
 $CIDRAM['lang']['label_os'] = 'Besturingssysteem gebruikt:';
@@ -257,7 +256,6 @@ $CIDRAM['lang']['label_results'] = 'Resultaten (%s in – %s verworpen – %s aa
 $CIDRAM['lang']['label_sapi'] = 'SAPI gebruikt:';
 $CIDRAM['lang']['label_show'] = 'Zien';
 $CIDRAM['lang']['label_show_by_origin'] = 'Toon op oorsprong';
-$CIDRAM['lang']['label_show_hash_table'] = 'Toon hash-tabel';
 $CIDRAM['lang']['label_signature_type'] = 'Signature type:';
 $CIDRAM['lang']['label_stable'] = 'Laatste stabiele:';
 $CIDRAM['lang']['label_sysinfo'] = 'Systeem informatie:';

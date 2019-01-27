@@ -156,6 +156,11 @@ Bestand | Beschrijving
 /_docs/readme.zh-TW.md | Chinees (traditioneel) documentatie.
 /_docs/readme.zh.md | Chinees (vereenvoudigd) documentatie.
 /vault/ | Vault bestandsmap (bevat verschillende bestanden).
+/vault/classes/ | Klasse bestandsmap. Bevat verschillende klassen die worden gebruikt door CIDRAM.
+/vault/classes/Maikuolan/ | Klasse bestandsmap. Bevat verschillende klassen die worden gebruikt door CIDRAM.
+/vault/classes/Maikuolan/YAML.php | YAML-handler.
+/vault/classes/.htaccess | Een hypertext toegang bestand (in dit geval, om gevoelige bestanden die behoren tot het script te beschermen tegen toegang door niet-geautoriseerde bronnen).
+/vault/classes/Aggregator.php | IP-aggregator.
 /vault/fe_assets/ | Frontend data/gegevens.
 /vault/fe_assets/.htaccess | Een hypertext toegang bestand (in dit geval, om gevoelige bestanden die behoren tot het script te beschermen tegen toegang door niet-geautoriseerde bronnen).
 /vault/fe_assets/_2fa.html | Een HTML sjabloon die wordt gebruikt wanneer de gebruiker om een 2FA-code wordt gevraagd.
@@ -269,9 +274,6 @@ Bestand | Beschrijving
 /vault/cache.dat | Cache data/gegevens.
 /vault/cache.dat.safety | Gegenereerd als veiligheidsmechanisme indien nodig.
 /vault/cidramblocklists.dat | Metadata bestand voor de optionele blokkaderlijsten van Macmathan; Gebruikt door de frontend updates pagina.
-/vault/classes/ | Klasse bestandsmap. Bevat verschillende klassen die worden gebruikt door CIDRAM.
-/vault/classes/.htaccess | Een hypertext toegang bestand (in dit geval, om gevoelige bestanden die behoren tot het script te beschermen tegen toegang door niet-geautoriseerde bronnen).
-/vault/classes/Aggregator.php | IP-aggregator.
 /vault/cli.php | CLI-handler.
 /vault/components.dat | Componenten metadata bestand; Gebruikt door de frontend updates pagina.
 /vault/config.ini.RenameMe | Configuratiebestand; Bevat alle configuratie-opties van CIDRAM, het vertellen wat te doen en hoe om te werken correct (hernoemen om te activeren).
@@ -1512,4 +1514,4 @@ Als alternatief is er een kort (niet-gezaghebbende) overzicht van GDPR/DSGVO/AVG
 ---
 
 
-Laatste Bijgewerkt: 9 Januari 2019 (2019.01.09).
+Laatste Bijgewerkt: 27 Januari 2019 (2019.01.27).

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Hindi language data for the front-end (last modified: 2019.01.17).
+ * This file: Hindi language data for the front-end (last modified: 2019.01.27).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -242,7 +242,6 @@ $CIDRAM['lang']['label_fmgr_total_disk_usage'] = 'कुल डिस्क उ�
 $CIDRAM['lang']['label_fmgr_total_space'] = 'कुल डिस्क स्पेस: ';
 $CIDRAM['lang']['label_fmgr_updates_metadata'] = 'घटक अद्यतन मेटाडेटा';
 $CIDRAM['lang']['label_hide'] = 'छिपाना';
-$CIDRAM['lang']['label_hide_hash_table'] = 'हैश टेबल छुपाएं';
 $CIDRAM['lang']['label_ignore'] = 'अनदेखा करें';
 $CIDRAM['lang']['label_never'] = 'कभी नहीँ';
 $CIDRAM['lang']['label_os'] = 'ऑपरेटिंग सिस्टम का इस्तेमाल किया:';
@@ -257,7 +256,6 @@ $CIDRAM['lang']['label_results'] = 'परिणाम (%s में प्र�
 $CIDRAM['lang']['label_sapi'] = 'SAPI का इस्तेमाल किया:';
 $CIDRAM['lang']['label_show'] = 'दिखाना';
 $CIDRAM['lang']['label_show_by_origin'] = 'उत्पत्ति दिखाओ';
-$CIDRAM['lang']['label_show_hash_table'] = 'हैश टेबल दिखाएं';
 $CIDRAM['lang']['label_signature_type'] = 'हस्ताक्षर प्रकार:';
 $CIDRAM['lang']['label_stable'] = 'नवीनतम स्थिर:';
 $CIDRAM['lang']['label_sysinfo'] = 'प्रणाली की जानकारी:';

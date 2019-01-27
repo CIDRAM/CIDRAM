@@ -156,6 +156,11 @@ Data | Deskripsi
 /_docs/readme.zh-TW.md | Dokumentasi Cina tradisional.
 /_docs/readme.zh.md | Dokumentasi Cina sederhana.
 /vault/ | Direktori Vault (berisikan bermacam file).
+/vault/classes/ | Direktori kelas. Berisi berbagai kelas yang digunakan oleh CIDRAM.
+/vault/classes/Maikuolan/ | Direktori kelas. Berisi berbagai kelas yang digunakan oleh CIDRAM.
+/vault/classes/Maikuolan/YAML.php | Prosesor YAML.
+/vault/classes/.htaccess | File akses hiperteks (pada instansi ini, untuk melindungi file-file sensitif dari skrip untuk diakses dari sumber yang tidak terautorisasi).
+/vault/classes/Aggregator.php | Agregator IP.
 /vault/fe_assets/ | Data untuk akses bagian depan.
 /vault/fe_assets/.htaccess | File akses hiperteks (pada instansi ini, untuk melindungi file-file sensitif dari skrip untuk diakses dari sumber yang tidak terautorisasi).
 /vault/fe_assets/_2fa.html | Template HTML yang digunakan saat meminta pengguna untuk kode 2FA.
@@ -269,9 +274,6 @@ Data | Deskripsi
 /vault/cache.dat | Cache data.
 /vault/cache.dat.safety | Dihasilkan sebagai mekanisme keamanan bila diperlukan.
 /vault/cidramblocklists.dat | File metadata untuk daftar-daftar blokir yang opsional dari Macmathan; Digunakan oleh halaman pembaruan untuk bagian depan.
-/vault/classes/ | Direktori kelas. Berisi berbagai kelas yang digunakan oleh CIDRAM.
-/vault/classes/.htaccess | File akses hiperteks (pada instansi ini, untuk melindungi file-file sensitif dari skrip untuk diakses dari sumber yang tidak terautorisasi).
-/vault/classes/Aggregator.php | Agregator IP.
 /vault/cli.php | Modul CLI.
 /vault/components.dat | File metadata komponen; Digunakan oleh halaman pembaruan untuk bagian depan.
 /vault/config.ini.RenameMe | File konfigurasi CIDRAM; Berisi semua opsi konfigurasi dari CIDRAM, memberitahukannya apa yang harus dilakukan dan bagaimana mengoperasikannya dengan benar (mengubah nama untuk mengaktifkan).
@@ -1504,4 +1506,4 @@ Beberapa sumber bacaan yang direkomendasikan untuk mempelajari informasi lebih l
 ---
 
 
-Terakhir Diperbarui: 9 Januari 2019 (2019.01.09).
+Terakhir Diperbarui: 27 Januari 2019 (2019.01.27).

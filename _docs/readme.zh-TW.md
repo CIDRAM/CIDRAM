@@ -157,6 +157,11 @@ CIDRAM可以手動或通過前端更新。​CIDRAM也可以通過Composer或Wor
 /_docs/readme.zh-TW.md | 中文（簡體）自述文件。
 /_docs/readme.zh.md | 中文（簡體）自述文件。
 /vault/ | 安全/保險庫【Vault】文件夾（包含若干文件）。
+/vault/classes/ | 類目錄。包含CIDRAM使用的各種類。
+/vault/classes/Maikuolan/ | 類目錄。包含CIDRAM使用的各種類。
+/vault/classes/Maikuolan/YAML.php | YAML處理文件。
+/vault/classes/.htaccess | 超文本訪問文件（在這種情況，​以保護敏感文件屬於腳本從被訪問由非授權來源）。
+/vault/classes/Aggregator.php | IP聚合器。
 /vault/fe_assets/ | 前端資產。
 /vault/fe_assets/.htaccess | 超文本訪問文件（在這種情況，​以保護敏感文件屬於腳本從被訪問由非授權來源）。
 /vault/fe_assets/_2fa.html | 在向用戶詢問2FA代碼時使用的HTML模板。
@@ -270,9 +275,6 @@ CIDRAM可以手動或通過前端更新。​CIDRAM也可以通過Composer或Wor
 /vault/cache.dat | 緩存數據。
 /vault/cache.dat.safety | 在需要時為安全目的而生成。
 /vault/cidramblocklists.dat | Macmathan的可選阻止列表的元數據文件。​由前端更新頁面使用。
-/vault/classes/ | 類目錄。包含CIDRAM使用的各種類。
-/vault/classes/.htaccess | 超文本訪問文件（在這種情況，​以保護敏感文件屬於腳本從被訪問由非授權來源）。
-/vault/classes/Aggregator.php | IP聚合器。
 /vault/cli.php | CLI處理文件。
 /vault/components.dat | 組件元數據文件。由前端更新頁面使用。
 /vault/config.ini.RenameMe | 配置文件；包含所有配置指令為CIDRAM，​告訴它什麼做和怎麼正確地經營（重命名為激活）。
@@ -1513,4 +1515,4 @@ CIDRAM不收集或處理任何信息用於營銷或廣告目的，既不銷售�
 ---
 
 
-最後更新：2019年1月9日。
+最後更新：2019年1月27日。

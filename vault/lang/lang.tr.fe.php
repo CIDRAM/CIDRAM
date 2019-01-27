@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Turkish language data for the front-end (last modified: 2019.01.17).
+ * This file: Turkish language data for the front-end (last modified: 2019.01.27).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -242,7 +242,6 @@ $CIDRAM['lang']['label_fmgr_total_disk_usage'] = 'Toplam disk kullanımı: ';
 $CIDRAM['lang']['label_fmgr_total_space'] = 'Toplam disk alanı: ';
 $CIDRAM['lang']['label_fmgr_updates_metadata'] = 'Bileşen güncellemeleri meta verileri';
 $CIDRAM['lang']['label_hide'] = 'Saklamak';
-$CIDRAM['lang']['label_hide_hash_table'] = 'Karma tabloyu gizle';
 $CIDRAM['lang']['label_ignore'] = 'Bunu görmezden gel';
 $CIDRAM['lang']['label_never'] = 'Asla';
 $CIDRAM['lang']['label_os'] = 'Kullanılan işletim sistemi:';
@@ -257,7 +256,6 @@ $CIDRAM['lang']['label_results'] = 'Sonuçlar (%s giriş – %s reddedildi – %
 $CIDRAM['lang']['label_sapi'] = 'Kullanılan SAPI:';
 $CIDRAM['lang']['label_show'] = 'Göstermek';
 $CIDRAM['lang']['label_show_by_origin'] = 'Menşe göre göster';
-$CIDRAM['lang']['label_show_hash_table'] = 'Karma tablosu göster';
 $CIDRAM['lang']['label_signature_type'] = 'İmza tipi:';
 $CIDRAM['lang']['label_stable'] = 'En yeni kararlı:';
 $CIDRAM['lang']['label_sysinfo'] = 'Sistem bilgisi:';

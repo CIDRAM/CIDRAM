@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (traditional) language data for the front-end (last modified: 2019.01.17).
+ * This file: Chinese (traditional) language data for the front-end (last modified: 2019.01.27).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -242,7 +242,6 @@ $CIDRAM['lang']['label_fmgr_total_disk_usage'] = '總共使用的磁盤空間：
 $CIDRAM['lang']['label_fmgr_total_space'] = '總磁盤空間： ';
 $CIDRAM['lang']['label_fmgr_updates_metadata'] = '組件更新元數據';
 $CIDRAM['lang']['label_hide'] = '隱藏';
-$CIDRAM['lang']['label_hide_hash_table'] = '隱藏哈希表';
 $CIDRAM['lang']['label_ignore'] = '忽略這個';
 $CIDRAM['lang']['label_never'] = '決不';
 $CIDRAM['lang']['label_os'] = '目前使用操作系統：';
@@ -257,7 +256,6 @@ $CIDRAM['lang']['label_results'] = '結果 （%s 輸入 – %s 拒絕 – %s 公
 $CIDRAM['lang']['label_sapi'] = '目前使用SAPI：';
 $CIDRAM['lang']['label_show'] = '顯示';
 $CIDRAM['lang']['label_show_by_origin'] = '按來源顯示';
-$CIDRAM['lang']['label_show_hash_table'] = '顯示哈希表';
 $CIDRAM['lang']['label_signature_type'] = '簽名類型：';
 $CIDRAM['lang']['label_stable'] = '最新穩定：';
 $CIDRAM['lang']['label_sysinfo'] = '系統信息：';

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data for the front-end (last modified: 2019.01.17).
+ * This file: Indonesian language data for the front-end (last modified: 2019.01.27).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -242,7 +242,6 @@ $CIDRAM['lang']['label_fmgr_total_disk_usage'] = 'Penggunaan disk total: ';
 $CIDRAM['lang']['label_fmgr_total_space'] = 'Ruang disk total: ';
 $CIDRAM['lang']['label_fmgr_updates_metadata'] = 'Komponen memperbarui metadata';
 $CIDRAM['lang']['label_hide'] = 'Menyembunyikan';
-$CIDRAM['lang']['label_hide_hash_table'] = 'Sembunyikan tabel hash';
 $CIDRAM['lang']['label_ignore'] = 'Abaikan ini';
 $CIDRAM['lang']['label_never'] = 'Tak pernah';
 $CIDRAM['lang']['label_os'] = 'Sistem operasi digunakan:';
@@ -257,7 +256,6 @@ $CIDRAM['lang']['label_results'] = 'Hasil (%s dimasukkan – %s ditolak – %s d
 $CIDRAM['lang']['label_sapi'] = 'SAPI digunakan:';
 $CIDRAM['lang']['label_show'] = 'Menunjukkan';
 $CIDRAM['lang']['label_show_by_origin'] = 'Tampilkan asal';
-$CIDRAM['lang']['label_show_hash_table'] = 'Tampilkan tabel hash';
 $CIDRAM['lang']['label_signature_type'] = 'Jenis tanda tangan:';
 $CIDRAM['lang']['label_stable'] = 'Terbaru stabil:';
 $CIDRAM['lang']['label_sysinfo'] = 'Informasi sistem:';

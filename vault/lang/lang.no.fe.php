@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Norwegian language data for the front-end (last modified: 2019.01.17).
+ * This file: Norwegian language data for the front-end (last modified: 2019.01.27).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -242,7 +242,6 @@ $CIDRAM['lang']['label_fmgr_total_disk_usage'] = 'Totalt diskbruk: ';
 $CIDRAM['lang']['label_fmgr_total_space'] = 'Totalt diskplass: ';
 $CIDRAM['lang']['label_fmgr_updates_metadata'] = 'Komponentoppdateringsmetadata';
 $CIDRAM['lang']['label_hide'] = 'Gjem';
-$CIDRAM['lang']['label_hide_hash_table'] = 'Skjul hashbord';
 $CIDRAM['lang']['label_ignore'] = 'Ignorere dette';
 $CIDRAM['lang']['label_never'] = 'Aldri';
 $CIDRAM['lang']['label_os'] = 'Operativsystem brukt:';
@@ -257,7 +256,6 @@ $CIDRAM['lang']['label_results'] = 'Resultater (%s i – %s avvist – %s aksept
 $CIDRAM['lang']['label_sapi'] = 'SAPI brukt:';
 $CIDRAM['lang']['label_show'] = 'Vis';
 $CIDRAM['lang']['label_show_by_origin'] = 'Vis etter opprinnelse';
-$CIDRAM['lang']['label_show_hash_table'] = 'Vis hashbord';
 $CIDRAM['lang']['label_signature_type'] = 'Signaturtype:';
 $CIDRAM['lang']['label_stable'] = 'Siste stabile:';
 $CIDRAM['lang']['label_sysinfo'] = 'Systeminformasjon:';

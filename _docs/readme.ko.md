@@ -156,6 +156,11 @@ PHPMailer를 설치 한 후 CIDRAM 구성 페이지 또는 구성 파일을 통�
 /_docs/readme.zh-TW.md | 중국어 번체 문서.
 /_docs/readme.zh.md | 중국어 간체 문서.
 /vault/ | 보루 토 디렉토리 (다양한 파일을 포함합니다).
+/vault/classes/ | 클래스 디렉토리. CIDRAM에서 사용하는 다양한 클래스가 들어 있습니다.
+/vault/classes/Maikuolan/ | 클래스 디렉토리. CIDRAM에서 사용하는 다양한 클래스가 들어 있습니다.
+/vault/classes/Maikuolan/YAML.php | YAML 핸들러.
+/vault/classes/.htaccess | 하이퍼 텍스트 액세스 파일 (이 경우, 본 스크립트의 중요한 파일을 권한이 없는 소스의 액세스로부터 보호하기 위한 것입니다).
+/vault/classes/Aggregator.php | IP 애그리게이터.
 /vault/fe_assets/ | 프론트 엔드 자산.
 /vault/fe_assets/.htaccess | 하이퍼 텍스트 액세스 파일 (이 경우, 본 스크립트의 중요한 파일을 권한이 없는 소스의 액세스로부터 보호하기 위한 것입니다).
 /vault/fe_assets/_2fa.html | 사용자에게 2FA 코드를 요청할 때 사용되는 HTML 템플릿입니다.
@@ -269,9 +274,6 @@ PHPMailer를 설치 한 후 CIDRAM 구성 페이지 또는 구성 파일을 통�
 /vault/cache.dat | 캐시 데이터.
 /vault/cache.dat.safety | 필요한 경우 안전 메커니즘으로 생성됩니다.
 /vault/cidramblocklists.dat | Macmathan의 선택적 블록리스트 용 메타 데이터 파일; 프런트 엔드 업데이트 페이지에서 사용됩니다.
-/vault/classes/ | 클래스 디렉토리. CIDRAM에서 사용하는 다양한 클래스가 들어 있습니다.
-/vault/classes/.htaccess | 하이퍼 텍스트 액세스 파일 (이 경우, 본 스크립트의 중요한 파일을 권한이 없는 소스의 액세스로부터 보호하기 위한 것입니다).
-/vault/classes/Aggregator.php | IP 애그리게이터.
 /vault/cli.php | CLI 핸들러.
 /vault/components.dat | 구성 요소 메타 데이터 파일; 프런트 엔드 업데이트 페이지에서 사용됩니다.
 /vault/config.ini.RenameMe | CIDRAM 설정 파일; CIDRAM 모든 옵션 설정을 포함하고 있습니다. 각 옵션의 기능과 작동 방법에 대한 설명입니다 (활성화하기 위해 이름을 변경합니다).
@@ -1507,4 +1509,4 @@ CIDRAM은 마케팅이나 광고 목적으로 정보를 수집하거나 처리�
 ---
 
 
-최종 업데이트 : 2019년 1월 9일.
+최종 업데이트 : 2019년 1월 27일.

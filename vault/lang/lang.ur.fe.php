@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Urdu language data for the front-end (last modified: 2019.01.17).
+ * This file: Urdu language data for the front-end (last modified: 2019.01.27).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -242,7 +242,6 @@ $CIDRAM['lang']['label_fmgr_total_disk_usage'] = 'کل ڈسک استعمال: ';
 $CIDRAM['lang']['label_fmgr_total_space'] = 'کل ڈسک کی جگہ: ';
 $CIDRAM['lang']['label_fmgr_updates_metadata'] = 'اجزاء اپ ڈیٹ میٹا ڈیٹا';
 $CIDRAM['lang']['label_hide'] = 'چھپائیں';
-$CIDRAM['lang']['label_hide_hash_table'] = 'ہیش ٹیبل چھپائیں';
 $CIDRAM['lang']['label_ignore'] = 'اسے نظر انداز کرو';
 $CIDRAM['lang']['label_never'] = 'کبھی نہیں';
 $CIDRAM['lang']['label_os'] = 'آپریٹنگ سسٹم استعمال کیا:';
@@ -257,7 +256,6 @@ $CIDRAM['lang']['label_results'] = 'نتائج (%s ان پٹ – %s مسترد �
 $CIDRAM['lang']['label_sapi'] = 'SAPI استعمال کیا:';
 $CIDRAM['lang']['label_show'] = 'دکھائیں';
 $CIDRAM['lang']['label_show_by_origin'] = 'ذریعہ دکھائیں';
-$CIDRAM['lang']['label_show_hash_table'] = 'ہیش ٹیبل دکھائیں';
 $CIDRAM['lang']['label_signature_type'] = 'دستخط کی قسم:';
 $CIDRAM['lang']['label_stable'] = 'تازہ ترین مستحکم:';
 $CIDRAM['lang']['label_sysinfo'] = 'سسٹم کی معلومات:';

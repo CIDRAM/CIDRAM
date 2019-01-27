@@ -156,6 +156,11 @@ File | Description
 /_docs/readme.zh-TW.md | Chinese (traditional) documentation.
 /_docs/readme.zh.md | Chinese (simplified) documentation.
 /vault/ | Vault directory (contains various files).
+/vault/classes/ | Classes directory. Contains various classes used by CIDRAM.
+/vault/classes/Maikuolan/ | Classes directory. Contains various classes used by CIDRAM.
+/vault/classes/Maikuolan/YAML.php | YAML handler.
+/vault/classes/.htaccess | A hypertext access file (in this instance, to protect sensitive files belonging to the script from being accessed by non-authorised sources).
+/vault/classes/Aggregator.php | IP aggregator.
 /vault/fe_assets/ | Front-end assets.
 /vault/fe_assets/.htaccess | A hypertext access file (in this instance, to protect sensitive files belonging to the script from being accessed by non-authorised sources).
 /vault/fe_assets/_2fa.html | An HTML template used when asking the user for a 2FA code.
@@ -269,9 +274,6 @@ File | Description
 /vault/cache.dat | Cache data.
 /vault/cache.dat.safety | Generated as a safety mechanism when needed.
 /vault/cidramblocklists.dat | Metadata file for Macmathan's optional blocklists; Used by the front-end updates page.
-/vault/classes/ | Classes directory. Contains various classes used by CIDRAM.
-/vault/classes/.htaccess | A hypertext access file (in this instance, to protect sensitive files belonging to the script from being accessed by non-authorised sources).
-/vault/classes/Aggregator.php | IP aggregator.
 /vault/cli.php | CLI handler.
 /vault/components.dat | Components metadata file; Used by the front-end updates page.
 /vault/config.ini.RenameMe | Configuration file; Contains all the configuration options of CIDRAM, telling it what to do and how to operate correctly (rename to activate).
@@ -1524,4 +1526,4 @@ Alternatively, there's a brief (non-authoritative) overview of GDPR/DSGVO availa
 ---
 
 
-Last Updated: 9 January 2019 (2019.01.09).
+Last Updated: 27 January 2019 (2019.01.27).

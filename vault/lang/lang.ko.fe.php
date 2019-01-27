@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Korean language data for the front-end (last modified: 2019.01.17).
+ * This file: Korean language data for the front-end (last modified: 2019.01.27).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -242,7 +242,6 @@ $CIDRAM['lang']['label_fmgr_total_disk_usage'] = '총 디스크 사용 : ';
 $CIDRAM['lang']['label_fmgr_total_space'] = '총 디스크 공간 : ';
 $CIDRAM['lang']['label_fmgr_updates_metadata'] = '구성 요소 업데이트 메타 데이터';
 $CIDRAM['lang']['label_hide'] = '숨기다';
-$CIDRAM['lang']['label_hide_hash_table'] = '해시 테이블 숨기기';
 $CIDRAM['lang']['label_ignore'] = '이것을 무시하십시오';
 $CIDRAM['lang']['label_never'] = '못';
 $CIDRAM['lang']['label_os'] = '사용 된 운영 체제 :';
@@ -257,7 +256,6 @@ $CIDRAM['lang']['label_results'] = '결과 (%s 입력된 – %s 거부된 – %s
 $CIDRAM['lang']['label_sapi'] = '사용 된 SAPI :';
 $CIDRAM['lang']['label_show'] = '보여';
 $CIDRAM['lang']['label_show_by_origin'] = '원점 별보기';
-$CIDRAM['lang']['label_show_hash_table'] = '해시 테이블 표시';
 $CIDRAM['lang']['label_signature_type'] = '서명 유형 :';
 $CIDRAM['lang']['label_stable'] = '최신 안정 :';
 $CIDRAM['lang']['label_sysinfo'] = '시스템 정보 :';

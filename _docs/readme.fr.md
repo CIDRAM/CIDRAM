@@ -156,6 +156,11 @@ Fichier | Description
 /_docs/readme.zh-TW.md | Documentation en Chinois (traditionnel).
 /_docs/readme.zh.md | Documentation en Chinois (simplifié).
 /vault/ | Voûte répertoire (contient divers fichiers).
+/vault/classes/ | Répertoire des classes. Contient diverses classes utilisées par CIDRAM.
+/vault/classes/Maikuolan/ | Répertoire des classes. Contient diverses classes utilisées par CIDRAM.
+/vault/classes/Maikuolan/YAML.php | YAML processeur.
+/vault/classes/.htaccess | Un hypertexte accès fichier (dans ce cas, pour protéger les sensibles fichiers appartenant au script contre être consulté par non autorisées sources).
+/vault/classes/Aggregator.php | Agrégateur IP.
 /vault/fe_assets/ | Les fichiers de l'accès frontal.
 /vault/fe_assets/.htaccess | Un hypertexte accès fichier (dans ce cas, pour protéger les sensibles fichiers appartenant au script contre être consulté par non autorisées sources).
 /vault/fe_assets/_2fa.html | Un modèle HTML utilisé pour demander à l'utilisateur un code 2FA.
@@ -269,9 +274,6 @@ Fichier | Description
 /vault/cache.dat | Données du cache.
 /vault/cache.dat.safety | Généré comme un mécanisme de sécurité en cas de besoin.
 /vault/cidramblocklists.dat | Fichier de métadonnées pour les listes de blocage facultatives de Macmathan ; Contient les valeurs par défaut de la configuration pour CIDRAM.
-/vault/classes/ | Répertoire des classes. Contient diverses classes utilisées par CIDRAM.
-/vault/classes/.htaccess | Un hypertexte accès fichier (dans ce cas, pour protéger les sensibles fichiers appartenant au script contre être consulté par non autorisées sources).
-/vault/classes/Aggregator.php | Agrégateur IP.
 /vault/cli.php | Module de CLI.
 /vault/components.dat | Fichier de métadonnées de composants ; Utilisé par la page des mises à jour frontales.
 /vault/config.ini.RenameMe | Fichier de configuration ; Contient toutes les options de configuration pour CIDRAM, pour comment fonctionner correctement (renommer pour activer).
@@ -1510,4 +1512,4 @@ Alternativement, il y a un bref aperçu (non autorisé) de GDPR/DSGVO disponible
 ---
 
 
-Dernière mise à jour : 9 Janvier 2019 (2019.01.09).
+Dernière mise à jour : 27 Janvier 2019 (2019.01.27).

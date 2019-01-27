@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Bangla language data for the front-end (last modified: 2019.01.17).
+ * This file: Bangla language data for the front-end (last modified: 2019.01.27).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -242,7 +242,6 @@ $CIDRAM['lang']['label_fmgr_total_disk_usage'] = 'মোট ডিস্ক ব�
 $CIDRAM['lang']['label_fmgr_total_space'] = 'মোট ডিস্ক স্থান: ';
 $CIDRAM['lang']['label_fmgr_updates_metadata'] = 'কম্পোনেন্ট আপডেট মেটাডেটা';
 $CIDRAM['lang']['label_hide'] = 'লুকান';
-$CIDRAM['lang']['label_hide_hash_table'] = 'হ্যাশ টেবিল লুকান';
 $CIDRAM['lang']['label_ignore'] = 'এই উপেক্ষা করুন';
 $CIDRAM['lang']['label_never'] = 'না';
 $CIDRAM['lang']['label_os'] = 'অপারেটিং সিস্টেম ব্যবহৃত:';
@@ -257,7 +256,6 @@ $CIDRAM['lang']['label_results'] = 'ফলাফল (%s ইনপুট – %s �
 $CIDRAM['lang']['label_sapi'] = 'SAPI ব্যবহৃত:';
 $CIDRAM['lang']['label_show'] = 'দেখাও';
 $CIDRAM['lang']['label_show_by_origin'] = 'উৎস দ্বারা দেখান';
-$CIDRAM['lang']['label_show_hash_table'] = 'হ্যাশ টেবিল দেখান';
 $CIDRAM['lang']['label_signature_type'] = 'স্বাক্ষর প্রকার:';
 $CIDRAM['lang']['label_stable'] = 'সর্বশেষ স্থিতিশীল:';
 $CIDRAM['lang']['label_sysinfo'] = 'সিস্টেম তথ্য:';

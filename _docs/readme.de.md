@@ -156,6 +156,11 @@ Datei | Beschreibung
 /_docs/readme.zh-TW.md | Chinesische Dokumentation (traditionell).
 /_docs/readme.zh.md | Chinesische Dokumentation (vereinfacht).
 /vault/ | Vault-Verzeichnis (beinhaltet verschiedene Dateien).
+/vault/classes/ | Klassenverzeichnis. Enthält verschiedene von CIDRAM verwendete Klassen.
+/vault/classes/Maikuolan/ | Klassenverzeichnis. Enthält verschiedene von CIDRAM verwendete Klassen.
+/vault/classes/Maikuolan/YAML.php | YAML-Handler.
+/vault/classes/.htaccess | Ein Hypertext-Access-Datei (in diesem Fall zum Schutz von sensiblen Dateien des Scripts vor einem nicht authorisierten Zugriff).
+/vault/classes/Aggregator.php | IP-Aggregator.
 /vault/fe_assets/ | Frontend-Daten.
 /vault/fe_assets/.htaccess | Ein Hypertext-Access-Datei (in diesem Fall zum Schutz von sensiblen Dateien des Scripts vor einem nicht authorisierten Zugriff).
 /vault/fe_assets/_2fa.html | Ein HTML-Template die verwendet wird wenn der Benutzer nach einem 2FA-Code gefragt wird.
@@ -269,9 +274,6 @@ Datei | Beschreibung
 /vault/cache.dat | Cache-Daten.
 /vault/cache.dat.safety | Als Sicherheitsmechanismus generiert wenn es benötigt wird.
 /vault/cidramblocklists.dat | Metadaten-Datei für die optionalen Blocklisten von Macmathan; Wird von der Frontend-Aktualisierungsseite verwendet.
-/vault/classes/ | Klassenverzeichnis. Enthält verschiedene von CIDRAM verwendete Klassen.
-/vault/classes/.htaccess | Ein Hypertext-Access-Datei (in diesem Fall zum Schutz von sensiblen Dateien des Scripts vor einem nicht authorisierten Zugriff).
-/vault/classes/Aggregator.php | IP-Aggregator.
 /vault/cli.php | CLI-Handler.
 /vault/components.dat | Komponenten-Metadaten-Datei; Wird von der Frontend-Aktualisierungsseite verwendet.
 /vault/config.ini.RenameMe | Konfigurationsdatei; Beinhaltet alle Konfigurationsmöglichkeiten von CIDRAM (umbenennen zu aktivieren).
@@ -1520,4 +1522,4 @@ Alternativ gibt es einen kurzen (nicht autoritativen) Überblick über die GDPR/
 ---
 
 
-Zuletzt aktualisiert: 9 Januar 2019 (2019.01.09).
+Zuletzt aktualisiert: 27 Januar 2019 (2019.01.27).

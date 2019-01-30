@@ -1,8 +1,8 @@
 # IPv4 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv4_isps.dat
 
-# Version: 2019.26.597
-# Last modified: 2019.01.27
+# Version: 2019.29.388
+# Last modified: 2019.01.30
 
 
 # ---
@@ -1162,12 +1162,15 @@ Tag: Mir Telematiki Ltd
 
 
 # ASN 45595 ("Pakistan Telecom").
-# %Listed, Google Malware Dashboard: 3.85%.
-# %Listed, abuseat.org (CBL-Listed): 0.57%.
-# Stop Forum Spam (SFS) listings: 77,186.
-# Updated: 2018.02.20 / Checked: 2018.06.06
+# %Listed, Google Malware Dashboard: 2.13%.
+# %Listed, abuseat.org (CBL-Listed): 1.92%.
+# Stop Forum Spam (SFS) listings: 71,239.
+# Updated: 2019.01.28
 
+103.238.148.0/24 Deny Spam
+Origin: MY
 39.32.0.0/11 Deny Spam
+58.181.108.0/22 Deny Spam
 58.181.112.0/24 Deny Spam
 59.103.0.0/16 Deny Spam
 116.71.0.0/16 Deny Spam
@@ -1792,7 +1795,7 @@ Tag: Yes Networks
 
 # ASNs 3491, 4760, 6279, 7262 ("PCCW Global" / "Beyond The Network America, Inc").
 # Careful when updating; Contains both "proxy" and "spam" parameters (should be marked differently).
-# Updated: 2018.08.05
+# Updated: 2019.01.30
 
 203.5.148.0/24 Deny Spam
 203.30.26.0/23 Deny Spam
@@ -1803,7 +1806,6 @@ Origin: BE
 122.10.203.0/24 Deny Spam
 Origin: CN
 213.248.118.0/23 Deny Spam
-213.248.120.0/23 Deny Spam
 Origin: EU
 37.17.186.0/24 Deny Spam
 185.152.48.0/22 Deny Spam
@@ -1814,7 +1816,7 @@ Origin: GB
 42.2.0.0/15 Deny Spam
 42.98.0.0/16 Deny Spam
 42.200.2.0/24 Deny Spam
-42.200.96.0/19 Deny Spam
+42.200.64.0/18 Deny Spam
 42.200.128.0/17 Deny Spam
 58.152.0.0/15 Deny Spam
 66.133.83.0/24 Deny Spam
@@ -1888,8 +1890,6 @@ Origin: TW
 41.79.248.0/23 Deny Spam
 41.79.250.0/24 Deny Proxy
 Origin: TZ
-20.97.90.0/24 Deny Spam
-20.221.62.0/24 Deny Spam
 23.32.176.0/20 Deny Spam
 23.33.44.0/22 Deny Spam
 23.33.80.0/20 Deny Spam
@@ -1904,9 +1904,9 @@ Origin: TZ
 65.72.64.0/20 Deny Spam
 75.96.165.0/24 Deny Spam
 104.95.20.0/22 Deny Spam
-104.95.24.0/21 Deny Spam
-104.95.32.0/19 Deny Spam
-104.95.64.0/19 Deny Spam
+104.95.24.0/23 Deny Spam
+104.95.32.0/20 Deny Spam
+104.95.64.0/20 Deny Spam
 104.99.60.0/22 Deny Spam
 104.99.96.0/19 Deny Spam
 104.99.128.0/23 Deny Spam
@@ -1920,9 +1920,15 @@ Origin: TZ
 205.177.0.0/16 Deny Spam
 205.252.0.0/16 Deny Spam
 206.161.0.0/16 Deny Spam
+206.246.87.0/24 Deny Spam
 207.176.0.0/17 Deny Spam
+207.199.162.0/24 Deny Spam
 207.226.0.0/16 Deny Spam
 209.8.0.0/15 Deny Spam
+209.147.69.0/24 Deny Spam
+216.107.31.0/24 Deny Spam
+216.155.24.0/24 Deny Spam
+216.155.53.0/24 Deny Spam
 Origin: US
 41.221.208.0/20 Deny Spam
 Origin: ZA
@@ -9469,20 +9475,15 @@ recaptcha:
 # Misc. IPs where XRumer has been detected, but which don't belong to any other
 # sections, or which belong to various ASNs that shouldn't yet be blocked.
 
-# Updated: 2018.08.05
+# Updated: 2019.01.30
 49.146.0.36/32 Deny Spam
 49.146.9.139/32 Deny Spam
 Origin: PH
-81.2.133.151/32 Deny Spam
-Origin: IT
-81.198.66.83/32 Deny Spam
-81.198.86.45/32 Deny Spam
+81.198.0.54/32 Deny Spam
 Origin: LV
-118.148.68.127/32 Deny Spam
-Origin: NZ
 190.104.175.114/32 Deny Spam
 Origin: PY
-203.95.222.206/32 Deny Spam
+203.95.222.128/25 Deny Spam
 Origin: BD
 Tag: XRumer/Temp
 
@@ -9659,3 +9660,30 @@ Tag: ER-Telecom Holding
 ---
 recaptcha:
  enabled: true
+
+
+# ASN 206977 ("Contell LLC").
+# Caught trying to hack WordPress sites.
+# Note: Skip invalid prefixes for this section to avoid false positives.
+# Stop Forum Spam (SFS) listings: 339.
+# Updated: 2019.01.28
+
+185.127.24.0/22 Deny Generic
+185.244.40.0/22 Deny Generic
+185.247.140.0/22 Deny Generic
+Origin: RU
+Tag: Contell LLC
+
+
+# ASN 206440 ("Business Consulting LLC").
+# Caught trying to hack WordPress sites.
+# Note: Skip invalid prefixes for this section to avoid false positives.
+# Stop Forum Spam (SFS) listings: 681.
+# Updated: 2019.01.28
+
+46.8.208.0/22 Deny Generic
+185.127.24.0/22 Deny Generic
+185.154.20.0/22 Deny Generic
+185.186.140.0/22 Deny Generic
+Origin: RU
+Tag: Business Consulting LLC

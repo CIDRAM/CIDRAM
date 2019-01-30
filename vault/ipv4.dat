@@ -1,8 +1,8 @@
 # IPv4 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv4.dat
 
-# Version: 2019.26.597
-# Last modified: 2019.01.27
+# Version: 2019.29.388
+# Last modified: 2019.01.30
 
 
 # ---
@@ -4854,14 +4854,14 @@ Tag: CoreSpace, Inc
 
 
 # ASN 32421 ("Black Lotus Communications").
-# Updated: 2018.01.10 / Checked: 2018.06.06
+# %Listed, Google Malware Dashboard: 0.08%.
+# Updated: 2019.01.29
 
 162.252.54.0/24 Deny Cloud
-162.254.240.0/22 Deny Cloud
 192.31.184.0/22 Deny Cloud
 192.184.8.0/21 Deny Cloud
 199.59.160.0/21 Deny Cloud
-199.250.60.0/22 Deny Cloud
+199.250.61.0/24 Deny Cloud
 208.64.120.0/21 Deny Cloud
 Origin: US
 Tag: Black Lotus
@@ -14182,22 +14182,20 @@ Tag: Webhosting.Net, Inc
 
 
 # ASNs 50837, 135302 ("Cloud Sigma").
-# %Listed, Google Malware Dashboard: 0.41% (AS50837).
-# Stop Forum Spam (SFS) listings: 7 (AS50837).
-# Updated: 2018.02.21 / Checked: 2018.06.06
+# Updated: 2019.01.29
 
 103.9.160.0/22 Deny Cloud
 Origin: AU
 31.171.240.0/23 Deny Cloud
 31.171.242.0/24 Deny Cloud
 31.171.244.0/22 Deny Cloud
-31.171.248.0/22 Deny Cloud
-31.171.252.0/24 Deny Cloud
-31.171.255.0/24 Deny Cloud
+31.171.248.0/21 Deny Cloud
 91.92.71.0/24 Deny Cloud
 178.22.64.0/21 Deny Cloud
 185.12.4.0/22 Deny Cloud
 Origin: CH
+212.147.208.0/22 Deny Cloud
+Origin: IE
 91.92.176.0/23 Deny Cloud
 185.230.208.0/22 Deny Cloud
 Origin: SA
@@ -16264,9 +16262,9 @@ Tag: zColo
 
 
 # ASNs 61138, 206122 ("Zappie Host LLC").
-# %Listed, Google Malware Dashboard: 9.52% (AS61138).
-# Stop Forum Spam (SFS) listings: 30 (AS61138).
-# Updated: 2018.08.05
+# %Listed, Google Malware Dashboard: 4.55% (AS61138).
+# Stop Forum Spam (SFS) listings: 54 (AS61138).
+# Updated: 2018.08.05 / Checked: 2019.01.30
 
 185.90.62.0/24 Deny Cloud
 Origin: GB
@@ -17087,10 +17085,11 @@ Tag: Niobe Bilisim
 
 
 # ASN 11029 ("Border Technology, LLC").
-# Stop Forum Spam (SFS) listings: 13.
-# Updated: 2018.08.05
+# Stop Forum Spam (SFS) listings: 11.
+# Updated: 2019.01.30
 
 45.61.32.0/20 Deny Cloud
+169.197.128.0/18 Deny Cloud
 172.81.0.0/18 Deny Cloud
 173.44.0.0/19 Deny Cloud
 Origin: US
@@ -17958,9 +17957,9 @@ Tag: ACTIVE 24
 
 # ASN 29278 ("Deninet KFT").
 # IPs on this ASN caught attempting to hack users; SQLi galore.
-# %Listed, Google Malware Dashboard: 0.25%.
-# Stop Forum Spam (SFS) listings: 9,992.
-# Updated: 2018.02.23 / Checked: 2018.06.06
+# %Listed, Google Malware Dashboard: 0.36%.
+# Stop Forum Spam (SFS) listings: 703.
+# Updated: 2018.02.23 / Checked: 2019.01.28
 
 79.172.192.0/18 Deny Cloud
 82.150.63.0/24 Deny Cloud
@@ -18181,15 +18180,18 @@ Tag: LogicWeb Inc
 
 
 # ASN 50297 ("Infium, UAB").
-# Stop Forum Spam (SFS) listings: 143.
-# Updated: 2018.03.14 / Checked: 2018.07.06
+# %Listed, Google Malware Dashboard: 0.69%.
+# Stop Forum Spam (SFS) listings: 166.
+# Updated: 2019.01.30
 
 46.148.16.0/22 Deny Cloud
 46.148.20.0/23 Deny Cloud
 46.148.22.0/24 Deny Cloud
 46.148.26.0/23 Deny Cloud
+46.148.28.0/24 Deny Cloud
 193.106.28.0/22 Deny Cloud
 193.200.209.0/24 Deny Cloud
+195.95.151.0/24 Deny Cloud
 Origin: UA
 Tag: Infium, UAB
 
@@ -19126,7 +19128,7 @@ Tag: Dimension Data
 # ASN 60868 ("Runtime Collective Limited").
 # Trademark protection organisation; Scans websites looking for potential infringements in order to send legal notices
 # on behalf of clients. Serves no benefit to the websites being scanned.
-# Updated: 2018.02.25 / Checked: 2018.06.25
+# Updated: 2018.02.25 / Checked: 2019.01.28
 
 185.25.32.0/22 Deny Cloud
 Origin: GB

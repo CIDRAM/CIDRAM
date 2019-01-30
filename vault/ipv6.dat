@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6.dat
 
-# Version: 2019.26.597
-# Last modified: 2019.01.27
+# Version: 2019.29.388
+# Last modified: 2019.01.30
 
 
 # ---
@@ -1155,7 +1155,8 @@ Tag: CoreSpace, Inc
 
 
 # ASN 32421 ("Black Lotus Communications").
-# Updated: 2018.04.30 / Checked: 2018.06.06
+# %Listed, Google Malware Dashboard: 0.08%.
+# Updated: 2018.04.30 / Checked: 2019.01.29
 
 2001:67c:2f08::/48 Deny Cloud
 Origin: GB
@@ -4351,11 +4352,12 @@ Tag: Seeweb S.r.l
 
 
 # ASNs 50837, 135302 ("Cloud Sigma").
-# %Listed, Google Malware Dashboard: 0.41% (AS50837).
-# Stop Forum Spam (SFS) listings: 7 (AS50837).
-# Updated: 2017.10.23 / Checked: 2018.06.06
+# Updated: 2019.01.29
 
-2a01:9980:b::/48 Deny Cloud
+2a01:9980:1::/48 Deny Cloud
+2a01:9980:2::/47 Deny Cloud
+2a01:9980:a::/47 Deny Cloud
+2a01:9980:c::/48 Deny Cloud
 Origin: CH
 Tag: Cloud Sigma
 
@@ -4810,9 +4812,9 @@ Tag: zColo
 
 
 # ASNs 61138, 206122 ("Zappie Host LLC").
-# %Listed, Google Malware Dashboard: 9.52% (AS61138).
-# Stop Forum Spam (SFS) listings: 30 (AS61138).
-# Updated: 2018.04.02 / Checked: 2018.08.05
+# %Listed, Google Malware Dashboard: 4.55% (AS61138).
+# Stop Forum Spam (SFS) listings: 54 (AS61138).
+# Updated: 2018.04.02 / Checked: 2019.01.30
 
 2a06:1280::/32 Deny Cloud
 Origin: BY
@@ -5244,9 +5246,9 @@ Tag: ACTIVE 24
 
 # ASN 29278 ("Deninet KFT").
 # IPs on this ASN caught attempting to hack users; SQLi galore.
-# %Listed, Google Malware Dashboard: 0.25%.
-# Stop Forum Spam (SFS) listings: 9,992.
-# Updated: 2017.10.29 / Checked: 2018.06.06
+# %Listed, Google Malware Dashboard: 0.36%.
+# Stop Forum Spam (SFS) listings: 703.
+# Updated: 2017.10.29 / Checked: 2019.01.28
 
 2a02:730::/32 Deny Cloud
 Origin: HU
@@ -5273,8 +5275,9 @@ Tag: LogicWeb Inc
 
 
 # ASN 50297 ("Infium, UAB").
-# Stop Forum Spam (SFS) listings: 143.
-# Updated: 2018.03.14 / Checked+Modified: 2018.07.06
+# %Listed, Google Malware Dashboard: 0.69%.
+# Stop Forum Spam (SFS) listings: 166.
+# Updated: 2018.03.14 / Checked: 2019.01.30
 
 2001:67c:28f8::/48 Deny Cloud
 Origin: LT
@@ -5532,7 +5535,7 @@ Tag: Dimension Data
 # ASN 60868 ("Runtime Collective Limited").
 # Trademark protection organisation; Scans websites looking for potential infringements in order to send legal notices
 # on behalf of clients. Serves no benefit to the websites being scanned.
-# Updated: 2018.02.25 / Checked: 2018.06.25
+# Updated: 2018.02.25 / Checked: 2019.01.28
 
 2a00:77e0::/32 Deny Cloud
 Origin: GB

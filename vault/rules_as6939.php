@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Custom rules file for AS6939 (last modified: 2018.01.17).
+ * This file: Custom rules file for AS6939 (last modified: 2019.02.06).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -49,11 +49,11 @@ $CIDRAM['RunParamResCache']['rules_as6939.php'] = function ($Factors = [], $Fact
     }
 
     if (!$CIDRAM['CIDRAM_sapi']) {
-        $CIDRAM['BlockInfo']['ReasonMessage'] = $CIDRAM['lang']['ReasonMessage_Cloud'];
+        $CIDRAM['BlockInfo']['ReasonMessage'] = $CIDRAM['L10N']->getString('ReasonMessage_Cloud');
         if (!empty($CIDRAM['BlockInfo']['WhyReason'])) {
             $CIDRAM['BlockInfo']['WhyReason'] .= ', ';
         }
-        $CIDRAM['BlockInfo']['WhyReason'] .= $CIDRAM['lang']['Short_Cloud'] . $LN;
+        $CIDRAM['BlockInfo']['WhyReason'] .= $CIDRAM['L10N']->getString('Short_Cloud') . $LN;
         if (!empty($CIDRAM['BlockInfo']['Signatures'])) {
             $CIDRAM['BlockInfo']['Signatures'] .= ', ';
         }

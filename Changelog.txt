@@ -7,7 +7,17 @@ Versioning guidelines for SemVer can be found at: https://semver.org/
 
 === Changes made since last versioned release ===
 
-(none)
+- [2019.02.06; Maikuolan]: Completely overhauled the way that L10N data is
+  processed and handled. A new class has been written to handle all L10N data,
+  and L10N data is now processed and handled in an entirely object-oriented
+  way. L10N data isn't stored as PHP files anymore, to be required into the
+  package. Instead, L10N data is now stored entirely as YAML files. Using YAML
+  instead of PHP should theoretically be a little safer in certain, edge-case
+  scenarios, and should be much easier to work with for when introducing new
+  translations into the package in the future (i.e., for translators which
+  aren't familiar or aren't comfortable working with PHP). This overhaul also
+  serves as a small stepping stone towards a future, more object-oriented major
+  version release.
 
 === Version/Release 1.10.0 ===
 MINOR RELEASE.
@@ -1368,7 +1378,7 @@ PATCH RELEASE.
 - [2016.03.07; Sub-minor code change; Maikuolan]: Converted all functions to
   closures (anonymous functions), in order to be able to unset them from memory
   after the script execution has finished (we shouldn't leave unrequired data
-  in the memory afer execution has finished). Changed the blocksize for reading
+  in the memory after execution has finished). Changed the blocksize for reading
   files with the "ReadFile" function from 48KB to 128KB (we can afford this,
   and this should *slightly* increase the speed of the script).
 

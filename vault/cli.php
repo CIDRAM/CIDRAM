@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: CLI handler (last modified: 2019.01.25).
+ * This file: CLI handler (last modified: 2019.02.06).
  */
 
 /** Fallback for missing $_SERVER superglobal. */
@@ -24,7 +24,7 @@ $CIDRAM['argv'] = [
 
 if ($CIDRAM['argv'][1] === '-h') {
     /** CIDRAM CLI-mode help. */
-    echo $CIDRAM['lang']['CLI_H'];
+    echo $CIDRAM['L10N']->getString('CLI_H') . "\n\n";
 } elseif ($CIDRAM['argv'][1] === '-c') {
     /** Check if an IP address is blocked by the CIDRAM signature files. */
     echo "\n";
@@ -51,10 +51,10 @@ if ($CIDRAM['argv'][1] === '-h') {
     }
     if (!$CIDRAM['Caught']) {
         if (!$CIDRAM['TestResults']) {
-            echo wordwrap($CIDRAM['ParseVars'](['IP' => $CIDRAM['argv'][2]], $CIDRAM['lang']['CLI_Bad_IP']), 78, "\n ");
+            echo wordwrap($CIDRAM['ParseVars'](['IP' => $CIDRAM['argv'][2]], $CIDRAM['L10N']->getString('CLI_Bad_IP')), 78, "\n ");
         } else {
-            echo wordwrap($CIDRAM['ParseVars'](['IP' => $CIDRAM['argv'][2]], (
-                $CIDRAM['BlockInfo']['SignatureCount'] ? $CIDRAM['lang']['CLI_IP_Blocked'] : $CIDRAM['lang']['CLI_IP_Not_Blocked']
+            echo wordwrap($CIDRAM['ParseVars'](['IP' => $CIDRAM['argv'][2]], $CIDRAM['L10N']->getString(
+                $CIDRAM['BlockInfo']['SignatureCount'] ? 'CLI_IP_Blocked' : 'CLI_IP_Not_Blocked'
             )), 78, "\n ");
         }
     }
@@ -67,7 +67,7 @@ if ($CIDRAM['argv'][1] === '-h') {
         $CIDRAM['TestResults'] = $CIDRAM['ExpandIPv6']($CIDRAM['argv'][2]);
     }
     if (empty($CIDRAM['TestResults'])) {
-        echo wordwrap($CIDRAM['ParseVars'](['IP' => $CIDRAM['argv'][2]], $CIDRAM['lang']['CLI_Bad_IP']), 78, "\n ");
+        echo wordwrap($CIDRAM['ParseVars'](['IP' => $CIDRAM['argv'][2]], $CIDRAM['L10N']->getString('CLI_Bad_IP')), 78, "\n ");
     } else {
         echo ' ' . implode("\n ", $CIDRAM['TestResults']);
     }
@@ -76,58 +76,58 @@ if ($CIDRAM['argv'][1] === '-h') {
     /** Validates signature files. */
     echo "\n";
     $FileToValidate = $CIDRAM['ReadFile']($CIDRAM['Vault'] . $CIDRAM['argv'][2]);
-    echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_0'], sprintf($CIDRAM['lang']['CLI_V_Started'], $CIDRAM['TimeFormat']($CIDRAM['Now'], $CIDRAM['Config']['general']['timeFormat'])));
+    echo $CIDRAM['ValidatorMsg']($CIDRAM['L10N']->getString('CLI_VF_Level_0'), sprintf($CIDRAM['L10N']->getString('CLI_V_Started'), $CIDRAM['TimeFormat']($CIDRAM['Now'], $CIDRAM['Config']['general']['timeFormat'])));
     if (empty($FileToValidate)) {
-        die($CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_3'], $CIDRAM['lang']['CLI_VF_Empty']) . "\n");
+        die($CIDRAM['ValidatorMsg']($CIDRAM['L10N']->getString('CLI_VF_Level_3'), $CIDRAM['L10N']->getString('CLI_VF_Empty')) . "\n");
     }
     if (strpos($FileToValidate, "\r")) {
-        echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_1'], $CIDRAM['lang']['CLI_V_CRLF']);
+        echo $CIDRAM['ValidatorMsg']($CIDRAM['L10N']->getString('CLI_VF_Level_1'), $CIDRAM['L10N']->getString('CLI_V_CRLF'));
         $FileToValidate = (strpos($FileToValidate, "\r\n") !== false) ? str_replace("\r", '', $FileToValidate) : str_replace("\r", "\n", $FileToValidate);
     }
     if (substr($FileToValidate, -1) !== "\n") {
-        echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_1'], $CIDRAM['lang']['CLI_V_Terminal_LF']);
+        echo $CIDRAM['ValidatorMsg']($CIDRAM['L10N']->getString('CLI_VF_Level_1'), $CIDRAM['L10N']->getString('CLI_V_Terminal_LF'));
         $FileToValidate .= "\n";
     }
-    echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_0'], $CIDRAM['lang']['CLI_V_LineByLine']);
+    echo $CIDRAM['ValidatorMsg']($CIDRAM['L10N']->getString('CLI_VF_Level_0'), $CIDRAM['L10N']->getString('CLI_V_LineByLine'));
     $ArrayToValidate = explode("\n", $FileToValidate);
     $c = count($ArrayToValidate);
     $YAMLM = $YAMLL = false;
     for ($i = 0; $i < $c; $i++) {
         $Len = strlen($ArrayToValidate[$i]);
         if ($Len > 120) {
-            echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_1'], sprintf($CIDRAM['lang']['CLI_VL_L120'], $i));
+            echo $CIDRAM['ValidatorMsg']($CIDRAM['L10N']->getString('CLI_VF_Level_1'), sprintf($CIDRAM['L10N']->getString('CLI_VL_L120'), $i));
         } elseif (!$Len) {
             continue;
         }
         if (isset($ArrayToValidate[$i + 1]) && $ArrayToValidate[$i + 1] === $ArrayToValidate[$i]) {
-            echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_0'], sprintf($CIDRAM['lang']['CLI_VL_Mergeable'], $i, ($i + 1)));
+            echo $CIDRAM['ValidatorMsg']($CIDRAM['L10N']->getString('CLI_VF_Level_0'), sprintf($CIDRAM['L10N']->getString('CLI_VL_Mergeable'), $i, ($i + 1)));
         }
         if (preg_match('/\s+$/', $ArrayToValidate[$i])) {
-            echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_1'], sprintf($CIDRAM['lang']['CLI_VL_Whitespace'], $i));
+            echo $CIDRAM['ValidatorMsg']($CIDRAM['L10N']->getString('CLI_VF_Level_1'), sprintf($CIDRAM['L10N']->getString('CLI_VL_Whitespace'), $i));
         }
         if (substr($ArrayToValidate[$i], 0, 1) === '#') {
             continue;
         }
         if (strpos($ArrayToValidate[$i], "\t") !== false) {
-            echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_1'], sprintf($CIDRAM['lang']['CLI_VL_Tabs'], $i));
+            echo $CIDRAM['ValidatorMsg']($CIDRAM['L10N']->getString('CLI_VF_Level_1'), sprintf($CIDRAM['L10N']->getString('CLI_VL_Tabs'), $i));
         } elseif (preg_match('/[^\x20-\xff]/', $ArrayToValidate[$i])) {
-            echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_1'], sprintf($CIDRAM['lang']['CLI_VL_CC'], $i));
+            echo $CIDRAM['ValidatorMsg']($CIDRAM['L10N']->getString('CLI_VF_Level_1'), sprintf($CIDRAM['L10N']->getString('CLI_VL_CC'), $i));
         }
         if (substr($ArrayToValidate[$i], 0, 5) === 'Tag: ') {
             if ($Len > 25) {
-                echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_1'], sprintf($CIDRAM['lang']['CLI_VL_Tags'], $i));
+                echo $CIDRAM['ValidatorMsg']($CIDRAM['L10N']->getString('CLI_VF_Level_1'), sprintf($CIDRAM['L10N']->getString('CLI_VL_Tags'), $i));
             }
             continue;
         }
         if (substr($ArrayToValidate[$i], 0, 9) === 'Expires: ') {
             if (!$CIDRAM['FetchExpires'](substr($ArrayToValidate[$i], 9))) {
-                echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_2'], sprintf($CIDRAM['lang']['CLI_VL_Expiry'], $i));
+                echo $CIDRAM['ValidatorMsg']($CIDRAM['L10N']->getString('CLI_VF_Level_2'), sprintf($CIDRAM['L10N']->getString('CLI_VL_Expiry'), $i));
             }
             continue;
         }
         if (substr($ArrayToValidate[$i], 0, 8) === 'Origin: ') {
             if (!preg_match('~^[A-Z]{2}$~', substr($ArrayToValidate[$i], 8))) {
-                echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_2'], sprintf($CIDRAM['lang']['CLI_VL_Expiry'], $i));
+                echo $CIDRAM['ValidatorMsg']($CIDRAM['L10N']->getString('CLI_VF_Level_2'), sprintf($CIDRAM['L10N']->getString('CLI_VL_Expiry'), $i));
             }
             continue;
         }
@@ -137,7 +137,7 @@ if ($CIDRAM['argv'][1] === '-h') {
                 $YAMLM = false;
                 $YAMLO = new \Maikuolan\Common\YAML();
                 if (!($YAMLO->process($YAMLD, $YAMLO->Data))) {
-                    echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_2'], sprintf($CIDRAM['lang']['CLI_VL_YAML'], $YAMLL));
+                    echo $CIDRAM['ValidatorMsg']($CIDRAM['L10N']->getString('CLI_VF_Level_2'), sprintf($CIDRAM['L10N']->getString('CLI_VL_YAML'), $YAMLL));
                 }
                 unset($YAMLO);
             }
@@ -153,7 +153,7 @@ if ($CIDRAM['argv'][1] === '-h') {
             ($BasePos = strpos($ArrayToValidate[$i], ' ')) !== false
         ) ? substr($ArrayToValidate[$i], 0, $BasePos) : $ArrayToValidate[$i]];
         if (!$Sig['x'] = strpos($Sig['Base'], '/')) {
-            echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_1'], sprintf($CIDRAM['lang']['CLI_VL_Syntax'], $i));
+            echo $CIDRAM['ValidatorMsg']($CIDRAM['L10N']->getString('CLI_VF_Level_1'), sprintf($CIDRAM['L10N']->getString('CLI_VL_Syntax'), $i));
             continue;
         }
         $Sig['Initial'] = substr($Sig['Base'], 0, $Sig['x']);
@@ -163,7 +163,7 @@ if ($CIDRAM['argv'][1] === '-h') {
         $Sig['IPv4'] = $CIDRAM['ExpandIPv4']($Sig['Initial']);
         $Sig['IPv6'] = $CIDRAM['ExpandIPv6']($Sig['Initial']);
         if (!$Sig['IPv4'] && !$Sig['IPv6']) {
-            echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_2'], sprintf($CIDRAM['lang']['CLI_VL_Invalid'], $i, $Sig['Initial']));
+            echo $CIDRAM['ValidatorMsg']($CIDRAM['L10N']->getString('CLI_VF_Level_2'), sprintf($CIDRAM['L10N']->getString('CLI_VL_Invalid'), $i, $Sig['Initial']));
             continue;
         }
         if ($Sig['Base'] !== $ArrayToValidate[$i]) {
@@ -175,27 +175,27 @@ if ($CIDRAM['argv'][1] === '-h') {
                 $Sig['Param'] = '';
             }
             if ($Sig['Function'] !== 'Deny' && $Sig['Function'] !== 'Whitelist' && $Sig['Function'] !== 'Greylist' && $Sig['Function'] !== 'Run') {
-                echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_2'], sprintf($CIDRAM['lang']['CLI_VL_Unrecognised'], $i));
+                echo $CIDRAM['ValidatorMsg']($CIDRAM['L10N']->getString('CLI_VF_Level_2'), sprintf($CIDRAM['L10N']->getString('CLI_VL_Unrecognised'), $i));
             }
         } else {
             $Sig['Param'] = $Sig['Function'] = '';
-            echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_2'], sprintf($CIDRAM['lang']['CLI_VL_Missing'], $i));
+            echo $CIDRAM['ValidatorMsg']($CIDRAM['L10N']->getString('CLI_VF_Level_2'), sprintf($CIDRAM['L10N']->getString('CLI_VL_Missing'), $i));
         }
         if ($Sig['Function'] === 'Deny' && ($Sig['n'] = substr_count($FileToValidate, "\n" . $Sig['Base'] . ' Deny ')) && $Sig['n'] > 1) {
-            echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_1'], sprintf($CIDRAM['lang']['CLI_VL_Duplicated'], $i, $Sig['Base'], $Sig['n']));
+            echo $CIDRAM['ValidatorMsg']($CIDRAM['L10N']->getString('CLI_VF_Level_1'), sprintf($CIDRAM['L10N']->getString('CLI_VL_Duplicated'), $i, $Sig['Base'], $Sig['n']));
         } elseif ($Sig['Function'] === 'Whitelist' && ($Sig['n'] = substr_count($FileToValidate, "\n" . $Sig['Base'] . ' Whitelist')) && $Sig['n'] > 1) {
-            echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_1'], sprintf($CIDRAM['lang']['CLI_VL_Duplicated'], $i, $Sig['Base'], $Sig['n']));
+            echo $CIDRAM['ValidatorMsg']($CIDRAM['L10N']->getString('CLI_VF_Level_1'), sprintf($CIDRAM['L10N']->getString('CLI_VL_Duplicated'), $i, $Sig['Base'], $Sig['n']));
         } elseif ($Sig['Function'] === 'Greylist' && ($Sig['n'] = substr_count($FileToValidate, "\n" . $Sig['Base'] . ' Greylist')) && $Sig['n'] > 1) {
-            echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_1'], sprintf($CIDRAM['lang']['CLI_VL_Duplicated'], $i, $Sig['Base'], $Sig['n']));
+            echo $CIDRAM['ValidatorMsg']($CIDRAM['L10N']->getString('CLI_VF_Level_1'), sprintf($CIDRAM['L10N']->getString('CLI_VL_Duplicated'), $i, $Sig['Base'], $Sig['n']));
         } elseif ($Sig['Function'] === 'Run' && ($Sig['n'] = substr_count($FileToValidate, "\n" . $Sig['Base'] . ' Run ')) && $Sig['n'] > 1) {
-            echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_1'], sprintf($CIDRAM['lang']['CLI_VL_Duplicated'], $i, $Sig['Base'], $Sig['n']));
+            echo $CIDRAM['ValidatorMsg']($CIDRAM['L10N']->getString('CLI_VF_Level_1'), sprintf($CIDRAM['L10N']->getString('CLI_VL_Duplicated'), $i, $Sig['Base'], $Sig['n']));
         }
         if ($Sig['IPv4']) {
             if ($Sig['Key'] < 0 || $Sig['Key'] > 31) {
-                echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_2'], sprintf($CIDRAM['lang']['CLI_VL_Nontriggerable_Range'], $i, $Sig['Base'], $Sig['Prefix']));
+                echo $CIDRAM['ValidatorMsg']($CIDRAM['L10N']->getString('CLI_VF_Level_2'), sprintf($CIDRAM['L10N']->getString('CLI_VL_Nontriggerable_Range'), $i, $Sig['Base'], $Sig['Prefix']));
             } else {
                 if ($Sig['IPv4'][$Sig['Key']] !== $Sig['Base']) {
-                    echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_2'], sprintf($CIDRAM['lang']['CLI_VL_Nontriggerable'], $i, $Sig['Base'], $Sig['IPv4'][$Sig['Key']]));
+                    echo $CIDRAM['ValidatorMsg']($CIDRAM['L10N']->getString('CLI_VF_Level_2'), sprintf($CIDRAM['L10N']->getString('CLI_VL_Nontriggerable'), $i, $Sig['Base'], $Sig['IPv4'][$Sig['Key']]));
                 }
                 for ($Sig['Iterator'] = 0; $Sig['Iterator'] < $Sig['Key']; $Sig['Iterator']++) {
                     if (
@@ -204,21 +204,21 @@ if ($CIDRAM['argv'][1] === '-h') {
                         ($Sig['Function'] === 'Greylist' && substr_count($FileToValidate, "\n" . $Sig['IPv4'][$Sig['Iterator']] . ' Greylist')) ||
                         ($Sig['Function'] === 'Run' && substr_count($FileToValidate, "\n" . $Sig['IPv4'][$Sig['Iterator']] . ' Run'))
                     ) {
-                        echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_1'], sprintf($CIDRAM['lang']['CLI_VL_Subordinate'], $i, $Sig['Base'], $Sig['IPv4'][$Sig['Iterator']]));
+                        echo $CIDRAM['ValidatorMsg']($CIDRAM['L10N']->getString('CLI_VF_Level_1'), sprintf($CIDRAM['L10N']->getString('CLI_VL_Subordinate'), $i, $Sig['Base'], $Sig['IPv4'][$Sig['Iterator']]));
                     }
                 }
                 for ($Sig['Iterator'] = $Sig['PrefixInt']; $Sig['Iterator'] < 32; $Sig['Iterator']++) {
                     if (substr_count($FileToValidate, "\n" . $Sig['IPv4'][$Sig['Iterator']] . ' ')) {
-                        echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_1'], sprintf($CIDRAM['lang']['CLI_VL_Superset'], $i, $Sig['Base'], $Sig['IPv4'][$Sig['Iterator']]));
+                        echo $CIDRAM['ValidatorMsg']($CIDRAM['L10N']->getString('CLI_VF_Level_1'), sprintf($CIDRAM['L10N']->getString('CLI_VL_Superset'), $i, $Sig['Base'], $Sig['IPv4'][$Sig['Iterator']]));
                     }
                 }
             }
         } elseif ($Sig['IPv6']) {
             if ($Sig['Key'] < 0 || $Sig['Key'] > 127) {
-                echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_2'], sprintf($CIDRAM['lang']['CLI_VL_Nontriggerable_Range'], $i, $Sig['Base'], $Sig['Prefix']));
+                echo $CIDRAM['ValidatorMsg']($CIDRAM['L10N']->getString('CLI_VF_Level_2'), sprintf($CIDRAM['L10N']->getString('CLI_VL_Nontriggerable_Range'), $i, $Sig['Base'], $Sig['Prefix']));
             } else {
                 if ($Sig['IPv6'][$Sig['Key']] !== $Sig['Base']) {
-                    echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_2'], sprintf($CIDRAM['lang']['CLI_VL_Nontriggerable'], $i, $Sig['Base'], $Sig['IPv6'][$Sig['Key']]));
+                    echo $CIDRAM['ValidatorMsg']($CIDRAM['L10N']->getString('CLI_VF_Level_2'), sprintf($CIDRAM['L10N']->getString('CLI_VL_Nontriggerable'), $i, $Sig['Base'], $Sig['IPv6'][$Sig['Key']]));
                 }
                 for ($Sig['Iterator'] = 0; $Sig['Iterator'] < $Sig['Key']; $Sig['Iterator']++) {
                     if (
@@ -227,25 +227,25 @@ if ($CIDRAM['argv'][1] === '-h') {
                         ($Sig['Function'] === 'Greylist' && substr_count($FileToValidate, "\n" . $Sig['IPv6'][$Sig['Iterator']] . ' Greylist')) ||
                         ($Sig['Function'] === 'Run' && substr_count($FileToValidate, "\n" . $Sig['IPv6'][$Sig['Iterator']] . ' Run'))
                     ) {
-                        echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_1'], sprintf($CIDRAM['lang']['CLI_VL_Subordinate'], $i, $Sig['Base'], $Sig['IPv6'][$Sig['Iterator']]));
+                        echo $CIDRAM['ValidatorMsg']($CIDRAM['L10N']->getString('CLI_VF_Level_1'), sprintf($CIDRAM['L10N']->getString('CLI_VL_Subordinate'), $i, $Sig['Base'], $Sig['IPv6'][$Sig['Iterator']]));
                     }
                 }
                 for ($Sig['Iterator'] = $Sig['PrefixInt']; $Sig['Iterator'] < 128; $Sig['Iterator']++) {
                     if (substr_count($FileToValidate, "\n" . $Sig['IPv6'][$Sig['Iterator']] . ' ')) {
-                        echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_1'], sprintf($CIDRAM['lang']['CLI_VL_Superset'], $i, $Sig['Base'], $Sig['IPv6'][$Sig['Iterator']]));
+                        echo $CIDRAM['ValidatorMsg']($CIDRAM['L10N']->getString('CLI_VF_Level_1'), sprintf($CIDRAM['L10N']->getString('CLI_VL_Superset'), $i, $Sig['Base'], $Sig['IPv6'][$Sig['Iterator']]));
                     }
                 }
             }
         }
     }
-    echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_0'], sprintf($CIDRAM['lang']['CLI_V_Finished'], $CIDRAM['TimeFormat']($CIDRAM['Now'], $CIDRAM['Config']['general']['timeFormat']))) . "\n";
+    echo $CIDRAM['ValidatorMsg']($CIDRAM['L10N']->getString('CLI_VF_Level_0'), sprintf($CIDRAM['L10N']->getString('CLI_V_Finished'), $CIDRAM['TimeFormat']($CIDRAM['Now'], $CIDRAM['Config']['general']['timeFormat']))) . "\n";
 } elseif ($CIDRAM['argv'][1] === '-f') {
     /** Attempts to automatically fix signature files. */
     echo "\n";
     $FileToValidate = $CIDRAM['ReadFile']($CIDRAM['Vault'] . $CIDRAM['argv'][2]);
-    echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_0'], sprintf($CIDRAM['lang']['CLI_F_Started'], $CIDRAM['TimeFormat']($CIDRAM['Now'], $CIDRAM['Config']['general']['timeFormat'])));
+    echo $CIDRAM['ValidatorMsg']($CIDRAM['L10N']->getString('CLI_VF_Level_0'), sprintf($CIDRAM['L10N']->getString('CLI_F_Started'), $CIDRAM['TimeFormat']($CIDRAM['Now'], $CIDRAM['Config']['general']['timeFormat'])));
     if (empty($FileToValidate)) {
-        die($CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_3'], $CIDRAM['lang']['CLI_VF_Empty']) . "\n");
+        die($CIDRAM['ValidatorMsg']($CIDRAM['L10N']->getString('CLI_VF_Level_3'), $CIDRAM['L10N']->getString('CLI_VF_Empty')) . "\n");
     }
     $ModCheckBefore = '[' . md5($FileToValidate) . ':' . strlen($FileToValidate) . ']';
     $Operations = $Changes = 0;
@@ -420,5 +420,5 @@ if ($CIDRAM['argv'][1] === '-h') {
         fwrite($Handle, $FileToValidate);
         fclose($Handle);
     }
-    echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_0'], sprintf($CIDRAM['lang']['CLI_F_Finished'], $Changes, $Operations, $CIDRAM['TimeFormat']($CIDRAM['Now'], $CIDRAM['Config']['general']['timeFormat']))) . "\n";
+    echo $CIDRAM['ValidatorMsg']($CIDRAM['L10N']->getString('CLI_VF_Level_0'), sprintf($CIDRAM['L10N']->getString('CLI_F_Finished'), $Changes, $Operations, $CIDRAM['TimeFormat']($CIDRAM['Now'], $CIDRAM['Config']['general']['timeFormat']))) . "\n";
 }

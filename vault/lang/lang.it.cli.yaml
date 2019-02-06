@@ -1,0 +1,65 @@
+##\
+# This file is a part of the CIDRAM package.
+# Homepage: https://cidram.github.io/
+#
+# CIDRAM COPYRIGHT 2016 and beyond by Caleb Mazalevskis (Maikuolan).
+#
+# License: GNU/GPLv2
+# @see LICENSE.txt
+#
+# This file: Italian language data for CLI (last modified: 2019.02.04).
+##/
+
+CLI_H: |
+ CIDRAM CLI modalità aiuto.
+ ---
+ Uso:
+ php.exe /cidram/loader.php -Flag (Ingresso)
+ ---
+ Flags: -h Visualizzare queste informazioni di aiuto.
+        -c Verificare se un indirizzo IP è bloccato dalle firme di CIDRAM.
+        -g Generare CIDRs da un indirizzo IP.
+        -v Convalidare un file di firma.
+        -f Correggere un file di firma.
+ ---
+ Esempi:
+ php.exe /cidram/loader.php -c 192.168.0.0
+ php.exe /cidram/loader.php -c 2001:db8::
+ php.exe /cidram/loader.php -g 1.2.3.4
+ php.exe /cidram/loader.php -g ::1
+ php.exe /cidram/loader.php -f signatures.dat
+ php.exe /cidram/loader.php -v signatures.dat
+ ---
+CLI_Bad_IP: " L'indirizzo IP specificato, "{IP}", non è un indirizzo IPv4 o IPv6 valido!"
+CLI_F_Finished: "Fissatore di firme è finita, con %s cambiamenti effettuate per %s operazioni (%s)."
+CLI_F_Started: "Fissatore di firme è iniziata (%s)."
+CLI_IP_Blocked: " L'indirizzo IP specificato, "{IP}", è bloccato da uno o più delle firme di CIDRAM."
+CLI_IP_Not_Blocked: " L'indirizzo IP specificato, "{IP}", *NON* è bloccato da una delle firme di CIDRAM."
+CLI_VF_Empty: "File di firme specificato è vuoto o non esiste."
+CLI_VF_Level_0: "Preavviso"
+CLI_VF_Level_1: "Avvertimento"
+CLI_VF_Level_2: "Errore"
+CLI_VF_Level_3: "Errore Fatale"
+CLI_VL_CC: "L%s: Rilevati caratteri di controllo; Ciò potrebbe indicare la corruzione e dovrebbe essere esaminati."
+CLI_VL_Duplicated: "L%s: Firma "%s" è duplicata (%s conti)!"
+CLI_VL_Expiry: "L%s: Etichetta di scadenza non contiene una valida ISO 8601 data/tempo!"
+CLI_VL_Invalid: "L%s: "%s" *NON* è un indirizzo IPv4 o IPv6 valida!"
+CLI_VL_L120: "L%s: La lunghezza della riga è maggiore di 120 byte; Lunghezza della riga dovrebbe essere limitato a 120 byte per una leggibilità ottimale."
+CLI_VL_Mergeable: "L%s e L%s sono identici, e quindi, unificabile."
+CLI_VL_Missing: "L%s: [Function] é mancante; Firma sembra essere incompleta."
+CLI_VL_Nontriggerable: "L%s: "%s" non può essere attivato! La sua base non corrisponde l'inizio della sua gamma! Prova sostituendolo con "%s"."
+CLI_VL_Nontriggerable_Range: "L%s: "%s" non può essere attivato! "%s" non è un gamma valida!"
+CLI_VL_Origin: "L%s: Etichette di origine non contiene un codice ISO 3166-1 Alpha-2 valido!"
+CLI_VL_Subordinate: "L%s: "%s" è subordinata alla già esistente firma "%s"."
+CLI_VL_Superset: "L%s: "%s" è un sovrainsieme alla già esistente firma "%s"."
+CLI_VL_Syntax: "L%s: Non sintatticamente preciso."
+CLI_VL_Tabs: "L%s: Tabulazioni rilevati; Spazi sono preferiti sopra tabulazioni per una leggibilità ottimale."
+CLI_VL_Tags: "L%s: Etichetta della sezione è maggiore di 20 byte; Etichetta della sezione dovrebbe essere chiaro e conciso."
+CLI_VL_Unrecognised: "L%s: [Function] non riconosciuta; Firma potrebbe essere rotto."
+CLI_VL_Whitespace: "L%s: L'eccesso di spazio bianco in coda rilevato su questa riga."
+CLI_VL_YAML: "L%s: Dati simili a YAML rilevati, ma non poteva elaborarlo."
+CLI_V_CRLF: "Rilevato CR/CRLF nel file di firme; Questi sono ammesse e non causerà problemi, ma LF è preferibile."
+CLI_V_Finished: "Validatore di firme è finita (%s). Se non ci fossero avvisi o errori, il file di firme è *probabilmente* bene. :-)"
+CLI_V_LineByLine: "Convalida riga per riga è iniziata."
+CLI_V_Started: "Validatore di firme è iniziata (%s)."
+CLI_V_Terminal_LF: "File di firme dovrebbe terminare con una interruzione di riga LF."

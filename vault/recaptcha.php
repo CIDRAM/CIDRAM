@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: reCAPTCHA module (last modified: 2018.09.22).
+ * This file: reCAPTCHA module (last modified: 2019.02.06).
  */
 
 /**
@@ -61,7 +61,7 @@ $CIDRAM['reCAPTCHA']['GenerateCallbackData'] = function ($SiteKey, $API) {
 /** Generate data for failed attempts. */
 $CIDRAM['reCAPTCHA']['GenerateFailed'] = function () use (&$CIDRAM) {
     /** Set status for reCAPTCHA block information. */
-    $CIDRAM['BlockInfo']['reCAPTCHA'] = $CIDRAM['lang']['recaptcha_failed'];
+    $CIDRAM['BlockInfo']['reCAPTCHA'] = $CIDRAM['L10N']->getString('recaptcha_failed');
     /** Append to reCAPTCHA statistics if necessary. */
     if ($CIDRAM['Config']['general']['statistics']) {
         $CIDRAM['Cache']['Statistics']['reCAPTCHA-Failed']++;
@@ -72,7 +72,7 @@ $CIDRAM['reCAPTCHA']['GenerateFailed'] = function () use (&$CIDRAM) {
 /** Generate data for passed attempts. */
 $CIDRAM['reCAPTCHA']['GeneratePassed'] = function () use (&$CIDRAM) {
     /** Set status for reCAPTCHA block information. */
-    $CIDRAM['BlockInfo']['reCAPTCHA'] = $CIDRAM['lang']['recaptcha_passed'];
+    $CIDRAM['BlockInfo']['reCAPTCHA'] = $CIDRAM['L10N']->getString('recaptcha_passed');
     /** Append to reCAPTCHA statistics if necessary. */
     if ($CIDRAM['Config']['general']['statistics']) {
         $CIDRAM['Cache']['Statistics']['reCAPTCHA-Passed']++;
@@ -147,7 +147,7 @@ if ($CIDRAM['Config']['recaptcha']['lockuser']) {
     } else {
 
         /** Set status for reCAPTCHA block information. */
-        $CIDRAM['BlockInfo']['reCAPTCHA'] = $CIDRAM['lang']['recaptcha_enabled'];
+        $CIDRAM['BlockInfo']['reCAPTCHA'] = $CIDRAM['L10N']->getString('recaptcha_enabled');
         /** We've received a response. */
         if (isset($_POST['g-recaptcha-response'])) {
             $CIDRAM['reCAPTCHA']['Loggable'] = true;
@@ -224,7 +224,7 @@ if ($CIDRAM['Config']['recaptcha']['lockuser']) {
     } else {
 
         /** Set status for reCAPTCHA block information. */
-        $CIDRAM['BlockInfo']['reCAPTCHA'] = $CIDRAM['lang']['recaptcha_enabled'];
+        $CIDRAM['BlockInfo']['reCAPTCHA'] = $CIDRAM['L10N']->getString('recaptcha_enabled');
         /** We've received a response. */
         if (isset($_POST['g-recaptcha-response'])) {
             $CIDRAM['reCAPTCHA']['Loggable'] = true;
@@ -274,11 +274,11 @@ if ($CIDRAM['Config']['recaptcha']['logfile'] && $CIDRAM['reCAPTCHA']['Loggable'
     ) ? 'w' : 'a';
     $CIDRAM['reCAPTCHA']['LogfileData'] = sprintf(
         "%1\$s%2\$s - %3\$s%4\$s - %5\$s%6\$s\n",
-        $CIDRAM['lang']['field_ipaddr'],
+        $CIDRAM['L10N']->getString('field_ipaddr'),
         $CIDRAM['Config']['legal']['pseudonymise_ip_addresses'] ? $CIDRAM['Pseudonymise-IP']($_SERVER[$CIDRAM['IPAddr']]) : $_SERVER[$CIDRAM['IPAddr']],
-        $CIDRAM['lang']['field_datetime'],
+        $CIDRAM['L10N']->getString('field_datetime'),
         $CIDRAM['BlockInfo']['DateTime'],
-        $CIDRAM['lang']['field_reCAPTCHA_state'],
+        $CIDRAM['L10N']->getString('field_reCAPTCHA_state'),
         $CIDRAM['BlockInfo']['reCAPTCHA']
     );
     if ($CIDRAM['BuildLogPath']($CIDRAM['reCAPTCHA']['LogfileName'])) {

@@ -1,0 +1,65 @@
+##\
+# This file is a part of the CIDRAM package.
+# Homepage: https://cidram.github.io/
+#
+# CIDRAM COPYRIGHT 2016 and beyond by Caleb Mazalevskis (Maikuolan).
+#
+# License: GNU/GPLv2
+# @see LICENSE.txt
+#
+# This file: French language data for CLI (last modified: 2019.02.04).
+##/
+
+CLI_H: |
+ Aide pour le mode CLI de CIDRAM.
+ ---
+ Usage :
+ php.exe /cidram/loader.php -Flag (Input)
+ ---
+ Flags : -h Afficher cette information d'aide.
+         -c Vérifiez si une adresse IP est bloquée par les fichiers de CIDRAM.
+         -g Générer des CIDRs à partir d'une adresse IP.
+         -v Validez un fichier de signature.
+         -f Corrigez un fichier de signature.
+ ---
+ Exemples :
+ php.exe /cidram/loader.php -c 192.168.0.0
+ php.exe /cidram/loader.php -c 2001:db8::
+ php.exe /cidram/loader.php -g 1.2.3.4
+ php.exe /cidram/loader.php -g ::1
+ php.exe /cidram/loader.php -f signatures.dat
+ php.exe /cidram/loader.php -v signatures.dat
+ ---
+CLI_Bad_IP: " L'adresse IP spécifiée, « {IP} », n'est pas une adresse IPv4 ou IPv6 valide !"
+CLI_F_Finished: "Signature fixateur a terminé, avec %s changements effectués sur %s opérations (%s)."
+CLI_F_Started: "Signature fixateur a commencé (%s)."
+CLI_IP_Blocked: " L'adresse IP spécifiée, « {IP} », *EST* bloqué par un ou plusieurs du signatures de CIDRAM."
+CLI_IP_Not_Blocked: " L'adresse IP spécifiée, « {IP} », n'est *PAS* bloqué par les signatures de CIDRAM."
+CLI_VF_Empty: "Fichier de signatures spécifié est vide ou il n'existe pas."
+CLI_VF_Level_0: "Notice"
+CLI_VF_Level_1: "Avertissement"
+CLI_VF_Level_2: "Erreur"
+CLI_VF_Level_3: "Erreur Fatale"
+CLI_VL_CC: "L%s : Caractères de contrôle détectés ; Cela pourrait indiquer la corruption et devrait être étudiée."
+CLI_VL_Duplicated: "L%s : Signature « %s » est dupliqué (%s comptes) !"
+CLI_VL_Expiry: "L%s : Tag d'expiration ne contient pas un ISO 8601 date/heure !"
+CLI_VL_Invalid: "L%s : « %s » n'est *PAS* une adresse IPv4 ou IPv6 valide !"
+CLI_VL_L120: "L%s : La longueur de la ligne est supérieure à 120 octets ; La longueur de la ligne devrait être limitée à 120 octets pour lisibilité optimale."
+CLI_VL_Mergeable: "L%s et L%s sont identiques, et ainsi, fusionnables."
+CLI_VL_Missing: "L%s : [Function] absent ; Signature semble être incomplètes."
+CLI_VL_Nontriggerable: "L%s : « %s » est non déclenchable ! Sa base ne correspond pas au début de sa gamme ! Essayez de remplacer avec « %s »."
+CLI_VL_Nontriggerable_Range: "L%s : « %s » est non déclenchable ! « %s » n'est pas une gamme valide !"
+CLI_VL_Origin: "L%s : Étiquette d'origine ne contient pas un code ISO 3166-1 Alpha-2 valide !"
+CLI_VL_Subordinate: "L%s : « %s » est subordonnée à l'existant signature « %s »."
+CLI_VL_Superset: "L%s : « %s » est un superset du déjà existant signature « %s »."
+CLI_VL_Syntax: "L%s : Non syntaxiquement précis."
+CLI_VL_Tabs: "L%s : Onglets détectés ; Les espaces sont préférables aux tabs/onglets pour lisibilité optimale."
+CLI_VL_Tags: "L%s : Tag de section est supérieure à 20 octets ; Les tags de section doivent être claires et concises."
+CLI_VL_Unrecognised: "L%s : Inconnu [Function] ; Signature pourrait être rompu."
+CLI_VL_Whitespace: "L%s : Excès d'espace blanc terminant sur cette ligne détecté."
+CLI_VL_YAML: "L%s : Certaines données comme YAML détecté, mais ne pouvait pas traiter."
+CLI_V_CRLF: "CR/CRLF détecté dans le fichier de signatures ; Ceux-ci sont permissible et ne causera pas de problèmes, mais LF est préférable."
+CLI_V_Finished: "Validation de signatures a terminé (%s). Si aucun avertissement et aucun erreurs apparaissent, votre fichier de signatures est *probablement* bien. :-)"
+CLI_V_LineByLine: "Validation ligne par ligne a commencé."
+CLI_V_Started: "Validation de signatures a commencé (%s)."
+CLI_V_Terminal_LF: "Fichiers de signatures devrait terminer avec un saut de ligne LF."

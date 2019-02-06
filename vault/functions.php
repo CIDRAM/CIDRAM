@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2019.01.25).
+ * This file: Functions file (last modified: 2019.02.06).
  */
 
 /**
@@ -330,11 +330,11 @@ $CIDRAM['CheckFactors'] = function ($Files, $Factors) use (&$CIDRAM) {
             for ($FactorIndex = 0; $FactorIndex < $Counts['Factors']; $FactorIndex++) {
                 if ($Infractions = substr_count($Files[$FileIndex], ',' . $Factors[$FactorIndex] . ',')) {
                     if (!$CIDRAM['CIDRAM_sapi']) {
-                        $CIDRAM['BlockInfo']['ReasonMessage'] = $CIDRAM['lang']['ReasonMessage_Generic'];
+                        $CIDRAM['BlockInfo']['ReasonMessage'] = $CIDRAM['L10N']->getString('ReasonMessage_Generic');
                         if (!empty($CIDRAM['BlockInfo']['WhyReason'])) {
                             $CIDRAM['BlockInfo']['WhyReason'] .= ', ';
                         }
-                        $CIDRAM['BlockInfo']['WhyReason'] .= $CIDRAM['lang']['Short_Generic'] . $LN;
+                        $CIDRAM['BlockInfo']['WhyReason'] .= $CIDRAM['L10N']->getString('Short_Generic') . $LN;
                     }
                     if (!empty($CIDRAM['BlockInfo']['Signatures'])) {
                         $CIDRAM['BlockInfo']['Signatures'] .= ', ';
@@ -416,7 +416,7 @@ $CIDRAM['CheckFactors'] = function ($Files, $Factors) use (&$CIDRAM) {
                         } else {
                             throw new \Exception($CIDRAM['ParseVars'](
                                 ['FileName' => $Signature],
-                                '[CIDRAM] ' . $CIDRAM['lang']['Error_MissingRequire']
+                                '[CIDRAM] ' . $CIDRAM['L10N']->getString('Error_MissingRequire')
                             ));
                         }
                     }
@@ -445,11 +445,11 @@ $CIDRAM['CheckFactors'] = function ($Files, $Factors) use (&$CIDRAM) {
                                 if (empty($CIDRAM['Config']['signatures'][$Params['Config']])) {
                                     continue 2;
                                 }
-                                $CIDRAM['BlockInfo']['ReasonMessage'] = $CIDRAM['lang'][$Params['ReasonLong']];
+                                $CIDRAM['BlockInfo']['ReasonMessage'] = $CIDRAM['L10N']->getString($Params['ReasonLong']);
                                 if (!empty($CIDRAM['BlockInfo']['WhyReason'])) {
                                     $CIDRAM['BlockInfo']['WhyReason'] .= ', ';
                                 }
-                                $CIDRAM['BlockInfo']['WhyReason'] .= $CIDRAM['lang'][$Params['ReasonShort']] . $LN;
+                                $CIDRAM['BlockInfo']['WhyReason'] .= $CIDRAM['L10N']->getString($Params['ReasonShort']) . $LN;
                                 $DenyMatched = true;
                                 break;
                             }
@@ -964,7 +964,7 @@ $CIDRAM['DNS-Reverse-Forward'] = function ($Domains, $Friendly, $Options = []) u
     }
 
     /** It's a fake; Block it. */
-    $Reason = $CIDRAM['ParseVars'](['ua' => $Friendly], $CIDRAM['lang']['fake_ua']);
+    $Reason = $CIDRAM['ParseVars'](['ua' => $Friendly], $CIDRAM['L10N']->getString('fake_ua'));
     $CIDRAM['BlockInfo']['ReasonMessage'] = $Reason;
     if (!empty($CIDRAM['BlockInfo']['WhyReason'])) {
         $CIDRAM['BlockInfo']['WhyReason'] .= ', ';
@@ -1005,7 +1005,7 @@ $CIDRAM['UA-IP-Match'] = function ($Expected, $Friendly, $Options = []) use (&$C
     }
 
     /** Nothing matched. Block it. */
-    $Reason = $CIDRAM['ParseVars'](['ua' => $Friendly], $CIDRAM['lang']['fake_ua']);
+    $Reason = $CIDRAM['ParseVars'](['ua' => $Friendly], $CIDRAM['L10N']->getString('fake_ua'));
     $CIDRAM['BlockInfo']['ReasonMessage'] = $Reason;
     if (!empty($CIDRAM['BlockInfo']['WhyReason'])) {
         $CIDRAM['BlockInfo']['WhyReason'] .= ', ';
@@ -1042,7 +1042,7 @@ $CIDRAM['Trigger'] = function ($Condition, $ReasonShort, $ReasonLong = '', $Defi
         return false;
     }
     if (!$ReasonLong) {
-        $ReasonLong = $CIDRAM['lang']['denied'];
+        $ReasonLong = $CIDRAM['L10N']->getString('denied');
     }
     if (is_array($DefineOptions) && !empty($DefineOptions)) {
         foreach ($DefineOptions as $CatKey => $CatValue) {
@@ -1310,7 +1310,7 @@ $CIDRAM['InitialiseCache'] = function () use (&$CIDRAM) {
         fclose($Handle);
         if (!file_exists($CIDRAM['Vault'] . 'cache.dat')) {
             header('Content-Type: text/plain');
-            die('[CIDRAM] ' . $CIDRAM['lang']['Error_WriteCache']);
+            die('[CIDRAM] ' . $CIDRAM['L10N']->getString('Error_WriteCache'));
         }
     } else {
         $CIDRAM['Cache'] = unserialize($CIDRAM['Cache']);

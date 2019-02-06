@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Custom rules file for some specific CIDRs (last modified: 2018.07.23).
+ * This file: Custom rules file for some specific CIDRs (last modified: 2019.02.06).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -38,11 +38,11 @@ $CIDRAM['RunParamResCache']['rules_specific.php'] = function ($Factors = [], $Fa
         }
 
         if (!$CIDRAM['CIDRAM_sapi']) {
-            $CIDRAM['BlockInfo']['ReasonMessage'] = $CIDRAM['lang']['ReasonMessage_Generic'];
+            $CIDRAM['BlockInfo']['ReasonMessage'] = $CIDRAM['L10N']->getString('ReasonMessage_Generic');
             if (!empty($CIDRAM['BlockInfo']['WhyReason'])) {
                 $CIDRAM['BlockInfo']['WhyReason'] .= ', ';
             }
-            $CIDRAM['BlockInfo']['WhyReason'] .= $CIDRAM['lang']['Short_Generic'] . $LN;
+            $CIDRAM['BlockInfo']['WhyReason'] .= $CIDRAM['L10N']->getString('Short_Generic') . $LN;
             if (!empty($CIDRAM['BlockInfo']['Signatures'])) {
                 $CIDRAM['BlockInfo']['Signatures'] .= ', ';
             }
@@ -93,11 +93,11 @@ $CIDRAM['RunParamResCache']['rules_specific.php'] = function ($Factors = [], $Fa
     }
 
     if (!$CIDRAM['CIDRAM_sapi']) {
-        $CIDRAM['BlockInfo']['ReasonMessage'] = $CIDRAM['lang']['ReasonMessage_Cloud'];
+        $CIDRAM['BlockInfo']['ReasonMessage'] = $CIDRAM['L10N']->getString('ReasonMessage_Cloud');
         if (!empty($CIDRAM['BlockInfo']['WhyReason'])) {
             $CIDRAM['BlockInfo']['WhyReason'] .= ', ';
         }
-        $CIDRAM['BlockInfo']['WhyReason'] .= $CIDRAM['lang']['Short_Cloud'] . $LN;
+        $CIDRAM['BlockInfo']['WhyReason'] .= $CIDRAM['L10N']->getString('Short_Cloud') . $LN;
         if (!empty($CIDRAM['BlockInfo']['Signatures'])) {
             $CIDRAM['BlockInfo']['Signatures'] .= ', ';
         }

@@ -1,0 +1,65 @@
+##\
+# This file is a part of the CIDRAM package.
+# Homepage: https://cidram.github.io/
+#
+# CIDRAM COPYRIGHT 2016 and beyond by Caleb Mazalevskis (Maikuolan).
+#
+# License: GNU/GPLv2
+# @see LICENSE.txt
+#
+# This file: Vietnamese language data for CLI (last modified: 2019.02.04).
+##/
+
+CLI_H: |
+ Trợ giúp cho chế độ CLI của CIDRAM.
+ ---
+ Sử dụng:
+ php.exe /cidram/loader.php -Dấu (Đầu vào)
+ ---
+ Dấu: -h Hiển thị thông tin trợ giúp này.
+      -c Kiểm tra nếu một địa chỉ IP bị chặn bởi các tập tin chữ ký của CIDRAM.
+      -g Tạo ra CIDR từ một địa chỉ IP.
+      -v Kiểm tra tập tin chữ ký.
+      -f Hãy sửa tập tin chữ ký.
+ ---
+ Các ví dụ:
+ php.exe /cidram/loader.php -c 192.168.0.0
+ php.exe /cidram/loader.php -c 2001:db8::
+ php.exe /cidram/loader.php -g 1.2.3.4
+ php.exe /cidram/loader.php -g ::1
+ php.exe /cidram/loader.php -f signatures.dat
+ php.exe /cidram/loader.php -v signatures.dat
+ ---
+CLI_Bad_IP: " Các địa chỉ IP được chỉ định, "{IP}", không phải là một địa chỉ IPv4 hoặc IPv6 hợp lệ!"
+CLI_F_Finished: "Công cụ cho sửa chửa chữ ký đã hoàn thành xong, với %s thay đổi trong %s hoạt động (%s)."
+CLI_F_Started: "Công cụ cho sửa chửa chữ ký đã bắt đầu (%s)."
+CLI_IP_Blocked: " Các địa chỉ IP được chỉ định, "{IP}", *LÀ* bị chặn bởi một hay nhiều tập tin chữ ký của CIDRAM."
+CLI_IP_Not_Blocked: " Các địa chỉ IP được chỉ định, "{IP}", *KHÔNG* bị chặn bởi một hay nhiều tập tin chữ ký của CIDRAM."
+CLI_VF_Empty: "Tập tin chữ ký xác định là rỗng hoặc không tồn tại."
+CLI_VF_Level_0: "Thông báo"
+CLI_VF_Level_1: "Cảnh báo"
+CLI_VF_Level_2: "Lỗi"
+CLI_VF_Level_3: "Lỗi nghiêm trọng"
+CLI_VL_CC: "L%s: Điều khiển nhân vật được phát hiện; Điều này có thể chỉ ra tham nhũng và nên được điều tra."
+CLI_VL_Duplicated: "L%s: Chữ ký "%s" được nhân đôi (%s đếm)!"
+CLI_VL_Expiry: "L%s: Gắn thẻ hết hạn không chứa một ngày hay thời gian ISO 8601 hợp lệ!"
+CLI_VL_Invalid: "L%s: "%s" *KHÔNG* phải là một địa chỉ IPv4 hay IPv6 hợp lệ!"
+CLI_VL_L120: "L%s: Chiều dài dòng là lớn hơn 120 byte; Chiều dài dòng nên được giới hạn đến 120 byte cho dễ đọc tối ưu."
+CLI_VL_Mergeable: "L%s và L%s là giống hệt nhau, và như vậy, có thể hợp nhất."
+CLI_VL_Missing: "L%s: [Function] vắng mặt; Chữ ký dường như là không đầy đủ."
+CLI_VL_Nontriggerable: "L%s: "%s" không thể được kích hoạt! Cơ sở của nó không phù hợp đầu phạm vi của nó! Hãy thử thay thế nó bằng "%s"."
+CLI_VL_Nontriggerable_Range: "L%s: "%s" không thể được kích hoạt! "%s" không phải là một phạm vi hợp lệ!"
+CLI_VL_Origin: "L%s: Gắn thẻ xuất xứ không chứa mã "ISO 3166-1 Alpha-2" hợp lệ!"
+CLI_VL_Subordinate: "L%s: "%s" là cấp dưới của một chữ ký đã tồn tại "%s"."
+CLI_VL_Superset: "L%s: "%s" là cấp trên của một chữ ký đã tồn tại "%s"."
+CLI_VL_Syntax: "L%s: Không cú pháp chính xác."
+CLI_VL_Tabs: "L%s: Tab được phát hiện; Không gian được ưa thích hơn các tab cho dễ đọc tối ưu."
+CLI_VL_Tags: "L%s: Gắn thẻ phần lớn hơn 20 byte; Gắn thẻ phần phải rõ ràng và súc tích."
+CLI_VL_Unrecognised: "L%s: [Function] không xác định; Chữ ký có thể bị phá vỡ."
+CLI_VL_Whitespace: "L%s: Khoảng trắng dư thừa dấu phát hiện trên dòng này."
+CLI_VL_YAML: "L%s: Dữ liệu tương tự như YAML đã được phát hiện, nhưng không thể xử lý."
+CLI_V_CRLF: "CR/CRLF phát hiện trong tập tin chữ ký; Đây là phép và sẽ không gây ra vấn đề, nhưng LF được ưa thích."
+CLI_V_Finished: "Công cụ cho xác nhận chữ ký đã hoàn thành xong (%s). Nếu không cảnh báo hay lỗi đã xuất hiện, tập tin chữ ký của bạn có lẽ là tốt. :-)"
+CLI_V_LineByLine: "Công cụ cho xác nhận từng dòng đã bắt đầu."
+CLI_V_Started: "Công cụ cho xác nhận chữ ký đã bắt đầu (%s)."
+CLI_V_Terminal_LF: "Tập tin chữ ký nên chấm dứt với một ngắt dòng LF."

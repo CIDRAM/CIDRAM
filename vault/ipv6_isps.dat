@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_isps.dat
 
-# Version: 2019.29.388
-# Last modified: 2019.01.30
+# Version: 2019.39.533
+# Last modified: 2019.02.08
 
 
 # ---
@@ -220,11 +220,9 @@ Tag: CH-NET S.R.L
 
 
 # ASN 7743 ("JPMorgan Chase & Co").
-# Updated: 2018.08.22
+# Updated: 2019.02.08
 
-2620:11:1::/48 Deny Generic
-2620:11:2::/47 Deny Generic
-2620:11:4::/48 Deny Generic
+2620:11::/45 Deny Generic
 Origin: US
 Tag: JPMorgan Chase & Co
 
@@ -1121,10 +1119,10 @@ recaptcha:
 # the potential impact of false positives. A balanced approach for those that may expect some such traffic, but not a
 # lot of it, would be to not ignore this section, but to ensure that the reCAPTCHA feature is enabled in their
 # configuration.
-# %Listed, Google Malware Dashboard: 0.38%.
-# %Listed, abuseat.org (CBL-Listed): 1.87%.
-# Stop Forum Spam (SFS) listings: 14,859.
-# Updated: 2017.12.28 / Checked: 2018.08.21
+# %Listed, Google Malware Dashboard: 0.24%.
+# %Listed, abuseat.org (CBL-Listed): 2.44%.
+# Stop Forum Spam (SFS) listings: 13,562.
+# Updated: 2017.12.28 / Checked: 2019.02.08
 
 2001:df2:d900::/48 Deny Generic
 2001:df6:1e00::/48 Deny Generic
@@ -1553,9 +1551,9 @@ Tag: SoftLayer Spam ISPs
 # Spamming getting significantly worse!
 # Moved from cloud services to spammy ISPs signature files due to being a multi-play network.
 # Also provides internet connectivity in some parts of France.
-# %Listed, Google Malware Dashboard: 1.84% (12322), 0.29% (AS12876).
-# Stop Forum Spam (SFS) listings: 890 (12322), 591,479 (AS12876).
-# Updated: 2018.06.24 / Checked: 2018.09.18
+# %Listed, Google Malware Dashboard: 1.31% (12322), 0.30% (AS12876).
+# Stop Forum Spam (SFS) listings: 1,396 (12322), 491,787 (AS12876).
+# Updated: 2018.06.24 / Checked: 2019.02.02
 
 2001:bc8::/32 Deny Spam
 2a01:e00::/26 Deny Spam

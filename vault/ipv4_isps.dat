@@ -1,8 +1,8 @@
 # IPv4 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv4_isps.dat
 
-# Version: 2019.29.388
-# Last modified: 2019.01.30
+# Version: 2019.39.533
+# Last modified: 2019.02.08
 
 
 # ---
@@ -90,9 +90,9 @@ recaptcha:
 
 
 # ASN 26658 ("HT").
-# %Listed, Google Malware Dashboard: 2.21%.
-# Stop Forum Spam (SFS) listings: 2,156.
-# Updated: 2018.08.22
+# %Listed, Google Malware Dashboard: 0.94%.
+# Stop Forum Spam (SFS) listings: 2,467.
+# Updated: 2018.08.22 / Checked: 2019.02.08
 
 14.192.20.0/22 Deny Generic
 27.0.156.0/22 Deny Generic
@@ -618,13 +618,12 @@ Tag: AS51559
 
 
 # ASN 50810 ("Mobin Net Communication Company (Private Joint Stock)").
-# %Listed, abuseat.org (CBL-Listed): 1.59%.
-# Stop Forum Spam (SFS) listings: 82.
-# Updated: 2018.08.22
+# %Listed, abuseat.org (CBL-Listed): 3.02%.
+# Stop Forum Spam (SFS) listings: 342.
+# Updated: 2018.08.22 / Checked: 2019.02.08
 
 2.182.160.0/20 Deny Spam
 2.183.128.0/20 Deny Spam
-2.183.184.0/21 Deny Spam
 2.183.202.0/23 Deny Spam
 2.188.32.0/21 Deny Spam
 5.52.0.0/16 Deny Spam
@@ -642,7 +641,8 @@ Tag: AS51559
 89.43.12.0/23 Deny Spam
 89.45.48.0/20 Deny Spam
 91.133.128.0/17 Deny Spam
-92.114.16.0/20 Deny Spam
+92.114.16.0/22 Deny Spam
+92.114.24.0/21 Deny Spam
 93.117.176.0/20 Deny Spam
 94.101.128.0/20 Deny Spam
 94.101.240.0/20 Deny Spam
@@ -1223,7 +1223,7 @@ Tag: CH-NET S.R.L
 
 
 # ASN 7743 ("JPMorgan Chase & Co").
-# Updated: 2018.03.31 / Checked: 2018.08.22
+# Updated: 2018.03.31 / Checked: 2019.02.08
 
 159.53.0.0/16 Deny Generic
 198.27.1.0/24 Deny Generic
@@ -1982,8 +1982,9 @@ Tag: Zyztm
 
 
 # ASN 197712 ("10dencehispahard, S.L").
-# %Listed, Google Malware Dashboard: 0.61%.
-# Updated: 2018.08.25
+# %Listed, Google Malware Dashboard: 0.24%.
+# Stop Forum Spam (SFS) listings: 3.
+# Updated: 2018.08.25 / Checked: 2019.02.08
 
 46.16.56.0/21 Deny Generic
 134.0.8.0/21 Deny Generic
@@ -5977,32 +5978,53 @@ recaptcha:
 # the potential impact of false positives. A balanced approach for those that may expect some such traffic, but not a
 # lot of it, would be to not ignore this section, but to ensure that the reCAPTCHA feature is enabled in their
 # configuration.
-# %Listed, Google Malware Dashboard: 0.38%.
-# %Listed, abuseat.org (CBL-Listed): 1.87%.
-# Stop Forum Spam (SFS) listings: 14,859.
-# Updated: 2018.08.21
+# %Listed, Google Malware Dashboard: 0.24%.
+# %Listed, abuseat.org (CBL-Listed): 2.44%.
+# Stop Forum Spam (SFS) listings: 13,562.
+# Updated: 2019.02.08
 
+80.81.192.0/22 Deny Generic
+Origin: DE
+195.66.224.0/22 Deny Generic
+Origin: GB
+103.231.152.0/22 Deny Generic
+Origin: HK
+103.203.158.0/23 Deny Generic
+119.27.63.0/24 Deny Generic
+203.190.230.0/24 Deny Generic
+210.171.224.0/23 Deny Generic
+210.173.176.0/24 Deny Generic
+218.100.6.0/23 Deny Generic
+Origin: JP
+103.12.160.0/22 Deny Generic
+Origin: KH
+27.111.228.0/22 Deny Generic
+103.16.102.0/23 Deny Generic
+Origin: SG
 1.52.0.0/14 Deny Generic
 42.112.0.0/13 Deny Generic
 43.239.148.0/22 Deny Generic
-43.239.223.0/24 Deny Generic
+43.239.222.0/23 Deny Generic
 45.125.239.0/24 Deny Generic
 58.186.0.0/15 Deny Generic
-103.17.88.0/24 Deny Generic
 103.35.64.0/22 Deny Generic
 103.39.92.0/22 Deny Generic
 103.47.192.0/23 Deny Generic
 103.53.170.0/23 Deny Generic
+103.72.96.0/22 Deny Generic
 103.74.120.0/22 Deny Generic
 103.78.93.0/24 Deny Generic
 103.81.84.0/22 Deny Generic
 103.82.192.0/22 Deny Generic
 103.90.227.0/24 Deny Generic
 103.102.128.0/22 Deny Generic
+103.110.84.0/22 Deny Generic
+103.121.88.0/22 Deny Generic
 103.200.22.0/23 Deny Generic
-103.205.107.0/24 Deny Generic
+103.205.104.0/22 Deny Generic
 103.216.120.0/22 Deny Generic
 103.221.220.0/22 Deny Generic
+103.253.90.0/23 Deny Generic
 113.22.0.0/16 Deny Generic
 113.23.0.0/17 Deny Generic
 118.68.0.0/14 Deny Generic
@@ -6011,6 +6033,7 @@ recaptcha:
 183.81.0.0/17 Deny Generic
 203.191.8.0/21 Deny Generic
 210.245.0.0/17 Deny Generic
+218.100.10.0/24 Deny Generic
 Origin: VN
 Tag: CFPT
 ---
@@ -9364,9 +9387,9 @@ Tag: SoftLayer Spam ISPs
 # Spamming getting significantly worse!
 # Moved from cloud services to spammy ISPs signature files due to being a multi-play network.
 # Also provides internet connectivity in some parts of France.
-# %Listed, Google Malware Dashboard: 1.84% (12322), 0.29% (AS12876).
-# Stop Forum Spam (SFS) listings: 890 (12322), 591,479 (AS12876).
-# Updated: 2018.06.24 / Checked: 2018.09.18
+# %Listed, Google Malware Dashboard: 1.31% (12322), 0.30% (AS12876).
+# Stop Forum Spam (SFS) listings: 1,396 (12322), 491,787 (AS12876).
+# Updated: 2018.06.24 / Checked: 2019.02.02
 
 51.15.0.0/16 Deny Spam
 51.158.0.0/15 Deny Spam

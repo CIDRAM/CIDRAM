@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6.dat
 
-# Version: 2019.37.524
-# Last modified: 2019.02.07
+# Version: 2019.39.533
+# Last modified: 2019.02.09
 
 
 # ---
@@ -77,11 +77,10 @@ Tag: CST-NET
 
 
 # ASN 46573 ("Global Frag Networks").
-# %Listed, Google Malware Dashboard: 3.09%.
-# Stop Forum Spam (SFS) listings: 379.
-# Updated: 2018.08.13
+# %Listed, Google Malware Dashboard: 2.08%.
+# Stop Forum Spam (SFS) listings: 281.
+# Updated: 2019.02.09
 
-2401:2c0:1::/48 Deny Cloud
 2604:d180::/32 Deny Cloud
 Origin: US
 Tag: Global Frag Networks
@@ -4740,9 +4739,9 @@ Tag: UK Dedicated Servers
 
 
 # ASN 44812 ("IT Expert LLC").
-# %Listed, Google Malware Dashboard: 0.59%.
-# Stop Forum Spam (SFS) listings: 277.
-# Updated: 2018.08.13
+# %Listed, Google Malware Dashboard: 0.64%.
+# Stop Forum Spam (SFS) listings: 412.
+# Updated: 2019.02.09
 
 2a07:ac80::/29 Deny Cloud
 2a0b:2d84::/32 Deny Cloud
@@ -4761,11 +4760,11 @@ Tag: INTERNET CZ, a.s
 
 
 # ASN 202023 ("LLHost Inc").
-# Stop Forum Spam (SFS) listings: 2.
-# Updated: 2018.08.13
+# Stop Forum Spam (SFS) listings: 1.
+# Updated: 2019.02.09
 
 2a04:bc40:1dc1::/48 Deny Cloud
-2a04:bc40:1dc3::/48 Deny Cloud
+2a04:bc40:1dc2::/47 Deny Cloud
 2a04:bc40:1dc4::/46 Deny Cloud
 2a04:bc40:2dc1::/48 Deny Cloud
 2a04:bc40:2dc2::/47 Deny Cloud
@@ -5071,7 +5070,7 @@ Tag: Colocation Australia
 
 
 # ASN 6295 ("Green House Data, Inc").
-# Updated: 2018.08.13
+# Updated: 2018.08.13 / Checked: 2019.02.09
 
 2607:8200:c000::/35 Deny Cloud
 2607:8200:e000::/36 Deny Cloud
@@ -5345,34 +5344,32 @@ Tag: Servers Australia
 
 
 # ASN 49981 ("WorldStream").
-# %Listed, Google Malware Dashboard: 1.50%.
-# Stop Forum Spam (SFS) listings: 9,939.
-# Updated: 2018.08.13
+# %Listed, Google Malware Dashboard: 1.23%.
+# Stop Forum Spam (SFS) listings: 2,356.
+# Updated: 2019.02.08
 
 2a03:69c0:100::/40 Deny Cloud
 Origin: FR
-2a02:f980::/29 Deny Cloud
 2a04:92c7:16::/48 Deny Cloud
-2a0a:acc0::/29 Deny Cloud
-2a0b:4e40::/29 Deny Cloud
-2a0d:de80::/29 Deny Cloud
 Origin: GB
 2001:16c0:fefe::/48 Deny Cloud
 Origin: IR
 2a00:7c80::/32 Deny Cloud
 2a06:3880::/29 Deny Cloud
 2a0a:1f41::/32 Deny Cloud
-2a0a:1f47::/32 Deny Cloud
 2a0c:ef00::/32 Deny Cloud
-2a0d:2402::/32 Deny Cloud
-2a0d:2405::/32 Deny Cloud
+2a0d:3ec0::/32 Deny Cloud
 Origin: NL
 2a06:d641::/32 Deny Cloud
 2a06:d645::/32 Deny Cloud
 2a06:d646::/32 Deny Cloud
 2a07:ca04::/32 Deny Cloud
+2a0b:2a80::/32 Deny Cloud
+2a0b:bd00::/31 Deny Cloud
 2a0c:2f40::/32 Deny Cloud
 2a0c:2f42::/32 Deny Cloud
+2a0c:c187::/32 Deny Cloud
+2a0d:e4c0::/32 Deny Cloud
 Origin: RU
 Tag: WorldStream
 
@@ -6128,3 +6125,26 @@ Tag: BelCloud
 2a00:17a0::/32 Deny Cloud
 Origin: UA
 Tag: Cosmonova LLC
+
+
+# ASN 54456 ("CloudAccess.net, LLC").
+# %Listed, Google Malware Dashboard: 0.10%.
+# Updated: 2019.02.08
+
+2607:1b00:1::/48 Deny Cloud
+2607:1b00:2::/47 Deny Cloud
+2607:1b00:10::/48 Deny Cloud
+2607:1b00:93b2::/48 Deny Cloud
+Origin: US
+Tag: CloudAccess.net
+
+
+# ASN 202053 ("UpCloud Ltd").
+# %Listed, Google Malware Dashboard: 0.06%.
+# Stop Forum Spam (SFS) listings: 712.
+# Updated: 2019.02.08
+
+2a04:3540::/30 Deny Cloud
+2a04:3544::/31 Deny Cloud
+Origin: FI
+Tag: UpCloud Ltd

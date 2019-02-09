@@ -158,6 +158,7 @@ File | Descrizione
 /vault/ | La vault cartella (contiene vari file).
 /vault/classes/ | Cartella delle classi. Contiene varie classi utilizzate da CIDRAM.
 /vault/classes/Maikuolan/ | Cartella delle classi. Contiene varie classi utilizzate da CIDRAM.
+/vault/classes/Maikuolan/L10N.php | Gestore di L10N.
 /vault/classes/Maikuolan/YAML.php | Gestore di YAML.
 /vault/classes/.htaccess | Un ipertesto accesso file (in questo caso, a proteggere di riservati file appartenente allo script da l'acceso di non autorizzate origini).
 /vault/classes/Aggregator.php | Aggregatore IP.
@@ -1511,4 +1512,4 @@ In alternativa, è disponibile una breve panoramica (non autorevole) di GDPR/DSG
 ---
 
 
-Ultimo Aggiornamento: 27 Gennaio 2019 (2019.01.27).
+Ultimo Aggiornamento: 6 Febbraio 2019 (2019.02.06).

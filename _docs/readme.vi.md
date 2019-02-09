@@ -158,6 +158,7 @@ Tập tin | Chi tiết
 /vault/ | Vault thư mục (chứa các tập tin khác nhau).
 /vault/classes/ | Thư mục lớp học. Chứa các lớp học khác nhau được sử dụng bởi CIDRAM.
 /vault/classes/Maikuolan/ | Thư mục lớp học. Chứa các lớp học khác nhau được sử dụng bởi CIDRAM.
+/vault/classes/Maikuolan/L10N.php | Tập tin cho xử lý L10N.
 /vault/classes/Maikuolan/YAML.php | Tập tin cho xử lý YAML.
 /vault/classes/.htaccess | Tập tin "hypertext access" / tập tin truy cập siêu văn bản (bảo vệ tập tin bí mật khỏi bị truy cập bởi nguồn không được ủy quyền).
 /vault/classes/Aggregator.php | Tập hợp IP.
@@ -1506,4 +1507,4 @@ Một số tài nguyên được đề xuất để tìm hiểu thêm thông tin
 ---
 
 
-Lần cuối cập nhật: 27 Tháng Một 2019 (2019.01.27).
+Lần cuối cập nhật: 6 Tháng Hai 2019 (2019.02.06).

@@ -158,6 +158,7 @@ Data | Deskripsi
 /vault/ | Direktori Vault (berisikan bermacam file).
 /vault/classes/ | Direktori kelas. Berisi berbagai kelas yang digunakan oleh CIDRAM.
 /vault/classes/Maikuolan/ | Direktori kelas. Berisi berbagai kelas yang digunakan oleh CIDRAM.
+/vault/classes/Maikuolan/L10N.php | Prosesor L10N.
 /vault/classes/Maikuolan/YAML.php | Prosesor YAML.
 /vault/classes/.htaccess | File akses hiperteks (pada instansi ini, untuk melindungi file-file sensitif dari skrip untuk diakses dari sumber yang tidak terautorisasi).
 /vault/classes/Aggregator.php | Agregator IP.
@@ -1506,4 +1507,4 @@ Beberapa sumber bacaan yang direkomendasikan untuk mempelajari informasi lebih l
 ---
 
 
-Terakhir Diperbarui: 27 Januari 2019 (2019.01.27).
+Terakhir Diperbarui: 6 Februari 2019 (2019.02.06).

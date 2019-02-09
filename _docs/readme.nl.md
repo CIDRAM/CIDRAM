@@ -158,6 +158,7 @@ Bestand | Beschrijving
 /vault/ | Vault bestandsmap (bevat verschillende bestanden).
 /vault/classes/ | Klasse bestandsmap. Bevat verschillende klassen die worden gebruikt door CIDRAM.
 /vault/classes/Maikuolan/ | Klasse bestandsmap. Bevat verschillende klassen die worden gebruikt door CIDRAM.
+/vault/classes/Maikuolan/L10N.php | L10N-handler.
 /vault/classes/Maikuolan/YAML.php | YAML-handler.
 /vault/classes/.htaccess | Een hypertext toegang bestand (in dit geval, om gevoelige bestanden die behoren tot het script te beschermen tegen toegang door niet-geautoriseerde bronnen).
 /vault/classes/Aggregator.php | IP-aggregator.
@@ -1514,4 +1515,4 @@ Als alternatief is er een kort (niet-gezaghebbende) overzicht van GDPR/DSGVO/AVG
 ---
 
 
-Laatste Bijgewerkt: 27 Januari 2019 (2019.01.27).
+Laatste Bijgewerkt: 6 Februari 2019 (2019.02.06).

@@ -471,6 +471,7 @@ CIDRAM можно обновлять вручную или через фронт
 - __[Applebot](https://discussions.apple.com/thread/7090135)__
 - __[Yandex (Яндекс)](https://yandex.com/support/webmaster/robot-workings/check-yandex-robots.xml)__
 - __[DuckDuckGo](https://duckduckgo.com/duckduckbot)__
+- __[SeznamBot](https://napoveda.seznam.cz/en/full-text-search/seznambot-crawler/)__
 
 Не совместимо (вызывает конфликты):
 - __[Mix.com](https://github.com/CIDRAM/CIDRAM/issues/80)__
@@ -1509,4 +1510,4 @@ CIDRAM не собирает и не обрабатывает какую-либ�
 ---
 
 
-Последнее обновление: 6 Февраль 2019 (2019.02.06).
+Последнее обновление: 14 Февраль 2019 (2019.02.14).

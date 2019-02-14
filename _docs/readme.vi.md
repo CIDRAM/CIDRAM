@@ -471,6 +471,7 @@ Giá trị | Nó tạo ra | Chi tiết
 - __[Applebot](https://discussions.apple.com/thread/7090135)__
 - __[Yandex (Яндекс)](https://yandex.com/support/webmaster/robot-workings/check-yandex-robots.xml)__
 - __[DuckDuckGo](https://duckduckgo.com/duckduckbot)__
+- __[SeznamBot](https://napoveda.seznam.cz/en/full-text-search/seznambot-crawler/)__
 
 Không tương thích (gây ra xung đột):
 - __[Mix.com](https://github.com/CIDRAM/CIDRAM/issues/80)__
@@ -1507,4 +1508,4 @@ Một số tài nguyên được đề xuất để tìm hiểu thêm thông tin
 ---
 
 
-Lần cuối cập nhật: 6 Tháng Hai 2019 (2019.02.06).
+Lần cuối cập nhật: 14 Tháng Hai 2019 (2019.02.14).

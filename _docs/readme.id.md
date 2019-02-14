@@ -471,6 +471,7 @@ Didukung sekarang:
 - __[Applebot](https://discussions.apple.com/thread/7090135)__
 - __[Yandex (Яндекс)](https://yandex.com/support/webmaster/robot-workings/check-yandex-robots.xml)__
 - __[DuckDuckGo](https://duckduckgo.com/duckduckbot)__
+- __[SeznamBot](https://napoveda.seznam.cz/en/full-text-search/seznambot-crawler/)__
 
 Tidak kompatibel (menyebabkan konflik):
 - __[Mix.com](https://github.com/CIDRAM/CIDRAM/issues/80)__
@@ -1507,4 +1508,4 @@ Beberapa sumber bacaan yang direkomendasikan untuk mempelajari informasi lebih l
 ---
 
 
-Terakhir Diperbarui: 6 Februari 2019 (2019.02.06).
+Terakhir Diperbarui: 14 Februari 2019 (2019.02.14).

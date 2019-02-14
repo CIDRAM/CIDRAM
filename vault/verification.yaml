@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Verification data for search engines and social media (last modified: 2019.02.03).
+# This file: Verification data for search engines and social media (last modified: 2019.02.14).
 ##/
 
 Search Engine Verification:
@@ -83,6 +83,13 @@ Search Engine Verification:
    - "54.208.102.37"
    - "107.20.237.51"
    - "107.21.1.8"
+ # https://napoveda.seznam.cz/en/full-text-search/seznambot-crawler/
+ SeznamBot:
+  Bypass Flag: "Flag-Bypass-SeznamBot-Check"
+  User Agent: "seznambot"
+  Closure: "DNS-Reverse-Forward"
+  Valid Domains:
+   - ".seznam.cz"
 
 Social Media Verification:
  # https://help.pinterest.com/en/articles/about-pinterest-crawler-0

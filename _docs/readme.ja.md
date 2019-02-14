@@ -471,6 +471,7 @@ PHPMailerをインストールしたら、CIDRAMコンフィギュレーショ�
 - __[Applebot](https://discussions.apple.com/thread/7090135)__
 - __[Yandex (Яндекс)](https://yandex.com/support/webmaster/robot-workings/check-yandex-robots.xml)__
 - __[DuckDuckGo](https://duckduckgo.com/duckduckbot)__
+- __[SeznamBot](https://napoveda.seznam.cz/en/full-text-search/seznambot-crawler/)__
 
 互換性がありません（競合を引き起こす）：
 - __[Mix.com](https://github.com/CIDRAM/CIDRAM/issues/80)__
@@ -1512,4 +1513,4 @@ CIDRAMは、マーケティングやアドバタイジング目的で情報を�
 ---
 
 
-最終アップデート：２０１９年２月６日。
+最終アップデート：２０１９年２月１４日。

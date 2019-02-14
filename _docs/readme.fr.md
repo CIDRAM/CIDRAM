@@ -471,6 +471,7 @@ Supporté actuellement :
 - __[Applebot](https://discussions.apple.com/thread/7090135)__
 - __[Yandex (Яндекс)](https://yandex.com/support/webmaster/robot-workings/check-yandex-robots.xml)__
 - __[DuckDuckGo](https://duckduckgo.com/duckduckbot)__
+- __[SeznamBot](https://napoveda.seznam.cz/en/full-text-search/seznambot-crawler/)__
 
 N'est pas compatible (provoque des conflits) :
 - __[Mix.com](https://github.com/CIDRAM/CIDRAM/issues/80)__
@@ -1513,4 +1514,4 @@ Alternativement, il y a un bref aperçu (non autorisé) de GDPR/DSGVO disponible
 ---
 
 
-Dernière mise à jour : 6 Février 2019 (2019.02.06).
+Dernière mise à jour : 14 Février 2019 (2019.02.14).

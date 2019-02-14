@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2019.02.05).
+ * This file: Front-end handler (last modified: 2019.02.14).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -1541,7 +1541,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && ($CIDRAM['FE']['Per
         'Meta' => $CIDRAM['Components']['Meta'],
         'RemoteMeta' => $CIDRAM['Components']['RemoteMeta'],
         'Remotes' => [],
-        'Dependencies' => [],
+        'Interdependent' => [],
         'Outdated' => [],
         'Verify' => [],
         'Out' => []
@@ -1643,19 +1643,16 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && ($CIDRAM['FE']['Per
                 $CIDRAM['PrepareExtendedDescription']($CIDRAM['Components']['ThisComponent'], $CIDRAM['Components']['Key']);
             }
             if (!$CIDRAM['Components']['ThisComponent']['StatClass']) {
-                if (
-                    !empty($CIDRAM['Components']['ThisComponent']['Latest']) &&
-                    $CIDRAM['VersionCompare'](
-                        $CIDRAM['Components']['ThisComponent']['Version'],
-                        $CIDRAM['Components']['ThisComponent']['Latest']
-                    )
-                ) {
+                if (!empty($CIDRAM['Components']['ThisComponent']['Latest']) && $CIDRAM['VersionCompare'](
+                    $CIDRAM['Components']['ThisComponent']['Version'],
+                    $CIDRAM['Components']['ThisComponent']['Latest']
+                )) {
                     $CIDRAM['Components']['ThisComponent']['Outdated'] = true;
                     if (
                         $CIDRAM['Components']['Key'] === 'l10n/' . $CIDRAM['Config']['general']['lang'] ||
                         $CIDRAM['Components']['Key'] === 'theme/' . $CIDRAM['Config']['template_data']['theme']
                     ) {
-                        $CIDRAM['Components']['Dependencies'][] = $CIDRAM['Components']['Key'];
+                        $CIDRAM['Components']['Interdependent'][] = $CIDRAM['Components']['Key'];
                     }
                     $CIDRAM['Components']['Outdated'][] = $CIDRAM['Components']['Key'];
                     $CIDRAM['Components']['ThisComponent']['RowClass'] = 'r';
@@ -1993,13 +1990,20 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && ($CIDRAM['FE']['Per
         $CIDRAM['ReadFile']($CIDRAM['GetAssetPath']('_updates.html'))
     ) . $CIDRAM['MenuToggle'];
 
-    /** Inject dependencies into update instructions for core package component. */
-    if (count($CIDRAM['Components']['Dependencies'])) {
-        $CIDRAM['FE']['FE_Content'] = str_replace('<input name="ID" type="hidden" value="CIDRAM" />',
-            '<input name="ID[]" type="hidden" value="' .
-            implode('" /><input name="ID[]" type="hidden" value="', $CIDRAM['Components']['Dependencies']) .
-            '" /><input name="ID[]" type="hidden" value="CIDRAM" />',
-        $CIDRAM['FE']['FE_Content']);
+    /** Inject interdependent components to each other's update instructions. */
+    if (count($CIDRAM['Components']['Interdependent'])) {
+        array_unshift($CIDRAM['Components']['Interdependent'], 'CIDRAM');
+        $CIDRAM['Components']['AllInter'] = '<input name="ID[]" type="hidden" value="' . implode(
+            '" /><input name="ID[]" type="hidden" value="',
+            $CIDRAM['Components']['Interdependent']
+        ) . '" />';
+        foreach ($CIDRAM['Components']['Interdependent'] as $CIDRAM['Components']['ThisInter']) {
+            $CIDRAM['FE']['FE_Content'] = str_replace(
+                '<input name="ID" type="hidden" value="' . $CIDRAM['Components']['ThisInter'] . '" />',
+                $CIDRAM['Components']['AllInter'],
+                $CIDRAM['FE']['FE_Content']
+            );
+        }
     }
 
     /** Send output. */

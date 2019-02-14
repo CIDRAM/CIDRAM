@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2019.02.07).
+ * This file: Front-end functions file (last modified: 2019.02.14).
  */
 
 /**
@@ -636,26 +636,29 @@ $CIDRAM['IPv6GetLast'] = function ($First, $Factor) {
 
 /** Fetch remote data (front-end updates page). */
 $CIDRAM['FetchRemote'] = function () use (&$CIDRAM) {
-    $CIDRAM['Components']['ThisComponent']['RemoteData'] = $CIDRAM['FECacheGet'](
-        $CIDRAM['FE']['Cache'],
+    $CIDRAM['Components']['ThisComponent']['RemoteData'] = '';
+    $CIDRAM['FetchRemote-ContextFree'](
+        $CIDRAM['Components']['ThisComponent']['RemoteData'],
         $CIDRAM['Components']['ThisComponent']['Remote']
     );
-    if (!$CIDRAM['Components']['ThisComponent']['RemoteData']) {
-        $CIDRAM['Components']['ThisComponent']['RemoteData'] = $CIDRAM['Request']($CIDRAM['Components']['ThisComponent']['Remote']);
-        if (
-            strtolower(substr($CIDRAM['Components']['ThisComponent']['Remote'], -2)) === 'gz' &&
-            substr($CIDRAM['Components']['ThisComponent']['RemoteData'], 0, 2) === "\x1f\x8b"
-        ) {
-            $CIDRAM['Components']['ThisComponent']['RemoteData'] = gzdecode($CIDRAM['Components']['ThisComponent']['RemoteData']);
+};
+
+/** Fetch remote data (context-free). */
+$CIDRAM['FetchRemote-ContextFree'] = function (&$RemoteData, &$Remote) use (&$CIDRAM) {
+    $RemoteData = $CIDRAM['FECacheGet']($CIDRAM['FE']['Cache'], $Remote);
+    if (!$RemoteData) {
+        $RemoteData = $CIDRAM['Request']($Remote);
+        if (strtolower(substr($Remote, -2)) === 'gz' && substr($RemoteData, 0, 2) === "\x1f\x8b") {
+            $RemoteData = gzdecode($RemoteData);
         }
-        if (empty($CIDRAM['Components']['ThisComponent']['RemoteData'])) {
-            $CIDRAM['Components']['ThisComponent']['RemoteData'] = '-';
+        if (empty($RemoteData)) {
+            $RemoteData = '-';
         }
         $CIDRAM['FECacheAdd'](
             $CIDRAM['FE']['Cache'],
             $CIDRAM['FE']['Rebuild'],
-            $CIDRAM['Components']['ThisComponent']['Remote'],
-            $CIDRAM['Components']['ThisComponent']['RemoteData'],
+            $Remote,
+            $RemoteData,
             $CIDRAM['Now'] + 3600
         );
     }
@@ -1477,33 +1480,11 @@ $CIDRAM['UpdatesHandler-Update'] = function ($ID) use (&$CIDRAM) {
         $CIDRAM['Components']['BytesRemoved'] = 0;
         $CIDRAM['Components']['TimeRequired'] = microtime(true);
         $CIDRAM['Components']['RemoteMeta'] = [];
-        $CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['RemoteData'] = $CIDRAM['FECacheGet'](
-            $CIDRAM['FE']['Cache'],
+        $CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['RemoteData'] = '';
+        $CIDRAM['FetchRemote-ContextFree'](
+            $CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['RemoteData'],
             $CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['Remote']
         );
-        if (!$CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['RemoteData']) {
-            $CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['RemoteData'] = $CIDRAM['Request'](
-                $CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['Remote']
-            );
-            if (
-                strtolower(substr($CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['Remote'], -2)) === 'gz' &&
-                substr($CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['RemoteData'], 0, 2) === "\x1f\x8b"
-            ) {
-                $CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['RemoteData'] = gzdecode(
-                    $CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['RemoteData']
-                );
-            }
-            if (empty($CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['RemoteData'])) {
-                $CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['RemoteData'] = '-';
-            }
-            $CIDRAM['FECacheAdd'](
-                $CIDRAM['FE']['Cache'],
-                $CIDRAM['FE']['Rebuild'],
-                $CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['Remote'],
-                $CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['RemoteData'],
-                $CIDRAM['Now'] + 3600
-            );
-        }
         $CIDRAM['UpdateFailed'] = false;
         if (
             substr($CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['RemoteData'], 0, 4) === "---\n" &&

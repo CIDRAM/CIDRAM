@@ -1,7 +1,7 @@
 ---
 CIDRAM:
  Name: CIDRAM
- Version: 1.11.0-DEV+19037309
+ Version: 1.11.0-DEV+19045724
  Minimum Required: 1.0.0
  Minimum Required PHP: 5.4.0
  Changelog: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/Changelog.txt
@@ -168,8 +168,8 @@ CIDRAM:
    - f82b848ae0f532ee63cff24c69bdf07b:17536
    - 095216bc177b88dc81c15c4d4e42bd49:877
    - 6333e24956c882f92e41b3c06b4088a6:996
-   - 897e6128918d074a923d686dcda46d01:181502
-   - 201cd8d5da34a83003a54adb6688187a:135631
+   - fb29560c8513a33257e233f83b446269:181740
+   - 8cdd5261c8460992c79ec8aa2677abf1:134039
    - 00edcea031c3b5220ef5a688450d3939:74042
    - ab56f0727e96920d88052d0726b811c1:5399
    - 8e03209e7fc6641b45094e584340feff:83
@@ -178,12 +178,12 @@ CIDRAM:
    - fa9133709bc1511b1532323772f474a7:14353
    - 522120f06a7597fff2d1388a7d77b18f:1120
    - 97723bb4089c67a849c00c40916627fc:2394
-   - 4f98a9ac1f9771cb8fe503ca9aa5076c:3413
+   - ede66ebc05cc4b7473dd58afab0034e0:3633
  Reannotate: components.dat
 IPv4:
  Extended Description: Default IPv4 signatures normally included with the main package. Blocks unwanted cloud services and non-human endpoints.
  False Positive Risk: Low
- Version: 2019.39.533
+ Version: 2019.45.724
  Minimum Required: 1.0.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
  Uninstallable: true
@@ -193,7 +193,7 @@ IPv4:
   To:
    - ipv4.dat
   Checksum:
-   - 18e4958f4689073b40d81ebd6a663b9210cd82ae:629707
+   - 6f256fbff2050a5ded760504cd6ed0b0799d98b5:634891
  Used with: ipv4
  Reannotate: components.dat
 IPv4-Bogons:
@@ -215,7 +215,7 @@ IPv4-Bogons:
 IPv4-ISPs:
  Extended Description: Default IPv4 signatures normally included with the main package. Blocks dangerous and spammy ISPs.
  False Positive Risk: Medium
- Version: 2019.39.533
+ Version: 2019.45.724
  Minimum Required: 1.0.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
  Uninstallable: true
@@ -225,7 +225,7 @@ IPv4-ISPs:
   To:
    - ipv4_isps.dat
   Checksum:
-   - 492db86da2cd607faef46a93226fbb5e837a9ee4:263367
+   - 21be4ba3563dbe05092cf99ca4366098380a39d4:263194
  Used with: ipv4
  Reannotate: components.dat
 IPv4-Other:
@@ -247,7 +247,7 @@ IPv4-Other:
 IPv6:
  Extended Description: Default IPv6 signatures normally included with the main package. Blocks unwanted cloud services and non-human endpoints.
  False Positive Risk: Low
- Version: 2019.39.533
+ Version: 2019.45.724
  Minimum Required: 1.0.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
  Uninstallable: true
@@ -257,7 +257,7 @@ IPv6:
   To:
    - ipv6.dat
   Checksum:
-   - 69583f0d5fa0caace8758ea5783363d99ad4ecee:159987
+   - 7dff40078f2f40fb07f13d7817a91fe219a39583:160073
  Used with: ipv6
  Reannotate: components.dat
 IPv6-Bogons:
@@ -334,7 +334,7 @@ l10n/en:
  Name: L10N: English
  Extended Description: English language data
  Version: 2019.36.654
- Minimum Required: 1.7.0
+ Minimum Required: 1.10.0
  Minimum Required PHP: 5.4.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
  Uninstallable: true
@@ -356,7 +356,7 @@ l10n/ar:
  Name: L10N: العربية
  Extended Description: ملفات اللغة العربية
  Version: 2019.36.654
- Minimum Required: 1.7.0
+ Minimum Required: 1.10.0
  Minimum Required PHP: 5.4.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
  Uninstallable: true
@@ -378,7 +378,7 @@ l10n/bn:
  Name: L10N: বাংলা
  Extended Description: বাংলা ভাষার তথ্য
  Version: 2019.36.654
- Minimum Required: 1.7.0
+ Minimum Required: 1.10.0
  Minimum Required PHP: 5.4.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
  Uninstallable: true
@@ -400,7 +400,7 @@ l10n/de:
  Name: L10N: Deutsche
  Extended Description: Deutsche Sprachdateien
  Version: 2019.36.654
- Minimum Required: 1.7.0
+ Minimum Required: 1.10.0
  Minimum Required PHP: 5.4.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
  Uninstallable: true
@@ -422,7 +422,7 @@ l10n/es:
  Name: L10N: Español
  Extended Description: Lingüísticos datos Español
  Version: 2019.36.654
- Minimum Required: 1.7.0
+ Minimum Required: 1.10.0
  Minimum Required PHP: 5.4.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
  Uninstallable: true
@@ -444,7 +444,7 @@ l10n/fr:
  Name: L10N: Français
  Extended Description: Linguistiques données en Français
  Version: 2019.36.654
- Minimum Required: 1.7.0
+ Minimum Required: 1.10.0
  Minimum Required PHP: 5.4.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
  Uninstallable: true
@@ -466,7 +466,7 @@ l10n/hi:
  Name: L10N: हिंदी
  Extended Description: हिंदी भाषा डाटा
  Version: 2019.36.654
- Minimum Required: 1.7.0
+ Minimum Required: 1.10.0
  Minimum Required PHP: 5.4.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
  Uninstallable: true
@@ -488,7 +488,7 @@ l10n/id:
  Name: L10N: Bahasa Indonesia
  Extended Description: File Bahasa Indonesia
  Version: 2019.36.654
- Minimum Required: 1.7.0
+ Minimum Required: 1.10.0
  Minimum Required PHP: 5.4.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
  Uninstallable: true
@@ -510,7 +510,7 @@ l10n/it:
  Name: L10N: Italiana
  Extended Description: Linguistici dati Italiana
  Version: 2019.36.654
- Minimum Required: 1.7.0
+ Minimum Required: 1.10.0
  Minimum Required PHP: 5.4.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
  Uninstallable: true
@@ -532,7 +532,7 @@ l10n/ja:
  Name: L10N: 日本語
  Extended Description: 日本語言語データ
  Version: 2019.36.654
- Minimum Required: 1.7.0
+ Minimum Required: 1.10.0
  Minimum Required PHP: 5.4.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
  Uninstallable: true
@@ -554,7 +554,7 @@ l10n/ko:
  Name: L10N: 한국어
  Extended Description: 한국어 언어 데이터
  Version: 2019.36.654
- Minimum Required: 1.7.0
+ Minimum Required: 1.10.0
  Minimum Required PHP: 5.4.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
  Uninstallable: true
@@ -576,7 +576,7 @@ l10n/nl:
  Name: L10N: Nederlandse
  Extended Description: Nederlandse lokalisatie
  Version: 2019.36.654
- Minimum Required: 1.7.0
+ Minimum Required: 1.10.0
  Minimum Required PHP: 5.4.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
  Uninstallable: true
@@ -598,7 +598,7 @@ l10n/no:
  Name: L10N: Norsk
  Extended Description: Norsk språkdata
  Version: 2019.36.654
- Minimum Required: 1.7.0
+ Minimum Required: 1.10.0
  Minimum Required PHP: 5.4.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
  Uninstallable: true
@@ -620,7 +620,7 @@ l10n/pt:
  Name: L10N: Português
  Extended Description: Linguagem dados Português
  Version: 2019.36.654
- Minimum Required: 1.7.0
+ Minimum Required: 1.10.0
  Minimum Required PHP: 5.4.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
  Uninstallable: true
@@ -642,7 +642,7 @@ l10n/ru:
  Name: L10N: Русский
  Extended Description: Русском языковые файлы
  Version: 2019.36.654
- Minimum Required: 1.7.0
+ Minimum Required: 1.10.0
  Minimum Required PHP: 5.4.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
  Uninstallable: true
@@ -664,7 +664,7 @@ l10n/sv:
  Name: L10N: Svenska
  Extended Description: Svenska språkdata
  Version: 2019.36.654
- Minimum Required: 1.7.0
+ Minimum Required: 1.10.0
  Minimum Required PHP: 5.4.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
  Uninstallable: true
@@ -686,7 +686,7 @@ l10n/th:
  Name: L10N: ภาษาไทย
  Extended Description: ข้อมูลภาษาไทย
  Version: 2019.36.654
- Minimum Required: 1.7.0
+ Minimum Required: 1.10.0
  Minimum Required PHP: 5.4.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
  Uninstallable: true
@@ -708,7 +708,7 @@ l10n/tr:
  Name: L10N: Türkçe
  Extended Description: Türkçe dili verileri
  Version: 2019.36.654
- Minimum Required: 1.7.0
+ Minimum Required: 1.10.0
  Minimum Required PHP: 5.4.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
  Uninstallable: true
@@ -730,7 +730,7 @@ l10n/ur:
  Name: L10N: ‏اردو‏
  Extended Description: ‏اردو‏ زبان فائلوں
  Version: 2019.36.654
- Minimum Required: 1.7.0
+ Minimum Required: 1.10.0
  Minimum Required PHP: 5.4.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
  Uninstallable: true
@@ -752,7 +752,7 @@ l10n/vi:
  Name: L10N: Tiếng Việt
  Extended Description: Dữ liệu tiếng Việt
  Version: 2019.36.654
- Minimum Required: 1.7.0
+ Minimum Required: 1.10.0
  Minimum Required PHP: 5.4.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
  Uninstallable: true
@@ -774,7 +774,7 @@ l10n/zh-TW:
  Name: L10N: 中文（傳統）
  Extended Description: 中文（傳統）語言數據
  Version: 2019.36.654
- Minimum Required: 1.7.0
+ Minimum Required: 1.10.0
  Minimum Required PHP: 5.4.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
  Uninstallable: true
@@ -796,7 +796,7 @@ l10n/zh:
  Name: L10N: 中文（简体）
  Extended Description: 中文（简体）语言数据
  Version: 2019.36.654
- Minimum Required: 1.7.0
+ Minimum Required: 1.10.0
  Minimum Required PHP: 5.4.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
  Uninstallable: true

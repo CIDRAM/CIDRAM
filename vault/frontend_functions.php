@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2019.02.14).
+ * This file: Front-end functions file (last modified: 2019.02.23).
  */
 
 /**
@@ -1136,7 +1136,6 @@ $CIDRAM['GetAssetPath'] = function ($Asset, $CanFail = false) use (&$CIDRAM) {
  * return int Warning level.
  */
 $CIDRAM['VersionWarning'] = function ($Version = PHP_VERSION) use (&$CIDRAM) {
-    $Date = date('Y.n.j', $CIDRAM['Now']);
     $Level = 0;
     $Minor = substr($Version, 0, 4);
     if (!empty($CIDRAM['ForceVersionWarning']) || $CIDRAM['VersionCompare']($Version, '5.6.38') || substr($Version, 0, 2) === '6.' || (
@@ -2784,21 +2783,7 @@ $CIDRAM['AuxGenerateFEData'] = function () use (&$CIDRAM) {
     $Output = '';
 
     /** Potential sources. */
-    $Sources = preg_replace('~(?: | )?(?:：|:) ?$~', '', [
-        'IPAddr' => $CIDRAM['L10N']->getString('field_ipaddr'),
-        'IPAddrResolved' => $CIDRAM['L10N']->getString('field_ipaddr_resolved'),
-        'Query' => $CIDRAM['L10N']->getString('field_query'),
-        'Referrer' => $CIDRAM['L10N']->getString('field_referrer'),
-        'UA' => $CIDRAM['L10N']->getString('field_ua'),
-        'UALC' => $CIDRAM['L10N']->getString('field_ualc'),
-        'SignatureCount' => $CIDRAM['L10N']->getString('field_sigcount'),
-        'Signatures' => $CIDRAM['L10N']->getString('field_sigref'),
-        'WhyReason' => $CIDRAM['L10N']->getString('field_whyreason'),
-        'ReasonMessage' => $CIDRAM['L10N']->getString('field_reasonmessage'),
-        'rURI' => $CIDRAM['L10N']->getString('field_rURI'),
-        'Request_Method' => $CIDRAM['L10N']->getString('field_Request_Method'),
-        'Hostname' => $CIDRAM['L10N']->getString('field_hostname')
-    ]);
+    $Sources = preg_replace('~(?: | )?(?:：|:) ?$~', '', $CIDRAM['SourcesL10N']);
 
     /** Potential modes. */
     static $Modes = ['Whitelist', 'Greylist', 'Block', 'Bypass'];

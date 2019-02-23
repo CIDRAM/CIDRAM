@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2019.02.14).
+ * This file: Front-end handler (last modified: 2019.02.23).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -3240,8 +3240,8 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'aux' && $CIDRAM['FE']['Permissi
         $CIDRAM['FE']['optActByp'] = sprintf($CIDRAM['L10N']->getString('label_aux_menu_action'), $CIDRAM['L10N']->getString('label_aux_actByp'));
         $CIDRAM['FE']['optActLog'] = sprintf($CIDRAM['L10N']->getString('label_aux_menu_action'), $CIDRAM['L10N']->getString('label_aux_actLog'));
 
-        /** Populate sources. */
-        $CIDRAM['FE']['conSources'] = $CIDRAM['GenerateOptions']([
+        /** Fetch sources L10N fields. */
+        $CIDRAM['SourcesL10N'] = [
             'IPAddr' => $CIDRAM['L10N']->getString('field_ipaddr'),
             'IPAddrResolved' => $CIDRAM['L10N']->getString('field_ipaddr_resolved'),
             'Query' => $CIDRAM['L10N']->getString('field_query'),
@@ -3255,12 +3255,18 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'aux' && $CIDRAM['FE']['Permissi
             'rURI' => $CIDRAM['L10N']->getString('field_rURI'),
             'Request_Method' => $CIDRAM['L10N']->getString('field_Request_Method'),
             'Hostname' => $CIDRAM['L10N']->getString('field_hostname')
-        ], '~(?: | )?(?:：|:) ?$~');
+        ];
+
+        /** Populate sources. */
+        $CIDRAM['FE']['conSources'] = $CIDRAM['GenerateOptions']($CIDRAM['SourcesL10N'], '~(?: | )?(?:：|:) ?$~');
 
         /** Process auxiliary rules. */
         $CIDRAM['FE']['Data'] = file_exists($CIDRAM['Vault'] . 'auxiliary.yaml') ?
             $CIDRAM['AuxGenerateFEData']() :
             '        <tr><td class="h4f" colspan="2"><div class="s">' . $CIDRAM['L10N']->getString('response_aux_none') . "</div></td></tr>";
+
+        /** Cleanup. */
+        unset($CIDRAM['SourcesL10N']);
 
         /** Parse output. */
         $CIDRAM['FE']['FE_Content'] = $CIDRAM['ParseVars'](

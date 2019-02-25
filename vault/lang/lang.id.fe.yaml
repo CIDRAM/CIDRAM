@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Indonesian language data for the front-end (last modified: 2019.02.04).
+# This file: Indonesian language data for the front-end (last modified: 2019.02.25).
 ##/
 
 Extended Description Bypasses: "File untuk bypass tanda tangan standar yang biasanya disertakan dengan paket utama."
@@ -410,23 +410,41 @@ warning_php_2: "Versi PHP Anda sangat rentan! Memperbarui sangat dianjurkan!"
 warning_signatures_1: "Tidak ada file tanda tangan yang aktif!"
 
 info_some_useful_links: |
- Beberapa link yang berguna:<ul>
-       <li><a href="https://github.com/CIDRAM/CIDRAM/issues">Masalah CIDRAM @ GitHub</a> – Halaman masalah untuk CIDRAM (dukungan, bantuan, dll).</li>
-       <li><a href="https://wordpress.org/plugins/cidram/">CIDRAM @ WordPress.org</a> – Plugin WordPress untuk CIDRAM.</li>
-       <li><a href="https://bitbucket.org/macmathan/blocklists">macmathan/blocklists</a> – Berisi daftar blok opsional dan modul untuk CIDRAM seperti untuk memblokir bot berbahaya, negara yang tidak diinginkan, peramban yang ketinggalan jaman, dll.</li>
-       <li><a href="https://www.facebook.com/groups/2204685680/">Global PHP Group @ Facebook</a> – Sumber belajar dan diskusi PHP.</li>
-       <li><a href="https://php.earth/">PHP.earth</a> – Sumber belajar dan diskusi PHP.</li>
-       <li><a href="https://bgp.he.net/">Hurricane Electric BGP Toolkit</a> – Dapatkan CIDRs dari ASN, menentukan hubungan ASN, menemukan ASN berdasarkan nama jaringan, dll.</li>
-       <li><a href="https://www.stopforumspam.com/forum/">Forum @ Stop Forum Spam</a> – Forum diskusi yang berguna tentang menghentikan spam forum.</li>
-       <li><a href="https://radar.qrator.net/">Radar oleh Qrator</a> – Alat yang berguna untuk memeriksa konektivitas ASN serta berbagai informasi lainnya tentang ASN.</li>
-       <li><a href="http://www.ipdeny.com/ipblocks/">Blok negara IP dari IPdeny</a> – Sebuah layanan yang fantastis dan akurat untuk menghasilkan tanda tangan negara-lebar.</li>
-       <li><a href="https://www.google.com/transparencyreport/safebrowsing/malware/">Google Malware Dashboard</a> – Menampilkan laporan tentang tingkat infeksi malware untuk ASN.</li>
-       <li><a href="https://www.spamhaus.org/statistics/botnet-asn/">Proyek Spamhaus</a> – Menampilkan laporan tentang tingkat infeksi botnet untuk ASN.</li>
-       <li><a href="https://www.abuseat.org/public/asn.html">Daftar Pemblokiran Komposit dari Abuseat.org</a> – Menampilkan laporan tentang tingkat infeksi botnet untuk ASN.</li>
-       <li><a href="https://abuseipdb.com/">AbuseIPDB</a> – Mempertahankan database IP berbahaya dikenal; Menyediakan API untuk memeriksa dan melaporkan IP.</li>
-       <li><a href="https://www.megarbl.net/index.php">MegaRBL.net</a> – Mempertahankan daftar spammer dikenal; Berguna untuk memeriksa aktivitas spam dari IP/ASN.</li>
-       <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">Tabel Kerentanan</a> – Mencantumkan berbagai versi dari paket-paket yang aman dan tidak aman (HHVM, PHP, phpMyAdmin, Python, dll).</li>
-       <li><a href="https://maikuolan.github.io/Compatibility-Charts/">Tabel Kompatibilitas</a> – Mencantumkan informasi kompatibilitas untuk berbagai paket (CIDRAM, phpMussel, dll).</li>
+ Beberapa link yang berguna:<br />
+ <ul class="pieul">
+       <li><span class="comCat" style="cursor:pointer">Alat, sumber daya, dll untuk CIDRAM.</span>
+         <ul class="comSub">
+           <li><a href="https://github.com/CIDRAM/CIDRAM/issues">Masalah CIDRAM @ GitHub</a> – Halaman masalah untuk CIDRAM (dukungan, bantuan, dll).</li>
+           <li><a href="https://wordpress.org/plugins/cidram/">CIDRAM @ WordPress.org</a> – Plugin WordPress untuk CIDRAM.</li>
+           <li><a href="https://bitbucket.org/macmathan/blocklists">macmathan/blocklists</a> – Berisi daftar blok opsional dan modul untuk CIDRAM seperti untuk memblokir bot berbahaya, negara yang tidak diinginkan, peramban yang ketinggalan jaman, dll.</li>
+           <li><a href="https://github.com/CIDRAM/CIDRAM-Extras">CIDRAM/CIDRAM-Extras</a> – Berbagai tambahan.</li>
+         </ul>
+       </li>
+       <li><span class="comCat" style="cursor:pointer">Grup, forum, komunitas, dll.</span>
+         <ul class="comSub">
+           <li><a href="https://www.facebook.com/groups/2204685680/">PHP.earth @ Facebook</a> – Sumber belajar dan diskusi PHP.</li>
+           <li><a href="https://www.stopforumspam.com/forum/">Forum @ Stop Forum Spam</a> – Forum diskusi yang berguna tentang menghentikan spam forum.</li>
+         </ul>
+       <li><span class="comCat" style="cursor:pointer">Alat, sumber daya, layanan, dll bermanfaat lainnya.</span>
+         <ul class="comSub">
+           <li><a href="https://www.stopforumspam.com/">Stop Forum Spam</a> – Mempertahankan basis data spammer forum yang dikenal. Berguna untuk melindungi situs web dan forum terhadap spammer.</li>
+           <li><a href="https://bgp.he.net/">Hurricane Electric BGP Toolkit</a> – Dapatkan CIDRs dari ASN, menentukan hubungan ASN, menemukan ASN berdasarkan nama jaringan, dll.</li>
+           <li><a href="https://radar.qrator.net/">Radar oleh Qrator</a> – Alat yang berguna untuk memeriksa konektivitas ASN serta berbagai informasi lainnya tentang ASN.</li>
+           <li><a href="http://www.ipdeny.com/ipblocks/">Blok negara IP dari IPdeny</a> – Sebuah layanan yang fantastis dan akurat untuk menghasilkan tanda tangan negara-lebar.</li>
+           <li><a href="https://www.google.com/transparencyreport/safebrowsing/malware/">Google Malware Dashboard</a> – Menampilkan laporan tentang tingkat infeksi malware untuk ASN.</li>
+           <li><a href="https://www.spamhaus.org/statistics/botnet-asn/">Proyek Spamhaus</a> – Menampilkan laporan tentang tingkat infeksi botnet untuk ASN.</li>
+           <li><a href="https://www.abuseat.org/public/asn.html">Daftar Pemblokiran Komposit dari Abuseat.org</a> – Menampilkan laporan tentang tingkat infeksi botnet untuk ASN.</li>
+           <li><a href="https://abuseipdb.com/">AbuseIPDB</a> – Mempertahankan database IP berbahaya dikenal; Menyediakan API untuk memeriksa dan melaporkan IP.</li>
+           <li><a href="https://www.megarbl.net/index.php">MegaRBL.net</a> – Mempertahankan daftar spammer dikenal; Berguna untuk memeriksa aktivitas spam dari IP/ASN.</li>
+         </ul>
+       </li>
+       <li><span class="comCat" style="cursor:pointer">Sumber daya informasi dan pembelajaran.</span>
+         <ul class="comSub">
+           <li><a href="https://php.earth/">PHP.earth</a> – Sumber belajar dan diskusi PHP.</li>
+           <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">Tabel Kerentanan</a> – Mencantumkan berbagai versi dari paket-paket yang aman dan tidak aman (HHVM, PHP, phpMyAdmin, Python, dll).</li>
+           <li><a href="https://maikuolan.github.io/Compatibility-Charts/">Tabel Kompatibilitas</a> – Mencantumkan informasi kompatibilitas untuk berbagai paket (CIDRAM, phpMussel, dll).</li>
+         </ul>
+       </li>
      </ul>
 
 msg_template_2fa: |

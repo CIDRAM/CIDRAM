@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Portuguese language data for the front-end (last modified: 2019.02.04).
+# This file: Portuguese language data for the front-end (last modified: 2019.02.25).
 ##/
 
 Extended Description Bypasses: "Os arquivos para bypass das assinaturas padrão normalmente incluído com o pacote principal."
@@ -418,23 +418,41 @@ warning_php_2: "O sua versão PHP é severamente vulnerável! Atualizando é for
 warning_signatures_1: "Nenhum arquivo de assinaturas está ativo!"
 
 info_some_useful_links: |
- Alguns links úteis:<ul>
-       <li><a href="https://github.com/CIDRAM/CIDRAM/issues">Problemas de CIDRAM @ GitHub</a> – Página de problemas para CIDRAM (apoio, assistência, etc).</li>
-       <li><a href="https://wordpress.org/plugins/cidram/">CIDRAM @ WordPress.org</a> – WordPress plugin para CIDRAM.</li>
-       <li><a href="https://bitbucket.org/macmathan/blocklists">macmathan/blocklists</a> – Contém listas de bloqueio e módulos opcionais para o CIDRAM, como para bloquear bots perigosos, países indesejados, navegadores desatualizados, etc.</li>
-       <li><a href="https://www.facebook.com/groups/2204685680/">Global PHP Group @ Facebook</a> – PHP recursos de aprendizagem e discussão.</li>
-       <li><a href="https://php.earth/">PHP.earth</a> – PHP recursos de aprendizagem e discussão.</li>
-       <li><a href="https://bgp.he.net/">Hurricane Electric BGP Toolkit</a> – Obter CIDRs de ASNs, Determinar relações de ASNs, descobrir ASNs com base em nomes de rede, etc.</li>
-       <li><a href="https://www.stopforumspam.com/forum/">Fórum @ Stop Forum Spam</a> – Fórum de discussão útil sobre como parar o spam do fórum.</li>
-       <li><a href="https://radar.qrator.net/">Radar por Qrator</a> – Ferramenta útil para verificar a conectividade de ASNs bem como para várias outras informações sobre ASNs.</li>
-       <li><a href="http://www.ipdeny.com/ipblocks/">IP países blocos @ IPdeny</a> – Um serviço fantástico e preciso para gerar assinaturas para os países.</li>
-       <li><a href="https://www.google.com/transparencyreport/safebrowsing/malware/">Google Malware Dashboard</a> – Exibe relatórios sobre as taxas de infecção de malware para ASNs.</li>
-       <li><a href="https://www.spamhaus.org/statistics/botnet-asn/">O Projeto Spamhaus</a> – Exibe relatórios sobre taxas de infecção por botnets para ASNs.</li>
-       <li><a href="https://www.abuseat.org/public/asn.html">Lista de Bloqueio Composto @ Abuseat.org</a> – Exibe relatórios sobre taxas de infecção por botnets para ASNs.</li>
-       <li><a href="https://abuseipdb.com/">AbuseIPDB</a> – Mantém um banco de dados de IPs abusivos conhecidos; Fornece uma API para verificar e reportar IPs.</li>
-       <li><a href="https://www.megarbl.net/index.php">MegaRBL.net</a> – Mantém listagens de spammers conhecidos; Útil para verificar as atividades de spam por IPs/ASNs.</li>
-       <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">Mapas de Vulnerabilidade</a> – Lista as versões seguras/inseguras de vários pacotes (HHVM, PHP, phpMyAdmin, Python, etc).</li>
-       <li><a href="https://maikuolan.github.io/Compatibility-Charts/">Mapas de Compatibilidade</a> – Lista informações de compatibilidade para vários pacotes (CIDRAM, phpMussel, etc).</li>
+ Alguns links úteis:<br />
+ <ul class="pieul">
+       <li><span class="comCat" style="cursor:pointer">Ferramentas, recursos, etc para o CIDRAM.</span>
+         <ul class="comSub">
+           <li><a href="https://github.com/CIDRAM/CIDRAM/issues">Problemas de CIDRAM @ GitHub</a> – Página de problemas para CIDRAM (apoio, assistência, etc).</li>
+           <li><a href="https://wordpress.org/plugins/cidram/">CIDRAM @ WordPress.org</a> – WordPress plugin para CIDRAM.</li>
+           <li><a href="https://bitbucket.org/macmathan/blocklists">macmathan/blocklists</a> – Contém listas de bloqueio e módulos opcionais para o CIDRAM, como para bloquear bots perigosos, países indesejados, navegadores desatualizados, etc.</li>
+           <li><a href="https://github.com/CIDRAM/CIDRAM-Extras">CIDRAM/CIDRAM-Extras</a> – Vários extras.</li>
+         </ul>
+       </li>
+       <li><span class="comCat" style="cursor:pointer">Grupos, fóruns, comunidades, etc.</span>
+         <ul class="comSub">
+           <li><a href="https://www.facebook.com/groups/2204685680/">PHP.earth @ Facebook</a> – PHP recursos de aprendizagem e discussão.</li>
+           <li><a href="https://www.stopforumspam.com/forum/">Fórum @ Stop Forum Spam</a> – Fórum de discussão útil sobre como parar o spam do fórum.</li>
+         </ul>
+       <li><span class="comCat" style="cursor:pointer">Outras ferramentas, recursos, serviços, etc que são úteis.</span>
+         <ul class="comSub">
+           <li><a href="https://www.stopforumspam.com/">Stop Forum Spam</a> – Mantém um banco de dados de spammers de fórum conhecidos. Útil para proteger sites e fóruns contra spammers.</li>
+           <li><a href="https://bgp.he.net/">Hurricane Electric BGP Toolkit</a> – Obter CIDRs de ASNs, Determinar relações de ASNs, descobrir ASNs com base em nomes de rede, etc.</li>
+           <li><a href="https://radar.qrator.net/">Radar por Qrator</a> – Ferramenta útil para verificar a conectividade de ASNs bem como para várias outras informações sobre ASNs.</li>
+           <li><a href="http://www.ipdeny.com/ipblocks/">IP países blocos @ IPdeny</a> – Um serviço fantástico e preciso para gerar assinaturas para os países.</li>
+           <li><a href="https://www.google.com/transparencyreport/safebrowsing/malware/">Google Malware Dashboard</a> – Exibe relatórios sobre as taxas de infecção de malware para ASNs.</li>
+           <li><a href="https://www.spamhaus.org/statistics/botnet-asn/">O Projeto Spamhaus</a> – Exibe relatórios sobre taxas de infecção por botnets para ASNs.</li>
+           <li><a href="https://www.abuseat.org/public/asn.html">Lista de Bloqueio Composto @ Abuseat.org</a> – Exibe relatórios sobre taxas de infecção por botnets para ASNs.</li>
+           <li><a href="https://abuseipdb.com/">AbuseIPDB</a> – Mantém um banco de dados de IPs abusivos conhecidos; Fornece uma API para verificar e reportar IPs.</li>
+           <li><a href="https://www.megarbl.net/index.php">MegaRBL.net</a> – Mantém listagens de spammers conhecidos; Útil para verificar as atividades de spam por IPs/ASNs.</li>
+         </ul>
+       </li>
+       <li><span class="comCat" style="cursor:pointer">Recursos informativos e de aprendizagem.</span>
+         <ul class="comSub">
+           <li><a href="https://php.earth/">PHP.earth</a> – PHP recursos de aprendizagem e discussão.</li>
+           <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">Mapas de Vulnerabilidade</a> – Lista as versões seguras/inseguras de vários pacotes (HHVM, PHP, phpMyAdmin, Python, etc).</li>
+           <li><a href="https://maikuolan.github.io/Compatibility-Charts/">Mapas de Compatibilidade</a> – Lista informações de compatibilidade para vários pacotes (CIDRAM, phpMussel, etc).</li>
+         </ul>
+       </li>
      </ul>
 
 msg_template_2fa: |

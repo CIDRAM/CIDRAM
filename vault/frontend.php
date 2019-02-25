@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2019.02.23).
+ * This file: Front-end handler (last modified: 2019.02.25).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -651,7 +651,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === '' && !$CIDRAM['FE']['CronMode']
 
     /** Build repository backup locations information. */
     $CIDRAM['FE']['BackupLocations'] = implode(' | ', [
-        '<a href="https://bitbucket.org/Maikuolan/cidram">BitBucket</a>',
+        '<a href="https://bitbucket.org/Maikuolan/cidram">Bitbucket</a>',
         '<a href="https://sourceforge.net/projects/cidram/">SourceForge</a>'
     ]);
 
@@ -765,7 +765,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === '' && !$CIDRAM['FE']['CronMode']
     $CIDRAM['FE']['FE_Content'] = $CIDRAM['ParseVars'](
         $CIDRAM['lang'] + $CIDRAM['FE'],
         $CIDRAM['ReadFile']($CIDRAM['GetAssetPath']('_home.html'))
-    );
+    ) . $CIDRAM['MenuToggle'];
 
     /** Send output. */
     echo $CIDRAM['SendOutput']();
@@ -3008,14 +3008,12 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'statistics' && $CIDRAM['FE']['P
     }
 
     /** Statistics have been counted since... */
-    if (empty($CIDRAM['Cache']['Statistics']['Other-Since'])) {
-        $CIDRAM['FE']['Other-Since'] = '<span class="s">-</span>';
-    } else {
-        $CIDRAM['FE']['Other-Since'] = '<span class="s">' . $CIDRAM['TimeFormat'](
+    $CIDRAM['FE']['Other-Since'] = '<span class="s">' . (
+        empty($CIDRAM['Cache']['Statistics']['Other-Since']) ? '-' : $CIDRAM['TimeFormat'](
             $CIDRAM['Cache']['Statistics']['Other-Since'],
             $CIDRAM['Config']['general']['timeFormat']
-        ) . '</span>';
-    }
+        )
+    ) . '</span>';
 
     /** Fetch and process various statistics. */
     foreach ([

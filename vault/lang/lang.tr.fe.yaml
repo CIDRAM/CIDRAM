@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Turkish language data for the front-end (last modified: 2019.02.04).
+# This file: Turkish language data for the front-end (last modified: 2019.02.25).
 ##/
 
 Extended Description Bypasses: "Varsayılan imza bypass'lar, normalde ana paketle birlikte verilir."
@@ -406,7 +406,7 @@ tip_sections_list: "Merhaba, {username}.<br />Bu sayfa şu anda etkin olan imza 
 tip_see_the_documentation: "Çeşitli yapılandırma yönergeleri ve amaçlarıyla ilgili bilgi için <a href="https://github.com/CIDRAM/CIDRAM/blob/master/_docs/readme.en.md\#SECTION6">belgelere</a> bakın."
 tip_statistics: "Merhaba, {username}.<br />Bu sayfada, CIDRAM kurulumunuzla ilgili bazı temel kullanım istatistikleri gösterilmektedir."
 tip_statistics_disabled: "Not: İstatistik izleme şu anda devre dışı, ancak yapılandırma sayfası aracılığıyla etkinleştirilebilir."
-tip_updates: "Merhaba, {username}.<br />Güncellemeler sayfası, CIDRAM'ın çeşitli bileşenlerini (çekirdek paket, imzalar, L10N dosyaları vb.) yüklemenizi, kaldırmanızı ve güncellemenizi sağlar."
+tip_updates: "Merhaba, {username}.<br />Güncellemeler sayfası, CIDRAM'ın çeşitli bileşenlerini (çekirdek paket, imzalar, L10N dosyaları vb) yüklemenizi, kaldırmanızı ve güncellemenizi sağlar."
 title_login: "Giriş"
 warning: "Uyarılar:"
 warning_php_1: "PHP sürümünüz aktif olarak desteklenmiyor! Güncelleme önerilir!"
@@ -414,23 +414,41 @@ warning_php_2: "PHP sürümünüz ağır savunmasız! Güncelleme önerilir!"
 warning_signatures_1: "Hiçbir imza dosyası aktif değil!"
 
 info_some_useful_links: |
- Bazı kullanışlı bağlantılar:<ul>
-       <li><a href="https://github.com/CIDRAM/CIDRAM/issues">CIDRAM Sorunları @ GitHub</a> – CIDRAM için sorunlar sayfası (destek, yardım, vb.).</li>
-       <li><a href="https://wordpress.org/plugins/cidram/">CIDRAM @ WordPress.org</a> – CIDRAM için WordPress eklentisi.</li>
-       <li><a href="https://bitbucket.org/macmathan/blocklists">macmathan/blocklists</a> – Tehlikeli botları, istenmeyen ülkeleri, güncel olmayan tarayıcıları, vb engellemek için, CIDRAM için isteğe bağlı blok listeleri ve modüller içerir.</li>
-       <li><a href="https://www.facebook.com/groups/2204685680/">International PHP Group @ Facebook</a> – PHP öğrenme kaynakları ve tartışmalar.</li>
-       <li><a href="https://php.earth/">PHP.earth</a> – PHP öğrenme kaynakları ve tartışmalar.</li>
-       <li><a href="https://bgp.he.net/">Hurricane Electric BGP Toolkit</a> – ASN'lerden CIDR'ler alın, ASN ilişkilerini belirleyin, ağ adlarına dayalı ASN'leri keşfedin.</li>
-       <li><a href="https://www.stopforumspam.com/forum/">Forum @ Stop Forum Spam</a> – Forum spamını durdurmayla ilgili faydalı forum.</li>
-       <li><a href="https://radar.qrator.net/">Radar by Qrator</a> – ASN'lerin bağlantısını kontrol etmek için yararlı araç ve ASN'ler hakkında çeşitli diğer bilgiler.</li>
-       <li><a href="http://www.ipdeny.com/ipblocks/">IPdeny IP ülke blokları</a> – Ülke çapında imzalar üretmek için harika ve tam bir hizmet.</li>
-       <li><a href="https://www.google.com/transparencyreport/safebrowsing/malware/">Google Malware Dashboard</a> – ASN'ler için kötü amaçlı yazılım enfeksiyonu oranları ile ilgili raporları görüntüler.</li>
-       <li><a href="https://www.spamhaus.org/statistics/botnet-asn/">Spamhaus Projesi</a> – ASN'ler için botnet enfeksiyon oranları ile ilgili raporları görüntüler.</li>
-       <li><a href="https://www.abuseat.org/public/asn.html">Abuseat.org'un Kompozit Engelleme Listesi</a> – ASN'ler için botnet enfeksiyon oranları ile ilgili raporları görüntüler.</li>
-       <li><a href="https://abuseipdb.com/">AbuseIPDB</a> – Bilinen kötü amaçlı IP'lerin veritabanını korur; IP'leri denetlemek ve raporlamak için bir API sağlar.</li>
-       <li><a href="https://www.megarbl.net/index.php">MegaRBL.net</a> – Bilinen spam göndericilerinin listelerini sağlar; IP/ASN spam etkinliklerini kontrol etmek için yararlıdır.</li>
-       <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">Güvenlik Açığı Tabloları</a> – Çeşitli paketler (HHVM, PHP, phpMyAdmin, Python, vb.) güvenli/güvensiz sürümlerini listeler.</li>
-       <li><a href="https://maikuolan.github.io/Compatibility-Charts/">Uyumluluk Tabloları</a> – Çeşitli paketler (CIDRAM, phpMussel, vb.) için uyumluluk bilgilerini listeler.</li>
+ Bazı kullanışlı bağlantılar:<br />
+ <ul class="pieul">
+       <li><span class="comCat" style="cursor:pointer">CIDRAM için araçlar, kaynaklar, vb.</span>
+         <ul class="comSub">
+           <li><a href="https://github.com/CIDRAM/CIDRAM/issues">CIDRAM Sorunları @ GitHub</a> – CIDRAM için sorunlar sayfası (destek, yardım, vb).</li>
+           <li><a href="https://wordpress.org/plugins/cidram/">CIDRAM @ WordPress.org</a> – CIDRAM için WordPress eklentisi.</li>
+           <li><a href="https://bitbucket.org/macmathan/blocklists">macmathan/blocklists</a> – Tehlikeli botları, istenmeyen ülkeleri, güncel olmayan tarayıcıları, vb engellemek için, CIDRAM için isteğe bağlı blok listeleri ve modüller içerir.</li>
+           <li><a href="https://github.com/CIDRAM/CIDRAM-Extras">CIDRAM/CIDRAM-Extras</a> – Çeşitli ekstralar.</li>
+         </ul>
+       </li>
+       <li><span class="comCat" style="cursor:pointer">Gruplar, forumlar, topluluklar, vb.</span>
+         <ul class="comSub">
+           <li><a href="https://www.facebook.com/groups/2204685680/">International PHP Group @ Facebook</a> – PHP öğrenme kaynakları ve tartışmalar.</li>
+           <li><a href="https://www.stopforumspam.com/forum/">Forum @ Stop Forum Spam</a> – Forum spamını durdurmayla ilgili faydalı forum.</li>
+         </ul>
+       <li><span class="comCat" style="cursor:pointer">Diğer faydalı araçlar, kaynaklar, hizmetler, vb.</span>
+         <ul class="comSub">
+           <li><a href="https://www.stopforumspam.com/">Stop Forum Spam</a> – Bilinen forum spam göndericileri veritabanını yönetir. Web sitelerini ve forumları spam göndericilere karşı korumak için kullanışlıdır.</li>
+           <li><a href="https://bgp.he.net/">Hurricane Electric BGP Toolkit</a> – ASN'lerden CIDR'ler alın, ASN ilişkilerini belirleyin, ağ adlarına dayalı ASN'leri keşfedin.</li>
+           <li><a href="https://radar.qrator.net/">Radar by Qrator</a> – ASN'lerin bağlantısını kontrol etmek için yararlı araç ve ASN'ler hakkında çeşitli diğer bilgiler.</li>
+           <li><a href="http://www.ipdeny.com/ipblocks/">IPdeny IP ülke blokları</a> – Ülke çapında imzalar üretmek için harika ve tam bir hizmet.</li>
+           <li><a href="https://www.google.com/transparencyreport/safebrowsing/malware/">Google Malware Dashboard</a> – ASN'ler için kötü amaçlı yazılım enfeksiyonu oranları ile ilgili raporları görüntüler.</li>
+           <li><a href="https://www.spamhaus.org/statistics/botnet-asn/">Spamhaus Projesi</a> – ASN'ler için botnet enfeksiyon oranları ile ilgili raporları görüntüler.</li>
+           <li><a href="https://www.abuseat.org/public/asn.html">Abuseat.org'un Kompozit Engelleme Listesi</a> – ASN'ler için botnet enfeksiyon oranları ile ilgili raporları görüntüler.</li>
+           <li><a href="https://abuseipdb.com/">AbuseIPDB</a> – Bilinen kötü amaçlı IP'lerin veritabanını korur; IP'leri denetlemek ve raporlamak için bir API sağlar.</li>
+           <li><a href="https://www.megarbl.net/index.php">MegaRBL.net</a> – Bilinen spam göndericilerinin listelerini sağlar; IP/ASN spam etkinliklerini kontrol etmek için yararlıdır.</li>
+         </ul>
+       </li>
+       <li><span class="comCat" style="cursor:pointer">Bilgi ve öğrenme kaynakları.</span>
+         <ul class="comSub">
+           <li><a href="https://php.earth/">PHP.earth</a> – PHP öğrenme kaynakları ve tartışmalar.</li>
+           <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">Güvenlik Açığı Tabloları</a> – Çeşitli paketler (HHVM, PHP, phpMyAdmin, Python, vb) güvenli/güvensiz sürümlerini listeler.</li>
+           <li><a href="https://maikuolan.github.io/Compatibility-Charts/">Uyumluluk Tabloları</a> – Çeşitli paketler (CIDRAM, phpMussel, vb) için uyumluluk bilgilerini listeler.</li>
+         </ul>
+       </li>
      </ul>
 
 msg_template_2fa: |

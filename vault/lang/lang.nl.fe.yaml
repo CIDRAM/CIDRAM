@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Dutch language data for the front-end (last modified: 2019.02.04).
+# This file: Dutch language data for the front-end (last modified: 2019.02.25).
 ##/
 
 Extended Description Bypasses: "De standaard signature rondwegen normaal opgenomen met de primaire pakket."
@@ -410,7 +410,7 @@ tip_sections_list: "Hallo, {username}.<br />Deze pagina geeft een overzicht van 
 tip_see_the_documentation: "Zie de <a href="https://github.com/CIDRAM/CIDRAM/blob/master/_docs/readme.nl.md\#SECTION6">documentatie</a> voor informatie over de verschillende configuratie richtlijnen en hun doeleinden."
 tip_statistics: "Hallo, {username}.<br />Deze pagina bevat een aantal basisgebruiksstatistieken voor uw CIDRAM-installatie."
 tip_statistics_disabled: "Notitie: Statistische tracking is momenteel uitgeschakeld, maar kan via de configuratiepagina worden ingeschakeld."
-tip_updates: "Hallo, {username}.<br />De updates pagina stelt u in staat om de verschillende CIDRAM componenten te installeren, verwijderen, en actualiseren (de core pakket, signatures, L10N bestanden, ezv)."
+tip_updates: "Hallo, {username}.<br />De updates pagina stelt u in staat om de verschillende CIDRAM componenten te installeren, verwijderen, en actualiseren (de core pakket, signatures, L10N bestanden, enz)."
 title_login: "Inloggen"
 warning: "Waarschuwingen:"
 warning_php_1: "Uw PHP versie wordt niet meer actief ondersteund! Het bijwerken is aanbevolen!"
@@ -418,23 +418,41 @@ warning_php_2: "Uw PHP versie is ernstig kwetsbaar! Het bijwerken is sterk aanbe
 warning_signatures_1: "Geen signatuurbestanden zijn actief!"
 
 info_some_useful_links: |
- Enkele nuttige links:<ul>
-       <li><a href="https://github.com/CIDRAM/CIDRAM/issues">CIDRAM Kwesties @ GitHub</a> – Kwesties pagina voor CIDRAM (steun, hulp, ezv).</li>
-       <li><a href="https://wordpress.org/plugins/cidram/">CIDRAM @ WordPress.org</a> – WordPress plugin voor CIDRAM.</li>
-       <li><a href="https://bitbucket.org/macmathan/blocklists">macmathan/blocklists</a> – Bevat optionele blokkeerlijsten en modules voor CIDRAM, zoals voor het blokkeren van gevaarlijke bots, ongewenste landen, verouderde browsers, enz.</li>
-       <li><a href="https://www.facebook.com/groups/2204685680/">Global PHP Group @ Facebook</a> – PHP leermiddelen en discussie.</li>
-       <li><a href="https://php.earth/">PHP.earth</a> – PHP leermiddelen en discussie.</li>
-       <li><a href="https://bgp.he.net/">Hurricane Electric BGP Toolkit</a> – Krijg CIDR's van ASN, bepalen ASN relaties, ontdek ASN's op basis van netwerknamen, ezv.</li>
-       <li><a href="https://www.stopforumspam.com/forum/">Forum @ Stop Forum Spam</a> – Nuttig discussieforum over het stoppen forum spam.</li>
-       <li><a href="https://radar.qrator.net/">Radar van Qrator</a> – Handig hulpmiddel voor het controleren van de connectiviteit van ASN's en ook voor diverse andere informatie over ASN's.</li>
-       <li><a href="http://www.ipdeny.com/ipblocks/">IPdeny IP-landblokken</a> – Een fantastische en accurate service voor het genereren van de signatures voor landen.</li>
-       <li><a href="https://www.google.com/transparencyreport/safebrowsing/malware/">Google Malware Dashboard</a> – Geeft rapporten over malware-infectie tarieven voor ASN.</li>
-       <li><a href="https://www.spamhaus.org/statistics/botnet-asn/">Het Spamhaus Project</a> – Geeft rapporten over botnet infectie tarieven voor ASN.</li>
-       <li><a href="https://www.abuseat.org/public/asn.html">Composite Blocking List @ Abuseat.org</a> – Geeft rapporten over botnet infectie tarieven voor ASN.</li>
-       <li><a href="https://abuseipdb.com/">AbuseIPDB</a> – Onderhoudt een database van bekende beledigend IP's; Biedt een API voor het controleren en rapporteren van IP's.</li>
-       <li><a href="https://www.megarbl.net/index.php">MegaRBL.net</a> – Onderhoudt lijsten van bekende spammers; Handig voor het controleren van IP/ASN spam activiteiten.</li>
-       <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">Kwetsbaarheidstabellen</a> – Hiermee worden veilige/onveilige versies van verschillende pakketten weergegeven (HHVM, PHP, phpMyAdmin, Python, ezv).</li>
-       <li><a href="https://maikuolan.github.io/Compatibility-Charts/">Compatibiliteitstabellen</a> – Hiermee worden informatie over compatibiliteit voor verschillende pakketten weergegeven (CIDRAM, phpMussel, ezv).</li>
+ Enkele nuttige links:<br />
+ <ul class="pieul">
+       <li><span class="comCat" style="cursor:pointer">Tools, bronnen, enz. voor CIDRAM.</span>
+         <ul class="comSub">
+           <li><a href="https://github.com/CIDRAM/CIDRAM/issues">CIDRAM Kwesties @ GitHub</a> – Kwesties pagina voor CIDRAM (steun, hulp, enz).</li>
+           <li><a href="https://wordpress.org/plugins/cidram/">CIDRAM @ WordPress.org</a> – WordPress plugin voor CIDRAM.</li>
+           <li><a href="https://bitbucket.org/macmathan/blocklists">macmathan/blocklists</a> – Bevat optionele blokkeerlijsten en modules voor CIDRAM, zoals voor het blokkeren van gevaarlijke bots, ongewenste landen, verouderde browsers, enz.</li>
+           <li><a href="https://github.com/CIDRAM/CIDRAM-Extras">CIDRAM/CIDRAM-Extras</a> – Diverse extra's.</li>
+         </ul>
+       </li>
+       <li><span class="comCat" style="cursor:pointer">Groepen, forums, communities, enz.</span>
+         <ul class="comSub">
+           <li><a href="https://www.facebook.com/groups/2204685680/">PHP.earth @ Facebook</a> – PHP leermiddelen en discussie.</li>
+           <li><a href="https://www.stopforumspam.com/forum/">Forum @ Stop Forum Spam</a> – Nuttig discussieforum over het stoppen forum spam.</li>
+         </ul>
+       <li><span class="comCat" style="cursor:pointer">Andere handige tools, bronnen, diensten, enz.</span>
+         <ul class="comSub">
+           <li><a href="https://www.stopforumspam.com/">Stop Forum Spam</a> – Beheert een database van bekende forumspammers. Handig voor het beschermen van websites en forums tegen spammers.</li>
+           <li><a href="https://bgp.he.net/">Hurricane Electric BGP Toolkit</a> – Krijg CIDR's van ASN, bepalen ASN relaties, ontdek ASN's op basis van netwerknamen, enz.</li>
+           <li><a href="https://radar.qrator.net/">Radar van Qrator</a> – Handig hulpmiddel voor het controleren van de connectiviteit van ASN's en ook voor diverse andere informatie over ASN's.</li>
+           <li><a href="http://www.ipdeny.com/ipblocks/">IPdeny IP-landblokken</a> – Een fantastische en accurate service voor het genereren van de signatures voor landen.</li>
+           <li><a href="https://www.google.com/transparencyreport/safebrowsing/malware/">Google Malware Dashboard</a> – Geeft rapporten over malware-infectie tarieven voor ASN.</li>
+           <li><a href="https://www.spamhaus.org/statistics/botnet-asn/">Het Spamhaus Project</a> – Geeft rapporten over botnet infectie tarieven voor ASN.</li>
+           <li><a href="https://www.abuseat.org/public/asn.html">Composite Blocking List @ Abuseat.org</a> – Geeft rapporten over botnet infectie tarieven voor ASN.</li>
+           <li><a href="https://abuseipdb.com/">AbuseIPDB</a> – Onderhoudt een database van bekende beledigend IP's; Biedt een API voor het controleren en rapporteren van IP's.</li>
+           <li><a href="https://www.megarbl.net/index.php">MegaRBL.net</a> – Onderhoudt lijsten van bekende spammers; Handig voor het controleren van IP/ASN spam activiteiten.</li>
+         </ul>
+       </li>
+       <li><span class="comCat" style="cursor:pointer">Informatie en leermiddelen.</span>
+         <ul class="comSub">
+           <li><a href="https://php.earth/">PHP.earth</a> – PHP leermiddelen en discussie.</li>
+           <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">Kwetsbaarheidstabellen</a> – Hiermee worden veilige/onveilige versies van verschillende pakketten weergegeven (HHVM, PHP, phpMyAdmin, Python, enz).</li>
+           <li><a href="https://maikuolan.github.io/Compatibility-Charts/">Compatibiliteitstabellen</a> – Hiermee worden informatie over compatibiliteit voor verschillende pakketten weergegeven (CIDRAM, phpMussel, enz).</li>
+         </ul>
+       </li>
      </ul>
 
 msg_template_2fa: |

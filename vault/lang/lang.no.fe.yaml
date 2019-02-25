@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Norwegian language data for the front-end (last modified: 2019.02.04).
+# This file: Norwegian language data for the front-end (last modified: 2019.02.25).
 ##/
 
 Extended Description Bypasses: "Standard-signatur-bypass-filene som normalt følger med hovedpakken."
@@ -416,23 +416,41 @@ warning_php_2: "Din PHP-versjon er farlig! Oppdatering anbefales på det sterkes
 warning_signatures_1: "Ingen signaturfiler er aktive!"
 
 info_some_useful_links: |
- Noen nyttige lenker:<ul>
-       <li><a href="https://github.com/CIDRAM/CIDRAM/issues">CIDRAM Issues @ GitHub</a> – Issues side for CIDRAM (støtte, assistanse, osv).</li>
-       <li><a href="https://wordpress.org/plugins/cidram/">CIDRAM @ WordPress.org</a> – WordPress plugin for CIDRAM.</li>
-       <li><a href="https://bitbucket.org/macmathan/blocklists">macmathan/blocklists</a> – Inneholder valgfrie blokklister og moduler for CIDRAM, for eksempel for blokkering av farlige roboter, uønskede land, utdaterte nettlesere, etc.</li>
-       <li><a href="https://www.facebook.com/groups/2204685680/">Global PHP Group @ Facebook</a> – PHP læringsressurser og diskusjon.</li>
-       <li><a href="https://php.earth/">PHP.earth</a> – PHP læringsressurser og diskusjon.</li>
-       <li><a href="https://bgp.he.net/">Hurricane Electric BGP Toolkit</a> – Få CIDRer fra ASNer, fastslå ASN-relasjoner, oppdag ASN basert på nettverksnavn, osv.</li>
-       <li><a href="https://www.stopforumspam.com/forum/">Forum @ Stop Forum Spam</a> – Nyttig diskusjonsforum om å stoppe forum spam.</li>
-       <li><a href="https://radar.qrator.net/">Radar by Qrator</a> – Nyttig verktøy for å sjekke ASN-tilkobling og annen informasjon relatert til ASNer.</li>
-       <li><a href="http://www.ipdeny.com/ipblocks/">IPdeny IP country blocks</a> – En fantastisk og nøyaktig tjeneste for å generere landsdækkende signaturer.</li>
-       <li><a href="https://www.google.com/transparencyreport/safebrowsing/malware/">Google Malware Dashboard</a> – Viser rapporter om malwareinfeksjonsrater for ASNer.</li>
-       <li><a href="https://www.spamhaus.org/statistics/botnet-asn/">The Spamhaus Project</a> – Viser rapporter om botnets infeksjonsrate for ASNer.</li>
-       <li><a href="https://www.abuseat.org/public/asn.html">Abuseat.org's Composite Blocking List</a> – Viser rapporter om botnets infeksjonsrate for ASNer.</li>
-       <li><a href="https://abuseipdb.com/">AbuseIPDB</a> – Opprettholder en database med kjente farlige IPer; Gir en API for å sjekke og rapportere IPer.</li>
-       <li><a href="https://www.megarbl.net/index.php">MegaRBL.net</a> – Opprettholder oppføringer av kjente spammere; Nyttig for å sjekke IP/ASN spam aktiviteter.</li>
-       <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">Sårbarhetskart</a> – Viser sikker/usikker versjon av ulike pakker (HHVM, PHP, phpMyAdmin, Python, osv).</li>
-       <li><a href="https://maikuolan.github.io/Compatibility-Charts/">Kompatibilitetskart</a> – Viser kompatibilitetsinformasjon for ulike pakker (CIDRAM, phpMussel, osv).</li>
+ Noen nyttige lenker:<br />
+ <ul class="pieul">
+       <li><span class="comCat" style="cursor:pointer">Verktøy, ressurser, etc for CIDRAM.</span>
+         <ul class="comSub">
+           <li><a href="https://github.com/CIDRAM/CIDRAM/issues">CIDRAM Issues @ GitHub</a> – Issues side for CIDRAM (støtte, assistanse, osv).</li>
+           <li><a href="https://wordpress.org/plugins/cidram/">CIDRAM @ WordPress.org</a> – WordPress plugin for CIDRAM.</li>
+           <li><a href="https://bitbucket.org/macmathan/blocklists">macmathan/blocklists</a> – Inneholder valgfrie blokklister og moduler for CIDRAM, for eksempel for blokkering av farlige roboter, uønskede land, utdaterte nettlesere, etc.</li>
+           <li><a href="https://github.com/CIDRAM/CIDRAM-Extras">CIDRAM/CIDRAM-Extras</a> – Ulike ekstramateriale.</li>
+         </ul>
+       </li>
+       <li><span class="comCat" style="cursor:pointer">Grupper, fora, fellesskap, etc.</span>
+         <ul class="comSub">
+           <li><a href="https://www.facebook.com/groups/2204685680/">PHP.earth @ Facebook</a> – PHP læringsressurser og diskusjon.</li>
+           <li><a href="https://www.stopforumspam.com/forum/">Forum @ Stop Forum Spam</a> – Nyttig diskusjonsforum om å stoppe forum spam.</li>
+         </ul>
+       <li><span class="comCat" style="cursor:pointer">Andre nyttige verktøy, ressurser, tjenester, etc.</span>
+         <ul class="comSub">
+           <li><a href="https://www.stopforumspam.com/">Stop Forum Spam</a> – Opprettholder en database med kjente forumspammere. Nyttig for å beskytte nettsteder og fora mot spammere.</li>
+           <li><a href="https://bgp.he.net/">Hurricane Electric BGP Toolkit</a> – Få CIDRer fra ASNer, fastslå ASN-relasjoner, oppdag ASN basert på nettverksnavn, osv.</li>
+           <li><a href="https://radar.qrator.net/">Radar by Qrator</a> – Nyttig verktøy for å sjekke ASN-tilkobling og annen informasjon relatert til ASNer.</li>
+           <li><a href="http://www.ipdeny.com/ipblocks/">IPdeny IP country blocks</a> – En fantastisk og nøyaktig tjeneste for å generere landsdækkende signaturer.</li>
+           <li><a href="https://www.google.com/transparencyreport/safebrowsing/malware/">Google Malware Dashboard</a> – Viser rapporter om malwareinfeksjonsrater for ASNer.</li>
+           <li><a href="https://www.spamhaus.org/statistics/botnet-asn/">The Spamhaus Project</a> – Viser rapporter om botnets infeksjonsrate for ASNer.</li>
+           <li><a href="https://www.abuseat.org/public/asn.html">Abuseat.org's Composite Blocking List</a> – Viser rapporter om botnets infeksjonsrate for ASNer.</li>
+           <li><a href="https://abuseipdb.com/">AbuseIPDB</a> – Opprettholder en database med kjente farlige IPer; Gir en API for å sjekke og rapportere IPer.</li>
+           <li><a href="https://www.megarbl.net/index.php">MegaRBL.net</a> – Opprettholder oppføringer av kjente spammere; Nyttig for å sjekke IP/ASN spam aktiviteter.</li>
+         </ul>
+       </li>
+       <li><span class="comCat" style="cursor:pointer">Informasjons og læringsressurser.</span>
+         <ul class="comSub">
+           <li><a href="https://php.earth/">PHP.earth</a> – PHP læringsressurser og diskusjon.</li>
+           <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">Sårbarhetskart</a> – Viser sikker/usikker versjon av ulike pakker (HHVM, PHP, phpMyAdmin, Python, osv).</li>
+           <li><a href="https://maikuolan.github.io/Compatibility-Charts/">Kompatibilitetskart</a> – Viser kompatibilitetsinformasjon for ulike pakker (CIDRAM, phpMussel, osv).</li>
+         </ul>
+       </li>
      </ul>
 
 msg_template_2fa: |

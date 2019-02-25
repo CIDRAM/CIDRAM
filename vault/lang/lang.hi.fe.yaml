@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Hindi language data for the front-end (last modified: 2019.02.04).
+# This file: Hindi language data for the front-end (last modified: 2019.02.25).
 ##/
 
 Extended Description Bypasses: "डिफ़ॉल्ट हस्ताक्षर बाईपास फ़ाइलों को सामान्यतः मुख्य पैकेज के साथ शामिल किया गया था।"
@@ -418,23 +418,41 @@ warning_php_2: "आपका PHP संस्करण गंभीर रूप
 warning_signatures_1: "कोई हस्ताक्षर फ़ाइलें सक्रिय नहीं हैं!"
 
 info_some_useful_links: |
- कुछ उपयोगी लिंक:<ul>
-       <li><a href="https://github.com/CIDRAM/CIDRAM/issues">CIDRAM के समस्याएं @ GitHub</a> – CIDRAM के लिए समस्याएं पृष्ठ (सहायता के लिए, आदि)।</li>
-       <li><a href="https://wordpress.org/plugins/cidram/">CIDRAM @ WordPress.org</a> – CIDRAM के लिए WordPress प्लगइन।</li>
-       <li><a href="https://bitbucket.org/macmathan/blocklists">macmathan/blocklists</a> – CIDRAM के लिए वैकल्पिक ब्लॉकलिस्ट और मॉड्यूल शामिल हैं जैसे खतरनाक बॉट, अवांछित देशों, पुराने ब्राउज़र, आदि को अवरुद्ध करने के लिए।</li>
-       <li><a href="https://www.facebook.com/groups/2204685680/">वैश्विक PHP समूह @ Facebook</a> – PHP सीखने संसाधन और चर्चा।</li>
-       <li><a href="https://php.earth/">PHP.earth</a> – PHP सीखने संसाधन और चर्चा।</li>
-       <li><a href="https://bgp.he.net/">Hurricane Electric BGP टूलकिट</a> – ASN से CIDR प्राप्त करें, ASN संबंधों को निर्धारित करें, नेटवर्क नामों पर आधारित ASN की खोज करें, आदि।</li>
-       <li><a href="https://www.stopforumspam.com/forum/">मंच @ Stop Forum Spam</a> – मंच स्पैम को रोकने के बारे में उपयोगी चर्चा मंच।</li>
-       <li><a href="https://radar.qrator.net/">Radar द्वारा Qrator</a> – ASN कनेक्टिविटी की जांच के लिए उपयोगी उपकरण, साथ ही साथ ASN के बारे में विभिन्न अन्य सूचनाओं के लिए।</li>
-       <li><a href="http://www.ipdeny.com/ipblocks/">IPdeny IP देश के ब्लॉक</a> – देशव्यापी हस्ताक्षर बनाने के लिए एक शानदार और सटीक सेवा।</li>
-       <li><a href="https://www.google.com/transparencyreport/safebrowsing/malware/">Google मैलवेयर डैशबोर्ड</a> – ASN मैलवेयर संक्रमण दर के बारे में रिपोर्ट प्रदर्शित करता है।</li>
-       <li><a href="https://www.spamhaus.org/statistics/botnet-asn/">Spamhaus प्रोजेक्ट</a> – ASN बोटनेट संक्रमण दरों के बारे में रिपोर्ट प्रदर्शित करता है।</li>
-       <li><a href="https://www.abuseat.org/public/asn.html">Abuseat.org की समग्र ब्लॉकिंग सूची</a> – ASN बोटनेट संक्रमण दरों के बारे में रिपोर्ट प्रदर्शित करता है।</li>
-       <li><a href="https://abuseipdb.com/">AbuseIPDB</a> – ज्ञात अपमानजनक IP के डेटाबेस बनाए रखता है; IP जांच और रिपोर्ट करने के लिए API प्रदान करता है।</li>
-       <li><a href="https://www.megarbl.net/index.php">MegaRBL.net</a> – ज्ञात स्पैमर की सूची बनाए रखता है; IP/ASN स्पैम गतिविधियों को देखने के लिए उपयोगी।</li>
-       <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">Vulnerability Charts (भेद्यता चार्ट)</a> – विभिन्न पैकेजों के सुरक्षित/असुरक्षित संस्करणों की सूची (HHVM, PHP, phpMyAdmin, Python, आदि)।</li>
-       <li><a href="https://maikuolan.github.io/Compatibility-Charts/">Compatibility Charts (संगतता चार्ट)</a> – विभिन्न पैकेजों के लिए सुसंगतता सूचियों की सूची (CIDRAM, phpMussel, आदि)।</li>
+ कुछ उपयोगी लिंक:<br />
+ <ul class="pieul">
+       <li><span class="comCat" style="cursor:pointer">CIDRAM के लिए उपकरण, संसाधन, आदि।</span>
+         <ul class="comSub">
+           <li><a href="https://github.com/CIDRAM/CIDRAM/issues">CIDRAM के समस्याएं @ GitHub</a> – CIDRAM के लिए समस्याएं पृष्ठ (सहायता के लिए, आदि)।</li>
+           <li><a href="https://wordpress.org/plugins/cidram/">CIDRAM @ WordPress.org</a> – CIDRAM के लिए WordPress प्लगइन।</li>
+           <li><a href="https://bitbucket.org/macmathan/blocklists">macmathan/blocklists</a> – CIDRAM के लिए वैकल्पिक ब्लॉकलिस्ट और मॉड्यूल शामिल हैं जैसे खतरनाक बॉट, अवांछित देशों, पुराने ब्राउज़र, आदि को अवरुद्ध करने के लिए।</li>
+           <li><a href="https://github.com/CIDRAM/CIDRAM-Extras">CIDRAM/CIDRAM-Extras</a> – विभिन्न एक्स्ट्रा।</li>
+         </ul>
+       </li>
+       <li><span class="comCat" style="cursor:pointer">समूह, मंच, समुदाय, आदि।</span>
+         <ul class="comSub">
+           <li><a href="https://www.facebook.com/groups/2204685680/">वैश्विक PHP समूह @ Facebook</a> – PHP सीखने संसाधन और चर्चा।</li>
+           <li><a href="https://www.stopforumspam.com/forum/">मंच @ Stop Forum Spam</a> – मंच स्पैम को रोकने के बारे में उपयोगी चर्चा मंच।</li>
+         </ul>
+       <li><span class="comCat" style="cursor:pointer">अन्य उपयोगी उपकरण, संसाधन, सेवाएं, आदि।</span>
+         <ul class="comSub">
+           <li><a href="https://www.stopforumspam.com/">Stop Forum Spam</a> – ज्ञात फ़ोरम स्पैमर का एक डेटाबेस बनाए रखता है। स्पैमर्स के खिलाफ वेबसाइटों और फ़ोरमों की सुरक्षा के लिए उपयोगी है।</li>
+           <li><a href="https://bgp.he.net/">Hurricane Electric BGP टूलकिट</a> – ASN से CIDR प्राप्त करें, ASN संबंधों को निर्धारित करें, नेटवर्क नामों पर आधारित ASN की खोज करें, आदि।</li>
+           <li><a href="https://radar.qrator.net/">Radar द्वारा Qrator</a> – ASN कनेक्टिविटी की जांच के लिए उपयोगी उपकरण, साथ ही साथ ASN के बारे में विभिन्न अन्य सूचनाओं के लिए।</li>
+           <li><a href="http://www.ipdeny.com/ipblocks/">IPdeny IP देश के ब्लॉक</a> – देशव्यापी हस्ताक्षर बनाने के लिए एक शानदार और सटीक सेवा।</li>
+           <li><a href="https://www.google.com/transparencyreport/safebrowsing/malware/">Google मैलवेयर डैशबोर्ड</a> – ASN मैलवेयर संक्रमण दर के बारे में रिपोर्ट प्रदर्शित करता है।</li>
+           <li><a href="https://www.spamhaus.org/statistics/botnet-asn/">Spamhaus प्रोजेक्ट</a> – ASN बोटनेट संक्रमण दरों के बारे में रिपोर्ट प्रदर्शित करता है।</li>
+           <li><a href="https://www.abuseat.org/public/asn.html">Abuseat.org की समग्र ब्लॉकिंग सूची</a> – ASN बोटनेट संक्रमण दरों के बारे में रिपोर्ट प्रदर्शित करता है।</li>
+           <li><a href="https://abuseipdb.com/">AbuseIPDB</a> – ज्ञात अपमानजनक IP के डेटाबेस बनाए रखता है; IP जांच और रिपोर्ट करने के लिए API प्रदान करता है।</li>
+           <li><a href="https://www.megarbl.net/index.php">MegaRBL.net</a> – ज्ञात स्पैमर की सूची बनाए रखता है; IP/ASN स्पैम गतिविधियों को देखने के लिए उपयोगी।</li>
+         </ul>
+       </li>
+       <li><span class="comCat" style="cursor:pointer">सूचनात्मक और सीखने के संसाधन।</span>
+         <ul class="comSub">
+           <li><a href="https://php.earth/">PHP.earth</a> – PHP सीखने संसाधन और चर्चा।</li>
+           <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">Vulnerability Charts (भेद्यता चार्ट)</a> – विभिन्न पैकेजों के सुरक्षित/असुरक्षित संस्करणों की सूची (HHVM, PHP, phpMyAdmin, Python, आदि)।</li>
+           <li><a href="https://maikuolan.github.io/Compatibility-Charts/">Compatibility Charts (संगतता चार्ट)</a> – विभिन्न पैकेजों के लिए सुसंगतता सूचियों की सूची (CIDRAM, phpMussel, आदि)।</li>
+         </ul>
+       </li>
      </ul>
 
 msg_template_2fa: |

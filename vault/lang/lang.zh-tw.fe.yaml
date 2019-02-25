@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (traditional) language data for the front-end (last modified: 2019.02.04).
+# This file: Chinese (traditional) language data for the front-end (last modified: 2019.02.25).
 ##/
 
 Extended Description Bypasses: "標準簽名旁路文件通常包括在主包。"
@@ -410,24 +410,42 @@ warning_php_2: "您的PHP版本非常脆弱！​強烈推薦更新！"
 warning_signatures_1: "沒有簽名文件是活動的！"
 
 info_some_useful_links: |
- 一些有用的链接：<ul>
-       <li><a href="https://github.com/CIDRAM/CIDRAM/issues">CIDRAM問題＠GitHub</a> – CIDRAM問題頁面（支持，​協助，​等等）。</li>
-       <li><a href="https://wordpress.org/plugins/cidram/">CIDRAM＠WordPress.org</a> – CIDRAM WordPress插件。</li>
-       <li><a href="https://www.oschina.net/p/CIDRAM">CIDRAM＠開源中國社區</a> – CIDRAM頁面託管在開源中國社區。</li>
-       <li><a href="https://bitbucket.org/macmathan/blocklists">macmathan/blocklists</a> – 包含用於CIDRAM的可選阻止列表和模塊，用於（例如）阻止危險機器人，不需要的國家，過時的瀏覽器等等目的。</li>
-       <li><a href="https://www.facebook.com/groups/2204685680/">Global PHP Group ＠ Facebook</a> – PHP學習資源和討論。</li>
-       <li><a href="https://php.earth/">PHP.earth</a> – PHP學習資源和討論。</li>
-       <li><a href="https://bgp.he.net/">Hurricane Electric BGP Toolkit</a> – 從ASN獲取CIDR，​確定ASN關係，​基於網絡名稱發現ASN，​等等。</li>
-       <li><a href="https://www.stopforumspam.com/forum/">論壇 ＠ Stop Forum Spam</a> – 有用的討論論壇關於停止論壇垃圾郵件。</li>
-       <li><a href="https://radar.qrator.net/">Qrator的Radar</a> – 檢查ASN連接的有用工具，​以及關於ASN的各種其他信息。</li>
-       <li><a href="http://www.ipdeny.com/ipblocks/">IP國家阻止＠IPdeny</a> – 一個夢幻般和準確的服務，​產生國家的簽名。</li>
-       <li><a href="https://www.google.com/transparencyreport/safebrowsing/malware/">Google Malware Dashboard</a> – 顯示有​關ASN惡意軟件感染率的報告。</li>
-       <li><a href="https://www.spamhaus.org/statistics/botnet-asn/">Spamhaus項目</a> – 顯示有​關ASN殭屍網絡感染率的報告。</li>
-       <li><a href="https://www.abuseat.org/public/asn.html">Abuseat.org的複合阻止列表</a> – 顯示有​關ASN殭屍網絡感染率的報告。</li>
-       <li><a href="https://abuseipdb.com/">AbuseIPDB</a> – 維護已知的濫用IP數據庫；它為IP檢查和報告提供了一個API。</li>
-       <li><a href="https://www.megarbl.net/index.php">MegaRBL.net</a> – 維護已知垃圾郵件發送者的列表；有用為檢查IP/ASN垃圾郵件活動。</li>
-       <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">脆弱性圖表</a> – 列出各種軟件包的安全/不安全版本（HHVM，PHP，phpMyAdmin，Python等等）。</li>
-       <li><a href="https://maikuolan.github.io/Compatibility-Charts/">兼容性圖表</a> – 列出各種軟件包的兼容性信息（CIDRAM，phpMussel，等等）。</li>
+ 一些有用的链接：<br />
+ <ul class="pieul">
+       <li><span class="comCat" style="cursor:pointer">CIDRAM的工具，資源，等等。</span>
+         <ul class="comSub">
+           <li><a href="https://github.com/CIDRAM/CIDRAM/issues">CIDRAM問題＠GitHub</a> – CIDRAM問題頁面（支持，​協助，​等等）。</li>
+           <li><a href="https://wordpress.org/plugins/cidram/">CIDRAM＠WordPress.org</a> – CIDRAM WordPress插件。</li>
+           <li><a href="https://www.oschina.net/p/CIDRAM">CIDRAM＠開源中國社區</a> – CIDRAM頁面託管在開源中國社區。</li>
+           <li><a href="https://bitbucket.org/macmathan/blocklists">macmathan/blocklists</a> – 包含用於CIDRAM的可選阻止列表和模塊，用於（例如）阻止危險機器人，不需要的國家，過時的瀏覽器等等目的。</li>
+           <li><a href="https://github.com/CIDRAM/CIDRAM-Extras">CIDRAM/CIDRAM-Extras</a> – 各種附加功能。</li>
+         </ul>
+       </li>
+       <li><span class="comCat" style="cursor:pointer">團體，論壇，社區，等等。</span>
+         <ul class="comSub">
+           <li><a href="https://www.facebook.com/groups/2204685680/">PHP.earth ＠ Facebook</a> – PHP學習資源和討論。</li>
+           <li><a href="https://www.stopforumspam.com/forum/">論壇 ＠ Stop Forum Spam</a> – 有用的討論論壇關於停止論壇垃圾郵件。</li>
+         </ul>
+       <li><span class="comCat" style="cursor:pointer">其他有用的工具，資源，服務，等等</span>
+         <ul class="comSub">
+           <li><a href="https://www.stopforumspam.com/">Stop Forum Spam</a> – 維護已知論壇垃圾郵件發送者的數據庫。有用的保護網站和論壇免受垃圾郵件發送者的攻。</li>
+           <li><a href="https://bgp.he.net/">Hurricane Electric BGP Toolkit</a> – 從ASN獲取CIDR，​確定ASN關係，​基於網絡名稱發現ASN，​等等。</li>
+           <li><a href="https://radar.qrator.net/">Qrator的Radar</a> – 檢查ASN連接的有用工具，​以及關於ASN的各種其他信息。</li>
+           <li><a href="http://www.ipdeny.com/ipblocks/">IP國家阻止＠IPdeny</a> – 一個夢幻般和準確的服務，​產生國家的簽名。</li>
+           <li><a href="https://www.google.com/transparencyreport/safebrowsing/malware/">Google Malware Dashboard</a> – 顯示有​關ASN惡意軟件感染率的報告。</li>
+           <li><a href="https://www.spamhaus.org/statistics/botnet-asn/">Spamhaus項目</a> – 顯示有​關ASN殭屍網絡感染率的報告。</li>
+           <li><a href="https://www.abuseat.org/public/asn.html">Abuseat.org的複合阻止列表</a> – 顯示有​關ASN殭屍網絡感染率的報告。</li>
+           <li><a href="https://abuseipdb.com/">AbuseIPDB</a> – 維護已知的濫用IP數據庫。它為IP檢查和報告提供了一個API。</li>
+           <li><a href="https://www.megarbl.net/index.php">MegaRBL.net</a> – 維護已知垃圾郵件發送者的列表。有用為檢查IP/ASN垃圾郵件活動。</li>
+         </ul>
+       </li>
+       <li><span class="comCat" style="cursor:pointer">信息和學習資源。</span>
+         <ul class="comSub">
+           <li><a href="https://php.earth/">PHP.earth</a> – PHP學習資源和討論。</li>
+           <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">脆弱性圖表</a> – 列出各種軟件包的安全/不安全版本（HHVM，PHP，phpMyAdmin，Python等等）。</li>
+           <li><a href="https://maikuolan.github.io/Compatibility-Charts/">兼容性圖表</a> – 列出各種軟件包的兼容性信息（CIDRAM，phpMussel，等等）。</li>
+         </ul>
+       </li>
      </ul>
 
 msg_template_2fa: |

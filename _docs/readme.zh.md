@@ -30,7 +30,7 @@ CIDRAM （无类别域间路由访问管理器）是一个PHP脚本，​旨在�
 - <https://www.gnu.org/licenses/>。
 - <https://opensource.org/licenses/>。
 
-现在phpMussel的代码文件和关联包可以从以下地址免费下载：
+现在CIDRAM的代码文件和关联包可以从以下地址免费下载：
 - [GitHub](https://github.com/CIDRAM/CIDRAM)。
 - [Bitbucket](https://bitbucket.org/Maikuolan/cidram)。
 - [SourceForge](https://sourceforge.net/projects/cidram/)。

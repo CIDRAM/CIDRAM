@@ -24,13 +24,16 @@ CIDRAM (시도라무 클래스없는 도메인 간 라우팅 액세스 매니저
 
 *(참조하십시오 : ["CIDR"이란 무엇입니까?](#WHAT_IS_A_CIDR)).*
 
-CIDRAM 저작권 2016 년 이후 Caleb M (Maikuolan)의 GNU/GPLv2.
+[CIDRAM](https://cidram.github.io/) 저작권 2016 년 이후 [Caleb M (Maikuolan)](https://github.com/Maikuolan)의 GNU/GPLv2.
 
 본 스크립트는 프리웨어입니다. 자유 소프트웨어 재단에서 발행 한 GNU 일반 공중 라이선스 버전 2 (또는 이후 버전)에 따라 재배포 및 가공이 가능합니다. 배포의 목적은 도움이되기를 바랍니다 것이지만 "보증 아니며 상품성 또는 특정 목적에 적합한 것을 시사하는 것이기도 없습니다." "LICENSE.txt"에있는 "GNU General Public License" (일반 라이선스)을 참조하십시오. 다음 URL에서도 볼 수 있습니다 :
 - <https://www.gnu.org/licenses/>.
 - <https://opensource.org/licenses/>.
 
-본 문서 및 관련 패키지 [GitHub](https://cidram.github.io/)에서 다운로드 할 수 있습니다.
+본 문서 및 관련 패키지는 다음 URL에서 다운로드 할 수 있습니다.
+- [GitHub](https://github.com/CIDRAM/CIDRAM).
+- [Bitbucket](https://bitbucket.org/Maikuolan/cidram).
+- [SourceForge](https://sourceforge.net/projects/cidram/).
 
 ---
 
@@ -1511,4 +1514,4 @@ CIDRAM은 마케팅이나 광고 목적으로 정보를 수집하거나 처리�
 ---
 
 
-최종 업데이트 : 2019년 2월 14일.
+최종 업데이트 : 2019년 2월 23일.

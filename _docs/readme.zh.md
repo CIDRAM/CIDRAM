@@ -24,13 +24,16 @@ CIDRAM （无类别域间路由访问管理器）是一个PHP脚本，​旨在�
 
 *(看到：[什么是“CIDR”？​](#WHAT_IS_A_CIDR))。​*
 
-CIDRAM COPYRIGHT 2016 and beyond GNU/GPLv2 by Caleb M (Maikuolan)。
+[CIDRAM](https://cidram.github.io/) COPYRIGHT 2016 和走向未来 GNU/GPLv2 由 [[Caleb M (Maikuolan)](https://github.com/Maikuolan)](https://github.com/Maikuolan)。
 
 本脚本是基于GNU通用许可V2.0版许可协议发布的，​您可以在许可协议的允许范围内自行修改和发布，​但请遵守GNU通用许可协议。​使用脚本的过程中，​作者不提供任何担保和任何隐含担保。​更多的细节请参见GNU通用公共许可证，​下的`LICENSE.txt`文件也可从访问：
 - <https://www.gnu.org/licenses/>。
 - <https://opensource.org/licenses/>。
 
-现在CIDRAM的代码文件和关联包可以从以下地址免费下载[GitHub](https://cidram.github.io/)。
+现在phpMussel的代码文件和关联包可以从以下地址免费下载：
+- [GitHub](https://github.com/CIDRAM/CIDRAM)。
+- [Bitbucket](https://bitbucket.org/Maikuolan/cidram)。
+- [SourceForge](https://sourceforge.net/projects/cidram/)。
 
 ---
 
@@ -1517,4 +1520,4 @@ CIDRAM不收集或处理任何信息用于营销或广告目的，既不销售�
 ---
 
 
-最后更新：2019年2月14日。
+最后更新：2019年2月23日。

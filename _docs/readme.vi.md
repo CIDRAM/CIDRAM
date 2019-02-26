@@ -24,13 +24,16 @@ CIDRAM (Classless Inter-Domain Routing Access Manager) là một kịch bản PH
 
 *(Xem: ["CIDR" là gì?](#WHAT_IS_A_CIDR)).*
 
-BẢN QUYỀN CIDRAM 2016 và hơn GNU/GPLv2 by Caleb M (Maikuolan).
+BẢN QUYỀN [CIDRAM](https://cidram.github.io/) 2016 và hơn GNU/GPLv2 by [Caleb M (Maikuolan)](https://github.com/Maikuolan).
 
 Bản này là chương trình miễn phí; bạn có thể phân phối lại hoạc sửa đổi dưới điều kiện của GNU Giấy Phép Công Cộng xuất bản bởi Free Software Foundation; một trong giấy phép phần hai, hoạc (tùy theo sự lựa chọn của bạn) bất kỳ phiên bản nào sau này. Bản này được phân phối với hy vọng rằng nó sẽ có hữu ích, nhưng mà KHÔNG CÓ BẢO HÀNH; ngay cả những bảo đảm ngụ ý KHẢ NĂNG BÁN HÀNG hoạc PHÙ HỢP VỚI MỤC ĐÍT VÀO. Hảy xem GNU Giấy Phép Công Cộng để biết them chi tiết, nằm trong tập tin `LICENSE.txt`, và kho chứa của tập tin này có thể tiềm đước tại:
 - <https://www.gnu.org/licenses/>.
 - <https://opensource.org/licenses/>.
 
-Tài liệu này và các gói liên quan của nó có thể được tải về miễn phí từ [GitHub](https://cidram.github.io/).
+Tài liệu này và các gói liên quan của nó có thể được tải về miễn phí từ:
+- [GitHub](https://github.com/CIDRAM/CIDRAM).
+- [Bitbucket](https://bitbucket.org/Maikuolan/cidram).
+- [SourceForge](https://sourceforge.net/projects/cidram/).
 
 ---
 
@@ -1508,4 +1511,4 @@ Một số tài nguyên được đề xuất để tìm hiểu thêm thông tin
 ---
 
 
-Lần cuối cập nhật: 14 Tháng Hai 2019 (2019.02.14).
+Lần cuối cập nhật: 23 Tháng Hai 2019 (2019.02.23).

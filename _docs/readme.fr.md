@@ -24,13 +24,16 @@ CIDRAM (Classless Inter-Domain Routing Access Manager) est un script PHP conçu 
 
 *(Voir : [Qu'est-ce qu'un « CIDR » ?](#WHAT_IS_A_CIDR)).*
 
-CIDRAM COPYRIGHT 2016 et au-delà GNU/GPLv2 par Caleb M (Maikuolan).
+[CIDRAM](https://cidram.github.io/) COPYRIGHT 2016 et au-delà GNU/GPLv2 par [Caleb M (Maikuolan)](https://github.com/Maikuolan).
 
 Ce script est un logiciel libre ; vous pouvez redistribuer et/ou le modifier selon les termes de la GNU General Public License telle que publiée par la Free Software Foundation ; soit la version 2 de la Licence, ou (à votre choix) toute version ultérieure. Ce script est distribué dans l'espoir qu'il sera utile, mais SANS AUCUNE GARANTIE, sans même l'implicite garantie de COMMERCIALISATION ou D'ADAPTATION À UN PARTICULIER USAGE. Voir la GNU General Public License pour plus de détails, situé dans le `LICENSE.txt` fichier et disponible également à partir de :
 - <https://www.gnu.org/licenses/>.
 - <https://opensource.org/licenses/>.
 
-Ce document et son associé paquet peuvent être téléchargé gratuitement à sans frais à partir de [GitHub](https://cidram.github.io/).
+Ce document et son associé paquet peuvent être téléchargé gratuitement à sans frais à partir de :
+- [GitHub](https://github.com/CIDRAM/CIDRAM).
+- [Bitbucket](https://bitbucket.org/Maikuolan/cidram).
+- [SourceForge](https://sourceforge.net/projects/cidram/).
 
 ---
 
@@ -1514,4 +1517,4 @@ Alternativement, il y a un bref aperçu (non autorisé) de GDPR/DSGVO disponible
 ---
 
 
-Dernière mise à jour : 14 Février 2019 (2019.02.14).
+Dernière mise à jour : 23 Février 2019 (2019.02.23).

@@ -7,7 +7,7 @@
  <li>٣. <a href="#SECTION3">کس طرح استعمال</a></li>
  <li>٤. <a href="#SECTION4">سامنے کے آخر میں انتظام</a></li>
  <li>٥. <a href="#SECTION5">فائل اس پیکیج میں شامل</a></li>
- <li>f. <a href="#SECTION6">ترتیب کے اختیارات</a></li>
+ <li>٦. <a href="#SECTION6">ترتیب کے اختیارات</a></li>
  <li>٧. <a href="#SECTION7">دستخط فارمیٹ</a></li>
  <li>٨. <a href="#SECTION8">جانا جاتا مطابقت کے مسائل</a></li>
  <li>٩. <a href="#SECTION9">اکثر پوچھے گئے سوالات (FAQ)</a></li>
@@ -26,14 +26,16 @@
 
 <div dir="rtl"><em>(دیکھیں: <a href="#WHAT_IS_A_CIDR">ایک "CIDR" کیا ہے؟</a>).</em><br /><br /></div>
 
-<div dir="rtl">CIDRAM کاپی رائٹ 2016 اور Caleb M (Maikuolan) کی طرف GNU/GPLv2 اجازت سے آگے.<br /><br /></div>
+<div dir="rtl"><a dir="ltr" href="https://cidram.github.io/">CIDRAM</a> کاپی رائٹ 2016 اور <a dir="ltr" href="https://github.com/Maikuolan">Caleb M (Maikuolan)</a> کی طرف GNU/GPLv2 اجازت سے آگے.<br /><br /></div>
 
 <div dir="rtl">یہ سکرپٹ مفت سافٹ ویئر ہے. آپ اسے دوبارہ تقسیم اور / یا ترمیم کے طور پر مفت سافٹ ویئر فاؤنڈیشن کی جانب سے شائع GNU جنرل پبلک لائسنس کی شرائط کے تحت اس پر نظر ثانی کر سکتے ہیں؛ یا تو لائسنس کے ورژن 2، یا (آپ کے اختیارات پر) کسی بھی جدید ورژن. یہ سکرپٹ یہ مفید ہو جائے گا، لیکن کسی بھی وارنٹی کے بغیر امید میں تقسیم کیا جاتا ہے؛ کسی خاص مقصد کے لئے قابل فروختگی یا فٹنس کی بھی تقاضا وارنٹی کے بغیر. مزید تفصیلات کے لئے GNU جنرل پبلک لائسنس، "LICENSE.txt" فائل اور سے بھی دستیاب میں واقع دیکھیں:</div>
-
 - <https://www.gnu.org/licenses/>.
 - <https://opensource.org/licenses/>.
 
-<div dir="rtl">یہ دستاویز اور اس کے متعلقہ پیکج سے مفت کے لئے ڈاؤن لوڈ کیا جا سکتا ہے <a href="https://cidram.github.io/">GitHub</a>.</div>
+<div dir="rtl">یہ دستاویز اور اس کے متعلقہ پیکجوں کے لئے مفت سے ڈاؤن لوڈ کیا جا سکتا ہے:</div>
+- [GitHub](https://github.com/CIDRAM/CIDRAM).
+- [Bitbucket](https://bitbucket.org/Maikuolan/cidram).
+- [SourceForge](https://sourceforge.net/projects/cidram/).
 
 ---
 
@@ -1587,16 +1589,16 @@ A logged block event typically includes the following information:
  <li><code dir="ltr">logfileSerialized</code> &lt;- <code dir="ltr">general</code></li>
 </ul></div>
 
-When these directives are left empty, this type of logging will remain disabled.
+<div dir="rtl">جب یہ ہدایات خالی رہیں تو، اس قسم کی ریکارڈنگ غیر فعال رہیں گے.<br /><br /></div>
 
 ##### <div dir="rtl">١١.٣.١ reCAPTCHA لاگ<br /><br /></div>
 
-This type of logging relates specifically to reCAPTCHA instances, and occurs only when a user attempts to complete a reCAPTCHA instance.
+<div dir="rtl">جب ایک صارف reCAPTCHA مثال کے طور پر مکمل کرنے کی کوشش کرتا ہے، تو ریکارڈ کیا جاتا ہے.<br /><br /></div>
 
-A reCAPTCHA log entry contains the IP address of the user attempting to complete a reCAPTCHA instance, the date and time that the attempt occurred, and the reCAPTCHA state. A reCAPTCHA log entry typically looks something like this (as an example):
+<div dir="rtl">ان ریکارڈوں میں صارف کے IP ایڈریس، تاریخ اور اس وقت کا واقعہ شامل ہے، اور حیثیت. یہ ریکارڈ عام طور پر اس طرح نظر آتے ہیں:<br /><br /></div>
 
 ```
-IP Address: x.x.x.x - Date/Time: Day, dd Mon 20xx hh:ii:ss +0000 - reCAPTCHA State: Passed!
+IP پتہ: x.x.x.x - تاریخ وقت: Day, dd Mon 20xx hh:ii:ss +0000 - reCAPTCHA کے ریاست: ایوان کے پاس!
 ```
 
 <div dir="rtl">متعلقہ ترتیب ہدایات:<br /></div>
@@ -1606,9 +1608,9 @@ IP Address: x.x.x.x - Date/Time: Day, dd Mon 20xx hh:ii:ss +0000 - reCAPTCHA Sta
 
 ##### <div dir="rtl">١١.٣.٢ سامنے کے آخر لاگ<br /><br /></div>
 
-This logging relates front-end login attempts. It occurs only when a user attempts to log into the front-end, and only when front-end access is enabled.
+<div dir="rtl">یہ سامنے کے آخر میں لاگ ان کرنے کی کوشش کرنے سے متعلق ہے. جب سامنے کے آخر میں رسائی کو فعال کیا جاتا ہے، جب صارف کو سامنے کے آخر میں لاگ ان کرنے کی کوشش ہوتی ہے، تو ریکارڈ کیا جاتا ہے.<br /><br /></div>
 
-A front-end log entry contains the IP address of the user attempting to log in, the date and time that the attempt occurred, and the results of the attempt (successfully logged in, or failed to log in). A front-end log entry typically looks something like this (as an example):
+<div dir="rtl">اس ریکارڈ میں صارف کے IP ایڈریس، تاریخ اور وقت اور اس کے نتائج شامل ہیں (کامیاب یا ناکامی). یہ عام طور پر اس طرح کچھ نظر آتا ہے:<br /><br /></div>
 
 ```
 x.x.x.x - Day, dd Mon 20xx hh:ii:ss +0000 - "admin" - لاگ ان.
@@ -1623,9 +1625,9 @@ x.x.x.x - Day, dd Mon 20xx hh:ii:ss +0000 - "admin" - لاگ ان.
 
 <div dir="rtl">آپ چاہتے ہیں، یا قانونی طور پر ہو سکتا ہے، کچھ وقت کے بعد لاگ ان کو صاف کرنے کے لئے (کتنی دیر تک آپ لاگ ان کو برقرار رکھ سکتے ہیں قانون کی طرف سے محدود ہوسکتے ہیں). یہ لاگ ان کے مطابق لاگ ان کی ترتیب میں تاریخ/وقت مارکر مقرر کرنے کی طرف سے کیا جا سکتا ہے (مثال کے طور پر، <code dir="ltr">{yyyy}-{mm}-{dd}.log</code>)، اور پھر لاگ گرد گھومنے کو چالو کرنے (لاگ گرد کی گردش آپ کو لاگ ان کی حد سے زیادہ حد تک زیادہ سے زیادہ لاگ ان پر لاگو کرنے کی اجازت دیتا ہے).<br /><br /></div>
 
-<div dir="rtl">مثال کے طور پر: اگر مجھے 30 دنوں کے بعد لاگز کو خارج کرنے کی ضرورت ہوتی ہے تو میں  <code dir="ltr">{dd}.log</code> اپنے لاگ ان کے نام میں ڈال سکتا ہوں (<code dir="ltr">{dd}</code> دن کی نمائندگی کرتا ہے)، <code dir="ltr">log_rotation_limit</code> کو 30 مقرر کریں، اور <code dir="ltr">log_rotation_action</code> کو <code dir="ltr">Delete</code> مقرر کریں.<br /><br /></div>
+<div dir="rtl">مثال کے طور پر: اگر مجھے 30 دنوں کے بعد لاگز کو خارج کرنے کی ضرورت ہوتی ہے تو میں <code dir="ltr">{dd}.log</code> اپنے لاگ ان کے نام میں ڈال سکتا ہوں (<code dir="ltr">{dd}</code> دن کی نمائندگی کرتا ہے)، <code dir="ltr">log_rotation_limit</code> کو 30 مقرر کریں، اور <code dir="ltr">log_rotation_action</code> کو <code dir="ltr">Delete</code> مقرر کریں.<br /><br /></div>
 
-Conversely, if you're required to retain logs for an extended period of time, you could either not use log rotation at all, or you could set the value of `log_rotation_action` to `Archive`, to compress logfiles, thereby reducing the total amount of disk space that they occupy.
+<div dir="rtl">اگر آپ کو کچھ وقت کے لئے ریکارڈ رکھنے کی ضرورت ہے تو، آپ کو لاگ گرد گھومنے کا استعمال نہ کرنے کا انتخاب کرسکتے ہیں، یا آپ <code dir="ltr">log_rotation_action</code> کی قدر <code dir="ltr">Archive</code> پر مقرر کر سکتے ہیں (اس ریکارڈ کو کمپیکٹ کریں گے، اس طرح ڈسک کے استعمال کو کم کرنا ہوگا).<br /><br /></div>
 
 <div dir="rtl">متعلقہ ترتیب ہدایات:<br /></div>
 <div dir="rtl"><ul>
@@ -1739,4 +1741,4 @@ Conversely, if you're required to retain logs for an extended period of time, yo
 ---
 
 
-<div dir="rtl">آخری تازہ کاری: 14 فروری 2019 (2019.02.14).</div>
+<div dir="rtl">آخری تازہ کاری: 23 فروری 2019 (2019.02.23).</div>

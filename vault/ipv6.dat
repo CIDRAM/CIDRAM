@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6.dat
 
-# Version: 2019.48.356
-# Last modified: 2019.02.18
+# Version: 2019.57.386
+# Last modified: 2019.02.27
 
 
 # ---
@@ -1029,11 +1029,11 @@ Tag: DataShack, LC
 
 
 # ASN 62710 ("Rack911").
-# %Listed, Google Malware Dashboard: 1.14%.
-# Stop Forum Spam (SFS) listings: 4.
-# Updated: 2018.08.21
+# %Listed, Google Malware Dashboard: 0.46%.
+# Updated: 2019.02.27
 
 2602:ffdb::/41 Deny Cloud
+2602:ffdb:100::/41 Deny Cloud
 2602:ffdb:980::/41 Deny Cloud
 2602:ffdb:f80::/41 Deny Cloud
 Origin: US
@@ -1555,8 +1555,8 @@ Tag: Host Europe GmbH
 
 # ASN 14576 ("K SERVERS LTD").
 # %Listed, Google Malware Dashboard: 0.12%.
-# Stop Forum Spam (SFS) listings: 835.
-# Updated: 2018.08.22
+# Stop Forum Spam (SFS) listings: 507.
+# Updated: 2018.08.22 / Checked: 2019.02.27
 
 2a07:4dc0::/29 Deny Cloud
 2a07:b400::/30 Deny Cloud
@@ -1621,40 +1621,31 @@ Tag: HEG US Inc
 # ASN 174 ("Cogent Communications").
 
 # Myself and others have seen and experienced a significant amount of unwanted traffic from their ASN in the past (hack
-# attempts, spamming, scraping, various forms of general malicious activity, etc), and generally, IPs sending out this
-# type of traffic should be blocked, but unfortunately, their ASN is very widely-encompassing and interlaces
-# significantly with with a number of benign, innocent ISPs, human endpoint connections (A/DSL connections, etc), as
-# well as with backbone architecture and various IPs and CIDRs that we definitely shouldn't be blocking.
-
-# Because of this, I'm splitting their ASN into multiple sections pertaining the things that we want to block, as
-# opposed to just listing their ASN in entirety. Sections will be split across ipv[46].dat + ipv[46]_isps.dat +
-# ipv[46]_other.dat accordingly.
+# attempts, spamming, scraping, etc), and generally, this type of traffic should be blocked, but unfortunately, their
+# ASN encompasses and interlaces significantly with with a number of benign, innocent ISPs, human endpoint, backbone
+# architecture, etc that we don't want to block. Therefore, I'm splitting this up into multiple sections across
+# multiple signature files accordingly.
 
 # Wikipedia page about Cogent Communications: en.wikipedia.org/wiki/Cogent_Communications
 # Refer bgpmon.net/large-scale-bgp-hijack-out-of-india/
 # Refer forums.spybot.info/showthread.php?23632-SPAM-frauds-fakes-and-other-MALWARE-deliveries/page37
 # Refer research.dyn.com/2013/11/mitm-internet-hijacking/
 
-# Announces with "Hosting"
-# Updated: 2017.09.09 / Checked: 2018.08.25
+# Announces with "Hosting" or "Host"
+# Updated: 2019.02.27
 2602:ffb6::/36 Deny Cloud
 Origin: CA
 2001:978:2309::/48 Deny Cloud
-Origin: DE
-Tag: Cogent Hosting
-
-# Announces with "Host"
-# Updated: 2018.01.08 / Checked: 2018.08.25
 2001:978:3901::/48 Deny Cloud
 2001:978:b600::/48 Deny Cloud
 Origin: DE
 2a07:85c0::/48 Deny Cloud
 2a07:85c1::/48 Deny Cloud
 Origin: NL
-Tag: Cogent Host
+Tag: Cogent Hosting
 
 # Announces with "Server"
-# Updated: 2018.08.25
+# Updated: 2019.02.27
 2001:49f0::/47 Deny Cloud
 2001:49f0:a::/48 Deny Cloud
 2001:49f0:100d::/48 Deny Cloud
@@ -1701,21 +1692,26 @@ Tag: Cogent Host
 2001:49f0:d057::/48 Deny Cloud
 2001:49f0:d058::/45 Deny Cloud
 2001:49f0:d060::/43 Deny Cloud
-2001:49f0:d080::/46 Deny Cloud
-2001:49f0:d084::/48 Deny Cloud
-2001:49f0:d086::/47 Deny Cloud
-2001:49f0:d088::/45 Deny Cloud
-2001:49f0:d090::/46 Deny Cloud
-2001:49f0:d096::/47 Deny Cloud
+2001:49f0:d080::/44 Deny Cloud
+2001:49f0:d090::/45 Deny Cloud
 2001:49f0:d098::/49 Deny Cloud
 2001:49f0:d099::/49 Deny Cloud
 2001:49f0:d09a::/48 Deny Cloud
+2001:49f0:d09c::/47 Deny Cloud
+2001:49f0:d09e::/48 Deny Cloud
+2001:49f0:d0a0::/47 Deny Cloud
+2001:49f0:d0a2::/48 Deny Cloud
+2001:49f0:d0a5::/48 Deny Cloud
+2001:49f0:d0a6::/47 Deny Cloud
+2001:49f0:d0a8::/46 Deny Cloud
+2001:49f0:d0ac::/47 Deny Cloud
+2001:49f0:d0bf::/48 Deny Cloud
 Origin: US
 Tag: Cogent Server
 
 
 # ASNs 59711, 61046, 201525, 202015 ("HZ Hosting Ltd").
-# Updated: 2018.08.21
+# Updated: 2018.08.21 / Checked: 2019.02.27
 
 2a01:8640::/46 Deny Cloud
 2a01:8640:4::/47 Deny Cloud
@@ -2651,19 +2647,18 @@ Tag: Latisys-Irvine, LLC
 
 # ASNs 46261, 394279 ("QuickPacket, LLC").
 # Ranges change frequently / Should update often.
-# %Listed, Google Malware Dashboard: 0.41% (AS46261) 0.40% (AS394279).
-# Stop Forum Spam (SFS) listings: 7,818 (AS46261), 61 (AS394279).
-# Updated: 2018.07.21 / Checked: 2018.08.21
+# %Listed, Google Malware Dashboard: 0.28% (AS46261) 0.27% (AS394279).
+# Stop Forum Spam (SFS) listings: 2,514 (AS46261), 4 (AS394279).
+# Updated: 2019.02.27
 
-2a06:8e80::/29 Deny Cloud
-Origin: DK
 2605:a880::/48 Deny Cloud
 2605:a880:8000::/48 Deny Cloud
 2606:f280::/33 Deny Cloud
-2606:f280:8000::/35 Deny Cloud
-2606:f280:a000::/36 Deny Cloud
+2606:f280:8000::/34 Deny Cloud
 2606:f280:c000::/35 Deny Cloud
 2607:3f00::/43 Deny Cloud
+2607:3f00:20::/48 Deny Cloud
+2607:3f00:2a::/48 Deny Cloud
 Origin: US
 Tag: QuickPacket, LLC
 
@@ -2869,8 +2864,9 @@ Tag: Trabia-Network
 
 
 # ASN 29691 ("Nine Internet Solutions AG").
-# Stop Forum Spam (SFS) listings: 17,983.
-# Updated: 2018.08.21
+# %Listed, Google Malware Dashboard: 0.04%.
+# Stop Forum Spam (SFS) listings: 17,309.
+# Updated: 2018.08.21 / Checked: 2019.02.27
 
 2a02:418::/29 Deny Cloud
 2a05:9a80::/29 Deny Cloud
@@ -3475,8 +3471,9 @@ Tag: UAB Rakrejus
 
 
 # ASNs 22611, 54641 ("InMotion Hosting, Inc").
-# %Listed, Google Malware Dashboard: 0.65% (AS22611), 0.47% (AS54641).
-# Updated: 2017.11.29 / Checked: 2018.07.21
+# %Listed, Google Malware Dashboard: 0.42% (AS22611), 0.32% (AS54641).
+# Stop Forum Spam (SFS) listings: 2 (AS22611), 2 (AS54641).
+# Updated: 2017.11.29 / Checked: 2019.02.27
 
 2605:f400:2::/47 Deny Cloud
 Origin: US
@@ -6190,3 +6187,17 @@ Origin: IN
 2001:df4:fc00::/48 Deny Cloud
 Origin: NZ
 Tag: Host Universal Pty Ltd
+
+
+# ASN 15083 ("Infolink Global Corporation").
+# Listed here mostly due to the spam events. When updating, skip 38.*, skip Level 3 (superfluous listings).
+# %Listed, Google Malware Dashboard: 0.33%.
+# Stop Forum Spam (SFS) listings: 29.
+# Updated: 2019.02.27
+
+2a06:8e40::/29 Deny Cloud
+Origin: DK
+2607:1680::/32 Deny Cloud
+2607:feb8::/32 Deny Cloud
+Origin: US
+Tag: Infolink Global Corporation

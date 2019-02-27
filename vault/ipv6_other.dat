@@ -1,22 +1,18 @@
 # IPv6 signatures file (CIDRs for proxies, VPNs and other miscellaneous unwanted services).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_other.dat
 
-# Version: 2018.316.567
-# Last modified: 2018.11.13
+# Version: 2019.57.386
+# Last modified: 2019.02.27
 
 
 # ---
 # ASN 174 ("Cogent Communications").
 
 # Myself and others have seen and experienced a significant amount of unwanted traffic from their ASN in the past (hack
-# attempts, spamming, scraping, various forms of general malicious activity, etc), and generally, IPs sending out this
-# type of traffic should be blocked, but unfortunately, their ASN is very widely-encompassing and interlaces
-# significantly with with a number of benign, innocent ISPs, human endpoint connections (A/DSL connections, etc), as
-# well as with backbone architecture and various IPs and CIDRs that we definitely shouldn't be blocking.
-
-# Because of this, I'm splitting their ASN into multiple sections pertaining the things that we want to block, as
-# opposed to just listing their ASN in entirety. Sections will be split across ipv[46].dat + ipv[46]_isps.dat +
-# ipv[46]_other.dat accordingly.
+# attempts, spamming, scraping, etc), and generally, this type of traffic should be blocked, but unfortunately, their
+# ASN encompasses and interlaces significantly with with a number of benign, innocent ISPs, human endpoint, backbone
+# architecture, etc that we don't want to block. Therefore, I'm splitting this up into multiple sections across
+# multiple signature files accordingly.
 
 # Wikipedia page about Cogent Communications: en.wikipedia.org/wiki/Cogent_Communications
 # Refer bgpmon.net/large-scale-bgp-hijack-out-of-india/
@@ -25,7 +21,7 @@
 
 # Cogent VPNs+Proxies (Proxy Technologies Inc, proXPN Direct LLC, AzireVPN, OVPN, PRIVAX LTD, Proxicom, BeeVPN ApS,
 # IT Proximus, etc). I.e., "^.*(?:Prox[ipy]|PRIVAX|VPN).*$"
-# Updated: 2017.09.09 / Checked: 2018.08.25
+# Updated: 2017.09.09 / Checked: 2019.02.27
 2001:978:902::/48 Deny Proxy
 2001:978:f00::/48 Deny Proxy
 2001:978:1403::/48 Deny Proxy
@@ -37,6 +33,39 @@ Origin: LT
 2a07:a880:1416::/48 Deny Proxy
 Origin: SE
 Tag: Cogent VPNs+Proxies
+
+# No announce description (frequent source of spam in some cases, general unwanted activity in others, etc).
+# Updated: 2019.02.27
+2001:978:907::/48 Deny Generic
+2001:978:908::/47 Deny Generic
+2001:978:1404::/47 Deny Generic
+2001:978:1c04::/48 Deny Generic
+2001:978:3c09::/48 Deny Generic
+2001:978:5400::/48 Deny Generic
+Origin: DE
+2402:4480:302::/47 Deny Generic
+Origin: HK
+2a0a:1f42::/32 Deny Generic
+Origin: NL
+2001:550:104::/48 Deny Generic
+2001:550:a0e::/47 Deny Generic
+2001:550:a10::/48 Deny Generic
+2001:550:b00:1::/64 Deny Generic
+2001:550:b01::/48 Deny Generic
+2001:550:1d01::/48 Deny Generic
+2001:550:2200:500::/56 Deny Generic
+2001:550:2209::/48 Deny Generic
+2001:550:221c::/48 Deny Generic
+2001:550:2603::/48 Deny Generic
+2001:550:2604::/48 Deny Generic
+2001:550:3d01::/48 Deny Generic
+2001:550:5c03::/48 Deny Generic
+2001:49f0:d0b2::/48 Deny Generic
+Origin: US
+Tag: Cogent Other
+---
+recaptcha:
+ enabled: true
 
 
 # ASN 36351 ("SoftLayer Technologies").

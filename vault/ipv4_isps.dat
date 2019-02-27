@@ -1,8 +1,8 @@
 # IPv4 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv4_isps.dat
 
-# Version: 2019.45.724
-# Last modified: 2019.02.14
+# Version: 2019.57.386
+# Last modified: 2019.02.27
 
 
 # ---
@@ -250,9 +250,9 @@ Tag: ISPsystem
 
 
 # ASN 34619 ("Çizgi Telekomünikasyon").
-# %Listed, Google Malware Dashboard: 0.89%.
-# Stop Forum Spam (SFS) listings: 31.
-# Updated: 2018.03.21 / Checked: 2018.07.14
+# %Listed, Google Malware Dashboard: 0.54%.
+# Stop Forum Spam (SFS) listings: 6.
+# Updated: 2018.03.21 / Checked: 2019.02.18
 
 37.148.208.0/21 Deny Generic
 85.159.64.0/21 Deny Generic
@@ -880,10 +880,9 @@ recaptcha:
 
 
 # ASN 16322 ("Pars Online PJS").
-# %Listed, Google Malware Dashboard: 0.02%.
-# %Listed, abuseat.org (CBL-Listed): 2.35%.
-# Stop Forum Spam (SFS) listings: 130.
-# Updated: 2018.03.23 / Checked: 2018.07.19
+# %Listed, abuseat.org (CBL-Listed): 10.17%.
+# Stop Forum Spam (SFS) listings: 251.
+# Updated: 2019.02.27
 
 5.78.0.0/16 Deny Spam
 31.214.132.0/23 Deny Spam
@@ -900,7 +899,6 @@ recaptcha:
 37.228.131.0/24 Deny Spam
 37.228.133.0/24 Deny Spam
 37.228.135.0/24 Deny Spam
-37.228.136.0/22 Deny Spam
 46.41.192.0/18 Deny Spam
 46.62.128.0/17 Deny Spam
 46.251.224.0/24 Deny Spam
@@ -914,6 +912,7 @@ recaptcha:
 95.156.234.0/23 Deny Spam
 95.156.236.0/23 Deny Spam
 95.156.248.0/23 Deny Spam
+95.156.252.0/24 Deny Spam
 109.230.192.0/23 Deny Spam
 109.230.204.0/22 Deny Spam
 109.230.221.0/24 Deny Spam
@@ -928,7 +927,6 @@ recaptcha:
 134.255.248.0/23 Deny Spam
 178.169.0.0/19 Deny Spam
 185.10.71.0/24 Deny Spam
-185.76.248.0/22 Deny Spam
 188.245.0.0/16 Deny Spam
 213.217.32.0/19 Deny Spam
 Origin: IR
@@ -1529,7 +1527,7 @@ recaptcha:
 
 # ASNs 16880, 36421 ("Trend Micro Incorporated").
 # Follows their users around and attempts to get into restricted/private parts of websites.
-# Updated: 2018.03.31 / Checked: 2018.07.16
+# Updated: 2018.03.31 / Checked: 2019.02.27
 
 150.70.0.0/20 Deny Generic
 150.70.31.0/24 Deny Generic
@@ -7932,9 +7930,9 @@ recaptcha:
 
 
 # ASN 44493 ("Chelyabinsk-Signal").
-# %Listed, Google Malware Dashboard: 2.04%.
-# Stop Forum Spam (SFS) listings: 140.
-# Updated: 2018.03.23 / Checked: 2018.07.19
+# %Listed, Google Malware Dashboard: 0.93%.
+# Stop Forum Spam (SFS) listings: 86.
+# Updated: 2018.03.23 / Checked: 2019.02.27
 
 80.85.152.0/23 Deny Spam
 80.85.154.0/24 Deny Spam
@@ -8005,7 +8003,7 @@ recaptcha:
 
 # ASNs 8369, 198675, 199619 ("Intersvyaz-2 JSC").
 # Caught trying to hack into WordPress sites.
-# Updated: 2018.03.27 / Checked: 2018.07.16
+# Updated: 2019.02.27
 
 5.79.128.0/17 Deny Generic
 5.206.0.0/17 Deny Generic
@@ -8026,6 +8024,8 @@ recaptcha:
 176.226.128.0/17 Deny Generic
 185.5.143.0/24 Deny Generic
 185.12.228.0/22 Deny Generic
+193.33.26.0/23 Deny Generic
+193.105.156.0/24 Deny Generic
 Origin: RU
 Tag: is74.ru
 ---
@@ -8048,14 +8048,10 @@ recaptcha:
 # ASN 174 ("Cogent Communications").
 
 # Myself and others have seen and experienced a significant amount of unwanted traffic from their ASN in the past (hack
-# attempts, spamming, scraping, various forms of general malicious activity, etc), and generally, IPs sending out this
-# type of traffic should be blocked, but unfortunately, their ASN is very widely-encompassing and interlaces
-# significantly with with a number of benign, innocent ISPs, human endpoint connections (A/DSL connections, etc), as
-# well as with backbone architecture and various IPs and CIDRs that we definitely shouldn't be blocking.
-
-# Because of this, I'm splitting their ASN into multiple sections pertaining the things that we want to block, as
-# opposed to just listing their ASN in entirety. Sections will be split across ipv[46].dat + ipv[46]_isps.dat +
-# ipv[46]_other.dat accordingly.
+# attempts, spamming, scraping, etc), and generally, this type of traffic should be blocked, but unfortunately, their
+# ASN encompasses and interlaces significantly with with a number of benign, innocent ISPs, human endpoint, backbone
+# architecture, etc that we don't want to block. Therefore, I'm splitting this up into multiple sections across
+# multiple signature files accordingly.
 
 # Wikipedia page about Cogent Communications: en.wikipedia.org/wiki/Cogent_Communications
 # Refer bgpmon.net/large-scale-bgp-hijack-out-of-india/
@@ -8065,7 +8061,7 @@ recaptcha:
 # "PSINet"
 # Cheap human endpoint ISP with ranges known to be used by hackers and spammers, but also contains benign ranges+users.
 # Careful when updating; Section contains one "Run" parameter.
-# Updated: 2018.08.25
+# Updated: 2019.02.27
 38.0.0.0/8 Run rules_specific.php
 128.145.0.0/16 Deny Generic
 130.117.0.0/16 Deny Generic
@@ -8073,6 +8069,7 @@ recaptcha:
 149.2.0.0/16 Deny Generic
 149.5.0.0/16 Deny Generic
 149.6.127.0/24 Deny Generic
+149.6.192.0/24 Deny Generic
 149.6.194.0/23 Deny Generic
 149.6.196.0/24 Deny Generic
 149.6.205.0/24 Deny Generic
@@ -8081,13 +8078,14 @@ recaptcha:
 149.7.16.0/23 Deny Generic
 149.7.39.0/24 Deny Generic
 149.7.61.0/24 Deny Generic
-149.7.68.0/22 Deny Generic
 149.7.99.0/24 Deny Generic
 149.7.105.0/24 Deny Generic
-149.7.114.0/23 Deny Generic
-149.7.213.0/24 Deny Generic
+149.7.108.0/24 Deny Generic
+149.7.210.0/23 Deny Generic
+149.7.212.0/24 Deny Generic
 149.7.218.0/23 Deny Generic
 149.7.220.0/23 Deny Generic
+149.7.222.0/24 Deny Generic
 149.7.225.0/24 Deny Generic
 149.7.226.0/23 Deny Generic
 149.11.0.0/16 Deny Generic
@@ -8095,11 +8093,10 @@ recaptcha:
 149.12.33.0/24 Deny Generic
 149.12.67.0/24 Deny Generic
 149.12.68.0/23 Deny Generic
-149.12.104.0/21 Deny Generic
+149.12.97.0/24 Deny Generic
 149.12.112.0/21 Deny Generic
 149.12.164.0/22 Deny Generic
 149.12.177.0/24 Deny Generic
-149.12.179.0/24 Deny Generic
 149.12.182.0/24 Deny Generic
 149.12.194.0/24 Deny Generic
 149.12.210.0/23 Deny Generic
@@ -8107,12 +8104,11 @@ recaptcha:
 149.12.216.0/22 Deny Generic
 149.12.222.0/23 Deny Generic
 149.13.8.0/21 Deny Generic
-149.13.20.0/22 Deny Generic
 149.13.28.0/24 Deny Generic
 149.13.31.0/24 Deny Generic
+149.13.67.0/24 Deny Generic
 149.13.71.0/24 Deny Generic
 149.13.73.0/24 Deny Generic
-149.13.89.0/24 Deny Generic
 149.13.91.0/24 Deny Generic
 149.13.114.0/24 Deny Generic
 149.13.121.0/24 Deny Generic
@@ -8140,8 +8136,10 @@ recaptcha:
 149.108.0.0/16 Deny Generic
 149.110.0.0/16 Deny Generic
 149.113.0.0/16 Deny Generic
+149.115.0.0/20 Deny Generic
 149.115.32.0/20 Deny Generic
-149.115.104.0/21 Deny Generic
+149.115.80.0/20 Deny Generic
+149.115.108.0/22 Deny Generic
 149.115.120.0/21 Deny Generic
 149.115.128.0/17 Deny Generic
 149.120.0.0/16 Deny Generic
@@ -8161,13 +8159,31 @@ recaptcha:
 206.2.0.0/16 Deny Generic
 206.3.32.0/19 Deny Generic
 206.3.64.0/18 Deny Generic
-206.3.139.0/24 Deny Generic
-206.3.202.0/24 Deny Generic
+206.3.128.0/17 Deny Generic
 206.232.0.0/14 Deny Generic
 206.236.0.0/15 Deny Generic
 206.238.0.0/16 Deny Generic
 Origin: US
 Tag: PSINet, Inc
+---
+recaptcha:
+ enabled: true
+
+# "Tu Casa Inalambrica de Mexico SA de CV"
+# Legit ISP in Mexico, but also a heavy source of spam.
+# Updated: 2019.02.27
+170.0.12.0/22 Deny Spam
+Origin: MX
+Tag: Tu Casa Inalambrica
+---
+recaptcha:
+ enabled: true
+
+# A frequent source of spam.
+# Updated: 2019.02.27
+82.129.6.0/23 Deny Spam
+Origin: EU
+Tag: IGNACIO SANCHEZ RUIZ
 ---
 recaptcha:
  enabled: true
@@ -8193,13 +8209,15 @@ Tag: Children Telemedicin
 
 
 # ASN 25408 ("WEST CALL SPb LLC").
-# %Listed, Google Malware Dashboard: 1.36%.
-# Stop Forum Spam (SFS) listings: 337.
-# Updated: 2018.03.22 / Checked: 2018.07.19
+# %Listed, Google Malware Dashboard: 1.71%.
+# Stop Forum Spam (SFS) listings: 678.
+# Updated: 2019.02.27
 
+62.182.88.0/21 Deny Generic
 77.244.16.0/20 Deny Generic
 84.52.64.0/18 Deny Generic
 91.202.220.0/22 Deny Generic
+95.215.56.0/22 Deny Generic
 109.167.128.0/17 Deny Generic
 185.202.212.0/22 Deny Generic
 194.24.240.0/23 Deny Generic

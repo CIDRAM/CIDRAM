@@ -1,8 +1,8 @@
 # IPv4 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv4_isps.dat
 
-# Version: 2019.57.386
-# Last modified: 2019.02.27
+# Version: 2019.59.384
+# Last modified: 2019.03.01
 
 
 # ---
@@ -269,8 +269,8 @@ Tag: CIZGI TELEKOM
 
 
 # ASN 25504 ("Vautron Rechenzentrum AG").
-# %Listed, Google Malware Dashboard: 0.56%.
-# Updated: 2017.05.21 / Checked: 2018.07.25
+# %Listed, Google Malware Dashboard: 0.34%.
+# Updated: 2017.05.21 / Checked: 2019.02.28
 
 46.175.56.0/21 Deny Generic
 83.243.56.0/21 Deny Generic
@@ -936,16 +936,37 @@ recaptcha:
  enabled: true
 
 
-# ASN 133042 ("Office of the basic education commission").
-# Stop Forum Spam (SFS) listings: 3.
-# Updated: 2018.03.26 / Checked: 2018.07.25
+# ASNs 4621, 133042 ("Office of the basic education commission").
+# Just listing anything under 202.29.* though (spam activity seems to be concentrated in those ranges, and as these
+# ASNs are used by several universities in Thailand plus a government office, blocking excessively could result in
+# some false positives).
+# Stop Forum Spam (SFS) listings: 6 (AS4621), 11 (AS133042).
+# Updated: 2019.02.28
 
-61.7.248.0/24 Deny Spam
+202.29.5.0/24 Deny Spam
+202.29.8.0/22 Deny Spam
+202.29.13.0/24 Deny Spam
+202.29.16.0/24 Deny Spam
+202.29.21.0/24 Deny Spam
+202.29.38.0/23 Deny Spam
+202.29.40.0/21 Deny Spam
+202.29.48.0/24 Deny Spam
+202.29.50.0/24 Deny Spam
+202.29.54.0/24 Deny Spam
+202.29.56.0/24 Deny Spam
+202.29.62.0/24 Deny Spam
 202.29.66.0/24 Deny Spam
+202.29.68.0/24 Deny Spam
+202.29.76.0/24 Deny Spam
+202.29.79.0/24 Deny Spam
+202.29.88.0/24 Deny Spam
+202.29.90.0/24 Deny Spam
+202.29.92.0/22 Deny Spam
+202.29.129.0/24 Deny Spam
+202.29.130.0/23 Deny Spam
+202.29.153.0/24 Deny Spam
 202.29.172.0/22 Deny Spam
 202.29.176.0/22 Deny Spam
-203.159.160.0/24 Deny Spam
-203.159.164.0/24 Deny Spam
 Origin: TH
 Tag: OBEC
 ---
@@ -962,21 +983,6 @@ Tag: City Telecom
 ---
 recaptcha:
  enabled: true
-
-
-# ASN 6870 ("H1 LLC").
-# Stop Forum Spam (SFS) listings: 2,131.
-# Updated: 2017.05.21 / Checked: 2018.07.25
-
-146.120.110.0/24 Deny Generic
-Origin: CZ
-91.105.232.0/21 Deny Generic
-188.64.168.0/21 Deny Generic
-194.31.59.0/24 Deny Generic
-Origin: RU
-194.33.180.0/24 Deny Generic
-Origin: UA
-Tag: H1 LLC
 
 
 # ASN 3223 ("Voxility LLC").
@@ -1779,9 +1785,9 @@ Tag: Init7
 
 
 # ASNs 24700, 61316 ("Yes Networks Unlimited Ltd").
-# Updated: 2018.03.26 / Checked: 2018.07.25
+# Updated: 2019.02.28
 
-185.41.52.0/23 Deny Generic
+185.41.53.0/24 Deny Generic
 Origin: CZ
 185.10.208.0/22 Deny Generic
 193.33.212.0/23 Deny Generic
@@ -1971,9 +1977,11 @@ Tag: GREEN FLASH TRADING
 
 # ASN 62454 ("Zyztm Research Division 10 B.V").
 # Cyber warfare, credit card theft, etc.
-# Stop Forum Spam (SFS) listings: 62.
-# Updated: 2016.04.23 / Checked: 2018.07.25
+# Stop Forum Spam (SFS) listings: 22.
+# Updated: 2019.02.28
 
+141.98.46.0/24 Deny Generic
+Origin: DE
 185.35.136.0/22 Deny Generic
 Origin: NL
 Tag: Zyztm
@@ -9400,6 +9408,7 @@ Tag: SoftLayer Spam ISPs
 
 # ASNs 12322, 12876 ("ONLINE S.A.S").
 # Caught trying to DDoS SFS.
+# Caught attempting to hack honeypots.
 # Spamming getting significantly worse!
 # Moved from cloud services to spammy ISPs signature files due to being a multi-play network.
 # Also provides internet connectivity in some parts of France.

@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_isps.dat
 
-# Version: 2019.57.386
-# Last modified: 2019.02.27
+# Version: 2019.59.384
+# Last modified: 2019.03.01
 
 
 # ---
@@ -29,8 +29,8 @@ Tag: CIZGI TELEKOM
 
 
 # ASN 25504 ("Vautron Rechenzentrum AG").
-# %Listed, Google Malware Dashboard: 0.56%.
-# Updated: 2016.01.18 / Checked: 2018.07.25
+# %Listed, Google Malware Dashboard: 0.34%.
+# Updated: 2016.01.18 / Checked: 2019.02.28
 
 2001:67c:2394::/48 Deny Generic
 2a00:19e0::/29 Deny Generic
@@ -369,7 +369,7 @@ Tag: Init7
 
 
 # ASNs 24700, 61316 ("Yes Networks Unlimited Ltd").
-# Updated: 2017.12.08 / Checked: 2018.07.25
+# Updated: 2017.12.08 / Checked: 2019.02.28
 
 2a03:6540::/32 Deny Generic
 Origin: UA
@@ -412,8 +412,8 @@ Tag: GREEN FLASH TRADING
 
 # ASN 62454 ("Zyztm Research Division 10 B.V").
 # Cyber warfare, credit card theft, etc.
-# Stop Forum Spam (SFS) listings: 62.
-# Updated: 2016.04.23 / Checked: 2018.07.25
+# Stop Forum Spam (SFS) listings: 22.
+# Updated: 2016.04.23 / Checked: 2019.02.28
 
 2a01:54c0::/32 Deny Generic
 Origin: NL
@@ -1548,6 +1548,7 @@ Tag: SoftLayer Spam ISPs
 
 # ASNs 12322, 12876 ("ONLINE S.A.S").
 # Caught trying to DDoS SFS.
+# Caught attempting to hack honeypots.
 # Spamming getting significantly worse!
 # Moved from cloud services to spammy ISPs signature files due to being a multi-play network.
 # Also provides internet connectivity in some parts of France.

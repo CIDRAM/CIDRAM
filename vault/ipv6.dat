@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6.dat
 
-# Version: 2019.57.386
-# Last modified: 2019.02.27
+# Version: 2019.59.384
+# Last modified: 2019.03.01
 
 
 # ---
@@ -240,6 +240,7 @@ Tag: 1&1 Internet SE
 
 
 # ASNs 16276, 35540 ("OVH Systems").
+# Caught attempting to hack honeypots.
 # %Listed, Google Malware Dashboard: 0.31% (AS16276).
 # Stop Forum Spam (SFS) listings: 373,873 (AS16276), 8 (AS35540).
 # Updated: 2017.05.06 / Checked: 2019.01.16
@@ -347,9 +348,9 @@ Tag: Leaseweb
 
 
 # ASN 43146 ("Agava Ltd").
-# %Listed, Google Malware Dashboard: 0.25%.
-# Stop Forum Spam (SFS) listings: 25.
-# Updated: 2017.12.19 / Checked: 2018.08.25
+# %Listed, Google Malware Dashboard: 0.15%.
+# Stop Forum Spam (SFS) listings: 10.
+# Updated: 2019.03.01
 
 2a03:4900::/47 Deny Cloud
 2a03:4900:2::/48 Deny Cloud
@@ -357,7 +358,7 @@ Tag: Leaseweb
 2a03:4900:6::/48 Deny Cloud
 2a03:4900:a0::/47 Deny Cloud
 2a03:4900:fffb::/48 Deny Cloud
-2a03:4900:fffc::/48 Deny Cloud
+2a03:4900:fffc::/47 Deny Cloud
 2a03:4900:ffff::/48 Deny Cloud
 Origin: RU
 Tag: Agava Ltd
@@ -453,9 +454,8 @@ Tag: Avesta Networks LLC
 
 
 # ASN 42244 ("Hosting Operator eServer.ru Ltd").
-# %Listed, Google Malware Dashboard: 0.06%.
-# Stop Forum Spam (SFS) listings: 5.
-# Updated: 2018.08.25
+# Stop Forum Spam (SFS) listings: 3.
+# Updated: 2018.08.25 / Checked: 2019.03.01
 
 2a0a:2540::/29 Deny Cloud
 Origin: RU
@@ -478,9 +478,12 @@ Tag: eServer.ru
 
 
 # ASN 12722 ("RECONN. Operator svyazy Ltd").
-# Stop Forum Spam (SFS) listings: 816.
-# Updated: 2018.03.30 / Checked: 2018.07.25
+# %Listed, Google Malware Dashboard: 0.62%.
+# Stop Forum Spam (SFS) listings: 81.
+# Updated: 2019.02.28
 
+2a02:c6c0::/32 Deny Cloud
+Origin: GB
 2001:67c:2824::/48 Deny Cloud
 2a00:1f70::/32 Deny Cloud
 2a05:4800::/29 Deny Cloud
@@ -489,9 +492,9 @@ Tag: svyazy
 
 
 # ASN 35415 ("Webzilla B.V").
-# %Listed, Google Malware Dashboard: 0.59%.
-# Stop Forum Spam (SFS) listings: 25.
-# Updated: 2018.08.22
+# %Listed, Google Malware Dashboard: 0.18%.
+# Stop Forum Spam (SFS) listings: 145.
+# Updated: 2018.08.22 / Checked: 2019.02.28
 
 2a00:1178::/32 Deny Cloud
 Origin: NL
@@ -1198,9 +1201,9 @@ Tag: QuadraNet, Inc
 
 
 # ASN 36352 ("ColoCrossing").
-# %Listed, Google Malware Dashboard: 3.95%.
-# Stop Forum Spam (SFS) listings: 139,874.
-# Updated: 2016.01.22 / Checked: 2018.08.24
+# %Listed, Google Malware Dashboard: 4.14%.
+# Stop Forum Spam (SFS) listings: 136,309.
+# Updated: 2016.01.22 / Checked: 2019.02.28
 
 2607:9d00:1::/48 Deny Cloud
 Origin: US
@@ -3559,9 +3562,9 @@ Tag: SpaceWeb Ltd
 
 
 # ASN 43391 ("Netdirekt A.S").
-# %Listed, Google Malware Dashboard: 0.19%.
-# Stop Forum Spam (SFS) listings: 79.
-# Updated: 2016.04.29 / Checked: 2018.07.28
+# %Listed, Google Malware Dashboard: 0.21%.
+# Stop Forum Spam (SFS) listings: 57.
+# Updated: 2016.04.29 / Checked: 2019.03.01
 
 2a01:aac0::/32 Deny Cloud
 Origin: TR
@@ -3605,9 +3608,8 @@ Tag: SunnyVision Limited
 
 
 # ASN 37943 ("ZhengZhou GIANT Computer Network Technology Co., Ltd").
-# %Listed, Google Malware Dashboard: 2.66%.
-# Stop Forum Spam (SFS) listings: 2.
-# Updated: 2016.05.01 / Checked: 2018.07.28
+# %Listed, Google Malware Dashboard: 2.13%.
+# Updated: 2016.05.01 / Checked: 2019.03.01
 
 2400:a480::/32 Deny Cloud
 Origin: CN
@@ -3625,13 +3627,13 @@ Tag: Superior B.V
 
 
 # ASN 27715 ("Locaweb Servios de Internet S/A").
-# %Listed, Google Malware Dashboard: 0.15%.
-# Stop Forum Spam (SFS) listings: 299.
-# Updated: 2016.05.01 / Checked: 2018.07.28
+# %Listed, Google Malware Dashboard: 1.12%.
+# Stop Forum Spam (SFS) listings: 543.
+# Updated: 2016.05.01 / Checked: 2019.03.01
 
 2804:218::/32 Deny Cloud
 Origin: BR
-Tag: Locaweb ServiÃ§os
+Tag: Locaweb Serviços
 
 
 # ASN 24446 ("NetRegistry Pty Ltd").
@@ -4445,8 +4447,8 @@ Tag: GMO-Z.com USA, INC
 
 
 # ASN 201628 ("Internet Unie Services B.V").
-# Stop Forum Spam (SFS) listings: 3,175.
-# Updated: 2016.09.12 / Checked: 2018.07.25
+# Stop Forum Spam (SFS) listings: 2,007.
+# Updated: 2016.09.12 / Checked: 2019.02.28
 
 2a00:1ac0:f1be::/48 Deny Cloud
 Origin: NL
@@ -4670,9 +4672,9 @@ Tag: SPRINT
 
 
 # ASN 55286 ("B2 Net Solutions Inc").
-# %Listed, Google Malware Dashboard: 0.16%.
-# Stop Forum Spam (SFS) listings: 69,325.
-# Updated: 2017.12.18 / Checked: 2018.08.25
+# %Listed, Google Malware Dashboard: 0.09%.
+# Stop Forum Spam (SFS) listings: 72,439.
+# Updated: 2017.12.18 / Checked: 2019.03.01
 
 2607:4300::/48 Deny Cloud
 Origin: CA
@@ -4680,7 +4682,7 @@ Tag: B2 Net Solutions
 
 
 # ASNs 24669, 34202, 35545, 42902, 62240, 202791, 202792, 206136, 206144 ("CloudSRV Limited" and "Clouvider Limited").
-# Updated: 2018.08.21
+# Updated: 2019.03.01
 
 2a02:e00:ffe9::/48 Deny Cloud
 Origin: DE
@@ -4692,6 +4694,7 @@ Origin: EU
 2a06:bdc0::/29 Deny Cloud
 2a07:7ec2::/31 Deny Cloud
 2a0a:54c0::/29 Deny Cloud
+2a0b:b82::/64 Deny Cloud
 2a0b:b86::/34 Deny Cloud
 2a0b:1c00:1919::/48 Deny Cloud
 2a0d:5080::/29 Deny Cloud
@@ -5372,9 +5375,8 @@ Tag: WorldStream
 
 
 # ASN 11888 ("Television Internacional, S.A. de C.V.").
-# %Listed, abuseat.org (CBL-Listed): 0.59%.
-# Stop Forum Spam (SFS) listings: 217.
-# Updated: 2017.12.18 / Checked: 2018.08.25
+# Stop Forum Spam (SFS) listings: 660.
+# Updated: 2017.12.18 / Checked: 2019.03.01
 
 2806:230::/32 Deny Cloud
 Origin: MX
@@ -5990,6 +5992,7 @@ Tag: Sprious LLC
 
 
 # ASN 60144 ("3W Infra B.V").
+# Caught attempting to hack honeypots.
 # %Listed, Google Malware Dashboard: 0.30%.
 # %Listed, abuseat.org (CBL-Listed): 3.53%.
 # Stop Forum Spam (SFS) listings: 312.

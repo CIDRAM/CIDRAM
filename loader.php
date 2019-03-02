@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The loader (last modified: 2018.01.16).
+ * This file: The loader (last modified: 2019.03.02).
  */
 
 /**
@@ -45,7 +45,7 @@ if (!defined('CIDRAM')) {
     $CIDRAM['Direct'] = function () {
         return (
             !isset($_SERVER['SCRIPT_FILENAME']) ||
-            str_replace("\\", '/', strtolower($_SERVER['SCRIPT_FILENAME'])) === str_replace("\\", '/', strtolower(__FILE__))
+            str_replace("\\", '/', strtolower(realpath($_SERVER['SCRIPT_FILENAME']))) === str_replace("\\", '/', strtolower(__FILE__))
         );
     };
 

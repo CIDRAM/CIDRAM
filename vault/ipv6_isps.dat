@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_isps.dat
 
-# Version: 2019.59.384
-# Last modified: 2019.03.01
+# Version: 2019.61.307
+# Last modified: 2019.03.03
 
 
 # ---
@@ -172,24 +172,35 @@ Tag: INFOBOX
 
 
 # ASN 49335 ("Mir Telematiki Ltd").
-# %Listed, Google Malware Dashboard: 0.11%.
-# Stop Forum Spam (SFS) listings: 5,544.
-# Updated: 2018.09.01
+# %Listed, Google Malware Dashboard: 0.04%.
+# Stop Forum Spam (SFS) listings: 2,812.
+# Updated: 2019.03.03
 
+2a0c:46c0::/29 Deny Spam
+Origin: DK
 2a05:4f80::/29 Deny Spam
 Origin: ES
 2a0a:f9c4::/32 Deny Spam
 Origin: EU
+2a03:f3c0::/29 Deny Spam
 2a0b:b86:fff0::/44 Deny Spam
 2a0b:b87:ffc0::/44 Deny Spam
 Origin: GB
+2a0c:5c40::/29 Deny Spam
+Origin: IT
 2a0b:7086:fff0::/44 Deny Spam
 2a0b:7087:fff0::/44 Deny Spam
 Origin: NL
+2a0c:7a40::/29 Deny Spam
+Origin: NO
+2a0c:67c0::/29 Deny Spam
+Origin: PT
 2a05:b80::/29 Deny Spam
 2a0a:b385::/32 Deny Spam
 2a0c:9d80::/29 Deny Spam
 Origin: RU
+2a0b:6780::/29 Deny Spam
+Origin: TR
 Tag: Mir Telematiki Ltd
 
 
@@ -463,9 +474,9 @@ recaptcha:
 
 
 # ASN 6876 ("TeNeT Scientific Production Enterprise LLC").
-# %Listed, Google Malware Dashboard: 1.77%.
-# Stop Forum Spam (SFS) listings: 1,474.
-# Updated: 2016.07.20 / Checked: 2018.09.01
+# %Listed, Google Malware Dashboard: 0.82%.
+# Stop Forum Spam (SFS) listings: 2,028.
+# Updated: 2016.07.20 / Checked: 2019.03.03
 
 2a04:2c00::/29 Deny Generic
 Origin: UA
@@ -739,16 +750,18 @@ recaptcha:
 # section in their "ignore.dat" file as a means of minimising the potential impact of false positives. A balanced
 # approach for those that may expect some such traffic, but not a lot of it, would be to not ignore this section, but
 # to ensure that the reCAPTCHA feature is enabled in their configuration.
-# %Listed, Google Malware Dashboard: 2.40%.
-# Stop Forum Spam (SFS) listings: 91,829.
-# Updated: 2018.09.01
+# %Listed, Google Malware Dashboard: 1.13%.
+# %Listed, abuseat.org (CBL-Listed): 0.66%.
+# Stop Forum Spam (SFS) listings: 56,298.
+# Updated: 2019.03.03
 
 2406:8500::/32 Deny Generic
-240e::/24 Deny Generic
+240e::/20 Deny Generic
 Origin: CN
 2a04:f580:8000::/48 Deny Generic
 2a04:f580:8010::/47 Deny Generic
 2a04:f580:8090::/48 Deny Generic
+2a04:f580:80a0::/48 Deny Generic
 2a04:f580:8200::/48 Deny Generic
 2a04:f580:8210::/47 Deny Generic
 2a04:f580:8290::/48 Deny Generic
@@ -760,14 +773,16 @@ Origin: GB
 2400:9380:8140::/48 Deny Generic
 2400:9380:8200::/47 Deny Generic
 2400:9380:8221::/48 Deny Generic
+2400:9380:8301::/48 Deny Generic
 Origin: HK
 2605:9d80:8001::/48 Deny Generic
 2605:9d80:8011::/48 Deny Generic
 2605:9d80:8031::/48 Deny Generic
 2605:9d80:8041::/48 Deny Generic
+2605:9d80:8081::/48 Deny Generic
 Origin: US
-2c0f:f7a8:8011::/48 Deny Generic
-2c0f:f7a8:8211::/48 Deny Generic
+2c0f:f7a8:8010::/47 Deny Generic
+2c0f:f7a8:8210::/47 Deny Generic
 Origin: ZA
 Tag: China Backbone 4134
 ---
@@ -1037,14 +1052,15 @@ recaptcha:
 # the potential impact of false positives. A balanced approach for those that may expect some such traffic, but not a
 # lot of it, would be to not ignore this section, but to ensure that the reCAPTCHA feature is enabled in their
 # configuration.
-# %Listed, Google Malware Dashboard: 0.27%.
-# %Listed, abuseat.org (CBL-Listed): 2.75%.
-# Stop Forum Spam (SFS) listings: 17,155.
-# Updated: 2018.09.01
+# %Listed, Google Malware Dashboard: 0.26%.
+# %Listed, abuseat.org (CBL-Listed): 6.83%.
+# Stop Forum Spam (SFS) listings: 23,467.
+# Updated: 2019.03.03
 
 2001:df2:ca00::/48 Deny Generic
 2001:df2:ce00::/48 Deny Generic
-2001:ee0:1::/48 Deny Generic
+2001:ee0::/47 Deny Generic
+2001:ee0:100::/40 Deny Generic
 2001:ee0:200::/40 Deny Generic
 2001:ee0:300::/47 Deny Generic
 2001:ee0:305::/48 Deny Generic
@@ -1070,19 +1086,15 @@ recaptcha:
 2001:ee0:4880::/41 Deny Generic
 2001:ee0:4900::/40 Deny Generic
 2001:ee0:4b00::/40 Deny Generic
-2001:ee0:4c00::/40 Deny Generic
-2001:ee0:4d00::/41 Deny Generic
-2001:ee0:4d80::/42 Deny Generic
-2001:ee0:4e00::/42 Deny Generic
-2001:ee0:4f00::/41 Deny Generic
-2001:ee0:5080::/41 Deny Generic
-2001:ee0:5100::/40 Deny Generic
+2001:ee0:4c00::/39 Deny Generic
+2001:ee0:4e00::/41 Deny Generic
+2001:ee0:4e80::/42 Deny Generic
+2001:ee0:4f00::/40 Deny Generic
+2001:ee0:5000::/39 Deny Generic
 2001:ee0:5200::/40 Deny Generic
 2001:ee0:5300::/42 Deny Generic
 2001:ee0:5380::/41 Deny Generic
-2001:ee0:5400::/40 Deny Generic
-2001:ee0:5500::/42 Deny Generic
-2001:ee0:5580::/41 Deny Generic
+2001:ee0:5400::/39 Deny Generic
 2001:ee0:5600::/40 Deny Generic
 2001:ee0:5700::/41 Deny Generic
 2001:ee0:7240::/42 Deny Generic
@@ -1100,6 +1112,7 @@ recaptcha:
 2001:ee0:7840::/42 Deny Generic
 2001:ee0:7880::/41 Deny Generic
 2001:ee0:7900::/40 Deny Generic
+2001:ee0:a000::/42 Deny Generic
 2405:f980::/48 Deny Generic
 Origin: VN
 Tag: VNPT Corp
@@ -1577,8 +1590,8 @@ Tag: IT Systems LLC
 
 # ASN 31343 ("Intertelecom Ltd").
 # Caught trying to hack into WordPress sites.
-# Stop Forum Spam (SFS) listings: 224.
-# Updated: 2018.09.01
+# Stop Forum Spam (SFS) listings: 281.
+# Updated: 2018.09.01 / Checked: 2019.03.03
 
 2a04:1d00::/29 Deny Generic
 Origin: UA

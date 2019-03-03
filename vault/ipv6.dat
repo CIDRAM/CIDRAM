@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6.dat
 
-# Version: 2019.59.384
-# Last modified: 2019.03.01
+# Version: 2019.61.307
+# Last modified: 2019.03.03
 
 
 # ---
@@ -223,9 +223,9 @@ Tag: GoDaddy.com, LLC
 
 
 # ASN 8560 ("1&1 Internet SE").
-# %Listed, Google Malware Dashboard: 0.38%.
-# Stop Forum Spam (SFS) listings: 4,047.
-# Updated: 2018.04.10 / Checked: 2018.09.01
+# %Listed, Google Malware Dashboard: 0.23%.
+# Stop Forum Spam (SFS) listings: 4,313.
+# Updated: 2018.04.10 / Checked: 2019.03.03
 
 2001:8d8::/32 Deny Cloud
 2a0d:7f00::/29 Deny Cloud
@@ -477,9 +477,9 @@ Origin: RU
 Tag: eServer.ru
 
 
-# ASN 12722 ("RECONN. Operator svyazy Ltd").
-# %Listed, Google Malware Dashboard: 0.62%.
-# Stop Forum Spam (SFS) listings: 81.
+# ASNs 6870, 12722 ("RECONN. Operator svyazy Ltd").
+# %Listed, Google Malware Dashboard: 0.62% (AS12722).
+# Stop Forum Spam (SFS) listings: 1,631 (AS6870), 81 (AS12722).
 # Updated: 2019.02.28
 
 2a02:c6c0::/32 Deny Cloud
@@ -1571,9 +1571,9 @@ Tag: K SERVERS LTD
 
 
 # ASN 18978 ("Enzu Inc").
-# %Listed, Google Malware Dashboard: 4.84%.
-# Stop Forum Spam (SFS) listings: 25,692.
-# Updated: 2017.09.24 / Checked: 2018.09.01
+# %Listed, Google Malware Dashboard: 2.93%.
+# Stop Forum Spam (SFS) listings: 17,700.
+# Updated: 2017.09.24 / Checked: 2019.03.03
 
 2605:f700:10::/48 Deny Cloud
 2605:f700:40::/44 Deny Cloud
@@ -3633,7 +3633,7 @@ Tag: Superior B.V
 
 2804:218::/32 Deny Cloud
 Origin: BR
-Tag: Locaweb Serviços
+Tag: Locaweb
 
 
 # ASN 24446 ("NetRegistry Pty Ltd").
@@ -4722,9 +4722,9 @@ Tag: ECOM-AS
 
 
 # ASN 42831 ("UK Dedicated Servers Limited").
-# %Listed, Google Malware Dashboard: 0.43%.
-# Stop Forum Spam (SFS) listings: 2,935.
-# Updated: 2018.07.28 / Checked: 2018.09.01
+# %Listed, Google Malware Dashboard: 0.11%.
+# Stop Forum Spam (SFS) listings: 2,848.
+# Updated: 2018.07.28 / Checked: 2019.03.03
 
 2a0a:4e83::/48 Deny Cloud
 Origin: DE
@@ -4997,9 +4997,9 @@ Tag: Oy Creanova Hosting
 
 
 # ASN 49505 ("Selectel Ltd").
-# %Listed, Google Malware Dashboard: 0.28%.
-# Stop Forum Spam (SFS) listings: 2,549.
-# Updated: 2017.05.12 / Checked: 2018.09.01
+# %Listed, Google Malware Dashboard: 0.15%.
+# Stop Forum Spam (SFS) listings: 2,545.
+# Updated: 2017.05.12 / Checked: 2019.03.03
 
 2a00:ab00::/32 Deny Cloud
 Origin: RU
@@ -5570,11 +5570,13 @@ Tag: SOCIEDAD BUENA
 
 
 # ASN 63199 ("Capitalonline Data Service Co.,LTD").
-# %Listed, Google Malware Dashboard: 0.52%.
-# Stop Forum Spam (SFS) listings: 342.
-# Updated: 2018.09.01
+# %Listed, Google Malware Dashboard: 0.34%.
+# Stop Forum Spam (SFS) listings: 356.
+# Updated: 2019.03.03
 
-2400:5280::/35 Deny Cloud
+2400:5280::/36 Deny Cloud
+2400:5280:1000::/37 Deny Cloud
+2400:5280:1800::/38 Deny Cloud
 2400:5280:fc00::/38 Deny Cloud
 Origin: CN
 2001:550:2801::/48 Deny Cloud
@@ -5973,8 +5975,7 @@ Tag: Gyron Internet Ltd
 
 
 # ASN 55229 ("White Sands Hosting").
-# Stop Forum Spam (SFS) listings: 1.
-# Updated: 2018.09.01
+# Updated: 2018.09.01 / Checked: 2019.03.03
 
 2606:3980::/48 Deny Cloud
 Origin: US

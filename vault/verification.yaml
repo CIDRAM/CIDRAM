@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Verification data for search engines and social media (last modified: 2019.02.14).
+# This file: Verification data for search engines and social media (last modified: 2019.03.03).
 ##/
 
 Search Engine Verification:
@@ -90,6 +90,24 @@ Search Engine Verification:
   Closure: "DNS-Reverse-Forward"
   Valid Domains:
    - ".seznam.cz"
+ # https://www.distilnetworks.com/bot-directory/bot/teoma/
+ Teoma Bot:
+  Bypass Flag: "Flag-Bypass-Teoma-Check"
+  User Agent: "mozilla/2.0 (compatible; ask jeeves/teoma"
+  Closure: "UA-IP-Match"
+  Can Modify Trackable: false
+  Valid Domains:
+   - "63.123.238.8"
+   - "65.214.45.143"
+   - "65.214.45.148"
+   - "66.235.124.7"
+   - "66.235.124.73"
+   - "66.235.124.74"
+   - "66.235.124.101"
+   - "66.235.124.192"
+   - "66.235.124.193"
+   - "66.235.124.196"
+   - "202.143.148.61"
 
 Social Media Verification:
  # https://help.pinterest.com/en/articles/about-pinterest-crawler-0

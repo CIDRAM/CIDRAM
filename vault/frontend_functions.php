@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2019.02.23).
+ * This file: Front-end functions file (last modified: 2019.03.06).
  */
 
 /**
@@ -321,6 +321,32 @@ $CIDRAM['AppendToString'] = function (&$String, $Delimit = '', $Append = '') {
         $String .= $Delimit;
     }
     $String .= $Append;
+};
+
+/**
+ * Performs some simple sanity checks on files (used by the updater).
+ *
+ * @param string $FileName The name of the file to be checked.
+ * @param string $FileData The content of the file to be checked.
+ * @return bool True when passed; False when failed.
+ */
+$CIDRAM['SanityCheck'] = function ($FileName, $FileData) {
+
+    /** Check whether YAML is valid. */
+    if (preg_match('~\.ya?ml$~i', $FileName)) {
+        $ThisYAML = new \Maikuolan\Common\YAML();
+        if (!($ThisYAML->process($FileData, $ThisYAML->Data))) {
+            return false;
+        }
+    }
+
+    /** A very simple, rudimentary check for unwanted, possibly maliciously inserted HTML. */
+    if ($FileData && preg_match('~<(?:html|body)~i', $FileData)) {
+        return false;
+    }
+
+    /** Passed. */
+    return true;
 };
 
 /**
@@ -1622,7 +1648,7 @@ $CIDRAM['UpdatesHandler-Update'] = function ($ID) use (&$CIDRAM) {
                 }
                 if (
                     preg_match('~\.(?:css|dat|gif|inc|jpe?g|php|png|ya?ml|[a-z]{0,2}db)$~i', $ThisFileName) &&
-                    !$CIDRAM['CheckFileUpdate']($ThisFile)
+                    !$CIDRAM['SanityCheck']($ThisFileName, $ThisFile)
                 ) {
                     $CIDRAM['FE']['state_msg'] .= sprintf(
                         '<code>%s</code> – <code>%s</code> – %s<br />',
@@ -1949,9 +1975,10 @@ $CIDRAM['UpdatesHandler-Verify'] = function ($ID) use (&$CIDRAM) {
     $CIDRAM['Arrayify']($ID);
     foreach ($ID as $ThisID) {
         $Table = '<blockquote class="ng1 comSub">';
-        if (!empty($CIDRAM['Components']['Meta'][$ThisID]['Files'])) {
-            $TheseFiles = $CIDRAM['Components']['Meta'][$ThisID]['Files'];
+        if (empty($CIDRAM['Components']['Meta'][$ThisID]['Files'])) {
+            continue;
         }
+        $TheseFiles = $CIDRAM['Components']['Meta'][$ThisID]['Files'];
         if (!empty($TheseFiles['To'])) {
             $CIDRAM['Arrayify']($TheseFiles['To']);
         }
@@ -1962,38 +1989,61 @@ $CIDRAM['UpdatesHandler-Verify'] = function ($ID) use (&$CIDRAM) {
         $Passed = true;
         for ($Iterate = 0; $Iterate < $Count; $Iterate++) {
             $ThisFile = $TheseFiles['To'][$Iterate];
-            $Checksum = empty($TheseFiles['Checksum'][$Iterate]) ? false : $TheseFiles['Checksum'][$Iterate];
-            $Class = 's';
-            if (!$ThisFileData = $CIDRAM['ReadFile']($CIDRAM['Vault'] . $ThisFile)) {
-                $Passed = false;
-                $Actual = '';
-            } else {
-                $Len = strlen($ThisFileData);
-                $HashPartLen = strpos($Checksum, ':') ?: 64;
-                if ($HashPartLen === 32) {
-                    $Actual = md5($ThisFileData) . ':' . $Len;
-                } else {
-                    $Actual = (($HashPartLen === 40) ? sha1($ThisFileData) : hash('sha256', $ThisFileData)) . ':' . $Len;
-                }
-                if (($Checksum && $Actual !== $Checksum && ($Class = 'txtRd')) || (
-                    preg_match('~\.(?:css|dat|gif|inc|jpe?g|php|png|ya?ml|[a-z]{0,2}db)$~i', $ThisFile) &&
-                    !$CIDRAM['CheckFileUpdate']($ThisFileData)
-                )) {
+            $ThisFileData = $CIDRAM['ReadFile']($CIDRAM['Vault'] . $ThisFile);
+
+            /** Sanity check. */
+            if (
+                preg_match('~\.(?:css|dat|gif|inc|jpe?g|php|png|ya?ml|[a-z]{0,2}db)$~i', $ThisFile)
+            ) {
+                $Class = $CIDRAM['SanityCheck']($ThisFile, $ThisFileData) ? 'txtGn' : 'txtRd';
+                $Sanity = sprintf('<span class="%s">%s</span>', $Class, $CIDRAM['L10N']->getString(
+                    $Class === 'txtGn' ? 'response_passed' : 'response_failed'
+                ));
+                if ($Class === 'txtRd') {
                     $Passed = false;
                 }
-                if ($Checksum && $Class !== 'txtRd') {
+            } else {
+                $Sanity = sprintf('<span class="txtOe">%s</span>', $CIDRAM['L10N']->getString('response_skipped'));
+            }
+
+            $Checksum = empty($TheseFiles['Checksum'][$Iterate]) ? '' : $TheseFiles['Checksum'][$Iterate];
+            $Len = strlen($ThisFileData);
+            $HashPartLen = strpos($Checksum, ':') ?: 64;
+            if ($HashPartLen === 32) {
+                $Actual = md5($ThisFileData) . ':' . $Len;
+            } else {
+                $Actual = (($HashPartLen === 40) ? sha1($ThisFileData) : hash('sha256', $ThisFileData)) . ':' . $Len;
+            }
+
+            /** Integrity check. */
+            if ($Checksum) {
+                if ($Actual !== $Checksum) {
+                    $Class = 'txtRd';
+                    $Passed = false;
+                } else {
                     $Class = 'txtGn';
                 }
+                $Integrity = sprintf('<span class="%s">%s</span>', $Class, $CIDRAM['L10N']->getString(
+                    $Class === 'txtGn' ? 'response_passed' : 'response_failed'
+                ));
+            } else {
+                $Class = 's';
+                $Integrity = sprintf('<span class="txtOe">%s</span>', $CIDRAM['L10N']->getString('response_skipped'));
             }
+
+            /** Append results. */
             $Table .= sprintf(
-                '<code>%1$s</code> – %7$s<br />%2$s – <code class="%6$s">%3$s</code><br />%4$s – <code class="%6$s">%5$s</code><hr />',
+                '<code>%1$s</code> – %7$s %8$s – %9$s %10$s<br />%2$s – <code class="%6$s">%3$s</code><br />%4$s – <code class="%6$s">%5$s</code><hr />',
                 $ThisFile,
                 $CIDRAM['L10N']->getString('label_actual'),
-                $Actual,
+                $Actual ?: '?',
                 $CIDRAM['L10N']->getString('label_expected'),
-                $Checksum,
+                $Checksum ?: '?',
                 $Class,
-                $CIDRAM['L10N']->getString($Class === 'txtGn' ? 'field_ok' : 'response_possible_problem_found')
+                $CIDRAM['L10N']->getString('label_integrity_check'),
+                $Integrity,
+                $CIDRAM['L10N']->getString('label_sanity_check'),
+                $Sanity
             );
         }
         $Table .= '</blockquote>';
@@ -2542,20 +2592,6 @@ $CIDRAM['FileManager-IsLogFile'] = function ($File) use (&$CIDRAM) {
 $CIDRAM['GenerateConfirm'] = function ($Action, $Form) use (&$CIDRAM) {
     $Confirm = str_replace(["'", '"'], ["\'", '\x22'], sprintf($CIDRAM['L10N']->getString('confirm_action'), $Action));
     return 'javascript:confirm(\'' . $Confirm . '\')&&document.getElementById(\'' . $Form . '\').submit()';
-};
-
-/**
- * Checks file updates for known sanity errors (upstream problems, wrong files served because of server downtime, etc).
- *
- * @param string $FileData The data of the file to check.
- * @param int $Mode What to check for (to be determined by the calling code).
- * @return bool File passes check (true) or fails check (false).
- */
-$CIDRAM['CheckFileUpdate'] = function ($FileData, $Mode = 1) use (&$CIDRAM) {
-    if ($Mode === 1) {
-        return $FileData && !preg_match('~<(?:html|body)~i', $FileData);
-    }
-    return true;
 };
 
 /**

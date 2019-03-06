@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2019.02.25).
+ * This file: Front-end handler (last modified: 2019.03.06).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -1510,6 +1510,12 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && ($CIDRAM['FE']['Per
     }
     unset($CIDRAM['StateModified']);
 
+    /** Updates page form boilerplate. */
+    $CIDRAM['CFBoilerplate'] =
+        '<form action="?%s" method="POST" style="display:inline">' .
+        '<input name="cidram-form-target" type="hidden" value="updates" />' .
+        '<input name="do" type="hidden" value="%s" />';
+
     /** Prepare components metadata working array. */
     $CIDRAM['Components'] = ['Meta' => [], 'RemoteMeta' => []];
 
@@ -1740,12 +1746,17 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && ($CIDRAM['FE']['Per
         }
         $CIDRAM['Components']['ThisComponent']['VersionSize'] = 0;
         if (
-            !empty($CIDRAM['Components']['ThisComponent']['Files']['Checksum']) &&
-            is_array($CIDRAM['Components']['ThisComponent']['Files']['Checksum'])
+            !empty($CIDRAM['Components']['ThisComponent']['Files']['To']) &&
+            is_array($CIDRAM['Components']['ThisComponent']['Files']['To'])
         ) {
             $CIDRAM['Components']['ThisComponent']['Options'] .=
                 '<option value="verify-component">' . $CIDRAM['L10N']->getString('field_verify') . '</option>';
             $CIDRAM['Components']['Verify'][] = $CIDRAM['Components']['Key'];
+        }
+        if (
+            !empty($CIDRAM['Components']['ThisComponent']['Files']['Checksum']) &&
+            is_array($CIDRAM['Components']['ThisComponent']['Files']['Checksum'])
+        ) {
             array_walk($CIDRAM['Components']['ThisComponent']['Files']['Checksum'], function ($Checksum) use (&$CIDRAM) {
                 if (!empty($Checksum) && ($Delimiter = strpos($Checksum, ':')) !== false) {
                     $CIDRAM['Components']['ThisComponent']['VersionSize'] += (int)substr($Checksum, $Delimiter + 1);
@@ -1962,10 +1973,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && ($CIDRAM['FE']['Per
 
     /** Instructions to update everything at once. */
     if ($CIDRAM['Components']['CountOutdated']) {
-        $CIDRAM['FE']['UpdateAll'] .=
-            '<form action="?' . $CIDRAM['FE']['UpdatesFormTarget'] .
-            '" method="POST" style="display:inline"><input name="cidram-form-target" type="hidden" value="updates" />' .
-            '<input name="do" type="hidden" value="update-component" />';
+        $CIDRAM['FE']['UpdateAll'] .= sprintf($CIDRAM['CFBoilerplate'], $CIDRAM['FE']['UpdatesFormTarget'], 'update-component');
         foreach ($CIDRAM['Components']['Outdated'] as $CIDRAM['Components']['ThisOutdated']) {
             $CIDRAM['FE']['UpdateAll'] .= '<input name="ID[]" type="hidden" value="' . $CIDRAM['Components']['ThisOutdated'] . '" />';
         }
@@ -1974,10 +1982,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && ($CIDRAM['FE']['Per
 
     /** Instructions to verify everything at once. */
     if ($CIDRAM['Components']['CountVerify']) {
-        $CIDRAM['FE']['UpdateAll'] .=
-            '<form action="?' . $CIDRAM['FE']['UpdatesFormTarget'] .
-            '" method="POST" style="display:inline"><input name="cidram-form-target" type="hidden" value="updates" />' .
-            '<input name="do" type="hidden" value="verify-component" />';
+        $CIDRAM['FE']['UpdateAll'] .= sprintf($CIDRAM['CFBoilerplate'], $CIDRAM['FE']['UpdatesFormTarget'], 'verify-component');
         foreach ($CIDRAM['Components']['Verify'] as $CIDRAM['Components']['ThisVerify']) {
             $CIDRAM['FE']['UpdateAll'] .= '<input name="ID[]" type="hidden" value="' . $CIDRAM['Components']['ThisVerify'] . '" />';
         }
@@ -2027,7 +2032,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && ($CIDRAM['FE']['Per
     }
 
     /** Cleanup. */
-    unset($CIDRAM['Components']);
+    unset($CIDRAM['Components'], $CIDRAM['CFBoilerplate']);
 
 }
 

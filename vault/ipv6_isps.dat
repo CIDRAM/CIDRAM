@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_isps.dat
 
-# Version: 2019.67.416
-# Last modified: 2019.03.09
+# Version: 2019.68.656
+# Last modified: 2019.03.10
 
 
 # ---
@@ -652,10 +652,10 @@ Tag: PHOENIX NAP, LLC
 
 
 # ASNs 24955, 41704 ("Orenburgskaya Gorodskaya Set, ZAO").
-# %Listed, Google Malware Dashboard: 0.74% (AS24955).
-# %Listed, abuseat.org (CBL-Listed): 1.17% (AS24955).
-# Stop Forum Spam (SFS) listings: 20,444 (AS24955), 42,066 (AS41704).
-# Updated: 2017.12.18 / Checked: 2018.09.10
+# Caught spamming while pretending to be Google.
+# %Listed, Google Malware Dashboard: 0.30% (AS24955).
+# Stop Forum Spam (SFS) listings: 44,984 (AS24955), 92,350 (AS41704).
+# Updated: 2017.12.18 / Checked: 2019.03.10
 
 2a02:1c8:1::/48 Deny Spam
 2a02:1c8:7::/48 Deny Spam
@@ -1360,6 +1360,21 @@ recaptcha:
 2a03:a0e0::/32 Deny Spam
 Origin: RU
 Tag: Chelyabinsk-Signal
+---
+recaptcha:
+ enabled: true
+
+
+# ASN 15774 ("Closed Joint Stock Company TransTeleCom").
+# Stop Forum Spam (SFS) listings: 526.
+# Updated: 2019.03.10
+
+2a02:618:6::/47 Deny Cloud
+2a02:28d8::/36 Deny Cloud
+2a03:600::/32 Deny Cloud
+2a03:3700::/33 Deny Cloud
+Origin: RU
+Tag: TransTeleCom
 ---
 recaptcha:
  enabled: true

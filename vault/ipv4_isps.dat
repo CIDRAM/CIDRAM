@@ -1,8 +1,8 @@
 # IPv4 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv4_isps.dat
 
-# Version: 2019.67.416
-# Last modified: 2019.03.09
+# Version: 2019.68.656
+# Last modified: 2019.03.10
 
 
 # ---
@@ -3277,10 +3277,10 @@ Tag: JSC Internet-Cosmos
 
 
 # ASNs 24955, 41704 ("Orenburgskaya Gorodskaya Set, ZAO").
-# %Listed, Google Malware Dashboard: 0.74% (AS24955).
-# %Listed, abuseat.org (CBL-Listed): 1.17% (AS24955).
-# Stop Forum Spam (SFS) listings: 20,444 (AS24955), 42,066 (AS41704).
-# Updated: 2018.09.10
+# Caught spamming while pretending to be Google.
+# %Listed, Google Malware Dashboard: 0.30% (AS24955).
+# Stop Forum Spam (SFS) listings: 44,984 (AS24955), 92,350 (AS41704).
+# Updated: 2019.03.10
 
 46.191.128.0/18 Deny Spam
 46.191.192.0/19 Deny Spam
@@ -3292,8 +3292,7 @@ Tag: JSC Internet-Cosmos
 81.30.176.0/20 Deny Spam
 81.30.192.0/19 Deny Spam
 84.39.240.0/22 Deny Spam
-84.39.248.0/22 Deny Spam
-84.39.252.0/23 Deny Spam
+84.39.248.0/21 Deny Spam
 89.189.128.0/19 Deny Spam
 92.50.128.0/18 Deny Spam
 94.41.0.0/16 Deny Spam
@@ -3301,6 +3300,7 @@ Tag: JSC Internet-Cosmos
 136.169.128.0/17 Deny Spam
 145.255.0.0/19 Deny Spam
 178.214.224.0/19 Deny Spam
+213.5.108.0/22 Deny Spam
 Origin: RU
 Tag: Ufanet
 ---
@@ -7941,11 +7941,56 @@ recaptcha:
 
 
 # ASN 15774 ("Closed Joint Stock Company TransTeleCom").
-# Just including a limited subset here on proviso, to monitor for a while. May remove section in the near future.
-# Stop Forum Spam (SFS) listings: 183.
-# Updated: 2018.09.09
+# Stop Forum Spam (SFS) listings: 526.
+# Updated: 2019.03.10
 
+5.8.198.0/24 Deny Spam
+5.8.200.0/21 Deny Spam
+5.8.208.0/21 Deny Spam
+5.149.144.0/23 Deny Spam
+5.149.146.0/24 Deny Spam
+5.149.149.0/24 Deny Spam
+5.149.150.0/24 Deny Spam
+5.254.176.0/21 Deny Spam
+31.132.240.0/20 Deny Spam
+31.134.224.0/20 Deny Spam
+37.49.196.0/24 Deny Spam
+37.58.32.0/21 Deny Spam
+46.20.64.0/20 Deny Spam
+46.50.207.0/24 Deny Spam
+62.33.122.0/23 Deny Spam
+79.140.96.0/20 Deny Spam
+86.110.168.0/22 Deny Spam
+86.110.173.0/24 Deny Spam
+86.110.174.0/23 Deny Spam
+86.110.178.0/24 Deny Spam
+86.110.180.0/22 Deny Spam
+86.110.184.0/21 Deny Spam
+89.186.234.0/24 Deny Spam
+91.105.130.0/24 Deny Spam
+93.189.12.0/22 Deny Spam
+176.104.128.0/21 Deny Spam
+176.104.144.0/20 Deny Spam
+176.104.160.0/21 Deny Spam
+176.125.64.0/18 Deny Spam
+178.76.194.0/23 Deny Spam
+178.76.205.0/24 Deny Spam
+178.76.207.0/24 Deny Spam
+178.76.208.0/22 Deny Spam
+178.76.212.0/23 Deny Spam
+178.76.214.0/24 Deny Spam
+178.76.216.0/21 Deny Spam
+178.76.224.0/19 Deny Spam
+185.6.236.0/22 Deny Spam
+185.13.24.0/22 Deny Spam
+185.52.132.0/22 Deny Spam
+185.131.172.0/23 Deny Spam
+188.68.128.0/21 Deny Spam
+188.68.136.0/22 Deny Spam
+188.168.0.0/16 Deny Spam
 188.244.128.0/17 Deny Spam
+213.129.96.0/19 Deny Spam
+213.138.64.0/19 Deny Spam
 Origin: RU
 Tag: TransTeleCom
 ---

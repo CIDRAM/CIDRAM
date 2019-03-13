@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_isps.dat
 
-# Version: 2019.68.656
-# Last modified: 2019.03.10
+# Version: 2019.71.370
+# Last modified: 2019.03.13
 
 
 # ---
@@ -510,9 +510,9 @@ recaptcha:
 
 
 # ASN 17747 ("SITI NETWORKS LIMITED").
-# %Listed, abuseat.org (CBL-Listed): 18.90%.
-# Stop Forum Spam (SFS) listings: 929.
-# Updated: 2016.09.04 / Checked: 2018.09.14
+# %Listed, abuseat.org (CBL-Listed): 21.85%.
+# Stop Forum Spam (SFS) listings: 857.
+# Updated: 2016.09.04 / Checked: 2019.03.13
 
 2402:ea80::/48 Deny Spam
 2406:3c80::/46 Deny Spam
@@ -524,39 +524,43 @@ recaptcha:
 
 
 # ASN 45271 ("Idea Cellular Limited").
-# %Listed, abuseat.org (CBL-Listed): 15.77%.
-# Stop Forum Spam (SFS) listings: 240.
-# Updated: 2018.09.14
+# %Listed, abuseat.org (CBL-Listed): 39.49%.
+# Stop Forum Spam (SFS) listings: 234.
+# Updated: 2019.03.13
 
-2402:8100:2::/48 Deny Spam
 2402:8100:b::/48 Deny Spam
 2402:8100:2000::/41 Deny Spam
 2402:8100:2080::/42 Deny Spam
 2402:8100:2800::/41 Deny Spam
-2402:8100:3008::/45 Deny Spam
-2402:8100:3010::/44 Deny Spam
+2402:8100:3000::/43 Deny Spam
 2402:8100:3020::/44 Deny Spam
 2402:8100:3030::/48 Deny Spam
 2402:8100:3038::/45 Deny Spam
-2402:8100:3040::/45 Deny Spam
+2402:8100:3040::/44 Deny Spam
+2402:8100:3050::/45 Deny Spam
 2402:8100:3080::/44 Deny Spam
 2402:8100:3090::/45 Deny Spam
+2402:8100:3098::/48 Deny Spam
+2402:8100:30a0::/45 Deny Spam
 2402:8100:3800::/47 Deny Spam
 2402:8100:3804::/46 Deny Spam
 2402:8100:3808::/45 Deny Spam
 2402:8100:3810::/44 Deny Spam
-2402:8100:3820::/43 Deny Spam
+2402:8100:383c::/46 Deny Spam
 2402:8100:3840::/42 Deny Spam
 2402:8100:38c0::/42 Deny Spam
-2402:8100:3900::/44 Deny Spam
-2402:8100:3910::/45 Deny Spam
-2402:8100:3918::/47 Deny Spam
-2402:8100:391a::/48 Deny Spam
+2402:8100:3900::/43 Deny Spam
 2402:8100:3920::/45 Deny Spam
-2402:8100:3928::/47 Deny Spam
 2402:8100:3940::/42 Deny Spam
 2402:8100:3980::/44 Deny Spam
+2402:8100:3990::/47 Deny Spam
+2402:8100:3992::/48 Deny Spam
+2402:8100:3994::/46 Deny Spam
+2402:8100:3998::/46 Deny Spam
+2402:8100:399c::/47 Deny Spam
+2402:8100:399e::/48 Deny Spam
 2402:8100:39c0::/42 Deny Spam
+2402:8100:3a00::/42 Deny Spam
 Origin: IN
 Tag: Idea Cellular
 ---
@@ -674,19 +678,49 @@ recaptcha:
 # I think it would be unwise to not block this AS. However, I'm marking it for use with reCAPTCHA, and those CIDRAM
 # users that don't want to block it can drop this section's tag into the ignore list as a means of ignoring this
 # listing if they want to do so. May remove this section in the future if the AS cleans up their act.
-# %Listed, Google Malware Dashboard: 0.34%.
-# %Listed, abuseat.org (CBL-Listed): 6.58%.
-# Stop Forum Spam (SFS) listings: 5,445.
-# Updated: 2018.09.14
+# %Listed, Google Malware Dashboard: 0.12%.
+# %Listed, abuseat.org (CBL-Listed): 11.76%.
+# Stop Forum Spam (SFS) listings: 7,261.
+# Updated: 2019.03.13
 
+2001:4490::/43 Deny Spam
 2001:4490:3fc::/46 Deny Spam
+2001:4490:400::/43 Deny Spam
 2001:4490:7f8::/45 Deny Spam
+2001:4490:808::/46 Deny Spam
 2001:4490:bfc::/46 Deny Spam
+2001:4490:c00::/43 Deny Spam
 2001:4490:ffc::/46 Deny Spam
+2001:4490:3000::/42 Deny Spam
+2001:4490:3200::/42 Deny Spam
+2001:4490:3400::/42 Deny Spam
+2001:4490:3600::/42 Deny Spam
+2001:4490:3800::/42 Deny Spam
+2001:4490:3a00::/42 Deny Spam
+2001:4490:3c00::/42 Deny Spam
+2001:4490:3d00::/42 Deny Spam
+2001:4490:3e00::/42 Deny Spam
+2001:4490:3f00::/42 Deny Spam
 2001:4490:3ffc::/46 Deny Spam
+2001:4490:4000::/41 Deny Spam
+2001:4490:4080::/44 Deny Spam
+2001:4490:4090::/45 Deny Spam
+2001:4490:4098::/46 Deny Spam
+2001:4490:4400::/41 Deny Spam
+2001:4490:4480::/42 Deny Spam
+2001:4490:44c0::/45 Deny Spam
+2001:4490:44c8::/46 Deny Spam
+2001:4490:4800::/41 Deny Spam
+2001:4490:4880::/42 Deny Spam
+2001:4490:48c0::/43 Deny Spam
+2001:4490:48e0::/45 Deny Spam
+2001:4490:4c1c::/46 Deny Spam
+2001:4490:4e00::/41 Deny Spam
+2001:4490:4e80::/42 Deny Spam
+2001:4490:4ec0::/45 Deny Spam
+2001:4490:4ec8::/46 Deny Spam
 2001:4490:7000::/46 Deny Spam
 2001:4490:7400::/46 Deny Spam
-2001:4490:7800::/46 Deny Spam
 2001:4490:7c00::/46 Deny Spam
 2001:4490:d000::/46 Deny Spam
 2001:4490:d040::/46 Deny Spam
@@ -708,7 +742,6 @@ recaptcha:
 2001:4490:d7a0::/46 Deny Spam
 2001:4490:d800::/46 Deny Spam
 2001:4490:d820::/46 Deny Spam
-2001:4490:d890::/46 Deny Spam
 2001:4490:d8c0::/46 Deny Spam
 2001:4490:d930::/46 Deny Spam
 2001:4490:d970::/46 Deny Spam
@@ -733,6 +766,7 @@ recaptcha:
 2001:4490:f020::/46 Deny Spam
 2001:4490:fffc::/46 Deny Spam
 Origin: IN
+2600:140f:1000::/64 Deny Spam
 2600:1417:50::/47 Deny Spam
 2600:1417:71::/48 Deny Spam
 Origin: US
@@ -813,10 +847,10 @@ recaptcha:
 # false positives, and I would encourage any Chinese CIDRAM users, and any CIDRAM users expecting to receive any
 # traffic from China, to list this section in their ignore file as a means of minimising the potential impact of false
 # positives.
-# %Listed, Google Malware Dashboard: 2.61%.
-# %Listed, abuseat.org (CBL-Listed): 0.21%.
-# Stop Forum Spam (SFS) listings: 985.
-# Updated: 2018.09.10
+# %Listed, Google Malware Dashboard: 0.46%.
+# %Listed, abuseat.org (CBL-Listed): 0.18%.
+# Stop Forum Spam (SFS) listings: 1,744.
+# Updated: 2019.03.13
 
 240e:18::/31 Deny Generic
 240e:2e::/33 Deny Generic
@@ -824,9 +858,21 @@ recaptcha:
 240e:59::/33 Deny Generic
 240e:e0::/32 Deny Generic
 240e:e1:8000::/33 Deny Generic
+240e:e2::/35 Deny Generic
 240e:e3:8000::/33 Deny Generic
 240e:e5:8000::/33 Deny Generic
 240e:e6::/32 Deny Generic
+240e:108:21::/48 Deny Generic
+240e:108:41::/48 Deny Generic
+240e:108:4a::/48 Deny Generic
+240e:108:83::/48 Deny Generic
+240e:109:8021::/48 Deny Generic
+240e:698:2100::/40 Deny Generic
+240e:96c::/32 Deny Generic
+240e:980:2100::/40 Deny Generic
+240e:980:4100::/40 Deny Generic
+240e:980:4a00::/40 Deny Generic
+240e:980:8300::/40 Deny Generic
 Origin: CN
 Tag: China Telecom 4812
 ---
@@ -844,10 +890,9 @@ recaptcha:
 # section in their "ignore.dat" file as a means of minimising the potential impact of false positives. A balanced
 # approach for those that may expect some such traffic, but not a lot of it, would be to not ignore this section, but
 # to ensure that the reCAPTCHA feature is enabled in their configuration.
-# %Listed, Google Malware Dashboard: 1.98%.
-# %Listed, abuseat.org (CBL-Listed): 0.58%.
-# Stop Forum Spam (SFS) listings: 22,295.
-# Updated: 2018.09.14
+# %Listed, Google Malware Dashboard: 0.75%.
+# Stop Forum Spam (SFS) listings: 76,572.
+# Updated: 2019.03.13
 
 2408:8000::/48 Deny Generic
 2408:8000:2::/47 Deny Generic
@@ -865,7 +910,6 @@ recaptcha:
 2408:8033:8000::/33 Deny Generic
 2408:8034::/32 Deny Generic
 2408:803e::/32 Deny Generic
-2408:8051:8000::/33 Deny Generic
 2408:8056::/32 Deny Generic
 2408:8077::/33 Deny Generic
 2408:80c2::/33 Deny Generic
@@ -882,17 +926,23 @@ recaptcha:
 2408:8220::/31 Deny Generic
 2408:8226::/32 Deny Generic
 2408:822a::/32 Deny Generic
-2408:8234::/30 Deny Generic
+2408:822e::/31 Deny Generic
+2408:8230::/29 Deny Generic
 2408:8238::/31 Deny Generic
+2408:823c::/31 Deny Generic
 2408:8240::/32 Deny Generic
 2408:8244::/30 Deny Generic
 2408:8248::/30 Deny Generic
+2408:824c::/32 Deny Generic
 2408:824e::/31 Deny Generic
-2408:8250::/31 Deny Generic
+2408:8250::/30 Deny Generic
+2408:8254::/31 Deny Generic
+2408:825c::/32 Deny Generic
 2408:8260::/32 Deny Generic
 2408:8262::/31 Deny Generic
 2408:8264::/31 Deny Generic
 2408:8266::/32 Deny Generic
+2408:826a::/32 Deny Generic
 2408:826c::/32 Deny Generic
 2408:826e::/31 Deny Generic
 2408:8270::/32 Deny Generic
@@ -900,11 +950,14 @@ recaptcha:
 2408:8278::/31 Deny Generic
 2408:827a::/32 Deny Generic
 2408:8310::/30 Deny Generic
+2408:832e::/31 Deny Generic
+2408:8330::/30 Deny Generic
 2408:8340::/32 Deny Generic
 2408:8344::/30 Deny Generic
 2408:8348::/30 Deny Generic
 2408:834e::/31 Deny Generic
-2408:8350::/31 Deny Generic
+2408:8350::/30 Deny Generic
+2408:8354::/31 Deny Generic
 2408:8362::/31 Deny Generic
 2408:8364::/31 Deny Generic
 2408:836e::/31 Deny Generic
@@ -927,41 +980,56 @@ recaptcha:
 2408:84f0::/31 Deny Generic
 2408:84f2::/32 Deny Generic
 2408:84f4::/30 Deny Generic
-2408:84f8::/30 Deny Generic
-2408:84fc::/31 Deny Generic
-2408:84ff::/32 Deny Generic
+2408:84f8::/29 Deny Generic
 2408:8610::/30 Deny Generic
 2408:8614::/31 Deny Generic
 2408:861a::/31 Deny Generic
 2408:8620::/31 Deny Generic
+2408:8626::/32 Deny Generic
 2408:862a::/32 Deny Generic
-2408:8634::/30 Deny Generic
-2408:8638::/32 Deny Generic
-2408:863c::/32 Deny Generic
+2408:862e::/31 Deny Generic
+2408:8630::/29 Deny Generic
+2408:8638::/31 Deny Generic
+2408:863c::/31 Deny Generic
+2408:8640::/32 Deny Generic
+2408:8642::/32 Deny Generic
 2408:8644::/30 Deny Generic
 2408:8648::/30 Deny Generic
+2408:864e::/31 Deny Generic
+2408:8650::/31 Deny Generic
+2408:8652::/32 Deny Generic
+2408:865c::/32 Deny Generic
+2408:8660::/32 Deny Generic
 2408:8662::/31 Deny Generic
 2408:8664::/31 Deny Generic
 2408:8666::/32 Deny Generic
+2408:866a::/32 Deny Generic
 2408:866c::/32 Deny Generic
 2408:866e::/31 Deny Generic
 2408:8670::/32 Deny Generic
+2408:8674::/31 Deny Generic
 2408:8678::/31 Deny Generic
 2408:867a::/32 Deny Generic
 2408:8710::/30 Deny Generic
 2408:8719::/32 Deny Generic
 2408:871a::/32 Deny Generic
-2408:8720::/31 Deny Generic
+2408:8720::/30 Deny Generic
 2408:8726::/32 Deny Generic
 2408:872b::/32 Deny Generic
+2408:872f::/32 Deny Generic
+2408:8730::/30 Deny Generic
 2408:8734::/31 Deny Generic
 2408:8736::/32 Deny Generic
+2408:8738::/32 Deny Generic
 2408:873b::/32 Deny Generic
-2408:873d::/32 Deny Generic
+2408:873c::/31 Deny Generic
+2408:8740::/32 Deny Generic
+2408:8742::/32 Deny Generic
 2408:8744::/30 Deny Generic
 2408:8748::/30 Deny Generic
 2408:874c::/32 Deny Generic
 2408:874e::/31 Deny Generic
+2408:8752::/32 Deny Generic
 2408:875c::/32 Deny Generic
 2408:8760::/32 Deny Generic
 2408:8762::/31 Deny Generic
@@ -970,7 +1038,11 @@ recaptcha:
 2408:876a::/32 Deny Generic
 2408:876c::/32 Deny Generic
 2408:876e::/31 Deny Generic
+2408:8770::/32 Deny Generic
 2408:8774::/32 Deny Generic
+2408:8776::/32 Deny Generic
+2408:8778::/32 Deny Generic
+2408:877a::/32 Deny Generic
 Origin: CN
 Tag: China Backbone 4837
 ---
@@ -1227,9 +1299,9 @@ recaptcha:
 # ASN 9808 ("Guangdong Mobile Communication Co.Ltd").
 # Numerous significant spam events caught originating from this network. IPs belong to mobile carriers in China, and
 # could cause false positives for websites with Chinese users. Should ignore this section in such cases.
-# %Listed, Google Malware Dashboard: 0.87%.
-# Stop Forum Spam (SFS) listings: 1,487.
-# Updated: 2018.09.10
+# %Listed, Google Malware Dashboard: 0.33%.
+# Stop Forum Spam (SFS) listings: 2,856.
+# Updated: 2018.09.10 / Checked: 2019.03.13
 
 2409:8000::/20 Deny Spam
 Origin: CN
@@ -1240,8 +1312,8 @@ recaptcha:
 
 
 # ASN 9387 ("AUGERE-Pakistan").
-# Stop Forum Spam (SFS) listings: 104.
-# Updated: 2017.03.22 / Checked: 2018.09.14
+# Stop Forum Spam (SFS) listings: 71.
+# Updated: 2017.03.22 / Checked: 2019.03.13
 
 2401:4100::/32 Deny Spam
 Origin: PK
@@ -1369,10 +1441,10 @@ recaptcha:
 # Stop Forum Spam (SFS) listings: 526.
 # Updated: 2019.03.10
 
-2a02:618:6::/47 Deny Cloud
-2a02:28d8::/36 Deny Cloud
-2a03:600::/32 Deny Cloud
-2a03:3700::/33 Deny Cloud
+2a02:618:6::/47 Deny Spam
+2a02:28d8::/36 Deny Spam
+2a03:600::/32 Deny Spam
+2a03:3700::/33 Deny Spam
 Origin: RU
 Tag: TransTeleCom
 ---
@@ -1380,32 +1452,93 @@ recaptcha:
  enabled: true
 
 
-# ASNs 42682, 51570 ('JSC "ER-Telecom Holding"').
-# Stop Forum Spam (SFS) listings: 17,958 (AS42682), 1,886 (AS51570).
-# Updated: 2018.07.25 / Checked: 2019.01.02
+# ASNs 12768, 34533, 41661, 41668, 41727, 41754, 42145, 42682, 50542, 51570 ('JSC "ER-Telecom Holding"').
+# ER-Telecom is a legit, major domestic ISP in Russia, but also a significant source of spam. By not ignoring this
+# signature section, there'll likely be false positives for any websites intended to serve Russian users. To minimise
+# this risk, but also maximise website protection against spam, we're marking the section for use with reCAPTCHA, and
+# making a point of including only those ASNs belonging to this network that have more than a thousand current, active
+# listings at SFS (meaning that ranges more prone to spamming are more likely to be listed than those that aren't
+# prone to spamming). ER-Telecom currently announces 77 ASNs. We're currently including 12 of those ASNs.
+# Updated: 2019.03.11
 
+2a02:2698::/38 Deny Spam
+2a02:2698:1400::/38 Deny Spam
+2a02:2698:2800::/37 Deny Spam
 2a02:2698:4c00::/38 Deny Spam
-2a02:2698:6c00::/38 Deny Spam
-2a02:2698:a000::/48 Deny Spam
-2a03:1ac0:503:b000::/52 Deny Spam
+2a02:2698:5c00::/38 Deny Spam
+2a02:2698:6800::/37 Deny Spam
+2a02:2698:9000::/38 Deny Spam
+2a02:2698:a000::/47 Deny Spam
+2a02:2698:a0ff::/64 Deny Spam
+2a03:1ac0:503:5700::/56 Deny Spam
+2a03:1ac0:503:9000::/52 Deny Spam
+2a03:1ac0:503:a000::/51 Deny Spam
 2a03:1ac0:503:c000::/51 Deny Spam
 2a03:1ac0:510:1800::/53 Deny Spam
 2a03:1ac0:510:4000::/51 Deny Spam
 2a03:1ac0:510:6000::/53 Deny Spam
 2a03:1ac0:5a4:4000::/50 Deny Spam
-2a03:1ac0:5a4:c000::/50 Deny Spam
-2a03:1ac0:5a6:8000::/51 Deny Spam
+2a03:1ac0:5a4:8000::/49 Deny Spam
+2a03:1ac0:5a5:2000::/51 Deny Spam
+2a03:1ac0:5a5:4000::/52 Deny Spam
+2a03:1ac0:5a6:8000::/50 Deny Spam
 2a03:1ac0:5a6:c000::/51 Deny Spam
-2a03:1ac0:5a7:b000::/52 Deny Spam
+2a03:1ac0:5a6:e000::/53 Deny Spam
+2a03:1ac0:5a7:a000::/51 Deny Spam
+2a03:1ac0:2570::/52 Deny Spam
+2a03:1ac0:2570:1800::/53 Deny Spam
 2a03:1ac0:2570:8000::/52 Deny Spam
+2a03:1ac0:2571::/50 Deny Spam
+2a03:1ac0:2571:8000::/50 Deny Spam
+2a03:1ac0:2e00::/48 Deny Spam
+2a03:1ac0:2e92::/48 Deny Spam
+2a03:1ac0:2e93::/50 Deny Spam
+2a03:1ac0:2efc:7000::/52 Deny Spam
+2a03:1ac0:4f8d:3000::/52 Deny Spam
+2a03:1ac0:5571:2000::/51 Deny Spam
+2a03:1ac0:5b90:8400::/54 Deny Spam
+2a03:1ac0:5b90:8c00::/54 Deny Spam
+2a03:1ac0:5b90:9000::/53 Deny Spam
+2a03:1ac0:5b90:ac00::/54 Deny Spam
+2a03:1ac0:5b90:b000::/54 Deny Spam
 2a03:1ac0:5b90:b800::/54 Deny Spam
-2a03:1ac0:5cff:f400::/55 Deny Spam
+2a03:1ac0:5b90:bc00::/56 Deny Spam
+2a03:1ac0:5b90:be00::/55 Deny Spam
+2a03:1ac0:5cff:8000::/51 Deny Spam
+2a03:1ac0:5cff:c000::/52 Deny Spam
+2a03:1ac0:5cff:d800::/53 Deny Spam
+2a03:1ac0:5cff:e000::/52 Deny Spam
+2a03:1ac0:5cff:f400::/54 Deny Spam
+2a03:1ac0:5eb4:8000::/49 Deny Spam
+2a03:1ac0:5eb5:2000::/52 Deny Spam
+2a03:1ac0:5eb5:8000::/49 Deny Spam
+2a03:1ac0:5f4e:8000::/50 Deny Spam
 2a03:1ac0:5f4f::/48 Deny Spam
+2a03:1ac0:6dc2:8000::/52 Deny Spam
 2a03:1ac0:6dc2:9f00::/56 Deny Spam
-2a03:1ac0:6dc2:e000::/52 Deny Spam
+2a03:1ac0:6dc2:b000::/52 Deny Spam
+2a03:1ac0:6dc2:c000::/52 Deny Spam
+2a03:1ac0:6dc2:d800::/53 Deny Spam
+2a03:1ac0:6dc2:e000::/51 Deny Spam
+2a03:1ac0:6dc3:3000::/52 Deny Spam
 2a03:1ac0:6dc3:5000::/52 Deny Spam
+2a03:1ac0:b0d4::/52 Deny Spam
+2a03:1ac0:b0d4:8000::/53 Deny Spam
 2a03:1ac0:b0d5::/51 Deny Spam
+2a03:1ac0:b0d5:6800::/53 Deny Spam
+2a03:1ac0:b0d6:3000::/53 Deny Spam
+2a03:1ac0:b0d6:b800::/53 Deny Spam
+2a03:1ac0:b2a1:c800::/54 Deny Spam
+2a03:1ac0:b2a1:d200::/56 Deny Spam
+2a03:1ac0:b2a1:d400::/54 Deny Spam
+2a03:1ac0:b2a1:fe00::/55 Deny Spam
+2a03:1ac0:bcba:3000::/53 Deny Spam
 2a03:1ac0:bcbb::/49 Deny Spam
+2a03:1ac0:bcbb:f600::/56 Deny Spam
+2a03:1ac0:bcea::/50 Deny Spam
+2a03:1ac0:bceb::/50 Deny Spam
+2a03:1ac0:c196:6900::/56 Deny Spam
+2a03:1ac0:d421:e000::/51 Deny Spam
 Origin: RU
 Tag: ER-Telecom Holding
 ---

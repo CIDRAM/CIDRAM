@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_isps.dat
 
-# Version: 2019.71.370
-# Last modified: 2019.03.13
+# Version: 2019.75.318
+# Last modified: 2019.03.17
 
 
 # ---
@@ -1343,20 +1343,14 @@ recaptcha:
 # just include an entry in ours ignores file to ignore by default, until commented out or removed.
 
 # ASN 12389 ("PJSC Rostelecom").
-# Careful about "2002::/16" listing: Never include this in the aggregated list!
-# %Listed, Google Malware Dashboard: 0.43%.
-# %Listed, abuseat.org (CBL-Listed): 0.86%.
-# Stop Forum Spam (SFS) listings: 317,234.
-# Updated: 2018.05.03 / Checked: 2018.09.23
+# %Listed, Google Malware Dashboard: 0.25%.
+# %Listed, abuseat.org (CBL-Listed): 0.69%.
+# Stop Forum Spam (SFS) listings: 391,832.
+# Updated: 2019.03.17
 
+2a00:1640::/32 Deny Spam
 2a00:1e88::/32 Deny Spam
-2a01:540::/36 Deny Spam
-2a01:540:2000::/35 Deny Spam
-2a01:540:4000::/36 Deny Spam
-2a01:540:6000::/36 Deny Spam
-2a01:540:8000::/36 Deny Spam
-2a01:540:a000::/36 Deny Spam
-2a01:540:c000::/36 Deny Spam
+2a01:540::/32 Deny Spam
 2a01:620::/32 Deny Spam
 Origin: RU
 Tag: PJSC Rostelecom
@@ -1736,10 +1730,10 @@ Origin: UA
 Tag: IT Systems LLC
 
 
-# ASN 31343 ("Intertelecom Ltd").
+# ASNs 31343, 38978, 43656, 51078 ("Intertelecom Ltd").
 # Caught trying to hack into WordPress sites.
-# Stop Forum Spam (SFS) listings: 281.
-# Updated: 2018.09.01 / Checked: 2019.03.03
+# Stop Forum Spam (SFS) listings: 294 (AS31343), 22 (AS43656), 170 (AS51078).
+# Updated: 2018.09.01 / Checked: 2019.03.17
 
 2a04:1d00::/29 Deny Generic
 Origin: UA
@@ -1749,12 +1743,12 @@ recaptcha:
  enabled: true
 
 
-# ASN 31343 ("JSC Kazakhtelecom").
+# ASNs 9198, 39725, 50482 ("JSC Kazakhtelecom").
 # Legit ISP in Kazakhstan carrying human endpoints, but also a significant source of spam and other unwanted requests.
-# %Listed, Google Malware Dashboard: 0.12%.
-# %Listed, abuseat.org (CBL-Listed): 0.76%.
-# Stop Forum Spam (SFS) listings: 3,136.
-# Updated: 2018.09.15
+# %Listed, Google Malware Dashboard: 0.39% (AS9198).
+# %Listed, abuseat.org (CBL-Listed): 0.96% (AS9198).
+# Stop Forum Spam (SFS) listings: 2,881 (AS9198), 10 (AS50482).
+# Updated: 2018.09.15 / Checked: 2019.03.17
 
 2a00:12f8::/32 Deny Spam
 Origin: KZ
@@ -1766,9 +1760,9 @@ recaptcha:
 
 # ASN 8359 ("MTS PJSC").
 # Caught trying to hack WordPress sites.
-# %Listed, Google Malware Dashboard: 0.17%.
-# Stop Forum Spam (SFS) listings: 5,151.
-# Updated: 2018.09.23
+# %Listed, Google Malware Dashboard: 0.12%.
+# Stop Forum Spam (SFS) listings: 6,604.
+# Updated: 2018.09.23 / Checked: 2019.03.17
 
 2a00:f00::/32 Deny Generic
 2a00:1fa0::/29 Deny Generic

@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6.dat
 
-# Version: 2019.75.318
-# Last modified: 2019.03.17
+# Version: 2019.78.660
+# Last modified: 2019.03.20
 
 
 # ---
@@ -467,14 +467,14 @@ Tag: eServer.ru
 
 
 # ASN 42244 ("Hosting Operator eServer.ru Ltd").
-# %Listed, Google Malware Dashboard: 0.23%.
-# Stop Forum Spam (SFS) listings: 4.
-# Updated: 2018.09.23
+# Stop Forum Spam (SFS) listings: 3.
+# Updated: 2019.03.19
 
-2a04:b540:1000::/36 Deny Cloud
-2a04:b540:2000::/36 Deny Cloud
 2a0a:2540::/29 Deny Cloud
 Origin: RU
+2a04:b540:1000::/36 Deny Cloud
+2a04:b540:2000::/36 Deny Cloud
+Origin: SK
 Tag: eServer.ru
 
 
@@ -537,48 +537,44 @@ Tag: GorillaServers, Inc
 
 # Announcing as: "Data Center", "Data Centre" (w/ + w/o space).
 # Various ASNs; Sourced from HE.
-# Updated: 2018.09.21
+# Updated: 2019.03.19
 
+Origin: AR
 2a03:3180:f::/48 Deny Cloud
 Origin: AT
 2400:9c00::/32 Deny Cloud
 2404:3d00:400::/40 Deny Cloud
-Origin: AU
+Origin: BD
+2a02:1760::/32 Deny Cloud
+Origin: BI
 2804:160::/32 Deny Cloud
 2804:644::/32 Deny Cloud
 2804:6e8::/32 Deny Cloud
 2804:888::/32 Deny Cloud
 2804:938::/32 Deny Cloud
-2804:fd4::/32 Deny Cloud
 2804:1208::/32 Deny Cloud
 2804:122c::/32 Deny Cloud
 2804:1d40::/32 Deny Cloud
-2804:2520::/32 Deny Cloud
 2804:3cb8::/32 Deny Cloud
 2804:3fe4::/32 Deny Cloud
 2804:4bbc::/32 Deny Cloud
 2804:4c30::/32 Deny Cloud
-2a02:1760::/32 Deny Cloud
 Origin: BR
 2607:8880::/32 Deny Cloud
 Origin: CA
 2001:67c:33c::/48 Deny Cloud
 2a00:7580:10::/48 Deny Cloud
-Origin: CH
+Origin: CN
 2801:190::/44 Deny Cloud
-Origin: CO
-2a00:1df0::/32 Deny Cloud
-2a04:cac0::/32 Deny Cloud
+Origin: CZ
 2a04:cac3::/32 Deny Cloud
 2a06:9500:1001::/48 Deny Cloud
 2a06:9500:1002::/47 Deny Cloud
 2a06:9500:1004::/48 Deny Cloud
-2a0a:8ec0::/29 Deny Cloud
-2a0b:4340:550::/44 Deny Cloud
 2a0b:76c0::/29 Deny Cloud
-Origin: DE
+Origin: DJ
 2a06:9fc0::/29 Deny Cloud
-Origin: DK
+Origin: EG
 2a01:a4c0::/32 Deny Cloud
 2a01:b5c0::/32 Deny Cloud
 2a03:7480::/43 Deny Cloud
@@ -592,14 +588,15 @@ Origin: FI
 2a03:ad40:420::/48 Deny Cloud
 2a03:ad40:430::/48 Deny Cloud
 Origin: FR
+2001:920:184b::/48 Deny Cloud
 2a04:a180::/32 Deny Cloud
 2a04:b2c0::/29 Deny Cloud
-Origin: GB
+Origin: GR
 2401:9f00::/32 Deny Cloud
 2407:7200::/32 Deny Cloud
 Origin: HK
 2a05:9580::/29 Deny Cloud
-Origin: HU
+Origin: IL
 2401:8800::/40 Deny Cloud
 2401:8800:200::/40 Deny Cloud
 2401:8800:400::/40 Deny Cloud
@@ -612,14 +609,14 @@ Origin: HU
 2404:7e80:2000::/36 Deny Cloud
 2404:7e80:4000::/36 Deny Cloud
 2404:a700::/32 Deny Cloud
-Origin: ID
+Origin: JO
 2402:7a00::/32 Deny Cloud
 2406:fe00::/32 Deny Cloud
-Origin: JP
+Origin: KW
 2a0b:1d40::/32 Deny Cloud
 Origin: LT
 2001:b20::/32 Deny Cloud
-Origin: LU
+Origin: MT
 2806:303::/32 Deny Cloud
 Origin: MX
 2401:200::/32 Deny Cloud
@@ -627,27 +624,25 @@ Origin: MX
 2403:bc00:7fff::/48 Deny Cloud
 2403:bc00:8000::/47 Deny Cloud
 2404:6300::/32 Deny Cloud
-Origin: MY
+Origin: MZ
 2a01:8d20::/32 Deny Cloud
 2a01:9b40::/32 Deny Cloud
 2a07:6d40::/29 Deny Cloud
 2a0b:a180::/29 Deny Cloud
 Origin: NL
 2a04:6540::/32 Deny Cloud
-Origin: NO
+Origin: OM
 2401:9800::/32 Deny Cloud
 2404:d8::/32 Deny Cloud
 Origin: PH
+2a0b:d280::/32 Deny Cloud
+Origin: QA
 2a00:a300::/32 Deny Cloud
-Origin: RU
-2405:2500:5::/48 Deny Cloud
-2405:2500:11::/48 Deny Cloud
-2405:2500:50::/48 Deny Cloud
 Origin: TH
 2a03:401::/32 Deny Cloud
-Origin: TR
+Origin: TZ
 2a03:7720::/48 Deny Cloud
-Origin: UA
+Origin: UG
 2602:fec4::/36 Deny Cloud
 2602:fff8::/36 Deny Cloud
 2604:2ec0::/48 Deny Cloud
@@ -658,7 +653,7 @@ Origin: UA
 2605:bc00::/32 Deny Cloud
 2606:db00::/32 Deny Cloud
 2607:fd60:c938::/48 Deny Cloud
-Origin: US
+Origin: VN
 2c0f:f598:1::/48 Deny Cloud
 2c0f:f598:5::/48 Deny Cloud
 Origin: ZA
@@ -687,12 +682,10 @@ Tag: H88 S.A
 
 
 # ASN 46475 ("Limestone Networks, Inc").
-# %Listed, Google Malware Dashboard: 0.54%.
-# Stop Forum Spam (SFS) listings: 791.
-# Updated: 2018.09.21
+# %Listed, Google Malware Dashboard: 0.29%.
+# Stop Forum Spam (SFS) listings: 486.
+# Updated: 2019.03.19
 
-2400:ed00::/48 Deny Cloud
-Origin: SG
 2602:fe6b::/36 Deny Cloud
 2607:ff68::/32 Deny Cloud
 Origin: US
@@ -2909,9 +2902,9 @@ Tag: Media-Hosts Inc
 
 
 # ASN 53667 ("FranTech Solutions").
-# %Listed, Google Malware Dashboard: 0.81%.
-# Stop Forum Spam (SFS) listings: 18,979.
-# Updated: 2017.12.18 / Checked: 2018.08.25
+# %Listed, Google Malware Dashboard: 0.36%.
+# Stop Forum Spam (SFS) listings: 33,409.
+# Updated: 2017.12.18 / Checked: 2019.03.20
 
 2605:6400:1::/48 Deny Cloud
 2605:6400:2::/47 Deny Cloud
@@ -3188,7 +3181,7 @@ Tag: Sia Nano IT
 # Don't include: ASN 264167 ("Amazon Wifi Servicos de Internet Ltda") - False positive risk.
 # Remove from final aggregate: 203.83.220.0/22 ("Amazon.com Tech Telecom") - False positive risk.
 # Also check out the Amazon blocklist provided by Macmathan. It can be installed via the front-end updates page.
-# Updated: 2018.10.26
+# Updated: 2019.03.20
 
 2403:b300::/32 Run rules_specific.php
 Origin: AU
@@ -3219,9 +3212,6 @@ Origin: BR
 2a05:d050:80a0::/44 Run rules_specific.php
 2a05:d050:80c0::/44 Run rules_specific.php
 2a05:d050:80e0::/44 Run rules_specific.php
-2a05:d050:a040::/44 Run rules_specific.php
-2a05:d050:a080::/44 Run rules_specific.php
-2a05:d050:a0c0::/44 Run rules_specific.php
 2a05:d050:c040::/44 Run rules_specific.php
 2a05:d050:c080::/44 Run rules_specific.php
 2a05:d050:c0c0::/44 Run rules_specific.php
@@ -3230,7 +3220,11 @@ Origin: IE
 Origin: JP
 2400:6500::/32 Run rules_specific.php
 Origin: SG
-2406:da00::/32 Run rules_specific.php
+2406:da00:2000::/40 Run rules_specific.php
+2406:da00:6000::/40 Run rules_specific.php
+2406:da00:a000::/40 Run rules_specific.php
+2406:da00:e000::/40 Run rules_specific.php
+2406:da00:ff00::/48 Run rules_specific.php
 2406:da12::/36 Run rules_specific.php
 2406:da14::/36 Run rules_specific.php
 2406:da16::/36 Run rules_specific.php
@@ -3255,20 +3249,28 @@ Origin: SG
 2406:daa0:c020::/44 Run rules_specific.php
 2406:daa0:c040::/44 Run rules_specific.php
 2406:daa0:c080::/44 Run rules_specific.php
+2406:daa0:c0a0::/44 Run rules_specific.php
 2406:daa0:c0c0::/44 Run rules_specific.php
 2406:daa0:e040::/44 Run rules_specific.php
 2406:daa0:e080::/44 Run rules_specific.php
 2406:daa0:e0c0::/44 Run rules_specific.php
-2406:daff:e000::/40 Run rules_specific.php
 2600:1f00:1000::/40 Run rules_specific.php
 2600:1f00:5000::/40 Run rules_specific.php
 2600:1f00:6000::/40 Run rules_specific.php
+2600:1f01:4800::/47 Run rules_specific.php
+2600:1f01:4810::/47 Run rules_specific.php
+2600:1f01:4820::/47 Run rules_specific.php
 2600:1f01:4830::/47 Run rules_specific.php
 2600:1f01:4840::/47 Run rules_specific.php
 2600:1f01:4850::/47 Run rules_specific.php
+2600:1f01:4860::/47 Run rules_specific.php
 2600:1f01:4870::/47 Run rules_specific.php
+2600:1f01:4880::/47 Run rules_specific.php
 2600:1f01:4890::/47 Run rules_specific.php
 2600:1f01:48a0::/47 Run rules_specific.php
+2600:1f01:48b0::/47 Run rules_specific.php
+2600:1f01:48c0::/47 Run rules_specific.php
+2600:1f01:48d0::/47 Run rules_specific.php
 2600:1f11::/36 Run rules_specific.php
 2600:1f12::/36 Run rules_specific.php
 2600:1f14::/35 Run rules_specific.php
@@ -3289,6 +3291,7 @@ Origin: SG
 2600:1fa0:4080::/44 Run rules_specific.php
 2600:1fa0:40a0::/44 Run rules_specific.php
 2600:1fa0:40c0::/44 Run rules_specific.php
+2600:1fa0:40e0::/44 Run rules_specific.php
 2600:1fa0:5040::/44 Run rules_specific.php
 2600:1fa0:5080::/44 Run rules_specific.php
 2600:1fa0:50c0::/44 Run rules_specific.php
@@ -3321,9 +3324,7 @@ Origin: SG
 2600:9000:1015::/48 Run rules_specific.php
 2600:9000:1016::/47 Run rules_specific.php
 2600:9000:1018::/45 Run rules_specific.php
-2600:9000:1020::/46 Run rules_specific.php
-2600:9000:1024::/47 Run rules_specific.php
-2600:9000:1027::/48 Run rules_specific.php
+2600:9000:1020::/45 Run rules_specific.php
 2600:9000:1028::/46 Run rules_specific.php
 2600:9000:102d::/48 Run rules_specific.php
 2600:9000:102f::/48 Run rules_specific.php
@@ -3344,41 +3345,34 @@ Origin: SG
 2600:9000:10a0::/46 Run rules_specific.php
 2600:9000:10a4::/48 Run rules_specific.php
 2600:9000:10a6::/47 Run rules_specific.php
-2600:9000:10a8::/48 Run rules_specific.php
-2600:9000:10aa::/48 Run rules_specific.php
-2600:9000:10ac::/46 Run rules_specific.php
+2600:9000:10a8::/45 Run rules_specific.php
 2600:9000:10b0::/46 Run rules_specific.php
 2600:9000:10b4::/48 Run rules_specific.php
-2600:9000:10b8::/46 Run rules_specific.php
-2600:9000:10bc::/48 Run rules_specific.php
-2600:9000:10be::/47 Run rules_specific.php
-2600:9000:10c6::/47 Run rules_specific.php
-2600:9000:10ce::/48 Run rules_specific.php
-2600:9000:10d6::/48 Run rules_specific.php
-2600:9000:10da::/48 Run rules_specific.php
-2600:9000:2000::/47 Run rules_specific.php
-2600:9000:2002::/48 Run rules_specific.php
-2600:9000:2004::/46 Run rules_specific.php
-2600:9000:2008::/47 Run rules_specific.php
-2600:9000:200a::/48 Run rules_specific.php
+2600:9000:10b7::/48 Run rules_specific.php
+2600:9000:10b8::/45 Run rules_specific.php
+2600:9000:10c1::/48 Run rules_specific.php
+2600:9000:10c2::/47 Run rules_specific.php
+2600:9000:10c4::/46 Run rules_specific.php
+2600:9000:10cd::/48 Run rules_specific.php
+2600:9000:10ce::/47 Run rules_specific.php
+2600:9000:10d0::/46 Run rules_specific.php
+2600:9000:10d6::/47 Run rules_specific.php
+2600:9000:10d8::/46 Run rules_specific.php
+2600:9000:10dc::/47 Run rules_specific.php
+2600:9000:10de::/48 Run rules_specific.php
+2600:9000:10f2::/48 Run rules_specific.php
+2600:9000:2000::/45 Run rules_specific.php
+2600:9000:2008::/46 Run rules_specific.php
 2600:9000:200c::/47 Run rules_specific.php
 2600:9000:200f::/48 Run rules_specific.php
-2600:9000:2010::/46 Run rules_specific.php
-2600:9000:2015::/48 Run rules_specific.php
-2600:9000:2016::/47 Run rules_specific.php
-2600:9000:2018::/48 Run rules_specific.php
-2600:9000:201a::/47 Run rules_specific.php
-2600:9000:201c::/46 Run rules_specific.php
-2600:9000:2020::/46 Run rules_specific.php
-2600:9000:2024::/47 Run rules_specific.php
-2600:9000:2027::/48 Run rules_specific.php
-2600:9000:2028::/46 Run rules_specific.php
+2600:9000:2010::/44 Run rules_specific.php
+2600:9000:2020::/45 Run rules_specific.php
+2600:9000:202a::/47 Run rules_specific.php
 2600:9000:202d::/48 Run rules_specific.php
 2600:9000:202f::/48 Run rules_specific.php
-2600:9000:2031::/48 Run rules_specific.php
 2600:9000:2032::/48 Run rules_specific.php
 2600:9000:2035::/48 Run rules_specific.php
-2600:9000:2036::/47 Run rules_specific.php
+2600:9000:2036::/48 Run rules_specific.php
 2600:9000:2038::/47 Run rules_specific.php
 2600:9000:203a::/48 Run rules_specific.php
 2600:9000:203c::/46 Run rules_specific.php
@@ -3387,18 +3381,20 @@ Origin: SG
 2600:9000:2044::/46 Run rules_specific.php
 2600:9000:2048::/48 Run rules_specific.php
 2600:9000:204a::/47 Run rules_specific.php
-2600:9000:204d::/48 Run rules_specific.php
-2600:9000:204e::/47 Run rules_specific.php
+2600:9000:204c::/46 Run rules_specific.php
 2600:9000:2050::/48 Run rules_specific.php
-2600:9000:2054::/47 Run rules_specific.php
+2600:9000:2055::/48 Run rules_specific.php
 2600:9000:2056::/48 Run rules_specific.php
-2600:9000:2060::/46 Run rules_specific.php
+2600:9000:205b::/48 Run rules_specific.php
+2600:9000:205c::/47 Run rules_specific.php
+2600:9000:205f::/48 Run rules_specific.php
+2600:9000:2061::/48 Run rules_specific.php
+2600:9000:2062::/47 Run rules_specific.php
 2600:9000:2064::/47 Run rules_specific.php
 2600:9000:2066::/48 Run rules_specific.php
 2600:9000:206e::/47 Run rules_specific.php
-2600:9000:2070::/46 Run rules_specific.php
-2600:9000:2074::/48 Run rules_specific.php
-2600:9000:2076::/47 Run rules_specific.php
+2600:9000:2070::/45 Run rules_specific.php
+2600:9000:2078::/47 Run rules_specific.php
 2600:9000:208a::/47 Run rules_specific.php
 2600:9000:2090::/46 Run rules_specific.php
 2600:9000:2097::/48 Run rules_specific.php
@@ -3406,12 +3402,11 @@ Origin: SG
 2600:9000:209f::/48 Run rules_specific.php
 2600:9000:20ab::/48 Run rules_specific.php
 2600:9000:20ac::/47 Run rules_specific.php
-2600:9000:20b2::/48 Run rules_specific.php
 2600:9000:20b9::/48 Run rules_specific.php
 2600:9000:20ba::/47 Run rules_specific.php
 2600:9000:20bc::/47 Run rules_specific.php
 2600:9000:20be::/48 Run rules_specific.php
-2600:9000:20c6::/48 Run rules_specific.php
+2600:9000:20c6::/47 Run rules_specific.php
 2600:9000:20cb::/48 Run rules_specific.php
 2600:9000:20cc::/47 Run rules_specific.php
 2600:9000:20d1::/48 Run rules_specific.php
@@ -3443,6 +3438,7 @@ Origin: SG
 2600:9000:212b::/48 Run rules_specific.php
 2600:9000:212c::/48 Run rules_specific.php
 2600:9000:213d::/48 Run rules_specific.php
+2600:9000:213f::/48 Run rules_specific.php
 2600:9000:2143::/48 Run rules_specific.php
 2600:9000:2144::/47 Run rules_specific.php
 2600:9000:2146::/48 Run rules_specific.php
@@ -3459,14 +3455,14 @@ Origin: SG
 2600:9000:2174::/47 Run rules_specific.php
 2600:9000:2176::/48 Run rules_specific.php
 2600:9000:2181::/48 Run rules_specific.php
-2600:9000:2182::/48 Run rules_specific.php
-2600:9000:2189::/48 Run rules_specific.php
-2600:9000:218a::/48 Run rules_specific.php
-2600:9000:218c::/46 Run rules_specific.php
+2600:9000:2182::/47 Run rules_specific.php
+2600:9000:2188::/45 Run rules_specific.php
 2600:9000:5300::/45 Run rules_specific.php
 2600:9000:f110::/48 Run rules_specific.php
 2600:9000:f140::/48 Run rules_specific.php
 2600:9000:f150::/48 Run rules_specific.php
+2600:9000:f211::/48 Run rules_specific.php
+2600:9000:f213::/48 Run rules_specific.php
 2600:9000:f530::/47 Run rules_specific.php
 2620:107:300f::/48 Run rules_specific.php
 2620:108:7000::/44 Run rules_specific.php
@@ -3585,9 +3581,9 @@ Tag: Netdirekt A.S
 
 
 # ASN 42730 ("EVANZO e-commerce GmbH").
-# %Listed, Google Malware Dashboard: 0.77%.
-# Stop Forum Spam (SFS) listings: 40.
-# Updated: 2016.04.29 / Checked: 2018.08.22
+# %Listed, Google Malware Dashboard: 0.62%.
+# Stop Forum Spam (SFS) listings: 151.
+# Updated: 2016.04.29 / Checked: 2019.03.20
 
 2a00:6800::/32 Deny Cloud
 Origin: DE
@@ -3757,22 +3753,26 @@ Tag: i3d B.V
 
 # ASN 50673 ("Serverius Holding B.V").
 # %Listed, Google Malware Dashboard: 0.08%.
-# Stop Forum Spam (SFS) listings: 6,292.
-# Updated: 2018.10.03
+# Stop Forum Spam (SFS) listings: 5,783.
+# Updated: 2019.03.20
 
 2001:7f8:e::/48 Deny Cloud
 2001:7f8:8f::/48 Deny Cloud
 2001:7f8:b7::/48 Deny Cloud
 2a00:1ca8::/32 Deny Cloud
 2a00:8ee0::/31 Deny Cloud
+2a00:dfa0::/32 Deny Cloud
 2a01:74e0::/32 Deny Cloud
 2a02:40c0:1000::/48 Deny Cloud
 2a03:3f40::/32 Deny Cloud
-2a04:a700::/48 Deny Cloud
 2a05:e1c0::/29 Deny Cloud
 2a06:8000::/29 Deny Cloud
+2a09:e40::/32 Deny Cloud
+2a09:aa80::/32 Deny Cloud
 2a0a:3f40::/32 Deny Cloud
+2a0a:6f80::/32 Deny Cloud
 2a0a:aa40::/32 Deny Cloud
+2a0c:a340::/29 Deny Cloud
 2a0c:f200::/29 Deny Cloud
 Origin: NL
 2a07:c800::/29 Deny Cloud
@@ -4485,19 +4485,14 @@ Tag: Accelerated IT
 
 
 # ASN 20278 ("Nexeon Technologies, Inc").
-# %Listed, Google Malware Dashboard: 0.31%.
-# Stop Forum Spam (SFS) listings: 2,913.
-# Updated: 2018.09.21
+# %Listed, Google Malware Dashboard: 0.29%.
+# Stop Forum Spam (SFS) listings: 2,574.
+# Updated: 2019.03.19
 
 2a0d:f800::/29 Deny Cloud
 Origin: GB
-2a0a:1f43::/32 Deny Cloud
-2a0a:1f45::/32 Deny Cloud
-Origin: NL
 2401:f500:4::/48 Deny Cloud
 Origin: NZ
-2a0d:5c06::/32 Deny Cloud
-Origin: RU
 2602:ffc8::/32 Deny Cloud
 Origin: US
 Tag: Nexeon Technologies
@@ -4875,11 +4870,12 @@ Tag: Colo4, LLC
 # ASNs 15626, 21100, 50979, 59729 ("ITL Company").
 # FRIENDHOSTING L.P., ON-LINE DATA LTD, various data centers, etc.
 # Also contains VPNs (VDS/VPS; should mark these accordingly).
-# Updated: 2018.10.03
+# Updated: 2019.03.20
 
 2001:67c:2f4c::/48 Deny Cloud
 2001:67c:2f5c::/48 Deny Cloud
 2001:67c:2f6c::/48 Deny Cloud
+2a0a:8c40::/32 Deny Cloud
 Origin: BG
 2a02:27a8::/30 Deny Cloud
 2a02:27ac::/32 Deny Proxy
@@ -4898,17 +4894,11 @@ Tag: KVCHOSTING.COM LLC
 
 
 # ASN 49453 ("Global Layer B.V").
-# %Listed, Google Malware Dashboard: 0.27%.
-# Stop Forum Spam (SFS) listings: 10,336.
-# Updated: 2018.05.03 / Checked: 2018.09.23
+# %Listed, Google Malware Dashboard: 0.06%.
+# Stop Forum Spam (SFS) listings: 16,540.
+# Updated: 2019.03.19
 
-2a00:1678:0:328::/64 Deny Cloud
-2a00:1678:0:1024::/64 Deny Cloud
-2a00:1678:0:2003::/64 Deny Cloud
-2a00:1678:0:3001::/64 Deny Cloud
-2a00:1678:0:4019::/64 Deny Cloud
-2a00:1678:0:800f::/64 Deny Cloud
-2a00:1678:1:7001::/64 Deny Cloud
+2a00:1678::/48 Deny Cloud
 2a00:1678:2221::/48 Deny Cloud
 2a00:1678:2426::/48 Deny Cloud
 2a00:1678:2437::/48 Deny Cloud
@@ -5368,9 +5358,10 @@ Tag: TV Internacional
 
 # ASN 198605 ("AVAST Software s.r.o.").
 # Caught attempting to access sensitive parts of WP sites for unknown reasons.
-# Stop Forum Spam (SFS) listings: 15,617.
-# Updated: 2018.09.25
+# Stop Forum Spam (SFS) listings: 9,140.
+# Updated: 2019.03.19
 
+2001:67c:284::/48 Deny Cloud
 2a0b:e181:100::/40 Deny Cloud
 2a0b:e181:200::/39 Deny Cloud
 2a0b:e182:100::/40 Deny Cloud
@@ -5675,11 +5666,12 @@ Tag: Serverhosh
 
 
 # ASN 197071 ("Dennis Rainer Warnholz trading as active-servers.com").
-# %Listed, Google Malware Dashboard: 0.24%.
-# Stop Forum Spam (SFS) listings: 43.
-# Updated: 2018.09.21
+# %Listed, Google Malware Dashboard: 0.13%.
+# Stop Forum Spam (SFS) listings: 156.
+# Updated: 2019.03.19
 
 2001:678:5e8::/48 Deny Cloud
+2a00:f826:4::/48 Deny Cloud
 2a02:d40:3::/48 Deny Cloud
 2a02:d40:7::/48 Deny Cloud
 2a02:d40:8::/48 Deny Cloud
@@ -5693,14 +5685,13 @@ Tag: active-servers.com
 
 # ASN 7979 ("Servers.com, Inc").
 # Some IPs here caught scraping website content without permission.
-# %Listed, Google Malware Dashboard: 0.10%.
-# Stop Forum Spam (SFS) listings: 174.
-# Updated: 2018.05.03 / Checked: 2018.09.23
+# %Listed, Google Malware Dashboard: 0.01%.
+# Stop Forum Spam (SFS) listings: 21.
+# Updated: 2019.03.19
 
 2406:380::/31 Deny Cloud
 Origin: HK
-2a05:93c0::/31 Deny Cloud
-2a05:93c2::/32 Deny Cloud
+2a05:93c0::/30 Deny Cloud
 Origin: NL
 2604:8240::/32 Deny Cloud
 2605:f480::/31 Deny Cloud
@@ -5709,17 +5700,21 @@ Tag: Servers.com
 
 
 # ASN 48635 ("Astralus B.V").
-# %Listed, Google Malware Dashboard: 0.27%.
-# Stop Forum Spam (SFS) listings: 2,525.
-# Updated: 2018.05.05 / Checked: 2018.10.03
+# %Listed, Google Malware Dashboard: 0.21%.
+# Stop Forum Spam (SFS) listings: 789.
+# Updated: 2019.03.20
 
 2a05:1500:ff00::/40 Deny Cloud
 Origin: DE
+2001:67c:28fc::/48 Deny Cloud
 2001:1460::/32 Deny Cloud
 2a00:f10::/32 Deny Cloud
+2a01:b944::/32 Deny Cloud
 2a02:13b0:1::/48 Deny Cloud
 2a02:13b0:100::/40 Deny Cloud
+2a03:3060:a::/48 Deny Cloud
 2a05:a280::/29 Deny Cloud
+2a05:c580::/29 Deny Cloud
 2a07:ae80::/29 Deny Cloud
 2a0b:7280::/29 Deny Cloud
 2a0b:8f80::/48 Deny Cloud
@@ -6223,3 +6218,15 @@ Origin: SG
 2602:fe90:200::/39 Deny Cloud
 Origin: US
 Tag: DediPath
+
+
+# ASNs 36444, 52924, 202521 ("NEXCESS.NET L.L.C").
+# %Listed, Google Malware Dashboard: 1.44% (AS36444), 1.16% (AS202521).
+# Stop Forum Spam (SFS) listings: 358 (AS36444), 15 (AS52924).
+# Updated: 2019.03.19
+
+2a07:45c4::/40 Deny Cloud
+Origin: GB
+2607:f7c0::/32 Deny Cloud
+Origin: US
+Tag: NEXCESS.NET

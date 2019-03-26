@@ -161,6 +161,7 @@ PHPMailer를 설치 한 후 CIDRAM 구성 페이지 또는 구성 파일을 통�
 /vault/ | 보루 토 디렉토리 (다양한 파일을 포함합니다).
 /vault/classes/ | 클래스 디렉토리. CIDRAM에서 사용하는 다양한 클래스가 들어 있습니다.
 /vault/classes/Maikuolan/ | 클래스 디렉토리. CIDRAM에서 사용하는 다양한 클래스가 들어 있습니다.
+/vault/classes/Maikuolan/ComplexStringHandler.php | 복잡한 문자열 핸들러.
 /vault/classes/Maikuolan/L10N.php | L10N 핸들러.
 /vault/classes/Maikuolan/YAML.php | YAML 핸들러.
 /vault/classes/.htaccess | 하이퍼 텍스트 액세스 파일 (이 경우, 본 스크립트의 중요한 파일을 권한이 없는 소스의 액세스로부터 보호하기 위한 것입니다).
@@ -1514,4 +1515,4 @@ CIDRAM은 마케팅이나 광고 목적으로 정보를 수집하거나 처리�
 ---
 
 
-최종 업데이트 : 2019년 2월 23일.
+최종 업데이트 : 2019년 3월 26일.

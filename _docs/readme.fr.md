@@ -161,6 +161,7 @@ Fichier | Description
 /vault/ | Voûte répertoire (contient divers fichiers).
 /vault/classes/ | Répertoire des classes. Contient diverses classes utilisées par CIDRAM.
 /vault/classes/Maikuolan/ | Répertoire des classes. Contient diverses classes utilisées par CIDRAM.
+/vault/classes/Maikuolan/ComplexStringHandler.php | Processeur de chaîne complexe.
 /vault/classes/Maikuolan/L10N.php | L10N processeur.
 /vault/classes/Maikuolan/YAML.php | YAML processeur.
 /vault/classes/.htaccess | Un hypertexte accès fichier (dans ce cas, pour protéger les sensibles fichiers appartenant au script contre être consulté par non autorisées sources).
@@ -1517,4 +1518,4 @@ Alternativement, il y a un bref aperçu (non autorisé) de GDPR/DSGVO disponible
 ---
 
 
-Dernière mise à jour : 23 Février 2019 (2019.02.23).
+Dernière mise à jour : 26 Mars 2019 (2019.03.26).

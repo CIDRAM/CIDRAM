@@ -162,6 +162,7 @@ CIDRAM可以手動或通過前端更新。​CIDRAM也可以通過Composer或Wor
 /vault/ | 安全/保險庫【Vault】文件夾（包含若干文件）。
 /vault/classes/ | 類目錄。包含CIDRAM使用的各種類。
 /vault/classes/Maikuolan/ | 類目錄。包含CIDRAM使用的各種類。
+/vault/classes/Maikuolan/ComplexStringHandler.php | 複雜的字符串處理文件。
 /vault/classes/Maikuolan/L10N.php | L10N處理文件。
 /vault/classes/Maikuolan/YAML.php | YAML處理文件。
 /vault/classes/.htaccess | 超文本訪問文件（在這種情況，​以保護敏感文件屬於腳本從被訪問由非授權來源）。
@@ -1520,4 +1521,4 @@ CIDRAM不收集或處理任何信息用於營銷或廣告目的，既不銷售�
 ---
 
 
-最後更新：2019年2月23日。
+最後更新：2019年3月26日。

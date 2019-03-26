@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2019.03.06).
+ * This file: Front-end handler (last modified: 2019.03.26).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -2563,27 +2563,55 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-aggregator' && $CIDRAM['FE']
 
     $CIDRAM['FE']['bNav'] = $CIDRAM['L10N']->getString('bNav_home_logout');
 
-    /** Results counts. */
-    $CIDRAM['Results'] = ['In' => 0, 'Rejected' => 0, 'Accepted' => 0, 'Merged' => 0, 'Out' => 0];
-
     /** Output format. */
     $CIDRAM['OutputFormat'] = (isset($_POST['format']) && $_POST['format'] === 'Netmask') ? 1 : 0;
 
+    /** Whether to preserve tags and comments. */
+    $CIDRAM['Preserve'] = (isset($_POST['preserve']) && $_POST['preserve'] === 'on') ? 1 : 0;
+
     /** Output format menu. */
     $CIDRAM['FE']['OutputFormat'] = sprintf(
-        '%1$sCIDR" value="CIDR"%2$s /><label for="formatCIDR">%3$s</label><br />%1$sNetmask" value="Netmask"%4$s /><label for="formatNetmask">%5$s</label>',
+        '%1$sCIDR" value="CIDR"%2$s%6$sformatCIDR">%3$s</label><br />%1$sNetmask" value="Netmask"%4$s%6$sformatNetmask">%5$s</label><br /><input type="checkbox" class="auto" name="preserve" id="preserve"%7$s%6$spreserve">%8$s</label>',
         '<input type="radio" class="auto" name="format" id="format',
         $CIDRAM['OutputFormat'] !== 1 ? ' checked' : '',
         $CIDRAM['L10N']->getString('field_cidr'),
         $CIDRAM['OutputFormat'] === 1 ? ' checked' : '',
-        $CIDRAM['L10N']->getString('field_netmask')
+        $CIDRAM['L10N']->getString('field_netmask'),
+        ' /><label for="',
+        $CIDRAM['Preserve'] === 1 ? ' checked' : '',
+        $CIDRAM['L10N']->getString('field_preserve')
     );
 
     /** Data was submitted for aggregation. */
     if (isset($_POST['input'])) {
         $CIDRAM['FE']['input'] = $_POST['input'];
         $CIDRAM['Aggregator'] = new \CIDRAM\Aggregator\Aggregator($CIDRAM, $CIDRAM['OutputFormat']);
-        $CIDRAM['FE']['output'] = $CIDRAM['Aggregator']->aggregate($_POST['input']);
+        if ($CIDRAM['Preserve']) {
+            $CIDRAM['NetResults'] = ['In' => 0, 'Rejected' => -2, 'Accepted' => 0, 'Merged' => 0, 'Out' => 0];
+            $CIDRAM['StrObject'] = new \Maikuolan\Common\ComplexStringHandler(
+                "\n" . str_replace("\r", '', $_POST['input']) . "\n",
+                '~(?<=\n)(?:\n|Expires\: \d{4}\.\d\d\.\d\d|Origin\: [A-Z]{2}|(?:\#|Tag\: |Defers to\: )[^\n]+)+\n~',
+                function ($Data) use (&$CIDRAM) {
+                    $CIDRAM['Results'] = ['In' => 0, 'Rejected' => 0, 'Accepted' => 0, 'Merged' => 0, 'Out' => 0];
+                    $Data = $CIDRAM['Aggregator']->aggregate($Data);
+                    $CIDRAM['NetResults']['In'] += $CIDRAM['Results']['In'];
+                    $CIDRAM['NetResults']['Rejected'] += $CIDRAM['Results']['Rejected'];
+                    $CIDRAM['NetResults']['Accepted'] += $CIDRAM['Results']['Accepted'];
+                    $CIDRAM['NetResults']['Merged'] += $CIDRAM['Results']['Merged'];
+                    $CIDRAM['NetResults']['Out'] += $CIDRAM['Results']['Out'];
+                    return $Data;
+                }
+            );
+            $CIDRAM['StrObject']->iterateClosure(function ($Data) {
+                return "\n" . $Data;
+            }, true);
+            $CIDRAM['FE']['output'] = trim($CIDRAM['StrObject']->recompile());
+            $CIDRAM['Results'] = $CIDRAM['NetResults'];
+            unset($CIDRAM['StrObject'], $CIDRAM['NetResults']);
+        } else {
+            $CIDRAM['Results'] = ['In' => 0, 'Rejected' => 0, 'Accepted' => 0, 'Merged' => 0, 'Out' => 0];
+            $CIDRAM['FE']['output'] = $CIDRAM['Aggregator']->aggregate($_POST['input']);
+        }
         unset($CIDRAM['Aggregator']);
         $CIDRAM['FE']['ResultLine'] = sprintf(
             $CIDRAM['L10N']->getString('label_results'),

@@ -1,8 +1,8 @@
 # IPv6 signatures file (CIDRs for proxies, VPNs and other miscellaneous unwanted services).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_other.dat
 
-# Version: 2019.57.386
-# Last modified: 2019.02.27
+# Version: 2019.84.702
+# Last modified: 2019.03.26
 
 
 # ---
@@ -94,9 +94,8 @@ Tag: SoftLayer VPNs
 
 # ASN 59898 ("AllSafe Sarl").
 # Related to "ProtonVPN", "ProtonMail", and "Proton Technologies". Provides VPNs and proxies, both public and private.
-# No listings on any BLs yet, but we've been seeing some strange, bot-like activity from them via access logs and
-# honeypots. Added as a precaution.
-# Updated: 2018.04.17 / Checked: 2018.09.01
+# Stop Forum Spam (SFS) listings: 3.
+# Updated: 2018.04.17 / Checked: 2019.03.26
 
 2a0a:6d40::/29 Deny Proxy
 Origin: CH
@@ -105,8 +104,8 @@ Tag: AllSafe Sarl
 
 # ASN 205100 ("F3 Netze e.V").
 # Provides TOR exit nodes.
-# Stop Forum Spam (SFS) listings: 7,380.
-# Updated: 2018.04.23 / Checked: 2018.09.01
+# Stop Forum Spam (SFS) listings: 11,559.
+# Updated: 2018.04.23 / Checked: 2019.03.26
 
 2a0b:f4c0::/40 Deny Proxy
 2a0b:f4c0:100::/48 Deny Proxy

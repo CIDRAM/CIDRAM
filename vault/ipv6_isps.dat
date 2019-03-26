@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_isps.dat
 
-# Version: 2019.78.660
-# Last modified: 2019.03.20
+# Version: 2019.84.702
+# Last modified: 2019.03.26
 
 
 # ---
@@ -49,10 +49,10 @@ Tag: World4You
 
 
 # ASN 12880 ("Information Technology Company (ITC)").
-# %Listed, Google Malware Dashboard: 0.07%.
-# %Listed, abuseat.org (CBL-Listed): 1.05%.
-# Stop Forum Spam (SFS) listings: 423.
-# Updated: 2018.10.09
+# %Listed, Google Malware Dashboard: 0.06%.
+# %Listed, abuseat.org (CBL-Listed): 1.97%.
+# Stop Forum Spam (SFS) listings: 651.
+# Updated: 2018.10.09 / Checked: 2019.03.23
 
 2001:4188::/48 Deny Generic
 Origin: IR
@@ -435,24 +435,25 @@ Tag: Zyztm
 # ASN 43260 ("DGN TEKNOLOJI BILISIM YAYINCILIK SANAYI VE LIMITED SIRKETI").
 # Caught trying to DDoS SFS.
 # %Listed, Google Malware Dashboard: 0.23%.
-# Stop Forum Spam (SFS) listings: 118.
-# Updated: 2018.10.14
+# Stop Forum Spam (SFS) listings: 124.
+# Updated: 2019.03.24
 
-2a0a:6040::/29 Deny Generic
-Origin: GL
-2a04:4280::/29 Deny Generic
+2a04:4280:10::/48 Deny Generic
+2a04:4280:20::/48 Deny Generic
+2a04:4280:30::/48 Deny Generic
+2a04:4280:100::/48 Deny Generic
+2a04:4280:200::/48 Deny Generic
 2a04:8340::/29 Deny Generic
 2a05:abc0::/29 Deny Generic
-2a05:b140::/29 Deny Generic
 2a05:b380::/29 Deny Generic
-2a05:b440::/29 Deny Generic
-2a05:b700::/29 Deny Generic
 2a05:ba00::/29 Deny Generic
+2a05:bf00::/29 Deny Generic
 2a05:ccc0::/29 Deny Generic
 2a05:e5c0::/29 Deny Generic
 2a05:f740::/29 Deny Generic
 2a05:f7c0::/29 Deny Generic
 2a07:21c0::/29 Deny Generic
+2a07:cd00::/48 Deny Generic
 2a0b:a280::/48 Deny Generic
 Origin: TR
 2402:1780:1::/48 Deny Generic
@@ -580,8 +581,8 @@ Tag: Kyivstar
 
 
 # ASN 13188 ("CONTENT DELIVERY NETWORK LTD").
-# Stop Forum Spam (SFS) listings: 449,308.
-# Updated: 2018.10.05
+# Stop Forum Spam (SFS) listings: 277,292.
+# Updated: 2019.03.22
 
 2a03:7380::/38 Deny Spam
 2a03:7380:400::/39 Deny Spam
@@ -595,8 +596,9 @@ Tag: Kyivstar
 2a03:7380:2400::/40 Deny Spam
 2a03:7380:2500::/42 Deny Spam
 2a03:7380:2fc0::/42 Deny Spam
-2a03:7380:3000::/40 Deny Spam
-2a03:7380:3180::/41 Deny Spam
+2a03:7380:3000::/42 Deny Spam
+2a03:7380:30c0::/42 Deny Spam
+2a03:7380:3100::/40 Deny Spam
 2a03:7380:4000::/41 Deny Spam
 2a03:7380:4080::/42 Deny Spam
 2a03:7380:5400::/41 Deny Spam
@@ -1084,10 +1086,16 @@ recaptcha:
 # Taiwan, to list this section in their "ignore.dat" file as a means of minimising the potential impact of false
 # positives. A balanced approach for those that may expect some such traffic, but not a lot of it, would be to not
 # ignore this section, but to ensure that the reCAPTCHA feature is enabled in their configuration.
-# %Listed, Google Malware Dashboard: 2.06%.
-# Stop Forum Spam (SFS) listings: 8,334.
-# Updated: 2018.10.05
+# %Listed, Google Malware Dashboard: 0.86%.
+# %Listed, abuseat.org (CBL-Listed): 0.15%.
+# Stop Forum Spam (SFS) listings: 14,722.
+# Updated: 2019.03.22
 
+2400:5280:f800::/38 Deny Generic
+2400:89c0:1010::/44 Deny Generic
+2400:89c0:1020::/43 Deny Generic
+2402:dfc0::/44 Deny Generic
+2404:a80::/32 Deny Generic
 2405:1480::/32 Deny Generic
 2408:8000:1000::/36 Deny Generic
 2408:8020::/30 Deny Generic
@@ -1577,12 +1585,12 @@ Tag: Foreningen
 
 
 # ASN 31148 ("Freenet Ltd").
-# Stop Forum Spam (SFS) listings: 396.
 # Legit human endpoint/ISP based in Ukraine, but have been encountering numerous hack attempts from their ASN in recent
 # months. Marking this section for use with reCAPTCHA, because we don't want to accidentally block human users if we
 # can avoid it at all. HUGE numbers of nefarious listings at MegaRBL.net and AbuseIPDB.com! Can't really afford to just
 # ignore it. Ukrainian CIDRAM users should probably add the name of this section to their ignore.dat file.
-# Updated: 2018.02.20 / Checked: 2018.10.11
+# Stop Forum Spam (SFS) listings: 944.
+# Updated: 2018.02.20 / Checked: 2019.03.24
 
 2a00:1228::/32 Deny Generic
 Origin: UA

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2019.03.26).
+ * This file: Front-end handler (last modified: 2019.03.27).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -2583,15 +2583,18 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-aggregator' && $CIDRAM['FE']
     );
 
     /** Data was submitted for aggregation. */
-    if (isset($_POST['input'])) {
-        $CIDRAM['FE']['input'] = $_POST['input'];
+    if (!empty($_POST['input'])) {
+        $CIDRAM['FE']['input'] = str_replace("\r", '', trim($_POST['input']));
         $CIDRAM['Aggregator'] = new \CIDRAM\Aggregator\Aggregator($CIDRAM, $CIDRAM['OutputFormat']);
         if ($CIDRAM['Preserve']) {
-            $CIDRAM['NetResults'] = ['In' => 0, 'Rejected' => -2, 'Accepted' => 0, 'Merged' => 0, 'Out' => 0];
+            $CIDRAM['NetResults'] = ['In' => 0, 'Rejected' => 0, 'Accepted' => 0, 'Merged' => 0, 'Out' => 0];
             $CIDRAM['StrObject'] = new \Maikuolan\Common\ComplexStringHandler(
-                "\n" . str_replace("\r", '', $_POST['input']) . "\n",
+                "\n" . $CIDRAM['FE']['input'] . "\n",
                 '~(?<=\n)(?:\n|Expires\: \d{4}\.\d\d\.\d\d|Origin\: [A-Z]{2}|(?:\#|Tag\: |Defers to\: )[^\n]+)+\n~',
                 function ($Data) use (&$CIDRAM) {
+                    if (!$Data = trim($Data)) {
+                        return '';
+                    }
                     $CIDRAM['Results'] = ['In' => 0, 'Rejected' => 0, 'Accepted' => 0, 'Merged' => 0, 'Out' => 0];
                     $Data = $CIDRAM['Aggregator']->aggregate($Data);
                     $CIDRAM['NetResults']['In'] += $CIDRAM['Results']['In'];
@@ -2610,7 +2613,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-aggregator' && $CIDRAM['FE']
             unset($CIDRAM['StrObject'], $CIDRAM['NetResults']);
         } else {
             $CIDRAM['Results'] = ['In' => 0, 'Rejected' => 0, 'Accepted' => 0, 'Merged' => 0, 'Out' => 0];
-            $CIDRAM['FE']['output'] = $CIDRAM['Aggregator']->aggregate($_POST['input']);
+            $CIDRAM['FE']['output'] = $CIDRAM['Aggregator']->aggregate($CIDRAM['FE']['input']);
         }
         unset($CIDRAM['Aggregator']);
         $CIDRAM['FE']['ResultLine'] = sprintf(
@@ -2639,17 +2642,12 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-aggregator' && $CIDRAM['FE']
     );
 
     /** Strip output row if input doesn't exist. */
-    if (isset($_POST['input'])) {
+    if ($CIDRAM['FE']['input']) {
         $CIDRAM['FE']['FE_Content'] = str_replace(['<!-- Output Begin -->', '<!-- Output End -->'], '', $CIDRAM['FE']['FE_Content']);
     } else {
-        $CIDRAM['Markers'] = [
-            'Begin' => strpos($CIDRAM['FE']['FE_Content'], '<!-- Output Begin -->'),
-            'End' => strpos($CIDRAM['FE']['FE_Content'], '<!-- Output End -->')
-        ];
         $CIDRAM['FE']['FE_Content'] =
-            substr($CIDRAM['FE']['FE_Content'], 0, $CIDRAM['Markers']['Begin']) .
-            substr($CIDRAM['FE']['FE_Content'], $CIDRAM['Markers']['End'] + 19);
-        unset($CIDRAM['Markers']);
+            substr($CIDRAM['FE']['FE_Content'], 0, strpos($CIDRAM['FE']['FE_Content'], '<!-- Output Begin -->')) .
+            substr($CIDRAM['FE']['FE_Content'], strpos($CIDRAM['FE']['FE_Content'], '<!-- Output End -->') + 19);
     }
 
     /** Send output. */

@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6.dat
 
-# Version: 2019.84.702
-# Last modified: 2019.03.26
+# Version: 2019.85.235
+# Last modified: 2019.03.27
 
 
 # ---
@@ -1038,14 +1038,10 @@ Tag: Rack911
 
 
 # ASN 63930 ("READY SERVER PTE LTD").
-# %Listed, Google Malware Dashboard: 1.36%.
-# Stop Forum Spam (SFS) listings: 27.
-# Updated: 2018.10.05
+# %Listed, Google Malware Dashboard: 0.54%.
+# Stop Forum Spam (SFS) listings: 20.
+# Updated: 2019.03.27
 
-2a04:8806::/35 Deny Cloud
-2a04:dd83::/32 Deny Cloud
-2a04:dd84::/32 Deny Cloud
-Origin: RU
 2401:e780::/32 Deny Cloud
 Origin: SG
 Tag: Ready Server
@@ -1217,9 +1213,9 @@ Tag: Connexions4London
 
 
 # ASN 32475 ("SingleHop, Inc").
-# %Listed, Google Malware Dashboard: 0.33%.
-# Stop Forum Spam (SFS) listings: 977.
-# Updated: 2017.10.17 / Checked: 2018.10.04
+# %Listed, Google Malware Dashboard: 0.19%.
+# Stop Forum Spam (SFS) listings: 180.
+# Updated: 2017.10.17 / Checked: 2019.03.27
 
 2607:f978:5::/48 Deny Cloud
 Origin: US
@@ -1227,9 +1223,9 @@ Tag: SingleHop, Inc
 
 
 # ASN 29550 ("eUKhost LTD").
-# %Listed, Google Malware Dashboard: 0.35%.
-# Stop Forum Spam (SFS) listings: 110.
-# Updated: 2017.03.19 / Checked: 2018.10.04
+# %Listed, Google Malware Dashboard: 0.13%.
+# Stop Forum Spam (SFS) listings: 79.
+# Updated: 2017.03.19 / Checked: 2019.03.27
 
 2a02:af8::/32 Deny Cloud
 Origin: GB
@@ -2963,20 +2959,10 @@ Tag: Astutium Limited
 
 
 # ASN 35908 ("Krypt Technologies").
-# %Listed, Google Malware Dashboard: 4.55%.
-# Stop Forum Spam (SFS) listings: 687.
-# Updated: 2018.10.05
+# %Listed, Google Malware Dashboard: 2.37%.
+# Stop Forum Spam (SFS) listings: 497.
+# Updated: 2019.03.27
 
-2a05:c500::/29 Deny Cloud
-2a0c:1dc0::/29 Deny Cloud
-2a0c:2840::/29 Deny Cloud
-2a0c:31c0::/29 Deny Cloud
-2a0c:3a40::/29 Deny Cloud
-2a0c:7440::/29 Deny Cloud
-2a0c:8c40::/29 Deny Cloud
-2a0c:9280::/29 Deny Cloud
-2a0d:8b00::/29 Deny Cloud
-Origin: RU
 2607:f180::/31 Deny Cloud
 Origin: US
 Tag: Krypt Technologies
@@ -3150,9 +3136,9 @@ Tag: OJSC RTComm.RU
 # - "corporate internet gate".
 # ^.*(residential|trade center|campus connectivity|bank campus|corporate internet gate).*$
 # Everything else in the cloud services signature files.
-# %Listed, Google Malware Dashboard: 5.31%.
-# Stop Forum Spam (SFS) listings: 255.
-# Updated: 2018.11.21
+# %Listed, Google Malware Dashboard: 0.91%.
+# Stop Forum Spam (SFS) listings: 310.
+# Updated: 2018.11.21 / Checked: 2019.03.27
 
 2a03:6f00:1::/48 Deny Cloud
 2a03:6f00:2::/47 Deny Cloud
@@ -4030,9 +4016,9 @@ Tag: OPTICAL TECHNOLOGIES
 
 
 # ASNs 29302, 32780 ("Hosting Services Inc").
-# %Listed, Google Malware Dashboard: 0.13% (AS29302), 0.14% (AS32780).
-# Stop Forum Spam (SFS) listings: 211 (AS29302), 6,708 (AS32780).
-# Updated: 2017.09.22 / Checked: 2018.10.04
+# %Listed, Google Malware Dashboard: 0.20% (AS29302), 0.10% (AS32780).
+# Stop Forum Spam (SFS) listings: 165 (AS29302), 5,712 (AS32780).
+# Updated: 2017.09.22 / Checked: 2019.03.27
 
 2607:5880::/48 Deny Cloud
 Origin: CA
@@ -4183,9 +4169,9 @@ Tag: Cyber Wurx LLC
 
 
 # ASN 60117 ("Host Sailor Ltd").
-# %Listed, Google Malware Dashboard: 1.24%.
-# Stop Forum Spam (SFS) listings: 547.
-# Updated: 2017.01.28 / Checked: 2018.10.04
+# %Listed, Google Malware Dashboard: 0.67%.
+# Stop Forum Spam (SFS) listings: 155.
+# Updated: 2017.01.28 / Checked: 2019.03.27
 
 2a04:dd00::/29 Deny Cloud
 Origin: AE
@@ -4197,28 +4183,37 @@ Tag: Host Sailor Ltd
 
 
 # ASNs 61317, 61440 ("Digital Energy Technologies").
-# %Listed, Google Malware Dashboard: 0.20% (AS61317), 0.29% (AS61440).
-# Stop Forum Spam (SFS) listings: 59,035 (AS61317), 8,766 (AS61440).
-# Updated: 2018.12.11
+# %Listed, Google Malware Dashboard: 0.07% (AS61317), 0.20% (AS61440).
+# Stop Forum Spam (SFS) listings: 26,312 (AS61317), 6,934 (AS61440).
+# Updated: 2019.03.27
 
+2803:80::/36 Deny Cloud
+2803:80:1004::/48 Deny Cloud
+2803:80:2000::/35 Deny Cloud
+2803:80:4000::/34 Deny Cloud
+2803:80:8000::/46 Deny Cloud
+Origin: CL
 2a00:d1a0::/48 Deny Cloud
 2a03:a960::/32 Deny Cloud
 2a03:fbc0::/29 Deny Cloud
 2a06:2b80::/29 Deny Cloud
-2a0a:7a04::/48 Deny Cloud
 2a0a:7a05::/32 Deny Cloud
 2a0a:7e05::/32 Deny Cloud
-2a0a:8606::/32 Deny Cloud
+2a0a:8606::/31 Deny Cloud
+2a0a:9e00::/29 Deny Cloud
+2a0a:ae00::/29 Deny Cloud
+2a0b:8700::/29 Deny Cloud
 2a0c:fa40::/29 Deny Cloud
 2a0d:5c0::/29 Deny Cloud
 2a0d:4b40::/29 Deny Cloud
 2a0d:4c40::/29 Deny Cloud
 Origin: DE
-2a06:d644::/32 Deny Cloud
-2a07:bdc0::/29 Deny Cloud
+2a09:4b40::/29 Deny Cloud
+Origin: GB
 2a0a:d780::/29 Deny Cloud
-2a0c:a187::/32 Deny Cloud
 Origin: RU
+2602:ff62::/39 Deny Cloud
+2602:ff62:200::/40 Deny Cloud
 2602:ff62:fff::/48 Deny Cloud
 Origin: US
 2c0f:ee78::/32 Deny Cloud
@@ -5195,9 +5190,9 @@ Origin: IN
 Tag: HostPalace
 
 
-# ASNs 62, 19479, 20013, 30023 ("CyrusOne LLC").
+# ASNs 62, 19479, 20013 ("CyrusOne LLC").
 # Some IPs on these ASNs caught probing for database dumps.
-# Updated: 2018.01.12 / Checked: 2018.10.03
+# Updated: 2018.01.12 / Checked: 2019.03.27
 
 2605:9600::/38 Deny Cloud
 2605:9600:400::/39 Deny Cloud
@@ -5224,9 +5219,9 @@ Tag: WEBSITEWELCOME.COM
 
 # ASN 18229 ("CtrlS Datacenters Ltd").
 # Some IPs on this ASN caught probing for database dumps.
-# %Listed, Google Malware Dashboard: 0.61%.
-# Stop Forum Spam (SFS) listings: 351.
-# Updated: 2018.10.05
+# %Listed, Google Malware Dashboard: 0.56%.
+# Stop Forum Spam (SFS) listings: 811.
+# Updated: 2019.03.27
 
 2001:df0:fc00::/48 Deny Cloud
 2001:df4:5100::/48 Deny Cloud
@@ -5235,6 +5230,7 @@ Tag: WEBSITEWELCOME.COM
 2400:3b00:2::/48 Deny Cloud
 2400:3b00:20::/48 Deny Cloud
 2400:3b00:30::/48 Deny Cloud
+2400:3b00:40::/48 Deny Cloud
 2400:3b00:50::/48 Deny Cloud
 Origin: IN
 Tag: CtrlS Datacenters
@@ -6050,9 +6046,10 @@ Tag: Web4U s.r.o
 # ASN 13768 ("Cogeco Peer 1").
 # Multi-play network, primarily offers infrastructure for webhosting services. Some unwanted traffic seen from their
 # ASN, probing for secure pages, spam attempts, etc. Also contains some broadband providers and human endpoints, which
-# shouldn't be included here: "Kijoma Broadband", "Fairleigh Dickinson University", "Qwest Communications Company".
-# %Listed, Google Malware Dashboard: 0.05%.
-# Updated: 2018.10.05
+# shouldn't be included here: "Kijoma Broadband", "Fairleigh Dickinson University", "Intercom Online".
+# %Listed, Google Malware Dashboard: 0.19%.
+# Stop Forum Spam (SFS) listings: 376.
+# Updated: 2018.10.05 / Checked: 2019.03.27
 
 2001:1978:202::/48 Deny Cloud
 2001:1978:1000::/39 Deny Cloud
@@ -6081,12 +6078,11 @@ Tag: Cogeco Peer 1
 
 # "TakeWYN" (ASNs 3267, 48693).
 # Caught trying to hack WordPress sites.
-# %Listed, Google Malware Dashboard: 0.38% (AS3267).
-# Stop Forum Spam (SFS) listings: 20 (AS3267), 48 (AS48693).
-# Updated: 2018.10.05
+# %Listed, Google Malware Dashboard: 0.44% (AS3267).
+# Stop Forum Spam (SFS) listings: 17 (AS3267), 4 (AS48693).
+# Updated: 2019.03.27
 
 2001:b08::/32 Deny Cloud
-2a06:47c6::/32 Deny Cloud
 2a07:a6c0::/29 Deny Cloud
 Origin: RU
 Tag: TakeWYN
@@ -6277,3 +6273,28 @@ Tag: NEXCESS.NET
 2a0d:8480::/47 Deny Cloud
 Origin: RU
 Tag: McHost.Ru
+
+
+# ASN 13830 ("Nexril").
+# Stop Forum Spam (SFS) listings: 9.
+# Updated: 2019.03.27
+
+2a07:1c40:1020::/48 Deny Cloud
+Origin: AT
+2a0c:b642:1a02::/48 Deny Cloud
+Origin: BE
+2a06:e881:620f::/48 Deny Cloud
+Origin: CH
+2a0d:2406:d11::/48 Deny Cloud
+Origin: NL
+2a04:8802::/31 Deny Cloud
+2a04:8804::/30 Deny Cloud
+2a04:dd82::/31 Deny Cloud
+2a04:dd84::/30 Deny Cloud
+2a07:dec4::/30 Deny Cloud
+Origin: RU
+2001:506:30::/48 Deny Cloud
+2602:fece::/36 Deny Cloud
+2604:fbc0::/32 Deny Cloud
+Origin: US
+Tag: Nexril

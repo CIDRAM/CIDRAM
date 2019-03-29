@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2019.03.27).
+ * This file: Front-end handler (last modified: 2019.03.29).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -1337,49 +1337,13 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'cache-data' && $CIDRAM['FE']['P
 
     if ($CIDRAM['FE']['ASYNC']) {
 
-        /** Perform some function on a cache entry. */
-        if (!empty($_POST['cdi']) && !empty($_POST['do']) && isset($CIDRAM['Cache'][$_POST['cdi']])) {
-            if ($_POST['do'] === 'delete') {
+        /** Delete a cache entry. */
+        if (!empty($_POST['do']) && $_POST['do'] === 'delete') {
+            if (!empty($_POST['cdi']) && isset($CIDRAM['Cache'][$_POST['cdi']])) {
                 unset($CIDRAM['Cache'][$_POST['cdi']]);
                 $CIDRAM['CacheModified'] = true;
-            } elseif ($_POST['do'] === 'show') {
-                $CIDRAM['Output'] = is_array($CIDRAM['Cache'][$_POST['cdi']]) ? serialize($CIDRAM['Cache'][$_POST['cdi']]) : $CIDRAM['Cache'][$_POST['cdi']];
-                echo '<textarea readonly>' . str_replace(['<', '>'], ['&lt;', '&gt;'], $CIDRAM['Output']) . '</textarea>';
-                if (is_array($CIDRAM['Cache'][$_POST['cdi']])) {
-                    foreach ($CIDRAM['Cache'][$_POST['cdi']] as $CIDRAM['ThisItemName'] => $CIDRAM['ThisItem']) {
-                        if (!is_array($CIDRAM['ThisItem'])) {
-                            $CIDRAM['ThisItem'] = ['Data' => $CIDRAM['ThisItem'], 'Len' => strlen($CIDRAM['ThisItem'])];
-                        } else {
-                            $CIDRAM['ThisItem']['Data'] = serialize($CIDRAM['ThisItem']);
-                            $CIDRAM['ThisItem']['Len'] = strlen(serialize($CIDRAM['ThisItem'])) ?: 0;
-                        }
-                        $CIDRAM['FormatFilesize']($CIDRAM['ThisItem']['Len']);
-                        $CIDRAM['ThisItem']['Time'] = isset($CIDRAM['ThisItem']['Time']) ? $CIDRAM['TimeFormat'](
-                            $CIDRAM['ThisItem']['Time'],
-                            $CIDRAM['Config']['general']['timeFormat']
-                        ) : $CIDRAM['L10N']->getString('label_never');
-                        echo '<small>' . sprintf(
-                            '"cache.dat" -&gt; "%1$s" -&gt; "%2$s"<br />%3$s%4$s<br />%5$s',
-                            $_POST['cdi'],
-                            $CIDRAM['ThisItemName'],
-                            $CIDRAM['L10N']->getString('label_expires'),
-                            $CIDRAM['ThisItem']['Time'],
-                            '<code>' . str_replace(['<', '>'], ['&lt;', '&gt;'], $CIDRAM['ThisItem']['Data']) . '</code>'
-                        ) . '</small><hr />';
-                    }
-                    unset($CIDRAM['ThisItemName'], $CIDRAM['ThisItem']);
-                }
-            }
-        }
-
-        /** Perform some function on a cache entry (the front-end cache). */
-        elseif (!empty($_POST['fecdi']) && !empty($_POST['do'])) {
-            if ($_POST['do'] === 'delete') {
+            } elseif (!empty($_POST['fecdi'])) {
                 $CIDRAM['FECacheRemove']($CIDRAM['FE']['Cache'], $CIDRAM['FE']['Rebuild'], $_POST['fecdi']);
-            } elseif ($_POST['do'] === 'show') {
-                if ($CIDRAM['Output'] = $CIDRAM['FECacheGet']($CIDRAM['FE']['Cache'], $_POST['fecdi'])) {
-                    echo '<textarea readonly>' . str_replace(['<', '>'], ['&lt;', '&gt;'], $CIDRAM['Output']) . '</textarea>';
-                }
             }
         }
 
@@ -1387,46 +1351,26 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'cache-data' && $CIDRAM['FE']['P
 
         /** Append async globals. */
         $CIDRAM['FE']['JS'] .=
-            "function cdd(d,n){window.cdi=d,window.do=null==n?'delete':'show',$('POST',''" .
-            ",['cidram-form-target','cdi','do'],null,function(o){null==n?hideid(d+'Contai" .
-            "ner'):(w(d+'ID',r(d+'ID')+o),hideid(d+'SB'))})}window['cidram-form-target']=" .
-            "'cache-data';function fecdd(d,n){window.fecdi=d,window.do=null==n?'delete':'" .
-            "show',$('POST','',['cidram-form-target','fecdi','do'],null,function(o){null=" .
-            "=n?hideid(d+'FEContainer'):(w(d+'FEID',r(d+'FEID')+o),hideid(d+'FESB'))})}wi" .
-            "ndow['cidram-form-target']='cache-data';";
+            "function cdd(d,n){window.cdi=d,window.do='delete',$('POST','',['cidram-f" .
+            "orm-target','cdi','do'],null,function(o){hideid(d+'Container')})}window[" .
+            "'cidram-form-target']='cache-data';function fecdd(d,n){window.fecdi=d,wi" .
+            "ndow.do='delete',$('POST','',['cidram-form-target','fecdi','do'],null,fu" .
+            "nction(o){hideid(d+'FEContainer')})}window['cidram-form-target']='cache-" .
+            "data';";
 
         /** To be populated by the cache data. */
         $CIDRAM['FE']['CacheData'] = '';
+
+        /** Array of all cache items from all sources. */
+        $CIDRAM['CacheArray'] = ['fe_assets/frontend.dat' => [], 'cache.dat' => []];
 
         /** Get cache index data. */
         foreach ($CIDRAM['Cache'] as $CIDRAM['ThisCacheName'] => $CIDRAM['ThisCacheItem']) {
             if (isset($CIDRAM['ThisCacheItem']['Time']) && $CIDRAM['ThisCacheItem']['Time'] > 0 && $CIDRAM['Now'] >= $CIDRAM['ThisCacheItem']['Time']) {
                 continue;
             }
-            if (!is_array($CIDRAM['ThisCacheItem'])) {
-                $CIDRAM['ThisCacheItem'] = ['Data' => $CIDRAM['ThisCacheItem'], 'Len' => strlen($CIDRAM['ThisCacheItem'])];
-            } else {
-                $CIDRAM['ThisCacheItem']['Len'] = strlen(serialize($CIDRAM['ThisCacheItem'])) ?: 0;
-            }
-            $CIDRAM['FormatFilesize']($CIDRAM['ThisCacheItem']['Len']);
-            $CIDRAM['ThisCacheItem']['Time'] = isset($CIDRAM['ThisCacheItem']['Time']) ? $CIDRAM['TimeFormat'](
-                $CIDRAM['ThisCacheItem']['Time'],
-                $CIDRAM['Config']['general']['timeFormat']
-            ) : $CIDRAM['L10N']->getString('label_never');
-            $CIDRAM['FE']['CacheData'] .= sprintf(
-                "\n        " .
-                '<div class="ng1" id="%1$sContainer"><span class="s">"cache.dat" -&gt; "%1$s"<br /><small>%2$s%3$s<br />%4$s%5$s</small><div id="%1$sID">' .
-                '<input onclick="javascript:cdd(\'%1$s\')" type="button" value="%6$s" class="auto" /> ' .
-                '<input onclick="javascript:cdd(\'%1$s\',1)" id="%1$sSB" type="button" value="%7$s" class="auto" />' .
-                '</div></span></div>',
-                $CIDRAM['ThisCacheName'],
-                $CIDRAM['L10N']->getString('field_size'),
-                $CIDRAM['ThisCacheItem']['Len'],
-                $CIDRAM['L10N']->getString('label_expires'),
-                $CIDRAM['ThisCacheItem']['Time'],
-                $CIDRAM['L10N']->getString('field_delete'),
-                $CIDRAM['L10N']->getString('label_show')
-            ) . "\n";
+            $CIDRAM['Arrayify']($CIDRAM['ThisCacheItem']);
+            $CIDRAM['CacheArray']['cache.dat'][$CIDRAM['ThisCacheName']] = $CIDRAM['ThisCacheItem'];
         }
         unset($CIDRAM['ThisCacheName'], $CIDRAM['ThisCacheItem']);
 
@@ -1437,42 +1381,61 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'cache-data' && $CIDRAM['FE']['P
                     continue;
                 }
                 $CIDRAM['CacheIndexData'] = explode(',', $CIDRAM['CacheIndexData']);
-                $CIDRAM['CacheIndexData'][0] = base64_decode($CIDRAM['CacheIndexData'][0]);
-                $CIDRAM['CacheIndexData'][3] = strlen(base64_decode($CIDRAM['CacheIndexData'][1]));
-                $CIDRAM['FormatFilesize']($CIDRAM['CacheIndexData'][3]);
-                $CIDRAM['FE']['CacheData'] .= sprintf(
-                    "\n        " .
-                    '<div class="ng1" id="%1$sFEContainer"><span class="s">"fe_assets/frontend.dat" -&gt; "%1$s"<br /><small>%2$s%3$s<br />%4$s%5$s</small><div id="%1$sFEID">' .
-                    '<input onclick="javascript:fecdd(\'%1$s\')" type="button" value="%7$s" class="auto" /> ' .
-                    '<input onclick="javascript:fecdd(\'%1$s\',1)" id="%1$sFESB" type="button" value="%6$s" class="auto" />' .
-                    '</div></span></div>',
-                    $CIDRAM['CacheIndexData'][0],
-                    $CIDRAM['L10N']->getString('field_size'),
-                    $CIDRAM['CacheIndexData'][3],
-                    $CIDRAM['L10N']->getString('label_expires'),
-                    ($CIDRAM['CacheIndexData'][2] >= 0 ? $CIDRAM['TimeFormat'](
-                        $CIDRAM['CacheIndexData'][2],
-                        $CIDRAM['Config']['general']['timeFormat']
-                    ) : $CIDRAM['L10N']->getString('label_never')),
-                    $CIDRAM['L10N']->getString('label_show'),
-                    $CIDRAM['L10N']->getString('field_delete')
-                ) . "\n";
+                $CIDRAM['ThisCacheEntryName'] = base64_decode($CIDRAM['CacheIndexData'][0]);
+                if (isset($CIDRAM['CacheIndexData'][1])) {
+                    $CIDRAM['CacheIndexData'][1] = base64_decode($CIDRAM['CacheIndexData'][1]);
+                }
+                $CIDRAM['CacheIndexData'][2] = ($CIDRAM['CacheIndexData'][2] >= 0 ? $CIDRAM['TimeFormat'](
+                    $CIDRAM['CacheIndexData'][2],
+                    $CIDRAM['Config']['general']['timeFormat']
+                ) : $CIDRAM['L10N']->getString('label_never'));
+                $CIDRAM['ThisCacheEntrySize'] = strlen($CIDRAM['CacheIndexData'][1]);
+                $CIDRAM['FormatFilesize']($CIDRAM['ThisCacheEntrySize']);
+                if (
+                    preg_match('~\.ya?ml$~i', $CIDRAM['ThisCacheEntryName']) ||
+                    substr($CIDRAM['CacheIndexData'][1], 0, 4) === "---\n"
+                ) {
+                    $CIDRAM['CacheIndexData']['TryYAML'] = new \Maikuolan\Common\YAML();
+                    if ($CIDRAM['CacheIndexData']['TryYAML']->process(
+                        $CIDRAM['CacheIndexData'][1],
+                        $CIDRAM['CacheIndexData']['TryYAML']->Data
+                    ) && !empty($CIDRAM['CacheIndexData']['TryYAML']->Data)) {
+                        $CIDRAM['CacheIndexData'][1] = $CIDRAM['CacheIndexData']['TryYAML']->Data;
+                    }
+                }
+                $CIDRAM['Arrayify']($CIDRAM['CacheIndexData'][1]);
+                $CIDRAM['CacheArray']['fe_assets/frontend.dat'][$CIDRAM['ThisCacheEntryName']] = $CIDRAM['CacheIndexData'][1];
+                $CIDRAM['CacheArray']['fe_assets/frontend.dat'][$CIDRAM['ThisCacheEntryName']][
+                    $CIDRAM['L10N']->getString('field_size')
+                ] = $CIDRAM['ThisCacheEntrySize'];
+                $CIDRAM['CacheArray']['fe_assets/frontend.dat'][$CIDRAM['ThisCacheEntryName']][
+                    $CIDRAM['L10N']->getString('label_expires')
+                ] = $CIDRAM['CacheIndexData'][2];
             }
         }
+        unset($CIDRAM['ThisCacheEntrySize'], $CIDRAM['ThisCacheEntryName'], $CIDRAM['CacheIndexData']);
+
+        /** Begin processing all cache items from all sources. */
+        foreach ($CIDRAM['CacheArray'] as $CIDRAM['CacheSourceName'] => $CIDRAM['CacheSourceData']) {
+            if (empty($CIDRAM['CacheSourceData'])) {
+                continue;
+            }
+            $CIDRAM['FE']['CacheData'] .= '<div class="ng1"><span class="s">' . $CIDRAM['CacheSourceName'] . '</span><br /><br /><ul class="pieul">' . $CIDRAM['ArrayToClickableList'](
+                $CIDRAM['CacheSourceData'], ($CIDRAM['CacheSourceName'] === 'fe_assets/frontend.dat' ? 'fecdd' : 'cdd'), 0
+            ) . '</ul></div>';
+        }
+        unset($CIDRAM['CacheSourceData'], $CIDRAM['CacheSourceName'], $CIDRAM['CacheArray']);
 
         /** Cache is empty. */
         if (!$CIDRAM['FE']['CacheData']) {
             $CIDRAM['FE']['CacheData'] = '<div class="ng1"><span class="s">' . $CIDRAM['L10N']->getString('state_cache_is_empty') . '</span></div>';
         }
 
-        /** Cleanup. */
-        unset($CIDRAM['ThisCacheData'], $CIDRAM['CacheIndexData']);
-
         /** Parse output. */
         $CIDRAM['FE']['FE_Content'] = $CIDRAM['ParseVars'](
             $CIDRAM['lang'] + $CIDRAM['FE'],
             $CIDRAM['ReadFile']($CIDRAM['GetAssetPath']('_cache.html'))
-        );
+        ) . $CIDRAM['MenuToggle'];
 
         /** Send output. */
         echo $CIDRAM['SendOutput']();

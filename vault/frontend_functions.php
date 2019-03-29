@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2019.03.06).
+ * This file: Front-end functions file (last modified: 2019.03.29).
  */
 
 /**
@@ -2942,6 +2942,54 @@ $CIDRAM['GenerateOptions'] = function ($Options, $Trim = '') {
             $Label = preg_replace($Trim, '', $Label);
         }
         $Output .= '<option value="' . $Value . '">' . $Label . '</option>';
+    }
+    return $Output;
+};
+
+/**
+ * Generate a clickable list from an array.
+ *
+ * @param array $Arr The array to convert from.
+ * @param string $DeleteKey The key to use for async calls to delete a cache entry.
+ * @param int $Depth Current cache entry list depth.
+ * @return string The generated clickable list.
+ */
+$CIDRAM['ArrayToClickableList'] = function ($Arr = [], $DeleteKey = '', $Depth = 0) use (&$CIDRAM) {
+    $Output = '';
+    $Count = count($Arr);
+    $Prefix = substr($DeleteKey, 0, 2) === 'fe' ? 'FE' : '';
+    foreach ($Arr as $Key => $Value) {
+        $Delete = ($Depth === 0) ? ' – (<span style="cursor:pointer" onclick="javascript:' . $DeleteKey . '(\'' . addslashes($Key) . '\')"><code class="s">' . $CIDRAM['L10N']->getString('field_delete') . '</code></span>)' : '';
+        $Output .= ($Depth === 0 ? '<span id="' . $Key . $Prefix . 'Container">' : '') . '<li>';
+        if (!is_array($Value)) {
+            if (substr($Value, 0, 2) === '{"' && substr($Value, -2) === '"}') {
+                $Try = json_decode($Value, true);
+                if ($Try !== null) {
+                    $Value = $Try;
+                }
+            } elseif (preg_match('~\.ya?ml$~i', $Key) || substr($Value, 0, 4) === "---\n") {
+                $Try = new \Maikuolan\Common\YAML();
+                if ($Try->process($Value, $Try->Data) && !empty($Try->Data)) {
+                    $Value = $Try->Data;
+                }
+            } elseif (substr($Value, 0, 2) === '["' && substr($Value, -2) === '"]' && strpos($Value, '","') !== false) {
+                $Value = explode('","', substr($Value, 2, -2));
+            }
+        }
+        if (is_array($Value)) {
+            $Output .= '<span class="comCat" style="cursor:pointer"><code class="s">' . str_replace(['<', '>'], ['&lt;', '&gt;'], $Key) . '</code></span>' . $Delete . '<ul class="comSub">';
+            $Output .= $CIDRAM['ArrayToClickableList']($Value, $DeleteKey, $Depth + 1);
+            $Output .= '</ul>';
+        } else {
+            if ($Key === 'Time' && preg_match('~^\d+$~', $Value)) {
+                $Key = $CIDRAM['L10N']->getString('label_expires');
+                $Value = $CIDRAM['TimeFormat']($Value, $CIDRAM['Config']['general']['timeFormat']);
+            }
+            $Class = ($Key === $CIDRAM['L10N']->getString('field_size') || $Key === $CIDRAM['L10N']->getString('label_expires')) ? 'txtRd' : 's';
+            $Text = ($Count === 1 && $Key === 0) ? $Value : $Key . ($Class === 's' ? ' => ' : '') . $Value;
+            $Output .= '<code class="' . $Class . '" style="word-wrap:break-word;word-break:break-all">' . str_replace(['<', '>'], ['&lt;', '&gt;'], $Text) . '</code>' . $Delete;
+        }
+        $Output .= '</li>' . ($Depth === 0 ? '<br /></span>' : '');
     }
     return $Output;
 };

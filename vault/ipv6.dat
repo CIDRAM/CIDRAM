@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6.dat
 
-# Version: 2019.85.235
-# Last modified: 2019.03.27
+# Version: 2019.88.503
+# Last modified: 2019.03.30
 
 
 # ---
@@ -210,15 +210,34 @@ Tag: Masterhost
 
 
 # ASN 26496 ("GoDaddy.com, LLC").
-# %Listed, Google Malware Dashboard: 0.72%.
-# Stop Forum Spam (SFS) listings: 4,769.
-# Updated: 2018.10.07
+# %Listed, Google Malware Dashboard: 0.50%.
+# Stop Forum Spam (SFS) listings: 5,060.
+# Updated: 2019.03.30
 
 2a00:1168::/32 Deny Cloud
 Origin: NL
 2407:1c00::/32 Deny Cloud
-2603::/20 Deny Cloud
-2607:f208::/32 Deny Cloud
+Origin: SG
+2603:4::/44 Deny Cloud
+2603:4:10::/46 Deny Cloud
+2603:5:2100::/40 Deny Cloud
+2603:5:2200::/40 Deny Cloud
+2607:f208:209::/48 Deny Cloud
+2607:f208:305::/48 Deny Cloud
+2607:f208:400::/42 Deny Cloud
+2607:f208:440::/43 Deny Cloud
+2607:f208:500::/44 Deny Cloud
+2607:f208:530::/44 Deny Cloud
+2607:f208:560::/44 Deny Cloud
+2607:f208:580::/44 Deny Cloud
+2607:f208:1020::/44 Deny Cloud
+2607:f208:1040::/44 Deny Cloud
+2607:f208:1160::/44 Deny Cloud
+2607:f208:4000::/40 Deny Cloud
+2607:f208:4f02::/48 Deny Cloud
+2607:f208:5000::/40 Deny Cloud
+2607:f208:5f01::/48 Deny Cloud
+2607:f208:5f02::/48 Deny Cloud
 Origin: US
 Tag: GoDaddy.com, LLC
 
@@ -818,9 +837,9 @@ Tag: Eonix Corporation
 
 
 # ASNs 32748, 46440 ("Steadfast Networks").
-# %Listed, Google Malware Dashboard: 0.63% (AS32748).
-# Stop Forum Spam (SFS) listings: 1,147 (AS32748).
-# Updated: 2018.10.05
+# %Listed, Google Malware Dashboard: 0.49% (AS32748).
+# Stop Forum Spam (SFS) listings: 1,174 (AS32748).
+# Updated: 2018.10.05 / Checked: 2019.03.30
 
 2602:ffbb::/36 Deny Cloud
 2607:6980:13f0::/44 Deny Cloud
@@ -885,42 +904,30 @@ Origin: GB
 Tag: Bytemark Limited
 
 
-# ASNs 14061, 46652 ("DigitalOcean, LLC", "ServerStack, Inc").
+# ASNs 14061, 39690, 46652 ("DigitalOcean, LLC", "Digital Ocean SRL", "ServerStack, Inc").
 # Ranges change frequently / Should update often.
 # Remove unassigned prior to aggregating (e.g., 10.0.0.0/8).
-# %Listed, Google Malware Dashboard: 0.34% (AS14061).
-# Stop Forum Spam (SFS) listings: 71,943 (AS14061).
-# Updated: 2019.01.20
+# %Listed, Google Malware Dashboard: 0.33% (AS14061).
+# Stop Forum Spam (SFS) listings: 74,117 (AS14061).
+# Updated: 2019.03.30
 
-2001:7f8:7f::/64 Deny Cloud
-Origin: CZ
-2001:7f8::/64 Deny Cloud
-Origin: DE
-2001:7f8:4::/63 Deny Cloud
-Origin: GB
-2001:de8:4::/64 Deny Cloud
-Origin: JP
-2001:504:f::/64 Deny Cloud
-2001:504:17:115::/64 Deny Cloud
-2001:504:36::/64 Deny Cloud
-2001:7f8:13::/64 Deny Cloud
-2001:ded::/64 Deny Cloud
+2a03:b0c0::/46 Deny Cloud
+Origin: NL
 2400:6180::/48 Deny Cloud
 2400:6180:100::/40 Deny Cloud
+Origin: SG
 2604:a880::/46 Deny Cloud
 2604:a880:400::/48 Deny Cloud
 2604:a880:800::/47 Deny Cloud
 2604:a880:cad::/48 Deny Cloud
-2620:107:4008:357::/64 Deny Cloud
-2a03:b0c0::/46 Deny Cloud
 Origin: US
 Tag: Digital Ocean, Inc
 
 
 # ASN 5577 ("Root SA").
-# %Listed, Google Malware Dashboard: 0.12%.
-# Stop Forum Spam (SFS) listings: 3,472.
-# Updated: 2018.10.05
+# %Listed, Google Malware Dashboard: 0.06%.
+# Stop Forum Spam (SFS) listings: 2,463.
+# Updated: 2018.10.05 / Checked: 2019.03.30
 
 2001:67c:15a3::/48 Deny Cloud
 Origin: CZ
@@ -1325,9 +1332,9 @@ Tag: Psychz Networks
 
 
 # ASN 36114 ("Versaweb, LLC").
-# %Listed, Google Malware Dashboard: 0.36%.
-# Stop Forum Spam (SFS) listings: 276.
-# Updated: 2016.01.23 / Checked: 2018.10.07
+# %Listed, Google Malware Dashboard: 0.03%.
+# Stop Forum Spam (SFS) listings: 217.
+# Updated: 2016.01.23 / Checked: 2019.03.30
 
 2605:6f80::/40 Deny Cloud
 Origin: US
@@ -2727,12 +2734,12 @@ Tag: Datacenter IP, LLC
 
 
 # ASN 43578 ("MBA DATACENTERS S.L").
-# %Listed, Google Malware Dashboard: 0.14%.
-# Stop Forum Spam (SFS) listings: 28.
-# Updated: 2018.10.09
+# Stop Forum Spam (SFS) listings: 20.
+# Updated: 2019.03.30
 
 2a04:b880::/48 Deny Cloud
 2a04:b880:5::/48 Deny Cloud
+2a05:4700:b::/48 Deny Cloud
 2a05:4700:50::/48 Deny Cloud
 2a05:4700:100::/47 Deny Cloud
 Origin: ES
@@ -3576,9 +3583,9 @@ Tag: ShenZhen Sunrise
 
 # ASN 39572 ("DataWeb Global Group B.V").
 # All the ranges from South Africa in this network seem to be proxies. Should mark accordingly.
-# %Listed, Google Malware Dashboard: 0.15%.
-# Stop Forum Spam (SFS) listings: 376.
-# Updated: 2018.11.21
+# %Listed, Google Malware Dashboard: 0.10%.
+# Stop Forum Spam (SFS) listings: 482.
+# Updated: 2018.11.21 / Checked: 2019.03.30
 
 2a02:b48::/31 Deny Cloud
 Origin: NL
@@ -3876,13 +3883,17 @@ Tag: Huawei Cloud Service
 
 # ASN 38001 ("NewMedia Express Pte Ltd. Singapore Web Hosting Service Provider").
 # Caught trying to DDoS SFS.
-# %Listed, Google Malware Dashboard: 0.56%.
-# Stop Forum Spam (SFS) listings: 205.
-# Updated: 2018.04.03 / Checked: 2018.10.05
+# %Listed, Google Malware Dashboard: 0.25%.
+# Stop Forum Spam (SFS) listings: 318.
+# Updated: 2019.03.30
 
 2402:2f80:1::/48 Deny Cloud
 2402:2f80:8::/48 Deny Cloud
 Origin: AU
+2401:df40:2::/48 Deny Cloud
+Origin: GI
+2403:fa40:1::/48 Deny Cloud
+Origin: NL
 2a0c:df80::/29 Deny Cloud
 Origin: RU
 2400:fb80::/32 Deny Cloud
@@ -5469,9 +5480,9 @@ Tag: CloudSol
 
 
 # ASN 55720 ("Gigabit Hosting Sdn Bhd").
-# %Listed, Google Malware Dashboard: 5.41%.
-# Stop Forum Spam (SFS) listings: 174.
-# Updated: 2018.10.07
+# %Listed, Google Malware Dashboard: 4.23%.
+# Stop Forum Spam (SFS) listings: 121.
+# Updated: 2019.03.30
 
 2407:a480::/32 Deny Cloud
 Origin: CN
@@ -5480,7 +5491,6 @@ Origin: HK
 2400:5680::/32 Deny Cloud
 2401:340::/32 Deny Cloud
 2402:9500::/32 Deny Cloud
-2407:1100::/32 Deny Cloud
 Origin: MY
 Tag: Gigabit Hosting
 
@@ -5773,9 +5783,9 @@ Tag: Hostio Solutions B.V
 
 
 # ASN 23338 ("DCS Pacific Star, LLC").
-# %Listed, Google Malware Dashboard: 3.77%.
-# Stop Forum Spam (SFS) listings: 672.
-# Updated: 2018.05.18 / Checked: 2018.10.07
+# %Listed, Google Malware Dashboard: 2.95%.
+# Stop Forum Spam (SFS) listings: 684.
+# Updated: 2018.05.18 / Checked: 2019.03.30
 
 2606:b680::/32 Deny Cloud
 Origin: US
@@ -6298,3 +6308,13 @@ Origin: RU
 2604:fbc0::/32 Deny Cloud
 Origin: US
 Tag: Nexril
+
+
+# ASN 14987 ("Rethem Hosting LLC").
+# Caught spamming.
+# Updated: 2019.03.30
+
+2001:550:101::/48 Deny Cloud
+2607:8500::/32 Deny Cloud
+Origin: US
+Tag: Rethem Hosting LLC

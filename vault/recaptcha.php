@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: reCAPTCHA module (last modified: 2019.02.06).
+ * This file: reCAPTCHA module (last modified: 2019.04.03).
  */
 
 /**
@@ -64,8 +64,8 @@ $CIDRAM['reCAPTCHA']['GenerateFailed'] = function () use (&$CIDRAM) {
     $CIDRAM['BlockInfo']['reCAPTCHA'] = $CIDRAM['L10N']->getString('recaptcha_failed');
     /** Append to reCAPTCHA statistics if necessary. */
     if ($CIDRAM['Config']['general']['statistics']) {
-        $CIDRAM['Cache']['Statistics']['reCAPTCHA-Failed']++;
-        $CIDRAM['CacheModified'] = true;
+        $CIDRAM['Statistics']['reCAPTCHA-Failed']++;
+        $CIDRAM['Statistics-Modified'] = true;
     }
 };
 
@@ -75,8 +75,8 @@ $CIDRAM['reCAPTCHA']['GeneratePassed'] = function () use (&$CIDRAM) {
     $CIDRAM['BlockInfo']['reCAPTCHA'] = $CIDRAM['L10N']->getString('recaptcha_passed');
     /** Append to reCAPTCHA statistics if necessary. */
     if ($CIDRAM['Config']['general']['statistics']) {
-        $CIDRAM['Cache']['Statistics']['reCAPTCHA-Passed']++;
-        $CIDRAM['CacheModified'] = true;
+        $CIDRAM['Statistics']['reCAPTCHA-Passed']++;
+        $CIDRAM['Statistics-Modified'] = true;
     }
 };
 
@@ -140,8 +140,9 @@ if ($CIDRAM['Config']['recaptcha']['lockuser']) {
         $CIDRAM['BlockInfo']['SignatureCount'] = 0;
 
         /** Fix for infraction escalation bug. */
-        if (isset($CIDRAM['Cache']['Tracking'][$CIDRAM['BlockInfo']['IPAddr']])) {
-            unset($CIDRAM['Cache']['Tracking'][$CIDRAM['BlockInfo']['IPAddr']]);
+        if (isset($CIDRAM['Tracking'][$CIDRAM['BlockInfo']['IPAddr']])) {
+            unset($CIDRAM['Tracking'][$CIDRAM['BlockInfo']['IPAddr']]);
+            $CIDRAM['Tracking-Modified'] = true;
         }
 
     } else {
@@ -217,8 +218,9 @@ if ($CIDRAM['Config']['recaptcha']['lockuser']) {
         $CIDRAM['BlockInfo']['SignatureCount'] = 0;
 
         /** Fix for infraction escalation bug. */
-        if (isset($CIDRAM['Cache']['Tracking'][$CIDRAM['BlockInfo']['IPAddr']])) {
-            unset($CIDRAM['Cache']['Tracking'][$CIDRAM['BlockInfo']['IPAddr']]);
+        if (isset($CIDRAM['Tracking'][$CIDRAM['BlockInfo']['IPAddr']])) {
+            unset($CIDRAM['Tracking'][$CIDRAM['BlockInfo']['IPAddr']]);
+            $CIDRAM['Tracking-Modified'] = true;
         }
 
     } else {

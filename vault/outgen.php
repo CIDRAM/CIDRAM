@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Output generator (last modified: 2019.02.06).
+ * This file: Output generator (last modified: 2019.04.04).
  */
 
 /** Initialise cache. */
@@ -18,18 +18,21 @@ $CIDRAM['InitialiseCache']();
 $CIDRAM['ResetBypassFlags']();
 
 /** Initialise statistics if necessary. */
-if ($CIDRAM['Config']['general']['statistics'] && empty($CIDRAM['Cache']['Statistics'])) {
-    $CIDRAM['Cache']['Statistics'] = [
-        'Other-Since' => $CIDRAM['Now'],
-        'Blocked-IPv4' => 0,
-        'Blocked-IPv6' => 0,
-        'Blocked-Other' => 0,
-        'Banned-IPv4' => 0,
-        'Banned-IPv6' => 0,
-        'reCAPTCHA-Failed' => 0,
-        'reCAPTCHA-Passed' => 0
-    ];
-    $CIDRAM['CacheModified'] = true;
+if ($CIDRAM['Config']['general']['statistics']) {
+    $CIDRAM['InitialiseCacheSection']('Statistics');
+    if (!isset($CIDRAM['Statistics']['Other-Since'])) {
+        $CIDRAM['Statistics'] = [
+            'Other-Since' => $CIDRAM['Now'],
+            'Blocked-IPv4' => 0,
+            'Blocked-IPv6' => 0,
+            'Blocked-Other' => 0,
+            'Banned-IPv4' => 0,
+            'Banned-IPv6' => 0,
+            'reCAPTCHA-Failed' => 0,
+            'reCAPTCHA-Passed' => 0
+        ];
+        $CIDRAM['Statistics-Modified'] = true;
+    }
 }
 
 /** Fallback for missing $_SERVER superglobal. */
@@ -127,11 +130,19 @@ if ($CIDRAM['Protect'] && !$CIDRAM['Config']['general']['maintenance_mode']) {
      * instances of bad behaviour.
      */
     elseif ((
-        isset($CIDRAM['Cache']['Tracking'][$CIDRAM['BlockInfo']['IPAddr']]['Count']) &&
-        $CIDRAM['Cache']['Tracking'][$CIDRAM['BlockInfo']['IPAddr']]['Count'] >= $CIDRAM['Config']['signatures']['infraction_limit']
+        isset(
+            $CIDRAM['BlockInfo']['IPAddr'],
+            $CIDRAM['Tracking'][$CIDRAM['BlockInfo']['IPAddr']],
+            $CIDRAM['Tracking'][$CIDRAM['BlockInfo']['IPAddr']]['Count']
+        ) &&
+        $CIDRAM['Tracking'][$CIDRAM['BlockInfo']['IPAddr']]['Count'] >= $CIDRAM['Config']['signatures']['infraction_limit']
     ) || (
-        isset($CIDRAM['BlockInfo']['IPAddrResolved'], $CIDRAM['Cache']['Tracking'][$CIDRAM['BlockInfo']['IPAddrResolved']]['Count']) &&
-        $CIDRAM['Cache']['Tracking'][$CIDRAM['BlockInfo']['IPAddrResolved']]['Count'] >= $CIDRAM['Config']['signatures']['infraction_limit']
+        isset(
+            $CIDRAM['BlockInfo']['IPAddrResolved'],
+            $CIDRAM['Tracking'][$CIDRAM['BlockInfo']['IPAddrResolved']],
+            $CIDRAM['Tracking'][$CIDRAM['BlockInfo']['IPAddrResolved']]['Count']
+        ) &&
+        $CIDRAM['Tracking'][$CIDRAM['BlockInfo']['IPAddrResolved']]['Count'] >= $CIDRAM['Config']['signatures']['infraction_limit']
     )) {
         $CIDRAM['Banned'] = true;
         $CIDRAM['BlockInfo']['ReasonMessage'] = $CIDRAM['L10N']->getString('ReasonMessage_Banned');
@@ -219,9 +230,6 @@ if ($CIDRAM['Protect'] && !$CIDRAM['Config']['general']['maintenance_mode'] && e
 
 /** Process tracking information for the inbound IP. */
 if (!empty($CIDRAM['TestResults']) && $CIDRAM['BlockInfo']['SignatureCount'] && $CIDRAM['Trackable']) {
-    if (!isset($CIDRAM['Cache']['Tracking'])) {
-        $CIDRAM['Cache']['Tracking'] = [];
-    }
 
     /** Set tracking expiry. */
     $CIDRAM['TrackTime'] = $CIDRAM['Now'] + (
@@ -231,22 +239,22 @@ if (!empty($CIDRAM['TestResults']) && $CIDRAM['BlockInfo']['SignatureCount'] && 
     /** Number of infractions to append. */
     $CIDRAM['TrackCount'] = !empty($CIDRAM['Config']['Options']['TrackCount']) ? $CIDRAM['Config']['Options']['TrackCount'] : 1;
     if (isset(
-        $CIDRAM['Cache']['Tracking'][$CIDRAM['BlockInfo']['IPAddr']]['Count'],
-        $CIDRAM['Cache']['Tracking'][$CIDRAM['BlockInfo']['IPAddr']]['Time']
+        $CIDRAM['Tracking'][$CIDRAM['BlockInfo']['IPAddr']]['Count'],
+        $CIDRAM['Tracking'][$CIDRAM['BlockInfo']['IPAddr']]['Time']
     )) {
-        $CIDRAM['Cache']['Tracking'][$CIDRAM['BlockInfo']['IPAddr']]['Count'] += $CIDRAM['TrackCount'];
-        if ($CIDRAM['TrackTime'] > $CIDRAM['Cache']['Tracking'][$CIDRAM['BlockInfo']['IPAddr']]['Time']) {
-            $CIDRAM['Cache']['Tracking'][$CIDRAM['BlockInfo']['IPAddr']]['Time'] = $CIDRAM['TrackTime'];
+        $CIDRAM['Tracking'][$CIDRAM['BlockInfo']['IPAddr']]['Count'] += $CIDRAM['TrackCount'];
+        if ($CIDRAM['TrackTime'] > $CIDRAM['Tracking'][$CIDRAM['BlockInfo']['IPAddr']]['Time']) {
+            $CIDRAM['Tracking'][$CIDRAM['BlockInfo']['IPAddr']]['Time'] = $CIDRAM['TrackTime'];
         }
     } else {
-        $CIDRAM['Cache']['Tracking'][$CIDRAM['BlockInfo']['IPAddr']] = [
+        $CIDRAM['Tracking'][$CIDRAM['BlockInfo']['IPAddr']] = [
             'Count' => $CIDRAM['TrackCount'],
             'Time' => $CIDRAM['TrackTime']
         ];
     }
+    $CIDRAM['Tracking-Modified'] = true;
 
-    $CIDRAM['CacheModified'] = true;
-    if ($CIDRAM['Cache']['Tracking'][$CIDRAM['BlockInfo']['IPAddr']]['Count'] >= $CIDRAM['Config']['signatures']['infraction_limit']) {
+    if ($CIDRAM['Tracking'][$CIDRAM['BlockInfo']['IPAddr']]['Count'] >= $CIDRAM['Config']['signatures']['infraction_limit']) {
         $CIDRAM['Banned'] = true;
     }
 
@@ -341,17 +349,18 @@ if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
         $CIDRAM['Config']['general']['log_banned_ips'] || empty($CIDRAM['Banned'])
     )) {
 
+        /** Fetch current cached log event counter. */
+        $CIDRAM['BlockInfo']['Counter'] = $CIDRAM['Cache']->getEntry('Counter') ?: 0;
+
         /** If logging is enabled, increment the counter. */
         if (empty($CIDRAM['Flag Don\'t Log']) && (
             $CIDRAM['Config']['general']['logfile'] ||
             $CIDRAM['Config']['general']['logfileApache'] ||
             $CIDRAM['Config']['general']['logfileSerialized']
         )) {
-            $CIDRAM['Cache']['Counter']++;
-            $CIDRAM['CacheModified'] = true;
+            $CIDRAM['BlockInfo']['Counter']++;
+            $CIDRAM['Cache']->setEntry('Counter', $CIDRAM['BlockInfo']['Counter'], 0);
         }
-        /** Set block information counter to match the updated cached counter. */
-        $CIDRAM['BlockInfo']['Counter'] = $CIDRAM['Cache']['Counter'];
 
     }
 
@@ -364,34 +373,30 @@ if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
 if ($CIDRAM['Config']['general']['statistics'] && $CIDRAM['BlockInfo']['SignatureCount'] > 0) {
     if (!empty($CIDRAM['Banned'])) {
         if (!empty($CIDRAM['BlockInfo']['IPAddrResolved'])) {
-            $CIDRAM['Cache']['Statistics']['Banned-IPv4']++;
-            $CIDRAM['Cache']['Statistics']['Banned-IPv6']++;
+            $CIDRAM['Statistics']['Banned-IPv4']++;
+            $CIDRAM['Statistics']['Banned-IPv6']++;
         } elseif ($CIDRAM['LastTestIP'] === 4) {
-            $CIDRAM['Cache']['Statistics']['Banned-IPv4']++;
+            $CIDRAM['Statistics']['Banned-IPv4']++;
         } elseif ($CIDRAM['LastTestIP'] === 6) {
-            $CIDRAM['Cache']['Statistics']['Banned-IPv6']++;
+            $CIDRAM['Statistics']['Banned-IPv6']++;
         }
     } else {
         if (!empty($CIDRAM['BlockInfo']['IPAddrResolved'])) {
-            $CIDRAM['Cache']['Statistics']['Blocked-IPv4']++;
-            $CIDRAM['Cache']['Statistics']['Blocked-IPv6']++;
+            $CIDRAM['Statistics']['Blocked-IPv4']++;
+            $CIDRAM['Statistics']['Blocked-IPv6']++;
         } elseif ($CIDRAM['LastTestIP'] === 4) {
-            $CIDRAM['Cache']['Statistics']['Blocked-IPv4']++;
+            $CIDRAM['Statistics']['Blocked-IPv4']++;
         } elseif ($CIDRAM['LastTestIP'] === 6) {
-            $CIDRAM['Cache']['Statistics']['Blocked-IPv6']++;
+            $CIDRAM['Statistics']['Blocked-IPv6']++;
         } else {
-            $CIDRAM['Cache']['Statistics']['Blocked-Other']++;
+            $CIDRAM['Statistics']['Blocked-Other']++;
         }
     }
-    $CIDRAM['CacheModified'] = true;
+    $CIDRAM['Statistics-Modified'] = true;
 }
 
-/** Update the cache. */
-if ($CIDRAM['CacheModified']) {
-    $CIDRAM['Handle'] = fopen($CIDRAM['Vault'] . 'cache.dat', 'w');
-    fwrite($CIDRAM['Handle'], serialize($CIDRAM['Cache']));
-    fclose($CIDRAM['Handle']);
-}
+/** Destroy cache object and some related values. */
+$CIDRAM['DestroyCacheObject']();
 
 /** Process webhooks. */
 if (!empty($CIDRAM['Config']['Webhook']['URL'])) {

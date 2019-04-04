@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2019.03.29).
+ * This file: Front-end functions file (last modified: 2019.04.03).
  */
 
 /**
@@ -816,9 +816,6 @@ $CIDRAM['ComponentFunctionUpdatePrep'] = function () use (&$CIDRAM) {
  */
 $CIDRAM['SimulateBlockEvent'] = function ($Addr, $Modules = false, $Aux = false) use (&$CIDRAM) {
 
-    /** Initialise cache. */
-    $CIDRAM['InitialiseCache']();
-
     /** Reset bypass flags (needed to prevent falsing due to search engine verification). */
     $CIDRAM['ResetBypassFlags']();
 
@@ -889,13 +886,6 @@ $CIDRAM['SimulateBlockEvent'] = function ($Addr, $Modules = false, $Aux = false)
     /** Auxiliary rule checks. */
     if ($Aux) {
         $CIDRAM['Aux']();
-    }
-
-    /** Update the cache. */
-    if ($CIDRAM['CacheModified']) {
-        $Handle = fopen($CIDRAM['Vault'] . 'cache.dat', 'w');
-        fwrite($Handle, serialize($CIDRAM['Cache']));
-        fclose($Handle);
     }
 
 };

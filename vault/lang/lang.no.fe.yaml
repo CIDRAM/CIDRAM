@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Norwegian language data for the front-end (last modified: 2019.03.26).
+# This file: Norwegian language data for the front-end (last modified: 2019.04.03).
 ##/
 
 Extended Description Bypasses: "Standard-signatur-bypass-filene som normalt følger med hovedpakken."
@@ -131,6 +131,20 @@ config_signatures_ipv4: "En liste over IPv4 signaturfiler som CIDRAM skal forsø
 config_signatures_ipv6: "En liste over IPv6 signaturfiler som CIDRAM skal forsøke å analysere, separert av kommaer."
 config_signatures_modules: "En liste over modulfiler som skal lastes etter at du har sjekket IPv4/IPv6-signaturer, separert av kommaer."
 config_signatures_track_mode: "Når skal infraksjoner regnes? False = Når IPer blokkert av moduler. True = Når IPer er blokkert av en eller annen grunn."
+config_supplementary_cache_options_enable_apcu: "Dette angir om skal bruke APCu for caching. Standardverdi = False."
+config_supplementary_cache_options_enable_memcache: "Dette angir om skal bruke Memcache for caching. Standardverdi = False."
+config_supplementary_cache_options_enable_memcached: "Dette angir om skal bruke Memcached for caching. Standardverdi = False."
+config_supplementary_cache_options_enable_pdo: "Dette angir om skal bruke PDO for caching. Standardverdi = False."
+config_supplementary_cache_options_enable_redis: "Dette angir om skal bruke Redis for caching. Standardverdi = False."
+config_supplementary_cache_options_memcache_host: "Memcache vertsverdi. Standardverdi = "localhost"."
+config_supplementary_cache_options_memcache_port: "Memcache portsverdi. Standardverdi = "11211"."
+config_supplementary_cache_options_memcache_timeout: "Memcache timeout-verdi. Standardverdi = "1"."
+config_supplementary_cache_options_pdo_dsn: "PDO DSN-verdi. Standardverdi = "mysql:dbname=cidram;host=localhost;port=3306"."
+config_supplementary_cache_options_pdo_password: "PDO passord."
+config_supplementary_cache_options_pdo_username: "PDO brukernavn."
+config_supplementary_cache_options_redis_host: "Redis vertsverdi. Standardverdi = "localhost"."
+config_supplementary_cache_options_redis_port: "Redis portsverdi. Standardverdi = "6379"."
+config_supplementary_cache_options_redis_timeout: "Redis timeout-verdi. Standardverdi = "2.5"."
 config_template_data_Magnification: "Font forstørrelse. Standardverdi = 1."
 config_template_data_css_url: "URL for CSS-fil for tilpassede temaer."
 config_template_data_theme: "Standard tema som skal brukes til CIDRAM."

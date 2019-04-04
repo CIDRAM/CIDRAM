@@ -161,6 +161,7 @@ Tập tin | Chi tiết
 /vault/ | Vault thư mục (chứa các tập tin khác nhau).
 /vault/classes/ | Thư mục lớp học. Chứa các lớp học khác nhau được sử dụng bởi CIDRAM.
 /vault/classes/Maikuolan/ | Thư mục lớp học. Chứa các lớp học khác nhau được sử dụng bởi CIDRAM.
+/vault/classes/Maikuolan/Cache.php | Một xử lý bộ đệm đơn giản, thống nhất.
 /vault/classes/Maikuolan/ComplexStringHandler.php | Tập tin cho xử lý chuỗi phức tạp.
 /vault/classes/Maikuolan/L10N.php | Tập tin cho xử lý L10N.
 /vault/classes/Maikuolan/YAML.php | Tập tin cho xử lý YAML.
@@ -277,7 +278,6 @@ Tập tin | Chi tiết
 /vault/.travis.yml | Được sử dụng bởi Travis CI để thử nghiệm (không cần thiết cho chức năng phù hợp của kịch bản).
 /vault/auxiliary.yaml | Chứa các quy tắc phụ trợ. Không bao gồm trong gói. Được tạo bởi trang quy tắc phụ trợ.
 /vault/cache.dat | Dữ liệu bộ nhớ cache.
-/vault/cache.dat.safety | Được tạo ra như một cơ chế an toàn khi cần thiết.
 /vault/cidramblocklists.dat | Tập tin siêu dữ liệu cho danh sách chặn tùy chọn của Macmathan; Được sử dụng bởi trang cập nhật front-end.
 /vault/cli.php | Tập tin cho xử lý CLI.
 /vault/components.dat | Tập tin siêu dữ liệu thành phần; Được sử dụng bởi trang cập nhật front-end.
@@ -331,8 +331,8 @@ Sau đây là danh sách các biến tìm thấy trong tập tin cấu hình cho
 [general](#general-thể-loại) | [signatures](#signatures-thể-loại) | [recaptcha](#recaptcha-thể-loại) | [legal](#legal-thể-loại) | [template_data](#template_data-thể-loại)
 :--|:--|:--|:--|:--
 [logfile](#logfile)<br />[logfileApache](#logfileapache)<br />[logfileSerialized](#logfileserialized)<br />[truncate](#truncate)<br />[log_rotation_limit](#log_rotation_limit)<br />[log_rotation_action](#log_rotation_action)<br />[timezone](#timezone)<br />[timeOffset](#timeoffset)<br />[timeFormat](#timeformat)<br />[ipaddr](#ipaddr)<br />[forbid_on_block](#forbid_on_block)<br />[silent_mode](#silent_mode)<br />[lang](#lang)<br />[numbers](#numbers)<br />[emailaddr](#emailaddr)<br />[emailaddr_display_style](#emailaddr_display_style)<br />[disable_cli](#disable_cli)<br />[disable_frontend](#disable_frontend)<br />[max_login_attempts](#max_login_attempts)<br />[FrontEndLog](#frontendlog)<br />[ban_override](#ban_override)<br />[log_banned_ips](#log_banned_ips)<br />[default_dns](#default_dns)<br />[search_engine_verification](#search_engine_verification)<br />[social_media_verification](#social_media_verification)<br />[protect_frontend](#protect_frontend)<br />[disable_webfonts](#disable_webfonts)<br />[maintenance_mode](#maintenance_mode)<br />[default_algo](#default_algo)<br />[statistics](#statistics)<br />[force_hostname_lookup](#force_hostname_lookup)<br />[allow_gethostbyaddr_lookup](#allow_gethostbyaddr_lookup)<br />[hide_version](#hide_version)<br />[empty_fields](#empty_fields)<br /> | [ipv4](#ipv4)<br />[ipv6](#ipv6)<br />[block_cloud](#block_cloud)<br />[block_bogons](#block_bogons)<br />[block_generic](#block_generic)<br />[block_legal](#block_legal)<br />[block_malware](#block_malware)<br />[block_proxies](#block_proxies)<br />[block_spam](#block_spam)<br />[modules](#modules)<br />[default_tracktime](#default_tracktime)<br />[infraction_limit](#infraction_limit)<br />[track_mode](#track_mode)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> | [usemode](#usemode)<br />[lockip](#lockip)<br />[lockuser](#lockuser)<br />[sitekey](#sitekey)<br />[secret](#secret)<br />[expiry](#expiry)<br />[logfile](#logfile)<br />[signature_limit](#signature_limit)<br />[api](#api)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> | [pseudonymise_ip_addresses](#pseudonymise_ip_addresses)<br />[omit_ip](#omit_ip)<br />[omit_hostname](#omit_hostname)<br />[omit_ua](#omit_ua)<br />[privacy_policy](#privacy_policy)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> | [theme](#theme)<br />[Magnification](#magnification)<br />[css_url](#css_url)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-[PHPMailer](#phpmailer-thể-loại) | [rate_limiting](#rate_limiting-thể-loại)
-[EventLog](#eventlog)<br />[SkipAuthProcess](#skipauthprocess)<br />[Enable2FA](#enable2fa)<br />[Host](#host)<br />[Port](#port)<br />[SMTPSecure](#smtpsecure)<br />[SMTPAuth](#smtpauth)<br />[Username](#username)<br />[Password](#password)<br />[setFromAddress](#setfromaddress)<br />[setFromName](#setfromname)<br />[addReplyToAddress](#addreplytoaddress)<br />[addReplyToName](#addreplytoname)<br /> | [max_bandwidth](#max_bandwidth)<br />[max_requests](#max_requests)<br />[precision_ipv4](#precision_ipv4)<br />[precision_ipv6](#precision_ipv6)<br />[allowance_period](#allowance_period)<br /><br /><br /><br /><br /><br /><br /><br /><br />
+[PHPMailer](#phpmailer-thể-loại) | [rate_limiting](#rate_limiting-thể-loại) | [supplementary_cache_options](#supplementary_cache_options-thể-loại)
+[EventLog](#eventlog)<br />[SkipAuthProcess](#skipauthprocess)<br />[Enable2FA](#enable2fa)<br />[Host](#host)<br />[Port](#port)<br />[SMTPSecure](#smtpsecure)<br />[SMTPAuth](#smtpauth)<br />[Username](#username)<br />[Password](#password)<br />[setFromAddress](#setfromaddress)<br />[setFromName](#setfromname)<br />[addReplyToAddress](#addreplytoaddress)<br />[addReplyToName](#addreplytoname)<br /><br /> | [max_bandwidth](#max_bandwidth)<br />[max_requests](#max_requests)<br />[precision_ipv4](#precision_ipv4)<br />[precision_ipv6](#precision_ipv6)<br />[allowance_period](#allowance_period)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> | [enable_apcu](#enable_apcu)<br />[enable_memcache](#enable_memcache)<br />[enable_memcached](#enable_memcached)<br />[enable_redis](#enable_redis)<br />[enable_pdo](#enable_pdo)<br />[memcache_host](#memcache_host)<br />[memcache_port](#memcache_port)<br />[memcache_timeout](#memcache_timeout)<br />[redis_host](#redis_host)<br />[redis_port](#redis_port)<br />[redis_timeout](#redis_timeout)<br />[pdo_dsn](#pdo_dsn)<br />[pdo_username](#pdo_username)<br />[pdo_password](#pdo_password)<br />
 
 #### "general" (Thể loại)
 Cấu hình chung cho CIDRAM.
@@ -710,6 +710,53 @@ Nếu bạn cảm thấy rằng bạn không cần CIDRAM để thực thi giớ
 
 ##### "allowance_period"
 - Số giờ để theo dõi việc sử dụng. Mặc định = 0.
+
+#### "supplementary_cache_options" (Thể loại)
+Tùy chọn bộ nhớ cache bổ sung.
+
+*Hiện tại, điều này cực kỳ thử nghiệm, và có thể không hoạt động như mong đợi! Hiện tại, tôi khuyên bạn nên bỏ qua nó.*
+
+##### "enable_apcu"
+- Điều này xác định có nên thử sử dụng APCu để lưu trữ không. Mặc định = False.
+
+##### "enable_memcache"
+- Điều này xác định có nên thử sử dụng Memcache để lưu trữ không. Mặc định = False.
+
+##### "enable_memcached"
+- Điều này xác định có nên thử sử dụng Memcached để lưu trữ không. Mặc định = False.
+
+##### "enable_redis"
+- Điều này xác định có nên thử sử dụng Redis để lưu trữ không. Mặc định = False.
+
+##### "enable_pdo"
+- Điều này xác định có nên thử sử dụng PDO để lưu trữ không. Mặc định = False.
+
+##### "memcache_host"
+- Giá trị máy chủ Memcache. Mặc định = "localhost".
+
+##### "memcache_port"
+- Giá trị cổng Memcache. Mặc định = "11211".
+
+##### "memcache_timeout"
+- Giá trị thời gian chờ Memcache. Mặc định = "1".
+
+##### "redis_host"
+- Giá trị máy chủ Redis. Mặc định = "localhost".
+
+##### "redis_port"
+- Giá trị cổng Redis. Mặc định = "6379".
+
+##### "redis_timeout"
+- Giá trị thời gian chờ Redis. Mặc định = "2.5".
+
+##### "pdo_dsn"
+- Giá trị DSN PDO. Mặc định = "`mysql:dbname=cidram;host=localhost;port=3306`".
+
+##### "pdo_username"
+- Tên người dùng PDO.
+
+##### "pdo_password"
+- Mật khẩu PDO.
 
 ---
 
@@ -1512,4 +1559,4 @@ Một số tài nguyên được đề xuất để tìm hiểu thêm thông tin
 ---
 
 
-Lần cuối cập nhật: 26 Tháng Ba 2019 (2019.03.26).
+Lần cuối cập nhật: 4 Tháng Tư 2019 (2019.04.04).

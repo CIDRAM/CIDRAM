@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Thai language data for the front-end (last modified: 2019.03.26).
+# This file: Thai language data for the front-end (last modified: 2019.04.03).
 ##/
 
 Extended Description Bypasses: "ไฟล์บายพาสลายเซ็นเริ่มต้นที่รวมอยู่ในแพคเกจหลัก."
@@ -131,6 +131,20 @@ config_signatures_ipv4: "รายการคั่นด้วยจุลภ�
 config_signatures_ipv6: "รายการคั่นด้วยจุลภาคของไฟล์ลายเซ็น IPv6 ที่ CIDRAM ควรพยายามแยกวิเคราะห์."
 config_signatures_modules: "รายการคั่นด้วยจุลภาคของไฟล์โมดูลให้โหลดหลังจากตรวจแยกวิเคราะห์ลายเซ็น IPv4/IPv6."
 config_signatures_track_mode: "เมื่อควรการละเมิดจะนับนับ? False = เมื่อ IP ถูกบล็อกโดยโมดูล. True = เมื่อ IP ถูกบล็อกด้วยเหตุผลใด."
+config_supplementary_cache_options_enable_apcu: "สิ่งนี้ระบุว่าจะใช้ APCu สำหรับการแคชหรือไม่. ค่าเริ่มต้น = False."
+config_supplementary_cache_options_enable_memcache: "สิ่งนี้ระบุว่าจะใช้ Memcache สำหรับการแคชหรือไม่. ค่าเริ่มต้น = False."
+config_supplementary_cache_options_enable_memcached: "สิ่งนี้ระบุว่าจะใช้ Memcached สำหรับการแคชหรือไม่. ค่าเริ่มต้น = False."
+config_supplementary_cache_options_enable_pdo: "สิ่งนี้ระบุว่าจะใช้ PDO สำหรับการแคชหรือไม่. ค่าเริ่มต้น = False."
+config_supplementary_cache_options_enable_redis: "สิ่งนี้ระบุว่าจะใช้ Redis สำหรับการแคชหรือไม่. ค่าเริ่มต้น = False."
+config_supplementary_cache_options_memcache_host: "ค่าโฮสต์ Memcache. ค่าเริ่มต้น = "localhost"."
+config_supplementary_cache_options_memcache_port: "ค่าพอร์ต Memcache. ค่าเริ่มต้น = "11211"."
+config_supplementary_cache_options_memcache_timeout: "ค่าการหมดเวลา Memcache. ค่าเริ่มต้น = "1"."
+config_supplementary_cache_options_pdo_dsn: "ค่า DSN PDO. ค่าเริ่มต้น = "mysql:dbname=cidram;host=localhost;port=3306"."
+config_supplementary_cache_options_pdo_password: "รหัสผ่าน PDO."
+config_supplementary_cache_options_pdo_username: "ชื่อผู้ใช้ PDO."
+config_supplementary_cache_options_redis_host: "ค่าโฮสต์ Redis. ค่าเริ่มต้น = "localhost"."
+config_supplementary_cache_options_redis_port: "ค่าพอร์ต Redis. ค่าเริ่มต้น = "6379"."
+config_supplementary_cache_options_redis_timeout: "ค่าการหมดเวลา Redis. ค่าเริ่มต้น = "2.5"."
 config_template_data_Magnification: "การขยายตัวอักษร. ค่าเริ่มต้น = 1."
 config_template_data_css_url: "URL ไฟล์ CSS สำหรับธีมที่กำหนดเอง."
 config_template_data_theme: "ธีมเริ่มต้นที่จะใช้สำหรับ CIDRAM."

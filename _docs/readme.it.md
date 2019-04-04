@@ -161,7 +161,8 @@ File | Descrizione
 /vault/ | La vault cartella (contiene vari file).
 /vault/classes/ | Cartella delle classi. Contiene varie classi utilizzate da CIDRAM.
 /vault/classes/Maikuolan/ | Cartella delle classi. Contiene varie classi utilizzate da CIDRAM.
-/vault/classes/Maikuolan/ComplexStringHandler.php | Gestore di stringhe complesso.
+/vault/classes/Maikuolan/Cache.php | Un gestore di cache semplice e unificato.
+/vault/classes/Maikuolan/ComplexStringHandler.php | Un gestore di stringhe complesso.
 /vault/classes/Maikuolan/L10N.php | Gestore di L10N.
 /vault/classes/Maikuolan/YAML.php | Gestore di YAML.
 /vault/classes/.htaccess | Un ipertesto accesso file (in questo caso, a proteggere di riservati file appartenente allo script da l'acceso di non autorizzate origini).
@@ -277,7 +278,6 @@ File | Descrizione
 /vault/.travis.yml | Utilizzato da Travis CI per il test (non richiesto per il corretto funzionamento dello script).
 /vault/auxiliary.yaml | Contiene regole ausiliarie. Non incluso nel pacchetto. Generato dalla pagina delle regole ausiliarie.
 /vault/cache.dat | Cache data.
-/vault/cache.dat.safety | Generato come meccanismo di sicurezza quando necessario.
 /vault/cidramblocklists.dat | File di metadati per gli elenchi di blocchi opzionali di Macmathan; Utilizzato dalla pagina degli aggiornamenti del front-end.
 /vault/cli.php | Gestore di CLI.
 /vault/components.dat | File di metadati dei componenti; Utilizzato dalla pagina degli aggiornamenti del front-end.
@@ -331,8 +331,8 @@ Il seguente è un elenco di variabili trovate nelle `config.ini` file di configu
 [general](#general-categoria) | [signatures](#signatures-categoria) | [recaptcha](#recaptcha-categoria) | [legal](#legal-categoria) | [template_data](#template_data-categoria)
 :--|:--|:--|:--|:--
 [logfile](#logfile)<br />[logfileApache](#logfileapache)<br />[logfileSerialized](#logfileserialized)<br />[truncate](#truncate)<br />[log_rotation_limit](#log_rotation_limit)<br />[log_rotation_action](#log_rotation_action)<br />[timezone](#timezone)<br />[timeOffset](#timeoffset)<br />[timeFormat](#timeformat)<br />[ipaddr](#ipaddr)<br />[forbid_on_block](#forbid_on_block)<br />[silent_mode](#silent_mode)<br />[lang](#lang)<br />[numbers](#numbers)<br />[emailaddr](#emailaddr)<br />[emailaddr_display_style](#emailaddr_display_style)<br />[disable_cli](#disable_cli)<br />[disable_frontend](#disable_frontend)<br />[max_login_attempts](#max_login_attempts)<br />[FrontEndLog](#frontendlog)<br />[ban_override](#ban_override)<br />[log_banned_ips](#log_banned_ips)<br />[default_dns](#default_dns)<br />[search_engine_verification](#search_engine_verification)<br />[social_media_verification](#social_media_verification)<br />[protect_frontend](#protect_frontend)<br />[disable_webfonts](#disable_webfonts)<br />[maintenance_mode](#maintenance_mode)<br />[default_algo](#default_algo)<br />[statistics](#statistics)<br />[force_hostname_lookup](#force_hostname_lookup)<br />[allow_gethostbyaddr_lookup](#allow_gethostbyaddr_lookup)<br />[hide_version](#hide_version)<br />[empty_fields](#empty_fields)<br /> | [ipv4](#ipv4)<br />[ipv6](#ipv6)<br />[block_cloud](#block_cloud)<br />[block_bogons](#block_bogons)<br />[block_generic](#block_generic)<br />[block_legal](#block_legal)<br />[block_malware](#block_malware)<br />[block_proxies](#block_proxies)<br />[block_spam](#block_spam)<br />[modules](#modules)<br />[default_tracktime](#default_tracktime)<br />[infraction_limit](#infraction_limit)<br />[track_mode](#track_mode)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> | [usemode](#usemode)<br />[lockip](#lockip)<br />[lockuser](#lockuser)<br />[sitekey](#sitekey)<br />[secret](#secret)<br />[expiry](#expiry)<br />[logfile](#logfile)<br />[signature_limit](#signature_limit)<br />[api](#api)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> | [pseudonymise_ip_addresses](#pseudonymise_ip_addresses)<br />[omit_ip](#omit_ip)<br />[omit_hostname](#omit_hostname)<br />[omit_ua](#omit_ua)<br />[privacy_policy](#privacy_policy)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> | [theme](#theme)<br />[Magnification](#magnification)<br />[css_url](#css_url)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-[PHPMailer](#phpmailer-categoria) | [rate_limiting](#rate_limiting-categoria)
-[EventLog](#eventlog)<br />[SkipAuthProcess](#skipauthprocess)<br />[Enable2FA](#enable2fa)<br />[Host](#host)<br />[Port](#port)<br />[SMTPSecure](#smtpsecure)<br />[SMTPAuth](#smtpauth)<br />[Username](#username)<br />[Password](#password)<br />[setFromAddress](#setfromaddress)<br />[setFromName](#setfromname)<br />[addReplyToAddress](#addreplytoaddress)<br />[addReplyToName](#addreplytoname)<br /> | [max_bandwidth](#max_bandwidth)<br />[max_requests](#max_requests)<br />[precision_ipv4](#precision_ipv4)<br />[precision_ipv6](#precision_ipv6)<br />[allowance_period](#allowance_period)<br /><br /><br /><br /><br /><br /><br /><br /><br />
+[PHPMailer](#phpmailer-categoria) | [rate_limiting](#rate_limiting-categoria) | [supplementary_cache_options](#supplementary_cache_options-categoria)
+[EventLog](#eventlog)<br />[SkipAuthProcess](#skipauthprocess)<br />[Enable2FA](#enable2fa)<br />[Host](#host)<br />[Port](#port)<br />[SMTPSecure](#smtpsecure)<br />[SMTPAuth](#smtpauth)<br />[Username](#username)<br />[Password](#password)<br />[setFromAddress](#setfromaddress)<br />[setFromName](#setfromname)<br />[addReplyToAddress](#addreplytoaddress)<br />[addReplyToName](#addreplytoname)<br /><br /> | [max_bandwidth](#max_bandwidth)<br />[max_requests](#max_requests)<br />[precision_ipv4](#precision_ipv4)<br />[precision_ipv6](#precision_ipv6)<br />[allowance_period](#allowance_period)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> | [enable_apcu](#enable_apcu)<br />[enable_memcache](#enable_memcache)<br />[enable_memcached](#enable_memcached)<br />[enable_redis](#enable_redis)<br />[enable_pdo](#enable_pdo)<br />[memcache_host](#memcache_host)<br />[memcache_port](#memcache_port)<br />[memcache_timeout](#memcache_timeout)<br />[redis_host](#redis_host)<br />[redis_port](#redis_port)<br />[redis_timeout](#redis_timeout)<br />[pdo_dsn](#pdo_dsn)<br />[pdo_username](#pdo_username)<br />[pdo_password](#pdo_password)<br />
 
 #### "general" (Categoria)
 Generale configurazione per CIDRAM.
@@ -710,6 +710,53 @@ Se ritieni di non aver bisogno di CIDRAM per applicare la limitazione della velo
 
 ##### "allowance_period"
 - Il numero di ore per monitorare l'utilizzo. Predefinito = 0.
+
+#### "supplementary_cache_options" (Categoria)
+Opzioni di cache supplementari.
+
+*Attualmente, questo è estremamente sperimentale e, potrebbe non comportarsi come previsto! Per il momento, consiglio di ignorarlo.*
+
+##### "enable_apcu"
+- Specifica se provare a utilizzare APCu per la memorizzazione nella cache. Predefinito = False.
+
+##### "enable_memcache"
+- Specifica se provare a utilizzare Memcache per la memorizzazione nella cache. Predefinito = False.
+
+##### "enable_memcached"
+- Specifica se provare a utilizzare Memcached per la memorizzazione nella cache. Predefinito = False.
+
+##### "enable_redis"
+- Specifica se provare a utilizzare Redis per la memorizzazione nella cache. Predefinito = False.
+
+##### "enable_pdo"
+- Specifica se provare a utilizzare PDO per la memorizzazione nella cache. Predefinito = False.
+
+##### "memcache_host"
+- Il valore dell'host Memcache. Predefinito = "localhost".
+
+##### "memcache_port"
+- Il valore della porta Memcache. Predefinito = "11211".
+
+##### "memcache_timeout"
+- Il valore del tempo scaduto per Memcache. Predefinito = "1".
+
+##### "redis_host"
+- Il valore dell'host Redis. Predefinito = "localhost".
+
+##### "redis_port"
+- Il valore della porta Redis. Predefinito = "6379".
+
+##### "redis_timeout"
+- Il valore del tempo scaduto per Redis. Predefinito = "2.5".
+
+##### "pdo_dsn"
+- Il valore della DSN per PDO. Predefinito = "`mysql:dbname=cidram;host=localhost;port=3306`".
+
+##### "pdo_username"
+- Il nome utente per PDO.
+
+##### "pdo_password"
+- La password per PDO.
 
 ---
 
@@ -1517,4 +1564,4 @@ In alternativa, è disponibile una breve panoramica (non autorevole) di GDPR/DSG
 ---
 
 
-Ultimo Aggiornamento: 26 Marzo 2019 (2019.03.26).
+Ultimo Aggiornamento: 4 Aprile 2019 (2019.04.04).

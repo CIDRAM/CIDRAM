@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Turkish language data for the front-end (last modified: 2019.03.26).
+# This file: Turkish language data for the front-end (last modified: 2019.04.03).
 ##/
 
 Extended Description Bypasses: "Varsayılan imza bypass'lar, normalde ana paketle birlikte verilir."
@@ -131,6 +131,20 @@ config_signatures_ipv4: "Virgülle sınırlı, CIDRAM'ın ayrıştırmaya çalı
 config_signatures_ipv6: "Virgülle sınırlı, CIDRAM'ın ayrıştırmaya çalıştığı IPv6 imza dosyalarının bir listesi."
 config_signatures_modules: "Virgülle sınırlı, IPv4/IPv6 imzalarını kontrol ettikten sonra yüklenecek modül dosyalarının bir listesi."
 config_signatures_track_mode: "İhlaller ne zaman sayılmalıdır? Yanlış/False = IP'ler modüller tarafından engellendiğinde. Doğru/True = Herhangi bir nedenle IP'ler engellendiğinde."
+config_supplementary_cache_options_enable_apcu: "Önbelleğe almak için APCu kullanmaya çalışılıp kullanılmayacağını belirtir. Varsayılan = False."
+config_supplementary_cache_options_enable_memcache: "Önbelleğe almak için Memcache kullanmaya çalışılıp kullanılmayacağını belirtir. Varsayılan = False."
+config_supplementary_cache_options_enable_memcached: "Önbelleğe almak için Memcached kullanmaya çalışılıp kullanılmayacağını belirtir. Varsayılan = False."
+config_supplementary_cache_options_enable_pdo: "Önbelleğe almak için PDO kullanmaya çalışılıp kullanılmayacağını belirtir. Varsayılan = False."
+config_supplementary_cache_options_enable_redis: "Önbelleğe almak için Redis kullanmaya çalışılıp kullanılmayacağını belirtir. Varsayılan = False."
+config_supplementary_cache_options_memcache_host: "Memcache ana bilgisayar değeri. Varsayılan = "localhost"."
+config_supplementary_cache_options_memcache_port: "Memcache port değeri. Varsayılan = "11211"."
+config_supplementary_cache_options_memcache_timeout: "Memcache zaman aşımı değeri. Varsayılan = "1"."
+config_supplementary_cache_options_pdo_dsn: "PDO DSN değeri. Varsayılan = "mysql:dbname=cidram;host=localhost;port=3306"."
+config_supplementary_cache_options_pdo_password: "PDO parola."
+config_supplementary_cache_options_pdo_username: "PDO kullanıcı adı."
+config_supplementary_cache_options_redis_host: "Redis ana bilgisayar değeri. Varsayılan = "localhost"."
+config_supplementary_cache_options_redis_port: "Redis port değeri. Varsayılan = "6379"."
+config_supplementary_cache_options_redis_timeout: "Redis zaman aşımı değeri. Varsayılan = "2.5"."
 config_template_data_Magnification: "Yazı tipi büyütme. Varsayılan = 1."
 config_template_data_css_url: "Özel temalar için CSS dosyası URL'si."
 config_template_data_theme: "CIDRAM için kullanılacak varsayılan tema."

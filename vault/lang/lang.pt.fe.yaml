@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Portuguese language data for the front-end (last modified: 2019.03.26).
+# This file: Portuguese language data for the front-end (last modified: 2019.04.03).
 ##/
 
 Extended Description Bypasses: "Os arquivos para bypass das assinaturas padrão normalmente incluído com o pacote principal."
@@ -131,6 +131,20 @@ config_signatures_ipv4: "Uma lista dos arquivos de assinaturas IPv4 que CIDRAM d
 config_signatures_ipv6: "Uma lista dos arquivos de assinaturas IPv6 que CIDRAM deve tentar usar, delimitado por vírgulas."
 config_signatures_modules: "Uma lista de arquivos módulo a carregar depois de processamento as assinaturas IPv4/IPv6, delimitado por vírgulas."
 config_signatures_track_mode: "Quando as infrações devem ser contadas? False = Quando os IPs são bloqueados por módulos. True = Quando os IPs são bloqueados por qualquer motivo."
+config_supplementary_cache_options_enable_apcu: "Especifica se deve tentar usar o APCu para armazenamento em cache. Padrão = False."
+config_supplementary_cache_options_enable_memcache: "Especifica se deve tentar usar o Memcache para armazenamento em cache. Padrão = False."
+config_supplementary_cache_options_enable_memcached: "Especifica se deve tentar usar o Memcached para armazenamento em cache. Padrão = False."
+config_supplementary_cache_options_enable_pdo: "Especifica se deve tentar usar o PDO para armazenamento em cache. Padrão = False."
+config_supplementary_cache_options_enable_redis: "Especifica se deve tentar usar o Redis para armazenamento em cache. Padrão = False."
+config_supplementary_cache_options_memcache_host: "Valor da host do Memcache. Padrão = "localhost"."
+config_supplementary_cache_options_memcache_port: "Valor da porta do Memcache. Padrão = "11211"."
+config_supplementary_cache_options_memcache_timeout: "Valor de tempo limite do memcache. Padrão = "1"."
+config_supplementary_cache_options_pdo_dsn: "Valor DSN do PDO. Padrão = "mysql:dbname=cidram;host=localhost;port=3306"."
+config_supplementary_cache_options_pdo_password: "A senha do PDO."
+config_supplementary_cache_options_pdo_username: "O nome de usuário do PDO."
+config_supplementary_cache_options_redis_host: "Valor da host do Redis. Padrão = "localhost"."
+config_supplementary_cache_options_redis_port: "Valor da porta do Redis. Padrão = "6379"."
+config_supplementary_cache_options_redis_timeout: "Valor de tempo limite do Redis. Padrão = "2.5"."
 config_template_data_Magnification: "Ampliação de fonte. Padrão = 1."
 config_template_data_css_url: "URL de arquivo CSS para temas personalizados."
 config_template_data_theme: "Tema padrão a ser usado para CIDRAM."

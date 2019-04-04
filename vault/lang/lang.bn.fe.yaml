@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Bangla language data for the front-end (last modified: 2019.03.26).
+# This file: Bangla language data for the front-end (last modified: 2019.04.03).
 ##/
 
 Extended Description Bypasses: "ডিফল্ট স্বাক্ষর বাইপাস ফাইল সাধারণত প্রধান প্যাকেজ সহ অন্তর্ভুক্ত।"
@@ -131,6 +131,20 @@ config_signatures_ipv4: "IPv4 স্বাক্ষর ফাইলগুলি�
 config_signatures_ipv6: "IPv6 স্বাক্ষর ফাইলগুলির একটি তালিকা যা CIDRAM প্রক্রিয়া করার চেষ্টা করা উচিত, কমা দ্বারা বিভক্ত।"
 config_signatures_modules: "IPv4/IPv6 স্বাক্ষর পরীক্ষা করার পরে লোড করার জন্য মডিউল ফাইলগুলির তালিকা, কমা দ্বারা বিভক্ত।"
 config_signatures_track_mode: "যখন লঙ্ঘন গণনা করা উচিত? False = যখন IP মডিউল দ্বারা ব্লক করা হয়। True = যখন IP কোন কারণের জন্য ব্লক করা হয়।"
+config_supplementary_cache_options_enable_apcu: "এই ক্যাশিং জন্য APCu ব্যবহার কিনা তা নির্দিষ্ট করে। ডিফল্ট = False।"
+config_supplementary_cache_options_enable_memcache: "এই ক্যাশিং জন্য Memcache ব্যবহার কিনা তা নির্দিষ্ট করে। ডিফল্ট = False।"
+config_supplementary_cache_options_enable_memcached: "এই ক্যাশিং জন্য Memcached ব্যবহার কিনা তা নির্দিষ্ট করে। ডিফল্ট = False।"
+config_supplementary_cache_options_enable_pdo: "এই ক্যাশিং জন্য PDO ব্যবহার কিনা তা নির্দিষ্ট করে। ডিফল্ট = False।"
+config_supplementary_cache_options_enable_redis: "এই ক্যাশিং জন্য Redis ব্যবহার কিনা তা নির্দিষ্ট করে। ডিফল্ট = False।"
+config_supplementary_cache_options_memcache_host: "Memcache হোস্ট মান। ডিফল্ট = "localhost"।"
+config_supplementary_cache_options_memcache_port: "Memcache পোর্ট মান। ডিফল্ট = "11211"।"
+config_supplementary_cache_options_memcache_timeout: "Memcache সময়সীমা মান। ডিফল্ট = "1"।"
+config_supplementary_cache_options_pdo_dsn: "PDO DSN মান। ডিফল্ট = "mysql:dbname=cidram;host=localhost;port=3306"।"
+config_supplementary_cache_options_pdo_password: "PDO পাসওয়ার্ড।"
+config_supplementary_cache_options_pdo_username: "PDO ব্যবহারকারীর নাম।"
+config_supplementary_cache_options_redis_host: "Redis হোস্ট মান। ডিফল্ট = "localhost"।"
+config_supplementary_cache_options_redis_port: "Redis পোর্ট মান। ডিফল্ট = "6379"।"
+config_supplementary_cache_options_redis_timeout: "Redis সময়সীমা মান। ডিফল্ট = "2.5"।"
 config_template_data_Magnification: "ফন্ট বৃহত্তরীকরণ। ডিফল্ট = "1"।"
 config_template_data_css_url: "কাস্টম থিমগুলির জন্য CSS ফাইল URL।"
 config_template_data_theme: "CIDRAM এর জন্য ডিফল্ট থিম ব্যবহার করুন।"

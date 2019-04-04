@@ -161,6 +161,7 @@ Data | Deskripsi
 /vault/ | Direktori Vault (berisikan bermacam file).
 /vault/classes/ | Direktori kelas. Berisi berbagai kelas yang digunakan oleh CIDRAM.
 /vault/classes/Maikuolan/ | Direktori kelas. Berisi berbagai kelas yang digunakan oleh CIDRAM.
+/vault/classes/Maikuolan/Cache.php | Prosesor cache yang sederhana dan terpadu.
 /vault/classes/Maikuolan/ComplexStringHandler.php | Prosesor string yang kompleks.
 /vault/classes/Maikuolan/L10N.php | Prosesor L10N.
 /vault/classes/Maikuolan/YAML.php | Prosesor YAML.
@@ -277,7 +278,6 @@ Data | Deskripsi
 /vault/.travis.yml | Digunakan oleh Travis CI untuk pengujian (tidak dibutuhkan untuk fungsi teratur dari skrip).
 /vault/auxiliary.yaml | Berisi aturan tambahan. Tidak termasuk dalam paket. Dihasilkan oleh halaman aturan tambahan.
 /vault/cache.dat | Cache data.
-/vault/cache.dat.safety | Dihasilkan sebagai mekanisme keamanan bila diperlukan.
 /vault/cidramblocklists.dat | File metadata untuk daftar-daftar blokir yang opsional dari Macmathan; Digunakan oleh halaman pembaruan untuk bagian depan.
 /vault/cli.php | Modul CLI.
 /vault/components.dat | File metadata komponen; Digunakan oleh halaman pembaruan untuk bagian depan.
@@ -331,8 +331,8 @@ Berikut list variabel yang ditemukan pada file konfigurasi CIDRAM `config.ini`, 
 [general](#general-kategori) | [signatures](#signatures-kategori) | [recaptcha](#recaptcha-kategori) | [legal](#legal-kategori) | [template_data](#template_data-kategori)
 :--|:--|:--|:--|:--
 [logfile](#logfile)<br />[logfileApache](#logfileapache)<br />[logfileSerialized](#logfileserialized)<br />[truncate](#truncate)<br />[log_rotation_limit](#log_rotation_limit)<br />[log_rotation_action](#log_rotation_action)<br />[timezone](#timezone)<br />[timeOffset](#timeoffset)<br />[timeFormat](#timeformat)<br />[ipaddr](#ipaddr)<br />[forbid_on_block](#forbid_on_block)<br />[silent_mode](#silent_mode)<br />[lang](#lang)<br />[numbers](#numbers)<br />[emailaddr](#emailaddr)<br />[emailaddr_display_style](#emailaddr_display_style)<br />[disable_cli](#disable_cli)<br />[disable_frontend](#disable_frontend)<br />[max_login_attempts](#max_login_attempts)<br />[FrontEndLog](#frontendlog)<br />[ban_override](#ban_override)<br />[log_banned_ips](#log_banned_ips)<br />[default_dns](#default_dns)<br />[search_engine_verification](#search_engine_verification)<br />[social_media_verification](#social_media_verification)<br />[protect_frontend](#protect_frontend)<br />[disable_webfonts](#disable_webfonts)<br />[maintenance_mode](#maintenance_mode)<br />[default_algo](#default_algo)<br />[statistics](#statistics)<br />[force_hostname_lookup](#force_hostname_lookup)<br />[allow_gethostbyaddr_lookup](#allow_gethostbyaddr_lookup)<br />[hide_version](#hide_version)<br />[empty_fields](#empty_fields)<br /> | [ipv4](#ipv4)<br />[ipv6](#ipv6)<br />[block_cloud](#block_cloud)<br />[block_bogons](#block_bogons)<br />[block_generic](#block_generic)<br />[block_legal](#block_legal)<br />[block_malware](#block_malware)<br />[block_proxies](#block_proxies)<br />[block_spam](#block_spam)<br />[modules](#modules)<br />[default_tracktime](#default_tracktime)<br />[infraction_limit](#infraction_limit)<br />[track_mode](#track_mode)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> | [usemode](#usemode)<br />[lockip](#lockip)<br />[lockuser](#lockuser)<br />[sitekey](#sitekey)<br />[secret](#secret)<br />[expiry](#expiry)<br />[logfile](#logfile)<br />[signature_limit](#signature_limit)<br />[api](#api)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> | [pseudonymise_ip_addresses](#pseudonymise_ip_addresses)<br />[omit_ip](#omit_ip)<br />[omit_hostname](#omit_hostname)<br />[omit_ua](#omit_ua)<br />[privacy_policy](#privacy_policy)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> | [theme](#theme)<br />[Magnification](#magnification)<br />[css_url](#css_url)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-[PHPMailer](#phpmailer-kategori) | [rate_limiting](#rate_limiting-kategori)
-[EventLog](#eventlog)<br />[SkipAuthProcess](#skipauthprocess)<br />[Enable2FA](#enable2fa)<br />[Host](#host)<br />[Port](#port)<br />[SMTPSecure](#smtpsecure)<br />[SMTPAuth](#smtpauth)<br />[Username](#username)<br />[Password](#password)<br />[setFromAddress](#setfromaddress)<br />[setFromName](#setfromname)<br />[addReplyToAddress](#addreplytoaddress)<br />[addReplyToName](#addreplytoname)<br /> | [max_bandwidth](#max_bandwidth)<br />[max_requests](#max_requests)<br />[precision_ipv4](#precision_ipv4)<br />[precision_ipv6](#precision_ipv6)<br />[allowance_period](#allowance_period)<br /><br /><br /><br /><br /><br /><br /><br /><br />
+[PHPMailer](#phpmailer-kategori) | [rate_limiting](#rate_limiting-kategori) | [supplementary_cache_options](#supplementary_cache_options-kategori)
+[EventLog](#eventlog)<br />[SkipAuthProcess](#skipauthprocess)<br />[Enable2FA](#enable2fa)<br />[Host](#host)<br />[Port](#port)<br />[SMTPSecure](#smtpsecure)<br />[SMTPAuth](#smtpauth)<br />[Username](#username)<br />[Password](#password)<br />[setFromAddress](#setfromaddress)<br />[setFromName](#setfromname)<br />[addReplyToAddress](#addreplytoaddress)<br />[addReplyToName](#addreplytoname)<br /><br /> | [max_bandwidth](#max_bandwidth)<br />[max_requests](#max_requests)<br />[precision_ipv4](#precision_ipv4)<br />[precision_ipv6](#precision_ipv6)<br />[allowance_period](#allowance_period)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> | [enable_apcu](#enable_apcu)<br />[enable_memcache](#enable_memcache)<br />[enable_memcached](#enable_memcached)<br />[enable_redis](#enable_redis)<br />[enable_pdo](#enable_pdo)<br />[memcache_host](#memcache_host)<br />[memcache_port](#memcache_port)<br />[memcache_timeout](#memcache_timeout)<br />[redis_host](#redis_host)<br />[redis_port](#redis_port)<br />[redis_timeout](#redis_timeout)<br />[pdo_dsn](#pdo_dsn)<br />[pdo_username](#pdo_username)<br />[pdo_password](#pdo_password)<br />
 
 #### "general" (Kategori)
 Konfigurasi umum dari CIDRAM.
@@ -710,6 +710,53 @@ Jika Anda merasa bahwa Anda tidak perlu CIDRAM untuk menerapkan pembatasan laju 
 
 ##### "allowance_period"
 - Jumlah jam untuk memonitor penggunaan. Default = 0.
+
+#### "supplementary_cache_options" (Kategori)
+Opsi cache tambahan.
+
+*Saat ini, ini sangat eksperimental, dan mungkin tidak berperilaku seperti yang diharapkan! Untuk saat ini, saya merekomendasi mengabaikannya.*
+
+##### "enable_apcu"
+- Menentukan apakah akan mencoba menggunakan APCu untuk cache. Default = False.
+
+##### "enable_memcache"
+- Menentukan apakah akan mencoba menggunakan Memcache untuk cache. Default = False.
+
+##### "enable_memcached"
+- Menentukan apakah akan mencoba menggunakan Memcached untuk cache. Default = False.
+
+##### "enable_redis"
+- Menentukan apakah akan mencoba menggunakan Redis untuk cache. Default = False.
+
+##### "enable_pdo"
+- Menentukan apakah akan mencoba menggunakan PDO untuk cache. Default = False.
+
+##### "memcache_host"
+- Nilai host Memcache. Default = "localhost".
+
+##### "memcache_port"
+- Nilai port Memcache. Default = "11211".
+
+##### "memcache_timeout"
+- Nilai batas waktu Memcache. Default = "1".
+
+##### "redis_host"
+- Nilai host Redis. Default = "localhost".
+
+##### "redis_port"
+- Nilai port Redis. Default = "6379".
+
+##### "redis_timeout"
+- Nilai batas waktu Redis. Default = "2.5".
+
+##### "pdo_dsn"
+- Nilai DSN PDO. Default = "`mysql:dbname=cidram;host=localhost;port=3306`".
+
+##### "pdo_username"
+- Nama pengguna PDO.
+
+##### "pdo_password"
+- Kata sandi PDO.
 
 ---
 
@@ -1512,4 +1559,4 @@ Beberapa sumber bacaan yang direkomendasikan untuk mempelajari informasi lebih l
 ---
 
 
-Terakhir Diperbarui: 26 Maret 2019 (2019.03.26).
+Terakhir Diperbarui: 4 April 2019 (2019.04.04).

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: English language data for the front-end (last modified: 2019.03.26).
+# This file: English language data for the front-end (last modified: 2019.04.03).
 ##/
 
 Extended Description Bypasses: "The default signature bypass files normally included with the main package."
@@ -131,6 +131,20 @@ config_signatures_ipv4: "A list of the IPv4 signature files that CIDRAM should a
 config_signatures_ipv6: "A list of the IPv6 signature files that CIDRAM should attempt to parse, delimited by commas."
 config_signatures_modules: "A list of module files to load after checking the IPv4/IPv6 signatures, delimited by commas."
 config_signatures_track_mode: "When should infractions be counted? False = When IPs are blocked by modules. True = When IPs are blocked for any reason."
+config_supplementary_cache_options_enable_apcu: "Specifies whether to try using APCu for caching. Default = False."
+config_supplementary_cache_options_enable_memcache: "Specifies whether to try using Memcache for caching. Default = False."
+config_supplementary_cache_options_enable_memcached: "Specifies whether to try using Memcached for caching. Default = False."
+config_supplementary_cache_options_enable_pdo: "Specifies whether to try using PDO for caching. Default = False."
+config_supplementary_cache_options_enable_redis: "Specifies whether to try using Redis for caching. Default = False."
+config_supplementary_cache_options_memcache_host: "Memcache host value. Default = "localhost"."
+config_supplementary_cache_options_memcache_port: "Memcache port value. Default = "11211"."
+config_supplementary_cache_options_memcache_timeout: "Memcache timeout value. Default = "1"."
+config_supplementary_cache_options_pdo_dsn: "PDO DSN value. Default = "mysql:dbname=cidram;host=localhost;port=3306"."
+config_supplementary_cache_options_pdo_password: "PDO password."
+config_supplementary_cache_options_pdo_username: "PDO username."
+config_supplementary_cache_options_redis_host: "Redis host value. Default = "localhost"."
+config_supplementary_cache_options_redis_port: "Redis port value. Default = "6379"."
+config_supplementary_cache_options_redis_timeout: "Redis timeout value. Default = "2.5"."
 config_template_data_Magnification: "Font magnification. Default = 1."
 config_template_data_css_url: "CSS file URL for custom themes."
 config_template_data_theme: "Default theme to use for CIDRAM."

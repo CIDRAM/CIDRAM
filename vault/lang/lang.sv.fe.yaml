@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Swedish language data for the front-end (last modified: 2019.03.26).
+# This file: Swedish language data for the front-end (last modified: 2019.04.03).
 ##/
 
 Extended Description Bypasses: "Standard bypass-filen som normalt ingår i huvudpaketet."
@@ -131,6 +131,20 @@ config_signatures_ipv4: "En lista över de IPv4 signaturfiler som CIDRAM ska fö
 config_signatures_ipv6: "En lista över de IPv6 signaturfiler som CIDRAM ska försöka analysera, avgränsas av kommatecken."
 config_signatures_modules: "En lista över modulfiler som ska laddas efter att ha kontrollerat IPv4/IPv6-signaturerna, avgränsas av kommatecken."
 config_signatures_track_mode: "När ska infraktions räknas? False = När IP-adresser blockeras av moduler. True = När IP-adresser blockeras av någon anledning."
+config_supplementary_cache_options_enable_apcu: "Detta anger om ska använda APCu för caching. Standard = False."
+config_supplementary_cache_options_enable_memcache: "Detta anger om ska använda Memcache för caching. Standard = False."
+config_supplementary_cache_options_enable_memcached: "Detta anger om ska använda Memcached för caching. Standard = False."
+config_supplementary_cache_options_enable_pdo: "Detta anger om ska använda PDO för caching. Standard = False."
+config_supplementary_cache_options_enable_redis: "Detta anger om ska använda Redis för caching. Standard = False."
+config_supplementary_cache_options_memcache_host: "Memcache värdvärde. Standard = "localhost"."
+config_supplementary_cache_options_memcache_port: "Memcache portvärde. Standard = "11211"."
+config_supplementary_cache_options_memcache_timeout: "Memcache timeout-värde. Standard = "1"."
+config_supplementary_cache_options_pdo_dsn: "PDO DSN-värde. Standard = "mysql:dbname=cidram;host=localhost;port=3306"."
+config_supplementary_cache_options_pdo_password: "PDO lösenord."
+config_supplementary_cache_options_pdo_username: "PDO användarnamn."
+config_supplementary_cache_options_redis_host: "Redis värdvärde. Standard = "localhost"."
+config_supplementary_cache_options_redis_port: "Redis portvärde. Standard = "6379"."
+config_supplementary_cache_options_redis_timeout: "Redis timeout-värde. Standard = "2.5"."
 config_template_data_Magnification: "Font förstoring. Standard = 1."
 config_template_data_css_url: "CSS-filadress för anpassade teman."
 config_template_data_theme: "Standardtema som ska användas för CIDRAM."

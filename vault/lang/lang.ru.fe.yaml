@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Russian language data for the front-end (last modified: 2019.04.03).
+# This file: Russian language data for the front-end (last modified: 2019.04.07).
 ##/
 
 Extended Description Bypasses: "Стандартная сигнатуры байпасы, обычно включены в основной пакет."
@@ -132,13 +132,11 @@ config_signatures_ipv6: "Список сигнатур IPv6 файлы, кото
 config_signatures_modules: "Список модуль файлы для загрузки после обработки сигнатуры IPv4/IPv6, разделенных запятыми."
 config_signatures_track_mode: "Когда следует учитывать нарушения? False = Когда IP-адреса блокируются из модулями. True = Когда IP-адреса блокируются по какой-либо причине."
 config_supplementary_cache_options_enable_apcu: "Указывает, использовать ли APCu для кэширования. Стандарт = False."
-config_supplementary_cache_options_enable_memcache: "Указывает, использовать ли Memcache для кэширования. Стандарт = False."
 config_supplementary_cache_options_enable_memcached: "Указывает, использовать ли Memcached для кэширования. Стандарт = False."
 config_supplementary_cache_options_enable_pdo: "Указывает, использовать ли PDO для кэширования. Стандарт = False."
 config_supplementary_cache_options_enable_redis: "Указывает, использовать ли Redis для кэширования. Стандарт = False."
-config_supplementary_cache_options_memcache_host: "Значение хоста Memcache. Стандарт = «localhost»."
-config_supplementary_cache_options_memcache_port: "Значение порта Memcache. Стандарт = «11211»."
-config_supplementary_cache_options_memcache_timeout: "Значение тайм-аута Memcache. Стандарт = «1»."
+config_supplementary_cache_options_memcached_host: "Значение хоста Memcached. Стандарт = «localhost»."
+config_supplementary_cache_options_memcached_port: "Значение порта Memcached. Стандарт = «11211»."
 config_supplementary_cache_options_pdo_dsn: "Значение DSN PDO. Стандарт = «mysql:dbname=cidram;host=localhost;port=3306»."
 config_supplementary_cache_options_pdo_password: "Пароль PDO."
 config_supplementary_cache_options_pdo_username: "Имя пользователя PDO."

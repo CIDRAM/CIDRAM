@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Arabic language data for the front-end (last modified: 2019.04.03).
+# This file: Arabic language data for the front-end (last modified: 2019.04.07).
 ##/
 
 Extended Description Bypasses: "ملفات الالتفافية التوقيع القياسية المدرجة عادة مع الحزمة الرئيسية."
@@ -132,13 +132,11 @@ config_signatures_ipv6: "وهناك قائمة من الملفات توقيع ع
 config_signatures_modules: "قائمة الملفات وحدة لتحميل بعد التحقق من التوقيعات IPv4/IPv6، مفصولة بفواصل."
 config_signatures_track_mode: "متى يجب أن تحسب المخالفات؟ زائفة/False = عندما IP تم حظره من قبل وحدات. صحيح/True = عندما IP يتم حظر لأي سبب من الأسباب."
 config_supplementary_cache_options_enable_apcu: "يحدد هذا ما إذا كنت تريد استخدام APCu للتخزين المؤقت. افتراضي = False (زائفة)."
-config_supplementary_cache_options_enable_memcache: "يحدد هذا ما إذا كنت تريد استخدام Memcache للتخزين المؤقت. افتراضي = False (زائفة)."
 config_supplementary_cache_options_enable_memcached: "يحدد هذا ما إذا كنت تريد استخدام Memcached للتخزين المؤقت. افتراضي = False (زائفة)."
 config_supplementary_cache_options_enable_pdo: "يحدد هذا ما إذا كنت تريد استخدام PDO للتخزين المؤقت. افتراضي = False (زائفة)."
 config_supplementary_cache_options_enable_redis: "يحدد هذا ما إذا كنت تريد استخدام Redis للتخزين المؤقت. افتراضي = False (زائفة)."
-config_supplementary_cache_options_memcache_host: "قيمة المضيف Memcache. افتراضي = "localhost"."
-config_supplementary_cache_options_memcache_port: "قيمة منفذ Memcache. افتراضي = "11211"."
-config_supplementary_cache_options_memcache_timeout: "Memcache قيمة المهلة. افتراضي = "1"."
+config_supplementary_cache_options_memcached_host: "قيمة المضيف Memcached. افتراضي = "localhost"."
+config_supplementary_cache_options_memcached_port: "قيمة منفذ Memcached. افتراضي = "11211"."
 config_supplementary_cache_options_pdo_dsn: "قيمة PDO DSN. افتراضي = "mysql:dbname=cidram;host=localhost;port=3306"."
 config_supplementary_cache_options_pdo_password: "PDO كلمه السر."
 config_supplementary_cache_options_pdo_username: "PDO اسم المستخدم."

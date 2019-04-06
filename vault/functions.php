@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2019.04.03).
+ * This file: Functions file (last modified: 2019.04.07).
  */
 
 /**
@@ -1173,7 +1173,12 @@ $CIDRAM['Meld'] = function () {
     return $Meld;
 };
 
-/** Clears expired entries from a list. */
+/**
+ * Clears expired entries from a list.
+ *
+ * @param string $List The list to clear from.
+ * @param bool $Check A flag indicating when changes have occurred.
+ */
 $CIDRAM['ClearExpired'] = function (&$List, &$Check) use (&$CIDRAM) {
     if ($List) {
         $End = 0;
@@ -1262,13 +1267,11 @@ $CIDRAM['InitialiseCache'] = function () use (&$CIDRAM) {
     /** Create new cache object. */
     $CIDRAM['Cache'] = new \Maikuolan\Common\Cache();
     $CIDRAM['Cache']->EnableAPCu = $CIDRAM['Config']['supplementary_cache_options']['enable_apcu'];
-    $CIDRAM['Cache']->EnableMemcache = $CIDRAM['Config']['supplementary_cache_options']['enable_memcache'];
     $CIDRAM['Cache']->EnableMemcached = $CIDRAM['Config']['supplementary_cache_options']['enable_memcached'];
     $CIDRAM['Cache']->EnableRedis = $CIDRAM['Config']['supplementary_cache_options']['enable_redis'];
     $CIDRAM['Cache']->EnablePDO = $CIDRAM['Config']['supplementary_cache_options']['enable_pdo'];
-    $CIDRAM['Cache']->MemcacheHost = $CIDRAM['Config']['supplementary_cache_options']['memcache_host'];
-    $CIDRAM['Cache']->MemcachePort = $CIDRAM['Config']['supplementary_cache_options']['memcache_port'];
-    $CIDRAM['Cache']->MemcacheTimeout = $CIDRAM['Config']['supplementary_cache_options']['memcache_timeout'];
+    $CIDRAM['Cache']->MemcachedHost = $CIDRAM['Config']['supplementary_cache_options']['memcached_host'];
+    $CIDRAM['Cache']->MemcachedPort = $CIDRAM['Config']['supplementary_cache_options']['memcached_port'];
     $CIDRAM['Cache']->RedisHost = $CIDRAM['Config']['supplementary_cache_options']['redis_host'];
     $CIDRAM['Cache']->RedisPort = $CIDRAM['Config']['supplementary_cache_options']['redis_port'];
     $CIDRAM['Cache']->RedisTimeout = $CIDRAM['Config']['supplementary_cache_options']['redis_timeout'];

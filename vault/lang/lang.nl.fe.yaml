@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Dutch language data for the front-end (last modified: 2019.04.03).
+# This file: Dutch language data for the front-end (last modified: 2019.04.07).
 ##/
 
 Extended Description Bypasses: "De standaard signature rondwegen normaal opgenomen met de primaire pakket."
@@ -132,13 +132,11 @@ config_signatures_ipv6: "Een lijst van de IPv6 signatuurbestanden dat CIDRAM moe
 config_signatures_modules: "Een lijst van module bestanden te laden na verwerking van de IPv4/IPv6 signatures, afgebakend door komma's."
 config_signatures_track_mode: "Wanneer moet overtredingen worden gerekend? False = Wanneer IP's geblokkeerd door modules worden. True = Wanneer IP's om welke reden geblokkeerd worden."
 config_supplementary_cache_options_enable_apcu: "Dit geeft aan of APCu moet worden gebruikt voor caching. Standaard = False."
-config_supplementary_cache_options_enable_memcache: "Dit geeft aan of Memcache moet worden gebruikt voor caching. Standaard = False."
 config_supplementary_cache_options_enable_memcached: "Dit geeft aan of Memcached moet worden gebruikt voor caching. Standaard = False."
 config_supplementary_cache_options_enable_pdo: "Dit geeft aan of PDO moet worden gebruikt voor caching. Standaard = False."
 config_supplementary_cache_options_enable_redis: "Dit geeft aan of Redis moet worden gebruikt voor caching. Standaard = False."
-config_supplementary_cache_options_memcache_host: "Memcache hostwaarde. Standaard = "localhost"."
-config_supplementary_cache_options_memcache_port: "Memcache poortwaarde. Standaard = "11211"."
-config_supplementary_cache_options_memcache_timeout: "Memcache timeoutwaarde. Standaard = "1"."
+config_supplementary_cache_options_memcached_host: "Memcached hostwaarde. Standaard = "localhost"."
+config_supplementary_cache_options_memcached_port: "Memcached poortwaarde. Standaard = "11211"."
 config_supplementary_cache_options_pdo_dsn: "PDO DSN-waarde. Standaard = "mysql:dbname=cidram;host=localhost;port=3306"."
 config_supplementary_cache_options_pdo_password: "PDO wachtwoord."
 config_supplementary_cache_options_pdo_username: "PDO gebruikersnaam."

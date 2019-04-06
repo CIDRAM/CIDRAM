@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2019.04.03).
+ * This file: Front-end handler (last modified: 2019.04.06).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -294,6 +294,9 @@ $CIDRAM['ClearExpired']($CIDRAM['FE']['SessionList'], $CIDRAM['FE']['Rebuild']);
 
 /** Clear expired cache entries. */
 $CIDRAM['ClearExpired']($CIDRAM['FE']['Cache'], $CIDRAM['FE']['Rebuild']);
+
+/** Initialise cache. */
+$CIDRAM['InitialiseCache']();
 
 /** Brute-force security check. */
 if (($CIDRAM['LoginAttempts'] = (int)$CIDRAM['FECacheGet'](
@@ -1327,9 +1330,6 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
 /** Cache data. */
 elseif ($CIDRAM['QueryVars']['cidram-page'] === 'cache-data' && $CIDRAM['FE']['Permissions'] === 1) {
 
-    /** Initialise cache. */
-    $CIDRAM['InitialiseCache']();
-
     /** Page initial prepwork. */
     $CIDRAM['InitialPrepwork']($CIDRAM['L10N']->getString('link_cache_data'), $CIDRAM['L10N']->getString('tip_cache_data'));
 
@@ -1394,31 +1394,14 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'cache-data' && $CIDRAM['FE']['P
                     $CIDRAM['CacheIndexData'][2],
                     $CIDRAM['Config']['general']['timeFormat']
                 ) : $CIDRAM['L10N']->getString('label_never'));
-                $CIDRAM['ThisCacheEntrySize'] = strlen($CIDRAM['CacheIndexData'][1]);
-                $CIDRAM['FormatFilesize']($CIDRAM['ThisCacheEntrySize']);
-                if (
-                    preg_match('~\.ya?ml$~i', $CIDRAM['ThisCacheEntryName']) ||
-                    substr($CIDRAM['CacheIndexData'][1], 0, 4) === "---\n"
-                ) {
-                    $CIDRAM['CacheIndexData']['TryYAML'] = new \Maikuolan\Common\YAML();
-                    if ($CIDRAM['CacheIndexData']['TryYAML']->process(
-                        $CIDRAM['CacheIndexData'][1],
-                        $CIDRAM['CacheIndexData']['TryYAML']->Data
-                    ) && !empty($CIDRAM['CacheIndexData']['TryYAML']->Data)) {
-                        $CIDRAM['CacheIndexData'][1] = $CIDRAM['CacheIndexData']['TryYAML']->Data;
-                    }
-                }
                 $CIDRAM['Arrayify']($CIDRAM['CacheIndexData'][1]);
                 $CIDRAM['CacheArray']['fe_assets/frontend.dat'][$CIDRAM['ThisCacheEntryName']] = $CIDRAM['CacheIndexData'][1];
                 $CIDRAM['CacheArray']['fe_assets/frontend.dat'][$CIDRAM['ThisCacheEntryName']][
-                    $CIDRAM['L10N']->getString('field_size')
-                ] = $CIDRAM['ThisCacheEntrySize'];
-                $CIDRAM['CacheArray']['fe_assets/frontend.dat'][$CIDRAM['ThisCacheEntryName']][
-                    $CIDRAM['L10N']->getString('label_expires')
+                    $CIDRAM['L10N']->getString('label_expires') ?: 'Expires'
                 ] = $CIDRAM['CacheIndexData'][2];
             }
         }
-        unset($CIDRAM['ThisCacheEntrySize'], $CIDRAM['ThisCacheEntryName'], $CIDRAM['CacheIndexData']);
+        unset($CIDRAM['ThisCacheEntryName'], $CIDRAM['CacheIndexData']);
 
         /** Begin processing all cache items from all sources. */
         foreach ($CIDRAM['CacheArray'] as $CIDRAM['CacheSourceName'] => $CIDRAM['CacheSourceData']) {
@@ -1426,7 +1409,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'cache-data' && $CIDRAM['FE']['P
                 continue;
             }
             $CIDRAM['FE']['CacheData'] .= '<div class="ng1"><span class="s">' . $CIDRAM['CacheSourceName'] . '</span><br /><br /><ul class="pieul">' . $CIDRAM['ArrayToClickableList'](
-                $CIDRAM['CacheSourceData'], ($CIDRAM['CacheSourceName'] === 'fe_assets/frontend.dat' ? 'fecdd' : 'cdd'), 0
+                $CIDRAM['CacheSourceData'], ($CIDRAM['CacheSourceName'] === 'fe_assets/frontend.dat' ? 'fecdd' : 'cdd'), 0, $CIDRAM['CacheSourceName']
             ) . '</ul></div>';
         }
         unset($CIDRAM['CacheSourceData'], $CIDRAM['CacheSourceName'], $CIDRAM['CacheArray']);
@@ -1446,9 +1429,6 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'cache-data' && $CIDRAM['FE']['P
         echo $CIDRAM['SendOutput']();
 
     }
-
-    /** Destroy cache object and some related values. */
-    $CIDRAM['DestroyCacheObject']();
 
 }
 
@@ -1470,9 +1450,6 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && ($CIDRAM['FE']['Per
         die;
     }
     unset($CIDRAM['StateModified']);
-
-    /** Initialise cache. */
-    $CIDRAM['InitialiseCache']();
 
     /** Updates page form boilerplate. */
     $CIDRAM['CFBoilerplate'] =
@@ -1997,9 +1974,6 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && ($CIDRAM['FE']['Per
 
     /** Cleanup. */
     unset($CIDRAM['Components'], $CIDRAM['CFBoilerplate']);
-
-    /** Destroy cache object and some related values. */
-    $CIDRAM['DestroyCacheObject']();
 
 }
 
@@ -2625,9 +2599,6 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-aggregator' && $CIDRAM['FE']
 /** IP Test. */
 elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-test' && $CIDRAM['FE']['Permissions'] === 1) {
 
-    /** Initialise cache. */
-    $CIDRAM['InitialiseCache']();
-
     /** Page initial prepwork. */
     $CIDRAM['InitialPrepwork']($CIDRAM['L10N']->getString('link_ip_test'), $CIDRAM['L10N']->getString('tip_ip_test'), false);
 
@@ -2728,9 +2699,6 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-test' && $CIDRAM['FE']['Perm
     /** Send output. */
     echo $CIDRAM['SendOutput']();
 
-    /** Destroy cache object and some related values. */
-    $CIDRAM['DestroyCacheObject']();
-
 }
 
 /** IP Tracking. */
@@ -2751,9 +2719,6 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-tracking' && $CIDRAM['FE']['
         die;
     }
     unset($CIDRAM['StateModified']);
-
-    /** Initialise cache. */
-    $CIDRAM['InitialiseCache']();
 
     /** Temporarily mute signature files if "tracking-blocked-already" is false. */
     if (!$CIDRAM['FE']['tracking-blocked-already']) {
@@ -2919,9 +2884,6 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-tracking' && $CIDRAM['FE']['
 
     }
 
-    /** Destroy cache object and some related values. */
-    $CIDRAM['DestroyCacheObject']();
-
 }
 
 /** CIDR Calculator. */
@@ -2980,9 +2942,6 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'cidr-calc' && $CIDRAM['FE']['Pe
 
 /** Statistics. */
 elseif ($CIDRAM['QueryVars']['cidram-page'] === 'statistics' && $CIDRAM['FE']['Permissions'] === 1) {
-
-    /** Initialise cache. */
-    $CIDRAM['InitialiseCache']();
 
     /** Page initial prepwork. */
     $CIDRAM['InitialPrepwork']($CIDRAM['L10N']->getString('link_statistics'), $CIDRAM['L10N']->getString('tip_statistics'), false);
@@ -3076,9 +3035,6 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'statistics' && $CIDRAM['FE']['P
 
     /** Cleanup. */
     unset($CIDRAM['StatColour'], $CIDRAM['StatWorking'], $CIDRAM['TheseStats']);
-
-    /** Destroy cache object and some related values. */
-    $CIDRAM['DestroyCacheObject']();
 
 }
 
@@ -3498,6 +3454,9 @@ if ($CIDRAM['FE']['Rebuild']) {
     fwrite($CIDRAM['Handle'], $CIDRAM['FE']['FrontEndData']);
     fclose($CIDRAM['Handle']);
 }
+
+/** Destroy cache object and some related values. */
+$CIDRAM['DestroyCacheObject']();
 
 /** Print Cronable failure state messages here. */
 if ($CIDRAM['FE']['CronMode'] && $CIDRAM['FE']['state_msg'] && $CIDRAM['FE']['UserState'] !== 1) {

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: German language data for the front-end (last modified: 2019.04.03).
+# This file: German language data for the front-end (last modified: 2019.04.07).
 ##/
 
 Extended Description Bypasses: "Die Standard-Signatur-Bypass-Dateien, die normalerweise im Hauptpaket enthalten sind."
@@ -132,13 +132,11 @@ config_signatures_ipv6: "Eine Liste der IPv6-Signaturdateien, die CIDRAM zu anal
 config_signatures_modules: "Eine Liste der Moduldateien zu laden nach der Prüfung der IPv4/IPv6-Signaturen, durch Kommas begrenzt."
 config_signatures_track_mode: "Wann sollten Verstöße gezählt werden? False = Wenn IPs von Modulen blockiert werden. True = Wenn IPs von irgendeinem Grund blockiert werden."
 config_supplementary_cache_options_enable_apcu: "Dies gibt an, ob APCu für das Caching verwendet werden soll. Standardeinstellung = False."
-config_supplementary_cache_options_enable_memcache: "Dies gibt an, ob Memcache für das Caching verwendet werden soll. Standardeinstellung = False."
 config_supplementary_cache_options_enable_memcached: "Dies gibt an, ob Memcached für das Caching verwendet werden soll. Standardeinstellung = False."
 config_supplementary_cache_options_enable_pdo: "Dies gibt an, ob PDO für das Caching verwendet werden soll. Standardeinstellung = False."
 config_supplementary_cache_options_enable_redis: "Dies gibt an, ob Redis für das Caching verwendet werden soll. Standardeinstellung = False."
-config_supplementary_cache_options_memcache_host: "Memcache Hostwert. Standardeinstellung = "localhost"."
-config_supplementary_cache_options_memcache_port: "Memcache Portwert. Standardeinstellung = "11211"."
-config_supplementary_cache_options_memcache_timeout: "Memcache Timeout-Wert. Standardeinstellung = "1"."
+config_supplementary_cache_options_memcached_host: "Memcached Hostwert. Standardeinstellung = "localhost"."
+config_supplementary_cache_options_memcached_port: "Memcached Portwert. Standardeinstellung = "11211"."
 config_supplementary_cache_options_pdo_dsn: "PDO DSN-Wert. Standardeinstellung = "mysql:dbname=cidram;host=localhost;port=3306"."
 config_supplementary_cache_options_pdo_password: "PDO Passwort."
 config_supplementary_cache_options_pdo_username: "PDO Nutzername."

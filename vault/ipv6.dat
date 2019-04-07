@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6.dat
 
-# Version: 2019.88.503
-# Last modified: 2019.03.30
+# Version: 2019.96.507
+# Last modified: 2019.04.07
 
 
 # ---
@@ -56,11 +56,11 @@ Tag: INTERIA
 
 
 # ASN 58879 ("ShangHai AnchNet Tec").
-# %Listed, Google Malware Dashboard: 3.15%.
-# Stop Forum Spam (SFS) listings: 243.
-# Updated: 2018.03.28 / Checked: 2018.10.10
+# %Listed, Google Malware Dashboard: 2.08%.
+# Stop Forum Spam (SFS) listings: 93.
+# Updated: 2019.04.07
 
-2404:de80::/36 Deny Cloud
+2404:de80::/39 Deny Cloud
 Origin: HK
 Tag: ShangHai AnchNet Tec
 
@@ -937,13 +937,12 @@ Tag: Root SA
 
 
 # ASN 11878 ("Tzulo Inc").
-# %Listed, Google Malware Dashboard: 0.31%.
-# Stop Forum Spam (SFS) listings: 365.
-# Updated: 2018.10.10
+# %Listed, Google Malware Dashboard: 1.43%.
+# Stop Forum Spam (SFS) listings: 301.
+# Updated: 2019.04.07
 
 2620:15:6000::/48 Deny Cloud
 Origin: CA
-2602:fea7:10::/44 Deny Cloud
 2607:2780::/48 Deny Cloud
 2607:9000::/32 Deny Cloud
 Origin: US
@@ -1009,9 +1008,9 @@ Tag: WestHost, Inc
 
 
 # ASN 32097 ("WholeSale Internet, Inc").
-# %Listed, Google Malware Dashboard: 1.67%.
-# Stop Forum Spam (SFS) listings: 2,472.
-# Updated: 2018.10.10
+# %Listed, Google Malware Dashboard: 2.73%.
+# Stop Forum Spam (SFS) listings: 1,259.
+# Updated: 2018.10.10 / Checked: 2019.04.07
 
 2001:4858::/32 Deny Cloud
 Origin: US
@@ -1019,14 +1018,12 @@ Tag: WholeSale Internet
 
 
 # ASN 33387 ("DataShack, LC").
-# %Listed, Google Malware Dashboard: 4.15%.
-# Stop Forum Spam (SFS) listings: 1,141.
-# Updated: 2018.10.10
+# %Listed, Google Malware Dashboard: 0.70%.
+# Stop Forum Spam (SFS) listings: 1,534.
+# Updated: 2019.04.07
 
-2a07:1c44:213::/48 Deny Cloud
-Origin: AT
-2a07:59c6:2000::/48 Deny Cloud
-Origin: IT
+2a0a:1f43::/32 Deny Cloud
+Origin: NL
 2604:4300::/32 Deny Cloud
 Origin: US
 Tag: DataShack, LC
@@ -1207,14 +1204,15 @@ Tag: SERVERYOU INC
 
 
 # ASN 25577 ("Connexions4London Ltd").
-# %Listed, Google Malware Dashboard: 0.22%.
-# Stop Forum Spam (SFS) listings: 7.
-# Updated: 2018.10.10
+# %Listed, Google Malware Dashboard: 0.03%.
+# Stop Forum Spam (SFS) listings: 20.
+# Updated: 2019.04.07
 
 2803:8700:10::/48 Deny Cloud
 Origin: CR
 2001:67c:1c0::/48 Deny Cloud
 2001:9d8::/32 Deny Cloud
+2a0d:5e00::/29 Deny Cloud
 Origin: GB
 Tag: Connexions4London
 
@@ -1342,10 +1340,12 @@ Tag: Versaweb, LLC
 
 
 # ASN 27176 ("DataWagon LLC").
-# %Listed, Google Malware Dashboard: 18.18%.
-# Stop Forum Spam (SFS) listings: 3,488.
-# Updated: 2018.10.11
+# %Listed, Google Malware Dashboard: 10.53%.
+# Stop Forum Spam (SFS) listings: 1,124.
+# Updated: 2019.04.07
 
+2a07:ad80::/29 Deny Cloud
+Origin: GB
 2a0d:6f80::/32 Deny Cloud
 2a0d:6f82::/32 Deny Cloud
 2a0d:6f84::/32 Deny Cloud
@@ -1355,8 +1355,6 @@ Origin: LT
 2a0b:2a87::/32 Deny Cloud
 2a0c:a184::/31 Deny Cloud
 Origin: RU
-2600:308::/29 Deny Cloud
-2600:3f0::/29 Deny Cloud
 2605:aa80::/32 Deny Cloud
 Origin: US
 Tag: DataWagon LLC
@@ -1762,9 +1760,9 @@ Tag: Contina
 
 
 # ASN 53264 ("Continuum Data Centers, LLC").
-# %Listed, Google Malware Dashboard: 0.46%.
-# Stop Forum Spam (SFS) listings: 142.
-# Updated: 2017.07.23 / Checked: 2018.10.09
+# %Listed, Google Malware Dashboard: 0.41%.
+# Stop Forum Spam (SFS) listings: 50.
+# Updated: 2017.07.23 / Checked: 2019.04.07
 
 2607:ff50::/32 Deny Cloud
 Origin: US
@@ -3546,16 +3544,16 @@ Tag: AS45538
 
 
 # ASN 37963 ("Hangzhou Alibaba Advertising Co.,Ltd.").
-# %Listed, Google Malware Dashboard: 1.56%.
-# Stop Forum Spam (SFS) listings: 3,369.
-# Updated: 2018.10.14
+# %Listed, Google Malware Dashboard: 0.54%.
+# Stop Forum Spam (SFS) listings: 3,352.
+# Updated: 2018.10.14 / Checked: 2019.04.07
 
 2400:3200::/32 Deny Cloud
 2400:b200::/32 Deny Cloud
 2401:2e00::/32 Deny Cloud
 2401:b180::/32 Deny Cloud
 2405:e000::/32 Deny Cloud
-2407:bc00::/33 Deny Cloud
+2407:bc00::/32 Deny Cloud
 2408:4000::/22 Deny Cloud
 Origin: CN
 Tag: Alibaba Advertising
@@ -3812,9 +3810,9 @@ Tag: Serverius Holding
 
 
 # ASN 20857 ("Transip B.V").
-# %Listed, Google Malware Dashboard: 0.29%.
-# Stop Forum Spam (SFS) listings: 1,500.
-# Updated: 2017.11.12 / Checked: 2018.10.10
+# %Listed, Google Malware Dashboard: 0.23%.
+# Stop Forum Spam (SFS) listings: 237.
+# Updated: 2017.11.12 / Checked: 2019.04.07
 
 2a01:7c8::/32 Deny Cloud
 Origin: NL
@@ -4243,9 +4241,9 @@ Tag: Endurance Int
 
 
 # ASN 6364 ("Atlantic.net, Inc").
-# %Listed, Google Malware Dashboard: 0.24%.
-# Stop Forum Spam (SFS) listings: 20.
-# Updated: 2016.07.02 / Checked: 2018.10.14
+# %Listed, Google Malware Dashboard: 0.15%.
+# Stop Forum Spam (SFS) listings: 22.
+# Updated: 2016.07.02 / Checked: 2019.04.07
 
 2607:f170::/32 Deny Cloud
 Origin: US
@@ -5111,6 +5109,16 @@ Origin: US
 Tag: HostMySite
 
 
+# ASN 40034 ("Confluence Networks Inc").
+# %Listed, Google Malware Dashboard: 0.11%.
+# Stop Forum Spam (SFS) listings: 6.
+# Updated: 2019.04.07
+
+2604:10c0::/48 Deny Cloud
+Origin: VG
+Tag: Confluence
+
+
 # ASN 25369 ("Hydra Communications Ltd").
 # %Listed, Google Malware Dashboard: 0.23%.
 # Stop Forum Spam (SFS) listings: 5,305.
@@ -5190,13 +5198,13 @@ Origin: US
 Tag: Highwinds
 
 
-# ASN 133229 ("HostPalace Web Solution PVT LTD").
-# %Listed, Google Malware Dashboard: 3.62%.
-# Stop Forum Spam (SFS) listings: 1,606.
-# Updated: 2018.02.06 / Checked: 2018.10.09
+# ASNs 133229, 134512 ("HostPalace Web Solution PVT LTD").
+# %Listed, Google Malware Dashboard: 0.62% (AS133229), 2.31% (AS134512).
+# Stop Forum Spam (SFS) listings: 29 (AS133229), 81 (AS134512).
+# Updated: 2019.04.07
 
 2a04:f780:1000::/36 Deny Cloud
-2a04:f780:2000::/36 Deny Cloud
+2a04:f780:2000::/35 Deny Cloud
 Origin: IN
 Tag: HostPalace
 
@@ -5793,9 +5801,9 @@ Tag: DCS Pacific Star
 
 
 # ASN 5602 ("KPNQWest Italia S.p.a").
-# %Listed, Google Malware Dashboard: 0.52%.
-# Stop Forum Spam (SFS) listings: 47.
-# Updated: 2018.05.25 / Checked: 2018.10.09
+# %Listed, Google Malware Dashboard: 0.31%.
+# Stop Forum Spam (SFS) listings: 97.
+# Updated: 2018.05.25 / Checked: 2019.04.07
 
 2001:1450::/32 Deny Cloud
 2a01:9300::/32 Deny Cloud
@@ -5817,14 +5825,15 @@ Tag: Packet Exchange Limited
 
 
 # ASN 42926 ("Radore Veri Merkezi Hizmetleri A.S").
-# %Listed, Google Malware Dashboard: 0.07%.
-# Stop Forum Spam (SFS) listings: 1,265.
-# Updated: 2018.10.14
+# %Listed, Google Malware Dashboard: 0.10%.
+# Stop Forum Spam (SFS) listings: 1,475.
+# Updated: 2019.04.07
 
 2a00:56a0::/32 Deny Cloud
 2a01:790::/32 Deny Cloud
 2a05:88c0::/29 Deny Cloud
 2a06:f7c0::/29 Deny Cloud
+2a09:cfc0::/29 Deny Cloud
 2a0b:5ec0::/29 Deny Cloud
 Origin: TR
 Tag: Radore Veri Merkezi

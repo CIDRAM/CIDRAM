@@ -70,7 +70,7 @@ Ou isso no `.htaccess` arquivo:
 
 #### 2.1 INSTALANDO COM COMPOSER
 
-[CIDRAM está registrado no Packagist](https://packagist.org/packages/cidram/cidram), e entao, se você estiver familiarizado com o Composer, poderá usar o Composer para instalar o CIDRAM (você ainda precisará preparar a configuração, permissões e ganchos embora; consulte "instalando manualmente" as etapas 2, 4, e 5).
+[CIDRAM está registrado no Packagist](https://packagist.org/packages/cidram/cidram), e então, se você estiver familiarizado com o Composer, poderá usar o Composer para instalar o CIDRAM (você ainda precisará preparar a configuração, permissões e ganchos embora; consulte "instalando manualmente" as etapas 2, 4, e 5).
 
 `composer require cidram/cidram`
 
@@ -78,7 +78,7 @@ Ou isso no `.htaccess` arquivo:
 
 Se você quiser usar o CIDRAM com o WordPress, você pode ignorar todas as instruções acima. [CIDRAM está registrado como um plugin com o banco de dados de plugins do WordPress](https://wordpress.org/plugins/cidram/), e você pode instalar CIDRAM diretamente do painel de plugins. Você pode instalá-lo da mesma maneira que qualquer outro plugin, e nenhuma etapa de adição é necessária. Assim como com os outros métodos de instalação, você pode personalizar sua instalação por meio de modificando o conteúdo do `config.ini` arquivo ou usando o front-end página de atualizações. Se você ativar o front-end e atualizar CIDRAM usando a página de atualizações, isso será sincronizado automaticamente com as informações de versão do plugin exibidas no painel de plugins.
 
-*Atenção: A atualização do CIDRAM através do painel de plugins resulta em uma instalação limpa! Se você personalizou sua instalação (mudou sua configuração, instalados módulos, etc), estas personalizações serão perdidas quando atualizando através do painel de plugins! Os arquivos de log também serão perdidos ao atualizar através do painel de plugins! Para preservar arquivos de log e personalizações, atualize através da página de atualizações de front-end do CIDRAM.*
+*Atenção: A atualização do CIDRAM através do painel de plugins resulta numa instalação limpa! Se você personalizou sua instalação (mudou sua configuração, instalados módulos, etc), estas personalizações serão perdidas quando atualizando através do painel de plugins! Os arquivos de log também serão perdidos ao atualizar através do painel de plugins! Para preservar arquivos de log e personalizações, atualize através da página de atualizações de front-end do CIDRAM.*
 
 ---
 
@@ -122,7 +122,7 @@ As instruções são fornecidas em cada página do front-end, para explicar a ma
 
 #### 4.3 AUTENTICAÇÃO DE DOIS FATORES
 
-É possível tornar o front-end mais seguro ativando a autenticação de dois fatores ("2FA"). Ao fazer login em uma conta ativada para 2FA, um e-mail é enviado para o endereço de e-mail associado a essa conta. Este e-mail contém um "código 2FA", que o usuário deve inserir, além do nome de usuário e da senha, para poder fazer login usando essa conta. Isso significa que a obtenção de uma senha de conta não seria suficiente para que qualquer hacker ou atacante em potencial pudesse fazer login nessa conta, já que eles também precisam ter acesso ao endereço de e-mail associado a essa conta para poder receber e utilizar o código 2FA associado à sessão, assim tornando assim o front-end mais seguro.
+É possível tornar o front-end mais seguro ativando a autenticação de dois fatores ("2FA"). Ao fazer login numa conta ativada para 2FA, um e-mail é enviado para o endereço de e-mail associado a essa conta. Este e-mail contém um "código 2FA", que o usuário deve inserir, além do nome de usuário e da senha, para poder fazer login usando essa conta. Isso significa que a obtenção de uma senha de conta não seria suficiente para que qualquer hacker ou atacante em potencial pudesse fazer login nessa conta, já que eles também precisam ter acesso ao endereço de e-mail associado a essa conta para poder receber e utilizar o código 2FA associado à sessão, assim tornando assim o front-end mais seguro.
 
 Em primeiro lugar, para ativar a autenticação de dois fatores, usando a página de atualizações do front-end, instale o componente PHPMailer. O CIDRAM utiliza o PHPMailer para enviar e-mails. Deve-se notar que embora o CIDRAM, por si só, seja compatível com PHP >= 5.4.0, o PHPMailer requer PHP >= 5.5.0, significando, portanto, que ativando a autenticação de dois fatores para o front-end do CIDRAM não será possível para usuários do PHP 5.4.
 
@@ -161,7 +161,8 @@ Arquivo | Descrição
 /vault/ | Vault diretório (contém vários arquivos).
 /vault/classes/ | Diretório de classes. Contém várias classes usadas pelo CIDRAM.
 /vault/classes/Maikuolan/ | Diretório de classes. Contém várias classes usadas pelo CIDRAM.
-/vault/classes/Maikuolan/ComplexStringHandler.php | Manipulador para cadeia complexa.
+/vault/classes/Maikuolan/Cache.php | Um manipulador de cache simples e unificado.
+/vault/classes/Maikuolan/ComplexStringHandler.php | Um manipulador para cadeia complexa.
 /vault/classes/Maikuolan/L10N.php | Manipulador para o L10N.
 /vault/classes/Maikuolan/YAML.php | Manipulador para o YAML.
 /vault/classes/.htaccess | Um hipertexto acesso arquivo (neste caso, para proteger confidenciais arquivos pertencentes ao script contra serem acessados por fontes não autorizadas).
@@ -277,7 +278,6 @@ Arquivo | Descrição
 /vault/.travis.yml | Usado pela Travis CI para testes (não é necessário para o correto funcionamento do script).
 /vault/auxiliary.yaml | Contém regras auxiliares. Não incluído no pacote. Gerado pela página de regras auxiliares.
 /vault/cache.dat | Dados de cache.
-/vault/cache.dat.safety | Gerado como um mecanismo de segurança quando necessário.
 /vault/cidramblocklists.dat | Arquivo de metadados para as listas de bloqueio opcionais da Macmathan; Usado pela página de atualizações do front-end.
 /vault/cli.php | Módulo de CLI.
 /vault/components.dat | Arquivo de metadados de componentes; Usado pela página de atualizações do front-end.
@@ -328,11 +328,11 @@ Arquivo | Descrição
 ### 6. <a name="SECTION6"></a>OPÇÕES DE CONFIGURAÇÃO
 O seguinte é uma lista de variáveis encontradas no `config.ini` arquivo de configuração para CIDRAM, juntamente com uma descrição de sua propósito e função.
 
-[general](#general-categoria) | [signatures](#signatures-categoria) | [recaptcha](#recaptcha-categoria) | [legal](#legal-categoria) | [template_data](#template_data-categoria)
-:--|:--|:--|:--|:--
-[logfile](#logfile)<br />[logfileApache](#logfileapache)<br />[logfileSerialized](#logfileserialized)<br />[truncate](#truncate)<br />[log_rotation_limit](#log_rotation_limit)<br />[log_rotation_action](#log_rotation_action)<br />[timezone](#timezone)<br />[timeOffset](#timeoffset)<br />[timeFormat](#timeformat)<br />[ipaddr](#ipaddr)<br />[forbid_on_block](#forbid_on_block)<br />[silent_mode](#silent_mode)<br />[lang](#lang)<br />[numbers](#numbers)<br />[emailaddr](#emailaddr)<br />[emailaddr_display_style](#emailaddr_display_style)<br />[disable_cli](#disable_cli)<br />[disable_frontend](#disable_frontend)<br />[max_login_attempts](#max_login_attempts)<br />[FrontEndLog](#frontendlog)<br />[ban_override](#ban_override)<br />[log_banned_ips](#log_banned_ips)<br />[default_dns](#default_dns)<br />[search_engine_verification](#search_engine_verification)<br />[social_media_verification](#social_media_verification)<br />[protect_frontend](#protect_frontend)<br />[disable_webfonts](#disable_webfonts)<br />[maintenance_mode](#maintenance_mode)<br />[default_algo](#default_algo)<br />[statistics](#statistics)<br />[force_hostname_lookup](#force_hostname_lookup)<br />[allow_gethostbyaddr_lookup](#allow_gethostbyaddr_lookup)<br />[hide_version](#hide_version)<br />[empty_fields](#empty_fields)<br /> | [ipv4](#ipv4)<br />[ipv6](#ipv6)<br />[block_cloud](#block_cloud)<br />[block_bogons](#block_bogons)<br />[block_generic](#block_generic)<br />[block_legal](#block_legal)<br />[block_malware](#block_malware)<br />[block_proxies](#block_proxies)<br />[block_spam](#block_spam)<br />[modules](#modules)<br />[default_tracktime](#default_tracktime)<br />[infraction_limit](#infraction_limit)<br />[track_mode](#track_mode)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> | [usemode](#usemode)<br />[lockip](#lockip)<br />[lockuser](#lockuser)<br />[sitekey](#sitekey)<br />[secret](#secret)<br />[expiry](#expiry)<br />[logfile](#logfile)<br />[signature_limit](#signature_limit)<br />[api](#api)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> | [pseudonymise_ip_addresses](#pseudonymise_ip_addresses)<br />[omit_ip](#omit_ip)<br />[omit_hostname](#omit_hostname)<br />[omit_ua](#omit_ua)<br />[privacy_policy](#privacy_policy)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> | [theme](#theme)<br />[Magnification](#magnification)<br />[css_url](#css_url)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-[PHPMailer](#phpmailer-categoria) | [rate_limiting](#rate_limiting-categoria)
-[EventLog](#eventlog)<br />[SkipAuthProcess](#skipauthprocess)<br />[Enable2FA](#enable2fa)<br />[Host](#host)<br />[Port](#port)<br />[SMTPSecure](#smtpsecure)<br />[SMTPAuth](#smtpauth)<br />[Username](#username)<br />[Password](#password)<br />[setFromAddress](#setfromaddress)<br />[setFromName](#setfromname)<br />[addReplyToAddress](#addreplytoaddress)<br />[addReplyToName](#addreplytoname)<br /> | [max_bandwidth](#max_bandwidth)<br />[max_requests](#max_requests)<br />[precision_ipv4](#precision_ipv4)<br />[precision_ipv6](#precision_ipv6)<br />[allowance_period](#allowance_period)<br /><br /><br /><br /><br /><br /><br /><br /><br />
+[general](#general-categoria) | [signatures](#signatures-categoria) | [recaptcha](#recaptcha-categoria) | [legal](#legal-categoria)
+:--|:--|:--|:--
+[logfile](#logfile)<br />[logfileApache](#logfileapache)<br />[logfileSerialized](#logfileserialized)<br />[truncate](#truncate)<br />[log_rotation_limit](#log_rotation_limit)<br />[log_rotation_action](#log_rotation_action)<br />[timezone](#timezone)<br />[timeOffset](#timeoffset)<br />[timeFormat](#timeformat)<br />[ipaddr](#ipaddr)<br />[forbid_on_block](#forbid_on_block)<br />[silent_mode](#silent_mode)<br />[lang](#lang)<br />[numbers](#numbers)<br />[emailaddr](#emailaddr)<br />[emailaddr_display_style](#emailaddr_display_style)<br />[disable_cli](#disable_cli)<br />[disable_frontend](#disable_frontend)<br />[max_login_attempts](#max_login_attempts)<br />[FrontEndLog](#frontendlog)<br />[ban_override](#ban_override)<br />[log_banned_ips](#log_banned_ips)<br />[default_dns](#default_dns)<br />[search_engine_verification](#search_engine_verification)<br />[social_media_verification](#social_media_verification)<br />[protect_frontend](#protect_frontend)<br />[disable_webfonts](#disable_webfonts)<br />[maintenance_mode](#maintenance_mode)<br />[default_algo](#default_algo)<br />[statistics](#statistics)<br />[force_hostname_lookup](#force_hostname_lookup)<br />[allow_gethostbyaddr_lookup](#allow_gethostbyaddr_lookup)<br />[hide_version](#hide_version)<br />[empty_fields](#empty_fields)<br /> | [ipv4](#ipv4)<br />[ipv6](#ipv6)<br />[block_cloud](#block_cloud)<br />[block_bogons](#block_bogons)<br />[block_generic](#block_generic)<br />[block_legal](#block_legal)<br />[block_malware](#block_malware)<br />[block_proxies](#block_proxies)<br />[block_spam](#block_spam)<br />[modules](#modules)<br />[default_tracktime](#default_tracktime)<br />[infraction_limit](#infraction_limit)<br />[track_mode](#track_mode)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> | [usemode](#usemode)<br />[lockip](#lockip)<br />[lockuser](#lockuser)<br />[sitekey](#sitekey)<br />[secret](#secret)<br />[expiry](#expiry)<br />[logfile](#logfile)<br />[signature_limit](#signature_limit)<br />[api](#api)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> | [pseudonymise_ip_addresses](#pseudonymise_ip_addresses)<br />[omit_ip](#omit_ip)<br />[omit_hostname](#omit_hostname)<br />[omit_ua](#omit_ua)<br />[privacy_policy](#privacy_policy)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+[template_data](#template_data-categoria) | [PHPMailer](#phpmailer-categoria) | [rate_limiting](#rate_limiting-categoria) | [supplementary_cache_options](#supplementary_cache_options-categoria)
+[theme](#theme)<br />[Magnification](#magnification)<br />[css_url](#css_url)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> | [EventLog](#eventlog)<br />[SkipAuthProcess](#skipauthprocess)<br />[Enable2FA](#enable2fa)<br />[Host](#host)<br />[Port](#port)<br />[SMTPSecure](#smtpsecure)<br />[SMTPAuth](#smtpauth)<br />[Username](#username)<br />[Password](#password)<br />[setFromAddress](#setfromaddress)<br />[setFromName](#setfromname)<br />[addReplyToAddress](#addreplytoaddress)<br />[addReplyToName](#addreplytoname)<br /> | [max_bandwidth](#max_bandwidth)<br />[max_requests](#max_requests)<br />[precision_ipv4](#precision_ipv4)<br />[precision_ipv6](#precision_ipv6)<br />[allowance_period](#allowance_period)<br /><br /><br /><br /><br /><br /><br /><br /><br /> | [enable_apcu](#enable_apcu)<br />[enable_memcached](#enable_memcached)<br />[enable_redis](#enable_redis)<br />[enable_pdo](#enable_pdo)<br />[memcached_host](#memcached_host)<br />[memcached_port](#memcached_port)<br />[redis_host](#redis_host)<br />[redis_port](#redis_port)<br />[redis_timeout](#redis_timeout)<br />[pdo_dsn](#pdo_dsn)<br />[pdo_username](#pdo_username)<br />[pdo_password](#pdo_password)<br /><br />
 
 #### "general" (Categoria)
 Configuração geral por CIDRAM.
@@ -365,10 +365,10 @@ Configuração geral por CIDRAM.
 *Esclarecimento técnico: Neste contexto, "mais antigo" significa modificado menos recentemente.*
 
 ##### "timezone"
-- Isso é usado para especificar qual fuso horário o CIDRAM deve usar para operações de data/hora. Se você não precisa disso, ignore. Valores possíveis são determinados pelo PHP. É geralmente recomendado no lugar para ajustar a directiva fuso horário no seu arquivo `php.ini`, mas às vezes (tais como quando se trabalha com provedores de hospedagem compartilhada e limitados) isto não é sempre possível fazer, e entao, esta opção é fornecido aqui.
+- Isso é usado para especificar qual fuso horário o CIDRAM deve usar para operações de data/hora. Se você não precisa disso, ignore. Valores possíveis são determinados pelo PHP. É geralmente recomendado no lugar para ajustar a directiva fuso horário no seu arquivo `php.ini`, mas às vezes (tais como quando se trabalha com provedores de hospedagem compartilhada e limitados) isto não é sempre possível fazer, e então, esta opção é fornecido aqui.
 
 ##### "timeOffset"
-- Se o tempo do servidor não coincide com sua hora local, você pode especificar aqui um offset para ajustar as informações de data/tempo gerado por CIDRAM de acordo com as suas necessidades. É geralmente recomendado no lugar para ajustar a directiva fuso horário no seu arquivo `php.ini`, mas às vezes (tais como quando se trabalha com provedores de hospedagem compartilhada e limitados) isto não é sempre possível fazer, e entao, esta opção é fornecido aqui. Offset é em minutos.
+- Se o tempo do servidor não coincide com sua hora local, você pode especificar aqui um offset para ajustar as informações de data/tempo gerado por CIDRAM de acordo com as suas necessidades. É geralmente recomendado no lugar para ajustar a directiva fuso horário no seu arquivo `php.ini`, mas às vezes (tais como quando se trabalha com provedores de hospedagem compartilhada e limitados) isto não é sempre possível fazer, e então, esta opção é fornecido aqui. Offset é em minutos.
 - Exemplo (para adicionar uma hora): `timeOffset=60`
 
 ##### "timeFormat"
@@ -711,6 +711,47 @@ Se você acha que não precisa do CIDRAM para impor a limitação de taxas para 
 ##### "allowance_period"
 - O número de horas para monitorar o uso. Padrão = 0.
 
+#### "supplementary_cache_options" (Categoria)
+Opções suplementares de cache.
+
+*Atualmente, isso é extremamente experimental, e pode não se comportar como esperado! Por enquanto, recomendo ignorá-lo.*
+
+##### "enable_apcu"
+- Especifica se deve tentar usar o APCu para armazenamento em cache. Padrão = False.
+
+##### "enable_memcached"
+- Especifica se deve tentar usar o Memcached para armazenamento em cache. Padrão = False.
+
+##### "enable_redis"
+- Especifica se deve tentar usar o Redis para armazenamento em cache. Padrão = False.
+
+##### "enable_pdo"
+- Especifica se deve tentar usar o PDO para armazenamento em cache. Padrão = False.
+
+##### "memcached_host"
+- Valor da host do Memcached. Padrão = "localhost".
+
+##### "memcached_port"
+- Valor da porta do Memcached. Padrão = "11211".
+
+##### "redis_host"
+- Valor da host do Redis. Padrão = "localhost".
+
+##### "redis_port"
+- Valor da porta do Redis. Padrão = "6379".
+
+##### "redis_timeout"
+- Valor de tempo limite do Redis. Padrão = "2.5".
+
+##### "pdo_dsn"
+- Valor DSN do PDO. Padrão = "`mysql:dbname=cidram;host=localhost;port=3306`".
+
+##### "pdo_username"
+- O nome de usuário do PDO.
+
+##### "pdo_password"
+- A senha do PDO.
+
 ---
 
 
@@ -728,7 +769,7 @@ Todas as assinaturas IPv4 seguir o formato: `xxx.xxx.xxx.xxx/yy [Function] [Para
 - `[Param]` representa qualquer informação adicional que possa ser necessária por `[Function]`.
 
 Todas as assinaturas IPv6 seguir o formato: `xxxx:xxxx:xxxx:xxxx::xxxx/yy [Function] [Param]`.
-- `xxxx:xxxx:xxxx:xxxx::xxxx` representa o início do bloco CIDR (os octetos do endereço IP inicial no bloco). Notação completa e notação abreviada são aceitáveis (e cada DEVE seguir os padrões da notação IPv6 apropriados e relevantes, mas com uma exceção: um endereço IPv6 nunca pode começar com uma abreviatura quando utilizado em uma assinatura para este script, por causa da maneira em que CIDRs são reconstruídos pelo script; Por exemplo, `::1/128` deve ser expresso, quando utilizado em uma assinatura, como `0::1/128`, e `::0/128` expresso como `0::/128`).
+- `xxxx:xxxx:xxxx:xxxx::xxxx` representa o início do bloco CIDR (os octetos do endereço IP inicial no bloco). Notação completa e notação abreviada são aceitáveis (e cada DEVE seguir os padrões da notação IPv6 apropriados e relevantes, mas com uma exceção: um endereço IPv6 nunca pode começar com uma abreviatura quando utilizado numa assinatura para este script, por causa da maneira em que CIDRs são reconstruídos pelo script; Por exemplo, `::1/128` deve ser expresso, quando utilizado numa assinatura, como `0::1/128`, e `::0/128` expresso como `0::/128`).
 - `yy` representa o tamanho do bloco CIDR [1-128].
 - `[Function]` instrui o script o que fazer com a assinatura (como a assinatura deve ser considerada).
 - `[Param]` representa qualquer informação adicional que possa ser necessária por `[Function]`.
@@ -737,7 +778,7 @@ Os arquivos de assinaturas para CIDRAM DEVE usar quebras de linha no estilo de U
 
 Notação CIDR precisa e correta é necessária, ou então o script NÃO irá reconhecer as assinaturas. Além disso, todas as assinaturas CIDR deste script DEVE começar com um endereço IP cujo número IP pode dividir igualmente na divisão bloco representado pelo tamanho do seu bloco CIDR (por exemplo, se você quiser bloquear todos os IPs de `10.128.0.0` para `11.127.255.255`, `10.128.0.0/8` NÃO seria reconhecido pelo script, mas `10.128.0.0/9` e `11.0.0.0/9` usado em conjunto, SERIA reconhecido pelo script).
 
-Qualquer coisa na arquivos de assinaturas não reconhecida como uma assinatura nem como sintaxe relacionados com assinaturas pelo script será IGNORADO, que significa que você pode colocar com segurança quaisquer dados que você quer nos arquivos de assinaturas sem quebrá-los e sem quebrar o script. Comentários são aceitáveis nos arquivos de assinaturas, e nenhuma formatação especial é necessário para eles. Hashing no estilo de Shell para comentários é preferido, mas não são forçadas; Funcionalmente, não faz diferença para o script se ou não você escolher para usar hashing no estilo de Shell para comentários, mas utilizando hashing no estilo de Shell ajuda IDEs e editores de texto simples para destacar corretamente as várias partes dos arquivos de assinaturas (e entao, hashing no estilo de Shell pode ajudar como uma ajuda visual durante a edição).
+Qualquer coisa na arquivos de assinaturas não reconhecida como uma assinatura nem como sintaxe relacionados com assinaturas pelo script será IGNORADO, que significa que você pode colocar com segurança quaisquer dados que você quer nos arquivos de assinaturas sem quebrá-los e sem quebrar o script. Comentários são aceitáveis nos arquivos de assinaturas, e nenhuma formatação especial é necessário para eles. Hashing no estilo de Shell para comentários é preferido, mas não são forçadas; Funcionalmente, não faz diferença para o script se ou não você escolher para usar hashing no estilo de Shell para comentários, mas utilizando hashing no estilo de Shell ajuda IDEs e editores de texto simples para destacar corretamente as várias partes dos arquivos de assinaturas (e então, hashing no estilo de Shell pode ajudar como uma ajuda visual durante a edição).
 
 Os valores possíveis de `[Function]` são as seguintes:
 - Run
@@ -878,7 +919,7 @@ Uso de marcação YAML nos arquivos de assinatura é totalmente opcional (isto �
 
 Nota: Implementação de marcação YAML em CIDRAM é muito simplista e muito limitado; Destina-se a cumprir as exigências específicas para CIDRAM de uma maneira que tem a familiaridade de marcação YAML, mas nem segue nem está de acordo com as especificações oficiais (e portanto, não se comporta da mesma forma como outros implementações mais completas, e pode não ser apropriado para outros projetos).
 
-Em CIDRAM, segmentos de marcação YAML são identificados para o script por três hífens ("---"), e terminar ao lado de seus contendo seções de assinatura por quebras de linha dupla. Um segmento típico de marcação YAML dentro de uma seção de assinaturas consiste de três hífens em uma linha imediatamente após a lista de CIDRs e todas as etiquetas, seguido por uma lista bidimensional de pares chave-valor (primeira dimensão, categorias das diretivas de configuração; segunda dimensão, as diretivas de configuração) para as quais diretivas de configuração deve ser modificada (e em qual valores) sempre que uma assinatura em nisso seção de assinaturas é desencadeada (veja os exemplos abaixo).
+Em CIDRAM, segmentos de marcação YAML são identificados para o script por três hífens ("---"), e terminar ao lado de seus contendo seções de assinatura por quebras de linha dupla. Um segmento típico de marcação YAML dentro de uma seção de assinaturas consiste de três hífens numa linha imediatamente após a lista de CIDRs e todas as etiquetas, seguido por uma lista bidimensional de pares chave-valor (primeira dimensão, categorias das diretivas de configuração; segunda dimensão, as diretivas de configuração) para as quais diretivas de configuração deve ser modificada (e em qual valores) sempre que uma assinatura em nisso seção de assinaturas é desencadeada (veja os exemplos abaixo).
 
 ```
 # Foobar 1.
@@ -947,7 +988,7 @@ recaptcha:
 
 ##### 7.3.0 IGNORANDO SEÇÕES DE ASSINATURA
 
-Em suplemento, se você quiser CIDRAM para ignorar completamente algumas seções específicas dentro de qualquer um dos arquivos de assinatura, você pode usar o arquivo `ignore.dat` para especificar quais seções para ignorar. Em uma nova linha, escreva `Ignore`, seguido por um espaço, seguido do nome da seção que você quer CIDRAM para ignorar (veja o exemplo abaixo).
+Em suplemento, se você quiser CIDRAM para ignorar completamente algumas seções específicas dentro de qualquer um dos arquivos de assinatura, você pode usar o arquivo `ignore.dat` para especificar quais seções para ignorar. numa nova linha, escreva `Ignore`, seguido por um espaço, seguido do nome da seção que você quer CIDRAM para ignorar (veja o exemplo abaixo).
 
 ```
 Ignore Seção 1
@@ -961,7 +1002,7 @@ Se você acha que escrever seus próprios arquivos de assinatura personalizados 
 
 #### 7.4 <a name="MODULE_BASICS"></a>NOÇÕES BÁSICAS (PARA MÓDULOS)
 
-Os módulos podem ser usados para ampliar a funcionalidade do CIDRAM, executar tarefas adicionais, ou processar lógica adicional. Tipicamente, eles são usados quando é necessário bloquear um pedido em uma base diferente do endereço IP de origem (portanto, quando uma assinatura do CIDR não será suficiente para bloquear o pedido). Os módulos são escritos como arquivos PHP e portanto, tipicamente, as assinaturas dos módulos são escritas como código PHP.
+Os módulos podem ser usados para ampliar a funcionalidade do CIDRAM, executar tarefas adicionais, ou processar lógica adicional. Tipicamente, eles são usados quando é necessário bloquear um pedido numa base diferente do endereço IP de origem (portanto, quando uma assinatura do CIDR não será suficiente para bloquear o pedido). Os módulos são escritos como arquivos PHP e portanto, tipicamente, as assinaturas dos módulos são escritas como código PHP.
 
 Alguns bons exemplos de módulos do CIDRAM podem ser encontrados aqui:
 - https://github.com/CIDRAM/CIDRAM-Extras/tree/master/modules
@@ -1254,7 +1295,7 @@ Isso pode ser implementado usando soluções de hardware dedicadas no local, e/o
 
 #### <a name="CHANGE_COMPONENT_SORT_ORDER"></a>Quando eu ativar ou desativar os módulos ou os arquivos de assinatura através da página de atualizações, eles os classificam alfanumericamente na configuração. Posso mudar a maneira como eles são classificados?
 
-Sim. Se você precisar forçar alguns arquivos a serem executados em uma ordem específica, você pode adicionar alguns dados arbitrários antes de seus nomes na diretiva de configuração, onde eles estão listados, separados por dois pontos. Quando a página de atualizações subseqüentemente classifica os arquivos novamente, esses dados arbitrários adicionados afetarão a ordem de classificação, fazendo com que eles sejam executados na ordem que você deseja, sem precisar renomear nenhum deles.
+Sim. Se você precisar forçar alguns arquivos a serem executados numa ordem específica, você pode adicionar alguns dados arbitrários antes de seus nomes na diretiva de configuração, onde eles estão listados, separados por dois pontos. Quando a página de atualizações subseqüentemente classifica os arquivos novamente, esses dados arbitrários adicionados afetarão a ordem de classificação, fazendo com que eles sejam executados na ordem que você deseja, sem precisar renomear nenhum deles.
 
 Por exemplo, assumindo uma diretiva de configuração com arquivos listados da seguinte maneira:
 
@@ -1335,7 +1376,7 @@ O CIDRAM fornece um módulo opcional que aproveita essa API para verificar se o 
 
 O registro é uma parte importante do CIDRAM por vários motivos. Pode ser difícil diagnosticar e resolver falsos positivos quando os eventos de bloqueio que os causam não são registrados. Sem o registro de eventos de bloqueio, pode ser difícil determinar exatamente o quão bem o CIDRAM funciona em qualquer contexto específico, e pode ser difícil determinar onde suas deficiências podem ser, e quais mudanças podem ser necessárias para sua configuração ou assinaturas de acordo, para que ele continue funcionando como pretendido. Não obstante, o registro pode não ser desejável para todos os usuários e permanece totalmente opcional. No CIDRAM, o registro está desabilitado por padrão. Para ativá-lo, o CIDRAM deve ser configurado de acordo.
 
-Adicionalmente, se o registro é legalmente permissível, e na medida em que é legalmente permissível (por exemplo, os tipos de informações que podem ser registradas, por quanto tempo, e sob quais circunstâncias), pode variar, dependendo da jurisdição e do contexto onde a CIDRAM é implementada (por exemplo, se você está operando como indivíduo, como entidade corporativa, e se está em uma base comercial ou não comercial). Portanto, pode ser útil que você leia atentamente essa seção.
+Adicionalmente, se o registro é legalmente permissível, e na medida em que é legalmente permissível (por exemplo, os tipos de informações que podem ser registradas, por quanto tempo, e sob quais circunstâncias), pode variar, dependendo da jurisdição e do contexto onde a CIDRAM é implementada (por exemplo, se você está operando como indivíduo, como entidade corporativa, e se está numa base comercial ou não comercial). Portanto, pode ser útil que você leia atentamente essa seção.
 
 Existem vários tipos de registro que o CIDRAM pode executar. Diferentes tipos de registro envolvem diferentes tipos de informações, por diferentes razões.
 
@@ -1369,7 +1410,7 @@ x.x.x.x - - [Day, dd Mon 20xx hh:ii:ss +0000] "GET /index.php HTTP/1.1" 200 xxxx
 ```
 
 Um evento de bloqueio registrado geralmente inclui as seguintes informações:
-- Um número de ID que referencia o evento de bloqueio.
+- Um número de ID que referência o evento de bloqueio.
 - A versão do CIDRAM atualmente em uso.
 - A data e hora em que o evento de bloqueio ocorreu.
 - O endereço IP da solicitação bloqueada.
@@ -1471,7 +1512,7 @@ CIDRAM não criptografa seu cache ou qualquer informação de registro. A [encri
 
 #### 11.4 COOKIES
 
-O CIDRAM define [cookies](https://pt.wikipedia.org/wiki/Cookie_(inform%C3%A1tica)) em dois pontos em sua base de código. Em primeiro lugar, quando um usuário concluir com êxito uma instância de reCAPTCHA (e supondo que `lockuser` esteja definido como `true`), O CIDRAM define um cookie para poder lembrar, para solicitações subsequentes, que o usuário já concluiu uma instância de reCAPTCHA, de modo que não será necessário pedir continuamente ao usuário para concluir uma instância de reCAPTCHA em solicitações subsequentes. Em segundo lugar, quando um usuário efetua login com êxito no front-end, o CIDRAM define um cookie para poder lembrar o usuário das solicitações subsequentes (isto é, os cookies são usados para autenticar o usuário em uma sessão de login).
+O CIDRAM define [cookies](https://pt.wikipedia.org/wiki/Cookie_(inform%C3%A1tica)) em dois pontos em sua base de código. Em primeiro lugar, quando um usuário concluir com êxito uma instância de reCAPTCHA (e supondo que `lockuser` esteja definido como `true`), O CIDRAM define um cookie para poder lembrar, para solicitações subsequentes, que o usuário já concluiu uma instância de reCAPTCHA, de modo que não será necessário pedir continuamente ao usuário para concluir uma instância de reCAPTCHA em solicitações subsequentes. Em segundo lugar, quando um usuário efetua login com êxito no front-end, o CIDRAM define um cookie para poder lembrar o usuário das solicitações subsequentes (isto é, os cookies são usados para autenticar o usuário numa sessão de login).
 
 Em ambos os casos, os avisos de cookie são exibidos de forma proeminente (quando aplicável), avisando ao usuário que os cookies serão definidos se eles se envolverem nas ações relevantes. Os cookies não são definidos em nenhum outro ponto da base de código.
 
@@ -1514,4 +1555,4 @@ Alternativamente, há uma breve visão geral (não autoritativa) do GDPR/DSGVO d
 ---
 
 
-Última Atualização: 26 Março de 2019 (2019.03.26).
+Última Atualização: 7 Abril de 2019 (2019.04.07).

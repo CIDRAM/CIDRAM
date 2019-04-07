@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2019.02.06).
+ * This file: Functions file (last modified: 2019.04.07).
  */
 
 /**
@@ -713,8 +713,8 @@ $CIDRAM['DNS-Reverse'] = function ($Addr, $DNS = '', $Timeout = 5) use (&$CIDRAM
     }
 
     /** We've already got it cached. We can return the results early. */
-    if (isset($CIDRAM['Cache']['DNS-Reverses'][$Addr]['Host'])) {
-        return $CIDRAM['Cache']['DNS-Reverses'][$Addr]['Host'];
+    if (isset($CIDRAM['DNS-Reverses'][$Addr]['Host'])) {
+        return $CIDRAM['DNS-Reverses'][$Addr]['Host'];
     }
 
     /** The IP address is IPv4. */
@@ -771,12 +771,8 @@ $CIDRAM['DNS-Reverse'] = function ($Addr, $DNS = '', $Timeout = 5) use (&$CIDRAM
         return $Addr;
     }
 
-    /** Prepare cache. */
-    if (!isset($CIDRAM['Cache']['DNS-Reverses'])) {
-        $CIDRAM['Cache']['DNS-Reverses'] = [];
-    }
-    $CIDRAM['Cache']['DNS-Reverses'][$Addr] = ['Host' => $Addr, 'Time' => $CIDRAM['Now'] + 21600];
-    $CIDRAM['CacheModified'] = true;
+    $CIDRAM['DNS-Reverses'][$Addr] = ['Host' => $Addr, 'Time' => $CIDRAM['Now'] + 21600];
+    $CIDRAM['DNS-Reverses-Modified'] = true;
 
     /** DNS is disabled. Let's exit the closure. */
     if (!$DNS && !$DNS = $CIDRAM['Config']['general']['default_dns']) {
@@ -809,7 +805,7 @@ $CIDRAM['DNS-Reverse'] = function ($Addr, $DNS = '', $Timeout = 5) use (&$CIDRAM
     if (empty($Response)) {
         return (
             $CIDRAM['Config']['general']['allow_gethostbyaddr_lookup']
-        ) ? $CIDRAM['DNS-Reverse-Fallback']($Addr) : ($CIDRAM['Cache']['DNS-Reverses'][$Addr]['Host'] = $Addr);
+        ) ? $CIDRAM['DNS-Reverse-Fallback']($Addr) : ($CIDRAM['DNS-Reverses'][$Addr]['Host'] = $Addr);
     }
 
     /** We got a response! Now let's process it accordingly. */
@@ -827,7 +823,7 @@ $CIDRAM['DNS-Reverse'] = function ($Addr, $DNS = '', $Timeout = 5) use (&$CIDRAM
     }
 
     /** Return results. */
-    return $CIDRAM['Cache']['DNS-Reverses'][$Addr]['Host'] = preg_replace('/[^:\da-z._~-]/i', '', $Host) ?: $Addr;
+    return $CIDRAM['DNS-Reverses'][$Addr]['Host'] = preg_replace('/[^:\da-z._~-]/i', '', $Host) ?: $Addr;
 
 };
 
@@ -838,16 +834,11 @@ $CIDRAM['DNS-Reverse-IPv4'] = $CIDRAM['DNS-Reverse-IPv6'] = function ($Addr, $DN
 
 /** Fallback for failed lookups. */
 $CIDRAM['DNS-Reverse-Fallback'] = function ($Addr) use (&$CIDRAM) {
-
-    /** Prepare cache. */
-    if (!isset($CIDRAM['Cache']['DNS-Reverses'])) {
-        $CIDRAM['Cache']['DNS-Reverses'] = [];
-    }
-    $CIDRAM['Cache']['DNS-Reverses'][$Addr] = ['Host' => $Addr, 'Time' => $CIDRAM['Now'] + 21600];
-    $CIDRAM['CacheModified'] = true;
+    $CIDRAM['DNS-Reverses'][$Addr] = ['Host' => $Addr, 'Time' => $CIDRAM['Now'] + 21600];
+    $CIDRAM['DNS-Reverses-Modified'] = true;
 
     /** Return results. */
-    return $CIDRAM['Cache']['DNS-Reverses'][$Addr]['Host'] = preg_replace('/[^:\da-z._~-]/i', '', gethostbyaddr($Addr)) ?: $Addr;
+    return $CIDRAM['DNS-Reverses'][$Addr]['Host'] = preg_replace('/[^:\da-z._~-]/i', '', gethostbyaddr($Addr)) ?: $Addr;
 
 };
 
@@ -863,20 +854,17 @@ $CIDRAM['DNS-Reverse-Fallback'] = function ($Addr) use (&$CIDRAM) {
  * @return string The IP address on success, or an empty string on failure.
  */
 $CIDRAM['DNS-Resolve'] = function ($Host, $Timeout = 5) use (&$CIDRAM) {
-    if (isset($CIDRAM['Cache']['DNS-Forwards'][$Host]['IPAddr'])) {
-        return $CIDRAM['Cache']['DNS-Forwards'][$Host]['IPAddr'];
+    if (isset($CIDRAM['DNS-Forwards'][$Host]['IPAddr'])) {
+        return $CIDRAM['DNS-Forwards'][$Host]['IPAddr'];
     }
     $Host = urlencode($Host);
     if (($HostLen = strlen($Host)) > 253) {
         return '';
     }
     static $Valid = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz-._~';
-    if (!isset($CIDRAM['Cache']['DNS-Forwards'])) {
-        $CIDRAM['Cache']['DNS-Forwards'] = [];
-    }
 
-    $CIDRAM['Cache']['DNS-Forwards'][$Host] = ['IPAddr' => '', 'Time' => $CIDRAM['Now'] + 21600];
-    $CIDRAM['CacheModified'] = true;
+    $CIDRAM['DNS-Forwards'][$Host] = ['IPAddr' => '', 'Time' => $CIDRAM['Now'] + 21600];
+    $CIDRAM['DNS-Forwards-Modified'] = true;
 
     $URI = 'https://dns.google.com/resolve?name=' . urlencode($Host) . '&random_padding=';
     $PadLen = 204 - $HostLen;
@@ -891,7 +879,7 @@ $CIDRAM['DNS-Resolve'] = function ($Host, $Timeout = 5) use (&$CIDRAM) {
     if (!$Results = json_decode($CIDRAM['Request']($URI, '', $Timeout), true)) {
         return '';
     }
-    return $CIDRAM['Cache']['DNS-Forwards'][$Host]['IPAddr'] = empty(
+    return $CIDRAM['DNS-Forwards'][$Host]['IPAddr'] = empty(
         $Results['Answer'][0]['data']
     ) ? '' : preg_replace('/[^\da-f.:]/i', '', $Results['Answer'][0]['data']);
 };
@@ -1186,25 +1174,11 @@ $CIDRAM['Meld'] = function () {
 };
 
 /**
- * Clears expired entries from sections of the "cache.dat" file and clears
- * empty sections.
+ * Clears expired entries from a list.
+ *
+ * @param string $List The list to clear from.
+ * @param bool $Check A flag indicating when changes have occurred.
  */
-$CIDRAM['ClearFromCache'] = function ($Section) use (&$CIDRAM) {
-    if (isset($CIDRAM['Cache'][$Section])) {
-        foreach ($CIDRAM['Cache'][$Section] as $Key => $Value) {
-            if (empty($Value['Time']) || $Value['Time'] < $CIDRAM['Now']) {
-                unset($CIDRAM['Cache'][$Section][$Key]);
-                $CIDRAM['CacheModified'] = true;
-            }
-        }
-        if (!count($CIDRAM['Cache'][$Section])) {
-            unset($CIDRAM['Cache'][$Section]);
-            $CIDRAM['CacheModified'] = true;
-        }
-    }
-};
-
-/** Clears expired entries from a list. */
 $CIDRAM['ClearExpired'] = function (&$List, &$Check) use (&$CIDRAM) {
     if ($List) {
         $End = 0;
@@ -1289,14 +1263,28 @@ $CIDRAM['Resolve6to4'] = function ($In) {
 
 /** Initialise cache. */
 $CIDRAM['InitialiseCache'] = function () use (&$CIDRAM) {
-    $CIDRAM['CacheModified'] = false;
 
-    /** Used by a safety mechanism against a potential attack vector. */
-    $Safety = file_exists($CIDRAM['Vault'] . 'cache.dat.safety');
+    /** Create new cache object. */
+    $CIDRAM['Cache'] = new \Maikuolan\Common\Cache();
+    $CIDRAM['Cache']->EnableAPCu = $CIDRAM['Config']['supplementary_cache_options']['enable_apcu'];
+    $CIDRAM['Cache']->EnableMemcached = $CIDRAM['Config']['supplementary_cache_options']['enable_memcached'];
+    $CIDRAM['Cache']->EnableRedis = $CIDRAM['Config']['supplementary_cache_options']['enable_redis'];
+    $CIDRAM['Cache']->EnablePDO = $CIDRAM['Config']['supplementary_cache_options']['enable_pdo'];
+    $CIDRAM['Cache']->MemcachedHost = $CIDRAM['Config']['supplementary_cache_options']['memcached_host'];
+    $CIDRAM['Cache']->MemcachedPort = $CIDRAM['Config']['supplementary_cache_options']['memcached_port'];
+    $CIDRAM['Cache']->RedisHost = $CIDRAM['Config']['supplementary_cache_options']['redis_host'];
+    $CIDRAM['Cache']->RedisPort = $CIDRAM['Config']['supplementary_cache_options']['redis_port'];
+    $CIDRAM['Cache']->RedisTimeout = $CIDRAM['Config']['supplementary_cache_options']['redis_timeout'];
+    $CIDRAM['Cache']->PDOdsn = $CIDRAM['Config']['supplementary_cache_options']['pdo_dsn'];
+    $CIDRAM['Cache']->PDOusername = $CIDRAM['Config']['supplementary_cache_options']['pdo_username'];
+    $CIDRAM['Cache']->PDOpassword = $CIDRAM['Config']['supplementary_cache_options']['pdo_password'];
+    $CIDRAM['Cache']->FFDefault = $CIDRAM['Vault'] . 'cache.dat';
 
-    /** Prepare the cache. */
-    if (!$CIDRAM['Cache'] = $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'cache.dat')) {
-        if ($Safety) {
+    if (!$CIDRAM['Cache']->connect()) {
+        if ($CIDRAM['Cache']->Using === 'FF') {
+            header('Content-Type: text/plain');
+            die('[CIDRAM] ' . $CIDRAM['L10N']->getString('Error_WriteCache'));
+        } else {
             $Status = $CIDRAM['GetStatusHTTP'](503);
             header('HTTP/1.0 503 ' . $Status);
             header('HTTP/1.1 503 ' . $Status);
@@ -1304,37 +1292,57 @@ $CIDRAM['InitialiseCache'] = function () use (&$CIDRAM) {
             header('Retry-After: 3600');
             die;
         }
-        $Handle = fopen($CIDRAM['Vault'] . 'cache.dat', 'w');
-        $CIDRAM['Cache'] = ['Counter' => 0];
-        fwrite($Handle, serialize($CIDRAM['Cache']));
-        fclose($Handle);
-        if (!file_exists($CIDRAM['Vault'] . 'cache.dat')) {
-            header('Content-Type: text/plain');
-            die('[CIDRAM] ' . $CIDRAM['L10N']->getString('Error_WriteCache'));
-        }
-    } else {
-        $CIDRAM['Cache'] = unserialize($CIDRAM['Cache']);
-        if (!isset($CIDRAM['Cache']['Counter'])) {
-            $CIDRAM['CacheModified'] = true;
-            $CIDRAM['Cache']['Counter'] = 0;
+    }
+
+    $CIDRAM['AtCacheDestroyUnset'] = [];
+    $CIDRAM['InitialiseCacheSection']('Tracking');
+    $CIDRAM['InitialiseCacheSection']('DNS-Forwards');
+    $CIDRAM['InitialiseCacheSection']('DNS-Reverses');
+
+};
+
+/**
+ * Initialise a cache section.
+ *
+ * @param string $SectionName The name of the cache section.
+ */
+$CIDRAM['InitialiseCacheSection'] = function ($SectionName) use (&$CIDRAM) {
+
+    /** Safety. */
+    if (empty($SectionName) || !is_string($SectionName) || isset($CIDRAM[$SectionName], $CIDRAM[$SectionName . '-Modified'])) {
+        return;
+    }
+
+    /** Mark for unsetting at cache destruction. */
+    $CIDRAM['AtCacheDestroyUnset'][] = $SectionName;
+
+    /** Section modified flag. */
+    $CIDRAM[$SectionName . '-Modified'] = false;
+
+    /** Fetch currently stored and clear expired entries. */
+    if ($CIDRAM[$SectionName] = $CIDRAM['Cache']->getEntry($SectionName)) {
+        if ($CIDRAM['Cache']->clearExpired($CIDRAM[$SectionName])) {
+            $CIDRAM[$SectionName . '-Modified'] = true;
         }
     }
 
-    /** Engage safety mechanism. */
-    if (!$Safety) {
-        $Handle = fopen($CIDRAM['Vault'] . 'cache.dat.safety', 'w');
-        fwrite($Handle, '.');
-        fclose($Handle);
+    /** Set default empty array. */
+    if ($CIDRAM[$SectionName] === false) {
+        $CIDRAM[$SectionName] = [];
+        $CIDRAM[$SectionName . '-Modified'] = true;
     }
 
-    /** Clear outdated IP tracking. */
-    $CIDRAM['ClearFromCache']('Tracking');
+};
 
-    /** Clear outdated DNS forward lookups. */
-    $CIDRAM['ClearFromCache']('DNS-Forwards');
-
-    /** Clear outdated DNS reverse lookups. */
-    $CIDRAM['ClearFromCache']('DNS-Reverses');
+/** Destroy cache object and some related values. */
+$CIDRAM['DestroyCacheObject'] = function () use (&$CIDRAM) {
+    foreach ($CIDRAM['AtCacheDestroyUnset'] as $DestroyThis) {
+        if ($CIDRAM[$DestroyThis . '-Modified']) {
+            $CIDRAM['Cache']->setEntry($DestroyThis, $CIDRAM[$DestroyThis], 0);
+        }
+        unset($CIDRAM[$DestroyThis . '-Modified'], $CIDRAM[$DestroyThis]);
+    }
+    unset($CIDRAM['AtCacheDestroyUnset'], $CIDRAM['Cache']);
 };
 
 /**

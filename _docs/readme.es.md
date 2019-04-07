@@ -76,7 +76,7 @@ O esto en el archivo `.htaccess`:
 
 #### 2.2 INSTALACIÓN PARA WORDPRESS
 
-Si desea utilizar CIDRAM con WordPress, puede ignorar todas las instrucciones anteriores. [CIDRAM está registrado como un plugin con la base de datos de plugins de WordPress](https://wordpress.org/plugins/cidram/), y puede instalar CIDRAM directamente desde el panel de plugins. Puede instalarlo de la misma manera que cualquier otro plugin, y no se requieren pasos adicionales. Al igual que con los otros métodos de instalación, puede personalizar su instalación modificando el contenido del archivo `config.ini` o utilizando el interfaz de usuario en la página de configuración. Si habilita el interfaz de CIDRAM y actualiza CIDRAM usando la página de actualizacione del interfaz, esto se sincronizará automáticamente con la información de la versión plugin mostrada en el panel de plugins.
+Si desea utilizar CIDRAM con WordPress, puede ignorar todas las instrucciones anteriores. [CIDRAM está registrado como un plugin con la base de datos de plugins de WordPress](https://wordpress.org/plugins/cidram/), y puede instalar CIDRAM directamente desde el panel de plugins. Puede instalarlo de la misma manera que cualquier otro plugin, y no se requieren pasos adicionales. Al igual que con los otros métodos de instalación, puede personalizar su instalación modificando el contenido del archivo `config.ini` o utilizando la interfaz de usuario en la página de configuración. Si habilita la interfaz de CIDRAM y actualiza CIDRAM usando la página de actualizacione de la interfaz, esto se sincronizará automáticamente con la información de la versión plugin mostrada en el panel de plugins.
 
 *¡Advertencia: Actualizar CIDRAM a través del panel de plugins da como resultado una instalación limpia! Si ha personalizado su instalación (cambiado su configuración, módulos instalados, etc), estas personalizaciones se perderán al actualizar a través del panel de plugins! Los archivos de registro también se perderán al actualizar a través del panel de plugins! Para conservar los archivos de registro y las personalizaciones, actualice a través de la página de actualizaciones del front-end de CIDRAM.*
 
@@ -161,6 +161,7 @@ Archivo | Descripción
 /vault/ | Vault directorio (contiene varios archivos).
 /vault/classes/ | Directorio de clases. Contiene varias clases utilizadas por CIDRAM.
 /vault/classes/Maikuolan/ | Directorio de clases. Contiene varias clases utilizadas por CIDRAM.
+/vault/classes/Maikuolan/Cache.php | Un controlador de caché simple y unificado.
 /vault/classes/Maikuolan/ComplexStringHandler.php | Controlador para cadenas complejas.
 /vault/classes/Maikuolan/L10N.php | Controlador para L10N.
 /vault/classes/Maikuolan/YAML.php | Controlador para YAML.
@@ -277,7 +278,6 @@ Archivo | Descripción
 /vault/.travis.yml | Utilizado por Travis CI para pruebas (no se requiere para usar la script).
 /vault/auxiliary.yaml | Contiene reglas auxiliares. No incluido en el paquete. Generado por la página de reglas auxiliares.
 /vault/cache.dat | Cache data.
-/vault/cache.dat.safety | Generado como un mecanismo de seguridad cuando es necesario.
 /vault/cidramblocklists.dat | Archivo de metadatos para las listas de bloqueo opcionales de Macmathan; Utilizado por la página de actualizaciones del front-end.
 /vault/cli.php | Controlador para el CLI modo.
 /vault/components.dat | Archivo de metadatos de componentes; Utilizado por la página de actualizaciones del front-end.
@@ -328,11 +328,11 @@ Archivo | Descripción
 ### 6. <a name="SECTION6"></a>OPCIONES DE CONFIGURACIÓN
 La siguiente es una lista de variables encuentran en la `config.ini` configuración archivo de CIDRAM, junto con una descripción de sus propósito y función.
 
-[general](#general-categoría) | [signatures](#signatures-categoría) | [recaptcha](#recaptcha-categoría) | [legal](#legal-categoría) | [template_data](#template_data-categoría)
-:--|:--|:--|:--|:--
-[logfile](#logfile)<br />[logfileApache](#logfileapache)<br />[logfileSerialized](#logfileserialized)<br />[truncate](#truncate)<br />[log_rotation_limit](#log_rotation_limit)<br />[log_rotation_action](#log_rotation_action)<br />[timezone](#timezone)<br />[timeOffset](#timeoffset)<br />[timeFormat](#timeformat)<br />[ipaddr](#ipaddr)<br />[forbid_on_block](#forbid_on_block)<br />[silent_mode](#silent_mode)<br />[lang](#lang)<br />[numbers](#numbers)<br />[emailaddr](#emailaddr)<br />[emailaddr_display_style](#emailaddr_display_style)<br />[disable_cli](#disable_cli)<br />[disable_frontend](#disable_frontend)<br />[max_login_attempts](#max_login_attempts)<br />[FrontEndLog](#frontendlog)<br />[ban_override](#ban_override)<br />[log_banned_ips](#log_banned_ips)<br />[default_dns](#default_dns)<br />[search_engine_verification](#search_engine_verification)<br />[social_media_verification](#social_media_verification)<br />[protect_frontend](#protect_frontend)<br />[disable_webfonts](#disable_webfonts)<br />[maintenance_mode](#maintenance_mode)<br />[default_algo](#default_algo)<br />[statistics](#statistics)<br />[force_hostname_lookup](#force_hostname_lookup)<br />[allow_gethostbyaddr_lookup](#allow_gethostbyaddr_lookup)<br />[hide_version](#hide_version)<br />[empty_fields](#empty_fields)<br /> | [ipv4](#ipv4)<br />[ipv6](#ipv6)<br />[block_cloud](#block_cloud)<br />[block_bogons](#block_bogons)<br />[block_generic](#block_generic)<br />[block_legal](#block_legal)<br />[block_malware](#block_malware)<br />[block_proxies](#block_proxies)<br />[block_spam](#block_spam)<br />[modules](#modules)<br />[default_tracktime](#default_tracktime)<br />[infraction_limit](#infraction_limit)<br />[track_mode](#track_mode)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> | [usemode](#usemode)<br />[lockip](#lockip)<br />[lockuser](#lockuser)<br />[sitekey](#sitekey)<br />[secret](#secret)<br />[expiry](#expiry)<br />[logfile](#logfile)<br />[signature_limit](#signature_limit)<br />[api](#api)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> | [pseudonymise_ip_addresses](#pseudonymise_ip_addresses)<br />[omit_ip](#omit_ip)<br />[omit_hostname](#omit_hostname)<br />[omit_ua](#omit_ua)<br />[privacy_policy](#privacy_policy)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> | [theme](#theme)<br />[Magnification](#magnification)<br />[css_url](#css_url)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-[PHPMailer](#phpmailer-categoría) | [rate_limiting](#rate_limiting-categoría)
-[EventLog](#eventlog)<br />[SkipAuthProcess](#skipauthprocess)<br />[Enable2FA](#enable2fa)<br />[Host](#host)<br />[Port](#port)<br />[SMTPSecure](#smtpsecure)<br />[SMTPAuth](#smtpauth)<br />[Username](#username)<br />[Password](#password)<br />[setFromAddress](#setfromaddress)<br />[setFromName](#setfromname)<br />[addReplyToAddress](#addreplytoaddress)<br />[addReplyToName](#addreplytoname)<br /> | [max_bandwidth](#max_bandwidth)<br />[max_requests](#max_requests)<br />[precision_ipv4](#precision_ipv4)<br />[precision_ipv6](#precision_ipv6)<br />[allowance_period](#allowance_period)<br /><br /><br /><br /><br /><br /><br /><br /><br />
+[general](#general-categoría) | [signatures](#signatures-categoría) | [recaptcha](#recaptcha-categoría) | [legal](#legal-categoría)
+:--|:--|:--|:--
+[logfile](#logfile)<br />[logfileApache](#logfileapache)<br />[logfileSerialized](#logfileserialized)<br />[truncate](#truncate)<br />[log_rotation_limit](#log_rotation_limit)<br />[log_rotation_action](#log_rotation_action)<br />[timezone](#timezone)<br />[timeOffset](#timeoffset)<br />[timeFormat](#timeformat)<br />[ipaddr](#ipaddr)<br />[forbid_on_block](#forbid_on_block)<br />[silent_mode](#silent_mode)<br />[lang](#lang)<br />[numbers](#numbers)<br />[emailaddr](#emailaddr)<br />[emailaddr_display_style](#emailaddr_display_style)<br />[disable_cli](#disable_cli)<br />[disable_frontend](#disable_frontend)<br />[max_login_attempts](#max_login_attempts)<br />[FrontEndLog](#frontendlog)<br />[ban_override](#ban_override)<br />[log_banned_ips](#log_banned_ips)<br />[default_dns](#default_dns)<br />[search_engine_verification](#search_engine_verification)<br />[social_media_verification](#social_media_verification)<br />[protect_frontend](#protect_frontend)<br />[disable_webfonts](#disable_webfonts)<br />[maintenance_mode](#maintenance_mode)<br />[default_algo](#default_algo)<br />[statistics](#statistics)<br />[force_hostname_lookup](#force_hostname_lookup)<br />[allow_gethostbyaddr_lookup](#allow_gethostbyaddr_lookup)<br />[hide_version](#hide_version)<br />[empty_fields](#empty_fields)<br /> | [ipv4](#ipv4)<br />[ipv6](#ipv6)<br />[block_cloud](#block_cloud)<br />[block_bogons](#block_bogons)<br />[block_generic](#block_generic)<br />[block_legal](#block_legal)<br />[block_malware](#block_malware)<br />[block_proxies](#block_proxies)<br />[block_spam](#block_spam)<br />[modules](#modules)<br />[default_tracktime](#default_tracktime)<br />[infraction_limit](#infraction_limit)<br />[track_mode](#track_mode)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> | [usemode](#usemode)<br />[lockip](#lockip)<br />[lockuser](#lockuser)<br />[sitekey](#sitekey)<br />[secret](#secret)<br />[expiry](#expiry)<br />[logfile](#logfile)<br />[signature_limit](#signature_limit)<br />[api](#api)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> | [pseudonymise_ip_addresses](#pseudonymise_ip_addresses)<br />[omit_ip](#omit_ip)<br />[omit_hostname](#omit_hostname)<br />[omit_ua](#omit_ua)<br />[privacy_policy](#privacy_policy)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+[template_data](#template_data-categoría) | [PHPMailer](#phpmailer-categoría) | [rate_limiting](#rate_limiting-categoría) | [supplementary_cache_options](#supplementary_cache_options-categoría)
+[theme](#theme)<br />[Magnification](#magnification)<br />[css_url](#css_url)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> | [EventLog](#eventlog)<br />[SkipAuthProcess](#skipauthprocess)<br />[Enable2FA](#enable2fa)<br />[Host](#host)<br />[Port](#port)<br />[SMTPSecure](#smtpsecure)<br />[SMTPAuth](#smtpauth)<br />[Username](#username)<br />[Password](#password)<br />[setFromAddress](#setfromaddress)<br />[setFromName](#setfromname)<br />[addReplyToAddress](#addreplytoaddress)<br />[addReplyToName](#addreplytoname)<br /> | [max_bandwidth](#max_bandwidth)<br />[max_requests](#max_requests)<br />[precision_ipv4](#precision_ipv4)<br />[precision_ipv6](#precision_ipv6)<br />[allowance_period](#allowance_period)<br /><br /><br /><br /><br /><br /><br /><br /><br /> | [enable_apcu](#enable_apcu)<br />[enable_memcached](#enable_memcached)<br />[enable_redis](#enable_redis)<br />[enable_pdo](#enable_pdo)<br />[memcached_host](#memcached_host)<br />[memcached_port](#memcached_port)<br />[redis_host](#redis_host)<br />[redis_port](#redis_port)<br />[redis_timeout](#redis_timeout)<br />[pdo_dsn](#pdo_dsn)<br />[pdo_username](#pdo_username)<br />[pdo_password](#pdo_password)<br /><br />
 
 #### "general" (Categoría)
 General configuración para CIDRAM.
@@ -362,7 +362,7 @@ General configuración para CIDRAM.
 ##### "log_rotation_action"
 - La rotación de registros limita la cantidad de archivos de registro que deberían existir al mismo tiempo. Cuando se crean nuevos archivos de registro, si la cantidad total de archivos de registro excede el límite especificado, se realizará la acción especificada. Puede especificar la acción deseada aquí. Delete = Eliminar los archivos de registro más antiguos, hasta que el límite ya no se exceda. Archive = Primero archiva, y luego eliminar los archivos de registro más antiguos, hasta que el límite ya no se exceda.
 
-*Clarificacion tecnica: En este contexto, "más antiguo" significa modificado menos recientemente.*
+*Clarificación técnica: En este contexto, "más antiguo" significa modificado menos recientemente.*
 
 ##### "timezone"
 - Esto se usa para especificar qué zona horaria debe usar CIDRAM para las operaciones de fecha/hora. Si no lo necesitas, ignóralo. Los valores posibles están determinados por PHP. Generalmente, se recomienda en lugar para ajustar la directiva de zona horaria en el archivo `php.ini`, pero a veces (por ejemplo, cuando se trabaja con proveedores de hosting compartido limitados) esto no siempre es posible hacer, y entonces, esta opción se proporciona aquí.
@@ -711,6 +711,47 @@ Si cree que no necesita para CIDRAM imponer la limitación de tarifa para su sit
 ##### "allowance_period"
 - El número de horas para monitorear el uso. Predefinido = 0.
 
+#### "supplementary_cache_options" (Categoría)
+Opciones de caché complementarias.
+
+*Actualmente, esto es extremadamente experimental, y podría no comportarse como se esperaba! Por el momento, recomiendo ignorarlo.*
+
+##### "enable_apcu"
+- Especifica si se intenta utilizar APCu para el almacenamiento en caché. Predefinido = False.
+
+##### "enable_memcached"
+- Especifica si se intenta utilizar Memcached para el almacenamiento en caché. Predefinido = False.
+
+##### "enable_redis"
+- Especifica si se intenta utilizar Redis para el almacenamiento en caché. Predefinido = False.
+
+##### "enable_pdo"
+- Especifica si se intenta utilizar PDO para el almacenamiento en caché. Predefinido = False.
+
+##### "memcached_host"
+- Valor del host de Memcached. Predefinido = "localhost".
+
+##### "memcached_port"
+- Valor del puerto de Memcached. Predefinido = "11211".
+
+##### "redis_host"
+- Valor del host de Redis. Predefinido = "localhost".
+
+##### "redis_port"
+- Valor del puerto de Redis. Predefinido = "6379".
+
+##### "redis_timeout"
+- Valor de tiempo de espera de Redis. Predefinido = "2.5".
+
+##### "pdo_dsn"
+- Valor del DSN de PDO. Predefinido = "`mysql:dbname=cidram;host=localhost;port=3306`".
+
+##### "pdo_username"
+- Nombre del usuario de PDO.
+
+##### "pdo_password"
+- Contraseña de PDO.
+
 ---
 
 
@@ -874,7 +915,7 @@ Defers to: preferred_signatures.dat
 
 Una forma simplificada de YAML markup se puede utilizar en los archivos de firmas con el propósito de definir los comportamientos y configuraciones específicas para las secciones de firmas individuales. Esto puede ser útil si desea que el valor de sus directivas de configuración diferir sobre la base de las firmas individuales y las secciones de firmas (por ejemplo; si desea proporcionar una dirección de correo electrónico para los tickets de soporte para cualquier usuario bloqueadas por una firma particular, pero no desea proporcionar una dirección de correo electrónico para tickets de soporte para usuarios bloqueados por cualquier otro firmas; si desea por algunas firmas específicas para desencadenar una redirección de página; si desea marcar una sección de firmas para usar con reCAPTCHA; si desea registrar los intentos de acceso bloqueados para archivos separados sobre la base de firmas individuales y/o secciones de firmas).
 
-El uso de YAML markup en los archivos de firma es totalmente opcional (es decir, usted puede utilizarlo si desea hacerlo, pero no está obligado a hacerlo), y es capaz de aprovechar la mayoria (pero no todos) de las directivas de configuración.
+El uso de YAML markup en los archivos de firma es totalmente opcional (es decir, usted puede utilizarlo si desea hacerlo, pero no está obligado a hacerlo), y es capaz de aprovechar la mayoría (pero no todos) de las directivas de configuración.
 
 Nota: La implementación de YAML markup en CIDRAM es muy simplista y muy limitado; Se tiene la intención de cumplir con los requisitos específicos para CIDRAM de una manera que tiene la familiaridad de YAML markup, pero no se sigue o cumple con las especificaciones oficiales (y por lo tanto no se comportará de la misma manera que las implementaciones más a fondo en otros lugares, y puede no ser apropiado para otros proyectos en otros lugares).
 
@@ -1350,7 +1391,7 @@ Un evento de bloque, conectado a un archivo de registro legible por humanos, nor
 
 ```
 ID: 1234
-Guión Versión: CIDRAM v1.6.0
+Guion Versión: CIDRAM v1.6.0
 Fecha/Hora: Day, dd Mon 20xx hh:ii:ss +0000
 Dirección IP: x.x.x.x
 Nombre de host: dns.hostname.tld
@@ -1519,4 +1560,4 @@ Alternativamente, hay una breve descripción (no autoritativa) de GDPR/DSGVO dis
 ---
 
 
-Última Actualización: 26 Marzo de 2019 (2019.03.26).
+Última Actualización: 7 Abril de 2019 (2019.04.07).

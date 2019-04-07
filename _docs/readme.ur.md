@@ -163,6 +163,7 @@
 &nbsp; <div dir="rtl" style="display:inline">والٹ ڈائریکٹری (مختلف فائلوں پر مشتمل ہے).</div> | /vault/
 &nbsp; <div dir="rtl" style="display:inline">کلاس ڈائرکٹری. CIDRAM کی طرف سے استعمال کیا جاتا مختلف طبقات پر مشتمل ہے.</div> | /vault/classes/
 &nbsp; <div dir="rtl" style="display:inline">کلاس ڈائرکٹری. CIDRAM کی طرف سے استعمال کیا جاتا مختلف طبقات پر مشتمل ہے.</div> | /vault/classes/Maikuolan/
+&nbsp; <div dir="rtl" style="display:inline">ایک سادہ، متحد کیش ہینڈلر.</div> | /vault/classes/Maikuolan/Cache.php
 &nbsp; <div dir="rtl" style="display:inline">کمپلیکس تار ہینڈلر.</div> | /vault/classes/Maikuolan/ComplexStringHandler.php
 &nbsp; <div dir="rtl" style="display:inline">L10N ہینڈلر.</div> | /vault/classes/Maikuolan/L10N.php
 &nbsp; <div dir="rtl" style="display:inline">YAML ہینڈلر.</div> | /vault/classes/Maikuolan/YAML.php
@@ -279,7 +280,6 @@
 &nbsp; <div dir="rtl" style="display:inline">جانچ کے لئے Travis CI کی طرف سے استعمال کیا جاتا ہے (رسم الخط کی مناسب تقریب کے لئے ضروری نہیں).</div> | /vault/.travis.yml
 &nbsp; <div dir="rtl" style="display:inline">معاون قوانین پر مشتمل ہے. پیکیج میں شامل نہیں. معاون قواعد کے صفحے کی طرف سے پیدا.</div> | /vault/auxiliary.yaml
 &nbsp; <div dir="rtl" style="display:inline">کیشے کے اعداد و شمار.</div> | /vault/cache.dat
-&nbsp; <div dir="rtl" style="display:inline">جب ضرورت ہو تو ایک حفاظتی میکانزم کی حیثیت سے پیدا.</div> | /vault/cache.dat.safety
 &nbsp; <div dir="rtl" style="display:inline">Macmathan طرف سے فراہم اختیاری ملک blocklists سے متعلق معلومات پر مشتمل ہے؛ سامنے کے آخر میں اپ ڈیٹس صفحہ کے ذریعہ استعمال کیا جاتا ہے.</div> | /vault/cidramblocklists.dat
 &nbsp; <div dir="rtl" style="display:inline">CLI ہینڈلر.</div> | /vault/cli.php
 &nbsp; <div dir="rtl" style="display:inline">جزو میٹا ڈیٹا فائل؛ سامنے کے آخر میں اپ ڈیٹس صفحہ کے ذریعہ استعمال کیا جاتا ہے.</div> | /vault/components.dat
@@ -330,11 +330,11 @@
 ### <div dir="rtl">٦. <a name="SECTION6"></a>ترتیب کے اختیارات</div>
 <div dir="rtl">ندرجہ ذیل ان ہدایات کے مقصد کی وضاحت کے ساتھ ساتھ، <code dir="ltr">"config.ini"</code> ترتیب فائل میں CIDRAM کو دستیاب ہدایات کی ایک فہرست ہے.<br /><br /></div>
 
-[general](#general-قسم) | [signatures](#signatures-قسم) | [recaptcha](#recaptcha-قسم) | [legal](#legal-قسم) | [template_data](#template_data-قسم)
---:|--:|--:|--:|--:
-[logfile](#logfile)<br />[logfileApache](#logfileapache)<br />[logfileSerialized](#logfileserialized)<br />[truncate](#truncate)<br />[log_rotation_limit](#log_rotation_limit)<br />[log_rotation_action](#log_rotation_action)<br />[timezone](#timezone)<br />[timeOffset](#timeoffset)<br />[timeFormat](#timeformat)<br />[ipaddr](#ipaddr)<br />[forbid_on_block](#forbid_on_block)<br />[silent_mode](#silent_mode)<br />[lang](#lang)<br />[numbers](#numbers)<br />[emailaddr](#emailaddr)<br />[emailaddr_display_style](#emailaddr_display_style)<br />[disable_cli](#disable_cli)<br />[disable_frontend](#disable_frontend)<br />[max_login_attempts](#max_login_attempts)<br />[FrontEndLog](#frontendlog)<br />[ban_override](#ban_override)<br />[log_banned_ips](#log_banned_ips)<br />[default_dns](#default_dns)<br />[search_engine_verification](#search_engine_verification)<br />[social_media_verification](#social_media_verification)<br />[protect_frontend](#protect_frontend)<br />[disable_webfonts](#disable_webfonts)<br />[maintenance_mode](#maintenance_mode)<br />[default_algo](#default_algo)<br />[statistics](#statistics)<br />[force_hostname_lookup](#force_hostname_lookup)<br />[allow_gethostbyaddr_lookup](#allow_gethostbyaddr_lookup)<br />[hide_version](#hide_version)<br />[empty_fields](#empty_fields)<br /> | [ipv4](#ipv4)<br />[ipv6](#ipv6)<br />[block_cloud](#block_cloud)<br />[block_bogons](#block_bogons)<br />[block_generic](#block_generic)<br />[block_legal](#block_legal)<br />[block_malware](#block_malware)<br />[block_proxies](#block_proxies)<br />[block_spam](#block_spam)<br />[modules](#modules)<br />[default_tracktime](#default_tracktime)<br />[infraction_limit](#infraction_limit)<br />[track_mode](#track_mode)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> | [usemode](#usemode)<br />[lockip](#lockip)<br />[lockuser](#lockuser)<br />[sitekey](#sitekey)<br />[secret](#secret)<br />[expiry](#expiry)<br />[logfile](#logfile)<br />[signature_limit](#signature_limit)<br />[api](#api)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> | [pseudonymise_ip_addresses](#pseudonymise_ip_addresses)<br />[omit_ip](#omit_ip)<br />[omit_hostname](#omit_hostname)<br />[omit_ua](#omit_ua)<br />[privacy_policy](#privacy_policy)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> | [theme](#theme)<br />[Magnification](#magnification)<br />[css_url](#css_url)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-[PHPMailer](#phpmailer-قسم) | [rate_limiting](#rate_limiting-قسم)
-[EventLog](#eventlog)<br />[SkipAuthProcess](#skipauthprocess)<br />[Enable2FA](#enable2fa)<br />[Host](#host)<br />[Port](#port)<br />[SMTPSecure](#smtpsecure)<br />[SMTPAuth](#smtpauth)<br />[Username](#username)<br />[Password](#password)<br />[setFromAddress](#setfromaddress)<br />[setFromName](#setfromname)<br />[addReplyToAddress](#addreplytoaddress)<br />[addReplyToName](#addreplytoname)<br /> | [max_bandwidth](#max_bandwidth)<br />[max_requests](#max_requests)<br />[precision_ipv4](#precision_ipv4)<br />[precision_ipv6](#precision_ipv6)<br />[allowance_period](#allowance_period)<br /><br /><br /><br /><br /><br /><br /><br /><br />
+[general](#general-قسم) | [signatures](#signatures-قسم) | [recaptcha](#recaptcha-قسم) | [legal](#legal-قسم)
+--:|--:|--:|--:
+[logfile](#logfile)<br />[logfileApache](#logfileapache)<br />[logfileSerialized](#logfileserialized)<br />[truncate](#truncate)<br />[log_rotation_limit](#log_rotation_limit)<br />[log_rotation_action](#log_rotation_action)<br />[timezone](#timezone)<br />[timeOffset](#timeoffset)<br />[timeFormat](#timeformat)<br />[ipaddr](#ipaddr)<br />[forbid_on_block](#forbid_on_block)<br />[silent_mode](#silent_mode)<br />[lang](#lang)<br />[numbers](#numbers)<br />[emailaddr](#emailaddr)<br />[emailaddr_display_style](#emailaddr_display_style)<br />[disable_cli](#disable_cli)<br />[disable_frontend](#disable_frontend)<br />[max_login_attempts](#max_login_attempts)<br />[FrontEndLog](#frontendlog)<br />[ban_override](#ban_override)<br />[log_banned_ips](#log_banned_ips)<br />[default_dns](#default_dns)<br />[search_engine_verification](#search_engine_verification)<br />[social_media_verification](#social_media_verification)<br />[protect_frontend](#protect_frontend)<br />[disable_webfonts](#disable_webfonts)<br />[maintenance_mode](#maintenance_mode)<br />[default_algo](#default_algo)<br />[statistics](#statistics)<br />[force_hostname_lookup](#force_hostname_lookup)<br />[allow_gethostbyaddr_lookup](#allow_gethostbyaddr_lookup)<br />[hide_version](#hide_version)<br />[empty_fields](#empty_fields)<br /> | [ipv4](#ipv4)<br />[ipv6](#ipv6)<br />[block_cloud](#block_cloud)<br />[block_bogons](#block_bogons)<br />[block_generic](#block_generic)<br />[block_legal](#block_legal)<br />[block_malware](#block_malware)<br />[block_proxies](#block_proxies)<br />[block_spam](#block_spam)<br />[modules](#modules)<br />[default_tracktime](#default_tracktime)<br />[infraction_limit](#infraction_limit)<br />[track_mode](#track_mode)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> | [usemode](#usemode)<br />[lockip](#lockip)<br />[lockuser](#lockuser)<br />[sitekey](#sitekey)<br />[secret](#secret)<br />[expiry](#expiry)<br />[logfile](#logfile)<br />[signature_limit](#signature_limit)<br />[api](#api)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> | [pseudonymise_ip_addresses](#pseudonymise_ip_addresses)<br />[omit_ip](#omit_ip)<br />[omit_hostname](#omit_hostname)<br />[omit_ua](#omit_ua)<br />[privacy_policy](#privacy_policy)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+[template_data](#template_data-قسم) | [PHPMailer](#phpmailer-قسم) | [rate_limiting](#rate_limiting-قسم) | [supplementary_cache_options](#supplementary_cache_options-قسم)
+[theme](#theme)<br />[Magnification](#magnification)<br />[css_url](#css_url)<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> | [EventLog](#eventlog)<br />[SkipAuthProcess](#skipauthprocess)<br />[Enable2FA](#enable2fa)<br />[Host](#host)<br />[Port](#port)<br />[SMTPSecure](#smtpsecure)<br />[SMTPAuth](#smtpauth)<br />[Username](#username)<br />[Password](#password)<br />[setFromAddress](#setfromaddress)<br />[setFromName](#setfromname)<br />[addReplyToAddress](#addreplytoaddress)<br />[addReplyToName](#addreplytoname)<br /> | [max_bandwidth](#max_bandwidth)<br />[max_requests](#max_requests)<br />[precision_ipv4](#precision_ipv4)<br />[precision_ipv6](#precision_ipv6)<br />[allowance_period](#allowance_period)<br /><br /><br /><br /><br /><br /><br /><br /><br /> | [enable_apcu](#enable_apcu)<br />[enable_memcached](#enable_memcached)<br />[enable_redis](#enable_redis)<br />[enable_pdo](#enable_pdo)<br />[memcached_host](#memcached_host)<br />[memcached_port](#memcached_port)<br />[redis_host](#redis_host)<br />[redis_port](#redis_port)<br />[redis_timeout](#redis_timeout)<br />[pdo_dsn](#pdo_dsn)<br />[pdo_username](#pdo_username)<br />[pdo_password](#pdo_password)<br /><br />
 
 #### <div dir="rtl">"general" (قسم)<br /></div>
 <div dir="rtl">جنرل CIDRAM کنفیگریشن.<br /><br /></div>
@@ -849,7 +849,7 @@
  <li>ای میل بھیجنے پر جواب کا نام.</li>
 </ul></div>
 
-#### <div dir="rtl">"rate_limiting" (التصنيف)<br /></div>
+#### <div dir="rtl">"rate_limiting" (قسم)<br /></div>
 <div dir="rtl">شرح محدود کرنے کے اختیارات.<br /><br /></div>
 
 <div dir="rtl">یہ خصوصیت بہت سے صارفین کی درخواستوں کے سبب CIDRAM پر لاگو کیا گیا تھا. البتہ، کیونکہ یہ خاص طور پر CIDRAM کے مطلوبہ مقاصد سے متعلق نہیں ہے، زیادہ سے زیادہ امکانات زیادہ سے زیادہ صارفین کی طرف سے ضرورت نہیں ہوگی. اگر آپ کی حد محدود کرنے کے لئے CIDRAM کی ضرورت ہو تو، یہ خصوصیت آپ کے لئے مفید ثابت ہوسکتا ہے. تاہم، کچھ ضروری چیزیں جنہیں آپ پر غور کرنا چاہئے:</div>
@@ -887,6 +887,71 @@
 ##### <div dir="rtl">"allowance_period"<br /></div>
 <div dir="rtl"><ul>
  <li>استعمال کی نگرانی کے لئے گھنٹوں کی تعداد. پہلے سے طے شدہ = 0.</li>
+</ul></div>
+
+#### <div dir="rtl">"supplementary_cache_options" (قسم)<br /></div>
+<div dir="rtl">اضافی کیشنگ کے اختیارات.<br /><br /></div>
+
+<div dir="rtl">فی الحال، یہ انتہائی تجرباتی ہے، اور ممکنہ طور پر متوقع نہیں ہوسکتا ہے! اس وقت میں، میں اسے نظر انداز کرنے کی سفارش کرتا ہوں.<br /><br /></div>
+
+##### <div dir="rtl">"enable_apcu"<br /></div>
+<div dir="rtl"><ul>
+ <li>اس کی وضاحت کرتا ہے کہ کیش کے لئے APCu استعمال کرنا چاہے. پہلے سے طے شدہ = False (جھوٹی).</li>
+</ul></div>
+
+##### <div dir="rtl">"enable_memcached"<br /></div>
+<div dir="rtl"><ul>
+ <li>اس کی وضاحت کرتا ہے کہ کیش کے لئے Memcached استعمال کرنا چاہے. پہلے سے طے شدہ = False (جھوٹی).</li>
+</ul></div>
+
+##### <div dir="rtl">"enable_redis"<br /></div>
+<div dir="rtl"><ul>
+ <li>اس کی وضاحت کرتا ہے کہ کیش کے لئے Redis استعمال کرنا چاہے. پہلے سے طے شدہ = False (جھوٹی).</li>
+</ul></div>
+
+##### <div dir="rtl">"enable_pdo"<br /></div>
+<div dir="rtl"><ul>
+ <li>اس کی وضاحت کرتا ہے کہ کیش کے لئے PDO استعمال کرنا چاہے. پہلے سے طے شدہ = False (جھوٹی).</li>
+</ul></div>
+
+##### <div dir="rtl">"memcached_host"<br /></div>
+<div dir="rtl"><ul>
+ <li>Memcached کے میزبان نام. پہلے سے طے شدہ = "localhost".</li>
+</ul></div>
+
+##### <div dir="rtl">"memcached_port"<br /></div>
+<div dir="rtl"><ul>
+ <li>Memcached کے لئے بندرگاہ. پہلے سے طے شدہ = "11211".</li>
+</ul></div>
+
+##### <div dir="rtl">"redis_host"<br /></div>
+<div dir="rtl"><ul>
+ <li>Redis کے میزبان نام. پہلے سے طے شدہ = "localhost".</li>
+</ul></div>
+
+##### <div dir="rtl">"redis_port"<br /></div>
+<div dir="rtl"><ul>
+ <li>Redis کے لئے بندرگاہ. پہلے سے طے شدہ = "6379".</li>
+</ul></div>
+
+##### <div dir="rtl">"redis_timeout"<br /></div>
+<div dir="rtl"><ul>
+ <li>Redis کے لئے ٹائم آؤٹ. پہلے سے طے شدہ = "2.5".</li>
+</ul></div>
+
+##### <div dir="rtl">"pdo_dsn"<br /></div>
+<div dir="rtl"><ul>
+ <li>PDO کے لئے DSN. پہلے سے طے شدہ = "<code dir="ltr">mysql:dbname=cidram;host=localhost;port=3306</code>".</li>
+</ul></div>
+
+##### <div dir="rtl">"pdo_username"<br /></div>
+<div dir="rtl"><ul>
+ <li>PDO کے لئے صارف نام.</li>
+</ul></div>
+
+##### <div dir="rtl">"pdo_password"<br /></div>
+<div dir="rtl"><ul>
+ <li>PDO کیلئے پاس ورڈ.</li>
 </ul></div>
 
 ---
@@ -1533,9 +1598,9 @@ IP | آپریٹر
 
 #### <div dir="rtl">١١.٣ لاگ<br /><br /></div>
 
-Logging is an important part of CIDRAM for a number of reasons. It may be difficult to diagnose and resolve false positives when the block events that cause them aren't logged. Without logging block events, it may be difficult to ascertain how well CIDRAM performs, and it may be difficult to determine where its shortcomings, and what changes may be required to its configuration or signatures, in order for it to continue functioning as intended. Regardless, logging mightn't be desirable for all users, and remains entirely optional. In CIDRAM, logging is disabled by default. To enable it, CIDRAM must be configured accordingly.
+<div dir="rtl">لاگنگ کئی وجوہات کے لئے CIDRAM کا ایک اہم حصہ ہے. اس کے بغیر، غلطیوں کو تلاش کرنے اور مسائل کی تشخیص مشکل ہوسکتی ہے. اگر ہمارے پاس یہ معلومات نہیں ہے اور کسی چیز کو تبدیل کرنے کی ضرورت ہے، یہ جاننا مشکل ہوسکتا ہے کہ بالکل وہی چیز جو تبدیل کرنے کی ضرورت ہے. اس کے باوجود، ہر کوئی اس معلومات کو ریکارڈ نہیں کرنا چاہتا، لہذا یہ اختیاری رہتا ہے. CIDRAM میں، یہ ڈیفالٹ کی طرف سے معذور ہے. اسے فعال کرنے کے لئے، CIDRAM کے مطابق ترتیب دیا جانا چاہئے.<br /><br /></div>
 
-Additionally, whether logging is legally permissible, and to the extent that it is legally permissible (e.g., the types of information that may be logged, for how long, and under what circumstances), may vary, depending on jurisdiction and on the context where CIDRAM is implemented (e.g., whether you're operating as an individual, as a corporate entity, and whether on a commercial or non-commercial basis). It may therefore be useful for you to read through this section carefully.
+<div dir="rtl">یہ یاد رکھنا چاہیے کہ لاگنگ کے لئے عین مطابق قانونی ضروریات دائرہ کاروں کے درمیان مختلف ہو سکتی ہیں. عملدرآمد کا تناظر بھی متعلقہ ہو سکتا ہے (مثال کے طور پر، ایک فرد کے طور پر، ایک کارپوریٹ ادارے کے طور پر، تجارتی بنیاد پر، غیر تجارتی بنیاد پر، وغیرہ). اس کی وجہ سے، یہاں کی معلومات آپ کے لئے مفید ہوسکتی ہے.<br /><br /></div>
 
 <div dir="rtl">بہت سے مختلف قسم کی معلومات درج کی جا سکتی ہیں، مختلف وجوہات کے لئے.<br /><br /></div>
 
@@ -1564,24 +1629,27 @@ IP پتہ: <code dir="ltr">x.x.x.x</code>
 reCAPTCHA کے ریاست: فعال کردہ.
 </pre>
 
-That same block event, logged to an Apache-style logfile, would look something like this:
+<div dir="rtl">وہی چیز، جو اپاچی کے انداز میں درج ہوئی ہے، اس کی طرح لگتا ہے:<br /><br /></div>
 
 ```
 x.x.x.x - - [Day, dd Mon 20xx hh:ii:ss +0000] "GET /index.php HTTP/1.1" 200 xxxx "-" "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36"
 ```
 
-A logged block event typically includes the following information:
-- An ID number referencing the block event.
-- The version of CIDRAM currently in use.
-- The date and time that the block event occurred.
-- The IP address of the blocked request.
-- The hostname of the IP address of the blocked request (when available).
-- The number of signatures triggered by the request.
-- References to the signatures triggered.
-- References to the reasons for the block event and some basic, related debug information.
-- The user agent of the blocked request (i.e., how the requesting entity identified itself to the request).
-- A reconstruction of the identifier for the resource originally requested.
-- The reCAPTCHA state for the current request (when relevant).
+<div dir="rtl">ریکارڈ شدہ تقریب عام طور پر اس معلومات میں شامل ہے:<br /></div>
+<div dir="rtl"><ul>
+ <li>ایونٹ کے لئے ایک ID نمبر.</li>
+ <li>CIDRAM کا ورژن فی الحال استعمال کیا جاتا ہے.</li>
+ <li>واقعہ پیش کی تاریخ اور وقت.</li>
+ <li>درخواست سے IP ایڈریس.</li>
+ <li>درخواست کے میزبان نام (جب دستیاب ہو).</li>
+ <li>دستخط کی تعداد متاثر.</li>
+ <li>ان دستخط کے بارے میں مزید تفصیلات.</li>
+ <li>ایونٹ اور متعلقہ معلومات کی وجوہات.</li>
+ <li>درخواست کے لئے "صارف ایجنٹ".</li>
+ <li>درخواست کردہ وسائل کے لئے شناخت.</li>
+ <li>درخواست کے لئے reCAPTCHA کی حیثیت (جب متعلقہ).</li>
+ <li></li>
+</ul></div>
 
 <div dir="rtl">متعلقہ ترتیب ہدایات:<br /></div>
 <div dir="rtl"><ul>
@@ -1742,4 +1810,4 @@ x.x.x.x - Day, dd Mon 20xx hh:ii:ss +0000 - "admin" - لاگ ان.
 ---
 
 
-<div dir="rtl">آخری تازہ کاری: 26 مارچ 2019 (2019.03.26).</div>
+<div dir="rtl">آخری تازہ کاری: 7 اپریل 2019 (2019.04.07).</div>

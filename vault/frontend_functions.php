@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2019.03.29).
+ * This file: Front-end functions file (last modified: 2019.04.07).
  */
 
 /**
@@ -50,7 +50,7 @@ $CIDRAM['Congruency'] = function ($Base, $Model, $Validate = false) use (&$CIDRA
  * @return bool Success or failure.
  */
 $CIDRAM['Delete'] = function ($File) use (&$CIDRAM) {
-    if ((substr($File, 0, 1) === '"' && substr($File, -1) === '"') || (substr($File, 0, 1) === "'" && substr($File, -1) === "'")) {
+    if (preg_match('~^(\'.*\'|".*")$~', $File)) {
         $File = substr($File, 1, -1);
     }
     if (!empty($File) && file_exists($CIDRAM['Vault'] . $File) && $CIDRAM['Traverse']($File)) {
@@ -121,23 +121,6 @@ $CIDRAM['In'] = function ($Query) use (&$CIDRAM) {
 };
 
 /**
- * Can be used to delete some files via the front-end.
- *
- * @param string $File The file to delete.
- * @return bool Success or failure.
- */
-$CIDRAM['Delete'] = function ($File) use (&$CIDRAM) {
-    if (!empty($File) && file_exists($CIDRAM['Vault'] . $File) && $CIDRAM['Traverse']($File)) {
-        if (!unlink($CIDRAM['Vault'] . $File)) {
-            return false;
-        }
-        $CIDRAM['DeleteDirectory']($File);
-        return true;
-    }
-    return false;
-};
-
-/**
  * Adds integer values; Returns zero if the sum total is negative or if any
  * contained values aren't integers, and otherwise, returns the sum total.
  */
@@ -175,7 +158,15 @@ $CIDRAM['FormatFilesize'] = function (&$Filesize) use (&$CIDRAM) {
  * @param bool $Rebuild Flag indicating to rebuild cache file.
  * @param string $Entry Name of the cache entry to be deleted.
  */
-$CIDRAM['FECacheRemove'] = function (&$Source, &$Rebuild, $Entry) {
+$CIDRAM['FECacheRemove'] = function (&$Source, &$Rebuild, $Entry) use (&$CIDRAM) {
+
+    /** Override if using a different preferred caching mechanism. */
+    if ($CIDRAM['Cache']->Using && $CIDRAM['Cache']->Using !== 'FF') {
+        $CIDRAM['Cache']->deleteEntry($Entry);
+        return;
+    }
+
+    /** Default process. */
     $Entry64 = base64_encode($Entry);
     while (($EntryPos = strpos($Source, "\n" . $Entry64 . ',')) !== false) {
         $EoL = strpos($Source, "\n", $EntryPos + 1);
@@ -197,6 +188,14 @@ $CIDRAM['FECacheRemove'] = function (&$Source, &$Rebuild, $Entry) {
  * @param int $Expires When should the cache entry expire (be deleted).
  */
 $CIDRAM['FECacheAdd'] = function (&$Source, &$Rebuild, $Entry, $Data, $Expires) use (&$CIDRAM) {
+
+    /** Override if using a different preferred caching mechanism. */
+    if ($CIDRAM['Cache']->Using && $CIDRAM['Cache']->Using !== 'FF') {
+        $CIDRAM['Cache']->setEntry($Entry, $Data, $Expires - $CIDRAM['Now']);
+        return;
+    }
+
+    /** Default process. */
     $CIDRAM['FECacheRemove']($Source, $Rebuild, $Entry);
     $Expires = (int)$Expires;
     $NewLine = base64_encode($Entry) . ',' . base64_encode($Data) . ',' . $Expires . "\n";
@@ -212,7 +211,14 @@ $CIDRAM['FECacheAdd'] = function (&$Source, &$Rebuild, $Entry, $Data, $Expires) 
  * @param string $Entry Name of the cache entry to get.
  * return string|bool Returned cache entry data (or false on failure).
  */
-$CIDRAM['FECacheGet'] = function (&$Source, $Entry) {
+$CIDRAM['FECacheGet'] = function (&$Source, $Entry) use (&$CIDRAM) {
+
+    /** Override if using a different preferred caching mechanism. */
+    if ($CIDRAM['Cache']->Using && $CIDRAM['Cache']->Using !== 'FF') {
+        return $CIDRAM['Cache']->getEntry($Entry);
+    }
+
+    /** Default process. */
     $Entry = base64_encode($Entry);
     $EntryPos = strpos($Source, "\n" . $Entry . ',');
     if ($EntryPos !== false) {
@@ -816,9 +822,6 @@ $CIDRAM['ComponentFunctionUpdatePrep'] = function () use (&$CIDRAM) {
  */
 $CIDRAM['SimulateBlockEvent'] = function ($Addr, $Modules = false, $Aux = false) use (&$CIDRAM) {
 
-    /** Initialise cache. */
-    $CIDRAM['InitialiseCache']();
-
     /** Reset bypass flags (needed to prevent falsing due to search engine verification). */
     $CIDRAM['ResetBypassFlags']();
 
@@ -889,13 +892,6 @@ $CIDRAM['SimulateBlockEvent'] = function ($Addr, $Modules = false, $Aux = false)
     /** Auxiliary rule checks. */
     if ($Aux) {
         $CIDRAM['Aux']();
-    }
-
-    /** Update the cache. */
-    if ($CIDRAM['CacheModified']) {
-        $Handle = fopen($CIDRAM['Vault'] . 'cache.dat', 'w');
-        fwrite($Handle, serialize($CIDRAM['Cache']));
-        fclose($Handle);
     }
 
 };
@@ -1200,7 +1196,7 @@ $CIDRAM['FE_Executor'] = function ($Closures) use (&$CIDRAM) {
         }
     }
     foreach ($CIDRAM['FE_Executor_Files'] as $Name => $Data) {
-        if (isset($Data['New']) && isset($Data['Old']) && $Data['New'] !== $Data['Old'] && file_exists($CIDRAM['Vault'] . $Name) && is_writable($CIDRAM['Vault'] . $Name)) {
+        if (isset($Data['New']) && isset($Data['Old']) && $Data['New'] !== $Data['Old'] && is_file($CIDRAM['Vault'] . $Name) && is_writable($CIDRAM['Vault'] . $Name)) {
             $Handle = fopen($CIDRAM['Vault'] . $Name, 'w');
             fwrite($Handle, $Data['New']);
             fclose($Handle);
@@ -1326,7 +1322,7 @@ $CIDRAM['Number_L10N_JS'] = function () use (&$CIDRAM) {
  * @param string $Selector Switch selector variable.
  * @param bool $StateModified Determines whether the filter state has been modified.
  * @param string $Redirect Reconstructed path to redirect to when the state changes.
- * @param string $Options Recontructed filter controls.
+ * @param string $Options Reconstructed filter controls.
  */
 $CIDRAM['FilterSwitch'] = function ($Switches, $Selector, &$StateModified, &$Redirect, &$Options) use (&$CIDRAM) {
     foreach ($Switches as $Switch) {
@@ -2952,9 +2948,10 @@ $CIDRAM['GenerateOptions'] = function ($Options, $Trim = '') {
  * @param array $Arr The array to convert from.
  * @param string $DeleteKey The key to use for async calls to delete a cache entry.
  * @param int $Depth Current cache entry list depth.
+ * @param string $ParentKey An optional key of the parent data source.
  * @return string The generated clickable list.
  */
-$CIDRAM['ArrayToClickableList'] = function ($Arr = [], $DeleteKey = '', $Depth = 0) use (&$CIDRAM) {
+$CIDRAM['ArrayToClickableList'] = function ($Arr = [], $DeleteKey = '', $Depth = 0, $ParentKey = '') use (&$CIDRAM) {
     $Output = '';
     $Count = count($Arr);
     $Prefix = substr($DeleteKey, 0, 2) === 'fe' ? 'FE' : '';
@@ -2967,7 +2964,11 @@ $CIDRAM['ArrayToClickableList'] = function ($Arr = [], $DeleteKey = '', $Depth =
                 if ($Try !== null) {
                     $Value = $Try;
                 }
-            } elseif (preg_match('~\.ya?ml$~i', $Key) || substr($Value, 0, 4) === "---\n") {
+            } elseif (
+                preg_match('~\.ya?ml$~i', $Key) ||
+                (preg_match('~^(?:Data|\d+)$~', $Key) && preg_match('~\.ya?ml$~i', $ParentKey)) ||
+                substr($Value, 0, 4) === "---\n"
+            ) {
                 $Try = new \Maikuolan\Common\YAML();
                 if ($Try->process($Value, $Try->Data) && !empty($Try->Data)) {
                     $Value = $Try->Data;
@@ -2977,8 +2978,18 @@ $CIDRAM['ArrayToClickableList'] = function ($Arr = [], $DeleteKey = '', $Depth =
             }
         }
         if (is_array($Value)) {
+            if ($Depth === 0) {
+                $SizeField = $CIDRAM['L10N']->getString('field_size') ?: 'Size';
+                $Size = isset($Value['Data']) && is_string($Value['Data']) ? strlen($Value['Data']) : (
+                    isset($Value[0]) && is_string($Value[0]) ? strlen($Value[0]) : false
+                );
+                if ($Size !== false) {
+                    $CIDRAM['FormatFilesize']($Size);
+                    $Value[$SizeField] = $Size;
+                }
+            }
             $Output .= '<span class="comCat" style="cursor:pointer"><code class="s">' . str_replace(['<', '>'], ['&lt;', '&gt;'], $Key) . '</code></span>' . $Delete . '<ul class="comSub">';
-            $Output .= $CIDRAM['ArrayToClickableList']($Value, $DeleteKey, $Depth + 1);
+            $Output .= $CIDRAM['ArrayToClickableList']($Value, $DeleteKey, $Depth + 1, $Key);
             $Output .= '</ul>';
         } else {
             if ($Key === 'Time' && preg_match('~^\d+$~', $Value)) {

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Japanese language data for the front-end (last modified: 2019.03.26).
+# This file: Japanese language data for the front-end (last modified: 2019.04.07).
 ##/
 
 Extended Description Bypasses: "メインパッケージに通常含まれているデフォルト・シグネチャ・バイパス。"
@@ -131,6 +131,18 @@ config_signatures_ipv4: "ＩＰｖ４シグネチャ・ファイルのリスト�
 config_signatures_ipv6: "ＩＰｖ６シグネチャ・ファイルのリスト（CIDRAMは、​これを使用します）。​これは、​カンマで区切られています。​必要に応じて、​項目を追加することができます。"
 config_signatures_modules: "ＩＰｖ４/ＩＰｖ６シグネチャをチェックした後にロードするモジュールファイルのリスト。​これは、​カンマで区切られています。"
 config_signatures_track_mode: "違反はいつカウントされるべきですか？​False = ＩＰがモジュールによってブロックされている場合。 True = なんでもの理由でＩＰがブロックされた場合。"
+config_supplementary_cache_options_enable_apcu: "キャッシュに「APCu」を使用するかどうかを指定します。 Default/デフォルルト = False。"
+config_supplementary_cache_options_enable_memcached: "キャッシュに「Memcached」を使用するかどうかを指定します。 Default/デフォルルト = False。"
+config_supplementary_cache_options_enable_pdo: "キャッシュに「PDO」を使用するかどうかを指定します。 Default/デフォルルト = False。"
+config_supplementary_cache_options_enable_redis: "キャッシュに「Redis」を使用するかどうかを指定します。 Default/デフォルルト = False。"
+config_supplementary_cache_options_memcached_host: "Memcachedのホスト値。 Default/デフォルルト = 「localhost」。"
+config_supplementary_cache_options_memcached_port: "Memcachedのポート値。 Default/デフォルルト = 「11211」。"
+config_supplementary_cache_options_pdo_dsn: "PDOのDSN値。 Default/デフォルルト = 「mysql:dbname=cidram;host=localhost;port=3306」。"
+config_supplementary_cache_options_pdo_password: "PDOのパスワード。"
+config_supplementary_cache_options_pdo_username: "PDOのユーザー名。"
+config_supplementary_cache_options_redis_host: "Redisのホスト値。 Default/デフォルルト = 「localhost」。"
+config_supplementary_cache_options_redis_port: "Redisのポート値。 Default/デフォルルト = 「6379」。"
+config_supplementary_cache_options_redis_timeout: "Redisのタイムアウト値。 Default/デフォルルト = 「2.5」。"
 config_template_data_Magnification: "フォントの倍率。​Default/デフォルルト = １。"
 config_template_data_css_url: "カスタムテーマのＣＳＳファイルＵＲＬ。"
 config_template_data_theme: "CIDRAMに使用するデフォルトテーマ。"

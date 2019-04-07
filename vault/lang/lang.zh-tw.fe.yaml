@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (traditional) language data for the front-end (last modified: 2019.03.26).
+# This file: Chinese (traditional) language data for the front-end (last modified: 2019.04.07).
 ##/
 
 Extended Description Bypasses: "標準簽名旁路文件通常包括在主包。"
@@ -123,7 +123,7 @@ config_signatures_block_bogons: "阻止bogon(『ㄅㄡㄍㄛㄋ』)/martian（�
 config_signatures_block_cloud: "阻止CIDR認定為屬於虛擬主機或云服務嗎？​如果您操作一個API服務從您的網站或如果您預計其他網站連接到您的網站，​這應該被設置為『false』（假）。​如果不，​這應該被設置為『true』（真）。"
 config_signatures_block_generic: "阻止CIDR一般建議對於黑名單嗎？​這包括簽名不標記為的一章节任何其他更具體簽名類別。"
 config_signatures_block_legal: "阻止CIDR因為法律義務嗎？​這個指令通常不應該有任何作用，因為CIDRAM默認情況下不會將任何CIDR與『法律義務』相關聯，​但它作為一個額外的控制措施存在，以利於任何可能因法律原因而存在的自定義簽名文件或模塊。"
-config_signatures_block_malware: "阻止與惡意軟件相關的IP？​這包括C＆C服務器，受感染的機器，涉及惡意軟件分發的機器，等等。"
+config_signatures_block_malware: "阻止與惡意軟件相關的IP？​這包括C&C服務器，受感染的機器，涉及惡意軟件分發的機器，等等。"
 config_signatures_block_proxies: "阻止CIDR認定為屬於代理服務或VPN嗎？​如果您需要該用戶可以訪問您的網站從代理服務和VPN，​這應該被設置為『false』（假）。​除此以外，​如果您不需要代理服務或VPN，​這應該被設置為『true』（真）作為一個方式以提高安全性。"
 config_signatures_block_spam: "阻止高風險垃圾郵件CIDR嗎？​除非您遇到問題當這樣做，​通常，​這應該被設置為『true』（真）。"
 config_signatures_default_tracktime: "多少秒鐘來跟踪模塊禁止的IP。​標準 = 604800 （1週）。"
@@ -132,6 +132,18 @@ config_signatures_ipv4: "列表的IPv4簽名文件，​CIDRAM應該嘗試使用
 config_signatures_ipv6: "列表的IPv6簽名文件，​CIDRAM應該嘗試使用，​用逗號分隔。"
 config_signatures_modules: "模塊文件要加載的列表以後檢查簽名IPv4/IPv6，​用逗號分隔。"
 config_signatures_track_mode: "何時應該記錄違規？​False（假）=當IP被模塊阻止時。​True（真）=當IP由於任何原因阻止時。"
+config_supplementary_cache_options_enable_apcu: "指定是否嘗試使用APCu進行緩存。​默認 = False。"
+config_supplementary_cache_options_enable_memcached: "指定是否嘗試使用Memcached進行緩存。​默認 = False。"
+config_supplementary_cache_options_enable_pdo: "指定是否嘗試使用PDO進行緩存。​默認 = False。"
+config_supplementary_cache_options_enable_redis: "指定是否嘗試使用Redis進行緩存。​默認 = False。"
+config_supplementary_cache_options_memcached_host: "Memcached主機值。​默認 = 『localhost』。"
+config_supplementary_cache_options_memcached_port: "Memcached端口值。​默認 = 『11211』。"
+config_supplementary_cache_options_pdo_dsn: "PDO DSN值。​默認 = 『mysql:dbname=cidram;host=localhost;port=3306』。"
+config_supplementary_cache_options_pdo_password: "PDO密碼。"
+config_supplementary_cache_options_pdo_username: "PDO用戶名。"
+config_supplementary_cache_options_redis_host: "Redis主機值。​默認 = 『localhost』。"
+config_supplementary_cache_options_redis_port: "Redis端口值。​默認 = 『6379』。"
+config_supplementary_cache_options_redis_timeout: "Redis超時值。​默認 = 『2.5』。"
 config_template_data_Magnification: "字體放大。​標準 = 1。"
 config_template_data_css_url: "自定義主題的CSS文件URL。"
 config_template_data_theme: "用於CIDRAM的默認主題。"

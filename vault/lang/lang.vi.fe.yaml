@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Vietnamese language data for the front-end (last modified: 2019.03.26).
+# This file: Vietnamese language data for the front-end (last modified: 2019.04.07).
 ##/
 
 Extended Description IPv4: "Chặn dịch vụ điện toán đám mây không mong muốn và thiết bị đầu cuối không phải con người."
@@ -131,6 +131,18 @@ config_signatures_ipv4: "Một danh sách các tập tin chữ ký IPv4 mà CIDR
 config_signatures_ipv6: "Một danh sách các tập tin chữ ký IPv6 mà CIDRAM nên cố gắng để phân tích, ngăn cách bởi dấu phẩy."
 config_signatures_modules: "Một danh sách các tập tin mô-đun để tải sau khi kiểm tra các chữ ký IPv4/IPv6, ngăn cách bởi dấu phẩy."
 config_signatures_track_mode: "Khi vi phạm cần được tính? False = Khi IP bị chặn bởi các mô-đun. True = Khi IP bị chặn vì lý do bất kỳ."
+config_supplementary_cache_options_enable_apcu: "Điều này xác định có nên thử sử dụng APCu để lưu trữ không. Mặc định = False."
+config_supplementary_cache_options_enable_memcached: "Điều này xác định có nên thử sử dụng Memcached để lưu trữ không. Mặc định = False."
+config_supplementary_cache_options_enable_pdo: "Điều này xác định có nên thử sử dụng PDO để lưu trữ không. Mặc định = False."
+config_supplementary_cache_options_enable_redis: "Điều này xác định có nên thử sử dụng Redis để lưu trữ không. Mặc định = False."
+config_supplementary_cache_options_memcached_host: "Giá trị máy chủ Memcached. Mặc định = "localhost"."
+config_supplementary_cache_options_memcached_port: "Giá trị cổng Memcached. Mặc định = "11211"."
+config_supplementary_cache_options_pdo_dsn: "Giá trị DSN PDO. Mặc định = "mysql:dbname=cidram;host=localhost;port=3306"."
+config_supplementary_cache_options_pdo_password: "Mật khẩu PDO."
+config_supplementary_cache_options_pdo_username: "Tên người dùng PDO."
+config_supplementary_cache_options_redis_host: "Giá trị máy chủ Redis. Mặc định = "localhost"."
+config_supplementary_cache_options_redis_port: "Giá trị cổng Redis. Mặc định = "6379"."
+config_supplementary_cache_options_redis_timeout: "Giá trị thời gian chờ Redis. Mặc định = "2.5"."
 config_template_data_Magnification: "Phóng to chữ. Mặc định = 1."
 config_template_data_css_url: "URL của tập tin CSS cho các chủ đề tùy chỉnh."
 config_template_data_theme: "Chủ đề mặc định để sử dụng cho CIDRAM."

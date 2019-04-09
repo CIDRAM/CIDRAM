@@ -1,8 +1,8 @@
 # IPv4 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv4_isps.dat
 
-# Version: 2019.96.507
-# Last modified: 2019.04.07
+# Version: 2019.98.613
+# Last modified: 2019.04.09
 
 
 # ---
@@ -2693,9 +2693,9 @@ recaptcha:
 
 
 # ASN 23860 ("Alliance Broadband Services Pvt. Ltd").
-# %Listed, abuseat.org (CBL-Listed): 21.78%.
-# Stop Forum Spam (SFS) listings: 1,012.
-# Updated: 2018.10.25
+# %Listed, abuseat.org (CBL-Listed): 28.11%.
+# Stop Forum Spam (SFS) listings: 342.
+# Updated: 2019.04.09
 
 43.252.248.0/22 Deny Spam
 45.64.220.0/22 Deny Spam
@@ -2719,15 +2719,17 @@ recaptcha:
 103.66.8.0/23 Deny Spam
 103.66.11.0/24 Deny Spam
 103.70.46.0/24 Deny Spam
+103.75.42.0/24 Deny Spam
 103.77.44.0/22 Deny Spam
 103.77.136.0/22 Deny Spam
 103.78.16.0/22 Deny Spam
-103.87.140.0/22 Deny Spam
+103.87.140.0/24 Deny Spam
+103.87.142.0/23 Deny Spam
 103.88.216.0/22 Deny Spam
 103.94.136.0/22 Deny Spam
 103.101.212.0/23 Deny Spam
 103.102.116.0/23 Deny Spam
-103.119.58.0/23 Deny Spam
+103.119.56.0/22 Deny Spam
 103.129.2.0/24 Deny Spam
 103.215.52.0/22 Deny Spam
 103.215.224.0/22 Deny Spam
@@ -2741,7 +2743,7 @@ recaptcha:
 103.242.188.0/22 Deny Spam
 103.242.196.0/22 Deny Spam
 103.249.4.0/22 Deny Spam
-103.249.37.0/24 Deny Spam
+103.249.36.0/22 Deny Spam
 103.252.164.0/22 Deny Spam
 115.187.32.0/19 Deny Spam
 116.193.128.0/20 Deny Spam
@@ -3183,7 +3185,7 @@ Tag: MAROSNET
 # ASNs 7552, 24086, 37620, 133606, 262210, 327799, 327885 ("Viettel Corporation").
 # Legit/real human endpoint ISP with high levels of spam/abuse reports listed at various DBs. List in the "ignore.dat"
 # file if the signature section causes any problems.
-# Updated: 2018.10.25
+# Updated: 2019.04.09
 
 154.73.104.0/22 Deny Spam
 154.117.192.0/18 Deny Spam
@@ -3202,26 +3204,55 @@ Origin: TL
 169.255.184.0/22 Deny Spam
 196.249.64.0/18 Deny Spam
 Origin: TZ
-104.111.100.0/22 Deny Spam
-104.111.104.0/23 Deny Spam
-104.111.112.0/20 Deny Spam
-104.111.128.0/20 Deny Spam
+100.140.0.0/17 Deny Spam
+100.145.0.0/16 Deny Spam
+100.146.0.0/15 Deny Spam
+100.148.0.0/17 Deny Spam
+100.149.0.0/17 Deny Spam
+100.153.0.0/16 Deny Spam
+100.154.0.0/15 Deny Spam
 Origin: US
 27.64.0.0/12 Deny Spam
 103.10.212.0/22 Deny Spam
 103.84.76.0/22 Deny Spam
 103.241.248.0/22 Deny Spam
+113.61.109.0/24 Deny Spam
 115.72.0.0/13 Deny Spam
-116.96.0.0/13 Deny Spam
-116.104.0.0/14 Deny Spam
+116.96.0.0/14 Deny Spam
+116.100.0.0/18 Deny Spam
+116.100.72.0/21 Deny Spam
+116.100.80.0/20 Deny Spam
+116.100.96.0/19 Deny Spam
+116.100.128.0/17 Deny Spam
+116.101.0.0/16 Deny Spam
+116.102.0.0/15 Deny Spam
+116.104.0.0/17 Deny Spam
+116.104.128.0/19 Deny Spam
+116.104.160.0/22 Deny Spam
+116.104.168.0/21 Deny Spam
+116.104.176.0/20 Deny Spam
+116.104.192.0/18 Deny Spam
+116.105.0.0/16 Deny Spam
+116.106.0.0/20 Deny Spam
+116.106.20.0/22 Deny Spam
+116.106.24.0/21 Deny Spam
+116.106.32.0/19 Deny Spam
+116.106.64.0/18 Deny Spam
+116.106.128.0/17 Deny Spam
+116.107.0.0/16 Deny Spam
 116.108.0.0/15 Deny Spam
 116.110.0.0/17 Deny Spam
 116.110.128.0/18 Deny Spam
 116.110.192.0/19 Deny Spam
-116.110.224.0/22 Deny Spam
 116.110.232.0/21 Deny Spam
 116.110.240.0/20 Deny Spam
-116.111.0.0/16 Deny Spam
+116.111.0.0/17 Deny Spam
+116.111.128.0/18 Deny Spam
+116.111.192.0/19 Deny Spam
+116.111.224.0/20 Deny Spam
+116.111.240.0/23 Deny Spam
+116.111.244.0/22 Deny Spam
+116.111.248.0/21 Deny Spam
 117.0.0.0/13 Deny Spam
 125.212.128.0/17 Deny Spam
 125.214.0.0/18 Deny Spam

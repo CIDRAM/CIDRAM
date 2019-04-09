@@ -1,18 +1,20 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6.dat
 
-# Version: 2019.96.507
-# Last modified: 2019.04.07
+# Version: 2019.98.613
+# Last modified: 2019.04.09
 
 
 # ---
 # ASN 46844 ("Sharktech").
-# %Listed, Google Malware Dashboard: 1.00%.
-# Stop Forum Spam (SFS) listings: 197.
-# Updated: 2018.10.25
+# %Listed, Google Malware Dashboard: 0.68%.
+# Stop Forum Spam (SFS) listings: 482.
+# Updated: 2019.04.09
 
 2a00:c2c0:ffff::/48 Deny Cloud
 Origin: NL
+2a0c:c181::/32 Deny Cloud
+Origin: RU
 2610:150::/32 Deny Cloud
 Origin: US
 Tag: Sharktech
@@ -157,7 +159,7 @@ Tag: New Dream Network
 # ASN 33182 ("HostDime.com, Inc").
 # %Listed, Google Malware Dashboard: 0.38%.
 # Stop Forum Spam (SFS) listings: 506.
-# Updated: 2018.10.25
+# Updated: 2018.10.25 / Checked: 2019.04.09
 
 2804:9c4::/32 Deny Cloud
 2804:cf8:8000::/48 Deny Cloud
@@ -4368,13 +4370,16 @@ Tag: DediPower
 
 
 # ASNs 12637, 20522 ("Seeweb S.r.l").
-# %Listed, Google Malware Dashboard: 0.15% (AS12637).
-# Stop Forum Spam (SFS) listings: 20 (AS12637).
-# Updated: 2018.10.25
+# %Listed, Google Malware Dashboard: 0.12% (AS12637).
+# Stop Forum Spam (SFS) listings: 34 (AS12637).
+# Updated: 2019.04.09
 
 2a0b:fd40::/29 Deny Cloud
 Origin: CH
 2a05:b6c0::/31 Deny Cloud
+2a09:dd80::/31 Deny Cloud
+2a09:dd82::/32 Deny Cloud
+2a0b:ee40::/32 Deny Cloud
 Origin: HR
 2001:4b78::/29 Deny Cloud
 2a04:2700::/29 Deny Cloud
@@ -4382,7 +4387,7 @@ Origin: HR
 2a0d:b000::/29 Deny Cloud
 Origin: IT
 2a02:e9::/32 Deny Cloud
-2a02:ea::/32 Deny Cloud
+2a02:ea::/31 Deny Cloud
 Origin: SI
 Tag: Seeweb S.r.l
 

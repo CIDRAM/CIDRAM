@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_isps.dat
 
-# Version: 2019.98.613
-# Last modified: 2019.04.09
+# Version: 2019.103.371
+# Last modified: 2019.04.14
 
 
 # ---
@@ -175,9 +175,9 @@ Tag: INFOBOX
 
 
 # ASN 49335 ("Mir Telematiki Ltd").
-# %Listed, Google Malware Dashboard: 0.04%.
-# Stop Forum Spam (SFS) listings: 2,812.
-# Updated: 2019.03.03
+# %Listed, Google Malware Dashboard: 0.02%.
+# Stop Forum Spam (SFS) listings: 2,822.
+# Updated: 2019.03.03 / Checked: 2019.04.14
 
 2a0c:46c0::/29 Deny Spam
 Origin: DK
@@ -291,10 +291,10 @@ Tag: Trend Micro
 # hacktools, scrapers, etc). Those whose websites anticipate human internet traffic from Israel should include this
 # section in their "ignore.dat" file, or else risk false positives by way of blocking innocents connecting from Israel.
 # Those whose don't anticipate any human internet traffic from Israel to their websites can safely block this ASN.
-# %Listed, Google Malware Dashboard: 0.29%.
-# %Listed, abuseat.org (CBL-Listed): 0.35%.
-# Stop Forum Spam (SFS) listings: 9,844.
-# Updated: 2018.03.08 / Checked: 2018.11.13
+# %Listed, Google Malware Dashboard: 0.22%.
+# %Listed, abuseat.org (CBL-Listed): 0.34%.
+# Stop Forum Spam (SFS) listings: 9,150.
+# Updated: 2018.03.08 / Checked: 2019.04.14
 
 2a02:26f0:8000::/48 Deny Generic
 Origin: EU
@@ -1232,31 +1232,28 @@ recaptcha:
 
 
 # ASNs 9498, 9730, 24560, 37140, 45514, 45517, 45609, 132045 ("Bharti Airtel").
-# Interlaces with numerous providers and contains a large portion of Indian human access endpoints; Would rather not
-# be including this section here due to the high risk of false positives, but the significant number of spamming events
-# originating from CIDRs tied these ASNs, plus the presence of these ASNs in numerous worst offenders lists and
-# blacklists, are not considerations that can be easily ignored at this point in time. The section is marked for use
-# with reCAPTCHA due to the risk of false positives, and I would encourage any CIDRAM users expecting to receive any
-# traffic from India, to list this section in their "ignore.dat" file as a means of minimising the potential impact of
-# false positives. A balanced approach for those that may expect some such traffic, but not a lot of it, would be to
-# not ignore this section, but to ensure that the reCAPTCHA feature is enabled in their configuration.
-# - When updating, be careful about bogons (remove them prior to aggregating)!
+# Interlaces with numerous providers and contains a significant number of human endpoints in India, but is also a
+# significant source of spam. Marked for use with reCAPTCHA to reduce the risk of false positives. I strongly advise
+# any CIDRAM users that expect traffic from India to list this section in their "ignore.dat" file.
 # - When updating, before aggregating, remove these (they don't belong to Bharti and shouldn't be being announced)!
-#   - 155.144.144.0/24 (AU), 193.239.116.0/22 (NL), anything from Singapore (SG), Ireland (IE), United States (US).
-# Updated: 2018.11.08
+#   - 155.144.144.0/24 (AU), anything from Singapore (SG), Ireland (IE), United States (US).
+# Updated: 2019.04.14
 
 2401:4900:50::/48 Deny Spam
 2401:4900:808::/45 Deny Spam
 2401:4900:810::/44 Deny Spam
 2401:4900:840::/44 Deny Spam
 2401:4900:880::/44 Deny Spam
-2401:4900:900::/40 Deny Spam
-2401:4900:a00::/40 Deny Spam
+2401:4900:900::/41 Deny Spam
+2401:4900:980::/44 Deny Spam
+2401:4900:a00::/44 Deny Spam
+2401:4900:a80::/41 Deny Spam
 2401:4900:b00::/41 Deny Spam
 2401:4900:b80::/43 Deny Spam
-2401:4900:ba0::/44 Deny Spam
 2401:4900:c00::/43 Deny Spam
-2401:4900:c80::/41 Deny Spam
+2401:4900:c80::/44 Deny Spam
+2401:4900:d00::/41 Deny Spam
+2401:4900:ea0::/43 Deny Spam
 2401:4900:1000::/41 Deny Spam
 2401:4900:1100::/41 Deny Spam
 2401:4900:1200::/42 Deny Spam
@@ -1266,34 +1263,58 @@ recaptcha:
 2401:4900:1710::/44 Deny Spam
 2401:4900:1720::/43 Deny Spam
 2401:4900:1740::/45 Deny Spam
-2401:4900:1800::/39 Deny Spam
+2401:4900:1800::/41 Deny Spam
+2401:4900:1880::/44 Deny Spam
+2401:4900:18e0::/43 Deny Spam
+2401:4900:1900::/44 Deny Spam
+2401:4900:1910::/45 Deny Spam
+2401:4900:1918::/46 Deny Spam
+2401:4900:1980::/41 Deny Spam
+2401:4900:1b30::/44 Deny Spam
+2401:4900:1b80::/44 Deny Spam
+2401:4900:1b90::/45 Deny Spam
+2401:4900:1b98::/46 Deny Spam
 2401:4900:1d00::/41 Deny Spam
+2401:4900:1f20::/48 Deny Spam
+2401:4900:1f26::/48 Deny Spam
 2401:4900:2000::/48 Deny Spam
 2401:4900:2080::/48 Deny Spam
 2401:4900:2100::/46 Deny Spam
 2401:4900:2104::/47 Deny Spam
+2401:4900:2150::/44 Deny Spam
+2401:4900:2160::/44 Deny Spam
 2401:4900:2180::/46 Deny Spam
 2401:4900:2184::/47 Deny Spam
 2401:4900:22f0::/44 Deny Spam
 2401:4900:2300::/43 Deny Spam
+2401:4900:2320::/48 Deny Spam
 2401:4900:2340::/43 Deny Spam
 2401:4900:2500::/46 Deny Spam
 2401:4900:2504::/47 Deny Spam
 2401:4900:2580::/41 Deny Spam
 2401:4900:2600::/39 Deny Spam
-2401:4900:2e80::/41 Deny Spam
+2401:4900:2e80::/43 Deny Spam
+2401:4900:2ec0::/42 Deny Spam
 2401:4900:2f00::/40 Deny Spam
 2401:4900:3050::/44 Deny Spam
 2401:4900:30b0::/44 Deny Spam
 2401:4900:30c0::/43 Deny Spam
+2401:4900:30e0::/44 Deny Spam
 2401:4900:3100::/42 Deny Spam
 2401:4900:3140::/43 Deny Spam
+2401:4900:3300::/45 Deny Spam
+2401:4900:3308::/46 Deny Spam
+2401:4900:3310::/44 Deny Spam
 2401:4900:35f0::/44 Deny Spam
 2401:4900:3600::/43 Deny Spam
 2401:4900:3620::/44 Deny Spam
 2401:4900:3670::/44 Deny Spam
 2401:4900:3680::/42 Deny Spam
 2401:4900:36c0::/44 Deny Spam
+2401:4900:3820::/44 Deny Spam
+2401:4900:4020::/44 Deny Spam
+2401:4900:4040::/44 Deny Spam
+2401:4900:40a0::/43 Deny Spam
 2403:c00:3::/48 Deny Spam
 2404:a800::/32 Deny Spam
 2405:a700:14::/47 Deny Spam
@@ -1680,10 +1701,10 @@ recaptcha:
 
 
 # ASN 8708 ("RCS & RDS SA").
-# %Listed, Google Malware Dashboard: 2.76%.
-# %Listed, abuseat.org (CBL-Listed): 0.88%.
-# Stop Forum Spam (SFS) listings: 2,026.
-# Updated: 2018.06.24 / Checked: 2018.11.13
+# %Listed, Google Malware Dashboard: 1.43%.
+# %Listed, abuseat.org (CBL-Listed): 0.87%.
+# Stop Forum Spam (SFS) listings: 2,515.
+# Updated: 2018.06.24 / Checked: 2019.04.14
 
 2a02:2f00::/28 Deny Generic
 Origin: RO

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2019.04.07).
+ * This file: Front-end functions file (last modified: 2019.04.09).
  */
 
 /**
@@ -1159,17 +1159,17 @@ $CIDRAM['GetAssetPath'] = function ($Asset, $CanFail = false) use (&$CIDRAM) {
  */
 $CIDRAM['VersionWarning'] = function ($Version = PHP_VERSION) use (&$CIDRAM) {
     $Level = 0;
-    $Minor = substr($Version, 0, 4);
-    if (!empty($CIDRAM['ForceVersionWarning']) || $CIDRAM['VersionCompare']($Version, '5.6.38') || substr($Version, 0, 2) === '6.' || (
-        $Minor === '7.0.' && $CIDRAM['VersionCompare']($Version, '7.0.32')
+    $Minor = (float)$Version;
+    if (!empty($CIDRAM['ForceVersionWarning']) || $Minor < 7.1 || (
+        $Minor === 7.1 && $CIDRAM['VersionCompare']($Version, '7.1.28')
     ) || (
-        $Minor === '7.1.' && $CIDRAM['VersionCompare']($Version, '7.1.22')
+        $Minor === 7.2 && $CIDRAM['VersionCompare']($Version, '7.2.16')
     ) || (
-        $Minor === '7.2.' && $CIDRAM['VersionCompare']($Version, '7.2.10')
+        $Minor === 7.3 && $CIDRAM['VersionCompare']($Version, '7.3.3')
     )) {
         $Level += 2;
     }
-    if ($CIDRAM['VersionCompare']($Version, '7.2.0')) {
+    if ($Minor < 7.2) {
         $Level += 1;
     }
     $CIDRAM['ForceVersionWarning'] = false;

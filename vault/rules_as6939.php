@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Custom rules file for AS6939 (last modified: 2019.02.06).
+ * This file: Custom rules file for AS6939 (last modified: 2019.04.16).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -45,6 +45,17 @@ $CIDRAM['RunParamResCache']['rules_as6939.php'] = function ($Factors = [], $Fact
         strpos($CIDRAM['BlockInfo']['UA'], 'Feedspot http://www.feedspot.com') !== false ||
         strpos($CIDRAM['BlockInfo']['UA'], 'Feedly') !== false
     ) {
+        return;
+    }
+
+    /**
+     * Puffin browser bypass (Affected ranges: 45.33.128.0/20 and 107.178.32.0/20. Don't need to bypass
+     * 101.127.206.0/23 and 101.127.208.0/23, because they belong to AS4657, which isn't blocked anyway).
+     * See: https://www.puffinbrowser.com/help/developer/#article-how-can-i-block-puffin-web-browser
+     */
+    if (strpos($CIDRAM['BlockInfo']['UA'], 'Puffin') !== false && (
+        $Factors[19] === '45.33.128.0/20' || $Factors[19] === '107.178.32.0/20'
+    )) {
         return;
     }
 

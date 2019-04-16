@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6.dat
 
-# Version: 2019.103.371
-# Last modified: 2019.04.14
+# Version: 2019.105.386
+# Last modified: 2019.04.16
 
 
 # ---
@@ -783,33 +783,43 @@ Tag: Swiftway
 
 
 # ASN 6939 ("Hurricane Electric, Inc").
-# %Listed, Google Malware Dashboard: 0.33%.
-# Stop Forum Spam (SFS) listings: 3,061.
-# Updated: 2019.01.16
+# %Listed, Google Malware Dashboard: 0.20%.
+# Stop Forum Spam (SFS) listings: 2,597.
+# Updated: 2019.04.16
 
-# Note for when updating: Some CIDRs appear in the announces that we don't want to be including here as signatures!
+# Note when updating: There are some CIDRs in BGP that shouldn't be included here as signatures.
 # - "2001::/32" (provides "Teredo" tunneling).
 # - "2002::/16" (provides "6to4" bridging connectivity).
 # - "AeroSurf" (human endpoints).
 # - "BLOOMINGDALE HOME TELEPHONE COMPANY, INC" (human endpoints).
-# - "Charter Communications" (human endpoints; also sometimes doesn't announce properly).
 # - "Glasford Telephone Company" (human endpoints).
-# - "Internet Assigned Numbers Authority" (bogons, reversed, and inactive CIDRs).
-# - "SeaKay Broadband" (human endpoints).
-# - "Telecom" (human endpoints).
-# - "Wicked Broadband" (human endpoints).
-# When seen, just delete them from the list.
-# I.e., "^200(?:1\:\:\/32|2\:\:\/16).*$|^.*(?:AeroSurf|BLOOMINGDALE|Charter|Glasford|SeaKay|Telecom|Wicked).*$|^.*Authority$"
+# - "maHost Internet Services Inc" (a hoster, but RoA is invalid, and records seem clean).
+# - "Internet Assigned Numbers Authority" (bogons and unassigned or pending assignment).
+# - Anything labeled as "Broadband" or "Telecom" (can reasonably assume as human endpoints).
+# I.e., "^200(?:1\:\:\/32|2\:\:\/16).*$|^.*(?:AeroSurf|Tele(?:phone|com)|maHost|Broadband|Wicked).*$|^.*Authority$"
 
-2602:ff22::/36 Run rules_as6939.php
+2a09:2580::/29 Run rules_as6939.php
+Origin: BE
+2a09:3b80::/29 Run rules_as6939.php
+Origin: BG
 2620:10a:80fd::/48 Run rules_as6939.php
 2620:10a:80ff::/48 Run rules_as6939.php
 Origin: CA
+2a09:3880::/29 Run rules_as6939.php
+Origin: CZ
+2a09:e500::/29 Run rules_as6939.php
+Origin: GB
 2001:df2:7900::/48 Run rules_as6939.php
 2400:7a00::/32 Run rules_as6939.php
+2404:bb40::/32 Run rules_as6939.php
 Origin: HK
 2a06:1c80::/32 Run rules_as6939.php
 Origin: NL
+2a09:2780::/29 Run rules_as6939.php
+2a09:3d80::/29 Run rules_as6939.php
+2a09:f480::/29 Run rules_as6939.php
+2a09:fa80::/29 Run rules_as6939.php
+Origin: TR
 2001:470::/32 Run rules_as6939.php
 2001:49e8::/32 Run rules_as6939.php
 2600:7000::/24 Run rules_as6939.php
@@ -817,8 +827,8 @@ Origin: NL
 2602:ff06:725::/48 Run rules_as6939.php
 2604:a100:100::/48 Run rules_as6939.php
 2604:c800:ffff::/48 Run rules_as6939.php
-2605:4c0::/32 Run rules_as6939.php
 2620:0:50c0::/48 Run rules_as6939.php
+2620:64:6000::/48 Run rules_as6939.php
 2620:138:c001::/48 Run rules_as6939.php
 2620:138:c002::/48 Run rules_as6939.php
 Origin: US
@@ -2955,8 +2965,8 @@ Tag: FranTech Solutions
 
 
 # ASN 29527 ("Astutium Limited").
-# %Listed, Google Malware Dashboard: 0.36%.
-# Updated: 2016.04.10 / Checked: 2018.09.07
+# No recent reports or bad activity detected. Possible candidate for future removal.
+# Updated: 2016.04.10 / Checked: 2019.04.16
 
 2001:4bf0:1::/48 Deny Cloud
 Origin: GB
@@ -3184,9 +3194,9 @@ Tag: WebNX, Inc
 
 
 # ASN 198068 ("FASTVPS EESTI OU").
-# %Listed, Google Malware Dashboard: 0.19%.
-# Stop Forum Spam (SFS) listings: 69.
-# Updated: 2017.06.28 / Checked: 2018.09.09
+# %Listed, Google Malware Dashboard: 0.17%.
+# Stop Forum Spam (SFS) listings: 182.
+# Updated: 2017.06.28 / Checked: 2019.04.16
 
 2a03:f480:1::/48 Deny Cloud
 2a03:f480:2::/48 Deny Cloud
@@ -5880,9 +5890,9 @@ Tag: First Colo GmbH
 
 # ASN 62088 ("Sinarohost LTD").
 # Malware detected on network; Future C&C risk.
-# %Listed, Google Malware Dashboard: 4.75%.
-# Stop Forum Spam (SFS) listings: 616.
-# Updated: 2018.11.08
+# %Listed, Google Malware Dashboard: 0.51%.
+# Stop Forum Spam (SFS) listings: 1,375.
+# Updated: 2018.11.08 / Checked: 2019.04.16
 
 2a01:9520::/32 Deny Cloud
 2a01:9521:1::/48 Deny Cloud
@@ -5894,9 +5904,9 @@ Tag: Sinarohost LTD
 
 # ASN 197695 ("Domain names registrar REG.RU").
 # Malware detected on network; Future C&C risk.
-# %Listed, Google Malware Dashboard: 0.27%.
-# Stop Forum Spam (SFS) listings: 210.
-# Updated: 2018.06.19 / Checked: 2018.11.08
+# %Listed, Google Malware Dashboard: 0.15%.
+# Stop Forum Spam (SFS) listings: 287.
+# Updated: 2018.06.19 / Checked: 2019.04.16
 
 2a00:1b48::/32 Deny Cloud
 2a00:f940:1::/48 Deny Cloud
@@ -5930,8 +5940,8 @@ Tag: ARDH GLOBAL
 
 # ASN 23881 ("UDomain Web Hosting Company Ltd").
 # Malware detected on network; Future C&C risk.
-# %Listed, Google Malware Dashboard: 0.12%.
-# Updated: 2018.06.19 / Checked: 2018.11.08
+# No recent reports or bad activity detected. Possible candidate for future removal.
+# Updated: 2018.06.19 / Checked: 2019.04.16
 
 2400:c300::/47 Deny Cloud
 Origin: HK
@@ -5941,21 +5951,23 @@ Tag: UDomain
 # ASN 24971 ("Master Internet s.r.o").
 # Careful when updating; Also contains some proxies and VPNs (should be marked differently).
 # Malware detected on network; Future C&C risk.
-# %Listed, Google Malware Dashboard: 0.87%.
-# Stop Forum Spam (SFS) listings: 259.
-# Updated: 2018.11.08
+# %Listed, Google Malware Dashboard: 0.43%.
+# Stop Forum Spam (SFS) listings: 80.
+# Updated: 2019.04.16
 
+2001:678:a50::/48 Deny Cloud
 2001:67c:68::/48 Deny Cloud
-2001:67c:2d30::/48 Deny Cloud
-2a00:8220::/32 Deny Cloud
 2a00:a5a0::/32 Deny Cloud
 2a01:430::/32 Deny Cloud
-2a02:6c20::/32 Deny Cloud
-2a03:3b40::/38 Deny Cloud
+2a03:3b40::/38 Deny Proxy
 2a03:7460::/32 Deny Cloud
+2a06:8200::/32 Deny Cloud
 2a07:4880::/29 Deny Cloud
+2a0b:3240::/32 Deny Cloud
 2a0c:6380::/29 Deny Cloud
 Origin: CZ
+2a04:16c0:200::/48 Deny Cloud
+Origin: NL
 Tag: Master Internet
 
 

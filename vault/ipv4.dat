@@ -1,8 +1,8 @@
 # IPv4 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv4.dat
 
-# Version: 2019.103.371
-# Last modified: 2019.04.14
+# Version: 2019.105.386
+# Last modified: 2019.04.16
 
 
 # ---
@@ -3498,51 +3498,59 @@ Tag: Inter Connects Inc
 
 
 # ASN 6939 ("Hurricane Electric, Inc").
-# %Listed, Google Malware Dashboard: 0.33%.
-# Stop Forum Spam (SFS) listings: 3,061.
-# Updated: 2019.01.16
+# %Listed, Google Malware Dashboard: 0.20%.
+# Stop Forum Spam (SFS) listings: 2,597.
+# Updated: 2019.04.16
 
-# Note for when updating: Some CIDRs appear in the announces that we don't want to be including here as signatures!
+# Note when updating: There are some CIDRs in BGP that shouldn't be included here as signatures.
 # - "2001::/32" (provides "Teredo" tunneling).
 # - "2002::/16" (provides "6to4" bridging connectivity).
 # - "AeroSurf" (human endpoints).
 # - "BLOOMINGDALE HOME TELEPHONE COMPANY, INC" (human endpoints).
-# - "Charter Communications" (human endpoints; also sometimes doesn't announce properly).
 # - "Glasford Telephone Company" (human endpoints).
-# - "Internet Assigned Numbers Authority" (bogons, reversed, and inactive CIDRs).
-# - "SeaKay Broadband" (human endpoints).
-# - "Telecom" (human endpoints).
-# - "Wicked Broadband" (human endpoints).
-# When seen, just delete them from the list.
-# I.e., "^200(?:1\:\:\/32|2\:\:\/16).*$|^.*(?:AeroSurf|BLOOMINGDALE|Charter|Glasford|SeaKay|Telecom|Wicked).*$|^.*Authority$"
+# - "maHost Internet Services Inc" (a hoster, but RoA is invalid, and records seem clean).
+# - "Internet Assigned Numbers Authority" (bogons and unassigned or pending assignment).
+# - Anything labeled as "Broadband" or "Telecom" (can reasonably assume as human endpoints).
+# I.e., "^200(?:1\:\:\/32|2\:\:\/16).*$|^.*(?:AeroSurf|Tele(?:phone|com)|maHost|Broadband|Wicked).*$|^.*Authority$"
 
 103.6.216.0/22 Run rules_as6939.php
 203.12.6.0/24 Run rules_as6939.php
 Origin: AU
-23.179.0.0/23 Run rules_as6939.php
-23.179.2.0/24 Run rules_as6939.php
+193.32.184.0/22 Run rules_as6939.php
+Origin: BE
+194.93.60.0/22 Run rules_as6939.php
+Origin: BG
 104.254.152.0/21 Run rules_as6939.php
 162.247.12.0/22 Run rules_as6939.php
 Origin: CA
 103.96.214.0/24 Run rules_as6939.php
 Origin: CN
-37.16.72.0/21 Run rules_as6939.php
-Origin: FR
+194.93.48.0/22 Run rules_as6939.php
+Origin: CZ
 5.152.177.0/24 Run rules_as6939.php
 5.152.179.0/24 Run rules_as6939.php
 5.152.181.0/24 Run rules_as6939.php
 5.152.182.0/23 Run rules_as6939.php
+176.53.168.0/22 Run rules_as6939.php
+185.149.69.0/24 Run rules_as6939.php
 Origin: GB
 27.50.32.0/21 Run rules_as6939.php
-103.100.138.0/23 Run rules_as6939.php
+103.100.138.0/24 Run rules_as6939.php
+103.138.32.0/24 Run rules_as6939.php
 103.193.186.0/23 Run rules_as6939.php
 Origin: HK
 185.101.97.0/24 Run rules_as6939.php
 185.101.98.0/24 Run rules_as6939.php
 185.114.36.0/24 Run rules_as6939.php
 Origin: NL
+139.28.32.0/22 Run rules_as6939.php
+139.28.48.0/22 Run rules_as6939.php
+139.28.212.0/22 Run rules_as6939.php
+193.187.132.0/22 Run rules_as6939.php
+213.139.224.0/22 Run rules_as6939.php
+Origin: TR
 23.142.192.0/24 Run rules_as6939.php
-23.164.160.0/24 Run rules_as6939.php
+23.175.160.0/24 Run rules_as6939.php
 38.72.144.0/20 Run rules_as6939.php
 38.87.144.0/23 Run rules_as6939.php
 45.33.128.0/20 Run rules_as6939.php
@@ -3555,6 +3563,7 @@ Origin: NL
 64.214.184.0/21 Run rules_as6939.php
 65.19.128.0/18 Run rules_as6939.php
 65.49.0.0/17 Run rules_as6939.php
+66.97.177.0/24 Run rules_as6939.php
 66.119.119.0/24 Run rules_as6939.php
 66.160.128.0/18 Run rules_as6939.php
 66.160.192.0/20 Run rules_as6939.php
@@ -3573,6 +3582,7 @@ Origin: NL
 104.36.120.0/22 Run rules_as6939.php
 104.247.128.0/22 Run rules_as6939.php
 104.247.132.0/23 Run rules_as6939.php
+104.255.33.0/24 Run rules_as6939.php
 104.255.240.0/21 Run rules_as6939.php
 107.178.32.0/20 Run rules_as6939.php
 139.56.8.0/24 Run rules_as6939.php
@@ -3580,6 +3590,7 @@ Origin: NL
 141.193.188.0/23 Run rules_as6939.php
 148.51.0.0/17 Run rules_as6939.php
 161.129.140.0/22 Run rules_as6939.php
+162.213.130.0/24 Run rules_as6939.php
 162.247.75.0/24 Run rules_as6939.php
 162.249.152.0/22 Run rules_as6939.php
 167.136.239.0/24 Run rules_as6939.php
@@ -3589,7 +3600,6 @@ Origin: NL
 184.75.240.0/21 Run rules_as6939.php
 184.104.0.0/15 Run rules_as6939.php
 192.52.69.0/24 Run rules_as6939.php
-192.126.120.0/22 Run rules_as6939.php
 192.132.94.0/24 Run rules_as6939.php
 192.156.200.0/24 Run rules_as6939.php
 198.102.73.0/24 Run rules_as6939.php
@@ -3598,6 +3608,7 @@ Origin: NL
 199.58.206.0/24 Run rules_as6939.php
 199.74.248.0/24 Run rules_as6939.php
 199.88.158.0/24 Run rules_as6939.php
+199.164.248.0/23 Run rules_as6939.php
 199.233.90.0/24 Run rules_as6939.php
 199.245.105.0/24 Run rules_as6939.php
 204.13.226.0/23 Run rules_as6939.php
@@ -3605,9 +3616,6 @@ Origin: NL
 204.238.49.0/24 Run rules_as6939.php
 205.159.239.0/24 Run rules_as6939.php
 205.166.121.0/24 Run rules_as6939.php
-206.108.49.0/24 Run rules_as6939.php
-206.108.51.0/24 Run rules_as6939.php
-206.108.55.0/24 Run rules_as6939.php
 207.126.64.0/19 Run rules_as6939.php
 207.171.210.0/23 Run rules_as6939.php
 208.64.56.0/21 Run rules_as6939.php
@@ -9763,8 +9771,8 @@ Tag: FranTech Solutions
 
 
 # ASN 29527 ("Astutium Limited").
-# %Listed, Google Malware Dashboard: 0.36%.
-# Updated: 2016.04.10 / Checked: 2018.09.07
+# No recent reports or bad activity detected. Possible candidate for future removal.
+# Updated: 2016.04.10 / Checked: 2019.04.16
 
 80.76.212.0/22 Deny Cloud
 80.76.216.0/22 Deny Cloud
@@ -10720,15 +10728,16 @@ Tag: WebNX, Inc
 
 
 # ASN 198068 ("FASTVPS EESTI OU").
-# %Listed, Google Malware Dashboard: 0.19%.
-# Stop Forum Spam (SFS) listings: 69.
-# Updated: 2017.12.02 / Checked: 2018.09.09
+# %Listed, Google Malware Dashboard: 0.17%.
+# Stop Forum Spam (SFS) listings: 182.
+# Updated: 2019.04.16
 
 5.45.112.0/20 Deny Cloud
 5.101.112.0/20 Deny Cloud
 5.101.176.0/20 Deny Cloud
 5.188.16.0/21 Deny Cloud
 5.188.24.0/22 Deny Cloud
+45.67.128.0/22 Deny Cloud
 46.36.216.0/21 Deny Cloud
 159.253.16.0/21 Deny Cloud
 185.4.72.0/22 Deny Cloud
@@ -20989,11 +20998,9 @@ Tag: Estro Web Services
 
 
 # ASNs 27640, 57286, 263700 ("GIGAS HOSTING").
-# Primarily a hosting provider. May occasionally block some proxies though. No way to separate the two services
-# that they provide unfortunately.
-# %Listed, Google Malware Dashboard: 0.67% (AS27640), 0.70% (AS57286).
-# Stop Forum Spam (SFS) listings: 4 (AS263700).
-# Updated: 2018.04.17 / Checked: 2018.09.07
+# %Listed, Google Malware Dashboard: 0.86% (AS27640), 0.61% (AS57286).
+# Stop Forum Spam (SFS) listings: 1 (AS57286), 2 (AS263700).
+# Updated: 2019.04.16
 
 132.255.68.0/22 Deny Cloud
 138.121.168.0/22 Deny Cloud
@@ -21003,6 +21010,7 @@ Origin: CL
 5.56.56.0/21 Deny Cloud
 146.255.96.0/21 Deny Cloud
 185.37.224.0/22 Deny Cloud
+185.102.220.0/22 Deny Cloud
 195.114.208.0/20 Deny Cloud
 Origin: ES
 104.36.164.0/22 Deny Cloud
@@ -21044,9 +21052,9 @@ Origin: ZA
 Tag: Automattic
 
 
-# "CloudAfrica Hosting (PTY) LTD" (orphaned to AS11845 from its original ASN, but we don't want to be block that ASN).
-# Caught trying to access WordPress sensitive pages.
-# Updated: 2018.04.20 / Checked: 2018.09.10
+# ASN 37352 ("CloudAfrica Hosting (PTY) LTD").
+# No recent reports or bad activity detected. Possible candidate for future removal.
+# Updated: 2018.04.20 / Checked: 2019.04.16
 
 41.79.76.0/22 Deny Cloud
 Origin: ZA
@@ -21807,18 +21815,21 @@ Tag: First Colo GmbH
 
 # ASN 62088 ("Sinarohost LTD").
 # Malware detected on network; Future C&C risk.
-# %Listed, Google Malware Dashboard: 4.75%.
-# Stop Forum Spam (SFS) listings: 616.
-# Updated: 2018.11.08
+# %Listed, Google Malware Dashboard: 0.51%.
+# Stop Forum Spam (SFS) listings: 1,375.
+# Updated: 2019.04.16
 
 185.48.56.0/22 Deny Cloud
 Origin: GB
-5.8.88.0/22 Deny Cloud
+45.67.228.0/24 Deny Cloud
+Origin: MD
+5.8.88.0/23 Deny Cloud
+5.8.91.0/24 Deny Cloud
 5.188.60.0/24 Deny Cloud
-5.188.212.0/24 Deny Cloud
 5.188.231.0/24 Deny Cloud
 5.188.234.0/24 Deny Cloud
-91.243.80.0/21 Deny Cloud
+91.243.80.0/23 Deny Cloud
+91.243.82.0/24 Deny Cloud
 Origin: RU
 91.219.28.0/24 Deny Cloud
 Origin: UA
@@ -21827,21 +21838,29 @@ Tag: Sinarohost LTD
 
 # ASN 58271 ("FOP Gubina Lubov Petrivna").
 # Malware detected on network; Future C&C risk.
-# Updated: 2018.11.08
+# Stop Forum Spam (SFS) listings: 1.
+# Updated: 2019.04.16
 
 87.120.24.0/21 Deny Cloud
 94.156.148.0/22 Deny Cloud
 Origin: BG
+88.214.27.0/24 Deny Cloud
+Origin: DE
 193.19.188.0/22 Deny Cloud
 195.69.160.0/22 Deny Cloud
 Origin: GB
+185.126.158.0/23 Deny Cloud
+185.129.109.0/24 Deny Cloud
+185.129.110.0/23 Deny Cloud
+185.135.72.0/24 Deny Cloud
+185.135.76.0/24 Deny Cloud
+185.135.85.0/24 Deny Cloud
 212.33.192.0/22 Deny Cloud
 212.33.196.0/24 Deny Cloud
 212.33.198.0/24 Deny Cloud
 212.33.201.0/24 Deny Cloud
 Origin: IR
 80.64.216.0/22 Deny Cloud
-185.239.244.0/22 Deny Cloud
 194.49.96.0/22 Deny Cloud
 Origin: LT
 45.227.252.0/24 Deny Cloud
@@ -21855,13 +21874,17 @@ Tag: G Petrivna
 
 # ASN 197695 ("Domain names registrar REG.RU").
 # Malware detected on network; Future C&C risk.
-# %Listed, Google Malware Dashboard: 0.27%.
-# Stop Forum Spam (SFS) listings: 210.
-# Updated: 2018.11.08
+# %Listed, Google Malware Dashboard: 0.15%.
+# Stop Forum Spam (SFS) listings: 287.
+# Updated: 2019.04.16
 
+185.23.16.0/23 Deny Cloud
+Origin: LT
 178.170.164.0/23 Deny Cloud
 Origin: NL
 5.63.152.0/21 Deny Cloud
+5.253.60.0/24 Deny Cloud
+5.253.62.0/24 Deny Cloud
 31.31.192.0/21 Deny Cloud
 31.31.200.0/22 Deny Cloud
 31.31.204.0/23 Deny Cloud
@@ -21909,8 +21932,7 @@ Origin: NL
 151.248.112.0/20 Deny Cloud
 176.99.0.0/22 Deny Cloud
 176.99.11.0/24 Deny Cloud
-176.99.12.0/23 Deny Cloud
-176.99.14.0/24 Deny Cloud
+176.99.12.0/22 Deny Cloud
 178.21.8.0/24 Deny Cloud
 178.21.10.0/23 Deny Cloud
 185.10.60.0/23 Deny Cloud
@@ -21936,6 +21958,7 @@ Origin: NL
 194.58.120.0/22 Deny Cloud
 194.58.125.0/24 Deny Cloud
 194.58.126.0/23 Deny Cloud
+194.67.72.0/24 Deny Cloud
 194.87.105.0/24 Deny Cloud
 194.87.106.0/23 Deny Cloud
 194.87.120.0/21 Deny Cloud
@@ -22034,15 +22057,19 @@ Tag: ARDH GLOBAL
 
 # ASN 23881 ("UDomain Web Hosting Company Ltd").
 # Malware detected on network; Future C&C risk.
-# %Listed, Google Malware Dashboard: 0.12%.
-# Updated: 2018.11.08
+# No recent reports or bad activity detected. Possible candidate for future removal.
+# Updated: 2019.04.16
 
 23.226.0.0/24 Deny Cloud
 23.226.2.0/23 Deny Cloud
 23.226.4.0/22 Deny Cloud
+23.226.8.0/24 Deny Cloud
+23.226.11.0/24 Deny Cloud
+23.226.13.0/24 Deny Cloud
 23.226.14.0/23 Deny Cloud
 45.121.192.0/21 Deny Cloud
-45.121.200.0/22 Deny Cloud
+45.121.200.0/24 Deny Cloud
+45.121.203.0/24 Deny Cloud
 103.15.180.0/23 Deny Cloud
 103.15.183.0/24 Deny Cloud
 103.15.192.0/24 Deny Cloud
@@ -22051,8 +22078,7 @@ Tag: ARDH GLOBAL
 103.19.24.0/22 Deny Cloud
 117.18.99.0/24 Deny Cloud
 117.18.100.0/24 Deny Cloud
-162.247.0.0/24 Deny Cloud
-162.247.3.0/24 Deny Cloud
+162.247.0.0/22 Deny Cloud
 202.181.132.0/22 Deny Cloud
 203.90.224.0/22 Deny Cloud
 203.90.228.0/23 Deny Cloud
@@ -22061,6 +22087,7 @@ Tag: ARDH GLOBAL
 203.90.254.0/24 Deny Cloud
 203.135.128.0/21 Deny Cloud
 203.135.136.0/22 Deny Cloud
+203.135.145.0/24 Deny Cloud
 203.135.146.0/23 Deny Cloud
 203.135.148.0/22 Deny Cloud
 203.135.152.0/21 Deny Cloud
@@ -22071,10 +22098,11 @@ Tag: UDomain
 # ASN 24971 ("Master Internet s.r.o").
 # Careful when updating; Also contains some proxies and VPNs (should be marked differently).
 # Malware detected on network; Future C&C risk.
-# %Listed, Google Malware Dashboard: 0.87%.
-# Stop Forum Spam (SFS) listings: 259.
-# Updated: 2018.11.08
+# %Listed, Google Malware Dashboard: 0.43%.
+# Stop Forum Spam (SFS) listings: 80.
+# Updated: 2019.04.16
 
+5.180.200.0/22 Deny Cloud
 37.205.8.0/21 Deny Proxy
 77.93.192.0/19 Deny Cloud
 80.79.16.0/20 Deny Cloud
@@ -22089,22 +22117,25 @@ Tag: UDomain
 92.63.56.0/22 Deny Cloud
 130.193.16.0/24 Deny Cloud
 149.62.144.0/21 Deny Cloud
+152.89.72.0/22 Deny Cloud
 178.238.32.0/20 Deny Cloud
 185.8.164.0/23 Deny Proxy
 185.8.166.0/24 Deny Proxy
 185.25.184.0/22 Deny Cloud
 185.32.160.0/22 Deny Cloud
 185.58.40.0/22 Deny Cloud
-185.59.144.0/22 Deny Cloud
 185.85.164.0/22 Deny Cloud
 185.145.160.0/22 Deny Cloud
-185.179.32.0/22 Deny Cloud
 185.239.216.0/22 Deny Cloud
+188.213.234.0/23 Deny Cloud
+188.215.18.0/23 Deny Cloud
 194.145.180.0/22 Deny Cloud
 195.140.252.0/22 Deny Cloud
 Origin: CZ
 176.227.168.0/23 Deny Cloud
 Origin: IT
+83.223.52.0/24 Deny Cloud
+Origin: NL
 80.78.242.0/23 Deny Cloud
 193.169.160.0/23 Deny Cloud
 Origin: RU

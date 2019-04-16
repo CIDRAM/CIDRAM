@@ -139,6 +139,8 @@ Nota: Proteger su vault contra el acceso no autorizado (p.ej., a modo de endurec
 
 La siguiente es una lista de todos los archivos que debería haberse incluido en la copia de este script cuando descargado, todos los archivos que pueden ser potencialmente creados como resultado de su uso de este script, junto con una breve descripción de lo que todos estos archivos son para.
 
+Esta información se aplica a la versión v1 más reciente y puede que no sea tan relevante para otras versiones.
+
 Archivo | Descripción
 ----|----
 /_docs/ | Documentación directorio (contiene varios archivos).
@@ -182,6 +184,7 @@ Archivo | Descripción
 /vault/fe_assets/_files_edit.html | Un archivo HTML para el administración de archivos.
 /vault/fe_assets/_files_rename.html | Un archivo HTML para el administración de archivos.
 /vault/fe_assets/_files_row.html | Un archivo HTML para el administración de archivos.
+/vault/fe_assets/_fixer.html | Un archivo HTML para el fijador de archivos de firmas.
 /vault/fe_assets/_home.html | Un archivo HTML para el front-end página principal.
 /vault/fe_assets/_ip_aggregator.html | Un archivo HTML para el agregador IP.
 /vault/fe_assets/_ip_test.html | Un archivo HTML para la página para pruebas de IPs.
@@ -1560,4 +1563,4 @@ Alternativamente, hay una breve descripción (no autoritativa) de GDPR/DSGVO dis
 ---
 
 
-Última Actualización: 7 Abril de 2019 (2019.04.07).
+Última Actualización: 16 Abril de 2019 (2019.04.16).

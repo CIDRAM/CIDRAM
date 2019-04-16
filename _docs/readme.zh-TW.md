@@ -140,6 +140,8 @@ CIDRAM可以手動或通過前端更新。​CIDRAM也可以通過Composer或Wor
 
 下面是一個列表的所有的文件該應該是存在在您的存檔在下載時間，​任何文件該可能創建因之的您的使用這個腳本，​包括一個簡短說明的他們的目的。
 
+此信息適用於最新的『v1』發布。可能與其他版本或發布它無關。
+
 文件 | 說明
 ----|----
 /_docs/ | 筆記文件夾（包含若干文件）。
@@ -183,6 +185,7 @@ CIDRAM可以手動或通過前端更新。​CIDRAM也可以通過Composer或Wor
 /vault/fe_assets/_files_edit.html | 文件管理器的HTML模板。
 /vault/fe_assets/_files_rename.html | 文件管理器的HTML模板。
 /vault/fe_assets/_files_row.html | 文件管理器的HTML模板。
+/vault/fe_assets/_fixer.html | 簽名文件修復工具的HTML模板。
 /vault/fe_assets/_home.html | 端主頁的HTML模板。
 /vault/fe_assets/_ip_aggregator.html | IP聚合器HTML模板。
 /vault/fe_assets/_ip_test.html | IP測試頁面的HTML模板。
@@ -1562,4 +1565,4 @@ CIDRAM不收集或處理任何信息用於營銷或廣告目的，既不銷售�
 ---
 
 
-最後更新：2019年4月7日。
+最後更新：2019年4月16日。

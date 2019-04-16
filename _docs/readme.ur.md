@@ -141,6 +141,8 @@
 
 <div dir="rtl">مندرجہ ذیل اس سکرپٹ کے ذخیرہ کردہ کاپی میں شامل کیا گیا ہے کہ آپ ان فائلوں کے مقصد کی ایک مختصر وضاحت کے ساتھ ساتھ، یہ ڈاؤن لوڈ، جب تمام فائلوں کی ایک فہرست ہے.<br /><br /></div>
 
+<div dir="rtl">یہ معلومات سب سے حالیہ v1 رہائی پر لاگو ہوتا ہے، اور شاید دوسرے ورژن یا ریلیزز کے لئے اتنی مناسب نہیں ہوسکتی ہے.<br /><br /></div>
+
 &nbsp; <div dir="rtl" style="display:inline">تفصیل</div> | <div dir="rtl" style="display:inline">فائل</div>
 ----|----
 &nbsp; <div dir="rtl" style="display:inline">دستاویزی ڈائریکٹری (مختلف فائلوں پر مشتمل ہے).</div> | /_docs/
@@ -184,6 +186,7 @@
 &nbsp; <div dir="rtl" style="display:inline">فائل مینیجر کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_files_edit.html
 &nbsp; <div dir="rtl" style="display:inline">فائل مینیجر کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_files_rename.html
 &nbsp; <div dir="rtl" style="display:inline">فائل مینیجر کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_files_row.html
+&nbsp; <div dir="rtl" style="display:inline">دستخط فائل مرمت کا آلہ لئے ایک HTML سانچے.</div> | /vault/fe_assets/_fixer.html
 &nbsp; <div dir="rtl" style="display:inline">سامنے کے آخر میں کے ہوم پیج کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_home.html
 &nbsp; <div dir="rtl" style="display:inline">IP مجموعی طور پر کے صفحے کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_ip_aggregator.html
 &nbsp; <div dir="rtl" style="display:inline">IP ٹیسٹ کے صفحے کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_ip_test.html
@@ -1810,4 +1813,4 @@ x.x.x.x - Day, dd Mon 20xx hh:ii:ss +0000 - "admin" - لاگ ان.
 ---
 
 
-<div dir="rtl">آخری تازہ کاری: 7 اپریل 2019 (2019.04.07).</div>
+<div dir="rtl">آخری تازہ کاری: 16 اپریل 2019 (2019.04.16).</div>

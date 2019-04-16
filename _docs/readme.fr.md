@@ -137,7 +137,9 @@ Remarque : Protéger votre vault contre les accès non autorisés (par exemple,
 
 ### 5. <a name="SECTION5"></a>FICHIERS INCLUS DANS CETTE PAQUET
 
-Voici une liste de tous les fichiers inclus dans CIDRAM dans son natif état, tous les fichiers qui peuvent être potentiellement créées à la suite de l'utilisation de ce script, avec une brève description de ce que tous ces fichiers sont pour.
+Voici une liste de tous les fichiers inclus dans phpMussel dans son natif état, tous les fichiers qui peuvent être potentiellement créées à la suite de l'utilisation de ce script, avec une brève description de ce que tous ces fichiers sont pour.
+
+Ces informations s'appliquent à la version v1 plus récente, et pourraient ne pas être pertinentes pour d'autres versions.
 
 Fichier | Description
 ----|----
@@ -182,6 +184,7 @@ Fichier | Description
 /vault/fe_assets/_files_edit.html | Un modèle HTML pour le gestionnaire de fichiers.
 /vault/fe_assets/_files_rename.html | Un modèle HTML pour le gestionnaire de fichiers.
 /vault/fe_assets/_files_row.html | Un modèle HTML pour le gestionnaire de fichiers.
+/vault/fe_assets/_fixer.html | Un modèle HTML pour le fixateur pour les fichiers de signature.
 /vault/fe_assets/_home.html | Un modèle HTML pour la page d'accueil de l'accès frontal.
 /vault/fe_assets/_ip_aggregator.html | Un modèle HTML pour pour l'agrégateur IP.
 /vault/fe_assets/_ip_test.html | Un modèle HTML pour la page pour tester IPs.
@@ -1559,4 +1562,4 @@ Alternativement, il y a un bref aperçu (non autorisé) de GDPR/DSGVO disponible
 ---
 
 
-Dernière mise à jour : 7 Avril 2019 (2019.04.07).
+Dernière mise à jour : 16 Avril 2019 (2019.04.16).

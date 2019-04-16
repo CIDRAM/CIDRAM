@@ -139,6 +139,8 @@ Catat: Melindungi vault Anda terhadap akses yang tidak sah (misalnya, dengan mem
 
 Berikut list dari semua file yang diikutkan di dalam kopi skrip yang dikompres ketika Anda mendownloadnya, setiap file-file yang secara potensial diciptakan sebagai hasil dari menggunakan skrip ini, sejalan dengan deskripsi singkat dari untuk apa file-file ini.
 
+Informasi ini berlaku untuk rilis v1 terbaru, dan mungkin tidak begitu relevan untuk versi atau rilis lain.
+
 Data | Deskripsi
 ----|----
 /_docs/ | Direktori dokumentasi (berisi bermacam file).
@@ -182,6 +184,7 @@ Data | Deskripsi
 /vault/fe_assets/_files_edit.html | Template HTML untuk file manager.
 /vault/fe_assets/_files_rename.html | Template HTML untuk file manager.
 /vault/fe_assets/_files_row.html | Template HTML untuk file manager.
+/vault/fe_assets/_fixer.html | Template HTML untuk alat perbaikan file tanda tangan.
 /vault/fe_assets/_home.html | Template HTML untuk halaman utama.
 /vault/fe_assets/_ip_aggregator.html | Template HTML untuk agregator IP.
 /vault/fe_assets/_ip_test.html | Template HTML untuk halaman test IP.
@@ -1553,4 +1556,4 @@ Beberapa sumber bacaan yang direkomendasikan untuk mempelajari informasi lebih l
 ---
 
 
-Terakhir Diperbarui: 7 April 2019 (2019.04.07).
+Terakhir Diperbarui: 16 April 2019 (2019.04.16).

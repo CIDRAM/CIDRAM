@@ -137,7 +137,9 @@ Nota: Proteger seu vault contra acesso não autorizado (p.e., por meio de endure
 
 ### 5. <a name="SECTION5"></a>ARQUIVOS INCLUÍDOS NESTE PACOTE
 
-O seguinte está uma lista de todos os arquivos que deveria sido incluídos na arquivada cópia desse script quando você baixado-lo, todos os arquivos que podem ser potencialmente criados como resultado de seu uso deste script, juntamente com uma breve descrição do que todos esses arquivos são por.
+A seguir está uma lista de todos os arquivos que deveriam ter sido incluídos na cópia arquivada desse script quando você baixá-lo, todos os arquivos que podem ser potencialmente criados como resultado de seu uso deste script, juntamente com uma breve descrição do que todos esses arquivos são.
+
+Essas informações se aplicam à versão v1 mais recente, e podem não ser tão relevantes para outras versões.
 
 Arquivo | Descrição
 ----|----
@@ -182,6 +184,7 @@ Arquivo | Descrição
 /vault/fe_assets/_files_edit.html | Um modelo HTML para o gerenciador de arquivos.
 /vault/fe_assets/_files_rename.html | Um modelo HTML para o gerenciador de arquivos.
 /vault/fe_assets/_files_row.html | Um modelo HTML para o gerenciador de arquivos.
+/vault/fe_assets/_fixer.html | Um modelo HTML para o fixador para os arquivos de assinatura.
 /vault/fe_assets/_home.html | Um modelo HTML para o front-end página principal.
 /vault/fe_assets/_ip_aggregator.html | Um modelo HTML para o agregador IP.
 /vault/fe_assets/_ip_test.html | Um modelo HTML para a página para testar IPs.
@@ -1555,4 +1558,4 @@ Alternativamente, há uma breve visão geral (não autoritativa) do GDPR/DSGVO d
 ---
 
 
-Última Atualização: 7 Abril de 2019 (2019.04.07).
+Última Atualização: 16 Abril de 2019 (2019.04.16).

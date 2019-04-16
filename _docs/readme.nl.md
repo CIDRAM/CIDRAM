@@ -139,6 +139,8 @@ Notitie: Het beschermen van uw vault tegen ongeautoriseerde toegang (b.v., door 
 
 Het volgende is een lijst van alle bestanden die moeten worden opgenomen in de gearchiveerde kopie van dit script als u gedownload het, alle bestanden die kunt mogelijk worden gemaakt als resultaat van uw gebruik van dit script, samen met een korte beschrijving van wat al deze bestanden zijn voor.
 
+Deze informatie is van toepassing op de meest recente v1 release, en is mogelijk niet zo relevant voor andere versies of releases.
+
 Bestand | Beschrijving
 ----|----
 /_docs/ | Documentatie bestandsmap (bevat verschillende bestanden).
@@ -182,6 +184,7 @@ Bestand | Beschrijving
 /vault/fe_assets/_files_edit.html | Een HTML sjabloon voor de bestandsbeheer.
 /vault/fe_assets/_files_rename.html | Een HTML sjabloon voor de bestandsbeheer.
 /vault/fe_assets/_files_row.html | Een HTML sjabloon voor de bestandsbeheer.
+/vault/fe_assets/_fixer.html | Een HTML sjabloon voor de signatuurbestanden-fixeer.
 /vault/fe_assets/_home.html | Een HTML sjabloon voor de frontend startpagina.
 /vault/fe_assets/_ip_aggregator.html | Een HTML sjabloon voor de IP-aggregator.
 /vault/fe_assets/_ip_test.html | Een HTML sjabloon voor de IP test pagina.
@@ -1561,4 +1564,4 @@ Als alternatief is er een kort (niet-gezaghebbende) overzicht van GDPR/DSGVO/AVG
 ---
 
 
-Laatste Bijgewerkt: 7 April 2019 (2019.04.07).
+Laatste Bijgewerkt: 16 April 2019 (2019.04.16).

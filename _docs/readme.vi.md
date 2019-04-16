@@ -137,7 +137,9 @@ Chú thích: Bảo vệ vault của bạn khỏi bị truy cập trái phép (v�
 
 ### 5. <a name="SECTION5"></a>TẬP TIN BAO GỒM TRONG GÓI NÀY
 
-Sau đây là một danh sách tất cả các tập tin mà cần phải có được bao gồm trong bản sao lưu của kịch bản này khi bạn tải về nó, cùng với một mô tả ngắn cho những gì tất cả những tập tin này là dành cho.
+Sau đây là một danh sách tất cả các tập tin mà cần phải có được bao gồm trong bản sao lưu của kịch bản này khi bạn tải về nó, bất kỳ tập tin mà có thể có lẽ được tạo ra là kết quả của bạn sử dụng kịch bản này, cùng với một mô tả ngắn cho những gì tất cả những tập tin này là dành cho.
+
+Thông tin này áp dụng cho phát hành v1 gần đây nhất, và có thể không phù hợp với các phiên bản hay phát hành khác.
 
 Tập tin | Chi tiết
 ----|----
@@ -182,6 +184,7 @@ Tập tin | Chi tiết
 /vault/fe_assets/_files_edit.html | Tập tin mẫu HTML cho quản lý tập tin.
 /vault/fe_assets/_files_rename.html | Tập tin mẫu HTML cho quản lý tập tin.
 /vault/fe_assets/_files_row.html | Tập tin mẫu HTML cho quản lý tập tin.
+/vault/fe_assets/_fixer.html | Tập tin mẫu HTML cho tập tin chữ ký sửa chữa.
 /vault/fe_assets/_home.html | Tập tin mẫu HTML cho trang chủ của front-end.
 /vault/fe_assets/_ip_aggregator.html | Tập tin mẫu HTML cho tập hợp IP.
 /vault/fe_assets/_ip_test.html | Tập tin mẫu HTML cho trang kiểm tra IP.
@@ -1553,4 +1556,4 @@ Một số tài nguyên được đề xuất để tìm hiểu thêm thông tin
 ---
 
 
-Lần cuối cập nhật: 7 Tháng Tư 2019 (2019.04.07).
+Lần cuối cập nhật: 16 Tháng Tư 2019 (2019.04.16).

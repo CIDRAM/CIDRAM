@@ -139,6 +139,8 @@ Hinweis: Besonders wichtig ist hier der Schutz Ihres Vault vor unbefugtem Zugrif
 
 Die folgende Liste beinhaltet alle Dateien, die im heruntergeladenen Archiv des Scripts enthalten sind und Dateien, die durch die Benutzung des Scripts eventuell erstellt werden, inkl. einer kurzen Beschreibung.
 
+Diese Informationen gelten für die neueste Version 1 Release, und sind möglicherweise für andere Versionen oder Releases nicht relevant.
+
 Datei | Beschreibung
 ----|----
 /_docs/ | Verzeichnis für die Dokumentationen (beinhaltet verschiedene Dateien).
@@ -182,6 +184,7 @@ Datei | Beschreibung
 /vault/fe_assets/_files_edit.html | Ein HTML-Template für den Dateimanager.
 /vault/fe_assets/_files_rename.html | Ein HTML-Template für den Dateimanager.
 /vault/fe_assets/_files_row.html | Ein HTML-Template für den Dateimanager.
+/vault/fe_assets/_fixer.html | Ein HTML-Template für dem Signaturdatei-Fixierer.
 /vault/fe_assets/_home.html | Ein HTML-Template für das Frontend Startseite.
 /vault/fe_assets/_ip_aggregator.html | Ein HTML-Template für den IP-Aggregator.
 /vault/fe_assets/_ip_test.html | Ein HTML-Template für die IP-Test-Seite.
@@ -1569,4 +1572,4 @@ Alternativ gibt es einen kurzen (nicht autoritativen) Überblick über die GDPR/
 ---
 
 
-Zuletzt aktualisiert: 7 April 2019 (2019.04.07).
+Zuletzt aktualisiert: 16 April 2019 (2019.04.16).

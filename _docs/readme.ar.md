@@ -141,6 +141,8 @@
 
 <div dir="rtl">فيما يلي قائمة بجميع الملفات التي ينبغي أن تدرج في النسخة المحفوظة من هذا البرنامج النصي عند تحميله، أي الملفات التي يمكن أن يحتمل أن تكون نشأت نتيجة استعمالك لهذا البرنامج النصي، بالإضافة إلى وصفا موجزا لدور و وظيفة كل ملف.<br /><br /></div>
 
+<div dir="rtl">تنطبق هذه المعلومات على أحدث إصدار v1، وقد لا تكون ذات صلة بالإصدارات.<br /><br /></div>
+
 &nbsp; <div dir="rtl" style="display:inline">الوصف</div> | <div dir="rtl" style="display:inline">الملف</div>
 ----|----
 &nbsp; <div dir="rtl" style="display:inline">دليل الوثائق (يحتوي على ملفات مختلفة).</div> | /_docs/
@@ -184,6 +186,7 @@
 &nbsp; <div dir="rtl" style="display:inline">قالب HTML لمدير الملفات.</div> | /vault/fe_assets/_files_edit.html
 &nbsp; <div dir="rtl" style="display:inline">قالب HTML لمدير الملفات.</div> | /vault/fe_assets/_files_rename.html
 &nbsp; <div dir="rtl" style="display:inline">قالب HTML لمدير الملفات.</div> | /vault/fe_assets/_files_row.html
+&nbsp; <div dir="rtl" style="display:inline">قالب HTML لأداة إصلاح ملفات التوقيع.</div> | /vault/fe_assets/_fixer.html
 &nbsp; <div dir="rtl" style="display:inline">ملف قالب HTML لfront-end صفحة الرئيسية.</div> | /vault/fe_assets/_home.html
 &nbsp; <div dir="rtl" style="display:inline">ملف قالب HTML لIP aggregator.</div> | /vault/fe_assets/_ip_aggregator.html
 &nbsp; <div dir="rtl" style="display:inline">ملف قالب HTML لصفحة الاختبار IP.</div> | /vault/fe_assets/_ip_test.html
@@ -1810,4 +1813,4 @@ x.x.x.x - Day, dd Mon 20xx hh:ii:ss +0000 - "admin" - حاليا على.
 ---
 
 
-<div dir="rtl">آخر تحديث: 7 أبريل 2019 (2019.04.07).</div>
+<div dir="rtl">آخر تحديث: 16 أبريل 2019 (2019.04.16).</div>

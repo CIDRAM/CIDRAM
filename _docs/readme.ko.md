@@ -139,6 +139,8 @@ PHPMailer를 설치 한 후 CIDRAM 구성 페이지 또는 구성 파일을 통�
 
 다음은 아카이브에서 일괄 다운로드되는 파일의 목록 및 스크립트 사용에 의해 생성되는 파일과이 파일이 무엇 때문인지는 간단한 설명입니다.
 
+이 정보는 최신 v1 릴리스에 적용되며 다른 버전이나 릴리스와는 관련이 없을 수도 있습니다.
+
 파일 | 설명
 ----|----
 /_docs/ | 문서의 디렉토리입니다 (다양한 파일을 포함합니다).
@@ -182,6 +184,7 @@ PHPMailer를 설치 한 후 CIDRAM 구성 페이지 또는 구성 파일을 통�
 /vault/fe_assets/_files_edit.html | 파일 관리자의 HTML 템플릿.
 /vault/fe_assets/_files_rename.html | 파일 관리자의 HTML 템플릿.
 /vault/fe_assets/_files_row.html | 파일 관리자의 HTML 템플릿.
+/vault/fe_assets/_fixer.html | 서명 파일 해결의 HTML 템플릿.
 /vault/fe_assets/_home.html | 프론트 엔드의 홈페이지의 HTML 템플릿.
 /vault/fe_assets/_ip_aggregator.html | IP 애그리게이터 HTML 템플릿.
 /vault/fe_assets/_ip_test.html | IP 테스트 페이지의 HTML 템플릿.
@@ -1556,4 +1559,4 @@ CIDRAM은 마케팅이나 광고 목적으로 정보를 수집하거나 처리�
 ---
 
 
-최종 업데이트 : 2019년 4월 7일.
+최종 업데이트 : 2019년 4월 16일.

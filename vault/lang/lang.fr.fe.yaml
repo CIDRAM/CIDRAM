@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: French language data for the front-end (last modified: 2019.04.07).
+# This file: French language data for the front-end (last modified: 2019.04.16).
 ##/
 
 Extended Description Bypasses: "Les fichiers pour contourner les signatures standard qui sont normalement inclus dans le paquet principal."
@@ -186,6 +186,8 @@ field_omit: "Omettre les champs vides"
 field_options: "Options"
 field_password: "Mot de Passe"
 field_permissions: "Autorisations"
+field_preferred_direct_input: "Entrez les données directement"
+field_preferred_list: "Fichiers de signature actuellement actifs"
 field_preserve: "Préserver les tags et les commentaires"
 field_range: "Gamma (Première – Final)"
 field_reasonmessage: "Raison Bloquée (détaillée)"
@@ -267,6 +269,7 @@ label_other-ActiveModules: "Modules actifs"
 label_other-Since: "Date de début"
 label_other: "Autres"
 label_php: "Version PHP utilisée :"
+label_preferred_source: "Source préférée :"
 label_reCAPTCHA: "Tentatives de reCAPTCHA"
 label_results: "Résultats (%s entré – %s rejeté – %s accepté – %s fusionné – %s sortie) :"
 label_sanity_check: "Vérification de santé : "
@@ -290,6 +293,7 @@ link_cidr_calc: "Calculatrice CIDR"
 link_config: "Configuration"
 link_documentation: "Documentation"
 link_file_manager: "Gestionnaire de Fichiers"
+link_fixer: "Fixateur pour les fichiers de signature"
 link_home: "Page d'Accueil"
 link_ip_aggregator: "Agrégateur IP"
 link_ip_test: "IP Test"
@@ -376,6 +380,13 @@ state_component_is_provisional: "Le composant est provisoire."
 state_default_password: "Attention : Utilisant le mot de passe défaut !"
 state_email_sent: "E-mail envoyé avec succès à « %s »."
 state_failed_missing: "La tâche a échoué car un composant nécessaire n'est pas disponible."
+state_fixer: "%s %s."
+state_fixer_changed:
+ - "Fait <span class="txtRd">%s</span> changement"
+ - "Fait <span class="txtRd">%s</span> changements"
+state_fixer_seconds:
+ - "en <span class="txtRd">%s</span> seconde"
+ - "en <span class="txtRd">%s</span> secondes"
 state_ignored: "Ignoré"
 state_loading: "Chargement..."
 state_loadtime:
@@ -413,10 +424,12 @@ tip_condition_placeholder: "Spécifiez une valeur, ou laissez vide pour ne pas e
 tip_config: "Bonjour, {username}.<br />La page de configuration vous permet de modifier la configuration pour CIDRAM à l'accès frontal."
 tip_custom_ua: "Entrez l'agent utilisateur [user agent] ici (optionnel)."
 tip_donate: "CIDRAM est offert gratuitement, mais si vous voulez faire un don au projet, vous pouvez le faire en cliquant sur le bouton don."
+tip_enter_input_here: "Entrez ici les données."
 tip_enter_ip_here: "Entrez ici l'adresse IP."
-tip_enter_ips_here: "Entrez les adresses IP ici."
+tip_enter_ips_here: "Entrez ici les adresses IP."
 tip_fe_cookie_warning: "Remarque : CIDRAM utilise un cookie pour authentifier les connexions. En vous connectant, vous donnez votre consentement pour qu'un cookie soit créé et stocké par votre navigateur."
 tip_file_manager: "Bonjour, {username}.<br />Le gestionnaire de fichiers vous permet de supprimer, éditer et télécharger des fichiers. Utiliser avec précaution (vous pourriez casser votre installation avec ceci)."
+tip_fixer: "Bonjour, {username}.<br />Le fixateur pour les fichiers de signature fournit un moyen de détecter et de résoudre les problèmes potentiels dans les fichiers de signatures."
 tip_home: "Bonjour, {username}.<br />C'est la page d'accueil de l'accès frontal de CIDRAM. Sélectionnez un lien dans le menu de navigation à gauche pour continuer."
 tip_ip_aggregator: "Bonjour, {username}.<br />L'agrégateur IP vous permet d'exprimer les adresses IP et les CIDR de la manière la plus petite possible. Entrez les données à agréger et appuyez sur « OK »."
 tip_ip_test: "Bonjour, {username}.<br />La page des tests IP vous permet de tester si les adresses IP sont bloquées par les signatures actuellement installées."

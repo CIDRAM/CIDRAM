@@ -137,7 +137,9 @@ Note: Protecting your vault against unauthorised access (e.g., by hardening your
 
 ### 5. <a name="SECTION5"></a>FILES INCLUDED IN THIS PACKAGE
 
-The following is a list of all of the files that should have been included in the archived copy of this script when you downloaded it, along with a short description of the purpose of these files.
+The following is a list of all of the files that should have been included in the archived copy of this script when you downloaded it, any files that may be potentially created as a result of your using this script, along with a short description of what all these files are for.
+
+This information applies to the most recent v1 release, and mightn't be so relevant for other versions or releases.
 
 File | Description
 ----|----
@@ -182,6 +184,7 @@ File | Description
 /vault/fe_assets/_files_edit.html | An HTML template for the file manager.
 /vault/fe_assets/_files_rename.html | An HTML template for the file manager.
 /vault/fe_assets/_files_row.html | An HTML template for the file manager.
+/vault/fe_assets/_fixer.html | An HTML template for the signature file fixer.
 /vault/fe_assets/_home.html | An HTML template for the front-end homepage.
 /vault/fe_assets/_ip_aggregator.html | An HTML template for the IP aggregator.
 /vault/fe_assets/_ip_test.html | An HTML template for the IP test page.
@@ -1573,4 +1576,4 @@ Alternatively, there's a brief (non-authoritative) overview of GDPR/DSGVO availa
 ---
 
 
-Last Updated: 7 April 2019 (2019.04.07).
+Last Updated: 16 April 2019 (2019.04.16).

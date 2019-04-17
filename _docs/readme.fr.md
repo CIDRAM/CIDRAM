@@ -137,7 +137,7 @@ Remarque : Protéger votre vault contre les accès non autorisés (par exemple,
 
 ### 5. <a name="SECTION5"></a>FICHIERS INCLUS DANS CETTE PAQUET
 
-Voici une liste de tous les fichiers inclus dans phpMussel dans son natif état, tous les fichiers qui peuvent être potentiellement créées à la suite de l'utilisation de ce script, avec une brève description de ce que tous ces fichiers sont pour.
+Voici une liste de tous les fichiers inclus dans CIDRAM dans son natif état, tous les fichiers qui peuvent être potentiellement créées à la suite de l'utilisation de ce script, avec une brève description de ce que tous ces fichiers sont pour.
 
 Ces informations s'appliquent à la version v1 plus récente, et pourraient ne pas être pertinentes pour d'autres versions.
 

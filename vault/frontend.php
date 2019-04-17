@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2019.04.06).
+ * This file: Front-end handler (last modified: 2019.04.17).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -745,6 +745,30 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === '' && !$CIDRAM['FE']['CronMode']
 
     /** Cleanup. */
     unset($CIDRAM['Remote-YAML-PHP-Array'], $CIDRAM['Remote-YAML-PHP'], $CIDRAM['ThisBranch'], $CIDRAM['RemoteVerPath']);
+
+    /** Extension availability. */
+    $CIDRAM['FE']['Extensions'] = "\n";
+    foreach ([
+        ['Lib' => 'pcre', 'Name' => 'PCRE'],
+        ['Lib' => 'curl', 'Name' => 'cURL'],
+        ['Lib' => 'apcu', 'Name' => 'APCu'],
+        ['Lib' => 'memcached', 'Name' => 'Memcached'],
+        ['Lib' => 'redis', 'Name' => 'Redis'],
+        ['Lib' => 'pdo', 'Name' => 'PDO']
+    ] as $CIDRAM['ThisExtension']) {
+        if (extension_loaded($CIDRAM['ThisExtension']['Lib'])) {
+            $CIDRAM['ExtVer'] = (new ReflectionExtension($CIDRAM['ThisExtension']['Lib']))->getVersion();
+            $CIDRAM['ThisResponse'] = '<span class="txtGn">' . $CIDRAM['L10N']->getString('response_yes') . ' (' . $CIDRAM['ExtVer'] . ')</span>';
+        } else {
+            $CIDRAM['ThisResponse'] = '<span class="txtRd">' . $CIDRAM['L10N']->getString('response_no') . '</span>';
+        }
+        $CIDRAM['FE']['Extensions'] .= sprintf(
+            '<tr><td class="h3">%s</td><td class="h3f">%s</td></tr>',
+            $CIDRAM['ThisExtension']['Name'],
+            $CIDRAM['ThisResponse']
+        );
+    }
+    unset($CIDRAM['ExtVer'], $CIDRAM['ThisResponse'], $CIDRAM['ThisExtension']);
 
     /** Process warnings. */
     $CIDRAM['FE']['Warnings'] = '';
@@ -1974,6 +1998,112 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && ($CIDRAM['FE']['Per
 
     /** Cleanup. */
     unset($CIDRAM['Components'], $CIDRAM['CFBoilerplate']);
+
+}
+
+/** Signature file fixer. */
+elseif ($CIDRAM['QueryVars']['cidram-page'] === 'fixer' && $CIDRAM['FE']['Permissions'] === 1) {
+
+    /** Page initial prepwork. */
+    $CIDRAM['InitialPrepwork']($CIDRAM['L10N']->getString('link_fixer'), $CIDRAM['L10N']->getString('tip_fixer'));
+
+    $CIDRAM['FE']['bNav'] = $CIDRAM['L10N']->getString('bNav_home_logout');
+
+    /** Preferred source. */
+    $CIDRAM['PreferredSource'] = !empty($_POST['preferredSource']) ? $_POST['preferredSource'] : '';
+
+    /** Direct input. */
+    $CIDRAM['FE']['DirectInput'] = !empty($_POST['DirectInput']) ? $_POST['DirectInput'] : '';
+
+    /** Preferred source menu. */
+    $CIDRAM['FE']['PreferredSource'] = sprintf(
+        '%1$sList" value="List"%2$s %7$s%6$spreferredSourceList">%3$s</label><br />%1$sInput" value="Input"%4$s %7$s%6$spreferredSourceInput">%5$s</label>',
+        '<input type="radio" class="auto" name="preferredSource" id="preferredSource',
+        $CIDRAM['PreferredSource'] === 'List' ? ' checked' : '',
+        $CIDRAM['L10N']->getString('field_preferred_list'),
+        $CIDRAM['PreferredSource'] === 'Input' ? ' checked' : '',
+        $CIDRAM['L10N']->getString('field_preferred_direct_input'),
+        ' /><label for="',
+        'onchange="javascript:{hideid(\'preferredSourceListDiv\');hideid(\'preferredSourceInputDiv\');showid(this.id+\'Div\');showid(\'submitButton\');}"'
+    );
+
+    /** Whether to show or hide preferred source sections. */
+    $CIDRAM['FE']['styleList'] = $CIDRAM['PreferredSource'] === 'List' ? '' : ' style="display:none"';
+    $CIDRAM['FE']['styleInput'] = $CIDRAM['PreferredSource'] === 'Input' ? '' : ' style="display:none"';
+    $CIDRAM['FE']['submitButtonVisibility'] = !empty($CIDRAM['PreferredSource']) ? '' : ' style="display:none"';
+
+    /** Generate a list of currently active signature files. */
+    $CIDRAM['FE']['ActiveSignatureFiles'] = [];
+    foreach ([$CIDRAM['Config']['signatures']['ipv4'], $CIDRAM['Config']['signatures']['ipv6']] as $CIDRAM['SigSource']) {
+        $CIDRAM['SigSource'] = explode(',', $CIDRAM['SigSource']);
+        foreach ($CIDRAM['SigSource'] as $CIDRAM['SigSourceInner']) {
+            $CIDRAM['SigSourceInnerID'] = preg_replace('~[^\da-z]~i', '_', $CIDRAM['SigSourceInner']);
+            $CIDRAM['FE']['ActiveSignatureFiles'][$CIDRAM['SigSourceInner']] = sprintf(
+                '<input type="radio" class="auto" name="sigFile" id="%1$s" value="%2$s" %3$s/><label for="%1$s">%2$s</label><br />',
+                $CIDRAM['SigSourceInnerID'],
+                $CIDRAM['SigSourceInner'],
+                (!empty($_POST['sigFile']) && $_POST['sigFile'] === $CIDRAM['SigSourceInner']) ? 'checked ' : ''
+            );
+        }
+    }
+    unset($CIDRAM['SigSourceInnerID'], $CIDRAM['SigSourceInner']);
+    ksort($CIDRAM['FE']['ActiveSignatureFiles']);
+    $CIDRAM['FE']['ActiveSignatureFiles'] = implode($CIDRAM['FE']['ActiveSignatureFiles']);
+
+    /** Fixer output. */
+    $CIDRAM['FE']['FixerOutput'] = '';
+
+    /** Prepare to process a currently active signature file. */
+    if ($CIDRAM['PreferredSource'] === 'List' && !empty($_POST['sigFile'])) {
+        if (!isset($CIDRAM['FileCache'])) {
+            $CIDRAM['FileCache'] = [];
+        }
+        if (!isset($CIDRAM['FileCache'][$_POST['sigFile']])) {
+            $CIDRAM['FileCache'][$_POST['sigFile']] = $CIDRAM['ReadFile']($CIDRAM['Vault'] . $_POST['sigFile']);
+        }
+        if (!empty($CIDRAM['FileCache'][$_POST['sigFile']])) {
+            $CIDRAM['FE']['FixerOutput'] = $CIDRAM['FileCache'][$_POST['sigFile']];
+        }
+    }
+
+    /** Prepare to process via direct input. */
+    if ($CIDRAM['PreferredSource'] === 'Input' && !empty($_POST['DirectInput'])) {
+        $CIDRAM['FE']['FixerOutput'] = $_POST['DirectInput'];
+    }
+
+    /** Process (validate; attempt to fix) data. */
+    if ($CIDRAM['FE']['FixerOutput']) {
+        $CIDRAM['Fixer'] = [];
+        // below here aaa
+        // above here aaa
+        $CIDRAM['Fixer']['Time'] = microtime(true) - $_SERVER['REQUEST_TIME_FLOAT'];
+        $CIDRAM['Fixer'] = '<div class="s">' . sprintf(
+            $CIDRAM['L10N']->getString('state_fixer'),
+            sprintf(
+                $CIDRAM['L10N']->getPlural(0, 'state_fixer_changed'),
+                $CIDRAM['Number_L10N'](0)
+            ),
+            sprintf(
+                $CIDRAM['L10N']->getPlural($CIDRAM['Fixer']['Time'], 'state_fixer_seconds'),
+                $CIDRAM['Number_L10N']($CIDRAM['Fixer']['Time'], 3)
+            ),
+        ) . '</div>';
+        $CIDRAM['FE']['FixerOutput'] = '<hr />' . $CIDRAM['Fixer'] . '<br /><textarea name="FixerOutput">' . str_replace(
+            ['&', '<', '>'],
+            ['&amp;', '&gt;', '&lt;'],
+            $CIDRAM['FE']['FixerOutput']
+        ) . '</textarea><br />';
+        unset($CIDRAM['Fixer']);
+    }
+
+    /** Parse output. */
+    $CIDRAM['FE']['FE_Content'] = $CIDRAM['ParseVars'](
+        $CIDRAM['lang'] + $CIDRAM['FE'],
+        $CIDRAM['ReadFile']($CIDRAM['GetAssetPath']('_fixer.html'))
+    );
+
+    /** Send output. */
+    echo $CIDRAM['SendOutput']();
 
 }
 

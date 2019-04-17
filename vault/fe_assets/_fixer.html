@@ -1,0 +1,22 @@
+<table>
+<tr>
+  <td class="nav big">
+{nav}  </td>
+  <td class="right extend">
+    <div class="txtRd">This feature is still a work in progress. Please check back later.</div>
+    <div class="ng1">
+      <form action="?cidram-page=fixer" method="POST">
+        <span class="s">{label_preferred_source}</span><br />
+        {PreferredSource}
+        <div id="preferredSourceListDiv"{styleList}>
+          <hr />{ActiveSignatureFiles}
+        </div>
+        <div id="preferredSourceInputDiv"{styleInput}>
+          <hr /><textarea name="DirectInput" placeholder="{tip_enter_input_here}">{DirectInput}</textarea><br />
+        </div>
+        <input id="submitButton" type="submit" value="{field_ok}" {submitButtonVisibility}/>
+      </form>{FixerOutput}
+    </div>
+  </td>
+</tr>
+</table>

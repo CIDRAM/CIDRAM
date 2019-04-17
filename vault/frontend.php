@@ -2077,17 +2077,13 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'fixer' && $CIDRAM['FE']['Permis
         // below here aaa
         // above here aaa
         $CIDRAM['Fixer']['Time'] = microtime(true) - $_SERVER['REQUEST_TIME_FLOAT'];
-        $CIDRAM['Fixer'] = '<div class="s">' . sprintf(
-            $CIDRAM['L10N']->getString('state_fixer'),
-            sprintf(
-                $CIDRAM['L10N']->getPlural(0, 'state_fixer_changed'),
-                $CIDRAM['Number_L10N'](0)
-            ),
-            sprintf(
-                $CIDRAM['L10N']->getPlural($CIDRAM['Fixer']['Time'], 'state_fixer_seconds'),
-                $CIDRAM['Number_L10N']($CIDRAM['Fixer']['Time'], 3)
-            ),
-        ) . '</div>';
+        $CIDRAM['Fixer'] = '<div class="s">' . sprintf($CIDRAM['L10N']->getString('state_fixer'), sprintf(
+            $CIDRAM['L10N']->getPlural(0, 'state_fixer_changed'),
+            $CIDRAM['Number_L10N'](0)
+        ), sprintf(
+            $CIDRAM['L10N']->getPlural($CIDRAM['Fixer']['Time'], 'state_fixer_seconds'),
+            $CIDRAM['Number_L10N']($CIDRAM['Fixer']['Time'], 3)
+        )) . '</div>';
         $CIDRAM['FE']['FixerOutput'] = '<hr />' . $CIDRAM['Fixer'] . '<br /><textarea name="FixerOutput">' . str_replace(
             ['&', '<', '>'],
             ['&amp;', '&gt;', '&lt;'],

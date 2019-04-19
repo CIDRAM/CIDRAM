@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2019.04.09).
+ * This file: Front-end functions file (last modified: 2019.04.19).
  */
 
 /**
@@ -702,7 +702,7 @@ $CIDRAM['IsActivable'] = function (&$Component) {
 };
 
 /** Activate component (front-end updates page). */
-$CIDRAM['ActivateComponent'] = function ($Type) use (&$CIDRAM) {
+$CIDRAM['ActivateComponent'] = function ($Type, $ID) use (&$CIDRAM) {
     $CIDRAM['Activation'][$Type] = array_unique(array_filter(
         explode(',', $CIDRAM['Activation'][$Type]),
         function ($Component) use (&$CIDRAM) {
@@ -710,7 +710,7 @@ $CIDRAM['ActivateComponent'] = function ($Type) use (&$CIDRAM) {
             return ($Component && file_exists($CIDRAM['Vault'] . $Component));
         }
     ));
-    foreach ($CIDRAM['Components']['Meta'][$CIDRAM['Targets']]['Files']['To'] as $CIDRAM['Activation']['ThisFile']) {
+    foreach ($CIDRAM['Components']['Meta'][$ID]['Files']['To'] as $CIDRAM['Activation']['ThisFile']) {
         if (
             !empty($CIDRAM['Activation']['ThisFile']) &&
             file_exists($CIDRAM['Vault'] . $CIDRAM['Activation']['ThisFile']) &&
@@ -729,7 +729,7 @@ $CIDRAM['ActivateComponent'] = function ($Type) use (&$CIDRAM) {
 };
 
 /** Deactivate component (front-end updates page). */
-$CIDRAM['DeactivateComponent'] = function ($Type) use (&$CIDRAM) {
+$CIDRAM['DeactivateComponent'] = function ($Type, $ID) use (&$CIDRAM) {
     $CIDRAM['Deactivation'][$Type] = array_unique(array_filter(
         explode(',', $CIDRAM['Deactivation'][$Type]),
         function ($Component) use (&$CIDRAM) {
@@ -741,7 +741,7 @@ $CIDRAM['DeactivateComponent'] = function ($Type) use (&$CIDRAM) {
         sort($CIDRAM['Deactivation'][$Type]);
     }
     $CIDRAM['Deactivation'][$Type] = ',' . implode(',', $CIDRAM['Deactivation'][$Type]) . ',';
-    foreach ($CIDRAM['Components']['Meta'][$CIDRAM['Targets']]['Files']['To'] as $CIDRAM['Deactivation']['ThisFile']) {
+    foreach ($CIDRAM['Components']['Meta'][$ID]['Files']['To'] as $CIDRAM['Deactivation']['ThisFile']) {
         $CIDRAM['Deactivation'][$Type] = preg_replace(
             '~,(?:[\w\d]+:)?' . preg_quote($CIDRAM['Deactivation']['ThisFile']) . ',~',
             ',',
@@ -803,12 +803,12 @@ $CIDRAM['PrepareName'] = function (&$Arr, $Key = '') use (&$CIDRAM) {
 };
 
 /** Duplication avoidance (front-end updates page). */
-$CIDRAM['ComponentFunctionUpdatePrep'] = function () use (&$CIDRAM) {
-    if (!empty($CIDRAM['Components']['Meta'][$CIDRAM['Targets']]['Files'])) {
-        $CIDRAM['PrepareExtendedDescription']($CIDRAM['Components']['Meta'][$CIDRAM['Targets']]);
-        $CIDRAM['Arrayify']($CIDRAM['Components']['Meta'][$CIDRAM['Targets']]['Files']);
-        $CIDRAM['Arrayify']($CIDRAM['Components']['Meta'][$CIDRAM['Targets']]['Files']['To']);
-        return $CIDRAM['IsInUse']($CIDRAM['Components']['Meta'][$CIDRAM['Targets']]);
+$CIDRAM['ComponentFunctionUpdatePrep'] = function ($Targets) use (&$CIDRAM) {
+    if (!empty($CIDRAM['Components']['Meta'][$Targets]['Files'])) {
+        $CIDRAM['PrepareExtendedDescription']($CIDRAM['Components']['Meta'][$Targets]);
+        $CIDRAM['Arrayify']($CIDRAM['Components']['Meta'][$Targets]['Files']);
+        $CIDRAM['Arrayify']($CIDRAM['Components']['Meta'][$Targets]['Files']['To']);
+        return $CIDRAM['IsInUse']($CIDRAM['Components']['Meta'][$Targets]);
     }
     return false;
 };
@@ -1179,9 +1179,24 @@ $CIDRAM['VersionWarning'] = function ($Version = PHP_VERSION) use (&$CIDRAM) {
 /**
  * Executes a list of closures or commands when specific conditions are met.
  *
- * @param array|string $Closures The list of closures or commands to execute.
+ * @param string|array $Closures The list of closures or commands to execute.
+ * @param bool $Queue Whether to queue the operation or perform immediately.
  */
-$CIDRAM['FE_Executor'] = function ($Closures) use (&$CIDRAM) {
+$CIDRAM['FE_Executor'] = function ($Closures = false, $Queue = false) use (&$CIDRAM) {
+    if ($Queue && $Closures !== false) {
+        if (empty($CIDRAM['FE_Executor_Queue'])) {
+            $CIDRAM['FE_Executor_Queue'] = [];
+        }
+        $CIDRAM['FE_Executor_Queue'][] = $Closures;
+        return;
+    }
+    if ($Closures === false && !empty($CIDRAM['FE_Executor_Queue'])) {
+        foreach ($CIDRAM['FE_Executor_Queue'] as $QueueItem) {
+            $CIDRAM['FE_Executor']($QueueItem);
+        }
+        $CIDRAM['FE_Executor_Queue'] = [];
+        return;
+    }
     $CIDRAM['Arrayify']($Closures);
     $CIDRAM['FE_Executor_Files'] = [];
     foreach ($Closures as $Closure) {
@@ -1211,9 +1226,8 @@ $CIDRAM['FE_Executor'] = function ($Closures) use (&$CIDRAM) {
  */
 $CIDRAM['WP-Ver'] = function () use (&$CIDRAM) {
     if (
-        file_exists($CIDRAM['Vault'] . '../cidram.php') &&
         is_readable($CIDRAM['Vault'] . '../cidram.php') &&
-        !empty($CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['ThisTarget']]['Version']) &&
+        !empty($CIDRAM['Components']['RemoteMeta']['CIDRAM']['Version']) &&
         ($ThisData = $CIDRAM['ReadFile']($CIDRAM['Vault'] . '../cidram.php'))
     ) {
         $PlugHead = "\x3C\x3Fphp\n/**\n * Plugin Name: CIDRAM\n * Version: ";
@@ -1221,7 +1235,7 @@ $CIDRAM['WP-Ver'] = function () use (&$CIDRAM) {
             $PlugHeadEnd = strpos($ThisData, "\n", 45);
             $ThisData =
                 $PlugHead .
-                $CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['ThisTarget']]['Version'] .
+                $CIDRAM['Components']['RemoteMeta']['CIDRAM']['Version'] .
                 substr($ThisData, $PlugHeadEnd);
             $Handle = fopen($CIDRAM['Vault'] . '../cidram.php', 'w');
             fwrite($Handle, $ThisData);
@@ -1452,36 +1466,50 @@ $CIDRAM['UpdatesSortFunc'] = function ($A, $B) {
     return 0;
 };
 
-/** Updates handler. */
-$CIDRAM['UpdatesHandler'] = function ($Action, $ID) use (&$CIDRAM) {
+/**
+ * Updates handler.
+ *
+ * @param string $Action The action to take (update/install, verify, uninstall, activate, deactivate).
+ * @return string|array The ID(/s) of the component(/s) to perform the specified action upon.
+ */
+$CIDRAM['UpdatesHandler'] = function ($Action, $ID = '') use (&$CIDRAM) {
 
-    /** Define component targets. */
-    $CIDRAM['Targets'] = $ID;
+    /** Support for executor calls. */
+    if ($ID === '' && ($Pos = strpos($Action, ' ')) !== false) {
+        $ID = substr($Action, $Pos + 1);
+        $Action = substr($Action, 0, $Pos);
+        if (strpos($ID, ',') !== false) {
+            $ID = explode(',', $ID);
+        }
+    }
 
     /** Update a component. */
     if ($Action === 'update-component') {
-        return $CIDRAM['UpdatesHandler-Update']($ID);
-    }
-
-    /** Uninstall a component. */
-    if ($Action === 'uninstall-component') {
-        return $CIDRAM['UpdatesHandler-Uninstall']($ID);
-    }
-
-    /** Activate a component. */
-    if ($Action === 'activate-component') {
-        return $CIDRAM['UpdatesHandler-Activate']($ID);
-    }
-
-    /** Deactivate a component. */
-    if ($Action === 'deactivate-component') {
-        return $CIDRAM['UpdatesHandler-Deactivate']($ID);
+        $CIDRAM['UpdatesHandler-Update']($ID);
     }
 
     /** Verify a component. */
     if ($Action === 'verify-component') {
-        return $CIDRAM['UpdatesHandler-Verify']($ID);
+        $CIDRAM['UpdatesHandler-Verify']($ID);
     }
+
+    /** Uninstall a component. */
+    if (!is_array($ID) && $Action === 'uninstall-component') {
+        $CIDRAM['UpdatesHandler-Uninstall']($ID);
+    }
+
+    /** Activate a component. */
+    if (!is_array($ID) && $Action === 'activate-component') {
+        $CIDRAM['UpdatesHandler-Activate']($ID);
+    }
+
+    /** Deactivate a component. */
+    if (!is_array($ID) && $Action === 'deactivate-component') {
+        $CIDRAM['UpdatesHandler-Deactivate']($ID);
+    }
+
+    /** Process and empty executor queue. */
+    $CIDRAM['FE_Executor']();
 
 };
 
@@ -1490,10 +1518,10 @@ $CIDRAM['UpdatesHandler-Update'] = function ($ID) use (&$CIDRAM) {
     $CIDRAM['Arrayify']($ID);
     $FileData = [];
     $Annotations = [];
-    foreach ($ID as $CIDRAM['Components']['ThisTarget']) {
+    foreach ($ID as $ThisTarget) {
         if (!isset(
-            $CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['Remote'],
-            $CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['Reannotate']
+            $CIDRAM['Components']['Meta'][$ThisTarget]['Remote'],
+            $CIDRAM['Components']['Meta'][$ThisTarget]['Reannotate']
         )) {
             continue;
         }
@@ -1501,35 +1529,35 @@ $CIDRAM['UpdatesHandler-Update'] = function ($ID) use (&$CIDRAM) {
         $CIDRAM['Components']['BytesRemoved'] = 0;
         $CIDRAM['Components']['TimeRequired'] = microtime(true);
         $CIDRAM['Components']['RemoteMeta'] = [];
-        $CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['RemoteData'] = '';
+        $CIDRAM['Components']['Meta'][$ThisTarget]['RemoteData'] = '';
         $CIDRAM['FetchRemote-ContextFree'](
-            $CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['RemoteData'],
-            $CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['Remote']
+            $CIDRAM['Components']['Meta'][$ThisTarget]['RemoteData'],
+            $CIDRAM['Components']['Meta'][$ThisTarget]['Remote']
         );
         $CIDRAM['UpdateFailed'] = false;
         if (
-            substr($CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['RemoteData'], 0, 4) === "---\n" &&
+            substr($CIDRAM['Components']['Meta'][$ThisTarget]['RemoteData'], 0, 4) === "---\n" &&
             ($CIDRAM['Components']['EoYAML'] = strpos(
-                $CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['RemoteData'], "\n\n"
+                $CIDRAM['Components']['Meta'][$ThisTarget]['RemoteData'], "\n\n"
             )) !== false &&
             $CIDRAM['YAML-Object']->process(
-                substr($CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['RemoteData'], 4, $CIDRAM['Components']['EoYAML'] - 4),
+                substr($CIDRAM['Components']['Meta'][$ThisTarget]['RemoteData'], 4, $CIDRAM['Components']['EoYAML'] - 4),
                 $CIDRAM['Components']['RemoteMeta']
             ) &&
-            !empty($CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['ThisTarget']]['Minimum Required']) &&
+            !empty($CIDRAM['Components']['RemoteMeta'][$ThisTarget]['Minimum Required']) &&
             !$CIDRAM['VersionCompare'](
                 $CIDRAM['ScriptVersion'],
-                $CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['ThisTarget']]['Minimum Required']
+                $CIDRAM['Components']['RemoteMeta'][$ThisTarget]['Minimum Required']
             ) &&
             (
-                empty($CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['ThisTarget']]['Minimum Required PHP']) ||
-                !$CIDRAM['VersionCompare'](PHP_VERSION, $CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['ThisTarget']]['Minimum Required PHP'])
+                empty($CIDRAM['Components']['RemoteMeta'][$ThisTarget]['Minimum Required PHP']) ||
+                !$CIDRAM['VersionCompare'](PHP_VERSION, $CIDRAM['Components']['RemoteMeta'][$ThisTarget]['Minimum Required PHP'])
             ) &&
-            !empty($CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['ThisTarget']]['Files']['From']) &&
-            !empty($CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['ThisTarget']]['Files']['To']) &&
-            !empty($CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['ThisTarget']]['Reannotate']) &&
-            $CIDRAM['Traverse']($CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['ThisTarget']]['Reannotate']) &&
-            ($ThisReannotate = $CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['ThisTarget']]['Reannotate']) &&
+            !empty($CIDRAM['Components']['RemoteMeta'][$ThisTarget]['Files']['From']) &&
+            !empty($CIDRAM['Components']['RemoteMeta'][$ThisTarget]['Files']['To']) &&
+            !empty($CIDRAM['Components']['RemoteMeta'][$ThisTarget]['Reannotate']) &&
+            $CIDRAM['Traverse']($CIDRAM['Components']['RemoteMeta'][$ThisTarget]['Reannotate']) &&
+            ($ThisReannotate = $CIDRAM['Components']['RemoteMeta'][$ThisTarget]['Reannotate']) &&
             file_exists($CIDRAM['Vault'] . $ThisReannotate) &&
             ((
                 !empty($FileData[$ThisReannotate]) &&
@@ -1540,43 +1568,43 @@ $CIDRAM['UpdatesHandler-Update'] = function ($ID) use (&$CIDRAM) {
                 )
             )) &&
             preg_match(
-                "\x01(\n" . preg_quote($CIDRAM['Components']['ThisTarget']) . ":?)(\n [^\n]*)*\n\x01i",
+                "~(\n" . preg_quote($ThisTarget) . ":?)(\n [^\n]*)*\n~i",
                 $CIDRAM['Components']['OldMeta'],
                 $CIDRAM['Components']['OldMetaMatches']
             ) &&
             ($CIDRAM['Components']['OldMetaMatches'] = $CIDRAM['Components']['OldMetaMatches'][0]) &&
-            ($CIDRAM['Components']['NewMeta'] = $CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['RemoteData']) &&
+            ($CIDRAM['Components']['NewMeta'] = $CIDRAM['Components']['Meta'][$ThisTarget]['RemoteData']) &&
             preg_match(
-                "\x01(\n" . preg_quote($CIDRAM['Components']['ThisTarget']) . ":?)(\n [^\n]*)*\n\x01i",
+                "~(\n" . preg_quote($ThisTarget) . ":?)(\n [^\n]*)*\n~i",
                 $CIDRAM['Components']['NewMeta'],
                 $CIDRAM['Components']['NewMetaMatches']
             ) &&
             ($CIDRAM['Components']['NewMetaMatches'] = $CIDRAM['Components']['NewMetaMatches'][0]) &&
             (!$CIDRAM['FE']['CronMode'] || empty(
-                $CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['Tests']
-            ) || $CIDRAM['AppendTests']($CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']], true))
+                $CIDRAM['Components']['Meta'][$ThisTarget]['Tests']
+            ) || $CIDRAM['AppendTests']($CIDRAM['Components']['Meta'][$ThisTarget], true))
         ) {
-            $CIDRAM['Arrayify']($CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['ThisTarget']]['Files']);
-            $CIDRAM['Arrayify']($CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['ThisTarget']]['Files']['From']);
-            $CIDRAM['Arrayify']($CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['ThisTarget']]['Files']['To']);
-            if (!empty($CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['ThisTarget']]['Files']['Checksum'])) {
-                $CIDRAM['Arrayify']($CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['ThisTarget']]['Files']['Checksum']);
+            $CIDRAM['Arrayify']($CIDRAM['Components']['RemoteMeta'][$ThisTarget]['Files']);
+            $CIDRAM['Arrayify']($CIDRAM['Components']['RemoteMeta'][$ThisTarget]['Files']['From']);
+            $CIDRAM['Arrayify']($CIDRAM['Components']['RemoteMeta'][$ThisTarget]['Files']['To']);
+            if (!empty($CIDRAM['Components']['RemoteMeta'][$ThisTarget]['Files']['Checksum'])) {
+                $CIDRAM['Arrayify']($CIDRAM['Components']['RemoteMeta'][$ThisTarget]['Files']['Checksum']);
             }
             $CIDRAM['Components']['NewMeta'] = str_replace(
                 $CIDRAM['Components']['OldMetaMatches'],
                 $CIDRAM['Components']['NewMetaMatches'],
                 $CIDRAM['Components']['OldMeta']
             );
-            $Count = count($CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['ThisTarget']]['Files']['From']);
+            $Count = count($CIDRAM['Components']['RemoteMeta'][$ThisTarget]['Files']['From']);
             $CIDRAM['RemoteFiles'] = [];
             $CIDRAM['IgnoredFiles'] = [];
             $Rollback = false;
             /** Write new and updated files and directories. */
             for ($Iterate = 0; $Iterate < $Count; $Iterate++) {
-                if (empty($CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['ThisTarget']]['Files']['To'][$Iterate])) {
+                if (empty($CIDRAM['Components']['RemoteMeta'][$ThisTarget]['Files']['To'][$Iterate])) {
                     continue;
                 }
-                $ThisFileName = $CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['ThisTarget']]['Files']['To'][$Iterate];
+                $ThisFileName = $CIDRAM['Components']['RemoteMeta'][$ThisTarget]['Files']['To'][$Iterate];
                 /** Rolls back to previous version or uninstalls if an update/install fails. */
                 if ($Rollback) {
                     if (
@@ -1594,19 +1622,19 @@ $CIDRAM['UpdatesHandler-Update'] = function ($ID) use (&$CIDRAM) {
                     continue;
                 }
                 if (
-                    !empty($CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['ThisTarget']]['Files']['Checksum'][$Iterate]) &&
-                    !empty($CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['Files']['Checksum'][$Iterate]) && (
-                        $CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['ThisTarget']]['Files']['Checksum'][$Iterate] ===
-                        $CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['Files']['Checksum'][$Iterate]
+                    !empty($CIDRAM['Components']['RemoteMeta'][$ThisTarget]['Files']['Checksum'][$Iterate]) &&
+                    !empty($CIDRAM['Components']['Meta'][$ThisTarget]['Files']['Checksum'][$Iterate]) && (
+                        $CIDRAM['Components']['RemoteMeta'][$ThisTarget]['Files']['Checksum'][$Iterate] ===
+                        $CIDRAM['Components']['Meta'][$ThisTarget]['Files']['Checksum'][$Iterate]
                     )
                 ) {
                     $CIDRAM['IgnoredFiles'][$ThisFileName] = true;
                     continue;
                 }
                 if (
-                    empty($CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['ThisTarget']]['Files']['From'][$Iterate]) ||
+                    empty($CIDRAM['Components']['RemoteMeta'][$ThisTarget]['Files']['From'][$Iterate]) ||
                     !($ThisFile = $CIDRAM['Request'](
-                        $CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['ThisTarget']]['Files']['From'][$Iterate]
+                        $CIDRAM['Components']['RemoteMeta'][$ThisTarget]['Files']['From'][$Iterate]
                     ))
                 ) {
                     $Iterate = 0;
@@ -1615,15 +1643,15 @@ $CIDRAM['UpdatesHandler-Update'] = function ($ID) use (&$CIDRAM) {
                 }
                 if (
                     strtolower(substr(
-                        $CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['ThisTarget']]['Files']['From'][$Iterate], -2
+                        $CIDRAM['Components']['RemoteMeta'][$ThisTarget]['Files']['From'][$Iterate], -2
                     )) === 'gz' &&
                     strtolower(substr($ThisFileName, -2)) !== 'gz' &&
                     substr($ThisFile, 0, 2) === "\x1f\x8b"
                 ) {
                     $ThisFile = gzdecode($ThisFile);
                 }
-                if (!empty($CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['ThisTarget']]['Files']['Checksum'][$Iterate])) {
-                    $ThisChecksum = $CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['ThisTarget']]['Files']['Checksum'][$Iterate];
+                if (!empty($CIDRAM['Components']['RemoteMeta'][$ThisTarget]['Files']['Checksum'][$Iterate])) {
+                    $ThisChecksum = $CIDRAM['Components']['RemoteMeta'][$ThisTarget]['Files']['Checksum'][$Iterate];
                     $ThisLen = strlen($ThisFile);
                     if (
                         (md5($ThisFile) . ':' . $ThisLen) !== $ThisChecksum &&
@@ -1631,11 +1659,11 @@ $CIDRAM['UpdatesHandler-Update'] = function ($ID) use (&$CIDRAM) {
                         (hash('sha256', $ThisFile) . ':' . $ThisLen) !== $ThisChecksum
                     ) {
                         $CIDRAM['FE']['state_msg'] .=
-                            '<code>' . $CIDRAM['Components']['ThisTarget'] . '</code> – ' .
+                            '<code>' . $ThisTarget . '</code> – ' .
                             '<code>' . $ThisFileName . '</code> – ' .
                             $CIDRAM['L10N']->getString('response_checksum_error') . '<br />';
-                        if (!empty($CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['On Checksum Error'])) {
-                            $CIDRAM['FE_Executor']($CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['On Checksum Error']);
+                        if (!empty($CIDRAM['Components']['Meta'][$ThisTarget]['On Checksum Error'])) {
+                            $CIDRAM['FE_Executor']($CIDRAM['Components']['Meta'][$ThisTarget]['On Checksum Error'], true);
                         }
                         $Iterate = 0;
                         $Rollback = true;
@@ -1648,12 +1676,12 @@ $CIDRAM['UpdatesHandler-Update'] = function ($ID) use (&$CIDRAM) {
                 ) {
                     $CIDRAM['FE']['state_msg'] .= sprintf(
                         '<code>%s</code> – <code>%s</code> – %s<br />',
-                        $CIDRAM['Components']['ThisTarget'],
+                        $ThisTarget,
                         $ThisFileName,
                         $CIDRAM['L10N']->getString('response_sanity_1')
                     );
-                    if (!empty($CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['On Sanity Error'])) {
-                        $CIDRAM['FE_Executor']($CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['On Sanity Error']);
+                    if (!empty($CIDRAM['Components']['Meta'][$ThisTarget]['On Sanity Error'])) {
+                        $CIDRAM['FE_Executor']($CIDRAM['Components']['Meta'][$ThisTarget]['On Sanity Error'], true);
                     }
                     $Iterate = 0;
                     $Rollback = true;
@@ -1687,10 +1715,10 @@ $CIDRAM['UpdatesHandler-Update'] = function ($ID) use (&$CIDRAM) {
             if ($Rollback) {
                 /** Prune unwanted empty directories (update/install failure+rollback). */
                 if (
-                    !empty($CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['ThisTarget']]['Files']['To']) &&
-                    is_array($CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['ThisTarget']]['Files']['To'])
+                    !empty($CIDRAM['Components']['RemoteMeta'][$ThisTarget]['Files']['To']) &&
+                    is_array($CIDRAM['Components']['RemoteMeta'][$ThisTarget]['Files']['To'])
                 ) {
-                    array_walk($CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['ThisTarget']]['Files']['To'], function ($ThisFile) use (&$CIDRAM) {
+                    array_walk($CIDRAM['Components']['RemoteMeta'][$ThisTarget]['Files']['To'], function ($ThisFile) use (&$CIDRAM) {
                         if (!empty($ThisFile) && $CIDRAM['Traverse']($ThisFile)) {
                             $CIDRAM['DeleteDirectory']($ThisFile);
                         }
@@ -1699,8 +1727,8 @@ $CIDRAM['UpdatesHandler-Update'] = function ($ID) use (&$CIDRAM) {
                 $CIDRAM['UpdateFailed'] = true;
             } else {
                 /** Prune unwanted files and directories (update/install success). */
-                if (!empty($CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['Files']['To'])) {
-                    $ThisArr = $CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['Files']['To'];
+                if (!empty($CIDRAM['Components']['Meta'][$ThisTarget]['Files']['To'])) {
+                    $ThisArr = $CIDRAM['Components']['Meta'][$ThisTarget]['Files']['To'];
                     $CIDRAM['Arrayify']($ThisArr);
                     array_walk($ThisArr, function ($ThisFile) use (&$CIDRAM) {
                         if (!empty($ThisFile) && $CIDRAM['Traverse']($ThisFile)) {
@@ -1723,43 +1751,42 @@ $CIDRAM['UpdatesHandler-Update'] = function ($ID) use (&$CIDRAM) {
                 /** Assign updated component annotation. */
                 $FileData[$ThisReannotate] = $CIDRAM['Components']['NewMeta'];
                 if (!isset($Annotations[$ThisReannotate])) {
-                    $Annotations[$ThisReannotate] = $CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['RemoteData'];
+                    $Annotations[$ThisReannotate] = $CIDRAM['Components']['Meta'][$ThisTarget]['RemoteData'];
                 }
-                $CIDRAM['FE']['state_msg'] .= '<code>' . $CIDRAM['Components']['ThisTarget'] . '</code> – ';
+                $CIDRAM['FE']['state_msg'] .= '<code>' . $ThisTarget . '</code> – ';
                 if (
-                    empty($CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['Version']) &&
-                    empty($CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['Files'])
+                    empty($CIDRAM['Components']['Meta'][$ThisTarget]['Version']) &&
+                    empty($CIDRAM['Components']['Meta'][$ThisTarget]['Files'])
                 ) {
                     $CIDRAM['FE']['state_msg'] .= $CIDRAM['L10N']->getString('response_component_successfully_installed');
-                    if (!empty($CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['When Install Succeeds'])) {
-                        $CIDRAM['FE_Executor']($CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['When Install Succeeds']);
+                    if (!empty($CIDRAM['Components']['Meta'][$ThisTarget]['When Install Succeeds'])) {
+                        $CIDRAM['FE_Executor']($CIDRAM['Components']['Meta'][$ThisTarget]['When Install Succeeds'], true);
                     }
                 } else {
                     $CIDRAM['FE']['state_msg'] .= $CIDRAM['L10N']->getString('response_component_successfully_updated');
-                    if (!empty($CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['When Update Succeeds'])) {
-                        $CIDRAM['FE_Executor']($CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['When Update Succeeds']);
+                    if (!empty($CIDRAM['Components']['Meta'][$ThisTarget]['When Update Succeeds'])) {
+                        $CIDRAM['FE_Executor']($CIDRAM['Components']['Meta'][$ThisTarget]['When Update Succeeds'], true);
                     }
                 }
-                $CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']] =
-                    $CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['ThisTarget']];
+                $CIDRAM['Components']['Meta'][$ThisTarget] = $CIDRAM['Components']['RemoteMeta'][$ThisTarget];
             }
         } else {
             $CIDRAM['UpdateFailed'] = true;
         }
         if ($CIDRAM['UpdateFailed']) {
-            $CIDRAM['FE']['state_msg'] .= '<code>' . $CIDRAM['Components']['ThisTarget'] . '</code> – ';
+            $CIDRAM['FE']['state_msg'] .= '<code>' . $ThisTarget . '</code> – ';
             if (
-                empty($CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['Version']) &&
-                empty($CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['Files'])
+                empty($CIDRAM['Components']['Meta'][$ThisTarget]['Version']) &&
+                empty($CIDRAM['Components']['Meta'][$ThisTarget]['Files'])
             ) {
                 $CIDRAM['FE']['state_msg'] .= $CIDRAM['L10N']->getString('response_failed_to_install');
-                if (!empty($CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['When Install Fails'])) {
-                    $CIDRAM['FE_Executor']($CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['When Install Fails']);
+                if (!empty($CIDRAM['Components']['Meta'][$ThisTarget]['When Install Fails'])) {
+                    $CIDRAM['FE_Executor']($CIDRAM['Components']['Meta'][$ThisTarget]['When Install Fails'], true);
                 }
             } else {
                 $CIDRAM['FE']['state_msg'] .= $CIDRAM['L10N']->getString('response_failed_to_update');
-                if (!empty($CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['When Update Fails'])) {
-                    $CIDRAM['FE_Executor']($CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['When Update Fails']);
+                if (!empty($CIDRAM['Components']['Meta'][$ThisTarget]['When Update Fails'])) {
+                    $CIDRAM['FE_Executor']($CIDRAM['Components']['Meta'][$ThisTarget]['When Update Fails'], true);
                 }
             }
         }
@@ -1788,7 +1815,7 @@ $CIDRAM['UpdatesHandler-Update'] = function ($ID) use (&$CIDRAM) {
 
 /** Updates handler: Uninstall a component. */
 $CIDRAM['UpdatesHandler-Uninstall'] = function ($ID) use (&$CIDRAM) {
-    $InUse = $CIDRAM['ComponentFunctionUpdatePrep']();
+    $InUse = $CIDRAM['ComponentFunctionUpdatePrep']($ID);
     $CIDRAM['Components']['BytesRemoved'] = 0;
     $CIDRAM['Components']['TimeRequired'] = microtime(true);
     if (
@@ -1803,7 +1830,7 @@ $CIDRAM['UpdatesHandler-Uninstall'] = function ($ID) use (&$CIDRAM) {
             $CIDRAM['Vault'] . $CIDRAM['Components']['Meta'][$ID]['Reannotate']
         )) &&
         preg_match(
-            "\x01(\n" . preg_quote($ID) . ":?)(\n [^\n]*)*\n\x01i",
+            "~(\n" . preg_quote($ID) . ":?)(\n [^\n]*)*\n~i",
             $CIDRAM['Components']['OldMeta'],
             $CIDRAM['Components']['OldMetaMatches']
         ) &&
@@ -1838,12 +1865,12 @@ $CIDRAM['UpdatesHandler-Uninstall'] = function ($ID) use (&$CIDRAM) {
         $CIDRAM['Components']['Meta'][$ID]['Files'] = false;
         $CIDRAM['FE']['state_msg'] = $CIDRAM['L10N']->getString('response_component_successfully_uninstalled');
         if (!empty($CIDRAM['Components']['Meta'][$ID]['When Uninstall Succeeds'])) {
-            $CIDRAM['FE_Executor']($CIDRAM['Components']['Meta'][$ID]['When Uninstall Succeeds']);
+            $CIDRAM['FE_Executor']($CIDRAM['Components']['Meta'][$ID]['When Uninstall Succeeds'], true);
         }
     } else {
         $CIDRAM['FE']['state_msg'] = $CIDRAM['L10N']->getString('response_component_uninstall_error');
         if (!empty($CIDRAM['Components']['Meta'][$ID]['When Uninstall Fails'])) {
-            $CIDRAM['FE_Executor']($CIDRAM['Components']['Meta'][$ID]['When Uninstall Fails']);
+            $CIDRAM['FE_Executor']($CIDRAM['Components']['Meta'][$ID]['When Uninstall Fails'], true);
         }
     }
     $CIDRAM['FormatFilesize']($CIDRAM['Components']['BytesRemoved']);
@@ -1863,7 +1890,7 @@ $CIDRAM['UpdatesHandler-Activate'] = function ($ID) use (&$CIDRAM) {
         'modules' => $CIDRAM['Config']['signatures']['modules'],
         'Modified' => false
     ];
-    $InUse = $CIDRAM['ComponentFunctionUpdatePrep']();
+    $InUse = $CIDRAM['ComponentFunctionUpdatePrep']($ID);
     if (
         empty($InUse) &&
         !empty($CIDRAM['Components']['Meta'][$ID]['Files']['To']) && (
@@ -1872,19 +1899,19 @@ $CIDRAM['UpdatesHandler-Activate'] = function ($ID) use (&$CIDRAM) {
         $UsedWith = empty($CIDRAM['Components']['Meta'][$ID]['Used with']) ? '' : $CIDRAM['Components']['Meta'][$ID]['Used with'];
         $Description = empty($CIDRAM['Components']['Meta'][$ID]['Extended Description']) ? '' : $CIDRAM['Components']['Meta'][$ID]['Extended Description'];
         if ($UsedWith === 'ipv4' || strpos($Description, 'signatures-&gt;ipv4') !== false) {
-            $CIDRAM['ActivateComponent']('ipv4');
+            $CIDRAM['ActivateComponent']('ipv4', $ID);
         }
         if ($UsedWith === 'ipv6' || strpos($Description, 'signatures-&gt;ipv6') !== false) {
-            $CIDRAM['ActivateComponent']('ipv6');
+            $CIDRAM['ActivateComponent']('ipv6', $ID);
         }
         if ($UsedWith === 'modules' || strpos($Description, 'signatures-&gt;modules') !== false) {
-            $CIDRAM['ActivateComponent']('modules');
+            $CIDRAM['ActivateComponent']('modules', $ID);
         }
     }
     if (!$CIDRAM['Activation']['Modified'] || !$CIDRAM['Activation']['Config']) {
         $CIDRAM['FE']['state_msg'] = $CIDRAM['L10N']->getString('response_activation_failed');
         if (!empty($CIDRAM['Components']['Meta'][$ID]['When Activation Fails'])) {
-            $CIDRAM['FE_Executor']($CIDRAM['Components']['Meta'][$ID]['When Activation Fails']);
+            $CIDRAM['FE_Executor']($CIDRAM['Components']['Meta'][$ID]['When Activation Fails'], true);
         }
     } else {
         $EOL = (strpos($CIDRAM['Activation']['Config'], "\r\n") !== false) ? "\r\n" : "\n";
@@ -1905,7 +1932,7 @@ $CIDRAM['UpdatesHandler-Activate'] = function ($ID) use (&$CIDRAM) {
         fclose($Handle);
         $CIDRAM['FE']['state_msg'] = $CIDRAM['L10N']->getString('response_activated');
         if (!empty($CIDRAM['Components']['Meta'][$ID]['When Activation Succeeds'])) {
-            $CIDRAM['FE_Executor']($CIDRAM['Components']['Meta'][$ID]['When Activation Succeeds']);
+            $CIDRAM['FE_Executor']($CIDRAM['Components']['Meta'][$ID]['When Activation Succeeds'], true);
         }
     }
     /** Cleanup. */
@@ -1931,14 +1958,14 @@ $CIDRAM['UpdatesHandler-Deactivate'] = function ($ID) use (&$CIDRAM) {
         unset($ThisComponent);
     }
     if (!empty($InUse) && !empty($CIDRAM['Components']['Meta'][$ID]['Files']['To'])) {
-        $CIDRAM['DeactivateComponent']('ipv4');
-        $CIDRAM['DeactivateComponent']('ipv6');
-        $CIDRAM['DeactivateComponent']('modules');
+        $CIDRAM['DeactivateComponent']('ipv4', $ID);
+        $CIDRAM['DeactivateComponent']('ipv6', $ID);
+        $CIDRAM['DeactivateComponent']('modules', $ID);
     }
     if (!$CIDRAM['Deactivation']['Modified'] || !$CIDRAM['Deactivation']['Config']) {
         $CIDRAM['FE']['state_msg'] = $CIDRAM['L10N']->getString('response_deactivation_failed');
         if (!empty($CIDRAM['Components']['Meta'][$ID]['When Deactivation Fails'])) {
-            $CIDRAM['FE_Executor']($CIDRAM['Components']['Meta'][$ID]['When Deactivation Fails']);
+            $CIDRAM['FE_Executor']($CIDRAM['Components']['Meta'][$ID]['When Deactivation Fails'], true);
         }
     } else {
         $EOL = (strpos($CIDRAM['Deactivation']['Config'], "\r\n") !== false) ? "\r\n" : "\n";
@@ -1959,7 +1986,7 @@ $CIDRAM['UpdatesHandler-Deactivate'] = function ($ID) use (&$CIDRAM) {
         fclose($Handle);
         $CIDRAM['FE']['state_msg'] = $CIDRAM['L10N']->getString('response_deactivated');
         if (!empty($CIDRAM['Components']['Meta'][$ID]['When Deactivation Succeeds'])) {
-            $CIDRAM['FE_Executor']($CIDRAM['Components']['Meta'][$ID]['When Deactivation Succeeds']);
+            $CIDRAM['FE_Executor']($CIDRAM['Components']['Meta'][$ID]['When Deactivation Succeeds'], true);
         }
     }
     /** Cleanup. */
@@ -3003,4 +3030,14 @@ $CIDRAM['ArrayToClickableList'] = function ($Arr = [], $DeleteKey = '', $Depth =
         $Output .= '</li>' . ($Depth === 0 ? '<br /></span>' : '');
     }
     return $Output;
+};
+
+/** Append to the current state message. */
+$CIDRAM['Message'] = function ($Message) use (&$CIDRAM) {
+    if (isset($CIDRAM['FE']['state_msg'])) {
+        if ($CIDRAM['FE']['state_msg'] || substr($CIDRAM['FE']['state_msg'], -6) !== '<br />') {
+            $CIDRAM['FE']['state_msg'] .= '<br />';
+        }
+        $CIDRAM['FE']['state_msg'] .= $Message . '<br />';
+    }
 };

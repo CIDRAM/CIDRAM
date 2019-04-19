@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2019.04.17).
+ * This file: Front-end handler (last modified: 2019.04.19).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -1817,7 +1817,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && ($CIDRAM['FE']['Per
         $CIDRAM['Components']['ReannotateThis'] = $CIDRAM['Components']['ThisComponent']['Reannotate'];
         $CIDRAM['FetchRemote']();
         if (!preg_match(
-            "\x01(\n" . preg_quote($CIDRAM['Components']['Key']) . ":?)(\n [^\n]*)*\n\x01i",
+            "~(\n" . preg_quote($CIDRAM['Components']['Key']) . ":?)(\n [^\n]*)*\n~i",
             $CIDRAM['Components']['ThisComponent']['RemoteData'],
             $CIDRAM['Components']['RemoteDataThis']
         )) {

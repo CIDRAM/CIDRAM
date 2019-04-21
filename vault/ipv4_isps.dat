@@ -1,8 +1,8 @@
 # IPv4 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv4_isps.dat
 
-# Version: 2019.108.381
-# Last modified: 2019.04.19
+# Version: 2019.110.380
+# Last modified: 2019.04.21
 
 
 # ---
@@ -2063,30 +2063,33 @@ Tag: 10dencehispahard
 
 
 # ASN 45753 ("Unit 1205-1207").
-# Confirmed data hosters: "Simcentric", "DATAPLUGS.COM", "Ethr.Net", "CLOUD LIMITED", "NETSEC".
-# ^.*(Simcentric|DATAPLUGS\.COM|Ethr\.Net|CLOUD LIMITED|NETSEC).*$\n
+# Confirmed data hosters: "Simcentric", "DATAPLUGS.COM", "Ethr.Net", "CLOUD LIMITED", "NETSEC", "Lighting Hosting".
+# ^.*(Simcentric|DATAPLUGS\.COM|Ethr\.Net|CLOUD LIMITED|NETSEC|Hosting).*$\n
 # Confirmed data hosters split to the cloud services signature files.
 # Everything else remains in the ISPs signature files.
-# %Listed, Google Malware Dashboard: 4.26%.
-# Stop Forum Spam (SFS) listings: 27.
-# Updated: 2018.11.21
+# %Listed, Google Malware Dashboard: 3.13%.
+# Stop Forum Spam (SFS) listings: 18.
+# Updated: 2019.04.21
 
 103.42.104.0/22 Deny Generic
 103.71.144.0/23 Deny Generic
-103.100.140.0/23 Deny Generic
+103.100.140.0/22 Deny Generic
 103.106.246.0/24 Deny Generic
 106.3.86.0/24 Deny Generic
 118.91.240.0/20 Deny Generic
 183.182.12.0/22 Deny Generic
 Origin: CN
-45.121.140.0/22 Deny Generic
+52.128.255.0/24 Deny Generic
+69.72.81.0/24 Deny Generic
+69.72.82.0/23 Deny Generic
+69.72.84.0/22 Deny Generic
 103.30.24.0/22 Deny Generic
-103.61.240.0/22 Deny Generic
 103.70.76.0/23 Deny Generic
-103.80.168.0/22 Deny Generic
 103.84.84.0/22 Deny Generic
+103.89.72.0/24 Deny Generic
 103.91.8.0/22 Deny Generic
-103.117.144.0/22 Deny Generic
+103.133.72.0/23 Deny Generic
+103.133.74.0/24 Deny Generic
 103.199.104.0/22 Deny Generic
 103.203.48.0/22 Deny Generic
 103.212.96.0/22 Deny Generic
@@ -2097,11 +2100,13 @@ Origin: CN
 137.59.20.0/22 Deny Generic
 139.5.200.0/22 Deny Generic
 141.193.152.0/21 Deny Generic
+148.66.0.0/24 Deny Generic
 175.41.16.0/20 Deny Generic
-182.16.127.0/24 Deny Generic
+180.178.32.0/24 Deny Generic
+182.16.126.0/23 Deny Generic
+202.59.249.0/24 Deny Generic
 202.61.97.0/24 Deny Generic
 202.61.111.0/24 Deny Generic
-203.33.189.0/24 Deny Generic
 Origin: HK
 63.216.57.0/24 Deny Generic
 63.220.4.0/24 Deny Generic
@@ -2109,8 +2114,7 @@ Origin: HK
 63.221.138.0/24 Deny Generic
 69.176.88.0/23 Deny Generic
 103.72.82.0/23 Deny Generic
-192.252.176.0/20 Deny Generic
-192.253.224.0/20 Deny Generic
+192.253.236.0/24 Deny Generic
 216.83.58.0/24 Deny Generic
 Origin: US
 Tag: Unit 1205-1207

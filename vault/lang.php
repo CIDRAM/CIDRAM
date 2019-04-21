@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Language handler (last modified: 2019.02.04).
+ * This file: Language handler (last modified: 2019.04.21).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -90,6 +90,9 @@ $CIDRAM['L10N'] = new \Maikuolan\Common\L10N($CIDRAM['L10N']['ConfiguredData'], 
 
 /** Reference L10N object's contained data to ensure things don't break until we can properly implement the new object. */
 $CIDRAM['lang'] = &$CIDRAM['L10N']->Data;
+
+/** Temporary hotfix for missing textDir variable. */
+$CIDRAM['lang']['textDir'] = (isset($CIDRAM['lang']['Text Direction']) && $CIDRAM['lang']['Text Direction'] === 'rtl') ? 'rtl' : 'ltr';
 
 /** Will remove later (temporary variable). */
 $CIDRAM['Config']['general']['lang_override'] = false;

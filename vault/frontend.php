@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2019.04.19).
+ * This file: Front-end handler (last modified: 2019.04.21).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -2073,17 +2073,98 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'fixer' && $CIDRAM['FE']['Permis
 
     /** Process (validate; attempt to fix) data. */
     if ($CIDRAM['FE']['FixerOutput']) {
-        $CIDRAM['Fixer'] = [];
-        // below here aaa
-        // above here aaa
-        $CIDRAM['Fixer']['Time'] = microtime(true) - $_SERVER['REQUEST_TIME_FLOAT'];
+        $CIDRAM['Fixer'] = [
+            'Time' => microtime(true),
+            'Changes' => 0,
+            'Aggregator' => new \CIDRAM\Aggregator\Aggregator($CIDRAM),
+            'Before' => hash('sha256', $CIDRAM['FE']['FixerOutput']) . ':' . strlen($CIDRAM['FE']['FixerOutput'])
+        ];
+        if (strpos($CIDRAM['FE']['FixerOutput'], "\r") !== false) {
+            $CIDRAM['FE']['FixerOutput'] = str_replace("\r", '', $CIDRAM['FE']['FixerOutput']);
+            $CIDRAM['Fixer']['Changes']++;
+        }
+        $CIDRAM['Fixer']['StrObject'] = new \Maikuolan\Common\ComplexStringHandler(
+            "\n" . $CIDRAM['FE']['FixerOutput'] . "\n",
+            '~(?<=\n)(?:\n|Expires\: \d{4}\.\d\d\.\d\d|Origin\: [A-Z]{2}|(?:\#|Tag\: |Defers to\: )[^\n]+| *\/\*\*(?:\n *\*[^\n]*)*\/| *\/\*\*? [^\n*]+\*\/|---\n(?:[^\n:]+\:(?:\n +[^\n:]+\: [^\n]+)+)+)+\n~',
+            function ($Data) use (&$CIDRAM) {
+                if (!$Data = trim($Data)) {
+                    return '';
+                }
+                $Output = '';
+                $EoLPos = $NEoLPos = 0;
+                while ($NEoLPos !== false) {
+                    $Set = $Previous = '';
+                    while (true) {
+                        if (($NEoLPos = strpos($Data, "\n", $EoLPos)) === false) {
+                            $Line = trim(substr($Data, $EoLPos));
+                        } else {
+                            $Line = trim(substr($Data, $EoLPos, $NEoLPos - $EoLPos));
+                            $NEoLPos++;
+                        }
+                        $Param = (($Pos = strpos($Line, ' ')) !== false) ? substr($Line, $Pos + 1) : 'Deny Unknown';
+                        if (!$Previous) {
+                            $Previous = $Param;
+                        }
+                        if ($Param !== $Previous) {
+                            $NEoLPos = 0;
+                            break;
+                        }
+                        if ($Line) {
+                            $Set .= $Line . "\n";
+                        }
+                        if ($NEoLPos === false) {
+                            break;
+                        }
+                        $EoLPos = $NEoLPos;
+                    }
+                    $CIDRAM['Results'] = ['In' => 0, 'Rejected' => 0, 'Accepted' => 0, 'Merged' => 0, 'Out' => 0];
+                    if ($Set = $CIDRAM['Fixer']['Aggregator']->aggregate(trim($Set))) {
+                        $Set = preg_replace('~$~m', ' ' . $Previous, $Set);
+                        $Output .= $Set . "\n";
+                    }
+                    $CIDRAM['Fixer']['Changes'] += $CIDRAM['Results']['Rejected'];
+                    $CIDRAM['Fixer']['Changes'] += $CIDRAM['Results']['Merged'];
+                }
+                return trim($Output);
+            }
+        );
+        $CIDRAM['Fixer']['StrObject']->iterateClosure(function ($Data) use (&$CIDRAM) {
+            if (($Pos = strpos($Data, "---\n")) !== false && substr($Data, $Pos - 1, 1) === "\n") {
+                $YAML = substr($Data, $Pos + 4);
+                if (($HPos = strpos($YAML, "\n#")) !== false) {
+                    $After = substr($YAML, $HPos);
+                    $YAML = substr($YAML, 0, $HPos + 1);
+                } else {
+                    $After = '';
+                }
+                $BeforeCount = substr_count($YAML, "\n");
+                $Arr = [];
+                $CIDRAM['YAML-Object']->process($YAML, $Arr);
+                $NewData = substr($Data, 0, $Pos + 4) . $CIDRAM['YAML-Object']->reconstruct($Arr);
+                if (($Add = $BeforeCount - substr_count($NewData, "\n") + 1) > 0) {
+                    $NewData .= str_repeat("\n", $Add);
+                }
+                $NewData .= $After;
+                if ($Data !== $NewData) {
+                    $CIDRAM['Fixer']['Changes']++;
+                    $Data = $NewData;
+                }
+            }
+            return "\n" . $Data;
+        }, true);
+        $CIDRAM['FE']['FixerOutput'] = trim($CIDRAM['Fixer']['StrObject']->recompile()) . "\n";
+        $CIDRAM['Fixer']['After'] = hash('sha256', $CIDRAM['FE']['FixerOutput']) . ':' . strlen($CIDRAM['FE']['FixerOutput']);
+        if ($CIDRAM['Fixer']['Before'] !== $CIDRAM['Fixer']['After'] && !$CIDRAM['Fixer']['Changes']) {
+            $CIDRAM['Fixer']['Changes']++;
+        }
+        $CIDRAM['Fixer']['Time'] = microtime(true) - $CIDRAM['Fixer']['Time'];
         $CIDRAM['Fixer'] = '<div class="s">' . sprintf($CIDRAM['L10N']->getString('state_fixer'), sprintf(
-            $CIDRAM['L10N']->getPlural(0, 'state_fixer_changed'),
-            $CIDRAM['Number_L10N'](0)
+            $CIDRAM['L10N']->getPlural($CIDRAM['Fixer']['Changes'], 'state_fixer_changed'),
+            $CIDRAM['Number_L10N']($CIDRAM['Fixer']['Changes'])
         ), sprintf(
             $CIDRAM['L10N']->getPlural($CIDRAM['Fixer']['Time'], 'state_fixer_seconds'),
             $CIDRAM['Number_L10N']($CIDRAM['Fixer']['Time'], 3)
-        )) . '</div>';
+        )) . '<br /><blockquote><code>' . $CIDRAM['Fixer']['Before'] . '</code><br />↪️<code>' . $CIDRAM['Fixer']['After'] . '</code></blockquote></div>';
         $CIDRAM['FE']['FixerOutput'] = '<hr />' . $CIDRAM['Fixer'] . '<br /><textarea name="FixerOutput">' . str_replace(
             ['&', '<', '>'],
             ['&amp;', '&gt;', '&lt;'],

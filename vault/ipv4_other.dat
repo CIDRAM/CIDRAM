@@ -1,8 +1,8 @@
 # IPv4 signatures file (CIDRs for proxies, VPNs and other miscellaneous unwanted services).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv4_other.dat
 
-# Version: 2019.84.702
-# Last modified: 2019.03.26
+# Version: 2019.112.276
+# Last modified: 2019.04.23
 
 
 # ---
@@ -243,14 +243,14 @@ recaptcha:
 # Ranges change frequently / Should update often.
 # Careful when updating; Signatures reflect varying block reasons, separated by different tags in different files.
 # Section is split across multiple files.
-# %Listed, Google Malware Dashboard: 0.25%.
-# Stop Forum Spam (SFS) listings: 8,079.
+# %Listed, Google Malware Dashboard: 0.11%.
+# Stop Forum Spam (SFS) listings: 6,581.
 
 # SoftLayer VPNs and proxies.
 # Includes: Anything citing "TEFINCOM", "VPN", "proxy", "Privat Kommunikation", "Secure Internet".
 # ^(.*(TEFINCOM|VPN|Proxy|Privat Kommunikation|Secure Internet).*)$
 # Excludes: Everything else.
-# Updated: 2018.11.13
+# Updated: 2019.04.23
 
 185.99.135.0/24 Deny Proxy
 Origin: BY
@@ -259,6 +259,7 @@ Origin: BY
 185.161.200.0/23 Deny Proxy
 185.203.122.0/24 Deny Proxy
 Origin: DE
+46.244.28.0/24 Deny Proxy
 85.203.23.0/24 Deny Proxy
 Origin: NL
 103.86.96.0/22 Deny Proxy
@@ -274,6 +275,7 @@ Origin: SE
 45.56.154.0/24 Deny Proxy
 45.56.156.0/23 Deny Proxy
 45.56.158.0/24 Deny Proxy
+45.74.31.0/24 Deny Proxy
 45.74.39.0/24 Deny Proxy
 45.74.41.0/24 Deny Proxy
 45.74.43.0/24 Deny Proxy
@@ -292,12 +294,13 @@ Origin: SE
 104.243.253.0/24 Deny Proxy
 104.243.254.0/23 Deny Proxy
 104.250.160.0/24 Deny Proxy
+104.250.167.0/24 Deny Proxy
 104.250.172.0/24 Deny Proxy
 104.250.179.0/24 Deny Proxy
 104.250.183.0/24 Deny Proxy
 162.246.184.0/24 Deny Proxy
 172.94.47.0/24 Deny Proxy
-172.94.98.0/24 Deny Proxy
+172.94.98.0/23 Deny Proxy
 172.94.100.0/24 Deny Proxy
 172.94.103.0/24 Deny Proxy
 172.111.169.0/24 Deny Proxy
@@ -428,10 +431,11 @@ Tag: Packet Flip
 
 
 # Adapted from ZeuS tracker IPs.
-# Updated: 2019.01.02
+# Updated: 2019.04.23
 # Refer zeustracker.abuse.ch/blocklist.php?download=ipblocklist
 
 31.7.63.146/32 Deny Malware
+31.220.2.200/32 Deny Malware
 37.143.11.189/32 Deny Malware
 46.4.150.111/32 Deny Malware
 50.63.202.63/32 Deny Malware
@@ -456,6 +460,7 @@ Tag: Packet Flip
 83.69.233.121/32 Deny Malware
 83.212.117.233/32 Deny Malware
 84.38.132.16/32 Deny Malware
+86.104.15.248/32 Deny Malware
 87.236.210.110/32 Deny Malware
 87.236.210.124/32 Deny Malware
 87.237.198.245/32 Deny Malware
@@ -466,7 +471,6 @@ Tag: Packet Flip
 89.252.186.142/32 Deny Malware
 91.107.119.3/32 Deny Malware
 91.108.176.118/32 Deny Malware
-91.195.240.117/32 Deny Malware
 91.236.75.11/32 Deny Malware
 93.89.226.17/32 Deny Malware
 93.157.63.185/32 Deny Malware
@@ -490,7 +494,6 @@ Tag: Packet Flip
 151.97.190.239/32 Deny Malware
 162.223.94.56/32 Deny Malware
 176.107.179.60/32 Deny Malware
-176.107.191.119/32 Deny Malware
 177.4.23.159/32 Deny Malware
 180.182.234.200/32 Deny Malware
 185.6.242.251/32 Deny Malware
@@ -539,41 +542,41 @@ Tag: Packet Flip
 212.1.215.117/32 Deny Malware
 212.44.64.202/32 Deny Malware
 213.147.67.20/32 Deny Malware
-213.252.244.86/32 Deny Malware
 216.176.100.240/32 Deny Malware
 216.176.184.21/32 Deny Malware
 216.215.112.149/32 Deny Malware
 216.218.135.114/32 Deny Malware
 222.29.197.232/32 Deny Malware
 Tag: ZeuS C&C
-Expires: 2019.05.02
+Expires: 2019.08.23
 ---
 More Info:
- Zeus (malware) - Wikipedia: https://en.wikipedia.org/wiki/Zeus_(malware)
- How to remove Zeus Virus from Windows (2017 Help Guide): https://malwaretips.com/blogs/zeus-trojan-virus/
- abuse.ch ZeuS Tracker: https://zeustracker.abuse.ch/faq.php
+ Zeus (malware) - Wikipedia: "https://en.wikipedia.org/wiki/Zeus_(malware)"
+ How to remove Zeus Virus from Windows (2017 Help Guide): "https://malwaretips.com/blogs/zeus-trojan-virus/"
+ abuse.ch ZeuS Tracker: "https://zeustracker.abuse.ch/faq.php"
 
 
 # Adapted from Spamhaus DROP/EDROP text lists.
 # The DROP/EDROP text lists are copyrighted to Spamhaus.org; Spamhaus DROP/EDROP as plain text lists are free for
 # commercial and non-commercial usage. If you want to redistribute one of the plain text feeds please ensure that you
 # name Spamhaus as source of the data. (For example, include the copyright statement at the top of the list).
-# Updated: 2019.02.27
+# Updated: 2019.04.23
 # Refer spamhaus.org/drop/drop.txt
 # Refer spamhaus.org/drop/edrop.txt
 
 1.10.16.0/20 Deny Spam
-1.12.0.0/16 Deny Spam
 1.19.0.0/16 Deny Spam
 1.32.128.0/18 Deny Spam
 5.8.37.0/24 Deny Spam
+5.39.248.0/21 Deny Spam
 5.101.221.0/24 Deny Spam
 5.134.128.0/19 Deny Spam
+5.144.176.0/21 Deny Spam
+5.178.96.0/20 Deny Spam
 5.188.10.0/23 Deny Spam
 5.188.207.0/24 Deny Spam
 5.188.216.0/24 Deny Spam
-14.4.0.0/14 Deny Spam
-14.118.252.0/22 Deny Spam
+23.163.64.0/24 Deny Spam
 23.226.48.0/20 Deny Spam
 24.233.0.0/19 Deny Spam
 27.112.32.0/19 Deny Spam
@@ -581,6 +584,7 @@ More Info:
 27.146.0.0/16 Deny Spam
 31.11.43.0/24 Deny Spam
 31.184.237.0/24 Deny Spam
+31.192.240.0/21 Deny Spam
 31.222.200.0/21 Deny Spam
 36.0.8.0/21 Deny Spam
 36.37.48.0/20 Deny Spam
@@ -588,6 +592,7 @@ More Info:
 36.116.0.0/16 Deny Spam
 36.119.0.0/16 Deny Spam
 37.9.42.0/24 Deny Spam
+37.49.231.0/24 Deny Spam
 37.148.216.0/21 Deny Spam
 37.246.0.0/16 Deny Spam
 42.0.32.0/19 Deny Spam
@@ -609,9 +614,13 @@ More Info:
 45.6.48.0/22 Deny Spam
 45.43.128.0/18 Deny Spam
 45.65.188.0/22 Deny Spam
-45.114.224.0/22 Deny Spam
 45.117.208.0/22 Deny Spam
 45.121.204.0/22 Deny Spam
+45.146.224.0/19 Deny Spam
+45.150.224.0/19 Deny Spam
+45.153.224.0/19 Deny Spam
+45.172.224.0/23 Deny Spam
+45.173.224.0/19 Deny Spam
 46.3.0.0/20 Deny Spam
 46.148.112.0/24 Deny Spam
 46.148.120.0/24 Deny Spam
@@ -628,27 +637,34 @@ More Info:
 61.11.224.0/19 Deny Spam
 61.45.251.0/24 Deny Spam
 62.112.16.0/21 Deny Spam
+64.56.64.0/21 Deny Spam
 64.94.48.0/23 Deny Spam
 66.231.64.0/20 Deny Spam
 67.213.112.0/20 Deny Spam
 67.219.208.0/20 Deny Spam
+69.54.224.0/19 Deny Spam
+74.81.32.0/19 Deny Spam
 74.114.148.0/22 Deny Spam
 74.118.60.0/22 Deny Spam
 74.122.56.0/21 Deny Spam
 74.217.146.0/23 Deny Spam
 77.72.82.0/24 Deny Spam
+77.72.85.0/24 Deny Spam
+77.247.109.0/24 Deny Spam
 79.110.17.0/24 Deny Spam
 79.110.18.0/23 Deny Spam
 79.110.22.0/24 Deny Spam
 79.110.25.0/24 Deny Spam
 79.133.107.0/24 Deny Spam
 79.173.104.0/21 Deny Spam
+81.22.45.0/24 Deny Spam
 81.94.43.0/24 Deny Spam
 83.175.0.0/18 Deny Spam
 84.238.160.0/22 Deny Spam
 85.93.5.0/24 Deny Spam
 85.121.39.0/24 Deny Spam
 86.55.40.0/22 Deny Spam
+91.193.75.0/24 Deny Spam
 91.197.196.0/22 Deny Spam
 91.200.12.0/22 Deny Spam
 91.200.81.0/24 Deny Spam
@@ -661,6 +677,7 @@ More Info:
 91.220.163.0/24 Deny Spam
 91.230.252.0/23 Deny Spam
 91.234.36.0/24 Deny Spam
+91.234.99.0/24 Deny Spam
 91.235.2.0/24 Deny Spam
 91.236.74.0/23 Deny Spam
 91.238.82.0/24 Deny Spam
@@ -668,6 +685,7 @@ More Info:
 91.243.90.0/23 Deny Spam
 91.243.93.0/24 Deny Spam
 91.247.76.0/22 Deny Spam
+92.63.192.0/24 Deny Spam
 93.179.88.0/22 Deny Spam
 95.85.80.0/23 Deny Spam
 95.181.176.0/23 Deny Spam
@@ -681,6 +699,15 @@ More Info:
 101.203.128.0/19 Deny Spam
 101.248.0.0/15 Deny Spam
 101.252.0.0/15 Deny Spam
+102.11.224.0/19 Deny Spam
+102.13.240.0/20 Deny Spam
+102.18.224.0/19 Deny Spam
+102.28.224.0/19 Deny Spam
+102.29.224.0/19 Deny Spam
+102.41.128.0/19 Deny Spam
+102.196.96.0/19 Deny Spam
+102.211.224.0/19 Deny Spam
+102.212.224.0/19 Deny Spam
 102.228.0.0/16 Deny Spam
 102.232.0.0/16 Deny Spam
 102.240.0.0/16 Deny Spam
@@ -691,10 +718,19 @@ More Info:
 103.34.0.0/16 Deny Spam
 103.36.64.0/22 Deny Spam
 103.57.248.0/22 Deny Spam
-103.63.0.0/22 Deny Spam
 103.69.212.0/22 Deny Spam
 103.92.152.0/22 Deny Spam
+103.101.84.0/22 Deny Spam
+103.141.96.0/19 Deny Spam
 103.144.0.0/16 Deny Spam
+103.148.224.0/19 Deny Spam
+103.155.224.0/19 Deny Spam
+103.158.224.0/19 Deny Spam
+103.167.224.0/19 Deny Spam
+103.171.224.0/19 Deny Spam
+103.174.224.0/19 Deny Spam
+103.180.224.0/19 Deny Spam
+103.189.224.0/19 Deny Spam
 103.197.8.0/22 Deny Spam
 103.205.84.0/22 Deny Spam
 103.207.160.0/22 Deny Spam
@@ -716,14 +752,12 @@ More Info:
 104.250.192.0/19 Deny Spam
 106.95.0.0/16 Deny Spam
 107.182.240.0/20 Deny Spam
-109.248.9.0/24 Deny Spam
 110.41.0.0/16 Deny Spam
 113.201.51.0/24 Deny Spam
 113.212.64.0/19 Deny Spam
 116.79.0.0/16 Deny Spam
 116.119.0.0/17 Deny Spam
 116.144.0.0/14 Deny Spam
-116.206.16.0/22 Deny Spam
 117.58.0.0/17 Deny Spam
 117.120.64.0/18 Deny Spam
 119.42.52.0/22 Deny Spam
@@ -760,6 +794,7 @@ More Info:
 130.196.0.0/16 Deny Spam
 130.222.0.0/16 Deny Spam
 131.72.20.0/22 Deny Spam
+131.72.60.0/22 Deny Spam
 131.72.208.0/22 Deny Spam
 131.108.16.0/22 Deny Spam
 131.108.232.0/22 Deny Spam
@@ -846,12 +881,13 @@ More Info:
 151.192.0.0/16 Deny Spam
 151.212.0.0/16 Deny Spam
 152.109.0.0/16 Deny Spam
-152.136.0.0/16 Deny Spam
+152.136.0.0/21 Deny Spam
 152.147.0.0/16 Deny Spam
 153.14.0.0/16 Deny Spam
 153.52.0.0/14 Deny Spam
 153.85.0.0/16 Deny Spam
 153.93.0.0/16 Deny Spam
+154.16.201.0/24 Deny Spam
 155.11.0.0/16 Deny Spam
 155.40.0.0/16 Deny Spam
 155.66.0.0/16 Deny Spam
@@ -892,16 +928,19 @@ More Info:
 162.212.188.0/22 Deny Spam
 162.213.232.0/22 Deny Spam
 162.222.128.0/21 Deny Spam
+162.249.121.0/24 Deny Spam
 163.47.19.0/24 Deny Spam
 163.50.0.0/16 Deny Spam
 163.53.247.0/24 Deny Spam
 163.59.0.0/16 Deny Spam
+163.127.224.0/19 Deny Spam
+163.128.224.0/19 Deny Spam
+163.216.0.0/19 Deny Spam
 163.250.0.0/16 Deny Spam
 163.254.0.0/16 Deny Spam
 164.6.0.0/16 Deny Spam
 164.79.0.0/16 Deny Spam
 164.137.0.0/16 Deny Spam
-165.52.0.0/14 Deny Spam
 165.102.0.0/16 Deny Spam
 165.205.0.0/16 Deny Spam
 165.209.0.0/16 Deny Spam
@@ -913,6 +952,7 @@ More Info:
 167.162.0.0/16 Deny Spam
 167.175.0.0/16 Deny Spam
 167.224.0.0/19 Deny Spam
+167.249.200.0/22 Deny Spam
 168.0.212.0/22 Deny Spam
 168.64.0.0/16 Deny Spam
 168.90.96.0/22 Deny Spam
@@ -941,7 +981,6 @@ More Info:
 171.25.0.0/17 Deny Spam
 171.25.212.0/22 Deny Spam
 171.26.0.0/16 Deny Spam
-173.46.85.0/24 Deny Spam
 175.103.64.0/18 Deny Spam
 176.97.116.0/22 Deny Spam
 176.119.4.0/24 Deny Spam
@@ -954,23 +993,24 @@ More Info:
 178.57.65.0/24 Deny Spam
 178.57.66.0/23 Deny Spam
 178.57.68.0/24 Deny Spam
+178.159.36.0/24 Deny Spam
 178.159.97.0/24 Deny Spam
 178.159.100.0/24 Deny Spam
 178.159.107.0/24 Deny Spam
+178.239.21.0/24 Deny Spam
 179.42.64.0/19 Deny Spam
-179.61.200.0/23 Deny Spam
 179.63.0.0/17 Deny Spam
 180.178.192.0/18 Deny Spam
 180.236.0.0/14 Deny Spam
 181.177.64.0/18 Deny Spam
-181.214.37.0/24 Deny Spam
-181.215.39.0/24 Deny Spam
+185.0.96.0/19 Deny Spam
+185.5.36.0/22 Deny Spam
 185.14.192.0/23 Deny Spam
 185.14.195.0/24 Deny Spam
 185.17.96.0/22 Deny Spam
 185.35.136.0/22 Deny Spam
-185.46.84.0/22 Deny Spam
 185.50.250.0/23 Deny Spam
+185.53.88.0/24 Deny Spam
 185.64.20.0/22 Deny Spam
 185.68.156.0/22 Deny Spam
 185.71.0.0/22 Deny Spam
@@ -984,15 +1024,13 @@ More Info:
 185.103.252.0/23 Deny Spam
 185.106.92.0/24 Deny Spam
 185.106.94.0/24 Deny Spam
-185.106.104.0/23 Deny Spam
 185.112.102.0/24 Deny Spam
-185.127.24.0/22 Deny Spam
 185.129.148.0/23 Deny Spam
 185.132.4.0/22 Deny Spam
 185.133.20.0/22 Deny Spam
 185.135.140.0/22 Deny Spam
-185.135.184.0/22 Deny Spam
 185.137.219.0/24 Deny Spam
+185.140.53.0/24 Deny Spam
 185.140.108.0/22 Deny Spam
 185.141.188.0/22 Deny Spam
 185.143.220.0/22 Deny Spam
@@ -1001,23 +1039,19 @@ More Info:
 185.147.140.0/22 Deny Spam
 185.148.128.0/22 Deny Spam
 185.149.112.0/22 Deny Spam
-185.150.84.0/22 Deny Spam
 185.151.48.0/22 Deny Spam
-185.152.36.0/22 Deny Spam
-185.152.248.0/22 Deny Spam
-185.154.20.0/22 Deny Spam
 185.156.88.0/21 Deny Spam
 185.159.68.0/22 Deny Spam
 185.165.24.0/22 Deny Spam
+185.165.153.0/24 Deny Spam
 185.166.68.0/22 Deny Spam
 185.167.116.0/22 Deny Spam
 185.175.140.0/22 Deny Spam
-185.176.26.0/23 Deny Spam
+185.176.26.0/24 Deny Spam
 185.178.164.0/22 Deny Spam
 185.184.192.0/22 Deny Spam
 185.185.48.0/22 Deny Spam
 185.187.236.0/22 Deny Spam
-185.194.120.0/22 Deny Spam
 185.195.160.0/22 Deny Spam
 185.195.188.0/22 Deny Spam
 185.196.96.0/22 Deny Spam
@@ -1033,7 +1067,6 @@ More Info:
 185.206.12.0/22 Deny Spam
 185.207.8.0/22 Deny Spam
 185.207.92.0/22 Deny Spam
-185.208.24.0/22 Deny Spam
 185.208.128.0/22 Deny Spam
 185.209.92.0/22 Deny Spam
 185.209.240.0/22 Deny Spam
@@ -1048,11 +1081,10 @@ More Info:
 185.217.216.0/22 Deny Spam
 185.219.32.0/22 Deny Spam
 185.221.236.0/22 Deny Spam
+185.222.211.0/24 Deny Spam
 185.223.132.0/22 Deny Spam
 185.223.160.0/23 Deny Spam
-185.223.164.0/23 Deny Spam
 185.223.244.0/22 Deny Spam
-185.223.248.0/22 Deny Spam
 185.227.200.0/22 Deny Spam
 185.234.100.0/22 Deny Spam
 185.237.60.0/22 Deny Spam
@@ -1062,11 +1094,13 @@ More Info:
 185.239.104.0/22 Deny Spam
 185.241.192.0/22 Deny Spam
 185.242.120.0/22 Deny Spam
-185.244.31.0/24 Deny Spam
+185.244.29.0/24 Deny Spam
 185.245.112.0/22 Deny Spam
 185.247.172.0/22 Deny Spam
+185.247.228.0/24 Deny Spam
 186.65.112.0/20 Deny Spam
 186.179.0.0/18 Deny Spam
+186.233.184.0/22 Deny Spam
 188.68.0.0/23 Deny Spam
 188.68.3.0/24 Deny Spam
 188.172.160.0/19 Deny Spam
@@ -1075,10 +1109,6 @@ More Info:
 188.247.232.0/24 Deny Spam
 190.123.208.0/20 Deny Spam
 190.185.108.0/22 Deny Spam
-191.96.170.0/24 Deny Spam
-191.96.174.0/24 Deny Spam
-191.101.24.0/24 Deny Spam
-191.101.54.0/23 Deny Spam
 191.101.167.0/24 Deny Spam
 192.5.103.0/24 Deny Spam
 192.12.131.0/24 Deny Spam
@@ -1127,17 +1157,21 @@ More Info:
 192.251.231.0/24 Deny Spam
 193.9.158.0/24 Deny Spam
 193.25.48.0/20 Deny Spam
+193.32.163.0/24 Deny Spam
+193.32.208.0/22 Deny Spam
 193.46.172.0/22 Deny Spam
 193.84.132.0/22 Deny Spam
 193.105.171.0/24 Deny Spam
 193.139.0.0/16 Deny Spam
 193.148.92.0/22 Deny Spam
+193.168.216.0/22 Deny Spam
+193.187.96.0/22 Deny Spam
 193.243.0.0/17 Deny Spam
 194.1.152.0/24 Deny Spam
+194.5.97.0/24 Deny Spam
 194.5.98.0/23 Deny Spam
 194.15.44.0/22 Deny Spam
 195.182.57.0/24 Deny Spam
-195.191.56.0/23 Deny Spam
 195.191.102.0/23 Deny Spam
 195.210.96.0/19 Deny Spam
 196.1.109.0/24 Deny Spam
@@ -1148,7 +1182,6 @@ More Info:
 197.154.0.0/16 Deny Spam
 197.159.80.0/21 Deny Spam
 198.13.0.0/20 Deny Spam
-198.14.160.0/19 Deny Spam
 198.20.16.0/20 Deny Spam
 198.45.32.0/20 Deny Spam
 198.45.64.0/19 Deny Spam
@@ -1238,6 +1271,7 @@ More Info:
 200.22.0.0/16 Deny Spam
 200.71.124.0/22 Deny Spam
 200.189.44.0/22 Deny Spam
+200.234.128.0/18 Deny Spam
 201.148.168.0/22 Deny Spam
 201.169.0.0/16 Deny Spam
 202.0.192.0/18 Deny Spam
@@ -1269,6 +1303,7 @@ More Info:
 203.169.0.0/22 Deny Spam
 203.191.64.0/18 Deny Spam
 203.195.0.0/18 Deny Spam
+204.2.189.0/24 Deny Spam
 204.19.38.0/23 Deny Spam
 204.44.32.0/20 Deny Spam
 204.44.192.0/20 Deny Spam
@@ -1335,7 +1370,6 @@ More Info:
 206.41.160.0/19 Deny Spam
 206.51.29.0/24 Deny Spam
 206.124.104.0/21 Deny Spam
-206.130.5.0/24 Deny Spam
 206.130.188.0/24 Deny Spam
 206.143.128.0/17 Deny Spam
 206.195.224.0/19 Deny Spam
@@ -1356,7 +1390,6 @@ More Info:
 207.226.192.0/20 Deny Spam
 208.12.64.0/19 Deny Spam
 208.93.4.0/22 Deny Spam
-208.117.88.0/22 Deny Spam
 208.117.92.0/24 Deny Spam
 209.51.32.0/20 Deny Spam
 209.66.128.0/19 Deny Spam
@@ -1369,7 +1402,6 @@ More Info:
 210.57.128.0/18 Deny Spam
 210.57.192.0/20 Deny Spam
 212.60.16.0/22 Deny Spam
-212.92.127.0/24 Deny Spam
 212.95.144.0/22 Deny Spam
 213.130.88.0/22 Deny Spam
 216.83.208.0/20 Deny Spam
@@ -1384,10 +1416,11 @@ Tag: Spamhaus DROP/EDROP
 
 
 # Toxic IP numbers in CIDR format from Stop Forum Spam.
-# Updated: 2018.01.08 / Checked: 2019.01.02
+# Updated: 2019.04.23
 # Refer stopforumspam.com/downloads/toxic_ip_cidr.txt
 
 5.39.216.0/21 Deny Spam
+5.188.210.0/23 Deny Spam
 23.19.0.0/16 Deny Spam
 23.106.64.0/19 Deny Spam
 23.106.192.0/20 Deny Spam

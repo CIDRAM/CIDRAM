@@ -1,8 +1,8 @@
 # IPv4 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv4_isps.dat
 
-# Version: 2019.110.380
-# Last modified: 2019.04.21
+# Version: 2019.112.276
+# Last modified: 2019.04.23
 
 
 # ---
@@ -668,8 +668,8 @@ recaptcha:
 
 
 # ASN 45727 ("Hutchison CP Telecommunications, PT").
-# Stop Forum Spam (SFS) listings: 612.
-# Updated: 2018.12.09
+# Stop Forum Spam (SFS) listings: 687.
+# Updated: 2019.04.23
 
 103.10.64.0/22 Deny Spam
 103.105.24.0/21 Deny Spam
@@ -683,8 +683,7 @@ recaptcha:
 116.206.28.0/22 Deny Spam
 116.206.32.0/23 Deny Spam
 116.206.35.0/24 Deny Spam
-116.206.36.0/24 Deny Spam
-116.206.38.0/23 Deny Spam
+116.206.36.0/22 Deny Spam
 116.206.40.0/24 Deny Spam
 116.206.42.0/23 Deny Spam
 124.153.32.0/23 Deny Spam
@@ -1791,9 +1790,9 @@ Tag: INFOKOM Ltd
 
 
 # ASN 13030 ("Init7").
-# %Listed, Google Malware Dashboard: 0.10%.
-# Stop Forum Spam (SFS) listings: 142.
-# Updated: 2018.12.09
+# %Listed, Google Malware Dashboard: 0.13%.
+# Stop Forum Spam (SFS) listings: 137.
+# Updated: 2018.12.09 / Checked: 2019.04.23
 
 195.211.32.0/22 Deny Generic
 Origin: AT
@@ -8333,6 +8332,7 @@ Tag: PSINet, Inc
 recaptcha:
  enabled: true
 
+
 # "Tu Casa Inalambrica de Mexico SA de CV"
 # Legit ISP in Mexico, but also a heavy source of spam.
 # Updated: 2019.02.27
@@ -8342,6 +8342,7 @@ Tag: Tu Casa Inalambrica
 ---
 recaptcha:
  enabled: true
+
 
 # A frequent source of spam.
 # Updated: 2019.02.27
@@ -9342,8 +9343,8 @@ recaptcha:
 68.61.15.117/32 Deny Spam
 69.181.171.34/32 Deny Spam
 71.198.82.41/32 Deny Spam
-73.106.225.108/32 Deny Spam
 73.23.107.144/32 Deny Spam
+73.106.225.108/32 Deny Spam
 73.139.226.194/32 Deny Spam
 75.151.213.85/32 Deny Spam
 76.102.140.67/32 Deny Spam
@@ -9529,14 +9530,14 @@ recaptcha:
 # Ranges change frequently / Should update often.
 # Careful when updating; Signatures reflect varying block reasons, separated by different tags in different files.
 # Section is split across multiple files.
-# %Listed, Google Malware Dashboard: 0.25%.
-# Stop Forum Spam (SFS) listings: 8,079.
+# %Listed, Google Malware Dashboard: 0.11%.
+# Stop Forum Spam (SFS) listings: 6,581.
 
 # SoftLayer questionable multi-play networks, spammy ISPs, etc.
 # Includes: Anything citing "Starry".
 # ^(.*(Starry).*)$
 # Excludes: Everything else.
-# Updated: 2018.06.24 / Checked: 2018.11.13
+# Updated: 2018.06.24 / Checked: 2019.04.23
 
 103.56.216.0/24 Deny Spam
 103.56.218.0/23 Deny Spam

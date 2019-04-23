@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6.dat
 
-# Version: 2019.110.380
-# Last modified: 2019.04.21
+# Version: 2019.112.276
+# Last modified: 2019.04.23
 
 
 # ---
@@ -90,20 +90,10 @@ Tag: Global Frag Networks
 
 
 # ASN 54600 ("PEG TECH INC").
-# %Listed, Google Malware Dashboard: 4.13%.
-# Stop Forum Spam (SFS) listings: 2,759.
-# Updated: 2018.06.30 / Checked: 2018.11.23
-# Did not change IPv6 listings at last check. All but one range dropped as of last check, but whois reports the dropped
-# CIDRs are still being actively used. Drops could be temporary, maybe. Will investigate again at next check.
+# %Listed, Google Malware Dashboard: 1.92%.
+# Stop Forum Spam (SFS) listings: 3,116.
+# Updated: 2019.04.23
 
-2a0c:36c6::/32 Deny Cloud
-Origin: EE
-2a0a:f9c5::/32 Deny Cloud
-Origin: EU
-2a07:ca04::/32 Deny Cloud
-2a0a:b382::/32 Deny Cloud
-2a0b:2a85::/32 Deny Cloud
-Origin: RU
 2605:7280::/40 Deny Cloud
 Origin: US
 Tag: PEG TECH INC
@@ -390,8 +380,8 @@ Tag: Agava Ltd
 # Ranges change frequently / Should update often.
 # Careful when updating; Signatures reflect varying block reasons, separated by different tags in different files.
 # Section is split across multiple files.
-# %Listed, Google Malware Dashboard: 0.25%.
-# Stop Forum Spam (SFS) listings: 8,079.
+# %Listed, Google Malware Dashboard: 0.11%.
+# Stop Forum Spam (SFS) listings: 6,581.
 
 # SoftLayer cloud services, webhosting providers, etc.
 # This section all as "Run rules_softlayer.php".
@@ -404,7 +394,7 @@ Tag: Agava Ltd
 # Excludes: Anything citing "Vonex" (well-behaved; zero bad history; not necessary to block).
 # ^(.*(Vonex).*)$
 # Includes: Everything else.
-# Updated: 2018.11.13
+# Updated: 2019.04.23
 
 2402:2f80::/48 Run rules_softlayer.php
 2403:1480:1000::/36 Run rules_softlayer.php
@@ -421,6 +411,7 @@ Origin: EU
 2a02:2498:3::/48 Run rules_softlayer.php
 Origin: GB
 2402:9e80::/47 Run rules_softlayer.php
+2403:a280:8000::/36 Run rules_softlayer.php
 Origin: HK
 2001:df3:8800::/48 Run rules_softlayer.php
 2001:df4:f000::/48 Run rules_softlayer.php
@@ -876,9 +867,9 @@ Tag: A2B IP B.V
 
 # ASNs 20860, 21130, 25108 ("IOMart").
 # Careful when updating; Also contains some proxies and VPNs (should be marked differently).
-# %Listed, Google Malware Dashboard: 0.27% (AS20860).
-# Stop Forum Spam (SFS) listings: 11,637 (AS20860), 22 (AS25108).
-# Updated: 2018.11.23
+# %Listed, Google Malware Dashboard: 0.17% (AS20860).
+# Stop Forum Spam (SFS) listings: 15,661 (AS20860), 20 (AS25108).
+# Updated: 2019.04.23
 
 2607:bd00:100::/48 Deny Cloud
 Origin: CA
@@ -893,7 +884,7 @@ Origin: CA
 2a03:b200::/29 Deny Cloud
 2a03:ca80::/31 Deny Cloud
 2a03:f2c0::/32 Deny Cloud
-2a04:de40::/32 Deny Cloud
+2a04:de40::/42 Deny Cloud
 2a0b:4580::/32 Deny Cloud
 2a0b:9400:1000::/48 Deny Cloud
 2a0d:9780::/32 Deny Cloud
@@ -1742,9 +1733,9 @@ Tag: HZ Hosting Ltd
 # ASN 53889 ("Micfo, LLC").
 # Exclude: Anything citing "Telecom" (ISP), "KAOS" (ISP), "Level3" (infrastructure).
 # ^.*(Telecom|KAOS|Level3).*$\n
-# %Listed, Google Malware Dashboard: 0.82%.
-# Stop Forum Spam (SFS) listings: 10,779.
-# Updated: 2017.09.20 / Checked: 2018.11.19
+# %Listed, Google Malware Dashboard: 0.67%.
+# Stop Forum Spam (SFS) listings: 11,005.
+# Updated: 2017.09.20 / Checked: 2019.04.23
 
 2605:3e80::/32 Deny Cloud
 Origin: US
@@ -3878,9 +3869,9 @@ Tag: NForce Entertainment
 
 
 # ASN 55990 ("Huawei Cloud Service data center").
-# %Listed, Google Malware Dashboard: 0.59%.
-# Stop Forum Spam (SFS) listings: 37.
-# Updated: 2018.12.06
+# %Listed, Google Malware Dashboard: 0.36%.
+# Stop Forum Spam (SFS) listings: 9.
+# Updated: 2018.12.06 / Checked: 2019.04.23
 
 2407:c080::/36 Deny Cloud
 2407:c080:1000::/37 Deny Cloud
@@ -4249,6 +4240,21 @@ Tag: D.E.Tech
 2605:f300:ffff::/48 Deny Cloud
 Origin: US
 Tag: Endurance Int
+
+
+# ASN 17819 ("Equinix Asia Pacific").
+# Include "Upright Inc", "Equinix", and everything in HK. Ignore the rest.
+# ^(HK\t.*|.*Upright.*|.*Equinix.*)\x01$
+# Stop Forum Spam (SFS) listings: 24.
+# Updated: 2019.04.23
+
+2404:4f00::/32 Deny Cloud
+Origin: AU
+2404:6900::/32 Deny Cloud
+Origin: HK
+2407:b000::/32 Deny Cloud
+Origin: JP
+Tag: Equinix Asia Pacific
 
 
 # ASN 6364 ("Atlantic.net, Inc").
@@ -4997,11 +5003,10 @@ Tag: DATAPRO
 # Careful when updating; Contains some prefixes that should be marked differently.
 # Anything citing "VPN", "VPS" should be marked as "proxy".
 # Exclude (clean; don't need to list them): ^.*(Infinity|St Joseph|Brisbane Public|Decision North|Scholer LLP).*$\n
-# %Listed, Google Malware Dashboard: 0.32%.
-# Stop Forum Spam (SFS) listings: 11.
-# Updated: 2018.06.25 / Checked: 2018.11.19
+# %Listed, Google Malware Dashboard: 0.07%.
+# Stop Forum Spam (SFS) listings: 7.
+# Updated: 2019.04.23
 
-2a05:9800:4::/48 Deny Cloud
 2a05:9800:ff00::/40 Deny Cloud
 Origin: GB
 2607:a500:4::/48 Deny Cloud

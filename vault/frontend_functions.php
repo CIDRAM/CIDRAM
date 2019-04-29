@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2019.04.19).
+ * This file: Front-end functions file (last modified: 2019.04.29).
  */
 
 /**
@@ -934,8 +934,16 @@ $CIDRAM['FilterTheme'] = function ($ChoiceKey) use (&$CIDRAM) {
     return (file_exists($Path . 'frontend.css') || file_exists($CIDRAM['Vault'] . 'template_' . $ChoiceKey . '.html'));
 };
 
-/** Attempt to perform some simple formatting for the log data. */
-$CIDRAM['Formatter'] = function (&$In, $BlockLink = '', $Current = '', $FieldSeparator = ': ', $Flags) {
+/**
+ * Attempt to perform some simple formatting for the log data.
+ *
+ * @param string $In The log data to be formatted.
+ * @param string $BlockLink Used as the basis for links inserted into displayed log data used for searching related log data.
+ * @param string $Current The current search query (if it exists). Used to avoid inserting unnecessary links.
+ * @param string $FieldSeparator Used to distinguish between a field's name and its content.
+ * @param bool $Flags Tells the formatter whether the flags CSS file is available.
+ */
+$CIDRAM['Formatter'] = function (&$In, $BlockLink = '', $Current = '', $FieldSeparator = ': ', $Flags = false) {
     static $MaxBlockSize = 65536;
     if (strpos($In, "<br />\n") === false) {
         $In = '<div class="hB hFd s">' . $In . '</div>';
@@ -947,6 +955,7 @@ $CIDRAM['Formatter'] = function (&$In, $BlockLink = '', $Current = '', $FieldSep
     $Caret = 0;
     $BlockSeparator = (strpos($In, "<br />\n<br />\n") !== false) ? "<br />\n<br />\n" : "<br />\n";
     $BlockSeparatorLen = strlen($BlockSeparator);
+    $Demojibakefier = new \Maikuolan\Common\Demojibakefier();
     while ($Caret < $Len) {
         $Remainder = $Len - $Caret;
         if ($Remainder < $MaxBlockSize && $Remainder < ini_get('pcre.backtrack_limit')) {
@@ -979,13 +988,22 @@ $CIDRAM['Formatter'] = function (&$In, $BlockLink = '', $Current = '', $FieldSep
             if (count($Parts[2]) && $BlockSeparatorLen === 14) {
                 $Parts[2] = array_unique($Parts[2]);
                 foreach ($Parts[2] as $ThisPart) {
+                    $TestString = $Demojibakefier->guard($ThisPart);
+                    $Alternate = (
+                        $TestString !== $ThisPart && $Demojibakefier->Last
+                    ) ? '<code dir="ltr">🔁' . $Demojibakefier->Last . '➡️UTF-8' . $FieldSeparator . '</code>' . $TestString . "<br />\n" : '';
                     if (!$ThisPart || $ThisPart === $Current) {
+                        $Section = str_replace(
+                            $FieldSeparator . $ThisPart . "<br />\n",
+                            $FieldSeparator . $ThisPart . "<br />\n" . $Alternate,
+                            $Section
+                        );
                         continue;
                     }
                     $Enc = str_replace('=', '_', base64_encode($ThisPart));
                     $Section = str_replace(
                         $FieldSeparator . $ThisPart . "<br />\n",
-                        $FieldSeparator . $ThisPart . ' <a href="' . $BlockLink . '&search=' . $Enc . '">»</a>' . "<br />\n",
+                        $FieldSeparator . $ThisPart . ' <a href="' . $BlockLink . '&search=' . $Enc . '">»</a>' . "<br />\n" . $Alternate,
                         $Section
                     );
                 }
@@ -1009,14 +1027,21 @@ $CIDRAM['Formatter'] = function (&$In, $BlockLink = '', $Current = '', $FieldSep
             }
             preg_match_all('~\[([A-Z]{2})\]~', $Section, $Parts);
             if (count($Parts[1])) {
+                if ($Flags) {
+                    $OuterOpen = '';
+                    $OuterClose = '';
+                    $InnerOpen = '<span class="flag ';
+                    $InnerClose = '"><span></span></span>';
+                } else {
+                    $OuterOpen = '[';
+                    $OuterClose = ']';
+                    $InnerOpen = '';
+                    $InnerClose = '';
+                }
                 foreach ($Parts[1] as $ThisPart) {
                     $Section = str_replace(
                         '[' . $ThisPart . ']',
-                        $Flags ? (
-                            '<a href="' . $BlockLink . '&search=' . str_replace('=', '_', base64_encode($ThisPart)) . '"><span class="flag ' . $ThisPart . '"><span></span></span></a>'
-                        ) : (
-                            '[<a href="' . $BlockLink . '&search=' . str_replace('=', '_', base64_encode($ThisPart)) . '">' . $ThisPart . '</a>]'
-                        ),
+                        $OuterOpen . '<a href="' . $BlockLink . '&search=' . str_replace('=', '_', base64_encode($ThisPart)) . '">' . $InnerOpen . $ThisPart . $InnerClose . '</a>' . $OuterClose,
                         $Section
                     );
                 }

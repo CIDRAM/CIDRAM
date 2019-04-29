@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Output generator (last modified: 2019.04.04).
+ * This file: Output generator (last modified: 2019.04.23).
  */
 
 /** Initialise cache. */
@@ -579,9 +579,9 @@ if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
         $CIDRAM['Arrayify']($CIDRAM['Config']['More Info']);
         /** Process entries. */
         foreach ($CIDRAM['Config']['More Info'] as $CIDRAM['Info Name'] => $CIDRAM['Info Link']) {
-            $CIDRAM['BlockInfo']['ReasonMessage'] .= (!empty($CIDRAM['Info Name']) && is_string($CIDRAM['Info Name'])) ? (
-                sprintf('<br /><a href="%1$s">%2$s</a>', $CIDRAM['Info Link'], $CIDRAM['Info Name']
-            )) : sprintf('<br /><a href="%1$s">%1$s</a>', $CIDRAM['Info Link']);
+            $CIDRAM['BlockInfo']['ReasonMessage'] .= !empty($CIDRAM['Info Name']) && is_string($CIDRAM['Info Name']) ? (
+                sprintf('<br /><a href="%1$s">%2$s</a>', $CIDRAM['Info Link'], $CIDRAM['Info Name'])
+            ) : sprintf('<br /><a href="%1$s">%1$s</a>', $CIDRAM['Info Link']);
         }
         /** Cleanup. */
         unset($CIDRAM['Info Link'], $CIDRAM['Info Name'], $CIDRAM['Config']['More Info']);

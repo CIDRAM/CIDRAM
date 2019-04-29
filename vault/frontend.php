@@ -2101,7 +2101,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'fixer' && $CIDRAM['FE']['Permis
                             $Line = trim(substr($Data, $EoLPos, $NEoLPos - $EoLPos));
                             $NEoLPos++;
                         }
-                        $Param = (($Pos = strpos($Line, ' ')) !== false) ? substr($Line, $Pos + 1) : 'Deny Unknown';
+                        $Param = (($Pos = strpos($Line, ' ')) !== false) ? substr($Line, $Pos + 1) : 'Deny Generic';
                         if (!$Previous) {
                             $Previous = $Param;
                         }

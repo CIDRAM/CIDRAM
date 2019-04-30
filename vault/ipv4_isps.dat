@@ -1,8 +1,8 @@
 # IPv4 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv4_isps.dat
 
-# Version: 2019.112.276
-# Last modified: 2019.04.23
+# Version: 2019.119.266
+# Last modified: 2019.04.30
 
 
 # ---
@@ -2231,11 +2231,11 @@ Tag: DGN TEKNOLOJI
 
 
 # ASN 38731 ("Vietel - CHT Compamy Ltd").
-# %Listed, Google Malware Dashboard: 0.12%.
-# Stop Forum Spam (SFS) listings: 569.
-# Updated: 2018.12.09
+# %Listed, Google Malware Dashboard: 0.09%.
+# Stop Forum Spam (SFS) listings: 917.
+# Updated: 2019.04.29
 
-27.71.232.0/21 Deny Generic
+27.71.224.0/21 Deny Generic
 45.117.160.0/22 Deny Generic
 103.1.208.0/22 Deny Generic
 115.84.176.0/21 Deny Generic
@@ -9909,6 +9909,27 @@ recaptcha:
 109.172.128.0/17 Deny Spam
 Origin: GE
 Tag: Magticom Ltd
+---
+recaptcha:
+ enabled: true
+
+
+# ASN 7642 ("Dhivehi Raajjeyge Gulhun Plc (Dhiraagu)").
+# Legit ISP with human endpoints originating from the Maldives. Had never previously encountered until recently, seeing
+# both attempts to spam community forums from some specific ranges, and attempts to spread malware onto WordPress sites
+# from some others. Blocking the affected ranges, but not the entire ASN, due to human endpoints, and that it doesn't
+# seem necessary yet (but we'll see what happens anyway).
+# %Listed, Google Malware Dashboard: 1.96%.
+# Stop Forum Spam (SFS) listings: 164.
+# Updated: 2019.04.29
+
+27.114.150.0/23 Deny Malware
+27.114.152.0/23 Deny Spam
+27.114.158.0/23 Deny Spam
+124.195.192.0/23 Deny Spam
+202.1.196.0/23 Deny Spam
+Origin: MV
+Tag: Dhivehi Raajjeyge
 ---
 recaptcha:
  enabled: true

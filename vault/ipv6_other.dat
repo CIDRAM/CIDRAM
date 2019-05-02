@@ -1,8 +1,8 @@
 # IPv6 signatures file (CIDRs for proxies, VPNs and other miscellaneous unwanted services).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_other.dat
 
-# Version: 2019.112.276
-# Last modified: 2019.04.23
+# Version: 2019.121.483
+# Last modified: 2019.05.02
 
 
 # ---
@@ -112,3 +112,21 @@ Tag: AllSafe Sarl
 2a0b:f4c0:16c::/48 Deny Proxy
 Origin: DE
 Tag: F3 Netze e.V
+
+
+# ASNs 42708, 43948 ("GleSYS AB"; formerly "Portlane AB"). Multiplay network (hosting, colo, infrastructure, VPS, etc).
+# Exclude from aggregate: "^.*Internetbolaget.*$\n" (legit ISP based in Sweden, with human endpoints; seems totally clean).
+# As proxy: "^(.*(?:VP[SN]|Tunnel|Edelino).*)$". As cloud: "^(.*(?:Host|Netelia|Sveaab|GleSYS).*)$".
+# As spam: "^(.*(?:Svenska).*)$" (legit ISP based in Sweden, but also a major source of spam, both in general, and in
+# relation to this ASN). Everything else as generic. Split across different signature files for better maintainability.
+# %Listed, Google Malware Dashboard: 0.10% (AS42708), 0.14% (AS43948).
+# Stop Forum Spam (SFS) listings: 2,385 (AS42708), 5 (AS43948).
+# Updated: 2019.05.02
+
+2a02:750:8::/48 Deny Proxy
+2a02:7ac0::/32 Deny Proxy
+Origin: SE
+Tag: Portlane Networks AB
+---
+recaptcha:
+ enabled: true

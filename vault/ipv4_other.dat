@@ -1,8 +1,8 @@
 # IPv4 signatures file (CIDRs for proxies, VPNs and other miscellaneous unwanted services).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv4_other.dat
 
-# Version: 2019.112.276
-# Last modified: 2019.04.23
+# Version: 2019.121.483
+# Last modified: 2019.05.02
 
 
 # ---
@@ -428,6 +428,34 @@ Origin: GB
 104.255.230.0/24 Deny Proxy
 Origin: US
 Tag: Packet Flip
+
+
+# ASNs 42708, 43948 ("GleSYS AB"; formerly "Portlane AB"). Multiplay network (hosting, colo, infrastructure, VPS, etc).
+# Exclude from aggregate: "^.*Internetbolaget.*$\n" (legit ISP based in Sweden, with human endpoints; seems totally clean).
+# As proxy: "^(.*(?:VP[SN]|Tunnel|Edelino).*)$". As cloud: "^(.*(?:Host|Netelia|Sveaab|GleSYS).*)$".
+# As spam: "^(.*(?:Svenska).*)$" (legit ISP based in Sweden, but also a major source of spam, both in general, and in
+# relation to this ASN). Everything else as generic. Split across different signature files for better maintainability.
+# %Listed, Google Malware Dashboard: 0.10% (AS42708), 0.14% (AS43948).
+# Stop Forum Spam (SFS) listings: 2,385 (AS42708), 5 (AS43948).
+# Updated: 2019.05.02
+
+5.249.160.0/21 Deny Proxy
+5.254.133.0/24 Deny Proxy
+5.254.134.0/23 Deny Proxy
+5.254.139.0/24 Deny Proxy
+5.254.140.0/22 Deny Proxy
+5.254.144.0/20 Deny Proxy
+31.192.228.0/24 Deny Proxy
+46.21.100.0/23 Deny Proxy
+46.21.106.0/24 Deny Proxy
+79.99.0.0/23 Deny Proxy
+185.5.44.0/24 Deny Proxy
+194.76.224.0/24 Deny Proxy
+Origin: SE
+Tag: Portlane Networks AB
+---
+recaptcha:
+ enabled: true
 
 
 # Adapted from ZeuS tracker IPs.

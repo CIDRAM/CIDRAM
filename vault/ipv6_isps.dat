@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_isps.dat
 
-# Version: 2019.119.266
-# Last modified: 2019.04.30
+# Version: 2019.121.483
+# Last modified: 2019.05.02
 
 
 # ---
@@ -77,17 +77,22 @@ Tag: Hetzner Online GmbH
 
 
 # ASN 51559 ("Server Internet Bilisim ve Bilgisayar Hizmetleri").
-# %Listed, Google Malware Dashboard: 0.12%.
-# Stop Forum Spam (SFS) listings: 75.
-# Updated: 2018.12.19
+# %Listed, Google Malware Dashboard: 0.08%.
+# Stop Forum Spam (SFS) listings: 73.
+# Updated: 2019.05.02
 
 2a03:2100::/32 Deny Generic
 2a05:9bc0::/29 Deny Generic
+2a06:1580::/32 Deny Generic
 2a06:41c0::/29 Deny Generic
 2a06:c400::/29 Deny Generic
+2a0a:db00::/29 Deny Generic
 2a0b:8100::/29 Deny Generic
 Origin: TR
 Tag: AS51559
+---
+recaptcha:
+ enabled: true
 
 
 # ASN 45727 ("Hutchison CP Telecommunications, PT").
@@ -241,18 +246,17 @@ Origin: US
 Tag: JPMorgan Chase & Co
 
 
-# ASN 42708 ("Portlane AB").
-# %Listed, Google Malware Dashboard: 1.33%.
-# Stop Forum Spam (SFS) listings: 2,362.
-# Updated: 2018.12.15
+# ASNs 42708, 43948 ("GleSYS AB"; formerly "Portlane AB"). Multiplay network (hosting, colo, infrastructure, VPS, etc).
+# Exclude from aggregate: "^.*Internetbolaget.*$\n" (legit ISP based in Sweden, with human endpoints; seems totally clean).
+# As proxy: "^(.*(?:VP[SN]|Tunnel|Edelino).*)$". As cloud: "^(.*(?:Host|Netelia|Sveaab|GleSYS).*)$".
+# As spam: "^(.*(?:Svenska).*)$" (legit ISP based in Sweden, but also a major source of spam, both in general, and in
+# relation to this ASN). Everything else as generic. Split across different signature files for better maintainability.
+# %Listed, Google Malware Dashboard: 0.10% (AS42708), 0.14% (AS43948).
+# Stop Forum Spam (SFS) listings: 2,385 (AS42708), 5 (AS43948).
+# Updated: 2019.05.02
 
-2a01:8640:6::/48 Deny Spam
-2a01:8640:9::/48 Deny Spam
+2a01:8640:9::/48 Deny Generic
 Origin: GB
-2a00:1a28::/32 Deny Spam
-2a02:750:10::/48 Deny Spam
-2a02:7ac0::/32 Deny Spam
-Origin: SE
 Tag: Portlane Networks AB
 ---
 recaptcha:
@@ -1422,11 +1426,11 @@ recaptcha:
 
 
 # ASN 31200 ("Novotelecom Ltd").
-# Stop Forum Spam (SFS) listings: 1,453.
+# %Listed, Google Malware Dashboard: 0.51%.
+# Stop Forum Spam (SFS) listings: 1,631.
 # Similarly to with the Rostelecom CIDRs, blocking the entirety of all the "Novotelecom" ASNs could be problematic.
-# Instead, we'll try to limit listings to those CIDRs known to be problematic (hacking events, spamming events,
-# etc).
-# Updated: 2017.09.30 / Checked: 2018.10.11
+# Instead, we'll try to limit listings to known problematic ranges (hacking events, spamming events, etc).
+# Updated: 2017.09.30 / Checked: 2019.05.02
 
 2a00:7700::/32 Deny Generic
 Origin: RU

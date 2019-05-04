@@ -1,8 +1,8 @@
 # IPv4 signatures file (CIDRs for proxies, VPNs and other miscellaneous unwanted services).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv4_other.dat
 
-# Version: 2019.121.483
-# Last modified: 2019.05.02
+# Version: 2019.123.481
+# Last modified: 2019.05.04
 
 
 # ---
@@ -456,6 +456,16 @@ Tag: Portlane Networks AB
 ---
 recaptcha:
  enabled: true
+
+
+# ASN 396507 ("Emerald Onion").
+# Anonymous tor endpoint; Significant source of spam.
+# Stop Forum Spam (SFS) listings: 7,574.
+# Updated: 2019.05.03
+
+23.129.64.0/24 Deny Proxy
+Origin: US
+Tag: Emerald Onion
 
 
 # Adapted from ZeuS tracker IPs.

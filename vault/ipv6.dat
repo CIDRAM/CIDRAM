@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6.dat
 
-# Version: 2019.121.483
-# Last modified: 2019.05.02
+# Version: 2019.123.481
+# Last modified: 2019.05.04
 
 
 # ---
@@ -738,9 +738,8 @@ Tag: HOSTKEY B.V
 # "Rackspace Hosting".
 # Careful when updating; Section contains one "Run" parameter.
 # Known ASNs: 10532, 12200, 15395, 19994, 22720, 27357, 33070, 39921, 44716, 45187, 54636, 58683.
-# Updated: 2018.07.06 / Checked: 2018.12.11
+# Updated: 2019.05.04
 
-2001:bf0::/29 Deny Cloud
 2a0b:440::/32 Deny Cloud
 Origin: DE
 2a00:1a48::/32 Deny Cloud
@@ -896,9 +895,8 @@ Tag: IOMart
 
 
 # ASN 35425 ("Bytemark Limited").
-# %Listed, Google Malware Dashboard: 0.08%.
-# Stop Forum Spam (SFS) listings: 12.
-# Updated: 2016.01.20 / Checked: 2018.10.05
+# Stop Forum Spam (SFS) listings: 8.
+# Updated: 2016.01.20 / Checked: 2019.05.04
 
 2001:41c8::/29 Deny Cloud
 2a03:9ba0::/40 Deny Cloud
@@ -3900,9 +3898,9 @@ Tag: NewMedia Express
 
 
 # ASN 3842 ("RamNode LLC").
-# %Listed, Google Malware Dashboard: 0.39%.
-# Stop Forum Spam (SFS) listings: 618.
-# Updated: 2017.12.28 / Checked: 2018.10.04
+# %Listed, Google Malware Dashboard: 0.24%.
+# Stop Forum Spam (SFS) listings: 82.
+# Updated: 2017.12.28 / Checked: 2019.05.04
 
 2604:180::/46 Deny Cloud
 2604:180:9::/48 Deny Cloud
@@ -3941,8 +3939,8 @@ Tag: MnogoByte LLC
 
 
 # ASN 29014 ("ScaleUp Technologies GmbH & Co. KG").
-# %Listed, Google Malware Dashboard: 0.25%.
-# Updated: 2017.12.23 / Checked: 2018.10.04
+# %Listed, Google Malware Dashboard: 0.34%.
+# Updated: 2017.12.23 / Checked: 2019.05.04
 
 2a00:12e8::/32 Deny Cloud
 2a00:1c38::/47 Deny Cloud
@@ -3970,8 +3968,8 @@ Tag: UK-2 Limited
 
 
 # ASN 25525 ("Reasonnet IP Networks B.V").
-# %Listed, Google Malware Dashboard: 0.37%.
-# Updated: 2016.05.30 / Checked: 2018.10.09
+# %Listed, Google Malware Dashboard: 0.29%.
+# Updated: 2016.05.30 / Checked: 2019.05.04
 
 2001:67c:2b44::/48 Deny Cloud
 2001:16f8::/32 Deny Cloud
@@ -3998,9 +3996,8 @@ Tag: IT7 Networks Inc
 
 
 # ASN 27843 ("OPTICAL TECHNOLOGIES S.A.C").
-# %Listed, Google Malware Dashboard: 0.19%.
-# Stop Forum Spam (SFS) listings: 30.
-# Updated: 2017.12.24 / Checked: 2018.10.04
+# Stop Forum Spam (SFS) listings: 63.
+# Updated: 2017.12.24 / Checked: 2019.05.04
 
 2800:120::/32 Deny Cloud
 2803:1b40::/32 Deny Cloud
@@ -4243,6 +4240,19 @@ Origin: HK
 2407:b000::/32 Deny Cloud
 Origin: JP
 Tag: Equinix Asia Pacific
+
+
+# ASN 16397 ("EQUINIX BRASIL SP").
+# Exclude any RoA invalid entries; Include the rest.
+# %Listed, Google Malware Dashboard: 0.30%.
+# Stop Forum Spam (SFS) listings: 165.
+# Updated: 2019.05.02
+
+2001:12e8::/34 Deny Cloud
+Origin: BR
+2001:504:0:7::/64 Deny Cloud
+Origin: US
+Tag: EQUINIX BRASIL SP
 
 
 # ASN 6364 ("Atlantic.net, Inc").
@@ -4750,7 +4760,7 @@ Tag: CloudSRV Limited
 
 
 # ASN 61337 ("Electronic Communities Ltd").
-# Updated: 2017.02.18 / Checked: 2018.12.11
+# Updated: 2017.02.18 / Checked: 2019.05.04
 
 2001:67c:504::/48 Deny Cloud
 2001:67c:72c::/48 Deny Cloud
@@ -4902,9 +4912,8 @@ Tag: Server Central Network
 
 
 # ASNs 30496, 36024 ("TierPoint, LLC" / "Colo4, LLC").
-# %Listed, Google Malware Dashboard: 0.59% (AS30496), 0.64% (AS36024).
-# Stop Forum Spam (SFS) listings: 1 (AS30496), 3 (AS36024).
-# Updated: 2017.08.31 / Checked: 2018.12.11
+# %Listed, Google Malware Dashboard: 0.34% (AS30496), 0.43% (AS36024).
+# Updated: 2017.08.31 / Checked: 2019.05.04
 
 2605:7700::/47 Deny Cloud
 2606:4300::/48 Deny Cloud
@@ -5724,16 +5733,6 @@ Origin: HN
 Tag: Webline Services
 
 
-# ASN 136175 ("Serverhosh Internet Service").
-# Caught XRumer operating on this network.
-# Stop Forum Spam (SFS) listings: 1,610.
-# Updated: 2018.05.25 / Checked: 2018.10.09
-
-2001:470:12c::/48 Deny Cloud
-Origin: US
-Tag: Serverhosh
-
-
 # ASN 197071 ("Dennis Rainer Warnholz trading as active-servers.com").
 # %Listed, Google Malware Dashboard: 0.13%.
 # Stop Forum Spam (SFS) listings: 156.
@@ -6374,3 +6373,23 @@ Origin: GB
 2a02:750::/29 Deny Cloud
 Origin: SE
 Tag: Portlane Networks AB
+
+
+# ASN 25780 ("HugeServer Networks, LLC").
+# Caught trying to hack WordPress sites.
+# Stop Forum Spam (SFS) listings: 182.
+# Updated: 2019.05.02
+
+2a03:a3a0::/32 Deny Cloud
+Origin: NL
+2604:34c0::/32 Deny Cloud
+2604:6b40::/32 Deny Cloud
+2605:8680::/40 Deny Cloud
+2605:8680:ff1::/48 Deny Cloud
+2605:8680:ff2::/47 Deny Cloud
+2605:8680:eeee::/48 Deny Cloud
+2605:8680:efef::/48 Deny Cloud
+2605:8680:fffe::/47 Deny Cloud
+2605:8681::/32 Deny Cloud
+Origin: US
+Tag: HugeServer Networks

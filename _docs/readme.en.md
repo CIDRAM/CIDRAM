@@ -1,5 +1,7 @@
 ## Documentation for CIDRAM (English).
 
+*This copy of the documentation isn't actively maintained anymore. Please refer to [CIDRAM/Docs](https://github.com/CIDRAM/Docs/blob/master/readme.en.md) instead.*
+
 ### Contents
 - 1. [PREAMBLE](#SECTION1)
 - 2. [HOW TO INSTALL](#SECTION2)
@@ -137,29 +139,14 @@ Note: Protecting your vault against unauthorised access (e.g., by hardening your
 
 ### 5. <a name="SECTION5"></a>FILES INCLUDED IN THIS PACKAGE
 
-The following is a list of all of the files that should have been included in the archived copy of this script when you downloaded it, any files that may be potentially created as a result of your using this script, along with a short description of what all these files are for.
+The following is a list of all of the files that should have been included in the archived copy of the package when you downloaded it, any files that may be potentially created as a result of your using it, along with a short description of what all these files are for.
 
 This information applies to the most recent v1 release, and mightn't be so relevant for other versions or releases.
 
 File | Description
 ----|----
 /_docs/ | Documentation directory (contains various files).
-/_docs/readme.ar.md | Arabic documentation.
-/_docs/readme.de.md | German documentation.
 /_docs/readme.en.md | English documentation.
-/_docs/readme.es.md | Spanish documentation.
-/_docs/readme.fr.md | French documentation.
-/_docs/readme.id.md | Indonesian documentation.
-/_docs/readme.it.md | Italian documentation.
-/_docs/readme.ja.md | Japanese documentation.
-/_docs/readme.ko.md | Korean documentation.
-/_docs/readme.nl.md | Dutch documentation.
-/_docs/readme.pt.md | Portuguese documentation.
-/_docs/readme.ru.md | Russian documentation.
-/_docs/readme.ur.md | Urdu documentation.
-/_docs/readme.vi.md | Vietnamese documentation.
-/_docs/readme.zh-TW.md | Chinese (traditional) documentation.
-/_docs/readme.zh.md | Chinese (simplified) documentation.
 /vault/ | Vault directory (contains various files).
 /vault/classes/ | Classes directory. Contains various classes used by CIDRAM.
 /vault/classes/Maikuolan/ | Classes directory. Contains various classes used by CIDRAM.
@@ -570,7 +557,7 @@ Signatures configuration.
 - Maximum number of infractions an IP is allowed to incur before it is banned by IP tracking. Default = 10.
 
 ##### "track_mode"
-- When should infractions be counted? False = When IPs are blocked by modules. True = When IPs are blocked for any reason.
+- When should infractions be counted? False = When IPs are blocked by modules. True = When IPs are blocked for any reason. Default = False.
 
 #### "recaptcha" (Category)
 Optionally, you can provide users with a way to bypass the "Access Denied" page by way of completing a reCAPTCHA instance, if you want to do so. This can help to mitigate some of the risks associated with false positives in those situations where we're not entirely sure whether a request has originated from a machine or a human.
@@ -1576,4 +1563,4 @@ Alternatively, there's a brief (non-authoritative) overview of GDPR/DSGVO availa
 ---
 
 
-Last Updated: 16 April 2019 (2019.04.16).
+Last Updated: 5 May 2019 (2019.05.05).

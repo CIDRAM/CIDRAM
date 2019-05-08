@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Output generator (last modified: 2019.05.05).
+ * This file: Output generator (last modified: 2019.05.08).
  */
 
 /** Initialise cache. */
@@ -501,21 +501,21 @@ if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
         !empty($CIDRAM['Hostname']) && $CIDRAM['Hostname'] !== $CIDRAM['BlockInfo']['IPAddr']
     ) || $CIDRAM['Config']['general']['empty_fields'] === 'include') {
         $CIDRAM['BlockInfo']['Hostname'] = empty($CIDRAM['Hostname']) ? '-' : $CIDRAM['Hostname'];
-        $CIDRAM['AddField']($CIDRAM['L10N']->getString('field_hostname'), $CIDRAM['BlockInfo']['Hostname'], 1);
+        $CIDRAM['AddField']($CIDRAM['L10N']->getString('field_hostname'), $CIDRAM['BlockInfo']['Hostname'], true);
     }
     if ($CIDRAM['BlockInfo']['Query'] || $CIDRAM['Config']['general']['empty_fields'] === 'include') {
-        $CIDRAM['AddField']($CIDRAM['L10N']->getString('field_query'), $CIDRAM['BlockInfo']['Query'] ?: '-', 1);
+        $CIDRAM['AddField']($CIDRAM['L10N']->getString('field_query'), $CIDRAM['BlockInfo']['Query'] ?: '-', true);
     }
     if ($CIDRAM['BlockInfo']['Referrer'] || $CIDRAM['Config']['general']['empty_fields'] === 'include') {
-        $CIDRAM['AddField']($CIDRAM['L10N']->getString('field_referrer'), $CIDRAM['BlockInfo']['Referrer'] ?: '-', 1);
+        $CIDRAM['AddField']($CIDRAM['L10N']->getString('field_referrer'), $CIDRAM['BlockInfo']['Referrer'] ?: '-', true);
     }
     $CIDRAM['AddField']($CIDRAM['L10N']->getString('field_sigcount'), $CIDRAM['BlockInfo']['SignatureCount']);
     $CIDRAM['AddField']($CIDRAM['L10N']->getString('field_sigref'), $CIDRAM['BlockInfo']['Signatures']);
     $CIDRAM['AddField']($CIDRAM['L10N']->getString('field_whyreason'), $CIDRAM['BlockInfo']['WhyReason'] . '!');
     if ($CIDRAM['BlockInfo']['UA'] || $CIDRAM['Config']['general']['empty_fields'] === 'include') {
-        $CIDRAM['AddField']($CIDRAM['L10N']->getString('field_ua'), $CIDRAM['BlockInfo']['UA'] ?: '-', 1);
+        $CIDRAM['AddField']($CIDRAM['L10N']->getString('field_ua'), $CIDRAM['BlockInfo']['UA'] ?: '-', true);
     }
-    $CIDRAM['AddField']($CIDRAM['L10N']->getString('field_rURI'), $CIDRAM['BlockInfo']['rURI'], 1);
+    $CIDRAM['AddField']($CIDRAM['L10N']->getString('field_rURI'), $CIDRAM['BlockInfo']['rURI'], true);
     if ($CIDRAM['Config']['recaptcha']['usemode'] || $CIDRAM['Config']['general']['empty_fields'] === 'include') {
         if (empty($CIDRAM['BlockInfo']['reCAPTCHA'])) {
             $CIDRAM['BlockInfo']['reCAPTCHA'] = $CIDRAM['L10N']->getString('recaptcha_disabled');

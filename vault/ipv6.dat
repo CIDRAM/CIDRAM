@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6.dat
 
-# Version: 2019.123.481
-# Last modified: 2019.05.04
+# Version: 2019.125.247
+# Last modified: 2019.05.07
 
 
 # ---
@@ -99,7 +99,7 @@ Origin: US
 Tag: PEG TECH INC
 
 
-# ASN 133731 ("Royal Network Technology"), 134176 ("Rainbow network limited").
+# ASNs 133731, 134176 ("Royal Network Technology", "Rainbow network limited").
 # Ranges change frequently / Should update often.
 # %Listed, Google Malware Dashboard: 2.10% (AS133731).
 # Stop Forum Spam (SFS) listings: 74 (AS133731).
@@ -279,7 +279,7 @@ Tag: Dattatec.com
 
 
 # ASNs 7203, 16265, 19148, 28753, 30633, 38930, 59253, 60626, 60781, 133752, 136988, 205025, 205544, 394380, 395954,
-# 396190, 396362, "Leaseweb Network". Updated: 2019.02.18
+# 396190, 396362 ("Leaseweb Network"). Updated: 2019.02.18
 # (Mostly should all just identify as "cloud". Also contains one "proxy").
 
 2a03:f85:2::/48 Deny Cloud
@@ -510,8 +510,7 @@ Tag: Webzilla B.V
 
 
 # ASN 53225 ("IPGLOBE DATACENTER").
-# Stop Forum Spam (SFS) listings: 3.
-# Updated: 2016.05.15 / Checked: 2018.12.15
+# Updated: 2016.05.15 / Checked: 2019.05.06
 
 2804:644::/32 Deny Cloud
 Origin: BR
@@ -2762,15 +2761,17 @@ Tag: Bradler & Krantz
 
 
 # ASN 34762 ("Combell NV").
-# %Listed, Google Malware Dashboard: 0.28%.
-# Updated: 2018.12.15
+# %Listed, Google Malware Dashboard: 0.13%.
+# Stop Forum Spam (SFS) listings: 1.
+# Updated: 2019.05.06
 
 2a00:1c98::/32 Deny Cloud
 2a00:7000::/32 Deny Cloud
 2a02:d08::/32 Deny Cloud
+2a03:a800::/32 Deny Cloud
 2a06:efc0::/32 Deny Cloud
 2a07:ca80::/29 Deny Cloud
-2a0d:5040::/32 Deny Cloud
+2a0d:5040::/31 Deny Cloud
 Origin: BE
 2a00:1bd8::/32 Deny Cloud
 2a01:40e0::/32 Deny Cloud
@@ -2865,10 +2866,11 @@ Tag: ClaraNET LTD
 
 
 # ASN 43289 ("Trabia-Network S.R.L").
-# %Listed, Google Malware Dashboard: 0.05%.
-# Stop Forum Spam (SFS) listings: 36,310.
-# Updated: 2018.12.15
+# Stop Forum Spam (SFS) listings: 41,134.
+# Updated: 2019.05.06
 
+2a03:f80:373::/48 Deny Cloud
+Origin: AT
 2a02:e00:ffe8::/48 Deny Cloud
 Origin: DE
 2a05:bc00::/29 Deny Cloud
@@ -3097,10 +3099,10 @@ Origin: US
 Tag: VegasNAP, LLC
 
 
-# ASN 34702 ("Aktsiaselts WaveCom").
-# %Listed, Google Malware Dashboard: 0.21%.
-# Stop Forum Spam (SFS) listings: 1,587.
-# Updated: 2018.12.19
+# ASNs 34702, 34729 ("Aktsiaselts WaveCom").
+# %Listed, Google Malware Dashboard: 0.14% (AS34702).
+# Stop Forum Spam (SFS) listings: 4,032 (AS34702).
+# Updated: 2018.12.19 / Checked: 2019.05.07
 
 2a01:97a0::/32 Deny Cloud
 2a0c:36c7::/32 Deny Cloud
@@ -3159,9 +3161,9 @@ Tag: Henderson
 
 
 # ASN 15967 ("Nazwa.pl Sp.z.o.o").
-# %Listed, Google Malware Dashboard: 0.89%.
-# Stop Forum Spam (SFS) listings: 101.
-# Updated: 2016.04.23 / Checked: 2018.12.19
+# %Listed, Google Malware Dashboard: 0.43%.
+# Stop Forum Spam (SFS) listings: 43.
+# Updated: 2016.04.23 / Checked: 2019.05.07
 
 2a01:6100::/32 Deny Cloud
 Origin: PL
@@ -3746,9 +3748,9 @@ Tag: 23Media GmbH
 
 
 # ASN 49544 ("i3d B.V").
-# %Listed, Google Malware Dashboard: 0.09%.
-# Stop Forum Spam (SFS) listings: 242.
-# Updated: 2018.12.19
+# %Listed, Google Malware Dashboard: 0.08%.
+# Stop Forum Spam (SFS) listings: 284.
+# Updated: 2019.05.07
 
 2403:1480:9000::/36 Deny Cloud
 Origin: AU
@@ -3765,14 +3767,12 @@ Origin: JP
 2a09:4f80:1::/48 Deny Cloud
 2a0a:5980::/29 Deny Cloud
 2a0b:1b00::/29 Deny Cloud
+2a0b:d9c0:164::/47 Deny Cloud
 2a0b:f380::/48 Deny Cloud
 2a0b:f380:3e8::/48 Deny Cloud
 Origin: NL
 2402:b180:9000::/36 Deny Cloud
 Origin: SG
-2605:7300::/31 Deny Cloud
-2606:d880::/32 Deny Cloud
-Origin: US
 Tag: i3d B.V
 
 
@@ -4428,9 +4428,9 @@ Tag: Desync Networks
 
 
 # ASN 3064 ("Affinity Internet, Inc").
-# %Listed, Google Malware Dashboard: 0.27%.
-# Stop Forum Spam (SFS) listings: 36.
-# Updated: 2017.10.23 / Checked: 2018.10.25
+# %Listed, Google Malware Dashboard: 0.30%.
+# Stop Forum Spam (SFS) listings: 48.
+# Updated: 2017.10.23 / Checked: 2019.05.06
 
 2407:2080::/32 Deny Cloud
 Origin: AU
@@ -4582,9 +4582,9 @@ Tag: Cloudie Limited
 
 
 # ASNs 31727, 62401 ("Node4 Limited").
-# %Listed, Google Malware Dashboard: 0.41% (AS31727).
-# Stop Forum Spam (SFS) listings: 267 (AS31727).
-# Updated: 2016.11.18 / Checked: 2018.12.15
+# %Listed, Google Malware Dashboard: 0.13% (AS31727).
+# Stop Forum Spam (SFS) listings: 270 (AS31727).
+# Updated: 2016.11.18 / Checked: 2019.05.06
 
 2a00:5600::/32 Deny Cloud
 2a00:f9c0::/32 Deny Cloud
@@ -4594,8 +4594,8 @@ Tag: Node4 Limited
 
 
 # ASN 200557 ("REGION40 LLC").
-# Stop Forum Spam (SFS) listings: 93,819.
-# Updated: 2018.12.15
+# Stop Forum Spam (SFS) listings: 92,453.
+# Updated: 2018.12.15 / Checked: 2019.05.06
 
 2a01:81a0::/48 Deny Cloud
 2a02:d0c2:2::/48 Deny Cloud
@@ -4611,9 +4611,9 @@ Tag: REGION40 LLC
 
 
 # ASN 29757 ("Webline Services Inc").
-# %Listed, Google Malware Dashboard: 1.19%.
-# Stop Forum Spam (SFS) listings: 10.
-# Updated: 2018.12.15
+# %Listed, Google Malware Dashboard: 1.46%.
+# Stop Forum Spam (SFS) listings: 5.
+# Updated: 2018.12.15 / Checked: 2019.05.06
 
 2604:d680::/32 Deny Cloud
 Origin: US
@@ -5683,15 +5683,20 @@ Tag: Estro Web Services
 # also announces bogons via 10.12.*.* (these should be removed from the final aggregate when updating). Signatures run
 # through rules_specific.php to avoid mistakenly blocking JetPack (WordPress plugin; still actively used throughout).
 # Stop Forum Spam (SFS) listings: 1.
-# Updated: 2018.12.15
+# Updated: 2019.05.06
 
 2403:6b80::/45 Run rules_specific.php
 2403:6b80:8::/47 Run rules_specific.php
+2403:6b80:a::/48 Run rules_specific.php
 2403:6b80:ffff::/48 Run rules_specific.php
 Origin: AU
 2801:80:1610::/48 Run rules_specific.php
 Origin: BR
-2a04:fa80::/45 Run rules_specific.php
+2a04:fa80::/48 Run rules_specific.php
+2a04:fa80:2::/47 Run rules_specific.php
+2a04:fa80:4::/46 Run rules_specific.php
+2a04:fa80:8::/48 Run rules_specific.php
+2a04:fa87:fffd::/48 Run rules_specific.php
 2a04:fa87:fffe::/47 Run rules_specific.php
 Origin: IE
 2620:115:c000::/46 Run rules_specific.php

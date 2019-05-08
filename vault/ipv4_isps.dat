@@ -1,8 +1,8 @@
 # IPv4 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv4_isps.dat
 
-# Version: 2019.121.483
-# Last modified: 2019.05.02
+# Version: 2019.125.247
+# Last modified: 2019.05.07
 
 
 # ---
@@ -712,10 +712,12 @@ recaptcha:
 
 
 # ASN 24203 ("PT Excelcomindo Pratama").
-# %Listed, abuseat.org (CBL-Listed): 42.16%.
-# Stop Forum Spam (SFS) listings: 383.
-# Updated: 2018.12.19
+# %Listed, abuseat.org (CBL-Listed): 41.90%.
+# Stop Forum Spam (SFS) listings: 384.
+# Updated: 2019.05.07
 
+45.127.172.0/22 Deny Spam
+Origin: AU
 112.215.16.0/24 Deny Spam
 112.215.19.0/24 Deny Spam
 112.215.26.0/24 Deny Spam
@@ -766,15 +768,12 @@ recaptcha:
 112.215.240.0/22 Deny Spam
 112.215.244.0/23 Deny Spam
 112.215.253.0/24 Deny Spam
-140.213.0.0/20 Deny Spam
-140.213.16.0/21 Deny Spam
-140.213.24.0/23 Deny Spam
-140.213.26.0/24 Deny Spam
-140.213.28.0/22 Deny Spam
+140.213.0.0/19 Deny Spam
 140.213.32.0/20 Deny Spam
 140.213.48.0/22 Deny Spam
-140.213.52.0/24 Deny Spam
+140.213.52.0/23 Deny Spam
 140.213.56.0/22 Deny Spam
+140.213.60.0/23 Deny Spam
 140.213.64.0/21 Deny Spam
 140.213.72.0/22 Deny Spam
 140.213.76.0/24 Deny Spam
@@ -827,40 +826,55 @@ Tag: AS48359
 
 
 # ASN 22368 ("TELEBUCARAMANGA S.A. E.S.P").
-# Stop Forum Spam (SFS) listings: 183.
-# Updated: 2018.12.19
+# Stop Forum Spam (SFS) listings: 480.
+# Updated: 2019.05.07
 
-170.80.8.0/22 Deny Spam
-181.174.0.0/18 Deny Spam
-181.236.184.0/22 Deny Spam
-181.236.188.0/23 Deny Spam
-181.236.192.0/21 Deny Spam
-181.236.224.0/19 Deny Spam
+181.174.0.0/19 Deny Spam
+181.174.32.0/20 Deny Spam
+181.174.48.0/22 Deny Spam
+181.174.54.0/23 Deny Spam
+181.174.56.0/21 Deny Spam
+181.236.192.0/23 Deny Spam
+181.236.222.0/24 Deny Spam
+181.236.224.0/23 Deny Spam
+181.236.246.0/23 Deny Spam
+181.236.250.0/23 Deny Spam
 186.183.128.0/23 Deny Spam
 186.183.132.0/23 Deny Spam
 186.183.136.0/21 Deny Spam
-186.183.144.0/20 Deny Spam
-186.183.160.0/21 Deny Spam
-186.183.168.0/22 Deny Spam
-186.183.174.0/23 Deny Spam
-186.183.176.0/21 Deny Spam
+186.183.144.0/21 Deny Spam
+186.183.154.0/23 Deny Spam
+186.183.156.0/22 Deny Spam
+186.183.164.0/23 Deny Spam
+186.183.170.0/23 Deny Spam
+186.183.178.0/23 Deny Spam
+186.183.180.0/22 Deny Spam
 186.183.184.0/22 Deny Spam
-186.183.192.0/21 Deny Spam
-186.183.204.0/22 Deny Spam
-186.183.208.0/21 Deny Spam
+186.183.194.0/23 Deny Spam
+186.183.196.0/22 Deny Spam
+186.183.204.0/23 Deny Spam
+186.183.208.0/22 Deny Spam
+186.183.212.0/23 Deny Spam
 186.183.218.0/23 Deny Spam
 186.183.220.0/22 Deny Spam
 186.183.226.0/23 Deny Spam
-186.183.228.0/22 Deny Spam
-186.183.232.0/23 Deny Spam
-186.183.236.0/22 Deny Spam
-186.183.240.0/21 Deny Spam
+186.183.228.0/23 Deny Spam
+186.183.236.0/23 Deny Spam
 186.183.248.0/22 Deny Spam
-186.183.254.0/23 Deny Spam
 190.13.0.0/18 Deny Spam
-190.96.128.0/17 Deny Spam
+190.96.128.0/19 Deny Spam
+190.96.161.0/24 Deny Spam
+190.96.168.0/23 Deny Spam
+190.96.176.0/20 Deny Spam
+190.96.192.0/20 Deny Spam
+190.96.216.0/21 Deny Spam
+190.96.224.0/19 Deny Spam
 190.124.96.0/19 Deny Spam
-190.184.128.0/18 Deny Spam
+190.184.128.0/21 Deny Spam
+190.184.136.0/23 Deny Spam
+190.184.140.0/22 Deny Spam
+190.184.144.0/20 Deny Spam
+190.184.160.0/19 Deny Spam
 190.252.104.0/23 Deny Spam
 200.21.234.0/23 Deny Spam
 200.21.236.0/23 Deny Spam
@@ -868,7 +882,14 @@ Tag: AS48359
 200.69.127.0/24 Deny Spam
 200.93.150.0/23 Deny Spam
 200.119.1.0/24 Deny Spam
-201.221.128.0/19 Deny Spam
+201.221.128.0/20 Deny Spam
+201.221.145.0/24 Deny Spam
+201.221.148.0/24 Deny Spam
+201.221.150.0/23 Deny Spam
+201.221.153.0/24 Deny Spam
+201.221.155.0/24 Deny Spam
+201.221.157.0/24 Deny Spam
+201.221.158.0/23 Deny Spam
 201.245.177.0/24 Deny Spam
 201.245.178.0/24 Deny Spam
 201.245.180.0/24 Deny Spam
@@ -7837,11 +7858,11 @@ recaptcha:
  enabled: true
 
 
-# ASN 3255: State Enterprise Scientific and Telecommunication Centre "Ukrainian Academic and Research Network" of the
-#   Institute for Condensed Matter Physics of the National Academy of Science of Ukraine (UARNet).
-# %Listed, Google Malware Dashboard: 0.31%.
-# Stop Forum Spam (SFS) listings: 1,161.
-# Updated: 2018.12.19
+# ASN 3255 (State Enterprise Scientific and Telecommunication Centre "Ukrainian Academic and Research Network" of the
+# Institute for Condensed Matter Physics of the National Academy of Science of Ukraine / UARNet).
+# %Listed, Google Malware Dashboard: 0.20%.
+# Stop Forum Spam (SFS) listings: 843.
+# Updated: 2019.05.07
 
 193.232.65.0/24 Deny Spam
 Origin: RU
@@ -7877,20 +7898,25 @@ Origin: RU
 194.44.54.0/24 Deny Spam
 194.44.56.0/23 Deny Spam
 194.44.58.0/24 Deny Spam
-194.44.60.0/22 Deny Spam
+194.44.60.0/23 Deny Spam
+194.44.62.0/24 Deny Spam
 194.44.64.0/23 Deny Spam
 194.44.67.0/24 Deny Spam
 194.44.69.0/24 Deny Spam
 194.44.70.0/23 Deny Spam
-194.44.72.0/21 Deny Spam
-194.44.80.0/21 Deny Spam
+194.44.72.0/24 Deny Spam
+194.44.74.0/23 Deny Spam
+194.44.76.0/22 Deny Spam
+194.44.82.0/23 Deny Spam
+194.44.84.0/22 Deny Spam
 194.44.89.0/24 Deny Spam
-194.44.91.0/24 Deny Spam
 194.44.92.0/22 Deny Spam
-194.44.96.0/20 Deny Spam
-194.44.112.0/22 Deny Spam
-194.44.116.0/23 Deny Spam
-194.44.120.0/21 Deny Spam
+194.44.96.0/22 Deny Spam
+194.44.100.0/23 Deny Spam
+194.44.102.0/24 Deny Spam
+194.44.106.0/23 Deny Spam
+194.44.108.0/22 Deny Spam
+194.44.112.0/20 Deny Spam
 194.44.128.0/21 Deny Spam
 194.44.136.0/22 Deny Spam
 194.44.140.0/23 Deny Spam
@@ -7902,9 +7928,7 @@ Origin: RU
 194.44.176.0/23 Deny Spam
 194.44.178.0/24 Deny Spam
 194.44.180.0/22 Deny Spam
-194.44.184.0/23 Deny Spam
-194.44.187.0/24 Deny Spam
-194.44.188.0/22 Deny Spam
+194.44.184.0/21 Deny Spam
 194.44.192.0/21 Deny Spam
 194.44.200.0/23 Deny Spam
 194.44.202.0/24 Deny Spam
@@ -7917,8 +7941,10 @@ Origin: RU
 194.44.218.0/23 Deny Spam
 194.44.220.0/22 Deny Spam
 194.44.224.0/19 Deny Spam
+195.69.246.0/24 Deny Spam
 213.174.0.0/23 Deny Spam
-213.174.5.0/24 Deny Spam
+213.174.2.0/24 Deny Spam
+213.174.4.0/23 Deny Spam
 213.174.6.0/24 Deny Spam
 213.174.8.0/21 Deny Spam
 213.174.20.0/23 Deny Spam
@@ -7926,9 +7952,6 @@ Origin: RU
 213.174.30.0/23 Deny Spam
 217.65.248.0/21 Deny Spam
 Origin: UA
-69.168.237.0/24 Deny Spam
-69.168.239.0/24 Deny Spam
-Origin: US
 Tag: UARNet
 ---
 recaptcha:
@@ -9783,17 +9806,17 @@ recaptcha:
 # Listing temporarily (hopefully) due to possible new spam campaigns detected within limited ranges contained within
 # otherwise benign networks containing human endpoints. Should be careful when expanding. Aim to de-list when possible.
 
-# ASN 137874 "Fibergrid", Updated: 2019.01.16
+# ASN 137874 ("Fibergrid"), Updated: 2019.01.16
 103.116.37.0/26 Deny Spam
 Origin: IN
 Tag: Fibergrid
 
-# ASN 24921 "Latvian Mobile Telephone Co", Updated: 2019.01.26
+# ASN 24921 ("Latvian Mobile Telephone Co"), Updated: 2019.01.26
 185.65.160.98/32 Deny Spam
 Origin: LV
 Tag: AS24921
 
-# ASN 43478 "ER-Telecom Holding", Updated: 2019.01.26
+# ASN 43478 ("ER-Telecom Holding"), Updated: 2019.01.26
 94.180.0.0/20 Deny Spam
 94.180.16.0/21 Deny Spam
 94.180.40.0/21 Deny Spam
@@ -9882,3 +9905,14 @@ Tag: Dhivehi Raajjeyge
 ---
 recaptcha:
  enabled: true
+
+
+# ASN 50310 ("FOP Goncharov Vyacheslav Grigorovich").
+# Spambots hosted by this network caught by honeypots. Server leasing company.
+# Stop Forum Spam (SFS) listings: 142.
+# Updated: 2019.05.07
+
+194.60.254.0/23 Deny Spam
+195.191.12.0/23 Deny Spam
+Origin: UA
+Tag: AS50310

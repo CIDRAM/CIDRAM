@@ -17,7 +17,7 @@ if (!defined('CIDRAM')) {
 }
 
 /** CIDRAM version number (SemVer). */
-$CIDRAM['ScriptVersion'] = '1.12.0';
+$CIDRAM['ScriptVersion'] = '2.0.0';
 
 /** CIDRAM version identifier (complete notation). */
 $CIDRAM['ScriptIdent'] = 'CIDRAM v' . $CIDRAM['ScriptVersion'];
@@ -146,18 +146,6 @@ $CIDRAM['Now'] = time() + ($CIDRAM['Config']['general']['timeOffset'] * 60);
 if (!empty($CIDRAM['Config']['general']['timezone']) && $CIDRAM['Config']['general']['timezone'] !== 'SYSTEM') {
     date_default_timezone_set($CIDRAM['Config']['general']['timezone']);
 }
-
-/** Determine whether operating in CLI-mode. */
-$CIDRAM['CIDRAM_sapi'] = !defined('Via-Travis') && (
-    empty($_SERVER['REQUEST_METHOD']) ||
-    substr(php_sapi_name(), 0, 3) === 'cli' || (
-        empty($_SERVER[$CIDRAM['IPAddr']]) &&
-        empty($_SERVER['HTTP_USER_AGENT']) &&
-        !empty($_SERVER['argc']) &&
-        is_numeric($_SERVER['argc']) &&
-        $_SERVER['argc'] > 0
-    )
-);
 
 /**
  * Process the request query and query variables (if any exist); These may be

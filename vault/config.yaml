@@ -199,9 +199,6 @@ Config Defaults:
    choices:
     default: {field_clickable_link}
     noclick: {field_nonclickable_text}
-  disable_cli:
-   type: bool
-   default: false
   disable_frontend:
    type: bool
    default: true
@@ -268,7 +265,7 @@ Config Defaults:
    choices:
     omit: {field_omit}
     include: {field_include}
-  log_sanitation:
+  log_sanitisation:
    type: bool
    default: false
  signatures:

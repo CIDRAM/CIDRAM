@@ -1232,7 +1232,7 @@ $CIDRAM['AddField'] = function ($FieldName, $FieldData, $Sanitise = false) use (
         ['&lt;', '&gt;', '&#13;', '&#10;'],
         $FieldData
     ) : $FieldData;
-    $Logged = $CIDRAM['Config']['general']['log_sanitation'] ? $Prepared : $FieldData;
+    $Logged = $CIDRAM['Config']['general']['log_sanitisation'] ? $Prepared : $FieldData;
     $CIDRAM['FieldTemplates']['Logs'] .= $FieldName . $Logged . "\n";
     $CIDRAM['FieldTemplates']['Output'][] = '<span class="textLabel">' . $FieldName . '</span>' . $Prepared . "<br />";
 };

@@ -79,12 +79,6 @@ emailaddr=''
 ; How would you prefer the email address to be presented to users?
 emailaddr_display_style='default'
 
-; Disable CLI mode? CLI mode is enabled by default, but can sometimes interfere
-; with certain testing tools (such as PHPUnit, for example) and other CLI-based
-; applications. If you don't need to disable CLI mode, you should ignore this
-; directive. False = Enable CLI mode [Default]; True = Disable CLI mode.
-disable_cli=false
-
 ; Disable front-end access? Front-end access can make CIDRAM more manageable,
 ; but can also be a potential security risk, too. It's recommended to manage
 ; CIDRAM via the back-end whenever possible, but front-end access is provided
@@ -180,12 +174,12 @@ empty_fields='omit'
 ; accurately, to aid any heuristic or forensic analysis that might be necessary
 ; in the future. However, in the event that a user attempts to read log data
 ; using external tools, and if those external tools don't perform their own
-; sanitation process, the user could be exposed to XSS attacks. If necessary,
+; sanitisation process, the user could be exposed to XSS attacks. If necessary,
 ; you can change the default behaviour using this configuration directive. True
 ; = Sanitise data when logging it (data is preserved less accurately, but XSS
 ; risk is lower). False = Don't sanitise data when logging it (data is
 ; preserved more accurately, but XSS risk is higher) [Default].
-log_sanitation=false
+log_sanitisation=false
 
 
 [signatures]

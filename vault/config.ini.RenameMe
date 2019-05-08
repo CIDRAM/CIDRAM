@@ -173,6 +173,20 @@ hide_version=false
 ; [default].
 empty_fields='omit'
 
+; When using the front-end logs page to view log data, CIDRAM sanitises the log
+; data before displaying it, to protect users from XSS attacks and other
+; potential threats that log data could contain. However, by default, data
+; isn't sanitised during logging. This is to ensure that log data is preserved
+; accurately, to aid any heuristic or forensic analysis that might be necessary
+; in the future. However, in the event that a user attempts to read log data
+; using external tools, and if those external tools don't perform their own
+; sanitation process, the user could be exposed to XSS attacks. If necessary,
+; you can change the default behaviour using this configuration directive. True
+; = Sanitise data when logging it (data is preserved less accurately, but XSS
+; risk is lower). False = Don't sanitise data when logging it (data is
+; preserved more accurately, but XSS risk is higher) [Default].
+log_sanitation=false
+
 
 [signatures]
 
@@ -235,7 +249,7 @@ default_tracktime=604800
 infraction_limit=10
 
 ; When should infractions be counted? False = When IPs are blocked by modules.
-; True = When IPs are blocked for any reason.
+; True = When IPs are blocked for any reason. Default = False.
 track_mode=false
 
 

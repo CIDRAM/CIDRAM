@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2019.04.07).
+ * This file: Functions file (last modified: 2019.05.08).
  */
 
 /**
@@ -1236,14 +1236,21 @@ $CIDRAM['ReadBytes'] = function ($In, $Mode = 0) {
  *
  * @param string $FieldName Name of the field (generally, the L10N label).
  * @param string $FieldName Data for the field.
+ * @param bool $Sanitise Whether the data needs to be sanitised against XSS attacks.
  */
-$CIDRAM['AddField'] = function ($FieldName, $FieldData) use (&$CIDRAM) {
-    $CIDRAM['FieldTemplates']['Logs'] .= $FieldName . $FieldData . "\n";
-    $CIDRAM['FieldTemplates']['Output'][] = '<span class="textLabel">' . $FieldName . '</span>' . $FieldData . "<br />";
+$CIDRAM['AddField'] = function ($FieldName, $FieldData, $Sanitise = false) use (&$CIDRAM) {
+    $Prepared = $Sanitise ? str_replace(
+        ['<', '>', "\r", "\n"],
+        ['&lt;', '&gt;', '&#13;', '&#10;'],
+        $FieldData
+    ) : $FieldData;
+    $Logged = $CIDRAM['Config']['general']['log_sanitisation'] ? $Prepared : $FieldData;
+    $CIDRAM['FieldTemplates']['Logs'] .= $FieldName . $Logged . "\n";
+    $CIDRAM['FieldTemplates']['Output'][] = '<span class="textLabel">' . $FieldName . '</span>' . $Prepared . "<br />";
 };
 
 /**
- * Resolves an 6to4 IPv6 address to its IPv4 address counterpart.
+ * Resolves 6to4 addresses to their IPv4 counterparts.
  *
  * @param string $In An IPv6 address.
  * @return string An IPv4 address.

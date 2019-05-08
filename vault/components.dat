@@ -4,77 +4,71 @@ CIDRAM:
  Version: 1.12.1-DEV+19126754
  Minimum Required: 1.0.0
  Minimum Required PHP: 5.4.0
- Changelog: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/Changelog.txt
- Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
- Tests: https://api.github.com/repos/CIDRAM/CIDRAM/commits/master/status
+ Changelog: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/Changelog.txt
+ Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
+ Tests: https://api.github.com/repos/CIDRAM/CIDRAM/commits/v1/status
  When Update Succeeds:
   - WP-Ver
-  - Delete "cache.dat.safety"
- When Checking:
-  - In "cidramblocklists.dat" Replace "~^ Remote\: https\://macmathan\.info/(?:zbblock-range-blocks|blocklists)/cidramblocklists\.dat\.gz$~m" With " Remote: https://bitbucket.org/macmathan/blocklists/raw/master/cidramblocklists.dat"
-  - In "cidramblocklists.dat" Replace "~^ Remote\: https\://raw\.githubusercontent\.com/macmathan/Blocklists/master/cidramblocklists\.dat$~m" With " Remote: https://bitbucket.org/macmathan/blocklists/raw/master/cidramblocklists.dat"
-  - In "cidramblocklists.dat" Replace "~\.gz$~im" With ""
-  - In "components.dat" Replace "raw\.githubusercontent\.com/CIDRAM/CIDRAM/master" With "raw.githubusercontent.com/CIDRAM/CIDRAM/v1"
  Files:
   From:
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/.htaccess
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/classes/.htaccess
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/classes/Aggregator.php
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/classes/Maikuolan/Cache.php
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/classes/Maikuolan/ComplexStringHandler.php
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/classes/Maikuolan/Demojibakefier.php
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/classes/Maikuolan/L10N.php
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/classes/Maikuolan/YAML.php
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/cli.php
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/config.php
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/config.yaml
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/fe_assets/.htaccess
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/fe_assets/_2fa.html
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/fe_assets/_accounts.html
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/fe_assets/_accounts_row.html
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/fe_assets/_aux.html
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/fe_assets/_cache.html
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/fe_assets/_cidr_calc.html
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/fe_assets/_cidr_calc_row.html
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/fe_assets/_config.html
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/fe_assets/_config_row.html
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/fe_assets/_files.html
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/fe_assets/_files_edit.html
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/fe_assets/_files_rename.html
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/fe_assets/_files_row.html
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/fe_assets/_fixer.html
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/fe_assets/_home.html
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/fe_assets/_ip_aggregator.html
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/fe_assets/_ip_test.html
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/fe_assets/_ip_test_row.html
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/fe_assets/_ip_tracking.html
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/fe_assets/_ip_tracking_row.html
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/fe_assets/_login.html
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/fe_assets/_logs.html
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/fe_assets/_nav_complete_access.html
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/fe_assets/_nav_logs_access_only.html
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/fe_assets/_range.html
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/fe_assets/_range_row.html
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/fe_assets/_sections.html
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/fe_assets/_statistics.html
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/fe_assets/_updates.html
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/fe_assets/_updates_row.html
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/fe_assets/frontend.css
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/fe_assets/frontend.html
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/fe_assets/icons.php
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/fe_assets/pips.php
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/fe_assets/scripts.js
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/frontend.php
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/frontend_functions.php
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/functions.php
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/lang.php
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/lang/.htaccess
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/outgen.php
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/php5.4.x.php
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/recaptcha.php
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/template_custom.html
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/template_default.html
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/verification.yaml
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/.htaccess
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/classes/.htaccess
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/classes/Aggregator.php
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/classes/Maikuolan/Cache.php
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/classes/Maikuolan/ComplexStringHandler.php
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/classes/Maikuolan/Demojibakefier.php
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/classes/Maikuolan/L10N.php
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/classes/Maikuolan/YAML.php
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/cli.php
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/config.php
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/config.yaml
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/.htaccess
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/_2fa.html
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/_accounts.html
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/_accounts_row.html
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/_aux.html
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/_cache.html
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/_cidr_calc.html
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/_cidr_calc_row.html
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/_config.html
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/_config_row.html
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/_files.html
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/_files_edit.html
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/_files_rename.html
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/_files_row.html
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/_fixer.html
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/_home.html
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/_ip_aggregator.html
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/_ip_test.html
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/_ip_test_row.html
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/_ip_tracking.html
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/_ip_tracking_row.html
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/_login.html
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/_logs.html
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/_nav_complete_access.html
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/_nav_logs_access_only.html
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/_range.html
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/_range_row.html
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/_sections.html
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/_statistics.html
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/_updates.html
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/_updates_row.html
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/frontend.css
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/frontend.html
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/icons.php
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/pips.php
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/scripts.js
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/frontend.php
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/frontend_functions.php
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/functions.php
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang.php
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/.htaccess
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/outgen.php
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/php5.4.x.php
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/recaptcha.php
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/template_custom.html
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/template_default.html
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/verification.yaml
   To:
    - .htaccess
    - classes/.htaccess
@@ -199,11 +193,11 @@ IPv4:
  False Positive Risk: Low
  Version: 2019.126.754
  Minimum Required: 1.0.0
- Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
+ Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
  Uninstallable: true
  Files:
   From:
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/ipv4.dat
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/ipv4.dat
   To:
    - ipv4.dat
   Checksum:
@@ -215,11 +209,11 @@ IPv4-Bogons:
  False Positive Risk: Low
  Version: 2019.126.754
  Minimum Required: 1.0.0
- Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
+ Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
  Uninstallable: true
  Files:
   From:
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/ipv4_bogons.dat
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/ipv4_bogons.dat
   To:
    - ipv4_bogons.dat
   Checksum:
@@ -231,11 +225,11 @@ IPv4-ISPs:
  False Positive Risk: Medium
  Version: 2019.126.754
  Minimum Required: 1.0.0
- Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
+ Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
  Uninstallable: true
  Files:
   From:
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/ipv4_isps.dat
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/ipv4_isps.dat
   To:
    - ipv4_isps.dat
   Checksum:
@@ -247,11 +241,11 @@ IPv4-Other:
  False Positive Risk: Medium
  Version: 2019.126.754
  Minimum Required: 1.0.0
- Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
+ Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
  Uninstallable: true
  Files:
   From:
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/ipv4_other.dat
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/ipv4_other.dat
   To:
    - ipv4_other.dat
   Checksum:
@@ -263,11 +257,11 @@ IPv6:
  False Positive Risk: Low
  Version: 2019.126.754
  Minimum Required: 1.0.0
- Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
+ Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
  Uninstallable: true
  Files:
   From:
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/ipv6.dat
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/ipv6.dat
   To:
    - ipv6.dat
   Checksum:
@@ -279,11 +273,11 @@ IPv6-Bogons:
  False Positive Risk: Low
  Version: 2019.126.754
  Minimum Required: 1.0.0
- Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
+ Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
  Uninstallable: true
  Files:
   From:
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/ipv6_bogons.dat
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/ipv6_bogons.dat
   To:
    - ipv6_bogons.dat
   Checksum:
@@ -295,11 +289,11 @@ IPv6-ISPs:
  False Positive Risk: Medium
  Version: 2019.126.754
  Minimum Required: 1.0.0
- Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
+ Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
  Uninstallable: true
  Files:
   From:
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/ipv6_isps.dat
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/ipv6_isps.dat
   To:
    - ipv6_isps.dat
   Checksum:
@@ -311,11 +305,11 @@ IPv6-Other:
  False Positive Risk: Low
  Version: 2019.126.754
  Minimum Required: 1.0.0
- Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
+ Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
  Uninstallable: true
  Files:
   From:
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/ipv6_other.dat
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/ipv6_other.dat
   To:
    - ipv6_other.dat
   Checksum:
@@ -327,14 +321,14 @@ Bypasses:
  Version: 2019.105.386
  Minimum Required: 1.0.0
  Minimum Required PHP: 5.4.0
- Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
+ Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
  Uninstallable: true
  Provisional: true
  Files:
   From:
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/rules_as6939.php
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/rules_softlayer.php
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/rules_specific.php
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/rules_as6939.php
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/rules_softlayer.php
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/rules_specific.php
   To:
    - rules_as6939.php
    - rules_softlayer.php
@@ -350,13 +344,13 @@ l10n/en:
  Version: 2019.126.754
  Minimum Required: 1.10.0
  Minimum Required PHP: 5.4.0
- Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
+ Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
  Uninstallable: true
  Files:
   From:
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/lang/lang.en.cli.yaml
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/lang/lang.en.fe.yaml
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/lang/lang.en.yaml
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.en.cli.yaml
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.en.fe.yaml
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.en.yaml
   To:
    - lang/lang.en.cli.yaml
    - lang/lang.en.fe.yaml
@@ -372,13 +366,13 @@ l10n/ar:
  Version: 2019.126.754
  Minimum Required: 1.10.0
  Minimum Required PHP: 5.4.0
- Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
+ Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
  Uninstallable: true
  Files:
   From:
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/lang/lang.ar.cli.yaml
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/lang/lang.ar.fe.yaml
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/lang/lang.ar.yaml
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.ar.cli.yaml
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.ar.fe.yaml
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.ar.yaml
   To:
    - lang/lang.ar.cli.yaml
    - lang/lang.ar.fe.yaml
@@ -394,13 +388,13 @@ l10n/bn:
  Version: 2019.126.754
  Minimum Required: 1.10.0
  Minimum Required PHP: 5.4.0
- Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
+ Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
  Uninstallable: true
  Files:
   From:
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/lang/lang.bn.cli.yaml
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/lang/lang.bn.fe.yaml
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/lang/lang.bn.yaml
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.bn.cli.yaml
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.bn.fe.yaml
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.bn.yaml
   To:
    - lang/lang.bn.cli.yaml
    - lang/lang.bn.fe.yaml
@@ -416,13 +410,13 @@ l10n/de:
  Version: 2019.126.754
  Minimum Required: 1.10.0
  Minimum Required PHP: 5.4.0
- Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
+ Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
  Uninstallable: true
  Files:
   From:
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/lang/lang.de.cli.yaml
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/lang/lang.de.fe.yaml
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/lang/lang.de.yaml
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.de.cli.yaml
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.de.fe.yaml
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.de.yaml
   To:
    - lang/lang.de.cli.yaml
    - lang/lang.de.fe.yaml
@@ -438,13 +432,13 @@ l10n/es:
  Version: 2019.126.754
  Minimum Required: 1.10.0
  Minimum Required PHP: 5.4.0
- Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
+ Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
  Uninstallable: true
  Files:
   From:
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/lang/lang.es.cli.yaml
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/lang/lang.es.fe.yaml
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/lang/lang.es.yaml
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.es.cli.yaml
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.es.fe.yaml
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.es.yaml
   To:
    - lang/lang.es.cli.yaml
    - lang/lang.es.fe.yaml
@@ -460,13 +454,13 @@ l10n/fr:
  Version: 2019.126.754
  Minimum Required: 1.10.0
  Minimum Required PHP: 5.4.0
- Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
+ Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
  Uninstallable: true
  Files:
   From:
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/lang/lang.fr.cli.yaml
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/lang/lang.fr.fe.yaml
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/lang/lang.fr.yaml
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.fr.cli.yaml
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.fr.fe.yaml
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.fr.yaml
   To:
    - lang/lang.fr.cli.yaml
    - lang/lang.fr.fe.yaml
@@ -482,13 +476,13 @@ l10n/hi:
  Version: 2019.126.754
  Minimum Required: 1.10.0
  Minimum Required PHP: 5.4.0
- Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
+ Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
  Uninstallable: true
  Files:
   From:
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/lang/lang.hi.cli.yaml
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/lang/lang.hi.fe.yaml
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/lang/lang.hi.yaml
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.hi.cli.yaml
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.hi.fe.yaml
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.hi.yaml
   To:
    - lang/lang.hi.cli.yaml
    - lang/lang.hi.fe.yaml
@@ -504,13 +498,13 @@ l10n/id:
  Version: 2019.126.754
  Minimum Required: 1.10.0
  Minimum Required PHP: 5.4.0
- Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
+ Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
  Uninstallable: true
  Files:
   From:
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/lang/lang.id.cli.yaml
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/lang/lang.id.fe.yaml
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/lang/lang.id.yaml
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.id.cli.yaml
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.id.fe.yaml
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.id.yaml
   To:
    - lang/lang.id.cli.yaml
    - lang/lang.id.fe.yaml
@@ -526,13 +520,13 @@ l10n/it:
  Version: 2019.126.754
  Minimum Required: 1.10.0
  Minimum Required PHP: 5.4.0
- Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
+ Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
  Uninstallable: true
  Files:
   From:
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/lang/lang.it.cli.yaml
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/lang/lang.it.fe.yaml
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/lang/lang.it.yaml
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.it.cli.yaml
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.it.fe.yaml
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.it.yaml
   To:
    - lang/lang.it.cli.yaml
    - lang/lang.it.fe.yaml
@@ -548,13 +542,13 @@ l10n/ja:
  Version: 2019.126.754
  Minimum Required: 1.10.0
  Minimum Required PHP: 5.4.0
- Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
+ Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
  Uninstallable: true
  Files:
   From:
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/lang/lang.ja.cli.yaml
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/lang/lang.ja.fe.yaml
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/lang/lang.ja.yaml
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.ja.cli.yaml
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.ja.fe.yaml
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.ja.yaml
   To:
    - lang/lang.ja.cli.yaml
    - lang/lang.ja.fe.yaml
@@ -570,13 +564,13 @@ l10n/ko:
  Version: 2019.126.754
  Minimum Required: 1.10.0
  Minimum Required PHP: 5.4.0
- Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
+ Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
  Uninstallable: true
  Files:
   From:
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/lang/lang.ko.cli.yaml
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/lang/lang.ko.fe.yaml
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/lang/lang.ko.yaml
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.ko.cli.yaml
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.ko.fe.yaml
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.ko.yaml
   To:
    - lang/lang.ko.cli.yaml
    - lang/lang.ko.fe.yaml
@@ -592,13 +586,13 @@ l10n/nl:
  Version: 2019.126.754
  Minimum Required: 1.10.0
  Minimum Required PHP: 5.4.0
- Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
+ Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
  Uninstallable: true
  Files:
   From:
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/lang/lang.nl.cli.yaml
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/lang/lang.nl.fe.yaml
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/lang/lang.nl.yaml
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.nl.cli.yaml
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.nl.fe.yaml
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.nl.yaml
   To:
    - lang/lang.nl.cli.yaml
    - lang/lang.nl.fe.yaml
@@ -614,13 +608,13 @@ l10n/no:
  Version: 2019.126.754
  Minimum Required: 1.10.0
  Minimum Required PHP: 5.4.0
- Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
+ Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
  Uninstallable: true
  Files:
   From:
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/lang/lang.no.cli.yaml
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/lang/lang.no.fe.yaml
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/lang/lang.no.yaml
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.no.cli.yaml
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.no.fe.yaml
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.no.yaml
   To:
    - lang/lang.no.cli.yaml
    - lang/lang.no.fe.yaml
@@ -636,13 +630,13 @@ l10n/pt:
  Version: 2019.126.754
  Minimum Required: 1.10.0
  Minimum Required PHP: 5.4.0
- Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
+ Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
  Uninstallable: true
  Files:
   From:
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/lang/lang.pt.cli.yaml
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/lang/lang.pt.fe.yaml
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/lang/lang.pt.yaml
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.pt.cli.yaml
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.pt.fe.yaml
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.pt.yaml
   To:
    - lang/lang.pt.cli.yaml
    - lang/lang.pt.fe.yaml
@@ -658,13 +652,13 @@ l10n/ru:
  Version: 2019.126.754
  Minimum Required: 1.10.0
  Minimum Required PHP: 5.4.0
- Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
+ Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
  Uninstallable: true
  Files:
   From:
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/lang/lang.ru.cli.yaml
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/lang/lang.ru.fe.yaml
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/lang/lang.ru.yaml
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.ru.cli.yaml
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.ru.fe.yaml
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.ru.yaml
   To:
    - lang/lang.ru.cli.yaml
    - lang/lang.ru.fe.yaml
@@ -680,13 +674,13 @@ l10n/sv:
  Version: 2019.126.754
  Minimum Required: 1.10.0
  Minimum Required PHP: 5.4.0
- Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
+ Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
  Uninstallable: true
  Files:
   From:
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/lang/lang.sv.cli.yaml
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/lang/lang.sv.fe.yaml
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/lang/lang.sv.yaml
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.sv.cli.yaml
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.sv.fe.yaml
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.sv.yaml
   To:
    - lang/lang.sv.cli.yaml
    - lang/lang.sv.fe.yaml
@@ -702,13 +696,13 @@ l10n/th:
  Version: 2019.126.754
  Minimum Required: 1.10.0
  Minimum Required PHP: 5.4.0
- Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
+ Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
  Uninstallable: true
  Files:
   From:
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/lang/lang.th.cli.yaml
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/lang/lang.th.fe.yaml
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/lang/lang.th.yaml
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.th.cli.yaml
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.th.fe.yaml
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.th.yaml
   To:
    - lang/lang.th.cli.yaml
    - lang/lang.th.fe.yaml
@@ -724,13 +718,13 @@ l10n/tr:
  Version: 2019.126.754
  Minimum Required: 1.10.0
  Minimum Required PHP: 5.4.0
- Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
+ Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
  Uninstallable: true
  Files:
   From:
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/lang/lang.tr.cli.yaml
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/lang/lang.tr.fe.yaml
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/lang/lang.tr.yaml
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.tr.cli.yaml
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.tr.fe.yaml
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.tr.yaml
   To:
    - lang/lang.tr.cli.yaml
    - lang/lang.tr.fe.yaml
@@ -746,13 +740,13 @@ l10n/ur:
  Version: 2019.126.754
  Minimum Required: 1.10.0
  Minimum Required PHP: 5.4.0
- Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
+ Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
  Uninstallable: true
  Files:
   From:
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/lang/lang.ur.cli.yaml
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/lang/lang.ur.fe.yaml
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/lang/lang.ur.yaml
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.ur.cli.yaml
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.ur.fe.yaml
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.ur.yaml
   To:
    - lang/lang.ur.cli.yaml
    - lang/lang.ur.fe.yaml
@@ -768,13 +762,13 @@ l10n/vi:
  Version: 2019.126.754
  Minimum Required: 1.10.0
  Minimum Required PHP: 5.4.0
- Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
+ Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
  Uninstallable: true
  Files:
   From:
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/lang/lang.vi.cli.yaml
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/lang/lang.vi.fe.yaml
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/lang/lang.vi.yaml
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.vi.cli.yaml
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.vi.fe.yaml
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.vi.yaml
   To:
    - lang/lang.vi.cli.yaml
    - lang/lang.vi.fe.yaml
@@ -790,13 +784,13 @@ l10n/zh-TW:
  Version: 2019.126.754
  Minimum Required: 1.10.0
  Minimum Required PHP: 5.4.0
- Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
+ Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
  Uninstallable: true
  Files:
   From:
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/lang/lang.zh-tw.cli.yaml
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/lang/lang.zh-tw.fe.yaml
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/lang/lang.zh-tw.yaml
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.zh-tw.cli.yaml
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.zh-tw.fe.yaml
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.zh-tw.yaml
   To:
    - lang/lang.zh-tw.cli.yaml
    - lang/lang.zh-tw.fe.yaml
@@ -812,13 +806,13 @@ l10n/zh:
  Version: 2019.126.754
  Minimum Required: 1.10.0
  Minimum Required PHP: 5.4.0
- Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
+ Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
  Uninstallable: true
  Files:
   From:
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/lang/lang.zh.cli.yaml
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/lang/lang.zh.fe.yaml
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/lang/lang.zh.yaml
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.zh.cli.yaml
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.zh.fe.yaml
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.zh.yaml
   To:
    - lang/lang.zh.cli.yaml
    - lang/lang.zh.fe.yaml

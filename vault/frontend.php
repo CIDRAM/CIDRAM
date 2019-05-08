@@ -1656,12 +1656,13 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && ($CIDRAM['FE']['Per
             }
             if (!empty($CIDRAM['Components']['ThisComponent']['Files']['To'])) {
                 $CIDRAM['Activable'] = $CIDRAM['IsActivable']($CIDRAM['Components']['ThisComponent']);
-                if (
-                    ($CIDRAM['Components']['Key'] === 'l10n/' . $CIDRAM['Config']['general']['lang']) ||
-                    ($CIDRAM['Components']['Key'] === 'theme/' . $CIDRAM['Config']['template_data']['theme']) ||
-                    ($CIDRAM['Components']['Key'] === 'CIDRAM') ||
-                    $CIDRAM['IsInUse']($CIDRAM['Components']['ThisComponent'])
-                ) {
+                if (preg_match('~^(?:l10n/' . preg_quote(
+                    $CIDRAM['Config']['general']['lang']
+                ) . '|theme/' . preg_quote(
+                    $CIDRAM['Config']['template_data']['theme']
+                ) . '|CIDRAM.*|Common Classes Package)$~i', $CIDRAM['Components']['Key']) || $CIDRAM['IsInUse'](
+                    $CIDRAM['Components']['ThisComponent']
+                )) {
                     $CIDRAM['AppendToString']($CIDRAM['Components']['ThisComponent']['StatusOptions'], '<hr />',
                         '<div class="txtGn">' . $CIDRAM['L10N']->getString('state_component_is_active') . '</div>'
                     );

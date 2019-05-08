@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2019.04.29).
+ * This file: Front-end functions file (last modified: 2019.05.08).
  */
 
 /**
@@ -76,7 +76,6 @@ $CIDRAM['In'] = function ($Query) use (&$CIDRAM) {
     $QueryParts = explode($Delimiter, $Query);
     $CountParts = count($QueryParts);
     if (!($CountParts % 2)) {
-        $QueryParts = preg_split('~ +~', $Query, -1, PREG_SPLIT_NO_EMPTY);
         return;
     }
     $Arr = [];

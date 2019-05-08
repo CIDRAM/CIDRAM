@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Japanese language data for the front-end (last modified: 2019.04.17).
+# This file: Japanese language data for the front-end (last modified: 2019.05.05).
 ##/
 
 Extended Description Bypasses: "メインパッケージに通常含まれているデフォルト・シグネチャ・バイパス。"
@@ -84,6 +84,7 @@ config_general_lang: "CIDRAMのデフォルト言語を設定します。"
 config_general_log_banned_ips: "禁止されたＩＰからブロックされたリクエストをログ・ファイルに含めますか？ True = はい（Default/デフォルルト）。 False = いいえ。"
 config_general_log_rotation_action: "ログ・ローテーションは、一度に存在する必要があるログ・ファイルの数を制限します。​新しいログ・ファイルが作成されると、ログ・ファイルの総数が指定された制限を超えると、指定されたアクションが実行されます。​ここで希望のアクションを指定できます。 「Delete」 = 最も古いログ・ファイルを削除して、制限を超過しないようにします。 「Archive」 = 最初にアーカイブしてから、最も古いログ・ファイルを削除して、制限を超過しないようにします。"
 config_general_log_rotation_limit: "ログ・ローテーションは、一度に存在する必要があるログ・ファイルの数を制限します。​新しいログ・ファイルが作成されると、ログ・ファイルの総数が指定された制限を超えると、指定されたアクションが実行されます。​ここで希望の制限を指定することができます。​値「0」は、ログ・ローテーションを無効にします。"
+config_general_log_sanitisation: "フロントエンドのログページを使用してログデータを表示する場合、ＸＳＳ攻撃やその他の潜在的な脅威からユーザーを保護する、CIDRAMはログデータを表示前にサニタイズします。​ただし、デフォルトでは、データはロギング中にサニタイズされません。​これは、ログデータが正確に記録されるようにするためです（将来必要になる可能性があるヒューリスティックまたはフォレンジック分析に役立ちます）。​ただし、ユーザーが外部ツールを使用してログデータを読み込もうとした場合、それらの外部ツールが独自のサニティゼーション・プロセスを実行しない場合、ユーザーがＸＳＳ攻撃にさらされる可能性があります。​必要に応じて、このコンフィギュレーション・ディレクティブを使ってデフォルトの動作を変更することができます。 True = データを記録するときは、それをサニタイズして（記録データの精度はもっと低いですが、ＸＳＳリスクはもっと低いです）。 False = データを記録するときは、それをサニタイズしない（記録データの精度はもっと高いですが、ＸＳＳリスクはもっと高いです）。 Default/デフォルルト = False。"
 config_general_logfile: "アクセス試行阻止の記録、​人間によって読み取り可能。​ファイル名指定するか、​無効にしたい場合は空白のままにして下さい。"
 config_general_logfileApache: "アクセス試行阻止の記録、​Apacheスタイル。​ファイル名指定するか、​無効にしたい場合は空白のままにして下さい。"
 config_general_logfileSerialized: "アクセス試行阻止の記録、​シリアル化されました。​ファイル名指定するか、​無効にしたい場合は空白のままにして下さい。"
@@ -130,7 +131,7 @@ config_signatures_infraction_limit: "ＩＰがＩＰトラッキングによっ�
 config_signatures_ipv4: "ＩＰｖ４シグネチャ・ファイルのリスト（CIDRAMは、​これを使用します）。​これは、​カンマで区切られています。​必要に応じて、​項目を追加することができます。"
 config_signatures_ipv6: "ＩＰｖ６シグネチャ・ファイルのリスト（CIDRAMは、​これを使用します）。​これは、​カンマで区切られています。​必要に応じて、​項目を追加することができます。"
 config_signatures_modules: "ＩＰｖ４/ＩＰｖ６シグネチャをチェックした後にロードするモジュールファイルのリスト。​これは、​カンマで区切られています。"
-config_signatures_track_mode: "違反はいつカウントされるべきですか？​False = ＩＰがモジュールによってブロックされている場合。 True = なんでもの理由でＩＰがブロックされた場合。"
+config_signatures_track_mode: "違反はいつカウントされるべきですか？​False = ＩＰがモジュールによってブロックされている場合。 True = なんでもの理由でＩＰがブロックされた場合。 Default/デフォルルト = False。"
 config_supplementary_cache_options_enable_apcu: "キャッシュに「APCu」を使用するかどうかを指定します。 Default/デフォルルト = False。"
 config_supplementary_cache_options_enable_memcached: "キャッシュに「Memcached」を使用するかどうかを指定します。 Default/デフォルルト = False。"
 config_supplementary_cache_options_enable_pdo: "キャッシュに「PDO」を使用するかどうかを指定します。 Default/デフォルルト = False。"
@@ -294,7 +295,7 @@ link_home: "ホーム"
 link_ip_aggregator: "ＩＰアグリゲータ"
 link_ip_test: "ＩＰテスト"
 link_ip_tracking: "ＩＰトラッキング"
-link_logs: "ロゴス"
+link_logs: "ログページ"
 link_range: "範囲テーブル"
 link_sections_list: "セクション・リスト"
 link_statistics: "統計"
@@ -428,7 +429,7 @@ tip_logs: "こんにちは、​{username}。​<br />そのログの内容を�
 tip_pie_html: "詳細についてはコンポーネント名をクリックしてください。"
 tip_range: "こんにちは、​{username}。​<br />このページには、現在アクティブな・シグネチャ・ファイルが対象とするＩＰ範囲に関する基本的な統計情報が表示されます。"
 tip_sections_list: "こんにちは、​{username}。<br />このページには、現在アクティブなシグネチャ・ファイルに存在するセクションが一覧表示されます。"
-tip_see_the_documentation: "設定ディレクティブの詳細については、​<a href="https://github.com/CIDRAM/CIDRAM/blob/master/_docs/readme.ja.md\#SECTION6">ドキュメント</a>を参照してください。"
+tip_see_the_documentation: "コンフィギュレーション・ディレクティブの詳細については、​<a href="https://github.com/CIDRAM/Docs/blob/master/readme.ja.md\#SECTION6">ドキュメント</a>を参照してください。"
 tip_statistics: "こんにちは、​{username}。​<br />このページには、CIDRAMのインストールに関する基本的な使用状況の統計情報が表示されます。"
 tip_statistics_disabled: "注意：統計トラッキングは現在オフラインですが、コンフィギュレーション・ページで有効にすることができます。"
 tip_updates: "こんにちは、​{username}。​<br />アップデート・ページは、​CIDRAMのさまざまなコンポーネントはインストール、​アンインストール、​更新が可能です（コアパッケージ、​シグネチャ、​Ｌ１０Ｎファイル、​等）。"

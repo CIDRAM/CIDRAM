@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Output generator (last modified: 2019.04.23).
+ * This file: Output generator (last modified: 2019.05.05).
  */
 
 /** Initialise cache. */
@@ -501,21 +501,21 @@ if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
         !empty($CIDRAM['Hostname']) && $CIDRAM['Hostname'] !== $CIDRAM['BlockInfo']['IPAddr']
     ) || $CIDRAM['Config']['general']['empty_fields'] === 'include') {
         $CIDRAM['BlockInfo']['Hostname'] = empty($CIDRAM['Hostname']) ? '-' : $CIDRAM['Hostname'];
-        $CIDRAM['AddField']($CIDRAM['L10N']->getString('field_hostname'), $CIDRAM['BlockInfo']['Hostname']);
+        $CIDRAM['AddField']($CIDRAM['L10N']->getString('field_hostname'), $CIDRAM['BlockInfo']['Hostname'], 1);
     }
     if ($CIDRAM['BlockInfo']['Query'] || $CIDRAM['Config']['general']['empty_fields'] === 'include') {
-        $CIDRAM['AddField']($CIDRAM['L10N']->getString('field_query'), $CIDRAM['BlockInfo']['Query'] ?: '-');
+        $CIDRAM['AddField']($CIDRAM['L10N']->getString('field_query'), $CIDRAM['BlockInfo']['Query'] ?: '-', 1);
     }
     if ($CIDRAM['BlockInfo']['Referrer'] || $CIDRAM['Config']['general']['empty_fields'] === 'include') {
-        $CIDRAM['AddField']($CIDRAM['L10N']->getString('field_referrer'), $CIDRAM['BlockInfo']['Referrer'] ?: '-');
+        $CIDRAM['AddField']($CIDRAM['L10N']->getString('field_referrer'), $CIDRAM['BlockInfo']['Referrer'] ?: '-', 1);
     }
     $CIDRAM['AddField']($CIDRAM['L10N']->getString('field_sigcount'), $CIDRAM['BlockInfo']['SignatureCount']);
     $CIDRAM['AddField']($CIDRAM['L10N']->getString('field_sigref'), $CIDRAM['BlockInfo']['Signatures']);
     $CIDRAM['AddField']($CIDRAM['L10N']->getString('field_whyreason'), $CIDRAM['BlockInfo']['WhyReason'] . '!');
     if ($CIDRAM['BlockInfo']['UA'] || $CIDRAM['Config']['general']['empty_fields'] === 'include') {
-        $CIDRAM['AddField']($CIDRAM['L10N']->getString('field_ua'), $CIDRAM['BlockInfo']['UA'] ?: '-');
+        $CIDRAM['AddField']($CIDRAM['L10N']->getString('field_ua'), $CIDRAM['BlockInfo']['UA'] ?: '-', 1);
     }
-    $CIDRAM['AddField']($CIDRAM['L10N']->getString('field_rURI'), $CIDRAM['BlockInfo']['rURI']);
+    $CIDRAM['AddField']($CIDRAM['L10N']->getString('field_rURI'), $CIDRAM['BlockInfo']['rURI'], 1);
     if ($CIDRAM['Config']['recaptcha']['usemode'] || $CIDRAM['Config']['general']['empty_fields'] === 'include') {
         if (empty($CIDRAM['BlockInfo']['reCAPTCHA'])) {
             $CIDRAM['BlockInfo']['reCAPTCHA'] = $CIDRAM['L10N']->getString('recaptcha_disabled');
@@ -525,27 +525,6 @@ if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
 
     /** Finalise fields. */
     $CIDRAM['FieldTemplates']['Output'] = implode("\n                ", $CIDRAM['FieldTemplates']['Output']);
-
-    /**
-     * Some simple sanitisation for our block information (helps to prevent
-     * some obscure types of XSS attacks).
-     */
-    $CIDRAM['BlockInfo'] = str_replace(
-        ['<', '>', "\r", "\n", "\t"],
-        ['&lt;', '&gt;', '&#13;', '&#10;', '&#9;'],
-        $CIDRAM['BlockInfo']
-    );
-
-    /**
-     * Allows certain specific HTML tags to be included within certain specific
-     * elements of our block information (requested by some users; these
-     * would've previously been broken by the above anti-XSS sanitisation).
-     */
-    list($CIDRAM['BlockInfo']['ReasonMessage'], $CIDRAM['BlockInfo']['WhyReason']) = str_ireplace(
-        ['&lt;br /&gt;', '&lt;br&gt;'],
-        ['<br />', '<br />'],
-        [$CIDRAM['BlockInfo']['ReasonMessage'], $CIDRAM['BlockInfo']['WhyReason']]
-    );
 
     /** Determine which template file to use, if this hasn't already been determined. */
     if (!isset($CIDRAM['template_file'])) {

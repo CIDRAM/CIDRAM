@@ -988,10 +988,11 @@ $CIDRAM['Formatter'] = function (&$In, $BlockLink = '', $Current = '', $FieldSep
             if (count($Parts[2]) && $BlockSeparatorLen === 14) {
                 $Parts[2] = array_unique($Parts[2]);
                 foreach ($Parts[2] as $ThisPart) {
-                    $TestString = $Demojibakefier->guard($ThisPart);
+                    $ThisPartUnsafe = str_replace(['&gt;', '&lt;'], ['>', '<'], $ThisPart);
+                    $TestString = $Demojibakefier->guard($ThisPartUnsafe);
                     $Alternate = (
-                        $TestString !== $ThisPart && $Demojibakefier->Last
-                    ) ? '<code dir="ltr">🔁' . $Demojibakefier->Last . '➡️UTF-8' . $FieldSeparator . '</code>' . $TestString . "<br />\n" : '';
+                        $TestString !== $ThisPartUnsafe && $Demojibakefier->Last
+                    ) ? '<code dir="ltr">🔁' . $Demojibakefier->Last . '➡️UTF-8' . $FieldSeparator . '</code>' . str_replace(['<', '>'], ['&lt;', '&gt;'], $TestString) . "<br />\n" : '';
                     if (!$ThisPart || $ThisPart === $Current) {
                         $Section = str_replace(
                             $FieldSeparator . $ThisPart . "<br />\n",
@@ -1474,8 +1475,9 @@ $CIDRAM['Traverse'] = function ($Path) {
 
 /** Sort function used by the front-end updates page. */
 $CIDRAM['UpdatesSortFunc'] = function ($A, $B) {
-    $CheckA = preg_match('/^(?:CIDRAM$|IPv[46]|l10n)/i', $A);
-    $CheckB = preg_match('/^(?:CIDRAM$|IPv[46]|l10n)/i', $B);
+    static $Priority = '~^(?:CIDRAM|Common Classes Package|IPv[46]|l10n/)~i';
+    $CheckA = preg_match($Priority, $A);
+    $CheckB = preg_match($Priority, $B);
     if ($CheckA && !$CheckB) {
         return -1;
     }
@@ -1846,11 +1848,8 @@ $CIDRAM['UpdatesHandler-Uninstall'] = function ($ID) use (&$CIDRAM) {
     if (
         empty($InUse) &&
         !empty($CIDRAM['Components']['Meta'][$ID]['Files']['To']) &&
-        ($ID !== 'l10n/' . $CIDRAM['Config']['general']['lang']) &&
-        ($ID !== 'theme/' . $CIDRAM['Config']['template_data']['theme']) &&
-        ($ID !== 'CIDRAM') &&
         !empty($CIDRAM['Components']['Meta'][$ID]['Reannotate']) &&
-        !empty($CIDRAM['Components']['Meta'][$ID]['Uninstallable']) &&
+        (!empty($CIDRAM['Components']['Meta'][$ID]['Uninstallable']) || !empty($CIDRAM['RestrictUninstallBypass'])) &&
         ($CIDRAM['Components']['OldMeta'] = $CIDRAM['ReadFile'](
             $CIDRAM['Vault'] . $CIDRAM['Components']['Meta'][$ID]['Reannotate']
         )) &&

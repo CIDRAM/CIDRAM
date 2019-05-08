@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Indonesian language data for the front-end (last modified: 2019.04.17).
+# This file: Indonesian language data for the front-end (last modified: 2019.05.05).
 ##/
 
 Extended Description Bypasses: "File untuk bypass tanda tangan standar yang biasanya disertakan dengan paket utama."
@@ -84,6 +84,7 @@ config_general_lang: "Tentukan bahasa default untuk CIDRAM."
 config_general_log_banned_ips: "Termasuk permintaan diblokir dari IP dilarang dalam file log? True = Ya [Default]; False = Tidak."
 config_general_log_rotation_action: "Rotasi log membatasi jumlah file log yang seharusnya ada pada satu waktu. Ketika file log baru dibuat, jika jumlah total file log melebihi batas yang ditentukan, tindakan yang ditentukan akan dilakukan. Anda dapat menentukan tindakan yang diinginkan disini. Delete = Hapus file log tertua, hingga batasnya tidak lagi terlampaui. Archive = Pertama arsipkan, lalu hapus file log tertua, hingga batasnya tidak lagi terlampaui."
 config_general_log_rotation_limit: "Rotasi log membatasi jumlah file log yang seharusnya ada pada satu waktu. Ketika file log baru dibuat, jika jumlah total file log melebihi batas yang ditentukan, tindakan yang ditentukan akan dilakukan. Anda dapat menentukan batas yang diinginkan disini. Nilai 0 akan menonaktifkan rotasi log."
+config_general_log_sanitisation: "Saat menggunakan halaman log untuk melihat data log, CIDRAM mensanitasikan data log sebelum menampilkannya, untuk melindungi pengguna dari serangan XSS dan potensi ancaman lain yang bisa terkandung dalam data. Namun, secara default, data tidak disanitasi selama pencatatan. Ini untuk memastikan bahwa data log dicatatan secara akurat, untuk membantu analisis heuristik atau forensik yang mungkin diperlukan di masa depan. Namun, jika pengguna mencoba membaca data log menggunakan alat eksternal, dan jika alat eksternal itu tidak melakukan proses sanitasi sendiri, pengguna bisa terkena serangan XSS. Jika perlu, Anda dapat mengubah perilaku default menggunakan direktif konfigurasi ini. True = Mensanitasikan data saat mencatatnya (data disimpan kurang akurat, tetapi risiko XSS lebih rendah). False = Jangan mensanitasikan data saat mencatatnya (data disimpan lebih akurat, tetapi risiko XSS lebih tinggi) [Default]."
 config_general_logfile: "File yang dapat dibaca oleh manusia untuk mencatat semua upaya akses diblokir. Spesifikasikan nama file, atau biarkan kosong untuk menonaktifkan."
 config_general_logfileApache: "File yang dalam gaya Apache untuk mencatat semua upaya akses diblokir. Spesifikasikan nama file, atau biarkan kosong untuk menonaktifkan."
 config_general_logfileSerialized: "File serial untuk mencatat semua upaya akses diblokir. Spesifikasikan nama file, atau biarkan kosong untuk menonaktifkan."
@@ -130,7 +131,7 @@ config_signatures_infraction_limit: "Jumlah maksimum pelanggaran IP diperbolehka
 config_signatures_ipv4: "Daftar file tanda tangan IPv4 yang CIDRAM harus berusaha untuk menggunakan, dipisahkan dengan koma."
 config_signatures_ipv6: "Daftar file tanda tangan IPv6 yang CIDRAM harus berusaha untuk menggunakan, dipisahkan dengan koma."
 config_signatures_modules: "Daftar file modul untuk memuat setelah memeriksa tanda tangan IPv4/IPv6, dipisahkan dengan koma."
-config_signatures_track_mode: "Kapan sebaiknya pelanggaran dihitung? False = Ketika IP adalah diblokir oleh modul. True = Ketika IP adalah diblokir untuk alasan apapun."
+config_signatures_track_mode: "Kapan sebaiknya pelanggaran dihitung? False = Ketika IP adalah diblokir oleh modul. True = Ketika IP adalah diblokir untuk alasan apapun. Default = False."
 config_supplementary_cache_options_enable_apcu: "Menentukan apakah akan mencoba menggunakan APCu untuk cache. Default = False."
 config_supplementary_cache_options_enable_memcached: "Menentukan apakah akan mencoba menggunakan Memcached untuk cache. Default = False."
 config_supplementary_cache_options_enable_pdo: "Menentukan apakah akan mencoba menggunakan PDO untuk cache. Default = False."
@@ -428,7 +429,7 @@ tip_logs: "Salam, {username}.<br />Pilih log dari daftar dibawah untuk melihat i
 tip_pie_html: "Klik nama komponen untuk detail lebih lanjut."
 tip_range: "Salam, {username}.<br />Halaman ini menunjukkan beberapa informasi statistik dasar tentang rentang IP yang dicakup oleh file tanda tangan yang saat ini aktif."
 tip_sections_list: "Salam, {username}.<br />Halaman ini mencantumkan bagian yang ada di file tanda tangan yang aktif saat ini."
-tip_see_the_documentation: "Lihat <a href="https://github.com/CIDRAM/CIDRAM/blob/master/_docs/readme.id.md\#SECTION6">dokumentasi</a> untuk informasi tentang berbagai direktif konfigurasi dan tujuan mereka."
+tip_see_the_documentation: "Lihat <a href="https://github.com/CIDRAM/Docs/blob/master/readme.id.md\#SECTION6">dokumentasi</a> untuk informasi tentang berbagai direktif konfigurasi dan tujuan mereka."
 tip_statistics: "Salam, {username}.<br />Halaman ini menunjukkan beberapa statistik penggunaan dasar mengenai instalasi CIDRAM Anda."
 tip_statistics_disabled: "Catat: Pelacakan statistik saat ini dinonaktifkan, namun dapat diaktifkan melalui halaman konfigurasi."
 tip_updates: "Salam, {username}.<br />Halaman pembaruan memungkinkan Anda untuk menginstal, menguninstal, dan memperbarui berbagai komponen CIDRAM (paket inti, tanda tangan, file L10N, dll)."

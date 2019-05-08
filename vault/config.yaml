@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Configuration defaults file (last modified: 2019.04.07).
+# This file: Configuration defaults file (last modified: 2019.05.06).
 ##/
 
 Config Defaults:
@@ -268,6 +268,9 @@ Config Defaults:
    choices:
     omit: {field_omit}
     include: {field_include}
+  log_sanitisation:
+   type: bool
+   default: false
  signatures:
   ipv4:
    type: string

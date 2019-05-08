@@ -1,7 +1,7 @@
 ---
 CIDRAM:
  Name: CIDRAM
- Version: 1.12.0
+ Version: 1.12.1-DEV+19126754
  Minimum Required: 1.0.0
  Minimum Required PHP: 5.4.0
  Changelog: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/Changelog.txt
@@ -14,6 +14,7 @@ CIDRAM:
   - In "cidramblocklists.dat" Replace "~^ Remote\: https\://macmathan\.info/(?:zbblock-range-blocks|blocklists)/cidramblocklists\.dat\.gz$~m" With " Remote: https://bitbucket.org/macmathan/blocklists/raw/master/cidramblocklists.dat"
   - In "cidramblocklists.dat" Replace "~^ Remote\: https\://raw\.githubusercontent\.com/macmathan/Blocklists/master/cidramblocklists\.dat$~m" With " Remote: https://bitbucket.org/macmathan/blocklists/raw/master/cidramblocklists.dat"
   - In "cidramblocklists.dat" Replace "~\.gz$~im" With ""
+  - In "components.dat" Replace "raw\.githubusercontent\.com/CIDRAM/CIDRAM/master" With "raw.githubusercontent.com/CIDRAM/CIDRAM/v1"
  Files:
   From:
    - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/.htaccess
@@ -144,7 +145,7 @@ CIDRAM:
    - ad4c03dbb689ec66bfb20e3dd06711486abd129ed03a58a2fd0c5ec76bb3001c:10397
    - 3c58992e3a8ab08ac403e7cd383a3737:25077
    - 06d6877cc60eacca69ff0de69e5078572af65bf33122ef8b56a83458782f4913:7408
-   - e5ce0c52e9d98eefbfc13df76c107617b7998e98c127ec6ba065da3e355cb542:12854
+   - 7fe8081e16c8e987544a33b9ef57cf4946c04d8a7e8478e6697de86649b7969c:12906
    - 8e03209e7fc6641b45094e584340feff:83
    - 9b49a0b8fc01dee30b15eb380d130f84:480
    - 77359f4b059d4f6f3e307a90f473633f:1957
@@ -181,12 +182,12 @@ CIDRAM:
    - f82b848ae0f532ee63cff24c69bdf07b:17536
    - 095216bc177b88dc81c15c4d4e42bd49:877
    - 6333e24956c882f92e41b3c06b4088a6:996
-   - 75aefcc41b6fca464e3aa5d4d583b0448ae83c33a05805a3d839f5b9f32b9128:189547
-   - 763f8800e4e4a94a2a335d4771dbafe5dd91cee7015fcaa44769c01de1042934:138706
-   - 351a4f07466c86cd97d04d3f783bee1673d182a545f6148a3e24d721899085cd:74970
+   - 6fe0f6cc4d53670a6efb925bd76b04ff6a07307107f8f8f7f2af4dff6d8fbafe:189558
+   - cea5e2c3a0675674c5e2bc525b13b0f3a588d899c1c2c2e94421f2ec937fc37c:138763
+   - dc2624f49aef2ac40504a1d9612db02d6dc31ad2237eda933473ba3f1c291c4a:75304
    - 9fd5988c25f0dd14e9c3352b6c24f89d21bb0db7808169ea580f398c5f9acc01:5590
    - 8e03209e7fc6641b45094e584340feff:83
-   - c82f36249dbf9c1a03d7dc448653766989429008123f7bf9189595056cb17418:37866
+   - 39399f08e6f147c517a91134b8fabf8d9ed8285c9e3b10135495d11cce9aec27:37074
    - 74a6105c3d2ed17f228513dce4b78153:1672
    - 99149fda6dddde2c3b20fb2f723f15e60269a1f94337d452fb8a412cd00fda1d:14409
    - 522120f06a7597fff2d1388a7d77b18f:1120
@@ -196,7 +197,7 @@ CIDRAM:
 IPv4:
  Extended Description: Default IPv4 signatures normally included with the main package. Blocks unwanted cloud services and non-human endpoints.
  False Positive Risk: Low
- Version: 2019.123.481
+ Version: 2019.126.754
  Minimum Required: 1.0.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
  Uninstallable: true
@@ -206,13 +207,13 @@ IPv4:
   To:
    - ipv4.dat
   Checksum:
-   - f4654e10712ec028c2341097f2f7dbf0a2b9f9daddb3260adf9a728c09603564:693793
+   - 936d82fed8b7169978be4f0c47f4e0ee71fab0f59b97fef78dd68ff619dd1b4e:694843
  Used with: ipv4
  Reannotate: components.dat
 IPv4-Bogons:
  Extended Description: Default IPv4 signatures normally included with the main package. Blocks bogon/martian CIDRs.
  False Positive Risk: Low
- Version: 2019.57.386
+ Version: 2019.126.754
  Minimum Required: 1.0.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
  Uninstallable: true
@@ -228,7 +229,7 @@ IPv4-Bogons:
 IPv4-ISPs:
  Extended Description: Default IPv4 signatures normally included with the main package. Blocks dangerous and spammy ISPs.
  False Positive Risk: Medium
- Version: 2019.121.483
+ Version: 2019.126.754
  Minimum Required: 1.0.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
  Uninstallable: true
@@ -238,13 +239,13 @@ IPv4-ISPs:
   To:
    - ipv4_isps.dat
   Checksum:
-   - 346e96fa8cb5b0c69116251c226374864f4444137bc6242e700df7771175407c:268525
+   - 843b4caaf60b08e8c07e3dfc9e300b1f8195d8c5f3137a93962f84beb2925c0e:269410
  Used with: ipv4
  Reannotate: components.dat
 IPv4-Other:
  Extended Description: Default IPv4 signatures normally included with the main package. Blocks CIDRs for proxies, VPNs, and other miscellaneous unwanted services.
  False Positive Risk: Medium
- Version: 2019.123.481
+ Version: 2019.126.754
  Minimum Required: 1.0.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
  Uninstallable: true
@@ -260,7 +261,7 @@ IPv4-Other:
 IPv6:
  Extended Description: Default IPv6 signatures normally included with the main package. Blocks unwanted cloud services and non-human endpoints.
  False Positive Risk: Low
- Version: 2019.123.481
+ Version: 2019.126.754
  Minimum Required: 1.0.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
  Uninstallable: true
@@ -270,13 +271,13 @@ IPv6:
   To:
    - ipv6.dat
   Checksum:
-   - ab46606edfa20b84e9f82c16f7337c193afbdaa4877497fd8260c59118a7f147:166401
+   - be8ac19875458b07e9db312d52cc9f08ceb9457776c66c90feeb1f43066a6295:166686
  Used with: ipv6
  Reannotate: components.dat
 IPv6-Bogons:
  Extended Description: Default IPv6 signatures normally included with the main package. Blocks bogon/martian CIDRs.
  False Positive Risk: Low
- Version: 2019.57.386
+ Version: 2019.126.754
  Minimum Required: 1.0.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
  Uninstallable: true
@@ -292,7 +293,7 @@ IPv6-Bogons:
 IPv6-ISPs:
  Extended Description: Default IPv6 signatures normally included with the main package. Blocks dangerous and spammy ISPs.
  False Positive Risk: Medium
- Version: 2019.121.483
+ Version: 2019.126.754
  Minimum Required: 1.0.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
  Uninstallable: true
@@ -302,13 +303,13 @@ IPv6-ISPs:
   To:
    - ipv6_isps.dat
   Checksum:
-   - ad38a3d337b71e3054ea36428ddcaa57c1a38a14c7d35c2b260b4bff6d19734f:56010
+   - 1b9873c711fd170896eb968716707b102b607388154b4ad61a1f22069f20319c:56007
  Used with: ipv6
  Reannotate: components.dat
 IPv6-Other:
  Extended Description: Default IPv6 signatures normally included with the main package. Blocks CIDRs for proxies, VPNs, and other miscellaneous unwanted services.
  False Positive Risk: Low
- Version: 2019.123.481
+ Version: 2019.126.754
  Minimum Required: 1.0.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
  Uninstallable: true
@@ -346,7 +347,7 @@ Bypasses:
 l10n/en:
  Name: L10N: English
  Extended Description: English language data
- Version: 2019.106.394
+ Version: 2019.126.754
  Minimum Required: 1.10.0
  Minimum Required PHP: 5.4.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
@@ -362,13 +363,13 @@ l10n/en:
    - lang/lang.en.yaml
   Checksum:
    - b99e12d3b56893d61968ae0b83e58ea87ce97b0f4de799d25597fabfc4c30d5b:3490
-   - 96901658df68466f01f1133e756d4a0aaa53fe4d8d3cd5c69ea1b95ced6585bb:39112
+   - 9703b9c246b2763dc086081affae9d2b438ca5a8e44aa53ec20294c489ddc6ab:40045
    - 8867ca1171632657326b8d3c12c23262a6c4fcc13b10ddee0d2a0d54764c7e61:3836
  Reannotate: components.dat
 l10n/ar:
  Name: L10N: العربية
  Extended Description: ملفات اللغة العربية
- Version: 2019.106.394
+ Version: 2019.126.754
  Minimum Required: 1.10.0
  Minimum Required PHP: 5.4.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
@@ -384,13 +385,13 @@ l10n/ar:
    - lang/lang.ar.yaml
   Checksum:
    - f862c0ba33a71c49e68e97000f05691683c8f73938f72f199b01a5313885366e:4224
-   - f2b8846435c1afc7f94d1e49a1b1477a1024479c639a8cee723e5f03d65cf7db:53040
+   - 0ca2a18f8c6e5c82c62230b4d025af8f692bfb0084bd9ddab71124355a59ab32:54513
    - ebe9c3dcae37887b16fd91d296699bbeaca345512cccd06c59b300ac677e1af2:3978
  Reannotate: components.dat
 l10n/bn:
  Name: L10N: বাংলা
  Extended Description: বাংলা ভাষার তথ্য
- Version: 2019.106.394
+ Version: 2019.126.754
  Minimum Required: 1.10.0
  Minimum Required PHP: 5.4.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
@@ -406,13 +407,13 @@ l10n/bn:
    - lang/lang.bn.yaml
   Checksum:
    - 2f8140d486913ff9bfb468b669f8d511c76dfdc8426a9fc874174a619b08275f:6377
-   - 0ecd40e21094b8558ac5b564d6edad1ce652b18982e5d238d223d277ea325db1:77483
+   - 5742fb78915ed697c797e89f4e63b2b7dad303e18dabf8ede5d54efe67e6bf8a:79773
    - 3123dfffb096cfc16f2e4c5c71548d4b78d20cc743652658021207e58a53b741:8029
  Reannotate: components.dat
 l10n/de:
  Name: L10N: Deutsche
  Extended Description: Deutsche Sprachdateien
- Version: 2019.106.394
+ Version: 2019.126.754
  Minimum Required: 1.10.0
  Minimum Required PHP: 5.4.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
@@ -428,13 +429,13 @@ l10n/de:
    - lang/lang.de.yaml
   Checksum:
    - 56f1b54ba49adfc26d788c3f5e95d0aefb62e2c583c8f81bc258754f478be5da:3813
-   - c76e8bdfc530ab34d0e299d6fb8634a49fd49e09b42d9953af1dc30820607edf:44362
+   - fdbda7aa94655144f50bfc2748cc7a60a2c33e8d10ff15fc0a5f8129b09c16e3:45527
    - 1d5ce1e9ee5f115a72c5fd7619c90b7b53a31e357acbd5dde7690f04ab236dcb:4292
  Reannotate: components.dat
 l10n/es:
  Name: L10N: Español
  Extended Description: Lingüísticos datos Español
- Version: 2019.106.394
+ Version: 2019.126.754
  Minimum Required: 1.10.0
  Minimum Required PHP: 5.4.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
@@ -450,13 +451,13 @@ l10n/es:
    - lang/lang.es.yaml
   Checksum:
    - abb4bd3d9bfe47ff7e2feeb7ccb0af5b524c259c5cbbbb942e6e7652d1d3a319:3756
-   - 03d5bbb6dc811d4333d2f2318509fd2c9ffa00840f0742fba1550215419272bb:44797
+   - d554a0a95beacc939f564a4fdb523ab0b92d13bdaa0fddc7f35f9c6b5b4550a5:45965
    - 6e97e76e5f56d619d42aacdb2ecf449b1bf2b4c22f415dd6fc6995c9360fde36:4164
  Reannotate: components.dat
 l10n/fr:
  Name: L10N: Français
  Extended Description: Linguistiques données en Français
- Version: 2019.106.394
+ Version: 2019.126.754
  Minimum Required: 1.10.0
  Minimum Required PHP: 5.4.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
@@ -472,13 +473,13 @@ l10n/fr:
    - lang/lang.fr.yaml
   Checksum:
    - 6bbf33d23b764ccf1bceacacf3418782ee49bb70cf6b810a1e18751b62c54c56:3954
-   - 411b630fa4985d40171c992645f94cc6bd2ef5914e2a21e5e5f6aa2b7bc8dd2e:45729
+   - effcfcb9237b8abe644ed4d33289a06cbc98a09ff9a7bd0b3a62ba21bd5cd3c2:46982
    - c9679ebfed4b7168c0f8e18000c236ebe6b3aeccb04810d82ec2c48ea6c0f1ef:4429
  Reannotate: components.dat
 l10n/hi:
  Name: L10N: हिंदी
  Extended Description: हिंदी भाषा डाटा
- Version: 2019.106.394
+ Version: 2019.126.754
  Minimum Required: 1.10.0
  Minimum Required PHP: 5.4.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
@@ -494,13 +495,13 @@ l10n/hi:
    - lang/lang.hi.yaml
   Checksum:
    - 4c2e6854b94b898a44d6651f53d7d113c7249af5550f2bda4189e493f605a200:6883
-   - 843de7fe1fec31c4b37afcb4117bf713303f228af97791c37ee1d0340d9eaeb3:77148
+   - c11b942d081f4907e3ec86536b7e20b764d9445df15395c4057279ad47b743d3:79573
    - 235c59e5f33f0ae0e75e85988b03a5b096f899ba199a4ddb80842ccaee1bc1a9:7312
  Reannotate: components.dat
 l10n/id:
  Name: L10N: Bahasa Indonesia
  Extended Description: File Bahasa Indonesia
- Version: 2019.106.394
+ Version: 2019.126.754
  Minimum Required: 1.10.0
  Minimum Required PHP: 5.4.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
@@ -516,13 +517,13 @@ l10n/id:
    - lang/lang.id.yaml
   Checksum:
    - 8a5d2a01ae56afa4d6ac12030e684478333d42e79efdb3769fb8000b69e07480:3620
-   - 77b7ed98393d586436dcd1cb2a29c81019cb6bb36a454349acf3ff304e7d6483:41300
+   - f17d73971c3d367139df80454d0e87a8d3b18d1039d0e235d8bb3a30b84d5a8e:42263
    - e6406dca6782f367aa2258e1dcc85db8607dc87bfe2eab6ae97ed8979f0af719:4041
  Reannotate: components.dat
 l10n/it:
  Name: L10N: Italiana
  Extended Description: Linguistici dati Italiana
- Version: 2019.106.394
+ Version: 2019.126.754
  Minimum Required: 1.10.0
  Minimum Required PHP: 5.4.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
@@ -538,13 +539,13 @@ l10n/it:
    - lang/lang.it.yaml
   Checksum:
    - 194fb2c526f08a93fe1214ab1ab48a50a81490088c602daece8fd870db9456ab:3666
-   - 2d4229b4bc375f9ba7992d3bc2e8b91e2da81a858da23bba5e0c095a8c2d8a9f:43546
+   - dd3c65c055e13e40f634b197274e64e9b94325bb197d76ab17b82d6032081f3c:44729
    - b52a4c97711db62419fe0eaeaa87168ff86763dc7eba9a8921675d6dcca6830d:4269
  Reannotate: components.dat
 l10n/ja:
  Name: L10N: 日本語
  Extended Description: 日本語言語データ
- Version: 2019.106.394
+ Version: 2019.126.754
  Minimum Required: 1.10.0
  Minimum Required PHP: 5.4.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
@@ -560,13 +561,13 @@ l10n/ja:
    - lang/lang.ja.yaml
   Checksum:
    - 000d9859ca17c0daa637cdaff12090a8b3bb638289b5d1fd035e43c6369f362b:4760
-   - 918b09048cf5f921040604ba9b885f3946ee532e4e9068fa8cf7b6d5d3f6568b:54612
+   - 127c0146d49112c017156ec225832af0980923cb30851b2ee4fb3e9ed54c2265:56128
    - a32bc62f971b4ffc076643f9ecee2b0b41b3b4c795879dcf45d0bf20defa237e:4709
  Reannotate: components.dat
 l10n/ko:
  Name: L10N: 한국어
  Extended Description: 한국어 언어 데이터
- Version: 2019.106.394
+ Version: 2019.126.754
  Minimum Required: 1.10.0
  Minimum Required PHP: 5.4.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
@@ -582,13 +583,13 @@ l10n/ko:
    - lang/lang.ko.yaml
   Checksum:
    - 0f77e554013e62c1275707210e5912a5073581005966d1a67bd043701265c214:3972
-   - 51e41769fef9b395a42523e0992d78fdbac8454db9b83a3dce46a86470422731:45126
+   - b5042fc4faa257aead728264a7900a82c77148a76345e22788f5d0daa23c1368:46335
    - 20082a7f1058730deca6d107c482d9859eb96edcced3caed0b2d200ad12c73a7:3969
  Reannotate: components.dat
 l10n/nl:
  Name: L10N: Nederlandse
  Extended Description: Nederlandse lokalisatie
- Version: 2019.106.394
+ Version: 2019.126.754
  Minimum Required: 1.10.0
  Minimum Required PHP: 5.4.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
@@ -604,13 +605,13 @@ l10n/nl:
    - lang/lang.nl.yaml
   Checksum:
    - 51c291c8f50b3765a9764383a41c3a547e6a36bdb30a1e26c6b6d91a985aeec2:3663
-   - 52d2d3336a461e8429b645855fbaa13ec8cfa4af092178da8232138252ad52a3:42396
+   - d6bba43b5042f3e488994ed76450c31dcbdb1ab1466716394cd607a54e69e0a9:43543
    - 012e3686be359f6687fc012a2d3d4d5ac581e4a391ffa1bae13d85f11915823d:4068
  Reannotate: components.dat
 l10n/no:
  Name: L10N: Norsk
  Extended Description: Norsk språkdata
- Version: 2019.106.394
+ Version: 2019.126.754
  Minimum Required: 1.10.0
  Minimum Required PHP: 5.4.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
@@ -626,13 +627,13 @@ l10n/no:
    - lang/lang.no.yaml
   Checksum:
    - 8b2917bac741e15f80309948499543166f951f32c3f0b3d7c3cb6cc97ecc74f1:3573
-   - e71bc461dc0199ade7e210eed5bd98b8792ddb28d627c5cff91f80b3e6c89df6:40284
+   - 9a1f6fc40aaf95602c61645fa7161d377e35a3615fa87e75da1f1e46b50d0ec3:41257
    - c46e1c316333bf0ef5ecf207034b72c88e25fd04c57e060277f8b9ec5723fc47:4036
  Reannotate: components.dat
 l10n/pt:
  Name: L10N: Português
  Extended Description: Linguagem dados Português
- Version: 2019.106.394
+ Version: 2019.126.754
  Minimum Required: 1.10.0
  Minimum Required PHP: 5.4.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
@@ -648,13 +649,13 @@ l10n/pt:
    - lang/lang.pt.yaml
   Checksum:
    - 133660fca72843da86cd90b5f4d88dddd56a188247f1bea5beacc275438ccda2:3730
-   - 5cb7cabcb1b2eddc3708a13130d08514f43502867e0555ebbf7036b038278eda:43069
+   - 9105cb5db385e5b787f48d8611533e5255acdc044d596d86c93c672813504442:44170
    - 48bd4db7de6dfc60697056388bdfa6ce4eff3c88ab9f1e99e64eb852d9e54202:4115
  Reannotate: components.dat
 l10n/ru:
  Name: L10N: Русский
  Extended Description: Русском языковые файлы
- Version: 2019.106.394
+ Version: 2019.126.754
  Minimum Required: 1.10.0
  Minimum Required PHP: 5.4.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
@@ -670,13 +671,13 @@ l10n/ru:
    - lang/lang.ru.yaml
   Checksum:
    - df46a464f50f749adb42072c6af955ba6f8fcc63e6b0e6082b1501f1368700f9:5273
-   - 21f136f8c8e776d006872d983246263999e4973495aa798bc20501174dc85309:63641
+   - 765d15584ae743e218fd90594d663fde4da58ae4062b332932a3def943a87528:65459
    - 6f477f9f401a90604d4ec18806e7457b472e834c38f5ccaee95713fada92008d:6252
  Reannotate: components.dat
 l10n/sv:
  Name: L10N: Svenska
  Extended Description: Svenska språkdata
- Version: 2019.106.394
+ Version: 2019.126.754
  Minimum Required: 1.10.0
  Minimum Required PHP: 5.4.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
@@ -692,13 +693,13 @@ l10n/sv:
    - lang/lang.sv.yaml
   Checksum:
    - a41a1cb77831120d969d084d927ffe748665083b44bb42f0917b66ddc5ff70f7:3595
-   - d4401b7a93e0b0a49976d85907419dbf5278706a64fc3564ad817ece46e05dd0:41310
+   - 553cf2b41eaacda2b7b820ebaeacd68c2b03fa0948290430bb58630ae13f9fce:42237
    - c159be73f332ccd2967a1794443ba882f68e113aa8a1630eb1dbb2d880fbcf95:4095
  Reannotate: components.dat
 l10n/th:
  Name: L10N: ภาษาไทย
  Extended Description: ข้อมูลภาษาไทย
- Version: 2019.106.394
+ Version: 2019.126.754
  Minimum Required: 1.10.0
  Minimum Required PHP: 5.4.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
@@ -714,13 +715,13 @@ l10n/th:
    - lang/lang.th.yaml
   Checksum:
    - e37521deed8771610e827f9aa7af27867d396fa2d06955cb083c47adf486dafb:6330
-   - ff769488b2420650467e4bbf7d1f62581ed03a35c6895b6201ff8adf4bb293e0:72729
+   - b813538421b1d177e656cac5fef2a56a6517d9550c8c0c3148d591252dc40e41:74653
    - fc4ef009df755b0d1d6e71fb0e3a740a8fee92abfef5abc77ac05abeff7c1a2e:7214
  Reannotate: components.dat
 l10n/tr:
  Name: L10N: Türkçe
  Extended Description: Türkçe dili verileri
- Version: 2019.106.394
+ Version: 2019.126.754
  Minimum Required: 1.10.0
  Minimum Required PHP: 5.4.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
@@ -736,13 +737,13 @@ l10n/tr:
    - lang/lang.tr.yaml
   Checksum:
    - 8cf05cb033077d1dbbc1f57c2981acc0c3b398435d0c447ecb04168669c904e0:3615
-   - acf91169f3f6ed7fc3964c6d98c0d46309458802800c193b73033fb87801f996:43475
+   - aba2e2ce8286e53bae52e6d34ea87b20803b5b1279e1c0162b34836f937236b5:44413
    - cc8ec40c40b561e10624c61eace33645eb410550a149d41fba320f36dd99b0e3:4219
  Reannotate: components.dat
 l10n/ur:
  Name: L10N: ‏اردو‏
  Extended Description: ‏اردو‏ زبان فائلوں
- Version: 2019.106.394
+ Version: 2019.126.754
  Minimum Required: 1.10.0
  Minimum Required PHP: 5.4.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
@@ -758,13 +759,13 @@ l10n/ur:
    - lang/lang.ur.yaml
   Checksum:
    - cc29e6aeacde8f471364bffbbc7e7bb2593d5562b8b472b831b7e371eb73072f:4935
-   - e168754763e41fd677fe5292fed460b487394f6d417a0ec71d844fc0282d56e6:57949
+   - 4b85b33bc8fcd482de5b2f39e1369cda4738f0500999a29e66ae853a22eebf61:58879
    - f9a31d82cc1a09ac224cc163a1544378797b4761b8a62985650d3d0fca5bd16f:5855
  Reannotate: components.dat
 l10n/vi:
  Name: L10N: Tiếng Việt
  Extended Description: Dữ liệu tiếng Việt
- Version: 2019.106.394
+ Version: 2019.126.754
  Minimum Required: 1.10.0
  Minimum Required PHP: 5.4.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
@@ -780,13 +781,13 @@ l10n/vi:
    - lang/lang.vi.yaml
   Checksum:
    - ecbf8d25e4a24df30ffabefaa6af4a4a95216c261b1ee1875d7be32622760ef2:4358
-   - bf09bef7d50086dcfcd7130da1dfe5b875d5004b67cc7dec5385ece4e7afa7a3:48890
+   - dc25cc10d5f570191b1886d7cca961580a21bdaa02dc15b948318e4a8dd0546c:50173
    - bd4abf772167f7e38483b806c1c54d6179f3fc9ba927a4f23a62791f59d47423:5083
  Reannotate: components.dat
 l10n/zh-TW:
  Name: L10N: 中文（傳統）
  Extended Description: 中文（傳統）語言數據
- Version: 2019.106.394
+ Version: 2019.126.754
  Minimum Required: 1.10.0
  Minimum Required PHP: 5.4.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
@@ -802,13 +803,13 @@ l10n/zh-TW:
    - lang/lang.zh-tw.yaml
   Checksum:
    - c360c6e58653d4dba998874e960dae8eeb2963f4084f2623f0674f40e4425dfe:3367
-   - 742f5e4eed3a8af30c6c3c704af121ec4dbdc560b6854296a6f1e857c78d3a44:37808
+   - 18312f872e63cf377917f104d8f032dd08cd1066de5b724471996c56702f3165:38608
    - 9d63e5f784a36962aaad8bea94a239311791f3ccb15d4094be27d88be9e0d448:3606
  Reannotate: components.dat
 l10n/zh:
  Name: L10N: 中文（简体）
  Extended Description: 中文（简体）语言数据
- Version: 2019.106.394
+ Version: 2019.126.754
  Minimum Required: 1.10.0
  Minimum Required PHP: 5.4.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
@@ -824,7 +825,7 @@ l10n/zh:
    - lang/lang.zh.yaml
   Checksum:
    - 85a885aa2d87579fe0a657d1b2569ac6575d5dcca947aae8895a9f7033275b2e:3366
-   - beafcb2fb486d1856c1266f678a9948384a0268925dbb97f39e36471837f56c3:37792
+   - 103dc9114b474c63789d61d3cf15def481c0d3b8c36a0055b188abf2e9bb786f:38592
    - 7b3f5535bf36230b9f633dd79eded8f1db9b3fb371e9f8fef690750540dcb843:3602
  Reannotate: components.dat
 

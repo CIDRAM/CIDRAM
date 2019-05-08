@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Turkish language data for the front-end (last modified: 2019.04.17).
+# This file: Turkish language data for the front-end (last modified: 2019.05.05).
 ##/
 
 Extended Description Bypasses: "Varsayılan imza bypass'lar, normalde ana paketle birlikte verilir."
@@ -84,6 +84,7 @@ config_general_lang: "CIDRAM için varsayılan dili belirleyin."
 config_general_log_banned_ips: "Yasaklanmış IP'lerden engellenen istekleri günlük dosyalarına dahil et? Doğru/True = Evet [Varsayılan]; Yanlış/False = Hayır."
 config_general_log_rotation_action: "Log rotasyonu, herhangi bir zamanda bulunması gereken günlük dosyalarının sayısını sınırlar. Yeni log dosyaları oluşturulduğunda, toplam log dosya sayısı belirtilen sınırı aşarsa, belirtilen eylem gerçekleştirilecektir. İstenen işlemi burada belirtebilirsiniz. Delete = En eski log dosyalarını sil, sınır artık aşılmamış kadar. Archive = Öncelikle dosyayı arşivleyin, ve sonra en eski log dosyalarını sil, sınır artık aşılmamış kadar."
 config_general_log_rotation_limit: "Log rotasyonu, herhangi bir zamanda bulunması gereken günlük dosyalarının sayısını sınırlar. Yeni log dosyaları oluşturulduğunda, toplam log dosya sayısı belirtilen sınırı aşarsa, belirtilen eylem gerçekleştirilecektir. İstenen sınırı burada belirtebilirsiniz. 0 değeri, log rotasyonunu devre dışı bırakır."
+config_general_log_sanitisation: "Günlük verilerini görüntülemek için ön uç günlükler sayfasını kullanırken, CIDRAM, kullanıcıları XSS ​​saldırılarından korumak için, günlük verilerini görüntülemeden önce hazırlar. Ancak bu normalde veriler ilk kaydedildiğinde gerçekleşmez. Bu, gerekli olabilecek gelecekteki analizlere yardımcı olmak için günlük verilerinin doğru bir şekilde korunmasını sağlamaktır. Bununla birlikte, kullanıcı verileri benzer şekilde işlemeyen harici araçları kullanarak günlük verilerini okumaya çalışırsa, kullanıcı XSS ​​saldırılarına maruz kalabilir. Gerekirse, bu yapılandırma direktifini kullanarak varsayılan davranışı değiştirebilirsiniz. True = Veriyi ilk kaydederken hazırlayın (daha az doğru, ancak daha az risk). False = Veriyi ilk kaydederken hazırlamayın (daha doğru, ancak daha risk) [Varsayılan]."
 config_general_logfile: "Engellenen tüm erişim girişimlerini kaydetmek için insanlar tarafından okunabilir dosya. Dosya adı belirtin veya devre dışı bırakmak için boş bırakın."
 config_general_logfileApache: "Engellenen tüm erişim girişimlerini kaydetmek için Apache tarzı dosya. Dosya adı belirtin veya devre dışı bırakmak için boş bırakın."
 config_general_logfileSerialized: "Engellenen tüm erişim girişimlerini kaydetmek için seri haline getirilmiş dosya. Dosya adı belirtin veya devre dışı bırakmak için boş bırakın."
@@ -130,7 +131,7 @@ config_signatures_infraction_limit: "IP izlemesi tarafından yasaklanmadan önce
 config_signatures_ipv4: "Virgülle sınırlı, CIDRAM'ın ayrıştırmaya çalıştığı IPv4 imza dosyalarının bir listesi."
 config_signatures_ipv6: "Virgülle sınırlı, CIDRAM'ın ayrıştırmaya çalıştığı IPv6 imza dosyalarının bir listesi."
 config_signatures_modules: "Virgülle sınırlı, IPv4/IPv6 imzalarını kontrol ettikten sonra yüklenecek modül dosyalarının bir listesi."
-config_signatures_track_mode: "İhlaller ne zaman sayılmalıdır? Yanlış/False = IP'ler modüller tarafından engellendiğinde. Doğru/True = Herhangi bir nedenle IP'ler engellendiğinde."
+config_signatures_track_mode: "İhlaller ne zaman sayılmalıdır? Yanlış/False = IP'ler modüller tarafından engellendiğinde. Doğru/True = Herhangi bir nedenle IP'ler engellendiğinde. Varsayılan = Yanlış/False."
 config_supplementary_cache_options_enable_apcu: "Önbelleğe almak için APCu kullanmaya çalışılıp kullanılmayacağını belirtir. Varsayılan = False."
 config_supplementary_cache_options_enable_memcached: "Önbelleğe almak için Memcached kullanmaya çalışılıp kullanılmayacağını belirtir. Varsayılan = False."
 config_supplementary_cache_options_enable_pdo: "Önbelleğe almak için PDO kullanmaya çalışılıp kullanılmayacağını belirtir. Varsayılan = False."
@@ -432,7 +433,7 @@ tip_logs: "Merhaba, {username}.<br />Bu günlük dosyasının içeriğini görü
 tip_pie_html: "Daha fazla ayrıntı için bileşen adına tıklayın."
 tip_range: "Merhaba, {username}.<br />Bu sayfa, şu anda aktif imza dosyalarının kapsadığı IP aralıkları hakkında bazı temel istatistiksel bilgileri göstermektedir."
 tip_sections_list: "Merhaba, {username}.<br />Bu sayfa şu anda etkin olan imza dosyalarında hangi bölümlerin bulunduğunu listeler."
-tip_see_the_documentation: "Çeşitli yapılandırma yönergeleri ve amaçlarıyla ilgili bilgi için <a href="https://github.com/CIDRAM/CIDRAM/blob/master/_docs/readme.en.md\#SECTION6">belgelere</a> bakın."
+tip_see_the_documentation: "Çeşitli yapılandırma yönergeleri ve amaçlarıyla ilgili bilgi için <a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#SECTION6">belgelere</a> bakın."
 tip_statistics: "Merhaba, {username}.<br />Bu sayfada, CIDRAM kurulumunuzla ilgili bazı temel kullanım istatistikleri gösterilmektedir."
 tip_statistics_disabled: "Not: İstatistik izleme şu anda devre dışı, ancak yapılandırma sayfası aracılığıyla etkinleştirilebilir."
 tip_updates: "Merhaba, {username}.<br />Güncellemeler sayfası, CIDRAM'ın çeşitli bileşenlerini (çekirdek paket, imzalar, L10N dosyaları vb) yüklemenizi, kaldırmanızı ve güncellemenizi sağlar."

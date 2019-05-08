@@ -76,7 +76,6 @@ $CIDRAM['In'] = function ($Query) use (&$CIDRAM) {
     $QueryParts = explode($Delimiter, $Query);
     $CountParts = count($QueryParts);
     if (!($CountParts % 2)) {
-        $QueryParts = preg_split('~ +~', $Query, -1, PREG_SPLIT_NO_EMPTY);
         return;
     }
     $Arr = [];
@@ -395,9 +394,6 @@ $CIDRAM['FileManager-RecursiveList'] = function ($Base) use (&$CIDRAM) {
                         $Component = $CIDRAM['Components']['Names'][$CIDRAM['Components']['Files'][$ThisNameFixed]];
                     } else {
                         $Component = $CIDRAM['Components']['Files'][$ThisNameFixed];
-                    }
-                    if ($Component === 'CIDRAM') {
-                        $Component .= ' (' . $CIDRAM['L10N']->getString('field_component') . ')';
                     }
                 } elseif (preg_match('~(?:[^|/]\.ht|\.safety$|^salt\.dat$)~i', $ThisNameFixed)) {
                     $Component = $CIDRAM['L10N']->getString('label_fmgr_safety');
@@ -1253,7 +1249,7 @@ $CIDRAM['FE_Executor'] = function ($Closures = false, $Queue = false) use (&$CID
 $CIDRAM['WP-Ver'] = function () use (&$CIDRAM) {
     if (
         is_readable($CIDRAM['Vault'] . '../cidram.php') &&
-        !empty($CIDRAM['Components']['RemoteMeta']['CIDRAM']['Version']) &&
+        !empty($CIDRAM['Components']['RemoteMeta']['CIDRAM Core']['Version']) &&
         ($ThisData = $CIDRAM['ReadFile']($CIDRAM['Vault'] . '../cidram.php'))
     ) {
         $PlugHead = "\x3C\x3Fphp\n/**\n * Plugin Name: CIDRAM\n * Version: ";
@@ -1261,7 +1257,7 @@ $CIDRAM['WP-Ver'] = function () use (&$CIDRAM) {
             $PlugHeadEnd = strpos($ThisData, "\n", 45);
             $ThisData =
                 $PlugHead .
-                $CIDRAM['Components']['RemoteMeta']['CIDRAM']['Version'] .
+                $CIDRAM['Components']['RemoteMeta']['CIDRAM Core']['Version'] .
                 substr($ThisData, $PlugHeadEnd);
             $Handle = fopen($CIDRAM['Vault'] . '../cidram.php', 'w');
             fwrite($Handle, $ThisData);

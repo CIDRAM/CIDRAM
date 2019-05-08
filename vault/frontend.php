@@ -1963,7 +1963,9 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && ($CIDRAM['FE']['Per
 
     /** Inject interdependent components to each other's update instructions. */
     if (count($CIDRAM['Components']['Interdependent'])) {
-        array_unshift($CIDRAM['Components']['Interdependent'], 'CIDRAM');
+        array_unshift($CIDRAM['Components']['Interdependent'], 'CIDRAM Core');
+        array_unshift($CIDRAM['Components']['Interdependent'], 'CIDRAM Front-End');
+        array_unshift($CIDRAM['Components']['Interdependent'], 'Common Classes Package');
         $CIDRAM['Components']['AllInter'] = '<input name="ID[]" type="hidden" value="' . implode(
             '" /><input name="ID[]" type="hidden" value="',
             $CIDRAM['Components']['Interdependent']

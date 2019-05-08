@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Language handler (last modified: 2019.04.21).
+ * This file: Language handler (last modified: 2019.04.30).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -27,44 +27,33 @@ $CIDRAM['L10N'] = ['Configured' => [], 'ConfiguredData' => '', 'Fallbacks' => []
 /** If the language directive is set to English, don't bother about fallbacks. */
 if ($CIDRAM['Config']['general']['lang'] === 'en') {
 
-    if ($CIDRAM['CIDRAM_sapi'] && empty($CIDRAM['Alternate'])) {
-        /** CLI-mode L10N data. */
-        $CIDRAM['L10N']['Configured'][] = $CIDRAM['Vault'] . 'lang/lang.en.cli.yaml';
-    } else {
-        /** Standard L10N data. */
-        $CIDRAM['L10N']['Configured'][] = $CIDRAM['Vault'] . 'lang/lang.en.yaml';
-        if (
-            !$CIDRAM['Config']['general']['disable_frontend'] &&
-            file_exists($CIDRAM['Vault'] . 'frontend.php') &&
-            file_exists($CIDRAM['Vault'] . 'fe_assets/frontend.html') &&
-            ($CIDRAM['Direct']() || !empty($CIDRAM['Alternate']))
-        ) {
-            /** Front-end L10N data. */
-            $CIDRAM['L10N']['Configured'][] = $CIDRAM['Vault'] . 'lang/lang.en.fe.yaml';
-        }
+    /** Standard L10N data. */
+    $CIDRAM['L10N']['Configured'][] = $CIDRAM['Vault'] . 'lang/lang.en.yaml';
+    if (
+        !$CIDRAM['Config']['general']['disable_frontend'] &&
+        file_exists($CIDRAM['Vault'] . 'frontend.php') &&
+        file_exists($CIDRAM['Vault'] . 'fe_assets/frontend.html') &&
+        ($CIDRAM['Direct'] || !empty($CIDRAM['Alternate']))
+    ) {
+        /** Front-end L10N data. */
+        $CIDRAM['L10N']['Configured'][] = $CIDRAM['Vault'] . 'lang/lang.en.fe.yaml';
     }
 
 /** If the language directive isn't set to English, we'll use English as the fallback. */
 } else {
 
-    if ($CIDRAM['CIDRAM_sapi'] && empty($CIDRAM['Alternate'])) {
-        /** CLI-mode L10N data. */
-        $CIDRAM['L10N']['Configured'][] = $CIDRAM['Vault'] . 'lang/lang.' . $CIDRAM['Config']['general']['lang'] . '.cli.yaml';
-        $CIDRAM['L10N']['Fallbacks'][] = $CIDRAM['Vault'] . 'lang/lang.en.cli.yaml';
-    } else {
-        /** Standard L10N data. */
-        $CIDRAM['L10N']['Configured'][] = $CIDRAM['Vault'] . 'lang/lang.' . $CIDRAM['Config']['general']['lang'] . '.yaml';
-        $CIDRAM['L10N']['Fallbacks'][] = $CIDRAM['Vault'] . 'lang/lang.en.yaml';
-        if (
-            !$CIDRAM['Config']['general']['disable_frontend'] &&
-            file_exists($CIDRAM['Vault'] . 'frontend.php') &&
-            file_exists($CIDRAM['Vault'] . 'fe_assets/frontend.html') &&
-            ($CIDRAM['Direct']() || !empty($CIDRAM['Alternate']))
-        ) {
-            /** Front-end L10N data. */
-            $CIDRAM['L10N']['Configured'][] = $CIDRAM['Vault'] . 'lang/lang.' . $CIDRAM['Config']['general']['lang'] . '.fe.yaml';
-            $CIDRAM['L10N']['Fallbacks'][] = $CIDRAM['Vault'] . 'lang/lang.en.fe.yaml';
-        }
+    /** Standard L10N data. */
+    $CIDRAM['L10N']['Configured'][] = $CIDRAM['Vault'] . 'lang/lang.' . $CIDRAM['Config']['general']['lang'] . '.yaml';
+    $CIDRAM['L10N']['Fallbacks'][] = $CIDRAM['Vault'] . 'lang/lang.en.yaml';
+    if (
+        !$CIDRAM['Config']['general']['disable_frontend'] &&
+        file_exists($CIDRAM['Vault'] . 'frontend.php') &&
+        file_exists($CIDRAM['Vault'] . 'fe_assets/frontend.html') &&
+        ($CIDRAM['Direct'] || !empty($CIDRAM['Alternate']))
+    ) {
+        /** Front-end L10N data. */
+        $CIDRAM['L10N']['Configured'][] = $CIDRAM['Vault'] . 'lang/lang.' . $CIDRAM['Config']['general']['lang'] . '.fe.yaml';
+        $CIDRAM['L10N']['Fallbacks'][] = $CIDRAM['Vault'] . 'lang/lang.en.fe.yaml';
     }
 
 }

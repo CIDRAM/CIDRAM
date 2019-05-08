@@ -11,6 +11,17 @@ Versioning guidelines for SemVer can be found at: https://semver.org/
   process and added a new configuration directive, "log_sanitisation", to
   allow users to modify the default log data sanitisation behaviour.
 
+- [2019.05.08; MAJOR CODE CHANGE; Maikuolan]: Removed CIDRAM's CLI-mode and all
+  related assets, configuration options, L10N data, etc. Removed PHP 5.4
+  polyfills, thereby immediately upping the minimum PHP version requirement for
+  the upcoming release. Updated the loader, upping the hardcoded minimum PHP
+  version requirement to PHP 7.2, and removed some no longer needed code.
+  Removed some extraneous .htaccess files (only really need our main .htaccess
+  file in the base of the vault nowadays; the extra .htaccess files in some of
+  the vault's subdirectories aren't necessary). Split the CIDRAM "component"
+  into three distinct components; the "Core", the "Front-End", and the "Common
+  Classes Package" (this should make future updates slightly more manageable).
+
 === Version/Release 1.12.0 ===
 MINOR RELEASE.
 

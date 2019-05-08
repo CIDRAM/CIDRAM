@@ -11,14 +11,6 @@
  * This file: Functions file (last modified: 2019.05.08).
  */
 
-/**
- * Extends compatibility with CIDRAM to PHP 5.4.x by introducing some simple
- * polyfills for functions introduced with newer versions of PHP.
- */
-if (substr(PHP_VERSION, 0, 4) === '5.4.') {
-    require $CIDRAM['Vault'] . 'php5.4.x.php';
-}
-
 /** Autoloader for CIDRAM classes. */
 spl_autoload_register(function ($Class) {
     $Vendor = (($Pos = strpos($Class, "\\", 1)) === false) ? '' : substr($Class, 0, $Pos);
@@ -329,13 +321,11 @@ $CIDRAM['CheckFactors'] = function ($Files, $Factors) use (&$CIDRAM) {
             $LN = ' ("' . $DefTag . '", L0:F' . $FileIndex . ')';
             for ($FactorIndex = 0; $FactorIndex < $Counts['Factors']; $FactorIndex++) {
                 if ($Infractions = substr_count($Files[$FileIndex], ',' . $Factors[$FactorIndex] . ',')) {
-                    if (!$CIDRAM['CIDRAM_sapi']) {
-                        $CIDRAM['BlockInfo']['ReasonMessage'] = $CIDRAM['L10N']->getString('ReasonMessage_Generic');
-                        if (!empty($CIDRAM['BlockInfo']['WhyReason'])) {
-                            $CIDRAM['BlockInfo']['WhyReason'] .= ', ';
-                        }
-                        $CIDRAM['BlockInfo']['WhyReason'] .= $CIDRAM['L10N']->getString('Short_Generic') . $LN;
+                    $CIDRAM['BlockInfo']['ReasonMessage'] = $CIDRAM['L10N']->getString('ReasonMessage_Generic');
+                    if (!empty($CIDRAM['BlockInfo']['WhyReason'])) {
+                        $CIDRAM['BlockInfo']['WhyReason'] .= ', ';
                     }
+                    $CIDRAM['BlockInfo']['WhyReason'] .= $CIDRAM['L10N']->getString('Short_Generic') . $LN;
                     if (!empty($CIDRAM['BlockInfo']['Signatures'])) {
                         $CIDRAM['BlockInfo']['Signatures'] .= ', ';
                     }
@@ -404,7 +394,7 @@ $CIDRAM['CheckFactors'] = function ($Files, $Factors) use (&$CIDRAM) {
                     $Signature = substr($Signature, strpos($Signature, ' ') + 1);
                 }
                 $RunExitCode = 0;
-                if ($Category === 'Run' && !$CIDRAM['CIDRAM_sapi']) {
+                if ($Category === 'Run') {
                     if (!isset($CIDRAM['RunParamResCache'])) {
                         $CIDRAM['RunParamResCache'] = [];
                     }
@@ -431,28 +421,26 @@ $CIDRAM['CheckFactors'] = function ($Files, $Factors) use (&$CIDRAM) {
                 }
                 if ($Category === 'Deny') {
                     $DenyMatched = false;
-                    if (!$CIDRAM['CIDRAM_sapi']) {
-                        foreach ([
-                            ['Type' => 'Bogon', 'Config' => 'block_bogons', 'ReasonLong' => 'ReasonMessage_Bogon', 'ReasonShort' => 'Short_Bogon'],
-                            ['Type' => 'Cloud', 'Config' => 'block_cloud', 'ReasonLong' => 'ReasonMessage_Cloud', 'ReasonShort' => 'Short_Cloud'],
-                            ['Type' => 'Generic', 'Config' => 'block_generic', 'ReasonLong' => 'ReasonMessage_Generic', 'ReasonShort' => 'Short_Generic'],
-                            ['Type' => 'Legal', 'Config' => 'block_legal', 'ReasonLong' => 'ReasonMessage_Legal', 'ReasonShort' => 'Short_Legal'],
-                            ['Type' => 'Malware', 'Config' => 'block_malware', 'ReasonLong' => 'ReasonMessage_Malware', 'ReasonShort' => 'Short_Malware'],
-                            ['Type' => 'Proxy', 'Config' => 'block_proxies', 'ReasonLong' => 'ReasonMessage_Proxy', 'ReasonShort' => 'Short_Proxy'],
-                            ['Type' => 'Spam', 'Config' => 'block_spam', 'ReasonLong' => 'ReasonMessage_Spam', 'ReasonShort' => 'Short_Spam']
-                        ] as $Params) {
-                            if ($Signature === $Params['Type']) {
-                                if (empty($CIDRAM['Config']['signatures'][$Params['Config']])) {
-                                    continue 2;
-                                }
-                                $CIDRAM['BlockInfo']['ReasonMessage'] = $CIDRAM['L10N']->getString($Params['ReasonLong']);
-                                if (!empty($CIDRAM['BlockInfo']['WhyReason'])) {
-                                    $CIDRAM['BlockInfo']['WhyReason'] .= ', ';
-                                }
-                                $CIDRAM['BlockInfo']['WhyReason'] .= $CIDRAM['L10N']->getString($Params['ReasonShort']) . $LN;
-                                $DenyMatched = true;
-                                break;
+                    foreach ([
+                        ['Type' => 'Bogon', 'Config' => 'block_bogons', 'ReasonLong' => 'ReasonMessage_Bogon', 'ReasonShort' => 'Short_Bogon'],
+                        ['Type' => 'Cloud', 'Config' => 'block_cloud', 'ReasonLong' => 'ReasonMessage_Cloud', 'ReasonShort' => 'Short_Cloud'],
+                        ['Type' => 'Generic', 'Config' => 'block_generic', 'ReasonLong' => 'ReasonMessage_Generic', 'ReasonShort' => 'Short_Generic'],
+                        ['Type' => 'Legal', 'Config' => 'block_legal', 'ReasonLong' => 'ReasonMessage_Legal', 'ReasonShort' => 'Short_Legal'],
+                        ['Type' => 'Malware', 'Config' => 'block_malware', 'ReasonLong' => 'ReasonMessage_Malware', 'ReasonShort' => 'Short_Malware'],
+                        ['Type' => 'Proxy', 'Config' => 'block_proxies', 'ReasonLong' => 'ReasonMessage_Proxy', 'ReasonShort' => 'Short_Proxy'],
+                        ['Type' => 'Spam', 'Config' => 'block_spam', 'ReasonLong' => 'ReasonMessage_Spam', 'ReasonShort' => 'Short_Spam']
+                    ] as $Params) {
+                        if ($Signature === $Params['Type']) {
+                            if (empty($CIDRAM['Config']['signatures'][$Params['Config']])) {
+                                continue 2;
                             }
+                            $CIDRAM['BlockInfo']['ReasonMessage'] = $CIDRAM['L10N']->getString($Params['ReasonLong']);
+                            if (!empty($CIDRAM['BlockInfo']['WhyReason'])) {
+                                $CIDRAM['BlockInfo']['WhyReason'] .= ', ';
+                            }
+                            $CIDRAM['BlockInfo']['WhyReason'] .= $CIDRAM['L10N']->getString($Params['ReasonShort']) . $LN;
+                            $DenyMatched = true;
+                            break;
                         }
                     }
                     if (!$DenyMatched) {
@@ -1244,7 +1232,7 @@ $CIDRAM['AddField'] = function ($FieldName, $FieldData, $Sanitise = false) use (
         ['&lt;', '&gt;', '&#13;', '&#10;'],
         $FieldData
     ) : $FieldData;
-    $Logged = $CIDRAM['Config']['general']['log_sanitisation'] ? $Prepared : $FieldData;
+    $Logged = $CIDRAM['Config']['general']['log_sanitation'] ? $Prepared : $FieldData;
     $CIDRAM['FieldTemplates']['Logs'] .= $FieldName . $Logged . "\n";
     $CIDRAM['FieldTemplates']['Output'][] = '<span class="textLabel">' . $FieldName . '</span>' . $Prepared . "<br />";
 };

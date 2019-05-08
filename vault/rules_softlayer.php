@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Custom rules file for Soft Layer (last modified: 2019.02.06).
+ * This file: Custom rules file for Soft Layer (last modified: 2019.04.30).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -59,15 +59,13 @@ $CIDRAM['RunParamResCache']['rules_softlayer.php'] = function ($Factors = [], $F
         return;
     }
 
-    if (!$CIDRAM['CIDRAM_sapi']) {
-        $CIDRAM['BlockInfo']['ReasonMessage'] = $CIDRAM['L10N']->getString('ReasonMessage_Cloud');
-        if (!empty($CIDRAM['BlockInfo']['WhyReason'])) {
-            $CIDRAM['BlockInfo']['WhyReason'] .= ', ';
-        }
-        $CIDRAM['BlockInfo']['WhyReason'] .= $CIDRAM['L10N']->getString('Short_Cloud') . $LN;
-        if (!empty($CIDRAM['BlockInfo']['Signatures'])) {
-            $CIDRAM['BlockInfo']['Signatures'] .= ', ';
-        }
+    $CIDRAM['BlockInfo']['ReasonMessage'] = $CIDRAM['L10N']->getString('ReasonMessage_Cloud');
+    if (!empty($CIDRAM['BlockInfo']['WhyReason'])) {
+        $CIDRAM['BlockInfo']['WhyReason'] .= ', ';
+    }
+    $CIDRAM['BlockInfo']['WhyReason'] .= $CIDRAM['L10N']->getString('Short_Cloud') . $LN;
+    if (!empty($CIDRAM['BlockInfo']['Signatures'])) {
+        $CIDRAM['BlockInfo']['Signatures'] .= ', ';
     }
     $CIDRAM['BlockInfo']['Signatures'] .= $Factors[$FactorIndex];
     $CIDRAM['BlockInfo']['SignatureCount']++;

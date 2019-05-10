@@ -76,7 +76,7 @@ $CIDRAM['In'] = function ($Query) use (&$CIDRAM) {
     $QueryParts = explode($Delimiter, $Query);
     $CountParts = count($QueryParts);
     if (!($CountParts % 2)) {
-        return;
+        return false;
     }
     $Arr = [];
     for ($Iter = 0; $Iter < $CountParts; $Iter++) {
@@ -135,7 +135,11 @@ $CIDRAM['ZeroMin'] = function () {
     return $Sum < 0 ? 0 : $Sum;
 };
 
-/** Format filesize information. */
+/**
+ * Format filesize information.
+ *
+ * @param int $Filesize
+ */
 $CIDRAM['FormatFilesize'] = function (&$Filesize) use (&$CIDRAM) {
     $Scale = ['field_size_bytes', 'field_size_KB', 'field_size_MB', 'field_size_GB', 'field_size_TB'];
     $Iterate = 0;
@@ -206,9 +210,8 @@ $CIDRAM['FECacheAdd'] = function (&$Source, &$Rebuild, $Entry, $Data, $Expires) 
  * Get an entry from the front-end cache data.
  *
  * @param string $Source Variable containing cache file data.
- * @param bool $Rebuild Flag indicating to rebuild cache file.
  * @param string $Entry Name of the cache entry to get.
- * return string|bool Returned cache entry data (or false on failure).
+ * @return string|bool Returned cache entry data (or false on failure).
  */
 $CIDRAM['FECacheGet'] = function (&$Source, $Entry) use (&$CIDRAM) {
 
@@ -239,7 +242,7 @@ $CIDRAM['FECacheGet'] = function (&$Source, $Entry) use (&$CIDRAM) {
  *
  * @param string $A The 1st version string.
  * @param string $B The 2nd version string.
- * return bool True if the 2nd version is newer than the 1st version, and false
+ * @return bool True if the 2nd version is newer than the 1st version, and false
  *      otherwise (i.e., if they're the same, or if the 1st version is newer).
  */
 $CIDRAM['VersionCompare'] = function ($A, $B) {
@@ -293,16 +296,21 @@ $CIDRAM['VersionCompare'] = function ($A, $B) {
  * Remove sub-arrays from an array.
  *
  * @param array $Arr An array.
- * return array An array.
+ * @return array An array.
  */
-$CIDRAM['ArrayFlatten'] = function ($Arr) {
+$CIDRAM['ArrayFlatten'] = function (array $Arr) {
     return array_filter($Arr, function () {
         return (!is_array(func_get_args()[0]));
     });
 };
 
-/** Isolate a L10N array down to a single relevant L10N string. */
-$CIDRAM['IsolateL10N'] = function (&$Arr, $Lang) {
+/**
+ * Reduce an L10N array down to a single relevant string.
+ *
+ * @param array $Arr An L10N array.
+ * @param string $Lang The language that we're hoping to isolate from the array.
+ */
+$CIDRAM['IsolateL10N'] = function (array &$Arr, $Lang) {
     if (isset($Arr[$Lang])) {
         $Arr = $Arr[$Lang];
     } elseif (isset($Arr['en'])) {
@@ -504,7 +512,7 @@ $CIDRAM['FileManager-RecursiveList'] = function ($Base) use (&$CIDRAM) {
  * @param string $Base The path to the working directory.
  * @param array $Arr The array to use for rendering components file YAML data.
  */
-$CIDRAM['FetchComponentsLists'] = function ($Base, &$Arr) use (&$CIDRAM) {
+$CIDRAM['FetchComponentsLists'] = function ($Base, array &$Arr) use (&$CIDRAM) {
     $Files = new DirectoryIterator($Base);
     foreach ($Files as $ThisFile) {
         if (!empty($ThisFile) && preg_match('/\.(?:dat|inc|ya?ml)$/i', $ThisFile)) {
@@ -564,8 +572,13 @@ $CIDRAM['Logs-RecursiveList'] = function ($Base) use (&$CIDRAM) {
     return $Arr;
 };
 
-/** Checks whether a component is in use (front-end closure). */
-$CIDRAM['IsInUse'] = function (&$Component) use (&$CIDRAM) {
+/**
+ * Checks whether a component is in use (front-end closure).
+ *
+ * @param array $Component An array of the component metadata.
+ * @return bool True for when in use; False for when not in use.
+ */
+$CIDRAM['IsInUse'] = function (array &$Component) use (&$CIDRAM) {
     $Files = empty($Component['Files']['To']) ? [] : $Component['Files']['To'];
     $UsedWith = empty($Component['Used with']) ? '' : $Component['Used with'];
     $Description = empty($Component['Extended Description']) ? '' : $Component['Extended Description'];
@@ -695,8 +708,13 @@ $CIDRAM['FetchRemote-ContextFree'] = function (&$RemoteData, &$Remote) use (&$CI
     }
 };
 
-/** Check whether component is activable. */
-$CIDRAM['IsActivable'] = function (&$Component) {
+/**
+ * Checks whether component is activable.
+ *
+ * @param array $Component An array of the component metadata.
+ * @return bool True for when activable; False for when not activable.
+ */
+$CIDRAM['IsActivable'] = function (array &$Component) {
     return (!empty($Component['Used with']) || strpos($Component['Extended Description'], 'signatures-&gt;') !== false);
 };
 
@@ -1180,7 +1198,7 @@ $CIDRAM['GetAssetPath'] = function ($Asset, $CanFail = false) use (&$CIDRAM) {
  * - maikuolan.github.io/Vulnerability-Charts/php.html
  *
  * @param string $Version The PHP version used (defaults to PHP_VERSION).
- * return int Warning level.
+ * @return int Warning level.
  */
 $CIDRAM['VersionWarning'] = function ($Version = PHP_VERSION) use (&$CIDRAM) {
     $Level = 0;
@@ -1363,7 +1381,7 @@ $CIDRAM['Number_L10N_JS'] = function () use (&$CIDRAM) {
  * @param string $Redirect Reconstructed path to redirect to when the state changes.
  * @param string $Options Reconstructed filter controls.
  */
-$CIDRAM['FilterSwitch'] = function ($Switches, $Selector, &$StateModified, &$Redirect, &$Options) use (&$CIDRAM) {
+$CIDRAM['FilterSwitch'] = function (array $Switches, $Selector, &$StateModified, &$Redirect, &$Options) use (&$CIDRAM) {
     foreach ($Switches as $Switch) {
         $State = (!empty($Selector) && $Selector === $Switch);
         $CIDRAM['FE'][$Switch] = empty($CIDRAM['QueryVars'][$Switch]) ? false : (
@@ -2681,7 +2699,7 @@ $CIDRAM['FELogger'] = function ($IPAddr, $User, $Message) use (&$CIDRAM) {
  * @param array $Attachments An optional array of attachments.
  * @return bool Operation failed (false) or succeeded (true).
  */
-$CIDRAM['SendEmail'] = function ($Recipients = [], $Subject = '', $Body = '', $AltBody = '', $Attachments = []) use (&$CIDRAM) {
+$CIDRAM['SendEmail'] = function (array $Recipients = [], $Subject = '', $Body = '', $AltBody = '', array $Attachments = []) use (&$CIDRAM) {
     $EventLog = '';
     $EventLogData = '';
 
@@ -2981,7 +2999,7 @@ $CIDRAM['AuxGenerateFEData'] = function () use (&$CIDRAM) {
  * @param string $Trim An optional regex of data to remove from labels.
  * @return string The generated options.
  */
-$CIDRAM['GenerateOptions'] = function ($Options, $Trim = '') {
+$CIDRAM['GenerateOptions'] = function (array $Options, $Trim = '') {
     $Output = '';
     foreach ($Options as $Value => $Label) {
         if ($Trim) {
@@ -3001,7 +3019,7 @@ $CIDRAM['GenerateOptions'] = function ($Options, $Trim = '') {
  * @param string $ParentKey An optional key of the parent data source.
  * @return string The generated clickable list.
  */
-$CIDRAM['ArrayToClickableList'] = function ($Arr = [], $DeleteKey = '', $Depth = 0, $ParentKey = '') use (&$CIDRAM) {
+$CIDRAM['ArrayToClickableList'] = function (array $Arr = [], $DeleteKey = '', $Depth = 0, $ParentKey = '') use (&$CIDRAM) {
     $Output = '';
     $Count = count($Arr);
     $Prefix = substr($DeleteKey, 0, 2) === 'fe' ? 'FE' : '';

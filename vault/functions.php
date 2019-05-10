@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2019.05.08).
+ * This file: Functions file (last modified: 2019.05.10).
  */
 
 /**
@@ -59,15 +59,14 @@ $CIDRAM['ReadFile'] = function ($File) {
 };
 
 /**
- * Replaces encapsulated substrings within an input string with the value of
- * elements within an input array, whose keys correspond to the substrings.
- * Accepts two input parameters: An input array (1), and an input string (2).
+ * Replaces encapsulated substrings within a string using the values of the
+ * corresponding elements within an array.
  *
- * @param array $Needle The input array (the needle[/s]).
- * @param string $Haystack The input string (the haystack).
- * @return string The resultant string.
+ * @param array $Needle An array containing replacement values.
+ * @param string $Haystack The string to work with.
+ * @return string The string with its encapsulated substrings replaced.
  */
-$CIDRAM['ParseVars'] = function ($Needle, $Haystack) {
+$CIDRAM['ParseVars'] = function (array $Needle, $Haystack) {
     if (!is_array($Needle) || empty($Haystack)) {
         return '';
     }
@@ -265,7 +264,7 @@ $CIDRAM['Getter'] = function ($Haystack, $Offset, $Tag, $DefTag) {
  * @param array $Factors Which CIDRs/factors to check against.
  * @return bool Returns true.
  */
-$CIDRAM['CheckFactors'] = function ($Files, $Factors) use (&$CIDRAM) {
+$CIDRAM['CheckFactors'] = function (array $Files, array $Factors) use (&$CIDRAM) {
     $Counts = [
         'Files' => count($Files),
         'Factors' => count($Factors)
@@ -648,12 +647,12 @@ $CIDRAM['AutoType'] = function (&$Var, $Type = '') use (&$CIDRAM) {
  * Used to send cURL requests.
  *
  * @param string $URI The resource to request.
- * @param array $Params (Optional) An associative array of key-value pairs to
- *      to send along with the request.
+ * @param array $Params An optional associative array of key-value pairs to
+ *      send with the request.
  * @param string $Timeout An optional timeout limit (defaults to 12 seconds).
  * @return string The results of the request.
  */
-$CIDRAM['Request'] = function ($URI, $Params = '', $Timeout = '') use (&$CIDRAM) {
+$CIDRAM['Request'] = function ($URI, array $Params = [], $Timeout = '') use (&$CIDRAM) {
     if (!$Timeout) {
         $Timeout = $CIDRAM['Timeout'];
     }
@@ -897,7 +896,7 @@ $CIDRAM['DNS-Resolve'] = function ($Host, $Timeout = 5) use (&$CIDRAM) {
  * @return bool Returns true when a determination is successfully made, and
  *      false when a determination isn't able to be made.
  */
-$CIDRAM['DNS-Reverse-Forward'] = function ($Domains, $Friendly, $Options = []) use (&$CIDRAM) {
+$CIDRAM['DNS-Reverse-Forward'] = function ($Domains, $Friendly, array $Options = []) use (&$CIDRAM) {
 
     /** Fetch the hostname. */
     if (empty($CIDRAM['Hostname'])) {
@@ -978,7 +977,7 @@ $CIDRAM['DNS-Reverse-Forward'] = function ($Domains, $Friendly, $Options = []) u
  * @param string $Friendly A friendly name to use in logfiles.
  * @param array $Options Various options that can be passed to the closure.
  */
-$CIDRAM['UA-IP-Match'] = function ($Expected, $Friendly, $Options = []) use (&$CIDRAM) {
+$CIDRAM['UA-IP-Match'] = function ($Expected, $Friendly, array $Options = []) use (&$CIDRAM) {
 
     /** Convert expected IPs to an array. */
     $CIDRAM['Arrayify']($Expected);
@@ -1025,7 +1024,7 @@ $CIDRAM['UA-IP-Match'] = function ($Expected, $Friendly, $Options = []) use (&$C
  * @return bool Returns true if the signature was triggered, and false if it
  *      wasn't. Should correspond to the truthiness of $Condition.
  */
-$CIDRAM['Trigger'] = function ($Condition, $ReasonShort, $ReasonLong = '', $DefineOptions = []) use (&$CIDRAM) {
+$CIDRAM['Trigger'] = function ($Condition, $ReasonShort, $ReasonLong = '', array $DefineOptions = []) use (&$CIDRAM) {
     if (!$Condition) {
         return false;
     }
@@ -1070,7 +1069,7 @@ $CIDRAM['Trigger'] = function ($Condition, $ReasonShort, $ReasonLong = '', $Defi
  * @return bool Returns true if the bypass was triggered, and false if it
  *      wasn't. Should correspond to the truthiness of $Condition.
  */
-$CIDRAM['Bypass'] = function ($Condition, $ReasonShort, $DefineOptions = []) use (&$CIDRAM) {
+$CIDRAM['Bypass'] = function ($Condition, $ReasonShort, array $DefineOptions = []) use (&$CIDRAM) {
     if (!$Condition) {
         return false;
     }

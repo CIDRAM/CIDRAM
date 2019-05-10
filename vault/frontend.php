@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2019.04.21).
+ * This file: Front-end handler (last modified: 2019.05.10).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -663,7 +663,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === '' && !$CIDRAM['FE']['CronMode']
 
     /** Fetch remote CIDRAM version information and cache it if necessary. */
     if (($CIDRAM['Remote-YAML-CIDRAM'] = $CIDRAM['FECacheGet']($CIDRAM['FE']['Cache'], 'cidram-ver.yaml')) === false) {
-        $CIDRAM['Remote-YAML-CIDRAM'] = $CIDRAM['Request']($CIDRAM['RemoteVerPath'] . 'cidram-ver.yaml', false, 8);
+        $CIDRAM['Remote-YAML-CIDRAM'] = $CIDRAM['Request']($CIDRAM['RemoteVerPath'] . 'cidram-ver.yaml', [], 8);
         $CIDRAM['FECacheAdd']($CIDRAM['FE']['Cache'], $CIDRAM['FE']['Rebuild'], 'cidram-ver.yaml', $CIDRAM['Remote-YAML-CIDRAM'] ?: '-', $CIDRAM['Now'] + 86400);
     }
 
@@ -703,7 +703,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === '' && !$CIDRAM['FE']['CronMode']
 
     /** Fetch remote PHP version information and cache it if necessary. */
     if (($CIDRAM['Remote-YAML-PHP'] = $CIDRAM['FECacheGet']($CIDRAM['FE']['Cache'], 'php-ver.yaml')) === false) {
-        $CIDRAM['Remote-YAML-PHP'] = $CIDRAM['Request']($CIDRAM['RemoteVerPath'] . 'php-ver.yaml', false, 8);
+        $CIDRAM['Remote-YAML-PHP'] = $CIDRAM['Request']($CIDRAM['RemoteVerPath'] . 'php-ver.yaml', [], 8);
         $CIDRAM['FECacheAdd']($CIDRAM['FE']['Cache'], $CIDRAM['FE']['Rebuild'], 'php-ver.yaml', $CIDRAM['Remote-YAML-PHP'] ?: '-', $CIDRAM['Now'] + 86400);
     }
 

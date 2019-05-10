@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Custom rules file for Soft Layer (last modified: 2019.02.06).
+ * This file: Extended rules for Soft Layer CIDRs (last modified: 2019.05.10).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -27,7 +27,7 @@ if (!isset($CIDRAM['RunParamResCache'])) {
 }
 
 /** Define object for these rules for later recall. */
-$CIDRAM['RunParamResCache']['rules_softlayer.php'] = function ($Factors = [], $FactorIndex = 0, $LN = 0, $Tag = '') use (&$CIDRAM) {
+$CIDRAM['RunParamResCache']['rules_softlayer.php'] = function (array $Factors = [], $FactorIndex = 0, $LN = 0, $Tag = '') use (&$CIDRAM) {
 
     /** Skip further processing if the "block_cloud" directive is false. */
     if (!$CIDRAM['Config']['signatures']['block_cloud']) {

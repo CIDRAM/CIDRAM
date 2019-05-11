@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2019.05.08).
+ * This file: Front-end functions file (last modified: 2019.05.11).
  */
 
 /**
@@ -718,8 +718,13 @@ $CIDRAM['IsActivable'] = function (array &$Component) {
     return (!empty($Component['Used with']) || strpos($Component['Extended Description'], 'signatures-&gt;') !== false);
 };
 
-/** Activate component (front-end updates page). */
-$CIDRAM['ActivateComponent'] = function ($Type, $ID) use (&$CIDRAM) {
+/**
+ * Activate component (front-end updates page).
+ *
+ * @param string $Type Value can be ipv4, ipv6, or modules.
+ * @param array $ID Metadata of the component to activate.
+ */
+$CIDRAM['ActivateComponent'] = function ($Type, array $ID) use (&$CIDRAM) {
     $CIDRAM['Activation'][$Type] = array_unique(array_filter(
         explode(',', $CIDRAM['Activation'][$Type]),
         function ($Component) use (&$CIDRAM) {
@@ -745,8 +750,13 @@ $CIDRAM['ActivateComponent'] = function ($Type, $ID) use (&$CIDRAM) {
     }
 };
 
-/** Deactivate component (front-end updates page). */
-$CIDRAM['DeactivateComponent'] = function ($Type, $ID) use (&$CIDRAM) {
+/**
+ * Deactivate component (front-end updates page).
+ *
+ * @param string $Type Value can be ipv4, ipv6, or modules.
+ * @param array $ID Metadata of the component to deactivate.
+ */
+$CIDRAM['DeactivateComponent'] = function ($Type, array $ID) use (&$CIDRAM) {
     $CIDRAM['Deactivation'][$Type] = array_unique(array_filter(
         explode(',', $CIDRAM['Deactivation'][$Type]),
         function ($Component) use (&$CIDRAM) {
@@ -771,8 +781,13 @@ $CIDRAM['DeactivateComponent'] = function ($Type, $ID) use (&$CIDRAM) {
     }
 };
 
-/** Prepares component extended description (front-end updates page). */
-$CIDRAM['PrepareExtendedDescription'] = function (&$Arr, $Key = '') use (&$CIDRAM) {
+/**
+ * Prepares component extended description (front-end updates page).
+ *
+ * @param array $Arr Metadata of the component to be prepared.
+ * @param string $Key A key to use to help find L10N data for the component description.
+ */
+$CIDRAM['PrepareExtendedDescription'] = function (array &$Arr, $Key = '') use (&$CIDRAM) {
     $Key = 'Extended Description ' . $Key;
     if (isset($CIDRAM['lang'][$Key])) {
         $Arr['Extended Description'] = $CIDRAM['L10N']->getString($Key);
@@ -806,8 +821,13 @@ $CIDRAM['PrepareExtendedDescription'] = function (&$Arr, $Key = '') use (&$CIDRA
     }
 };
 
-/** Prepares component name (front-end updates page). */
-$CIDRAM['PrepareName'] = function (&$Arr, $Key = '') use (&$CIDRAM) {
+/**
+ * Prepares component name (front-end updates page).
+ *
+ * @param array $Arr Metadata of the component to be prepared.
+ * @param string $Key A key to use to help find L10N data for the component name.
+ */
+$CIDRAM['PrepareName'] = function (array &$Arr, $Key = '') use (&$CIDRAM) {
     $Key = 'Name ' . $Key;
     if (isset($CIDRAM['lang'][$Key])) {
         $Arr['Name'] = $CIDRAM['L10N']->getString($Key);
@@ -819,7 +839,12 @@ $CIDRAM['PrepareName'] = function (&$Arr, $Key = '') use (&$CIDRAM) {
     }
 };
 
-/** Duplication avoidance (front-end updates page). */
+/**
+ * Duplication avoidance (front-end updates page).
+ *
+ * @param string $Targets
+ * @return bool Always false.
+ */
 $CIDRAM['ComponentFunctionUpdatePrep'] = function ($Targets) use (&$CIDRAM) {
     if (!empty($CIDRAM['Components']['Meta'][$Targets]['Files'])) {
         $CIDRAM['PrepareExtendedDescription']($CIDRAM['Components']['Meta'][$Targets]);
@@ -1081,8 +1106,15 @@ $CIDRAM['Formatter'] = function (&$In, $BlockLink = '', $Current = '', $FieldSep
     $In = str_replace("<br />\n</div>", "<br /></div>\n", $In);
 };
 
-/** Attempt to tally logfile data. */
-$CIDRAM['Tally'] = function ($In, $BlockLink, $Exceptions = []) use (&$CIDRAM) {
+/**
+ * Attempt to tally log data.
+ *
+ * @param string $In The log data to be tallied.
+ * @param string $BlockLink Used as the basis for links inserted into displayed log data used for searching related log data.
+ * @param array $Exclusions Instructs which fields should be excluded from the tally.
+ * @return string A tally of the log data (or an empty string when valid log data isn't supplied).
+ */
+$CIDRAM['Tally'] = function ($In, $BlockLink, array $Exclusions = []) use (&$CIDRAM) {
     if (empty($In)) {
         return '';
     }
@@ -1094,9 +1126,9 @@ $CIDRAM['Tally'] = function ($In, $BlockLink, $Exceptions = []) use (&$CIDRAM) {
         if (empty($Line)) {
             continue;
         }
-        foreach ($Exceptions as $Exception) {
-            $Len = strlen($Exception);
-            if (substr($Line, 0, $Len) === $Exception) {
+        foreach ($Exclusions as $Exclusion) {
+            $Len = strlen($Exclusion);
+            if (substr($Line, 0, $Len) === $Exclusion) {
                 continue 2;
             }
         }
@@ -1167,6 +1199,7 @@ $CIDRAM['Tally'] = function ($In, $BlockLink, $Exceptions = []) use (&$CIDRAM) {
  *
  * @param string $Asset The asset filename.
  * @param bool $CanFail Is failure acceptable? (Default: False)
+ * @throws Exception if the asset can't be found.
  * @return string The asset path.
  */
 $CIDRAM['GetAssetPath'] = function ($Asset, $CanFail = false) use (&$CIDRAM) {
@@ -1288,10 +1321,11 @@ $CIDRAM['WP-Ver'] = function () use (&$CIDRAM) {
 };
 
 /**
- * Localises a number according to configuration specification.
+ * Formats/Localises a number according to specified configuration.
  *
- * @param int $Number The number to localise.
+ * @param int|float $Number The number to localise.
  * @param int $Decimals Decimal places (optional).
+ * @return string The formatted/localised number.
  */
 $CIDRAM['Number_L10N'] = function ($Number, $Decimals = 0) use (&$CIDRAM) {
     $Number = (float)$Number;
@@ -1338,8 +1372,9 @@ $CIDRAM['Number_L10N'] = function ($Number, $Decimals = 0) use (&$CIDRAM) {
 };
 
 /**
- * Generates JavaScript code for localising numbers according to configuration
- * specification.
+ * Generates JavaScript code for localising numbers locally.
+ *
+ * @return string The JavaScript code.
  */
 $CIDRAM['Number_L10N_JS'] = function () use (&$CIDRAM) {
     $Base =
@@ -1403,8 +1438,14 @@ $CIDRAM['FilterSwitch'] = function (array $Switches, $Selector, &$StateModified,
     }
 };
 
-/** Duplication avoidance (front-end updates page). */
-$CIDRAM['AppendTests'] = function (&$Component, $ReturnState = false) use (&$CIDRAM) {
+/**
+ * Appends test data onto component metadata.
+ *
+ * @param array $Component The component to append test data onto.
+ * @param bool $ReturnState Whether to operate as a function or a procedure.
+ * @return bool|null Indicates whether tests have passed, when operating as a function.
+ */
+$CIDRAM['AppendTests'] = function (array &$Component, $ReturnState = false) use (&$CIDRAM) {
     $TestData = $CIDRAM['FECacheGet'](
         $CIDRAM['FE']['Cache'],
         $CIDRAM['Components']['RemoteMeta'][$Component['ID']]['Tests']
@@ -1485,7 +1526,12 @@ $CIDRAM['AppendTests'] = function (&$Component, $ReturnState = false) use (&$CID
     }
 };
 
-/** Traversal detection. */
+/**
+ * Traversal detection.
+ *
+ * @param string $Path The path to check for traversal.
+ * @return bool True when the path is traversal-free. False when traversal has been detected.
+ */
 $CIDRAM['Traverse'] = function ($Path) {
     return !preg_match('~(?:[\./]{2}|[\x01-\x1f\[-^`?*$])~i', str_replace("\\", '/', $Path));
 };
@@ -2121,15 +2167,24 @@ $CIDRAM['UpdatesHandler-Verify'] = function ($ID) use (&$CIDRAM) {
     }
 };
 
-/** Normalise linebreaks. */
+/**
+ * Normalise linebreaks.
+ *
+ * @param string $Data The data to normalise.
+ */
 $CIDRAM['NormaliseLinebreaks'] = function (&$Data) {
     if (strpos($Data, "\r")) {
         $Data = (strpos($Data, "\r\n") !== false) ? str_replace("\r", '', $Data) : str_replace("\r", "\n", $Data);
     }
 };
 
-/** Signature files handler for sections list. */
-$CIDRAM['SectionsHandler'] = function ($Files) use (&$CIDRAM) {
+/**
+ * Signature files handler for sections list.
+ *
+ * @param array $Files The signature files to process.
+ * @return string Generated sections list data.
+ */
+$CIDRAM['SectionsHandler'] = function (array $Files) use (&$CIDRAM) {
     if (!isset($CIDRAM['Ignore'])) {
         $CIDRAM['Ignore'] = $CIDRAM['FetchIgnores']();
     }
@@ -3073,7 +3128,11 @@ $CIDRAM['ArrayToClickableList'] = function (array $Arr = [], $DeleteKey = '', $D
     return $Output;
 };
 
-/** Append to the current state message. */
+/**
+ * Append to the current state message.
+ *
+ * @param string $Message What to append.
+ */
 $CIDRAM['Message'] = function ($Message) use (&$CIDRAM) {
     if (isset($CIDRAM['FE']['state_msg'])) {
         if ($CIDRAM['FE']['state_msg'] || substr($CIDRAM['FE']['state_msg'], -6) !== '<br />') {

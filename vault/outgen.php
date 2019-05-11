@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Output generator (last modified: 2019.05.08).
+ * This file: Output generator (last modified: 2019.05.11).
  */
 
 /** Initialise cache. */
@@ -413,13 +413,14 @@ if (!empty($CIDRAM['Config']['Webhook']['URL'])) {
     }
     /** Set params. */
     if (empty($CIDRAM['Config']['Webhook']['Params'])) {
-        $CIDRAM['Config']['Webhook']['Params'] = '';
+        $CIDRAM['Config']['Webhook']['Params'] = [];
     } else {
         /** Parse any relevant block information to our webhook params. */
         $CIDRAM['Config']['Webhook']['Params'] = $CIDRAM['ParseVars'](
             $CIDRAM['ParsedToWebhook'],
             $CIDRAM['Config']['Webhook']['Params']
         );
+        $CIDRAM['Arrayify']($CIDRAM['Config']['Webhook']['Params']);
     }
     /** Parse any relevant block information to our webhook URL. */
     $CIDRAM['Config']['Webhook']['URL'] = $CIDRAM['ParseVars'](

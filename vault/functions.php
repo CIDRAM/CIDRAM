@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2019.05.10).
+ * This file: Functions file (last modified: 2019.05.11).
  */
 
 /**
@@ -875,7 +875,7 @@ $CIDRAM['DNS-Resolve'] = function ($Host, $Timeout = 5) use (&$CIDRAM) {
         $URI .= str_shuffle($Valid)[0];
     }
 
-    if (!$Results = json_decode($CIDRAM['Request']($URI, '', $Timeout), true)) {
+    if (!$Results = json_decode($CIDRAM['Request']($URI, [], $Timeout), true)) {
         return '';
     }
     return $CIDRAM['DNS-Forwards'][$Host]['IPAddr'] = empty(

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Configuration defaults file (last modified: 2019.05.06).
+# This file: Configuration defaults file (last modified: 2019.05.11).
 ##/
 
 Config Defaults:
@@ -15,10 +15,10 @@ Config Defaults:
   logfile:
    type: string
    default: ""
-  logfileApache:
+  logfile_apache:
    type: string
    default: ""
-  logfileSerialized:
+  logfile_serialized:
    type: string
    default: ""
   truncate:
@@ -37,11 +37,11 @@ Config Defaults:
   timezone:
    type: timezone
    default: "SYSTEM"
-  timeOffset:
+  time_offset:
    type: int
    default: 0
    preview: minutes
-  timeFormat:
+  time_format:
    type: string
    default: "{Day}, {dd} {Mon} {yyyy} {hh}:{ii}:{ss} {tz}"
    preview: allow_other
@@ -205,7 +205,7 @@ Config Defaults:
   max_login_attempts:
    type: int
    default: 5
-  FrontEndLog:
+  frontend_log:
    type: string
    default: ""
   ban_override:
@@ -245,8 +245,8 @@ Config Defaults:
    choices:
     PASSWORD_DEFAULT: PASSWORD_DEFAULT
     PASSWORD_BCRYPT: PASSWORD_BCRYPT
-    PASSWORD_ARGON2I: PASSWORD_ARGON2I (PHP >= 7.2.0)
-   choice_filter: "FilterAlgo"
+    PASSWORD_ARGON2I: PASSWORD_ARGON2I
+    PASSWORD_ARGON2ID: PASSWORD_ARGON2ID
   statistics:
    type: bool
    default: false

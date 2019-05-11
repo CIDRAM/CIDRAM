@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Configuration handler (last modified: 2019.04.07).
+ * This file: Configuration handler (last modified: 2019.05.11).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -140,7 +140,7 @@ if (!isset($_SERVER[$CIDRAM['IPAddr']])) {
 }
 
 /** Adjusted present time. */
-$CIDRAM['Now'] = time() + ($CIDRAM['Config']['general']['timeOffset'] * 60);
+$CIDRAM['Now'] = time() + ($CIDRAM['Config']['general']['time_offset'] * 60);
 
 /** Set timezone. */
 if (!empty($CIDRAM['Config']['general']['timezone']) && $CIDRAM['Config']['general']['timezone'] !== 'SYSTEM') {

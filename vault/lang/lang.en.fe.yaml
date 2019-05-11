@@ -7,11 +7,10 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: English language data for the front-end (last modified: 2019.05.05).
+# This file: English language data for the front-end (last modified: 2019.05.11).
 ##/
 
 Extended Description Bypasses: "The default signature bypass files normally included with the main package."
-Extended Description CIDRAM: "The main package (minus the signatures, documentation, and configuration)."
 Extended Description Chart.js: "Enables the front-end to generate pie charts.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a> is available via the <a href="https://opensource.org/licenses/MIT">MIT license</a>."
 Extended Description IPv4-Bogons: "Blocks bogon/martian CIDRs."
 Extended Description IPv4-ISPs: "Blocks dangerous and spammy ISPs."
@@ -65,7 +64,7 @@ config_PHPMailer_addReplyToName: "The reply name to cite when sending email via 
 config_PHPMailer_setFromAddress: "The sender address to cite when sending email via SMTP."
 config_PHPMailer_setFromName: "The sender name to cite when sending email via SMTP."
 config_experimental: "Unstable/Experimental!"
-config_general_FrontEndLog: "File for logging front-end login attempts. Specify a filename, or leave blank to disable."
+config_general_frontend_log: "File for logging front-end login attempts. Specify a filename, or leave blank to disable."
 config_general_allow_gethostbyaddr_lookup: "Allow gethostbyaddr lookups when UDP is unavailable? True = Yes [Default]; False = No."
 config_general_ban_override: "Override "forbid_on_block" when "infraction_limit" is exceeded? When overriding: Blocked requests return a blank page (template files aren't used). 200 = Don't override [Default]. Other values are the same as the available values for "forbid_on_block"."
 config_general_default_algo: "Defines which algorithm to use for all future passwords and sessions. Options: PASSWORD_DEFAULT (default), PASSWORD_BCRYPT, PASSWORD_ARGON2I (requires PHP &gt;= 7.2.0)."
@@ -85,8 +84,8 @@ config_general_log_rotation_action: "Log rotation limits the number of logfiles 
 config_general_log_rotation_limit: "Log rotation limits the number of logfiles that should exist at any one time. When new logfiles are created, if the total number of logfiles exceeds the specified limit, the specified action will be performed. You can specify the desired limit here. A value of 0 will disable log rotation."
 config_general_log_sanitisation: "When using the front-end logs page to view log data, CIDRAM sanitises the log data before displaying it, to protect users from XSS attacks and other potential threats that log data could contain. However, by default, data isn't sanitised during logging. This is to ensure that log data is preserved accurately, to aid any heuristic or forensic analysis that might be necessary in the future. However, in the event that a user attempts to read log data using external tools, and if those external tools don't perform their own sanitisation process, the user could be exposed to XSS attacks. If necessary, you can change the default behaviour using this configuration directive. True = Sanitise data when logging it (data is preserved less accurately, but XSS risk is lower). False = Don't sanitise data when logging it (data is preserved more accurately, but XSS risk is higher) [Default]."
 config_general_logfile: "Human readable file for logging all blocked access attempts. Specify a filename, or leave blank to disable."
-config_general_logfileApache: "Apache-style file for logging all blocked access attempts. Specify a filename, or leave blank to disable."
-config_general_logfileSerialized: "Serialised file for logging all blocked access attempts. Specify a filename, or leave blank to disable."
+config_general_logfile_apache: "Apache-style file for logging all blocked access attempts. Specify a filename, or leave blank to disable."
+config_general_logfile_serialized: "Serialised file for logging all blocked access attempts. Specify a filename, or leave blank to disable."
 config_general_maintenance_mode: "Enable maintenance mode? True = Yes; False = No [Default]. Disables everything other than the front-end. Sometimes useful for when updating your CMS, frameworks, etc."
 config_general_max_login_attempts: "Maximum number of login attempts."
 config_general_numbers: "How do you prefer numbers to be displayed? Select the example that looks the most correct to you."
@@ -95,8 +94,8 @@ config_general_search_engine_verification: "Attempt to verify requests from sear
 config_general_silent_mode: "Should CIDRAM silently redirect blocked access attempts instead of displaying the "Access Denied" page? If yes, specify the location to redirect blocked access attempts to. If no, leave this variable blank."
 config_general_social_media_verification: "Attempt to verify social media requests? Social media verification provides protection against fake social media requests (such requests will be blocked). True = Enable social media verification [Default]; False = Disable social media verification."
 config_general_statistics: "Track CIDRAM usage statistics? True = Yes; False = No [Default]."
-config_general_timeFormat: "The date/time notation format used by CIDRAM. Additional options may be added upon request."
-config_general_timeOffset: "Timezone offset in minutes."
+config_general_time_format: "The date/time notation format used by CIDRAM. Additional options may be added upon request."
+config_general_time_offset: "Timezone offset in minutes."
 config_general_timezone: "Your timezone."
 config_general_truncate: "Truncate logfiles when they reach a certain size? Value is the maximum size in B/KB/MB/GB/TB that a logfile may grow to before being truncated. The default value of 0KB disables truncation (logfiles can grow indefinitely). Note: Applies to individual logfiles! The size of logfiles is not considered collectively."
 config_legal_omit_hostname: "Omit hostnames from logs? True = Yes; False = No [Default]."
@@ -450,7 +449,7 @@ warning_signatures_1: "No signature files are active!"
 
 info_some_useful_links: |
  Some useful links:<br />
- <ul class="pieul">
+     <ul class="pieul">
        <li><span class="comCat" style="cursor:pointer">Tools, resources, etc for CIDRAM.</span>
          <ul class="comSub">
            <li><a href="https://github.com/CIDRAM/CIDRAM/issues">CIDRAM Issues @ GitHub</a> – Issues page for CIDRAM (support, assistance, etc).</li>

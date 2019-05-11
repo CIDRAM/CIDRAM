@@ -7,11 +7,10 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Turkish language data for the front-end (last modified: 2019.05.05).
+# This file: Turkish language data for the front-end (last modified: 2019.05.11).
 ##/
 
 Extended Description Bypasses: "Varsayılan imza bypass'lar, normalde ana paketle birlikte verilir."
-Extended Description CIDRAM: "Ana paket (hariç imzalar, belgeler, ve yapılandırma)."
 Extended Description Chart.js: "Ön uçların pasta grafikler oluşturmasını sağlar.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a>, <a href="https://opensource.org/licenses/MIT">MIT license</a> üzerinden kullanılabilir."
 Extended Description IPv4-Bogons: "Bogon/martian CIDR'leri engeller."
 Extended Description IPv4-ISPs: "Tehlikeli ve spam yapan ISS'leri engeller."
@@ -65,7 +64,7 @@ config_PHPMailer_addReplyToName: "SMTP ile e-posta gönderirken kullanılacak ce
 config_PHPMailer_setFromAddress: "SMTP ile e-posta gönderirken kullanılacak gönderen adresi."
 config_PHPMailer_setFromName: "SMTP ile e-posta gönderirken kullanılacak gönderenin adı."
 config_experimental: "Kararsız/Deneysel!"
-config_general_FrontEndLog: "Ön uç giriş denemelerini kaydetmek için kullanılan dosya. Dosya adı belirtin veya devre dışı bırakmak için boş bırakın."
+config_general_frontend_log: "Ön uç giriş denemelerini kaydetmek için kullanılan dosya. Dosya adı belirtin veya devre dışı bırakmak için boş bırakın."
 config_general_allow_gethostbyaddr_lookup: "UDP kullanılamadığında gethostbyaddr aramalarına izin verilsin mi? Doğru/True = Evet [Varsayılan]; Yanlış/False = Hayır."
 config_general_ban_override: ""infraction_limit" aşıldığında "forbid_on_block"u geçersiz kıl? Geçersiz kılarken: Engellenen istekler boş bir sayfa verir (şablon dosyaları kullanılmaz). 200 = [Varsayılan] değerini geçersiz kılmayın. Diğer değerler "forbid_on_block" için mevcut değerler ile aynıdır."
 config_general_default_algo: "Gelecekteki tüm şifreler ve oturumlar için hangi algoritmayı kullanacağını tanımlar. Options: PASSWORD_DEFAULT (varsayılan), PASSWORD_BCRYPT, PASSWORD_ARGON2I (PHP &gt;= 7.2.0 gerektirir)."
@@ -85,8 +84,8 @@ config_general_log_rotation_action: "Log rotasyonu, herhangi bir zamanda bulunma
 config_general_log_rotation_limit: "Log rotasyonu, herhangi bir zamanda bulunması gereken günlük dosyalarının sayısını sınırlar. Yeni log dosyaları oluşturulduğunda, toplam log dosya sayısı belirtilen sınırı aşarsa, belirtilen eylem gerçekleştirilecektir. İstenen sınırı burada belirtebilirsiniz. 0 değeri, log rotasyonunu devre dışı bırakır."
 config_general_log_sanitisation: "Günlük verilerini görüntülemek için ön uç günlükler sayfasını kullanırken, CIDRAM, kullanıcıları XSS ​​saldırılarından korumak için, günlük verilerini görüntülemeden önce hazırlar. Ancak bu normalde veriler ilk kaydedildiğinde gerçekleşmez. Bu, gerekli olabilecek gelecekteki analizlere yardımcı olmak için günlük verilerinin doğru bir şekilde korunmasını sağlamaktır. Bununla birlikte, kullanıcı verileri benzer şekilde işlemeyen harici araçları kullanarak günlük verilerini okumaya çalışırsa, kullanıcı XSS ​​saldırılarına maruz kalabilir. Gerekirse, bu yapılandırma direktifini kullanarak varsayılan davranışı değiştirebilirsiniz. True = Veriyi ilk kaydederken hazırlayın (daha az doğru, ancak daha az risk). False = Veriyi ilk kaydederken hazırlamayın (daha doğru, ancak daha risk) [Varsayılan]."
 config_general_logfile: "Engellenen tüm erişim girişimlerini kaydetmek için insanlar tarafından okunabilir dosya. Dosya adı belirtin veya devre dışı bırakmak için boş bırakın."
-config_general_logfileApache: "Engellenen tüm erişim girişimlerini kaydetmek için Apache tarzı dosya. Dosya adı belirtin veya devre dışı bırakmak için boş bırakın."
-config_general_logfileSerialized: "Engellenen tüm erişim girişimlerini kaydetmek için seri haline getirilmiş dosya. Dosya adı belirtin veya devre dışı bırakmak için boş bırakın."
+config_general_logfile_apache: "Engellenen tüm erişim girişimlerini kaydetmek için Apache tarzı dosya. Dosya adı belirtin veya devre dışı bırakmak için boş bırakın."
+config_general_logfile_serialized: "Engellenen tüm erişim girişimlerini kaydetmek için seri haline getirilmiş dosya. Dosya adı belirtin veya devre dışı bırakmak için boş bırakın."
 config_general_maintenance_mode: "Bakım modunu etkinleştirilsin mi? Doğru/True = Evet; Yanlış/False = Hayır [Varsayılan]. Ön uç haricindeki her şeyi devre dışı bırakır. Bazen CMS'nizi, çerçeveleri vb. güncellenirken yararlıdır."
 config_general_max_login_attempts: "Maksimum giriş denemesi sayısı."
 config_general_numbers: "Numaraların görüntülenmesini nasıl tercih edersiniz? Size en uygun görünen örneği seçin."
@@ -95,8 +94,8 @@ config_general_search_engine_verification: "Arama motorlarından gelen istekleri
 config_general_silent_mode: "CIDRAM, "Erişim Reddedildi" sayfasını göstermek yerine, engellenen erişim girişimlerini sessizce yönlendirmeli mi? Yanıt evet ise, engellenen erişim girişimleri için yeniden yönlendirilecek konumu belirtin. Yanıt hayır ise, bu değişkeni boş bırakın."
 config_general_social_media_verification: "Sosyal medya isteklerini doğrulamayı denemek mi istiyorsunuz? Sosyal medya doğrulama, sahte sosyal medya isteklerine karşı koruma sağlar (bu gibi istekler engellenir). True = Sosyal medya doğrulamasını etkinleştir [Varsayılan]; False = Sosyal medya doğrulamasını devre dışı bırak."
 config_general_statistics: "CIDRAM kullanım istatistiklerini takip et? Doğru/True = Evet; Yanlış/False = Hayır [Varsayılan]."
-config_general_timeFormat: "CIDRAM tarafından kullanılan tarih/saat gösterimi biçimi. İsteğe bağlı olarak ek seçenekler eklenebilir."
-config_general_timeOffset: "Dakika cinsinden zaman dilimi farkı."
+config_general_time_format: "CIDRAM tarafından kullanılan tarih/saat gösterimi biçimi. İsteğe bağlı olarak ek seçenekler eklenebilir."
+config_general_time_offset: "Dakika cinsinden zaman dilimi farkı."
 config_general_timezone: "Zaman diliminiz."
 config_general_truncate: "Belirli bir boyuta ulaştığında günlük dosyalarını kesin? Değer, bir günlük dosyasının kesilmeden önce büyüyebileceği B/KB/MB/GB/TB cinsinden maksimum boyuttur. Varsayılan 0KB değeri, kesmeyi devre dışı bırakır (günlük dosyaları sınırsız büyüyebilir). Not: Tek tek kayıt dosyaları için geçerlidir! Günlük dosyalarının boyutu toplam olarak alınmaz."
 config_legal_omit_hostname: "Ana bilgisayar adlarını günlük dosyalardan hariç tutuluyor mu? Doğru/True = Evet; Yanlış/False = Hayır [Varsayılan]."
@@ -444,7 +443,7 @@ warning_signatures_1: "Hiçbir imza dosyası aktif değil!"
 
 info_some_useful_links: |
  Bazı kullanışlı bağlantılar:<br />
- <ul class="pieul">
+     <ul class="pieul">
        <li><span class="comCat" style="cursor:pointer">CIDRAM için araçlar, kaynaklar, vb.</span>
          <ul class="comSub">
            <li><a href="https://github.com/CIDRAM/CIDRAM/issues">CIDRAM Sorunları @ GitHub</a> – CIDRAM için sorunlar sayfası (destek, yardım, vb).</li>

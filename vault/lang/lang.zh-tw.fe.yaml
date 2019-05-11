@@ -7,11 +7,10 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (traditional) language data for the front-end (last modified: 2019.05.05).
+# This file: Chinese (traditional) language data for the front-end (last modified: 2019.05.11).
 ##/
 
 Extended Description Bypasses: "標準簽名旁路文件通常包括在主包。"
-Extended Description CIDRAM: "主包（沒有簽名文件，文檔，和配置）。"
 Extended Description Chart.js: "使前端能夠生成餅圖。<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a>可通過<a href="https://opensource.org/licenses/MIT">MIT license</a>獲得。"
 Extended Description IPv4-Bogons: "阻止bogon/火星CIDR。"
 Extended Description IPv4-ISPs: "阻止危險和垃圾容易ISP。"
@@ -66,7 +65,7 @@ config_PHPMailer_addReplyToName: "通過SMTP發送電子郵件時引用的回複
 config_PHPMailer_setFromAddress: "通過SMTP發送電子郵件時引用的發件人地址。"
 config_PHPMailer_setFromName: "通過SMTP發送電子郵件時引用的發件人姓名。"
 config_experimental: "不穩定/實驗！"
-config_general_FrontEndLog: "前端登錄嘗試的錄音文件。​指定一個文件名，​或留空以禁用。"
+config_general_frontend_log: "前端登錄嘗試的錄音文件。​指定一個文件名，​或留空以禁用。"
 config_general_allow_gethostbyaddr_lookup: "當UDP不可用時允許gethostbyaddr查找？​True（真）=允許【標準】；False（假）=不允許。"
 config_general_ban_override: "覆蓋『forbid_on_block』當『infraction_limit』已被超過？​當覆蓋：已阻止的請求返回一個空白頁（不使用模板文件）。​200 = 不要覆蓋【標準】。​其他值與『forbid_on_block』的可用值相同。"
 config_general_default_algo: "定義要用於所有未來密碼和會話的算法。​選項：​PASSWORD_DEFAULT（標準），​PASSWORD_BCRYPT，​PASSWORD_ARGON2I（需要PHP &gt;= 7.2.0）。"
@@ -86,8 +85,8 @@ config_general_log_rotation_action: "日誌輪轉限制了任何時候應該存�
 config_general_log_rotation_limit: "日誌輪轉限制了任何時候應該存在的日誌文件的數量。​當新的日誌文件被創建時，如果日誌文件的指定的最大數量已經超過，將執行指定的操作。​您可以在此指定所需的限制。​值為『0』將禁用日誌輪轉。"
 config_general_log_sanitisation: "當使用前端日誌頁面查看日誌數據時，CIDRAM在顯示之前清理日誌數據。​這可以保護用戶免受XSS攻擊和其他潛在威脅。​但是，默認情況下，在記錄期間不會清理數據。​這是為了確保准確地保留日誌數據（可以幫助任何未來的啟發式或法醫分析）。​但是，如果用戶嘗試使用外部工具讀取日誌數據，如果這些外部工具不執行自己的清理過程，用戶可能會受到XSS攻擊。​如有必要，可以使用此配置指令更改默認行為。 True = 記錄數據時清理數據（數據保存不太準確，但XSS風險較低）。 False = 記錄數據時不要清理數據（數據保存得更準確，但XSS風險更高）【標準】。"
 config_general_logfile: "人類可讀文件用於記錄所有被攔截的訪問。​指定一個文件名，​或留空以禁用。"
-config_general_logfileApache: "Apache風格文件用於記錄所有被攔截的訪問。​指定一個文件名，​或留空以禁用。"
-config_general_logfileSerialized: "連載的文件用於記錄所有被攔截的訪問。​指定一個文件名，​或留空以禁用。"
+config_general_logfile_apache: "Apache風格文件用於記錄所有被攔截的訪問。​指定一個文件名，​或留空以禁用。"
+config_general_logfile_serialized: "連載的文件用於記錄所有被攔截的訪問。​指定一個文件名，​或留空以禁用。"
 config_general_maintenance_mode: "啟用維護模式？​True（真）=關閉；​False（假）=不關閉【標準】。​它停用一切以外前端。​有時候在更新CMS，框架，等時有用。"
 config_general_max_login_attempts: "最大登錄嘗試次數。"
 config_general_numbers: "您如何喜歡顯示數字？​選擇最適合示例。"
@@ -96,8 +95,8 @@ config_general_search_engine_verification: "嘗試驗證來自搜索引擎的請
 config_general_silent_mode: "CIDRAM應該默默重定向被攔截的訪問而不是顯示該『拒絕訪問』頁嗎？​指定位置至重定向被攔截的訪問，​或讓它空將其禁用。"
 config_general_social_media_verification: "嘗試驗證社交媒體請求？​社交媒體驗證可以防止虛假社交媒體請求（此類請求將被阻止）。​True（真）=啟用社交媒體驗證【標準】；​False（假）=禁用社交媒體驗證。"
 config_general_statistics: "跟踪CIDRAM使用情況統計？​True（真）=跟踪；False（假）=不跟踪【標準】。"
-config_general_timeFormat: "CIDRAM使用的日期符號格式。​可根據要求增加附加選項。"
-config_general_timeOffset: "時區偏移量（分鐘）。"
+config_general_time_format: "CIDRAM使用的日期符號格式。​可根據要求增加附加選項。"
+config_general_time_offset: "時區偏移量（分鐘）。"
 config_general_timezone: "您的時區。"
 config_general_truncate: "截斷日誌文件當他們達到一定的大小嗎？​值是在B/KB/MB/GB/TB，​是日誌文件允許的最大大小直到它被截斷。​默認值為『0KB』將禁用截斷（日誌文件可以無限成長）。​注意：適用於單個日誌文件！​日誌文件大小不被算集體的。"
 config_legal_omit_hostname: "從日誌文件中排除主機名？​True（真）=排除；False（假）=不排除【標準】。"
@@ -440,7 +439,7 @@ warning_signatures_1: "沒有簽名文件是活動的！"
 
 info_some_useful_links: |
  一些有用的链接：<br />
- <ul class="pieul">
+     <ul class="pieul">
        <li><span class="comCat" style="cursor:pointer">CIDRAM的工具，資源，等等。</span>
          <ul class="comSub">
            <li><a href="https://github.com/CIDRAM/CIDRAM/issues">CIDRAM問題＠GitHub</a> – CIDRAM問題頁面（支持，​協助，​等等）。</li>

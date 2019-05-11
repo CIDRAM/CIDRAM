@@ -254,6 +254,7 @@ $CIDRAM['Getter'] = function ($Haystack, $Offset, $Tag, $DefTag) {
  *
  * @param array $Files Which IPv4/IPv6 signature files to check against.
  * @param array $Factors Which CIDRs/factors to check against.
+ * @throws Exception if a triggered signature indicates a non-existent file to run.
  * @return bool Returns true.
  */
 $CIDRAM['CheckFactors'] = function (array $Files, array $Factors) use (&$CIDRAM) {
@@ -466,6 +467,7 @@ $CIDRAM['CheckFactors'] = function (array $Files, array $Factors) use (&$CIDRAM)
  *
  * @param string $Addr The IP address to check.
  * @param int $Retain Specifies whether we need to retain factors for later.
+ * @throws Exception if CheckFactors throws an exception.
  * @return bool Returns false if all tests fail, and otherwise, returns true.
  */
 $CIDRAM['RunTests'] = function ($Addr, $Retain = false) use (&$CIDRAM) {
@@ -582,7 +584,7 @@ $CIDRAM['FetchExpires'] = function ($in) {
  * @param string|array $In An input or an array of inputs to manipulate.
  * @return string|array The adjusted input(/s).
  */
-$CIDRAM['TimeFormat'] = function ($Time, $In) use (&$CIDRAM) {
+$CIDRAM['time_format'] = function ($Time, $In) use (&$CIDRAM) {
     $Time = date('dmYHisDMP', $Time);
     $values = [
         'dd' => substr($Time, 0, 2),

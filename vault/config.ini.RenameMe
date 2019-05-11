@@ -6,11 +6,11 @@ logfile=''
 
 ; Apache-style file for logging all blocked access attempts. Specify a
 ; filename, or leave blank to disable.
-logfileApache=''
+logfile_apache=''
 
 ; Serialised file for logging all blocked access attempts. Specify a filename,
 ; or leave blank to disable.
-logfileSerialized=''
+logfile_serialized=''
 
 ; Truncate logfiles when they reach a certain size? Value is the maximum size
 ; in B/KB/MB/GB/TB that a logfile may grow to before being truncated. The
@@ -37,11 +37,11 @@ log_rotation_action='Delete'
 timezone='SYSTEM'
 
 ; Timezone offset in minutes.
-timeOffset=0
+time_offset=0
 
 ; The date/time notation format used by CIDRAM. Additional options may be added
 ; upon request.
-timeFormat='{Day}, {dd} {Mon} {yyyy} {hh}:{ii}:{ss} {tz}'
+time_format='{Day}, {dd} {Mon} {yyyy} {hh}:{ii}:{ss} {tz}'
 
 ; Where to find the IP address of connecting requests? (Useful for services
 ; such as Cloudflare and the likes). Default = REMOTE_ADDR. WARNING: Don't
@@ -91,7 +91,7 @@ max_login_attempts=5
 
 ; File for logging front-end login attempts. Specify a filename, or leave blank
 ; to disable.
-FrontEndLog=''
+frontend_log=''
 
 ; Override "forbid_on_block" when "infraction_limit" is exceeded? When
 ; overriding: Blocked requests return a blank page (template files aren't

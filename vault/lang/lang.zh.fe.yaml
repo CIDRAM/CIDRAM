@@ -7,11 +7,10 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (simplified) language data for the front-end (last modified: 2019.05.05).
+# This file: Chinese (simplified) language data for the front-end (last modified: 2019.05.11).
 ##/
 
 Extended Description Bypasses: "标准签名旁路文件通常包括在主包。"
-Extended Description CIDRAM: "主包（没有签名文件，文档，和配置）。"
 Extended Description Chart.js: "使前端能够生成饼图。<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a>可通过<a href="https://opensource.org/licenses/MIT">MIT license</a>获得。"
 Extended Description IPv4-Bogons: "阻止bogon/火星CIDR。"
 Extended Description IPv4-ISPs: "阻止危险和垃圾容易ISP。"
@@ -66,7 +65,7 @@ config_PHPMailer_addReplyToName: "通过SMTP发送电子邮件时引用的回复
 config_PHPMailer_setFromAddress: "通过SMTP发送电子邮件时引用的发件人地址。"
 config_PHPMailer_setFromName: "通过SMTP发送电子邮件时引用的发件人姓名。"
 config_experimental: "不稳定/实验！"
-config_general_FrontEndLog: "前端登录尝试的录音文件。​指定一个文件名，​或留空以禁用。"
+config_general_frontend_log: "前端登录尝试的录音文件。​指定一个文件名，​或留空以禁用。"
 config_general_allow_gethostbyaddr_lookup: "当UDP不可用时允许gethostbyaddr查找？​True（真）=允许【标准】；False（假）=不允许。"
 config_general_ban_override: "覆盖“forbid_on_block”当“infraction_limit”已被超过？​当覆盖：已阻止的请求返回一个空白页（不使用模板文件）。​200 = 不要覆盖【标准】。​其他值与“forbid_on_block”的可用值相同。"
 config_general_default_algo: "定义要用于所有未来密码和会话的算法。​选项：​PASSWORD_DEFAULT（标准），​PASSWORD_BCRYPT，​PASSWORD_ARGON2I（需要PHP &gt;= 7.2.0）。"
@@ -86,8 +85,8 @@ config_general_log_rotation_action: "日志轮转限制了任何时候应该存�
 config_general_log_rotation_limit: "日志轮转限制了任何时候应该存在的日志文件的数量。​当新的日志文件被创建时，如果日志文件的指定的最大数量已经超过，将执行指定的操作。​您可以在此指定所需的限制。​值为“0”将禁用日志轮转。"
 config_general_log_sanitisation: "当使用前端日志页面查看日志数据时，CIDRAM在显示之前清理日志数据。​这可以保护用户免受XSS攻击和其他潜在威胁。​但是，默认情况下，在记录期间不会清理数据。​这是为了确保准确地保留日志数据（可以帮助任何未来的启发式或法医分析）。​但是，如果用户尝试使用外部工具读取日志数据，如果这些外部工具不执行自己的清理过程，用户可能会受到XSS攻击。​如有必要，可以使用此配置指令更改默认行为。 True = 记录数据时清理数据（数据保存不太准确，但XSS风险较低）。 False = 记录数据时不要清理数据（数据保存得更准确，但XSS风险更高）【标准】。"
 config_general_logfile: "人类可读文件用于记录所有被拦截的访问。​指定一个文件名，​或留空以禁用。"
-config_general_logfileApache: "Apache风格文件用于记录所有被拦截的访问。​指定一个文件名，​或留空以禁用。"
-config_general_logfileSerialized: "连载的文件用于记录所有被拦截的访问。​指定一个文件名，​或留空以禁用。"
+config_general_logfile_apache: "Apache风格文件用于记录所有被拦截的访问。​指定一个文件名，​或留空以禁用。"
+config_general_logfile_serialized: "连载的文件用于记录所有被拦截的访问。​指定一个文件名，​或留空以禁用。"
 config_general_maintenance_mode: "启用维护模式？​True（真）=关闭；​False（假）=不关闭【标准】。​它停用一切以外前端。​有时候在更新CMS，框架，等时有用。"
 config_general_max_login_attempts: "最大登录尝试次数。"
 config_general_numbers: "您如何喜欢显示数字？​选择最适合示例。"
@@ -96,8 +95,8 @@ config_general_search_engine_verification: "尝试验证来自搜索引擎的请
 config_general_silent_mode: "CIDRAM应该默默重定向被拦截的访问而不是显示该“拒绝访问”页吗？​指定位置至重定向被拦截的访问，​或让它空将其禁用。"
 config_general_social_media_verification: "尝试验证社交媒体请求？​社交媒体验证可以防止虚假社交媒体请求（此类请求将被阻止）。​True（真）=启用社交媒体验证【标准】；​False（假）=禁用社交媒体验证。"
 config_general_statistics: "跟踪CIDRAM使用情况统计？​True（真）=跟踪；False（假）=不跟踪【标准】。"
-config_general_timeFormat: "CIDRAM使用的日期符号格式。​可根据要求增加附加选项。"
-config_general_timeOffset: "时区偏移量（分钟）。"
+config_general_time_format: "CIDRAM使用的日期符号格式。​可根据要求增加附加选项。"
+config_general_time_offset: "时区偏移量（分钟）。"
 config_general_timezone: "您的时区。"
 config_general_truncate: "截断日志文件当他们达到一定的大小吗？​值是在B/KB/MB/GB/TB，​是日志文件允许的最大大小直到它被截断。​默认值为“0KB”将禁用截断（日志文件可以无限成长）。​注意：适用于单个日志文件！​日志文件大小不被算集体的。"
 config_legal_omit_hostname: "从日志文件中排除主机名？​True（真）=排除；False（假）=不排除【标准】。"
@@ -440,7 +439,7 @@ warning_signatures_1: "没有签名文件是活动的！"
 
 info_some_useful_links: |
  一些有用的链接：<br />
- <ul class="pieul">
+     <ul class="pieul">
        <li><span class="comCat" style="cursor:pointer">CIDRAM的工具，资源，等等。</span>
          <ul class="comSub">
            <li><a href="https://github.com/CIDRAM/CIDRAM/issues">CIDRAM问题＠GitHub</a> – CIDRAM问题页面（支持，​协助，​等等）。</li>

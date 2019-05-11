@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: reCAPTCHA module (last modified: 2019.04.03).
+ * This file: reCAPTCHA module (last modified: 2019.05.10).
  */
 
 /**
@@ -28,7 +28,7 @@ $CIDRAM['reCAPTCHA']['DoResponse'] = function () use (&$CIDRAM) {
 };
 
 /** Generate reCAPTCHA form template data. */
-$CIDRAM['reCAPTCHA']['GenerateTemplateData'] = function ($SiteKey, $API, $CookieWarn = false) {
+$CIDRAM['reCAPTCHA']['GenerateTemplateData'] = function (string $SiteKey, string $API, bool $CookieWarn = false): string {
     $CookieWarn = $CookieWarn ? '<br />{recaptcha_cookie_warning}' : '';
     return $API === 'Invisible' ?
         "\n<hr />\n<p class=\"detected\">{recaptcha_message_invisible}" . $CookieWarn . "<br /></p>\n" .
@@ -50,7 +50,7 @@ $CIDRAM['reCAPTCHA']['GenerateTemplateData'] = function ($SiteKey, $API, $Cookie
 };
 
 /** Generate reCAPTCHA callback data. */
-$CIDRAM['reCAPTCHA']['GenerateCallbackData'] = function ($SiteKey, $API) {
+$CIDRAM['reCAPTCHA']['GenerateCallbackData'] = function (string $SiteKey, string $API): string {
     $Params = "'gForm',{'sitekey':'" . $SiteKey . "'" . ($API === 'Invisible' ? ",'size':'invisible'" : '') . '}';
     $More = ($API === 'Invisible') ? "grecaptcha.execute();" : '';
     return
@@ -81,7 +81,7 @@ $CIDRAM['reCAPTCHA']['GeneratePassed'] = function () use (&$CIDRAM) {
 };
 
 /** Data generation container. */
-$CIDRAM['reCAPTCHA']['GenerateContainer'] = function ($CookieWarn = false) use (&$CIDRAM) {
+$CIDRAM['reCAPTCHA']['GenerateContainer'] = function (bool $CookieWarn = false) use (&$CIDRAM) {
     if (!$CIDRAM['reCAPTCHA']['Bypass']) {
         $CIDRAM['Config']['template_data']['recaptcha_api_include'] = $CIDRAM['reCAPTCHA']['GenerateCallbackData'](
             $CIDRAM['Config']['recaptcha']['sitekey'], $CIDRAM['Config']['recaptcha']['api']

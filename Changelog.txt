@@ -22,6 +22,16 @@ Versioning guidelines for SemVer can be found at: https://semver.org/
   into three distinct components; the "Core", the "Front-End", and the "Common
   Classes Package" (this should make future updates slightly more manageable).
 
+- [2019.05.10-11; Maikuolan]: Slightly refactored a handful of closures, fixed
+  some PHPDoc typos, and added PHP7-style type hinting and return type
+  declarations wherever applicable. Updated all common classes package classes
+  to the latest compatible versions.
+
+- [2019.05.11; Bug-fix; Maikuolan]: Wrong default parameter types supplied to
+  the Request closure by signature file webhook functionality, and to the
+  DNS-Resolve closure by hostname lookup functionality (detected after adding
+  type hinting); Fixed.
+
 === Version/Release 1.12.0 ===
 MINOR RELEASE.
 

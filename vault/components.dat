@@ -1,7 +1,7 @@
 ---
 CIDRAM Core:
  Name: CIDRAM Core
- Version: 2.0.0-DEV+19127386
+ Version: 2.0.0-DEV+19130224
  Minimum Required: 2.0.0
  Minimum Required PHP: 7.2.0
  Changelog: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v2/Changelog.txt
@@ -39,17 +39,17 @@ CIDRAM Core:
    - 10179b2ba344b5f7085f607835fbeec69452e055e6e45ed0be90c67075963d9e:11231
    - 1429f6d8612e64d042da321b0ce03584c5c4d2ebcc079c8cff1af8951592300a:7009
    - 0920b1ecf7832efdcc61102ac78b672aee16e77b057dab03533465503e24b767:12859
-   - a8df0420f4f20437999e0a90c5fa181cb6dbaa7b3f91eeb7e08494bbec4e7754:74778
+   - 696ce04a2b65d0198739bc0ddce3e97c10ba70ca8f7654d1ccefc4f61974ae36:74727
    - fdd080d73f3df2324cb63a34e4f9355418470787309e45362d2a1e993f2f7658:4953
-   - 2c80d666a560be1b6c3e65e4ca3e44b71325e0b06bb5989e463a27c1d2484e91:37087
-   - 99149fda6dddde2c3b20fb2f723f15e60269a1f94337d452fb8a412cd00fda1d:14409
+   - 38824e3e4e3992fdc396c972b4229086d758cbd91b6e55d10b9898b5d8a1e09d:37156
+   - 57382da21e29aed49d03033b89243656e182aef46bb02601ba8c6dfdea0ab9be:14463
    - 8163ce73314448654147cece0b62cb6bc3eb2ac001365cad22e121a5bfba892d:1120
    - 85a98a8fab21ffc4f9365c39674b51c1fa06ad40d4c8343696987240becb9c21:2394
    - 55de293e3a5e4694502a105f3b78f0e4d8ccdb4d8fc06d46d1fb89936905aa9f:4109
  Reannotate: components.dat
 CIDRAM Front-End:
  Name: CIDRAM Front-End
- Version: 2.0.0-DEV+19126754
+ Version: 2.0.0-DEV+19130224
  Minimum Required: 2.0.0
  Minimum Required PHP: 7.2.0
  Changelog: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v2/Changelog.txt
@@ -168,8 +168,8 @@ CIDRAM Front-End:
    - 660d1f7acd81d904d6429bf4cc961a9ea7ffc8bb3f2d252f2d13c873ff7ce53e:17536
    - 43bca69c59f443ff978a4d14107f8381127a13f88e75ba2a8c469adca1d2e55a:877
    - ebfbd6a90a244ad3f638cbe044dd661fa435ff4094fb63312346f786336b2960:996
-   - 3ac59665e6b1b059be3f3cd6a608543087d62c8e27df6c8e29e1e785f5c988f2:189737
-   - 2f7f23ab486ffb0e071f79a8822ddfc23e5b1cb173c78b8553664876c7f6fb9e:138527
+   - f28760d90ddd475e99dcdb6cc25ace28576d2c06c9ed95b23dedc2b5c1dfd226:189731
+   - f22e195fe3bca2093c410dc24b36a9b96f5b91f8ec1cf83b2f52f640556228c4:139248
  Reannotate: components.dat
 Common Classes Package:
  Name: Common Classes Package
@@ -191,11 +191,11 @@ Common Classes Package:
    - classes/Maikuolan/L10N.php
    - classes/Maikuolan/YAML.php
   Checksum:
-   - 1a306cb72299e2a8c5c452bcca3cef3237fbb4b5ff9e5bf148aead4ba4e0ae55:21791
-   - 62a71868a29c7f547571feab6815f58bdac93f2675af0cd5d4c46d89ebc96f6d:3460
-   - 5f26670d25414d51efa34d9f097a9067ea3d328717ac75baf39c673fe9919c3b:27753
-   - 3cf7f6740d13f159e9e657fc247e8f1b0a8ae61f5a8e0e6b6129ea1f35adade4:10134
-   - ad4c03dbb689ec66bfb20e3dd06711486abd129ed03a58a2fd0c5ec76bb3001c:10397
+   - cb1ca29a1d8c9558c8b7affbe160294f43cb3855666ec040838e3fbb07452b42:21873
+   - 7dfe74c41bf9468f4a8959a5ced98a86865e36a846ccb6f19a978e8f36a4dc73:3477
+   - 1bfb2bee56ef6aa898c52471ceb42ca576fdd5969392d2ee7fd0bfe2afc48e1a:27715
+   - 6fbb16325937863167b1cee6eb641d870bd807d86f8a1ceebfd27ccb7daa6337:10401
+   - 6ffb5cafda36867ee445249781cacc39b942e29e265e804678ae0431f6cc436b:10453
  Reannotate: components.dat
 IPv4:
  Extended Description: Default IPv4 signatures normally included with the main package. Blocks unwanted cloud services and non-human endpoints.
@@ -327,7 +327,7 @@ IPv6-Other:
  Reannotate: components.dat
 Bypasses:
  False Positive Risk: Low
- Version: 2019.126.754
+ Version: 2019.130.224
  Minimum Required: 2.0.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v2/vault/components.dat
  Uninstallable: true
@@ -342,9 +342,9 @@ Bypasses:
    - rules_softlayer.php
    - rules_specific.php
   Checksum:
-   - 5dfd99b6599d044d647a2fad16c62d57a68696a5cec4bd0e47998d8c60a85542:2609
-   - ea1af67a1f1495dbf973937bb95af5fd13971552ea56dd3d44c1e7b0f5a82ced:2331
-   - b82256dd8b7584dddef588157e31edc54514c0bc8b90841b5e43b68c04857468:3768
+   - c615f8549fb87f0d16d95023a34544387ef426d27cf9b31f4a6f91fa2444865d:2633
+   - 216b03a3cd1d52f609a74df70b8b88c01bbcdfe11bfafb990ae03a9cc58851e1:2355
+   - c0c14acc7b5e00b91d5e1e534bc91472b6d1331873e3dc5e90f50e1ebc44b4b1:3786
  Reannotate: components.dat
 l10n/en:
  Name: L10N: English

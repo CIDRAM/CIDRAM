@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Custom rules file for some specific CIDRs (last modified: 2019.04.30).
+ * This file: Extended rules for some specific CIDRs (last modified: 2019.05.10).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -27,7 +27,7 @@ if (!isset($CIDRAM['RunParamResCache'])) {
 }
 
 /** Define object for these rules for later recall. */
-$CIDRAM['RunParamResCache']['rules_specific.php'] = function ($Factors = [], $FactorIndex = 0, $LN = 0, $Tag = '') use (&$CIDRAM) {
+$CIDRAM['RunParamResCache']['rules_specific.php'] = function (array $Factors = [], int $FactorIndex = 0, int $LN = 0, string $Tag = '') use (&$CIDRAM) {
 
     /** Handle PSINet prefixes here. */
     if ($Tag === 'PSINet, Inc') {

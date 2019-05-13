@@ -1,15 +1,15 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_isps.dat
 
-# Version: 2019.125.247
-# Last modified: 2019.05.07
+# Version: 2019.132.604
+# Last modified: 2019.05.13
 
 
 # ---
 # ASN 29182 ("ISPsystem").
-# %Listed, Google Malware Dashboard: 2.51%.
-# Stop Forum Spam (SFS) listings: 7,031.
-# Updated: 2018.03.31 / Checked: 2018.12.19
+# %Listed, Google Malware Dashboard: 0.31%.
+# Stop Forum Spam (SFS) listings: 4,885.
+# Updated: 2018.03.31 / Checked: 2019.05.10
 
 2a01:230::/48 Deny Generic
 2a01:230:2::/47 Deny Generic
@@ -39,13 +39,22 @@ Tag: Vautron Rech. AG
 
 
 # ASN 38955 ("World4You Internet Services").
-# %Listed, Google Malware Dashboard: 0.30%.
-# Stop Forum Spam (SFS) listings: 1.
-# Updated: 2016.01.18 / Checked: 2018.11.19
+# %Listed, Google Malware Dashboard: 0.33%.
+# Updated: 2016.01.18 / Checked: 2019.05.10
 
 2a00:1a68::/32 Deny Generic
 Origin: AT
 Tag: World4You
+
+
+# ASNs 29073, 202425 ("IP Volume inc", formerly, "Quasi Networks LTD", formerly "Ecatel Network").
+# %Listed, Google Malware Dashboard: 0.16% (AS29073), 0.13% (AS202425).
+# Stop Forum Spam (SFS) listings: 13,260 (AS29073), 236 (AS202425).
+# Updated: 2019.05.10
+
+2a02:6c8:8000::/33 Deny Generic
+Origin: NL
+Tag: IP Volume inc
 
 
 # ASN 12880 ("Information Technology Company (ITC)").
@@ -227,9 +236,8 @@ recaptcha:
 
 
 # ASN 41011 ("CH-NET S.R.L").
-# %Listed, Google Malware Dashboard: 3.33%.
-# Stop Forum Spam (SFS) listings: 8.
-# Updated: 2017.06.28 / Checked: 2018.12.19
+# Stop Forum Spam (SFS) listings: 4.
+# Updated: 2017.06.28 / Checked: 2019.05.10
 
 2001:67c:2100::/48 Deny Generic
 2a06:afc0::/47 Deny Generic
@@ -324,16 +332,6 @@ Tag: 012 Smile
 ---
 recaptcha:
  enabled: true
-
-
-# ASN 51013 ("Websupport s.r.o").
-# %Listed, Google Malware Dashboard: 0.22%.
-# Stop Forum Spam (SFS) listings: 1.
-# Updated: 2017.09.22 / Checked: 2018.12.19
-
-2a00:4b40::/32 Deny Generic
-Origin: SK
-Tag: Websupport s.r.o
 
 
 # ASN 51191 ("Xirra GmbH").
@@ -493,9 +491,9 @@ Tag: TeNeT
 
 
 # ASN 31252 ("Starnet Servicii SRL").
-# %Listed, Google Malware Dashboard: 1.32%.
-# Stop Forum Spam (SFS) listings: 39,649.
-# Updated: 2017.03.11 / Checked: 2018.12.19
+# %Listed, Google Malware Dashboard: 0.55%.
+# Stop Forum Spam (SFS) listings: 57,744.
+# Updated: 2017.03.11 / Checked: 2019.05.10
 
 2a00:9900::/29 Deny Generic
 2a01:320::/29 Deny Generic
@@ -1396,11 +1394,11 @@ recaptcha:
 
 
 # ASN 8402 ("OJSC Vimpelcom").
-# %Listed, Google Malware Dashboard: 0.69%.
-# Stop Forum Spam (SFS) listings: 2,128.
+# %Listed, Google Malware Dashboard: 0.81%.
+# Stop Forum Spam (SFS) listings: 2,454.
 # Similarly to with the Rostelecom CIDRs, blocking the entirety of all "Vimpelcom" ASNs could be problematic. Instead,
 # we'll try to limit listings to those CIDRs known to be problematic (hacking events, spamming events, etc).
-# Updated: 2017.06.08 / Checked: 2019.01.01
+# Updated: 2017.06.08 / Checked: 2019.05.13
 
 2a00:18c0::/32 Deny Generic
 Origin: RU
@@ -1630,12 +1628,16 @@ recaptcha:
 
 # ASN 9009 ("M247 Ltd").
 # Multiplay network providing broadband connectivity, server leasing, line rental, webhosting services and others.
-# Some risk of false positives exists. To reduce this, when updating:
+# Anything marked as "server" or "host", we'll move to the cloud/hosting signature files. ^(.*(?:Host|Server).*)\x01$
+# Everything else can go in the ISPs signature files. When updating, to reduce the risk of false positives:
 # - Remove all subordinates of 38.0.0.0/8 from final aggregate (already blocked elsewhere and don't want duplicates).
 # - "Secure Internet LLC" mark as proxy (not generic).
-# Stop Forum Spam (SFS) listings: 101,346.
-# Updated: 2019.01.01
+# Stop Forum Spam (SFS) listings: 231,804.
+# Updated: 2019.05.13
 
+2604:17c0::/41 Deny Generic
+2604:17c0:80::/42 Deny Generic
+Origin: AQ
 2a03:f80:65::/48 Deny Generic
 Origin: AT
 2001:978:2305::/48 Deny Generic
@@ -1647,7 +1649,7 @@ Origin: EE
 2a01:300::/29 Deny Generic
 2a05:9f41:1a::/48 Deny Generic
 Origin: EU
-2001:ac8::/32 Deny Generic
+2001:ac8::/31 Deny Generic
 2a00:b320::/48 Deny Generic
 2a02:40::/32 Deny Generic
 2a02:710:1000:700::/56 Deny Generic
@@ -1666,6 +1668,7 @@ Origin: EU
 2a0a:b640:2::/47 Deny Generic
 Origin: GB
 2a00:55a0:5::/48 Deny Generic
+2a00:55a0:10::/48 Deny Generic
 2a00:55a0:ea00::/40 Deny Generic
 2a00:55a0:f000::/40 Deny Generic
 2a00:55a0:f900::/40 Deny Generic
@@ -1683,8 +1686,11 @@ Origin: LT
 2a07:9200:6::/48 Deny Generic
 2a0d:9980::/29 Deny Generic
 Origin: RO
+2a07:de00::/29 Deny Generic
+Origin: RU
 2001:550:1d05::/48 Deny Generic
 2607:6980:e710::/44 Deny Generic
+2a09:9bc0:a::/48 Deny Generic
 2a0d:5600:1::/48 Deny Generic
 2a0d:5600:2::/47 Deny Generic
 2a0d:5600:4::/46 Deny Generic
@@ -1695,7 +1701,7 @@ Origin: RO
 2a0d:5600:18::/48 Deny Generic
 2a0d:5600:20::/46 Deny Generic
 2a0d:5600:24::/47 Deny Generic
-2a0d:5600:32::/48 Deny Generic
+2a0d:5600:34::/48 Deny Generic
 2a0d:5600:a32::/48 Deny Generic
 Origin: US
 Tag: M247 Ltd

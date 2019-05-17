@@ -1,8 +1,8 @@
 # IPv4 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv4_isps.dat
 
-# Version: 2019.132.604
-# Last modified: 2019.05.13
+# Version: 2019.136.762
+# Last modified: 2019.05.17
 
 
 # ---
@@ -3254,11 +3254,13 @@ Origin: RU
 Tag: ALEXHOST SRL
 
 
-# ASNs 29656, 57872, 60558, 207134 ("PHOENIX NAP, LLC").
-# Updated: 2019.01.02
+# ASNs 11572, 29656, 57872, 60558, 207134 ("PHOENIX NAP, LLC").
+# Updated: 2019.05.17
 
 194.15.38.0/24 Deny Generic
 Origin: DE
+185.219.161.0/24 Deny Generic
+Origin: GB
 185.56.136.0/22 Deny Generic
 185.62.36.0/22 Deny Generic
 Origin: MT
@@ -3268,12 +3270,18 @@ Origin: MT
 Origin: NL
 23.235.232.0/21 Deny Generic
 45.59.24.0/24 Deny Generic
+63.214.166.0/23 Deny Generic
 64.38.214.0/23 Deny Generic
+64.38.249.0/24 Deny Generic
+64.38.250.0/24 Deny Generic
 66.78.18.0/23 Deny Generic
 67.227.30.0/24 Deny Generic
 104.193.181.0/24 Deny Generic
-131.153.16.0/21 Deny Generic
+104.244.52.0/24 Deny Generic
+131.153.16.0/20 Deny Generic
 131.153.40.0/23 Deny Generic
+131.153.65.0/24 Deny Generic
+131.153.82.0/24 Deny Generic
 131.153.86.0/23 Deny Generic
 131.153.96.0/23 Deny Generic
 131.153.98.0/24 Deny Generic

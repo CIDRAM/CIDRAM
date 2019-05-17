@@ -1,7 +1,7 @@
 ---
 CIDRAM:
  Name: CIDRAM
- Version: 1.12.1-DEV+19130612
+ Version: 1.12.1-DEV+19137836
  Minimum Required: 1.0.0
  Minimum Required PHP: 5.4.0
  Changelog: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/Changelog.txt
@@ -177,7 +177,7 @@ CIDRAM:
    - 095216bc177b88dc81c15c4d4e42bd49:877
    - 6333e24956c882f92e41b3c06b4088a6:996
    - 97819753b86e6bb497dd5446db1e0211fa0db0996753c0de6d97e79b72099309:189552
-   - c46113b7d739621a96622ea9dbee9348d7db2139f57c19ba7a806b54b683d21b:140874
+   - baac76144b5036659d8816b47fce8145d784b4b984470e1119c41bba3bd3327d:141303
    - d4a7ad3c87ddc72654ed268ffc5ae65004009467aca51a7b461dff3c91e326cb:75401
    - 9fd5988c25f0dd14e9c3352b6c24f89d21bb0db7808169ea580f398c5f9acc01:5590
    - 8e03209e7fc6641b45094e584340feff:83
@@ -191,7 +191,7 @@ CIDRAM:
 IPv4:
  Extended Description: Default IPv4 signatures normally included with the main package. Blocks unwanted cloud services and non-human endpoints.
  False Positive Risk: Low
- Version: 2019.132.604
+ Version: 2019.136.762
  Minimum Required: 1.0.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
  Uninstallable: true
@@ -201,7 +201,7 @@ IPv4:
   To:
    - ipv4.dat
   Checksum:
-   - e2e2c86e1249873aef41ba47fea53c79037805cf254a37eb2527d9c3727a09cd:695995
+   - b7b9913b52a4066fc30b54e48a72f1dcfe41be22e96277730dbbdf12626b8730:697055
  Used with: ipv4
  Reannotate: components.dat
 IPv4-Bogons:
@@ -223,7 +223,7 @@ IPv4-Bogons:
 IPv4-ISPs:
  Extended Description: Default IPv4 signatures normally included with the main package. Blocks dangerous and spammy ISPs.
  False Positive Risk: Medium
- Version: 2019.132.604
+ Version: 2019.136.762
  Minimum Required: 1.0.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
  Uninstallable: true
@@ -233,13 +233,13 @@ IPv4-ISPs:
   To:
    - ipv4_isps.dat
   Checksum:
-   - b4bbd83ac2db04f9ec141df4c936cd230568d542316553cab9fa5376843b9b94:271672
+   - a43c0e5c82e982f973915e246b72ea705815cd882352d2a8ff9cb7abb35eb094:271892
  Used with: ipv4
  Reannotate: components.dat
 IPv4-Other:
  Extended Description: Default IPv4 signatures normally included with the main package. Blocks CIDRs for proxies, VPNs, and other miscellaneous unwanted services.
  False Positive Risk: Medium
- Version: 2019.126.754
+ Version: 2019.136.762
  Minimum Required: 1.0.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
  Uninstallable: true
@@ -249,13 +249,13 @@ IPv4-Other:
   To:
    - ipv4_other.dat
   Checksum:
-   - 20fab1ff6e8d3aaf274a55662e15873049ecd7465a1282f96e4ba6d1ae98df6e:41934
+   - 32c9085bf05cb0d6f7ec8e627c75d97c926056878f908ddefc49f5f85858d066:41956
  Used with: ipv4
  Reannotate: components.dat
 IPv6:
  Extended Description: Default IPv6 signatures normally included with the main package. Blocks unwanted cloud services and non-human endpoints.
  False Positive Risk: Low
- Version: 2019.132.604
+ Version: 2019.136.762
  Minimum Required: 1.0.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
  Uninstallable: true
@@ -265,7 +265,7 @@ IPv6:
   To:
    - ipv6.dat
   Checksum:
-   - 63ca48557099c377555780c1413ee7bdc40fcaf7a314f8c0c46f886216139253:167071
+   - e4f46c114be5b56131a085bba2c03a7857e57cc6735626737f56433a397ba73b:167071
  Used with: ipv6
  Reannotate: components.dat
 IPv6-Bogons:
@@ -287,7 +287,7 @@ IPv6-Bogons:
 IPv6-ISPs:
  Extended Description: Default IPv6 signatures normally included with the main package. Blocks dangerous and spammy ISPs.
  False Positive Risk: Medium
- Version: 2019.132.604
+ Version: 2019.136.762
  Minimum Required: 1.0.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
  Uninstallable: true
@@ -297,7 +297,7 @@ IPv6-ISPs:
   To:
    - ipv6_isps.dat
   Checksum:
-   - f250724ce2242e8250b06d42f14495cb511b11518208cc2f0731f246436e06db:56355
+   - 5ced7c38956942e26d000f2ac595b0eca653e7fb7187a10b5517eb972ff97f24:56362
  Used with: ipv6
  Reannotate: components.dat
 IPv6-Other:
@@ -318,7 +318,7 @@ IPv6-Other:
  Reannotate: components.dat
 Bypasses:
  False Positive Risk: Low
- Version: 2019.129.591
+ Version: 2019.136.744
  Minimum Required: 1.0.0
  Minimum Required PHP: 5.4.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
@@ -334,9 +334,9 @@ Bypasses:
    - rules_softlayer.php
    - rules_specific.php
   Checksum:
-   - e881e880678e5e5a82f23e3cb8ad9523378bc28dc84f30f4a022c5e46aca9835:2691
-   - 2b866c968071f7d7578b58a15d6fe73d45f41de44e2671141c5f95636b7b6d6f:2413
-   - 550560ec98059296dbeb752908381d850f15c08631b82a4734d5a2b035e911d2:3925
+   - 1ae3e46d31ec276533ef4f36be5dafc7d8d91c505f9cee1d8e07705ef27e3c58:3035
+   - e40a66049e77cdc4b7d225f93504daf3b524e8b12287076477913d2052c0e552:2757
+   - c5559d5c7590aa57848616c6f133d5ca56dab2d395b32d81a2b45c66422d60d4:4269
  Reannotate: components.dat
 l10n/en:
  Name: L10N: English

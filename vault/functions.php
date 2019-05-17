@@ -584,7 +584,7 @@ $CIDRAM['FetchExpires'] = function ($in) {
  * @param string|array $In An input or an array of inputs to manipulate.
  * @return string|array The adjusted input(/s).
  */
-$CIDRAM['time_format'] = function ($Time, $In) use (&$CIDRAM) {
+$CIDRAM['TimeFormat'] = function ($Time, $In) use (&$CIDRAM) {
     $Time = date('dmYHisDMP', $Time);
     $values = [
         'dd' => substr($Time, 0, 2),

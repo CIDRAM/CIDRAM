@@ -57,7 +57,7 @@ $CIDRAM['Protect'] = (
 
 /** Prepare variables for block information (used if we kill the request). */
 $CIDRAM['BlockInfo'] = [
-    'DateTime' => $CIDRAM['time_format']($CIDRAM['Now'], $CIDRAM['Config']['general']['time_format']),
+    'DateTime' => $CIDRAM['TimeFormat']($CIDRAM['Now'], $CIDRAM['Config']['general']['time_format']),
     'Counter' => 0,
     'IPAddr' => $_SERVER[$CIDRAM['IPAddr']],
     'ScriptIdent' => $CIDRAM['ScriptIdent'],
@@ -690,7 +690,7 @@ if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
                 $CIDRAM['LogFileNames']['logfile'],
                 $CIDRAM['LogFileNames']['logfile_apache'],
                 $CIDRAM['LogFileNames']['logfile_serialized']
-            ) = $CIDRAM['time_format']($CIDRAM['Now'], [
+            ) = $CIDRAM['TimeFormat']($CIDRAM['Now'], [
                 $CIDRAM['Config']['general']['logfile'],
                 $CIDRAM['Config']['general']['logfile_apache'],
                 $CIDRAM['Config']['general']['logfile_serialized']

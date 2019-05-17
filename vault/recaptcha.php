@@ -267,7 +267,7 @@ if ($CIDRAM['Config']['recaptcha']['logfile'] && $CIDRAM['reCAPTCHA']['Loggable'
     /** Determining date/time information for the logfile name. */
     $CIDRAM['reCAPTCHA']['LogfileName'] = (
         strpos($CIDRAM['Config']['recaptcha']['logfile'], '{') !== false
-    ) ? $CIDRAM['time_format']($CIDRAM['Now'], $CIDRAM['Config']['recaptcha']['logfile']) : $CIDRAM['Config']['recaptcha']['logfile'];
+    ) ? $CIDRAM['TimeFormat']($CIDRAM['Now'], $CIDRAM['Config']['recaptcha']['logfile']) : $CIDRAM['Config']['recaptcha']['logfile'];
     $CIDRAM['reCAPTCHA']['WriteMode'] = (
         !file_exists($CIDRAM['Vault'] . $CIDRAM['reCAPTCHA']['LogfileName']) || (
             $CIDRAM['Config']['general']['truncate'] > 0 &&

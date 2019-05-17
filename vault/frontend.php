@@ -59,7 +59,7 @@ $CIDRAM['FE'] = [
     'ActiveConfigFile' => !empty($CIDRAM['Overrides']) ? $CIDRAM['Domain'] . '.config.ini' : 'config.ini',
 
     /** Current time and date. */
-    'DateTime' => $CIDRAM['time_format']($CIDRAM['Now'], $CIDRAM['Config']['general']['time_format']),
+    'DateTime' => $CIDRAM['TimeFormat']($CIDRAM['Now'], $CIDRAM['Config']['general']['time_format']),
 
     /** How the script identifies itself. */
     'ScriptIdent' => $CIDRAM['ScriptIdent'],
@@ -1276,7 +1276,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
                         }
                     }
                     if (strpos($CIDRAM['ChoiceValue'], '{') !== false) {
-                        $CIDRAM['ChoiceValue'] = $CIDRAM['time_format']($CIDRAM['Now'], $CIDRAM['ChoiceValue']);
+                        $CIDRAM['ChoiceValue'] = $CIDRAM['TimeFormat']($CIDRAM['Now'], $CIDRAM['ChoiceValue']);
                         if (strpos($CIDRAM['ChoiceValue'], '{') !== false) {
                             $CIDRAM['ChoiceValue'] = $CIDRAM['ParseVars']($CIDRAM['lang'], $CIDRAM['ChoiceValue']);
                         }
@@ -1414,7 +1414,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'cache-data' && $CIDRAM['FE']['P
                 if (isset($CIDRAM['CacheIndexData'][1])) {
                     $CIDRAM['CacheIndexData'][1] = base64_decode($CIDRAM['CacheIndexData'][1]);
                 }
-                $CIDRAM['CacheIndexData'][2] = ($CIDRAM['CacheIndexData'][2] >= 0 ? $CIDRAM['time_format'](
+                $CIDRAM['CacheIndexData'][2] = ($CIDRAM['CacheIndexData'][2] >= 0 ? $CIDRAM['TimeFormat'](
                     $CIDRAM['CacheIndexData'][2],
                     $CIDRAM['Config']['general']['time_format']
                 ) : $CIDRAM['L10N']->getString('label_never'));
@@ -3025,7 +3025,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-tracking' && $CIDRAM['FE']['
                 $CIDRAM['ThisTracking']['IPID'] . '\')},function(e){w(\'stateMsg\',e)})}" value="' .
                 $CIDRAM['L10N']->getString('field_clear') . '" />'
             : '';
-            $CIDRAM['ThisTracking']['Expiry'] = $CIDRAM['time_format'](
+            $CIDRAM['ThisTracking']['Expiry'] = $CIDRAM['TimeFormat'](
                 $CIDRAM['ThisTrackingArr']['Time'],
                 $CIDRAM['Config']['general']['time_format']
             );
@@ -3175,7 +3175,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'statistics' && $CIDRAM['FE']['P
 
     /** Statistics have been counted since... */
     $CIDRAM['FE']['Other-Since'] = '<span class="s">' . (
-        empty($CIDRAM['Statistics']['Other-Since']) ? '-' : $CIDRAM['time_format'](
+        empty($CIDRAM['Statistics']['Other-Since']) ? '-' : $CIDRAM['TimeFormat'](
             $CIDRAM['Statistics']['Other-Since'],
             $CIDRAM['Config']['general']['time_format']
         )

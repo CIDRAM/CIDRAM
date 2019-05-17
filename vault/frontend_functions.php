@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2019.05.11).
+ * This file: Front-end functions file (last modified: 2019.05.17).
  */
 
 /**
@@ -718,9 +718,9 @@ $CIDRAM['IsActivable'] = function (array &$Component): bool {
  * Activate component (front-end updates page).
  *
  * @param string $Type Value can be ipv4, ipv6, or modules.
- * @param array $ID Metadata of the component to activate.
+ * @param string $ID The ID of the component to activate.
  */
-$CIDRAM['ActivateComponent'] = function (string $Type, array $ID) use (&$CIDRAM) {
+$CIDRAM['ActivateComponent'] = function (string $Type, string $ID) use (&$CIDRAM) {
     $CIDRAM['Activation'][$Type] = array_unique(array_filter(
         explode(',', $CIDRAM['Activation'][$Type]),
         function ($Component) use (&$CIDRAM) {
@@ -750,9 +750,9 @@ $CIDRAM['ActivateComponent'] = function (string $Type, array $ID) use (&$CIDRAM)
  * Deactivate component (front-end updates page).
  *
  * @param string $Type Value can be ipv4, ipv6, or modules.
- * @param array $ID Metadata of the component to deactivate.
+ * @param string $ID The ID of the component to deactivate.
  */
-$CIDRAM['DeactivateComponent'] = function (string $Type, array $ID) use (&$CIDRAM) {
+$CIDRAM['DeactivateComponent'] = function (string $Type, string $ID) use (&$CIDRAM) {
     $CIDRAM['Deactivation'][$Type] = array_unique(array_filter(
         explode(',', $CIDRAM['Deactivation'][$Type]),
         function ($Component) use (&$CIDRAM) {
@@ -1588,7 +1588,11 @@ $CIDRAM['UpdatesHandler'] = function (string $Action, $ID = '') use (&$CIDRAM) {
 
 };
 
-/** Updates handler: Update a component. */
+/**
+ * Updates handler: Update a component.
+ *
+ * @param string|array $ID The ID (or array of IDs) of the component(/s) to update.
+ */
 $CIDRAM['UpdatesHandler-Update'] = function ($ID) use (&$CIDRAM) {
     $CIDRAM['Arrayify']($ID);
     $FileData = [];
@@ -1888,8 +1892,12 @@ $CIDRAM['UpdatesHandler-Update'] = function ($ID) use (&$CIDRAM) {
     unset($CIDRAM['RemoteFiles'], $CIDRAM['IgnoredFiles']);
 };
 
-/** Updates handler: Uninstall a component. */
-$CIDRAM['UpdatesHandler-Uninstall'] = function ($ID) use (&$CIDRAM) {
+/**
+ * Updates handler: Uninstall a component.
+ *
+ * @param string $ID The ID of the component to uninstall.
+ */
+$CIDRAM['UpdatesHandler-Uninstall'] = function (string $ID) use (&$CIDRAM) {
     $InUse = $CIDRAM['ComponentFunctionUpdatePrep']($ID);
     $CIDRAM['Components']['BytesRemoved'] = 0;
     $CIDRAM['Components']['TimeRequired'] = microtime(true);
@@ -1953,8 +1961,12 @@ $CIDRAM['UpdatesHandler-Uninstall'] = function ($ID) use (&$CIDRAM) {
     );
 };
 
-/** Updates handler: Activate a component. */
-$CIDRAM['UpdatesHandler-Activate'] = function ($ID) use (&$CIDRAM) {
+/**
+ * Updates handler: Activate a component.
+ *
+ * @param string $ID The ID of the component to activate.
+ */
+$CIDRAM['UpdatesHandler-Activate'] = function (string $ID) use (&$CIDRAM) {
     $CIDRAM['Activation'] = [
         'Config' => $CIDRAM['ReadFile']($CIDRAM['Vault'] . $CIDRAM['FE']['ActiveConfigFile']),
         'ipv4' => $CIDRAM['Config']['signatures']['ipv4'],
@@ -2011,8 +2023,12 @@ $CIDRAM['UpdatesHandler-Activate'] = function ($ID) use (&$CIDRAM) {
     unset($CIDRAM['Activation']);
 };
 
-/** Updates handler: Deactivate a component. */
-$CIDRAM['UpdatesHandler-Deactivate'] = function ($ID) use (&$CIDRAM) {
+/**
+ * Updates handler: Deactivate a component.
+ *
+ * @param string $ID The ID of the component to deactivate.
+ */
+$CIDRAM['UpdatesHandler-Deactivate'] = function (string $ID) use (&$CIDRAM) {
     $CIDRAM['Deactivation'] = [
         'Config' => $CIDRAM['ReadFile']($CIDRAM['Vault'] . $CIDRAM['FE']['ActiveConfigFile']),
         'ipv4' => $CIDRAM['Config']['signatures']['ipv4'],
@@ -2065,7 +2081,11 @@ $CIDRAM['UpdatesHandler-Deactivate'] = function ($ID) use (&$CIDRAM) {
     unset($CIDRAM['Deactivation']);
 };
 
-/** Updates handler: Verify a component. */
+/**
+ * Updates handler: Verify a component.
+ *
+ * @param string|array $ID The ID (or array of IDs) of the component(/s) to verify.
+ */
 $CIDRAM['UpdatesHandler-Verify'] = function ($ID) use (&$CIDRAM) {
     $CIDRAM['Arrayify']($ID);
     foreach ($ID as $ThisID) {
@@ -2308,8 +2328,13 @@ $CIDRAM['SectionsHandler'] = function (array $Files) use (&$CIDRAM): string {
     return $Out;
 };
 
-/** Tally IPv6 count. */
-$CIDRAM['RangeTablesTallyIPv6'] = function (&$Arr, $Range) {
+/**
+ * Tally IPv6 count.
+ *
+ * @param array $Arr
+ * @param int $Range (1-128)
+ */
+$CIDRAM['RangeTablesTallyIPv6'] = function (array &$Arr, int $Range) {
     $Order = ceil($Range / 16) - 1;
     $Arr[$Order] += pow(2, (128 - $Range) % 16);
 };
@@ -2709,7 +2734,7 @@ $CIDRAM['FELogger'] = function ($IPAddr, $User, $Message) use (&$CIDRAM) {
     if (!$CIDRAM['Config']['general']['frontend_log'] || empty($CIDRAM['FE']['DateTime'])) {
         return;
     }
-    $File = (strpos($CIDRAM['Config']['general']['frontend_log'], '{') !== false) ? $CIDRAM['time_format'](
+    $File = (strpos($CIDRAM['Config']['general']['frontend_log'], '{') !== false) ? $CIDRAM['TimeFormat'](
         $CIDRAM['Now'],
         $CIDRAM['Config']['general']['frontend_log']
     ) : $CIDRAM['Config']['general']['frontend_log'];
@@ -2745,14 +2770,14 @@ $CIDRAM['SendEmail'] = function (array $Recipients = [], $Subject = '', $Body = 
 
     /** Prepare event logging. */
     if ($CIDRAM['Config']['PHPMailer']['EventLog']) {
-        $EventLog = (strpos($CIDRAM['Config']['PHPMailer']['EventLog'], '{') !== false) ? $CIDRAM['time_format'](
+        $EventLog = (strpos($CIDRAM['Config']['PHPMailer']['EventLog'], '{') !== false) ? $CIDRAM['TimeFormat'](
             $CIDRAM['Now'],
             $CIDRAM['Config']['PHPMailer']['EventLog']
         ) : $CIDRAM['Config']['PHPMailer']['EventLog'];
         $EventLogData = ((
             $CIDRAM['Config']['legal']['pseudonymise_ip_addresses']
         ) ? $CIDRAM['Pseudonymise-IP']($_SERVER[$CIDRAM['IPAddr']]) : $_SERVER[$CIDRAM['IPAddr']]) . ' - ' . (
-            isset($CIDRAM['FE']['DateTime']) ? $CIDRAM['FE']['DateTime'] : $CIDRAM['time_format'](
+            isset($CIDRAM['FE']['DateTime']) ? $CIDRAM['FE']['DateTime'] : $CIDRAM['TimeFormat'](
                 $CIDRAM['Now'],
                 $CIDRAM['Config']['general']['time_format']
             )
@@ -3102,7 +3127,7 @@ $CIDRAM['ArrayToClickableList'] = function (array $Arr = [], $DeleteKey = '', $D
         } else {
             if ($Key === 'Time' && preg_match('~^\d+$~', $Value)) {
                 $Key = $CIDRAM['L10N']->getString('label_expires');
-                $Value = $CIDRAM['time_format']($Value, $CIDRAM['Config']['general']['time_format']);
+                $Value = $CIDRAM['TimeFormat']($Value, $CIDRAM['Config']['general']['time_format']);
             }
             $Class = ($Key === $CIDRAM['L10N']->getString('field_size') || $Key === $CIDRAM['L10N']->getString('label_expires')) ? 'txtRd' : 's';
             $Text = ($Count === 1 && $Key === 0) ? $Value : $Key . ($Class === 's' ? ' => ' : '') . $Value;

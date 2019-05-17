@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6.dat
 
-# Version: 2019.125.247
-# Last modified: 2019.05.07
+# Version: 2019.136.762
+# Last modified: 2019.05.17
 
 
 # ---
@@ -4276,7 +4276,7 @@ Tag: NEPHAX
 
 # ASN 52284 ("Panamaserver.com").
 # Stop Forum Spam (SFS) listings: 16.
-# Updated: 2016.07.10 / Checked: 2019.01.01
+# Updated: 2016.07.10 / Checked: 2019.05.17
 
 2803:200::/32 Deny Cloud
 Origin: PA
@@ -4316,8 +4316,8 @@ Tag: Link11 GmbH
 
 
 # ASN 30870 ("Trans-IX B.V").
-# %Listed, Google Malware Dashboard: 0.17%.
-# Updated: 2019.01.01
+# %Listed, Google Malware Dashboard: 0.12%.
+# Updated: 2019.05.13
 
 2001:16f8:15::/48 Deny Cloud
 2001:16f8:666::/48 Deny Cloud
@@ -4340,9 +4340,9 @@ Tag: Keyweb AG
 
 
 # ASN 10929 ("Netelligent Hosting Services Inc").
-# %Listed, Google Malware Dashboard: 0.08%.
-# Stop Forum Spam (SFS) listings: 19.
-# Updated: 2016.08.19 / Checked: 2018.12.31
+# %Listed, Google Malware Dashboard: 0.05%.
+# Stop Forum Spam (SFS) listings: 3.
+# Updated: 2016.08.19 / Checked: 2019.05.10
 
 2605:6f00:9000::/36 Deny Cloud
 2605:9000::/32 Deny Cloud
@@ -4359,15 +4359,13 @@ Origin: HK
 Tag: Powerbase DataCenter
 
 
-# ASNs 132412, 135511, 136565, 136566 ("CyberWorld Data Center").
-# Updated: 2018.06.10 / Checked: 2018.11.02
+# ASNs 135511, 136565, 136566 ("CyberWorld Data Center").
+# Updated: 2019.05.10
 
 2405:2500:5::/48 Deny Cloud
 2405:2500:11::/48 Deny Cloud
 2405:2500:25::/48 Deny Cloud
 2405:2500:26::/48 Deny Cloud
-2405:2500:50::/48 Deny Cloud
-2405:2500:55::/48 Deny Cloud
 2405:2500:65::/48 Deny Cloud
 Origin: TH
 Tag: CyberWorld
@@ -5933,9 +5931,9 @@ Tag: Exa Bytes Network
 
 # ASN 45731 ("ARDH GLOBAL INDONESIA, PT").
 # Malware detected on network; Future C&C risk.
-# %Listed, Google Malware Dashboard: 0.71%.
-# Stop Forum Spam (SFS) listings: 21.
-# Updated: 2018.06.19 / Checked: 2018.11.08
+# %Listed, Google Malware Dashboard: 0.90%.
+# Stop Forum Spam (SFS) listings: 39.
+# Updated: 2018.06.19 / Checked: 2019.05.10
 
 2001:df0:bc::/48 Deny Cloud
 Origin: ID
@@ -6141,10 +6139,9 @@ Tag: AS206898
 
 
 # ASNs 51862, 54548 ("ProfitBricks, Inc").
-# Added by user request. Dedicated hosting provider, so safe to block, but also not currently listed anywhere and
-# haven't personally seen any traffic from them, so possibly could be pointless to block. Will monitor for a while
-# though and see how it goes. Might delist if any problems are encountered.
-# Updated: 2018.12.31
+# Added by user request. Dedicated hosting provider.
+# %Listed, Google Malware Dashboard: 0.07%.
+# Updated: 2018.12.31 / Checked: 2019.05.10
 
 2a02:2478::/32 Deny Cloud
 2a02:247a::/32 Deny Cloud
@@ -6398,3 +6395,17 @@ Origin: NL
 2605:8681::/32 Deny Cloud
 Origin: US
 Tag: HugeServer Networks
+
+
+# ASN 9009 ("M247 Ltd").
+# Multiplay network providing broadband connectivity, server leasing, line rental, webhosting services and others.
+# Anything marked as "server" or "host", we'll move to the cloud/hosting signature files. ^(.*(?:Host|Server).*)\x01$
+# Everything else can go in the ISPs signature files. When updating, to reduce the risk of false positives:
+# - Remove all subordinates of 38.0.0.0/8 from final aggregate (already blocked elsewhere and don't want duplicates).
+# - "Secure Internet LLC" mark as proxy (not generic).
+# Stop Forum Spam (SFS) listings: 231,804.
+# Updated: 2019.05.13
+
+2001:ac8:44::/48 Deny Cloud
+Origin: GB
+Tag: M247 Ltd

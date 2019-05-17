@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2019.05.11).
+ * This file: Front-end functions file (last modified: 2019.05.17).
  */
 
 /**
@@ -722,9 +722,9 @@ $CIDRAM['IsActivable'] = function (array &$Component) {
  * Activate component (front-end updates page).
  *
  * @param string $Type Value can be ipv4, ipv6, or modules.
- * @param array $ID Metadata of the component to activate.
+ * @param string $ID The ID of the component to activate.
  */
-$CIDRAM['ActivateComponent'] = function ($Type, array $ID) use (&$CIDRAM) {
+$CIDRAM['ActivateComponent'] = function ($Type, $ID) use (&$CIDRAM) {
     $CIDRAM['Activation'][$Type] = array_unique(array_filter(
         explode(',', $CIDRAM['Activation'][$Type]),
         function ($Component) use (&$CIDRAM) {
@@ -754,9 +754,9 @@ $CIDRAM['ActivateComponent'] = function ($Type, array $ID) use (&$CIDRAM) {
  * Deactivate component (front-end updates page).
  *
  * @param string $Type Value can be ipv4, ipv6, or modules.
- * @param array $ID Metadata of the component to deactivate.
+ * @param string $ID The ID of the component to deactivate.
  */
-$CIDRAM['DeactivateComponent'] = function ($Type, array $ID) use (&$CIDRAM) {
+$CIDRAM['DeactivateComponent'] = function ($Type, $ID) use (&$CIDRAM) {
     $CIDRAM['Deactivation'][$Type] = array_unique(array_filter(
         explode(',', $CIDRAM['Deactivation'][$Type]),
         function ($Component) use (&$CIDRAM) {
@@ -1603,7 +1603,11 @@ $CIDRAM['UpdatesHandler'] = function ($Action, $ID = '') use (&$CIDRAM) {
 
 };
 
-/** Updates handler: Update a component. */
+/**
+ * Updates handler: Update a component.
+ *
+ * @param string|array $ID The ID (or array of IDs) of the component(/s) to update.
+ */
 $CIDRAM['UpdatesHandler-Update'] = function ($ID) use (&$CIDRAM) {
     $CIDRAM['Arrayify']($ID);
     $FileData = [];
@@ -1903,7 +1907,11 @@ $CIDRAM['UpdatesHandler-Update'] = function ($ID) use (&$CIDRAM) {
     unset($CIDRAM['RemoteFiles'], $CIDRAM['IgnoredFiles']);
 };
 
-/** Updates handler: Uninstall a component. */
+/**
+ * Updates handler: Uninstall a component.
+ *
+ * @param string $ID The ID of the component to uninstall.
+ */
 $CIDRAM['UpdatesHandler-Uninstall'] = function ($ID) use (&$CIDRAM) {
     $InUse = $CIDRAM['ComponentFunctionUpdatePrep']($ID);
     $CIDRAM['Components']['BytesRemoved'] = 0;
@@ -1968,7 +1976,11 @@ $CIDRAM['UpdatesHandler-Uninstall'] = function ($ID) use (&$CIDRAM) {
     );
 };
 
-/** Updates handler: Activate a component. */
+/**
+ * Updates handler: Activate a component.
+ *
+ * @param string $ID The ID of the component to activate.
+ */
 $CIDRAM['UpdatesHandler-Activate'] = function ($ID) use (&$CIDRAM) {
     $CIDRAM['Activation'] = [
         'Config' => $CIDRAM['ReadFile']($CIDRAM['Vault'] . $CIDRAM['FE']['ActiveConfigFile']),
@@ -2026,7 +2038,11 @@ $CIDRAM['UpdatesHandler-Activate'] = function ($ID) use (&$CIDRAM) {
     unset($CIDRAM['Activation']);
 };
 
-/** Updates handler: Deactivate a component. */
+/**
+ * Updates handler: Deactivate a component.
+ *
+ * @param string $ID The ID of the component to deactivate.
+ */
 $CIDRAM['UpdatesHandler-Deactivate'] = function ($ID) use (&$CIDRAM) {
     $CIDRAM['Deactivation'] = [
         'Config' => $CIDRAM['ReadFile']($CIDRAM['Vault'] . $CIDRAM['FE']['ActiveConfigFile']),
@@ -2080,7 +2096,11 @@ $CIDRAM['UpdatesHandler-Deactivate'] = function ($ID) use (&$CIDRAM) {
     unset($CIDRAM['Deactivation']);
 };
 
-/** Updates handler: Verify a component. */
+/**
+ * Updates handler: Verify a component.
+ *
+ * @param string|array $ID The ID (or array of IDs) of the component(/s) to verify.
+ */
 $CIDRAM['UpdatesHandler-Verify'] = function ($ID) use (&$CIDRAM) {
     $CIDRAM['Arrayify']($ID);
     foreach ($ID as $ThisID) {
@@ -2323,8 +2343,13 @@ $CIDRAM['SectionsHandler'] = function (array $Files) use (&$CIDRAM) {
     return $Out;
 };
 
-/** Tally IPv6 count. */
-$CIDRAM['RangeTablesTallyIPv6'] = function (&$Arr, $Range) {
+/**
+ * Tally IPv6 count.
+ *
+ * @param array $Arr
+ * @param int $Range (1-128)
+ */
+$CIDRAM['RangeTablesTallyIPv6'] = function (array &$Arr, $Range) {
     $Order = ceil($Range / 16) - 1;
     $Arr[$Order] += pow(2, (128 - $Range) % 16);
 };

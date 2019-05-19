@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2019.05.17).
+ * This file: Front-end functions file (last modified: 2019.05.18).
  */
 
 /**
@@ -687,7 +687,12 @@ $CIDRAM['FetchRemote'] = function () use (&$CIDRAM) {
     );
 };
 
-/** Fetch remote data (context-free). */
+/**
+ * Fetch remote data (context-free).
+ *
+ * @param string $RemoteData Where to put the remote data.
+ * @param string $Remote Where to get the remote data.
+ */
 $CIDRAM['FetchRemote-ContextFree'] = function (&$RemoteData, &$Remote) use (&$CIDRAM) {
     $RemoteData = $CIDRAM['FECacheGet']($CIDRAM['FE']['Cache'], $Remote);
     if (!$RemoteData) {
@@ -1536,7 +1541,12 @@ $CIDRAM['Traverse'] = function ($Path) {
     return !preg_match('~(?:[\./]{2}|[\x01-\x1f\[-^`?*$])~i', str_replace("\\", '/', $Path));
 };
 
-/** Sort function used by the front-end updates page. */
+/**
+ * Sort function used by the front-end updates page.
+ *
+ * @param string $A
+ * @param string $B
+ */
 $CIDRAM['UpdatesSortFunc'] = function ($A, $B) {
     static $Priority = '~^(?:CIDRAM|Common Classes Package|IPv[46]|l10n/)~i';
     $CheckA = preg_match($Priority, $A);
@@ -2354,8 +2364,14 @@ $CIDRAM['RangeTablesTallyIPv6'] = function (array &$Arr, $Range) {
     $Arr[$Order] += pow(2, (128 - $Range) % 16);
 };
 
-/** Finalise IPv6 count. */
-$CIDRAM['RangeTablesFinaliseIPv6'] = function ($Arr) {
+/**
+ * Finalise IPv6 count.
+ *
+ * @param array $Arr Values of the IPv6 octets.
+ * @return array A base value (first parameter), and the power it would need to
+ *      be raised by (second parameter) to accurately reflect the total amount.
+ */
+$CIDRAM['RangeTablesFinaliseIPv6'] = function (array $Arr) {
     for ($Iter = 7; $Iter > 0; $Iter--) {
         if (!empty($Arr[$Iter + 1])) {
             $Arr[$Iter] += (floor($Arr[$Iter + 1] / 655.36) / 100);
@@ -2365,6 +2381,7 @@ $CIDRAM['RangeTablesFinaliseIPv6'] = function ($Arr) {
             $Arr[$Iter - 1] += 1;
         }
     }
+    $Power = 0;
     foreach ($Arr as $Order => $Value) {
         if ($Value) {
             $Power = (7 - $Order) * 16;
@@ -2374,7 +2391,15 @@ $CIDRAM['RangeTablesFinaliseIPv6'] = function ($Arr) {
     return [$Value, $Power];
 };
 
-/** Fetch some data about CIDRs. */
+/**
+ * Fetch some data about CIDRs.
+ *
+ * @param string $Data The signature file data.
+ * @param int $Offset The current offset position.
+ * @param string $Needle A needle to identify the parts of the data we're looking for.
+ * @param bool $HasOrigin Whether the data has an origin tag.
+ * @return array|bool The CIDR's parameter and origin (when available), or false on failure.
+ */
 $CIDRAM['RangeTablesFetchLine'] = function (&$Data, &$Offset, &$Needle, &$HasOrigin) {
     $Check = strpos($Data, $Needle, $Offset);
     if ($Check !== false) {
@@ -2412,8 +2437,16 @@ $CIDRAM['RangeTablesFetchLine'] = function (&$Data, &$Offset, &$Needle, &$HasOri
     return false;
 };
 
-/** Iterate range tables files. */
-$CIDRAM['RangeTablesIterateFiles'] = function (&$Arr, $Files, $SigTypes, $MaxRange, $IPType) use (&$CIDRAM) {
+/**
+ * Iterate range tables files.
+ *
+ * @param array $Arr Where we're populating it all.
+ * @param array $Files The currently active (IPv4 or IPv6) signature files.
+ * @param array $SigTypes The various types of signatures supported.
+ * @param int $MaxRange (32 or 128).
+ * @param string $IPType (IPv4 or IPv6).
+ */
+$CIDRAM['RangeTablesIterateFiles'] = function (array &$Arr, array $Files, array $SigTypes, $MaxRange, $IPType) use (&$CIDRAM) {
     foreach ($Files as $File) {
         $File = (strpos($File, ':') === false) ? $File : substr($File, strpos($File, ':') + 1);
         $Data = $File && is_readable($CIDRAM['Vault'] . $File) ? $CIDRAM['ReadFile']($CIDRAM['Vault'] . $File) : '';
@@ -2470,8 +2503,28 @@ $CIDRAM['RangeTablesIterateFiles'] = function (&$Arr, $Files, $SigTypes, $MaxRan
     }
 };
 
-/** Iterate range tables data. */
-$CIDRAM['RangeTablesIterateData'] = function (&$Arr, &$Out, &$JS, $SigType, $MaxRange, $IPType, $ZeroPlus, $Class) use (&$CIDRAM) {
+/**
+ * Iterate range tables data.
+ *
+ * @param array $Arr
+ * @param array $Out
+ * @param string $JS
+ * @param string $SigType
+ * @param int $MaxRange (32 or 128).
+ * @param string $IPType (IPv4 or IPv6).
+ * @param string $ZeroPlus (txtGn, txtRd or txtOe, depending on the type of signature we're working with).
+ * @param string $Class The table entry class that our JavaScript will need to work with.
+ */
+$CIDRAM['RangeTablesIterateData'] = function (
+    array &$Arr,
+    array &$Out,
+    &$JS,
+    $SigType,
+    $MaxRange,
+    $IPType,
+    $ZeroPlus,
+    $Class
+) use (&$CIDRAM) {
     for ($Range = 1; $Range <= $MaxRange; $Range++) {
         $Size = '*Math.pow(2,' . ($MaxRange - $Range) . ')';
         if (count($Arr[$IPType][$SigType][$Range])) {
@@ -2581,8 +2634,14 @@ $CIDRAM['RangeTablesIterateData'] = function (&$Arr, &$Out, &$JS, $SigType, $Max
     }
 };
 
-/** Range tables handler. */
-$CIDRAM['RangeTablesHandler'] = function ($IPv4, $IPv6) use (&$CIDRAM) {
+/**
+ * Range tables handler.
+ *
+ * @param array $IPv4 The currently active IPv4 signature files.
+ * @param array $IPv6 The currently active IPv6 signature files.
+ * @return string Some JavaScript generated to populate the range tables data.
+ */
+$CIDRAM['RangeTablesHandler'] = function (array $IPv4, array $IPv6) use (&$CIDRAM) {
     $CIDRAM['FE']['rangeCatOptions'] = '';
     $Arr = ['IPv4' => [], 'IPv4-Origin' => [], 'IPv6' => [], 'IPv6-Origin' => []];
     $SigTypes = ['Run', 'Whitelist', 'Greylist', 'Deny'];
@@ -2650,7 +2709,13 @@ $CIDRAM['RangeTablesHandler'] = function ($IPv4, $IPv6) use (&$CIDRAM) {
     return $JS;
 };
 
-/** Assign some basic variables (initial prepwork for most front-end pages). */
+/**
+ * Assign some basic variables (initial prepwork for most front-end pages).
+ *
+ * @param string $Title The page title.
+ * @param string $Tips The page "tip" to include ("Hello username! Here you can...").
+ * @param bool $JS Whether to include the standard front-end JavaScript boilerplate.
+ */
 $CIDRAM['InitialPrepwork'] = function ($Title = '', $Tips = '', $JS = true) use (&$CIDRAM) {
 
     /** Set page title. */
@@ -2672,7 +2737,11 @@ $CIDRAM['InitialPrepwork'] = function ($Title = '', $Tips = '', $JS = true) use 
 
 };
 
-/** Send page output for front-end pages (plus some other final prepwork). */
+/**
+ * Send page output for front-end pages (plus some other final prepwork).
+ *
+ * @return string Page output.
+ */
 $CIDRAM['SendOutput'] = function () use (&$CIDRAM) {
     if ($CIDRAM['FE']['JS']) {
         $CIDRAM['FE']['JS'] = "\n<script type=\"text/javascript\">" . $CIDRAM['FE']['JS'] . '</script>';

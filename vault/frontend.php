@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2019.05.11).
+ * This file: Front-end handler (last modified: 2019.05.19).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -48,7 +48,7 @@ $CIDRAM['FE'] = [
     'FE_Lang' => $CIDRAM['Config']['general']['lang'],
 
     /** Font magnification. */
-    'Magnification' => $CIDRAM['Config']['template_data']['Magnification'],
+    'Magnification' => $CIDRAM['Config']['template_data']['magnification'],
 
     /** Warns if maintenance mode is enabled. */
     'MaintenanceWarning' => (

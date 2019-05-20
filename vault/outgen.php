@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Output generator (last modified: 2019.05.11).
+ * This file: Output generator (last modified: 2019.05.19).
  */
 
 /** Initialise cache. */
@@ -552,6 +552,9 @@ if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
         $CIDRAM['Config']['template_data']['textBlockAlign'] = 'text-align:right;';
         $CIDRAM['Config']['template_data']['textBlockFloat'] = 'float:right;';
     }
+
+    /** Provided for v1-v2 template file backwards compatibility. */
+    $CIDRAM['FieldTemplates']['Magnification'] = $CIDRAM['Config']['template_data']['magnification'];
 
     /** Prepare to process "more info" entries, if any exist. */
     if (!empty($CIDRAM['Config']['More Info']) && !empty($CIDRAM['BlockInfo']['ReasonMessage'])) {

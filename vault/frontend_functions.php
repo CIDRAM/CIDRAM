@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2019.05.17).
+ * This file: Front-end functions file (last modified: 2019.05.20).
  */
 
 /**
@@ -683,8 +683,13 @@ $CIDRAM['FetchRemote'] = function () use (&$CIDRAM) {
     );
 };
 
-/** Fetch remote data (context-free). */
-$CIDRAM['FetchRemote-ContextFree'] = function (&$RemoteData, &$Remote) use (&$CIDRAM) {
+/**
+ * Fetch remote data (context-free).
+ *
+ * @param string $RemoteData Where to put the remote data.
+ * @param string $Remote Where to get the remote data.
+ */
+$CIDRAM['FetchRemote-ContextFree'] = function (string &$RemoteData, string &$Remote) use (&$CIDRAM) {
     $RemoteData = $CIDRAM['FECacheGet']($CIDRAM['FE']['Cache'], $Remote);
     if (!$RemoteData) {
         $RemoteData = $CIDRAM['Request']($Remote);
@@ -1521,8 +1526,13 @@ $CIDRAM['Traverse'] = function (string $Path): bool {
     return !preg_match('~(?:[\./]{2}|[\x01-\x1f\[-^`?*$])~i', str_replace("\\", '/', $Path));
 };
 
-/** Sort function used by the front-end updates page. */
-$CIDRAM['UpdatesSortFunc'] = function ($A, $B) {
+/**
+ * Sort function used by the front-end updates page.
+ *
+ * @param string $A
+ * @param string $B
+ */
+$CIDRAM['UpdatesSortFunc'] = function (string $A, string $B) {
     static $Priority = '~^(?:CIDRAM|Common Classes Package|IPv[46]|l10n/)~i';
     $CheckA = preg_match($Priority, $A);
     $CheckB = preg_match($Priority, $B);
@@ -2339,8 +2349,14 @@ $CIDRAM['RangeTablesTallyIPv6'] = function (array &$Arr, int $Range) {
     $Arr[$Order] += pow(2, (128 - $Range) % 16);
 };
 
-/** Finalise IPv6 count. */
-$CIDRAM['RangeTablesFinaliseIPv6'] = function ($Arr) {
+/**
+ * Finalise IPv6 count.
+ *
+ * @param array $Arr Values of the IPv6 octets.
+ * @return array A base value (first parameter), and the power it would need to
+ *      be raised by (second parameter) to accurately reflect the total amount.
+ */
+$CIDRAM['RangeTablesFinaliseIPv6'] = function (array $Arr): array {
     for ($Iter = 7; $Iter > 0; $Iter--) {
         if (!empty($Arr[$Iter + 1])) {
             $Arr[$Iter] += (floor($Arr[$Iter + 1] / 655.36) / 100);
@@ -2350,6 +2366,7 @@ $CIDRAM['RangeTablesFinaliseIPv6'] = function ($Arr) {
             $Arr[$Iter - 1] += 1;
         }
     }
+    $Power = 0;
     foreach ($Arr as $Order => $Value) {
         if ($Value) {
             $Power = (7 - $Order) * 16;
@@ -2359,8 +2376,16 @@ $CIDRAM['RangeTablesFinaliseIPv6'] = function ($Arr) {
     return [$Value, $Power];
 };
 
-/** Fetch some data about CIDRs. */
-$CIDRAM['RangeTablesFetchLine'] = function (&$Data, &$Offset, &$Needle, &$HasOrigin) {
+/**
+ * Fetch some data about CIDRs.
+ *
+ * @param string $Data The signature file data.
+ * @param int $Offset The current offset position.
+ * @param string $Needle A needle to identify the parts of the data we're looking for.
+ * @param bool $HasOrigin Whether the data has an origin tag.
+ * @return array|bool The CIDR's parameter and origin (when available), or false on failure.
+ */
+$CIDRAM['RangeTablesFetchLine'] = function (string &$Data, int &$Offset, string &$Needle, bool &$HasOrigin) {
     $Check = strpos($Data, $Needle, $Offset);
     if ($Check !== false) {
         $NeedleLen = strlen($Needle);
@@ -2397,8 +2422,16 @@ $CIDRAM['RangeTablesFetchLine'] = function (&$Data, &$Offset, &$Needle, &$HasOri
     return false;
 };
 
-/** Iterate range tables files. */
-$CIDRAM['RangeTablesIterateFiles'] = function (&$Arr, $Files, $SigTypes, $MaxRange, $IPType) use (&$CIDRAM) {
+/**
+ * Iterate range tables files.
+ *
+ * @param array $Arr Where we're populating it all.
+ * @param array $Files The currently active (IPv4 or IPv6) signature files.
+ * @param array $SigTypes The various types of signatures supported.
+ * @param int $MaxRange (32 or 128).
+ * @param string $IPType (IPv4 or IPv6).
+ */
+$CIDRAM['RangeTablesIterateFiles'] = function (array &$Arr, array $Files, array $SigTypes, int $MaxRange, string $IPType) use (&$CIDRAM) {
     foreach ($Files as $File) {
         $File = (strpos($File, ':') === false) ? $File : substr($File, strpos($File, ':') + 1);
         $Data = $File && is_readable($CIDRAM['Vault'] . $File) ? $CIDRAM['ReadFile']($CIDRAM['Vault'] . $File) : '';
@@ -2455,8 +2488,28 @@ $CIDRAM['RangeTablesIterateFiles'] = function (&$Arr, $Files, $SigTypes, $MaxRan
     }
 };
 
-/** Iterate range tables data. */
-$CIDRAM['RangeTablesIterateData'] = function (&$Arr, &$Out, &$JS, $SigType, $MaxRange, $IPType, $ZeroPlus, $Class) use (&$CIDRAM) {
+/**
+ * Iterate range tables data.
+ *
+ * @param array $Arr
+ * @param array $Out
+ * @param string $JS
+ * @param string $SigType
+ * @param int $MaxRange (32 or 128).
+ * @param string $IPType (IPv4 or IPv6).
+ * @param string $ZeroPlus (txtGn, txtRd or txtOe, depending on the type of signature we're working with).
+ * @param string $Class The table entry class that our JavaScript will need to work with.
+ */
+$CIDRAM['RangeTablesIterateData'] = function (
+    array &$Arr,
+    array &$Out,
+    string &$JS,
+    string $SigType,
+    int $MaxRange,
+    string $IPType,
+    string $ZeroPlus,
+    string $Class
+) use (&$CIDRAM) {
     for ($Range = 1; $Range <= $MaxRange; $Range++) {
         $Size = '*Math.pow(2,' . ($MaxRange - $Range) . ')';
         if (count($Arr[$IPType][$SigType][$Range])) {
@@ -2566,8 +2619,14 @@ $CIDRAM['RangeTablesIterateData'] = function (&$Arr, &$Out, &$JS, $SigType, $Max
     }
 };
 
-/** Range tables handler. */
-$CIDRAM['RangeTablesHandler'] = function ($IPv4, $IPv6) use (&$CIDRAM) {
+/**
+ * Range tables handler.
+ *
+ * @param array $IPv4 The currently active IPv4 signature files.
+ * @param array $IPv6 The currently active IPv6 signature files.
+ * @return string Some JavaScript generated to populate the range tables data.
+ */
+$CIDRAM['RangeTablesHandler'] = function (array $IPv4, array $IPv6) use (&$CIDRAM): string {
     $CIDRAM['FE']['rangeCatOptions'] = '';
     $Arr = ['IPv4' => [], 'IPv4-Origin' => [], 'IPv6' => [], 'IPv6-Origin' => []];
     $SigTypes = ['Run', 'Whitelist', 'Greylist', 'Deny'];
@@ -2635,7 +2694,13 @@ $CIDRAM['RangeTablesHandler'] = function ($IPv4, $IPv6) use (&$CIDRAM) {
     return $JS;
 };
 
-/** Assign some basic variables (initial prepwork for most front-end pages). */
+/**
+ * Assign some basic variables (initial prepwork for most front-end pages).
+ *
+ * @param string $Title The page title.
+ * @param string $Tips The page "tip" to include ("Hello username! Here you can...").
+ * @param bool $JS Whether to include the standard front-end JavaScript boilerplate.
+ */
 $CIDRAM['InitialPrepwork'] = function ($Title = '', $Tips = '', $JS = true) use (&$CIDRAM) {
 
     /** Set page title. */
@@ -2657,8 +2722,12 @@ $CIDRAM['InitialPrepwork'] = function ($Title = '', $Tips = '', $JS = true) use 
 
 };
 
-/** Send page output for front-end pages (plus some other final prepwork). */
-$CIDRAM['SendOutput'] = function () use (&$CIDRAM) {
+/**
+ * Send page output for front-end pages (plus some other final prepwork).
+ *
+ * @return string Page output.
+ */
+$CIDRAM['SendOutput'] = function () use (&$CIDRAM): string {
     if ($CIDRAM['FE']['JS']) {
         $CIDRAM['FE']['JS'] = "\n<script type=\"text/javascript\">" . $CIDRAM['FE']['JS'] . '</script>';
     }
@@ -2693,8 +2762,8 @@ $CIDRAM['FileManager-IsLogFile'] = function ($File) use (&$CIDRAM) {
         $Pattern_reCAPTCHA_logfile = $CIDRAM['BuildLogPattern']($CIDRAM['Config']['recaptcha']['logfile'], true);
     }
     static $Pattern_PHPMailer_EventLog = false;
-    if (!$Pattern_PHPMailer_EventLog && $CIDRAM['Config']['PHPMailer']['EventLog']) {
-        $Pattern_PHPMailer_EventLog = $CIDRAM['BuildLogPattern']($CIDRAM['Config']['PHPMailer']['EventLog'], true);
+    if (!$Pattern_PHPMailer_EventLog && $CIDRAM['Config']['PHPMailer']['event_log']) {
+        $Pattern_PHPMailer_EventLog = $CIDRAM['BuildLogPattern']($CIDRAM['Config']['PHPMailer']['event_log'], true);
     }
     return preg_match('~\.log(?:\.gz)?$~', strtolower($File)) || (
         $CIDRAM['Config']['general']['logfile'] && preg_match($Pattern_logfile, $File)
@@ -2707,7 +2776,7 @@ $CIDRAM['FileManager-IsLogFile'] = function ($File) use (&$CIDRAM) {
     ) || (
         $CIDRAM['Config']['recaptcha']['logfile'] && preg_match($Pattern_reCAPTCHA_logfile, $File)
     ) || (
-        $CIDRAM['Config']['PHPMailer']['EventLog'] && preg_match($Pattern_PHPMailer_EventLog, $File)
+        $CIDRAM['Config']['PHPMailer']['event_log'] && preg_match($Pattern_PHPMailer_EventLog, $File)
     );
 };
 
@@ -2769,11 +2838,11 @@ $CIDRAM['SendEmail'] = function (array $Recipients = [], $Subject = '', $Body = 
     $EventLogData = '';
 
     /** Prepare event logging. */
-    if ($CIDRAM['Config']['PHPMailer']['EventLog']) {
-        $EventLog = (strpos($CIDRAM['Config']['PHPMailer']['EventLog'], '{') !== false) ? $CIDRAM['TimeFormat'](
+    if ($CIDRAM['Config']['PHPMailer']['event_log']) {
+        $EventLog = (strpos($CIDRAM['Config']['PHPMailer']['event_log'], '{') !== false) ? $CIDRAM['TimeFormat'](
             $CIDRAM['Now'],
-            $CIDRAM['Config']['PHPMailer']['EventLog']
-        ) : $CIDRAM['Config']['PHPMailer']['EventLog'];
+            $CIDRAM['Config']['PHPMailer']['event_log']
+        ) : $CIDRAM['Config']['PHPMailer']['event_log'];
         $EventLogData = ((
             $CIDRAM['Config']['legal']['pseudonymise_ip_addresses']
         ) ? $CIDRAM['Pseudonymise-IP']($_SERVER[$CIDRAM['IPAddr']]) : $_SERVER[$CIDRAM['IPAddr']]) . ' - ' . (
@@ -2913,7 +2982,7 @@ $CIDRAM['SendEmail'] = function (array $Recipients = [], $Subject = '', $Body = 
         fwrite($Handle, $EventLogData);
         fclose($Handle);
         if ($WriteMode === 'w') {
-            $CIDRAM['LogRotation']($CIDRAM['Config']['PHPMailer']['EventLog']);
+            $CIDRAM['LogRotation']($CIDRAM['Config']['PHPMailer']['event_log']);
         }
     }
 

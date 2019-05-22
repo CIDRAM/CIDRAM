@@ -244,16 +244,17 @@ recaptcha:
 # Careful when updating; Signatures reflect varying block reasons, separated by different tags in different files.
 # Section is split across multiple files.
 # %Listed, Google Malware Dashboard: 0.11%.
-# Stop Forum Spam (SFS) listings: 6,581.
+# Stop Forum Spam (SFS) listings: 6,103.
 
 # SoftLayer VPNs and proxies.
-# Includes: Anything citing "TEFINCOM", "VPN", "proxy", "Privat Kommunikation", "Secure Internet".
-# ^(.*(TEFINCOM|VPN|Proxy|Privat Kommunikation|Secure Internet).*)$
+# Includes: Anything citing "TEFINCOM", "Packet Flip", "VPN", "proxy", "Privat Kommunikation", "Secure Internet".
+# ^(.*(TEFINCOM|Packet Flip|VPN|Proxy|Privat Kommunikation|Secure Internet).*)$
 # Excludes: Everything else.
-# Updated: 2019.04.23
+# Updated: 2019.05.20
 
 185.99.135.0/24 Deny Proxy
 Origin: BY
+93.114.92.0/22 Deny Proxy
 185.153.176.0/23 Deny Proxy
 185.153.178.0/24 Deny Proxy
 185.161.200.0/23 Deny Proxy
@@ -287,6 +288,7 @@ Origin: SE
 104.143.95.0/24 Deny Proxy
 104.194.203.0/24 Deny Proxy
 104.194.218.0/24 Deny Proxy
+104.238.32.0/24 Deny Proxy
 104.238.45.0/24 Deny Proxy
 104.238.51.0/24 Deny Proxy
 104.238.62.0/24 Deny Proxy
@@ -359,11 +361,10 @@ Origin: DE
 Tag: F3 Netze e.V
 
 
-# "Packet Flip, LLC" (various non-specific ASNs).
-# Updated: 2018.09.01 / Checked: 2019.01.02
+# ASN 209519 ("Packet Flip, LLC").
+# Proxy service sometimes used by spammmers and other nefarious entities.
+# Updated: 2019.05.20
 
-45.72.120.0/24 Deny Proxy
-Origin: CA
 86.106.120.0/24 Deny Proxy
 89.35.164.0/22 Deny Proxy
 89.36.232.0/22 Deny Proxy
@@ -406,26 +407,7 @@ Origin: DE
 194.58.216.0/22 Deny Proxy
 194.135.48.0/22 Deny Proxy
 Origin: GB
-45.41.140.0/22 Deny Proxy
-45.43.2.0/23 Deny Proxy
-45.43.10.0/23 Deny Proxy
-45.43.12.0/22 Deny Proxy
-45.43.16.0/22 Deny Proxy
-45.43.20.0/24 Deny Proxy
-45.43.22.0/24 Deny Proxy
-45.43.24.0/24 Deny Proxy
-66.11.112.0/23 Deny Proxy
-66.11.114.0/24 Deny Proxy
-66.11.116.0/24 Deny Proxy
-66.11.118.0/24 Deny Proxy
-66.11.123.0/24 Deny Proxy
 74.91.32.0/20 Deny Proxy
-104.143.88.0/22 Deny Proxy
-104.194.192.0/22 Deny Proxy
-104.255.224.0/24 Deny Proxy
-104.255.226.0/24 Deny Proxy
-104.255.228.0/24 Deny Proxy
-104.255.230.0/24 Deny Proxy
 Origin: US
 Tag: Packet Flip
 

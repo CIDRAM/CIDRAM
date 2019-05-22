@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_isps.dat
 
-# Version: 2019.136.762
-# Last modified: 2019.05.17
+# Version: 2019.141.202
+# Last modified: 2019.05.22
 
 
 # ---
@@ -149,15 +149,6 @@ Tag: PT Excelcomindo
 ---
 recaptcha:
  enabled: true
-
-
-# ASN 48359 ("Hesabgar Pardaz Gharb Company").
-# Stop Forum Spam (SFS) listings: 183.
-# Updated: 2018.07.25 / Checked: 2019.01.02
-
-2a04:acc0::/29 Deny Spam
-Origin: IR
-Tag: AS48359
 
 
 # ASN 3223 ("Voxility LLC").
@@ -1729,13 +1720,13 @@ recaptcha:
 # Careful when updating; Signatures reflect varying block reasons, separated by different tags in different files.
 # Section is split across multiple files.
 # %Listed, Google Malware Dashboard: 0.11%.
-# Stop Forum Spam (SFS) listings: 6,581.
+# Stop Forum Spam (SFS) listings: 6,103.
 
 # SoftLayer questionable multi-play networks, spammy ISPs, etc.
 # Includes: Anything citing "Starry".
 # ^(.*(Starry).*)$
 # Excludes: Everything else.
-# Updated: 2018.06.24 / Checked: 2019.04.23
+# Updated: 2018.06.24 / Checked: 2019.05.20
 
 2403:ad80:10::/48 Deny Spam
 2403:ad80:20::/48 Deny Spam
@@ -1765,7 +1756,7 @@ recaptcha:
 # ASN 13249 ("IT Systems LLC").
 # Caught trying to hack into WordPress sites.
 # Stop Forum Spam (SFS) listings: 4.
-# Updated: 2018.07.28 / Checked: 2019.01.02
+# Updated: 2018.07.28 / Checked: 2019.05.22
 
 2a00:1d88::/32 Deny Generic
 Origin: UA

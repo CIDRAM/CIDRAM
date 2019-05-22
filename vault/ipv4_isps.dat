@@ -1,35 +1,35 @@
 # IPv4 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv4_isps.dat
 
-# Version: 2019.136.762
-# Last modified: 2019.05.17
+# Version: 2019.141.202
+# Last modified: 2019.05.22
 
 
 # ---
 # ASN 38197 ("Sun Network (Hong Kong) Limited").
 # %Listed, Google Malware Dashboard: 1.98%.
 # Stop Forum Spam (SFS) listings: 1,107.
-# Updated: 2019.01.02
+# Updated: 2019.05.19
 
 103.12.68.0/22 Deny Generic
-103.13.220.0/22 Deny Generic
 103.14.100.0/22 Deny Generic
 103.71.48.0/22 Deny Generic
 103.193.150.0/24 Deny Generic
 103.241.72.0/22 Deny Generic
-116.193.152.0/22 Deny Generic
 116.193.164.0/22 Deny Generic
 Origin: CN
 43.226.16.0/21 Deny Generic
 43.226.124.0/22 Deny Generic
 43.240.36.0/22 Deny Generic
 43.243.28.0/24 Deny Generic
-43.243.72.0/22 Deny Generic
+43.243.72.0/23 Deny Generic
+43.243.74.0/24 Deny Generic
 43.243.100.0/22 Deny Generic
 43.243.108.0/22 Deny Generic
 43.248.8.0/22 Deny Generic
 43.249.204.0/22 Deny Generic
-45.64.52.0/22 Deny Generic
+45.64.52.0/23 Deny Generic
+45.64.54.0/24 Deny Generic
 45.113.82.0/23 Deny Generic
 103.1.40.0/22 Deny Generic
 103.12.149.0/24 Deny Generic
@@ -51,7 +51,6 @@ Origin: CN
 103.231.28.0/22 Deny Generic
 103.231.164.0/22 Deny Generic
 103.253.140.0/22 Deny Generic
-103.254.108.0/22 Deny Generic
 111.223.244.0/22 Deny Generic
 112.213.96.0/21 Deny Generic
 112.213.104.0/22 Deny Generic
@@ -78,11 +77,14 @@ Origin: CN
 223.26.48.0/20 Deny Generic
 Origin: HK
 45.195.146.0/24 Deny Generic
-45.195.198.0/24 Deny Generic
 154.85.97.0/24 Deny Generic
 154.85.98.0/24 Deny Generic
 154.91.171.0/24 Deny Generic
 Origin: SC
+27.50.63.0/24 Deny Generic
+Origin: SG
+185.184.220.0/23 Deny Generic
+Origin: UA
 Tag: Sun Network HK
 ---
 recaptcha:
@@ -800,14 +802,20 @@ recaptcha:
 
 
 # ASN 48359 ("Hesabgar Pardaz Gharb Company").
-# Stop Forum Spam (SFS) listings: 183.
-# Updated: 2019.01.02
+# Stop Forum Spam (SFS) listings: 364.
+# Updated: 2019.05.19
 
+5.159.49.0/24 Deny Spam
+5.159.54.0/24 Deny Spam
+82.97.240.0/24 Deny Spam
+82.97.242.0/24 Deny Spam
+82.97.244.0/23 Deny Spam
+82.97.247.0/24 Deny Spam
+82.97.248.0/21 Deny Spam
 93.110.96.0/19 Deny Spam
 93.110.128.0/21 Deny Spam
 185.47.48.0/22 Deny Spam
 185.82.64.0/22 Deny Spam
-185.120.136.0/22 Deny Spam
 185.121.56.0/22 Deny Spam
 185.125.20.0/22 Deny Spam
 185.137.60.0/22 Deny Spam
@@ -9583,13 +9591,13 @@ recaptcha:
 # Careful when updating; Signatures reflect varying block reasons, separated by different tags in different files.
 # Section is split across multiple files.
 # %Listed, Google Malware Dashboard: 0.11%.
-# Stop Forum Spam (SFS) listings: 6,581.
+# Stop Forum Spam (SFS) listings: 6,103.
 
 # SoftLayer questionable multi-play networks, spammy ISPs, etc.
 # Includes: Anything citing "Starry".
 # ^(.*(Starry).*)$
 # Excludes: Everything else.
-# Updated: 2018.06.24 / Checked: 2019.04.23
+# Updated: 2018.06.24 / Checked: 2019.05.20
 
 103.56.216.0/24 Deny Spam
 103.56.218.0/23 Deny Spam
@@ -9686,7 +9694,7 @@ recaptcha:
 # ASN 13249 ("IT Systems LLC").
 # Caught trying to hack into WordPress sites.
 # Stop Forum Spam (SFS) listings: 4.
-# Updated: 2018.07.28 / Checked: 2019.01.02
+# Updated: 2018.07.28 / Checked: 2019.05.22
 
 185.183.108.0/22 Deny Generic
 193.16.105.0/24 Deny Generic

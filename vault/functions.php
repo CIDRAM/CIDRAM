@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2019.05.11).
+ * This file: Functions file (last modified: 2019.05.26).
  */
 
 /**
@@ -81,7 +81,7 @@ $CIDRAM['ParseVars'] = function (array $Needle, $Haystack) {
 /**
  * Fetches instructions from the `ignore.dat` file.
  *
- * @return bool Which sections should be ignored by CIDRAM.
+ * @return array An array listing the sections that CIDRAM should ignore.
  */
 $CIDRAM['FetchIgnores'] = function () use (&$CIDRAM) {
     $IgnoreMe = [];
@@ -243,6 +243,12 @@ $CIDRAM['ExpandIPv6'] = function ($Addr, $ValidateOnly = false, $FactorLimit = 1
 
 /**
  * Gets tags from signature files.
+ *
+ * @param string $Haystack The haystack to search within for the target tag.
+ * @param int $Offset The position to start searching from within the haystack.
+ * @param string $Tag The tag we're trying to get.
+ * @param string $DefTag The value to use when the target tag isn't found.
+ * @return string The value of the tag we're trying to get, or of DefTag.
  */
 $CIDRAM['Getter'] = function ($Haystack, $Offset, $Tag, $DefTag) {
     $Key = "\n" . $Tag . ': ';
@@ -363,7 +369,7 @@ $CIDRAM['CheckFactors'] = function (array $Files, array $Factors) use (&$CIDRAM)
                 if (!$PosB = strpos($Files[$FileIndex], "\n", $PosA)) {
                     break;
                 }
-                if ($DefersTo = $CIDRAM['Getter']($Files[$FileIndex], $PosA, 'Defers to', false)) {
+                if ($DefersTo = $CIDRAM['Getter']($Files[$FileIndex], $PosA, 'Defers to', '')) {
                     $DefersTo = preg_quote($DefersTo);
                     if (
                         preg_match('~(?:^|,)' . $DefersTo . '(?:$|,)~i', $CIDRAM['Config']['signatures']['ipv4']) ||
@@ -373,7 +379,7 @@ $CIDRAM['CheckFactors'] = function (array $Files, array $Factors) use (&$CIDRAM)
                     }
                 }
                 if (
-                    ($Expires = $CIDRAM['Getter']($Files[$FileIndex], $PosA, 'Expires', false)) &&
+                    ($Expires = $CIDRAM['Getter']($Files[$FileIndex], $PosA, 'Expires', '')) &&
                     ($Expires = $CIDRAM['FetchExpires']($Expires)) &&
                     $Expires < $CIDRAM['Now']
                 ) {
@@ -384,7 +390,7 @@ $CIDRAM['CheckFactors'] = function (array $Files, array $Factors) use (&$CIDRAM)
                     continue;
                 }
                 $Origin = (
-                    $Origin = $CIDRAM['Getter']($Files[$FileIndex], $PosA, 'Origin', false)
+                    $Origin = $CIDRAM['Getter']($Files[$FileIndex], $PosA, 'Origin', '')
                 ) ? ', [' . $Origin . ']' : '';
                 if (
                     ($PosX = strpos($Files[$FileIndex], "\n---\n", $PosA)) &&
@@ -478,9 +484,9 @@ $CIDRAM['CheckFactors'] = function (array $Files, array $Factors) use (&$CIDRAM)
  * Initialises all IPv4/IPv6 tests.
  *
  * @param string $Addr The IP address to check.
- * @param int $Retain Specifies whether we need to retain factors for later.
+ * @param bool $Retain Specifies whether we need to retain factors for later.
  * @throws Exception if CheckFactors throws an exception.
- * @return bool Returns false if all tests fail, and otherwise, returns true.
+ * @return bool Returns false if all tests fail, or true otherwise.
  */
 $CIDRAM['RunTests'] = function ($Addr, $Retain = false) use (&$CIDRAM) {
     if (!isset($CIDRAM['BlockInfo'])) {
@@ -621,6 +627,9 @@ $CIDRAM['TimeFormat'] = function ($Time, $In) use (&$CIDRAM) {
 /**
  * Fix incorrect typecasting for some for some variables that sometimes default
  * to strings instead of booleans or integers.
+ *
+ * @param mixed $Var The variable to fix (passed by reference).
+ * @param string $Type The type (or pseudo-type) to cast the variable to.
  */
 $CIDRAM['AutoType'] = function (&$Var, $Type = '') use (&$CIDRAM) {
     if ($Type === 'string' || $Type === 'timezone') {
@@ -651,13 +660,10 @@ $CIDRAM['AutoType'] = function (&$Var, $Type = '') use (&$CIDRAM) {
  * @param string $URI The resource to request.
  * @param array $Params An optional associative array of key-value pairs to
  *      send with the request.
- * @param string $Timeout An optional timeout limit (defaults to 12 seconds).
+ * @param int $Timeout An optional timeout limit.
  * @return string The results of the request.
  */
-$CIDRAM['Request'] = function ($URI, array $Params = [], $Timeout = '') use (&$CIDRAM) {
-    if (!$Timeout) {
-        $Timeout = $CIDRAM['Timeout'];
-    }
+$CIDRAM['Request'] = function ($URI, array $Params = [], $Timeout = -1) use (&$CIDRAM) {
 
     /** Initialise the cURL session. */
     $Request = curl_init($URI);
@@ -680,7 +686,7 @@ $CIDRAM['Request'] = function ($URI, array $Params = [], $Timeout = '') use (&$C
     curl_setopt($Request, CURLOPT_FOLLOWLOCATION, true);
     curl_setopt($Request, CURLOPT_MAXREDIRS, 1);
     curl_setopt($Request, CURLOPT_RETURNTRANSFER, true);
-    curl_setopt($Request, CURLOPT_TIMEOUT, $Timeout);
+    curl_setopt($Request, CURLOPT_TIMEOUT, ($Timeout > 0 ? $Timeout : $CIDRAM['Timeout']));
     curl_setopt($Request, CURLOPT_USERAGENT, $CIDRAM['ScriptUA']);
 
     /** Execute and get the response. */
@@ -691,6 +697,7 @@ $CIDRAM['Request'] = function ($URI, array $Params = [], $Timeout = '') use (&$C
 
     /** Return the results of the request. */
     return $Response;
+
 };
 
 /**
@@ -703,7 +710,7 @@ $CIDRAM['Request'] = function ($URI, array $Params = [], $Timeout = '') use (&$C
  *
  * @param string $Addr The IP address to look up.
  * @param string $DNS An optional, comma delimited list of DNS servers to use.
- * @param string $Timeout The timeout limit (optional; defaults to 5 seconds).
+ * @param int $Timeout The timeout limit (optional; defaults to 5 seconds).
  * @return string The hostname on success, or the IP address on failure.
  */
 $CIDRAM['DNS-Reverse'] = function ($Addr, $DNS = '', $Timeout = 5) use (&$CIDRAM) {
@@ -829,11 +836,14 @@ $CIDRAM['DNS-Reverse'] = function ($Addr, $DNS = '', $Timeout = 5) use (&$CIDRAM
 };
 
 /** Aliases for "DNS-Reverse". */
-$CIDRAM['DNS-Reverse-IPv4'] = $CIDRAM['DNS-Reverse-IPv6'] = function ($Addr, $DNS = '', $Timeout = 5) use (&$CIDRAM) {
-    return $CIDRAM['DNS-Reverse']($Addr, $DNS, $Timeout);
-};
+$CIDRAM['DNS-Reverse-IPv4'] = $CIDRAM['DNS-Reverse-IPv6'] = $CIDRAM['DNS-Reverse'];
 
-/** Fallback for failed lookups. */
+/**
+ * Fallback for failed lookups.
+ *
+ * @param string $Addr The IP address to look up.
+ * @return string The results of gethostbyaddr(), or the IP address verbatim.
+ */
 $CIDRAM['DNS-Reverse-Fallback'] = function ($Addr) use (&$CIDRAM) {
     $CIDRAM['DNS-Reverses'][$Addr] = ['Host' => $Addr, 'Time' => $CIDRAM['Now'] + 21600];
     $CIDRAM['DNS-Reverses-Modified'] = true;
@@ -851,7 +861,7 @@ $CIDRAM['DNS-Reverse-Fallback'] = function ($Addr) use (&$CIDRAM) {
  * problems normally associated with using "gethostbyname").
  *
  * @param string $Host The hostname to look up.
- * @param string $Timeout The timeout limit (optional; defaults to 5 seconds).
+ * @param int $Timeout The timeout limit (optional; defaults to 5 seconds).
  * @return string The IP address on success, or an empty string on failure.
  */
 $CIDRAM['DNS-Resolve'] = function ($Host, $Timeout = 5) use (&$CIDRAM) {
@@ -1201,7 +1211,11 @@ $CIDRAM['ClearExpired'] = function (&$List, &$Check) use (&$CIDRAM) {
     }
 };
 
-/** If input isn't an array, make it so. Remove empty elements. */
+/**
+ * If input isn't an array, make it so. Remove empty elements.
+ *
+ * @param mixed $Input
+ */
 $CIDRAM['Arrayify'] = function (&$Input) {
     if (!is_array($Input)) {
         $Input = [$Input];
@@ -1487,7 +1501,13 @@ $CIDRAM['DeleteDirectory'] = function ($Dir) use (&$CIDRAM) {
     }
 };
 
-/** Convert configuration directives for logfiles to regexable patterns. */
+/**
+ * Convert log file configuration directives to regular expressions.
+ *
+ * @param string $Str The log file configuration directive to work with.
+ * @param bool $GZ Whether to include GZ files in the resulting expression.
+ * @return string A corresponding regular expression.
+ */
 $CIDRAM['BuildLogPattern'] = function ($Str, $GZ = false) {
     return '~^' . preg_replace(
         ['~\\\{(?:dd|mm|yy|hh|ii|ss)\\\}~i', '~\\\{yyyy\\\}~i', '~\\\{(?:Day|Mon)\\\}~i', '~\\\{tz\\\}~i', '~\\\{t\\\:z\\\}~i'],

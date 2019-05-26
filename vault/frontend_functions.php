@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2019.05.20).
+ * This file: Front-end functions file (last modified: 2019.05.26).
  */
 
 /**
@@ -2701,7 +2701,7 @@ $CIDRAM['RangeTablesHandler'] = function (array $IPv4, array $IPv6) use (&$CIDRA
  * @param string $Tips The page "tip" to include ("Hello username! Here you can...").
  * @param bool $JS Whether to include the standard front-end JavaScript boilerplate.
  */
-$CIDRAM['InitialPrepwork'] = function ($Title = '', $Tips = '', $JS = true) use (&$CIDRAM) {
+$CIDRAM['InitialPrepwork'] = function (string $Title = '', string $Tips = '', bool $JS = true) use (&$CIDRAM) {
 
     /** Set page title. */
     $CIDRAM['FE']['FE_Title'] = 'CIDRAM – ' . $Title;
@@ -2878,7 +2878,7 @@ $CIDRAM['SendEmail'] = function (array $Recipients = [], $Subject = '', $Body = 
             $Mail->SMTPDebug = 0;
 
             /** Skip authorisation process for some extreme problematic cases. */
-            if ($CIDRAM['Config']['PHPMailer']['SkipAuthProcess']) {
+            if ($CIDRAM['Config']['PHPMailer']['skip_auth_process']) {
                 $Mail->SMTPOptions = ['ssl' => [
                     'verify_peer' => false,
                     'verify_peer_name' => false,
@@ -2887,42 +2887,42 @@ $CIDRAM['SendEmail'] = function (array $Recipients = [], $Subject = '', $Body = 
             }
 
             /** Set mail server hostname. */
-            $Mail->Host = $CIDRAM['Config']['PHPMailer']['Host'];
+            $Mail->Host = $CIDRAM['Config']['PHPMailer']['host'];
 
             /** Set the SMTP port. */
-            $Mail->Port = $CIDRAM['Config']['PHPMailer']['Port'];
+            $Mail->Port = $CIDRAM['Config']['PHPMailer']['port'];
 
             /** Set the encryption system to use. */
             if (
-                !empty($CIDRAM['Config']['PHPMailer']['SMTPSecure']) &&
-                $CIDRAM['Config']['PHPMailer']['SMTPSecure'] !== '-'
+                !empty($CIDRAM['Config']['PHPMailer']['smtp_secure']) &&
+                $CIDRAM['Config']['PHPMailer']['smtp_secure'] !== '-'
             ) {
-                $Mail->SMTPSecure = $CIDRAM['Config']['PHPMailer']['SMTPSecure'];
+                $Mail->SMTPSecure = $CIDRAM['Config']['PHPMailer']['smtp_secure'];
             }
 
             /** Set whether to use SMTP authentication. */
-            $Mail->SMTPAuth = $CIDRAM['Config']['PHPMailer']['SMTPAuth'];
+            $Mail->SMTPAuth = $CIDRAM['Config']['PHPMailer']['smtp_auth'];
 
             /** Set the username to use for SMTP authentication. */
-            $Mail->Username = $CIDRAM['Config']['PHPMailer']['Username'];
+            $Mail->Username = $CIDRAM['Config']['PHPMailer']['username'];
 
             /** Set the password to use for SMTP authentication. */
-            $Mail->Password = $CIDRAM['Config']['PHPMailer']['Password'];
+            $Mail->Password = $CIDRAM['Config']['PHPMailer']['password'];
 
             /** Set the email sender address and name. */
             $Mail->setFrom(
-                $CIDRAM['Config']['PHPMailer']['setFromAddress'],
-                $CIDRAM['Config']['PHPMailer']['setFromName']
+                $CIDRAM['Config']['PHPMailer']['set_from_address'],
+                $CIDRAM['Config']['PHPMailer']['set_from_name']
             );
 
             /** Set the optional "reply to" address and name. */
             if (
-                !empty($CIDRAM['Config']['PHPMailer']['addReplyToAddress']) &&
-                !empty($CIDRAM['Config']['PHPMailer']['addReplyToName'])
+                !empty($CIDRAM['Config']['PHPMailer']['add_reply_to_address']) &&
+                !empty($CIDRAM['Config']['PHPMailer']['add_reply_to_name'])
             ) {
                 $Mail->addReplyTo(
-                    $CIDRAM['Config']['PHPMailer']['addReplyToAddress'],
-                    $CIDRAM['Config']['PHPMailer']['addReplyToName']
+                    $CIDRAM['Config']['PHPMailer']['add_reply_to_address'],
+                    $CIDRAM['Config']['PHPMailer']['add_reply_to_name']
                 );
             }
 

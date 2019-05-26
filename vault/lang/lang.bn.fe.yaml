@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Bangla language data for the front-end (last modified: 2019.05.20).
+# This file: Bangla language data for the front-end (last modified: 2019.05.26).
 ##/
 
 Extended Description Bypasses: "ডিফল্ট স্বাক্ষর বাইপাস ফাইল সাধারণত প্রধান প্যাকেজ সহ অন্তর্ভুক্ত।"
@@ -50,19 +50,19 @@ Name module_ua.php: "খালি UA ব্লককারী মডিউল"
 Name module_yandexblocker.php: "ইয়্যান্ডেক্স ব্লকার মডিউল"
 bNav_home_logout: "<a href="?">হোম পেজ</a> | <a href="?cidram-page=logout">প্রস্থান</a>"
 bNav_logout: "<a href="?cidram-page=logout">প্রস্থান</a>"
-config_PHPMailer_Enable2FA: "এই নির্দেশটি ফ্রন্ট-এন্ড অ্যাকাউন্টগুলির জন্য 2FA ব্যবহার করে কিনা তা নির্ধারণ করে।"
+config_PHPMailer_enable_two_factor: "এই নির্দেশটি ফ্রন্ট-এন্ড অ্যাকাউন্টগুলির জন্য 2FA ব্যবহার করে কিনা তা নির্ধারণ করে।"
 config_PHPMailer_event_log: "PHPMailer সম্পর্কিত সকল ঘটনা লগইন করার জন্য একটি ফাইল। ফাইলের নাম উল্লেখ করুন, অথবা নিষ্ক্রিয় করতে ফাঁকা রাখুন।"
-config_PHPMailer_Host: "আউটবাউন্ড ইমেলের জন্য SMTP হোস্ট ব্যবহার করতে হবে।"
-config_PHPMailer_Password: "SMTP এর মাধ্যমে ইমেল পাঠানোর সময় ব্যবহারের জন্য পাসওয়ার্ডটি।"
-config_PHPMailer_Port: "আউটবাউন্ড ইমেলের জন্য ব্যবহার করার জন্য পোর্ট নাম্বার। ডিফল্ট = "587"।"
-config_PHPMailer_SMTPAuth: "এই নির্দেশটি SMTP সেশনের প্রমাণীকরণ কিনা তা নির্ধারণ করে (সাধারণত এই একা ছেড়ে দেওয়া উচিত)।"
-config_PHPMailer_SMTPSecure: "SMTP এর মাধ্যমে ইমেল পাঠানোর সময় ব্যবহারের জন্য প্রোটোকল (TLS বা SSL)।"
-config_PHPMailer_SkipAuthProcess: "যখন <code>true</code>, PHPMailer এসএমটিপি এর মাধ্যমে ইমেল পাঠানোর সাথে সাথে প্রমাণীকরণের প্রক্রিয়াটিকে সাধারণত ছাড় দেয়। এই এড়ানো উচিত, কারণ বহির্গামী ইমেল MITM আক্রমনের সম্মুখীন হতে পারে। তবে, এটি কিছু ক্ষেত্রে প্রয়োজনীয় হতে পারে (যেমন, যখন PHPMailer একটি SMTP সার্ভারে সংযোগ করতে পারবে না)।"
-config_PHPMailer_Username: "SMTP এর মাধ্যমে ইমেল পাঠানোর সময় ব্যবহারের জন্য ব্যবহারকারীর নাম।"
-config_PHPMailer_addReplyToAddress: "SMTP এর মাধ্যমে ইমেল পাঠানোর সময় ব্যবহারের জন্য উত্তর ঠিকানা।"
-config_PHPMailer_addReplyToName: "SMTP এর মাধ্যমে ইমেল পাঠানোর সময় ব্যবহারের জন্য উত্তর নাম।"
-config_PHPMailer_setFromAddress: "SMTP এর মাধ্যমে ইমেল পাঠানোর সময় ব্যবহারের জন্য প্রেরক ঠিকানা।"
-config_PHPMailer_setFromName: "SMTP এর মাধ্যমে ইমেল পাঠানোর সময় ব্যবহারের জন্য প্রেরক নাম।"
+config_PHPMailer_host: "আউটবাউন্ড ইমেলের জন্য SMTP হোস্ট ব্যবহার করতে হবে।"
+config_PHPMailer_password: "SMTP এর মাধ্যমে ইমেল পাঠানোর সময় ব্যবহারের জন্য পাসওয়ার্ডটি।"
+config_PHPMailer_port: "আউটবাউন্ড ইমেলের জন্য ব্যবহার করার জন্য পোর্ট নাম্বার। ডিফল্ট = "587"।"
+config_PHPMailer_smtp_auth: "এই নির্দেশটি SMTP সেশনের প্রমাণীকরণ কিনা তা নির্ধারণ করে (সাধারণত এই একা ছেড়ে দেওয়া উচিত)।"
+config_PHPMailer_smtp_secure: "SMTP এর মাধ্যমে ইমেল পাঠানোর সময় ব্যবহারের জন্য প্রোটোকল (TLS বা SSL)।"
+config_PHPMailer_skip_auth_process: "যখন <code>true</code>, PHPMailer এসএমটিপি এর মাধ্যমে ইমেল পাঠানোর সাথে সাথে প্রমাণীকরণের প্রক্রিয়াটিকে সাধারণত ছাড় দেয়। এই এড়ানো উচিত, কারণ বহির্গামী ইমেল MITM আক্রমনের সম্মুখীন হতে পারে। তবে, এটি কিছু ক্ষেত্রে প্রয়োজনীয় হতে পারে (যেমন, যখন PHPMailer একটি SMTP সার্ভারে সংযোগ করতে পারবে না)।"
+config_PHPMailer_username: "SMTP এর মাধ্যমে ইমেল পাঠানোর সময় ব্যবহারের জন্য ব্যবহারকারীর নাম।"
+config_PHPMailer_add_reply_to_address: "SMTP এর মাধ্যমে ইমেল পাঠানোর সময় ব্যবহারের জন্য উত্তর ঠিকানা।"
+config_PHPMailer_add_reply_to_name: "SMTP এর মাধ্যমে ইমেল পাঠানোর সময় ব্যবহারের জন্য উত্তর নাম।"
+config_PHPMailer_set_from_address: "SMTP এর মাধ্যমে ইমেল পাঠানোর সময় ব্যবহারের জন্য প্রেরক ঠিকানা।"
+config_PHPMailer_set_from_name: "SMTP এর মাধ্যমে ইমেল পাঠানোর সময় ব্যবহারের জন্য প্রেরক নাম।"
 config_experimental: "অস্থায়ী/পরীক্ষামূলক!"
 config_general_frontend_log: "ফ্রন্ট-এন্ড লগইন প্রচেষ্টা রেকর্ড করার জন্য ফাইল। ফাইলের নাম উল্লেখ করুন, অথবা নিষ্ক্রিয় করতে ফাঁকা রাখুন।"
 config_general_allow_gethostbyaddr_lookup: "যখন UDP অনুপলব্ধ হয় তখন gethostbyaddr সন্ধানগুলি মঞ্জুর করুন? True = হাঁ [ডিফল্ট]; False = না।"

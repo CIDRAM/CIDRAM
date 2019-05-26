@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: German language data for the front-end (last modified: 2019.05.20).
+# This file: German language data for the front-end (last modified: 2019.05.26).
 ##/
 
 Extended Description Bypasses: "Die Standard-Signatur-Bypass-Dateien, die normalerweise im Hauptpaket enthalten sind."
@@ -50,19 +50,19 @@ Name module_ua.php: "Leeres UA-Blocker-Modul"
 Name module_yandexblocker.php: "Yandex Blocker-Modul"
 bNav_home_logout: "<a href="?">Startseite</a> | <a href="?cidram-page=logout">Ausloggen</a>"
 bNav_logout: "<a href="?cidram-page=logout">Ausloggen</a>"
-config_PHPMailer_Enable2FA: "Diese Direktive bestimmt, ob 2FA für Frontend-Konten verwendet werden soll."
+config_PHPMailer_enable_two_factor: "Diese Direktive bestimmt, ob 2FA für Frontend-Konten verwendet werden soll."
 config_PHPMailer_event_log: "Eine Datei zum Protokollieren aller Ereignisse in Bezug auf PHPMailer. Geben Sie einen Dateinamen an oder lassen Sie die Option zum Deaktivieren leer."
-config_PHPMailer_Host: "Der SMTP-Host zum Senden von ausgehende E-Mails."
-config_PHPMailer_Password: "Das Passwort zum Senden von E-Mails über SMTP."
-config_PHPMailer_Port: "Die Portnummer zum Senden von ausgehende E-Mails. Standardeinstellung = 587."
-config_PHPMailer_SMTPAuth: "Diese Direktive bestimmt, ob SMTP-Sitzungen authentifiziert werden sollen (sollte normalerweise in Ruhe gelassen werden)."
-config_PHPMailer_SMTPSecure: "Das Protokoll zum Senden von E-Mails über SMTP (TLS oder SSL)."
-config_PHPMailer_SkipAuthProcess: "Wenn Sie diese Direktive auf <code>true</code> setzen, wird PHPMailer angewiesen, den normalen Authentifizierungsprozess zu überspringen, der normalerweise beim Senden von E-Mails über SMTP auftritt. Dies sollte vermieden werden, da das Überspringen dieses Prozesses ausgehende E-Mails MITM-Angriffen aussetzen kann. Dies kann jedoch in Fällen erforderlich sein, in denen dieser Prozess die Verbindung von PHPMailer zu einem SMTP-Server verhindert."
-config_PHPMailer_Username: "Der Benutzername zum Senden von E-Mails über SMTP."
-config_PHPMailer_addReplyToAddress: "Die Antwortadresse, die beim Senden von E-Mails über SMTP verwendet werden soll."
-config_PHPMailer_addReplyToName: "Der Name für der Antwort, die beim Senden von E-Mails über SMTP verwendet werden soll."
-config_PHPMailer_setFromAddress: "Die Absenderadresse, die beim Senden von E-Mails über SMTP verwendet werden soll."
-config_PHPMailer_setFromName: "Der Name des Absenders, der beim Senden von E-Mails über SMTP verwendet werden soll."
+config_PHPMailer_host: "Der SMTP-Host zum Senden von ausgehende E-Mails."
+config_PHPMailer_password: "Das Passwort zum Senden von E-Mails über SMTP."
+config_PHPMailer_port: "Die Portnummer zum Senden von ausgehende E-Mails. Standardeinstellung = 587."
+config_PHPMailer_smtp_auth: "Diese Direktive bestimmt, ob SMTP-Sitzungen authentifiziert werden sollen (sollte normalerweise in Ruhe gelassen werden)."
+config_PHPMailer_smtp_secure: "Das Protokoll zum Senden von E-Mails über SMTP (TLS oder SSL)."
+config_PHPMailer_skip_auth_process: "Wenn Sie diese Direktive auf <code>true</code> setzen, wird PHPMailer angewiesen, den normalen Authentifizierungsprozess zu überspringen, der normalerweise beim Senden von E-Mails über SMTP auftritt. Dies sollte vermieden werden, da das Überspringen dieses Prozesses ausgehende E-Mails MITM-Angriffen aussetzen kann. Dies kann jedoch in Fällen erforderlich sein, in denen dieser Prozess die Verbindung von PHPMailer zu einem SMTP-Server verhindert."
+config_PHPMailer_username: "Der Benutzername zum Senden von E-Mails über SMTP."
+config_PHPMailer_add_reply_to_address: "Die Antwortadresse, die beim Senden von E-Mails über SMTP verwendet werden soll."
+config_PHPMailer_add_reply_to_name: "Der Name für der Antwort, die beim Senden von E-Mails über SMTP verwendet werden soll."
+config_PHPMailer_set_from_address: "Die Absenderadresse, die beim Senden von E-Mails über SMTP verwendet werden soll."
+config_PHPMailer_set_from_name: "Der Name des Absenders, der beim Senden von E-Mails über SMTP verwendet werden soll."
 config_experimental: "Instabil/Experimentell!"
 config_general_frontend_log: "Datei für die Protokollierung von Frontend Anmelde-Versuchen. Geben Sie einen Dateinamen an oder lassen Sie die Option zum Deaktivieren leer."
 config_general_allow_gethostbyaddr_lookup: "gethostbyaddr-Suche erlauben, wenn UDP nicht verfügbar ist? True = Ja [Standardeinstellung]; False = Nein."

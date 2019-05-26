@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Configuration defaults file (last modified: 2019.05.11).
+# This file: Configuration defaults file (last modified: 2019.05.26).
 ##/
 
 Config Defaults:
@@ -385,44 +385,44 @@ Config Defaults:
   event_log:
    type: string
    default: ""
-  SkipAuthProcess:
+  skip_auth_process:
    type: bool
    default: false
-  Enable2FA:
+  enable_two_factor:
    type: bool
    default: false
-  Host:
+  host:
    type: string
    default: ""
-  Port:
+  port:
    type: int
    default: 587
-  SMTPSecure:
+  smtp_secure:
    type: string
    default: "default"
    choices:
     default: "-"
     tls: "TLS"
     ssl: "SSL"
-  SMTPAuth:
+  smtp_auth:
    type: bool
    default: true
-  Username:
+  username:
    type: string
    default: ""
-  Password:
+  password:
    type: string
    default: ""
-  setFromAddress:
+  set_from_address:
    type: string
    default: ""
-  setFromName:
+  set_from_name:
    type: string
    default: ""
-  addReplyToAddress:
+  add_reply_to_address:
    type: string
    default: ""
-  addReplyToName:
+  add_reply_to_name:
    type: string
    default: ""
  rate_limiting:

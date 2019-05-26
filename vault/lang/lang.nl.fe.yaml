@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Dutch language data for the front-end (last modified: 2019.05.20).
+# This file: Dutch language data for the front-end (last modified: 2019.05.26).
 ##/
 
 Extended Description Bypasses: "De standaard signature rondwegen normaal opgenomen met de primaire pakket."
@@ -50,19 +50,19 @@ Name module_ua.php: "Lege UA blocker module"
 Name module_yandexblocker.php: "Yandex blokker module"
 bNav_home_logout: "<a href="?">Startpagina</a> | <a href="?cidram-page=logout">Uitloggen</a>"
 bNav_logout: "<a href="?cidram-page=logout">Uitloggen</a>"
-config_PHPMailer_Enable2FA: "Deze richtlijn bepaalt of 2FA wordt gebruikt voor frontend-accounts."
+config_PHPMailer_enable_two_factor: "Deze richtlijn bepaalt of 2FA wordt gebruikt voor frontend-accounts."
 config_PHPMailer_event_log: "Een bestand voor het loggen van alle evenementen met betrekking tot PHPMailer. Geef een bestandsnaam, of laat leeg om uit te schakelen."
-config_PHPMailer_Host: "De SMTP-host dat moet worden gebruikt voor uitgaande e-mail."
-config_PHPMailer_Password: "Het wachtwoord voor het verzenden van e-mail via SMTP."
-config_PHPMailer_Port: "Het poortnummer dat moet worden gebruikt voor uitgaande e-mail. Standaard = 587."
-config_PHPMailer_SMTPAuth: "Deze richtlijn bepaalt of SMTP-sessies moeten worden geverifieerd (moet meestal alleen worden gelaten)."
-config_PHPMailer_SMTPSecure: "Het protocol voor het verzenden van e-mail via SMTP (TLS of SSL)."
-config_PHPMailer_SkipAuthProcess: "Wanneer <code>true</code>, geeft PHPMailer opdracht om het verificatieproces over te slaan dat normaal optreedt bij het verzenden van e-mail via SMTP. Dit moet worden vermeden, omdat bij het overslaan van dit verificatieproces uitgaande e-mail aan MITM-aanvallen kan worden blootgesteld, maar kan nodig zijn in gevallen waarin dit verificatieproces verhindert dat PHPMailer verbinding maakt met een SMTP-server."
-config_PHPMailer_Username: "De gebruikersnaam voor het verzenden van e-mail via SMTP."
-config_PHPMailer_addReplyToAddress: "Het antwoordadres voor het verzenden van e-mail via SMTP."
-config_PHPMailer_addReplyToName: "De antwoordnaam voor het verzenden van e-mail via SMTP."
-config_PHPMailer_setFromAddress: "Het afzenderadres voor het verzenden van e-mail via SMTP."
-config_PHPMailer_setFromName: "De naam van de afzender voor het verzenden van e-mail via SMTP."
+config_PHPMailer_host: "De SMTP-host dat moet worden gebruikt voor uitgaande e-mail."
+config_PHPMailer_password: "Het wachtwoord voor het verzenden van e-mail via SMTP."
+config_PHPMailer_port: "Het poortnummer dat moet worden gebruikt voor uitgaande e-mail. Standaard = 587."
+config_PHPMailer_smtp_auth: "Deze richtlijn bepaalt of SMTP-sessies moeten worden geverifieerd (moet meestal alleen worden gelaten)."
+config_PHPMailer_smtp_secure: "Het protocol voor het verzenden van e-mail via SMTP (TLS of SSL)."
+config_PHPMailer_skip_auth_process: "Wanneer <code>true</code>, geeft PHPMailer opdracht om het verificatieproces over te slaan dat normaal optreedt bij het verzenden van e-mail via SMTP. Dit moet worden vermeden, omdat bij het overslaan van dit verificatieproces uitgaande e-mail aan MITM-aanvallen kan worden blootgesteld, maar kan nodig zijn in gevallen waarin dit verificatieproces verhindert dat PHPMailer verbinding maakt met een SMTP-server."
+config_PHPMailer_username: "De gebruikersnaam voor het verzenden van e-mail via SMTP."
+config_PHPMailer_add_reply_to_address: "Het antwoordadres voor het verzenden van e-mail via SMTP."
+config_PHPMailer_add_reply_to_name: "De antwoordnaam voor het verzenden van e-mail via SMTP."
+config_PHPMailer_set_from_address: "Het afzenderadres voor het verzenden van e-mail via SMTP."
+config_PHPMailer_set_from_name: "De naam van de afzender voor het verzenden van e-mail via SMTP."
 config_experimental: "Instabiel/Experimenteel!"
 config_general_frontend_log: "Bestand om de frontend login pogingen te loggen. Geef een bestandsnaam, of laat leeg om uit te schakelen."
 config_general_allow_gethostbyaddr_lookup: "Zoeken op gethostbyaddr toestaan als UDP niet beschikbaar is? True = Ja [Standaard]; False = Nee."

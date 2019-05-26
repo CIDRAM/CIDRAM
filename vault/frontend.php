@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2019.05.19).
+ * This file: Front-end handler (last modified: 2019.05.26).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -358,7 +358,7 @@ if ($CIDRAM['FE']['FormTarget'] === 'login' || $CIDRAM['FE']['CronMode']) {
                         $CIDRAM['FE']['SessionList'] .= $CIDRAM['FE']['ThisSession'];
 
                         /** Prepare 2FA email. */
-                        if ($CIDRAM['Config']['PHPMailer']['Enable2FA'] && preg_match('~^.+@.+$~', $CIDRAM['FE']['UserRaw'])) {
+                        if ($CIDRAM['Config']['PHPMailer']['enable_two_factor'] && preg_match('~^.+@.+$~', $CIDRAM['FE']['UserRaw'])) {
                             $CIDRAM['2FA-State'] = ['Number' => $CIDRAM['2FA-Number']()];
                             $CIDRAM['2FA-State']['Hash'] = password_hash($CIDRAM['2FA-State']['Number'], $CIDRAM['DefaultAlgo']);
                             $CIDRAM['FECacheAdd'](
@@ -428,7 +428,7 @@ if ($CIDRAM['FE']['FormTarget'] === 'login' || $CIDRAM['FE']['CronMode']) {
         }
     } elseif ($CIDRAM['Config']['general']['frontend_log']) {
         $CIDRAM['LoggerMessage'] = $CIDRAM['L10N']->getString((
-            $CIDRAM['Config']['PHPMailer']['Enable2FA'] &&
+            $CIDRAM['Config']['PHPMailer']['enable_two_factor'] &&
             $CIDRAM['FE']['Permissions'] === 0
         ) ? 'state_logged_in_2fa_pending' : 'state_logged_in');
     }
@@ -486,7 +486,7 @@ elseif (!empty($_COOKIE['CIDRAM-ADMIN'])) {
                     ), -1);
 
                     /** Handle 2FA stuff here. */
-                    if ($CIDRAM['Config']['PHPMailer']['Enable2FA'] && preg_match('~^.+@.+$~', $CIDRAM['FE']['UserRaw'])) {
+                    if ($CIDRAM['Config']['PHPMailer']['enable_two_factor'] && preg_match('~^.+@.+$~', $CIDRAM['FE']['UserRaw'])) {
                         $CIDRAM['2FA-State'] = $CIDRAM['FECacheGet'](
                             $CIDRAM['FE']['Cache'],
                             '2FA-State:' . $_COOKIE['CIDRAM-ADMIN']

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: French language data for the front-end (last modified: 2019.05.20).
+# This file: French language data for the front-end (last modified: 2019.05.26).
 ##/
 
 Extended Description Bypasses: "Les fichiers pour contourner les signatures standard qui sont normalement inclus dans le paquet principal."
@@ -50,19 +50,19 @@ Name module_ua.php: "Module bloqueur UA vide"
 Name module_yandexblocker.php: "Module de blocage pour Yandex"
 bNav_home_logout: "<a href="?">Page d'Accueil</a> | <a href="?cidram-page=logout">Déconnecter</a>"
 bNav_logout: "<a href="?cidram-page=logout">Déconnecter</a>"
-config_PHPMailer_Enable2FA: "Cette directive détermine s'il faut utiliser 2FA pour les comptes frontaux."
+config_PHPMailer_enable_two_factor: "Cette directive détermine s'il faut utiliser 2FA pour les comptes frontaux."
 config_PHPMailer_event_log: "Fichier pour l'enregistrement de tous les événements relatifs à PHPMailer. Spécifier un fichier, ou laisser vide à désactiver."
-config_PHPMailer_Host: "Hôte SMTP à utiliser pour les e-mails sortants."
-config_PHPMailer_Password: "Le mot de passe à utiliser lors de l'envoi d'e-mail via SMTP."
-config_PHPMailer_Port: "Le numéro de port à utiliser pour l'e-mail sortant. Défaut = 587."
-config_PHPMailer_SMTPAuth: "Cette directive détermine si les sessions SMTP doivent être authentifiées (elles doivent généralement être laissées seules)."
-config_PHPMailer_SMTPSecure: "Le protocole à utiliser lors de l'envoi d'e-mail via SMTP (TLS ou SSL)."
-config_PHPMailer_SkipAuthProcess: "Définir cette directive sur <code>true</code> instruit à PHPMailer de sauter le processus d'authentification qui se produit normalement lors de l'envoi d'e-mail via SMTP. Cela doit être évité, car sauter du processus peut exposer l'e-mail sortant aux attaques MITM, mais peut être nécessaire dans les cas où ce processus empêche PHPMailer de se connecter à un serveur SMTP."
-config_PHPMailer_Username: "Le nom d'utilisateur à utiliser lors de l'envoi d'e-mail via SMTP."
-config_PHPMailer_addReplyToAddress: "L'adresse de réponse à citer lors de l'envoi d'e-mail via SMTP."
-config_PHPMailer_addReplyToName: "Le nom pour répondre à citer lors de l'envoi d'e-mail via SMTP."
-config_PHPMailer_setFromAddress: "L'adresse de l'expéditeur à citer lors de l'envoi d'e-mail via SMTP."
-config_PHPMailer_setFromName: "Le nom de l'expéditeur à citer lors de l'envoi d'e-mail via SMTP."
+config_PHPMailer_host: "Hôte SMTP à utiliser pour les e-mails sortants."
+config_PHPMailer_password: "Le mot de passe à utiliser lors de l'envoi d'e-mail via SMTP."
+config_PHPMailer_port: "Le numéro de port à utiliser pour l'e-mail sortant. Défaut = 587."
+config_PHPMailer_smtp_auth: "Cette directive détermine si les sessions SMTP doivent être authentifiées (elles doivent généralement être laissées seules)."
+config_PHPMailer_smtp_secure: "Le protocole à utiliser lors de l'envoi d'e-mail via SMTP (TLS ou SSL)."
+config_PHPMailer_skip_auth_process: "Définir cette directive sur <code>true</code> instruit à PHPMailer de sauter le processus d'authentification qui se produit normalement lors de l'envoi d'e-mail via SMTP. Cela doit être évité, car sauter du processus peut exposer l'e-mail sortant aux attaques MITM, mais peut être nécessaire dans les cas où ce processus empêche PHPMailer de se connecter à un serveur SMTP."
+config_PHPMailer_username: "Le nom d'utilisateur à utiliser lors de l'envoi d'e-mail via SMTP."
+config_PHPMailer_add_reply_to_address: "L'adresse de réponse à citer lors de l'envoi d'e-mail via SMTP."
+config_PHPMailer_add_reply_to_name: "Le nom pour répondre à citer lors de l'envoi d'e-mail via SMTP."
+config_PHPMailer_set_from_address: "L'adresse de l'expéditeur à citer lors de l'envoi d'e-mail via SMTP."
+config_PHPMailer_set_from_name: "Le nom de l'expéditeur à citer lors de l'envoi d'e-mail via SMTP."
 config_experimental: "Instable/Expérimental !"
 config_general_frontend_log: "Fichier pour l'enregistrement des tentatives de connexion à l'accès frontal. Spécifier un fichier, ou laisser vide à désactiver."
 config_general_allow_gethostbyaddr_lookup: "Autoriser les recherches par gethostbyaddr lorsque UDP est indisponible ? True = Yes [Default]; False = No."

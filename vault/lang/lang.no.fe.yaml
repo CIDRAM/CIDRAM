@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Norwegian language data for the front-end (last modified: 2019.05.20).
+# This file: Norwegian language data for the front-end (last modified: 2019.05.26).
 ##/
 
 Extended Description Bypasses: "Standard-signatur-bypass-filene som normalt følger med hovedpakken."
@@ -50,19 +50,19 @@ Name module_ua.php: "Tom UA-blokkeringsmodul"
 Name module_yandexblocker.php: "Yandex blokkeringsmodul"
 bNav_home_logout: "<a href="?">Hjem</a> | <a href="?cidram-page=logout">Logg Ut</a>"
 bNav_logout: "<a href="?cidram-page=logout">Logg Ut</a>"
-config_PHPMailer_Enable2FA: "Dette direktivet bestemmer om du skal bruke 2FA for frontend-kontoer."
+config_PHPMailer_enable_two_factor: "Dette direktivet bestemmer om du skal bruke 2FA for frontend-kontoer."
 config_PHPMailer_event_log: "En fil for å logge alle hendelser i forhold til PHPMailer. Angi et filnavn, eller la det være tomt for å deaktivere."
-config_PHPMailer_Host: "SMTP-verten til bruk for utgående e-post."
-config_PHPMailer_Password: "Passordet som skal brukes når du sender e-post via SMTP."
-config_PHPMailer_Port: "Portnummeret som skal brukes til utgående e-post. Standardverdi = 587."
-config_PHPMailer_SMTPAuth: "Dette direktivet bestemmer om du skal autentisere SMTP-økter (bør vanligvis la det være alene)."
-config_PHPMailer_SMTPSecure: "Protokollen som skal brukes når du sender e-post via SMTP (TLS eller SSL)."
-config_PHPMailer_SkipAuthProcess: "Innstilling av dette direktivet til <code>true</code> instruerer PHPMailer til å hoppe over den normale autentiseringsprosessen som normalt oppstår når du sender e-post via SMTP. Dette bør unngås, fordi hoppe over denne prosessen kan utsette utgående e-post til MITM-angrep, men kan være nødvendig i tilfeller der denne prosessen forhindrer PHPMailer fra å koble til en SMTP-server."
-config_PHPMailer_Username: "Brukernavnet som skal brukes når du sender e-post via SMTP."
-config_PHPMailer_addReplyToAddress: "Svaradressen for å sitere når du sender e-post via SMTP."
-config_PHPMailer_addReplyToName: "Svarnavnet til å sitere når du sender e-post via SMTP."
-config_PHPMailer_setFromAddress: "Avsenderadressen for å sitere når du sender e-post via SMTP."
-config_PHPMailer_setFromName: "Avsendernavnet for å sitere når du sender e-post via SMTP."
+config_PHPMailer_host: "SMTP-verten til bruk for utgående e-post."
+config_PHPMailer_password: "Passordet som skal brukes når du sender e-post via SMTP."
+config_PHPMailer_port: "Portnummeret som skal brukes til utgående e-post. Standardverdi = 587."
+config_PHPMailer_smtp_auth: "Dette direktivet bestemmer om du skal autentisere SMTP-økter (bør vanligvis la det være alene)."
+config_PHPMailer_smtp_secure: "Protokollen som skal brukes når du sender e-post via SMTP (TLS eller SSL)."
+config_PHPMailer_skip_auth_process: "Innstilling av dette direktivet til <code>true</code> instruerer PHPMailer til å hoppe over den normale autentiseringsprosessen som normalt oppstår når du sender e-post via SMTP. Dette bør unngås, fordi hoppe over denne prosessen kan utsette utgående e-post til MITM-angrep, men kan være nødvendig i tilfeller der denne prosessen forhindrer PHPMailer fra å koble til en SMTP-server."
+config_PHPMailer_username: "Brukernavnet som skal brukes når du sender e-post via SMTP."
+config_PHPMailer_add_reply_to_address: "Svaradressen for å sitere når du sender e-post via SMTP."
+config_PHPMailer_add_reply_to_name: "Svarnavnet til å sitere når du sender e-post via SMTP."
+config_PHPMailer_set_from_address: "Avsenderadressen for å sitere når du sender e-post via SMTP."
+config_PHPMailer_set_from_name: "Avsendernavnet for å sitere når du sender e-post via SMTP."
 config_experimental: "Ustabil/Eksperimentell!"
 config_general_frontend_log: "Fil for å logge innloggingsforsøk på frontenden. Angi et filnavn, eller la det være tomt for å deaktivere."
 config_general_allow_gethostbyaddr_lookup: "Tillat gethostbyaddr oppslag når UDP er utilgjengelig? True = Ja [Standardverdi]; False = Nei."

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Hindi language data for the front-end (last modified: 2019.05.20).
+# This file: Hindi language data for the front-end (last modified: 2019.05.26).
 ##/
 
 Extended Description Bypasses: "डिफ़ॉल्ट हस्ताक्षर बाईपास फ़ाइलों को सामान्यतः मुख्य पैकेज के साथ शामिल किया गया था।"
@@ -50,19 +50,19 @@ Name module_ua.php: "खाली UA अवरोधक मॉड्यूल"
 Name module_yandexblocker.php: "Yandex अवरोधक मॉड्यूल"
 bNav_home_logout: "<a href="?">होमपेज</a> | <a href="?cidram-page=logout">लोग आउट</a>"
 bNav_logout: "<a href="?cidram-page=logout">लोग आउट</a>"
-config_PHPMailer_Enable2FA: "यह निर्देश निर्धारित करता है कि सामने के अंत खाते 2FA का उपयोग करते हैं या नहीं।"
+config_PHPMailer_enable_two_factor: "यह निर्देश निर्धारित करता है कि सामने के अंत खाते 2FA का उपयोग करते हैं या नहीं।"
 config_PHPMailer_event_log: "PHPMailer के संबंध में सभी घटनाओं को लॉग इन करने के लिए एक फ़ाइल। एक फाइल नाम निर्दिष्ट करें, या निष्क्रिय करने के लिए खाली छोड़।"
-config_PHPMailer_Host: "आउटबाउंड ईमेल के लिए उपयोग करने के लिए SMTP होस्ट।"
-config_PHPMailer_Password: "ईमेल भेजते समय उपयोग करने के लिए पासवर्ड।"
-config_PHPMailer_Port: "आउटबाउंड ईमेल के लिए उपयोग करने के लिए पोर्ट नंबर। डिफ़ॉल्ट = "587"।"
-config_PHPMailer_SMTPAuth: "यह निर्देश निर्धारित करता है कि SMTP सत्र प्रमाणित करना है या नहीं (आपको आमतौर पर इसे अकेला छोड़ देना चाहिए)।"
-config_PHPMailer_SMTPSecure: "ईमेल भेजने के दौरान उपयोग करने के लिए प्रोटोकॉल (TLS या SSL)।"
-config_PHPMailer_SkipAuthProcess: "इस निर्देश को <code>true</code> पर सेट करना प्रमाणीकरण प्रक्रिया को बंद कर देता है जो आमतौर पर तब होता है जब PHPMailer SMTP के माध्यम से ईमेल भेजता है। इससे बचा जाना चाहिए, क्योंकि इस प्रक्रिया को बंद करने से MITM हमलों के लिए आउटबाउंड ईमेल का खुलासा हो सकता है। हालांकि कुछ मामलों में यह आवश्यक हो सकता है, जैसे कि जब PHPMailer किसी SMTP सर्वर से कनेक्ट करने में सक्षम नहीं है।"
-config_PHPMailer_Username: "ईमेल भेजने समय उपयोग करने के लिए उपयोगकर्ता नाम।"
-config_PHPMailer_addReplyToAddress: "ईमेल भेजने के लिए उत्तर पता।"
-config_PHPMailer_addReplyToName: "ईमेल भेजने के लिए उत्तर का नाम।"
-config_PHPMailer_setFromAddress: "ईमेल भेजने के लिए प्रेषक पता।"
-config_PHPMailer_setFromName: "ईमेल भेजने के लिए प्रेषक का नाम।"
+config_PHPMailer_host: "आउटबाउंड ईमेल के लिए उपयोग करने के लिए SMTP होस्ट।"
+config_PHPMailer_password: "ईमेल भेजते समय उपयोग करने के लिए पासवर्ड।"
+config_PHPMailer_port: "आउटबाउंड ईमेल के लिए उपयोग करने के लिए पोर्ट नंबर। डिफ़ॉल्ट = "587"।"
+config_PHPMailer_smtp_auth: "यह निर्देश निर्धारित करता है कि SMTP सत्र प्रमाणित करना है या नहीं (आपको आमतौर पर इसे अकेला छोड़ देना चाहिए)।"
+config_PHPMailer_smtp_secure: "ईमेल भेजने के दौरान उपयोग करने के लिए प्रोटोकॉल (TLS या SSL)।"
+config_PHPMailer_skip_auth_process: "इस निर्देश को <code>true</code> पर सेट करना प्रमाणीकरण प्रक्रिया को बंद कर देता है जो आमतौर पर तब होता है जब PHPMailer SMTP के माध्यम से ईमेल भेजता है। इससे बचा जाना चाहिए, क्योंकि इस प्रक्रिया को बंद करने से MITM हमलों के लिए आउटबाउंड ईमेल का खुलासा हो सकता है। हालांकि कुछ मामलों में यह आवश्यक हो सकता है, जैसे कि जब PHPMailer किसी SMTP सर्वर से कनेक्ट करने में सक्षम नहीं है।"
+config_PHPMailer_username: "ईमेल भेजने समय उपयोग करने के लिए उपयोगकर्ता नाम।"
+config_PHPMailer_add_reply_to_address: "ईमेल भेजने के लिए उत्तर पता।"
+config_PHPMailer_add_reply_to_name: "ईमेल भेजने के लिए उत्तर का नाम।"
+config_PHPMailer_set_from_address: "ईमेल भेजने के लिए प्रेषक पता।"
+config_PHPMailer_set_from_name: "ईमेल भेजने के लिए प्रेषक का नाम।"
 config_experimental: "अस्थिर/प्रायोगिक!"
 config_general_frontend_log: "सामने के अंत में प्रवेश प्रयासों प्रवेश के लिए दायर। एक फाइल नाम निर्दिष्ट करें, या निष्क्रिय करने के लिए खाली छोड़।"
 config_general_allow_gethostbyaddr_lookup: "जब UDP अनुपलब्ध हो तो gethostbyaddr लुकअप की अनुमति दें? True(सच्चे) = हाँ [डिफ़ॉल्ट]; False(झूठी) = नहीं।"

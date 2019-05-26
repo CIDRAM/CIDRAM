@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Russian language data for the front-end (last modified: 2019.05.20).
+# This file: Russian language data for the front-end (last modified: 2019.05.26).
 ##/
 
 Extended Description Bypasses: "Стандартная сигнатуры байпасы, обычно включены в основной пакет."
@@ -50,19 +50,19 @@ Name module_ua.php: "Модуль блокировки UA пустой"
 Name module_yandexblocker.php: "Модуль блокатор Яндекс"
 bNav_home_logout: "<a href="?">Домашняя Страница</a> | <a href="?cidram-page=logout">Выйдите</a>"
 bNav_logout: "<a href="?cidram-page=logout">Выйдите</a>"
-config_PHPMailer_Enable2FA: "Эта директива включает/отключает использование 2FA для фронтенд счетов."
+config_PHPMailer_enable_two_factor: "Эта директива включает/отключает использование 2FA для фронтенд счетов."
 config_PHPMailer_event_log: "Файл для регистрации всех событий в отношении PHPMailer. Задайте имя файлу, или оставьте пустым чтобы деактивировать опцию."
-config_PHPMailer_Host: "Хост SMTP используется для исходящей электронной почты."
-config_PHPMailer_Password: "Пароль для отправки электронной почты через SMTP."
-config_PHPMailer_Port: "Номер порта для исходящей электронной почты. Стандарт = 587."
-config_PHPMailer_SMTPAuth: "Эта директива включает/отключает аутентификацию сессия SMTP (обычно ее следует оставить в покое)."
-config_PHPMailer_SMTPSecure: "Протокол для при отправке электронной почты через SMTP (TLS или SSL)."
-config_PHPMailer_SkipAuthProcess: "Установка этой директивы на <code>true</code> указывает PHPMailer пропустить обычный процесс проверки подлинности, который обычно возникает при отправке электронной почты через SMTP. Этого следует избегать, поскольку пропуская этот процесс может выдать исходящую электронную почту для атак MITM, но может потребоваться в тех случаях, когда этот процесс препятствует подключению PHPMailer к SMTP-серверу."
-config_PHPMailer_Username: "Имя пользователя для отправки электронной почты через SMTP."
-config_PHPMailer_addReplyToAddress: "Адрес ответа для отправки электронной почты через SMTP."
-config_PHPMailer_addReplyToName: "Имя ответа для отправки электронной почты через SMTP."
-config_PHPMailer_setFromAddress: "Адрес отправителя для отправки электронной почты через SMTP."
-config_PHPMailer_setFromName: "Имя отправителя для отправки электронной почты через SMTP."
+config_PHPMailer_host: "Хост SMTP используется для исходящей электронной почты."
+config_PHPMailer_password: "Пароль для отправки электронной почты через SMTP."
+config_PHPMailer_port: "Номер порта для исходящей электронной почты. Стандарт = 587."
+config_PHPMailer_smtp_auth: "Эта директива включает/отключает аутентификацию сессия SMTP (обычно ее следует оставить в покое)."
+config_PHPMailer_smtp_secure: "Протокол для при отправке электронной почты через SMTP (TLS или SSL)."
+config_PHPMailer_skip_auth_process: "Установка этой директивы на <code>true</code> указывает PHPMailer пропустить обычный процесс проверки подлинности, который обычно возникает при отправке электронной почты через SMTP. Этого следует избегать, поскольку пропуская этот процесс может выдать исходящую электронную почту для атак MITM, но может потребоваться в тех случаях, когда этот процесс препятствует подключению PHPMailer к SMTP-серверу."
+config_PHPMailer_username: "Имя пользователя для отправки электронной почты через SMTP."
+config_PHPMailer_add_reply_to_address: "Адрес ответа для отправки электронной почты через SMTP."
+config_PHPMailer_add_reply_to_name: "Имя ответа для отправки электронной почты через SMTP."
+config_PHPMailer_set_from_address: "Адрес отправителя для отправки электронной почты через SMTP."
+config_PHPMailer_set_from_name: "Имя отправителя для отправки электронной почты через SMTP."
 config_experimental: "Нестабильный/Экспериментальный!"
 config_general_frontend_log: "Файл для запись всех попыток входа в фронтенд. Задайте имя файлу, или оставьте пустым чтобы деактивировать опцию."
 config_general_allow_gethostbyaddr_lookup: "Разрешить поиск gethostbyaddr, когда UDP недоступен? True = Да [Стандарт]; False = Нет."

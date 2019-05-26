@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Swedish language data for the front-end (last modified: 2019.05.20).
+# This file: Swedish language data for the front-end (last modified: 2019.05.26).
 ##/
 
 Extended Description Bypasses: "Standard bypass-filen som normalt ingår i huvudpaketet."
@@ -50,19 +50,19 @@ Name module_ua.php: "Tom UA-blockeringsmodul"
 Name module_yandexblocker.php: "Yandex blockeringsmodul"
 bNav_home_logout: "<a href="?">Hem</a> | <a href="?cidram-page=logout">Logga Ut</a>"
 bNav_logout: "<a href="?cidram-page=logout">Logga Ut</a>"
-config_PHPMailer_Enable2FA: "Detta direktiv bestämmer huruvida du ska använda 2FA för frontend-konton."
+config_PHPMailer_enable_two_factor: "Detta direktiv bestämmer huruvida du ska använda 2FA för frontend-konton."
 config_PHPMailer_event_log: "En fil för att logga alla händelser i förhållande till PHPMailer. Ange ett filnamn, eller lämna tomt för att inaktivera."
-config_PHPMailer_Host: "Den SMTP-värd som används för utgående e-post."
-config_PHPMailer_Password: "Lösenordet som ska användas när du skickar e-post via SMTP."
-config_PHPMailer_Port: "Portnumret som ska användas för utgående e-post. Standard = 587."
-config_PHPMailer_SMTPAuth: "Detta direktiv bestämmer huruvida du ska autentisera SMTP-sessioner (borde normalt lämna det här ensam)."
-config_PHPMailer_SMTPSecure: "Protokollet som ska användas när du skickar e-post via SMTP (TLS eller SSL)."
-config_PHPMailer_SkipAuthProcess: "Genom att ställa in detta direktiv till <code>true</code> instrueras PHPMailer att hoppa över den normala autentiseringsprocessen som normalt uppstår när du skickar e-post via SMTP. Detta bör undvikas, för att hoppa över den här processen kan avslöja utgående e-post till MITM-attacker, men kan vara nödvändigt i fall där denna process hindrar PHPMailer från att ansluta till en SMTP-server."
-config_PHPMailer_Username: "Användarnamnet som ska användas när du skickar e-post via SMTP."
-config_PHPMailer_addReplyToAddress: "Svaradressen att citera när du skickar e-post via SMTP."
-config_PHPMailer_addReplyToName: "Svarnamnet att citera när du skickar e-post via SMTP."
-config_PHPMailer_setFromAddress: "Avsändarens adress att citera när du skickar e-post via SMTP."
-config_PHPMailer_setFromName: "Avsändarens namn för att citera när du skickar e-post via SMTP."
+config_PHPMailer_host: "Den SMTP-värd som används för utgående e-post."
+config_PHPMailer_password: "Lösenordet som ska användas när du skickar e-post via SMTP."
+config_PHPMailer_port: "Portnumret som ska användas för utgående e-post. Standard = 587."
+config_PHPMailer_smtp_auth: "Detta direktiv bestämmer huruvida du ska autentisera SMTP-sessioner (borde normalt lämna det här ensam)."
+config_PHPMailer_smtp_secure: "Protokollet som ska användas när du skickar e-post via SMTP (TLS eller SSL)."
+config_PHPMailer_skip_auth_process: "Genom att ställa in detta direktiv till <code>true</code> instrueras PHPMailer att hoppa över den normala autentiseringsprocessen som normalt uppstår när du skickar e-post via SMTP. Detta bör undvikas, för att hoppa över den här processen kan avslöja utgående e-post till MITM-attacker, men kan vara nödvändigt i fall där denna process hindrar PHPMailer från att ansluta till en SMTP-server."
+config_PHPMailer_username: "Användarnamnet som ska användas när du skickar e-post via SMTP."
+config_PHPMailer_add_reply_to_address: "Svaradressen att citera när du skickar e-post via SMTP."
+config_PHPMailer_add_reply_to_name: "Svarnamnet att citera när du skickar e-post via SMTP."
+config_PHPMailer_set_from_address: "Avsändarens adress att citera när du skickar e-post via SMTP."
+config_PHPMailer_set_from_name: "Avsändarens namn för att citera när du skickar e-post via SMTP."
 config_experimental: "Instabil/Experimentell!"
 config_general_frontend_log: "Fil för att logga in alla försök till inloggningar på front-end. Ange ett filnamn, eller lämna tomt för att inaktivera."
 config_general_allow_gethostbyaddr_lookup: "Tillåt gethostbyaddr-uppslag när UDP är otillgänglig? True = Ja [Standard]; False = Nej."

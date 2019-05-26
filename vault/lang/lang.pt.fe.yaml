@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Portuguese language data for the front-end (last modified: 2019.05.20).
+# This file: Portuguese language data for the front-end (last modified: 2019.05.26).
 ##/
 
 Extended Description Bypasses: "Os arquivos para bypass das assinaturas padrão normalmente incluído com o pacote principal."
@@ -50,19 +50,19 @@ Name module_ua.php: "Módulo de bloqueador de UA vazio"
 Name module_yandexblocker.php: "Módulo bloqueador de Yandex"
 bNav_home_logout: "<a href="?">Página Principal</a> | <a href="?cidram-page=logout">Sair</a>"
 bNav_logout: "<a href="?cidram-page=logout">Sair</a>"
-config_PHPMailer_Enable2FA: "Esta diretiva determina se deve usar 2FA para contas front-end."
+config_PHPMailer_enable_two_factor: "Esta diretiva determina se deve usar 2FA para contas front-end."
 config_PHPMailer_event_log: "Um arquivo para registrar todos os eventos em relação ao PHPMailer. Especifique o nome de um arquivo, ou deixe em branco para desabilitar."
-config_PHPMailer_Host: "O host SMTP a ser usado para e-mail de saída."
-config_PHPMailer_Password: "A senha a ser usada ao enviar e-mail via SMTP."
-config_PHPMailer_Port: "O número da porta a ser usado para o e-mail de saída. Padrão = 587."
-config_PHPMailer_SMTPAuth: "Esta diretiva determina se autenticar sessões SMTP (geralmente deve ser deixado em paz)."
-config_PHPMailer_SMTPSecure: "O protocolo a ser usado ao enviar e-mail via SMTP (TLS ou SSL)."
-config_PHPMailer_SkipAuthProcess: "Definir essa diretiva como <code>true</code> instrui o PHPMailer a ignorar o processo de autenticação que normalmente ocorre ao enviar e-mail via SMTP. Isso deve ser evitado, porque ignorar esse processo pode expor o e-mail de saída a ataques MITM, mas pode ser necessário nos casos em que esse processo impedir que o PHPMailer se conecte a um servidor SMTP."
-config_PHPMailer_Username: "O nome de usuário a ser usada ao enviar e-mail via SMTP."
-config_PHPMailer_addReplyToAddress: "O endereço de resposta a ser citado ao enviar e-mail via SMTP."
-config_PHPMailer_addReplyToName: "O nome da resposta a ser citado ao enviar e-mail via SMTP."
-config_PHPMailer_setFromAddress: "O endereço do remetente a ser citado ao enviar e-mail via SMTP."
-config_PHPMailer_setFromName: "O nome do remetente a ser citado ao enviar e-mail via SMTP."
+config_PHPMailer_host: "O host SMTP a ser usado para e-mail de saída."
+config_PHPMailer_password: "A senha a ser usada ao enviar e-mail via SMTP."
+config_PHPMailer_port: "O número da porta a ser usado para o e-mail de saída. Padrão = 587."
+config_PHPMailer_smtp_auth: "Esta diretiva determina se autenticar sessões SMTP (geralmente deve ser deixado em paz)."
+config_PHPMailer_smtp_secure: "O protocolo a ser usado ao enviar e-mail via SMTP (TLS ou SSL)."
+config_PHPMailer_skip_auth_process: "Definir essa diretiva como <code>true</code> instrui o PHPMailer a ignorar o processo de autenticação que normalmente ocorre ao enviar e-mail via SMTP. Isso deve ser evitado, porque ignorar esse processo pode expor o e-mail de saída a ataques MITM, mas pode ser necessário nos casos em que esse processo impedir que o PHPMailer se conecte a um servidor SMTP."
+config_PHPMailer_username: "O nome de usuário a ser usada ao enviar e-mail via SMTP."
+config_PHPMailer_add_reply_to_address: "O endereço de resposta a ser citado ao enviar e-mail via SMTP."
+config_PHPMailer_add_reply_to_name: "O nome da resposta a ser citado ao enviar e-mail via SMTP."
+config_PHPMailer_set_from_address: "O endereço do remetente a ser citado ao enviar e-mail via SMTP."
+config_PHPMailer_set_from_name: "O nome do remetente a ser citado ao enviar e-mail via SMTP."
 config_experimental: "Instável/Experimental!"
 config_general_frontend_log: "Arquivo para registrar tentativas de login ao front-end. Especifique o nome de um arquivo, ou deixe em branco para desabilitar."
 config_general_allow_gethostbyaddr_lookup: "Permitir pesquisas gethostbyaddr quando o UDP não está disponível? True = Sim [Padrão]; False = Não."

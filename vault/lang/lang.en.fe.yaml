@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: English language data for the front-end (last modified: 2019.05.20).
+# This file: English language data for the front-end (last modified: 2019.05.26).
 ##/
 
 Extended Description Bypasses: "The default signature bypass files normally included with the main package."
@@ -50,19 +50,19 @@ Name module_ua.php: "Empty UA blocker module"
 Name module_yandexblocker.php: "Yandex blocker module"
 bNav_home_logout: "<a href="?">Home</a> | <a href="?cidram-page=logout">Log Out</a>"
 bNav_logout: "<a href="?cidram-page=logout">Log Out</a>"
-config_PHPMailer_Enable2FA: "This directive determines whether to use 2FA for front-end accounts."
+config_PHPMailer_enable_two_factor: "This directive determines whether to use 2FA for front-end accounts."
 config_PHPMailer_event_log: "A file for logging all events in relation to PHPMailer. Specify a filename, or leave blank to disable."
-config_PHPMailer_Host: "The SMTP host to use for outbound email."
-config_PHPMailer_Password: "The password to use when sending email via SMTP."
-config_PHPMailer_Port: "The port number to use for outbound email. Default = 587."
-config_PHPMailer_SMTPAuth: "This directive determines whether to authenticate SMTP sessions (should usually be left alone)."
-config_PHPMailer_SMTPSecure: "The protocol to use when sending email via SMTP (TLS or SSL)."
-config_PHPMailer_SkipAuthProcess: "Setting this directive to `true` instructs PHPMailer to skip the normal authentication process that normally occurs when sending email via SMTP. This should be avoided, because skipping this process may expose outbound email to MITM attacks, but may be necessary in cases where this process prevents PHPMailer from connecting to an SMTP server."
-config_PHPMailer_Username: "The username to use when sending email via SMTP."
-config_PHPMailer_addReplyToAddress: "The reply address to cite when sending email via SMTP."
-config_PHPMailer_addReplyToName: "The reply name to cite when sending email via SMTP."
-config_PHPMailer_setFromAddress: "The sender address to cite when sending email via SMTP."
-config_PHPMailer_setFromName: "The sender name to cite when sending email via SMTP."
+config_PHPMailer_host: "The SMTP host to use for outbound email."
+config_PHPMailer_password: "The password to use when sending email via SMTP."
+config_PHPMailer_port: "The port number to use for outbound email. Default = 587."
+config_PHPMailer_smtp_auth: "This directive determines whether to authenticate SMTP sessions (should usually be left alone)."
+config_PHPMailer_smtp_secure: "The protocol to use when sending email via SMTP (TLS or SSL)."
+config_PHPMailer_skip_auth_process: "Setting this directive to `true` instructs PHPMailer to skip the normal authentication process that normally occurs when sending email via SMTP. This should be avoided, because skipping this process may expose outbound email to MITM attacks, but may be necessary in cases where this process prevents PHPMailer from connecting to an SMTP server."
+config_PHPMailer_username: "The username to use when sending email via SMTP."
+config_PHPMailer_add_reply_to_address: "The reply address to cite when sending email via SMTP."
+config_PHPMailer_add_reply_to_name: "The reply name to cite when sending email via SMTP."
+config_PHPMailer_set_from_address: "The sender address to cite when sending email via SMTP."
+config_PHPMailer_set_from_name: "The sender name to cite when sending email via SMTP."
 config_experimental: "Unstable/Experimental!"
 config_general_frontend_log: "File for logging front-end login attempts. Specify a filename, or leave blank to disable."
 config_general_allow_gethostbyaddr_lookup: "Allow gethostbyaddr lookups when UDP is unavailable? True = Yes [Default]; False = No."

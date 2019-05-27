@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6.dat
 
-# Version: 2019.141.202
-# Last modified: 2019.05.22
+# Version: 2019.146.559
+# Last modified: 2019.05.27
 
 
 # ---
@@ -46,15 +46,6 @@ Origin: RU
 2607:f130::/32 Deny Cloud
 Origin: US
 Tag: Multacom Corp
-
-
-# ASN 16138 ("INTERIA.PL Sp z.o.o").
-# No recent reports or bad activity detected. Possible candidate for future removal.
-# Updated: 2017.07.12 / Checked: 2019.04.29
-
-2a00:1308::/32 Deny Cloud
-Origin: PL
-Tag: INTERIA
 
 
 # ASN 58879 ("ShangHai AnchNet Tec").
@@ -124,9 +115,9 @@ Tag: Royal Rainbow
 
 
 # ASN 26347 ("New Dream Network, LLC").
-# %Listed, Google Malware Dashboard: 0.70%.
-# Stop Forum Spam (SFS) listings: 186.
-# Updated: 2019.01.16
+# %Listed, Google Malware Dashboard: 0.29%.
+# Stop Forum Spam (SFS) listings: 175.
+# Updated: 2019.01.16 / Checked: 2019.05.25
 
 2607:f298:4::/47 Deny Cloud
 2607:f298:6::/48 Deny Cloud
@@ -1098,12 +1089,11 @@ Tag: Wowrack.com
 
 
 # ASN 11051 ("Cyberverse, Inc").
-# %Listed, Google Malware Dashboard: 0.19%.
-# Stop Forum Spam (SFS) listings: 197.
-# Updated: 2019.01.20
+# Updated: 2019.05.27
 
 2602:fe6b:1000::/36 Deny Cloud
 2607:f820::/32 Deny Cloud
+2620:13e:500a::/48 Deny Cloud
 Origin: US
 Tag: Cyberverse, Inc
 
@@ -3196,7 +3186,7 @@ Tag: Sia Nano IT
 # Don't include: ASN 264167 ("Amazon Wifi Servicos de Internet Ltda") - False positive risk.
 # Remove from final aggregate: 203.83.220.0/22 ("Amazon.com Tech Telecom") - False positive risk.
 # Also check out the Amazon blocklist provided by Macmathan. It can be installed via the front-end updates page.
-# Updated: 2019.03.20
+# Updated: 2019.05.25
 
 2403:b300::/32 Run rules_specific.php
 Origin: AU
@@ -3205,11 +3195,13 @@ Origin: BR
 2a05:d000:2000::/40 Run rules_specific.php
 2a05:d000:6000::/40 Run rules_specific.php
 2a05:d000:c000::/40 Run rules_specific.php
+2a05:d000:e000::/40 Run rules_specific.php
 2a05:d012::/36 Run rules_specific.php
 2a05:d014::/36 Run rules_specific.php
 2a05:d016::/36 Run rules_specific.php
 2a05:d018::/36 Run rules_specific.php
 2a05:d01c::/36 Run rules_specific.php
+2a05:d01e::/36 Run rules_specific.php
 2a05:d050:2040::/44 Run rules_specific.php
 2a05:d050:2080::/44 Run rules_specific.php
 2a05:d050:20c0::/44 Run rules_specific.php
@@ -3230,6 +3222,8 @@ Origin: BR
 2a05:d050:c040::/44 Run rules_specific.php
 2a05:d050:c080::/44 Run rules_specific.php
 2a05:d050:c0c0::/44 Run rules_specific.php
+2a05:d050:e080::/44 Run rules_specific.php
+2a05:d050:e0c0::/44 Run rules_specific.php
 Origin: IE
 2400:6700::/32 Run rules_specific.php
 Origin: JP
@@ -3285,7 +3279,7 @@ Origin: SG
 2600:1f01:48a0::/47 Run rules_specific.php
 2600:1f01:48b0::/47 Run rules_specific.php
 2600:1f01:48c0::/47 Run rules_specific.php
-2600:1f01:48d0::/47 Run rules_specific.php
+2600:1f01:48d0::/46 Run rules_specific.php
 2600:1f11::/36 Run rules_specific.php
 2600:1f12::/36 Run rules_specific.php
 2600:1f14::/35 Run rules_specific.php
@@ -3357,26 +3351,38 @@ Origin: SG
 2600:9000:108a::/48 Run rules_specific.php
 2600:9000:108c::/46 Run rules_specific.php
 2600:9000:1090::/44 Run rules_specific.php
-2600:9000:10a0::/46 Run rules_specific.php
-2600:9000:10a4::/48 Run rules_specific.php
-2600:9000:10a6::/47 Run rules_specific.php
-2600:9000:10a8::/45 Run rules_specific.php
+2600:9000:10a0::/44 Run rules_specific.php
 2600:9000:10b0::/46 Run rules_specific.php
 2600:9000:10b4::/48 Run rules_specific.php
-2600:9000:10b7::/48 Run rules_specific.php
+2600:9000:10b6::/47 Run rules_specific.php
 2600:9000:10b8::/45 Run rules_specific.php
 2600:9000:10c1::/48 Run rules_specific.php
 2600:9000:10c2::/47 Run rules_specific.php
 2600:9000:10c4::/46 Run rules_specific.php
+2600:9000:10c8::/48 Run rules_specific.php
+2600:9000:10cb::/48 Run rules_specific.php
 2600:9000:10cd::/48 Run rules_specific.php
 2600:9000:10ce::/47 Run rules_specific.php
 2600:9000:10d0::/46 Run rules_specific.php
 2600:9000:10d6::/47 Run rules_specific.php
-2600:9000:10d8::/46 Run rules_specific.php
-2600:9000:10dc::/47 Run rules_specific.php
-2600:9000:10de::/48 Run rules_specific.php
+2600:9000:10d8::/45 Run rules_specific.php
+2600:9000:10e0::/48 Run rules_specific.php
+2600:9000:10e3::/48 Run rules_specific.php
+2600:9000:10e4::/48 Run rules_specific.php
+2600:9000:10e8::/45 Run rules_specific.php
+2600:9000:10f0::/48 Run rules_specific.php
 2600:9000:10f2::/48 Run rules_specific.php
-2600:9000:2000::/45 Run rules_specific.php
+2600:9000:10f4::/48 Run rules_specific.php
+2600:9000:10f6::/48 Run rules_specific.php
+2600:9000:10f8::/46 Run rules_specific.php
+2600:9000:10fc::/48 Run rules_specific.php
+2600:9000:1103::/48 Run rules_specific.php
+2600:9000:1111::/48 Run rules_specific.php
+2600:9000:1117::/48 Run rules_specific.php
+2600:9000:1120::/48 Run rules_specific.php
+2600:9000:2000::/46 Run rules_specific.php
+2600:9000:2004::/47 Run rules_specific.php
+2600:9000:2007::/48 Run rules_specific.php
 2600:9000:2008::/46 Run rules_specific.php
 2600:9000:200c::/47 Run rules_specific.php
 2600:9000:200f::/48 Run rules_specific.php
@@ -3397,7 +3403,6 @@ Origin: SG
 2600:9000:2048::/48 Run rules_specific.php
 2600:9000:204a::/47 Run rules_specific.php
 2600:9000:204c::/46 Run rules_specific.php
-2600:9000:2050::/48 Run rules_specific.php
 2600:9000:2055::/48 Run rules_specific.php
 2600:9000:2056::/48 Run rules_specific.php
 2600:9000:205b::/48 Run rules_specific.php
@@ -3430,7 +3435,7 @@ Origin: SG
 2600:9000:20d8::/47 Run rules_specific.php
 2600:9000:20da::/48 Run rules_specific.php
 2600:9000:20de::/47 Run rules_specific.php
-2600:9000:20f2::/47 Run rules_specific.php
+2600:9000:20f2::/48 Run rules_specific.php
 2600:9000:20f4::/48 Run rules_specific.php
 2600:9000:20f9::/48 Run rules_specific.php
 2600:9000:20fa::/47 Run rules_specific.php
@@ -4288,7 +4293,7 @@ Tag: Data Room, Inc
 
 
 # ASN 7151 ("vXchnge Operating, LLC").
-# Updated: 2016.07.20 / Checked: 2019.01.16
+# Updated: 2016.07.20 / Checked: 2019.05.27
 
 2607:fce0::/32 Deny Cloud
 Origin: US
@@ -4384,8 +4389,9 @@ Origin: SI
 Tag: Seeweb S.r.l
 
 
-# ASNs 50837, 135302 ("Cloud Sigma").
-# Updated: 2019.01.29
+# ASN 50837 ("Cloud Sigma").
+# Stop Forum Spam (SFS) listings: 1.
+# Updated: 2019.01.29 / Checked: 2019.05.27
 
 2a01:9980:1::/48 Deny Cloud
 2a01:9980:2::/47 Deny Cloud
@@ -5031,16 +5037,6 @@ Origin: RU
 Tag: Selectel Ltd
 
 
-# ASN 18068 ("Dream Wave Shizuoka Co. Ltd").
-# Caught probing for SQL dumps.
-# No recent reports or bad activity detected. Possible candidate for future removal.
-# Updated: 2017.05.16 / Checked: 2019.02.18
-
-2403:9c00::/32 Deny Cloud
-Origin: JP
-Tag: Dream Wave
-
-
 # ASN 60592 ("Gransy s.r.o.").
 # %Listed, Google Malware Dashboard: 0.09%.
 # Stop Forum Spam (SFS) listings: 2.
@@ -5603,8 +5599,8 @@ Tag: Trader soft LLC
 
 
 # ASN 51395 ("SOFTplus Entwicklungen GmbH").
-# Stop Forum Spam (SFS) listings: 48,788.
-# Updated: 2019.01.16
+# Stop Forum Spam (SFS) listings: 29,222.
+# Updated: 2019.01.16 / Checked: 2019.05.25
 
 2001:67c:2f0::/48 Deny Cloud
 2a00:bd80::/32 Deny Cloud
@@ -6431,3 +6427,13 @@ Tag: Onramp Access LLC
 2a0d:4d80::/29 Deny Cloud
 Origin: AT
 Tag: Next Layer
+
+
+# ASN 62744 ("Quintex Alliance Consulting").
+# Caught probing honeypots for vulnerabilities.
+# Stop Forum Spam (SFS) listings: 59,743.
+# Updated: 2019.05.25
+
+2620:7:6000::/47 Deny Cloud
+Origin: US
+Tag: Quintex

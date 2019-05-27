@@ -1,37 +1,19 @@
-# Ignores file.
-
-
-# ---
 # If you want CIDRAM to completely ignore some specific sections within any of the signature files, you can use the
 # "ignore.dat" file to specify which sections to ignore. On a new line, write "Ignore", followed by a space, followed
 # by the name of the section that you want CIDRAM to ignore (anything else in this file won't have any effect on
 # CIDRAM and can be treated in the same manner as comments, documentation markup, etc).
 
-# The list below is included here as an example; The sections listed here are the names of some arbitrarily chosen
-# sections from the default CIDRAM signature files, listed here to demonstrate what an ignore list could look like.
-# These examples are commmented out at this time (because they're intended only as examples and nothing more).
-
-# Ignore Hurricane Electric
-# Ignore Internap Network
-# Ignore proXPN Direct LLC
-
-# ---
-# The entries below correspond to signature sections in the signature files that are considered to have a high
-# probability of generating false positives. Most of these entries are demographically/regionally dependant, and are
-# included here by default as to help ensure that CIDRAM will be usable by people from various different demographics,
-# regions, etc. If you feel that you don't need them (e.g., if they don't correspond to a demographic/region that needs
-# to be served from your website), as a means to maximise the benefit that CIDRAM can provide for you, you should
-# either comment them out or remove them from this file entirely. Alternatively, if you're happy to accept the idea of
-# requesting that any users connecting from IPs blocked by these sections complete an instance of reCAPTCHA in order to
-# gain access to your website, you could enable CIDRAM's reCAPTCHA feature and remove these entries anyhow, in order to
-# allows these users a means of accessing your website while simultaneously maximising the benefit that CIDRAM can
-# provide for you (to the extent of being able to block undesirable non-human traffic, at least).
+# The entries below correspond to signature sections considered to pose a high false positive risk, and also serve as
+# an example of how to list entries in this file. If you feel that you don't need them (e.g., if they relate to a
+# demographic/region that doesn't need to be served from your website), you should comment them out or remove them from
+# this file entirely, to maximise the benefit that CIDRAM can provide. Alternatively, you could also enable CIDRAM's
+# reCAPTCHA feature, which would require that users connecting from IP addresses associated with these signature
+# sections complete a reCAPTCHA instance in order to be granted access to your website.
 
 # Relating to China, Taiwan, Hong Kong, and surrounding areas:
 Ignore China Backbone 4134
 Ignore China Backbone 4837
 Ignore China Telecom 4812
-Ignore China Telecom USA
 Ignore China Unicom 4808
 Ignore DCBG
 Ignore Guangdong Mobile
@@ -51,6 +33,7 @@ Ignore Idea Cellular Ltd
 Ignore MEGHBELA BROADBAND
 Ignore SITI NETWORKS LTD
 Ignore WISH NET
+Ignore Fibergrid
 
 # Relating to Pakistan:
 Ignore AUGERE-Pakistan

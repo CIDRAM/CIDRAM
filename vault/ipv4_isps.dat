@@ -1,8 +1,8 @@
 # IPv4 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv4_isps.dat
 
-# Version: 2019.141.202
-# Last modified: 2019.05.22
+# Version: 2019.146.559
+# Last modified: 2019.05.27
 
 
 # ---
@@ -4403,39 +4403,6 @@ recaptcha:
  enabled: true
 
 
-# ASN 36678 ("CHINA TELECOM (AMERICAS) CORPORATION").
-# Stop Forum Spam (SFS) listings: 3.
-# Updated: 2019.01.16
-
-203.19.32.0/21 Deny Generic
-203.33.8.0/22 Deny Generic
-203.33.14.0/23 Deny Generic
-203.56.48.0/23 Deny Generic
-203.80.136.0/22 Deny Generic
-203.89.8.0/21 Deny Generic
-218.30.32.0/24 Deny Generic
-218.30.41.0/24 Deny Generic
-218.30.43.0/24 Deny Generic
-218.30.44.0/24 Deny Generic
-Origin: CN
-5.154.128.0/19 Deny Generic
-Origin: GB
-202.55.2.0/24 Deny Generic
-203.14.184.0/22 Deny Generic
-203.14.188.0/23 Deny Generic
-Origin: HK
-66.102.241.0/24 Deny Generic
-66.102.248.0/24 Deny Generic
-66.102.250.0/23 Deny Generic
-69.163.96.0/19 Deny Generic
-104.192.111.0/24 Deny Generic
-Origin: US
-Tag: China Telecom USA
----
-recaptcha:
- enabled: true
-
-
 # ASN 4812 ("China Telecom (Group)").
 # Interlaces with numerous providers and contains a large portion of Chinese human access endpoints; Would rather not
 # be including this section here due to the high risk of false positives, but the massive influx/uptick of undesirable
@@ -6918,7 +6885,7 @@ recaptcha:
 # three ASNs at the moment. This is intentional. Numbers may change in the
 # future pending changes in circumstance, which currently only necessitate
 # tracking these three ASNs).
-# Updated: 2019.01.16
+# Updated: 2019.05.25
 
 81.18.112.0/20 Deny Spam
 81.26.80.0/20 Deny Spam
@@ -6927,12 +6894,15 @@ recaptcha:
 87.226.212.0/24 Deny Spam
 89.207.32.0/21 Deny Spam
 90.150.64.0/20 Deny Spam
+93.189.48.0/21 Deny Spam
 109.235.88.0/21 Deny Spam
 159.255.64.0/18 Deny Spam
 176.59.0.0/19 Deny Spam
 176.59.128.0/19 Deny Spam
 176.59.192.0/19 Deny Spam
 217.169.82.0/23 Deny Spam
+217.169.84.0/22 Deny Spam
+217.169.88.0/21 Deny Spam
 Origin: RU
 Tag: T2 Mobile LLC
 ---
@@ -9394,26 +9364,18 @@ recaptcha:
 # This is a MAJOR provider of human access endpoints in the United States, and
 # should NEVER be blocked in entirety. However, occasionally there are some
 # specific IPs on their network emitting significant amounts of spam, which
-# warrants that this section be included in the signature files here. When
-# updating, nothing is included preemptively; We only include the specific IPs
-# where there's evidence of significant levels of spam currently being emitted.
-# Updated: 2019.01.16
+# warrants that this section be included in the signature files here.
+# Updated: 2019.05.25
 
-66.176.39.17/32 Deny Spam
-68.61.15.117/32 Deny Spam
-69.181.171.34/32 Deny Spam
-71.198.82.41/32 Deny Spam
-73.23.107.144/32 Deny Spam
-73.106.225.108/32 Deny Spam
-73.139.226.194/32 Deny Spam
+50.73.137.241/32 Deny Spam
 75.151.213.85/32 Deny Spam
 76.102.140.67/32 Deny Spam
-76.112.248.189/32 Deny Spam
 96.66.15.147/32 Deny Spam
-96.73.213.217/32 Deny Spam
-96.73.213.218/32 Deny Spam
+96.70.31.155/32 Deny Spam
+96.70.52.227/32 Deny Spam
+96.73.213.192/26 Deny Spam
+96.80.89.69/32 Deny Spam
 173.14.173.227/32 Deny Spam
-174.61.2.26/32 Deny Spam
 Origin: US
 Tag: Comcast Spam IPs
 ---
@@ -9895,20 +9857,30 @@ recaptcha:
  enabled: true
 
 
+# ASN 137874 ("Fibergrid").
+# Stop Forum Spam (SFS) listings: 67.
+# Updated: 2019.05.27
+
+103.116.36.0/22 Deny Spam
+Origin: IN
+Tag: Fibergrid
+---
+recaptcha:
+ enabled: true
+
+
 # Listing temporarily (hopefully) due to possible new spam campaigns detected within limited ranges contained within
 # otherwise benign networks containing human endpoints. Should be careful when expanding. Aim to de-list when possible.
 
-# ASN 137874 ("Fibergrid"), Updated: 2019.01.16
-103.116.37.0/26 Deny Spam
-Origin: IN
-Tag: Fibergrid
-
-# ASN 24921 ("Latvian Mobile Telephone Co"), Updated: 2019.01.26
-185.65.160.98/32 Deny Spam
+# ASN 24921 ("Latvian Mobile Telephone Co"), Updated: 2019.05.27
+185.65.160.0/22 Deny Spam
 Origin: LV
 Tag: AS24921
+---
+recaptcha:
+ enabled: true
 
-# ASN 43478 ("ER-Telecom Holding"), Updated: 2019.01.26
+# ASN 43478 ("ER-Telecom Holding"), Updated: 2019.01.26 / Checked: 2019.05.27
 94.180.0.0/20 Deny Spam
 94.180.16.0/21 Deny Spam
 94.180.40.0/21 Deny Spam
@@ -9923,29 +9895,17 @@ recaptcha:
  enabled: true
 
 
-# ASN 206977 ("Contell LLC").
+# ASNs 206440, 206977 ("Business Consulting LLC", "Contell LLC").
 # Caught trying to hack WordPress sites.
-# Note: Skip invalid prefixes for this section to avoid false positives.
-# Stop Forum Spam (SFS) listings: 339.
-# Updated: 2019.01.28
+# Stop Forum Spam (SFS) listings: 635 (AS206440), 1,955 (AS206977).
+# Updated: 2019.05.25
 
-185.127.24.0/22 Deny Generic
-185.244.40.0/22 Deny Generic
-185.247.140.0/22 Deny Generic
-Origin: RU
-Tag: Contell LLC
-
-
-# ASN 206440 ("Business Consulting LLC").
-# Caught trying to hack WordPress sites.
-# Note: Skip invalid prefixes for this section to avoid false positives.
-# Stop Forum Spam (SFS) listings: 681.
-# Updated: 2019.01.28
-
-46.8.208.0/22 Deny Generic
+109.248.10.0/23 Deny Generic
 185.127.24.0/22 Deny Generic
 185.154.20.0/22 Deny Generic
-185.186.140.0/22 Deny Generic
+185.244.40.0/22 Deny Generic
+185.247.140.0/22 Deny Generic
+188.130.132.0/22 Deny Generic
 Origin: RU
 Tag: Business Consulting LLC
 

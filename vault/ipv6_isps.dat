@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_isps.dat
 
-# Version: 2019.141.202
-# Last modified: 2019.05.22
+# Version: 2019.146.559
+# Last modified: 2019.05.27
 
 
 # ---
@@ -819,18 +819,6 @@ Origin: US
 2c0f:f7a8:8210::/47 Deny Generic
 Origin: ZA
 Tag: China Backbone 4134
----
-recaptcha:
- enabled: true
-
-
-# ASN 36678 ("CHINA TELECOM (AMERICAS) CORPORATION").
-# Stop Forum Spam (SFS) listings: 3.
-# Updated: 2018.02.26 / Checked: 2019.01.16
-
-2605:9d80:a000::/48 Deny Generic
-Origin: US
-Tag: China Telecom USA
 ---
 recaptcha:
  enabled: true
@@ -1804,6 +1792,18 @@ Origin: RU
 2a01:7c0::/32 Deny Generic
 Origin: UA
 Tag: MTS PJSC
+---
+recaptcha:
+ enabled: true
+
+
+# ASN 137874 ("Fibergrid").
+# Stop Forum Spam (SFS) listings: 67.
+# Updated: 2019.05.27
+
+2402:f4c0::/32 Deny Spam
+Origin: IN
+Tag: Fibergrid
 ---
 recaptcha:
  enabled: true

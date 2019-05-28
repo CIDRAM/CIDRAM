@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6.dat
 
-# Version: 2019.146.559
-# Last modified: 2019.05.27
+# Version: 2019.147.320
+# Last modified: 2019.05.28
 
 
 # ---
@@ -3915,9 +3915,9 @@ Tag: RouteLabel V.O.F
 
 
 # ASN 42632 ("MnogoByte LLC").
-# %Listed, Google Malware Dashboard: 0.16%.
-# Stop Forum Spam (SFS) listings: 59.
-# Updated: 2018.08.05 / Checked: 2019.01.16
+# %Listed, Google Malware Dashboard: 0.10%.
+# Stop Forum Spam (SFS) listings: 17.
+# Updated: 2018.08.05 / Checked: 2019.05.28
 
 2001:67c:1688::/48 Deny Cloud
 2a02:878:1::/48 Deny Cloud
@@ -4366,10 +4366,11 @@ Origin: GB
 Tag: DediPower
 
 
-# ASNs 12637, 20522 ("Seeweb S.r.l").
-# %Listed, Google Malware Dashboard: 0.12% (AS12637).
-# Stop Forum Spam (SFS) listings: 34 (AS12637).
-# Updated: 2019.04.09
+# ASN 12637 ("Seeweb S.r.l").
+# (Can omit anything under 44../8; clean).
+# %Listed, Google Malware Dashboard: 0.10% (AS12637).
+# Stop Forum Spam (SFS) listings: 33 (AS12637).
+# Updated: 2019.05.28
 
 2a0b:fd40::/29 Deny Cloud
 Origin: CH
@@ -4380,6 +4381,7 @@ Origin: CH
 Origin: HR
 2001:4b78::/29 Deny Cloud
 2a04:2700::/29 Deny Cloud
+2a05:be80::/29 Deny Cloud
 2a07:50c0::/29 Deny Cloud
 2a0d:b000::/29 Deny Cloud
 Origin: IT
@@ -4754,6 +4756,7 @@ Tag: CloudSRV Limited
 
 
 # ASN 61337 ("Electronic Communities Ltd").
+# (Can omit anything under 44../8; clean).
 # Updated: 2017.02.18 / Checked: 2019.05.04
 
 2001:67c:504::/48 Deny Cloud
@@ -6437,3 +6440,18 @@ Tag: Next Layer
 2620:7:6000::/47 Deny Cloud
 Origin: US
 Tag: Quintex
+
+
+# ASN 63996 ("Mazeda Networks Limited").
+# Caught XRumer operating on this network. Primarily a server leasing and webhosting company, but marking for use with
+# reCAPTCHA, due to that they're multiplay, and also offer corporate internet connectivity (possible human endpoints).
+# Not sure how to distinguish which ranges belong to which service within the network.
+# Stop Forum Spam (SFS) listings: 241.
+# Updated: 2019.05.28
+
+2400:3240::/32 Deny Cloud
+Origin: BD
+Tag: Mazeda Networks
+---
+recaptcha:
+ enabled: true

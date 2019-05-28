@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_isps.dat
 
-# Version: 2019.146.559
-# Last modified: 2019.05.27
+# Version: 2019.147.320
+# Last modified: 2019.05.28
 
 
 # ---
@@ -213,10 +213,12 @@ Tag: Mir Telematiki Ltd
 
 
 # ASN 45595 ("Pakistan Telecom").
-# %Listed, Google Malware Dashboard: 2.13%.
-# %Listed, abuseat.org (CBL-Listed): 1.92%.
-# Stop Forum Spam (SFS) listings: 71,239.
-# Updated: 2017.03.22 / Checked: 2019.01.28
+# *Extreme*, unrepentant, unending source of spam over the course of many, many years. XRumer plus others operating on
+# their network. Highly unlikely to ever delist.
+# %Listed, Google Malware Dashboard: 2.56%.
+# %Listed, abuseat.org (CBL-Listed): 1.31%.
+# Stop Forum Spam (SFS) listings: 52,985.
+# Updated: 2017.03.22 / Checked: 2019.05.28
 
 2404:7000::/32 Deny Spam
 Origin: PK
@@ -1388,11 +1390,11 @@ recaptcha:
 
 
 # ASN 3216 ("PJSC Vimpelcom").
-# %Listed, Google Malware Dashboard: 5.52%.
-# Stop Forum Spam (SFS) listings: 8,482.
+# %Listed, Google Malware Dashboard: 4.99%.
+# Stop Forum Spam (SFS) listings: 3,224.
 # Similarly to with the Rostelecom CIDRs, blocking the entirety of all "Vimpelcom" ASNs could be problematic. Instead,
 # we'll try to limit listings to those CIDRs known to be problematic (hacking events, spamming events, etc).
-# Updated: 2017.09.30 / Checked: 2019.01.27
+# Updated: 2017.09.30 / Checked: 2019.05.28
 
 2a00:1248::/32 Deny Generic
 Origin: RU

@@ -1,8 +1,8 @@
 # IPv4 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv4.dat
 
-# Version: 2019.146.559
-# Last modified: 2019.05.27
+# Version: 2019.147.320
+# Last modified: 2019.05.28
 
 
 # ---
@@ -9340,7 +9340,6 @@ Origin: FR
 213.214.120.0/21 Deny Cloud
 217.195.112.0/20 Deny Cloud
 Origin: NL
-Origin: US
 Tag: Combell NV
 
 
@@ -13578,13 +13577,16 @@ Tag: RouteLabel V.O.F
 
 
 # ASN 42632 ("MnogoByte LLC").
-# %Listed, Google Malware Dashboard: 0.16%.
-# Stop Forum Spam (SFS) listings: 59.
-# Updated: 2019.01.16
+# %Listed, Google Malware Dashboard: 0.10%.
+# Stop Forum Spam (SFS) listings: 17.
+# Updated: 2019.05.28
 
+179.60.149.0/24 Deny Cloud
+Origin: BZ
 46.243.253.0/24 Deny Cloud
 178.170.189.0/24 Deny Cloud
 Origin: NL
+45.12.4.0/22 Deny Cloud
 77.220.160.0/19 Deny Cloud
 83.222.96.0/20 Deny Cloud
 83.222.112.0/21 Deny Cloud
@@ -15083,11 +15085,11 @@ Origin: US
 Tag: DediPower
 
 
-# ASNs 12637, 20522 ("Seeweb S.r.l").
+# ASN 12637 ("Seeweb S.r.l").
 # (Can omit anything under 44../8; clean).
-# %Listed, Google Malware Dashboard: 0.12% (AS12637).
-# Stop Forum Spam (SFS) listings: 34 (AS12637).
-# Updated: 2019.04.09
+# %Listed, Google Malware Dashboard: 0.10% (AS12637).
+# Stop Forum Spam (SFS) listings: 33 (AS12637).
+# Updated: 2019.05.28
 
 176.56.128.0/21 Deny Cloud
 185.220.244.0/22 Deny Cloud
@@ -15128,14 +15130,13 @@ Origin: IE
 217.64.192.0/20 Deny Cloud
 217.168.224.0/23 Deny Cloud
 217.168.231.0/24 Deny Cloud
-217.168.236.0/22 Deny Cloud
 217.194.0.0/20 Deny Cloud
 Origin: IT
 85.202.87.0/24 Deny Cloud
+Origin: RU
 185.146.252.0/22 Deny Cloud
 212.44.96.0/19 Deny Cloud
 Origin: SI
-Origin: US
 Tag: Seeweb S.r.l
 
 
@@ -17680,7 +17681,6 @@ Tag: CloudSRV Limited
 91.230.243.0/24 Deny Cloud
 195.66.148.0/23 Deny Cloud
 Origin: GB
-Origin: US
 Tag: ECOM-AS
 
 
@@ -24007,6 +24007,24 @@ Tag: Next Layer
 199.249.230.0/24 Deny Cloud
 Origin: US
 Tag: Quintex
+
+
+# ASN 63996 ("Mazeda Networks Limited").
+# Caught XRumer operating on this network. Primarily a server leasing and webhosting company, but marking for use with
+# reCAPTCHA, due to that they're multiplay, and also offer corporate internet connectivity (possible human endpoints).
+# Not sure how to distinguish which ranges belong to which service within the network.
+# Stop Forum Spam (SFS) listings: 241.
+# Updated: 2019.05.28
+
+45.120.112.0/22 Deny Cloud
+103.60.172.0/22 Deny Cloud
+103.205.68.0/22 Deny Cloud
+203.95.220.0/22 Deny Cloud
+Origin: BD
+Tag: Mazeda Networks
+---
+recaptcha:
+ enabled: true
 
 
 # ---

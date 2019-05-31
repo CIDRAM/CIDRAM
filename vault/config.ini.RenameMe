@@ -180,12 +180,17 @@ empty_fields='omit'
 ; accurately, to aid any heuristic or forensic analysis that might be necessary
 ; in the future. However, in the event that a user attempts to read log data
 ; using external tools, and if those external tools don't perform their own
-; sanitation process, the user could be exposed to XSS attacks. If necessary,
+; sanitisation process, the user could be exposed to XSS attacks. If necessary,
 ; you can change the default behaviour using this configuration directive. True
 ; = Sanitise data when logging it (data is preserved less accurately, but XSS
 ; risk is lower). False = Don't sanitise data when logging it (data is
 ; preserved more accurately, but XSS risk is higher) [Default].
-log_sanitation=false
+log_sanitisation=false
+
+; This can be used to prevent CIDRAM from using particular channels when
+; sending requests (e.g., when updating, when fetching component metadata,
+; etc).
+disabled_channels=''
 
 
 [signatures]

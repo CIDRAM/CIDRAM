@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Swedish language data for the front-end (last modified: 2019.05.11).
+# This file: Swedish language data for the front-end (last modified: 2019.05.31).
 ##/
 
 Extended Description Bypasses: "Standard bypass-filen som normalt ingår i huvudpaketet."
@@ -73,6 +73,7 @@ config_general_default_dns: "En komma-avgränsad lista över DNS-servrar som ska
 config_general_disable_cli: "Inaktivera CLI-läge? CLI-läge är som standard aktiverat, men kan ibland störa vissa testverktyg (t.ex., PHPUnit) och andra CLI-baserade applikationer. Om du inte behöver avaktivera CLI-läge, bör du ignorera detta direktiv. False = Aktivera CLI-läge [Standard]; True = Inaktivera CLI-läge."
 config_general_disable_frontend: "Inaktivera front-end tillgång? Front-end tillgång kan göra CIDRAM mer hanterbar, men kan också vara en potentiell säkerhetsrisk. Det rekommenderas att hantera CIDRAM via back-end när det är möjligt, men front-end tillgång tillhandahålls när det inte är möjligt. Håll det inaktiverat om du inte behöver det. False = Aktivera front-end tillgång; True = Inaktivera front-end tillgång [Standard]."
 config_general_disable_webfonts: "Inaktivera webbfonter? True = Ja [Standard]; False = Nej."
+config_general_disabled_channels: "Detta kan användas för att förhindra att CIDRAM använder särskilda kanaler när man skickar förfrågningar (t.ex., när man uppdaterar, när man hämtar komponentmetadata, osv)."
 config_general_emailaddr: "Om du vill, kan du ange en e-postadress här för att kunna ges till användare när de är blockerade, för att de ska kunna användas som kontaktpunkt för stöd och/eller hjälp till om de blockeras av misstag eller fel. VARNING: Alla e-postadresser du tillhandahåller här kommer säkert att förvärvas av spamrobotar och skrapor medan de används här, och så, det rekommenderas starkt att om du väljer att tillhandahålla en e-postadress här, så ser du till att e-postadressen du tillhandahåller här är en engångsadress och/eller en adress som du inte har något emot att bli spamad (med andra ord, vill du antagligen inte använda dina primära personliga eller primära företags e-postadresser)."
 config_general_emailaddr_display_style: "Hur skulle du föredra att e-postadressen ska presenteras för användarna?"
 config_general_empty_fields: "Hur ska CIDRAM hantera tomma fält vid loggning och visning av blockhändelsesinformation? "include" = Inkludera tomma fält. "omit" = Utelämna tomma fält [standard]."

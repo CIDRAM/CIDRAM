@@ -7,44 +7,44 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Configuration defaults file (last modified: 2019.05.26).
+# This file: Configuration defaults file (last modified: 2019.05.31).
 ##/
 
 Config Defaults:
  general:
   logfile:
-   type: string
+   type: "string"
    default: ""
   logfile_apache:
-   type: string
+   type: "string"
    default: ""
   logfile_serialized:
-   type: string
+   type: "string"
    default: ""
   truncate:
-   type: kb
+   type: "kb"
    default: "0KB"
-   preview: kb
+   preview: "kb"
   log_rotation_limit:
-   type: int
+   type: "int"
    default: 0
   log_rotation_action:
-   type: string
+   type: "string"
    default: "Delete"
    choices:
-    Delete: Delete
-    Archive: Archive
+    Delete: "Delete"
+    Archive: "Archive"
   timezone:
-   type: timezone
+   type: "timezone"
    default: "SYSTEM"
   time_offset:
-   type: int
+   type: "int"
    default: 0
-   preview: minutes
+   preview: "minutes"
   time_format:
-   type: string
+   type: "string"
    default: "{Day}, {dd} {Mon} {yyyy} {hh}:{ii}:{ss} {tz}"
-   preview: allow_other
+   preview: "allow_other"
    allow_other: true
    choices:
     "{Day}, {dd} {Mon} {yyyy} {hh}:{ii}:{ss} {tz}": "{Day}, {dd} {Mon} {yyyy} {hh}:{ii}:{ss} {tz}"
@@ -119,9 +119,9 @@ Config Defaults:
     "{yyyy}-{mm}-{dd}T{hh}:{ii}:{ss}{t:z}": "{yyyy}-{mm}-{dd}T{hh}:{ii}:{ss}{t:z}"
     "{d}. {m}. {yyyy}": "{d}. {m}. {yyyy}"
   ipaddr:
-   type: string
+   type: "string"
    default: "REMOTE_ADDR"
-   preview: allow_other
+   preview: "allow_other"
    allow_other: true
    choices:
     HTTP_INCAP_CLIENT_IP: "HTTP_INCAP_CLIENT_IP (Incapsula)"
@@ -131,49 +131,49 @@ Config Defaults:
     X-Forwarded-For: "X-Forwarded-For (Squid)"
     REMOTE_ADDR: "REMOTE_ADDR (Default)"
   forbid_on_block:
-   type: int
+   type: "int"
    default: 200
    choices:
-    200: 200 OK
-    403: 403 Forbidden
-    410: 410 Gone
-    418: 418 I'm a teapot
-    451: 451 Unavailable For Legal Reasons
-    503: 503 Service Unavailable
+    200: "200 OK"
+    403: "403 Forbidden"
+    410: "410 Gone"
+    418: "418 I'm a teapot"
+    451: "451 Unavailable For Legal Reasons"
+    503: "503 Service Unavailable"
   silent_mode:
-   type: string
+   type: "string"
    default: ""
   lang:
-   type: string
+   type: "string"
    default: "en"
    choices:
-    en: English
-    ar: العربية
-    bn: বাংলা
-    de: Deutsch
-    es: Español
-    fr: Français
-    hi: हिंदी
-    id: Bahasa Indonesia
-    it: Italiano
-    ja: 日本語
-    ko: 한국어
-    nl: Nederlandse
-    no: Norsk
-    pl: Polski
-    pt: Português
-    ru: Русский
-    sv: Svenska
-    ta: தமிழ்
-    th: ภาษาไทย
-    tr: Türkçe
-    ur: ‏اردو‏
-    vi: Tiếng Việt
-    zh: 中文（简体）
-    zh-tw: 中文（傳統）
+    en: "English"
+    ar: "العربية"
+    bn: "বাংলা"
+    de: "Deutsch"
+    es: "Español"
+    fr: "Français"
+    hi: "हिंदी"
+    id: "Bahasa Indonesia"
+    it: "Italiano"
+    ja: "日本語"
+    ko: "한국어"
+    nl: "Nederlandse"
+    no: "Norsk"
+    pl: "Polski"
+    pt: "Português"
+    ru: "Русский"
+    sv: "Svenska"
+    ta: "தமிழ்"
+    th: "ภาษาไทย"
+    tr: "Türkçe"
+    ur: "اردو"
+    vi: "Tiếng Việt"
+    zh: "中文（简体）"
+    zh-tw: "中文（傳統）"
    choice_filter: "FilterLang"
   numbers:
-   type: string
+   type: "string"
    default: "Latin-1"
    choices:
     NoSep-1: "1234567.89"
@@ -191,25 +191,25 @@ Config Defaults:
     Arabic-2: "١٬٢٣٤٬٥٦٧٫٨٩"
     Thai-1: "๑,๒๓๔,๕๖๗.๘๙"
   emailaddr:
-   type: string
+   type: "string"
    default: ""
   emailaddr_display_style:
-   type: string
-   default: default
+   type: "string"
+   default: "default"
    choices:
-    default: {field_clickable_link}
-    noclick: {field_nonclickable_text}
+    default: "{field_clickable_link}"
+    noclick: "{field_nonclickable_text}"
   disable_frontend:
-   type: bool
+   type: "bool"
    default: true
   max_login_attempts:
-   type: int
+   type: "int"
    default: 5
   frontend_log:
-   type: string
+   type: "string"
    default: ""
   ban_override:
-   type: int
+   type: "int"
    default: 200
    choices:
     200: 200
@@ -219,150 +219,156 @@ Config Defaults:
     451: 451
     503: 503
   log_banned_ips:
-   type: bool
+   type: "bool"
    default: true
   default_dns:
-   type: string
+   type: "string"
    default: "8.8.8.8,8.8.4.4"
   search_engine_verification:
-   type: bool
+   type: "bool"
    default: true
   social_media_verification:
-   type: bool
+   type: "bool"
    default: true
   protect_frontend:
-   type: bool
+   type: "bool"
    default: true
   disable_webfonts:
-   type: bool
+   type: "bool"
    default: true
   maintenance_mode:
-   type: bool
+   type: "bool"
    default: false
   default_algo:
-   type: string
+   type: "string"
    default: "PASSWORD_DEFAULT"
    choices:
-    PASSWORD_DEFAULT: PASSWORD_DEFAULT
-    PASSWORD_BCRYPT: PASSWORD_BCRYPT
-    PASSWORD_ARGON2I: PASSWORD_ARGON2I
-    PASSWORD_ARGON2ID: PASSWORD_ARGON2ID
+    PASSWORD_DEFAULT: "PASSWORD_DEFAULT"
+    PASSWORD_BCRYPT: "PASSWORD_BCRYPT"
+    PASSWORD_ARGON2I: "PASSWORD_ARGON2I"
+    PASSWORD_ARGON2ID: "PASSWORD_ARGON2ID"
   statistics:
-   type: bool
+   type: "bool"
    default: false
   force_hostname_lookup:
-   type: bool
+   type: "bool"
    default: false
   allow_gethostbyaddr_lookup:
-   type: bool
+   type: "bool"
    default: true
   hide_version:
-   type: bool
+   type: "bool"
    default: false
   empty_fields:
-   type: string
-   default: omit
+   type: "string"
+   default: "omit"
    choices:
-    omit: {field_omit}
-    include: {field_include}
+    omit: "{field_omit}"
+    include: "{field_include}"
   log_sanitisation:
-   type: bool
+   type: "bool"
    default: false
+  disabled_channels:
+   type: "checkbox"
+   default: ""
+   choices:
+    GitHub: "GitHub"
+    BitBucket: "BitBucket"
  signatures:
   ipv4:
-   type: string
+   type: "string"
    default: "ipv4.dat,ipv4_bogons.dat,ipv4_custom.dat,ipv4_isps.dat,ipv4_other.dat"
   ipv6:
-   type: string
+   type: "string"
    default: "ipv6.dat,ipv6_bogons.dat,ipv6_custom.dat,ipv6_isps.dat,ipv6_other.dat"
   block_cloud:
-   type: bool
+   type: "bool"
    default: true
   block_bogons:
-   type: bool
+   type: "bool"
    default: false
   block_generic:
-   type: bool
+   type: "bool"
    default: true
   block_legal:
-   type: bool
+   type: "bool"
    default: true
   block_malware:
-   type: bool
+   type: "bool"
    default: true
   block_proxies:
-   type: bool
+   type: "bool"
    default: false
   block_spam:
-   type: bool
+   type: "bool"
    default: true
   modules:
-   type: string
+   type: "string"
    default: ""
   default_tracktime:
-   type: int
+   type: "int"
    default: 604800
-   preview: seconds
+   preview: "seconds"
   infraction_limit:
-   type: int
+   type: "int"
    default: 10
   track_mode:
-   type: bool
+   type: "bool"
    default: false
  recaptcha:
   usemode:
-   type: int
+   type: "int"
    default: 0
   lockip:
-   type: bool
+   type: "bool"
    default: false
   lockuser:
-   type: bool
+   type: "bool"
    default: true
   sitekey:
-   type: string
+   type: "string"
    default: ""
   secret:
-   type: string
+   type: "string"
    default: ""
   expiry:
-   type: real
-   step: any
+   type: "float"
+   step: "any"
    default: 720
-   preview: hours
+   preview: "hours"
   logfile:
-   type: string
+   type: "string"
    default: ""
   signature_limit:
-   type: int
+   type: "int"
    default: 1
   api:
-   type: string
+   type: "string"
    default: "V2"
    choices:
     V2: "V2"
     Invisible: "Invisible"
  legal:
   pseudonymise_ip_addresses:
-   type: bool
+   type: "bool"
    default: true
   omit_ip:
-   type: bool
+   type: "bool"
    default: false
   omit_hostname:
-   type: bool
+   type: "bool"
    default: false
   omit_ua:
-   type: bool
+   type: "bool"
    default: false
   privacy_policy:
-   type: string
+   type: "string"
    default: ""
  template_data:
   theme:
-   type: string
+   type: "string"
    default: "default"
-   preview: allow_other
+   preview: "allow_other"
    allow_other: true
    choices:
     default: "Default"
@@ -375,123 +381,123 @@ Config Defaults:
     obscured: "Obscured"
    choice_filter: "FilterTheme"
   magnification:
-   type: real
-   step: any
+   type: "float"
+   step: "any"
    default: 1
   css_url:
-   type: string
+   type: "string"
    default: ""
  PHPMailer:
   event_log:
-   type: string
+   type: "string"
    default: ""
   skip_auth_process:
-   type: bool
+   type: "bool"
    default: false
   enable_two_factor:
-   type: bool
+   type: "bool"
    default: false
   host:
-   type: string
+   type: "string"
    default: ""
   port:
-   type: int
+   type: "int"
    default: 587
   smtp_secure:
-   type: string
+   type: "string"
    default: "default"
    choices:
     default: "-"
     tls: "TLS"
     ssl: "SSL"
   smtp_auth:
-   type: bool
+   type: "bool"
    default: true
   username:
-   type: string
+   type: "string"
    default: ""
   password:
-   type: string
+   type: "string"
    default: ""
   set_from_address:
-   type: string
+   type: "string"
    default: ""
   set_from_name:
-   type: string
+   type: "string"
    default: ""
   add_reply_to_address:
-   type: string
+   type: "string"
    default: ""
   add_reply_to_name:
-   type: string
+   type: "string"
    default: ""
  rate_limiting:
   max_bandwidth:
-   type: kb
+   type: "kb"
    default: "0KB"
-   preview: kb
+   preview: "kb"
   max_requests:
-   type: int
+   type: "int"
    default: 0
   precision_ipv4:
-   type: int
+   type: "int"
    default: 32
   precision_ipv6:
-   type: int
+   type: "int"
    default: 128
   allowance_period:
-   type: real
-   step: any
+   type: "float"
+   step: "any"
    default: 0
-   preview: hours
+   preview: "hours"
  supplementary_cache_options:
   enable_apcu:
-   type: bool
+   type: "bool"
    default: false
    experimental: true
   enable_memcached:
-   type: bool
+   type: "bool"
    default: false
    experimental: true
   enable_redis:
-   type: bool
+   type: "bool"
    default: false
    experimental: true
   enable_pdo:
-   type: bool
+   type: "bool"
    default: false
    experimental: true
   memcached_host:
-   type: string
+   type: "string"
    default: "localhost"
    experimental: true
   memcached_port:
-   type: int
+   type: "int"
    default: 11211
    experimental: true
   redis_host:
-   type: string
+   type: "string"
    default: "localhost"
    experimental: true
   redis_port:
-   type: int
+   type: "int"
    default: 6379
    experimental: true
   redis_timeout:
-   type: real
-   step: any
+   type: "float"
+   step: "any"
    default: 2.5
    experimental: true
   pdo_dsn:
-   type: string
+   type: "string"
    default: "mysql:dbname=cidram;host=localhost;port=3306"
    experimental: true
   pdo_username:
-   type: string
+   type: "string"
    default: ""
    experimental: true
   pdo_password:
-   type: string
+   type: "string"
    default: ""
    experimental: true
 

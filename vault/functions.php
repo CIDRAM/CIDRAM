@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2019.05.26).
+ * This file: Functions file (last modified: 2019.05.31).
  */
 
 /** Autoloader for CIDRAM classes. */
@@ -609,16 +609,16 @@ $CIDRAM['TimeFormat'] = function (int $Time, $In) use (&$CIDRAM) {
  * @param string $Type The type (or pseudo-type) to cast the variable to.
  */
 $CIDRAM['AutoType'] = function (&$Var, string $Type = '') use (&$CIDRAM) {
-    if ($Type === 'string' || $Type === 'timezone') {
+    if (in_array($Type, ['string', 'timezone', 'checkbox'], true)) {
         $Var = (string)$Var;
-    } elseif ($Type === 'int' || $Type === 'integer') {
+    } elseif ($Type === 'int') {
         $Var = (int)$Var;
-    } elseif ($Type === 'real' || $Type === 'double' || $Type === 'float') {
+    } elseif ($Type === 'float') {
         $Var = (float)$Var;
-    } elseif ($Type === 'bool' || $Type === 'boolean') {
+    } elseif ($Type === 'bool') {
         $Var = (strtolower($Var) !== 'false' && $Var);
     } elseif ($Type === 'kb') {
-        $Var = $CIDRAM['ReadBytes']($Var, 1);
+        $Var = $CIDRAM['ReadBytes']((string)$Var, 1);
     } else {
         $LVar = strtolower($Var);
         if ($LVar === 'true') {
@@ -638,9 +638,53 @@ $CIDRAM['AutoType'] = function (&$Var, string $Type = '') use (&$CIDRAM) {
  * @param array $Params An optional associative array of key-value pairs to
  *      send with the request.
  * @param int $Timeout An optional timeout limit.
- * @return string The results of the request.
+ * @param int $Depth Recursion depth of the current closure instance.
+ * @return string The results of the request, or an empty string upon failure.
  */
-$CIDRAM['Request'] = function (string $URI, array $Params = [], int $Timeout = -1) use (&$CIDRAM): string {
+$CIDRAM['Request'] = function (string $URI, array $Params = [], int $Timeout = -1, int $Depth = 0) use (&$CIDRAM): string {
+
+    /** Fetch channel information. */
+    if (!isset($CIDRAM['Channels'])) {
+        $CIDRAM['Channels'] = (
+            $Channels = $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'channels.yaml')
+        ) ? (new \Maikuolan\Common\YAML($Channels))->Data : [];
+        if (!isset($CIDRAM['Channels']['Triggers'])) {
+            $CIDRAM['Channels']['Triggers'] = [];
+        }
+    }
+
+    /** Test channel triggers. */
+    foreach ($CIDRAM['Channels']['Triggers'] as $TriggerName => $TriggerURI) {
+        if (
+            !isset($CIDRAM['Channels'][$TriggerName]) ||
+            !is_array($CIDRAM['Channels'][$TriggerName]) ||
+            substr($URI, 0, strlen($TriggerURI)) !== $TriggerURI
+        ) {
+            continue;
+        }
+        foreach ($CIDRAM['Channels'][$TriggerName] as $Channel => $Options) {
+            if (!is_array($Options) || !isset($Options[$TriggerName])) {
+                continue;
+            }
+            $Len = strlen($Options[$TriggerName]);
+            if (substr($URI, 0, $Len) !== $Options[$TriggerName]) {
+                continue;
+            }
+            unset($Options[$TriggerName]);
+            if (empty($Options) || $CIDRAM['in_csv'](key($Options), $CIDRAM['Config']['general']['disabled_channels'])) {
+                continue;
+            }
+            $AlternateURI = current($Options) . substr($URI, $Len);
+            break;
+        }
+        if ($CIDRAM['in_csv']($TriggerName, $CIDRAM['Config']['general']['disabled_channels'])) {
+            if (isset($AlternateURI)) {
+                return $CIDRAM['Request']($AlternateURI, $Params, $Timeout, $Depth);
+            }
+            return '';
+        }
+        break;
+    }
 
     /** Initialise the cURL session. */
     $Request = curl_init($URI);
@@ -668,6 +712,17 @@ $CIDRAM['Request'] = function (string $URI, array $Params = [], int $Timeout = -
 
     /** Execute and get the response. */
     $Response = curl_exec($Request);
+
+    /** Check for problems (e.g., resource not found, server errors, etc). */
+    if (($Info = curl_getinfo($Request)) && is_array($Info)) {
+
+        /** Request failed. Try again using an alternative address. */
+        if (isset($Info['http_code']) && $Info['http_code'] >= 400 && isset($AlternateURI) && $Depth < 3) {
+            curl_close($Request);
+            return $CIDRAM['Request']($AlternateURI, $Params, $Timeout, $Depth + 1);
+        }
+
+    }
 
     /** Close the cURL session. */
     curl_close($Request);
@@ -1205,9 +1260,9 @@ $CIDRAM['Arrayify'] = function (&$Input) {
  * @param string $In Input.
  * @param int $Mode Operating mode. 0 for true byte values, 1 for validating.
  *      Default is 0.
- * @return string|int Output (depends on operating mode).
+ * @return string|int Output (return type depends on operating mode).
  */
-$CIDRAM['ReadBytes'] = function ($In, $Mode = 0) {
+$CIDRAM['ReadBytes'] = function (string $In, int $Mode = 0) {
     if (preg_match('/[KMGT][oB]$/i', $In)) {
         $Unit = substr($In, -2, 1);
     } elseif (preg_match('/[KMGToB]$/i', $In)) {
@@ -1932,4 +1987,26 @@ $CIDRAM['RL_Get_Usage'] = function () use (&$CIDRAM) {
         $Requests++;
     }
     return ['Bytes' => $Bytes, 'Requests' => $Requests];
+};
+
+/**
+ * Checks for a value within CSV.
+ *
+ * @param string $Value The value to look for.
+ * @param string $CSV The CSV to look in.
+ * @return bool True when found; False when not found.
+ */
+$CIDRAM['in_csv'] = function (string $Value, string $CSV) use (&$CIDRAM): bool {
+    if (!$Value || !$CSV) {
+        return false;
+    }
+    $Arr = explode(',', $CSV);
+    if (strpos($CSV, '"') !== false) {
+        foreach ($Arr as &$Item) {
+            if (substr($Item, 0, 1) === '"' && substr($Item, -1) === '"') {
+                $Item = substr($Item, 1, -1);
+            }
+        }
+    }
+    return in_array($Value, $Arr, true);
 };

@@ -181,6 +181,11 @@ empty_fields='omit'
 ; preserved more accurately, but XSS risk is higher) [Default].
 log_sanitisation=false
 
+; This can be used to prevent CIDRAM from using particular channels when
+; sending requests (e.g., when updating, when fetching component metadata,
+; etc).
+disabled_channels=''
+
 
 [signatures]
 

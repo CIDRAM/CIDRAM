@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_isps.dat
 
-# Version: 2019.147.320
-# Last modified: 2019.05.28
+# Version: 2019.151.508
+# Last modified: 2019.06.02
 
 
 # ---
@@ -240,9 +240,11 @@ Tag: CH-NET S.R.L
 
 
 # ASN 7743 ("JPMorgan Chase & Co").
-# Updated: 2019.02.08
+# Stop Forum Spam (SFS) listings: 1.
+# Updated: 2019.06.02
 
 2620:11::/45 Deny Generic
+2620:11:8::/47 Deny Generic
 Origin: US
 Tag: JPMorgan Chase & Co
 
@@ -387,8 +389,7 @@ Tag: Yes Networks
 
 
 # ASNs 3491, 4760, 6279, 7262 ("PCCW Global" / "Beyond The Network America, Inc").
-# Careful when updating; Contains both "proxy" and "spam" parameters (should be marked differently).
-# Updated: 2018.08.05 / Checked: 2019.01.30
+# Updated: 2019.06.01
 
 2a03:5400::/32 Deny Spam
 Origin: BE
@@ -402,8 +403,6 @@ Origin: MZ
 Origin: NL
 2a0c:6980::/29 Deny Spam
 Origin: RU
-2600:1400:7::/48 Deny Spam
-Origin: US
 2c0f:f3c0::/32 Deny Spam
 Origin: ZA
 Tag: PCCW Global
@@ -1189,23 +1188,20 @@ recaptcha:
 
 # ASN 18403 ("The Corporation for Financing & Promoting Technology").
 # Interlaces with numerous providers and contains a large portion of Vietnamese human access endpoints; Would rather
-# not be including this section here due to the high risk of false positives, but the massive influx/uptick of
-# undesirable events (spamming, hacking, attempted brute-forcing, probing, etc) seen originating from across a wide
-# range of CIDRs tied this ASN, plus the presence of this ASN in numerous worst offenders lists and blacklists, are
-# not considerations that can be easily ignored at this point in time. The section is marked for use with reCAPTCHA
-# due to the risk of false positives, and I would encourage any Vietnamese CIDRAM users, and any CIDRAM users
-# expecting to receive any traffic from Vietnam, to list this section in their ignore file as a means of minimising
-# the potential impact of false positives. A balanced approach for those that may expect some such traffic, but not a
-# lot of it, would be to not ignore this section, but to ensure that the reCAPTCHA feature is enabled in their
-# configuration.
-# %Listed, Google Malware Dashboard: 0.24%.
-# %Listed, abuseat.org (CBL-Listed): 2.44%.
-# Stop Forum Spam (SFS) listings: 13,562.
-# Updated: 2017.12.28 / Checked: 2019.02.08
+# not be including this section here due to the high risk of false positives, but amount of spamming, hacking,
+# attempted brute-forcing, probing, etc seen from this ASN can't be ignored.
+# %Listed, Google Malware Dashboard: 0.25%.
+# %Listed, abuseat.org (CBL-Listed): 3.04%.
+# Stop Forum Spam (SFS) listings: 10,011.
+# Updated: 2019.06.02
 
 2001:df2:d900::/48 Deny Generic
 2001:df6:1e00::/48 Deny Generic
+2401:f2c0::/32 Deny Generic
 2401:f740::/32 Deny Generic
+2403:6a40::/48 Deny Generic
+2404:b740::/48 Deny Generic
+2404:dac0::/48 Deny Generic
 2405:4800::/32 Deny Generic
 Origin: VN
 Tag: CFPT

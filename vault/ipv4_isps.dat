@@ -1,8 +1,8 @@
 # IPv4 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv4_isps.dat
 
-# Version: 2019.147.320
-# Last modified: 2019.05.28
+# Version: 2019.151.508
+# Last modified: 2019.06.02
 
 
 # ---
@@ -619,51 +619,41 @@ recaptcha:
 
 
 # ASN 50810 ("Mobin Net Communication Company (Private Joint Stock)").
-# %Listed, abuseat.org (CBL-Listed): 3.02%.
-# Stop Forum Spam (SFS) listings: 342.
-# Updated: 2019.02.08
+# %Listed, abuseat.org (CBL-Listed): 2.05%.
+# Stop Forum Spam (SFS) listings: 507.
+# Updated: 2019.06.02
 
-2.182.160.0/20 Deny Spam
-2.183.128.0/20 Deny Spam
-2.183.202.0/23 Deny Spam
 2.188.32.0/21 Deny Spam
-5.52.0.0/16 Deny Spam
 5.201.128.0/17 Deny Spam
 37.98.0.0/17 Deny Spam
 37.156.16.0/20 Deny Spam
 62.102.128.0/20 Deny Spam
 80.242.0.0/20 Deny Spam
 85.239.192.0/19 Deny Spam
-86.107.0.0/20 Deny Spam
-86.107.208.0/20 Deny Spam
 89.37.0.0/20 Deny Spam
 89.43.0.0/21 Deny Spam
 89.43.8.0/22 Deny Spam
 89.43.12.0/23 Deny Spam
-89.45.48.0/20 Deny Spam
-91.133.128.0/17 Deny Spam
 92.114.16.0/22 Deny Spam
 92.114.24.0/21 Deny Spam
 93.117.176.0/20 Deny Spam
+93.119.208.0/20 Deny Spam
 94.101.128.0/20 Deny Spam
-94.101.240.0/20 Deny Spam
+94.101.248.0/21 Deny Spam
 109.108.160.0/19 Deny Spam
 109.203.128.0/19 Deny Spam
-130.255.192.0/18 Deny Spam
 178.131.0.0/16 Deny Spam
 185.22.28.0/22 Deny Spam
+185.135.228.0/22 Deny Spam
+185.136.100.0/22 Deny Spam
+185.175.76.0/22 Deny Spam
 188.122.96.0/19 Deny Spam
 188.209.192.0/20 Deny Spam
-188.210.64.0/20 Deny Spam
-188.210.192.0/20 Deny Spam
 188.211.0.0/20 Deny Spam
-188.212.48.0/20 Deny Spam
 188.212.240.0/21 Deny Spam
 188.213.72.0/23 Deny Spam
 188.213.192.0/21 Deny Spam
 Origin: IR
-93.119.208.0/20 Deny Spam
-Origin: RO
 Tag: Mobin Net
 ---
 recaptcha:
@@ -1264,7 +1254,8 @@ Tag: CH-NET S.R.L
 
 
 # ASN 7743 ("JPMorgan Chase & Co").
-# Updated: 2018.03.31 / Checked: 2019.02.08
+# Stop Forum Spam (SFS) listings: 1.
+# Updated: 2018.03.31 / Checked: 2019.06.02
 
 159.53.0.0/16 Deny Generic
 198.27.1.0/24 Deny Generic
@@ -1824,8 +1815,7 @@ Tag: Yes Networks
 
 
 # ASNs 3491, 4760, 6279, 7262 ("PCCW Global" / "Beyond The Network America, Inc").
-# Careful when updating; Contains both "proxy" and "spam" parameters (should be marked differently).
-# Updated: 2019.01.30
+# Updated: 2019.06.01
 
 203.5.148.0/24 Deny Spam
 203.30.26.0/23 Deny Spam
@@ -1833,11 +1823,10 @@ Origin: AU
 149.134.175.0/24 Deny Spam
 217.113.64.0/19 Deny Spam
 Origin: BE
-122.10.203.0/24 Deny Spam
-Origin: CN
 213.248.118.0/23 Deny Spam
 Origin: EU
 37.17.186.0/24 Deny Spam
+37.17.189.0/24 Deny Spam
 185.152.48.0/22 Deny Spam
 217.156.160.0/21 Deny Spam
 Origin: GB
@@ -1898,7 +1887,6 @@ Origin: GB
 223.197.128.0/17 Deny Spam
 Origin: HK
 41.79.244.0/22 Deny Spam
-169.239.144.0/22 Deny Spam
 Origin: MZ
 112.78.49.0/24 Deny Spam
 123.108.119.0/24 Deny Spam
@@ -1918,16 +1906,14 @@ Origin: TN
 112.121.42.0/24 Deny Spam
 Origin: TW
 41.79.248.0/23 Deny Spam
-41.79.250.0/24 Deny Proxy
+41.79.250.0/24 Deny Spam
 Origin: TZ
-23.32.176.0/20 Deny Spam
-23.33.44.0/22 Deny Spam
-23.33.80.0/20 Deny Spam
-23.46.16.0/23 Deny Spam
+21.233.70.0/24 Deny Spam
 23.60.78.0/23 Deny Spam
 23.60.112.0/20 Deny Spam
 23.60.128.0/20 Deny Spam
 23.60.144.0/22 Deny Spam
+29.21.54.0/24 Deny Spam
 63.216.0.0/13 Deny Spam
 65.72.0.0/20 Deny Spam
 65.72.32.0/19 Deny Spam
@@ -1941,8 +1927,23 @@ Origin: TZ
 104.99.96.0/19 Deny Spam
 104.99.128.0/23 Deny Spam
 113.29.44.0/24 Deny Spam
+146.222.18.0/24 Deny Spam
+146.222.25.0/24 Deny Spam
+146.222.26.0/23 Deny Spam
+146.222.28.0/23 Deny Spam
+146.222.35.0/24 Deny Spam
+146.222.37.0/24 Deny Spam
+146.222.38.0/24 Deny Spam
+146.222.46.0/24 Deny Spam
+146.222.48.0/24 Deny Spam
+146.222.64.0/24 Deny Spam
+146.222.68.0/24 Deny Spam
+146.222.118.0/24 Deny Spam
+146.222.184.0/24 Deny Spam
 146.222.187.0/24 Deny Spam
 146.222.194.0/24 Deny Spam
+146.222.238.0/23 Deny Spam
+146.222.240.0/24 Deny Spam
 198.69.128.0/20 Deny Spam
 199.0.216.0/21 Deny Spam
 204.180.160.0/19 Deny Spam
@@ -1950,15 +1951,9 @@ Origin: TZ
 205.177.0.0/16 Deny Spam
 205.252.0.0/16 Deny Spam
 206.161.0.0/16 Deny Spam
-206.246.87.0/24 Deny Spam
 207.176.0.0/17 Deny Spam
-207.199.162.0/24 Deny Spam
 207.226.0.0/16 Deny Spam
 209.8.0.0/15 Deny Spam
-209.147.69.0/24 Deny Spam
-216.107.31.0/24 Deny Spam
-216.155.24.0/24 Deny Spam
-216.155.53.0/24 Deny Spam
 Origin: US
 41.221.208.0/20 Deny Spam
 Origin: ZA
@@ -5990,34 +5985,24 @@ recaptcha:
 
 # ASN 18403 ("The Corporation for Financing & Promoting Technology").
 # Interlaces with numerous providers and contains a large portion of Vietnamese human access endpoints; Would rather
-# not be including this section here due to the high risk of false positives, but the massive influx/uptick of
-# undesirable events (spamming, hacking, attempted brute-forcing, probing, etc) seen originating from across a wide
-# range of CIDRs tied this ASN, plus the presence of this ASN in numerous worst offenders lists and blacklists, are
-# not considerations that can be easily ignored at this point in time. The section is marked for use with reCAPTCHA
-# due to the risk of false positives, and I would encourage any Vietnamese CIDRAM users, and any CIDRAM users
-# expecting to receive any traffic from Vietnam, to list this section in their ignore file as a means of minimising
-# the potential impact of false positives. A balanced approach for those that may expect some such traffic, but not a
-# lot of it, would be to not ignore this section, but to ensure that the reCAPTCHA feature is enabled in their
-# configuration.
-# %Listed, Google Malware Dashboard: 0.24%.
-# %Listed, abuseat.org (CBL-Listed): 2.44%.
-# Stop Forum Spam (SFS) listings: 13,562.
-# Updated: 2019.02.08
+# not be including this section here due to the high risk of false positives, but amount of spamming, hacking,
+# attempted brute-forcing, probing, etc seen from this ASN can't be ignored.
+# %Listed, Google Malware Dashboard: 0.25%.
+# %Listed, abuseat.org (CBL-Listed): 3.04%.
+# Stop Forum Spam (SFS) listings: 10,011.
+# Updated: 2019.06.02
 
-80.81.192.0/22 Deny Generic
+80.81.192.0/21 Deny Generic
 Origin: DE
 195.66.224.0/22 Deny Generic
 Origin: GB
+36.255.56.0/22 Deny Generic
 103.231.152.0/22 Deny Generic
 Origin: HK
 103.203.158.0/23 Deny Generic
-119.27.63.0/24 Deny Generic
-203.190.230.0/24 Deny Generic
-210.171.224.0/23 Deny Generic
-210.173.176.0/24 Deny Generic
-218.100.6.0/23 Deny Generic
 Origin: JP
 103.12.160.0/22 Deny Generic
+150.107.4.0/22 Deny Generic
 Origin: KH
 27.111.228.0/22 Deny Generic
 103.16.102.0/23 Deny Generic
@@ -6040,10 +6025,16 @@ Origin: SG
 103.90.227.0/24 Deny Generic
 103.102.128.0/22 Deny Generic
 103.110.84.0/22 Deny Generic
+103.112.124.0/22 Deny Generic
 103.121.88.0/22 Deny Generic
+103.137.4.0/24 Deny Generic
+103.137.184.0/23 Deny Generic
+103.139.42.0/23 Deny Generic
+103.139.102.0/23 Deny Generic
 103.200.22.0/23 Deny Generic
-103.205.104.0/22 Deny Generic
-103.216.120.0/22 Deny Generic
+103.205.104.0/23 Deny Generic
+103.205.106.0/24 Deny Generic
+103.216.120.0/21 Deny Generic
 103.221.220.0/22 Deny Generic
 103.253.90.0/23 Deny Generic
 113.22.0.0/16 Deny Generic

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2019.05.26).
+ * This file: Front-end functions file (last modified: 2019.06.07).
  */
 
 /**
@@ -913,6 +913,7 @@ $CIDRAM['SimulateBlockEvent'] = function (string $Addr, bool $Modules = false, b
 
     /** Module checks. */
     if ($Modules && !empty($CIDRAM['Config']['signatures']['modules']) && empty($CIDRAM['Whitelisted'])) {
+        $CIDRAM['InitialiseErrorHandler']();
 
         /** Explode module list and cycle through all modules. */
         $Modules = explode(',', $CIDRAM['Config']['signatures']['modules']);
@@ -924,6 +925,8 @@ $CIDRAM['SimulateBlockEvent'] = function (string $Addr, bool $Modules = false, b
             }
         });
 
+        $CIDRAM['ModuleErrors'] = $CIDRAM['Errors'];
+        $CIDRAM['RestoreErrorHandler']();
     }
 
     /** Execute search engine verification. */
@@ -934,7 +937,10 @@ $CIDRAM['SimulateBlockEvent'] = function (string $Addr, bool $Modules = false, b
 
     /** Auxiliary rule checks. */
     if ($Aux) {
+        $CIDRAM['InitialiseErrorHandler']();
         $CIDRAM['Aux']();
+        $CIDRAM['AuxErrors'] = $CIDRAM['Errors'];
+        $CIDRAM['RestoreErrorHandler']();
     }
 
 };

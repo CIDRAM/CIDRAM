@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2019.05.31).
+ * This file: Front-end handler (last modified: 2019.06.07).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -2886,9 +2886,40 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-test' && $CIDRAM['FE']['Perm
                 continue;
             }
             $CIDRAM['SimulateBlockEvent']($CIDRAM['ThisIP']['IPAddress'], $CIDRAM['ModuleSwitch'], $CIDRAM['AuxSwitch']);
-            if ($CIDRAM['Caught'] || empty($CIDRAM['LastTestIP']) || empty($CIDRAM['TestResults'])) {
+            if (
+                $CIDRAM['Caught'] ||
+                empty($CIDRAM['LastTestIP']) ||
+                empty($CIDRAM['TestResults']) ||
+                !empty($CIDRAM['ModuleErrors']) ||
+                !empty($CIDRAM['AuxErrors'])
+            ) {
                 $CIDRAM['ThisIP']['YesNo'] = $CIDRAM['L10N']->getString('response_error');
                 $CIDRAM['ThisIP']['StatClass'] = 'txtOe';
+                if (!empty($CIDRAM['AuxErrors'])) {
+                    $CIDRAM['ThisIP']['YesNo'] .= sprintf(
+                        ' – auxiliary.yaml (%s)',
+                        $CIDRAM['Number_L10N'](count($CIDRAM['AuxErrors']))
+                    );
+                }
+                if (!empty($CIDRAM['ModuleErrors'])) {
+                    $CIDRAM['ModuleErrorCounts'] = [];
+                    foreach ($CIDRAM['ModuleErrors'] as $CIDRAM['ModuleError']) {
+                        if (isset($CIDRAM['ModuleErrorCounts'][$CIDRAM['ModuleError'][2]])) {
+                            $CIDRAM['ModuleErrorCounts'][$CIDRAM['ModuleError'][2]]++;
+                        } else {
+                            $CIDRAM['ModuleErrorCounts'][$CIDRAM['ModuleError'][2]] = 1;
+                        }
+                    }
+                    arsort($CIDRAM['ModuleErrorCounts']);
+                    foreach ($CIDRAM['ModuleErrorCounts'] as $CIDRAM['ModuleName'] => $CIDRAM['ModuleError']) {
+                        $CIDRAM['ThisIP']['YesNo'] .= sprintf(
+                            ' – %s (%s)',
+                            $CIDRAM['ModuleName'],
+                            $CIDRAM['Number_L10N']($CIDRAM['ModuleError'])
+                        );
+                    }
+                    unset($CIDRAM['ModuleName'], $CIDRAM['ModuleError'], $CIDRAM['ModuleErrorCounts']);
+                }
             } elseif ($CIDRAM['BlockInfo']['SignatureCount']) {
                 $CIDRAM['ThisIP']['YesNo'] = $CIDRAM['L10N']->getString('response_yes') . ' – ' . $CIDRAM['BlockInfo']['WhyReason'];
                 $CIDRAM['ThisIP']['StatClass'] = 'txtRd';

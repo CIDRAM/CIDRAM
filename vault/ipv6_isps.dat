@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_isps.dat
 
-# Version: 2019.151.508
-# Last modified: 2019.06.02
+# Version: 2019.164.450
+# Last modified: 2019.06.14
 
 
 # ---
@@ -785,10 +785,10 @@ recaptcha:
 # section in their "ignore.dat" file as a means of minimising the potential impact of false positives. A balanced
 # approach for those that may expect some such traffic, but not a lot of it, would be to not ignore this section, but
 # to ensure that the reCAPTCHA feature is enabled in their configuration.
-# %Listed, Google Malware Dashboard: 1.13%.
-# %Listed, abuseat.org (CBL-Listed): 0.66%.
-# Stop Forum Spam (SFS) listings: 56,298.
-# Updated: 2019.03.03
+# %Listed, Google Malware Dashboard: 0.98%.
+# %Listed, abuseat.org (CBL-Listed): 0.82%.
+# Stop Forum Spam (SFS) listings: 41,065.
+# Updated: 2019.06.14
 
 2406:8500::/32 Deny Generic
 240e::/20 Deny Generic
@@ -802,6 +802,7 @@ Origin: CN
 2a04:f580:8290::/48 Deny Generic
 Origin: GB
 2400:9380:8000::/47 Deny Generic
+2400:9380:8003::/48 Deny Generic
 2400:9380:8020::/47 Deny Generic
 2400:9380:8030::/48 Deny Generic
 2400:9380:8040::/48 Deny Generic
@@ -817,6 +818,10 @@ Origin: HK
 2605:9d80:8081::/48 Deny Generic
 Origin: US
 2c0f:f7a8:8010::/47 Deny Generic
+2c0f:f7a8:8050::/48 Deny Generic
+2c0f:f7a8:805f::/48 Deny Generic
+2c0f:f7a8:8150::/48 Deny Generic
+2c0f:f7a8:815f::/48 Deny Generic
 2c0f:f7a8:8210::/47 Deny Generic
 Origin: ZA
 Tag: China Backbone 4134
@@ -1726,9 +1731,9 @@ Tag: SoftLayer Spam ISPs
 # Spamming getting significantly worse!
 # Moved from cloud services to spammy ISPs signature files due to being a multi-play network.
 # Also provides internet connectivity in some parts of France.
-# %Listed, Google Malware Dashboard: 1.31% (12322), 0.30% (AS12876).
-# Stop Forum Spam (SFS) listings: 1,396 (12322), 491,787 (AS12876).
-# Updated: 2018.06.24 / Checked: 2019.02.02
+# %Listed, Google Malware Dashboard: 1.37% (12322), 0.14% (AS12876).
+# Stop Forum Spam (SFS) listings: 1,337 (12322), 436,586 (AS12876).
+# Updated: 2018.06.24 / Checked: 2019.06.14
 
 2001:bc8::/32 Deny Spam
 2a01:e00::/26 Deny Spam

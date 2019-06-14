@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6.dat
 
-# Version: 2019.162.222
-# Last modified: 2019.06.12
+# Version: 2019.164.450
+# Last modified: 2019.06.14
 
 
 # ---
@@ -1701,20 +1701,20 @@ Origin: UA
 Tag: HZ Hosting Ltd
 
 
-# ASN 53889 ("Micfo, LLC").
+# ASNs 30279, 53889, 54334, 63008, 63262, 394021, 394056, 394143 ("Micfo, LLC").
 # Ranges change frequently / Should update often.
+# Provides numerous cloud services / webhosting services / IoT / etc. Source of spam and other unwanted traffic.
 # Exclude: Anything citing "Telecom" (ISP), "Level3" (infrastructure) -- ^.*(Telecom|Level3).*$\n
-# %Listed, Google Malware Dashboard: 0.54%.
-# Stop Forum Spam (SFS) listings: 13,421.
-# Updated: 2019.06.01
+# Updated: 2019.06.14
 
-2605:3e80:200::/40 Deny Cloud
-2605:3e80:800::/40 Deny Cloud
-2605:3e80:a00::/39 Deny Cloud
-2605:3e80:d00::/40 Deny Cloud
-2605:3e80:1200::/39 Deny Cloud
+2407:9780::/32 Deny Cloud
+2605:3e80:200::/39 Deny Cloud
+2605:3e80:400::/38 Deny Cloud
+2605:3e80:800::/37 Deny Cloud
+2605:3e80:1000::/38 Deny Cloud
 2605:3e80:1400::/39 Deny Cloud
 2605:3e80:1700::/40 Deny Cloud
+2605:3e80:1800::/40 Deny Cloud
 2605:3e80:1a00::/40 Deny Cloud
 2605:3e80:1d00::/40 Deny Cloud
 2605:3e80:1e00::/39 Deny Cloud
@@ -1722,7 +1722,7 @@ Tag: HZ Hosting Ltd
 2605:3e80:2400::/39 Deny Cloud
 2605:3e80:2700::/40 Deny Cloud
 2605:3e80:2900::/40 Deny Cloud
-2605:3e80:2c00::/40 Deny Cloud
+2605:3e80:2c00::/39 Deny Cloud
 2605:3e80:2f00::/40 Deny Cloud
 2605:3e80:3100::/40 Deny Cloud
 2605:3e80:3200::/39 Deny Cloud
@@ -1730,26 +1730,9 @@ Tag: HZ Hosting Ltd
 2605:3e80:3800::/40 Deny Cloud
 2605:3e80:3a00::/40 Deny Cloud
 2605:3e80:7004::/48 Deny Cloud
-Origin: US
-Tag: Micfo, LLC
-
-
-# ASN 63008 ("Contina").
-# Stop Forum Spam (SFS) listings: 1,650.
-# Updated: 2019.02.18
-
-2407:9780::/32 Deny Cloud
-2605:3e80:300::/40 Deny Cloud
-2605:3e80:400::/38 Deny Cloud
-2605:3e80:900::/40 Deny Cloud
-2605:3e80:c00::/40 Deny Cloud
-2605:3e80:e00::/39 Deny Cloud
-2605:3e80:1000::/39 Deny Cloud
-2605:3e80:1800::/40 Deny Cloud
-2605:3e80:2d00::/40 Deny Cloud
 2605:3e80:c000::/48 Deny Cloud
 Origin: US
-Tag: Contina
+Tag: Micfo, LLC
 
 
 # ASN 53264 ("Continuum Data Centers, LLC").
@@ -6162,13 +6145,12 @@ Tag: Colo America Corp
 
 
 # ASN 136557 ("Host Universal Pty Ltd").
-# %Listed, Google Malware Dashboard: 0.39%.
-# Stop Forum Spam (SFS) listings: 3,762.
-# Updated: 2019.02.18
+# %Listed, Google Malware Dashboard: 0.41%.
+# Stop Forum Spam (SFS) listings: 5,939.
+# Updated: 2019.06.14
 
 2402:7340:1::/48 Deny Cloud
 2402:7340:2::/48 Deny Cloud
-2404:f780:1::/48 Deny Cloud
 2404:f780:2::/48 Deny Cloud
 2404:f780:4::/47 Deny Cloud
 2404:f780:8::/48 Deny Cloud
@@ -6180,6 +6162,8 @@ Tag: Colo America Corp
 2406:d500:ee::/48 Deny Cloud
 2406:d501::/32 Deny Cloud
 Origin: AU
+2a09:54c0::/48 Deny Cloud
+Origin: CY
 2a0d:7f47::/48 Deny Cloud
 Origin: GB
 2402:9e80:6::/48 Deny Cloud
@@ -6191,6 +6175,7 @@ Origin: HK
 2407:3b80::/32 Deny Cloud
 Origin: IN
 2001:df4:fc00::/48 Deny Cloud
+2402:bd82::/31 Deny Cloud
 Origin: NZ
 Tag: Host Universal Pty Ltd
 

@@ -1,8 +1,8 @@
 # IPv4 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv4_isps.dat
 
-# Version: 2019.162.222
-# Last modified: 2019.06.12
+# Version: 2019.164.450
+# Last modified: 2019.06.14
 
 
 # ---
@@ -3934,11 +3934,13 @@ recaptcha:
 # section in their "ignore.dat" file as a means of minimising the potential impact of false positives. A balanced
 # approach for those that may expect some such traffic, but not a lot of it, would be to not ignore this section, but
 # to ensure that the reCAPTCHA feature is enabled in their configuration.
-# %Listed, Google Malware Dashboard: 1.13%.
-# %Listed, abuseat.org (CBL-Listed): 0.66%.
-# Stop Forum Spam (SFS) listings: 56,298.
-# Updated: 2019.03.03
+# %Listed, Google Malware Dashboard: 0.98%.
+# %Listed, abuseat.org (CBL-Listed): 0.82%.
+# Stop Forum Spam (SFS) listings: 41,065.
+# Updated: 2019.06.14
 
+147.78.134.0/23 Deny Generic
+Origin: AE
 1.1.8.0/24 Deny Generic
 1.48.0.0/15 Deny Generic
 1.50.0.0/16 Deny Generic
@@ -3947,6 +3949,7 @@ recaptcha:
 1.92.0.0/20 Deny Generic
 1.180.0.0/14 Deny Generic
 1.192.0.0/13 Deny Generic
+1.203.192.0/18 Deny Generic
 1.204.0.0/14 Deny Generic
 14.16.0.0/12 Deny Generic
 14.104.0.0/13 Deny Generic
@@ -3992,7 +3995,7 @@ recaptcha:
 59.42.0.0/16 Deny Generic
 59.44.0.0/14 Deny Generic
 59.48.0.0/12 Deny Generic
-59.81.0.0/17 Deny Generic
+59.81.0.0/18 Deny Generic
 59.83.128.0/18 Deny Generic
 59.107.0.0/17 Deny Generic
 59.172.0.0/14 Deny Generic
@@ -4048,9 +4051,12 @@ recaptcha:
 106.16.0.0/14 Deny Generic
 106.32.0.0/14 Deny Generic
 106.36.0.0/16 Deny Generic
+106.37.0.0/19 Deny Generic
+106.37.40.0/21 Deny Generic
 106.40.0.0/14 Deny Generic
 106.44.0.0/15 Deny Generic
 106.46.0.0/16 Deny Generic
+106.47.224.0/19 Deny Generic
 106.56.0.0/14 Deny Generic
 106.60.0.0/15 Deny Generic
 106.62.0.0/16 Deny Generic
@@ -4059,6 +4065,9 @@ recaptcha:
 106.92.0.0/16 Deny Generic
 106.108.0.0/14 Deny Generic
 106.112.0.0/13 Deny Generic
+106.121.0.0/17 Deny Generic
+106.121.128.0/18 Deny Generic
+106.121.192.0/21 Deny Generic
 106.122.0.0/15 Deny Generic
 106.124.0.0/14 Deny Generic
 106.224.0.0/14 Deny Generic
@@ -4119,7 +4128,6 @@ recaptcha:
 116.52.0.0/14 Deny Generic
 116.69.0.0/16 Deny Generic
 116.204.0.0/17 Deny Generic
-116.205.0.0/17 Deny Generic
 116.207.0.0/16 Deny Generic
 116.208.0.0/14 Deny Generic
 116.248.0.0/15 Deny Generic
@@ -4130,6 +4138,7 @@ recaptcha:
 117.32.0.0/13 Deny Generic
 117.40.0.0/14 Deny Generic
 117.44.0.0/15 Deny Generic
+117.48.160.0/20 Deny Generic
 117.57.0.0/16 Deny Generic
 117.60.0.0/14 Deny Generic
 117.64.0.0/13 Deny Generic
@@ -4155,16 +4164,15 @@ recaptcha:
 119.120.0.0/13 Deny Generic
 119.128.0.0/12 Deny Generic
 119.144.0.0/14 Deny Generic
+119.233.0.0/17 Deny Generic
 120.31.66.0/23 Deny Generic
 120.31.68.0/22 Deny Generic
 120.31.128.0/20 Deny Generic
 120.32.0.0/13 Deny Generic
 120.40.0.0/14 Deny Generic
 120.68.0.0/14 Deny Generic
-120.88.8.0/21 Deny Generic
 121.8.0.0/13 Deny Generic
 121.32.0.0/14 Deny Generic
-121.37.0.0/17 Deny Generic
 121.56.0.0/15 Deny Generic
 121.58.0.0/17 Deny Generic
 121.59.0.0/23 Deny Generic
@@ -4173,12 +4181,11 @@ recaptcha:
 121.204.0.0/14 Deny Generic
 121.224.0.0/12 Deny Generic
 122.4.0.0/14 Deny Generic
-122.9.0.0/17 Deny Generic
 122.102.94.0/23 Deny Generic
 122.224.0.0/12 Deny Generic
 122.240.0.0/13 Deny Generic
+122.248.48.0/20 Deny Generic
 123.52.0.0/14 Deny Generic
-123.60.0.0/16 Deny Generic
 123.96.0.0/15 Deny Generic
 123.101.0.0/16 Deny Generic
 123.137.0.0/16 Deny Generic
@@ -4193,7 +4200,6 @@ recaptcha:
 123.249.0.0/17 Deny Generic
 124.29.0.0/17 Deny Generic
 124.31.0.0/16 Deny Generic
-124.68.0.0/16 Deny Generic
 124.72.0.0/13 Deny Generic
 124.112.0.0/13 Deny Generic
 124.172.0.0/15 Deny Generic
@@ -4316,6 +4322,7 @@ recaptcha:
 211.155.16.0/20 Deny Generic
 211.155.224.0/21 Deny Generic
 211.156.112.0/20 Deny Generic
+211.156.176.0/20 Deny Generic
 211.156.240.0/20 Deny Generic
 211.159.64.0/20 Deny Generic
 211.167.0.0/20 Deny Generic
@@ -9585,9 +9592,9 @@ Tag: SoftLayer Spam ISPs
 # Spamming getting significantly worse!
 # Moved from cloud services to spammy ISPs signature files due to being a multi-play network.
 # Also provides internet connectivity in some parts of France.
-# %Listed, Google Malware Dashboard: 1.31% (12322), 0.30% (AS12876).
-# Stop Forum Spam (SFS) listings: 1,396 (12322), 491,787 (AS12876).
-# Updated: 2018.06.24 / Checked: 2019.02.02
+# %Listed, Google Malware Dashboard: 1.37% (12322), 0.14% (AS12876).
+# Stop Forum Spam (SFS) listings: 1,337 (12322), 436,586 (AS12876).
+# Updated: 2018.06.24 / Checked: 2019.06.14
 
 51.15.0.0/16 Deny Spam
 51.158.0.0/15 Deny Spam

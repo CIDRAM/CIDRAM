@@ -8,11 +8,14 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Output generator (last modified: 2019.05.11).
+ * This file: Output generator (last modified: 2019.06.07).
  */
 
 /** Initialise cache. */
 $CIDRAM['InitialiseCache']();
+
+/** Initialise an error handler. */
+$CIDRAM['InitialiseErrorHandler']();
 
 /** Reset bypass flags. */
 $CIDRAM['ResetBypassFlags']();
@@ -225,7 +228,9 @@ $CIDRAM['SocialMediaVerification']();
 
 /** Process auxiliary rules, if any exist. */
 if ($CIDRAM['Protect'] && !$CIDRAM['Config']['general']['maintenance_mode'] && empty($CIDRAM['Whitelisted'])) {
+    $CIDRAM['ErrorFlag'] = 'Aux';
     $CIDRAM['Aux']();
+    $CIDRAM['ErrorFlag'] = '';
 }
 
 /** Process tracking information for the inbound IP. */
@@ -796,3 +801,6 @@ if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
     die($CIDRAM['HTML']);
 
 }
+
+/** Restores default error handler. */
+$CIDRAM['RestoreErrorHandler']();

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2019.06.07).
+ * This file: Front-end handler (last modified: 2019.06.17).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -1549,6 +1549,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && ($CIDRAM['FE']['Per
         'Remotes' => [],
         'Interdependent' => [],
         'Outdated' => [],
+        'OutdatedSignatureFiles' => [],
         'Verify' => [],
         'Out' => []
     ];
@@ -1661,6 +1662,15 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && ($CIDRAM['FE']['Per
                         $CIDRAM['Components']['Interdependent'][] = $CIDRAM['Components']['Key'];
                     }
                     $CIDRAM['Components']['Outdated'][] = $CIDRAM['Components']['Key'];
+                    if ((
+                        !empty($CIDRAM['Components']['ThisComponent']['Used with']) &&
+                        substr($CIDRAM['Components']['ThisComponent']['Used with'], 0, 3) === 'ipv'
+                    ) || (
+                        !empty($CIDRAM['Components']['ThisComponent']['Extended Description']) &&
+                        strpos($CIDRAM['Components']['ThisComponent']['Extended Description'], 'signatures-&gt;ipv') !== false
+                    )) {
+                        $CIDRAM['Components']['OutdatedSignatureFiles'][] = $CIDRAM['Components']['Key'];
+                    }
                     $CIDRAM['Components']['ThisComponent']['RowClass'] = 'r';
                     $CIDRAM['Components']['ThisComponent']['StatClass'] = 'txtRd';
                     if (
@@ -1967,13 +1977,23 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && ($CIDRAM['FE']['Per
     $CIDRAM['FE']['Components'] = implode('', $CIDRAM['Components']['Out']);
 
     $CIDRAM['Components']['CountOutdated'] = count($CIDRAM['Components']['Outdated']);
+    $CIDRAM['Components']['CountOutdatedSignatureFiles'] = count($CIDRAM['Components']['OutdatedSignatureFiles']);
     $CIDRAM['Components']['CountVerify'] = count($CIDRAM['Components']['Verify']);
 
     /** Preparing for update all and verify all buttons. */
-    $CIDRAM['FE']['UpdateAll'] = ($CIDRAM['Components']['CountOutdated'] || $CIDRAM['Components']['CountVerify']) ? '<hr />' : '';
+    $CIDRAM['FE']['UpdateAll'] = ($CIDRAM['Components']['CountOutdated'] || $CIDRAM['Components']['CountOutdatedSignatureFiles'] || $CIDRAM['Components']['CountVerify']) ? '<hr />' : '';
+
+    /** Instructions to update all signature files (but not necessarily everything). */
+    if ($CIDRAM['Components']['CountOutdatedSignatureFiles']) {
+        $CIDRAM['FE']['UpdateAll'] .= sprintf($CIDRAM['CFBoilerplate'], $CIDRAM['FE']['UpdatesFormTarget'], 'update-component');
+        foreach ($CIDRAM['Components']['OutdatedSignatureFiles'] as $CIDRAM['Components']['ThisOutdated']) {
+            $CIDRAM['FE']['UpdateAll'] .= '<input name="ID[]" type="hidden" value="' . $CIDRAM['Components']['ThisOutdated'] . '" />';
+        }
+        $CIDRAM['FE']['UpdateAll'] .= '<input type="submit" value="' . $CIDRAM['L10N']->getString('field_update_signatures_files') . '" class="auto" /></form>';
+    }
 
     /** Instructions to update everything at once. */
-    if ($CIDRAM['Components']['CountOutdated']) {
+    if ($CIDRAM['Components']['CountOutdated'] && $CIDRAM['Components']['CountOutdated'] !== $CIDRAM['Components']['CountOutdatedSignatureFiles']) {
         $CIDRAM['FE']['UpdateAll'] .= sprintf($CIDRAM['CFBoilerplate'], $CIDRAM['FE']['UpdatesFormTarget'], 'update-component');
         foreach ($CIDRAM['Components']['Outdated'] as $CIDRAM['Components']['ThisOutdated']) {
             $CIDRAM['FE']['UpdateAll'] .= '<input name="ID[]" type="hidden" value="' . $CIDRAM['Components']['ThisOutdated'] . '" />';

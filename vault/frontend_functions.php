@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2019.06.07).
+ * This file: Front-end functions file (last modified: 2019.06.17).
  */
 
 /**
@@ -716,7 +716,7 @@ $CIDRAM['FetchRemote-ContextFree'] = function (string &$RemoteData, string &$Rem
  * @return bool True for when activable; False for when not activable.
  */
 $CIDRAM['IsActivable'] = function (array &$Component): bool {
-    return (!empty($Component['Used with']) || strpos($Component['Extended Description'], 'signatures-&gt;') !== false);
+    return (!empty($Component['Used with']) || (!empty($Component['Extended Description']) && strpos($Component['Extended Description'], 'signatures-&gt;') !== false));
 };
 
 /**

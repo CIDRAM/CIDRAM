@@ -12,7 +12,7 @@ php:
   - '7.3'
 
 before_script:
-  - cp $TRAVIS_BUILD_DIR/vault/config.ini.RenameMe $TRAVIS_BUILD_DIR/vault/config.ini
+  # - cp $TRAVIS_BUILD_DIR/vault/config.ini.RenameMe $TRAVIS_BUILD_DIR/vault/config.ini
   - phpenv config-rm xdebug.ini || true
   - if [ $(phpenv version-name) != "5.4" ]; then composer install; fi
 

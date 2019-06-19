@@ -5,10 +5,12 @@ class Ipv6Cest
     public function _before(UnitTester $I)
     {
         require 'vault/functions.php';
+        $CIDRAM['Config'] = parse_ini_file('tests/_support/config/config.ini', true);
+        $GLOBALS['CIDRAM'] = $CIDRAM;
     }
 
     // tests
-    public function tryToTest(UnitTester $I)
+    public function tryToTestIpv6Expansion(UnitTester $I)
     {
         global $CIDRAM;
         $expected = [

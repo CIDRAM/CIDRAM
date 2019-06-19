@@ -1,19 +1,18 @@
-<?php 
-
-require 'vault/functions.php';
-$GLOBALS['CIDRAM'] = $CIDRAM;
+<?php
 
 class Ipv4Cest
 {
     public function _before(UnitTester $I)
     {
-        
+        require 'vault/functions.php';
+        $CIDRAM['Config'] = parse_ini_file('tests/_support/config/config.ini', true);
+        $GLOBALS['CIDRAM'] = $CIDRAM;
     }
 
     // tests
-    public function tryToTest(UnitTester $I)
+    public function tryToTestIpv4Expansion(UnitTester $I)
     {
-        $CIDRAM = $GLOBALS['CIDRAM'];
+        global $CIDRAM;
         $expected = [
             '0.0.0.0/1',
             '64.0.0.0/2',

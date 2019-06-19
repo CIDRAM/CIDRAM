@@ -43,7 +43,7 @@ $CIDRAM['favicon'] =
     'wMkc0kIEp13nZYnGPLSAAAOw==';
 
 /** Checks whether the CIDRAM configuration file is readable. */
-if (!is_readable($CIDRAM['Vault'] . 'config.ini')) {
+if (!isset($GLOBALS['CIDRAM_Config']) && !is_readable($CIDRAM['Vault'] . 'config.ini')) {
     header('Content-Type: text/plain');
     die('[CIDRAM] Can\'t read the configuration file! Please reconfigure CIDRAM.');
 }
@@ -55,7 +55,11 @@ if (!is_readable($CIDRAM['Vault'] . 'config.yaml')) {
 }
 
 /** Attempts to parse the CIDRAM configuration file. */
-$CIDRAM['Config'] = parse_ini_file($CIDRAM['Vault'] . 'config.ini', true);
+if(!isset($GLOBALS['CIDRAM_Config'])) {
+    $CIDRAM['Config'] = parse_ini_file($CIDRAM['Vault'] . 'config.ini', true);
+} else {
+    $CIDRAM['Config'] = $GLOBALS['CIDRAM_Config'];
+}
 
 /** Kills the script if parsing the configuration file fails. */
 if ($CIDRAM['Config'] === false) {

@@ -4,6 +4,7 @@ class LoaderCest
 {
     public function _before(UnitTester $I)
     {
+        $GLOBALS['CIDRAM_Config'] = parse_ini_file('tests/_support/config/config.ini', true);
         require 'loader.php';
     }
 

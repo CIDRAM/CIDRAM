@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 class Ipv6Cest
 {

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Configuration handler (last modified: 2019.05.11).
+ * This file: Configuration handler (last modified: 2019.06.20).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -55,11 +55,7 @@ if (!is_readable($CIDRAM['Vault'] . 'config.yaml')) {
 }
 
 /** Attempts to parse the CIDRAM configuration file. */
-if(!isset($GLOBALS['CIDRAM_Config'])) {
-    $CIDRAM['Config'] = parse_ini_file($CIDRAM['Vault'] . 'config.ini', true);
-} else {
-    $CIDRAM['Config'] = $GLOBALS['CIDRAM_Config'];
-}
+$CIDRAM['Config'] = isset($GLOBALS['CIDRAM_Config']) ? $GLOBALS['CIDRAM_Config'] : parse_ini_file($CIDRAM['Vault'] . 'config.ini', true);
 
 /** Kills the script if parsing the configuration file fails. */
 if ($CIDRAM['Config'] === false) {

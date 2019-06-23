@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Configuration handler (last modified: 2019.06.20).
+ * This file: Configuration handler (last modified: 2019.06.23).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -54,23 +54,28 @@ if (!is_readable($CIDRAM['Vault'] . 'config.yaml')) {
     die('[CIDRAM] Can\'t read the configuration defaults file! Please reconfigure CIDRAM.');
 }
 
-/** Attempts to parse the CIDRAM configuration file. */
-$CIDRAM['Config'] = isset($GLOBALS['CIDRAM_Config']) ? $GLOBALS['CIDRAM_Config'] : parse_ini_file($CIDRAM['Vault'] . 'config.ini', true);
+if (isset($GLOBALS['CIDRAM_Config'])) {
+    /** Provides a means of running tests with configuration values specific to those tests. */
+    $CIDRAM['Config'] = $GLOBALS['CIDRAM_Config'];
+} else {
+    /** Attempts to parse the standard CIDRAM configuration file. */
+    $CIDRAM['Config'] = parse_ini_file($CIDRAM['Vault'] . 'config.ini', true);
+}
 
-/** Kills the script if parsing the configuration file fails. */
+/** Kills the script if it isn't able to load any configuration. */
 if ($CIDRAM['Config'] === false) {
     header('Content-Type: text/plain');
     die('[CIDRAM] Configuration file is corrupt! Please reconfigure CIDRAM.');
 }
 
-/** Checks for the existence of the HTTP_HOST configuration overrides file. */
+/** Checks for the existence of the HTTP_HOST "configuration overrides file". */
 if (
     !empty($_SERVER['HTTP_HOST']) &&
     ($CIDRAM['Domain'] = preg_replace('/^www\./', '', strtolower($_SERVER['HTTP_HOST']))) &&
     !preg_match('/[^.\da-z-]/', $CIDRAM['Domain']) &&
     is_readable($CIDRAM['Vault'] . $CIDRAM['Domain'] . '.config.ini')
 ) {
-    /** Attempts to parse the configuration overrides file. */
+    /** Attempts to parse the overrides file found (this is configuration specific to the requested domain). */
     if ($CIDRAM['Overrides'] = parse_ini_file($CIDRAM['Vault'] . $CIDRAM['Domain'] . '.config.ini', true)) {
         array_walk($CIDRAM['Overrides'], function ($Keys, $Category) use (&$CIDRAM) {
             foreach ($Keys as $Directive => $Value) {

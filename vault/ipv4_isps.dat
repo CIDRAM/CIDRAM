@@ -1,8 +1,8 @@
 # IPv4 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv4_isps.dat
 
-# Version: 2019.164.450
-# Last modified: 2019.06.14
+# Version: 2019.173.382
+# Last modified: 2019.06.23
 
 
 # ---
@@ -897,9 +897,9 @@ recaptcha:
 
 
 # ASN 16322 ("Pars Online PJS").
-# %Listed, abuseat.org (CBL-Listed): 10.17%.
-# Stop Forum Spam (SFS) listings: 251.
-# Updated: 2019.02.27
+# %Listed, abuseat.org (CBL-Listed): 7.55%.
+# Stop Forum Spam (SFS) listings: 336.
+# Updated: 2019.06.15
 
 5.78.0.0/16 Deny Spam
 31.214.132.0/23 Deny Spam
@@ -923,13 +923,11 @@ recaptcha:
 46.251.237.0/24 Deny Spam
 82.99.192.0/18 Deny Spam
 91.98.0.0/15 Deny Spam
-95.156.216.0/22 Deny Spam
 95.156.222.0/23 Deny Spam
 95.156.233.0/24 Deny Spam
 95.156.234.0/23 Deny Spam
 95.156.236.0/23 Deny Spam
 95.156.248.0/23 Deny Spam
-95.156.252.0/24 Deny Spam
 109.230.192.0/23 Deny Spam
 109.230.204.0/22 Deny Spam
 109.230.221.0/24 Deny Spam
@@ -954,36 +952,17 @@ recaptcha:
 
 
 # ASNs 4621, 133042 ("Office of the basic education commission").
-# Just listing anything under 202.29.* though (spam activity seems to be concentrated in those ranges, and as these
-# ASNs are used by several universities in Thailand plus a government office, blocking excessively could result in
-# some false positives).
-# Stop Forum Spam (SFS) listings: 6 (AS4621), 11 (AS133042).
-# Updated: 2019.02.28
+# Limiting signatures to: 106.0.*, 182.93.*, 202.28.*, 202.29.*, 203.172.* (spam activity seems to be mostly in those
+# ranges; ASNs used by several universities in Thailand plus a government office, so, limiting could help reduce the
+# risk of false positives).
+# %Listed, Google Malware Dashboard: 0.36% (AS4621).
+# Stop Forum Spam (SFS) listings: 4 (AS4621), 9 (AS133042).
+# Updated: 2019.06.23
 
-202.29.5.0/24 Deny Spam
-202.29.8.0/22 Deny Spam
-202.29.13.0/24 Deny Spam
-202.29.16.0/24 Deny Spam
-202.29.21.0/24 Deny Spam
-202.29.38.0/23 Deny Spam
-202.29.40.0/21 Deny Spam
-202.29.48.0/24 Deny Spam
-202.29.50.0/24 Deny Spam
-202.29.54.0/24 Deny Spam
-202.29.56.0/24 Deny Spam
-202.29.62.0/24 Deny Spam
-202.29.66.0/24 Deny Spam
-202.29.68.0/24 Deny Spam
-202.29.76.0/24 Deny Spam
-202.29.79.0/24 Deny Spam
-202.29.88.0/24 Deny Spam
-202.29.90.0/24 Deny Spam
-202.29.92.0/22 Deny Spam
-202.29.129.0/24 Deny Spam
-202.29.130.0/23 Deny Spam
-202.29.153.0/24 Deny Spam
-202.29.172.0/22 Deny Spam
-202.29.176.0/22 Deny Spam
+106.0.128.0/17 Deny Spam
+182.93.128.0/17 Deny Spam
+202.28.0.0/15 Deny Spam
+203.172.128.0/17 Deny Spam
 Origin: TH
 Tag: OBEC
 ---
@@ -1801,16 +1780,15 @@ Origin: NL
 Tag: Init7
 
 
-# ASNs 24700, 61316 ("Yes Networks Unlimited Ltd").
-# Updated: 2019.02.28
+# ASN 62160 ("Yes Networks Unlimited Ltd").
+# Redacted down to just 3 specific IP addresses at last update (the rest of the network seems okay now). Hopefully can
+# remove the section entirely in the near future.
+# Updated: 2019.06.23
 
-185.41.53.0/24 Deny Generic
+78.108.178.85/32 Deny Spam
+78.108.178.87/32 Deny Spam
+78.108.184.99/32 Deny Spam
 Origin: CZ
-185.10.208.0/22 Deny Generic
-193.33.212.0/23 Deny Generic
-Origin: UA
-46.174.190.0/23 Deny Generic
-Origin: VG
 Tag: Yes Networks
 
 
@@ -2001,11 +1979,9 @@ Tag: GREEN FLASH TRADING
 
 # ASN 62454 ("Zyztm Research Division 10 B.V").
 # Cyber warfare, credit card theft, etc.
-# Stop Forum Spam (SFS) listings: 22.
-# Updated: 2019.02.28
+# Stop Forum Spam (SFS) listings: 5.
+# Updated: 2019.06.23
 
-141.98.46.0/24 Deny Generic
-Origin: DE
 185.35.136.0/22 Deny Generic
 Origin: NL
 Tag: Zyztm
@@ -8129,7 +8105,8 @@ recaptcha:
 
 # ASNs 8369, 198675, 199619 ("Intersvyaz-2 JSC").
 # Caught trying to hack into WordPress sites.
-# Updated: 2019.02.27
+# Stop Forum Spam (SFS) listings: 2,365 (AS8369).
+# Updated: 2019.02.27 / Checked: 2019.06.23
 
 5.79.128.0/17 Deny Generic
 5.206.0.0/17 Deny Generic
@@ -8337,10 +8314,11 @@ Tag: Children Telemedicin
 
 
 # ASN 25408 ("WEST CALL SPb LLC").
-# %Listed, Google Malware Dashboard: 1.71%.
-# Stop Forum Spam (SFS) listings: 678.
-# Updated: 2019.02.27
+# %Listed, Google Malware Dashboard: 0.91%.
+# Stop Forum Spam (SFS) listings: 1,042.
+# Updated: 2019.06.15
 
+31.41.32.0/21 Deny Generic
 62.182.88.0/21 Deny Generic
 77.244.16.0/20 Deny Generic
 84.52.64.0/18 Deny Generic

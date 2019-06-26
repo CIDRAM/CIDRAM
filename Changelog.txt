@@ -1,9 +1,12 @@
 CIDRAM (Classless Inter-Domain Routing Access Manager) Changelog.
 
-=== VERSIONING GUIDELINES ===
-CIDRAM adheres to the SemVer guidelines for versioning.
+=== VERSION RELEASE GUIDELINES ===
+CIDRAM adopts and adheres to SemVer (Semantic Versioning). For more information
+about SemVer, please refer to:
+- https://semver.org/
 
-Versioning guidelines for SemVer can be found at: https://semver.org/
+Detailed version release guidelines for CIDRAM can be found at:
+- https://github.com/CIDRAM/CIDRAM/blob/v1/CONTRIBUTING.md#cidram-version-release-guidelines
 
 === Changes made since last versioned release ===
 
@@ -14,6 +17,15 @@ Versioning guidelines for SemVer can be found at: https://semver.org/
 - [2019.06.17; Maikuolan]: Added the ability to optionally update only all
   signature files to the front-end updates page (as opposed to updating
   everything at once).
+
+- [2019.06.18-23; DanielRuf]: Added unit test suite (BDD testing and unit
+  testing with Codeception and PHPUnit).
+  Refer github.com/CIDRAM/CIDRAM/pull/114
+
+- [2019.06.26; Maikuolan]: Improved the way that CIDRAM generates block event
+  entry IDs (before they were incremental; now they're based on microtime and
+  high resolution time).
+  Refer github.com/CIDRAM/CIDRAM/issues/131
 
 === Version/Release 1.13.0 ===
 MINOR RELEASE.

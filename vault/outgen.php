@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Output generator (last modified: 2019.06.07).
+ * This file: Output generator (last modified: 2019.06.26).
  */
 
 /** Initialise cache. */
@@ -61,7 +61,7 @@ $CIDRAM['Protect'] = (
 /** Prepare variables for block information (used if we kill the request). */
 $CIDRAM['BlockInfo'] = [
     'DateTime' => $CIDRAM['TimeFormat']($CIDRAM['Now'], $CIDRAM['Config']['general']['timeFormat']),
-    'Counter' => 0,
+    'ID' => $CIDRAM['GenerateID'](),
     'IPAddr' => $_SERVER[$CIDRAM['IPAddr']],
     'ScriptIdent' => $CIDRAM['ScriptIdent'],
     'favicon' => $CIDRAM['favicon'],
@@ -350,25 +350,6 @@ if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
         $CIDRAM['Config']['template_data']['recaptcha_div_include'] = '';
     }
 
-    if (empty($CIDRAM['reCAPTCHA']['Bypass']) && (
-        $CIDRAM['Config']['general']['log_banned_ips'] || empty($CIDRAM['Banned'])
-    )) {
-
-        /** Fetch current cached log event counter. */
-        $CIDRAM['BlockInfo']['Counter'] = $CIDRAM['Cache']->getEntry('Counter') ?: 0;
-
-        /** If logging is enabled, increment the counter. */
-        if (empty($CIDRAM['Flag Don\'t Log']) && (
-            $CIDRAM['Config']['general']['logfile'] ||
-            $CIDRAM['Config']['general']['logfileApache'] ||
-            $CIDRAM['Config']['general']['logfileSerialized']
-        )) {
-            $CIDRAM['BlockInfo']['Counter']++;
-            $CIDRAM['Cache']->setEntry('Counter', $CIDRAM['BlockInfo']['Counter'], 0);
-        }
-
-    }
-
     /** Unset our reCAPTCHA working data cleanly. */
     unset($CIDRAM['reCAPTCHA']);
 
@@ -486,12 +467,7 @@ if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
     }
 
     /** Build fields. */
-    if (!empty($CIDRAM['BlockInfo']['Counter']) || $CIDRAM['Config']['general']['empty_fields'] === 'include') {
-        if (empty($CIDRAM['BlockInfo']['Counter'])) {
-            $CIDRAM['BlockInfo']['Counter'] = 0;
-        }
-        $CIDRAM['AddField']($CIDRAM['L10N']->getString('field_id'), $CIDRAM['BlockInfo']['Counter']);
-    }
+    $CIDRAM['AddField']($CIDRAM['L10N']->getString('field_id'), $CIDRAM['BlockInfo']['ID']);
     if (!$CIDRAM['Config']['general']['hide_version']) {
         $CIDRAM['AddField']($CIDRAM['L10N']->getString('field_scriptversion'), $CIDRAM['BlockInfo']['ScriptIdent']);
     }

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2019.06.17).
+ * This file: Front-end handler (last modified: 2019.06.25).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -3708,7 +3708,11 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'logs' && $CIDRAM['FE']['Permiss
     if ($CIDRAM['FE']['TextMode']) {
         $CIDRAM['Formatter']($CIDRAM['FE']['logfileData'], $CIDRAM['FE']['BlockLink'], $CIDRAM['FE']['SearchQuery'], $CIDRAM['FE']['FieldSeparator'], $CIDRAM['FE']['Flags']);
     } elseif ($CIDRAM['FE']['TextModeLinks'] === 'tally') {
-        $CIDRAM['FE']['logfileData'] = $CIDRAM['Tally']($CIDRAM['FE']['logfileData'], $CIDRAM['FE']['BlockLink'], [$CIDRAM['L10N']->getString('field_id'), $CIDRAM['L10N']->getString('field_datetime')]);
+        $CIDRAM['FE']['logfileData'] = $CIDRAM['Tally'](
+            $CIDRAM['FE']['logfileData'],
+            $CIDRAM['FE']['BlockLink'],
+            [$CIDRAM['L10N']->getString('field_id'), $CIDRAM['L10N']->getString('field_datetime')]
+        );
     } else {
         $CIDRAM['FE']['logfileData'] = '<textarea readonly>' . $CIDRAM['FE']['logfileData'] . '</textarea>';
     }

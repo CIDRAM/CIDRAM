@@ -68,7 +68,7 @@ if ($CIDRAM['Config'] === false) {
     die('[CIDRAM] Configuration file is corrupt! Please reconfigure CIDRAM.');
 }
 
-/** Checks for the existence of the HTTP_HOST configuration overrides file. */
+/** Checks for the existence of the HTTP_HOST "configuration overrides file". */
 if (
     !empty($_SERVER['HTTP_HOST']) &&
     ($CIDRAM['Domain'] = preg_replace('/^www\./', '', strtolower($_SERVER['HTTP_HOST']))) &&

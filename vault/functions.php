@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2019.06.07).
+ * This file: Functions file (last modified: 2019.06.25).
  */
 
 /** Autoloader for CIDRAM classes. */
@@ -2053,4 +2053,49 @@ $CIDRAM['RestoreErrorHandler'] = function () use (&$CIDRAM) {
 
     /** Restore previous error handler. */
     restore_error_handler();
+};
+
+/**
+ * Generates unique IDs for block events.
+ *
+ * @return string A unique ID to use for block events.
+ */
+$CIDRAM['GenerateID'] = function (): string {
+    $Time = explode(' ', microtime(), 2);
+    $Time[0] = (string)($Time[0] * 1000000);
+    while (strlen($Time[0]) < 6) {
+        $Time[0] = '0' . $Time[0];
+    }
+    if (function_exists('hrtime')) {
+        try {
+            $HRTime = (string)hrtime(true);
+            if (strlen($HRTime) > 10) {
+                $HRTime = substr($HRTime, -10);
+            }
+            while (strlen($HRTime) < 10) {
+                $HRTime = '0' . $HRTime;
+            }
+        } catch (\Exception $Exception) {
+            $HRTime = '';
+        }
+    } else {
+        $HRTime = '';
+    }
+    $HRLen = strlen($HRTime);
+    $Time = $Time[1] . '-' . $Time[0] . '-' . $HRTime;
+    if ($HRLen < 10) {
+        $Low = pow(10, (9 - strlen($HRTime)));
+        $High = ($Low * 10) - 1;
+        if (function_exists('random_int')) {
+            try {
+                $Pad = random_int($Low, $High);
+            } catch (\Exception $Exception) {
+                $Pad = rand($Low, $High);
+            }
+        } else {
+            $Pad = rand($Low, $High);
+        }
+        $Time .= $Pad;
+    }
+    return $Time;
 };

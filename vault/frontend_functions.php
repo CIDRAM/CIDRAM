@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2019.06.17).
+ * This file: Front-end functions file (last modified: 2019.06.26).
  */
 
 /**
@@ -876,7 +876,7 @@ $CIDRAM['SimulateBlockEvent'] = function (string $Addr, bool $Modules = false, b
 
     /** Populate BlockInfo. */
     $CIDRAM['BlockInfo'] = [
-        'Counter' => 0,
+        'ID' => $CIDRAM['GenerateID'](),
         'IPAddr' => $Addr,
         'Query' => 'SimulateBlockEvent',
         'Referrer' => '',
@@ -1316,6 +1316,24 @@ $CIDRAM['WP-Ver'] = function () use (&$CIDRAM) {
     }
 };
 
+/** Used by the Number_L10N closure (separated out to improve memory footprint). */
+$CIDRAM['Number_L10N_Sets'] = [
+    'NoSep-1' => ['.', '', 3, false, 0],
+    'NoSep-2' => [',', '', 3, false, 0],
+    'Latin-1' => ['.', ',', 3, false, 0],
+    'Latin-2' => ['.', ' ', 3, false, 0],
+    'Latin-3' => [',', '.', 3, false, 0],
+    'Latin-4' => [',', ' ', 3, false, 0],
+    'Latin-5' => ['·', ',', 3, false, 0],
+    'China-1' => ['.', ',', 4, false, 0],
+    'India-1' => ['.', ',', 2, false, -1],
+    'India-2' => ['.', ',', 2, ['०', '१', '२', '३', '४', '५', '६', '७', '८', '९'], -1],
+    'Bengali-1' => ['.', ',', 2, ['০', '১', '২', '৩', '৪', '৫', '৬', '৭', '৮', '৯'], -1],
+    'Arabic-1' => ['٫', '', 3, ['٠', '١', '٢', '٣', '٤', '٥', '٦', '٧', '٨', '٩'], 0],
+    'Arabic-2' => ['٫', '٬', 3, ['٠', '١', '٢', '٣', '٤', '٥', '٦', '٧', '٨', '٩'], 0],
+    'Thai-1' => ['.', ',', 3, ['๐', '๑', '๒', '๓', '๔', '๕', '๖', '๗', '๘', '๙'], 0]
+];
+
 /**
  * Formats/Localises a number according to specified configuration.
  *
@@ -1325,23 +1343,11 @@ $CIDRAM['WP-Ver'] = function () use (&$CIDRAM) {
  */
 $CIDRAM['Number_L10N'] = function ($Number, int $Decimals = 0) use (&$CIDRAM): string {
     $Number = (float)$Number;
-    $Sets = [
-        'NoSep-1' => ['.', '', 3, false, 0],
-        'NoSep-2' => [',', '', 3, false, 0],
-        'Latin-1' => ['.', ',', 3, false, 0],
-        'Latin-2' => ['.', ' ', 3, false, 0],
-        'Latin-3' => [',', '.', 3, false, 0],
-        'Latin-4' => [',', ' ', 3, false, 0],
-        'Latin-5' => ['·', ',', 3, false, 0],
-        'China-1' => ['.', ',', 4, false, 0],
-        'India-1' => ['.', ',', 2, false, -1],
-        'India-2' => ['.', ',', 2, ['०', '१', '२', '३', '४', '५', '६', '७', '८', '९'], -1],
-        'Bengali-1' => ['.', ',', 2, ['০', '১', '২', '৩', '৪', '৫', '৬', '৭', '৮', '৯'], -1],
-        'Arabic-1' => ['٫', '', 3, ['٠', '١', '٢', '٣', '٤', '٥', '٦', '٧', '٨', '٩'], 0],
-        'Arabic-2' => ['٫', '٬', 3, ['٠', '١', '٢', '٣', '٤', '٥', '٦', '٧', '٨', '٩'], 0],
-        'Thai-1' => ['.', ',', 3, ['๐', '๑', '๒', '๓', '๔', '๕', '๖', '๗', '๘', '๙'], 0]
-    ];
-    $Set = empty($Sets[$CIDRAM['Config']['general']['numbers']]) ? 'Latin-1' : $Sets[$CIDRAM['Config']['general']['numbers']];
+    if (empty($CIDRAM['Number_L10N_Sets'][$CIDRAM['Config']['general']['numbers']])) {
+        $Set = 'Latin-1';
+    } else {
+        $Set = $CIDRAM['Number_L10N_Sets'][$CIDRAM['Config']['general']['numbers']];
+    }
     $DecPos = strpos($Number, '.') ?: strlen($Number);
     if ($Decimals && $Set[0]) {
         $Fraction = substr($Number, $DecPos + 1, $Decimals);
@@ -1367,6 +1373,24 @@ $CIDRAM['Number_L10N'] = function ($Number, int $Decimals = 0) use (&$CIDRAM): s
     return $Formatted;
 };
 
+/** Used by the Number_L10N_JS closure (separated out to improve memory footprint). */
+$CIDRAM['Number_L10N_JS_Sets'] = [
+    'NoSep-1' => ['.', '', 3, 'return l10nd', 1],
+    'NoSep-2' => [',', '', 3, 'return l10nd', 1],
+    'Latin-1' => ['.', ',', 3, 'return l10nd', 1],
+    'Latin-2' => ['.', ' ', 3, 'return l10nd', 1],
+    'Latin-3' => [',', '.', 3, 'return l10nd', 1],
+    'Latin-4' => [',', ' ', 3, 'return l10nd', 1],
+    'Latin-5' => ['·', ',', 3, 'return l10nd', 1],
+    'China-1' => ['.', ',', 4, 'return l10nd', 1],
+    'India-1' => ['.', ',', 2, 'return l10nd', 0],
+    'India-2' => ['.', ',', 2, 'var nls=[\'०\',\'१\',\'२\',\'३\',\'४\',\'५\',\'६\',\'७\',\'८\',\'९\'];return nls[l10nd]||l10nd', 0],
+    'Bengali-1' => ['.', ',', 2, 'var nls=[\'০\',\'১\',\'২\',\'৩\',\'৪\',\'৫\',\'৬\',\'৭\',\'৮\',\'৯\'];return nls[l10nd]||l10nd', 0],
+    'Arabic-1' => ['٫', '', 3, 'var nls=[\'٠\',\'١\',\'٢\',\'٣\',\'٤\',\'٥\',\'٦\',\'٧\',\'٨\',\'٩\'];return nls[l10nd]||l10nd', 1],
+    'Arabic-2' => ['٫', '٬', 3, 'var nls=[\'٠\',\'١\',\'٢\',\'٣\',\'٤\',\'٥\',\'٦\',\'٧\',\'٨\',\'٩\'];return nls[l10nd]||l10nd', 1],
+    'Thai-1' => ['.', ',', 3, 'var nls=[\'๐\',\'๑\',\'๒\',\'๓\',\'๔\',\'๕\',\'๖\',\'๗\',\'๘\',\'๙\'];return nls[l10nd]||l10nd', 1],
+];
+
 /**
  * Generates JavaScript code for localising numbers locally.
  *
@@ -1380,27 +1404,15 @@ $CIDRAM['Number_L10N_JS'] = function () use (&$CIDRAM): string {
         '&&(b=1,e=\'%2$s\'+e);var e=l10nn(n.substring(t-i,t-(i-1)))+e;b++}var t=' .
         'x.length;for(y=\'\',b=1,i=1;i<=t;i++){var y=l10nn(x.substring(t-i,t-(i-' .
         '1)))+y}return e+y}';
-    $Sets = [
-        'NoSep-1' => ['.', '', 3, 'return l10nd', 1],
-        'NoSep-2' => [',', '', 3, 'return l10nd', 1],
-        'Latin-1' => ['.', ',', 3, 'return l10nd', 1],
-        'Latin-2' => ['.', ' ', 3, 'return l10nd', 1],
-        'Latin-3' => [',', '.', 3, 'return l10nd', 1],
-        'Latin-4' => [',', ' ', 3, 'return l10nd', 1],
-        'Latin-5' => ['·', ',', 3, 'return l10nd', 1],
-        'China-1' => ['.', ',', 4, 'return l10nd', 1],
-        'India-1' => ['.', ',', 2, 'return l10nd', 0],
-        'India-2' => ['.', ',', 2, 'var nls=[\'०\',\'१\',\'२\',\'३\',\'४\',\'५\',\'६\',\'७\',\'८\',\'९\'];return nls[l10nd]||l10nd', 0],
-        'Bengali-1' => ['.', ',', 2, 'var nls=[\'০\',\'১\',\'২\',\'৩\',\'৪\',\'৫\',\'৬\',\'৭\',\'৮\',\'৯\'];return nls[l10nd]||l10nd', 0],
-        'Arabic-1' => ['٫', '', 3, 'var nls=[\'٠\',\'١\',\'٢\',\'٣\',\'٤\',\'٥\',\'٦\',\'٧\',\'٨\',\'٩\'];return nls[l10nd]||l10nd', 1],
-        'Arabic-2' => ['٫', '٬', 3, 'var nls=[\'٠\',\'١\',\'٢\',\'٣\',\'٤\',\'٥\',\'٦\',\'٧\',\'٨\',\'٩\'];return nls[l10nd]||l10nd', 1],
-        'Thai-1' => ['.', ',', 3, 'var nls=[\'๐\',\'๑\',\'๒\',\'๓\',\'๔\',\'๕\',\'๖\',\'๗\',\'๘\',\'๙\'];return nls[l10nd]||l10nd', 1],
-    ];
-    if (!empty($CIDRAM['Config']['general']['numbers']) && isset($Sets[$CIDRAM['Config']['general']['numbers']])) {
-        $Set = $Sets[$CIDRAM['Config']['general']['numbers']];
-        return sprintf($Base, $Set[0], $Set[1], $Set[2], $Set[3], $Set[4]);
+    if (
+        !empty($CIDRAM['Config']['general']['numbers']) &&
+        isset($CIDRAM['Number_L10N_JS_Sets'][$CIDRAM['Config']['general']['numbers']])
+    ) {
+        $Set = $CIDRAM['Number_L10N_JS_Sets'][$CIDRAM['Config']['general']['numbers']];
+    } else {
+        $Set = $CIDRAM['Number_L10N_JS_Sets']['Latin-1'];
     }
-    return sprintf($Base, $Sets['Latin-1'][0], $Sets['Latin-1'][1], $Sets['Latin-1'][2], $Sets['Latin-1'][3], $Sets['Latin-1'][4]);
+    return sprintf($Base, $Set[0], $Set[1], $Set[2], $Set[3], $Set[4]);
 };
 
 /**

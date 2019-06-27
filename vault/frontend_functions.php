@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2019.06.26).
+ * This file: Front-end functions file (last modified: 2019.06.27).
  */
 
 /**
@@ -151,7 +151,7 @@ $CIDRAM['FormatFilesize'] = function (&$Filesize) use (&$CIDRAM) {
             break;
         }
     }
-    $Filesize = $CIDRAM['Number_L10N']($Filesize, ($Iterate === 0) ? 0 : 2) . ' ' . $CIDRAM['L10N']->getPlural($Filesize, $Scale[$Iterate]);
+    $Filesize = $CIDRAM['NumberFormatter']->format($Filesize, ($Iterate === 0) ? 0 : 2) . ' ' . $CIDRAM['L10N']->getPlural($Filesize, $Scale[$Iterate]);
 };
 
 /**
@@ -1198,7 +1198,7 @@ $CIDRAM['Tally'] = function ($In, $BlockLink, array $Exclusions = []) use (&$CID
                 }
             }
             $Percent = $CIDRAM['FE']['EntryCount'] ? ($Count / $CIDRAM['FE']['EntryCount']) * 100 : 0;
-            $Out .= '<tr><td class="h1 fW">' . $Entry . '</td><td class="h1f"><div class="s">' . $CIDRAM['Number_L10N']($Count) . ' (' . $CIDRAM['Number_L10N']($Percent, 2) . "%)</div></td></tr>\n";
+            $Out .= '<tr><td class="h1 fW">' . $Entry . '</td><td class="h1f"><div class="s">' . $CIDRAM['NumberFormatter']->format($Count) . ' (' . $CIDRAM['NumberFormatter']->format($Percent, 2) . "%)</div></td></tr>\n";
         }
     }
     $Out .= '</table>';
@@ -1331,62 +1331,8 @@ $CIDRAM['WP-Ver'] = function () use (&$CIDRAM) {
     }
 };
 
-/** Used by the Number_L10N closure (separated out to improve memory footprint). */
-$CIDRAM['Number_L10N_Sets'] = [
-    'NoSep-1' => ['.', '', 3, false, 0],
-    'NoSep-2' => [',', '', 3, false, 0],
-    'Latin-1' => ['.', ',', 3, false, 0],
-    'Latin-2' => ['.', ' ', 3, false, 0],
-    'Latin-3' => [',', '.', 3, false, 0],
-    'Latin-4' => [',', ' ', 3, false, 0],
-    'Latin-5' => ['·', ',', 3, false, 0],
-    'China-1' => ['.', ',', 4, false, 0],
-    'India-1' => ['.', ',', 2, false, -1],
-    'India-2' => ['.', ',', 2, ['०', '१', '२', '३', '४', '५', '६', '७', '८', '९'], -1],
-    'Bengali-1' => ['.', ',', 2, ['০', '১', '২', '৩', '৪', '৫', '৬', '৭', '৮', '৯'], -1],
-    'Arabic-1' => ['٫', '', 3, ['٠', '١', '٢', '٣', '٤', '٥', '٦', '٧', '٨', '٩'], 0],
-    'Arabic-2' => ['٫', '٬', 3, ['٠', '١', '٢', '٣', '٤', '٥', '٦', '٧', '٨', '٩'], 0],
-    'Thai-1' => ['.', ',', 3, ['๐', '๑', '๒', '๓', '๔', '๕', '๖', '๗', '๘', '๙'], 0]
-];
-
-/**
- * Formats/Localises a number according to specified configuration.
- *
- * @param int|float $Number The number to localise.
- * @param int $Decimals Decimal places (optional).
- * @return string The formatted/localised number.
- */
-$CIDRAM['Number_L10N'] = function ($Number, $Decimals = 0) use (&$CIDRAM) {
-    $Number = (float)$Number;
-    if (empty($CIDRAM['Number_L10N_Sets'][$CIDRAM['Config']['general']['numbers']])) {
-        $Set = 'Latin-1';
-    } else {
-        $Set = $CIDRAM['Number_L10N_Sets'][$CIDRAM['Config']['general']['numbers']];
-    }
-    $DecPos = strpos($Number, '.') ?: strlen($Number);
-    if ($Decimals && $Set[0]) {
-        $Fraction = substr($Number, $DecPos + 1, $Decimals);
-        $Fraction .= str_repeat('0', $Decimals - strlen($Fraction));
-    }
-    for ($Formatted = '', $ThouPos = $Set[4], $Pos = 1; $Pos <= $DecPos; $Pos++) {
-        if ($ThouPos >= $Set[2]) {
-            $ThouPos = 1;
-            $Formatted = $Set[1] . $Formatted;
-        } else {
-            $ThouPos++;
-        }
-        $NegPos = $DecPos - $Pos;
-        $ThisChar = substr($Number, $NegPos, 1);
-        $Formatted = empty($Set[3][$ThisChar]) ? $ThisChar . $Formatted : $Set[3][$ThisChar] . $Formatted;
-    }
-    if ($Decimals && $Set[0]) {
-        $Formatted .= $Set[0];
-        for ($FracLen = strlen($Fraction), $Pos = 0; $Pos < $FracLen; $Pos++) {
-            $Formatted .= empty($Set[3][$Fraction[$Pos]]) ? $Fraction[$Pos] : $Set[3][$Fraction[$Pos]];
-        }
-    }
-    return $Formatted;
-};
+/** Used to format numbers according to the specified configuration. */
+$CIDRAM['NumberFormatter'] = new \Maikuolan\Common\NumberFormatter($CIDRAM['Config']['general']['numbers']);
 
 /** Used by the Number_L10N_JS closure (separated out to improve memory footprint). */
 $CIDRAM['Number_L10N_JS_Sets'] = [
@@ -1400,10 +1346,20 @@ $CIDRAM['Number_L10N_JS_Sets'] = [
     'China-1' => ['.', ',', 4, 'return l10nd', 1],
     'India-1' => ['.', ',', 2, 'return l10nd', 0],
     'India-2' => ['.', ',', 2, 'var nls=[\'०\',\'१\',\'२\',\'३\',\'४\',\'५\',\'६\',\'७\',\'८\',\'९\'];return nls[l10nd]||l10nd', 0],
-    'Bengali-1' => ['.', ',', 2, 'var nls=[\'০\',\'১\',\'২\',\'৩\',\'৪\',\'৫\',\'৬\',\'৭\',\'৮\',\'৯\'];return nls[l10nd]||l10nd', 0],
+    'India-3' => ['.', ',', 2, 'var nls=[\'૦\',\'૧\',\'૨\',\'૩\',\'૪\',\'૫\',\'૬\',\'૭\',\'૮\',\'૯\'];return nls[l10nd]||l10nd', 0],
+    'India-4' => ['.', ',', 2, 'var nls=[\'੦\',\'੧\',\'੨\',\'੩\',\'੪\',\'੫\',\'੬\',\'੭\',\'੮\',\'੯\'];return nls[l10nd]||l10nd', 0],
+    'India-5' => ['.', ',', 2, 'var nls=[\'೦\',\'೧\',\'೨\',\'೩\',\'೪\',\'೫\',\'೬\',\'೭\',\'೮\',\'೯\'];return nls[l10nd]||l10nd', 0],
+    'India-6' => ['.', ',', 2, 'var nls=[\'౦\',\'౧\',\'౨\',\'౩\',\'౪\',\'౫\',\'౬\',\'౭\',\'౮\',\'౯\'];return nls[l10nd]||l10nd', 0],
     'Arabic-1' => ['٫', '', 3, 'var nls=[\'٠\',\'١\',\'٢\',\'٣\',\'٤\',\'٥\',\'٦\',\'٧\',\'٨\',\'٩\'];return nls[l10nd]||l10nd', 1],
     'Arabic-2' => ['٫', '٬', 3, 'var nls=[\'٠\',\'١\',\'٢\',\'٣\',\'٤\',\'٥\',\'٦\',\'٧\',\'٨\',\'٩\'];return nls[l10nd]||l10nd', 1],
+    'Arabic-3' => ['٫', '٬', 3, 'var nls=[\'۰\',\'۱\',\'۲\',\'۳\',\'۴\',\'۵\',\'۶\',\'۷\',\'۸\',\'۹\'];return nls[l10nd]||l10nd', 1],
+    'Arabic-4' => ['٫', '٬', 2, 'var nls=[\'۰\',\'۱\',\'۲\',\'۳\',\'۴\',\'۵\',\'۶\',\'۷\',\'۸\',\'۹\'];return nls[l10nd]||l10nd', 0],
+    'Bengali-1' => ['.', ',', 2, 'var nls=[\'০\',\'১\',\'২\',\'৩\',\'৪\',\'৫\',\'৬\',\'৭\',\'৮\',\'৯\'];return nls[l10nd]||l10nd', 0],
+    'Burmese-1' => ['.', '', 3, 'var nls=[\'၀\',\'၁\',\'၂\',\'၃\',\'၄\',\'၅\',\'၆\',\'၇\',\'၈\',\'၉\'];return nls[l10nd]||l10nd', 1],
+    'Khmer-1' => [',', '.', 3, 'var nls=[\'០\',\'១\',\'២\',\'៣\',\'៤\',\'៥\',\'៦\',\'៧\',\'៨\',\'៩\'];return nls[l10nd]||l10nd', 1],
+    'Lao-1' => ['.', '', 3, 'var nls=[\'໐\',\'໑\',\'໒\',\'໓\',\'໔\',\'໕\',\'໖\',\'໗\',\'໘\',\'໙\'];return nls[l10nd]||l10nd', 1],
     'Thai-1' => ['.', ',', 3, 'var nls=[\'๐\',\'๑\',\'๒\',\'๓\',\'๔\',\'๕\',\'๖\',\'๗\',\'๘\',\'๙\'];return nls[l10nd]||l10nd', 1],
+    'Thai-2' => ['.', '', 3, 'var nls=[\'๐\',\'๑\',\'๒\',\'๓\',\'๔\',\'๕\',\'๖\',\'๗\',\'๘\',\'๙\'];return nls[l10nd]||l10nd', 1],
 ];
 
 /**
@@ -1532,8 +1488,8 @@ $CIDRAM['AppendTests'] = function (array &$Component, $ReturnState = false) use 
                 '<input class="auto" type="button" onclick="javascript:hideid(\'%4$s-tests\');showid(\'%4$s-showtests\');hideid(\'%4$s-hidetests\')" value="-" />' .
                 '</span><span id="%4$s-tests" style="display:none"><br />%5$s</span>',
                 $TestClr,
-                ($TestsPassed === '?' ? '?' : $CIDRAM['Number_L10N']($TestsPassed)),
-                $CIDRAM['Number_L10N']($TestsTotal),
+                ($TestsPassed === '?' ? '?' : $CIDRAM['NumberFormatter']->format($TestsPassed)),
+                $CIDRAM['NumberFormatter']->format($TestsTotal),
                 $Component['ID'],
                 $TestDetails
             );
@@ -1918,7 +1874,7 @@ $CIDRAM['UpdatesHandler-Update'] = function ($ID) use (&$CIDRAM) {
             $CIDRAM['FE']['CronMode'] ? " « +%s | -%s | %s »\n" : ' <code><span class="txtGn">+%s</span> | <span class="txtRd">-%s</span> | <span class="txtOe">%s</span></code><br />',
             $CIDRAM['Components']['BytesAdded'],
             $CIDRAM['Components']['BytesRemoved'],
-            $CIDRAM['Number_L10N'](microtime(true) - $CIDRAM['Components']['TimeRequired'], 3)
+            $CIDRAM['NumberFormatter']->format(microtime(true) - $CIDRAM['Components']['TimeRequired'], 3)
         );
     }
     /** Update annotations. */
@@ -2000,7 +1956,7 @@ $CIDRAM['UpdatesHandler-Uninstall'] = function ($ID) use (&$CIDRAM) {
     $CIDRAM['FE']['state_msg'] .= sprintf(
         $CIDRAM['FE']['CronMode'] ? " « -%s | %s »\n" : ' <code><span class="txtRd">-%s</span> | <span class="txtOe">%s</span></code>',
         $CIDRAM['Components']['BytesRemoved'],
-        $CIDRAM['Number_L10N'](microtime(true) - $CIDRAM['Components']['TimeRequired'], 3)
+        $CIDRAM['NumberFormatter']->format(microtime(true) - $CIDRAM['Components']['TimeRequired'], 3)
     );
 };
 
@@ -2326,7 +2282,7 @@ $CIDRAM['SectionsHandler'] = function (array $Files) use (&$CIDRAM) {
     ksort($SectionsForIgnore);
     $CIDRAM['FE']['SL_Unique'] = count($SectionsForIgnore);
     foreach ($SectionsForIgnore as $Section => $State) {
-        $ThisCount = $CIDRAM['Number_L10N'](isset($SignaturesCount[$Section]) ? $SignaturesCount[$Section] : 0);
+        $ThisCount = $CIDRAM['NumberFormatter']->format(isset($SignaturesCount[$Section]) ? $SignaturesCount[$Section] : 0);
         $Class = (isset($Class) && $Class === 'ng2') ? 'ng1' : 'ng2';
         $SectionSafe = preg_replace('~[^\da-z]~i', '', $Section);
         $SectionLabel = $Section . ' (<span class="txtRd">' . $ThisCount . '</span>)';
@@ -2345,7 +2301,7 @@ $CIDRAM['SectionsHandler'] = function (array $Files) use (&$CIDRAM) {
             }
             $Next = ($BreakdownItem === 'Whitelist') ? 'Origin' : '';
             if ($Quantity) {
-                $Quantity = $CIDRAM['Number_L10N']($Quantity);
+                $Quantity = $CIDRAM['NumberFormatter']->format($Quantity);
                 $SectionBreakdown .= ($SectionBreakdown ? ' – ' : '') . $BreakdownItem . ': ' . $Quantity;
             }
         }
@@ -2553,9 +2509,9 @@ $CIDRAM['RangeTablesIterateData'] = function (
                     $ThisID = $IPType . preg_replace('~[^\da-z]~i', '_', $SigType . $Range . $Param);
                     $Total = '<span id="' . $ThisID . '"></span>';
                     $JS .= 'w(\'' . $ThisID . '\',nft((' . $Count . $Size . ').toString()));';
-                    $Count = $CIDRAM['Number_L10N']($Count) . ' (' . $Total . ')';
+                    $Count = $CIDRAM['NumberFormatter']->format($Count) . ' (' . $Total . ')';
                 } else {
-                    $Count = $CIDRAM['Number_L10N']($Count);
+                    $Count = $CIDRAM['NumberFormatter']->format($Count);
                 }
                 if ($Param) {
                     $Count = $Param . ' – ' . $Count;
@@ -2569,9 +2525,9 @@ $CIDRAM['RangeTablesIterateData'] = function (
                         $ThisID = $IPType . preg_replace('~[^\da-z]~i', '_', $SigType . $Range . $Origin);
                         $Total = '<span id="' . $ThisID . '"></span>';
                         $JS .= 'w(\'' . $ThisID . '\',nft((' . $Count . $Size . ').toString()));';
-                        $Count = $CIDRAM['Number_L10N']($Count) . ' (' . $Total . ')';
+                        $Count = $CIDRAM['NumberFormatter']->format($Count) . ' (' . $Total . ')';
                     } else {
-                        $Count = $CIDRAM['Number_L10N']($Count);
+                        $Count = $CIDRAM['NumberFormatter']->format($Count);
                     }
                     $Count = '<code class="hB">' . $Origin . '</code> – ' . (
                         $CIDRAM['FE']['Flags'] && $Origin !== '??' ? '<span class="flag ' . $Origin . '"></span> – ' : ''

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2019.06.25).
+ * This file: Front-end handler (last modified: 2019.06.27).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -2218,10 +2218,10 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'fixer' && $CIDRAM['FE']['Permis
         $CIDRAM['Fixer']['Time'] = microtime(true) - $CIDRAM['Fixer']['Time'];
         $CIDRAM['Fixer'] = '<div class="s">' . sprintf($CIDRAM['L10N']->getString('state_fixer'), sprintf(
             $CIDRAM['L10N']->getPlural($CIDRAM['Fixer']['Changes'], 'state_fixer_changed'),
-            $CIDRAM['Number_L10N']($CIDRAM['Fixer']['Changes'])
+            $CIDRAM['NumberFormatter']->format($CIDRAM['Fixer']['Changes'])
         ), sprintf(
             $CIDRAM['L10N']->getPlural($CIDRAM['Fixer']['Time'], 'state_fixer_seconds'),
-            $CIDRAM['Number_L10N']($CIDRAM['Fixer']['Time'], 3)
+            $CIDRAM['NumberFormatter']->format($CIDRAM['Fixer']['Time'], 3)
         )) . '<br /><blockquote><code>' . $CIDRAM['Fixer']['Before'] . '</code><br />↪️<code>' . $CIDRAM['Fixer']['After'] . '</code></blockquote></div>';
         $CIDRAM['FE']['FixerOutput'] = '<hr />' . $CIDRAM['Fixer'] . '<br /><textarea name="FixerOutput">' . str_replace(
             ['&', '<', '>'],
@@ -2667,13 +2667,13 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'sections' && $CIDRAM['FE']['Per
         $CIDRAM['FE']['ProcessTime'] = microtime(true) - $_SERVER['REQUEST_TIME_FLOAT'];
         $CIDRAM['FE']['Data'] = '<div class="s">' . sprintf(
             $CIDRAM['L10N']->getPlural($CIDRAM['FE']['ProcessTime'], 'state_loadtime'),
-            $CIDRAM['Number_L10N']($CIDRAM['FE']['ProcessTime'], 3)
+            $CIDRAM['NumberFormatter']->format($CIDRAM['FE']['ProcessTime'], 3)
         ) . '<br />' . sprintf(
             $CIDRAM['L10N']->getString('state_sl_totals'),
-            $CIDRAM['Number_L10N'](isset($CIDRAM['FE']['SL_Signatures']) ? $CIDRAM['FE']['SL_Signatures'] : 0),
-            $CIDRAM['Number_L10N'](isset($CIDRAM['FE']['SL_Sections']) ? $CIDRAM['FE']['SL_Sections'] : 0),
-            $CIDRAM['Number_L10N'](isset($CIDRAM['FE']['SL_Files']) ? $CIDRAM['FE']['SL_Files'] : 0),
-            $CIDRAM['Number_L10N'](isset($CIDRAM['FE']['SL_Unique']) ? $CIDRAM['FE']['SL_Unique'] : 0)
+            $CIDRAM['NumberFormatter']->format(isset($CIDRAM['FE']['SL_Signatures']) ? $CIDRAM['FE']['SL_Signatures'] : 0),
+            $CIDRAM['NumberFormatter']->format(isset($CIDRAM['FE']['SL_Sections']) ? $CIDRAM['FE']['SL_Sections'] : 0),
+            $CIDRAM['NumberFormatter']->format(isset($CIDRAM['FE']['SL_Files']) ? $CIDRAM['FE']['SL_Files'] : 0),
+            $CIDRAM['NumberFormatter']->format(isset($CIDRAM['FE']['SL_Unique']) ? $CIDRAM['FE']['SL_Unique'] : 0)
         ) . '</div><hr />' . $CIDRAM['FE']['Data'];
 
         /** Parse output. */
@@ -2747,7 +2747,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'range' && $CIDRAM['FE']['Permis
     $CIDRAM['FE']['ProcTime'] = microtime(true) - $_SERVER['REQUEST_TIME_FLOAT'];
     $CIDRAM['FE']['ProcTime'] = '<div class="s">' . sprintf(
         $CIDRAM['L10N']->getPlural($CIDRAM['FE']['ProcTime'], 'state_loadtime'),
-        $CIDRAM['Number_L10N']($CIDRAM['FE']['ProcTime'], 3)
+        $CIDRAM['NumberFormatter']->format($CIDRAM['FE']['ProcTime'], 3)
     ) . '</div>';
 
     /** Parse output. */
@@ -2824,11 +2824,11 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-aggregator' && $CIDRAM['FE']
         unset($CIDRAM['Aggregator']);
         $CIDRAM['FE']['ResultLine'] = sprintf(
             $CIDRAM['L10N']->getString('label_results'),
-            '<span class="txtRd">' . $CIDRAM['Number_L10N']($CIDRAM['Results']['In']) . '</span>',
-            '<span class="txtRd">' . $CIDRAM['Number_L10N']($CIDRAM['Results']['Rejected']) . '</span>',
-            '<span class="txtRd">' . $CIDRAM['Number_L10N']($CIDRAM['Results']['Accepted']) . '</span>',
-            '<span class="txtRd">' . $CIDRAM['Number_L10N']($CIDRAM['Results']['Merged']) . '</span>',
-            '<span class="txtRd">' . $CIDRAM['Number_L10N']($CIDRAM['Results']['Out']) . '</span>'
+            '<span class="txtRd">' . $CIDRAM['NumberFormatter']->format($CIDRAM['Results']['In']) . '</span>',
+            '<span class="txtRd">' . $CIDRAM['NumberFormatter']->format($CIDRAM['Results']['Rejected']) . '</span>',
+            '<span class="txtRd">' . $CIDRAM['NumberFormatter']->format($CIDRAM['Results']['Accepted']) . '</span>',
+            '<span class="txtRd">' . $CIDRAM['NumberFormatter']->format($CIDRAM['Results']['Merged']) . '</span>',
+            '<span class="txtRd">' . $CIDRAM['NumberFormatter']->format($CIDRAM['Results']['Out']) . '</span>'
         );
     } else {
         $CIDRAM['FE']['output'] = $CIDRAM['FE']['input'] = '';
@@ -2838,7 +2838,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-aggregator' && $CIDRAM['FE']
     $CIDRAM['FE']['ProcessTime'] = microtime(true) - $_SERVER['REQUEST_TIME_FLOAT'];
     $CIDRAM['FE']['state_msg'] .= sprintf(
         $CIDRAM['L10N']->getPlural($CIDRAM['FE']['ProcessTime'], 'state_loadtime'),
-        $CIDRAM['Number_L10N']($CIDRAM['FE']['ProcessTime'], 3)
+        $CIDRAM['NumberFormatter']->format($CIDRAM['FE']['ProcessTime'], 3)
     );
 
     /** Parse output. */
@@ -2920,7 +2920,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-test' && $CIDRAM['FE']['Perm
                 if (!empty($CIDRAM['AuxErrors'])) {
                     $CIDRAM['ThisIP']['YesNo'] .= sprintf(
                         ' – auxiliary.yaml (%s)',
-                        $CIDRAM['Number_L10N'](count($CIDRAM['AuxErrors']))
+                        $CIDRAM['NumberFormatter']->format(count($CIDRAM['AuxErrors']))
                     );
                 }
                 if (!empty($CIDRAM['ModuleErrors'])) {
@@ -2937,7 +2937,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-test' && $CIDRAM['FE']['Perm
                         $CIDRAM['ThisIP']['YesNo'] .= sprintf(
                             ' – %s (%s)',
                             $CIDRAM['ModuleName'],
-                            $CIDRAM['Number_L10N']($CIDRAM['ModuleError'])
+                            $CIDRAM['NumberFormatter']->format($CIDRAM['ModuleError'])
                         );
                     }
                     unset($CIDRAM['ModuleName'], $CIDRAM['ModuleError'], $CIDRAM['ModuleErrorCounts']);
@@ -2983,7 +2983,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-test' && $CIDRAM['FE']['Perm
     $CIDRAM['FE']['ProcessTime'] = microtime(true) - $_SERVER['REQUEST_TIME_FLOAT'];
     $CIDRAM['FE']['state_msg'] .= sprintf(
         $CIDRAM['L10N']->getPlural($CIDRAM['FE']['ProcessTime'], 'state_loadtime'),
-        $CIDRAM['Number_L10N']($CIDRAM['FE']['ProcessTime'], 3)
+        $CIDRAM['NumberFormatter']->format($CIDRAM['FE']['ProcessTime'], 3)
     );
 
     /** Parse output. */
@@ -3066,7 +3066,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-tracking' && $CIDRAM['FE']['
     $CIDRAM['FE']['TrackingCount'] = count($CIDRAM['Tracking']);
     $CIDRAM['FE']['TrackingCount'] = sprintf(
         $CIDRAM['L10N']->getPlural($CIDRAM['FE']['TrackingCount'], 'state_tracking'),
-        '<span class="txtRd">' . $CIDRAM['Number_L10N']($CIDRAM['FE']['TrackingCount']) . '</span>'
+        '<span class="txtRd">' . $CIDRAM['NumberFormatter']->format($CIDRAM['FE']['TrackingCount']) . '</span>'
     );
 
     if (!$CIDRAM['FE']['ASYNC']) {
@@ -3130,7 +3130,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-tracking' && $CIDRAM['FE']['
                 $CIDRAM['ThisTracking']['StatClass'] = 'txtRd';
                 $CIDRAM['ThisTracking']['Status'] .= '/' . $CIDRAM['L10N']->getString('field_blocked');
             }
-            $CIDRAM['ThisTracking']['Status'] .= ' – ' . $CIDRAM['Number_L10N']($CIDRAM['ThisTrackingArr']['Count'], 0);
+            $CIDRAM['ThisTracking']['Status'] .= ' – ' . $CIDRAM['NumberFormatter']->format($CIDRAM['ThisTrackingArr']['Count'], 0);
             $CIDRAM['ThisTracking']['TrackingFilter'] = $CIDRAM['FE']['TrackingFilter'];
             $CIDRAM['FE']['TrackingData'] .= $CIDRAM['ParseVars'](
                 $CIDRAM['lang'] + $CIDRAM['ThisTracking'],
@@ -3161,7 +3161,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-tracking' && $CIDRAM['FE']['
     $CIDRAM['FE']['ProcessTime'] = microtime(true) - $_SERVER['REQUEST_TIME_FLOAT'];
     $CIDRAM['FE']['TrackingCount'] .= sprintf(
         $CIDRAM['L10N']->getPlural($CIDRAM['FE']['ProcessTime'], 'state_loadtime'),
-        $CIDRAM['Number_L10N']($CIDRAM['FE']['ProcessTime'], 3)
+        $CIDRAM['NumberFormatter']->format($CIDRAM['FE']['ProcessTime'], 3)
     );
 
     if ($CIDRAM['FE']['ASYNC']) {
@@ -3277,7 +3277,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'statistics' && $CIDRAM['FE']['P
         ['reCAPTCHA-Failed', 'reCAPTCHA-Total'],
         ['reCAPTCHA-Passed', 'reCAPTCHA-Total']
     ] as $CIDRAM['TheseStats']) {
-        $CIDRAM['FE'][$CIDRAM['TheseStats'][0]] = '<span class="s">' . $CIDRAM['Number_L10N'](
+        $CIDRAM['FE'][$CIDRAM['TheseStats'][0]] = '<span class="s">' . $CIDRAM['NumberFormatter']->format(
             empty($CIDRAM['Statistics'][$CIDRAM['TheseStats'][0]]) ? 0 : $CIDRAM['Statistics'][$CIDRAM['TheseStats'][0]]
         ) . '</span>';
         if (!isset($CIDRAM['FE'][$CIDRAM['TheseStats'][1]])) {
@@ -3290,7 +3290,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'statistics' && $CIDRAM['FE']['P
 
     /** Fetch and process totals. */
     foreach (['Blocked-Total', 'Banned-Total', 'reCAPTCHA-Total'] as $CIDRAM['TheseStats']) {
-        $CIDRAM['FE'][$CIDRAM['TheseStats']] = '<span class="s">' . $CIDRAM['Number_L10N'](
+        $CIDRAM['FE'][$CIDRAM['TheseStats']] = '<span class="s">' . $CIDRAM['NumberFormatter']->format(
             $CIDRAM['FE'][$CIDRAM['TheseStats']]
         ) . '</span>';
     }
@@ -3302,7 +3302,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'statistics' && $CIDRAM['FE']['P
         ['modules', 'Other-ActiveModules']
     ] as $CIDRAM['TheseStats']) {
         if (empty($CIDRAM['Config']['signatures'][$CIDRAM['TheseStats'][0]])) {
-            $CIDRAM['FE'][$CIDRAM['TheseStats'][1]] = '<span class="txtRd">' . $CIDRAM['Number_L10N'](0) . '</span>';
+            $CIDRAM['FE'][$CIDRAM['TheseStats'][1]] = '<span class="txtRd">' . $CIDRAM['NumberFormatter']->format(0) . '</span>';
         } else {
             $CIDRAM['FE'][$CIDRAM['TheseStats'][1]] = 0;
             $CIDRAM['StatWorking'] = explode(',', $CIDRAM['Config']['signatures'][$CIDRAM['TheseStats'][0]]);
@@ -3312,7 +3312,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'statistics' && $CIDRAM['FE']['P
                 }
             });
             $CIDRAM['StatColour'] = $CIDRAM['FE'][$CIDRAM['TheseStats'][1]] ? 'txtGn' : 'txtRd';
-            $CIDRAM['FE'][$CIDRAM['TheseStats'][1]] = '<span class="' . $CIDRAM['StatColour'] . '">' . $CIDRAM['Number_L10N'](
+            $CIDRAM['FE'][$CIDRAM['TheseStats'][1]] = '<span class="' . $CIDRAM['StatColour'] . '">' . $CIDRAM['NumberFormatter']->format(
                 $CIDRAM['FE'][$CIDRAM['TheseStats'][1]]
             ) . '</span>';
         }
@@ -3664,7 +3664,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'logs' && $CIDRAM['FE']['Permiss
             ) ? '<span class="flag ' . $CIDRAM['FE']['SearchQuery'] . '"><span></span></span>' : '<code>' . $CIDRAM['FE']['SearchQuery'] . '</code>';
             $CIDRAM['FE']['SearchInfo'] = '<br />' . sprintf(
                 $CIDRAM['L10N']->getPlural($CIDRAM['FE']['EntryCount'], 'label_displaying_that_cite'),
-                $CIDRAM['Number_L10N']($CIDRAM['FE']['EntryCount']),
+                $CIDRAM['NumberFormatter']->format($CIDRAM['FE']['EntryCount']),
                 $CIDRAM['FE']['SearchInfoRender']
             );
         } else {
@@ -3676,7 +3676,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'logs' && $CIDRAM['FE']['Permiss
             }
             $CIDRAM['FE']['SearchInfo'] = '<br />' . sprintf(
                 $CIDRAM['L10N']->getPlural($CIDRAM['FE']['EntryCount'], 'label_displaying'),
-                $CIDRAM['Number_L10N']($CIDRAM['FE']['EntryCount'])
+                $CIDRAM['NumberFormatter']->format($CIDRAM['FE']['EntryCount'])
             );
         }
 
@@ -3733,7 +3733,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'logs' && $CIDRAM['FE']['Permiss
     $CIDRAM['FE']['ProcessTime'] = microtime(true) - $_SERVER['REQUEST_TIME_FLOAT'];
     $CIDRAM['FE']['SearchInfo'] .= '<br />' . sprintf(
         $CIDRAM['L10N']->getPlural($CIDRAM['FE']['ProcessTime'], 'state_loadtime'),
-        $CIDRAM['Number_L10N']($CIDRAM['FE']['ProcessTime'], 3)
+        $CIDRAM['NumberFormatter']->format($CIDRAM['FE']['ProcessTime'], 3)
     );
 
     /** Set logfile list or no logfiles available message. */

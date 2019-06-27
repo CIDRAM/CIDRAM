@@ -1,6 +1,6 @@
 <?php
 /**
- * Demojibakefier (last modified: 2019.05.10).
+ * Demojibakefier (last modified: 2019.05.22).
  *
  * Intended to normalise the character encoding of a given string to a
  * preferred character encoding when the given string's byte sequences don't
@@ -55,7 +55,7 @@ class Demojibakefier
      *
      * @return array An array of the encoding types that the class supports.
      */
-    public function supported()
+    public function supported(): array
     {
         return [
             'UTF-8',
@@ -525,7 +525,7 @@ class Demojibakefier
      * @param string $String The string to normalise.
      * @return string The normalised string (could be the same as the input, if there isn't anything to normalise).
      */
-    public function normalise(string $String): ?string
+    public function normalise(string $String): string
     {
         $this->Last = '';
         $this->Len = strlen($String);

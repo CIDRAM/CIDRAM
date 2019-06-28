@@ -401,20 +401,14 @@ class NumberFormatter
         if ($Decimals > 0 && $this->DecimalSeparator) {
             $Fraction = substr($Number, $DecPos + 1) ?: '';
             if ($Fraction && $this->Base !== 10 && $this->Base > 1 && $this->Base <= 36) {
-                $Fraction = str_split($Fraction);
+                $Len = strlen($Fraction);
+                $Fraction = (float)('0.' . $Fraction);
                 $NewFraction = '';
-                $Len = count($Fraction);
-                for ($Pos = 0; $Pos < $Len; $Pos++) {
-                    $Fraction[$Pos] = (int)$Fraction[$Pos];
-                }
                 for ($Pos = 0; $Pos < $Decimals; $Pos++) {
-                    if (!isset($Fraction[$Pos])) {
-                        $Fraction[$Pos] = 0;
-                    }
-                    $Fraction[$Pos] = $Fraction[$Pos] > 0 ? ($this->Base / (10 / $Fraction[$Pos])) : $Fraction[$Pos];
-                    $Unit = floor($Fraction[$Pos]);
-                    $Fraction[$Pos + 1] = (isset($Fraction[$Pos + 1]) ? $Fraction[$Pos + 1] : 0) + (10 * ($Fraction[$Pos] - $Unit));
-                    $NewFraction .= $Unit ? base_convert($Unit, 10, $this->Base) : $Unit;
+                    $Fraction *= 10;
+                    $Part = floor($Fraction > 0 ? ($this->Base / (10 / $Fraction)) : $Fraction);
+                    $Fraction -= $Part ? (10 / ($this->Base / $Part)) : 0;
+                    $NewFraction .= (string)($Part ? base_convert($Part, 10, $this->Base) : $Part);
                 }
                 $Fraction = $NewFraction;
             }

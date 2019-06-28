@@ -1,7 +1,7 @@
 ---
 CIDRAM:
  Name: CIDRAM
- Version: 1.13.1-DEV+19176423
+ Version: 1.13.1-DEV+19178737
  Minimum Required: 1.0.0
  Changelog: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/Changelog.txt
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
@@ -18,6 +18,7 @@ CIDRAM:
    - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/classes/Maikuolan/ComplexStringHandler.php
    - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/classes/Maikuolan/Demojibakefier.php
    - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/classes/Maikuolan/L10N.php
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/classes/Maikuolan/NumberFormatter.php
    - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/classes/Maikuolan/YAML.php
    - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/cli.php
    - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/config.php
@@ -78,6 +79,7 @@ CIDRAM:
    - classes/Maikuolan/ComplexStringHandler.php
    - classes/Maikuolan/Demojibakefier.php
    - classes/Maikuolan/L10N.php
+   - classes/Maikuolan/NumberFormatter.php
    - classes/Maikuolan/YAML.php
    - cli.php
    - config.php
@@ -137,11 +139,12 @@ CIDRAM:
    - 8115edad2fc7aa59a03acfb9dca4dd22fe51b9ccf7168af486aefc726d7d4277:21811
    - 77e880a862d7b040a83d24dbf66eaf40b1ea6a6ade7748192d96b04d596a182d:3443
    - 612858c09aedc25646d0edd27c116e7ac9f374ea2032f98f1a1c5bcfaee6f22e:27643
-   - 8dc5d6efa3431b5d9bae534fd61d1da08826dde795c644ad5bb824a8aed82193:10146
+   - be2dad9007df6b9455c02270f06ad1abc86ffcba58c7d6e7cff84893afdbfb2e:10555
+   - d73ad6bbae780a134c2f77af641248204b22e16d84ef1ffd19752c51f7bb2756:12924
    - fd4e0113cd4f974a348ebaca5fe4222444b98e8baae328a6ffc8159b6c7a78e7:10408
    - 3c58992e3a8ab08ac403e7cd383a3737:25077
    - 366be3c9fac41a7c870d83d4bc6de2b1b7262c0a8a7e2f34f875b4c38a010f3b:7708
-   - f612293aba23d3e37e7a2bae6b943ef984a0ce5e12db1628362b3c2b62eb77eb:13318
+   - a43c15171cc2cc6a1e0afc9719ac7878465c127a2dcddcd9e4d0d3a047e2c47d:13924
    - 8e03209e7fc6641b45094e584340feff:83
    - 9b49a0b8fc01dee30b15eb380d130f84:480
    - 77359f4b059d4f6f3e307a90f473633f:1957
@@ -178,8 +181,8 @@ CIDRAM:
    - f82b848ae0f532ee63cff24c69bdf07b:17536
    - 095216bc177b88dc81c15c4d4e42bd49:877
    - 6333e24956c882f92e41b3c06b4088a6:996
-   - a8555a36e9e7c948dc77eb414e37256b2a67ac5b97b7abf563f3a0907ecbfb73:194568
-   - 4b8e1f75e5532d3e4257754981e7a20d3522a08daa24c208ad0caa776af131df:143788
+   - c2274af88a186034ae668710bf71de4ac925b645a6a160f42099c109c28d651b:194892
+   - e7e35172062905196a5c3c61b53e73022eee6686196d5053cc53c1a6d4975756:143109
    - aaf2bd6bd5dbd4cd03106676fd331124a66a3a55a06699898867dd56c59b9f39:81516
    - 9fd5988c25f0dd14e9c3352b6c24f89d21bb0db7808169ea580f398c5f9acc01:5590
    - 8e03209e7fc6641b45094e584340feff:83
@@ -193,7 +196,7 @@ CIDRAM:
 IPv4:
  Extended Description: Default IPv4 signatures normally included with the main package. Blocks unwanted cloud services and non-human endpoints.
  False Positive Risk: Low
- Version: 2019.173.382
+ Version: 2019.178.306
  Minimum Required: 1.0.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
  Uninstallable: true
@@ -203,7 +206,7 @@ IPv4:
   To:
    - ipv4.dat
   Checksum:
-   - c7b3a7f28d3c5588067156bf17dfadfa59870eb4b54e48f978f80c95f56ced04:701991
+   - 0a2230ab284cb7fa93a5a1ccc36e0bddf669afd2c2585c88e173ded87786a3d5:703305
  Used with: ipv4
  Reannotate: components.dat
 IPv4-Bogons:
@@ -257,7 +260,7 @@ IPv4-Other:
 IPv6:
  Extended Description: Default IPv6 signatures normally included with the main package. Blocks unwanted cloud services and non-human endpoints.
  False Positive Risk: Low
- Version: 2019.173.382
+ Version: 2019.178.306
  Minimum Required: 1.0.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
  Uninstallable: true
@@ -267,7 +270,7 @@ IPv6:
   To:
    - ipv6.dat
   Checksum:
-   - 226a1f2037ba9f4538c44e81742360d3113669e50e261758cf7c666ffe8fdbe9:168834
+   - ce0eb2970197df4ebb3c4bbd900de0cdfece25a3e241a19a9c73e745dce55507:168975
  Used with: ipv6
  Reannotate: components.dat
 IPv6-Bogons:

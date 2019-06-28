@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6.dat
 
-# Version: 2019.173.382
-# Last modified: 2019.06.24
+# Version: 2019.178.306
+# Last modified: 2019.06.28
 
 
 # ---
@@ -472,9 +472,9 @@ Tag: eServer.ru
 
 
 # ASNs 6870, 12722 ("RECONN. Operator svyazy Ltd").
-# %Listed, Google Malware Dashboard: 0.62% (AS12722).
-# Stop Forum Spam (SFS) listings: 1,631 (AS6870), 81 (AS12722).
-# Updated: 2019.02.28
+# %Listed, Google Malware Dashboard: 0.27% (AS12722).
+# Stop Forum Spam (SFS) listings: 1,560 (AS6870), 131 (AS12722).
+# Updated: 2019.02.28 / Checked: 2019.06.28
 
 2a02:c6c0::/32 Deny Cloud
 Origin: GB
@@ -486,9 +486,9 @@ Tag: svyazy
 
 
 # ASN 35415 ("Webzilla B.V").
-# %Listed, Google Malware Dashboard: 0.18%.
-# Stop Forum Spam (SFS) listings: 145.
-# Updated: 2018.08.22 / Checked: 2019.02.28
+# %Listed, Google Malware Dashboard: 0.19%.
+# Stop Forum Spam (SFS) listings: 140.
+# Updated: 2018.08.22 / Checked: 2019.06.28
 
 2a00:1178::/32 Deny Cloud
 Origin: NL
@@ -1166,16 +1166,6 @@ Origin: US
 Tag: QuadraNet, Inc
 
 
-# ASN 36352 ("ColoCrossing").
-# %Listed, Google Malware Dashboard: 4.14%.
-# Stop Forum Spam (SFS) listings: 136,309.
-# Updated: 2016.01.22 / Checked: 2019.02.28
-
-2607:9d00:1::/48 Deny Cloud
-Origin: US
-Tag: ColoCrossing
-
-
 # ASN 11282 ("SERVERYOU INC").
 # %Listed, Google Malware Dashboard: 9.11%.
 # Stop Forum Spam (SFS) listings: 2.
@@ -1696,7 +1686,7 @@ Tag: Cogent Server
 
 
 # ASNs 59711, 61046, 201525, 202015 ("HZ Hosting Ltd").
-# Updated: 2018.08.21 / Checked: 2019.02.27
+# Updated: 2018.08.21 / Checked: 2019.06.28
 
 2a01:8640::/46 Deny Cloud
 2a01:8640:4::/47 Deny Cloud
@@ -3563,9 +3553,9 @@ Tag: UAB Rakrejus
 
 
 # ASNs 22611, 54641 ("InMotion Hosting, Inc").
-# %Listed, Google Malware Dashboard: 0.42% (AS22611), 0.32% (AS54641).
-# Stop Forum Spam (SFS) listings: 2 (AS22611), 2 (AS54641).
-# Updated: 2017.11.29 / Checked: 2019.02.27
+# %Listed, Google Malware Dashboard: 0.25% (AS22611), 0.18% (AS54641).
+# Stop Forum Spam (SFS) listings: 1 (AS22611).
+# Updated: 2017.11.29 / Checked: 2019.06.28
 
 2605:f400:2::/47 Deny Cloud
 Origin: US
@@ -6445,3 +6435,19 @@ Tag: Next Connex Ltd
 ---
 recaptcha:
  enabled: true
+
+
+# ASN 61272 ("Informacines sistemos ir technologijos, UAB").
+# Caught trying to flood/spam honeypots.
+# Stop Forum Spam (SFS) listings: 1,225.
+# Updated: 2019.06.24
+
+2a02:e00:ffe7::/48 Deny Cloud
+Origin: DE
+2a04:2180::/32 Deny Cloud
+2a04:2181:c010::/48 Deny Cloud
+2a09:140::/29 Deny Cloud
+Origin: LT
+2a0a:1f40::/32 Deny Cloud
+Origin: NL
+Tag: AS61272

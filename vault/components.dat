@@ -1,7 +1,7 @@
 ---
 CIDRAM Core:
  Name: CIDRAM Core
- Version: 2.0.1-DEV+19176423
+ Version: 2.0.1-DEV+19178737
  Minimum Required: 2.0.0
  Changelog: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v2/Changelog.txt
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v2/vault/components.dat
@@ -40,7 +40,7 @@ CIDRAM Core:
    - ae380b0c39b2a93316c59461dc5d06e1850293dc69ff738162cf1eb2f33777b2:1212
    - 10179b2ba344b5f7085f607835fbeec69452e055e6e45ed0be90c67075963d9e:11231
    - 8f205094cfdcd1aa996f90652aff867565afe0fcd566f2211ac7e068e4d56c27:7316
-   - 37495bcacba117d287e31d56f13135c9403f0403aabba594909b56cb0c776874:13294
+   - 6b4ce2debc16b7bd86887a0b95d7ce871d6851a4608ee009db66a3b167ae32ff:13900
    - f1bcae7fba0751e2bf7c7d92d94357ac3e3fbefaf4b164cce8c91674f995a7a3:81078
    - fdd080d73f3df2324cb63a34e4f9355418470787309e45362d2a1e993f2f7658:4953
    - 35223e12bd50d431e3face1851e23baad00eac09079b87913f6a30cfb75ea5a9:36607
@@ -51,7 +51,7 @@ CIDRAM Core:
  Reannotate: components.dat
 CIDRAM Front-End:
  Name: CIDRAM Front-End
- Version: 2.0.1-DEV+19176423
+ Version: 2.0.1-DEV+19178737
  Minimum Required: 2.0.0
  Changelog: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v2/Changelog.txt
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v2/vault/components.dat
@@ -169,12 +169,12 @@ CIDRAM Front-End:
    - 660d1f7acd81d904d6429bf4cc961a9ea7ffc8bb3f2d252f2d13c873ff7ce53e:17536
    - 43bca69c59f443ff978a4d14107f8381127a13f88e75ba2a8c469adca1d2e55a:877
    - ebfbd6a90a244ad3f638cbe044dd661fa435ff4094fb63312346f786336b2960:996
-   - e5ece7ef0d27cd65797b61e149c78784f8e89e4c3163a9b7f13abd540d789291:194779
-   - 1d666be7299e8845926350559b0c7207cad5997f28a7e63a6f2b0cfe54dde661:144053
+   - a35e3abd50281e48d90613d5f72ba2cd5e33f34fd1d43f97bcfba0966512705f:195103
+   - 17a89b76165ad664d1572e29271a180912be29a77a321a84b18fd9e517c4fcab:143362
  Reannotate: components.dat
 Common Classes Package:
  Name: Common Classes Package
- Version: 2.0.0
+ Version: 2.1.0-DEV+19178737
  Minimum Required: 2.0.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v2/vault/components.dat
  Files:
@@ -183,24 +183,27 @@ Common Classes Package:
    - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v2/vault/classes/Maikuolan/ComplexStringHandler.php
    - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v2/vault/classes/Maikuolan/Demojibakefier.php
    - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v2/vault/classes/Maikuolan/L10N.php
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v2/vault/classes/Maikuolan/NumberFormatter.php
    - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v2/vault/classes/Maikuolan/YAML.php
   To:
    - classes/Maikuolan/Cache.php
    - classes/Maikuolan/ComplexStringHandler.php
    - classes/Maikuolan/Demojibakefier.php
    - classes/Maikuolan/L10N.php
+   - classes/Maikuolan/NumberFormatter.php
    - classes/Maikuolan/YAML.php
   Checksum:
    - cb1ca29a1d8c9558c8b7affbe160294f43cb3855666ec040838e3fbb07452b42:21873
    - 7dfe74c41bf9468f4a8959a5ced98a86865e36a846ccb6f19a978e8f36a4dc73:3477
-   - 1bfb2bee56ef6aa898c52471ceb42ca576fdd5969392d2ee7fd0bfe2afc48e1a:27715
-   - 6fbb16325937863167b1cee6eb641d870bd807d86f8a1ceebfd27ccb7daa6337:10401
+   - 73e883dcbb6dddd1925acf13b66148bc2cd1b82611fa02c4575f9de56e721429:27721
+   - 5c9d1e4d87acef44969a80a994a17b4427465d3ee22a141c8fbb956022153836:10828
+   - d4704fb09a4f7e829f62215d2b0ffe7c0abab3214cb7a7526eaf08367c4452e2:12943
    - 6ffb5cafda36867ee445249781cacc39b942e29e265e804678ae0431f6cc436b:10453
  Reannotate: components.dat
 IPv4:
  Extended Description: Default IPv4 signatures normally included with the main package. Blocks unwanted cloud services and non-human endpoints.
  False Positive Risk: Low
- Version: 2019.173.382
+ Version: 2019.178.306
  Minimum Required: 2.0.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v2/vault/components.dat
  Uninstallable: true
@@ -210,7 +213,7 @@ IPv4:
   To:
    - ipv4.dat
   Checksum:
-   - c7b3a7f28d3c5588067156bf17dfadfa59870eb4b54e48f978f80c95f56ced04:701991
+   - 0a2230ab284cb7fa93a5a1ccc36e0bddf669afd2c2585c88e173ded87786a3d5:703305
  Used with: ipv4
  Reannotate: components.dat
 IPv4-Bogons:
@@ -264,7 +267,7 @@ IPv4-Other:
 IPv6:
  Extended Description: Default IPv6 signatures normally included with the main package. Blocks unwanted cloud services and non-human endpoints.
  False Positive Risk: Low
- Version: 2019.173.382
+ Version: 2019.178.306
  Minimum Required: 2.0.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v2/vault/components.dat
  Uninstallable: true
@@ -274,7 +277,7 @@ IPv6:
   To:
    - ipv6.dat
   Checksum:
-   - 226a1f2037ba9f4538c44e81742360d3113669e50e261758cf7c666ffe8fdbe9:168834
+   - ce0eb2970197df4ebb3c4bbd900de0cdfece25a3e241a19a9c73e745dce55507:168975
  Used with: ipv6
  Reannotate: components.dat
 IPv6-Bogons:

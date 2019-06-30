@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Verification data for search engines and social media (last modified: 2019.03.03).
+# This file: Verification data for search engines and social media (last modified: 2019.06.30).
 ##/
 
 Search Engine Verification:
@@ -108,6 +108,13 @@ Search Engine Verification:
    - "66.235.124.193"
    - "66.235.124.196"
    - "202.143.148.61"
+ # https://www.mojeek.com/bot.html
+ MojeekBot:
+  Bypass Flag: "Flag-Bypass-Mojeek-Check"
+  User Agent: "mojeekbot"
+  Closure: "DNS-Reverse-Forward"
+  Valid Domains:
+   - ".mojeek.com"
 
 Social Media Verification:
  # https://help.pinterest.com/en/articles/about-pinterest-crawler-0

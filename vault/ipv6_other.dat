@@ -1,8 +1,8 @@
 # IPv6 signatures file (CIDRs for proxies, VPNs and other miscellaneous unwanted services).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_other.dat
 
-# Version: 2019.123.481
-# Last modified: 2019.05.04
+# Version: 2019.182.389
+# Last modified: 2019.07.02
 
 
 # ---
@@ -17,50 +17,94 @@
 # Wikipedia page about Cogent Communications: en.wikipedia.org/wiki/Cogent_Communications
 # Refer bgpmon.net/large-scale-bgp-hijack-out-of-india/
 # Refer forums.spybot.info/showthread.php?23632-SPAM-frauds-fakes-and-other-MALWARE-deliveries/page37
-# Refer research.dyn.com/2013/11/mitm-internet-hijacking/
+# Refer dyn.com/blog/mitm-internet-hijacking/
 
-# Cogent VPNs+Proxies (Proxy Technologies Inc, proXPN Direct LLC, AzireVPN, OVPN, PRIVAX LTD, Proxicom, BeeVPN ApS,
-# IT Proximus, etc). I.e., "^.*(?:Prox[ipy]|PRIVAX|VPN).*$"
-# Updated: 2017.09.09 / Checked: 2019.02.27
+# When updating: Remove invalids to reduce false positive risk.
+
+# Cogent VPNs+Proxies (AzireVPN, OVPN, BeeVPN ApS, Windscribe, etc; "^.*(?:Prox|Windscribe|VPN).*$").
+# Updated: 2019.07.02
 2001:978:902::/48 Deny Proxy
 2001:978:f00::/48 Deny Proxy
 2001:978:1403::/48 Deny Proxy
 Origin: DE
-2a01:b5c0:5::/48 Deny Proxy
-Origin: ES
-2a07:4a80::/29 Deny Proxy
-Origin: LT
 2a07:a880:1416::/48 Deny Proxy
 Origin: SE
 Tag: Cogent VPNs+Proxies
 
 # No announce description (frequent source of spam in some cases, general unwanted activity in others, etc).
-# Updated: 2019.02.27
+# Updated: 2019.07.02
+2a03:f80:420::/48 Deny Generic
+Origin: AT
 2001:978:907::/48 Deny Generic
 2001:978:908::/47 Deny Generic
+2001:978:a00::/48 Deny Generic
 2001:978:1404::/47 Deny Generic
 2001:978:1c04::/48 Deny Generic
+2001:978:2101::/48 Deny Generic
+2001:978:2102::/48 Deny Generic
+2001:978:2307::/48 Deny Generic
+2001:978:230b::/48 Deny Generic
 2001:978:3c09::/48 Deny Generic
+2001:978:3c0a::/48 Deny Generic
 2001:978:5400::/48 Deny Generic
+2001:978:6404::/48 Deny Generic
+2001:978:6711::/48 Deny Generic
+2001:978:a501::/48 Deny Generic
+2001:978:b700::/48 Deny Generic
 Origin: DE
 2402:4480:302::/47 Deny Generic
 Origin: HK
-2a0a:1f42::/32 Deny Generic
+2a07:85c2::/48 Deny Generic
+2a07:85c3::/48 Deny Generic
 Origin: NL
+2a0e:1c80:3::/48 Deny Generic
+Origin: SE
 2001:550:104::/48 Deny Generic
+2001:550:10a::/48 Deny Generic
+2001:550:208::/48 Deny Generic
 2001:550:a0e::/47 Deny Generic
-2001:550:a10::/48 Deny Generic
+2001:550:a10::/47 Deny Generic
+2001:550:a12::/48 Deny Generic
 2001:550:b00:1::/64 Deny Generic
 2001:550:b01::/48 Deny Generic
+2001:550:d06::/48 Deny Generic
+2001:550:d0a::/48 Deny Generic
+2001:550:1500::/48 Deny Generic
+2001:550:1702::/48 Deny Generic
 2001:550:1d01::/48 Deny Generic
+2001:550:1d07::/48 Deny Generic
+2001:550:2109::/48 Deny Generic
 2001:550:2200:500::/56 Deny Generic
 2001:550:2209::/48 Deny Generic
-2001:550:221c::/48 Deny Generic
+2001:550:221c::/47 Deny Generic
+2001:550:221e::/48 Deny Generic
 2001:550:2603::/48 Deny Generic
 2001:550:2604::/48 Deny Generic
+2001:550:3102::/48 Deny Generic
 2001:550:3d01::/48 Deny Generic
+2001:550:3d06::/48 Deny Generic
+2001:550:5607::/48 Deny Generic
 2001:550:5c03::/48 Deny Generic
-2001:49f0:d0b2::/48 Deny Generic
+2001:550:5c04::/48 Deny Generic
+2001:550:7709::/48 Deny Generic
+2001:550:9802::/48 Deny Generic
+2001:49f0:d0a3::/48 Deny Generic
+2001:49f0:d0ae::/48 Deny Generic
+2001:49f0:d0b2::/47 Deny Generic
+2001:49f0:d0b5::/48 Deny Generic
+2001:49f0:d0b6::/47 Deny Generic
+2001:49f0:d0ba::/47 Deny Generic
+2001:49f0:d0bc::/47 Deny Generic
+2001:49f0:d0be::/48 Deny Generic
+2001:49f0:d0c1::/48 Deny Generic
+2001:49f0:d0c2::/47 Deny Generic
+2001:49f0:d0c4::/46 Deny Generic
+2001:49f0:d0c8::/47 Deny Generic
+2001:49f0:d0d0::/46 Deny Generic
+2001:49f0:d0d4::/47 Deny Generic
+2001:49f0:d0d7::/48 Deny Generic
+2001:49f0:d0d8::/48 Deny Generic
+2620:17b:4::/48 Deny Generic
 Origin: US
 Tag: Cogent Other
 ---

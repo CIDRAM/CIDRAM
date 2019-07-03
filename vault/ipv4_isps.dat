@@ -1,8 +1,8 @@
 # IPv4 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv4_isps.dat
 
-# Version: 2019.173.382
-# Last modified: 2019.06.23
+# Version: 2019.182.389
+# Last modified: 2019.07.03
 
 
 # ---
@@ -337,70 +337,43 @@ Tag: IP Volume inc
 
 
 # ASN 48159 ("Telecommunication Infrastructure Company").
-# Stop Forum Spam (SFS) listings: 73.
-# Updated: 2019.03.03
+# Significant source of I.P. thieves, email harvestors, and unauthorised scrapers.
+# Stop Forum Spam (SFS) listings: 140.
+# Updated: 2019.07.03
 
-2.176.128.0/17 Deny Generic
-2.177.0.0/16 Deny Generic
-2.178.0.0/16 Deny Generic
 2.182.128.0/21 Deny Generic
-2.185.0.0/16 Deny Generic
-2.188.185.0/24 Deny Generic
+2.185.160.0/19 Deny Generic
+2.188.64.0/21 Deny Generic
+2.188.179.0/24 Deny Generic
+2.188.184.0/23 Deny Generic
+2.188.187.0/24 Deny Generic
+2.189.1.0/24 Deny Generic
 5.233.240.0/20 Deny Generic
-5.239.244.0/23 Deny Generic
-37.156.212.0/22 Deny Generic
-77.81.32.0/20 Deny Generic
-77.81.128.0/21 Deny Generic
+78.38.244.0/24 Deny Generic
 78.39.149.0/24 Deny Generic
 78.39.150.0/23 Deny Generic
 78.39.240.0/24 Deny Generic
-80.210.17.0/24 Deny Generic
-80.210.18.0/23 Deny Generic
-80.210.20.0/22 Deny Generic
-80.210.24.0/21 Deny Generic
-80.210.32.0/19 Deny Generic
-81.16.112.0/20 Deny Generic
-86.104.80.0/20 Deny Generic
-86.104.96.0/20 Deny Generic
-86.105.40.0/21 Deny Generic
-86.105.128.0/20 Deny Generic
-86.106.192.0/21 Deny Generic
-86.107.80.0/20 Deny Generic
-86.107.144.0/20 Deny Generic
-89.33.100.0/22 Deny Generic
-89.35.120.0/22 Deny Generic
-89.35.180.0/22 Deny Generic
+80.191.24.0/24 Deny Generic
 89.37.144.0/23 Deny Generic
-89.37.152.0/22 Deny Generic
-89.37.168.0/22 Deny Generic
-89.37.208.0/22 Deny Generic
-89.38.244.0/22 Deny Generic
-89.39.8.0/22 Deny Generic
-91.92.121.0/24 Deny Generic
-91.92.122.0/23 Deny Generic
-91.92.124.0/22 Deny Generic
-91.92.129.0/24 Deny Generic
-91.92.130.0/23 Deny Generic
-91.92.180.0/22 Deny Generic
-91.92.184.0/21 Deny Generic
-91.92.204.0/22 Deny Generic
-91.185.128.0/19 Deny Generic
-151.235.128.0/18 Deny Generic
+94.101.120.0/22 Deny Generic
 178.251.212.0/22 Deny Generic
 185.11.88.0/23 Deny Generic
 185.11.90.0/24 Deny Generic
-185.105.100.0/22 Deny Generic
-188.209.8.0/21 Deny Generic
 188.215.176.0/20 Deny Generic
+213.195.52.0/22 Deny Generic
 Origin: IR
 Tag: AS48159
+---
+recaptcha:
+ enabled: true
 
 
 # ASN 12880 ("Information Technology Company (ITC)").
-# %Listed, Google Malware Dashboard: 0.06%.
-# %Listed, abuseat.org (CBL-Listed): 1.97%.
-# Stop Forum Spam (SFS) listings: 651.
-# Updated: 2019.03.23
+# Significant source of email harvestors and unauthorised scrapers.
+# %Listed, Google Malware Dashboard: 0.17%.
+# %Listed, abuseat.org (CBL-Listed): 2.18%.
+# Stop Forum Spam (SFS) listings: 773.
+# Updated: 2019.07.03
 
 2.176.0.0/12 Deny Generic
 5.62.160.0/19 Deny Generic
@@ -460,8 +433,8 @@ Tag: AS48159
 93.119.32.0/19 Deny Generic
 93.119.64.0/19 Deny Generic
 151.235.128.0/18 Deny Generic
-172.16.101.0/24 Deny Generic
 185.88.48.0/22 Deny Generic
+185.105.100.0/22 Deny Generic
 188.209.8.0/21 Deny Generic
 188.209.16.0/20 Deny Generic
 188.209.32.0/20 Deny Generic
@@ -480,13 +453,20 @@ Tag: AS48159
 217.218.0.0/15 Deny Generic
 Origin: IR
 Tag: AS12880
+---
+recaptcha:
+ enabled: true
 
 
 # ASNs 24940, 37153 ("Hetzner Online GmbH").
-# %Listed, Google Malware Dashboard: 0.14% (AS24940), 0.21% (AS37153).
-# Stop Forum Spam (SFS) listings: 37,312 (AS24940), 601 (AS37153).
-# Updated: 2019.03.04
+# %Listed, Google Malware Dashboard: 0.08% (AS24940), 0.17% (AS37153).
+# Stop Forum Spam (SFS) listings: 26,308 (AS24940), 706 (AS37153).
+# Updated: 2019.07.03
 
+138.99.217.0/24 Deny Generic
+138.99.218.0/23 Deny Generic
+190.99.82.0/23 Deny Generic
+Origin: BZ
 83.219.100.0/22 Deny Generic
 Origin: CH
 5.9.0.0/16 Deny Generic
@@ -525,7 +505,7 @@ Origin: CH
 185.205.156.0/24 Deny Generic
 185.209.124.0/22 Deny Generic
 185.212.104.0/22 Deny Generic
-185.216.237.0/24 Deny Generic
+185.216.236.0/23 Deny Generic
 185.228.8.0/23 Deny Generic
 185.229.88.0/22 Deny Generic
 188.40.0.0/16 Deny Generic
@@ -537,10 +517,15 @@ Origin: CH
 213.133.96.0/19 Deny Generic
 213.239.192.0/18 Deny Generic
 Origin: DE
+185.36.144.0/22 Deny Generic
+Origin: ES
 194.42.180.0/22 Deny Generic
 194.42.184.0/22 Deny Generic
 Origin: EU
+201.131.3.0/24 Deny Generic
+Origin: MX
 185.110.95.0/24 Deny Generic
+195.80.32.0/22 Deny Generic
 Origin: NL
 185.157.83.0/24 Deny Generic
 Origin: PL
@@ -557,7 +542,7 @@ Origin: UA
 41.72.128.0/19 Deny Generic
 41.203.0.0/19 Deny Generic
 41.204.192.0/19 Deny Generic
-102.130.112.0/23 Deny Generic
+102.130.112.0/22 Deny Generic
 129.232.128.0/17 Deny Generic
 156.38.128.0/17 Deny Generic
 160.119.248.0/21 Deny Generic
@@ -5218,20 +5203,17 @@ recaptcha:
 
 
 # ASN 3462 ("Data Communication Business Group").
-# Interlaces with human access endpoints in Taiwan; Would rather not be including this section here due to the high
-# risk of false positives, but the numerous records of spamming events seen originating from across a wide range of
-# CIDRs tied this ASN, plus the presence of this ASN in numerous worst offenders lists and blacklists, are not
-# considerations that can be easily ignored at this point in time. The section is marked for use with reCAPTCHA due to
-# the risk of false positives, and I would encourage any CIDRAM users expecting to receive any traffic from Taiwan, to
-# list this section in their "ignore.dat" file as a means of minimising the potential impact of false positives. A
-# balanced approach for those that may expect some such traffic, but not a lot of it, would be to not ignore this
-# section, but to ensure that the reCAPTCHA feature is enabled in their configuration.
-# %Listed, Google Malware Dashboard: 0.18%.
-# %Listed, abuseat.org (CBL-Listed): 0.46%.
-# Stop Forum Spam (SFS) listings: 11,589.
-# Updated: 2019.03.09
+# Would prefer to not include this ASN in this file due to the high risk of
+# false positives, but the amount of spam events seen from this ASN isn't
+# ignorable at this time. Marked for use with reCAPTCHA to reduce the false
+# positive risk, and I would encourage any CIDRAM users from Taiwan, or
+# targeting traffic from Taiwan, to list this section in their ignore.dat file
+# to reduce the false positive risk.
+# %Listed, Google Malware Dashboard: 0.21%.
+# %Listed, abuseat.org (CBL-Listed): 0.43%.
+# Stop Forum Spam (SFS) listings: 14,631.
+# Updated: 2019.07.03
 
-103.196.207.0/24 Deny Generic
 180.210.230.0/23 Deny Generic
 Origin: CN
 43.249.214.0/24 Deny Generic
@@ -5295,6 +5277,7 @@ Origin: SG
 220.130.0.0/15 Deny Generic
 220.132.0.0/14 Deny Generic
 220.136.0.0/13 Deny Generic
+221.120.25.0/24 Deny Generic
 Origin: TW
 23.48.128.0/20 Deny Generic
 23.48.148.0/23 Deny Generic
@@ -5303,7 +5286,6 @@ Origin: TW
 23.61.246.0/24 Deny Generic
 23.91.111.0/24 Deny Generic
 23.251.126.0/24 Deny Generic
-65.255.33.0/24 Deny Generic
 104.76.192.0/24 Deny Generic
 104.107.54.0/23 Deny Generic
 104.107.56.0/22 Deny Generic
@@ -5323,7 +5305,6 @@ Origin: TW
 184.29.38.0/24 Deny Generic
 184.86.232.0/22 Deny Generic
 192.254.86.0/24 Deny Generic
-198.11.141.0/24 Deny Generic
 209.177.81.0/24 Deny Generic
 Origin: US
 Tag: DCBG
@@ -5835,20 +5816,17 @@ recaptcha:
 
 
 # ASN 45899 ("VietNam Post and Telecom Corporation").
-# Interlaces with numerous providers and contains a large portion of Vietnamese human access endpoints; Would rather
-# not be including this section here due to the high risk of false positives, but the massive influx/uptick of
-# undesirable events (spamming, hacking, attempted brute-forcing, probing, etc) seen originating from across a wide
-# range of CIDRs tied this ASN, plus the presence of this ASN in numerous worst offenders lists and blacklists, are
-# not considerations that can be easily ignored at this point in time. The section is marked for use with reCAPTCHA
-# due to the risk of false positives, and I would encourage any Vietnamese CIDRAM users, and any CIDRAM users
-# expecting to receive any traffic from Vietnam, to list this section in their ignore file as a means of minimising
-# the potential impact of false positives. A balanced approach for those that may expect some such traffic, but not a
-# lot of it, would be to not ignore this section, but to ensure that the reCAPTCHA feature is enabled in their
-# configuration.
-# %Listed, Google Malware Dashboard: 0.26%.
-# %Listed, abuseat.org (CBL-Listed): 6.83%.
-# Stop Forum Spam (SFS) listings: 23,467.
-# Updated: 2019.03.03
+# Would prefer to not include this ASN in this file due to the high risk of
+# false positives, but the amount of attempted spamming, hacking, probing, etc
+# seen from this ASN, plus its presence in numerous worst offenders lists and
+# blacklists, are not ignorable at this time. Marked for use with reCAPTCHA to
+# reduce the false positive risk, and I would encourage any CIDRAM users from
+# Vietnam, or targeting traffic from Vietnam, to list this section in their
+# ignore.dat file to reduce the false positive risk.
+# %Listed, Google Malware Dashboard: 0.12%.
+# %Listed, abuseat.org (CBL-Listed): 6.46%.
+# Stop Forum Spam (SFS) listings: 21,913.
+# Updated: 2019.07.03
 
 203.223.40.0/21 Deny Generic
 Origin: KH
@@ -5883,7 +5861,8 @@ Origin: US
 14.240.0.0/13 Deny Generic
 14.248.0.0/14 Deny Generic
 14.252.0.0/15 Deny Generic
-14.254.0.0/18 Deny Generic
+14.254.0.0/17 Deny Generic
+14.254.128.0/18 Deny Generic
 14.255.0.0/18 Deny Generic
 14.255.192.0/18 Deny Generic
 43.239.220.0/23 Deny Generic
@@ -5896,7 +5875,6 @@ Origin: US
 103.47.192.0/23 Deny Generic
 103.48.191.0/24 Deny Generic
 103.53.168.0/23 Deny Generic
-103.54.251.0/24 Deny Generic
 103.56.156.0/22 Deny Generic
 103.57.220.0/22 Deny Generic
 103.68.252.0/22 Deny Generic
@@ -5904,13 +5882,13 @@ Origin: US
 103.79.140.0/22 Deny Generic
 103.82.36.0/22 Deny Generic
 103.107.180.0/22 Deny Generic
+103.125.192.0/22 Deny Generic
 103.131.68.0/22 Deny Generic
 103.199.8.0/23 Deny Generic
 103.207.36.0/22 Deny Generic
 103.223.4.0/22 Deny Generic
 103.237.96.0/22 Deny Generic
 103.238.214.0/23 Deny Generic
-103.239.120.0/23 Deny Generic
 103.250.24.0/22 Deny Generic
 103.255.237.0/24 Deny Generic
 103.255.238.0/23 Deny Generic
@@ -5925,9 +5903,8 @@ Origin: US
 113.181.0.0/16 Deny Generic
 113.182.0.0/15 Deny Generic
 113.184.0.0/16 Deny Generic
-113.185.0.0/18 Deny Generic
-113.186.0.0/16 Deny Generic
-113.187.0.0/18 Deny Generic
+113.185.0.0/17 Deny Generic
+113.186.0.0/15 Deny Generic
 113.188.0.0/15 Deny Generic
 113.190.0.0/16 Deny Generic
 113.191.0.0/18 Deny Generic
@@ -8159,12 +8136,14 @@ recaptcha:
 # Wikipedia page about Cogent Communications: en.wikipedia.org/wiki/Cogent_Communications
 # Refer bgpmon.net/large-scale-bgp-hijack-out-of-india/
 # Refer forums.spybot.info/showthread.php?23632-SPAM-frauds-fakes-and-other-MALWARE-deliveries/page37
-# Refer research.dyn.com/2013/11/mitm-internet-hijacking/
+# Refer dyn.com/blog/mitm-internet-hijacking/
+
+# When updating: Remove invalids to reduce false positive risk.
 
 # "PSINet"
 # Cheap human endpoint ISP with ranges known to be used by hackers and spammers, but also contains benign ranges+users.
 # Careful when updating; Section contains one "Run" parameter.
-# Updated: 2019.02.27
+# Updated: 2019.07.02
 38.0.0.0/8 Run rules_specific.php
 128.145.0.0/16 Deny Generic
 130.117.0.0/16 Deny Generic
@@ -8178,9 +8157,9 @@ recaptcha:
 149.6.205.0/24 Deny Generic
 149.6.206.0/23 Deny Generic
 149.7.1.0/24 Deny Generic
-149.7.16.0/23 Deny Generic
 149.7.39.0/24 Deny Generic
 149.7.61.0/24 Deny Generic
+149.7.65.0/24 Deny Generic
 149.7.99.0/24 Deny Generic
 149.7.105.0/24 Deny Generic
 149.7.108.0/24 Deny Generic
@@ -8189,8 +8168,6 @@ recaptcha:
 149.7.218.0/23 Deny Generic
 149.7.220.0/23 Deny Generic
 149.7.222.0/24 Deny Generic
-149.7.225.0/24 Deny Generic
-149.7.226.0/23 Deny Generic
 149.11.0.0/16 Deny Generic
 149.12.24.0/21 Deny Generic
 149.12.33.0/24 Deny Generic
@@ -8239,12 +8216,6 @@ recaptcha:
 149.108.0.0/16 Deny Generic
 149.110.0.0/16 Deny Generic
 149.113.0.0/16 Deny Generic
-149.115.0.0/20 Deny Generic
-149.115.32.0/20 Deny Generic
-149.115.80.0/20 Deny Generic
-149.115.108.0/22 Deny Generic
-149.115.120.0/21 Deny Generic
-149.115.128.0/17 Deny Generic
 149.120.0.0/16 Deny Generic
 149.127.0.0/16 Deny Generic
 192.77.171.0/24 Deny Generic
@@ -8275,7 +8246,7 @@ recaptcha:
 
 # "Tu Casa Inalambrica de Mexico SA de CV"
 # Legit ISP in Mexico, but also a heavy source of spam.
-# Updated: 2019.02.27
+# Updated: 2019.02.27 / Checked: 2019.07.02
 170.0.12.0/22 Deny Spam
 Origin: MX
 Tag: Tu Casa Inalambrica
@@ -8285,7 +8256,7 @@ recaptcha:
 
 
 # A frequent source of spam.
-# Updated: 2019.02.27
+# Updated: 2019.02.27 / Checked: 2019.07.02
 82.129.6.0/23 Deny Spam
 Origin: EU
 Tag: IGNACIO SANCHEZ RUIZ

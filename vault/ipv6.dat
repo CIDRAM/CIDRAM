@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6.dat
 
-# Version: 2019.178.306
-# Last modified: 2019.06.28
+# Version: 2019.182.389
+# Last modified: 2019.07.02
 
 
 # ---
@@ -349,9 +349,9 @@ Tag: Leaseweb
 
 
 # ASN 43146 ("Agava Ltd").
-# %Listed, Google Malware Dashboard: 0.15%.
-# Stop Forum Spam (SFS) listings: 10.
-# Updated: 2019.03.01
+# %Listed, Google Malware Dashboard: 0.10%.
+# Stop Forum Spam (SFS) listings: 8.
+# Updated: 2019.03.01 / Checked: 2019.07.02
 
 2a03:4900::/47 Deny Cloud
 2a03:4900:2::/48 Deny Cloud
@@ -806,9 +806,10 @@ Tag: Hurricane Electric
 
 
 # ASNs 49532, 62904 ("Eonix Corporation").
-# %Listed, Google Malware Dashboard: 9.38% (AS62904).
-# Stop Forum Spam (SFS) listings: 9,083 (AS49532), 16,092 (AS62904).
-# Updated: 2019.04.21
+# "SSL Private Proxy" mark as proxy (not cloud).
+# %Listed, Google Malware Dashboard: 6.41% (AS62904).
+# Stop Forum Spam (SFS) listings: 8,831 (AS49532), 13,583 (AS62904).
+# Updated: 2019.04.21 / Checked: 2019.06.30
 
 2a07:440::/31 Deny Cloud
 Origin: DE
@@ -1604,10 +1605,12 @@ Tag: HEG US Inc
 # Wikipedia page about Cogent Communications: en.wikipedia.org/wiki/Cogent_Communications
 # Refer bgpmon.net/large-scale-bgp-hijack-out-of-india/
 # Refer forums.spybot.info/showthread.php?23632-SPAM-frauds-fakes-and-other-MALWARE-deliveries/page37
-# Refer research.dyn.com/2013/11/mitm-internet-hijacking/
+# Refer dyn.com/blog/mitm-internet-hijacking/
+
+# When updating: Remove invalids to reduce false positive risk.
 
 # Announces with "Hosting" or "Host"
-# Updated: 2019.02.27
+# Updated: 2019.02.27 / Checked: 2019.07.02
 2602:ffb6::/36 Deny Cloud
 Origin: CA
 2001:978:2309::/48 Deny Cloud
@@ -1620,7 +1623,7 @@ Origin: NL
 Tag: Cogent Hosting
 
 # Announces with "Server"
-# Updated: 2019.02.27
+# Updated: 2019.07.02
 2001:49f0::/47 Deny Cloud
 2001:49f0:a::/48 Deny Cloud
 2001:49f0:100d::/48 Deny Cloud
@@ -1660,14 +1663,23 @@ Tag: Cogent Hosting
 2001:49f0:d018::/48 Deny Cloud
 2001:49f0:d01a::/47 Deny Cloud
 2001:49f0:d01c::/46 Deny Cloud
-2001:49f0:d020::/43 Deny Cloud
+2001:49f0:d020::/44 Deny Cloud
+2001:49f0:d030::/46 Deny Cloud
+2001:49f0:d034::/47 Deny Cloud
+2001:49f0:d037::/48 Deny Cloud
+2001:49f0:d038::/48 Deny Cloud
+2001:49f0:d03d::/48 Deny Cloud
+2001:49f0:d03e::/47 Deny Cloud
 2001:49f0:d040::/44 Deny Cloud
 2001:49f0:d050::/46 Deny Cloud
 2001:49f0:d054::/47 Deny Cloud
 2001:49f0:d057::/48 Deny Cloud
 2001:49f0:d058::/45 Deny Cloud
 2001:49f0:d060::/43 Deny Cloud
-2001:49f0:d080::/44 Deny Cloud
+2001:49f0:d080::/45 Deny Cloud
+2001:49f0:d089::/48 Deny Cloud
+2001:49f0:d08a::/47 Deny Cloud
+2001:49f0:d08c::/46 Deny Cloud
 2001:49f0:d090::/45 Deny Cloud
 2001:49f0:d098::/49 Deny Cloud
 2001:49f0:d099::/49 Deny Cloud
@@ -1680,6 +1692,7 @@ Tag: Cogent Hosting
 2001:49f0:d0a6::/47 Deny Cloud
 2001:49f0:d0a8::/46 Deny Cloud
 2001:49f0:d0ac::/47 Deny Cloud
+2001:49f0:d0b9::/48 Deny Cloud
 2001:49f0:d0bf::/48 Deny Cloud
 Origin: US
 Tag: Cogent Server
@@ -4376,10 +4389,11 @@ Tag: DataClub S.A
 
 
 # ASN 30962 ("comtrance GmbH").
-# %Listed, Google Malware Dashboard: 0.25%.
+# %Listed, Google Malware Dashboard: 0.17%.
 # Stop Forum Spam (SFS) listings: 5.
-# Updated: 2016.09.09 / Checked: 2019.01.07
+# Updated: 2019.06.30
 
+2001:678:94c::/48 Deny Cloud
 2001:67c:208::/48 Deny Cloud
 2a00:f70::/32 Deny Cloud
 Origin: DE
@@ -5936,8 +5950,8 @@ Tag: ICME LIMITED
 
 # ASN 49855 ("PLUTEX GmbH").
 # Tor exit node + webhosting company. Users caught caught spamming via their network.
-# Stop Forum Spam (SFS) listings: 3,234.
-# Updated: 2018.07.25 / Checked: 2019.01.06
+# Stop Forum Spam (SFS) listings: 1,731.
+# Updated: 2018.07.25 / Checked: 2019.06.30
 
 2001:678:3b4::/48 Deny Cloud
 2001:678:3b8::/48 Deny Cloud
@@ -6451,3 +6465,43 @@ Origin: LT
 2a0a:1f40::/32 Deny Cloud
 Origin: NL
 Tag: AS61272
+
+
+# ASN 43160 ("Mdc Datacenter S.L").
+# Source of forum spam. (When updating, omit invalids; marked with recaptcha
+# to reduce the risk of false positives; interaces with some ISPs).
+# Stop Forum Spam (SFS) listings: 65.
+# Updated: 2019.07.02
+
+2a01:b5c0::/32 Deny Cloud
+Origin: ES
+Tag: Mdc Datacenter S.L
+
+
+# ASN 64236 ("Accuserv Inc").
+# Source of forum spam.
+# Stop Forum Spam (SFS) listings: 11.
+# Updated: 2019.07.02
+
+2604:abc0::/32 Deny Cloud
+2a09:4bc7:d010::/44 Deny Cloud
+Origin: US
+Tag: Accuserv Inc
+
+
+# ASN 31463 ("4D Data Centres Limited").
+# Source of forum spam.
+# %Listed, Google Malware Dashboard: 0.38%.
+# Updated: 2019.07.02
+
+2a0d:98c0::/29 Deny Cloud
+Origin: DE
+2a00:1c18::/29 Deny Cloud
+2a03:9ba0:100::/40 Deny Cloud
+2a07:45c2::/40 Deny Cloud
+2a0c:bc80::/32 Deny Cloud
+2a0d:4140::/32 Deny Cloud
+Origin: GB
+2607:8b00:1::/48 Deny Cloud
+Origin: US
+Tag: 4D Data

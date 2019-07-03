@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_isps.dat
 
-# Version: 2019.173.382
-# Last modified: 2019.06.23
+# Version: 2019.182.389
+# Last modified: 2019.07.03
 
 
 # ---
@@ -57,21 +57,38 @@ Origin: NL
 Tag: IP Volume inc
 
 
+# ASN 48159 ("Telecommunication Infrastructure Company").
+# Significant source of I.P. thieves, email harvestors, and unauthorised scrapers.
+# Stop Forum Spam (SFS) listings: 140.
+# Updated: 2019.07.03
+
+2a03:57c0::/32 Deny Generic
+Origin: IR
+Tag: AS48159
+---
+recaptcha:
+ enabled: true
+
+
 # ASN 12880 ("Information Technology Company (ITC)").
-# %Listed, Google Malware Dashboard: 0.06%.
-# %Listed, abuseat.org (CBL-Listed): 1.97%.
-# Stop Forum Spam (SFS) listings: 651.
-# Updated: 2018.10.09 / Checked: 2019.03.23
+# Significant source of email harvestors and unauthorised scrapers.
+# %Listed, Google Malware Dashboard: 0.17%.
+# %Listed, abuseat.org (CBL-Listed): 2.18%.
+# Stop Forum Spam (SFS) listings: 773.
+# Updated: 2018.10.09 / Checked: 2019.07.03
 
 2001:4188::/48 Deny Generic
 Origin: IR
 Tag: AS12880
+---
+recaptcha:
+ enabled: true
 
 
 # ASNs 24940, 37153 ("Hetzner Online GmbH").
-# %Listed, Google Malware Dashboard: 0.14% (AS24940), 0.21% (AS37153).
-# Stop Forum Spam (SFS) listings: 37,312 (AS24940), 601 (AS37153).
-# Updated: 2019.03.04
+# %Listed, Google Malware Dashboard: 0.08% (AS24940), 0.17% (AS37153).
+# Stop Forum Spam (SFS) listings: 26,308 (AS24940), 706 (AS37153).
+# Updated: 2019.03.04 / Checked: 2019.07.03
 
 2001:67c:1164::/48 Deny Generic
 2a01:4f8::/29 Deny Generic
@@ -1035,18 +1052,16 @@ recaptcha:
 
 
 # ASN 3462 ("Data Communication Business Group").
-# Interlaces with human access endpoints in Taiwan; Would rather not be including this section here due to the high
-# risk of false positives, but the numerous records of spamming events seen originating from across a wide range of
-# CIDRs tied this ASN, plus the presence of this ASN in numerous worst offenders lists and blacklists, are not
-# considerations that can be easily ignored at this point in time. The section is marked for use with reCAPTCHA due to
-# the risk of false positives, and I would encourage any CIDRAM users expecting to receive any traffic from Taiwan, to
-# list this section in their "ignore.dat" file as a means of minimising the potential impact of false positives. A
-# balanced approach for those that may expect some such traffic, but not a lot of it, would be to not ignore this
-# section, but to ensure that the reCAPTCHA feature is enabled in their configuration.
-# %Listed, Google Malware Dashboard: 0.18%.
-# %Listed, abuseat.org (CBL-Listed): 0.46%.
-# Stop Forum Spam (SFS) listings: 11,589.
-# Updated: 2019.03.09
+# Would prefer to not include this ASN in this file due to the high risk of
+# false positives, but the amount of spam events seen from this ASN isn't
+# ignorable at this time. Marked for use with reCAPTCHA to reduce the false
+# positive risk, and I would encourage any CIDRAM users from Taiwan, or
+# targeting traffic from Taiwan, to list this section in their ignore.dat file
+# to reduce the false positive risk.
+# %Listed, Google Malware Dashboard: 0.21%.
+# %Listed, abuseat.org (CBL-Listed): 0.43%.
+# Stop Forum Spam (SFS) listings: 14,631.
+# Updated: 2019.03.09 / Checked: 2019.07.03
 
 2001:b000::/21 Deny Generic
 2405:6100::/32 Deny Generic
@@ -1104,24 +1119,21 @@ recaptcha:
 
 
 # ASN 45899 ("VietNam Post and Telecom Corporation").
-# Interlaces with numerous providers and contains a large portion of Vietnamese human access endpoints; Would rather
-# not be including this section here due to the high risk of false positives, but the massive influx/uptick of
-# undesirable events (spamming, hacking, attempted brute-forcing, probing, etc) seen originating from across a wide
-# range of CIDRs tied this ASN, plus the presence of this ASN in numerous worst offenders lists and blacklists, are
-# not considerations that can be easily ignored at this point in time. The section is marked for use with reCAPTCHA
-# due to the risk of false positives, and I would encourage any Vietnamese CIDRAM users, and any CIDRAM users
-# expecting to receive any traffic from Vietnam, to list this section in their ignore file as a means of minimising
-# the potential impact of false positives. A balanced approach for those that may expect some such traffic, but not a
-# lot of it, would be to not ignore this section, but to ensure that the reCAPTCHA feature is enabled in their
-# configuration.
-# %Listed, Google Malware Dashboard: 0.26%.
-# %Listed, abuseat.org (CBL-Listed): 6.83%.
-# Stop Forum Spam (SFS) listings: 23,467.
-# Updated: 2019.03.03
+# Would prefer to not include this ASN in this file due to the high risk of
+# false positives, but the amount of attempted spamming, hacking, probing, etc
+# seen from this ASN, plus its presence in numerous worst offenders lists and
+# blacklists, are not ignorable at this time. Marked for use with reCAPTCHA to
+# reduce the false positive risk, and I would encourage any CIDRAM users from
+# Vietnam, or targeting traffic from Vietnam, to list this section in their
+# ignore.dat file to reduce the false positive risk.
+# %Listed, Google Malware Dashboard: 0.12%.
+# %Listed, abuseat.org (CBL-Listed): 6.46%.
+# Stop Forum Spam (SFS) listings: 21,913.
+# Updated: 2019.07.03
 
 2001:df2:ca00::/48 Deny Generic
 2001:df2:ce00::/48 Deny Generic
-2001:ee0::/47 Deny Generic
+2001:ee0:1::/48 Deny Generic
 2001:ee0:100::/40 Deny Generic
 2001:ee0:200::/40 Deny Generic
 2001:ee0:300::/47 Deny Generic
@@ -1129,6 +1141,7 @@ recaptcha:
 2001:ee0:1006::/48 Deny Generic
 2001:ee0:1080::/48 Deny Generic
 2001:ee0:2f00::/43 Deny Generic
+2001:ee0:3000::/43 Deny Generic
 2001:ee0:3100::/43 Deny Generic
 2001:ee0:3200::/40 Deny Generic
 2001:ee0:4000::/39 Deny Generic
@@ -1142,8 +1155,7 @@ recaptcha:
 2001:ee0:4580::/41 Deny Generic
 2001:ee0:4640::/42 Deny Generic
 2001:ee0:4680::/41 Deny Generic
-2001:ee0:4700::/41 Deny Generic
-2001:ee0:47c0::/42 Deny Generic
+2001:ee0:4700::/40 Deny Generic
 2001:ee0:4840::/42 Deny Generic
 2001:ee0:4880::/41 Deny Generic
 2001:ee0:4900::/40 Deny Generic
@@ -1170,11 +1182,10 @@ recaptcha:
 2001:ee0:7640::/42 Deny Generic
 2001:ee0:7680::/41 Deny Generic
 2001:ee0:7700::/42 Deny Generic
-2001:ee0:77c0::/42 Deny Generic
+2001:ee0:7780::/41 Deny Generic
 2001:ee0:7840::/42 Deny Generic
 2001:ee0:7880::/41 Deny Generic
 2001:ee0:7900::/40 Deny Generic
-2001:ee0:a000::/42 Deny Generic
 2405:f980::/48 Deny Generic
 Origin: VN
 Tag: VNPT Corp

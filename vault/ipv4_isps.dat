@@ -1,8 +1,8 @@
 # IPv4 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv4_isps.dat
 
-# Version: 2019.182.389
-# Last modified: 2019.07.03
+# Version: 2019.187.201
+# Last modified: 2019.07.07
 
 
 # ---
@@ -337,7 +337,7 @@ Tag: IP Volume inc
 
 
 # ASN 48159 ("Telecommunication Infrastructure Company").
-# Significant source of I.P. thieves, email harvestors, and unauthorised scrapers.
+# Significant source of I.P. thieves, email harvesters, and unauthorised scrapers.
 # Stop Forum Spam (SFS) listings: 140.
 # Updated: 2019.07.03
 
@@ -369,7 +369,7 @@ recaptcha:
 
 
 # ASN 12880 ("Information Technology Company (ITC)").
-# Significant source of email harvestors and unauthorised scrapers.
+# Significant source of email harvesters and unauthorised scrapers.
 # %Listed, Google Malware Dashboard: 0.17%.
 # %Listed, abuseat.org (CBL-Listed): 2.18%.
 # Stop Forum Spam (SFS) listings: 773.
@@ -956,7 +956,8 @@ recaptcha:
 
 
 # ASN 48271 ("City Telecom").
-# Updated: 2019.03.09
+# Stop Forum Spam (SFS) listings: 4.
+# Updated: 2019.03.09 / Checked: 2019.07.07
 
 185.91.132.0/22 Deny Spam
 212.2.224.0/19 Deny Spam
@@ -1952,14 +1953,16 @@ Tag: AS43700
 
 
 # ASN 37254 ("GREEN FLASH TRADING").
-# Stop Forum Spam (SFS) listings: 1.
-# Updated: 2019.03.09
+# At last check, unwanted traffic not detected outside of 41.76.216.0/21
+# anymore; removing everything else for the moment, pending the next check.
+# Updated: 2019.07.07
 
 41.76.216.0/21 Deny Spam
-102.69.168.0/21 Deny Spam
-102.69.176.0/22 Deny Spam
 Origin: ZA
 Tag: GREEN FLASH TRADING
+---
+recaptcha:
+ enabled: true
 
 
 # ASN 62454 ("Zyztm Research Division 10 B.V").
@@ -2191,9 +2194,10 @@ Tag: SICRES SRL
 
 
 # ASN 6876 ("TeNeT Scientific Production Enterprise LLC").
-# %Listed, Google Malware Dashboard: 0.82%.
-# Stop Forum Spam (SFS) listings: 2,028.
-# Updated: 2019.03.03
+# Source of forum spam and other unwanted traffic.
+# %Listed, Google Malware Dashboard: 1.03%.
+# Stop Forum Spam (SFS) listings: 1,897.
+# Updated: 2019.07.04
 
 95.46.107.0/24 Deny Generic
 Origin: CZ
@@ -2204,6 +2208,7 @@ Origin: CZ
 85.238.96.0/19 Deny Generic
 88.214.8.0/22 Deny Generic
 91.194.78.0/23 Deny Generic
+95.214.40.0/22 Deny Generic
 130.0.32.0/19 Deny Generic
 176.119.64.0/18 Deny Generic
 185.23.104.0/22 Deny Generic
@@ -3065,9 +3070,9 @@ Tag: AS49204-TOV-ITT
 
 
 # ASN 48666 ("MAROSNET Telecommunication Company LLC").
-# %Listed, Google Malware Dashboard: 0.27%.
-# Stop Forum Spam (SFS) listings: 2,061.
-# Updated: 2019.03.09
+# %Listed, Google Malware Dashboard: 0.23%.
+# Stop Forum Spam (SFS) listings: 1,648.
+# Updated: 2019.07.07
 
 31.148.99.0/24 Deny Spam
 93.170.123.0/24 Deny Spam
@@ -3077,9 +3082,10 @@ Origin: CZ
 91.234.99.0/24 Deny Spam
 Origin: NL
 37.221.82.0/23 Deny Spam
-46.3.232.0/21 Deny Spam
-46.3.248.0/21 Deny Spam
-46.8.160.0/19 Deny Spam
+46.3.224.0/21 Deny Spam
+46.3.236.0/22 Deny Spam
+46.8.160.0/20 Deny Spam
+46.232.96.0/20 Deny Spam
 78.142.236.0/23 Deny Spam
 80.243.128.0/21 Deny Spam
 83.150.228.0/22 Deny Spam
@@ -3094,7 +3100,7 @@ Origin: NL
 91.202.244.0/24 Deny Spam
 94.142.136.0/21 Deny Spam
 94.229.28.0/22 Deny Spam
-109.248.50.0/24 Deny Spam
+149.126.204.0/22 Deny Spam
 176.53.164.0/22 Deny Spam
 178.159.36.0/24 Deny Spam
 185.5.248.0/22 Deny Spam
@@ -3114,8 +3120,8 @@ Origin: NL
 212.162.132.0/22 Deny Spam
 213.166.64.0/22 Deny Spam
 213.166.88.0/22 Deny Spam
-213.166.94.0/24 Deny Spam
 213.170.192.0/22 Deny Spam
+213.178.154.0/24 Deny Spam
 213.232.116.0/22 Deny Spam
 Origin: RU
 Tag: MAROSNET
@@ -9349,14 +9355,13 @@ recaptcha:
 
 # ASN 56048 ("China Mobile Communicaitons Corporation").
 # Legit mobile ISP in China. Not including entire ASN here; Only some specific problematic, spammy CIDRs.
-# %Listed, Google Malware Dashboard: 1.21%.
-# Stop Forum Spam (SFS) listings: 972.
-# Updated: 2019.03.09
+# %Listed, Google Malware Dashboard: 0.16%.
+# Stop Forum Spam (SFS) listings: 969.
+# Updated: 2019.07.07
 
 39.155.128.0/17 Deny Spam
-117.136.0.0/24 Deny Spam
-120.244.0.0/15 Deny Spam
-223.70.0.0/15 Deny Spam
+120.244.64.0/18 Deny Spam
+223.71.0.0/16 Deny Spam
 223.72.0.0/16 Deny Spam
 Origin: CN
 Tag: China Mobile
@@ -9950,6 +9955,22 @@ recaptcha:
 49.148.0.0/14 Deny Spam
 Origin: PH
 Tag: AS9299
+---
+recaptcha:
+ enabled: true
+
+
+# ASN 9873 ("Lao Telecom Communication, LTC").
+# Legit ISP in Laos (i.e., has human endpoints). Listing here the specific
+# CIDRs where there's evidence of unwanted traffic, but leaving out the rest.
+# %Listed, Google Malware Dashboard: 1.21%.
+# Stop Forum Spam (SFS) listings: 972.
+# Updated: 2019.07.07
+
+115.84.64.0/18 Deny Spam
+202.137.128.0/19 Deny Spam
+Origin: LA
+Tag: Lao Telecom
 ---
 recaptcha:
  enabled: true

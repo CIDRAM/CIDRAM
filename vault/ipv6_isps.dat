@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_isps.dat
 
-# Version: 2019.182.389
-# Last modified: 2019.07.03
+# Version: 2019.187.201
+# Last modified: 2019.07.07
 
 
 # ---
@@ -420,14 +420,6 @@ recaptcha:
  enabled: true
 
 
-# ASN 37254 ("GREEN FLASH TRADING").
-# Updated: 2016.05.12 / Checked: 2019.03.09
-
-2c0f:f4a8::/32 Deny Spam
-Origin: ZA
-Tag: GREEN FLASH TRADING
-
-
 # ASN 62454 ("Zyztm Research Division 10 B.V").
 # Cyber warfare, credit card theft, etc.
 # Stop Forum Spam (SFS) listings: 5.
@@ -482,9 +474,10 @@ recaptcha:
 
 
 # ASN 6876 ("TeNeT Scientific Production Enterprise LLC").
-# %Listed, Google Malware Dashboard: 0.82%.
-# Stop Forum Spam (SFS) listings: 2,028.
-# Updated: 2016.07.20 / Checked: 2019.03.03
+# Source of forum spam and other unwanted traffic.
+# %Listed, Google Malware Dashboard: 1.03%.
+# Stop Forum Spam (SFS) listings: 1,897.
+# Updated: 2016.07.20 / Checked: 2019.07.04
 
 2a04:2c00::/29 Deny Generic
 Origin: UA
@@ -620,9 +613,9 @@ Tag: AS13188-CDN-LTD
 
 
 # ASN 48666 ("MAROSNET Telecommunication Company LLC").
-# %Listed, Google Malware Dashboard: 0.27%.
-# Stop Forum Spam (SFS) listings: 2,061.
-# Updated: 2018.09.07 / Checked: 2019.03.09
+# %Listed, Google Malware Dashboard: 0.23%.
+# Stop Forum Spam (SFS) listings: 1,648.
+# Updated: 2018.09.07 / Checked: 2019.07.07
 
 2a02:f680::/29 Deny Spam
 2a0c:6ec0::/48 Deny Spam

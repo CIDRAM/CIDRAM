@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2019.06.25).
+ * This file: Functions file (last modified: 2019.07.10).
  */
 
 /**
@@ -1431,14 +1431,14 @@ $CIDRAM['SearchEngineVerification'] = function () use (&$CIDRAM) {
         empty($CIDRAM['TestResults']) ||
         $CIDRAM['Config']['general']['maintenance_mode'] ||
         !$CIDRAM['Config']['general']['search_engine_verification'] ||
-        !empty($CIDRAM['VerificationDataReadFailure']) ||
+        !empty($CIDRAM['SkipVerification']) ||
         empty($CIDRAM['BlockInfo']['UALC'])
     ) {
         return;
     }
     if (!isset($CIDRAM['VerificationData'])) {
         if (!$Raw = $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'verification.yaml')) {
-            $CIDRAM['VerificationDataReadFailure'] = true;
+            $CIDRAM['SkipVerification'] = true;
             return;
         }
         $CIDRAM['VerificationData'] = (new \Maikuolan\Common\YAML($Raw))->Data;
@@ -1479,14 +1479,14 @@ $CIDRAM['SocialMediaVerification'] = function () use (&$CIDRAM) {
         empty($CIDRAM['TestResults']) ||
         $CIDRAM['Config']['general']['maintenance_mode'] ||
         !$CIDRAM['Config']['general']['social_media_verification'] ||
-        !empty($CIDRAM['VerificationDataReadFailure']) ||
+        !empty($CIDRAM['SkipVerification']) ||
         empty($CIDRAM['BlockInfo']['UALC'])
     ) {
         return;
     }
     if (!isset($CIDRAM['VerificationData'])) {
         if (!$Raw = $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'verification.yaml')) {
-            $CIDRAM['VerificationDataReadFailure'] = true;
+            $CIDRAM['SkipVerification'] = true;
             return;
         }
         $CIDRAM['VerificationData'] = (new \Maikuolan\Common\YAML($Raw))->Data;

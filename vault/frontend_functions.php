@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2019.06.27).
+ * This file: Front-end functions file (last modified: 2019.07.10).
  */
 
 /**
@@ -3193,4 +3193,35 @@ $CIDRAM['Message'] = function (string $Message) use (&$CIDRAM) {
         }
         $CIDRAM['FE']['state_msg'] .= $Message . '<br />';
     }
+};
+
+/**
+ * Supplied string is used to generate arbitrary values used as RGB information
+ * for CSS styling.
+ *
+ * @param string $String The supplied string to use.
+ * @param int $Mode Whether to return the values as an array of integers,
+ *      a hash-like string, or both.
+ * @return string|array an array of integers, a hash-like string, or both.
+ */
+$CIDRAM['RGB'] = function (string $String = '', int $Mode = 0) {
+    $Diff = [247, 127, 31];
+    if (is_string($String) && !empty($String)) {
+        $String = str_split($String);
+        foreach ($String as $Char) {
+            $Char = ord($Char);
+            $Diff[0] = ($Diff[0] >> 1) + (($Diff[2] & 1) === 1 ? 128 : 0);
+            $Diff[1] = ($Diff[1] >> 1) + (($Diff[0] & 1) === 1 ? 128 : 0);
+            $Diff[2] = ($Diff[2] >> 1) + (($Diff[1] & 1) === 1 ? 128 : 0);
+            $Diff[0] ^= $Char;
+        }
+    }
+    if ($Mode === 1) {
+        return $Diff;
+    }
+    $Hash = str_pad(bin2hex(chr($Diff[0]) . chr($Diff[1]) . chr($Diff[2])), 6, '0', STR_PAD_LEFT);
+    if ($Mode === 2) {
+        return $Hash;
+    }
+    return ['Values' => $Diff, 'Hash' => $Hash];
 };

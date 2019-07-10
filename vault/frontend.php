@@ -2550,16 +2550,13 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'file-manager' && $CIDRAM['FE'][
             $CIDRAM['FE']['PieChartValues'][] = $CIDRAM['Components']['ThisData'];
             $CIDRAM['FE']['PieChartLabels'][] = $CIDRAM['Components']['ThisName'];
             if ($CIDRAM['PiePath']) {
-                $CIDRAM['Components']['ThisColour'] = substr(md5($CIDRAM['Components']['ThisName']), 0, 6);
-                $CIDRAM['Components']['RGB'] =
-                    hexdec(substr($CIDRAM['Components']['ThisColour'], 0, 2)) . ',' .
-                    hexdec(substr($CIDRAM['Components']['ThisColour'], 2, 2)) . ',' .
-                    hexdec(substr($CIDRAM['Components']['ThisColour'], 4, 2));
-                $CIDRAM['FE']['PieChartColours'][] = '#' . $CIDRAM['Components']['ThisColour'];
+                $CIDRAM['Components']['ThisColour'] = $CIDRAM['RGB']($CIDRAM['Components']['ThisName']);
+                $CIDRAM['Components']['RGB'] = implode(',', $CIDRAM['Components']['ThisColour']['Values']);
+                $CIDRAM['FE']['PieChartColours'][] = '#' . $CIDRAM['Components']['ThisColour']['Hash'];
                 $CIDRAM['FE']['PieChartHTML'] .= sprintf(
                     '<li style="background:linear-gradient(90deg,rgba(%1$s,0.3),rgba(%1$s,0));color:#%2$s"><span class="comCat" style="cursor:pointer"><span class="txtBl">%3$s</span></span>%4$s</li>',
                     $CIDRAM['Components']['RGB'],
-                    $CIDRAM['Components']['ThisColour'],
+                    $CIDRAM['Components']['ThisColour']['Hash'],
                     $CIDRAM['Components']['ThisName'],
                     $CIDRAM['Components']['ThisListed']
                 ) . "\n";

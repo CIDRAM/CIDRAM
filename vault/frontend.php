@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2019.06.27).
+ * This file: Front-end handler (last modified: 2019.07.10).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -1761,7 +1761,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && ($CIDRAM['FE']['Per
             is_array($CIDRAM['Components']['ThisComponent']['Files']['To'])
         ) {
             $CIDRAM['Components']['ThisComponent']['Options'] .=
-                '<option value="verify-component">' . $CIDRAM['L10N']->getString('field_verify') . '</option>';
+                '<option value="verify-component" selected>' . $CIDRAM['L10N']->getString('field_verify') . '</option>';
             $CIDRAM['Components']['Verify'][] = $CIDRAM['Components']['Key'];
         }
         if (

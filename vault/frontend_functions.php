@@ -1248,11 +1248,11 @@ $CIDRAM['VersionWarning'] = function ($Version = PHP_VERSION) use (&$CIDRAM) {
     $Level = 0;
     $Minor = (float)$Version;
     if (!empty($CIDRAM['ForceVersionWarning']) || $Minor < 7.1 || (
-        $Minor === 7.1 && $CIDRAM['VersionCompare']($Version, '7.1.28')
+        $Minor === 7.1 && $CIDRAM['VersionCompare']($Version, '7.1.30')
     ) || (
-        $Minor === 7.2 && $CIDRAM['VersionCompare']($Version, '7.2.16')
+        $Minor === 7.2 && $CIDRAM['VersionCompare']($Version, '7.2.19')
     ) || (
-        $Minor === 7.3 && $CIDRAM['VersionCompare']($Version, '7.3.3')
+        $Minor === 7.3 && $CIDRAM['VersionCompare']($Version, '7.3.6')
     )) {
         $Level += 2;
     }

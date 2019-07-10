@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_isps.dat
 
-# Version: 2019.187.201
-# Last modified: 2019.07.07
+# Version: 2019.189.562
+# Last modified: 2019.07.09
 
 
 # ---
@@ -658,12 +658,12 @@ Tag: PHOENIX NAP, LLC
 
 # ASNs 24955, 41704 ("Orenburgskaya Gorodskaya Set, ZAO").
 # Caught spamming while pretending to be Google.
-# %Listed, Google Malware Dashboard: 0.30% (AS24955).
-# Stop Forum Spam (SFS) listings: 44,984 (AS24955), 92,350 (AS41704).
-# Updated: 2017.12.18 / Checked: 2019.03.10
+# Stop Forum Spam (SFS) listings: 52,827 (AS24955), 84,383 (AS41704).
+# Updated: 2019.07.09
 
-2a02:1c8:1::/48 Deny Spam
+2a02:1c8::/47 Deny Spam
 2a02:1c8:7::/48 Deny Spam
+2a02:1c8:90::/44 Deny Spam
 2a02:1c8:100::/40 Deny Spam
 2a02:1c8:700::/40 Deny Spam
 Origin: RU
@@ -1444,8 +1444,8 @@ recaptcha:
 
 
 # ASN 15774 ("Closed Joint Stock Company TransTeleCom").
-# Stop Forum Spam (SFS) listings: 526.
-# Updated: 2019.03.10
+# Stop Forum Spam (SFS) listings: 811.
+# Updated: 2019.03.10 / Checked: 2019.07.09
 
 2a02:618:6::/47 Deny Spam
 2a02:28d8::/36 Deny Spam

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: reCAPTCHA module (last modified: 2019.05.11).
+ * This file: reCAPTCHA module (last modified: 2019.07.11).
  */
 
 /**
@@ -183,7 +183,7 @@ if ($CIDRAM['Config']['recaptcha']['lockuser']) {
          * reCAPTCHA template data included if reCAPTCHA not being bypassed.
          * Note: Cookie warning IS included here due to expected behaviour when lockuser is TRUE.
          */
-        $CIDRAM['reCAPTCHA']['GenerateContainer'](true);
+        $CIDRAM['reCAPTCHA']['GenerateContainer']($CIDRAM['Config']['recaptcha']['show_cookie_warning']);
 
     }
 

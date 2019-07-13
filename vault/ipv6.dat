@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6.dat
 
-# Version: 2019.190.509
-# Last modified: 2019.07.10
+# Version: 2019.193.626
+# Last modified: 2019.07.13
 
 
 # ---
@@ -1051,7 +1051,7 @@ Origin: UA
 Tag: ON-LINE Ltd
 
 
-# "Internap Network Services Corporation". Various ASNs. Updated: 2019.03.10
+# "Internap Network Services Corporation". Various ASNs. Updated: 2019.07.13
 
 2406:3800::/32 Deny Cloud
 Origin: AU
@@ -1069,11 +1069,11 @@ Origin: SG
 2600:c04::/31 Deny Cloud
 2600:c06::/32 Deny Cloud
 2600:c07::/48 Deny Cloud
-2600:c08::/30 Deny Cloud
-2600:c0c::/31 Deny Cloud
-2600:c0e::/32 Deny Cloud
+2600:c08::/31 Deny Cloud
+2600:c0b::/32 Deny Cloud
+2600:c0c::/30 Deny Cloud
 2600:c10::/30 Deny Cloud
-2607:f080:300::/40 Deny Cloud
+2600:c14::/32 Deny Cloud
 Origin: US
 Tag: Internap Network
 
@@ -1556,9 +1556,9 @@ Tag: Enzu Inc
 
 
 # ASNs 18779, 54500 ("EGIHosting").
-# %Listed, Google Malware Dashboard: 1.36% (AS18779).
-# Stop Forum Spam (SFS) listings: 615 (AS18779), 14 (AS54500).
-# Updated: 2019.03.12
+# %Listed, Google Malware Dashboard: 1.15% (AS18779).
+# Stop Forum Spam (SFS) listings: 319 (AS18779), 31 (AS54500).
+# Updated: 2019.07.12
 
 2a0c:7dc0::/29 Deny Cloud
 2a0c:89c0::/29 Deny Cloud
@@ -1579,7 +1579,6 @@ Origin: NO
 Origin: RU
 2604:bc0:3::/48 Deny Cloud
 2604:4f00::/36 Deny Cloud
-2606:f180::/48 Deny Cloud
 2607:f358::/32 Deny Cloud
 Origin: US
 Tag: EGIHosting
@@ -1758,14 +1757,16 @@ Tag: Continuum
 
 # ASN 51167 ("Contabo GmbH").
 # Caught spamming while pretending to be Google.
-# %Listed, Google Malware Dashboard: 0.20%.
-# Stop Forum Spam (SFS) listings: 14,095.
-# Updated: 2018.11.19 / Checked: 2019.03.10
+# %Listed, Google Malware Dashboard: 0.21%.
+# Stop Forum Spam (SFS) listings: 12,292.
+# Updated: 2019.07.13
 
 2a02:c200::/32 Deny Cloud
 2a02:c205::/32 Deny Cloud
 2a02:c207::/32 Deny Cloud
 Origin: DE
+2a09:9442::/32 Deny Cloud
+Origin: RU
 Tag: Contabo GmbH
 
 
@@ -3025,9 +3026,9 @@ Tag: Media Temple, Inc
 
 
 # ASNs 12586, 48039 ("GHOSTnet GmbH").
-# %Listed, Google Malware Dashboard: 0.56% (AS12586).
-# Stop Forum Spam (SFS) listings: 1,243 (AS12586).
-# Updated: 2019.03.10
+# %Listed, Google Malware Dashboard: 0.63% (AS12586).
+# Stop Forum Spam (SFS) listings: 941 (AS12586).
+# Updated: 2019.07.12
 
 2001:67c:18e8::/48 Deny Cloud
 2001:67c:2c58::/48 Deny Cloud
@@ -3041,7 +3042,6 @@ Tag: Media Temple, Inc
 2a02:7a0::/32 Deny Cloud
 2a02:2fc0::/29 Deny Cloud
 2a0b:6c80::/32 Deny Cloud
-2a0c:cc40::/29 Deny Cloud
 Origin: DE
 Tag: GHOSTnet GmbH
 
@@ -3995,14 +3995,15 @@ Tag: MnogoByte LLC
 
 
 # ASN 29014 ("ScaleUp Technologies GmbH & Co. KG").
-# %Listed, Google Malware Dashboard: 0.34%.
-# Updated: 2017.12.23 / Checked: 2019.05.04
+# %Listed, Google Malware Dashboard: 0.38%.
+# Updated: 2019.07.13
 
 2a00:12e8::/32 Deny Cloud
 2a00:1c38::/47 Deny Cloud
 2a00:1c39::/32 Deny Cloud
 2a0b:2a40::/29 Deny Cloud
 2a0b:f080::/32 Deny Cloud
+2a0e:7b80::/32 Deny Cloud
 Origin: DE
 Tag: ScaleUp Technologies
 
@@ -4851,9 +4852,9 @@ Tag: Nodes Direct
 
 
 # ASN 23352 ("Server Central Network").
-# %Listed, Google Malware Dashboard: 0.30%.
-# Stop Forum Spam (SFS) listings: 1.
-# Updated: 2018.04.14 / Checked: 2019.03.10
+# %Listed, Google Malware Dashboard: 0.27%.
+# Stop Forum Spam (SFS) listings: 3.
+# Updated: 2018.04.14 / Checked: 2019.07.13
 
 2001:1838::/32 Deny Cloud
 Origin: US
@@ -5761,8 +5762,9 @@ Tag: KPNQWest Italia
 
 # ASN 41564 ("Packet Exchange Limited").
 # Caught XRumer operating on this network.
-# Stop Forum Spam (SFS) listings: 17,146.
-# Updated: 2018.05.25 / Checked: 2019.03.10
+# %Listed, Google Malware Dashboard: 0.08%.
+# Stop Forum Spam (SFS) listings: 10,296.
+# Updated: 2018.05.25 / Checked: 2019.07.12
 
 2a02:5740::/46 Deny Cloud
 2a02:5740:4::/47 Deny Cloud
@@ -5979,15 +5981,11 @@ Tag: Sprious LLC
 
 # ASN 60144 ("3W Infra B.V").
 # Caught attempting to hack honeypots.
-# %Listed, Google Malware Dashboard: 0.29%.
-# Stop Forum Spam (SFS) listings: 27.
-# Updated: 2018.09.07 / Checked: 2019.03.11
+# Stop Forum Spam (SFS) listings: 132.
+# Updated: 2019.07.13
 
 2a02:5060::/32 Deny Cloud
-2a0c:e640::/29 Deny Cloud
 2a0c:ef03::/32 Deny Cloud
-2a0d:2580::/29 Deny Cloud
-2a0d:2680::/29 Deny Cloud
 Origin: NL
 Tag: 3W Infra B.V
 
@@ -6522,3 +6520,72 @@ Origin: FR
 2a0c:5201::/32 Deny Cloud
 Origin: TW
 Tag: Serverfield
+
+
+# ASNs 7160, 31898, 43894 ("Oracle Corporation").
+# Listing here due to reports from some users of spam events, brute-force
+# attempts, probing, and other unwanted traffic from their ASNs, plus various
+# RBL listings at various RBLs. Example: abuseipdb.com/check/129.213.67.237
+# They own a very large number of ASNs though, and most of them seem clean at
+# the moment, and blocking more than needed reduces maintainability (i.e.,
+# discourages regular updates), so I'm opting to list only those ASNs directly
+# connected to any currently available reports. Quite a massive network, so
+# should monitor for a while, for potential false positives and potential
+# future additions alike.
+# %Listed, Google Malware Dashboard: 0.03% (AS7160).
+# Stop Forum Spam (SFS) listings: 84 (AS7160), 189 (AS31898).
+# Updated: 2019.07.13
+
+2801:1:8800::/48 Deny Cloud
+2801:1:8805::/48 Deny Cloud
+Origin: CR
+2405:ba00:8800::/48 Deny Cloud
+2405:ba00:8804::/48 Deny Cloud
+2405:ba00:8808::/48 Deny Cloud
+2405:ba00:8810::/48 Deny Cloud
+Origin: IN
+2a02:6900:8804::/48 Deny Cloud
+2a02:6900:8808::/48 Deny Cloud
+2a02:6900:880c::/48 Deny Cloud
+2a02:6900:8810::/48 Deny Cloud
+2a02:6900:8814::/48 Deny Cloud
+2a02:6900:8818::/48 Deny Cloud
+2a02:6900:881c::/48 Deny Cloud
+2a02:6900:8820::/48 Deny Cloud
+2a02:6900:8824::/48 Deny Cloud
+Origin: SE
+2603:c000:800::/40 Deny Cloud
+2603:c000:a00::/40 Deny Cloud
+2603:c001:1000::/39 Deny Cloud
+2603:c001:1400::/39 Deny Cloud
+2603:c002:800::/40 Deny Cloud
+2603:c002:a00::/40 Deny Cloud
+2603:c002:8800::/40 Deny Cloud
+2603:c002:8a00::/40 Deny Cloud
+2603:c011::/36 Deny Cloud
+2603:c011:4000::/36 Deny Cloud
+2603:c022::/35 Deny Cloud
+2603:c022:8000::/35 Deny Cloud
+2606:b400:8804::/48 Deny Cloud
+2606:b400:8808::/48 Deny Cloud
+2606:b400:880c::/48 Deny Cloud
+2606:b400:8814::/48 Deny Cloud
+2606:b400:881c::/48 Deny Cloud
+2606:b400:8820::/48 Deny Cloud
+2606:b400:8824::/47 Deny Cloud
+2606:b400:882b::/48 Deny Cloud
+2606:b400:8830::/47 Deny Cloud
+2606:b400:8832::/48 Deny Cloud
+Origin: US
+Tag: Oracle Corporation
+
+
+# ASN 60355 ("KV Solutions B.V").
+# Evidence of spamming at some RBLs.
+# Updated: 2019.07.13
+
+2a0c:e640::/29 Deny Cloud
+2a0d:2580::/29 Deny Cloud
+2a0d:2680::/29 Deny Cloud
+Origin: NL
+Tag: KV Solutions B.V

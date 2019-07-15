@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2019.07.10).
+ * This file: Front-end handler (last modified: 2019.07.15).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -2881,11 +2881,17 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-test' && $CIDRAM['FE']['Perm
     /** Auxiliary switch for SimulateBlockEvent closure. */
     $CIDRAM['AuxSwitch'] = !empty($_POST['AuxSwitch']);
 
+    /** Verification switch for SimulateBlockEvent closure. */
+    $CIDRAM['VerificationSwitch'] = !empty($_POST['VerificationSwitch']);
+
     /** Module switch for HTML. */
     $CIDRAM['FE']['ModuleSwitch'] = $CIDRAM['ModuleSwitch'] ? ' checked' : '';
 
     /** Auxiliary switch for HTML. */
     $CIDRAM['FE']['AuxSwitch'] = $CIDRAM['AuxSwitch'] ? ' checked' : '';
+
+    /** Verification switch for HTML. */
+    $CIDRAM['FE']['VerificationSwitch'] = $CIDRAM['VerificationSwitch'] ? ' checked' : '';
 
     /** Fetch custom user agent if specified. */
     $CIDRAM['FE']['custom-ua'] = !empty($_POST['custom-ua']) ? $_POST['custom-ua'] : '';
@@ -2902,7 +2908,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-test' && $CIDRAM['FE']['Perm
             if (!$CIDRAM['ThisIP']['IPAddress']) {
                 continue;
             }
-            $CIDRAM['SimulateBlockEvent']($CIDRAM['ThisIP']['IPAddress'], $CIDRAM['ModuleSwitch'], $CIDRAM['AuxSwitch']);
+            $CIDRAM['SimulateBlockEvent']($CIDRAM['ThisIP']['IPAddress'], $CIDRAM['ModuleSwitch'], $CIDRAM['AuxSwitch'], $CIDRAM['VerificationSwitch']);
             if (
                 $CIDRAM['Caught'] ||
                 empty($CIDRAM['LastTestIP']) ||
@@ -3081,7 +3087,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-tracking' && $CIDRAM['FE']['
 
             /** Check whether normally blocked by signature files and/or auxiliary rules. */
             if ($CIDRAM['FE']['tracking-blocked-already'] || $CIDRAM['FE']['tracking-aux']) {
-                $CIDRAM['SimulateBlockEvent']($CIDRAM['ThisTracking']['IPAddr'], false, $CIDRAM['FE']['tracking-aux']);
+                $CIDRAM['SimulateBlockEvent']($CIDRAM['ThisTracking']['IPAddr'], false, $CIDRAM['FE']['tracking-aux'], false);
                 $CIDRAM['ThisTracking']['Blocked'] = ($CIDRAM['Caught'] || $CIDRAM['BlockInfo']['SignatureCount']);
             } else {
                 $CIDRAM['ThisTracking']['Blocked'] = false;

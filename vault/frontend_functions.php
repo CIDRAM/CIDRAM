@@ -866,8 +866,9 @@ $CIDRAM['ComponentFunctionUpdatePrep'] = function ($Targets) use (&$CIDRAM) {
  * @param string $Addr The IP address to test against.
  * @param bool $Modules Specifies whether to test against modules.
  * @param bool $Aux Specifies whether to test against auxiliary rules.
+ * @param bool $Verification Specifies whether to test against auxiliary rules.
  */
-$CIDRAM['SimulateBlockEvent'] = function ($Addr, $Modules = false, $Aux = false) use (&$CIDRAM) {
+$CIDRAM['SimulateBlockEvent'] = function ($Addr, $Modules = false, $Aux = false, $Verification = false) use (&$CIDRAM) {
 
     /** Reset bypass flags (needed to prevent falsing due to search engine verification). */
     $CIDRAM['ResetBypassFlags']();
@@ -934,12 +935,12 @@ $CIDRAM['SimulateBlockEvent'] = function ($Addr, $Modules = false, $Aux = false)
     }
 
     /** Execute search engine verification. */
-    if (empty($CIDRAM['Whitelisted'])) {
+    if ($Verification && empty($CIDRAM['Whitelisted'])) {
         $CIDRAM['SearchEngineVerification']();
     }
 
     /** Execute social media verification. */
-    if (empty($CIDRAM['Whitelisted'])) {
+    if ($Verification && empty($CIDRAM['Whitelisted'])) {
         $CIDRAM['SocialMediaVerification']();
     }
 

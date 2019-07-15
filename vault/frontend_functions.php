@@ -862,7 +862,7 @@ $CIDRAM['ComponentFunctionUpdatePrep'] = function (string $Targets) use (&$CIDRA
  * @param string $Addr The IP address to test against.
  * @param bool $Modules Specifies whether to test against modules.
  * @param bool $Aux Specifies whether to test against auxiliary rules.
- * @param bool $Verification Specifies whether to test against auxiliary rules.
+ * @param bool $Verification Specifies whether to test against search engine and social media verification.
  */
 $CIDRAM['SimulateBlockEvent'] = function (string $Addr, bool $Modules = false, bool $Aux = false, bool $Verification = false) use (&$CIDRAM) {
 

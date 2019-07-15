@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Output generator (last modified: 2019.06.26).
+ * This file: Output generator (last modified: 2019.07.15).
  */
 
 /** Initialise cache. */
@@ -63,6 +63,7 @@ $CIDRAM['BlockInfo'] = [
     'DateTime' => $CIDRAM['TimeFormat']($CIDRAM['Now'], $CIDRAM['Config']['general']['timeFormat']),
     'ID' => $CIDRAM['GenerateID'](),
     'IPAddr' => $_SERVER[$CIDRAM['IPAddr']],
+    'IPAddrResolved' => $CIDRAM['Resolve6to4']($_SERVER[$CIDRAM['IPAddr']]),
     'ScriptIdent' => $CIDRAM['ScriptIdent'],
     'favicon' => $CIDRAM['favicon'],
     'Query' => $CIDRAM['Query'],
@@ -82,11 +83,6 @@ $CIDRAM['BlockInfo']['rURI'] = (
 ) ? 'https://' : 'http://';
 $CIDRAM['BlockInfo']['rURI'] .= $CIDRAM['HTTP_HOST'] ?: 'Unknown.Host';
 $CIDRAM['BlockInfo']['rURI'] .= (!empty($_SERVER['REQUEST_URI'])) ? $_SERVER['REQUEST_URI'] : '/';
-
-/** Resolve 6to4 IPv6 address to its IPv4 address counterpart. */
-if (substr($CIDRAM['BlockInfo']['IPAddr'], 0, 5) === '2002:') {
-    $CIDRAM['BlockInfo']['IPAddrResolved'] = $CIDRAM['Resolve6to4']($CIDRAM['BlockInfo']['IPAddr']);
-}
 
 /** Initialise page output and block event logfile fields. */
 $CIDRAM['FieldTemplates'] = ['Logs' => '', 'Output' => []];
@@ -111,7 +107,7 @@ if ($CIDRAM['Protect'] && !$CIDRAM['Config']['general']['maintenance_mode']) {
     }
 
     /** Run all IPv4/IPv6 tests for resolved IP address if necessary. */
-    if (!empty($CIDRAM['BlockInfo']['IPAddrResolved']) && $CIDRAM['TestResults'] && empty($CIDRAM['Whitelisted'])) {
+    if ($CIDRAM['BlockInfo']['IPAddrResolved'] && $CIDRAM['TestResults'] && empty($CIDRAM['Whitelisted'])) {
         try {
             $CIDRAM['TestResults'] = $CIDRAM['RunTests']($CIDRAM['BlockInfo']['IPAddrResolved'], $CIDRAM['RL_Active']);
         } catch (\Exception $e) {
@@ -129,24 +125,20 @@ if ($CIDRAM['Protect'] && !$CIDRAM['Config']['general']['maintenance_mode']) {
     }
 
     /**
-     * Check whether we're tracking the IP being checked due to previous
-     * instances of bad behaviour.
+     * Check whether we're tracking the IP due to previous instances of bad
+     * behaviour.
      */
-    elseif ((
-        isset(
-            $CIDRAM['BlockInfo']['IPAddr'],
-            $CIDRAM['Tracking'][$CIDRAM['BlockInfo']['IPAddr']],
-            $CIDRAM['Tracking'][$CIDRAM['BlockInfo']['IPAddr']]['Count']
-        ) &&
+    elseif (($CIDRAM['BlockInfo']['IPAddr'] && isset(
+        $CIDRAM['Tracking'][$CIDRAM['BlockInfo']['IPAddr']],
+        $CIDRAM['Tracking'][$CIDRAM['BlockInfo']['IPAddr']]['Count']
+    ) && (
         $CIDRAM['Tracking'][$CIDRAM['BlockInfo']['IPAddr']]['Count'] >= $CIDRAM['Config']['signatures']['infraction_limit']
-    ) || (
-        isset(
-            $CIDRAM['BlockInfo']['IPAddrResolved'],
-            $CIDRAM['Tracking'][$CIDRAM['BlockInfo']['IPAddrResolved']],
-            $CIDRAM['Tracking'][$CIDRAM['BlockInfo']['IPAddrResolved']]['Count']
-        ) &&
+    )) || ($CIDRAM['BlockInfo']['IPAddrResolved'] && isset(
+        $CIDRAM['Tracking'][$CIDRAM['BlockInfo']['IPAddrResolved']],
+        $CIDRAM['Tracking'][$CIDRAM['BlockInfo']['IPAddrResolved']]['Count']
+    ) && (
         $CIDRAM['Tracking'][$CIDRAM['BlockInfo']['IPAddrResolved']]['Count'] >= $CIDRAM['Config']['signatures']['infraction_limit']
-    )) {
+    ))) {
         $CIDRAM['Banned'] = true;
         $CIDRAM['BlockInfo']['ReasonMessage'] = $CIDRAM['L10N']->getString('ReasonMessage_Banned');
         $CIDRAM['BlockInfo']['WhyReason'] = $CIDRAM['L10N']->getString('Short_Banned');
@@ -193,44 +185,43 @@ $CIDRAM['Trackable'] = $CIDRAM['Config']['signatures']['track_mode'];
 
 /** Perform forced hostname lookup if this has been enabled. */
 if ($CIDRAM['Config']['general']['force_hostname_lookup']) {
-    $CIDRAM['Hostname'] = $CIDRAM['DNS-Reverse'](
-        empty($CIDRAM['BlockInfo']['IPAddrResolved']) ? $CIDRAM['BlockInfo']['IPAddr'] : $CIDRAM['BlockInfo']['IPAddrResolved']
-    );
+    $CIDRAM['Hostname'] = $CIDRAM['DNS-Reverse']($CIDRAM['BlockInfo']['IPAddrResolved'] ?: $CIDRAM['BlockInfo']['IPAddr']);
 }
 
-/**
- * If the request hasn't originated from a whitelisted IP/CIDR, and if any modules have been registered with the
- * configuration, load them.
- */
-if (
-    $CIDRAM['Protect'] &&
-    !$CIDRAM['Config']['general']['maintenance_mode'] &&
-    !empty($CIDRAM['Config']['signatures']['modules']) &&
-    empty($CIDRAM['Whitelisted'])
-) {
-    $CIDRAM['Modules'] = explode(',', $CIDRAM['Config']['signatures']['modules']);
-    array_walk($CIDRAM['Modules'], function ($Module) use (&$CIDRAM) {
-        $Module = (strpos($Module, ':') === false) ? $Module : substr($Module, strpos($Module, ':') + 1);
-        if (file_exists($CIDRAM['Vault'] . $Module) && is_readable($CIDRAM['Vault'] . $Module)) {
-            $Infractions = $CIDRAM['BlockInfo']['SignatureCount'];
-            require $CIDRAM['Vault'] . $Module;
-            $CIDRAM['Trackable'] = $CIDRAM['Trackable'] ?: ($CIDRAM['BlockInfo']['SignatureCount'] - $Infractions) > 0;
-        }
-    });
-    unset($CIDRAM['Modules']);
-}
-
-/** Execute search engine verification. */
-$CIDRAM['SearchEngineVerification']();
-
-/** Execute social media verification. */
-$CIDRAM['SocialMediaVerification']();
-
-/** Process auxiliary rules, if any exist. */
+/** Executed only if maintenance mode is disabled. */
 if ($CIDRAM['Protect'] && !$CIDRAM['Config']['general']['maintenance_mode'] && empty($CIDRAM['Whitelisted'])) {
-    $CIDRAM['ErrorFlag'] = 'Aux';
-    $CIDRAM['Aux']();
-    $CIDRAM['ErrorFlag'] = '';
+
+    /** Execute modules, if any have been enabled. */
+    if (empty($CIDRAM['Whitelisted']) && $CIDRAM['Config']['signatures']['modules']) {
+        $CIDRAM['Modules'] = explode(',', $CIDRAM['Config']['signatures']['modules']);
+        array_walk($CIDRAM['Modules'], function ($Module) use (&$CIDRAM) {
+            $Module = (strpos($Module, ':') === false) ? $Module : substr($Module, strpos($Module, ':') + 1);
+            if (file_exists($CIDRAM['Vault'] . $Module) && is_readable($CIDRAM['Vault'] . $Module)) {
+                $Infractions = $CIDRAM['BlockInfo']['SignatureCount'];
+                require $CIDRAM['Vault'] . $Module;
+                $CIDRAM['Trackable'] = $CIDRAM['Trackable'] ?: ($CIDRAM['BlockInfo']['SignatureCount'] - $Infractions) > 0;
+            }
+        });
+        unset($CIDRAM['Modules']);
+    }
+
+    /** Execute search engine verification. */
+    if (empty($CIDRAM['Whitelisted'])) {
+        $CIDRAM['SearchEngineVerification']();
+    }
+
+    /** Execute social media verification. */
+    if (empty($CIDRAM['Whitelisted'])) {
+        $CIDRAM['SocialMediaVerification']();
+    }
+
+    /** Process auxiliary rules, if any exist. */
+    if (empty($CIDRAM['Whitelisted'])) {
+        $CIDRAM['ErrorFlag'] = 'Aux';
+        $CIDRAM['Aux']();
+        $CIDRAM['ErrorFlag'] = '';
+    }
+
 }
 
 /** Process tracking information for the inbound IP. */
@@ -358,7 +349,7 @@ if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
 /** Update statistics if necessary. */
 if ($CIDRAM['Config']['general']['statistics'] && $CIDRAM['BlockInfo']['SignatureCount'] > 0) {
     if (!empty($CIDRAM['Banned'])) {
-        if (!empty($CIDRAM['BlockInfo']['IPAddrResolved'])) {
+        if ($CIDRAM['BlockInfo']['IPAddrResolved']) {
             $CIDRAM['Statistics']['Banned-IPv4']++;
             $CIDRAM['Statistics']['Banned-IPv6']++;
         } elseif ($CIDRAM['LastTestIP'] === 4) {
@@ -367,7 +358,7 @@ if ($CIDRAM['Config']['general']['statistics'] && $CIDRAM['BlockInfo']['Signatur
             $CIDRAM['Statistics']['Banned-IPv6']++;
         }
     } else {
-        if (!empty($CIDRAM['BlockInfo']['IPAddrResolved'])) {
+        if ($CIDRAM['BlockInfo']['IPAddrResolved']) {
             $CIDRAM['Statistics']['Blocked-IPv4']++;
             $CIDRAM['Statistics']['Blocked-IPv6']++;
         } elseif ($CIDRAM['LastTestIP'] === 4) {
@@ -434,7 +425,7 @@ if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
     /** IP address pseudonymisation. */
     if ($CIDRAM['Config']['legal']['pseudonymise_ip_addresses'] && $CIDRAM['TestResults']) {
         $CIDRAM['BlockInfo']['IPAddr'] = $CIDRAM['Pseudonymise-IP']($CIDRAM['BlockInfo']['IPAddr']);
-        if (!empty($CIDRAM['BlockInfo']['IPAddrResolved'])) {
+        if ($CIDRAM['BlockInfo']['IPAddrResolved']) {
             $CIDRAM['BlockInfo']['IPAddrResolved'] = $CIDRAM['Pseudonymise-IP']($CIDRAM['BlockInfo']['IPAddrResolved']);
         }
     }
@@ -473,8 +464,8 @@ if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
     }
     $CIDRAM['AddField']($CIDRAM['L10N']->getString('field_datetime'), $CIDRAM['BlockInfo']['DateTime']);
     $CIDRAM['AddField']($CIDRAM['L10N']->getString('field_ipaddr'), $CIDRAM['BlockInfo']['IPAddr']);
-    if (!empty($CIDRAM['BlockInfo']['IPAddrResolved']) || $CIDRAM['Config']['general']['empty_fields'] === 'include') {
-        if (empty($CIDRAM['BlockInfo']['IPAddrResolved'])) {
+    if ($CIDRAM['BlockInfo']['IPAddrResolved'] || $CIDRAM['Config']['general']['empty_fields'] === 'include') {
+        if (!$CIDRAM['BlockInfo']['IPAddrResolved']) {
             $CIDRAM['BlockInfo']['IPAddrResolved'] = '-';
         }
         $CIDRAM['AddField']($CIDRAM['L10N']->getString('field_ipaddr_resolved'), $CIDRAM['BlockInfo']['IPAddrResolved']);

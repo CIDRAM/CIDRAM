@@ -1299,18 +1299,18 @@ $CIDRAM['AddField'] = function (string $FieldName, string $FieldData, bool $Sani
  * Resolves 6to4, Teredo, ISATAP addresses and etc to their IPv4 counterparts.
  *
  * @param string $In An IPv6 address.
- * @return string An IPv4 address.
+ * @return string An IPv4 address, or an empty string upon failure to resolve.
  */
-$CIDRAM['Resolve6to4'] = function ($In) {
+$CIDRAM['Resolve6to4'] = function (string $In): string {
     if (!preg_match('~^(?:200[12]|fe80)\:~i', $In)) {
-        return false;
+        return '';
     }
     $Parts = explode(':', $In, 8);
 
     /** 6to4. */
     if ($Parts[0] === '2002') {
         if (empty($Parts[1]) || empty($Parts[2]) || preg_match('~[^\da-f]~i', $Parts[1]) || preg_match('~[^\da-f]~i', $Parts[2])) {
-            return false;
+            return '';
         }
         $Parts[1] = hexdec($Parts[1]) ?: 0;
         $Parts[2] = hexdec($Parts[2]) ?: 0;
@@ -1323,7 +1323,7 @@ $CIDRAM['Resolve6to4'] = function ($In) {
         $Parts = array_reverse($Parts);
         $Bits = ($Parts[1] ?: '') . str_pad(($Parts[0] ?: ''), 4, '0', STR_PAD_LEFT);
         if (preg_match('~[^\da-f]~i', $Bits)) {
-            return false;
+            return '';
         }
         $Bits = hexdec($Bits) ^ 0xffffffff;
         $Octets = [0 => 0, 1 => 0, 2 => 0, 3 => $Bits % 256];
@@ -1341,7 +1341,7 @@ $CIDRAM['Resolve6to4'] = function ($In) {
         return implode('.', $Octets);
     }
 
-    return false;
+    return '';
 };
 
 /** Initialise cache. */

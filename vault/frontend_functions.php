@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2019.07.10).
+ * This file: Front-end functions file (last modified: 2019.07.15).
  */
 
 /**
@@ -878,6 +878,7 @@ $CIDRAM['SimulateBlockEvent'] = function (string $Addr, bool $Modules = false, b
     $CIDRAM['BlockInfo'] = [
         'ID' => $CIDRAM['GenerateID'](),
         'IPAddr' => $Addr,
+        'IPAddrResolved' => $CIDRAM['Resolve6to4']($Addr),
         'Query' => 'SimulateBlockEvent',
         'Referrer' => '',
         'UA' => !empty($CIDRAM['FE']['custom-ua']) ? $CIDRAM['FE']['custom-ua'] : 'SimulateBlockEvent',
@@ -890,7 +891,7 @@ $CIDRAM['SimulateBlockEvent'] = function (string $Addr, bool $Modules = false, b
     ];
     $CIDRAM['BlockInfo']['UALC'] = strtolower($CIDRAM['BlockInfo']['UA']);
 
-    /** Standard IP checks. */
+    /** Standard IP check. */
     try {
         $CIDRAM['Caught'] = false;
         $CIDRAM['TestResults'] = $CIDRAM['RunTests']($Addr);
@@ -898,9 +899,8 @@ $CIDRAM['SimulateBlockEvent'] = function (string $Addr, bool $Modules = false, b
         $CIDRAM['Caught'] = true;
     }
 
-    /** 6to4 IP checks. */
-    if (substr($CIDRAM['BlockInfo']['IPAddr'], 0, 5) === '2002:') {
-        $CIDRAM['BlockInfo']['IPAddrResolved'] = $CIDRAM['Resolve6to4']($Addr);
+    /** Resolved IP check. */
+    if ($CIDRAM['BlockInfo']['IPAddrResolved']) {
         if (!empty($CIDRAM['ThisIP']['IPAddress'])) {
             $CIDRAM['ThisIP']['IPAddress'] .= ' (' . $CIDRAM['BlockInfo']['IPAddrResolved'] . ')';
         }
@@ -911,8 +911,8 @@ $CIDRAM['SimulateBlockEvent'] = function (string $Addr, bool $Modules = false, b
         }
     }
 
-    /** Module checks. */
-    if ($Modules && !empty($CIDRAM['Config']['signatures']['modules']) && empty($CIDRAM['Whitelisted'])) {
+    /** Execute modules, if any have been enabled. */
+    if ($Modules && $CIDRAM['Config']['signatures']['modules'] && empty($CIDRAM['Whitelisted'])) {
         $CIDRAM['InitialiseErrorHandler']();
 
         /** Explode module list and cycle through all modules. */
@@ -930,13 +930,17 @@ $CIDRAM['SimulateBlockEvent'] = function (string $Addr, bool $Modules = false, b
     }
 
     /** Execute search engine verification. */
-    $CIDRAM['SearchEngineVerification']();
+    if (empty($CIDRAM['Whitelisted'])) {
+        $CIDRAM['SearchEngineVerification']();
+    }
 
     /** Execute social media verification. */
-    $CIDRAM['SocialMediaVerification']();
+    if (empty($CIDRAM['Whitelisted'])) {
+        $CIDRAM['SocialMediaVerification']();
+    }
 
-    /** Auxiliary rule checks. */
-    if ($Aux) {
+    /** Process auxiliary rules, if any exist. */
+    if ($Aux && empty($CIDRAM['Whitelisted'])) {
         $CIDRAM['InitialiseErrorHandler']();
         $CIDRAM['Aux']();
         $CIDRAM['AuxErrors'] = $CIDRAM['Errors'];
@@ -3219,7 +3223,9 @@ $CIDRAM['RGB'] = function (string $String = '', int $Mode = 0) {
     if ($Mode === 1) {
         return $Diff;
     }
-    $Hash = str_pad(bin2hex(chr($Diff[0]) . chr($Diff[1]) . chr($Diff[2])), 6, '0', STR_PAD_LEFT);
+    for ($Hash = '', $Index = 0; $Index < 3; $Index++) {
+        $Hash .= str_pad(bin2hex(chr($Diff[$Index])), 2, '0', STR_PAD_LEFT);
+    }
     if ($Mode === 2) {
         return $Hash;
     }

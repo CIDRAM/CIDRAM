@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2019.07.10).
+ * This file: Functions file (last modified: 2019.07.15).
  */
 
 /** Autoloader for CIDRAM classes. */
@@ -1296,22 +1296,52 @@ $CIDRAM['AddField'] = function (string $FieldName, string $FieldData, bool $Sani
 };
 
 /**
- * Resolves 6to4 addresses to their IPv4 counterparts.
+ * Resolves 6to4, Teredo, ISATAP addresses and etc to their IPv4 counterparts.
  *
  * @param string $In An IPv6 address.
  * @return string An IPv4 address.
  */
-$CIDRAM['Resolve6to4'] = function (string $In): string {
-    $Parts = explode(':', substr($In, 5), 8);
-    if (count($Parts) < 2 || preg_match('~[^\da-f]~i', $Parts[0]) || preg_match('~[^\da-f]~i', $Parts[1])) {
-        return '';
+$CIDRAM['Resolve6to4'] = function ($In) {
+    if (!preg_match('~^(?:200[12]|fe80)\:~i', $In)) {
+        return false;
     }
-    $Parts[0] = hexdec($Parts[0]) ?: 0;
-    $Parts[1] = hexdec($Parts[1]) ?: 0;
-    $Octets = [0 => floor($Parts[0] / 256), 1 => 0, 2 => floor($Parts[1] / 256), 3 => 0];
-    $Octets[1] = $Parts[0] - ($Octets[0] * 256);
-    $Octets[3] = $Parts[1] - ($Octets[2] * 256);
-    return implode('.', $Octets);
+    $Parts = explode(':', $In, 8);
+
+    /** 6to4. */
+    if ($Parts[0] === '2002') {
+        if (empty($Parts[1]) || empty($Parts[2]) || preg_match('~[^\da-f]~i', $Parts[1]) || preg_match('~[^\da-f]~i', $Parts[2])) {
+            return false;
+        }
+        $Parts[1] = hexdec($Parts[1]) ?: 0;
+        $Parts[2] = hexdec($Parts[2]) ?: 0;
+        $Octets = [0 => floor($Parts[1] / 256), 1 => $Parts[1] % 256, 2 => floor($Parts[2] / 256), 3 => $Parts[2] % 256];
+        return implode('.', $Octets);
+    }
+
+    /** Teredo. */
+    if ($Parts[0] === '2001' && empty($Parts[1])) {
+        $Parts = array_reverse($Parts);
+        $Bits = ($Parts[1] ?: '') . str_pad(($Parts[0] ?: ''), 4, '0', STR_PAD_LEFT);
+        if (preg_match('~[^\da-f]~i', $Bits)) {
+            return false;
+        }
+        $Bits = hexdec($Bits) ^ 0xffffffff;
+        $Octets = [0 => 0, 1 => 0, 2 => 0, 3 => $Bits % 256];
+        $Octets[2] = ($Bits = floor($Bits / 256)) % 256;
+        $Octets[1] = ($Bits = floor($Bits / 256)) % 256;
+        $Octets[0] = floor($Bits / 256);
+        return implode('.', $Octets);
+    }
+
+    /** ISATAP. */
+    if (preg_match('~^fe80\:\:(?:0200\:)?5efe\:([\da-f]{1,4})\:([\da-f]{1,4})$~i', $In, $Parts)) {
+        $Parts[1] = hexdec($Parts[1]) ?: 0;
+        $Parts[2] = hexdec($Parts[2]) ?: 0;
+        $Octets = [0 => floor($Parts[1] / 256), 1 => $Parts[1] % 256, 2 => floor($Parts[2] / 256), 3 => $Parts[2] % 256];
+        return implode('.', $Octets);
+    }
+
+    return false;
 };
 
 /** Initialise cache. */

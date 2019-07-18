@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2019.07.15).
+ * This file: Functions file (last modified: 2019.07.18).
  */
 
 /**
@@ -632,7 +632,7 @@ $CIDRAM['TimeFormat'] = function ($Time, $In) use (&$CIDRAM) {
  * @param string $Type The type (or pseudo-type) to cast the variable to.
  */
 $CIDRAM['AutoType'] = function (&$Var, $Type = '') use (&$CIDRAM) {
-    if (in_array($Type, ['string', 'timezone', 'checkbox'], true)) {
+    if (in_array($Type, ['string', 'timezone', 'checkbox', 'url', 'email'], true)) {
         $Var = (string)$Var;
     } elseif ($Type === 'int') {
         $Var = (int)$Var;

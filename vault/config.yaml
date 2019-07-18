@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Configuration defaults file (last modified: 2019.07.11).
+# This file: Configuration defaults file (last modified: 2019.07.18).
 ##/
 
 Config Defaults:
@@ -141,8 +141,9 @@ Config Defaults:
     451: "451 Unavailable For Legal Reasons"
     503: "503 Service Unavailable"
   silent_mode:
-   type: "string"
+   type: "url"
    default: ""
+   autocomplete: "url"
   lang:
    type: "string"
    default: "en"
@@ -375,8 +376,9 @@ Config Defaults:
    type: "bool"
    default: false
   privacy_policy:
-   type: "string"
+   type: "url"
    default: ""
+   autocomplete: "url"
  template_data:
   theme:
    type: "string"
@@ -398,8 +400,9 @@ Config Defaults:
    step: "any"
    default: 1
   css_url:
-   type: "string"
+   type: "url"
    default: ""
+   autocomplete: "url"
  PHPMailer:
   event_log:
    type: "string"
@@ -429,21 +432,27 @@ Config Defaults:
   username:
    type: "string"
    default: ""
+   autocomplete: "username"
   password:
    type: "string"
    default: ""
+   autocomplete: "current-password"
   set_from_address:
-   type: "string"
+   type: "email"
    default: ""
+   autocomplete: "email"
   set_from_name:
    type: "string"
    default: ""
+   autocomplete: "name"
   add_reply_to_address:
-   type: "string"
+   type: "email"
    default: ""
+   autocomplete: "email"
   add_reply_to_name:
    type: "string"
    default: ""
+   autocomplete: "name"
  rate_limiting:
   max_bandwidth:
    type: "kb"
@@ -509,8 +518,10 @@ Config Defaults:
    type: "string"
    default: ""
    experimental: true
+   autocomplete: "username"
   pdo_password:
    type: "string"
    default: ""
    experimental: true
+   autocomplete: "current-password"
 

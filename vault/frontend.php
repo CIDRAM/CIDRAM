@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2019.07.15).
+ * This file: Front-end handler (last modified: 2019.07.18).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -1107,7 +1107,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
             $CIDRAM['CatKey']
         );
         foreach ($CIDRAM['CatValue'] as $CIDRAM['DirKey'] => $CIDRAM['DirValue']) {
-            $CIDRAM['ThisDir'] = ['FieldOut' => '', 'CatKey' => $CIDRAM['CatKey']];
+            $CIDRAM['ThisDir'] = ['Preview' => '', 'Trigger' => '', 'FieldOut' => '', 'CatKey' => $CIDRAM['CatKey']];
             if (empty($CIDRAM['DirValue']['type']) || !isset($CIDRAM['Config'][$CIDRAM['CatKey']][$CIDRAM['DirKey']])) {
                 continue;
             }
@@ -1122,9 +1122,13 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
             if (!empty($CIDRAM['DirValue']['experimental'])) {
                 $CIDRAM['ThisDir']['DirLang'] = '<code class="exp">' . $CIDRAM['L10N']->getString('config_experimental') . '</code> ' . $CIDRAM['ThisDir']['DirLang'];
             }
+            $CIDRAM['ThisDir']['autocomplete'] = empty($CIDRAM['DirValue']['autocomplete']) ? '' : sprintf(
+                ' autocomplete="%s"',
+                $CIDRAM['DirValue']['autocomplete']
+            );
             $CIDRAM['RegenerateConfig'] .= '; ' . wordwrap(strip_tags($CIDRAM['ThisDir']['DirLang']), 77, "\r\n; ") . "\r\n";
             if (isset($_POST[$CIDRAM['ThisDir']['DirLangKey']])) {
-                if (in_array($CIDRAM['DirValue']['type'], ['bool', 'float', 'int', 'kb', 'string', 'timezone'], true)) {
+                if (in_array($CIDRAM['DirValue']['type'], ['bool', 'float', 'int', 'kb', 'string', 'timezone', 'email', 'url'], true)) {
                     $CIDRAM['AutoType']($_POST[$CIDRAM['ThisDir']['DirLangKey']], $CIDRAM['DirValue']['type']);
                 }
                 if (!preg_match('/[^\x20-\xff"\']/', $_POST[$CIDRAM['ThisDir']['DirLangKey']]) && (
@@ -1273,8 +1277,6 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
                         $CIDRAM['ThisDir']['DirLangKeyOther']
                     );
                 }
-            } else {
-                $CIDRAM['ThisDir']['Preview'] = $CIDRAM['ThisDir']['Trigger'] = '';
             }
             if ($CIDRAM['DirValue']['type'] === 'timezone') {
                 $CIDRAM['DirValue']['choices'] = ['SYSTEM' => $CIDRAM['L10N']->getString('field_system_timezone')];
@@ -1343,16 +1345,31 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
                 );
             } elseif (in_array($CIDRAM['DirValue']['type'], ['float', 'int'], true)) {
                 $CIDRAM['ThisDir']['FieldOut'] = sprintf(
-                    '<input type="number" name="%1$s" id="%1$s_field" value="%2$s"%3$s%4$s />',
+                    '<input type="number" name="%1$s" id="%1$s_field" value="%2$s"%3$s%4$s%5$s />',
                     $CIDRAM['ThisDir']['DirLangKey'],
                     $CIDRAM['Config'][$CIDRAM['CatKey']][$CIDRAM['DirKey']],
                     (isset($CIDRAM['DirValue']['step']) ? ' step="' . $CIDRAM['DirValue']['step'] . '"' : ''),
+                    $CIDRAM['ThisDir']['Trigger'],
+                    ($CIDRAM['DirValue']['type'] === 'int' ? ' inputmode="numeric"' : '')
+                );
+            } elseif ($CIDRAM['DirValue']['type'] === 'url' || (
+                empty($CIDRAM['DirValue']['autocomplete']) && $CIDRAM['DirValue']['type'] === 'string'
+            )) {
+                $CIDRAM['ThisDir']['FieldOut'] = sprintf(
+                    '<textarea name="%1$s" id="%1$s_field" class="half"%2$s%3$s>%4$s</textarea>',
+                    $CIDRAM['ThisDir']['DirLangKey'],
+                    $CIDRAM['ThisDir']['autocomplete'],
+                    $CIDRAM['ThisDir']['Trigger'],
+                    $CIDRAM['Config'][$CIDRAM['CatKey']][$CIDRAM['DirKey']]
+                );
+            } else {
+                $CIDRAM['ThisDir']['FieldOut'] = sprintf(
+                    '<input type="text" name="%1$s" id="%1$s_field" value="%2$s"%3$s%4$s />',
+                    $CIDRAM['ThisDir']['DirLangKey'],
+                    $CIDRAM['Config'][$CIDRAM['CatKey']][$CIDRAM['DirKey']],
+                    $CIDRAM['ThisDir']['autocomplete'],
                     $CIDRAM['ThisDir']['Trigger']
                 );
-            } elseif ($CIDRAM['DirValue']['type'] === 'string') {
-                $CIDRAM['ThisDir']['FieldOut'] = '<textarea name="' . $CIDRAM['ThisDir']['DirLangKey'] . '" id="' . $CIDRAM['ThisDir']['DirLangKey'] . '_field" class="half"' . $CIDRAM['ThisDir']['Trigger'] . '>' . $CIDRAM['Config'][$CIDRAM['CatKey']][$CIDRAM['DirKey']] . '</textarea>';
-            } else {
-                $CIDRAM['ThisDir']['FieldOut'] = '<input type="text" name="' . $CIDRAM['ThisDir']['DirLangKey'] . '" id="' . $CIDRAM['ThisDir']['DirLangKey'] . '_field" value="' . $CIDRAM['Config'][$CIDRAM['CatKey']][$CIDRAM['DirKey']] . '"' . $CIDRAM['ThisDir']['Trigger'] . ' />';
             }
             $CIDRAM['ThisDir']['FieldOut'] .= $CIDRAM['ThisDir']['Preview'];
             $CIDRAM['FE']['ConfigFields'] .= $CIDRAM['ParseVars'](

@@ -58,17 +58,14 @@
         </tr>
         <tr>
           <td class="h3f" colspan="2">
-            <input type="button" onclick="javascript:addCondition()" value="{field_add_more_conditions}" class="auto" />
-            <input onclick="javascript:createNewRule()" type="button" value="{label_aux_create_new_rule}" class="auto" />
-            <hr />
             <div id="conditions">
               <select name="conSourceType[]" class="auto">{conSources}</select>
               <select name="conIfOrNot[]" class="auto"><option value="If">=</option><option value="Not">≠</option></select>
               <input type="text" name="conSourceValue[]" placeholder="{tip_condition_placeholder}" style="width:400px" />
             </div>
             <hr />
-            <input type="button" onclick="javascript:addCondition()" value="{field_add_more_conditions}" class="auto" />
-            <input onclick="javascript:createNewRule()" type="button" value="{label_aux_create_new_rule}" class="auto" />
+            <input type="button" onclick="javascript:addCondition()" value="{field_add_more_conditions}" class="auto" accesskey="1" />
+            <input onclick="javascript:createNewRule()" type="button" value="{label_aux_create_new_rule}" class="auto" accesskey="2" />
           </td>
         </tr>
       </table>

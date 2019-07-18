@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6.dat
 
-# Version: 2019.193.626
-# Last modified: 2019.07.13
+# Version: 2019.198.378
+# Last modified: 2019.07.18
 
 
 # ---
@@ -21,9 +21,9 @@ Tag: Sharktech
 
 
 # ASN 35916 ("MULTACOM CORPORATION").
-# %Listed, Google Malware Dashboard: 1.40%.
-# Stop Forum Spam (SFS) listings: 1,372.
-# Updated: 2019.03.13
+# %Listed, Google Malware Dashboard: 1.49%.
+# Stop Forum Spam (SFS) listings: 1,344.
+# Updated: 2019.03.13 / Checked: 2019.07.18
 
 2a09:dc04::/30 Deny Cloud
 Origin: NL
@@ -234,9 +234,9 @@ Tag: 1&1 Internet SE
 
 # ASNs 16276, 35540 ("OVH Systems").
 # Caught attempting to hack honeypots.
-# %Listed, Google Malware Dashboard: 0.29% (AS16276).
-# Stop Forum Spam (SFS) listings: 353,811 (AS16276), 7 (AS35540).
-# Updated: 2017.05.06 / Checked: 2019.03.12
+# %Listed, Google Malware Dashboard: 0.22% (AS16276).
+# Stop Forum Spam (SFS) listings: 252,644 (AS16276), 10 (AS35540).
+# Updated: 2017.05.06 / Checked: 2019.07.18
 
 2607:5300::/32 Deny Cloud
 Origin: CA
@@ -896,6 +896,7 @@ Tag: Bytemark Limited
 # ASNs 14061, 39690, 46652 ("DigitalOcean, LLC", "Digital Ocean SRL", "ServerStack, Inc").
 # Ranges change frequently / Should update often.
 # Remove unassigned prior to aggregating (e.g., 10.0.0.0/8).
+# Mirai detected on this network.
 # %Listed, Google Malware Dashboard: 0.22% (AS14061).
 # Stop Forum Spam (SFS) listings: 63,578 (AS14061).
 # Updated: 2019.03.30 / Checked: 2019.06.03
@@ -3673,20 +3674,6 @@ Origin: DE
 Tag: EVANZO GmbH
 
 
-# ASN 21321 ("Areti Internet Ltd").
-# Stop Forum Spam (SFS) listings: 70.
-# Updated: 2018.09.09 / Checked: 2019.03.12
-
-2a01:b840::/32 Deny Cloud
-2a07:1240::/29 Deny Cloud
-Origin: GB
-2a03:4a80:1::/48 Deny Cloud
-Origin: NL
-2606:f180:5::/48 Deny Cloud
-Origin: US
-Tag: Areti Internet Ltd
-
-
 # ASN 38478 ("SunnyVision Limited").
 # %Listed, Google Malware Dashboard: 1.46%.
 # Stop Forum Spam (SFS) listings: 136.
@@ -3874,8 +3861,8 @@ Tag: Transip B.V
 
 
 # ASN 207083 ("HostSlim BV").
-# Stop Forum Spam (SFS) listings: 12.
-# Updated: 2019.03.13
+# Stop Forum Spam (SFS) listings: 546.
+# Updated: 2019.03.13 / Checked: 2019.07.18
 
 2a06:a006:f3::/48 Deny Cloud
 Origin: IS
@@ -6209,11 +6196,11 @@ Tag: HostHatch LLC
 
 
 # ASN 35913 ("DediPath").
-# Dedicated hosting. Some listings on various DBs.
-# May contain some proxies (suspected due to announces). Should mark accordingly.
-# %Listed, Google Malware Dashboard: 0.06%.
-# Stop Forum Spam (SFS) listings: 708.
-# Updated: 2019.03.13
+# Dedicated hosting. Some listings on various DBs. Some announces suggest
+# possible proxies (should mark accordingly).
+# %Listed, Google Malware Dashboard: 0.10%.
+# Stop Forum Spam (SFS) listings: 1,460.
+# Updated: 2019.03.13 / Checked: 2019.07.18
 
 2402:d0c0:2::/47 Deny Cloud
 Origin: SG
@@ -6589,3 +6576,16 @@ Tag: Oracle Corporation
 2a0d:2680::/29 Deny Cloud
 Origin: NL
 Tag: KV Solutions B.V
+
+
+# ASN 202448 ("MVPS LTD").
+# Mirai detected on this network.
+# Stop Forum Spam (SFS) listings: 3.
+# Updated: 2019.07.16
+
+2a05:8280::/32 Deny Cloud
+2a0c:b9c0::/32 Deny Cloud
+Origin: DE
+2a09:cd40::/32 Deny Cloud
+Origin: NL
+Tag: MVPS LTD

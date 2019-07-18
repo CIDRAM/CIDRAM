@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_isps.dat
 
-# Version: 2019.189.562
-# Last modified: 2019.07.09
+# Version: 2019.198.378
+# Last modified: 2019.07.18
 
 
 # ---
@@ -398,6 +398,7 @@ Tag: Init7
 
 
 # ASNs 3491, 4760, 6279, 7262 ("PCCW Global" / "Beyond The Network America, Inc").
+# Mirai detected on this network.
 # Updated: 2019.06.01
 
 2a03:5400::/32 Deny Spam
@@ -524,13 +525,20 @@ recaptcha:
 
 
 # ASN 45271 ("Idea Cellular Limited").
-# %Listed, abuseat.org (CBL-Listed): 39.49%.
-# Stop Forum Spam (SFS) listings: 234.
-# Updated: 2019.03.13
+# Indian mobile phone and data provider with human endpoints. Listed due to
+# high spam incidence. Websites targeting an Indian audience should keep it
+# listed in their ignore.dat file. Marked for use with reCAPTCHA.
+# %Listed, abuseat.org (CBL-Listed): 38.11%.
+# Stop Forum Spam (SFS) listings: 229.
+# Updated: 2019.07.18
 
 2402:8100:b::/48 Deny Spam
 2402:8100:2000::/41 Deny Spam
 2402:8100:2080::/42 Deny Spam
+2402:8100:20d1::/48 Deny Spam
+2402:8100:20d2::/48 Deny Spam
+2402:8100:2180::/48 Deny Spam
+2402:8100:2280::/43 Deny Spam
 2402:8100:2800::/41 Deny Spam
 2402:8100:3000::/43 Deny Spam
 2402:8100:3020::/44 Deny Spam
@@ -551,16 +559,27 @@ recaptcha:
 2402:8100:38c0::/42 Deny Spam
 2402:8100:3900::/43 Deny Spam
 2402:8100:3920::/45 Deny Spam
+2402:8100:3928::/48 Deny Spam
 2402:8100:3940::/42 Deny Spam
 2402:8100:3980::/44 Deny Spam
-2402:8100:3990::/47 Deny Spam
-2402:8100:3992::/48 Deny Spam
-2402:8100:3994::/46 Deny Spam
+2402:8100:3990::/45 Deny Spam
 2402:8100:3998::/46 Deny Spam
 2402:8100:399c::/47 Deny Spam
 2402:8100:399e::/48 Deny Spam
-2402:8100:39c0::/42 Deny Spam
+2402:8100:39a0::/44 Deny Spam
+2402:8100:39c0::/45 Deny Spam
+2402:8100:39c8::/46 Deny Spam
+2402:8100:39cc::/48 Deny Spam
+2402:8100:39d0::/44 Deny Spam
+2402:8100:39e0::/45 Deny Spam
+2402:8100:39e8::/46 Deny Spam
+2402:8100:39ec::/48 Deny Spam
+2402:8100:39f0::/44 Deny Spam
 2402:8100:3a00::/42 Deny Spam
+2402:8100:3a40::/45 Deny Spam
+2402:8100:3a48::/46 Deny Spam
+2402:8100:3a4c::/47 Deny Spam
+2402:8100:3a4e::/48 Deny Spam
 Origin: IN
 Tag: Idea Cellular
 ---
@@ -674,21 +693,23 @@ recaptcha:
 
 
 # ASN 9829 ("BSNL (Bharat Sanchar Nigam Ltd)").
-# Kind of a big AS, and does also carry legitimate human traffic, but the infection rate listed at CBL is excessively
-# high at the moment, with over a million bad listings currently and far surpassing that of any other AS.
-# I think it would be unwise to not block this AS. However, I'm marking it for use with reCAPTCHA, and those CIDRAM
-# users that don't want to block it can drop this section's tag into the ignore list as a means of ignoring this
-# listing if they want to do so. May remove this section in the future if the AS cleans up their act.
-# %Listed, Google Malware Dashboard: 0.12%.
-# %Listed, abuseat.org (CBL-Listed): 11.76%.
-# Stop Forum Spam (SFS) listings: 7,261.
-# Updated: 2019.03.13
+# A large network with significant human endpoints, but the infection rate
+# listed at CBL is very high, there are numerous spam events, etc. Marked for
+# use with reCAPTCHA to reduce the false positive risk. Websites intended for
+# an Indian audience should keep it listed in their ignore.dat file. Possibly
+# may remove this section in the future if the network ever cleans up its act.
+# %Listed, Google Malware Dashboard: 0.23%.
+# %Listed, abuseat.org (CBL-Listed): 10.42%.
+# Stop Forum Spam (SFS) listings: 7,430.
+# Updated: 2019.07.18
 
 2001:4490::/43 Deny Spam
 2001:4490:3fc::/46 Deny Spam
 2001:4490:400::/43 Deny Spam
 2001:4490:7f8::/45 Deny Spam
-2001:4490:808::/46 Deny Spam
+2001:4490:800::/45 Deny Spam
+2001:4490:80c::/46 Deny Spam
+2001:4490:810::/44 Deny Spam
 2001:4490:bfc::/46 Deny Spam
 2001:4490:c00::/43 Deny Spam
 2001:4490:ffc::/46 Deny Spam
@@ -748,6 +769,7 @@ recaptcha:
 2001:4490:d970::/46 Deny Spam
 2001:4490:d980::/46 Deny Spam
 2001:4490:d9a0::/46 Deny Spam
+2001:4490:da00::/46 Deny Spam
 2001:4490:da30::/46 Deny Spam
 2001:4490:da70::/46 Deny Spam
 2001:4490:dad0::/46 Deny Spam
@@ -767,7 +789,6 @@ recaptcha:
 2001:4490:f020::/46 Deny Spam
 2001:4490:fffc::/46 Deny Spam
 Origin: IN
-2600:140f:1000::/64 Deny Spam
 2600:1417:50::/47 Deny Spam
 2600:1417:71::/48 Deny Spam
 Origin: US
@@ -778,15 +799,12 @@ recaptcha:
 
 
 # ASN 4134 ("China Telecom Backbone").
-# Interlaces with numerous providers and contains a large portion of Chinese human access endpoints; Would rather not
-# be including this section here due to the high risk of false positives, but the massive influx/uptick of undesirable
-# events (spamming, hacking, attempted brute-forcing, probing, etc) seen originating from across a wide range of CIDRs
-# tied this ASN, plus the presence of this ASN in numerous worst offenders lists and blacklists, are not considerations
-# that can be easily ignored at this point in time. The section is marked for use with reCAPTCHA due to the risk of
-# false positives, and I would encourage any CIDRAM users expecting to receive any traffic from China, to list this
-# section in their "ignore.dat" file as a means of minimising the potential impact of false positives. A balanced
-# approach for those that may expect some such traffic, but not a lot of it, would be to not ignore this section, but
-# to ensure that the reCAPTCHA feature is enabled in their configuration.
+# Interlaces with numerous providers and contains a large portion of Chinese
+# human access endpoints. Can't easily ignore the unwanted traffic coming from
+# this ASN (spam events, hack attempts, brute-force attempts, probing, etc),
+# nor its listing at a number of BLs. Marked for use with reCAPTCHA to reduce
+# the false positive risk. Websites intended for a Chinese audience should keep
+# this section listed in their ignore.dat file.
 # %Listed, Google Malware Dashboard: 0.98%.
 # %Listed, abuseat.org (CBL-Listed): 0.82%.
 # Stop Forum Spam (SFS) listings: 41,065.
@@ -833,19 +851,18 @@ recaptcha:
 
 
 # ASN 4812 ("China Telecom (Group)").
-# Interlaces with numerous providers and contains a large portion of Chinese human access endpoints; Would rather not
-# be including this section here due to the high risk of false positives, but the massive influx/uptick of undesirable
-# events (spamming, hacking, attempted brute-forcing, probing, etc) seen originating from across a wide range of CIDRs
-# tied this ASN, plus the presence of this ASN in numerous worst offenders lists and blacklists, are not considerations
-# that can be easily ignored at this point in time. The section is marked for use with reCAPTCHA due to the risk of
-# false positives, and I would encourage any Chinese CIDRAM users, and any CIDRAM users expecting to receive any
-# traffic from China, to list this section in their ignore file as a means of minimising the potential impact of false
-# positives.
-# %Listed, Google Malware Dashboard: 0.46%.
-# %Listed, abuseat.org (CBL-Listed): 0.18%.
-# Stop Forum Spam (SFS) listings: 1,744.
-# Updated: 2019.03.13
+# Interlaces with numerous providers and contains a large portion of Chinese
+# human access endpoints. Can't easily ignore the unwanted traffic coming from
+# this ASN (spam events, hack attempts, brute-force attempts, probing, etc),
+# nor its listing at a number of BLs. Marked for use with reCAPTCHA to reduce
+# the false positive risk. Websites intended for a Chinese audience should keep
+# this section listed in their ignore.dat file.
+# %Listed, Google Malware Dashboard: 0.61%.
+# %Listed, abuseat.org (CBL-Listed): 0.11%.
+# Stop Forum Spam (SFS) listings: 1,615.
+# Updated: 2019.07.18
 
+2401:3480:2000::/48 Deny Generic
 240e:18::/31 Deny Generic
 240e:2e::/33 Deny Generic
 240e:58::/32 Deny Generic
@@ -856,13 +873,23 @@ recaptcha:
 240e:e3:8000::/33 Deny Generic
 240e:e5:8000::/33 Deny Generic
 240e:e6::/32 Deny Generic
+240e:106:c000::/34 Deny Generic
 240e:108:21::/48 Deny Generic
 240e:108:41::/48 Deny Generic
 240e:108:4a::/48 Deny Generic
 240e:108:83::/48 Deny Generic
 240e:109:8021::/48 Deny Generic
+240e:146:c000::/34 Deny Generic
+240e:186:c000::/34 Deny Generic
+240e:1c6:c000::/34 Deny Generic
+240e:26c::/30 Deny Generic
+240e:388::/29 Deny Generic
+240e:46c::/30 Deny Generic
+240e:56c::/30 Deny Generic
+240e:688::/29 Deny Generic
 240e:698:2100::/40 Deny Generic
-240e:96c::/32 Deny Generic
+240e:788::/29 Deny Generic
+240e:96c::/30 Deny Generic
 240e:980:2100::/40 Deny Generic
 240e:980:4100::/40 Deny Generic
 240e:980:4a00::/40 Deny Generic
@@ -875,18 +902,16 @@ recaptcha:
 
 
 # ASN 4837 ("China Unicom Backbone").
-# Interlaces with numerous providers and contains a large portion of Chinese human access endpoints; Would rather not
-# be including this section here due to the high risk of false positives, but the massive influx/uptick of undesirable
-# events (spamming, hacking, attempted brute-forcing, probing, etc) seen originating from across a wide range of CIDRs
-# tied this ASN, plus the presence of this ASN in numerous worst offenders lists and blacklists, are not considerations
-# that can be easily ignored at this point in time. The section is marked for use with reCAPTCHA due to the risk of
-# false positives, and I would encourage any CIDRAM users expecting to receive any traffic from China, to list this
-# section in their "ignore.dat" file as a means of minimising the potential impact of false positives. A balanced
-# approach for those that may expect some such traffic, but not a lot of it, would be to not ignore this section, but
-# to ensure that the reCAPTCHA feature is enabled in their configuration.
-# %Listed, Google Malware Dashboard: 0.75%.
-# Stop Forum Spam (SFS) listings: 76,572.
-# Updated: 2019.03.13
+# Interlaces with numerous providers and contains a large portion of Chinese
+# human access endpoints. Can't easily ignore the unwanted traffic coming from
+# this ASN (spam events, hack attempts, brute-force attempts, probing, etc),
+# nor its listing at a number of BLs. Marked for use with reCAPTCHA to reduce
+# the false positive risk. Websites intended for a Chinese audience should keep
+# this section listed in their ignore.dat file.
+# %Listed, Google Malware Dashboard: 0.70%.
+# %Listed, abuseat.org (CBL-Listed): 0.51%.
+# Stop Forum Spam (SFS) listings: 83,517.
+# Updated: 2019.07.18
 
 2408:8000::/48 Deny Generic
 2408:8000:2::/47 Deny Generic
@@ -952,10 +977,10 @@ recaptcha:
 2408:834e::/31 Deny Generic
 2408:8350::/30 Deny Generic
 2408:8354::/31 Deny Generic
-2408:8362::/31 Deny Generic
+2408:8360::/30 Deny Generic
 2408:8364::/31 Deny Generic
 2408:836e::/31 Deny Generic
-2408:8374::/31 Deny Generic
+2408:8374::/30 Deny Generic
 2408:8378::/31 Deny Generic
 2408:837a::/32 Deny Generic
 2408:8410::/30 Deny Generic
@@ -989,6 +1014,7 @@ recaptcha:
 2408:8642::/32 Deny Generic
 2408:8644::/30 Deny Generic
 2408:8648::/30 Deny Generic
+2408:864c::/32 Deny Generic
 2408:864e::/31 Deny Generic
 2408:8650::/31 Deny Generic
 2408:8652::/32 Deny Generic
@@ -1015,7 +1041,6 @@ recaptcha:
 2408:8734::/31 Deny Generic
 2408:8736::/32 Deny Generic
 2408:8738::/32 Deny Generic
-2408:873b::/32 Deny Generic
 2408:873c::/31 Deny Generic
 2408:8740::/32 Deny Generic
 2408:8742::/32 Deny Generic
@@ -1029,10 +1054,12 @@ recaptcha:
 2408:8762::/31 Deny Generic
 2408:8764::/31 Deny Generic
 2408:8766::/32 Deny Generic
+2408:8768::/32 Deny Generic
 2408:876a::/32 Deny Generic
 2408:876c::/32 Deny Generic
 2408:876e::/31 Deny Generic
 2408:8770::/32 Deny Generic
+2408:8773::/32 Deny Generic
 2408:8774::/32 Deny Generic
 2408:8776::/32 Deny Generic
 2408:8778::/32 Deny Generic
@@ -1309,11 +1336,13 @@ recaptcha:
 
 
 # ASN 9808 ("Guangdong Mobile Communication Co.Ltd").
-# Numerous significant spam events caught originating from this network. IPs belong to mobile carriers in China, and
-# could cause false positives for websites with Chinese users. Should ignore this section in such cases.
-# %Listed, Google Malware Dashboard: 0.33%.
-# Stop Forum Spam (SFS) listings: 2,856.
-# Updated: 2018.09.10 / Checked: 2019.03.13
+# Chinese mobile phone and data carrier. Listed here because of numerous spam
+# events being detected. Websites intended for a Chinese audience should keep
+# it listed in their ignore.dat file. (Omit invalids when updating).
+# %Listed, Google Malware Dashboard: 0.28%.
+# %Listed, abuseat.org (CBL-Listed): 0.02%.
+# Stop Forum Spam (SFS) listings: 2,237.
+# Updated: 2018.09.10 / Checked: 2019.07.18
 
 2409:8000::/20 Deny Spam
 Origin: CN
@@ -1324,8 +1353,9 @@ recaptcha:
 
 
 # ASN 9387 ("AUGERE-Pakistan").
-# Stop Forum Spam (SFS) listings: 71.
-# Updated: 2017.03.22 / Checked: 2019.03.13
+# Listed due to spam incidence. (Omit invalids when updating).
+# Stop Forum Spam (SFS) listings: 46.
+# Updated: 2017.03.22 / Checked: 2019.07.18
 
 2401:4100::/32 Deny Spam
 Origin: PK
@@ -1355,10 +1385,10 @@ recaptcha:
 # just include an entry in ours ignores file to ignore by default, until commented out or removed.
 
 # ASN 12389 ("PJSC Rostelecom").
-# %Listed, Google Malware Dashboard: 0.25%.
-# %Listed, abuseat.org (CBL-Listed): 0.69%.
-# Stop Forum Spam (SFS) listings: 391,832.
-# Updated: 2019.03.17
+# %Listed, Google Malware Dashboard: 0.18%.
+# %Listed, abuseat.org (CBL-Listed): 0.54.
+# Stop Forum Spam (SFS) listings: 336,612.
+# Updated: 2019.03.17 / Checked: 2019.07.16
 
 2a00:1640::/32 Deny Spam
 2a00:1e88::/32 Deny Spam
@@ -1458,18 +1488,22 @@ recaptcha:
  enabled: true
 
 
-# ASNs 12768, 34533, 41661, 41668, 41727, 41754, 42145, 42682, 50542, 51570 ('JSC "ER-Telecom Holding"').
-# ER-Telecom is a legit, major domestic ISP in Russia, but also a significant source of spam. By not ignoring this
-# signature section, there'll likely be false positives for any websites intended to serve Russian users. To minimise
-# this risk, but also maximise website protection against spam, we're marking the section for use with reCAPTCHA, and
-# making a point of including only those ASNs belonging to this network that have more than a thousand current, active
-# listings at SFS (meaning that ranges more prone to spamming are more likely to be listed than those that aren't
-# prone to spamming). ER-Telecom currently announces 77 ASNs. We're currently including 12 of those ASNs.
-# Updated: 2019.03.11
+# ASNs 12768, 25408, 34533, 41661, 41668, 41727, 41754, 42116, 42682, 50542,
+# 51570, 59713 ('JSC "ER-Telecom Holding"').
+# ER-Telecom is a legit, major domestic ISP in Russia, but also a significant
+# source of spam. Websites intended for a Russian audience should keep this
+# section listed in their ignore.dat file. Section also marked for use with
+# reCAPTCHA by default. ER-Telecom currently announces 87 ASNs, but we're
+# including only those that currently have more than a thousand active listings
+# at SFS (that's 12 ASNs at this time).
+# Updated: 2019.07.18
 
+2a00:1c78::/29 Deny Spam
 2a02:2698::/38 Deny Spam
 2a02:2698:1400::/38 Deny Spam
 2a02:2698:2800::/37 Deny Spam
+2a02:2698:3800::/38 Deny Spam
+2a02:2698:4400::/38 Deny Spam
 2a02:2698:4c00::/38 Deny Spam
 2a02:2698:5c00::/38 Deny Spam
 2a02:2698:6800::/37 Deny Spam
@@ -1482,7 +1516,7 @@ recaptcha:
 2a03:1ac0:503:c000::/51 Deny Spam
 2a03:1ac0:510:1800::/53 Deny Spam
 2a03:1ac0:510:4000::/51 Deny Spam
-2a03:1ac0:510:6000::/53 Deny Spam
+2a03:1ac0:510:6000::/52 Deny Spam
 2a03:1ac0:5a4:4000::/50 Deny Spam
 2a03:1ac0:5a4:8000::/49 Deny Spam
 2a03:1ac0:5a5:2000::/51 Deny Spam
@@ -1493,18 +1527,21 @@ recaptcha:
 2a03:1ac0:5a7:a000::/51 Deny Spam
 2a03:1ac0:2570::/52 Deny Spam
 2a03:1ac0:2570:1800::/53 Deny Spam
+2a03:1ac0:2570:7800::/53 Deny Spam
 2a03:1ac0:2570:8000::/52 Deny Spam
 2a03:1ac0:2571::/50 Deny Spam
 2a03:1ac0:2571:8000::/50 Deny Spam
 2a03:1ac0:2e00::/48 Deny Spam
 2a03:1ac0:2e92::/48 Deny Spam
 2a03:1ac0:2e93::/50 Deny Spam
+2a03:1ac0:2e93:4000::/51 Deny Spam
+2a03:1ac0:2e93:e000::/52 Deny Spam
 2a03:1ac0:2efc:7000::/52 Deny Spam
 2a03:1ac0:4f8d:3000::/52 Deny Spam
 2a03:1ac0:5571:2000::/51 Deny Spam
 2a03:1ac0:5b90:8400::/54 Deny Spam
 2a03:1ac0:5b90:8c00::/54 Deny Spam
-2a03:1ac0:5b90:9000::/53 Deny Spam
+2a03:1ac0:5b90:9000::/52 Deny Spam
 2a03:1ac0:5b90:ac00::/54 Deny Spam
 2a03:1ac0:5b90:b000::/54 Deny Spam
 2a03:1ac0:5b90:b800::/54 Deny Spam
@@ -1515,17 +1552,18 @@ recaptcha:
 2a03:1ac0:5cff:d800::/53 Deny Spam
 2a03:1ac0:5cff:e000::/52 Deny Spam
 2a03:1ac0:5cff:f400::/54 Deny Spam
+2a03:1ac0:5cff:f800::/53 Deny Spam
 2a03:1ac0:5eb4:8000::/49 Deny Spam
 2a03:1ac0:5eb5:2000::/52 Deny Spam
 2a03:1ac0:5eb5:8000::/49 Deny Spam
+2a03:1ac0:5f4e::/49 Deny Spam
 2a03:1ac0:5f4e:8000::/50 Deny Spam
 2a03:1ac0:5f4f::/48 Deny Spam
+2a03:1ac0:6dc2:3000::/52 Deny Spam
 2a03:1ac0:6dc2:8000::/52 Deny Spam
 2a03:1ac0:6dc2:9f00::/56 Deny Spam
 2a03:1ac0:6dc2:b000::/52 Deny Spam
-2a03:1ac0:6dc2:c000::/52 Deny Spam
-2a03:1ac0:6dc2:d800::/53 Deny Spam
-2a03:1ac0:6dc2:e000::/51 Deny Spam
+2a03:1ac0:6dc2:c000::/50 Deny Spam
 2a03:1ac0:6dc3:3000::/52 Deny Spam
 2a03:1ac0:6dc3:5000::/52 Deny Spam
 2a03:1ac0:b0d4::/52 Deny Spam
@@ -1533,15 +1571,24 @@ recaptcha:
 2a03:1ac0:b0d5::/51 Deny Spam
 2a03:1ac0:b0d5:6800::/53 Deny Spam
 2a03:1ac0:b0d6:3000::/53 Deny Spam
+2a03:1ac0:b0d6:8000::/51 Deny Spam
 2a03:1ac0:b0d6:b800::/53 Deny Spam
+2a03:1ac0:b0d7:2000::/52 Deny Spam
 2a03:1ac0:b2a1:c800::/54 Deny Spam
 2a03:1ac0:b2a1:d200::/56 Deny Spam
 2a03:1ac0:b2a1:d400::/54 Deny Spam
 2a03:1ac0:b2a1:fe00::/55 Deny Spam
 2a03:1ac0:bcba:3000::/53 Deny Spam
 2a03:1ac0:bcbb::/49 Deny Spam
+2a03:1ac0:bcbb:8800::/53 Deny Spam
+2a03:1ac0:bcbb:d800::/55 Deny Spam
+2a03:1ac0:bcbb:da00::/56 Deny Spam
 2a03:1ac0:bcbb:f600::/56 Deny Spam
+2a03:1ac0:bce8:4000::/52 Deny Spam
 2a03:1ac0:bcea::/50 Deny Spam
+2a03:1ac0:bcea:7400::/54 Deny Spam
+2a03:1ac0:bcea:a800::/53 Deny Spam
+2a03:1ac0:bcea:b000::/53 Deny Spam
 2a03:1ac0:bceb::/50 Deny Spam
 2a03:1ac0:c196:6900::/56 Deny Spam
 2a03:1ac0:d421:e000::/51 Deny Spam

@@ -8,10 +8,19 @@ class LogFileReaderTest extends \Codeception\Test\Unit
      * @var \UnitTester
      */
     protected $logFileReader;
+
+    public $CIDRAM = array();
     
     protected function _before()
     {
-        $this->logFileReader = new LogFileReader();
+        // lets mock the dependancies here
+        $this->CIDRAM['Vault'] = "";
+        $this->CIDRAM['Config']['logfile'] = 'sample_log.txt';
+        $this->CIDRAM['Config']['logfileApache'] = 'sample_apache_log.txt';
+        $this->CIDRAM['Config']['logfileSerialized'] = 'sample_serialized_log.txt';
+        
+        $this->logFileReader = new LogFileReader($this->CIDRAM);
+        print_r($this->CIDRAM);
     }
 
     protected function _after()
@@ -26,7 +35,7 @@ class LogFileReaderTest extends \Codeception\Test\Unit
     }
 
     public function testGivenNotExistingFileShouldReturnError() {
-        
-        // $this->assertEquals($this->logFileReader(LogFileReader::NORMAL_LOG), LogFileReader::FILE_NOT_EXISTS);
+
+        $this->assertEquals($this->logFileReader->readFile(LogFileReader::NORMAL_LOG), LogFileReader::FILE_NOT_EXISTS);
     }
 }

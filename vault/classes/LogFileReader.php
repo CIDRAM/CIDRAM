@@ -23,13 +23,54 @@ class LogFileReader {
 
 	const FILE_NOT_EXISTS = "FILE_NOT_EXISTS";
 
+	private $CIDRAM;
+
+	public function __construct(array &$CIDRAM) {
+		$this->CIDRAM = $CIDRAM;
+	}
+
+	private function getLogFileNameByCategory($category) {
+		
+		switch ($category) {		
+			case LogFileReader::NORMAL_LOG:
+				return $this->CIDRAM['Config']['logfile'];
+				break;
+			case LogFileReader::LOG_APACHE:
+				return $this->CIDRAM['Config']['logfileApache'];
+				break;
+			case LogFileReader::LOG_SERIALIZED:
+				return $this->CIDRAM['Config']['logfileSerialized'];
+				break;
+			default:
+				break;
+		}
+	}
+
+	private function getLogFileDirectory() {
+		return $this->CIDRAM['Vault'];
+	}
+
+	private function getLogFileDirectoryLocation($category) {
+		$filename = $this->getLogFileNameByCategory($category);
+		$log_file_directory = $this->getLogFileDirectory();
+		return $log_file_directory.$filename;
+		
+	}
+
+
 	public function readFile($category) {
 
 		if ($category != LogFileReader::NORMAL_LOG && $category != LogFileReader::LOG_APACHE && $category != LogFileReader::LOG_SERIALIZED) {
-
 			return LogFileReader::FILE_CATEGORY_ERROR;
 		}
 
+		$file_location = $this->getLogFileDirectoryLocation($category);
+		if (file_exists($file_location)) {
+
+		}
+		else {
+			return LogFileReader::FILE_NOT_EXISTS;
+		}
 	}
 }
 

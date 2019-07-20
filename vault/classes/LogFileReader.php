@@ -108,14 +108,15 @@ class LogFileReader {
 
 				if ($offset > 0) {
 					// offset is positive now we know some data is returned
-					$file_handle = fopen($file_location, "r");
+					$file_handle = fopen($file_location, "rb");
 					fseek($file_handle, -$offset, SEEK_END);	
-					$data['file_data'] = fgets($file_handle, $offset + 1);
+					$data['file_data'] = fread($file_handle, $offset + 1);
 					fclose($file_handle);
 					return $data;
 				}
 				else {
 					// offset is either 0 or the file is shortened by some one, so we should just return current file size, so user can read the changed file in subsequent requests
+					$data['error'] = "OFFSET BROKEN ".$offset;
 					return $data;
 				}
 				

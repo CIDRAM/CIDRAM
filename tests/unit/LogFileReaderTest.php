@@ -18,9 +18,7 @@ class LogFileReaderTest extends \Codeception\Test\Unit
         $this->CIDRAM['Config']['logfile'] = __DIR__.'/sample_log.txt';
         $this->CIDRAM['Config']['logfileApache'] = 'sample_apache_log.txt';
         $this->CIDRAM['Config']['logfileSerialized'] = 'sample_serialized_log.txt';
-
         $this->logFileReader = new LogFileReader($this->CIDRAM);
-        print_r($this->CIDRAM);
     }
 
     protected function _after()
@@ -63,6 +61,26 @@ class LogFileReaderTest extends \Codeception\Test\Unit
         // if we give the previous memory size then it should return the string we have added by $changed_log_data
         $data = $this->logFileReader->readFile($previous_buffer_pos, LogFileReader::NORMAL_LOG);
 
+        $this->assertEquals($changed_log_data, $data['file_data']);
+        
+    }
+
+    public function testGivenPreviousFileSizeGetChangedDataForMultiLineChange() {
+
+        file_put_contents($this->CIDRAM['Config']['logfile'], "some text");
+
+        $previous_buffer_pos = $this->logFileReader->readFile(0, LogFileReader::NORMAL_LOG)['file_size'];
+
+
+        $changed_log_data = "changed log data".PHP_EOL."boom boom";
+
+        // change the log file ( simulates how the server file get changed )
+        file_put_contents($this->CIDRAM['Config']['logfile'], $changed_log_data, FILE_APPEND);
+
+        // if we give the previous memory size then it should return the string we have added by $changed_log_data
+        $data = $this->logFileReader->readFile($previous_buffer_pos, LogFileReader::NORMAL_LOG);
+
+        
         $this->assertEquals($changed_log_data, $data['file_data']);
         
     }

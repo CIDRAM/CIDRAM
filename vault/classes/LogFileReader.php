@@ -70,7 +70,7 @@ class LogFileReader {
 	public function readFile($buffer_position, $category) {
 		// before making any calls do a clear stat cache (otherwise filesize returns old value)
 		clearstatcache();
-		
+
 		$data['file_size'] = "";
 		$data['category'] = "";
 		$data['file_data'] = "";
@@ -99,10 +99,13 @@ class LogFileReader {
 				//  
 				//  3. the offset is negative, this is little problematic, if we get negative offset then the only possibility would be user deleted some thing from the file and it caused the new file size to be less than old file size (for that just return the current file size)
 				
-				$new_file_size = filesize($file_location);
+				$new_file_size = filesize($file_location); // always set the new file size, it is needed for client.
+				
 				$data['file_size'] = $new_file_size;
+
 				$old_file_size = $buffer_position;
 				$offset = $new_file_size - $old_file_size;
+
 				if ($offset > 0) {
 					// offset is positive now we know some data is returned
 					$file_handle = fopen($file_location, "r");
@@ -112,6 +115,7 @@ class LogFileReader {
 					return $data;
 				}
 				else {
+					// offset is either 0 or the file is shortened by some one, so we should just return current file size, so user can read the changed file in subsequent requests
 					return $data;
 				}
 				

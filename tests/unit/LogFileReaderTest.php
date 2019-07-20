@@ -67,4 +67,16 @@ class LogFileReaderTest extends \Codeception\Test\Unit
         
     }
 
+    public function testGivenPreviousFileSizeMustReturnSameDataIfFileIsNotChanged() {
+
+        file_put_contents($this->CIDRAM['Config']['logfile'], "some text");
+
+        $previous_buffer_pos = $this->logFileReader->readFile(0, LogFileReader::NORMAL_LOG)['file_size'];
+
+        $data = $this->logFileReader->readFile($previous_buffer_pos, LogFileReader::NORMAL_LOG);
+
+        $this->assertEquals($previous_buffer_pos, $data['file_size']);
+
+    }
+
 }

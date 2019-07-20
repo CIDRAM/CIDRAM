@@ -19,9 +19,14 @@ class LogFileReaderTest extends \Codeception\Test\Unit
         unset($this->logFileReader);
     }
 
-    // tests
-    public function testSomeFeature()
-    {
+    // log is currently done in 3 places, normal log, apache log and serialized log, so checking correct category
+    public function testGivenUnknownLogFileCategoryShouldReturnError()
+    {   
+        $this->assertEquals($this->logFileReader->readFile(10), LogFileReader::FILE_CATEGORY_ERROR);
+    }
 
+    public function testGivenNotExistingFileShouldReturnError() {
+        
+        // $this->assertEquals($this->logFileReader(LogFileReader::NORMAL_LOG), LogFileReader::FILE_NOT_EXISTS);
     }
 }

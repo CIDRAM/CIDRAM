@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2019.07.15).
+ * This file: Front-end functions file (last modified: 2019.07.21).
  */
 
 /**
@@ -3006,17 +3006,40 @@ $CIDRAM['AuxGenerateFEData'] = function () use (&$CIDRAM) {
         $CIDRAM['AuxData'] = (new \Maikuolan\Common\YAML($CIDRAM['ReadFile']($CIDRAM['Vault'] . 'auxiliary.yaml')))->Data;
     }
 
+    /** Count entries (needed for offering first and last move options). */
+    $Count = count($CIDRAM['AuxData']);
+    $Current = 1;
+
     /** Iterate through the auxiliary rules. */
     foreach ($CIDRAM['AuxData'] as $Name => $Data) {
 
         /** Rule row ID. */
         $RuleClass = preg_replace('~^0+~', '', bin2hex($Name));
 
-        /** Begin writing new rule. */
-        $Output .= '        <tr class="' . $RuleClass . "\">\n";
-        $Output .= '          <td class="h4"><div class="s">' . $Name . "</div></td>\n";
-        $Output .= '          <td class="h4f"><input type="button" onclick="javascript:delRule(\'' . $Name . "','" . $RuleClass . '\')" value="' . $CIDRAM['L10N']->getString('field_delete') . "\" /></td>\n";
-        $Output .= "        </tr>\n        <tr class=\"" . $RuleClass . "\">\n          <td class=\"h3f\" colspan=\"2\">";
+        /** Figure out what options are available for the rule. */
+        $Options = ['<input type="button" onclick="javascript:%1$s(\'%2$s\',\'%3$s\')" value="%4$s" class="auto" />'];
+        $Options['delRule'] = sprintf($Options[0], 'delRule', $Name, $RuleClass, $CIDRAM['L10N']->getString('field_delete'));
+        if ($Count > 1) {
+            if ($Current !== 1) {
+                $Options['moveToTop'] = sprintf($Options[0], 'moveToTop', $Name, $RuleClass, $CIDRAM['L10N']->getString('label_aux_move_top'));
+            }
+            if ($Current !== $Count) {
+                $Options['moveToBottom'] = sprintf($Options[0], 'moveToBottom', $Name, $RuleClass, $CIDRAM['L10N']->getString('label_aux_move_bottom'));
+            }
+            $Current++;
+        }
+        $Options[0] = '';
+        $Options = implode('', $Options);
+
+        /** Begin generating rule output. */
+        $Output .= sprintf(
+            '        <tr class="%2$s">%1$s  <td class="h4"><div class="s">%3$s</div></td>%1$s  <td class="h4f">%4$s</td>%1$s</tr>' .
+            '%1$s<tr class="%2$s">%1$s  <td class="h3f" colspan="2">',
+            "\n        ",
+            $RuleClass,
+            $Name,
+            $Options
+        );
 
         /** Detailed reason. */
         if (!empty($Data['Reason'])) {

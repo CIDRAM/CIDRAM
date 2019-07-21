@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2019.07.18).
+ * This file: Front-end handler (last modified: 2019.07.21).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -1289,8 +1289,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
                     $CIDRAM['ThisDir']['FieldOut'] = sprintf(
                         '<select class="auto" name="%1$s" id="%1$s_field"%2$s>',
                         $CIDRAM['ThisDir']['DirLangKey'],
-                        $CIDRAM['ThisDir']['Trigger'],
-                        $CIDRAM['ThisDir']['autocomplete']
+                        $CIDRAM['ThisDir']['Trigger']
                     );
                 }
                 foreach ($CIDRAM['DirValue']['choices'] as $CIDRAM['ChoiceKey'] => $CIDRAM['ChoiceValue']) {
@@ -3466,8 +3465,14 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'aux' && $CIDRAM['FE']['Permissi
         /** Page initial prepwork. */
         $CIDRAM['InitialPrepwork']($CIDRAM['L10N']->getString('link_aux'), $CIDRAM['L10N']->getString('tip_aux'));
 
-        /** Append async globals. */
+        /** Append to async globals for deleting rules. */
         $CIDRAM['FE']['JS'] .= "function delRule(a,i){window.auxD=a,$('POST','',['auxD'],null,function(a){null!=i&&hide(i);w('stateMsg',a)})}";
+
+        /** Append to async globals for moving rules to the top of the list. */
+        $CIDRAM['FE']['JS'] .= "function moveToTop(a,i){window.auxT=a,$('POST','',['auxT'],null,function(a){window.location.reload()})}";
+
+        /** Append to async globals for moving rules to the bottom of the list. */
+        $CIDRAM['FE']['JS'] .= "function moveToBottom(a,i){window.auxB=a,$('POST','',['auxB'],null,function(a){window.location.reload()})}";
 
         /** Add new condition onclick event. */
         $CIDRAM['FE']['JS'] .= sprintf(
@@ -3564,12 +3569,48 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'aux' && $CIDRAM['FE']['Permissi
                 unlink($CIDRAM['Vault'] . 'auxiliary.yaml');
             }
 
-            /** Cleanup. */
-            unset($CIDRAM['NewAuxData']);
-
             /** Confirm successful deletion. */
             echo sprintf($CIDRAM['L10N']->getString('response_aux_rule_deleted_successfully'), $_POST['auxD']);
 
+        }
+
+        /** Move an auxiliary rule to the top of the list. */
+        elseif (isset($_POST['auxT'], $CIDRAM['AuxData'][$_POST['auxT']])) {
+
+            $CIDRAM['Split'] = [$_POST['auxT'] => $CIDRAM['AuxData'][$_POST['auxT']]];
+            unset($CIDRAM['AuxData'][$_POST['auxT']]);
+            $CIDRAM['AuxData'] = array_merge($CIDRAM['Split'], $CIDRAM['AuxData']);
+            unset($CIDRAM['Split']);
+
+            /** Reconstruct and update auxiliary rules data. */
+            if (($CIDRAM['NewAuxData'] = $CIDRAM['YAML-Object']->reconstruct($CIDRAM['AuxData'])) && strlen($CIDRAM['NewAuxData']) > 2) {
+                $CIDRAM['Handle'] = fopen($CIDRAM['Vault'] . 'auxiliary.yaml', 'w');
+                fwrite($CIDRAM['Handle'], $CIDRAM['NewAuxData']);
+                fclose($CIDRAM['Handle']);
+            }
+
+        }
+
+        /** Move an auxiliary rule to the bottom of the list. */
+        elseif (isset($_POST['auxB'], $CIDRAM['AuxData'][$_POST['auxB']])) {
+
+            $CIDRAM['Split'] = [$_POST['auxB'] => $CIDRAM['AuxData'][$_POST['auxB']]];
+            unset($CIDRAM['AuxData'][$_POST['auxB']]);
+            $CIDRAM['AuxData'] = array_merge($CIDRAM['AuxData'], $CIDRAM['Split']);
+            unset($CIDRAM['Split']);
+
+            /** Reconstruct and update auxiliary rules data. */
+            if (($CIDRAM['NewAuxData'] = $CIDRAM['YAML-Object']->reconstruct($CIDRAM['AuxData'])) && strlen($CIDRAM['NewAuxData']) > 2) {
+                $CIDRAM['Handle'] = fopen($CIDRAM['Vault'] . 'auxiliary.yaml', 'w');
+                fwrite($CIDRAM['Handle'], $CIDRAM['NewAuxData']);
+                fclose($CIDRAM['Handle']);
+            }
+
+        }
+
+        /** Cleanup. */
+        if (isset($CIDRAM['NewAuxData'])) {
+            unset($CIDRAM['NewAuxData']);
         }
 
     }

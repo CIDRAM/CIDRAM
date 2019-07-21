@@ -12,9 +12,9 @@ class LogFileViewerTest extends \Codeception\Test\Unit
     protected function _before()
     {
         $this->CIDRAM['Vault'] = "";
-        $this->CIDRAM['Config']['logfile'] = __DIR__.'/sample_log.txt';
-        $this->CIDRAM['Config']['logfileApache'] = 'sample_apache_log.txt';
-        $this->CIDRAM['Config']['logfileSerialized'] = 'sample_serialized_log.txt';
+        $this->CIDRAM['Config']['general']['logfile'] = __DIR__.'/sample_log.txt';
+        $this->CIDRAM['Config']['general']['logfileApache'] = 'sample_apache_log.txt';
+        $this->CIDRAM['Config']['general']['logfileSerialized'] = 'sample_serialized_log.txt';
 
         $this->logFileViewer = new LogFileViewer($this->CIDRAM);
 
@@ -22,14 +22,14 @@ class LogFileViewerTest extends \Codeception\Test\Unit
 
     protected function _after()
     {
-         if (file_exists($this->CIDRAM['Config']['logfile'])) {
-            unlink($this->CIDRAM['Config']['logfile']);
+         if (file_exists($this->CIDRAM['Config']['general']['logfile'])) {
+            unlink($this->CIDRAM['Config']['general']['logfile']);
         }
     }
 
     public function testWhenGivenProperParamsMustReturnValidFileResponse() {
         // lets create a log file
-        file_put_contents($this->CIDRAM['Config']['logfile'], "some text");
+        file_put_contents($this->CIDRAM['Config']['general']['logfile'], "some text");
         $data['file_size'] = strlen("some text");
         $data['category'] = "";
         $data['file_data'] = "";
@@ -54,7 +54,7 @@ class LogFileViewerTest extends \Codeception\Test\Unit
         
         $data['file_data'][0] = $real_log_data;
 
-        file_put_contents($this->CIDRAM['Config']['logfile'], $real_log_data, FILE_APPEND);
+        file_put_contents($this->CIDRAM['Config']['general']['logfile'], $real_log_data, FILE_APPEND);
 
         $response_data = $this->logFileViewer->getResponse($previous_buffer,LogFileReader::NORMAL_LOG);
 

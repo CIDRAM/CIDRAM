@@ -33,13 +33,13 @@ class LogFileReader {
 		
 		switch ($category) {		
 			case LogFileReader::NORMAL_LOG:
-				return $this->CIDRAM['Config']['logfile'];
+				return $this->CIDRAM['Config']['general']['logfile'];
 				break;
 			case LogFileReader::LOG_APACHE:
-				return $this->CIDRAM['Config']['logfileApache'];
+				return $this->CIDRAM['Config']['general']['logfileApache'];
 				break;
 			case LogFileReader::LOG_SERIALIZED:
-				return $this->CIDRAM['Config']['logfileSerialized'];
+				return $this->CIDRAM['Config']['general']['logfileSerialized'];
 				break;
 			default:
 				break;

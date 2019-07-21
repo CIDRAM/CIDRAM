@@ -1,8 +1,8 @@
 # IPv4 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv4_isps.dat
 
-# Version: 2019.198.378
-# Last modified: 2019.07.18
+# Version: 2019.201.302
+# Last modified: 2019.07.21
 
 
 # ---
@@ -1640,21 +1640,6 @@ recaptcha:
  enabled: true
 
 
-# ASN 7914 ("Church of Scientology International").
-# Updated: 2016.01.20 / Checked: 2019.01.16
-
-12.9.239.0/24 Deny Generic
-192.216.201.0/24 Deny Generic
-198.77.154.0/23 Deny Generic
-198.95.10.0/24 Deny Generic
-205.180.15.0/24 Deny Generic
-208.29.5.0/24 Deny Generic
-208.30.51.0/24 Deny Generic
-208.33.13.0/24 Deny Generic
-Origin: US
-Tag: CoS International
-
-
 # ASN 36923 ("Swift Networks Limited").
 # %Listed, abuseat.org (CBL-Listed): 2.87%.
 # Stop Forum Spam (SFS) listings: 12.
@@ -1942,10 +1927,13 @@ Tag: ViaEuropa
 
 # ASN 43700 ("UAB CONSILIUM OPTIMUM").
 # Vulnerability scanner.
-# Stop Forum Spam (SFS) listings: 1.
-# Updated: 2018.08.05 / Checked: 2019.01.16
+# Stop Forum Spam (SFS) listings: 3.
+# Updated: 2019.07.21
 
+31.172.224.0/22 Deny Generic
 78.158.0.0/19 Deny Generic
+91.200.252.0/22 Deny Generic
+95.215.140.0/22 Deny Generic
 185.246.240.0/22 Deny Generic
 185.252.108.0/22 Deny Generic
 185.252.204.0/22 Deny Generic
@@ -2254,8 +2242,8 @@ Tag: STARNET S.R.L
 
 
 # ASN 31423 ("Przedsiebiorstwo "PROMAX" Spolka Jawna Zofia Formanek-Mroczkowska Wieslaw Okroj").
-# Stop Forum Spam (SFS) listings: 6.
-# Updated: 2016.07.24 / Checked: 2019.01.16
+# Source of spam (ongoing, active records at megarbl and elsewhere).
+# Updated: 2016.07.24 / Checked: 2019.07.21
 
 77.89.64.0/18 Deny Generic
 87.248.64.0/19 Deny Generic
@@ -3285,8 +3273,8 @@ Tag: PHOENIX NAP, LLC
 
 # ASN 34300 ("JSC Internet-Cosmos").
 # %Listed, Google Malware Dashboard: 0.11%.
-# Stop Forum Spam (SFS) listings: 343.
-# Updated: 2019.02.14 / Checked: 2019.06.12
+# Stop Forum Spam (SFS) listings: 340.
+# Updated: 2019.02.14 / Checked: 2019.07.21
 
 62.173.128.0/19 Deny Spam
 85.93.128.0/19 Deny Spam
@@ -9653,14 +9641,14 @@ Tag: IT Systems LLC
 
 # ASNs 31343, 38978, 43656, 51078 ("Intertelecom Ltd").
 # Caught trying to hack into WordPress sites.
-# Stop Forum Spam (SFS) listings: 294 (AS31343), 22 (AS43656), 170 (AS51078).
-# Updated: 2019.03.17
+# Stop Forum Spam (SFS) listings: 140 (AS31343), 15 (AS43656), 161 (AS51078).
+# Updated: 2019.07.20
 
 93.170.64.0/21 Deny Generic
 Origin: CZ
-85.158.184.0/21 Deny Generic
+85.158.184.0/24 Deny Generic
+85.158.190.0/24 Deny Generic
 194.6.216.0/22 Deny Generic
-194.28.204.0/22 Deny Generic
 Origin: RU
 37.19.128.0/17 Deny Generic
 46.247.128.0/17 Deny Generic
@@ -9726,9 +9714,8 @@ recaptcha:
 
 # ASN 8359 ("MTS PJSC").
 # Caught trying to hack WordPress sites.
-# %Listed, Google Malware Dashboard: 0.12%.
-# Stop Forum Spam (SFS) listings: 6,604.
-# Updated: 2019.03.17
+# Stop Forum Spam (SFS) listings: 34,374.
+# Updated: 2019.07.20
 
 141.101.232.0/24 Deny Generic
 Origin: NL
@@ -9748,6 +9735,7 @@ Origin: NL
 84.17.0.0/19 Deny Generic
 85.140.0.0/15 Deny Generic
 85.235.160.0/19 Deny Generic
+89.22.188.0/23 Deny Generic
 89.175.0.0/16 Deny Generic
 91.76.0.0/14 Deny Generic
 91.216.147.0/24 Deny Generic

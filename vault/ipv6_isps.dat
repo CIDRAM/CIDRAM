@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_isps.dat
 
-# Version: 2019.201.302
-# Last modified: 2019.07.21
+# Version: 2019.204.374
+# Last modified: 2019.07.24
 
 
 # ---
@@ -284,9 +284,9 @@ recaptcha:
 
 
 # ASN 44050 ("Petersburg Internet Network ltd").
-# %Listed, Google Malware Dashboard: 0.46%.
-# Stop Forum Spam (SFS) listings: 2,384,254.
-# Updated: 2019.03.27
+# %Listed, Google Malware Dashboard: 0.51%.
+# Stop Forum Spam (SFS) listings: 1,911,629.
+# Updated: 2019.03.27 / Checked: 2019.07.23
 
 2a00:1d78::/32 Deny Generic
 2a01:48a0:4030::/48 Deny Generic
@@ -433,9 +433,9 @@ Tag: Zyztm
 
 # ASN 43260 ("DGN TEKNOLOJI BILISIM YAYINCILIK SANAYI VE LIMITED SIRKETI").
 # Caught trying to DDoS SFS.
-# %Listed, Google Malware Dashboard: 0.23%.
-# Stop Forum Spam (SFS) listings: 124.
-# Updated: 2019.03.24
+# %Listed, Google Malware Dashboard: 0.21%.
+# Stop Forum Spam (SFS) listings: 202.
+# Updated: 2019.07.23
 
 2a04:4280:10::/48 Deny Generic
 2a04:4280:20::/48 Deny Generic
@@ -445,15 +445,14 @@ Tag: Zyztm
 2a04:8340::/29 Deny Generic
 2a05:abc0::/29 Deny Generic
 2a05:b380::/29 Deny Generic
+2a05:b700::/29 Deny Generic
 2a05:ba00::/29 Deny Generic
 2a05:bf00::/29 Deny Generic
 2a05:ccc0::/29 Deny Generic
-2a05:e5c0::/29 Deny Generic
 2a05:f740::/29 Deny Generic
 2a05:f7c0::/29 Deny Generic
 2a07:21c0::/29 Deny Generic
 2a07:cd00::/48 Deny Generic
-2a0b:a280::/48 Deny Generic
 Origin: TR
 2402:1780:1::/48 Deny Generic
 Origin: TW
@@ -598,14 +597,13 @@ Origin: UA
 Tag: Kyivstar
 
 
-# ASN 13188 ("CONTENT DELIVERY NETWORK LTD").
-# Stop Forum Spam (SFS) listings: 277,292.
-# Updated: 2019.03.22
+# ASN 13188 ("CONTENT DELIVERY NETWORK LTD", A.K.A. "TRIOLAN, UA").
+# Stop Forum Spam (SFS) listings: 145,394.
+# Updated: 2019.07.23
 
 2a03:7380::/38 Deny Spam
 2a03:7380:400::/39 Deny Spam
 2a03:7380:600::/41 Deny Spam
-2a03:7380:700::/42 Deny Spam
 2a03:7380:1e00::/42 Deny Spam
 2a03:7380:1e80::/42 Deny Spam
 2a03:7380:1f40::/42 Deny Spam
@@ -614,9 +612,9 @@ Tag: Kyivstar
 2a03:7380:2400::/40 Deny Spam
 2a03:7380:2500::/42 Deny Spam
 2a03:7380:2fc0::/42 Deny Spam
-2a03:7380:3000::/42 Deny Spam
-2a03:7380:30c0::/42 Deny Spam
-2a03:7380:3100::/40 Deny Spam
+2a03:7380:3000::/39 Deny Spam
+2a03:7380:3200::/42 Deny Spam
+2a03:7380:3800::/42 Deny Spam
 2a03:7380:4000::/41 Deny Spam
 2a03:7380:4080::/42 Deny Spam
 2a03:7380:5400::/41 Deny Spam
@@ -1095,23 +1093,22 @@ recaptcha:
 
 
 # ASN 4808 ("China Unicom Beijing Province Network").
-# Interlaces with human access endpoints in Taiwan; Would rather not be including this section here due to the high
-# risk of false positives, but the numerous records of spamming events seen originating from across a wide range of
-# CIDRs tied this ASN, plus the presence of this ASN in numerous worst offenders lists and blacklists, are not
-# considerations that can be easily ignored at this point in time. The section is marked for use with reCAPTCHA due to
-# the risk of false positives, and I would encourage that any CIDRAM users expecting to receive any traffic from
-# Taiwan, to list this section in their "ignore.dat" file as a means of minimising the potential impact of false
-# positives. A balanced approach for those that may expect some such traffic, but not a lot of it, would be to not
-# ignore this section, but to ensure that the reCAPTCHA feature is enabled in their configuration.
-# %Listed, Google Malware Dashboard: 0.86%.
-# %Listed, abuseat.org (CBL-Listed): 0.15%.
-# Stop Forum Spam (SFS) listings: 14,722.
-# Updated: 2019.03.22
+# Would prefer to not include this ASN in this file due to the high risk of
+# false positives, but the amount of spam events seen from this ASN isn't
+# ignorable at this time. Marked for use with reCAPTCHA to reduce the false
+# positive risk, and I would encourage any CIDRAM users from Taiwan or China,
+# or targeting traffic from Taiwan or China, to list this section in their
+# ignore.dat file to reduce the false positive risk.
+# %Listed, Google Malware Dashboard: 0.66%.
+# Stop Forum Spam (SFS) listings: 10,700.
+# Updated: 2019.07.23
 
 2400:5280:f800::/38 Deny Generic
 2400:89c0:1010::/44 Deny Generic
 2400:89c0:1020::/43 Deny Generic
 2402:dfc0::/44 Deny Generic
+2402:ef40::/32 Deny Generic
+2403:5280::/32 Deny Generic
 2404:a80::/32 Deny Generic
 2405:1480::/32 Deny Generic
 2408:8000:1000::/36 Deny Generic
@@ -1131,6 +1128,7 @@ recaptcha:
 2408:8608::/30 Deny Generic
 2408:8706::/31 Deny Generic
 2408:8708::/30 Deny Generic
+2408:8806:30::/44 Deny Generic
 Origin: CN
 Tag: China Unicom 4808
 ---

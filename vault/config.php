@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Configuration handler (last modified: 2019.06.23).
+ * This file: Configuration handler (last modified: 2019.07.24).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -93,46 +93,40 @@ if (isset($CIDRAM['Overrides']) && $CIDRAM['Overrides'] === false) {
 }
 
 /** Attempts to parse the CIDRAM configuration defaults file. */
-$CIDRAM['Config']['Config Defaults'] = (new \Maikuolan\Common\YAML($CIDRAM['ReadFile']($CIDRAM['Vault'] . 'config.yaml')))->Data;
+$CIDRAM['YAML']->process($CIDRAM['ReadFile']($CIDRAM['Vault'] . 'config.yaml'), $CIDRAM['Config']);
 
 /** Kills the script if parsing the configuration defaults file fails. */
-if (empty($CIDRAM['Config']['Config Defaults']['Config Defaults'])) {
+if (empty($CIDRAM['Config']['Config Defaults'])) {
     header('Content-Type: text/plain');
     die('[CIDRAM] Configuration defaults file is corrupt! Please reinstall CIDRAM.');
-} else {
-    $CIDRAM['Config']['Config Defaults'] = $CIDRAM['Config']['Config Defaults']['Config Defaults'];
 }
 
-/** Perform fallbacks and autotyping for missing configuration directives. */
-$CIDRAM['Config']['Temp'] = [];
-foreach ($CIDRAM['Config']['Config Defaults'] as $CIDRAM['Config']['Temp']['KeyCat'] => $CIDRAM['Config']['Temp']['DCat']) {
-    if (!isset($CIDRAM['Config'][$CIDRAM['Config']['Temp']['KeyCat']])) {
-        $CIDRAM['Config'][$CIDRAM['Config']['Temp']['KeyCat']] = [];
-    }
-    if (isset($CIDRAM['Config']['Temp']['Cat'])) {
-        unset($CIDRAM['Config']['Temp']['Cat']);
-    }
-    $CIDRAM['Config']['Temp']['Cat'] = &$CIDRAM['Config'][$CIDRAM['Config']['Temp']['KeyCat']];
-    if (!is_array($CIDRAM['Config']['Temp']['DCat'])) {
-        continue;
-    }
-    foreach ($CIDRAM['Config']['Temp']['DCat'] as $CIDRAM['Config']['Temp']['KeyDir'] => $CIDRAM['Config']['Temp']['DDir']) {
-        if (
-            !isset($CIDRAM['Config']['Temp']['Cat'][$CIDRAM['Config']['Temp']['KeyDir']]) &&
-            isset($CIDRAM['Config']['Temp']['DDir']['default'])
-        ) {
-            $CIDRAM['Config']['Temp']['Cat'][$CIDRAM['Config']['Temp']['KeyDir']] = $CIDRAM['Config']['Temp']['DDir']['default'];
-        }
-        if (isset($CIDRAM['Config']['Temp']['Dir'])) {
-            unset($CIDRAM['Config']['Temp']['Dir']);
-        }
-        $CIDRAM['Config']['Temp']['Dir'] = &$CIDRAM['Config']['Temp']['Cat'][$CIDRAM['Config']['Temp']['KeyDir']];
-        if (isset($CIDRAM['Config']['Temp']['DDir']['type'])) {
-            $CIDRAM['AutoType']($CIDRAM['Config']['Temp']['Dir'], $CIDRAM['Config']['Temp']['DDir']['type']);
-        }
+/** Check for supplementary configuration relating to IPv4 signature files. */
+if (!empty($CIDRAM['Config']['signatures']['ipv4'])) {
+    foreach ($CIDRAM['Supplementary']($CIDRAM['Config']['signatures']['ipv4']) as $CIDRAM['Supplement']) {
+        $CIDRAM['YAML']->process($CIDRAM['ReadFile']($CIDRAM['Vault'] . $CIDRAM['Supplement']), $CIDRAM['Config']);
     }
 }
-unset($CIDRAM['Config']['Temp']);
+
+/** Check for supplementary configuration relating to IPv6 signature files. */
+if (!empty($CIDRAM['Config']['signatures']['ipv6'])) {
+    foreach ($CIDRAM['Supplementary']($CIDRAM['Config']['signatures']['ipv6']) as $CIDRAM['Supplement']) {
+        $CIDRAM['YAML']->process($CIDRAM['ReadFile']($CIDRAM['Vault'] . $CIDRAM['Supplement']), $CIDRAM['Config']);
+    }
+}
+
+/** Check for supplementary configuration relating to modules. */
+if (!empty($CIDRAM['Config']['signatures']['modules'])) {
+    foreach ($CIDRAM['Supplementary']($CIDRAM['Config']['signatures']['modules']) as $CIDRAM['Supplement']) {
+        $CIDRAM['YAML']->process($CIDRAM['ReadFile']($CIDRAM['Vault'] . $CIDRAM['Supplement']), $CIDRAM['Config']);
+    }
+}
+
+/** Cleanup. */
+unset($CIDRAM['Supplement']);
+
+/** Perform fallbacks and autotyping for missing configuration directives. */
+$CIDRAM['Fallback']($CIDRAM['Config']['Config Defaults'], $CIDRAM['Config']);
 
 /** Failsafe for weird ipaddr configuration. */
 $CIDRAM['IPAddr'] = (

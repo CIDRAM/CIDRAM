@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2019.07.18).
+ * This file: Functions file (last modified: 2019.07.24).
  */
 
 /** Autoloader for CIDRAM classes. */
@@ -21,6 +21,9 @@ spl_autoload_register(function ($Class) {
         require $File;
     }
 });
+
+/** Instantiate YAML object for accessing data reconstruction and processing various YAML files. */
+$CIDRAM['YAML'] = new \Maikuolan\Common\YAML();
 
 /**
  * Reads and returns the contents of files.
@@ -632,16 +635,71 @@ $CIDRAM['AutoType'] = function (&$Var, string $Type = '') use (&$CIDRAM) {
 };
 
 /**
+ * Performs fallbacks and autotyping for missing configuration directives.
+ *
+ * @param array $Fallbacks Fallback source.
+ * @param array $Config Configuration source.
+ */
+$CIDRAM['Fallback'] = function (array $Fallbacks, array &$Config) use (&$CIDRAM) {
+    foreach ($Fallbacks as $KeyCat => $DCat) {
+        if (!isset($Config[$KeyCat])) {
+            $Config[$KeyCat] = [];
+        }
+        if (isset($Cat)) {
+            unset($Cat);
+        }
+        $Cat = &$Config[$KeyCat];
+        if (!is_array($DCat)) {
+            continue;
+        }
+        foreach ($DCat as $DKey => $DData) {
+            if (!isset($Cat[$DKey]) && isset($DData['default'])) {
+                $Cat[$DKey] = $DData['default'];
+            }
+            if (isset($Dir)) {
+                unset($Dir);
+            }
+            $Dir = &$Cat[$DKey];
+            if (isset($DData['type'])) {
+                $CIDRAM['AutoType']($Dir, $DData['type']);
+            }
+        }
+    }
+};
+
+/**
+ * Check for supplementary configuration.
+ *
+ * @param string $Source The directive or CSV that we're checking from.
+ * @return array An an array of valid supplementary configuration sources.
+ */
+$CIDRAM['Supplementary'] = function (string $Source) use (&$CIDRAM): array {
+    $Out = [];
+    $Source = explode(',', $Source);
+    foreach ($Source as $File) {
+        if (($DecPos = strpos($File, '.')) === false) {
+            continue;
+        }
+        $File = substr($File, 0, $DecPos) . '.yaml';
+        if (file_exists($CIDRAM['Vault'] . $File)) {
+            $Out[] = $File;
+        }
+    }
+    return $Out;
+};
+
+/**
  * Used to send cURL requests.
  *
  * @param string $URI The resource to request.
  * @param array $Params An optional associative array of key-value pairs to
  *      send with the request.
  * @param int $Timeout An optional timeout limit.
+ * @param array $Headers An optional array of headers to send with the request.
  * @param int $Depth Recursion depth of the current closure instance.
  * @return string The results of the request, or an empty string upon failure.
  */
-$CIDRAM['Request'] = function (string $URI, array $Params = [], int $Timeout = -1, int $Depth = 0) use (&$CIDRAM): string {
+$CIDRAM['Request'] = function (string $URI, array $Params = [], int $Timeout = -1, array $Headers = [], int $Depth = 0) use (&$CIDRAM): string {
 
     /** Fetch channel information. */
     if (!isset($CIDRAM['Channels'])) {
@@ -679,7 +737,7 @@ $CIDRAM['Request'] = function (string $URI, array $Params = [], int $Timeout = -
         }
         if ($CIDRAM['in_csv']($TriggerName, $CIDRAM['Config']['general']['disabled_channels'])) {
             if (isset($AlternateURI)) {
-                return $CIDRAM['Request']($AlternateURI, $Params, $Timeout, $Depth);
+                return $CIDRAM['Request']($AlternateURI, $Params, $Timeout, $Headers, $Depth);
             }
             return '';
         }
@@ -709,19 +767,26 @@ $CIDRAM['Request'] = function (string $URI, array $Params = [], int $Timeout = -
     curl_setopt($Request, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($Request, CURLOPT_TIMEOUT, ($Timeout > 0 ? $Timeout : $CIDRAM['Timeout']));
     curl_setopt($Request, CURLOPT_USERAGENT, $CIDRAM['ScriptUA']);
+    curl_setopt($Request, CURLOPT_HTTPHEADER, $Headers ?: []);
 
     /** Execute and get the response. */
     $Response = curl_exec($Request);
 
     /** Check for problems (e.g., resource not found, server errors, etc). */
-    if (($Info = curl_getinfo($Request)) && is_array($Info)) {
+    if (($Info = curl_getinfo($Request)) && is_array($Info) && isset($Info['http_code'])) {
+
+        /** Most recent HTTP code flag. */
+        $CIDRAM['Most-Recent-HTTP-Code'] = $Info['http_code'];
 
         /** Request failed. Try again using an alternative address. */
-        if (isset($Info['http_code']) && $Info['http_code'] >= 400 && isset($AlternateURI) && $Depth < 3) {
+        if ($Info['http_code'] >= 400 && isset($AlternateURI) && $Depth < 3) {
             curl_close($Request);
-            return $CIDRAM['Request']($AlternateURI, $Params, $Timeout, $Depth + 1);
+            return $CIDRAM['Request']($AlternateURI, $Params, $Timeout, $Headers, $Depth + 1);
         }
 
+    } else {
+        /** Most recent HTTP code flag. */
+        $CIDRAM['Most-Recent-HTTP-Code'] = 200;
     }
 
     /** Close the cURL session. */

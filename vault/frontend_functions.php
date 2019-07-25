@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2019.07.21).
+ * This file: Front-end functions file (last modified: 2019.07.25).
  */
 
 /**
@@ -514,7 +514,7 @@ $CIDRAM['FetchComponentsLists'] = function (string $Base, array &$Arr) use (&$CI
         if (!empty($ThisFile) && preg_match('/\.(?:dat|inc|ya?ml)$/i', $ThisFile)) {
             $Data = $CIDRAM['ReadFile']($Base . $ThisFile);
             if (substr($Data, 0, 4) === "---\n" && ($EoYAML = strpos($Data, "\n\n")) !== false) {
-                $CIDRAM['YAML-Object']->process(substr($Data, 4, $EoYAML - 4), $Arr);
+                $CIDRAM['YAML']->process(substr($Data, 4, $EoYAML - 4), $Arr);
             }
         }
     }
@@ -733,13 +733,16 @@ $CIDRAM['ActivateComponent'] = function (string $Type, string $ID) use (&$CIDRAM
             return ($Component && file_exists($CIDRAM['Vault'] . $Component));
         }
     ));
-    foreach ($CIDRAM['Components']['Meta'][$ID]['Files']['To'] as $CIDRAM['Activation']['ThisFile']) {
+    foreach ($CIDRAM['Components']['Meta'][$ID]['Files']['To'] as $ThisFile) {
+        $Ext = (($DecPos = strpos($ThisFile, '.')) !== false) ? substr($ThisFile, $DecPos + 1) : '';
         if (
-            !empty($CIDRAM['Activation']['ThisFile']) &&
-            file_exists($CIDRAM['Vault'] . $CIDRAM['Activation']['ThisFile']) &&
-            $CIDRAM['Traverse']($CIDRAM['Activation']['ThisFile'])
+            !empty($ThisFile) &&
+            !preg_match('~^(?:css|gif|html?|jpe?g|js|png|ya?ml)$~i', $Ext) &&
+            file_exists($CIDRAM['Vault'] . $ThisFile) &&
+            empty($CIDRAM['Activation'][$Type][$ThisFile]) &&
+            $CIDRAM['Traverse']($ThisFile)
         ) {
-            $CIDRAM['Activation'][$Type][] = $CIDRAM['Activation']['ThisFile'];
+            $CIDRAM['Activation'][$Type][] = $ThisFile;
         }
     }
     if (count($CIDRAM['Activation'][$Type])) {
@@ -912,6 +915,9 @@ $CIDRAM['SimulateBlockEvent'] = function (string $Addr, bool $Modules = false, b
         }
     }
 
+    /** Instantiate report orchestrator (used by some modules). */
+    $CIDRAM['Reporter'] = new \CIDRAM\Core\Reporter();
+
     /** Execute modules, if any have been enabled. */
     if ($Modules && $CIDRAM['Config']['signatures']['modules'] && empty($CIDRAM['Whitelisted'])) {
         $CIDRAM['InitialiseErrorHandler']();
@@ -947,6 +953,12 @@ $CIDRAM['SimulateBlockEvent'] = function (string $Addr, bool $Modules = false, b
         $CIDRAM['AuxErrors'] = $CIDRAM['Errors'];
         $CIDRAM['RestoreErrorHandler']();
     }
+
+    /**
+     * Destroying the reporter (we won't process reports in this case, because we're only simulating block events,
+     * as opposed to checking against actual, real requests; still needed to set it though to prevent errors).
+     */
+    unset($CIDRAM['Reporter']);
 
 };
 
@@ -1608,7 +1620,7 @@ $CIDRAM['UpdatesHandler-Update'] = function ($ID) use (&$CIDRAM) {
             ($CIDRAM['Components']['EoYAML'] = strpos(
                 $CIDRAM['Components']['Meta'][$ThisTarget]['RemoteData'], "\n\n"
             )) !== false &&
-            $CIDRAM['YAML-Object']->process(
+            $CIDRAM['YAML']->process(
                 substr($CIDRAM['Components']['Meta'][$ThisTarget]['RemoteData'], 4, $CIDRAM['Components']['EoYAML'] - 4),
                 $CIDRAM['Components']['RemoteMeta']
             ) &&

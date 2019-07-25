@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Output generator (last modified: 2019.07.15).
+ * This file: Output generator (last modified: 2019.07.25).
  */
 
 /** Initialise cache. */
@@ -191,6 +191,14 @@ if ($CIDRAM['Config']['general']['force_hostname_lookup']) {
 /** Executed only if maintenance mode is disabled. */
 if ($CIDRAM['Protect'] && !$CIDRAM['Config']['general']['maintenance_mode'] && empty($CIDRAM['Whitelisted'])) {
 
+    /** Instantiate report orchestrator (used by some modules). */
+    $CIDRAM['Reporter'] = new \CIDRAM\Core\Reporter();
+
+    /** Identify proxy connections (conjunctive reporting element). */
+    if (strpos($CIDRAM['BlockInfo']['WhyReason'], $CIDRAM['L10N']->getString($Params['Short_Proxy'])) !== false) {
+        $CIDRAM['Reporter']->report([9, 13], [], $CIDRAM['BlockInfo']['IPAddr']);
+    }
+
     /** Execute modules, if any have been enabled. */
     if (empty($CIDRAM['Whitelisted']) && $CIDRAM['Config']['signatures']['modules']) {
         $CIDRAM['Modules'] = explode(',', $CIDRAM['Config']['signatures']['modules']);
@@ -221,6 +229,12 @@ if ($CIDRAM['Protect'] && !$CIDRAM['Config']['general']['maintenance_mode'] && e
         $CIDRAM['Aux']();
         $CIDRAM['ErrorFlag'] = '';
     }
+
+    /** Process all reports (if any exist, and if not whitelisted), and then destroy the reporter. */
+    if (empty($CIDRAM['Whitelisted'])) {
+        $CIDRAM['Reporter']->process();
+    }
+    unset($CIDRAM['Reporter']);
 
 }
 

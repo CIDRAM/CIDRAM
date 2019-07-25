@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2019.07.21).
+ * This file: Front-end handler (last modified: 2019.07.24).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -136,9 +136,6 @@ $CIDRAM['Pips_Path'] = $CIDRAM['GetAssetPath']('pips.php', true);
 if (!empty($CIDRAM['Pips_Path']) && is_readable($CIDRAM['Pips_Path'])) {
     require $CIDRAM['Pips_Path'];
 }
-
-/** Instantiate YAML object for accessing data reconstruction. */
-$CIDRAM['YAML-Object'] = new \Maikuolan\Common\YAML();
 
 /** Handle webfonts. */
 if (empty($CIDRAM['Config']['general']['disable_webfonts'])) {
@@ -1118,6 +1115,8 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
             $CIDRAM['ThisDir']['DirLang'] =
                 $CIDRAM['L10N']->getString($CIDRAM['ThisDir']['DirLangKey']) ?:
                 $CIDRAM['L10N']->getString('config_' . $CIDRAM['CatKey']) ?:
+                (isset($CIDRAM['Config']['L10N'][$CIDRAM['ThisDir']['DirLangKey']]) ? $CIDRAM['Config']['L10N'][$CIDRAM['ThisDir']['DirLangKey']] : '') ?:
+                (isset($CIDRAM['Config']['L10N']['config_' . $CIDRAM['CatKey']]) ? $CIDRAM['Config']['L10N']['config_' . $CIDRAM['CatKey']] : '') ?:
                 $CIDRAM['L10N']->getString('response_error');
             if (!empty($CIDRAM['DirValue']['experimental'])) {
                 $CIDRAM['ThisDir']['DirLang'] = '<code class="exp">' . $CIDRAM['L10N']->getString('config_experimental') . '</code> ' . $CIDRAM['ThisDir']['DirLang'];
@@ -1626,7 +1625,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && ($CIDRAM['FE']['Per
 
                 /** Process remote components metadata. */
                 if (!isset($CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']])) {
-                    $CIDRAM['YAML-Object']->process(
+                    $CIDRAM['YAML']->process(
                         substr($CIDRAM['Components']['ThisComponent']['RemoteData'], 4, $CIDRAM['Components']['EoYAML'] - 4),
                         $CIDRAM['Components']['RemoteMeta']
                     );
@@ -2212,8 +2211,8 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'fixer' && $CIDRAM['FE']['Permis
                 }
                 $BeforeCount = substr_count($YAML, "\n");
                 $Arr = [];
-                $CIDRAM['YAML-Object']->process($YAML, $Arr);
-                $NewData = substr($Data, 0, $Pos + 4) . $CIDRAM['YAML-Object']->reconstruct($Arr);
+                $CIDRAM['YAML']->process($YAML, $Arr);
+                $NewData = substr($Data, 0, $Pos + 4) . $CIDRAM['YAML']->reconstruct($Arr);
                 if (($Add = $BeforeCount - substr_count($NewData, "\n") + 1) > 0) {
                     $NewData .= str_repeat("\n", $Add);
                 }
@@ -3442,7 +3441,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'aux' && $CIDRAM['FE']['Permissi
         }
 
         /** Reconstruct and update auxiliary rules data. */
-        if ($CIDRAM['NewAuxData'] = $CIDRAM['YAML-Object']->reconstruct($CIDRAM['AuxData'])) {
+        if ($CIDRAM['NewAuxData'] = $CIDRAM['YAML']->reconstruct($CIDRAM['AuxData'])) {
             $CIDRAM['Handle'] = fopen($CIDRAM['Vault'] . 'auxiliary.yaml', 'w');
             fwrite($CIDRAM['Handle'], $CIDRAM['NewAuxData']);
             fclose($CIDRAM['Handle']);
@@ -3560,7 +3559,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'aux' && $CIDRAM['FE']['Permissi
             unset($CIDRAM['AuxData'][$_POST['auxD']]);
 
             /** Reconstruct and update auxiliary rules data. */
-            if (($CIDRAM['NewAuxData'] = $CIDRAM['YAML-Object']->reconstruct($CIDRAM['AuxData'])) && strlen($CIDRAM['NewAuxData']) > 2) {
+            if (($CIDRAM['NewAuxData'] = $CIDRAM['YAML']->reconstruct($CIDRAM['AuxData'])) && strlen($CIDRAM['NewAuxData']) > 2) {
                 $CIDRAM['Handle'] = fopen($CIDRAM['Vault'] . 'auxiliary.yaml', 'w');
                 fwrite($CIDRAM['Handle'], $CIDRAM['NewAuxData']);
                 fclose($CIDRAM['Handle']);
@@ -3583,7 +3582,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'aux' && $CIDRAM['FE']['Permissi
             unset($CIDRAM['Split']);
 
             /** Reconstruct and update auxiliary rules data. */
-            if (($CIDRAM['NewAuxData'] = $CIDRAM['YAML-Object']->reconstruct($CIDRAM['AuxData'])) && strlen($CIDRAM['NewAuxData']) > 2) {
+            if (($CIDRAM['NewAuxData'] = $CIDRAM['YAML']->reconstruct($CIDRAM['AuxData'])) && strlen($CIDRAM['NewAuxData']) > 2) {
                 $CIDRAM['Handle'] = fopen($CIDRAM['Vault'] . 'auxiliary.yaml', 'w');
                 fwrite($CIDRAM['Handle'], $CIDRAM['NewAuxData']);
                 fclose($CIDRAM['Handle']);
@@ -3600,7 +3599,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'aux' && $CIDRAM['FE']['Permissi
             unset($CIDRAM['Split']);
 
             /** Reconstruct and update auxiliary rules data. */
-            if (($CIDRAM['NewAuxData'] = $CIDRAM['YAML-Object']->reconstruct($CIDRAM['AuxData'])) && strlen($CIDRAM['NewAuxData']) > 2) {
+            if (($CIDRAM['NewAuxData'] = $CIDRAM['YAML']->reconstruct($CIDRAM['AuxData'])) && strlen($CIDRAM['NewAuxData']) > 2) {
                 $CIDRAM['Handle'] = fopen($CIDRAM['Vault'] . 'auxiliary.yaml', 'w');
                 fwrite($CIDRAM['Handle'], $CIDRAM['NewAuxData']);
                 fclose($CIDRAM['Handle']);

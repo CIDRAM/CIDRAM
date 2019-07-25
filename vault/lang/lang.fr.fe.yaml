@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: French language data for the front-end (last modified: 2019.07.21).
+# This file: French language data for the front-end (last modified: 2019.07.25).
 ##/
 
 Extended Description Bypasses: "Les fichiers pour contourner les signatures standard qui sont normalement inclus dans le paquet principal."
@@ -22,12 +22,13 @@ Extended Description IPv6-ISPs: "Bloque les FAI dangereux et sujets au spam."
 Extended Description IPv6-Other: "Bloque CIDRs pour les proxies, VPN et autres services indésirables."
 Extended Description IPv6: "Bloque les services cloud indésirables et les noeuds finaux non humains."
 Extended Description PHPMailer: "Requis pour l'utilisation de toute fonctionnalité impliquant l'envoi d'e-mails.<br /><a href="https://github.com/PHPMailer/PHPMailer">PHPMailer</a> est disponible via la licence <a href="https://github.com/PHPMailer/PHPMailer/blob/master/LICENSE">LGPLv2.1</a>."
+Extended Description module_abuseipdb.php: "Bloque les requêtes des adresses IP répertoriées dans AbuseIPDB."
 Extended Description module_badhosts.php: "Bloque les hôtes fréquemment utilisés par les spammeurs, les hackers et autres entités malveillantes."
 Extended Description module_badhosts_isps.php: "Bloque les hôtes appartenant aux FAI/ISPs fréquemment utilisés par les spammeurs, les hackers et autres entités malveillantes."
 Extended Description module_badtlds.php: "Bloque les hôtes appartenant aux TLDs fréquemment utilisés par les spammeurs, les hackers et autres entités malveillantes."
 Extended Description module_botua.php: "Bloque les agents utilisateurs associés aux bots indésirables et aux activités malveillantes."
 Extended Description module_cookies.php: "Fournit quelques protections limitées contre les cookies dangereux."
-Extended Description module_extras.php: "Fournit quelques protections limitées contre divers vecteurs d'attaque communément utilisé dans les demandes."
+Extended Description module_extras.php: "Fournit quelques protections limitées contre divers vecteurs d'attaque communément utilisé dans les requêtes."
 Extended Description module_sfs.php: "Protège l'enregistrement et les pages de connexion contre les adresses IP répertoriées par SFS."
 Name Bypasses: "Contournements pour signatures standard."
 Name IPv4-Bogons: "IPv4 (bogons)."
@@ -39,6 +40,7 @@ Name IPv6-ISPs: "IPv6 (FAI qui envoient du spam)."
 Name IPv6-Other: "IPv6 (proxy, VPN, etc)."
 Name IPv6: "IPv6 (services de cloud et d'hébergement)."
 Name compat_bunnycdn.php: "BunnyCDN module de compatibilité"
+Name module_abuseipdb.php: "Module AbuseIPDB"
 Name module_badhosts.php: "Module de blocage pour les hôtes mauvais"
 Name module_badhosts_isps.php: "Module de blocage pour les hôtes mauvais (ISPs)"
 Name module_badtlds.php: "Module de blocage des mauvais TLDs"

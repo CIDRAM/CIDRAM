@@ -195,7 +195,7 @@ if ($CIDRAM['Protect'] && !$CIDRAM['Config']['general']['maintenance_mode'] && e
     $CIDRAM['Reporter'] = new \CIDRAM\Core\Reporter();
 
     /** Identify proxy connections (conjunctive reporting element). */
-    if (strpos($CIDRAM['BlockInfo']['WhyReason'], $CIDRAM['L10N']->getString($Params['Short_Proxy'])) !== false) {
+    if (strpos($CIDRAM['BlockInfo']['WhyReason'], $CIDRAM['L10N']->getString('Short_Proxy')) !== false) {
         $CIDRAM['Reporter']->report([9, 13], [], $CIDRAM['BlockInfo']['IPAddr']);
     }
 

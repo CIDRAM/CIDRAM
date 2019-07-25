@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2019.07.24).
+ * This file: Functions file (last modified: 2019.07.25).
  */
 
 /** Autoloader for CIDRAM classes. */
@@ -671,7 +671,7 @@ $CIDRAM['Fallback'] = function (array $Fallbacks, array &$Config) use (&$CIDRAM)
  * Check for supplementary configuration.
  *
  * @param string $Source The directive or CSV that we're checking from.
- * @return array An an array of valid supplementary configuration sources.
+ * @return array An array of valid supplementary configuration sources.
  */
 $CIDRAM['Supplementary'] = function (string $Source) use (&$CIDRAM): array {
     $Out = [];

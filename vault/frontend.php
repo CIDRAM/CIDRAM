@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2019.07.24).
+ * This file: Front-end handler (last modified: 2019.07.26).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -2607,16 +2607,17 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'file-manager' && $CIDRAM['FE'][
 
     /** Process files data. */
     array_walk($CIDRAM['FilesArray'], function ($ThisFile) use (&$CIDRAM) {
+        $Base = '<option value="%s"%s>%s</option>';
         $ThisFile['ThisOptions'] = '';
         if (!$ThisFile['Directory'] || $CIDRAM['IsDirEmpty']($CIDRAM['Vault'] . $ThisFile['Filename'])) {
-            $ThisFile['ThisOptions'] .= '<option value="delete-file">' . $CIDRAM['L10N']->getString('field_delete') . '</option>';
-            $ThisFile['ThisOptions'] .= '<option value="rename-file">' . $CIDRAM['L10N']->getString('field_rename_file') . '</option>';
+            $ThisFile['ThisOptions'] .= sprintf($Base, 'delete-file', '', $CIDRAM['L10N']->getString('field_delete'));
+            $ThisFile['ThisOptions'] .= sprintf($Base, 'rename-file', $ThisFile['Directory'] && !$ThisFile['CanEdit'] ? ' selected' : '', $CIDRAM['L10N']->getString('field_rename_file'));
         }
         if ($ThisFile['CanEdit']) {
-            $ThisFile['ThisOptions'] .= '<option value="edit-file">' . $CIDRAM['L10N']->getString('field_edit_file') . '</option>';
+            $ThisFile['ThisOptions'] .= sprintf($Base, 'edit-file', ' selected', $CIDRAM['L10N']->getString('field_edit_file'));
         }
         if (!$ThisFile['Directory']) {
-            $ThisFile['ThisOptions'] .= '<option value="download-file">' . $CIDRAM['L10N']->getString('field_download_file') . '</option>';
+            $ThisFile['ThisOptions'] .= sprintf($Base, 'download-file', $ThisFile['CanEdit'] ? '' : ' selected', $CIDRAM['L10N']->getString('field_download_file'));
         }
         if ($ThisFile['ThisOptions']) {
             $ThisFile['ThisOptions'] =

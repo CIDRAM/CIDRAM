@@ -1,7 +1,7 @@
 ---
 CIDRAM:
  Name: CIDRAM
- Version: 1.13.1-DEV+19206509
+ Version: 1.13.1
  Minimum Required: 1.0.0
  Changelog: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/Changelog.txt
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
@@ -199,7 +199,7 @@ CIDRAM:
 IPv4:
  Extended Description: Default IPv4 signatures normally included with the main package. Blocks unwanted cloud services and non-human endpoints.
  False Positive Risk: Low
- Version: 2019.204.374
+ Version: 2019.212.366
  Minimum Required: 1.0.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
  Uninstallable: true
@@ -209,7 +209,7 @@ IPv4:
   To:
    - ipv4.dat
   Checksum:
-   - c1f1a5aa9187fb55e5071b273451675fddb57ad5ef8f583bc33657d5a4b28280:721149
+   - fa7662ec3ca22610a69637e61a2f68db9d2ecbeaba61cfeb5d10c27aefdd9a2e:704996
  Used with: ipv4
  Reannotate: components.dat
 IPv4-Bogons:
@@ -231,7 +231,7 @@ IPv4-Bogons:
 IPv4-ISPs:
  Extended Description: Default IPv4 signatures normally included with the main package. Blocks dangerous and spammy ISPs.
  False Positive Risk: Medium
- Version: 2019.204.374
+ Version: 2019.212.366
  Minimum Required: 1.0.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
  Uninstallable: true
@@ -241,7 +241,7 @@ IPv4-ISPs:
   To:
    - ipv4_isps.dat
   Checksum:
-   - 939e7e20c6192cb8bf445b4a93cf7354172944c3819e68694103a1c7e15e0208:267882
+   - e6c5d5b2bd37bd8a5ac2041f0411b3e3a1e98dce6b5c6714c146a4d23ac4437f:269388
  Used with: ipv4
  Reannotate: components.dat
 IPv4-Other:
@@ -263,7 +263,7 @@ IPv4-Other:
 IPv6:
  Extended Description: Default IPv6 signatures normally included with the main package. Blocks unwanted cloud services and non-human endpoints.
  False Positive Risk: Low
- Version: 2019.204.374
+ Version: 2019.212.366
  Minimum Required: 1.0.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
  Uninstallable: true
@@ -273,7 +273,7 @@ IPv6:
   To:
    - ipv6.dat
   Checksum:
-   - c8d1026d338adc46a42a09afd2bdbccbc27cf125660115ed9f50bff8bf71f4e9:174260
+   - ee6ca625618107b787d2491f8303b11ffad9c7364d85ebf4cb13c11e8432881a:178482
  Used with: ipv6
  Reannotate: components.dat
 IPv6-Bogons:
@@ -295,7 +295,7 @@ IPv6-Bogons:
 IPv6-ISPs:
  Extended Description: Default IPv6 signatures normally included with the main package. Blocks dangerous and spammy ISPs.
  False Positive Risk: Medium
- Version: 2019.204.374
+ Version: 2019.212.366
  Minimum Required: 1.0.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
  Uninstallable: true
@@ -305,7 +305,7 @@ IPv6-ISPs:
   To:
    - ipv6_isps.dat
   Checksum:
-   - 306378b13a331fbc36324cdfbec979ea33839291dafa4afd29bcca9dcc5ca373:54261
+   - ecf354fdd227a05423177036c0f35c8551ea979d4ecbfb2154048cd2f784aea3:55736
  Used with: ipv6
  Reannotate: components.dat
 IPv6-Other:

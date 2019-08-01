@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_isps.dat
 
-# Version: 2019.204.374
-# Last modified: 2019.07.24
+# Version: 2019.212.366
+# Last modified: 2019.08.01
 
 
 # ---
@@ -169,17 +169,25 @@ recaptcha:
 
 
 # ASN 3223 ("Voxility LLC").
-# %Listed, Google Malware Dashboard: 0.27%.
-# Stop Forum Spam (SFS) listings: 33,075.
-# Updated: 2019.04.07
+# %Listed, Google Malware Dashboard: 0.17%.
+# Stop Forum Spam (SFS) listings: 8,922.
+# Updated: 2019.08.01
 
-2a02:77e0:cd::/48 Deny Generic
 2a06:b380::/29 Deny Generic
 Origin: GB
-2a03:5180::/45 Deny Generic
+2a03:5180::/48 Deny Generic
+2a03:5180:1:5::/64 Deny Generic
+2a03:5180:1:7::/64 Deny Generic
+2a03:5180:1:8::/64 Deny Generic
+2a03:5180:1:b::/64 Deny Generic
+2a03:5180:1:c::/64 Deny Generic
+2a03:5180:1:f::/64 Deny Generic
+2a03:5180:1:10::/64 Deny Generic
+2a03:5180:2::/47 Deny Generic
+2a03:5180:4::/46 Deny Generic
 2a03:5180:8::/47 Deny Generic
 2a03:5180:a::/48 Deny Generic
-2a03:5180:11::/48 Deny Generic
+2a03:5180:10::/47 Deny Generic
 Origin: RO
 2602:ff84:8::/48 Deny Generic
 Origin: US
@@ -311,14 +319,15 @@ Tag: Trend Micro
 
 
 # ASN 8551 ("Bezeq International-Ltd").
-# Legit Israeli ISP with mostly safe, normal, human internet traffic, but with some bad actors included (spambots,
-# hacktools, scrapers, etc). Those whose websites anticipate human internet traffic from Israel should include this
-# section in their "ignore.dat" file, or else risk false positives by way of blocking innocents connecting from Israel.
-# Those whose don't anticipate any human internet traffic from Israel to their websites can safely block this ASN.
-# %Listed, Google Malware Dashboard: 0.22%.
-# %Listed, abuseat.org (CBL-Listed): 0.34%.
-# Stop Forum Spam (SFS) listings: 9,150.
-# Updated: 2018.03.08 / Checked: 2019.04.14
+# Domestic Israeli ISP with human endpoints, but has some bad actors (spambots,
+# scrapers, etc). Marked for use with reCAPTCHA to reduce the false positive
+# risk, and I would encourage any CIDRAM users from Israel, or targeting
+# traffic from Israel, to list this section in their ignore.dat file to reduce
+# the false positive risk.
+# %Listed, Google Malware Dashboard: 0.14%.
+# %Listed, abuseat.org (CBL-Listed): 0.30%.
+# Stop Forum Spam (SFS) listings: 5,197.
+# Updated: 2018.03.08 / Checked: 2019.08.01
 
 2a02:26f0:8000::/48 Deny Generic
 Origin: EU
@@ -333,10 +342,14 @@ recaptcha:
 
 
 # ASNs 5486, 9116 ("012 Smile Communications LTD").
-# Spam emitters; Subsidiary of Bezeq International.
+# Subsidiary of Bezeq International. Domestic Israeli ISP with human endpoints,
+# but also a source of forum/blog spam. Marked for use with reCAPTCHA to reduce
+# the false positive risk, and I would encourage any CIDRAM users from Israel,
+# or targeting traffic from Israel, to list this section in their ignore.dat
+# file to reduce the false positive risk.
 # %Listed, Google Malware Dashboard: 0.38% (AS9116).
-# Stop Forum Spam (SFS) listings: 1,685 (AS9116).
-# Updated: 2016.12.10 / Checked: 2019.03.20
+# Stop Forum Spam (SFS) listings: 2,526 (AS9116).
+# Updated: 2016.12.10 / Checked: 2019.08.01
 
 2001:40a8::/32 Deny Spam
 Origin: IL
@@ -523,13 +536,48 @@ recaptcha:
  enabled: true
 
 
-# ASN 45271 ("Idea Cellular Limited").
-# Indian mobile phone and data provider with human endpoints. Listed due to
-# high spam incidence. Websites targeting an Indian audience should keep it
+# ASN 23888 ("National Telecommunication Corporation HQ").
+# Source of forum/blog spam. Also an ISP with human endpoints in Pakistan.
+# Websites based in, or targeted towards a Pakistani audience, should keep it
 # listed in their ignore.dat file. Marked for use with reCAPTCHA.
-# %Listed, abuseat.org (CBL-Listed): 38.11%.
-# Stop Forum Spam (SFS) listings: 229.
-# Updated: 2019.07.18
+# %Listed, abuseat.org (CBL-Listed): 35.43%.
+# Stop Forum Spam (SFS) listings: 23.
+# Updated: 2019.08.01
+
+2407:9e00::/48 Deny Spam
+Origin: PK
+Tag: AS23888
+---
+recaptcha:
+ enabled: true
+
+
+# ASN 45804 ("MEGHBELA BROADBAND").
+# Significant source of forum/blog spam. Also a legit Indian ISP with human
+# endpoints. Websites based in, or targeted towards an Indian audience, should
+# keep it listed in their ignore.dat file. Marked for use with reCAPTCHA.
+# Stop Forum Spam (SFS) listings: 288.
+# Updated: 2019.08.01
+
+2403:8500:100::/40 Deny Spam
+2403:8500:200::/39 Deny Spam
+2403:8500:400::/38 Deny Spam
+2403:8500:800::/39 Deny Spam
+2403:8500:1200::/40 Deny Spam
+Origin: IN
+Tag: MEGHBELA BROADBAND
+---
+recaptcha:
+ enabled: true
+
+
+# ASN 45271 ("Idea Cellular Limited").
+# Significant source of forum/blog spam. Also a legit Indian ISP with human
+# endpoints. Websites based in, or targeted towards an Indian audience, should
+# keep it listed in their ignore.dat file. Marked for use with reCAPTCHA.
+# %Listed, abuseat.org (CBL-Listed): 36.57%.
+# Stop Forum Spam (SFS) listings: 245.
+# Updated: 2019.08.01
 
 2402:8100:b::/48 Deny Spam
 2402:8100:2000::/41 Deny Spam
@@ -538,6 +586,7 @@ recaptcha:
 2402:8100:20d2::/48 Deny Spam
 2402:8100:2180::/48 Deny Spam
 2402:8100:2280::/43 Deny Spam
+2402:8100:2300::/43 Deny Spam
 2402:8100:2800::/41 Deny Spam
 2402:8100:3000::/43 Deny Spam
 2402:8100:3020::/44 Deny Spam

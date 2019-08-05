@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_isps.dat
 
-# Version: 2019.212.366
-# Last modified: 2019.08.01
+# Version: 2019.216.279
+# Last modified: 2019.08.05
 
 
 # ---
@@ -1684,12 +1684,15 @@ Tag: Foreningen
 
 
 # ASN 31148 ("Freenet Ltd").
-# Legit human endpoint/ISP based in Ukraine, but have been encountering numerous hack attempts from their ASN in recent
-# months. Marking this section for use with reCAPTCHA, because we don't want to accidentally block human users if we
-# can avoid it at all. HUGE numbers of nefarious listings at MegaRBL.net and AbuseIPDB.com! Can't really afford to just
-# ignore it. Ukrainian CIDRAM users should probably add the name of this section to their ignore.dat file.
-# Stop Forum Spam (SFS) listings: 944.
-# Updated: 2018.02.20 / Checked: 2019.03.24
+# Ukrainian ISP with human endpoints, but also a frequent source of spam and
+# hack attempts. Numerous listings at MegaRBL.net and AbuseIPDB.com! Marked for
+# use with reCAPTCHA to reduce the false positive risk, and CIDRAM users from
+# the Ukraine, or targeting traffic from the Ukraine, should list this section
+# in their ignore.dat file to reduce the false positive risk (but the ISP could
+# be considered high risk for others elsewhere, so would best continue to be
+# blocked).
+# Stop Forum Spam (SFS) listings: 1,930.
+# Updated: 2018.02.20 / Checked: 2019.08.03
 
 2a00:1228::/32 Deny Generic
 Origin: UA

@@ -1,8 +1,8 @@
 # IPv4 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv4_isps.dat
 
-# Version: 2019.212.366
-# Last modified: 2019.08.01
+# Version: 2019.216.279
+# Last modified: 2019.08.05
 
 
 # ---
@@ -8345,12 +8345,15 @@ Tag: Foreningen
 
 
 # ASN 31148 ("Freenet Ltd").
-# Legit human endpoint/ISP based in Ukraine, but have been encountering numerous hack attempts from their ASN in recent
-# months. Marking this section for use with reCAPTCHA, because we don't want to accidentally block human users if we
-# can avoid it at all. HUGE numbers of nefarious listings at MegaRBL.net and AbuseIPDB.com! Can't really afford to just
-# ignore it. Ukrainian CIDRAM users should probably add the name of this section to their ignore.dat file.
-# Stop Forum Spam (SFS) listings: 944.
-# Updated: 2019.03.24
+# Ukrainian ISP with human endpoints, but also a frequent source of spam and
+# hack attempts. Numerous listings at MegaRBL.net and AbuseIPDB.com! Marked for
+# use with reCAPTCHA to reduce the false positive risk, and CIDRAM users from
+# the Ukraine, or targeting traffic from the Ukraine, should list this section
+# in their ignore.dat file to reduce the false positive risk (but the ISP could
+# be considered high risk for others elsewhere, so would best continue to be
+# blocked).
+# Stop Forum Spam (SFS) listings: 1,930.
+# Updated: 2019.08.03
 
 46.219.1.0/24 Deny Generic
 46.219.2.0/23 Deny Generic
@@ -8387,6 +8390,7 @@ Tag: Foreningen
 46.219.110.0/23 Deny Generic
 46.219.112.0/20 Deny Generic
 46.219.128.0/24 Deny Generic
+46.219.130.0/24 Deny Generic
 46.219.200.0/24 Deny Generic
 46.219.204.0/22 Deny Generic
 46.219.208.0/20 Deny Generic
@@ -8394,42 +8398,46 @@ Tag: Foreningen
 78.159.32.0/19 Deny Generic
 81.95.176.0/20 Deny Generic
 89.252.0.0/24 Deny Generic
-89.252.2.0/23 Deny Generic
+89.252.3.0/24 Deny Generic
 89.252.4.0/22 Deny Generic
 89.252.8.0/23 Deny Generic
 89.252.11.0/24 Deny Generic
-89.252.12.0/22 Deny Generic
+89.252.12.0/23 Deny Generic
 89.252.16.0/23 Deny Generic
 89.252.19.0/24 Deny Generic
 89.252.20.0/22 Deny Generic
 89.252.24.0/23 Deny Generic
 89.252.27.0/24 Deny Generic
-89.252.29.0/24 Deny Generic
 89.252.30.0/23 Deny Generic
-89.252.32.0/21 Deny Generic
+89.252.33.0/24 Deny Generic
+89.252.34.0/23 Deny Generic
+89.252.36.0/22 Deny Generic
 89.252.40.0/22 Deny Generic
-89.252.45.0/24 Deny Generic
 89.252.46.0/23 Deny Generic
 89.252.48.0/24 Deny Generic
 89.252.50.0/23 Deny Generic
-89.252.52.0/23 Deny Generic
+89.252.53.0/24 Deny Generic
 89.252.55.0/24 Deny Generic
 89.252.56.0/21 Deny Generic
 94.76.66.0/23 Deny Generic
+94.76.68.0/24 Deny Generic
 94.76.72.0/22 Deny Generic
 94.76.76.0/23 Deny Generic
 94.76.78.0/24 Deny Generic
-94.76.80.0/22 Deny Generic
-94.76.88.0/21 Deny Generic
+94.76.81.0/24 Deny Generic
+94.76.82.0/23 Deny Generic
+94.76.89.0/24 Deny Generic
+94.76.90.0/23 Deny Generic
+94.76.92.0/22 Deny Generic
 94.76.96.0/23 Deny Generic
 94.76.104.0/22 Deny Generic
 94.76.108.0/23 Deny Generic
 94.76.111.0/24 Deny Generic
 94.76.113.0/24 Deny Generic
-94.76.114.0/23 Deny Generic
+94.76.115.0/24 Deny Generic
 94.76.117.0/24 Deny Generic
 94.76.118.0/24 Deny Generic
-94.76.120.0/23 Deny Generic
+94.76.121.0/24 Deny Generic
 94.76.122.0/24 Deny Generic
 94.76.124.0/23 Deny Generic
 94.76.127.0/24 Deny Generic
@@ -8442,18 +8450,17 @@ Tag: Foreningen
 109.251.44.0/22 Deny Generic
 109.251.48.0/20 Deny Generic
 109.251.64.0/19 Deny Generic
-109.251.96.0/24 Deny Generic
-109.251.98.0/23 Deny Generic
-109.251.100.0/22 Deny Generic
-109.251.104.0/21 Deny Generic
+109.251.96.0/20 Deny Generic
 109.251.112.0/24 Deny Generic
-109.251.114.0/24 Deny Generic
+109.251.114.0/23 Deny Generic
 109.251.116.0/23 Deny Generic
 109.251.118.0/24 Deny Generic
 109.251.120.0/22 Deny Generic
 109.251.124.0/24 Deny Generic
 109.251.126.0/24 Deny Generic
-109.251.128.0/21 Deny Generic
+109.251.128.0/23 Deny Generic
+109.251.131.0/24 Deny Generic
+109.251.132.0/22 Deny Generic
 109.251.136.0/23 Deny Generic
 109.251.138.0/24 Deny Generic
 109.251.140.0/22 Deny Generic
@@ -8471,7 +8478,9 @@ Tag: Foreningen
 109.251.174.0/23 Deny Generic
 109.251.179.0/24 Deny Generic
 109.251.180.0/22 Deny Generic
-109.251.184.0/21 Deny Generic
+109.251.184.0/22 Deny Generic
+109.251.188.0/24 Deny Generic
+109.251.190.0/23 Deny Generic
 109.251.192.0/20 Deny Generic
 109.251.209.0/24 Deny Generic
 109.251.210.0/23 Deny Generic
@@ -8492,7 +8501,9 @@ Tag: Foreningen
 188.231.144.0/23 Deny Generic
 188.231.147.0/24 Deny Generic
 188.231.148.0/22 Deny Generic
-188.231.152.0/21 Deny Generic
+188.231.152.0/22 Deny Generic
+188.231.157.0/24 Deny Generic
+188.231.158.0/23 Deny Generic
 188.231.160.0/23 Deny Generic
 188.231.162.0/24 Deny Generic
 188.231.165.0/24 Deny Generic
@@ -8501,13 +8512,14 @@ Tag: Foreningen
 188.231.173.0/24 Deny Generic
 188.231.174.0/24 Deny Generic
 188.231.177.0/24 Deny Generic
-188.231.178.0/23 Deny Generic
+188.231.178.0/24 Deny Generic
 188.231.180.0/23 Deny Generic
 188.231.182.0/24 Deny Generic
 188.231.184.0/23 Deny Generic
 188.231.186.0/24 Deny Generic
 188.231.188.0/22 Deny Generic
 188.231.192.0/23 Deny Generic
+188.231.204.0/23 Deny Generic
 188.231.212.0/23 Deny Generic
 188.231.214.0/24 Deny Generic
 188.231.220.0/23 Deny Generic
@@ -8528,7 +8540,8 @@ Tag: Foreningen
 212.22.204.0/22 Deny Generic
 212.22.208.0/21 Deny Generic
 212.22.218.0/23 Deny Generic
-212.22.220.0/22 Deny Generic
+212.22.221.0/24 Deny Generic
+212.22.222.0/23 Deny Generic
 Origin: UA
 Tag: Freenet Ltd
 ---
@@ -9626,9 +9639,9 @@ recaptcha:
 # - "corporate internet gate".
 # ^.*(residential|trade center|campus connectivity|bank campus|corporate internet gate).*$
 # Everything else in the cloud services signature files.
-# %Listed, Google Malware Dashboard: 0.91%.
-# Stop Forum Spam (SFS) listings: 310.
-# Updated: 2019.03.27
+# %Listed, Google Malware Dashboard: 0.71%.
+# Stop Forum Spam (SFS) listings: 285.
+# Updated: 2019.03.27 / Checked: 2019.08.03
 
 188.225.8.0/21 Deny Generic
 188.225.40.0/21 Deny Generic
@@ -9885,11 +9898,10 @@ Tag: Business Consulting LLC
 
 # ASN 137432 ("BKB Network").
 # Caught using automated hacktools to try hacking into honeypots.
-# Stop Forum Spam (SFS) listings: 136.
-# Updated: 2019.04.03
+# Stop Forum Spam (SFS) listings: 221.
+# Updated: 2019.08.05
 
-103.108.88.0/24 Deny Generic
-103.108.90.0/23 Deny Generic
+103.108.88.0/22 Deny Generic
 Origin: BD
 Tag: BKB Network
 ---

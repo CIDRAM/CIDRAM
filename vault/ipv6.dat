@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6.dat
 
-# Version: 2019.216.279
-# Last modified: 2019.08.05
+# Version: 2019.222.262
+# Last modified: 2019.08.11
 
 
 # ---
@@ -183,16 +183,16 @@ Tag: Masterhost
 
 
 # ASN 26496 ("GoDaddy.com, LLC").
-# %Listed, Google Malware Dashboard: 0.50%.
-# Stop Forum Spam (SFS) listings: 5,060.
-# Updated: 2019.03.30
+# %Listed, Google Malware Dashboard: 0.40%.
+# Stop Forum Spam (SFS) listings: 3,752.
+# Updated: 2019.08.11
 
 2a00:1168::/32 Deny Cloud
-Origin: NL
+Origin: DE
 2407:1c00::/32 Deny Cloud
 Origin: SG
 2603:4::/44 Deny Cloud
-2603:4:10::/46 Deny Cloud
+2603:4:10::/45 Deny Cloud
 2603:5:2100::/40 Deny Cloud
 2603:5:2200::/40 Deny Cloud
 2607:f208:209::/48 Deny Cloud
@@ -204,13 +204,15 @@ Origin: SG
 2607:f208:560::/44 Deny Cloud
 2607:f208:580::/44 Deny Cloud
 2607:f208:1020::/44 Deny Cloud
-2607:f208:1040::/44 Deny Cloud
 2607:f208:1160::/44 Deny Cloud
 2607:f208:4000::/40 Deny Cloud
 2607:f208:4f02::/48 Deny Cloud
 2607:f208:5000::/40 Deny Cloud
 2607:f208:5f01::/48 Deny Cloud
 2607:f208:5f02::/48 Deny Cloud
+2607:f208:a010::/48 Deny Cloud
+2607:f208:a110::/48 Deny Cloud
+2607:f208:af00::/47 Deny Cloud
 Origin: US
 Tag: GoDaddy.com, LLC
 
@@ -1198,19 +1200,20 @@ Tag: Connexions4London
 
 
 # ASN 32475 ("SingleHop, Inc").
-# %Listed, Google Malware Dashboard: 0.19%.
-# Stop Forum Spam (SFS) listings: 180.
-# Updated: 2017.10.17 / Checked: 2019.03.27
+# %Listed, Google Malware Dashboard: 0.16%.
+# Stop Forum Spam (SFS) listings: 98.
+# Updated: 2019.08.11
 
 2607:f978:5::/48 Deny Cloud
+2607:f978:7::/48 Deny Cloud
 Origin: US
 Tag: SingleHop, Inc
 
 
 # ASN 29550 ("eUKhost LTD").
-# %Listed, Google Malware Dashboard: 0.13%.
-# Stop Forum Spam (SFS) listings: 79.
-# Updated: 2017.03.19 / Checked: 2019.03.27
+# %Listed, Google Malware Dashboard: 0.06%.
+# Stop Forum Spam (SFS) listings: 57.
+# Updated: 2017.03.19 / Checked: 2019.08.11
 
 2a02:af8::/32 Deny Cloud
 Origin: GB
@@ -2204,8 +2207,8 @@ Tag: Datacenter IP, LLC
 
 
 # ASN 43578 ("MBA DATACENTERS S.L").
-# Stop Forum Spam (SFS) listings: 20.
-# Updated: 2019.03.30
+# Stop Forum Spam (SFS) listings: 12.
+# Updated: 2019.03.30 / Checked: 2019.08.11
 
 2a04:b880::/48 Deny Cloud
 2a04:b880:5::/48 Deny Cloud
@@ -3444,9 +3447,9 @@ Tag: Huawei Cloud Service
 
 # ASN 38001 ("NewMedia Express Pte Ltd. Singapore Web Hosting Service Provider").
 # Caught trying to DDoS SFS.
-# %Listed, Google Malware Dashboard: 0.25%.
-# Stop Forum Spam (SFS) listings: 318.
-# Updated: 2019.03.30
+# %Listed, Google Malware Dashboard: 0.31%.
+# Stop Forum Spam (SFS) listings: 370.
+# Updated: 2019.08.11
 
 2402:2f80:1::/48 Deny Cloud
 2402:2f80:8::/48 Deny Cloud
@@ -3455,9 +3458,6 @@ Origin: AU
 Origin: GI
 2403:fa40:1::/48 Deny Cloud
 Origin: NL
-2a0c:df80::/29 Deny Cloud
-Origin: RU
-2400:fb80::/32 Deny Cloud
 2406:f400::/32 Deny Cloud
 2407:2f00:103::/48 Deny Cloud
 Origin: SG
@@ -3621,14 +3621,14 @@ Tag: Cyber Wurx LLC
 
 
 # ASN 60117 ("Host Sailor Ltd").
-# %Listed, Google Malware Dashboard: 0.67%.
-# Stop Forum Spam (SFS) listings: 155.
-# Updated: 2017.01.28 / Checked: 2019.03.27
+# %Listed, Google Malware Dashboard: 0.55%.
+# Stop Forum Spam (SFS) listings: 198.
+# Updated: 2019.08.11
 
-2a04:dd00::/29 Deny Cloud
+2a04:dd00::/31 Deny Cloud
 Origin: AE
 2a03:660::/32 Deny Cloud
-2a05:9340::/29 Deny Cloud
+2a05:9340::/31 Deny Cloud
 2a06:3d80::/29 Deny Cloud
 Origin: NL
 Tag: Host Sailor Ltd
@@ -4961,12 +4961,10 @@ Tag: CloudSol
 
 
 # ASN 55720 ("Gigabit Hosting Sdn Bhd").
-# %Listed, Google Malware Dashboard: 4.23%.
-# Stop Forum Spam (SFS) listings: 121.
-# Updated: 2019.03.30
+# %Listed, Google Malware Dashboard: 2.32%.
+# Stop Forum Spam (SFS) listings: 729.
+# Updated: 2019.08.11
 
-2407:a480::/32 Deny Cloud
-Origin: CN
 2402:90c0::/32 Deny Cloud
 Origin: HK
 2400:5680::/32 Deny Cloud
@@ -5800,7 +5798,7 @@ Tag: CLOUD STAR
 
 # ASN 14987 ("Rethem Hosting LLC").
 # Caught spamming.
-# Updated: 2019.03.30
+# Updated: 2019.03.30 / Checked: 2019.08.11
 
 2001:550:101::/48 Deny Cloud
 2607:8500::/32 Deny Cloud

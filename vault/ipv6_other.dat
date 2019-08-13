@@ -1,8 +1,8 @@
 # IPv6 signatures file (CIDRs for proxies, VPNs and other miscellaneous unwanted services).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_other.dat
 
-# Version: 2019.204.374
-# Last modified: 2019.07.24
+# Version: 2019.224.425
+# Last modified: 2019.08.13
 
 
 # ---
@@ -113,17 +113,15 @@ recaptcha:
 
 
 # ASN 36351 ("SoftLayer Technologies").
-# Ranges change frequently / Should update often.
-# Careful when updating; Signatures reflect varying block reasons, separated by different tags in different files.
-# Section is split across multiple files.
-# %Listed, Google Malware Dashboard: 0.11%.
-# Stop Forum Spam (SFS) listings: 6,103.
+# Careful when updating; Signatures reflect varying block reasons, split across multiple files.
+# %Listed, Google Malware Dashboard: 0.06%.
+# Stop Forum Spam (SFS) listings: 7,776.
 
 # SoftLayer VPNs and proxies.
 # Includes: Anything citing "TEFINCOM", "Packet Flip", "VPN", "proxy", "Privat Kommunikation", "Secure Internet".
 # ^(.*(TEFINCOM|Packet Flip|VPN|Proxy|Privat Kommunikation|Secure Internet).*)$
 # Excludes: Everything else.
-# Updated: 2018.06.24 / Checked: 2019.05.20
+# Updated: 2018.06.24 / Checked: 2019.08.13
 
 2400:bb40:1000::/40 Deny Proxy
 Origin: PA
@@ -139,7 +137,7 @@ Tag: SoftLayer VPNs
 # ASN 59898 ("AllSafe Sarl").
 # Related to "ProtonVPN", "ProtonMail", and "Proton Technologies". Provides VPNs and proxies, both public and private.
 # Stop Forum Spam (SFS) listings: 6.
-# Updated: 2018.04.17 / Checked: 2019.07.23
+# Updated: 2018.04.17 / Checked: 2019.08.13
 
 2a0a:6d40::/29 Deny Proxy
 Origin: CH
@@ -148,8 +146,8 @@ Tag: AllSafe Sarl
 
 # ASN 205100 ("F3 Netze e.V").
 # Provides TOR exit nodes.
-# Stop Forum Spam (SFS) listings: 11,559.
-# Updated: 2018.04.23 / Checked: 2019.03.26
+# Stop Forum Spam (SFS) listings: 7,594.
+# Updated: 2018.04.23 / Checked: 2019.08.13
 
 2a0b:f4c0::/40 Deny Proxy
 2a0b:f4c0:100::/48 Deny Proxy
@@ -178,8 +176,8 @@ recaptcha:
 
 # ASN 396507 ("Emerald Onion").
 # Anonymous tor endpoint; Significant source of spam.
-# Stop Forum Spam (SFS) listings: 7,574.
-# Updated: 2019.05.03
+# Stop Forum Spam (SFS) listings: 19,550.
+# Updated: 2019.05.03 / Checked: 2019.08.13
 
 2620:18c::/36 Deny Proxy
 Origin: US

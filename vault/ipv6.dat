@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6.dat
 
-# Version: 2019.222.262
-# Last modified: 2019.08.11
+# Version: 2019.224.425
+# Last modified: 2019.08.13
 
 
 # ---
@@ -368,11 +368,9 @@ Tag: Agava Ltd
 
 
 # ASN 36351 ("SoftLayer Technologies").
-# Ranges change frequently / Should update often.
-# Careful when updating; Signatures reflect varying block reasons, separated by different tags in different files.
-# Section is split across multiple files.
-# %Listed, Google Malware Dashboard: 0.11%.
-# Stop Forum Spam (SFS) listings: 6,103.
+# Careful when updating; Signatures reflect varying block reasons, split across multiple files.
+# %Listed, Google Malware Dashboard: 0.06%.
+# Stop Forum Spam (SFS) listings: 7,776.
 
 # SoftLayer cloud services, webhosting providers, etc.
 # This section all as "Run rules_softlayer.php".
@@ -386,7 +384,7 @@ Tag: Agava Ltd
 # Excludes: Anything citing "Vonex" (clean; don't need to block).
 # ^(.*(Vonex).*)$
 # Includes: Everything else.
-# Updated: 2019.04.23 / Checked: 2019.05.20
+# Updated: 2019.04.23 / Checked: 2019.08.13
 
 2402:2f80::/48 Run rules_softlayer.php
 2403:1480:1000::/36 Run rules_softlayer.php
@@ -825,9 +823,9 @@ Tag: Eonix Corporation
 
 
 # ASNs 32748, 46440 ("Steadfast Networks").
-# %Listed, Google Malware Dashboard: 0.49% (AS32748).
-# Stop Forum Spam (SFS) listings: 1,174 (AS32748).
-# Updated: 2018.10.05 / Checked: 2019.03.30
+# %Listed, Google Malware Dashboard: 0.41% (AS32748).
+# Stop Forum Spam (SFS) listings: 230 (AS32748).
+# Updated: 2018.10.05 / Checked: 2019.08.13
 
 2602:ffbb::/36 Deny Cloud
 2607:6980:13f0::/44 Deny Cloud
@@ -920,12 +918,13 @@ Tag: Digital Ocean, Inc
 
 
 # ASN 5577 ("Root SA").
-# %Listed, Google Malware Dashboard: 0.06%.
-# Stop Forum Spam (SFS) listings: 2,463.
-# Updated: 2018.10.05 / Checked: 2019.03.30
+# Stop Forum Spam (SFS) listings: 1,581.
+# Updated: 2019.08.13
 
 2001:67c:15a3::/48 Deny Cloud
 Origin: CZ
+2a0e:2b04::/30 Deny Cloud
+Origin: LT
 2a01:608::/32 Deny Cloud
 Origin: LU
 Tag: Root SA
@@ -1316,8 +1315,8 @@ Tag: Psychz Networks
 
 # ASN 36114 ("Versaweb, LLC").
 # %Listed, Google Malware Dashboard: 0.03%.
-# Stop Forum Spam (SFS) listings: 217.
-# Updated: 2016.01.23 / Checked: 2019.03.30
+# Stop Forum Spam (SFS) listings: 190.
+# Updated: 2016.01.23 / Checked: 2019.08.13
 
 2605:6f80::/40 Deny Cloud
 Origin: US
@@ -3162,12 +3161,13 @@ Tag: ShenZhen Sunrise
 
 
 # ASN 39572 ("DataWeb Global Group B.V").
-# All the ranges from South Africa in this network seem to be proxies. Should mark accordingly.
-# %Listed, Google Malware Dashboard: 0.10%.
-# Stop Forum Spam (SFS) listings: 482.
-# Updated: 2018.11.21 / Checked: 2019.03.30
+# %Listed, Google Malware Dashboard: 0.07%.
+# Stop Forum Spam (SFS) listings: 508.
+# Updated: 2019.08.13
 
 2a02:b48::/31 Deny Cloud
+2a02:b4a::/32 Deny Cloud
+2a02:b4b::/48 Deny Cloud
 Origin: NL
 Tag: DataWeb Global
 
@@ -3577,9 +3577,9 @@ Tag: OPTICAL TECHNOLOGIES
 
 
 # ASNs 29302, 32780 ("Hosting Services Inc").
-# %Listed, Google Malware Dashboard: 0.20% (AS29302), 0.10% (AS32780).
-# Stop Forum Spam (SFS) listings: 165 (AS29302), 5,712 (AS32780).
-# Updated: 2017.09.22 / Checked: 2019.03.27
+# %Listed, Google Malware Dashboard: 0.04% (AS32780).
+# Stop Forum Spam (SFS) listings: 96 (AS29302), 6,120 (AS32780).
+# Updated: 2017.09.22 / Checked: 2019.08.13
 
 2607:5880::/48 Deny Cloud
 Origin: CA
@@ -4696,7 +4696,7 @@ Tag: HostPalace
 
 # ASNs 62, 19479, 20013 ("CyrusOne LLC").
 # Some IPs on these ASNs caught probing for database dumps.
-# Updated: 2018.01.12 / Checked: 2019.03.27
+# Updated: 2018.01.12 / Checked: 2019.08.13
 
 2605:9600::/38 Deny Cloud
 2605:9600:400::/39 Deny Cloud
@@ -4850,9 +4850,10 @@ Tag: Servers Australia
 
 
 # ASN 49981 ("WorldStream").
-# %Listed, Google Malware Dashboard: 1.41%.
-# Stop Forum Spam (SFS) listings: 2,243.
-# Updated: 2019.06.10
+# (209.222.250.0 already listed in ipv4_other.dat; can omit from here).
+# %Listed, Google Malware Dashboard: 0.07%.
+# Stop Forum Spam (SFS) listings: 2,166.
+# Updated: 2019.08.13
 
 2a06:e881:6000::/44 Deny Cloud
 Origin: CH
@@ -4875,7 +4876,6 @@ Origin: NL
 2a09:9441::/32 Deny Cloud
 2a0b:bd00::/31 Deny Cloud
 2a0c:2f40::/32 Deny Cloud
-2a0d:e4c0::/32 Deny Cloud
 Origin: RU
 Tag: WorldStream
 
@@ -4958,6 +4958,16 @@ Tag: Fishnet
 2a0d:e4c4::/31 Deny Cloud
 Origin: RU
 Tag: CloudSol
+
+
+# ASN 132839 ("POWER LINE (HK) CO., LIMITED").
+# %Listed, Google Malware Dashboard: 0.96%.
+# Stop Forum Spam (SFS) listings: 16.
+# Updated: 2019.08.13
+
+2401:f940::/32 Deny Cloud
+Origin: HK
+Tag: POWER LINE (HK) CO
 
 
 # ASN 55720 ("Gigabit Hosting Sdn Bhd").
@@ -5255,9 +5265,9 @@ Tag: Hostio Solutions B.V
 
 
 # ASN 23338 ("DCS Pacific Star, LLC").
-# %Listed, Google Malware Dashboard: 2.95%.
-# Stop Forum Spam (SFS) listings: 684.
-# Updated: 2018.05.18 / Checked: 2019.03.30
+# %Listed, Google Malware Dashboard: 2.77%.
+# Stop Forum Spam (SFS) listings: 35.
+# Updated: 2018.05.18 / Checked: 2019.08.13
 
 2606:b680::/32 Deny Cloud
 Origin: US
@@ -5526,11 +5536,11 @@ Tag: Web4U s.r.o
 
 # ASN 13768 ("Cogeco Peer 1").
 # Multi-play network, primarily offers infrastructure for webhosting services. Some unwanted traffic seen from their
-# ASN, probing for secure pages, spam attempts, etc. Also contains some broadband providers and human endpoints, which
-# shouldn't be included here: "Kijoma Broadband", "Fairleigh Dickinson University", "Intercom Online".
-# %Listed, Google Malware Dashboard: 0.19%.
-# Stop Forum Spam (SFS) listings: 376.
-# Updated: 2018.10.05 / Checked: 2019.03.27
+# ASN, probing for secure pages, spam attempts, etc. Also contains some broadband providers (should remove these when
+# updating): "Kijoma Broadband", "Fairleigh Dickinson University"; ^.*(?:Kijoma|University).*$\n
+# %Listed, Google Malware Dashboard: 0.14%.
+# Stop Forum Spam (SFS) listings: 373.
+# Updated: 2018.10.05 / Checked: 2019.08.13
 
 2001:1978:202::/48 Deny Cloud
 2001:1978:1000::/39 Deny Cloud

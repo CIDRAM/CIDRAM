@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2019.07.25).
+ * This file: Functions file (last modified: 2019.08.13).
  */
 
 /**
@@ -1096,6 +1096,9 @@ $CIDRAM['DNS-Reverse-Forward'] = function ($Domains, $Friendly, array $Options =
     $CIDRAM['BlockInfo']['Signatures'] .= basename($Debug['file']) . ':L' . $Debug['line'];
     $CIDRAM['BlockInfo']['SignatureCount']++;
 
+    /** Reporting. */
+    $CIDRAM['Reporter']->report([19], ['Caught masquerading as ' . $Friendly . '.'], $CIDRAM['BlockInfo']['IPAddr']);
+
     /** Exit. */
     return true;
 
@@ -1136,6 +1139,9 @@ $CIDRAM['UA-IP-Match'] = function ($Expected, $Friendly, array $Options = []) us
     $Debug = debug_backtrace(DEBUG_BACKTRACE_PROVIDE_OBJECT | DEBUG_BACKTRACE_IGNORE_ARGS, 1)[0];
     $CIDRAM['BlockInfo']['Signatures'] .= basename($Debug['file']) . ':L' . $Debug['line'];
     $CIDRAM['BlockInfo']['SignatureCount']++;
+
+    /** Reporting. */
+    $CIDRAM['Reporter']->report([19], ['Caught masquerading as ' . $Friendly . '.'], $CIDRAM['BlockInfo']['IPAddr']);
 
 };
 

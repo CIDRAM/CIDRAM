@@ -1,8 +1,8 @@
 # IPv4 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv4_isps.dat
 
-# Version: 2019.224.425
-# Last modified: 2019.08.13
+# Version: 2019.229.529
+# Last modified: 2019.08.18
 
 
 # ---
@@ -1684,9 +1684,8 @@ Tag: Websupport s.r.o
 
 
 # ASN 51191 ("Xirra GmbH").
-# %Listed, Google Malware Dashboard: 0.92%.
-# Stop Forum Spam (SFS) listings: 74.
-# Updated: 2016.01.21 / Checked: 2019.01.27
+# Stop Forum Spam (SFS) listings: 2.
+# Updated: 2016.01.21 / Checked: 2019.08.18
 
 91.232.96.0/23 Deny Generic
 130.185.104.0/21 Deny Generic
@@ -1698,8 +1697,8 @@ Tag: Xirra GmbH
 
 
 # ASN 35804 ("PP SKS-LUGAN").
-# Stop Forum Spam (SFS) listings: 54.
-# Updated: 2018.08.05 / Checked: 2019.01.27
+# Stop Forum Spam (SFS) listings: 35.
+# Updated: 2018.08.05 / Checked: 2019.08.18
 
 91.202.212.0/22 Deny Generic
 194.79.60.0/22 Deny Generic
@@ -2994,9 +2993,11 @@ recaptcha:
 
 
 # ASNs 12530, 15895, 35081 ('"Kyivstar" PJSC').
-# %Listed, Google Malware Dashboard: 2.48% (AS12530).
-# Stop Forum Spam (SFS) listings: 539,459 (AS12530), 8,739,304 (AS15895).
-# Updated: 2016.09.06 / Checked: 2019.01.27
+# Absolutely **INSANE** levels of spam coming from this network!! Shouldn't
+# ever, ever let them through, if at all possible.
+# %Listed, Google Malware Dashboard: 3.23% (AS12530).
+# Stop Forum Spam (SFS) listings: 22,323 (AS12530), 5,308,438 (AS15895).
+# Updated: 2016.09.06 / Checked: 2019.08.18
 
 5.248.0.0/16 Deny Spam
 37.115.0.0/16 Deny Spam
@@ -3251,14 +3252,32 @@ recaptcha:
 
 
 # ASN 200019 ("ALEXHOST SRL").
-# %Listed, Google Malware Dashboard: 0.68%.
-# Stop Forum Spam (SFS) listings: 603.
-# Updated: 2019.04.07
+# Stop Forum Spam (SFS) listings: 289.
+# Updated: 2019.08.18
 
+77.83.112.0/22 Deny Generic
+83.142.48.0/22 Deny Generic
+Origin: BG
+77.90.155.0/24 Deny Generic
+77.90.156.0/24 Deny Generic
+77.90.158.0/23 Deny Generic
+77.90.169.0/24 Deny Generic
+77.90.170.0/23 Deny Generic
+77.90.172.0/23 Deny Generic
+77.90.178.0/23 Deny Generic
+77.90.180.0/24 Deny Generic
+185.230.12.0/22 Deny Generic
+213.209.133.0/24 Deny Generic
+213.209.135.0/24 Deny Generic
+213.209.136.0/24 Deny Generic
+Origin: DE
 45.67.229.0/24 Deny Generic
 176.123.0.0/19 Deny Generic
 Origin: MD
+5.182.39.0/24 Deny Generic
+45.84.0.0/24 Deny Generic
 91.243.83.0/24 Deny Generic
+193.188.21.0/24 Deny Generic
 Origin: RU
 Tag: ALEXHOST SRL
 
@@ -8293,7 +8312,7 @@ recaptcha:
 # ASN 133610 ("BRAC").
 # An NGO charity whose IPs were caught being used in attempts to hack into WordPress installations.
 # Refer abuseipdb.com/check/103.43.93.26 for example.
-# Updated: 2017.10.20 / Checked: 2019.01.27
+# Updated: 2017.10.20 / Checked: 2019.08.18
 
 103.43.93.0/24 Deny Generic
 103.238.63.0/24 Deny Generic
@@ -9908,12 +9927,40 @@ recaptcha:
 
 
 # ASN 16010 ("Magticom Ltd").
-# A ridiculously huge amount spam originating from some very specific IPs within this network, without which the
-# network otherwise appears reasonably clean and safe. Blocking the affected ranges until the situation improves.
-# Stop Forum Spam (SFS) listings: 45,704.
-# Updated: 2019.04.03
+# Spam events originating from this network slowly becoming worse over time.
+# Stop Forum Spam (SFS) listings: 90,665.
+# Updated: 2019.08.18
 
+5.178.128.0/17 Deny Spam
+46.49.0.0/17 Deny Spam
+62.168.160.0/19 Deny Spam
+77.74.40.0/21 Deny Spam
+80.241.240.0/22 Deny Spam
+80.241.248.0/22 Deny Spam
+80.241.253.0/24 Deny Spam
+80.241.254.0/23 Deny Spam
+82.211.128.0/18 Deny Spam
+85.114.224.0/19 Deny Spam
+89.232.32.0/19 Deny Spam
+93.177.128.0/18 Deny Spam
+94.137.160.0/19 Deny Spam
+94.240.192.0/18 Deny Spam
+95.104.0.0/17 Deny Spam
 109.172.128.0/17 Deny Spam
+134.19.224.0/19 Deny Spam
+188.121.192.0/19 Deny Spam
+188.129.128.0/17 Deny Spam
+212.58.96.0/19 Deny Spam
+212.72.128.0/23 Deny Spam
+212.72.131.0/24 Deny Spam
+212.72.132.0/22 Deny Spam
+212.72.136.0/21 Deny Spam
+212.72.144.0/21 Deny Spam
+212.72.152.0/23 Deny Spam
+212.72.154.0/24 Deny Spam
+212.72.156.0/22 Deny Spam
+213.157.192.0/19 Deny Spam
+213.200.0.0/19 Deny Spam
 Origin: GE
 Tag: Magticom Ltd
 ---

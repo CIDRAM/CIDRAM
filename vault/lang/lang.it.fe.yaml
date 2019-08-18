@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Italian language data for the front-end (last modified: 2019.07.25).
+# This file: Italian language data for the front-end (last modified: 2019.08.17).
 ##/
 
 Extended Description Bypasses: "Un file per bypassare alcune delle firme predefinite normalmente inclusi nel pacchetto principale."
@@ -21,6 +21,7 @@ Extended Description IPv6-ISPs: "Blocca ISP pericolosi e spam incline."
 Extended Description IPv6-Other: "Blocca CIDRs per i proxy, VPN e altri vari servizi indesiderati."
 Extended Description IPv6: "Blocca servizi cloud indesiderate e punti finali non umani."
 Extended Description PHPMailer: "Richiesto per l'utilizzo di qualsiasi funzionalità che implica l'invio di posta elettronica.<br /><a href="https://github.com/PHPMailer/PHPMailer">PHPMailer</a> è disponibile tramite la licenza <a href="https://github.com/PHPMailer/PHPMailer/blob/master/LICENSE">LGPLv2.1</a>."
+Extended Description flags.css: "Aggiunge il supporto per i flag alla pagina dei registri front-end."
 Extended Description module_abuseipdb.php: "Blocca le richieste dagli IP elencati in AbuseIPDB."
 Extended Description module_badhosts.php: "Blocca gli host utilizzati frequentemente da spammer, hacker e altre entità nefande."
 Extended Description module_badhosts_isps.php: "Blocca gli host appartenenti agli ISP utilizzati frequentemente da spammer, hacker e altre entità malvagie."
@@ -28,6 +29,7 @@ Extended Description module_badtlds.php: "Blocca gli host appartenenti agli TLD 
 Extended Description module_botua.php: "Blocca gli agenti utente associati a bot indesiderati e attività nefande."
 Extended Description module_cookies.php: "Fornisce alcune protezioni limitate contro i cookie pericolosi."
 Extended Description module_extras.php: "Fornisce alcune protezioni limitate contro i vari vettori di attacco comunemente usata nelle richieste."
+Extended Description module_refspam.php: "Il blocco basato sullo spam dei referrer in genere non offre alcun vantaggio significativo in termini di sicurezza, ma in alcuni casi potrebbe essere utile per alcuni utenti, per raccogliere maggiori informazioni sulle richieste e per poterle segnalare."
 Extended Description module_sfs.php: "Protegge le pagine di registrazione e di accesso agli IP elencati da SFS."
 Name Bypasses: "I firme predefinite bypass."
 Name IPv4-Bogons: "IPv4 (bogon)."
@@ -47,6 +49,7 @@ Name module_baidublocker.php: "Modulo bloccante di Baidu"
 Name module_botua.php: "Modulo opzionale di agenti utente"
 Name module_cookies.php: "Modulo opzionale per l'analisi dei cookies"
 Name module_extras.php: "Modulo opzionale per gli extra di sicurezza"
+Name module_refspam.php: "Modulo spam referrer"
 Name module_sfs.php: "Modulo Stop Forum Spam"
 Name module_ua.php: "Modulo blocco UA vuoto"
 Name module_yandexblocker.php: "Modulo bloccante di Yandex"
@@ -82,6 +85,7 @@ config_general_frontend_log: "File per la registrazione di l'accesso front-end t
 config_general_hide_version: "Nascondi informazioni sulla versione dai registri e l'output della pagina? True = Sì; False = No [Predefinito]."
 config_general_ipaddr: "Dove trovare l'indirizzo IP di collegamento richiesta? (Utile per servizi come Cloudflare e simili). Predefinito = REMOTE_ADDR. AVVISO: Non modificare questa se non sai quello che stai facendo!"
 config_general_lang: "Specifica la lingua predefinita per CIDRAM."
+config_general_lang_override: "Localizzare secondo HTTP_ACCEPT_LANGUAGE quando possibile? True = Sì [Predefinito]; False = No."
 config_general_log_banned_ips: "Includi richieste bloccate da IP vietati nei file di log? True = Sì [Predefinito]; False = No."
 config_general_log_rotation_action: "La rotazione dei log limita il numero di file di log che dovrebbero esistere in qualsiasi momento. Quando vengono creati nuovi file di log, se il numero totale di file di log supera il limite specificato, verrà eseguita l'azione specificata. Qui puoi specificare l'azione desiderato. Delete = Elimina i file di log più vecchi, finché il limite non viene più superato. Archive = In primo luogo archiviare e quindi, eliminare i file di log più vecchi, finché il limite non viene più superato."
 config_general_log_rotation_limit: "La rotazione dei log limita il numero di file di log che dovrebbero esistere in qualsiasi momento. Quando vengono creati nuovi file di log, se il numero totale di file di log supera il limite specificato, verrà eseguita l'azione specificata. Qui puoi specificare il limite desiderato. Un valore di 0 disabiliterà la rotazione dei log."

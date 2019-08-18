@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Norwegian language data for the front-end (last modified: 2019.07.25).
+# This file: Norwegian language data for the front-end (last modified: 2019.08.17).
 ##/
 
 Extended Description Bypasses: "Standard-signatur-bypass-filene som normalt følger med hovedpakken."
@@ -21,6 +21,7 @@ Extended Description IPv6-ISPs: "Blokkerer farlige og spam-fylte ISPer."
 Extended Description IPv6-Other: "Blokkerer CIDRer for proxyer, VPN og andre uønskede tjenester."
 Extended Description IPv6: "Blokkerer uønskede sky-tjenester og ikke-menneskelige endepunkter."
 Extended Description PHPMailer: "Kreves for bruk av funksjonalitet som innebærer sending av e-post.<br /><a href="https://github.com/PHPMailer/PHPMailer">PHPMailer</a> er tilgjengelig via <a href="https://github.com/PHPMailer/PHPMailer/blob/master/LICENSE">LGPLv2.1</a>-lisensen."
+Extended Description flags.css: "Legger flaggsupport til frontendsloggesiden."
 Extended Description module_abuseipdb.php: "Blokkerer forespørsler fra IP-er oppført på AbuseIPDB."
 Extended Description module_badhosts.php: "Blokker vertene ofte brukt av spammere, hackere og andre farlige enheter."
 Extended Description module_badhosts_isps.php: "Blokker vertene som tilhører Internett-leverandører ofte brukt av spammere, hackere og andre farlige enheter."
@@ -28,6 +29,7 @@ Extended Description module_badtlds.php: "Blokker vertene som tilhører TLDer of
 Extended Description module_botua.php: "Blokkerer brukeragenter assosiert med uønskede bots og ufarlig aktivitet."
 Extended Description module_cookies.php: "Gir noen begrensede beskyttelser mot farlige informasjonskapsler."
 Extended Description module_extras.php: "Gir noen begrensede beskyttelser mot ulike angrepsvektorer som ofte brukes i forespørsler."
+Extended Description module_refspam.php: "Blokkering basert på referansesøppel vil vanligvis ikke gi noen meningsfull sikkerhetsgevinst, men i noen tilfeller kan det være nyttig for noen brukere, for å samle mer informasjon om forespørsler og for å kunne rapportere det."
 Extended Description module_sfs.php: "Beskytter registrerings og innloggingssider mot IP-adresser oppført av SFS."
 Name Bypasses: "Standard signatur bypasses."
 Name IPv4-Bogons: "IPv4 (bogoner)."
@@ -47,6 +49,7 @@ Name module_baidublocker.php: "Baidu blokkeringsmodul"
 Name module_botua.php: "Valgfri brukeragentmodul"
 Name module_cookies.php: "Valgfrie informasjonskapselskannermodul"
 Name module_extras.php: "Valgfrie sikkerhetstilleggsmodul"
+Name module_refspam.php: "Henvisende spam modul"
 Name module_sfs.php: "Stop Forum Spam modul"
 Name module_ua.php: "Tom UA-blokkeringsmodul"
 Name module_yandexblocker.php: "Yandex blokkeringsmodul"
@@ -82,6 +85,7 @@ config_general_frontend_log: "Fil for å logge innloggingsforsøk på frontenden
 config_general_hide_version: "Skjul versjoninformasjon fra logger og sideutdata? True = Ja; False = Nei [Standardverdi]."
 config_general_ipaddr: "Hvor finner jeg IP-adressen til å koble til forespørsler? (Nyttig for tjenester som Cloudflare og så videre). Standardverdi = REMOTE_ADDR. ADVARSEL: Ikke endre dette med mindre du vet hva du gjør!"
 config_general_lang: "Angi standardspråket for CIDRAM."
+config_general_lang_override: "Lokaliser i henhold til HTTP_ACCEPT_LANGUAGE når det er mulig? True = Ja [Standardverdi]; False = Nei."
 config_general_log_banned_ips: "Inkluder blokkerte forespørsler fra utestengt IP-adresser i loggfilene? True = Ja [Standardverdi]; False = Nei."
 config_general_log_rotation_action: "Loggrotasjon begrenser antall loggfiler som bør eksistere til enhver tid. Når nye loggfiler blir opprettet, hvis det totale antall loggfiler overskrider den angitte grensen, den angitte handlingen vil bli utført. Du kan angi ønsket handling her. Delete = Slett de eldste loggfiler, til grensen ikke overskrides. Archive = Først arkiver, og deretter slett de eldste loggfiler, til grensen ikke overskrides."
 config_general_log_rotation_limit: "Loggrotasjon begrenser antall loggfiler som bør eksistere til enhver tid. Når nye loggfiler blir opprettet, hvis det totale antall loggfiler overskrider den angitte grensen, den angitte handlingen vil bli utført. Du kan angi ønsket grense her. En verdi på 0 deaktiverer loggrotasjon."

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: German language data for the front-end (last modified: 2019.07.25).
+# This file: German language data for the front-end (last modified: 2019.08.17).
 ##/
 
 Extended Description Bypasses: "Die Standard-Signatur-Bypass-Dateien, die normalerweise im Hauptpaket enthalten sind."
@@ -21,6 +21,7 @@ Extended Description IPv6-ISPs: "Blockiert gefährliche und spam-anfällig ISPs.
 Extended Description IPv6-Other: "Blockiert CIDRs für Proxies, VPNs und andere verschiedene unerwünschte Dienste."
 Extended Description IPv6: "Blockiert unerwünschte Cloud-Services und nicht-menschliche Endpunkte."
 Extended Description PHPMailer: "Erforderlich für die Verwendung von Funktionen zum Senden von E-Mails.<br /><a href="https://github.com/PHPMailer/PHPMailer">PHPMailer</a> ist über die <a href="https://github.com/PHPMailer/PHPMailer/blob/master/LICENSE">LGPLv2.1</a>-Lizenz verfügbar."
+Extended Description flags.css: "Dies fügt Unterstützung für Flags hinzu für den Protokolldateien."
 Extended Description module_abuseipdb.php: "Blockiert Anfragen von IPs, die bei AbuseIPDB aufgelistet sind."
 Extended Description module_badhosts.php: "Blockiert Hosts, die häufig von Spammern, Hackern und anderen bösartigen Entitäten verwendet werden."
 Extended Description module_badhosts_isps.php: "Blockiert Hosts, die zu ISPs gehören, die häufig von Spammern, Hackern und anderen schändlichen Entitäten verwendet werden."
@@ -28,6 +29,7 @@ Extended Description module_badtlds.php: "Blockiert Hosts, die zu TLDs gehören,
 Extended Description module_botua.php: "Blockiert Benutzeragenten, die mit unerwünschten Bots und ruchlosen Aktivitäten in Verbindung stehen."
 Extended Description module_cookies.php: "Bietet einige begrenzte Schutzmaßnahmen gegen gefährliche Cookies."
 Extended Description module_extras.php: "Bietet einige begrenzte Schutzmaßnahmen gegen verschiedene Angriffsvektoren häufig in Anfragen verwendet."
+Extended Description module_refspam.php: "Das Blockieren auf der Basis von Referrer-Spam bietet im Allgemeinen keinen bedeutenden Sicherheitsvorteil, jedoch in einigen Fällen kann dies für einige Benutzer hilfreich sein, um weitere Informationen zur Anfragen zu sammeln und um sie zu melden."
 Extended Description module_sfs.php: "Schützt die Registrierung und die Einloggen-Seiten vor den von SFS aufgelisteten IPs."
 Name Bypasses: "Standard-Signatur-Bypässe."
 Name IPv4-Bogons: "IPv4 (Bogon CIDRs)."
@@ -47,6 +49,7 @@ Name module_baidublocker.php: "Baidu Blocker-Modul"
 Name module_botua.php: "Optionales Benutzeragenten-Modul"
 Name module_cookies.php: "Optionales Cookie-Scanner-Modul"
 Name module_extras.php: "Optionales Sicherheits-Extras-Modul"
+Name module_refspam.php: "Referrer-Spam-Modul"
 Name module_sfs.php: "Stop Forum Spam Modul"
 Name module_ua.php: "Leeres UA-Blocker-Modul"
 Name module_yandexblocker.php: "Yandex Blocker-Modul"
@@ -82,6 +85,7 @@ config_general_frontend_log: "Datei für die Protokollierung von Frontend Anmeld
 config_general_hide_version: "Versionsinformationen aus Protokollen und Seitenausgabe ausblenden? True = Ja; False = Nein [Standardeinstellung]."
 config_general_ipaddr: "Ort der IP-Adresse der aktuellen Verbindung im gesamten Datenstrom (nützlich für Cloud-Services). Standardeinstellung = REMOTE_ADDR. ACHTUNG: Ändern Sie diesen Wert nur, wenn Sie wissen, was Sie tun!"
 config_general_lang: "Gibt die Standardsprache für CIDRAM an."
+config_general_lang_override: "Nach HTTP_ACCEPT_LANGUAGE lokalisieren wann möglich? True = Ja [Standardeinstellung]; False = Nein."
 config_general_log_banned_ips: "Sollen auch blockierte Anfragen von verbotenen IPs protokolliert werden? True = Ja [Standardeinstellung]; False = Nein."
 config_general_log_rotation_action: "Die Protokollrotation begrenzt die Anzahl der Protokolldateien, die gleichzeitig vorhanden sein sollten. Wenn neue Protokolldateien erstellt werden, und wenn die Gesamtzahl der Protokolldateien den angegebenen Limit überschreitet, wird die angegebene Aktion ausgeführt. Sie können hier die gewünschte Aktion angeben. Delete = Löschen Sie die ältesten Protokolldateien, bis das Limit nicht mehr überschritten wird. Archive = Zuerst archivieren, und dann löschen Sie die ältesten Protokolldateien, bis das Limit nicht mehr überschritten wird."
 config_general_log_rotation_limit: "Die Protokollrotation begrenzt die Anzahl der Protokolldateien, die gleichzeitig vorhanden sein dürfen. Wenn neue Protokolldateien erstellt werden, und wenn die Gesamtzahl der Protokolldateien den angegebenen Limit überschreitet, wird die angegebene Aktion ausgeführt. Sie können hier das gewünschte Limit angeben. Ein Wert von 0 deaktiviert die Protokollrotation."

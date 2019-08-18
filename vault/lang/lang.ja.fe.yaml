@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Japanese language data for the front-end (last modified: 2019.07.25).
+# This file: Japanese language data for the front-end (last modified: 2019.08.17).
 ##/
 
 Extended Description Bypasses: "メインパッケージに通常含まれているデフォルト・シグネチャ・バイパス。"
@@ -21,6 +21,7 @@ Extended Description IPv6-ISPs: "スパマーを持つ危険なＩＳＰをブ�
 Extended Description IPv6-Other: "プロキシ、​ＶＰＮ、​およびその他の不要なサービスのＣＩＤＲをブロックします。"
 Extended Description IPv6: "不要なクラウドサービスと非人のエンドポイントをブロックします。"
 Extended Description PHPMailer: "電子Ｅメールの送信を含む機能の使用に必要です。<br />「<a href="https://github.com/PHPMailer/PHPMailer">PHPMailer</a>」は、「<a href="https://github.com/PHPMailer/PHPMailer/blob/master/LICENSE">LGPLv2.1</a>」ライセンスを介して利用可能です。"
+Extended Description flags.css: "フロントエンド・ログページにフラグ・サポートを追加します。"
 Extended Description module_abuseipdb.php: "AbuseIPDBにリストされているＩＰからの要求をブロックします。"
 Extended Description module_badhosts.php: "スパマー、ハッカー、およびその他の悪意のあるエンティティによって頻繁に使用されるホストをブロックします。"
 Extended Description module_badhosts_isps.php: "スパマー、ハッカー、その他の悪意のあるエンティティによって頻繁に使用されるＩＳＰに属するホストをブロックします。"
@@ -28,6 +29,7 @@ Extended Description module_badtlds.php: "スパマー、ハッカー、その�
 Extended Description module_botua.php: "望ましくないボットや悪意のあるアクティビティに関連付けられたユーザー・エージェントをブロックします。"
 Extended Description module_cookies.php: "危険なクッキーに対するいくつかの限定された保護を提供します。"
 Extended Description module_extras.php: "リクエストでよく使用される攻撃経路に対して、​いくつかの制限された保護を提供します。"
+Extended Description module_refspam.php: "リファラー・スパムに基づくブロックは、通常、有意義なセキュリティ上の利点を提供しません、ただし、場合によっては、リクエストに関する詳細情報の収集、およびレポートの作成に役立つ可能性があります。"
 Extended Description module_sfs.php: "ＳＦＳによってリストされたＩＰに対して登録ページとログインページを保護します。"
 Name Bypasses: "デフォルト・シグネチャ・バイパス。"
 Name IPv4-Bogons: "ＩＰｖ４（ボゴン）。"
@@ -47,6 +49,7 @@ Name module_baidublocker.php: "Ｂａｉｄｕブロッカーモジュール"
 Name module_botua.php: "オプショナル・ユーザー・エージェント・モジュール"
 Name module_cookies.php: "オプショナル・クッキー・スキャナ・モジュール"
 Name module_extras.php: "オプショナル・セキュリティ・エクストラス・モジュール"
+Name module_refspam.php: "リファラー・スパム・モジュール"
 Name module_sfs.php: "Stop Forum Spam モジュール"
 Name module_ua.php: "空のＵＡブロッカー・モジュール"
 Name module_yandexblocker.php: "Ｙａｎｄｅｘブロッカーモジュール"
@@ -82,6 +85,7 @@ config_general_frontend_log: "フロントエンド・ログインの試みを�
 config_general_hide_version: "ログとページ出力からバージョン情報を隠すか？ True = はい。 False = いいえ（Default/デフォルルト）。"
 config_general_ipaddr: "接続リクエストのＩＰアドレスをどこで見つけるべきかについて（Cloudflareのようなサービスに対して有効）。​Default（デフォルト設定） = REMOTE_ADDR。​注意：あなたが何をしているのか、​分からない限り、​これを変更しないでください。"
 config_general_lang: "CIDRAMのデフォルト言語を設定します。"
+config_general_lang_override: "可能な限り「HTTP_ACCEPT_LANGUAGE」に従ってローカライズしますか？ True = はい（Default/デフォルルト）。 False = いいえ。"
 config_general_log_banned_ips: "禁止されたＩＰからブロックされたリクエストをログ・ファイルに含めますか？ True = はい（Default/デフォルルト）。 False = いいえ。"
 config_general_log_rotation_action: "ログ・ローテーションは、一度に存在する必要があるログ・ファイルの数を制限します。​新しいログ・ファイルが作成されると、ログ・ファイルの総数が指定された制限を超えると、指定されたアクションが実行されます。​ここで希望のアクションを指定できます。 「Delete」 = 最も古いログ・ファイルを削除して、制限を超過しないようにします。 「Archive」 = 最初にアーカイブしてから、最も古いログ・ファイルを削除して、制限を超過しないようにします。"
 config_general_log_rotation_limit: "ログ・ローテーションは、一度に存在する必要があるログ・ファイルの数を制限します。​新しいログ・ファイルが作成されると、ログ・ファイルの総数が指定された制限を超えると、指定されたアクションが実行されます。​ここで希望の制限を指定することができます。​値「0」は、ログ・ローテーションを無効にします。"

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Turkish language data for the front-end (last modified: 2019.07.25).
+# This file: Turkish language data for the front-end (last modified: 2019.08.17).
 ##/
 
 Extended Description Bypasses: "Varsayılan imza bypass'lar, normalde ana paketle birlikte verilir."
@@ -21,6 +21,7 @@ Extended Description IPv6-ISPs: "Tehlikeli ve spam yapan ISS'leri engeller."
 Extended Description IPv6-Other: "Proxy, VPN ve diğer çeşitli istenmeyen hizmetler için CIDR'leri engeller."
 Extended Description IPv6: "İstenmeyen bulut servislerini ve insan olmayan uç noktaları engeller."
 Extended Description PHPMailer: "E-posta göndermeyi içeren herhangi bir işlev kullanmak için gereklidir.<br /><a href="https://github.com/PHPMailer/PHPMailer">PHPMailer</a>, <a href="https://github.com/PHPMailer/PHPMailer/blob/master/LICENSE">LGPLv2.1 </a> lisansı üzerinden kullanılabilir."
+Extended Description flags.css: "Ön uç günlükleri sayfasına bayrak desteği ekler."
 Extended Description module_abuseipdb.php: "AbuseIPDB'de listelenen IP'lerden gelen istekleri engeller."
 Extended Description module_badhosts.php: "Spam gönderenler, bilgisayar korsanları ve diğer haince varlıklar tarafından sıkça kullanılan ana bilgisayarları engeller."
 Extended Description module_badhosts_isps.php: "Spam gönderenler, bilgisayar korsanları ve diğer haince varlıklar tarafından sıkça ISP'lere ait kullanılan ana bilgisayarları engeller."
@@ -28,6 +29,7 @@ Extended Description module_badtlds.php: "Spam gönderenler, bilgisayar korsanla
 Extended Description module_botua.php: "İstenmeyen botlar ve nefret dolu faaliyetlerle ilişkili kullanıcı aracılarını engeller."
 Extended Description module_cookies.php: "Tehlikeli çerezlere karşı bazı sınırlı koruma sağlar."
 Extended Description module_extras.php: "İsteklerde yaygın olarak kullanılan çeşitli saldırı vektörlerine karşı bazı sınırlı koruma sağlar."
+Extended Description module_refspam.php: "Yönlendiren spam'e dayalı engelleme genellikle anlamlı bir güvenlik avantajı sağlamaz, ancak bazı durumlarda, bazı kullanıcılar için istekler hakkında daha fazla bilgi toplamak ve bunu rapor edebilmek için yararlı olabilir."
 Extended Description module_sfs.php: "SFS tarafından listelenen IP'lere karşı kayıt ve oturum açma sayfalarını korur."
 Name Bypasses: "Varsayılan imza bypass'lar."
 Name IPv4-Bogons: "IPv4 (bogon'leri)."
@@ -47,6 +49,7 @@ Name module_baidublocker.php: "Baidu engelleyici modülü"
 Name module_botua.php: "İsteğe bağlı kullanıcı aracıları modülü"
 Name module_cookies.php: "İsteğe bağlı çerez tarayıcı modülü"
 Name module_extras.php: "İsteğe bağlı güvenlik ekstrası modülü"
+Name module_refspam.php: "Yönlendiren spam modülü"
 Name module_sfs.php: "Stop Forum Spam modülü"
 Name module_ua.php: "Boş UA engelleyici modülü"
 Name module_yandexblocker.php: "Yandex engelleyici modülü"
@@ -82,6 +85,7 @@ config_general_frontend_log: "Ön uç giriş denemelerini kaydetmek için kullan
 config_general_hide_version: "Sürüm bilgilerini günlüklerden ve sayfa çıktısından gizle? Doğru/True = Evet; Yanlış/False = Hayır [Varsayılan]."
 config_general_ipaddr: "Bağlama isteklerinin IP adresi nerede bulunur? (Cloudflare ve benzeri hizmetler için yararlıdır). Varsayılan = REMOTE_ADDR. UYARI: Ne yaptığınızı bilmiyorsanız bunu değiştirmeyin!"
 config_general_lang: "CIDRAM için varsayılan dili belirleyin."
+config_general_lang_override: "Mümkün olduğunda, HTTP_ACCEPT_LANGUAGE uyarınca yerelleştirilsin mi? Doğru/True = Evet [Varsayılan]; Yanlış/False = Hayır."
 config_general_log_banned_ips: "Yasaklanmış IP'lerden engellenen istekleri günlük dosyalarına dahil et? Doğru/True = Evet [Varsayılan]; Yanlış/False = Hayır."
 config_general_log_rotation_action: "Log rotasyonu, herhangi bir zamanda bulunması gereken günlük dosyalarının sayısını sınırlar. Yeni log dosyaları oluşturulduğunda, toplam log dosya sayısı belirtilen sınırı aşarsa, belirtilen eylem gerçekleştirilecektir. İstenen işlemi burada belirtebilirsiniz. Delete = En eski log dosyalarını sil, sınır artık aşılmamış kadar. Archive = Öncelikle dosyayı arşivleyin, ve sonra en eski log dosyalarını sil, sınır artık aşılmamış kadar."
 config_general_log_rotation_limit: "Log rotasyonu, herhangi bir zamanda bulunması gereken günlük dosyalarının sayısını sınırlar. Yeni log dosyaları oluşturulduğunda, toplam log dosya sayısı belirtilen sınırı aşarsa, belirtilen eylem gerçekleştirilecektir. İstenen sınırı burada belirtebilirsiniz. 0 değeri, log rotasyonunu devre dışı bırakır."

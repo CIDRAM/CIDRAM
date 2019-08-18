@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (traditional) language data for the front-end (last modified: 2019.07.25).
+# This file: Chinese (traditional) language data for the front-end (last modified: 2019.08.17).
 ##/
 
 Extended Description Bypasses: "標準簽名旁路文件通常包括在主包。"
@@ -21,6 +21,7 @@ Extended Description IPv6-ISPs: "阻止危險和垃圾容易ISP。"
 Extended Description IPv6-Other: "阻止CIDR從代理，VPN和其他不需要服務。"
 Extended Description IPv6: "阻止不想要的雲服務和非人終端。"
 Extended Description PHPMailer: "使用涉及發送電子郵件的任何功能時需要。<br /><a href="https://github.com/PHPMailer/PHPMailer">PHPMailer</a>可通過<a href="https://github.com/PHPMailer/PHPMailer/blob/master/LICENSE">LGPLv2.1</a>許可證獲得。"
+Extended Description flags.css: "向前端日誌頁面添加旗支持。"
 Extended Description module_abuseipdb.php: "阻止來自AbuseIPDB列出的IP的請求。"
 Extended Description module_badhosts.php: "阻止垃圾郵件發送者，黑客，和其他惡意實體經常使用的主機。"
 Extended Description module_badhosts_isps.php: "阻止垃圾郵件發送者，黑客，和其他惡意實體經常使用的ISP擁有的主機。"
@@ -28,6 +29,7 @@ Extended Description module_badtlds.php: "阻止垃圾郵件發送者，黑客�
 Extended Description module_botua.php: "阻止不需要的機器人和惡意活動相關聯的用戶代理。"
 Extended Description module_cookies.php: "提供一些針對危險cookie的有限保護。"
 Extended Description module_extras.php: "提供一些有限的保護針對各種攻擊向量常用於請求。"
+Extended Description module_refspam.php: "基於引薦來源垃圾郵件阻止通常不會提供任何有意義的安全利益，但在某些情況下，對某些用戶可能有用，用於收集有關請求的更多信息，以及能夠報告它。"
 Extended Description module_sfs.php: "防止通過SFS列出的IP地址訪問註冊和登錄頁面。"
 Name Bypasses: "標準簽名旁路。"
 Name IPv4-Bogons: "IPv4（bogon）。"
@@ -47,6 +49,7 @@ Name module_baidublocker.php: "百度阻塞模塊"
 Name module_botua.php: "可選的用戶代理模塊"
 Name module_cookies.php: "可選cookie掃描器模塊"
 Name module_extras.php: "可選安全附加模塊"
+Name module_refspam.php: "引薦來源垃圾郵件模塊"
 Name module_sfs.php: "Stop Forum Spam 模塊"
 Name module_ua.php: "空UA阻塞模塊"
 Name module_yandexblocker.php: "Yandex阻塞模塊"
@@ -82,6 +85,7 @@ config_general_frontend_log: "前端登錄嘗試的錄音文件。​指定一�
 config_general_hide_version: "從日誌和頁面輸出中隱藏版本信息嗎？​True（真）=關閉；False（假）=不關閉【標準】。"
 config_general_ipaddr: "在哪裡可以找到連接請求IP地址？​（可以使用為服務例如Cloudflare和類似）。​標準 = REMOTE_ADDR。​警告：不要修改此除非您知道什麼您做著！"
 config_general_lang: "指定標準CIDRAM語言。"
+config_general_lang_override: "盡可能根據HTTP_ACCEPT_LANGUAGE進行本地化？True（真）=進行本地化【標準】；False（假）=不要本地化。"
 config_general_log_banned_ips: "包括IP禁止從阻止請求在日誌文件嗎？​True（真）=是【標準】；False（假）=不是。"
 config_general_log_rotation_action: "日誌輪轉限制了任何時候應該存在的日誌文件的數量。​當新的日誌文件被創建時，如果日誌文件的指定的最大數量已經超過，將執行指定的操作。​您可以在此處指定所需的操作。​『Delete』=刪除最舊的日誌文件，直到不再超出限制。​『Archive』=首先歸檔，然後刪除最舊的日誌文件，直到不再超出限制。"
 config_general_log_rotation_limit: "日誌輪轉限制了任何時候應該存在的日誌文件的數量。​當新的日誌文件被創建時，如果日誌文件的指定的最大數量已經超過，將執行指定的操作。​您可以在此指定所需的限制。​值為『0』將禁用日誌輪轉。"

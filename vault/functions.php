@@ -1351,11 +1351,14 @@ $CIDRAM['ReadBytes'] = function (string $In, int $Mode = 0) {
 /**
  * Add to page output and block event logfile fields.
  *
- * @param string $FieldName Name of the field (generally, the L10N label).
- * @param string $FieldName Data for the field.
- * @param bool $Sanitise Whether the data needs to be sanitised against XSS attacks.
+ * @param string $FieldName Name of the field for internal use (e.g., logging).
+ * @param string $ClientFieldName Name of the field for external use (e.g., for
+ *      showing to the client when they see the Access Denied page).
+ * @param string $FieldData Data for the field.
+ * @param bool $Sanitise Whether the data needs to be sanitised against XSS
+ *      attacks.
  */
-$CIDRAM['AddField'] = function (string $FieldName, string $FieldData, bool $Sanitise = false) use (&$CIDRAM) {
+$CIDRAM['AddField'] = function (string $FieldName, string $ClientFieldName, string $FieldData, bool $Sanitise = false) use (&$CIDRAM) {
     $Prepared = $Sanitise ? str_replace(
         ['<', '>', "\r", "\n"],
         ['&lt;', '&gt;', '&#13;', '&#10;'],
@@ -1363,7 +1366,12 @@ $CIDRAM['AddField'] = function (string $FieldName, string $FieldData, bool $Sani
     ) : $FieldData;
     $Logged = $CIDRAM['Config']['general']['log_sanitisation'] ? $Prepared : $FieldData;
     $CIDRAM['FieldTemplates']['Logs'] .= $FieldName . $Logged . "\n";
-    $CIDRAM['FieldTemplates']['Output'][] = '<span class="textLabel">' . $FieldName . '</span>' . $Prepared . "<br />";
+    $CIDRAM['FieldTemplates']['Output'][] = sprintf(
+        '<span class="textLabel"%s>%s</span>%s<br />',
+        $CIDRAM['L10N-Lang-Attache'],
+        $ClientFieldName,
+        $Prepared
+    );
 };
 
 /**

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2019.07.25).
+ * This file: Front-end functions file (last modified: 2019.08.17).
  */
 
 /**
@@ -793,7 +793,7 @@ $CIDRAM['DeactivateComponent'] = function (string $Type, string $ID) use (&$CIDR
  */
 $CIDRAM['PrepareExtendedDescription'] = function (array &$Arr, string $Key = '') use (&$CIDRAM) {
     $Key = 'Extended Description ' . $Key;
-    if (isset($CIDRAM['lang'][$Key])) {
+    if (isset($CIDRAM['L10N']->Data[$Key])) {
         $Arr['Extended Description'] = $CIDRAM['L10N']->getString($Key);
     } elseif (empty($Arr['Extended Description'])) {
         $Arr['Extended Description'] = '';
@@ -833,7 +833,7 @@ $CIDRAM['PrepareExtendedDescription'] = function (array &$Arr, string $Key = '')
  */
 $CIDRAM['PrepareName'] = function (array &$Arr, string $Key = '') use (&$CIDRAM) {
     $Key = 'Name ' . $Key;
-    if (isset($CIDRAM['lang'][$Key])) {
+    if (isset($CIDRAM['L10N']->Data[$Key])) {
         $Arr['Name'] = $CIDRAM['L10N']->getString($Key);
     } elseif (empty($Arr['Name'])) {
         $Arr['Name'] = '';
@@ -2722,7 +2722,7 @@ $CIDRAM['SendOutput'] = function () use (&$CIDRAM): string {
     if ($CIDRAM['FE']['JS']) {
         $CIDRAM['FE']['JS'] = "\n<script type=\"text/javascript\">" . $CIDRAM['FE']['JS'] . '</script>';
     }
-    return $CIDRAM['ParseVars']($CIDRAM['lang'] + $CIDRAM['FE'], $CIDRAM['FE']['Template']);
+    return $CIDRAM['ParseVars']($CIDRAM['L10N']->Data + $CIDRAM['FE'], $CIDRAM['FE']['Template']);
 };
 
 /**

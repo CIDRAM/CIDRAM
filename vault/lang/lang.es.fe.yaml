@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Spanish language data for the front-end (last modified: 2019.07.25).
+# This file: Spanish language data for the front-end (last modified: 2019.08.17).
 ##/
 
 Extended Description Bypasses: "Los archivos para bypass de firmas estándar normalmente se incluyen con el paquete principal."
@@ -22,6 +22,7 @@ Extended Description IPv6-ISPs: "Bloquea ISPs peligroso y propenso a spam."
 Extended Description IPv6-Other: "Bloquea CIDRs para proxies, VPNs y otros servicios misceláneos no deseados."
 Extended Description IPv6: "Bloquea los servicios en la nube no deseados y puntos finales no humanos."
 Extended Description PHPMailer: "Requerido para usar cualquier funcionalidad que implique el envío de correo electrónico.<br /><a href="https://github.com/PHPMailer/PHPMailer">PHPMailer</a> está disponible a través de la licencia <a href="https://github.com/PHPMailer/PHPMailer/blob/master/LICENSE">LGPLv2.1</a>."
+Extended Description flags.css: "Agrega soporte de banderas en la página de registro de los archivos del front-end."
 Extended Description module_abuseipdb.php: "Bloquea las solicitudes de los IP listados en AbuseIPDB."
 Extended Description module_badhosts.php: "Bloquea los hosts utilizados con frecuencia por spammers, hackers y otras entidades nefastas."
 Extended Description module_badhosts_isps.php: "Bloquea los hosts que pertenecen a los ISP utilizados con frecuencia por los spammers, los hackers y otras entidades nefastas."
@@ -29,6 +30,7 @@ Extended Description module_badtlds.php: "Bloquea los hosts que pertenecen a los
 Extended Description module_botua.php: "Bloquea los agentes de usuario asociados con bots no deseados y actividad infame."
 Extended Description module_cookies.php: "Proporciona algunas protecciones limitadas contra cookies peligrosas."
 Extended Description module_extras.php: "Proporciona algunas protecciones limitadas contra varios vectores de ataque comúnmente utilizado en las solicitudes."
+Extended Description module_refspam.php: "El bloqueo basado en spam de referencia generalmente no proporcionará ningún beneficio de seguridad significativo, pero en algunos casos, podría ser útil para algunos usuarios, para recopilar más información sobre solicitudes y para poder reporta los."
 Extended Description module_sfs.php: "Protege las páginas de registro y de inicio de sesión de las IP listadas por SFS."
 Name Bypasses: "Bypasses de firmas estándar."
 Name IPv4-Bogons: "IPv4 (bogons)."
@@ -48,6 +50,7 @@ Name module_baidublocker.php: "Módulo bloqueador de Baidu"
 Name module_botua.php: "Módulo de agentes de usuario opcionales"
 Name module_cookies.php: "Escáner de cookies módulo opcional"
 Name module_extras.php: "Extras de seguridad módulo opcional"
+Name module_refspam.php: "Módulo de spam de referencia"
 Name module_sfs.php: "Módulo Stop Forum Spam"
 Name module_ua.php: "Módulo de bloqueador UA vacío"
 Name module_yandexblocker.php: "Módulo bloqueador de Yandex"
@@ -84,6 +87,7 @@ config_general_force_hostname_lookup: "¿Forzar búsquedas de nombres de host? T
 config_general_hide_version: "¿Ocultar información de la versión de los archivos de registro y la salida de la página? True = Sí; False = No [Predefinido]."
 config_general_ipaddr: "¿Dónde puedo encontrar el IP dirección de las solicitudes entrantes? (Útil para servicios como Cloudflare y tales). Predefinido = REMOTE_ADDR. ¡AVISO: No cambie esto a menos que sepas lo que estás haciendo!"
 config_general_lang: "Especifique la predefinido del lenguaje para CIDRAM."
+config_general_lang_override: "¿Localizar según HTTP_ACCEPT_LANGUAGE siempre que sea posible? True = Sí [Predefinido]; False = No."
 config_general_log_banned_ips: "¿Incluir las solicitudes bloqueadas de IPs prohibidos en los archivos de registro? True = Sí [Predefinido]; False = No."
 config_general_log_rotation_action: "La rotación de registros limita la cantidad de archivos de registro que deberían existir al mismo tiempo. Cuando se crean nuevos archivos de registro, si la cantidad total de archivos de registro excede el límite especificado, se realizará la acción especificada. Puede especificar la acción deseada aquí. Delete = Eliminar los archivos de registro más antiguos, hasta que el límite ya no se exceda. Archive = Primero archiva, y luego eliminar los archivos de registro más antiguos, hasta que el límite ya no se exceda."
 config_general_log_rotation_limit: "La rotación de registros limita la cantidad de archivos de registro que deberían existir al mismo tiempo. Cuando se crean nuevos archivos de registro, si la cantidad total de archivos de registro excede el límite especificado, se realizará la acción especificada. Puede especificar el límite deseado aquí. Un valor de 0 deshabilitará la rotación de registros."

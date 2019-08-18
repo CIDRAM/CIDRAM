@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Language handler (last modified: 2019.04.21).
+ * This file: Language handler (last modified: 2019.08.17).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -88,44 +88,44 @@ $CIDRAM['L10N']['FallbackData'] = (new \Maikuolan\Common\YAML($CIDRAM['L10N']['F
 /** Build final L10N object. */
 $CIDRAM['L10N'] = new \Maikuolan\Common\L10N($CIDRAM['L10N']['ConfiguredData'], $CIDRAM['L10N']['FallbackData']);
 
-/** Reference L10N object's contained data to ensure things don't break until we can properly implement the new object. */
-$CIDRAM['lang'] = &$CIDRAM['L10N']->Data;
-
-/** Temporary hotfix for missing textDir variable. */
-$CIDRAM['lang']['textDir'] = (isset($CIDRAM['lang']['Text Direction']) && $CIDRAM['lang']['Text Direction'] === 'rtl') ? 'rtl' : 'ltr';
-
-/** Will remove later (temporary variable). */
-$CIDRAM['Config']['general']['lang_override'] = false;
-
-/** Load user language overrides if possible and enabled. */
-if ($CIDRAM['Config']['general']['lang_override'] && !empty($_SERVER['HTTP_ACCEPT_LANGUAGE'])) {
-    $CIDRAM['lang_user'] = $CIDRAM['lang'];
-    $CIDRAM['user_lang'] = strtolower($_SERVER['HTTP_ACCEPT_LANGUAGE']);
-    if (($CIDRAM['lang_pos'] = strpos($_SERVER['HTTP_ACCEPT_LANGUAGE'], ',')) !== false) {
-        $CIDRAM['user_lang'] = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, $CIDRAM['lang_pos']);
-    }
+/** Load client-specified L10N data if it's possible to do so. */
+if (empty($_SERVER['HTTP_ACCEPT_LANGUAGE'])) {
+    $CIDRAM['Client-L10N'] = &$CIDRAM['L10N'];
+    $CIDRAM['L10N-Lang-Attache'] = '';
+} else {
+    $CIDRAM['Client-L10N'] = [
+        'Accepted' => preg_replace(['~^([^,]*).*$~', '~[^-a-z]~'], ['\1', ''], strtolower($_SERVER['HTTP_ACCEPT_LANGUAGE']))
+    ];
     if (
-        empty($CIDRAM['Config']['Config Defaults']['general']['lang']['choices'][$CIDRAM['user_lang']]) &&
-        ($CIDRAM['lang_pos'] = strpos($CIDRAM['user_lang'], '-')) !== false
+        $CIDRAM['Config']['general']['lang'] !== $CIDRAM['Client-L10N']['Accepted'] &&
+        file_exists($CIDRAM['Vault'] . 'lang/lang.' . $CIDRAM['Client-L10N']['Accepted'] . '.yaml')
     ) {
-        $CIDRAM['user_lang'] = substr($CIDRAM['user_lang'], 0, $CIDRAM['lang_pos']);
-        if (empty($CIDRAM['Config']['Config Defaults']['general']['lang']['choices'][$CIDRAM['user_lang']])) {
-            $CIDRAM['user_lang'] = '';
+        $CIDRAM['Client-L10N']['Data'] = $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'lang/lang.' . $CIDRAM['Client-L10N']['Accepted'] . '.yaml');
+    }
+    if (empty($CIDRAM['Client-L10N']['Data'])) {
+        $CIDRAM['Client-L10N']['Accepted'] = preg_replace('~^([^-]*).*$~', '\1', $CIDRAM['Client-L10N']['Accepted']);
+        if (
+            $CIDRAM['Config']['general']['lang'] !== $CIDRAM['Client-L10N']['Accepted'] &&
+            file_exists($CIDRAM['Vault'] . 'lang/lang.' . $CIDRAM['Client-L10N']['Accepted'] . '.yaml')
+        ) {
+            $CIDRAM['Client-L10N']['Data'] = $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'lang/lang.' . $CIDRAM['Client-L10N']['Accepted'] . '.yaml');
         }
     }
 
-    /** Load the necessary language data. */
-    if (
-        $CIDRAM['user_lang'] &&
-        $CIDRAM['user_lang'] !== $CIDRAM['Config']['general']['lang'] &&
-        file_exists($CIDRAM['Vault'] . 'lang/lang.' . $CIDRAM['user_lang'] . '.php')
-    ) {
-        // rewrite this!!!
-        require $CIDRAM['Vault'] . 'lang/lang.' . $CIDRAM['user_lang'] . '.php';
+    /** Process client-specific L10N data. */
+    if (empty($CIDRAM['Client-L10N']['Data'])) {
+        $CIDRAM['L10N-Lang-Attache'] = '';
+        $CIDRAM['Client-L10N'] = [];
+    } else {
+        $CIDRAM['Client-L10N']['Data'] = (new \Maikuolan\Common\YAML($CIDRAM['Client-L10N']['Data']))->Data ?: [];
+        $CIDRAM['L10N-Lang-Attache'] = ($CIDRAM['Config']['general']['lang'] === $CIDRAM['Client-L10N']['Accepted']) ? '' : sprintf(
+            ' lang="%s" dir="%s"',
+            $CIDRAM['Client-L10N']['Accepted'],
+            isset($CIDRAM['Client-L10N']['Data']['Text Direction']) ? $CIDRAM['Client-L10N']['Data']['Text Direction'] : 'ltr'
+        );
+        $CIDRAM['Client-L10N'] = $CIDRAM['Client-L10N']['Data'];
     }
 
-    $CIDRAM['Swap']($CIDRAM['lang_user'], $CIDRAM['lang']);
-    unset($CIDRAM['user_lang'], $CIDRAM['lang_pos']);
-} else {
-    $CIDRAM['lang_user'] = &$CIDRAM['lang'];
+    /** Build final client-specific L10N object. */
+    $CIDRAM['Client-L10N'] = new \Maikuolan\Common\L10N($CIDRAM['Client-L10N'], $CIDRAM['L10N']);
 }

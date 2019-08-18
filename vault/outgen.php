@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Output generator (last modified: 2019.07.25).
+ * This file: Output generator (last modified: 2019.08.17).
  */
 
 /** Initialise cache. */
@@ -472,42 +472,103 @@ if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
     }
 
     /** Build fields. */
-    $CIDRAM['AddField']($CIDRAM['L10N']->getString('field_id'), $CIDRAM['BlockInfo']['ID']);
+    $CIDRAM['AddField'](
+        $CIDRAM['L10N']->getString('field_id'),
+        $CIDRAM['Client-L10N']->getString('field_id'),
+        $CIDRAM['BlockInfo']['ID']
+    );
     if (!$CIDRAM['Config']['general']['hide_version']) {
-        $CIDRAM['AddField']($CIDRAM['L10N']->getString('field_scriptversion'), $CIDRAM['BlockInfo']['ScriptIdent']);
+        $CIDRAM['AddField'](
+            $CIDRAM['L10N']->getString('field_scriptversion'),
+            $CIDRAM['Client-L10N']->getString('field_scriptversion'),
+            $CIDRAM['BlockInfo']['ScriptIdent']
+        );
     }
-    $CIDRAM['AddField']($CIDRAM['L10N']->getString('field_datetime'), $CIDRAM['BlockInfo']['DateTime']);
-    $CIDRAM['AddField']($CIDRAM['L10N']->getString('field_ipaddr'), $CIDRAM['BlockInfo']['IPAddr']);
+    $CIDRAM['AddField'](
+        $CIDRAM['L10N']->getString('field_datetime'),
+        $CIDRAM['Client-L10N']->getString('field_datetime'),
+        $CIDRAM['BlockInfo']['DateTime']
+    );
+    $CIDRAM['AddField'](
+        $CIDRAM['L10N']->getString('field_ipaddr'),
+        $CIDRAM['Client-L10N']->getString('field_ipaddr'),
+        $CIDRAM['BlockInfo']['IPAddr']
+    );
     if ($CIDRAM['BlockInfo']['IPAddrResolved'] || $CIDRAM['Config']['general']['empty_fields'] === 'include') {
         if (!$CIDRAM['BlockInfo']['IPAddrResolved']) {
             $CIDRAM['BlockInfo']['IPAddrResolved'] = '-';
         }
-        $CIDRAM['AddField']($CIDRAM['L10N']->getString('field_ipaddr_resolved'), $CIDRAM['BlockInfo']['IPAddrResolved']);
+        $CIDRAM['AddField'](
+            $CIDRAM['L10N']->getString('field_ipaddr_resolved'),
+            $CIDRAM['Client-L10N']->getString('field_ipaddr_resolved'),
+            $CIDRAM['BlockInfo']['IPAddrResolved']
+        );
     }
     if ((
         !empty($CIDRAM['Hostname']) && $CIDRAM['Hostname'] !== $CIDRAM['BlockInfo']['IPAddr']
     ) || $CIDRAM['Config']['general']['empty_fields'] === 'include') {
         $CIDRAM['BlockInfo']['Hostname'] = empty($CIDRAM['Hostname']) ? '-' : $CIDRAM['Hostname'];
-        $CIDRAM['AddField']($CIDRAM['L10N']->getString('field_hostname'), $CIDRAM['BlockInfo']['Hostname'], true);
+        $CIDRAM['AddField'](
+            $CIDRAM['L10N']->getString('field_hostname'),
+            $CIDRAM['Client-L10N']->getString('field_hostname'),
+            $CIDRAM['BlockInfo']['Hostname'],
+            true
+        );
     }
     if ($CIDRAM['BlockInfo']['Query'] || $CIDRAM['Config']['general']['empty_fields'] === 'include') {
-        $CIDRAM['AddField']($CIDRAM['L10N']->getString('field_query'), $CIDRAM['BlockInfo']['Query'] ?: '-', true);
+        $CIDRAM['AddField'](
+            $CIDRAM['L10N']->getString('field_query'),
+            $CIDRAM['Client-L10N']->getString('field_query'),
+            $CIDRAM['BlockInfo']['Query'] ?: '-',
+            true
+        );
     }
     if ($CIDRAM['BlockInfo']['Referrer'] || $CIDRAM['Config']['general']['empty_fields'] === 'include') {
-        $CIDRAM['AddField']($CIDRAM['L10N']->getString('field_referrer'), $CIDRAM['BlockInfo']['Referrer'] ?: '-', true);
+        $CIDRAM['AddField'](
+            $CIDRAM['L10N']->getString('field_referrer'),
+            $CIDRAM['Client-L10N']->getString('field_referrer'),
+            $CIDRAM['BlockInfo']['Referrer'] ?: '-',
+            true
+        );
     }
-    $CIDRAM['AddField']($CIDRAM['L10N']->getString('field_sigcount'), $CIDRAM['BlockInfo']['SignatureCount']);
-    $CIDRAM['AddField']($CIDRAM['L10N']->getString('field_sigref'), $CIDRAM['BlockInfo']['Signatures']);
-    $CIDRAM['AddField']($CIDRAM['L10N']->getString('field_whyreason'), $CIDRAM['BlockInfo']['WhyReason'] . '!');
+    $CIDRAM['AddField'](
+        $CIDRAM['L10N']->getString('field_sigcount'),
+        $CIDRAM['Client-L10N']->getString('field_sigcount'),
+        $CIDRAM['BlockInfo']['SignatureCount']
+    );
+    $CIDRAM['AddField'](
+        $CIDRAM['L10N']->getString('field_sigref'),
+        $CIDRAM['Client-L10N']->getString('field_sigref'),
+        $CIDRAM['BlockInfo']['Signatures']
+    );
+    $CIDRAM['AddField'](
+        $CIDRAM['L10N']->getString('field_whyreason'),
+        $CIDRAM['Client-L10N']->getString('field_whyreason'),
+        $CIDRAM['BlockInfo']['WhyReason'] . '!'
+    );
     if ($CIDRAM['BlockInfo']['UA'] || $CIDRAM['Config']['general']['empty_fields'] === 'include') {
-        $CIDRAM['AddField']($CIDRAM['L10N']->getString('field_ua'), $CIDRAM['BlockInfo']['UA'] ?: '-', true);
+        $CIDRAM['AddField'](
+            $CIDRAM['L10N']->getString('field_ua'),
+            $CIDRAM['Client-L10N']->getString('field_ua'),
+            $CIDRAM['BlockInfo']['UA'] ?: '-',
+            true
+        );
     }
-    $CIDRAM['AddField']($CIDRAM['L10N']->getString('field_rURI'), $CIDRAM['BlockInfo']['rURI'], true);
+    $CIDRAM['AddField'](
+        $CIDRAM['L10N']->getString('field_rURI'),
+        $CIDRAM['Client-L10N']->getString('field_rURI'),
+        $CIDRAM['BlockInfo']['rURI'],
+        true
+    );
     if ($CIDRAM['Config']['recaptcha']['usemode'] || $CIDRAM['Config']['general']['empty_fields'] === 'include') {
         if (empty($CIDRAM['BlockInfo']['reCAPTCHA'])) {
             $CIDRAM['BlockInfo']['reCAPTCHA'] = $CIDRAM['L10N']->getString('recaptcha_disabled');
         }
-        $CIDRAM['AddField']($CIDRAM['L10N']->getString('field_reCAPTCHA_state'), $CIDRAM['BlockInfo']['reCAPTCHA']);
+        $CIDRAM['AddField'](
+            $CIDRAM['L10N']->getString('field_reCAPTCHA_state'),
+            $CIDRAM['Client-L10N']->getString('field_reCAPTCHA_state'),
+            $CIDRAM['BlockInfo']['reCAPTCHA']
+        );
     }
 
     /** Finalise fields. */
@@ -531,7 +592,7 @@ if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
 
     /** A fix for correctly displaying LTR/RTL text. */
     if ($CIDRAM['L10N']->getString('Text Direction') !== 'rtl') {
-        $CIDRAM['lang']['Text Direction'] = 'ltr';
+        $CIDRAM['L10N']->Data['Text Direction'] = 'ltr';
         $CIDRAM['Config']['template_data']['textBlockAlign'] = 'text-align:left;';
         $CIDRAM['Config']['template_data']['textBlockFloat'] = '';
     } else {
@@ -541,7 +602,11 @@ if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
 
     /** Prepare to process "more info" entries, if any exist. */
     if (!empty($CIDRAM['Config']['More Info']) && !empty($CIDRAM['BlockInfo']['ReasonMessage'])) {
-        $CIDRAM['BlockInfo']['ReasonMessage'] .= '<br /><br />' . $CIDRAM['L10N']->getString('MoreInfo');
+        $CIDRAM['BlockInfo']['ReasonMessage'] .= sprintf(
+            '<br /><br /><span%s>%s</span>',
+            $CIDRAM['L10N-Lang-Attache'],
+            $CIDRAM['Client-L10N']->getString('MoreInfo')
+        );
         $CIDRAM['Arrayify']($CIDRAM['Config']['More Info']);
         /** Process entries. */
         foreach ($CIDRAM['Config']['More Info'] as $CIDRAM['Info Name'] => $CIDRAM['Info Link']) {
@@ -554,7 +619,22 @@ if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
     }
 
     /** Parsed to the template file upon generating HTML output. */
-    $CIDRAM['Parsables'] = $CIDRAM['FieldTemplates'] + $CIDRAM['Config']['template_data'] + $CIDRAM['lang'] + $CIDRAM['BlockInfo'];
+    $CIDRAM['Parsables'] = $CIDRAM['FieldTemplates'] + $CIDRAM['Config']['template_data'] + $CIDRAM['BlockInfo'] + [
+        'L10N-Lang-Attache' => $CIDRAM['L10N-Lang-Attache']
+    ];
+
+    /** Pull relevant client-specified L10N data first. */
+    if (!empty($CIDRAM['L10N-Lang-Attache'])) {
+        foreach (['denied', 'recaptcha_message', 'recaptcha_message_invisible', 'recaptcha_submit'] as $CIDRAM['PullThis']) {
+            if (isset($CIDRAM['Client-L10N']->Data[$CIDRAM['PullThis']])) {
+                $CIDRAM['Parsables'][$CIDRAM['PullThis']] = $CIDRAM['Client-L10N']->Data[$CIDRAM['PullThis']];
+            }
+        }
+        unset($CIDRAM['PullThis']);
+    }
+
+    /** Append default L10N data. */
+    $CIDRAM['Parsables'] += $CIDRAM['L10N']->Data;
 
     if (!empty($CIDRAM['Banned']) && $CIDRAM['Config']['general']['ban_override'] !== 200 && (
         $CIDRAM['ThisStatusHTTP'] = $CIDRAM['GetStatusHTTP']($CIDRAM['Config']['general']['ban_override'])
@@ -587,7 +667,7 @@ if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
 
         if (!$CIDRAM['template_file'] || !file_exists($CIDRAM['Vault'] . $CIDRAM['template_file'])) {
             header('Content-Type: text/plain');
-            $CIDRAM['HTML'] = '[CIDRAM] ' . $CIDRAM['L10N']->getString('denied');
+            $CIDRAM['HTML'] = '[CIDRAM] ' . $CIDRAM['Client-L10N']->getString('denied');
         } else {
             $CIDRAM['BlockInfo']['EmailAddr'] = '';
 
@@ -599,10 +679,10 @@ if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
                         '?subject=CIDRAM%20Event&body=' . urlencode($CIDRAM['ParseVars'](
                             $CIDRAM['Parsables'],
                             $CIDRAM['FieldTemplates']['Logs'] . "\n"
-                        )) . '"><strong>' . $CIDRAM['L10N']->getString('click_here') . '</strong></a>';
-                    $CIDRAM['BlockInfo']['EmailAddr'] = "\n  <p class=\"detected\">" . $CIDRAM['ParseVars']([
+                        )) . '"><strong>' . $CIDRAM['Client-L10N']->getString('click_here') . '</strong></a>';
+                    $CIDRAM['BlockInfo']['EmailAddr'] = "\n  <p class=\"detected\"" . $CIDRAM['L10N-Lang-Attache'] . '>' . $CIDRAM['ParseVars']([
                         'ClickHereLink' => $CIDRAM['BlockInfo']['EmailAddr']
-                    ], $CIDRAM['L10N']->getString('Support_Email')) . '</p>';
+                    ], $CIDRAM['Client-L10N']->getString('Support_Email')) . '</p>';
                 } elseif ($CIDRAM['Config']['general']['emailaddr_display_style'] === 'noclick') {
                     $CIDRAM['BlockInfo']['EmailAddr'] = "\n  <p class=\"detected\">" . $CIDRAM['ParseVars']([
                         'EmailAddr' => str_replace(
@@ -610,14 +690,19 @@ if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
                             '<img src="data:image/gif;base64,R0lGODdhCQAKAIABAAAAAP///ywAAAAACQAKAAACE4yPAcsG+ZR7kcp6pWY4Hb54SAEAOw==" alt="@" />',
                             '<strong>' . $CIDRAM['Config']['general']['emailaddr'] . '</strong>'
                         )
-                    ], $CIDRAM['L10N']->getString('Support_Email_2')) . '</p>';
+                    ], $CIDRAM['Client-L10N']->getString('Support_Email_2')) . '</p>';
                 }
             }
 
             /** Include privacy policy. */
             $CIDRAM['Parsables']['pp'] = empty(
                 $CIDRAM['Config']['legal']['privacy_policy']
-            ) ? '' : '<br /><a href="' . $CIDRAM['Config']['legal']['privacy_policy'] . '">' . $CIDRAM['L10N']->getString('PrivacyPolicy') . '</a>';
+            ) ? '' : sprintf(
+                '<br /><a href="%s"%s>%s</a>',
+                $CIDRAM['Config']['legal']['privacy_policy'],
+                $CIDRAM['L10N-Lang-Attache'],
+                $CIDRAM['Client-L10N']->getString('PrivacyPolicy')
+            );
 
             /** Generate HTML output. */
             $CIDRAM['HTML'] = $CIDRAM['ParseVars']([

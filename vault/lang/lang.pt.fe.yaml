@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Portuguese language data for the front-end (last modified: 2019.07.25).
+# This file: Portuguese language data for the front-end (last modified: 2019.08.17).
 ##/
 
 Extended Description Bypasses: "Os arquivos para bypass das assinaturas padrão normalmente incluído com o pacote principal."
@@ -22,6 +22,7 @@ Extended Description IPv6-ISPs: "Bloqueia ISPs perigosos e propensos a spam."
 Extended Description IPv6-Other: "Bloqueia CIDRs para proxies, VPNs e outros diversos serviços indesejados."
 Extended Description IPv6: "Bloqueia serviços em nuvem indesejados e pontos de extremidade não-humanos."
 Extended Description PHPMailer: "Necessário para usar qualquer funcionalidade que envolva o envio de email.<br /><a href="https://github.com/PHPMailer/PHPMailer">PHPMailer</a> está disponível através do licença <a href="https://github.com/PHPMailer/PHPMailer/blob/master/LICENSE">LGPLv2.1</a>."
+Extended Description flags.css: "Adiciona suporte de bandeiras à página de arquivos de registro do front-end."
 Extended Description module_abuseipdb.php: "Bloqueia solicitações de IPs listados no AbuseIPDB."
 Extended Description module_badhosts.php: "Bloqueia hosts frequentemente usados por spammers, hackers e outras entidades nefastas."
 Extended Description module_badhosts_isps.php: "Bloqueia hosts pertencentes a ISPs freqüentemente usados por spammers, hackers e outras entidades nefastas."
@@ -29,6 +30,7 @@ Extended Description module_badtlds.php: "Bloqueia hosts pertencentes a ISPs fre
 Extended Description module_botua.php: "Bloqueia os agentes do usuário associados a bots indesejados e atividades nefastas."
 Extended Description module_cookies.php: "Fornece algumas proteções limitadas contra cookies perigosos."
 Extended Description module_extras.php: "Fornece algumas proteções limitadas contra vários vectores de ataque comumente usado em solicitações."
+Extended Description module_refspam.php: "O bloqueio baseado em spam de referência geralmente não fornece nenhum benefício de segurança significativoBloqueio baseado em spam de referência geralmente não fornece nenhum benefício de segurança significativo, mas, em alguns casos, pode ser útil para alguns usuários, para reunir mais informações sobre solicitações e para relatá-las."
 Extended Description module_sfs.php: "Protege as páginas de registro e login contra IPs listados pelo SFS."
 Name Bypasses: "Bypasses das assinaturas padrão."
 Name IPv4-Bogons: "IPv4 (bogon)."
@@ -48,6 +50,7 @@ Name module_baidublocker.php: "Módulo bloqueador de Baidu"
 Name module_botua.php: "Módulo de agentes do usuário opcional"
 Name module_cookies.php: "Módulo opcional para análise de cookies"
 Name module_extras.php: "Módulo de extras de segurança opcional"
+Name module_refspam.php: "Módulo de spam de referência"
 Name module_sfs.php: "Módulo Stop Forum Spam"
 Name module_ua.php: "Módulo de bloqueador de UA vazio"
 Name module_yandexblocker.php: "Módulo bloqueador de Yandex"
@@ -84,6 +87,7 @@ config_general_force_hostname_lookup: "Forçar pesquisas de nome de anfitrião? 
 config_general_hide_version: "Ocultar informações da versão dos logs e da saída da página? True = Sim; False = Não [Padrão]."
 config_general_ipaddr: "Onde encontrar o IP endereço das solicitações? (Útil por serviços como o Cloudflare e tal). Padrão = REMOTE_ADDR. ATENÇÃO: Não mude isso a menos que você saiba o que está fazendo!"
 config_general_lang: "Especificar o padrão da linguagem por CIDRAM."
+config_general_lang_override: "Localizar de acordo com HTTP_ACCEPT_LANGUAGE sempre que possível? True = Sim [Padrão]; False = Não."
 config_general_log_banned_ips: "Incluir solicitações bloqueadas de IPs banidas nos arquivos de log? True = Sim [Padrão]; False = Não."
 config_general_log_rotation_action: "A rotação de log limita o número de arquivos de log que devem existir a qualquer momento. Quando novos arquivos de log são criados, se o número total de arquivos de log exceder o limite especificado, a ação especificada será executada. Você pode especificar a ação desejada aqui. Delete = Deletar os arquivos de log mais antigos, até o limite não seja mais excedido. Archive = Primeiramente arquivar, e então deletar os arquivos de log mais antigos, até o limite não seja mais excedido."
 config_general_log_rotation_limit: "A rotação de log limita o número de arquivos de log que devem existir a qualquer momento. Quando novos arquivos de log são criados, se o número total de arquivos de log exceder o limite especificado, a ação especificada será executada. Você pode especificar o limite desejado aqui. Um valor de 0 desativará a rotação de log."

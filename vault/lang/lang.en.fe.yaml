@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: English language data for the front-end (last modified: 2019.07.25).
+# This file: English language data for the front-end (last modified: 2019.08.17).
 ##/
 
 Extended Description Bypasses: "The default signature bypass files normally included with the main package."
@@ -22,6 +22,7 @@ Extended Description IPv6-ISPs: "Blocks dangerous and spammy ISPs."
 Extended Description IPv6-Other: "Blocks CIDRs for proxies, VPNs, and other miscellaneous unwanted services."
 Extended Description IPv6: "Blocks unwanted cloud services and non-human endpoints."
 Extended Description PHPMailer: "Required for using any functionality that involves sending email.<br /><a href="https://github.com/PHPMailer/PHPMailer">PHPMailer</a> is available via the <a href="https://github.com/PHPMailer/PHPMailer/blob/master/LICENSE">LGPLv2.1</a> license."
+Extended Description flags.css: "Adds flag support to the front-end logs page."
 Extended Description module_abuseipdb.php: "Blocks requests from IPs listed at AbuseIPDB."
 Extended Description module_badhosts.php: "Blocks hosts frequently used by spammers, hackers, and other nefarious entities."
 Extended Description module_badhosts_isps.php: "Blocks hosts belonging to ISPs frequently used by spammers, hackers, and other nefarious entities."
@@ -29,6 +30,7 @@ Extended Description module_badtlds.php: "Blocks hosts belonging to TLDs frequen
 Extended Description module_botua.php: "Blocks user agents associated with unwanted bots and nefarious activity."
 Extended Description module_cookies.php: "Provides some limited protections against dangerous cookies."
 Extended Description module_extras.php: "Provides some limited protections against various attack vectors commonly used in requests."
+Extended Description module_refspam.php: "Blocking based on referrer spam won't generally provide any meaningful security benefit, but in some cases, could be useful for some users, for gathering more information about requests, and for being able to report it."
 Extended Description module_sfs.php: "Protects registration and login pages against IPs listed by SFS."
 Name Bypasses: "Default signature bypasses."
 Name IPv4-Bogons: "IPv4 (bogons)."
@@ -48,6 +50,7 @@ Name module_baidublocker.php: "Baidu blocker module"
 Name module_botua.php: "Optional user agents module"
 Name module_cookies.php: "Optional cookie scanner module"
 Name module_extras.php: "Optional security extras module"
+Name module_refspam.php: "Referrer spam module"
 Name module_sfs.php: "Stop Forum Spam module"
 Name module_ua.php: "Empty UA blocker module"
 Name module_yandexblocker.php: "Yandex blocker module"
@@ -84,6 +87,7 @@ config_general_force_hostname_lookup: "Force hostname lookups? True = Yes; False
 config_general_hide_version: "Hide version information from logs and page output? True = Yes; False = No [Default]."
 config_general_ipaddr: "Where to find the IP address of connecting requests? (Useful for services such as Cloudflare and the likes). Default = REMOTE_ADDR. WARNING: Don't change this unless you know what you're doing!"
 config_general_lang: "Specify the default language for CIDRAM."
+config_general_lang_override: "Localise according to HTTP_ACCEPT_LANGUAGE whenever possible? True = Yes [Default]; False = No."
 config_general_log_banned_ips: "Include blocked requests from banned IPs in the logfiles? True = Yes [Default]; False = No."
 config_general_log_rotation_action: "Log rotation limits the number of logfiles that should exist at any one time. When new logfiles are created, if the total number of logfiles exceeds the specified limit, the specified action will be performed. You can specify the desired action here. Delete = Delete the oldest logfiles, until the limit is no longer exceeded. Archive = Firstly archive, and then delete the oldest logfiles, until the limit is no longer exceeded."
 config_general_log_rotation_limit: "Log rotation limits the number of logfiles that should exist at any one time. When new logfiles are created, if the total number of logfiles exceeds the specified limit, the specified action will be performed. You can specify the desired limit here. A value of 0 will disable log rotation."

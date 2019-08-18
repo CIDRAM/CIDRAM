@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6.dat
 
-# Version: 2019.224.425
-# Last modified: 2019.08.13
+# Version: 2019.229.529
+# Last modified: 2019.08.18
 
 
 # ---
@@ -4318,17 +4318,20 @@ Origin: US
 Tag: zColo
 
 
-# ASNs 61138, 206122 ("Zappie Host LLC").
-# %Listed, Google Malware Dashboard: 4.55% (AS61138).
-# Stop Forum Spam (SFS) listings: 54 (AS61138).
-# Updated: 2018.04.02 / Checked: 2019.01.30
+# ASN 61138 ("Zappie Host LLC").
+# Stop Forum Spam (SFS) listings: 64.
+# Updated: 2019.08.18
 
+2a07:1c40:1021::/48 Deny Cloud
+Origin: AT
+2a0c:b642:1a0e::/48 Deny Cloud
+Origin: BE
 2a06:1280::/32 Deny Cloud
 Origin: BY
+2a06:e881:6203::/48 Deny Cloud
+Origin: CH
 2a06:9f40::/29 Deny Cloud
 Origin: NO
-2a06:1280:beab::/48 Deny Cloud
-Origin: NZ
 2c0f:f530::/44 Deny Cloud
 2c0f:f530:20::/44 Deny Cloud
 Origin: SC
@@ -4579,9 +4582,9 @@ Tag: Green House Data
 # 100% hosting provider (generally considered safe to block), but may interfere with uptime monitoring service
 # "InternetSeer.com". Users of this service should probably set an "ignore" rule for this signature section. I won't be
 # mainlining a bypass for them though due to abuse reports from some users.
-# %Listed, Google Malware Dashboard: 0.20%.
-# Stop Forum Spam (SFS) listings: 6.
-# Updated: 2018.08.05 / Checked: 2019.01.27
+# %Listed, Google Malware Dashboard: 0.10%.
+# Stop Forum Spam (SFS) listings: 3.
+# Updated: 2018.08.05 / Checked: 2019.08.18
 
 2600:1300::/32 Deny Cloud
 2600:1304::/32 Deny Cloud
@@ -4751,9 +4754,9 @@ Tag: ACTIVE 24
 
 # ASN 29278 ("Deninet KFT").
 # IPs on this ASN caught attempting to hack users; SQLi galore.
-# %Listed, Google Malware Dashboard: 0.36%.
-# Stop Forum Spam (SFS) listings: 703.
-# Updated: 2017.10.29 / Checked: 2019.01.28
+# %Listed, Google Malware Dashboard: 0.26%.
+# Stop Forum Spam (SFS) listings: 1,431.
+# Updated: 2017.10.29 / Checked: 2019.08.18
 
 2a02:730::/32 Deny Cloud
 Origin: HU
@@ -5478,8 +5481,8 @@ Tag: PLUTEX GmbH
 
 # ASN 29017 ("Gyron Internet Ltd").
 # Cloud/hosting network. Caught attempting unauthorised access to sensitive parts of websites.
-# %Listed, Google Malware Dashboard: 0.23%.
-# Updated: 2018.08.06 / Checked: 2019.02.07
+# %Listed, Google Malware Dashboard: 0.17%.
+# Updated: 2018.08.06 / Checked: 2019.08.18
 
 2a00:14f0::/32 Deny Cloud
 2a04:84c1::/32 Deny Cloud
@@ -5814,6 +5817,17 @@ Tag: CLOUD STAR
 2607:8500::/32 Deny Cloud
 Origin: US
 Tag: Rethem Hosting LLC
+
+
+# ASN 44220 ("Parfumuri Femei.com SRL").
+# Very high levels of spam originating from this network.
+# %Listed, Google Malware Dashboard: 0.88%.
+# Stop Forum Spam (SFS) listings: 60,107.
+# Updated: 2019.08.18
+
+2a09:a380::/29 Deny Cloud
+Origin: RO
+Tag: Parfumuri Femei
 
 
 # ASN 18254 ("KLAYER LLC").

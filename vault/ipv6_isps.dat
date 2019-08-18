@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_isps.dat
 
-# Version: 2019.224.425
-# Last modified: 2019.08.13
+# Version: 2019.229.529
+# Last modified: 2019.08.18
 
 
 # ---
@@ -360,9 +360,8 @@ recaptcha:
 
 
 # ASN 51191 ("Xirra GmbH").
-# %Listed, Google Malware Dashboard: 0.92%.
-# Stop Forum Spam (SFS) listings: 74.
-# Updated: 2016.01.21 / Checked: 2019.01.27
+# Stop Forum Spam (SFS) listings: 2.
+# Updated: 2016.01.21 / Checked: 2019.08.18
 
 2a01:4a0:2000::/47 Deny Generic
 2a01:4a0:2002::/48 Deny Generic
@@ -372,8 +371,8 @@ Tag: Xirra GmbH
 
 
 # ASN 35804 ("PP SKS-LUGAN").
-# Stop Forum Spam (SFS) listings: 54.
-# Updated: 2016.03.30 / Checked: 2019.01.27
+# Stop Forum Spam (SFS) listings: 35.
+# Updated: 2016.03.30 / Checked: 2019.08.18
 
 2a00:ede0::/32 Deny Generic
 Origin: UA
@@ -636,9 +635,11 @@ recaptcha:
 
 
 # ASNs 12530, 15895, 35081 ('"Kyivstar" PJSC').
-# %Listed, Google Malware Dashboard: 2.48% (AS12530).
-# Stop Forum Spam (SFS) listings: 539,459 (AS12530), 8,739,304 (AS15895).
-# Updated: 2016.09.06 / Checked: 2019.01.27
+# Absolutely **INSANE** levels of spam coming from this network!! Shouldn't
+# ever, ever let them through, if at all possible.
+# %Listed, Google Malware Dashboard: 3.23% (AS12530).
+# Stop Forum Spam (SFS) listings: 22,323 (AS12530), 5,308,438 (AS15895).
+# Updated: 2016.09.06 / Checked: 2019.08.18
 
 2a02:8a8::/32 Deny Spam
 2a02:2378::/32 Deny Spam
@@ -705,11 +706,11 @@ recaptcha:
 
 
 # ASN 200019 ("ALEXHOST SRL").
-# %Listed, Google Malware Dashboard: 0.68%.
-# Stop Forum Spam (SFS) listings: 603.
-# Updated: 2018.06.02 / Checked: 2019.04.07
+# Stop Forum Spam (SFS) listings: 289.
+# Updated: 2019.08.18
 
 2001:678:6d4::/48 Deny Generic
+2a09:7c46::/32 Deny Generic
 Origin: MD
 Tag: ALEXHOST SRL
 
@@ -1641,6 +1642,19 @@ recaptcha:
 2a03:1ac0:d421:e000::/51 Deny Spam
 Origin: RU
 Tag: ER-Telecom Holding
+---
+recaptcha:
+ enabled: true
+
+
+# ASN 16010 ("Magticom Ltd").
+# Spam events originating from this network slowly becoming worse over time.
+# Stop Forum Spam (SFS) listings: 90,665.
+# Updated: 2019.08.18
+
+2a0b:6200::/29 Deny Spam
+Origin: GE
+Tag: Magticom Ltd
 ---
 recaptcha:
  enabled: true

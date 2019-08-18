@@ -1,8 +1,8 @@
 # IPv4 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv4.dat
 
-# Version: 2019.224.425
-# Last modified: 2019.08.13
+# Version: 2019.229.529
+# Last modified: 2019.08.18
 
 
 # ---
@@ -14840,13 +14840,15 @@ Tag: Rebel Hosting
 
 
 # ASN 24381 ("FAST.hit Web Hosting").
-# Updated: 2016.08.19 / Checked: 2019.01.26
+# No recent reports or bad activity detected. Possible candidate for future removal.
+# Updated: 2019.08.18
 
-61.8.176.0/20 Deny Cloud
 116.50.16.0/21 Deny Cloud
 202.53.4.0/22 Deny Cloud
 203.25.143.0/24 Deny Cloud
 Origin: AU
+61.8.176.0/20 Deny Cloud
+Origin: CA
 Tag: FAST.hit
 
 
@@ -17852,22 +17854,22 @@ Origin: US
 Tag: zColo
 
 
-# ASNs 61138, 206122 ("Zappie Host LLC").
-# %Listed, Google Malware Dashboard: 4.55% (AS61138).
-# Stop Forum Spam (SFS) listings: 54 (AS61138).
-# Updated: 2018.08.05 / Checked: 2019.01.30
+# ASN 61138 ("Zappie Host LLC").
+# Stop Forum Spam (SFS) listings: 64.
+# Updated: 2019.08.18
 
+185.99.132.0/23 Deny Cloud
+Origin: BY
 185.90.62.0/24 Deny Cloud
 Origin: GB
-185.121.160.0/22 Deny Cloud
-Origin: NO
-103.208.86.0/23 Deny Cloud
-185.99.132.0/23 Deny Cloud
-185.121.168.0/24 Deny Cloud
 185.195.239.0/24 Deny Cloud
+Origin: GL
+185.121.168.0/24 Deny Cloud
+Origin: HR
+103.208.86.0/24 Deny Cloud
 Origin: NZ
 169.239.128.0/22 Deny Cloud
-Origin: ZA
+Origin: SC
 Tag: Zappie Host LLC
 
 
@@ -18234,7 +18236,7 @@ Tag: KVCHOSTING.COM LLC
 
 # ASN 15615 ("IT_SERVICES").
 # Caught by honeypots.
-# Updated: 2017.03.12 / Checked: 2019.01.26
+# Updated: 2017.03.12 / Checked: 2019.08.18
 
 92.63.87.0/24 Deny Cloud
 185.129.148.0/24 Deny Cloud
@@ -18908,9 +18910,9 @@ Tag: Green House Data
 # 100% hosting provider (generally considered safe to block), but may interfere with uptime monitoring service
 # "InternetSeer.com". Users of this service should probably set an "ignore" rule for this signature section. I won't be
 # mainlining a bypass for them though due to abuse reports from some users.
-# %Listed, Google Malware Dashboard: 0.20%.
-# Stop Forum Spam (SFS) listings: 6.
-# Updated: 2018.08.05 / Checked: 2019.01.27
+# %Listed, Google Malware Dashboard: 0.10%.
+# Stop Forum Spam (SFS) listings: 3.
+# Updated: 2018.08.05 / Checked: 2019.08.18
 
 65.36.128.0/17 Deny Cloud
 65.182.192.0/19 Deny Cloud
@@ -19435,7 +19437,7 @@ Tag: CtrlS Datacenters
 
 # ASN 17352 ("Application X").
 # Some IPs on this ASN caught probing for database dumps.
-# Updated: 2017.09.25 / Checked: 2019.01.26
+# Updated: 2017.09.25 / Checked: 2019.08.18
 
 65.175.38.0/24 Deny Cloud
 66.17.142.0/24 Deny Cloud
@@ -19462,21 +19464,23 @@ Tag: ACTIVE 24
 
 # ASN 29278 ("Deninet KFT").
 # IPs on this ASN caught attempting to hack users; SQLi galore.
-# %Listed, Google Malware Dashboard: 0.36%.
-# Stop Forum Spam (SFS) listings: 703.
-# Updated: 2018.02.23 / Checked: 2019.01.28
+# %Listed, Google Malware Dashboard: 0.26%.
+# Stop Forum Spam (SFS) listings: 1,431.
+# Updated: 2019.08.18
 
 79.172.192.0/18 Deny Cloud
 82.150.63.0/24 Deny Cloud
 84.21.0.0/19 Deny Cloud
 87.229.0.0/17 Deny Cloud
+91.236.182.0/24 Deny Cloud
+94.125.182.0/24 Deny Cloud
 95.138.192.0/21 Deny Cloud
 178.238.208.0/20 Deny Cloud
 193.17.175.0/24 Deny Cloud
 194.152.144.0/24 Deny Cloud
 212.92.23.0/24 Deny Cloud
 213.181.199.0/24 Deny Cloud
-213.181.200.0/24 Deny Cloud
+213.181.200.0/23 Deny Cloud
 213.181.204.0/23 Deny Cloud
 213.181.207.0/24 Deny Cloud
 213.181.209.0/24 Deny Cloud
@@ -20963,9 +20967,8 @@ Tag: SOFTplus
 
 
 # ASN 34718 ("TEXNOPROSISTEM").
-# %Listed, Google Malware Dashboard: 0.39%.
-# Stop Forum Spam (SFS) listings: 37.
-# Updated: 2018.08.06 / Checked: 2019.02.07
+# Stop Forum Spam (SFS) listings: 41.
+# Updated: 2018.08.06 / Checked: 2019.08.18
 
 62.209.128.0/19 Deny Cloud
 80.80.208.0/20 Deny Cloud
@@ -22428,8 +22431,8 @@ Tag: SurfControl, Inc
 
 # ASN 29017 ("Gyron Internet Ltd").
 # Cloud/hosting network. Caught attempting unauthorised access to sensitive parts of websites.
-# %Listed, Google Malware Dashboard: 0.23%.
-# Updated: 2018.08.06 / Checked: 2019.02.07
+# %Listed, Google Malware Dashboard: 0.17%.
+# Updated: 2019.08.18
 
 46.29.88.0/21 Deny Cloud
 46.252.80.0/20 Deny Cloud
@@ -22438,7 +22441,6 @@ Tag: SurfControl, Inc
 89.145.64.0/18 Deny Cloud
 91.197.228.0/22 Deny Cloud
 109.68.64.0/21 Deny Cloud
-109.169.83.0/24 Deny Cloud
 185.32.104.0/22 Deny Cloud
 185.181.116.0/22 Deny Cloud
 193.227.111.0/24 Deny Cloud
@@ -23843,15 +23845,14 @@ Tag: Rethem Hosting LLC
 
 
 # ASN 44220 ("Parfumuri Femei.com SRL").
-# Astoundingly high levels of spam originating from this network.
-# %Listed, Google Malware Dashboard: 0.81%.
-# Stop Forum Spam (SFS) listings: 56,862.
-# Updated: 2019.04.03
+# Very high levels of spam originating from this network.
+# %Listed, Google Malware Dashboard: 0.88%.
+# Stop Forum Spam (SFS) listings: 60,107.
+# Updated: 2019.08.18
 
+45.14.148.0/22 Deny Cloud
 85.204.246.0/24 Deny Cloud
-86.107.110.0/24 Deny Cloud
 89.35.39.0/24 Deny Cloud
-185.247.62.0/24 Deny Cloud
 188.213.49.0/24 Deny Cloud
 188.213.134.0/24 Deny Cloud
 188.240.208.0/24 Deny Cloud

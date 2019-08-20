@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2019.08.13).
+ * This file: Functions file (last modified: 2019.08.19).
  */
 
 /**
@@ -37,12 +37,11 @@ $CIDRAM['YAML'] = new \Maikuolan\Common\YAML();
  * Reads and returns the contents of files.
  *
  * @param string $File Path and filename of the file to read.
- * @return string|bool Content of the file returned by the function (or false
- *      on failure).
+ * @return string The file's contents (an empty string on failure).
  */
 $CIDRAM['ReadFile'] = function ($File) {
     if (!is_file($File) || !is_readable($File)) {
-        return false;
+        return '';
     }
     /** Default blocksize (128KB). */
     static $Blocksize = 131072;
@@ -58,7 +57,7 @@ $CIDRAM['ReadFile'] = function ($File) {
         }
         fclose($Handle);
     }
-    return $Data ?: false;
+    return $Data;
 };
 
 /**

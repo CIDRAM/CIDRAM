@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2019.08.17).
+ * This file: Front-end functions file (last modified: 2019.08.20).
  */
 
 /**
@@ -972,6 +972,20 @@ $CIDRAM['SimulateBlockEvent'] = function (string $Addr, bool $Modules = false, b
 $CIDRAM['FilterLang'] = function (string $ChoiceKey) use (&$CIDRAM): bool {
     $Path = $CIDRAM['Vault'] . 'lang/lang.' . $ChoiceKey;
     return (file_exists($Path . '.yaml') && file_exists($Path . '.fe.yaml'));
+};
+
+/**
+ * Filter the available hash algorithms provided by the configuration page on
+ * the basis of their availability.
+ *
+ * @param string $ChoiceKey Hash algorithm.
+ * @return bool Valid/Invalid.
+ */
+$CIDRAM['FilterAlgo'] = function ($ChoiceKey) use (&$CIDRAM) {
+    if ($ChoiceKey === 'PASSWORD_ARGON2ID') {
+        return $CIDRAM['VersionCompare'](PHP_VERSION, '7.3.0');
+    }
+    return true;
 };
 
 /**
@@ -2731,7 +2745,7 @@ $CIDRAM['SendOutput'] = function () use (&$CIDRAM): string {
  * @param string $File The path/name of the file to be confirmed.
  * @return bool True if it's a logfile; False if it isn't.
  */
-$CIDRAM['FileManager-IsLogFile'] = function ($File) use (&$CIDRAM) {
+$CIDRAM['FileManager-IsLogFile'] = function (string $File) use (&$CIDRAM): bool {
     static $Pattern_logfile = false;
     if (!$Pattern_logfile && $CIDRAM['Config']['general']['logfile']) {
         $Pattern_logfile = $CIDRAM['BuildLogPattern']($CIDRAM['Config']['general']['logfile'], true);
@@ -2778,7 +2792,7 @@ $CIDRAM['FileManager-IsLogFile'] = function ($File) use (&$CIDRAM) {
  * @param string $Form The ID of the form to be submitted when the action is confirmed.
  * @return string The JavaScript snippet.
  */
-$CIDRAM['GenerateConfirm'] = function ($Action, $Form) use (&$CIDRAM) {
+$CIDRAM['GenerateConfirm'] = function (string $Action, string $Form) use (&$CIDRAM): string {
     $Confirm = str_replace(["'", '"'], ["\'", '\x22'], sprintf($CIDRAM['L10N']->getString('confirm_action'), $Action));
     return 'javascript:confirm(\'' . $Confirm . '\')&&document.getElementById(\'' . $Form . '\').submit()';
 };
@@ -2790,7 +2804,7 @@ $CIDRAM['GenerateConfirm'] = function ($Action, $Form) use (&$CIDRAM) {
  * @param string $User The user triggering the log event.
  * @param string $Message The message to be logged.
  */
-$CIDRAM['FELogger'] = function ($IPAddr, $User, $Message) use (&$CIDRAM) {
+$CIDRAM['FELogger'] = function (string $IPAddr, string $User, string $Message) use (&$CIDRAM) {
     if (!$CIDRAM['Config']['general']['frontend_log'] || empty($CIDRAM['FE']['DateTime'])) {
         return;
     }
@@ -2824,7 +2838,7 @@ $CIDRAM['FELogger'] = function ($IPAddr, $User, $Message) use (&$CIDRAM) {
  * @param array $Attachments An optional array of attachments.
  * @return bool Operation failed (false) or succeeded (true).
  */
-$CIDRAM['SendEmail'] = function (array $Recipients = [], $Subject = '', $Body = '', $AltBody = '', array $Attachments = []) use (&$CIDRAM) {
+$CIDRAM['SendEmail'] = function (array $Recipients = [], string $Subject = '', string $Body = '', string $AltBody = '', array $Attachments = []) use (&$CIDRAM): bool {
     $EventLog = '';
     $EventLogData = '';
 
@@ -2986,7 +3000,7 @@ $CIDRAM['SendEmail'] = function (array $Recipients = [], $Subject = '', $Body = 
  *
  * @return int An 8-digit number.
  */
-$CIDRAM['2FA-Number'] = function () {
+$CIDRAM['2FA-Number'] = function (): int {
     static $MinInt = 10000000;
     static $MaxInt = 99999999;
     if (function_exists('random_int')) {
@@ -3091,7 +3105,7 @@ $CIDRAM['AuxGenerateFEData'] = function () use (&$CIDRAM) {
 
                 /** Iterate through sources. */
                 foreach ($Data[$Action[0]]['But not if matches'] as $Source => $Values) {
-                    $ThisSource = isset($Sources[$Source]) ? $Sources[$Source] : $Source;
+                    $ThisSource = $Sources[$Source] ?? $Source;
                     if (!is_array($Values)) {
                         $Values = [$Values];
                     }
@@ -3107,7 +3121,7 @@ $CIDRAM['AuxGenerateFEData'] = function () use (&$CIDRAM) {
 
                 /** Iterate through sources. */
                 foreach ($Data[$Action[0]]['If matches'] as $Source => $Values) {
-                    $ThisSource = isset($Sources[$Source]) ? $Sources[$Source] : $Source;
+                    $ThisSource = $Sources[$Source] ?? $Source;
                     if (!is_array($Values)) {
                         $Values = [$Values];
                     }
@@ -3167,7 +3181,7 @@ $CIDRAM['GenerateOptions'] = function (array $Options, $Trim = '') {
  * @param string $ParentKey An optional key of the parent data source.
  * @return string The generated clickable list.
  */
-$CIDRAM['ArrayToClickableList'] = function (array $Arr = [], $DeleteKey = '', $Depth = 0, $ParentKey = '') use (&$CIDRAM) {
+$CIDRAM['ArrayToClickableList'] = function (array $Arr = [], string $DeleteKey = '', int $Depth = 0, string $ParentKey = '') use (&$CIDRAM): string {
     $Output = '';
     $Count = count($Arr);
     $Prefix = substr($DeleteKey, 0, 2) === 'fe' ? 'FE' : '';

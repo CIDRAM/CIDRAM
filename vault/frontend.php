@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2019.08.17).
+ * This file: Front-end handler (last modified: 2019.08.19).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -3392,7 +3392,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'aux' && $CIDRAM['FE']['Permissi
         ];
 
         /** Determine appropriate action for new rule. */
-        $CIDRAM['Action'] = isset($CIDRAM['Actions'][$_POST['act']]) ? $CIDRAM['Actions'][$_POST['act']] : 'Block';
+        $CIDRAM['Action'] = $CIDRAM['Actions'][$_POST['act']] ?? 'Block';
 
         /** Construct new rule action array. */
         $CIDRAM['AuxData'][$_POST['ruleName']][$CIDRAM['Action']] = ['If matches' => [], 'But not if matches' => []];

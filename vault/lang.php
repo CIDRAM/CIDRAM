@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Language handler (last modified: 2019.08.17).
+ * This file: Language handler (last modified: 2019.08.19).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -78,7 +78,7 @@ $CIDRAM['L10N']['FallbackData'] = (new \Maikuolan\Common\YAML($CIDRAM['L10N']['F
 $CIDRAM['L10N'] = new \Maikuolan\Common\L10N($CIDRAM['L10N']['ConfiguredData'], $CIDRAM['L10N']['FallbackData']);
 
 /** Load client-specified L10N data if it's possible to do so. */
-if (empty($_SERVER['HTTP_ACCEPT_LANGUAGE'])) {
+if (!$CIDRAM['Config']['general']['lang_override'] || empty($_SERVER['HTTP_ACCEPT_LANGUAGE'])) {
     $CIDRAM['Client-L10N'] = &$CIDRAM['L10N'];
     $CIDRAM['L10N-Lang-Attache'] = '';
 } else {

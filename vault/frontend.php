@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2019.08.23).
+ * This file: Front-end handler (last modified: 2019.08.24).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -1731,8 +1731,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && ($CIDRAM['FE']['Per
                         '<div class="txtGn">' . $CIDRAM['L10N']->getString('state_component_is_active') . '</div>'
                     );
                     if ($CIDRAM['Activable']) {
-                        $CIDRAM['Components']['ThisComponent']['Options'] .=
-                            '<option value="deactivate-component">' . $CIDRAM['L10N']->getString('field_deactivate') . '</option>';
+                        $CIDRAM['Components']['ThisComponent']['Options'] .= '<option value="deactivate-component">' . $CIDRAM['L10N']->getString('field_deactivate') . '</option>';
                         if (!empty($CIDRAM['Components']['ThisComponent']['Uninstallable'])) {
                             $CIDRAM['Components']['ThisComponent']['Options'] .=
                                 '<option value="deactivate-and-uninstall-component">' .
@@ -1771,9 +1770,13 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && ($CIDRAM['FE']['Per
                 empty($CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['Minimum Required PHP']) ||
                 !$CIDRAM['VersionCompare'](PHP_VERSION, $CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['Minimum Required PHP'])
             ) {
-                $CIDRAM['Components']['ThisComponent']['Options'] .=
-                    '<option value="update-component">' . $CIDRAM['L10N']->getString('field_install') . '</option>' .
-                    '<option value="update-and-activate-component">' . $CIDRAM['L10N']->getString('field_install') . ' + ' . $CIDRAM['L10N']->getString('field_activate') . '</option>';
+                $CIDRAM['Components']['ThisComponent']['Options'] .= '<option value="update-component">' . $CIDRAM['L10N']->getString('field_install') . '</option>';
+                if ($CIDRAM['IsActivable']($CIDRAM['Components']['ThisComponent'])) {
+                    $CIDRAM['Components']['ThisComponent']['Options'] .=
+                        '<option value="update-and-activate-component">' .
+                        $CIDRAM['L10N']->getString('field_install') . ' + ' . $CIDRAM['L10N']->getString('field_activate') .
+                        '</option>';
+                }
             } elseif ($CIDRAM['Components']['ThisComponent']['StatusOptions'] === $CIDRAM['L10N']->getString('response_updates_not_installed')) {
                 $CIDRAM['Components']['ThisComponent']['StatusOptions'] = $CIDRAM['ParseVars'](
                     ['V' => $CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['Minimum Required PHP']],
@@ -1961,17 +1964,25 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && ($CIDRAM['FE']['Per
         } else {
             $CIDRAM['Components']['ThisComponent']['LatestSize'] = '';
         }
-        $CIDRAM['Components']['ThisComponent']['StatusOptions'] = (
+        if (
             !empty($CIDRAM['Components']['ThisComponent']['Minimum Required PHP']) &&
             $CIDRAM['VersionCompare'](PHP_VERSION, $CIDRAM['Components']['ThisComponent']['Minimum Required PHP'])
-        ) ? $CIDRAM['ParseVars'](
-            ['V' => $CIDRAM['Components']['ThisComponent']['Minimum Required PHP']],
-            $CIDRAM['L10N']->getString('response_updates_not_installed_php')
-        ) :
-            $CIDRAM['L10N']->getString('response_updates_not_installed') . '<br /><select name="do" class="auto">' .
-            '<option value="update-component">' . $CIDRAM['L10N']->getString('field_install') . '</option>' .
-            '<option value="update-and-activate-component">' . $CIDRAM['L10N']->getString('field_install') . ' + ' . $CIDRAM['L10N']->getString('field_activate') . '</option>' .
-            '</select><input type="submit" value="' . $CIDRAM['L10N']->getString('field_ok') . '" class="auto" />';
+        ) {
+            $CIDRAM['Components']['ThisComponent']['StatusOptions'] = $CIDRAM['ParseVars']([
+                'V' => $CIDRAM['Components']['ThisComponent']['Minimum Required PHP']
+            ], $CIDRAM['L10N']->getString('response_updates_not_installed_php'));
+        } else {
+            $CIDRAM['Components']['ThisComponent']['StatusOptions'] =
+                $CIDRAM['L10N']->getString('response_updates_not_installed') . '<br /><select name="do" class="auto">' .
+                '<option value="update-component">' . $CIDRAM['L10N']->getString('field_install') . '</option>';
+            if ($CIDRAM['IsActivable']($CIDRAM['Components']['ThisComponent'])) {
+                $CIDRAM['Components']['ThisComponent']['StatusOptions'] .=
+                    '<option value="update-and-activate-component">' .
+                    $CIDRAM['L10N']->getString('field_install') . ' + ' . $CIDRAM['L10N']->getString('field_activate') .
+                    '</option>';
+            }
+            $CIDRAM['Components']['ThisComponent']['StatusOptions'] .= '</select><input type="submit" value="' . $CIDRAM['L10N']->getString('field_ok') . '" class="auto" />';
+        }
         /** Append changelog. */
         $CIDRAM['Components']['ThisComponent']['Changelog'] = empty(
             $CIDRAM['Components']['ThisComponent']['Changelog']

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2019.08.23).
+ * This file: Front-end functions file (last modified: 2019.08.24).
  */
 
 /**
@@ -105,8 +105,8 @@ $CIDRAM['In'] = function (string $Query) use (&$CIDRAM): bool {
 
     /** Replace file content. */
     if ($QueryParts[1] === 'replace' && !empty($QueryParts[3]) && strtolower($QueryParts[3]) === 'with') {
-        $Data = preg_replace($QueryParts[2], (isset($QueryParts[4]) ? $QueryParts[4] : ''), $Data);
-        return true;
+        $Data = preg_replace($QueryParts[2], ($QueryParts[4] ?? ''), $Data);
+        return $CIDRAM['Updater-IO']->writeFile($CIDRAM['Vault'] . $QueryParts[0], $Data);
     }
 
     /** Nothing done. Return false (failure). */
@@ -428,7 +428,8 @@ $CIDRAM['FileManager-RecursiveList'] = function (string $Base) use (&$CIDRAM): a
                 }
                 $Arr[$Key]['Filetype'] = $CIDRAM['ParseVars'](['EXT' => $Ext], $CIDRAM['L10N']->getString('field_filetype_info'));
                 if ($Ext === 'ICO') {
-                    $Arr[$Key]['Icon'] = 'file=' . urlencode($Prepend . $Item);
+                    $Arr[$Key]['CanEdit'] = false;
+                    $Arr[$Key]['Icon'] = 'file=' . urlencode($Arr[$Key]['Filename']);
                     $CIDRAM['FormatFilesize']($Arr[$Key]['Filesize']);
                     continue;
                 }
@@ -489,6 +490,7 @@ $CIDRAM['FileManager-RecursiveList'] = function (string $Base) use (&$CIDRAM): a
         }
         if ($Arr[$Key]['Filesize']) {
             $CIDRAM['FormatFilesize']($Arr[$Key]['Filesize']);
+            $Arr[$Key]['Filesize'] .= ' ⏰ <em>' . $CIDRAM['TimeFormat'](filemtime($Item), $CIDRAM['Config']['general']['time_format']) . '</em>';
         } else {
             $Arr[$Key]['Filesize'] = '';
         }

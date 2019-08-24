@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2019.08.17).
+ * This file: Front-end handler (last modified: 2019.08.23).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -1514,7 +1514,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && ($CIDRAM['FE']['Per
     $CIDRAM['FE']['UpdatesFormTargetControls'] = '';
     $CIDRAM['StateModified'] = false;
     $CIDRAM['FilterSwitch'](
-        ['hide-non-outdated', 'hide-unused'],
+        ['hide-non-outdated', 'hide-unused', 'sort-by-name', 'descending-order'],
         isset($_POST['FilterSelector']) ? $_POST['FilterSelector'] : '',
         $CIDRAM['StateModified'],
         $CIDRAM['FE']['UpdatesFormTarget'],
@@ -1525,6 +1525,9 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && ($CIDRAM['FE']['Per
         die;
     }
     unset($CIDRAM['StateModified']);
+
+    /** Useful for avoiding excessive IO operations when dealing with components. */
+    $CIDRAM['Updater-IO'] = new \Maikuolan\Common\DelayedIO();
 
     /** Updates page form boilerplate. */
     $CIDRAM['CFBoilerplate'] =
@@ -1730,6 +1733,12 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && ($CIDRAM['FE']['Per
                     if ($CIDRAM['Activable']) {
                         $CIDRAM['Components']['ThisComponent']['Options'] .=
                             '<option value="deactivate-component">' . $CIDRAM['L10N']->getString('field_deactivate') . '</option>';
+                        if (!empty($CIDRAM['Components']['ThisComponent']['Uninstallable'])) {
+                            $CIDRAM['Components']['ThisComponent']['Options'] .=
+                                '<option value="deactivate-and-uninstall-component">' .
+                                $CIDRAM['L10N']->getString('field_deactivate') . ' + ' . $CIDRAM['L10N']->getString('field_uninstall') .
+                                '</option>';
+                        }
                     }
                 } else {
                     if ($CIDRAM['Activable']) {
@@ -1763,7 +1772,8 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && ($CIDRAM['FE']['Per
                 !$CIDRAM['VersionCompare'](PHP_VERSION, $CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['Minimum Required PHP'])
             ) {
                 $CIDRAM['Components']['ThisComponent']['Options'] .=
-                    '<option value="update-component">' . $CIDRAM['L10N']->getString('field_install') . '</option>';
+                    '<option value="update-component">' . $CIDRAM['L10N']->getString('field_install') . '</option>' .
+                    '<option value="update-and-activate-component">' . $CIDRAM['L10N']->getString('field_install') . ' + ' . $CIDRAM['L10N']->getString('field_activate') . '</option>';
             } elseif ($CIDRAM['Components']['ThisComponent']['StatusOptions'] === $CIDRAM['L10N']->getString('response_updates_not_installed')) {
                 $CIDRAM['Components']['ThisComponent']['StatusOptions'] = $CIDRAM['ParseVars'](
                     ['V' => $CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['Minimum Required PHP']],
@@ -1845,9 +1855,17 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && ($CIDRAM['FE']['Per
             if (empty($CIDRAM['Components']['ThisComponent']['RowClass'])) {
                 $CIDRAM['Components']['ThisComponent']['RowClass'] = 'h1';
             }
-            $CIDRAM['FE']['Indexes'][$CIDRAM['Components']['ThisComponent']['ID']] =
-                '<a href="#' . $CIDRAM['Components']['ThisComponent']['ID'] . '">' . $CIDRAM['Components']['ThisComponent']['Name'] . "</a><br /><br />\n            ";
-            $CIDRAM['Components']['Out'][$CIDRAM['Components']['Key']] = $CIDRAM['ParseVars'](
+            if (!empty($CIDRAM['FE']['sort-by-name']) && !empty($CIDRAM['Components']['ThisComponent']['Name'])) {
+                $CIDRAM['Components']['ThisComponent']['SortKey'] = $CIDRAM['Components']['ThisComponent']['Name'];
+            } else {
+                $CIDRAM['Components']['ThisComponent']['SortKey'] = $CIDRAM['Components']['Key'];
+            }
+            $CIDRAM['FE']['Indexes'][$CIDRAM['Components']['ThisComponent']['SortKey']] = sprintf(
+                "<a href=\"#%s\">%s</a><br /><br />\n            ",
+                $CIDRAM['Components']['ThisComponent']['ID'],
+                $CIDRAM['Components']['ThisComponent']['Name']
+            );
+            $CIDRAM['Components']['Out'][$CIDRAM['Components']['ThisComponent']['SortKey']] = $CIDRAM['ParseVars'](
                 $CIDRAM['L10N']->Data + $CIDRAM['ArrayFlatten']($CIDRAM['Components']['ThisComponent']) + $CIDRAM['ArrayFlatten']($CIDRAM['FE']),
                 $CIDRAM['FE']['UpdatesRow']
             );
@@ -1891,8 +1909,9 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && ($CIDRAM['FE']['Per
             $CIDRAM['Components']['RemoteDataThis'][0]
         );
         if (empty($CIDRAM['Components']['Remotes'][$CIDRAM['Components']['ReannotateThis']])) {
-            $CIDRAM['Components']['Remotes'][$CIDRAM['Components']['ReannotateThis']] =
-                $CIDRAM['ReadFile']($CIDRAM['Vault'] . $CIDRAM['Components']['ReannotateThis']);
+            $CIDRAM['Components']['Remotes'][$CIDRAM['Components']['ReannotateThis']] = $CIDRAM['Updater-IO']->readFile(
+                $CIDRAM['Vault'] . $CIDRAM['Components']['ReannotateThis']
+            );
         }
         if (substr(
             $CIDRAM['Components']['Remotes'][$CIDRAM['Components']['ReannotateThis']], -2
@@ -1949,10 +1968,10 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && ($CIDRAM['FE']['Per
             ['V' => $CIDRAM['Components']['ThisComponent']['Minimum Required PHP']],
             $CIDRAM['L10N']->getString('response_updates_not_installed_php')
         ) :
-            $CIDRAM['L10N']->getString('response_updates_not_installed') .
-            '<br /><select name="do" class="auto"><option value="update-component">' .
-            $CIDRAM['L10N']->getString('field_install') . '</option></select><input type="submit" value="' .
-            $CIDRAM['L10N']->getString('field_ok') . '" class="auto" />';
+            $CIDRAM['L10N']->getString('response_updates_not_installed') . '<br /><select name="do" class="auto">' .
+            '<option value="update-component">' . $CIDRAM['L10N']->getString('field_install') . '</option>' .
+            '<option value="update-and-activate-component">' . $CIDRAM['L10N']->getString('field_install') . ' + ' . $CIDRAM['L10N']->getString('field_activate') . '</option>' .
+            '</select><input type="submit" value="' . $CIDRAM['L10N']->getString('field_ok') . '" class="auto" />';
         /** Append changelog. */
         $CIDRAM['Components']['ThisComponent']['Changelog'] = empty(
             $CIDRAM['Components']['ThisComponent']['Changelog']
@@ -1965,9 +1984,17 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && ($CIDRAM['FE']['Per
         $CIDRAM['Components']['ThisComponent']['Filename'] = '';
         /** Finalise entry. */
         if (!$CIDRAM['FE']['hide-unused']) {
-            $CIDRAM['FE']['Indexes'][$CIDRAM['Components']['ThisComponent']['ID']] =
-                '<a href="#' . $CIDRAM['Components']['ThisComponent']['ID'] . '">' . $CIDRAM['Components']['ThisComponent']['Name'] . "</a><br /><br />\n            ";
-            $CIDRAM['Components']['Out'][$CIDRAM['Components']['Key']] = $CIDRAM['ParseVars'](
+            if (!empty($CIDRAM['FE']['sort-by-name']) && !empty($CIDRAM['Components']['ThisComponent']['Name'])) {
+                $CIDRAM['Components']['ThisComponent']['SortKey'] = $CIDRAM['Components']['ThisComponent']['Name'];
+            } else {
+                $CIDRAM['Components']['ThisComponent']['SortKey'] = $CIDRAM['Components']['Key'];
+            }
+            $CIDRAM['FE']['Indexes'][$CIDRAM['Components']['ThisComponent']['SortKey']] = sprintf(
+                "<a href=\"#%s\">%s</a><br /><br />\n            ",
+                $CIDRAM['Components']['ThisComponent']['ID'],
+                $CIDRAM['Components']['ThisComponent']['Name']
+            );
+            $CIDRAM['Components']['Out'][$CIDRAM['Components']['ThisComponent']['SortKey']] = $CIDRAM['ParseVars'](
                 $CIDRAM['L10N']->Data + $CIDRAM['ArrayFlatten']($CIDRAM['Components']['ThisComponent']) + $CIDRAM['ArrayFlatten']($CIDRAM['FE']),
                 $CIDRAM['FE']['UpdatesRow']
             );
@@ -1981,16 +2008,12 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && ($CIDRAM['FE']['Per
         if (substr($Remote, -2) !== "\n\n" || substr($Remote, 0, 4) !== "---\n") {
             return;
         }
-        $Handle = fopen($CIDRAM['Vault'] . $Key, 'w');
-        fwrite($Handle, $Remote);
-        fclose($Handle);
+        $CIDRAM['Updater-IO']->writeFile($CIDRAM['Vault'] . $Key, $Remote);
     });
 
     /** Finalise output and unset working data. */
-    uksort($CIDRAM['FE']['Indexes'], $CIDRAM['UpdatesSortFunc']);
-    $CIDRAM['FE']['Indexes'] = implode('', $CIDRAM['FE']['Indexes']);
-    uksort($CIDRAM['Components']['Out'], $CIDRAM['UpdatesSortFunc']);
-    $CIDRAM['FE']['Components'] = implode('', $CIDRAM['Components']['Out']);
+    $CIDRAM['FE']['Indexes'] = $CIDRAM['UpdatesSortFunc']($CIDRAM['FE']['Indexes']);
+    $CIDRAM['FE']['Components'] = $CIDRAM['UpdatesSortFunc']($CIDRAM['Components']['Out']);
 
     $CIDRAM['Components']['CountOutdated'] = count($CIDRAM['Components']['Outdated']);
     $CIDRAM['Components']['CountOutdatedSignatureFiles'] = count($CIDRAM['Components']['OutdatedSignatureFiles']);
@@ -2048,20 +2071,23 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && ($CIDRAM['FE']['Per
         }
     }
 
+    /** Finalise IO operations all at once. */
+    unset($CIDRAM['Updater-IO']);
+
     /** Send output. */
     if (!$CIDRAM['FE']['CronMode']) {
         /** Normal page output. */
         echo $CIDRAM['SendOutput']();
     } elseif (!empty($UpdateAll)) {
-        /** Returned state message for cronable (locally updating). */
+        /** Returned state message for Cronable (locally updating). */
         $Results = ['state_msg' => str_ireplace(['<code>', '</code>', '<br />'], ['[', ']', "\n"], $CIDRAM['FE']['state_msg'])];
     } elseif (!empty($CIDRAM['FE']['state_msg'])) {
-        /** Returned state message for cronable. */
+        /** Returned state message for Cronable. */
         echo json_encode([
             'state_msg' => str_ireplace(['<code>', '</code>', '<br />'], ['[', ']', "\n"], $CIDRAM['FE']['state_msg'])
         ]);
     } elseif (!empty($_POST['do']) && $_POST['do'] === 'get-list' && count($CIDRAM['Components']['Outdated'])) {
-        /** Returned list of outdated components for cronable. */
+        /** Returned list of outdated components for Cronable. */
         echo json_encode([
             'state_msg' => str_ireplace(['<code>', '</code>', '<br />'], ['[', ']', "\n"], $CIDRAM['FE']['state_msg']),
             'outdated' => $CIDRAM['Components']['Outdated']

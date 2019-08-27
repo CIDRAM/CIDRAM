@@ -8,39 +8,29 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2019.08.24).
+ * This file: Front-end functions file (last modified: 2019.08.28).
  */
 
 /**
- * Validates or ensures that two different sets of component metadata share the
- * same base elements (or components). One set acts as a model for which base
- * elements are expected, and if additional/superfluous entries are found in
- * the other set (the base), they'll be removed. Installed components are
- * ignored as to future-proof legacy support (just removes non-installed
- * components).
+ * Syncs downstream metadata with upstream metadata to remove superfluous
+ * entries. Installed components are ignored.
  *
- * @param string $Base The base set (generally, the local copy).
- * @param string $Model The model set (generally, the remote copy).
- * @param bool $Validate Validate (true) or ensure congruency (false; default).
- * @return string|bool If $Validate is true, returns true|false according to
- *      whether the sets are congruent. If $Validate is false, returns the
- *      corrected $Base set.
+ * @param string $Downstream Downstream/local data.
+ * @param string $Upstream Upstream/remote data.
+ * @return string Patched/synced data (or an empty string on failure).
  */
-$CIDRAM['Congruency'] = function ($Base, $Model, $Validate = false) use (&$CIDRAM) {
-    if (empty($Base) || empty($Model)) {
-        return $Validate ? false : '';
+$CIDRAM['Congruency'] = function ($Downstream, $Upstream) use (&$CIDRAM) {
+    if (empty($Downstream) || empty($Upstream)) {
+        return '';
     }
-    $BaseArr = (new \Maikuolan\Common\YAML($Base))->Data;
-    $ModelArr = (new \Maikuolan\Common\YAML($Model))->Data;
-    foreach ($BaseArr as $Element => $Data) {
-        if (!isset($Data['Version']) && !isset($Data['Files']) && !isset($ModelArr[$Element])) {
-            if ($Validate) {
-                return false;
-            }
-            $Base = preg_replace("~\n" . preg_quote($Element) . ":?(\n [^\n]*)*\n~i", "\n", $Base);
+    $DownstreamArray = (new \Maikuolan\Common\YAML($Downstream))->Data;
+    $UpstreamArray = (new \Maikuolan\Common\YAML($Upstream))->Data;
+    foreach ($DownstreamArray as $Element => $Data) {
+        if (!isset($Data['Version']) && !isset($Data['Files']) && !isset($UpstreamArray[$Element])) {
+            $Downstream = preg_replace("~\n" . preg_quote($Element) . ":?(\n [^\n]*)*\n~i", "\n", $Downstream);
         }
     }
-    return $Validate ? true : $Base;
+    return $Downstream;
 };
 
 /**
@@ -1619,8 +1609,7 @@ $CIDRAM['UpdatesHandler'] = function ($Action, $ID = '') use (&$CIDRAM) {
  */
 $CIDRAM['UpdatesHandler-Update'] = function ($ID) use (&$CIDRAM) {
     $CIDRAM['Arrayify']($ID);
-    $FileData = [];
-    $Annotations = [];
+    $Congruents = [];
     foreach ($ID as $ThisTarget) {
         if (!isset(
             $CIDRAM['Components']['Meta'][$ThisTarget]['Remote'],
@@ -1665,7 +1654,7 @@ $CIDRAM['UpdatesHandler-Update'] = function ($ID) use (&$CIDRAM) {
             $CIDRAM['Traverse']($CIDRAM['Components']['RemoteMeta'][$ThisTarget]['Reannotate']) &&
             ($ThisReannotate = $CIDRAM['Components']['RemoteMeta'][$ThisTarget]['Reannotate']) &&
             file_exists($CIDRAM['Vault'] . $ThisReannotate) &&
-            ($FileData[$ThisReannotate] = $OldMeta = $CIDRAM['Updater-IO']->readFile($CIDRAM['Vault'] . $ThisReannotate)) &&
+            ($OldMeta = $CIDRAM['Updater-IO']->readFile($CIDRAM['Vault'] . $ThisReannotate)) &&
             preg_match("~(\n" . preg_quote($ThisTarget) . ":?)(\n [^\n]*)*\n~i", $OldMeta, $OldMetaMatches) &&
             ($OldMetaMatches = $OldMetaMatches[0]) &&
             ($NewMeta = $CIDRAM['Components']['Meta'][$ThisTarget]['RemoteData']) &&
@@ -1675,6 +1664,7 @@ $CIDRAM['UpdatesHandler-Update'] = function ($ID) use (&$CIDRAM) {
                 $CIDRAM['Components']['Meta'][$ThisTarget]['Tests']
             ) || $CIDRAM['AppendTests']($CIDRAM['Components']['Meta'][$ThisTarget], true))
         ) {
+            $Congruents[$ThisReannotate] = $NewMeta;
             $CIDRAM['Arrayify']($CIDRAM['Components']['RemoteMeta'][$ThisTarget]['Files']);
             $CIDRAM['Arrayify']($CIDRAM['Components']['RemoteMeta'][$ThisTarget]['Files']['From']);
             $CIDRAM['Arrayify']($CIDRAM['Components']['RemoteMeta'][$ThisTarget]['Files']['To']);
@@ -1793,7 +1783,7 @@ $CIDRAM['UpdatesHandler-Update'] = function ($ID) use (&$CIDRAM) {
                     rename($CIDRAM['Vault'] . $ThisFileName, $CIDRAM['Vault'] . $ThisFileName . '.rollback');
                 }
                 $CIDRAM['Components']['BytesAdded'] += strlen($ThisFile);
-                $Handle = fopen($CIDRAM['Vault'] . $ThisFileName, 'w');
+                $Handle = fopen($CIDRAM['Vault'] . $ThisFileName, 'wb');
                 $CIDRAM['RemoteFiles'][$ThisFileName] = fwrite($Handle, $ThisFile);
                 $CIDRAM['RemoteFiles'][$ThisFileName] = ($CIDRAM['RemoteFiles'][$ThisFileName] !== false);
                 fclose($Handle);
@@ -1835,11 +1825,10 @@ $CIDRAM['UpdatesHandler-Update'] = function ($ID) use (&$CIDRAM) {
                     });
                     unset($ThisArr);
                 }
+
                 /** Assign updated component annotation. */
-                $FileData[$ThisReannotate] = $NewMeta;
-                if (!isset($Annotations[$ThisReannotate])) {
-                    $Annotations[$ThisReannotate] = $CIDRAM['Components']['Meta'][$ThisTarget]['RemoteData'];
-                }
+                $CIDRAM['Updater-IO']->writeFile($CIDRAM['Vault'] . $ThisReannotate, $NewMeta);
+
                 $CIDRAM['FE']['state_msg'] .= '<code>' . $ThisTarget . '</code> – ';
                 if (
                     empty($CIDRAM['Components']['Meta'][$ThisTarget]['Version']) &&
@@ -1855,6 +1844,8 @@ $CIDRAM['UpdatesHandler-Update'] = function ($ID) use (&$CIDRAM) {
                         $CIDRAM['FE_Executor']($CIDRAM['Components']['Meta'][$ThisTarget]['When Update Succeeds'], true);
                     }
                 }
+
+                /** Replace downstream meta with upstream meta. */
                 $CIDRAM['Components']['Meta'][$ThisTarget] = $CIDRAM['Components']['RemoteMeta'][$ThisTarget];
             }
         } else {
@@ -1889,14 +1880,13 @@ $CIDRAM['UpdatesHandler-Update'] = function ($ID) use (&$CIDRAM) {
             $CIDRAM['UpdatesHandler-Activate']($ThisTarget);
         }
     }
-    /** Update annotations. */
-    foreach ($FileData as $ThisKey => $ThisFile) {
-        /** Remove superfluous metadata. */
-        if (!empty($Annotations[$ThisKey])) {
-            $ThisFile = $CIDRAM['Congruency']($ThisFile, $Annotations[$ThisKey]);
-        }
-        $CIDRAM['Updater-IO']->writeFile($CIDRAM['Vault'] . $ThisKey, $ThisFile);
+
+    /** Remove superfluous metadata. */
+    foreach ($Congruents as $File => $Upstream) {
+        $Downstream = $CIDRAM['Congruency']($CIDRAM['Updater-IO']->readFile($CIDRAM['Vault'] . $File), $Upstream);
+        $CIDRAM['Updater-IO']->writeFile($CIDRAM['Vault'] . $File, $Downstream);
     }
+
     /** Cleanup. */
     unset($CIDRAM['RemoteFiles'], $CIDRAM['IgnoredFiles']);
 };

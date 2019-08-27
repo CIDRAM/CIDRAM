@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2019.08.24).
+ * This file: Front-end handler (last modified: 2019.08.28).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -257,7 +257,7 @@ if ($CIDRAM['FE']['FrontEndData'] = $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'fe_a
 
 /** Engage safety mechanism. */
 if (!$CIDRAM['frontend.dat.safety']) {
-    $CIDRAM['Handle'] = fopen($CIDRAM['Vault'] . 'fe_assets/frontend.dat.safety', 'w');
+    $CIDRAM['Handle'] = fopen($CIDRAM['Vault'] . 'fe_assets/frontend.dat.safety', 'wb');
     fwrite($CIDRAM['Handle'], '.');
     fclose($CIDRAM['Handle']);
 }
@@ -2741,7 +2741,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'sections' && $CIDRAM['FE']['Per
 
         if ($_POST['Action'] === 'unignore' && preg_match("~\nIgnore " . $_POST['SectionName'] . "\n~", $CIDRAM['IgnoreData'])) {
             $CIDRAM['IgnoreData'] = preg_replace("~\nIgnore " . $_POST['SectionName'] . "\n~", "\n", $CIDRAM['IgnoreData']);
-            $CIDRAM['Handle'] = fopen($CIDRAM['Vault'] . 'ignore.dat', 'w');
+            $CIDRAM['Handle'] = fopen($CIDRAM['Vault'] . 'ignore.dat', 'wb');
             fwrite($CIDRAM['Handle'], $CIDRAM['IgnoreData']);
             fclose($CIDRAM['Handle']);
         } elseif ($_POST['Action'] === 'ignore' && !preg_match("~\nIgnore " . $_POST['SectionName'] . "\n~", $CIDRAM['IgnoreData'])) {
@@ -2755,7 +2755,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'sections' && $CIDRAM['FE']['Per
                 $CIDRAM['IgnoreData'],
                 "# End front-end generated ignore rules.\n"
             ));
-            $CIDRAM['Handle'] = fopen($CIDRAM['Vault'] . 'ignore.dat', 'w');
+            $CIDRAM['Handle'] = fopen($CIDRAM['Vault'] . 'ignore.dat', 'wb');
             fwrite($CIDRAM['Handle'], $CIDRAM['IgnoreData']);
             fclose($CIDRAM['Handle']);
         }
@@ -3480,7 +3480,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'aux' && $CIDRAM['FE']['Permissi
 
         /** Reconstruct and update auxiliary rules data. */
         if ($CIDRAM['NewAuxData'] = $CIDRAM['YAML']->reconstruct($CIDRAM['AuxData'])) {
-            $CIDRAM['Handle'] = fopen($CIDRAM['Vault'] . 'auxiliary.yaml', 'w');
+            $CIDRAM['Handle'] = fopen($CIDRAM['Vault'] . 'auxiliary.yaml', 'wb');
             fwrite($CIDRAM['Handle'], $CIDRAM['NewAuxData']);
             fclose($CIDRAM['Handle']);
         }
@@ -3598,7 +3598,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'aux' && $CIDRAM['FE']['Permissi
 
             /** Reconstruct and update auxiliary rules data. */
             if (($CIDRAM['NewAuxData'] = $CIDRAM['YAML']->reconstruct($CIDRAM['AuxData'])) && strlen($CIDRAM['NewAuxData']) > 2) {
-                $CIDRAM['Handle'] = fopen($CIDRAM['Vault'] . 'auxiliary.yaml', 'w');
+                $CIDRAM['Handle'] = fopen($CIDRAM['Vault'] . 'auxiliary.yaml', 'wb');
                 fwrite($CIDRAM['Handle'], $CIDRAM['NewAuxData']);
                 fclose($CIDRAM['Handle']);
             } elseif (file_exists($CIDRAM['Vault'] . 'auxiliary.yaml')) {
@@ -3621,7 +3621,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'aux' && $CIDRAM['FE']['Permissi
 
             /** Reconstruct and update auxiliary rules data. */
             if (($CIDRAM['NewAuxData'] = $CIDRAM['YAML']->reconstruct($CIDRAM['AuxData'])) && strlen($CIDRAM['NewAuxData']) > 2) {
-                $CIDRAM['Handle'] = fopen($CIDRAM['Vault'] . 'auxiliary.yaml', 'w');
+                $CIDRAM['Handle'] = fopen($CIDRAM['Vault'] . 'auxiliary.yaml', 'wb');
                 fwrite($CIDRAM['Handle'], $CIDRAM['NewAuxData']);
                 fclose($CIDRAM['Handle']);
             }
@@ -3638,7 +3638,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'aux' && $CIDRAM['FE']['Permissi
 
             /** Reconstruct and update auxiliary rules data. */
             if (($CIDRAM['NewAuxData'] = $CIDRAM['YAML']->reconstruct($CIDRAM['AuxData'])) && strlen($CIDRAM['NewAuxData']) > 2) {
-                $CIDRAM['Handle'] = fopen($CIDRAM['Vault'] . 'auxiliary.yaml', 'w');
+                $CIDRAM['Handle'] = fopen($CIDRAM['Vault'] . 'auxiliary.yaml', 'wb');
                 fwrite($CIDRAM['Handle'], $CIDRAM['NewAuxData']);
                 fclose($CIDRAM['Handle']);
             }
@@ -3847,7 +3847,7 @@ if ($CIDRAM['FE']['Rebuild']) {
         "USERS\n-----" . $CIDRAM['FE']['UserList'] .
         "\nSESSIONS\n--------" . $CIDRAM['FE']['SessionList'] .
         "\nCACHE\n-----" . $CIDRAM['FE']['Cache'];
-    $CIDRAM['Handle'] = fopen($CIDRAM['Vault'] . 'fe_assets/frontend.dat', 'w');
+    $CIDRAM['Handle'] = fopen($CIDRAM['Vault'] . 'fe_assets/frontend.dat', 'wb');
     fwrite($CIDRAM['Handle'], $CIDRAM['FE']['FrontEndData']);
     fclose($CIDRAM['Handle']);
 }

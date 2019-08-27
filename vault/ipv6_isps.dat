@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_isps.dat
 
-# Version: 2019.233.469
-# Last modified: 2019.08.22
+# Version: 2019.238.300
+# Last modified: 2019.08.27
 
 
 # ---
@@ -205,9 +205,9 @@ Tag: INFOBOX
 
 
 # ASN 49335 ("Mir Telematiki Ltd").
-# %Listed, Google Malware Dashboard: 0.02%.
-# Stop Forum Spam (SFS) listings: 2,822.
-# Updated: 2019.03.03 / Checked: 2019.04.14
+# %Listed, Google Malware Dashboard: 0.10%.
+# Stop Forum Spam (SFS) listings: 1,205.
+# Updated: 2019.08.25
 
 2a0c:46c0::/29 Deny Spam
 Origin: DK
@@ -216,11 +216,11 @@ Origin: ES
 2a0a:f9c4::/32 Deny Spam
 Origin: EU
 2a03:f3c0::/29 Deny Spam
-2a0b:b86:fff0::/44 Deny Spam
-2a0b:b87:ffc0::/44 Deny Spam
 Origin: GB
 2a0c:5c40::/29 Deny Spam
 Origin: IT
+2a0b:b86:fff0::/44 Deny Spam
+2a0b:b87:ffc0::/44 Deny Spam
 2a0b:7086:fff0::/44 Deny Spam
 2a0b:7087:fff0::/44 Deny Spam
 Origin: NL
@@ -1286,13 +1286,14 @@ recaptcha:
  enabled: true
 
 
-# ASNs 9498, 9730, 24560, 37140, 45514, 45517, 45609, 132045 ("Bharti Airtel").
-# Interlaces with numerous providers and contains a significant number of human endpoints in India, but is also a
-# significant source of spam. Marked for use with reCAPTCHA to reduce the risk of false positives. I strongly advise
-# any CIDRAM users that expect traffic from India to list this section in their "ignore.dat" file.
-# - When updating, before aggregating, remove these (they don't belong to Bharti and shouldn't be being announced)!
-#   - 155.144.144.0/24 (AU), anything from Singapore (SG), Ireland (IE), United States (US).
-# Updated: 2019.04.14
+# ASNs 9498, 9730, 24560, 37140, 45517, 45609, 132045 ("Bharti Airtel").
+# Interlaces with numerous providers and contains a significant number of human
+# endpoints in India, but is also a significant source of spam. Marked for use
+# with reCAPTCHA to reduce the risk of false positives. CIDRAM users that
+# expect traffic from India should list this section in their ignore.dat file.
+# - When updating, remove anything from Australia (AU), Ireland (IE),
+#   Singapore (SG), United States (US).
+# Updated: 2019.08.25
 
 2401:4900:50::/48 Deny Spam
 2401:4900:808::/45 Deny Spam
@@ -1315,20 +1316,27 @@ recaptcha:
 2401:4900:1260::/44 Deny Spam
 2401:4900:1280::/41 Deny Spam
 2401:4900:1680::/41 Deny Spam
-2401:4900:1710::/44 Deny Spam
-2401:4900:1720::/43 Deny Spam
+2401:4900:1700::/42 Deny Spam
 2401:4900:1740::/45 Deny Spam
 2401:4900:1800::/41 Deny Spam
 2401:4900:1880::/44 Deny Spam
-2401:4900:18e0::/43 Deny Spam
-2401:4900:1900::/44 Deny Spam
-2401:4900:1910::/45 Deny Spam
-2401:4900:1918::/46 Deny Spam
+2401:4900:18e0::/45 Deny Spam
+2401:4900:18e8::/46 Deny Spam
+2401:4900:18f0::/44 Deny Spam
+2401:4900:1900::/43 Deny Spam
+2401:4900:1950::/44 Deny Spam
+2401:4900:1971::/48 Deny Spam
+2401:4900:1975::/48 Deny Spam
 2401:4900:1980::/41 Deny Spam
+2401:4900:1a50::/44 Deny Spam
+2401:4900:1a70::/44 Deny Spam
+2401:4900:1a80::/44 Deny Spam
+2401:4900:1aa0::/44 Deny Spam
+2401:4900:1af0::/44 Deny Spam
+2401:4900:1b10::/44 Deny Spam
 2401:4900:1b30::/44 Deny Spam
-2401:4900:1b80::/44 Deny Spam
-2401:4900:1b90::/45 Deny Spam
-2401:4900:1b98::/46 Deny Spam
+2401:4900:1b60::/44 Deny Spam
+2401:4900:1b80::/43 Deny Spam
 2401:4900:1d00::/41 Deny Spam
 2401:4900:1f20::/48 Deny Spam
 2401:4900:1f26::/48 Deny Spam
@@ -1340,9 +1348,12 @@ recaptcha:
 2401:4900:2160::/44 Deny Spam
 2401:4900:2180::/46 Deny Spam
 2401:4900:2184::/47 Deny Spam
+2401:4900:22a0::/43 Deny Spam
+2401:4900:22c0::/43 Deny Spam
+2401:4900:22e0::/48 Deny Spam
 2401:4900:22f0::/44 Deny Spam
 2401:4900:2300::/43 Deny Spam
-2401:4900:2320::/48 Deny Spam
+2401:4900:2320::/44 Deny Spam
 2401:4900:2340::/43 Deny Spam
 2401:4900:2500::/46 Deny Spam
 2401:4900:2504::/47 Deny Spam
@@ -1357,9 +1368,13 @@ recaptcha:
 2401:4900:30e0::/44 Deny Spam
 2401:4900:3100::/42 Deny Spam
 2401:4900:3140::/43 Deny Spam
-2401:4900:3300::/45 Deny Spam
-2401:4900:3308::/46 Deny Spam
-2401:4900:3310::/44 Deny Spam
+2401:4900:3280::/42 Deny Spam
+2401:4900:32e0::/43 Deny Spam
+2401:4900:3300::/43 Deny Spam
+2401:4900:3320::/44 Deny Spam
+2401:4900:3360::/44 Deny Spam
+2401:4900:33b0::/44 Deny Spam
+2401:4900:33c0::/43 Deny Spam
 2401:4900:35f0::/44 Deny Spam
 2401:4900:3600::/43 Deny Spam
 2401:4900:3620::/44 Deny Spam
@@ -1367,12 +1382,28 @@ recaptcha:
 2401:4900:3680::/42 Deny Spam
 2401:4900:36c0::/44 Deny Spam
 2401:4900:3820::/44 Deny Spam
+2401:4900:3840::/43 Deny Spam
 2401:4900:4020::/44 Deny Spam
 2401:4900:4040::/44 Deny Spam
 2401:4900:40a0::/43 Deny Spam
+2401:4900:40c0::/44 Deny Spam
+2401:4900:40f0::/44 Deny Spam
+2401:4900:4120::/44 Deny Spam
+2401:4900:4180::/43 Deny Spam
+2401:4900:41a0::/44 Deny Spam
+2401:4900:41c0::/43 Deny Spam
+2401:4900:41f0::/44 Deny Spam
+2401:4900:4200::/43 Deny Spam
+2401:4900:4220::/44 Deny Spam
+2401:4900:43a0::/44 Deny Spam
+2401:4900:4820::/43 Deny Spam
+2401:4900:4840::/44 Deny Spam
+2401:4900:4940::/44 Deny Spam
 2403:c00:3::/48 Deny Spam
 2404:a800::/32 Deny Spam
 2405:a700:14::/47 Deny Spam
+2405:a700:1b::/48 Deny Spam
+2405:a700:1c::/48 Deny Spam
 2407:7400::/48 Deny Spam
 Origin: IN
 2400:ff00::/32 Deny Spam

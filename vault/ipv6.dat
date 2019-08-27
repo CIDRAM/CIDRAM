@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6.dat
 
-# Version: 2019.233.469
-# Last modified: 2019.08.22
+# Version: 2019.238.300
+# Last modified: 2019.08.27
 
 
 # ---
@@ -518,9 +518,9 @@ Tag: DataCorpore Servios
 
 
 # ASN 53850 ("GorillaServers, Inc").
-# %Listed, Google Malware Dashboard: 0.03%.
-# Stop Forum Spam (SFS) listings: 744.
-# Updated: 2016.09.15 / Checked: 2019.04.13
+# %Listed, Google Malware Dashboard: 1.35%.
+# Stop Forum Spam (SFS) listings: 20,603.
+# Updated: 2016.09.15 / Checked: 2019.08.27
 
 2606:c700::/32 Deny Cloud
 Origin: US
@@ -665,7 +665,7 @@ Tag: AS42807
 
 # ASNs 34360, 41079, 43758, 48760, 198414 ("H88 S.A").
 # Webhosting company based in Poland.
-# Updated: 2019.04.12
+# Updated: 2019.04.12 / Checked: 2019.08.25
 
 2001:67c:2e0::/48 Deny Cloud
 2a01:4660::/32 Deny Cloud
@@ -966,10 +966,11 @@ Tag: iWeb
 
 
 # ASNs 22781, 29713 ("Reliable Hosting Services", "Strong Technology, LLC").
-# %Listed, Google Malware Dashboard: 0.25% (AS29713).
-# Stop Forum Spam (SFS) listings: 90 (AS22781), 1 (AS29713).
-# Updated: 2018.11.02 / Checked: 2019.04.13
+# Stop Forum Spam (SFS) listings: 74 (AS22781).
+# Updated: 2019.08.27
 
+2a0e:be00::/29 Deny Cloud
+Origin: LT
 2604:4100::/36 Deny Cloud
 2607:fb50::/32 Deny Cloud
 Origin: US
@@ -1186,7 +1187,7 @@ Tag: SERVERYOU INC
 
 # ASN 25577 ("Connexions4London Ltd").
 # Seems to now announce as "IDE Group" since last update, and listings aren't
-# as bad as they one were. Might be able to eventually delist them, hopefully.
+# as bad as they once were. Might be able to eventually delist them, hopefully.
 # Stop Forum Spam (SFS) listings: 57.
 # Updated: 2019.04.07 / Checked: 2019.08.22
 
@@ -1506,7 +1507,7 @@ Tag: RAM Host
 
 # "Host Europe GmbH", "HEG Managed", "PlusServer GmbH" (all three combined due to heavy interlacing).
 # ASNs 5521, 6659, 8972, 15891, 20621, 20738, 20773, 25074, 31100, 34011, 34088, 35329, 50932, 61157, 200386.
-# Updated: 2019.04.13
+# Updated: 2019.08.27
 
 2001:830::/32 Deny Cloud
 2001:aa8::/32 Deny Cloud
@@ -1518,7 +1519,7 @@ Tag: RAM Host
 2a01:a740::/32 Deny Cloud
 2a02:ad0::/29 Deny Cloud
 2a02:cbf0::/30 Deny Cloud
-2a02:cbf4::/32 Deny Cloud
+2a02:cbf4::/31 Deny Cloud
 2a02:cbf7::/47 Deny Cloud
 2a02:cbf7:100::/48 Deny Cloud
 2a02:e740::/29 Deny Cloud
@@ -1526,9 +1527,8 @@ Tag: RAM Host
 2a04:e0c0::/29 Deny Cloud
 2a09:2040::/29 Deny Cloud
 2a0c:de40::/29 Deny Cloud
+2a0e:a680:1::/48 Deny Cloud
 Origin: DE
-2001:2000:3080:551::/64 Deny Cloud
-Origin: EU
 2a02:4e8::/32 Deny Cloud
 Origin: GB
 Tag: Host Europe GmbH
@@ -4626,7 +4626,7 @@ Tag: 24 SHELLS
 
 
 # ASNs 11588, 12989, 18607, 20446, 33438 ("Highwinds Network Group, Inc").
-# Updated: 2019.04.13
+# Updated: 2019.08.25
 
 2804:266c::/32 Deny Cloud
 Origin: BR
@@ -4637,7 +4637,10 @@ Origin: CA
 2a03:efc0:700::/40 Deny Cloud
 2a03:efc0:900::/40 Deny Cloud
 2a03:efc0:1100::/40 Deny Cloud
-2a03:efc0:1800::/40 Deny Cloud
+2a03:efc0:1300::/40 Deny Cloud
+2a03:efc0:1500::/40 Deny Cloud
+2a03:efc0:1700::/40 Deny Cloud
+2a03:efc0:1800::/39 Deny Cloud
 2a03:efc0:ba5e::/48 Deny Cloud
 Origin: GB
 2403:f880:6000::/39 Deny Cloud
@@ -4652,13 +4655,16 @@ Origin: JP
 2a0a:e200:1400::/38 Deny Cloud
 2a0a:e200:1800::/39 Deny Cloud
 2a0a:e202:8000::/48 Deny Cloud
+2a0a:e202:800b::/48 Deny Cloud
+2a0a:e202:800e::/47 Deny Cloud
+2a0a:e202:8010::/48 Deny Cloud
 2a0a:e202:8013::/48 Deny Cloud
+2a0a:e202:8014::/48 Deny Cloud
 Origin: NL
 2001:1938::/32 Deny Cloud
 2407:1580:1100::/40 Deny Cloud
 2407:1580:1200::/40 Deny Cloud
-2407:1580:1500::/40 Deny Cloud
-2407:1580:1600::/39 Deny Cloud
+2407:1580:1400::/38 Deny Cloud
 2604:6840:1200::/39 Deny Cloud
 2604:6840:1400::/38 Deny Cloud
 2604:6840:1800::/38 Deny Cloud
@@ -4667,11 +4673,10 @@ Origin: NL
 2604:c980::/32 Deny Cloud
 2604:ea80::/32 Deny Cloud
 2604:fc80::/32 Deny Cloud
-2606:b300::/32 Deny Cloud
+2606:b300::/33 Deny Cloud
 2606:ce80:6100::/40 Deny Cloud
 2606:ce80:6200::/39 Deny Cloud
-2606:ce80:6400::/39 Deny Cloud
-2606:ce80:6600::/40 Deny Cloud
+2606:ce80:6400::/38 Deny Cloud
 2606:ce80:6900::/40 Deny Cloud
 Origin: US
 Tag: Highwinds
@@ -4775,7 +4780,7 @@ Tag: Infium, UAB
 # ASNs 30548, 31034, 199653, 199883, 200185, 205727.
 # "Aruba S.p.A" / "Aruba SAS" / "ARUBA NETWORKS, INC" / "ArubaCloud Limited".
 # Caught attempting to hack honeypots.
-# Updated: 2018.02.24 / Checked: 2019.04.12
+# Updated: 2018.02.24 / Checked: 2019.08.27
 
 2a03:2c40::/32 Deny Cloud
 2a03:a140::/32 Deny Cloud
@@ -5099,8 +5104,8 @@ Tag: Capitalonline
 
 # ASN 37560 ("Cyberdyne S.A").
 # Lots of spam from here.
-# Stop Forum Spam (SFS) listings: 43,056.
-# Updated: 2018.04.14 / Checked: 2019.04.13
+# Stop Forum Spam (SFS) listings: 20,885.
+# Updated: 2019.08.27
 
 2001:67c:1350::/48 Deny Cloud
 2a02:6f8::/32 Deny Cloud
@@ -5108,6 +5113,7 @@ Origin: CY
 2c0f:f930::/32 Deny Cloud
 Origin: LR
 2a0a:3840::/29 Deny Cloud
+2a0e:d9c0::/29 Deny Cloud
 Origin: SE
 Tag: Cyberdyne S.A
 
@@ -5298,6 +5304,16 @@ Tag: Packet Exchange Limited
 2a0c:f500::/29 Deny Cloud
 Origin: TR
 Tag: Radore Veri Merkezi
+
+
+# ASN 204655 ("Novogara LTD").
+# Spam tolerant network.
+# Stop Forum Spam (SFS) listings: 38.
+# Updated: 2019.08.27
+
+2a0b:b7c0::/30 Deny Cloud
+Origin: NL
+Tag: Novogara LTD
 
 
 # ASNs 44066, 203833 ("First Colo GmbH").
@@ -5568,9 +5584,9 @@ Tag: TakeWYN
 
 
 # ASN 206898 ("Server Hosting Pty Ltd").
-# %Listed, Google Malware Dashboard: 2.48%.
+# %Listed, Google Malware Dashboard: 3.21%.
 # Stop Forum Spam (SFS) listings: 901.
-# Updated: 2018.11.02 / Checked: 2019.04.13
+# Updated: 2018.11.02 / Checked: 2019.08.27
 
 2a05:9f06::/31 Deny Cloud
 Origin: PT

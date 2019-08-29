@@ -1,8 +1,8 @@
 # IPv4 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv4.dat
 
-# Version: 2019.238.300
-# Last modified: 2019.08.27
+# Version: 2019.240.621
+# Last modified: 2019.08.29
 
 
 # ---
@@ -9402,9 +9402,9 @@ Tag: Trabia-Network
 
 
 # ASN 29691 ("Nine Internet Solutions AG").
-# %Listed, Google Malware Dashboard: 0.04%.
-# Stop Forum Spam (SFS) listings: 17,309.
-# Updated: 2018.08.21 / Checked: 2019.02.27
+# %Listed, Google Malware Dashboard: 0.05%.
+# Stop Forum Spam (SFS) listings: 7,319.
+# Updated: 2019.08.29
 
 5.148.160.0/19 Deny Cloud
 92.42.184.0/21 Deny Cloud
@@ -9413,6 +9413,8 @@ Tag: Trabia-Network
 185.88.236.0/22 Deny Cloud
 217.150.240.0/20 Deny Cloud
 Origin: CH
+193.254.20.0/24 Deny Cloud
+Origin: DE
 Tag: Nine Internet
 
 
@@ -10478,9 +10480,9 @@ Tag: WebNX, Inc
 
 
 # ASN 198068 ("FASTVPS EESTI OU").
-# %Listed, Google Malware Dashboard: 0.17%.
-# Stop Forum Spam (SFS) listings: 182.
-# Updated: 2019.04.16
+# %Listed, Google Malware Dashboard: 0.12%.
+# Stop Forum Spam (SFS) listings: 159.
+# Updated: 2019.04.16 / Checked: 2019.08.29
 
 5.45.112.0/20 Deny Cloud
 5.101.112.0/20 Deny Cloud
@@ -12211,13 +12213,14 @@ Tag: IOFlood LLC
 
 # ASN 51557 ("FBS BILISIM COZUMLERI TIC LTD STI").
 # Caught trying to DDoS SFS.
-# %Listed, Google Malware Dashboard: 0.61%.
+# %Listed, Google Malware Dashboard: 0.35%.
 # Stop Forum Spam (SFS) listings: 1.
-# Updated: 2017.05.31 / Checked: 2019.02.28
+# Updated: 2019.08.29
 
 93.89.224.0/20 Deny Cloud
 185.33.232.0/22 Deny Cloud
-185.111.232.0/22 Deny Cloud
+185.111.232.0/23 Deny Cloud
+185.111.234.0/24 Deny Cloud
 Origin: TR
 Tag: FBS BILISIM
 
@@ -15163,7 +15166,8 @@ Tag: Workday, Inc
 
 
 # ASN 30217 ("Desync Networks").
-# Updated: 2017.10.23 / Checked: 2019.02.14
+# No recent reports or bad activity detected. Possible candidate for future removal.
+# Updated: 2017.10.23 / Checked: 2019.08.29
 
 208.83.20.0/22 Deny Cloud
 Origin: US
@@ -15400,8 +15404,8 @@ Tag: Net Access Corp
 
 
 # ASN 18120 ("Gemini Software Solutions (P) Limited").
-# %Listed, Google Malware Dashboard: 12.50%.
-# Updated: 2016.09.10 / Checked: 2019.02.28
+# %Listed, Google Malware Dashboard: 22.22%.
+# Updated: 2016.09.10 / Checked: 2019.08.29
 
 110.232.180.0/22 Deny Cloud
 202.72.248.0/22 Deny Cloud
@@ -15453,12 +15457,13 @@ Origin: US
 Tag: Interserver, Inc
 
 
-# ASNs 54782, 59349, 135161 ("GMO-Z.com USA, INC").
-# Updated: 2018.02.26 / Checked: 2019.02.18
+# ASNs 59349, 131392, 135161 ("GMO-Z.com USA, INC").
+# Updated: 2019.08.29
 
 163.44.128.0/19 Deny Cloud
 Origin: JP
 103.234.168.0/22 Deny Cloud
+118.27.128.0/19 Deny Cloud
 150.95.20.0/22 Deny Cloud
 150.95.24.0/22 Deny Cloud
 150.95.29.0/24 Deny Cloud
@@ -15470,19 +15475,23 @@ Origin: JP
 163.44.201.0/24 Deny Cloud
 163.44.202.0/23 Deny Cloud
 Origin: SG
-23.27.160.0/24 Deny Cloud
-50.118.137.0/24 Deny Cloud
-136.0.116.0/24 Deny Cloud
-173.245.89.0/24 Deny Cloud
-192.249.64.0/20 Deny Cloud
-209.54.48.0/20 Deny Cloud
-Origin: US
+103.18.4.0/22 Deny Cloud
+118.27.192.0/19 Deny Cloud
+137.59.104.0/22 Deny Cloud
+150.95.16.0/22 Deny Cloud
+150.95.104.0/21 Deny Cloud
+150.95.112.0/20 Deny Cloud
+163.44.192.0/22 Deny Cloud
+163.44.200.0/24 Deny Cloud
+163.44.205.0/24 Deny Cloud
+163.44.206.0/23 Deny Cloud
+Origin: VN
 Tag: GMO-Z.com USA, INC
 
 
 # ASN 201628 ("Internet Unie Services B.V").
-# Stop Forum Spam (SFS) listings: 2,007.
-# Updated: 2017.10.26 / Checked: 2019.02.28
+# No recent reports or bad activity detected. Possible candidate for future removal.
+# Updated: 2017.10.26 / Checked: 2019.08.29
 
 185.68.180.0/22 Deny Cloud
 193.26.9.0/24 Deny Cloud
@@ -15493,7 +15502,7 @@ Tag: iu.nl
 
 
 # "SISTRIX GmbH" (no ASN).
-# Updated: 2016.09.06 / Checked: 2019.02.28
+# Updated: 2016.09.06 / Checked: 2019.08.29
 
 185.20.228.0/22 Deny Cloud
 Origin: DE
@@ -18454,7 +18463,7 @@ Tag: MediaServicePlus LLC
 
 
 # ASN 200161 ('"DATAPRO" Limited Liability Company').
-# Updated: 2018.02.25 / Checked: 2019.02.14
+# Updated: 2018.02.25 / Checked: 2019.08.29
 
 83.217.24.0/22 Deny Cloud
 185.30.16.0/22 Deny Cloud
@@ -18600,8 +18609,8 @@ Tag: IO Capital Princess
 
 
 # ASN 48366 ("Inforoom Ltd").
-# Stop Forum Spam (SFS) listings: 38.
-# Updated: 2017.05.12 / Checked: 2019.02.28
+# Stop Forum Spam (SFS) listings: 4.
+# Updated: 2017.05.12 / Checked: 2019.08.29
 
 91.209.124.0/24 Deny Cloud
 91.219.4.0/22 Deny Cloud
@@ -20909,10 +20918,12 @@ Origin: GB
 Tag: Brandwatch
 
 
-# ASN 205092 ("OUTSOURCE GRID LIMITED").
+# ASN 209272 ("Alviva Holding Limited").
 # Caught sending SQLi requests to forums and blogs.
 # Checked DBs at last update; Still numerous listings at AbuseIPDB and elsewhere!
-# Updated: 2018.03.02 / Checked: 2019.02.18
+# (Changed ASN at 2019.08.29 from 205092, "OUTSOURCE GRID LIMITED", to 209272;
+# however, all CIDRs connected between the two ASNs - just one - are the same).
+# Updated: 2018.03.02 / Checked: 2019.08.29
 
 185.222.211.0/24 Deny Cloud
 Origin: GB
@@ -20921,8 +20932,8 @@ Tag: OUTSOURCE GRID
 
 # ASN 49531 ("Limited Company Megaton" / '"NetCom-R" LLC').
 # Caught trying to snoop into admin areas of websites and spamming.
-# Stop Forum Spam (SFS) listings: 70.
-# Updated: 2018.03.06 / Checked: 2019.02.18
+# Stop Forum Spam (SFS) listings: 19.
+# Updated: 2018.03.06 / Checked: 2019.08.29
 
 91.214.204.0/22 Deny Cloud
 93.92.32.0/21 Deny Cloud
@@ -21010,8 +21021,8 @@ Tag: Trader soft LLC
 
 # ASN 41631 ("Comfo LTD").
 # Caught trying to hack WordPress sites.
-# Stop Forum Spam (SFS) listings: 77.
-# Updated: 2018.03.21 / Checked: 2019.02.18
+# Stop Forum Spam (SFS) listings: 203.
+# Updated: 2018.03.21 / Checked: 2019.08.29
 
 91.90.8.0/21 Deny Cloud
 94.158.144.0/20 Deny Cloud
@@ -21742,14 +21753,16 @@ Tag: KPNQWest Italia
 # ASN 41564 ("Packet Exchange Limited").
 # Caught XRumer operating on this network.
 # %Listed, Google Malware Dashboard: 0.08%.
-# Stop Forum Spam (SFS) listings: 10,296.
-# Updated: 2019.07.12
+# Stop Forum Spam (SFS) listings: 9,002.
+# Updated: 2019.08.29
 
 5.153.236.0/24 Deny Cloud
 5.153.239.0/24 Deny Cloud
 Origin: EE
 165.231.5.0/24 Deny Cloud
 165.231.7.0/24 Deny Cloud
+165.231.33.0/24 Deny Cloud
+165.231.34.0/24 Deny Cloud
 165.231.85.0/24 Deny Cloud
 165.231.94.0/24 Deny Cloud
 165.231.96.0/24 Deny Cloud
@@ -21758,7 +21771,9 @@ Origin: EE
 165.231.105.0/24 Deny Cloud
 165.231.108.0/23 Deny Cloud
 165.231.234.0/24 Deny Cloud
+165.231.252.0/23 Deny Cloud
 196.196.0.0/24 Deny Cloud
+196.196.48.0/24 Deny Cloud
 196.196.66.0/24 Deny Cloud
 196.196.88.0/24 Deny Cloud
 196.196.90.0/24 Deny Cloud
@@ -22015,19 +22030,20 @@ Tag: First Colo GmbH
 
 # ASN 62088 ("Sinarohost LTD").
 # Malware detected on network; Future C&C risk.
-# %Listed, Google Malware Dashboard: 0.51%.
-# Stop Forum Spam (SFS) listings: 1,375.
-# Updated: 2019.04.16
+# Stop Forum Spam (SFS) listings: 936.
+# Updated: 2019.08.29
 
 185.48.56.0/22 Deny Cloud
 Origin: GB
 45.67.228.0/24 Deny Cloud
+45.67.231.0/24 Deny Cloud
 Origin: MD
 5.8.88.0/23 Deny Cloud
-5.8.91.0/24 Deny Cloud
+5.8.90.0/24 Deny Cloud
 5.188.60.0/24 Deny Cloud
 5.188.231.0/24 Deny Cloud
-5.188.234.0/24 Deny Cloud
+45.10.219.0/24 Deny Cloud
+45.138.157.0/24 Deny Cloud
 91.243.80.0/23 Deny Cloud
 91.243.82.0/24 Deny Cloud
 Origin: RU
@@ -22038,34 +22054,39 @@ Tag: Sinarohost LTD
 
 # ASN 58271 ("FOP Gubina Lubov Petrivna").
 # Malware detected on network; Future C&C risk.
-# Stop Forum Spam (SFS) listings: 1.
-# Updated: 2019.04.16
+# %Listed, Google Malware Dashboard: 2.17%.
+# Stop Forum Spam (SFS) listings: 12.
+# Updated: 2019.08.29
 
 87.120.24.0/21 Deny Cloud
+87.121.97.0/24 Deny Cloud
 94.156.148.0/22 Deny Cloud
 Origin: BG
 88.214.27.0/24 Deny Cloud
 Origin: DE
 193.19.188.0/22 Deny Cloud
-195.69.160.0/22 Deny Cloud
 Origin: GB
 185.126.158.0/23 Deny Cloud
+185.128.136.0/22 Deny Cloud
+185.128.154.0/23 Deny Cloud
+185.128.164.0/22 Deny Cloud
 185.129.109.0/24 Deny Cloud
 185.129.110.0/23 Deny Cloud
 185.135.72.0/24 Deny Cloud
 185.135.76.0/24 Deny Cloud
 185.135.85.0/24 Deny Cloud
+185.136.192.0/22 Deny Cloud
 212.33.192.0/22 Deny Cloud
 212.33.196.0/24 Deny Cloud
 212.33.198.0/24 Deny Cloud
 212.33.201.0/24 Deny Cloud
 Origin: IR
-80.64.216.0/22 Deny Cloud
 194.49.96.0/22 Deny Cloud
 Origin: LT
 45.227.252.0/24 Deny Cloud
 Origin: PA
 46.161.40.0/24 Deny Cloud
+93.157.252.0/22 Deny Cloud
 Origin: RU
 176.119.0.0/20 Deny Cloud
 Origin: UA
@@ -22074,9 +22095,9 @@ Tag: G Petrivna
 
 # ASN 197695 ("Domain names registrar REG.RU").
 # Malware detected on network; Future C&C risk.
-# %Listed, Google Malware Dashboard: 0.15%.
-# Stop Forum Spam (SFS) listings: 287.
-# Updated: 2019.04.16
+# %Listed, Google Malware Dashboard: 0.11%.
+# Stop Forum Spam (SFS) listings: 438.
+# Updated: 2019.08.29
 
 185.23.16.0/23 Deny Cloud
 Origin: LT
@@ -22090,6 +22111,7 @@ Origin: NL
 31.31.204.0/23 Deny Cloud
 31.31.207.0/24 Deny Cloud
 37.140.192.0/21 Deny Cloud
+45.128.204.0/24 Deny Cloud
 46.183.160.0/24 Deny Cloud
 46.183.163.0/24 Deny Cloud
 46.183.165.0/24 Deny Cloud
@@ -22159,6 +22181,12 @@ Origin: NL
 194.58.125.0/24 Deny Cloud
 194.58.126.0/23 Deny Cloud
 194.67.72.0/24 Deny Cloud
+194.67.75.0/24 Deny Cloud
+194.67.78.0/24 Deny Cloud
+194.67.84.0/24 Deny Cloud
+194.67.86.0/23 Deny Cloud
+194.67.90.0/23 Deny Cloud
+194.67.92.0/23 Deny Cloud
 194.87.105.0/24 Deny Cloud
 194.87.106.0/23 Deny Cloud
 194.87.120.0/21 Deny Cloud
@@ -22255,52 +22283,10 @@ Origin: ID
 Tag: ARDH GLOBAL
 
 
-# ASN 23881 ("UDomain Web Hosting Company Ltd").
-# Malware detected on network; Future C&C risk.
-# No recent reports or bad activity detected. Possible candidate for future removal.
-# Updated: 2019.04.16
-
-23.226.0.0/24 Deny Cloud
-23.226.2.0/23 Deny Cloud
-23.226.4.0/22 Deny Cloud
-23.226.8.0/24 Deny Cloud
-23.226.11.0/24 Deny Cloud
-23.226.13.0/24 Deny Cloud
-23.226.14.0/23 Deny Cloud
-45.121.192.0/21 Deny Cloud
-45.121.200.0/24 Deny Cloud
-45.121.203.0/24 Deny Cloud
-103.15.180.0/23 Deny Cloud
-103.15.183.0/24 Deny Cloud
-103.15.192.0/24 Deny Cloud
-103.15.194.0/23 Deny Cloud
-103.15.196.0/22 Deny Cloud
-103.19.24.0/22 Deny Cloud
-117.18.99.0/24 Deny Cloud
-117.18.100.0/24 Deny Cloud
-162.247.0.0/22 Deny Cloud
-202.181.132.0/22 Deny Cloud
-203.90.224.0/22 Deny Cloud
-203.90.228.0/23 Deny Cloud
-203.90.230.0/24 Deny Cloud
-203.90.252.0/23 Deny Cloud
-203.90.254.0/24 Deny Cloud
-203.135.128.0/21 Deny Cloud
-203.135.136.0/22 Deny Cloud
-203.135.145.0/24 Deny Cloud
-203.135.146.0/23 Deny Cloud
-203.135.148.0/22 Deny Cloud
-203.135.152.0/21 Deny Cloud
-Origin: HK
-Tag: UDomain
-
-
 # ASN 24971 ("Master Internet s.r.o").
-# Careful when updating; Also contains some proxies and VPNs (should be marked differently).
-# Malware detected on network; Future C&C risk.
-# %Listed, Google Malware Dashboard: 0.43%.
-# Stop Forum Spam (SFS) listings: 80.
-# Updated: 2019.04.16
+# %Listed, Google Malware Dashboard: 0.30%.
+# Stop Forum Spam (SFS) listings: 85.
+# Updated: 2019.04.16 / Checked: 2019.08.29
 
 5.180.200.0/22 Deny Cloud
 37.205.8.0/21 Deny Proxy

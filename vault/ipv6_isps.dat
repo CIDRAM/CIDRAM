@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_isps.dat
 
-# Version: 2019.238.300
-# Last modified: 2019.08.27
+# Version: 2019.240.621
+# Last modified: 2019.08.29
 
 
 # ---
@@ -29,8 +29,8 @@ Tag: CIZGI TELEKOM
 
 
 # ASN 25504 ("Vautron Rechenzentrum AG").
-# %Listed, Google Malware Dashboard: 0.34%.
-# Updated: 2016.01.18 / Checked: 2019.02.28
+# %Listed, Google Malware Dashboard: 0.25%.
+# Updated: 2016.01.18 / Checked: 2019.08.29
 
 2001:67c:2394::/48 Deny Generic
 2a00:19e0::/29 Deny Generic
@@ -306,7 +306,7 @@ Tag: PIN-AS
 
 # ASNs 16880, 36421 ("Trend Micro Incorporated").
 # Follows their users around and attempts to get into restricted/private parts of websites.
-# Updated: 2018.03.31 / Checked: 2019.02.27
+# Updated: 2018.03.31 / Checked: 2019.08.29
 
 2620:101:402d::/48 Deny Generic
 2620:101:4034::/47 Deny Generic
@@ -677,6 +677,17 @@ Tag: Kyivstar
 2a03:7380:7380::/42 Deny Spam
 Origin: UA
 Tag: AS13188-CDN-LTD
+
+
+# ASN 15377 ('ISP "Fregat" Ltd.').
+# Stop Forum Spam (SFS) listings: 938.
+# Updated: 2019.08.29
+
+2a00:4f00::/32 Deny Spam
+2a05:2580::/29 Deny Spam
+2a05:8dc0::/29 Deny Spam
+Origin: UA
+Tag: Fregat
 
 
 # ASN 48666 ("MAROSNET Telecommunication Company LLC").
@@ -1540,9 +1551,9 @@ recaptcha:
 
 
 # ASN 44493 ("Chelyabinsk-Signal").
-# %Listed, Google Malware Dashboard: 0.93%.
-# Stop Forum Spam (SFS) listings: 86.
-# Updated: 2017.07.08 / Checked: 2019.02.27
+# %Listed, Google Malware Dashboard: 0.49%.
+# Stop Forum Spam (SFS) listings: 459.
+# Updated: 2017.07.08 / Checked: 2019.08.29
 
 2a03:a0e0::/32 Deny Spam
 Origin: RU

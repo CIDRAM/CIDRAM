@@ -1,8 +1,8 @@
 # IPv4 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv4_isps.dat
 
-# Version: 2019.238.300
-# Last modified: 2019.08.27
+# Version: 2019.240.621
+# Last modified: 2019.08.29
 
 
 # ---
@@ -267,8 +267,8 @@ Tag: CIZGI TELEKOM
 
 
 # ASN 25504 ("Vautron Rechenzentrum AG").
-# %Listed, Google Malware Dashboard: 0.34%.
-# Updated: 2017.05.21 / Checked: 2019.02.28
+# %Listed, Google Malware Dashboard: 0.25%.
+# Updated: 2017.05.21 / Checked: 2019.08.29
 
 46.175.56.0/21 Deny Generic
 83.243.56.0/21 Deny Generic
@@ -1526,7 +1526,7 @@ recaptcha:
 
 # ASNs 16880, 36421 ("Trend Micro Incorporated").
 # Follows their users around and attempts to get into restricted/private parts of websites.
-# Updated: 2018.03.31 / Checked: 2019.02.27
+# Updated: 2018.03.31 / Checked: 2019.08.29
 
 150.70.0.0/20 Deny Generic
 150.70.31.0/24 Deny Generic
@@ -3084,19 +3084,21 @@ Tag: AS13188-CDN-LTD
 
 
 # ASN 15377 ('ISP "Fregat" Ltd.').
-# Stop Forum Spam (SFS) listings: 400.
-# Updated: 2016.09.06 / Checked: 2019.02.14
+# Stop Forum Spam (SFS) listings: 938.
+# Updated: 2019.08.29
 
+5.252.180.0/22 Deny Spam
 46.98.0.0/16 Deny Spam
-185.23.164.0/22 Deny Spam
+94.240.160.0/19 Deny Spam
+185.205.144.0/22 Deny Spam
 212.115.224.0/19 Deny Spam
 Origin: UA
 Tag: Fregat
 
 
 # ASN 49204 ('TOV "ITT"').
-# Stop Forum Spam (SFS) listings: 66.
-# Updated: 2016.09.06 / Checked: 2019.02.14
+# Stop Forum Spam (SFS) listings: 1,210.
+# Updated: 2016.09.06 / Checked: 2019.08.29
 
 195.238.108.0/22 Deny Spam
 Origin: UA
@@ -7930,9 +7932,9 @@ recaptcha:
 
 
 # ASN 44493 ("Chelyabinsk-Signal").
-# %Listed, Google Malware Dashboard: 0.93%.
-# Stop Forum Spam (SFS) listings: 86.
-# Updated: 2018.03.23 / Checked: 2019.02.27
+# %Listed, Google Malware Dashboard: 0.49%.
+# Stop Forum Spam (SFS) listings: 459.
+# Updated: 2018.03.23 / Checked: 2019.08.29
 
 80.85.152.0/23 Deny Spam
 80.85.154.0/24 Deny Spam
@@ -8333,7 +8335,7 @@ Tag: BRAC
 
 
 # ASN 41109 ("Center of Children Telemedicin and new information technologis").
-# Updated: 2017.10.23 / Checked: 2019.02.14
+# Updated: 2017.10.23 / Checked: 2019.08.29
 
 81.200.80.0/20 Deny Generic
 Origin: RU

@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6.dat
 
-# Version: 2019.238.300
-# Last modified: 2019.08.27
+# Version: 2019.240.621
+# Last modified: 2019.08.29
 
 
 # ---
@@ -2390,9 +2390,9 @@ Tag: Trabia-Network
 
 
 # ASN 29691 ("Nine Internet Solutions AG").
-# %Listed, Google Malware Dashboard: 0.04%.
-# Stop Forum Spam (SFS) listings: 17,309.
-# Updated: 2018.08.21 / Checked: 2019.02.27
+# %Listed, Google Malware Dashboard: 0.05%.
+# Stop Forum Spam (SFS) listings: 7,319.
+# Updated: 2018.08.21 / Checked: 2019.08.29
 
 2a02:418::/29 Deny Cloud
 2a05:9a80::/29 Deny Cloud
@@ -2663,9 +2663,9 @@ Tag: WebNX, Inc
 
 
 # ASN 198068 ("FASTVPS EESTI OU").
-# %Listed, Google Malware Dashboard: 0.17%.
-# Stop Forum Spam (SFS) listings: 182.
-# Updated: 2017.06.28 / Checked: 2019.04.16
+# %Listed, Google Malware Dashboard: 0.12%.
+# Stop Forum Spam (SFS) listings: 159.
+# Updated: 2017.06.28 / Checked: 2019.08.29
 
 2a03:f480:1::/48 Deny Cloud
 2a03:f480:2::/48 Deny Cloud
@@ -3859,10 +3859,11 @@ Tag: Cloud Sigma
 
 
 # ASN 30217 ("Desync Networks").
-# Updated: 2017.10.23 / Checked: 2019.02.14
+# No recent reports or bad activity detected. Possible candidate for future removal.
+# Updated: 2019.08.29
 
 2607:f178::/48 Deny Cloud
-2607:f178:4::/48 Deny Cloud
+2607:f178:4::/47 Deny Cloud
 2607:f178:10::/48 Deny Cloud
 Origin: US
 Tag: Desync Networks
@@ -3935,18 +3936,20 @@ Origin: US
 Tag: Interserver, Inc
 
 
-# ASNs 54782, 59349, 135161 ("GMO-Z.com USA, INC").
-# Updated: 2017.05.06 / Checked: 2019.02.18
+# ASNs 59349, 131392, 135161 ("GMO-Z.com USA, INC").
+# Updated: 2019.08.29
 
 2001:df6:b800::/48 Deny Cloud
 2404:8680:1000::/36 Deny Cloud
 Origin: SG
+2404:f080::/32 Deny Cloud
+Origin: VN
 Tag: GMO-Z.com USA, INC
 
 
 # ASN 201628 ("Internet Unie Services B.V").
-# Stop Forum Spam (SFS) listings: 2,007.
-# Updated: 2016.09.12 / Checked: 2019.02.28
+# No recent reports or bad activity detected. Possible candidate for future removal.
+# Updated: 2016.09.12 / Checked: 2019.08.29
 
 2a00:1ac0:f1be::/48 Deny Cloud
 Origin: NL
@@ -4459,7 +4462,7 @@ Tag: MediaServicePlus LLC
 
 
 # ASN 200161 ('"DATAPRO" Limited Liability Company').
-# Updated: 2018.02.25 / Checked: 2019.02.14
+# Updated: 2018.02.25 / Checked: 2019.08.29
 
 2a00:a960::/32 Deny Cloud
 Origin: RU
@@ -5279,8 +5282,8 @@ Tag: KPNQWest Italia
 # ASN 41564 ("Packet Exchange Limited").
 # Caught XRumer operating on this network.
 # %Listed, Google Malware Dashboard: 0.08%.
-# Stop Forum Spam (SFS) listings: 10,296.
-# Updated: 2018.05.25 / Checked: 2019.07.12
+# Stop Forum Spam (SFS) listings: 9,002.
+# Updated: 2018.05.25 / Checked: 2019.08.29
 
 2a02:5740::/46 Deny Cloud
 2a02:5740:4::/47 Deny Cloud
@@ -5349,23 +5352,22 @@ Tag: First Colo GmbH
 
 # ASN 62088 ("Sinarohost LTD").
 # Malware detected on network; Future C&C risk.
-# %Listed, Google Malware Dashboard: 0.51%.
-# Stop Forum Spam (SFS) listings: 1,375.
-# Updated: 2018.11.08 / Checked: 2019.04.16
+# Stop Forum Spam (SFS) listings: 936.
+# Updated: 2019.08.29
 
-2a01:9520::/32 Deny Cloud
-2a01:9521:1::/48 Deny Cloud
+2a01:9520::/31 Deny Cloud
+2a01:9522::/32 Deny Cloud
 Origin: GB
-2001:678:108::/48 Deny Cloud
-Origin: NL
+2a09:7c44::/32 Deny Cloud
+Origin: MD
 Tag: Sinarohost LTD
 
 
 # ASN 197695 ("Domain names registrar REG.RU").
 # Malware detected on network; Future C&C risk.
-# %Listed, Google Malware Dashboard: 0.15%.
-# Stop Forum Spam (SFS) listings: 287.
-# Updated: 2018.06.19 / Checked: 2019.04.16
+# %Listed, Google Malware Dashboard: 0.11%.
+# Stop Forum Spam (SFS) listings: 438.
+# Updated: 2018.06.19 / Checked: 2019.08.29
 
 2a00:1b48::/32 Deny Cloud
 2a00:f940:1::/48 Deny Cloud
@@ -5397,22 +5399,10 @@ Origin: ID
 Tag: ARDH GLOBAL
 
 
-# ASN 23881 ("UDomain Web Hosting Company Ltd").
-# Malware detected on network; Future C&C risk.
-# No recent reports or bad activity detected. Possible candidate for future removal.
-# Updated: 2018.06.19 / Checked: 2019.04.16
-
-2400:c300::/47 Deny Cloud
-Origin: HK
-Tag: UDomain
-
-
 # ASN 24971 ("Master Internet s.r.o").
-# Careful when updating; Also contains some proxies and VPNs (should be marked differently).
-# Malware detected on network; Future C&C risk.
-# %Listed, Google Malware Dashboard: 0.43%.
-# Stop Forum Spam (SFS) listings: 80.
-# Updated: 2019.04.16
+# %Listed, Google Malware Dashboard: 0.30%.
+# Stop Forum Spam (SFS) listings: 85.
+# Updated: 2019.04.16 / Checked: 2019.08.29
 
 2001:678:a50::/48 Deny Cloud
 2001:67c:68::/48 Deny Cloud

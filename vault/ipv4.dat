@@ -1,8 +1,8 @@
 # IPv4 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv4.dat
 
-# Version: 2019.240.621
-# Last modified: 2019.08.29
+# Version: 2019.245.282
+# Last modified: 2019.09.03
 
 
 # ---
@@ -2674,8 +2674,8 @@ Tag: Avesta Networks LLC
 
 
 # ASN 42244 ("Hosting Operator eServer.ru Ltd").
-# Stop Forum Spam (SFS) listings: 1.
-# Updated: 2018.03.30 / Checked: 2019.08.01
+# Stop Forum Spam (SFS) listings: 2.
+# Updated: 2018.03.30 / Checked: 2019.09.01
 
 80.77.168.0/24 Deny Cloud
 91.189.80.0/23 Deny Cloud
@@ -2899,15 +2899,18 @@ Origin: PL
 Tag: H88 S.A
 
 
-# ASNs 1429, 25875 ("FriendFinder Networks Inc").
-# %Listed, Google Malware Dashboard: 0.24% (AS25875).
-# Updated: 2018.08.25 / Checked: 2019.03.01
+# ASN 25875 ("FriendFinder Networks Inc").
+# No recent reports or bad activity detected. Possible candidate for future removal.
+# Updated: 2019.09.01
 
 64.74.222.0/24 Deny Cloud
-69.165.96.0/21 Deny Cloud
+69.165.96.0/22 Deny Cloud
+69.165.100.0/23 Deny Cloud
+69.165.102.0/24 Deny Cloud
 69.165.104.0/22 Deny Cloud
-69.165.108.0/24 Deny Cloud
-69.165.110.0/23 Deny Cloud
+69.165.108.0/23 Deny Cloud
+69.165.110.0/24 Deny Cloud
+208.88.176.0/22 Deny Cloud
 208.88.180.0/23 Deny Cloud
 208.88.182.0/24 Deny Cloud
 Origin: US
@@ -3471,11 +3474,12 @@ Tag: Inter Connects Inc
 
 
 # ASN 6939 ("Hurricane Electric, Inc").
-# %Listed, Google Malware Dashboard: 0.20%.
-# Stop Forum Spam (SFS) listings: 2,597.
-# Updated: 2019.04.16
+# %Listed, Google Malware Dashboard: 0.13%.
+# Stop Forum Spam (SFS) listings: 1,017.
+# Updated: 2019.09.03
 
 # Note when updating: There are some CIDRs in BGP that shouldn't be included here as signatures.
+# - Anything marked as "invalid".
 # - "2001::/32" (provides "Teredo" tunneling).
 # - "2002::/16" (provides "6to4" bridging connectivity).
 # - "AeroSurf" (human endpoints).
@@ -3484,44 +3488,31 @@ Tag: Inter Connects Inc
 # - "maHost Internet Services Inc" (a hoster, but RoA is invalid, and records seem clean).
 # - "Internet Assigned Numbers Authority" (bogons and unassigned or pending assignment).
 # - Anything labeled as "Broadband" or "Telecom" (can reasonably assume as human endpoints).
-# I.e., "^200(?:1\:\:\/32|2\:\:\/16).*$|^.*(?:AeroSurf|Tele(?:phone|com)|maHost|Broadband|Wicked).*$|^.*Authority$"
+# I.e., "^200(?:1\:\:\/32|2\:\:\/16).*$|.*invalid.*|^.*(?:AeroSurf|Tele(?:phone|com)|maHost|Broadband|Wicked).*$|^.*Authority$"
 
 103.6.216.0/22 Run rules_as6939.php
 203.12.6.0/24 Run rules_as6939.php
 Origin: AU
-193.32.184.0/22 Run rules_as6939.php
-Origin: BE
-194.93.60.0/22 Run rules_as6939.php
-Origin: BG
 104.254.152.0/21 Run rules_as6939.php
 162.247.12.0/22 Run rules_as6939.php
 Origin: CA
 103.96.214.0/24 Run rules_as6939.php
 Origin: CN
-194.93.48.0/22 Run rules_as6939.php
-Origin: CZ
 5.152.177.0/24 Run rules_as6939.php
 5.152.179.0/24 Run rules_as6939.php
 5.152.181.0/24 Run rules_as6939.php
 5.152.182.0/23 Run rules_as6939.php
-176.53.168.0/22 Run rules_as6939.php
 185.149.69.0/24 Run rules_as6939.php
+185.242.47.0/24 Run rules_as6939.php
 Origin: GB
 27.50.32.0/21 Run rules_as6939.php
 103.100.138.0/24 Run rules_as6939.php
-103.138.32.0/24 Run rules_as6939.php
 103.193.186.0/23 Run rules_as6939.php
 Origin: HK
 185.101.97.0/24 Run rules_as6939.php
 185.101.98.0/24 Run rules_as6939.php
 185.114.36.0/24 Run rules_as6939.php
 Origin: NL
-139.28.32.0/22 Run rules_as6939.php
-139.28.48.0/22 Run rules_as6939.php
-139.28.212.0/22 Run rules_as6939.php
-193.187.132.0/22 Run rules_as6939.php
-213.139.224.0/22 Run rules_as6939.php
-Origin: TR
 23.142.192.0/24 Run rules_as6939.php
 23.175.160.0/24 Run rules_as6939.php
 38.72.144.0/20 Run rules_as6939.php
@@ -3544,8 +3535,7 @@ Origin: TR
 66.207.160.0/20 Run rules_as6939.php
 66.220.0.0/19 Run rules_as6939.php
 67.43.48.0/20 Run rules_as6939.php
-72.14.65.0/24 Run rules_as6939.php
-72.14.66.0/23 Run rules_as6939.php
+72.14.64.0/22 Run rules_as6939.php
 72.14.89.0/24 Run rules_as6939.php
 72.52.64.0/18 Run rules_as6939.php
 74.82.0.0/18 Run rules_as6939.php
@@ -3555,7 +3545,6 @@ Origin: TR
 104.36.120.0/22 Run rules_as6939.php
 104.247.128.0/22 Run rules_as6939.php
 104.247.132.0/23 Run rules_as6939.php
-104.255.33.0/24 Run rules_as6939.php
 104.255.240.0/21 Run rules_as6939.php
 107.178.32.0/20 Run rules_as6939.php
 139.56.8.0/24 Run rules_as6939.php
@@ -3582,16 +3571,16 @@ Origin: TR
 199.74.248.0/24 Run rules_as6939.php
 199.88.158.0/24 Run rules_as6939.php
 199.164.248.0/23 Run rules_as6939.php
+199.192.144.0/22 Run rules_as6939.php
 199.233.90.0/24 Run rules_as6939.php
 199.245.105.0/24 Run rules_as6939.php
 204.13.226.0/23 Run rules_as6939.php
 204.62.157.0/24 Run rules_as6939.php
 204.238.49.0/24 Run rules_as6939.php
 205.159.239.0/24 Run rules_as6939.php
-205.166.121.0/24 Run rules_as6939.php
 207.126.64.0/19 Run rules_as6939.php
-207.171.210.0/23 Run rules_as6939.php
 208.64.56.0/21 Run rules_as6939.php
+208.79.140.0/22 Run rules_as6939.php
 209.51.160.0/19 Run rules_as6939.php
 209.130.152.0/22 Run rules_as6939.php
 209.135.0.0/19 Run rules_as6939.php
@@ -3614,6 +3603,8 @@ Origin: TR
 216.235.85.0/24 Run rules_as6939.php
 216.252.162.0/24 Run rules_as6939.php
 Origin: US
+196.53.109.0/24 Run rules_as6939.php
+Origin: ZA
 Tag: Hurricane Electric
 
 
@@ -9495,23 +9486,6 @@ Origin: US
 Tag: FranTech Solutions
 
 
-# ASN 29527 ("Astutium Limited").
-# No recent reports or bad activity detected. Possible candidate for future removal.
-# Updated: 2016.04.10 / Checked: 2019.04.16
-
-80.76.212.0/22 Deny Cloud
-80.76.216.0/22 Deny Cloud
-83.243.96.0/21 Deny Cloud
-91.227.124.0/22 Deny Cloud
-95.128.48.0/21 Deny Cloud
-193.39.8.0/24 Deny Cloud
-193.84.0.0/24 Deny Cloud
-194.150.120.0/22 Deny Cloud
-217.148.32.0/20 Deny Cloud
-Origin: GB
-Tag: Astutium Limited
-
-
 # ASN 31815 ("Media Temple, Inc").
 # %Listed, Google Malware Dashboard: 0.43%.
 # Stop Forum Spam (SFS) listings: 37.
@@ -12782,8 +12756,9 @@ Tag: SunnyVision Limited
 
 
 # ASN 37943 ("ZhengZhou GIANT Computer Network Technology Co., Ltd").
-# %Listed, Google Malware Dashboard: 2.13%.
-# Updated: 2018.03.26 / Checked: 2019.03.01
+# %Listed, Google Malware Dashboard: 1.82%.
+# Stop Forum Spam (SFS) listings: 10.
+# Updated: 2018.03.26 / Checked: 2019.09.01
 
 114.113.160.0/19 Deny Cloud
 116.196.16.0/20 Deny Cloud
@@ -13669,9 +13644,8 @@ Tag: Lightstream
 
 
 # ASN 15244 ("Lunar Pages").
-# %Listed, Google Malware Dashboard: 0.31%.
-# Stop Forum Spam (SFS) listings: 8.
-# Updated: 2018.04.03 / Checked: 2019.03.09
+# %Listed, Google Malware Dashboard: 0.22%.
+# Updated: 2018.04.03 / Checked: 2019.09.01
 
 64.50.160.0/20 Deny Cloud
 64.50.176.0/22 Deny Cloud
@@ -20176,9 +20150,11 @@ Tag: WorldStream
 
 
 # ASN 11888 ("Television Internacional, S.A. de C.V.").
-# Stop Forum Spam (SFS) listings: 660.
-# Updated: 2018.08.25 / Checked: 2019.03.01
+# Stop Forum Spam (SFS) listings: 676.
+# Updated: 2019.09.01
 
+138.97.168.0/22 Deny Cloud
+168.90.68.0/22 Deny Cloud
 187.160.0.0/15 Deny Cloud
 189.218.0.0/15 Deny Cloud
 200.188.128.0/19 Deny Cloud
@@ -21180,9 +21156,9 @@ Tag: Estro Web Services
 
 
 # ASNs 27640, 57286, 263700 ("GIGAS HOSTING").
-# %Listed, Google Malware Dashboard: 0.86% (AS27640), 0.61% (AS57286).
-# Stop Forum Spam (SFS) listings: 1 (AS57286), 2 (AS263700).
-# Updated: 2019.04.16
+# %Listed, Google Malware Dashboard: 0.45% (AS57286).
+# Stop Forum Spam (SFS) listings: 2 (AS27640).
+# Updated: 2019.09.01
 
 132.255.68.0/22 Deny Cloud
 138.121.168.0/22 Deny Cloud
@@ -21190,6 +21166,8 @@ Tag: Estro Web Services
 170.239.152.0/22 Deny Cloud
 Origin: CL
 5.56.56.0/21 Deny Cloud
+95.130.50.0/23 Deny Cloud
+95.130.54.0/23 Deny Cloud
 146.255.96.0/21 Deny Cloud
 185.37.224.0/22 Deny Cloud
 185.102.220.0/22 Deny Cloud
@@ -22373,9 +22351,9 @@ Tag: Flokinet Ltd
 # ^.*(Simcentric|DATAPLUGS\.COM|Ethr\.Net|CLOUD LIMITED|NETSEC|Hosting).*$\n
 # Confirmed data hosters split to the cloud services signature files.
 # Everything else remains in the ISPs signature files.
-# %Listed, Google Malware Dashboard: 3.13%.
-# Stop Forum Spam (SFS) listings: 18.
-# Updated: 2019.04.21
+# %Listed, Google Malware Dashboard: 2.02%.
+# Stop Forum Spam (SFS) listings: 9.
+# Updated: 2019.09.03
 
 43.225.196.0/22 Deny Cloud
 52.128.224.0/19 Deny Cloud
@@ -22394,11 +22372,6 @@ Tag: Flokinet Ltd
 Origin: HK
 185.191.127.0/24 Deny Cloud
 Origin: NL
-69.176.88.0/23 Deny Cloud
-96.43.96.0/24 Deny Cloud
-216.83.40.0/21 Deny Cloud
-216.83.56.0/21 Deny Cloud
-Origin: US
 Tag: Unit 1205-1207
 
 
@@ -22528,7 +22501,8 @@ Tag: Gyron Internet Ltd
 
 
 # ASN 55229 ("White Sands Hosting").
-# Updated: 2018.09.01 / Checked: 2019.03.03
+# Stop Forum Spam (SFS) listings: 29.
+# Updated: 2018.09.01 / Checked: 2019.09.01
 
 66.11.127.0/24 Deny Cloud
 199.193.14.0/23 Deny Cloud
@@ -24872,7 +24846,7 @@ Tag: Business Network Ltd
 # A more up-to-date version of this section is available via the Azure optional blocklist provided by Macmathan.
 # It can be installed via the front-end or downloaded from the repository for Macmathan's blocklists hosted by
 # Bitbucket: https://bitbucket.org/macmathan/blocklists/src/master/CloudHosting/msaz_cidram.inc
-# Updated: 2019.08.01
+# Updated: 2019.08.01 / Checked: 2019.09.03
 # Refer microsoft.com/en-us/download/details.aspx?id=56519
 # Refer microsoft.com/en-us/download/details.aspx?id=57062
 # Refer microsoft.com/en-us/download/details.aspx?id=57063

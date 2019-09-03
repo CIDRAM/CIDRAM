@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_isps.dat
 
-# Version: 2019.240.621
-# Last modified: 2019.08.29
+# Version: 2019.245.282
+# Last modified: 2019.09.03
 
 
 # ---
@@ -122,14 +122,15 @@ recaptcha:
 
 
 # ASN 45727 ("Hutchison CP Telecommunications, PT").
-# Stop Forum Spam (SFS) listings: 687.
-# Updated: 2018.12.09 / Checked: 2019.04.23
+# Stop Forum Spam (SFS) listings: 323.
+# Updated: 2019.09.03
 
 2400:8b00:100::/42 Deny Spam
 2400:8b00:200::/42 Deny Spam
 2400:8b00:300::/42 Deny Spam
 2400:8b00:500::/42 Deny Spam
 2400:8b00:600::/42 Deny Spam
+2400:8b00:700::/42 Deny Spam
 2400:8b00:800::/42 Deny Spam
 2400:8b00:980::/42 Deny Spam
 2400:8b00:a00::/42 Deny Spam
@@ -472,9 +473,10 @@ Tag: DGN TEKNOLOJI
 
 
 # ASN 38731 ("Vietel - CHT Compamy Ltd").
-# %Listed, Google Malware Dashboard: 0.09%.
-# Stop Forum Spam (SFS) listings: 917.
-# Updated: 2016.12.24 / Checked: 2019.04.29
+# %Listed, Google Malware Dashboard: 0.21%.
+# %Listed, abuseat.org (CBL-Listed): 4.91%.
+# Stop Forum Spam (SFS) listings: 591.
+# Updated: 2016.12.24 / Checked: 2019.09.03
 
 2401:5f80::/34 Deny Generic
 2401:5f80:4000::/35 Deny Generic
@@ -1697,6 +1699,20 @@ recaptcha:
 2a0b:6200::/29 Deny Spam
 Origin: GE
 Tag: Magticom Ltd
+---
+recaptcha:
+ enabled: true
+
+
+# ASN 7642 ("Dhivehi Raajjeyge Gulhun Plc (Dhiraagu)").
+# ISP from the Maldives with human endpoints, but also a source of spam.
+# %Listed, Google Malware Dashboard: 1.59%.
+# Stop Forum Spam (SFS) listings: 185.
+# Updated: 2019.09.03
+
+2406:e400::/32 Deny Spam
+Origin: MV
+Tag: Dhivehi Raajjeyge
 ---
 recaptcha:
  enabled: true

@@ -90,7 +90,7 @@ emailaddr_display_style='default'
 ; Enable front-end access; True = Disable front-end access [Default].
 disable_frontend=true
 
-; Maximum number of login attempts.
+; Maximum number of front-end login attempts. Default = 5.
 max_login_attempts=5
 
 ; File for logging front-end login attempts. Specify a filename, or leave blank
@@ -332,7 +332,7 @@ css_url=''
 ; or leave blank to disable.
 event_log=''
 
-; Setting this directive to `true` instructs PHPMailer to skip the normal
+; Setting this directive to true instructs PHPMailer to skip the normal
 ; authentication process that normally occurs when sending email via SMTP. This
 ; should be avoided, because skipping this process may expose outbound email to
 ; MITM attacks, but may be necessary in cases where this process prevents

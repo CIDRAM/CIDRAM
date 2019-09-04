@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Indonesian language data for the front-end (last modified: 2019.08.17).
+# This file: Indonesian language data for the front-end (last modified: 2019.09.01).
 ##/
 
 Extended Description Bypasses: "File untuk bypass tanda tangan standar yang biasanya disertakan dengan paket utama."
@@ -64,7 +64,7 @@ config_PHPMailer_password: "Kata sandi yang digunakan saat mengirim email melalu
 config_PHPMailer_port: "Nomor port yang digunakan untuk email keluar. Default = 587."
 config_PHPMailer_set_from_address: "Alamat pengirim yang dikutip saat mengirim email melalui SMTP."
 config_PHPMailer_set_from_name: "Nama pengirim yang dikutip saat mengirim email melalui SMTP."
-config_PHPMailer_skip_auth_process: "Pengaturan direktif ini ke `true` menginstruksikan PHPMailer untuk melewati proses otentikasi normal yang biasanya terjadi ketika mengirim email melalui SMTP. Ini harus dihindari, karena melewatkan proses ini dapat mengekspos email keluar ke serangan MITM, tetapi mungkin diperlukan dalam kasus dimana proses ini mencegah PHPMailer menghubungkan ke server SMTP."
+config_PHPMailer_skip_auth_process: "Pengaturan direktif ini ke <code>true</code> menginstruksikan PHPMailer untuk melewati proses otentikasi normal yang biasanya terjadi ketika mengirim email melalui SMTP. Ini harus dihindari, karena melewatkan proses ini dapat mengekspos email keluar ke serangan MITM, tetapi mungkin diperlukan dalam kasus dimana proses ini mencegah PHPMailer menghubungkan ke server SMTP."
 config_PHPMailer_smtp_auth: "Direktif ini menentukan apakah akan mengotentikasi sesi SMTP (biasanya harus dibiarkan sendiri)."
 config_PHPMailer_smtp_secure: "Protokol yang digunakan saat mengirim email melalui SMTP (TLS atau SSL)."
 config_PHPMailer_username: "Nama pengguna yang digunakan saat mengirim email melalui SMTP."
@@ -94,7 +94,7 @@ config_general_logfile: "File yang dapat dibaca oleh manusia untuk mencatat semu
 config_general_logfile_apache: "File yang dalam gaya Apache untuk mencatat semua upaya akses diblokir. Spesifikasikan nama file, atau biarkan kosong untuk menonaktifkan."
 config_general_logfile_serialized: "File serial untuk mencatat semua upaya akses diblokir. Spesifikasikan nama file, atau biarkan kosong untuk menonaktifkan."
 config_general_maintenance_mode: "Aktifkan modus perawatan? True = Ya; False = Tidak [Default]. Nonaktifkan semuanya selain bagian depan. Terkadang berguna saat memperbarui CMS, kerangka kerja, dll."
-config_general_max_login_attempts: "Jumlah maksimum upaya untuk memasukkan."
+config_general_max_login_attempts: "Jumlah maksimum upaya memasukkan ke bagian depan. Default = 5."
 config_general_numbers: "Cara apa yang kamu suka nomor menjadi ditampilkan? Pilih contoh yang paling sesuai untuk Anda."
 config_general_protect_frontend: "Menentukan apakah perlindungan biasanya disediakan oleh CIDRAM harus diterapkan pada bagian depan. True = Ya [Default]; False = Tidak."
 config_general_search_engine_verification: "Mencoba memverifikasi permintaan dari mesin pencari? Verifikasi mesin pencari memastikan bahwa mereka tidak akan dilarang sebagai akibat dari melebihi batas pelanggaran (melarang mesin pencari dari situs web Anda biasanya akan memiliki efek negatif pada peringkat mesin pencari Anda, SEO, dll). Ketika diverifikasi, mesin pencari dapat diblokir seperti biasa, tapi tidak akan dilarang. Ketika tidak diverifikasi, itu mungkin bagi mereka untuk dilarang sebagai akibat dari melebihi batas pelanggaran. Juga, verifikasi mesin pencari memberikan proteksi terhadap permintaan mesin pencari palsu dan terhadap entitas yang berpotensi berbahaya yang menyamar sebagai mesin pencari (permintaan tersebut akan diblokir ketika verifikasi mesin pencari diaktifkan). True = Mengaktifkan verifikasi mesin pencari [Default]; False = Menonaktifkan verifikasi mesin pencari."

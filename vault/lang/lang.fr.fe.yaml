@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: French language data for the front-end (last modified: 2019.08.17).
+# This file: French language data for the front-end (last modified: 2019.09.01).
 ##/
 
 Extended Description Bypasses: "Les fichiers pour contourner les signatures standard qui sont normalement inclus dans le paquet principal."
@@ -96,7 +96,7 @@ config_general_logfile: "Un fichier lisible par l'homme pour enregistrement de t
 config_general_logfileApache: "Un fichier dans le style d'Apache pour enregistrement de toutes les tentatives d'accès bloquées. Spécifier un fichier, ou laisser vide à désactiver."
 config_general_logfileSerialized: "Un fichier sérialisé pour enregistrement de toutes les tentatives d'accès bloquées. Spécifier un fichier, ou laisser vide à désactiver."
 config_general_maintenance_mode: "Activer le mode de maintenance ? True = Oui ; False = Non [Défaut]. Désactive tout autre que l'accès frontal. Parfois utile pour la mise à jour de votre CMS, des frameworks, etc."
-config_general_max_login_attempts: "Nombre maximal de tentatives de connexion."
+config_general_max_login_attempts: "Nombre maximal de tentatives de connexion (l'accès frontal). Défaut = 5."
 config_general_numbers: "Comment préférez-vous que les nombres soient affichés ? Sélectionnez l'exemple qui vous paraît le plus approprié."
 config_general_protect_frontend: "Spécifie si les protections normalement fournies par CIDRAM doivent être appliquées à l'accès frontal. True = Oui [Défaut] ; False = Non."
 config_general_search_engine_verification: "Essayez de vérifier les moteurs de recherche ? Vérification des moteurs de recherche assure qu'ils ne seront pas interdits en raison de dépassement de la limite d'infraction (l'interdiction des moteurs de recherche de votre site web aura généralement un effet négatif sur votre moteur de recherche classement, SEO, etc). Lorsqu'ils sont vérifiés, les moteurs de recherche peuvent être bloqués comme d'habitude, mais ne seront pas interdits. Lorsqu'ils ne sont pas vérifiés, il est possible qu'ils soient interdits en raison du dépassement de la limite d'infraction. Aussi, la vérification des moteurs de recherche offre une protection contre les fausses requêtes des moteurs de recherche et contre les entités potentiellement malveillantes masquer comme moteurs de recherche (ces requêtes seront bloquées lorsque la vérification des moteurs de recherche est activée). True = Activer la vérification du moteurs de recherche [Défaut] ; False = Désactiver la vérification du moteurs de recherche."

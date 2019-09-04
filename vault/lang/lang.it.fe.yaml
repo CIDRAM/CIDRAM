@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Italian language data for the front-end (last modified: 2019.08.17).
+# This file: Italian language data for the front-end (last modified: 2019.09.01).
 ##/
 
 Extended Description Bypasses: "Un file per bypassare alcune delle firme predefinite normalmente inclusi nel pacchetto principale."
@@ -96,7 +96,7 @@ config_general_logfile: "Un file leggibile dagli umani per la registrazione di t
 config_general_logfileApache: "Un file nello stile di apache per la registrazione di tutti i tentativi di accesso bloccati. Specificare un nome di file, o lasciare vuoto per disabilitare."
 config_general_logfileSerialized: "Un file serializzato per la registrazione di tutti i tentativi di accesso bloccati. Specificare un nome di file, o lasciare vuoto per disabilitare."
 config_general_maintenance_mode: "Abilita la modalità di manutenzione? True = Sì; False = No [Predefinito]. Disattiva tutto tranne il front-end. A volte utile per l'aggiornamento del CMS, dei framework, ecc."
-config_general_max_login_attempts: "Numero massimo di tentativi di accesso."
+config_general_max_login_attempts: "Numero massimo di tentativi di accesso al front-end. Predefinito = 5."
 config_general_numbers: "Come preferisci che i numeri siano visualizzati? Seleziona l'esempio che ti sembra più corretto."
 config_general_protect_frontend: "Specifica se le protezioni normalmente fornite da CIDRAM devono essere applicati al front-end. True = Sì [Predefinito]; False = No."
 config_general_search_engine_verification: "Tentativo di verificare le richieste dai motori di ricerca? La verifica dei motori di ricerca assicura che non saranno vietate a seguito del superamento del limite infrazione (vieta dei motori di ricerca dal vostro sito web di solito hanno un effetto negativo sul vostro posizionamento sui motori di ricerca, SEO, ecc). Quando verificato, i motori di ricerca possono essere bloccati come al solito, ma non saranno vietate. Quando non verificato, è possibile per loro di essere vietate a seguito del superamento del limite infrazione. Inoltre, verifica dei motori di ricerca fornisce una protezione contro le richieste dei motori di ricerca falso e contro le entità potenzialmente dannosi mascherato da motori di ricerca (tali richieste verranno bloccate quando la verifica dei motori di ricerca è attivato). True = Attiva la verifica dei motori di ricerca [Predefinito]; False = Disattiva la verifica dei motori di ricerca."

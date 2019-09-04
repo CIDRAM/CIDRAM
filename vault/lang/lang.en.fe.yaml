@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: English language data for the front-end (last modified: 2019.08.17).
+# This file: English language data for the front-end (last modified: 2019.09.01).
 ##/
 
 Extended Description Bypasses: "The default signature bypass files normally included with the main package."
@@ -63,7 +63,7 @@ config_PHPMailer_Password: "The password to use when sending email via SMTP."
 config_PHPMailer_Port: "The port number to use for outbound email. Default = 587."
 config_PHPMailer_SMTPAuth: "This directive determines whether to authenticate SMTP sessions (should usually be left alone)."
 config_PHPMailer_SMTPSecure: "The protocol to use when sending email via SMTP (TLS or SSL)."
-config_PHPMailer_SkipAuthProcess: "Setting this directive to `true` instructs PHPMailer to skip the normal authentication process that normally occurs when sending email via SMTP. This should be avoided, because skipping this process may expose outbound email to MITM attacks, but may be necessary in cases where this process prevents PHPMailer from connecting to an SMTP server."
+config_PHPMailer_SkipAuthProcess: "Setting this directive to <code>true</code> instructs PHPMailer to skip the normal authentication process that normally occurs when sending email via SMTP. This should be avoided, because skipping this process may expose outbound email to MITM attacks, but may be necessary in cases where this process prevents PHPMailer from connecting to an SMTP server."
 config_PHPMailer_Username: "The username to use when sending email via SMTP."
 config_PHPMailer_addReplyToAddress: "The reply address to cite when sending email via SMTP."
 config_PHPMailer_addReplyToName: "The reply name to cite when sending email via SMTP."
@@ -96,7 +96,7 @@ config_general_logfile: "Human readable file for logging all blocked access atte
 config_general_logfileApache: "Apache-style file for logging all blocked access attempts. Specify a filename, or leave blank to disable."
 config_general_logfileSerialized: "Serialised file for logging all blocked access attempts. Specify a filename, or leave blank to disable."
 config_general_maintenance_mode: "Enable maintenance mode? True = Yes; False = No [Default]. Disables everything other than the front-end. Sometimes useful for when updating your CMS, frameworks, etc."
-config_general_max_login_attempts: "Maximum number of login attempts."
+config_general_max_login_attempts: "Maximum number of front-end login attempts. Default = 5."
 config_general_numbers: "How do you prefer numbers to be displayed? Select the example that looks the most correct to you."
 config_general_protect_frontend: "Specifies whether the protections normally provided by CIDRAM should be applied to the front-end. True = Yes [Default]; False = No."
 config_general_search_engine_verification: "Attempt to verify requests from search engines? Verifying search engines ensures that they won't be banned as a result of exceeding the infraction limit (banning search engines from your website will usually have a negative effect upon your search engine ranking, SEO, etc). When verified, search engines can be blocked as per normal, but won't be banned. When not verified, it's possible for them to be banned as a result of exceeding the infraction limit. Additionally, search engine verification provides protection against fake search engine requests and against potentially malicious entities masquerading as search engines (such requests will be blocked when search engine verification is enabled). True = Enable search engine verification [Default]; False = Disable search engine verification."

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Swedish language data for the front-end (last modified: 2019.08.17).
+# This file: Swedish language data for the front-end (last modified: 2019.09.01).
 ##/
 
 Extended Description Bypasses: "Standard bypass-filen som normalt ingår i huvudpaketet."
@@ -96,7 +96,7 @@ config_general_logfile: "Mänsklig läsbar fil för att logga in alla blockerade
 config_general_logfileApache: "Apache-stil fil för att logga in alla blockerade åtkomstförsök. Ange ett filnamn, eller lämna tomt för att inaktivera."
 config_general_logfileSerialized: "Serialiserad fil för att logga alla blockerade åtkomstförsök. Ange ett filnamn, eller lämna tomt för att inaktivera."
 config_general_maintenance_mode: "Aktivera underhållsläge? True = Ja; False = Nej [Standard]. Inaktiverar allt annat än front-end. Ibland användbar för när du uppdaterar dina CMS, frameworks, osv."
-config_general_max_login_attempts: "Maximalt antal inloggningsförsök."
+config_general_max_login_attempts: "Maximalt antal inloggningsförsök i front-end. Standard = 5."
 config_general_numbers: "Hur föredrar du nummer som ska visas? Välj det exempel som är mest korrekt för dig."
 config_general_protect_frontend: "Anger om de skydd som normalt tillhandahålls av CIDRAM ska tillämpas på front-end. True = Ja [Standard]; False = Nej."
 config_general_search_engine_verification: "Försök att verifiera förfrågningar från sökmotorer? Verifierande sökmotorer ser till att de inte kommer att förbjudas till följd av att infraktionsgräns överskrids (förbjuda sökmotorer från din webbplats kommer vanligtvis att ha en negativ effekt på din sökmotor ranking, SEO, osv). När verifieras kan sökmotorer blockeras som normalt, men kommer inte att förbjudas. När det inte är verifierat, är det möjligt för dem att bli förbjudna till följd av att infraktionsgräns överskrids. Dessutom, sökmotorverifiering ger skydd mot falska sökmotorförfrågningar och mot potentiellt skadliga enheter som maskerar som sökmotorer (sådana förfrågningar kommer att blockeras när sökmotorverifiering är aktiverad). True = Aktivera sökmotorverifiering [Standard]; False = Inaktivera sökmotorverifiering."

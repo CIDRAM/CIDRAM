@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2019.08.28).
+ * This file: Front-end functions file (last modified: 2019.09.06).
  */
 
 /**
@@ -560,10 +560,11 @@ $CIDRAM['Logs-RecursiveList'] = function (string $Base) use (&$CIDRAM): array {
  * @param array $Component An array of the component metadata.
  * @return bool True for when in use; False for when not in use.
  */
-$CIDRAM['IsInUse'] = function (array &$Component) use (&$CIDRAM): bool {
+$CIDRAM['IsInUse'] = function (array $Component) use (&$CIDRAM): bool {
     $Files = $Component['Files']['To'] ?? [];
-    $UsedWith = empty($Component['Used with']) ? '' : $Component['Used with'];
-    $Description = empty($Component['Extended Description']) ? '' : $Component['Extended Description'];
+    $CIDRAM['Arrayify']($Files);
+    $UsedWith = $Component['Used with'] ?? '';
+    $Description = $Component['Extended Description'] ?? '';
     foreach ($Files as $File) {
         $File = preg_quote($File);
         if ((($UsedWith === 'ipv4' || strpos($Description, 'signatures-&gt;ipv4') !== false) && preg_match(

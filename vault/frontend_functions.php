@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2019.08.28).
+ * This file: Front-end functions file (last modified: 2019.09.06).
  */
 
 /**
@@ -564,8 +564,9 @@ $CIDRAM['Logs-RecursiveList'] = function ($Base) use (&$CIDRAM) {
  * @param array $Component An array of the component metadata.
  * @return bool True for when in use; False for when not in use.
  */
-$CIDRAM['IsInUse'] = function (array &$Component) use (&$CIDRAM) {
+$CIDRAM['IsInUse'] = function (array $Component) use (&$CIDRAM) {
     $Files = empty($Component['Files']['To']) ? [] : $Component['Files']['To'];
+    $CIDRAM['Arrayify']($Files);
     $UsedWith = empty($Component['Used with']) ? '' : $Component['Used with'];
     $Description = empty($Component['Extended Description']) ? '' : $Component['Extended Description'];
     foreach ($Files as $File) {

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: reCAPTCHA module (last modified: 2019.07.11).
+ * This file: reCAPTCHA module (last modified: 2019.09.17).
  */
 
 /**
@@ -262,19 +262,24 @@ if ($CIDRAM['Config']['recaptcha']['lockuser']) {
 
 }
 
-/** Writing to the reCAPTCHA logfile (if this has been enabled). */
-if ($CIDRAM['Config']['recaptcha']['logfile'] && $CIDRAM['reCAPTCHA']['Loggable']) {
+/**
+ * Writing to the reCAPTCHA logfile (if this has been enabled).
+ *
+ * @return bool True on success; False on failure.
+ */
+$CIDRAM['Events']->addHandler('reCaptchaLog', function () use (&$CIDRAM): bool {
+    if (!$CIDRAM['Config']['recaptcha']['logfile'] || !$CIDRAM['reCAPTCHA']['Loggable'] || empty($CIDRAM['BlockInfo'])) {
+        return false;
+    }
     /** Determining date/time information for the logfile name. */
-    $CIDRAM['reCAPTCHA']['LogfileName'] = (
+    $Filename = (
         strpos($CIDRAM['Config']['recaptcha']['logfile'], '{') !== false
     ) ? $CIDRAM['TimeFormat']($CIDRAM['Now'], $CIDRAM['Config']['recaptcha']['logfile']) : $CIDRAM['Config']['recaptcha']['logfile'];
-    $CIDRAM['reCAPTCHA']['WriteMode'] = (
-        !file_exists($CIDRAM['Vault'] . $CIDRAM['reCAPTCHA']['LogfileName']) || (
-            $CIDRAM['Config']['general']['truncate'] > 0 &&
-            filesize($CIDRAM['Vault'] . $CIDRAM['reCAPTCHA']['LogfileName']) >= $CIDRAM['ReadBytes']($CIDRAM['Config']['general']['truncate'])
-        )
+    $WriteMode = !file_exists($CIDRAM['Vault'] . $Filename) || (
+        $CIDRAM['Config']['general']['truncate'] > 0 &&
+        filesize($CIDRAM['Vault'] . $Filename) >= $CIDRAM['ReadBytes']($CIDRAM['Config']['general']['truncate'])
     ) ? 'w' : 'a';
-    $CIDRAM['reCAPTCHA']['LogfileData'] = sprintf(
+    $Data = sprintf(
         "%1\$s%2\$s - %3\$s%4\$s - %5\$s%6\$s\n",
         $CIDRAM['L10N']->getString('field_ipaddr'),
         $CIDRAM['Config']['legal']['pseudonymise_ip_addresses'] ? $CIDRAM['Pseudonymise-IP']($_SERVER[$CIDRAM['IPAddr']]) : $_SERVER[$CIDRAM['IPAddr']],
@@ -283,12 +288,17 @@ if ($CIDRAM['Config']['recaptcha']['logfile'] && $CIDRAM['reCAPTCHA']['Loggable'
         $CIDRAM['L10N']->getString('field_reCAPTCHA_state'),
         $CIDRAM['BlockInfo']['reCAPTCHA']
     );
-    if ($CIDRAM['BuildLogPath']($CIDRAM['reCAPTCHA']['LogfileName'])) {
-        $CIDRAM['reCAPTCHA']['LogfileHandle'] = fopen($CIDRAM['Vault'] . $CIDRAM['reCAPTCHA']['LogfileName'], $CIDRAM['reCAPTCHA']['WriteMode']);
-        fwrite($CIDRAM['reCAPTCHA']['LogfileHandle'], $CIDRAM['reCAPTCHA']['LogfileData']);
-        fclose($CIDRAM['reCAPTCHA']['LogfileHandle']);
-        if ($CIDRAM['reCAPTCHA']['WriteMode'] === 'w') {
+    if ($CIDRAM['BuildLogPath']($Filename)) {
+        $File = fopen($CIDRAM['Vault'] . $Filename, $WriteMode);
+        fwrite($File, $Data);
+        fclose($File);
+        if ($WriteMode === 'w') {
             $CIDRAM['LogRotation']($CIDRAM['Config']['recaptcha']['logfile']);
         }
+        return true;
     }
-}
+    return false;
+});
+
+/** Fire reCAPTCHA write to log event. */
+$CIDRAM['Events']->fireEvent('reCaptchaLog');

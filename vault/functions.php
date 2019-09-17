@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2019.08.19).
+ * This file: Functions file (last modified: 2019.09.17).
  */
 
 /** Autoloader for CIDRAM classes. */
@@ -24,6 +24,9 @@ spl_autoload_register(function ($Class) {
 
 /** Instantiate YAML object for accessing data reconstruction and processing various YAML files. */
 $CIDRAM['YAML'] = new \Maikuolan\Common\YAML();
+
+/** Instantiate events orchestrator in order to allow malleable logging and etc. */
+$CIDRAM['Events'] = new \Maikuolan\Common\Events();
 
 /**
  * Reads and returns the contents of files.
@@ -2207,3 +2210,106 @@ $CIDRAM['GenerateID'] = function (): string {
     }
     return $Time;
 };
+
+/**
+ * Writes to the standard logfile.
+ *
+ * @return bool True on success; False on failure.
+ */
+$CIDRAM['Events']->addHandler('writeToLog', function () use (&$CIDRAM): bool {
+    if (!$CIDRAM['Config']['general']['logfile'] || empty($CIDRAM['LogFileNames']['logfile'])) {
+        return false;
+    }
+    $Data = !file_exists($CIDRAM['Vault'] . $CIDRAM['LogFileNames']['logfile']) || (
+        $CIDRAM['Config']['general']['truncate'] > 0 &&
+        filesize($CIDRAM['Vault'] . $CIDRAM['LogFileNames']['logfile']) >= $CIDRAM['ReadBytes']($CIDRAM['Config']['general']['truncate'])
+    ) ? "\x3c\x3fphp die; \x3f\x3e\n\n" : '';
+    $WriteMode = !empty($Data) ? 'w' : 'a';
+    $Data .= $CIDRAM['ParseVars']($CIDRAM['Parsables'], $CIDRAM['FieldTemplates']['Logs'] . "\n");
+    if ($CIDRAM['BuildLogPath']($CIDRAM['LogFileNames']['logfile'])) {
+        $File = fopen($CIDRAM['Vault'] . $CIDRAM['LogFileNames']['logfile'], $WriteMode);
+        fwrite($File, $Data);
+        fclose($File);
+        if ($WriteMode === 'w') {
+            $CIDRAM['LogRotation']($CIDRAM['Config']['general']['logfile']);
+        }
+        return true;
+    }
+    return false;
+});
+
+/**
+ * Writes to the Apache-style logfile.
+ *
+ * @return bool True on success; False on failure.
+ */
+$CIDRAM['Events']->addHandler('writeToLog', function () use (&$CIDRAM): bool {
+    if (
+        !$CIDRAM['Config']['general']['logfile_apache'] ||
+        empty($CIDRAM['LogFileNames']['logfile_apache']) ||
+        empty($CIDRAM['BlockInfo'])
+    ) {
+        return false;
+    }
+    $Data = sprintf(
+        "%s - - [%s] \"%s %s %s\" %s %s \"%s\" \"%s\"\n",
+        $CIDRAM['BlockInfo']['IPAddr'],
+        $CIDRAM['BlockInfo']['DateTime'],
+        $_SERVER['REQUEST_METHOD'] ?? 'UNKNOWN',
+        $_SERVER['REQUEST_URI'] ?? '/',
+        $_SERVER['SERVER_PROTOCOL'] ?? 'UNKNOWN/x.x',
+        $CIDRAM['errCode'],
+        strlen($CIDRAM['HTML']),
+        $CIDRAM['BlockInfo']['Referrer'] ?? '-',
+        $CIDRAM['BlockInfo']['UA'] ?? '-'
+    );
+    $WriteMode = !file_exists($CIDRAM['Vault'] . $CIDRAM['LogFileNames']['logfile_apache']) || (
+        $CIDRAM['Config']['general']['truncate'] > 0 &&
+        filesize($CIDRAM['Vault'] . $CIDRAM['LogFileNames']['logfile_apache']) >= $CIDRAM['ReadBytes']($CIDRAM['Config']['general']['truncate'])
+    ) ? 'w' : 'a';
+    if ($CIDRAM['BuildLogPath']($CIDRAM['LogFileNames']['logfile_apache'])) {
+        $File = fopen($CIDRAM['Vault'] . $CIDRAM['LogFileNames']['logfile_apache'], $WriteMode);
+        fwrite($File, $Data);
+        fclose($File);
+        if ($WriteMode === 'w') {
+            $CIDRAM['LogRotation']($CIDRAM['Config']['general']['logfile_apache']);
+        }
+        return true;
+    }
+    return false;
+});
+
+/**
+ * Writes to the serialised logfile.
+ *
+ * @return bool True on success; False on failure.
+ */
+$CIDRAM['Events']->addHandler('writeToLog', function () use (&$CIDRAM): bool {
+    if (
+        !$CIDRAM['Config']['general']['logfile_serialized'] ||
+        empty($CIDRAM['LogFileNames']['logfile_serialized']) ||
+        empty($CIDRAM['BlockInfo'])
+    ) {
+        return false;
+    }
+    $BlockInfo = $CIDRAM['BlockInfo'];
+    unset($BlockInfo['EmailAddr'], $BlockInfo['UALC'], $BlockInfo['favicon']);
+    /** Remove empty entries prior to serialising. */
+    $BlockInfo = array_filter($BlockInfo, function ($Value) {
+        return !(is_string($Value) && empty($Value));
+    });
+    $WriteMode = !file_exists($CIDRAM['Vault'] . $CIDRAM['LogFileNames']['logfile_serialized']) || (
+        $CIDRAM['Config']['general']['truncate'] > 0 &&
+        filesize($CIDRAM['Vault'] . $CIDRAM['LogFileNames']['logfile_serialized']) >= $CIDRAM['ReadBytes']($CIDRAM['Config']['general']['truncate'])
+    ) ? 'w' : 'a';
+    if ($CIDRAM['BuildLogPath']($CIDRAM['LogFileNames']['logfile_serialized'])) {
+        $File = fopen($CIDRAM['Vault'] . $CIDRAM['LogFileNames']['logfile_serialized'], $WriteMode);
+        fwrite($File, serialize($BlockInfo) . "\n");
+        fclose($File);
+        if ($WriteMode === 'w') {
+            $CIDRAM['LogRotation']($CIDRAM['Config']['general']['logfile_serialized']);
+        }
+        return true;
+    }
+    return false;
+});

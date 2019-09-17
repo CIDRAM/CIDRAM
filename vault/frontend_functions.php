@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2019.09.06).
+ * This file: Front-end functions file (last modified: 2019.09.17).
  */
 
 /**
@@ -2794,6 +2794,33 @@ $CIDRAM['FELogger'] = function (string $IPAddr, string $User, string $Message) u
 };
 
 /**
+ * Writes to the PHPMailer event log.
+ *
+ * @param string $Data What to write.
+ * @return bool True on success; False on failure.
+ */
+$CIDRAM['Events']->addHandler('writeToPHPMailerEventLog', function (string $Data) use (&$CIDRAM): bool {
+    if (!$CIDRAM['Config']['PHPMailer']['event_log']) {
+        return false;
+    }
+    $EventLog = (strpos($CIDRAM['Config']['PHPMailer']['event_log'], '{') !== false) ? $CIDRAM['TimeFormat'](
+        $CIDRAM['Now'],
+        $CIDRAM['Config']['PHPMailer']['event_log']
+    ) : $CIDRAM['Config']['PHPMailer']['event_log'];
+    $WriteMode = (!file_exists($CIDRAM['Vault'] . $EventLog) || (
+        $CIDRAM['Config']['general']['truncate'] > 0 &&
+        filesize($CIDRAM['Vault'] . $EventLog) >= $CIDRAM['ReadBytes']($CIDRAM['Config']['general']['truncate'])
+    )) ? 'w' : 'a';
+    $Handle = fopen($CIDRAM['Vault'] . $EventLog, $WriteMode);
+    fwrite($Handle, $Data);
+    fclose($Handle);
+    if ($WriteMode === 'w') {
+        $CIDRAM['LogRotation']($CIDRAM['Config']['PHPMailer']['event_log']);
+    }
+    return true;
+});
+
+/**
  * Wrapper for PHPMailer functionality.
  *
  * @param array $Recipients An array of recipients to send to.
@@ -2804,37 +2831,23 @@ $CIDRAM['FELogger'] = function (string $IPAddr, string $User, string $Message) u
  * @return bool Operation failed (false) or succeeded (true).
  */
 $CIDRAM['SendEmail'] = function (array $Recipients = [], string $Subject = '', string $Body = '', string $AltBody = '', array $Attachments = []) use (&$CIDRAM): bool {
-    $EventLog = '';
-    $EventLogData = '';
 
     /** Prepare event logging. */
-    if ($CIDRAM['Config']['PHPMailer']['event_log']) {
-        $EventLog = (strpos($CIDRAM['Config']['PHPMailer']['event_log'], '{') !== false) ? $CIDRAM['TimeFormat'](
+    $EventLogData = sprintf(
+        '%s - %s - ',
+        $CIDRAM['Config']['legal']['pseudonymise_ip_addresses'] ? $CIDRAM['Pseudonymise-IP']($_SERVER[$CIDRAM['IPAddr']]) : $_SERVER[$CIDRAM['IPAddr']],
+        isset($CIDRAM['FE']['DateTime']) ? $CIDRAM['FE']['DateTime'] : $CIDRAM['TimeFormat'](
             $CIDRAM['Now'],
-            $CIDRAM['Config']['PHPMailer']['event_log']
-        ) : $CIDRAM['Config']['PHPMailer']['event_log'];
-        $EventLogData = ((
-            $CIDRAM['Config']['legal']['pseudonymise_ip_addresses']
-        ) ? $CIDRAM['Pseudonymise-IP']($_SERVER[$CIDRAM['IPAddr']]) : $_SERVER[$CIDRAM['IPAddr']]) . ' - ' . (
-            isset($CIDRAM['FE']['DateTime']) ? $CIDRAM['FE']['DateTime'] : $CIDRAM['TimeFormat'](
-                $CIDRAM['Now'],
-                $CIDRAM['Config']['general']['time_format']
-            )
-        ) . ' - ';
-        $WriteMode = (!file_exists($CIDRAM['Vault'] . $EventLog) || (
-            $CIDRAM['Config']['general']['truncate'] > 0 &&
-            filesize($CIDRAM['Vault'] . $EventLog) >= $CIDRAM['ReadBytes']($CIDRAM['Config']['general']['truncate'])
-        )) ? 'w' : 'a';
-    }
+            $CIDRAM['Config']['general']['time_format']
+        )
+    );
 
     /** Operation success state. */
     $State = false;
 
     /** Check whether class exists to either load it and continue or fail the operation. */
     if (!class_exists('\PHPMailer\PHPMailer\PHPMailer')) {
-        if ($EventLog) {
-            $EventLogData .= $CIDRAM['L10N']->getString('state_failed_missing') . "\n";
-        }
+        $EventLogData .= $CIDRAM['L10N']->getString('state_failed_missing') . "\n";
     } else {
         try {
 
@@ -2929,32 +2942,21 @@ $CIDRAM['SendEmail'] = function (array $Recipients = [], string $Subject = '', s
             $State = $Mail->send();
 
             /** Log the results of the send attempt. */
-            if ($EventLog) {
-                $EventLogData .= ($State ? sprintf(
-                    $CIDRAM['L10N']->getString('state_email_sent'),
-                    $SuccessDetails
-                ) : $CIDRAM['L10N']->getString('response_error') . ' - ' . $Mail->ErrorInfo) . "\n";
-            }
+            $EventLogData .= ($State ? sprintf(
+                $CIDRAM['L10N']->getString('state_email_sent'),
+                $SuccessDetails
+            ) : $CIDRAM['L10N']->getString('response_error') . ' - ' . $Mail->ErrorInfo) . "\n";
 
         } catch (\Exception $e) {
 
             /** An exeption occurred. Log the information. */
-            if ($EventLog) {
-                $EventLogData .= $CIDRAM['L10N']->getString('response_error') . ' - ' . $e->getMessage() . "\n";
-            }
+            $EventLogData .= $CIDRAM['L10N']->getString('response_error') . ' - ' . $e->getMessage() . "\n";
 
         }
     }
 
     /** Write to the event log. */
-    if ($EventLog) {
-        $Handle = fopen($CIDRAM['Vault'] . $EventLog, $WriteMode);
-        fwrite($Handle, $EventLogData);
-        fclose($Handle);
-        if ($WriteMode === 'w') {
-            $CIDRAM['LogRotation']($CIDRAM['Config']['PHPMailer']['event_log']);
-        }
-    }
+    $CIDRAM['Events']->fireEvent('writeToPHPMailerEventLog', $EventLogData);
 
     /** Exit. */
     return $State;

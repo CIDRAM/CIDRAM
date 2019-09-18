@@ -1,8 +1,8 @@
 # IPv6 signatures file (CIDRs for proxies, VPNs and other miscellaneous unwanted services).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_other.dat
 
-# Version: 2019.224.425
-# Last modified: 2019.08.13
+# Version: 2019.260.254
+# Last modified: 2019.09.18
 
 
 # ---
@@ -156,14 +156,19 @@ Origin: DE
 Tag: F3 Netze e.V
 
 
-# ASNs 42708, 43948 ("GleSYS AB"; formerly "Portlane AB"). Multiplay network (hosting, colo, infrastructure, VPS, etc).
-# Exclude from aggregate: "^.*Internetbolaget.*$\n" (legit ISP based in Sweden, with human endpoints; seems totally clean).
-# As proxy: "^(.*(?:VP[SN]|Tunnel|Edelino).*)$". As cloud: "^(.*(?:Host|Netelia|Sveaab|GleSYS).*)$".
-# As spam: "^(.*(?:Svenska).*)$" (legit ISP based in Sweden, but also a major source of spam, both in general, and in
-# relation to this ASN). Everything else as generic. Split across different signature files for better maintainability.
-# %Listed, Google Malware Dashboard: 0.10% (AS42708), 0.14% (AS43948).
-# Stop Forum Spam (SFS) listings: 2,385 (AS42708), 5 (AS43948).
-# Updated: 2019.05.02
+# ASNs 42708, 43948 ("GleSYS AB"; formerly "Portlane AB").
+# Exclude (carries human endpoints and seems clean):
+# - "^.*Internetbolaget.*$\n"
+# Mark as proxy:
+# - "^(.*(?:VP[SN]|Tunnel|Edelino).*)$"
+# Mark as cloud:
+# - "^(.*(?:Host|Netelia|Sveaab|GleSYS|Webbplatsen|InfoGuard).*)$"
+# Mark as spam (carries human endpoints, but also poses a spam risk):
+# - "^(.*(?:Svenska).*)$"
+# Everything else mark as generic.
+# %Listed, Google Malware Dashboard: 0.13% (AS42708), 0.03% (AS43948).
+# Stop Forum Spam (SFS) listings: 1,622 (AS42708).
+# Updated: 2019.05.02 / Checked: 2019.09.18
 
 2a02:750:8::/48 Deny Proxy
 2a02:7ac0::/32 Deny Proxy

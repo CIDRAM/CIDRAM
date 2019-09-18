@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2019.09.17).
+ * This file: Functions file (last modified: 2019.09.18).
  */
 
 /** Autoloader for CIDRAM classes. */
@@ -2150,6 +2150,9 @@ $CIDRAM['InitialiseErrorHandler'] = function () use (&$CIDRAM) {
             $errfile = substr($errfile, $VaultLen);
         }
         $CIDRAM['Errors'][] = [$errno, $errstr, $errfile, $errline];
+        if ($CIDRAM['Events']->assigned('error')) {
+            $CIDRAM['Events']->fireEvent('error', serialize([$CIDRAM['Stage'] ?? '', $errno, $errstr, $errfile, $errline]));
+        }
         return true;
     });
 };

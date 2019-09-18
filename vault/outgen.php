@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Output generator (last modified: 2019.09.17).
+ * This file: Output generator (last modified: 2019.09.18).
  */
 
 /** Initialise cache. */
@@ -16,6 +16,9 @@ $CIDRAM['InitialiseCache']();
 
 /** Initialise an error handler. */
 $CIDRAM['InitialiseErrorHandler']();
+
+/** Usable by events to determine which part of the output generator we're at. */
+$CIDRAM['Stage'] = '';
 
 /** Reset bypass flags. */
 $CIDRAM['ResetBypassFlags']();
@@ -98,6 +101,7 @@ $CIDRAM['RL_Active'] = (
 
 /** The normal blocking procedures should occur. */
 if ($CIDRAM['Protect'] && !$CIDRAM['Config']['general']['maintenance_mode']) {
+    $CIDRAM['Stage'] = 'Tests';
 
     /** Run all IPv4/IPv6 tests. */
     try {
@@ -201,6 +205,7 @@ if ($CIDRAM['Protect'] && !$CIDRAM['Config']['general']['maintenance_mode'] && e
 
     /** Execute modules, if any have been enabled. */
     if (empty($CIDRAM['Whitelisted']) && $CIDRAM['Config']['signatures']['modules']) {
+        $CIDRAM['Stage'] = 'Modules';
         $CIDRAM['Modules'] = explode(',', $CIDRAM['Config']['signatures']['modules']);
         array_walk($CIDRAM['Modules'], function ($Module) use (&$CIDRAM) {
             $Module = (strpos($Module, ':') === false) ? $Module : substr($Module, strpos($Module, ':') + 1);
@@ -215,23 +220,25 @@ if ($CIDRAM['Protect'] && !$CIDRAM['Config']['general']['maintenance_mode'] && e
 
     /** Execute search engine verification. */
     if (empty($CIDRAM['Whitelisted'])) {
+        $CIDRAM['Stage'] = 'SearchEngineVerification';
         $CIDRAM['SearchEngineVerification']();
     }
 
     /** Execute social media verification. */
     if (empty($CIDRAM['Whitelisted'])) {
+        $CIDRAM['Stage'] = 'SocialMediaVerification';
         $CIDRAM['SocialMediaVerification']();
     }
 
     /** Process auxiliary rules, if any exist. */
     if (empty($CIDRAM['Whitelisted'])) {
-        $CIDRAM['ErrorFlag'] = 'Aux';
+        $CIDRAM['Stage'] = 'Aux';
         $CIDRAM['Aux']();
-        $CIDRAM['ErrorFlag'] = '';
     }
 
     /** Process all reports (if any exist, and if not whitelisted), and then destroy the reporter. */
     if (empty($CIDRAM['Whitelisted'])) {
+        $CIDRAM['Stage'] = 'Reporting';
         $CIDRAM['Reporter']->process();
     }
     unset($CIDRAM['Reporter']);
@@ -240,6 +247,7 @@ if ($CIDRAM['Protect'] && !$CIDRAM['Config']['general']['maintenance_mode'] && e
 
 /** Process tracking information for the inbound IP. */
 if (!empty($CIDRAM['TestResults']) && $CIDRAM['BlockInfo']['SignatureCount'] && $CIDRAM['Trackable']) {
+    $CIDRAM['Stage'] = 'Tracking';
 
     /** Set tracking expiry. */
     $CIDRAM['TrackTime'] = $CIDRAM['Now'] + (
@@ -277,6 +285,7 @@ if (!empty($CIDRAM['TestResults']) && $CIDRAM['BlockInfo']['SignatureCount'] && 
  * need it, but I really don't recommend using this feature if at all possible.
  */
 if ($CIDRAM['RL_Active'] && isset($CIDRAM['Factors'])) {
+    $CIDRAM['Stage'] = 'RL';
     if (
         $CIDRAM['LastTestIP'] === 4 &&
         $CIDRAM['Config']['rate_limiting']['precision_ipv4'] > 0 &&
@@ -326,6 +335,7 @@ if ($CIDRAM['RL_Active'] && isset($CIDRAM['Factors'])) {
 
 /** This code block only executed if signatures were triggered. */
 if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
+    $CIDRAM['Stage'] = 'reCAPTCHA';
 
     /** Define reCAPTCHA working data. */
     $CIDRAM['reCAPTCHA'] = ['Bypass' => false, 'Loggable' => false, 'Expiry' => ($CIDRAM['Config']['recaptcha']['expiry'] * 3600)];
@@ -362,6 +372,7 @@ if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
 
 /** Update statistics if necessary. */
 if ($CIDRAM['Config']['general']['statistics'] && $CIDRAM['BlockInfo']['SignatureCount'] > 0) {
+    $CIDRAM['Stage'] = 'Statistics';
     if (!empty($CIDRAM['Banned'])) {
         if ($CIDRAM['BlockInfo']['IPAddrResolved']) {
             $CIDRAM['Statistics']['Banned-IPv4']++;
@@ -391,6 +402,7 @@ $CIDRAM['DestroyCacheObject']();
 
 /** Process webhooks. */
 if (!empty($CIDRAM['Config']['Webhook']['URL'])) {
+    $CIDRAM['Stage'] = 'Webhooks';
     /** Fetch data for sending with the request. */
     $CIDRAM['ParsedToWebhook'] = $CIDRAM['BlockInfo'];
     /** Prepare data for sending with the request. */
@@ -430,6 +442,7 @@ if (!empty($CIDRAM['Config']['Webhook']['URL'])) {
 
 /** If any signatures were triggered, log it, generate output, then die. */
 if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
+    $CIDRAM['Stage'] = 'Output';
 
     /** Set status for reCAPTCHA block information. */
     if (empty($CIDRAM['BlockInfo']['reCAPTCHA'])) {
@@ -792,6 +805,9 @@ if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
     die($CIDRAM['HTML']);
 
 }
+
+/** We're finished with the output generator now. */
+unset($CIDRAM['Stage']);
 
 /** Restores default error handler. */
 $CIDRAM['RestoreErrorHandler']();

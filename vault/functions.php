@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2019.09.17).
+ * This file: Functions file (last modified: 2019.09.18).
  */
 
 /**
@@ -2174,6 +2174,10 @@ $CIDRAM['InitialiseErrorHandler'] = function () use (&$CIDRAM) {
             $errfile = substr($errfile, $VaultLen);
         }
         $CIDRAM['Errors'][] = [$errno, $errstr, $errfile, $errline];
+        if ($CIDRAM['Events']->assigned('error')) {
+            $Stage = isset($CIDRAM['Stage']) ? $CIDRAM['Stage'] : '';
+            $CIDRAM['Events']->fireEvent('error', serialize([$Stage, $errno, $errstr, $errfile, $errline]));
+        }
         return true;
     });
 };

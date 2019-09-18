@@ -1,13 +1,13 @@
 # IPv6 signatures file (bogon/martian CIDRs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_bogons.dat
 
-# Version: 2019.57.386
-# Last modified: 2019.02.27
+# Version: 2019.260.254
+# Last modified: 2019.09.18
 
 
 # ---
 # IPv6 Bogons List.
-# Updated: 2018.03.29 / Checked: 2019.02.27
+# Updated: 2019.09.18
 # Refer https://www.iana.org/assignments/ipv6-address-space/ipv6-address-space.xhtml
 
 100::/8 Deny Bogon
@@ -16,5 +16,11 @@
 800::/5 Deny Bogon
 1000::/4 Deny Bogon
 4000::/2 Deny Bogon
-8000::/1 Deny Bogon
+8000::/2 Deny Bogon
+c000::/3 Deny Bogon
+e000::/4 Deny Bogon
+f000::/5 Deny Bogon
+f800::/6 Deny Bogon
+fe00::/9 Deny Bogon
+fec0::/10 Deny Bogon
 Tag: IPv6 Bogons

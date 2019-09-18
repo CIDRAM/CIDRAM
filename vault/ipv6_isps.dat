@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_isps.dat
 
-# Version: 2019.252.215
-# Last modified: 2019.09.10
+# Version: 2019.260.254
+# Last modified: 2019.09.18
 
 
 # ---
@@ -103,17 +103,20 @@ Tag: Hetzner Online GmbH
 
 
 # ASN 51559 ("Server Internet Bilisim ve Bilgisayar Hizmetleri").
+# (Mark any LV announces as cloud when updating).
 # %Listed, Google Malware Dashboard: 0.08%.
-# Stop Forum Spam (SFS) listings: 73.
-# Updated: 2019.05.02
+# Stop Forum Spam (SFS) listings: 37.
+# Updated: 2019.09.18
 
-2a03:2100::/32 Deny Generic
-2a05:9bc0::/29 Deny Generic
-2a06:1580::/32 Deny Generic
-2a06:41c0::/29 Deny Generic
-2a06:c400::/29 Deny Generic
-2a0a:db00::/29 Deny Generic
-2a0b:8100::/29 Deny Generic
+2a06:c3c0:2::/48 Deny Generic
+Origin: RU
+2a03:2100::/44 Deny Generic
+2a05:9bc0::/44 Deny Generic
+2a06:1580::/44 Deny Generic
+2a06:41c0::/44 Deny Generic
+2a06:c400::/44 Deny Generic
+2a0a:db00::/44 Deny Generic
+2a0b:8100::/44 Deny Generic
 Origin: TR
 Tag: AS51559
 ---
@@ -196,9 +199,9 @@ Tag: Voxility LLC
 
 
 # ASN 30968 ("INFOBOX").
-# %Listed, Google Malware Dashboard: 0.26%.
-# Stop Forum Spam (SFS) listings: 32.
-# Updated: 2016.01.18 / Checked: 2019.03.30
+# %Listed, Google Malware Dashboard: 0.11%.
+# Stop Forum Spam (SFS) listings: 141.
+# Updated: 2016.01.18 / Checked: 2019.09.18
 
 2a02:440::/32 Deny Generic
 Origin: RU
@@ -275,14 +278,19 @@ Origin: US
 Tag: JPMorgan Chase & Co
 
 
-# ASNs 42708, 43948 ("GleSYS AB"; formerly "Portlane AB"). Multiplay network (hosting, colo, infrastructure, VPS, etc).
-# Exclude from aggregate: "^.*Internetbolaget.*$\n" (legit ISP based in Sweden, with human endpoints; seems totally clean).
-# As proxy: "^(.*(?:VP[SN]|Tunnel|Edelino).*)$". As cloud: "^(.*(?:Host|Netelia|Sveaab|GleSYS).*)$".
-# As spam: "^(.*(?:Svenska).*)$" (legit ISP based in Sweden, but also a major source of spam, both in general, and in
-# relation to this ASN). Everything else as generic. Split across different signature files for better maintainability.
-# %Listed, Google Malware Dashboard: 0.10% (AS42708), 0.14% (AS43948).
-# Stop Forum Spam (SFS) listings: 2,385 (AS42708), 5 (AS43948).
-# Updated: 2019.05.02
+# ASNs 42708, 43948 ("GleSYS AB"; formerly "Portlane AB").
+# Exclude (carries human endpoints and seems clean):
+# - "^.*Internetbolaget.*$\n"
+# Mark as proxy:
+# - "^(.*(?:VP[SN]|Tunnel|Edelino).*)$"
+# Mark as cloud:
+# - "^(.*(?:Host|Netelia|Sveaab|GleSYS|Webbplatsen|InfoGuard).*)$"
+# Mark as spam (carries human endpoints, but also poses a spam risk):
+# - "^(.*(?:Svenska).*)$"
+# Everything else mark as generic.
+# %Listed, Google Malware Dashboard: 0.13% (AS42708), 0.03% (AS43948).
+# Stop Forum Spam (SFS) listings: 1,622 (AS42708).
+# Updated: 2019.05.02 / Checked: 2019.09.18
 
 2a01:8640:9::/48 Deny Generic
 Origin: GB
@@ -1524,11 +1532,10 @@ recaptcha:
 
 
 # ASN 31200 ("Novotelecom Ltd").
-# %Listed, Google Malware Dashboard: 0.51%.
-# Stop Forum Spam (SFS) listings: 1,631.
-# Similarly to with the Rostelecom CIDRs, blocking the entirety of all the "Novotelecom" ASNs could be problematic.
-# Instead, we'll try to limit listings to known problematic ranges (hacking events, spamming events, etc).
-# Updated: 2017.09.30 / Checked: 2019.05.02
+# Stop Forum Spam (SFS) listings: 1,061.
+# When updating ASNs, only block the problematic ASNs (those with known cases
+# of hacking events, spamming, etc); don't block the entire network.
+# Updated: 2017.09.30 / Checked: 2019.09.18
 
 2a00:7700::/32 Deny Generic
 Origin: RU
@@ -1746,8 +1753,8 @@ recaptcha:
 
 # ASN 198093 ("Foreningen for digitala fri- och rattigheter").
 # Dead homepage and high levels of automated spam from this ASN.
-# Stop Forum Spam (SFS) listings: 34,244.
-# Updated: 2017.12.11 / Checked: 2019.03.30
+# Stop Forum Spam (SFS) listings: 13,173.
+# Updated: 2017.12.11 / Checked: 2019.09.18
 
 2001:67c:16b0::/48 Deny Spam
 2001:67c:289c::/48 Deny Spam
@@ -1780,24 +1787,26 @@ recaptcha:
 # Everything else can go in the ISPs signature files. When updating, to reduce the risk of false positives:
 # - Remove all subordinates of 38.0.0.0/8 from final aggregate (already blocked elsewhere and don't want duplicates).
 # - "Secure Internet LLC" mark as proxy (not generic).
-# Stop Forum Spam (SFS) listings: 231,804.
-# Updated: 2019.05.13
+# Stop Forum Spam (SFS) listings: 255,032.
+# Updated: 2019.09.15
 
 2604:17c0::/41 Deny Generic
 2604:17c0:80::/42 Deny Generic
 Origin: AQ
 2a03:f80:65::/48 Deny Generic
+2a03:f80:81::/48 Deny Generic
+2a03:f80:381::/48 Deny Generic
 Origin: AT
 2001:978:2305::/48 Deny Generic
 2001:978:3400::/48 Deny Generic
 2a0b:9040::/29 Deny Generic
 Origin: DE
-2a0c:36c2::/32 Deny Generic
+2a0c:36c2::/31 Deny Generic
 Origin: EE
 2a01:300::/29 Deny Generic
 2a05:9f41:1a::/48 Deny Generic
 Origin: EU
-2001:ac8::/31 Deny Generic
+2001:ac8::/32 Deny Generic
 2a00:b320::/48 Deny Generic
 2a02:40::/32 Deny Generic
 2a02:710:1000:700::/56 Deny Generic
@@ -1814,6 +1823,7 @@ Origin: EU
 2a07:a343:f210::/44 Deny Generic
 2a0a:b640:1::/48 Deny Generic
 2a0a:b640:2::/47 Deny Generic
+2a0e:7a80::/29 Deny Generic
 Origin: GB
 2a00:55a0:5::/48 Deny Generic
 2a00:55a0:10::/48 Deny Generic
@@ -1822,17 +1832,16 @@ Origin: GB
 2a00:55a0:f900::/40 Deny Generic
 2a00:55a0:ff00::/40 Deny Generic
 Origin: IL
-2a03:f80:81::/48 Deny Generic
-Origin: JP
 2a0d:db00::/32 Deny Generic
 Origin: LT
 2001:678:8b4::/48 Deny Generic
 2a04:9dc0::/29 Deny Generic
 2a07:9200::/47 Deny Generic
 2a07:9200:3::/48 Deny Generic
-2a07:9200:4::/47 Deny Generic
 2a07:9200:6::/48 Deny Generic
 2a0d:9980::/29 Deny Generic
+2a0e:1d80:2::/47 Deny Generic
+2a0e:1d80:4::/47 Deny Generic
 Origin: RO
 2a07:de00::/29 Deny Generic
 Origin: RU

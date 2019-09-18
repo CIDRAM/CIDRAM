@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Norwegian language data for the front-end (last modified: 2019.09.01).
+# This file: Norwegian language data for the front-end (last modified: 2019.09.17).
 ##/
 
 Extended Description Bypasses: "Standard-signatur-bypass-filene som normalt følger med hovedpakken."
@@ -15,11 +15,11 @@ Extended Description CIDRAM: "Hovedpakken (minus signaturene, dokumentasjonen og
 Extended Description Chart.js: "Gjør det mulig for frontendens å generere pajediagrammer.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a> er tilgjengelig via <a href="https://opensource.org/licenses/MIT">MIT license</a>."
 Extended Description IPv4-Bogons: "Blokkerer bogon/martian CIDRer."
 Extended Description IPv4-ISPs: "Blokkerer farlige og spam-fylte ISPer."
-Extended Description IPv4-Other: "Blokkerer CIDRer for proxyer, VPN og andre uønskede tjenester."
+Extended Description IPv4-Other: "Blokkerer CIDRer for proxyer, VPNer og andre uønskede tjenester."
 Extended Description IPv4: "Blokkerer uønskede sky-tjenester og ikke-menneskelige endepunkter."
 Extended Description IPv6-Bogons: "Blokkerer bogon/martian CIDRer."
 Extended Description IPv6-ISPs: "Blokkerer farlige og spam-fylte ISPer."
-Extended Description IPv6-Other: "Blokkerer CIDRer for proxyer, VPN og andre uønskede tjenester."
+Extended Description IPv6-Other: "Blokkerer CIDRer for proxyer, VPNer og andre uønskede tjenester."
 Extended Description IPv6: "Blokkerer uønskede sky-tjenester og ikke-menneskelige endepunkter."
 Extended Description PHPMailer: "Kreves for bruk av funksjonalitet som innebærer sending av e-post.<br /><a href="https://github.com/PHPMailer/PHPMailer">PHPMailer</a> er tilgjengelig via <a href="https://github.com/PHPMailer/PHPMailer/blob/master/LICENSE">LGPLv2.1</a>-lisensen."
 Extended Description flags.css: "Legger flaggsupport til frontendsloggesiden."
@@ -35,11 +35,11 @@ Extended Description module_sfs.php: "Beskytter registrerings og innloggingsside
 Name Bypasses: "Standard signatur bypasses."
 Name IPv4-Bogons: "IPv4 (bogoner)."
 Name IPv4-ISPs: "IPv4 (spam-fylte ISPer)."
-Name IPv4-Other: "IPv4 (proxyer, VPN, etc)."
+Name IPv4-Other: "IPv4 (proxyer, VPNer, osv)."
 Name IPv4: "IPv4 (sky og hosting tjenester)."
 Name IPv6-Bogons: "IPv6 (bogoner)."
 Name IPv6-ISPs: "IPv6 (spam-fylte ISPer)."
-Name IPv6-Other: "IPv6 (proxyer, VPN, etc)."
+Name IPv6-Other: "IPv6 (proxyer, VPNer, osv)."
 Name IPv6: "IPv6 (sky og hosting tjenester)."
 Name compat_bunnycdn.php: "BunnyCDN kompatibilitetsmodul"
 Name module_abuseipdb.php: "AbuseIPDB modul"
@@ -75,7 +75,7 @@ config_general_allow_gethostbyaddr_lookup: "Tillat gethostbyaddr oppslag når UD
 config_general_ban_override: "Overstyr "forbid_on_block" når "infraction_limit" overskrides? Når overstyrende: Blokkerte forespørsler returnerer en tom side (malfiler blir ikke brukt). 200 = Ikke overstyre [Standardverdi]. Andre verdier er de samme som tilgjengelige verdier for "forbid_on_block"."
 config_general_default_algo: "Definerer hvilken algoritme som skal brukes for alle fremtidige passord og økter. Alternativer: PASSWORD_DEFAULT (standardverdi), PASSWORD_BCRYPT, PASSWORD_ARGON2I (krever PHP &gt;= 7.2.0)."
 config_general_default_dns: "En kommaseparert liste over DNS-servere som skal brukes til vertsnavn-oppslag. Standardverdi = "8.8.8.8,8.8.4.4" (Google DNS). ADVARSEL: Ikke endre dette med mindre du vet hva du gjør!"
-config_general_disable_cli: "Deaktiver CLI-modus? CLI-modus er aktivert som standard, men kan noen ganger forstyrre visse testverktøy (for eksempel; PHPUnit) og andre CLI-baserte applikasjoner. Hvis du ikke trenger å deaktivere CLI-modus, bør du ignorere dette direktivet. False = Aktiver CLI-modus [Standardverdi]; True = Deaktiver CLI-modus."
+config_general_disable_cli: "Deaktiver CLI-modus? CLI-modus er aktivert som standard, men kan noen ganger forstyrre visse testverktøy (slik som PHPUnit, for eksempel) og andre CLI-baserte applikasjoner. Hvis du ikke trenger å deaktivere CLI-modus, bør du ignorere dette direktivet. False = Aktiver CLI-modus [Standardverdi]; True = Deaktiver CLI-modus."
 config_general_disable_frontend: "Deaktiver tilgang til frontenden? Frontend tilgang kan gjøre CIDRAM mer overskuelig, men kan også være en potensiell sikkerhetsrisiko også. Det anbefales å administrere CIDRAM via bakenden når det er mulig, men frontend tilgang er gitt for når det ikke er mulig. Hold den deaktivert med mindre du trenger det. False = Aktiver tilgang til frontenden; True = Deaktiver tilgang til frontenden [Standardverdi]."
 config_general_disable_webfonts: "Deaktiver webfonter? True = Ja [Standardverdi]; False = Nei."
 config_general_disabled_channels: "Dette kan brukes til å forhindre CIDRAM i å bruke bestemte kanaler når du sender forespørsler (f.eks, når du oppdaterer, når du henter komponentmetadata, osv)."
@@ -131,7 +131,7 @@ config_signatures_block_bogons: "Blokker bogon/martian CIDRer? Hvis du forventer
 config_signatures_block_cloud: "Blokker CIDRer identifisert som tilhørende web-verter og sky-tjenester? Hvis du driver en API-tjeneste fra nettstedet ditt eller hvis du forventer at andre nettsteder skal koble til nettstedet ditt, bør dette settes til false. Hvis du ikke gjør det, da bør dette direktivet settes til true."
 config_signatures_block_generic: "Blokker CIDRer anbefales vanligvis for svarteliste? Dette dekker alle signaturer som ikke er merket som en del av noen av de andre mer spesifikke signaturkategoriene."
 config_signatures_block_legal: "Blokker CIDRer som svar på juridiske forpliktelser? Dette direktivet bør normalt ikke ha noen effekt, fordi CIDRAM ikke som standard forbinder noen CIDRer med "juridiske forpliktelser" som standard, men det eksisterer likevel som et ekstra kontrollmål til fordel for eventuelle tilpassede signaturfiler eller moduler som kan eksistere av juridiske årsaker."
-config_signatures_block_malware: "Blokker IP-adresser knyttet til skadelig programvare? Dette inkluderer C&C-servere, infiserte maskiner, maskiner involvert i distribusjon av skadelig programvare, etc."
+config_signatures_block_malware: "Blokker IP-adresser knyttet til skadelig programvare? Dette inkluderer C&C-servere, infiserte maskiner, maskiner involvert i distribusjon av skadelig programvare, osv."
 config_signatures_block_proxies: "Blokker CIDRer som er identifisert som tilhørende proxy-tjenester eller VPNer? Hvis du trenger at brukerne skal kunne få tilgang til nettstedet ditt fra proxy-tjenester og VPNer, bør dette settes til false. Ellers, hvis du ikke trenger proxy-tjenester eller VPNer, bør dette direktivet settes til true som et middel til å forbedre sikkerheten."
 config_signatures_block_spam: "Blokker CIDRer som er utsatt for høy risiko for spam? Med mindre du opplever problemer når du gjør det, bør dette vanligvis alltid settes til true."
 config_signatures_default_tracktime: "Hvor mange sekunder å spore IPer som er utestengt av moduler. Standardverdi = 604800 (1 uke)."
@@ -266,7 +266,7 @@ label_false_positive_risk: "Falsk positiv risiko: "
 label_fmgr_cache_data: "Cache data og midlertidige filer"
 label_fmgr_disk_usage: "CIDRAM diskbruk: "
 label_fmgr_free_space: "Ledig diskplass: "
-label_fmgr_other_sig: "Andre regler, signaturfiler, etc"
+label_fmgr_other_sig: "Andre regler, signaturfiler, osv"
 label_fmgr_safety: "Sikkerhetsmekanismer"
 label_fmgr_total_disk_usage: "Totalt diskbruk: "
 label_fmgr_total_space: "Totalt diskplass: "
@@ -437,7 +437,6 @@ tip_cidr_calc: "Hallo, {username}.<br />CIDR-kalkulatoren lar deg beregne hvilke
 tip_condition_placeholder: "Angi en verdi, eller legg blank for å se bort fra."
 tip_config: "Hallo, {username}.<br />Konfigurasjonssiden lar deg endre konfigurasjonen for CIDRAM fra frontenden."
 tip_custom_ua: "Skriv inn brukeragent (user agent) her (valgfritt)."
-tip_donate: "CIDRAM tilbys gratis, men hvis du vil donere til prosjektet, du kan gjøre det ved å klikke på donate-knappen."
 tip_enter_input_here: "Skriv inn innspill her."
 tip_enter_ip_here: "Skriv inn IP her."
 tip_enter_ips_here: "Skriv inn IPer her."
@@ -467,20 +466,20 @@ warning_signatures_1: "Ingen signaturfiler er aktive!"
 info_some_useful_links: |
  Noen nyttige lenker:<br />
      <ul class="pieul">
-       <li><span class="comCat" style="cursor:pointer">Verktøy, ressurser, etc for CIDRAM.</span>
+       <li><span class="comCat" style="cursor:pointer">Verktøy, ressurser, osv for CIDRAM.</span>
          <ul class="comSub">
            <li><a href="https://github.com/CIDRAM/CIDRAM/issues">CIDRAM Issues @ GitHub</a> – Issues side for CIDRAM (støtte, assistanse, osv).</li>
            <li><a href="https://wordpress.org/plugins/cidram/">CIDRAM @ WordPress.org</a> – WordPress plugin for CIDRAM.</li>
-           <li><a href="https://bitbucket.org/macmathan/blocklists">macmathan/blocklists</a> – Inneholder valgfrie blokklister og moduler for CIDRAM, for eksempel for blokkering av farlige roboter, uønskede land, utdaterte nettlesere, etc.</li>
+           <li><a href="https://bitbucket.org/macmathan/blocklists">macmathan/blocklists</a> – Inneholder valgfrie blokklister og moduler for CIDRAM, for eksempel for blokkering av farlige roboter, uønskede land, utdaterte nettlesere, osv.</li>
            <li><a href="https://github.com/CIDRAM/CIDRAM-Extras">CIDRAM/CIDRAM-Extras</a> – Ulike ekstramateriale.</li>
          </ul>
        </li>
-       <li><span class="comCat" style="cursor:pointer">Grupper, fora, fellesskap, etc.</span>
+       <li><span class="comCat" style="cursor:pointer">Grupper, fora, fellesskap, osv.</span>
          <ul class="comSub">
            <li><a href="https://www.facebook.com/groups/2204685680/">PHP.earth @ Facebook</a> – PHP læringsressurser og diskusjon.</li>
            <li><a href="https://www.stopforumspam.com/forum/">Forum @ Stop Forum Spam</a> – Nyttig diskusjonsforum om å stoppe forum spam.</li>
          </ul>
-       <li><span class="comCat" style="cursor:pointer">Andre nyttige verktøy, ressurser, tjenester, etc.</span>
+       <li><span class="comCat" style="cursor:pointer">Andre nyttige verktøy, ressurser, tjenester, osv.</span>
          <ul class="comSub">
            <li><a href="https://www.stopforumspam.com/">Stop Forum Spam</a> – Opprettholder en database med kjente forumspammere. Nyttig for å beskytte nettsteder og fora mot spammere.</li>
            <li><a href="https://bgp.he.net/">Hurricane Electric BGP Toolkit</a> – Få CIDRer fra ASNer, fastslå ASN-relasjoner, oppdag ASN basert på nettverksnavn, osv.</li>

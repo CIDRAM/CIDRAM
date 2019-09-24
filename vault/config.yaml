@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Configuration defaults file (last modified: 2019.09.04).
+# This file: Configuration defaults file (last modified: 2019.09.22).
 ##/
 
 Config Defaults:
@@ -21,6 +21,25 @@ Config Defaults:
   logfile_serialized:
    type: "string"
    default: ""
+  error_log:
+   type: "string"
+   default: ""
+  error_log_stages:
+   type: "checkbox"
+   default: "Tests,Modules,SearchEngineVerification,SocialMediaVerification,Aux,Reporting,Tracking,RL,reCAPTCHA,Statistics,Webhooks,Output"
+   choices:
+    Tests: "Tests"
+    Modules: "Modules"
+    SearchEngineVerification: "SearchEngineVerification"
+    SocialMediaVerification: "SocialMediaVerification"
+    Aux: "Aux"
+    Reporting: "Reporting"
+    Tracking: "Tracking"
+    RL: "RL"
+    reCAPTCHA: "reCAPTCHA"
+    Statistics: "Statistics"
+    Webhooks: "Webhooks"
+    Output: "Output"
   truncate:
    type: "kb"
    default: "0KB"

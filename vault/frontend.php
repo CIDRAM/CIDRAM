@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2019.08.28).
+ * This file: Front-end handler (last modified: 2019.09.24).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -1297,11 +1297,9 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
                             continue;
                         }
                     }
+                    $CIDRAM['ChoiceValue'] = $CIDRAM['TimeFormat']($CIDRAM['Now'], $CIDRAM['ChoiceValue']);
                     if (strpos($CIDRAM['ChoiceValue'], '{') !== false) {
-                        $CIDRAM['ChoiceValue'] = $CIDRAM['TimeFormat']($CIDRAM['Now'], $CIDRAM['ChoiceValue']);
-                        if (strpos($CIDRAM['ChoiceValue'], '{') !== false) {
-                            $CIDRAM['ChoiceValue'] = $CIDRAM['ParseVars']($CIDRAM['L10N']->Data, $CIDRAM['ChoiceValue']);
-                        }
+                        $CIDRAM['ChoiceValue'] = $CIDRAM['ParseVars']($CIDRAM['L10N']->Data, $CIDRAM['ChoiceValue']);
                     }
                     if ($CIDRAM['DirValue']['type'] === 'checkbox') {
                         $CIDRAM['ThisDir']['FieldOut'] .= sprintf(

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Output generator (last modified: 2019.09.18).
+ * This file: Output generator (last modified: 2019.09.24).
  */
 
 /** Initialise cache. */
@@ -107,6 +107,7 @@ if ($CIDRAM['Protect'] && !$CIDRAM['Config']['general']['maintenance_mode']) {
     try {
         $CIDRAM['TestResults'] = $CIDRAM['RunTests']($CIDRAM['BlockInfo']['IPAddr'], $CIDRAM['RL_Active']);
     } catch (\Exception $e) {
+        $CIDRAM['Events']->fireEvent('final');
         die($e->getMessage());
     }
 
@@ -115,6 +116,7 @@ if ($CIDRAM['Protect'] && !$CIDRAM['Config']['general']['maintenance_mode']) {
         try {
             $CIDRAM['TestResults'] = $CIDRAM['RunTests']($CIDRAM['BlockInfo']['IPAddrResolved'], $CIDRAM['RL_Active']);
         } catch (\Exception $e) {
+            $CIDRAM['Events']->fireEvent('final');
             die($e->getMessage());
         }
     }
@@ -763,42 +765,28 @@ if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
         $CIDRAM['Config']['general']['log_banned_ips'] || empty($CIDRAM['Banned'])
     )) {
 
-        /** Determining date/time information for logfile names. */
-        if (
-            strpos($CIDRAM['Config']['general']['logfile'], '{') !== false ||
-            strpos($CIDRAM['Config']['general']['logfileApache'], '{') !== false ||
-            strpos($CIDRAM['Config']['general']['logfileSerialized'], '{') !== false
-        ) {
-            $CIDRAM['LogFileNames'] = [];
-            list(
-                $CIDRAM['LogFileNames']['logfile'],
-                $CIDRAM['LogFileNames']['logfileApache'],
-                $CIDRAM['LogFileNames']['logfileSerialized']
-            ) = $CIDRAM['TimeFormat']($CIDRAM['Now'], [
-                $CIDRAM['Config']['general']['logfile'],
-                $CIDRAM['Config']['general']['logfileApache'],
-                $CIDRAM['Config']['general']['logfileSerialized']
-            ]);
-        } else {
-            $CIDRAM['LogFileNames'] = [
-                'logfile' => $CIDRAM['Config']['general']['logfile'],
-                'logfileApache' => $CIDRAM['Config']['general']['logfileApache'],
-                'logfileSerialized' => $CIDRAM['Config']['general']['logfileSerialized']
-            ];
-        }
+        /** Applies formatting for dynamic log filenames. */
+        $CIDRAM['LogFileNames'] = $CIDRAM['TimeFormat']($CIDRAM['Now'], [
+            'logfile' => $CIDRAM['Config']['general']['logfile'],
+            'logfileApache' => $CIDRAM['Config']['general']['logfileApache'],
+            'logfileSerialized' => $CIDRAM['Config']['general']['logfileSerialized']
+        ]);
 
         /** Write to logs. */
         $CIDRAM['Events']->fireEvent('writeToLog');
 
     }
 
+    /** Final event before we exit. */
+    $CIDRAM['Events']->fireEvent('final');
+
     /** All necessary processing and logging has completed; Now we send HTML output and die. */
     die($CIDRAM['HTML']);
 
 }
 
-/** We're finished with the output generator now. */
-unset($CIDRAM['Stage']);
+/** Final event before we exit. */
+$CIDRAM['Events']->fireEvent('final');
 
 /** Restores default error handler. */
 $CIDRAM['RestoreErrorHandler']();

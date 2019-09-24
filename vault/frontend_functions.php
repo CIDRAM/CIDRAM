@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2019.09.17).
+ * This file: Front-end functions file (last modified: 2019.09.24).
  */
 
 /**
@@ -2777,19 +2777,24 @@ $CIDRAM['GenerateConfirm'] = function ($Action, $Form) use (&$CIDRAM) {
  * @param string $Message The message to be logged.
  */
 $CIDRAM['FELogger'] = function ($IPAddr, $User, $Message) use (&$CIDRAM) {
+
+    /** Guard. */
     if (!$CIDRAM['Config']['general']['FrontEndLog'] || empty($CIDRAM['FE']['DateTime'])) {
         return;
     }
-    $File = (strpos($CIDRAM['Config']['general']['FrontEndLog'], '{') !== false) ? $CIDRAM['TimeFormat'](
-        $CIDRAM['Now'],
-        $CIDRAM['Config']['general']['FrontEndLog']
-    ) : $CIDRAM['Config']['general']['FrontEndLog'];
+
+    /** Applies formatting for dynamic log filenames. */
+    $File = $CIDRAM['TimeFormat']($CIDRAM['Now'], $CIDRAM['Config']['general']['FrontEndLog']);
+
     $Data = $CIDRAM['Config']['legal']['pseudonymise_ip_addresses'] ? $CIDRAM['Pseudonymise-IP']($IPAddr) : $IPAddr;
     $Data .= ' - ' . $CIDRAM['FE']['DateTime'] . ' - "' . $User . '" - ' . $Message . "\n";
+
     $WriteMode = (!file_exists($CIDRAM['Vault'] . $File) || (
         $CIDRAM['Config']['general']['truncate'] > 0 &&
         filesize($CIDRAM['Vault'] . $File) >= $CIDRAM['ReadBytes']($CIDRAM['Config']['general']['truncate'])
     )) ? 'w' : 'a';
+
+    /** Build the path to the log and write it. */
     if ($CIDRAM['BuildLogPath']($File)) {
         $Handle = fopen($CIDRAM['Vault'] . $File, $WriteMode);
         fwrite($Handle, $Data);
@@ -2799,33 +2804,6 @@ $CIDRAM['FELogger'] = function ($IPAddr, $User, $Message) use (&$CIDRAM) {
         }
     }
 };
-
-/**
- * Writes to the PHPMailer event log.
- *
- * @param string $Data What to write.
- * @return bool True on success; False on failure.
- */
-$CIDRAM['Events']->addHandler('writeToPHPMailerEventLog', function ($Data) use (&$CIDRAM) {
-    if (!$CIDRAM['Config']['PHPMailer']['EventLog']) {
-        return false;
-    }
-    $EventLog = (strpos($CIDRAM['Config']['PHPMailer']['EventLog'], '{') !== false) ? $CIDRAM['TimeFormat'](
-        $CIDRAM['Now'],
-        $CIDRAM['Config']['PHPMailer']['EventLog']
-    ) : $CIDRAM['Config']['PHPMailer']['EventLog'];
-    $WriteMode = (!file_exists($CIDRAM['Vault'] . $EventLog) || (
-        $CIDRAM['Config']['general']['truncate'] > 0 &&
-        filesize($CIDRAM['Vault'] . $EventLog) >= $CIDRAM['ReadBytes']($CIDRAM['Config']['general']['truncate'])
-    )) ? 'w' : 'a';
-    $Handle = fopen($CIDRAM['Vault'] . $EventLog, $WriteMode);
-    fwrite($Handle, $Data);
-    fclose($Handle);
-    if ($WriteMode === 'w') {
-        $CIDRAM['LogRotation']($CIDRAM['Config']['PHPMailer']['EventLog']);
-    }
-    return true;
-});
 
 /**
  * Wrapper for PHPMailer functionality.

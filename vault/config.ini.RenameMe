@@ -12,6 +12,14 @@ logfileApache=''
 ; or leave blank to disable.
 logfileSerialized=''
 
+; A file for logging any non-fatal errors detected. Specify a filename, or
+; leave blank to disable.
+error_log=''
+
+; A list of the stages in the execution chain that should have any generated
+; errors logged.
+error_log_stages='Tests,Modules,SearchEngineVerification,SocialMediaVerification,Aux,Reporting,Tracking,RL,reCAPTCHA,Statistics,Webhooks,Output'
+
 ; Truncate logfiles when they reach a certain size? Value is the maximum size
 ; in B/KB/MB/GB/TB that a logfile may grow to before being truncated. The
 ; default value of 0KB disables truncation (logfiles can grow indefinitely).

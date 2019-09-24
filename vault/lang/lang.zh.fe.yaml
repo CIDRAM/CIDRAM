@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (simplified) language data for the front-end (last modified: 2019.09.17).
+# This file: Chinese (simplified) language data for the front-end (last modified: 2019.09.22).
 ##/
 
 Extended Description Bypasses: "标准签名旁路文件通常包括在主包。"
@@ -79,6 +79,8 @@ config_general_disabled_channels: "这可用于防止CIDRAM在发送请求时使
 config_general_emailaddr: "如果您希望，​您可以提供电子邮件地址这里要给予用户当他们被阻止，​他们使用作为接触点为支持和/或帮助在的情况下他们错误地阻止。​警告:您提供的任何电子邮件地址，​它肯定会被获得通过垃圾邮件机器人和铲运机，​所以，​它强烈推荐如果选择提供一个电子邮件地址这里，​您保证它是一次性的和/或不是很重要（换一种说法，​您可能不希望使用您的主电子邮件地址或您的企业电子邮件地址）。"
 config_general_emailaddr_display_style: "您希望如何将电子邮件地址呈现给用户？"
 config_general_empty_fields: "在记录和显示阻止事件信息时，CIDRAM如何处理空字段？ “include” = 包括空字段。 “omit” = 省略空字段【标准】。"
+config_general_error_log: "用于记录检测到的任何非致命错误的文件。​指定一个文件名，​或留空以禁用。"
+config_general_error_log_stages: "执行链中应该记录错误的阶段列表。"
 config_general_forbid_on_block: "阻止请求时，CIDRAM应发送哪个HTTP状态消息？ （请参阅文档以获取更多信息）。"
 config_general_force_hostname_lookup: "强制主机名查找？​True（真）=跟踪；False（假）=不跟踪【标准】。​主机名查询通常在“根据需要”的基础上执行，但可以在所有请求上强制。​这可能会有助于提供日志文件中更详细的信息，但也可能会对性能产生轻微的负面影响。"
 config_general_frontend_log: "前端登录尝试的录音文件。​指定一个文件名，​或留空以禁用。"

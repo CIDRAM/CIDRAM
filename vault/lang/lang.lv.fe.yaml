@@ -7,5 +7,51 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Latvian language data for the front-end (last modified: 2019.09.01).
+# This file: Latvian language data for the front-end (last modified: 2019.09.24).
 ##/
+
+info_some_useful_links: |
+ Dažas noderīgas saites:<br />
+     <ul class="pieul">
+       <li><span class="comCat" style="cursor:pointer">CIDRAM rīki, resursi, utt.</span>
+         <ul class="comSub">
+           <li><a href="https://github.com/CIDRAM/CIDRAM/issues">CIDRAM Issues @ GitHub</a> – CIDRAM issues lapa (atbalsts, palīdzība, utt).</li>
+           <li><a href="https://wordpress.org/plugins/cidram/">CIDRAM @ WordPress.org</a> – WordPress spraudnis CIDRAM.</li>
+           <li><a href="https://bitbucket.org/macmathan/blocklists">macmathan/blocklists</a> – Satur izvēles bloķēšanas saraksti un moduļus CIDRAM, piemēram, lai bloķētu bīstamas robotprogrammatūras, nevēlamas valstis, novecojušas pārlūkprogrammas, utt.</li>
+           <li><a href="https://github.com/CIDRAM/CIDRAM-Extras">CIDRAM/CIDRAM-Extras</a> – Dažādas ekstras.</li>
+         </ul>
+       </li>
+       <li><span class="comCat" style="cursor:pointer">Grupas, forumi, kopienas, utt.</span>
+         <ul class="comSub">
+           <li><a href="https://www.facebook.com/groups/2204685680/">PHP.earth @ Facebook</a> – PHP mācību resursi un diskusija.</li>
+           <li><a href="https://www.stopforumspam.com/forum/">Forum @ Stop Forum Spam</a> – Noderīgs diskusiju forums par foruma mēstuļu apturēšanu.</li>
+         </ul>
+       <li><span class="comCat" style="cursor:pointer">Citi noderīgi rīki, resursi, pakalpojumi, utt.</span>
+         <ul class="comSub">
+           <li><a href="https://www.stopforumspam.com/">Stop Forum Spam</a> – Uztur zināmu forumu surogātpasta izplatītāju datu bāzi. Noderīga vietņu un forumu aizsardzībai pret surogātpastu izplatītājiem.</li>
+           <li><a href="https://bgp.he.net/">Hurricane Electric BGP Toolkit</a> – Saņemiet CIDR no ASN, nosakiet ASN attiecības, atklājiet ASN pamatojoties uz tīkla nosaukumiem, utt.</li>
+           <li><a href="https://radar.qrator.net/">Radar by Qrator</a> – Noderīgs rīks, lai pārbaudītu informāciju par ASN, pārbaudītu ASN savienojumu, utt.</li>
+           <li><a href="http://www.ipdeny.com/ipblocks/">IPdeny IP country blocks</a> – Fantastisks un precīzs pakalpojums valsts parakstu ģenerēšanai.</li>
+           <li><a href="https://www.google.com/transparencyreport/safebrowsing/malware/">Google Malware Dashboard</a> – Parāda ziņojumus par ASN ļaunprātīgas programmatūras inficēšanās biežumu.</li>
+           <li><a href="https://www.spamhaus.org/statistics/botnet-asn/">The Spamhaus Project</a> – Parāda ziņojumus par robottīkla inficēšanās biežumu ASN.</li>
+           <li><a href="https://www.abuseat.org/public/asn.html">Abuseat.org's Kompozītu Bloķēšanas Saraksts</a> – Parāda ziņojumus par robottīkla inficēšanās biežumu ASN.</li>
+           <li><a href="https://abuseipdb.com/">AbuseIPDB</a> – Uztur zināmu ļaunprātīgu IP datu bāzi; Viņu API var izmantot, lai pārbaudītu un ziņotu par IP.</li>
+           <li><a href="https://www.megarbl.net/index.php">MegaRBL.net</a> – Uztur zināmo surogātpasta izplatītāju sarakstus; Noderīga IP/ASN surogātpastu darbību pārbaudei.</li>
+         </ul>
+       </li>
+       <li><span class="comCat" style="cursor:pointer">Informācijas un mācību resursi.</span>
+         <ul class="comSub">
+           <li><a href="https://php.earth/">PHP.earth</a> – PHP mācību resursi un diskusija.</li>
+           <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">Ievainojamības Diagrammas</a> – Saraksta dažādu programmatūras pakotņu drošas/nedrošas versijas (HHVM, PHP, phpMyAdmin, Python, utt).</li>
+           <li><a href="https://maikuolan.github.io/Compatibility-Charts/">Saderības Diagrammas</a> – Saraksta informācija par saderību par dažādām programmatūras pakotnēm (CIDRAM, phpMussel, utt).</li>
+         </ul>
+       </li>
+     </ul>
+
+msg_template_2fa: |
+ <center><p>Sveiks, %1$s.<br />
+ <br />
+ Jūsu divu-faktoru autentifikācijas kods, lai pieteiktos CIDRAM priekšplānā:</p>
+ <h1>%2$s</h1>
+ <p>Šis kods zaudē spēku 10 minūtēs.</p></center>
+msg_subject_2fa: "Divu-Faktoru Autentifikācija"

@@ -1,20 +1,23 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_isps.dat
 
-# Version: 2019.263.197
-# Last modified: 2019.09.21
+# Version: 2019.269.411
+# Last modified: 2019.09.27
 
 
 # ---
 # ASN 29182 ("ISPsystem").
 # %Listed, Google Malware Dashboard: 0.31%.
-# Stop Forum Spam (SFS) listings: 4,885.
-# Updated: 2018.03.31 / Checked: 2019.05.10
+# Stop Forum Spam (SFS) listings: 1,366.
+# Updated: 2019.09.27
 
 2a01:230::/48 Deny Generic
 2a01:230:2::/47 Deny Generic
 2a06:dc40::/29 Deny Generic
+2a09:f900::/48 Deny Generic
 Origin: RU
+2a0c:680::/32 Deny Generic
+Origin: UA
 Tag: ISPsystem
 
 
@@ -47,10 +50,10 @@ Origin: AT
 Tag: World4You
 
 
-# ASNs 29073, 202425 ("IP Volume inc", formerly, "Quasi Networks LTD", formerly "Ecatel Network").
-# %Listed, Google Malware Dashboard: 0.16% (AS29073), 0.13% (AS202425).
-# Stop Forum Spam (SFS) listings: 13,260 (AS29073), 236 (AS202425).
-# Updated: 2019.05.10
+# ASN 202425 ("IP Volume inc").
+# %Listed, Google Malware Dashboard: 0.08%.
+# Stop Forum Spam (SFS) listings: 805.
+# Updated: 2019.05.10 / Checked: 2019.09.27
 
 2a02:6c8:8000::/33 Deny Generic
 Origin: NL
@@ -258,8 +261,8 @@ recaptcha:
 
 
 # ASN 41011 ("CH-NET S.R.L").
-# Stop Forum Spam (SFS) listings: 4.
-# Updated: 2017.06.28 / Checked: 2019.05.10
+# Stop Forum Spam (SFS) listings: 131.
+# Updated: 2017.06.28 / Checked: 2019.09.27
 
 2001:67c:2100::/48 Deny Generic
 2a06:afc0::/47 Deny Generic
@@ -1502,11 +1505,10 @@ recaptcha:
 
 
 # ASN 8402 ("OJSC Vimpelcom").
-# %Listed, Google Malware Dashboard: 0.81%.
-# Stop Forum Spam (SFS) listings: 2,454.
+# Stop Forum Spam (SFS) listings: 2,206.
 # Similarly to with the Rostelecom CIDRs, blocking the entirety of all "Vimpelcom" ASNs could be problematic. Instead,
 # we'll try to limit listings to those CIDRs known to be problematic (hacking events, spamming events, etc).
-# Updated: 2017.06.08 / Checked: 2019.05.13
+# Updated: 2017.06.08 / Checked: 2019.09.27
 
 2a00:18c0::/32 Deny Generic
 Origin: RU

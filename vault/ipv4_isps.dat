@@ -1,8 +1,8 @@
 # IPv4 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv4_isps.dat
 
-# Version: 2019.263.197
-# Last modified: 2019.09.21
+# Version: 2019.269.411
+# Last modified: 2019.09.27
 
 
 # ---
@@ -205,8 +205,8 @@ Tag: Trellian Pty. Ltd
 
 # ASN 29182 ("ISPsystem").
 # %Listed, Google Malware Dashboard: 0.31%.
-# Stop Forum Spam (SFS) listings: 4,885.
-# Updated: 2019.05.10
+# Stop Forum Spam (SFS) listings: 1,366.
+# Updated: 2019.09.27
 
 185.220.222.0/23 Deny Generic
 Origin: CZ
@@ -220,20 +220,21 @@ Origin: CZ
 80.87.192.0/21 Deny Generic
 80.87.200.0/22 Deny Generic
 82.146.32.0/19 Deny Generic
-82.202.160.0/20 Deny Generic
+82.202.160.0/22 Deny Generic
+82.202.165.0/24 Deny Generic
+82.202.166.0/23 Deny Generic
+82.202.168.0/21 Deny Generic
 83.220.168.0/21 Deny Generic
 91.240.84.0/22 Deny Generic
 92.63.96.0/20 Deny Generic
 94.250.248.0/21 Deny Generic
 149.154.64.0/21 Deny Generic
-176.119.142.0/24 Deny Generic
 185.43.4.0/22 Deny Generic
 185.60.132.0/22 Deny Generic
 185.63.188.0/22 Deny Generic
 185.65.202.0/24 Deny Generic
 185.86.93.0/24 Deny Generic
 185.146.156.0/22 Deny Generic
-185.232.119.0/24 Deny Generic
 185.246.64.0/22 Deny Generic
 185.253.32.0/22 Deny Generic
 188.120.224.0/19 Deny Generic
@@ -243,6 +244,8 @@ Origin: CZ
 212.109.216.0/21 Deny Generic
 213.159.208.0/21 Deny Generic
 Origin: RU
+185.233.152.0/23 Deny Generic
+Origin: UA
 Tag: ISPsystem
 
 
@@ -305,17 +308,11 @@ Origin: AT
 Tag: World4You
 
 
-# ASNs 29073, 202425 ("IP Volume inc", formerly, "Quasi Networks LTD", formerly "Ecatel Network").
-# %Listed, Google Malware Dashboard: 0.16% (AS29073), 0.13% (AS202425).
-# Stop Forum Spam (SFS) listings: 13,260 (AS29073), 236 (AS202425).
-# Updated: 2019.05.10
+# ASN 202425 ("IP Volume inc").
+# %Listed, Google Malware Dashboard: 0.08%.
+# Stop Forum Spam (SFS) listings: 805.
+# Updated: 2019.09.27
 
-213.184.105.0/24 Deny Generic
-213.184.113.0/24 Deny Generic
-213.184.115.0/24 Deny Generic
-213.184.117.0/24 Deny Generic
-213.184.124.0/24 Deny Generic
-Origin: IL
 80.82.64.0/22 Deny Generic
 80.82.68.0/23 Deny Generic
 80.82.70.0/24 Deny Generic
@@ -1204,8 +1201,8 @@ recaptcha:
 
 
 # ASN 41011 ("CH-NET S.R.L").
-# Stop Forum Spam (SFS) listings: 4.
-# Updated: 2019.05.10
+# Stop Forum Spam (SFS) listings: 131.
+# Updated: 2019.09.27
 
 89.41.172.0/23 Deny Generic
 93.113.36.0/23 Deny Generic
@@ -1224,11 +1221,10 @@ recaptcha:
 188.214.192.0/24 Deny Generic
 193.238.244.0/22 Deny Generic
 Origin: RO
-91.222.238.0/24 Deny Generic
 141.98.233.0/24 Deny Generic
 141.98.234.0/24 Deny Generic
-193.39.168.0/22 Deny Generic
-194.5.92.0/22 Deny Generic
+185.244.48.0/24 Deny Generic
+194.31.174.0/23 Deny Generic
 Origin: RU
 Tag: CH-NET S.R.L
 
@@ -7638,11 +7634,10 @@ recaptcha:
 
 
 # ASN 8402 ("OJSC Vimpelcom").
-# %Listed, Google Malware Dashboard: 0.81%.
-# Stop Forum Spam (SFS) listings: 2,454.
+# Stop Forum Spam (SFS) listings: 2,206.
 # Similarly to with the Rostelecom CIDRs, blocking the entirety of all "Vimpelcom" ASNs could be problematic. Instead,
 # we'll try to limit listings to those CIDRs known to be problematic (hacking events, spamming events, etc).
-# Updated: 2019.05.13
+# Updated: 2019.05.13 / Checked: 2019.09.27
 
 2.92.0.0/14 Deny Generic
 37.144.0.0/14 Deny Generic
@@ -9830,12 +9825,10 @@ recaptcha:
 # Detected spammy ranges belonging to otherwise benign and clean networks.
 
 # Belongs to ASN 24532 ("PT. Inet Global Indo").
-# Updated: 2019.05.10
+# Updated: 2019.09.27
 
-27.111.35.0/24 Deny Spam
-27.111.36.0/23 Deny Spam
-27.111.38.0/24 Deny Spam
-27.111.46.0/23 Deny Spam
+27.111.32.0/20 Deny Spam
+119.235.27.32/27 Deny Spam
 202.129.184.0/21 Deny Spam
 Origin: ID
 Tag: Misc. Spam

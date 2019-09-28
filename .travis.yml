@@ -1,17 +1,18 @@
+dist: trusty
+
 language: php
 
 php:
-  - '7.2'
-  - '7.3'
+ - '7.2'
+ - '7.3'
 
 before_script:
-  # - cp $TRAVIS_BUILD_DIR/vault/config.ini.RenameMe $TRAVIS_BUILD_DIR/vault/config.ini
-  - phpenv config-rm xdebug.ini || true
-  - if [ $(phpenv version-name) != "5.4" ]; then composer install; fi
+ - phpenv config-rm xdebug.ini || true
+ - if [ $(phpenv version-name) != "5.4" ]; then composer install; fi
 
 script:
-  - if [ $(phpenv version-name) != "5.4" ]; then vendor/bin/codecept build; fi
-  - if [ $(phpenv version-name) != "5.4" ]; then vendor/bin/codecept run --steps; fi
+ - if [ $(phpenv version-name) != "5.4" ]; then vendor/bin/codecept build; fi
+ - if [ $(phpenv version-name) != "5.4" ]; then vendor/bin/codecept run --steps; fi
 
 notifications:
-  email: false
+ email: false

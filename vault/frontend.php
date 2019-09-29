@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2019.09.24).
+ * This file: Front-end handler (last modified: 2019.09.29).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -1568,6 +1568,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && ($CIDRAM['FE']['Per
         'Outdated' => [],
         'OutdatedSignatureFiles' => [],
         'Verify' => [],
+        'Repairable' => [],
         'Out' => []
     ];
 
@@ -1714,6 +1715,20 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && ($CIDRAM['FE']['Per
                 } else {
                     $CIDRAM['Components']['ThisComponent']['StatClass'] = 'txtGn';
                     $CIDRAM['Components']['ThisComponent']['StatusOptions'] = $CIDRAM['L10N']->getString('response_updates_already_up_to_date');
+                    if (isset(
+                        $CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['Files'],
+                        $CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['Files']['To'],
+                        $CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['Files']['From'],
+                        $CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['Files']['Checksum'],
+                        $CIDRAM['Components']['ThisComponent']['Files'],
+                        $CIDRAM['Components']['ThisComponent']['Files']['To'],
+                        $CIDRAM['Components']['ThisComponent']['Remote']
+                    ) && (
+                        $CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['Files']['To'] === $CIDRAM['Components']['ThisComponent']['Files']['To']
+                    )) {
+                        $CIDRAM['Components']['Repairable'][] = $CIDRAM['Components']['Key'];
+                        $CIDRAM['Components']['ThisComponent']['Options'] .= '<option value="repair-component">' . $CIDRAM['L10N']->getString('field_repair') . '</option>';
+                    }
                 }
             }
             if (!empty($CIDRAM['Components']['ThisComponent']['Files']['To'])) {
@@ -2027,9 +2042,15 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && ($CIDRAM['FE']['Per
     $CIDRAM['Components']['CountOutdated'] = count($CIDRAM['Components']['Outdated']);
     $CIDRAM['Components']['CountOutdatedSignatureFiles'] = count($CIDRAM['Components']['OutdatedSignatureFiles']);
     $CIDRAM['Components']['CountVerify'] = count($CIDRAM['Components']['Verify']);
+    $CIDRAM['Components']['CountRepairable'] = count($CIDRAM['Components']['Repairable']);
 
-    /** Preparing for update all and verify all buttons. */
-    $CIDRAM['FE']['UpdateAll'] = ($CIDRAM['Components']['CountOutdated'] || $CIDRAM['Components']['CountOutdatedSignatureFiles'] || $CIDRAM['Components']['CountVerify']) ? '<hr />' : '';
+    /** Preparing the update all, verify all, repair all buttons. */
+    $CIDRAM['FE']['UpdateAll'] = (
+        $CIDRAM['Components']['CountOutdated'] ||
+        $CIDRAM['Components']['CountOutdatedSignatureFiles'] ||
+        $CIDRAM['Components']['CountVerify'] ||
+        $CIDRAM['Components']['CountRepairable']
+    ) ? '<hr />' : '';
 
     /** Instructions to update all signature files (but not necessarily everything). */
     if ($CIDRAM['Components']['CountOutdatedSignatureFiles']) {
@@ -2047,6 +2068,15 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && ($CIDRAM['FE']['Per
             $CIDRAM['FE']['UpdateAll'] .= '<input name="ID[]" type="hidden" value="' . $CIDRAM['Components']['ThisOutdated'] . '" />';
         }
         $CIDRAM['FE']['UpdateAll'] .= '<input type="submit" value="' . $CIDRAM['L10N']->getString('field_update_all') . '" class="auto" /></form>';
+    }
+
+    /** Instructions to repair everything at once. */
+    if ($CIDRAM['Components']['CountRepairable']) {
+        $CIDRAM['FE']['UpdateAll'] .= sprintf($CIDRAM['CFBoilerplate'], $CIDRAM['FE']['UpdatesFormTarget'], 'repair-component');
+        foreach ($CIDRAM['Components']['Repairable'] as $CIDRAM['Components']['ThisRepairable']) {
+            $CIDRAM['FE']['UpdateAll'] .= '<input name="ID[]" type="hidden" value="' . $CIDRAM['Components']['ThisRepairable'] . '" />';
+        }
+        $CIDRAM['FE']['UpdateAll'] .= '<input type="submit" value="' . $CIDRAM['L10N']->getString('field_repair_all') . '" class="auto" /></form>';
     }
 
     /** Instructions to verify everything at once. */

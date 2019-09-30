@@ -1,15 +1,15 @@
 # IPv4 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv4_isps.dat
 
-# Version: 2019.269.411
-# Last modified: 2019.09.27
+# Version: 2019.272.545
+# Last modified: 2019.09.30
 
 
 # ---
 # ASN 38197 ("Sun Network (Hong Kong) Limited").
 # %Listed, Google Malware Dashboard: 1.98%.
 # Stop Forum Spam (SFS) listings: 1,107.
-# Updated: 2019.05.19
+# Updated: 2019.09.30
 
 103.12.68.0/22 Deny Generic
 103.14.100.0/22 Deny Generic
@@ -22,14 +22,12 @@ Origin: CN
 43.226.124.0/22 Deny Generic
 43.240.36.0/22 Deny Generic
 43.243.28.0/24 Deny Generic
-43.243.72.0/23 Deny Generic
-43.243.74.0/24 Deny Generic
+43.243.72.0/22 Deny Generic
 43.243.100.0/22 Deny Generic
 43.243.108.0/22 Deny Generic
 43.248.8.0/22 Deny Generic
 43.249.204.0/22 Deny Generic
-45.64.52.0/23 Deny Generic
-45.64.54.0/24 Deny Generic
+45.64.52.0/22 Deny Generic
 45.113.82.0/23 Deny Generic
 103.1.40.0/22 Deny Generic
 103.12.149.0/24 Deny Generic
@@ -45,6 +43,7 @@ Origin: CN
 103.82.168.0/22 Deny Generic
 103.85.72.0/22 Deny Generic
 103.90.172.0/24 Deny Generic
+103.138.148.0/24 Deny Generic
 103.205.240.0/22 Deny Generic
 103.211.68.0/22 Deny Generic
 103.230.240.0/22 Deny Generic
@@ -78,7 +77,6 @@ Origin: CN
 Origin: HK
 45.195.146.0/24 Deny Generic
 154.85.97.0/24 Deny Generic
-154.85.98.0/24 Deny Generic
 154.91.171.0/24 Deny Generic
 Origin: SC
 27.50.63.0/24 Deny Generic
@@ -810,8 +808,8 @@ recaptcha:
 
 
 # ASN 48359 ("Hesabgar Pardaz Gharb Company").
-# Stop Forum Spam (SFS) listings: 364.
-# Updated: 2019.05.19
+# Stop Forum Spam (SFS) listings: 358.
+# Updated: 2019.09.29
 
 5.159.49.0/24 Deny Spam
 5.159.54.0/24 Deny Spam
@@ -820,8 +818,7 @@ recaptcha:
 82.97.244.0/23 Deny Spam
 82.97.247.0/24 Deny Spam
 82.97.248.0/21 Deny Spam
-93.110.96.0/19 Deny Spam
-93.110.128.0/21 Deny Spam
+89.46.217.0/24 Deny Spam
 185.47.48.0/22 Deny Spam
 185.82.64.0/22 Deny Spam
 185.121.56.0/22 Deny Spam
@@ -833,6 +830,8 @@ recaptcha:
 185.221.192.0/22 Deny Spam
 185.238.44.0/22 Deny Spam
 Origin: IR
+45.155.192.0/22 Deny Spam
+Origin: TR
 Tag: AS48359
 
 
@@ -3238,12 +3237,16 @@ Tag: ALEXHOST SRL
 
 
 # ASNs 11572, 29656, 57872, 60558, 207134 ("PHOENIX NAP, LLC").
-# Updated: 2019.05.17
+# Updated: 2019.09.29
 
 194.15.38.0/24 Deny Generic
 Origin: DE
+2a00:8860::/32 Deny Generic
+Origin: EU
 185.219.161.0/24 Deny Generic
 Origin: GB
+185.198.36.0/23 Deny Generic
+Origin: IT
 185.56.136.0/22 Deny Generic
 185.62.36.0/22 Deny Generic
 Origin: MT
@@ -3257,13 +3260,13 @@ Origin: NL
 64.38.214.0/23 Deny Generic
 64.38.249.0/24 Deny Generic
 64.38.250.0/24 Deny Generic
-66.78.18.0/23 Deny Generic
 67.227.30.0/24 Deny Generic
 104.193.181.0/24 Deny Generic
 104.244.52.0/24 Deny Generic
 131.153.16.0/20 Deny Generic
 131.153.40.0/23 Deny Generic
 131.153.65.0/24 Deny Generic
+131.153.66.0/23 Deny Generic
 131.153.82.0/24 Deny Generic
 131.153.86.0/23 Deny Generic
 131.153.96.0/23 Deny Generic
@@ -3274,7 +3277,6 @@ Origin: NL
 173.211.4.0/24 Deny Generic
 184.174.68.0/24 Deny Generic
 184.174.94.0/24 Deny Generic
-207.66.86.0/24 Deny Generic
 209.182.105.0/24 Deny Generic
 Origin: US
 Tag: PHOENIX NAP, LLC
@@ -10050,8 +10052,8 @@ recaptcha:
 
 
 # ASN 137874 ("Fibergrid").
-# Stop Forum Spam (SFS) listings: 67.
-# Updated: 2019.05.27
+# Stop Forum Spam (SFS) listings: 74.
+# Updated: 2019.05.27 / Checked: 2019.09.30
 
 103.116.36.0/22 Deny Spam
 Origin: IN

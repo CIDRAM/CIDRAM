@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2019.09.29).
+ * This file: Front-end functions file (last modified: 2019.09.30).
  */
 
 /**
@@ -1638,7 +1638,7 @@ $CIDRAM['UpdatesHandler-Update'] = function ($ID) use (&$CIDRAM) {
             $CIDRAM['Components']['Meta'][$ThisTarget]['RemoteData'],
             $CIDRAM['Components']['Meta'][$ThisTarget]['Remote']
         );
-        $CIDRAM['UpdateFailed'] = false;
+        $UpdateFailed = false;
         if (
             substr($CIDRAM['Components']['Meta'][$ThisTarget]['RemoteData'], 0, 4) === "---\n" &&
             ($CIDRAM['Components']['EoYAML'] = strpos(
@@ -1810,7 +1810,7 @@ $CIDRAM['UpdatesHandler-Update'] = function ($ID) use (&$CIDRAM) {
                         }
                     });
                 }
-                $CIDRAM['UpdateFailed'] = true;
+                $UpdateFailed = true;
             } else {
                 /** Prune unwanted files and directories (update/install success). */
                 if (!empty($CIDRAM['Components']['Meta'][$ThisTarget]['Files']['To'])) {
@@ -1858,9 +1858,9 @@ $CIDRAM['UpdatesHandler-Update'] = function ($ID) use (&$CIDRAM) {
                 $CIDRAM['Components']['Meta'][$ThisTarget] = $CIDRAM['Components']['RemoteMeta'][$ThisTarget];
             }
         } else {
-            $CIDRAM['UpdateFailed'] = true;
+            $UpdateFailed = true;
         }
-        if ($CIDRAM['UpdateFailed']) {
+        if ($UpdateFailed) {
             $CIDRAM['FE']['state_msg'] .= '<code>' . $ThisTarget . '</code> – ';
             if (
                 empty($CIDRAM['Components']['Meta'][$ThisTarget]['Version']) &&
@@ -2186,10 +2186,7 @@ $CIDRAM['UpdatesHandler-Repair'] = function ($ID) use (&$CIDRAM) {
                     $RepairFailed = true;
                     continue;
                 }
-                if ($LocalFileSize) {
-                    $BytesRemoved += $LocalFileSize;
-                    unlink($CIDRAM['Vault'] . $RemoteFileTo);
-                }
+                $BytesRemoved += $LocalFileSize;
                 $BytesAdded += $RemoteFileSize;
                 $Handle = fopen($CIDRAM['Vault'] . $RemoteFileTo, 'wb');
                 fwrite($Handle, $RemoteFile);

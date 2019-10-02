@@ -10,6 +10,11 @@ Detailed version release guidelines for CIDRAM can be found at:
 
 === Changes made since last versioned release ===
 
+(none)
+
+=== Version/Release 1.15.0 ===
+MINOR RELEASE.
+
 - [2019.09.06; Bug-fix; Maikuolan]: Found a way to trigger an invalid argument
   warning at the front-end updates page in some contexts; Fixed.
 
@@ -29,6 +34,9 @@ Detailed version release guidelines for CIDRAM can be found at:
 
 - [2019.09.29; NEW FEATURE; Maikuolan]: Added the ability to automatically
   repair some components via the front-end updates page.
+
+Caleb M (Maikuolan),
+October 2, 2019.
 
 === Version/Release 1.14.0 ===
 MINOR RELEASE.
@@ -1288,7 +1296,7 @@ MINOR RELEASE.
   text support (there were some rendering problems for some languages caused by
   the approach taken; this has been corrected).
 
-- [2016.08.11; Non-core change (Wordpress plugin); Maikuolan]: Added code to
+- [2016.08.11; Non-core change (WordPress plugin); Maikuolan]: Added code to
   ensure that CIDRAM will be loaded before any other plugins in order to help
   avoid conflicts associated with caching plugins and other caching systems
   which could sometimes prevent requests from being blocked.
@@ -1337,7 +1345,7 @@ PATCH RELEASE.
   translations; Slightly closer to completing the translations for all targeted
   languages.
 
-- [2016.08.06; Non-core change (Wordpress plugin); Maikuolan]: Opted to remove
+- [2016.08.06; Non-core change (WordPress plugin); Maikuolan]: Opted to remove
   action hook call and instead load everything immediately, as to avoid
   conflicts associated with caching plugins and other caching systems which
   could sometimes prevent requests from being blocked.

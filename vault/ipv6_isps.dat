@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_isps.dat
 
-# Version: 2019.274.557
-# Last modified: 2019.10.02
+# Version: 2019.278.521
+# Last modified: 2019.10.06
 
 
 # ---
@@ -423,7 +423,7 @@ Tag: Init7
 
 # ASNs 3491, 4760, 6279, 7262 ("PCCW Global" / "Beyond The Network America, Inc").
 # Mirai detected on this network.
-# Updated: 2019.06.01
+# Updated: 2019.06.01 / Checked: 2019.10.06
 
 2a03:5400::/32 Deny Spam
 Origin: BE
@@ -1519,11 +1519,11 @@ recaptcha:
 
 
 # ASN 3216 ("PJSC Vimpelcom").
-# %Listed, Google Malware Dashboard: 4.99%.
-# Stop Forum Spam (SFS) listings: 3,224.
+# %Listed, Google Malware Dashboard: 1.88%.
+# Stop Forum Spam (SFS) listings: 2,724.
 # Similarly to with the Rostelecom CIDRs, blocking the entirety of all "Vimpelcom" ASNs could be problematic. Instead,
 # we'll try to limit listings to those CIDRs known to be problematic (hacking events, spamming events, etc).
-# Updated: 2017.09.30 / Checked: 2019.05.28
+# Updated: 2017.09.30 / Checked: 2019.10.06
 
 2a00:1248::/32 Deny Generic
 Origin: RU
@@ -1863,6 +1863,23 @@ Origin: RU
 2a0d:5600:a32::/48 Deny Generic
 Origin: US
 Tag: M247 Ltd
+---
+recaptcha:
+ enabled: true
+
+
+# ASN 7922 ("Comcast Cable Communications, LLC").
+# This is a MAJOR provider of human access endpoints in the United States, and
+# should NEVER be blocked in entirety. However, occasionally there are some
+# specific IPs on their network emitting significant amounts of spam, which
+# warrants that this section be included in the signature files here.
+# %Listed, abuseat.org (CBL-Listed): 0.01%.
+# Stop Forum Spam (SFS) listings: 8,762.
+# Updated: 2019.10.05
+
+2601:199:77f:f34e::/64 Deny Spam
+Origin: US
+Tag: Comcast Spam IPs
 ---
 recaptcha:
  enabled: true

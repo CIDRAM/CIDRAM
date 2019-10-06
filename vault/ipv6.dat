@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6.dat
 
-# Version: 2019.274.557
-# Last modified: 2019.10.02
+# Version: 2019.278.521
+# Last modified: 2019.10.06
 
 
 # ---
@@ -1099,7 +1099,8 @@ Tag: Wowrack.com
 
 
 # ASN 11051 ("Cyberverse, Inc").
-# Updated: 2019.05.27
+# %Listed, Google Malware Dashboard: 0.15%.
+# Updated: 2019.05.27 / Checked: 2019.10.06
 
 2602:fe6b:1000::/36 Deny Cloud
 2607:f820::/32 Deny Cloud
@@ -3231,8 +3232,8 @@ Tag: eSited Solutions
 
 
 # ASN 21155 ("ProServe B.V").
-# %Listed, Google Malware Dashboard: 0.07%.
-# Updated: 2019.05.22
+# No recent reports or bad activity detected. Possible candidate for future removal.
+# Updated: 2019.05.22 / Checked: 2019.10.05
 
 2001:678:10c::/48 Deny Cloud
 2001:67c:2d0::/48 Deny Cloud
@@ -3245,18 +3246,17 @@ Tag: ProServe B.V
 
 
 # ASN 39326 ("HighSpeed Office Limited").
-# Stop Forum Spam (SFS) listings: 249.
-# Updated: 2019.05.22
+# Stop Forum Spam (SFS) listings: 182.
+# Updated: 2019.10.05
 
 2a03:f80:33::/48 Deny Cloud
+2a03:f80:44::/48 Deny Cloud
 2a03:f80:441::/48 Deny Cloud
 Origin: AT
 2001:a08::/32 Deny Cloud
 2a01:348::/32 Deny Cloud
 2a03:94c0::/40 Deny Cloud
 Origin: GB
-2a03:f80:44::/48 Deny Cloud
-Origin: IM
 Tag: HighSpeed Office Ltd
 
 
@@ -3461,9 +3461,9 @@ Tag: RouteLabel V.O.F
 
 
 # ASN 42632 ("MnogoByte LLC").
-# %Listed, Google Malware Dashboard: 0.10%.
-# Stop Forum Spam (SFS) listings: 17.
-# Updated: 2018.08.05 / Checked: 2019.05.28
+# %Listed, Google Malware Dashboard: 0.07%.
+# Stop Forum Spam (SFS) listings: 660.
+# Updated: 2018.08.05 / Checked: 2019.10.06
 
 2001:67c:1688::/48 Deny Cloud
 2a02:878:1::/48 Deny Cloud
@@ -3606,9 +3606,9 @@ Tag: Host Sailor Ltd
 
 # ASNs 61317, 61440 ("Digital Energy Technologies").
 # Ranges change frequently / Should update often.
-# %Listed, Google Malware Dashboard: 0.06% (AS61317), 0.23% (AS61440).
-# Stop Forum Spam (SFS) listings: 23,061 (AS61317), 5,040 (AS61440).
-# Updated: 2019.05.22
+# %Listed, Google Malware Dashboard: 0.04% (AS61317), 0.10% (AS61440).
+# Stop Forum Spam (SFS) listings: 28,684 (AS61317), 2,196 (AS61440).
+# Updated: 2019.05.22 / Checked: 2019.10.05
 
 2803:80::/36 Deny Cloud
 2803:80:1004::/48 Deny Cloud
@@ -3728,7 +3728,8 @@ Tag: Data Room, Inc
 
 
 # ASN 7151 ("vXchnge Operating, LLC").
-# Updated: 2016.07.20 / Checked: 2019.05.27
+# No recent reports or bad activity detected. Possible candidate for future removal.
+# Updated: 2016.07.20 / Checked: 2019.10.06
 
 2607:fce0::/32 Deny Cloud
 Origin: US
@@ -3793,9 +3794,9 @@ Tag: CyberWorld
 
 # ASN 12637 ("Seeweb S.r.l").
 # (Can omit anything under 44../8; clean).
-# %Listed, Google Malware Dashboard: 0.10% (AS12637).
-# Stop Forum Spam (SFS) listings: 33 (AS12637).
-# Updated: 2019.05.28
+# %Listed, Google Malware Dashboard: 0.04%.
+# Stop Forum Spam (SFS) listings: 25.
+# Updated: 2019.05.28 / Checked: 2019.10.06
 
 2a0b:fd40::/29 Deny Cloud
 Origin: CH
@@ -3817,11 +3818,11 @@ Tag: Seeweb S.r.l
 
 
 # ASN 50837 ("Cloud Sigma").
-# Stop Forum Spam (SFS) listings: 1.
-# Updated: 2019.01.29 / Checked: 2019.05.27
+# Stop Forum Spam (SFS) listings: 25.
+# Updated: 2019.10.06
 
 2a01:9980:1::/48 Deny Cloud
-2a01:9980:2::/47 Deny Cloud
+2a01:9980:2::/48 Deny Cloud
 2a01:9980:a::/47 Deny Cloud
 2a01:9980:c::/48 Deny Cloud
 Origin: CH
@@ -3853,12 +3854,10 @@ Tag: Affinity Internet, Inc
 
 
 # ASNs 52048, 60567, 202920, 203557 ("DataClub S.A").
-# Updated: 2019.05.22
+# Updated: 2019.10.05
 
-2a02:4840::/47 Deny Cloud
-2a02:4840:2::/48 Deny Cloud
+2a02:4840:101::/48 Deny Cloud
 2a02:4840:200::/47 Deny Cloud
-2a02:4840:1000::/48 Deny Cloud
 Origin: LV
 Tag: DataClub S.A
 
@@ -4769,12 +4768,12 @@ Tag: Aruba S.p.A
 
 
 # ASN 45671 ("Wholesale Services Provider").
-# %Listed, Google Malware Dashboard: 0.19%.
-# Stop Forum Spam (SFS) listings: 151.
-# Updated: 2019.01.07 / Checked: 2019.05.22
+# (Can omit anything under 44../8; clean).
+# %Listed, Google Malware Dashboard: 0.21%.
+# Stop Forum Spam (SFS) listings: 191.
+# Updated: 2019.10.05
 
 2001:df1:6800::/48 Deny Cloud
-2400:5dc0::/48 Deny Cloud
 2400:8100::/32 Deny Cloud
 2400:d400:1::/48 Deny Cloud
 2400:d400:2::/48 Deny Cloud
@@ -5902,9 +5901,10 @@ Tag: Next Layer
 
 
 # ASN 62744 ("Quintex Alliance Consulting").
-# Caught probing honeypots for vulnerabilities.
-# Stop Forum Spam (SFS) listings: 59,743.
-# Updated: 2019.05.25
+# Caught probing honeypots for vulnerabilities + significant source of spam.
+# (Can omit anything under 44../8; clean).
+# Stop Forum Spam (SFS) listings: 79,563.
+# Updated: 2019.05.25 / Checked: 2019.10.06
 
 2620:7:6000::/47 Deny Cloud
 Origin: US
@@ -5915,8 +5915,8 @@ Tag: Quintex
 # Caught XRumer operating on this network. Primarily a server leasing and webhosting company, but marking for use with
 # reCAPTCHA, due to that they're multiplay, and also offer corporate internet connectivity (possible human endpoints).
 # Not sure how to distinguish which ranges belong to which service within the network.
-# Stop Forum Spam (SFS) listings: 241.
-# Updated: 2019.05.28
+# Stop Forum Spam (SFS) listings: 191.
+# Updated: 2019.05.28 / Checked: 2019.10.06
 
 2400:3240::/32 Deny Cloud
 Origin: BD
@@ -6193,3 +6193,13 @@ Tag: Greenhost BV
 2a03:dec0::/32 Deny Cloud
 Origin: RU
 Tag: INTERRA
+
+
+# ASNs 204490 ("Kontel LLC").
+# Caught trying to hack WordPress sites.
+# Stop Forum Spam (SFS) listings: 663.
+# Updated: 2019.10.05
+
+2a0d:c580::/29 Deny Cloud
+Origin: RU
+Tag: Kontel LLC

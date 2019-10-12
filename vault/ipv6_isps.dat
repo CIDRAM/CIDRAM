@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_isps.dat
 
-# Version: 2019.278.521
-# Last modified: 2019.10.06
+# Version: 2019.282.281
+# Last modified: 2019.10.10
 
 
 # ---
@@ -273,7 +273,7 @@ Tag: CH-NET S.R.L
 
 # ASN 7743 ("JPMorgan Chase & Co").
 # Stop Forum Spam (SFS) listings: 1.
-# Updated: 2019.06.02
+# Updated: 2019.06.02 / Checked: 2019.10.10
 
 2620:11::/45 Deny Generic
 2620:11:8::/47 Deny Generic
@@ -1287,21 +1287,21 @@ recaptcha:
 
 
 # ASN 18403 ("The Corporation for Financing & Promoting Technology").
-# Interlaces with numerous providers and contains a large portion of Vietnamese human access endpoints; Would rather
-# not be including this section here due to the high risk of false positives, but amount of spamming, hacking,
-# attempted brute-forcing, probing, etc seen from this ASN can't be ignored.
-# %Listed, Google Malware Dashboard: 0.25%.
-# %Listed, abuseat.org (CBL-Listed): 3.04%.
-# Stop Forum Spam (SFS) listings: 10,011.
-# Updated: 2019.06.02
+# Interlaces with human endpoints in Vietnam, but also a significant source of
+# spam, hacks, brute-forcing, probing, etc.
+# %Listed, Google Malware Dashboard: 0.26%.
+# %Listed, abuseat.org (CBL-Listed): 3.32%.
+# Stop Forum Spam (SFS) listings: 9,469.
+# Updated: 2019.10.10
 
 2001:df2:d900::/48 Deny Generic
 2001:df6:1e00::/48 Deny Generic
-2401:f2c0::/32 Deny Generic
 2401:f740::/32 Deny Generic
 2403:6a40::/48 Deny Generic
 2404:b740::/48 Deny Generic
 2404:dac0::/48 Deny Generic
+2405:19c0::/48 Deny Generic
+2405:1ac0::/48 Deny Generic
 2405:4800::/32 Deny Generic
 Origin: VN
 Tag: CFPT

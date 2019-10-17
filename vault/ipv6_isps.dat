@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_isps.dat
 
-# Version: 2019.282.281
-# Last modified: 2019.10.10
+# Version: 2019.288.567
+# Last modified: 2019.10.16
 
 
 # ---
@@ -877,10 +877,10 @@ recaptcha:
 # nor its listing at a number of BLs. Marked for use with reCAPTCHA to reduce
 # the false positive risk. Websites intended for a Chinese audience should keep
 # this section listed in their ignore.dat file.
-# %Listed, Google Malware Dashboard: 0.98%.
-# %Listed, abuseat.org (CBL-Listed): 0.82%.
-# Stop Forum Spam (SFS) listings: 41,065.
-# Updated: 2019.06.14
+# %Listed, Google Malware Dashboard: 0.86%.
+# %Listed, abuseat.org (CBL-Listed): 0.86%.
+# Stop Forum Spam (SFS) listings: 31,934.
+# Updated: 2019.10.16
 
 2406:8500::/32 Deny Generic
 240e::/20 Deny Generic
@@ -905,6 +905,7 @@ Origin: GB
 Origin: HK
 2605:9d80:8001::/48 Deny Generic
 2605:9d80:8011::/48 Deny Generic
+2605:9d80:8021::/48 Deny Generic
 2605:9d80:8031::/48 Deny Generic
 2605:9d80:8041::/48 Deny Generic
 2605:9d80:8081::/48 Deny Generic
@@ -1588,15 +1589,15 @@ recaptcha:
  enabled: true
 
 
-# ASNs 12768, 25408, 34533, 41661, 41668, 41727, 41754, 42116, 42682, 50542,
-# 51570, 59713 ('JSC "ER-Telecom Holding"').
+# ASNs 12768, 25408, 31484, 34533, 41661, 41668, 41727, 41754, 42116, 42682,
+# 50542, 51570, 59713 ('JSC "ER-Telecom Holding"').
 # ER-Telecom is a legit, major domestic ISP in Russia, but also a significant
 # source of spam. Websites intended for a Russian audience should keep this
 # section listed in their ignore.dat file. Section also marked for use with
 # reCAPTCHA by default. ER-Telecom currently announces 87 ASNs, but we're
 # including only those that currently have more than a thousand active listings
-# at SFS (that's 12 ASNs at this time).
-# Updated: 2019.07.18
+# at SFS (that's 13 ASNs at this time).
+# Updated: 2019.10.16
 
 2a00:1c78::/29 Deny Spam
 2a02:2698::/38 Deny Spam
@@ -1692,6 +1693,7 @@ recaptcha:
 2a03:1ac0:bceb::/50 Deny Spam
 2a03:1ac0:c196:6900::/56 Deny Spam
 2a03:1ac0:d421:e000::/51 Deny Spam
+2a03:cf80::/32 Deny Spam
 Origin: RU
 Tag: ER-Telecom Holding
 ---
@@ -1734,19 +1736,6 @@ recaptcha:
 2a02:22a8::/32 Deny Generic
 Origin: RU
 Tag: is74.ru
----
-recaptcha:
- enabled: true
-
-
-# ASN 25408 ("WEST CALL SPb LLC").
-# %Listed, Google Malware Dashboard: 0.91%.
-# Stop Forum Spam (SFS) listings: 1,042.
-# Updated: 2017.11.26 / Checked: 2019.06.15
-
-2a00:1c78::/29 Deny Generic
-Origin: RU
-Tag: WEST CALL SPb LLC
 ---
 recaptcha:
  enabled: true

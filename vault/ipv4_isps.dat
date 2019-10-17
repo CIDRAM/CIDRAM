@@ -1,8 +1,8 @@
 # IPv4 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv4_isps.dat
 
-# Version: 2019.282.281
-# Last modified: 2019.10.10
+# Version: 2019.288.567
+# Last modified: 2019.10.16
 
 
 # ---
@@ -870,9 +870,9 @@ recaptcha:
 
 
 # ASN 16322 ("Pars Online PJS").
-# %Listed, abuseat.org (CBL-Listed): 7.55%.
-# Stop Forum Spam (SFS) listings: 336.
-# Updated: 2019.06.15
+# %Listed, abuseat.org (CBL-Listed): 8.60%.
+# Stop Forum Spam (SFS) listings: 275.
+# Updated: 2019.10.16
 
 5.78.0.0/16 Deny Spam
 31.214.132.0/23 Deny Spam
@@ -899,7 +899,6 @@ recaptcha:
 95.156.222.0/23 Deny Spam
 95.156.233.0/24 Deny Spam
 95.156.234.0/23 Deny Spam
-95.156.236.0/23 Deny Spam
 95.156.248.0/23 Deny Spam
 109.230.192.0/23 Deny Spam
 109.230.204.0/22 Deny Spam
@@ -3907,10 +3906,10 @@ recaptcha:
 # nor its listing at a number of BLs. Marked for use with reCAPTCHA to reduce
 # the false positive risk. Websites intended for a Chinese audience should keep
 # this section listed in their ignore.dat file.
-# %Listed, Google Malware Dashboard: 0.98%.
-# %Listed, abuseat.org (CBL-Listed): 0.82%.
-# Stop Forum Spam (SFS) listings: 41,065.
-# Updated: 2019.06.14
+# %Listed, Google Malware Dashboard: 0.86%.
+# %Listed, abuseat.org (CBL-Listed): 0.86%.
+# Stop Forum Spam (SFS) listings: 31,934.
+# Updated: 2019.10.16
 
 147.78.134.0/23 Deny Generic
 Origin: AE
@@ -3922,7 +3921,6 @@ Origin: AE
 1.92.0.0/20 Deny Generic
 1.180.0.0/14 Deny Generic
 1.192.0.0/13 Deny Generic
-1.203.192.0/18 Deny Generic
 1.204.0.0/14 Deny Generic
 14.16.0.0/12 Deny Generic
 14.104.0.0/13 Deny Generic
@@ -3962,14 +3960,13 @@ Origin: AE
 58.32.0.0/11 Deny Generic
 58.66.0.0/15 Deny Generic
 58.99.128.0/17 Deny Generic
+58.100.0.0/15 Deny Generic
 58.208.0.0/12 Deny Generic
 59.32.0.0/13 Deny Generic
 59.40.0.0/15 Deny Generic
 59.42.0.0/16 Deny Generic
 59.44.0.0/14 Deny Generic
 59.48.0.0/12 Deny Generic
-59.81.0.0/18 Deny Generic
-59.83.128.0/18 Deny Generic
 59.107.0.0/17 Deny Generic
 59.172.0.0/14 Deny Generic
 60.55.0.0/16 Deny Generic
@@ -4010,7 +4007,6 @@ Origin: AE
 61.188.0.0/16 Deny Generic
 61.189.128.0/17 Deny Generic
 61.190.0.0/15 Deny Generic
-101.110.116.0/23 Deny Generic
 101.248.0.0/15 Deny Generic
 103.8.32.0/24 Deny Generic
 103.15.200.0/22 Deny Generic
@@ -4024,12 +4020,9 @@ Origin: AE
 106.16.0.0/14 Deny Generic
 106.32.0.0/14 Deny Generic
 106.36.0.0/16 Deny Generic
-106.37.0.0/19 Deny Generic
-106.37.40.0/21 Deny Generic
 106.40.0.0/14 Deny Generic
 106.44.0.0/15 Deny Generic
 106.46.0.0/16 Deny Generic
-106.47.224.0/19 Deny Generic
 106.56.0.0/14 Deny Generic
 106.60.0.0/15 Deny Generic
 106.62.0.0/16 Deny Generic
@@ -4038,9 +4031,6 @@ Origin: AE
 106.92.0.0/16 Deny Generic
 106.108.0.0/14 Deny Generic
 106.112.0.0/13 Deny Generic
-106.121.0.0/17 Deny Generic
-106.121.128.0/18 Deny Generic
-106.121.192.0/21 Deny Generic
 106.122.0.0/15 Deny Generic
 106.124.0.0/14 Deny Generic
 106.224.0.0/14 Deny Generic
@@ -4075,6 +4065,7 @@ Origin: AE
 113.128.0.0/15 Deny Generic
 113.132.0.0/14 Deny Generic
 113.136.0.0/13 Deny Generic
+113.214.0.0/15 Deny Generic
 113.218.0.0/15 Deny Generic
 113.220.0.0/14 Deny Generic
 113.240.0.0/13 Deny Generic
@@ -4100,7 +4091,6 @@ Origin: AE
 116.16.0.0/12 Deny Generic
 116.52.0.0/14 Deny Generic
 116.69.0.0/16 Deny Generic
-116.204.0.0/17 Deny Generic
 116.207.0.0/16 Deny Generic
 116.208.0.0/14 Deny Generic
 116.248.0.0/15 Deny Generic
@@ -4111,10 +4101,10 @@ Origin: AE
 117.32.0.0/13 Deny Generic
 117.40.0.0/14 Deny Generic
 117.44.0.0/15 Deny Generic
-117.48.160.0/20 Deny Generic
 117.57.0.0/16 Deny Generic
 117.60.0.0/14 Deny Generic
 117.64.0.0/13 Deny Generic
+117.79.80.0/20 Deny Generic
 117.80.0.0/12 Deny Generic
 118.84.0.0/15 Deny Generic
 118.112.0.0/13 Deny Generic
@@ -4137,13 +4127,13 @@ Origin: AE
 119.120.0.0/13 Deny Generic
 119.128.0.0/12 Deny Generic
 119.144.0.0/14 Deny Generic
-119.233.0.0/17 Deny Generic
 120.31.66.0/23 Deny Generic
 120.31.68.0/22 Deny Generic
 120.31.128.0/20 Deny Generic
 120.32.0.0/13 Deny Generic
 120.40.0.0/14 Deny Generic
 120.68.0.0/14 Deny Generic
+120.88.8.0/21 Deny Generic
 121.8.0.0/13 Deny Generic
 121.32.0.0/14 Deny Generic
 121.56.0.0/15 Deny Generic
@@ -4157,7 +4147,6 @@ Origin: AE
 122.102.94.0/23 Deny Generic
 122.224.0.0/12 Deny Generic
 122.240.0.0/13 Deny Generic
-122.248.48.0/20 Deny Generic
 123.52.0.0/14 Deny Generic
 123.96.0.0/15 Deny Generic
 123.101.0.0/16 Deny Generic
@@ -4181,6 +4170,7 @@ Origin: AE
 125.104.0.0/13 Deny Generic
 125.112.0.0/12 Deny Generic
 125.171.0.0/16 Deny Generic
+125.210.0.0/16 Deny Generic
 139.189.0.0/16 Deny Generic
 139.200.0.0/13 Deny Generic
 140.75.0.0/16 Deny Generic
@@ -4259,6 +4249,26 @@ Origin: AE
 203.2.64.0/21 Deny Generic
 203.25.208.0/20 Deny Generic
 203.33.243.0/24 Deny Generic
+203.34.4.0/24 Deny Generic
+203.34.21.0/24 Deny Generic
+203.34.27.0/24 Deny Generic
+203.34.39.0/24 Deny Generic
+203.34.54.0/24 Deny Generic
+203.34.67.0/24 Deny Generic
+203.34.69.0/24 Deny Generic
+203.34.76.0/24 Deny Generic
+203.34.106.0/24 Deny Generic
+203.34.113.0/24 Deny Generic
+203.34.147.0/24 Deny Generic
+203.34.150.0/24 Deny Generic
+203.34.161.0/24 Deny Generic
+203.34.162.0/24 Deny Generic
+203.34.187.0/24 Deny Generic
+203.34.232.0/24 Deny Generic
+203.34.240.0/24 Deny Generic
+203.34.242.0/24 Deny Generic
+203.34.245.0/24 Deny Generic
+203.34.251.0/24 Deny Generic
 203.62.2.0/24 Deny Generic
 203.62.131.0/24 Deny Generic
 203.62.139.0/24 Deny Generic
@@ -4295,7 +4305,6 @@ Origin: AE
 211.155.16.0/20 Deny Generic
 211.155.224.0/21 Deny Generic
 211.156.112.0/20 Deny Generic
-211.156.176.0/20 Deny Generic
 211.156.240.0/20 Deny Generic
 211.159.64.0/20 Deny Generic
 211.167.0.0/20 Deny Generic
@@ -4322,7 +4331,9 @@ Origin: AE
 218.84.0.0/14 Deny Generic
 218.88.0.0/13 Deny Generic
 218.97.0.0/23 Deny Generic
+218.108.0.0/15 Deny Generic
 218.240.0.0/18 Deny Generic
+219.82.0.0/16 Deny Generic
 219.128.0.0/13 Deny Generic
 219.136.0.0/14 Deny Generic
 219.140.0.0/16 Deny Generic
@@ -4374,9 +4385,11 @@ Origin: HK
 66.102.248.0/22 Deny Generic
 66.102.254.0/23 Deny Generic
 69.163.104.0/24 Deny Generic
+137.99.2.0/24 Deny Generic
 146.222.79.0/24 Deny Generic
 146.222.81.0/24 Deny Generic
 146.222.94.0/24 Deny Generic
+206.82.104.0/22 Deny Generic
 Origin: US
 154.72.44.0/24 Deny Generic
 Origin: ZA
@@ -8027,15 +8040,15 @@ recaptcha:
  enabled: true
 
 
-# ASNs 12768, 25408, 34533, 41661, 41668, 41727, 41754, 42116, 42682, 50542,
-# 51570, 59713 ('JSC "ER-Telecom Holding"').
+# ASNs 12768, 25408, 31484, 34533, 41661, 41668, 41727, 41754, 42116, 42682,
+# 50542, 51570, 59713 ('JSC "ER-Telecom Holding"').
 # ER-Telecom is a legit, major domestic ISP in Russia, but also a significant
 # source of spam. Websites intended for a Russian audience should keep this
 # section listed in their ignore.dat file. Section also marked for use with
 # reCAPTCHA by default. ER-Telecom currently announces 87 ASNs, but we're
 # including only those that currently have more than a thousand active listings
-# at SFS (that's 12 ASNs at this time).
-# Updated: 2019.07.18
+# at SFS (that's 13 ASNs at this time).
+# Updated: 2019.10.16
 
 5.3.87.0/24 Deny Spam
 5.3.144.0/20 Deny Spam
@@ -8058,7 +8071,6 @@ recaptcha:
 31.41.32.0/21 Deny Spam
 37.112.0.0/20 Deny Spam
 37.112.24.0/21 Deny Spam
-37.112.120.0/21 Deny Spam
 37.112.128.0/20 Deny Spam
 37.113.0.0/18 Deny Spam
 37.113.128.0/18 Deny Spam
@@ -8071,8 +8083,11 @@ recaptcha:
 62.182.88.0/21 Deny Spam
 77.244.16.0/20 Deny Spam
 79.141.48.0/20 Deny Spam
+80.246.240.0/20 Deny Spam
+83.136.240.0/21 Deny Spam
 84.52.64.0/18 Deny Spam
 85.113.32.0/19 Deny Spam
+85.143.128.0/20 Deny Spam
 91.144.132.0/22 Deny Spam
 91.144.140.0/22 Deny Spam
 91.144.144.0/20 Deny Spam
@@ -8112,7 +8127,9 @@ recaptcha:
 176.214.184.0/21 Deny Spam
 176.215.32.0/20 Deny Spam
 176.215.64.0/21 Deny Spam
+176.221.8.0/21 Deny Spam
 178.161.128.0/17 Deny Spam
+185.7.200.0/22 Deny Spam
 185.202.212.0/22 Deny Spam
 188.186.48.0/21 Deny Spam
 188.187.0.0/17 Deny Spam
@@ -8131,7 +8148,6 @@ recaptcha:
 188.187.250.0/24 Deny Spam
 188.187.254.0/23 Deny Spam
 188.234.0.0/18 Deny Spam
-188.234.116.0/22 Deny Spam
 188.234.168.0/21 Deny Spam
 188.235.0.0/18 Deny Spam
 193.150.105.0/24 Deny Spam
@@ -8352,30 +8368,6 @@ Tag: BRAC
 81.200.80.0/20 Deny Generic
 Origin: RU
 Tag: Children Telemedicin
-
-
-# ASN 25408 ("WEST CALL SPb LLC").
-# %Listed, Google Malware Dashboard: 0.91%.
-# Stop Forum Spam (SFS) listings: 1,042.
-# Updated: 2019.06.15
-
-31.41.32.0/21 Deny Generic
-62.182.88.0/21 Deny Generic
-77.244.16.0/20 Deny Generic
-84.52.64.0/18 Deny Generic
-91.202.220.0/22 Deny Generic
-95.215.56.0/22 Deny Generic
-109.167.128.0/17 Deny Generic
-185.202.212.0/22 Deny Generic
-194.24.240.0/23 Deny Generic
-194.246.112.0/23 Deny Generic
-195.64.140.0/23 Deny Generic
-195.177.120.0/22 Deny Generic
-Origin: RU
-Tag: WEST CALL SPb LLC
----
-recaptcha:
- enabled: true
 
 
 # ASN 198093 ("Foreningen for digitala fri- och rattigheter").

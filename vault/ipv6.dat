@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6.dat
 
-# Version: 2019.288.567
-# Last modified: 2019.10.17
+# Version: 2019.290.492
+# Last modified: 2019.10.18
 
 
 # ---
@@ -60,9 +60,9 @@ Tag: ShangHai AnchNet Tec
 
 
 # ASN 7497 ("Computer Network Information Center").
-# %Listed, Google Malware Dashboard: 0.43%.
+# %Listed, Google Malware Dashboard: 0.23%.
 # Stop Forum Spam (SFS) listings: 7.
-# Updated: 2018.03.28 / Checked: 2019.06.20
+# Updated: 2018.03.28 / Checked: 2019.10.18
 
 2001:cc0::/32 Deny Cloud
 2400:dd00::/28 Deny Cloud
@@ -282,8 +282,9 @@ Origin: AR
 Tag: Dattatec.com
 
 
-# ASNs 7203, 16265, 19148, 28753, 30633, 38930, 59253, 60626, 60781, 133752, 136988, 205544, 394380, 395954, 396190,
-# 396362 ("Leaseweb Network"). Updated: 2019.06.20
+# ASNs 7203, 16265, 19148, 27411, 28753, 30633, 38930, 59253, 60626, 60781,
+# 133752, 136988, 205544, 393886, 394380, 395954, 396190, 396362 ("Leaseweb
+# Network"). Updated: 2019.10.18
 
 2a03:f85:2::/48 Deny Cloud
 Origin: AT
@@ -308,6 +309,11 @@ Origin: GB
 Origin: GI
 2402:9e80:2402::/48 Deny Cloud
 Origin: HK
+2a0f:e200::/48 Deny Cloud
+2a0f:e600::/48 Deny Cloud
+2a0f:ea00::/48 Deny Cloud
+2a0f:ee00::/48 Deny Cloud
+Origin: IL
 2001:1af8::/32 Deny Cloud
 2402:20c0:1::/48 Deny Cloud
 2a00:ec8::/32 Deny Cloud
@@ -356,17 +362,15 @@ Origin: RO
 Origin: SC
 2001:df1:800::/47 Deny Cloud
 2400:9780::/48 Deny Cloud
-2402:5980::/40 Deny Cloud
 2402:a7c0::/31 Deny Cloud
 Origin: SG
 2604:9a00::/32 Deny Cloud
 2605:fe80::/32 Deny Cloud
 2606:9880::/32 Deny Cloud
-2607:f5b0::/32 Deny Cloud
-2607:f5b2::/31 Deny Cloud
+2607:f5b0::/30 Deny Cloud
 2607:f5b4::/32 Deny Cloud
 2607:f5b5::/47 Deny Cloud
-2607:f5b7::/32 Deny Cloud
+2607:f5b6::/31 Deny Cloud
 Origin: US
 Tag: Leaseweb
 
@@ -2256,9 +2260,9 @@ Tag: Combell NV
 
 
 # ASN 39020 ("Comvive Servidores S.L").
-# %Listed, Google Malware Dashboard: 0.31%.
-# Stop Forum Spam (SFS) listings: 192.
-# Updated: 2016.04.10 / Checked: 2019.06.20
+# %Listed, Google Malware Dashboard: 0.38%.
+# Stop Forum Spam (SFS) listings: 70.
+# Updated: 2016.04.10 / Checked: 2019.10.18
 
 2a00:1d70::/32 Deny Cloud
 Origin: ES
@@ -2588,6 +2592,16 @@ Origin: NL
 2607:5500::/31 Deny Cloud
 Origin: US
 Tag: Hostwinds LLC
+
+
+# ASN 394695 ("PDR").
+# %Listed, Google Malware Dashboard: 0.33%.
+# Stop Forum Spam (SFS) listings: 25.
+# Updated: 2019.10.18
+
+2604:ddc0::/32 Deny Cloud
+Origin: US
+Tag: PDR
 
 
 # ASN 8342 ("OJSC RTComm.RU").
@@ -6231,7 +6245,7 @@ Origin: RU
 Tag: INTERRA
 
 
-# ASNs 204490 ("Kontel LLC").
+# ASN 204490 ("Kontel LLC").
 # Caught trying to hack WordPress sites.
 # Stop Forum Spam (SFS) listings: 663.
 # Updated: 2019.10.05
@@ -6239,3 +6253,17 @@ Tag: INTERRA
 2a0d:c580::/29 Deny Cloud
 Origin: RU
 Tag: Kontel LLC
+
+
+# ASN 39122 ("Blacknight Internet Solutions Limited").
+# Caught probing for PII and a source of forum spam.
+# %Listed, Google Malware Dashboard: 0.05%.
+# Stop Forum Spam (SFS) listings: 467.
+# Updated: 2019.10.18
+
+2a01:a8::/32 Deny Cloud
+2a01:ac::/32 Deny Cloud
+2a01:4d8::/32 Deny Cloud
+2a0b:bc7::/32 Deny Cloud
+Origin: IE
+Tag: Blacknight

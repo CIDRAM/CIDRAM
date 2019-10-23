@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2019.09.24).
+ * This file: Functions file (last modified: 2019.10.23).
  */
 
 /** Autoloader for CIDRAM classes. */
@@ -64,7 +64,7 @@ $CIDRAM['ReadFile'] = function (string $File): string {
  * @return string The string with its encapsulated substrings replaced.
  */
 $CIDRAM['ParseVars'] = function (array $Needle, string $Haystack): string {
-    if (!is_array($Needle) || empty($Haystack)) {
+    if (empty($Haystack)) {
         return '';
     }
     array_walk($Needle, function ($Value, $Key) use (&$Haystack) {
@@ -1479,8 +1479,8 @@ $CIDRAM['InitialiseCache'] = function () use (&$CIDRAM) {
  */
 $CIDRAM['InitialiseCacheSection'] = function (string $SectionName) use (&$CIDRAM) {
 
-    /** Safety. */
-    if (empty($SectionName) || !is_string($SectionName) || isset($CIDRAM[$SectionName], $CIDRAM[$SectionName . '-Modified'])) {
+    /** Guard. */
+    if (empty($SectionName) || isset($CIDRAM[$SectionName], $CIDRAM[$SectionName . '-Modified'])) {
         return;
     }
 
@@ -1492,7 +1492,7 @@ $CIDRAM['InitialiseCacheSection'] = function (string $SectionName) use (&$CIDRAM
 
     /** Fetch currently stored and clear expired entries. */
     if ($CIDRAM[$SectionName] = $CIDRAM['Cache']->getEntry($SectionName)) {
-        if ($CIDRAM['Cache']->clearExpired($CIDRAM[$SectionName])) {
+        if (is_array($CIDRAM[$SectionName]) && $CIDRAM['Cache']->clearExpired($CIDRAM[$SectionName])) {
             $CIDRAM[$SectionName . '-Modified'] = true;
         }
     }

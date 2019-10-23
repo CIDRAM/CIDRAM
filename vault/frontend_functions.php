@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2019.09.30).
+ * This file: Front-end functions file (last modified: 2019.10.23).
  */
 
 /**
@@ -1233,40 +1233,6 @@ $CIDRAM['GetAssetPath'] = function (string $Asset, bool $CanFail = false) use (&
         return '';
     }
     throw new \Exception('Asset not found');
-};
-
-/**
- * Determines whether to display warnings about the PHP version used (based
- * upon what we know at the time that the package was last updated; information
- * herein is likely to become stale very quickly when not updated frequently).
- *
- * References:
- * - secure.php.net/releases/
- * - secure.php.net/supported-versions.php
- * - cvedetails.com/vendor/74/PHP.html
- * - maikuolan.github.io/Compatibility-Charts/
- * - maikuolan.github.io/Vulnerability-Charts/php.html
- *
- * @param string $Version The PHP version used (defaults to PHP_VERSION).
- * @return int Warning level.
- */
-$CIDRAM['VersionWarning'] = function (string $Version = PHP_VERSION) use (&$CIDRAM): int {
-    $Level = 0;
-    $Minor = (float)$Version;
-    if (!empty($CIDRAM['ForceVersionWarning']) || $Minor < 7.1 || (
-        $Minor === 7.1 && $CIDRAM['VersionCompare']($Version, '7.1.30')
-    ) || (
-        $Minor === 7.2 && $CIDRAM['VersionCompare']($Version, '7.2.19')
-    ) || (
-        $Minor === 7.3 && $CIDRAM['VersionCompare']($Version, '7.3.6')
-    )) {
-        $Level += 2;
-    }
-    if ($Minor < 7.2) {
-        $Level += 1;
-    }
-    $CIDRAM['ForceVersionWarning'] = false;
-    return $Level;
 };
 
 /**

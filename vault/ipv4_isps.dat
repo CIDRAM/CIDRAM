@@ -1,8 +1,8 @@
 # IPv4 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv4_isps.dat
 
-# Version: 2019.288.567
-# Last modified: 2019.10.16
+# Version: 2019.295.435
+# Last modified: 2019.10.23
 
 
 # ---
@@ -923,25 +923,6 @@ recaptcha:
  enabled: true
 
 
-# ASNs 4621, 133042 ("Office of the basic education commission").
-# Limiting signatures to: 106.0.*, 182.93.*, 202.28.*, 202.29.*, 203.172.* (spam activity seems to be mostly in those
-# ranges; ASNs used by several universities in Thailand plus a government office, so, limiting could help reduce the
-# risk of false positives).
-# %Listed, Google Malware Dashboard: 0.36% (AS4621).
-# Stop Forum Spam (SFS) listings: 4 (AS4621), 9 (AS133042).
-# Updated: 2019.06.23
-
-106.0.128.0/17 Deny Spam
-182.93.128.0/17 Deny Spam
-202.28.0.0/15 Deny Spam
-203.172.128.0/17 Deny Spam
-Origin: TH
-Tag: OBEC
----
-recaptcha:
- enabled: true
-
-
 # ASN 48271 ("City Telecom").
 # Stop Forum Spam (SFS) listings: 4.
 # Updated: 2019.03.09 / Checked: 2019.07.07
@@ -1760,18 +1741,6 @@ Origin: NL
 Tag: Init7
 
 
-# ASN 62160 ("Yes Networks Unlimited Ltd").
-# Redacted down to just 3 specific IP addresses at last update (the rest of the network seems okay now). Hopefully can
-# remove the section entirely in the near future.
-# Updated: 2019.06.23
-
-78.108.178.85/32 Deny Spam
-78.108.178.87/32 Deny Spam
-78.108.184.99/32 Deny Spam
-Origin: CZ
-Tag: Yes Networks
-
-
 # ASNs 3491, 4760, 6279, 7262 ("PCCW Global" / "Beyond The Network America, Inc").
 # Mirai detected on this network.
 # Updated: 2019.10.06
@@ -1965,8 +1934,8 @@ recaptcha:
 
 # ASN 62454 ("Zyztm Research Division 10 B.V").
 # Cyber warfare, credit card theft, etc.
-# Stop Forum Spam (SFS) listings: 5.
-# Updated: 2019.06.23
+# Stop Forum Spam (SFS) listings: 2.
+# Updated: 2019.06.23 / Checked: 2019.10.23
 
 185.35.136.0/22 Deny Generic
 Origin: NL
@@ -10396,3 +10365,13 @@ Tag: Reliance Communications
 ---
 recaptcha:
  enabled: true
+
+
+# ASN 198540 ("Przedsiebiorstwo Uslug Specjalistycznych ELAN mgr inz. Andrzej Niechcial").
+# Significant source of forum spam.
+# Stop Forum Spam (SFS) listings: 14,589.
+# Updated: 2019.10.23
+
+91.236.74.0/23 Deny Spam
+Origin: PL
+Tag: Andrzej Niechcial

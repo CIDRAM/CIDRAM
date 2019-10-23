@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6.dat
 
-# Version: 2019.290.492
-# Last modified: 2019.10.18
+# Version: 2019.295.435
+# Last modified: 2019.10.23
 
 
 # ---
@@ -2112,9 +2112,9 @@ Tag: Latisys-Irvine, LLC
 
 # ASN 46261 ("QuickPacket, LLC").
 # Ranges change frequently / Should update often.
-# %Listed, Google Malware Dashboard: 0.37%.
-# Stop Forum Spam (SFS) listings: 2,726.
-# Updated: 2019.06.24
+# %Listed, Google Malware Dashboard: 0.35%.
+# Stop Forum Spam (SFS) listings: 2,534.
+# Updated: 2019.06.24 / Checked: 2019.10.23
 
 2606:f280::/33 Deny Cloud
 2606:f280:8000::/34 Deny Cloud
@@ -3651,11 +3651,12 @@ Origin: NL
 Tag: Host Sailor Ltd
 
 
-# ASNs 61317, 61440 ("Digital Energy Technologies").
+# ASNs 37692, 61317, 61440 ("NetStack Ltd" and "Digital Energy Technologies").
+# (Merged NetStack and D.E.Tech ASNs due to interlacing between the two).
 # Ranges change frequently / Should update often.
-# %Listed, Google Malware Dashboard: 0.04% (AS61317), 0.10% (AS61440).
-# Stop Forum Spam (SFS) listings: 28,684 (AS61317), 2,196 (AS61440).
-# Updated: 2019.05.22 / Checked: 2019.10.05
+# %Listed, Google Malware Dashboard: 0.04% (AS61317), 0.13% (AS61440).
+# Stop Forum Spam (SFS) listings: 43 (AS37692), 27,504 (AS61317), 1,663 (AS61440).
+# Updated: 2019.05.22 / Checked: 2019.10.23
 
 2803:80::/36 Deny Cloud
 2803:80:1004::/48 Deny Cloud
@@ -4294,17 +4295,6 @@ Tag: LLHost Inc
 2a04:2e40::/29 Deny Cloud
 Origin: RS
 Tag: Mainstream doo
-
-
-# ASN 37692 ("NetStack Ltd").
-# Stop Forum Spam (SFS) listings: 50.
-# Updated: 2019.06.02 / Checked: 2019.10.12
-
-2c0f:ee78:8000::/48 Deny Cloud
-2c0f:f738:2201::/48 Deny Cloud
-2c0f:f738:3802::/48 Deny Cloud
-Origin: ZA
-Tag: NetStack Ltd
 
 
 # ASNs 3595, 13354, 14313, 16626, 27325, 32952 ("zColo").
@@ -5727,9 +5717,9 @@ Tag: Host Universal Pty Ltd
 
 
 # ASN 15083 ("Infolink Global Corporation").
-# %Listed, Google Malware Dashboard: 0.34%.
-# Stop Forum Spam (SFS) listings: 129.
-# Updated: 2019.02.27 / Checked: 2019.06.24
+# %Listed, Google Malware Dashboard: 0.25%.
+# Stop Forum Spam (SFS) listings: 175.
+# Updated: 2019.02.27 / Checked: 2019.10.23
 
 2a06:8e40::/29 Deny Cloud
 Origin: DK
@@ -6006,8 +5996,7 @@ Tag: ALMOUROLTEC
 
 # ASN 51048 ("Next Connex Ltd").
 # Some reports of weird access attempts. Cloud provider. Added for the moment and will monitor for a while.
-# Stop Forum Spam (SFS) listings: 1.
-# Updated: 2019.06.23
+# Updated: 2019.06.23 / Checked: 2019.10.23
 
 2a03:4300::/29 Deny Cloud
 Origin: GB
@@ -6019,8 +6008,8 @@ recaptcha:
 
 # ASN 61272 ("Informacines sistemos ir technologijos, UAB").
 # Caught trying to flood/spam honeypots.
-# Stop Forum Spam (SFS) listings: 1,225.
-# Updated: 2019.06.24
+# Stop Forum Spam (SFS) listings: 1,447.
+# Updated: 2019.06.24 / Checked: 2019.10.23
 
 2a02:e00:ffe7::/48 Deny Cloud
 Origin: DE

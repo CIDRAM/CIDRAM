@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2019.10.23).
+ * This file: Functions file (last modified: 2019.10.26).
  */
 
 /** Autoloader for CIDRAM classes. */
@@ -2221,5 +2221,8 @@ $CIDRAM['GenerateID'] = function (): string {
     return $Time;
 };
 
-/** Load all default event handlers. */
-require $CIDRAM['Vault'] . 'event_handlers.php';
+/** Make sure the vault is defined so that tests don't break. */
+if (isset($CIDRAM['Vault'])) {
+    /** Load all default event handlers. */
+    require $CIDRAM['Vault'] . 'event_handlers.php';
+}

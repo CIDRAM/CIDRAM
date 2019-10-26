@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6.dat
 
-# Version: 2019.295.435
-# Last modified: 2019.10.23
+# Version: 2019.298.489
+# Last modified: 2019.10.26
 
 
 # ---
@@ -497,9 +497,9 @@ Tag: eServer.ru
 
 
 # ASNs 6870, 12722 ("RECONN. Operator svyazy Ltd").
-# %Listed, Google Malware Dashboard: 0.27% (AS12722).
-# Stop Forum Spam (SFS) listings: 1,560 (AS6870), 131 (AS12722).
-# Updated: 2019.02.28 / Checked: 2019.06.28
+# %Listed, Google Malware Dashboard: 0.20% (AS12722).
+# Stop Forum Spam (SFS) listings: 614 (AS6870), 130 (AS12722).
+# Updated: 2019.02.28 / Checked: 2019.10.26
 
 2a02:c6c0::/32 Deny Cloud
 Origin: GB
@@ -511,9 +511,9 @@ Tag: svyazy
 
 
 # ASN 35415 ("Webzilla B.V").
-# %Listed, Google Malware Dashboard: 0.19%.
-# Stop Forum Spam (SFS) listings: 140.
-# Updated: 2018.08.22 / Checked: 2019.06.28
+# %Listed, Google Malware Dashboard: 0.14%.
+# Stop Forum Spam (SFS) listings: 136.
+# Updated: 2018.08.22 / Checked: 2019.10.26
 
 2a00:1178::/32 Deny Cloud
 Origin: NL
@@ -1702,13 +1702,15 @@ Tag: Cogent Server
 
 
 # ASNs 59711, 61046, 201525, 202015 ("HZ Hosting Ltd").
-# Updated: 2018.08.21 / Checked: 2019.06.28
+# Stop Forum Spam (SFS) listings: 164 (AS59711), 42 (AS61046), 16 (AS201525), 12 (AS202015).
+# Updated: 2019.10.26
 
 2a01:8640::/46 Deny Cloud
 2a01:8640:4::/47 Deny Cloud
 2a01:8640:7::/48 Deny Cloud
 2a01:8640:8::/48 Deny Cloud
 Origin: GB
+2a0a:e2c3::/32 Deny Cloud
 2a0a:e2c4::/31 Deny Cloud
 Origin: UA
 Tag: HZ Hosting Ltd
@@ -2547,9 +2549,9 @@ Tag: Centrilogic
 
 
 # ASNs 37958, 63541 ("Beijing Blue I.T Technologies Co.,Ltd").
-# %Listed, Google Malware Dashboard: 0.08% (AS63541).
-# Stop Forum Spam (SFS) listings: 50 (AS63541).
-# Updated: 2018.12.11 / Checked: 2019.05.01
+# %Listed, Google Malware Dashboard: 0.44% (AS37958), 0.46% (AS63541).
+# Stop Forum Spam (SFS) listings: 46 (AS63541).
+# Updated: 2018.12.11 / Checked: 2019.10.26
 
 2400:e140:0:3000::/64 Deny Cloud
 2400:e140:1000::/48 Deny Cloud
@@ -3098,9 +3100,9 @@ Tag: UAB Rakrejus
 
 
 # ASNs 22611, 54641 ("InMotion Hosting, Inc").
-# %Listed, Google Malware Dashboard: 0.25% (AS22611), 0.18% (AS54641).
-# Stop Forum Spam (SFS) listings: 1 (AS22611).
-# Updated: 2017.11.29 / Checked: 2019.06.28
+# %Listed, Google Malware Dashboard: 0.14% (AS22611), 0.16% (AS54641).
+# Stop Forum Spam (SFS) listings: 3 (AS22611).
+# Updated: 2017.11.29 / Checked: 2019.10.26
 
 2605:f400:2::/47 Deny Cloud
 Origin: US
@@ -3269,9 +3271,9 @@ Tag: NetRegistry Pty Ltd
 
 
 # ASN 22552 ("eSited Solutions").
-# %Listed, Google Malware Dashboard: 2.67%.
+# %Listed, Google Malware Dashboard: 0.50%.
 # Stop Forum Spam (SFS) listings: 422.
-# Updated: 2017.08.25 / Checked: 2019.05.02
+# Updated: 2017.08.25 / Checked: 2019.10.26
 
 2604:4480::/32 Deny Cloud
 Origin: US
@@ -4154,12 +4156,11 @@ Tag: Dreamscape Networks
 
 
 # ASN 22458 ("NetSource Communications, Inc").
-# %Listed, Google Malware Dashboard: 0.35%.
+# %Listed, Google Malware Dashboard: 0.39%.
 # Stop Forum Spam (SFS) listings: 1.
-# Updated: 2018.10.03 / Checked: 2019.09.15
+# Updated: 2019.10.26
 
 2604:f80::/32 Deny Cloud
-2a0b:1900::/44 Deny Cloud
 Origin: US
 Tag: NetSource
 
@@ -6256,3 +6257,16 @@ Tag: Kontel LLC
 2a0b:bc7::/32 Deny Cloud
 Origin: IE
 Tag: Blacknight
+
+
+# ASNs 23522, 32181 ("GigeNET").
+# Dedicated servers and colo provider; A source of spam.
+# %Listed, Google Malware Dashboard: 0.24% (AS32181).
+# Stop Forum Spam (SFS) listings: 6,886 (AS32181).
+# Updated: 2019.10.26
+
+2001:1850::/32 Deny Cloud
+2604:2700::/32 Deny Cloud
+2a0b:1900::/44 Deny Cloud
+Origin: US
+Tag: GigeNET

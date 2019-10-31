@@ -1,8 +1,8 @@
 # IPv4 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv4.dat
 
-# Version: 2019.298.489
-# Last modified: 2019.10.26
+# Version: 2019.303.535
+# Last modified: 2019.10.31
 
 
 # ---
@@ -2132,11 +2132,11 @@ Tag: Leaseweb
 
 
 # ASN 43146 ("Agava Ltd").
-# %Listed, Google Malware Dashboard: 0.10%.
+# %Listed, Google Malware Dashboard: 0.08%.
 # Stop Forum Spam (SFS) listings: 8.
-# Updated: 2019.07.02
+# Updated: 2019.10.30
 
-80.78.240.0/23 Deny Cloud
+80.78.241.0/24 Deny Cloud
 80.78.244.0/22 Deny Cloud
 80.78.250.0/23 Deny Cloud
 80.78.253.0/24 Deny Cloud
@@ -2158,6 +2158,7 @@ Tag: Leaseweb
 176.99.10.0/24 Deny Cloud
 185.46.8.0/22 Deny Cloud
 194.58.124.0/24 Deny Cloud
+194.67.107.0/24 Deny Cloud
 194.87.104.0/24 Deny Cloud
 194.87.177.0/24 Deny Cloud
 194.87.179.0/24 Deny Cloud
@@ -3695,9 +3696,9 @@ Tag: Hurricane Electric
 
 # ASNs 49532, 62904 ("Eonix Corporation").
 # "SSL Private Proxy" mark as proxy (not cloud).
-# %Listed, Google Malware Dashboard: 6.41% (AS62904).
-# Stop Forum Spam (SFS) listings: 8,831 (AS49532), 13,583 (AS62904).
-# Updated: 2019.06.30
+# %Listed, Google Malware Dashboard: 5.25% (AS62904).
+# Stop Forum Spam (SFS) listings: 9,133 (AS49532), 17,817 (AS62904).
+# Updated: 2019.10.30
 
 182.54.238.0/24 Deny Cloud
 Origin: AU
@@ -3765,7 +3766,6 @@ Origin: DE
 173.232.224.0/19 Deny Cloud
 192.34.111.0/24 Deny Cloud
 192.230.144.0/20 Deny Cloud
-199.127.72.0/21 Deny Cloud
 206.214.64.0/19 Deny Cloud
 208.89.216.0/21 Deny Cloud
 Origin: US
@@ -8833,12 +8833,14 @@ Tag: MBA DATACENTERS S.L
 # ASNs 46805, 47536 ("CachedNet LLC").
 # Anything under EE and SE ("Inter Connects", "Reverse-Proxy", etc) to be
 # marked as proxies. Everything else as cloud services.
-# %Listed, Google Malware Dashboard: 0.13% (AS46805), 0.03% (AS47536).
-# Stop Forum Spam (SFS) listings: 12,025 (AS46805), 10,611 (AS47536).
-# Updated: 2019.06.30
+# %Listed, Google Malware Dashboard: 0.11% (AS46805), 0.06% (AS47536).
+# Stop Forum Spam (SFS) listings: 7,853 (AS46805), 8,957 (AS47536).
+# Updated: 2019.10.30
 
 5.157.6.0/24 Deny Proxy
 5.157.11.0/24 Deny Proxy
+5.157.13.0/24 Deny Proxy
+5.157.14.0/24 Deny Proxy
 5.157.23.0/24 Deny Proxy
 5.157.24.0/24 Deny Proxy
 5.157.29.0/24 Deny Proxy
@@ -8846,12 +8848,9 @@ Tag: MBA DATACENTERS S.L
 5.157.37.0/24 Deny Proxy
 5.157.43.0/24 Deny Proxy
 5.157.53.0/24 Deny Proxy
+5.157.55.0/24 Deny Proxy
 37.72.186.0/24 Deny Proxy
 Origin: EE
-5.157.13.0/24 Deny Cloud
-5.157.14.0/24 Deny Cloud
-5.157.55.0/24 Deny Cloud
-Origin: IE
 165.231.160.0/24 Deny Cloud
 165.231.162.0/23 Deny Cloud
 165.231.164.0/22 Deny Cloud
@@ -8864,7 +8863,13 @@ Origin: SC
 23.92.114.0/24 Deny Proxy
 23.92.116.0/22 Deny Proxy
 23.92.120.0/21 Deny Proxy
-104.160.0.0/20 Deny Proxy
+104.160.0.0/23 Deny Proxy
+104.160.3.0/24 Deny Proxy
+104.160.4.0/23 Deny Proxy
+104.160.7.0/24 Deny Proxy
+104.160.8.0/22 Deny Proxy
+104.160.13.0/24 Deny Proxy
+104.160.14.0/23 Deny Proxy
 104.160.21.0/24 Deny Proxy
 104.160.22.0/23 Deny Proxy
 104.160.24.0/21 Deny Proxy
@@ -13883,8 +13888,8 @@ Tag: UK-2 Limited
 
 
 # ASN 25525 ("Reasonnet IP Networks B.V").
-# %Listed, Google Malware Dashboard: 0.29%.
-# Updated: 2017.12.24 / Checked: 2019.05.04
+# %Listed, Google Malware Dashboard: 0.19%.
+# Updated: 2019.10.30
 
 193.189.141.0/24 Deny Cloud
 Origin: GB
@@ -13900,10 +13905,9 @@ Origin: GB
 91.216.104.0/24 Deny Cloud
 93.175.176.0/20 Deny Cloud
 128.140.220.0/22 Deny Cloud
-193.33.214.0/23 Deny Cloud
+185.231.200.0/22 Deny Cloud
 193.84.176.0/24 Deny Cloud
 194.145.119.0/24 Deny Cloud
-194.146.127.0/24 Deny Cloud
 195.234.173.0/24 Deny Cloud
 213.189.0.0/19 Deny Cloud
 213.247.32.0/19 Deny Cloud
@@ -14032,8 +14036,8 @@ Tag: IT7 Networks Inc
 
 
 # ASN 27843 ("OPTICAL TECHNOLOGIES S.A.C").
-# Stop Forum Spam (SFS) listings: 63.
-# Updated: 2017.12.24 / Checked: 2019.05.04
+# Stop Forum Spam (SFS) listings: 59.
+# Updated: 2017.12.24 / Checked: 2019.10.30
 
 45.5.68.0/22 Deny Cloud
 45.71.32.0/22 Deny Cloud
@@ -14117,8 +14121,8 @@ Tag: Hosting Services Inc
 
 
 # ASN 34931 ("Awareness Software Limited").
-# %Listed, Google Malware Dashboard: 0.13%.
-# Updated: 2017.01.25 / Checked: 2019.05.04
+# %Listed, Google Malware Dashboard: 0.05%.
+# Updated: 2017.01.25 / Checked: 2019.10.30
 
 85.159.248.0/21 Deny Cloud
 89.28.168.0/21 Deny Cloud
@@ -15424,10 +15428,10 @@ Tag: DataClub S.A
 
 
 # ASN 30962 ("comtrance GmbH").
-# %Listed, Google Malware Dashboard: 0.17%.
-# Stop Forum Spam (SFS) listings: 5.
-# Updated: 2018.07.25 / Checked: 2019.06.30
+# %Listed, Google Malware Dashboard: 0.19%.
+# Updated: 2019.10.30
 
+45.129.240.0/22 Deny Cloud
 62.108.32.0/19 Deny Cloud
 84.19.0.0/19 Deny Cloud
 89.107.64.0/21 Deny Cloud
@@ -17827,8 +17831,10 @@ Tag: CloudSRV Limited
 
 # ASN 61337 ("Electronic Communities Ltd").
 # (Can omit anything under 44../8; clean).
-# Updated: 2018.12.11 / Checked: 2019.05.04
+# No recent reports or bad activity detected. Possible candidate for future removal.
+# Updated: 2019.10.30
 
+45.153.132.0/22 Deny Cloud
 83.150.248.0/22 Deny Cloud
 85.199.212.0/22 Deny Cloud
 91.230.243.0/24 Deny Cloud
@@ -20506,9 +20512,9 @@ Tag: AVAST Software
 
 
 # ASN 55293 ("A2 Hosting, Inc").
-# %Listed, Google Malware Dashboard: 0.31%.
-# Stop Forum Spam (SFS) listings: 33.
-# Updated: 2018.05.07 / Checked: 2019.05.04
+# %Listed, Google Malware Dashboard: 0.12%.
+# Stop Forum Spam (SFS) listings: 95.
+# Updated: 2018.05.07 / Checked: 2019.10.30
 
 45.120.148.0/22 Deny Cloud
 103.227.176.0/22 Deny Cloud
@@ -24705,10 +24711,9 @@ Tag: AS61272
 
 
 # ASN 43160 ("Mdc Datacenter S.L").
-# Source of forum spam. (When updating, omit invalids; marked with recaptcha
-# to reduce the risk of false positives; interaces with some ISPs).
-# Stop Forum Spam (SFS) listings: 65.
-# Updated: 2019.07.02
+# Source of forum spam.
+# Stop Forum Spam (SFS) listings: 68.
+# Updated: 2019.10.31
 
 5.40.32.0/23 Deny Cloud
 5.40.86.0/24 Deny Cloud
@@ -24719,6 +24724,8 @@ Tag: AS61272
 5.158.82.0/24 Deny Cloud
 5.158.86.0/24 Deny Cloud
 37.235.32.0/21 Deny Cloud
+45.92.72.0/22 Deny Cloud
+62.82.84.0/24 Deny Cloud
 62.82.238.0/24 Deny Cloud
 62.175.202.0/24 Deny Cloud
 84.124.116.0/24 Deny Cloud
@@ -24738,19 +24745,20 @@ Tag: AS61272
 89.140.122.0/24 Deny Cloud
 89.140.197.0/24 Deny Cloud
 149.62.176.0/21 Deny Cloud
+176.32.48.0/23 Deny Cloud
 176.32.52.0/23 Deny Cloud
 185.28.51.0/24 Deny Cloud
 185.44.232.0/22 Deny Cloud
 185.94.48.0/22 Deny Cloud
 185.130.24.0/22 Deny Cloud
 185.143.0.0/22 Deny Cloud
+185.196.202.0/24 Deny Cloud
 185.202.164.0/22 Deny Cloud
 185.232.172.0/22 Deny Cloud
 185.240.88.0/23 Deny Cloud
 185.240.90.0/24 Deny Cloud
 185.240.164.0/24 Deny Cloud
 185.244.230.0/24 Deny Cloud
-185.246.13.0/24 Deny Cloud
 185.246.15.0/24 Deny Cloud
 195.82.104.0/23 Deny Cloud
 195.82.106.0/24 Deny Cloud
@@ -24758,8 +24766,6 @@ Tag: AS61272
 212.63.120.0/24 Deny Cloud
 212.63.122.0/23 Deny Cloud
 Origin: ES
-185.16.80.0/22 Deny Cloud
-Origin: GI
 149.71.168.0/21 Deny Cloud
 149.100.24.0/21 Deny Cloud
 Origin: US
@@ -24771,7 +24777,7 @@ recaptcha:
 
 # Announcing as: "DME Hosting LLC". A cloud provider caught spamming.
 # Various ASNs; Sourced from HE.
-# Updated: 2019.07.02
+# Updated: 2019.07.02 / Checked: 2019.10.31
 
 74.221.208.0/22 Deny Cloud
 74.221.217.0/24 Deny Cloud
@@ -24786,8 +24792,8 @@ Tag: DME Hosting LLC
 
 # ASN 64236 ("Accuserv Inc").
 # Source of forum spam.
-# Stop Forum Spam (SFS) listings: 11.
-# Updated: 2019.07.02
+# Stop Forum Spam (SFS) listings: 2.
+# Updated: 2019.10.31
 
 162.251.120.0/22 Deny Cloud
 172.96.14.0/24 Deny Cloud
@@ -24807,22 +24813,27 @@ Origin: CA
 193.39.186.0/24 Deny Cloud
 212.162.148.0/22 Deny Cloud
 Origin: NL
+66.36.234.0/24 Deny Cloud
+66.85.92.0/22 Deny Cloud
 66.181.32.0/19 Deny Cloud
-173.208.151.0/24 Deny Cloud
+74.84.150.0/24 Deny Cloud
+104.254.24.0/21 Deny Cloud
 173.208.156.0/24 Deny Cloud
-173.208.158.0/23 Deny Cloud
-173.208.162.0/24 Deny Cloud
+199.91.172.0/22 Deny Cloud
+199.193.152.0/22 Deny Cloud
 Origin: US
 Tag: Accuserv Inc
 
 
 # ASN 31463 ("4D Data Centres Limited").
 # Source of forum spam.
-# %Listed, Google Malware Dashboard: 0.38%.
-# Updated: 2019.07.02
+# %Listed, Google Malware Dashboard: 0.06%.
+# Updated: 2019.10.30
 
 37.209.208.0/20 Deny Cloud
 37.235.122.0/24 Deny Cloud
+45.140.136.0/22 Deny Cloud
+45.140.252.0/22 Deny Cloud
 46.245.248.0/21 Deny Cloud
 79.99.64.0/21 Deny Cloud
 79.174.28.0/22 Deny Cloud
@@ -24833,6 +24844,7 @@ Tag: Accuserv Inc
 178.17.32.0/20 Deny Cloud
 178.251.32.0/21 Deny Cloud
 185.4.128.0/23 Deny Cloud
+185.4.130.0/24 Deny Cloud
 185.34.208.0/22 Deny Cloud
 185.128.222.0/24 Deny Cloud
 185.160.164.0/22 Deny Cloud

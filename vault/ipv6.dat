@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6.dat
 
-# Version: 2019.298.489
-# Last modified: 2019.10.26
+# Version: 2019.303.535
+# Last modified: 2019.10.31
 
 
 # ---
@@ -376,9 +376,9 @@ Tag: Leaseweb
 
 
 # ASN 43146 ("Agava Ltd").
-# %Listed, Google Malware Dashboard: 0.10%.
+# %Listed, Google Malware Dashboard: 0.08%.
 # Stop Forum Spam (SFS) listings: 8.
-# Updated: 2019.03.01 / Checked: 2019.07.02
+# Updated: 2019.03.01 / Checked: 2019.10.30
 
 2a03:4900::/47 Deny Cloud
 2a03:4900:2::/48 Deny Cloud
@@ -835,9 +835,9 @@ Tag: Hurricane Electric
 
 # ASNs 49532, 62904 ("Eonix Corporation").
 # "SSL Private Proxy" mark as proxy (not cloud).
-# %Listed, Google Malware Dashboard: 6.41% (AS62904).
-# Stop Forum Spam (SFS) listings: 8,831 (AS49532), 13,583 (AS62904).
-# Updated: 2019.04.21 / Checked: 2019.06.30
+# %Listed, Google Malware Dashboard: 5.25% (AS62904).
+# Stop Forum Spam (SFS) listings: 9,133 (AS49532), 17,817 (AS62904).
+# Updated: 2019.04.21 / Checked: 2019.10.30
 
 2a07:440::/31 Deny Cloud
 Origin: DE
@@ -3557,8 +3557,8 @@ Tag: UK-2 Limited
 
 
 # ASN 25525 ("Reasonnet IP Networks B.V").
-# %Listed, Google Malware Dashboard: 0.29%.
-# Updated: 2016.05.30 / Checked: 2019.05.04
+# %Listed, Google Malware Dashboard: 0.19%.
+# Updated: 2016.05.30 / Checked: 2019.10.30
 
 2001:67c:2b44::/48 Deny Cloud
 2001:16f8::/32 Deny Cloud
@@ -3583,8 +3583,8 @@ Tag: IT7 Networks Inc
 
 
 # ASN 27843 ("OPTICAL TECHNOLOGIES S.A.C").
-# Stop Forum Spam (SFS) listings: 63.
-# Updated: 2017.12.24 / Checked: 2019.05.04
+# Stop Forum Spam (SFS) listings: 59.
+# Updated: 2017.12.24 / Checked: 2019.10.30
 
 2800:120::/32 Deny Cloud
 2803:1b40::/32 Deny Cloud
@@ -3913,9 +3913,8 @@ Tag: DataClub S.A
 
 
 # ASN 30962 ("comtrance GmbH").
-# %Listed, Google Malware Dashboard: 0.17%.
-# Stop Forum Spam (SFS) listings: 5.
-# Updated: 2019.06.30
+# %Listed, Google Malware Dashboard: 0.19%.
+# Updated: 2019.06.30 / Checked: 2019.10.30
 
 2001:678:94c::/48 Deny Cloud
 2001:67c:208::/48 Deny Cloud
@@ -4222,7 +4221,8 @@ Tag: CloudSRV Limited
 
 # ASN 61337 ("Electronic Communities Ltd").
 # (Can omit anything under 44../8; clean).
-# Updated: 2017.02.18 / Checked: 2019.05.04
+# No recent reports or bad activity detected. Possible candidate for future removal.
+# Updated: 2017.02.18 / Checked: 2019.10.30
 
 2001:67c:504::/48 Deny Cloud
 2001:67c:72c::/48 Deny Cloud
@@ -6024,10 +6024,9 @@ Tag: AS61272
 
 
 # ASN 43160 ("Mdc Datacenter S.L").
-# Source of forum spam. (When updating, omit invalids; marked with recaptcha
-# to reduce the risk of false positives; interaces with some ISPs).
-# Stop Forum Spam (SFS) listings: 65.
-# Updated: 2019.07.02
+# Source of forum spam.
+# Stop Forum Spam (SFS) listings: 68.
+# Updated: 2019.07.02 / Checked: 2019.10.31
 
 2a01:b5c0::/32 Deny Cloud
 Origin: ES
@@ -6036,9 +6035,12 @@ Tag: Mdc Datacenter S.L
 
 # ASN 64236 ("Accuserv Inc").
 # Source of forum spam.
-# Stop Forum Spam (SFS) listings: 11.
-# Updated: 2019.07.02
+# Stop Forum Spam (SFS) listings: 2.
+# Updated: 2019.10.31
 
+2a0a:1f42::/32 Deny Cloud
+Origin: NL
+2604:2d00::/36 Deny Cloud
 2604:abc0::/32 Deny Cloud
 2a09:4bc7:d010::/44 Deny Cloud
 Origin: US
@@ -6047,11 +6049,9 @@ Tag: Accuserv Inc
 
 # ASN 31463 ("4D Data Centres Limited").
 # Source of forum spam.
-# %Listed, Google Malware Dashboard: 0.38%.
-# Updated: 2019.07.02
+# %Listed, Google Malware Dashboard: 0.06%.
+# Updated: 2019.10.30
 
-2a0d:98c0::/29 Deny Cloud
-Origin: DE
 2a00:1c18::/29 Deny Cloud
 2a03:9ba0:100::/40 Deny Cloud
 2a07:45c2::/40 Deny Cloud

@@ -1689,58 +1689,6 @@ Origin: RU
 Tag: INFOKOM Ltd
 
 
-# ASN 13030 ("Init7").
-# %Listed, Google Malware Dashboard: 0.18%.
-# Stop Forum Spam (SFS) listings: 55.
-# Updated: 2019.09.21
-
-195.211.32.0/22 Deny Generic
-Origin: AT
-5.180.132.0/22 Deny Generic
-37.17.232.0/21 Deny Generic
-77.109.128.0/18 Deny Generic
-80.253.88.0/21 Deny Generic
-81.6.32.0/20 Deny Generic
-82.197.160.0/19 Deny Generic
-85.195.192.0/18 Deny Generic
-87.239.208.0/21 Deny Generic
-91.198.8.0/24 Deny Generic
-91.198.154.0/24 Deny Generic
-91.209.98.0/24 Deny Generic
-91.228.60.0/23 Deny Generic
-91.238.144.0/24 Deny Generic
-109.202.192.0/19 Deny Generic
-178.250.128.0/21 Deny Generic
-185.35.28.0/22 Deny Generic
-185.72.64.0/22 Deny Generic
-185.78.120.0/24 Deny Generic
-185.78.122.0/24 Deny Generic
-185.85.248.0/22 Deny Generic
-185.137.172.0/22 Deny Generic
-185.157.3.0/24 Deny Generic
-185.164.184.0/24 Deny Generic
-185.182.24.0/24 Deny Generic
-185.183.192.0/22 Deny Generic
-185.185.200.0/22 Deny Generic
-185.198.204.0/23 Deny Generic
-185.210.68.0/24 Deny Generic
-185.240.172.0/22 Deny Generic
-193.47.153.0/24 Deny Generic
-193.222.255.0/24 Deny Generic
-193.223.80.0/20 Deny Generic
-195.8.210.0/23 Deny Generic
-195.191.240.0/23 Deny Generic
-212.51.128.0/19 Deny Generic
-213.144.128.0/19 Deny Generic
-Origin: CH
-193.202.106.0/24 Deny Generic
-195.8.117.0/24 Deny Generic
-Origin: GB
-194.126.235.0/24 Deny Generic
-Origin: NL
-Tag: Init7
-
-
 # ASNs 3491, 4760, 6279, 7262 ("PCCW Global" / "Beyond The Network America, Inc").
 # Mirai detected on this network.
 # Updated: 2019.10.06
@@ -10375,3 +10323,19 @@ recaptcha:
 91.236.74.0/23 Deny Spam
 Origin: PL
 Tag: Andrzej Niechcial
+
+
+# ---
+# These CIDRs listed due to reported incidences of spam and/or spambots
+# detected at these specific ranges, which belong to ASNs which we hope to not
+# block in entirety, with the hope that these listings will be temporary, to be
+# delisted at some point in the future.
+
+# ASN 13030 ("Init7"). Swiss multiplay network (domestic ISP, webhosting, etc).
+# Updated: 2019.11.02
+85.195.220.128/32 Deny Spam
+85.195.226.114/32 Deny Spam
+212.51.152.15/32 Deny Spam
+212.51.159.181/32 Deny Spam
+Origin: CH
+Tag: Init7

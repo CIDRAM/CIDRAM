@@ -1,8 +1,8 @@
 # IPv4 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv4_isps.dat
 
-# Version: 2019.295.435
-# Last modified: 2019.10.23
+# Version: 2019.305.346
+# Last modified: 2019.11.02
 
 
 # ---
@@ -295,8 +295,8 @@ Tag: Vautron Rech. AG
 
 
 # ASN 38955 ("World4You Internet Services").
-# %Listed, Google Malware Dashboard: 0.33%.
-# Updated: 2016.11.03 / Checked: 2019.05.10
+# %Listed, Google Malware Dashboard: 0.18%.
+# Updated: 2016.11.03 / Checked: 2019.11.02
 
 81.19.144.0/20 Deny Generic
 178.23.80.0/21 Deny Generic
@@ -334,29 +334,20 @@ Tag: IP Volume inc
 
 # ASN 48159 ("Telecommunication Infrastructure Company").
 # Significant source of I.P. thieves, email harvesters, and unauthorised scrapers.
-# Stop Forum Spam (SFS) listings: 140.
-# Updated: 2019.07.03
+# Stop Forum Spam (SFS) listings: 137.
+# Updated: 2019.11.02
 
-2.182.128.0/21 Deny Generic
 2.185.160.0/19 Deny Generic
 2.188.64.0/21 Deny Generic
-2.188.179.0/24 Deny Generic
-2.188.184.0/23 Deny Generic
-2.188.187.0/24 Deny Generic
-2.189.1.0/24 Deny Generic
-5.233.240.0/20 Deny Generic
-78.38.244.0/24 Deny Generic
+2.189.72.0/24 Deny Generic
 78.39.149.0/24 Deny Generic
 78.39.150.0/23 Deny Generic
 78.39.240.0/24 Deny Generic
-80.191.24.0/24 Deny Generic
 89.37.144.0/23 Deny Generic
-94.101.120.0/22 Deny Generic
 178.251.212.0/22 Deny Generic
 185.11.88.0/23 Deny Generic
 185.11.90.0/24 Deny Generic
 188.215.176.0/20 Deny Generic
-213.195.52.0/22 Deny Generic
 Origin: IR
 Tag: AS48159
 ---
@@ -366,10 +357,10 @@ recaptcha:
 
 # ASN 12880 ("Information Technology Company (ITC)").
 # Significant source of email harvesters and unauthorised scrapers.
-# %Listed, Google Malware Dashboard: 0.17%.
-# %Listed, abuseat.org (CBL-Listed): 2.18%.
-# Stop Forum Spam (SFS) listings: 773.
-# Updated: 2019.07.03
+# %Listed, Google Malware Dashboard: 0.16%.
+# %Listed, abuseat.org (CBL-Listed): 2.29%.
+# Stop Forum Spam (SFS) listings: 713.
+# Updated: 2019.11.02
 
 2.176.0.0/12 Deny Generic
 5.62.160.0/19 Deny Generic
@@ -390,6 +381,7 @@ recaptcha:
 80.210.128.0/17 Deny Generic
 81.16.112.0/20 Deny Generic
 85.185.0.0/16 Deny Generic
+85.198.18.0/24 Deny Generic
 86.104.80.0/20 Deny Generic
 86.104.96.0/20 Deny Generic
 86.105.40.0/21 Deny Generic
@@ -420,7 +412,6 @@ recaptcha:
 91.92.204.0/22 Deny Generic
 91.92.208.0/21 Deny Generic
 91.185.128.0/19 Deny Generic
-91.209.242.0/24 Deny Generic
 93.114.104.0/21 Deny Generic
 93.115.120.0/21 Deny Generic
 93.118.96.0/19 Deny Generic
@@ -429,8 +420,8 @@ recaptcha:
 93.119.32.0/19 Deny Generic
 93.119.64.0/19 Deny Generic
 151.235.128.0/18 Deny Generic
+185.72.82.0/24 Deny Generic
 185.88.48.0/22 Deny Generic
-185.105.100.0/22 Deny Generic
 188.209.8.0/21 Deny Generic
 188.209.16.0/20 Deny Generic
 188.209.32.0/20 Deny Generic
@@ -442,7 +433,6 @@ recaptcha:
 188.211.64.0/18 Deny Generic
 188.211.176.0/20 Deny Generic
 188.212.144.0/21 Deny Generic
-188.215.160.0/20 Deny Generic
 188.240.248.0/21 Deny Generic
 195.146.32.0/19 Deny Generic
 195.181.0.0/19 Deny Generic
@@ -455,17 +445,16 @@ recaptcha:
 
 
 # ASNs 24940, 37153 ("Hetzner Online GmbH").
-# %Listed, Google Malware Dashboard: 0.08% (AS24940), 0.17% (AS37153).
-# Stop Forum Spam (SFS) listings: 26,308 (AS24940), 706 (AS37153).
-# Updated: 2019.07.03
+# %Listed, Google Malware Dashboard: 0.03% (AS24940), 0.15% (AS37153).
+# Stop Forum Spam (SFS) listings: 24,872 (AS24940), 542 (AS37153).
+# Updated: 2019.11.02
 
-138.99.217.0/24 Deny Generic
-138.99.218.0/23 Deny Generic
-190.99.82.0/23 Deny Generic
+190.99.83.0/24 Deny Generic
 Origin: BZ
 83.219.100.0/22 Deny Generic
 Origin: CH
 5.9.0.0/16 Deny Generic
+45.15.120.0/22 Deny Generic
 46.4.0.0/16 Deny Generic
 78.46.0.0/15 Deny Generic
 80.243.224.0/22 Deny Generic
@@ -483,6 +472,7 @@ Origin: CH
 144.76.0.0/16 Deny Generic
 148.251.0.0/16 Deny Generic
 159.69.0.0/16 Deny Generic
+167.233.0.0/16 Deny Generic
 176.9.0.0/16 Deny Generic
 176.102.168.0/21 Deny Generic
 178.63.0.0/16 Deny Generic
@@ -498,7 +488,6 @@ Origin: CH
 185.185.24.0/22 Deny Generic
 185.189.228.0/24 Deny Generic
 185.189.230.0/23 Deny Generic
-185.205.156.0/24 Deny Generic
 185.209.124.0/22 Deny Generic
 185.212.104.0/22 Deny Generic
 185.216.236.0/23 Deny Generic
@@ -508,6 +497,7 @@ Origin: CH
 193.25.170.0/23 Deny Generic
 193.110.6.0/23 Deny Generic
 193.223.77.0/24 Deny Generic
+194.35.12.0/23 Deny Generic
 195.201.0.0/16 Deny Generic
 212.127.32.0/19 Deny Generic
 213.133.96.0/19 Deny Generic
@@ -521,10 +511,11 @@ Origin: EU
 201.131.3.0/24 Deny Generic
 Origin: MX
 185.110.95.0/24 Deny Generic
-195.80.32.0/22 Deny Generic
 Origin: NL
 185.157.83.0/24 Deny Generic
 Origin: PL
+45.148.28.0/22 Deny Generic
+Origin: RU
 169.239.152.0/22 Deny Generic
 196.251.94.0/23 Deny Generic
 196.251.96.0/22 Deny Generic
@@ -538,7 +529,7 @@ Origin: UA
 41.72.128.0/19 Deny Generic
 41.203.0.0/19 Deny Generic
 41.204.192.0/19 Deny Generic
-102.130.112.0/22 Deny Generic
+102.130.112.0/20 Deny Generic
 129.232.128.0/17 Deny Generic
 156.38.128.0/17 Deny Generic
 160.119.248.0/21 Deny Generic
@@ -1084,9 +1075,9 @@ Tag: Voxility LLC
 
 
 # ASN 41665 ("Tehnologii Budushego LLC").
-# %Listed, Google Malware Dashboard: 0.60%.
-# Stop Forum Spam (SFS) listings: 142.
-# Updated: 2017.08.25 / Checked: 2019.05.10
+# %Listed, Google Malware Dashboard: 0.64%.
+# Stop Forum Spam (SFS) listings: 406.
+# Updated: 2017.08.25 / Checked: 2019.11.02
 
 78.109.16.0/20 Deny Generic
 185.207.136.0/22 Deny Generic
@@ -1644,8 +1635,8 @@ Tag: Swift Networks
 
 
 # ASN 51013 ("Websupport s.r.o").
-# %Listed, Google Malware Dashboard: 0.15%.
-# Updated: 2017.03.28 / Checked: 2019.05.10
+# %Listed, Google Malware Dashboard: 0.11%.
+# Updated: 2017.03.28 / Checked: 2019.11.02
 
 185.111.88.0/22 Deny Generic
 Origin: HU
@@ -1678,15 +1669,6 @@ Tag: Xirra GmbH
 213.111.128.0/18 Deny Generic
 Origin: UA
 Tag: PP SKS-LUGAN
-
-
-# ASN 48226 ("INFOKOM Ltd").
-# Updated: 2016.03.10 / Checked: 2019.05.10
-
-81.161.32.0/20 Deny Generic
-91.241.68.0/23 Deny Generic
-Origin: RU
-Tag: INFOKOM Ltd
 
 
 # ASNs 3491, 4760, 6279, 7262 ("PCCW Global" / "Beyond The Network America, Inc").
@@ -2111,14 +2093,17 @@ Tag: SICRES SRL
 
 # ASN 6876 ("TeNeT Scientific Production Enterprise LLC").
 # Source of forum spam and other unwanted traffic.
-# %Listed, Google Malware Dashboard: 1.03%.
-# Stop Forum Spam (SFS) listings: 1,897.
-# Updated: 2019.07.04
+# %Listed, Google Malware Dashboard: 1.77%.
+# Stop Forum Spam (SFS) listings: 1,244.
+# Updated: 2019.11.02
 
 95.46.107.0/24 Deny Generic
 Origin: CZ
 31.31.96.0/19 Deny Generic
 37.203.0.0/19 Deny Generic
+45.130.0.0/22 Deny Generic
+45.140.120.0/22 Deny Generic
+45.156.36.0/22 Deny Generic
 62.16.0.0/19 Deny Generic
 79.140.0.0/20 Deny Generic
 85.238.96.0/19 Deny Generic
@@ -2146,23 +2131,22 @@ Tag: TeNeT
 
 
 # ASN 31252 ("Starnet Servicii SRL").
-# %Listed, Google Malware Dashboard: 0.55%.
-# Stop Forum Spam (SFS) listings: 57,744.
-# Updated: 2017.09.19 / Checked: 2019.05.10
+# Stop Forum Spam (SFS) listings: 53,955.
+# Updated: 2017.09.19 / Modified: 2019.11.02
 
-37.233.0.0/18 Deny Generic
-87.248.160.0/19 Deny Generic
-89.28.0.0/17 Deny Generic
-95.65.0.0/17 Deny Generic
-178.18.32.0/20 Deny Generic
-178.168.0.0/17 Deny Generic
-185.17.224.0/22 Deny Generic
-185.70.188.0/22 Deny Generic
-185.175.80.0/22 Deny Generic
-188.138.128.0/17 Deny Generic
-188.244.16.0/20 Deny Generic
-194.28.76.0/22 Deny Generic
-195.93.218.0/23 Deny Generic
+37.233.0.0/18 Deny Spam
+87.248.160.0/19 Deny Spam
+89.28.0.0/17 Deny Spam
+95.65.0.0/17 Deny Spam
+178.18.32.0/20 Deny Spam
+178.168.0.0/17 Deny Spam
+185.17.224.0/22 Deny Spam
+185.70.188.0/22 Deny Spam
+185.175.80.0/22 Deny Spam
+188.138.128.0/17 Deny Spam
+188.244.16.0/20 Deny Spam
+194.28.76.0/22 Deny Spam
+195.93.218.0/23 Deny Spam
 Origin: MD
 Tag: STARNET S.R.L
 
@@ -2185,10 +2169,12 @@ Tag: Przedsiebiorstwo
 # Source of forum/blog spam. Also an ISP with human endpoints in Iran. Websites
 # based in, or targeted towards an Iranian audience, should keep it listed in
 # their ignore.dat file. Marked for use with reCAPTCHA.
-# %Listed, abuseat.org (CBL-Listed): 9.90%.
-# Stop Forum Spam (SFS) listings: 1,407.
-# Updated: 2019.08.01
+# %Listed, abuseat.org (CBL-Listed): 8.22%.
+# Stop Forum Spam (SFS) listings: 945.
+# Updated: 2019.11.02
 
+185.145.136.0/22 Deny Spam
+Origin: DK
 2.176.52.0/23 Deny Spam
 2.179.64.0/18 Deny Spam
 2.179.128.0/19 Deny Spam
@@ -2203,9 +2189,7 @@ Tag: Przedsiebiorstwo
 2.181.48.0/20 Deny Spam
 2.181.64.0/18 Deny Spam
 2.181.128.0/18 Deny Spam
-2.181.192.0/23 Deny Spam
-2.181.196.0/22 Deny Spam
-2.181.200.0/21 Deny Spam
+2.181.192.0/20 Deny Spam
 2.181.208.0/21 Deny Spam
 2.181.216.0/22 Deny Spam
 2.181.220.0/23 Deny Spam
@@ -2215,15 +2199,8 @@ Tag: Przedsiebiorstwo
 2.182.100.0/22 Deny Spam
 2.182.104.0/21 Deny Spam
 2.182.112.0/20 Deny Spam
-2.182.136.0/21 Deny Spam
-2.182.144.0/20 Deny Spam
-2.182.160.0/19 Deny Spam
-2.182.192.0/21 Deny Spam
-2.182.202.0/23 Deny Spam
-2.182.204.0/22 Deny Spam
-2.182.208.0/22 Deny Spam
-2.182.212.0/23 Deny Spam
-2.182.216.0/21 Deny Spam
+2.182.128.0/18 Deny Spam
+2.182.192.0/19 Deny Spam
 2.182.224.0/20 Deny Spam
 2.182.240.0/21 Deny Spam
 2.182.248.0/22 Deny Spam
@@ -2252,16 +2229,7 @@ Tag: Przedsiebiorstwo
 5.198.160.0/19 Deny Spam
 5.200.128.0/17 Deny Spam
 5.219.0.0/16 Deny Spam
-5.232.0.0/16 Deny Spam
-5.233.0.0/17 Deny Spam
-5.233.128.0/18 Deny Spam
-5.233.192.0/19 Deny Spam
-5.233.224.0/20 Deny Spam
-5.234.0.0/19 Deny Spam
-5.234.32.0/20 Deny Spam
-5.234.64.0/18 Deny Spam
-5.234.128.0/17 Deny Spam
-5.235.0.0/16 Deny Spam
+5.232.0.0/14 Deny Spam
 5.236.0.0/17 Deny Spam
 5.236.128.0/20 Deny Spam
 5.236.144.0/21 Deny Spam
@@ -2297,7 +2265,7 @@ Tag: Przedsiebiorstwo
 46.100.60.0/22 Deny Spam
 46.100.64.0/18 Deny Spam
 46.100.128.0/18 Deny Spam
-46.100.216.0/21 Deny Spam
+46.100.192.0/19 Deny Spam
 46.100.224.0/21 Deny Spam
 46.100.236.0/22 Deny Spam
 46.100.240.0/21 Deny Spam
@@ -2311,6 +2279,7 @@ Tag: Przedsiebiorstwo
 66.79.114.0/23 Deny Spam
 66.79.116.0/22 Deny Spam
 66.79.120.0/21 Deny Spam
+77.238.124.0/22 Deny Spam
 78.38.0.0/17 Deny Spam
 78.38.128.0/18 Deny Spam
 78.38.226.0/23 Deny Spam
@@ -2342,9 +2311,7 @@ Tag: Przedsiebiorstwo
 80.250.196.0/22 Deny Spam
 80.250.200.0/21 Deny Spam
 84.47.192.0/19 Deny Spam
-84.47.232.0/22 Deny Spam
-84.47.237.0/24 Deny Spam
-84.47.238.0/23 Deny Spam
+84.47.232.0/21 Deny Spam
 84.47.240.0/21 Deny Spam
 84.47.248.0/22 Deny Spam
 84.47.253.0/24 Deny Spam
@@ -2362,16 +2329,7 @@ Tag: Przedsiebiorstwo
 85.185.72.0/21 Deny Spam
 85.185.80.0/20 Deny Spam
 85.185.96.0/19 Deny Spam
-85.185.128.0/21 Deny Spam
-85.185.138.0/23 Deny Spam
-85.185.140.0/22 Deny Spam
-85.185.144.0/20 Deny Spam
-85.185.160.0/19 Deny Spam
-85.185.192.0/21 Deny Spam
-85.185.200.0/22 Deny Spam
-85.185.206.0/23 Deny Spam
-85.185.208.0/20 Deny Spam
-85.185.224.0/19 Deny Spam
+85.185.128.0/17 Deny Spam
 85.204.80.0/20 Deny Spam
 85.204.128.0/22 Deny Spam
 85.204.208.0/20 Deny Spam
@@ -2445,7 +2403,7 @@ Tag: Przedsiebiorstwo
 151.235.0.0/16 Deny Spam
 176.65.160.0/19 Deny Spam
 176.223.80.0/21 Deny Spam
-178.219.230.0/24 Deny Spam
+178.216.252.0/22 Deny Spam
 178.236.96.0/21 Deny Spam
 185.71.152.0/22 Deny Spam
 185.79.156.0/22 Deny Spam
@@ -2456,9 +2414,11 @@ Tag: Przedsiebiorstwo
 185.108.96.0/22 Deny Spam
 185.112.128.0/22 Deny Spam
 185.116.44.0/22 Deny Spam
+185.117.48.0/22 Deny Spam
 185.120.212.0/22 Deny Spam
 185.120.228.0/22 Deny Spam
 185.120.236.0/22 Deny Spam
+185.120.244.0/22 Deny Spam
 185.124.156.0/22 Deny Spam
 185.131.84.0/22 Deny Spam
 185.131.100.0/22 Deny Spam
@@ -2472,8 +2432,11 @@ Tag: Przedsiebiorstwo
 185.131.168.0/22 Deny Spam
 185.133.164.0/22 Deny Spam
 185.136.172.0/22 Deny Spam
+185.136.220.0/22 Deny Spam
 185.147.40.0/22 Deny Spam
+188.208.56.0/21 Deny Spam
 188.208.200.0/22 Deny Spam
+188.208.208.0/21 Deny Spam
 188.210.232.0/22 Deny Spam
 188.211.128.0/19 Deny Spam
 188.211.192.0/19 Deny Spam
@@ -2490,6 +2453,7 @@ Tag: Przedsiebiorstwo
 188.214.160.0/19 Deny Spam
 188.214.216.0/21 Deny Spam
 188.215.128.0/20 Deny Spam
+188.215.160.0/20 Deny Spam
 188.215.192.0/19 Deny Spam
 188.215.240.0/22 Deny Spam
 195.146.46.0/23 Deny Spam
@@ -2497,20 +2461,18 @@ Tag: Przedsiebiorstwo
 195.181.32.0/19 Deny Spam
 195.181.64.0/18 Deny Spam
 213.109.240.0/20 Deny Spam
+213.195.56.0/21 Deny Spam
 217.24.144.0/20 Deny Spam
 217.77.112.0/20 Deny Spam
 217.171.145.0/24 Deny Spam
 217.171.148.0/22 Deny Spam
+217.172.102.0/24 Deny Spam
 217.172.104.0/21 Deny Spam
 217.172.112.0/23 Deny Spam
 217.172.119.0/24 Deny Spam
 217.218.208.0/20 Deny Spam
 217.218.224.0/19 Deny Spam
-217.219.0.0/19 Deny Spam
-217.219.32.0/21 Deny Spam
-217.219.40.0/22 Deny Spam
-217.219.48.0/20 Deny Spam
-217.219.64.0/18 Deny Spam
+217.219.0.0/17 Deny Spam
 217.219.128.0/18 Deny Spam
 217.219.192.0/19 Deny Spam
 217.219.224.0/21 Deny Spam
@@ -5168,10 +5130,10 @@ recaptcha:
 # positive risk, and I would encourage any CIDRAM users from Taiwan, or
 # targeting traffic from Taiwan, to list this section in their ignore.dat file
 # to reduce the false positive risk.
-# %Listed, Google Malware Dashboard: 0.21%.
-# %Listed, abuseat.org (CBL-Listed): 0.43%.
-# Stop Forum Spam (SFS) listings: 14,631.
-# Updated: 2019.07.03
+# %Listed, Google Malware Dashboard: 0.36%.
+# %Listed, abuseat.org (CBL-Listed): 0.64%.
+# Stop Forum Spam (SFS) listings: 9,815.
+# Updated: 2019.11.02
 
 180.210.230.0/23 Deny Generic
 Origin: CN
@@ -5187,7 +5149,6 @@ Origin: SG
 103.21.60.0/22 Deny Generic
 111.240.0.0/12 Deny Generic
 114.24.0.0/14 Deny Generic
-114.30.33.0/24 Deny Generic
 114.30.44.0/24 Deny Generic
 114.32.0.0/12 Deny Generic
 118.160.0.0/13 Deny Generic
@@ -5244,7 +5205,6 @@ Origin: TW
 23.61.204.0/24 Deny Generic
 23.61.246.0/24 Deny Generic
 23.91.111.0/24 Deny Generic
-23.251.126.0/24 Deny Generic
 104.76.192.0/24 Deny Generic
 104.107.54.0/23 Deny Generic
 104.107.56.0/22 Deny Generic
@@ -5762,10 +5722,10 @@ recaptcha:
 # reduce the false positive risk, and I would encourage any CIDRAM users from
 # Vietnam, or targeting traffic from Vietnam, to list this section in their
 # ignore.dat file to reduce the false positive risk.
-# %Listed, Google Malware Dashboard: 0.12%.
-# %Listed, abuseat.org (CBL-Listed): 6.46%.
-# Stop Forum Spam (SFS) listings: 21,913.
-# Updated: 2019.07.03
+# %Listed, Google Malware Dashboard: 0.13%.
+# %Listed, abuseat.org (CBL-Listed): 5.76%.
+# Stop Forum Spam (SFS) listings: 20,258.
+# Updated: 2019.11.02
 
 203.223.40.0/21 Deny Generic
 Origin: KH
@@ -5778,11 +5738,7 @@ Origin: KH
 104.67.32.0/19 Deny Generic
 104.68.128.0/19 Deny Generic
 Origin: US
-14.160.0.0/17 Deny Generic
-14.161.0.0/16 Deny Generic
-14.162.0.0/15 Deny Generic
-14.164.0.0/14 Deny Generic
-14.168.0.0/13 Deny Generic
+14.160.0.0/12 Deny Generic
 14.176.0.0/15 Deny Generic
 14.178.128.0/18 Deny Generic
 14.181.0.0/16 Deny Generic
@@ -5800,8 +5756,7 @@ Origin: US
 14.240.0.0/13 Deny Generic
 14.248.0.0/14 Deny Generic
 14.252.0.0/15 Deny Generic
-14.254.0.0/17 Deny Generic
-14.254.128.0/18 Deny Generic
+14.254.0.0/16 Deny Generic
 14.255.0.0/18 Deny Generic
 14.255.192.0/18 Deny Generic
 43.239.220.0/23 Deny Generic
@@ -5829,8 +5784,7 @@ Origin: US
 103.237.96.0/22 Deny Generic
 103.238.214.0/23 Deny Generic
 103.250.24.0/22 Deny Generic
-103.255.237.0/24 Deny Generic
-103.255.238.0/23 Deny Generic
+103.255.236.0/22 Deny Generic
 113.160.0.0/12 Deny Generic
 113.176.0.0/16 Deny Generic
 113.177.0.0/17 Deny Generic
@@ -5841,9 +5795,7 @@ Origin: US
 113.180.128.0/18 Deny Generic
 113.181.0.0/16 Deny Generic
 113.182.0.0/15 Deny Generic
-113.184.0.0/16 Deny Generic
-113.185.0.0/17 Deny Generic
-113.186.0.0/15 Deny Generic
+113.184.0.0/14 Deny Generic
 113.188.0.0/15 Deny Generic
 113.190.0.0/16 Deny Generic
 113.191.0.0/18 Deny Generic
@@ -8146,7 +8098,7 @@ recaptcha:
 # "PSINet"
 # Cheap human endpoint ISP with ranges known to be used by hackers and spammers, but also contains benign ranges+users.
 # Careful when updating; Section contains one "Run" parameter.
-# Updated: 2019.07.02
+# Updated: 2019.11.02
 38.0.0.0/8 Run rules_specific.php
 128.145.0.0/16 Deny Generic
 130.117.0.0/16 Deny Generic
@@ -8164,7 +8116,6 @@ recaptcha:
 149.7.61.0/24 Deny Generic
 149.7.65.0/24 Deny Generic
 149.7.99.0/24 Deny Generic
-149.7.105.0/24 Deny Generic
 149.7.108.0/24 Deny Generic
 149.7.210.0/23 Deny Generic
 149.7.212.0/24 Deny Generic
@@ -8174,7 +8125,6 @@ recaptcha:
 149.11.0.0/16 Deny Generic
 149.12.24.0/21 Deny Generic
 149.12.33.0/24 Deny Generic
-149.12.67.0/24 Deny Generic
 149.12.68.0/23 Deny Generic
 149.12.97.0/24 Deny Generic
 149.12.112.0/21 Deny Generic
@@ -8236,8 +8186,8 @@ recaptcha:
 206.2.0.0/16 Deny Generic
 206.3.32.0/19 Deny Generic
 206.3.64.0/18 Deny Generic
-206.3.128.0/17 Deny Generic
-206.232.0.0/14 Deny Generic
+206.3.139.0/24 Deny Generic
+206.234.191.0/24 Deny Generic
 206.236.0.0/15 Deny Generic
 206.238.0.0/16 Deny Generic
 Origin: US

@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_isps.dat
 
-# Version: 2019.295.435
-# Last modified: 2019.10.23
+# Version: 2019.305.346
+# Last modified: 2019.11.02
 
 
 # ---
@@ -42,8 +42,8 @@ Tag: Vautron Rech. AG
 
 
 # ASN 38955 ("World4You Internet Services").
-# %Listed, Google Malware Dashboard: 0.33%.
-# Updated: 2016.01.18 / Checked: 2019.05.10
+# %Listed, Google Malware Dashboard: 0.18%.
+# Updated: 2016.01.18 / Checked: 2019.11.02
 
 2a00:1a68::/32 Deny Generic
 Origin: AT
@@ -62,8 +62,8 @@ Tag: IP Volume inc
 
 # ASN 48159 ("Telecommunication Infrastructure Company").
 # Significant source of I.P. thieves, email harvestors, and unauthorised scrapers.
-# Stop Forum Spam (SFS) listings: 140.
-# Updated: 2019.07.03
+# Stop Forum Spam (SFS) listings: 137.
+# Updated: 2019.07.03 / Checked: 2019.11.02
 
 2a03:57c0::/32 Deny Generic
 Origin: IR
@@ -73,32 +73,20 @@ recaptcha:
  enabled: true
 
 
-# ASN 12880 ("Information Technology Company (ITC)").
-# Significant source of email harvestors and unauthorised scrapers.
-# %Listed, Google Malware Dashboard: 0.17%.
-# %Listed, abuseat.org (CBL-Listed): 2.18%.
-# Stop Forum Spam (SFS) listings: 773.
-# Updated: 2018.10.09 / Checked: 2019.07.03
-
-2001:4188::/48 Deny Generic
-Origin: IR
-Tag: AS12880
----
-recaptcha:
- enabled: true
-
-
 # ASNs 24940, 37153 ("Hetzner Online GmbH").
-# %Listed, Google Malware Dashboard: 0.08% (AS24940), 0.17% (AS37153).
-# Stop Forum Spam (SFS) listings: 26,308 (AS24940), 706 (AS37153).
-# Updated: 2019.03.04 / Checked: 2019.07.03
+# %Listed, Google Malware Dashboard: 0.03% (AS24940), 0.15% (AS37153).
+# Stop Forum Spam (SFS) listings: 24,872 (AS24940), 542 (AS37153).
+# Updated: 2019.11.02
 
 2001:67c:1164::/48 Deny Generic
 2a01:4f8::/29 Deny Generic
 2a01:b140::/29 Deny Generic
 2a06:be80::/29 Deny Generic
 2a0d:7e00::/48 Deny Generic
+2a0e:2c80::/29 Deny Generic
 Origin: DE
+2a06:1301:4050::/48 Deny Generic
+Origin: RU
 2c0f:f300::/48 Deny Generic
 2c0f:fce8::/33 Deny Generic
 Origin: ZA
@@ -371,6 +359,15 @@ recaptcha:
  enabled: true
 
 
+# ASN 51013 ("Websupport s.r.o").
+# %Listed, Google Malware Dashboard: 0.11%.
+# Updated: 2019.11.02
+
+2a00:4b40::/32 Deny Generic
+Origin: SK
+Tag: Websupport s.r.o
+
+
 # ASN 51191 ("Xirra GmbH").
 # Stop Forum Spam (SFS) listings: 2.
 # Updated: 2016.01.21 / Checked: 2019.08.18
@@ -470,9 +467,9 @@ recaptcha:
 
 # ASN 6876 ("TeNeT Scientific Production Enterprise LLC").
 # Source of forum spam and other unwanted traffic.
-# %Listed, Google Malware Dashboard: 1.03%.
-# Stop Forum Spam (SFS) listings: 1,897.
-# Updated: 2016.07.20 / Checked: 2019.07.04
+# %Listed, Google Malware Dashboard: 1.77%.
+# Stop Forum Spam (SFS) listings: 1,244.
+# Updated: 2016.07.20 / Checked: 2019.11.02
 
 2a04:2c00::/29 Deny Generic
 Origin: UA
@@ -480,13 +477,12 @@ Tag: TeNeT
 
 
 # ASN 31252 ("Starnet Servicii SRL").
-# %Listed, Google Malware Dashboard: 0.55%.
-# Stop Forum Spam (SFS) listings: 57,744.
-# Updated: 2017.03.11 / Checked: 2019.05.10
+# Stop Forum Spam (SFS) listings: 53,955.
+# Updated: 2017.03.11 / Modified: 2019.11.02
 
-2a00:9900::/29 Deny Generic
-2a01:320::/29 Deny Generic
-2a0b:dd00::/29 Deny Generic
+2a00:9900::/29 Deny Spam
+2a01:320::/29 Deny Spam
+2a0b:dd00::/29 Deny Spam
 Origin: MD
 Tag: STARNET S.R.L
 
@@ -1121,10 +1117,10 @@ recaptcha:
 # positive risk, and I would encourage any CIDRAM users from Taiwan, or
 # targeting traffic from Taiwan, to list this section in their ignore.dat file
 # to reduce the false positive risk.
-# %Listed, Google Malware Dashboard: 0.21%.
-# %Listed, abuseat.org (CBL-Listed): 0.43%.
-# Stop Forum Spam (SFS) listings: 14,631.
-# Updated: 2019.03.09 / Checked: 2019.07.03
+# %Listed, Google Malware Dashboard: 0.36%.
+# %Listed, abuseat.org (CBL-Listed): 0.64%.
+# Stop Forum Spam (SFS) listings: 9,815.
+# Updated: 2019.03.09 / Checked: 2019.11.02
 
 2001:b000::/21 Deny Generic
 2405:6100::/32 Deny Generic
@@ -1189,10 +1185,10 @@ recaptcha:
 # reduce the false positive risk, and I would encourage any CIDRAM users from
 # Vietnam, or targeting traffic from Vietnam, to list this section in their
 # ignore.dat file to reduce the false positive risk.
-# %Listed, Google Malware Dashboard: 0.12%.
-# %Listed, abuseat.org (CBL-Listed): 6.46%.
-# Stop Forum Spam (SFS) listings: 21,913.
-# Updated: 2019.07.03
+# %Listed, Google Malware Dashboard: 0.13%.
+# %Listed, abuseat.org (CBL-Listed): 5.76%.
+# Stop Forum Spam (SFS) listings: 20,258.
+# Updated: 2019.11.02
 
 2001:df2:ca00::/48 Deny Generic
 2001:df2:ce00::/48 Deny Generic
@@ -1219,9 +1215,7 @@ recaptcha:
 2001:ee0:4640::/42 Deny Generic
 2001:ee0:4680::/41 Deny Generic
 2001:ee0:4700::/40 Deny Generic
-2001:ee0:4840::/42 Deny Generic
-2001:ee0:4880::/41 Deny Generic
-2001:ee0:4900::/40 Deny Generic
+2001:ee0:4800::/39 Deny Generic
 2001:ee0:4b00::/40 Deny Generic
 2001:ee0:4c00::/39 Deny Generic
 2001:ee0:4e00::/41 Deny Generic
@@ -1246,9 +1240,26 @@ recaptcha:
 2001:ee0:7680::/41 Deny Generic
 2001:ee0:7700::/42 Deny Generic
 2001:ee0:7780::/41 Deny Generic
-2001:ee0:7840::/42 Deny Generic
-2001:ee0:7880::/41 Deny Generic
-2001:ee0:7900::/40 Deny Generic
+2001:ee0:7800::/39 Deny Generic
+2001:ee0:8000::/40 Deny Generic
+2001:ee0:8900::/40 Deny Generic
+2001:ee0:8a00::/40 Deny Generic
+2001:ee0:8d00::/40 Deny Generic
+2001:ee0:8e00::/40 Deny Generic
+2001:ee0:9000::/40 Deny Generic
+2001:ee0:9300::/40 Deny Generic
+2001:ee0:9400::/38 Deny Generic
+2001:ee0:9800::/38 Deny Generic
+2001:ee0:9c00::/40 Deny Generic
+2001:ee0:9e00::/39 Deny Generic
+2001:ee0:a000::/39 Deny Generic
+2001:ee0:a200::/40 Deny Generic
+2001:ee0:a400::/38 Deny Generic
+2001:ee0:c200::/39 Deny Generic
+2001:ee0:c400::/38 Deny Generic
+2001:ee0:c800::/37 Deny Generic
+2001:ee0:d000::/40 Deny Generic
+2001:ee0:dd00::/40 Deny Generic
 2405:f980::/48 Deny Generic
 Origin: VN
 Tag: VNPT Corp

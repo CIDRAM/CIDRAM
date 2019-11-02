@@ -1,8 +1,8 @@
 # IPv4 signatures file (CIDRs for proxies, VPNs and other miscellaneous unwanted services).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv4_other.dat
 
-# Version: 2019.295.435
-# Last modified: 2019.10.23
+# Version: 2019.305.346
+# Last modified: 2019.11.02
 
 
 # ---
@@ -22,7 +22,7 @@
 # When updating: Remove invalids to reduce false positive risk.
 
 # Cogent VPNs+Proxies (AzireVPN, OVPN, BeeVPN ApS, Windscribe, etc; "^.*(?:Prox|Windscribe|VPN).*$").
-# Updated: 2019.07.02
+# Updated: 2019.07.02 / Checked: 2019.11.02
 23.154.160.0/24 Deny Proxy
 Origin: AQ
 185.157.163.0/24 Deny Proxy
@@ -30,19 +30,24 @@ Origin: SE
 Tag: Cogent VPNs+Proxies
 
 # No announce description (frequent source of spam in some cases, general unwanted activity in others, etc).
-# Updated: 2019.07.02
+# Updated: 2019.11.02
+185.171.66.0/24 Deny Generic
+Origin: BE
 198.176.232.0/24 Deny Generic
 Origin: CA
+179.51.192.0/20 Deny Generic
+Origin: CR
 45.89.124.0/22 Deny Generic
+45.92.216.0/22 Deny Generic
+45.95.172.0/22 Deny Generic
+45.138.48.0/22 Deny Generic
+45.147.7.0/24 Deny Generic
 Origin: DE
-80.91.66.0/24 Deny Generic
-80.91.70.0/24 Deny Generic
-80.91.80.0/24 Deny Generic
-185.118.105.0/24 Deny Generic
-Origin: ES
 141.98.173.0/24 Deny Generic
 193.57.102.0/24 Deny Generic
 Origin: FR
+45.87.131.0/24 Deny Generic
+45.91.72.0/24 Deny Generic
 87.239.254.0/24 Deny Generic
 213.146.170.0/24 Deny Generic
 213.146.175.0/24 Deny Generic
@@ -51,137 +56,145 @@ Origin: GB
 Origin: GR
 85.116.148.0/22 Deny Generic
 Origin: IT
-46.244.124.0/23 Deny Generic
 91.103.82.0/24 Deny Generic
 185.30.233.0/24 Deny Generic
 Origin: NL
-168.81.13.0/24 Deny Generic
-168.81.14.0/24 Deny Generic
-168.81.208.0/24 Deny Generic
-168.81.210.0/24 Deny Generic
-168.81.252.0/24 Deny Generic
-168.81.254.0/24 Deny Generic
-Origin: SC
-45.15.18.0/24 Deny Generic
-Origin: SE
-23.237.108.0/23 Deny Generic
-23.237.112.0/22 Deny Generic
-23.237.116.0/23 Deny Generic
-23.237.128.0/21 Deny Generic
+45.145.128.0/23 Deny Generic
+Origin: RU
+23.237.114.0/23 Deny Generic
+23.237.128.0/23 Deny Generic
+23.237.134.0/23 Deny Generic
 23.237.136.0/22 Deny Generic
 23.237.147.0/24 Deny Generic
 23.237.148.0/22 Deny Generic
 23.237.154.0/23 Deny Generic
-23.237.156.0/22 Deny Generic
-23.237.160.0/20 Deny Generic
+23.237.158.0/23 Deny Generic
+23.237.160.0/23 Deny Generic
+23.237.164.0/22 Deny Generic
+23.237.168.0/22 Deny Generic
+23.237.172.0/24 Deny Generic
+23.237.174.0/23 Deny Generic
 23.237.178.0/23 Deny Generic
+23.237.180.0/24 Deny Generic
+23.237.188.0/23 Deny Generic
 23.237.246.0/23 Deny Generic
 23.237.248.0/23 Deny Generic
 23.237.250.0/24 Deny Generic
 38.18.128.0/21 Deny Generic
 38.18.152.0/21 Deny Generic
-38.19.160.0/21 Deny Generic
 38.20.144.0/22 Deny Generic
+38.20.156.0/22 Deny Generic
+38.22.8.0/24 Deny Generic
 38.27.104.0/24 Deny Generic
-38.67.23.0/24 Deny Generic
-38.68.23.0/24 Deny Generic
-38.68.78.0/24 Deny Generic
-38.69.1.0/24 Deny Generic
-38.69.8.0/22 Deny Generic
 38.69.144.0/24 Deny Generic
-38.69.146.0/24 Deny Generic
 38.69.183.0/24 Deny Generic
 38.70.219.0/24 Deny Generic
-38.72.68.0/24 Deny Generic
-38.74.5.0/24 Deny Generic
-38.74.32.0/20 Deny Generic
-38.74.52.0/22 Deny Generic
-38.74.56.0/22 Deny Generic
-38.74.66.0/23 Deny Generic
-38.79.72.0/23 Deny Generic
-38.93.231.0/24 Deny Generic
+38.74.67.0/24 Deny Generic
+38.81.197.0/24 Deny Generic
+38.83.75.0/24 Deny Generic
+38.87.45.0/24 Deny Generic
+38.88.84.0/24 Deny Generic
+38.88.86.0/24 Deny Generic
+38.94.2.0/24 Deny Generic
+38.94.129.0/24 Deny Generic
 38.94.137.0/24 Deny Generic
-38.95.208.0/23 Deny Generic
-38.95.211.0/24 Deny Generic
-38.96.182.0/24 Deny Generic
-38.97.82.0/24 Deny Generic
-38.99.98.0/23 Deny Generic
+38.95.3.0/24 Deny Generic
+38.96.136.0/23 Deny Generic
+38.97.17.0/24 Deny Generic
+38.98.98.0/24 Deny Generic
+38.98.250.0/24 Deny Generic
+38.99.120.0/23 Deny Generic
 38.99.154.0/24 Deny Generic
 38.100.87.0/24 Deny Generic
+38.101.73.0/24 Deny Generic
 38.101.189.0/24 Deny Generic
+38.101.191.0/24 Deny Generic
 38.101.218.0/24 Deny Generic
 38.102.101.0/24 Deny Generic
 38.102.104.0/21 Deny Generic
 38.102.146.0/24 Deny Generic
+38.105.94.0/24 Deny Generic
 38.105.134.0/24 Deny Generic
 38.105.162.0/24 Deny Generic
 38.106.72.0/22 Deny Generic
+38.106.94.0/23 Deny Generic
+38.106.142.0/24 Deny Generic
+38.107.102.0/23 Deny Generic
 38.108.15.0/24 Deny Generic
+38.108.128.0/23 Deny Generic
+38.109.224.0/24 Deny Generic
 38.109.250.0/23 Deny Generic
+38.110.58.0/24 Deny Generic
 38.110.240.0/20 Deny Generic
-38.111.1.0/24 Deny Generic
 38.111.96.0/23 Deny Generic
 38.111.124.0/23 Deny Generic
+38.111.161.0/24 Deny Generic
+38.117.203.0/24 Deny Generic
 38.121.17.0/24 Deny Generic
 38.121.88.0/21 Deny Generic
-38.123.3.0/24 Deny Generic
-38.125.63.0/24 Deny Generic
+38.121.101.0/24 Deny Generic
+38.123.207.0/24 Deny Generic
+38.124.147.0/24 Deny Generic
 38.125.84.0/24 Deny Generic
-38.125.89.0/24 Deny Generic
 38.125.94.0/24 Deny Generic
 38.125.97.0/24 Deny Generic
 38.125.100.0/24 Deny Generic
 38.125.102.0/24 Deny Generic
+38.125.105.0/24 Deny Generic
+38.125.108.0/24 Deny Generic
+38.125.161.0/24 Deny Generic
 38.126.14.0/24 Deny Generic
 38.126.238.0/23 Deny Generic
 38.126.245.0/24 Deny Generic
-38.127.4.0/24 Deny Generic
+38.127.199.0/24 Deny Generic
 38.127.237.0/24 Deny Generic
+38.128.107.0/24 Deny Generic
 38.130.135.0/24 Deny Generic
 38.130.255.0/24 Deny Generic
+38.131.48.0/24 Deny Generic
+38.131.229.0/24 Deny Generic
 38.133.164.0/23 Deny Generic
 38.133.178.0/24 Deny Generic
 38.133.182.0/23 Deny Generic
 38.133.214.0/24 Deny Generic
+38.135.38.0/24 Deny Generic
 38.135.85.0/24 Deny Generic
 38.135.120.0/24 Deny Generic
 38.135.124.0/22 Deny Generic
-38.141.60.0/24 Deny Generic
 38.143.16.0/23 Deny Generic
-38.143.20.0/22 Deny Generic
+38.143.25.0/24 Deny Generic
 38.143.176.0/22 Deny Generic
-38.146.0.0/24 Deny Generic
 38.146.51.0/24 Deny Generic
-38.146.52.0/23 Deny Generic
-38.146.55.0/24 Deny Generic
+38.146.52.0/24 Deny Generic
 38.146.57.0/24 Deny Generic
-38.146.59.0/24 Deny Generic
-38.146.80.0/23 Deny Generic
-38.146.144.0/21 Deny Generic
-38.146.193.0/24 Deny Generic
+38.146.141.0/24 Deny Generic
+38.146.142.0/24 Deny Generic
+38.146.148.0/22 Deny Generic
+38.146.152.0/22 Deny Generic
 38.146.224.0/24 Deny Generic
 38.240.96.0/19 Deny Generic
 38.240.192.0/19 Deny Generic
-50.7.236.0/23 Deny Generic
-50.7.242.0/23 Deny Generic
-50.7.244.0/23 Deny Generic
-64.92.64.0/24 Deny Generic
-64.92.68.0/24 Deny Generic
-67.200.54.0/23 Deny Generic
+50.7.101.0/24 Deny Generic
+50.7.110.0/24 Deny Generic
+50.7.238.0/23 Deny Generic
+50.7.240.0/22 Deny Generic
 149.12.214.0/24 Deny Generic
 154.3.0.0/16 Deny Generic
 154.6.0.0/15 Deny Generic
 154.9.0.0/16 Deny Generic
 154.12.0.0/15 Deny Generic
+154.17.208.0/22 Deny Generic
+154.17.212.0/24 Deny Generic
+154.17.214.0/23 Deny Generic
+154.17.216.0/21 Deny Generic
+154.17.224.0/20 Deny Generic
+154.17.248.0/22 Deny Generic
 154.18.0.0/15 Deny Generic
 154.21.0.0/16 Deny Generic
 154.22.0.0/23 Deny Generic
 154.22.128.0/23 Deny Generic
 154.24.0.0/13 Deny Generic
-154.37.0.0/16 Deny Generic
-154.38.0.0/22 Deny Generic
-154.38.128.0/24 Deny Generic
-154.39.0.0/23 Deny Generic
+154.36.0.0/14 Deny Generic
 154.40.0.0/13 Deny Generic
 154.48.0.0/12 Deny Generic
 154.64.0.0/16 Deny Generic
@@ -189,11 +202,9 @@ Origin: SE
 198.16.117.0/24 Deny Generic
 204.6.144.0/24 Deny Generic
 205.254.192.0/19 Deny Generic
+209.146.48.0/21 Deny Generic
 216.152.18.0/24 Deny Generic
 Origin: US
-165.3.0.0/16 Deny Generic
-165.54.0.0/15 Deny Generic
-Origin: ZA
 Tag: Cogent Other
 ---
 recaptcha:

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2019.10.23).
+ * This file: Front-end handler (last modified: 2019.11.04).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -747,11 +747,14 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === '' && !$CIDRAM['FE']['CronMode']
         ['Lib' => 'apcu', 'Name' => 'APCu'],
         ['Lib' => 'memcached', 'Name' => 'Memcached'],
         ['Lib' => 'redis', 'Name' => 'Redis'],
-        ['Lib' => 'pdo', 'Name' => 'PDO']
+        ['Lib' => 'pdo', 'Name' => 'PDO', 'Drivers' => (class_exists('\PDO') ? \PDO::getAvailableDrivers() : [])]
     ] as $CIDRAM['ThisExtension']) {
         if (extension_loaded($CIDRAM['ThisExtension']['Lib'])) {
             $CIDRAM['ExtVer'] = (new ReflectionExtension($CIDRAM['ThisExtension']['Lib']))->getVersion();
             $CIDRAM['ThisResponse'] = '<span class="txtGn">' . $CIDRAM['L10N']->getString('response_yes') . ' (' . $CIDRAM['ExtVer'] . ')</span>';
+            if (!empty($CIDRAM['ThisExtension']['Drivers'])) {
+                $CIDRAM['ThisResponse'] .= '<em class="txtGn"> – ' . implode(', ', $CIDRAM['ThisExtension']['Drivers']) . '.</em>';
+            }
         } else {
             $CIDRAM['ThisResponse'] = '<span class="txtRd">' . $CIDRAM['L10N']->getString('response_no') . '</span>';
         }

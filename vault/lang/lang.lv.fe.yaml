@@ -7,14 +7,38 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Latvian language data for the front-end (last modified: 2019.10.23).
+# This file: Latvian language data for the front-end (last modified: 2019.11.07).
 ##/
 
+tip_2fa_sent: "Uz jūsu e-pasta adresi ir nosūtīts e-pasts ar divu faktoru autentifikācijas kodu. Lūdzu, apstipriniet šo kodu zemāk, lai ielogotos. Ja nesaņēmāt šo e-pastu, mēģiniet izlogoties, nogaidiet 10 minūtes, un ielogoties vēlreiz, lai saņemtu jaunu e-pastu ar jaunu kodu."
+tip_accounts: "Kontu lapa ļauj jums kontrolēt, kurš var ielogoties CIDRAM."
+tip_aux: "Varat izmantot šo lapu, lai izveidotu, izdzēstu un mainītu CIDRAM papildnoteikumus."
+tip_cache_data: "Šeit jūs varat pārskatīt kešatmiņas saturu."
+tip_cidr_calc: "CIDR kalkulators ļauj aprēķināt IP adreses CIDR."
+tip_condition_placeholder: "Norādiet vērtību vai atstājiet tukšu lai neievērotu."
+tip_config: "Konfigurācijas lapa ļauj mainīt CIDRAM konfigurāciju."
+tip_custom_ua: "Šeit ievadiet lietotāja aģentu (nav obligāti)."
+tip_enter_input_here: "Šeit ievadiet ievadi."
+tip_enter_ip_here: "Šeit ievadiet IP adresi."
+tip_enter_ips_here: "Šeit ievadiet IP adreses."
+tip_fe_cookie_warning: "Piezīme: CIDRAM izmanto sīkfailu, lai autentificētu ielogošanās informāciju. Ielogoties, jūs dodat piekrišanu sīkdatnes izveidošanai un saglabāšanai jūsu pārlūkprogrammā."
+tip_file_manager: "Failu pārvaldnieks ļauj izdzēst, rediģēt, augšupielādēt un lejupielādēt failus. Lietojiet piesardzīgi (ar to jūs varētu sabojāt instalāciju)."
+tip_fixer: "Paraksta faila fiksētājs nodrošina veidu, kā atklāt un novērst parakstu failu iespējamās problēmas."
+tip_home: "Šī ir jūsu CIDRAM instalācijas mājas lapa. Lai turpinātu, navigācijas izvēlnē kreisajā pusē atlasiet saiti."
+tip_ip_aggregator: "IP apkopotājs ļauj jums izteikt IP un CIDR iespējami mazākā veidā. Ievadiet apkopojamos datus un nospiediet "OK"."
+tip_ip_test: "IP testa lapa ļauj jums pārbaudīt, vai IP adreses bloķē pašlaik instalētie paraksti."
+tip_ip_test_switches: "(Ja tas nav atlasīts, tiks pārbaudīti tikai paraksta faili)."
+tip_ip_tracking: "IP izsekošanas lapa ļauj jums pārbaudīt IP adrešu izsekošanas statusu, pārbaudīt kuras no tām ir aizliegtas, un ja vēlaties, pārtraukt to aizliegšanu un izsekošanu."
+tip_login: "Noklusējuma lietotājvārds: <span class="txtRd">admin</span> – Noklusējuma parole: <span class="txtRd">password</span>"
+tip_logs: "Zemāk redzamajā sarakstā atlasiet logfailu, lai skatītu šī faila saturu."
+tip_pie_html: "Noklikšķiniet uz komponenta nosaukuma, lai iegūtu sīkāku informāciju."
+tip_range: "Šajā lapā parādīta pamata statistikas informācija par IP diapazoniem, uz kuriem attiecas pašlaik aktīvie paraksta faili."
+tip_sections_list: "Šajā lapā ir uzskaitītas sadaļas, kas atrodas pašlaik aktīvajos paraksta failos."
 tip_see_the_documentation: "Skatiet <a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#SECTION6">dokumentāciju</a>, lai iegūtu informāciju par dažādām konfigurācijas direktīvām un to mērķiem."
 tip_statistics: "Šī lapa parāda dažus pamata statistikas datus par jūsu CIDRAM instalēšanu."
 tip_statistics_disabled: "Piezīme: Statistikas izsekošana pašlaik ir atspējota, bet to var iespējot, izmantojot konfigurācijas lapu."
 tip_updates: "Atjauninājumu lapa ļauj instalēt, atinstalēt un atjaunināt dažādus CIDRAM komponentus (pamata pakete, paraksti, L10N faili, utt)."
-title_login: "Pieslēgties"
+title_login: "Ielogošanās"
 warning: "Brīdinājumi:"
 warning_signatures_1: "Neviens paraksta fails nav aktīvs!"
 
@@ -59,7 +83,7 @@ info_some_useful_links: |
 msg_template_2fa: |
  <center><p>Sveiks, %1$s.<br />
  <br />
- Jūsu divu-faktoru autentifikācijas kods, lai pieteiktos CIDRAM priekšplānā:</p>
+ Jūsu divu-faktoru autentifikācijas kods, lai ielogotos CIDRAM:</p>
  <h1>%2$s</h1>
  <p>Šis kods zaudē spēku 10 minūtēs.</p></center>
 msg_subject_2fa: "Divu-Faktoru Autentifikācija"

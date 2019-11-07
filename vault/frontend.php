@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2019.11.04).
+ * This file: Front-end handler (last modified: 2019.11.06).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -162,12 +162,14 @@ if (empty($CIDRAM['L10N']->Data['Text Direction']) || $CIDRAM['L10N']->Data['Tex
     $CIDRAM['FE']['PIP_Input'] = $CIDRAM['FE']['PIP_Right'];
     $CIDRAM['FE']['Gradient_Degree'] = 90;
     $CIDRAM['FE']['Half_Border'] = 'solid solid none none';
+    $CIDRAM['FE']['45deg'] = '45deg';
 } else {
     $CIDRAM['FE']['FE_Align'] = 'right';
     $CIDRAM['FE']['FE_Align_Reverse'] = 'left';
     $CIDRAM['FE']['PIP_Input'] = $CIDRAM['FE']['PIP_Left'];
     $CIDRAM['FE']['Gradient_Degree'] = 270;
     $CIDRAM['FE']['Half_Border'] = 'solid none none solid';
+    $CIDRAM['FE']['45deg'] = '-45deg';
 }
 
 /** A simple passthru for non-private theme images and related data. */
@@ -740,7 +742,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === '' && !$CIDRAM['FE']['CronMode']
     unset($CIDRAM['Remote-YAML-PHP-Array'], $CIDRAM['Remote-YAML-PHP'], $CIDRAM['ThisBranch'], $CIDRAM['RemoteVerPath']);
 
     /** Extension availability. */
-    $CIDRAM['FE']['Extensions'] = "\n";
+    $CIDRAM['FE']['Extensions'] = [];
     foreach ([
         ['Lib' => 'pcre', 'Name' => 'PCRE'],
         ['Lib' => 'curl', 'Name' => 'cURL'],
@@ -751,19 +753,22 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === '' && !$CIDRAM['FE']['CronMode']
     ] as $CIDRAM['ThisExtension']) {
         if (extension_loaded($CIDRAM['ThisExtension']['Lib'])) {
             $CIDRAM['ExtVer'] = (new ReflectionExtension($CIDRAM['ThisExtension']['Lib']))->getVersion();
-            $CIDRAM['ThisResponse'] = '<span class="txtGn">' . $CIDRAM['L10N']->getString('response_yes') . ' (' . $CIDRAM['ExtVer'] . ')</span>';
+            $CIDRAM['ThisResponse'] = '<span class="txtGn">' . $CIDRAM['L10N']->getString('response_yes') . ' (' . $CIDRAM['ExtVer'] . ')';
             if (!empty($CIDRAM['ThisExtension']['Drivers'])) {
-                $CIDRAM['ThisResponse'] .= '<em class="txtGn"> – ' . implode(', ', $CIDRAM['ThisExtension']['Drivers']) . '.</em>';
+                $CIDRAM['ThisResponse'] .= ', {' . implode(', ', $CIDRAM['ThisExtension']['Drivers']) . '}';
             }
+            $CIDRAM['ThisResponse'] .= '</span>';
         } else {
             $CIDRAM['ThisResponse'] = '<span class="txtRd">' . $CIDRAM['L10N']->getString('response_no') . '</span>';
         }
-        $CIDRAM['FE']['Extensions'] .= sprintf(
-            '<tr><td class="h3">%s</td><td class="h3f">%s</td></tr>',
+        $CIDRAM['FE']['Extensions'][] = '    <li><small>' . $CIDRAM['LTRinRTF'](sprintf(
+            '%1$s➡%2$s',
             $CIDRAM['ThisExtension']['Name'],
             $CIDRAM['ThisResponse']
-        );
+        )) . '</small></li>';
     }
+    $CIDRAM['FE']['Extensions'] = implode("\n", $CIDRAM['FE']['Extensions']);
+    $CIDRAM['FE']['ExtensionIsAvailable'] = $CIDRAM['LTRinRTF']($CIDRAM['L10N']->getString('label_extension') . '➡' . $CIDRAM['L10N']->getString('label_installed_available'));
     unset($CIDRAM['ExtVer'], $CIDRAM['ThisResponse'], $CIDRAM['ThisExtension']);
 
     /** Process warnings. */
@@ -1068,31 +1073,38 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
     /** Directive template. */
     $CIDRAM['FE']['ConfigRow'] = $CIDRAM['ReadFile']($CIDRAM['GetAssetPath']('_config_row.html'));
 
-    /** Indexes. */
-    $CIDRAM['FE']['Indexes'] = '            ';
+    $CIDRAM['FE']['Indexes'] = '<ul class="pieul">';
 
     /** Generate entries for display and regenerate configuration if any changes were submitted. */
-    $CIDRAM['FE']['ConfigFields'] = $CIDRAM['RegenerateConfig'] = '';
+    $CIDRAM['FE']['ConfigFields'] = sprintf(
+        '<style>.showlink::before,.hidelink::before{content:"➖";display:inline-block;margin-%1$s:6px}.hidelink::before{transform:rotate(%2$s)}</style>',
+        $CIDRAM['FE']['FE_Align_Reverse'],
+        $CIDRAM['FE']['45deg']
+    );
+    $CIDRAM['RegenerateConfig'] = '';
     $CIDRAM['ConfigModified'] = (!empty($CIDRAM['QueryVars']['updated']) && $CIDRAM['QueryVars']['updated'] === 'true');
     foreach ($CIDRAM['Config']['Config Defaults'] as $CIDRAM['CatKey'] => $CIDRAM['CatValue']) {
         if (!is_array($CIDRAM['CatValue'])) {
             continue;
         }
-        $CIDRAM['RegenerateConfig'] .= '[' . $CIDRAM['CatKey'] . "]\r\n\r\n";
+        $CIDRAM['RegenerateConfig'] .= '[' . $CIDRAM['CatKey'] . ']';
+        if ($CIDRAM['CatInfo'] = $CIDRAM['L10N']->getString('config_' . $CIDRAM['CatKey']) ?: (
+            isset($CIDRAM['Config']['L10N']['config_' . $CIDRAM['CatKey']]) ? $CIDRAM['Config']['L10N']['config_' . $CIDRAM['CatKey']] : ''
+        )) {
+            $CIDRAM['CatInfo'] = '<br /><em>' . $CIDRAM['CatInfo'] . '</em>';
+            $CIDRAM['RegenerateConfig'] .= "\r\n; " . wordwrap(strip_tags($CIDRAM['CatInfo']), 77, "\r\n; ");
+        }
+        $CIDRAM['RegenerateConfig'] .= "\r\n\r\n";
         $CIDRAM['FE']['ConfigFields'] .= sprintf(
                 '<table><tr><td class="ng2"><div id="%1$s-container" class="s">' .
-                '<a id="%1$s-showlink" href="#%1$s-container" onclick="javascript:showid(\'%1$s-hidelink\');showid(\'%1$s-ihidelink\');hideid(\'%1$s-showlink\');hideid(\'%1$s-ishowlink\');show(\'%1$s-index\');show(\'%1$s-row\')">%1$s +</a>' .
-                '<a id="%1$s-hidelink" %2$s href="javascript:void(0);" onclick="javascript:showid(\'%1$s-showlink\');showid(\'%1$s-ishowlink\');hideid(\'%1$s-hidelink\');hideid(\'%1$s-ihidelink\');hide(\'%1$s-index\');hide(\'%1$s-row\')">%1$s -</a>' .
-                "</div></td></tr></table>\n<span class=\"%1\$s-row\" %2\$s><table>\n",
+                '<a class="showlink" id="%1$s-showlink" href="#%1$s-container" onclick="javascript:showid(\'%1$s-hidelink\');hideid(\'%1$s-showlink\');show(\'%1$s-row\')">%1$s</a>' .
+                '<a class="hidelink" id="%1$s-hidelink" %2$s href="#" onclick="javascript:showid(\'%1$s-showlink\');hideid(\'%1$s-hidelink\');hide(\'%1$s-row\')">%1$s</a>' .
+                "%3\$s</div></td></tr></table>\n<span class=\"%1\$s-row\" %2\$s><table>\n",
             $CIDRAM['CatKey'],
-            'style="display:none"'
+            'style="display:none"',
+            $CIDRAM['CatInfo']
         );
-        $CIDRAM['FE']['Indexes'] .= sprintf(
-            '<a id="%1$s-ishowlink" href="#%1$s-container" onclick="javascript:showid(\'%1$s-hidelink\');showid(\'%1$s-ihidelink\');hideid(\'%1$s-showlink\');hideid(\'%1$s-ishowlink\');show(\'%1$s-index\');show(\'%1$s-row\')">%1$s +</a>' .
-            '<a id="%1$s-ihidelink" style="display:none" href="javascript:void(0);" onclick="javascript:showid(\'%1$s-showlink\');showid(\'%1$s-ishowlink\');hideid(\'%1$s-hidelink\');hideid(\'%1$s-ihidelink\');hide(\'%1$s-index\');hide(\'%1$s-row\')">%1$s -</a>' .
-            "<br /><br />\n            ",
-            $CIDRAM['CatKey']
-        );
+        $CIDRAM['CatData'] = '';
         foreach ($CIDRAM['CatValue'] as $CIDRAM['DirKey'] => $CIDRAM['DirValue']) {
             $CIDRAM['ThisDir'] = ['Preview' => '', 'Trigger' => '', 'FieldOut' => '', 'CatKey' => $CIDRAM['CatKey']];
             if (empty($CIDRAM['DirValue']['type']) || !isset($CIDRAM['Config'][$CIDRAM['CatKey']][$CIDRAM['DirKey']])) {
@@ -1100,8 +1112,16 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
             }
             $CIDRAM['ThisDir']['DirLangKey'] = 'config_' . $CIDRAM['CatKey'] . '_' . $CIDRAM['DirKey'];
             $CIDRAM['ThisDir']['DirLangKeyOther'] = $CIDRAM['ThisDir']['DirLangKey'] . '_other';
-            $CIDRAM['ThisDir']['DirName'] = $CIDRAM['CatKey'] . '-&gt;' . $CIDRAM['DirKey'];
-            $CIDRAM['FE']['Indexes'] .= '<span class="' . $CIDRAM['CatKey'] . '-index" style="display:none"><a href="#' . $CIDRAM['ThisDir']['DirLangKey'] . '">' . $CIDRAM['ThisDir']['DirName'] . "</a><br /><br /></span>\n            ";
+            $CIDRAM['ThisDir']['DirName'] = $CIDRAM['LTRinRTF']($CIDRAM['CatKey'] . '➡' . $CIDRAM['DirKey']);
+            $CIDRAM['ThisDir']['Friendly'] = $CIDRAM['L10N']->getString($CIDRAM['ThisDir']['DirLangKey'] . '_label') ?: (
+                isset($CIDRAM['Config']['L10N'][$CIDRAM['ThisDir']['DirLangKey'] . '_label']) ? $CIDRAM['Config']['L10N'][$CIDRAM['ThisDir']['DirLangKey'] . '_label'] : ''
+            ) ?: $CIDRAM['DirKey'];
+            $CIDRAM['CatData'] .= sprintf(
+                '<li><a onclick="javascript:showid(\'%1$s-hidelink\');hideid(\'%1$s-showlink\');show(\'%1$s-row\')" href="#%2$s">%3$s</a></li>',
+                $CIDRAM['CatKey'],
+                $CIDRAM['ThisDir']['DirLangKey'],
+                $CIDRAM['ThisDir']['Friendly']
+            );
             $CIDRAM['ThisDir']['DirLang'] =
                 $CIDRAM['L10N']->getString($CIDRAM['ThisDir']['DirLangKey']) ?:
                 $CIDRAM['L10N']->getString('config_' . $CIDRAM['CatKey']) ?:
@@ -1363,6 +1383,14 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
                 $CIDRAM['L10N']->Data + $CIDRAM['ThisDir'], $CIDRAM['FE']['ConfigRow']
             );
         }
+        $CIDRAM['CatKeyFriendly'] = $CIDRAM['L10N']->getString('config_' . $CIDRAM['CatKey'] . '_label') ?: (
+            isset($CIDRAM['Config']['L10N']['config_' . $CIDRAM['CatKey'] . '_label']) ? $CIDRAM['Config']['L10N']['config_' . $CIDRAM['CatKey'] . '_label'] : ''
+        ) ?: $CIDRAM['CatKey'];
+        $CIDRAM['FE']['Indexes'] .= sprintf(
+            '<li><span class="comCat" style="cursor:pointer">%1$s</span><ul class="comSub">%2$s</ul></li>',
+            $CIDRAM['CatKeyFriendly'],
+            $CIDRAM['CatData']
+        );
         $CIDRAM['FE']['ConfigFields'] .= "</table></span>\n";
         $CIDRAM['RegenerateConfig'] .= "\r\n";
     }
@@ -1379,11 +1407,13 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
         }
     }
 
+    $CIDRAM['FE']['Indexes'] .= '</ul>';
+
     /** Parse output. */
     $CIDRAM['FE']['FE_Content'] = $CIDRAM['ParseVars'](
         $CIDRAM['L10N']->Data + $CIDRAM['FE'],
         $CIDRAM['ReadFile']($CIDRAM['GetAssetPath']('_config.html'))
-    );
+    ) . $CIDRAM['MenuToggle'];
 
     /** Send output. */
     echo $CIDRAM['SendOutput']();
@@ -1532,7 +1562,6 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && ($CIDRAM['FE']['Per
     /** Cleanup. */
     unset($CIDRAM['Components']['Files']);
 
-    /** Indexes. */
     $CIDRAM['FE']['Indexes'] = [];
 
     /** A form has been submitted. */

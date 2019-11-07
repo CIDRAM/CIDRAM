@@ -1,4 +1,6 @@
 [general]
+; General configuration (any core configuration not belonging to other
+; categories).
 
 ; Human readable file for logging all blocked access attempts. Specify a
 ; filename, or leave blank to disable.
@@ -153,7 +155,7 @@ maintenance_mode=false
 
 ; Defines which algorithm to use for all future passwords and sessions.
 ; Options: PASSWORD_DEFAULT (default), PASSWORD_BCRYPT, PASSWORD_ARGON2I
-; (requires PHP >= 7.2.0).
+; (requires PHP &gt;= 7.2.0).
 default_algo='PASSWORD_DEFAULT'
 
 ; Track CIDRAM usage statistics? True = Yes; False = No [Default].
@@ -200,6 +202,7 @@ disabled_channels=''
 
 
 [signatures]
+; Configuration for signatures, signature files, modules, etc.
 
 ; A list of the IPv4 signature files that CIDRAM should attempt to parse,
 ; delimited by commas.
@@ -265,6 +268,8 @@ track_mode=false
 
 
 [recaptcha]
+; Configuration for reCAPTCHA (provides a way for humans to regain access when
+; blocked).
 
 ; Defines how CIDRAM should use reCAPTCHA (see documentation).
 usemode=0
@@ -303,6 +308,7 @@ show_cookie_warning=true
 
 
 [legal]
+; Configuration for legal requirements.
 
 ; Pseudonymise IP addresses when logging? True = Yes [Default]; False = No.
 pseudonymise_ip_addresses=true
@@ -323,6 +329,7 @@ privacy_policy=''
 
 
 [template_data]
+; Configuration for templates and themes.
 
 ; Default theme to use for CIDRAM.
 theme='default'
@@ -335,6 +342,7 @@ css_url=''
 
 
 [PHPMailer]
+; Configuration for PHPMailer (used for two-factor authentication).
 
 ; A file for logging all events in relation to PHPMailer. Specify a filename,
 ; or leave blank to disable.
@@ -383,6 +391,7 @@ add_reply_to_name=''
 
 
 [rate_limiting]
+; Configuration for rate limiting (not recommended for general use).
 
 ; The maximum amount of bandwidth allowed within the allowance period before
 ; rate limiting future requests. A value of 0 disables this type of rate
@@ -407,46 +416,42 @@ allowance_period=0
 
 
 [supplementary_cache_options]
+; Supplementary cache options.
 
-; Unstable/Experimental! Specifies whether to try using APCu for caching.
-; Default = False.
+; Specifies whether to try using APCu for caching. Default = False.
 enable_apcu=false
 
-; Unstable/Experimental! Specifies whether to try using Memcached for caching.
-; Default = False.
+; Specifies whether to try using Memcached for caching. Default = False.
 enable_memcached=false
 
-; Unstable/Experimental! Specifies whether to try using Redis for caching.
-; Default = False.
+; Specifies whether to try using Redis for caching. Default = False.
 enable_redis=false
 
-; Unstable/Experimental! Specifies whether to try using PDO for caching.
-; Default = False.
+; Specifies whether to try using PDO for caching. Default = False.
 enable_pdo=false
 
-; Unstable/Experimental! Memcached host value. Default = "localhost".
+; Memcached host value. Default = "localhost".
 memcached_host='localhost'
 
-; Unstable/Experimental! Memcached port value. Default = "11211".
+; Memcached port value. Default = "11211".
 memcached_port=11211
 
-; Unstable/Experimental! Redis host value. Default = "localhost".
+; Redis host value. Default = "localhost".
 redis_host='localhost'
 
-; Unstable/Experimental! Redis port value. Default = "6379".
+; Redis port value. Default = "6379".
 redis_port=6379
 
-; Unstable/Experimental! Redis timeout value. Default = "2.5".
+; Redis timeout value. Default = "2.5".
 redis_timeout=2.5
 
-; Unstable/Experimental! PDO DSN value. Default =
-; "mysql:dbname=cidram;host=localhost;port=3306".
+; PDO DSN value. Default = "mysql:dbname=cidram;host=localhost;port=3306".
 pdo_dsn='mysql:dbname=cidram;host=localhost;port=3306'
 
-; Unstable/Experimental! PDO username.
+; PDO username.
 pdo_username=''
 
-; Unstable/Experimental! PDO password.
+; PDO password.
 pdo_password=''
 
 

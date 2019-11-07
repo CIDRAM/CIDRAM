@@ -7,16 +7,40 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Polish language data for the front-end (last modified: 2019.10.23).
+# This file: Polish language data for the front-end (last modified: 2019.11.07).
 ##/
 
+tip_2fa_sent: "Na twój adres e-mail została wysłana wiadomość e-mail zawierająca dwuskładnikowy kod uwierzytelniający. Potwierdź poniższy kod, aby uzyskać dostęp do interfejsu użytkownika. Jeśli nie otrzymałeś tego e-maila, spróbuj się wylogować, poczekać 10 minut i zalogować się ponownie, aby otrzymać nowy e-mail zawierający nowy kod."
+tip_accounts: "Witaj, {username}.<br />Strona kont pozwala kontrolować, kto może uzyskać dostęp do interfejsu użytkownika CIDRAM."
+tip_aux: "Witaj, {username}.<br />Za pomocą tej strony można tworzyć, usuwać i modyfikować reguły pomocnicze dla CIDRAM."
+tip_cache_data: "Witaj, {username}.<br />Tutaj możesz przejrzeć zawartość pamięci podręcznej."
+tip_cidr_calc: "Witaj, {username}.<br />Kalkulator CIDR umożliwia obliczenie CIDRy adresu IP."
+tip_condition_placeholder: "Podaj wartość lub pozostaw puste aby zignorować."
+tip_config: "Witaj, {username}.<br />Strona konfiguracji pozwala modyfikować konfigurację CIDRAM z interfejsu użytkownika."
+tip_custom_ua: "Wprowadź agent użytkownika tutaj (opcjonalnie)."
+tip_enter_input_here: "Wprowadź dane tutaj."
+tip_enter_ip_here: "Wprowadź adres IP tutaj."
+tip_enter_ips_here: "Wprowadź adresy IP tutaj."
+tip_fe_cookie_warning: "Uwaga: CIDRAM wykorzystuje plik cookie do uwierzytelnienia logowania. Logując się, wyrażasz zgodę na utworzenie i przechowywanie plików cookie przez przeglądarkę."
+tip_file_manager: "Witaj, {username}.<br />Menedżer plików umożliwia usuwanie, edycję, przesyłanie i pobieranie plików. Używaj z rozwagą (to może zepsuć twoja instalację)."
+tip_fixer: "Witaj, {username}.<br />Narzędzie do naprawy plików podpis umożliwia wykrywanie i naprawianie potencjalnych problemów w plikach podpis."
+tip_home: "Witaj, {username}.<br />To jest strona główna interfejsu użytkownika CIDRAM. Wybierz link z menu nawigacyjnego po lewej stronie, aby kontynuować."
+tip_ip_aggregator: "Witaj, {username}.<br />Agregator IP pozwala wyrażać adresy IP i CIDRy w możliwie najmniejszy sposób. Wprowadź dane, które mają zostać zagregowane, i naciśnij „OK”."
+tip_ip_test_switches: "(Jeśli ta opcja nie jest zaznaczona, tylko pliki podpis będą testowane)."
+tip_ip_test: "Witaj, {username}.<br />Strona testowa IP pozwala sprawdzić, czy adresy IP są blokowane przez aktualnie zainstalowane podpisy."
+tip_ip_tracking: "Witaj, {username}.<br />Strona śledzenia IP pozwala sprawdzić status śledzenia adresów IP, sprawdzić, które z nich zostały zbanowane, a także odblokować/wyśledzić je, jeśli chcesz to zrobić."
+tip_login: "Domyślna nazwa użytkownika: <span class="txtRd">admin</span> – Domyślne hasło: <span class="txtRd">password</span>"
+tip_logs: "Witaj, {username}.<br />Wybierz plik dziennika z poniższej listy, aby wyświetlić zawartość tego pliku dziennika."
+tip_pie_html: "Kliknij nazwę komponentu, aby uzyskać więcej informacji."
+tip_range: "Witaj, {username}.<br />Ta strona pokazuje podstawowe informacje statystyczne o zakresach adresów IP objętych obecnie aktywnymi plikami podpis."
+tip_sections_list: "Witaj, {username}.<br />Ta strona zawiera listę sekcji, które istnieją w aktualnie aktywnych plikach podpis."
 tip_see_the_documentation: "Informacje na temat różnych dyrektyw konfiguracyjnych i ich celów można znaleźć w <a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#SECTION6">dokumentacji</a>."
 tip_statistics: "Witaj, {username}.<br />Ta strona pokazuje podstawowe statystyki użytkowania dotyczące instalacji CIDRAM."
 tip_statistics_disabled: "Uwaga: Śledzenie statystyk jest obecnie wyłączone, ale można je włączyć na stronie konfiguracji."
 tip_updates: "Witaj, {username}.<br />Strona aktualizacji pozwala instalować, odinstalowywać i aktualizować różne składniki CIDRAM (pakiet podstawowy, podpisy, pliki L10N, itp)."
 title_login: "Zaloguj sie"
 warning: "Ostrzeżenia:"
-warning_signatures_1: "Żadne pliki sygnatur nie są aktywne!"
+warning_signatures_1: "Żadne pliki podpis nie są aktywne!"
 
 info_some_useful_links: |
  Kilka przydatnych linków:<br />
@@ -37,12 +61,12 @@ info_some_useful_links: |
        <li><span class="comCat" style="cursor:pointer">Inne przydatne narzędzia, zasoby, usługi, itp.</span>
          <ul class="comSub">
            <li><a href="https://www.stopforumspam.com/">Stop Forum Spam</a> – Prowadzi bazę danych znanych spamerów na forum. Przydatny do ochrony stron internetowych i forów przed spamerami.</li>
-           <li><a href="https://bgp.he.net/">Hurricane Electric BGP Toolkit</a> – Pobierz CIDR z ASN, określ relacje ASN, odkryj ASN na podstawie nazw sieci, itp.</li>
+           <li><a href="https://bgp.he.net/">Hurricane Electric BGP Toolkit</a> – Pobierz CIDRy z ASNy, określ relacje ASN, odkryj ASNy na podstawie nazw sieci, itp.</li>
            <li><a href="https://radar.qrator.net/">Radar by Qrator</a> – Przydatne narzędzie do sprawdzania połączeń ASN, a także różnych innych informacji o ASN.</li>
            <li><a href="http://www.ipdeny.com/ipblocks/">IPdeny IP country blocks</a> – Fantastyczna i dokładna usługa do generowania podpisów w całym kraju.</li>
-           <li><a href="https://www.google.com/transparencyreport/safebrowsing/malware/">Google Malware Dashboard</a> – Wyświetla raporty dotyczące wskaźników infekcji złośliwym oprogramowaniem dla ASN.</li>
-           <li><a href="https://www.spamhaus.org/statistics/botnet-asn/">The Spamhaus Project</a> – Wyświetla raporty dotyczące częstości infekcji botnetem dla ASN.</li>
-           <li><a href="https://www.abuseat.org/public/asn.html">Abuseat.org's Composite Blocking List</a> – Wyświetla raporty dotyczące częstości infekcji botnetem dla ASN.</li>
+           <li><a href="https://www.google.com/transparencyreport/safebrowsing/malware/">Google Malware Dashboard</a> – Wyświetla raporty dotyczące wskaźników infekcji złośliwym oprogramowaniem dla ASNy.</li>
+           <li><a href="https://www.spamhaus.org/statistics/botnet-asn/">The Spamhaus Project</a> – Wyświetla raporty dotyczące częstości infekcji botnetem dla ASNy.</li>
+           <li><a href="https://www.abuseat.org/public/asn.html">Abuseat.org's Composite Blocking List</a> – Wyświetla raporty dotyczące częstości infekcji botnetem dla ASNy.</li>
            <li><a href="https://abuseipdb.com/">AbuseIPDB</a> – Prowadzi bazę danych znanych niewłaściwych adresów IP; Zapewnia interfejs API do sprawdzania i raportowania adresów IP.</li>
            <li><a href="https://www.megarbl.net/index.php">MegaRBL.net</a> – Utrzymuje listę znanych spamerów; Przydatny do sprawdzania działań spamowych z IP/ASN.</li>
          </ul>

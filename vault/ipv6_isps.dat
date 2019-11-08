@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_isps.dat
 
-# Version: 2019.305.346
-# Last modified: 2019.11.02
+# Version: 2019.311.638
+# Last modified: 2019.11.08
 
 
 # ---
@@ -670,11 +670,12 @@ Tag: Fregat
 
 
 # ASN 48666 ("MAROSNET Telecommunication Company LLC").
-# %Listed, Google Malware Dashboard: 0.23%.
-# Stop Forum Spam (SFS) listings: 1,648.
-# Updated: 2018.09.07 / Checked: 2019.07.07
+# %Listed, Google Malware Dashboard: 0.38%.
+# Stop Forum Spam (SFS) listings: 1,359.
+# Updated: 2019.11.08
 
 2a02:f680::/29 Deny Spam
+2a0a:f9c2::/32 Deny Spam
 2a0c:6ec0::/48 Deny Spam
 Origin: RU
 Tag: MAROSNET
@@ -715,11 +716,12 @@ Tag: PHOENIX NAP, LLC
 
 # ASNs 24955, 41704 ("Orenburgskaya Gorodskaya Set, ZAO").
 # Caught spamming while pretending to be Google.
-# Stop Forum Spam (SFS) listings: 52,827 (AS24955), 84,383 (AS41704).
-# Updated: 2019.07.09
+# Stop Forum Spam (SFS) listings: 60,262 (AS24955), 56,617 (AS41704).
+# Updated: 2019.11.08
 
 2a02:1c8::/47 Deny Spam
 2a02:1c8:7::/48 Deny Spam
+2a02:1c8:10::/44 Deny Spam
 2a02:1c8:90::/44 Deny Spam
 2a02:1c8:100::/40 Deny Spam
 2a02:1c8:700::/40 Deny Spam
@@ -1556,13 +1558,15 @@ recaptcha:
 
 
 # ASN 15774 ("Closed Joint Stock Company TransTeleCom").
-# Stop Forum Spam (SFS) listings: 811.
-# Updated: 2019.03.10 / Checked: 2019.07.09
+# Stop Forum Spam (SFS) listings: 1,209.
+# Updated: 2019.11.08
 
 2a02:618:6::/47 Deny Spam
 2a02:28d8::/36 Deny Spam
 2a03:600::/32 Deny Spam
-2a03:3700::/33 Deny Spam
+2a03:3700::/34 Deny Spam
+2a03:3700:4000::/35 Deny Spam
+2a03:3700:6000::/36 Deny Spam
 Origin: RU
 Tag: TransTeleCom
 ---

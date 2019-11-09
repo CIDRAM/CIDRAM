@@ -7,16 +7,16 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Japanese language data for the front-end (last modified: 2019.11.05).
+# This file: Japanese language data for the front-end (last modified: 2019.11.09).
 ##/
 
 Extended Description Bypasses: "メインパッケージに通常含まれているデフォルト・シグネチャ・バイパス。"
 Extended Description Chart.js: "フロントエンドが円グラフを生成できるようにします。<br />「<a href="https://github.com/chartjs/Chart.js">Chart.js</a>」は、「<a href="https://opensource.org/licenses/MIT">MIT license</a>」を介して利用可能です。"
-Extended Description IPv4-Bogons: "ボゴン/火星ＣＩＤＲをブロックします。"
+Extended Description IPv4-Bogons: "ボゴンＣＩＤＲをブロックします。"
 Extended Description IPv4-ISPs: "スパマーを持つ危険なＩＳＰをブロックします。"
 Extended Description IPv4-Other: "プロキシ、​ＶＰＮ、​およびその他の不要なサービスのＣＩＤＲをブロックします。"
 Extended Description IPv4: "不要なクラウドサービスと非人のエンドポイントをブロックします。"
-Extended Description IPv6-Bogons: "ボゴン/火星ＣＩＤＲをブロックします。"
+Extended Description IPv6-Bogons: "ボゴンＣＩＤＲをブロックします。"
 Extended Description IPv6-ISPs: "スパマーを持つ危険なＩＳＰをブロックします。"
 Extended Description IPv6-Other: "プロキシ、​ＶＰＮ、​およびその他の不要なサービスのＣＩＤＲをブロックします。"
 Extended Description IPv6: "不要なクラウドサービスと非人のエンドポイントをブロックします。"
@@ -133,7 +133,7 @@ config_recaptcha_signature_limit: "reCAPTCHAインスタンスが提供される
 config_recaptcha_sitekey: "この値は、​あなたのreCAPTCHAのための「site key」に対応している必要があり；​これは、​reCAPTCHAのダッシュボードの中に見つけることができます。"
 config_recaptcha_usemode: "reCAPTCHAをCIDRAMで使用する方法（ドキュメントを参照してください）。"
 config_signatures: "シグネチャ、シグネチャ・ファイル、モジュール、などの設定。"
-config_signatures_block_bogons: "火星の\ぼごんからのＣＩＤＲをブロックする必要がありますか？​あなたがローカルホストから、​またはお使いのＬＡＮから、​ローカルネットワーク内からの接続を受信した場合、​これはfalseに設定する必要があります。​ない場合は、​これをtrueに設定する必要があります。"
+config_signatures_block_bogons: "ボゴン・アドレスからのＣＩＤＲをブロックする必要がありますか？​あなたがローカルホストから、​またはお使いのＬＡＮから、​ローカルネットワーク内からの接続を受信した場合、​これはfalseに設定する必要があります。​ない場合は、​これをtrueに設定する必要があります。"
 config_signatures_block_cloud: "クラウドサービスからのＣＩＤＲをブロックする必要がありますか？​あなたのウェブサイトからのＡＰＩサービスを操作する場合、​または、​あなたがウェブサイトツーサイト接続が予想される場合、​これはfalseに設定する必要があります。​ない場合は、​これをtrueに設定する必要があります。"
 config_signatures_block_generic: "一般的なＣＩＤＲをブロックする必要がありますか？​（他のオプションに固有ではないもの）。"
 config_signatures_block_legal: "法的義務に対応してＣＩＤＲをブロックするか？​CIDRAMは、どんなＣＩＤＲをデフォルトで「法的義務」に関連付けることはないため、このディレクティブは通常は効果がありません。​しかし、それは法的理由のために存在する可能性のある任意のカスタム・シグネチャ・ファイルまたはモジュールの利益のための追加の制御手段として存在する。"
@@ -440,6 +440,8 @@ tip_cache_data: "こんにちは、​{username}。<br />ここでは、キャ�
 tip_cidr_calc: "こんにちは、​{username}。​<br />ＣＩＤＲ計算機では、​ＩＰアドレスがどのＣＩＤＲに属しているかを計算できます。"
 tip_condition_placeholder: "値を指定するか、無視する場合は空白のままにします。"
 tip_config: "こんにちは、​{username}。​<br />コンフィグレーション・ページは、​フロントエンドからCIDRAMの設定を変更することができます。"
+tip_custom_query: "ここに、クエリーを入力してください​（オプションです）。"
+tip_custom_referrer: "ここに、リファラーを入力してください​（オプションです）。"
 tip_custom_ua: "ここに、ユーザー・エージェント（user agent）を入力してください​（オプションです）。"
 tip_enter_input_here: "ここにデータを入力してください。"
 tip_enter_ip_here: "ここにＩＰを入力してください。"

@@ -7,9 +7,19 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Polish language data for the front-end (last modified: 2019.11.07).
+# This file: Polish language data for the front-end (last modified: 2019.11.09).
 ##/
 
+switch-hide-unused-set-false: "Nie ukrywaj nieużywanego"
+switch-hide-unused-set-true: "Ukryj nieużywane"
+switch-sort-by-name-set-false: "Sortuj według identyfikatora"
+switch-sort-by-name-set-true: "Sortuj według nazwy"
+switch-tracking-aux-set-false: "Nie sprawdzaj z zasadami pomocniczymi"
+switch-tracking-aux-set-true: "Sprawdź z zasadami pomocniczymi"
+switch-tracking-blocked-already-set-false: "Nie sprawdzaj plików podpis"
+switch-tracking-blocked-already-set-true: "Sprawdź pliki podpis"
+switch-tracking-hide-banned-blocked-set-false: "Nie ukrywaj zablokowanych/zbanowanych adresów IP"
+switch-tracking-hide-banned-blocked-set-true: "Ukryj zablokowane/zbanowane adresy IP"
 tip_2fa_sent: "Na twój adres e-mail została wysłana wiadomość e-mail zawierająca dwuskładnikowy kod uwierzytelniający. Potwierdź poniższy kod, aby uzyskać dostęp do interfejsu użytkownika. Jeśli nie otrzymałeś tego e-maila, spróbuj się wylogować, poczekać 10 minut i zalogować się ponownie, aby otrzymać nowy e-mail zawierający nowy kod."
 tip_accounts: "Witaj, {username}.<br />Strona kont pozwala kontrolować, kto może uzyskać dostęp do interfejsu użytkownika CIDRAM."
 tip_aux: "Witaj, {username}.<br />Za pomocą tej strony można tworzyć, usuwać i modyfikować reguły pomocnicze dla CIDRAM."
@@ -17,6 +27,8 @@ tip_cache_data: "Witaj, {username}.<br />Tutaj możesz przejrzeć zawartość pa
 tip_cidr_calc: "Witaj, {username}.<br />Kalkulator CIDR umożliwia obliczenie CIDRy adresu IP."
 tip_condition_placeholder: "Podaj wartość lub pozostaw puste aby zignorować."
 tip_config: "Witaj, {username}.<br />Strona konfiguracji pozwala modyfikować konfigurację CIDRAM z interfejsu użytkownika."
+tip_custom_query: "Wprowadź pytanie tutaj (opcjonalnie)."
+tip_custom_referrer: "Wprowadź odsyłająca tutaj (opcjonalnie)."
 tip_custom_ua: "Wprowadź agent użytkownika tutaj (opcjonalnie)."
 tip_enter_input_here: "Wprowadź dane tutaj."
 tip_enter_ip_here: "Wprowadź adres IP tutaj."
@@ -26,8 +38,8 @@ tip_file_manager: "Witaj, {username}.<br />Menedżer plików umożliwia usuwanie
 tip_fixer: "Witaj, {username}.<br />Narzędzie do naprawy plików podpis umożliwia wykrywanie i naprawianie potencjalnych problemów w plikach podpis."
 tip_home: "Witaj, {username}.<br />To jest strona główna interfejsu użytkownika CIDRAM. Wybierz link z menu nawigacyjnego po lewej stronie, aby kontynuować."
 tip_ip_aggregator: "Witaj, {username}.<br />Agregator IP pozwala wyrażać adresy IP i CIDRy w możliwie najmniejszy sposób. Wprowadź dane, które mają zostać zagregowane, i naciśnij „OK”."
-tip_ip_test_switches: "(Jeśli ta opcja nie jest zaznaczona, tylko pliki podpis będą testowane)."
 tip_ip_test: "Witaj, {username}.<br />Strona testowa IP pozwala sprawdzić, czy adresy IP są blokowane przez aktualnie zainstalowane podpisy."
+tip_ip_test_switches: "(Jeśli ta opcja nie jest zaznaczona, tylko pliki podpis będą testowane)."
 tip_ip_tracking: "Witaj, {username}.<br />Strona śledzenia IP pozwala sprawdzić status śledzenia adresów IP, sprawdzić, które z nich zostały zbanowane, a także odblokować/wyśledzić je, jeśli chcesz to zrobić."
 tip_login: "Domyślna nazwa użytkownika: <span class="txtRd">admin</span> – Domyślne hasło: <span class="txtRd">password</span>"
 tip_logs: "Witaj, {username}.<br />Wybierz plik dziennika z poniższej listy, aby wyświetlić zawartość tego pliku dziennika."

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2019.11.05).
+ * This file: Front-end functions file (last modified: 2019.11.09).
  */
 
 /**
@@ -873,8 +873,8 @@ $CIDRAM['SimulateBlockEvent'] = function (string $Addr, bool $Modules = false, b
         'ID' => $CIDRAM['GenerateID'](),
         'IPAddr' => $Addr,
         'IPAddrResolved' => $CIDRAM['Resolve6to4']($Addr),
-        'Query' => 'SimulateBlockEvent',
-        'Referrer' => '',
+        'Query' => !empty($CIDRAM['FE']['custom-query']) ? $CIDRAM['FE']['custom-query'] : 'SimulateBlockEvent',
+        'Referrer' => !empty($CIDRAM['FE']['custom-referrer']) ? $CIDRAM['FE']['custom-referrer'] : 'SimulateBlockEvent',
         'UA' => !empty($CIDRAM['FE']['custom-ua']) ? $CIDRAM['FE']['custom-ua'] : 'SimulateBlockEvent',
         'ReasonMessage' => '',
         'SignatureCount' => 0,
@@ -884,6 +884,11 @@ $CIDRAM['SimulateBlockEvent'] = function (string $Addr, bool $Modules = false, b
         'rURI' => 'SimulateBlockEvent'
     ];
     $CIDRAM['BlockInfo']['UALC'] = strtolower($CIDRAM['BlockInfo']['UA']);
+
+    /** Appending query onto the reconstructed URI. */
+    if (!empty($CIDRAM['FE']['custom-query'])) {
+        $CIDRAM['BlockInfo']['rURI'] .= '?' . $CIDRAM['FE']['custom-query'];
+    }
 
     /** Standard IP check. */
     try {

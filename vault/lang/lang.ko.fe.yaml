@@ -7,16 +7,16 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Korean language data for the front-end (last modified: 2019.11.05).
+# This file: Korean language data for the front-end (last modified: 2019.11.09).
 ##/
 
 Extended Description Bypasses: "기본 서명 우회 일반적으로 기본 패키지에 포함되어 있습니다."
 Extended Description Chart.js: "프런트 엔드에서 원형 차트를 생성 할 수 있습니다.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a>는 <a href="https://opensource.org/licenses/MIT">MIT license</a>를 통해 사용 가능합니다."
-Extended Description IPv4-Bogons: "보곤/화성 CIDR을 차단합니다."
+Extended Description IPv4-Bogons: "보곤 CIDR을 차단합니다."
 Extended Description IPv4-ISPs: "스패머을 가진 위험한 ISP를 차단합니다."
 Extended Description IPv4-Other: "프록시, VPN 및 기타 불필요한 서비스 CIDR을 차단합니다."
 Extended Description IPv4: "불필요한 클라우드 서비스와 非人의 끝점을 차단합니다."
-Extended Description IPv6-Bogons: "보곤/화성 CIDR을 차단합니다."
+Extended Description IPv6-Bogons: "보곤 CIDR을 차단합니다."
 Extended Description IPv6-ISPs: "스패머을 가진 위험한 ISP를 차단합니다."
 Extended Description IPv6-Other: "프록시, VPN 및 기타 불필요한 서비스 CIDR을 차단합니다."
 Extended Description IPv6: "불필요한 클라우드 서비스와 非人의 끝점을 차단합니다."
@@ -133,7 +133,7 @@ config_recaptcha_signature_limit: "reCAPTCHA 인스턴스가 제공 될 때 트�
 config_recaptcha_sitekey: "이 값은 당신의 reCAPTCHA에 대한 "site key" 에 대응하고있을 필요가 있습니다; 이것은 reCAPTCHA 대시 보드에서 찾을 수 있습니다."
 config_recaptcha_usemode: "reCAPTCHA를 CIDRAM에서 사용하는 방법 (문서를 참조하십시오)."
 config_signatures: "서명, 서명 파일, 모듈, 등의 설정."
-config_signatures_block_bogons: "화성\ぼごんから의 CIDR을 차단해야합니까? 당신은 로컬 호스트에서 또는 귀하의 LAN에서 로컬 네트워크에서 연결을 수신 한 경우, 이것은 false로 설정해야합니다. 없는 경우에는이를 true로 설정해야합니다."
+config_signatures_block_bogons: "보곤 IP 주소의 CIDR을 차단해야합니까? 당신은 로컬 호스트에서 또는 귀하의 LAN에서 로컬 네트워크에서 연결을 수신 한 경우, 이것은 false로 설정해야합니다. 없는 경우에는이를 true로 설정해야합니다."
 config_signatures_block_cloud: "클라우드 서비스에서 CIDR을 차단해야합니까? 당신의 웹 사이트에서 API 서비스를 운영하거나 당신이 웹 사이트 간 연결이 예상되는 경우, 이것은 false로 설정해야합니다. 없는 경우에는이를 true로 설정해야합니다."
 config_signatures_block_generic: "일반적인 CIDR을 차단해야합니까? (다른 옵션과 관련되지 않은)."
 config_signatures_block_legal: "법적 의무에 대응하여 CIDR을 차단 하시겠습니까? CIDRAM은 어떤 CIDR을 기본적으로 "법적 의무에" 연결할 수 없기 때문에이 지시문은 일반적으로 효과가 없습니다. 하지만, 법적 이유로 존재할 가능성이있는 모든 사용자 정의 시그니처 파일 또는 모듈의 이익을위한 추가 제어 수단으로 존재한다."
@@ -440,6 +440,8 @@ tip_cache_data: "안녕하세요, {username}.<br />여기서 캐시의 내용을
 tip_cidr_calc: "안녕하세요, {username}.<br />CIDR 계산기는 IP 주소가 어떻게 CIDR에 속해 있는지를 계산할 수 있습니다."
 tip_condition_placeholder: "무시할 값을 지정하거나 공백으로 두십시오."
 tip_config: "안녕하세요, {username}.<br />구성 페이지는 프론트 엔드에서 CIDRAM의 설정을 변경할 수 있습니다."
+tip_custom_query: "여기에 쿼리를 입력하십시오 (선택 사항이다)."
+tip_custom_referrer: "여기에 추천자를 입력하십시오 (선택 사항이다)."
 tip_custom_ua: "여기에 사용자 에이전트를 입력하십시오 (선택 사항이다)."
 tip_enter_input_here: "여기에 데이터를 입력하십시오."
 tip_enter_ip_here: "여기에 IP를 입력하십시오."

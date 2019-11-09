@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2019.11.06).
+ * This file: Front-end handler (last modified: 2019.11.09).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -2994,8 +2994,11 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-test' && $CIDRAM['FE']['Perm
     /** Verification switch for HTML. */
     $CIDRAM['FE']['VerificationSwitch'] = $CIDRAM['VerificationSwitch'] ? ' checked' : '';
 
-    /** Fetch custom user agent if specified. */
-    $CIDRAM['FE']['custom-ua'] = !empty($_POST['custom-ua']) ? $_POST['custom-ua'] : '';
+    /** Fetch custom fields if specified. */
+    foreach (['custom-query', 'custom-referrer', 'custom-ua'] as $CIDRAM['ThisField']) {
+        $CIDRAM['FE'][$CIDRAM['ThisField']] = !empty($_POST[$CIDRAM['ThisField']]) ? $_POST[$CIDRAM['ThisField']] : '';
+    }
+    unset($CIDRAM['ThisField']);
 
     /** IPs were submitted for testing. */
     if (isset($_POST['ip-addr'])) {

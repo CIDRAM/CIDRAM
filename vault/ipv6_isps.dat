@@ -1,15 +1,15 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_isps.dat
 
-# Version: 2019.311.638
-# Last modified: 2019.11.08
+# Version: 2019.313.210
+# Last modified: 2019.11.10
 
 
 # ---
 # ASN 29182 ("ISPsystem").
-# %Listed, Google Malware Dashboard: 0.31%.
-# Stop Forum Spam (SFS) listings: 1,366.
-# Updated: 2019.09.27
+# %Listed, Google Malware Dashboard: 0.38%.
+# Stop Forum Spam (SFS) listings: 946.
+# Updated: 2019.09.27 / Checked: 2019.11.09
 
 2a01:230::/48 Deny Generic
 2a01:230:2::/47 Deny Generic
@@ -424,9 +424,9 @@ Tag: Zyztm
 
 # ASN 43260 ("DGN TEKNOLOJI BILISIM YAYINCILIK SANAYI VE LIMITED SIRKETI").
 # Caught trying to DDoS SFS.
-# %Listed, Google Malware Dashboard: 0.21%.
-# Stop Forum Spam (SFS) listings: 202.
-# Updated: 2019.07.23
+# %Listed, Google Malware Dashboard: 0.20%.
+# Stop Forum Spam (SFS) listings: 1,217.
+# Updated: 2019.11.10
 
 2a04:4280:10::/48 Deny Generic
 2a04:4280:20::/48 Deny Generic
@@ -435,15 +435,13 @@ Tag: Zyztm
 2a04:4280:200::/48 Deny Generic
 2a04:8340::/29 Deny Generic
 2a05:abc0::/29 Deny Generic
-2a05:b380::/29 Deny Generic
-2a05:b700::/29 Deny Generic
-2a05:ba00::/29 Deny Generic
 2a05:bf00::/29 Deny Generic
-2a05:ccc0::/29 Deny Generic
 2a05:f740::/29 Deny Generic
 2a05:f7c0::/29 Deny Generic
 2a07:21c0::/29 Deny Generic
 2a07:cd00::/48 Deny Generic
+2a0a:fa40::/29 Deny Generic
+2a0c:4a40::/29 Deny Generic
 Origin: TR
 2402:1780:1::/48 Deny Generic
 Origin: TW
@@ -627,12 +625,14 @@ Tag: Kyivstar
 
 
 # ASN 13188 ("CONTENT DELIVERY NETWORK LTD", A.K.A. "TRIOLAN, UA").
-# Stop Forum Spam (SFS) listings: 145,394.
-# Updated: 2019.07.23
+# Significant source of spam, hack attempts, scraping, etc.
+# Stop Forum Spam (SFS) listings: 6,145.
+# Updated: 2019.11.10
 
 2a03:7380::/38 Deny Spam
 2a03:7380:400::/39 Deny Spam
 2a03:7380:600::/41 Deny Spam
+2a03:7380:680::/42 Deny Spam
 2a03:7380:1e00::/42 Deny Spam
 2a03:7380:1e80::/42 Deny Spam
 2a03:7380:1f40::/42 Deny Spam
@@ -738,10 +738,10 @@ recaptcha:
 # use with reCAPTCHA to reduce the false positive risk. Websites intended for
 # an Indian audience should keep it listed in their ignore.dat file. Possibly
 # may remove this section in the future if the network ever cleans up its act.
-# %Listed, Google Malware Dashboard: 0.23%.
-# %Listed, abuseat.org (CBL-Listed): 10.42%.
-# Stop Forum Spam (SFS) listings: 7,430.
-# Updated: 2019.07.18
+# %Listed, Google Malware Dashboard: 0.17%.
+# %Listed, abuseat.org (CBL-Listed): 4.36%.
+# Stop Forum Spam (SFS) listings: 9,107.
+# Updated: 2019.11.10
 
 2001:4490::/43 Deny Spam
 2001:4490:3fc::/46 Deny Spam
@@ -755,14 +755,19 @@ recaptcha:
 2001:4490:ffc::/46 Deny Spam
 2001:4490:3000::/42 Deny Spam
 2001:4490:3200::/42 Deny Spam
+2001:4490:33fc::/46 Deny Spam
 2001:4490:3400::/42 Deny Spam
 2001:4490:3600::/42 Deny Spam
+2001:4490:37fc::/46 Deny Spam
 2001:4490:3800::/42 Deny Spam
 2001:4490:3a00::/42 Deny Spam
+2001:4490:3bfc::/46 Deny Spam
 2001:4490:3c00::/42 Deny Spam
 2001:4490:3d00::/42 Deny Spam
+2001:4490:3dfc::/46 Deny Spam
 2001:4490:3e00::/42 Deny Spam
 2001:4490:3f00::/42 Deny Spam
+2001:4490:3fbc::/46 Deny Spam
 2001:4490:3ffc::/46 Deny Spam
 2001:4490:4000::/41 Deny Spam
 2001:4490:4080::/44 Deny Spam
@@ -777,6 +782,14 @@ recaptcha:
 2001:4490:48c0::/43 Deny Spam
 2001:4490:48e0::/45 Deny Spam
 2001:4490:4c1c::/46 Deny Spam
+2001:4490:4c34::/46 Deny Spam
+2001:4490:4c44::/46 Deny Spam
+2001:4490:4c48::/45 Deny Spam
+2001:4490:4c60::/46 Deny Spam
+2001:4490:4c68::/46 Deny Spam
+2001:4490:4c70::/45 Deny Spam
+2001:4490:4c80::/45 Deny Spam
+2001:4490:4c98::/45 Deny Spam
 2001:4490:4e00::/41 Deny Spam
 2001:4490:4e80::/42 Deny Spam
 2001:4490:4ec0::/45 Deny Spam
@@ -829,6 +842,7 @@ recaptcha:
 2001:4490:f020::/46 Deny Spam
 2001:4490:fffc::/46 Deny Spam
 Origin: IN
+2600:140f:1000::/64 Deny Spam
 2600:1417:50::/47 Deny Spam
 2600:1417:71::/48 Deny Spam
 Origin: US
@@ -898,17 +912,19 @@ recaptcha:
 # nor its listing at a number of BLs. Marked for use with reCAPTCHA to reduce
 # the false positive risk. Websites intended for a Chinese audience should keep
 # this section listed in their ignore.dat file.
-# %Listed, Google Malware Dashboard: 0.61%.
-# %Listed, abuseat.org (CBL-Listed): 0.11%.
-# Stop Forum Spam (SFS) listings: 1,615.
-# Updated: 2019.07.18
+# %Listed, Google Malware Dashboard: 1.08%.
+# %Listed, abuseat.org (CBL-Listed): 0.12%.
+# Stop Forum Spam (SFS) listings: 1,501.
+# Updated: 2019.11.10
 
 2401:3480:2000::/48 Deny Generic
+2402:6f40:1::/48 Deny Generic
 240e:18::/31 Deny Generic
 240e:2e::/33 Deny Generic
 240e:58::/32 Deny Generic
 240e:59::/33 Deny Generic
 240e:e0::/32 Deny Generic
+240e:e1::/36 Deny Generic
 240e:e1:8000::/33 Deny Generic
 240e:e2::/35 Deny Generic
 240e:e3:8000::/33 Deny Generic
@@ -949,10 +965,10 @@ recaptcha:
 # nor its listing at a number of BLs. Marked for use with reCAPTCHA to reduce
 # the false positive risk. Websites intended for a Chinese audience should keep
 # this section listed in their ignore.dat file.
-# %Listed, Google Malware Dashboard: 0.70%.
-# %Listed, abuseat.org (CBL-Listed): 0.51%.
-# Stop Forum Spam (SFS) listings: 83,517.
-# Updated: 2019.07.18
+# %Listed, Google Malware Dashboard: 0.84%.
+# %Listed, abuseat.org (CBL-Listed): 0.41%.
+# Stop Forum Spam (SFS) listings: 54,495.
+# Updated: 2019.11.10
 
 2408:8000::/48 Deny Generic
 2408:8000:2::/47 Deny Generic
@@ -1045,6 +1061,7 @@ recaptcha:
 2408:8614::/31 Deny Generic
 2408:861a::/31 Deny Generic
 2408:8620::/31 Deny Generic
+2408:8624::/31 Deny Generic
 2408:8626::/32 Deny Generic
 2408:862a::/32 Deny Generic
 2408:862e::/31 Deny Generic
@@ -1054,11 +1071,10 @@ recaptcha:
 2408:8640::/32 Deny Generic
 2408:8642::/32 Deny Generic
 2408:8644::/30 Deny Generic
-2408:8648::/30 Deny Generic
+2408:8648::/31 Deny Generic
 2408:864c::/32 Deny Generic
 2408:864e::/31 Deny Generic
-2408:8650::/31 Deny Generic
-2408:8652::/32 Deny Generic
+2408:8650::/30 Deny Generic
 2408:865c::/32 Deny Generic
 2408:8660::/32 Deny Generic
 2408:8662::/31 Deny Generic
@@ -1069,6 +1085,7 @@ recaptcha:
 2408:866e::/31 Deny Generic
 2408:8670::/32 Deny Generic
 2408:8674::/31 Deny Generic
+2408:8676::/32 Deny Generic
 2408:8678::/31 Deny Generic
 2408:867a::/32 Deny Generic
 2408:8710::/30 Deny Generic
@@ -1105,6 +1122,12 @@ recaptcha:
 2408:8776::/32 Deny Generic
 2408:8778::/32 Deny Generic
 2408:877a::/32 Deny Generic
+2408:8816::/32 Deny Generic
+2408:882c::/32 Deny Generic
+2408:883a::/32 Deny Generic
+2408:8866::/32 Deny Generic
+2408:8872::/32 Deny Generic
+2408:8916::/32 Deny Generic
 Origin: CN
 Tag: China Backbone 4837
 ---
@@ -1135,43 +1158,32 @@ recaptcha:
  enabled: true
 
 
-# ASN 4808 ("China Unicom Beijing Province Network").
-# Would prefer to not include this ASN in this file due to the high risk of
-# false positives, but the amount of spam events seen from this ASN isn't
-# ignorable at this time. Marked for use with reCAPTCHA to reduce the false
-# positive risk, and I would encourage any CIDRAM users from Taiwan or China,
-# or targeting traffic from Taiwan or China, to list this section in their
-# ignore.dat file to reduce the false positive risk.
-# %Listed, Google Malware Dashboard: 0.66%.
-# Stop Forum Spam (SFS) listings: 10,700.
-# Updated: 2019.07.23
+# ASNs 4808, 23724 ("China Unicom Beijing Province Network").
+# Major ISP in China, but also a major source of spam and other unwanted
+# activity. Marked for use with reCAPTCHA to reduce the false positive risk.
+# CIDRAM users from, or targeting traffic from Taiwan and/or mainland China
+# should keep the section listed in their ignore.dat file to reduce the false
+# positive risk. When updating:
+# - Exclude 223.20x (all invalid and already listed elsewhere anyway).
+# - Exclude any IPv6 invalids.
+# %Listed, Google Malware Dashboard: 0.79% (AS4808), 1.10% (AS23724).
+# %Listed, abuseat.org (CBL-Listed): 0.09% (AS4808).
+# Stop Forum Spam (SFS) listings: 9,245 (AS4808), 21,710 (AS23724).
+# Updated: 2019.11.10
 
-2400:5280:f800::/38 Deny Generic
-2400:89c0:1010::/44 Deny Generic
-2400:89c0:1020::/43 Deny Generic
+2401:1d40::/48 Deny Generic
+2401:1d40:f8::/45 Deny Generic
+2401:3480::/36 Deny Generic
+2401:be00:5::/48 Deny Generic
 2402:dfc0::/44 Deny Generic
 2402:ef40::/32 Deny Generic
 2403:5280::/32 Deny Generic
-2404:a80::/32 Deny Generic
+2403:a140:10::/48 Deny Generic
 2405:1480::/32 Deny Generic
-2408:8000:1000::/36 Deny Generic
-2408:8020::/30 Deny Generic
-2408:8024::/33 Deny Generic
-2408:80e0:4000::/34 Deny Generic
-2408:80e0:8000::/33 Deny Generic
-2408:80f0:4000::/34 Deny Generic
-2408:80f0:8000::/33 Deny Generic
-2408:8140:2000::/48 Deny Generic
-2408:8206::/31 Deny Generic
-2408:8208::/30 Deny Generic
-2408:8306::/31 Deny Generic
-2408:8308::/30 Deny Generic
-2408:84e1::/32 Deny Generic
-2408:8606::/31 Deny Generic
-2408:8608::/30 Deny Generic
-2408:8706::/31 Deny Generic
-2408:8708::/30 Deny Generic
-2408:8806:30::/44 Deny Generic
+2406:cf00::/48 Deny Generic
+2406:cf00:1000::/43 Deny Generic
+240e:0:9000::/36 Deny Generic
+240e:83::/37 Deny Generic
 Origin: CN
 Tag: China Unicom 4808
 ---

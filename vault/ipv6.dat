@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6.dat
 
-# Version: 2019.311.638
-# Last modified: 2019.11.08
+# Version: 2019.313.210
+# Last modified: 2019.11.10
 
 
 # ---
@@ -2080,9 +2080,9 @@ Tag: Latisys-Irvine, LLC
 
 # ASN 46261 ("QuickPacket, LLC").
 # Ranges change frequently / Should update often.
-# %Listed, Google Malware Dashboard: 0.35%.
-# Stop Forum Spam (SFS) listings: 2,534.
-# Updated: 2019.06.24 / Checked: 2019.10.23
+# %Listed, Google Malware Dashboard: 0.36%.
+# Stop Forum Spam (SFS) listings: 2,464.
+# Updated: 2019.06.24 / Checked: 2019.11.09
 
 2606:f280::/33 Deny Cloud
 2606:f280:8000::/34 Deny Cloud
@@ -3652,8 +3652,8 @@ Tag: D.E.Tech
 
 
 # ASN 29873 ("The Endurance International Group, Inc").
-# %Listed, Google Malware Dashboard: 0.19%.
-# Updated: 2016.06.17 / Checked: 2019.05.19
+# %Listed, Google Malware Dashboard: 0.17%.
+# Updated: 2016.06.17 / Checked: 2019.11.09
 
 2605:f300:ffff::/48 Deny Cloud
 Origin: US
@@ -4501,9 +4501,9 @@ Tag: Nagravision SA
 
 
 # ASN 63956 ("Colocation Australia Pty Ltd").
-# %Listed, Google Malware Dashboard: 2.98%.
-# Stop Forum Spam (SFS) listings: 90.
-# Updated: 2019.07.10
+# %Listed, Google Malware Dashboard: 1.26%.
+# Stop Forum Spam (SFS) listings: 85.
+# Updated: 2019.11.10
 
 2402:1b80::/32 Deny Cloud
 2402:2f80:4::/48 Deny Cloud
@@ -4511,10 +4511,6 @@ Tag: Nagravision SA
 Origin: AU
 2403:4f00:6000::/36 Deny Cloud
 Origin: NZ
-2402:1b80:3000::/40 Deny Cloud
-Origin: SG
-2402:1b80:1000::/36 Deny Cloud
-Origin: US
 Tag: Colocation Australia
 
 
@@ -4836,6 +4832,21 @@ Origin: MX
 Tag: TV Internacional
 
 
+# ASNs 12695, 34434, 210260 ("Server Plus Ltd").
+# Source of spam, probing, hack attempts, etc.
+# %Listed, Google Malware Dashboard: 0.12% (AS12695).
+# Stop Forum Spam (SFS) listings: 251 (AS12695).
+# Updated: 2019.11.09
+
+2001:67c:2094::/48 Deny Cloud
+2a00:1c48::/31 Deny Cloud
+2a00:f940::/48 Deny Cloud
+2a03:34e0::/32 Deny Cloud
+2a06:7e80:4::/48 Deny Cloud
+Origin: RU
+Tag: Server Plus Ltd
+
+
 # ASN 198605 ("AVAST Software s.r.o.").
 # Caught attempting to access sensitive parts of WP sites for unknown reasons.
 # Stop Forum Spam (SFS) listings: 6,353.
@@ -4865,44 +4876,34 @@ Tag: Fishnet
 
 
 # ASN 59504 ('LLC "CloudSol"').
-# %Listed, Google Malware Dashboard: 2.01%.
-# Stop Forum Spam (SFS) listings: 193.
-# Updated: 2019.07.10
+# %Listed, Google Malware Dashboard: 1.87%.
+# Stop Forum Spam (SFS) listings: 183.
+# Updated: 2019.11.10
 
 2a05:fb41::/32 Deny Cloud
 2a05:fb42::/32 Deny Cloud
 2a07:14c0::/47 Deny Cloud
-2a07:14c0:100::/40 Deny Cloud
 2a07:14c0:1000::/36 Deny Cloud
-2a07:14c0:c000::/36 Deny Cloud
-2a07:14c1::/32 Deny Cloud
-2a07:14c2::/32 Deny Cloud
+2a07:14c0:5000::/36 Deny Cloud
+2a07:14c0:6000::/36 Deny Cloud
+2a07:14c0:8000::/36 Deny Cloud
+2a07:14c0:e000::/36 Deny Cloud
 2a07:14c6::/31 Deny Cloud
-2a0a:4780::/30 Deny Cloud
-2a0a:4785::/32 Deny Cloud
-2a0a:7743::/32 Deny Cloud
-2a0a:7747::/32 Deny Cloud
-2a0c:2101::/32 Deny Cloud
+2a0a:4781::/32 Deny Cloud
+2a0a:4782::/31 Deny Cloud
 2a0c:2104::/32 Deny Cloud
 2a0c:5245::/32 Deny Cloud
-2a0c:5247:1000::/36 Deny Cloud
-2a0c:5247:2000::/35 Deny Cloud
-2a0c:5247:4000::/35 Deny Cloud
 2a0c:5247:7000::/36 Deny Cloud
 2a0c:5247:c000::/36 Deny Cloud
 2a0c:5247:e000::/36 Deny Cloud
-2a0c:f743::/32 Deny Cloud
-2a0c:f745::/32 Deny Cloud
-2a0d:60c0::/31 Deny Cloud
+2a0d:60c0::/32 Deny Cloud
 2a0d:60c3::/32 Deny Cloud
-2a0d:7740::/32 Deny Cloud
+2a0d:7744::/32 Deny Cloud
+2a0d:7747::/32 Deny Cloud
 2a0d:8180:1000::/36 Deny Cloud
-2a0d:8180:5000::/36 Deny Cloud
-2a0d:8180:8000::/36 Deny Cloud
-2a0d:8180:a000::/36 Deny Cloud
+2a0d:8180:3000::/36 Deny Cloud
+2a0d:8180:4000::/36 Deny Cloud
 2a0d:8181::/32 Deny Cloud
-2a0d:e4c2::/31 Deny Cloud
-2a0d:e4c4::/31 Deny Cloud
 Origin: RU
 Tag: CloudSol
 
@@ -5617,9 +5618,9 @@ Tag: UpCloud Ltd
 
 
 # ASN 21769 ("Colocation America Corporation").
-# %Listed, Google Malware Dashboard: 0.94%.
-# Stop Forum Spam (SFS) listings: 394.
-# Updated: 2019.06.10 / Checked: 2019.09.15
+# %Listed, Google Malware Dashboard: 0.89%.
+# Stop Forum Spam (SFS) listings: 343.
+# Updated: 2019.06.10 / Checked: 2019.11.09
 
 2a09:1e80::/29 Deny Cloud
 2a0a:1f47::/32 Deny Cloud
@@ -5766,7 +5767,7 @@ Tag: Nexril
 
 # ASN 209299 ("VITOX TELECOM").
 # Dedicated hosting provider and server leasing. SQLi and spam attempts caught.
-# Updated: 2019.07.10
+# Updated: 2019.07.10 / Checked: 2019.11.10
 
 2a0d:a740::/47 Deny Cloud
 Origin: EE
@@ -6226,3 +6227,30 @@ Tag: Blacknight
 2a0b:1900::/44 Deny Cloud
 Origin: US
 Tag: GigeNET
+
+
+# ASN 8683 ("Nominet UK").
+# Caught trying to brute-force website login pages.
+# Updated: 2019.11.09
+
+2a01:618::/38 Deny Cloud
+2a01:618:8000::/33 Deny Cloud
+Origin: GB
+Tag: Nominet UK
+
+
+# ---
+# These CIDRs listed due to being caught performing hack attempts and various
+# other nefarious activities, in cases where we hope to not block the
+# originating ASNs in entirety, and hope that these listings will be temporary,
+# to be delisted at some point in the future.
+
+# ASN 12816 ("Leibniz-Rechenzentrum"). Data center and server farm. Caught
+# trying to brute-force website login pages, to hack into CCTV feeds, perform
+# port scans and probe for vulnerabilities. (Listing probably won't be
+# temporary, but the rest of the network seems clean at the moment, so won't
+# block the entire thing quite just yet).
+# Updated: 2019.11.09
+2001:4ca0::/32 Deny Cloud
+Origin: DE
+Tag: Leibniz-Rechenzentrum

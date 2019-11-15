@@ -1,8 +1,8 @@
 # IPv4 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv4_isps.dat
 
-# Version: 2019.313.210
-# Last modified: 2019.11.10
+# Version: 2019.318.470
+# Last modified: 2019.11.15
 
 
 # ---
@@ -1139,12 +1139,12 @@ Tag: Mir Telematiki Ltd
 
 
 # ASN 45595 ("Pakistan Telecom").
-# *Extreme*, unrepentant, unending source of spam over the course of many, many years. XRumer plus others operating on
-# their network. Highly unlikely to ever delist.
-# %Listed, Google Malware Dashboard: 2.56%.
-# %Listed, abuseat.org (CBL-Listed): 1.31%.
-# Stop Forum Spam (SFS) listings: 52,985.
-# Updated: 2019.01.28 / Checked: 2019.05.28
+# *Extreme*, unrepentant, unending source of spam over the course of many,
+# many years. XRumer plus others operating on their network. Highly unlikely to
+# ever delist.
+# %Listed, abuseat.org (CBL-Listed): 1.64%.
+# Stop Forum Spam (SFS) listings: 40,815.
+# Updated: 2019.01.28 / Checked: 2019.11.14
 
 103.238.148.0/24 Deny Spam
 Origin: MY
@@ -2534,18 +2534,17 @@ recaptcha:
 
 
 # ASN 37340 ("SPECTRANET LIMITED").
-# %Listed, abuseat.org (CBL-Listed): 19.21%.
-# Stop Forum Spam (SFS) listings: 204.
-# Updated: 2019.07.12
+# %Listed, abuseat.org (CBL-Listed): 14.93%.
+# Stop Forum Spam (SFS) listings: 347.
+# Updated: 2019.11.14
 
-41.217.0.0/19 Deny Spam
-41.217.32.0/21 Deny Spam
-41.217.40.0/23 Deny Spam
-41.217.90.0/23 Deny Spam
-41.217.92.0/22 Deny Spam
-41.217.96.0/19 Deny Spam
+41.217.0.0/17 Deny Spam
 154.118.0.0/17 Deny Spam
-154.120.64.0/18 Deny Spam
+154.120.64.0/19 Deny Spam
+154.120.96.0/20 Deny Spam
+154.120.112.0/22 Deny Spam
+154.120.118.0/23 Deny Spam
+154.120.120.0/21 Deny Spam
 197.242.96.0/19 Deny Spam
 197.255.160.0/20 Deny Spam
 Origin: NG
@@ -10039,8 +10038,8 @@ recaptcha:
 
 # ASN 13249 ("IT Systems LLC").
 # Caught trying to hack into WordPress sites.
-# Stop Forum Spam (SFS) listings: 4.
-# Updated: 2018.07.28 / Checked: 2019.05.22
+# Stop Forum Spam (SFS) listings: 1.
+# Updated: 2018.07.28 / Checked: 2019.11.14
 
 185.183.108.0/22 Deny Generic
 193.16.105.0/24 Deny Generic
@@ -10191,10 +10190,10 @@ recaptcha:
 
 
 # ASN 6849 ("Ukrtelecom").
-# %Listed, Google Malware Dashboard: 0.52%.
-# %Listed, abuseat.org (CBL-Listed): 0.58%.
-# Stop Forum Spam (SFS) listings: 3,280.
-# Updated: 2019.01.26 / Checked: 2019.05.28
+# %Listed, Google Malware Dashboard: 0.09%.
+# %Listed, abuseat.org (CBL-Listed): 0.48%.
+# Stop Forum Spam (SFS) listings: 2,655.
+# Updated: 2019.01.26 / Checked: 2019.11.15
 
 93.170.54.0/24 Deny Spam
 93.170.186.0/24 Deny Spam
@@ -10238,7 +10237,12 @@ recaptcha:
  enabled: true
 
 
-# ASN 43478 ("ER-Telecom Holding"), Updated: 2019.01.26 / Checked: 2019.05.27
+# ASN 43478 ("ER-Telecom Holding").
+# Stop Forum Spam (SFS) listings: 74.
+# Updated: 2019.11.15
+
+80.242.64.0/19 Deny Spam
+91.144.180.0/22 Deny Spam
 94.180.0.0/20 Deny Spam
 94.180.16.0/21 Deny Spam
 94.180.40.0/21 Deny Spam
@@ -10246,6 +10250,9 @@ recaptcha:
 94.180.72.0/21 Deny Spam
 94.180.80.0/20 Deny Spam
 94.180.96.0/19 Deny Spam
+109.194.80.0/20 Deny Spam
+188.187.239.0/24 Deny Spam
+188.234.134.0/24 Deny Spam
 Origin: RU
 Tag: ER-Telecom Holding
 ---

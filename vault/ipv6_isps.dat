@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_isps.dat
 
-# Version: 2019.313.210
-# Last modified: 2019.11.10
+# Version: 2019.318.470
+# Last modified: 2019.11.15
 
 
 # ---
@@ -233,12 +233,12 @@ Tag: Mir Telematiki Ltd
 
 
 # ASN 45595 ("Pakistan Telecom").
-# *Extreme*, unrepentant, unending source of spam over the course of many, many years. XRumer plus others operating on
-# their network. Highly unlikely to ever delist.
-# %Listed, Google Malware Dashboard: 2.56%.
-# %Listed, abuseat.org (CBL-Listed): 1.31%.
-# Stop Forum Spam (SFS) listings: 52,985.
-# Updated: 2017.03.22 / Checked: 2019.05.28
+# *Extreme*, unrepentant, unending source of spam over the course of many,
+# many years. XRumer plus others operating on their network. Highly unlikely to
+# ever delist.
+# %Listed, abuseat.org (CBL-Listed): 1.64%.
+# Stop Forum Spam (SFS) listings: 40,815.
+# Updated: 2017.03.22 / Checked: 2019.11.14
 
 2404:7000::/32 Deny Spam
 Origin: PK
@@ -483,6 +483,19 @@ Tag: TeNeT
 2a0b:dd00::/29 Deny Spam
 Origin: MD
 Tag: STARNET S.R.L
+
+
+# ASN 37340 ("SPECTRANET LIMITED").
+# %Listed, abuseat.org (CBL-Listed): 14.93%.
+# Stop Forum Spam (SFS) listings: 347.
+# Updated: 2019.11.14
+
+2c0f:f5a0::/32 Deny Spam
+Origin: NG
+Tag: SPECTRANET LIMITED
+---
+recaptcha:
+ enabled: true
 
 
 # ASN 23860 ("Alliance Broadband Services Pvt. Ltd").
@@ -1923,8 +1936,8 @@ recaptcha:
 
 # ASN 13249 ("IT Systems LLC").
 # Caught trying to hack into WordPress sites.
-# Stop Forum Spam (SFS) listings: 4.
-# Updated: 2018.07.28 / Checked: 2019.05.22
+# Stop Forum Spam (SFS) listings: 1.
+# Updated: 2018.07.28 / Checked: 2019.11.14
 
 2a00:1d88::/32 Deny Generic
 Origin: UA
@@ -1983,6 +1996,27 @@ recaptcha:
 2402:f4c0::/32 Deny Spam
 Origin: IN
 Tag: Fibergrid
+---
+recaptcha:
+ enabled: true
+
+
+# ASN 43478 ("ER-Telecom Holding").
+# Stop Forum Spam (SFS) listings: 74.
+# Updated: 2019.11.15
+
+2a02:2698:5000::/38 Deny Spam
+2a03:1ac0:5b90:b400::/54 Deny Spam
+2a03:1ac0:5eb4::/52 Deny Spam
+2a03:1ac0:5eb4:1000::/53 Deny Spam
+2a03:1ac0:5eb4:2800::/53 Deny Spam
+2a03:1ac0:5eb4:3000::/53 Deny Spam
+2a03:1ac0:5eb4:4800::/53 Deny Spam
+2a03:1ac0:5eb4:5000::/52 Deny Spam
+2a03:1ac0:5eb4:6000::/51 Deny Spam
+2a03:1ac0:6dc2:5000::/52 Deny Spam
+Origin: RU
+Tag: ER-Telecom Holding
 ---
 recaptcha:
  enabled: true

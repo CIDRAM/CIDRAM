@@ -1,8 +1,8 @@
 # IPv4 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv4_isps.dat
 
-# Version: 2019.318.470
-# Last modified: 2019.11.15
+# Version: 2019.322.340
+# Last modified: 2019.11.20
 
 
 # ---
@@ -1835,8 +1835,8 @@ Tag: ViaEuropa
 
 # ASN 43700 ("UAB CONSILIUM OPTIMUM").
 # Vulnerability scanner.
-# Stop Forum Spam (SFS) listings: 3.
-# Updated: 2019.07.21
+# Stop Forum Spam (SFS) listings: 13.
+# Updated: 2019.07.21 / Checked: 2019.11.20
 
 31.172.224.0/22 Deny Generic
 78.158.0.0/19 Deny Generic
@@ -6798,72 +6798,197 @@ recaptcha:
 # Chinese mobile phone and data carrier. Listed here because of numerous spam
 # events being detected. Websites intended for a Chinese audience should keep
 # it listed in their ignore.dat file. (Omit invalids when updating).
-# %Listed, Google Malware Dashboard: 0.28%.
-# %Listed, abuseat.org (CBL-Listed): 0.02%.
-# Stop Forum Spam (SFS) listings: 2,237.
-# Updated: 2019.07.18
+# %Listed, Google Malware Dashboard: 0.33%.
+# %Listed, abuseat.org (CBL-Listed): 0.01%.
+# Stop Forum Spam (SFS) listings: 1,179.
+# Updated: 2019.11.19
 
+14.102.180.0/22 Deny Spam
 27.0.160.0/21 Deny Spam
 36.128.0.0/10 Deny Spam
+36.192.176.0/20 Deny Spam
+36.193.112.0/21 Deny Spam
 39.128.0.0/10 Deny Spam
+42.62.0.0/17 Deny Spam
 43.227.140.0/22 Deny Spam
 43.228.116.0/22 Deny Spam
 43.241.112.0/22 Deny Spam
+43.242.72.0/22 Deny Spam
+43.243.12.0/22 Deny Spam
+43.243.128.0/22 Deny Spam
 43.251.244.0/22 Deny Spam
+43.254.88.0/22 Deny Spam
+45.119.60.0/22 Deny Spam
+45.126.120.0/22 Deny Spam
 45.127.144.0/21 Deny Spam
+45.252.120.0/22 Deny Spam
+45.252.140.0/22 Deny Spam
+45.252.164.0/22 Deny Spam
+45.252.176.0/22 Deny Spam
+45.254.160.0/22 Deny Spam
+45.254.168.0/21 Deny Spam
+45.255.168.0/22 Deny Spam
+45.255.192.0/21 Deny Spam
+45.255.200.0/22 Deny Spam
+45.255.212.0/22 Deny Spam
+61.232.196.0/22 Deny Spam
+61.232.200.0/22 Deny Spam
+61.236.216.0/21 Deny Spam
+61.236.224.0/19 Deny Spam
+103.17.40.0/22 Deny Spam
 103.20.112.0/22 Deny Spam
 103.21.176.0/22 Deny Spam
 103.25.24.0/22 Deny Spam
+103.26.0.0/22 Deny Spam
+103.27.4.0/22 Deny Spam
+103.31.52.0/22 Deny Spam
 103.37.72.0/22 Deny Spam
+103.40.234.0/24 Deny Spam
 103.59.112.0/22 Deny Spam
+103.64.156.0/22 Deny Spam
 103.64.212.0/22 Deny Spam
+103.65.84.0/22 Deny Spam
 103.73.136.0/21 Deny Spam
 103.79.24.0/23 Deny Spam
 103.79.27.0/24 Deny Spam
+103.82.224.0/22 Deny Spam
 103.196.88.0/21 Deny Spam
+103.208.12.0/22 Deny Spam
+103.216.4.0/22 Deny Spam
 103.217.168.0/22 Deny Spam
+103.221.148.0/22 Deny Spam
+103.221.160.0/22 Deny Spam
+103.221.168.0/22 Deny Spam
+103.221.176.0/22 Deny Spam
+103.227.76.0/22 Deny Spam
+103.227.80.0/22 Deny Spam
+103.230.236.0/22 Deny Spam
+103.231.64.0/21 Deny Spam
+103.233.52.0/22 Deny Spam
+103.235.220.0/22 Deny Spam
+103.235.224.0/19 Deny Spam
 103.236.252.0/22 Deny Spam
+103.237.0.0/20 Deny Spam
+103.238.132.0/22 Deny Spam
+103.244.80.0/22 Deny Spam
+103.249.252.0/22 Deny Spam
+103.253.232.0/22 Deny Spam
+106.75.0.0/17 Deny Spam
+110.124.0.0/15 Deny Spam
 110.172.200.0/21 Deny Spam
-110.237.0.0/16 Deny Spam
+110.172.211.0/24 Deny Spam
+110.172.213.0/24 Deny Spam
+110.172.214.0/23 Deny Spam
+110.172.217.0/24 Deny Spam
+110.172.221.0/24 Deny Spam
+110.217.0.0/16 Deny Spam
+110.236.0.0/15 Deny Spam
 111.0.0.0/10 Deny Spam
+111.128.0.0/16 Deny Spam
+111.142.0.0/15 Deny Spam
+111.144.0.0/14 Deny Spam
+111.155.0.0/16 Deny Spam
 112.0.0.0/10 Deny Spam
-114.118.32.0/19 Deny Spam
+113.18.0.0/20 Deny Spam
+113.18.32.0/19 Deny Spam
+113.18.64.0/18 Deny Spam
+113.18.128.0/17 Deny Spam
+114.66.64.0/20 Deny Spam
+114.113.224.0/20 Deny Spam
+114.118.0.0/17 Deny Spam
+117.48.0.0/18 Deny Spam
+117.48.64.0/19 Deny Spam
 117.50.0.0/16 Deny Spam
-117.73.8.0/21 Deny Spam
+117.73.0.0/20 Deny Spam
 117.73.16.0/21 Deny Spam
 117.128.0.0/10 Deny Spam
+118.26.197.0/24 Deny Spam
+118.26.198.0/23 Deny Spam
+118.26.200.0/21 Deny Spam
+118.26.224.0/20 Deny Spam
 119.18.192.0/20 Deny Spam
 119.161.168.0/21 Deny Spam
 119.161.176.0/21 Deny Spam
+120.132.32.0/19 Deny Spam
+120.132.64.0/19 Deny Spam
 120.192.0.0/10 Deny Spam
 121.255.0.0/16 Deny Spam
+122.72.10.0/23 Deny Spam
+122.72.24.0/24 Deny Spam
+122.72.30.0/24 Deny Spam
+122.72.36.0/24 Deny Spam
+122.72.72.0/23 Deny Spam
+122.72.74.0/24 Deny Spam
+122.72.84.0/22 Deny Spam
+122.77.0.0/16 Deny Spam
+122.82.0.0/16 Deny Spam
+122.90.0.0/15 Deny Spam
 122.115.32.0/19 Deny Spam
+123.58.16.0/20 Deny Spam
+123.59.0.0/16 Deny Spam
+123.82.0.0/16 Deny Spam
+123.85.0.0/16 Deny Spam
 123.103.4.0/22 Deny Spam
+123.103.8.0/21 Deny Spam
 123.103.16.0/21 Deny Spam
 123.103.40.0/21 Deny Spam
 123.103.48.0/20 Deny Spam
 123.103.72.0/21 Deny Spam
 123.103.80.0/20 Deny Spam
 123.103.112.0/20 Deny Spam
+124.243.192.0/18 Deny Spam
+125.254.128.0/19 Deny Spam
+125.254.160.0/20 Deny Spam
+125.254.176.0/21 Deny Spam
+125.254.184.0/22 Deny Spam
+125.254.188.0/23 Deny Spam
+125.254.190.0/24 Deny Spam
+150.242.96.0/22 Deny Spam
+163.53.8.0/22 Deny Spam
+163.53.40.0/22 Deny Spam
+163.53.96.0/19 Deny Spam
 163.53.172.0/22 Deny Spam
+175.102.16.0/22 Deny Spam
+175.102.132.0/22 Deny Spam
 175.102.160.0/19 Deny Spam
 175.102.192.0/22 Deny Spam
+180.150.176.0/20 Deny Spam
 182.50.112.0/20 Deny Spam
 182.157.0.0/16 Deny Spam
 183.192.0.0/10 Deny Spam
+202.123.120.0/22 Deny Spam
 202.141.176.0/20 Deny Spam
 203.130.32.0/22 Deny Spam
 203.130.40.0/21 Deny Spam
 203.212.12.0/22 Deny Spam
+211.98.102.0/23 Deny Spam
+211.98.104.0/22 Deny Spam
+211.98.116.0/23 Deny Spam
+211.98.207.0/24 Deny Spam
+211.98.235.0/24 Deny Spam
 211.103.0.0/17 Deny Spam
 211.136.0.0/13 Deny Spam
 211.148.224.0/19 Deny Spam
+211.155.80.0/20 Deny Spam
+218.98.100.0/24 Deny Spam
+218.98.108.0/23 Deny Spam
 218.200.0.0/13 Deny Spam
 220.243.128.0/20 Deny Spam
 220.243.176.0/20 Deny Spam
+221.122.0.0/18 Deny Spam
+221.122.176.0/20 Deny Spam
+221.122.192.0/18 Deny Spam
+221.123.128.0/18 Deny Spam
 221.130.0.0/15 Deny Spam
+221.175.0.0/16 Deny Spam
 221.176.0.0/13 Deny Spam
+222.41.0.0/16 Deny Spam
+222.42.0.0/16 Deny Spam
+222.47.0.0/16 Deny Spam
+222.56.64.0/20 Deny Spam
+222.56.96.0/20 Deny Spam
 223.64.0.0/10 Deny Spam
+223.223.192.0/20 Deny Spam
 Origin: CN
 Tag: Guangdong Mobile
 ---
@@ -6969,25 +7094,34 @@ recaptcha:
 
 
 # ASN 9387 ("AUGERE-Pakistan").
-# Listed due to spam incidence. (Omit invalids when updating).
-# Stop Forum Spam (SFS) listings: 46.
-# Updated: 2019.07.18
+# Listed due to spam incidence.
+# Stop Forum Spam (SFS) listings: 36.
+# Updated: 2019.11.19
 
 103.11.60.0/23 Deny Spam
-103.77.9.0/24 Deny Spam
+103.11.62.0/24 Deny Spam
 103.77.10.0/23 Deny Spam
-113.203.227.0/24 Deny Spam
+103.79.16.0/24 Deny Spam
+103.141.4.0/24 Deny Spam
+113.203.208.0/20 Deny Spam
+113.203.224.0/22 Deny Spam
 113.203.228.0/24 Deny Spam
 113.203.234.0/23 Deny Spam
 113.203.236.0/22 Deny Spam
 113.203.240.0/23 Deny Spam
 113.203.254.0/23 Deny Spam
-116.0.60.0/22 Deny Spam
+116.0.60.0/24 Deny Spam
+116.206.164.0/23 Deny Spam
+116.206.167.0/24 Deny Spam
 122.50.0.0/22 Deny Spam
-139.190.52.0/24 Deny Spam
-139.190.54.0/24 Deny Spam
+139.190.48.0/22 Deny Spam
+139.190.225.0/24 Deny Spam
+139.190.226.0/23 Deny Spam
+139.190.228.0/22 Deny Spam
 180.178.128.0/21 Deny Spam
 203.170.69.0/24 Deny Spam
+223.29.224.0/23 Deny Spam
+223.29.226.0/24 Deny Spam
 Origin: PK
 Tag: AUGERE-Pakistan
 ---
@@ -7024,10 +7158,10 @@ Tag: NPK Home-Net Ltd
 # just include an entry in ours ignores file to ignore by default, until commented out or removed.
 
 # ASN 12389 ("PJSC Rostelecom").
-# %Listed, Google Malware Dashboard: 0.18%.
-# %Listed, abuseat.org (CBL-Listed): 0.54.
-# Stop Forum Spam (SFS) listings: 336,612.
-# Updated: 2019.07.16
+# %Listed, Google Malware Dashboard: 0.25%.
+# %Listed, abuseat.org (CBL-Listed): 0.65%.
+# Stop Forum Spam (SFS) listings: 275,020.
+# Updated: 2019.11.19
 
 95.47.152.0/24 Deny Spam
 Origin: CZ
@@ -7047,8 +7181,7 @@ Origin: GB
 37.20.0.0/14 Deny Spam
 37.76.128.0/18 Deny Spam
 37.78.0.0/15 Deny Spam
-45.80.64.0/23 Deny Spam
-45.80.66.0/24 Deny Spam
+45.80.64.0/22 Deny Spam
 46.41.64.0/18 Deny Spam
 46.45.192.0/20 Deny Spam
 46.45.211.0/24 Deny Spam
@@ -7090,13 +7223,6 @@ Origin: GB
 46.237.32.0/21 Deny Spam
 46.237.48.0/20 Deny Spam
 62.105.0.0/19 Deny Spam
-62.109.160.0/21 Deny Spam
-62.109.168.0/22 Deny Spam
-62.109.172.0/24 Deny Spam
-62.109.174.0/23 Deny Spam
-62.109.182.0/24 Deny Spam
-62.109.185.0/24 Deny Spam
-62.109.186.0/24 Deny Spam
 62.148.157.0/24 Deny Spam
 62.148.224.0/19 Deny Spam
 62.165.0.0/19 Deny Spam
@@ -7174,6 +7300,7 @@ Origin: GB
 78.132.144.0/20 Deny Spam
 78.132.160.0/19 Deny Spam
 78.132.192.0/18 Deny Spam
+78.156.228.0/23 Deny Spam
 78.156.232.0/24 Deny Spam
 78.156.235.0/24 Deny Spam
 79.105.0.0/23 Deny Spam
@@ -7254,11 +7381,11 @@ Origin: GB
 82.162.176.0/23 Deny Spam
 82.162.180.0/22 Deny Spam
 82.162.184.0/21 Deny Spam
-82.162.194.0/24 Deny Spam
 82.208.64.0/18 Deny Spam
 83.136.112.0/21 Deny Spam
 83.171.64.0/18 Deny Spam
 83.217.10.0/24 Deny Spam
+83.217.20.0/22 Deny Spam
 83.219.0.0/19 Deny Spam
 83.239.0.0/16 Deny Spam
 84.42.8.0/24 Deny Spam
@@ -7293,7 +7420,6 @@ Origin: GB
 85.94.28.0/22 Deny Spam
 85.95.160.0/19 Deny Spam
 85.112.32.0/19 Deny Spam
-85.112.122.0/23 Deny Spam
 85.113.193.0/24 Deny Spam
 85.113.194.0/24 Deny Spam
 85.113.196.0/24 Deny Spam
@@ -7321,7 +7447,9 @@ Origin: GB
 87.117.48.0/20 Deny Spam
 87.117.160.0/19 Deny Spam
 87.119.224.0/19 Deny Spam
+87.224.174.0/24 Deny Spam
 87.224.205.0/24 Deny Spam
+87.224.244.0/24 Deny Spam
 87.225.0.0/20 Deny Spam
 87.225.18.0/23 Deny Spam
 87.225.20.0/22 Deny Spam
@@ -7362,16 +7490,6 @@ Origin: GB
 89.109.224.0/21 Deny Spam
 89.110.0.0/18 Deny Spam
 89.151.128.0/18 Deny Spam
-89.184.237.0/24 Deny Spam
-89.184.238.0/23 Deny Spam
-89.184.244.0/23 Deny Spam
-89.184.246.0/24 Deny Spam
-89.184.248.0/22 Deny Spam
-89.184.253.0/24 Deny Spam
-89.184.254.0/24 Deny Spam
-89.190.224.0/20 Deny Spam
-89.190.240.0/21 Deny Spam
-89.190.248.0/24 Deny Spam
 89.204.0.0/17 Deny Spam
 89.232.192.0/18 Deny Spam
 89.239.128.0/18 Deny Spam
@@ -7383,9 +7501,18 @@ Origin: GB
 89.254.192.0/18 Deny Spam
 90.150.0.0/15 Deny Spam
 90.154.104.0/21 Deny Spam
+90.157.9.0/24 Deny Spam
+90.157.21.0/24 Deny Spam
+90.157.22.0/23 Deny Spam
+90.157.32.0/24 Deny Spam
+90.157.37.0/24 Deny Spam
+90.157.47.0/24 Deny Spam
+90.157.56.0/24 Deny Spam
 90.157.64.0/21 Deny Spam
+90.157.76.0/23 Deny Spam
 90.157.110.0/24 Deny Spam
 90.157.115.0/24 Deny Spam
+90.157.119.0/24 Deny Spam
 90.188.0.0/15 Deny Spam
 91.106.232.0/21 Deny Spam
 91.122.0.0/16 Deny Spam
@@ -7400,13 +7527,17 @@ Origin: GB
 92.37.128.0/17 Deny Spam
 92.49.128.0/18 Deny Spam
 92.50.192.0/18 Deny Spam
+92.54.83.0/24 Deny Spam
 92.54.90.0/24 Deny Spam
+92.54.109.0/24 Deny Spam
+92.54.111.0/24 Deny Spam
 92.54.117.0/24 Deny Spam
 92.100.0.0/15 Deny Spam
 92.124.0.0/14 Deny Spam
 92.252.128.0/17 Deny Spam
 93.120.128.0/17 Deny Spam
 93.124.0.0/17 Deny Spam
+93.157.60.0/24 Deny Spam
 93.177.0.0/19 Deny Spam
 93.177.32.0/21 Deny Spam
 93.177.40.0/22 Deny Spam
@@ -7421,8 +7552,23 @@ Origin: GB
 93.185.16.0/20 Deny Spam
 94.25.0.0/17 Deny Spam
 94.28.128.0/17 Deny Spam
+94.31.136.0/24 Deny Spam
+94.31.138.0/23 Deny Spam
+94.31.142.0/24 Deny Spam
+94.31.155.0/24 Deny Spam
+94.31.156.0/24 Deny Spam
+94.31.175.0/24 Deny Spam
+94.31.186.0/24 Deny Spam
+94.31.195.0/24 Deny Spam
+94.31.202.0/24 Deny Spam
+94.31.214.0/23 Deny Spam
+94.31.227.0/24 Deny Spam
+94.31.230.0/24 Deny Spam
+94.31.238.0/24 Deny Spam
 94.31.242.0/24 Deny Spam
+94.31.244.0/24 Deny Spam
 94.31.250.0/24 Deny Spam
+94.31.255.0/24 Deny Spam
 94.50.0.0/15 Deny Spam
 94.75.128.0/18 Deny Spam
 94.78.192.0/18 Deny Spam
@@ -7523,7 +7669,6 @@ Origin: GB
 95.159.184.0/21 Deny Spam
 95.167.0.0/16 Deny Spam
 95.172.151.0/24 Deny Spam
-95.172.154.0/24 Deny Spam
 95.179.4.0/22 Deny Spam
 95.179.8.0/21 Deny Spam
 95.179.16.0/20 Deny Spam
@@ -7625,34 +7770,27 @@ Origin: GB
 185.106.104.0/23 Deny Spam
 185.132.20.0/24 Deny Spam
 185.134.120.0/24 Deny Spam
+185.141.236.0/23 Deny Spam
+185.173.80.0/24 Deny Spam
 185.189.254.0/24 Deny Spam
+185.200.168.0/23 Deny Spam
 188.16.0.0/14 Deny Spam
+188.73.158.0/24 Deny Spam
+188.73.173.0/24 Deny Spam
 188.113.0.0/18 Deny Spam
 188.114.0.0/18 Deny Spam
 188.128.0.0/17 Deny Spam
 188.133.192.0/18 Deny Spam
 188.254.0.0/17 Deny Spam
 193.47.87.0/24 Deny Spam
-193.232.87.0/24 Deny Spam
-193.232.135.0/24 Deny Spam
-193.232.136.0/24 Deny Spam
-193.232.140.0/24 Deny Spam
 194.0.112.0/22 Deny Spam
-194.85.107.0/24 Deny Spam
-194.150.130.0/23 Deny Spam
 194.150.140.0/24 Deny Spam
-194.226.100.0/22 Deny Spam
 195.38.32.0/19 Deny Spam
 195.46.96.0/19 Deny Spam
 195.54.0.0/19 Deny Spam
-195.112.233.0/24 Deny Spam
-195.112.238.0/24 Deny Spam
-195.160.245.0/24 Deny Spam
-195.160.246.0/23 Deny Spam
-195.161.125.0/24 Deny Spam
+195.160.244.0/22 Deny Spam
 195.161.162.0/24 Deny Spam
 195.162.32.0/19 Deny Spam
-195.208.208.0/21 Deny Spam
 195.245.211.0/24 Deny Spam
 212.3.128.0/24 Deny Spam
 212.3.130.0/24 Deny Spam
@@ -7663,7 +7801,7 @@ Origin: GB
 212.3.150.0/24 Deny Spam
 212.3.157.0/24 Deny Spam
 212.3.159.0/24 Deny Spam
-212.14.198.0/23 Deny Spam
+212.14.198.0/24 Deny Spam
 212.14.205.0/24 Deny Spam
 212.14.206.0/23 Deny Spam
 212.14.208.0/21 Deny Spam
@@ -7677,7 +7815,6 @@ Origin: GB
 212.48.192.0/19 Deny Spam
 212.55.96.0/19 Deny Spam
 212.57.128.0/18 Deny Spam
-212.58.215.0/24 Deny Spam
 212.91.214.0/23 Deny Spam
 212.96.112.0/24 Deny Spam
 212.96.192.0/19 Deny Spam
@@ -7711,6 +7848,8 @@ Origin: GB
 213.159.202.0/23 Deny Spam
 213.167.192.0/19 Deny Spam
 213.177.96.0/19 Deny Spam
+213.189.215.0/24 Deny Spam
+213.210.82.0/23 Deny Spam
 213.210.112.0/24 Deny Spam
 213.228.64.0/18 Deny Spam
 213.242.0.0/18 Deny Spam
@@ -7736,13 +7875,8 @@ Origin: GB
 217.107.128.0/18 Deny Spam
 217.107.224.0/19 Deny Spam
 217.116.128.0/19 Deny Spam
-217.168.65.0/24 Deny Spam
-217.168.68.0/24 Deny Spam
 217.168.70.0/23 Deny Spam
-217.168.73.0/24 Deny Spam
 Origin: RU
-15.2.2.0/24 Deny Spam
-Origin: US
 Tag: PJSC Rostelecom
 ---
 recaptcha:
@@ -7750,10 +7884,12 @@ recaptcha:
 
 
 # ASN 8402 ("OJSC Vimpelcom").
-# Stop Forum Spam (SFS) listings: 2,206.
-# Similarly to with the Rostelecom CIDRs, blocking the entirety of all "Vimpelcom" ASNs could be problematic. Instead,
-# we'll try to limit listings to those CIDRs known to be problematic (hacking events, spamming events, etc).
-# Updated: 2019.05.13 / Checked: 2019.09.27
+# Similarly to with the Rostelecom CIDRs, blocking the entirety of all
+# "Vimpelcom" ASNs could be problematic. Instead, we'll try to limit
+# listings to those CIDRs known to be problematic.
+# %Listed, abuseat.org (CBL-Listed): 0.42%.
+# Stop Forum Spam (SFS) listings: 2,422.
+# Updated: 2019.11.19
 
 2.92.0.0/14 Deny Generic
 37.144.0.0/14 Deny Generic
@@ -7762,6 +7898,13 @@ recaptcha:
 78.106.0.0/15 Deny Generic
 83.102.128.0/17 Deny Generic
 85.21.0.0/16 Deny Generic
+85.249.64.0/18 Deny Generic
+89.113.192.0/19 Deny Generic
+89.113.224.0/22 Deny Generic
+89.113.228.0/23 Deny Generic
+89.113.231.0/24 Deny Generic
+89.113.232.0/21 Deny Generic
+89.113.240.0/20 Deny Generic
 89.178.0.0/15 Deny Generic
 93.80.0.0/15 Deny Generic
 95.24.0.0/13 Deny Generic
@@ -7778,11 +7921,13 @@ recaptcha:
 
 
 # ASN 3216 ("PJSC Vimpelcom").
-# %Listed, Google Malware Dashboard: 1.88%.
-# Stop Forum Spam (SFS) listings: 2,724.
-# Similarly to with the Rostelecom CIDRs, blocking the entirety of all "Vimpelcom" ASNs could be problematic. Instead,
-# we'll try to limit listings to those CIDRs known to be problematic (hacking events, spamming events, etc).
-# Updated: 2019.10.06
+# Similarly to with the Rostelecom CIDRs, blocking the entirety of all
+# "Vimpelcom" ASNs could be problematic. Instead, we'll try to limit
+# listings to those CIDRs known to be problematic.
+# %Listed, Google Malware Dashboard: 1.50%.
+# %Listed, abuseat.org (CBL-Listed): 0.27%.
+# Stop Forum Spam (SFS) listings: 5,245.
+# Updated: 2019.11.19
 
 141.101.217.0/24 Deny Generic
 141.101.218.0/23 Deny Generic
@@ -7846,7 +7991,8 @@ Origin: NL
 85.21.223.0/24 Deny Generic
 85.249.16.0/20 Deny Generic
 85.249.32.0/19 Deny Generic
-85.249.64.0/18 Deny Generic
+85.249.84.0/22 Deny Generic
+85.249.100.0/22 Deny Generic
 85.249.128.0/19 Deny Generic
 85.249.160.0/20 Deny Generic
 85.249.192.0/19 Deny Generic
@@ -7871,15 +8017,17 @@ Origin: NL
 89.113.160.0/19 Deny Generic
 89.113.192.0/18 Deny Generic
 89.179.139.0/24 Deny Generic
-91.234.116.0/22 Deny Generic
 93.80.0.0/19 Deny Generic
+93.80.212.0/22 Deny Generic
 93.81.84.0/22 Deny Generic
 93.81.88.0/22 Deny Generic
 95.24.0.0/19 Deny Generic
-95.27.64.0/24 Deny Generic
-95.27.69.0/24 Deny Generic
-95.27.74.0/24 Deny Generic
-95.27.82.0/24 Deny Generic
+95.27.64.0/20 Deny Generic
+95.27.80.0/21 Deny Generic
+95.27.88.0/23 Deny Generic
+95.27.91.0/24 Deny Generic
+95.27.92.0/23 Deny Generic
+95.27.95.0/24 Deny Generic
 95.28.192.0/20 Deny Generic
 95.30.0.0/16 Deny Generic
 95.31.35.0/24 Deny Generic
@@ -7888,6 +8036,7 @@ Origin: NL
 95.31.104.0/24 Deny Generic
 95.31.118.0/23 Deny Generic
 95.31.198.0/23 Deny Generic
+109.71.200.0/22 Deny Generic
 128.70.0.0/17 Deny Generic
 128.70.160.0/19 Deny Generic
 128.70.208.0/22 Deny Generic
@@ -7895,6 +8044,7 @@ Origin: NL
 128.70.224.0/19 Deny Generic
 128.71.0.0/16 Deny Generic
 128.74.0.0/19 Deny Generic
+128.74.108.0/22 Deny Generic
 128.74.112.0/20 Deny Generic
 128.74.128.0/20 Deny Generic
 128.74.168.0/21 Deny Generic
@@ -7902,6 +8052,7 @@ Origin: NL
 128.74.224.0/20 Deny Generic
 128.74.248.0/21 Deny Generic
 128.75.192.0/18 Deny Generic
+188.66.38.0/23 Deny Generic
 194.67.0.0/18 Deny Generic
 194.85.116.0/24 Deny Generic
 194.85.128.0/19 Deny Generic
@@ -7927,7 +8078,10 @@ Origin: NL
 213.234.217.0/24 Deny Generic
 213.234.239.0/24 Deny Generic
 213.234.242.0/24 Deny Generic
-217.19.116.0/24 Deny Generic
+217.19.112.0/20 Deny Generic
+217.195.212.0/23 Deny Generic
+217.195.216.0/23 Deny Generic
+217.195.219.0/24 Deny Generic
 Origin: RU
 139.181.33.0/24 Deny Generic
 Origin: US
@@ -7938,10 +8092,10 @@ recaptcha:
 
 
 # ASN 31200 ("Novotelecom Ltd").
-# Stop Forum Spam (SFS) listings: 1,061.
 # When updating ASNs, only block the problematic ASNs (those with known cases
 # of hacking events, spamming, etc); don't block the entire network.
-# Updated: 2019.05.02 / Checked: 2019.09.18
+# Stop Forum Spam (SFS) listings: 985.
+# Updated: 2019.05.02 / Checked: 2019.11.19
 
 5.128.0.0/16 Deny Generic
 5.129.0.0/17 Deny Generic
@@ -7959,10 +8113,11 @@ recaptcha:
  enabled: true
 
 
-# ASN 3255 (State Enterprise Scientific and Telecommunication Centre "Ukrainian Academic and Research Network" of the
-# Institute for Condensed Matter Physics of the National Academy of Science of Ukraine / UARNet).
-# Stop Forum Spam (SFS) listings: 1,068.
-# Updated: 2019.09.21
+# ASN 3255 (State Enterprise Scientific and Telecommunication Centre "Ukrainian
+# Academic and Research Network" of the Institute for Condensed Matter Physics
+# of the National Academy of Science of Ukraine / UARNet).
+# Stop Forum Spam (SFS) listings: 1,242.
+# Updated: 2019.11.19
 
 193.232.65.0/24 Deny Spam
 Origin: RU
@@ -8008,9 +8163,7 @@ Origin: RU
 194.44.89.0/24 Deny Spam
 194.44.90.0/23 Deny Spam
 194.44.92.0/22 Deny Spam
-194.44.96.0/22 Deny Spam
-194.44.100.0/23 Deny Spam
-194.44.102.0/24 Deny Spam
+194.44.96.0/21 Deny Spam
 194.44.104.0/24 Deny Spam
 194.44.106.0/23 Deny Spam
 194.44.108.0/22 Deny Spam
@@ -8056,9 +8209,9 @@ recaptcha:
 
 
 # ASN 44493 ("Chelyabinsk-Signal").
-# %Listed, Google Malware Dashboard: 0.49%.
-# Stop Forum Spam (SFS) listings: 459.
-# Updated: 2018.03.23 / Checked: 2019.08.29
+# %Listed, Google Malware Dashboard: 0.93%.
+# Stop Forum Spam (SFS) listings: 514.
+# Updated: 2018.03.23 / Checked: 2019.11.19
 
 80.85.152.0/23 Deny Spam
 80.85.154.0/24 Deny Spam
@@ -9957,14 +10110,11 @@ Tag: SoftLayer Spam ISPs
 
 
 # ASNs 12322, 12876 ("ONLINE S.A.S").
-# Caught trying to DDoS SFS.
-# Caught attempting to hack honeypots.
-# Spamming getting significantly worse!
-# Moved from cloud services to spammy ISPs signature files due to being a multi-play network.
-# Also provides internet connectivity in some parts of France.
-# %Listed, Google Malware Dashboard: 1.37% (12322), 0.14% (AS12876).
-# Stop Forum Spam (SFS) listings: 1,337 (12322), 436,586 (AS12876).
-# Updated: 2018.06.24 / Checked: 2019.06.14
+# A multiplay network (French domestic ISP, cloud provider, etc), caught trying
+# to DDoS SFS, caught attempting to hack honeypots, and a huge source of spam.
+# %Listed, Google Malware Dashboard: 0.55% (12322), 0.21% (AS12876).
+# Stop Forum Spam (SFS) listings: 1,002 (12322), 114,775 (AS12876).
+# Updated: 2018.06.24 / Checked: 2019.11.20
 
 51.15.0.0/16 Deny Spam
 51.158.0.0/15 Deny Spam
@@ -10049,23 +10199,20 @@ Origin: UA
 Tag: IT Systems LLC
 
 
-# ASNs 31343, 38978, 43656, 51078 ("Intertelecom Ltd").
+# ASNs 31343, 38978, 43656 ("Intertelecom Ltd").
 # Caught trying to hack into WordPress sites.
-# Stop Forum Spam (SFS) listings: 140 (AS31343), 15 (AS43656), 161 (AS51078).
-# Updated: 2019.07.20
+# Stop Forum Spam (SFS) listings: 125 (AS31343), 17 (AS43656).
+# Updated: 2019.11.19
 
 93.170.64.0/21 Deny Generic
 Origin: CZ
-85.158.184.0/24 Deny Generic
-85.158.190.0/24 Deny Generic
 194.6.216.0/22 Deny Generic
 Origin: RU
 37.19.128.0/17 Deny Generic
-46.247.128.0/17 Deny Generic
+46.247.128.0/19 Deny Generic
 78.111.176.0/20 Deny Generic
 91.198.83.0/24 Deny Generic
 93.180.192.0/18 Deny Generic
-95.81.0.0/18 Deny Generic
 95.111.128.0/17 Deny Generic
 130.180.208.0/20 Deny Generic
 130.185.0.0/18 Deny Generic
@@ -10125,13 +10272,14 @@ recaptcha:
 
 # ASN 8359 ("MTS PJSC").
 # Caught trying to hack WordPress sites.
-# Stop Forum Spam (SFS) listings: 34,374.
-# Updated: 2019.07.20
+# Stop Forum Spam (SFS) listings: 36,163.
+# Updated: 2019.11.19
 
 141.101.232.0/24 Deny Generic
 Origin: NL
 5.144.96.0/19 Deny Generic
 62.5.128.0/17 Deny Generic
+62.113.88.0/24 Deny Generic
 62.118.0.0/16 Deny Generic
 62.152.64.0/19 Deny Generic
 62.220.43.0/24 Deny Generic
@@ -10571,3 +10719,63 @@ Tag: Init7
 62.102.148.0/23 Deny Spam
 Origin: SE
 Tag: Temp/AS51815
+
+# ASN 4788 ("TM Net, Internet Service Provider"). A major Malaysian domestic
+# ISP, but also most recently a notable source of forum spam.
+# Updated: 2019.11.19
+1.9.111.145/32 Deny Spam
+1.9.164.242/32 Deny Spam
+1.9.167.35/32 Deny Spam
+1.9.216.226/32 Deny Spam
+42.188.23.231/32 Deny Spam
+42.188.198.216/32 Deny Spam
+60.48.3.236/32 Deny Spam
+60.53.229.131/32 Deny Spam
+115.132.56.249/32 Deny Spam
+115.132.205.193/32 Deny Spam
+115.134.34.212/32 Deny Spam
+115.135.122.125/32 Deny Spam
+118.101.240.167/32 Deny Spam
+124.13.22.169/32 Deny Spam
+124.13.190.226/32 Deny Spam
+124.82.21.139/32 Deny Spam
+175.137.25.46/32 Deny Spam
+175.137.165.143/32 Deny Spam
+175.138.74.31/32 Deny Spam
+175.138.76.241/32 Deny Spam
+175.139.53.43/32 Deny Spam
+175.139.68.64/32 Deny Spam
+175.139.164.0/24 Deny Spam
+175.139.165.216/32 Deny Spam
+175.139.166.0/23 Deny Spam
+175.139.190.165/32 Deny Spam
+175.143.51.221/32 Deny Spam
+175.143.114.197/32 Deny Spam
+210.186.75.39/32 Deny Spam
+210.186.133.184/32 Deny Spam
+210.195.26.161/32 Deny Spam
+210.195.120.181/32 Deny Spam
+219.92.54.249/32 Deny Spam
+219.93.16.183/32 Deny Spam
+Origin: MY
+Tag: TM Net
+---
+recaptcha:
+ enabled: true
+
+# ASN 9930 ("TIME dotCom Berhad"). A major Malaysian domestic ISP, but also
+# most recently a notable source of forum spam.
+# Updated: 2019.11.19
+161.142.205.130/32 Deny Spam
+202.184.46.96/32 Deny Spam
+202.184.47.95/32 Deny Spam
+202.186.90.45/32 Deny Spam
+202.186.117.189/32 Deny Spam
+202.187.58.131/32 Deny Spam
+202.187.191.113/32 Deny Spam
+202.190.25.214/32 Deny Spam
+Origin: MY
+Tag: TIME dotCom Berhad
+---
+recaptcha:
+ enabled: true

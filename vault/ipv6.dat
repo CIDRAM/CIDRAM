@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6.dat
 
-# Version: 2019.322.340
-# Last modified: 2019.11.20
+# Version: 2019.327.327
+# Last modified: 2019.11.24
 
 
 # ---
@@ -764,9 +764,9 @@ Tag: Rackspace Hosting
 
 # ASN 35017 ("Swiftway Communications, Inc").
 # When updating, "Secure Internet LLC" mark as proxy.
-# %Listed, Google Malware Dashboard: 0.14%.
-# Stop Forum Spam (SFS) listings: 1,701.
-# Updated: 2018.09.10 / Checked: 2019.07.21
+# %Listed, Google Malware Dashboard: 0.16%.
+# Stop Forum Spam (SFS) listings: 1,006.
+# Updated: 2018.09.10 / Checked: 2019.11.24
 
 2a02:748::/32 Deny Cloud
 Origin: PL
@@ -1733,9 +1733,10 @@ Tag: ESDS
 
 
 # ASN 51430 ("AltusHost B.V").
-# %Listed, Google Malware Dashboard: 0.28%.
-# Stop Forum Spam (SFS) listings: 1,844.
-# Updated: 2019.07.21
+# Dedicated webhosting provider. Source of blog and forum spam.
+# %Listed, Google Malware Dashboard: 0.21%.
+# Stop Forum Spam (SFS) listings: 5,426.
+# Updated: 2019.07.21 / Checked: 2019.11.24
 
 2a00:7140::/32 Deny Cloud
 2a00:7142::/31 Deny Cloud
@@ -2239,17 +2240,14 @@ Tag: Makonix SIA
 
 
 # ASN 57169 ("EDIS GmbH").
-# %Listed, Google Malware Dashboard: 0.11%.
-# Stop Forum Spam (SFS) listings: 903.
-# Updated: 2016.11.02 / Checked: 2019.06.20
+# %Listed, Google Malware Dashboard: 0.30%.
+# Stop Forum Spam (SFS) listings: 1,112.
+# Updated: 2019.11.23
 
 2a03:f80:852::/48 Deny Cloud
 2a03:f80:ad15::/48 Deny Cloud
 2a03:f80:ed15::/48 Deny Cloud
 2a03:f80:ed16::/47 Deny Cloud
-2a03:f81::/32 Deny Cloud
-2a03:f83::/32 Deny Cloud
-2a03:f84::/32 Deny Cloud
 2a03:f87:ffff::/48 Deny Cloud
 Origin: AT
 Tag: EDIS GmbH
@@ -3023,9 +3021,9 @@ Tag: Amazon.com, Inc
 
 
 # ASN 62282 ("UAB Rakrejus").
-# %Listed, Google Malware Dashboard: 0.24%.
-# Stop Forum Spam (SFS) listings: 17,042.
-# Updated: 2016.10.01 / Checked: 2019.06.20
+# %Listed, Google Malware Dashboard: 0.13%.
+# Stop Forum Spam (SFS) listings: 17,357.
+# Updated: 2016.10.01 / Checked: 2019.11.23
 
 2a01:41a0::/32 Deny Cloud
 2a02:7b40::/32 Deny Cloud
@@ -3475,9 +3473,9 @@ Tag: ScaleUp Technologies
 
 
 # ASN 13213 ("UK-2 Limited").
-# %Listed, Google Malware Dashboard: 0.10%.
-# Stop Forum Spam (SFS) listings: 2,917.
-# Updated: 2018.01.08 / Checked: 2019.07.21
+# %Listed, Google Malware Dashboard: 0.33%.
+# Stop Forum Spam (SFS) listings: 3,140.
+# Updated: 2018.01.08 / Checked: 2019.11.24
 
 2a02:2498::/32 Deny Cloud
 Origin: GB
@@ -4047,16 +4045,14 @@ Tag: meerfarbig
 
 # ASN 29066 ("velia.net Internetdienste GmbH").
 # Note when updating: Also contains "proxy" signatures.
-# %Listed, Google Malware Dashboard: 0.22%.
-# Stop Forum Spam (SFS) listings: 53,099.
-# Updated: 2019.04.11 / Checked: 2019.08.22
+# %Listed, Google Malware Dashboard: 0.11%.
+# Stop Forum Spam (SFS) listings: 65,503.
+# Updated: 2019.11.23
 
 2a01:7a0::/29 Deny Cloud
 Origin: DE
 2406:f380::/32 Deny Cloud
 Origin: HK
-2a0b:c2c0::/29 Deny Cloud
-Origin: NL
 2402:5780::/32 Deny Cloud
 Origin: SG
 2604:bc80::/32 Deny Cloud
@@ -4275,9 +4271,9 @@ Tag: InterCloud ltd
 
 
 # ASN 197540 ("netcup GmbH").
-# %Listed, Google Malware Dashboard: 0.17%.
-# Stop Forum Spam (SFS) listings: 5,155.
-# Updated: 2017.02.15 / Checked: 2019.07.21
+# %Listed, Google Malware Dashboard: 0.23%.
+# Stop Forum Spam (SFS) listings: 1,927.
+# Updated: 2017.02.15 / Checked: 2019.11.24
 
 2a04:b500::/32 Deny Cloud
 Origin: CH
@@ -4339,9 +4335,9 @@ Tag: ITL Company
 
 
 # ASN 395111 ("KVCHOSTING.COM LLC").
-# %Listed, Google Malware Dashboard: 0.18%.
-# Stop Forum Spam (SFS) listings: 1,816.
-# Updated: 2017.03.11 / Checked: 2019.07.21
+# %Listed, Google Malware Dashboard: 0.21%.
+# Stop Forum Spam (SFS) listings: 2,129.
+# Updated: 2017.03.11 / Checked: 2019.11.24
 
 2602:ff3c::/36 Deny Cloud
 Origin: US
@@ -5095,9 +5091,9 @@ Tag: Namecheap, Inc
 
 
 # ASN 49349 ("Dotsi, Unipessoal Lda").
-# %Listed, Google Malware Dashboard: 0.74%.
-# Stop Forum Spam (SFS) listings: 423.
-# Updated: 2018.04.23 / Checked: 2019.07.21
+# %Listed, Google Malware Dashboard: 1.06%.
+# Stop Forum Spam (SFS) listings: 418.
+# Updated: 2018.04.23 / Checked: 2019.11.24
 
 2a00:1c60::/32 Deny Cloud
 Origin: PT
@@ -6091,8 +6087,8 @@ Tag: MVPS LTD
 
 # ASN 134113 ("Kazi Sazzad Hossain T/A Millennium Computers & Networking").
 # Caught trying to hack WordPress sites.
-# Stop Forum Spam (SFS) listings: 8.
-# Updated: 2019.07.21
+# Stop Forum Spam (SFS) listings: 21.
+# Updated: 2019.07.21 / Checked: 2019.11.24
 
 2403:140::/32 Deny Cloud
 Origin: BD

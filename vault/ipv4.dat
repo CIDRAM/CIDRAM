@@ -1,8 +1,8 @@
 # IPv4 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv4.dat
 
-# Version: 2019.322.340
-# Last modified: 2019.11.20
+# Version: 2019.327.327
+# Last modified: 2019.11.24
 
 
 # ---
@@ -3394,20 +3394,18 @@ Tag: Limestone Networks
 
 # ASN 35017 ("Swiftway Communications, Inc").
 # When updating, "Secure Internet LLC" mark as proxy.
-# %Listed, Google Malware Dashboard: 0.14%.
-# Stop Forum Spam (SFS) listings: 1,701.
-# Updated: 2019.07.21
+# %Listed, Google Malware Dashboard: 0.16%.
+# Stop Forum Spam (SFS) listings: 1,006.
+# Updated: 2019.11.24
 
 190.102.100.0/22 Deny Cloud
 Origin: BZ
-199.127.44.0/22 Deny Cloud
 209.251.26.0/23 Deny Cloud
 Origin: CA
 31.187.78.0/24 Deny Cloud
 Origin: DE
 188.241.62.0/23 Deny Cloud
 Origin: ES
-107.161.163.0/24 Deny Cloud
 149.154.158.0/24 Deny Cloud
 151.236.16.0/24 Deny Cloud
 151.236.22.0/24 Deny Cloud
@@ -3422,33 +3420,35 @@ Origin: EU
 194.126.172.0/22 Deny Cloud
 195.242.152.0/23 Deny Cloud
 Origin: NL
+43.239.248.0/23 Deny Cloud
 43.239.251.0/24 Deny Cloud
 114.31.209.0/24 Deny Cloud
 114.31.210.0/23 Deny Cloud
-114.141.112.0/22 Deny Cloud
+114.141.112.0/21 Deny Cloud
 Origin: NZ
-37.72.168.0/21 Deny Cloud
+37.72.168.0/22 Deny Cloud
+37.72.172.0/23 Deny Cloud
 89.233.104.0/21 Deny Cloud
 Origin: PL
 213.108.198.0/23 Deny Cloud
 Origin: RU
 37.1.208.0/21 Deny Cloud
 Origin: UA
-23.227.192.0/20 Deny Cloud
-38.69.204.0/22 Deny Cloud
+23.227.192.0/21 Deny Cloud
+23.227.200.0/22 Deny Cloud
+23.227.204.0/23 Deny Cloud
+23.227.206.0/24 Deny Cloud
 45.74.17.0/24 Deny Proxy
 45.74.18.0/23 Deny Proxy
 45.74.20.0/22 Deny Proxy
 45.74.24.0/23 Deny Proxy
 45.74.26.0/24 Deny Proxy
 64.140.156.0/24 Deny Cloud
-104.250.161.0/24 Deny Cloud
 162.252.172.0/22 Deny Cloud
-172.94.67.0/24 Deny Cloud
-172.94.68.0/24 Deny Cloud
-172.94.78.0/24 Deny Cloud
+172.94.68.0/24 Deny Proxy
+172.94.78.0/24 Deny Proxy
 172.111.152.0/24 Deny Cloud
-206.123.150.0/23 Deny Cloud
+206.123.150.0/23 Deny Proxy
 206.123.152.0/21 Deny Proxy
 Origin: US
 Tag: Swiftway
@@ -7681,17 +7681,16 @@ Tag: ESDS
 
 
 # ASN 51430 ("AltusHost B.V").
-# %Listed, Google Malware Dashboard: 0.28%.
-# Stop Forum Spam (SFS) listings: 1,844.
-# Updated: 2019.07.21
+# Dedicated webhosting provider. Source of blog and forum spam.
+# %Listed, Google Malware Dashboard: 0.21%.
+# Stop Forum Spam (SFS) listings: 5,426.
+# Updated: 2019.11.24
 
 91.214.44.0/24 Deny Cloud
 91.214.47.0/24 Deny Cloud
 194.152.52.0/24 Deny Cloud
 Origin: LU
 79.142.64.0/20 Deny Cloud
-141.101.135.0/24 Deny Cloud
-178.170.136.0/24 Deny Cloud
 185.7.32.0/22 Deny Cloud
 185.10.56.0/22 Deny Cloud
 213.5.64.0/21 Deny Cloud
@@ -7703,7 +7702,6 @@ Origin: NL
 Origin: SE
 172.94.36.0/24 Deny Cloud
 172.94.57.0/24 Deny Cloud
-172.111.238.0/24 Deny Cloud
 Origin: US
 Tag: AltusHost B.V
 
@@ -9008,9 +9006,9 @@ Tag: Makonix SIA
 
 
 # ASN 57169 ("EDIS GmbH").
-# %Listed, Google Malware Dashboard: 0.14%.
-# Stop Forum Spam (SFS) listings: 960.
-# Updated: 2019.02.18 / Checked: 2019.06.20
+# %Listed, Google Malware Dashboard: 0.30%.
+# Stop Forum Spam (SFS) listings: 1,112.
+# Updated: 2019.11.23
 
 91.227.204.0/23 Deny Cloud
 Origin: AT
@@ -9021,16 +9019,13 @@ Origin: AT
 151.236.0.0/21 Deny Cloud
 151.236.8.0/22 Deny Cloud
 151.236.12.0/23 Deny Cloud
+151.236.20.0/24 Deny Cloud
 151.236.26.0/23 Deny Cloud
 151.236.30.0/24 Deny Cloud
-158.255.209.0/24 Deny Cloud
-158.255.210.0/23 Deny Cloud
+158.255.208.0/22 Deny Cloud
 158.255.212.0/24 Deny Cloud
 185.26.237.0/24 Deny Cloud
 Origin: EU
-151.236.20.0/24 Deny Cloud
-158.255.208.0/24 Deny Cloud
-Origin: HK
 192.36.38.0/23 Deny Cloud
 192.36.56.0/24 Deny Cloud
 192.71.233.0/24 Deny Cloud
@@ -12005,9 +12000,9 @@ Tag: Amazon.com, Inc
 
 
 # ASN 62282 ("UAB Rakrejus").
-# %Listed, Google Malware Dashboard: 0.24%.
-# Stop Forum Spam (SFS) listings: 17,042.
-# Updated: 2019.02.18 / Checked: 2019.06.20
+# %Listed, Google Malware Dashboard: 0.13%.
+# Stop Forum Spam (SFS) listings: 17,357.
+# Updated: 2019.11.23
 
 31.14.176.0/22 Deny Cloud
 37.156.216.0/21 Deny Cloud
@@ -12033,6 +12028,13 @@ Tag: Amazon.com, Inc
 212.24.96.0/20 Deny Cloud
 212.237.232.0/22 Deny Cloud
 Origin: LT
+185.88.100.0/24 Deny Cloud
+Origin: PL
+45.66.208.0/24 Deny Cloud
+45.132.184.0/24 Deny Cloud
+45.138.100.0/24 Deny Cloud
+45.145.130.0/23 Deny Cloud
+45.148.124.0/24 Deny Cloud
 46.161.56.0/21 Deny Cloud
 85.202.194.0/24 Deny Cloud
 94.158.22.0/24 Deny Cloud
@@ -13771,16 +13773,20 @@ Tag: Lunar Pages
 
 
 # ASN 13213 ("UK-2 Limited").
-# %Listed, Google Malware Dashboard: 0.10%.
-# Stop Forum Spam (SFS) listings: 2,917.
-# Updated: 2019.07.21
+# %Listed, Google Malware Dashboard: 0.33%.
+# Stop Forum Spam (SFS) listings: 3,140.
+# Updated: 2019.11.24
 
+190.99.82.0/24 Deny Cloud
+Origin: BZ
 199.101.171.0/24 Deny Cloud
 Origin: CA
 190.121.210.0/24 Deny Cloud
 Origin: CW
+5.182.184.0/24 Deny Cloud
 185.171.126.0/24 Deny Cloud
 185.230.120.0/22 Deny Cloud
+193.160.80.0/24 Deny Cloud
 Origin: CZ
 185.169.255.0/24 Deny Cloud
 185.198.89.0/24 Deny Cloud
@@ -13815,7 +13821,6 @@ Origin: FR
 185.9.50.0/23 Deny Cloud
 185.35.148.0/22 Deny Cloud
 185.80.220.0/22 Deny Cloud
-185.152.0.0/23 Deny Cloud
 185.161.190.0/23 Deny Cloud
 185.205.207.0/24 Deny Cloud
 185.208.152.0/22 Deny Cloud
@@ -13823,24 +13828,30 @@ Origin: FR
 185.244.10.0/24 Deny Cloud
 194.70.234.0/24 Deny Cloud
 212.78.73.0/24 Deny Cloud
+212.78.74.0/24 Deny Cloud
 Origin: GB
+45.85.204.0/22 Deny Cloud
+45.90.48.0/22 Deny Cloud
+Origin: HU
 79.98.182.0/23 Deny Cloud
 185.52.136.0/22 Deny Cloud
 Origin: IS
 185.38.184.0/24 Deny Cloud
 Origin: ME
+45.80.158.0/23 Deny Cloud
+45.135.184.0/23 Deny Cloud
 85.203.22.0/24 Deny Cloud
 85.203.34.0/24 Deny Cloud
 85.203.46.0/24 Deny Cloud
 136.144.40.0/24 Deny Cloud
 185.92.25.0/24 Deny Cloud
-185.145.244.0/24 Deny Cloud
 185.187.213.0/24 Deny Cloud
 185.187.214.0/23 Deny Cloud
 185.192.68.0/24 Deny Cloud
 185.192.71.0/24 Deny Cloud
 188.72.97.0/24 Deny Cloud
 188.72.105.0/24 Deny Cloud
+212.60.14.0/24 Deny Cloud
 Origin: NL
 36.255.215.0/24 Deny Cloud
 103.111.60.0/23 Deny Cloud
@@ -13850,7 +13861,7 @@ Origin: PK
 Origin: PT
 91.238.70.0/24 Deny Cloud
 Origin: RO
-78.31.207.0/24 Deny Cloud
+78.31.206.0/23 Deny Cloud
 91.107.116.0/24 Deny Cloud
 91.107.127.0/24 Deny Cloud
 193.34.232.0/23 Deny Cloud
@@ -13865,20 +13876,25 @@ Origin: SE
 45.56.130.0/24 Deny Cloud
 45.74.40.0/24 Deny Cloud
 50.31.241.0/24 Deny Cloud
-63.141.56.0/24 Deny Cloud
 66.111.61.0/24 Deny Cloud
+67.213.220.0/23 Deny Cloud
+67.213.222.0/24 Deny Cloud
+69.4.239.0/24 Deny Cloud
 104.200.66.0/24 Deny Cloud
 104.200.157.0/24 Deny Cloud
 104.232.222.0/24 Deny Cloud
-167.160.56.0/24 Deny Cloud
 172.94.73.0/24 Deny Cloud
 172.98.68.0/24 Deny Cloud
 172.98.83.0/24 Deny Cloud
 172.111.204.0/24 Deny Cloud
+173.244.194.0/24 Deny Cloud
+173.244.199.0/24 Deny Cloud
+173.244.212.0/23 Deny Cloud
 185.201.40.0/24 Deny Cloud
 198.8.95.0/24 Deny Cloud
 208.78.42.0/24 Deny Cloud
 208.93.193.0/24 Deny Cloud
+216.119.144.0/24 Deny Cloud
 Origin: US
 196.52.84.0/24 Deny Cloud
 196.53.30.0/24 Deny Cloud
@@ -16565,8 +16581,8 @@ Tag: Data Center
 
 
 # ASN 38676 ("flexnetworks").
-# Stop Forum Spam (SFS) listings: 72.
-# Updated: 2019.02.18 / Checked: 2019.06.20
+# Stop Forum Spam (SFS) listings: 57.
+# Updated: 2019.02.18 / Checked: 2019.11.23
 
 14.129.224.0/20 Deny Cloud
 14.192.80.0/20 Deny Cloud
@@ -17238,14 +17254,13 @@ Tag: meerfarbig
 
 # ASN 29066 ("velia.net Internetdienste GmbH").
 # Note when updating: Also contains "proxy" signatures.
-# %Listed, Google Malware Dashboard: 0.22%.
-# Stop Forum Spam (SFS) listings: 53,099.
-# Updated: 2019.08.22
+# %Listed, Google Malware Dashboard: 0.11%.
+# Stop Forum Spam (SFS) listings: 65,503.
+# Updated: 2019.11.23
 
 92.42.104.0/21 Deny Cloud
 Origin: CH
 37.61.208.0/20 Deny Cloud
-78.138.96.0/21 Deny Cloud
 78.138.104.0/22 Deny Cloud
 85.195.64.0/18 Deny Cloud
 87.119.220.0/22 Deny Cloud
@@ -17261,8 +17276,11 @@ Origin: CH
 195.69.240.0/22 Deny Cloud
 195.182.58.0/24 Deny Cloud
 Origin: DE
-193.200.150.0/24 Deny Cloud
+193.200.150.0/24 Deny Proxy
 Origin: EU
+45.146.91.0/24 Deny Cloud
+Origin: FR
+109.68.70.0/24 Deny Cloud
 185.136.156.0/22 Deny Cloud
 185.136.164.0/22 Deny Cloud
 185.136.168.0/22 Deny Cloud
@@ -17271,29 +17289,32 @@ Origin: EU
 Origin: GB
 103.66.180.0/22 Deny Cloud
 Origin: HK
-45.130.254.0/24 Deny Cloud
-185.99.98.0/23 Deny Cloud
-Origin: IL
+85.8.168.0/22 Deny Cloud
+Origin: LT
 2.56.102.0/23 Deny Cloud
 2.59.22.0/23 Deny Cloud
 45.9.117.0/24 Deny Cloud
 45.9.118.0/23 Deny Cloud
 45.9.120.0/24 Deny Cloud
 45.12.60.0/22 Deny Cloud
-45.13.184.0/22 Deny Cloud
 45.86.12.0/24 Deny Cloud
 45.86.14.0/24 Deny Cloud
 45.133.220.0/22 Deny Cloud
 85.209.128.0/24 Deny Cloud
+185.99.98.0/23 Deny Cloud
 185.126.67.0/24 Deny Cloud
 185.198.240.0/24 Deny Proxy
-185.205.70.0/24 Deny Cloud
 Origin: NL
 103.125.146.0/23 Deny Cloud
 Origin: PK
-92.118.13.0/24 Deny Cloud
-Origin: PT
 193.151.88.0/22 Deny Cloud
+Origin: PL
+92.118.13.0/24 Deny Proxy
+Origin: PT
+193.5.64.0/23 Deny Cloud
+193.5.250.0/23 Deny Cloud
+Origin: RS
+193.42.156.0/24 Deny Cloud
 Origin: UA
 104.244.168.0/21 Deny Cloud
 148.72.129.0/24 Deny Cloud
@@ -18221,18 +18242,20 @@ Tag: InterCloud ltd
 
 
 # ASN 197540 ("netcup GmbH").
-# %Listed, Google Malware Dashboard: 0.17%.
-# Stop Forum Spam (SFS) listings: 5,155.
-# Updated: 2019.07.21
+# %Listed, Google Malware Dashboard: 0.23%.
+# Stop Forum Spam (SFS) listings: 1,927.
+# Updated: 2019.11.24
 
 185.48.228.0/22 Deny Cloud
 Origin: CH
 2.56.96.0/22 Deny Cloud
 5.45.96.0/20 Deny Cloud
+5.181.48.0/22 Deny Cloud
 5.252.224.0/22 Deny Cloud
 37.120.160.0/19 Deny Cloud
 37.221.192.0/21 Deny Cloud
 45.90.4.0/22 Deny Cloud
+45.143.184.0/22 Deny Cloud
 46.38.224.0/19 Deny Cloud
 46.232.248.0/22 Deny Cloud
 81.16.16.0/22 Deny Cloud
@@ -18466,14 +18489,10 @@ Tag: ITL Company
 
 
 # ASN 395111 ("KVCHOSTING.COM LLC").
-# %Listed, Google Malware Dashboard: 0.18%.
-# Stop Forum Spam (SFS) listings: 1,816.
-# Updated: 2019.07.21
+# %Listed, Google Malware Dashboard: 0.21%.
+# Stop Forum Spam (SFS) listings: 2,129.
+# Updated: 2019.11.24
 
-203.24.68.0/24 Deny Cloud
-203.55.39.0/24 Deny Cloud
-203.55.122.0/24 Deny Cloud
-Origin: AU
 185.201.8.0/22 Deny Cloud
 Origin: DE
 185.161.190.0/23 Deny Cloud
@@ -18482,38 +18501,44 @@ Origin: GB
 85.203.27.0/24 Deny Cloud
 Origin: NL
 23.227.96.0/19 Deny Cloud
-38.72.144.0/23 Deny Cloud
+38.20.96.0/21 Deny Cloud
+38.72.144.0/21 Deny Cloud
+38.72.152.0/22 Deny Cloud
 38.72.156.0/23 Deny Cloud
 38.87.144.0/22 Deny Cloud
+38.87.156.0/22 Deny Cloud
 38.95.34.0/24 Deny Cloud
+38.109.240.0/23 Deny Cloud
 38.123.253.0/24 Deny Cloud
 38.125.232.0/21 Deny Cloud
 38.131.136.0/21 Deny Cloud
 38.131.144.0/20 Deny Cloud
-38.145.64.0/19 Deny Cloud
-38.145.96.0/20 Deny Cloud
-38.145.112.0/21 Deny Cloud
-38.145.120.0/22 Deny Cloud
-38.145.126.0/23 Deny Cloud
+38.145.64.0/18 Deny Cloud
+38.240.176.0/21 Deny Cloud
 45.40.96.0/20 Deny Cloud
-45.40.117.0/24 Deny Cloud
 45.40.118.0/23 Deny Cloud
 45.40.120.0/21 Deny Cloud
 64.52.16.0/23 Deny Cloud
 64.190.89.0/24 Deny Cloud
+69.171.209.0/24 Deny Cloud
 69.171.210.0/23 Deny Cloud
 69.171.212.0/23 Deny Cloud
 69.171.220.0/22 Deny Cloud
 103.111.32.0/23 Deny Cloud
 104.129.240.0/20 Deny Cloud
 104.200.32.0/20 Deny Cloud
+104.247.134.0/23 Deny Cloud
+104.247.136.0/23 Deny Cloud
 104.247.144.0/20 Deny Cloud
 147.185.114.0/23 Deny Cloud
 154.30.132.0/22 Deny Cloud
 154.30.136.0/21 Deny Cloud
 154.30.144.0/22 Deny Cloud
 154.30.148.0/23 Deny Cloud
-154.30.150.0/24 Deny Cloud
+154.30.158.0/23 Deny Cloud
+154.30.164.0/22 Deny Cloud
+154.30.168.0/21 Deny Cloud
+154.30.176.0/21 Deny Cloud
 173.214.176.0/20 Deny Cloud
 198.102.8.0/21 Deny Cloud
 198.210.32.0/19 Deny Cloud
@@ -19099,9 +19124,9 @@ Tag: Bodis, LLC
 
 
 # ASN 54288 ("SolidTools Technology, Inc").
-# %Listed, Google Malware Dashboard: 1.36%.
-# Stop Forum Spam (SFS) listings: 870.
-# Updated: 2019.02.18 / Checked: 2019.06.20
+# %Listed, Google Malware Dashboard: 2.13%.
+# Stop Forum Spam (SFS) listings: 388.
+# Updated: 2019.02.18 / Checked: 2019.11.23
 
 45.3.54.0/24 Deny Cloud
 64.62.189.0/24 Deny Cloud
@@ -21619,9 +21644,9 @@ Tag: Namecheap, Inc
 
 
 # ASN 49349 ("Dotsi, Unipessoal Lda").
-# %Listed, Google Malware Dashboard: 0.74%.
-# Stop Forum Spam (SFS) listings: 423.
-# Updated: 2019.07.21
+# %Listed, Google Malware Dashboard: 1.06%.
+# Stop Forum Spam (SFS) listings: 418.
+# Updated: 2019.11.24
 
 185.11.145.0/24 Deny Cloud
 185.11.146.0/23 Deny Cloud
@@ -21633,9 +21658,10 @@ Origin: NL
 5.206.224.0/21 Deny Cloud
 185.38.141.0/24 Deny Cloud
 185.38.142.0/23 Deny Cloud
-185.236.228.0/23 Deny Cloud
+185.236.229.0/24 Deny Cloud
 185.236.231.0/24 Deny Cloud
-188.93.232.0/22 Deny Cloud
+188.93.232.0/23 Deny Cloud
+188.93.234.0/24 Deny Cloud
 188.93.237.0/24 Deny Cloud
 188.93.238.0/23 Deny Cloud
 Origin: PT
@@ -21689,16 +21715,12 @@ Tag: TODAS LAS REDES SA
 
 
 # ASN 8220 ("COLT Technology Services Group Limited").
-# Predominantly a cloud provider, but leases to wide range of other companies providing a wide range of different
-# services, meaning that it should effectively be regarded as a multiplay network. Mostly ranges are business VPNs and
-# internet endpoints for businesses, but also contains a few domestic endpoints from ISPs, a few webhosting ranges,
-# proxies, etc. Should be careful when updating! Possibility of mixed reasons (cloud/generic/spam/proxy/etc). For now,
-# we'll just list those ranges that we can cross-reference against various blacklists, datbases, etc elsewhere (e.g.,
-# Stop Forum Spam), to the extent that it warrants them being listed here. (AFAIK, there are at least 4 ASNs owned by
-# Colt; I'll only list those that are currently relevant though).
-# %Listed, Google Malware Dashboard: 0.06%.
-# Stop Forum Spam (SFS) listings: 2,741.
-# Updated: 2019.07.21
+# Major multiplay network with multiple ASNs. For now, opting to list only the
+# ranges that we can cross-reference against various blacklists, datbases, etc
+# elsewhere (e.g., Stop Forum Spam).
+# %Listed, Google Malware Dashboard: 0.12%.
+# Stop Forum Spam (SFS) listings: 1,933.
+# Updated: 2019.11.24
 
 213.164.0.0/19 Deny Spam
 213.185.160.0/19 Deny Spam
@@ -21708,15 +21730,10 @@ Origin: BE
 213.173.160.0/19 Deny Spam
 Origin: CH
 213.61.0.0/16 Deny Spam
-217.110.0.0/15 Deny Spam
 Origin: DE
 213.27.128.0/17 Deny Spam
 213.229.128.0/18 Deny Spam
 Origin: ES
-62.23.0.0/16 Deny Spam
-195.68.0.0/17 Deny Spam
-195.110.64.0/19 Deny Spam
-212.121.128.0/19 Deny Spam
 213.41.0.0/17 Deny Spam
 213.86.0.0/16 Deny Spam
 213.208.192.0/18 Deny Spam
@@ -25322,8 +25339,8 @@ Tag: MVPS LTD
 
 # ASN 134113 ("Kazi Sazzad Hossain T/A Millennium Computers & Networking").
 # Caught trying to hack WordPress sites.
-# Stop Forum Spam (SFS) listings: 8.
-# Updated: 2019.07.21
+# Stop Forum Spam (SFS) listings: 21.
+# Updated: 2019.07.21 / Checked: 2019.11.24
 
 27.123.252.0/22 Deny Cloud
 103.52.134.0/23 Deny Cloud
@@ -25835,6 +25852,16 @@ Origin: NL
 Tag: IT-GRAD NL B.V
 
 
+# ASN 198156 ("Lukman Multimedia Sp. z o.o").
+# Blog and forum spammers.
+# Stop Forum Spam (SFS) listings: 252.
+# Updated: 2019.11.23
+
+212.7.216.0/21 Deny Cloud
+Origin: PL
+Tag: Lukman Multimedia
+
+
 # ---
 # These CIDRs listed due to reported incidences of spam and/or spambots
 # detected at these specific ranges, which belong to ASNs which we hope to not
@@ -25883,6 +25910,15 @@ Tag: Temp/AS15169
 138.246.253.0/24 Deny Cloud
 Origin: DE
 Tag: Leibniz-Rechenzentrum
+
+# ASN 16578 ("Lanset America Corporation"). Dedicated cloud provider. Some
+# instances of dictionary attacks allegedy (unconfirmed) originating from parts
+# of their network. Will reevaluate at next update. Also small amounts of spam.
+# Updated: 2019.11.24
+69.94.140.0/24 Deny Spam
+69.94.155.0/24 Deny Cloud
+Origin: US
+Tag: Lanset America
 
 
 # ---

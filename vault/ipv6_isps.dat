@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_isps.dat
 
-# Version: 2019.322.340
-# Last modified: 2019.11.20
+# Version: 2019.327.327
+# Last modified: 2019.11.24
 
 
 # ---
@@ -2021,6 +2021,32 @@ recaptcha:
 2a03:1ac0:6dc2:5000::/52 Deny Spam
 Origin: RU
 Tag: ER-Telecom Holding
+---
+recaptcha:
+ enabled: true
+
+
+# ASN 263500 ("Star Telecom S/A").
+# Source of forum spam and some email harvestors.
+# Stop Forum Spam (SFS) listings: 333.
+# Updated: 2019.10.24
+
+2804:12d8::/32 Deny Spam
+Origin: BR
+Tag: Star Telecom S/A
+---
+recaptcha:
+ enabled: true
+
+
+# ASN 25513 ("PJSC Moscow city telephone network").
+# Source of blog and forum spam.
+# Stop Forum Spam (SFS) listings: 20,478.
+# Updated: 2019.10.24
+
+2a00:1370::/32 Deny Spam
+Origin: RU
+Tag: PJSC Moscow city
 ---
 recaptcha:
  enabled: true

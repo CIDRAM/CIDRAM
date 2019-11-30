@@ -1,8 +1,8 @@
 # IPv4 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv4.dat
 
-# Version: 2019.327.327
-# Last modified: 2019.11.24
+# Version: 2019.333.541
+# Last modified: 2019.11.30
 
 
 # ---
@@ -821,15 +821,12 @@ Tag: PEG TECH INC
 
 
 # ASN 25653 ("FortressITX").
-# Note: Mark SA entries as generic (not cloud).
-# %Listed, Google Malware Dashboard: 0.13%.
-# Stop Forum Spam (SFS) listings: 518.
-# Updated: 2019.02.27 / Modified: 2019.06.28
+# Note: Omit SA entirely when updating (no bad reports; seems clean).
+# Stop Forum Spam (SFS) listings: 971.
+# Updated: 2019.11.30
 
 65.181.64.0/18 Deny Cloud
 Origin: HK
-50.60.145.0/24 Deny Generic
-Origin: SA
 65.98.0.0/17 Deny Cloud
 65.181.112.0/23 Deny Cloud
 65.181.116.0/24 Deny Cloud
@@ -844,6 +841,7 @@ Origin: SA
 69.194.202.0/24 Deny Cloud
 69.194.204.0/23 Deny Cloud
 174.140.196.0/23 Deny Cloud
+184.170.146.0/23 Deny Cloud
 208.116.0.0/18 Deny Cloud
 216.67.224.0/19 Deny Cloud
 Origin: US
@@ -2900,9 +2898,9 @@ Tag: IPGLOBE DATACENTER
 
 
 # ASNs 28271, 52550 ("DataCorpore Servios e Representaes").
-# %Listed, Google Malware Dashboard: 1.40% (AS28271).
-# Stop Forum Spam (SFS) listings: 71 (AS28271).
-# Updated: 2019.07.24
+# %Listed, Google Malware Dashboard: 1.06% (AS28271).
+# Stop Forum Spam (SFS) listings: 109 (AS28271).
+# Updated: 2019.07.24 / Checked: 2019.11.30
 
 177.47.96.0/19 Deny Cloud
 177.86.44.0/24 Deny Cloud
@@ -3007,9 +3005,9 @@ Tag: Sedo Domain Parking
 
 
 # ASNs 57043, 395839 ("HOSTKEY B.V").
-# %Listed, Google Malware Dashboard: 0.05% (AS57043).
-# Stop Forum Spam (SFS) listings: 1,605 (AS57043), 159 (AS395839).
-# Updated: 2019.07.24
+# %Listed, Google Malware Dashboard: 0.11% (AS57043).
+# Stop Forum Spam (SFS) listings: 522 (AS57043), 88 (AS395839).
+# Updated: 2019.11.30
 
 185.222.209.0/24 Deny Cloud
 Origin: GB
@@ -3018,7 +3016,6 @@ Origin: GB
 46.17.96.0/21 Deny Cloud
 46.249.38.0/24 Deny Cloud
 66.248.204.0/22 Deny Cloud
-80.209.240.0/22 Deny Cloud
 146.0.72.0/21 Deny Cloud
 185.70.184.0/22 Deny Cloud
 185.130.224.0/22 Deny Cloud
@@ -3031,8 +3028,8 @@ Origin: PA
 185.156.177.0/24 Deny Cloud
 193.188.22.0/24 Deny Cloud
 Origin: RU
-139.60.160.0/23 Deny Cloud
-139.60.162.0/24 Deny Cloud
+80.209.240.0/22 Deny Cloud
+139.60.160.0/22 Deny Cloud
 Origin: US
 Tag: HOSTKEY B.V
 
@@ -4421,11 +4418,10 @@ Tag: DataShack, LC
 
 
 # ASN 62710 ("Rack911").
-# %Listed, Google Malware Dashboard: 0.62%.
-# Updated: 2019.02.27 / Checked: 2019.06.23
+# No recent reports or bad activity detected. Possible candidate for future removal.
+# Updated: 2019.11.30
 
 104.128.78.0/23 Deny Cloud
-104.238.210.0/23 Deny Cloud
 162.220.112.0/22 Deny Cloud
 162.247.48.0/22 Deny Cloud
 172.93.4.0/23 Deny Cloud
@@ -6549,8 +6545,8 @@ Tag: Choopa, LLC
 
 
 # ASN 7162 ("UOL DIVEO S.A").
-# %Listed, Google Malware Dashboard: 0.22%.
-# Updated: 2017.09.20 / Checked: 2019.07.24
+# %Listed, Google Malware Dashboard: 0.26%.
+# Updated: 2019.11.30
 
 186.234.0.0/18 Deny Cloud
 186.234.64.0/20 Deny Cloud
@@ -6558,7 +6554,6 @@ Tag: Choopa, LLC
 186.234.127.0/24 Deny Cloud
 186.234.128.0/18 Deny Cloud
 186.234.224.0/22 Deny Cloud
-187.16.19.0/24 Deny Cloud
 187.17.64.0/18 Deny Cloud
 189.38.56.0/21 Deny Cloud
 200.98.0.0/16 Deny Cloud
@@ -8541,8 +8536,8 @@ Tag: HIVELOCITY VENTURES
 
 
 # ASN 48095 ("XT GLOBAL NETWORKS LTD").
-# Stop Forum Spam (SFS) listings: 6,835.
-# Updated: 2019.07.24
+# Stop Forum Spam (SFS) listings: 5,594.
+# Updated: 2019.07.24 / Checked: 2019.11.30
 
 185.206.128.0/22 Deny Cloud
 Origin: GB
@@ -20792,25 +20787,14 @@ Tag: CloudSol
 
 
 # ASN 5784 ("GetNet Inc").
-# No recent reports or bad activity detected. Possible candidate for future removal.
-# Updated: 2018.02.12 / Checked: 2019.06.30
+# One report of a NAS brute force ransomware attack at AbuseIPDB from this
+# network at the time of the last check. No other reports elsewhere. Should
+# reassess at the next check. Possible candidate for future removal.
+# Updated: 2018.02.12 / Checked: 2019.11.30
 
 216.19.192.0/19 Deny Cloud
 Origin: US
 Tag: GetNet Inc
-
-
-# ASN 19710 ("Dino Solutions, Inc").
-# No recent reports or bad activity detected. Possible candidate for future removal.
-# Updated: 2018.02.12 / Checked: 2019.06.30
-
-66.56.64.0/19 Deny Cloud
-74.85.208.0/20 Deny Cloud
-208.86.196.0/22 Deny Cloud
-208.93.4.0/22 Deny Cloud
-208.94.224.0/21 Deny Cloud
-Origin: US
-Tag: Dino Solutions, Inc
 
 
 # ASN 132839 ("POWER LINE (HK) CO., LIMITED").
@@ -21804,8 +21788,8 @@ Tag: active-servers.com
 
 # ASN 7979 ("Servers.com, Inc").
 # Some IPs here caught scraping website content without permission.
-# Stop Forum Spam (SFS) listings: 13.
-# Updated: 2019.07.24
+# Stop Forum Spam (SFS) listings: 20.
+# Updated: 2019.11.30
 
 185.106.212.0/22 Deny Cloud
 Origin: AT
@@ -21829,6 +21813,7 @@ Origin: HK
 188.42.216.0/22 Deny Cloud
 Origin: LU
 23.83.64.0/21 Deny Cloud
+23.83.112.0/20 Deny Cloud
 23.106.104.0/21 Deny Cloud
 23.106.112.0/21 Deny Cloud
 23.108.208.0/20 Deny Cloud
@@ -21843,6 +21828,8 @@ Origin: LU
 172.241.40.0/22 Deny Cloud
 172.241.64.0/21 Deny Cloud
 172.241.84.0/22 Deny Cloud
+172.255.0.0/20 Deny Cloud
+172.255.96.0/20 Deny Cloud
 172.255.137.0/24 Deny Cloud
 172.255.192.0/20 Deny Cloud
 172.255.224.0/20 Deny Cloud
@@ -21877,8 +21864,9 @@ Origin: SG
 173.0.144.0/20 Deny Cloud
 173.233.144.0/21 Deny Cloud
 173.233.156.0/24 Deny Cloud
-173.237.64.0/23 Deny Cloud
-173.237.67.0/24 Deny Cloud
+173.237.0.0/18 Deny Cloud
+173.237.64.0/22 Deny Cloud
+173.237.72.0/21 Deny Cloud
 204.74.224.0/19 Deny Cloud
 209.192.128.0/17 Deny Cloud
 209.205.116.0/22 Deny Cloud
@@ -22861,9 +22849,9 @@ Tag: GRUPO SYS4NET
 
 
 # ASN 49855 ("PLUTEX GmbH").
-# Tor exit node + webhosting company. Users caught caught spamming via their network.
-# Stop Forum Spam (SFS) listings: 1,731.
-# Updated: 2018.07.25 / Checked: 2019.06.30
+# Tor exit node + webhosting company. A source of forum spam.
+# Stop Forum Spam (SFS) listings: 1,213.
+# Updated: 2018.07.25 / Checked: 2019.11.30
 
 31.24.144.0/21 Deny Cloud
 91.202.40.0/22 Deny Cloud
@@ -23023,8 +23011,8 @@ Tag: 3W Infra B.V
 
 
 # ASN 58073 ("YISP B.V").
-# Stop Forum Spam (SFS) listings: 3,205.
-# Updated: 2019.07.24
+# Stop Forum Spam (SFS) listings: 1,923.
+# Updated: 2019.11.30
 
 5.253.18.0/23 Deny Cloud
 185.217.171.0/24 Deny Cloud
@@ -23035,12 +23023,20 @@ Origin: GB
 37.220.32.0/21 Deny Cloud
 45.10.116.0/22 Deny Cloud
 45.82.44.0/22 Deny Cloud
+45.88.16.0/22 Deny Cloud
+45.92.156.0/24 Deny Cloud
+45.93.32.0/22 Deny Cloud
+45.129.176.0/22 Deny Cloud
+45.145.252.0/22 Deny Cloud
+45.152.192.0/22 Deny Cloud
 46.182.104.0/21 Deny Cloud
+62.197.128.0/19 Deny Cloud
 185.38.12.0/22 Deny Cloud
 185.162.184.0/22 Deny Cloud
 188.215.229.0/24 Deny Cloud
 193.104.186.0/24 Deny Cloud
 Origin: NL
+45.134.12.0/24 Deny Cloud
 85.202.192.0/24 Deny Cloud
 Origin: RU
 154.84.1.0/24 Deny Cloud
@@ -25351,9 +25347,9 @@ Tag: Kazi Sazzad Hossain
 
 # ASNs 39535, 62217 ("VooServers Ltd").
 # Cloud provider; Source of spam and other unwanted traffic.
-# %Listed, Google Malware Dashboard: 0.33% (AS62217).
+# %Listed, Google Malware Dashboard: 1.13% (AS62217).
 # Stop Forum Spam (SFS) listings: 27 (AS62217).
-# Updated: 2019.07.22
+# Updated: 2019.11.30
 
 5.1.68.0/23 Deny Cloud
 5.1.83.0/24 Deny Cloud
@@ -25371,6 +25367,8 @@ Origin: DE
 194.0.252.0/24 Deny Cloud
 195.60.164.0/23 Deny Cloud
 Origin: GB
+185.198.241.0/24 Deny Cloud
+Origin: NL
 45.58.62.0/24 Deny Cloud
 45.62.37.0/24 Deny Cloud
 104.128.230.0/24 Deny Cloud
@@ -25382,13 +25380,12 @@ Tag: VooServers Ltd
 
 # ASNs 12406, 134204 ("Business Network Ltd").
 # Cloud provider; Source of spam and other unwanted traffic.
-# Stop Forum Spam (SFS) listings: 1,326 (AS12406), 93 (AS134204).
-# Updated: 2019.07.24
+# %Listed, Google Malware Dashboard: 0.33% (AS12406), 84 (AS134204).
+# Stop Forum Spam (SFS) listings: 1,923 (AS12406), 84 (AS134204).
+# Updated: 2019.11.30
 
 103.58.72.0/22 Deny Cloud
 103.126.214.0/24 Deny Cloud
-103.134.40.0/23 Deny Cloud
-103.134.42.0/24 Deny Cloud
 203.76.220.0/22 Deny Cloud
 Origin: BD
 31.24.88.0/21 Deny Cloud

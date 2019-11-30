@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6.dat
 
-# Version: 2019.327.327
-# Last modified: 2019.11.24
+# Version: 2019.333.541
+# Last modified: 2019.11.30
 
 
 # ---
@@ -533,9 +533,9 @@ Tag: IPGLOBE DATACENTER
 
 
 # ASNs 28271, 52550 ("DataCorpore Servios e Representaes").
-# %Listed, Google Malware Dashboard: 1.40% (AS28271).
-# Stop Forum Spam (SFS) listings: 71 (AS28271).
-# Updated: 2018.09.16 / Checked: 2019.07.24
+# %Listed, Google Malware Dashboard: 1.06% (AS28271).
+# Stop Forum Spam (SFS) listings: 109 (AS28271).
+# Updated: 2018.09.16 / Checked: 2019.11.30
 
 2804:4c4::/32 Deny Cloud
 2804:cc0::/32 Deny Cloud
@@ -729,9 +729,9 @@ Tag: myLoc
 
 
 # ASNs 57043, 395839 ("HOSTKEY B.V").
-# %Listed, Google Malware Dashboard: 0.05% (AS57043).
-# Stop Forum Spam (SFS) listings: 1,605 (AS57043), 159 (AS395839).
-# Updated: 2018.04.24 / Checked: 2019.07.24
+# %Listed, Google Malware Dashboard: 0.11% (AS57043).
+# Stop Forum Spam (SFS) listings: 522 (AS57043), 88 (AS395839).
+# Updated: 2018.04.24 / Checked: 2019.11.30
 
 2a05:b40::/29 Deny Cloud
 Origin: NL
@@ -1036,13 +1036,11 @@ Tag: DataShack, LC
 
 
 # ASN 62710 ("Rack911").
-# %Listed, Google Malware Dashboard: 0.62%.
-# Updated: 2019.02.27 / Checked: 2019.06.23
+# No recent reports or bad activity detected. Possible candidate for future removal.
+# Updated: 2019.11.30
 
-2602:ffdb::/41 Deny Cloud
 2602:ffdb:100::/41 Deny Cloud
 2602:ffdb:980::/41 Deny Cloud
-2602:ffdb:f80::/41 Deny Cloud
 Origin: US
 Tag: Rack911
 
@@ -1448,14 +1446,15 @@ Tag: Choopa, LLC
 
 
 # ASN 7162 ("UOL DIVEO S.A").
-# %Listed, Google Malware Dashboard: 0.22%.
-# Updated: 2019.07.24
+# %Listed, Google Malware Dashboard: 0.26%.
+# Updated: 2019.11.30
 
 2804:49c:13::/48 Deny Cloud
 2804:49c:31::/48 Deny Cloud
 2804:49c:3403::/48 Deny Cloud
 2804:49c:4203::/48 Deny Cloud
 2804:49c:4205::/48 Deny Cloud
+2804:49c:4208::/48 Deny Cloud
 2804:49c:4210::/48 Deny Cloud
 2804:49c:7000::/39 Deny Cloud
 2804:49c:c0f1::/48 Deny Cloud
@@ -5120,14 +5119,17 @@ Tag: active-servers.com
 
 # ASN 7979 ("Servers.com, Inc").
 # Some IPs here caught scraping website content without permission.
-# Stop Forum Spam (SFS) listings: 13.
-# Updated: 2019.03.19 / Checked: 2019.07.24
+# Stop Forum Spam (SFS) listings: 20.
+# Updated: 2019.11.30
 
 2406:380::/31 Deny Cloud
 Origin: HK
 2a05:93c0::/30 Deny Cloud
+2a05:93c4::/32 Deny Cloud
 Origin: NL
+2600:9c00::/32 Deny Cloud
 2604:8240::/32 Deny Cloud
+2604:84c0::/32 Deny Cloud
 2605:f480::/31 Deny Cloud
 Origin: US
 Tag: Servers.com
@@ -5383,9 +5385,9 @@ Tag: ICME LIMITED
 
 
 # ASN 49855 ("PLUTEX GmbH").
-# Tor exit node + webhosting company. Users caught caught spamming via their network.
-# Stop Forum Spam (SFS) listings: 1,731.
-# Updated: 2018.07.25 / Checked: 2019.06.30
+# Tor exit node + webhosting company. A source of forum spam.
+# Stop Forum Spam (SFS) listings: 1,213.
+# Updated: 2018.07.25 / Checked: 2019.11.30
 
 2001:678:3b4::/48 Deny Cloud
 2001:678:3b8::/48 Deny Cloud
@@ -5438,10 +5440,11 @@ Tag: 3W Infra B.V
 
 
 # ASN 58073 ("YISP B.V").
-# Stop Forum Spam (SFS) listings: 3,205.
-# Updated: 2018.09.15 / Checked: 2019.07.24
+# Stop Forum Spam (SFS) listings: 1,923.
+# Updated: 2019.11.30
 
 2a02:2a38::/32 Deny Cloud
+2a03:8b80::/32 Deny Cloud
 Origin: NL
 Tag: YISP B.V
 
@@ -6097,9 +6100,9 @@ Tag: Kazi Sazzad Hossain
 
 # ASNs 39535, 62217 ("VooServers Ltd").
 # Cloud provider; Source of spam and other unwanted traffic.
-# %Listed, Google Malware Dashboard: 0.33% (AS62217).
+# %Listed, Google Malware Dashboard: 1.13% (AS62217).
 # Stop Forum Spam (SFS) listings: 27 (AS62217).
-# Updated: 2019.07.22
+# Updated: 2019.11.30
 
 2a06:1287:2600::/44 Deny Cloud
 Origin: BY
@@ -6107,6 +6110,9 @@ Origin: BY
 Origin: DE
 2001:67c:2e68::/47 Deny Cloud
 Origin: FR
+2a00:1c10:3:634::/64 Deny Cloud
+2a00:1c10:5:200::/56 Deny Cloud
+2a00:1c10:101::/48 Deny Cloud
 2a00:1c10:103::/48 Deny Cloud
 2a00:1c10:104::/48 Deny Cloud
 2a01:6c60::/30 Deny Cloud
@@ -6127,8 +6133,9 @@ Tag: VooServers Ltd
 
 # ASNs 12406, 134204 ("Business Network Ltd").
 # Cloud provider; Source of spam and other unwanted traffic.
-# Stop Forum Spam (SFS) listings: 1,326 (AS12406), 93 (AS134204).
-# Updated: 2019.07.24
+# %Listed, Google Malware Dashboard: 0.33% (AS12406), 84 (AS134204).
+# Stop Forum Spam (SFS) listings: 1,923 (AS12406), 84 (AS134204).
+# Updated: 2019.07.24 / Checked: 2019.11.30
 
 2400:4d40::/32 Deny Cloud
 Origin: BD

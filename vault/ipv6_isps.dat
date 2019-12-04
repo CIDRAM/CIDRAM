@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_isps.dat
 
-# Version: 2019.333.541
-# Last modified: 2019.11.30
+# Version: 2019.337.508
+# Last modified: 2019.12.04
 
 
 # ---
@@ -164,28 +164,23 @@ recaptcha:
 
 
 # ASN 3223 ("Voxility LLC").
-# %Listed, Google Malware Dashboard: 0.17%.
-# Stop Forum Spam (SFS) listings: 8,922.
-# Updated: 2019.08.01
+# %Listed, Google Malware Dashboard: 0.26%.
+# Stop Forum Spam (SFS) listings: 2,047.
+# Updated: 2019.12.04
 
 2a06:b380::/29 Deny Generic
 Origin: GB
+2602:ff84:8::/48 Deny Generic
 2a03:5180::/48 Deny Generic
-2a03:5180:1:5::/64 Deny Generic
-2a03:5180:1:7::/64 Deny Generic
-2a03:5180:1:8::/64 Deny Generic
 2a03:5180:1:b::/64 Deny Generic
 2a03:5180:1:c::/64 Deny Generic
 2a03:5180:1:f::/64 Deny Generic
-2a03:5180:1:10::/64 Deny Generic
 2a03:5180:2::/47 Deny Generic
 2a03:5180:4::/46 Deny Generic
 2a03:5180:8::/47 Deny Generic
 2a03:5180:a::/48 Deny Generic
 2a03:5180:10::/47 Deny Generic
 Origin: RO
-2602:ff84:8::/48 Deny Generic
-Origin: US
 Tag: Voxility LLC
 
 
@@ -319,18 +314,15 @@ Tag: Trend Micro
 
 # ASN 8551 ("Bezeq International-Ltd").
 # Domestic Israeli ISP with human endpoints, but has some bad actors (spambots,
-# scrapers, etc). Marked for use with reCAPTCHA to reduce the false positive
-# risk, and I would encourage any CIDRAM users from Israel, or targeting
-# traffic from Israel, to list this section in their ignore.dat file to reduce
-# the false positive risk.
-# %Listed, Google Malware Dashboard: 0.14%.
-# %Listed, abuseat.org (CBL-Listed): 0.30%.
-# Stop Forum Spam (SFS) listings: 5,197.
-# Updated: 2018.03.08 / Checked: 2019.08.01
+# scrapers, etc). Marked for use with reCAPTCHA and included in ignore.dat by
+# default to reduce the false positive risk.
+# %Listed, Google Malware Dashboard: 0.06%.
+# Stop Forum Spam (SFS) listings: 2,033.
+# Updated: 2019.12.04
 
 2a02:26f0:8000::/48 Deny Generic
 Origin: EU
-2001:4cd0::/32 Deny Generic
+2001:4cd0::/29 Deny Generic
 Origin: IL
 2620:11b:e0be::/48 Deny Generic
 Origin: US
@@ -524,28 +516,12 @@ recaptcha:
  enabled: true
 
 
-# ASN 23888 ("National Telecommunication Corporation HQ").
-# Source of forum/blog spam. Also an ISP with human endpoints in Pakistan.
-# Websites based in, or targeted towards a Pakistani audience, should keep it
-# listed in their ignore.dat file. Marked for use with reCAPTCHA.
-# %Listed, abuseat.org (CBL-Listed): 35.43%.
-# Stop Forum Spam (SFS) listings: 23.
-# Updated: 2019.08.01
-
-2407:9e00::/48 Deny Spam
-Origin: PK
-Tag: AS23888
----
-recaptcha:
- enabled: true
-
-
 # ASN 45804 ("MEGHBELA BROADBAND").
 # Significant source of forum/blog spam. Also a legit Indian ISP with human
 # endpoints. Websites based in, or targeted towards an Indian audience, should
 # keep it listed in their ignore.dat file. Marked for use with reCAPTCHA.
 # Stop Forum Spam (SFS) listings: 288.
-# Updated: 2019.08.01
+# Updated: 2019.08.01 / Checked: 2019.12.04
 
 2403:8500:100::/40 Deny Spam
 2403:8500:200::/39 Deny Spam
@@ -563,18 +539,31 @@ recaptcha:
 # Significant source of forum/blog spam. Also a legit Indian ISP with human
 # endpoints. Websites based in, or targeted towards an Indian audience, should
 # keep it listed in their ignore.dat file. Marked for use with reCAPTCHA.
-# %Listed, abuseat.org (CBL-Listed): 36.57%.
-# Stop Forum Spam (SFS) listings: 245.
-# Updated: 2019.08.01
+# %Listed, abuseat.org (CBL-Listed): 42.17%.
+# Stop Forum Spam (SFS) listings: 331.
+# Updated: 2019.12.04
 
 2402:8100:b::/48 Deny Spam
 2402:8100:2000::/41 Deny Spam
 2402:8100:2080::/42 Deny Spam
-2402:8100:20d1::/48 Deny Spam
+2402:8100:20c7::/48 Deny Spam
+2402:8100:20cf::/48 Deny Spam
+2402:8100:20d0::/47 Deny Spam
 2402:8100:20d2::/48 Deny Spam
-2402:8100:2180::/48 Deny Spam
-2402:8100:2280::/43 Deny Spam
-2402:8100:2300::/43 Deny Spam
+2402:8100:20d4::/48 Deny Spam
+2402:8100:2100::/45 Deny Spam
+2402:8100:2108::/46 Deny Spam
+2402:8100:210c::/47 Deny Spam
+2402:8100:2110::/44 Deny Spam
+2402:8100:2140::/42 Deny Spam
+2402:8100:2180::/43 Deny Spam
+2402:8100:21e0::/43 Deny Spam
+2402:8100:2200::/43 Deny Spam
+2402:8100:2240::/43 Deny Spam
+2402:8100:2280::/42 Deny Spam
+2402:8100:22c0::/43 Deny Spam
+2402:8100:2300::/42 Deny Spam
+2402:8100:2380::/42 Deny Spam
 2402:8100:2800::/41 Deny Spam
 2402:8100:3000::/43 Deny Spam
 2402:8100:3020::/44 Deny Spam
@@ -588,8 +577,6 @@ recaptcha:
 2402:8100:30a0::/45 Deny Spam
 2402:8100:3800::/47 Deny Spam
 2402:8100:3804::/46 Deny Spam
-2402:8100:3808::/45 Deny Spam
-2402:8100:3810::/44 Deny Spam
 2402:8100:383c::/46 Deny Spam
 2402:8100:3840::/42 Deny Spam
 2402:8100:38c0::/42 Deny Spam

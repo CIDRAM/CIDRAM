@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (traditional) language data for the front-end (last modified: 2019.11.09).
+# This file: Chinese (traditional) language data for the front-end (last modified: 2019.12.04).
 ##/
 
 Extended Description Bypasses: "標準簽名旁路文件通常包括在主包。"
@@ -24,6 +24,7 @@ Extended Description IPv6: "阻止不想要的雲服務和非人終端。"
 Extended Description PHPMailer: "使用涉及發送電子郵件的任何功能時需要。<br /><a href="https://github.com/PHPMailer/PHPMailer">PHPMailer</a>可通過<a href="https://github.com/PHPMailer/PHPMailer/blob/master/LICENSE">LGPLv2.1</a>許可證獲得。"
 Extended Description flags.css: "向前端日誌頁面添加旗支持。"
 Extended Description module_abuseipdb.php: "阻止來自AbuseIPDB列出的IP的請求。"
+Extended Description module_projecthoneypot.php: "阻止來自Project Honeypot列出的IP的請求。"
 Extended Description module_badhosts.php: "阻止垃圾郵件發送者，黑客，和其他惡意實體經常使用的主機。"
 Extended Description module_badhosts_isps.php: "阻止垃圾郵件發送者，黑客，和其他惡意實體經常使用的ISP擁有的主機。"
 Extended Description module_badtlds.php: "阻止垃圾郵件發送者，黑客，和其他惡意實體經常使用的主機的TLD。"
@@ -43,6 +44,7 @@ Name IPv6-Other: "IPv6（代理，VPN，等等）。"
 Name IPv6: "IPv6（雲和託管服務）。"
 Name compat_bunnycdn.php: "BunnyCDN兼容模块"
 Name module_abuseipdb.php: "AbuseIPDB 模塊"
+Name module_projecthoneypot.php: "Project Honeypot 模塊"
 Name module_badhosts.php: "壞主機阻塞模塊"
 Name module_badhosts_isps.php: "壞主機阻塞模塊（ISP）"
 Name module_badtlds.php: "壞TLD阻塞模塊"
@@ -52,7 +54,6 @@ Name module_cookies.php: "可選cookie掃描器模塊"
 Name module_extras.php: "可選安全附加模塊"
 Name module_refspam.php: "引薦來源垃圾郵件模塊"
 Name module_sfs.php: "Stop Forum Spam 模塊"
-Name module_ua.php: "空UA阻塞模塊"
 Name module_yandexblocker.php: "Yandex阻塞模塊"
 bNav_home_logout: "<a href="?">主頁</a> | <a href="?cidram-page=logout">登出</a>"
 bNav_logout: "<a href="?cidram-page=logout">登出</a>"
@@ -75,7 +76,7 @@ config_general: "基本配置（任何不屬於其他類別的核心配置）。
 config_general_FrontEndLog: "前端登錄嘗試的錄音文件。​指定一個文件名，​或留空以禁用。"
 config_general_allow_gethostbyaddr_lookup: "當UDP不可用時允許gethostbyaddr查找？​True（真）=允許【標準】；False（假）=不允許。"
 config_general_ban_override: "覆蓋『forbid_on_block』當『infraction_limit』已被超過？​當覆蓋：已阻止的請求返回一個空白頁（不使用模板文件）。​200 = 不要覆蓋【標準】。​其他值與『forbid_on_block』的可用值相同。"
-config_general_default_algo: "定義要用於所有未來密碼和會話的算法。​選項：​PASSWORD_DEFAULT（標準），​PASSWORD_BCRYPT，​PASSWORD_ARGON2I（需要PHP &gt;= 7.2.0）。"
+config_general_default_algo: "定義要用於所有未來密碼和會話的算法。​選項：​PASSWORD_DEFAULT（標準），​PASSWORD_BCRYPT，​PASSWORD_ARGON2I（需要PHP &gt;= 7.2.0），​PASSWORD_ARGON2ID（需要PHP &gt;= 7.3.0）。"
 config_general_default_dns: "以逗號分隔的DNS服務器列表，​用於主機名查找。​標準 = 『8.8.8.8,8.8.4.4』 (Google DNS)。​警告：不要修改此除非您知道什麼您做著！"
 config_general_disable_cli: "關閉CLI模式嗎？​CLI模式是按說激活作為標準，​但可以有時干擾某些測試工具（例如PHPUnit，​為例子）和其他基於CLI應用。​如果您沒有需要關閉CLI模式，​您應該忽略這個指令。​False（假）=激活CLI模式【標準】；True（真）=關閉CLI模式。"
 config_general_disable_frontend: "關閉前端訪問嗎？​前端訪問可以使CIDRAM更易於管理，​但也可能是潛在的安全風險。​建議管理CIDRAM通過後端只要有可能，​但前端訪問提供當不可能。​保持關閉除非您需要它。​False（假）=激活前端訪問；True（真）=關閉前端訪問【標準】。"
@@ -491,12 +492,10 @@ info_some_useful_links: |
            <li><a href="https://www.stopforumspam.com/">Stop Forum Spam</a> – 維護已知論壇垃圾郵件發送者的數據庫。有用的保護網站和論壇免受垃圾郵件發送者的攻。</li>
            <li><a href="https://bgp.he.net/">Hurricane Electric BGP Toolkit</a> – 從ASN獲取CIDR，​確定ASN關係，​基於網絡名稱發現ASN，​等等。</li>
            <li><a href="https://radar.qrator.net/">Qrator的Radar</a> – 檢查ASN連接的有用工具，​以及關於ASN的各種其他信息。</li>
-           <li><a href="http://www.ipdeny.com/ipblocks/">IP國家阻止＠IPdeny</a> – 一個夢幻般和準確的服務，​產生國家的簽名。</li>
            <li><a href="https://www.google.com/transparencyreport/safebrowsing/malware/">Google Malware Dashboard</a> – 顯示有​關ASN惡意軟件感染率的報告。</li>
            <li><a href="https://www.spamhaus.org/statistics/botnet-asn/">Spamhaus項目</a> – 顯示有​關ASN殭屍網絡感染率的報告。</li>
            <li><a href="https://www.abuseat.org/public/asn.html">Abuseat.org的複合阻止列表</a> – 顯示有​關ASN殭屍網絡感染率的報告。</li>
            <li><a href="https://abuseipdb.com/">AbuseIPDB</a> – 維護已知的濫用IP數據庫。它為IP檢查和報告提供了一個API。</li>
-           <li><a href="https://www.megarbl.net/index.php">MegaRBL.net</a> – 維護已知垃圾郵件發送者的列表。有用為檢查IP/ASN垃圾郵件活動。</li>
          </ul>
        </li>
        <li><span class="comCat" style="cursor:pointer">信息和學習資源。</span>

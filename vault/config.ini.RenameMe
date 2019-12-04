@@ -161,7 +161,7 @@ maintenance_mode=false
 
 ; Defines which algorithm to use for all future passwords and sessions.
 ; Options: PASSWORD_DEFAULT (default), PASSWORD_BCRYPT, PASSWORD_ARGON2I
-; (requires PHP &gt;= 7.2.0).
+; (requires PHP >= 7.2.0), PASSWORD_ARGON2ID (requires PHP >= 7.3.0).
 default_algo='PASSWORD_DEFAULT'
 
 ; Track CIDRAM usage statistics? True = Yes; False = No [Default].

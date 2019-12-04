@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Portuguese language data for the front-end (last modified: 2019.11.09).
+# This file: Portuguese language data for the front-end (last modified: 2019.12.04).
 ##/
 
 Extended Description Bypasses: "Os arquivos para bypass das assinaturas padrão normalmente incluído com o pacote principal."
@@ -24,6 +24,7 @@ Extended Description IPv6: "Bloqueia serviços em nuvem indesejados e pontos de 
 Extended Description PHPMailer: "Necessário para usar qualquer funcionalidade que envolva o envio de email.<br /><a href="https://github.com/PHPMailer/PHPMailer">PHPMailer</a> está disponível através do licença <a href="https://github.com/PHPMailer/PHPMailer/blob/master/LICENSE">LGPLv2.1</a>."
 Extended Description flags.css: "Adiciona suporte de bandeiras à página de arquivos de registro do front-end."
 Extended Description module_abuseipdb.php: "Bloqueia solicitações de IPs listados no AbuseIPDB."
+Extended Description module_projecthoneypot.php: "Bloqueia solicitações de IPs listados no Project Honeypot."
 Extended Description module_badhosts.php: "Bloqueia hosts frequentemente usados por spammers, hackers e outras entidades nefastas."
 Extended Description module_badhosts_isps.php: "Bloqueia hosts pertencentes a ISPs freqüentemente usados por spammers, hackers e outras entidades nefastas."
 Extended Description module_badtlds.php: "Bloqueia hosts pertencentes a ISPs freqüentemente usados por spammers, hackers e outras entidades nefastas."
@@ -43,6 +44,7 @@ Name IPv6-Other: "IPv6 (proxies, VPNs, etc)."
 Name IPv6: "IPv6 (serviços de nuvem e hospedagem)."
 Name compat_bunnycdn.php: "BunnyCDN módulo de compatibilidade"
 Name module_abuseipdb.php: "Módulo AbuseIPDB"
+Name module_projecthoneypot.php: "Módulo Project Honeypot"
 Name module_badhosts.php: "Módulo bloqueador de hosts perigosos"
 Name module_badhosts_isps.php: "Módulo bloqueador de hosts perigosos (ISPs)"
 Name module_badtlds.php: "Módulo bloqueador de TLDs perigosos"
@@ -52,7 +54,6 @@ Name module_cookies.php: "Módulo opcional para análise de cookies"
 Name module_extras.php: "Módulo de extras de segurança opcional"
 Name module_refspam.php: "Módulo de spam de referência"
 Name module_sfs.php: "Módulo Stop Forum Spam"
-Name module_ua.php: "Módulo de bloqueador de UA vazio"
 Name module_yandexblocker.php: "Módulo bloqueador de Yandex"
 bNav_home_logout: "<a href="?">Página Principal</a> | <a href="?cidram-page=logout">Sair</a>"
 bNav_logout: "<a href="?cidram-page=logout">Sair</a>"
@@ -75,7 +76,7 @@ config_general: "Configuração geral (qualquer configuração principal que nã
 config_general_FrontEndLog: "Arquivo para registrar tentativas de login ao front-end. Especifique o nome de um arquivo, ou deixe em branco para desabilitar."
 config_general_allow_gethostbyaddr_lookup: "Permitir pesquisas gethostbyaddr quando o UDP não está disponível? True = Sim [Padrão]; False = Não."
 config_general_ban_override: "Sobrepor "forbid_on_block" quando "infraction_limit" é excedido? Quando sobrepõe: As solicitações bloqueadas retornam uma página em branco (os arquivos de modelo não são usados). 200 = Não sobrepor [Padrão]. Outros valores são os mesmos que os valores disponíveis para "forbid_on_block"."
-config_general_default_algo: "Define qual algoritmo usar para todas as futuras senhas e sessões. Opções: PASSWORD_DEFAULT (padrão), PASSWORD_BCRYPT, PASSWORD_ARGON2I (requer PHP &gt;= 7.2.0)."
+config_general_default_algo: "Define qual algoritmo usar para todas as futuras senhas e sessões. Opções: PASSWORD_DEFAULT (padrão), PASSWORD_BCRYPT, PASSWORD_ARGON2I (requer PHP &gt;= 7.2.0), PASSWORD_ARGON2ID (requer PHP &gt;= 7.3.0)."
 config_general_default_dns: "Uma lista delimitada por vírgulas de servidores DNS a serem usados para pesquisas de nomes de host. Padrão = "8.8.8.8,8.8.4.4" (Google DNS). ATENÇÃO: Não mude isso a menos que você saiba o que está fazendo!"
 config_general_disable_cli: "Desativar o CLI modo? CLI modo é ativado por padrão, mas às vezes pode interferir com certas testes ferramentas (tal como PHPUnit, por exemplo) e outras aplicações baseadas em CLI. Se você não precisa desativar o CLI modo, você deve ignorar esta directiva. False = Ativar o CLI modo [Padrão]; True = Desativar o CLI modo."
 config_general_disable_frontend: "Desativar o acesso front-end? Acesso front-end pode fazer CIDRAM mais manejável, mas também pode ser um risco de segurança potencial, também. É recomendado para gerenciar CIDRAM através do back-end, sempre que possível, mas o acesso front-end é proporcionada para quando não é possível. Mantê-lo desativado, a menos que você precisar. False = Ativar o acesso front-end; True = Desativar o acesso front-end [Padrão]."
@@ -500,12 +501,10 @@ info_some_useful_links: |
            <li><a href="https://www.stopforumspam.com/">Stop Forum Spam</a> – Mantém um banco de dados de spammers de fórum conhecidos. Útil para proteger sites e fóruns contra spammers.</li>
            <li><a href="https://bgp.he.net/">Hurricane Electric BGP Toolkit</a> – Obter CIDRs de ASNs, Determinar relações de ASNs, descobrir ASNs com base em nomes de rede, etc.</li>
            <li><a href="https://radar.qrator.net/">Radar por Qrator</a> – Ferramenta útil para verificar a conectividade de ASNs bem como para várias outras informações sobre ASNs.</li>
-           <li><a href="http://www.ipdeny.com/ipblocks/">IP países blocos @ IPdeny</a> – Um serviço fantástico e preciso para gerar assinaturas para os países.</li>
            <li><a href="https://www.google.com/transparencyreport/safebrowsing/malware/">Google Malware Dashboard</a> – Exibe relatórios sobre as taxas de infecção de malware para ASNs.</li>
            <li><a href="https://www.spamhaus.org/statistics/botnet-asn/">O Projeto Spamhaus</a> – Exibe relatórios sobre taxas de infecção por botnets para ASNs.</li>
            <li><a href="https://www.abuseat.org/public/asn.html">Lista de Bloqueio Composto @ Abuseat.org</a> – Exibe relatórios sobre taxas de infecção por botnets para ASNs.</li>
            <li><a href="https://abuseipdb.com/">AbuseIPDB</a> – Mantém um banco de dados de IPs abusivos conhecidos; Fornece uma API para verificar e reportar IPs.</li>
-           <li><a href="https://www.megarbl.net/index.php">MegaRBL.net</a> – Mantém listagens de spammers conhecidos; Útil para verificar as atividades de spam por IPs/ASNs.</li>
          </ul>
        </li>
        <li><span class="comCat" style="cursor:pointer">Recursos informativos e de aprendizagem.</span>

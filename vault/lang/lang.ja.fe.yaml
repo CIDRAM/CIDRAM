@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Japanese language data for the front-end (last modified: 2019.11.09).
+# This file: Japanese language data for the front-end (last modified: 2019.12.04).
 ##/
 
 Extended Description Bypasses: "メインパッケージに通常含まれているデフォルト・シグネチャ・バイパス。"
@@ -24,6 +24,7 @@ Extended Description IPv6: "不要なクラウドサービスと非人のエン�
 Extended Description PHPMailer: "電子Ｅメールの送信を含む機能の使用に必要です。<br />「<a href="https://github.com/PHPMailer/PHPMailer">PHPMailer</a>」は、「<a href="https://github.com/PHPMailer/PHPMailer/blob/master/LICENSE">LGPLv2.1</a>」ライセンスを介して利用可能です。"
 Extended Description flags.css: "フロントエンド・ログページにフラグ・サポートを追加します。"
 Extended Description module_abuseipdb.php: "AbuseIPDBにリストされているＩＰからの要求をブロックします。"
+Extended Description module_projecthoneypot.php: "Project HoneypotにリストされているＩＰからの要求をブロックします。"
 Extended Description module_badhosts.php: "スパマー、ハッカー、およびその他の悪意のあるエンティティによって頻繁に使用されるホストをブロックします。"
 Extended Description module_badhosts_isps.php: "スパマー、ハッカー、その他の悪意のあるエンティティによって頻繁に使用されるＩＳＰに属するホストをブロックします。"
 Extended Description module_badtlds.php: "スパマー、ハッカー、その他の悪意のあるエンティティによって頻繁に使用されるＴＬＤに属するホストをブロックします。"
@@ -43,6 +44,7 @@ Name IPv6-Other: "ＩＰｖ６（プロキシ、​ＶＰＮ、​およびそ�
 Name IPv6: "ＩＰｖ６（クラウド・サービス、ホスティング・サービス）。"
 Name compat_bunnycdn.php: "BunnyCDN互換モジュール"
 Name module_abuseipdb.php: "AbuseIPDB モジュール"
+Name module_projecthoneypot.php: "Project Honeypot モジュール"
 Name module_badhosts.php: "危険なホスト・ブロッカーモジュール"
 Name module_badhosts_isps.php: "危険なホスト・ブロッカーモジュール（ＩＳＰ）"
 Name module_badtlds.php: "危険なホストＴＬＤブロッカーモジュール"
@@ -52,7 +54,6 @@ Name module_cookies.php: "オプショナル・クッキー・スキャナ・モ
 Name module_extras.php: "オプショナル・セキュリティ・エクストラス・モジュール"
 Name module_refspam.php: "リファラー・スパム・モジュール"
 Name module_sfs.php: "Stop Forum Spam モジュール"
-Name module_ua.php: "空のＵＡブロッカー・モジュール"
 Name module_yandexblocker.php: "Ｙａｎｄｅｘブロッカーモジュール"
 bNav_home_logout: "<a href="?">ホーム</a> | <a href="?cidram-page=logout">ログアウト</a>"
 bNav_logout: "<a href="?cidram-page=logout">ログアウト</a>"
@@ -75,7 +76,7 @@ config_general: "全般的な設定（他のカテゴリに属さないの設定
 config_general_FrontEndLog: "フロントエンド・ログインの試みを記録するためのファイル。​ファイル名指定するか、​無効にしたい場合は空白のままにして下さい。"
 config_general_allow_gethostbyaddr_lookup: "ＵＤＰが利用できない場合、gethostbyaddrルックアップを許可しますか？ True = はい（Default/デフォルルト）。 False = いいえ。"
 config_general_ban_override: "「infraction_limit」を超えたときに「forbid_on_block」を上書きしますか？​上書きするとき：ブロックされたリクエストは空白のページを返します（テンプレートファイルは使用されません）。​２００ = 上書きしない（Default/デフォルルト）。​他の値は、「forbid_on_block」の利用可能な値と同じです。"
-config_general_default_algo: "将来のすべてのパスワードとセッションに使用するアルゴリズムを定義します。​オプション：​PASSWORD_DEFAULT（Default/デフォルルト）、​PASSWORD_BCRYPT、​PASSWORD_ARGON2I ​（ＰＨＰ >= 7.2.0 が必要）。"
+config_general_default_algo: "将来のすべてのパスワードとセッションに使用するアルゴリズムを定義します。​オプション：​PASSWORD_DEFAULT（Default/デフォルルト）、​PASSWORD_BCRYPT、​PASSWORD_ARGON2I ​（ＰＨＰ &gt;= 7.2.0 が必要）、​PASSWORD_ARGON2ID ​（ＰＨＰ &gt;= 7.3.0 が必要）。"
 config_general_default_dns: "ホスト名検索に使用する、​ＤＮＳ（ドメイン・ネーム・システム）サーバーのカンマ区切りリスト。​Default（デフォルルト） = "8.8.8.8,8.8.4.4" （Google DNS）。​注意：あなたが何をしているのか、​分からない限り、​これを変更しないでください。"
 config_general_disable_cli: "ＣＬＩモードを無効にするか？​ＣＬＩモード（シーエルアイ・モード）はデフォルトでは有効になっていますが、​テストツール（PHPUnit等）やＣＬＩベースのアプリケーションと干渉しあう可能性が無いとは言い切れません。​ＣＬＩモードを無効にする必要がなければ、​このデレクティブは無視してもらって結構です。​<code>false</code>（偽） = ＣＬＩモードを有効にします（Default/デフォルルト）；​<code>true</code>（真） = ＣＬＩモードを無効にします。"
 config_general_disable_frontend: "フロントエンドへのアクセスを無効にするか？​フロントエンドへのアクセスは、​CIDRAMをより管理しやすくすることができます。​前記、​それはまた、​潜在的なセキュリティリスクになる可能性があります。​バックエンドを経由して管理することをお勧めします、​しかし、​これが不可能な場合、​フロントエンドへのアクセスが提供され。​あなたがそれを必要としない限り、​それを無効にします。​<code>false</code>（偽） = フロントエンドへのアクセスを有効にします；​<code>true</code>（真） = フロントエンドへのアクセスを無効にします（Default/デフォルルト）。"
@@ -490,12 +491,10 @@ info_some_useful_links: |
            <li><a href="https://www.stopforumspam.com/">Stop Forum Spam</a> – 既知のフォーラム・スパマーのデータベースを維持します。​ウェブサイトやフォーラムをスパマーから保護するのに役立ちます。</li>
            <li><a href="https://bgp.he.net/">Hurricane Electric BGP Toolkit</a> – ＡＳＮからＣＩＤＲを取得する、​ＡＳＮ関係を決定する、​ネットワーク名に基づいてＡＳＮを検出する、​等。</li>
            <li><a href="https://radar.qrator.net/">QratorのRadar</a> – ＡＳＮの接続性をチェックするのに便利なツール；​ＡＳＮに関するその他の様々な情報。</li>
-           <li><a href="http://www.ipdeny.com/ipblocks/">IPdenyのＩＰカントリー・ブロック</a> – 国全体のシグネチャを生成するための素晴らしい、​正確なサービス。</li>
            <li><a href="https://www.google.com/transparencyreport/safebrowsing/malware/">Google Malware Dashboard</a> – ＡＳＮのマルウェア感染率に関するレポートを表示します。</li>
            <li><a href="https://www.spamhaus.org/statistics/botnet-asn/">Spamhausプロジェクト</a> – ＡＳＮのボットネット感染率に関するレポートを表示します。</li>
            <li><a href="https://www.abuseat.org/public/asn.html">Abuseat.orgの複合・ブロック・リスト</a> – ＡＳＮのボットネット感染率に関するレポートを表示します。</li>
            <li><a href="https://abuseipdb.com/">AbuseIPDB</a> – 既知危険なＩＰアドレスのデータベースを維持します；​ＩＰアドレスを確認と報告するためのＡＰＩを提供します。</li>
-           <li><a href="https://www.megarbl.net/index.php">MegaRBL.net</a> – 既知のスパマーリストを維持する；​ＩＰ/ＡＳＮスパム活動のチェックに役立ちます。</li>
          </ul>
        </li>
        <li><span class="comCat" style="cursor:pointer">情報および学習用リソース。</span>

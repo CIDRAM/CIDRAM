@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2019.11.09).
+ * This file: Front-end handler (last modified: 2019.12.01).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -1092,7 +1092,11 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
             isset($CIDRAM['Config']['L10N']['config_' . $CIDRAM['CatKey']]) ? $CIDRAM['Config']['L10N']['config_' . $CIDRAM['CatKey']] : ''
         )) {
             $CIDRAM['CatInfo'] = '<br /><em>' . $CIDRAM['CatInfo'] . '</em>';
-            $CIDRAM['RegenerateConfig'] .= "\r\n; " . wordwrap(strip_tags($CIDRAM['CatInfo']), 77, "\r\n; ");
+            $CIDRAM['RegenerateConfig'] .= "\r\n; " . wordwrap(str_replace(
+                ['&amp;', '&lt;', '&gt;'],
+                ['&', '<', '>'],
+                strip_tags($CIDRAM['CatInfo'])
+            ), 77, "\r\n; ");
         }
         $CIDRAM['RegenerateConfig'] .= "\r\n\r\n";
         $CIDRAM['FE']['ConfigFields'] .= sprintf(
@@ -1135,7 +1139,11 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
                 ' autocomplete="%s"',
                 $CIDRAM['DirValue']['autocomplete']
             );
-            $CIDRAM['RegenerateConfig'] .= '; ' . wordwrap(strip_tags($CIDRAM['ThisDir']['DirLang']), 77, "\r\n; ") . "\r\n";
+            $CIDRAM['RegenerateConfig'] .= '; ' . wordwrap(str_replace(
+                ['&amp;', '&lt;', '&gt;'],
+                ['&', '<', '>'],
+                strip_tags($CIDRAM['ThisDir']['DirLang'])
+            ), 77, "\r\n; ") . "\r\n";
             if (isset($_POST[$CIDRAM['ThisDir']['DirLangKey']])) {
                 if (in_array($CIDRAM['DirValue']['type'], ['bool', 'float', 'int', 'kb', 'string', 'timezone', 'email', 'url'], true)) {
                     $CIDRAM['AutoType']($_POST[$CIDRAM['ThisDir']['DirLangKey']], $CIDRAM['DirValue']['type']);
@@ -2325,7 +2333,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'fixer' && $CIDRAM['FE']['Permis
         )) . '<br /><blockquote><code>' . $CIDRAM['Fixer']['Before'] . '</code><br />↪️<code>' . $CIDRAM['Fixer']['After'] . '</code></blockquote></div>';
         $CIDRAM['FE']['FixerOutput'] = '<hr />' . $CIDRAM['Fixer'] . '<br /><textarea name="FixerOutput">' . str_replace(
             ['&', '<', '>'],
-            ['&amp;', '&gt;', '&lt;'],
+            ['&amp;', '&lt;', '&gt;'],
             $CIDRAM['FE']['FixerOutput']
         ) . '</textarea><br />';
         unset($CIDRAM['Fixer']);

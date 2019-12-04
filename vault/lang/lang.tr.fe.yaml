@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Turkish language data for the front-end (last modified: 2019.11.09).
+# This file: Turkish language data for the front-end (last modified: 2019.12.04).
 ##/
 
 Extended Description Bypasses: "Varsayılan imza bypass'lar, normalde ana paketle birlikte verilir."
@@ -23,6 +23,7 @@ Extended Description IPv6: "İstenmeyen bulut servislerini ve insan olmayan uç 
 Extended Description PHPMailer: "E-posta göndermeyi içeren herhangi bir işlev kullanmak için gereklidir.<br /><a href="https://github.com/PHPMailer/PHPMailer">PHPMailer</a>, <a href="https://github.com/PHPMailer/PHPMailer/blob/master/LICENSE">LGPLv2.1 </a> lisansı üzerinden kullanılabilir."
 Extended Description flags.css: "Ön uç günlükleri sayfasına bayrak desteği ekler."
 Extended Description module_abuseipdb.php: "AbuseIPDB'de listelenen IP'lerden gelen istekleri engeller."
+Extended Description module_projecthoneypot.php: "Project Honeypot'de listelenen IP'lerden gelen istekleri engeller."
 Extended Description module_badhosts.php: "Spam gönderenler, bilgisayar korsanları ve diğer haince varlıklar tarafından sıkça kullanılan ana bilgisayarları engeller."
 Extended Description module_badhosts_isps.php: "Spam gönderenler, bilgisayar korsanları ve diğer haince varlıklar tarafından sıkça ISP'lere ait kullanılan ana bilgisayarları engeller."
 Extended Description module_badtlds.php: "Spam gönderenler, bilgisayar korsanları ve diğer haince varlıklar tarafından sıkça TLD'lere ait kullanılan ana bilgisayarları engeller."
@@ -42,6 +43,7 @@ Name IPv6-Other: "IPv6 (proxy, VPN'ler, vb)."
 Name IPv6: "IPv6 (bulut ve barındırma servisleri)."
 Name compat_bunnycdn.php: "BunnyCDN uyumluluk modülü"
 Name module_abuseipdb.php: "AbuseIPDB modülü"
+Name module_projecthoneypot.php: "Project Honeypot modülü"
 Name module_badhosts.php: "Kötü ana engelleyici modülü"
 Name module_badhosts_isps.php: "Kötü ana engelleyici modülü (ISS'ler)"
 Name module_badtlds.php: "Kötü TLD engelleyici modülü"
@@ -51,7 +53,6 @@ Name module_cookies.php: "İsteğe bağlı çerez tarayıcı modülü"
 Name module_extras.php: "İsteğe bağlı güvenlik ekstrası modülü"
 Name module_refspam.php: "Yönlendiren spam modülü"
 Name module_sfs.php: "Stop Forum Spam modülü"
-Name module_ua.php: "Boş UA engelleyici modülü"
 Name module_yandexblocker.php: "Yandex engelleyici modülü"
 bNav_home_logout: "<a href="?">Ana Sayfa</a> | <a href="?cidram-page=logout">Çıkış</a>"
 bNav_logout: "<a href="?cidram-page=logout">Çıkış</a>"
@@ -73,7 +74,7 @@ config_experimental: "Kararsız/Deneysel!"
 config_general: "Genel yapılandırma (diğer kategorilere ait olmayan herhangi bir çekirdek yapılandırma)."
 config_general_allow_gethostbyaddr_lookup: "UDP kullanılamadığında gethostbyaddr aramalarına izin verilsin mi? Doğru/True = Evet [Varsayılan]; Yanlış/False = Hayır."
 config_general_ban_override: ""infraction_limit" aşıldığında "forbid_on_block"u geçersiz kıl? Geçersiz kılarken: Engellenen istekler boş bir sayfa verir (şablon dosyaları kullanılmaz). 200 = [Varsayılan] değerini geçersiz kılmayın. Diğer değerler "forbid_on_block" için mevcut değerler ile aynıdır."
-config_general_default_algo: "Gelecekteki tüm şifreler ve oturumlar için hangi algoritmayı kullanacağını tanımlar. Options: PASSWORD_DEFAULT (varsayılan), PASSWORD_BCRYPT, PASSWORD_ARGON2I (PHP &gt;= 7.2.0 gerektirir)."
+config_general_default_algo: "Gelecekteki tüm şifreler ve oturumlar için hangi algoritmayı kullanacağını tanımlar. Options: PASSWORD_DEFAULT (varsayılan), PASSWORD_BCRYPT, PASSWORD_ARGON2I (PHP &gt;= 7.2.0 gerektirir), PASSWORD_ARGON2ID (PHP &gt;= 7.3.0 gerektirir)."
 config_general_default_dns: "Ana makine adı aramalarda kullanılacak virgülle ayrılmış DNS sunucuları listesi. Varsayılan = "8.8.8.8,8.8.4.4" (Google DNS). UYARI: Ne yaptığınızı bilmiyorsanız bunu değiştirmeyin!"
 config_general_disable_frontend: "Ön uç erişimini devre dışı bırak? Ön uç erişimi CIDRAM'ın daha yönetilebilir hale getirebilir, ancak potansiyel bir güvenlik riski de oluşturabilir. CIDRAM'ın mümkün olduğunda arka ucundan yönetmesi önerilir, ancak kolaylık sağlamak için ön uç erişimi sağlanmıştır. İhtiyacınız olmadıkça devre dışı bırakın. False = Ön uç erişimini etkinleştir; True = Ön uç erişimini devre dışı bırak [Varsayılan]."
 config_general_disable_webfonts: "Webfontlarını devre dışı bırak? Doğru/True = Evet [Varsayılan]; Yanlış/False = Hayır."
@@ -492,12 +493,10 @@ info_some_useful_links: |
            <li><a href="https://www.stopforumspam.com/">Stop Forum Spam</a> – Bilinen forum spam göndericileri veritabanını yönetir. Web sitelerini ve forumları spam göndericilere karşı korumak için kullanışlıdır.</li>
            <li><a href="https://bgp.he.net/">Hurricane Electric BGP Toolkit</a> – ASN'lerden CIDR'ler alın, ASN ilişkilerini belirleyin, ağ adlarına dayalı ASN'leri keşfedin.</li>
            <li><a href="https://radar.qrator.net/">Radar by Qrator</a> – ASN'lerin bağlantısını kontrol etmek için yararlı araç ve ASN'ler hakkında çeşitli diğer bilgiler.</li>
-           <li><a href="http://www.ipdeny.com/ipblocks/">IPdeny IP ülke blokları</a> – Ülke çapında imzalar üretmek için harika ve tam bir hizmet.</li>
            <li><a href="https://www.google.com/transparencyreport/safebrowsing/malware/">Google Malware Dashboard</a> – ASN'ler için kötü amaçlı yazılım enfeksiyonu oranları ile ilgili raporları görüntüler.</li>
            <li><a href="https://www.spamhaus.org/statistics/botnet-asn/">Spamhaus Projesi</a> – ASN'ler için botnet enfeksiyon oranları ile ilgili raporları görüntüler.</li>
            <li><a href="https://www.abuseat.org/public/asn.html">Abuseat.org'un Kompozit Engelleme Listesi</a> – ASN'ler için botnet enfeksiyon oranları ile ilgili raporları görüntüler.</li>
            <li><a href="https://abuseipdb.com/">AbuseIPDB</a> – Bilinen kötü amaçlı IP'lerin veritabanını korur; IP'leri denetlemek ve raporlamak için bir API sağlar.</li>
-           <li><a href="https://www.megarbl.net/index.php">MegaRBL.net</a> – Bilinen spam göndericilerinin listelerini sağlar; IP/ASN spam etkinliklerini kontrol etmek için yararlıdır.</li>
          </ul>
        </li>
        <li><span class="comCat" style="cursor:pointer">Bilgi ve öğrenme kaynakları.</span>

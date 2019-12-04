@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: English language data for the front-end (last modified: 2019.11.05).
+# This file: English language data for the front-end (last modified: 2019.12.04).
 ##/
 
 Extended Description Bypasses: "The default signature bypass files normally included with the main package."
@@ -23,6 +23,7 @@ Extended Description IPv6: "Blocks unwanted cloud services and non-human endpoin
 Extended Description PHPMailer: "Required for using any functionality that involves sending email.<br /><a href="https://github.com/PHPMailer/PHPMailer">PHPMailer</a> is available via the <a href="https://github.com/PHPMailer/PHPMailer/blob/master/LICENSE">LGPLv2.1</a> license."
 Extended Description flags.css: "Adds flag support to the front-end logs page."
 Extended Description module_abuseipdb.php: "Blocks requests from IPs listed at AbuseIPDB."
+Extended Description module_projecthoneypot.php: "Blocks requests from IPs listed at Project Honeypot."
 Extended Description module_badhosts.php: "Blocks hosts frequently used by spammers, hackers, and other nefarious entities."
 Extended Description module_badhosts_isps.php: "Blocks hosts belonging to ISPs frequently used by spammers, hackers, and other nefarious entities."
 Extended Description module_badtlds.php: "Blocks hosts belonging to TLDs frequently used by spammers, hackers, and other nefarious entities."
@@ -42,6 +43,7 @@ Name IPv6-Other: "IPv6 (proxies, VPNs, etc)."
 Name IPv6: "IPv6 (cloud and hosting services)."
 Name compat_bunnycdn.php: "BunnyCDN compatibility module"
 Name module_abuseipdb.php: "AbuseIPDB module"
+Name module_projecthoneypot.php: "Project Honeypot module"
 Name module_badhosts.php: "Bad hosts blocker module"
 Name module_badhosts_isps.php: "Bad hosts blocker module (ISPs)"
 Name module_badtlds.php: "Bad TLDs blocker module"
@@ -51,7 +53,6 @@ Name module_cookies.php: "Optional cookie scanner module"
 Name module_extras.php: "Optional security extras module"
 Name module_refspam.php: "Referrer spam module"
 Name module_sfs.php: "Stop Forum Spam module"
-Name module_ua.php: "Empty UA blocker module"
 Name module_yandexblocker.php: "Yandex blocker module"
 bNav_home_logout: "<a href="?">Home</a> | <a href="?cidram-page=logout">Log Out</a>"
 bNav_logout: "<a href="?cidram-page=logout">Log Out</a>"
@@ -73,7 +74,7 @@ config_experimental: "Unstable/Experimental!"
 config_general: "General configuration (any core configuration not belonging to other categories)."
 config_general_allow_gethostbyaddr_lookup: "Allow gethostbyaddr lookups when UDP is unavailable? True = Yes [Default]; False = No."
 config_general_ban_override: "Override "forbid_on_block" when "infraction_limit" is exceeded? When overriding: Blocked requests return a blank page (template files aren't used). 200 = Don't override [Default]. Other values are the same as the available values for "forbid_on_block"."
-config_general_default_algo: "Defines which algorithm to use for all future passwords and sessions. Options: PASSWORD_DEFAULT (default), PASSWORD_BCRYPT, PASSWORD_ARGON2I (requires PHP &gt;= 7.2.0)."
+config_general_default_algo: "Defines which algorithm to use for all future passwords and sessions. Options: PASSWORD_DEFAULT (default), PASSWORD_BCRYPT, PASSWORD_ARGON2I (requires PHP &gt;= 7.2.0), PASSWORD_ARGON2ID (requires PHP &gt;= 7.3.0)."
 config_general_default_dns: "A comma delimited list of DNS servers to use for hostname lookups. Default = "8.8.8.8,8.8.4.4" (Google DNS). WARNING: Don't change this unless you know what you're doing!"
 config_general_disable_frontend: "Disable front-end access? Front-end access can make CIDRAM more manageable, but can also be a potential security risk, too. It's recommended to manage CIDRAM via the back-end whenever possible, but front-end access is provided for when it isn't possible. Keep it disabled unless you need it. False = Enable front-end access; True = Disable front-end access [Default]."
 config_general_disable_webfonts: "Disable webfonts? True = Yes [Default]; False = No."
@@ -498,12 +499,10 @@ info_some_useful_links: |
            <li><a href="https://www.stopforumspam.com/">Stop Forum Spam</a> – Maintains a database of known forum spammers. Useful for protecting websites and forums against spammers.</li>
            <li><a href="https://bgp.he.net/">Hurricane Electric BGP Toolkit</a> – Get CIDRs from ASNs, determine ASN relationships, discover ASNs based upon network names, etc.</li>
            <li><a href="https://radar.qrator.net/">Radar by Qrator</a> – Useful tool for checking the connectivity of ASNs as well as for various other information about ASNs.</li>
-           <li><a href="http://www.ipdeny.com/ipblocks/">IPdeny IP country blocks</a> – A fantastic and accurate service for generating country-wide signatures.</li>
            <li><a href="https://www.google.com/transparencyreport/safebrowsing/malware/">Google Malware Dashboard</a> – Displays reports regarding malware infection rates for ASNs.</li>
            <li><a href="https://www.spamhaus.org/statistics/botnet-asn/">The Spamhaus Project</a> – Displays reports regarding botnet infection rates for ASNs.</li>
            <li><a href="https://www.abuseat.org/public/asn.html">Abuseat.org's Composite Blocking List</a> – Displays reports regarding botnet infection rates for ASNs.</li>
            <li><a href="https://abuseipdb.com/">AbuseIPDB</a> – Maintains a database of known abusive IPs; Provides an API for checking and reporting IPs.</li>
-           <li><a href="https://www.megarbl.net/index.php">MegaRBL.net</a> – Maintains listings of known spammers; Useful for checking IP/ASN spam activities.</li>
          </ul>
        </li>
        <li><span class="comCat" style="cursor:pointer">Informational and learning resources.</span>

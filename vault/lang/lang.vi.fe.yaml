@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Vietnamese language data for the front-end (last modified: 2019.11.09).
+# This file: Vietnamese language data for the front-end (last modified: 2019.12.04).
 ##/
 
 Extended Description Bypasses: "Các tập tin đường tránh chữ ký mặc định thường bao gồm với gói thầu chính."
@@ -23,6 +23,7 @@ Extended Description IPv6: "Chặn dịch vụ điện toán đám mây không m
 Extended Description PHPMailer: "Cần thiết để sử dụng bất kỳ chức năng nào liên quan đến việc gửi email.<br /><a href="https://github.com/PHPMailer/PHPMailer">PHPMailer</a> có sẵn qua giấy phép <a href="https://github.com/PHPMailer/PHPMailer/blob/master/LICENSE">LGPLv2.1</a>."
 Extended Description flags.css: "Thêm hỗ trợ cờ vào trang nhật ký front-end."
 Extended Description module_abuseipdb.php: "Chặn các yêu cầu từ IP được liệt kê tại AbuseIPDB."
+Extended Description module_projecthoneypot.php: "Chặn các yêu cầu từ IP được liệt kê tại Project Honeypot."
 Extended Description module_badhosts.php: "Chặn các máy chủ web mà thường được sử dụng bởi các chương trình thư rác, hacker và thực thể bất chính khác."
 Extended Description module_badhosts_isps.php: "Chặn các máy chủ web của các ISP mà thường được sử dụng bởi các chương trình thư rác, hacker và thực thể bất chính khác."
 Extended Description module_badtlds.php: "Chặn các máy chủ web của các TLD mà thường được sử dụng bởi các chương trình thư rác, hacker và thực thể bất chính khác."
@@ -42,6 +43,7 @@ Name IPv6-Other: "IPv6 (proxy, VPN, vv)."
 Name IPv6: "IPv6 (dịch vụ đám mây và lưu trữ)."
 Name compat_bunnycdn.php: "Mô-đun tương thích BunnyCDN"
 Name module_abuseipdb.php: "Mô-đun AbuseIPDB"
+Name module_projecthoneypot.php: "Mô-đun Project Honeypot"
 Name module_badhosts.php: "Mô-đun cho chặn các host xấu"
 Name module_badhosts_isps.php: "Mô-đun cho chặn các host xấu (ISP)"
 Name module_badtlds.php: "Mô-đun cho chặn các TLD xấu"
@@ -51,7 +53,6 @@ Name module_cookies.php: "Mô-đun tùy chọn cho cookie quét"
 Name module_extras.php: "Mô-đun tùy chọn cho bảo mật tính năng bổ sung"
 Name module_refspam.php: "Mô-đun spam giới thiệu"
 Name module_sfs.php: "Mô-đun Stop Forum Spam"
-Name module_ua.php: "Mô-đun chặn UA trống"
 Name module_yandexblocker.php: "Mô-đun cho chặn Yandex"
 bNav_home_logout: "<a href="?">Trang Chủ</a> | <a href="?cidram-page=logout">Đăng Xuất</a>"
 bNav_logout: "<a href="?cidram-page=logout">Đăng Xuất</a>"
@@ -73,7 +74,7 @@ config_experimental: "Không ổn định / Thử nghiệm!"
 config_general: "Cấu hình chung (bất kỳ cấu hình cốt lõi nào không thuộc về các loại khác)."
 config_general_allow_gethostbyaddr_lookup: "Cho phép tra cứu gethostbyaddr khi UDP không khả dụng? True = Vâng [Mặc định]; False = Không."
 config_general_ban_override: "Ghi đè "forbid_on_block" khi "infraction_limit" bị vượt quá? Khi ghi đè: Các yêu cầu bị chặn sản xuất một trang trống (tập tin mẫu không được sử dụng). 200 = Không ghi đè [Mặc định]. Các giá trị khác giống với các giá trị có sẵn cho "forbid_on_block"."
-config_general_default_algo: "Xác định thuật toán nào sẽ sử dụng cho tất cả các mật khẩu và phiên trong tương lai. Tùy chọn: PASSWORD_DEFAULT (mặc định), PASSWORD_BCRYPT, PASSWORD_ARGON2I (yêu cầu PHP &gt;= 7.2.0)."
+config_general_default_algo: "Xác định thuật toán nào sẽ sử dụng cho tất cả các mật khẩu và phiên trong tương lai. Tùy chọn: PASSWORD_DEFAULT (mặc định), PASSWORD_BCRYPT, PASSWORD_ARGON2I (yêu cầu PHP &gt;= 7.2.0), PASSWORD_ARGON2ID (yêu cầu PHP &gt;= 7.3.0)."
 config_general_default_dns: "Một dấu phẩy phân cách danh sách các máy chủ DNS để sử dụng cho tra cứu tên máy. Mặc định = "8.8.8.8,8.8.4.4" (Google DNS). CẢNH BÁO: Không thay đổi này, trừ khi bạn biết những gì bạn đang làm!"
 config_general_disable_frontend: "Vô hiệu hóa truy cập front-end? Truy cập front-end có thể làm cho CIDRAM dễ quản lý hơn, nhưng cũng có thể là một nguy cơ bảo mật tiềm năng. Đó là khuyến cáo để quản lý CIDRAM từ các back-end bất cứ khi nào có thể, nhưng truy cập front-end là cung cấp khi nó không phải là có thể. Giữ nó vô hiệu hóa trừ khi bạn cần nó. False = Kích hoạt truy cập front-end; True = Vô hiệu hóa truy cập front-end [Mặc định]."
 config_general_disable_webfonts: "Vô hiệu hóa các webfont? True = Vâng [Mặc định]; False = Không."
@@ -488,12 +489,10 @@ info_some_useful_links: |
            <li><a href="https://www.stopforumspam.com/">Stop Forum Spam</a> – Duy trì một cơ sở dữ liệu của những kẻ gửi thư rác được biết đến. Hữu ích để bảo vệ các trang web và diễn đàn chống lại kẻ gửi thư rác.</li>
            <li><a href="https://bgp.he.net/">Hurricane Electric BGP Toolkit</a> – Nhận các CIDR từ các ASN, xác định các mối quan hệ các ASN, khám phá vùng các ASN dựa trên các tên mạng, vv.</li>
            <li><a href="https://radar.qrator.net/">Radar bởi Qrator</a> – Công cụ hữu ích để kiểm tra kết nối ASN cũng như cho nhiều thông tin khác về ASN.</li>
-           <li><a href="http://www.ipdeny.com/ipblocks/">Chặn quốc gia IP @ IPdeny</a> – Một dịch vụ tuyệt vời và chính xác để tạo ra chữ ký cho các nước.</li>
            <li><a href="https://www.google.com/transparencyreport/safebrowsing/malware/">Google Malware Dashboard</a> – Hiển thị báo cáo về tỷ lệ lây nhiễm phần mềm độc hại cho các ASN.</li>
            <li><a href="https://www.spamhaus.org/statistics/botnet-asn/">Dự án Spamhaus</a> – Hiển thị báo cáo về tỷ lệ lây nhiễm chương trình thư rác cho các ASN.</li>
            <li><a href="https://www.abuseat.org/public/asn.html">Danh sách chặn hỗn hợp @ Abuseat.org</a> – Hiển thị báo cáo về tỷ lệ lây nhiễm chương trình thư rác cho các ASN.</li>
            <li><a href="https://abuseipdb.com/">AbuseIPDB</a> – Duy trì một cơ sở dữ liệu của các IP mà lạm dụng và biết; Cung cấp một API để kiểm tra và báo cáo các IP.</li>
-           <li><a href="https://www.megarbl.net/index.php">MegaRBL.net</a> – Duy trì danh sách các spammer được biết; Hữu ích cho việc kiểm tra các hoạt động thư rác từ các IP/ASN.</li>
          </ul>
        </li>
        <li><span class="comCat" style="cursor:pointer">Tài nguyên thông tin và học tập.</span>

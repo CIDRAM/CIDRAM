@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Swedish language data for the front-end (last modified: 2019.11.09).
+# This file: Swedish language data for the front-end (last modified: 2019.12.04).
 ##/
 
 Extended Description Bypasses: "Standard bypass-filen som normalt ingår i huvudpaketet."
@@ -23,6 +23,7 @@ Extended Description IPv6: "Blockerar oönskade molntjänster och icke-mänsklig
 Extended Description PHPMailer: "Krävs för att använda någon funktionalitet som involverar att skicka e-post.<br /><a href="https://github.com/PHPMailer/PHPMailer">PHPMailer</a> är tillgängligt via <a href="https://github.com/PHPMailer/PHPMailer/blob/master/LICENSE">LGPLv2.1</a>-licensen."
 Extended Description flags.css: "Lägger flaggsupport till loggar sidan i frontenden."
 Extended Description module_abuseipdb.php: "Blockerar förfrågningar från IP-adresser som listas på AbuseIPDB."
+Extended Description module_projecthoneypot.php: "Blockerar förfrågningar från IP-adresser som listas på Project Honeypot."
 Extended Description module_badhosts.php: "Blockar värdar som ofta används av spammare, hackare och andra skändlig enheter."
 Extended Description module_badhosts_isps.php: "Blockerar värdar som tillhör internetleverantörer som ofta används av spammare, hackare och andra skändlig enheter."
 Extended Description module_badtlds.php: "Blockerar värdar som tillhör toppdomäner som ofta används av spammare, hackare och andra skändlig enheter."
@@ -42,6 +43,7 @@ Name IPv6-Other: "IPv6 (proxytjänster, VPNer, osv)."
 Name IPv6: "IPv6 (molntjänster och värdtjänster)."
 Name compat_bunnycdn.php: "BunnyCDN-kompatibilitetsmodul"
 Name module_abuseipdb.php: "AbuseIPDB modul"
+Name module_projecthoneypot.php: "Project Honeypot modul"
 Name module_badhosts.php: "Dåliga värdar blockeringsmodul"
 Name module_badhosts_isps.php: "Dåliga värdar blockeringsmodul (internetleverantörer)"
 Name module_badtlds.php: "Dåliga toppdomäner blockeringsmodul"
@@ -51,7 +53,6 @@ Name module_cookies.php: "Valfri cookieskannermodul"
 Name module_extras.php: "Valfri säkerhetstillbehörsmodul"
 Name module_refspam.php: "Referensspam-modul"
 Name module_sfs.php: "Stop Forum Spam modul"
-Name module_ua.php: "Tom UA-blockeringsmodul"
 Name module_yandexblocker.php: "Yandex blockeringsmodul"
 bNav_home_logout: "<a href="?">Hem</a> | <a href="?cidram-page=logout">Logga Ut</a>"
 bNav_logout: "<a href="?cidram-page=logout">Logga Ut</a>"
@@ -73,7 +74,7 @@ config_experimental: "Instabil/Experimentell!"
 config_general: "Allmän konfiguration (alla kärnkonfigurationer som inte tillhör andra kategorier)."
 config_general_allow_gethostbyaddr_lookup: "Tillåt gethostbyaddr-uppslag när UDP är otillgänglig? True = Ja [Standard]; False = Nej."
 config_general_ban_override: "Åsidosätta "forbid_on_block" när "infraction_limit" överskrids? När det åsidosätter: Blockerade förfrågningar returnerar en tom sida (mallfiler används inte). 200 = Åsidosätta inte [Standard]. Andra värden är desamma som tillgängliga värden för "forbid_on_block"."
-config_general_default_algo: "Definierar vilken algoritm som ska användas för alla framtida lösenord och sessioner. Alternativ: PASSWORD_DEFAULT (standard), PASSWORD_BCRYPT, PASSWORD_ARGON2I (kräver PHP &gt;= 7.2.0)."
+config_general_default_algo: "Definierar vilken algoritm som ska användas för alla framtida lösenord och sessioner. Alternativ: PASSWORD_DEFAULT (standard), PASSWORD_BCRYPT, PASSWORD_ARGON2I (kräver PHP &gt;= 7.2.0), PASSWORD_ARGON2ID (kräver PHP &gt;= 7.3.0)."
 config_general_default_dns: "En komma-avgränsad lista över DNS-servrar som ska användas för värdnamnssökningar. Standard = "8.8.8.8,8.8.4.4" (Google DNS). VARNING: Ändra inte detta om du inte vet vad du gör!"
 config_general_disable_frontend: "Inaktivera front-end tillgång? Front-end tillgång kan göra CIDRAM mer hanterbar, men kan också vara en potentiell säkerhetsrisk. Det rekommenderas att hantera CIDRAM via back-end när det är möjligt, men front-end tillgång tillhandahålls när det inte är möjligt. Håll det inaktiverat om du inte behöver det. False = Aktivera front-end tillgång; True = Inaktivera front-end tillgång [Standard]."
 config_general_disable_webfonts: "Inaktivera webbfonter? True = Ja [Standard]; False = Nej."
@@ -496,12 +497,10 @@ info_some_useful_links: |
            <li><a href="https://www.stopforumspam.com/">Stop Forum Spam</a> – Hanterar en databas med kända forumspammare. Användbar för att skydda webbplatser och forum mot spammare.</li>
            <li><a href="https://bgp.he.net/">Hurricane Electric BGP Toolkit</a> – Få CIDRer från ASNer, bestäm ASN-relationer, upptäck ASNer baserat på nätverksnamn, osv.</li>
            <li><a href="https://radar.qrator.net/">Radar av Qrator</a> – Användbart verktyg för att kontrollera ASN-anslutningar samt för annan information om ASNer.</li>
-           <li><a href="http://www.ipdeny.com/ipblocks/">IPdeny IP country blocks</a> – En fantastisk och exakt tjänst för att generera landsdäcks signaturer.</li>
            <li><a href="https://www.google.com/transparencyreport/safebrowsing/malware/">Google Malware Dashboard</a> – Visar rapporter om malwareinfektionshastigheter för ASNer.</li>
            <li><a href="https://www.spamhaus.org/statistics/botnet-asn/">Spamhausprojektet</a> – Visar rapporter om botnätinfektionshastigheter för ASNer.</li>
            <li><a href="https://www.abuseat.org/public/asn.html">Abuseat.orgs Sammansatta Blockeringslista</a> – Visar rapporter om botnätinfektionshastigheter för ASNer.</li>
            <li><a href="https://abuseipdb.com/">AbuseIPDB</a> – Upprätthåller en databas med kända kränkande IP-adresser; Ger ett API för kontroll och rapportering av IP-adresser.</li>
-           <li><a href="https://www.megarbl.net/index.php">MegaRBL.net</a> – Upprätthåller listor över kända spammare; Användbar för att kontrollera IP/ASN-spamaktiviteter.</li>
          </ul>
        </li>
        <li><span class="comCat" style="cursor:pointer">Informations och lärande resurser.</span>

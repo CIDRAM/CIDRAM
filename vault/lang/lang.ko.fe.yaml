@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Korean language data for the front-end (last modified: 2019.11.09).
+# This file: Korean language data for the front-end (last modified: 2019.12.04).
 ##/
 
 Extended Description Bypasses: "기본 서명 우회 일반적으로 기본 패키지에 포함되어 있습니다."
@@ -23,6 +23,7 @@ Extended Description IPv6: "불필요한 클라우드 서비스와 非人의 끝
 Extended Description PHPMailer: "이메일 전송과 관련된 기능 사용에 필요합니다.<br /><a href="https://github.com/PHPMailer/PHPMailer">PHPMailer</a>는 <a href="https://github.com/PHPMailer/PHPMailer/blob/master/LICENSE">LGPLv2.1</a> 라이센스를 통해 사용 가능합니다."
 Extended Description flags.css: "프론트 엔드 로그 페이지에 플래그 지원을 추가합니다."
 Extended Description module_abuseipdb.php: "AbuseIPDB에 나열된 IP의 요청을 차단합니다."
+Extended Description module_projecthoneypot.php: "Project Honeypot에 나열된 IP의 요청을 차단합니다."
 Extended Description module_badhosts.php: "스패머, 해커 및 기타 사기꾼이 자주 사용하는 호스트를 차단합니다."
 Extended Description module_badhosts_isps.php: "스팸 발송자, 해커 및 기타 사기꾼이 자주 사용하는 ISP에 속한 호스트를 차단합니다."
 Extended Description module_badtlds.php: "스팸 발송자, 해커 및 기타 사기꾼이 자주 사용하는 TLD에 속한 호스트를 차단합니다."
@@ -42,6 +43,7 @@ Name IPv6-Other: "IPv6 (프록시, VPN, 등)."
 Name IPv6: "IPv6 (클라우드 및 호스팅 서비스)."
 Name compat_bunnycdn.php: "BunnyCDN 호환성 모듈"
 Name module_abuseipdb.php: "AbuseIPDB 모듈"
+Name module_projecthoneypot.php: "Project Honeypot 모듈"
 Name module_badhosts.php: "위험한 호스트 차단 모듈"
 Name module_badhosts_isps.php: "위험한 호스트 차단 모듈 (ISP)"
 Name module_badtlds.php: "위험한 TLD 차단 모듈"
@@ -51,7 +53,6 @@ Name module_cookies.php: "선택적 쿠키 스캐너 모듈"
 Name module_extras.php: "선택적 보안 엑스트라 스 모듈"
 Name module_refspam.php: "리퍼러 스팸 모듈"
 Name module_sfs.php: "Stop Forum Spam 모듈"
-Name module_ua.php: "빈 UA 차단기 모듈"
 Name module_yandexblocker.php: "Yandex 차단기 모듈"
 bNav_home_logout: "<a href="?">홈</a> | <a href="?cidram-page=logout">로그 아웃</a>"
 bNav_logout: "<a href="?cidram-page=logout">로그 아웃</a>"
@@ -73,7 +74,7 @@ config_experimental: "불안정/실험적!"
 config_general: "일반 설정 (다른 카테고리에 속하지 않는 설정)."
 config_general_allow_gethostbyaddr_lookup: "UDP를 사용할 수 없을 때 gethostbyaddr 검색을 허용 하시겠습니까? True = 예 (Default / 기본 설정); False = 아니오."
 config_general_ban_override: ""infraction_limit"를 초과하면 "forbid_on_block"를 덮어 쓰시겠습니까? 덮어 쓸 때 : 차단 된 요청은 빈 페이지를 반환합니다 (템플릿 파일은 사용되지 않습니다). 200 = 덮어 쓰지 (Default / 기본값). 다른 값은 "forbid_on_block"에 사용할 수있는 값과 같습니다."
-config_general_default_algo: "향후 모든 암호와 세션에 사용할 알고리즘을 정의합니다. 옵션 : PASSWORD_DEFAULT (default / 기본 설정), PASSWORD_BCRYPT, PASSWORD_ARGON2I (PHP &gt;= 7.2.0 가 필요합니다)."
+config_general_default_algo: "향후 모든 암호와 세션에 사용할 알고리즘을 정의합니다. 옵션 : PASSWORD_DEFAULT (default / 기본 설정), PASSWORD_BCRYPT, PASSWORD_ARGON2I (PHP &gt;= 7.2.0 가 필요합니다), PASSWORD_ARGON2ID (PHP &gt;= 7.3.0 가 필요합니다)."
 config_general_default_dns: "호스트 이름 검색에 사용하는 DNS (도메인 이름 시스템) 서버의 쉼표로 구분 된 목록입니다. Default (기본 설정) = "8.8.8.8,8.8.4.4" (Google DNS). 주의 : 당신이 무엇을하고 있는지 모르는 한이를 변경하지 마십시오."
 config_general_disable_frontend: "프론트 엔드에 대한 액세스를 비활성화하거나? 프론트 엔드에 대한 액세스는 CIDRAM을 더 쉽게 관리 할 수 있습니다. 상기 그것은 또한 잠재적 인 보안 위험이 될 수 있습니다. 백엔드를 통해 관리하는 것이 좋습니다,하지만 이것이 불가능한 경우 프론트 엔드에 대한 액세스를 제공. 당신이 그것을 필요로하지 않는 한 그것을 해제합니다. <code>false</code> = 프론트 엔드에 대한 액세스를 활성화합니다; <code>true</code> = 프론트 엔드에 대한 액세스를 비활성화합니다 (Default / 기본 설정)."
 config_general_disable_webfonts: "웹 글꼴을 사용하지 않도록 설정 하시겠습니까? True = 예 (Default / 기본 설정); False = 아니오."
@@ -488,12 +489,10 @@ info_some_useful_links: |
            <li><a href="https://www.stopforumspam.com/">Stop Forum Spam</a> – 알려진 포럼 스패머 데이터베이스를 유지 관리합니다. 스패머에 대한 보호 웹 사이트 및 포럼 보호에 유용합니다.</li>
            <li><a href="https://bgp.he.net/">Hurricane Electric BGP Toolkit</a> – ASN에서 CIDR을 취득하는 ASN 관계를 결정하는 네트워크 이름에 따라 ASN을 감지, 등등.</li>
            <li><a href="https://radar.qrator.net/">Qrator의 Radar</a> – ASN의 연결을 확인하는 데 유용한 도구; ASN에 관한 기타 다양한 정보.</li>
-           <li><a href="http://www.ipdeny.com/ipblocks/">IPdeny IP 국가 블록</a> – 국가 전체의 서명을 생성하기위한 훌륭한 정확한 서비스.</li>
            <li><a href="https://www.google.com/transparencyreport/safebrowsing/malware/">Google Malware Dashboard</a> – ASN의 악성 코드 감염률에 대한 보고서를 표시합니다.</li>
            <li><a href="https://www.spamhaus.org/statistics/botnet-asn/">Spamhaus 프로젝트</a> – ASN의 봇넷 감염 속도에 대한 보고서를 표시합니다.</li>
            <li><a href="https://www.abuseat.org/public/asn.html">Abuseat.org의 복합 차단 목록</a> – ASN의 봇넷 감염 속도에 대한 보고서를 표시합니다.</li>
            <li><a href="https://abuseipdb.com/">AbuseIPDB</a> – 알려진 위험한 IP 주소의 데이터베이스를 유지합니다; IP 주소를 확인하고보고하기위한 API를 제공합니다.</li>
-           <li><a href="https://www.megarbl.net/index.php">MegaRBL.net</a> – 알려진 스패머 목록을 유지하는; IP/ASN 스팸 활동의 확인에 도움이됩니다.</li>
          </ul>
        </li>
        <li><span class="comCat" style="cursor:pointer">정보 및 학습 리소스.</span>

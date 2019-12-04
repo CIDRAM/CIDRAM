@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Indonesian language data for the front-end (last modified: 2019.11.09).
+# This file: Indonesian language data for the front-end (last modified: 2019.12.04).
 ##/
 
 Extended Description Bypasses: "File untuk bypass tanda tangan standar yang biasanya disertakan dengan paket utama."
@@ -23,6 +23,7 @@ Extended Description IPv6: "Memblokir layanan cloud tidak diinginkan dan jalur a
 Extended Description PHPMailer: "Diperlukan untuk menggunakan fungsionalitas apapun yang melibatkan pengiriman email.<br /><a href="https://github.com/PHPMailer/PHPMailer">PHPMailer</a> tersedia melalui lisensi <a href="https://github.com/PHPMailer/PHPMailer/blob/master/LICENSE">LGPLv2.1</a>."
 Extended Description flags.css: "Menambahkan dukungan bendera ke halaman log bagian depan."
 Extended Description module_abuseipdb.php: "Memblokir permintaan dari IP yang terdaftar oleh AbuseIPDB."
+Extended Description module_projecthoneypot.php: "Memblokir permintaan dari IP yang terdaftar oleh Project Honeypot."
 Extended Description module_badhosts.php: "Memblokir host yang sering digunakan oleh spammer, peretas, dan entitas jahat lainnya."
 Extended Description module_badhosts_isps.php: "Memblokir host yang milik ISP, yang sering digunakan oleh spammer, peretas, dan entitas jahat lainnya."
 Extended Description module_badtlds.php: "Memblokir host yang milik TLD, yang sering digunakan oleh spammer, peretas, dan entitas jahat lainnya."
@@ -42,6 +43,7 @@ Name IPv6-Other: "IPv6 (proxy, VPN, dll)."
 Name IPv6: "IPv6 (layanan cloud dan hosting)."
 Name compat_bunnycdn.php: "Modul kompatibilitas BunnyCDN"
 Name module_abuseipdb.php: "Modul AbuseIPDB"
+Name module_projecthoneypot.php: "Modul Project Honeypot"
 Name module_badhosts.php: "Modul pemblokir untuk host buruk"
 Name module_badhosts_isps.php: "Modul pemblokir untuk host buruk (ISP)"
 Name module_badtlds.php: "Modul pemblokir TLD buruk"
@@ -51,7 +53,6 @@ Name module_cookies.php: "Modul scanner cookie opsional"
 Name module_extras.php: "Modul tambahan keamanan opsional"
 Name module_refspam.php: "Modul spam pengarah"
 Name module_sfs.php: "Modul Stop Forum Spam"
-Name module_ua.php: "Modul pemblokir UA kosong"
 Name module_yandexblocker.php: "Modul pemblokir untuk Yandex"
 bNav_home_logout: "<a href="?">Halaman Utama</a> | <a href="?cidram-page=logout">Keluar</a>"
 bNav_logout: "<a href="?cidram-page=logout">Keluar</a>"
@@ -73,7 +74,7 @@ config_experimental: "Tidak stabil / Eksperimental!"
 config_general: "Konfigurasi umum (konfigurasi inti apapun yang bukan milik kategori lain)."
 config_general_allow_gethostbyaddr_lookup: "Izinkan menggunakan gethostbyaddr saat UDP tidak tersedia? True = Ya [Default]; False = Tidak."
 config_general_ban_override: "Mengesampingkan "forbid_on_block" ketika "infraction_limit" adalah melampaui? Ketika mengesampingkan: Permintaan diblokir menghasilkan halaman kosong (file template tidak digunakan). 200 = Jangan mengesampingkan [Default]. Nilai lainnya sama dengan nilai yang tersedia untuk "forbid_on_block"."
-config_general_default_algo: "Mendefinisikan algoritma mana yang akan digunakan untuk semua password dan sesi di masa depan. Opsi: PASSWORD_DEFAULT (default), PASSWORD_BCRYPT, PASSWORD_ARGON2I (membutuhkan PHP &gt;= 7.2.0)."
+config_general_default_algo: "Mendefinisikan algoritma mana yang akan digunakan untuk semua password dan sesi di masa depan. Opsi: PASSWORD_DEFAULT (default), PASSWORD_BCRYPT, PASSWORD_ARGON2I (membutuhkan PHP &gt;= 7.2.0), PASSWORD_ARGON2ID (membutuhkan PHP &gt;= 7.3.0)."
 config_general_default_dns: "Sebuah daftar dipisahkan dengan koma dari server DNS yang digunakan untuk pencarian nama host. Default = "8.8.8.8,8.8.4.4" (Google DNS). PERINGATAN: Jangan ganti ini kecuali Anda tahu apa yang Anda lakukan!"
 config_general_disable_frontend: "Menonaktifkan akses bagian depan? Akses bagian depan dapat membuat CIDRAM lebih mudah dikelola, tapi juga dapat menjadi potensial resiko keamanan. Itu direkomendasi untuk mengelola CIDRAM melalui bagian belakang bila mungkin, tapi akses bagian depan yang disediakan untuk saat itu tidak mungkin. Memilikinya dinonaktifkan kecuali jika Anda membutuhkannya. False = Mengaktifkan akses bagian depan; True = Menonaktifkan akses bagian depan [Default]."
 config_general_disable_webfonts: "Menonaktifkan webfonts? True = Ya [Default]; False = Tidak."
@@ -488,12 +489,10 @@ info_some_useful_links: |
            <li><a href="https://www.stopforumspam.com/">Stop Forum Spam</a> – Mempertahankan basis data spammer forum yang dikenal. Berguna untuk melindungi situs web dan forum terhadap spammer.</li>
            <li><a href="https://bgp.he.net/">Hurricane Electric BGP Toolkit</a> – Dapatkan CIDRs dari ASN, menentukan hubungan ASN, menemukan ASN berdasarkan nama jaringan, dll.</li>
            <li><a href="https://radar.qrator.net/">Radar oleh Qrator</a> – Alat yang berguna untuk memeriksa konektivitas ASN serta berbagai informasi lainnya tentang ASN.</li>
-           <li><a href="http://www.ipdeny.com/ipblocks/">Blok negara IP dari IPdeny</a> – Sebuah layanan yang fantastis dan akurat untuk menghasilkan tanda tangan negara-lebar.</li>
            <li><a href="https://www.google.com/transparencyreport/safebrowsing/malware/">Google Malware Dashboard</a> – Menampilkan laporan tentang tingkat infeksi malware untuk ASN.</li>
            <li><a href="https://www.spamhaus.org/statistics/botnet-asn/">Proyek Spamhaus</a> – Menampilkan laporan tentang tingkat infeksi botnet untuk ASN.</li>
            <li><a href="https://www.abuseat.org/public/asn.html">Daftar Pemblokiran Komposit dari Abuseat.org</a> – Menampilkan laporan tentang tingkat infeksi botnet untuk ASN.</li>
            <li><a href="https://abuseipdb.com/">AbuseIPDB</a> – Mempertahankan database IP berbahaya dikenal; Menyediakan API untuk memeriksa dan melaporkan IP.</li>
-           <li><a href="https://www.megarbl.net/index.php">MegaRBL.net</a> – Mempertahankan daftar spammer dikenal; Berguna untuk memeriksa aktivitas spam dari IP/ASN.</li>
          </ul>
        </li>
        <li><span class="comCat" style="cursor:pointer">Sumber daya informasi dan pembelajaran.</span>

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Dutch language data for the front-end (last modified: 2019.11.09).
+# This file: Dutch language data for the front-end (last modified: 2019.12.04).
 ##/
 
 Extended Description Bypasses: "De standaard signature rondwegen normaal opgenomen met de primaire pakket."
@@ -23,6 +23,7 @@ Extended Description IPv6: "Blokkeert ongewenste cloud-diensten en niet-menselij
 Extended Description PHPMailer: "Vereist voor het gebruik van functionaliteit die het verzenden van e-mail vereisen.<br /><a href="https://github.com/PHPMailer/PHPMailer">PHPMailer</a> is beschikbaar via de <a href="https://github.com/PHPMailer/PHPMailer/blob/master/LICENSE">LGPLv2.1</a>-licentie."
 Extended Description flags.css: "Voegt vlagondersteuning toe aan de front-end logboekpagina."
 Extended Description module_abuseipdb.php: "Blokkeert aanvragen van IP's die worden vermeld op AbuseIPDB."
+Extended Description module_projecthoneypot.php: "Blokkeert aanvragen van IP's die worden vermeld op Project Honeypot."
 Extended Description module_badhosts.php: "Blokkeert hosts die vaak worden gebruikt door spammers, hackers en andere kwaadwillige entiteiten."
 Extended Description module_badhosts_isps.php: "Blokkeert hosts van ISP's die vaak worden gebruikt door spammers, hackers en andere kwaadwillige entiteiten."
 Extended Description module_badtlds.php: "Blokkeert hosts van TLD's die vaak worden gebruikt door spammers, hackers en andere kwaadwillige entiteiten."
@@ -42,6 +43,7 @@ Name IPv6-Other: "IPv6 (proxies, VPN's, enz)."
 Name IPv6: "IPv6 (cloud en hosting diensten)."
 Name compat_bunnycdn.php: "BunnyCDN compatibiliteitsmodule"
 Name module_abuseipdb.php: "AbuseIPDB module"
+Name module_projecthoneypot.php: "Project Honeypot module"
 Name module_badhosts.php: "Slechte hosts blokker module"
 Name module_badhosts_isps.php: "Slechte hosts blokker module (ISP's)"
 Name module_badtlds.php: "Slechte TLD's blokker module"
@@ -51,7 +53,6 @@ Name module_cookies.php: "Optionele cookie-scanner module"
 Name module_extras.php: "Optionele beveiliging extra module"
 Name module_refspam.php: "Verwijzersspam module"
 Name module_sfs.php: "Stop Forum Spam module"
-Name module_ua.php: "Lege UA blocker module"
 Name module_yandexblocker.php: "Yandex blokker module"
 bNav_home_logout: "<a href="?">Startpagina</a> | <a href="?cidram-page=logout">Uitloggen</a>"
 bNav_logout: "<a href="?cidram-page=logout">Uitloggen</a>"
@@ -73,7 +74,7 @@ config_experimental: "Instabiel/Experimenteel!"
 config_general: "Algemene configuratie (elke kernconfiguratie die niet tot andere categorieën behoort)."
 config_general_allow_gethostbyaddr_lookup: "Zoeken op gethostbyaddr toestaan als UDP niet beschikbaar is? True = Ja [Standaard]; False = Nee."
 config_general_ban_override: "Overrijden "forbid_on_block" wanneer "infraction_limit" wordt overschreden? Wanneer het overrijdt: Geblokkeerde verzoeken retourneert een lege pagina (template bestanden worden niet gebruikt). 200 = Niet overrijden [Standaard]. Andere waarden zijn hetzelfde als de beschikbare waarden voor "forbid_on_block"."
-config_general_default_algo: "Definieert welk algoritme u wilt gebruiken voor alle toekomstige wachtwoorden en sessies. Opties: PASSWORD_DEFAULT (standaard), PASSWORD_BCRYPT, PASSWORD_ARGON2I (vereist PHP &gt;= 7.2.0)."
+config_general_default_algo: "Definieert welk algoritme u wilt gebruiken voor alle toekomstige wachtwoorden en sessies. Opties: PASSWORD_DEFAULT (standaard), PASSWORD_BCRYPT, PASSWORD_ARGON2I (vereist PHP &gt;= 7.2.0), PASSWORD_ARGON2ID (vereist PHP &gt;= 7.3.0)."
 config_general_default_dns: "Een door komma's gescheiden lijst met DNS-servers te gebruiken voor de hostnaam lookups. Standaard = "8.8.8.8,8.8.4.4" (Google DNS). WAARSCHUWING: Verander dit niet tenzij u weet wat u doet!"
 config_general_disable_frontend: "Uitschakelen frontend toegang? frontend toegang kan CIDRAM beter beheersbaar te maken, maar kan ook een potentieel gevaar voor de veiligheid zijn. Het is aan te raden om CIDRAM te beheren via het backend wanneer mogelijk, maar frontend toegang is hier voorzien voor wanneer het niet mogelijk is. Hebben het uitgeschakeld tenzij u het nodig hebt. False = Inschakelen frontend toegang; True = Uitschakelen frontend toegang [Standaard]."
 config_general_disable_webfonts: "Uitschakelen webfonts? True = Ja [Standaard]; False = Nee."
@@ -498,12 +499,10 @@ info_some_useful_links: |
            <li><a href="https://www.stopforumspam.com/">Stop Forum Spam</a> – Beheert een database van bekende forumspammers. Handig voor het beschermen van websites en forums tegen spammers.</li>
            <li><a href="https://bgp.he.net/">Hurricane Electric BGP Toolkit</a> – Krijg CIDR's van ASN, bepalen ASN relaties, ontdek ASN's op basis van netwerknamen, enz.</li>
            <li><a href="https://radar.qrator.net/">Radar van Qrator</a> – Handig hulpmiddel voor het controleren van de connectiviteit van ASN's en ook voor diverse andere informatie over ASN's.</li>
-           <li><a href="http://www.ipdeny.com/ipblocks/">IPdeny IP-landblokken</a> – Een fantastische en accurate service voor het genereren van de signatures voor landen.</li>
            <li><a href="https://www.google.com/transparencyreport/safebrowsing/malware/">Google Malware Dashboard</a> – Geeft rapporten over malware-infectie tarieven voor ASN.</li>
            <li><a href="https://www.spamhaus.org/statistics/botnet-asn/">Het Spamhaus Project</a> – Geeft rapporten over botnet infectie tarieven voor ASN.</li>
            <li><a href="https://www.abuseat.org/public/asn.html">Composite Blocking List @ Abuseat.org</a> – Geeft rapporten over botnet infectie tarieven voor ASN.</li>
            <li><a href="https://abuseipdb.com/">AbuseIPDB</a> – Onderhoudt een database van bekende beledigend IP's; Biedt een API voor het controleren en rapporteren van IP's.</li>
-           <li><a href="https://www.megarbl.net/index.php">MegaRBL.net</a> – Onderhoudt lijsten van bekende spammers; Handig voor het controleren van IP/ASN spam activiteiten.</li>
          </ul>
        </li>
        <li><span class="comCat" style="cursor:pointer">Informatie en leermiddelen.</span>

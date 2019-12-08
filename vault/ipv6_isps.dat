@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_isps.dat
 
-# Version: 2019.337.508
-# Last modified: 2019.12.04
+# Version: 2019.341.401
+# Last modified: 2019.12.08
 
 
 # ---
@@ -1704,6 +1704,19 @@ recaptcha:
  enabled: true
 
 
+# ASN 137432 ("BKB Network").
+# Caught using automated hacktools to try hacking into honeypots.
+# Stop Forum Spam (SFS) listings: 266.
+# Updated: 2019.12.06
+
+2402:68c0::/32 Deny Generic
+Origin: BD
+Tag: BKB Network
+---
+recaptcha:
+ enabled: true
+
+
 # ASN 16010 ("Magticom Ltd").
 # Spam events originating from this network slowly becoming worse over time.
 # Stop Forum Spam (SFS) listings: 90,665.
@@ -1757,14 +1770,14 @@ Tag: Foreningen
 
 # ASN 31148 ("Freenet Ltd").
 # Ukrainian ISP with human endpoints, but also a frequent source of spam and
-# hack attempts. Numerous listings at MegaRBL.net and AbuseIPDB.com! Marked for
-# use with reCAPTCHA to reduce the false positive risk, and CIDRAM users from
-# the Ukraine, or targeting traffic from the Ukraine, should list this section
-# in their ignore.dat file to reduce the false positive risk (but the ISP could
-# be considered high risk for others elsewhere, so would best continue to be
+# hack attempts. Numerous listings at AbuseIPDB.com! Marked for use with
+# reCAPTCHA to reduce the false positive risk, and CIDRAM users from the
+# Ukraine, or targeting traffic from the Ukraine, should list this section in
+# their ignore.dat file to reduce the false positive risk (but the ISP could be
+# considered high risk for others elsewhere, so would best continue to be
 # blocked).
-# Stop Forum Spam (SFS) listings: 1,930.
-# Updated: 2018.02.20 / Checked: 2019.08.03
+# Stop Forum Spam (SFS) listings: 1,982.
+# Updated: 2018.02.20 / Checked: 2019.12.06
 
 2a00:1228::/32 Deny Generic
 Origin: UA

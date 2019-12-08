@@ -1,8 +1,8 @@
 # IPv4 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv4_isps.dat
 
-# Version: 2019.337.508
-# Last modified: 2019.12.04
+# Version: 2019.341.401
+# Last modified: 2019.12.08
 
 
 # ---
@@ -2204,7 +2204,8 @@ Tag: STARNET S.R.L
 
 
 # ASN 31423 ("Przedsiebiorstwo "PROMAX" Spolka Jawna Zofia Formanek-Mroczkowska Wieslaw Okroj").
-# Source of spam (ongoing, active records at megarbl and elsewhere).
+# Some records of hack attempts exist at AbuseIPDB from this network. Should reassess at each
+# subsequent check.
 # Updated: 2016.07.24 / Checked: 2019.07.21
 
 77.89.64.0/18 Deny Generic
@@ -8691,14 +8692,14 @@ Tag: Foreningen
 
 # ASN 31148 ("Freenet Ltd").
 # Ukrainian ISP with human endpoints, but also a frequent source of spam and
-# hack attempts. Numerous listings at MegaRBL.net and AbuseIPDB.com! Marked for
-# use with reCAPTCHA to reduce the false positive risk, and CIDRAM users from
-# the Ukraine, or targeting traffic from the Ukraine, should list this section
-# in their ignore.dat file to reduce the false positive risk (but the ISP could
-# be considered high risk for others elsewhere, so would best continue to be
+# hack attempts. Numerous listings at AbuseIPDB.com! Marked for use with
+# reCAPTCHA to reduce the false positive risk, and CIDRAM users from the
+# Ukraine, or targeting traffic from the Ukraine, should list this section in
+# their ignore.dat file to reduce the false positive risk (but the ISP could be
+# considered high risk for others elsewhere, so would best continue to be
 # blocked).
-# Stop Forum Spam (SFS) listings: 1,930.
-# Updated: 2019.08.03
+# Stop Forum Spam (SFS) listings: 1,982.
+# Updated: 2019.12.06
 
 46.219.1.0/24 Deny Generic
 46.219.2.0/23 Deny Generic
@@ -8735,7 +8736,7 @@ Tag: Foreningen
 46.219.110.0/23 Deny Generic
 46.219.112.0/20 Deny Generic
 46.219.128.0/24 Deny Generic
-46.219.130.0/24 Deny Generic
+46.219.130.0/23 Deny Generic
 46.219.200.0/24 Deny Generic
 46.219.204.0/22 Deny Generic
 46.219.208.0/20 Deny Generic
@@ -8772,8 +8773,9 @@ Tag: Foreningen
 94.76.81.0/24 Deny Generic
 94.76.82.0/23 Deny Generic
 94.76.89.0/24 Deny Generic
-94.76.90.0/23 Deny Generic
-94.76.92.0/22 Deny Generic
+94.76.90.0/24 Deny Generic
+94.76.92.0/24 Deny Generic
+94.76.95.0/24 Deny Generic
 94.76.96.0/23 Deny Generic
 94.76.104.0/22 Deny Generic
 94.76.108.0/23 Deny Generic
@@ -8879,10 +8881,7 @@ Tag: Foreningen
 193.24.25.0/24 Deny Generic
 195.160.220.0/22 Deny Generic
 195.245.200.0/24 Deny Generic
-212.22.192.0/21 Deny Generic
-212.22.201.0/24 Deny Generic
-212.22.202.0/23 Deny Generic
-212.22.204.0/22 Deny Generic
+212.22.192.0/20 Deny Generic
 212.22.208.0/21 Deny Generic
 212.22.218.0/23 Deny Generic
 212.22.221.0/24 Deny Generic
@@ -10188,9 +10187,9 @@ recaptcha:
 # - "corporate internet gate".
 # ^.*(residential|trade center|campus connectivity|bank campus|corporate internet gate).*$
 # Everything else in the cloud services signature files.
-# %Listed, Google Malware Dashboard: 0.71%.
-# Stop Forum Spam (SFS) listings: 285.
-# Updated: 2019.03.27 / Checked: 2019.08.03
+# %Listed, Google Malware Dashboard: 0.62%.
+# Stop Forum Spam (SFS) listings: 246.
+# Updated: 2019.03.27 / Checked: 2019.12.08
 
 188.225.8.0/21 Deny Generic
 188.225.40.0/21 Deny Generic
@@ -10427,8 +10426,8 @@ recaptcha:
 
 # ASN 137432 ("BKB Network").
 # Caught using automated hacktools to try hacking into honeypots.
-# Stop Forum Spam (SFS) listings: 221.
-# Updated: 2019.08.05
+# Stop Forum Spam (SFS) listings: 266.
+# Updated: 2019.08.05 / Checked: 2019.12.06
 
 103.108.88.0/22 Deny Generic
 Origin: BD

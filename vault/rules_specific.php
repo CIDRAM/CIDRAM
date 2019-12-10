@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Extended rules for some specific CIDRs (last modified: 2019.05.17).
+ * This file: Extended rules for some specific CIDRs (last modified: 2019.12.09).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -89,7 +89,7 @@ $CIDRAM['RunParamResCache']['rules_specific.php'] = function (array $Factors = [
         return 2;
     }
 
-    /** Bypass for "googlealert.com", "gigaalert.com", "copyscape.com". **/
+    /** Bypass for "googlealert.com", "gigaalert.com", "copyscape.com". */
     if ($Tag === 'Rackspace Hosting' && $Factors[31] === '162.13.83.46/32') {
         return;
     }

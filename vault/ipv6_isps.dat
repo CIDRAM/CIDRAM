@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_isps.dat
 
-# Version: 2019.341.401
-# Last modified: 2019.12.08
+# Version: 2019.343.359
+# Last modified: 2019.12.10
 
 
 # ---
@@ -1793,12 +1793,13 @@ recaptcha:
 # Everything else can go in the ISPs signature files. When updating, to reduce the risk of false positives:
 # - Remove all subordinates of 38.0.0.0/8 from final aggregate (already blocked elsewhere and don't want duplicates).
 # - "Secure Internet LLC" mark as proxy (not generic).
-# Stop Forum Spam (SFS) listings: 255,032.
-# Updated: 2019.09.15
+# Stop Forum Spam (SFS) listings: 285,604.
+# Updated: 2019.12.10
 
 2604:17c0::/41 Deny Generic
 2604:17c0:80::/42 Deny Generic
 Origin: AQ
+2a03:f80:40::/48 Deny Generic
 2a03:f80:65::/48 Deny Generic
 2a03:f80:81::/48 Deny Generic
 2a03:f80:381::/48 Deny Generic

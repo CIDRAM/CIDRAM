@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2019.11.09).
+ * This file: Front-end functions file (last modified: 2019.12.10).
  */
 
 /**
@@ -610,7 +610,7 @@ $CIDRAM['IPv4GetLast'] = function (string $First, int $Factor): string {
     $Split = (int)(8 - ($Split * 8));
     $Octet = floor($Bracket);
     if ($Octet < 4) {
-        $Octets[$Octet] += pow(2, $Split) - 1;
+        $Octets[$Octet] += (2 ** $Split) - 1;
     }
     while ($Octet < 3) {
         $Octets[$Octet + 1] = 255;
@@ -644,7 +644,7 @@ $CIDRAM['IPv6GetLast'] = function (string $First, int $Factor): string {
     $Split = (int)(16 - ($Split * 16));
     $Octet = floor($Bracket);
     if ($Octet < 8) {
-        $Octets[$Octet] += pow(2, $Split) - 1;
+        $Octets[$Octet] += (2 ** $Split) - 1;
     }
     while ($Octet < 7) {
         $Octets[$Octet + 1] = 65535;
@@ -2465,7 +2465,7 @@ $CIDRAM['SectionsHandler'] = function (array $Files) use (&$CIDRAM): string {
  */
 $CIDRAM['RangeTablesTallyIPv6'] = function (array &$Arr, int $Range) {
     $Order = ceil($Range / 16) - 1;
-    $Arr[$Order] += pow(2, (128 - $Range) % 16);
+    $Arr[$Order] += 2 ** ((128 - $Range) % 16);
 };
 
 /**
@@ -2562,7 +2562,7 @@ $CIDRAM['RangeTablesIterateFiles'] = function (array &$Arr, array $Files, array 
         foreach ($SigTypes as $SigType) {
             for ($Range = 1; $Range <= $MaxRange; $Range++) {
                 if ($MaxRange === 32) {
-                    $Order = pow(2, $MaxRange - $Range);
+                    $Order = 2 ** ($MaxRange - $Range);
                 }
                 $Offset = 0;
                 $Needle = '/' . $Range . ' ' . $SigType;

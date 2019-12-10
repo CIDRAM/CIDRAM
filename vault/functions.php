@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2019.10.26).
+ * This file: Functions file (last modified: 2019.12.10).
  */
 
 /** Autoloader for CIDRAM classes. */
@@ -2205,7 +2205,7 @@ $CIDRAM['GenerateID'] = function (): string {
     $HRLen = strlen($HRTime);
     $Time = $Time[1] . '-' . $Time[0] . '-' . $HRTime;
     if ($HRLen < 10) {
-        $Low = pow(10, (9 - strlen($HRTime)));
+        $Low = 10 ** (9 - strlen($HRTime));
         $High = ($Low * 10) - 1;
         if (function_exists('random_int')) {
             try {

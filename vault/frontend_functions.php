@@ -1888,7 +1888,7 @@ $CIDRAM['UpdatesHandler-Uninstall'] = function (string $ID) use (&$CIDRAM) {
             "\n",
             $OldMetaMatches
         ), $OldMeta);
-        array_walk($CIDRAM['Components']['Meta'][$ID]['Files']['To'], function ($ThisFile) use (&$CIDRAM) {
+        array_walk($CIDRAM['Components']['Meta'][$ID]['Files']['To'], function ($ThisFile) use (&$CIDRAM, &$BytesRemoved) {
             if (!empty($ThisFile) && $CIDRAM['Traverse']($ThisFile)) {
                 if (file_exists($CIDRAM['Vault'] . $ThisFile)) {
                     $BytesRemoved += filesize($CIDRAM['Vault'] . $ThisFile);

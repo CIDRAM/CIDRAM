@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2019.11.09).
+ * This file: Front-end functions file (last modified: 2019.12.10).
  */
 
 /**
@@ -1895,7 +1895,7 @@ $CIDRAM['UpdatesHandler-Uninstall'] = function ($ID) use (&$CIDRAM) {
             "\n",
             $OldMetaMatches
         ), $OldMeta);
-        array_walk($CIDRAM['Components']['Meta'][$ID]['Files']['To'], function ($ThisFile) use (&$CIDRAM) {
+        array_walk($CIDRAM['Components']['Meta'][$ID]['Files']['To'], function ($ThisFile) use (&$CIDRAM, &$BytesRemoved) {
             if (!empty($ThisFile) && $CIDRAM['Traverse']($ThisFile)) {
                 if (file_exists($CIDRAM['Vault'] . $ThisFile)) {
                     $BytesRemoved += filesize($CIDRAM['Vault'] . $ThisFile);

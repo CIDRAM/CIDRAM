@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2019.12.01).
+ * This file: Front-end handler (last modified: 2019.12.11).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -1654,6 +1654,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && ($CIDRAM['FE']['Per
 
                 /** Process remote components metadata. */
                 if (!isset($CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']])) {
+                    $CIDRAM['Components']['RemoteMeta'] = [];
                     $CIDRAM['YAML']->process(
                         substr($CIDRAM['Components']['ThisComponent']['RemoteData'], 4, $CIDRAM['Components']['EoYAML'] - 4),
                         $CIDRAM['Components']['RemoteMeta']
@@ -1743,6 +1744,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && ($CIDRAM['FE']['Per
                     $CIDRAM['Components']['ThisComponent']['StatClass'] = 'txtGn';
                     $CIDRAM['Components']['ThisComponent']['StatusOptions'] = $CIDRAM['L10N']->getString('response_updates_already_up_to_date');
                     if (isset(
+                        $CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']],
                         $CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['Files'],
                         $CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['Files']['To'],
                         $CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['Files']['From'],

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2019.12.10).
+ * This file: Front-end functions file (last modified: 2019.12.11).
  */
 
 /**
@@ -2153,7 +2153,7 @@ $CIDRAM['UpdatesHandler-Repair'] = function ($ID) use (&$CIDRAM) {
                         mkdir($ThisPath);
                     }
                 }
-                if (!is_writable($CIDRAM['Vault'] . $RemoteFileTo)) {
+                if (file_exists($CIDRAM['Vault'] . $RemoteFileTo) && !is_writable($CIDRAM['Vault'] . $RemoteFileTo)) {
                     $RepairFailed = true;
                     continue;
                 }

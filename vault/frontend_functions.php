@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2019.12.11).
+ * This file: Front-end functions file (last modified: 2019.12.12).
  */
 
 /**
@@ -148,7 +148,18 @@ $CIDRAM['FECacheRemove'] = function (string &$Source, bool &$Rebuild, string $En
 
     /** Override if using a different preferred caching mechanism. */
     if ($CIDRAM['Cache']->Using && $CIDRAM['Cache']->Using !== 'FF') {
-        $CIDRAM['Cache']->deleteEntry($Entry);
+        if ($Entry === '__') {
+            $CIDRAM['Cache']->clearCache();
+        } else {
+            $CIDRAM['Cache']->deleteEntry($Entry);
+        }
+        return;
+    }
+
+    /** Default process for clearing all. */
+    if ($Entry === '__') {
+        $Source = "\n";
+        $Rebuild = true;
         return;
     }
 

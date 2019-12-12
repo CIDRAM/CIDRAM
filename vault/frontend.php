@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2019.12.11).
+ * This file: Front-end handler (last modified: 2019.12.12).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -1439,9 +1439,13 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'cache-data' && $CIDRAM['FE']['P
     if ($CIDRAM['FE']['ASYNC']) {
 
         /** Delete a cache entry. */
-        if (!empty($_POST['do']) && $_POST['do'] === 'delete') {
+        if (isset($_POST['do']) && $_POST['do'] === 'delete') {
             if (!empty($_POST['cdi'])) {
-                $CIDRAM['Cache']->deleteEntry($_POST['cdi']);
+                if ($_POST['cdi'] === '__') {
+                    $CIDRAM['Cache']->clearCache();
+                } else {
+                    $CIDRAM['Cache']->deleteEntry($_POST['cdi']);
+                }
             } elseif (!empty($_POST['fecdi'])) {
                 $CIDRAM['FECacheRemove']($CIDRAM['FE']['Cache'], $CIDRAM['FE']['Rebuild'], $_POST['fecdi']);
             }
@@ -1509,8 +1513,13 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'cache-data' && $CIDRAM['FE']['P
             if (empty($CIDRAM['CacheSourceData'])) {
                 continue;
             }
-            $CIDRAM['FE']['CacheData'] .= '<div class="ng1"><span class="s">' . $CIDRAM['CacheSourceName'] . '</span><br /><br /><ul class="pieul">' . $CIDRAM['ArrayToClickableList'](
-                $CIDRAM['CacheSourceData'], ($CIDRAM['CacheSourceName'] === 'fe_assets/frontend.dat' ? 'fecdd' : 'cdd'), 0, $CIDRAM['CacheSourceName']
+            $CIDRAM['FE']['CacheData'] .= '<div class="ng1" id="__' . ($CIDRAM['CacheSourceName'] === 'fe_assets/frontend.dat' ? 'FE' : '') . 'Container"><span class="s">' . $CIDRAM['CacheSourceName'] . ' – (<span style="cursor:pointer" onclick="javascript:' . (
+                $CIDRAM['CacheSourceName'] === 'fe_assets/frontend.dat' ? 'fecdd' : 'cdd'
+            ) . '(\'__\')"><code class="s">' . $CIDRAM['L10N']->getString('field_clear_all') . '</code></span>)</span><br /><br /><ul class="pieul">' . $CIDRAM['ArrayToClickableList'](
+                $CIDRAM['CacheSourceData'],
+                ($CIDRAM['CacheSourceName'] === 'fe_assets/frontend.dat' ? 'fecdd' : 'cdd'),
+                0,
+                $CIDRAM['CacheSourceName']
             ) . '</ul></div>';
         }
         unset($CIDRAM['CacheSourceData'], $CIDRAM['CacheSourceName'], $CIDRAM['CacheArray']);

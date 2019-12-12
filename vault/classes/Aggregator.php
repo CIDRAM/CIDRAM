@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: IP aggregator (last modified: 2019.01.09).
+ * This file: IP aggregator (last modified: 2019.12.12).
  */
 
 namespace CIDRAM\Aggregator;
@@ -39,6 +39,9 @@ class Aggregator
 
     /** Specifies the format to use for Aggregator output. 0 = CIDR notation [default]. 1 = Netmask notation. */
     private $Mode = 0;
+
+    /** Optional callback. */
+    public $callbacks = [];
 
     public function __construct(array &$CIDRAM, $Mode = 0)
     {
@@ -90,11 +93,19 @@ class Aggregator
     private function stripInvalidCharactersAndSort(&$In)
     {
         $In = explode("\n", strtolower(trim(str_replace("\r", '', $In))));
-        if (isset($this->CIDRAM['Results'])) {
-            $this->CIDRAM['Results']['In'] = count($In);
+        $InCount = count($In);
+        if (isset($this->callbacks['newParse']) && is_callable($this->callbacks['newParse'])) {
+            $this->callbacks['newParse']($InCount);
         }
+        if (isset($this->CIDRAM['Results'])) {
+            $this->CIDRAM['Results']['In'] = $InCount;
+        }
+        unset($InCount);
         $In = array_filter(array_unique(array_map(function ($Line) {
             $Line = preg_replace(['~^[^\da-f:./]*~i', '~[ \t].*$~', '~[^\da-f:./]*$~i'], '', $Line);
+            if (isset($this->callbacks['newTick']) && is_callable($this->callbacks['newTick'])) {
+                $this->callbacks['newTick']();
+            }
             return (!$Line || !preg_match('~[\da-f:./]+~i', $Line) || preg_match('~[^\da-f:./]+~i', $Line)) ? '' : $Line;
         }, $In)));
         usort($In, function ($A, $B) {
@@ -168,9 +179,15 @@ class Aggregator
     /** Strips invalid ranges and subordinates. */
     private function stripInvalidRangesAndSubs(&$In)
     {
+        if (isset($this->callbacks['newParse']) && is_callable($this->callbacks['newParse'])) {
+            $this->callbacks['newParse'](substr_count($In, "\n"));
+        }
         $In = $Out = "\n" . $In . "\n";
         $Offset = 0;
         while (($NewLine = strpos($In, "\n", $Offset)) !== false) {
+            if (isset($this->callbacks['newTick']) && is_callable($this->callbacks['newTick'])) {
+                $this->callbacks['newTick']();
+            }
             $Line = substr($In, $Offset, $NewLine - $Offset);
             $Offset = $NewLine + 1;
             if (!$Line) {
@@ -233,11 +250,17 @@ class Aggregator
     {
         while (true) {
             $Step = $In;
+            if (isset($this->callbacks['newParse']) && is_callable($this->callbacks['newParse'])) {
+                $this->callbacks['newParse'](substr_count($Step, "\n"));
+            }
             $In = $Out = "\n" . $In . "\n";
             $Size = $Offset = 0;
             $CIDR = $Line = '';
             $CIDRs = false;
             while (($NewLine = strpos($In, "\n", $Offset)) !== false) {
+                if (isset($this->callbacks['newTick']) && is_callable($this->callbacks['newTick'])) {
+                    $this->callbacks['newTick']();
+                }
                 $PrevLine = $Line;
                 $PrevSize = $Size;
                 $PrevCIDRs = $CIDRs;
@@ -275,9 +298,15 @@ class Aggregator
     /** Optionally converts output to netmask notation. */
     private function convertToNetmasks(&$In)
     {
+        if (isset($this->callbacks['newParse']) && is_callable($this->callbacks['newParse'])) {
+            $this->callbacks['newParse'](substr_count($In, "\n"));
+        }
         $In = $Out = "\n" . $In . "\n";
         $Offset = 0;
         while (($NewLine = strpos($In, "\n", $Offset)) !== false) {
+            if (isset($this->callbacks['newTick']) && is_callable($this->callbacks['newTick'])) {
+                $this->callbacks['newTick']();
+            }
             $Line = substr($In, $Offset, $NewLine - $Offset);
             $Offset = $NewLine + 1;
             if (!$Line || ($RangeSep = strpos($Line, '/')) === false) {

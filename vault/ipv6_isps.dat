@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_isps.dat
 
-# Version: 2019.345.172
-# Last modified: 2019.12.12
+# Version: 2019.348.423
+# Last modified: 2019.12.15
 
 
 # ---
@@ -1928,14 +1928,14 @@ recaptcha:
 
 # ASN 36351 ("SoftLayer Technologies").
 # Careful when updating; Signatures reflect varying block reasons, split across multiple files.
-# %Listed, Google Malware Dashboard: 0.06%.
-# Stop Forum Spam (SFS) listings: 7,776.
+# %Listed, Google Malware Dashboard: 0.07%.
+# Stop Forum Spam (SFS) listings: 8,068.
 
 # SoftLayer questionable multi-play networks, spammy ISPs, etc.
-# Includes: Anything citing "Starry".
-# ^(.*(Starry).*)$
+# Includes: Anything citing "Consumer Pool", "Starry".
+# ^(.*(Consumer Pool|Starry).*)$
 # Excludes: Everything else.
-# Updated: 2018.06.24 / Checked: 2019.08.13
+# Updated: 2018.06.24 / Checked: 2019.12.14
 
 2403:ad80:10::/48 Deny Spam
 2403:ad80:20::/48 Deny Spam

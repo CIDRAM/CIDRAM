@@ -1,8 +1,8 @@
 # IPv4 signatures file (CIDRs for proxies, VPNs and other miscellaneous unwanted services).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv4_other.dat
 
-# Version: 2019.305.346
-# Last modified: 2019.11.02
+# Version: 2019.348.423
+# Last modified: 2019.12.15
 
 
 # ---
@@ -213,20 +213,19 @@ recaptcha:
 
 # ASN 36351 ("SoftLayer Technologies").
 # Careful when updating; Signatures reflect varying block reasons, split across multiple files.
-# %Listed, Google Malware Dashboard: 0.06%.
-# Stop Forum Spam (SFS) listings: 7,776.
+# %Listed, Google Malware Dashboard: 0.07%.
+# Stop Forum Spam (SFS) listings: 8,068.
 
 # SoftLayer VPNs and proxies.
 # Includes: Anything citing "TEFINCOM", "Packet Flip", "VPN", "proxy", "Privat Kommunikation", "Secure Internet".
 # ^(.*(TEFINCOM|Packet Flip|VPN|Proxy|Privat Kommunikation|Secure Internet).*)$
 # Excludes: Everything else.
-# Updated: 2019.08.13
+# Updated: 2019.12.14
 
 185.99.135.0/24 Deny Proxy
 Origin: BY
 93.114.92.0/22 Deny Proxy
 185.153.176.0/23 Deny Proxy
-185.153.178.0/24 Deny Proxy
 185.161.200.0/23 Deny Proxy
 185.203.122.0/24 Deny Proxy
 Origin: DE
@@ -236,10 +235,10 @@ Origin: NL
 103.86.96.0/22 Deny Proxy
 Origin: PA
 192.121.245.0/24 Deny Proxy
-192.121.247.0/24 Deny Proxy
 193.183.216.0/24 Deny Proxy
 194.132.123.0/24 Deny Proxy
 Origin: SE
+45.41.147.0/24 Deny Proxy
 45.56.146.0/24 Deny Proxy
 45.56.149.0/24 Deny Proxy
 45.56.151.0/24 Deny Proxy
@@ -247,8 +246,7 @@ Origin: SE
 45.56.154.0/24 Deny Proxy
 45.56.156.0/23 Deny Proxy
 45.56.158.0/24 Deny Proxy
-45.74.28.0/24 Deny Proxy
-45.74.30.0/23 Deny Proxy
+45.74.31.0/24 Deny Proxy
 45.74.39.0/24 Deny Proxy
 45.74.41.0/24 Deny Proxy
 45.74.43.0/24 Deny Proxy
@@ -266,13 +264,12 @@ Origin: SE
 104.238.62.0/24 Deny Proxy
 104.243.245.0/24 Deny Proxy
 104.243.253.0/24 Deny Proxy
-104.243.254.0/23 Deny Proxy
+104.243.255.0/24 Deny Proxy
 104.250.160.0/24 Deny Proxy
 104.250.167.0/24 Deny Proxy
 104.250.172.0/24 Deny Proxy
 104.250.179.0/24 Deny Proxy
 104.250.183.0/24 Deny Proxy
-162.246.184.0/24 Deny Proxy
 172.94.47.0/24 Deny Proxy
 172.94.98.0/23 Deny Proxy
 172.94.100.0/24 Deny Proxy
@@ -280,6 +277,7 @@ Origin: SE
 172.111.169.0/24 Deny Proxy
 172.111.173.0/24 Deny Proxy
 172.111.175.0/24 Deny Proxy
+172.111.178.0/24 Deny Proxy
 172.111.187.0/24 Deny Proxy
 172.111.192.0/24 Deny Proxy
 172.111.199.0/24 Deny Proxy
@@ -327,7 +325,7 @@ Tag: F3 Netze e.V
 
 # ASN 209519 ("Packet Flip, LLC").
 # Proxy service sometimes used by spammmers and other nefarious entities.
-# Updated: 2019.08.13
+# Updated: 2019.12.14
 
 86.106.120.0/24 Deny Proxy
 89.35.164.0/22 Deny Proxy
@@ -370,6 +368,8 @@ Origin: DE
 194.58.24.0/22 Deny Proxy
 194.58.216.0/22 Deny Proxy
 194.135.48.0/22 Deny Proxy
+195.189.36.0/22 Deny Proxy
+195.189.132.0/23 Deny Proxy
 Origin: GB
 45.43.2.0/23 Deny Proxy
 45.43.10.0/23 Deny Proxy
@@ -389,6 +389,11 @@ Origin: GB
 104.255.228.0/24 Deny Proxy
 104.255.230.0/24 Deny Proxy
 Origin: US
+196.52.176.0/20 Deny Proxy
+196.52.224.0/20 Deny Proxy
+196.54.208.0/20 Deny Proxy
+196.55.176.0/20 Deny Proxy
+Origin: ZA
 Tag: Packet Flip
 
 
@@ -1425,24 +1430,19 @@ Tag: Beliefnet
 # Octopusnet VPN (mostly from AS44724, but we'll update via announces instead,
 # because we don't need to block the entire ASN, and there could be stray CIDRs
 # too). Proxy service with a history of spam events.
-# Updated: 2019.08.13
+# Updated: 2019.12.14
 
+46.46.56.0/21 Deny Proxy
+83.217.28.0/22 Deny Proxy
 95.154.64.0/19 Deny Proxy
-95.154.96.0/21 Deny Proxy
+95.154.96.0/20 Deny Proxy
+95.154.112.0/22 Deny Proxy
+95.154.116.0/23 Deny Proxy
+95.154.120.0/21 Deny Proxy
+185.57.28.0/22 Deny Proxy
+213.5.16.0/22 Deny Proxy
 Origin: RU
 Tag: Octopusnet VPN
-
-
-# Castle VPN (mostly from AS397772, but all of that ASN's announces are marked
-# as invalid, and there are stray CIDRs too, so we'll update via announces
-# instead).
-# Updated: 2019.08.13
-
-100.42.17.0/24 Deny Proxy
-209.222.242.0/23 Deny Proxy
-209.222.248.0/21 Deny Proxy
-Origin: US
-Tag: Castle VPN
 
 
 # ASN 208323 ("Foundation for Applied Privacy").

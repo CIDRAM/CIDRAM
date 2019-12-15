@@ -1,8 +1,8 @@
 # IPv4 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv4_isps.dat
 
-# Version: 2019.345.172
-# Last modified: 2019.12.12
+# Version: 2019.348.423
+# Last modified: 2019.12.15
 
 
 # ---
@@ -10253,15 +10253,24 @@ recaptcha:
 
 # ASN 36351 ("SoftLayer Technologies").
 # Careful when updating; Signatures reflect varying block reasons, split across multiple files.
-# %Listed, Google Malware Dashboard: 0.06%.
-# Stop Forum Spam (SFS) listings: 7,776.
+# %Listed, Google Malware Dashboard: 0.07%.
+# Stop Forum Spam (SFS) listings: 8,068.
 
 # SoftLayer questionable multi-play networks, spammy ISPs, etc.
-# Includes: Anything citing "Starry".
-# ^(.*(Starry).*)$
+# Includes: Anything citing "Consumer Pool", "Starry".
+# ^(.*(Consumer Pool|Starry).*)$
 # Excludes: Everything else.
-# Updated: 2018.06.24 / Checked: 2019.08.13
+# Updated: 2019.12.14
 
+31.14.72.0/23 Deny Spam
+31.14.74.0/24 Deny Spam
+95.142.114.0/24 Deny Spam
+95.142.117.0/24 Deny Spam
+95.142.120.0/24 Deny Spam
+95.142.126.0/24 Deny Spam
+Origin: CZ
+5.62.22.0/23 Deny Spam
+Origin: GB
 103.56.216.0/24 Deny Spam
 103.56.218.0/23 Deny Spam
 103.194.40.0/24 Deny Spam
@@ -10979,8 +10988,10 @@ recaptcha:
 # entirety, with the hope that these listings will be temporary, to be delisted
 # at some point in the future.
 
+
 # ASN 13030 ("Init7"). Swiss multiplay network (domestic ISP, webhosting, etc).
 # Updated: 2019.11.02
+
 85.195.220.128/32 Deny Spam
 85.195.226.114/32 Deny Spam
 212.51.152.15/32 Deny Spam
@@ -10988,16 +10999,20 @@ recaptcha:
 Origin: CH
 Tag: Init7
 
+
 # ASN 51815 ("IP-Only Networks AB"). Multiplay network. Huge amounts of spam
 # coming from this specific range.
 # Updated: 2019.03.09 / Checked: 2019.11.09
+
 62.102.148.0/23 Deny Spam
 Origin: SE
 Tag: Temp/AS51815
 
+
 # ASN 4788 ("TM Net, Internet Service Provider"). A major Malaysian domestic
 # ISP, but also most recently a notable source of forum spam.
 # Updated: 2019.11.19
+
 1.9.111.145/32 Deny Spam
 1.9.164.242/32 Deny Spam
 1.9.167.35/32 Deny Spam
@@ -11042,6 +11057,7 @@ recaptcha:
 # ASN 9930 ("TIME dotCom Berhad"). A major Malaysian domestic ISP, but also
 # most recently a notable source of forum spam.
 # Updated: 2019.11.19
+
 161.142.205.130/32 Deny Spam
 202.184.46.96/32 Deny Spam
 202.184.47.95/32 Deny Spam
@@ -11059,13 +11075,16 @@ recaptcha:
 
 # ASN 38031 ("OptiMax Communication Ltd").
 # Updated: 2019.11.24
+
 114.134.93.177/32 Deny Spam
 Origin: BD
 Tag: OptiMax
 
+
 # ASN 6830 ("Liberty Global B.V").
 # Source of forum spam and some email harvestors.
 # Updated: 2019.11.24
+
 46.167.244.59/32 Deny Spam
 77.48.137.3/32 Deny Spam
 89.102.198.78/32 Deny Spam
@@ -11110,14 +11129,17 @@ recaptcha:
 # ASN 58689 ("ICC Communication").
 # Source of forum spam and some email harvestors.
 # Updated: 2019.11.24
+
 43.250.80.114/32 Deny Malware
 144.48.109.34/32 Deny Spam
 Origin: BD
 Tag: ICC Communication
 
+
 # ASN 58889 ("Zx Online Ltd").
 # Source of forum spam and some email harvestors.
 # Updated: 2019.11.24
+
 45.64.139.0/24 Deny Spam
 Origin: BD
 Tag: Zx Online Ltd
@@ -11129,21 +11151,26 @@ recaptcha:
 # ASN 21127 ("Zap-Sib TransTeleCom").
 # Source of forum spam and some email harvestors.
 # Updated: 2019.11.24
+
 80.89.137.214/32 Deny Malware
 94.251.6.201/32 Deny Spam
 Origin: RU
 Tag: Zap-Sib TransTeleCom
 
+
 # ASN 29520 ("Locked Joint Stock Company OGANER-SERVICE").
 # Source of forum spam and some email harvestors.
 # Updated: 2019.11.24
+
 95.138.228.28/32 Deny Spam
 Origin: RU
 Tag: OGANER-SERVICE
 
+
 # ASN 9441 ("Next Online Limited").
 # Source of forum spam and some email harvestors.
 # Updated: 2019.11.24
+
 43.224.119.50/32 Deny Spam
 45.124.169.26/32 Deny Spam
 103.4.146.220/32 Deny Spam
@@ -11152,52 +11179,77 @@ Tag: OGANER-SERVICE
 Origin: BD
 Tag: Next Online Limited
 
+
 # ASN 133469 ("Multinet (Udaipur) Private Limited").
 # Source of forum spam and some email harvestors.
 # Updated: 2019.11.24
+
 103.233.122.73/32 Deny Malware
 Origin: IN
 Tag: Temp/AS133469
 
+
 # ASN 6147 ("Telefonica del Peru S.A.A").
 # Source of forum spam and some email harvestors.
 # Updated: 2019.11.24
+
 181.65.142.114/32 Deny Malware
 190.43.104.168/32 Deny Spam
 200.60.97.194/32 Deny Spam
 Origin: PE
 Tag: Telefonica del Peru
 
+
 # ASN 18059 ("DTPNET NAP").
 # Source of forum spam and some email harvestors.
 # Updated: 2019.11.24
+
 203.173.92.250/32 Deny Spam
 203.173.93.169/32 Deny Malware
 Origin: ID
 Tag: DTPNET NAP
 
+
 # ASN 17552 ("True Internet Co.,Ltd").
-# Source of forum spam and some email harvestors.
-# Updated: 2019.11.24
-58.10.204.36/32 Deny Cloud
-110.169.80.155/32 Deny Cloud
-124.120.234.6/32 Deny Cloud
+# A major domestic ISP in Thailand, but also a notable source of forum spam and
+# email harvestors. Listing here just the worst ranges (not the whole network).
+# Updated: 2019.12.15
+
+58.8.195.113/32 Deny Spam
+58.9.118.95/32 Deny Spam
+58.10.204.36/32 Deny Spam
+110.168.13.6/32 Deny Spam
+110.169.80.155/32 Deny Spam
+110.169.231.25/32 Deny Spam
+124.120.234.6/32 Deny Spam
+124.120.235.200/32 Deny Spam
 124.122.66.178/32 Deny Malware
-171.103.9.22/32 Deny Cloud
+124.122.77.113/32 Deny Spam
+134.196.244.120/32 Deny Spam
+134.196.245.109/32 Deny Spam
+171.97.223.241/32 Deny Spam
+171.103.9.22/32 Deny Spam
 Origin: TH
 Tag: True Internet Co
+---
+recaptcha:
+ enabled: true
+
 
 # ASN 45287 ("Varnion Technology Semesta, PT").
 # Source of forum spam and some email harvestors.
 # Updated: 2019.11.24
+
 150.129.57.147/32 Deny Malware
 203.99.131.218/32 Deny Spam
 Origin: ID
 Tag: Varnion Technology
 
+
 # ASN 12714 ("Net By Net Holding LLC").
 # Source of forum spam and some email harvestors.
 # Updated: 2019.11.24
+
 46.187.12.106/32 Deny Spam
 46.187.51.146/32 Deny Spam
 79.111.119.213/32 Deny Spam
@@ -11206,9 +11258,11 @@ Tag: Varnion Technology
 Origin: RU
 Tag: Net By Net Holding LLC
 
+
 # ASN 13489 ("EPM Telecomunicaciones S.A. E.S.P").
 # Source of forum spam and some email harvestors.
 # Updated: 2019.11.24
+
 181.128.0.0/12 Deny Spam
 190.7.128.0/19 Deny Spam
 190.9.192.0/18 Deny Spam
@@ -11225,6 +11279,7 @@ recaptcha:
 # ASN 27932 ("Redes y Telecomunicaciones").
 # Source of forum spam and some email harvestors.
 # Updated: 2019.11.24
+
 200.52.144.170/32 Deny Spam
 Origin: HN
 Tag: Redes y Telecomunicaciones
@@ -11260,3 +11315,147 @@ Tag: Redes y Telecomunicaciones
 201.172.139.33/32 Deny Spam
 Origin: MX
 Tag: TV Internacional
+
+
+# ASN 23969 ("TOT Public Company Limited").
+# A major domestic ISP in Thailand, but also a notable source of forum spam.
+# Listing here just the worst of the worst at the network (not the whole lot).
+# Updated: 2019.12.15
+
+1.0.178.164/32 Deny Spam
+1.10.188.0/24 Deny Spam
+1.20.96.0/23 Deny Spam
+1.20.99.0/24 Deny Spam
+1.20.100.0/24 Deny Spam
+1.20.102.0/23 Deny Spam
+1.179.156.0/24 Deny Spam
+1.179.184.0/24 Deny Spam
+1.179.198.0/24 Deny Spam
+1.179.201.0/24 Deny Spam
+101.51.141.0/24 Deny Spam
+101.109.83.0/24 Deny Spam
+101.109.253.0/24 Deny Spam
+118.175.93.103/32 Deny Spam
+125.25.57.0/24 Deny Spam
+125.25.165.0/24 Deny Spam
+125.25.187.0/24 Deny Spam
+125.26.7.0/24 Deny Spam
+125.26.99.0/24 Deny Spam
+125.27.251.0/24 Deny Spam
+180.180.152.0/24 Deny Spam
+182.52.51.0/24 Deny Spam
+182.52.238.0/24 Deny Spam
+182.53.206.0/24 Deny Spam
+Origin: TH
+Tag: TOT Public
+---
+recaptcha:
+ enabled: true
+
+
+# ASN 45758 ("Triple T Internet/Triple T Broadband").
+# A major domestic ISP in Thailand, but also a notable source of forum spam.
+# Listing here just the worst of the worst at the network (not the whole lot).
+# Updated: 2019.12.15
+
+14.207.5.6/32 Deny Spam
+14.207.57.9/32 Deny Spam
+27.130.16.148/30 Deny Spam
+27.130.19.248/30 Deny Spam
+49.49.240.0/24 Deny Spam
+171.4.105.68/32 Deny Spam
+171.6.240.180/32 Deny Spam
+180.183.107.200/30 Deny Spam
+180.183.141.196/30 Deny Spam
+180.183.233.196/30 Deny Spam
+183.88.38.0/24 Deny Spam
+183.88.59.0/24 Deny Spam
+183.88.107.0/24 Deny Spam
+183.88.212.0/24 Deny Spam
+183.88.244.0/24 Deny Spam
+183.89.40.0/24 Deny Spam
+223.204.251.164/30 Deny Spam
+223.205.251.128/30 Deny Spam
+223.206.237.107/32 Deny Spam
+223.206.241.0/24 Deny Spam
+223.206.242.0/23 Deny Spam
+223.206.248.0/23 Deny Spam
+Origin: TH
+Tag: Triple T
+---
+recaptcha:
+ enabled: true
+
+
+# ASN 55410 ("Vodafone India Limited").
+# A major Indian mobile phone provider, but also have seen some spam from some
+# specific IPs. Just blocking those (not the whole network).
+# Updated: 2019.12.15
+
+118.185.94.157/32 Deny Spam
+182.19.34.97/32 Deny Spam
+182.19.41.145/32 Deny Spam
+182.19.41.146/32 Deny Spam
+Origin: IN
+Tag: Vodafone India
+
+
+# ASN 48161 ("NEXTGEN COMMUNICATIONS SRL").
+# A domestic Romanian ISP, but also a source of forum spam. Listing here just
+# the worst ranges at the network at the moment (not the whole network).
+# Updated: 2019.12.15
+
+89.165.156.229/32 Deny Spam
+89.165.218.82/32 Deny Spam
+188.173.20.68/32 Deny Spam
+188.173.129.187/32 Deny Spam
+188.173.225.165/32 Deny Spam
+Origin: RO
+Tag: NEXTGEN COMMUNICATIONS
+---
+recaptcha:
+ enabled: true
+
+
+# ASN 131207 ("SINET, Cambodia's specialist Internet and Telecom Service Provider").
+# A major domestic Cambodian ISP, but also a notable source of forum spam.
+# Listing here just the worst of the worst at the network (not the whole lot).
+# Updated: 2019.12.15
+
+43.245.202.0/24 Deny Spam
+96.9.66.238/32 Deny Spam
+96.9.67.0/24 Deny Spam
+96.9.69.0/24 Deny Spam
+96.9.70.0/24 Deny Spam
+96.9.72.241/32 Deny Spam
+96.9.74.160/32 Deny Spam
+96.9.75.0/24 Deny Spam
+96.9.77.192/32 Deny Spam
+96.9.79.0/24 Deny Spam
+96.9.87.54/32 Deny Spam
+103.14.250.0/24 Deny Spam
+136.228.128.159/32 Deny Spam
+136.228.150.175/32 Deny Spam
+Origin: KH
+Tag: SINET
+---
+recaptcha:
+ enabled: true
+
+
+# ASN 20771 ("Caucasus Online Ltd").
+# A domestic ISP from Georgia, but also a notable source of forum spam. Listing
+# here just the worst of the worst at the network (not the whole lot).
+# Updated: 2019.12.15
+
+85.117.56.73/32 Deny Spam
+85.117.60.0/23 Deny Spam
+85.117.62.186/32 Deny Spam
+85.117.62.202/32 Deny Spam
+85.117.62.234/32 Deny Spam
+85.117.63.98/32 Deny Spam
+Origin: GE
+Tag: Caucasus Online Ltd
+---
+recaptcha:
+ enabled: true

@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6.dat
 
-# Version: 2019.348.423
-# Last modified: 2019.12.15
+# Version: 2019.351.496
+# Last modified: 2019.12.18
 
 
 # ---
@@ -148,15 +148,15 @@ Tag: New Dream Network
 
 
 # ASN 33182 ("HostDime.com, Inc").
-# %Listed, Google Malware Dashboard: 0.26%.
-# Stop Forum Spam (SFS) listings: 645.
-# Updated: 2019.08.22
+# %Listed, Google Malware Dashboard: 0.28%.
+# Stop Forum Spam (SFS) listings: 819.
+# Updated: 2019.12.18
 
 2804:9c4::/32 Deny Cloud
 Origin: BR
 2803:c40::/32 Deny Cloud
 Origin: CO
-2a04:840::/44 Deny Cloud
+2a04:840::/43 Deny Cloud
 Origin: GB
 2404:a700::/32 Deny Cloud
 Origin: IN
@@ -1331,20 +1331,14 @@ Tag: Versaweb, LLC
 
 
 # ASN 27176 ("DataWagon LLC").
-# %Listed, Google Malware Dashboard: 5.88%.
-# Stop Forum Spam (SFS) listings: 255.
-# Updated: 2019.08.22
+# A source of forum spam.
+# Stop Forum Spam (SFS) listings: 297.
+# Updated: 2019.12.18
 
-2a06:fe00::/29 Deny Cloud
-2a09:9f80::/29 Deny Cloud
-2a0d:6f80::/32 Deny Cloud
-2a0d:6f82::/32 Deny Cloud
 2a0d:6f84::/32 Deny Cloud
-2a0d:6f86::/32 Deny Cloud
 Origin: LT
 2a07:d9c0::/30 Deny Cloud
 2a0b:2a87::/32 Deny Cloud
-2a0c:a184::/31 Deny Cloud
 Origin: RU
 2605:aa80::/32 Deny Cloud
 Origin: US
@@ -2554,9 +2548,9 @@ Tag: Akamai Technologies
 
 
 # ASN 6428 ("Rose Hosting").
-# %Listed, Google Malware Dashboard: 0.58%.
-# Stop Forum Spam (SFS) listings: 77.
-# Updated: 2017.10.30 / Checked: 2019.07.24
+# %Listed, Google Malware Dashboard: 0.85%.
+# Stop Forum Spam (SFS) listings: 73.
+# Updated: 2017.10.30 / Checked: 2019.12.16
 
 2606:9200::/32 Deny Cloud
 Origin: US
@@ -4787,9 +4781,8 @@ Tag: netcup GmbH
 
 
 # ASNs 19531, 43755 ("Nodes Direct").
-# %Listed, Google Malware Dashboard: 0.88% (AS19531).
-# Stop Forum Spam (SFS) listings: 307 (AS19531).
-# Updated: 2018.09.14 / Checked: 2019.07.21
+# Stop Forum Spam (SFS) listings: 11 (AS19531).
+# Updated: 2018.09.14 / Checked: 2019.12.16
 
 2604:4600::/28 Deny Cloud
 Origin: US
@@ -5022,7 +5015,7 @@ Tag: HostMySite
 
 # ASN 40034 ("Confluence Networks Inc").
 # %Listed, Google Malware Dashboard: 0.05%.
-# Updated: 2019.08.21
+# Updated: 2019.08.21 / Checked: 2019.12.16
 
 2604:10c0::/48 Deny Cloud
 2604:10c0:ffff::/48 Deny Cloud
@@ -5131,7 +5124,7 @@ Tag: Highwinds
 
 
 # ASN 62 ("CyrusOne LLC").
-# Server form + cloud provider. Probing for database dumps + SSH brute-forcing
+# Server farm + cloud provider. Probing for database dumps + SSH brute-forcing
 # detected from some IPs at this network. (Just blocking this ASN; Not the
 # others. Remove invalids when updating).
 # Updated: 2019.12.15
@@ -5416,62 +5409,6 @@ Origin: MY
 Tag: Gigabit Hosting
 
 
-# ASN 27435 ("Dimension Data Cloud Solutions, Inc").
-# Actually quite a large cloud service with numerous ASNs, but most of their ASNs seem clean at the moment, so for now,
-# I'm including just the one ASN (AS27435) that I've seen send unwanted/suspect requests to websites. May expand this
-# section to include other ASNs in the future if similar traffic or problems emerge from those ASNs. Activity seen from
-# the ASN in question includes spamming and probing.
-# Stop Forum Spam (SFS) listings: 9.
-# Updated: 2019.08.22
-
-2402:9900::/48 Deny Cloud
-2402:9900:100::/47 Deny Cloud
-2402:9900:111::/48 Deny Cloud
-2402:9900:200::/47 Deny Cloud
-2402:9900:211::/48 Deny Cloud
-2402:9900:311::/48 Deny Cloud
-2402:9900:911::/48 Deny Cloud
-2402:9900:b11::/48 Deny Cloud
-2402:9900:c11::/48 Deny Cloud
-2402:9900:d11::/48 Deny Cloud
-2402:9900:e11::/48 Deny Cloud
-Origin: AU
-2a00:47c0:111::/48 Deny Cloud
-2a00:47c0:211::/48 Deny Cloud
-2a00:47c0:221::/48 Deny Cloud
-2a00:47c0:311::/48 Deny Cloud
-2a00:47c0:611::/48 Deny Cloud
-2a00:47c0:711::/48 Deny Cloud
-2a00:47c0:811::/48 Deny Cloud
-Origin: GB
-2404:c8:2::/48 Deny Cloud
-Origin: ID
-2001:418:9807::/48 Deny Cloud
-2605:b800:787::/48 Deny Cloud
-2607:f480::/46 Deny Cloud
-2607:f480:4::/47 Deny Cloud
-2607:f480:8::/47 Deny Cloud
-2607:f480:11::/48 Deny Cloud
-2607:f480:16::/48 Deny Cloud
-2607:f480:24::/48 Deny Cloud
-2607:f480:101::/48 Deny Cloud
-2607:f480:111::/48 Deny Cloud
-2607:f480:1ab::/48 Deny Cloud
-2607:f480:201::/48 Deny Cloud
-2607:f480:211::/48 Deny Cloud
-2607:f480:300::/47 Deny Cloud
-2607:f480:401::/48 Deny Cloud
-2607:f480:411::/48 Deny Cloud
-2607:f480:999::/48 Deny Cloud
-2607:f480:1111::/48 Deny Cloud
-2607:f480:1ab0::/44 Deny Cloud
-2607:f480:f001::/48 Deny Cloud
-Origin: US
-2c0f:fc00:b004::/48 Deny Cloud
-Origin: ZA
-Tag: Dimension Data
-
-
 # ASN 60868 ("Runtime Collective Limited").
 # Trademark protection organisation; Scans websites looking for potential infringements in order to send legal notices
 # on behalf of clients. Serves no benefit to the websites being scanned.
@@ -5733,10 +5670,12 @@ Tag: Packet Exchange Limited
 
 
 # ASN 42926 ("Radore Veri Merkezi Hizmetleri A.S").
-# %Listed, Google Malware Dashboard: 0.07%.
-# Stop Forum Spam (SFS) listings: 1,040.
-# Updated: 2019.08.21
+# %Listed, Google Malware Dashboard: 0.04%.
+# Stop Forum Spam (SFS) listings: 947.
+# Updated: 2019.12.16
 
+2a0e:1b40::/29 Deny Cloud
+Origin: LT
 2a00:56a0::/32 Deny Cloud
 2a01:790::/32 Deny Cloud
 2a05:88c0::/29 Deny Cloud
@@ -5745,7 +5684,10 @@ Tag: Packet Exchange Limited
 2a09:cfc0::/29 Deny Cloud
 2a0b:5ec0::/29 Deny Cloud
 2a0c:f500::/29 Deny Cloud
+2a0f:e80::/29 Deny Cloud
 Origin: TR
+2a0a:e2c5::/32 Deny Cloud
+Origin: UA
 Tag: Radore Veri Merkezi
 
 

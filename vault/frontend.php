@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2019.12.12).
+ * This file: Front-end handler (last modified: 2019.12.22).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -2966,6 +2966,111 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-aggregator' && $CIDRAM['FE']
 
     /** Strip output row if input doesn't exist. */
     if ($CIDRAM['FE']['input']) {
+        $CIDRAM['FE']['FE_Content'] = str_replace(['<!-- Output Begin -->', '<!-- Output End -->'], '', $CIDRAM['FE']['FE_Content']);
+    } else {
+        $CIDRAM['FE']['FE_Content'] =
+            substr($CIDRAM['FE']['FE_Content'], 0, strpos($CIDRAM['FE']['FE_Content'], '<!-- Output Begin -->')) .
+            substr($CIDRAM['FE']['FE_Content'], strpos($CIDRAM['FE']['FE_Content'], '<!-- Output End -->') + 19);
+    }
+
+    /** Send output. */
+    echo $CIDRAM['SendOutput']();
+
+}
+
+/** Range Subtractor. */
+elseif ($CIDRAM['QueryVars']['cidram-page'] === 'range-subtractor' && $CIDRAM['FE']['Permissions'] === 1) {
+
+    /** Page initial prepwork. */
+    $CIDRAM['InitialPrepwork']($CIDRAM['L10N']->getString('link_range_subtractor'), $CIDRAM['L10N']->getString('tip_range_subtractor'), false);
+
+    $CIDRAM['FE']['bNav'] = $CIDRAM['L10N']->getString('bNav_home_logout');
+
+    /** Output format. */
+    $CIDRAM['OutputFormat'] = (isset($_POST['format']) && $_POST['format'] === 'Netmask') ? 1 : 0;
+
+    /** Output format menu. */
+    $CIDRAM['FE']['OutputFormat'] = sprintf(
+        '%1$sCIDR" value="CIDR"%2$s%6$sformatCIDR">%3$s</label><br />%1$sNetmask" value="Netmask"%4$s%6$sformatNetmask">%5$s</label>',
+        '<input type="radio" class="auto" name="format" id="format',
+        $CIDRAM['OutputFormat'] !== 1 ? ' checked' : '',
+        $CIDRAM['L10N']->getString('field_cidr'),
+        $CIDRAM['OutputFormat'] === 1 ? ' checked' : '',
+        $CIDRAM['L10N']->getString('field_netmask'),
+        ' /><label for="'
+    );
+
+    /** Default values for inputs. */
+    $CIDRAM['FE']['Subtractor_A'] = $_POST['A'] ?? '';
+    $CIDRAM['FE']['Subtractor_B'] = $_POST['B'] ?? '';
+
+    /** Default value for output. */
+    $CIDRAM['FE']['Subtractor_AB'] = '';
+
+    /** Data was submitted for subtraction. */
+    if (isset($_POST['A'], $_POST['B'])) {
+        $CIDRAM['Subtraction'] = [
+            'A' => str_replace("\r", '', trim($_POST['A'])),
+            'B' => str_replace("\r", '', trim($_POST['B']))
+        ];
+
+        /**
+         * We'll aggregate A, B prior to subtraction, and A-B after
+         * subtraction, for a cleaner and faster operation.
+         */
+        $CIDRAM['Aggregator'] = new \CIDRAM\Aggregator\Aggregator($CIDRAM);
+        if ($CIDRAM['Subtraction']['A']) {
+            $CIDRAM['Subtraction']['A'] = $CIDRAM['Aggregator']->aggregate(
+                $CIDRAM['Subtraction']['A'] . "\n" . $CIDRAM['Subtraction']['B']
+            ) . "\n";
+        }
+        if ($CIDRAM['Subtraction']['B']) {
+            $CIDRAM['Subtraction']['B'] = $CIDRAM['Aggregator']->aggregate(
+                $CIDRAM['Subtraction']['B']
+            ) . "\n";
+        }
+
+        /** Beginning subtraction process here. */
+        if ($CIDRAM['Subtraction']['A'] && $CIDRAM['Subtraction']['B']) {
+            $CIDRAM['Subtraction']['A'] = $CIDRAM['SubtractCIDR'](
+                $CIDRAM['Subtraction']['A'],
+                $CIDRAM['Subtraction']['B']
+            );
+
+            /** Enable netmasks if selected. */
+            if ($CIDRAM['OutputFormat']) {
+                $CIDRAM['Aggregator'] = new \CIDRAM\Aggregator\Aggregator($CIDRAM, $CIDRAM['OutputFormat']);
+            }
+
+            /** Optimise results. */
+            $CIDRAM['FE']['Subtractor_AB'] = $CIDRAM['Aggregator']->aggregate($CIDRAM['Subtraction']['A']);
+        }
+
+        /** Cleanup. */
+        unset($CIDRAM['Subtraction'], $CIDRAM['Aggregator']);
+    }
+
+    /** Calculate page load time (useful for debugging). */
+    $CIDRAM['FE']['ProcessTime'] = microtime(true) - $_SERVER['REQUEST_TIME_FLOAT'];
+    $CIDRAM['FE']['state_msg'] .= sprintf(
+        $CIDRAM['L10N']->getPlural($CIDRAM['FE']['ProcessTime'], 'state_loadtime'),
+        $CIDRAM['NumberFormatter']->format($CIDRAM['FE']['ProcessTime'], 3)
+    );
+
+    /** Parse output. */
+    $CIDRAM['FE']['FE_Content'] = $CIDRAM['ParseVars'](
+        $CIDRAM['L10N']->Data + $CIDRAM['FE'],
+        $CIDRAM['ReadFile']($CIDRAM['GetAssetPath']('_range_subtractor.html'))
+    );
+
+    /** Parse output. */
+    $CIDRAM['FE']['FE_Content'] = $CIDRAM['ParseVars'](
+        $CIDRAM['L10N']->Data + $CIDRAM['FE'],
+        $CIDRAM['ReadFile']($CIDRAM['GetAssetPath']('_range_subtractor.html'))
+    );
+
+    /** Strip output row if input doesn't exist. */
+    if ($CIDRAM['FE']['Subtractor_AB']) {
         $CIDRAM['FE']['FE_Content'] = str_replace(['<!-- Output Begin -->', '<!-- Output End -->'], '', $CIDRAM['FE']['FE_Content']);
     } else {
         $CIDRAM['FE']['FE_Content'] =

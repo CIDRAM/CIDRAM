@@ -7,9 +7,19 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Polish language data for the front-end (last modified: 2019.12.04).
+# This file: Polish language data for the front-end (last modified: 2019.12.20).
 ##/
 
+state_logged_in: "Zalogowany."
+state_logged_in_2fa_pending: "Zalogowany + Oczekuje na potwierdzenie 2FA."
+state_logged_out: "Wylogowano."
+state_logs_access_only: "Dostęp tylko do dzienników"
+state_maintenance_mode: "Ostrzeżenie: Tryb konserwacji jest włączony!"
+state_password_not_valid: "Ostrzeżenie: To konto nie używa prawidłowego hasła!"
+state_risk_high: "Wysokie"
+state_risk_low: "Niskie"
+state_risk_medium: "Średnie"
+state_sl_totals: "Ogółem (Podpisy: <span class="txtRd">%s</span> – Sekcje podpisu: <span class="txtRd">%s</span> – Pliki podpis: <span class="txtRd">%s</span> – Unikalne tagi sekcji: <span class="txtRd">%s</span>)."
 state_tracking:
  - "Obecnie śledzimy %s adres IP."
  - "Obecnie śledzimy %s adresy IP."
@@ -53,6 +63,7 @@ tip_login: "Domyślna nazwa użytkownika: <span class="txtRd">admin</span> – D
 tip_logs: "Witaj, {username}.<br />Wybierz plik dziennika z poniższej listy, aby wyświetlić zawartość tego pliku dziennika."
 tip_pie_html: "Kliknij nazwę komponentu, aby uzyskać więcej informacji."
 tip_range: "Witaj, {username}.<br />Ta strona pokazuje podstawowe informacje statystyczne o zakresach adresów IP objętych obecnie aktywnymi plikami podpis."
+tip_range_subtractor: "Witaj, {username}.<br />Subtraktora zakresu można użyć do odjęcia jednego zakresu adresów IP/CIDR od drugiego."
 tip_sections_list: "Witaj, {username}.<br />Ta strona zawiera listę sekcji, które istnieją w aktualnie aktywnych plikach podpis."
 tip_see_the_documentation: "Informacje na temat różnych dyrektyw konfiguracyjnych i ich celów można znaleźć w <a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#SECTION6">dokumentacji</a>."
 tip_statistics: "Witaj, {username}.<br />Ta strona pokazuje podstawowe statystyki użytkowania dotyczące instalacji CIDRAM."

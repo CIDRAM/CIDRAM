@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2019.12.12).
+ * This file: Front-end functions file (last modified: 2019.12.22).
  */
 
 /**
@@ -3414,4 +3414,73 @@ $CIDRAM['LTRinRTF'] = function (string $String = '') use (&$CIDRAM): string {
         $String
     );
 
+};
+
+/**
+ * Splits a CIDR into two smaller CIDRs of the same total value.
+ *
+ * @param string $CIDR The CIDR to split.
+ * @return array An array containing two elements (the smaller CIDRs), or an
+ *      empty array on faliure (e.g., supplied data isn't a valid CIDR).
+ */
+$CIDRAM['SplitCIDR'] = function (string $CIDR) use (&$CIDRAM): array {
+    if (($Pos = strpos($CIDR, '/')) === false) {
+        return [];
+    }
+    $Base = substr($CIDR, 0, $Pos);
+    $Factor = substr($CIDR, $Pos + 1);
+    if ($CIDRs = $CIDRAM['ExpandIPv4']($Base, false, $Factor)) {
+        $Is = 4;
+    } elseif ($CIDRs = $CIDRAM['ExpandIPv6']($Base, false, $Factor)) {
+        $Is = 6;
+    } else {
+        return [];
+    }
+    if ($Factor < 1 || ($Is === 4 && $Factor >= 32) || ($Is === 6 && $Factor >= 128)) {
+        return [];
+    }
+    $Split = [$CIDRs[$Factor]];
+    $Last = ($Is === 4) ? $CIDRAM['IPv4GetLast']($Base, $Factor) : $CIDRAM['IPv6GetLast']($Base, $Factor);
+    $CIDRs = ($Is === 4) ? $CIDRAM['ExpandIPv4']($Last, false, $Factor) : $CIDRAM['ExpandIPv6']($Last, false, $Factor);
+    if (isset($CIDRs[$Factor])) {
+        $Split[] = $CIDRs[$Factor];
+        return $Split;
+    }
+    return [];
+};
+
+/**
+ * Subtracts subtrahend CIDRs from minuend CIDRs and returns the difference.
+ *
+ * @param string $Minuend The minuend (assumes no erroneous data).
+ * @param string $Subtrahend The subtrahend (assumes no erroneous data).
+ * @return string The difference.
+ */
+$CIDRAM['SubtractCIDR'] = function (string $Minuend = '', string $Subtrahend = '') use (&$CIDRAM): string {
+    $LPos = 0;
+    while (($NPos = strpos($Subtrahend, "\n", $LPos)) !== false) {
+        $Line = substr($Subtrahend, $LPos, $NPos - $LPos);
+        $LPos = $NPos + 1;
+        if (($DPos = strpos($Line, '/')) !== false) {
+            $Range = substr($Line, $DPos + 1);
+            $Base = substr($Line, 0, $DPos);
+        } else {
+            continue;
+        }
+        if (!$CIDRs = $CIDRAM['ExpandIPv4']($Base, false, $Range)) {
+            if (!$CIDRs = $CIDRAM['ExpandIPv6']($Base, false, $Range)) {
+                continue;
+            }
+        }
+        foreach ($CIDRs as $Key => $Actual) {
+            if (strpos($Minuend, $Actual . "\n") === false) {
+                continue;
+            }
+            if ($Range > ($Key + 1) && $Split = $CIDRAM['SplitCIDR']($Actual)) {
+                $Minuend .= implode("\n", $Split) . "\n";
+            }
+            $Minuend = str_replace($Actual . "\n", '', $Minuend);
+        }
+    }
+    return $Minuend;
 };

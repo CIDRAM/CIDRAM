@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Japanese language data for the front-end (last modified: 2019.12.04).
+# This file: Japanese language data for the front-end (last modified: 2019.12.19).
 ##/
 
 Extended Description Bypasses: "メインパッケージに通常含まれているデフォルト・シグネチャ・バイパス。"
@@ -23,13 +23,13 @@ Extended Description IPv6: "不要なクラウドサービスと非人のエン�
 Extended Description PHPMailer: "電子Ｅメールの送信を含む機能の使用に必要です。<br />「<a href="https://github.com/PHPMailer/PHPMailer">PHPMailer</a>」は、「<a href="https://github.com/PHPMailer/PHPMailer/blob/master/LICENSE">LGPLv2.1</a>」ライセンスを介して利用可能です。"
 Extended Description flags.css: "フロントエンド・ログページにフラグ・サポートを追加します。"
 Extended Description module_abuseipdb.php: "AbuseIPDBにリストされているＩＰからの要求をブロックします。"
-Extended Description module_projecthoneypot.php: "Project HoneypotにリストされているＩＰからの要求をブロックします。"
 Extended Description module_badhosts.php: "スパマー、ハッカー、およびその他の悪意のあるエンティティによって頻繁に使用されるホストをブロックします。"
 Extended Description module_badhosts_isps.php: "スパマー、ハッカー、その他の悪意のあるエンティティによって頻繁に使用されるＩＳＰに属するホストをブロックします。"
 Extended Description module_badtlds.php: "スパマー、ハッカー、その他の悪意のあるエンティティによって頻繁に使用されるＴＬＤに属するホストをブロックします。"
 Extended Description module_botua.php: "望ましくないボットや悪意のあるアクティビティに関連付けられたユーザー・エージェントをブロックします。"
 Extended Description module_cookies.php: "危険なクッキーに対するいくつかの限定された保護を提供します。"
 Extended Description module_extras.php: "リクエストでよく使用される攻撃経路に対して、​いくつかの制限された保護を提供します。"
+Extended Description module_projecthoneypot.php: "Project HoneypotにリストされているＩＰからの要求をブロックします。"
 Extended Description module_refspam.php: "リファラー・スパムに基づくブロックは、通常、有意義なセキュリティ上の利点を提供しません、ただし、場合によっては、リクエストに関する詳細情報の収集、およびレポートの作成に役立つ可能性があります。"
 Extended Description module_sfs.php: "ＳＦＳによってリストされたＩＰに対して登録ページとログインページを保護します。"
 Name Bypasses: "デフォルト・シグネチャ・バイパス。"
@@ -43,7 +43,6 @@ Name IPv6-Other: "ＩＰｖ６（プロキシ、​ＶＰＮ、​およびそ�
 Name IPv6: "ＩＰｖ６（クラウド・サービス、ホスティング・サービス）。"
 Name compat_bunnycdn.php: "BunnyCDN互換モジュール"
 Name module_abuseipdb.php: "AbuseIPDB モジュール"
-Name module_projecthoneypot.php: "Project Honeypot モジュール"
 Name module_badhosts.php: "危険なホスト・ブロッカーモジュール"
 Name module_badhosts_isps.php: "危険なホスト・ブロッカーモジュール（ＩＳＰ）"
 Name module_badtlds.php: "危険なホストＴＬＤブロッカーモジュール"
@@ -51,6 +50,7 @@ Name module_baidublocker.php: "Ｂａｉｄｕブロッカーモジュール"
 Name module_botua.php: "オプショナル・ユーザー・エージェント・モジュール"
 Name module_cookies.php: "オプショナル・クッキー・スキャナ・モジュール"
 Name module_extras.php: "オプショナル・セキュリティ・エクストラス・モジュール"
+Name module_projecthoneypot.php: "Project Honeypot モジュール"
 Name module_refspam.php: "リファラー・スパム・モジュール"
 Name module_sfs.php: "Stop Forum Spam モジュール"
 Name module_yandexblocker.php: "Ｙａｎｄｅｘブロッカーモジュール"
@@ -321,6 +321,7 @@ link_ip_test: "ＩＰテスト"
 link_ip_tracking: "ＩＰトラッキング"
 link_logs: "ログページ"
 link_range: "範囲テーブル"
+link_range_subtractor: "範囲減算器"
 link_sections_list: "セクション・リスト"
 link_statistics: "統計"
 link_textmode: "テキスト・フォーマット： <a href="%1$sfalse%2$s">シンプル</a> – <a href="%1$strue%2$s">ファンシー</a> – <a href="%1$stally%2$s">集計</a>"
@@ -459,6 +460,7 @@ tip_login: "デフォルト・ユーザー名：​<span class="txtRd">admin</sp
 tip_logs: "こんにちは、​{username}。​<br />そのログの内容を表示するために、​次のリストからログを選択します。"
 tip_pie_html: "詳細についてはコンポーネント名をクリックしてください。"
 tip_range: "こんにちは、​{username}。​<br />このページには、現在アクティブな・シグネチャ・ファイルが対象とするＩＰ範囲に関する基本的な統計情報が表示されます。"
+tip_range_subtractor: "こんにちは、​{username}。<br />ある範囲のＩＰ/ＣＩＤＲを別の範囲から減算ために、範囲減算器を使用できます。"
 tip_sections_list: "こんにちは、​{username}。<br />このページには、現在アクティブなシグネチャ・ファイルに存在するセクションが一覧表示されます。"
 tip_see_the_documentation: "コンフィギュレーション・ディレクティブの詳細については、​<a href="https://github.com/CIDRAM/Docs/blob/master/readme.ja.md\#SECTION6">ドキュメント</a>を参照してください。"
 tip_statistics: "こんにちは、​{username}。​<br />このページには、CIDRAMのインストールに関する基本的な使用状況の統計情報が表示されます。"

@@ -43,7 +43,7 @@ class Aggregator
     /** Optional callback. */
     public $callbacks = [];
 
-    public function __construct(array &$CIDRAM, $Mode = 0)
+    public function __construct(array &$CIDRAM, int $Mode = 0)
     {
         $this->constructTables();
         $this->CIDRAM = &$CIDRAM;
@@ -76,7 +76,7 @@ class Aggregator
     }
 
     /** Aggregate it! */
-    public function aggregate($In)
+    public function aggregate(string $In): string
     {
         $this->Input = $In;
         $this->Output = $In;
@@ -90,7 +90,7 @@ class Aggregator
     }
 
     /** Strips invalid characters from lines and sorts entries. */
-    private function stripInvalidCharactersAndSort(&$In)
+    private function stripInvalidCharactersAndSort(string &$In)
     {
         $In = explode("\n", strtolower(trim(str_replace("\r", '', $In))));
         $InCount = count($In);
@@ -101,14 +101,14 @@ class Aggregator
             $this->CIDRAM['Results']['In'] = $InCount;
         }
         unset($InCount);
-        $In = array_filter(array_unique(array_map(function ($Line) {
+        $In = array_filter(array_unique(array_map(function (string $Line): string {
             $Line = preg_replace(['~^[^\da-f:./]*~i', '~[ \t].*$~', '~[^\da-f:./]*$~i'], '', $Line);
             if (isset($this->callbacks['newTick']) && is_callable($this->callbacks['newTick'])) {
                 $this->callbacks['newTick']();
             }
             return (!$Line || !preg_match('~[\da-f:./]+~i', $Line) || preg_match('~[^\da-f:./]+~i', $Line)) ? '' : $Line;
         }, $In)));
-        usort($In, function ($A, $B) {
+        usort($In, function (string $A, string $B) {
             if (($Pos = strpos($A, '/')) !== false) {
                 $ASize = substr($A, $Pos + 1);
                 $A = substr($A, 0, $Pos);
@@ -177,7 +177,7 @@ class Aggregator
     }
 
     /** Strips invalid ranges and subordinates. */
-    private function stripInvalidRangesAndSubs(&$In)
+    private function stripInvalidRangesAndSubs(string &$In)
     {
         if (isset($this->callbacks['newParse']) && is_callable($this->callbacks['newParse'])) {
             $this->callbacks['newParse'](substr_count($In, "\n"));
@@ -246,7 +246,7 @@ class Aggregator
     }
 
     /** Merges ranges. */
-    private function mergeRanges(&$In)
+    private function mergeRanges(string &$In)
     {
         while (true) {
             $Step = $In;
@@ -296,7 +296,7 @@ class Aggregator
     }
 
     /** Optionally converts output to netmask notation. */
-    private function convertToNetmasks(&$In)
+    private function convertToNetmasks(string &$In)
     {
         if (isset($this->callbacks['newParse']) && is_callable($this->callbacks['newParse'])) {
             $this->callbacks['newParse'](substr_count($In, "\n"));

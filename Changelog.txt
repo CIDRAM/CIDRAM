@@ -38,6 +38,10 @@ Detailed version release guidelines for CIDRAM can be found at:
 - [2019.12.22; NEW FEATURE; Maikuolan]: Added a range subtractor to the
   front-end (this is kind of like a compliment/reverse to the IP aggregator).
 
+- [2019.12.23; Bug-fix; Maikuolan]: The IP aggregator was able to successfully
+  capture IPs and CIDRs contained within comments, but it should be ignoring
+  comments entirely; Fixed.
+
 === Version/Release 2.2.1 ===
 PATCH RELEASE.
 

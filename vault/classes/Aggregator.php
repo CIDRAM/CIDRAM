@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: IP aggregator (last modified: 2019.12.12).
+ * This file: IP aggregator (last modified: 2019.12.23).
  */
 
 namespace CIDRAM\Aggregator;
@@ -102,7 +102,7 @@ class Aggregator
         }
         unset($InCount);
         $In = array_filter(array_unique(array_map(function ($Line) {
-            $Line = preg_replace(['~^[^\da-f:./]*~i', '~[ \t].*$~', '~[^\da-f:./]*$~i'], '', $Line);
+            $Line = preg_replace(['~^(?:#| \*|/\*).*~', '~^[^\da-f:./]*~i', '~[ \t].*$~', '~[^\da-f:./]*$~i'], '', $Line);
             if (isset($this->callbacks['newTick']) && is_callable($this->callbacks['newTick'])) {
                 $this->callbacks['newTick']();
             }

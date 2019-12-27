@@ -8,14 +8,13 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Report orchestrator (last modified: 2019.07.25).
+ * This file: Report orchestrator (last modified: 2019.12.26).
  */
 
 namespace CIDRAM\Core;
 
 class Reporter
 {
-
     /** An array of handlers to use for processing reports. */
     private $Handlers = [];
 
@@ -98,5 +97,4 @@ class Reporter
         /** Flush old reports. */
         $this->Reports = [];
     }
-
 }

@@ -39,6 +39,9 @@ Detailed version release guidelines for CIDRAM can be found at:
   capture IPs and CIDRs contained within comments, but it should be ignoring
   comments entirely; Fixed.
 
+- [2019.12.27; Bug-fix; Maikuolan]: The cache handler's mechanism for creating
+  missing tables in PDO used a malformed query and didn't work properly; Fixed.
+
 === Version/Release 1.15.1 ===
 PATCH RELEASE.
 

@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_isps.dat
 
-# Version: 2019.356.139
-# Last modified: 2019.12.23
+# Version: 2019.360.653
+# Last modified: 2019.12.27
 
 
 # ---
@@ -106,8 +106,12 @@ recaptcha:
 
 
 # ASN 45727 ("Hutchison CP Telecommunications, PT").
-# Stop Forum Spam (SFS) listings: 323.
-# Updated: 2019.09.03
+# Major domestic Indonesian ISP, but also a source of spam. Listed in the
+# ignore.dat file default, and is marked for use with reCAPTCHA, so the false
+# positive risk shouldn't be too high. Hope to eventually scale down the listed
+# ranges here, but current incident reports are quite scattered across the ASN.
+# Stop Forum Spam (SFS) listings: 350.
+# Updated: 2019.12.27
 
 2400:8b00:100::/42 Deny Spam
 2400:8b00:200::/42 Deny Spam
@@ -131,6 +135,7 @@ recaptcha:
 2400:8b00:f80::/42 Deny Spam
 2400:8b00:1000::/44 Deny Spam
 2400:8b00:2000::/42 Deny Spam
+2400:8b00:2100::/42 Deny Spam
 Origin: ID
 Tag: PT Hutchison
 ---
@@ -328,9 +333,9 @@ recaptcha:
 # the false positive risk, and I would encourage any CIDRAM users from Israel,
 # or targeting traffic from Israel, to list this section in their ignore.dat
 # file to reduce the false positive risk.
-# %Listed, Google Malware Dashboard: 0.38% (AS9116).
-# Stop Forum Spam (SFS) listings: 2,526 (AS9116).
-# Updated: 2016.12.10 / Checked: 2019.08.01
+# %Listed, Google Malware Dashboard: 0.43% (AS9116).
+# Stop Forum Spam (SFS) listings: 4,824 (AS9116).
+# Updated: 2016.12.10 / Checked: 2019.12.25
 
 2001:40a8::/32 Deny Spam
 Origin: IL

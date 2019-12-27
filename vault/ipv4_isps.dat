@@ -1,8 +1,8 @@
 # IPv4 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv4_isps.dat
 
-# Version: 2019.356.139
-# Last modified: 2019.12.23
+# Version: 2019.360.653
+# Last modified: 2019.12.27
 
 
 # ---
@@ -639,8 +639,12 @@ recaptcha:
 
 
 # ASN 45727 ("Hutchison CP Telecommunications, PT").
-# Stop Forum Spam (SFS) listings: 323.
-# Updated: 2019.09.03
+# Major domestic Indonesian ISP, but also a source of spam. Listed in the
+# ignore.dat file default, and is marked for use with reCAPTCHA, so the false
+# positive risk shouldn't be too high. Hope to eventually scale down the listed
+# ranges here, but current incident reports are quite scattered across the ASN.
+# Stop Forum Spam (SFS) listings: 350.
+# Updated: 2019.09.03 / Checked: 2019.12.27
 
 103.10.64.0/22 Deny Spam
 103.105.24.0/21 Deny Spam
@@ -1569,9 +1573,9 @@ recaptcha:
 # the false positive risk, and I would encourage any CIDRAM users from Israel,
 # or targeting traffic from Israel, to list this section in their ignore.dat
 # file to reduce the false positive risk.
-# %Listed, Google Malware Dashboard: 0.38% (AS9116).
-# Stop Forum Spam (SFS) listings: 2,526 (AS9116).
-# Updated: 2019.03.20 / Checked: 2019.08.01
+# %Listed, Google Malware Dashboard: 0.43% (AS9116).
+# Stop Forum Spam (SFS) listings: 4,824 (AS9116).
+# Updated: 2019.12.25
 
 31.154.139.0/24 Deny Spam
 46.120.0.0/15 Deny Spam
@@ -1585,10 +1589,9 @@ recaptcha:
 84.94.0.0/15 Deny Spam
 84.228.0.0/15 Deny Spam
 87.68.0.0/14 Deny Spam
+176.231.66.0/24 Deny Spam
 176.231.158.0/24 Deny Spam
 192.114.84.0/22 Deny Spam
-192.114.112.0/21 Deny Spam
-192.114.120.0/22 Deny Spam
 192.114.160.0/19 Deny Spam
 192.115.72.0/21 Deny Spam
 192.115.216.0/21 Deny Spam
@@ -2951,8 +2954,6 @@ Tag: ALEXHOST SRL
 
 194.15.38.0/24 Deny Generic
 Origin: DE
-2a00:8860::/32 Deny Generic
-Origin: EU
 185.219.161.0/24 Deny Generic
 Origin: GB
 185.198.36.0/23 Deny Generic
@@ -6910,8 +6911,8 @@ recaptcha:
 
 
 # ASN 24812 ("NPK Home-Net Ltd").
-# Stop Forum Spam (SFS) listings: 171.
-# Updated: 2019.03.20 / Checked: 2019.08.01
+# Stop Forum Spam (SFS) listings: 198.
+# Updated: 2019.03.20 / Checked: 2019.12.25
 
 176.105.192.0/19 Deny Spam
 Origin: UA
@@ -10737,6 +10738,37 @@ recaptcha:
  enabled: true
 
 
+# ASN 8220 ("COLT Technology Services Group Limited").
+# Major multiplay network with multiple ASNs. Those marked as "spam" due to
+# being able to cross-reference against spam databases (e.g., against SFS). Or,
+# those marked as "generic" due to directly logged unwanted traffic at user's
+# websites and/or honeypots. Everything else omitted to reduce false positives.
+# %Listed, Google Malware Dashboard: 0.13%.
+# Stop Forum Spam (SFS) listings: 1,844.
+# Updated: 2019.12.25
+
+212.23.250.46/32 Deny Spam
+Origin: CH
+213.61.130.232/32 Deny Spam
+213.61.215.0/24 Deny Spam
+217.111.233.0/24 Deny Generic
+Origin: DE
+62.97.80.28/32 Deny Spam
+213.27.224.114/32 Deny Spam
+Origin: ES
+62.23.225.70/32 Deny Spam
+62.84.196.157/32 Deny Spam
+213.41.75.116/32 Deny Spam
+213.86.5.211/32 Deny Spam
+213.208.246.198/32 Deny Spam
+Origin: GB
+62.152.116.57/32 Deny Spam
+213.215.135.82/32 Deny Spam
+213.215.152.222/32 Deny Spam
+Origin: IT
+Tag: COLT Technology SGL
+
+
 # ---
 # These CIDRs listed due to reported incidents of spam and/or spambots detected
 # at these specific ranges, which belong to ASNs which we hope to not block in
@@ -11341,6 +11373,30 @@ recaptcha:
 81.151.46.201/32 Deny Malware
 Origin: GB
 Tag: British Telecom PLC
+---
+recaptcha:
+ enabled: true
+
+
+# ASN 52465 ("WNet Internet y Hosting").
+# Argentine multiplay network (domestic ISP, webhosting, etc) caught spamming.
+# Updated: 2019.12.26
+
+161.0.72.11/32 Deny Spam
+168.121.39.18/32 Deny Spam
+200.229.252.22/32 Deny Spam
+Origin: AR
+Tag: WNet Internet y Hosting
+
+
+# ASN 53356 ("WestConnect Communications").
+# Canadian multiplay network (domestic ISP, webhosting, etc) caught spamming.
+# Stop Forum Spam (SFS) listings: 1,525.
+# Updated: 2019.12.27
+
+104.218.63.0/24 Deny Spam
+Origin: CA
+Tag: WestConnect
 ---
 recaptcha:
  enabled: true

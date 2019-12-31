@@ -54,6 +54,11 @@ Detailed version release guidelines for CIDRAM can be found at:
   mechanism to the codebase to aid with diagnosing bugs in the future (disabled
   by default; not configurable).
 
+- [2019.12.31; Bug-fix; Maikuolan]: Merged the code block for generating salts
+  into the code block for loading the reCAPTCHA module within the output
+  generator in order to avoid undefined index errors appearing.
+  Refer github.com/CIDRAM/CIDRAM/issues/161
+
 === Version/Release 1.15.1 ===
 PATCH RELEASE.
 

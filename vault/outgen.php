@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Output generator (last modified: 2019.09.24).
+ * This file: Output generator (last modified: 2019.12.31).
  */
 
 /** Initialise cache. */
@@ -151,39 +151,6 @@ if ($CIDRAM['Protect'] && !$CIDRAM['Config']['general']['maintenance_mode']) {
         $CIDRAM['BlockInfo']['SignatureCount']++;
     }
 
-}
-
-/**
- * Check whether we need the salt file (the salt file isn't necessary for core
- * functionality of the script, but may be used for some optional peripheral
- * functionality, such as the reCAPTCHA feature).
- */
-if (
-    !empty($CIDRAM['Config']['recaptcha']['sitekey']) &&
-    !empty($CIDRAM['Config']['recaptcha']['secret']) &&
-    file_exists($CIDRAM['Vault'] . 'recaptcha.php') &&
-    $CIDRAM['BlockInfo']['SignatureCount'] > 0 &&
-    $CIDRAM['BlockInfo']['SignatureCount'] <= $CIDRAM['Config']['recaptcha']['signature_limit'] && (
-        $CIDRAM['Config']['recaptcha']['usemode'] === 1 || (
-            $CIDRAM['Config']['recaptcha']['usemode'] === 2 &&
-            !empty($CIDRAM['Config']['recaptcha']['enabled'])
-        )
-    ) &&
-    $CIDRAM['Config']['recaptcha']['lockuser'] === true
-) {
-    /**
-     * Check whether the salt file exists; If it doesn't, generate a new salt
-     * and create the file. If it does, fetch it and extract its content for
-     * the script to use.
-     */
-    if (!file_exists($CIDRAM['Vault'] . 'salt.dat')) {
-        $CIDRAM['Salt'] = $CIDRAM['GenerateSalt']();
-        $CIDRAM['Handle'] = fopen($CIDRAM['Vault'] . 'salt.dat', 'w');
-        fwrite($CIDRAM['Handle'], $CIDRAM['Salt']);
-        fclose($CIDRAM['Handle']);
-    } else {
-        $CIDRAM['Salt'] = $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'salt.dat');
-    }
 }
 
 /** Define whether to track the IP of the current request. */
@@ -348,7 +315,6 @@ if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
         !empty($CIDRAM['Config']['recaptcha']['secret']) &&
         empty($CIDRAM['Banned']) &&
         file_exists($CIDRAM['Vault'] . 'recaptcha.php') &&
-        $CIDRAM['BlockInfo']['SignatureCount'] > 0 &&
         $CIDRAM['BlockInfo']['SignatureCount'] <= $CIDRAM['Config']['recaptcha']['signature_limit'] && (
             $CIDRAM['Config']['recaptcha']['usemode'] === 1 || (
                 $CIDRAM['Config']['recaptcha']['usemode'] === 2 &&
@@ -356,6 +322,21 @@ if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
             )
         )
     ) {
+
+        /**
+         * Check whether the salt file exists; If it doesn't, generate a new salt
+         * and create the file. If it does, fetch it and extract its content for
+         * the script to use.
+         */
+        if (!file_exists($CIDRAM['Vault'] . 'salt.dat')) {
+            $CIDRAM['Salt'] = $CIDRAM['GenerateSalt']();
+            $CIDRAM['Handle'] = fopen($CIDRAM['Vault'] . 'salt.dat', 'wb');
+            fwrite($CIDRAM['Handle'], $CIDRAM['Salt']);
+            fclose($CIDRAM['Handle']);
+        } else {
+            $CIDRAM['Salt'] = $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'salt.dat');
+        }
+
         /** Load the reCAPTCHA module. */
         require $CIDRAM['Vault'] . 'recaptcha.php';
     }
@@ -369,7 +350,6 @@ if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
 
     /** Unset our reCAPTCHA working data cleanly. */
     unset($CIDRAM['reCAPTCHA']);
-
 }
 
 /** Update statistics if necessary. */

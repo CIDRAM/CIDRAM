@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2019.12.27).
+ * This file: Front-end functions file (last modified: 2019.12.31).
  */
 
 /**
@@ -189,6 +189,7 @@ $CIDRAM['FECacheAdd'] = function (string &$Source, bool &$Rebuild, string $Entry
     /** Override if using a different preferred caching mechanism. */
     if ($CIDRAM['Cache']->Using && $CIDRAM['Cache']->Using !== 'FF') {
         $CIDRAM['Cache']->setEntry($Entry, $Data, $Expires - $CIDRAM['Now']);
+        $CIDRAM['CacheEntry-' . $Entry] = $Data;
         return;
     }
 
@@ -517,8 +518,8 @@ $CIDRAM['FetchComponentsLists'] = function (string $Base, array &$Arr) use (&$CI
     foreach ($Files as $ThisFile) {
         if (!empty($ThisFile) && preg_match('/\.(?:dat|inc|ya?ml)$/i', $ThisFile)) {
             $Data = $CIDRAM['ReadFile']($Base . $ThisFile);
-            if (substr($Data, 0, 4) === "---\n" && ($EoYAML = strpos($Data, "\n\n")) !== false) {
-                $CIDRAM['YAML']->process(substr($Data, 4, $EoYAML - 4), $Arr);
+            if ($Data = $CIDRAM['ExtractPage']($Data)) {
+                $CIDRAM['YAML']->process($Data, $Arr);
             }
         }
     }
@@ -1601,14 +1602,8 @@ $CIDRAM['UpdatesHandler-Update'] = function ($ID) use (&$CIDRAM) {
         );
         $UpdateFailed = false;
         if (
-            substr($CIDRAM['Components']['Meta'][$ThisTarget]['RemoteData'], 0, 4) === "---\n" &&
-            ($CIDRAM['Components']['EoYAML'] = strpos(
-                $CIDRAM['Components']['Meta'][$ThisTarget]['RemoteData'], "\n\n"
-            )) !== false &&
-            $CIDRAM['YAML']->process(
-                substr($CIDRAM['Components']['Meta'][$ThisTarget]['RemoteData'], 4, $CIDRAM['Components']['EoYAML'] - 4),
-                $CIDRAM['Components']['RemoteMeta']
-            ) &&
+            ($Meta = $CIDRAM['ExtractPage']($CIDRAM['Components']['Meta'][$ThisTarget]['RemoteData'])) &&
+            $CIDRAM['YAML']->process($Meta, $CIDRAM['Components']['RemoteMeta']) &&
             !empty($CIDRAM['Components']['RemoteMeta'][$ThisTarget]['Minimum Required']) &&
             !$CIDRAM['VersionCompare'](
                 $CIDRAM['ScriptVersion'],
@@ -2061,11 +2056,19 @@ $CIDRAM['UpdatesHandler-Repair'] = function ($ID) use (&$CIDRAM) {
         }
         $CIDRAM['FE']['state_msg'] .= '<code>' . $ThisTarget . '</code> – ';
         if (!isset($CIDRAM['Components']['RemoteMeta'], $CIDRAM['Components']['RemoteMeta'][$ThisTarget])) {
-            $CIDRAM['Components']['RemoteMeta'] = [];
+            if (!isset($CIDRAM['Components']['RemoteMeta'])) {
+                $CIDRAM['Components']['RemoteMeta'] = [];
+            }
+            $TempMeta = [];
             $RemoteData = '';
             $CIDRAM['FetchRemote-ContextFree']($RemoteData, $CIDRAM['Components']['Meta'][$ThisTarget]['Remote']);
-            if (substr($RemoteData, 0, 4) === "---\n" && ($EoYAML = strpos($RemoteData, "\n\n")) !== false) {
-                $CIDRAM['YAML']->process(substr($RemoteData, 4, $EoYAML - 4), $CIDRAM['Components']['RemoteMeta']);
+            if ($RemoteData = $CIDRAM['ExtractPage']($RemoteData)) {
+                $CIDRAM['YAML']->process($RemoteData, $TempMeta);
+            }
+            foreach ($TempMeta as $TempKey => $TempData) {
+                if (!isset($CIDRAM['Components']['RemoteMeta'][$TempKey])) {
+                    $CIDRAM['Components']['RemoteMeta'][$TempKey] = $TempData;
+                }
             }
         }
         if (isset(
@@ -3466,4 +3469,17 @@ $CIDRAM['SubtractCIDR'] = function (string $Minuend = '', string $Subtrahend = '
         }
     }
     return $Minuend;
+};
+
+/**
+ * Extract page beginning with delimiter from YAML data or an empty string.
+ *
+ * @param string $Data The YAML data.
+ * @return string The extracted YAML page or an empty string on failure.
+ */
+$CIDRAM['ExtractPage'] = function (string $Data = ''): string {
+    if (substr($Data, 0, 4) !== "---\n" || substr($Data, -1) !== "\n") {
+        return '';
+    }
+    return substr($Data, 4);
 };

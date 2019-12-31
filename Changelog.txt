@@ -47,6 +47,16 @@ Detailed version release guidelines for CIDRAM can be found at:
 
 - [2019.12.31; Maikuolan]: Updated channels.
 
+- [2019.12.31; Bug-fixes; Maikuolan]: Configuring the supplementary cache
+  options in a certain way, due to the way that the front-end updates page
+  interacted with the cache handler, could potentially cause the updater to
+  perform multiple, superfluous outbound requests during normal operation,
+  thereby causing it to lag out and generate server error messages; Fixed.
+  Since 2019.12.11, the updater would sometimes fail to correctly detect and
+  prepare newly found components from the upstream; Fixed. Also added a new
+  mechanism to the codebase to aid with diagnosing bugs in the future (disabled
+  by default; not configurable).
+
 === Version/Release 2.2.1 ===
 PATCH RELEASE.
 

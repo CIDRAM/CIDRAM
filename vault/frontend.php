@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2019.12.22).
+ * This file: Front-end handler (last modified: 2019.12.31).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -1654,20 +1654,23 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && ($CIDRAM['FE']['Per
             }
         } else {
             $CIDRAM['FetchRemote']();
-            if (
-                substr($CIDRAM['Components']['ThisComponent']['RemoteData'], 0, 4) === "---\n" &&
-                ($CIDRAM['Components']['EoYAML'] = strpos(
-                    $CIDRAM['Components']['ThisComponent']['RemoteData'], "\n\n"
-                )) !== false
-            ) {
+            if ($CIDRAM['Components']['ThisComponent']['RemoteData'] = $CIDRAM['ExtractPage'](
+                $CIDRAM['Components']['ThisComponent']['RemoteData']
+            )) {
 
                 /** Process remote components metadata. */
                 if (!isset($CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']])) {
-                    $CIDRAM['Components']['RemoteMeta'] = [];
+                    $CIDRAM['Components']['TempRemoteMeta'] = [];
                     $CIDRAM['YAML']->process(
-                        substr($CIDRAM['Components']['ThisComponent']['RemoteData'], 4, $CIDRAM['Components']['EoYAML'] - 4),
-                        $CIDRAM['Components']['RemoteMeta']
+                        $CIDRAM['Components']['ThisComponent']['RemoteData'],
+                        $CIDRAM['Components']['TempRemoteMeta']
                     );
+                    foreach ($CIDRAM['Components']['TempRemoteMeta'] as $CIDRAM['Components']['TempKey'] => $CIDRAM['Components']['TempData']) {
+                        if (!isset($CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['TempKey']])) {
+                            $CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['TempKey']] = $CIDRAM['Components']['TempData'];
+                        }
+                    }
+                    unset($CIDRAM['Components']['TempRemoteMeta'], $CIDRAM['Components']['TempData'], $CIDRAM['Components']['TempKey']);
                 }
 
                 if (isset($CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['Version'])) {
@@ -1967,11 +1970,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && ($CIDRAM['FE']['Per
                 $CIDRAM['Vault'] . $CIDRAM['Components']['ReannotateThis']
             );
         }
-        if (substr(
-            $CIDRAM['Components']['Remotes'][$CIDRAM['Components']['ReannotateThis']], -2
-        ) !== "\n\n" || substr(
-            $CIDRAM['Components']['Remotes'][$CIDRAM['Components']['ReannotateThis']], 0, 4
-        ) !== "---\n") {
+        if (!$CIDRAM['ExtractPage']($CIDRAM['Components']['Remotes'][$CIDRAM['Components']['ReannotateThis']])) {
             continue;
         }
         $CIDRAM['ThisOffset'] = [0 => []];
@@ -2067,7 +2066,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && ($CIDRAM['FE']['Per
 
     /** Write annotations for newly found component metadata. */
     array_walk($CIDRAM['Components']['Remotes'], function ($Remote, $Key) use (&$CIDRAM) {
-        if (substr($Remote, -2) !== "\n\n" || substr($Remote, 0, 4) !== "---\n") {
+        if (!$CIDRAM['ExtractPage']($Remote)) {
             return;
         }
         $CIDRAM['Updater-IO']->writeFile($CIDRAM['Vault'] . $Key, $Remote);

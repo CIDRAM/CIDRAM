@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Extended rules for AS6939 CIDRs (last modified: 2019.05.17).
+ * This file: Extended rules for AS6939 CIDRs (last modified: 2020.01.01).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -41,15 +41,9 @@ $CIDRAM['RunParamResCache']['rules_as6939.php'] = function (array $Factors = [],
         return;
     }
 
-    /** Access provider block bypass. */
-    if ($Factors[23] === '65.49.67.0/24') {
-        return;
-    }
-
-    /** Feedly/Feedspot bypass. */
+    /** Feedly bypass. */
     if (
         preg_match('/\.getpebble\.com$/i', $CIDRAM['BlockInfo']['UALC']) ||
-        strpos($CIDRAM['BlockInfo']['UA'], 'Feedspot http://www.feedspot.com') !== false ||
         strpos($CIDRAM['BlockInfo']['UA'], 'Feedly') !== false
     ) {
         return;
@@ -78,7 +72,6 @@ $CIDRAM['RunParamResCache']['rules_as6939.php'] = function (array $Factors = [],
     }
     $CIDRAM['BlockInfo']['Signatures'] .= $Factors[$FactorIndex];
     $CIDRAM['BlockInfo']['SignatureCount']++;
-
 };
 
 /** Execute object. */

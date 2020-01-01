@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Extended rules for some specific CIDRs (last modified: 2019.12.22).
+ * This file: Extended rules for some specific CIDRs (last modified: 2020.01.01).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -57,7 +57,6 @@ $CIDRAM['RunParamResCache']['rules_specific.php'] = function (array $Factors = [
 
         /** Exit. */
         return;
-
     }
 
     /** Skip further processing if the "block_cloud" directive is false, or if no section tag has been defined. */
@@ -67,14 +66,28 @@ $CIDRAM['RunParamResCache']['rules_specific.php'] = function (array $Factors = [
 
     /** Amazon AWS bypasses. */
     if ($Tag === 'Amazon.com, Inc') {
+
+        /**
+         * Feedspot bypass.
+         * See: https://udger.com/resources/ua-list/bot-detail?bot=Feedspotbot
+         */
+        if (
+            strpos($CIDRAM['BlockInfo']['UA'], '+https://www.feedspot.com/fs/fetcher') !== false &&
+            ($Factors[31] === '54.186.248.49/32' || $Factors[31] === '54.245.252.119/32')
+        ) {
+            return;
+        }
+
         /** DuckDuckGo bypass. */
         if (preg_match('~duckduck(?:go-favicons-)?bot~', $CIDRAM['BlockInfo']['UALC'])) {
             return;
         }
+
         /** Pinterest bypass. */
         if (strpos($CIDRAM['BlockInfo']['UALC'], 'pinterest') !== false) {
             return;
         }
+
         /** Embedly bypass. */
         if (strpos($CIDRAM['BlockInfo']['UALC'], 'embedly') !== false) {
             return;
@@ -87,8 +100,23 @@ $CIDRAM['RunParamResCache']['rules_specific.php'] = function (array $Factors = [
         return 2;
     }
 
-    /** Ensure that Jetpack isn't blocked via Automattic. */
-    if ($Tag === 'Automattic' && strpos($CIDRAM['BlockInfo']['UALC'], 'jetpack') !== false) {
+    /** Automattic bypasses. */
+    if ($Tag === 'Automattic') {
+
+        /** Feedbot bypass. */
+        if (strpos($CIDRAM['BlockInfo']['UALC'], 'wp.com feedbot/1.0 (+https://wp.com)') !== false) {
+            return;
+        }
+
+        /** Jetpack bypass. */
+        if (strpos($CIDRAM['BlockInfo']['UALC'], 'jetpack') !== false) {
+            return;
+        }
+    }
+
+    /** Disqus bypass. */
+    if ($Tag === 'SoftLayer' && strpos($CIDRAM['BlockInfo']['UALC'], 'disqus') !== false) {
+        $CIDRAM['Flag-Bypass-Bingbot-Check'] = true;
         return;
     }
 
@@ -102,7 +130,6 @@ $CIDRAM['RunParamResCache']['rules_specific.php'] = function (array $Factors = [
     }
     $CIDRAM['BlockInfo']['Signatures'] .= $Factors[$FactorIndex];
     $CIDRAM['BlockInfo']['SignatureCount']++;
-
 };
 
 /** Execute object. */

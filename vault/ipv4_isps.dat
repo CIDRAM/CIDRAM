@@ -1,8 +1,8 @@
 # IPv4 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv4_isps.dat
 
-# Version: 2019.360.653
-# Last modified: 2019.12.27
+# Version: 2020.0.325
+# Last modified: 2020.01.01
 
 
 # ---
@@ -1751,9 +1751,9 @@ Tag: 10dencehispahard
 # ^.*(Simcentric|DATAPLUGS\.COM|Ethr\.Net|CLOUD LIMITED|NETSEC|Hosting).*$\n
 # Confirmed data hosters split to the cloud services signature files.
 # Everything else remains in the ISPs signature files.
-# %Listed, Google Malware Dashboard: 2.02%.
-# Stop Forum Spam (SFS) listings: 9.
-# Updated: 2019.09.03
+# %Listed, Google Malware Dashboard: 3.11%.
+# Stop Forum Spam (SFS) listings: 16.
+# Updated: 2020.01.01
 
 103.42.104.0/22 Deny Generic
 103.71.144.0/23 Deny Generic
@@ -1763,8 +1763,6 @@ Tag: 10dencehispahard
 118.193.78.0/23 Deny Generic
 183.182.12.0/22 Deny Generic
 Origin: CN
-52.128.255.0/24 Deny Generic
-69.72.87.0/24 Deny Generic
 103.30.24.0/22 Deny Generic
 103.70.76.0/23 Deny Generic
 103.84.84.0/22 Deny Generic
@@ -1783,9 +1781,7 @@ Origin: CN
 137.59.20.0/22 Deny Generic
 139.5.200.0/22 Deny Generic
 141.193.152.0/21 Deny Generic
-148.66.0.0/24 Deny Generic
 175.41.16.0/20 Deny Generic
-182.16.126.0/23 Deny Generic
 202.59.249.0/24 Deny Generic
 202.61.97.0/24 Deny Generic
 202.61.111.0/24 Deny Generic
@@ -9802,47 +9798,6 @@ recaptcha:
  enabled: true
 
 
-# ASN 7922 ("Comcast Cable Communications, LLC").
-# This is a MAJOR provider of human access endpoints in the United States, and
-# should NEVER be blocked in entirety. However, occasionally there are some
-# specific IPs on their network emitting significant amounts of spam, which
-# warrants that this section be included in the signature files here.
-# %Listed, abuseat.org (CBL-Listed): 0.01%.
-# Stop Forum Spam (SFS) listings: 8,762.
-# Updated: 2019.10.05
-
-23.25.96.204/30 Deny Spam
-24.147.120.216/30 Deny Spam
-50.195.7.180/30 Deny Spam
-50.196.126.232/30 Deny Spam
-50.196.148.192/30 Deny Spam
-50.197.38.228/30 Deny Spam
-50.197.162.168/30 Deny Spam
-50.197.210.136/30 Deny Spam
-67.163.129.12/30 Deny Spam
-70.91.180.180/30 Deny Spam
-73.21.250.188/30 Deny Spam
-73.23.107.144/30 Deny Spam
-73.92.48.140/30 Deny Spam
-74.95.1.112/30 Deny Spam
-75.151.213.84/30 Deny Spam
-96.66.200.208/30 Deny Spam
-96.69.88.80/30 Deny Spam
-96.72.82.24/30 Deny Spam
-96.77.77.52/30 Deny Spam
-96.82.74.132/30 Deny Spam
-96.87.16.152/30 Deny Spam
-96.94.188.176/30 Deny Spam
-96.114.64.128/30 Deny Spam
-98.225.94.240/30 Deny Spam
-173.167.209.48/30 Deny Spam
-Origin: US
-Tag: Comcast Spam IPs
----
-recaptcha:
- enabled: true
-
-
 # ASN 56048 ("China Mobile Communicaitons Corporation").
 # Legit mobile ISP in China. Not including entire ASN here; Only some specific problematic, spammy CIDRs.
 # %Listed, Google Malware Dashboard: 0.19%.
@@ -10008,14 +9963,14 @@ recaptcha:
 
 # ASN 36351 ("SoftLayer Technologies").
 # Careful when updating; Signatures reflect varying block reasons, split across multiple files.
-# %Listed, Google Malware Dashboard: 0.07%.
-# Stop Forum Spam (SFS) listings: 8,068.
+# %Listed, Google Malware Dashboard: 0.13%.
+# Stop Forum Spam (SFS) listings: 8,161.
 
 # SoftLayer questionable multi-play networks, spammy ISPs, etc.
 # Includes: Anything citing "Consumer Pool", "Starry".
 # ^(.*(Consumer Pool|Starry).*)$
 # Excludes: Everything else.
-# Updated: 2019.12.14
+# Updated: 2020.01.01
 
 31.14.72.0/23 Deny Spam
 31.14.74.0/24 Deny Spam
@@ -10033,6 +9988,8 @@ Origin: GB
 103.204.174.0/24 Deny Spam
 122.128.96.0/23 Deny Spam
 Origin: HK
+196.52.96.0/24 Deny Spam
+Origin: ZA
 Tag: SoftLayer Spam ISPs
 
 
@@ -11397,6 +11354,375 @@ Tag: WNet Internet y Hosting
 104.218.63.0/24 Deny Spam
 Origin: CA
 Tag: WestConnect
+---
+recaptcha:
+ enabled: true
+
+
+# ASN 7922 ("Comcast Cable Communications, LLC").
+# Major domestic ISP in the United States; Should NEVER be blocked in entirety.
+# Listed here are some specific CIDRs/IPs on their network that pose a major
+# spam risk and/or are known sources of spam and/or other undesirable traffic.
+# %Listed, Google Malware Dashboard: 0.08%.
+# %Listed, abuseat.org (CBL-Listed): 0.02%.
+# Stop Forum Spam (SFS) listings: 7,777.
+# Updated: 2020.01.01
+
+50.192.49.195/32 Deny Spam
+50.196.148.195/32 Deny Spam
+50.197.162.169/32 Deny Spam
+50.197.210.138/32 Deny Spam
+50.199.46.20/32 Deny Spam
+69.254.185.16/32 Deny Spam
+71.229.198.169/32 Deny Spam
+73.23.107.144/32 Deny Spam
+75.151.213.85/32 Deny Spam
+76.97.71.132/32 Deny Spam
+96.66.15.147/32 Deny Spam
+96.66.200.209/32 Deny Spam
+96.67.104.65/32 Deny Spam
+96.77.77.53/32 Deny Spam
+96.82.74.134/32 Deny Spam
+96.87.184.101/32 Deny Spam
+98.225.94.241/32 Deny Spam
+98.232.177.158/32 Deny Spam
+Origin: US
+Tag: Comcast Spam IPs
+---
+recaptcha:
+ enabled: true
+
+
+# ASN 23693 ("PT. Telekomunikasi Selular").
+# Indonesian domestic ISP and a source of spam. Just listing the specific
+# spammy IPs (not the entire network).
+# %Listed, abuseat.org (CBL-Listed): 0.73%.
+# Stop Forum Spam (SFS) listings: 636.
+# Updated: 2020.01.01
+
+114.122.105.170/32 Deny Spam
+114.124.247.100/32 Deny Spam
+114.125.127.88/32 Deny Spam
+114.125.228.147/32 Deny Spam
+114.125.237.233/32 Deny Spam
+114.125.245.113/32 Deny Spam
+114.125.253.254/32 Deny Spam
+182.0.169.115/32 Deny Spam
+182.1.28.236/32 Deny Spam
+182.1.64.40/32 Deny Spam
+182.1.73.72/32 Deny Spam
+182.1.82.72/32 Deny Spam
+182.1.90.251/32 Deny Spam
+182.1.92.117/32 Deny Spam
+182.1.99.115/32 Deny Spam
+182.1.107.124/32 Deny Spam
+182.1.109.15/32 Deny Spam
+182.1.118.40/32 Deny Spam
+Origin: ID
+Tag: Telekomunikasi Selular
+---
+recaptcha:
+ enabled: true
+
+
+# ASN 27699 ("TELEFNICA BRASIL S.A").
+# Brazilian domestic ISP and a source of spam. Just listing the specific
+# spammy IPs (not the entire network).
+# %Listed, abuseat.org (CBL-Listed): 1.35%.
+# Stop Forum Spam (SFS) listings: 1,508.
+# Updated: 2020.01.01
+
+177.68.143.100/32 Deny Spam
+177.68.255.48/32 Deny Spam
+177.94.206.67/32 Deny Spam
+177.94.212.215/32 Deny Spam
+177.94.225.236/32 Deny Spam
+177.94.243.188/32 Deny Spam
+177.94.246.200/32 Deny Spam
+177.103.223.147/32 Deny Spam
+177.103.231.6/32 Deny Spam
+177.103.231.211/32 Deny Spam
+177.139.130.157/32 Deny Spam
+177.139.169.206/32 Deny Spam
+177.188.71.144/32 Deny Spam
+187.34.201.61/32 Deny Spam
+187.74.253.10/32 Deny Spam
+189.18.0.53/32 Deny Spam
+189.18.225.15/32 Deny Spam
+189.19.55.54/32 Deny Spam
+189.46.161.80/32 Deny Spam
+189.110.148.21/32 Deny Spam
+191.205.207.233/32 Deny Spam
+191.205.250.244/32 Deny Spam
+191.209.21.52/32 Deny Spam
+191.209.114.90/32 Deny Spam
+191.255.207.231/32 Deny Spam
+200.148.25.132/32 Deny Spam
+200.153.145.165/32 Deny Spam
+201.68.17.222/32 Deny Spam
+Origin: BR
+Tag: TELEFNICA BRASIL S.A
+---
+recaptcha:
+ enabled: true
+
+
+# ASN 36903 ("Office National des Postes et Telecommunications ONPT (Maroc Telecom) / IAM").
+# Moroccan domestic ISP and a source of spam. Just listing the specific spammy
+# IPs (not the entire network).
+# %Listed, abuseat.org (CBL-Listed): 6.13%.
+# Stop Forum Spam (SFS) listings: 1,289.
+# Updated: 2020.01.01
+
+41.141.37.33/32 Deny Spam
+41.141.50.221/32 Deny Spam
+41.141.185.53/32 Deny Spam
+41.143.30.228/32 Deny Spam
+41.249.243.35/32 Deny Spam
+41.250.149.44/32 Deny Spam
+41.251.8.40/32 Deny Spam
+41.251.61.16/32 Deny Spam
+105.154.86.68/32 Deny Spam
+105.156.2.48/32 Deny Spam
+105.156.228.147/32 Deny Spam
+105.156.249.217/32 Deny Spam
+105.158.9.61/32 Deny Spam
+105.158.141.40/32 Deny Spam
+160.176.86.148/32 Deny Spam
+160.176.211.157/32 Deny Spam
+160.177.233.99/32 Deny Spam
+160.178.117.243/32 Deny Spam
+160.179.69.208/32 Deny Spam
+196.64.45.143/32 Deny Spam
+196.64.94.65/32 Deny Spam
+196.64.126.203/32 Deny Spam
+196.64.175.67/32 Deny Spam
+Origin: MA
+Tag: Maroc Telecom
+---
+recaptcha:
+ enabled: true
+
+
+# ASN 47331 ("TTNet A.S").
+# Turkish domestic ISP and a source of spam. Just listing the specific spammy
+# IPs (not the entire network).
+# %Listed, abuseat.org (CBL-Listed): 1.84%.
+# Stop Forum Spam (SFS) listings: 3,200.
+# Updated: 2020.01.01
+
+78.180.14.174/32 Deny Spam
+78.183.120.146/32 Deny Spam
+78.186.216.216/32 Deny Spam
+78.189.141.211/32 Deny Spam
+78.189.203.182/32 Deny Spam
+78.190.70.239/32 Deny Spam
+78.190.179.75/32 Deny Spam
+78.190.180.178/32 Deny Spam
+78.190.182.218/32 Deny Spam
+81.214.162.40/32 Deny Spam
+81.214.248.67/32 Deny Spam
+85.105.34.128/32 Deny Spam
+85.107.80.31/32 Deny Spam
+85.107.179.238/32 Deny Spam
+88.225.223.147/32 Deny Spam
+88.227.57.24/32 Deny Spam
+88.229.205.208/32 Deny Spam
+88.237.135.116/32 Deny Spam
+88.241.33.160/32 Deny Spam
+88.246.74.59/32 Deny Spam
+88.247.9.171/32 Deny Spam
+88.247.31.189/32 Deny Spam
+88.247.55.226/32 Deny Spam
+88.248.23.216/32 Deny Spam
+88.248.55.136/32 Deny Spam
+88.250.250.47/32 Deny Spam
+88.253.72.43/32 Deny Spam
+95.9.113.12/32 Deny Spam
+Origin: TR
+Tag: TTNet A.S
+---
+recaptcha:
+ enabled: true
+
+
+# ASN 4766 ("Korea Telecom").
+# Korean domestic ISP and a source of spam. Just listing the specific spammy
+# IPs (not the entire network).
+# %Listed, Google Malware Dashboard: 0.12%.
+# %Listed, abuseat.org (CBL-Listed): 0.15%.
+# Stop Forum Spam (SFS) listings: 1,756.
+# Updated: 2020.01.01
+
+14.32.17.171/32 Deny Spam
+14.33.1.60/32 Deny Spam
+49.254.115.190/32 Deny Spam
+49.254.238.162/32 Deny Spam
+115.144.34.204/32 Deny Spam
+119.192.179.46/32 Deny Spam
+121.126.51.140/32 Deny Spam
+121.126.114.48/32 Deny Spam
+124.198.48.125/32 Deny Spam
+183.78.144.194/32 Deny Spam
+183.78.156.76/32 Deny Spam
+202.126.113.220/32 Deny Spam
+210.217.18.76/32 Deny Spam
+211.38.35.167/32 Deny Spam
+211.43.14.78/32 Deny Spam
+211.48.109.78/32 Deny Spam
+211.56.98.146/32 Deny Spam
+211.216.171.6/32 Deny Spam
+211.216.233.156/32 Deny Spam
+222.96.237.2/32 Deny Spam
+Origin: KR
+Tag: Korea Telecom
+---
+recaptcha:
+ enabled: true
+
+
+# ASN 8048 ("CANTV Servicios, Venezuela").
+# Venezuelan domestic ISP and a source of spam. Just listing the specific
+# spammy IPs (not the entire network).
+# %Listed, Google Malware Dashboard: 0.12%.
+# %Listed, abuseat.org (CBL-Listed): 3.23%.
+# Stop Forum Spam (SFS) listings: 1,652.
+# Updated: 2020.01.01
+
+186.91.127.35/32 Deny Spam
+186.95.37.24/32 Deny Spam
+186.95.242.103/32 Deny Spam
+190.36.103.27/32 Deny Spam
+190.36.118.166/32 Deny Spam
+190.38.140.115/32 Deny Spam
+190.72.187.120/32 Deny Spam
+190.74.173.37/32 Deny Spam
+190.75.69.94/32 Deny Spam
+190.78.255.43/32 Deny Spam
+190.79.123.235/32 Deny Spam
+190.79.204.68/32 Deny Spam
+190.200.57.122/32 Deny Spam
+190.201.179.55/32 Deny Spam
+190.202.18.126/32 Deny Spam
+190.202.247.206/32 Deny Spam
+190.205.98.150/32 Deny Spam
+190.206.109.22/32 Deny Spam
+200.84.125.50/32 Deny Spam
+200.93.17.169/32 Deny Spam
+200.109.108.137/32 Deny Spam
+201.210.30.92/32 Deny Spam
+201.211.67.142/32 Deny Spam
+201.243.236.124/32 Deny Spam
+201.249.29.60/32 Deny Spam
+201.249.66.106/32 Deny Spam
+201.249.103.244/32 Deny Spam
+Origin: VE
+Tag: CANTV Servicios
+---
+recaptcha:
+ enabled: true
+
+
+# ASN 8151 ("Uninet S.A. de C.V").
+# Mexican domestic ISP and a source of spam. Just listing the specific spammy
+# IPs (not the entire network).
+# %Listed, Google Malware Dashboard: 0.13%.
+# %Listed, abuseat.org (CBL-Listed): 0.56%.
+# Stop Forum Spam (SFS) listings: 1,591.
+# Updated: 2020.01.01
+
+148.217.94.54/32 Deny Spam
+187.130.139.197/32 Deny Spam
+187.141.164.242/32 Deny Spam
+187.148.206.24/32 Deny Spam
+187.149.108.220/32 Deny Spam
+187.170.158.149/32 Deny Spam
+187.208.142.74/32 Deny Spam
+187.216.73.18/32 Deny Spam
+187.216.83.178/32 Deny Spam
+187.216.90.46/32 Deny Spam
+187.237.103.210/32 Deny Spam
+187.237.117.227/32 Deny Spam
+187.237.164.212/32 Deny Spam
+189.140.3.134/32 Deny Spam
+189.143.229.28/32 Deny Spam
+189.145.88.221/32 Deny Spam
+189.166.145.133/32 Deny Spam
+189.171.3.149/32 Deny Spam
+189.171.5.82/32 Deny Spam
+189.171.57.127/32 Deny Spam
+189.174.70.70/32 Deny Spam
+189.252.205.48/32 Deny Spam
+189.253.27.31/32 Deny Spam
+189.253.214.58/32 Deny Spam
+201.103.29.56/32 Deny Spam
+201.103.39.161/32 Deny Spam
+201.108.77.155/32 Deny Spam
+201.110.246.10/32 Deny Spam
+201.138.18.163/32 Deny Spam
+201.138.46.29/32 Deny Spam
+201.144.210.221/32 Deny Spam
+201.170.145.247/32 Deny Spam
+Origin: MX
+Tag: Uninet
+---
+recaptcha:
+ enabled: true
+
+
+# ASN 9299 ("Philippine Long Distance Telephone Company").
+# Domestic ISP from the Philippines and a source of spam. Just listing the
+# specific spammy IPs (not the entire network).
+# %Listed, abuseat.org (CBL-Listed): 1.39%.
+# Stop Forum Spam (SFS) listings: 3,966.
+# Updated: 2020.01.01
+
+49.144.68.0/24 Deny Spam
+49.144.235.213/32 Deny Spam
+49.145.166.243/32 Deny Spam
+49.145.177.159/32 Deny Spam
+49.145.183.204/32 Deny Spam
+49.145.197.163/32 Deny Spam
+49.145.224.242/32 Deny Spam
+49.145.227.140/32 Deny Spam
+49.145.228.58/32 Deny Spam
+49.145.235.46/32 Deny Spam
+49.145.237.158/32 Deny Spam
+49.146.0.97/32 Deny Spam
+49.147.119.79/32 Deny Spam
+49.147.181.10/32 Deny Spam
+49.150.32.244/32 Deny Spam
+49.150.97.32/32 Deny Spam
+49.150.162.237/32 Deny Spam
+49.150.180.209/32 Deny Spam
+49.150.213.199/32 Deny Spam
+49.150.229.191/32 Deny Spam
+49.150.241.222/32 Deny Spam
+49.151.234.181/32 Deny Spam
+112.200.93.26/32 Deny Spam
+112.200.101.220/32 Deny Spam
+112.200.239.127/32 Deny Spam
+112.203.60.239/32 Deny Spam
+112.205.228.213/32 Deny Spam
+112.206.37.6/32 Deny Spam
+112.206.45.225/32 Deny Spam
+112.211.131.95/32 Deny Spam
+112.211.252.43/32 Deny Spam
+119.92.83.38/32 Deny Spam
+119.92.124.242/32 Deny Spam
+119.92.185.134/32 Deny Spam
+119.95.232.195/32 Deny Spam
+122.3.29.225/32 Deny Spam
+122.3.45.101/32 Deny Spam
+122.3.255.114/32 Deny Spam
+122.52.233.104/32 Deny Spam
+122.54.20.220/32 Deny Spam
+124.104.221.11/32 Deny Spam
+124.105.55.176/32 Deny Spam
+210.5.86.219/32 Deny Spam
+210.5.106.202/32 Deny Spam
+Origin: PH
+Tag: Philippine Long Distance
 ---
 recaptcha:
  enabled: true

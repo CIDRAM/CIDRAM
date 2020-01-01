@@ -1,8 +1,8 @@
 # IPv4 signatures file (CIDRs for proxies, VPNs and other miscellaneous unwanted services).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv4_other.dat
 
-# Version: 2019.348.423
-# Last modified: 2019.12.15
+# Version: 2020.0.325
+# Last modified: 2020.01.01
 
 
 # ---
@@ -213,14 +213,14 @@ recaptcha:
 
 # ASN 36351 ("SoftLayer Technologies").
 # Careful when updating; Signatures reflect varying block reasons, split across multiple files.
-# %Listed, Google Malware Dashboard: 0.07%.
-# Stop Forum Spam (SFS) listings: 8,068.
+# %Listed, Google Malware Dashboard: 0.13%.
+# Stop Forum Spam (SFS) listings: 8,161.
 
 # SoftLayer VPNs and proxies.
 # Includes: Anything citing "TEFINCOM", "Packet Flip", "VPN", "proxy", "Privat Kommunikation", "Secure Internet".
 # ^(.*(TEFINCOM|Packet Flip|VPN|Proxy|Privat Kommunikation|Secure Internet).*)$
 # Excludes: Everything else.
-# Updated: 2019.12.14
+# Updated: 2020.01.01
 
 185.99.135.0/24 Deny Proxy
 Origin: BY
@@ -232,7 +232,8 @@ Origin: DE
 46.244.28.0/24 Deny Proxy
 85.203.23.0/24 Deny Proxy
 Origin: NL
-103.86.96.0/22 Deny Proxy
+103.86.96.0/23 Deny Proxy
+103.86.98.0/24 Deny Proxy
 Origin: PA
 192.121.245.0/24 Deny Proxy
 193.183.216.0/24 Deny Proxy
@@ -288,6 +289,8 @@ Origin: SE
 173.244.55.0/24 Deny Proxy
 192.253.242.0/24 Deny Proxy
 Origin: US
+196.52.96.0/24 Deny Proxy
+Origin: ZA
 Tag: SoftLayer VPNs
 
 

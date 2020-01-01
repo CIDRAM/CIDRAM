@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_isps.dat
 
-# Version: 2019.360.653
-# Last modified: 2019.12.27
+# Version: 2020.0.325
+# Last modified: 2020.01.01
 
 
 # ---
@@ -1854,23 +1854,6 @@ recaptcha:
  enabled: true
 
 
-# ASN 7922 ("Comcast Cable Communications, LLC").
-# This is a MAJOR provider of human access endpoints in the United States, and
-# should NEVER be blocked in entirety. However, occasionally there are some
-# specific IPs on their network emitting significant amounts of spam, which
-# warrants that this section be included in the signature files here.
-# %Listed, abuseat.org (CBL-Listed): 0.01%.
-# Stop Forum Spam (SFS) listings: 8,762.
-# Updated: 2019.10.05
-
-2601:199:77f:f34e::/64 Deny Spam
-Origin: US
-Tag: Comcast Spam IPs
----
-recaptcha:
- enabled: true
-
-
 # ASN 8708 ("RCS & RDS SA").
 # %Listed, Google Malware Dashboard: 0.27%.
 # %Listed, abuseat.org (CBL-Listed): 0.60%.
@@ -1887,14 +1870,14 @@ recaptcha:
 
 # ASN 36351 ("SoftLayer Technologies").
 # Careful when updating; Signatures reflect varying block reasons, split across multiple files.
-# %Listed, Google Malware Dashboard: 0.07%.
-# Stop Forum Spam (SFS) listings: 8,068.
+# %Listed, Google Malware Dashboard: 0.13%.
+# Stop Forum Spam (SFS) listings: 8,161.
 
 # SoftLayer questionable multi-play networks, spammy ISPs, etc.
 # Includes: Anything citing "Consumer Pool", "Starry".
 # ^(.*(Consumer Pool|Starry).*)$
 # Excludes: Everything else.
-# Updated: 2018.06.24 / Checked: 2019.12.14
+# Updated: 2018.06.24 / Checked: 2020.01.01
 
 2403:ad80:10::/48 Deny Spam
 2403:ad80:20::/48 Deny Spam
@@ -2027,6 +2010,24 @@ recaptcha:
 2a00:1370::/32 Deny Spam
 Origin: RU
 Tag: PJSC Moscow city
+---
+recaptcha:
+ enabled: true
+
+
+# ASN 7922 ("Comcast Cable Communications, LLC").
+# Major domestic ISP in the United States; Should NEVER be blocked in entirety.
+# Listed here are some specific CIDRs/IPs on their network that pose a major
+# spam risk and/or are known sources of spam and/or other undesirable traffic.
+# %Listed, Google Malware Dashboard: 0.08%.
+# %Listed, abuseat.org (CBL-Listed): 0.02%.
+# Stop Forum Spam (SFS) listings: 7,777.
+# Updated: 2020.01.01
+
+2601:2c0:4400:6410::/64 Deny Spam
+2601:2c7:8400:26a::/64 Deny Spam
+Origin: US
+Tag: Comcast Spam IPs
 ---
 recaptcha:
  enabled: true

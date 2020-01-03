@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_isps.dat
 
-# Version: 2020.0.325
-# Last modified: 2020.01.01
+# Version: 2020.2.306
+# Last modified: 2020.01.03
 
 
 # ---
@@ -1732,6 +1732,35 @@ recaptcha:
 2a02:22a8::/32 Deny Generic
 Origin: RU
 Tag: is74.ru
+---
+recaptcha:
+ enabled: true
+
+
+# ASN 174 ("Cogent Communications").
+
+# We've experienced a significant amount of unwanted traffic from their ASN in
+# the past (hack attempts, spamming, scraping, etc), and this type of traffic
+# should generally be blocked, but their ASN unfortunately encompasses and
+# interlaces with a significant number of benign human endpoints, ISPs,
+# backbone architecture, etc that we don't want to block, so I'm not outright
+# listing the ASN in entirety. Listings have also been split across different
+# signature files as to list at the signature files where best suited.
+
+# Cogent Communications' Wikipedia page:
+# - en.wikipedia.org/wiki/Cogent_Communications
+# See also:
+# - bgpmon.net/large-scale-bgp-hijack-out-of-india/
+# - forums.spybot.info/showthread.php?23632-SPAM-frauds-fakes-and-other-MALWARE-deliveries/page37
+# - dyn.com/blog/mitm-internet-hijacking/
+
+# Unfiltered + unmonitored ISP (i.e., has human endpoints) which is also a
+# significant source of spam (valids/invalids included alike).
+
+# Updated: 2020.01.03
+2602:ffb1:60::/48 Deny Spam
+Origin: CA
+Tag: UnmeteredInternet.com
 ---
 recaptcha:
  enabled: true

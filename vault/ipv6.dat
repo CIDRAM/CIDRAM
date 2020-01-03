@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6.dat
 
-# Version: 2020.0.325
-# Last modified: 2020.01.01
+# Version: 2020.2.306
+# Last modified: 2020.01.03
 
 
 # ---
@@ -847,9 +847,9 @@ Tag: Eonix Corporation
 
 
 # ASNs 32748, 46440 ("Steadfast Networks").
-# %Listed, Google Malware Dashboard: 0.41% (AS32748).
-# Stop Forum Spam (SFS) listings: 230 (AS32748).
-# Updated: 2018.10.05 / Checked: 2019.08.13
+# %Listed, Google Malware Dashboard: 0.51% (AS32748).
+# Stop Forum Spam (SFS) listings: 162 (AS32748).
+# Updated: 2018.10.05 / Checked: 2020.01.03
 
 2602:ffbb::/36 Deny Cloud
 2607:6980:13f0::/44 Deny Cloud
@@ -1336,9 +1336,9 @@ Tag: Psychz Networks
 
 
 # ASN 36114 ("Versaweb, LLC").
-# %Listed, Google Malware Dashboard: 0.03%.
-# Stop Forum Spam (SFS) listings: 190.
-# Updated: 2016.01.23 / Checked: 2019.08.13
+# %Listed, Google Malware Dashboard: 0.09%.
+# Stop Forum Spam (SFS) listings: 193.
+# Updated: 2016.01.23 / Checked: 2020.01.03
 
 2605:6f80::/40 Deny Cloud
 Origin: US
@@ -1578,21 +1578,24 @@ Tag: EGIHosting
 
 # ASN 174 ("Cogent Communications").
 
-# Myself and others have seen and experienced a significant amount of unwanted traffic from their ASN in the past (hack
-# attempts, spamming, scraping, etc), and generally, this type of traffic should be blocked, but unfortunately, their
-# ASN encompasses and interlaces significantly with with a number of benign, innocent ISPs, human endpoint, backbone
-# architecture, etc that we don't want to block. Therefore, I'm splitting this up into multiple sections across
-# multiple signature files accordingly.
+# We've experienced a significant amount of unwanted traffic from their ASN in
+# the past (hack attempts, spamming, scraping, etc), and this type of traffic
+# should generally be blocked, but their ASN unfortunately encompasses and
+# interlaces with a significant number of benign human endpoints, ISPs,
+# backbone architecture, etc that we don't want to block, so I'm not outright
+# listing the ASN in entirety. Listings have also been split across different
+# signature files as to list at the signature files where best suited.
 
-# Wikipedia page about Cogent Communications: en.wikipedia.org/wiki/Cogent_Communications
-# Refer bgpmon.net/large-scale-bgp-hijack-out-of-india/
-# Refer forums.spybot.info/showthread.php?23632-SPAM-frauds-fakes-and-other-MALWARE-deliveries/page37
-# Refer dyn.com/blog/mitm-internet-hijacking/
+# Cogent Communications' Wikipedia page:
+# - en.wikipedia.org/wiki/Cogent_Communications
+# See also:
+# - bgpmon.net/large-scale-bgp-hijack-out-of-india/
+# - forums.spybot.info/showthread.php?23632-SPAM-frauds-fakes-and-other-MALWARE-deliveries/page37
+# - dyn.com/blog/mitm-internet-hijacking/
 
-# When updating: Remove invalids to reduce false positive risk.
+# Announces with "Hosting", "Host", "Server" (exclude invalids to reduce the false positive risk).
 
-# Announces with "Hosting", "Host", "Server"
-# Updated: 2019.11.02
+# Updated: 2020.01.03
 2602:ffb6::/36 Deny Cloud
 Origin: CA
 2001:978:2309::/48 Deny Cloud
@@ -1605,16 +1608,28 @@ Origin: DE
 Origin: NL
 2001:49f0:2920::/48 Deny Cloud
 2001:49f0:a000::/36 Deny Cloud
-2001:49f0:d000::/44 Deny Cloud
+2001:49f0:d001::/48 Deny Cloud
+2001:49f0:d002::/47 Deny Cloud
+2001:49f0:d004::/46 Deny Cloud
+2001:49f0:d008::/47 Deny Cloud
+2001:49f0:d00a::/48 Deny Cloud
+2001:49f0:d00c::/47 Deny Cloud
+2001:49f0:d00e::/48 Deny Cloud
 2001:49f0:d010::/45 Deny Cloud
 2001:49f0:d018::/48 Deny Cloud
 2001:49f0:d01a::/47 Deny Cloud
 2001:49f0:d01c::/46 Deny Cloud
-2001:49f0:d020::/44 Deny Cloud
+2001:49f0:d020::/48 Deny Cloud
+2001:49f0:d022::/47 Deny Cloud
+2001:49f0:d024::/46 Deny Cloud
+2001:49f0:d028::/45 Deny Cloud
 2001:49f0:d030::/46 Deny Cloud
 2001:49f0:d034::/47 Deny Cloud
 2001:49f0:d03f::/48 Deny Cloud
-2001:49f0:d040::/44 Deny Cloud
+2001:49f0:d040::/45 Deny Cloud
+2001:49f0:d048::/47 Deny Cloud
+2001:49f0:d04a::/48 Deny Cloud
+2001:49f0:d04c::/46 Deny Cloud
 2001:49f0:d050::/46 Deny Cloud
 2001:49f0:d054::/47 Deny Cloud
 2001:49f0:d057::/48 Deny Cloud
@@ -1626,7 +1641,6 @@ Origin: NL
 2001:49f0:d08c::/46 Deny Cloud
 2001:49f0:d090::/45 Deny Cloud
 2001:49f0:d098::/49 Deny Cloud
-2001:49f0:d099::/49 Deny Cloud
 2001:49f0:d09a::/48 Deny Cloud
 2001:49f0:d09c::/47 Deny Cloud
 2001:49f0:d09e::/48 Deny Cloud
@@ -1636,6 +1650,8 @@ Origin: NL
 2001:49f0:d0a6::/47 Deny Cloud
 2001:49f0:d0a8::/46 Deny Cloud
 2001:49f0:d0ac::/47 Deny Cloud
+2001:49f0:d0ae::/48 Deny Cloud
+2001:49f0:d0b4::/48 Deny Cloud
 2001:49f0:d0b8::/47 Deny Cloud
 2001:49f0:d0bf::/48 Deny Cloud
 2001:49f0:d0d4::/48 Deny Cloud
@@ -3606,9 +3622,9 @@ Tag: DataWeb Global
 
 
 # ASN 44112 ("SpaceWeb Ltd").
-# %Listed, Google Malware Dashboard: 0.16%.
+# %Listed, Google Malware Dashboard: 0.19%.
 # Stop Forum Spam (SFS) listings: 2.
-# Updated: 2016.04.29 / Checked: 2019.09.06
+# Updated: 2016.04.29 / Checked: 2020.01.03
 
 2a02:408:7722::/48 Deny Cloud
 Origin: RU
@@ -4029,16 +4045,15 @@ Tag: Hosting Services Inc
 
 
 # ASNs 48337, 63949 ("Linode, LLC").
-# Stop Forum Spam (SFS) listings: 4,701 (AS63949).
-# Updated: 2019.04.21 / Checked: 2019.09.08
+# %Listed, Google Malware Dashboard: 0.13% (AS63949).
+# Stop Forum Spam (SFS) listings: 3,803 (AS63949).
+# Updated: 2020.01.03
 
 2a01:7e00::/31 Deny Cloud
 Origin: GB
 2400:8901::/32 Deny Cloud
-Origin: SG
 2400:8902::/31 Deny Cloud
-2400:8904::/31 Deny Cloud
-2400:8906::/32 Deny Cloud
+2400:8904::/30 Deny Cloud
 2600:3c00::/30 Deny Cloud
 2600:3c04::/32 Deny Cloud
 Origin: US
@@ -4702,7 +4717,7 @@ Tag: Mainstream doo
 
 
 # ASNs 3595, 13354, 14313, 16626, 27325, 32952 ("zColo").
-# Updated: 2019.04.21 / Checked: 2019.09.08
+# Updated: 2019.04.21 / Checked: 2020.01.03
 
 2604:9100:1001::/48 Deny Cloud
 2606:4300:1::/48 Deny Cloud
@@ -4959,12 +4974,13 @@ Tag: Green House Data
 
 
 # ASN 20021 ("HostMySite").
-# 100% hosting provider (generally considered safe to block), but may interfere with uptime monitoring service
-# "InternetSeer.com". Users of this service should probably set an "ignore" rule for this signature section. I won't be
-# mainlining a bypass for them though due to abuse reports from some users.
+# 100% hosting provider (generally considered safe to block), but may interfere
+# with uptime monitoring service "InternetSeer.com". Users of this service
+# should list this section in their ignore.dat file. I won't be mainlining a
+# bypass for them though due to abuse reports from some users.
 # %Listed, Google Malware Dashboard: 0.10%.
-# Stop Forum Spam (SFS) listings: 3.
-# Updated: 2018.08.05 / Checked: 2019.08.18
+# Stop Forum Spam (SFS) listings: 2.
+# Updated: 2018.08.05 / Checked: 2020.01.03
 
 2600:1300::/32 Deny Cloud
 2600:1304::/32 Deny Cloud
@@ -5783,9 +5799,9 @@ Tag: Master Internet
 
 
 # ASN 200651 ("Flokinet Ltd").
-# %Listed, Google Malware Dashboard: 0.99%.
-# Stop Forum Spam (SFS) listings: 19,019.
-# Updated: 2018.06.25 / Checked: 2019.09.08
+# %Listed, Google Malware Dashboard: 1.56%.
+# Stop Forum Spam (SFS) listings: 13,652.
+# Updated: 2018.06.25 / Checked: 2020.01.03
 
 2a06:1700::/47 Deny Cloud
 2a06:1700:2::/48 Deny Cloud
@@ -6142,8 +6158,8 @@ Tag: CLOUD STAR
 
 
 # ASN 14987 ("Rethem Hosting LLC").
-# Caught spamming.
-# Updated: 2019.03.30 / Checked: 2019.08.11
+# Dedicated webhosting provider and an occasional source of spam.
+# Updated: 2019.03.30 / Checked: 2020.01.02
 
 2001:550:101::/48 Deny Cloud
 2607:8500::/32 Deny Cloud

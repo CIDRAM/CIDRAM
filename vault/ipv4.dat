@@ -1,8 +1,8 @@
 # IPv4 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv4.dat
 
-# Version: 2020.0.325
-# Last modified: 2020.01.01
+# Version: 2020.2.306
+# Last modified: 2020.01.03
 
 
 # ---
@@ -3822,9 +3822,9 @@ Tag: Eonix Corporation
 
 
 # ASNs 32748, 46440 ("Steadfast Networks").
-# %Listed, Google Malware Dashboard: 0.41% (AS32748).
-# Stop Forum Spam (SFS) listings: 230 (AS32748).
-# Updated: 2019.03.30 / Checked: 2019.08.13
+# %Listed, Google Malware Dashboard: 0.51% (AS32748).
+# Stop Forum Spam (SFS) listings: 162 (AS32748).
+# Updated: 2020.01.03
 
 23.29.128.0/19 Deny Cloud
 50.31.0.0/17 Deny Cloud
@@ -3833,7 +3833,6 @@ Tag: Eonix Corporation
 69.162.128.0/18 Deny Cloud
 104.36.56.0/21 Deny Cloud
 104.171.128.0/21 Deny Cloud
-107.191.176.0/23 Deny Cloud
 162.210.96.0/21 Deny Cloud
 162.249.124.0/22 Deny Cloud
 170.10.160.0/20 Deny Cloud
@@ -6333,9 +6332,9 @@ Tag: Psychz Networks
 
 
 # ASN 36114 ("Versaweb, LLC").
-# %Listed, Google Malware Dashboard: 0.03%.
-# Stop Forum Spam (SFS) listings: 190.
-# Updated: 2019.03.30 / Checked: 2019.08.13
+# %Listed, Google Malware Dashboard: 0.09%.
+# Stop Forum Spam (SFS) listings: 193.
+# Updated: 2020.01.03
 
 72.46.128.0/21 Deny Cloud
 72.46.136.0/22 Deny Cloud
@@ -6345,21 +6344,18 @@ Tag: Psychz Networks
 76.164.232.0/23 Deny Cloud
 76.164.236.0/22 Deny Cloud
 104.143.0.0/22 Deny Cloud
-104.143.8.0/21 Deny Cloud
+104.143.10.0/23 Deny Cloud
 104.194.0.0/22 Deny Cloud
 104.194.26.0/23 Deny Cloud
 104.238.192.0/21 Deny Cloud
-104.238.200.0/22 Deny Cloud
 104.238.210.0/23 Deny Cloud
 104.238.216.0/23 Deny Cloud
-104.238.226.0/23 Deny Cloud
 104.238.228.0/22 Deny Cloud
 104.238.234.0/23 Deny Cloud
 104.238.248.0/22 Deny Cloud
 162.216.176.0/22 Deny Cloud
 162.222.128.0/21 Deny Cloud
 172.96.128.0/23 Deny Cloud
-208.64.24.0/21 Deny Cloud
 208.66.72.0/21 Deny Cloud
 Origin: US
 Tag: Versaweb, LLC
@@ -7362,21 +7358,24 @@ Tag: EGIHosting
 
 # ASN 174 ("Cogent Communications").
 
-# Myself and others have seen and experienced a significant amount of unwanted traffic from their ASN in the past (hack
-# attempts, spamming, scraping, etc), and generally, this type of traffic should be blocked, but unfortunately, their
-# ASN encompasses and interlaces significantly with with a number of benign, innocent ISPs, human endpoint, backbone
-# architecture, etc that we don't want to block. Therefore, I'm splitting this up into multiple sections across
-# multiple signature files accordingly.
+# We've experienced a significant amount of unwanted traffic from their ASN in
+# the past (hack attempts, spamming, scraping, etc), and this type of traffic
+# should generally be blocked, but their ASN unfortunately encompasses and
+# interlaces with a significant number of benign human endpoints, ISPs,
+# backbone architecture, etc that we don't want to block, so I'm not outright
+# listing the ASN in entirety. Listings have also been split across different
+# signature files as to list at the signature files where best suited.
 
-# Wikipedia page about Cogent Communications: en.wikipedia.org/wiki/Cogent_Communications
-# Refer bgpmon.net/large-scale-bgp-hijack-out-of-india/
-# Refer forums.spybot.info/showthread.php?23632-SPAM-frauds-fakes-and-other-MALWARE-deliveries/page37
-# Refer dyn.com/blog/mitm-internet-hijacking/
+# Cogent Communications' Wikipedia page:
+# - en.wikipedia.org/wiki/Cogent_Communications
+# See also:
+# - bgpmon.net/large-scale-bgp-hijack-out-of-india/
+# - forums.spybot.info/showthread.php?23632-SPAM-frauds-fakes-and-other-MALWARE-deliveries/page37
+# - dyn.com/blog/mitm-internet-hijacking/
 
-# When updating: Remove invalids to reduce false positive risk.
+# Announces with "Hosting", "Host", "Server" (exclude invalids to reduce the false positive risk).
 
-# Announces with "Hosting", "Host", "Server"
-# Updated: 2019.11.02
+# Updated: 2019.11.02 / Checked: 2020.01.03
 104.171.204.0/22 Deny Cloud
 170.75.160.0/20 Deny Cloud
 172.81.176.0/21 Deny Cloud
@@ -7411,20 +7410,63 @@ Origin: SC
 Origin: US
 Tag: Cogent Hosting
 
-# Misc. other known problematic ranges.
+# "FDCservers.net" overflow from above (data processors + spam source;
+# valids/invalids included alike).
+
+# Updated: 2020.01.03
+66.90.64.0/18 Deny Cloud
+67.159.0.0/18 Deny Cloud
+74.63.64.0/18 Deny Cloud
+76.73.0.0/17 Deny Cloud
+192.240.96.0/19 Deny Cloud
+208.53.128.0/18 Deny Cloud
+216.227.128.0/18 Deny Cloud
+Origin: US
+Tag: FDCservers.net
 
 # Caught port scanning + Nimbostratus bot operating from these ranges.
 # See also: udger.com/resources/ua-list/bot-detail?bot=Nimbostratus-Bot
-# Updated: 2018.08.25 / Checked: 2019.12.10
+
+# Updated: 2018.08.25 / Checked: 2020.01.03
 209.17.96.0/20 Deny Cloud
 Origin: US
 Tag: Cogent Nimbostratus
 
-# A frequent source of spam.
-# Updated: 2018.08.25 / Checked: 2019.12.10
-80.91.73.0/24 Deny Spam
+# Various data processing providers + a frequent source of spam
+# (valids/invalids included alike).
+
+# Updated: 2020.01.03
+80.91.70.0/24 Deny Cloud
+80.91.73.0/24 Deny Cloud
 Origin: ES
 Tag: Wimasnet
+
+# Updated: 2020.01.03
+31.40.252.0/23 Deny Cloud
+213.166.76.0/22 Deny Cloud
+Origin: RU
+Tag: Blockchain Network Solutions Ltd
+
+# Updated: 2020.01.03
+31.40.208.0/22 Deny Cloud
+31.40.254.0/23 Deny Cloud
+Origin: RU
+Tag: FITZ ISP LTD
+
+# Dedicated webhosting + a frequent source of spam (valids/invalids included
+# alike).
+
+# Updated: 2020.01.03
+37.44.254.0/23 Deny Cloud
+83.171.254.0/23 Deny Cloud
+84.54.56.0/23 Deny Cloud
+Origin: RU
+Tag: FineTransit OU
+
+# Updated: 2020.01.03
+84.54.58.0/24 Deny Cloud
+Origin: RU
+Tag: BTT Group Finance Ltd
 
 
 # ASNs 59711, 61046, 201525, 202015 ("HZ Hosting Ltd").
@@ -12535,9 +12577,9 @@ Tag: DataWeb Global
 
 
 # ASN 44112 ("SpaceWeb Ltd").
-# %Listed, Google Malware Dashboard: 0.16%.
+# %Listed, Google Malware Dashboard: 0.19%.
 # Stop Forum Spam (SFS) listings: 2.
-# Updated: 2019.09.06
+# Updated: 2019.09.06 / Checked: 2020.01.03
 
 77.222.40.0/22 Deny Cloud
 77.222.44.0/24 Deny Cloud
@@ -14219,8 +14261,9 @@ Tag: Awareness Software
 
 
 # ASNs 48337, 63949 ("Linode, LLC").
-# Stop Forum Spam (SFS) listings: 4,701 (AS63949).
-# Updated: 2019.09.08
+# %Listed, Google Malware Dashboard: 0.13% (AS63949).
+# Stop Forum Spam (SFS) listings: 3,803 (AS63949).
+# Updated: 2020.01.03
 
 85.90.244.0/22 Deny Cloud
 109.237.24.0/22 Deny Cloud
@@ -14260,8 +14303,12 @@ Origin: SG
 45.79.14.0/24 Deny Cloud
 45.79.16.0/20 Deny Cloud
 45.79.32.0/19 Deny Cloud
-45.79.64.0/18 Deny Cloud
-45.79.128.0/17 Deny Cloud
+45.79.64.0/19 Deny Cloud
+45.79.96.0/20 Deny Cloud
+45.79.112.0/22 Deny Cloud
+45.79.128.0/18 Deny Cloud
+45.79.192.0/19 Deny Cloud
+45.79.224.0/21 Deny Cloud
 50.116.0.0/18 Deny Cloud
 64.5.53.0/24 Deny Cloud
 64.22.71.0/24 Deny Cloud
@@ -14292,7 +14339,6 @@ Origin: SG
 69.56.251.0/24 Deny Cloud
 69.93.127.0/24 Deny Cloud
 69.164.192.0/19 Deny Cloud
-70.47.152.0/21 Deny Cloud
 70.85.16.0/24 Deny Cloud
 70.85.31.0/24 Deny Cloud
 70.85.129.0/24 Deny Cloud
@@ -14321,7 +14367,9 @@ Origin: SG
 172.105.0.0/17 Deny Cloud
 172.105.134.0/23 Deny Cloud
 172.105.144.0/23 Deny Cloud
+172.105.148.0/22 Deny Cloud
 172.105.152.0/21 Deny Cloud
+172.105.160.0/19 Deny Cloud
 172.105.192.0/18 Deny Cloud
 173.230.128.0/19 Deny Cloud
 173.255.192.0/18 Deny Cloud
@@ -18193,7 +18241,7 @@ Tag: Mainstream doo
 
 
 # ASNs 3595, 13354, 14313, 16626, 27325, 32952 ("zColo").
-# Updated: 2019.09.08
+# Updated: 2020.01.03
 
 190.9.32.0/20 Deny Cloud
 190.114.0.0/24 Deny Cloud
@@ -18209,9 +18257,6 @@ Origin: PA
 64.22.127.0/24 Deny Cloud
 64.64.222.0/23 Deny Cloud
 64.186.128.0/20 Deny Cloud
-64.237.101.0/24 Deny Cloud
-64.237.107.0/24 Deny Cloud
-64.237.108.0/24 Deny Cloud
 66.219.32.0/19 Deny Cloud
 67.211.32.0/19 Deny Cloud
 69.80.72.0/24 Deny Cloud
@@ -18231,10 +18276,8 @@ Origin: PA
 108.166.160.0/19 Deny Cloud
 162.223.244.0/22 Deny Cloud
 162.252.168.0/24 Deny Cloud
-164.52.148.0/22 Deny Cloud
 170.76.204.0/24 Deny Cloud
 184.75.248.0/21 Deny Cloud
-192.126.92.0/22 Deny Cloud
 192.188.253.0/24 Deny Cloud
 198.73.32.0/24 Deny Cloud
 198.154.96.0/19 Deny Cloud
@@ -18371,18 +18414,6 @@ Origin: NL
 208.84.132.0/22 Deny Cloud
 Origin: US
 Tag: Nodes Direct
-
-
-# ASN 20360 ("OppoBox").
-# Stop Forum Spam (SFS) listings: 51.
-# Updated: 2019.09.08
-
-104.207.64.0/19 Deny Cloud
-107.182.112.0/20 Deny Cloud
-107.190.160.0/20 Deny Cloud
-155.254.96.0/19 Deny Cloud
-Origin: US
-Tag: OppoBox
 
 
 # ASN 23352 ("Server Central Network").
@@ -19310,12 +19341,13 @@ Tag: Green House Data
 
 
 # ASN 20021 ("HostMySite").
-# 100% hosting provider (generally considered safe to block), but may interfere with uptime monitoring service
-# "InternetSeer.com". Users of this service should probably set an "ignore" rule for this signature section. I won't be
-# mainlining a bypass for them though due to abuse reports from some users.
+# 100% hosting provider (generally considered safe to block), but may interfere
+# with uptime monitoring service "InternetSeer.com". Users of this service
+# should list this section in their ignore.dat file. I won't be mainlining a
+# bypass for them though due to abuse reports from some users.
 # %Listed, Google Malware Dashboard: 0.10%.
-# Stop Forum Spam (SFS) listings: 3.
-# Updated: 2018.08.05 / Checked: 2019.08.18
+# Stop Forum Spam (SFS) listings: 2.
+# Updated: 2018.08.05 / Checked: 2020.01.03
 
 65.36.128.0/17 Deny Cloud
 65.182.192.0/19 Deny Cloud
@@ -21436,9 +21468,9 @@ Tag: Comfo LTD
 
 # ASN 45454 ("J2 AUSTRALIA HOSTING PTY LTD").
 # Caught trying to hack WordPress sites.
-# %Listed, Google Malware Dashboard: 0.21%.
+# %Listed, Google Malware Dashboard: 0.29%.
 # Stop Forum Spam (SFS) listings: 3.
-# Updated: 2019.09.06
+# Updated: 2019.09.06 / Checked: 2020.01.03
 
 103.208.216.0/22 Deny Cloud
 103.237.108.0/22 Deny Cloud
@@ -22810,9 +22842,9 @@ Tag: Trestel SK
 
 
 # ASN 200651 ("Flokinet Ltd").
-# %Listed, Google Malware Dashboard: 0.99%.
-# Stop Forum Spam (SFS) listings: 19,019.
-# Updated: 2019.09.08
+# %Listed, Google Malware Dashboard: 1.56%.
+# Stop Forum Spam (SFS) listings: 13,652.
+# Updated: 2019.09.08 / Checked: 2020.01.03
 
 185.165.168.0/22 Deny Cloud
 Origin: IS
@@ -24309,8 +24341,8 @@ Tag: CLOUD STAR
 
 
 # ASN 14987 ("Rethem Hosting LLC").
-# Caught spamming.
-# Updated: 2019.03.30 / Checked: 2019.08.11
+# Dedicated webhosting provider and an occasional source of spam.
+# Updated: 2019.03.30 / Checked: 2020.01.02
 
 91.236.182.0/24 Deny Cloud
 Origin: HU

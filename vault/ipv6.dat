@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6.dat
 
-# Version: 2020.2.306
-# Last modified: 2020.01.03
+# Version: 2020.8.626
+# Last modified: 2020.01.09
 
 
 # ---
@@ -100,9 +100,12 @@ Tag: Global Frag Networks
 
 
 # ASN 54600 ("PEG TECH INC").
-# %Listed, Google Malware Dashboard: 0.91%.
-# Stop Forum Spam (SFS) listings: 3,056.
-# Updated: 2019.04.23 / Checked: 2019.09.10
+# I don't anticipate ever removing these listings. Have been blocking them due
+# to all kinds of unwanted traffic of all descriptions from their network since
+# many years before CIDRAM existed.
+# %Listed, Google Malware Dashboard: 0.54%.
+# Stop Forum Spam (SFS) listings: 627.
+# Updated: 2019.04.23 / Checked: 2020.01.06
 
 2605:7280::/40 Deny Cloud
 Origin: US
@@ -874,11 +877,11 @@ Origin: NL
 Tag: A2B IP B.V
 
 
-# ASNs 20860, 21130, 25108 ("IOMart").
+# ASNs 20860, 25108 ("IOMart").
 # Careful when updating; Also contains some proxies and VPNs (should be marked differently).
-# %Listed, Google Malware Dashboard: 0.16% (AS20860).
-# Stop Forum Spam (SFS) listings: 9,787 (AS20860).
-# Updated: 2019.04.23 / Checked: 2019.09.10
+# %Listed, Google Malware Dashboard: 0.10% (AS20860).
+# Stop Forum Spam (SFS) listings: 9,953 (AS20860), 4 (AS25108).
+# Updated: 2020.01.09
 
 2607:bd00:100::/48 Deny Cloud
 Origin: CA
@@ -893,9 +896,9 @@ Origin: CA
 2a03:b200::/29 Deny Cloud
 2a03:ca80::/31 Deny Cloud
 2a03:f2c0::/32 Deny Cloud
+2a04:ac0:1::/48 Deny Cloud
 2a04:de40::/42 Deny Cloud
 2a0b:4580::/32 Deny Cloud
-2a0b:9400:1000::/48 Deny Cloud
 2a0d:9780::/32 Deny Cloud
 Origin: GB
 2403:cc00:3000::/36 Deny Cloud
@@ -998,8 +1001,11 @@ Tag: Strong Technology
 
 
 # ASN 33597 ("InfoRelay Online Systems, Inc").
-# No recent reports or bad activity detected. Possible candidate for future removal.
-# Updated: 2017.09.09 / Checked: 2019.09.10
+# Allegedly caught recently scraping webpages and spoofing user agents (not
+# confirmed). Some marketing bots operate from their network (apparently "good"
+# bots, based on the information I could find, but possibly unwanted anyway).
+# Stop Forum Spam (SFS) listings: 1.
+# Updated: 2017.09.09 / Checked: 2020.01.06
 
 2a03:b280:1000::/48 Deny Cloud
 Origin: CZ
@@ -2997,9 +3003,11 @@ Tag: Yesup Ecommerce
 
 
 # ASN 30475 ("Handy Networks, LLC").
-# %Listed, Google Malware Dashboard: 0.13%.
-# Stop Forum Spam (SFS) listings: 478.
-# Updated: 2018.07.09 / Checked: 2019.09.06
+# Server farm and a source of spam and other unwanted activity.
+# (Can omit anything under 44../8; clean).
+# %Listed, Google Malware Dashboard: 0.21%.
+# Stop Forum Spam (SFS) listings: 449.
+# Updated: 2018.07.09 / Checked: 2020.01.06
 
 2602:fff6:d::/48 Deny Cloud
 2606:6680:6::/48 Deny Cloud
@@ -3886,9 +3894,9 @@ Tag: NForce Entertainment
 
 
 # ASN 55990 ("Huawei Cloud Service data center").
-# %Listed, Google Malware Dashboard: 0.86%.
-# Stop Forum Spam (SFS) listings: 5.
-# Updated: 2018.12.06 / Checked: 2019.09.10
+# %Listed, Google Malware Dashboard: 0.88%.
+# Stop Forum Spam (SFS) listings: 9.
+# Updated: 2018.12.06 / Checked: 2020.01.06
 
 2407:c080::/36 Deny Cloud
 2407:c080:1000::/37 Deny Cloud
@@ -4200,8 +4208,9 @@ Tag: Panamaserver.com
 
 
 # ASN 19624 ("Data Room, Inc").
-# Stop Forum Spam (SFS) listings: 1,226.
-# Updated: 2019.09.10
+# Server farm and a source of spam, probing, etc.
+# Stop Forum Spam (SFS) listings: 1,453.
+# Updated: 2019.09.10 / Checked: 2020.01.06
 
 2a01:4ce0:61::/48 Deny Cloud
 2a01:4ce0:161::/48 Deny Cloud
@@ -4875,11 +4884,11 @@ Tag: DATAPRO
 
 
 # ASN 12025 ("IO Capital Princess, LLC").
-# When updating, mark "ExpressVPN" as "proxy". Everything else as cloud.
-# Exclude (clean; don't need to list them): ^.*(Infinity|St Joseph|Brisbane Public|Decision North|Scholer LLP).*$\n
-# %Listed, Google Malware Dashboard: 0.10%.
+# Server farm/lease + proxy mix; Caught performing XML-RPC attacks and probing.
+# Mark as proxy when updating: "ExpressVPN", "OculusProxies".
+# Can exclude these (clean ranges): ^.*(Brisbane Public|Cultural|Infinity|Scholer LLP|St Joseph).*$\n
 # Stop Forum Spam (SFS) listings: 7.
-# Updated: 2019.04.23 / Checked: 2019.09.10
+# Updated: 2019.04.23 / Checked: 2020.01.06
 
 2a05:9800:ff00::/40 Deny Cloud
 Origin: GB
@@ -5206,10 +5215,10 @@ Origin: UA
 Tag: Infium, UAB
 
 
-# ASNs 30548, 31034, 199653, 199883, 200185, 205727 ("Aruba S.p.A" / "Aruba
-# SAS" / "ARUBA NETWORKS, INC" / "ArubaCloud Limited").
+# ASNs 30548, 31034, 199653, 199883, 200185, 202242, 205727 ("Aruba S.p.A",
+# "Aruba SAS", "ARUBA NETWORKS, INC", "ArubaCloud Limited").
 # Caught attempting to hack honeypots.
-# Updated: 2018.02.24 / Checked: 2019.12.23
+# Updated: 2018.02.24 / Checked: 2020.01.08
 
 2a03:2c40::/32 Deny Cloud
 2a03:a140::/32 Deny Cloud
@@ -6150,6 +6159,7 @@ Tag: Nexril
 
 # ASN 209299 ("VITOX TELECOM").
 # Dedicated hosting provider and server leasing. SQLi and spam attempts caught.
+# Also caught trying to hack into honeypots.
 # Updated: 2019.07.10 / Checked: 2019.11.10
 
 2a0d:a740::/47 Deny Cloud
@@ -7192,6 +7202,16 @@ Origin: EU
 2620:12a:8000::/44 Deny Cloud
 Origin: US
 Tag: Fastly
+
+
+# ASN 42994 ("HQserv Communication Solutions").
+# Dedicated server farm/lease and a significant source of spam.
+# Stop Forum Spam (SFS) listings: 4,130.
+# Updated: 2020.01.06
+
+2a0a:1dc0::/29 Deny Cloud
+Origin: IL
+Tag: HQServ
 
 
 # ---

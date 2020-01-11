@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2019.12.31).
+ * This file: Functions file (last modified: 2020.01.11).
  */
 
 /**
@@ -171,18 +171,18 @@ $CIDRAM['ExpandIPv6'] = function ($Addr, $ValidateOnly = false, $FactorLimit = 1
      * https://sroze.io/regex-ip-v4-et-ipv6-6cc005cabe8c
      */
     if (!preg_match(
-        '/^(([\da-f]{1,4}\:){7}[\da-f]{1,4})|(([\da-f]{1,4}\:){6}\:[\da-f]{1' .
-        ',4})|(([\da-f]{1,4}\:){5}\:([\da-f]{1,4}\:)?[\da-f]{1,4})|(([\da-f]' .
-        '{1,4}\:){4}\:([\da-f]{1,4}\:){0,2}[\da-f]{1,4})|(([\da-f]{1,4}\:){3' .
-        '}\:([\da-f]{1,4}\:){0,3}[\da-f]{1,4})|(([\da-f]{1,4}\:){2}\:([\da-f' .
-        ']{1,4}\:){0,4}[\da-f]{1,4})|(([\da-f]{1,4}\:){6}((\b((25[0-5])|(1\d' .
-        '{2})|(2[0-4]\d)|(\d{1,2}))\b).){3}(\b((25[0-5])|(1\d{2})|(2[0-4]\d)' .
-        '|(\d{1,2}))\b))|(([\da-f]{1,4}\:){0,5}\:((\b((25[0-5])|(1\d{2})|(2[' .
-        '0-4]\d)|(\d{1,2}))\b).){3}(\b((25[0-5])|(1\d{2})|(2[0-4]\d)|(\d{1,2' .
-        '}))\b))|(\:\:([\da-f]{1,4}\:){0,5}((\b((25[0-5])|(1\d{2})|(2[0-4]\d' .
-        ')|(\d{1,2}))\b).){3}(\b((25[0-5])|(1\d{2})|(2[0-4]\d)|(\d{1,2}))\b)' .
-        ')|([\da-f]{1,4}\:\:([\da-f]{1,4}\:){0,5}[\da-f]{1,4})|(\:\:([\da-f]' .
-        '{1,4}\:){0,6}[\da-f]{1,4})|(([\da-f]{1,4}\:){1,7}\:)$/i',
+        '/^((([\da-f]{1,4}\:){7}[\da-f]{1,4})|(([\da-f]{1,4}\:){6}\:[\da-f]{1,4})' .
+        '|(([\da-f]{1,4}\:){5}\:([\da-f]{1,4}\:)?[\da-f]{1,4})|(([\da-f]{1,4}\:){' .
+        '4}\:([\da-f]{1,4}\:){0,2}[\da-f]{1,4})|(([\da-f]{1,4}\:){3}\:([\da-f]{1,' .
+        '4}\:){0,3}[\da-f]{1,4})|(([\da-f]{1,4}\:){2}\:([\da-f]{1,4}\:){0,4}[\da-' .
+        'f]{1,4})|(([\da-f]{1,4}\:){6}((\b((25[0-5])|(1\d{2})|(2[0-4]\d)|(\d{1,2}' .
+        '))\b).){3}(\b((25[0-5])|(1\d{2})|(2[0-4]\d)|(\d{1,2}))\b))|(([\da-f]{1,4' .
+        '}\:){0,5}\:((\b((25[0-5])|(1\d{2})|(2[0-4]\d)|(\d{1,2}))\b).){3}(\b((25[' .
+        '0-5])|(1\d{2})|(2[0-4]\d)|(\d{1,2}))\b))|(\:\:([\da-f]{1,4}\:){0,5}((\b(' .
+        '(25[0-5])|(1\d{2})|(2[0-4]\d)|(\d{1,2}))\b).){3}(\b((25[0-5])|(1\d{2})|(' .
+        '2[0-4]\d)|(\d{1,2}))\b))|([\da-f]{1,4}\:\:([\da-f]{1,4}\:){0,5}[\da-f]{1' .
+        ',4})|(\:\:([\da-f]{1,4}\:){0,6}[\da-f]{1,4})|(([\da-f]{1,4}\:){1,7}\:))$' .
+        '/i',
     $Addr)) {
         return false;
     }
@@ -1125,7 +1125,6 @@ $CIDRAM['DNS-Reverse-Forward'] = function ($Domains, $Friendly, array $Options =
 
     /** Exit. */
     return true;
-
 };
 
 /**
@@ -1138,11 +1137,69 @@ $CIDRAM['DNS-Reverse-Forward'] = function ($Domains, $Friendly, array $Options =
  */
 $CIDRAM['UA-IP-Match'] = function ($Expected, $Friendly, array $Options = []) use (&$CIDRAM) {
 
-    /** Convert expected IPs to an array. */
+    /** Route to matching code. */
+    $CIDRAM['UA-X-Match']('IPAddr', $Expected, $Friendly, $Options);
+};
+
+/**
+ * Checks whether an ASN is expected. If so, tracking is disabled for the IP
+ * of the request, and if not, the request is blocked. Has no return value.
+ * Will only work as expected if a module or other facility of some kind,
+ * capable of performing ASN lookups, has been enabled.
+ *
+ * @param string|array $Origins Accepted originating ASNs.
+ * @param string $Friendly A friendly name to use in logfiles.
+ * @param array $Options Various options that can be passed to the closure.
+ */
+$CIDRAM['UA-ASN-Match'] = function ($Origins, $Friendly, array $Options = []) use (&$CIDRAM) {
+
+    /** Guard. */
+    if (empty($CIDRAM['BlockInfo']['ASNLookup']) || $CIDRAM['BlockInfo']['ASNLookup'] < 1) {
+        return;
+    }
+
+    /** Route to matching code. */
+    $CIDRAM['UA-X-Match']('ASNLookup', $Origins, $Friendly, $Options);
+};
+
+/**
+ * Checks whether a country code is expected. If so, tracking is disabled for
+ * the IP of the request, and if not, the request is blocked. Has no return
+ * value. Will only work as expected if a module or other facility of some
+ * kind, capable of performing country code lookups, has been enabled.
+ *
+ * @param string|array $CCs Accepted country codes.
+ * @param string $Friendly A friendly name to use in logfiles.
+ * @param array $Options Various options that can be passed to the closure.
+ */
+$CIDRAM['UA-CC-Match'] = function ($CCs, $Friendly, array $Options = []) use (&$CIDRAM) {
+
+    /** Guard. */
+    if (empty($CIDRAM['BlockInfo']['CCLookup']) || $CIDRAM['BlockInfo']['CCLookup'] === 'XX') {
+        return;
+    }
+
+    /** Route to matching code. */
+    $CIDRAM['UA-X-Match']('CCLookup', $CCs, $Friendly, $Options);
+};
+
+/**
+ * Routes from UA-IP-Match, UA-ASN-Match, UA-CC-Match (implemented to reduce
+ * potential code duplication). Has no return value.
+ *
+ * @param string $Datapoint The datapoint to be matched.
+ * @param string|array $Expected The expected values (per the call origin).
+ * @param string $Friendly A friendly name to use in logfiles.
+ * @param array $Options Various options that can be passed to the closure.
+ */
+$CIDRAM['UA-X-Match'] = function ($Datapoint, $Expected, $Friendly, array $Options = []) use (&$CIDRAM) {
+
+    /** Convert expected values to an array. */
     $CIDRAM['Arrayify']($Expected);
 
-    /** Compare the actual IP of the request against the expected IPs. */
-    if (in_array($CIDRAM['BlockInfo']['IPAddr'], $Expected)) {
+    /** Compare the actual value from the request against the expected values. */
+    if (in_array($CIDRAM['BlockInfo'][$Datapoint], $Expected)) {
+
         /** Disable tracking (if there are matches, and if relevant). */
         if (!empty($Options['CanModTrackable'])) {
             $CIDRAM['Trackable'] = false;
@@ -1166,7 +1223,6 @@ $CIDRAM['UA-IP-Match'] = function ($Expected, $Friendly, array $Options = []) us
 
     /** Reporting. */
     $CIDRAM['Reporter']->report([19], ['Caught masquerading as ' . $Friendly . '.'], $CIDRAM['BlockInfo']['IPAddr']);
-
 };
 
 /**

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Verification data for search engines and social media (last modified: 2019.06.30).
+# This file: Verification data for search engines and social media (last modified: 2020.01.11).
 ##/
 
 Search Engine Verification:
@@ -143,3 +143,9 @@ Social Media Verification:
   Closure: "DNS-Reverse-Forward"
   Valid Domains:
    - ".twttr.com"
+ # https://developers.facebook.com/docs/sharing/webmasters/crawler/
+ Facebook external hit:
+  User Agent: "facebookexternalhit/"
+  Closure: "UA-ASN-Match"
+  Valid Domains:
+   - "32934"

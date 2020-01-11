@@ -13,6 +13,24 @@ Detailed version release guidelines for CIDRAM can be found at:
 - [2020.01.01; Bug-fix; Maikuolan]: The cache handler's PDO query template for
   deleting expired cache entries was malformed; Fixed.
 
+- [2020.01.11; Bug-fixes; Maikuolan]: Syntactically invalid IPv6 addresses
+  could be potentially accepted or produced by the aggregator, the CIDR
+  calculator, or the range subtractor in some obscure circumstances due an
+  insufficiently bound regular expression; Fixed. The range subtractor
+  occasionally wasn't producing the correct differences when IPv6 ranges and
+  addresses with sufficiently contracted shortforms were supplied for the
+  subtraction; Fixed.
+
+- [2020.01.11; Maikuolan]: Added social media verification support for Facebook
+  external hit requests (requires an ASN lookup facility in order to work
+  correctly; the BGPView module can be used for this purpose). Added the
+  ability for CIDRAM to cache module objects in order to prevent superfluous IO
+  operations to module files. This is similar to the way that files associated
+  with 'Run' parameters can already be cached. Added ASNLookup and CCLookup as
+  silent BlockInfo fields (not populated by default, but can be populated by an
+  appropriate facility, leveraged by modules, search engine and social
+  verification, etc).
+
 === Version/Release 2.3.0 ===
 MINOR RELEASE.
 

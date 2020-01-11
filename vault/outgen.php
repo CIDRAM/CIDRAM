@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Output generator (last modified: 2019.12.31).
+ * This file: Output generator (last modified: 2020.01.11).
  */
 
 /** Initialise cache. */
@@ -76,6 +76,8 @@ $CIDRAM['BlockInfo'] = [
     'SignatureCount' => 0,
     'Signatures' => '',
     'WhyReason' => '',
+    'ASNLookup' => 0,
+    'CCLookup' => 'XX',
     'xmlLang' => $CIDRAM['Config']['general']['lang']
 ];
 $CIDRAM['BlockInfo']['UALC'] = strtolower($CIDRAM['BlockInfo']['UA']);
@@ -175,15 +177,28 @@ if ($CIDRAM['Protect'] && !$CIDRAM['Config']['general']['maintenance_mode'] && e
     /** Execute modules, if any have been enabled. */
     if (empty($CIDRAM['Whitelisted']) && $CIDRAM['Config']['signatures']['modules']) {
         $CIDRAM['Stage'] = 'Modules';
+        if (!isset($CIDRAM['ModuleResCache'])) {
+            $CIDRAM['ModuleResCache'] = [];
+        }
         $CIDRAM['Modules'] = explode(',', $CIDRAM['Config']['signatures']['modules']);
+
+        /**
+         * Doing this with array_walk instead of foreach to ensure that modules
+         * have their own scope and that superfluous data isn't preserved.
+         */
         array_walk($CIDRAM['Modules'], function ($Module) use (&$CIDRAM) {
             $Module = (strpos($Module, ':') === false) ? $Module : substr($Module, strpos($Module, ':') + 1);
-            if (file_exists($CIDRAM['Vault'] . $Module) && is_readable($CIDRAM['Vault'] . $Module)) {
-                $Infractions = $CIDRAM['BlockInfo']['SignatureCount'];
+            $Infractions = $CIDRAM['BlockInfo']['SignatureCount'];
+            if (isset($CIDRAM['ModuleResCache'][$Module]) && is_object($CIDRAM['ModuleResCache'][$Module])) {
+                $CIDRAM['ModuleResCache'][$Module]($Infractions);
+            } elseif (!file_exists($CIDRAM['Vault'] . $Module) || !is_readable($CIDRAM['Vault'] . $Module)) {
+                return;
+            } else {
                 require $CIDRAM['Vault'] . $Module;
-                $CIDRAM['Trackable'] = $CIDRAM['Trackable'] ?: ($CIDRAM['BlockInfo']['SignatureCount'] - $Infractions) > 0;
             }
+            $CIDRAM['Trackable'] = $CIDRAM['Trackable'] ?: ($CIDRAM['BlockInfo']['SignatureCount'] - $Infractions) > 0;
         });
+
         unset($CIDRAM['Modules']);
     }
 

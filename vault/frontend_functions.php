@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2019.12.31).
+ * This file: Front-end functions file (last modified: 2020.01.11).
  */
 
 /**
@@ -899,6 +899,8 @@ $CIDRAM['SimulateBlockEvent'] = function (string $Addr, bool $Modules = false, b
         'SignatureCount' => 0,
         'Signatures' => '',
         'WhyReason' => '',
+        'ASNLookup' => 0,
+        'CCLookup' => 'XX',
         'xmlLang' => $CIDRAM['Config']['general']['lang'],
         'rURI' => 'SimulateBlockEvent'
     ];
@@ -934,14 +936,23 @@ $CIDRAM['SimulateBlockEvent'] = function (string $Addr, bool $Modules = false, b
 
     /** Execute modules, if any have been enabled. */
     if ($Modules && $CIDRAM['Config']['signatures']['modules'] && empty($CIDRAM['Whitelisted'])) {
+        if (!isset($CIDRAM['ModuleResCache'])) {
+            $CIDRAM['ModuleResCache'] = [];
+        }
         $CIDRAM['InitialiseErrorHandler']();
 
-        /** Explode module list and cycle through all modules. */
+        /**
+         * Explode module list and cycle through all modules (doing this
+         * with array_walk instead of foreach to ensure that modules have
+         * their own scope and that superfluous data isn't preserved).
+         */
         $Modules = explode(',', $CIDRAM['Config']['signatures']['modules']);
         array_walk($Modules, function ($Module) use (&$CIDRAM) {
             $Module = (strpos($Module, ':') === false) ? $Module : substr($Module, strpos($Module, ':') + 1);
             $Infractions = $CIDRAM['BlockInfo']['SignatureCount'];
-            if (file_exists($CIDRAM['Vault'] . $Module) && is_readable($CIDRAM['Vault'] . $Module)) {
+            if (isset($CIDRAM['ModuleResCache'][$Module]) && is_object($CIDRAM['ModuleResCache'][$Module])) {
+                $CIDRAM['ModuleResCache'][$Module]($Infractions);
+            } elseif (file_exists($CIDRAM['Vault'] . $Module) && is_readable($CIDRAM['Vault'] . $Module)) {
                 require $CIDRAM['Vault'] . $Module;
             }
         });
@@ -3415,9 +3426,9 @@ $CIDRAM['SplitCIDR'] = function (string $CIDR) use (&$CIDRAM): array {
     }
     $Base = substr($CIDR, 0, $Pos);
     $Factor = substr($CIDR, $Pos + 1);
-    if ($CIDRs = $CIDRAM['ExpandIPv4']($Base, false, $Factor)) {
+    if ($CIDRs = $CIDRAM['ExpandIPv4']($Base, false, $Factor + 1)) {
         $Is = 4;
-    } elseif ($CIDRs = $CIDRAM['ExpandIPv6']($Base, false, $Factor)) {
+    } elseif ($CIDRs = $CIDRAM['ExpandIPv6']($Base, false, $Factor + 1)) {
         $Is = 6;
     } else {
         return [];
@@ -3427,7 +3438,7 @@ $CIDRAM['SplitCIDR'] = function (string $CIDR) use (&$CIDRAM): array {
     }
     $Split = [$CIDRs[$Factor]];
     $Last = ($Is === 4) ? $CIDRAM['IPv4GetLast']($Base, $Factor) : $CIDRAM['IPv6GetLast']($Base, $Factor);
-    $CIDRs = ($Is === 4) ? $CIDRAM['ExpandIPv4']($Last, false, $Factor) : $CIDRAM['ExpandIPv6']($Last, false, $Factor);
+    $CIDRs = ($Is === 4) ? $CIDRAM['ExpandIPv4']($Last, false, $Factor + 1) : $CIDRAM['ExpandIPv6']($Last, false, $Factor + 1);
     if (isset($CIDRs[$Factor])) {
         $Split[] = $CIDRs[$Factor];
         return $Split;
@@ -3444,6 +3455,7 @@ $CIDRAM['SplitCIDR'] = function (string $CIDR) use (&$CIDRAM): array {
  */
 $CIDRAM['SubtractCIDR'] = function (string $Minuend = '', string $Subtrahend = '') use (&$CIDRAM): string {
     $LPos = 0;
+    $Minuend = "\n" . $Minuend;
     while (($NPos = strpos($Subtrahend, "\n", $LPos)) !== false) {
         $Line = substr($Subtrahend, $LPos, $NPos - $LPos);
         $LPos = $NPos + 1;
@@ -3459,7 +3471,7 @@ $CIDRAM['SubtractCIDR'] = function (string $Minuend = '', string $Subtrahend = '
             }
         }
         foreach ($CIDRs as $Key => $Actual) {
-            if (strpos($Minuend, $Actual . "\n") === false) {
+            if (strpos($Minuend, "\n" . $Actual . "\n") === false) {
                 continue;
             }
             if ($Range > ($Key + 1) && $Split = $CIDRAM['SplitCIDR']($Actual)) {
@@ -3468,7 +3480,7 @@ $CIDRAM['SubtractCIDR'] = function (string $Minuend = '', string $Subtrahend = '
             $Minuend = str_replace($Actual . "\n", '', $Minuend);
         }
     }
-    return $Minuend;
+    return substr($Minuend, 1);
 };
 
 /**

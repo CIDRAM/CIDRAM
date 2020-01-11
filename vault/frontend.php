@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2019.12.31).
+ * This file: Front-end handler (last modified: 2020.01.11).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -1630,6 +1630,12 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && ($CIDRAM['FE']['Per
         $CIDRAM['Components']['ThisComponent']['StatClass'] = '';
         if (empty($CIDRAM['Components']['ThisComponent']['Version'])) {
             if (empty($CIDRAM['Components']['ThisComponent']['Files']['To'])) {
+                if (
+                    empty($CIDRAM['Components']['ThisComponent']['Minimum Required']) ||
+                    $CIDRAM['VersionCompare']($CIDRAM['ScriptVersion'], $CIDRAM['Components']['ThisComponent']['Minimum Required'])
+                ) {
+                    continue;
+                }
                 $CIDRAM['Components']['ThisComponent']['RowClass'] = 'h2';
                 $CIDRAM['Components']['ThisComponent']['Version'] = $CIDRAM['L10N']->getString('response_updates_not_installed');
                 $CIDRAM['Components']['ThisComponent']['StatClass'] = 'txtRd';
@@ -1947,7 +1953,9 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && ($CIDRAM['FE']['Per
             empty($CIDRAM['Components']['ThisComponent']['Files']['To']) ||
             empty($CIDRAM['Components']['ThisComponent']['Reannotate']) ||
             !$CIDRAM['Traverse']($CIDRAM['Components']['ThisComponent']['Reannotate']) ||
-            !file_exists($CIDRAM['Vault'] . $CIDRAM['Components']['ThisComponent']['Reannotate'])
+            !file_exists($CIDRAM['Vault'] . $CIDRAM['Components']['ThisComponent']['Reannotate']) ||
+            empty($CIDRAM['Components']['ThisComponent']['Minimum Required']) ||
+            $CIDRAM['VersionCompare']($CIDRAM['ScriptVersion'], $CIDRAM['Components']['ThisComponent']['Minimum Required'])
         ) {
             continue;
         }
@@ -2963,7 +2971,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'range-subtractor' && $CIDRAM['F
     );
 
     /** Strip output row if input doesn't exist. */
-    if ($CIDRAM['FE']['Subtractor_AB']) {
+    if ($CIDRAM['FE']['Subtractor_AB'] !== '') {
         $CIDRAM['FE']['FE_Content'] = str_replace(['<!-- Output Begin -->', '<!-- Output End -->'], '', $CIDRAM['FE']['FE_Content']);
     } else {
         $CIDRAM['FE']['FE_Content'] =

@@ -3354,9 +3354,6 @@ $CIDRAM['ArrayToClickableList'] = function (array $Arr = [], $DeleteKey = '', $D
  */
 $CIDRAM['Message'] = function ($Message) use (&$CIDRAM) {
     if (isset($CIDRAM['FE']['state_msg'])) {
-        if ($CIDRAM['FE']['state_msg'] || substr($CIDRAM['FE']['state_msg'], -6) !== '<br />') {
-            $CIDRAM['FE']['state_msg'] .= '<br />';
-        }
         $CIDRAM['FE']['state_msg'] .= $Message . '<br />';
     }
 };
@@ -3487,7 +3484,7 @@ $CIDRAM['SubtractCIDR'] = function ($Minuend = '', $Subtrahend = '') use (&$CIDR
             if ($Range > ($Key + 1) && $Split = $CIDRAM['SplitCIDR']($Actual)) {
                 $Minuend .= implode("\n", $Split) . "\n";
             }
-            $Minuend = str_replace($Actual . "\n", '', $Minuend);
+            $Minuend = str_replace("\n" . $Actual . "\n", "\n", $Minuend);
         }
     }
     return substr($Minuend, 1);

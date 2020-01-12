@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2020.01.11).
+ * This file: Front-end functions file (last modified: 2020.01.12).
  */
 
 /**
@@ -1012,10 +1012,10 @@ $CIDRAM['FilterLang'] = function ($ChoiceKey) use (&$CIDRAM) {
  */
 $CIDRAM['FilterAlgo'] = function ($ChoiceKey) use (&$CIDRAM) {
     if ($ChoiceKey === 'PASSWORD_ARGON2I') {
-        return $CIDRAM['VersionCompare'](PHP_VERSION, '7.2.0RC1');
+        return !$CIDRAM['VersionCompare'](PHP_VERSION, '7.2.0RC1');
     }
     if ($ChoiceKey === 'PASSWORD_ARGON2ID') {
-        return $CIDRAM['VersionCompare'](PHP_VERSION, '7.3.0');
+        return !$CIDRAM['VersionCompare'](PHP_VERSION, '7.3.0');
     }
     return true;
 };

@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6.dat
 
-# Version: 2020.8.626
-# Last modified: 2020.01.09
+# Version: 2020.11.348
+# Last modified: 2020.01.12
 
 
 # ---
@@ -3165,7 +3165,7 @@ Tag: Sia Nano IT
 # ASN 8987 ("Amazon Data Services"), ASNs 14618, 16509 ("Amazon.com, Inc").
 # When updating, remove all invalids and anything citing "Tech Telecom" to
 # reduce the risk of false positives.
-# Updated: 2020.01.01
+# Updated: 2020.01.12
 
 2403:b300::/32 Run rules_specific.php
 Origin: AU
@@ -3249,6 +3249,7 @@ Origin: SG
 2406:daa0:a0c0::/44 Run rules_specific.php
 2406:daa0:c020::/44 Run rules_specific.php
 2406:daa0:c040::/44 Run rules_specific.php
+2406:daa0:c060::/44 Run rules_specific.php
 2406:daa0:c080::/44 Run rules_specific.php
 2406:daa0:c0a0::/44 Run rules_specific.php
 2406:daa0:c0c0::/44 Run rules_specific.php
@@ -4933,8 +4934,8 @@ Tag: Gransy s.r.o.
 
 
 # ASN 35236 ("2 connect a.s.").
-# %Listed, Google Malware Dashboard: 0.35%.
-# Updated: 2019.09.15
+# No recent reports or bad activity detected. Possible candidate for future removal.
+# Updated: 2019.09.15 / Checked: 2020.01.12
 
 2a00:1238::/32 Deny Cloud
 2a09:500::/32 Deny Cloud
@@ -5612,17 +5613,17 @@ Tag: Astralus B.V
 
 # ASN 205406 ("Hostio Solutions B.V").
 # Caught by honeypots.
-# Stop Forum Spam (SFS) listings: 319.
-# Updated: 2019.09.15
+# Stop Forum Spam (SFS) listings: 248.
+# Updated: 2020.01.12
 
 2a0b:3c40:1::/48 Deny Cloud
 2a0b:3c40:a::/48 Deny Cloud
 2a0b:3c40:11::/48 Deny Cloud
 2a0b:3c40:12::/48 Deny Cloud
 2a0b:3c40:15::/48 Deny Cloud
+2a0b:3c40:16::/48 Deny Cloud
 2a0c:9e00::/29 Deny Cloud
 2a0c:fe00::/29 Deny Cloud
-2a0e:5540::/29 Deny Cloud
 2a0e:a940::/29 Deny Cloud
 2a0e:cac0::/29 Deny Cloud
 2a0e:cbc0::/29 Deny Cloud
@@ -7212,6 +7213,17 @@ Tag: Fastly
 2a0a:1dc0::/29 Deny Cloud
 Origin: IL
 Tag: HQServ
+
+
+# ASN 40355 ("Sundance International LLC").
+# An IT firm offering various services (not an ISP); Vulnerability scanning,
+# automated attacks against WordPress websites and DDoS attacks originating
+# from this network detected by firewalls.
+# Updated: 2020.01.11
+
+2607:e680::/32 Deny Cloud
+Origin: US
+Tag: Sundance International
 
 
 # ---

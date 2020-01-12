@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_isps.dat
 
-# Version: 2020.8.626
-# Last modified: 2020.01.09
+# Version: 2020.11.348
+# Last modified: 2020.01.12
 
 
 # ---
@@ -22,8 +22,8 @@ Tag: ISPsystem
 
 
 # ASN 25504 ("Vautron Rechenzentrum AG").
-# %Listed, Google Malware Dashboard: 0.25%.
-# Updated: 2016.01.18 / Checked: 2019.08.29
+# %Listed, Google Malware Dashboard: 0.20%.
+# Updated: 2016.01.18 / Checked: 2020.01.12
 
 2001:67c:2394::/48 Deny Generic
 2a00:19e0::/29 Deny Generic
@@ -42,8 +42,8 @@ Tag: World4You
 
 # ASN 202425 ("IP Volume inc").
 # %Listed, Google Malware Dashboard: 0.08%.
-# Stop Forum Spam (SFS) listings: 805.
-# Updated: 2019.05.10 / Checked: 2019.09.27
+# Stop Forum Spam (SFS) listings: 1,452.
+# Updated: 2019.05.10 / Checked: 2020.01.12
 
 2a02:6c8:8000::/33 Deny Generic
 Origin: NL
@@ -84,18 +84,22 @@ Tag: Hetzner Online GmbH
 
 
 # ASN 51559 ("Server Internet Bilisim ve Bilgisayar Hizmetleri").
-# (Mark any LV announces as cloud when updating).
-# %Listed, Google Malware Dashboard: 0.08%.
-# Stop Forum Spam (SFS) listings: 37.
-# Updated: 2019.09.18
+# (Mark any LV announces as "Cloud" when updating).
+# %Listed, Google Malware Dashboard: 0.12%.
+# Stop Forum Spam (SFS) listings: 35.
+# Updated: 2020.01.12
 
 2a06:c3c0:2::/48 Deny Generic
 Origin: RU
 2a03:2100::/44 Deny Generic
 2a05:9bc0::/44 Deny Generic
 2a06:1580::/44 Deny Generic
-2a06:41c0::/44 Deny Generic
+2a06:41c0::/46 Deny Generic
+2a06:41c0:4::/48 Deny Generic
+2a06:41c0:6::/47 Deny Generic
+2a06:41c0:8::/45 Deny Generic
 2a06:c400::/44 Deny Generic
+2a09:9d00:1::/48 Deny Generic
 2a0a:db00::/44 Deny Generic
 2a0b:8100::/44 Deny Generic
 Origin: TR
@@ -294,8 +298,9 @@ Tag: PIN-AS
 
 
 # ASNs 16880, 36421 ("Trend Micro Incorporated").
-# Follows their users around and attempts to get into restricted/private parts of websites.
-# Updated: 2018.03.31 / Checked: 2019.08.29
+# Follows their users around and attempts to get into restricted/private parts
+# of websites.
+# Updated: 2018.03.31 / Checked: 2020.01.12
 
 2620:101:402d::/48 Deny Generic
 2620:101:4034::/47 Deny Generic
@@ -2056,6 +2061,23 @@ recaptcha:
 2601:2c7:8400:26a::/64 Deny Spam
 Origin: US
 Tag: Comcast Spam IPs
+---
+recaptcha:
+ enabled: true
+
+
+# ASN 20115 ("Charter Communications").
+# Domestic ISP from the United States with some limited amount of spamming
+# (marked as "Spam") + caught by security honeypots (marked as "Malware").
+# %Listed, Google Malware Dashboard: 0.15%.
+# %Listed, abuseat.org (CBL-Listed): 0.18%.
+# Stop Forum Spam (SFS) listings: 1,647.
+# Updated: 2020.01.12
+
+2600:6c44:7900:12af::/64 Deny Spam
+2600:6c4e:1200:f5::/64 Deny Spam
+Origin: US
+Tag: Charter Communications
 ---
 recaptcha:
  enabled: true

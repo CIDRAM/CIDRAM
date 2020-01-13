@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Swedish language data for the front-end (last modified: 2019.12.19).
+# This file: Swedish language data for the front-end (last modified: 2020.01.13).
 ##/
 
 Extended Description Bypasses: "Standard bypass-filen som normalt ingår i huvudpaketet."
@@ -26,6 +26,7 @@ Extended Description module_abuseipdb.php: "Blockerar förfrågningar från IP-a
 Extended Description module_badhosts.php: "Blockar värdar som ofta används av spammare, hackare och andra skändlig enheter."
 Extended Description module_badhosts_isps.php: "Blockerar värdar som tillhör internetleverantörer som ofta används av spammare, hackare och andra skändlig enheter."
 Extended Description module_badtlds.php: "Blockerar värdar som tillhör toppdomäner som ofta används av spammare, hackare och andra skändlig enheter."
+Extended Description module_bgpview.php: "Utnyttjar <a href="https://bgpview.io/">bgpview.io</a> API för att tillhandahålla sökfunktioner för ASNer och landskoder för CIDRAM, så att ASNer och länder kan blockeras eller listas med vitlista via CIDRAM-konfigurationen, och tillhandahålla ett sätt för verifiering av socialt nätverk för att verifiera Facebook-förfrågningar."
 Extended Description module_botua.php: "Blockerar användaragenter associerade med oönskade bots och nöjesaktivitet."
 Extended Description module_cookies.php: "Ger vissa begränsade skydd mot farliga kakor."
 Extended Description module_extras.php: "Ger vissa begränsade skydd mot olika angreppsvektorer som vanligen används i förfrågningar."
@@ -33,6 +34,7 @@ Extended Description module_projecthoneypot.php: "Blockerar förfrågningar frå
 Extended Description module_refspam.php: "Blockering baserat på referensspam ger i allmänhet ingen meningsfull säkerhetsfördel, men i vissa fall kan det vara användbart för vissa användare, för att samla in mer information om förfrågningar och för att kunna rapportera det."
 Extended Description module_sfs.php: "Skyddar registrerings och inloggningssidor mot IP-adresser som listas av SFS."
 Name Bypasses: "Standard signatur bypasses."
+Name CN_cidram.inc: "Kina IPv4-blocklista"
 Name IPv4-Bogons: "IPv4 (bogons)."
 Name IPv4-ISPs: "IPv4 (spammiga internetleverantörer)."
 Name IPv4-Other: "IPv4 (proxytjänster, VPNer, osv)."
@@ -41,12 +43,14 @@ Name IPv6-Bogons: "IPv6 (bogons)."
 Name IPv6-ISPs: "IPv6 (spammiga internetleverantörer)."
 Name IPv6-Other: "IPv6 (proxytjänster, VPNer, osv)."
 Name IPv6: "IPv6 (molntjänster och värdtjänster)."
+Name KR_cidram.inc: "Sydkoreas IPv4-blocklista"
 Name compat_bunnycdn.php: "BunnyCDN-kompatibilitetsmodul"
 Name module_abuseipdb.php: "AbuseIPDB modul"
 Name module_badhosts.php: "Dåliga värdar blockeringsmodul"
 Name module_badhosts_isps.php: "Dåliga värdar blockeringsmodul (internetleverantörer)"
 Name module_badtlds.php: "Dåliga toppdomäner blockeringsmodul"
 Name module_baidublocker.php: "Baidu blockeringsmodul"
+Name module_bgpview.php: "BGPView modul"
 Name module_botua.php: "Valfri användaragentmodul"
 Name module_cookies.php: "Valfri cookieskannermodul"
 Name module_extras.php: "Valfri säkerhetstillbehörsmodul"
@@ -498,6 +502,7 @@ info_some_useful_links: |
          <ul class="comSub">
            <li><a href="https://www.stopforumspam.com/">Stop Forum Spam</a> – Hanterar en databas med kända forumspammare. Användbar för att skydda webbplatser och forum mot spammare.</li>
            <li><a href="https://bgp.he.net/">Hurricane Electric BGP Toolkit</a> – Få CIDRer från ASNer, bestäm ASN-relationer, upptäck ASNer baserat på nätverksnamn, osv.</li>
+           <li><a href="https://bgpview.io/">BGPView</a> – Få CIDRer från ASNer, bestäm ASN-relationer, upptäck ASNer baserat på nätverksnamn, osv.</li>
            <li><a href="https://radar.qrator.net/">Radar av Qrator</a> – Användbart verktyg för att kontrollera ASN-anslutningar samt för annan information om ASNer.</li>
            <li><a href="https://www.google.com/transparencyreport/safebrowsing/malware/">Google Malware Dashboard</a> – Visar rapporter om malwareinfektionshastigheter för ASNer.</li>
            <li><a href="https://www.spamhaus.org/statistics/botnet-asn/">Spamhausprojektet</a> – Visar rapporter om botnätinfektionshastigheter för ASNer.</li>

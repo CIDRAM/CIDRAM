@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Vietnamese language data for the front-end (last modified: 2019.12.19).
+# This file: Vietnamese language data for the front-end (last modified: 2020.01.13).
 ##/
 
 Extended Description Bypasses: "Các tập tin đường tránh chữ ký mặc định thường bao gồm với gói thầu chính."
@@ -26,6 +26,7 @@ Extended Description module_abuseipdb.php: "Chặn các yêu cầu từ IP đư�
 Extended Description module_badhosts.php: "Chặn các máy chủ web mà thường được sử dụng bởi các chương trình thư rác, hacker và thực thể bất chính khác."
 Extended Description module_badhosts_isps.php: "Chặn các máy chủ web của các ISP mà thường được sử dụng bởi các chương trình thư rác, hacker và thực thể bất chính khác."
 Extended Description module_badtlds.php: "Chặn các máy chủ web của các TLD mà thường được sử dụng bởi các chương trình thư rác, hacker và thực thể bất chính khác."
+Extended Description module_bgpview.php: "Tận dụng API <a href="https://bgpview.io/">bgpview.io</a> để cung cấp phương tiện tra cứu mã quốc gia và ASN cho CIDRAM, cho phép các ASN và quốc gia bị chặn hay đưa vào danh sách trắng thông qua cấu hình CIDRAM, và cung cấp một phương tiện để xác minh mạng xã hội để xác minh các yêu cầu của Facebook."
 Extended Description module_botua.php: "Chặn các đại lý người dùng liên quan đến các chương trình không mong muốn và hoạt động bất chính."
 Extended Description module_cookies.php: "Cung cấp một số bảo vệ hạn chế đối với cookie nguy hiểm."
 Extended Description module_extras.php: "Cung cấp một số bảo vệ hạn chế chống vectơ tấn công khác nhau thường được sử dụng trong các yêu cầu."
@@ -33,6 +34,7 @@ Extended Description module_projecthoneypot.php: "Chặn các yêu cầu từ IP
 Extended Description module_refspam.php: "Chặn dựa trên spam giới thiệu thường không cung cấp bất kỳ lợi ích bảo mật có ý nghĩa nào, nhưng trong một số trường hợp, có thể hữu ích cho một số người dùng, để thu thập thêm thông tin về các yêu cầu và để có thể báo cáo nó."
 Extended Description module_sfs.php: "Bảo vệ các trang đăng ký và đăng nhập đối với các địa chỉ IP do SFS liệt kê."
 Name Bypasses: "Các đường tránh chữ ký mặc định."
+Name CN_cidram.inc: "Danh sách chặn IPv4 của Trung Quốc"
 Name IPv4-Bogons: "IPv4 (bogon)."
 Name IPv4-ISPs: "IPv4 (ISP chứa người gửi thư rác)."
 Name IPv4-Other: "IPv4 (proxy, VPN, vv)."
@@ -41,12 +43,14 @@ Name IPv6-Bogons: "IPv6 (bogon)."
 Name IPv6-ISPs: "IPv6 (ISP chứa người gửi thư rác)."
 Name IPv6-Other: "IPv6 (proxy, VPN, vv)."
 Name IPv6: "IPv6 (dịch vụ đám mây và lưu trữ)."
+Name KR_cidram.inc: "Danh sách chặn IPv4 của Hàn Quốc"
 Name compat_bunnycdn.php: "Mô-đun tương thích BunnyCDN"
 Name module_abuseipdb.php: "Mô-đun AbuseIPDB"
 Name module_badhosts.php: "Mô-đun cho chặn các host xấu"
 Name module_badhosts_isps.php: "Mô-đun cho chặn các host xấu (ISP)"
 Name module_badtlds.php: "Mô-đun cho chặn các TLD xấu"
 Name module_baidublocker.php: "Mô-đun cho chặn Baidu"
+Name module_bgpview.php: "Mô-đun BGPView"
 Name module_botua.php: "Mô-đun đại lý người dùng tùy chọn"
 Name module_cookies.php: "Mô-đun tùy chọn cho cookie quét"
 Name module_extras.php: "Mô-đun tùy chọn cho bảo mật tính năng bổ sung"
@@ -490,6 +494,7 @@ info_some_useful_links: |
          <ul class="comSub">
            <li><a href="https://www.stopforumspam.com/">Stop Forum Spam</a> – Duy trì một cơ sở dữ liệu của những kẻ gửi thư rác được biết đến. Hữu ích để bảo vệ các trang web và diễn đàn chống lại kẻ gửi thư rác.</li>
            <li><a href="https://bgp.he.net/">Hurricane Electric BGP Toolkit</a> – Nhận các CIDR từ các ASN, xác định các mối quan hệ các ASN, khám phá vùng các ASN dựa trên các tên mạng, vv.</li>
+           <li><a href="https://bgpview.io/">BGPView</a> – Nhận các CIDR từ các ASN, xác định các mối quan hệ các ASN, khám phá vùng các ASN dựa trên các tên mạng, vv.</li>
            <li><a href="https://radar.qrator.net/">Radar bởi Qrator</a> – Công cụ hữu ích để kiểm tra kết nối ASN cũng như cho nhiều thông tin khác về ASN.</li>
            <li><a href="https://www.google.com/transparencyreport/safebrowsing/malware/">Google Malware Dashboard</a> – Hiển thị báo cáo về tỷ lệ lây nhiễm phần mềm độc hại cho các ASN.</li>
            <li><a href="https://www.spamhaus.org/statistics/botnet-asn/">Dự án Spamhaus</a> – Hiển thị báo cáo về tỷ lệ lây nhiễm chương trình thư rác cho các ASN.</li>

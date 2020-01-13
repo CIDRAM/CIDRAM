@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (traditional) language data for the front-end (last modified: 2019.12.19).
+# This file: Chinese (traditional) language data for the front-end (last modified: 2020.01.13).
 ##/
 
 Extended Description Bypasses: "標準簽名旁路文件通常包括在主包。"
@@ -26,6 +26,7 @@ Extended Description module_abuseipdb.php: "阻止來自AbuseIPDB列出的IP的�
 Extended Description module_badhosts.php: "阻止垃圾郵件發送者，黑客，和其他惡意實體經常使用的主機。"
 Extended Description module_badhosts_isps.php: "阻止垃圾郵件發送者，黑客，和其他惡意實體經常使用的ISP擁有的主機。"
 Extended Description module_badtlds.php: "阻止垃圾郵件發送者，黑客，和其他惡意實體經常使用的主機的TLD。"
+Extended Description module_bgpview.php: "利用<a href="https://bgpview.io/">bgpview.io</a> API為CIDRAM提供ASN和國家代碼查找功能，提供通過CIDRAM配置一種ASN和國家被阻止或列入白名單的方法，並提供一種用於社交媒體驗證的方式來驗證Facebook請求。"
 Extended Description module_botua.php: "阻止不需要的機器人和惡意活動相關聯的用戶代理。"
 Extended Description module_cookies.php: "提供一些針對危險cookie的有限保護。"
 Extended Description module_extras.php: "提供一些有限的保護針對各種攻擊向量常用於請求。"
@@ -33,6 +34,7 @@ Extended Description module_projecthoneypot.php: "阻止來自Project Honeypot�
 Extended Description module_refspam.php: "基於引薦來源垃圾郵件阻止通常不會提供任何有意義的安全利益，但在某些情況下，對某些用戶可能有用，用於收集有關請求的更多信息，以及能夠報告它。"
 Extended Description module_sfs.php: "防止通過SFS列出的IP地址訪問註冊和登錄頁面。"
 Name Bypasses: "標準簽名旁路。"
+Name CN_cidram.inc: "中國IPv4阻止清單"
 Name IPv4-Bogons: "IPv4（bogon）。"
 Name IPv4-ISPs: "IPv4（垃圾郵件ISP）。"
 Name IPv4-Other: "IPv4（代理，VPN，等等）。"
@@ -41,12 +43,14 @@ Name IPv6-Bogons: "IPv6（bogon）。"
 Name IPv6-ISPs: "IPv6（垃圾郵件ISP）。"
 Name IPv6-Other: "IPv6（代理，VPN，等等）。"
 Name IPv6: "IPv6（雲和託管服務）。"
+Name KR_cidram.inc: "南韓IPv4阻止清單"
 Name compat_bunnycdn.php: "BunnyCDN兼容模块"
 Name module_abuseipdb.php: "AbuseIPDB 模塊"
 Name module_badhosts.php: "壞主機阻塞模塊"
 Name module_badhosts_isps.php: "壞主機阻塞模塊（ISP）"
 Name module_badtlds.php: "壞TLD阻塞模塊"
 Name module_baidublocker.php: "百度阻塞模塊"
+Name module_bgpview.php: "BGPView 模塊"
 Name module_botua.php: "可選的用戶代理模塊"
 Name module_cookies.php: "可選cookie掃描器模塊"
 Name module_extras.php: "可選安全附加模塊"
@@ -491,6 +495,7 @@ info_some_useful_links: |
          <ul class="comSub">
            <li><a href="https://www.stopforumspam.com/">Stop Forum Spam</a> – 維護已知論壇垃圾郵件發送者的數據庫。有用的保護網站和論壇免受垃圾郵件發送者的攻。</li>
            <li><a href="https://bgp.he.net/">Hurricane Electric BGP Toolkit</a> – 從ASN獲取CIDR，​確定ASN關係，​基於網絡名稱發現ASN，​等等。</li>
+           <li><a href="https://bgpview.io/">BGPView</a> – 從ASN獲取CIDR，​確定ASN關係，​基於網絡名稱發現ASN，​等等。</li>
            <li><a href="https://radar.qrator.net/">Qrator的Radar</a> – 檢查ASN連接的有用工具，​以及關於ASN的各種其他信息。</li>
            <li><a href="https://www.google.com/transparencyreport/safebrowsing/malware/">Google Malware Dashboard</a> – 顯示有​關ASN惡意軟件感染率的報告。</li>
            <li><a href="https://www.spamhaus.org/statistics/botnet-asn/">Spamhaus項目</a> – 顯示有​關ASN殭屍網絡感染率的報告。</li>

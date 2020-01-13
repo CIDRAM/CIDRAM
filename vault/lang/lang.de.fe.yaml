@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: German language data for the front-end (last modified: 2019.12.19).
+# This file: German language data for the front-end (last modified: 2020.01.13).
 ##/
 
 Extended Description Bypasses: "Die Standard-Signatur-Bypass-Dateien, die normalerweise im Hauptpaket enthalten sind."
@@ -26,6 +26,7 @@ Extended Description module_abuseipdb.php: "Blockiert Anfragen von IPs, die bei 
 Extended Description module_badhosts.php: "Blockiert Hosts, die häufig von Spammern, Hackern und anderen bösartigen Entitäten verwendet werden."
 Extended Description module_badhosts_isps.php: "Blockiert Hosts, die zu ISPs gehören, die häufig von Spammern, Hackern und anderen schändlichen Entitäten verwendet werden."
 Extended Description module_badtlds.php: "Blockiert Hosts, die zu TLDs gehören, die häufig von Spammern, Hackern und anderen schändlichen Entitäten verwendet werden."
+Extended Description module_bgpview.php: "Nutzt die <a href="https://bgpview.io/">bgpview.io</a>-API, um ASN-Suchfunktionalität und Ländercode-Suchfunktionalität für CIDRAM bereitzustellen, um ASNer und Länder über die CIDRAM-Konfiguration zu blockieren oder in die Whitelist aufzulisten werden, und Bereitstellung eines Mittels zur Social-Media-Verifizierung um Facebook-Anfragen zu überprüfen."
 Extended Description module_botua.php: "Blockiert Benutzeragenten, die mit unerwünschten Bots und ruchlosen Aktivitäten in Verbindung stehen."
 Extended Description module_cookies.php: "Bietet einige begrenzte Schutzmaßnahmen gegen gefährliche Cookies."
 Extended Description module_extras.php: "Bietet einige begrenzte Schutzmaßnahmen gegen verschiedene Angriffsvektoren häufig in Anfragen verwendet."
@@ -33,6 +34,7 @@ Extended Description module_projecthoneypot.php: "Blockiert Anfragen von IPs, di
 Extended Description module_refspam.php: "Das Blockieren auf der Basis von Referrer-Spam bietet im Allgemeinen keinen bedeutenden Sicherheitsvorteil, jedoch in einigen Fällen kann dies für einige Benutzer hilfreich sein, um weitere Informationen zur Anfragen zu sammeln und um sie zu melden."
 Extended Description module_sfs.php: "Schützt die Registrierung und die Einloggen-Seiten vor den von SFS aufgelisteten IPs."
 Name Bypasses: "Standard-Signatur-Bypässe."
+Name CN_cidram.inc: "China IPv4 Blockliste"
 Name IPv4-Bogons: "IPv4 (Bogon CIDRs)."
 Name IPv4-ISPs: "IPv4 (ISPs, die Spam senden)."
 Name IPv4-Other: "IPv4 (Proxies, VPNs, u.s.w.)."
@@ -41,12 +43,14 @@ Name IPv6-Bogons: "IPv6 (Bogon CIDRs)."
 Name IPv6-ISPs: "IPv6 (ISPs, die Spam senden)."
 Name IPv6-Other: "IPv6 (Proxies, VPNs, u.s.w.)."
 Name IPv6: "IPv6 (Cloud- und Hosting-Dienste)."
+Name KR_cidram.inc: "Südkorea IPv4 Blockliste"
 Name compat_bunnycdn.php: "BunnyCDN Kompatibilitätsmodul"
 Name module_abuseipdb.php: "AbuseIPDB-Modul"
 Name module_badhosts.php: "Schlechte Hosts Blocker-Modul"
 Name module_badhosts_isps.php: "Schlechte Hosts Blocker-Modul (ISPs)"
 Name module_badtlds.php: "Schlechte TLDs Blocker-Modul"
 Name module_baidublocker.php: "Baidu Blocker-Modul"
+Name module_bgpview.php: "BGPView-Modul"
 Name module_botua.php: "Optionales Benutzeragenten-Modul"
 Name module_cookies.php: "Optionales Cookie-Scanner-Modul"
 Name module_extras.php: "Optionales Sicherheits-Extras-Modul"
@@ -500,6 +504,7 @@ info_some_useful_links: |
          <ul class="comSub">
            <li><a href="https://www.stopforumspam.com/">Stop Forum Spam</a> – Verwaltet eine Datenbank mit bekannten Forumspammern. Nützlich zum Schutz von Websites und Foren gegen Spammer.</li>
            <li><a href="https://bgp.he.net/">Hurricane Electric BGP Toolkit</a> – Erhalten Sie CIDRs von ASNs, bestimmen Sie ASN-Beziehungen, entdecken Sie ASNs basierend auf Netzwerknamen, u.s.w.</li>
+           <li><a href="https://bgpview.io/">BGPView</a> – Erhalten Sie CIDRs von ASNs, bestimmen Sie ASN-Beziehungen, entdecken Sie ASNs basierend auf Netzwerknamen, u.s.w.</li>
            <li><a href="https://radar.qrator.net/">Radar by Qrator</a> – Nützliches Werkzeug für die Überprüfung der Konnektivität von ASNs sowie für verschiedene andere Informationen über ASNs.</li>
            <li><a href="https://www.google.com/transparencyreport/safebrowsing/malware/">Google Malware Dashboard</a> – Zeigt Berichte über Malware-Infektionsraten für ASNs.</li>
            <li><a href="https://www.spamhaus.org/statistics/botnet-asn/">The Spamhaus Project</a> – Zeigt Berichte über Botnet-Infektionsraten für ASNs.</li>

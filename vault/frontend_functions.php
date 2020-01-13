@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2020.01.12).
+ * This file: Front-end functions file (last modified: 2020.01.13).
  */
 
 /**
@@ -2073,8 +2073,8 @@ $CIDRAM['UpdatesHandler-Repair'] = function ($ID) use (&$CIDRAM) {
             $TempMeta = [];
             $RemoteData = '';
             $CIDRAM['FetchRemote-ContextFree']($RemoteData, $CIDRAM['Components']['Meta'][$ThisTarget]['Remote']);
-            if ($RemoteData = $CIDRAM['ExtractPage']($RemoteData)) {
-                $CIDRAM['YAML']->process($RemoteData, $TempMeta);
+            if ($Extracted = $CIDRAM['ExtractPage']($RemoteData)) {
+                $CIDRAM['YAML']->process($Extracted, $TempMeta);
             }
             foreach ($TempMeta as $TempKey => $TempData) {
                 if (!isset($CIDRAM['Components']['RemoteMeta'][$TempKey])) {

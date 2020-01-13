@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Japanese language data for the front-end (last modified: 2019.12.19).
+# This file: Japanese language data for the front-end (last modified: 2020.01.13).
 ##/
 
 Extended Description Bypasses: "メインパッケージに通常含まれているデフォルト・シグネチャ・バイパス。"
@@ -34,6 +34,7 @@ Extended Description module_projecthoneypot.php: "Project Honeypotにリスト�
 Extended Description module_refspam.php: "リファラー・スパムに基づくブロックは、通常、有意義なセキュリティ上の利点を提供しません、ただし、場合によっては、リクエストに関する詳細情報の収集、およびレポートの作成に役立つ可能性があります。"
 Extended Description module_sfs.php: "ＳＦＳによってリストされたＩＰに対して登録ページとログインページを保護します。"
 Name Bypasses: "デフォルト・シグネチャ・バイパス。"
+Name CN_cidram.inc: "中国ＩＰｖ４ブロックリスト"
 Name IPv4-Bogons: "ＩＰｖ４（ボゴン）。"
 Name IPv4-ISPs: "ＩＰｖ４（スパマーＩＳＰ）。"
 Name IPv4-Other: "ＩＰｖ４（プロキシ、​ＶＰＮ、​およびその他の不要なサービス）。"
@@ -42,6 +43,7 @@ Name IPv6-Bogons: "ＩＰｖ６（ボゴン）。"
 Name IPv6-ISPs: "ＩＰｖ６（スパマーＩＳＰ）。"
 Name IPv6-Other: "ＩＰｖ６（プロキシ、​ＶＰＮ、​およびその他の不要なサービス）。"
 Name IPv6: "ＩＰｖ６（クラウド・サービス、ホスティング・サービス）。"
+Name KR_cidram.inc: "韓国ＩＰｖ４ブロックリスト"
 Name compat_bunnycdn.php: "BunnyCDN互換モジュール"
 Name module_abuseipdb.php: "AbuseIPDB モジュール"
 Name module_badhosts.php: "危険なホスト・ブロッカーモジュール"
@@ -492,6 +494,7 @@ info_some_useful_links: |
          <ul class="comSub">
            <li><a href="https://www.stopforumspam.com/">Stop Forum Spam</a> – 既知のフォーラム・スパマーのデータベースを維持します。​ウェブサイトやフォーラムをスパマーから保護するのに役立ちます。</li>
            <li><a href="https://bgp.he.net/">Hurricane Electric BGP Toolkit</a> – ＡＳＮからＣＩＤＲを取得する、​ＡＳＮ関係を決定する、​ネットワーク名に基づいてＡＳＮを検出する、​等。</li>
+           <li><a href="https://bgpview.io/">BGPView</a> – ＡＳＮからＣＩＤＲを取得する、​ＡＳＮ関係を決定する、​ネットワーク名に基づいてＡＳＮを検出する、​等。</li>
            <li><a href="https://radar.qrator.net/">QratorのRadar</a> – ＡＳＮの接続性をチェックするのに便利なツール；​ＡＳＮに関するその他の様々な情報。</li>
            <li><a href="https://www.google.com/transparencyreport/safebrowsing/malware/">Google Malware Dashboard</a> – ＡＳＮのマルウェア感染率に関するレポートを表示します。</li>
            <li><a href="https://www.spamhaus.org/statistics/botnet-asn/">Spamhausプロジェクト</a> – ＡＳＮのボットネット感染率に関するレポートを表示します。</li>

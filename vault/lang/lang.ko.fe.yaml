@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Korean language data for the front-end (last modified: 2019.12.19).
+# This file: Korean language data for the front-end (last modified: 2020.01.13).
 ##/
 
 Extended Description Bypasses: "기본 서명 우회 일반적으로 기본 패키지에 포함되어 있습니다."
@@ -34,6 +34,7 @@ Extended Description module_projecthoneypot.php: "Project Honeypot에 나열된 
 Extended Description module_refspam.php: "리퍼러 스팸에 기반한 차단은 일반적으로 의미 있는 보안 이점을 제공하지 않습니다, 그러나 어떤 경우에는, 요청에 대한 추가 정보를 수집하고 보고서를 생성하는 데 유용 할 수 있습니다."
 Extended Description module_sfs.php: "SFS가 나열한 IP에 대한 등록 및 로그인 페이지를 보호합니다."
 Name Bypasses: "기본 서명 우회."
+Name CN_cidram.inc: "중국 IPv4 차단 목록"
 Name IPv4-Bogons: "IPv4 (보곤)."
 Name IPv4-ISPs: "IPv4 (스패머을 가진 위험한 ISP)."
 Name IPv4-Other: "IPv4 (프록시, VPN, 등)."
@@ -42,6 +43,7 @@ Name IPv6-Bogons: "IPv6 (보곤)."
 Name IPv6-ISPs: "IPv6 (스패머을 가진 위험한 ISP)."
 Name IPv6-Other: "IPv6 (프록시, VPN, 등)."
 Name IPv6: "IPv6 (클라우드 및 호스팅 서비스)."
+Name KR_cidram.inc: "한국 IPv4 차단 목록"
 Name compat_bunnycdn.php: "BunnyCDN 호환성 모듈"
 Name module_abuseipdb.php: "AbuseIPDB 모듈"
 Name module_badhosts.php: "위험한 호스트 차단 모듈"
@@ -492,6 +494,7 @@ info_some_useful_links: |
          <ul class="comSub">
            <li><a href="https://www.stopforumspam.com/">Stop Forum Spam</a> – 알려진 포럼 스패머 데이터베이스를 유지 관리합니다. 스패머에 대한 보호 웹 사이트 및 포럼 보호에 유용합니다.</li>
            <li><a href="https://bgp.he.net/">Hurricane Electric BGP Toolkit</a> – ASN에서 CIDR을 취득하는 ASN 관계를 결정하는 네트워크 이름에 따라 ASN을 감지, 등등.</li>
+           <li><a href="https://bgpview.io/">BGPView</a> – ASN에서 CIDR을 취득하는 ASN 관계를 결정하는 네트워크 이름에 따라 ASN을 감지, 등등.</li>
            <li><a href="https://radar.qrator.net/">Qrator의 Radar</a> – ASN의 연결을 확인하는 데 유용한 도구; ASN에 관한 기타 다양한 정보.</li>
            <li><a href="https://www.google.com/transparencyreport/safebrowsing/malware/">Google Malware Dashboard</a> – ASN의 악성 코드 감염률에 대한 보고서를 표시합니다.</li>
            <li><a href="https://www.spamhaus.org/statistics/botnet-asn/">Spamhaus 프로젝트</a> – ASN의 봇넷 감염 속도에 대한 보고서를 표시합니다.</li>

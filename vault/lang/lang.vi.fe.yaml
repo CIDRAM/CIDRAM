@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Vietnamese language data for the front-end (last modified: 2019.12.19).
+# This file: Vietnamese language data for the front-end (last modified: 2020.01.13).
 ##/
 
 Extended Description Bypasses: "Các tập tin đường tránh chữ ký mặc định thường bao gồm với gói thầu chính."
@@ -34,6 +34,7 @@ Extended Description module_projecthoneypot.php: "Chặn các yêu cầu từ IP
 Extended Description module_refspam.php: "Chặn dựa trên spam giới thiệu thường không cung cấp bất kỳ lợi ích bảo mật có ý nghĩa nào, nhưng trong một số trường hợp, có thể hữu ích cho một số người dùng, để thu thập thêm thông tin về các yêu cầu và để có thể báo cáo nó."
 Extended Description module_sfs.php: "Bảo vệ các trang đăng ký và đăng nhập đối với các địa chỉ IP do SFS liệt kê."
 Name Bypasses: "Các đường tránh chữ ký mặc định."
+Name CN_cidram.inc: "Danh sách chặn IPv4 của Trung Quốc"
 Name IPv4-Bogons: "IPv4 (bogon)."
 Name IPv4-ISPs: "IPv4 (ISP chứa người gửi thư rác)."
 Name IPv4-Other: "IPv4 (proxy, VPN, vv)."
@@ -42,6 +43,7 @@ Name IPv6-Bogons: "IPv6 (bogon)."
 Name IPv6-ISPs: "IPv6 (ISP chứa người gửi thư rác)."
 Name IPv6-Other: "IPv6 (proxy, VPN, vv)."
 Name IPv6: "IPv6 (dịch vụ đám mây và lưu trữ)."
+Name KR_cidram.inc: "Danh sách chặn IPv4 của Hàn Quốc"
 Name compat_bunnycdn.php: "Mô-đun tương thích BunnyCDN"
 Name module_abuseipdb.php: "Mô-đun AbuseIPDB"
 Name module_badhosts.php: "Mô-đun cho chặn các host xấu"
@@ -492,6 +494,7 @@ info_some_useful_links: |
          <ul class="comSub">
            <li><a href="https://www.stopforumspam.com/">Stop Forum Spam</a> – Duy trì một cơ sở dữ liệu của những kẻ gửi thư rác được biết đến. Hữu ích để bảo vệ các trang web và diễn đàn chống lại kẻ gửi thư rác.</li>
            <li><a href="https://bgp.he.net/">Hurricane Electric BGP Toolkit</a> – Nhận các CIDR từ các ASN, xác định các mối quan hệ các ASN, khám phá vùng các ASN dựa trên các tên mạng, vv.</li>
+           <li><a href="https://bgpview.io/">BGPView</a> – Nhận các CIDR từ các ASN, xác định các mối quan hệ các ASN, khám phá vùng các ASN dựa trên các tên mạng, vv.</li>
            <li><a href="https://radar.qrator.net/">Radar bởi Qrator</a> – Công cụ hữu ích để kiểm tra kết nối ASN cũng như cho nhiều thông tin khác về ASN.</li>
            <li><a href="https://www.google.com/transparencyreport/safebrowsing/malware/">Google Malware Dashboard</a> – Hiển thị báo cáo về tỷ lệ lây nhiễm phần mềm độc hại cho các ASN.</li>
            <li><a href="https://www.spamhaus.org/statistics/botnet-asn/">Dự án Spamhaus</a> – Hiển thị báo cáo về tỷ lệ lây nhiễm chương trình thư rác cho các ASN.</li>

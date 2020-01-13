@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Italian language data for the front-end (last modified: 2019.12.19).
+# This file: Italian language data for the front-end (last modified: 2020.01.13).
 ##/
 
 Extended Description Bypasses: "Un file per bypassare alcune delle firme predefinite normalmente inclusi nel pacchetto principale."
@@ -34,6 +34,7 @@ Extended Description module_projecthoneypot.php: "Blocca le richieste dagli IP e
 Extended Description module_refspam.php: "Il blocco basato sullo spam dei referrer in genere non offre alcun vantaggio significativo in termini di sicurezza, ma in alcuni casi potrebbe essere utile per alcuni utenti, per raccogliere maggiori informazioni sulle richieste e per poterle segnalare."
 Extended Description module_sfs.php: "Protegge le pagine di registrazione e di accesso agli IP elencati da SFS."
 Name Bypasses: "I firme predefinite bypass."
+Name CN_cidram.inc: "Lista di blocca IPv4 per la Cina"
 Name IPv4-Bogons: "IPv4 (bogon)."
 Name IPv4-ISPs: "IPv4 (ISP di spam)."
 Name IPv4-Other: "IPv4 (proxy, VPN, ecc)."
@@ -42,6 +43,7 @@ Name IPv6-Bogons: "IPv6 (bogon)."
 Name IPv6-ISPs: "IPv6 (ISP di spam)."
 Name IPv6-Other: "IPv6 (proxy, VPN, ecc)."
 Name IPv6: "IPv6 (servizi cloud e hosting)."
+Name KR_cidram.inc: "Lista di blocca IPv4 per la Corea del Sud"
 Name compat_bunnycdn.php: "BunnyCDN modulo di compatibilità"
 Name module_abuseipdb.php: "Modulo AbuseIPDB"
 Name module_badhosts.php: "Modulo bloccante di cattivi host"
@@ -498,6 +500,7 @@ info_some_useful_links: |
          <ul class="comSub">
            <li><a href="https://www.stopforumspam.com/">Stop Forum Spam</a> – Mantiene un database di spammer di forum noti. Utile per proteggere siti Web e forum dagli spammer.</li>
            <li><a href="https://bgp.he.net/">Hurricane Electric BGP Toolkit</a> – Ottenere CIDRs da ASNs, determinare le relazioni di ASNs, scopri ASNs basata su nomi di rete, ecc.</li>
+           <li><a href="https://bgpview.io/">BGPView</a> – Ottenere CIDRs da ASNs, determinare le relazioni di ASNs, scopri ASNs basata su nomi di rete, ecc.</li>
            <li><a href="https://radar.qrator.net/">Radar da Qrator</a> – Strumento utile per verificare la connettività di ASN nonché per varie altre informazioni utili riguardo ASNs.</li>
            <li><a href="https://www.google.com/transparencyreport/safebrowsing/malware/">Google Malware Dashboard</a> – Visualizza i rapporti per quanto riguarda ai tassi di infezione da malware per ASN.</li>
            <li><a href="https://www.spamhaus.org/statistics/botnet-asn/">Il progetto Spamhaus</a> – Visualizza i rapporti per quanto riguarda ai tassi di infezione di botnet per ASN.</li>

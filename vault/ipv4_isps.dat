@@ -1,8 +1,8 @@
 # IPv4 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv4_isps.dat
 
-# Version: 2020.11.348
-# Last modified: 2020.01.12
+# Version: 2020.13.679
+# Last modified: 2020.01.14
 
 
 # ---
@@ -8287,21 +8287,53 @@ recaptcha:
 
 # "PSINet" (exclude invalids to reduce the false positive risk). Cheap human
 # endpoint ISP with ranges known to be used by hackers and spammers, but also
-# contains benign ranges+users. Careful when updating; Section contains one
-# "Run" parameter.
-# Updated: 2020.01.03
+# contains benign ranges+users. For 38.0.0.0/8, I'll subtract every currently
+# clean /16 (according to currently available records), and only list the
+# remainder, and mark them with a"Run" parameter.
+# Also see: https://github.com/CIDRAM/CIDRAM/issues/164
+# Updated: 2020.01.14
 
-38.0.0.0/8 Run rules_specific.php
+38.21.0.0/16 Run rules_specific.php
+38.29.0.0/16 Run rules_specific.php
+38.39.0.0/16 Run rules_specific.php
+38.64.0.0/15 Run rules_specific.php
+38.67.0.0/16 Run rules_specific.php
+38.68.0.0/16 Run rules_specific.php
+38.70.0.0/16 Run rules_specific.php
+38.74.0.0/15 Run rules_specific.php
+38.80.0.0/16 Run rules_specific.php
+38.86.0.0/15 Run rules_specific.php
+38.88.0.0/16 Run rules_specific.php
+38.91.0.0/16 Run rules_specific.php
+38.93.0.0/16 Run rules_specific.php
+38.95.0.0/16 Run rules_specific.php
+38.96.0.0/16 Run rules_specific.php
+38.98.0.0/16 Run rules_specific.php
+38.100.0.0/16 Run rules_specific.php
+38.102.0.0/16 Run rules_specific.php
+38.104.0.0/16 Run rules_specific.php
+38.106.0.0/15 Run rules_specific.php
+38.113.0.0/16 Run rules_specific.php
+38.117.0.0/16 Run rules_specific.php
+38.121.0.0/16 Run rules_specific.php
+38.122.0.0/15 Run rules_specific.php
+38.124.0.0/15 Run rules_specific.php
+38.127.0.0/16 Run rules_specific.php
+38.130.0.0/16 Run rules_specific.php
+38.132.0.0/15 Run rules_specific.php
+38.134.0.0/16 Run rules_specific.php
+38.140.0.0/14 Run rules_specific.php
+38.145.0.0/16 Run rules_specific.php
+38.146.0.0/15 Run rules_specific.php
+38.240.0.0/16 Run rules_specific.php
 128.145.0.0/16 Deny Generic
 130.117.0.0/16 Deny Generic
 148.254.0.0/16 Deny Generic
 149.2.0.0/16 Deny Generic
 149.5.0.0/16 Deny Generic
 149.6.127.0/24 Deny Generic
-149.6.192.0/24 Deny Generic
 149.6.194.0/23 Deny Generic
 149.6.196.0/24 Deny Generic
-149.6.205.0/24 Deny Generic
 149.6.206.0/23 Deny Generic
 149.7.1.0/24 Deny Generic
 149.7.39.0/24 Deny Generic
@@ -8312,7 +8344,6 @@ recaptcha:
 149.7.210.0/23 Deny Generic
 149.7.212.0/24 Deny Generic
 149.7.218.0/23 Deny Generic
-149.7.220.0/23 Deny Generic
 149.7.222.0/24 Deny Generic
 149.11.0.0/16 Deny Generic
 149.12.24.0/21 Deny Generic

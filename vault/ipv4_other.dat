@@ -1,8 +1,8 @@
 # IPv4 signatures file (CIDRs for proxies, VPNs and other miscellaneous unwanted services).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv4_other.dat
 
-# Version: 2020.2.306
-# Last modified: 2020.01.03
+# Version: 2020.18.258
+# Last modified: 2020.01.19
 
 
 # ---
@@ -1463,11 +1463,11 @@ Tag: Octopusnet VPN
 
 
 # ASN 208323 ("Foundation for Applied Privacy").
-# Provides tor endpoints. No listings at any DBs/RBLs anywhere AFAICT, but have
-# had a few reports of suspect activity from some users; adding for the moment
-# on proviso that there aren't any complaints about false positives or similar
-# such problems, and we'll see how it goes.
-# Updated: 2019.10.02
+# A *huge* source of spam! Went from zero reports at SFS to 38,300+ reports in
+# the course of less than three months; Should be cautious about removal, even
+# if the reports subside in the future.
+# Stop Forum Spam (SFS) listings: 38,300.
+# Updated: 2019.10.02 / Checked: 2020.01.15
 
 109.70.100.0/24 Deny Proxy
 Origin: AT

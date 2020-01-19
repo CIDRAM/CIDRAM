@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_isps.dat
 
-# Version: 2020.11.348
-# Last modified: 2020.01.12
+# Version: 2020.18.258
+# Last modified: 2020.01.19
 
 
 # ---
@@ -64,9 +64,9 @@ recaptcha:
 
 
 # ASNs 24940, 37153 ("Hetzner Online GmbH").
-# %Listed, Google Malware Dashboard: 0.03% (AS24940), 0.15% (AS37153).
-# Stop Forum Spam (SFS) listings: 24,872 (AS24940), 542 (AS37153).
-# Updated: 2019.11.02
+# %Listed, Google Malware Dashboard: 0.04% (AS24940), 0.20% (AS37153).
+# Stop Forum Spam (SFS) listings: 29,877 (AS24940), 531 (AS37153).
+# Updated: 2019.11.02 / Checked: 2020.01.19
 
 2001:67c:1164::/48 Deny Generic
 2a01:4f8::/29 Deny Generic
@@ -1726,6 +1726,16 @@ Tag: Dhivehi Raajjeyge
 ---
 recaptcha:
  enabled: true
+
+
+# ASN 41435 ("UnderNet LLC").
+# Caught attempting to hack WordPress sites.
+# Stop Forum Spam (SFS) listings: 1,118.
+# Updated: 2020.01.15
+
+2a0d:9880::/32 Deny Generic
+Origin: UA
+Tag: UnderNet LLC
 
 
 # ASNs 8369, 198675, 199619 ("Intersvyaz-2 JSC").

@@ -1,8 +1,8 @@
 # IPv4 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv4_isps.dat
 
-# Version: 2020.13.679
-# Last modified: 2020.01.14
+# Version: 2020.18.258
+# Last modified: 2020.01.19
 
 
 # ---
@@ -426,17 +426,20 @@ recaptcha:
 
 
 # ASNs 24940, 37153 ("Hetzner Online GmbH").
-# %Listed, Google Malware Dashboard: 0.03% (AS24940), 0.15% (AS37153).
-# Stop Forum Spam (SFS) listings: 24,872 (AS24940), 542 (AS37153).
-# Updated: 2019.11.02
+# %Listed, Google Malware Dashboard: 0.04% (AS24940), 0.20% (AS37153).
+# Stop Forum Spam (SFS) listings: 29,877 (AS24940), 531 (AS37153).
+# Updated: 2020.01.19
 
 190.99.83.0/24 Deny Generic
 Origin: BZ
 83.219.100.0/22 Deny Generic
 Origin: CH
 5.9.0.0/16 Deny Generic
+5.75.128.0/17 Deny Generic
+5.161.0.0/16 Deny Generic
 45.15.120.0/22 Deny Generic
 46.4.0.0/16 Deny Generic
+49.12.0.0/15 Deny Generic
 78.46.0.0/15 Deny Generic
 80.243.224.0/22 Deny Generic
 83.171.236.0/22 Deny Generic
@@ -444,10 +447,12 @@ Origin: CH
 85.10.192.0/18 Deny Generic
 88.99.0.0/16 Deny Generic
 88.198.0.0/16 Deny Generic
+91.107.128.0/17 Deny Generic
 91.233.8.0/22 Deny Generic
 94.130.0.0/16 Deny Generic
 95.216.0.0/15 Deny Generic
 116.202.0.0/15 Deny Generic
+128.140.0.0/17 Deny Generic
 136.243.0.0/16 Deny Generic
 138.201.0.0/16 Deny Generic
 144.76.0.0/16 Deny Generic
@@ -467,13 +472,13 @@ Origin: CH
 185.157.176.0/22 Deny Generic
 185.171.224.0/22 Deny Generic
 185.185.24.0/22 Deny Generic
-185.189.228.0/24 Deny Generic
-185.189.230.0/23 Deny Generic
+185.189.228.0/22 Deny Generic
 185.209.124.0/22 Deny Generic
 185.212.104.0/22 Deny Generic
-185.216.236.0/23 Deny Generic
+185.216.237.0/24 Deny Generic
 185.228.8.0/23 Deny Generic
 185.229.88.0/22 Deny Generic
+188.34.128.0/17 Deny Generic
 188.40.0.0/16 Deny Generic
 193.25.170.0/23 Deny Generic
 193.110.6.0/23 Deny Generic
@@ -1669,9 +1674,9 @@ recaptcha:
 
 
 # ASN 47155 ("ViaEuropa i Lund AB").
+# No recent reports or bad activity detected. Possible candidate for future removal.
 # Refer stopforumspam.com/forum/viewtopic.php?id=4676
-# Stop Forum Spam (SFS) listings: 2.
-# Updated: 2016.04.17 / Checked: 2019.09.01
+# Updated: 2016.04.17 / Checked: 2020.01.15
 
 93.182.128.0/18 Deny Spam
 185.123.228.0/22 Deny Spam
@@ -8289,7 +8294,7 @@ recaptcha:
 # endpoint ISP with ranges known to be used by hackers and spammers, but also
 # contains benign ranges+users. For 38.0.0.0/8, I'll subtract every currently
 # clean /16 (according to currently available records), and only list the
-# remainder, and mark them with a"Run" parameter.
+# remainder, and mark them with a "Run" parameter.
 # Also see: https://github.com/CIDRAM/CIDRAM/issues/164
 # Updated: 2020.01.14
 
@@ -10470,13 +10475,13 @@ recaptcha:
 
 # ASNs 20850, 25229, 39049 ("Kyivski Telekomunikatsiyni Merezhi LLC").
 # Huge source of spam and also caught attempting to hack WordPress sites.
-# %Listed, Google Malware Dashboard: 0.07% (AS25229).
-# Stop Forum Spam (SFS) listings: 10 (AS20850), 33,965 (AS25229).
-# Updated: 2019.10.01
+# Stop Forum Spam (SFS) listings: 5 (AS20850), 21,860 (AS25229).
+# Updated: 2020.01.15
 
 93.170.27.0/24 Deny Spam
 Origin: CZ
 46.150.64.0/19 Deny Spam
+62.122.71.0/24 Deny Spam
 77.120.0.0/19 Deny Spam
 77.120.32.0/20 Deny Spam
 77.120.52.0/22 Deny Spam
@@ -10492,6 +10497,7 @@ Origin: CZ
 77.121.15.0/24 Deny Spam
 77.121.16.0/21 Deny Spam
 77.121.24.0/23 Deny Spam
+77.121.26.0/24 Deny Spam
 77.121.28.0/22 Deny Spam
 77.121.64.0/18 Deny Spam
 77.121.128.0/17 Deny Spam
@@ -10528,15 +10534,16 @@ Origin: CZ
 93.78.128.0/17 Deny Spam
 93.79.0.0/16 Deny Spam
 94.231.32.0/20 Deny Spam
-95.69.128.0/19 Deny Spam
+95.69.128.0/20 Deny Spam
+95.69.144.0/21 Deny Spam
+95.69.156.0/22 Deny Spam
+95.69.160.0/21 Deny Spam
 95.69.232.0/24 Deny Spam
-95.69.240.0/21 Deny Spam
-95.69.248.0/22 Deny Spam
+95.69.240.0/20 Deny Spam
 141.170.224.0/22 Deny Spam
 141.170.229.0/24 Deny Spam
 141.170.230.0/23 Deny Spam
-141.170.232.0/24 Deny Spam
-141.170.234.0/23 Deny Spam
+141.170.232.0/22 Deny Spam
 141.170.236.0/24 Deny Spam
 141.170.238.0/24 Deny Spam
 141.170.240.0/22 Deny Spam
@@ -10567,8 +10574,8 @@ Tag: Kyivski Merezhi
 
 # ASN 41435 ("UnderNet LLC").
 # Caught attempting to hack WordPress sites.
-# Stop Forum Spam (SFS) listings: 188.
-# Updated: 2019.10.01
+# Stop Forum Spam (SFS) listings: 1,118.
+# Updated: 2019.10.01 / Checked: 2020.01.15
 
 79.110.128.0/20 Deny Generic
 91.193.32.0/22 Deny Generic
@@ -10583,14 +10590,14 @@ Tag: UnderNet LLC
 # Caught spamming and occasionally attempting to hack WordPress sites. Also a
 # very large, legit ISP in India, so just listing some /24s associated with the
 # specific offending IPs instead of listing the entire ASN (and omitting IPv6).
-# Stop Forum Spam (SFS) listings: 686.
-# Updated: 2019.10.02
+# Stop Forum Spam (SFS) listings: 613.
+# Updated: 2020.01.15
 
-115.248.237.0/24 Deny Spam
+115.248.223.0/24 Deny Spam
+115.254.53.0/24 Deny Spam
 202.138.127.0/24 Deny Spam
 220.227.0.0/24 Deny Spam
 220.227.71.0/24 Deny Spam
-220.227.234.0/24 Deny Spam
 Origin: IN
 Tag: Reliance Communications
 ---

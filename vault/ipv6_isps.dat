@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_isps.dat
 
-# Version: 2020.18.258
-# Last modified: 2020.01.19
+# Version: 2020.22.184
+# Last modified: 2020.01.24
 
 
 # ---
@@ -148,9 +148,9 @@ recaptcha:
 
 
 # ASN 24203 ("PT Excelcomindo Pratama").
-# %Listed, abuseat.org (CBL-Listed): 43.90%.
-# Stop Forum Spam (SFS) listings: 188.
-# Updated: 2017.12.08 / Checked: 2019.09.21
+# %Listed, abuseat.org (CBL-Listed): 43.11%.
+# Stop Forum Spam (SFS) listings: 144.
+# Updated: 2017.12.08 / Checked: 2020.01.23
 
 2400:9800::/32 Deny Spam
 Origin: ID
@@ -243,11 +243,11 @@ recaptcha:
 
 
 # ASN 41011 ("CH-NET S.R.L").
-# Stop Forum Spam (SFS) listings: 131.
-# Updated: 2017.06.28 / Checked: 2019.09.27
+# Stop Forum Spam (SFS) listings: 177.
+# Updated: 2020.01.24
 
 2001:67c:2100::/48 Deny Generic
-2a06:afc0::/47 Deny Generic
+2a06:afc0::/48 Deny Generic
 2a06:afc0:2::/48 Deny Generic
 Origin: RO
 Tag: CH-NET S.R.L
@@ -267,18 +267,23 @@ Tag: JPMorgan Chase & Co
 # Exclude (carries human endpoints and seems clean):
 # - "^.*Internetbolaget.*$\n"
 # Mark as proxy:
-# - "^(.*(?:VP[SN]|Tunnel|Edelino).*)$"
+# - "^(.*(?:Tunnel|Edelino).*)$"
 # Mark as cloud:
-# - "^(.*(?:Host|Netelia|Sveaab|GleSYS|Webbplatsen|InfoGuard).*)$"
+# - "^(.*(?:Host|Netelia|Sveaab|GleSYS|Servinga|Webbplatsen|InfoGuard).*)$"
 # Mark as spam (carries human endpoints, but also poses a spam risk):
 # - "^(.*(?:Svenska).*)$"
 # Everything else mark as generic.
-# %Listed, Google Malware Dashboard: 0.13% (AS42708), 0.03% (AS43948).
-# Stop Forum Spam (SFS) listings: 1,622 (AS42708).
-# Updated: 2019.05.02 / Checked: 2019.09.18
+# %Listed, Google Malware Dashboard: 0.09% (AS43948).
+# Stop Forum Spam (SFS) listings: 1,044 (AS42708), 1 (AS43948).
+# Updated: 2020.01.23
 
+2a01:8640:6::/48 Deny Generic
 2a01:8640:9::/48 Deny Generic
 Origin: GB
+2a00:1a28::/32 Deny Generic
+2a02:750::/29 Deny Generic
+2a02:7ac0::/32 Deny Generic
+Origin: SE
 Tag: Portlane Networks AB
 ---
 recaptcha:
@@ -669,8 +674,12 @@ Origin: MD
 Tag: ALEXHOST SRL
 
 
-# ASNs 11572, 29656, 57872, 60558, 207134 ("PHOENIX NAP, LLC").
-# Updated: 2017.07.08 / Checked: 2019.09.29
+# ASNs 11572, 29656, 39239, 50389, 57872, 60558, 207134, 210266 ("PHOENIX NAP, LLC").
+# VPN/VPS/Proxy services + dedicated servers/cloud provider; Multiplay; A
+# number of human endpoints, but not an actual domestic ISP; requests likely
+# not immediately traceable to any specific individuals. A long history of
+# unwanted traffic from their network.
+# Updated: 2017.07.08 / Checked: 2020.01.24
 
 2a00:8860::/32 Deny Generic
 Origin: EU

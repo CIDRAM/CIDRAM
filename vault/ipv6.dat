@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6.dat
 
-# Version: 2020.18.258
-# Last modified: 2020.01.19
+# Version: 2020.22.184
+# Last modified: 2020.01.24
 
 
 # ---
@@ -682,9 +682,9 @@ Tag: Data Center
 
 
 # ASN 42807 ("Aerotek Bilisim Taahhut Sanayi ve Ticaret Limited Sirketi").
-# %Listed, Google Malware Dashboard: 0.17%.
-# Stop Forum Spam (SFS) listings: 2.
-# Updated: 2017.07.25 / Checked: 2019.09.18
+# %Listed, Google Malware Dashboard: 0.19%.
+# Stop Forum Spam (SFS) listings: 40.
+# Updated: 2017.07.25 / Checked: 2020.01.23
 
 2a03:adc0::/48 Deny Cloud
 Origin: TR
@@ -908,9 +908,11 @@ Tag: IOMart
 
 
 # ASN 35425 ("Bytemark Limited").
-# Updated: 2019.09.21
+# Stop Forum Spam (SFS) listings: 5.
+# Updated: 2020.01.24
 
 2001:41c8::/29 Deny Cloud
+2a0f:23c7::/32 Deny Cloud
 Origin: GB
 Tag: Bytemark Limited
 
@@ -1030,9 +1032,9 @@ Tag: WestHost, Inc
 
 
 # ASN 32097 ("WholeSale Internet, Inc").
-# %Listed, Google Malware Dashboard: 3.73%.
-# Stop Forum Spam (SFS) listings: 232.
-# Updated: 2018.10.10 / Checked: 2019.09.21
+# %Listed, Google Malware Dashboard: 1.57%.
+# Stop Forum Spam (SFS) listings: 237.
+# Updated: 2018.10.10 / Checked: 2020.01.24
 
 2001:4858::/32 Deny Cloud
 Origin: US
@@ -1719,8 +1721,8 @@ Tag: Micfo, LLC
 
 
 # ASN 53264 ("Continuum Data Centers, LLC").
-# %Listed, Google Malware Dashboard: 0.55%.
-# Updated: 2017.07.23 / Checked: 2019.09.21
+# Stop Forum Spam (SFS) listings: 1.
+# Updated: 2017.07.23 / Checked: 2020.01.24
 
 2607:ff50::/32 Deny Cloud
 Origin: US
@@ -3927,9 +3929,9 @@ Tag: NewMedia Express
 
 
 # ASN 3842 ("RamNode LLC").
-# %Listed, Google Malware Dashboard: 0.28%.
-# Stop Forum Spam (SFS) listings: 296.
-# Updated: 2019.09.21
+# %Listed, Google Malware Dashboard: 0.44%.
+# Stop Forum Spam (SFS) listings: 359.
+# Updated: 2019.09.21 / Checked: 2020.01.23
 
 2604:180::/46 Deny Cloud
 2604:180:9::/48 Deny Cloud
@@ -4796,17 +4798,32 @@ Origin: US
 Tag: Server Central Network
 
 
-# ASNs 30496, 36024 ("TierPoint, LLC" / "Colo4, LLC").
-# %Listed, Google Malware Dashboard: 0.26% (AS30496), 0.27% (AS36024).
-# Stop Forum Spam (SFS) listings: 5 (AS30496).
-# Updated: 2019.09.21
+# ASNs 7181, 7349, 11274, 17113, 17378, 19019, 26094, 30340, 30496, 36024 ("TierPoint, LLC").
+# Dedicated colo/cloud provider; A source of spam, brute-force and hack
+# attempts, probing/scanning and other unwanted traffic.
+# Updated: 2020.01.23
 
+2001:438:fffd:6c::/64 Deny Cloud
+2001:19b8::/32 Deny Cloud
+2001:4970::/32 Deny Cloud
+2600:2c00::/34 Deny Cloud
+2600:2c00:4000::/36 Deny Cloud
+2600:2c00:7000::/36 Deny Cloud
+2600:2c00:8000::/34 Deny Cloud
+2600:2c00:c000::/36 Deny Cloud
+2600:2c00:f000::/36 Deny Cloud
+2600:2c01:6000::/36 Deny Cloud
+2604:7e00::/32 Deny Cloud
 2605:7700::/48 Deny Cloud
 2606:4300::/48 Deny Cloud
+2606:a700::/32 Deny Cloud
 2607:f198::/32 Deny Cloud
+2607:f3f8::/32 Deny Cloud
+2607:f9e0::/36 Deny Cloud
 2607:fdb8::/32 Deny Cloud
+2620:5f:4000::/48 Deny Cloud
 Origin: US
-Tag: Colo4, LLC
+Tag: TierPoint, LLC
 
 
 # ASNs 15626, 21100, 50979, 59729 ("ITL Company").
@@ -6184,15 +6201,15 @@ Tag: KLAYER LLC
 # Exclude (carries human endpoints and seems clean):
 # - "^.*Internetbolaget.*$\n"
 # Mark as proxy:
-# - "^(.*(?:VP[SN]|Tunnel|Edelino).*)$"
+# - "^(.*(?:Tunnel|Edelino).*)$"
 # Mark as cloud:
-# - "^(.*(?:Host|Netelia|Sveaab|GleSYS|Webbplatsen|InfoGuard).*)$"
+# - "^(.*(?:Host|Netelia|Sveaab|GleSYS|Servinga|Webbplatsen|InfoGuard).*)$"
 # Mark as spam (carries human endpoints, but also poses a spam risk):
 # - "^(.*(?:Svenska).*)$"
 # Everything else mark as generic.
-# %Listed, Google Malware Dashboard: 0.13% (AS42708), 0.03% (AS43948).
-# Stop Forum Spam (SFS) listings: 1,622 (AS42708).
-# Updated: 2019.05.02 / Checked: 2019.09.18
+# %Listed, Google Malware Dashboard: 0.09% (AS43948).
+# Stop Forum Spam (SFS) listings: 1,044 (AS42708), 1 (AS43948).
+# Updated: 2019.05.02 / Checked: 2020.01.23
 
 2a01:8640:6::/48 Deny Cloud
 Origin: GB

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2020.01.11).
+ * This file: Front-end handler (last modified: 2020.01.24).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -214,8 +214,9 @@ if (!empty($CIDRAM['QueryVars']['cidram-asset'])) {
     if ($CIDRAM['Success']) {
         die;
     }
-    unset($CIDRAM['ThisAssetType'], $CIDRAM['ThisAssetDel'], $CIDRAM['ThisAsset'], $CIDRAM['Success']);
 
+    /** Cleanup. */
+    unset($CIDRAM['ThisAssetType'], $CIDRAM['ThisAssetDel'], $CIDRAM['ThisAsset'], $CIDRAM['Success']);
 }
 
 /** A simple passthru for the front-end CSS. */
@@ -546,7 +547,6 @@ elseif (!empty($_COOKIE['CIDRAM-ADMIN'])) {
             }
         }
     }
-
 }
 
 /** The user is attempting an asynchronous request without adequate permissions. */
@@ -589,9 +589,7 @@ if (($CIDRAM['FE']['UserState'] === 1 || $CIDRAM['FE']['UserState'] === 2) && !$
             $CIDRAM['L10N']->Data + $CIDRAM['FE'],
             $CIDRAM['ReadFile']($CIDRAM['GetAssetPath']('_nav_logs_access_only.html'))
         );
-
     }
-
 }
 
 $CIDRAM['FE']['bNavBR'] = ($CIDRAM['FE']['UserState'] === 1) ? '<br /><br />' : '<br />';
@@ -625,7 +623,6 @@ if ($CIDRAM['FE']['UserState'] !== 1 && !$CIDRAM['FE']['CronMode']) {
 
     /** Send output. */
     echo $CIDRAM['SendOutput']();
-
 }
 
 /**
@@ -788,7 +785,6 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === '' && !$CIDRAM['FE']['CronMode']
 
     /** Send output. */
     echo $CIDRAM['SendOutput']();
-
 }
 
 /** A simple passthru for the file manager icons. */
@@ -832,7 +828,6 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'icon' && $CIDRAM['FE']['Permiss
     }
 
     die;
-
 }
 
 /** A simple passthru for the flags CSS. */
@@ -1054,9 +1049,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'accounts' && $CIDRAM['FE']['Per
 
         /** Send output. */
         echo $CIDRAM['SendOutput']();
-
     }
-
 }
 
 /** Configuration. */
@@ -1425,7 +1418,6 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
 
     /** Send output. */
     echo $CIDRAM['SendOutput']();
-
 }
 
 /** Cache data. */
@@ -1537,9 +1529,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'cache-data' && $CIDRAM['FE']['P
 
         /** Send output. */
         echo $CIDRAM['SendOutput']();
-
     }
-
 }
 
 /** Updates. */
@@ -2182,7 +2172,6 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && ($CIDRAM['FE']['Per
 
     /** Cleanup. */
     unset($CIDRAM['Components'], $CIDRAM['CFBoilerplate']);
-
 }
 
 /** Signature file fixer. */
@@ -2365,7 +2354,6 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'fixer' && $CIDRAM['FE']['Permis
 
     /** Send output. */
     echo $CIDRAM['SendOutput']();
-
 }
 
 /** File Manager. */
@@ -2757,7 +2745,6 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'file-manager' && $CIDRAM['FE'][
 
     /** Send output. */
     echo $CIDRAM['SendOutput']();
-
 }
 
 /** Sections List. */
@@ -2839,7 +2826,6 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'sections' && $CIDRAM['FE']['Per
         unset($CIDRAM['Handle'], $CIDRAM['IgnoreData']);
 
     }
-
 }
 
 /** Range Tables. */
@@ -2861,18 +2847,34 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'range' && $CIDRAM['FE']['Permis
     /** Template for range rows. */
     $CIDRAM['FE']['RangeRow'] = $CIDRAM['ReadFile']($CIDRAM['GetAssetPath']('_range_row.html'));
 
+    /** Where to populate signature file data for the matrix. */
+    $CIDRAM['FE']['Matrix-Data'] = '';
+
     /** Process signature files and fetch returned JavaScript stuff. */
     $CIDRAM['FE']['JSFOOT'] = $CIDRAM['RangeTablesHandler'](
         array_unique(explode(',', $CIDRAM['Config']['signatures']['ipv4'])),
         array_unique(explode(',', $CIDRAM['Config']['signatures']['ipv6']))
     );
 
+    /** Process matrix data. */
+    if ($CIDRAM['FE']['Matrix-Data']) {
+        $CIDRAM['FE']['Matrix'] = sprintf(
+            '<br /><table><tr><td class="spanner"><img src="data:image/png;base64,%s" alt="CIDRAM signature file analysis" /></td></tr></table>',
+            base64_encode($CIDRAM['Matrix-Create']($CIDRAM['FE']['Matrix-Data']))
+        );
+    } else {
+        $CIDRAM['FE']['Matrix'] = '';
+    }
+
     /** Calculate and append page load time, and append totals. */
     $CIDRAM['FE']['ProcTime'] = microtime(true) - $_SERVER['REQUEST_TIME_FLOAT'];
     $CIDRAM['FE']['ProcTime'] = '<div class="s">' . sprintf(
         $CIDRAM['L10N']->getPlural($CIDRAM['FE']['ProcTime'], 'state_loadtime'),
         $CIDRAM['NumberFormatter']->format($CIDRAM['FE']['ProcTime'], 3)
-    ) . '</div>';
+    ) . '</div>' . $CIDRAM['FE']['Matrix'];
+
+    /** Cleanup. */
+    unset($CIDRAM['FE']['Matrix'], $CIDRAM['FE']['Matrix-Data']);
 
     /** Parse output. */
     $CIDRAM['FE']['FE_Content'] = $CIDRAM['ParseVars'](
@@ -2882,7 +2884,6 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'range' && $CIDRAM['FE']['Permis
 
     /** Send output. */
     echo $CIDRAM['SendOutput']();
-
 }
 
 /** Range Subtractor. */
@@ -2981,7 +2982,6 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'range-subtractor' && $CIDRAM['F
 
     /** Send output. */
     echo $CIDRAM['SendOutput']();
-
 }
 
 /** IP Aggregator. */
@@ -3081,7 +3081,6 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-aggregator' && $CIDRAM['FE']
 
     /** Send output. */
     echo $CIDRAM['SendOutput']();
-
 }
 
 /** IP Test. */
@@ -3226,7 +3225,6 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-test' && $CIDRAM['FE']['Perm
 
     /** Send output. */
     echo $CIDRAM['SendOutput']();
-
 }
 
 /** IP Tracking. */
@@ -3411,7 +3409,6 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-tracking' && $CIDRAM['FE']['
         echo $CIDRAM['SendOutput']();
 
     }
-
 }
 
 /** CIDR Calculator. */
@@ -3465,7 +3462,6 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'cidr-calc' && $CIDRAM['FE']['Pe
 
     /** Send output. */
     echo $CIDRAM['SendOutput']();
-
 }
 
 /** Statistics. */
@@ -3563,7 +3559,6 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'statistics' && $CIDRAM['FE']['P
 
     /** Cleanup. */
     unset($CIDRAM['StatColour'], $CIDRAM['StatWorking'], $CIDRAM['TheseStats']);
-
 }
 
 /** Auxiliary Rules. */
@@ -3828,7 +3823,6 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'aux' && $CIDRAM['FE']['Permissi
         }
 
     }
-
 }
 
 /** Logs. */
@@ -4015,7 +4009,6 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'logs' && $CIDRAM['FE']['Permiss
 
     /** Send output. */
     echo $CIDRAM['SendOutput']();
-
 }
 
 /** Rebuild cache. */

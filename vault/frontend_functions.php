@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2020.01.13).
+ * This file: Front-end functions file (last modified: 2020.01.24).
  */
 
 /**
@@ -2568,6 +2568,9 @@ $CIDRAM['RangeTablesIterateFiles'] = function (array &$Arr, array $Files, array 
         if (!$Data) {
             continue;
         }
+        if (isset($CIDRAM['FE']['Matrix-Data']) && class_exists('\Maikuolan\Common\Matrix') && function_exists('imagecreatetruecolor')) {
+            $CIDRAM['FE']['Matrix-Data'] .= $Data;
+        }
         $CIDRAM['NormaliseLinebreaks']($Data);
         $HasOrigin = (strpos($Data, "\nOrigin: ") !== false);
         foreach ($SigTypes as $SigType) {
@@ -3491,4 +3494,251 @@ $CIDRAM['ExtractPage'] = function (string $Data = ''): string {
         return '';
     }
     return substr($Data, 4);
+};
+
+$CIDRAM['Matrix-Increment'] = function (&$Current, $Key, &$Previous, $KeyPrevious, &$Next, $KeyNext, &$Step, $Amount) {
+    if (
+        !is_array($Current) ||
+        !isset($Current['R'], $Current['G'], $Current['B'], $Amount[0], $Amount[1]) ||
+        ($Amount[0] !== 'R' && $Amount[0] !== 'G' && $Amount[0] !== 'B')
+    ) {
+        return;
+    }
+    $Current[$Amount[0]] += $Amount[1];
+};
+
+$CIDRAM['Matrix-Limit'] = function (&$Current) {
+    if (!is_array($Current) || !isset($Current['R'], $Current['G'], $Current['B'])) {
+        return;
+    }
+    foreach ($Current as &$RGB) {
+        if (!is_int($RGB) || $RGB < 0) {
+            $RGB = 0;
+        }
+        $RGB = ceil($RGB);
+        if ($RGB > 255) {
+            $RGB = 255;
+        }
+    }
+};
+
+$CIDRAM['Matrix-Draw'] = function (&$Current, $Key, &$Previous, $KeyPrevious, &$Next, $KeyNext, &$Step, $Offsets) use (&$CIDRAM) {
+    if (!is_array($Current) || !is_array($Offsets) || !isset($Current['R'], $Current['G'], $Current['B'], $CIDRAM['Matrix-Image'])) {
+        return;
+    }
+    $Colour = ($Current['R'] * 65536) + ($Current['G'] * 256) + $Current['B'];
+    $XY = explode(',', $Key);
+    $X = $XY[0] ?? 0;
+    $Y = $XY[1] ?? 0;
+    if (is_array($Offsets) && isset($Offsets[0], $Offsets[1]) && is_int($Offsets[0]) && is_int($Offsets[1])) {
+        $X += $Offsets[0];
+        $Y += $Offsets[1];
+    }
+    imagesetpixel($CIDRAM['Matrix-Image'], $X, $Y, $Colour);
+};
+
+$CIDRAM['Matrix-Create-Generator'] = function (string &$Source) use (&$CIDRAM): \Generator {
+    $SPos = 0;
+    while (($FPos = strpos($Source, "\n", $SPos)) !== false) {
+        $Mark = [];
+        if (isset($CIDRAM['Matrix-%Print'])) {
+            $CIDRAM['Matrix-%Print']();
+        }
+        $Line = substr($Source, $SPos, $FPos - $SPos);
+        $SPos = $FPos + 1;
+        if (!strlen($Line) || substr($Line, 0, 1) === '#') {
+            continue;
+        }
+        $Matches = [];
+        if (preg_match('~^(\d+).(\d+).(\d+).(\d+)/(\d+) (Deny|Whitelist|Greylist|Run)~', $Line, $Matches)) {
+            $Mark['6or4'] = 4;
+            if ($Matches[6] === 'Deny') {
+                $Mark['Colour'] = 'R';
+            } elseif ($Matches[6] === 'Run') {
+                $Mark['Colour'] = 'B';
+            } else {
+                $Mark['Colour'] = 'G';
+            }
+            if ($Matches[5] <= 8) {
+                for ($Iterant = $Matches[5], $To = 256; $Iterant > 0; $Iterant--) {
+                    $To /= 2;
+                }
+                $To += $Matches[1] - 1;
+                $Mark['Range'] = $Matches[1] . '-' . $To . ',0-255';
+                $Mark['Amount'] = 255;
+            } elseif ($Matches[5] <= 16) {
+                for ($Iterant = $Matches[5] - 8, $To = 256; $Iterant > 0; $Iterant--) {
+                    $To /= 2;
+                }
+                $To += $Matches[2] - 1;
+                $Mark['Range'] = $Matches[1] . ',' . $Matches[2] . '-' . $To;
+                $Mark['Amount'] = 255;
+            } elseif ($Matches[5] <= 24) {
+                for ($Iterant = $Matches[5] - 16, $To = 256; $Iterant > 0; $Iterant--) {
+                    $To /= 2;
+                }
+                $To += $Matches[3] - 1;
+                $Mark['Range'] = $Matches[1] . ',' . $Matches[2];
+                $Mark['Amount'] = $To;
+            } else {
+                for ($Iterant = $Matches[5] - 24, $To = 256; $Iterant > 0; $Iterant--) {
+                    $To /= 2;
+                }
+                $To += $Matches[4] - 1;
+                $Mark['Range'] = $Matches[1] . ',' . $Matches[2];
+                $Mark['Amount'] = $To / 256;
+            }
+            yield $Mark;
+        } elseif (
+            preg_match('~^()([\da-f]{1,2})()()\:\:/(\d+) (Deny|Whitelist|Greylist|Run)~', $Line, $Matches) ||
+            preg_match('~^([\da-f]{1,2})([\da-f]{2})()()\:\:/(\d+) (Deny|Whitelist|Greylist|Run)~', $Line, $Matches) ||
+            preg_match('~^([\da-f]{1,2})([\da-f]{2})\:()([\da-f]{1,2})\:\:/(\d+) (Deny|Whitelist|Greylist|Run)~', $Line, $Matches) ||
+            preg_match('~^([\da-f]{1,2})([\da-f]{2})\:([\da-f]{1,2})([\da-f]{2})\:\:/(\d+) (Deny|Whitelist|Greylist|Run)~', $Line, $Matches)
+        ) {
+            $Mark['6or4'] = 6;
+            if ($Matches[6] === 'Deny') {
+                $Mark['Colour'] = 'R';
+            } elseif ($Matches[6] === 'Run') {
+                $Mark['Colour'] = 'B';
+            } else {
+                $Mark['Colour'] = 'G';
+            }
+            if ($Matches[5] <= 8) {
+                for ($Iterant = $Matches[5], $To = 256; $Iterant > 0; $Iterant--) {
+                    $To /= 2;
+                }
+                $To += hexdec($Matches[1]) - 1;
+                $Mark['Range'] = hexdec($Matches[1]) . '-' . $To . ',0-255';
+                $Mark['Amount'] = 255;
+            } elseif ($Matches[5] <= 16) {
+                for ($Iterant = $Matches[5] - 8, $To = 256; $Iterant > 0; $Iterant--) {
+                    $To /= 2;
+                }
+                $To += hexdec($Matches[2]) - 1;
+                $Mark['Range'] = hexdec($Matches[1]) . ',' . hexdec($Matches[2]) . '-' . $To;
+                $Mark['Amount'] = 255;
+            } elseif ($Matches[5] <= 24) {
+                for ($Iterant = $Matches[5] - 16, $To = 256; $Iterant > 0; $Iterant--) {
+                    $To /= 2;
+                }
+                $To += hexdec($Matches[3]) - 1;
+                $Mark['Range'] = hexdec($Matches[1]) . ',' . hexdec($Matches[2]);
+                $Mark['Amount'] = $To;
+            } else {
+                for ($Iterant = $Matches[5] - 24, $To = 256; $Iterant > 0; $Iterant--) {
+                    $To /= 2;
+                }
+                $To += hexdec($Matches[4]) - 1;
+                $Mark['Range'] = hexdec($Matches[1]) . ',' . hexdec($Matches[2]);
+                $Mark['Amount'] = $To / 256;
+            }
+            yield $Mark;
+        }
+    }
+};
+
+$CIDRAM['Matrix-Create'] = function (string &$Source, string $Destination = '', bool $CLI = false) use (&$CIDRAM) {
+    if ($CLI) {
+        $Splits = ['Percentage' => 0, 'Skip' => 0];
+        $Splits['Max'] = substr_count($Source, "\n");
+        $CIDRAM['Matrix-%Print'] = function () use (&$Splits, &$CIDRAM) {
+            $Splits['Percentage']++;
+            $Splits['Skip']++;
+            if ($Splits['Percentage'] >= $Splits['Max']) {
+                $Splits['Max'] = $Splits['Percentage'] + 1;
+            }
+            $Current = $Splits['Percentage'] / $Splits['Max'];
+            if ($Splits['Skip'] > 24) {
+                $Splits['Skip'] = 0;
+                $Memory = memory_get_usage();
+                $CIDRAM['FormatFilesize']($Memory);
+                echo "\rWorking ... " . $CIDRAM['NumberFormatter']->format($Current, 2) . '% (' . $CIDRAM['TimeFormat'](time(), $CIDRAM['Config']['general']['time_format']) . ') <RAM: ' . $Memory . '>';
+            }
+        };
+        echo "\rWorking ...";
+    } elseif (isset($CIDRAM['Matrix-%Print'])) {
+        unset($CIDRAM['Matrix-%Print']);
+    }
+
+    $IPv4 = new \Maikuolan\Common\Matrix();
+    $IPv4->createMatrix(2, 256, ['R' => 0, 'G' => 0, 'B' => 0]);
+
+    $IPv6 = new \Maikuolan\Common\Matrix();
+    $IPv6->createMatrix(2, 256, ['R' => 0, 'G' => 0, 'B' => 0]);
+
+    foreach ($CIDRAM['Matrix-Create-Generator']($Source) as $Mark) {
+        if ($Mark['6or4'] === 4) {
+            $IPv4->iterateCallback($Mark['Range'], $CIDRAM['Matrix-Increment'], $Mark['Colour'], $Mark['Amount']);
+        } elseif ($Mark['6or4'] === 6) {
+            $IPv6->iterateCallback($Mark['Range'], $CIDRAM['Matrix-Increment'], $Mark['Colour'], $Mark['Amount']);
+        }
+    }
+
+    $IPv4->iterateCallback('0-255,0-255', $CIDRAM['Matrix-Limit']);
+    $IPv6->iterateCallback('0-255,0-255', $CIDRAM['Matrix-Limit']);
+
+    $Wheel = new \Maikuolan\Common\Matrix();
+    $Wheel->createMatrix(2, 24, ['R' => 0, 'G' => 0, 'B' => 0]);
+    $Wheel->iterateCallback('0-8,12-15', $CIDRAM['Matrix-Increment'], 'R', 32);
+    $Wheel->iterateCallback('0-8,8-15', $CIDRAM['Matrix-Increment'], 'R', 32);
+    $Wheel->iterateCallback('0-8,4-15', $CIDRAM['Matrix-Increment'], 'R', 32);
+    $Wheel->iterateCallback('0-8,0-15', $CIDRAM['Matrix-Increment'], 'R', 32);
+    $Wheel->iterateCallback('5-13,16-19', $CIDRAM['Matrix-Increment'], 'B', 32);
+    $Wheel->iterateCallback('5-13,12-19', $CIDRAM['Matrix-Increment'], 'B', 32);
+    $Wheel->iterateCallback('5-13,8-19', $CIDRAM['Matrix-Increment'], 'B', 32);
+    $Wheel->iterateCallback('5-13,4-19', $CIDRAM['Matrix-Increment'], 'B', 32);
+    $Wheel->iterateCallback('10-18,20-23', $CIDRAM['Matrix-Increment'], 'G', 32);
+    $Wheel->iterateCallback('10-18,16-23', $CIDRAM['Matrix-Increment'], 'G', 32);
+    $Wheel->iterateCallback('10-18,12-23', $CIDRAM['Matrix-Increment'], 'G', 32);
+    $Wheel->iterateCallback('10-18,8-23', $CIDRAM['Matrix-Increment'], 'G', 32);
+
+    $CIDRAM['Matrix-Image'] = imagecreatetruecolor(544, 308);
+
+    /** Roofs. */
+    imageline($CIDRAM['Matrix-Image'], 10, 48, 269, 48, 16777215);
+    imageline($CIDRAM['Matrix-Image'], 284, 48, 543, 48, 16777215);
+
+    /** Walls. */
+    imageline($CIDRAM['Matrix-Image'], 10, 48, 10, 307, 16777215);
+    imageline($CIDRAM['Matrix-Image'], 269, 48, 269, 307, 16777215);
+    imageline($CIDRAM['Matrix-Image'], 284, 48, 284, 307, 16777215);
+    imageline($CIDRAM['Matrix-Image'], 543, 48, 543, 307, 16777215);
+
+    /** Floors. */
+    imageline($CIDRAM['Matrix-Image'], 10, 307, 269, 307, 16777215);
+    imageline($CIDRAM['Matrix-Image'], 284, 307, 543, 307, 16777215);
+
+    imagestring($CIDRAM['Matrix-Image'], 2, 12, 2, 'CIDRAM signature file analysis (image generated ' . date('Y.m.d', time()) . ').', 16777215);
+    imagefilledrectangle($CIDRAM['Matrix-Image'] , 12, 14, 22, 24, 16711680);
+    imagestring($CIDRAM['Matrix-Image'], 2, 24, 12, '"Deny" signatures', 16711680);
+    imagefilledrectangle($CIDRAM['Matrix-Image'] , 130, 14, 140, 24, 65280);
+    imagestring($CIDRAM['Matrix-Image'], 2, 142, 12, '"Whitelist" + "Greylist" signatures', 65280);
+    imagefilledrectangle($CIDRAM['Matrix-Image'] , 356, 14, 366, 24, 255);
+    imagestring($CIDRAM['Matrix-Image'], 2, 368, 12, '"Run" signatures', 255);
+
+    imagestring($CIDRAM['Matrix-Image'], 2, 14, 36, '< 0.0.0.0/8        IPv4      255.0.0.0/8 >', 16777215);
+    imagestring($CIDRAM['Matrix-Image'], 2, 288, 36, '< 00xx::/8         IPv6         ffxx::/8 >', 16777215);
+    imagestringup($CIDRAM['Matrix-Image'], 2, -2, 304, '< x.255.0.0/16                x.0.0.0/16 >', 16777215);
+    imagestringup($CIDRAM['Matrix-Image'], 2, 272, 304, '< xxff::/16                    xx00::/16 >', 16777215);
+
+    $IPv4->iterateCallback('0-255,0-255', $CIDRAM['Matrix-Draw'], 12, 50);
+    $IPv6->iterateCallback('0-255,0-255', $CIDRAM['Matrix-Draw'], 286, 50);
+    $Wheel->iterateCallback('0-24,0-24', $CIDRAM['Matrix-Draw'], 519, 2);
+
+    if ($CLI) {
+        if (!$Destination) {
+            $Destination = 'export.png';
+        }
+        imagepng($CIDRAM['Matrix-Image'], $CIDRAM['Vault'] . $Destination);
+        $Memory = memory_get_usage();
+        $CIDRAM['FormatFilesize']($Memory);
+        echo "\rWorking ... " . $CIDRAM['NumberFormatter']->format(100, 2) . '% (' . $CIDRAM['TimeFormat'](time(), $CIDRAM['Config']['general']['time_format']) . ') <RAM: ' . $Memory . '>' . "\n\n";
+    } else {
+        ob_start();
+        imagepng($CIDRAM['Matrix-Image']);
+        $Out = ob_get_contents();
+        ob_end_clean();
+        return $Out;
+    }
+    imagedestroy($CIDRAM['Matrix-Image']);
 };

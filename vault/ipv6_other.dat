@@ -1,8 +1,8 @@
 # IPv6 signatures file (CIDRs for proxies, VPNs and other miscellaneous unwanted services).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_other.dat
 
-# Version: 2020.18.258
-# Last modified: 2020.01.19
+# Version: 2020.22.184
+# Last modified: 2020.01.23
 
 
 # ---
@@ -139,17 +139,16 @@ Tag: F3 Netze e.V
 # Exclude (carries human endpoints and seems clean):
 # - "^.*Internetbolaget.*$\n"
 # Mark as proxy:
-# - "^(.*(?:VP[SN]|Tunnel|Edelino).*)$"
+# - "^(.*(?:Tunnel|Edelino).*)$"
 # Mark as cloud:
-# - "^(.*(?:Host|Netelia|Sveaab|GleSYS|Webbplatsen|InfoGuard).*)$"
+# - "^(.*(?:Host|Netelia|Sveaab|GleSYS|Servinga|Webbplatsen|InfoGuard).*)$"
 # Mark as spam (carries human endpoints, but also poses a spam risk):
 # - "^(.*(?:Svenska).*)$"
 # Everything else mark as generic.
-# %Listed, Google Malware Dashboard: 0.13% (AS42708), 0.03% (AS43948).
-# Stop Forum Spam (SFS) listings: 1,622 (AS42708).
-# Updated: 2019.05.02 / Checked: 2019.09.18
+# %Listed, Google Malware Dashboard: 0.09% (AS43948).
+# Stop Forum Spam (SFS) listings: 1,044 (AS42708), 1 (AS43948).
+# Updated: 2020.01.23
 
-2a02:750:8::/48 Deny Proxy
 2a02:7ac0::/32 Deny Proxy
 Origin: SE
 Tag: Portlane Networks AB

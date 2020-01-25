@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2020.01.24).
+ * This file: Front-end functions file (last modified: 2020.01.25).
  */
 
 /**
@@ -984,7 +984,6 @@ $CIDRAM['SimulateBlockEvent'] = function (string $Addr, bool $Modules = false, b
      * as opposed to checking against actual, real requests; still needed to set it though to prevent errors).
      */
     unset($CIDRAM['Reporter']);
-
 };
 
 /**
@@ -1581,7 +1580,6 @@ $CIDRAM['UpdatesHandler'] = function (string $Action, $ID = '') use (&$CIDRAM) {
 
     /** Process and empty executor queue. */
     $CIDRAM['FE_Executor']();
-
 };
 
 /**
@@ -2196,7 +2194,6 @@ $CIDRAM['UpdatesHandler-Repair'] = function ($ID) use (&$CIDRAM) {
 
             /** Replace downstream meta with upstream meta. */
             $CIDRAM['Components']['Meta'][$ThisTarget] = $CIDRAM['Components']['RemoteMeta'][$ThisTarget];
-
         } else {
             $RepairFailed = true;
 
@@ -2205,7 +2202,6 @@ $CIDRAM['UpdatesHandler-Repair'] = function ($ID) use (&$CIDRAM) {
             if (!empty($CIDRAM['Components']['Meta'][$ThisTarget]['When Repair Fails'])) {
                 $CIDRAM['FE_Executor']($CIDRAM['Components']['Meta'][$ThisTarget]['When Repair Fails'], true);
             }
-
         }
         $CIDRAM['FormatFilesize']($BytesAdded);
         $CIDRAM['FormatFilesize']($BytesRemoved);
@@ -2852,7 +2848,6 @@ $CIDRAM['InitialPrepwork'] = function (string $Title = '', string $Tips = '', bo
 
     /** Load main front-end JavaScript data. */
     $CIDRAM['FE']['JS'] = $JS ? $CIDRAM['ReadFile']($CIDRAM['GetAssetPath']('scripts.js')) : '';
-
 };
 
 /**
@@ -3084,12 +3079,10 @@ $CIDRAM['SendEmail'] = function (array $Recipients = [], string $Subject = '', s
                 $CIDRAM['L10N']->getString('state_email_sent'),
                 $SuccessDetails
             ) : $CIDRAM['L10N']->getString('response_error') . ' - ' . $Mail->ErrorInfo) . "\n";
-
         } catch (\Exception $e) {
 
             /** An exeption occurred. Log the information. */
             $EventLogData .= $CIDRAM['L10N']->getString('response_error') . ' - ' . $e->getMessage() . "\n";
-
         }
     }
 
@@ -3218,7 +3211,6 @@ $CIDRAM['AuxGenerateFEData'] = function () use (&$CIDRAM) {
                         $Output .= "\n            <li>" . $ThisSource . ' ≠ <code>' . $Value . '</code></li>';
                     }
                 }
-
             }
 
             /** List all "equals" conditions . */
@@ -3234,12 +3226,10 @@ $CIDRAM['AuxGenerateFEData'] = function () use (&$CIDRAM) {
                         $Output .= "\n            <li>" . $ThisSource . ' = <code>' . $Value . '</code></li>';
                     }
                 }
-
             }
 
             /** Finish writing conditions list. */
             $Output .= "\n          </ul><br />";
-
         }
 
         /** Describe matching logic used. */
@@ -3251,12 +3241,10 @@ $CIDRAM['AuxGenerateFEData'] = function () use (&$CIDRAM) {
 
         /** Finish writing new rule. */
         $Output .= "</td>\n        </tr>\n";
-
     }
 
     /** Exit with generated output. */
     return $Output;
-
 };
 
 /**
@@ -3410,7 +3398,6 @@ $CIDRAM['LTRinRTF'] = function (string $String = '') use (&$CIDRAM): string {
         ['\2&lt;-\1', '\2⬅\1'],
         $String
     );
-
 };
 
 /**
@@ -3496,6 +3483,18 @@ $CIDRAM['ExtractPage'] = function (string $Data = ''): string {
     return substr($Data, 4);
 };
 
+/**
+ * A callback closure used by the matrix handler to increment coordinates.
+ *
+ * @param string $Current The value of the current coordinate.
+ * @param string $Key The key of the current coordinate (expected, but not used by this callback).
+ * @param string $Previous The value of the previous coordinate (expected, but not used by this callback).
+ * @param string $KeyPrevious The key of the previous coordinate (expected, but not used by this callback).
+ * @param string $Next The value of the next coordinate (expected, but not used by this callback).
+ * @param string $KeyNext The key of the next coordinate (expected, but not used by this callback).
+ * @param string $Step Can be used to manipulate the vector trajectory (expected, but not used by this callback).
+ * @param string $Amount Contains information such as the type and amount of value to be added to the coordinate.
+ */
 $CIDRAM['Matrix-Increment'] = function (&$Current, $Key, &$Previous, $KeyPrevious, &$Next, $KeyNext, &$Step, $Amount) {
     if (
         !is_array($Current) ||
@@ -3507,6 +3506,11 @@ $CIDRAM['Matrix-Increment'] = function (&$Current, $Key, &$Previous, $KeyPreviou
     $Current[$Amount[0]] += $Amount[1];
 };
 
+/**
+ * A callback closure used by the matrix handler to limit a coordinate's RGB values.
+ *
+ * @param string $Current The value of the current coordinate.
+ */
 $CIDRAM['Matrix-Limit'] = function (&$Current) {
     if (!is_array($Current) || !isset($Current['R'], $Current['G'], $Current['B'])) {
         return;
@@ -3522,6 +3526,18 @@ $CIDRAM['Matrix-Limit'] = function (&$Current) {
     }
 };
 
+/**
+ * A callback closure used by the matrix handler to draw an image from a matrix.
+ *
+ * @param string $Current The value of the current coordinate.
+ * @param string $Key The key of the current coordinate.
+ * @param string $Previous The value of the previous coordinate (expected, but not used by this callback).
+ * @param string $KeyPrevious The key of the previous coordinate (expected, but not used by this callback).
+ * @param string $Next The value of the next coordinate (expected, but not used by this callback).
+ * @param string $KeyNext The key of the next coordinate (expected, but not used by this callback).
+ * @param string $Step Can be used to manipulate the vector trajectory (expected, but not used by this callback).
+ * @param string $Offsets Contains offsets between the matrix coordinates to the image XY coordinates.
+ */
 $CIDRAM['Matrix-Draw'] = function (&$Current, $Key, &$Previous, $KeyPrevious, &$Next, $KeyNext, &$Step, $Offsets) use (&$CIDRAM) {
     if (!is_array($Current) || !is_array($Offsets) || !isset($Current['R'], $Current['G'], $Current['B'], $CIDRAM['Matrix-Image'])) {
         return;
@@ -3537,6 +3553,13 @@ $CIDRAM['Matrix-Draw'] = function (&$Current, $Key, &$Previous, $KeyPrevious, &$
     imagesetpixel($CIDRAM['Matrix-Image'], $X, $Y, $Colour);
 };
 
+/**
+ * Yields the ranges of the signatures in the currently active signature files
+ * as values to be used as coordinates in the matrices generated by the
+ * matrix handler for use at the front-end range tables page.
+ *
+ * @param string $Source The contents of the currently active signature files.
+ */
 $CIDRAM['Matrix-Create-Generator'] = function (string &$Source) use (&$CIDRAM): \Generator {
     $SPos = 0;
     while (($FPos = strpos($Source, "\n", $SPos)) !== false) {
@@ -3637,6 +3660,17 @@ $CIDRAM['Matrix-Create-Generator'] = function (string &$Source) use (&$CIDRAM): 
     }
 };
 
+/**
+ * Uses the matrix handler to create an image from the ranges of the signatures
+ * in the currently active signature files (requires GD functionality).
+ *
+ * @param string $Source The contents of the currently active signature files.
+ * @param string $Destination Where to save the image file after rendering it
+*       with the CLI tool (has no effect when CLI is false and can be omitted).
+ * @param bool $CLI Should be true when called via the CLI tool and should
+ *      otherwise always be false.
+ * @return string Raw PNG data (or no return value if CLI is true).
+ */
 $CIDRAM['Matrix-Create'] = function (string &$Source, string $Destination = '', bool $CLI = false) use (&$CIDRAM) {
     if ($CLI) {
         $Splits = ['Percentage' => 0, 'Skip' => 0];

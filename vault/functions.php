@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2020.01.11).
+ * This file: Functions file (last modified: 2020.01.25).
  */
 
 /** Autoloader for CIDRAM classes. */
@@ -700,14 +700,16 @@ $CIDRAM['Supplementary'] = function (string $Source) use (&$CIDRAM): array {
  * Used to send cURL requests.
  *
  * @param string $URI The resource to request.
- * @param array $Params An optional associative array of key-value pairs to
- *      send with the request.
+ * @param mixed $Params If empty or omitted, CURLOPT_POST is false. Otherwise,
+ *      CURLOPT_POST is true, and the parameter is used to supply
+ *      CURLOPT_POSTFIELDS. Normally an associative array of key-value pairs,
+ *      but can be any kind of value supported by CURLOPT_POSTFIELDS. Optional.
  * @param int $Timeout An optional timeout limit.
  * @param array $Headers An optional array of headers to send with the request.
  * @param int $Depth Recursion depth of the current closure instance.
  * @return string The results of the request, or an empty string upon failure.
  */
-$CIDRAM['Request'] = function (string $URI, array $Params = [], int $Timeout = -1, array $Headers = [], int $Depth = 0) use (&$CIDRAM): string {
+$CIDRAM['Request'] = function (string $URI, $Params = [], int $Timeout = -1, array $Headers = [], int $Depth = 0) use (&$CIDRAM): string {
 
     /** Fetch channel information. */
     if (!isset($CIDRAM['Channels'])) {
@@ -749,8 +751,14 @@ $CIDRAM['Request'] = function (string $URI, array $Params = [], int $Timeout = -
             }
             return '';
         }
+        if (isset($CIDRAM['Channels']['Overrides'], $CIDRAM['Channels']['Overrides'][$TriggerName])) {
+            $Overrides = $CIDRAM['Channels']['cURL Overrides'][$TriggerName];
+        }
         break;
     }
+
+    /** Empty overrides in case none declared. */
+    $Overrides = [];
 
     /** Initialise the cURL session. */
     $Request = curl_init($URI);
@@ -770,7 +778,9 @@ $CIDRAM['Request'] = function (string $URI, array $Params = [], int $Timeout = -
     }
     if ($SSL) {
         curl_setopt($Request, CURLOPT_PROTOCOLS, CURLPROTO_HTTPS);
-        curl_setopt($Request, CURLOPT_SSL_VERIFYPEER, false);
+        curl_setopt($Request, CURLOPT_SSL_VERIFYPEER, (
+            isset($Overrides['CURLOPT_SSL_VERIFYPEER']) ? !empty($Overrides['CURLOPT_SSL_VERIFYPEER']) : false
+        ));
     }
     curl_setopt($Request, CURLOPT_FOLLOWLOCATION, true);
     curl_setopt($Request, CURLOPT_MAXREDIRS, 1);
@@ -818,7 +828,6 @@ $CIDRAM['Request'] = function (string $URI, array $Params = [], int $Timeout = -
 
     /** Return the results of the request. */
     return $Response;
-
 };
 
 /**
@@ -953,7 +962,6 @@ $CIDRAM['DNS-Reverse'] = function (string $Addr, string $DNS = '', int $Timeout 
 
     /** Return results. */
     return $CIDRAM['DNS-Reverses'][$Addr]['Host'] = preg_replace('/[^:\da-z._~-]/i', '', $Host) ?: $Addr;
-
 };
 
 /** Aliases for "DNS-Reverse". */
@@ -971,7 +979,6 @@ $CIDRAM['DNS-Reverse-Fallback'] = function (string $Addr) use (&$CIDRAM): string
 
     /** Return results. */
     return $CIDRAM['DNS-Reverses'][$Addr]['Host'] = preg_replace('/[^:\da-z._~-]/i', '', gethostbyaddr($Addr)) ?: $Addr;
-
 };
 
 /**
@@ -1080,7 +1087,6 @@ $CIDRAM['DNS-Reverse-Forward'] = function ($Domains, string $Friendly, array $Op
             }
             return true;
         }
-
     }
 
     /** It's a fake; Block it. */
@@ -1541,7 +1547,6 @@ $CIDRAM['InitialiseCache'] = function () use (&$CIDRAM) {
     $CIDRAM['InitialiseCacheSection']('Tracking');
     $CIDRAM['InitialiseCacheSection']('DNS-Forwards');
     $CIDRAM['InitialiseCacheSection']('DNS-Reverses');
-
 };
 
 /**
@@ -1574,7 +1579,6 @@ $CIDRAM['InitialiseCacheSection'] = function (string $SectionName) use (&$CIDRAM
         $CIDRAM[$SectionName] = [];
         $CIDRAM[$SectionName . '-Modified'] = true;
     }
-
 };
 
 /** Destroy cache object and some related values. */
@@ -1894,7 +1898,6 @@ $CIDRAM['AuxMatch'] = function ($Criteria, $Actual, $Method = '') use (&$CIDRAM)
 
     /** Failed to match anything. */
     return false;
-
 };
 
 /**
@@ -1935,7 +1938,6 @@ $CIDRAM['AuxAction'] = function ($Action, $Name, $Reason = '') use (&$CIDRAM) {
 
     /** Exit. */
     return false;
-
 };
 
 /** Procedure for parsing and processing auxiliary rules. */
@@ -2037,7 +2039,6 @@ $CIDRAM['Aux'] = function () use (&$CIDRAM) {
                         }
                     }
                 }
-
             }
 
             /** Matches. */
@@ -2094,18 +2095,14 @@ $CIDRAM['Aux'] = function () use (&$CIDRAM) {
                         }
                     }
                 }
-
             }
 
             /** Perform action for matching rules requiring all conditions to be met. */
             if ($Logic === 'All' && $Matched && $CIDRAM['AuxAction']($Mode, $Name, $Reason)) {
                 return;
             }
-
         }
-
     }
-
 };
 
 /**

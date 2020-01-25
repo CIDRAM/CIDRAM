@@ -94,7 +94,7 @@ class Matrix
             };
         }
 
-        /** Results frm the callback function (if provided by the callback). */
+        /** Results from the callback function (if provided by the callback). */
         $Out = [];
 
         $Description = explode(',', $Description);

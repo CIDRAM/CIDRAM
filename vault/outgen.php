@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Output generator (last modified: 2020.01.11).
+ * This file: Output generator (last modified: 2020.01.25).
  */
 
 /** Initialise cache. */
@@ -152,7 +152,6 @@ if ($CIDRAM['Protect'] && !$CIDRAM['Config']['general']['maintenance_mode']) {
         $CIDRAM['BlockInfo']['WhyReason'] = $CIDRAM['L10N']->getString('Short_Banned');
         $CIDRAM['BlockInfo']['SignatureCount']++;
     }
-
 }
 
 /** Define whether to track the IP of the current request. */
@@ -225,8 +224,9 @@ if ($CIDRAM['Protect'] && !$CIDRAM['Config']['general']['maintenance_mode'] && e
         $CIDRAM['Stage'] = 'Reporting';
         $CIDRAM['Reporter']->process();
     }
-    unset($CIDRAM['Reporter']);
 
+    /** Cleanup. */
+    unset($CIDRAM['Reporter']);
 }
 
 /** Process tracking information for the inbound IP. */
@@ -737,11 +737,8 @@ if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
                 }
                 unset($CIDRAM['WebFontPos']);
             }
-
         }
-
     } else {
-
         $CIDRAM['errCode'] = 301;
         $CIDRAM['Status'] = $CIDRAM['GetStatusHTTP'](301);
         header('HTTP/1.0 301 ' . $CIDRAM['Status']);
@@ -749,7 +746,6 @@ if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
         header('Status: 301 ' . $CIDRAM['Status']);
         header('Location: ' . $CIDRAM['Config']['general']['silent_mode']);
         $CIDRAM['HTML'] = '';
-
     }
 
     /**
@@ -769,7 +765,6 @@ if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
 
         /** Write to logs. */
         $CIDRAM['Events']->fireEvent('writeToLog');
-
     }
 
     /** Final event before we exit. */
@@ -777,7 +772,6 @@ if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
 
     /** All necessary processing and logging has completed; Now we send HTML output and die. */
     die($CIDRAM['HTML']);
-
 }
 
 /** Final event before we exit. */

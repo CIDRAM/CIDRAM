@@ -8,12 +8,12 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: reCAPTCHA module (last modified: 2019.09.22).
+ * This file: reCAPTCHA module (last modified: 2020.01.25).
  */
 
 /**
  * Fetch results from the reCAPTCHA API.
- * Documentation: https://developers.google.com/recaptcha/docs/verify
+ * @link https://developers.google.com/recaptcha/docs/verify
  */
 $CIDRAM['reCAPTCHA']['DoResponse'] = function () use (&$CIDRAM) {
     $CIDRAM['reCAPTCHA']['Results'] = $CIDRAM['Request']('https://www.google.com/recaptcha/api/siteverify', [
@@ -135,7 +135,6 @@ if ($CIDRAM['Config']['recaptcha']['lockuser']) {
         $CIDRAM['reCAPTCHA']['UsrMeld'] &&
         password_verify($CIDRAM['reCAPTCHA']['UsrMeld'], $CIDRAM['reCAPTCHA']['UsrHash'])
     ) {
-
         $CIDRAM['reCAPTCHA']['Bypass'] = true;
         $CIDRAM['BlockInfo']['SignatureCount'] = 0;
 
@@ -144,7 +143,6 @@ if ($CIDRAM['Config']['recaptcha']['lockuser']) {
             unset($CIDRAM['Tracking'][$CIDRAM['BlockInfo']['IPAddr']]);
             $CIDRAM['Tracking-Modified'] = true;
         }
-
     } else {
 
         /** Set status for reCAPTCHA block information. */
@@ -184,7 +182,6 @@ if ($CIDRAM['Config']['recaptcha']['lockuser']) {
          * Note: Cookie warning IS included here due to expected behaviour when lockuser is TRUE.
          */
         $CIDRAM['reCAPTCHA']['GenerateContainer']($CIDRAM['Config']['recaptcha']['show_cookie_warning']);
-
     }
 
     /** Update the hash list if any changes were made. */
@@ -193,7 +190,6 @@ if ($CIDRAM['Config']['recaptcha']['lockuser']) {
         fwrite($CIDRAM['Handle'], $CIDRAM['reCAPTCHA']['HashList']);
         fclose($CIDRAM['Handle']);
     }
-
 } else {
 
     /** Attempt to load the IP bypass list. */
@@ -222,7 +218,6 @@ if ($CIDRAM['Config']['recaptcha']['lockuser']) {
             unset($CIDRAM['Tracking'][$CIDRAM['BlockInfo']['IPAddr']]);
             $CIDRAM['Tracking-Modified'] = true;
         }
-
     } else {
 
         /** Set status for reCAPTCHA block information. */
@@ -250,7 +245,6 @@ if ($CIDRAM['Config']['recaptcha']['lockuser']) {
          * Note: Cookie warning is NOT included here due to expected behaviour when lockuser is FALSE.
          */
         $CIDRAM['reCAPTCHA']['GenerateContainer']();
-
     }
 
     /** Update the IP bypass list if any changes were made. */

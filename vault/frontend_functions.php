@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2020.01.13).
+ * This file: Front-end functions file (last modified: 2020.01.25).
  */
 
 /**
@@ -988,7 +988,6 @@ $CIDRAM['SimulateBlockEvent'] = function ($Addr, $Modules = false, $Aux = false,
      * as opposed to checking against actual, real requests; still needed to set it though to prevent errors).
      */
     unset($CIDRAM['Reporter']);
-
 };
 
 /**
@@ -1588,7 +1587,6 @@ $CIDRAM['UpdatesHandler'] = function ($Action, $ID = '') use (&$CIDRAM) {
 
     /** Process and empty executor queue. */
     $CIDRAM['FE_Executor']();
-
 };
 
 /**
@@ -2203,7 +2201,6 @@ $CIDRAM['UpdatesHandler-Repair'] = function ($ID) use (&$CIDRAM) {
 
             /** Replace downstream meta with upstream meta. */
             $CIDRAM['Components']['Meta'][$ThisTarget] = $CIDRAM['Components']['RemoteMeta'][$ThisTarget];
-
         } else {
             $RepairFailed = true;
 
@@ -2212,7 +2209,6 @@ $CIDRAM['UpdatesHandler-Repair'] = function ($ID) use (&$CIDRAM) {
             if (!empty($CIDRAM['Components']['Meta'][$ThisTarget]['When Repair Fails'])) {
                 $CIDRAM['FE_Executor']($CIDRAM['Components']['Meta'][$ThisTarget]['When Repair Fails'], true);
             }
-
         }
         $CIDRAM['FormatFilesize']($BytesAdded);
         $CIDRAM['FormatFilesize']($BytesRemoved);
@@ -2856,7 +2852,6 @@ $CIDRAM['InitialPrepwork'] = function ($Title = '', $Tips = '', $JS = true) use 
 
     /** Load main front-end JavaScript data. */
     $CIDRAM['FE']['JS'] = $JS ? $CIDRAM['ReadFile']($CIDRAM['GetAssetPath']('scripts.js')) : '';
-
 };
 
 /**
@@ -3091,12 +3086,10 @@ $CIDRAM['SendEmail'] = function (array $Recipients = [], $Subject = '', $Body = 
                 $CIDRAM['L10N']->getString('state_email_sent'),
                 $SuccessDetails
             ) : $CIDRAM['L10N']->getString('response_error') . ' - ' . $Mail->ErrorInfo) . "\n";
-
         } catch (\Exception $e) {
 
             /** An exeption occurred. Log the information. */
             $EventLogData .= $CIDRAM['L10N']->getString('response_error') . ' - ' . $e->getMessage() . "\n";
-
         }
     }
 
@@ -3225,7 +3218,6 @@ $CIDRAM['AuxGenerateFEData'] = function () use (&$CIDRAM) {
                         $Output .= "\n            <li>" . $ThisSource . ' ≠ <code>' . $Value . '</code></li>';
                     }
                 }
-
             }
 
             /** List all "equals" conditions . */
@@ -3241,12 +3233,10 @@ $CIDRAM['AuxGenerateFEData'] = function () use (&$CIDRAM) {
                         $Output .= "\n            <li>" . $ThisSource . ' = <code>' . $Value . '</code></li>';
                     }
                 }
-
             }
 
             /** Finish writing conditions list. */
             $Output .= "\n          </ul><br />";
-
         }
 
         /** Describe matching logic used. */
@@ -3258,12 +3248,10 @@ $CIDRAM['AuxGenerateFEData'] = function () use (&$CIDRAM) {
 
         /** Finish writing new rule. */
         $Output .= "</td>\n        </tr>\n";
-
     }
 
     /** Exit with generated output. */
     return $Output;
-
 };
 
 /**
@@ -3417,7 +3405,6 @@ $CIDRAM['LTRinRTF'] = function ($String = '') use (&$CIDRAM) {
         ['\2&lt;-\1', '\2⬅\1'],
         $String
     );
-
 };
 
 /**

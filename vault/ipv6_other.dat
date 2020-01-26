@@ -1,8 +1,8 @@
 # IPv6 signatures file (CIDRs for proxies, VPNs and other miscellaneous unwanted services).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_other.dat
 
-# Version: 2020.22.184
-# Last modified: 2020.01.23
+# Version: 2020.25.263
+# Last modified: 2020.01.26
 
 
 # ---
@@ -26,7 +26,7 @@
 # Cogent VPNs+Proxies (AzireVPN, OVPN, BeeVPN ApS, Windscribe, etc; "^.*(?:Prox|Windscribe|VPN).*$").
 # Exclude invalids to reduce the false positive risk.
 
-# Updated: 2020.01.03
+# Updated: 2020.01.03 / Checked: 2020.01.26
 2001:978:f00::/48 Deny Proxy
 2001:978:1403::/48 Deny Proxy
 Origin: DE
@@ -35,14 +35,15 @@ Tag: Cogent VPNs+Proxies
 # No announce description (a frequent source of spam + other generally
 # unwanted; exclude invalids to reduce the false positive risk).
 
-# Updated: 2020.01.03
+# Updated: 2020.01.26
 2a03:f80:420::/48 Deny Generic
 Origin: AT
+2602:feb0::/36 Deny Generic
+Origin: CA
 2001:978:907::/48 Deny Generic
 2001:978:a01:8000::/49 Deny Generic
 2001:978:1404::/47 Deny Generic
 2001:978:2102::/48 Deny Generic
-2001:978:230b::/48 Deny Generic
 2001:978:3c0a::/47 Deny Generic
 2001:978:6713::/48 Deny Generic
 2001:978:a501::/48 Deny Generic
@@ -59,26 +60,30 @@ Origin: HK
 2a07:85c3::/48 Deny Generic
 Origin: NL
 2001:550:408::/48 Deny Generic
+2001:550:905::/48 Deny Generic
 2001:550:a0e:8000::/49 Deny Generic
 2001:550:1500::/48 Deny Generic
+2001:550:1b08::/48 Deny Generic
 2001:550:1d01::/48 Deny Generic
 2001:550:1d07::/48 Deny Generic
 2001:550:2109::/48 Deny Generic
 2001:550:2200:500::/56 Deny Generic
-2001:550:2209::/48 Deny Generic
 2001:550:221c::/47 Deny Generic
 2001:550:221e::/48 Deny Generic
 2001:550:2603::/48 Deny Generic
 2001:550:2604::/48 Deny Generic
-2001:550:3d06::/48 Deny Generic
+2001:550:3d09::/48 Deny Generic
+2001:550:3d0b::/48 Deny Generic
 2001:550:4600::/48 Deny Generic
+2001:550:4602::/48 Deny Generic
 2001:550:4a01::/64 Deny Generic
 2001:550:5607::/48 Deny Generic
 2001:550:5c03::/48 Deny Generic
+2001:550:6205::/48 Deny Generic
+2001:550:6a00::/48 Deny Generic
 2001:550:7709::/48 Deny Generic
 2001:550:9801::/48 Deny Generic
 2001:550:9802::/48 Deny Generic
-2001:550:aa01::/48 Deny Generic
 2001:49f0:d099::/48 Deny Generic
 2001:49f0:d0a3::/48 Deny Generic
 2001:49f0:d0b0::/46 Deny Generic
@@ -89,7 +94,8 @@ Origin: NL
 2001:49f0:d0be::/48 Deny Generic
 2001:49f0:d0c1::/48 Deny Generic
 2001:49f0:d0c2::/47 Deny Generic
-2001:49f0:d0c4::/46 Deny Generic
+2001:49f0:d0c4::/48 Deny Generic
+2001:49f0:d0c6::/47 Deny Generic
 2001:49f0:d0c8::/47 Deny Generic
 2001:49f0:d0d0::/46 Deny Generic
 2001:49f0:d0d5::/48 Deny Generic

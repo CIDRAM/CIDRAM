@@ -8,16 +8,13 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: IP aggregator (last modified: 2019.12.26).
+ * This file: IP aggregator (last modified: 2020.01.27).
  */
 
 namespace CIDRAM\Aggregator;
 
 class Aggregator
 {
-    /** Input. */
-    public $Input = '';
-
     /** Outout. */
     public $Output = '';
 
@@ -74,10 +71,16 @@ class Aggregator
         }
     }
 
-    /** Aggregate it! */
-    public function aggregate(string $In): string
+    /**
+     * Aggregate it!
+     *
+     * @param string|array $In The IPs/CIDRs/netmasks to be aggregated. Should
+     * either be a string, with entries separated by lines, or be an array, an
+     * entry to each element.
+     * @return string The aggregated data.
+     */
+    public function aggregate($In): string
     {
-        $this->Input = $In;
         $this->Output = $In;
         $this->stripInvalidCharactersAndSort($this->Output);
         $this->stripInvalidRangesAndSubs($this->Output);
@@ -89,9 +92,11 @@ class Aggregator
     }
 
     /** Strips invalid characters from lines and sorts entries. */
-    private function stripInvalidCharactersAndSort(string &$In)
+    private function stripInvalidCharactersAndSort(&$In)
     {
-        $In = explode("\n", strtolower(trim(str_replace("\r", '', $In))));
+        if (!is_array($In)) {
+            $In = explode("\n", strtolower(trim(str_replace("\r", '', $In))));
+        }
         $InCount = count($In);
         if (isset($this->callbacks['newParse']) && is_callable($this->callbacks['newParse'])) {
             $this->callbacks['newParse']($InCount);
@@ -194,32 +199,33 @@ class Aggregator
             }
             if (($RangeSep = strpos($Line, '/')) !== false) {
                 $Size = substr($Line, $RangeSep + 1);
+                if (strpos($Size, '.') !== false) {
+                    $Size = isset($this->TableIPv4Netmask[$Size]) ? $this->TableIPv4Netmask[$Size] : 0;
+                } elseif (strpos($Size, ':') !== false) {
+                    $Size = isset($this->TableIPv6Netmask[$Size]) ? $this->TableIPv6Netmask[$Size] : 0;
+                } else {
+                    $Size = (int)$Size;
+                }
                 $CIDR = substr($Line, 0, $RangeSep);
             } else {
-                $Size = 0;
+                if (strpos($Line, '.') !== false) {
+                    $Size = 32;
+                } elseif (strpos($Line, ':') !== false) {
+                    $Size = 128;
+                } else {
+                    $Size = 0;
+                }
                 $CIDR = $Line;
             }
-            if ($CIDRs = $this->CIDRAM['ExpandIPv4']($CIDR)) {
+            if (($Size > 0 && $Size <= 32) && ($CIDRs = $this->CIDRAM['ExpandIPv4']($CIDR, false, $Size - 1))) {
                 $Type = 4;
                 $Ranges = 32;
-            } elseif ($CIDRs = $this->CIDRAM['ExpandIPv6']($CIDR)) {
+            } elseif (($Size > 0 && $Size <= 128) && ($CIDRs = $this->CIDRAM['ExpandIPv6']($CIDR, false, $Size - 1))) {
                 $Type = 6;
                 $Ranges = 128;
             } else {
-                $Type = 0;
-                $Ranges = 0;
                 $Out = str_replace("\n" . $Line . "\n", "\n", $Out);
                 continue;
-            }
-            if ($Type === 4 && isset($this->TableIPv4Netmask[$Size])) {
-                $Size = $this->TableIPv4Netmask[$Size];
-            } elseif ($Type === 6 && isset($this->TableIPv6Netmask[$Size])) {
-                $Size = $this->TableIPv6Netmask[$Size];
-            } else {
-                $Size = (int)$Size;
-            }
-            if ($Size === 0) {
-                $Size = $Ranges;
             }
             if (!isset($CIDRs[$Size - 1]) || $CIDRs[$Size - 1] !== $CIDR . '/' . $Size) {
                 $Out = str_replace("\n" . $Line . "\n", "\n", $Out);
@@ -311,7 +317,7 @@ class Aggregator
             if (!$Line || ($RangeSep = strpos($Line, '/')) === false) {
                 continue;
             }
-            $Size = substr($Line, $RangeSep + 1);
+            $Size = (int)substr($Line, $RangeSep + 1);
             $CIDR = substr($Line, 0, $RangeSep);
             $Type = ($this->CIDRAM['ExpandIPv4']($CIDR, true)) ? 4 : 6;
             if ($Type === 4 && isset($this->TableNetmaskIPv4[$Size])) {

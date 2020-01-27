@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2020.01.25).
+ * This file: Functions file (last modified: 2020.01.27).
  */
 
 /** Autoloader for CIDRAM classes. */
@@ -216,22 +216,19 @@ $CIDRAM['ExpandIPv6'] = function (string $Addr, bool $ValidateOnly = false, int 
             }
         }
     }
-    if ($FactorLimit > 128) {
-        $FactorLimit = 128;
-    }
-    for ($CIDR = 0; $CIDR < $FactorLimit; $CIDR++) {
-        if (strpos($CIDRs[$CIDR], '::') !== false) {
-            $CIDRs[$CIDR] = preg_replace('/(\:0)*\:\:(0\:)*/i', '::', $CIDRs[$CIDR], 1);
-            $CIDRs[$CIDR] = str_replace('::0/', '::/', $CIDRs[$CIDR]);
+    foreach ($CIDRs as &$CIDR) {
+        if (strpos($CIDR, '::') !== false) {
+            $CIDR = preg_replace('~(?:\:0)*\:\:(?:0\:)*~i', '::', $CIDR, 1);
+            $CIDR = str_replace('::0/', '::/', $CIDR);
             continue;
         }
-        if (strpos($CIDRs[$CIDR], ':0:0/') !== false) {
-            $CIDRs[$CIDR] = preg_replace('/(\:0){2,}\//i', '::/', $CIDRs[$CIDR], 1);
+        if (strpos($CIDR, ':0:0/') !== false) {
+            $CIDR = preg_replace('~(\:0){2,}\/~i', '::/', $CIDR, 1);
             continue;
         }
-        if (strpos($CIDRs[$CIDR], ':0:0:') !== false) {
-            $CIDRs[$CIDR] = preg_replace('/(\:0)+\:(0\:)+/i', '::', $CIDRs[$CIDR], 1);
-            $CIDRs[$CIDR] = str_replace('::0/', '::/', $CIDRs[$CIDR]);
+        if (strpos($CIDR, ':0:0:') !== false) {
+            $CIDR = preg_replace('~(\:0)+\:(0\:)+~i', '::', $CIDR, 1);
+            $CIDR = str_replace('::0/', '::/', $CIDR);
             continue;
         }
     }

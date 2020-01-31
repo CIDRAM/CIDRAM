@@ -1,44 +1,42 @@
 # IPv4 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv4_isps.dat
 
-# Version: 2020.25.263
-# Last modified: 2020.01.26
+# Version: 2020.30.600
+# Last modified: 2020.01.31
 
 
 # ---
 # ASN 38197 ("Sun Network (Hong Kong) Limited").
-# %Listed, Google Malware Dashboard: 1.98%.
-# Stop Forum Spam (SFS) listings: 1,107.
-# Updated: 2019.09.30
+# %Listed, Google Malware Dashboard: 3.70%.
+# Stop Forum Spam (SFS) listings: 79.
+# Updated: 2020.01.30
 
 103.12.68.0/22 Deny Generic
 103.14.100.0/22 Deny Generic
 103.71.48.0/22 Deny Generic
-103.193.150.0/24 Deny Generic
 103.241.72.0/22 Deny Generic
 116.193.164.0/22 Deny Generic
 Origin: CN
-43.226.16.0/21 Deny Generic
+43.226.16.0/23 Deny Generic
+43.226.20.0/22 Deny Generic
 43.226.124.0/22 Deny Generic
 43.240.36.0/22 Deny Generic
-43.243.28.0/24 Deny Generic
+43.243.28.0/22 Deny Generic
 43.243.72.0/22 Deny Generic
 43.243.100.0/22 Deny Generic
 43.243.108.0/22 Deny Generic
-43.248.8.0/22 Deny Generic
 43.249.204.0/22 Deny Generic
 45.64.52.0/22 Deny Generic
 45.113.82.0/23 Deny Generic
 103.1.40.0/22 Deny Generic
-103.12.149.0/24 Deny Generic
-103.12.150.0/23 Deny Generic
-103.19.188.0/24 Deny Generic
+103.12.148.0/22 Deny Generic
+103.19.188.0/22 Deny Generic
 103.26.124.0/22 Deny Generic
-103.39.76.0/22 Deny Generic
 103.41.65.0/24 Deny Generic
 103.41.66.0/23 Deny Generic
 103.45.64.0/21 Deny Generic
-103.65.180.0/22 Deny Generic
+103.65.180.0/23 Deny Generic
+103.65.183.0/24 Deny Generic
 103.79.184.0/22 Deny Generic
 103.82.168.0/22 Deny Generic
 103.85.72.0/22 Deny Generic
@@ -57,15 +55,24 @@ Origin: CN
 112.213.110.0/23 Deny Generic
 112.213.112.0/21 Deny Generic
 112.213.120.0/22 Deny Generic
-112.213.124.0/24 Deny Generic
 112.213.126.0/23 Deny Generic
 115.42.60.0/22 Deny Generic
-117.18.0.0/21 Deny Generic
+117.18.0.0/22 Deny Generic
+117.18.6.0/23 Deny Generic
 117.18.8.0/22 Deny Generic
 117.18.12.0/24 Deny Generic
 117.18.14.0/23 Deny Generic
 121.54.168.0/21 Deny Generic
-121.127.224.0/19 Deny Generic
+121.127.224.0/21 Deny Generic
+121.127.232.0/23 Deny Generic
+121.127.235.0/24 Deny Generic
+121.127.236.0/22 Deny Generic
+121.127.240.0/24 Deny Generic
+121.127.242.0/23 Deny Generic
+121.127.244.0/22 Deny Generic
+121.127.248.0/24 Deny Generic
+121.127.250.0/23 Deny Generic
+121.127.254.0/23 Deny Generic
 160.202.44.0/22 Deny Generic
 202.89.0.0/22 Deny Generic
 202.146.216.0/22 Deny Generic
@@ -80,6 +87,7 @@ Origin: HK
 154.91.171.0/24 Deny Generic
 Origin: SC
 27.50.63.0/24 Deny Generic
+137.220.130.0/24 Deny Generic
 Origin: SG
 185.184.220.0/23 Deny Generic
 Origin: UA
@@ -2014,12 +2022,11 @@ recaptcha:
 
 # ASN 203912 ("Sicres SRL").
 # Caught distributing ransomware (188.0.236.7:443).
-# Stop Forum Spam (SFS) listings: 8.
-# Updated: 2019.04.18 / Checked: 2019.08.27
+# Updated: 2019.04.18 / Modified: 2020.01.28
 
-178.175.244.0/24 Deny Generic
-185.172.28.0/22 Deny Generic
-188.0.224.0/20 Deny Generic
+178.175.244.0/24 Deny Malware
+185.172.28.0/22 Deny Malware
+188.0.224.0/20 Deny Malware
 Origin: MD
 Tag: SICRES SRL
 
@@ -2814,8 +2821,8 @@ Tag: Fregat
 
 
 # ASN 49204 ('TOV "ITT"').
-# Stop Forum Spam (SFS) listings: 1,210.
-# Updated: 2016.09.06 / Checked: 2019.08.29
+# Stop Forum Spam (SFS) listings: 1,213.
+# Updated: 2016.09.06 / Checked: 2020.01.30
 
 195.238.108.0/22 Deny Spam
 Origin: UA
@@ -8528,7 +8535,7 @@ Tag: BRAC
 
 
 # ASN 41109 ("Center of Children Telemedicin and new information technologis").
-# Updated: 2017.10.23 / Checked: 2019.08.29
+# Updated: 2017.10.23 / Checked: 2020.01.30
 
 81.200.80.0/20 Deny Generic
 Origin: RU
@@ -11981,6 +11988,239 @@ recaptcha:
 180.146.15.234/32 Deny Spam
 Origin: JP
 Tag: OPTAGE Inc
+---
+recaptcha:
+ enabled: true
+
+
+# ASN 36947 ("Telecom Algeria"). A major Algerian domestic ISP, but also most
+# recently a notable source of forum spam.
+# Stop Forum Spam (SFS) listings: 1,368.
+# Updated: 2020.01.28
+
+41.97.50.208/32 Deny Spam
+41.97.143.123/32 Deny Spam
+41.98.99.107/32 Deny Spam
+41.98.114.92/32 Deny Spam
+41.98.119.103/32 Deny Spam
+41.100.7.147/32 Deny Spam
+41.100.53.16/32 Deny Spam
+41.100.98.48/32 Deny Spam
+41.100.152.201/32 Deny Spam
+41.100.167.193/32 Deny Spam
+41.100.183.209/32 Deny Spam
+41.101.25.29/32 Deny Spam
+41.101.171.41/32 Deny Spam
+41.101.217.248/32 Deny Spam
+41.102.183.197/32 Deny Spam
+41.103.223.70/32 Deny Spam
+41.104.15.39/32 Deny Spam
+41.104.46.0/32 Deny Spam
+41.104.137.6/32 Deny Spam
+41.104.144.160/32 Deny Spam
+41.104.191.71/32 Deny Spam
+41.105.224.38/32 Deny Spam
+41.105.241.123/32 Deny Spam
+41.108.83.51/32 Deny Spam
+41.109.88.15/32 Deny Spam
+41.109.138.237/32 Deny Spam
+41.110.2.70/32 Deny Spam
+105.96.43.20/32 Deny Spam
+105.101.158.88/32 Deny Spam
+105.101.236.21/32 Deny Spam
+105.107.49.218/32 Deny Spam
+197.119.175.139/32 Deny Spam
+197.206.128.238/32 Deny Spam
+Origin: DZ
+Tag: Telecom Algeria
+---
+recaptcha:
+ enabled: true
+
+
+# ASN 8452 ("TE-AS"). A major Egyptian domestic ISP, but also a
+# notable source of forum and blog spam.
+# %Listed, Google Malware Dashboard: 0.69%.
+# Stop Forum Spam (SFS) listings: 1,522.
+# Updated: 2020.01.30
+
+41.32.179.0/24 Deny Spam
+41.32.252.0/24 Deny Spam
+41.33.15.130/32 Deny Spam
+41.35.32.0/24 Deny Spam
+41.35.45.168/32 Deny Spam
+41.39.89.0/24 Deny Spam
+41.42.8.39/32 Deny Spam
+41.42.173.0/24 Deny Spam
+41.46.176.0/24 Deny Spam
+41.46.243.80/32 Deny Spam
+41.232.15.53/32 Deny Spam
+41.234.26.141/32 Deny Spam
+41.234.133.0/24 Deny Spam
+41.234.215.92/32 Deny Spam
+41.237.219.79/32 Deny Spam
+41.237.239.0/24 Deny Spam
+41.239.53.0/24 Deny Spam
+156.196.44.0/24 Deny Spam
+156.196.250.115/32 Deny Spam
+156.197.29.177/32 Deny Spam
+156.202.62.0/24 Deny Spam
+156.203.171.227/32 Deny Spam
+156.205.9.4/32 Deny Spam
+156.216.69.0/24 Deny Spam
+156.218.110.0/24 Deny Spam
+156.221.147.0/24 Deny Spam
+196.202.3.46/32 Deny Spam
+196.218.174.212/32 Deny Spam
+197.32.138.178/32 Deny Spam
+197.35.197.234/32 Deny Spam
+197.36.77.202/32 Deny Spam
+197.43.37.25/32 Deny Spam
+197.44.212.177/32 Deny Spam
+197.45.105.210/32 Deny Spam
+197.50.77.0/24 Deny Spam
+197.51.82.0/24 Deny Spam
+197.52.225.0/24 Deny Spam
+197.53.53.0/24 Deny Spam
+197.55.42.228/32 Deny Spam
+197.57.121.122/32 Deny Spam
+197.57.202.132/32 Deny Spam
+197.62.140.0/24 Deny Spam
+197.62.152.232/32 Deny Spam
+197.63.24.0/24 Deny Spam
+197.63.36.0/24 Deny Spam
+197.63.217.0/24 Deny Spam
+Origin: EG
+Tag: TE-AS
+---
+recaptcha:
+ enabled: true
+
+
+# ASNs 17072, 22884 ("TOTAL PLAY TELECOMUNICACIONES SA DE CV"). A major Mexican
+# domestic ISP, but also a notable source of forum and blog spam. Just listing
+# some affected ranges (not the entire network).
+# %Listed, Google Malware Dashboard: 0.64% (AS22884).
+# Stop Forum Spam (SFS) listings: 940 (AS17072), 613 (AS22884).
+# Updated: 2020.01.31
+
+138.186.28.196/32 Deny Spam
+138.186.30.228/32 Deny Spam
+187.188.0.0/18 Deny Spam
+187.188.64.0/23 Deny Spam
+187.188.67.0/24 Deny Spam
+187.188.68.0/22 Deny Spam
+187.188.72.0/23 Deny Spam
+187.188.74.0/24 Deny Spam
+187.188.76.0/23 Deny Spam
+187.188.80.0/20 Deny Spam
+187.188.96.0/22 Deny Spam
+187.188.101.0/24 Deny Spam
+187.188.102.0/23 Deny Spam
+187.188.104.0/21 Deny Spam
+187.188.112.0/20 Deny Spam
+187.188.128.0/21 Deny Spam
+187.188.136.0/22 Deny Spam
+187.188.141.0/24 Deny Spam
+187.188.142.0/23 Deny Spam
+187.188.145.0/24 Deny Spam
+187.188.146.0/23 Deny Spam
+187.188.148.0/23 Deny Spam
+187.188.150.0/24 Deny Spam
+187.188.152.0/21 Deny Spam
+187.188.160.0/19 Deny Spam
+187.188.192.0/19 Deny Spam
+187.188.224.0/20 Deny Spam
+187.188.240.0/21 Deny Spam
+187.188.248.0/22 Deny Spam
+187.188.252.0/24 Deny Spam
+187.189.1.0/24 Deny Spam
+187.189.3.0/24 Deny Spam
+187.189.4.0/22 Deny Spam
+187.189.8.0/22 Deny Spam
+187.189.12.0/24 Deny Spam
+187.189.14.0/23 Deny Spam
+187.189.16.0/21 Deny Spam
+187.189.24.0/24 Deny Spam
+187.189.26.0/23 Deny Spam
+187.189.28.0/22 Deny Spam
+187.189.32.0/19 Deny Spam
+187.189.64.0/18 Deny Spam
+187.189.129.0/24 Deny Spam
+187.189.130.0/23 Deny Spam
+187.189.132.0/22 Deny Spam
+187.189.136.0/22 Deny Spam
+187.189.140.0/24 Deny Spam
+187.189.143.0/24 Deny Spam
+187.189.144.0/20 Deny Spam
+187.189.160.0/23 Deny Spam
+187.189.162.0/24 Deny Spam
+187.189.168.0/22 Deny Spam
+187.189.175.0/24 Deny Spam
+187.189.176.0/21 Deny Spam
+187.189.184.0/24 Deny Spam
+187.189.186.0/23 Deny Spam
+187.189.188.0/22 Deny Spam
+187.189.192.0/20 Deny Spam
+187.189.208.0/21 Deny Spam
+187.189.216.0/22 Deny Spam
+187.189.221.0/24 Deny Spam
+187.189.222.0/23 Deny Spam
+187.189.224.0/20 Deny Spam
+187.189.240.0/23 Deny Spam
+187.189.243.0/24 Deny Spam
+187.189.244.0/22 Deny Spam
+187.189.248.0/21 Deny Spam
+187.190.0.0/20 Deny Spam
+187.190.16.0/21 Deny Spam
+187.190.24.0/23 Deny Spam
+187.190.26.0/24 Deny Spam
+187.190.28.0/22 Deny Spam
+187.190.34.0/23 Deny Spam
+187.190.36.0/22 Deny Spam
+187.190.40.0/21 Deny Spam
+187.190.48.0/23 Deny Spam
+187.190.50.0/24 Deny Spam
+187.190.52.0/22 Deny Spam
+187.190.60.0/23 Deny Spam
+187.190.62.0/24 Deny Spam
+187.190.64.0/20 Deny Spam
+187.190.80.0/22 Deny Spam
+187.190.89.0/24 Deny Spam
+187.190.90.0/23 Deny Spam
+187.190.92.0/22 Deny Spam
+187.190.100.0/22 Deny Spam
+187.190.104.0/21 Deny Spam
+187.190.116.0/22 Deny Spam
+187.190.125.0/24 Deny Spam
+187.190.127.0/24 Deny Spam
+187.190.128.0/20 Deny Spam
+187.190.144.0/24 Deny Spam
+187.190.146.0/23 Deny Spam
+187.190.148.0/22 Deny Spam
+187.190.153.0/24 Deny Spam
+187.190.154.0/23 Deny Spam
+187.190.156.0/22 Deny Spam
+187.190.160.0/23 Deny Spam
+187.190.163.0/24 Deny Spam
+187.190.164.0/22 Deny Spam
+187.190.168.0/22 Deny Spam
+187.190.186.0/24 Deny Spam
+187.190.191.0/24 Deny Spam
+187.190.200.0/23 Deny Spam
+187.190.211.0/24 Deny Spam
+187.190.212.0/22 Deny Spam
+187.190.216.0/22 Deny Spam
+187.190.220.0/23 Deny Spam
+187.190.223.0/24 Deny Spam
+187.190.224.0/19 Deny Spam
+187.191.20.0/23 Deny Spam
+187.191.24.0/22 Deny Spam
+189.203.41.0/24 Deny Spam
+189.203.176.0/20 Deny Spam
+189.203.196.0/22 Deny Spam
+Origin: MX
+Tag: TOTAL PLAY TELECOMUNICACIONES
 ---
 recaptcha:
  enabled: true

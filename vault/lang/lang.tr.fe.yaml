@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Turkish language data for the front-end (last modified: 2020.01.13).
+# This file: Turkish language data for the front-end (last modified: 2020.02.01).
 ##/
 
 Extended Description Bypasses: "Varsayılan imza bypass'lar, normalde ana paketle birlikte verilir."
@@ -122,6 +122,7 @@ config_legal_privacy_policy: "Oluşturulan sayfaların alt kısmında görüntü
 config_legal_pseudonymise_ip_addresses: "Günlük dosyaları yazarken IP adresi "pseudonymize" edilir? Doğru/True = Evet [Varsayılan]; Yanlış/False = Hayır."
 config_rate_limiting: "Hız sınırlaması için yapılandırma (genel kullanım için önerilmez)."
 config_rate_limiting_allowance_period: "Kullanımı izlemek için saat sayısı. Varsayılan = 0."
+config_rate_limiting_exceptions: "İstisnalar (yani oran sınırlı olmaması gereken istekler). Yalnızca sınırlaması etkin olduğunda geçerlidir."
 config_rate_limiting_max_bandwidth: "Gelecekteki talepleri sınırlayan orandan önce izin süresi içinde izin verilen maksimum bant genişliği miktarı. 0 değeri bu oran sınırlamasını devre dışı bırakır. Varsayılan = 0KB."
 config_rate_limiting_max_requests: "Gelecekteki istekleri sınırlayan orandan önce izin süresi içinde izin verilen maksimum istek sayısı. 0 değeri bu oran sınırlamasını devre dışı bırakır. Varsayılan = 0."
 config_rate_limiting_precision_ipv4: "IPv4 kullanımını izlemek için hassaslık. Değer, CIDR blok boyutunu yansıtır. En iyi hassasiyet için 32'ye ayarlayın. Varsayılan = 32."
@@ -173,8 +174,10 @@ field_2fa: "2FA kodu"
 field_Request_Method: "İstek yöntemi"
 field_activate: "Etkinleştir"
 field_add_more_conditions: "Daha fazla koşul ekle"
+field_asnlookup: "ASN araması"
 field_banned: "Yasaklandı"
 field_blocked: "Engellendi"
+field_cclookup: "Ülke kodu araması"
 field_cidr: "CIDR'ler olarak çıktı üretmek"
 field_clear: "Temiz"
 field_clear_all: "Hepsini temizle"
@@ -235,8 +238,11 @@ field_update_all: "Tümünü güncelle"
 field_update_signatures_files: "İmza dosyalarını güncelle"
 field_upload_file: "Yeni dosya yükle"
 field_username: "Kullanıcı adı"
+field_verified: "Doğrulanmış kimlik"
+field_verified_requests: "Doğrulanmış arama motoru ve sosyal medya istekleri"
 field_verify: "Doğrula"
 field_verify_all: "Tümünü doğrula"
+field_whitelisted_requests: "Beyaz listeye eklenen istekler"
 field_your_version: "Sürümünüz"
 header_login: "Devam etmek için lütfen giriş yapınız."
 label_active_config_file: "Etkin yapılandırma dosyası: "

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Portuguese language data for the front-end (last modified: 2020.01.13).
+# This file: Portuguese language data for the front-end (last modified: 2020.02.01).
 ##/
 
 Extended Description Bypasses: "Os arquivos para bypass das assinaturas padrão normalmente incluído com o pacote principal."
@@ -122,6 +122,7 @@ config_legal_privacy_policy: "O endereço de uma política de privacidade releva
 config_legal_pseudonymise_ip_addresses: "Pseudonimiza endereços IP ao escrever os arquivos de log? True = Sim [Padrão]; False = Não."
 config_rate_limiting: "Configuração para limitação de taxa (não recomendado para uso geral)."
 config_rate_limiting_allowance_period: "O número de horas para monitorar o uso. Padrão = 0."
+config_rate_limiting_exceptions: "Exceções (ou seja, solicitações que não devem ser limitadas à taxa). Relevante apenas quando a limitação de taxa está ativada."
 config_rate_limiting_max_bandwidth: "A quantidade máxima de largura de banda permitida dentro do período de tolerância antes de ativar a limitação de taxa para solicitações futuras. Um valor de 0 desativa esse tipo de limitação de taxa. Padrão = 0KB."
 config_rate_limiting_max_requests: "O número máximo de solicitações permitido dentro do período de tolerância antes de ativar a limitação de taxa para solicitações futuras. Um valor de 0 desativa esse tipo de limitação de taxa. Padrão = 0."
 config_rate_limiting_precision_ipv4: "A precisão a ser usada ao monitorar o uso do IPv4. Valor espelha o tamanho do bloco CIDR. Defina para 32 para melhor precisão. Padrão = 32."
@@ -173,8 +174,10 @@ field_2fa: "Código 2FA"
 field_Request_Method: "Método de solicitação"
 field_activate: "Ativar"
 field_add_more_conditions: "Adicione mais condições"
+field_asnlookup: "Pesquisa de ASN"
 field_banned: "Banido"
 field_blocked: "Bloqueado"
+field_cclookup: "Pesquisa de código de país"
 field_cidr: "Gerar saída como CIDRs"
 field_clear: "Cancelar"
 field_clear_all: "Cancelar tudo"
@@ -237,8 +240,11 @@ field_update_all: "Atualizar tudo"
 field_update_signatures_files: "Atualizar arquivos de assinaturas"
 field_upload_file: "Carregar um novo ficheiro"
 field_username: "Nome de Usuário"
+field_verified: "Identidade verificada"
+field_verified_requests: "Solicitações verificadas de mecanismos de pesquisa e mídias sociais"
 field_verify: "Verifique isso"
 field_verify_all: "Verifique tudo"
+field_whitelisted_requests: "Solicitações marcadas como na lista branca"
 field_your_version: "Sua Versão"
 header_login: "Por favor faça o login para continuar."
 label_active_config_file: "Arquivo de configuração ativo: "

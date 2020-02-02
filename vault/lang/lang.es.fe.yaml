@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Spanish language data for the front-end (last modified: 2020.01.13).
+# This file: Spanish language data for the front-end (last modified: 2020.02.01).
 ##/
 
 Extended Description Bypasses: "Los archivos para bypass de firmas estándar normalmente se incluyen con el paquete principal."
@@ -122,6 +122,7 @@ config_legal_privacy_policy: "La dirección de una política de privacidad relev
 config_legal_pseudonymise_ip_addresses: "¿Seudonimizar las direcciones IP cuando al escribir archivos de registro? True = Sí [Predefinido]; False = No."
 config_rate_limiting: "Configuración para limitar la velocidad de acceso (no recomendado para uso general)."
 config_rate_limiting_allowance_period: "El número de horas para monitorear el uso. Predefinido = 0."
+config_rate_limiting_exceptions: "Excepciones (es decir, solicitudes que no deberían limitada). Relevante solo cuando la limitación de velocidad está habilitada."
 config_rate_limiting_max_bandwidth: "La cantidad máxima de ancho de banda permitida dentro del período de asignación antes de habilitar los límites de tarifas para solicitudes futuras. Un valor de 0 desactiva este tipo de limitación de la tarifa. Predefinido = 0KB."
 config_rate_limiting_max_requests: "El número máximo de solicitudes permitido dentro del período de asignación antes de habilitar los límites de tarifas para solicitudes futuras. Un valor de 0 desactiva este tipo de limitación de la tarifa. Predefinido = 0."
 config_rate_limiting_precision_ipv4: "La precisión a utilizar cuando se monitorea el uso de IPv4. El valor refleja el tamaño del bloque CIDR. Establecer en 32 para la mejor precisión. Predefinido = 32."
@@ -173,8 +174,10 @@ field_2fa: "Código 2FA"
 field_Request_Method: "Método de solicitud"
 field_activate: "Activar"
 field_add_more_conditions: "Añadir más condiciones"
+field_asnlookup: "Búsqueda de ASN"
 field_banned: "Prohibido"
 field_blocked: "Bloqueado"
+field_cclookup: "Búsqueda de código de país"
 field_cidr: "Generar salida como CIDRs"
 field_clear: "Anular"
 field_clear_all: "Anular todo"
@@ -237,8 +240,11 @@ field_update_all: "Actualizar todo"
 field_update_signatures_files: "Actualizar archivos de firmas"
 field_upload_file: "Subir un nuevo archivo"
 field_username: "Usuario"
+field_verified: "Identidad verificada"
+field_verified_requests: "Solicitudes verificadas de motores de búsqueda y redes sociales"
 field_verify: "Verificar"
 field_verify_all: "Verificar todo"
+field_whitelisted_requests: "Solicitudes en la lista blanca"
 field_your_version: "Tu Versión"
 header_login: "Por favor iniciar sesión para continuar."
 label_active_config_file: "Archivo de configuración activo: "

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Norwegian language data for the front-end (last modified: 2020.01.13).
+# This file: Norwegian language data for the front-end (last modified: 2020.02.01).
 ##/
 
 Extended Description Bypasses: "Standard-signatur-bypass-filene som normalt følger med hovedpakken."
@@ -122,6 +122,7 @@ config_legal_privacy_policy: "Adressen til en relevant personvernpolicy som skal
 config_legal_pseudonymise_ip_addresses: "Pseudonymisere IP-adresser når du logger? True = Ja [Standardverdi]; False = Nei."
 config_rate_limiting: "Konfigurasjon for hastighetsbegrensning (anbefales ikke til generell bruk)."
 config_rate_limiting_allowance_period: "Antall timer for å spore bruken. Standardverdi = 0."
+config_rate_limiting_exceptions: "Unntak (dvs, forespørsler som ikke bør være hastighetsbegrenset). Relevant bare når hastighetsbegrensning er aktivert."
 config_rate_limiting_max_bandwidth: "Maksimal båndbredde tillatt innenfor tillatelsesperioden før hastighetsbegrensende fremtidige forespørsler. En verdi på 0 deaktiverer denne typen hastighetsbegrensende. Standardverdi = 0KB."
 config_rate_limiting_max_requests: "Maksimalt antall forespørsler tillatt innen tillatelsesperioden før hastighetsbegrensende fremtidige forespørsler. En verdi på 0 deaktiverer denne typen hastighetsbegrensende. Standardverdi = 0."
 config_rate_limiting_precision_ipv4: "Presisjonen som skal brukes til å spore IPv4-bruk. Verdi speiler CIDR-blokkstørrelse. Sett til 32 for best presisjon. Standardverdi = 32."
@@ -173,8 +174,10 @@ field_2fa: "2FA kode"
 field_Request_Method: "Forespørselsmetode"
 field_activate: "Aktiver"
 field_add_more_conditions: "Legg til en ny betingelse"
+field_asnlookup: "Oppslag av ASN"
 field_banned: "Utestengt"
 field_blocked: "Blokkert"
+field_cclookup: "Oppslag av landskode"
 field_cidr: "Generer utdata som CIDRer"
 field_clear: "Rydde"
 field_clear_all: "Rydde alt"
@@ -235,8 +238,11 @@ field_update_all: "Oppdater alt"
 field_update_signatures_files: "Oppdater signaturfiler"
 field_upload_file: "Last opp ny fil"
 field_username: "Brukernavn"
+field_verified: "Bekreftet identitet"
+field_verified_requests: "Verifiserte forespørsler fra søkemotorer og sosiale medier"
 field_verify: "Verifisere"
 field_verify_all: "Verifisere alt"
+field_whitelisted_requests: "Hvitlistede forespørsler"
 field_your_version: "Din Versjon"
 header_login: "Vennligst logg inn for å fortsette."
 label_active_config_file: "Aktiv konfigurasjonsfil: "

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Swedish language data for the front-end (last modified: 2020.01.13).
+# This file: Swedish language data for the front-end (last modified: 2020.02.01).
 ##/
 
 Extended Description Bypasses: "Standard bypass-filen som normalt ingår i huvudpaketet."
@@ -122,6 +122,7 @@ config_legal_privacy_policy: "Adressen till en relevant integritetspolicy som sk
 config_legal_pseudonymise_ip_addresses: "Pseudonymisera IP-adresser när loggning? True = Ja [Standard]; False = Nej."
 config_rate_limiting: "Konfiguration för hastighetsbegränsning (rekommenderas inte för allmänt bruk)."
 config_rate_limiting_allowance_period: "Antalet timmar att spåra användningen. Standard = 0."
+config_rate_limiting_exceptions: "Undantagen (d.v.s., förfrågningar som inte bör vara begränsade). Relevant endast när hastighetsbegränsning är aktiverad."
 config_rate_limiting_max_bandwidth: "Den maximala bandbreddsmängden som tillåts inom tillåten-perioden före hastighetsbegränsar framtida förfrågningar. Ett värde av 0 avaktiverar denna typ av hastighetsbegränsande. Standard = 0KB."
 config_rate_limiting_max_requests: "Det maximala antalet förfrågningar som tillåts inom tillåten-perioden före hastighetsbegränsar framtida förfrågningar. Ett värde av 0 avaktiverar denna typ av hastighetsbegränsande. Standard = 0."
 config_rate_limiting_precision_ipv4: "Den precision som ska användas för att spåra IPv4-användning. Värdet speglar CIDR-blockstorleken. Ställ in till 32 för bästa precision. Standard = 32."
@@ -173,8 +174,10 @@ field_2fa: "2FA-kod"
 field_Request_Method: "Förfrågan metod"
 field_activate: "Aktivera"
 field_add_more_conditions: "Lägg till fler villkor"
+field_asnlookup: "ASN-uppslag"
 field_banned: "Förbjudna"
 field_blocked: "Blockerad"
+field_cclookup: "Landskod-uppslag"
 field_cidr: "Generera utgång som CIDR"
 field_clear: "Rensa"
 field_clear_all: "Rensa alla"
@@ -235,8 +238,11 @@ field_update_all: "Uppdatera alla"
 field_update_signatures_files: "Uppdatera signaturfiler"
 field_upload_file: "Ladda upp ny fil"
 field_username: "Användarnamn"
+field_verified: "Verifierad identitet"
+field_verified_requests: "Verifierade förfrågningar från sökmotorer och sociala medier"
 field_verify: "Verifiera"
 field_verify_all: "Verifiera allt"
+field_whitelisted_requests: "Vitlistade förfrågningar"
 field_your_version: "Din version"
 header_login: "Snälla logga in för att fortsätta."
 label_active_config_file: "Aktiv konfigurationsfil: "

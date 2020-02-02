@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Bangla language data for the front-end (last modified: 2020.01.13).
+# This file: Bangla language data for the front-end (last modified: 2020.02.01).
 ##/
 
 Extended Description Bypasses: "ডিফল্ট স্বাক্ষর বাইপাস ফাইল সাধারণত প্রধান প্যাকেজ সহ অন্তর্ভুক্ত।"
@@ -120,6 +120,7 @@ config_legal_privacy_policy: "কোন প্রযোজ্য পৃষ্ঠ
 config_legal_pseudonymise_ip_addresses: "লগ লেখার সময় IP ঠিকানাগুলি pseudonymize? True = হাঁ [ডিফল্ট]; False = না।"
 config_rate_limiting: "হার সীমাবদ্ধ করার জন্য কনফিগারেশন (সাধারণ ব্যবহারের জন্য প্রস্তাবিত নয়)।"
 config_rate_limiting_allowance_period: "ব্যবহারের ট্র্যাক কত ঘন্টা। ডিফল্ট = "0"।"
+config_rate_limiting_exceptions: "ব্যতিক্রম (অনুরোধগুলি যা রেট সীমাবদ্ধ করা উচিত নয়)। রেট সীমাবদ্ধ সক্ষম থাকলেই প্রাসঙ্গিক।"
 config_rate_limiting_max_bandwidth: "ভবিষ্যতের অনুরোধগুলির সীমিত হারের আগে ভাতা সময়ের মধ্যে ব্যান্ডউইথের সর্বোচ্চ পরিমাণ অনুমোদিত। 0 এর একটি মান এই ধরনের হার সীমাবদ্ধ করে অক্ষম করে। ডিফল্ট = "0KB"।"
 config_rate_limiting_max_requests: "ভার্চুয়াল অনুরোধ সীমিত করার আগে ভাতা সময়ের মধ্যে অনুমোদিত সর্বোচ্চ সংখ্যক অনুরোধ। 0 এর একটি মান এই ধরনের হার সীমাবদ্ধ করে অক্ষম করে। ডিফল্ট = "0"।"
 config_rate_limiting_precision_ipv4: "IPv4 ব্যবহার ট্র্যাকিং জন্য ব্যবহার করার নির্ভুলতা। মান আয়না CIDR ব্লক আকার। সেরা স্পষ্টতা জন্য 32 সেট করুন। ডিফল্ট = "32"।"
@@ -171,8 +172,10 @@ field_2fa: "2FA কোড"
 field_Request_Method: "অনুরোধ পদ্ধতি"
 field_activate: "সক্রিয় করা"
 field_add_more_conditions: "আরো শর্ত যোগ করুন"
+field_asnlookup: "ASN লুকআপ"
 field_banned: "নিষিদ্ধ"
 field_blocked: "ব্লক করা আছে"
+field_cclookup: "কান্ট্রি কোড লুকআপ"
 field_cidr: "CIDR নোটেশন ব্যবহার করে আউটপুট তৈরি করুন"
 field_clear: "পরিষ্কার করুন"
 field_clear_all: "সব পরিষ্কার করুন"
@@ -233,8 +236,11 @@ field_update_all: "সব আপডেট করুন"
 field_update_signatures_files: "স্বাক্ষর ফাইল আপডেট করুন"
 field_upload_file: "নতুন ফাইল আপলোড করুন"
 field_username: "ব্যবহারকারীর নাম"
+field_verified: "যাচাই করা পরিচয়"
+field_verified_requests: "যাচাই করা অনুসন্ধান ইঞ্জিন এবং সোশ্যাল মিডিয়া অনুরোধগুলি"
 field_verify: "যাচাই করুন"
 field_verify_all: "সব যাচাই করুন"
+field_whitelisted_requests: "শ্বেত তালিকাভুক্ত অনুরোধগুলি"
 field_your_version: "আপনার সংস্করণ"
 header_login: "চালিয়ে যেতে দয়া করে লগ ইন করুন।"
 label_active_config_file: "সক্রিয় কনফিগারেশন ফাইল: "

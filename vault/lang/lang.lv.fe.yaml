@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Latvian language data for the front-end (last modified: 2020.01.13).
+# This file: Latvian language data for the front-end (last modified: 2020.02.01).
 ##/
 
 Extended Description Bypasses: "Noklusējuma paraksta apiešana faili, kas parasti ir iekļauti galvenajā paketē."
@@ -122,6 +122,7 @@ config_legal_privacy_policy: "Attiecīgās privātuma politikas adrese, kas jāp
 config_legal_pseudonymise_ip_addresses: "Pseidonimizēt IP adresi reģistrējoties? True (Patiess) = Jā [Noklusējuma]; False (Nepatiess) = Nē."
 config_rate_limiting: "Likmes ierobežojumu konfigurācija (nav ieteicams vispārējai lietošanai)."
 config_rate_limiting_allowance_period: "Stundu skaits, lai izsekotu lietošanai. Noklusējuma = 0."
+config_rate_limiting_exceptions: "Izņēmumi (t.i., pieprasījumiem, kuriem nevajadzētu būt ierobežotiem). Attiecas tikai tad, ja ir iespējota likmes ierobežošana."
 config_rate_limiting_max_bandwidth: "Maksimālais pieļaujamais joslas platuma apjoms kvotu periodā pirms ierobežot pieprasījumus nākotnē. Vērtība 0 atspējo šāda veida ierobežošanu. Noklusējuma = 0KB."
 config_rate_limiting_max_requests: "Maksimālais atļauto pieprasījumu skaits kvotu periodā pirms ierobežot pieprasījumus nākotnē. Vērtība 0 atspējo šāda veida ierobežošanu. Noklusējuma = 0."
 config_rate_limiting_precision_ipv4: "IPv4 lietošanas izsekošanas precizitāte. Vērtības spoguļi CIDR bloka izmērs. Iestatiet uz 32 vislabākajai precizitātei. Noklusējuma = 32."
@@ -173,8 +174,10 @@ field_2fa: "2FA kods"
 field_Request_Method: "Pieprasījuma metode"
 field_activate: "Aktivizējiet"
 field_add_more_conditions: "Pievienojiet vairāk nosacījumu"
+field_asnlookup: "ASN meklēšana"
 field_banned: "Aizliegts"
 field_blocked: "Bloķēts"
+field_cclookup: "Valsts koda meklēšana"
 field_cidr: "Ģenerēt izvadi kā tīkla CIDRs"
 field_clear: "Notīriet"
 field_clear_all: "Notīriet visus"
@@ -238,8 +241,11 @@ field_update_all: "Atjauniniet visus"
 field_update_signatures_files: "Atjauniniet paraksta failus"
 field_upload_file: "Augšupielādēt jaunu failu"
 field_username: "Lietotājvārds"
+field_verified: "Verificēta identitāte"
+field_verified_requests: "Pārbaudīti meklētājprogrammu un sociālo mediju pieprasījumi"
 field_verify: "Verificēt"
 field_verify_all: "Verificēt visus"
+field_whitelisted_requests: "Baltajā sarakstā iekļautie pieprasījumi"
 field_your_version: "Jūsu Versija"
 header_login: "Lūdzu, ielogoties, lai turpinātu."
 label_active_config_file: "Aktīvs konfigurācijas fails: "

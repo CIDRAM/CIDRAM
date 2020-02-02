@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: English language data for the front-end (last modified: 2020.01.13).
+# This file: English language data for the front-end (last modified: 2020.02.01).
 ##/
 
 Extended Description Bypasses: "The default signature bypass files normally included with the main package."
@@ -122,6 +122,7 @@ config_legal_privacy_policy: "The address of a relevant privacy policy to be dis
 config_legal_pseudonymise_ip_addresses: "Pseudonymise IP addresses when logging? True = Yes [Default]; False = No."
 config_rate_limiting: "Configuration for rate limiting (not recommended for general use)."
 config_rate_limiting_allowance_period: "The number of hours to track usage. Default = 0."
+config_rate_limiting_exceptions: "Exceptions (i.e., requests which shouldn't be rate limited). Relevant only when rate limiting is enabled."
 config_rate_limiting_max_bandwidth: "The maximum amount of bandwidth allowed within the allowance period before rate limiting future requests. A value of 0 disables this type of rate limiting. Default = 0KB."
 config_rate_limiting_max_requests: "The maximum number of requests allowed within the allowance period before rate limiting future requests. A value of 0 disables this type of rate limiting. Default = 0."
 config_rate_limiting_precision_ipv4: "The precision to use for tracking IPv4 usage. Value mirrors CIDR block size. Set to 32 for best precision. Default = 32."
@@ -173,8 +174,10 @@ field_2fa: "2FA code"
 field_Request_Method: "Request method"
 field_activate: "Activate"
 field_add_more_conditions: "Add more conditions"
+field_asnlookup: "ASN lookup"
 field_banned: "Banned"
 field_blocked: "Blocked"
+field_cclookup: "Country code lookup"
 field_cidr: "Generate output as CIDRs"
 field_clear: "Clear"
 field_clear_all: "Clear all"
@@ -237,8 +240,11 @@ field_update_all: "Update all"
 field_update_signatures_files: "Update signature files"
 field_upload_file: "Upload new file"
 field_username: "Username"
+field_verified: "Verified identity"
+field_verified_requests: "Verified search engine and social media requests"
 field_verify: "Verify"
 field_verify_all: "Verify all"
+field_whitelisted_requests: "Whitelisted requests"
 field_your_version: "Your Version"
 header_login: "Please log in to continue."
 label_active_config_file: "Active configuration file: "

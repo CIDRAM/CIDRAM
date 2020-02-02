@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (simplified) language data for the front-end (last modified: 2020.01.13).
+# This file: Chinese (simplified) language data for the front-end (last modified: 2020.02.01).
 ##/
 
 Extended Description Bypasses: "标准签名旁路文件通常包括在主包。"
@@ -122,6 +122,7 @@ config_legal_privacy_policy: "要显示在任何生成的页面的页脚中的�
 config_legal_pseudonymise_ip_addresses: "编写日志文件时使用假名的IP地址吗？​True（真）=使用假名【标准】；False（假）=不使用假名。"
 config_rate_limiting: "速率限制的配置（不建议一般使用）。"
 config_rate_limiting_allowance_period: "监视使用情况的小时数。​标准=0。"
+config_rate_limiting_exceptions: "例外（即，不应限制速率的请求）。​仅在启用速率限制时有效。"
 config_rate_limiting_max_bandwidth: "在为将来的请求启用速率限制之前的最大允许带宽量。​值为0将禁用此类速率限制。​标准=0KB。"
 config_rate_limiting_max_requests: "在为将来的请求启用速率限制之前允许的最大请求数。​值为0将禁用此类速率限制。​标准=0。"
 config_rate_limiting_precision_ipv4: "监视IPv4使用时的精度。​值镜像CIDR块大小。​设置为32以获得最佳精度。​标准=32。"
@@ -173,8 +174,10 @@ field_2fa: "2FA代码"
 field_Request_Method: "请求方法"
 field_activate: "启用"
 field_add_more_conditions: "添加更多条件"
+field_asnlookup: "ASN查询"
 field_banned: "禁止"
 field_blocked: "已阻止"
+field_cclookup: "国家代码查询"
 field_cidr: "以CIDR的形式生成输出"
 field_clear: "撤销"
 field_clear_all: "撤销所有"
@@ -235,8 +238,11 @@ field_update_all: "更新一切"
 field_update_signatures_files: "更新签名文件"
 field_upload_file: "上传新文件"
 field_username: "用户名"
+field_verified: "身份验证"
+field_verified_requests: "经过验证的搜索引擎和社交媒体请求"
 field_verify: "验证"
 field_verify_all: "验证全部"
+field_whitelisted_requests: "在白名单中的请求"
 field_your_version: "您的版本"
 header_login: "请登录以继续。"
 label_active_config_file: "活动配置文件："

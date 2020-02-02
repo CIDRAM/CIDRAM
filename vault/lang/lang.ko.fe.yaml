@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Korean language data for the front-end (last modified: 2020.01.13).
+# This file: Korean language data for the front-end (last modified: 2020.02.01).
 ##/
 
 Extended Description Bypasses: "기본 서명 우회 일반적으로 기본 패키지에 포함되어 있습니다."
@@ -122,6 +122,7 @@ config_legal_privacy_policy: "생성 된 페이지의 꼬리말에 표시 할 �
 config_legal_pseudonymise_ip_addresses: "로그 파일을 쓸 때 가명으로 하다 IP 주소? True = 예 (Default / 기본 설정); False = 아니오."
 config_rate_limiting: "속도 제한 설정 (일반적인 사용에는 권장되지 않습니다)."
 config_rate_limiting_allowance_period: "사용량을 모니터 할 시간입니다. Default (기본 설정) = 0."
+config_rate_limiting_exceptions: "예외 (즉, 속도 제한이 없어야하는 요청). 속도 제한이 활성화 된 경우에만 해당됩니다."
 config_rate_limiting_max_bandwidth: "향후 요청에 대해 속도 제한을 사용하기 전에 허용 기간 내에 허용되는 최대 대역폭입니다. 0 값은 이러한 유형의 속도 제한을 비활성화합니다. Default (기본 설정) = 0KB."
 config_rate_limiting_max_requests: "향후 요청에 대해 속도 제한을 사용하도록 설정하기 전에 허용 기간 내에 허용되는 최대 요청 수입니다. 0 값은 이러한 유형의 속도 제한을 비활성화합니다. Default (기본 설정) = 0."
 config_rate_limiting_precision_ipv4: "IPv4 사용을 모니터링 할 때 사용할 정밀도입니다. 값은 CIDR 블록 크기와 동일합니다. 최상의 정밀도를 위해 32로 설정하십시오. Default (기본 설정) = 32."
@@ -173,8 +174,10 @@ field_2fa: "2FA 코드"
 field_Request_Method: "요청 방법"
 field_activate: "활성화"
 field_add_more_conditions: "조건 추가"
+field_asnlookup: "ASN 조회"
 field_banned: "금지 된"
 field_blocked: "차단 된셨습니까?"
+field_cclookup: "국가 코드 조회"
 field_cidr: "CIDR을 사용하여 출력 생성"
 field_clear: "취소"
 field_clear_all: "모두 취소"
@@ -235,8 +238,11 @@ field_update_all: "모두 업데이트"
 field_update_signatures_files: "서명 파일 업데이트"
 field_upload_file: "새로운 파일을 업로드하기"
 field_username: "사용자 이름"
+field_verified: "확인 된 신원"
+field_verified_requests: "확인 된 검색 엔진 및 소셜 미디어 요청"
 field_verify: "검증"
 field_verify_all: "모두 검증"
+field_whitelisted_requests: "화이트리스트 된 것으로 표시된 요청"
 field_your_version: "사용 버전"
 header_login: "계속하려면 로그인하십시오."
 label_active_config_file: "활성 구성 파일 : "

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Indonesian language data for the front-end (last modified: 2020.01.13).
+# This file: Indonesian language data for the front-end (last modified: 2020.02.01).
 ##/
 
 Extended Description Bypasses: "File untuk bypass tanda tangan standar yang biasanya disertakan dengan paket utama."
@@ -126,6 +126,7 @@ config_rate_limiting_max_bandwidth: "Jumlah maksimum bandwidth yang diizinkan da
 config_rate_limiting_max_requests: "Jumlah maksimum permintaan yang diizinkan dalam periode tunjangan sebelum mengaktifkan pembatasan laju untuk permintaan di masa mendatang. Nilai 0 menonaktifkan jenis pembatasan laju ini. Default = 0."
 config_rate_limiting_precision_ipv4: "Presisi yang akan digunakan saat memonitor penggunaan IPv4. Nilai mencerminkan ukuran blok CIDR. Atur ke 32 untuk presisi terbaik. Default = 32."
 config_rate_limiting_precision_ipv6: "Presisi yang akan digunakan saat memonitor penggunaan IPv6. Nilai mencerminkan ukuran blok CIDR. Atur ke 128 untuk presisi terbaik. Default = 128."
+config_rate_limiting_exceptions: "Pengecualian (yaitu, permintaan yang seharusnya tidak dibatasi). Hanya relevan ketika pembatasan laju diaktifkan."
 config_recaptcha: "Konfigurasi untuk reCAPTCHA (menyediakan cara bagi manusia untuk mendapatkan kembali akses ketika diblokir)."
 config_recaptcha_api: "API mana yang akan digunakan? V2 atau Invisible?"
 config_recaptcha_expiry: "Jumlah jam untuk mengingat instansi reCAPTCHA."
@@ -173,8 +174,10 @@ field_2fa: "Kode 2FA"
 field_Request_Method: "Metode permintaan"
 field_activate: "Mengaktifkan"
 field_add_more_conditions: "Tambahkan lebih banyak kondisi"
+field_asnlookup: "Pencarian ASN"
 field_banned: "Dilarang"
 field_blocked: "Diblokir"
+field_cclookup: "Pencarian kode negara"
 field_cidr: "Hasilkan keluaran menggunakan notasi CIDR"
 field_clear: "Cabut"
 field_clear_all: "Cabut semua"
@@ -235,6 +238,9 @@ field_update_all: "Memperbarui semua"
 field_update_signatures_files: "Memperbarui file tanda tangan"
 field_upload_file: "Mengupload file baru"
 field_username: "Nama Pengguna"
+field_verified: "Identitas terverifikasi"
+field_whitelisted_requests: "Whitelisted requests"
+field_verified_requests: "Verified search engine and social media requests"
 field_verify: "Memverifikasi"
 field_verify_all: "Memverifikasi semua"
 field_your_version: "Versi Anda"

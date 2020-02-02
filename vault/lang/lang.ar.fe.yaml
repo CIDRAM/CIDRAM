@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Arabic language data for the front-end (last modified: 2020.01.13).
+# This file: Arabic language data for the front-end (last modified: 2020.02.01).
 ##/
 
 Extended Description Bypasses: "ملفات الالتفافية التوقيع القياسية المدرجة عادة مع الحزمة الرئيسية."
@@ -120,6 +120,7 @@ config_legal_privacy_policy: "عنوان سياسة الخصوصية ذات ال
 config_legal_pseudonymise_ip_addresses: "إخفاء عناوين IP عند كتابة السجلات؟ صحيح/True = نعم [افتراضي]؛ زائفة/False = لا."
 config_rate_limiting: "التكوين للحد من معدل (غير مستحسن للاستخدام العام)."
 config_rate_limiting_allowance_period: "عدد الساعات لمراقبة الاستخدام. افتراضي = 0."
+config_rate_limiting_exceptions: "استثناءات (بمعنى آخر، الطلبات التي لا ينبغي أن تكون محدودة). له تأثير فقط عند تمكين الحد."
 config_rate_limiting_max_bandwidth: "أقصى قدر من عرض النطاق الترددي المسموح به خلال فترة السماح. عندما يتم تجاوزت، يتم تمكين حدود السعر للطلبات المستقبلية. تعمل القيمة 0 على تعطيل هذا النوع من تحديد السرعة. افتراضي = 0KB."
 config_rate_limiting_max_requests: "الحد الأقصى لعدد الطلبات المسموح بها خلال فترة السماح. عندما يتم تجاوزت، يتم تمكين حدود السعر للطلبات المستقبلية. تعمل القيمة 0 على تعطيل هذا النوع من تحديد السرعة. افتراضي = 0."
 config_rate_limiting_precision_ipv4: "الدقة المستخدمة عند مراقبة استخدام IPv4. قيمة تعكس حجم كتلة CIDR. تعيين إلى 32 للحصول على أفضل دقة. افتراضي = 32."
@@ -171,8 +172,10 @@ field_2fa: "كود 2FA"
 field_Request_Method: "Request method"
 field_activate: "جعله نشطة"
 field_add_more_conditions: "إضافة المزيد من الشروط"
+field_asnlookup: "بحث ASN"
 field_banned: "محظور"
 field_blocked: "مسدود"
+field_cclookup: "بحث عن كود البلد"
 field_cidr: "توليد الإخراج باستخدام تدوين CIDR"
 field_clear: "إلغاء"
 field_clear_all: "امسح الكل"
@@ -233,8 +236,11 @@ field_update_all: "تحديث الجميع"
 field_update_signatures_files: "تحديث ملفات التوقيع"
 field_upload_file: "تحميل ملف جديد"
 field_username: "اسم المستخدم"
+field_verified: "التحقق من الهوية"
+field_verified_requests: "الطلبات التي تم التحقق منها من محركات البحث ووسائل التواصل الاجتماعي"
 field_verify: "التحقق"
 field_verify_all: "التحقق من الكل"
+field_whitelisted_requests: "طلبات القائمة البيضاء"
 field_your_version: "الإصدار الخاص بك"
 header_login: "الرجاء تسجيل الدخول للمتابعة."
 label_active_config_file: "ملف التكوين النشط: "

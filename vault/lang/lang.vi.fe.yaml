@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Vietnamese language data for the front-end (last modified: 2020.01.13).
+# This file: Vietnamese language data for the front-end (last modified: 2020.02.01).
 ##/
 
 Extended Description Bypasses: "Các tập tin đường tránh chữ ký mặc định thường bao gồm với gói thầu chính."
@@ -126,6 +126,7 @@ config_rate_limiting_max_bandwidth: "Số lượng băng thông tối đa đư�
 config_rate_limiting_max_requests: "Số lượng yêu cầu tối đa được phép trong khoảng thời gian cho phép trước khi cho phép giới hạn tốc độ cho các yêu cầu trong tương lai. Giá trị 0 sẽ vô hiệu hóa loại giới hạn tốc độ này. Mặc định = 0."
 config_rate_limiting_precision_ipv4: "Độ chính xác để sử dụng khi theo dõi việc sử dụng IPv4. Giá trị phản ánh kích thước khối CIDR. Đặt thành 32 để có độ chính xác cao nhất. Mặc định = 32."
 config_rate_limiting_precision_ipv6: "Độ chính xác để sử dụng khi theo dõi việc sử dụng IPv6. Giá trị phản ánh kích thước khối CIDR. Đặt thành 128 để có độ chính xác cao nhất. Mặc định = 128."
+config_rate_limiting_exceptions: "Ngoại lệ (tức là, các yêu cầu không nên giới hạn). Chỉ có hiệu lực khi giới hạn tốc độ được kích hoạt."
 config_recaptcha: "Cấu hình cho reCAPTCHA (cung cấp một cách để con người lấy lại quyền truy cập khi bị chặn)."
 config_recaptcha_api: "API nào để sử dụng? V2 hoặc Invisible?"
 config_recaptcha_expiry: "Số giờ để nhớ reCAPTCHA."
@@ -173,8 +174,10 @@ field_2fa: "Mã 2FA"
 field_Request_Method: "Phương thức yêu cầu"
 field_activate: "Kích hoạt"
 field_add_more_conditions: "Thêm các điều kiện khác"
+field_asnlookup: "Tra cứu ASN"
 field_banned: "Bị cấm"
 field_blocked: "Bị Chặn"
+field_cclookup: "Tra cứu mã quốc gia"
 field_cidr: "Tạo đầu ra dưới dạng CIDR"
 field_clear: "Hủy bỏ"
 field_clear_all: "Hủy bỏ tất cả"
@@ -235,6 +238,9 @@ field_update_all: "Cập nhật tất cả"
 field_update_signatures_files: "Cập nhật tập tin chữ ký"
 field_upload_file: "Tải lên tập tin mới"
 field_username: "Tên Người Dùng"
+field_verified: "Xác minh danh tính"
+field_whitelisted_requests: "Whitelisted requests"
+field_verified_requests: "Verified search engine and social media requests"
 field_verify: "Xác minh"
 field_verify_all: "Xác minh tất cả"
 field_your_version: "Phiên bản của bạn"

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Japanese language data for the front-end (last modified: 2020.01.13).
+# This file: Japanese language data for the front-end (last modified: 2020.02.01).
 ##/
 
 Extended Description Bypasses: "メインパッケージに通常含まれているデフォルト・シグネチャ・バイパス。"
@@ -122,6 +122,7 @@ config_legal_privacy_policy: "生成されたページのフッターに表示�
 config_legal_pseudonymise_ip_addresses: "ログ・ファイルを書き込むときにＩＰアドレス偽名化するか「プセユードニマイズ」？ True = はい（Default/デフォルルト）。 False = いいえ。"
 config_rate_limiting: "レート制限の設定（一般的な使用には推奨されません）。"
 config_rate_limiting_allowance_period: "使用状況を監視する時間数。​Default/デフォルルト = 0."
+config_rate_limiting_exceptions: "例外（すなわち、レート制限されるべきではないリクエスト）。​レート制限が有効な場合にのみ効果があります。"
 config_rate_limiting_max_bandwidth: "将来の要求に対してレート制限を有効にする前の許容期間内に許容される最大帯域幅。​０の値は、このタイプのレート制限を無効にします。​Default/デフォルルト = 0KB。"
 config_rate_limiting_max_requests: "将来の要求に対してレート制限を有効にする前に、許容期間内に許可される要求の最大数。​０の値は、このタイプのレート制限を無効にします。​Default/デフォルルト = 0。"
 config_rate_limiting_precision_ipv4: "ＩＰｖ４の使用状況を監視する際の精度。​値はＣＩＤＲブロック・サイズを反映します。​最高の精度を得るには３２に設定します。​Default/デフォルルト = 32。"
@@ -173,8 +174,10 @@ field_2fa: "２ＦＡコード"
 field_Request_Method: "リクエスト・メソッド"
 field_activate: "アクティブにする"
 field_add_more_conditions: "条件を追加する"
+field_asnlookup: "ＡＳＮルックアップ"
 field_banned: "禁止された"
 field_blocked: "ブロックされましたか？"
+field_cclookup: "国コード・ルックアップ"
 field_cidr: "ＣＩＤＲを使って出力を生成する"
 field_clear: "キャンセル"
 field_clear_all: "すべてキャンセル"
@@ -235,8 +238,11 @@ field_update_all: "すべてアップデートする"
 field_update_signatures_files: "シグネチャ・ファイルをアップデートする"
 field_upload_file: "新しいファイルをアップロードする"
 field_username: "ユーザー名"
+field_verified: "確認済みの身元"
+field_verified_requests: "検証済みの検索エンジンとソーシャル・メディアのリクエスト"
 field_verify: "検証する"
 field_verify_all: "すべてを検証する"
+field_whitelisted_requests: "ホワイトリストに登録されたリクエスト"
 field_your_version: "お使いのバージョン"
 header_login: "継続するには、​ログインしてください。"
 label_active_config_file: "アクティブ・コンフィグレーション・ファイル："

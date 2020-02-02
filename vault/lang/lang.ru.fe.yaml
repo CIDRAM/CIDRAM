@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Russian language data for the front-end (last modified: 2020.01.13).
+# This file: Russian language data for the front-end (last modified: 2020.02.01).
 ##/
 
 Extended Description Bypasses: "Стандартная сигнатуры байпасы, обычно включены в основной пакет."
@@ -122,6 +122,7 @@ config_legal_privacy_policy: "Адрес соответствующей поли
 config_legal_pseudonymise_ip_addresses: "Псевдонимный IP-адреса при записи файлов журнала? True = Да [Стандарт]; False = Нет."
 config_rate_limiting: "Конфигурация для ограничения скорости (не рекомендуется для общего пользования)."
 config_rate_limiting_allowance_period: "Количество часов для мониторинга использования. Стандарт = 0."
+config_rate_limiting_exceptions: "Исключения (т.е., запросы, которые не должны ограничиваться). Действует только при включенном ограничении скорости."
 config_rate_limiting_max_bandwidth: "Максимальный размер полосы пропускания, разрешенный в течение периода пособия, до включения ограничения скорости для будущих запросов. Значение 0 отключает этот тип ограничения скорости. Стандарт = 0KB."
 config_rate_limiting_max_requests: "Максимальное количество запросов, разрешенных в течение периода пособия, до включения ограничения скорости для будущих запросов. Значение 0 отключает этот тип ограничения скорости. Стандарт = 0."
 config_rate_limiting_precision_ipv4: "Точность использования при мониторинге использования IPv4. Значение отражает размер блока CIDR. Установить как 32 для наилучшей точности. Стандарт = 32."
@@ -173,8 +174,10 @@ field_2fa: "Код 2FA"
 field_Request_Method: "Метод запроса"
 field_activate: "Активировать"
 field_add_more_conditions: "Добавить дополнительные условия"
+field_asnlookup: "Поиск ASN"
 field_banned: "Запрещенный"
 field_blocked: "Блокированный"
+field_cclookup: "Поиск кода страны"
 field_cidr: "Генерировать вывод в виде CIDR"
 field_clear: "Очистить"
 field_clear_all: "Очистить все"
@@ -238,8 +241,11 @@ field_update_all: "Обновить все"
 field_update_signatures_files: "Обновить файлы сигнатуры"
 field_upload_file: "Загрузить новый файл"
 field_username: "Имя Пользователя"
+field_verified: "Подтвержденная идентичность"
+field_verified_requests: "Проверенные запросы от поисковых систем и социальных сетей"
 field_verify: "Проверить"
 field_verify_all: "Проверить все"
+field_whitelisted_requests: "Запросы отмечены как в белом списке"
 field_your_version: "Ваша Версия"
 header_login: "Пожалуйста войдите чтобы продолжить."
 label_active_config_file: "Активный файл конфигурации: "

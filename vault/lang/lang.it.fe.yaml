@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Italian language data for the front-end (last modified: 2020.01.13).
+# This file: Italian language data for the front-end (last modified: 2020.02.01).
 ##/
 
 Extended Description Bypasses: "Un file per bypassare alcune delle firme predefinite normalmente inclusi nel pacchetto principale."
@@ -122,6 +122,7 @@ config_legal_privacy_policy: "L'indirizzo di una politica sulla privacy pertinen
 config_legal_pseudonymise_ip_addresses: "Pseudonimizzare gli indirizzi IP durante la scrivono i file di registro? True = Sì [Predefinito]; False = No."
 config_rate_limiting: "Configurazione per la limitazione della velocità (non raccomandato per uso generale)."
 config_rate_limiting_allowance_period: "Il numero di ore per monitorare l'utilizzo. Predefinito = 0."
+config_rate_limiting_exceptions: "Eccezioni (cioè, richieste che non dovrebbero essere limitate). Rilevante solo quando è abilitata la limitazione della velocità."
 config_rate_limiting_max_bandwidth: "La quantità massima di larghezza di banda consentita entro il periodo di tolleranza prima di abilitare la limitazione della velocità per le richieste future. Un valore pari a 0 disabilita questo tipo di limitazione della velocità. Predefinito = 0KB."
 config_rate_limiting_max_requests: "Il numero massimo di richieste consentite entro il periodo di tolleranza prima di abilitare la limitazione della velocità per le richieste future. Un valore pari a 0 disabilita questo tipo di limitazione della velocità. Predefinito = 0."
 config_rate_limiting_precision_ipv4: "La precisione da utilizzare durante il monitoraggio dell'utilizzo di IPv4. Il valore riflette la dimensione del blocco CIDR. Impostare su 32 per la massima precisione. Predefinito = 32."
@@ -173,8 +174,10 @@ field_2fa: "Codice 2FA"
 field_Request_Method: "Metodo di richiesta"
 field_activate: "Attivarlo"
 field_add_more_conditions: "Aggiungi più condizioni"
+field_asnlookup: "Ricerca per ASN"
 field_banned: "Vietato"
 field_blocked: "Bloccato"
+field_cclookup: "Ricerca per codice paese"
 field_cidr: "Genera output utilizzando la notazione CIDR"
 field_clear: "Revocarlo"
 field_clear_all: "Revoca tutto"
@@ -235,8 +238,11 @@ field_update_all: "Aggiorna tutto"
 field_update_signatures_files: "Aggiorna i file delle firme"
 field_upload_file: "Carica nuovo file"
 field_username: "Nome Utente"
+field_verified: "Identità verificata"
+field_verified_requests: "Richieste verificate da motori di ricerca e social media"
 field_verify: "Verificarlo"
 field_verify_all: "Verifica tutto"
+field_whitelisted_requests: "Richieste nella lista bianca"
 field_your_version: "La Vostra Versione"
 header_login: "Per favore accedi per continuare."
 label_active_config_file: "File di configurazione attivo: "

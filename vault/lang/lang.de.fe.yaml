@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: German language data for the front-end (last modified: 2020.01.13).
+# This file: German language data for the front-end (last modified: 2020.02.01).
 ##/
 
 Extended Description Bypasses: "Die Standard-Signatur-Bypass-Dateien, die normalerweise im Hauptpaket enthalten sind."
@@ -122,6 +122,7 @@ config_legal_privacy_policy: "Die Adresse einer relevanten Datenschutz-Bestimmun
 config_legal_pseudonymise_ip_addresses: "Pseudonymisieren IP-Adressen beim Schreiben der Protokolldateien? True = Ja [Standardeinstellung]; False = Nein."
 config_rate_limiting: "Konfiguration für Ratenbegrenzung (nicht für den allgemeinen Gebrauch empfohlen)."
 config_rate_limiting_allowance_period: "Die Anzahl der Stunden, um die Nutzung zu überwachen. Standardeinstellung = 0."
+config_rate_limiting_exceptions: "Ausnahmen (d.h., Anfragen die nicht ratenbegrenzt sein sollten). Nur relevant wenn die Ratenbegrenzung aktiviert ist."
 config_rate_limiting_max_bandwidth: "Die maximal zulässige Bandbreite innerhalb der Zulassungsperiode, bevor die Ratenbegrenzung für zukünftige Anforderungen aktiviert wird. Ein Wert von 0 deaktiviert diese Art der Ratenbegrenzung. Standardeinstellung = 0KB."
 config_rate_limiting_max_requests: "Die maximale Anzahl von Anforderungen, die innerhalb der Zulassungsperiode zulässig sind, bevor die Ratenbegrenzung für zukünftige Anforderungen aktiviert wird. Ein Wert von 0 deaktiviert diese Art der Ratenbegrenzung. Standardeinstellung = 0."
 config_rate_limiting_precision_ipv4: "Die Präzision für das Monitoring der IPv4-Nutzung. Der Wert spiegelt die CIDR-Blockgröße. Für beste Präzision auf 32 einstellen. Standardeinstellung = 32."
@@ -173,8 +174,10 @@ field_2fa: "2FA-Code"
 field_Request_Method: "Methode anfordern"
 field_activate: "Aktivieren"
 field_add_more_conditions: "Fügen Sie mehr Bedingungen"
+field_asnlookup: "ASN-Suche"
 field_banned: "Verboten"
 field_blocked: "Blockiert"
+field_cclookup: "Ländercode-Suche"
 field_cidr: "Ausgabe als CIDRs generieren"
 field_clear: "Löschen"
 field_clear_all: "Alles löschen"
@@ -237,8 +240,11 @@ field_update_all: "Alle aktualisieren"
 field_update_signatures_files: "Signaturdateien aktualisieren"
 field_upload_file: "Neue Datei hochladen"
 field_username: "Benutzername"
+field_verified: "Verifizierte Identität"
+field_verified_requests: "Verifizierte Suchmaschinen und Social Media Anfragen"
 field_verify: "Verifizieren"
 field_verify_all: "Verifizieren alle"
+field_whitelisted_requests: "Anfragen die als auf der Whitelist markiert sind"
 field_your_version: "Ihre Version"
 header_login: "Bitte einloggen zum Fortfahren."
 label_active_config_file: "Aktive Konfigurationsdatei: "

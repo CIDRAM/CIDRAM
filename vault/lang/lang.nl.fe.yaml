@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Dutch language data for the front-end (last modified: 2020.01.13).
+# This file: Dutch language data for the front-end (last modified: 2020.02.01).
 ##/
 
 Extended Description Bypasses: "De standaard signature rondwegen normaal opgenomen met de primaire pakket."
@@ -122,6 +122,7 @@ config_legal_privacy_policy: "Het adres van een relevant privacybeleid dat moet 
 config_legal_pseudonymise_ip_addresses: "Pseudonimiseren de IP-adressen bij het schrijven van logbestanden? True = Ja [Standaard]; False = Nee."
 config_rate_limiting: "Configuratie voor tarieflimiet (niet aanbevolen voor algemeen gebruik)."
 config_rate_limiting_allowance_period: "Het aantal uren om het gebruik te controleren. Standaard = 0."
+config_rate_limiting_exceptions: "Excepties (d.w.z., verzoeken die moet niet worden beperkt). Alleen relevant wanneer tarieflimiet is ingeschakeld."
 config_rate_limiting_max_bandwidth: "De maximale hoeveelheid toegestane bandbreedte binnen de toeslagperiode voordat tarieflimiet voor toekomstige verzoeken wordt ingeschakeld. Een waarde van 0 schakelt dit type tarieflimiet uit. Standaard = 0KB."
 config_rate_limiting_max_requests: "Het maximale aantal toegestane verzoeken binnen de toeslagperiode voordat de tarieflimiet voor toekomstige verzoeken wordt ingeschakeld. Een waarde van 0 schakelt dit type tarieflimiet uit. Standaard = 0."
 config_rate_limiting_precision_ipv4: "De precisie om te gebruiken bij het monitoren op het gebruik van IPv4. Waarde weerspiegelt de CIDR-blokgrootte. Stel in op 32 voor de beste precisie. Standaard = 32."
@@ -173,8 +174,10 @@ field_2fa: "2FA-code"
 field_Request_Method: "Verzoek methode"
 field_activate: "Activeren"
 field_add_more_conditions: "Voeg meer voorwaarden"
+field_asnlookup: "ASN opzoeken"
 field_banned: "Verboden"
 field_blocked: "Geblokkeerd"
+field_cclookup: "Landcode opzoeken"
 field_cidr: "Genereer uitvoer als CIDR's"
 field_clear: "Annuleer"
 field_clear_all: "Annuleer alles"
@@ -237,8 +240,11 @@ field_update_all: "Bijwerken alles"
 field_update_signatures_files: "Bijwerken signatuurbestanden"
 field_upload_file: "Nieuw bestand uploaden"
 field_username: "Gebruikersnaam"
+field_verified: "Geverifieerde identiteit"
+field_verified_requests: "Geverifieerde verzoeken van zoekmachines en sociale media"
 field_verify: "Verifiëren"
 field_verify_all: "Verifiëren alles"
+field_whitelisted_requests: "Verzoeken gemarkeerd als op de witte lijst"
 field_your_version: "Uw Versie"
 header_login: "Inloggen om verder te gaan."
 label_active_config_file: "Actief configuratiebestand: "

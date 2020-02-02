@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: French language data for the front-end (last modified: 2020.01.13).
+# This file: French language data for the front-end (last modified: 2020.02.01).
 ##/
 
 Extended Description Bypasses: "Les fichiers pour contourner les signatures standard qui sont normalement inclus dans le paquet principal."
@@ -122,6 +122,7 @@ config_legal_privacy_policy: "L'adresse d'une politique de confidentialité pert
 config_legal_pseudonymise_ip_addresses: "Pseudonymiser les adresses IP lors de la journalisation ? True = Oui [Défaut] ; False = Non."
 config_rate_limiting: "Configuration pour la limitation de débit (non recommandé pour d'utilisation générale)."
 config_rate_limiting_allowance_period: "Le nombre d'heures pour surveiller l'utilisation. Défaut = 0."
+config_rate_limiting_exceptions: "Exceptions (c'est à dire, requêtes qui ne devraient pas être limitées). Pertinent uniquement lorsque la limitation de débit est activée."
 config_rate_limiting_max_bandwidth: "La quantité maximale de bande passante autorisée dans la période de tolérance avant de permettre la limitation de débit pour les requêtes futures. Une valeur de 0 désactive ce type de limitation de débit. Défaut = 0KB."
 config_rate_limiting_max_requests: "Le nombre maximal de requêtes autorisées dans la période de tolérance avant de permettre la limitation de débit pour les requêtes futures. Une valeur de 0 désactive ce type de limitation de débit. Défaut = 0."
 config_rate_limiting_precision_ipv4: "La précision à utiliser lors de la surveillance de l'utilisation d'IPv4. La valeur reflète la taille du bloc CIDR. Réglez sur 32 pour une meilleure précision. Défaut = 32."
@@ -173,8 +174,10 @@ field_2fa: "Code 2FA"
 field_Request_Method: "Méthode de requête"
 field_activate: "Activer"
 field_add_more_conditions: "Ajouter plus de conditions"
+field_asnlookup: "Recherche d'ASN"
 field_banned: "Interdit"
 field_blocked: "Bloqué"
+field_cclookup: "Recherche de code de pays"
 field_cidr: "Générer une sortie sous forme de CIDR"
 field_clear: "Annuler"
 field_clear_all: "Annuler tout"
@@ -237,6 +240,9 @@ field_update_all: "Tout mettre à jour"
 field_update_signatures_files: "Mettre à jour les fichiers de signature"
 field_upload_file: "Télécharger un nouveau fichier"
 field_username: "Nom d'Utilisateur"
+field_verified: "Identité vérifiée"
+field_whitelisted_requests: "Whitelisted requests"
+field_verified_requests: "Verified search engine and social media requests"
 field_verify: "Vérifier"
 field_verify_all: "Vérifier tous"
 field_your_version: "Votre Version"

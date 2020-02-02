@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Urdu language data for the front-end (last modified: 2020.01.13).
+# This file: Urdu language data for the front-end (last modified: 2020.02.01).
 ##/
 
 Extended Description Bypasses: "پہلے سے طے شدہ دستخطی بائی پاس فائلوں کو عام طور پر بنیادی پیکیج کے ساتھ شامل تھے."
@@ -122,6 +122,7 @@ config_legal_privacy_policy: "کسی بھی پیدا کردہ صفحات کے ف
 config_legal_pseudonymise_ip_addresses: "لاگ ان کرتے وقت پی ایس ڈی نامناسب IP پتے؟ True (سچے) = جی ہاں [پہلے سے طے شدہ]؛ False (جھوٹی) = نہیں."
 config_rate_limiting: "شرح کو محدود کرنے کی ترتیبات (عام استعمال کے لئے سفارش نہیں کی جاتی ہے)."
 config_rate_limiting_allowance_period: "استعمال کی نگرانی کے لئے گھنٹوں کی تعداد. پہلے سے طے شدہ = 0."
+config_rate_limiting_exceptions: "مستثنیات (یعنی، درخواستوں کو جس کی شرح محدود نہیں ہونی چاہئے). متعلقہ صرف اس وقت جب شرح کی حد بندی قابل ہو."
 config_rate_limiting_max_bandwidth: "بینڈوڈتھ کی زیادہ سے زیادہ رقم کی اجازت کے عرصے میں اجازت دی گئی ہے. جب سے تجاوز کی گئی، مستقبل کی درخواستوں کی شرح محدود ہے. جب 0، اس قسم کی محدود استعمال نہیں کی جائے گی. پہلے سے طے شدہ = 0KB."
 config_rate_limiting_max_requests: "الاؤنس کی مدت کے اندر اندر زیادہ سے زیادہ درخواستوں کی اجازت دی گئی ہے. جب سے تجاوز کی گئی، مستقبل کی درخواستوں کی شرح محدود ہے. جب 0، اس قسم کی محدود استعمال نہیں کی جائے گی. پہلے سے طے شدہ = 0."
 config_rate_limiting_precision_ipv4: "IPv4 استعمال کی نگرانی کرتے وقت استعمال کرنے کی صحت سے متعلق. قیمت CIDR بلاک سائز کی عکاسی کرتا ہے. بہترین صحت سے متعلق کے لئے 32 پر مقرر کریں. پہلے سے طے شدہ = 32."
@@ -173,8 +174,10 @@ field_2fa: "2FA کوڈ"
 field_Request_Method: "درخواست کا طریقہ"
 field_activate: "فعال کریں"
 field_add_more_conditions: "مزید شرائط شامل کریں"
+field_asnlookup: "ASN کی تلاش"
 field_banned: "کالعدم"
 field_blocked: "بلاک"
+field_cclookup: "ملک کا کوڈ کی تلاش"
 field_cidr: "CIDR کی تشخیص کا استعمال کرتے ہوئے پیدا کریں"
 field_clear: "صاف"
 field_clear_all: "تمام کو صاف کریں"
@@ -235,8 +238,11 @@ field_update_all: "تمام تجدید کریں"
 field_update_signatures_files: "دستخط فائلوں کو اپ ڈیٹ کریں"
 field_upload_file: "نئی فائل اپ لوڈ کریں"
 field_username: "صارف کا نام"
+field_verified: "تصدیق شدہ شناخت"
+field_verified_requests: "سرچ انجنوں اور سوشل میڈیا سے تصدیق شدہ درخواستیں"
 field_verify: "تصدیق کریں"
 field_verify_all: "سب کی توثیق کریں"
+field_whitelisted_requests: "وائٹ لسٹ کی درخواستیں"
 field_your_version: "آپ کے ورژن"
 header_login: "جاری رکھنے کے لیے لاگ ان کریں."
 label_active_config_file: "فعال کنفیگریشن فائل: "
@@ -259,7 +265,7 @@ label_aux_mtdStr: "براہ راست سٹرنگ مقابلے"
 label_aux_mtdWin: "ونڈوز سٹائل جنگلی کارڈ"
 label_aux_name: "نئے قاعدہ کا نام:"
 label_aux_reason: "جب صارف کو دی گئی ہے تو بلاک کی گئی وجہ:"
-label_backup_location: "Repository بیک اپ مقامات (ہنگامی حالت میں، یا اگر سب کچھ ناکام ہوجاتا ہے):"
+label_backup_location: "مخزن بیک اپ مقامات (ہنگامی حالت میں، یا اگر سب کچھ ناکام ہوجاتا ہے):"
 label_banned: "کی درخواستیں کالعدم"
 label_blocked: "کی درخواستیں بلاک"
 label_branch: "شاخ تازہ ترین مستحکم:"

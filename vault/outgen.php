@@ -79,6 +79,8 @@ $CIDRAM['BlockInfo'] = [
     'ASNLookup' => 0,
     'CCLookup' => 'XX',
     'Verified' => '',
+    'Expired' => '',
+    'Ignored' => '',
     'xmlLang' => $CIDRAM['Config']['general']['lang']
 ];
 $CIDRAM['BlockInfo']['UALC'] = strtolower($CIDRAM['BlockInfo']['UA']);

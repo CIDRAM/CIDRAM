@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2020.01.29).
+ * This file: Front-end handler (last modified: 2020.02.02).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -3144,6 +3144,14 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-test' && $CIDRAM['FE']['Perm
                         );
                     }
                 }
+            } elseif ($CIDRAM['BlockInfo']['Ignored']) {
+                $CIDRAM['ThisIP']['YesNo'] = sprintf(
+                    '%s (%s) – %s',
+                    $CIDRAM['L10N']->getString('response_no'),
+                    $CIDRAM['L10N']->getString('state_ignored'),
+                    $CIDRAM['BlockInfo']['Ignored']
+                );
+                $CIDRAM['ThisIP']['StatClass'] = 'txtOe';
             } else {
                 $CIDRAM['ThisIP']['YesNo'] = $CIDRAM['L10N']->getString('response_no');
                 $CIDRAM['ThisIP']['StatClass'] = 'txtGn';

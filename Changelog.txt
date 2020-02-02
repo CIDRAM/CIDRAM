@@ -40,6 +40,14 @@ Detailed version release guidelines for CIDRAM can be found at:
 
 - [2020.01.25; Maikuolan]: Performed some minor refactoring.
 
+- [2020.02.02; Maikuolan]: Added a new configuration directive, "exceptions",
+  to provide a way to exempt whitelisted requests, and verified search engine
+  and social media requests, from being rate limited (for when rate limiting is
+  enabled). Added the ability to create auxiliary rules on the basis of ASN
+  lookups, country code lookups, and verified identities (i.e., positive
+  returns from search engine and social media verification). Updated the IP
+  test page as to be able to identify ignored sections and signatures.
+
 === Version/Release 1.16.0 ===
 MINOR RELEASE.
 

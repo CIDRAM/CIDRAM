@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2020.01.25).
+ * This file: Front-end handler (last modified: 2020.01.29).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -3687,7 +3687,10 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'aux' && $CIDRAM['FE']['Permissi
             'ReasonMessage' => $CIDRAM['L10N']->getString('field_reasonmessage'),
             'rURI' => $CIDRAM['L10N']->getString('field_rURI'),
             'Request_Method' => $CIDRAM['L10N']->getString('field_Request_Method'),
-            'Hostname' => $CIDRAM['L10N']->getString('field_hostname')
+            'Hostname' => $CIDRAM['L10N']->getString('field_hostname'),
+            'ASNLookup' => $CIDRAM['L10N']->getString('field_asnlookup'),
+            'CCLookup' => $CIDRAM['L10N']->getString('field_cclookup'),
+            'Verified' => $CIDRAM['L10N']->getString('field_verified')
         ];
 
         /** Populate sources. */

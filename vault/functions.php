@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2020.01.27).
+ * This file: Functions file (last modified: 2020.01.29).
  */
 
 /**
@@ -1086,25 +1086,44 @@ $CIDRAM['DNS-Reverse-Forward'] = function ($Domains, $Friendly, array $Options =
     /** Successfully passed. */
     if ($Pass) {
 
-        /** We're only reversing; Don't forward resolve. Disable tracking and return. */
+        /** We're only reversing; Don't resolve. */
         if (!empty($Options['ReverseOnly'])) {
+
+            /** Disable tracking. */
             if (!empty($Options['CanModTrackable'])) {
                 $CIDRAM['Trackable'] = false;
             }
+
+            /** Populate "verified" field. */
+            if (isset($CIDRAM['BlockInfo'], $CIDRAM['BlockInfo']['Verified'])) {
+                $CIDRAM['BlockInfo']['Verified'] = $Friendly;
+            }
+
+            /** Exit. */
             return true;
         }
 
         /** Attempt to resolve. */
         if (!$Resolved = $CIDRAM['DNS-Resolve']($CIDRAM['Hostname'])) {
-            /** Failed to resolve. Do nothing and return. */
+
+            /** Failed to resolve. Do nothing else and exit. */
             return false;
         }
 
-        /** It's the real deal; Disable tracking and return. */
+        /** It's the real deal. */
         if ($Resolved === $CIDRAM['BlockInfo']['IPAddr']) {
+
+            /** Disable tracking. */
             if (!empty($Options['CanModTrackable'])) {
                 $CIDRAM['Trackable'] = false;
             }
+
+            /** Populate "verified" field. */
+            if (isset($CIDRAM['BlockInfo'], $CIDRAM['BlockInfo']['Verified'])) {
+                $CIDRAM['BlockInfo']['Verified'] = $Friendly;
+            }
+
+            /** Exit. */
             return true;
         }
     }
@@ -1207,6 +1226,13 @@ $CIDRAM['UA-X-Match'] = function ($Datapoint, $Expected, $Friendly, array $Optio
         if (!empty($Options['CanModTrackable'])) {
             $CIDRAM['Trackable'] = false;
         }
+
+        /** Populate "verified" field. */
+        if (isset($CIDRAM['BlockInfo'], $CIDRAM['BlockInfo']['Verified'])) {
+            $CIDRAM['BlockInfo']['Verified'] = $Friendly;
+        }
+
+        /** Successfully matched; Exit. */
         return;
     }
 
@@ -1653,11 +1679,15 @@ $CIDRAM['SearchEngineVerification'] = function () use (&$CIDRAM) {
 
 /** Reset bypass flags. */
 $CIDRAM['ResetBypassFlags'] = function () use (&$CIDRAM) {
-    if (isset($CIDRAM['VerificationData']['Search Engine Verification'])) {
-        foreach ($CIDRAM['VerificationData']['Search Engine Verification'] as $Values) {
-            if (!empty($Values['Bypass Flag'])) {
-                $CIDRAM[$Values['Bypass Flag']] = false;
-            }
+
+    /** Guard. */
+    if (!isset($CIDRAM['VerificationData']['Search Engine Verification'])) {
+        return;
+    }
+
+    foreach ($CIDRAM['VerificationData']['Search Engine Verification'] as $Values) {
+        if (!empty($Values['Bypass Flag'])) {
+            $CIDRAM[$Values['Bypass Flag']] = false;
         }
     }
 };

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2020.01.25).
+ * This file: Front-end functions file (last modified: 2020.01.29).
  */
 
 /**
@@ -905,6 +905,7 @@ $CIDRAM['SimulateBlockEvent'] = function ($Addr, $Modules = false, $Aux = false,
         'WhyReason' => '',
         'ASNLookup' => 0,
         'CCLookup' => 'XX',
+        'Verified' => '',
         'xmlLang' => $CIDRAM['Config']['general']['lang'],
         'rURI' => 'SimulateBlockEvent'
     ];

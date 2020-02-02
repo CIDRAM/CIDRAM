@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Configuration defaults file (last modified: 2019.12.31).
+# This file: Configuration defaults file (last modified: 2020.02.01).
 ##/
 
 Config Defaults:
@@ -502,6 +502,12 @@ Config Defaults:
    step: "any"
    default: 0
    preview: "hours"
+  exceptions:
+   type: "checkbox"
+   default: ""
+   choices:
+    Whitelisted: "{field_whitelisted_requests}"
+    Verified: "{field_verified_requests}"
  supplementary_cache_options:
   enable_apcu:
    type: "bool"

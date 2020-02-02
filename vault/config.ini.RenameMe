@@ -420,6 +420,10 @@ precision_ipv6=128
 ; The number of hours to track usage. Default = 0.
 allowance_period=0
 
+; Exceptions (i.e., requests which shouldn't be rate limited). Relevant only
+; when rate limiting is enabled.
+exceptions=''
+
 
 [supplementary_cache_options]
 ; Supplementary cache options.

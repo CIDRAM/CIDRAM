@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Output generator (last modified: 2020.01.25).
+ * This file: Output generator (last modified: 2020.02.02).
  */
 
 /** Initialise cache. */
@@ -78,6 +78,7 @@ $CIDRAM['BlockInfo'] = [
     'WhyReason' => '',
     'ASNLookup' => 0,
     'CCLookup' => 'XX',
+    'Verified' => '',
     'xmlLang' => $CIDRAM['Config']['general']['lang']
 ];
 $CIDRAM['BlockInfo']['UALC'] = strtolower($CIDRAM['BlockInfo']['UA']);
@@ -268,7 +269,10 @@ if (!empty($CIDRAM['TestResults']) && $CIDRAM['BlockInfo']['SignatureCount'] && 
  * Process rate limiting, if it's active. This feature exists for those that
  * need it, but I really don't recommend using this feature if at all possible.
  */
-if ($CIDRAM['RL_Active'] && isset($CIDRAM['Factors'])) {
+if ($CIDRAM['RL_Active'] && isset($CIDRAM['Factors']) && (!$CIDRAM['Config']['rate_limiting']['exceptions'] || (
+    !($CIDRAM['BlockInfo']['Verified'] && $CIDRAM['in_csv']('Verified', $CIDRAM['Config']['rate_limiting']['exceptions'])) &&
+    !(!empty($CIDRAM['Whitelisted']) && $CIDRAM['in_csv']('Whitelisted', $CIDRAM['Config']['rate_limiting']['exceptions']))
+))) {
     $CIDRAM['Stage'] = 'RL';
     if (
         $CIDRAM['LastTestIP'] === 4 &&

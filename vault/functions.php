@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2020.01.29).
+ * This file: Functions file (last modified: 2020.02.02).
  */
 
 /** Autoloader for CIDRAM classes. */
@@ -370,15 +370,17 @@ $CIDRAM['CheckFactors'] = function (array $Files, array $Factors) use (&$CIDRAM)
                         continue;
                     }
                 }
+                $Tag = $CIDRAM['Getter']($Files[$FileIndex], $PosA, 'Tag', $DefTag);
                 if (
                     ($Expires = $CIDRAM['Getter']($Files[$FileIndex], $PosA, 'Expires', '')) &&
                     ($Expires = $CIDRAM['FetchExpires']($Expires)) &&
                     $Expires < $CIDRAM['Now']
                 ) {
+                    $CIDRAM['BlockInfo']['Expired'] .= $CIDRAM['BlockInfo']['Expired'] ? ', ' . $Tag : $Tag;
                     continue;
                 }
-                $Tag = $CIDRAM['Getter']($Files[$FileIndex], $PosA, 'Tag', $DefTag);
                 if (!empty($CIDRAM['Ignore'][$Tag])) {
+                    $CIDRAM['BlockInfo']['Ignored'] .= $CIDRAM['BlockInfo']['Ignored'] ? ', ' . $Tag : $Tag;
                     continue;
                 }
                 $Origin = (

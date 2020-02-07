@@ -7,10 +7,54 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Verification data for search engines and social media (last modified: 2020.01.11).
+# This file: Verification data for search engines and social media (last modified: 2020.02.07).
 ##/
 
+# Additional references: https://udger.com/resources/ua-list/crawlers
 Search Engine Verification:
+
+ # https://discussions.apple.com/thread/7090135
+ Applebot:
+  User Agent: "applebot"
+  Closure: "DNS-Reverse-Forward"
+  Valid Domains:
+   - ".applebot.apple.com"
+
+ # https://help.baidu.com/question?prod_en=master&class=Baiduspider
+ Baiduspider/百度:
+  Bypass Flag: "Flag-Bypass-Baidu-Check"
+  User Agent: "baidu"
+  Closure: "DNS-Reverse-Forward"
+  Valid Domains:
+   - ".baidu.com"
+   - ".baidu.jp"
+
+ # https://blogs.bing.com/webmaster/2012/08/31/how-to-verify-that-bingbot-is-bingbot
+ Bingbot:
+  Bypass Flag: "Flag-Bypass-Bingbot-Check"
+  User Agent Pattern: "~(?:msn|bing)bot|bingpreview~"
+  Closure: "DNS-Reverse-Forward"
+  Valid Domains:
+   - ".search.msn.com"
+
+ # https://duckduckgo.com/duckduckbot
+ DuckDuckBot:
+  User Agent Pattern: "~duckduck(?:go-favicons-)?bot~"
+  Closure: "UA-IP-Match"
+  Can Modify Trackable: false
+  Valid Domains:
+   - "23.21.227.69"
+   - "50.16.241.113"
+   - "50.16.241.114"
+   - "50.16.241.117"
+   - "50.16.247.234"
+   - "52.5.190.19"
+   - "52.204.97.54"
+   - "54.197.234.188"
+   - "54.208.100.253"
+   - "54.208.102.37"
+   - "107.21.1.8"
+
  # https://support.google.com/webmasters/answer/80553?hl=en
  Googlebot:
   Bypass Flag: "Flag-Bypass-Googlebot-Check"
@@ -19,52 +63,45 @@ Search Engine Verification:
   Valid Domains:
    - ".googlebot.com"
    - ".google.com"
- # https://blogs.bing.com/webmaster/2012/08/31/how-to-verify-that-bingbot-is-bingbot
- Bingbot:
-  Bypass Flag: "Flag-Bypass-Bingbot-Check"
-  User Agent Pattern: "~(?:msn|bing)bot|bingpreview~"
+
+ # https://www.mojeek.com/bot.html
+ MojeekBot:
+  User Agent: "mojeekbot"
   Closure: "DNS-Reverse-Forward"
   Valid Domains:
-   - ".search.msn.com"
- # http://www.ysearchblog.com/2007/06/05/yahoo-search-crawler-slurp-has-a-new-address-and-signature-card/
- Y!Slurp:
-  Bypass Flag: "Flag-Bypass-Y!Slurp-Check"
+   - ".mojeek.com"
+
+ # https://www.mojeek.com/bot.html
+ Qwantify/Bleriot:
+  User Agent: "qwantify/bleriot"
+  Closure: "DNS-Reverse-Forward"
+  Valid Domains:
+   - "search.qwant.com"
+
+ # https://napoveda.seznam.cz/en/full-text-search/seznambot-crawler/
+ SeznamBot:
+  User Agent: "seznambot"
+  Closure: "DNS-Reverse-Forward"
+  Valid Domains:
+   - ".seznam.cz"
+
+ # https://www.sogou.com/docs/help/webmasters.htm#07
+ Sogou/搜狗:
+  User Agent: "sogou"
+  Closure: "DNS-Reverse-Forward"
+  Valid Domains:
+   - ".sogou.com"
+
+ # https://help.yahoo.com/help/us/ysearch/slurp
+ Yahoo/Slurp:
   User Agent: "slurp"
   Closure: "DNS-Reverse-Forward"
   Valid Domains:
    - ".crawl.yahoo.net"
    - ".yse.yahoo.net"
- # https://help.baidu.com/question?prod_en=master&class=Baiduspider
- Baidu spider:
-  Bypass Flag: "Flag-Bypass-Baidu-Check"
-  User Agent: "baidu"
-  Closure: "DNS-Reverse-Forward"
-  Valid Domains:
-   - ".baidu.com"
-   - ".baidu.jp"
- # (No reference information currently available for Sogou web spider; Figured it out manually).
- Sogou web spider:
-  Bypass Flag: "Flag-Bypass-Sogou-Check"
-  User Agent: "sogou"
-  Closure: "DNS-Reverse-Forward"
-  Valid Domains:
-   - ".sogou.com"
- # (No reference information currently available for YoudaoBot; Figured it out manually).
- YoudaoBot:
-  Bypass Flag: "Flag-Bypass-YoudaoBot-Check"
-  User Agent: "youdaobot"
-  Closure: "DNS-Reverse-Forward"
-  Valid Domains:
-   - ".crawler.youdao.com"
- # https://discussions.apple.com/thread/7090135
- Applebot:
-  Bypass Flag: "Flag-Bypass-Applebot-Check"
-  User Agent: "applebot"
-  Closure: "DNS-Reverse-Forward"
-  Valid Domains:
-   - ".applebot.apple.com"
+
  # https://yandex.com/support/webmaster/robot-workings/check-yandex-robots.xml
- YandexBot:
+ Yandex/Яндекс:
   Bypass Flag: "Flag-Bypass-Yandex-Check"
   User Agent: "yandex"
   Closure: "DNS-Reverse-Forward"
@@ -72,58 +109,17 @@ Search Engine Verification:
    - ".yandex.com"
    - ".yandex.net"
    - ".yandex.ru"
- # https://duckduckgo.com/duckduckbot
- DuckDuckGo Bot:
-  Bypass Flag: "Flag-Bypass-DuckDuckGo-Check"
-  User Agent Pattern: "~duckduck(?:go-favicons-)?bot~"
-  Closure: "UA-IP-Match"
-  Can Modify Trackable: false
-  Valid Domains:
-   - "23.21.226.191"
-   - "54.208.102.37"
-   - "107.20.237.51"
-   - "107.21.1.8"
- # https://napoveda.seznam.cz/en/full-text-search/seznambot-crawler/
- SeznamBot:
-  Bypass Flag: "Flag-Bypass-SeznamBot-Check"
-  User Agent: "seznambot"
+
+ # https://udger.com/resources/ua-list/bot-detail?bot=YoudaoBot#id1507
+ YoudaoBot:
+  User Agent: "youdaobot"
   Closure: "DNS-Reverse-Forward"
   Valid Domains:
-   - ".seznam.cz"
- # https://www.distilnetworks.com/bot-directory/bot/teoma/
- Teoma Bot:
-  Bypass Flag: "Flag-Bypass-Teoma-Check"
-  User Agent: "mozilla/2.0 (compatible; ask jeeves/teoma"
-  Closure: "UA-IP-Match"
-  Can Modify Trackable: false
-  Valid Domains:
-   - "63.123.238.8"
-   - "65.214.45.143"
-   - "65.214.45.148"
-   - "66.235.124.7"
-   - "66.235.124.73"
-   - "66.235.124.74"
-   - "66.235.124.101"
-   - "66.235.124.192"
-   - "66.235.124.193"
-   - "66.235.124.196"
-   - "202.143.148.61"
- # https://www.mojeek.com/bot.html
- MojeekBot:
-  Bypass Flag: "Flag-Bypass-Mojeek-Check"
-  User Agent: "mojeekbot"
-  Closure: "DNS-Reverse-Forward"
-  Valid Domains:
-   - ".mojeek.com"
+   - ".crawler.youdao.com"
 
 Social Media Verification:
- # https://help.pinterest.com/en/articles/about-pinterest-crawler-0
- Pinterest:
-  User Agent: "pinterest"
-  Closure: "DNS-Reverse-Forward"
-  Valid Domains:
-   - ".pinterest.com"
- # (No reference information currently available for Embedly; Figured it out manually).
+
+ # https://udger.com/resources/ua-list/bot-detail?bot=Embedly#id22674
  Embedly:
   User Agent: "embedly"
   Closure: "DNS-Reverse-Forward"
@@ -131,21 +127,31 @@ Social Media Verification:
   Can Modify Trackable: false
   Valid Domains:
    - "embed.ly"
- # https://www.grapeshot.com/crawler/
- GrapeshotCrawler:
-  User Agent: "grapeshot"
-  Closure: "DNS-Reverse-Forward"
-  Valid Domains:
-   - ".grapeshot.co.uk"
- # (No reference information currently available for Twitterbot; Figured it out manually).
- Twitterbot:
-  User Agent: "twitterbot"
-  Closure: "DNS-Reverse-Forward"
-  Valid Domains:
-   - ".twttr.com"
+
  # https://developers.facebook.com/docs/sharing/webmasters/crawler/
  Facebook external hit:
   User Agent: "facebookexternalhit/"
   Closure: "UA-ASN-Match"
   Valid Domains:
    - "32934"
+
+ # https://www.grapeshot.com/crawler/
+ GrapeshotCrawler:
+  User Agent: "grapeshot"
+  Closure: "DNS-Reverse-Forward"
+  Valid Domains:
+   - ".grapeshot.co.uk"
+
+ # https://help.pinterest.com/en/articles/about-pinterest-crawler-0
+ Pinterest:
+  User Agent: "pinterest"
+  Closure: "DNS-Reverse-Forward"
+  Valid Domains:
+   - ".pinterest.com"
+
+ # https://udger.com/resources/ua-list/bot-detail?bot=Twitterbot#id6168
+ Twitterbot:
+  User Agent: "twitterbot"
+  Closure: "DNS-Reverse-Forward"
+  Valid Domains:
+   - ".twttr.com"

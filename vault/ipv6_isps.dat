@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_isps.dat
 
-# Version: 2020.30.600
-# Last modified: 2020.01.31
+# Version: 2020.39.266
+# Last modified: 2020.02.09
 
 
 # ---
@@ -420,13 +420,18 @@ Tag: DGN TEKNOLOJI
 
 
 # ASN 38731 ("Vietel - CHT Compamy Ltd").
-# %Listed, Google Malware Dashboard: 0.21%.
-# %Listed, abuseat.org (CBL-Listed): 4.91%.
-# Stop Forum Spam (SFS) listings: 591.
-# Updated: 2016.12.24 / Checked: 2019.09.03
+# One of Vietnam's largest domestic ISPs, but also a source of forum and blog
+# spam, and occasionally sometimes other kinds of unwanted traffic. Marked in
+# CIDRAM's ignore.dat file by default, marked for use with reCAPTCHA, and
+# invalids removed when updating to reduce the risk of false positives. Their
+# network consists of a number of different ASNs, but only this specific ASN is
+# included here at this time.
+# %Listed, Google Malware Dashboard: 0.17%.
+# Stop Forum Spam (SFS) listings: 497.
+# Updated: 2016.12.24 / Modified: 2020.02.05
 
-2401:5f80::/34 Deny Generic
-2401:5f80:4000::/35 Deny Generic
+2401:5f80::/34 Deny Spam
+2401:5f80:4000::/35 Deny Spam
 Origin: VN
 Tag: Vietel
 ---
@@ -663,10 +668,11 @@ recaptcha:
  enabled: true
 
 
-# ASN 200019 ("ALEXHOST SRL").
-# Spamming, hacking, and other nefarious activity from this network.
-# Stop Forum Spam (SFS) listings: 741.
-# Updated: 2019.08.18 / Checked: 2019.12.12
+# ASNs 200019, 207636 ("ALEXHOST SRL").
+# Network is a significant source of spam, hacking, and other nefarious
+# activity. Ranges change frequently / Should update often.
+# Stop Forum Spam (SFS) listings: 884 (AS200019).
+# Updated: 2019.08.18 / Checked: 2020.02.09
 
 2001:678:6d4::/48 Deny Generic
 2a09:7c46::/32 Deny Generic

@@ -1,8 +1,8 @@
 # IPv4 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv4_isps.dat
 
-# Version: 2020.30.600
-# Last modified: 2020.01.31
+# Version: 2020.39.266
+# Last modified: 2020.02.09
 
 
 # ---
@@ -1998,23 +1998,43 @@ Tag: DGN TEKNOLOJI
 
 
 # ASN 38731 ("Vietel - CHT Compamy Ltd").
-# %Listed, Google Malware Dashboard: 0.21%.
-# %Listed, abuseat.org (CBL-Listed): 4.91%.
-# Stop Forum Spam (SFS) listings: 591.
-# Updated: 2019.04.29 / Checked: 2019.09.03
+# One of Vietnam's largest domestic ISPs, but also a source of forum and blog
+# spam, and occasionally sometimes other kinds of unwanted traffic. Marked in
+# CIDRAM's ignore.dat file by default, marked for use with reCAPTCHA, and
+# invalids removed when updating to reduce the risk of false positives. Their
+# network consists of a number of different ASNs, but only this specific ASN is
+# included here at this time.
+# %Listed, Google Malware Dashboard: 0.17%.
+# Stop Forum Spam (SFS) listings: 497.
+# Updated: 2020.02.05
 
-27.71.224.0/21 Deny Generic
-45.117.160.0/22 Deny Generic
-103.1.208.0/22 Deny Generic
-115.84.176.0/21 Deny Generic
-125.212.192.0/18 Deny Generic
-171.244.0.0/19 Deny Generic
-171.244.32.0/20 Deny Generic
-171.244.48.0/21 Deny Generic
-171.244.128.0/20 Deny Generic
-210.211.96.0/19 Deny Generic
+45.117.160.0/22 Deny Spam
+103.1.208.0/22 Deny Spam
+115.84.176.0/21 Deny Spam
+171.244.128.0/21 Deny Spam
+210.211.96.0/19 Deny Spam
 Origin: VN
 Tag: Vietel
+---
+recaptcha:
+ enabled: true
+
+
+# ASN 7602 ("Saigon Postel Corporation").
+# A major Vietnamese domestic ISP, but also an occasional source various kinds
+# of unwanted traffic. Only blocking the specific affected IPs/ranges; not the
+# entire network. Marked as "spam", due to spam incidents; marked as "malware"
+# due to detection at security honeypots.
+# Stop Forum Spam (SFS) listings: 176.
+# Updated: 2020.02.05
+
+116.118.112.70/32 Deny Spam
+221.121.12.0/24 Deny Spam
+221.121.42.169/32 Deny Spam
+221.133.12.198/32 Deny Malware
+221.133.13.120/32 Deny Malware
+Origin: VN
+Tag: Saigon Postel Corporation
 ---
 recaptcha:
  enabled: true
@@ -2943,33 +2963,34 @@ recaptcha:
  enabled: true
 
 
-# ASN 200019 ("ALEXHOST SRL").
-# Spamming, hacking, and other nefarious activity from this network.
-# Stop Forum Spam (SFS) listings: 741.
-# Updated: 2019.12.12
+# ASNs 200019, 207636 ("ALEXHOST SRL").
+# Network is a significant source of spam, hacking, and other nefarious
+# activity. Ranges change frequently / Should update often.
+# Stop Forum Spam (SFS) listings: 884 (AS200019).
+# Updated: 2020.02.09
 
+45.134.76.0/22 Deny Generic
 194.76.108.0/23 Deny Generic
 194.76.120.0/23 Deny Generic
 Origin: BE
-45.136.8.0/22 Deny Generic
-Origin: CY
 77.90.164.0/24 Deny Generic
 77.90.181.0/24 Deny Generic
 77.90.185.0/24 Deny Generic
 77.90.187.0/24 Deny Generic
 185.209.4.0/22 Deny Generic
-213.209.136.0/24 Deny Generic
 Origin: DE
-5.183.36.0/22 Deny Generic
-Origin: FR
+213.173.32.0/22 Deny Generic
+Origin: GB
 2.56.232.0/22 Deny Generic
-5.181.160.0/22 Deny Generic
 45.67.229.0/24 Deny Generic
-91.132.93.0/24 Deny Generic
-91.132.94.0/23 Deny Generic
+45.81.252.0/22 Deny Generic
 91.208.162.0/24 Deny Generic
+91.208.184.0/24 Deny Generic
+91.208.197.0/24 Deny Generic
+91.208.206.0/24 Deny Generic
 176.123.0.0/21 Deny Generic
 176.123.8.0/22 Deny Generic
+185.170.58.0/24 Deny Generic
 Origin: MD
 45.131.224.0/22 Deny Generic
 Origin: RO
@@ -2979,7 +3000,11 @@ Origin: RO
 45.142.214.0/24 Deny Generic
 45.145.0.0/24 Deny Generic
 45.153.229.0/24 Deny Generic
+46.3.0.0/16 Deny Generic
+46.232.0.0/17 Deny Generic
+80.243.128.0/20 Deny Generic
 91.243.83.0/24 Deny Generic
+149.126.192.0/18 Deny Generic
 Origin: RU
 Tag: ALEXHOST SRL
 
@@ -6872,27 +6897,32 @@ recaptcha:
  enabled: true
 
 
-# ASNs 15378, 41330, 48190 ("T2 Mobile LLC").
-# (T2 Mobile LLC owns about ~36 different ASNs, but we're only tracking these
-# three ASNs at the moment. This is intentional. Numbers may change in the
-# future pending changes in circumstance, which currently only necessitate
-# tracking these three ASNs).
-# Updated: 2019.10.05
+# ASNs 15378, 41330, 42437, 48092, 48190 ("T2 Mobile LLC").
+# T2 Mobile LLC owns about ~36 different ASNs, but we're only tracking these
+# 5 specific ASNs at the moment. Numbers may change in the future as
+# circumstances change. Section is also marked in CIDRAM's ignore.dat file by
+# default to reduce the false positive risk.
+# Updated: 2020.02.05
 
 5.141.104.0/22 Deny Spam
+80.69.154.0/24 Deny Spam
 81.18.112.0/20 Deny Spam
 81.26.80.0/20 Deny Spam
 87.226.204.0/23 Deny Spam
-87.226.211.0/24 Deny Spam
+87.226.206.0/24 Deny Spam
+87.226.210.0/23 Deny Spam
 87.226.212.0/24 Deny Spam
 89.207.32.0/21 Deny Spam
 90.150.64.0/20 Deny Spam
 93.189.48.0/21 Deny Spam
+94.240.64.0/18 Deny Spam
 109.235.88.0/21 Deny Spam
 159.255.64.0/18 Deny Spam
 176.59.0.0/19 Deny Spam
+176.59.64.0/18 Deny Spam
 176.59.128.0/19 Deny Spam
 176.59.192.0/19 Deny Spam
+185.78.92.0/22 Deny Spam
 217.169.82.0/23 Deny Spam
 217.169.84.0/22 Deny Spam
 217.169.88.0/21 Deny Spam
@@ -10474,17 +10504,38 @@ Tag: AS50310
 
 
 # ASN 12578 ("SIA Tet").
-# Caught XRumer operating on this network. A legit mobile phone provider in Latvia, carrying mostly human endpoints,
-# so, to reduce the risk of false positives, I'll list only those ranges where the worst activity has been detected,
-# omitting the rest, and will mark the section for use with reCAPTCHA.
-# %Listed, Google Malware Dashboard: 0.13%.
-# Stop Forum Spam (SFS) listings: 1,831.
-# Updated: 2019.10.06
+# Caught XRumer operating on this network. A Latvian mobile operator with human
+# endpoints. Listing only those ranges where the worst activity has been
+# detected, omitting the rest. Marked for use with reCAPTCHA.
+# %Listed, Google Malware Dashboard: 0.23%.
+# Stop Forum Spam (SFS) listings: 1,416.
+# Updated: 2020.02.08
 
-62.85.52.95/32 Deny Spam
+46.109.102.184/32 Deny Spam
+46.109.117.68/32 Deny Spam
+46.109.161.50/32 Deny Spam
+62.85.45.0/24 Deny Spam
+62.85.62.0/24 Deny Spam
+78.84.12.133/32 Deny Spam
+78.84.22.156/32 Deny Spam
+78.84.93.244/32 Deny Spam
+78.84.94.175/32 Deny Spam
+78.84.105.125/32 Deny Spam
+78.84.168.0/24 Deny Spam
+78.84.173.0/24 Deny Spam
+81.198.14.167/32 Deny Spam
+81.198.64.75/32 Deny Spam
 81.198.64.178/32 Deny Spam
-87.110.61.254/32 Deny Spam
-87.110.76.15/32 Deny Spam
+84.237.202.0/24 Deny Spam
+84.237.228.0/24 Deny Spam
+87.110.31.0/24 Deny Spam
+87.110.36.9/32 Deny Spam
+87.110.57.231/32 Deny Spam
+87.110.93.78/32 Deny Spam
+87.110.141.61/32 Deny Spam
+95.68.67.0/24 Deny Spam
+95.68.115.202/32 Deny Spam
+195.122.23.24/32 Deny Spam
 Origin: LV
 Tag: SIA Tet
 ---
@@ -10493,24 +10544,77 @@ recaptcha:
 
 
 # ASN 9299 ("Philippine Long Distance Telephone Company").
-# Caught XRumer operating on this network. A legit internet provider in the Philippines carrying human endpoints, so,
-# to reduce the risk of false positives, I'll list only those ranges where the worst activity has been detected,
-# omitting the rest, and will mark the section for use with reCAPTCHA.
-# %Listed, Google Malware Dashboard: 0.15%.
-# %Listed, abuseat.org (CBL-Listed): 1.84%.
-# Stop Forum Spam (SFS) listings: 3,471.
-# Updated: 2019.10.06
+# Caught XRumer operating on this network. A domestic ISP from the Philippines
+# with human endpoints. Only listing those ranges where the worst activity has
+# been detected, omitting the rest. Marked for use with reCAPTCHA.
+# %Listed, abuseat.org (CBL-Listed): 1.69%.
+# Stop Forum Spam (SFS) listings: 2,799.
+# Updated: 2020.02.08
 
-49.144.0.0/13 Deny Spam
-112.200.18.8/30 Deny Spam
-112.200.40.120/30 Deny Spam
-112.200.77.64/30 Deny Spam
-112.200.105.208/30 Deny Spam
-112.203.254.252/30 Deny Spam
-112.211.242.216/30 Deny Spam
-122.52.94.200/30 Deny Spam
-124.105.55.176/30 Deny Spam
-210.5.106.200/30 Deny Spam
+27.110.153.0/24 Deny Spam
+49.144.68.30/32 Deny Spam
+49.144.68.69/32 Deny Spam
+49.144.79.0/24 Deny Spam
+49.144.89.174/32 Deny Spam
+49.144.99.0/24 Deny Spam
+49.144.110.0/24 Deny Spam
+49.144.196.0/24 Deny Spam
+49.144.199.213/32 Deny Spam
+49.144.205.0/24 Deny Spam
+49.144.207.0/24 Deny Spam
+49.144.210.0/24 Deny Spam
+49.145.105.242/32 Deny Spam
+49.145.171.0/24 Deny Spam
+49.145.195.74/32 Deny Spam
+49.145.197.163/32 Deny Spam
+49.145.199.0/24 Deny Spam
+49.145.227.0/24 Deny Spam
+49.145.229.0/24 Deny Spam
+49.145.231.0/24 Deny Spam
+49.145.235.46/32 Deny Spam
+49.145.239.0/24 Deny Spam
+49.145.245.141/32 Deny Spam
+49.146.11.0/24 Deny Spam
+49.146.38.0/24 Deny Spam
+49.146.44.0/24 Deny Spam
+49.147.177.54/32 Deny Spam
+49.148.176.161/32 Deny Spam
+49.149.79.0/24 Deny Spam
+49.149.99.0/24 Deny Spam
+49.149.100.0/24 Deny Spam
+49.149.105.82/32 Deny Spam
+49.149.106.221/32 Deny Spam
+49.149.109.0/24 Deny Spam
+49.150.104.0/24 Deny Spam
+49.150.142.242/32 Deny Spam
+49.151.191.152/32 Deny Spam
+49.151.234.181/32 Deny Spam
+112.200.93.26/32 Deny Spam
+112.200.101.220/32 Deny Spam
+112.200.106.0/24 Deny Spam
+112.201.65.0/24 Deny Spam
+112.201.68.93/32 Deny Spam
+112.201.77.0/24 Deny Spam
+112.201.164.0/24 Deny Spam
+112.203.16.0/24 Deny Spam
+112.203.33.0/24 Deny Spam
+112.206.76.0/24 Deny Spam
+112.206.197.0/24 Deny Spam
+112.211.102.162/32 Deny Spam
+112.211.249.77/32 Deny Spam
+119.92.185.134/32 Deny Spam
+119.92.213.0/24 Deny Spam
+122.3.29.225/32 Deny Spam
+122.3.242.23/32 Deny Spam
+122.3.255.0/24 Deny Spam
+122.52.233.104/32 Deny Spam
+122.53.63.0/24 Deny Spam
+122.53.163.187/32 Deny Spam
+122.54.20.220/32 Deny Spam
+124.105.50.0/24 Deny Spam
+124.105.55.0/24 Deny Spam
+210.5.86.219/32 Deny Spam
+210.5.106.202/32 Deny Spam
 Origin: PH
 Tag: AS9299
 ---
@@ -10787,32 +10891,26 @@ recaptcha:
 
 
 # ASN 8220 ("COLT Technology Services Group Limited").
-# Major multiplay network with multiple ASNs. Those marked as "spam" due to
-# being able to cross-reference against spam databases (e.g., against SFS). Or,
-# those marked as "generic" due to directly logged unwanted traffic at user's
-# websites and/or honeypots. Everything else omitted to reduce false positives.
-# %Listed, Google Malware Dashboard: 0.13%.
-# Stop Forum Spam (SFS) listings: 1,844.
-# Updated: 2019.12.25
+# Major multiplay network with multiple ASNs. Where possibly to cross-reference
+# against recent/active records at various spam databases (e.g., SFS), marked
+# as "spam". Where unwanted traffic at user's websites and/or honeypots has
+# recently been directly logged, marked as "generic". Other detected events,
+# reports from security honeypots, etc marked as "malware". Everything else
+# omitted to reduce false positives.
+# %Listed, Google Malware Dashboard: 0.11%.
+# Stop Forum Spam (SFS) listings: 2,079.
+# Updated: 2020.02.04
 
-212.23.250.46/32 Deny Spam
-Origin: CH
-213.61.130.232/32 Deny Spam
 213.61.215.0/24 Deny Spam
+213.61.218.54/32 Deny Spam
 217.111.233.0/24 Deny Generic
 Origin: DE
-62.97.80.28/32 Deny Spam
-213.27.224.114/32 Deny Spam
-Origin: ES
-62.23.225.70/32 Deny Spam
-62.84.196.157/32 Deny Spam
+157.120.255.0/24 Deny Malware
 213.41.75.116/32 Deny Spam
 213.86.5.211/32 Deny Spam
-213.208.246.198/32 Deny Spam
+217.111.207.0/24 Deny Malware
 Origin: GB
-62.152.116.57/32 Deny Spam
-213.215.135.82/32 Deny Spam
-213.215.152.222/32 Deny Spam
+213.215.181.66/32 Deny Malware
 Origin: IT
 Tag: COLT Technology SGL
 
@@ -10839,11 +10937,44 @@ Origin: GB
 Tag: Coextro
 
 
-# ---
-# These CIDRs listed due to reported incidents of spam and/or spambots detected
-# at these specific ranges, which belong to ASNs which we hope to not block in
-# entirety, with the hope that these listings will be temporary, to be delisted
-# at some point in the future.
+# ASN 37187 ("Skyband Corporation Ltd").
+# A domestic ISP from Malawi. Mostly benign, but some specific IPs/ranges at
+# their network are a *HUGE* source of forum spam! Listing the specific
+# affected IPs/ranges accordingly (as "spam"), but not the entire network. Also
+# listed are IPs/ranges caught by security honeypots (XMLRPC, etc), marked as
+# "malware", and some IPs/ranges caught deploying scrapers and other bad bots,
+# marked as "generic".
+# Stop Forum Spam (SFS) listings: 4,294.
+# Updated: 2020.02.05
+
+41.75.120.0/21 Deny Spam
+41.190.92.11/32 Deny Spam
+41.190.92.93/32 Deny Spam
+41.190.92.99/32 Deny Spam
+41.190.93.207/32 Deny Malware
+41.190.93.254/32 Deny Malware
+41.190.95.20/32 Deny Spam
+41.190.95.66/32 Deny Spam
+41.190.95.92/32 Deny Spam
+41.217.216.10/32 Deny Spam
+41.217.216.44/31 Deny Spam
+41.217.217.1/32 Deny Spam
+41.217.217.60/32 Deny Spam
+41.217.218.9/32 Deny Generic
+41.217.218.17/32 Deny Generic
+41.217.218.140/32 Deny Generic
+41.217.219.21/32 Deny Spam
+41.217.219.40/32 Deny Spam
+41.217.219.49/32 Deny Spam
+41.217.219.53/32 Deny Spam
+41.217.219.57/32 Deny Spam
+41.217.219.61/32 Deny Spam
+197.211.97.193/32 Deny Malware
+Origin: MW
+Tag: Skyband Corporation Ltd
+---
+recaptcha:
+ enabled: true
 
 
 # ASN 24532 ("PT. Inet Global Indo").

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2020.02.02).
+ * This file: Functions file (last modified: 2020.02.13).
  */
 
 /** Autoloader for CIDRAM classes. */
@@ -1642,10 +1642,13 @@ $CIDRAM['SearchEngineVerification'] = function () use (&$CIDRAM) {
         return;
     }
     foreach ($CIDRAM['VerificationData']['Search Engine Verification'] as $Name => $Values) {
-        if (empty($CIDRAM[$Values['Bypass Flag']]) && (
+        if (!is_array($Values) || (!empty($Values['Bypass Flag']) && !empty($CIDRAM[$Values['Bypass Flag']]))) {
+            continue;
+        }
+        if (
             (!empty($Values['User Agent']) && strpos($CIDRAM['BlockInfo']['UALC'], $Values['User Agent']) !== false) ||
             (!empty($Values['User Agent Pattern']) && preg_match($Values['User Agent Pattern'], $CIDRAM['BlockInfo']['UALC']))
-        )) {
+        ) {
             $Options = [
                 'ReverseOnly' => isset($Values['Reverse Only']) ? $Values['Reverse Only'] : false,
                 'CanModTrackable' => isset($Values['Can Modify Trackable']) ? $Values['Can Modify Trackable'] : true
@@ -1659,7 +1662,7 @@ $CIDRAM['SearchEngineVerification'] = function () use (&$CIDRAM) {
 $CIDRAM['ResetBypassFlags'] = function () use (&$CIDRAM) {
 
     /** Guard. */
-    if (!isset($CIDRAM['VerificationData']['Search Engine Verification'])) {
+    if (!isset($CIDRAM['VerificationData'], $CIDRAM['VerificationData']['Search Engine Verification'])) {
         return;
     }
 

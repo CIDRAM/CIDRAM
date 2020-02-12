@@ -1,8 +1,8 @@
 # IPv4 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv4_isps.dat
 
-# Version: 2020.39.266
-# Last modified: 2020.02.09
+# Version: 2020.42.247
+# Last modified: 2020.02.12
 
 
 # ---
@@ -434,9 +434,10 @@ recaptcha:
 
 
 # ASNs 24940, 37153 ("Hetzner Online GmbH").
-# %Listed, Google Malware Dashboard: 0.04% (AS24940), 0.20% (AS37153).
-# Stop Forum Spam (SFS) listings: 29,877 (AS24940), 531 (AS37153).
-# Updated: 2020.01.19
+# Ranges change frequently / Should update often.
+# %Listed, Google Malware Dashboard: 0.04% (AS24940), 0.22% (AS37153).
+# Stop Forum Spam (SFS) listings: 30,342 (AS24940), 544 (AS37153).
+# Updated: 2020.02.12
 
 190.99.83.0/24 Deny Generic
 Origin: BZ
@@ -475,7 +476,6 @@ Origin: CH
 185.107.52.0/22 Deny Generic
 185.126.28.0/22 Deny Generic
 185.136.140.0/23 Deny Generic
-185.141.200.0/24 Deny Generic
 185.141.202.0/24 Deny Generic
 185.157.176.0/22 Deny Generic
 185.171.224.0/22 Deny Generic
@@ -526,7 +526,9 @@ Origin: UA
 102.130.112.0/20 Deny Generic
 129.232.128.0/17 Deny Generic
 156.38.128.0/17 Deny Generic
-160.119.248.0/21 Deny Generic
+160.119.248.0/22 Deny Generic
+160.119.253.0/24 Deny Generic
+160.119.254.0/23 Deny Generic
 169.239.180.0/22 Deny Generic
 169.239.224.0/22 Deny Generic
 192.96.96.0/24 Deny Generic
@@ -603,33 +605,40 @@ recaptcha:
 
 
 # ASN 50810 ("Mobin Net Communication Company (Private Joint Stock)").
-# %Listed, abuseat.org (CBL-Listed): 2.16%.
-# Stop Forum Spam (SFS) listings: 497.
-# Updated: 2019.10.10
+# Iranian ISP and mobile provider, and a source of email, forum, and blog spam.
+# Stop Forum Spam (SFS) listings: 374.
+# Updated: 2020.02.11
 
 2.188.32.0/21 Deny Spam
 5.201.128.0/17 Deny Spam
 37.98.0.0/17 Deny Spam
-37.156.16.0/20 Deny Spam
+37.156.16.0/21 Deny Spam
+37.156.24.0/22 Deny Spam
+37.156.30.0/23 Deny Spam
 62.102.128.0/20 Deny Spam
+80.242.0.0/20 Deny Spam
 89.37.0.0/20 Deny Spam
 89.43.0.0/21 Deny Spam
 89.43.8.0/22 Deny Spam
 89.43.12.0/23 Deny Spam
-92.114.16.0/22 Deny Spam
 92.114.24.0/21 Deny Spam
 93.117.176.0/20 Deny Spam
 93.119.208.0/20 Deny Spam
 94.101.128.0/20 Deny Spam
 94.101.248.0/21 Deny Spam
+109.108.160.0/19 Deny Spam
 178.131.0.0/16 Deny Spam
-185.22.28.0/22 Deny Spam
+185.22.30.0/23 Deny Spam
 185.103.84.0/22 Deny Spam
 185.135.228.0/22 Deny Spam
 185.136.100.0/22 Deny Spam
 185.162.40.0/22 Deny Spam
 185.175.76.0/22 Deny Spam
+185.176.32.0/22 Deny Spam
 185.182.220.0/22 Deny Spam
+188.122.96.0/19 Deny Spam
+188.209.192.0/20 Deny Spam
+188.211.0.0/20 Deny Spam
 188.212.240.0/21 Deny Spam
 188.213.72.0/23 Deny Spam
 188.213.192.0/21 Deny Spam
@@ -5931,31 +5940,11 @@ recaptcha:
 # ASN 18403 ("The Corporation for Financing & Promoting Technology").
 # Interlaces with human endpoints in Vietnam, but also a significant source of
 # spam, hacks, brute-forcing, probing, etc.
-# %Listed, Google Malware Dashboard: 0.26%.
-# %Listed, abuseat.org (CBL-Listed): 3.32%.
-# Stop Forum Spam (SFS) listings: 9,469.
-# Updated: 2019.10.10
+# %Listed, Google Malware Dashboard: 0.24%.
+# %Listed, abuseat.org (CBL-Listed): 2.50%.
+# Stop Forum Spam (SFS) listings: 7,749.
+# Updated: 2020.02.11
 
-80.81.192.0/21 Deny Generic
-Origin: DE
-36.255.56.0/22 Deny Generic
-103.231.152.0/22 Deny Generic
-Origin: HK
-103.203.158.0/23 Deny Generic
-203.190.230.0/24 Deny Generic
-210.171.224.0/23 Deny Generic
-210.173.176.0/24 Deny Generic
-218.100.6.0/23 Deny Generic
-Origin: JP
-103.12.160.0/22 Deny Generic
-150.107.4.0/22 Deny Generic
-Origin: KH
-27.111.228.0/22 Deny Generic
-103.16.102.0/23 Deny Generic
-Origin: SG
-21.64.0.0/10 Deny Generic
-21.192.0.0/10 Deny Generic
-Origin: US
 1.52.0.0/14 Deny Generic
 42.112.0.0/13 Deny Generic
 43.239.148.0/22 Deny Generic
@@ -5965,8 +5954,8 @@ Origin: US
 103.35.64.0/22 Deny Generic
 103.39.92.0/22 Deny Generic
 103.47.192.0/23 Deny Generic
+103.52.92.0/22 Deny Generic
 103.53.170.0/23 Deny Generic
-103.72.96.0/22 Deny Generic
 103.74.120.0/22 Deny Generic
 103.78.93.0/24 Deny Generic
 103.81.84.0/22 Deny Generic
@@ -5980,12 +5969,13 @@ Origin: US
 103.139.102.0/23 Deny Generic
 103.141.140.0/23 Deny Generic
 103.141.144.0/23 Deny Generic
+103.143.206.0/24 Deny Generic
+103.147.122.0/23 Deny Generic
 103.200.22.0/24 Deny Generic
 103.205.104.0/23 Deny Generic
 103.205.106.0/24 Deny Generic
 103.216.120.0/22 Deny Generic
 103.221.220.0/22 Deny Generic
-103.253.90.0/23 Deny Generic
 113.22.0.0/16 Deny Generic
 113.23.0.0/17 Deny Generic
 118.68.0.0/14 Deny Generic
@@ -5994,7 +5984,6 @@ Origin: US
 183.81.0.0/17 Deny Generic
 203.191.8.0/21 Deny Generic
 210.245.0.0/17 Deny Generic
-218.100.10.0/24 Deny Generic
 Origin: VN
 Tag: CFPT
 ---
@@ -6849,9 +6838,8 @@ recaptcha:
 
 
 # ASN 132742 ("Guochao Group limited").
-# %Listed, Google Malware Dashboard: 4.18%.
-# Stop Forum Spam (SFS) listings: 2.
-# Updated: 2018.03.31 / Checked: 2019.09.10
+# %Listed, Google Malware Dashboard: 7.32%.
+# Updated: 2018.03.31 / Checked: 2020.02.10
 
 43.241.252.0/22 Deny Spam
 43.242.44.0/22 Deny Spam

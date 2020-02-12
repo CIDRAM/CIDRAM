@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_isps.dat
 
-# Version: 2020.39.266
-# Last modified: 2020.02.09
+# Version: 2020.42.247
+# Last modified: 2020.02.12
 
 
 # ---
@@ -64,9 +64,10 @@ recaptcha:
 
 
 # ASNs 24940, 37153 ("Hetzner Online GmbH").
-# %Listed, Google Malware Dashboard: 0.04% (AS24940), 0.20% (AS37153).
-# Stop Forum Spam (SFS) listings: 29,877 (AS24940), 531 (AS37153).
-# Updated: 2019.11.02 / Checked: 2020.01.19
+# Ranges change frequently / Should update often.
+# %Listed, Google Malware Dashboard: 0.04% (AS24940), 0.22% (AS37153).
+# Stop Forum Spam (SFS) listings: 30,342 (AS24940), 544 (AS37153).
+# Updated: 2019.11.02 / Checked: 2020.02.12
 
 2001:67c:1164::/48 Deny Generic
 2a01:4f8::/29 Deny Generic
@@ -1263,20 +1264,20 @@ recaptcha:
 # ASN 18403 ("The Corporation for Financing & Promoting Technology").
 # Interlaces with human endpoints in Vietnam, but also a significant source of
 # spam, hacks, brute-forcing, probing, etc.
-# %Listed, Google Malware Dashboard: 0.26%.
-# %Listed, abuseat.org (CBL-Listed): 3.32%.
-# Stop Forum Spam (SFS) listings: 9,469.
-# Updated: 2019.10.10
+# %Listed, Google Malware Dashboard: 0.24%.
+# %Listed, abuseat.org (CBL-Listed): 2.50%.
+# Stop Forum Spam (SFS) listings: 7,749.
+# Updated: 2020.02.11
 
 2001:df2:d900::/48 Deny Generic
 2001:df6:1e00::/48 Deny Generic
-2401:f740::/32 Deny Generic
 2403:6a40::/48 Deny Generic
 2404:b740::/48 Deny Generic
 2404:dac0::/48 Deny Generic
+2404:ef80::/48 Deny Generic
 2405:19c0::/48 Deny Generic
 2405:1ac0::/48 Deny Generic
-2405:4800::/32 Deny Generic
+2405:4800::/30 Deny Generic
 Origin: VN
 Tag: CFPT
 ---

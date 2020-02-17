@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6.dat
 
-# Version: 2020.42.247
-# Last modified: 2020.02.12
+# Version: 2020.47.359
+# Last modified: 2020.02.17
 
 
 # ---
@@ -1672,40 +1672,15 @@ Origin: UA
 Tag: HZ Hosting Ltd
 
 
-# ASNs 30279, 53889, 54334, 63008, 394021, 394056, 394143 ("Micfo, LLC").
-# Ranges change frequently / Should update often.
-# Provides numerous IoT/cloud/webhosting services. Source of spam and other unwanted traffic.
-# Exclude: Anything citing "Telecom" (ISP), "Level3" (infrastructure) -- ^.*(Telecom|Level3).*$\n
-# Updated: 2019.10.17
+# ASNs 53889, 63008 ("Micfo, LLC").
+# Provides numerous IoT/cloud/webhosting services. A source of spam and other
+# unwanted traffic. Ranges change frequently / Should update often. Exclude
+# 206.144.71.0/24 and 217.113.249.0/24 (ISPs).
+# %Listed, Google Malware Dashboard: 0.68% (AS53889).
+# Stop Forum Spam (SFS) listings: 9,765 (AS53889), 2,652 (AS63008).
+# Updated: 2020.02.17
 
-2407:9780::/32 Deny Cloud
-2605:3e80:200::/39 Deny Cloud
-2605:3e80:400::/38 Deny Cloud
-2605:3e80:800::/40 Deny Cloud
-2605:3e80:a00::/39 Deny Cloud
-2605:3e80:c00::/38 Deny Cloud
-2605:3e80:1000::/38 Deny Cloud
-2605:3e80:1400::/39 Deny Cloud
-2605:3e80:1700::/40 Deny Cloud
-2605:3e80:1800::/40 Deny Cloud
-2605:3e80:1a00::/40 Deny Cloud
-2605:3e80:1d00::/40 Deny Cloud
-2605:3e80:1e00::/39 Deny Cloud
-2605:3e80:2000::/38 Deny Cloud
-2605:3e80:2400::/39 Deny Cloud
-2605:3e80:2700::/40 Deny Cloud
-2605:3e80:2900::/40 Deny Cloud
-2605:3e80:2a00::/40 Deny Cloud
-2605:3e80:2c00::/39 Deny Cloud
-2605:3e80:2f00::/40 Deny Cloud
-2605:3e80:3100::/40 Deny Cloud
-2605:3e80:3200::/39 Deny Cloud
-2605:3e80:3600::/39 Deny Cloud
-2605:3e80:3800::/39 Deny Cloud
-2605:3e80:3a00::/40 Deny Cloud
-2605:3e80:4600::/39 Deny Cloud
-2605:3e80:7004::/48 Deny Cloud
-2605:3e80:c000::/48 Deny Cloud
+2605:3e80::/32 Deny Cloud
 Origin: US
 Tag: Micfo, LLC
 
@@ -2616,12 +2591,17 @@ Tag: QuickPacket, LLC
 
 # ASNs 10480, 29802, 54540 ("HIVELOCITY VENTURES CORP").
 # (Can omit anything under 44../8; clean).
-# %Listed, Google Malware Dashboard: 0.09% (AS29802), 0.07% (AS54540).
-# Stop Forum Spam (SFS) listings: 1,563 (AS29802), 199 (AS54540).
-# Updated: 2019.10.17
+# %Listed, Google Malware Dashboard: 0.08% (AS29802), 0.04% (AS54540).
+# Stop Forum Spam (SFS) listings: 3,770 (AS29802), 138 (AS54540).
+# Updated: 2020.02.17
 
 2804:2a88:10::/48 Deny Cloud
 Origin: BR
+2a02:748::/35 Deny Cloud
+2a02:748:6000::/48 Deny Cloud
+2a02:748:c000::/35 Deny Cloud
+2a0f:5180::/32 Deny Cloud
+Origin: DE
 2a0a:1f45::/32 Deny Cloud
 Origin: NL
 2001:504:3c::/48 Deny Cloud
@@ -2641,7 +2621,6 @@ Origin: NL
 2604:880:26::/47 Deny Cloud
 2604:880:32::/48 Deny Cloud
 2604:880:35::/48 Deny Cloud
-2604:880:37::/48 Deny Cloud
 2604:880:39::/48 Deny Cloud
 2604:880:3c::/48 Deny Cloud
 2604:880:41::/48 Deny Cloud
@@ -2653,7 +2632,6 @@ Origin: NL
 2604:880:5c::/48 Deny Cloud
 2604:880:5e::/48 Deny Cloud
 2604:880:60::/48 Deny Cloud
-2604:880:62::/47 Deny Cloud
 2604:880:64::/47 Deny Cloud
 2604:880:6f::/48 Deny Cloud
 2604:880:72::/47 Deny Cloud
@@ -2666,8 +2644,8 @@ Origin: NL
 2604:4500:100::/40 Deny Cloud
 2604:4500:900::/40 Deny Cloud
 2604:4500:c00::/40 Deny Cloud
+2604:4d40:4000::/36 Deny Cloud
 2604:8380::/32 Deny Cloud
-2604:8800:300::/40 Deny Cloud
 2620:1e8:2::/47 Deny Cloud
 2620:1e8:4::/47 Deny Cloud
 Origin: US
@@ -4674,14 +4652,13 @@ Tag: INTERNET CZ, a.s
 
 
 # ASN 202023 ("LLHost Inc").
-# Stop Forum Spam (SFS) listings: 25.
-# Updated: 2019.10.17
+# Stop Forum Spam (SFS) listings: 20.
+# Updated: 2020.02.17
 
 2a04:bc40:1dc1::/48 Deny Cloud
 2a04:bc40:1dc3::/48 Deny Cloud
 2a04:bc40:1dc4::/47 Deny Cloud
 2a04:bc40:1dc6::/48 Deny Cloud
-2a04:bc40:2dc2::/48 Deny Cloud
 Origin: UA
 Tag: LLHost Inc
 
@@ -5992,9 +5969,9 @@ Tag: CloudAccess.net
 
 
 # ASN 202053 ("UpCloud Ltd").
-# %Listed, Google Malware Dashboard: 0.11%.
-# Stop Forum Spam (SFS) listings: 68.
-# Updated: 2019.10.17
+# %Listed, Google Malware Dashboard: 0.05%.
+# Stop Forum Spam (SFS) listings: 88.
+# Updated: 2019.10.17 / Checked: 2020.02.17
 
 2a04:3540::/30 Deny Cloud
 2a04:3544::/31 Deny Cloud

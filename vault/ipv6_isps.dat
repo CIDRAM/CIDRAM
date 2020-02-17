@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_isps.dat
 
-# Version: 2020.42.247
-# Last modified: 2020.02.12
+# Version: 2020.47.359
+# Last modified: 2020.02.17
 
 
 # ---
@@ -838,10 +838,10 @@ recaptcha:
 # nor its listing at a number of BLs. Marked for use with reCAPTCHA to reduce
 # the false positive risk. Websites intended for a Chinese audience should keep
 # this section listed in their ignore.dat file.
-# %Listed, Google Malware Dashboard: 0.86%.
-# %Listed, abuseat.org (CBL-Listed): 0.86%.
-# Stop Forum Spam (SFS) listings: 31,934.
-# Updated: 2019.10.16
+# %Listed, Google Malware Dashboard: 1.06%.
+# %Listed, abuseat.org (CBL-Listed): 0.54%.
+# Stop Forum Spam (SFS) listings: 22,506.
+# Updated: 2019.10.16 / Checked: 2020.02.13
 
 2406:8500::/32 Deny Generic
 240e::/20 Deny Generic
@@ -1121,10 +1121,10 @@ recaptcha:
 # positive risk, and I would encourage any CIDRAM users from Taiwan, or
 # targeting traffic from Taiwan, to list this section in their ignore.dat file
 # to reduce the false positive risk.
-# %Listed, Google Malware Dashboard: 0.36%.
-# %Listed, abuseat.org (CBL-Listed): 0.64%.
-# Stop Forum Spam (SFS) listings: 9,815.
-# Updated: 2019.03.09 / Checked: 2019.11.02
+# %Listed, Google Malware Dashboard: 0.39%.
+# %Listed, abuseat.org (CBL-Listed): 0.80%.
+# Stop Forum Spam (SFS) listings: 12,647.
+# Updated: 2019.03.09 / Checked: 2020.02.13
 
 2001:b000::/21 Deny Generic
 2405:6100::/32 Deny Generic
@@ -2001,13 +2001,13 @@ recaptcha:
 # ASN 8359 ("MTS PJSC").
 # Caught trying to hack WordPress sites.
 # Stop Forum Spam (SFS) listings: 36,163.
-# Updated: 2018.09.23 / Checked: 2019.11.19
+# Updated: 2018.09.23 / Modified: 2020.02.14
 
-2a00:f00::/32 Deny Generic
-2a00:1fa0::/29 Deny Generic
-2a02:28::/29 Deny Generic
+2a00:f00::/32 Deny Spam
+2a00:1fa0::/29 Deny Spam
+2a02:28::/29 Deny Spam
 Origin: RU
-2a01:7c0::/32 Deny Generic
+2a01:7c0::/32 Deny Spam
 Origin: UA
 Tag: MTS PJSC
 ---
@@ -2104,6 +2104,64 @@ recaptcha:
 2600:6c4e:1200:f5::/64 Deny Spam
 Origin: US
 Tag: Charter Communications
+---
+recaptcha:
+ enabled: true
+
+
+# ASN 24309 ("Atria Convergence Technologies Pvt. Ltd. Broadband Internet
+# Service Provider INDIA"). An Indian domestic ISP caught spamming. Listing
+# just the affected ranges, plus all US ranges (interlaced cloud ranges).
+# %Listed, abuseat.org (CBL-Listed): 9.39%.
+# Stop Forum Spam (SFS) listings: 2,576.
+# Updated: 2020.02.13
+
+2406:7400:bd::/48 Deny Spam
+Origin: IN
+2600:140f:c000::/48 Deny Cloud
+Origin: US
+Tag: Atria Convergence
+---
+recaptcha:
+ enabled: true
+
+
+# ASN 39608 ("Lanet Network Ltd").
+# A Ukrainian domestic ISP and a significant source of spam.
+# Stop Forum Spam (SFS) listings: 12,256.
+# Updated: 2020.02.14
+
+2a01:5800::/32 Deny Spam
+2a01:bf20::/32 Deny Spam
+Origin: UA
+Tag: Lanet Network Ltd
+---
+recaptcha:
+ enabled: true
+
+
+# ASN 25159 ("PJSC MegaFon").
+# A Russian domestic ISP and a significant source of spam.
+# Stop Forum Spam (SFS) listings: 2,576.
+# Updated: 2020.02.14
+
+2a03:d000:4000::/36 Deny Spam
+Origin: RU
+Tag: PJSC MegaFon
+---
+recaptcha:
+ enabled: true
+
+
+# ASN 34700 ("MAXNET TELECOM, LTD").
+# A Ukrainian domestic ISP and a significant source of spam.
+# %Listed, Google Malware Dashboard: 4.17%.
+# Stop Forum Spam (SFS) listings: 2,433.
+# Updated: 2020.02.17
+
+2a00:1210::/32 Deny Spam
+Origin: UA
+Tag: MAXNET TELECOM
 ---
 recaptcha:
  enabled: true

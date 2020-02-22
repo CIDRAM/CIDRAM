@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_isps.dat
 
-# Version: 2020.47.359
-# Last modified: 2020.02.17
+# Version: 2020.52.671
+# Last modified: 2020.02.22
 
 
 # ---
@@ -186,8 +186,8 @@ Tag: Voxility LLC
 
 # ASN 30968 ("INFOBOX").
 # %Listed, Google Malware Dashboard: 0.11%.
-# Stop Forum Spam (SFS) listings: 141.
-# Updated: 2016.01.18 / Checked: 2019.09.18
+# Stop Forum Spam (SFS) listings: 152.
+# Updated: 2016.01.18 / Checked: 2020.02.22
 
 2a02:440::/32 Deny Generic
 Origin: RU
@@ -1592,111 +1592,39 @@ recaptcha:
  enabled: true
 
 
-# ASNs 12768, 25408, 31484, 34533, 41661, 41668, 41727, 41754, 42116, 42682,
-# 50542, 51570, 59713 ('JSC "ER-Telecom Holding"').
+# ASNs 9049, 12768, 12772, 16179, 20807, 21311, 21335, 21353, 21442, 24588,
+# 25408, 25446, 30868, 31363, 31483, 31484, 31494, 31585, 31692, 34145, 34150,
+# 34533, 34590, 34925, 39028, 39435, 41002, 41403, 41661, 41668, 41682, 41727,
+# 41754, 41786, 41843, 41854, 42113, 42116, 42145, 42368, 42631, 42682, 42683,
+# 43478, 44727, 45051, 47111, 47398, 47659, 47911, 48201, 48532, 49048, 49874,
+# 50498, 50512, 50542, 50543, 50544, 51035, 51570, 51604, 51645, 51819, 52207,
+# 56330, 56377, 56420, 56969, 56981, 57026, 57041, 57044, 57079, 57378, 58189,
+# 59713, 62287, 197585, 198295, 201495 ('JSC "ER-Telecom Holding"').
 # ER-Telecom is a legit, major domestic ISP in Russia, but also a significant
 # source of spam. Websites intended for a Russian audience should keep this
 # section listed in their ignore.dat file. Section also marked for use with
-# reCAPTCHA by default. ER-Telecom currently announces 87 ASNs, but we're
-# including only those that currently have more than a thousand active listings
-# at SFS (that's 13 ASNs at this time).
-# Updated: 2019.10.16
+# reCAPTCHA by default. Currently listing only the most severely offending
+# ranges in the network (i.e., not the entire network).
+# Updated: 2020.02.21
 
-2a00:1c78::/29 Deny Spam
-2a02:2698::/38 Deny Spam
-2a02:2698:1400::/38 Deny Spam
-2a02:2698:2800::/37 Deny Spam
-2a02:2698:3800::/38 Deny Spam
-2a02:2698:4400::/38 Deny Spam
+2a02:2698:242a:1fad::/64 Deny Spam
 2a02:2698:4c00::/38 Deny Spam
-2a02:2698:5c00::/38 Deny Spam
-2a02:2698:6800::/37 Deny Spam
-2a02:2698:9000::/38 Deny Spam
-2a02:2698:a000::/47 Deny Spam
-2a02:2698:a0ff::/64 Deny Spam
-2a03:1ac0:503:5700::/56 Deny Spam
-2a03:1ac0:503:9000::/52 Deny Spam
-2a03:1ac0:503:a000::/51 Deny Spam
+2a02:2698:5023:52d::/64 Deny Spam
+2a02:2698:6800::/38 Deny Spam
+2a02:2698:a000::/48 Deny Spam
 2a03:1ac0:503:c000::/51 Deny Spam
-2a03:1ac0:510:1800::/53 Deny Spam
-2a03:1ac0:510:4000::/51 Deny Spam
-2a03:1ac0:510:6000::/52 Deny Spam
-2a03:1ac0:5a4:4000::/50 Deny Spam
 2a03:1ac0:5a4:8000::/49 Deny Spam
 2a03:1ac0:5a5:2000::/51 Deny Spam
-2a03:1ac0:5a5:4000::/52 Deny Spam
-2a03:1ac0:5a6:8000::/50 Deny Spam
 2a03:1ac0:5a6:c000::/51 Deny Spam
-2a03:1ac0:5a6:e000::/53 Deny Spam
-2a03:1ac0:5a7:a000::/51 Deny Spam
-2a03:1ac0:2570::/52 Deny Spam
-2a03:1ac0:2570:1800::/53 Deny Spam
-2a03:1ac0:2570:7800::/53 Deny Spam
 2a03:1ac0:2570:8000::/52 Deny Spam
-2a03:1ac0:2571::/50 Deny Spam
-2a03:1ac0:2571:8000::/50 Deny Spam
 2a03:1ac0:2e00::/48 Deny Spam
-2a03:1ac0:2e92::/48 Deny Spam
-2a03:1ac0:2e93::/50 Deny Spam
-2a03:1ac0:2e93:4000::/51 Deny Spam
-2a03:1ac0:2e93:e000::/52 Deny Spam
-2a03:1ac0:2efc:7000::/52 Deny Spam
-2a03:1ac0:4f8d:3000::/52 Deny Spam
 2a03:1ac0:5571:2000::/51 Deny Spam
-2a03:1ac0:5b90:8400::/54 Deny Spam
-2a03:1ac0:5b90:8c00::/54 Deny Spam
-2a03:1ac0:5b90:9000::/52 Deny Spam
-2a03:1ac0:5b90:ac00::/54 Deny Spam
-2a03:1ac0:5b90:b000::/54 Deny Spam
 2a03:1ac0:5b90:b800::/54 Deny Spam
-2a03:1ac0:5b90:bc00::/56 Deny Spam
-2a03:1ac0:5b90:be00::/55 Deny Spam
-2a03:1ac0:5cff:8000::/51 Deny Spam
-2a03:1ac0:5cff:c000::/52 Deny Spam
-2a03:1ac0:5cff:d800::/53 Deny Spam
-2a03:1ac0:5cff:e000::/52 Deny Spam
-2a03:1ac0:5cff:f400::/54 Deny Spam
-2a03:1ac0:5cff:f800::/53 Deny Spam
-2a03:1ac0:5eb4:8000::/49 Deny Spam
-2a03:1ac0:5eb5:2000::/52 Deny Spam
-2a03:1ac0:5eb5:8000::/49 Deny Spam
-2a03:1ac0:5f4e::/49 Deny Spam
-2a03:1ac0:5f4e:8000::/50 Deny Spam
+2a03:1ac0:5cff:f400::/55 Deny Spam
 2a03:1ac0:5f4f::/48 Deny Spam
-2a03:1ac0:6dc2:3000::/52 Deny Spam
-2a03:1ac0:6dc2:8000::/52 Deny Spam
 2a03:1ac0:6dc2:9f00::/56 Deny Spam
-2a03:1ac0:6dc2:b000::/52 Deny Spam
-2a03:1ac0:6dc2:c000::/50 Deny Spam
-2a03:1ac0:6dc3:3000::/52 Deny Spam
-2a03:1ac0:6dc3:5000::/52 Deny Spam
-2a03:1ac0:b0d4::/52 Deny Spam
-2a03:1ac0:b0d4:8000::/53 Deny Spam
+2a03:1ac0:6dc2:e000::/52 Deny Spam
 2a03:1ac0:b0d5::/51 Deny Spam
-2a03:1ac0:b0d5:6800::/53 Deny Spam
-2a03:1ac0:b0d6:3000::/53 Deny Spam
-2a03:1ac0:b0d6:8000::/51 Deny Spam
-2a03:1ac0:b0d6:b800::/53 Deny Spam
-2a03:1ac0:b0d7:2000::/52 Deny Spam
-2a03:1ac0:b2a1:c800::/54 Deny Spam
-2a03:1ac0:b2a1:d200::/56 Deny Spam
-2a03:1ac0:b2a1:d400::/54 Deny Spam
-2a03:1ac0:b2a1:fe00::/55 Deny Spam
-2a03:1ac0:bcba:3000::/53 Deny Spam
-2a03:1ac0:bcbb::/49 Deny Spam
-2a03:1ac0:bcbb:8800::/53 Deny Spam
-2a03:1ac0:bcbb:d800::/55 Deny Spam
-2a03:1ac0:bcbb:da00::/56 Deny Spam
-2a03:1ac0:bcbb:f600::/56 Deny Spam
-2a03:1ac0:bce8:4000::/52 Deny Spam
-2a03:1ac0:bcea::/50 Deny Spam
-2a03:1ac0:bcea:7400::/54 Deny Spam
-2a03:1ac0:bcea:a800::/53 Deny Spam
-2a03:1ac0:bcea:b000::/53 Deny Spam
-2a03:1ac0:bceb::/50 Deny Spam
-2a03:1ac0:c196:6900::/56 Deny Spam
-2a03:1ac0:d421:e000::/51 Deny Spam
-2a03:cf80::/32 Deny Spam
 Origin: RU
 Tag: ER-Telecom Holding
 ---
@@ -1798,8 +1726,8 @@ recaptcha:
 
 # ASN 198093 ("Foreningen for digitala fri- och rattigheter").
 # Dead homepage and high levels of automated spam from this ASN.
-# Stop Forum Spam (SFS) listings: 13,173.
-# Updated: 2017.12.11 / Checked: 2019.09.18
+# Stop Forum Spam (SFS) listings: 9,397.
+# Updated: 2017.12.11 / Checked: 2020.02.22
 
 2001:67c:16b0::/48 Deny Spam
 2001:67c:289c::/48 Deny Spam
@@ -2027,31 +1955,10 @@ recaptcha:
  enabled: true
 
 
-# ASN 43478 ("ER-Telecom Holding").
-# Stop Forum Spam (SFS) listings: 74.
-# Updated: 2019.11.15
-
-2a02:2698:5000::/38 Deny Spam
-2a03:1ac0:5b90:b400::/54 Deny Spam
-2a03:1ac0:5eb4::/52 Deny Spam
-2a03:1ac0:5eb4:1000::/53 Deny Spam
-2a03:1ac0:5eb4:2800::/53 Deny Spam
-2a03:1ac0:5eb4:3000::/53 Deny Spam
-2a03:1ac0:5eb4:4800::/53 Deny Spam
-2a03:1ac0:5eb4:5000::/52 Deny Spam
-2a03:1ac0:5eb4:6000::/51 Deny Spam
-2a03:1ac0:6dc2:5000::/52 Deny Spam
-Origin: RU
-Tag: ER-Telecom Holding
----
-recaptcha:
- enabled: true
-
-
 # ASN 263500 ("Star Telecom S/A").
 # Source of forum spam and some email harvestors.
-# Stop Forum Spam (SFS) listings: 333.
-# Updated: 2019.10.24
+# Stop Forum Spam (SFS) listings: 472.
+# Updated: 2019.10.24 / Checked: 2020.02.22
 
 2804:12d8::/32 Deny Spam
 Origin: BR
@@ -2062,11 +1969,12 @@ recaptcha:
 
 
 # ASN 25513 ("PJSC Moscow city telephone network").
-# Source of blog and forum spam.
-# Stop Forum Spam (SFS) listings: 20,478.
-# Updated: 2019.10.24
+# A Russian domestic ISP and a significant source of forum and blog spam.
+# Stop Forum Spam (SFS) listings: 21,419.
+# Updated: 2020.02.22
 
 2a00:1370::/32 Deny Spam
+2a03:af60::/32 Deny Spam
 Origin: RU
 Tag: PJSC Moscow city
 ---
@@ -2162,6 +2070,20 @@ recaptcha:
 2a00:1210::/32 Deny Spam
 Origin: UA
 Tag: MAXNET TELECOM
+---
+recaptcha:
+ enabled: true
+
+
+# ASN 34700 ("Ote SA (Hellenic Telecommunications Organisation)").
+# A Greek domestic ISP and a source of spam.
+# Stop Forum Spam (SFS) listings: 1,343.
+# Updated: 2020.02.22
+
+2a02:587:6604:9200::/64 Deny Spam
+2a02:587:6610:ec00::/64 Deny Spam
+Origin: GR
+Tag: Ote SA
 ---
 recaptcha:
  enabled: true

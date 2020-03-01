@@ -1,8 +1,8 @@
 # IPv4 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv4_isps.dat
 
-# Version: 2020.52.671
-# Last modified: 2020.02.22
+# Version: 2020.60.176
+# Last modified: 2020.03.01
 
 
 # ---
@@ -197,16 +197,6 @@ Tag: HT
 ---
 recaptcha:
  enabled: true
-
-
-# ASN 133618 ("Trellian Pty. Limited").
-# %Listed, Google Malware Dashboard: 0.21%.
-# Updated: 2016.03.16 / Checked: 2019.09.18
-
-103.224.182.0/23 Deny Generic
-103.224.212.0/23 Deny Generic
-Origin: AU
-Tag: Trellian Pty. Ltd
 
 
 # ASN 29182 ("ISPsystem").
@@ -8996,8 +8986,9 @@ recaptcha:
 
 
 # ASNs 49775, 59665 ("Ultra-Telecom LLC").
-# Stop Forum Spam (SFS) listings: 1 (AS59665).
-# Updated: 2017.07.12 / Checked: 2019.09.18
+# Known C&Cs operating from this network and also a source of forum spam.
+# Stop Forum Spam (SFS) listings: 7 (AS59665).
+# Updated: 2017.07.12 / Checked: 2020.02.25
 
 176.124.144.0/22 Deny Spam
 195.160.164.0/23 Deny Spam

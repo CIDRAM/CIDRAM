@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_isps.dat
 
-# Version: 2020.52.671
-# Last modified: 2020.02.22
+# Version: 2020.65.487
+# Last modified: 2020.03.06
 
 
 # ---
@@ -52,12 +52,27 @@ Tag: IP Volume inc
 
 # ASN 48159 ("Telecommunication Infrastructure Company").
 # Significant source of I.P. thieves, email harvestors, and unauthorised scrapers.
-# Stop Forum Spam (SFS) listings: 137.
-# Updated: 2019.07.03 / Checked: 2019.11.02
+# Stop Forum Spam (SFS) listings: 69.
+# Updated: 2019.07.03 / Checked: 2020.03.06
 
 2a03:57c0::/32 Deny Generic
 Origin: IR
 Tag: AS48159
+---
+recaptcha:
+ enabled: true
+
+
+# ASN 12880 ("Information Technology Company (ITC)").
+# Significant source of email harvesters and unauthorised scrapers.
+# %Listed, Google Malware Dashboard: 0.16%.
+# %Listed, abuseat.org (CBL-Listed): 2.52%.
+# Stop Forum Spam (SFS) listings: 699.
+# Updated: 2020.03.06
+
+2001:4188::/48 Deny Generic
+Origin: IR
+Tag: AS12880
 ---
 recaptcha:
  enabled: true
@@ -357,8 +372,8 @@ recaptcha:
 
 
 # ASN 51013 ("Websupport s.r.o").
-# %Listed, Google Malware Dashboard: 0.11%.
-# Updated: 2019.11.02
+# %Listed, Google Malware Dashboard: 0.15%.
+# Updated: 2019.11.02 / Checked: 2020.03.05
 
 2a00:4b40::/32 Deny Generic
 Origin: SK
@@ -442,9 +457,9 @@ recaptcha:
 
 # ASN 6876 ("TeNeT Scientific Production Enterprise LLC").
 # Source of forum spam and other unwanted traffic.
-# %Listed, Google Malware Dashboard: 1.77%.
-# Stop Forum Spam (SFS) listings: 1,244.
-# Updated: 2016.07.20 / Checked: 2019.11.02
+# %Listed, Google Malware Dashboard: 2.99%.
+# Stop Forum Spam (SFS) listings: 1,489.
+# Updated: 2016.07.20 / Checked: 2020.03.06
 
 2a04:2c00::/29 Deny Generic
 Origin: UA
@@ -1121,10 +1136,10 @@ recaptcha:
 # positive risk, and I would encourage any CIDRAM users from Taiwan, or
 # targeting traffic from Taiwan, to list this section in their ignore.dat file
 # to reduce the false positive risk.
-# %Listed, Google Malware Dashboard: 0.39%.
-# %Listed, abuseat.org (CBL-Listed): 0.80%.
-# Stop Forum Spam (SFS) listings: 12,647.
-# Updated: 2019.03.09 / Checked: 2020.02.13
+# %Listed, Google Malware Dashboard: 0.37%.
+# %Listed, abuseat.org (CBL-Listed): 0.73%.
+# Stop Forum Spam (SFS) listings: 13,885.
+# Updated: 2019.03.09 / Checked: 2020.03.06
 
 2001:b000::/21 Deny Generic
 2405:6100::/32 Deny Generic
@@ -1178,14 +1193,13 @@ recaptcha:
 # reduce the false positive risk, and I would encourage any CIDRAM users from
 # Vietnam, or targeting traffic from Vietnam, to list this section in their
 # ignore.dat file to reduce the false positive risk.
-# %Listed, Google Malware Dashboard: 0.13%.
-# %Listed, abuseat.org (CBL-Listed): 5.76%.
-# Stop Forum Spam (SFS) listings: 20,258.
-# Updated: 2019.11.02
+# %Listed, Google Malware Dashboard: 0.08%.
+# %Listed, abuseat.org (CBL-Listed): 5.47%.
+# Stop Forum Spam (SFS) listings: 21,149.
+# Updated: 2020.03.05
 
 2001:df2:ca00::/48 Deny Generic
 2001:df2:ce00::/48 Deny Generic
-2001:ee0:1::/48 Deny Generic
 2001:ee0:100::/40 Deny Generic
 2001:ee0:200::/40 Deny Generic
 2001:ee0:300::/47 Deny Generic
@@ -1193,7 +1207,6 @@ recaptcha:
 2001:ee0:1006::/48 Deny Generic
 2001:ee0:1080::/48 Deny Generic
 2001:ee0:2f00::/43 Deny Generic
-2001:ee0:3000::/43 Deny Generic
 2001:ee0:3100::/43 Deny Generic
 2001:ee0:3200::/40 Deny Generic
 2001:ee0:4000::/39 Deny Generic
@@ -1214,10 +1227,7 @@ recaptcha:
 2001:ee0:4e00::/41 Deny Generic
 2001:ee0:4e80::/42 Deny Generic
 2001:ee0:4f00::/40 Deny Generic
-2001:ee0:5000::/39 Deny Generic
-2001:ee0:5200::/40 Deny Generic
-2001:ee0:5300::/42 Deny Generic
-2001:ee0:5380::/41 Deny Generic
+2001:ee0:5000::/38 Deny Generic
 2001:ee0:5400::/39 Deny Generic
 2001:ee0:5600::/40 Deny Generic
 2001:ee0:5700::/41 Deny Generic
@@ -1248,11 +1258,14 @@ recaptcha:
 2001:ee0:a000::/39 Deny Generic
 2001:ee0:a200::/40 Deny Generic
 2001:ee0:a400::/38 Deny Generic
+2001:ee0:c100::/40 Deny Generic
 2001:ee0:c200::/39 Deny Generic
 2001:ee0:c400::/38 Deny Generic
 2001:ee0:c800::/37 Deny Generic
 2001:ee0:d000::/40 Deny Generic
 2001:ee0:dd00::/40 Deny Generic
+2001:ee0:e800::/40 Deny Generic
+2001:ee0:ff00::/40 Deny Generic
 2405:f980::/48 Deny Generic
 Origin: VN
 Tag: VNPT Corp
@@ -1982,19 +1995,34 @@ recaptcha:
  enabled: true
 
 
-# ASN 7922 ("Comcast Cable Communications, LLC").
+# ASNs 7922, 33668 ("Comcast Cable Communications, LLC").
 # Major domestic ISP in the United States; Should NEVER be blocked in entirety.
 # Listed here are some specific CIDRs/IPs on their network that pose a major
 # spam risk and/or are known sources of spam and/or other undesirable traffic.
-# %Listed, Google Malware Dashboard: 0.08%.
-# %Listed, abuseat.org (CBL-Listed): 0.02%.
-# Stop Forum Spam (SFS) listings: 7,777.
-# Updated: 2020.01.01
+# %Listed, Google Malware Dashboard: 0.19% (AS7922).
+# %Listed, abuseat.org (CBL-Listed): 0.02% (AS7922).
+# Stop Forum Spam (SFS) listings: 6,681 (AS7922).
+# Updated: 2020.03.06
 
-2601:2c0:4400:6410::/64 Deny Spam
-2601:2c7:8400:26a::/64 Deny Spam
+2601:155:1:26b0::/64 Deny Spam
 Origin: US
 Tag: Comcast Spam IPs
+---
+recaptcha:
+ enabled: true
+
+
+# ASN 22773 ("Cox Communications Inc").
+# Peering exchange provider in the United States; Should NEVER be blocked in
+# entirety. Listed here are some specific CIDRs/IPs on their network that pose
+# a risk for spamming and/or other undesirable traffic.
+# %Listed, Google Malware Dashboard: 0.07% (AS22773).
+# Stop Forum Spam (SFS) listings: 812 (AS22773).
+# Updated: 2020.03.06
+
+2600:8801:2c03:b200::/64 Deny Spam
+Origin: US
+Tag: Cox Spam IPs
 ---
 recaptcha:
  enabled: true
@@ -2084,6 +2112,20 @@ recaptcha:
 2a02:587:6610:ec00::/64 Deny Spam
 Origin: GR
 Tag: Ote SA
+---
+recaptcha:
+ enabled: true
+
+
+# ASN 28573 ("CLARO S.A"). A Brazilian domestic ISP caught spamming. Listing
+# just the affected ranges, plus all US ranges (interlaced cloud ranges).
+# %Listed, abuseat.org (CBL-Listed): 0.29%.
+# Stop Forum Spam (SFS) listings: 4,744.
+# Updated: 2020.03.06
+
+2804:14c:658c:4fc7::/64 Deny Spam
+Origin: BR
+Tag: CLARO S.A
 ---
 recaptcha:
  enabled: true

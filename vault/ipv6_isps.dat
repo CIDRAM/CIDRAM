@@ -1,19 +1,19 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_isps.dat
 
-# Version: 2020.65.487
-# Last modified: 2020.03.06
+# Version: 2020.72.226
+# Last modified: 2020.03.13
 
 
 # ---
 # ASN 29182 ("ISPsystem").
-# %Listed, Google Malware Dashboard: 0.38%.
-# Stop Forum Spam (SFS) listings: 946.
-# Updated: 2019.09.27 / Checked: 2019.11.09
+# %Listed, Google Malware Dashboard: 0.27%.
+# Stop Forum Spam (SFS) listings: 1,243.
+# Updated: 2020.03.13
 
-2a01:230::/48 Deny Generic
-2a01:230:2::/47 Deny Generic
+2a01:230::/46 Deny Generic
 2a06:dc40::/29 Deny Generic
+2a09:6280:4::/48 Deny Generic
 2a09:f900::/48 Deny Generic
 Origin: RU
 2a0c:680::/32 Deny Generic
@@ -656,13 +656,14 @@ Origin: UA
 Tag: Fregat
 
 
-# ASN 48666 ("MAROSNET Telecommunication Company LLC").
-# %Listed, Google Malware Dashboard: 0.38%.
-# Stop Forum Spam (SFS) listings: 1,359.
-# Updated: 2019.11.08
+# ASNs 35196, 48666 ("MAROSNET Telecommunication Company LLC").
+# %Listed, Google Malware Dashboard: 0.27% (AS48666).
+# Stop Forum Spam (SFS) listings: 27 (AS35196), 524 (AS48666).
+# Updated: 2020.03.10
 
 2a02:f680::/29 Deny Spam
-2a0a:f9c2::/32 Deny Spam
+2a0a:9301:1::/48 Deny Spam
+2a0a:9302::/32 Deny Spam
 2a0c:6ec0::/48 Deny Spam
 Origin: RU
 Tag: MAROSNET
@@ -710,8 +711,8 @@ Tag: PHOENIX NAP, LLC
 
 # ASNs 24955, 41704 ("Orenburgskaya Gorodskaya Set, ZAO").
 # Caught spamming while pretending to be Google.
-# Stop Forum Spam (SFS) listings: 60,262 (AS24955), 56,617 (AS41704).
-# Updated: 2019.11.08
+# Stop Forum Spam (SFS) listings: 55,242 (AS24955), 14,481 (AS41704).
+# Updated: 2019.11.08 / Checked: 2020.03.10
 
 2a02:1c8::/47 Deny Spam
 2a02:1c8:7::/48 Deny Spam
@@ -1590,7 +1591,7 @@ recaptcha:
 
 # ASN 15774 ("Closed Joint Stock Company TransTeleCom").
 # Stop Forum Spam (SFS) listings: 1,209.
-# Updated: 2019.11.08
+# Updated: 2019.11.08 / Checked: 2020.03.10
 
 2a02:618:6::/47 Deny Spam
 2a02:28d8::/36 Deny Spam
@@ -1956,18 +1957,6 @@ recaptcha:
  enabled: true
 
 
-# ASN 137874 ("Fibergrid").
-# Stop Forum Spam (SFS) listings: 74.
-# Updated: 2019.05.27 / Checked: 2019.09.30
-
-2402:f4c0::/32 Deny Spam
-Origin: IN
-Tag: Fibergrid
----
-recaptcha:
- enabled: true
-
-
 # ASN 263500 ("Star Telecom S/A").
 # Source of forum spam and some email harvestors.
 # Stop Forum Spam (SFS) listings: 472.
@@ -2048,9 +2037,9 @@ recaptcha:
 # ASN 24309 ("Atria Convergence Technologies Pvt. Ltd. Broadband Internet
 # Service Provider INDIA"). An Indian domestic ISP caught spamming. Listing
 # just the affected ranges, plus all US ranges (interlaced cloud ranges).
-# %Listed, abuseat.org (CBL-Listed): 9.39%.
-# Stop Forum Spam (SFS) listings: 2,576.
-# Updated: 2020.02.13
+# %Listed, abuseat.org (CBL-Listed): 8.31%.
+# Stop Forum Spam (SFS) listings: 2,721.
+# Updated: 2020.02.13 / Checked: 2020.03.13
 
 2406:7400:bd::/48 Deny Spam
 Origin: IN
@@ -2126,6 +2115,39 @@ recaptcha:
 2804:14c:658c:4fc7::/64 Deny Spam
 Origin: BR
 Tag: CLARO S.A
+---
+recaptcha:
+ enabled: true
+
+
+# ASN 8151 ("Uninet S.A. de C.V").
+# Mexican domestic ISP and a source of spam. Just listing the specific spammy
+# IPs (not the entire network), plus US ranges (interlaced cloud).
+# %Listed, Google Malware Dashboard: 0.16%.
+# Stop Forum Spam (SFS) listings: 1,410.
+# Updated: 2020.03.13
+
+2806:10be:6:12b::/64 Deny Spam
+Origin: MX
+2600:141c:7::/48 Deny Cloud
+2600:141c:5000::/48 Deny Cloud
+Origin: US
+Tag: Uninet
+---
+recaptcha:
+ enabled: true
+
+
+# ASN 12849 ("Hot-Net internet services Ltd").
+# Israeli domestic ISP and a source of spam. Just listing the specific
+# spammy IPs (i.e., not the entire network).
+# %Listed, Google Malware Dashboard: 0.21%.
+# Stop Forum Spam (SFS) listings: 1,338.
+# Updated: 2020.03.13
+
+2a00:a040:180::/44 Deny Spam
+Origin: IL
+Tag: Hot-Net internet
 ---
 recaptcha:
  enabled: true

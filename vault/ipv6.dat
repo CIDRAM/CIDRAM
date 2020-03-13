@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6.dat
 
-# Version: 2020.65.487
-# Last modified: 2020.03.06
+# Version: 2020.72.226
+# Last modified: 2020.03.13
 
 
 # ---
@@ -151,9 +151,9 @@ Tag: HostDime.com, Inc
 
 
 # ASN 47583 ("Hostinger International Limited").
-# %Listed, Google Malware Dashboard: 0.39%.
-# Stop Forum Spam (SFS) listings: 249.
-# Updated: 2019.11.08
+# %Listed, Google Malware Dashboard: 0.42%.
+# Stop Forum Spam (SFS) listings: 183.
+# Updated: 2019.11.08 / Checked: 2020.03.13
 
 2a02:4780::/46 Deny Cloud
 2a02:4780:4::/47 Deny Cloud
@@ -3518,10 +3518,11 @@ Tag: SYNERGY WHOLESALE
 
 
 # ASN 45538 ("Online data services").
-# %Listed, Google Malware Dashboard: 0.11%.
-# Stop Forum Spam (SFS) listings: 225.
-# Updated: 2016.12.05 / Checked: 2019.09.29
+# %Listed, Google Malware Dashboard: 0.16%.
+# Stop Forum Spam (SFS) listings: 69.
+# Updated: 2020.03.10
 
+2405:7bc0::/48 Deny Cloud
 2405:9d80::/32 Deny Cloud
 Origin: VN
 Tag: AS45538
@@ -3606,9 +3607,9 @@ Tag: SpaceWeb Ltd
 
 
 # ASN 43391 ("Netdirekt A.S").
-# %Listed, Google Malware Dashboard: 0.12%.
-# Stop Forum Spam (SFS) listings: 40.
-# Updated: 2016.04.29 / Checked: 2019.11.02
+# %Listed, Google Malware Dashboard: 0.06%.
+# Stop Forum Spam (SFS) listings: 12.
+# Updated: 2016.04.29 / Checked: 2020.03.10
 
 2a01:aac0::/32 Deny Cloud
 Origin: TR
@@ -3646,9 +3647,9 @@ Tag: Superior B.V
 
 
 # ASN 27715 ("Locaweb Servios de Internet S/A").
-# %Listed, Google Malware Dashboard: 0.13%.
-# Stop Forum Spam (SFS) listings: 615.
-# Updated: 2016.05.01 / Checked: 2019.11.02
+# %Listed, Google Malware Dashboard: 0.15%.
+# Stop Forum Spam (SFS) listings: 433.
+# Updated: 2016.05.01 / Checked: 2020.03.10
 
 2804:218::/32 Deny Cloud
 Origin: BR
@@ -4215,8 +4216,8 @@ Tag: Keyweb AG
 
 
 # ASN 10929 ("Netelligent Hosting Services Inc").
-# Stop Forum Spam (SFS) listings: 12.
-# Updated: 2016.08.19 / Checked: 2019.11.02
+# Stop Forum Spam (SFS) listings: 151.
+# Updated: 2016.08.19 / Checked: 2020.03.10
 
 2605:6f00:9000::/36 Deny Cloud
 2605:9000::/32 Deny Cloud
@@ -4611,9 +4612,10 @@ Tag: CloudSRV Limited
 
 
 # ASN 42831 ("UK Dedicated Servers Limited").
-# %Listed, Google Malware Dashboard: 0.21%.
-# Stop Forum Spam (SFS) listings: 9,507.
-# Updated: 2019.11.08
+# Dedicated hosting and server lease and a significant source of spam.
+# %Listed, Google Malware Dashboard: 0.25%.
+# Stop Forum Spam (SFS) listings: 10,089.
+# Updated: 2019.11.08 / Checked: 2020.03.13
 
 2a01:a500::/32 Deny Cloud
 2a03:9da0::/40 Deny Cloud
@@ -5006,9 +5008,9 @@ Tag: Virtono Networks SRL
 
 
 # ASN 55081 ("24 SHELLS").
-# %Listed, Google Malware Dashboard: 0.38%.
-# Stop Forum Spam (SFS) listings: 198.
-# Updated: 2019.11.08
+# %Listed, Google Malware Dashboard: 0.41%.
+# Stop Forum Spam (SFS) listings: 306.
+# Updated: 2019.11.08 / Checked: 2020.03.13
 
 2a06:8640::/29 Deny Cloud
 2a0c:5c80::/29 Deny Cloud
@@ -5285,9 +5287,9 @@ Tag: WorldStream
 
 # ASNs 12695, 34434, 210260 ("Server Plus Ltd").
 # Source of spam, probing, hack attempts, etc.
-# %Listed, Google Malware Dashboard: 0.12% (AS12695).
-# Stop Forum Spam (SFS) listings: 251 (AS12695).
-# Updated: 2019.11.09
+# %Listed, Google Malware Dashboard: 0.15% (AS12695).
+# Stop Forum Spam (SFS) listings: 175 (AS12695).
+# Updated: 2019.11.09 / Checked: 2020.03.13
 
 2001:67c:2094::/48 Deny Cloud
 2a00:1c48::/31 Deny Cloud
@@ -5431,9 +5433,9 @@ Tag: SOFTplus
 
 # ASN 63199 ("Capitalonline Data Service Co.,LTD").
 # Source of forum spam and other unwanted traffic.
-# %Listed, Google Malware Dashboard: 0.73%.
-# Stop Forum Spam (SFS) listings: 181.
-# Updated: 2019.07.04 / Checked: 2019.11.02
+# %Listed, Google Malware Dashboard: 0.76%.
+# Stop Forum Spam (SFS) listings: 254.
+# Updated: 2019.07.04 / Checked: 2020.03.10
 
 2400:5280::/36 Deny Cloud
 2400:5280:1000::/37 Deny Cloud
@@ -6049,15 +6051,18 @@ Tag: Infolink Global Corporation
 
 # ASN 63473 ("HostHatch LLC").
 # Caught spamming while pretending to be Google.
-# Stop Forum Spam (SFS) listings: 294.
-# Updated: 2019.11.08
+# Stop Forum Spam (SFS) listings: 208.
+# Updated: 2020.03.13
 
 2a01:6f0:ffff::/48 Deny Cloud
 2a04:bdc7:100::/48 Deny Cloud
 Origin: DE
 2a0e:dc0:3::/48 Deny Cloud
 2a0e:dc0:5::/48 Deny Cloud
+2a0e:dc0:6::/48 Deny Cloud
 Origin: NL
+2a00:1a28:1157::/48 Deny Cloud
+Origin: SE
 2605:4840:3::/48 Deny Cloud
 2a0d:5600:30::/47 Deny Cloud
 2a0d:5600:33::/48 Deny Cloud
@@ -6373,20 +6378,14 @@ Origin: US
 Tag: 4D Data
 
 
-# ASN 134094 ("Serverfield Co., Ltd.").
-# Evidence of spamming at some RBLs.
-# Stop Forum Spam (SFS) listings: 613.
-# Updated: 2019.11.08
+# ASN 134094 ("Serverfield Co., Ltd").
+# Dedicated webhosting company and a significant source of spam.
+# Stop Forum Spam (SFS) listings: 3,563.
+# Updated: 2020.03.13
 
 2a0a:40:100::/40 Deny Cloud
-2a0a:40:300::/40 Deny Cloud
 Origin: FR
-2401:f540::/40 Deny Cloud
-2402:1780:3::/48 Deny Cloud
-2402:1780:4::/46 Deny Cloud
-2402:1780:8::/47 Deny Cloud
-2402:1780:10::/46 Deny Cloud
-2402:1780:14::/48 Deny Cloud
+2401:f540:4::/48 Deny Cloud
 Origin: TW
 Tag: Serverfield
 
@@ -6579,7 +6578,7 @@ Tag: GigeNET
 
 # ASN 8683 ("Nominet UK").
 # Caught trying to brute-force website login pages.
-# Updated: 2019.11.09
+# Updated: 2019.11.09 / Checked: 2020.03.13
 
 2a01:618::/38 Deny Cloud
 2a01:618:8000::/33 Deny Cloud
@@ -7297,26 +7296,26 @@ Tag: Long Van
 # website hammering/flooding/other abuse.
 # Exclude (carries human endpoints and seems clean *at the moment*):
 # - "^.*Internetbolaget.*$\n"
+# Listings marked as "Malware" due to attack vectors detected via additional
+# ranges/IPs owned by this network which wouldn't be otherwise listed.
 # Stop Forum Spam (SFS) listings: 1,469.
-# Updated: 2020.03.05
+# Updated: 2020.03.05 / Modified: 2020.03.11
 
 2001:df2:5480::/48 Deny Cloud
 Origin: TW
 Tag: Internet Vikings
+---
+recaptcha:
+ enabled: true
 
 
-# ---
-# These CIDRs listed due to being caught performing hack attempts and various
-# other nefarious activities, in cases where we hope to not block the
-# originating ASNs in entirety, and hope that these listings will be temporary,
-# to be delisted at some point in the future.
+# ASN 12816 ("Leibniz-Rechenzentrum").
+# Data center and server farm. Caught trying to brute-force website login
+# pages, to hack into CCTV feeds, to hack into SSH endpoints, caught port
+# scanning, and probing for vulnerabilities. (Upgraded the listings to the
+# entire ASN at 2020/03 due to increased bad activity throughout the ASN).
+# Updated: 2020.03.13
 
-# ASN 12816 ("Leibniz-Rechenzentrum"). Data center and server farm. Caught
-# trying to brute-force website login pages, to hack into CCTV feeds, perform
-# port scans and probe for vulnerabilities. (Listing probably won't be
-# temporary, but the rest of the network seems clean at the moment, so won't
-# block the entire thing quite just yet).
-# Updated: 2019.11.09
-2001:4ca0::/32 Deny Cloud
+2001:4ca0::/29 Deny Cloud
 Origin: DE
 Tag: Leibniz-Rechenzentrum

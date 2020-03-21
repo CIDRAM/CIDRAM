@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6.dat
 
-# Version: 2020.72.226
-# Last modified: 2020.03.13
+# Version: 2020.80.230
+# Last modified: 2020.03.21
 
 
 # ---
@@ -2572,8 +2572,8 @@ Tag: Latisys-Irvine, LLC
 # ASN 46261 ("QuickPacket, LLC").
 # Ranges change frequently / Should update often.
 # %Listed, Google Malware Dashboard: 0.36%.
-# Stop Forum Spam (SFS) listings: 2,464.
-# Updated: 2019.06.24 / Checked: 2019.11.09
+# Stop Forum Spam (SFS) listings: 1,850.
+# Updated: 2019.06.24 / Checked: 2020.03.21
 
 2606:f280::/33 Deny Cloud
 2606:f280:8000::/34 Deny Cloud
@@ -3034,9 +3034,10 @@ Tag: Hostwinds LLC
 
 
 # ASN 8342 ("OJSC RTComm.RU").
-# %Listed, Google Malware Dashboard: 0.23%.
-# Stop Forum Spam (SFS) listings: 89.
-# Updated: 2016.04.23 / Checked: 2019.10.02
+# Dedicated server farm + an ongoing source of spam and other unwanted traffic.
+# %Listed, Google Malware Dashboard: 0.32%.
+# Stop Forum Spam (SFS) listings: 72.
+# Updated: 2016.04.23 / Checked: 2020.03.21
 
 2001:1bb0::/32 Deny Cloud
 Origin: RU
@@ -4879,9 +4880,9 @@ Tag: Oy Creanova Hosting
 
 
 # ASN 49505 ("Selectel Ltd").
-# %Listed, Google Malware Dashboard: 0.04%.
-# Stop Forum Spam (SFS) listings: 5,482.
-# Updated: 2017.05.12 / Checked: 2019.11.08
+# %Listed, Google Malware Dashboard: 0.05%.
+# Stop Forum Spam (SFS) listings: 9,489.
+# Updated: 2017.05.12 / Checked: 2020.03.21
 
 2a00:ab00::/32 Deny Cloud
 Origin: RU
@@ -4926,16 +4927,15 @@ Tag: Nagravision SA
 
 
 # ASN 63956 ("Colocation Australia Pty Ltd").
-# %Listed, Google Malware Dashboard: 1.26%.
-# Stop Forum Spam (SFS) listings: 85.
-# Updated: 2019.11.10
+# %Listed, Google Malware Dashboard: 0.88%.
+# Stop Forum Spam (SFS) listings: 153.
+# Updated: 2020.03.21
 
 2402:1b80::/32 Deny Cloud
 2402:2f80:4::/48 Deny Cloud
+2403:4f00:6000::/36 Deny Cloud
 2406:180:8000::/40 Deny Cloud
 Origin: AU
-2403:4f00:6000::/36 Deny Cloud
-Origin: NZ
 Tag: Colocation Australia
 
 
@@ -5330,34 +5330,32 @@ Tag: Fishnet
 
 
 # ASN 59504 ('LLC "CloudSol"').
-# %Listed, Google Malware Dashboard: 1.87%.
-# Stop Forum Spam (SFS) listings: 183.
-# Updated: 2019.11.10
+# %Listed, Google Malware Dashboard: 0.43%.
+# Stop Forum Spam (SFS) listings: 215.
+# Updated: 2020.03.21
 
 2a05:fb41::/32 Deny Cloud
 2a05:fb42::/32 Deny Cloud
+2a05:fb44::/32 Deny Cloud
 2a07:14c0::/47 Deny Cloud
 2a07:14c0:1000::/36 Deny Cloud
+2a07:14c0:2000::/35 Deny Cloud
 2a07:14c0:5000::/36 Deny Cloud
-2a07:14c0:6000::/36 Deny Cloud
-2a07:14c0:8000::/36 Deny Cloud
-2a07:14c0:e000::/36 Deny Cloud
-2a07:14c6::/31 Deny Cloud
+2a07:14c6::/32 Deny Cloud
 2a0a:4781::/32 Deny Cloud
 2a0a:4782::/31 Deny Cloud
 2a0c:2104::/32 Deny Cloud
 2a0c:5245::/32 Deny Cloud
+2a0c:5247:1000::/36 Deny Cloud
+2a0c:5247:2000::/35 Deny Cloud
 2a0c:5247:7000::/36 Deny Cloud
 2a0c:5247:c000::/36 Deny Cloud
 2a0c:5247:e000::/36 Deny Cloud
 2a0d:60c0::/32 Deny Cloud
 2a0d:60c3::/32 Deny Cloud
+2a0d:7740::/32 Deny Cloud
 2a0d:7744::/32 Deny Cloud
 2a0d:7747::/32 Deny Cloud
-2a0d:8180:1000::/36 Deny Cloud
-2a0d:8180:3000::/36 Deny Cloud
-2a0d:8180:4000::/36 Deny Cloud
-2a0d:8181::/32 Deny Cloud
 Origin: RU
 Tag: CloudSol
 
@@ -5981,15 +5979,14 @@ Tag: UpCloud Ltd
 
 
 # ASN 21769 ("Colocation America Corporation").
-# %Listed, Google Malware Dashboard: 0.89%.
-# Stop Forum Spam (SFS) listings: 343.
-# Updated: 2019.06.10 / Checked: 2019.11.09
+# %Listed, Google Malware Dashboard: 0.19%.
+# Stop Forum Spam (SFS) listings: 646.
+# Updated: 2020.03.21
 
 2a09:1e80::/29 Deny Cloud
 2a0a:1f47::/32 Deny Cloud
 Origin: NL
 2a0b:2a86::/32 Deny Cloud
-2a0c:2f44::/30 Deny Cloud
 Origin: RU
 2602:fed3:6::/48 Deny Cloud
 2602:fed3:b::/48 Deny Cloud
@@ -6139,7 +6136,7 @@ Tag: Nexril
 # ASN 209299 ("VITOX TELECOM").
 # Dedicated hosting provider and server leasing. SQLi and spam attempts caught.
 # Also caught trying to hack into honeypots.
-# Updated: 2019.07.10 / Checked: 2019.11.10
+# Updated: 2019.07.10 / Checked: 2020.03.21
 
 2a0d:a740::/47 Deny Cloud
 Origin: EE

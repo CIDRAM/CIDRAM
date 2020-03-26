@@ -1,8 +1,8 @@
 # IPv4 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv4.dat
 
-# Version: 2020.80.230
-# Last modified: 2020.03.21
+# Version: 2020.85.354
+# Last modified: 2020.03.26
 
 
 # ---
@@ -2997,19 +2997,6 @@ Origin: RU
 Tag: CJSC Registrar R01
 
 
-# ASN 53225 ("IPGLOBE DATACENTER").
-# No recent reports or bad activity detected. Possible candidate for future removal.
-# Updated: 2018.12.15 / Checked: 2019.11.02
-
-177.137.16.0/21 Deny Cloud
-177.137.24.0/22 Deny Cloud
-177.137.28.0/23 Deny Cloud
-177.137.30.0/24 Deny Cloud
-186.251.128.0/20 Deny Cloud
-Origin: BR
-Tag: IPGLOBE DATACENTER
-
-
 # ASNs 28271, 52550 ("DataCorpore Servios e Representaes").
 # %Listed, Google Malware Dashboard: 1.06% (AS28271).
 # Stop Forum Spam (SFS) listings: 109 (AS28271).
@@ -4933,16 +4920,21 @@ Tag: IDEAL HOSTING
 
 
 # ASN 11051 ("Cyberverse, Inc").
-# %Listed, Google Malware Dashboard: 0.15%.
-# Updated: 2019.05.27 / Checked: 2019.10.06
+# %Listed, Google Malware Dashboard: 0.24%.
+# Updated: 2020.03.23
 
+91.149.223.0/24 Deny Cloud
+Origin: PL
+5.44.46.0/24 Deny Cloud
+Origin: RU
 23.130.97.0/24 Deny Cloud
 66.172.0.0/18 Deny Cloud
 66.180.192.0/20 Deny Cloud
+192.80.49.0/24 Deny Cloud
 204.10.89.0/24 Deny Cloud
 205.207.255.0/24 Deny Cloud
-208.80.183.0/24 Deny Cloud
 209.151.224.0/19 Deny Cloud
+209.160.96.0/23 Deny Cloud
 216.176.192.0/20 Deny Cloud
 Origin: US
 Tag: Cyberverse, Inc
@@ -9069,9 +9061,8 @@ Tag: Comvive Servidores
 
 
 # ASN 34971 ("Prometeus di Daniela Agro").
-# %Listed, Google Malware Dashboard: 0.10%.
-# Stop Forum Spam (SFS) listings: 3.
-# Updated: 2019.11.13
+# Stop Forum Spam (SFS) listings: 9.
+# Updated: 2020.03.23
 
 37.247.48.0/21 Deny Cloud
 95.157.96.0/24 Deny Cloud
@@ -9079,7 +9070,7 @@ Tag: Comvive Servidores
 188.164.128.0/21 Deny Cloud
 195.88.4.0/23 Deny Cloud
 Origin: IT
-185.136.176.0/22 Deny Cloud
+185.136.176.0/23 Deny Cloud
 Origin: RO
 192.71.245.0/24 Deny Cloud
 192.165.67.0/24 Deny Cloud
@@ -10255,9 +10246,9 @@ Tag: Telepoint Ltd
 
 
 # ASN 15967 ("Nazwa.pl Sp.z.o.o").
-# %Listed, Google Malware Dashboard: 0.62%.
-# Stop Forum Spam (SFS) listings: 51.
-# Updated: 2018.12.19 / Checked: 2019.11.02
+# %Listed, Google Malware Dashboard: 1.33%.
+# Stop Forum Spam (SFS) listings: 47.
+# Updated: 2018.12.19 / Checked: 2020.03.22
 
 31.172.168.0/22 Deny Cloud
 77.55.0.0/16 Deny Cloud
@@ -13171,12 +13162,11 @@ Origin: US
 Tag: eSited Solutions
 
 
-# ASN 21155 ("ProServe B.V").
-# No recent reports or bad activity detected. Possible candidate for future removal.
-# Updated: 2019.05.22 / Checked: 2019.10.05
+# ASNs 21155, 28878, 35470, 49685 ("ProServe B.V", "Signet B.V").
+# XMLRPC and brute-force attacks detected from this network. (At this time,
+# including everything from 21155, and just 83.96.*.* from the others).
+# Updated: 2020.03.23
 
-91.216.162.0/24 Deny Cloud
-Origin: DE
 80.84.224.0/19 Deny Cloud
 81.4.64.0/18 Deny Cloud
 83.96.128.0/17 Deny Cloud
@@ -13186,6 +13176,7 @@ Origin: DE
 91.198.87.0/24 Deny Cloud
 91.205.32.0/22 Deny Cloud
 91.213.165.0/24 Deny Cloud
+91.216.162.0/24 Deny Cloud
 91.220.123.0/24 Deny Cloud
 141.255.176.0/21 Deny Cloud
 185.95.68.0/22 Deny Cloud
@@ -13945,10 +13936,10 @@ Tag: ScaleUp Technologies
 
 
 # ASN 7363 ("Lightstream Transmission and Telecom Inc").
-# Stop Forum Spam (SFS) listings: 1.
-# Updated: 2019.11.13
+# No recent reports or bad activity detected. Possible candidate for future removal.
+# Updated: 2020.03.23
 
-107.189.32.0/19 Deny Cloud
+107.189.39.0/24 Deny Cloud
 199.204.184.0/22 Deny Cloud
 199.233.244.0/24 Deny Cloud
 199.233.246.0/23 Deny Cloud
@@ -15288,18 +15279,6 @@ Origin: US
 Tag: Data Room, Inc
 
 
-# ASN 7151 ("vXchnge Operating, LLC").
-# No recent reports or bad activity detected. Possible candidate for future removal.
-# Updated: 2019.05.27 / Checked: 2019.10.06
-
-72.20.96.0/19 Deny Cloud
-72.172.176.0/20 Deny Cloud
-169.145.112.0/24 Deny Cloud
-209.128.64.0/18 Deny Cloud
-Origin: US
-Tag: vXchnge
-
-
 # ASN 30870 ("Trans-IX B.V").
 # Some recent reports of brute-force attempts at AbuseIPDB. No other recent
 # reports or bad activity detected. Possible candidate for future removal.
@@ -15554,9 +15533,9 @@ Tag: Cloud Sigma
 
 
 # ASN 3064 ("Affinity Internet, Inc").
-# %Listed, Google Malware Dashboard: 0.26%.
-# Stop Forum Spam (SFS) listings: 22.
-# Updated: 2018.06.06 / Checked: 2019.11.02
+# %Listed, Google Malware Dashboard: 0.22%.
+# Stop Forum Spam (SFS) listings: 372.
+# Updated: 2018.06.06 / Checked: 2020.03.22
 
 117.74.96.0/20 Deny Cloud
 Origin: AU
@@ -23270,9 +23249,9 @@ Tag: Exa Bytes Network
 
 # ASN 45731 ("ARDH GLOBAL INDONESIA, PT").
 # Malware detected on network; Future C&C risk.
-# %Listed, Google Malware Dashboard: 0.34%.
-# Stop Forum Spam (SFS) listings: 32.
-# Updated: 2018.06.19 / Checked: 2019.11.02
+# %Listed, Google Malware Dashboard: 0.41%.
+# Stop Forum Spam (SFS) listings: 36.
+# Updated: 2018.06.19 / Checked: 2020.03.22
 
 103.6.52.0/22 Deny Cloud
 103.20.190.0/24 Deny Cloud
@@ -23328,9 +23307,8 @@ Tag: Master Internet
 
 # ASN 60307 ("FOP HORBAN VITALII Anatoliyovich").
 # Malware detected on network; Future C&C risk.
-# %Listed, Google Malware Dashboard: 5.88%.
-# Stop Forum Spam (SFS) listings: 345.
-# Updated: 2018.06.19 / Checked: 2019.11.02
+# Stop Forum Spam (SFS) listings: 12.
+# Updated: 2018.06.19 / Checked: 2020.03.22
 
 92.63.197.0/24 Deny Cloud
 Origin: RU
@@ -23339,8 +23317,8 @@ Tag: Anatoliyovich
 
 # ASN 38949 ("Trestel SK, a.s").
 # Malware detected on network; Future C&C risk.
-# %Listed, Google Malware Dashboard: 1.10%.
-# Updated: 2018.06.19 / Checked: 2019.11.02
+# %Listed, Google Malware Dashboard: 0.90%.
+# Updated: 2018.06.19 / Checked: 2020.03.22
 
 80.94.48.0/20 Deny Cloud
 Origin: SK
@@ -23578,8 +23556,8 @@ Tag: Sprious LLC
 
 # ASN 60144 ("3W Infra B.V").
 # Caught attempting to hack honeypots.
-# Stop Forum Spam (SFS) listings: 244.
-# Updated: 2019.11.14
+# Stop Forum Spam (SFS) listings: 246.
+# Updated: 2020.03.25
 
 193.104.200.0/24 Deny Cloud
 Origin: GR
@@ -23591,7 +23569,6 @@ Origin: GR
 185.56.28.0/22 Deny Cloud
 185.174.188.0/24 Deny Cloud
 185.197.160.0/22 Deny Cloud
-185.233.191.0/24 Deny Cloud
 192.162.136.0/22 Deny Cloud
 Origin: NL
 146.185.248.0/24 Deny Cloud
@@ -23601,12 +23578,8 @@ Origin: RU
 5.44.154.0/24 Deny Cloud
 185.111.235.0/24 Deny Cloud
 Origin: TR
-64.192.116.0/23 Deny Cloud
-69.45.134.0/23 Deny Cloud
 206.161.152.0/22 Deny Cloud
 207.226.64.0/21 Deny Cloud
-209.144.24.0/23 Deny Cloud
-209.144.230.0/23 Deny Cloud
 Origin: US
 Tag: 3W Infra B.V
 
@@ -25226,8 +25199,8 @@ Tag: Next Layer
 # ASN 62744 ("Quintex Alliance Consulting").
 # Caught probing honeypots for vulnerabilities + significant source of spam.
 # (Can omit anything under 44../8; clean).
-# Stop Forum Spam (SFS) listings: 79,563.
-# Updated: 2019.05.25 / Checked: 2019.10.06
+# Stop Forum Spam (SFS) listings: 74,327.
+# Updated: 2019.05.25 / Checked: 2020.03.23
 
 199.249.223.0/24 Deny Cloud
 199.249.224.0/24 Deny Cloud
@@ -25602,14 +25575,28 @@ Tag: Serverfield
 # ASN 31898 ("Oracle Corporation").
 # Listing here due to reports from some users of spam events, brute-force
 # attempts, probing, etc. Example: abuseipdb.com/check/129.213.67.237
-# I'm opting to list only those ASNs directly connected to any currently
-# available reports.
-# %Listed, Google Malware Dashboard: 0.56%.
-# Stop Forum Spam (SFS) listings: 274.
-# Updated: 2019.11.14
+# But, listing only the ASNs directly connected to current reports.
+# %Listed, Google Malware Dashboard: 0.48%.
+# Stop Forum Spam (SFS) listings: 267.
+# Updated: 2020.03.25
 
-129.146.0.0/16 Deny Cloud
-129.213.0.0/16 Deny Cloud
+129.146.0.0/21 Deny Cloud
+129.146.8.0/22 Deny Cloud
+129.146.12.0/23 Deny Cloud
+129.146.14.0/24 Deny Cloud
+129.146.16.0/20 Deny Cloud
+129.146.32.0/19 Deny Cloud
+129.146.64.0/18 Deny Cloud
+129.146.128.0/17 Deny Cloud
+129.148.128.0/21 Deny Cloud
+129.148.144.0/21 Deny Cloud
+129.148.192.0/21 Deny Cloud
+129.213.0.0/17 Deny Cloud
+129.213.128.0/18 Deny Cloud
+129.213.192.0/20 Deny Cloud
+129.213.208.0/21 Deny Cloud
+129.213.232.0/24 Deny Cloud
+129.213.239.0/24 Deny Cloud
 130.35.0.0/19 Deny Cloud
 130.35.48.0/20 Deny Cloud
 130.35.64.0/18 Deny Cloud
@@ -25630,6 +25617,8 @@ Tag: Serverfield
 134.70.80.0/20 Deny Cloud
 134.70.96.0/20 Deny Cloud
 134.70.112.0/21 Deny Cloud
+134.70.120.0/22 Deny Cloud
+134.70.132.0/22 Deny Cloud
 138.1.0.0/19 Deny Cloud
 138.1.32.0/20 Deny Cloud
 138.1.48.0/21 Deny Cloud
@@ -25641,19 +25630,24 @@ Tag: Serverfield
 140.91.16.0/20 Deny Cloud
 140.91.32.0/20 Deny Cloud
 140.91.48.0/22 Deny Cloud
+140.91.52.0/23 Deny Cloud
+140.91.58.0/23 Deny Cloud
 140.91.194.0/23 Deny Cloud
 140.91.196.0/22 Deny Cloud
 140.91.200.0/21 Deny Cloud
 140.91.208.0/21 Deny Cloud
 140.91.218.0/23 Deny Cloud
 140.91.220.0/22 Deny Cloud
-140.91.224.0/22 Deny Cloud
+140.91.224.0/21 Deny Cloud
 140.204.0.0/20 Deny Cloud
 140.204.16.0/21 Deny Cloud
 140.204.24.0/22 Deny Cloud
 140.204.30.0/23 Deny Cloud
 140.204.32.0/20 Deny Cloud
-140.204.48.0/23 Deny Cloud
+140.204.48.0/22 Deny Cloud
+140.204.52.0/23 Deny Cloud
+140.204.62.0/23 Deny Cloud
+140.204.64.0/23 Deny Cloud
 140.238.0.0/18 Deny Cloud
 140.238.64.0/19 Deny Cloud
 140.238.96.0/21 Deny Cloud
@@ -25673,29 +25667,26 @@ Tag: Serverfield
 147.154.208.0/21 Deny Cloud
 147.154.224.0/19 Deny Cloud
 150.136.0.0/16 Deny Cloud
-151.104.0.0/16 Deny Cloud
-152.67.0.0/20 Deny Cloud
-152.67.32.0/19 Deny Cloud
-152.67.64.0/20 Deny Cloud
-152.67.96.0/20 Deny Cloud
-152.67.128.0/19 Deny Cloud
-158.101.0.0/18 Deny Cloud
-158.101.128.0/19 Deny Cloud
-158.101.160.0/20 Deny Cloud
-158.101.192.0/18 Deny Cloud
+152.67.0.0/17 Deny Cloud
+152.67.128.0/18 Deny Cloud
+152.67.192.0/19 Deny Cloud
+158.101.0.0/16 Deny Cloud
+158.229.32.0/24 Deny Cloud
+162.88.25.0/24 Deny Cloud
+162.88.29.0/24 Deny Cloud
 168.138.0.0/18 Deny Cloud
+168.138.64.0/19 Deny Cloud
+168.138.96.0/21 Deny Cloud
+168.138.128.0/20 Deny Cloud
+168.138.144.0/21 Deny Cloud
+168.138.192.0/18 Deny Cloud
 192.29.0.0/18 Deny Cloud
-192.29.64.0/20 Deny Cloud
+192.29.64.0/19 Deny Cloud
 192.29.96.0/20 Deny Cloud
-192.29.128.0/21 Deny Cloud
-192.29.144.0/21 Deny Cloud
+192.29.128.0/19 Deny Cloud
 192.29.160.0/20 Deny Cloud
 192.29.176.0/21 Deny Cloud
-192.29.192.0/21 Deny Cloud
-192.29.208.0/21 Deny Cloud
-192.29.224.0/21 Deny Cloud
-192.29.240.0/21 Deny Cloud
-193.122.0.0/15 Deny Cloud
+192.29.192.0/18 Deny Cloud
 Origin: US
 Tag: Oracle Corporation
 
@@ -26106,9 +26097,9 @@ Tag: Nominet UK
 # ASNs 7489, 25926, 43603 ("HostUS").
 # Owns IPs associated with a Spamhaus top 10 worst offender listing (Nov 2019).
 # Dedicated webhosting provider with spam records at SFS and elsewhere.
-# %Listed, Google Malware Dashboard: 0.86% (AS7489).
-# Stop Forum Spam (SFS) listings: 1,200 (AS7489).
-# Updated: 2019.11.15
+# %Listed, Google Malware Dashboard: 0.79% (AS7489).
+# Stop Forum Spam (SFS) listings: 922 (AS7489).
+# Updated: 2020.03.26
 
 103.27.76.0/22 Deny Cloud
 103.122.244.0/22 Deny Cloud
@@ -26128,16 +26119,24 @@ Origin: EU
 185.227.68.0/22 Deny Cloud
 185.242.224.0/22 Deny Cloud
 193.34.76.0/22 Deny Cloud
+193.105.165.0/24 Deny Cloud
+193.105.177.0/24 Deny Cloud
+193.105.184.0/24 Deny Cloud
+193.105.207.0/24 Deny Cloud
 193.221.192.0/22 Deny Cloud
+194.31.140.0/22 Deny Cloud
 194.50.16.0/22 Deny Cloud
 194.56.224.0/22 Deny Cloud
 212.107.12.0/22 Deny Cloud
 Origin: GB
+45.124.64.0/22 Deny Cloud
 103.192.176.0/22 Deny Cloud
+103.207.68.0/22 Deny Cloud
 210.16.122.0/23 Deny Cloud
 Origin: HK
 5.182.48.0/22 Deny Cloud
 45.81.20.0/22 Deny Cloud
+45.90.144.0/22 Deny Cloud
 185.185.40.0/22 Deny Cloud
 185.186.65.0/24 Deny Cloud
 Origin: NL
@@ -26165,10 +26164,12 @@ Origin: SC
 172.106.32.0/23 Deny Cloud
 172.106.88.0/23 Deny Cloud
 172.106.194.0/23 Deny Cloud
-172.107.16.0/23 Deny Cloud
-172.107.21.0/24 Deny Cloud
-172.107.22.0/23 Deny Cloud
-202.5.16.0/20 Deny Cloud
+172.107.16.0/21 Deny Cloud
+202.5.16.0/21 Deny Cloud
+202.5.25.0/24 Deny Cloud
+202.5.26.0/23 Deny Cloud
+202.5.28.0/23 Deny Cloud
+202.5.30.0/24 Deny Cloud
 208.87.96.0/21 Deny Cloud
 216.189.144.0/22 Deny Cloud
 216.189.149.0/24 Deny Cloud
@@ -26182,13 +26183,13 @@ Tag: HostUS
 
 # ASN 208951 ("IT-GRAD NL B.V").
 # Unauthorised port scans detected from this network. Cloud provider.
-# Stop Forum Spam (SFS) listings: 114.
-# Updated: 2019.11.19
+# Stop Forum Spam (SFS) listings: 411.
+# Updated: 2020.03.26
 
 45.14.48.0/23 Deny Cloud
 45.14.50.0/24 Deny Cloud
 188.227.56.0/22 Deny Cloud
-188.227.84.0/24 Deny Cloud
+188.227.84.0/22 Deny Cloud
 Origin: NL
 Tag: IT-GRAD NL B.V
 
@@ -26230,9 +26231,9 @@ Tag: HUAWEI CLOUDS
 
 # ASN 20141 ("Quality Technology Services, LLC").
 # Caught hitting honeypots.
-# %Listed, Google Malware Dashboard: 0.43%.
-# Stop Forum Spam (SFS) listings: 43.
-# Updated: 2019.12.03
+# %Listed, Google Malware Dashboard: 0.39%.
+# Stop Forum Spam (SFS) listings: 40.
+# Updated: 2020.03.22
 
 64.57.240.0/20 Deny Cloud
 64.88.160.0/19 Deny Cloud
@@ -26241,9 +26242,6 @@ Tag: HUAWEI CLOUDS
 68.169.56.0/22 Deny Cloud
 68.171.160.0/20 Deny Cloud
 69.89.0.0/20 Deny Cloud
-74.116.32.0/21 Deny Cloud
-74.200.121.0/24 Deny Cloud
-74.200.122.0/24 Deny Cloud
 104.218.116.0/22 Deny Cloud
 139.177.137.0/24 Deny Cloud
 139.177.139.0/24 Deny Cloud
@@ -26265,10 +26263,9 @@ Tag: HUAWEI CLOUDS
 192.156.245.0/24 Deny Cloud
 192.156.247.0/24 Deny Cloud
 192.189.27.0/24 Deny Cloud
-199.164.21.0/24 Deny Cloud
+199.101.138.0/24 Deny Cloud
 199.164.28.0/24 Deny Cloud
 199.204.159.0/24 Deny Cloud
-204.11.139.0/24 Deny Cloud
 204.193.128.0/19 Deny Cloud
 206.187.4.0/22 Deny Cloud
 206.187.8.0/21 Deny Cloud
@@ -26715,8 +26712,7 @@ Tag: Hosting technology LTD
 
 # ASN 265839 ("HOSTING.CL").
 # Dedicated webhosting provider caught repeatedly performing XML-RPC attacks.
-# %Listed, Google Malware Dashboard: 0.14%.
-# Updated: 2019.12.27
+# Updated: 2019.12.27 / Checked: 2020.03.25
 
 190.96.85.0/24 Deny Cloud
 201.148.104.0/22 Deny Cloud
@@ -26779,12 +26775,13 @@ Tag: Meric Hosting
 
 # ASN 135387 ("Magna Hosting Ltd").
 # Dedicated webhosting provider and an occasional source of spam.
-# Stop Forum Spam (SFS) listings: 22.
-# Updated: 2019.12.27
+# Stop Forum Spam (SFS) listings: 18.
+# Updated: 2020.03.25
 
 43.246.216.0/22 Deny Cloud
 103.5.44.0/22 Deny Cloud
 103.35.204.0/22 Deny Cloud
+103.249.160.0/24 Deny Cloud
 103.249.162.0/24 Deny Cloud
 Origin: TW
 Tag: Magna Hosting Ltd
@@ -27502,6 +27499,109 @@ Origin: DE
 Tag: Leibniz-Rechenzentrum
 
 
+# ASN 11831 ("eSecureData").
+# Data center, webhosting provider, and a source of spam. Some VPNs/proxies
+# mixed in with them, so may want to bypass/ignore for some users, but can't
+# easily distinguish between the two, so marking the whole lot as cloud.
+# Stop Forum Spam (SFS) listings: 621.
+# Updated: 2020.03.25
+
+23.111.76.0/22 Deny Cloud
+71.19.240.0/20 Deny Cloud
+74.3.160.0/21 Deny Cloud
+74.3.168.0/24 Deny Cloud
+74.3.171.0/24 Deny Cloud
+74.3.172.0/22 Deny Cloud
+162.221.200.0/21 Deny Cloud
+162.244.236.0/22 Deny Cloud
+209.17.150.0/23 Deny Cloud
+209.17.170.0/23 Deny Cloud
+209.17.186.0/24 Deny Cloud
+209.17.190.0/23 Deny Cloud
+209.139.208.0/23 Deny Cloud
+216.18.20.0/22 Deny Cloud
+Origin: CA
+172.111.239.0/24 Deny Cloud
+Origin: US
+Tag: eSecureData
+
+
+# ASNs 21396, 31708 ("NetConnex Broadband Ltd", "Coreix Ltd").
+# Data center and webhosting provider. IPs from their networks caught trying to
+# hack WordPress sites, brute-force logins, perform XMLRPC attacks, etc.
+# %Listed, Google Malware Dashboard: 0.06% (AS31708).
+# Updated: 2020.03.25
+
+193.203.210.0/23 Deny Cloud
+Origin: DK
+5.182.220.0/22 Deny Cloud
+5.250.176.0/20 Deny Cloud
+31.193.168.0/21 Deny Cloud
+46.227.40.0/21 Deny Cloud
+62.197.32.0/19 Deny Cloud
+80.249.96.0/20 Deny Cloud
+83.142.24.0/21 Deny Cloud
+85.13.192.0/18 Deny Cloud
+86.105.196.0/24 Deny Cloud
+89.187.64.0/19 Deny Cloud
+93.113.110.0/23 Deny Cloud
+93.114.86.0/23 Deny Cloud
+93.114.184.0/23 Deny Cloud
+93.114.234.0/23 Deny Cloud
+109.70.136.0/21 Deny Cloud
+141.0.208.0/20 Deny Cloud
+145.255.224.0/21 Deny Cloud
+176.56.56.0/21 Deny Cloud
+178.249.40.0/24 Deny Cloud
+178.249.42.0/24 Deny Cloud
+185.17.180.0/22 Deny Cloud
+185.23.116.0/22 Deny Cloud
+185.31.204.0/22 Deny Cloud
+185.55.188.0/22 Deny Cloud
+185.65.40.0/22 Deny Cloud
+185.81.16.0/22 Deny Cloud
+185.96.220.0/22 Deny Cloud
+185.101.80.0/22 Deny Cloud
+185.140.144.0/22 Deny Cloud
+185.164.196.0/22 Deny Cloud
+185.181.252.0/22 Deny Cloud
+185.185.111.0/24 Deny Cloud
+188.212.34.0/23 Deny Cloud
+193.26.222.0/24 Deny Cloud
+193.223.78.0/24 Deny Cloud
+194.117.248.0/23 Deny Cloud
+194.180.184.0/22 Deny Cloud
+Origin: GB
+185.105.34.0/24 Deny Cloud
+Origin: RO
+Tag: NetConnex/Coreix
+
+
+# ASN 7040 ("NETMINDERS DATA SOLUTION").
+# Dedicated data center and a *huge* source of spam!
+# Stop Forum Spam (SFS) listings: 73,600.
+# Updated: 2020.03.25
+
+104.255.152.0/21 Deny Cloud
+162.254.132.0/22 Deny Cloud
+166.48.188.0/24 Deny Cloud
+198.144.144.0/20 Deny Cloud
+199.19.92.0/22 Deny Cloud
+199.21.148.0/22 Deny Cloud
+199.66.88.0/21 Deny Cloud
+199.167.136.0/22 Deny Cloud
+208.81.204.0/23 Deny Cloud
+Origin: CA
+91.204.48.0/24 Deny Cloud
+Origin: DE
+2.57.168.0/23 Deny Cloud
+45.130.80.0/24 Deny Cloud
+Origin: NL
+192.121.245.0/24 Deny Cloud
+Origin: SE
+Tag: NETMINDERS
+
+
 # ---
 # These CIDRs listed due to being caught performing hack attempts and various
 # other nefarious activities, in cases where we hope to not block the
@@ -27523,7 +27623,7 @@ Tag: Lanset America
 # A more up-to-date version of this section is available via the Azure optional blocklist provided by Macmathan.
 # It can be installed via the front-end or downloaded from the repository for Macmathan's blocklists hosted at
 # Bitbucket: https://bitbucket.org/macmathan/blocklists/src/master/CloudHosting/msaz_cidram.inc
-# Updated: 2020.01.31
+# Updated: 2020.03.26
 # Refer microsoft.com/en-us/download/details.aspx?id=56519
 # Refer microsoft.com/en-us/download/details.aspx?id=57062
 # Refer microsoft.com/en-us/download/details.aspx?id=57063
@@ -27663,19 +27763,58 @@ Origin: DE
 13.89.0.0/16 Run rules_specific.php
 13.90.0.0/15 Run rules_specific.php
 13.92.0.0/14 Run rules_specific.php
+13.104.98.192/27 Run rules_specific.php
 13.104.129.0/24 Run rules_specific.php
 13.104.144.0/20 Run rules_specific.php
 13.104.192.0/21 Run rules_specific.php
-13.104.208.0/21 Run rules_specific.php
-13.104.216.0/22 Run rules_specific.php
-13.104.220.0/23 Run rules_specific.php
-13.104.222.0/24 Run rules_specific.php
-13.104.223.0/25 Run rules_specific.php
-13.104.223.128/26 Run rules_specific.php
+13.104.208.0/20 Run rules_specific.php
+13.104.248.32/27 Run rules_specific.php
+13.104.248.64/26 Run rules_specific.php
+13.105.14.0/24 Run rules_specific.php
+13.105.16.0/25 Run rules_specific.php
+13.105.16.192/26 Run rules_specific.php
+13.105.17.0/24 Run rules_specific.php
+13.105.18.0/25 Run rules_specific.php
+13.105.18.128/26 Run rules_specific.php
+13.105.36.0/27 Run rules_specific.php
+13.105.36.32/28 Run rules_specific.php
+13.105.36.64/27 Run rules_specific.php
+13.105.36.128/25 Run rules_specific.php
+13.105.37.0/24 Run rules_specific.php
+13.106.38.142/32 Run rules_specific.php
+13.106.38.148/32 Run rules_specific.php
+13.106.54.3/32 Run rules_specific.php
+13.106.54.19/32 Run rules_specific.php
+13.106.57.181/32 Run rules_specific.php
+13.106.57.196/31 Run rules_specific.php
+13.106.118.32/27 Run rules_specific.php
+13.106.118.96/27 Run rules_specific.php
+13.107.3.0/24 Run rules_specific.php
+13.107.4.0/22 Run rules_specific.php
+13.107.9.0/24 Run rules_specific.php
+13.107.12.0/23 Run rules_specific.php
+13.107.15.0/24 Run rules_specific.php
+13.107.16.0/24 Run rules_specific.php
+13.107.18.0/23 Run rules_specific.php
+13.107.21.0/24 Run rules_specific.php
+13.107.22.0/24 Run rules_specific.php
+13.107.37.0/24 Run rules_specific.php
+13.107.38.0/23 Run rules_specific.php
+13.107.40.0/24 Run rules_specific.php
+13.107.42.0/23 Run rules_specific.php
+13.107.48.0/24 Run rules_specific.php
+13.107.50.0/24 Run rules_specific.php
+13.107.52.0/24 Run rules_specific.php
+13.107.54.0/24 Run rules_specific.php
+13.107.56.0/24 Run rules_specific.php
+13.107.64.0/18 Run rules_specific.php
+13.107.128.0/19 Run rules_specific.php
 13.107.208.0/24 Run rules_specific.php
 13.107.219.0/24 Run rules_specific.php
+13.107.245.0/24 Run rules_specific.php
 13.107.246.0/24 Run rules_specific.php
 13.107.253.0/24 Run rules_specific.php
+13.107.254.0/23 Run rules_specific.php
 20.36.0.0/15 Run rules_specific.php
 20.38.64.0/18 Run rules_specific.php
 20.38.128.0/20 Run rules_specific.php
@@ -27701,18 +27840,16 @@ Origin: DE
 20.44.0.0/27 Run rules_specific.php
 20.44.1.0/27 Run rules_specific.php
 20.44.2.0/24 Run rules_specific.php
-20.44.3.0/28 Run rules_specific.php
-20.44.3.24/29 Run rules_specific.php
-20.44.3.32/27 Run rules_specific.php
-20.44.3.64/26 Run rules_specific.php
+20.44.3.0/25 Run rules_specific.php
 20.44.3.128/26 Run rules_specific.php
 20.44.3.224/27 Run rules_specific.php
 20.44.4.0/26 Run rules_specific.php
 20.44.4.64/29 Run rules_specific.php
+20.44.4.72/30 Run rules_specific.php
 20.44.4.80/28 Run rules_specific.php
-20.44.4.104/29 Run rules_specific.php
-20.44.4.112/29 Run rules_specific.php
-20.44.4.128/27 Run rules_specific.php
+20.44.4.96/27 Run rules_specific.php
+20.44.4.128/26 Run rules_specific.php
+20.44.4.192/27 Run rules_specific.php
 20.44.6.0/23 Run rules_specific.php
 20.44.8.0/21 Run rules_specific.php
 20.44.16.0/20 Run rules_specific.php
@@ -27721,11 +27858,18 @@ Origin: DE
 20.44.128.0/17 Run rules_specific.php
 20.45.0.0/18 Run rules_specific.php
 20.45.64.0/19 Run rules_specific.php
-20.45.112.68/30 Run rules_specific.php
-20.45.112.80/28 Run rules_specific.php
-20.45.112.96/29 Run rules_specific.php
+20.45.112.64/27 Run rules_specific.php
+20.45.112.96/28 Run rules_specific.php
 20.45.112.112/29 Run rules_specific.php
+20.45.112.120/31 Run rules_specific.php
 20.45.112.128/26 Run rules_specific.php
+20.45.112.192/28 Run rules_specific.php
+20.45.112.216/29 Run rules_specific.php
+20.45.112.224/27 Run rules_specific.php
+20.45.113.0/25 Run rules_specific.php
+20.45.113.160/27 Run rules_specific.php
+20.45.113.192/27 Run rules_specific.php
+20.45.113.224/28 Run rules_specific.php
 20.45.120.0/21 Run rules_specific.php
 20.45.128.0/17 Run rules_specific.php
 20.46.0.0/18 Run rules_specific.php
@@ -27734,11 +27878,34 @@ Origin: DE
 20.46.160.0/19 Run rules_specific.php
 20.46.192.0/18 Run rules_specific.php
 20.47.0.0/19 Run rules_specific.php
-20.47.96.0/22 Run rules_specific.php
-20.47.104.0/21 Run rules_specific.php
+20.47.96.0/20 Run rules_specific.php
+20.47.112.0/22 Run rules_specific.php
 20.47.128.0/17 Run rules_specific.php
-20.48.0.0/18 Run rules_specific.php
+20.48.0.0/17 Run rules_specific.php
+20.48.128.0/18 Run rules_specific.php
 20.49.0.0/18 Run rules_specific.php
+20.49.80.0/27 Run rules_specific.php
+20.49.81.0/27 Run rules_specific.php
+20.49.82.0/30 Run rules_specific.php
+20.49.82.8/29 Run rules_specific.php
+20.49.82.16/28 Run rules_specific.php
+20.49.82.32/27 Run rules_specific.php
+20.49.82.64/26 Run rules_specific.php
+20.49.82.128/25 Run rules_specific.php
+20.49.83.0/25 Run rules_specific.php
+20.49.83.128/26 Run rules_specific.php
+20.49.83.192/27 Run rules_specific.php
+20.49.83.224/28 Run rules_specific.php
+20.49.88.0/21 Run rules_specific.php
+20.49.96.0/20 Run rules_specific.php
+20.49.112.0/21 Run rules_specific.php
+20.50.0.0/18 Run rules_specific.php
+20.50.64.0/21 Run rules_specific.php
+20.50.96.0/19 Run rules_specific.php
+20.50.128.0/17 Run rules_specific.php
+20.51.0.0/21 Run rules_specific.php
+20.52.0.0/19 Run rules_specific.php
+20.53.0.0/19 Run rules_specific.php
 20.140.0.0/20 Run rules_specific.php
 20.140.16.0/21 Run rules_specific.php
 20.140.32.0/19 Run rules_specific.php
@@ -27748,20 +27915,34 @@ Origin: DE
 20.140.96.0/19 Run rules_specific.php
 20.140.128.0/20 Run rules_specific.php
 20.140.144.0/27 Run rules_specific.php
-20.140.144.32/30 Run rules_specific.php
-20.140.144.40/29 Run rules_specific.php
+20.140.144.32/28 Run rules_specific.php
 20.140.144.48/29 Run rules_specific.php
+20.140.144.56/31 Run rules_specific.php
+20.140.144.64/29 Run rules_specific.php
+20.140.144.128/26 Run rules_specific.php
 20.140.152.0/21 Run rules_specific.php
 20.140.160.0/22 Run rules_specific.php
 20.140.164.0/24 Run rules_specific.php
 20.140.176.0/20 Run rules_specific.php
 20.140.192.0/19 Run rules_specific.php
+20.141.0.0/21 Run rules_specific.php
 20.150.0.0/17 Run rules_specific.php
-20.150.160.72/29 Run rules_specific.php
-20.150.160.80/28 Run rules_specific.php
+20.150.160.64/27 Run rules_specific.php
+20.150.160.96/29 Run rules_specific.php
 20.150.160.104/30 Run rules_specific.php
+20.150.160.108/31 Run rules_specific.php
 20.150.160.112/29 Run rules_specific.php
-20.150.160.128/26 Run rules_specific.php
+20.150.160.120/30 Run rules_specific.php
+20.150.160.128/25 Run rules_specific.php
+20.150.161.0/26 Run rules_specific.php
+20.150.161.128/28 Run rules_specific.php
+20.150.161.152/29 Run rules_specific.php
+20.150.161.160/27 Run rules_specific.php
+20.150.161.224/27 Run rules_specific.php
+20.150.162.0/23 Run rules_specific.php
+20.150.164.0/25 Run rules_specific.php
+20.150.164.128/27 Run rules_specific.php
+20.150.164.160/28 Run rules_specific.php
 20.150.168.0/27 Run rules_specific.php
 20.150.169.0/27 Run rules_specific.php
 20.150.170.0/30 Run rules_specific.php
@@ -27770,52 +27951,81 @@ Origin: DE
 20.150.170.32/27 Run rules_specific.php
 20.150.170.64/26 Run rules_specific.php
 20.150.170.128/25 Run rules_specific.php
-20.150.171.0/26 Run rules_specific.php
-20.150.171.72/29 Run rules_specific.php
-20.150.171.80/28 Run rules_specific.php
-20.150.171.96/27 Run rules_specific.php
+20.150.171.0/25 Run rules_specific.php
 20.150.171.128/26 Run rules_specific.php
 20.150.171.192/27 Run rules_specific.php
-20.150.172.0/26 Run rules_specific.php
-20.150.172.96/27 Run rules_specific.php
+20.150.172.0/25 Run rules_specific.php
 20.150.172.192/27 Run rules_specific.php
 20.150.172.224/31 Run rules_specific.php
+20.150.172.228/30 Run rules_specific.php
+20.150.172.232/29 Run rules_specific.php
+20.150.172.240/28 Run rules_specific.php
+20.150.173.0/25 Run rules_specific.php
+20.150.173.128/26 Run rules_specific.php
+20.150.173.192/27 Run rules_specific.php
+20.150.174.0/23 Run rules_specific.php
 20.150.176.0/27 Run rules_specific.php
 20.150.177.0/27 Run rules_specific.php
-20.150.178.0/24 Run rules_specific.php
-20.150.179.0/25 Run rules_specific.php
-20.150.179.128/26 Run rules_specific.php
-20.150.179.192/29 Run rules_specific.php
-20.150.179.208/28 Run rules_specific.php
-20.150.179.224/27 Run rules_specific.php
+20.150.178.0/23 Run rules_specific.php
+20.150.181.0/28 Run rules_specific.php
+20.150.181.16/29 Run rules_specific.php
 20.150.181.24/31 Run rules_specific.php
+20.150.181.28/30 Run rules_specific.php
+20.150.181.32/27 Run rules_specific.php
+20.150.181.64/26 Run rules_specific.php
+20.150.181.128/27 Run rules_specific.php
 20.150.184.0/27 Run rules_specific.php
 20.150.185.0/27 Run rules_specific.php
-20.150.186.0/24 Run rules_specific.php
-20.150.187.0/25 Run rules_specific.php
-20.150.187.128/26 Run rules_specific.php
-20.150.187.192/29 Run rules_specific.php
-20.150.187.208/28 Run rules_specific.php
-20.150.187.224/27 Run rules_specific.php
+20.150.186.0/23 Run rules_specific.php
+20.150.189.0/28 Run rules_specific.php
+20.150.189.16/29 Run rules_specific.php
 20.150.189.24/31 Run rules_specific.php
 20.151.0.0/19 Run rules_specific.php
 20.184.0.0/15 Run rules_specific.php
 20.186.0.0/16 Run rules_specific.php
 20.187.0.0/17 Run rules_specific.php
+20.187.128.0/18 Run rules_specific.php
+20.187.192.0/21 Run rules_specific.php
 20.188.0.0/15 Run rules_specific.php
 20.190.0.0/16 Run rules_specific.php
 20.191.0.0/17 Run rules_specific.php
 20.191.128.0/19 Run rules_specific.php
 20.191.192.0/18 Run rules_specific.php
 20.192.0.0/19 Run rules_specific.php
+20.192.32.0/25 Run rules_specific.php
 20.192.96.0/21 Run rules_specific.php
 20.192.160.0/28 Run rules_specific.php
+20.192.160.16/30 Run rules_specific.php
+20.192.160.20/31 Run rules_specific.php
 20.192.160.24/29 Run rules_specific.php
-20.192.160.32/28 Run rules_specific.php
+20.192.160.32/27 Run rules_specific.php
+20.192.160.64/26 Run rules_specific.php
 20.192.161.0/26 Run rules_specific.php
+20.192.161.64/27 Run rules_specific.php
+20.192.161.96/28 Run rules_specific.php
+20.192.161.128/29 Run rules_specific.php
+20.192.161.144/28 Run rules_specific.php
+20.192.161.160/27 Run rules_specific.php
+20.192.161.224/27 Run rules_specific.php
+20.192.162.0/23 Run rules_specific.php
+20.192.164.0/25 Run rules_specific.php
+20.192.164.128/27 Run rules_specific.php
+20.192.184.0/21 Run rules_specific.php
+20.192.224.64/26 Run rules_specific.php
+20.192.224.192/26 Run rules_specific.php
 20.192.225.0/27 Run rules_specific.php
+20.192.225.32/31 Run rules_specific.php
 20.192.225.40/29 Run rules_specific.php
+20.192.225.48/28 Run rules_specific.php
 20.192.225.64/26 Run rules_specific.php
+20.192.225.128/26 Run rules_specific.php
+20.192.225.200/29 Run rules_specific.php
+20.192.225.208/28 Run rules_specific.php
+20.192.225.224/27 Run rules_specific.php
+20.192.226.0/23 Run rules_specific.php
+20.192.228.0/25 Run rules_specific.php
+20.192.228.160/27 Run rules_specific.php
+20.192.228.192/27 Run rules_specific.php
 20.192.232.0/27 Run rules_specific.php
 20.192.233.0/27 Run rules_specific.php
 20.192.234.0/30 Run rules_specific.php
@@ -27823,36 +28033,39 @@ Origin: DE
 20.192.234.16/28 Run rules_specific.php
 20.192.234.32/27 Run rules_specific.php
 20.192.234.64/26 Run rules_specific.php
-20.192.234.128/25 Run rules_specific.php
+20.192.234.128/27 Run rules_specific.php
+20.192.234.160/28 Run rules_specific.php
+20.192.234.192/26 Run rules_specific.php
 20.192.235.0/25 Run rules_specific.php
 20.192.235.128/27 Run rules_specific.php
-20.192.235.192/27 Run rules_specific.php
-20.192.235.224/28 Run rules_specific.php
-20.192.235.248/29 Run rules_specific.php
+20.192.235.192/26 Run rules_specific.php
 20.192.236.0/23 Run rules_specific.php
 20.192.238.0/26 Run rules_specific.php
 20.192.238.64/27 Run rules_specific.php
+20.192.238.96/28 Run rules_specific.php
+20.192.238.112/29 Run rules_specific.php
 20.192.238.120/31 Run rules_specific.php
+20.192.238.124/30 Run rules_specific.php
+20.192.238.128/27 Run rules_specific.php
+20.192.238.160/28 Run rules_specific.php
+20.192.238.192/27 Run rules_specific.php
 20.193.0.0/18 Run rules_specific.php
 20.193.64.0/19 Run rules_specific.php
 20.193.200.0/27 Run rules_specific.php
 20.193.201.0/27 Run rules_specific.php
-20.193.202.0/30 Run rules_specific.php
-20.193.202.8/29 Run rules_specific.php
-20.193.202.16/28 Run rules_specific.php
-20.193.202.32/27 Run rules_specific.php
-20.193.202.64/26 Run rules_specific.php
-20.193.202.128/25 Run rules_specific.php
+20.193.202.0/25 Run rules_specific.php
+20.193.202.128/27 Run rules_specific.php
+20.193.202.160/28 Run rules_specific.php
+20.193.202.192/26 Run rules_specific.php
 20.193.203.0/25 Run rules_specific.php
 20.193.203.128/27 Run rules_specific.php
-20.193.203.192/27 Run rules_specific.php
-20.193.203.224/28 Run rules_specific.php
-20.193.203.248/29 Run rules_specific.php
+20.193.203.192/26 Run rules_specific.php
 20.193.204.0/23 Run rules_specific.php
-20.193.206.0/26 Run rules_specific.php
-20.193.206.64/27 Run rules_specific.php
-20.193.206.128/26 Run rules_specific.php
-20.193.206.200/31 Run rules_specific.php
+20.193.206.0/27 Run rules_specific.php
+20.193.206.48/28 Run rules_specific.php
+20.193.206.64/26 Run rules_specific.php
+20.193.206.128/27 Run rules_specific.php
+20.193.206.192/26 Run rules_specific.php
 23.96.0.0/15 Run rules_specific.php
 23.98.32.0/20 Run rules_specific.php
 23.98.48.0/21 Run rules_specific.php
@@ -27863,6 +28076,7 @@ Origin: DE
 23.99.0.0/16 Run rules_specific.php
 23.100.0.0/17 Run rules_specific.php
 23.100.128.0/18 Run rules_specific.php
+23.100.199.230/32 Run rules_specific.php
 23.100.224.0/19 Run rules_specific.php
 23.101.0.0/19 Run rules_specific.php
 23.101.32.0/21 Run rules_specific.php
@@ -27875,43 +28089,42 @@ Origin: DE
 23.103.64.32/27 Run rules_specific.php
 23.103.64.64/27 Run rules_specific.php
 23.103.66.0/23 Run rules_specific.php
+40.64.64.0/18 Run rules_specific.php
+40.64.128.0/21 Run rules_specific.php
 40.65.0.0/16 Run rules_specific.php
 40.66.0.128/25 Run rules_specific.php
-40.66.1.0/26 Run rules_specific.php
-40.66.1.128/26 Run rules_specific.php
-40.66.2.0/25 Run rules_specific.php
-40.66.2.128/26 Run rules_specific.php
-40.66.3.0/25 Run rules_specific.php
-40.66.3.128/26 Run rules_specific.php
-40.66.4.0/25 Run rules_specific.php
-40.66.4.128/26 Run rules_specific.php
+40.66.1.0/24 Run rules_specific.php
+40.66.2.0/23 Run rules_specific.php
+40.66.4.0/24 Run rules_specific.php
 40.66.32.0/19 Run rules_specific.php
 40.66.120.0/21 Run rules_specific.php
-40.67.48.68/30 Run rules_specific.php
-40.67.48.80/28 Run rules_specific.php
-40.67.48.96/29 Run rules_specific.php
+40.67.48.64/27 Run rules_specific.php
+40.67.48.96/28 Run rules_specific.php
 40.67.48.112/29 Run rules_specific.php
+40.67.48.120/31 Run rules_specific.php
 40.67.48.128/26 Run rules_specific.php
+40.67.48.192/28 Run rules_specific.php
+40.67.48.208/29 Run rules_specific.php
+40.67.48.224/27 Run rules_specific.php
+40.67.49.0/25 Run rules_specific.php
+40.67.49.160/27 Run rules_specific.php
+40.67.49.192/27 Run rules_specific.php
+40.67.49.224/28 Run rules_specific.php
 40.67.56.0/27 Run rules_specific.php
 40.67.57.0/27 Run rules_specific.php
-40.67.58.0/30 Run rules_specific.php
-40.67.58.8/29 Run rules_specific.php
-40.67.58.16/28 Run rules_specific.php
-40.67.58.32/27 Run rules_specific.php
-40.67.58.64/26 Run rules_specific.php
-40.67.58.128/25 Run rules_specific.php
-40.67.59.0/26 Run rules_specific.php
-40.67.59.72/29 Run rules_specific.php
-40.67.59.80/28 Run rules_specific.php
-40.67.59.96/27 Run rules_specific.php
+40.67.58.0/24 Run rules_specific.php
+40.67.59.0/25 Run rules_specific.php
 40.67.59.128/26 Run rules_specific.php
 40.67.59.192/27 Run rules_specific.php
 40.67.60.0/26 Run rules_specific.php
-40.67.60.64/29 Run rules_specific.php
-40.67.60.80/28 Run rules_specific.php
+40.67.60.64/27 Run rules_specific.php
 40.67.60.96/29 Run rules_specific.php
 40.67.60.108/31 Run rules_specific.php
+40.67.60.112/28 Run rules_specific.php
 40.67.60.128/27 Run rules_specific.php
+40.67.60.160/29 Run rules_specific.php
+40.67.60.176/28 Run rules_specific.php
+40.67.60.192/27 Run rules_specific.php
 40.67.62.0/23 Run rules_specific.php
 40.67.120.0/21 Run rules_specific.php
 40.67.128.0/17 Run rules_specific.php
@@ -27945,8 +28158,7 @@ Origin: DE
 40.77.137.128/26 Run rules_specific.php
 40.77.137.192/27 Run rules_specific.php
 40.77.138.0/23 Run rules_specific.php
-40.77.160.0/23 Run rules_specific.php
-40.77.163.0/24 Run rules_specific.php
+40.77.160.0/22 Run rules_specific.php
 40.77.164.0/23 Run rules_specific.php
 40.77.166.0/25 Run rules_specific.php
 40.77.166.128/28 Run rules_specific.php
@@ -28049,13 +28261,9 @@ Origin: DE
 40.87.0.0/17 Run rules_specific.php
 40.87.128.0/19 Run rules_specific.php
 40.87.160.0/21 Run rules_specific.php
-40.87.168.0/24 Run rules_specific.php
-40.87.169.0/25 Run rules_specific.php
-40.87.169.128/26 Run rules_specific.php
-40.87.169.192/27 Run rules_specific.php
-40.87.169.224/28 Run rules_specific.php
-40.87.169.240/30 Run rules_specific.php
-40.87.169.244/31 Run rules_specific.php
+40.87.168.0/23 Run rules_specific.php
+40.87.170.0/26 Run rules_specific.php
+40.87.170.64/29 Run rules_specific.php
 40.87.172.0/22 Run rules_specific.php
 40.87.176.0/25 Run rules_specific.php
 40.87.176.128/27 Run rules_specific.php
@@ -28068,15 +28276,17 @@ Origin: DE
 40.87.176.232/31 Run rules_specific.php
 40.87.176.240/28 Run rules_specific.php
 40.87.177.16/28 Run rules_specific.php
-40.87.177.32/29 Run rules_specific.php
-40.87.177.40/31 Run rules_specific.php
+40.87.177.32/27 Run rules_specific.php
+40.87.177.64/27 Run rules_specific.php
+40.87.177.96/28 Run rules_specific.php
+40.87.177.112/29 Run rules_specific.php
+40.87.177.120/31 Run rules_specific.php
 40.87.182.0/24 Run rules_specific.php
 40.87.183.0/25 Run rules_specific.php
 40.87.183.128/26 Run rules_specific.php
 40.87.183.192/27 Run rules_specific.php
-40.87.183.224/29 Run rules_specific.php
-40.87.183.232/30 Run rules_specific.php
-40.87.183.236/31 Run rules_specific.php
+40.87.183.224/28 Run rules_specific.php
+40.87.183.240/30 Run rules_specific.php
 40.87.184.0/21 Run rules_specific.php
 40.87.192.0/19 Run rules_specific.php
 40.87.224.0/20 Run rules_specific.php
@@ -28153,6 +28363,10 @@ Origin: DE
 40.91.32.0/22 Run rules_specific.php
 40.91.64.0/18 Run rules_specific.php
 40.91.192.0/18 Run rules_specific.php
+40.93.0.0/24 Run rules_specific.php
+40.93.4.0/24 Run rules_specific.php
+40.96.23.176/28 Run rules_specific.php
+40.102.8.48/28 Run rules_specific.php
 40.112.36.0/23 Run rules_specific.php
 40.112.38.0/24 Run rules_specific.php
 40.112.39.0/25 Run rules_specific.php
@@ -28176,6 +28390,7 @@ Origin: DE
 40.121.0.0/16 Run rules_specific.php
 40.122.0.0/16 Run rules_specific.php
 40.123.0.0/17 Run rules_specific.php
+40.123.128.0/22 Run rules_specific.php
 40.123.192.0/18 Run rules_specific.php
 40.124.0.0/16 Run rules_specific.php
 40.125.0.0/17 Run rules_specific.php
@@ -28185,6 +28400,7 @@ Origin: DE
 40.126.197.0/24 Run rules_specific.php
 40.126.198.0/24 Run rules_specific.php
 40.126.200.0/23 Run rules_specific.php
+40.126.207.0/24 Run rules_specific.php
 40.126.208.0/20 Run rules_specific.php
 40.126.224.0/19 Run rules_specific.php
 40.127.0.0/19 Run rules_specific.php
@@ -28194,8 +28410,15 @@ Origin: DE
 51.11.0.0/17 Run rules_specific.php
 51.11.128.0/18 Run rules_specific.php
 51.11.192.0/21 Run rules_specific.php
-51.12.41.0/29 Run rules_specific.php
+51.11.224.0/19 Run rules_specific.php
+51.12.40.64/26 Run rules_specific.php
+51.12.40.192/26 Run rules_specific.php
+51.12.41.0/28 Run rules_specific.php
 51.12.41.16/30 Run rules_specific.php
+51.12.41.32/27 Run rules_specific.php
+51.12.41.64/26 Run rules_specific.php
+51.12.41.128/27 Run rules_specific.php
+51.12.41.192/26 Run rules_specific.php
 51.12.96.0/27 Run rules_specific.php
 51.12.97.0/27 Run rules_specific.php
 51.12.98.0/30 Run rules_specific.php
@@ -28206,14 +28429,20 @@ Origin: DE
 51.12.98.128/25 Run rules_specific.php
 51.12.99.0/25 Run rules_specific.php
 51.12.99.128/26 Run rules_specific.php
-51.12.99.192/28 Run rules_specific.php
-51.12.99.208/29 Run rules_specific.php
-51.12.100.0/27 Run rules_specific.php
-51.12.100.32/28 Run rules_specific.php
+51.12.99.192/27 Run rules_specific.php
+51.12.100.0/26 Run rules_specific.php
 51.12.100.64/27 Run rules_specific.php
+51.12.100.96/29 Run rules_specific.php
+51.12.100.112/28 Run rules_specific.php
 51.12.102.0/23 Run rules_specific.php
-51.12.193.0/29 Run rules_specific.php
+51.12.192.64/26 Run rules_specific.php
+51.12.192.192/26 Run rules_specific.php
+51.12.193.0/28 Run rules_specific.php
 51.12.193.16/30 Run rules_specific.php
+51.12.193.32/27 Run rules_specific.php
+51.12.193.64/26 Run rules_specific.php
+51.12.193.128/27 Run rules_specific.php
+51.12.193.192/26 Run rules_specific.php
 51.12.200.0/27 Run rules_specific.php
 51.12.201.0/27 Run rules_specific.php
 51.12.202.0/30 Run rules_specific.php
@@ -28225,26 +28454,20 @@ Origin: DE
 51.12.203.0/25 Run rules_specific.php
 51.12.203.128/26 Run rules_specific.php
 51.12.203.192/27 Run rules_specific.php
-51.12.204.0/27 Run rules_specific.php
-51.12.204.32/28 Run rules_specific.php
-51.12.204.64/27 Run rules_specific.php
+51.12.204.0/25 Run rules_specific.php
+51.12.204.192/27 Run rules_specific.php
 51.12.206.0/23 Run rules_specific.php
 51.12.224.0/27 Run rules_specific.php
 51.12.225.0/27 Run rules_specific.php
-51.12.226.0/24 Run rules_specific.php
-51.12.227.0/25 Run rules_specific.php
-51.12.227.128/26 Run rules_specific.php
-51.12.227.192/29 Run rules_specific.php
-51.12.227.208/28 Run rules_specific.php
-51.12.227.224/27 Run rules_specific.php
+51.12.226.0/23 Run rules_specific.php
+51.12.229.0/28 Run rules_specific.php
+51.12.229.16/29 Run rules_specific.php
+51.12.229.32/27 Run rules_specific.php
 51.12.232.0/27 Run rules_specific.php
 51.12.233.0/27 Run rules_specific.php
-51.12.234.0/24 Run rules_specific.php
-51.12.235.0/25 Run rules_specific.php
-51.12.235.128/26 Run rules_specific.php
-51.12.235.192/29 Run rules_specific.php
-51.12.235.208/28 Run rules_specific.php
-51.12.235.224/27 Run rules_specific.php
+51.12.234.0/23 Run rules_specific.php
+51.12.237.0/28 Run rules_specific.php
+51.12.237.16/29 Run rules_specific.php
 51.13.0.0/17 Run rules_specific.php
 51.103.0.0/19 Run rules_specific.php
 51.104.0.0/15 Run rules_specific.php
@@ -28263,7 +28486,7 @@ Origin: DE
 51.120.240.0/20 Run rules_specific.php
 51.124.0.0/17 Run rules_specific.php
 51.124.128.0/18 Run rules_specific.php
-51.132.0.0/18 Run rules_specific.php
+51.132.0.0/17 Run rules_specific.php
 51.132.128.0/18 Run rules_specific.php
 51.136.0.0/15 Run rules_specific.php
 51.138.0.0/17 Run rules_specific.php
@@ -28273,22 +28496,30 @@ Origin: DE
 51.141.130.0/25 Run rules_specific.php
 51.141.132.0/22 Run rules_specific.php
 51.141.136.0/22 Run rules_specific.php
-51.141.144.0/20 Run rules_specific.php
+51.141.156.0/22 Run rules_specific.php
 51.141.160.0/19 Run rules_specific.php
 51.141.192.0/18 Run rules_specific.php
 51.142.0.0/15 Run rules_specific.php
 51.144.0.0/15 Run rules_specific.php
 52.96.11.0/24 Run rules_specific.php
+52.97.2.160/27 Run rules_specific.php
+52.97.6.160/27 Run rules_specific.php
+52.101.16.0/21 Run rules_specific.php
+52.102.158.0/23 Run rules_specific.php
+52.103.0.0/23 Run rules_specific.php
 52.108.0.0/21 Run rules_specific.php
 52.108.16.0/20 Run rules_specific.php
 52.108.32.0/19 Run rules_specific.php
-52.108.64.0/21 Run rules_specific.php
-52.108.72.0/22 Run rules_specific.php
-52.108.76.0/23 Run rules_specific.php
-52.108.198.0/23 Run rules_specific.php
-52.108.200.0/21 Run rules_specific.php
-52.108.208.0/20 Run rules_specific.php
-52.108.224.0/19 Run rules_specific.php
+52.108.64.0/19 Run rules_specific.php
+52.108.96.0/21 Run rules_specific.php
+52.108.104.0/22 Run rules_specific.php
+52.108.108.0/23 Run rules_specific.php
+52.108.110.0/24 Run rules_specific.php
+52.108.165.0/24 Run rules_specific.php
+52.108.166.0/23 Run rules_specific.php
+52.108.168.0/21 Run rules_specific.php
+52.108.176.0/20 Run rules_specific.php
+52.108.192.0/18 Run rules_specific.php
 52.109.0.0/18 Run rules_specific.php
 52.109.64.0/20 Run rules_specific.php
 52.109.88.0/21 Run rules_specific.php
@@ -28298,17 +28529,43 @@ Origin: DE
 52.109.128.0/20 Run rules_specific.php
 52.111.224.0/20 Run rules_specific.php
 52.111.240.0/21 Run rules_specific.php
-52.112.104.0/23 Run rules_specific.php
-52.112.108.0/23 Run rules_specific.php
+52.112.14.0/23 Run rules_specific.php
+52.112.17.0/24 Run rules_specific.php
+52.112.18.0/23 Run rules_specific.php
+52.112.24.0/21 Run rules_specific.php
+52.112.71.0/24 Run rules_specific.php
+52.112.76.0/22 Run rules_specific.php
+52.112.83.0/24 Run rules_specific.php
+52.112.97.0/24 Run rules_specific.php
+52.112.98.0/23 Run rules_specific.php
+52.112.104.0/21 Run rules_specific.php
+52.112.144.0/20 Run rules_specific.php
+52.112.197.0/24 Run rules_specific.php
+52.112.216.0/21 Run rules_specific.php
 52.112.232.0/23 Run rules_specific.php
 52.112.236.0/23 Run rules_specific.php
+52.112.240.0/20 Run rules_specific.php
+52.113.9.0/24 Run rules_specific.php
+52.113.16.0/20 Run rules_specific.php
+52.113.37.0/24 Run rules_specific.php
+52.113.40.0/21 Run rules_specific.php
+52.113.48.0/20 Run rules_specific.php
+52.113.83.0/24 Run rules_specific.php
 52.113.104.0/23 Run rules_specific.php
 52.113.108.0/22 Run rules_specific.php
+52.113.112.0/20 Run rules_specific.php
+52.113.136.0/21 Run rules_specific.php
+52.113.144.0/21 Run rules_specific.php
+52.113.160.0/19 Run rules_specific.php
+52.113.200.0/22 Run rules_specific.php
+52.113.204.0/24 Run rules_specific.php
+52.113.208.0/20 Run rules_specific.php
+52.113.224.0/19 Run rules_specific.php
 52.114.0.0/19 Run rules_specific.php
 52.114.32.0/20 Run rules_specific.php
-52.114.48.0/22 Run rules_specific.php
-52.114.52.0/23 Run rules_specific.php
-52.114.56.0/23 Run rules_specific.php
+52.114.48.0/21 Run rules_specific.php
+52.114.56.0/22 Run rules_specific.php
+52.114.60.0/23 Run rules_specific.php
 52.114.64.0/20 Run rules_specific.php
 52.114.84.0/22 Run rules_specific.php
 52.114.88.0/21 Run rules_specific.php
@@ -28316,32 +28573,43 @@ Origin: DE
 52.114.116.0/22 Run rules_specific.php
 52.114.120.0/22 Run rules_specific.php
 52.114.128.0/19 Run rules_specific.php
-52.114.160.0/21 Run rules_specific.php
-52.114.168.0/22 Run rules_specific.php
-52.114.180.0/23 Run rules_specific.php
-52.114.184.0/23 Run rules_specific.php
+52.114.160.0/20 Run rules_specific.php
+52.114.176.0/21 Run rules_specific.php
+52.114.184.0/22 Run rules_specific.php
 52.114.200.0/24 Run rules_specific.php
 52.114.224.0/24 Run rules_specific.php
 52.114.226.0/24 Run rules_specific.php
 52.114.228.0/24 Run rules_specific.php
-52.114.230.0/24 Run rules_specific.php
-52.114.232.0/24 Run rules_specific.php
+52.114.230.0/23 Run rules_specific.php
+52.114.232.0/23 Run rules_specific.php
 52.114.234.0/24 Run rules_specific.php
 52.114.236.0/24 Run rules_specific.php
 52.114.238.0/24 Run rules_specific.php
-52.114.240.0/24 Run rules_specific.php
+52.114.240.0/23 Run rules_specific.php
+52.114.242.0/24 Run rules_specific.php
 52.114.244.0/24 Run rules_specific.php
+52.114.248.0/21 Run rules_specific.php
 52.115.0.0/21 Run rules_specific.php
 52.115.8.0/22 Run rules_specific.php
 52.115.16.0/21 Run rules_specific.php
 52.115.24.0/22 Run rules_specific.php
-52.115.32.0/21 Run rules_specific.php
-52.115.40.0/22 Run rules_specific.php
-52.115.44.0/23 Run rules_specific.php
-52.115.48.0/21 Run rules_specific.php
-52.115.56.0/22 Run rules_specific.php
-52.115.60.0/23 Run rules_specific.php
+52.115.32.0/19 Run rules_specific.php
+52.115.64.0/20 Run rules_specific.php
+52.115.80.0/21 Run rules_specific.php
+52.115.88.0/22 Run rules_specific.php
+52.115.96.0/22 Run rules_specific.php
+52.115.128.0/18 Run rules_specific.php
+52.115.192.0/19 Run rules_specific.php
 52.115.248.0/21 Run rules_specific.php
+52.120.0.0/17 Run rules_specific.php
+52.120.128.0/20 Run rules_specific.php
+52.120.160.0/19 Run rules_specific.php
+52.120.192.0/18 Run rules_specific.php
+52.121.0.0/21 Run rules_specific.php
+52.121.16.0/20 Run rules_specific.php
+52.121.32.0/21 Run rules_specific.php
+52.121.48.0/20 Run rules_specific.php
+52.121.64.0/20 Run rules_specific.php
 52.125.128.0/21 Run rules_specific.php
 52.125.136.0/22 Run rules_specific.php
 52.125.140.0/23 Run rules_specific.php
@@ -28534,6 +28802,9 @@ Origin: DE
 52.253.185.0/24 Run rules_specific.php
 52.253.186.0/24 Run rules_specific.php
 52.253.191.0/24 Run rules_specific.php
+52.253.196.0/23 Run rules_specific.php
+52.253.198.0/24 Run rules_specific.php
+52.253.203.0/24 Run rules_specific.php
 52.253.224.0/20 Run rules_specific.php
 52.254.0.0/15 Run rules_specific.php
 64.4.8.0/24 Run rules_specific.php
@@ -28550,6 +28821,7 @@ Origin: DE
 65.54.19.128/27 Run rules_specific.php
 65.54.55.160/27 Run rules_specific.php
 65.54.55.224/27 Run rules_specific.php
+65.54.66.32/27 Run rules_specific.php
 65.55.32.128/28 Run rules_specific.php
 65.55.32.192/27 Run rules_specific.php
 65.55.32.224/28 Run rules_specific.php
@@ -28625,6 +28897,7 @@ Origin: DE
 102.37.16.0/21 Run rules_specific.php
 102.37.24.0/23 Run rules_specific.php
 102.37.32.0/19 Run rules_specific.php
+102.37.64.0/21 Run rules_specific.php
 102.133.0.0/18 Run rules_specific.php
 102.133.64.0/19 Run rules_specific.php
 102.133.96.0/20 Run rules_specific.php
@@ -28672,6 +28945,7 @@ Origin: DE
 111.221.78.0/23 Run rules_specific.php
 111.221.80.0/20 Run rules_specific.php
 111.221.96.0/20 Run rules_specific.php
+131.253.3.0/24 Run rules_specific.php
 131.253.12.16/28 Run rules_specific.php
 131.253.12.40/29 Run rules_specific.php
 131.253.12.48/29 Run rules_specific.php
@@ -28701,11 +28975,13 @@ Origin: DE
 131.253.15.16/28 Run rules_specific.php
 131.253.15.32/27 Run rules_specific.php
 131.253.15.192/26 Run rules_specific.php
+131.253.21.0/24 Run rules_specific.php
 131.253.24.0/28 Run rules_specific.php
 131.253.24.160/27 Run rules_specific.php
 131.253.24.192/26 Run rules_specific.php
 131.253.25.0/24 Run rules_specific.php
 131.253.27.0/24 Run rules_specific.php
+131.253.33.0/24 Run rules_specific.php
 131.253.34.224/27 Run rules_specific.php
 131.253.35.128/25 Run rules_specific.php
 131.253.36.128/26 Run rules_specific.php
@@ -28734,6 +29010,7 @@ Origin: DE
 137.135.0.0/16 Run rules_specific.php
 138.91.0.0/16 Run rules_specific.php
 147.243.0.0/16 Run rules_specific.php
+150.171.32.0/19 Run rules_specific.php
 157.55.2.128/26 Run rules_specific.php
 157.55.3.0/24 Run rules_specific.php
 157.55.7.128/26 Run rules_specific.php
@@ -28783,11 +29060,15 @@ Origin: DE
 157.55.160.0/19 Run rules_specific.php
 157.55.192.0/21 Run rules_specific.php
 157.55.200.0/22 Run rules_specific.php
-157.55.204.0/27 Run rules_specific.php
-157.55.204.32/28 Run rules_specific.php
+157.55.204.1/32 Run rules_specific.php
+157.55.204.2/31 Run rules_specific.php
+157.55.204.33/32 Run rules_specific.php
+157.55.204.34/31 Run rules_specific.php
 157.55.204.128/25 Run rules_specific.php
 157.55.208.0/21 Run rules_specific.php
-157.55.230.160/27 Run rules_specific.php
+157.55.230.161/32 Run rules_specific.php
+157.55.230.162/31 Run rules_specific.php
+157.55.230.164/32 Run rules_specific.php
 157.55.248.0/21 Run rules_specific.php
 157.56.2.0/23 Run rules_specific.php
 157.56.8.0/21 Run rules_specific.php
@@ -28847,19 +29128,18 @@ Origin: DE
 191.232.140.0/24 Run rules_specific.php
 191.232.160.0/19 Run rules_specific.php
 191.232.192.0/18 Run rules_specific.php
-191.233.0.0/21 Run rules_specific.php
-191.233.16.0/20 Run rules_specific.php
+191.233.0.0/19 Run rules_specific.php
 191.233.32.0/20 Run rules_specific.php
+191.233.48.0/21 Run rules_specific.php
 191.233.64.0/18 Run rules_specific.php
-191.233.128.0/19 Run rules_specific.php
-191.233.192.0/18 Run rules_specific.php
+191.233.128.0/17 Run rules_specific.php
 191.234.2.0/23 Run rules_specific.php
 191.234.16.0/20 Run rules_specific.php
 191.234.32.0/19 Run rules_specific.php
 191.234.128.0/21 Run rules_specific.php
 191.234.144.0/20 Run rules_specific.php
 191.234.160.0/19 Run rules_specific.php
-191.234.192.0/19 Run rules_specific.php
+191.234.192.0/18 Run rules_specific.php
 191.235.32.0/19 Run rules_specific.php
 191.235.64.0/18 Run rules_specific.php
 191.235.128.0/18 Run rules_specific.php
@@ -28912,7 +29192,9 @@ Origin: DE
 199.30.28.128/25 Run rules_specific.php
 199.30.29.0/24 Run rules_specific.php
 199.30.31.192/26 Run rules_specific.php
+202.89.233.96/28 Run rules_specific.php
 204.79.180.0/24 Run rules_specific.php
+204.79.197.0/24 Run rules_specific.php
 204.231.197.0/24 Run rules_specific.php
 207.46.13.0/24 Run rules_specific.php
 207.46.50.128/28 Run rules_specific.php

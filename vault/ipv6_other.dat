@@ -1,8 +1,8 @@
 # IPv6 signatures file (CIDRs for proxies, VPNs and other miscellaneous unwanted services).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_other.dat
 
-# Version: 2020.25.263
-# Last modified: 2020.01.26
+# Version: 2020.85.354
+# Last modified: 2020.03.26
 
 
 # ---
@@ -193,3 +193,28 @@ Tag: Octopusnet VPN
 2a03:e600:100::/48 Deny Proxy
 Origin: AT
 Tag: Applied Privacy
+
+
+# ASNs 22400, 50495, 62874, 199438, 204646 ("Web2Objects LLC").
+# Primarily provides anonymous proxy services. Under investigation for fraud.
+# Spam, hacking attempts, vulnerability probes, and other kinds of nefarious
+# and unwanted activity originating from their network. Regarded as high risk.
+# Stop Forum Spam (SFS) listings: 171 (AS50495), 18 (AS62874).
+# Updated: 2020.03.25
+
+2a00:f826:11::/48 Deny Proxy
+2a06:ef40::/32 Deny Proxy
+2a07:3400::/32 Deny Proxy
+2a07:3402::/32 Deny Proxy
+2a0d:2080::/29 Deny Proxy
+Origin: DE
+2a00:dd80:fb81::/48 Deny Proxy
+Origin: NL
+2602:ffb7:594::/48 Deny Proxy
+2602:ffb7:5a0::/46 Deny Proxy
+2602:ffb7:d00::/40 Deny Proxy
+2602:ffb7:f00::/40 Deny Proxy
+2602:ffd9:200::/40 Deny Proxy
+2602:ffd9:400::/40 Deny Proxy
+Origin: US
+Tag: Web2Objects LLC

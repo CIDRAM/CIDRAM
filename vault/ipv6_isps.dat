@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_isps.dat
 
-# Version: 2020.80.230
-# Last modified: 2020.03.21
+# Version: 2020.85.354
+# Last modified: 2020.03.26
 
 
 # ---
@@ -32,8 +32,8 @@ Tag: Vautron Rech. AG
 
 
 # ASN 38955 ("World4You Internet Services").
-# %Listed, Google Malware Dashboard: 0.18%.
-# Updated: 2016.01.18 / Checked: 2019.11.02
+# %Listed, Google Malware Dashboard: 0.43%.
+# Updated: 2016.01.18 / Checked: 2020.03.22
 
 2a00:1a68::/32 Deny Generic
 Origin: AT
@@ -472,8 +472,8 @@ Tag: TeNeT
 
 
 # ASN 31252 ("Starnet Servicii SRL").
-# Stop Forum Spam (SFS) listings: 53,955.
-# Updated: 2017.03.11 / Modified: 2019.11.02
+# Stop Forum Spam (SFS) listings: 40,318.
+# Updated: 2017.03.11 / Modified: 2019.11.02 / Checked: 2020.03.22
 
 2a00:9900::/29 Deny Spam
 2a01:320::/29 Deny Spam
@@ -483,9 +483,9 @@ Tag: STARNET S.R.L
 
 
 # ASN 37340 ("SPECTRANET LIMITED").
-# %Listed, abuseat.org (CBL-Listed): 14.93%.
-# Stop Forum Spam (SFS) listings: 347.
-# Updated: 2019.11.14
+# %Listed, abuseat.org (CBL-Listed): 14.13%.
+# Stop Forum Spam (SFS) listings: 372.
+# Updated: 2019.11.14 / Checked: 2020.03.22
 
 2c0f:f5a0::/32 Deny Spam
 Origin: NG
@@ -1462,13 +1462,12 @@ recaptcha:
 # Chinese mobile phone and data carrier. Listed here because of numerous spam
 # events being detected. Websites intended for a Chinese audience should keep
 # it listed in their ignore.dat file. (Omit invalids when updating).
-# %Listed, Google Malware Dashboard: 0.33%.
-# %Listed, abuseat.org (CBL-Listed): 0.01%.
-# Stop Forum Spam (SFS) listings: 1,179.
-# Updated: 2019.11.19
+# %Listed, Google Malware Dashboard: 0.42%.
+# %Listed, abuseat.org (CBL-Listed): 0.03%.
+# Stop Forum Spam (SFS) listings: 217.
+# Updated: 2020.03.22
 
 2402:5ec0::/32 Deny Spam
-2405:3140:31::/48 Deny Spam
 2409:8000::/20 Deny Spam
 Origin: CN
 Tag: Guangdong Mobile
@@ -1478,9 +1477,10 @@ recaptcha:
 
 
 # ASN 9387 ("AUGERE-Pakistan").
-# Listed due to spam incidence.
-# Stop Forum Spam (SFS) listings: 36.
-# Updated: 2017.03.22 / Checked: 2019.11.19
+# Listed due to spam incidence. Reduced reports this past year; maybe I could
+# eventually delist this section finally? We'll see how it goes.
+# Stop Forum Spam (SFS) listings: 23.
+# Updated: 2017.03.22 / Checked: 2020.03.26
 
 2401:4100::/32 Deny Spam
 Origin: PK
@@ -1497,23 +1497,24 @@ recaptcha:
 #   31353, 31496, 33887, 33934, 34137, 34168, 34205, 34267, 34584, 34875, 34974, 35125, 35154, 35177, 35389, 35400,
 #   35516, 35531, 38951, 38985, 39054, 39229, 39407, 41134, 42091, 42362, 42548, 42610, 43053, 43132, 43574, 44237,
 #   44412, 44467, 47460, 56341, 56350, 196747.
-# Very large amount of spam originating from this provider, which we could prevent by blocking the CIDRs associated
-# with it. Unfortunately, it also happens to be the #1 largest ISP in Russia, and blocking it entirely would
-# effectively be blocking the majority of human visitors to access protected websites visiting from within Russia,
-# which we don't want to be doing by default (although, for those that don't mind this idea, the optional blocklist
-# provided by MacMathan for blocking Russia would be highly recommended as a means to do so). Aggregating such a large
-# number of different ASNs into the one same section generally isn't a good idea either, due to increased
-# maintainability costs. As a compromise, I propose including a section here for PJSC Rostelecom, but we'll only
-# include those ASNs/CIDRs that we can clearly identify as being significant sources of spam, significantly "toxic",
-# etc. As an additional safety measure to minimise false positives, the section is marked for use with reCAPTCHA. If
-# this strategy fails, we may upgrade this section to eventually include the entire announces aggregate anyhow, and
-# just include an entry in ours ignores file to ignore by default, until commented out or removed.
+# Very large amount of spam originating from this provider, but it also happens
+# to be the #1 largest ISP in Russia, and blocking it entirely would
+# effectively be blocking a large portion of Russian users from protected
+# websites. Aggregating such a large number of different ASNs togeather also
+# adds some level of maintainability cost. As a compromise, though I'm
+# including this section here, I'm only listing the specific ASNs/CIDRs that
+# can be clearly identified as significant sources of spam, significantly
+# "toxic", problematic, etc. I'm also marking it for us with reCAPTCHA. If this
+# strategy fails, the section may eventually be upgraded to listing the entire
+# network, but it should be sufficient for now. Russian website owners should
+# keep the section marked in their ignore.dat file (it's also marked there by
+# default).
 
 # ASN 12389 ("PJSC Rostelecom").
-# %Listed, Google Malware Dashboard: 0.25%.
-# %Listed, abuseat.org (CBL-Listed): 0.65%.
-# Stop Forum Spam (SFS) listings: 275,020.
-# Updated: 2019.03.17 / Checked: 2019.11.19
+# %Listed, Google Malware Dashboard: 0.39%.
+# %Listed, abuseat.org (CBL-Listed): 0.52%.
+# Stop Forum Spam (SFS) listings: 234,919.
+# Updated: 2019.03.17 / Checked: 2020.03.26
 
 2a00:1640::/32 Deny Spam
 2a00:1e88::/32 Deny Spam
@@ -1530,9 +1531,9 @@ recaptcha:
 # Similarly to with the Rostelecom CIDRs, blocking the entirety of all
 # "Vimpelcom" ASNs could be problematic. Instead, we'll try to limit
 # listings to those CIDRs known to be problematic.
-# %Listed, abuseat.org (CBL-Listed): 0.42%.
-# Stop Forum Spam (SFS) listings: 2,422.
-# Updated: 2017.06.08 / Checked: 2019.11.19
+# %Listed, Google Malware Dashboard: 0.40%.
+# Stop Forum Spam (SFS) listings: 3,963.
+# Updated: 2017.06.08 / Checked: 2020.03.26
 
 2a00:18c0::/32 Deny Generic
 Origin: RU
@@ -1546,10 +1547,10 @@ recaptcha:
 # Similarly to with the Rostelecom CIDRs, blocking the entirety of all
 # "Vimpelcom" ASNs could be problematic. Instead, we'll try to limit
 # listings to those CIDRs known to be problematic.
-# %Listed, Google Malware Dashboard: 1.50%.
-# %Listed, abuseat.org (CBL-Listed): 0.27%.
-# Stop Forum Spam (SFS) listings: 5,245.
-# Updated: 2017.09.30 / Checked: 2019.11.19
+# %Listed, Google Malware Dashboard: 1.98%.
+# %Listed, abuseat.org (CBL-Listed): 7.70%.
+# Stop Forum Spam (SFS) listings: 9,116.
+# Updated: 2017.09.30 / Checked: 2020.03.26
 
 2a00:1248::/32 Deny Generic
 Origin: RU
@@ -1576,8 +1577,8 @@ recaptcha:
 # ASN 3255 (State Enterprise Scientific and Telecommunication Centre "Ukrainian
 # Academic and Research Network" of the Institute for Condensed Matter Physics
 # of the National Academy of Science of Ukraine / UARNet).
-# Stop Forum Spam (SFS) listings: 1,242.
-# Updated: 2017.07.08 / Checked: 2019.11.19
+# Stop Forum Spam (SFS) listings: 1,471.
+# Updated: 2017.07.08 / Checked: 2020.03.26
 
 2a00:fc00::/32 Deny Spam
 Origin: UA
@@ -1925,8 +1926,8 @@ Tag: IT Systems LLC
 
 # ASNs 31343, 38978, 43656 ("Intertelecom Ltd").
 # Caught trying to hack into WordPress sites.
-# Stop Forum Spam (SFS) listings: 125 (AS31343), 17 (AS43656).
-# Updated: 2018.09.01 / Checked: 2019.11.19
+# Stop Forum Spam (SFS) listings: 201 (AS31343), 14 (AS43656).
+# Updated: 2018.09.01 / Checked: 2020.03.25
 
 2a04:1d00::/29 Deny Generic
 Origin: UA

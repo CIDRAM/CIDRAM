@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2020.02.02).
+ * This file: Front-end functions file (last modified: 2020.04.04).
  */
 
 /**
@@ -955,6 +955,9 @@ $CIDRAM['SimulateBlockEvent'] = function ($Addr, $Modules = false, $Aux = false,
          */
         $Modules = explode(',', $CIDRAM['Config']['signatures']['modules']);
         array_walk($Modules, function ($Module) use (&$CIDRAM) {
+            if (!empty($CIDRAM['Whitelisted'])) {
+                return;
+            }
             $Module = (strpos($Module, ':') === false) ? $Module : substr($Module, strpos($Module, ':') + 1);
             $Infractions = $CIDRAM['BlockInfo']['SignatureCount'];
             if (isset($CIDRAM['ModuleResCache'][$Module]) && is_object($CIDRAM['ModuleResCache'][$Module])) {
@@ -2680,7 +2683,7 @@ $CIDRAM['RangeTablesIterateData'] = function (
                         $CIDRAM['FE']['Flags'] && $Origin !== '??' ? '<span class="flag ' . $Origin . '"></span> – ' : ''
                     ) . $Count;
                 }
-                $Arr[$IPType . '-Origin'][$SigType][$Range] = implode('<br />', $Arr[$IPType . '-Origin'][$SigType][$Range]);
+                $Arr[$IPType . '-Origin'][$SigType][$Range] = implode('<br /><br />', $Arr[$IPType . '-Origin'][$SigType][$Range]);
                 $Arr[$IPType][$SigType][$Range] .= '<hr />' . $Arr[$IPType . '-Origin'][$SigType][$Range];
             }
         } else {
@@ -2740,7 +2743,7 @@ $CIDRAM['RangeTablesIterateData'] = function (
                     $CIDRAM['FE']['Flags'] && $Origin !== '??' ? '<span class="flag ' . $Origin . '"></span> – ' : ''
                 ) . '<span id="' . $ThisID . '"></span>';
             }
-            $Arr[$IPType . '-Origin'][$SigType]['Total'] = implode('<br />', $Arr[$IPType . '-Origin'][$SigType]['Total']);
+            $Arr[$IPType . '-Origin'][$SigType]['Total'] = implode('<br /><br />', $Arr[$IPType . '-Origin'][$SigType]['Total']);
             $Arr[$IPType][$SigType]['Total'] .= '<hr />' . $Arr[$IPType . '-Origin'][$SigType]['Total'];
         }
     } else {

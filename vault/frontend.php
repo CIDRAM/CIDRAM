@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2020.02.02).
+ * This file: Front-end handler (last modified: 2020.04.04).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -1289,7 +1289,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
             if (isset($CIDRAM['DirValue']['choices'])) {
                 if ($CIDRAM['DirValue']['type'] !== 'checkbox') {
                     $CIDRAM['ThisDir']['FieldOut'] = sprintf(
-                        '<select class="auto" name="%1$s" id="%1$s_field"%2$s>',
+                        '<select class="auto" style="text-transform:capitalize" name="%1$s" id="%1$s_field"%2$s>',
                         $CIDRAM['ThisDir']['DirLangKey'],
                         $CIDRAM['ThisDir']['Trigger']
                     );
@@ -1312,8 +1312,14 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
                             $CIDRAM['ChoiceValue']
                         );
                     } else {
+                        foreach (['response_', 'label_', 'field_'] as $CIDRAM['ChoicePrefix']) {
+                            if (array_key_exists($CIDRAM['ChoicePrefix'] . $CIDRAM['ChoiceValue'], $CIDRAM['L10N']->Data)) {
+                                $CIDRAM['ChoiceValue'] = $CIDRAM['L10N']->getString($CIDRAM['ChoicePrefix'] . $CIDRAM['ChoiceValue']);
+                                break;
+                            }
+                        }
                         $CIDRAM['ThisDir']['FieldOut'] .= sprintf(
-                            '<option value="%1$s"%2$s>%3$s</option>',
+                            '<option style="text-transform:capitalize" value="%1$s"%2$s>%3$s</option>',
                             $CIDRAM['ChoiceKey'],
                             $CIDRAM['ChoiceKey'] === $CIDRAM['Config'][$CIDRAM['CatKey']][$CIDRAM['DirKey']] ? ' selected' : '',
                             $CIDRAM['ChoiceValue']

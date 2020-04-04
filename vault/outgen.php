@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Output generator (last modified: 2020.02.02).
+ * This file: Output generator (last modified: 2020.04.04).
  */
 
 /** Initialise cache. */
@@ -189,6 +189,9 @@ if ($CIDRAM['Protect'] && !$CIDRAM['Config']['general']['maintenance_mode'] && e
          * have their own scope and that superfluous data isn't preserved.
          */
         array_walk($CIDRAM['Modules'], function ($Module) use (&$CIDRAM) {
+            if (!empty($CIDRAM['Whitelisted'])) {
+                return;
+            }
             $Module = (strpos($Module, ':') === false) ? $Module : substr($Module, strpos($Module, ':') + 1);
             $Infractions = $CIDRAM['BlockInfo']['SignatureCount'];
             if (isset($CIDRAM['ModuleResCache'][$Module]) && is_object($CIDRAM['ModuleResCache'][$Module])) {

@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_isps.dat
 
-# Version: 2020.85.354
-# Last modified: 2020.03.26
+# Version: 2020.95.194
+# Last modified: 2020.04.05
 
 
 # ---
@@ -2177,6 +2177,81 @@ recaptcha:
 2a0f:1e40::/32 Deny Malware
 Origin: UA
 Tag: Extratel Ltd
+---
+recaptcha:
+ enabled: true
+
+
+# ASN 13489 ("EPM Telecomunicaciones S.A. E.S.P").
+# Source of forum spam and some email harvestors.
+# (Mark EU and US CIDRs as cloud; the rest as spam).
+# %Listed, abuseat.org (CBL-Listed): 0.38%.
+# Stop Forum Spam (SFS) listings: 6,140.
+# Updated: 2020.04.05
+
+2800:e0::/28 Deny Spam
+2801:19:4800::/48 Deny Spam
+2801:1d:4800::/48 Deny Spam
+2801:11c:a0::/43 Deny Spam
+2801:162::/48 Deny Spam
+2803:d80::/29 Deny Spam
+2803:87a0::/32 Deny Spam
+Origin: CO
+Tag: EPM Telecomunicaciones
+---
+recaptcha:
+ enabled: true
+
+
+# ASN 6830 ("Liberty Global B.V").
+# Source of forum spam and some email harvestors.
+# %Listed, Google Malware Dashboard: 0.27%.
+# Stop Forum Spam (SFS) listings: 11,199.
+# Updated: 2020.04.05
+
+2001:730::/29 Deny Spam
+2a02:8380::/28 Deny Spam
+Origin: AT
+2001:678:310::/48 Deny Spam
+2001:67c:2350::/48 Deny Spam
+2a00:e2c0::/32 Deny Spam
+2a02:aa00::/27 Deny Spam
+2a03:5120::/40 Deny Spam
+2a05:e100::/48 Deny Spam
+2a07:291b::/32 Deny Spam
+2a0d:ed80:300::/40 Deny Spam
+Origin: CH
+2001:67c:1b50::/48 Deny Spam
+2001:67c:2d2c::/48 Deny Spam
+2a00:1e60::/32 Deny Spam
+2a01:5e0::/32 Deny Spam
+2a02:8300::/28 Deny Spam
+2a04:4d40::/29 Deny Spam
+2a0a:b6c0::/32 Deny Spam
+2a0b:c180::/32 Deny Spam
+2a0b:d780::/29 Deny Spam
+2a0b:e440::/29 Deny Spam
+Origin: CZ
+2a01:b460::/32 Deny Spam
+2a02:908::/32 Deny Spam
+2a02:45c0:17::/48 Deny Spam
+2a02:8070::/31 Deny Spam
+2a03:4b20:f000::/36 Deny Spam
+Origin: DE
+2a02:ab80::/28 Deny Spam
+Origin: HU
+2a02:8080::/29 Deny Spam
+Origin: IE
+2a02:a200::/27 Deny Spam
+Origin: NL
+2001:4050::/32 Deny Spam
+2a02:a300::/27 Deny Spam
+Origin: PL
+2a04:2400::/27 Deny Spam
+Origin: RO
+2a02:ab00::/29 Deny Spam
+Origin: SK
+Tag: Liberty Global
 ---
 recaptcha:
  enabled: true

@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6.dat
 
-# Version: 2020.89.165
-# Last modified: 2020.03.30
+# Version: 2020.95.194
+# Last modified: 2020.04.05
 
 
 # ---
@@ -1480,19 +1480,28 @@ Origin: US
 Tag: AS46562
 
 
-# "Host Europe GmbH", "HEG Managed", "PlusServer GmbH" (all three combined due
-# to heavy interlacing). ASNs 5521, 6659, 8972, 15891, 20621, 20738, 20773,
-# 25074, 31100, 34011, 34088, 35329, 61157, 200386.
-# Updated: 2019.12.23
+# ASNs 5521, 6659, 8972, 15891, 20621, 20738, 20773, 21499, 21501, 25074,
+# 29066, 29486, 31100, 34011, 34088, 35329, 39783, 44273, 61157, 200386 ("Host
+# Europe GmbH", "PlusServer GmbH").
+# Extremely large international, dedicated webhosting provider, and a
+# significant source of ongoing spam, hack attempts, and other nefarious
+# traffic over the course of many years.
+# (When updating, mark EU origin as proxy; everything else as cloud).
+# Updated: 2020.04.05
 
 2001:830::/32 Deny Cloud
 2001:aa8::/32 Deny Cloud
 2001:1520::/32 Deny Cloud
 2a00:e10::/32 Deny Cloud
 2a00:1158::/32 Deny Cloud
+2a00:1168::/32 Deny Cloud
+2a00:1c90::/32 Deny Cloud
+2a00:74c0::/32 Deny Cloud
 2a01:488::/32 Deny Cloud
+2a01:7a0::/29 Deny Cloud
 2a01:a740::/32 Deny Cloud
 2a02:ad0::/29 Deny Cloud
+2a02:2690::/32 Deny Cloud
 2a02:cbf0::/30 Deny Cloud
 2a02:cbf4::/31 Deny Cloud
 2a02:cbf7::/47 Deny Cloud
@@ -1502,10 +1511,20 @@ Tag: AS46562
 2a04:e0c0::/29 Deny Cloud
 2a05:c340::/29 Deny Cloud
 2a09:2040::/29 Deny Cloud
+2a0d:f46::/32 Deny Cloud
 2a0e:a680:1::/48 Deny Cloud
 Origin: DE
 2a02:4e8::/32 Deny Cloud
 Origin: GB
+2406:f380::/32 Deny Cloud
+Origin: HK
+2402:5780::/32 Deny Cloud
+Origin: SG
+2603:5:2100::/40 Deny Cloud
+2603:5:2200::/40 Deny Cloud
+2604:bc80::/32 Deny Cloud
+2606:e180::/32 Deny Cloud
+Origin: US
 Tag: Host Europe GmbH
 
 
@@ -2755,9 +2774,9 @@ Tag: Makonix SIA
 
 
 # ASN 57169 ("EDIS GmbH").
-# %Listed, Google Malware Dashboard: 0.30%.
-# Stop Forum Spam (SFS) listings: 1,112.
-# Updated: 2019.11.23
+# %Listed, Google Malware Dashboard: 0.56%.
+# Stop Forum Spam (SFS) listings: 644.
+# Updated: 2019.11.23 / Checked: 2020.04.05
 
 2a03:f80:852::/48 Deny Cloud
 2a03:f80:ad15::/48 Deny Cloud
@@ -3468,9 +3487,9 @@ Tag: Amazon.com, Inc
 
 
 # ASN 62282 ("UAB Rakrejus").
-# %Listed, Google Malware Dashboard: 0.13%.
-# Stop Forum Spam (SFS) listings: 17,357.
-# Updated: 2016.10.01 / Checked: 2019.11.23
+# %Listed, Google Malware Dashboard: 0.15%.
+# Stop Forum Spam (SFS) listings: 10,008.
+# Updated: 2016.10.01 / Checked: 2020.04.05
 
 2a01:41a0::/32 Deny Cloud
 2a02:7b40::/32 Deny Cloud
@@ -4490,24 +4509,6 @@ Origin: UA
 Tag: meerfarbig
 
 
-# ASN 29066 ("velia.net Internetdienste GmbH").
-# Note when updating: Also contains "proxy" signatures.
-# %Listed, Google Malware Dashboard: 0.11%.
-# Stop Forum Spam (SFS) listings: 65,503.
-# Updated: 2019.11.23
-
-2a01:7a0::/29 Deny Cloud
-Origin: DE
-2406:f380::/32 Deny Cloud
-Origin: HK
-2402:5780::/32 Deny Cloud
-Origin: SG
-2604:bc80::/32 Deny Cloud
-2606:e180::/32 Deny Cloud
-Origin: US
-Tag: velia.net
-
-
 # ASNs 38719, 135132 ("Dreamscape Networks Pty Ltd").
 # Dedicated webhosting provider and an occasional source of spam.
 # %Listed, Google Malware Dashboard: 0.15% (AS38719).
@@ -4930,7 +4931,7 @@ Tag: Colocation Australia
 # ASN 6295 ("Green House Data, Inc").
 # No listings at Google or SFS at the time of last check, but still reports of
 # port scanning and so on at AbuseIPDB. Should reevaluate at next update.
-# Updated: 2019.11.20
+# Updated: 2019.11.20 / Checked: 2020.04.01
 
 2607:8200:e000::/36 Deny Cloud
 Origin: US
@@ -5497,15 +5498,24 @@ Tag: Namecheap, Inc
 
 
 # ASN 49349 ("Dotsi, Unipessoal Lda").
-# %Listed, Google Malware Dashboard: 1.06%.
-# Stop Forum Spam (SFS) listings: 418.
-# Updated: 2018.04.23 / Checked: 2019.11.24
+# %Listed, Google Malware Dashboard: 0.78%.
+# Stop Forum Spam (SFS) listings: 323.
+# Updated: 2018.04.23 / Checked: 2020.04.05
 
 2a00:1c60::/32 Deny Cloud
 Origin: PT
 2a02:7a60::/32 Deny Cloud
 Origin: UA
 Tag: Dotsi
+
+
+# ASN 263179 ("Webline Services, S.A").
+# Stop Forum Spam (SFS) listings: 1,022.
+# Updated: 2020.04.01
+
+2803:c880::/32 Deny Cloud
+Origin: HN
+Tag: Webline Services
 
 
 # ASN 197071 ("Dennis Rainer Warnholz trading as active-servers.com").

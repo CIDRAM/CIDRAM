@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_isps.dat
 
-# Version: 2020.95.194
-# Last modified: 2020.04.05
+# Version: 2020.99.240
+# Last modified: 2020.04.09
 
 
 # ---
@@ -179,23 +179,18 @@ recaptcha:
 
 
 # ASN 3223 ("Voxility LLC").
-# %Listed, Google Malware Dashboard: 0.26%.
-# Stop Forum Spam (SFS) listings: 2,047.
-# Updated: 2019.12.04
+# %Listed, Google Malware Dashboard: 0.35%.
+# Stop Forum Spam (SFS) listings: 2,248.
+# Updated: 2020.04.09
 
-2a06:b380::/29 Deny Generic
-Origin: GB
-2602:ff84:8::/48 Deny Generic
-2a03:5180::/48 Deny Generic
-2a03:5180:1:b::/64 Deny Generic
-2a03:5180:1:c::/64 Deny Generic
-2a03:5180:1:f::/64 Deny Generic
-2a03:5180:2::/47 Deny Generic
-2a03:5180:4::/46 Deny Generic
+2a03:5180::/45 Deny Generic
 2a03:5180:8::/47 Deny Generic
 2a03:5180:a::/48 Deny Generic
+2a03:5180:c::/48 Deny Generic
 2a03:5180:10::/47 Deny Generic
 Origin: RO
+2602:ff84:8::/48 Deny Generic
+Origin: US
 Tag: Voxility LLC
 
 
@@ -270,8 +265,7 @@ Tag: CH-NET S.R.L
 
 
 # ASN 7743 ("JPMorgan Chase & Co").
-# Stop Forum Spam (SFS) listings: 1.
-# Updated: 2019.06.02 / Checked: 2019.10.10
+# Updated: 2019.06.02 / Checked: 2020.04.08
 
 2620:11::/45 Deny Generic
 2620:11:8::/47 Deny Generic
@@ -342,9 +336,10 @@ Tag: Trend Micro
 # Domestic Israeli ISP with human endpoints, but has some bad actors (spambots,
 # scrapers, etc). Marked for use with reCAPTCHA and included in ignore.dat by
 # default to reduce the false positive risk.
-# %Listed, Google Malware Dashboard: 0.06%.
-# Stop Forum Spam (SFS) listings: 2,033.
-# Updated: 2019.12.04
+# %Listed, Google Malware Dashboard: 0.10%.
+# %Listed, abuseat.org (CBL-Listed): 0.34%.
+# Stop Forum Spam (SFS) listings: 999.
+# Updated: 2019.12.04 / Checked: 2020.04.09
 
 2a02:26f0:8000::/48 Deny Generic
 Origin: EU
@@ -402,16 +397,6 @@ Tag: Xirra GmbH
 2a00:ede0::/32 Deny Generic
 Origin: UA
 Tag: PP SKS-LUGAN
-
-
-# ASN 62454 ("Zyztm Research Division 10 B.V").
-# Cyber warfare, credit card theft, etc.
-# Stop Forum Spam (SFS) listings: 2.
-# Updated: 2016.04.23 / Checked: 2019.10.23
-
-2a01:54c0::/32 Deny Generic
-Origin: NL
-Tag: Zyztm
 
 
 # ASN 43260 ("DGN TEKNOLOJI BILISIM YAYINCILIK SANAYI VE LIMITED SIRKETI").
@@ -509,54 +494,38 @@ recaptcha:
  enabled: true
 
 
-# ASN 45804 ("MEGHBELA BROADBAND").
-# Significant source of forum/blog spam. Also a legit Indian ISP with human
-# endpoints. Websites based in, or targeted towards an Indian audience, should
-# keep it listed in their ignore.dat file. Marked for use with reCAPTCHA.
-# Stop Forum Spam (SFS) listings: 288.
-# Updated: 2019.08.01 / Checked: 2019.12.04
-
-2403:8500:100::/40 Deny Spam
-2403:8500:200::/39 Deny Spam
-2403:8500:400::/38 Deny Spam
-2403:8500:800::/39 Deny Spam
-2403:8500:1200::/40 Deny Spam
-Origin: IN
-Tag: MEGHBELA BROADBAND
----
-recaptcha:
- enabled: true
-
-
 # ASN 45271 ("Idea Cellular Limited").
 # Significant source of forum/blog spam. Also a legit Indian ISP with human
 # endpoints. Websites based in, or targeted towards an Indian audience, should
 # keep it listed in their ignore.dat file. Marked for use with reCAPTCHA.
-# %Listed, abuseat.org (CBL-Listed): 42.17%.
-# Stop Forum Spam (SFS) listings: 331.
-# Updated: 2019.12.04
+# %Listed, abuseat.org (CBL-Listed): 36.40%.
+# Stop Forum Spam (SFS) listings: 466.
+# Updated: 2020.04.09
 
 2402:8100:b::/48 Deny Spam
 2402:8100:2000::/41 Deny Spam
 2402:8100:2080::/42 Deny Spam
+2402:8100:20c4::/47 Deny Spam
 2402:8100:20c7::/48 Deny Spam
-2402:8100:20cf::/48 Deny Spam
+2402:8100:20ce::/47 Deny Spam
 2402:8100:20d0::/47 Deny Spam
 2402:8100:20d2::/48 Deny Spam
 2402:8100:20d4::/48 Deny Spam
 2402:8100:2100::/45 Deny Spam
 2402:8100:2108::/46 Deny Spam
-2402:8100:210c::/47 Deny Spam
-2402:8100:2110::/44 Deny Spam
+2402:8100:2110::/45 Deny Spam
+2402:8100:2118::/46 Deny Spam
 2402:8100:2140::/42 Deny Spam
 2402:8100:2180::/43 Deny Spam
+2402:8100:21c0::/45 Deny Spam
+2402:8100:21d0::/45 Deny Spam
 2402:8100:21e0::/43 Deny Spam
 2402:8100:2200::/43 Deny Spam
 2402:8100:2240::/43 Deny Spam
-2402:8100:2280::/42 Deny Spam
-2402:8100:22c0::/43 Deny Spam
+2402:8100:2280::/41 Deny Spam
 2402:8100:2300::/42 Deny Spam
 2402:8100:2380::/42 Deny Spam
+2402:8100:23c0::/48 Deny Spam
 2402:8100:2800::/41 Deny Spam
 2402:8100:3000::/43 Deny Spam
 2402:8100:3020::/44 Deny Spam
@@ -567,11 +536,13 @@ recaptcha:
 2402:8100:3080::/44 Deny Spam
 2402:8100:3090::/45 Deny Spam
 2402:8100:3098::/48 Deny Spam
+2402:8100:309d::/48 Deny Spam
+2402:8100:309e::/47 Deny Spam
 2402:8100:30a0::/45 Deny Spam
-2402:8100:3800::/47 Deny Spam
-2402:8100:3804::/46 Deny Spam
-2402:8100:383c::/46 Deny Spam
-2402:8100:3840::/42 Deny Spam
+2402:8100:30ac::/46 Deny Spam
+2402:8100:30d0::/44 Deny Spam
+2402:8100:30f0::/44 Deny Spam
+2402:8100:3800::/41 Deny Spam
 2402:8100:38c0::/42 Deny Spam
 2402:8100:3900::/43 Deny Spam
 2402:8100:3920::/45 Deny Spam
@@ -1661,7 +1632,7 @@ recaptcha:
 # ASN 137432 ("BKB Network").
 # Caught using automated hacktools to try hacking into honeypots.
 # Stop Forum Spam (SFS) listings: 266.
-# Updated: 2019.12.06
+# Updated: 2019.12.06 / Checked: 2020.04.09
 
 2402:68c0::/32 Deny Generic
 Origin: BD
@@ -1769,8 +1740,8 @@ Tag: Foreningen
 # their ignore.dat file to reduce the false positive risk (but the ISP could be
 # considered high risk for others elsewhere, so would best continue to be
 # blocked).
-# Stop Forum Spam (SFS) listings: 1,982.
-# Updated: 2018.02.20 / Checked: 2019.12.06
+# Stop Forum Spam (SFS) listings: 1,892.
+# Updated: 2018.02.20 / Checked: 2020.04.09
 
 2a00:1228::/32 Deny Generic
 Origin: UA

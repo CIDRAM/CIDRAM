@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Dutch language data for the front-end (last modified: 2020.02.01).
+# This file: Dutch language data for the front-end (last modified: 2020.04.13).
 ##/
 
 Extended Description Bypasses: "De standaard signature rondwegen normaal opgenomen met de primaire pakket."
@@ -31,7 +31,7 @@ Extended Description module_botua.php: "Blokkeert gebruikersagenten die zijn gek
 Extended Description module_cookies.php: "Biedt een beperkte bescherming tegen gevaarlijke cookies."
 Extended Description module_extras.php: "Biedt een beperkte bescherming tegen verschillende aanvalsvectoren vaak gebruikt in aanvragen."
 Extended Description module_projecthoneypot.php: "Blokkeert aanvragen van IP's die worden vermeld op Project Honeypot."
-Extended Description module_refspam.php: "Blokkering op basis van verwijzende spam levert over het algemeen geen betekenisvol beveiligingsvoordeel op, maar in sommige gevallen kan het nuttig zijn voor sommige gebruikers, voor het verzamelen van meer informatie over verzoeken en erover te rapporteren."
+Extended Description module_refspam.php: "Blokkering op basis van verwijzende spam levert over het algemeen geen betekenisvol beveiligingsvoordeel op, maar in sommige gevallen kan het nuttig zijn voor sommige gebruikers, voor het verzamelen van meer informatie over verzoeken en erover te rapporteren.<br />Door deze module te installeren, worden ook de Symfony-polyfills voor <a href="https://github.com/symfony/polyfill-intl-idn">Intl/Idn</a> en <a href="https://github.com/symfony/polyfill-mbstring">Mbstring</a> geïnstalleerd (omdat deze module Idn-functionaliteit vereist, die niet alle PHP-installaties standaard bieden), beide die zijn beschikbaar via de <a href="https://opensource.org/licenses/MIT">MIT</a> licentie."
 Extended Description module_sfs.php: "Beschermt registratie en login tegen IP's die door SFS worden vermeld."
 Name Bypasses: "Standaard signature rondwegen."
 Name CN_cidram.inc: "China IPv4-blokkeerlijst"
@@ -57,8 +57,6 @@ Name module_projecthoneypot.php: "Project Honeypot module"
 Name module_refspam.php: "Verwijzersspam module"
 Name module_sfs.php: "Stop Forum Spam module"
 Name module_yandexblocker.php: "Yandex blokker module"
-bNav_home_logout: "<a href="?">Startpagina</a> | <a href="?cidram-page=logout">Uitloggen</a>"
-bNav_logout: "<a href="?cidram-page=logout">Uitloggen</a>"
 config_PHPMailer: "Configuratie voor PHPMailer (gebruikt voor tweefactorauthenticatie)."
 config_PHPMailer_Enable2FA: "Deze richtlijn bepaalt of 2FA wordt gebruikt voor frontend-accounts."
 config_PHPMailer_EventLog: "Een bestand voor het loggen van alle evenementen met betrekking tot PHPMailer. Geef een bestandsnaam, of laat leeg om uit te schakelen."
@@ -335,6 +333,7 @@ link_home: "Startpagina"
 link_ip_aggregator: "IP-Aggregator"
 link_ip_test: "IP Test"
 link_ip_tracking: "IP-Tracking"
+link_log_out: "Uitloggen"
 link_logs: "Logbestanden"
 link_range: "Reeks Tafels"
 link_range_subtractor: "Reeks Aftrekker"

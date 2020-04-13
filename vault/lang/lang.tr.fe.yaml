@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Turkish language data for the front-end (last modified: 2020.02.01).
+# This file: Turkish language data for the front-end (last modified: 2020.04.13).
 ##/
 
 Extended Description Bypasses: "Varsayılan imza bypass'lar, normalde ana paketle birlikte verilir."
@@ -31,7 +31,7 @@ Extended Description module_botua.php: "İstenmeyen botlar ve nefret dolu faaliy
 Extended Description module_cookies.php: "Tehlikeli çerezlere karşı bazı sınırlı koruma sağlar."
 Extended Description module_extras.php: "İsteklerde yaygın olarak kullanılan çeşitli saldırı vektörlerine karşı bazı sınırlı koruma sağlar."
 Extended Description module_projecthoneypot.php: "Project Honeypot'de listelenen IP'lerden gelen istekleri engeller."
-Extended Description module_refspam.php: "Yönlendiren spam'e dayalı engelleme genellikle anlamlı bir güvenlik avantajı sağlamaz, ancak bazı durumlarda, bazı kullanıcılar için istekler hakkında daha fazla bilgi toplamak ve bunu rapor edebilmek için yararlı olabilir."
+Extended Description module_refspam.php: "Yönlendiren spam'e dayalı engelleme genellikle anlamlı bir güvenlik avantajı sağlamaz, ancak bazı durumlarda, bazı kullanıcılar için istekler hakkında daha fazla bilgi toplamak ve bunu rapor edebilmek için yararlı olabilir.<br />Bu modülün yüklenmesi, <a href="https://github.com/symfony/polyfill-intl-idn">Intl/Idn</a> ve <a href="https://github.com/symfony/polyfill-mbstring">Mbstring</a> için Symfony çoklu dolgularını da yükler (çünkü bu modül, tüm PHP kurulumlarının varsayılan olarak sağlamadığı Idn işlevselliği gerektirir), her ikisi de <a href="https://opensource.org/licenses/MIT">MIT</a> lisansı ile kullanılabilir."
 Extended Description module_sfs.php: "SFS tarafından listelenen IP'lere karşı kayıt ve oturum açma sayfalarını korur."
 Name Bypasses: "Varsayılan imza bypass'lar."
 Name CN_cidram.inc: "Çin IPv4 engelleme listesi"
@@ -57,8 +57,6 @@ Name module_projecthoneypot.php: "Project Honeypot modülü"
 Name module_refspam.php: "Yönlendiren spam modülü"
 Name module_sfs.php: "Stop Forum Spam modülü"
 Name module_yandexblocker.php: "Yandex engelleyici modülü"
-bNav_home_logout: "<a href="?">Ana Sayfa</a> | <a href="?cidram-page=logout">Çıkış</a>"
-bNav_logout: "<a href="?cidram-page=logout">Çıkış</a>"
 config_PHPMailer: "PHPMailer için yapılandırma (iki faktörlü kimlik doğrulama için kullanılır)."
 config_PHPMailer_Enable2FA: "Bu yönerge, ön uç hesapları için 2FA kullanılıp kullanılmayacağını belirler."
 config_PHPMailer_EventLog: "PHPMailer ile ilgili tüm olayları günlüğe kaydetmek için bir dosya. Dosya adı belirtin veya devre dışı bırakmak için boş bırakın."
@@ -333,6 +331,7 @@ link_home: "Ana Sayfa"
 link_ip_aggregator: "IP Toplayıcı"
 link_ip_test: "IP Testi"
 link_ip_tracking: "IP İzleme"
+link_log_out: "Çıkış"
 link_logs: "Kayıtlar"
 link_range: "İmza Tabloları"
 link_range_subtractor: "Çıkarıcı"

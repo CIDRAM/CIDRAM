@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Vietnamese language data for the front-end (last modified: 2020.02.01).
+# This file: Vietnamese language data for the front-end (last modified: 2020.04.13).
 ##/
 
 Extended Description Bypasses: "Các tập tin đường tránh chữ ký mặc định thường bao gồm với gói thầu chính."
@@ -31,7 +31,7 @@ Extended Description module_botua.php: "Chặn các đại lý người dùng li
 Extended Description module_cookies.php: "Cung cấp một số bảo vệ hạn chế đối với cookie nguy hiểm."
 Extended Description module_extras.php: "Cung cấp một số bảo vệ hạn chế chống vectơ tấn công khác nhau thường được sử dụng trong các yêu cầu."
 Extended Description module_projecthoneypot.php: "Chặn các yêu cầu từ IP được liệt kê tại Project Honeypot."
-Extended Description module_refspam.php: "Chặn dựa trên spam giới thiệu thường không cung cấp bất kỳ lợi ích bảo mật có ý nghĩa nào, nhưng trong một số trường hợp, có thể hữu ích cho một số người dùng, để thu thập thêm thông tin về các yêu cầu và để có thể báo cáo nó."
+Extended Description module_refspam.php: "Chặn dựa trên spam giới thiệu thường không cung cấp bất kỳ lợi ích bảo mật có ý nghĩa nào, nhưng trong một số trường hợp, có thể hữu ích cho một số người dùng, để thu thập thêm thông tin về các yêu cầu và để có thể báo cáo nó.<br />Bằng cách cài đặt mô-đun này, các polyfill Symfony cho <a href="https://github.com/symfony/polyfill-intl-idn">Intl/Idn</a> và <a href="https://github.com/symfony/polyfill-mbstring">Mbstring</a> cũng sẽ được cài đặt (bởi vì mô-đun này yêu cầu chức năng "Idn", và không phải tất cả các cài đặt PHP cung cấp nó theo mặc định). Cả hai đều có sẵn thông qua giấy phép <a href="https://opensource.org/licenses/MIT">MIT</a>."
 Extended Description module_sfs.php: "Bảo vệ các trang đăng ký và đăng nhập đối với các địa chỉ IP do SFS liệt kê."
 Name Bypasses: "Các đường tránh chữ ký mặc định."
 Name CN_cidram.inc: "Danh sách chặn IPv4 của Trung Quốc"
@@ -57,8 +57,6 @@ Name module_projecthoneypot.php: "Mô-đun Project Honeypot"
 Name module_refspam.php: "Mô-đun spam giới thiệu"
 Name module_sfs.php: "Mô-đun Stop Forum Spam"
 Name module_yandexblocker.php: "Mô-đun cho chặn Yandex"
-bNav_home_logout: "<a href="?">Trang Chủ</a> | <a href="?cidram-page=logout">Đăng Xuất</a>"
-bNav_logout: "<a href="?cidram-page=logout">Đăng Xuất</a>"
 config_PHPMailer: "Cấu hình cho PHPMailer (được sử dụng để xác thực hai yếu tố)."
 config_PHPMailer_Enable2FA: "Chỉ thị này xác định có nên sử dụng 2FA cho tài khoản front-end hay không."
 config_PHPMailer_EventLog: "Một tập tin để ghi nhật ký tất cả các sự kiện liên quan đến PHPMailer. Chỉ định một tên tập tin, hoặc để trống để vô hiệu hóa."
@@ -329,6 +327,7 @@ link_home: "Trang chủ"
 link_ip_aggregator: "Tập hợp IP"
 link_ip_test: "Kiểm tra IP"
 link_ip_tracking: "Giám sát IP"
+link_log_out: "Đăng Xuất"
 link_logs: "Bản ghi"
 link_range: "Bảng phạm vi"
 link_range_subtractor: "Phép trừ phạm vi"

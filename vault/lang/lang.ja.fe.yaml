@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Japanese language data for the front-end (last modified: 2020.02.01).
+# This file: Japanese language data for the front-end (last modified: 2020.04.13).
 ##/
 
 Extended Description Bypasses: "メインパッケージに通常含まれているデフォルト・シグネチャ・バイパス。"
@@ -31,7 +31,7 @@ Extended Description module_botua.php: "望ましくないボットや悪意の�
 Extended Description module_cookies.php: "危険なクッキーに対するいくつかの限定された保護を提供します。"
 Extended Description module_extras.php: "リクエストでよく使用される攻撃経路に対して、​いくつかの制限された保護を提供します。"
 Extended Description module_projecthoneypot.php: "Project HoneypotにリストされているＩＰからの要求をブロックします。"
-Extended Description module_refspam.php: "リファラー・スパムに基づくブロックは、通常、有意義なセキュリティ上の利点を提供しません、ただし、場合によっては、リクエストに関する詳細情報の収集、およびレポートの作成に役立つ可能性があります。"
+Extended Description module_refspam.php: "リファラー・スパムに基づくブロックは、通常、有意義なセキュリティ上の利点を提供しません、ただし、場合によっては、リクエストに関する詳細情報の収集、およびレポートの作成に役立つ可能性があります。<br />このモジュールをインストールすると、<a href="https://github.com/symfony/polyfill-intl-idn">Intl/Idn</a>と<a href="https://github.com/symfony/polyfill-mbstring">Mbstring</a>のSymfonyポリフィルもインストールされます（このモジュールは「Idn」機能を必要とするためが、すべてのPHPインストールがデフォルトで提供するわけではありません）。​どちらも、<a href="https://opensource.org/licenses/MIT">MIT</a>ライセンスを通じて入手できます。"
 Extended Description module_sfs.php: "ＳＦＳによってリストされたＩＰに対して登録ページとログインページを保護します。"
 Name Bypasses: "デフォルト・シグネチャ・バイパス。"
 Name CN_cidram.inc: "中国ＩＰｖ４ブロックリスト"
@@ -57,8 +57,6 @@ Name module_projecthoneypot.php: "Project Honeypot モジュール"
 Name module_refspam.php: "リファラー・スパム・モジュール"
 Name module_sfs.php: "Stop Forum Spam モジュール"
 Name module_yandexblocker.php: "Ｙａｎｄｅｘブロッカーモジュール"
-bNav_home_logout: "<a href="?">ホーム</a> | <a href="?cidram-page=logout">ログアウト</a>"
-bNav_logout: "<a href="?cidram-page=logout">ログアウト</a>"
 config_PHPMailer: "PHPMailerの設定（二要素認証に使用されます）。"
 config_PHPMailer_Enable2FA: "このディレクティブは、フロントエンド・アカウントに２ＦＡを使用するかどうかを決定します。"
 config_PHPMailer_EventLog: "PHPMailerに関連してすべてのイベントを記録するためのファイル。​ファイル名指定するか、​無効にしたい場合は空白のままにして下さい。"
@@ -329,6 +327,7 @@ link_home: "ホーム"
 link_ip_aggregator: "ＩＰアグリゲータ"
 link_ip_test: "ＩＰテスト"
 link_ip_tracking: "ＩＰトラッキング"
+link_log_out: "ログアウト"
 link_logs: "ログページ"
 link_range: "範囲テーブル"
 link_range_subtractor: "範囲減算器"

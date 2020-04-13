@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2020.02.13).
+ * This file: Functions file (last modified: 2020.04.13).
  */
 
 /**
@@ -46,8 +46,10 @@ $CIDRAM['ReadFile'] = function ($File) {
     if (!is_file($File) || !is_readable($File)) {
         return '';
     }
+
     /** Default blocksize (128KB). */
     static $Blocksize = 131072;
+
     $Filesize = filesize($File);
     $Size = ($Filesize && $Blocksize) ? ceil($Filesize / $Blocksize) : 0;
     $Data = '';
@@ -165,6 +167,7 @@ $CIDRAM['ExpandIPv4'] = function ($Addr, $ValidateOnly = false, $FactorLimit = 3
  * @return bool|array Refer to the description above.
  */
 $CIDRAM['ExpandIPv6'] = function ($Addr, $ValidateOnly = false, $FactorLimit = 128) {
+
     /**
      * The REGEX pattern used by this `preg_match` call was adapted from the
      * IPv6 REGEX pattern that can be found at
@@ -186,6 +189,7 @@ $CIDRAM['ExpandIPv6'] = function ($Addr, $ValidateOnly = false, $FactorLimit = 1
     $Addr)) {
         return false;
     }
+
     if ($ValidateOnly) {
         return true;
     }
@@ -2074,6 +2078,7 @@ $CIDRAM['Aux'] = function () use (&$CIDRAM) {
                                     $Data[$Mode]['But not if matches'][$Source] = [$Data[$Mode]['But not if matches'][$Source]];
                                 }
                                 foreach ($Data[$Mode]['But not if matches'][$Source] as $Value) {
+
                                     /** Perform match. */
                                     if ($CIDRAM['AuxMatch']($Value, $CIDRAM[$SourceKey][$Source], $Method)) {
                                         continue 4;
@@ -2088,6 +2093,7 @@ $CIDRAM['Aux'] = function () use (&$CIDRAM) {
                             $Data[$Mode]['But not if matches'][$SourceArr] = [$Data[$Mode]['But not if matches'][$SourceArr]];
                         }
                         foreach ($Data[$Mode]['But not if matches'][$SourceArr] as $Value) {
+
                             /** Perform match. */
                             if ($CIDRAM['AuxMatch']($Value, $CIDRAM[$SourceArr], $Method)) {
                                 continue 3;
@@ -2112,6 +2118,7 @@ $CIDRAM['Aux'] = function () use (&$CIDRAM) {
                                     $Data[$Mode]['If matches'][$Source] = [$Data[$Mode]['If matches'][$Source]];
                                 }
                                 foreach ($Data[$Mode]['If matches'][$Source] as $Value) {
+
                                     /** Perform match. */
                                     if ($CIDRAM['AuxMatch']($Value, $CIDRAM[$SourceKey][$Source], $Method)) {
                                         $Matched = true;
@@ -2135,6 +2142,7 @@ $CIDRAM['Aux'] = function () use (&$CIDRAM) {
                             $Data[$Mode]['If matches'][$SourceArr] = [$Data[$Mode]['If matches'][$SourceArr]];
                         }
                         foreach ($Data[$Mode]['If matches'][$SourceArr] as $Value) {
+
                             /** Perform match. */
                             if ($CIDRAM['AuxMatch']($Value, $CIDRAM[$SourceArr], $Method)) {
                                 $Matched = true;

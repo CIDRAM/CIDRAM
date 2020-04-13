@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Indonesian language data for the front-end (last modified: 2020.02.01).
+# This file: Indonesian language data for the front-end (last modified: 2020.04.13).
 ##/
 
 Extended Description Bypasses: "File untuk bypass tanda tangan standar yang biasanya disertakan dengan paket utama."
@@ -31,7 +31,7 @@ Extended Description module_botua.php: "Memblokir agen pengguna yang terkait den
 Extended Description module_cookies.php: "Menyediakan beberapa perlindungan terbatas terhadap cookie berbahaya."
 Extended Description module_extras.php: "Menyediakan beberapa perlindungan terbatas terhadap berbagai vektor serangan umum digunakan dalam permintaan."
 Extended Description module_projecthoneypot.php: "Memblokir permintaan dari IP yang terdaftar oleh Project Honeypot."
-Extended Description module_refspam.php: "Memblokir berdasarkan spam pengarah umumnya tidak akan memberikan manfaat keamanan yang berarti, tetapi dalam beberapa kasus, dapat bermanfaat bagi beberapa pengguna, untuk mengumpulkan lebih banyak informasi tentang permintaan, dan untuk dapat melaporkannya."
+Extended Description module_refspam.php: "Memblokir berdasarkan spam pengarah umumnya tidak akan memberikan manfaat keamanan yang berarti, tetapi dalam beberapa kasus, dapat bermanfaat bagi beberapa pengguna, untuk mengumpulkan lebih banyak informasi tentang permintaan, dan untuk dapat melaporkannya.<br />Menginstal modul ini juga menginstal polyfill Symfony untuk <a href="https://github.com/symfony/polyfill-intl-idn">Intl/Idn</a> dan <a href="https://github.com/symfony/polyfill-mbstring">Mbstring</a> (karena modul ini memerlukan fungsionalitas Idn, yang tidak semua instalasi PHP menyediakan secara default), keduanya tersedia melalui lisensi <a href="https://opensource.org/licenses/MIT">MIT</a>."
 Extended Description module_sfs.php: "Melindungi halaman pendaftaran dan login terhadap IP yang terdaftar oleh SFS."
 Name Bypasses: "Bypass tanda tangan standar."
 Name CN_cidram.inc: "IPv4 pemblokir Cina"
@@ -57,8 +57,6 @@ Name module_projecthoneypot.php: "Modul Project Honeypot"
 Name module_refspam.php: "Modul spam pengarah"
 Name module_sfs.php: "Modul Stop Forum Spam"
 Name module_yandexblocker.php: "Modul pemblokir untuk Yandex"
-bNav_home_logout: "<a href="?">Halaman Utama</a> | <a href="?cidram-page=logout">Keluar</a>"
-bNav_logout: "<a href="?cidram-page=logout">Keluar</a>"
 config_PHPMailer: "Konfigurasi untuk PHPMailer (digunakan untuk otentikasi dua-faktor)."
 config_PHPMailer_Enable2FA: "Direktif ini menentukan apakah akan menggunakan 2FA untuk akun depan."
 config_PHPMailer_EventLog: "File untuk mencatat semua kejadian yang terkait dengan PHPMailer. Spesifikasikan nama file, atau biarkan kosong untuk menonaktifkan."
@@ -329,6 +327,7 @@ link_home: "Halaman Utama"
 link_ip_aggregator: "Agregator IP"
 link_ip_test: "IP Test"
 link_ip_tracking: "Pelacakan IP"
+link_log_out: "Keluar"
 link_logs: "Log"
 link_range: "Tabel Rentang"
 link_range_subtractor: "Pengurangan Rentang"

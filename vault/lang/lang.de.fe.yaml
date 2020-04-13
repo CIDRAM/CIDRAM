@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: German language data for the front-end (last modified: 2020.02.01).
+# This file: German language data for the front-end (last modified: 2020.04.13).
 ##/
 
 Extended Description Bypasses: "Die Standard-Signatur-Bypass-Dateien, die normalerweise im Hauptpaket enthalten sind."
@@ -31,7 +31,7 @@ Extended Description module_botua.php: "Blockiert Benutzeragenten, die mit unerw
 Extended Description module_cookies.php: "Bietet einige begrenzte Schutzmaßnahmen gegen gefährliche Cookies."
 Extended Description module_extras.php: "Bietet einige begrenzte Schutzmaßnahmen gegen verschiedene Angriffsvektoren häufig in Anfragen verwendet."
 Extended Description module_projecthoneypot.php: "Blockiert Anfragen von IPs, die bei Project Honeypot aufgelistet sind."
-Extended Description module_refspam.php: "Das Blockieren auf der Basis von Referrer-Spam bietet im Allgemeinen keinen bedeutenden Sicherheitsvorteil, jedoch in einigen Fällen kann dies für einige Benutzer hilfreich sein, um weitere Informationen zur Anfragen zu sammeln und um sie zu melden."
+Extended Description module_refspam.php: "Das Blockieren auf der Basis von Referrer-Spam bietet im Allgemeinen keinen bedeutenden Sicherheitsvorteil, jedoch in einigen Fällen kann dies für einige Benutzer hilfreich sein, um weitere Informationen zur Anfragen zu sammeln und um sie zu melden.<br />Durch die Installation dieses Moduls werden auch die Symfony-Polyfills für <a href="https://github.com/symfony/polyfill-intl-idn">Intl/Idn</a> und <a href="https://github.com/symfony/polyfill-mbstring">Mbstring</a> installiert (weil dieses Modul Idn-Funktionalität erfordert, die nicht alle PHP-Installationen standardmäßig bereitstellen), beide sind über die <a href="https://opensource.org/licenses/MIT">MIT</a>-Lizenz erhältlich."
 Extended Description module_sfs.php: "Schützt die Registrierung und die Einloggen-Seiten vor den von SFS aufgelisteten IPs."
 Name Bypasses: "Standard-Signatur-Bypässe."
 Name CN_cidram.inc: "China IPv4 Blockliste"
@@ -57,8 +57,6 @@ Name module_projecthoneypot.php: "Project Honeypot-Modul"
 Name module_refspam.php: "Referrer-Spam-Modul"
 Name module_sfs.php: "Stop Forum Spam Modul"
 Name module_yandexblocker.php: "Yandex Blocker-Modul"
-bNav_home_logout: "<a href="?">Startseite</a> | <a href="?cidram-page=logout">Ausloggen</a>"
-bNav_logout: "<a href="?cidram-page=logout">Ausloggen</a>"
 config_PHPMailer: "Konfiguration für PHPMailer (für Zwei-Faktor-Authentifizierung verwendet)."
 config_PHPMailer_Enable2FA: "Diese Direktive bestimmt, ob 2FA für Frontend-Konten verwendet werden soll."
 config_PHPMailer_EventLog: "Eine Datei zum Protokollieren aller Ereignisse in Bezug auf PHPMailer. Geben Sie einen Dateinamen an oder lassen Sie die Option zum Deaktivieren leer."
@@ -335,6 +333,7 @@ link_home: "Startseite"
 link_ip_aggregator: "IP-Aggregator"
 link_ip_test: "IP-Test"
 link_ip_tracking: "IP-Tracking"
+link_log_out: "Ausloggen"
 link_logs: "Protokolldateien"
 link_range: "Bereichstische"
 link_range_subtractor: "Subtrahierer"

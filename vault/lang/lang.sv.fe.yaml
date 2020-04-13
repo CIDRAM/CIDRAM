@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Swedish language data for the front-end (last modified: 2020.02.01).
+# This file: Swedish language data for the front-end (last modified: 2020.04.13).
 ##/
 
 Extended Description Bypasses: "Standard bypass-filen som normalt ingår i huvudpaketet."
@@ -31,7 +31,7 @@ Extended Description module_botua.php: "Blockerar användaragenter associerade m
 Extended Description module_cookies.php: "Ger vissa begränsade skydd mot farliga kakor."
 Extended Description module_extras.php: "Ger vissa begränsade skydd mot olika angreppsvektorer som vanligen används i förfrågningar."
 Extended Description module_projecthoneypot.php: "Blockerar förfrågningar från IP-adresser som listas på Project Honeypot."
-Extended Description module_refspam.php: "Blockering baserat på referensspam ger i allmänhet ingen meningsfull säkerhetsfördel, men i vissa fall kan det vara användbart för vissa användare, för att samla in mer information om förfrågningar och för att kunna rapportera det."
+Extended Description module_refspam.php: "Blockering baserat på referensspam ger i allmänhet ingen meningsfull säkerhetsfördel, men i vissa fall kan det vara användbart för vissa användare, för att samla in mer information om förfrågningar och för att kunna rapportera det.<br />Genom att installera den här modulen installeras också Symfony polyfyllningar för <a href="https://github.com/symfony/polyfill-intl-idn">Intl/Idn</a> och <a href="https://github.com/symfony/polyfill-mbstring">Mbstring</a> (eftersom den här modulen kräver Idn-funktionalitet, som inte alla PHP-installationer tillhandahåller som standard), båda som är tillgängliga via <a href="https://opensource.org/licenses/MIT">MIT</a>-licensen."
 Extended Description module_sfs.php: "Skyddar registrerings och inloggningssidor mot IP-adresser som listas av SFS."
 Name Bypasses: "Standard signatur bypasses."
 Name CN_cidram.inc: "Kina IPv4-blocklista"
@@ -57,8 +57,6 @@ Name module_projecthoneypot.php: "Project Honeypot modul"
 Name module_refspam.php: "Referensspam-modul"
 Name module_sfs.php: "Stop Forum Spam modul"
 Name module_yandexblocker.php: "Yandex blockeringsmodul"
-bNav_home_logout: "<a href="?">Hem</a> | <a href="?cidram-page=logout">Logga Ut</a>"
-bNav_logout: "<a href="?cidram-page=logout">Logga Ut</a>"
 config_PHPMailer: "Konfiguration för PHPMailer (används för tvåfaktorautentisering)."
 config_PHPMailer_Enable2FA: "Detta direktiv bestämmer huruvida du ska använda 2FA för frontend-konton."
 config_PHPMailer_EventLog: "En fil för att logga alla händelser i förhållande till PHPMailer. Ange ett filnamn, eller lämna tomt för att inaktivera."
@@ -333,6 +331,7 @@ link_home: "Hem"
 link_ip_aggregator: "IP-Aggregator"
 link_ip_test: "IP-Test"
 link_ip_tracking: "IP-Spårning"
+link_log_out: "Logga Ut"
 link_logs: "Loggfiler"
 link_range: "Range Tabeller"
 link_range_subtractor: "Range Subtraktor"

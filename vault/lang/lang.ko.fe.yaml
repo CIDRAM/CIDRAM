@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Korean language data for the front-end (last modified: 2020.02.01).
+# This file: Korean language data for the front-end (last modified: 2020.04.13).
 ##/
 
 Extended Description Bypasses: "기본 서명 우회 일반적으로 기본 패키지에 포함되어 있습니다."
@@ -31,7 +31,7 @@ Extended Description module_botua.php: "원치 않는 봇과 관련없는 사용
 Extended Description module_cookies.php: "위험한 쿠키에 대해 제한된 보호 기능을 제공합니다."
 Extended Description module_extras.php: "요청에서 자주 사용되는 공격 경로에 대해 몇 가지 제한된 보호를 제공합니다."
 Extended Description module_projecthoneypot.php: "Project Honeypot에 나열된 IP의 요청을 차단합니다."
-Extended Description module_refspam.php: "리퍼러 스팸에 기반한 차단은 일반적으로 의미 있는 보안 이점을 제공하지 않습니다, 그러나 어떤 경우에는, 요청에 대한 추가 정보를 수집하고 보고서를 생성하는 데 유용 할 수 있습니다."
+Extended Description module_refspam.php: "리퍼러 스팸에 기반한 차단은 일반적으로 의미 있는 보안 이점을 제공하지 않습니다, 그러나 어떤 경우에는, 요청에 대한 추가 정보를 수집하고 보고서를 생성하는 데 유용 할 수 있습니다.<br />이 모듈을 설치하면, <a href="https://github.com/symfony/polyfill-intl-idn">Intl/Idn</a>및 <a href="https://github.com/symfony/polyfill-mbstring">Mbstring</a>에 대한 Symfony 폴리 필도 설치됩니다 (이 모듈에는 Idn 기능이 필요하기 때문에 및, 모든 PHP 설치에서 기본적으로 제공하는 것은 아닙니다). 둘 다 <a href="https://opensource.org/licenses/MIT">MIT</a>라이센스를 통해 사용 가능합니다."
 Extended Description module_sfs.php: "SFS가 나열한 IP에 대한 등록 및 로그인 페이지를 보호합니다."
 Name Bypasses: "기본 서명 우회."
 Name CN_cidram.inc: "중국 IPv4 차단 목록"
@@ -57,8 +57,6 @@ Name module_projecthoneypot.php: "Project Honeypot 모듈"
 Name module_refspam.php: "리퍼러 스팸 모듈"
 Name module_sfs.php: "Stop Forum Spam 모듈"
 Name module_yandexblocker.php: "Yandex 차단기 모듈"
-bNav_home_logout: "<a href="?">홈</a> | <a href="?cidram-page=logout">로그 아웃</a>"
-bNav_logout: "<a href="?cidram-page=logout">로그 아웃</a>"
 config_PHPMailer: "PHPMailer 설정 (이중 인증에 사용)."
 config_PHPMailer_Enable2FA: "이 지시문은 프런트 엔드 계정에 2FA를 사용할지 여부를 결정합니다."
 config_PHPMailer_EventLog: "PHPMailer와 관련된 모든 이벤트를 기록하는 파일입니다. 파일 이름을 지정하십시오. 비활성화하려면 비워 둡니다."
@@ -329,6 +327,7 @@ link_home: "홈"
 link_ip_aggregator: "IP 애그리게이터"
 link_ip_test: "IP 테스트"
 link_ip_tracking: "IP 추적"
+link_log_out: "로그 아웃"
 link_logs: "로고스"
 link_range: "범위 테이블"
 link_range_subtractor: "범위 빼기"

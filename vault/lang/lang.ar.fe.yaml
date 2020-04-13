@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Arabic language data for the front-end (last modified: 2020.02.01).
+# This file: Arabic language data for the front-end (last modified: 2020.04.13).
 ##/
 
 Extended Description Bypasses: "ملفات الالتفافية التوقيع القياسية المدرجة عادة مع الحزمة الرئيسية."
@@ -31,7 +31,7 @@ Extended Description module_botua.php: "حظر وكلاء المستخدمين �
 Extended Description module_cookies.php: "يوفر بعض الحماية المحدودة ضد ملفات تعريف الارتباط الخطيرة."
 Extended Description module_extras.php: "يوفر بعض الحماية محدودة ضد مختلف ناقلات هجوم تستخدم عادة في طلبات."
 Extended Description module_projecthoneypot.php: "بحظر الطلبات من عناوين IP المدرجة في Project Honeypot."
-Extended Description module_refspam.php: "لا يوفر الحظر بناءً على الإحالة غير المرغوب فيها عمومًا أي فائدة أمنية ذات مغزى، ولكن في بعض الحالات، قد يكون مفيدًا لبعض المستخدمين، ولجمع مزيد من المعلومات حول الطلبات، وللتمكن من الإبلاغ عنها."
+Extended Description module_refspam.php: "لا يوفر الحظر بناءً على الإحالة غير المرغوب فيها عمومًا أي فائدة أمنية ذات مغزى، ولكن في بعض الحالات، قد يكون مفيدًا لبعض المستخدمين، ولجمع مزيد من المعلومات حول الطلبات، وللتمكن من الإبلاغ عنها.<br />يؤدي تثبيت هذه الوحدة النمطية أيضًا إلى تثبيت polyfill لـ Symfony لـ <a dir="ltr" href="https://github.com/symfony/polyfill-intl-idn">Intl/Idn</a> و <a dir="ltr" href="https://github.com/symfony/polyfill-mbstring">Mbstring</a> (لأن هذه الوحدة تتطلب وظيفة Idn، والتي لا توفرها جميع عمليات تثبيت PHP بشكل افتراضي)، كلاهما متاح عبر ترخيص <a href="https://opensource.org/licenses/MIT">MIT</a>."
 Extended Description module_sfs.php: "يحمي تسجيل صفحات ضد عناوين IP المدرجة من قبل SFS."
 Name Bypasses: "يتجاوز توقيع قياسي."
 Name IPv4-Bogons: "IPv4 (bogons)."
@@ -55,8 +55,6 @@ Name module_projecthoneypot.php: "Project Honeypot وحدة"
 Name module_refspam.php: "وحدة للإحالة البريد المزعج"
 Name module_sfs.php: "Stop Forum Spam وحدة"
 Name module_yandexblocker.php: "بايدو وحدة مانع"
-bNav_home_logout: "<a href="?">الرئيسية</a> | <a href="?cidram-page=logout">خروج</a>"
-bNav_logout: "<a href="?cidram-page=logout">خروج</a>"
 config_PHPMailer: "التكوين ل PHPMailer (تستخدم لمصادقة ثنائية العامل)."
 config_PHPMailer_Enable2FA: "يحدد هذا التوجيه ما إذا كان سيتم استخدام 2FA للحسابات front-end أم لا."
 config_PHPMailer_EventLog: "ملف لتسجيل جميع الأحداث المتعلقة ب PHPMailer. تحديد اسم الملف، أو اتركه فارغا لتعطيل."
@@ -327,6 +325,7 @@ link_home: "الرئيسية"
 link_ip_aggregator: "IP Aggregator"
 link_ip_test: "اختبار IP"
 link_ip_tracking: "التتبع IP"
+link_log_out: "خروج"
 link_logs: "سجلات"
 link_range: "جداول الشبكة الفرعية"
 link_range_subtractor: "أداة الطرح للعناوين"

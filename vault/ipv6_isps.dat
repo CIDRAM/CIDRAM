@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_isps.dat
 
-# Version: 2020.99.240
-# Last modified: 2020.04.09
+# Version: 2020.104.722
+# Last modified: 2020.04.13
 
 
 # ---
@@ -1753,84 +1753,85 @@ recaptcha:
 
 # ASN 9009 ("M247 Ltd").
 # Multiplay network providing broadband connectivity, server leasing, line rental, webhosting services and others.
-# Anything marked as "server" or "host", we'll move to the cloud/hosting signature files. ^(.*(?:Host|Server).*)\x01$
-# Everything else can go in the ISPs signature files. When updating, to reduce the risk of false positives:
-# - Remove all subordinates of 38.0.0.0/8 from final aggregate (already blocked elsewhere and don't want duplicates).
-# - "Secure Internet LLC" mark as proxy (not generic).
-# Stop Forum Spam (SFS) listings: 285,604.
-# Updated: 2019.12.10
+# Marked as "Server" or "Host" to go to the cloud/hosting signatures ^(.*(?:Host|Server).*)\x01$
+# Marked as "Secure Internet LLC" to go to the proxy/other signatures ^(.*(?:Secure Internet LLC).*)\x01$
+# Everything else to go to the ISPs signatures. When updating, remove all subordinates of 38.0.0.0/8 from final
+# aggregate (already blocked elsewhere and don't want duplicates).
+# Stop Forum Spam (SFS) listings: 222,096.
+# Updated: 2020.04.13
 
-2604:17c0::/41 Deny Generic
-2604:17c0:80::/42 Deny Generic
-Origin: AQ
-2a03:f80:40::/48 Deny Generic
-2a03:f80:65::/48 Deny Generic
-2a03:f80:81::/48 Deny Generic
-2a03:f80:381::/48 Deny Generic
+2a03:f80:40::/48 Deny Spam
+2a03:f80:61::/48 Deny Spam
+2a03:f80:65::/48 Deny Spam
+2a03:f80:81::/48 Deny Spam
+2a03:f80:381::/48 Deny Spam
 Origin: AT
-2001:978:2305::/48 Deny Generic
-2001:978:3400::/48 Deny Generic
-2a0b:9040::/29 Deny Generic
+2604:17c0::/41 Deny Spam
+2604:17c0:80::/42 Deny Spam
+Origin: CA
+2001:978:2305::/48 Deny Spam
+2001:978:3400::/48 Deny Spam
+2a0b:9040::/29 Deny Spam
 Origin: DE
-2a0c:36c2::/31 Deny Generic
+2a0c:36c2::/31 Deny Spam
 Origin: EE
-2a01:300::/29 Deny Generic
-2a05:9f41:1a::/48 Deny Generic
+2a01:300::/29 Deny Spam
 Origin: EU
-2001:ac8::/32 Deny Generic
-2a00:b320::/48 Deny Generic
-2a02:40::/32 Deny Generic
-2a02:710:1000:700::/56 Deny Generic
-2a03:34c0::/32 Deny Generic
-2a07:a343:120::/44 Deny Generic
-2a07:a343:3c00::/44 Deny Generic
-2a07:a343:7870::/44 Deny Generic
-2a07:a343:94d0::/44 Deny Generic
-2a07:a343:aee0::/44 Deny Generic
-2a07:a343:bc70::/44 Deny Generic
-2a07:a343:cd10::/44 Deny Generic
-2a07:a343:ce30::/44 Deny Generic
-2a07:a343:e0f0::/44 Deny Generic
-2a07:a343:f210::/44 Deny Generic
-2a0a:b640:1::/48 Deny Generic
-2a0a:b640:2::/47 Deny Generic
-2a0e:7a80::/29 Deny Generic
+2001:ac8::/31 Deny Spam
+2a00:b320::/48 Deny Spam
+2a02:40::/32 Deny Spam
+2a02:710:1000:700::/56 Deny Spam
+2a03:34c0::/32 Deny Spam
+2a07:a343:120::/44 Deny Spam
+2a07:a343:3c00::/44 Deny Spam
+2a07:a343:7870::/44 Deny Spam
+2a07:a343:94d0::/44 Deny Spam
+2a07:a343:aee0::/44 Deny Spam
+2a07:a343:bc70::/44 Deny Spam
+2a07:a343:cd10::/44 Deny Spam
+2a07:a343:ce30::/44 Deny Spam
+2a07:a343:e0f0::/44 Deny Spam
+2a07:a343:f210::/44 Deny Spam
+2a0a:b640:1::/48 Deny Spam
+2a0a:b640:2::/47 Deny Spam
+2a0e:7a80::/29 Deny Spam
 Origin: GB
-2a00:55a0:5::/48 Deny Generic
-2a00:55a0:10::/48 Deny Generic
-2a00:55a0:ea00::/40 Deny Generic
-2a00:55a0:f000::/40 Deny Generic
-2a00:55a0:f900::/40 Deny Generic
-2a00:55a0:ff00::/40 Deny Generic
+2a00:55a0:5::/48 Deny Spam
+2a00:55a0:10::/48 Deny Spam
+2a00:55a0:ea00::/40 Deny Spam
+2a00:55a0:f000::/40 Deny Spam
+2a00:55a0:f900::/40 Deny Spam
+2a00:55a0:ff00::/40 Deny Spam
 Origin: IL
-2a0d:db00::/32 Deny Generic
+2a0d:db00::/32 Deny Spam
 Origin: LT
-2001:678:8b4::/48 Deny Generic
-2a04:9dc0::/29 Deny Generic
-2a07:9200::/47 Deny Generic
-2a07:9200:3::/48 Deny Generic
-2a07:9200:6::/48 Deny Generic
-2a0d:9980::/29 Deny Generic
-2a0e:1d80:2::/47 Deny Generic
-2a0e:1d80:4::/47 Deny Generic
+2001:678:8b4::/48 Deny Spam
+2a04:9dc0::/29 Deny Spam
+2a07:9200::/47 Deny Spam
+2a07:9200:3::/48 Deny Spam
+2a07:9200:6::/48 Deny Spam
+2a0d:9980::/29 Deny Spam
+2a0e:1d80:2::/47 Deny Spam
+2a0e:1d80:4::/47 Deny Spam
 Origin: RO
-2a07:de00::/29 Deny Generic
+2a07:de00::/29 Deny Spam
 Origin: RU
-2001:550:1d05::/48 Deny Generic
-2607:6980:e710::/44 Deny Generic
-2a09:9bc0:a::/48 Deny Generic
-2a0d:5600:1::/48 Deny Generic
-2a0d:5600:2::/47 Deny Generic
-2a0d:5600:4::/46 Deny Generic
-2a0d:5600:8::/45 Deny Generic
-2a0d:5600:11::/48 Deny Generic
-2a0d:5600:12::/47 Deny Generic
-2a0d:5600:14::/46 Deny Generic
-2a0d:5600:18::/48 Deny Generic
-2a0d:5600:20::/46 Deny Generic
-2a0d:5600:24::/47 Deny Generic
-2a0d:5600:34::/48 Deny Generic
-2a0d:5600:a32::/48 Deny Generic
+2001:550:1d05::/48 Deny Spam
+2607:6980:e710::/44 Deny Spam
+2a09:9bc0:a::/48 Deny Spam
+2a0d:5600:1::/48 Deny Spam
+2a0d:5600:2::/47 Deny Spam
+2a0d:5600:4::/46 Deny Spam
+2a0d:5600:8::/45 Deny Spam
+2a0d:5600:11::/48 Deny Spam
+2a0d:5600:12::/47 Deny Spam
+2a0d:5600:14::/46 Deny Spam
+2a0d:5600:18::/48 Deny Spam
+2a0d:5600:20::/46 Deny Spam
+2a0d:5600:24::/47 Deny Spam
+2a0d:5600:34::/47 Deny Spam
+2a0d:5600:36::/48 Deny Spam
+2a0d:5600:a32::/48 Deny Spam
 Origin: US
 Tag: M247 Ltd
 ---

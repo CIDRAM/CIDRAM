@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Italian language data for the front-end (last modified: 2020.02.01).
+# This file: Italian language data for the front-end (last modified: 2020.04.13).
 ##/
 
 Extended Description Bypasses: "Un file per bypassare alcune delle firme predefinite normalmente inclusi nel pacchetto principale."
@@ -31,7 +31,7 @@ Extended Description module_botua.php: "Blocca gli agenti utente associati a bot
 Extended Description module_cookies.php: "Fornisce alcune protezioni limitate contro i cookie pericolosi."
 Extended Description module_extras.php: "Fornisce alcune protezioni limitate contro i vari vettori di attacco comunemente usata nelle richieste."
 Extended Description module_projecthoneypot.php: "Blocca le richieste dagli IP elencati in Project Honeypot."
-Extended Description module_refspam.php: "Il blocco basato sullo spam dei referrer in genere non offre alcun vantaggio significativo in termini di sicurezza, ma in alcuni casi potrebbe essere utile per alcuni utenti, per raccogliere maggiori informazioni sulle richieste e per poterle segnalare."
+Extended Description module_refspam.php: "Il blocco basato sullo spam dei referrer in genere non offre alcun vantaggio significativo in termini di sicurezza, ma in alcuni casi potrebbe essere utile per alcuni utenti, per raccogliere maggiori informazioni sulle richieste e per poterle segnalare.<br />L'installazione di questo modulo installa anche i polyfill di Symfony per <a href="https://github.com/symfony/polyfill-intl-idn">Intl/Idn</a> e <a href="https://github.com/symfony/polyfill-mbstring">Mbstring</a> (perché questo modulo richiede la funzionalità Idn, che non tutte le installazioni PHP forniscono per impostazione predefinita), entrambi che sono disponibili tramite la licenza <a href="https://opensource.org/licenses/MIT">MIT</a>."
 Extended Description module_sfs.php: "Protegge le pagine di registrazione e di accesso agli IP elencati da SFS."
 Name Bypasses: "I firme predefinite bypass."
 Name CN_cidram.inc: "Lista di blocca IPv4 per la Cina"
@@ -58,8 +58,6 @@ Name module_projecthoneypot.php: "Modulo Project Honeypot"
 Name module_refspam.php: "Modulo spam referrer"
 Name module_sfs.php: "Modulo Stop Forum Spam"
 Name module_yandexblocker.php: "Modulo bloccante di Yandex"
-bNav_home_logout: "<a href="?">Pagina Principale</a> | <a href="?cidram-page=logout">Disconnettersi</a>"
-bNav_logout: "<a href="?cidram-page=logout">Disconnettersi</a>"
 config_PHPMailer: "Configurazione per PHPMailer (utilizzato per l'autenticazione a due fattori)."
 config_PHPMailer_add_reply_to_address: "L'indirizzo di risposta per citare quando si invia una posta elettronica tramite SMTP."
 config_PHPMailer_add_reply_to_name: "Il nome per la risposta per citare quando si invia una posta elettronica tramite SMTP."
@@ -333,6 +331,7 @@ link_home: "Pagina Principale"
 link_ip_aggregator: "Aggregatore IP"
 link_ip_test: "Test di IP"
 link_ip_tracking: "Tracciamento IP"
+link_log_out: "Disconnettersi"
 link_logs: "File di Log"
 link_range: "Tabelle della Gamma"
 link_range_subtractor: "Sottrattore di Gamma"

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Urdu language data for the front-end (last modified: 2020.02.01).
+# This file: Urdu language data for the front-end (last modified: 2020.04.13).
 ##/
 
 Extended Description Bypasses: "پہلے سے طے شدہ دستخطی بائی پاس فائلوں کو عام طور پر بنیادی پیکیج کے ساتھ شامل تھے."
@@ -31,7 +31,7 @@ Extended Description module_botua.php: "ناپسندیدہ بوٹس اور نف�
 Extended Description module_cookies.php: "خطرناک کوکیز کے خلاف کچھ محدود تحفظ فراہم کرتا ہے."
 Extended Description module_extras.php: "عام طور پر درخواستوں میں استعمال ہونے والی مختلف حمل ویکٹروں کے خلاف کچھ محدود تحفظ فراہم کرتا ہے."
 Extended Description module_projecthoneypot.php: "Project Honeypot میں درج IP کے بلاکس کی درخواستیں."
-Extended Description module_refspam.php: "ریفرر اسپام پر مبنی مسدودیت عام طور پر کوئی معنی خیز فائدہ نہیں فراہم کرے گی، لیکن کبھی کبھی درخواستوں کے بارے میں مزید معلومات اکٹھا کرنے اور اس کی اطلاع دینے کے قابل ہوسکتے ہیں."
+Extended Description module_refspam.php: "ریفرر اسپام پر مبنی مسدودیت عام طور پر کوئی معنی خیز فائدہ نہیں فراہم کرے گی، لیکن کبھی کبھی درخواستوں کے بارے میں مزید معلومات اکٹھا کرنے اور اس کی اطلاع دینے کے قابل ہوسکتے ہیں.<br />اس ماڈیول کو انسٹال کرنے سے، <a dir="ltr" href="https://github.com/symfony/polyfill-intl-idn">Intl/Idn</a> اور <a dir="ltr" href="https://github.com/symfony/polyfill-mbstring">Mbstring</a> کے لئے Symfony polyfills بھی انسٹال ہوجائیں گے. اس کی وجہ یہ ہے کہ ماڈیول کو Idn فعالیت کی ضرورت ہوتی ہے ، جو نہیں تمام PHP کی تنصیبات بطور ڈیفالٹ فراہم کرتی ہیں. <a dir="ltr" href="https://opensource.org/licenses/MIT">MIT</a> لائسنس کے توسط سے، یہ دونوں دستیاب ہیں."
 Extended Description module_sfs.php: "SFS سے گنا IP ایس کے خلاف رجسٹریشن اور لاگ ان صفحات کی حفاظت کرتا ہے."
 Name Bypasses: "پہلے سے طے شدہ دستخطی بائ پاس."
 Name CN_cidram.inc: "چین IPv4 بلاک لسٹ"
@@ -58,8 +58,6 @@ Name module_projecthoneypot.php: "Project Honeypot ماڈیول"
 Name module_refspam.php: "حوالہ دینے والا اسپام ماڈیول"
 Name module_sfs.php: "Stop Forum Spam ماڈیول"
 Name module_yandexblocker.php: "Yandex کی بلاکر ماڈیول"
-bNav_home_logout: "<a href="?">ہوم</a> | <a href="?cidram-page=logout">لاگ آوٹ</a>"
-bNav_logout: "<a href="?cidram-page=logout">لاگ آوٹ</a>"
 config_PHPMailer: "PHPMailer کی ترتیبات (دو عنصر کی توثیق کے لئے استعمال کیا جاتا ہےn)."
 config_PHPMailer_add_reply_to_address: "ای میل بھیجنے پر جواب کا پتہ."
 config_PHPMailer_add_reply_to_name: "ای میل بھیجنے پر جواب کا نام."
@@ -333,6 +331,7 @@ link_home: "ہوم"
 link_ip_aggregator: "IP مجموعی طور پر"
 link_ip_test: "IP ٹیسٹ"
 link_ip_tracking: "IP ٹریکنگ"
+link_log_out: "لاگ آوٹ"
 link_logs: "لاگز"
 link_range: "رینج میزیں"
 link_range_subtractor: "سبکٹرکٹر"

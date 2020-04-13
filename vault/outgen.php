@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Output generator (last modified: 2020.04.04).
+ * This file: Output generator (last modified: 2020.04.13).
  */
 
 /** Initialise cache. */
@@ -189,7 +189,10 @@ if ($CIDRAM['Protect'] && !$CIDRAM['Config']['general']['maintenance_mode'] && e
          * have their own scope and that superfluous data isn't preserved.
          */
         array_walk($CIDRAM['Modules'], function ($Module) use (&$CIDRAM) {
-            if (!empty($CIDRAM['Whitelisted'])) {
+            if (
+                !empty($CIDRAM['Whitelisted']) ||
+                preg_match('~^(?:classes|fe_assets)[\x2f\x5c]|\.(css|gif|html?|jpe?g|js|png|ya?ml)$~i', $Module)
+            ) {
                 return;
             }
             $Module = (strpos($Module, ':') === false) ? $Module : substr($Module, strpos($Module, ':') + 1);

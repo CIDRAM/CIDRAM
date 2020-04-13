@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: English language data for the front-end (last modified: 2020.02.01).
+# This file: English language data for the front-end (last modified: 2020.04.13).
 ##/
 
 Extended Description Bypasses: "The default signature bypass files normally included with the main package."
@@ -31,7 +31,7 @@ Extended Description module_botua.php: "Blocks user agents associated with unwan
 Extended Description module_cookies.php: "Provides some limited protections against dangerous cookies."
 Extended Description module_extras.php: "Provides some limited protections against various attack vectors commonly used in requests."
 Extended Description module_projecthoneypot.php: "Blocks requests from IPs listed at Project Honeypot."
-Extended Description module_refspam.php: "Blocking based on referrer spam won't generally provide any meaningful security benefit, but in some cases, could be useful for some users, for gathering more information about requests, and for being able to report it."
+Extended Description module_refspam.php: "Blocking based on referrer spam won't generally provide any meaningful security benefit, but in some cases, could be useful for some users, for gathering more information about requests, and for being able to report it.<br />Installing this module also installs the Symfony polyfills for <a href="https://github.com/symfony/polyfill-intl-idn">Intl/Idn</a> and <a href="https://github.com/symfony/polyfill-mbstring">Mbstring</a> (because this module requires Idn functionality, which not all PHP installations provide by default), both which are available via the <a href="https://opensource.org/licenses/MIT">MIT license</a>."
 Extended Description module_sfs.php: "Protects registration and login pages against IPs listed by SFS."
 Name Bypasses: "Default signature bypasses."
 Name CN_cidram.inc: "China IPv4 blocklist"
@@ -58,8 +58,6 @@ Name module_projecthoneypot.php: "Project Honeypot module"
 Name module_refspam.php: "Referrer spam module"
 Name module_sfs.php: "Stop Forum Spam module"
 Name module_yandexblocker.php: "Yandex blocker module"
-bNav_home_logout: "<a href="?">Home</a> | <a href="?cidram-page=logout">Log Out</a>"
-bNav_logout: "<a href="?cidram-page=logout">Log Out</a>"
 config_PHPMailer: "Configuration for PHPMailer (used for two-factor authentication)."
 config_PHPMailer_add_reply_to_address: "The reply address to cite when sending email via SMTP."
 config_PHPMailer_add_reply_to_name: "The reply name to cite when sending email via SMTP."
@@ -335,6 +333,7 @@ link_home: "Home"
 link_ip_aggregator: "IP Aggregator"
 link_ip_test: "IP Test"
 link_ip_tracking: "IP Tracking"
+link_log_out: "Log Out"
 link_logs: "Logs"
 link_range: "Range Tables"
 link_range_subtractor: "Range Subtractor"

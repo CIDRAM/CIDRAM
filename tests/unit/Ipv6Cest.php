@@ -9,7 +9,7 @@ class Ipv6Cest
         $GLOBALS['CIDRAM'] = $CIDRAM;
     }
 
-    // tests
+    /** Tests IPv6 factor expansion. */
     public function tryToTestIpv6Expansion(UnitTester $I)
     {
         global $CIDRAM;

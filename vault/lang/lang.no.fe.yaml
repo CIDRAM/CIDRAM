@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Norwegian language data for the front-end (last modified: 2020.02.01).
+# This file: Norwegian language data for the front-end (last modified: 2020.04.13).
 ##/
 
 Extended Description Bypasses: "Standard-signatur-bypass-filene som normalt følger med hovedpakken."
@@ -31,7 +31,7 @@ Extended Description module_botua.php: "Blokkerer brukeragenter assosiert med u�
 Extended Description module_cookies.php: "Gir noen begrensede beskyttelser mot farlige informasjonskapsler."
 Extended Description module_extras.php: "Gir noen begrensede beskyttelser mot ulike angrepsvektorer som ofte brukes i forespørsler."
 Extended Description module_projecthoneypot.php: "Blokkerer forespørsler fra IP-er oppført på Project Honeypot."
-Extended Description module_refspam.php: "Blokkering basert på referansesøppel vil vanligvis ikke gi noen meningsfull sikkerhetsgevinst, men i noen tilfeller kan det være nyttig for noen brukere, for å samle mer informasjon om forespørsler og for å kunne rapportere det."
+Extended Description module_refspam.php: "Blokkering basert på referansesøppel vil vanligvis ikke gi noen meningsfull sikkerhetsgevinst, men i noen tilfeller kan det være nyttig for noen brukere, for å samle mer informasjon om forespørsler og for å kunne rapportere det.<br />Ved å installere denne modulen installeres også Symfony-polyfyllene for <a href="https://github.com/symfony/polyfill-intl-idn">Intl/Idn</a> og <a href="https://github.com/symfony/polyfill-mbstring">Mbstring</a> (fordi denne modulen krever Idn-funksjonalitet, som ikke alle PHP-installasjoner leverer som standard), begge som er tilgjengelige via <a href="https://opensource.org/licenses/MIT">MIT</a> lisensen."
 Extended Description module_sfs.php: "Beskytter registrerings og innloggingssider mot IP-adresser oppført av SFS."
 Name Bypasses: "Standard signatur bypasses."
 Name CN_cidram.inc: "Kina IPv4-blokkliste"
@@ -58,8 +58,6 @@ Name module_projecthoneypot.php: "Project Honeypot modul"
 Name module_refspam.php: "Henvisende spam modul"
 Name module_sfs.php: "Stop Forum Spam modul"
 Name module_yandexblocker.php: "Yandex blokkeringsmodul"
-bNav_home_logout: "<a href="?">Hjem</a> | <a href="?cidram-page=logout">Logg Ut</a>"
-bNav_logout: "<a href="?cidram-page=logout">Logg Ut</a>"
 config_PHPMailer: "Konfigurasjon for PHPMailer (brukes til tofaktorautentisering)."
 config_PHPMailer_add_reply_to_address: "Svaradressen for å sitere når du sender e-post via SMTP."
 config_PHPMailer_add_reply_to_name: "Svarnavnet til å sitere når du sender e-post via SMTP."
@@ -333,6 +331,7 @@ link_home: "Hjem"
 link_ip_aggregator: "IP-Aggregator"
 link_ip_test: "IP-Test"
 link_ip_tracking: "IP-Sporing"
+link_log_out: "Logg Ut"
 link_logs: "Logger"
 link_range: "Signatur Tabeller"
 link_range_subtractor: "Subtraktor"

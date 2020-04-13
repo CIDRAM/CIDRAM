@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2020.04.04).
+ * This file: Front-end functions file (last modified: 2020.04.13).
  */
 
 /**
@@ -747,6 +747,7 @@ $CIDRAM['ActivateComponent'] = function (string $Type, string $ID) use (&$CIDRAM
         if (
             !empty($ThisFile) &&
             !preg_match('~^(?:css|gif|html?|jpe?g|js|png|ya?ml)$~i', $Ext) &&
+            !preg_match('~^(?:classes|fe_assets)[\x2f\x5c]~i', $ThisFile) &&
             file_exists($CIDRAM['Vault'] . $ThisFile) &&
             empty($CIDRAM['Activation'][$Type][$ThisFile]) &&
             $CIDRAM['Traverse']($ThisFile)
@@ -951,7 +952,10 @@ $CIDRAM['SimulateBlockEvent'] = function (string $Addr, bool $Modules = false, b
          */
         $Modules = explode(',', $CIDRAM['Config']['signatures']['modules']);
         array_walk($Modules, function ($Module) use (&$CIDRAM) {
-            if (!empty($CIDRAM['Whitelisted'])) {
+            if (
+                !empty($CIDRAM['Whitelisted']) ||
+                preg_match('~^(?:classes|fe_assets)[\x2f\x5c]|\.(css|gif|html?|jpe?g|js|png|ya?ml)$~i', $Module)
+            ) {
                 return;
             }
             $Module = (strpos($Module, ':') === false) ? $Module : substr($Module, strpos($Module, ':') + 1);
@@ -1986,6 +1990,7 @@ $CIDRAM['UpdatesHandler-Activate'] = function (string $ID) use (&$CIDRAM) {
             $CIDRAM['FE_Executor']($CIDRAM['Components']['Meta'][$ID]['When Activation Succeeds'], true);
         }
     }
+
     /** Cleanup. */
     unset($CIDRAM['Activation']);
 };
@@ -2043,6 +2048,7 @@ $CIDRAM['UpdatesHandler-Deactivate'] = function (string $ID) use (&$CIDRAM) {
             $CIDRAM['FE_Executor']($CIDRAM['Components']['Meta'][$ID]['When Deactivation Succeeds'], true);
         }
     }
+
     /** Cleanup. */
     unset($CIDRAM['Deactivation']);
 };

@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6.dat
 
-# Version: 2020.99.240
-# Last modified: 2020.04.09
+# Version: 2020.104.722
+# Last modified: 2020.04.13
 
 
 # ---
@@ -66,28 +66,39 @@ Tag: CST-NET
 
 
 # ASN 46573 ("Global Frag Networks").
-# %Listed, Google Malware Dashboard: 0.30%.
-# Stop Forum Spam (SFS) listings: 241.
-# Updated: 2019.12.04
+# %Listed, Google Malware Dashboard: 0.18%.
+# Stop Forum Spam (SFS) listings: 531.
+# Updated: 2020.04.11
 
 2602:fdd3::/36 Deny Cloud
 Origin: CA
-2a0f:300::/32 Deny Cloud
-Origin: GB
-2a0f:100::/32 Deny Cloud
-Origin: IE
+2a0e:8780::/29 Deny Cloud
+2a0f:1940::/30 Deny Cloud
+2a0f:19c0::/29 Deny Cloud
+2a0f:1a40::/29 Deny Cloud
+2a0f:1ac0::/29 Deny Cloud
+2a0f:2040::/29 Deny Cloud
+2a0f:20c0::/29 Deny Cloud
+2a0f:2140::/29 Deny Cloud
+2a0f:21c0::/29 Deny Cloud
+2a0f:2240::/29 Deny Cloud
+2a0f:f380::/29 Deny Cloud
+2a0f:f480::/29 Deny Cloud
+2a0f:f580::/29 Deny Cloud
+2a0f:f680::/29 Deny Cloud
+2a0f:f780::/29 Deny Cloud
+2a0f:f980::/29 Deny Cloud
+Origin: NL
 2a07:eb00::/29 Deny Cloud
 2a09:200::/29 Deny Cloud
 2a09:8600::/29 Deny Cloud
 2a09:f600::/29 Deny Cloud
 2a09:f800::/29 Deny Cloud
 2a0d:69c0::/29 Deny Cloud
-2a0d:87c0::/29 Deny Cloud
+2a0d:87c4::/30 Deny Cloud
 2a0d:b040::/29 Deny Cloud
-2a0d:ba40::/29 Deny Cloud
+2a0d:ba44::/30 Deny Cloud
 2a0d:bf40::/29 Deny Cloud
-2a0d:cd40::/29 Deny Cloud
-2a0d:e9c0::/29 Deny Cloud
 Origin: RU
 2604:d180::/32 Deny Cloud
 Origin: US
@@ -2856,9 +2867,9 @@ Tag: Media-Hosts Inc
 
 
 # ASN 53667 ("FranTech Solutions").
-# %Listed, Google Malware Dashboard: 0.39%.
-# Stop Forum Spam (SFS) listings: 30,115.
-# Updated: 2019.12.06
+# %Listed, Google Malware Dashboard: 0.49%.
+# Stop Forum Spam (SFS) listings: 46,063.
+# Updated: 2020.04.13
 
 2604:4d40:2000::/36 Deny Cloud
 2605:6400:1::/48 Deny Cloud
@@ -2868,6 +2879,8 @@ Tag: Media-Hosts Inc
 2605:6400:30::/48 Deny Cloud
 2605:6400:100::/48 Deny Cloud
 2605:6400:300::/48 Deny Cloud
+2605:6400:9001::/48 Deny Cloud
+2605:6400:9002::/47 Deny Cloud
 Origin: US
 Tag: FranTech Solutions
 
@@ -3776,10 +3789,12 @@ Tag: i3d B.V
 
 
 # ASN 50673 ("Serverius Holding B.V").
-# %Listed, Google Malware Dashboard: 0.09%.
-# Stop Forum Spam (SFS) listings: 5,816.
-# Updated: 2019.12.04
+# %Listed, Google Malware Dashboard: 0.10%.
+# Stop Forum Spam (SFS) listings: 8,820.
+# Updated: 2020.04.11
 
+2a09:7c44::/32 Deny Cloud
+Origin: MD
 2001:67c:b0::/48 Deny Cloud
 2001:7f8:e::/48 Deny Cloud
 2a00:1ca8::/32 Deny Cloud
@@ -4402,12 +4417,10 @@ Tag: Accelerated IT
 
 
 # ASN 20278 ("Nexeon Technologies, Inc").
-# %Listed, Google Malware Dashboard: 0.17%.
-# Stop Forum Spam (SFS) listings: 1,147.
-# Updated: 2019.12.04
+# Stop Forum Spam (SFS) listings: 1,322.
+# Updated: 2020.04.11
 
-2a0d:f802::/32 Deny Cloud
-2a0d:f803:8f00::/40 Deny Cloud
+2a0d:f800::/29 Deny Cloud
 Origin: GB
 2401:f500:4::/48 Deny Cloud
 Origin: NZ
@@ -4775,19 +4788,19 @@ Tag: TierPoint, LLC
 
 # ASNs 15626, 21100, 50979, 59729 ("ITL Company").
 # Significant source of forum/blog spam.
-# %Listed, Google Malware Dashboard: 0.08% (AS15626), 0.36% (AS21100).
-# Stop Forum Spam (SFS) listings: 494 (AS15626), 14,598 (AS21100), 3,072 (AS50979), 857 (AS59729).
-# Updated: 2019.08.01 / Modified: 2019.12.04
+# %Listed, Google Malware Dashboard: 1.95% (AS15626), 0.11% (AS21100).
+# Stop Forum Spam (SFS) listings: 890 (AS15626), 12,931 (AS21100), 666 (AS50979), 952 (AS59729).
+# Updated: 2020.04.11
 
 2001:67c:2f4c::/48 Deny Cloud
-2001:67c:2f5c::/48 Deny Cloud
 2001:67c:2f6c::/48 Deny Cloud
 2a0a:8c40::/32 Deny Cloud
 Origin: BG
-2a02:27a8::/30 Deny Cloud
+2a02:27a8::/32 Deny Cloud
+2a02:27aa::/32 Deny Cloud
 2a02:27ac::/32 Deny Cloud
 2a0e:40c0:1::/48 Deny Cloud
-2a0e:40c0:2::/48 Deny Cloud
+2a0e:40c0:4::/48 Deny Cloud
 Origin: UA
 Tag: ITL Company
 
@@ -5316,8 +5329,8 @@ Tag: Server Plus Ltd
 
 # ASN 198605 ("AVAST Software s.r.o.").
 # Caught attempting to access sensitive parts of WP sites for unknown reasons.
-# Stop Forum Spam (SFS) listings: 7,726.
-# Updated: 2019.12.06
+# Stop Forum Spam (SFS) listings: 9,781.
+# Updated: 2020.04.13
 
 2001:67c:284::/48 Deny Cloud
 2a0b:e181::/40 Deny Cloud
@@ -5325,8 +5338,6 @@ Tag: Server Plus Ltd
 2a0b:e181:600::/40 Deny Cloud
 2a0b:e182:100::/40 Deny Cloud
 2a0b:e182:200::/45 Deny Cloud
-2a0b:e182:440::/42 Deny Cloud
-2a0b:e182:480::/42 Deny Cloud
 Origin: CZ
 Tag: AVAST Software
 
@@ -5535,9 +5546,9 @@ Tag: Dotsi
 
 
 # ASN 197071 ("Dennis Rainer Warnholz trading as active-servers.com").
-# %Listed, Google Malware Dashboard: 0.93%.
-# Stop Forum Spam (SFS) listings: 43.
-# Updated: 2019.12.04
+# %Listed, Google Malware Dashboard: 1.08%.
+# Stop Forum Spam (SFS) listings: 26.
+# Updated: 2019.12.04 / Checked: 2020.04.11
 
 2001:678:5e8::/48 Deny Cloud
 2a00:f826:4::/48 Deny Cloud
@@ -5571,12 +5582,15 @@ Origin: US
 Tag: Servers.com
 
 
-# ASN 48635 ("Astralus B.V").
-# %Listed, Google Malware Dashboard: 0.08%.
-# Stop Forum Spam (SFS) listings: 698.
-# Updated: 2019.12.04
+# ASNs 43345, 48635, 200837, 202861, 205631 ("PCextreme B.V", formerly "Astralus B.V").
+# %Listed, Google Malware Dashboard: 0.12% (AS48635).
+# Stop Forum Spam (SFS) listings: 1,118 (AS48635).
+# Updated: 2020.04.10
 
+2a05:1500::/40 Deny Cloud
 2a05:1500:100::/47 Deny Cloud
+2a05:1500:300::/40 Deny Cloud
+2a05:1500:400::/39 Deny Cloud
 2a05:1500:600::/40 Deny Cloud
 2a05:1500:ff00::/40 Deny Cloud
 Origin: DE
@@ -5595,6 +5609,7 @@ Origin: DE
 2a07:ae80::/29 Deny Cloud
 2a0b:7280::/29 Deny Cloud
 2a0b:8f80::/48 Deny Cloud
+2a0c:84c0::/48 Deny Cloud
 Origin: NL
 Tag: Astralus B.V
 
@@ -6219,12 +6234,12 @@ Tag: HugeServer Networks
 
 # ASN 9009 ("M247 Ltd").
 # Multiplay network providing broadband connectivity, server leasing, line rental, webhosting services and others.
-# Anything marked as "server" or "host", we'll move to the cloud/hosting signature files. ^(.*(?:Host|Server).*)\x01$
-# Everything else can go in the ISPs signature files. When updating, to reduce the risk of false positives:
-# - Remove all subordinates of 38.0.0.0/8 from final aggregate (already blocked elsewhere and don't want duplicates).
-# - "Secure Internet LLC" mark as proxy (not generic).
-# Stop Forum Spam (SFS) listings: 285,604.
-# Updated: 2019.05.13 / Checked: 2019.12.10
+# Marked as "Server" or "Host" to go to the cloud/hosting signatures ^(.*(?:Host|Server).*)\x01$
+# Marked as "Secure Internet LLC" to go to the proxy/other signatures ^(.*(?:Secure Internet LLC).*)\x01$
+# Everything else to go to the ISPs signatures. When updating, remove all subordinates of 38.0.0.0/8 from final
+# aggregate (already blocked elsewhere and don't want duplicates).
+# Stop Forum Spam (SFS) listings: 222,096.
+# Updated: 2019.05.13 / Checked: 2020.04.13
 
 2001:ac8:44::/48 Deny Cloud
 Origin: GB
@@ -6675,22 +6690,32 @@ Origin: US
 Tag: QTS LLC
 
 
-# ASN 35758 ("ReliableSite.Net LLC").
-# Dedicated hosting provider; Caught spamming. (For the moment, omitting ZA
-# entries to reduce the false positive risk and due to there currently being no
-# reports/events/etc for those ranges).
-# %Listed, Google Malware Dashboard: 0.17%.
-# Stop Forum Spam (SFS) listings: 23.
-# Updated: 2019.12.06
+# ASN 35758 ("Rachamim Aviel Twito trading as A.B INTERNET SOLUTIONS").
+# A small, international multiplay network; Caught spamming forums and blogs.
+# Stop Forum Spam (SFS) listings: 457.
+# Updated: 2020.04.13
 
+2a0a:1dc4::/30 Deny Cloud
+Origin: IL
+Tag: Rachamim Aviel Twito
+
+
+# ASN 23470 ("ReliableSite.Net LLC").
+# Dedicated hosting provider caught spamming.
+# %Listed, Google Malware Dashboard: 0.22%.
+# Stop Forum Spam (SFS) listings: 85.
+# Updated: 2020.04.13
+
+2602:fed2:7106::/48 Deny Cloud
+2602:fed2:7308::/48 Deny Cloud
 2602:fed2:7709::/48 Deny Cloud
 Origin: CA
 2405:f40:7fdd::/48 Deny Cloud
 Origin: CN
+2a04:ff00:500::/48 Deny Cloud
+Origin: CZ
 2a0f:9400:8005::/48 Deny Cloud
 Origin: GB
-2806:2ea:0:1::/64 Deny Cloud
-Origin: MX
 2a0b:3c40:14::/48 Deny Cloud
 Origin: NL
 2a0f:8600::/48 Deny Cloud
@@ -7363,3 +7388,22 @@ Tag: NetConnex/Coreix
 2a0c:2500::/29 Deny Cloud
 Origin: DE
 Tag: Aixit GmbH
+
+
+# ASNs 25697, 202053 ("UpCloud USA Inc", "UpCloud Ltd").
+# Dedicated cloud provider and a source of spam.
+# %Listed, Google Malware Dashboard: 0.11% (AS202053).
+# Stop Forum Spam (SFS) listings: 456 (AS25697), 597 (AS202053).
+# Updated: 2020.04.10
+
+2a04:3540::/30 Deny Cloud
+2a04:3544::/31 Deny Cloud
+Origin: FI
+2a03:3b00:1::/48 Deny Cloud
+2a03:3b00:2::/48 Deny Cloud
+2a09:51c0::/29 Deny Cloud
+Origin: NL
+2604:ed40::/32 Deny Cloud
+2605:7380::/32 Deny Cloud
+Origin: US
+Tag: UpCloud

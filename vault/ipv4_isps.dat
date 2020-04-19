@@ -1,8 +1,8 @@
 # IPv4 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv4_isps.dat
 
-# Version: 2020.104.722
-# Last modified: 2020.04.13
+# Version: 2020.109.510
+# Last modified: 2020.04.19
 
 
 # ---
@@ -1085,9 +1085,9 @@ Tag: INFOBOX
 
 # ASN 49335 ("Mir Telematiki Ltd").
 # An ongoing source of all kinds of spam.
-# %Listed, Google Malware Dashboard: 0.12%.
-# Stop Forum Spam (SFS) listings: 828.
-# Updated: 2019.08.25 / Checked: 2019.12.12
+# %Listed, Google Malware Dashboard: 0.17%.
+# Stop Forum Spam (SFS) listings: 1,316.
+# Updated: 2020.04.18
 
 86.105.227.0/24 Deny Spam
 86.106.102.0/24 Deny Spam
@@ -1110,6 +1110,8 @@ Origin: RO
 158.255.0.0/21 Deny Spam
 185.70.104.0/22 Deny Spam
 185.130.212.0/22 Deny Spam
+193.247.73.0/24 Deny Spam
+193.247.77.0/24 Deny Spam
 194.34.236.0/22 Deny Spam
 Origin: RU
 168.80.1.0/24 Deny Spam
@@ -1119,6 +1121,9 @@ Origin: RU
 196.16.229.0/24 Deny Spam
 196.16.231.0/24 Deny Spam
 Origin: SC
+184.174.56.0/22 Deny Spam
+206.123.139.0/24 Deny Spam
+Origin: US
 Tag: Mir Telematiki Ltd
 
 
@@ -1126,15 +1131,16 @@ Tag: Mir Telematiki Ltd
 # *Extreme*, unrepentant, unending source of spam over the course of many,
 # many years. XRumer plus others operating on their network. Highly unlikely to
 # ever delist.
-# %Listed, abuseat.org (CBL-Listed): 1.64%.
-# Stop Forum Spam (SFS) listings: 40,815.
-# Updated: 2019.01.28 / Checked: 2019.11.14
+# %Listed, abuseat.org (CBL-Listed): 1.07%.
+# Stop Forum Spam (SFS) listings: 32,476.
+# Updated: 2020.04.19
 
 103.238.148.0/24 Deny Spam
 Origin: MY
 39.32.0.0/11 Deny Spam
 58.181.108.0/22 Deny Spam
 58.181.112.0/24 Deny Spam
+58.181.125.0/24 Deny Spam
 59.103.0.0/16 Deny Spam
 116.71.0.0/16 Deny Spam
 119.152.0.0/13 Deny Spam
@@ -7216,8 +7222,8 @@ recaptcha:
 # ASN 31200 ("Novotelecom Ltd").
 # When updating ASNs, only block the problematic ASNs (those with known cases
 # of hacking events, spamming, etc); don't block the entire network.
-# Stop Forum Spam (SFS) listings: 985.
-# Updated: 2019.05.02 / Checked: 2019.11.19
+# Stop Forum Spam (SFS) listings: 764.
+# Updated: 2019.05.02 / Checked: 2020.04.19
 
 5.128.0.0/16 Deny Generic
 5.129.0.0/17 Deny Generic
@@ -7342,9 +7348,8 @@ recaptcha:
 
 
 # ASN 44493 ("Chelyabinsk-Signal").
-# %Listed, Google Malware Dashboard: 0.93%.
-# Stop Forum Spam (SFS) listings: 514.
-# Updated: 2018.03.23 / Checked: 2019.11.19
+# Stop Forum Spam (SFS) listings: 485.
+# Updated: 2018.03.23 / Checked: 2020.04.19
 
 80.85.152.0/23 Deny Spam
 80.85.154.0/24 Deny Spam
@@ -10195,9 +10200,9 @@ recaptcha:
 # - "corporate internet gate".
 # ^.*(residential|trade center|campus connectivity|bank campus|corporate internet gate).*$
 # Everything else in the cloud services signature files.
-# %Listed, Google Malware Dashboard: 0.62%.
-# Stop Forum Spam (SFS) listings: 246.
-# Updated: 2019.03.27 / Checked: 2019.12.08
+# %Listed, Google Malware Dashboard: 0.26%.
+# Stop Forum Spam (SFS) listings: 148.
+# Updated: 2019.03.27 / Checked: 2020.04.19
 
 188.225.8.0/21 Deny Generic
 188.225.40.0/21 Deny Generic
@@ -10212,8 +10217,7 @@ recaptcha:
 
 # ASN 13249 ("IT Systems LLC").
 # Caught trying to hack into WordPress sites.
-# Stop Forum Spam (SFS) listings: 1.
-# Updated: 2018.07.28 / Checked: 2019.11.14
+# Updated: 2018.07.28 / Checked: 2020.04.19
 
 185.183.108.0/22 Deny Generic
 193.16.105.0/24 Deny Generic
@@ -10442,10 +10446,10 @@ recaptcha:
 
 
 # ASN 6849 ("Ukrtelecom").
-# %Listed, Google Malware Dashboard: 0.09%.
-# %Listed, abuseat.org (CBL-Listed): 0.48%.
-# Stop Forum Spam (SFS) listings: 2,655.
-# Updated: 2019.01.26 / Checked: 2019.11.15
+# %Listed, Google Malware Dashboard: 0.17%.
+# %Listed, abuseat.org (CBL-Listed): 0.40%.
+# Stop Forum Spam (SFS) listings: 2,072.
+# Updated: 2020.04.19
 
 93.170.54.0/24 Deny Spam
 93.170.186.0/24 Deny Spam
@@ -10465,6 +10469,7 @@ Origin: GB
 178.92.0.0/14 Deny Spam
 185.36.56.0/22 Deny Spam
 195.5.0.0/18 Deny Spam
+195.93.172.0/24 Deny Spam
 195.206.238.0/24 Deny Spam
 195.242.218.0/23 Deny Spam
 212.113.32.0/19 Deny Spam
@@ -10696,11 +10701,20 @@ recaptcha:
 # ASN 9873 ("Lao Telecom Communication, LTC").
 # Legit ISP in Laos (i.e., has human endpoints). Listing here the specific
 # CIDRs where there's evidence of unwanted traffic, but leaving out the rest.
-# Stop Forum Spam (SFS) listings: 1,501.
-# Updated: 2019.07.07 / Checked: 2019.11.08
+# Stop Forum Spam (SFS) listings: 1,767.
+# Updated: 2020.04.18
 
-115.84.64.0/18 Deny Spam
-202.137.128.0/19 Deny Spam
+115.84.76.0/24 Deny Spam
+115.84.91.0/24 Deny Spam
+115.84.92.0/24 Deny Spam
+115.84.99.0/24 Deny Spam
+115.84.106.219/32 Deny Spam
+115.84.112.138/32 Deny Spam
+115.84.113.167/32 Deny Spam
+202.137.134.0/24 Deny Spam
+202.137.141.0/24 Deny Spam
+202.137.142.0/24 Deny Spam
+202.137.154.0/23 Deny Spam
 Origin: LA
 Tag: Lao Telecom
 ---
@@ -11088,11 +11102,17 @@ Origin: CH
 Tag: Init7
 
 
-# ASN 51815 ("IP-Only Networks AB"). Multiplay network. Huge amounts of spam
-# coming from this specific range.
-# Updated: 2019.03.09 / Checked: 2019.11.09
+# ASN 51815 ("IP-Only Networks AB"). Multiplay network. **HUGE** amounts of
+# spam coming from some specific ranges, plus some other activity seen from
+# their network.
+# Updated: 2020.04.18
 
-62.102.148.0/23 Deny Spam
+62.102.148.0/24 Deny Spam
+65.99.161.0/24 Deny Malware
+65.99.165.179/32 Deny Malware
+65.99.167.132/32 Deny Malware
+65.99.173.17/32 Deny Malware
+85.112.178.97/32 Deny Malware
 Origin: SE
 Tag: Temp/AS51815
 

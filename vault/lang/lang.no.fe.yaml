@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Norwegian language data for the front-end (last modified: 2020.04.13).
+# This file: Norwegian language data for the front-end (last modified: 2020.04.23).
 ##/
 
 Extended Description Bypasses: "Standard-signatur-bypass-filene som normalt følger med hovedpakken."
@@ -172,6 +172,7 @@ field_2fa: "2FA kode"
 field_Request_Method: "Forespørselsmetode"
 field_activate: "Aktiver"
 field_add_more_conditions: "Legg til en ny betingelse"
+field_add_webhook: "Legg til nettkrok"
 field_asnlookup: "Oppslag av ASN"
 field_banned: "Utestengt"
 field_blocked: "Blokkert"
@@ -249,8 +250,10 @@ label_aux_actBlk: "blokkere"
 label_aux_actByp: "omgå"
 label_aux_actGrl: "grå liste"
 label_aux_actLog: "ikke logg"
+label_aux_actRdr: "omdirigere (uten å blokkere)"
 label_aux_actWhl: "hvit liste"
 label_aux_create_new_rule: "Opprett ny regel"
+label_aux_http_status_code_override: "HTTP-statuskode overstyrer:"
 label_aux_logic_all: "For å utløse regelen må alle betingelser være oppfylt."
 label_aux_logic_any: "Eventuelle "likeverdige" (=) betingelse kan utløse regelen, så lenge alle "ikke likeverdige" (≠) betingelser også er oppfylt."
 label_aux_menu_action: "Hvis følgende betingelser er oppfylt, %s forespørselen."
@@ -263,6 +266,11 @@ label_aux_mtdStr: "direkte streng sammenligning"
 label_aux_mtdWin: "Windows-stil jokertegn"
 label_aux_name: "Et navn på den nye regelen:"
 label_aux_reason: "Årsaken til brukeren når den er blokkert:"
+label_aux_special: "Andre opsjoner og spesielle flagg:"
+label_aux_special_recaptcha: "Merk for bruk med reCAPTCHA"
+label_aux_special_suppress: "Undertrykk utdatamalen"
+label_aux_target: "Hvor omdirigere forespørselen:"
+label_aux_webhooks: "Nettkroker som skal brukes når regelkravene er oppfylt:"
 label_backup_location: "Repository backup steder (i nødstilfelle, eller hvis alt annet mislykkes):"
 label_banned: "Forespørsler utestengt"
 label_blocked: "Forespørsler blokkert"
@@ -455,6 +463,7 @@ switch-tracking-hide-banned-blocked-set-true: "Skjul utestengt/blokkert IP-adres
 tip_2fa_sent: "En e-post som inneholder en 2FA-kode, er sendt til e-postadressen din. Vennligst bekreft denne koden nedenfor for å få tilgang til frontenden. Hvis du ikke mottok denne e-posten, kan du prøve å logge ut, vente i 10 minutter og logge på igjen for å motta en ny e-post som inneholder en ny kode."
 tip_accounts: "Hallo, {username}.<br />Du kan kontrollere hvem som kan få tilgang til CIDRAM-frontenden ved hjelp av kontosiden."
 tip_aux: "Hallo, {username}.<br />Du kan bruke denne siden til å opprette, slette og endre tilleggsregler for CIDRAM."
+tip_aux_priority: "Prioritet (høyeste➡(lik🔄tilsvarende)➡lavest):"
 tip_cache_data: "Hallo, {username}.<br />Her kan du se innholdet i cachen."
 tip_cidr_calc: "Hallo, {username}.<br />CIDR-kalkulatoren lar deg beregne hvilke CIDRer en IP-adresse er en faktor av."
 tip_condition_placeholder: "Angi en verdi, eller legg blank for å se bort fra."

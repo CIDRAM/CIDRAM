@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Italian language data for the front-end (last modified: 2020.04.13).
+# This file: Italian language data for the front-end (last modified: 2020.04.23).
 ##/
 
 Extended Description Bypasses: "Un file per bypassare alcune delle firme predefinite normalmente inclusi nel pacchetto principale."
@@ -172,6 +172,7 @@ field_2fa: "Codice 2FA"
 field_Request_Method: "Metodo di richiesta"
 field_activate: "Attivarlo"
 field_add_more_conditions: "Aggiungi più condizioni"
+field_add_webhook: "Aggiungi webhook"
 field_asnlookup: "Ricerca per ASN"
 field_banned: "Vietato"
 field_blocked: "Bloccato"
@@ -249,8 +250,10 @@ label_aux_actBlk: "bloccare"
 label_aux_actByp: "bypassare"
 label_aux_actGrl: "lista grigia"
 label_aux_actLog: "non registrare"
+label_aux_actRdr: "reindirizzare (senza bloccando)"
 label_aux_actWhl: "lista bianca"
 label_aux_create_new_rule: "Crea una nuova regola"
+label_aux_http_status_code_override: "Sostituzione del codice di stato HTTP:"
 label_aux_logic_all: "Per innescare la regola, devono essere soddisfatte tutte le condizioni."
 label_aux_logic_any: "Qualsiasi condizione "uguale" (=) può innescare la regola, purché siano soddisfatte anche tutte le condizioni "non uguali" (≠)."
 label_aux_menu_action: "Se sono soddisfatte le seguenti condizioni, %s la richiesta."
@@ -263,6 +266,11 @@ label_aux_mtdStr: "confronto diretto delle stringhe"
 label_aux_mtdWin: "caratteri jolly in stile Windows"
 label_aux_name: "Un nome per la nuova regola:"
 label_aux_reason: "Il motivo dato all'utente quando è bloccato:"
+label_aux_special: "Altre opzioni e flag speciali:"
+label_aux_special_recaptcha: "Contrassegnare per l'uso con reCAPTCHA"
+label_aux_special_suppress: "Sopprima il modello di output"
+label_aux_target: "Dove reindirizzare la richiesta:"
+label_aux_webhooks: "Webhook da applicare quando sono soddisfatti i requisiti della regola:"
 label_backup_location: "Posizioni di backup del repository (in caso di emergenza, o se tutto il resto fallisce):"
 label_banned: "Richieste vietate"
 label_blocked: "Richieste bloccate"
@@ -453,6 +461,7 @@ switch-tracking-hide-banned-blocked-set-true: "Nascondere gli IP vietati/bloccat
 tip_2fa_sent: "Una posta elettronica contenente un codice di autenticazione a due fattori è stata inviata al tuo indirizzo di posta elettronica. Si prega di confermare questo codice qui sotto per ottenere l'accesso al front-end. Se non hai ricevuto questa posta elettronica, prova a disconnettersi, attendere 10 minuti e accedi di nuovo per ricevere una nuova posta elettronica contenente un nuovo codice."
 tip_accounts: "Salve, {username}.<br />La pagina di conti permette di controllare chi può accedere il front-end di CIDRAM."
 tip_aux: "Salve, {username}.<br />Puoi utilizzare questa pagina per creare, eliminare e modificare le regole ausiliarie per CIDRAM."
+tip_aux_priority: "Priorità (massimo➡(pari🔄equivalente)➡minore):"
 tip_cache_data: "Salve, {username}.<br />Qui puoi rivedere il contenuto della cache."
 tip_cidr_calc: "Salve, {username}.<br />La calcolatrice CIDR permette di calcolare che cosa CIDR un indirizzo IP appartiene."
 tip_condition_placeholder: "Specificare un valore, o lasciare vuoto per ignorare."

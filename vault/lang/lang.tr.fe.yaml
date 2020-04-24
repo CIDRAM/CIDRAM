@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Turkish language data for the front-end (last modified: 2020.04.13).
+# This file: Turkish language data for the front-end (last modified: 2020.04.23).
 ##/
 
 Extended Description Bypasses: "Varsayılan imza bypass'lar, normalde ana paketle birlikte verilir."
@@ -172,6 +172,7 @@ field_2fa: "2FA kodu"
 field_Request_Method: "İstek yöntemi"
 field_activate: "Etkinleştir"
 field_add_more_conditions: "Daha fazla koşul ekle"
+field_add_webhook: "Web kanca ekle"
 field_asnlookup: "ASN araması"
 field_banned: "Yasaklandı"
 field_blocked: "Engellendi"
@@ -249,8 +250,10 @@ label_aux_actBlk: "engelleyin"
 label_aux_actByp: "atlayın"
 label_aux_actGrl: "gri listeye ekleyin"
 label_aux_actLog: "kaydetme"
+label_aux_actRdr: "yönlendir (engellemeden)"
 label_aux_actWhl: "beyaz listeye ekleyin"
 label_aux_create_new_rule: "Yeni kural oluştur"
+label_aux_http_status_code_override: "HTTP durum kodunun değiştirilmesi:"
 label_aux_logic_all: "Kuralı tetiklemek için tüm şartlar yerine getirilmelidir."
 label_aux_logic_any: "Tüm "eşittir" (=) koşulları, tüm "eşit olmayan" (≠) koşullar da karşılandığı sürece kuralı tetikleyebilir."
 label_aux_menu_action: "Aşağıdaki koşullar karşılanırsa, isteği %s."
@@ -263,6 +266,11 @@ label_aux_mtdStr: "direkt dizi karşılaştırması"
 label_aux_mtdWin: "Windows tarzı joker karakterler"
 label_aux_name: "Yeni kural için bir isim:"
 label_aux_reason: "Engellendiğinde kullanıcıya verilen sebep:"
+label_aux_special: "Diğer seçenekler ve özel bayraklar:"
+label_aux_special_recaptcha: "reCAPTCHA ile kullanım için işaretle"
+label_aux_special_suppress: "Çıktı şablonunu bastırmak"
+label_aux_target: "İsteğin nereye yönlendirileceği:"
+label_aux_webhooks: "Kural gereksinimleri karşılandığında uygulanacak web kancaları:"
 label_backup_location: "Repository yedek konumları (acil bir durumda, ya da her şey başarısız olursa):"
 label_banned: "Yasaklı talepler"
 label_blocked: "Engellenen talepler"
@@ -451,6 +459,7 @@ switch-tracking-hide-banned-blocked-set-true: "Yasaklanmış/engellenen IP'leri 
 tip_2fa_sent: "E-posta adresinize iki faktörlü bir kimlik doğrulama kodu içeren bir e-posta gönderildi. Ön tarafa erişmek için lütfen aşağıdaki kodu doğrulayın. Bu e-postayı almadıysanız, yeni bir kod içeren yeni bir e-posta almak için, çıkış yapmayı, 10 dakika beklemeyi ve tekrar giriş yapmayı deneyin."
 tip_accounts: "Merhaba, {username}.<br />Hesaplar sayfası, CIDRAM ön ucuna kimin erişebileceğini kontrol etmenizi mümkün kılar."
 tip_aux: "Merhaba, {username}.<br />CIDRAM için yardımcı kurallar oluşturmak, silmek ve değiştirmek için bu sayfayı kullanabilirsiniz."
+tip_aux_priority: "Öncelik (maksimum➡(eşit🔄eşdeğer)➡minimum):"
 tip_cache_data: "Merhaba, {username}.<br />Burada önbellek içeriğini inceleyebilirsiniz."
 tip_cidr_calc: "Merhaba, {username}.<br />CIDR hesaplayıcısı, bir IP adresinin faktörünün hangi CIDR'lerin olduğunu hesaplamanızı mümkün kılar."
 tip_condition_placeholder: "Bir değer belirtin veya göz ardı etmek için boş bırakın."

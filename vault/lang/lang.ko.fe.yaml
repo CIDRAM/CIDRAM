@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Korean language data for the front-end (last modified: 2020.04.13).
+# This file: Korean language data for the front-end (last modified: 2020.04.23).
 ##/
 
 Extended Description Bypasses: "기본 서명 우회 일반적으로 기본 패키지에 포함되어 있습니다."
@@ -172,6 +172,7 @@ field_2fa: "2FA 코드"
 field_Request_Method: "요청 방법"
 field_activate: "활성화"
 field_add_more_conditions: "조건 추가"
+field_add_webhook: "웹 후크 추가"
 field_asnlookup: "ASN 조회"
 field_banned: "금지 된"
 field_blocked: "차단 된셨습니까?"
@@ -249,8 +250,10 @@ label_aux_actBlk: "차단하"
 label_aux_actByp: "우회하"
 label_aux_actGrl: "그레이리스트"
 label_aux_actLog: "기록하지 마십시오"
+label_aux_actRdr: "리디렉션 (차단하지 않고)"
 label_aux_actWhl: "화이트리스트"
 label_aux_create_new_rule: "새 규칙 만들기"
+label_aux_http_status_code_override: "HTTP 상태 코드 바꿔 놓음 :"
 label_aux_logic_all: "규칙을 실행하려면 모든 조건이 충족되어야합니다."
 label_aux_logic_any: "모든 "같지 않음"(≠) 조건도 충족되면 모든 "같음"(=) 조건이 규칙을 트리거 할 수 있습니다."
 label_aux_menu_action: "다음 조건이 충족되면 요청을 %s십시오."
@@ -263,6 +266,11 @@ label_aux_mtdStr: "직접 문자열 비교"
 label_aux_mtdWin: "Windows 스타일 와일드 카드"
 label_aux_name: "새 규칙의 이름 :"
 label_aux_reason: "차단되었을 때 사용자에게 주어진 이유 :"
+label_aux_special: "다른 옵션 및 특수 플래그 :"
+label_aux_special_recaptcha: "reCAPTCHA와 함께 사용하기위한 마크"
+label_aux_special_suppress: "출력 템플릿 억제"
+label_aux_target: "요청을 리디렉션 할 위치 :"
+label_aux_webhooks: "규칙 요구 사항이 충족 될 때 적용 할 웹 후크 :"
 label_backup_location: "저장소 백업 위치 (비상 사태의 경우, 또는 다른 모든 것이 실패한 경우) :"
 label_banned: "금지 된 요청"
 label_blocked: "차단 된 요청"
@@ -447,6 +455,7 @@ switch-tracking-hide-banned-blocked-set-true: "금지/차단 된 IP를 숨기기
 tip_2fa_sent: "2FA 코드가 포함 된 이메일이 귀하의 이메일 주소로 발송되었습니다. 프런트 엔드에 액세스하려면 아래 코드를 확인하십시오. 이 이메일을받지 못한 경우 로그 아웃을 시도하고 10 분을 기다린 후 다시 로그인하여 새 코드가 포함 된 새 이메일을 수신 할 수 있습니다."
 tip_accounts: "안녕하세요, {username}.<br />계정 페이지는 CIDRAM 프론트 엔드에 액세스 할 수있는 사용자를 제어 할 수 있습니다."
 tip_aux: "안녕하세요, {username}.<br />이 페이지를 사용하여 CIDRAM에 대한 보조 규칙을 작성, 삭제 및 수정할 수 있습니다."
+tip_aux_priority: "우선 순위 (최고➡(같은🔄동등한)➡최저한의) :"
 tip_cache_data: "안녕하세요, {username}.<br />여기서 캐시의 내용을 검토 할 수 있습니다."
 tip_cidr_calc: "안녕하세요, {username}.<br />CIDR 계산기는 IP 주소가 어떻게 CIDR에 속해 있는지를 계산할 수 있습니다."
 tip_condition_placeholder: "무시할 값을 지정하거나 공백으로 두십시오."

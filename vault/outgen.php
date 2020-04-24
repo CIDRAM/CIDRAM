@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Output generator (last modified: 2020.04.13).
+ * This file: Output generator (last modified: 2020.04.23).
  */
 
 /** Initialise cache. */
@@ -22,6 +22,9 @@ $CIDRAM['Stage'] = '';
 
 /** Reset bypass flags. */
 $CIDRAM['ResetBypassFlags']();
+
+/** To be populated by webhooks. */
+$CIDRAM['Webhooks'] = [];
 
 /** Initialise statistics if necessary. */
 if ($CIDRAM['Config']['general']['statistics']) {
@@ -410,43 +413,80 @@ if ($CIDRAM['Config']['general']['statistics'] && $CIDRAM['BlockInfo']['Signatur
 $CIDRAM['DestroyCacheObject']();
 
 /** Process webhooks. */
-if (!empty($CIDRAM['Config']['Webhook']['URL'])) {
+if (!empty($CIDRAM['Webhooks']) || !empty($CIDRAM['Config']['Webhook']['URL'])) {
     $CIDRAM['Stage'] = 'Webhooks';
-    /** Fetch data for sending with the request. */
+
+    /** Safety. */
+    if (!isset($CIDRAM['Config']['Webhook'])) {
+        $CIDRAM['Config']['Webhook'] = [];
+    }
+
+    /** Merge webhooks defined by signature files with webhooks defined by auxiliary rules. */
+    if (!empty($CIDRAM['Config']['Webhook']['URL'])) {
+        $CIDRAM['Arrayify']($CIDRAM['Config']['Webhook']['URL']);
+        $CIDRAM['Webhooks'] = array_merge($CIDRAM['Webhooks'], $CIDRAM['Config']['Webhook']['URL']);
+    }
+
+    /** Block information copied here to be further processed for sending with the request. */
     $CIDRAM['ParsedToWebhook'] = $CIDRAM['BlockInfo'];
-    /** Prepare data for sending with the request. */
+
+    /** Some further processing. */
     foreach ($CIDRAM['ParsedToWebhook'] as &$CIDRAM['WebhookVar']) {
         $CIDRAM['WebhookVar'] = urlencode($CIDRAM['WebhookVar']);
     }
-    unset($CIDRAM['WebhookVar']);
+
     /** Set timeout. */
-    if (empty($CIDRAM['Config']['Webhook']['Timeout'])) {
-        $CIDRAM['Config']['Webhook']['Timeout'] = $CIDRAM['Timeout'];
-    }
-    /** Set params. */
+    $CIDRAM['WebhookTimeout'] = $CIDRAM['Config']['Webhook']['Timeout'] ?? $CIDRAM['Timeout'];
+
+    /** Process any special parameters. */
     if (empty($CIDRAM['Config']['Webhook']['Params'])) {
-        $CIDRAM['Config']['Webhook']['Params'] = [];
+        $CIDRAM['WebhookParams'] = [];
     } else {
+        $CIDRAM['WebhookParams'] = $CIDRAM['Config']['Webhook']['Params'];
+        $CIDRAM['Arrayify']($CIDRAM['WebhookParams']);
+
         /** Parse any relevant block information to our webhook params. */
-        $CIDRAM['Config']['Webhook']['Params'] = $CIDRAM['ParseVars'](
+        $CIDRAM['WebhookParams'] = $CIDRAM['ParseVars'](
             $CIDRAM['ParsedToWebhook'],
             $CIDRAM['Config']['Webhook']['Params']
         );
-        $CIDRAM['Arrayify']($CIDRAM['Config']['Webhook']['Params']);
     }
-    /** Parse any relevant block information to our webhook URL. */
-    $CIDRAM['Config']['Webhook']['URL'] = $CIDRAM['ParseVars'](
-        $CIDRAM['ParsedToWebhook'],
-        $CIDRAM['Config']['Webhook']['URL']
-    );
-    /** Perform request. */
-    $CIDRAM['WebhookResults'] = $CIDRAM['Request'](
-        $CIDRAM['Config']['Webhook']['URL'],
-        $CIDRAM['Config']['Webhook']['Params'],
-        $CIDRAM['Config']['Webhook']['Timeout']
-    );
+
+    /** Merge with block information. */
+    $CIDRAM['WebhookParams'] = array_merge($CIDRAM['BlockInfo'], $CIDRAM['WebhookParams']);
+
+    /** Remove useless parameters. */
+    unset($CIDRAM['WebhookParams']['favicon']);
+
+    /** Iterate through each webhook. */
+    foreach ($CIDRAM['Webhooks'] as $CIDRAM['Webhook']) {
+
+        /** Safety. */
+        if (!is_string($CIDRAM['Webhook'])) {
+            continue;
+        }
+
+        /** Parse any relevant block information to our webhooks. */
+        $CIDRAM['Webhook'] = $CIDRAM['ParseVars']($CIDRAM['ParsedToWebhook'], $CIDRAM['Webhook']);
+
+        /** Perform request. */
+        $CIDRAM['Webhook'] = $CIDRAM['Request'](
+            $CIDRAM['Webhook'],
+            $CIDRAM['WebhookParams'],
+            $CIDRAM['WebhookTimeout']
+        );
+    }
+
     /** Cleanup. */
-    unset($CIDRAM['WebhookResults'], $CIDRAM['ParsedToWebhook'], $CIDRAM['Config']['Webhook']);
+    unset(
+        $CIDRAM['Webhook'],
+        $CIDRAM['WebhookParams'],
+        $CIDRAM['WebhookTimeout'],
+        $CIDRAM['WebhookVar'],
+        $CIDRAM['ParsedToWebhook'],
+        $CIDRAM['Webhooks'],
+        $CIDRAM['Config']['Webhook']
+    );
 }
 
 /** If any signatures were triggered, log it, generate output, then die. */
@@ -667,7 +707,7 @@ if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
     /** Append default L10N data. */
     $CIDRAM['Parsables'] += $CIDRAM['L10N']->Data;
 
-    if (!empty($CIDRAM['Banned']) && $CIDRAM['Config']['general']['ban_override'] !== 200 && (
+    if (!empty($CIDRAM['Banned']) && $CIDRAM['Config']['general']['ban_override'] > 400 && (
         $CIDRAM['ThisStatusHTTP'] = $CIDRAM['GetStatusHTTP']($CIDRAM['Config']['general']['ban_override'])
     )) {
 
@@ -687,8 +727,17 @@ if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
 
     } elseif (!$CIDRAM['Config']['general']['silent_mode']) {
 
-        if ($CIDRAM['ThisStatusHTTP'] = $CIDRAM['GetStatusHTTP']($CIDRAM['Config']['general']['forbid_on_block'])) {
-            $CIDRAM['errCode'] = $CIDRAM['Config']['general']['forbid_on_block'];
+        /** Fetch appropriate status code based on either "forbid_on_block" or "Aux Status Code". */
+        if ((
+            !empty($CIDRAM['Aux Status Code']) &&
+            $CIDRAM['errCode'] = $CIDRAM['Aux Status Code'] &&
+            $CIDRAM['errCode'] > 400 &&
+            $CIDRAM['ThisStatusHTTP'] = $CIDRAM['GetStatusHTTP']($CIDRAM['Aux Status Code'])
+        ) || (
+            $CIDRAM['errCode'] = $CIDRAM['Config']['general']['forbid_on_block'] &&
+            $CIDRAM['errCode'] > 400 &&
+            $CIDRAM['ThisStatusHTTP'] = $CIDRAM['GetStatusHTTP']($CIDRAM['errCode'])
+        )) {
             header('HTTP/1.0 ' . $CIDRAM['errCode'] . ' ' . $CIDRAM['ThisStatusHTTP']);
             header('HTTP/1.1 ' . $CIDRAM['errCode'] . ' ' . $CIDRAM['ThisStatusHTTP']);
             header('Status: ' . $CIDRAM['errCode'] . ' ' . $CIDRAM['ThisStatusHTTP']);
@@ -696,7 +745,9 @@ if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
             $CIDRAM['errCode'] = 200;
         }
 
-        if (!$CIDRAM['template_file'] || !file_exists($CIDRAM['Vault'] . $CIDRAM['template_file'])) {
+        if (!empty($CIDRAM['Suppress output template'])) {
+            $CIDRAM['HTML'] = '';
+        } elseif (!$CIDRAM['template_file'] || !file_exists($CIDRAM['Vault'] . $CIDRAM['template_file'])) {
             header('Content-Type: text/plain');
             $CIDRAM['HTML'] = '[CIDRAM] ' . $CIDRAM['Client-L10N']->getString('denied');
         } else {
@@ -771,7 +822,7 @@ if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
 
     /**
      * Skip this section if the IP has been banned and logging banned IPs has
-     * been disabled.
+     * been disabled, or if the don't log flag has been set.
      */
     if (empty($CIDRAM['Flag Don\'t Log']) && (
         $CIDRAM['Config']['general']['log_banned_ips'] || empty($CIDRAM['Banned'])
@@ -793,6 +844,17 @@ if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
 
     /** All necessary processing and logging has completed; Now we send HTML output and die. */
     die($CIDRAM['HTML']);
+}
+
+/** Executed only if request redirection has been triggered by auxiliary rules. */
+if (!empty($CIDRAM['Aux Redirect']) && !empty($CIDRAM['Aux Status Code']) && $CIDRAM['Aux Status Code'] > 300 && $CIDRAM['Aux Status Code'] < 400) {
+    $CIDRAM['errCode'] = $CIDRAM['Aux Status Code'];
+    $CIDRAM['Status'] = $CIDRAM['GetStatusHTTP']($CIDRAM['Aux Status Code']);
+    header('HTTP/1.0 ' . $CIDRAM['Aux Status Code'] . ' ' . $CIDRAM['Status']);
+    header('HTTP/1.1 ' . $CIDRAM['Aux Status Code'] . ' ' . $CIDRAM['Status']);
+    header('Status: ' . $CIDRAM['Aux Status Code'] . ' ' . $CIDRAM['Status']);
+    header('Location: ' . $CIDRAM['Aux Redirect']);
+    die;
 }
 
 /** Final event before we exit. */

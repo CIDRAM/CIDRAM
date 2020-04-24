@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: French language data for the front-end (last modified: 2020.04.13).
+# This file: French language data for the front-end (last modified: 2020.04.23).
 ##/
 
 Extended Description Bypasses: "Les fichiers pour contourner les signatures standard qui sont normalement inclus dans le paquet principal."
@@ -172,6 +172,7 @@ field_2fa: "Code 2FA"
 field_Request_Method: "Méthode de requête"
 field_activate: "Activer"
 field_add_more_conditions: "Ajouter plus de conditions"
+field_add_webhook: "Ajouter un webhook"
 field_asnlookup: "Recherche d'ASN"
 field_banned: "Interdit"
 field_blocked: "Bloqué"
@@ -251,8 +252,10 @@ label_aux_actBlk: "bloquer"
 label_aux_actByp: "contourner"
 label_aux_actGrl: "liste grise"
 label_aux_actLog: "ne pas enregistrer"
+label_aux_actRdr: "rediriger (sans bloquer)"
 label_aux_actWhl: "liste blanche"
 label_aux_create_new_rule: "Créer une nouvelle règle"
+label_aux_http_status_code_override: "Remplacement du code d'état HTTP :"
 label_aux_logic_all: "Pour déclencher la règle, toutes les conditions doivent être remplies."
 label_aux_logic_any: "Toute condition "égal" (=) peut déclencher la règle, tant que toutes les conditions "non égal" (≠) sont également remplies."
 label_aux_menu_action: "Si les conditions suivantes sont remplies, %s la requête."
@@ -265,6 +268,11 @@ label_aux_mtdStr: "comparaison directe de chaînes"
 label_aux_mtdWin: "caractères génériques de style Windows"
 label_aux_name: "Un nom pour la nouvelle règle :"
 label_aux_reason: "La raison donnée à l'utilisateur lorsqu'il est bloqué :"
+label_aux_special: "Autres options et drapeaux spéciaux :"
+label_aux_special_recaptcha: "Marquer pour une utilisation avec reCAPTCHA"
+label_aux_special_suppress: "Supprimer le modèle de sortie"
+label_aux_target: "Où rediriger la requête :"
+label_aux_webhooks: "Webhooks à appliquer lorsque les exigences de la règle sont remplies :"
 label_backup_location: "Emplacements de sauvegarde du référentiel (en cas d'urgence, ou si tout le reste échoue) :"
 label_banned: "Requêtes interdites"
 label_blocked: "Requêtes bloquées"
@@ -461,6 +469,7 @@ switch-tracking-hide-banned-blocked-set-true: "Omettre les IP interdites/bloqué
 tip_2fa_sent: "Un e-mail contenant un code d'authentification à deux facteurs a été envoyé à votre adresse e-mail. Veuillez confirmer ce code ci-dessous pour obtenir un accès frontal. Si vous n'avez pas reçu cet e-mail, essayez de vous déconnecter, d'attendre 10 minutes, et de vous reconnecter pour recevoir un nouvel e-mail contenant un nouveau code."
 tip_accounts: "Bonjour, {username}.<br />La page des comptes vous permet de contrôler qui peut accéder l'accès frontal de CIDRAM."
 tip_aux: "Bonjour, {username}.<br />Vous pouvez utiliser cette page pour créer, supprimer et modifier des règles auxiliaires pour CIDRAM."
+tip_aux_priority: "Priorité (plus haut➡(égale🔄équivalent)➡plus bas) :"
 tip_cache_data: "Bonjour, {username}.<br />Ici vous pouvez revoir le contenu du cache."
 tip_cidr_calc: "Bonjour, {username}.<br />Le calculatrice CIDR vous permet de calculer les CIDR auxquels une adresse IP appartient."
 tip_condition_placeholder: "Spécifiez une valeur, ou laissez vide pour ne pas en tenir compte."

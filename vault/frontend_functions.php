@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2020.04.13).
+ * This file: Front-end functions file (last modified: 2020.04.24).
  */
 
 /**
@@ -882,8 +882,23 @@ $CIDRAM['SimulateBlockEvent'] = function (string $Addr, bool $Modules = false, b
     /** Reset bypass flags (needed to prevent falsing due to search engine verification). */
     $CIDRAM['ResetBypassFlags']();
 
+    /** Reset mark for use with reCAPTCHA flag. */
+    $CIDRAM['Config']['recaptcha']['enabled'] = false;
+
+    /** Reset suppress output template flag. */
+    $CIDRAM['Suppress output template'] = false;
+
+    /** To be populated by webhooks. */
+    $CIDRAM['Webhooks'] = [];
+
     /** Reset "don't log" flag. */
     $CIDRAM['Flag Don\'t Log'] = false;
+
+    /** Reset "redirect" flag. */
+    $CIDRAM['Aux Redirect'] = '';
+
+    /** Reset "status code" flag. */
+    $CIDRAM['Aux Status Code'] = 200;
 
     /** Reset hostname (needed to prevent falsing due to repeat module calls involving hostname lookups). */
     $CIDRAM['Hostname'] = '';
@@ -3134,9 +3149,6 @@ $CIDRAM['AuxGenerateFEData'] = function () use (&$CIDRAM) {
     /** Potential sources. */
     $Sources = preg_replace('~(?: | )?(?:：|:) ?$~', '', $CIDRAM['SourcesL10N']);
 
-    /** Potential modes. */
-    static $Modes = ['Whitelist', 'Greylist', 'Block', 'Bypass'];
-
     /** Attempt to parse the auxiliary rules file. */
     if (!isset($CIDRAM['AuxData'])) {
         $CIDRAM['AuxData'] = (new \Maikuolan\Common\YAML($CIDRAM['ReadFile']($CIDRAM['Vault'] . 'auxiliary.yaml')))->Data;
@@ -3144,6 +3156,8 @@ $CIDRAM['AuxGenerateFEData'] = function () use (&$CIDRAM) {
 
     /** Count entries (needed for offering first and last move options). */
     $Count = count($CIDRAM['AuxData']);
+
+    /** Useful to know whether we're at the first or last rule (due to the "move to the ..." options. */
     $Current = 1;
 
     /** Iterate through the auxiliary rules. */
@@ -3152,8 +3166,8 @@ $CIDRAM['AuxGenerateFEData'] = function () use (&$CIDRAM) {
         /** Rule row ID. */
         $RuleClass = preg_replace('~^0+~', '', bin2hex($Name));
 
-        /** Figure out what options are available for the rule. */
-        $Options = ['<input type="button" onclick="javascript:%1$s(\'%2$s\',\'%3$s\')" value="%4$s" class="auto" />'];
+        /** Figure out which options are available for the rule. */
+        $Options = ['(<span style="cursor:pointer" onclick="javascript:%1$s(\'%2$s\',\'%3$s\')"><code class="s">%4$s</code></span>)'];
         $Options['delRule'] = sprintf($Options[0], 'delRule', $Name, $RuleClass, $CIDRAM['L10N']->getString('field_delete'));
         if ($Count > 1) {
             if ($Current !== 1) {
@@ -3164,23 +3178,45 @@ $CIDRAM['AuxGenerateFEData'] = function () use (&$CIDRAM) {
             }
             $Current++;
         }
-        $Options[0] = '';
-        $Options = implode('', $Options);
+        unset($Options[0]);
+        $Options = ' – ' . implode(' ', $Options);
 
         /** Begin generating rule output. */
         $Output .= sprintf(
-            '        <tr class="%2$s">%1$s  <td class="h4"><div class="s">%3$s</div></td>%1$s  <td class="h4f">%4$s</td>%1$s</tr>' .
-            '%1$s<tr class="%2$s">%1$s  <td class="h3f" colspan="2">',
-            "\n        ",
-            $RuleClass,
-            $Name,
-            $Options
-        );
+            '%1$s<li class="%2$s"><span class="comCat" style="cursor:pointer"><span class="s">%3$s</span></span>%4$s%1$s<br /><br /><ul class="comSub">'
+        , "\n        ", $RuleClass, $Name, $Options);
 
-        /** Detailed reason. */
-        if (!empty($Data['Reason'])) {
-            $Output .= '<span class="s">' . $CIDRAM['L10N']->getString('label_aux_reason') . '</span><br />';
-            $Output .= '<ul><li>' . $Data['Reason'] . '</li></ul>';
+        /** Additional details about the rule to print to the page (e.g., detailed block reason). */
+        foreach ([
+            ['Reason', 'label_aux_reason'],
+            ['Target', 'label_aux_target'],
+            ['Webhooks', 'label_aux_webhooks']
+        ] as $Details) {
+            if (!empty($Data[$Details[0]]) && $Label = $CIDRAM['L10N']->getString($Details[1])) {
+                if (is_array($Data[$Details[0]])) {
+                    $Data[$Details[0]] = implode('</dd><dd>', $Data[$Details[0]]);
+                }
+                $Output .= "\n            <li><dl><dt class=\"s\">" . $Label . '</dt><dd>' . $Data[$Details[0]] . '</dd></dl></li>';
+            }
+        }
+
+        /** Display the status code to be applied. */
+        if (!empty($Data['Status Code']) && $Data['Status Code'] > 200 && $StatusCode = $CIDRAM['GetStatusHTTP']($Data['Status Code'])) {
+            $Output .= "\n            <li><dl><dt class=\"s\">" . $CIDRAM['L10N']->getString('label_aux_http_status_code_override') . '</dt><dd>' . $Data['Status Code'] . ' ' . $StatusCode . '</dd></dl></li>';
+        }
+
+        /** Display other options and special flags. */
+        $Flags = [];
+        foreach ([
+            ['Mark for use with reCAPTCHA', 'label_aux_special_recaptcha'],
+            ['Suppress output template', 'label_aux_special_suppress']
+        ] as $Flag) {
+            if (!empty($Data[$Flag[0]]) && $Label = $CIDRAM['L10N']->getString($Flag[1])) {
+                $Flags[] = $Label;
+            }
+        }
+        if (count($Flags)) {
+            $Output .= "\n            <li><dl><dt class=\"s\">" . $CIDRAM['L10N']->getString('label_aux_special') . '</dt><dd>' . implode('<br />', $Flags) . '</dd></dl></li>';
         }
 
         /** Iterate through actions. */
@@ -3189,7 +3225,8 @@ $CIDRAM['AuxGenerateFEData'] = function () use (&$CIDRAM) {
             ['Greylist', 'optActGrl'],
             ['Block', 'optActBlk'],
             ['Bypass', 'optActByp'],
-            ['Don\'t log', 'optActLog']
+            ['Don\'t log', 'optActLog'],
+            ['Redirect', 'optActRdr']
         ] as $Action) {
 
             /** Skip action if the current rule doesn't use this action. */
@@ -3198,29 +3235,21 @@ $CIDRAM['AuxGenerateFEData'] = function () use (&$CIDRAM) {
             }
 
             /** Show the appropriate label for this action. */
-            $Output .= '<span class="s">' . $CIDRAM['FE'][$Action[1]] . '</span><br />';
-
-            /** Show the method to be used. */
-            $Output .= '<span class="s">' . (isset($Data['Method']) ? (
-                $Data['Method'] === 'RegEx' ? $CIDRAM['FE']['optMtdReg'] : (
-                    $Data['Method'] === 'WinEx' ? $CIDRAM['FE']['optMtdWin'] : $CIDRAM['FE']['optMtdStr']
-                )
-            ) : $CIDRAM['FE']['optMtdStr']) . '</span><br />';
-
-            /** Begin writing conditions list. */
-            $Output .= '<ul>';
+            $Output .= sprintf(
+                '%1$s<li>%1$s  <dl><dt class="s">%2$s</dt>'
+            , "\n            ", $CIDRAM['FE'][$Action[1]]);
 
             /** List all "not equals" conditions . */
             if (!empty($Data[$Action[0]]['But not if matches'])) {
 
                 /** Iterate through sources. */
                 foreach ($Data[$Action[0]]['But not if matches'] as $Source => $Values) {
-                    $ThisSource = $Sources[$Source] ?? $Source;
+                    $ThisSource = isset($Sources[$Source]) ? $Sources[$Source] : $Source;
                     if (!is_array($Values)) {
                         $Values = [$Values];
                     }
                     foreach ($Values as $Value) {
-                        $Output .= "\n            <li>" . $ThisSource . ' ≠ <code>' . $Value . '</code></li>';
+                        $Output .= "\n              <dd><span style=\"float:" . $CIDRAM['FE']['FE_Align'] . '">' . $ThisSource . '&nbsp;≠&nbsp;</span><code>' . $Value . '</code></dd>';
                     }
                 }
             }
@@ -3230,29 +3259,34 @@ $CIDRAM['AuxGenerateFEData'] = function () use (&$CIDRAM) {
 
                 /** Iterate through sources. */
                 foreach ($Data[$Action[0]]['If matches'] as $Source => $Values) {
-                    $ThisSource = $Sources[$Source] ?? $Source;
+                    $ThisSource = isset($Sources[$Source]) ? $Sources[$Source] : $Source;
                     if (!is_array($Values)) {
                         $Values = [$Values];
                     }
                     foreach ($Values as $Value) {
-                        $Output .= "\n            <li>" . $ThisSource . ' = <code>' . $Value . '</code></li>';
+                        $Output .= "\n              <dd><span style=\"float:" . $CIDRAM['FE']['FE_Align'] . '">' . $ThisSource . '&nbsp;=&nbsp;</span><code>' . $Value . '</code></dd>';
                     }
                 }
             }
 
             /** Finish writing conditions list. */
-            $Output .= "\n          </ul><br />";
+            $Output .= "\n            </dl></li>";
         }
+
+        /** Show the method to be used. */
+        $Output .= "\n            <li><dl><dt><em>" . (isset($Data['Method']) ? (
+            $Data['Method'] === 'RegEx' ? $CIDRAM['FE']['optMtdReg'] : (
+                $Data['Method'] === 'WinEx' ? $CIDRAM['FE']['optMtdWin'] : $CIDRAM['FE']['optMtdStr']
+            )
+        ) : $CIDRAM['FE']['optMtdStr']) . '</em></dt></dl></li>';
 
         /** Describe matching logic used. */
-        if (!empty($Data['Logic']) && $Data['Logic'] !== 'Any') {
-            $Output .= '<em>' . $CIDRAM['L10N']->getString('label_aux_logic_all') . '</em>';
-        } else {
-            $Output .= '<em>' . $CIDRAM['L10N']->getString('label_aux_logic_any') . '</em>';
-        }
+        $Output .= "\n            <li><dl><dt><em>" . $CIDRAM['L10N']->getString(
+            (!empty($Data['Logic']) && $Data['Logic'] !== 'Any') ? 'label_aux_logic_all' : 'label_aux_logic_any'
+        ) . '</em></dt></dl></li>';
 
         /** Finish writing new rule. */
-        $Output .= "</td>\n        </tr>\n";
+        $Output .= "\n          </ul>\n        </li>";
     }
 
     /** Exit with generated output. */
@@ -3405,11 +3439,17 @@ $CIDRAM['LTRinRTF'] = function (string $String = '') use (&$CIDRAM): string {
     }
 
     /** Modify the string to better suit RTL directionality and return it. */
-    return preg_replace(
-        ['~^(.+)-&gt;(.+)$~i', '~^(.+)➡(.+)$~i'],
-        ['\2&lt;-\1', '\2⬅\1'],
-        $String
-    );
+    while (true) {
+        $NewString = preg_replace(
+            ['~^(.+)-&gt;(.+)$~i', '~^(.+)➡(.+)$~i'],
+            ['\2&lt;-\1', '\2⬅\1'],
+            $String
+        );
+        if ($NewString === $String) {
+            return $NewString;
+        }
+        $String = $NewString;
+    }
 };
 
 /**

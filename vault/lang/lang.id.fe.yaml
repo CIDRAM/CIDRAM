@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Indonesian language data for the front-end (last modified: 2020.04.13).
+# This file: Indonesian language data for the front-end (last modified: 2020.04.23).
 ##/
 
 Extended Description Bypasses: "File untuk bypass tanda tangan standar yang biasanya disertakan dengan paket utama."
@@ -172,6 +172,7 @@ field_2fa: "Kode 2FA"
 field_Request_Method: "Metode permintaan"
 field_activate: "Mengaktifkan"
 field_add_more_conditions: "Tambahkan lebih banyak kondisi"
+field_add_webhook: "Tambahkan webhook"
 field_asnlookup: "Pencarian ASN"
 field_banned: "Dilarang"
 field_blocked: "Diblokir"
@@ -249,8 +250,10 @@ label_aux_actBlk: "blokir"
 label_aux_actByp: "bypass"
 label_aux_actGrl: "daftar abu-abu"
 label_aux_actLog: "jangan mencatat"
+label_aux_actRdr: "mengalihkan (tanpa memblokir)"
 label_aux_actWhl: "daftar putih"
 label_aux_create_new_rule: "Buat aturan baru"
+label_aux_http_status_code_override: "Ganti kode status HTTP:"
 label_aux_logic_all: "Untuk memicu aturan, semua kondisi harus dipenuhi."
 label_aux_logic_any: "Setiap "sama" (=) kondisi dapat memicu aturan, selama semua "tidak sama" (≠) kondisi juga dipenuhi."
 label_aux_menu_action: "Jika kondisi berikut dipenuhi, %s permintaan."
@@ -263,6 +266,11 @@ label_aux_mtdStr: "perbandingan string langsung"
 label_aux_mtdWin: "wildcard bergaya Windows"
 label_aux_name: "Nama untuk aturan baru:"
 label_aux_reason: "Alasan diberikan kepada pengguna saat diblokir:"
+label_aux_special: "Opsi lain dan bendera khusus:"
+label_aux_special_recaptcha: "Tandai untuk digunakan dengan reCAPTCHA"
+label_aux_special_suppress: "Menekan template output"
+label_aux_target: "Dimana mengalihkan permintaan:"
+label_aux_webhooks: "Webhook untuk diterapkan ketika persyaratan aturan dipenuhi:"
 label_backup_location: "Lokasi cadangan repositori (dalam keadaan darurat, atau jika semuanya gagal):"
 label_banned: "Permintaan dilarang"
 label_blocked: "Permintaan diblokir"
@@ -447,6 +455,7 @@ switch-tracking-hide-banned-blocked-set-true: "Sembunyikan IP yang dilarang/dibl
 tip_2fa_sent: "Sebuah email yang berisi kode otentikasi dua-faktor telah dikirim ke alamat email Anda. Silahkan mengkonfirmasikan kode ini dibawah untuk mendapatkan akses ke bagian depan. Jika Anda tidak menerima email ini, coba keluar, tunggu 10 menit, dan masuk lagi untuk menerima email baru yang berisi kode baru."
 tip_accounts: "Salam, {username}.<br />Halaman akun memungkinkan Anda untuk mengontrol siapa dapat mengakses bagian depan CIDRAM."
 tip_aux: "Salam, {username}.<br />Anda dapat menggunakan halaman ini untuk membuat, menghapus, dan mengubah aturan tambahan untuk CIDRAM."
+tip_aux_priority: "Prioritas (maksimum➡(sama🔄setara)➡terendah):"
 tip_cache_data: "Salam, {username}.<br />Disini Anda bisa meninjau isi cache."
 tip_cidr_calc: "Salam, {username}.<br />Kalkulator CIDR memungkinkan Anda untuk menghitung yang CIDR alamat IP adalah faktor."
 tip_condition_placeholder: "Tentukan nilai, atau biarkan kosong untuk diabaikan."

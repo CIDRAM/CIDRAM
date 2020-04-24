@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2020.04.13).
+ * This file: Functions file (last modified: 2020.04.23).
  */
 
 /** Autoloader for CIDRAM classes. */
@@ -1880,6 +1880,8 @@ $CIDRAM['Pseudonymise-IP'] = function (string $IP): string {
 $CIDRAM['GetStatusHTTP'] = function (int $Status): string {
     $Message = [
         301 => 'Moved Permanently',
+        307 => 'Temporary Redirect',
+        308 => 'Permanent Redirect',
         403 => 'Forbidden',
         410 => 'Gone',
         418 => 'I\'m a teapot',
@@ -1898,7 +1900,7 @@ $CIDRAM['GetStatusHTTP'] = function (int $Status): string {
  * @param string $Method The method for handling data when matching.
  * @return bool Match succeeded (true) or failed (false).
  */
-$CIDRAM['AuxMatch'] = function ($Criteria, $Actual, $Method = '') use (&$CIDRAM) {
+$CIDRAM['AuxMatch'] = function ($Criteria, string $Actual, string $Method = '') use (&$CIDRAM): bool {
 
     /** Normalise criteria to an array. */
     if (!is_array($Criteria)) {
@@ -1942,9 +1944,28 @@ $CIDRAM['AuxMatch'] = function ($Criteria, $Actual, $Method = '') use (&$CIDRAM)
  * @param string $Action The type of action to perform.
  * @param string $Name The name of the rule.
  * @param string $Reason The reason for performing the action.
+ * @param string $Target The target of the action (e.g., where to redirect).
+ * @param int $StatusCode The status code to apply (if any has been set).
+ * @param array $Webhooks Any webhooks included with the auxiliary rule.
+ * @param array $Flags Any other options and special flags included with the auxiliary rule.
  * @return bool Whether the calling parent should return immediately.
  */
-$CIDRAM['AuxAction'] = function ($Action, $Name, $Reason = '') use (&$CIDRAM) {
+$CIDRAM['AuxAction'] = function (string $Action, string $Name, string $Reason = '', string $Target = '', int $StatusCode = 200, array $Webhooks = [], array $Flags = []) use (&$CIDRAM): bool {
+
+    /** Apply webhooks. */
+    if (!empty($Webhooks)) {
+        $CIDRAM['Webhooks'] = isset($CIDRAM['Webhooks']) ? array_merge($CIDRAM['Webhooks'], $Webhooks) : $Webhooks;
+    }
+
+    /** Apply mark for use with reCAPTCHA flag. */
+    if (!empty($Flags['Mark for use with reCAPTCHA'])) {
+        $CIDRAM['Config']['recaptcha']['enabled'] = true;
+    }
+
+    /** Apply suppress output template flag. */
+    if (!empty($Flags['Suppress output template'])) {
+        $CIDRAM['Suppress output template'] = true;
+    }
 
     /** Whitelist. */
     if ($Action === 'Whitelist') {
@@ -1960,6 +1981,9 @@ $CIDRAM['AuxAction'] = function ($Action, $Name, $Reason = '') use (&$CIDRAM) {
     /** Block. */
     elseif ($Action === 'Block') {
         $CIDRAM['Trigger'](true, $Name, $Reason);
+        if ($StatusCode > 400) {
+            $CIDRAM['Aux Status Code'] = $StatusCode;
+        }
     }
 
     /** Bypass. */
@@ -1970,6 +1994,14 @@ $CIDRAM['AuxAction'] = function ($Action, $Name, $Reason = '') use (&$CIDRAM) {
     /** Don't log the request instance. */
     elseif ($Action === 'Don\'t log') {
         $CIDRAM['Flag Don\'t Log'] = true;
+    }
+
+    /** Don't log the request instance. */
+    elseif ($Action === 'Redirect') {
+        $CIDRAM['Aux Redirect'] = $Target;
+        if ($StatusCode > 300 && $StatusCode < 400) {
+            $CIDRAM['Aux Status Code'] = $StatusCode;
+        }
     }
 
     /** Exit. */
@@ -2009,7 +2041,7 @@ $CIDRAM['Aux'] = function () use (&$CIDRAM) {
     ];
 
     /** Potential modes. */
-    static $Modes = ['Whitelist', 'Greylist', 'Block', 'Bypass', 'Don\'t log'];
+    static $Modes = ['Whitelist', 'Greylist', 'Block', 'Bypass', 'Don\'t log', 'Redirect'];
 
     /** Attempt to parse the auxiliary rules file. */
     if (!isset($CIDRAM['AuxData'])) {
@@ -2019,14 +2051,35 @@ $CIDRAM['Aux'] = function () use (&$CIDRAM) {
     /** Iterate through the auxiliary rules. */
     foreach ($CIDRAM['AuxData'] as $Name => $Data) {
 
+        /** Safety. */
+        if (!is_array($Data) || empty($Data)) {
+            continue;
+        }
+
         /** Matching logic. */
-        $Logic = empty($Data['Logic']) ? 'Any' : $Data['Logic'];
+        $Logic = (string)($Data['Logic'] ?? 'Any');
 
         /** Detailed reason. */
-        $Reason = empty($Data['Reason']) ? $Name : $Data['Reason'];
+        $Reason = (string)($Data['Reason'] ?? $Name);
 
         /** The matching method to use. */
-        $Method = empty($Data['Method']) ? '' : $Data['Method'];
+        $Method = (string)($Data['Method'] ?? '');
+
+        /** Redirect target. */
+        $Target = (string)($Data['Target'] ?? '');
+
+        /** Status code to apply (if any has been specified). */
+        $StatusCode = (int)($Data['Status Code'] ?? 200);
+
+        /** Webhooks to apply (if any have been specified). */
+        $Webhooks = $Data['Webhooks'] ?? [];
+        $CIDRAM['Arrayify']($Webhooks);
+
+        /** Other options and special flags to apply (if any have been specified). */
+        $Flags = [
+            'Mark for use with reCAPTCHA' => !empty($Data['Webhooks']['Mark for use with reCAPTCHA']),
+            'Suppress output template' => !empty($Data['Webhooks']['Suppress output template'])
+        ];
 
         /** Iterate through modes. */
         foreach ($Modes as $Mode) {
@@ -2101,7 +2154,7 @@ $CIDRAM['Aux'] = function () use (&$CIDRAM) {
                                         if ($Logic === 'All') {
                                             continue;
                                         }
-                                        if ($CIDRAM['AuxAction']($Mode, $Name, $Reason)) {
+                                        if ($CIDRAM['AuxAction']($Mode, $Name, $Reason, $Target, $StatusCode, $Webhooks, $Flags)) {
                                             return;
                                         }
                                         continue 4;
@@ -2125,7 +2178,7 @@ $CIDRAM['Aux'] = function () use (&$CIDRAM) {
                                 if ($Logic === 'All') {
                                     continue;
                                 }
-                                if ($CIDRAM['AuxAction']($Mode, $Name, $Reason)) {
+                                if ($CIDRAM['AuxAction']($Mode, $Name, $Reason, $Target, $StatusCode, $Webhooks, $Flags)) {
                                     return;
                                 }
                                 continue 3;
@@ -2138,7 +2191,7 @@ $CIDRAM['Aux'] = function () use (&$CIDRAM) {
             }
 
             /** Perform action for matching rules requiring all conditions to be met. */
-            if ($Logic === 'All' && $Matched && $CIDRAM['AuxAction']($Mode, $Name, $Reason)) {
+            if ($Logic === 'All' && $Matched && $CIDRAM['AuxAction']($Mode, $Name, $Reason, $Target, $StatusCode, $Webhooks, $Flags)) {
                 return;
             }
         }
@@ -2151,7 +2204,7 @@ $CIDRAM['Aux'] = function () use (&$CIDRAM) {
  * @param string $RL_Capture What we've captured to identify the requesting entity.
  * @param int $RL_Size The size of the output served to the requesting entity.
  */
-$CIDRAM['RL_WriteEvent'] = function ($RL_Capture, $RL_Size) use (&$CIDRAM) {
+$CIDRAM['RL_WriteEvent'] = function (string $RL_Capture, int $RL_Size) use (&$CIDRAM) {
     $TimePacked = pack('l*', $CIDRAM['Now']);
     $SizePacked = pack('l*', $RL_Size);
     $Data = $TimePacked . $SizePacked . $RL_Capture;

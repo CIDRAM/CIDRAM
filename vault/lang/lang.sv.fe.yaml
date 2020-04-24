@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Swedish language data for the front-end (last modified: 2020.04.13).
+# This file: Swedish language data for the front-end (last modified: 2020.04.23).
 ##/
 
 Extended Description Bypasses: "Standard bypass-filen som normalt ingår i huvudpaketet."
@@ -172,6 +172,7 @@ field_2fa: "2FA-kod"
 field_Request_Method: "Förfrågan metod"
 field_activate: "Aktivera"
 field_add_more_conditions: "Lägg till fler villkor"
+field_add_webhook: "Lägg till en webhook"
 field_asnlookup: "ASN-uppslag"
 field_banned: "Förbjudna"
 field_blocked: "Blockerad"
@@ -249,8 +250,10 @@ label_aux_actBlk: "blockera"
 label_aux_actByp: "kringgå"
 label_aux_actGrl: "grålista"
 label_aux_actLog: "logga inte"
+label_aux_actRdr: "omdirigera (utan att blockera)"
 label_aux_actWhl: "vitlista"
 label_aux_create_new_rule: "Skapa ny regel"
+label_aux_http_status_code_override: "HTTP-statuskod åsidosätter:"
 label_aux_logic_all: "För att kunna utlösa regeln måste alla villkor vara uppfyllda."
 label_aux_logic_any: "Eventuella "lika" (=) villkor kan utlösa regeln, så länge som alla "inte lika" (≠) villkor också uppfylls."
 label_aux_menu_action: "Om följande villkor är uppfyllda, %s begäran."
@@ -263,6 +266,11 @@ label_aux_mtdStr: "direkt sträng jämförelse"
 label_aux_mtdWin: "Windows-vildkort"
 label_aux_name: "Ett namn på den nya regeln:"
 label_aux_reason: "Anledningen till användaren när den blockeras:"
+label_aux_special: "Andra alternativ och specialflaggor:"
+label_aux_special_recaptcha: "Markera för användning med reCAPTCHA"
+label_aux_special_suppress: "Undertryck utmatningsmall"
+label_aux_target: "Var ska omdirigera begäran:"
+label_aux_webhooks: "Webhooks som ska tillämpas när regelkraven är uppfyllda:"
 label_backup_location: "Repository backup platser (i nödfall, eller om allt annat misslyckas):"
 label_banned: "Förfrågningar förbjudna"
 label_blocked: "Förfrågningar blockerade"
@@ -455,6 +463,7 @@ switch-tracking-hide-banned-blocked-set-true: "Göm förbjudna/blockerade IP-adr
 tip_2fa_sent: "Ett email som innehåller en 2FA-kod har skickats till din e-postadress. Vänligen bekräfta den här koden nedan för att få tillgång till front-end. Om du inte fick det här e-postmeddelandet, försöker du logga ut, vänta i 10 minuter, och logga in igen för att få ett nytt e-postmeddelande med en ny kod."
 tip_accounts: "Hallå, {username}.<br />Du kan styra vem som har tillgång till CIDRAM front-end på kontosidan."
 tip_aux: "Hallå, {username}.<br />Du kan använda den här sidan för att skapa, ta bort och ändra hjälpregler för CIDRAM."
+tip_aux_priority: "Prioritet (högsta➡(likvärdig🔄ekvivalent)➡lägst):"
 tip_cache_data: "Hallå, {username}.<br />Här kan du granska innehållet i cacheminnet."
 tip_cidr_calc: "Hallå, {username}.<br />CIDR-kalkylatorn kan beräkna CIDR-faktorerna för en IP-adress."
 tip_condition_placeholder: "Ange ett värde, eller lämna tomma för att bortse från."

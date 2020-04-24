@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2020.04.13).
+ * This file: Front-end handler (last modified: 2020.04.24).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -3171,12 +3171,25 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-test' && $CIDRAM['FE']['Perm
                 $CIDRAM['ThisIP']['YesNo'] = $CIDRAM['L10N']->getString('response_no');
                 $CIDRAM['ThisIP']['StatClass'] = 'txtGn';
             }
-            $CIDRAM['ThisIP']['NegateFlags'] = '';
-            if ($CIDRAM['Flag Don\'t Log']) {
-                $CIDRAM['ThisIP']['NegateFlags'] .= '📓';
+            if ($CIDRAM['Aux Redirect'] && $CIDRAM['Aux Status Code']) {
+                if ($CIDRAM['ThisIP']['StatClass'] === 'txtGn') {
+                    $CIDRAM['ThisIP']['StatClass'] = 'txtOe';
+                }
+                $CIDRAM['ThisIP']['YesNo'] .= ' ' . $CIDRAM['LTRinRTF'](sprintf(
+                    '%1$s <%2$d> ➡ %2$s',
+                    '<span style="text-transform:capitalize">++' . $CIDRAM['L10N']->getString('label_aux_actRdr') . '</span>',
+                    $CIDRAM['Aux Status Code'],
+                    '<code>' . $CIDRAM['Aux Redirect'] . '</code>'
+                ));
             }
-            if ($CIDRAM['ThisIP']['NegateFlags']) {
-                $CIDRAM['ThisIP']['YesNo'] .= ' – 🚫' . $CIDRAM['ThisIP']['NegateFlags'];
+            if ($CIDRAM['Flag Don\'t Log']) {
+                $CIDRAM['ThisIP']['YesNo'] .= ' <span style="text-transform:capitalize">++' . $CIDRAM['L10N']->getString('label_aux_actLog') . '</span>';
+            }
+            if ($CIDRAM['Config']['recaptcha']['enabled']) {
+                $CIDRAM['ThisIP']['YesNo'] .= ' ++' . $CIDRAM['L10N']->getString('label_aux_special_recaptcha');
+            }
+            if ($CIDRAM['Suppress output template']) {
+                $CIDRAM['ThisIP']['YesNo'] .= ' ++' . $CIDRAM['L10N']->getString('label_aux_special_suppress');
             }
             $CIDRAM['FE']['IPTestResults'] .= $CIDRAM['ParseVars'](
                 $CIDRAM['L10N']->Data + $CIDRAM['ThisIP'],
@@ -3539,7 +3552,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'aux' && $CIDRAM['FE']['Permissi
     }
 
     /** Create new auxiliary rule. */
-    if (isset($_POST['ruleName'], $_POST['conSourceType'], $_POST['conIfOrNot'], $_POST['conSourceValue'], $_POST['act'], $_POST['mtd'], $_POST['logic'])) {
+    if (isset($_POST['ruleName'], $_POST['conSourceType'], $_POST['conIfOrNot'], $_POST['conSourceValue'], $_POST['act'], $_POST['mtd'], $_POST['logic']) && $_POST['ruleName']) {
 
         /** Construct new rule array. */
         $CIDRAM['AuxData'][$_POST['ruleName']] = [];
@@ -3551,12 +3564,39 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'aux' && $CIDRAM['FE']['Permissi
             $CIDRAM['AuxData'][$_POST['ruleName']]['Method'] = 'WinEx';
         }
 
-        /** Construct new rule matching logic. */
-        $CIDRAM['AuxData'][$_POST['ruleName']]['Logic'] = $_POST['logic'];
+        /** Construct other basic rule fields (e.g., match logic, block reason, etc). */
+        foreach ([
+            ['Logic', 'logic'],
+            ['Reason', 'ruleReason'],
+            ['Target', 'ruleTarget'],
+            ['Status Code', 'statusCode'],
+            ['Webhooks', 'webhooks']
+        ] as $CIDRAM['AuxTmp']) {
+            if (!empty($_POST[$CIDRAM['AuxTmp'][1]])) {
+                $CIDRAM['AuxData'][$_POST['ruleName']][$CIDRAM['AuxTmp'][0]] = $_POST[$CIDRAM['AuxTmp'][1]];
+            }
+        }
+        unset($CIDRAM['AuxTmp']);
 
-        /** Construct new rule block reason. */
-        if (!empty($_POST['ruleReason'])) {
-            $CIDRAM['AuxData'][$_POST['ruleName']]['Reason'] = $_POST['ruleReason'];
+        /** Process webhooks. */
+        if (!empty($CIDRAM['AuxData'][$_POST['ruleName']]['Webhooks'])) {
+            $CIDRAM['Arrayify']($CIDRAM['AuxData'][$_POST['ruleName']]['Webhooks']);
+            $CIDRAM['AuxData'][$_POST['ruleName']]['Webhooks'] = array_unique(
+                array_filter($CIDRAM['AuxData'][$_POST['ruleName']]['Webhooks'])
+            );
+            if (!count($CIDRAM['AuxData'][$_POST['ruleName']]['Webhooks'])) {
+                unset($CIDRAM['AuxData'][$_POST['ruleName']]['Webhooks']);
+            }
+        }
+
+        /** Process other options and special flags. */
+        foreach ([
+            ['recaptchaEnabledTrue', 'Mark for use with reCAPTCHA'],
+            ['suppressOutputTemplate', 'Suppress output template']
+        ] as $CIDRAM['AuxSpecialFlag']) {
+            if (isset($_POST[$CIDRAM['AuxSpecialFlag'][0]]) && $_POST[$CIDRAM['AuxSpecialFlag'][0]] === 'on') {
+                $CIDRAM['AuxData'][$_POST['ruleName']][$CIDRAM['AuxSpecialFlag'][1]] = true;
+            }
         }
 
         /** Possible actions (other than block). */
@@ -3564,7 +3604,8 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'aux' && $CIDRAM['FE']['Permissi
             'actWhl' => 'Whitelist',
             'actGrl' => 'Greylist',
             'actByp' => 'Bypass',
-            'actLog' => 'Don\'t log'
+            'actLog' => 'Don\'t log',
+            'actRdr' => 'Redirect'
         ];
 
         /** Determine appropriate action for new rule. */
@@ -3641,40 +3682,11 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'aux' && $CIDRAM['FE']['Permissi
         /** Page initial prepwork. */
         $CIDRAM['InitialPrepwork']($CIDRAM['L10N']->getString('link_aux'), $CIDRAM['L10N']->getString('tip_aux'));
 
-        /** Append to async globals for deleting rules. */
-        $CIDRAM['FE']['JS'] .= "function delRule(a,i){window.auxD=a,$('POST','',['auxD'],null,function(a){null!=i&&hide(i);w('stateMsg',a)})}";
-
-        /** Append to async globals for moving rules to the top of the list. */
-        $CIDRAM['FE']['JS'] .= "function moveToTop(a,i){window.auxT=a,$('POST','',['auxT'],null,function(a){window.location.reload()})}";
-
-        /** Append to async globals for moving rules to the bottom of the list. */
-        $CIDRAM['FE']['JS'] .= "function moveToBottom(a,i){window.auxB=a,$('POST','',['auxB'],null,function(a){window.location.reload()})}";
-
-        /** Add new condition onclick event. */
-        $CIDRAM['FE']['JS'] .= sprintf(
-            "var createNewRule=function(){var doSub=!0;%1\$s('ruleName').value||(doSu" .
-            "b=!1,%1\$s('ruleName%2\$snAux 0.5s ease 0s 1 normal',setTimeout(function" .
-            "(){%1\$s('ruleName%2\$s'},500)),%1\$s('ruleReason').value||'actBlk'!=%1" .
-            "\$s('act').value||(doSub=!1,%1\$s('ruleReason%2\$snAux 0.5s ease 0s 1 no" .
-            "rmal',setTimeout(function(){%1\$s('ruleReason%2\$s'},500)),doSub&&%1\$s(" .
-            "'auxForm').submit()};",
-            'document.getElementById',
-            "Warn').style.animation='"
+        /** Append JavaScript specific to the auxiliary rules page. */
+        $CIDRAM['FE']['JS'] .= $CIDRAM['ParseVars'](
+            ['tip_condition_placeholder' => $CIDRAM['L10N']->getString('tip_condition_placeholder')],
+            $CIDRAM['ReadFile']($CIDRAM['GetAssetPath']('auxiliary.js'))
         );
-
-        /** Append other auxiliary rules JS. */
-        $CIDRAM['FE']['JS'] .=
-            'var conIn=1,conAdd=\'<select name="conSourceType[]" class="auto">{conSou' .
-            'rces}</select> <select name="conIfOrNot[]" class="auto"><option value="I' .
-            'f">=</option><option value="Not">≠</option></select> <input type="text" ' .
-            'name="conSourceValue[]" placeholder="' .
-            $CIDRAM['L10N']->getString('tip_condition_placeholder') . '" style="width:400px" />' .
-            "',addCondition=function(){var conId='condition'+conIn,t=document.createE" .
-            "lement('div');t.setAttribute('id',conId),t.setAttribute('style','opacity" .
-            ":0.0;animation:xAux 2.0s ease 0s 1 normal'),document.getElementById('con" .
-            "ditions').appendChild(t),document.getElementById(conId).innerHTML=conAdd" .
-            ",setTimeout(function(){document.getElementById(conId).style.opacity='1.0" .
-            "'},1999),conIn++};";
 
         /** Populate methods. */
         $CIDRAM['FE']['optMtdStr'] = sprintf($CIDRAM['L10N']->getString('label_aux_menu_method'), $CIDRAM['L10N']->getString('label_aux_mtdStr'));
@@ -3687,6 +3699,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'aux' && $CIDRAM['FE']['Permissi
         $CIDRAM['FE']['optActBlk'] = sprintf($CIDRAM['L10N']->getString('label_aux_menu_action'), $CIDRAM['L10N']->getString('label_aux_actBlk'));
         $CIDRAM['FE']['optActByp'] = sprintf($CIDRAM['L10N']->getString('label_aux_menu_action'), $CIDRAM['L10N']->getString('label_aux_actByp'));
         $CIDRAM['FE']['optActLog'] = sprintf($CIDRAM['L10N']->getString('label_aux_menu_action'), $CIDRAM['L10N']->getString('label_aux_actLog'));
+        $CIDRAM['FE']['optActRdr'] = sprintf($CIDRAM['L10N']->getString('label_aux_menu_action'), $CIDRAM['L10N']->getString('label_aux_actRdr'));
 
         /** Fetch sources L10N fields. */
         $CIDRAM['SourcesL10N'] = [
@@ -3712,18 +3725,45 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'aux' && $CIDRAM['FE']['Permissi
         $CIDRAM['FE']['conSources'] = $CIDRAM['GenerateOptions']($CIDRAM['SourcesL10N'], '~(?: | )?(?:：|:) ?$~');
 
         /** Process auxiliary rules. */
-        $CIDRAM['FE']['Data'] = file_exists($CIDRAM['Vault'] . 'auxiliary.yaml') ?
+        $CIDRAM['FE']['Data'] = '      ' . (
+            file_exists($CIDRAM['Vault'] . 'auxiliary.yaml') ?
             $CIDRAM['AuxGenerateFEData']() :
-            '        <tr><td class="h4f" colspan="2"><div class="s">' . $CIDRAM['L10N']->getString('response_aux_none') . "</div></td></tr>";
+            '<span class="s">' . $CIDRAM['L10N']->getString('response_aux_none') . '<br /><br /></span>'
+        );
 
         /** Cleanup. */
         unset($CIDRAM['SourcesL10N']);
+
+        /** Priority information about auxiliary rules. */
+        $CIDRAM['FE']['Priority_Aux'] = sprintf(
+            '%2$s%1$s(%3$s🔄%4$s🔄%5$s🔄%6$s)%1$s%7$s',
+            $CIDRAM['L10N']->Data['Text Direction'] !== 'rtl' ? '➡' : '⬅',
+            $CIDRAM['L10N']->getString('label_aux_actWhl'),
+            $CIDRAM['L10N']->getString('label_aux_actGrl'),
+            $CIDRAM['L10N']->getString('label_aux_actBlk'),
+            $CIDRAM['L10N']->getString('label_aux_actByp'),
+            $CIDRAM['L10N']->getString('label_aux_actLog'),
+            $CIDRAM['L10N']->getString('label_aux_actRdr')
+        );
+
+        /** Priority information about status codes. */
+        $CIDRAM['FE']['Priority_Status_Codes'] = sprintf(
+            '%2$s%1$s%3$s%1$s%4$s%1$s%5$s%1$s%6$s%1$s%7$s%1$s%8$s',
+            $CIDRAM['L10N']->Data['Text Direction'] !== 'rtl' ? '➡' : '⬅',
+            '<code dir="ltr">ban_override(4xx🔄5xx)</code>',
+            '<code dir="ltr">rate_limiting(429)</code>',
+            '<code dir="ltr">silent_mode(301)</code>',
+            $CIDRAM['L10N']->getString('link_aux') . '<code dir="ltr">(4xx🔄5xx)</code>',
+            '<code dir="ltr">forbid_on_block(xxx)</code>',
+            $CIDRAM['L10N']->getString('link_aux') . '<code dir="ltr">(30x)</code>',
+            $CIDRAM['L10N']->getString('label_other')
+        );
 
         /** Parse output. */
         $CIDRAM['FE']['FE_Content'] = $CIDRAM['ParseVars'](
             $CIDRAM['L10N']->Data + $CIDRAM['FE'],
             $CIDRAM['ReadFile']($CIDRAM['GetAssetPath']('_aux.html'))
-        );
+        ) . $CIDRAM['MenuToggle'];
 
         /** Send output. */
         echo $CIDRAM['SendOutput']();

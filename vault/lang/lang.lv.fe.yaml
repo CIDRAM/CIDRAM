@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Latvian language data for the front-end (last modified: 2020.04.13).
+# This file: Latvian language data for the front-end (last modified: 2020.04.23).
 ##/
 
 Extended Description Bypasses: "Noklusējuma paraksta apiešana faili, kas parasti ir iekļauti galvenajā paketē."
@@ -172,6 +172,7 @@ field_2fa: "2FA kods"
 field_Request_Method: "Pieprasījuma metode"
 field_activate: "Aktivizējiet"
 field_add_more_conditions: "Pievienojiet vairāk nosacījumu"
+field_add_webhook: "Pievienojiet tīmekļa āķis"
 field_asnlookup: "ASN meklēšana"
 field_banned: "Aizliegts"
 field_blocked: "Bloķēts"
@@ -252,8 +253,10 @@ label_aux_actBlk: "tiks bloķēts"
 label_aux_actByp: "tiks apiets"
 label_aux_actGrl: "iekļauts pelēkajā sarakstā"
 label_aux_actLog: "netiks reģistrēts"
+label_aux_actRdr: "novirzīt (bez bloķēšanas)"
 label_aux_actWhl: "iekļauts baltajā sarakstā"
 label_aux_create_new_rule: "Izveidojiet jaunu papildnoteikumu"
+label_aux_http_status_code_override: "HTTP statusa koda aizstāšana:"
 label_aux_logic_all: "Lai iedarbinātu papildnoteikumu, ir jāizpilda visi nosacījumi."
 label_aux_logic_any: "Jebkuri "vienāds" (=) nosacījumi var iedarbināt papildnoteikumu, ar nosacījumu, ka arī ir izpildīti visi "nav vienāds" (≠) nosacījumi."
 label_aux_menu_action: "Ja ir izpildīti šādi nosacījumi, pieprasījums ir %s."
@@ -266,6 +269,11 @@ label_aux_mtdStr: "tiešs stīgu salīdzinājums"
 label_aux_mtdWin: "Windows stila aizstājējzīmes"
 label_aux_name: "Jaunā noteikuma nosaukums:"
 label_aux_reason: "Lietotājam bloķēšanas iemesls:"
+label_aux_special: "Citas iespējas un īpašie karodziņi:"
+label_aux_special_recaptcha: "Atzīmēt izmantošanai ar reCAPTCHA"
+label_aux_special_suppress: "Atteikt izvades veidni"
+label_aux_target: "Kur novirzīt pieprasījumu:"
+label_aux_webhooks: "Tīmekļa āķi, kas jāpiemēro, ja ir izpildītas kārtulu prasības:"
 label_backup_location: "Repozitorija rezerves vietas (ārkārtas gadījumā vai ja viss cits neizdodas):"
 label_banned: "Aizliegto pieprasījumu skaits"
 label_blocked: "Bloķēto pieprasījumu skaits"
@@ -462,6 +470,7 @@ switch-tracking-hide-banned-blocked-set-true: "Paslēpiet aizliegtos/bloķētos 
 tip_2fa_sent: "Uz jūsu e-pasta adresi ir nosūtīts e-pasts ar divu faktoru autentifikācijas kodu. Lūdzu, apstipriniet šo kodu zemāk, lai ielogotos. Ja nesaņēmāt šo e-pastu, mēģiniet izlogoties, nogaidiet 10 minūtes, un ielogoties vēlreiz, lai saņemtu jaunu e-pastu ar jaunu kodu."
 tip_accounts: "Kontu lapa ļauj jums kontrolēt, kurš var ielogoties CIDRAM."
 tip_aux: "Varat izmantot šo lapu, lai izveidotu, izdzēstu un mainītu CIDRAM papildnoteikumus."
+tip_aux_priority: "Prioritāte (augstākais➡(vienāds🔄ekvivalents)➡zemākais):"
 tip_cache_data: "Šeit jūs varat pārskatīt kešatmiņas saturu."
 tip_cidr_calc: "CIDR kalkulators ļauj aprēķināt IP adreses CIDR."
 tip_condition_placeholder: "Norādiet vērtību vai atstājiet tukšu lai neievērotu."

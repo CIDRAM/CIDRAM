@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Polish language data for the front-end (last modified: 2020.04.13).
+# This file: Polish language data for the front-end (last modified: 2020.04.23).
 ##/
 
 Extended Description Bypasses: "Domyślne pliki pomijania podpisów zwykle zawarte w pakiecie głównym."
@@ -172,6 +172,7 @@ field_2fa: "Kod 2FA"
 field_Request_Method: "Metoda żądania"
 field_activate: "Aktywuj"
 field_add_more_conditions: "Dodaj więcej warunków"
+field_add_webhook: "Dodaj hak internetowy"
 field_asnlookup: "Wyszukiwanie ASN"
 field_banned: "Zbanowany"
 field_blocked: "Zablokowany"
@@ -252,8 +253,10 @@ label_aux_actBlk: "zablokuj"
 label_aux_actByp: "pomiń"
 label_aux_actGrl: "dokonywać na szarej liście"
 label_aux_actLog: "nie loguj"
+label_aux_actRdr: "przekierowanie (bez blokowania)"
 label_aux_actWhl: "dokonywać na białej liście"
 label_aux_create_new_rule: "Stwórz nową regułę"
+label_aux_http_status_code_override: "Przesłonięcie kodu stanu HTTP:"
 label_aux_logic_all: "Aby uruchomić regułę, wszystkie warunki muszą być spełnione."
 label_aux_logic_any: "Wszelkie warunki „równe” (=) mogą uruchomić regułę, dopóki spełnione są wszystkie warunki „nie równe” (≠)."
 label_aux_menu_action: "Jeśli spełnione są następujące warunki, %s żądanie."
@@ -266,6 +269,11 @@ label_aux_mtdStr: "bezpośrednie porównanie ciągów znaków"
 label_aux_mtdWin: "symbole wieloznaczne w stylu systemie Windows"
 label_aux_name: "Nazwa nowej reguły:"
 label_aux_reason: "Powód podany użytkownikowi po zablokowaniu:"
+label_aux_special: "Inne opcje i specjalne flagi:"
+label_aux_special_recaptcha: "Oznacz do użytku z reCAPTCHA"
+label_aux_special_suppress: "Pomiń szablon wyjściowy"
+label_aux_target: "Gdzie przekierować żądanie:"
+label_aux_webhooks: "Haczyki internetowe do zastosowania po spełnieniu wymagań reguły:"
 label_backup_location: "Lokalizacje kopii zapasowych repozytorium (w nagłym wypadku lub jeśli wszystko inne zawiedzie):"
 label_banned: "Żądania zbanowane"
 label_blocked: "Żądania zablokowane"
@@ -462,6 +470,7 @@ switch-tracking-hide-banned-blocked-set-true: "Ukryj zablokowane/zbanowane adres
 tip_2fa_sent: "Na twój adres e-mail została wysłana wiadomość e-mail zawierająca dwuskładnikowy kod uwierzytelniający. Potwierdź poniższy kod, aby uzyskać dostęp do interfejsu użytkownika. Jeśli nie otrzymałeś tego e-maila, spróbuj się wylogować, poczekać 10 minut i zalogować się ponownie, aby otrzymać nowy e-mail zawierający nowy kod."
 tip_accounts: "Witaj, {username}.<br />Strona kont pozwala kontrolować, kto może uzyskać dostęp do interfejsu użytkownika CIDRAM."
 tip_aux: "Witaj, {username}.<br />Za pomocą tej strony można tworzyć, usuwać i modyfikować reguły pomocnicze dla CIDRAM."
+tip_aux_priority: "Priorytet (najwyższy➡(równy🔄odpowiednik)➡najniższy):"
 tip_cache_data: "Witaj, {username}.<br />Tutaj możesz przejrzeć zawartość pamięci podręcznej."
 tip_cidr_calc: "Witaj, {username}.<br />Kalkulator CIDR umożliwia obliczenie CIDRy adresu IP."
 tip_condition_placeholder: "Podaj wartość lub pozostaw puste aby zignorować."

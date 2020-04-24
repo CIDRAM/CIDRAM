@@ -20,6 +20,19 @@ Detailed version release guidelines for CIDRAM can be found at:
   code to allow modules to install their own class dependencies when
   installing/updating, when needed.
 
+- [2020.04.24; Maikuolan]: Reworked the auxiliary rules interface, changing the
+  structure and layout to hopefully make it somewhat more intuitive and easier
+  to use. Added the ability for auxiliary rules to override the default HTTP
+  status code provided to blocked requests on a per-rule basis. Added the
+  ability to attach webhooks to auxiliary rules. Added the ability to create
+  auxiliary rules to redirect requests elsewhere without blocking them. Added
+  the ability for auxiliary rules to mark requests for use with reCAPTCHA and
+  to suppress output templates. Reworked the webhooks system to make it a
+  little cleaner and to provide the ability for multiple webhooks to be
+  triggered per request. Updated the IP test page to display when a tested IP
+  raises a flag (e.g., marked for use with reCAPTCHA, suppress output template,
+  don't log, etc).
+
 === Version/Release 2.4.0 ===
 MINOR RELEASE.
 

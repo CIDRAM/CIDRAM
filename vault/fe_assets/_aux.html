@@ -4,72 +4,142 @@
 {nav}  </td>
   <td class="right extend">
     <div class="s" id="stateMsg">{state_msg}</div>
-    <form id="auxForm" action="?cidram-page=aux" method="POST">
-      <table>
-{Data}
-        <tr>
-          <td class="h4f" colspan="2"><hr /></td>
-        </tr>
-        <tr>
-          <td class="h3">
-            <div class="s">
-              <select name="mtd" class="auto">
-                <option value="mtdStr" selected>{optMtdStr}</option>
-                <option value="mtdReg">{optMtdReg}</option>
-                <option value="mtdWin">{optMtdWin}</option>
-              </select>
-            </div>
-          </td>
-          <td class="h3f">
-            <div class="s">
-              <select id="act" name="act" class="auto" onchange="javascript:document.getElementById('ruleReasonContainer').style.filter=this.value=='actBlk'?'':'grayscale(80%) brightness(80%)'">
-                <option value="actWhl">{optActWhl}</option>
-                <option value="actGrl">{optActGrl}</option>
-                <option value="actBlk" selected>{optActBlk}</option>
-                <option value="actByp">{optActByp}</option>
-                <option value="actLog">{optActLog}</option>
-              </select>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td class="h3f" colspan="2">
-            <div class="s">
-              <select id="logic" name="logic" class="auto">
-                <option value="Any">{label_aux_logic_any}</option>
-                <option value="All">{label_aux_logic_all}</option>
-              </select>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td class="h3" id="ruleNameContainer">
-            <div class="s">
-              <big id="ruleNameWarn" class="inv txtRd">!! </big>{label_aux_name}<br />
-              <input type="text" id="ruleName" name="ruleName" class="ufts" />
-            </div>
-          </td>
-          <td class="h3f" id="ruleReasonContainer">
-            <div class="s">
-              <big id="ruleReasonWarn" class="inv txtRd">!! </big>{label_aux_reason}<br />
-              <input type="text" id="ruleReason" name="ruleReason" class="ufts" />
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td class="h3f" colspan="2">
-            <div id="conditions">
-              <select name="conSourceType[]" class="auto">{conSources}</select>
-              <select name="conIfOrNot[]" class="auto"><option value="If">=</option><option value="Not">≠</option></select>
-              <input type="text" name="conSourceValue[]" placeholder="{tip_condition_placeholder}" style="width:400px" />
-            </div>
-            <hr />
-            <input type="button" onclick="javascript:addCondition()" value="{field_add_more_conditions} [⎇1]" class="auto" accesskey="1" />
-            <input onclick="javascript:createNewRule()" type="button" value="{label_aux_create_new_rule} [⎇2]" class="auto" accesskey="2" />
-          </td>
-        </tr>
-      </table>
-    </form>
+    <ul class="pieul ng1">
+    {Data}
+      <form id="auxForm" action="?cidram-page=aux" method="POST">
+      <hr />
+      <li><span class="comCat s" style="cursor:pointer">{label_aux_create_new_rule}</span>
+        <ul class="comSub">
+          <li>
+            <dl>
+              <dt class="s">{label_aux_name}</dt>
+              <dd id="ruleNameDd">
+                <input type="text" id="ruleName" name="ruleName" style="width:400px" />
+              </dd>
+            </dl>
+          </li>
+          <li>
+            <dl>
+              <dt id="ruleReasonDt" class="s">{label_aux_reason}</dt>
+              <dd id="ruleReasonDd">
+                <input type="text" id="ruleReason" name="ruleReason" style="width:400px" />
+              </dd>
+            </dl>
+          </li>
+          <li>
+            <dl>
+              <dt id="ruleTargetDt" class="s" style="text-decoration:line-through">{label_aux_target}</dt>
+              <dd id="ruleTargetDd" style="filter:grayscale(80%) brightness(80%)">
+                <input type="text" id="ruleTarget" name="ruleTarget" style="width:400px" />
+              </dd>
+            </dl>
+          </li>
+          <li>
+            <dl>
+              <dt class="s">{label_aux_http_status_code_override}</dt>
+              <dd>
+                <span id="statGroupX">
+                  <input type="radio" class="auto" id="statusCodeX" name="statusCode" value="0" checked="true" /> 🗙
+                </span>
+                <span id="statGroup3" style="filter:grayscale(80%) brightness(80%);background-color:rgba(0,0,0,0.1)">
+                  <input type="radio" class="auto" id="statusCode301" name="statusCode" value="301" disabled="true" /> 301
+                  <input type="radio" class="auto" id="statusCode307" name="statusCode" value="307" disabled="true" /> 307
+                  <input type="radio" class="auto" id="statusCode308" name="statusCode" value="308" disabled="true" /> 308
+                </span>
+                <span id="statGroup45">
+                  <input type="radio" class="auto" id="statusCode403" name="statusCode" value="403" /> 403
+                  <input type="radio" class="auto" id="statusCode410" name="statusCode" value="410" /> 410
+                  <input type="radio" class="auto" id="statusCode418" name="statusCode" value="418" /> 418
+                  <input type="radio" class="auto" id="statusCode451" name="statusCode" value="451" /> 451
+                  <input type="radio" class="auto" id="statusCode503" name="statusCode" value="503" /> 503
+                </span>
+              </dd>
+            </dl>
+          </li>
+          <li>
+            <dl>
+              <dt class="s">
+                <select id="act" name="act" class="auto" onchange="javascript:onAuxActionChange(this.value)">
+                  <option value="actWhl">{optActWhl}</option>
+                  <option value="actGrl">{optActGrl}</option>
+                  <option value="actBlk" selected>{optActBlk}</option>
+                  <option value="actByp">{optActByp}</option>
+                  <option value="actLog">{optActLog}</option>
+                  <option value="actRdr">{optActRdr}</option>
+                </select>
+                <input type="button" onclick="javascript:addCondition()" value="{field_add_more_conditions} [⎇1]" class="auto" accesskey="1" />
+              </dt>
+              <dd id="conditions">
+                <select name="conSourceType[]" class="auto">{conSources}</select>
+                <select name="conIfOrNot[]" class="auto"><option value="If">=</option><option value="Not">≠</option></select>
+                <input type="text" name="conSourceValue[]" placeholder="{tip_condition_placeholder}" style="width:400px" />
+              </dd>
+            </dl>
+          </li>
+          <li>
+            <dl>
+              <dt class="s">
+                <input type="button" onclick="javascript:addWebhook()" value="{field_add_webhook} [⎇0]" class="auto" accesskey="0" />
+              </dt>
+              <dd id="webhooks"></dd>
+            </dl>
+          </li>
+          <li>
+            <dl>
+              <dt class="s">
+                <select name="mtd" class="auto">
+                  <option value="mtdStr" selected>{optMtdStr}</option>
+                  <option value="mtdReg">{optMtdReg}</option>
+                  <option value="mtdWin">{optMtdWin}</option>
+                </select>
+              </dt>
+            </dl>
+          </li>
+          <li>
+            <dl>
+              <dt class="s">
+                <select id="logic" name="logic" class="auto">
+                  <option value="Any">{label_aux_logic_any}</option>
+                  <option value="All">{label_aux_logic_all}</option>
+                </select>
+              </dt>
+            </dl>
+          </li>
+          <li>
+            <dl>
+              <dt class="s">{label_aux_special}</dt>
+              <dd>
+                <input type="checkbox" class="auto" name="recaptchaEnabledTrue" /> Mark for use with reCAPTCHA<br />
+                <input type="checkbox" class="auto" name="suppressOutputTemplate" /> Suppress output template
+              </dd>
+            </dl>
+          </li>
+          <li>
+            <dl>
+              <dt class="s">
+                <input onclick="javascript:createNewRule()" type="button" value="{label_aux_create_new_rule} [⎇2]" class="auto" accesskey="2" />
+              </dt>
+            </dl>
+          </li>
+          <li>
+            <dl>
+              <dt class="s">{tip_aux_priority}</dt>
+              <dd>
+                <dl>
+                  <dt class="s">{link_aux}</dt>
+                  <dd style="text-transform:capitalize">{Priority_Aux}</dd>
+                </dl>
+                <dl>
+                  <dt class="s">{field_status} <span dir="ltr">(HTTP/x.x xxx)</span></dt>
+                  <dd>{Priority_Status_Codes}</dd>
+                </dl>
+              </dd>
+            </dl>
+          </li>
+        </ul>
+      </li>
+      </form>
+    </ul>
   </td>
 </tr>
 </table>

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Output generator (last modified: 2020.04.23).
+ * This file: Output generator (last modified: 2020.04.25).
  */
 
 /** Initialise cache. */
@@ -723,12 +723,10 @@ if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
         /** Fetch appropriate status code based on either "forbid_on_block" or "Aux Status Code". */
         if ((
             !empty($CIDRAM['Aux Status Code']) &&
-            $CIDRAM['errCode'] = $CIDRAM['Aux Status Code'] &&
-            $CIDRAM['errCode'] > 400 &&
-            $CIDRAM['ThisStatusHTTP'] = $CIDRAM['GetStatusHTTP']($CIDRAM['Aux Status Code'])
+            ($CIDRAM['errCode'] = $CIDRAM['Aux Status Code']) > 400 &&
+            $CIDRAM['ThisStatusHTTP'] = $CIDRAM['GetStatusHTTP']($CIDRAM['errCode'])
         ) || (
-            $CIDRAM['errCode'] = $CIDRAM['Config']['general']['forbid_on_block'] &&
-            $CIDRAM['errCode'] > 400 &&
+            ($CIDRAM['errCode'] = $CIDRAM['Config']['general']['forbid_on_block']) > 400 &&
             $CIDRAM['ThisStatusHTTP'] = $CIDRAM['GetStatusHTTP']($CIDRAM['errCode'])
         )) {
             header('HTTP/1.0 ' . $CIDRAM['errCode'] . ' ' . $CIDRAM['ThisStatusHTTP']);

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2020.04.23).
+ * This file: Functions file (last modified: 2020.04.25).
  */
 
 /**
@@ -2020,7 +2020,7 @@ $CIDRAM['AuxAction'] = function ($Action, $Name, $Reason = '', $Target = '', $St
         $CIDRAM['Flag Don\'t Log'] = true;
     }
 
-    /** Don't log the request instance. */
+    /** Redirect the request (without blocking it). */
     elseif ($Action === 'Redirect') {
         $CIDRAM['Aux Redirect'] = $Target;
         if ($StatusCode > 300 && $StatusCode < 400) {

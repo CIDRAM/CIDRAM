@@ -73,7 +73,7 @@ function onAuxActionChange(e) {
 }
 
 var conIn = 1;
-var conAdd = '<select name="conSourceType[]" class="auto">{conSources}</select> <select name="conIfOrNot[]" class="auto"><option value="If">=</option><option value="Not">≠</option></select> <input type="text" name="conSourceValue[]" placeholder="{tip_condition_placeholder}" style="width:400px" />';
+var conAdd = '<select name="conSourceType[]" class="auto">{conSources}</select> <select name="conIfOrNot[]" class="auto"><option value="If">=</option><option value="Not">≠</option></select> <input type="text" name="conSourceValue[]" placeholder="{tip_condition_placeholder}" class="f400" />';
 var addCondition = function() {
   var conId = 'condition' + conIn, t = document.createElement('div');
   t.setAttribute('id', conId), t.setAttribute('style', 'opacity:0.0;animation:xAux 2.0s ease 0s 1 normal'), document.getElementById('conditions').appendChild(t), document.getElementById(conId).innerHTML = conAdd, setTimeout(function() {
@@ -82,7 +82,7 @@ var addCondition = function() {
 };
 
 var whIn = 1;
-var whAdd = '<input type="text" name="webhooks[]" placeholder="{tip_condition_placeholder}" style="width:500px" />';
+var whAdd = '<input type="text" name="webhooks[]" placeholder="{tip_condition_placeholder}" class="f500" />';
 var addWebhook = function() {
   var whId = 'webhook' + whIn, t = document.createElement('div');
   t.setAttribute('id', whId), t.setAttribute('style', 'opacity:0.0;animation:xAux 2.0s ease 0s 1 normal'), document.getElementById('webhooks').appendChild(t), document.getElementById(whId).innerHTML = whAdd, setTimeout(function() {

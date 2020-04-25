@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2020.04.24).
+ * This file: Front-end functions file (last modified: 2020.04.25).
  */
 
 /**
@@ -3244,7 +3244,7 @@ $CIDRAM['AuxGenerateFEData'] = function () use (&$CIDRAM) {
 
                 /** Iterate through sources. */
                 foreach ($Data[$Action[0]]['But not if matches'] as $Source => $Values) {
-                    $ThisSource = isset($Sources[$Source]) ? $Sources[$Source] : $Source;
+                    $ThisSource = $Sources[$Source] ?? $Source;
                     if (!is_array($Values)) {
                         $Values = [$Values];
                     }
@@ -3259,7 +3259,7 @@ $CIDRAM['AuxGenerateFEData'] = function () use (&$CIDRAM) {
 
                 /** Iterate through sources. */
                 foreach ($Data[$Action[0]]['If matches'] as $Source => $Values) {
-                    $ThisSource = isset($Sources[$Source]) ? $Sources[$Source] : $Source;
+                    $ThisSource = $Sources[$Source] ?? $Source;
                     if (!is_array($Values)) {
                         $Values = [$Values];
                     }

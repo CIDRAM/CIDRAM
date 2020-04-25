@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2020.04.24).
+ * This file: Front-end handler (last modified: 2020.04.25).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -3176,7 +3176,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-test' && $CIDRAM['FE']['Perm
                     $CIDRAM['ThisIP']['StatClass'] = 'txtOe';
                 }
                 $CIDRAM['ThisIP']['YesNo'] .= ' ' . $CIDRAM['LTRinRTF'](sprintf(
-                    '%1$s <%2$d> ➡ %2$s',
+                    '%1$s <%2$d> ➡ %3$s',
                     '<span style="text-transform:capitalize">++' . $CIDRAM['L10N']->getString('label_aux_actRdr') . '</span>',
                     $CIDRAM['Aux Status Code'],
                     '<code>' . $CIDRAM['Aux Redirect'] . '</code>'

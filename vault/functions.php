@@ -1889,7 +1889,7 @@ $CIDRAM['GetStatusHTTP'] = function (int $Status): string {
         451 => 'Unavailable For Legal Reasons',
         503 => 'Service Unavailable'
     ];
-    return isset($Message[$Status]) ? $Message[$Status] : '';
+    return $Message[$Status] ?? '';
 };
 
 /**
@@ -2077,8 +2077,8 @@ $CIDRAM['Aux'] = function () use (&$CIDRAM) {
 
         /** Other options and special flags to apply (if any have been specified). */
         $Flags = [
-            'Mark for use with reCAPTCHA' => !empty($Data['Webhooks']['Mark for use with reCAPTCHA']),
-            'Suppress output template' => !empty($Data['Webhooks']['Suppress output template'])
+            'Mark for use with reCAPTCHA' => !empty($Data['Mark for use with reCAPTCHA']),
+            'Suppress output template' => !empty($Data['Suppress output template'])
         ];
 
         /** Iterate through modes. */

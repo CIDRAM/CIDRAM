@@ -1,8 +1,8 @@
 # IPv4 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv4_isps.dat
 
-# Version: 2020.117.571
-# Last modified: 2020.04.27
+# Version: 2020.121.511
+# Last modified: 2020.05.01
 
 
 # ---
@@ -910,13 +910,13 @@ recaptcha:
 
 
 # ASN 48271 ("City Telecom").
-# Only 4 somewhat stale reports at SFS remaining at the time of the last check.
+# Redacted listed ranges to only those containing known affected addresses.
 # Possible candidate for future removal.
-# Stop Forum Spam (SFS) listings: 4.
-# Updated: 2019.03.09 / Checked: 2019.12.10
+# Stop Forum Spam (SFS) listings: 3.
+# Updated: 2020.05.01
 
-185.91.132.0/22 Deny Spam
-212.2.224.0/19 Deny Spam
+212.2.230.0/24 Deny Spam
+212.2.247.0/24 Deny Spam
 Origin: KG
 Tag: City Telecom
 ---
@@ -11922,22 +11922,44 @@ Tag: DTPNET NAP
 # ASN 17552 ("True Internet Co.,Ltd").
 # A major domestic ISP in Thailand, but also a notable source of forum spam and
 # email harvestors. Listing here just the worst ranges (not the whole network).
-# Updated: 2019.12.15
+# %Listed, abuseat.org (CBL-Listed): 2.21%.
+# Stop Forum Spam (SFS) listings: 2,762.
+# Updated: 2020.05.01
 
-58.8.195.113/32 Deny Spam
-58.9.118.95/32 Deny Spam
-58.10.204.36/32 Deny Spam
-110.168.13.6/32 Deny Spam
-110.169.80.155/32 Deny Spam
-110.169.231.25/32 Deny Spam
-124.120.234.6/32 Deny Spam
-124.120.235.200/32 Deny Spam
-124.122.66.178/32 Deny Malware
-124.122.77.113/32 Deny Spam
+27.145.27.232/32 Deny Spam
+27.145.209.218/32 Deny Spam
+27.145.226.173/32 Deny Spam
+27.145.232.154/32 Deny Spam
+58.8.142.237/32 Deny Spam
+58.8.148.110/32 Deny Spam
+58.8.194.97/32 Deny Spam
+58.9.55.237/32 Deny Spam
+58.10.204.0/24 Deny Spam
+58.11.29.84/32 Deny Spam
+110.168.14.172/32 Deny Spam
+110.169.80.0/24 Deny Spam
+110.169.136.148/32 Deny Spam
+110.169.230.87/32 Deny Spam
+110.169.231.0/24 Deny Spam
+124.120.27.96/32 Deny Spam
+124.120.85.10/32 Deny Spam
+124.120.86.40/32 Deny Spam
+124.120.194.7/32 Deny Spam
+124.120.235.0/24 Deny Spam
+124.121.3.0/24 Deny Spam
+124.121.99.78/32 Deny Spam
+124.121.232.0/24 Deny Spam
+124.122.28.98/32 Deny Spam
+124.122.77.0/24 Deny Spam
+124.122.86.218/32 Deny Spam
+124.122.179.8/32 Deny Spam
+124.122.186.24/32 Deny Spam
+124.122.254.29/32 Deny Spam
 134.196.244.120/32 Deny Spam
-134.196.245.109/32 Deny Spam
-171.97.223.241/32 Deny Spam
-171.103.9.22/32 Deny Spam
+134.196.245.0/24 Deny Spam
+171.97.42.117/32 Deny Spam
+171.97.107.0/24 Deny Spam
+171.103.9.0/24 Deny Spam
 Origin: TH
 Tag: True Internet Co
 ---
@@ -12100,32 +12122,43 @@ Tag: TV Internacional
 # ASN 23969 ("TOT Public Company Limited").
 # A major domestic ISP in Thailand, but also a notable source of forum spam.
 # Listing here just the worst of the worst at the network (not the whole lot).
-# Updated: 2019.12.15
+# %Listed, abuseat.org (CBL-Listed): 3.70%.
+# Stop Forum Spam (SFS) listings: 32,262.
+# Updated: 2020.05.01
 
-1.0.178.164/32 Deny Spam
-1.10.188.0/24 Deny Spam
-1.20.96.0/23 Deny Spam
+1.0.208.56/32 Deny Spam
+1.1.248.217/32 Deny Spam
+1.10.133.0/24 Deny Spam
+1.10.186.0/24 Deny Spam
 1.20.99.0/24 Deny Spam
 1.20.100.0/24 Deny Spam
-1.20.102.0/23 Deny Spam
-1.179.156.0/24 Deny Spam
-1.179.184.0/24 Deny Spam
+1.20.103.85/32 Deny Spam
+1.179.147.5/32 Deny Spam
 1.179.198.0/24 Deny Spam
 1.179.201.0/24 Deny Spam
 101.51.141.0/24 Deny Spam
-101.109.83.0/24 Deny Spam
-101.109.253.0/24 Deny Spam
-118.175.93.103/32 Deny Spam
-125.25.57.0/24 Deny Spam
+101.109.83.202/32 Deny Spam
+101.109.255.18/32 Deny Spam
+113.53.61.8/32 Deny Spam
+113.53.82.0/24 Deny Spam
+118.172.181.147/32 Deny Spam
+118.172.227.0/24 Deny Spam
+118.173.232.0/24 Deny Spam
+118.173.233.150/32 Deny Spam
+118.174.211.0/24 Deny Spam
+118.174.232.0/23 Deny Spam
+118.174.234.0/24 Deny Spam
+118.175.93.0/24 Deny Spam
+118.175.207.0/24 Deny Spam
 125.25.165.0/24 Deny Spam
-125.25.187.0/24 Deny Spam
+125.25.204.102/32 Deny Spam
 125.26.7.0/24 Deny Spam
 125.26.99.0/24 Deny Spam
-125.27.251.0/24 Deny Spam
-180.180.152.0/24 Deny Spam
+180.180.0.0/16 Deny Spam
 182.52.51.0/24 Deny Spam
 182.52.238.0/24 Deny Spam
-182.53.206.0/24 Deny Spam
+182.53.197.0/24 Deny Spam
+182.53.206.44/32 Deny Spam
 Origin: TH
 Tag: TOT Public
 ---
@@ -12136,30 +12169,30 @@ recaptcha:
 # ASN 45758 ("Triple T Internet/Triple T Broadband").
 # A major domestic ISP in Thailand, but also a notable source of forum spam.
 # Listing here just the worst of the worst at the network (not the whole lot).
-# Updated: 2019.12.15
+# %Listed, abuseat.org (CBL-Listed): 0.46%.
+# Stop Forum Spam (SFS) listings: 8,756.
+# Updated: 2020.05.01
 
-14.207.5.6/32 Deny Spam
-14.207.57.9/32 Deny Spam
-27.130.16.148/30 Deny Spam
-27.130.19.248/30 Deny Spam
+14.207.16.5/32 Deny Spam
+14.207.19.62/32 Deny Spam
+14.207.73.0/24 Deny Spam
+14.207.195.84/32 Deny Spam
 49.49.240.0/24 Deny Spam
-171.4.105.68/32 Deny Spam
-171.6.240.180/32 Deny Spam
-180.183.107.200/30 Deny Spam
-180.183.141.196/30 Deny Spam
-180.183.233.196/30 Deny Spam
-183.88.38.0/24 Deny Spam
-183.88.59.0/24 Deny Spam
-183.88.107.0/24 Deny Spam
-183.88.212.0/24 Deny Spam
-183.88.244.0/24 Deny Spam
-183.89.40.0/24 Deny Spam
-223.204.251.164/30 Deny Spam
-223.205.251.128/30 Deny Spam
-223.206.237.107/32 Deny Spam
-223.206.241.0/24 Deny Spam
-223.206.242.0/23 Deny Spam
-223.206.248.0/23 Deny Spam
+171.4.227.122/32 Deny Spam
+171.5.160.0/24 Deny Spam
+180.183.194.0/24 Deny Spam
+180.183.233.0/24 Deny Spam
+183.88.61.29/32 Deny Spam
+183.88.219.206/32 Deny Spam
+183.88.240.200/32 Deny Spam
+183.89.116.19/32 Deny Spam
+183.89.144.89/32 Deny Spam
+223.204.225.253/32 Deny Spam
+223.206.224.0/22 Deny Spam
+223.206.236.0/22 Deny Spam
+223.206.240.0/23 Deny Spam
+223.206.244.0/23 Deny Spam
+223.206.249.0/24 Deny Spam
 Origin: TH
 Tag: Triple T
 ---
@@ -12170,12 +12203,15 @@ recaptcha:
 # ASN 55410 ("Vodafone India Limited").
 # A major Indian mobile phone provider, but also have seen some spam from some
 # specific IPs. Just blocking those (not the whole network).
-# Updated: 2019.12.15
+# Stop Forum Spam (SFS) listings: 584.
+# Updated: 2020.05.01
 
 118.185.94.157/32 Deny Spam
+122.15.71.33/32 Deny Spam
+122.15.78.189/32 Deny Spam
 182.19.34.97/32 Deny Spam
+182.19.35.193/32 Deny Spam
 182.19.41.145/32 Deny Spam
-182.19.41.146/32 Deny Spam
 Origin: IN
 Tag: Vodafone India
 
@@ -12183,13 +12219,13 @@ Tag: Vodafone India
 # ASN 48161 ("NEXTGEN COMMUNICATIONS SRL").
 # A domestic Romanian ISP, but also a source of forum spam. Listing here just
 # the worst ranges at the network at the moment (not the whole network).
-# Updated: 2019.12.15
+# Stop Forum Spam (SFS) listings: 118.
+# Updated: 2020.05.01
 
 89.165.156.229/32 Deny Spam
-89.165.218.82/32 Deny Spam
+94.52.59.186/32 Deny Spam
+188.173.14.99/32 Deny Spam
 188.173.20.68/32 Deny Spam
-188.173.129.187/32 Deny Spam
-188.173.225.165/32 Deny Spam
 Origin: RO
 Tag: NEXTGEN COMMUNICATIONS
 ---
@@ -12200,22 +12236,26 @@ recaptcha:
 # ASN 131207 ("SINET, Cambodia's specialist Internet and Telecom Service Provider").
 # A major domestic Cambodian ISP, but also a notable source of forum spam.
 # Listing here just the worst of the worst at the network (not the whole lot).
-# Updated: 2019.12.15
+# Stop Forum Spam (SFS) listings: 9,948.
+# Updated: 2020.05.01
 
 43.245.202.0/24 Deny Spam
-96.9.66.238/32 Deny Spam
-96.9.67.0/24 Deny Spam
+43.245.203.174/32 Deny Spam
+96.9.66.0/23 Deny Spam
 96.9.69.0/24 Deny Spam
-96.9.70.0/24 Deny Spam
-96.9.72.241/32 Deny Spam
-96.9.74.160/32 Deny Spam
-96.9.75.0/24 Deny Spam
-96.9.77.192/32 Deny Spam
+96.9.70.83/32 Deny Spam
+96.9.72.0/24 Deny Spam
+96.9.73.80/32 Deny Spam
+96.9.74.0/23 Deny Spam
+96.9.77.0/24 Deny Spam
 96.9.79.0/24 Deny Spam
-96.9.87.54/32 Deny Spam
+96.9.86.70/32 Deny Spam
 103.14.250.0/24 Deny Spam
-136.228.128.159/32 Deny Spam
-136.228.150.175/32 Deny Spam
+103.14.251.144/32 Deny Spam
+136.228.128.0/24 Deny Spam
+136.228.131.9/32 Deny Spam
+136.228.150.0/24 Deny Spam
+203.217.169.138/32 Deny Spam
 Origin: KH
 Tag: SINET
 ---
@@ -12226,14 +12266,12 @@ recaptcha:
 # ASN 20771 ("Caucasus Online Ltd").
 # A domestic ISP from Georgia, but also a notable source of forum spam. Listing
 # here just the worst of the worst at the network (not the whole lot).
-# Updated: 2019.12.15
+# Stop Forum Spam (SFS) listings: 631.
+# Updated: 2020.05.01
 
-85.117.56.73/32 Deny Spam
-85.117.60.0/23 Deny Spam
-85.117.62.186/32 Deny Spam
-85.117.62.202/32 Deny Spam
-85.117.62.234/32 Deny Spam
-85.117.63.98/32 Deny Spam
+80.241.252.222/32 Deny Malware
+85.117.56.0/24 Deny Spam
+85.117.60.0/22 Deny Spam
 Origin: GE
 Tag: Caucasus Online Ltd
 ---
@@ -12244,9 +12282,28 @@ recaptcha:
 # ASN 1221 ("Telstra Corporation Ltd").
 # Australia's largest domestic ISP. Mostly benign, but malware and spambots
 # detected at some specific addresses in the network. Listing just those IPs.
-# Updated: 2019.12.16
+# Stop Forum Spam (SFS) listings: 346.
+# Updated: 2020.05.01
 
+1.136.104.42/32 Deny Spam
+1.143.59.125/32 Deny Spam
+1.152.111.195/32 Deny Spam
 1.159.84.180/32 Deny Spam
+58.162.229.173/32 Deny Spam
+58.175.83.29/32 Deny Spam
+60.227.206.250/32 Deny Spam
+101.164.27.102/32 Deny Spam
+110.143.50.203/32 Deny Spam
+120.151.144.68/32 Deny Spam
+120.158.191.21/32 Deny Spam
+124.183.178.129/32 Deny Spam
+124.187.236.249/32 Deny Spam
+124.188.237.252/32 Deny Spam
+124.189.230.72/32 Deny Spam
+124.190.210.204/32 Deny Spam
+143.238.162.87/32 Deny Spam
+202.1.241.10/32 Deny Spam
+203.40.56.141/32 Deny Spam
 Origin: AU
 Tag: Telstra Corporation
 ---
@@ -12257,8 +12314,13 @@ recaptcha:
 # ASN 4739 ("Internode Pty Ltd").
 # An Australian domestic ISP. Mostly benign, but some ranges caught spamming.
 # Listing just the worst of those (not the whole network).
-# Updated: 2019.12.16
+# Stop Forum Spam (SFS) listings: 124.
+# Updated: 2020.05.01
 
+14.2.101.141/32 Deny Spam
+14.2.160.19/32 Deny Spam
+59.167.62.205/32 Deny Spam
+203.122.225.70/32 Deny Spam
 203.122.226.250/32 Deny Spam
 Origin: AU
 Tag: Internode Pty Ltd
@@ -12267,13 +12329,30 @@ recaptcha:
  enabled: true
 
 
-# ASN 20771 ("Bulgarian Telecommunications Company Plc").
+# ASN 8866 ("Bulgarian Telecommunications Company Plc").
 # A Bulgarian domestic ISP. Mostly benign, but some ranges caught spamming.
 # Listing just the worst of those (not the whole network).
-# Updated: 2019.12.16
+# Stop Forum Spam (SFS) listings: 811.
+# Updated: 2020.05.01
 
-46.10.85.250/32 Deny Spam
+46.10.229.101/32 Deny Spam
+46.10.230.248/32 Deny Spam
+46.10.240.182/32 Deny Spam
+77.85.85.49/32 Deny Spam
+77.85.168.253/32 Deny Spam
 77.85.169.0/24 Deny Spam
+79.100.67.244/32 Deny Spam
+83.228.74.251/32 Deny Spam
+87.126.0.160/32 Deny Spam
+87.126.64.193/32 Deny Spam
+87.126.68.178/32 Deny Spam
+90.154.212.162/32 Deny Spam
+94.155.119.10/32 Deny Spam
+94.236.153.77/32 Deny Spam
+95.42.116.13/32 Deny Spam
+95.42.201.89/32 Deny Spam
+95.42.206.96/32 Deny Spam
+212.39.89.146/32 Deny Spam
 Origin: BG
 Tag: Bulgarian Telecom
 ---
@@ -12284,8 +12363,22 @@ recaptcha:
 # ASN 15964 ("CAMTEL").
 # A domestic ISP from Cameroon. Mostly benign, but some ranges caught spamming.
 # Listing just the worst of those (not the whole network).
-# Updated: 2019.12.16
+# Stop Forum Spam (SFS) listings: 462.
+# Updated: 2020.05.01
 
+41.204.77.122/32 Deny Spam
+41.204.81.21/32 Deny Spam
+154.72.150.0/24 Deny Spam
+154.72.153.0/24 Deny Spam
+154.72.167.0/24 Deny Spam
+154.72.168.0/24 Deny Spam
+154.72.169.120/32 Deny Spam
+154.72.170.16/32 Deny Spam
+154.72.171.12/32 Deny Spam
+154.72.187.26/32 Deny Spam
+154.72.188.190/32 Deny Spam
+195.24.212.166/32 Deny Spam
+197.159.3.35/32 Deny Spam
 197.159.23.174/32 Deny Spam
 Origin: CM
 Tag: CAMTEL
@@ -12294,31 +12387,37 @@ recaptcha:
  enabled: true
 
 
-# ASN 15964 ("Telefona Pblica y Privada S.A").
-# A domestic ISP from Argentina. Mostly benign, but some ranges caught
-# spamming. Listing just the worst of those (not the whole network).
-# Updated: 2019.12.16
-
-190.14.170.196/32 Deny Spam
-Origin: AR
-Tag: Telefona Pblica y Privada
----
-recaptcha:
- enabled: true
-
-
 # ASN 23860 ("Alliance Broadband Services Pvt. Ltd").
 # An Indian domestic ISP, but also a notable source of forum spam. Listing just
 # the worst ranges here (not the whole network).
-# %Listed, abuseat.org (CBL-Listed): 15.04%.
-# Stop Forum Spam (SFS) listings: 336.
-# Updated: 2019.12.16
+# %Listed, abuseat.org (CBL-Listed): 12.14%.
+# Stop Forum Spam (SFS) listings: 331.
+# Updated: 2020.05.01
 
-103.88.218.67/32 Deny Spam
-115.187.32.27/32 Deny Spam
-115.187.48.45/32 Deny Spam
-150.107.178.0/23 Deny Spam
-150.129.66.0/24 Deny Spam
+43.252.250.76/32 Deny Spam
+45.249.73.162/32 Deny Spam
+45.249.83.126/32 Deny Spam
+45.249.167.245/32 Deny Spam
+103.18.171.5/32 Deny Spam
+103.50.80.200/32 Deny Spam
+103.75.42.193/32 Deny Spam
+103.101.213.246/32 Deny Spam
+103.217.235.203/32 Deny Spam
+103.249.39.24/32 Deny Spam
+103.252.166.53/32 Deny Spam
+103.252.167.225/32 Deny Spam
+115.187.48.164/32 Deny Spam
+115.187.58.0/24 Deny Spam
+115.187.59.161/32 Deny Spam
+116.193.131.58/32 Deny Spam
+116.193.136.93/32 Deny Spam
+150.107.177.103/32 Deny Spam
+150.107.215.77/32 Deny Spam
+150.129.66.150/32 Deny Spam
+150.129.67.186/32 Deny Spam
+157.119.105.113/32 Deny Spam
+157.119.106.40/32 Deny Spam
+202.8.115.5/32 Deny Spam
 Origin: IN
 Tag: Alliance Broadband
 ---

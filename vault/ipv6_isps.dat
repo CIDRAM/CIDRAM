@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_isps.dat
 
-# Version: 2020.117.571
-# Last modified: 2020.04.27
+# Version: 2020.121.511
+# Last modified: 2020.05.01
 
 
 # ---
@@ -2308,6 +2308,21 @@ Origin: RO
 2a02:ab00::/29 Deny Spam
 Origin: SK
 Tag: Liberty Global
+---
+recaptcha:
+ enabled: true
+
+
+# ASN 1221 ("Telstra Corporation Ltd").
+# Australia's largest domestic ISP. Mostly benign, but malware and spambots
+# detected at some specific addresses in the network. Listing just those IPs.
+# Stop Forum Spam (SFS) listings: 346.
+# Updated: 2020.05.01
+
+2001:8003:2471:da01::/64 Deny Spam
+2001:8003:e1de:701::/64 Deny Spam
+Origin: AU
+Tag: Telstra Corporation
 ---
 recaptcha:
  enabled: true

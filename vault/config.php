@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Configuration handler (last modified: 2020.02.29).
+ * This file: Configuration handler (last modified: 2020.05.01).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -17,7 +17,7 @@ if (!defined('CIDRAM')) {
 }
 
 /** CIDRAM version number (SemVer). */
-$CIDRAM['ScriptVersion'] = '2.4.0';
+$CIDRAM['ScriptVersion'] = '2.4.1';
 
 /** CIDRAM version identifier (complete notation). */
 $CIDRAM['ScriptIdent'] = 'CIDRAM v' . $CIDRAM['ScriptVersion'];

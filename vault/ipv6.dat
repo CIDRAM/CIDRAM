@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6.dat
 
-# Version: 2020.121.511
-# Last modified: 2020.05.01
+# Version: 2020.126.534
+# Last modified: 2020.05.06
 
 
 # ---
@@ -132,9 +132,9 @@ Tag: New Dream Network
 
 
 # ASN 33182 ("HostDime.com, Inc").
-# %Listed, Google Malware Dashboard: 0.28%.
-# Stop Forum Spam (SFS) listings: 819.
-# Updated: 2019.12.18
+# %Listed, Google Malware Dashboard: 0.16%.
+# Stop Forum Spam (SFS) listings: 2,328.
+# Updated: 2019.12.18 / Checked: 2020.05.06
 
 2804:9c4::/32 Deny Cloud
 Origin: BR
@@ -938,8 +938,8 @@ Tag: iWeb
 
 # ASNs 13926, 22781, 29713, 62651 ("Strong Technology, LLC", formerly
 # "Reliable Hosting Services").
-# Stop Forum Spam (SFS) listings: 69 (AS13926), 43 (AS22781).
-# Updated: 2019.12.23
+# Stop Forum Spam (SFS) listings: 361 (AS13926), 13 (AS22781), 2 (AS29713), 431 (AS62651).
+# Updated: 2019.12.23 / Checked: 2020.05.06
 
 2a0e:be00::/29 Deny Cloud
 Origin: LT
@@ -1311,11 +1311,9 @@ Tag: Versaweb, LLC
 
 # ASN 27176 ("DataWagon LLC").
 # A source of forum spam.
-# Stop Forum Spam (SFS) listings: 297.
-# Updated: 2019.12.18
+# Stop Forum Spam (SFS) listings: 102.
+# Updated: 2020.05.06
 
-2a0d:6f84::/32 Deny Cloud
-Origin: LT
 2a07:d9c0::/30 Deny Cloud
 2a0b:2a87::/32 Deny Cloud
 Origin: RU
@@ -5160,9 +5158,7 @@ Tag: TakeWYN
 # ASNs 34962, 206898 ("Anonymize, Inc", "Sibyl System LTD").
 # Malware detected on network; Future C&C risk.
 # (Mark "Anonymize, Inc" CIDRs as proxy; everything else as cloud).
-# %Listed, Google Malware Dashboard: 8.77% (AS206898).
-# Stop Forum Spam (SFS) listings: 30 (AS34962), 2 (AS206898).
-# Updated: 2019.12.23
+# Updated: 2019.12.23 / Checked: 2020.05.06
 
 2a05:9f06::/31 Deny Cloud
 Origin: PT

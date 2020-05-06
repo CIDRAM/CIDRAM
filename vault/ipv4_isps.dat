@@ -1,8 +1,8 @@
 # IPv4 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv4_isps.dat
 
-# Version: 2020.121.511
-# Last modified: 2020.05.01
+# Version: 2020.126.534
+# Last modified: 2020.05.06
 
 
 # ---
@@ -1702,11 +1702,40 @@ Tag: PP SKS-LUGAN
 # the known specific affected ranges/addresses (not the whole network). This
 # may cut across multiple ASNs, so all pertinent ASNs should be checked when
 # updating (including those not currently listed here).
-# Updated: 2019.12.18
+# Updated: 2020.05.06
 
+1.64.47.106/32 Deny Spam
+1.64.140.0/24 Deny Spam
+42.2.12.130/32 Deny Spam
+42.2.42.41/32 Deny Spam
+42.3.16.50/32 Deny Spam
+42.3.51.34/32 Deny Spam
+42.3.121.10/32 Deny Spam
+42.3.135.78/32 Deny Spam
+42.200.120.191/32 Deny Spam
 42.200.154.50/32 Deny Spam
+58.152.47.0/24 Deny Spam
+58.152.48.166/32 Deny Spam
+58.153.26.139/32 Deny Spam
+94.190.208.184/32 Deny Spam
+94.190.209.89/32 Deny Spam
+112.118.135.158/32 Deny Spam
+112.118.234.220/32 Deny Spam
+112.119.169.82/32 Deny Spam
+112.119.240.151/32 Deny Spam
+112.120.127.151/32 Deny Spam
 116.48.142.127/32 Deny Spam
-116.66.213.65/32 Deny Spam
+119.236.50.147/32 Deny Spam
+119.236.151.92/32 Deny Spam
+119.237.73.133/32 Deny Spam
+119.237.203.92/32 Deny Spam
+203.218.43.43/32 Deny Spam
+203.218.228.12/32 Deny Spam
+218.250.115.39/32 Deny Spam
+219.73.111.231/32 Deny Spam
+219.77.121.38/32 Deny Spam
+219.77.248.100/32 Deny Spam
+219.78.204.39/32 Deny Spam
 Origin: HK
 Tag: PCCW Global
 ---
@@ -2821,8 +2850,8 @@ Tag: AS13188-CDN-LTD
 
 
 # ASN 15377 ('ISP "Fregat" Ltd.').
-# Stop Forum Spam (SFS) listings: 1,147.
-# Updated: 2019.08.29 / Checked: 2019.12.12
+# Stop Forum Spam (SFS) listings: 1,152.
+# Updated: 2019.08.29 / Checked: 2020.05.06
 
 5.252.180.0/22 Deny Spam
 46.98.0.0/16 Deny Spam
@@ -2893,14 +2922,10 @@ Tag: MAROSNET
 # A HUGE source of forum spam, but also a legit ISP with human endpoints.
 # Serves mostly Vietnam, but also several African countries. Including only the
 # specific affected ASNs (several clean ASNs have been intentionally omitted).
-# Updated: 2019.12.18
+# Updated: 2020.05.06
 
 41.244.0.0/16 Deny Spam
 Origin: CM
-25.212.128.0/24 Deny Spam
-25.212.133.0/24 Deny Spam
-Origin: GB
-131.255.136.0/22 Deny Spam
 131.255.192.0/22 Deny Spam
 181.176.0.0/16 Deny Spam
 Origin: PE
@@ -2913,11 +2938,11 @@ Origin: TL
 100.148.0.0/17 Deny Spam
 100.149.0.0/17 Deny Spam
 100.153.0.0/16 Deny Spam
-100.154.0.0/15 Deny Spam
+100.154.0.0/17 Deny Spam
+100.155.0.0/16 Deny Spam
 100.156.0.0/17 Deny Spam
 Origin: US
 27.64.0.0/12 Deny Spam
-103.12.104.0/22 Deny Spam
 103.84.76.0/22 Deny Spam
 103.241.248.0/22 Deny Spam
 113.61.109.0/24 Deny Spam
@@ -10036,12 +10061,11 @@ recaptcha:
 
 
 # ASN 8708 ("RCS & RDS SA").
-# %Listed, Google Malware Dashboard: 0.27%.
-# %Listed, abuseat.org (CBL-Listed): 0.60%.
-# Stop Forum Spam (SFS) listings: 2,251.
-# Updated: 2019.12.18
+# %Listed, Google Malware Dashboard: 0.36%.
+# %Listed, abuseat.org (CBL-Listed): 0.67%.
+# Stop Forum Spam (SFS) listings: 3,062.
+# Updated: 2020.05.06
 
-2.16.166.0/23 Deny Generic
 2.17.116.0/22 Deny Generic
 2.20.96.0/19 Deny Generic
 Origin: EU
@@ -10084,18 +10108,15 @@ Origin: IR
 89.37.135.0/24 Deny Generic
 89.38.236.0/24 Deny Generic
 89.40.65.0/24 Deny Generic
-89.43.33.0/24 Deny Generic
 89.43.34.0/23 Deny Generic
 89.43.52.0/23 Deny Generic
 89.43.55.0/24 Deny Generic
 89.43.63.0/24 Deny Generic
-89.44.124.0/24 Deny Generic
 89.46.93.0/24 Deny Generic
+91.244.247.0/24 Deny Generic
 93.114.57.0/24 Deny Generic
 94.176.212.0/24 Deny Generic
-94.177.119.0/24 Deny Generic
 185.178.228.0/22 Deny Generic
-185.248.137.0/24 Deny Generic
 188.24.0.0/15 Deny Generic
 188.26.0.0/17 Deny Generic
 188.26.128.0/18 Deny Generic
@@ -10111,7 +10132,7 @@ Origin: IR
 193.226.125.0/24 Deny Generic
 193.226.127.0/24 Deny Generic
 193.230.155.0/24 Deny Generic
-193.230.158.0/23 Deny Generic
+193.230.158.0/24 Deny Generic
 193.230.164.0/23 Deny Generic
 193.230.173.0/24 Deny Generic
 193.230.185.0/24 Deny Generic
@@ -10135,7 +10156,7 @@ Origin: IR
 194.102.74.0/24 Deny Generic
 194.102.81.0/24 Deny Generic
 194.102.98.0/24 Deny Generic
-194.102.102.0/23 Deny Generic
+194.102.102.0/24 Deny Generic
 194.102.129.0/24 Deny Generic
 194.102.134.0/23 Deny Generic
 194.102.157.0/24 Deny Generic
@@ -10168,7 +10189,6 @@ Origin: IR
 217.156.47.0/24 Deny Generic
 217.156.59.0/24 Deny Generic
 217.156.71.0/24 Deny Generic
-217.156.90.0/23 Deny Generic
 217.156.92.0/24 Deny Generic
 217.156.94.0/24 Deny Generic
 217.156.96.0/23 Deny Generic
@@ -10605,14 +10625,15 @@ recaptcha:
 
 # ASN 7642 ("Dhivehi Raajjeyge Gulhun Plc (Dhiraagu)").
 # ISP from the Maldives with human endpoints, but also a source of spam.
-# %Listed, Google Malware Dashboard: 3.13%.
-# Stop Forum Spam (SFS) listings: 204.
-# Updated: 2019.12.23
+# %Listed, Google Malware Dashboard: 4.17%.
+# Stop Forum Spam (SFS) listings: 140.
+# Updated: 2020.05.06
 
 27.114.128.0/18 Deny Spam
 43.226.220.0/22 Deny Spam
 69.94.32.0/20 Deny Spam
 69.94.80.0/20 Deny Spam
+83.137.200.0/21 Deny Spam
 103.31.84.0/22 Deny Spam
 103.87.188.0/24 Deny Spam
 123.176.0.0/19 Deny Spam
@@ -12429,22 +12450,45 @@ recaptcha:
 # A domestic ISP from the UK, but forum spam incidents detected from some
 # specific addresses, plus Mirai detected at some specific addresses. Listing
 # just the specific offending addresses here (not the whole network).
-# Updated: 2019.12.18
+# %Listed, abuseat.org (CBL-Listed): 0.09%.
+# Stop Forum Spam (SFS) listings: 984.
+# Updated: 2020.05.06
 
-2.125.253.78/32 Deny Malware
-5.66.45.167/32 Deny Malware
-5.67.192.251/32 Deny Malware
-5.69.68.238/32 Deny Malware
-90.217.252.212/32 Deny Malware
-90.252.137.194/32 Deny Malware
+2.120.189.131/32 Deny Spam
+2.217.191.53/32 Deny Spam
+2.222.88.153/32 Deny Spam
+5.67.247.137/32 Deny Spam
+5.69.68.129/32 Deny Malware
+5.69.76.168/32 Deny Spam
+78.105.74.134/32 Deny Spam
+90.193.91.231/32 Deny Spam
+90.196.72.181/32 Deny Spam
+90.203.185.194/32 Deny Spam
+90.206.44.205/32 Deny Spam
+90.218.129.124/32 Deny Spam
+90.221.19.222/32 Deny Spam
+93.96.88.6/32 Deny Spam
+94.1.175.63/32 Deny Spam
+94.5.225.236/32 Deny Spam
 94.8.106.225/32 Deny Spam
 94.10.129.126/32 Deny Spam
+94.10.131.162/32 Deny Spam
 94.10.219.119/32 Deny Spam
-94.13.180.208/32 Deny Malware
+94.12.4.191/32 Deny Spam
 94.193.100.121/32 Deny Malware
-151.228.250.207/32 Deny Malware
+94.194.238.76/32 Deny Spam
+151.225.173.98/32 Deny Spam
+151.228.232.116/32 Deny Spam
 151.231.159.5/32 Deny Malware
+176.25.30.165/32 Deny Spam
+176.26.92.178/32 Deny Spam
+176.249.12.72/32 Deny Spam
 176.249.80.169/32 Deny Spam
+176.250.255.158/32 Deny Spam
+176.253.60.247/32 Deny Spam
+176.254.82.103/32 Deny Spam
+188.221.159.59/32 Deny Spam
+188.223.233.228/32 Deny Spam
 Origin: GB
 Tag: Sky UK Limited
 ---
@@ -12456,13 +12500,32 @@ recaptcha:
 # A domestic ISP from the UK, but forum spam incidents detected from some
 # specific addresses, plus Mirai detected at some specific addresses. Listing
 # just the specific offending addresses here (not the whole network).
-# Updated: 2019.12.18
+# Stop Forum Spam (SFS) listings: 525.
+# Updated: 2020.05.06
 
-31.49.188.122/32 Deny Malware
-31.52.157.245/32 Deny Malware
+31.52.15.126/32 Deny Spam
+31.52.157.0/24 Deny Malware
+31.53.200.4/32 Deny Spam
+31.53.208.233/32 Deny Spam
 62.6.237.182/32 Deny Spam
-62.7.85.234/32 Deny Spam
-81.151.46.201/32 Deny Malware
+81.133.122.122/32 Deny Spam
+86.128.6.98/32 Deny Spam
+86.136.167.103/32 Deny Spam
+86.138.41.144/32 Deny Spam
+86.142.163.165/32 Deny Spam
+86.147.14.158/32 Deny Spam
+86.154.217.118/32 Deny Spam
+86.154.250.54/32 Deny Spam
+86.155.12.184/32 Deny Spam
+86.155.34.187/32 Deny Spam
+86.160.241.82/32 Deny Spam
+86.161.197.6/32 Deny Spam
+86.168.137.25/32 Deny Spam
+86.177.79.192/32 Deny Spam
+86.184.98.208/32 Deny Spam
+86.185.8.144/32 Deny Spam
+109.152.105.222/32 Deny Spam
+109.156.50.188/32 Deny Spam
 Origin: GB
 Tag: British Telecom PLC
 ---

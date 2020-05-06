@@ -1,8 +1,8 @@
 # IPv4 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv4.dat
 
-# Version: 2020.121.511
-# Last modified: 2020.05.01
+# Version: 2020.126.534
+# Last modified: 2020.05.06
 
 
 # ---
@@ -1013,9 +1013,9 @@ Tag: New Dream Network
 
 
 # ASN 33182 ("HostDime.com, Inc").
-# %Listed, Google Malware Dashboard: 0.28%.
-# Stop Forum Spam (SFS) listings: 819.
-# Updated: 2019.12.18
+# %Listed, Google Malware Dashboard: 0.16%.
+# Stop Forum Spam (SFS) listings: 2,328.
+# Updated: 2020.05.06
 
 177.234.144.0/20 Deny Cloud
 179.191.176.0/24 Deny Cloud
@@ -1024,6 +1024,7 @@ Tag: New Dream Network
 187.45.176.0/20 Deny Cloud
 Origin: BR
 138.121.200.0/22 Deny Cloud
+200.7.96.0/20 Deny Cloud
 Origin: CO
 185.183.182.0/24 Deny Cloud
 185.185.126.0/23 Deny Cloud
@@ -1041,8 +1042,25 @@ Origin: IN
 143.255.56.0/22 Deny Cloud
 201.131.124.0/22 Deny Cloud
 Origin: MX
-185.7.80.0/23 Deny Cloud
-Origin: TR
+185.73.182.0/23 Deny Cloud
+185.75.132.0/23 Deny Cloud
+185.75.134.0/24 Deny Cloud
+185.76.240.0/23 Deny Cloud
+185.76.242.0/24 Deny Cloud
+185.81.172.0/23 Deny Cloud
+185.81.174.0/24 Deny Cloud
+185.81.184.0/24 Deny Cloud
+185.81.187.0/24 Deny Cloud
+185.88.38.0/24 Deny Cloud
+185.89.104.0/23 Deny Cloud
+185.89.108.0/22 Deny Cloud
+185.95.101.0/24 Deny Cloud
+185.95.102.0/23 Deny Cloud
+185.96.38.0/24 Deny Cloud
+185.96.80.0/24 Deny Cloud
+185.97.1.0/24 Deny Cloud
+185.97.3.0/24 Deny Cloud
+Origin: PL
 8.10.120.0/24 Deny Cloud
 8.33.160.0/20 Deny Cloud
 23.92.60.0/23 Deny Cloud
@@ -1057,6 +1075,9 @@ Origin: TR
 66.195.124.0/22 Deny Cloud
 66.195.240.0/22 Deny Cloud
 67.23.224.0/19 Deny Cloud
+67.227.96.0/24 Deny Cloud
+67.227.98.0/23 Deny Cloud
+67.227.100.0/22 Deny Cloud
 72.29.64.0/19 Deny Cloud
 98.142.96.0/20 Deny Cloud
 104.37.7.0/24 Deny Cloud
@@ -1067,6 +1088,7 @@ Origin: TR
 138.128.160.0/19 Deny Cloud
 162.221.184.0/21 Deny Cloud
 184.171.240.0/20 Deny Cloud
+185.7.80.0/23 Deny Cloud
 192.255.80.0/22 Deny Cloud
 198.49.64.0/20 Deny Cloud
 198.136.48.0/20 Deny Cloud
@@ -4417,18 +4439,22 @@ Tag: iWeb
 
 # ASNs 13926, 22781, 29713, 62651 ("Strong Technology, LLC", formerly
 # "Reliable Hosting Services").
-# Stop Forum Spam (SFS) listings: 69 (AS13926), 43 (AS22781).
-# Updated: 2019.12.23
+# Stop Forum Spam (SFS) listings: 361 (AS13926), 13 (AS22781), 2 (AS29713), 431 (AS62651).
+# Updated: 2020.05.06
 
+45.56.169.0/24 Deny Cloud
 68.68.32.0/20 Deny Cloud
 104.238.38.0/24 Deny Cloud
 108.171.96.0/21 Deny Cloud
 144.172.121.0/24 Deny Cloud
 172.96.162.0/23 Deny Cloud
+173.213.86.0/24 Deny Cloud
+173.213.89.0/24 Deny Cloud
+173.213.91.0/24 Deny Cloud
 173.255.168.0/21 Deny Cloud
+176.67.84.0/24 Deny Cloud
 192.82.109.0/24 Deny Cloud
-192.200.144.0/21 Deny Cloud
-192.200.156.0/22 Deny Cloud
+192.200.144.0/20 Deny Cloud
 199.15.248.0/21 Deny Cloud
 207.204.224.0/19 Deny Cloud
 208.73.20.0/22 Deny Cloud
@@ -6702,8 +6728,8 @@ Tag: Versaweb, LLC
 
 # ASN 27176 ("DataWagon LLC").
 # A source of forum spam.
-# Stop Forum Spam (SFS) listings: 297.
-# Updated: 2019.08.22 / Checked: 2019.12.18
+# Stop Forum Spam (SFS) listings: 102.
+# Updated: 2019.08.22 / Checked: 2020.05.06
 
 45.119.208.0/22 Deny Cloud
 103.60.12.0/22 Deny Cloud
@@ -26819,9 +26845,7 @@ Tag: TakeWYN
 # ASNs 34962, 206898 ("Anonymize, Inc", "Sibyl System LTD").
 # Malware detected on network; Future C&C risk.
 # (Mark "Anonymize, Inc" CIDRs as proxy; everything else as cloud).
-# %Listed, Google Malware Dashboard: 8.77% (AS206898).
-# Stop Forum Spam (SFS) listings: 30 (AS34962), 2 (AS206898).
-# Updated: 2019.12.23
+# Updated: 2020.05.06
 
 45.88.201.0/24 Deny Proxy
 45.88.202.0/24 Deny Cloud
@@ -26835,10 +26859,12 @@ Origin: EE
 185.172.110.0/23 Deny Cloud
 Origin: NL
 91.149.192.0/22 Deny Proxy
-91.149.224.0/24 Deny Proxy
+91.149.224.0/23 Deny Proxy
 Origin: PL
 185.83.214.0/23 Deny Cloud
 Origin: PT
+196.55.0.0/24 Deny Cloud
+Origin: ZA
 Tag: Anonymize, Inc
 
 
@@ -26846,7 +26872,7 @@ Tag: Anonymize, Inc
 # Dedicated webhosting and cloud provider; Caught trying to brute-force website
 # logins and caught port scanning. Remove invalids when updating to reduce the
 # false positive risk.
-# Updated: 2019.12.23
+# Updated: 2019.12.23 / Checked: 2020.05.06
 
 206.180.160.0/19 Deny Cloud
 216.41.144.0/20 Deny Cloud

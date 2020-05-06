@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_isps.dat
 
-# Version: 2020.121.511
-# Last modified: 2020.05.01
+# Version: 2020.126.534
+# Last modified: 2020.05.06
 
 
 # ---
@@ -621,8 +621,8 @@ Tag: AS13188-CDN-LTD
 
 
 # ASN 15377 ('ISP "Fregat" Ltd.').
-# Stop Forum Spam (SFS) listings: 1,147.
-# Updated: 2019.08.29 / Checked: 2019.12.12
+# Stop Forum Spam (SFS) listings: 1,152.
+# Updated: 2019.08.29 / Checked: 2020.05.06
 
 2a00:4f00::/32 Deny Spam
 2a05:2580::/29 Deny Spam
@@ -648,7 +648,7 @@ Tag: MAROSNET
 # A HUGE source of forum spam, but also a legit ISP with human endpoints.
 # Serves mostly Vietnam, but also several African countries. Including only the
 # specific affected ASNs (several clean ASNs have been intentionally omitted).
-# Updated: 2018.10.25 / Checked: 2019.12.18
+# Updated: 2018.10.25 / Checked: 2020.05.06
 
 2800:cc0::/32 Deny Spam
 Origin: PE
@@ -1742,9 +1742,9 @@ recaptcha:
 
 # ASN 7642 ("Dhivehi Raajjeyge Gulhun Plc (Dhiraagu)").
 # ISP from the Maldives with human endpoints, but also a source of spam.
-# %Listed, Google Malware Dashboard: 3.13%.
-# Stop Forum Spam (SFS) listings: 204.
-# Updated: 2019.09.03 / Checked: 2019.12.23
+# %Listed, Google Malware Dashboard: 4.17%.
+# Stop Forum Spam (SFS) listings: 140.
+# Updated: 2019.09.03 / Checked: 2020.05.06
 
 2406:e400::/32 Deny Spam
 Origin: MV
@@ -1925,10 +1925,10 @@ recaptcha:
 
 
 # ASN 8708 ("RCS & RDS SA").
-# %Listed, Google Malware Dashboard: 0.27%.
-# %Listed, abuseat.org (CBL-Listed): 0.60%.
-# Stop Forum Spam (SFS) listings: 2,251.
-# Updated: 2018.06.24 / Checked: 2019.12.18
+# %Listed, Google Malware Dashboard: 0.36%.
+# %Listed, abuseat.org (CBL-Listed): 0.67%.
+# Stop Forum Spam (SFS) listings: 3,062.
+# Updated: 2018.06.24 / Checked: 2020.05.06
 
 2a02:2f00::/28 Deny Generic
 Origin: RO
@@ -2323,6 +2323,50 @@ recaptcha:
 2001:8003:e1de:701::/64 Deny Spam
 Origin: AU
 Tag: Telstra Corporation
+---
+recaptcha:
+ enabled: true
+
+
+# ASN 5607 ("Sky UK Limited").
+# A domestic ISP from the UK, but forum spam incidents detected from some
+# specific addresses, plus Mirai detected at some specific addresses. Listing
+# just the specific offending addresses here (not the whole network).
+# %Listed, abuseat.org (CBL-Listed): 0.09%.
+# Stop Forum Spam (SFS) listings: 984.
+# Updated: 2020.05.06
+
+2a02:c7d:51b6:c700::/64 Deny Spam
+2a02:c7f:1492:da00::/64 Deny Spam
+2a02:c7f:1e21:7000::/64 Deny Spam
+2a02:c7f:4406:ef00::/64 Deny Spam
+2a02:c7f:9401:c100::/64 Deny Spam
+2a02:c7f:9d03:a500::/64 Deny Spam
+2a02:c7f:c035:9c00::/64 Deny Spam
+Origin: GB
+Tag: Sky UK Limited
+---
+recaptcha:
+ enabled: true
+
+
+# ASN 2856 ("British Telecommunications PLC").
+# A domestic ISP from the UK, but forum spam incidents detected from some
+# specific addresses, plus Mirai detected at some specific addresses. Listing
+# just the specific offending addresses here (not the whole network).
+# Stop Forum Spam (SFS) listings: 525.
+# Updated: 2020.05.06
+
+2a00:23c4:2705:cc00::/64 Deny Spam
+2a00:23c4:ad07:600::/64 Deny Spam
+2a00:23c5:f315:4900::/64 Deny Spam
+2a00:23c6:362f:a501::/64 Deny Spam
+2a00:23c6:ab89:c01::/64 Deny Spam
+2a00:23c7:46e6:2301::/64 Deny Spam
+2a00:23c8:907:7701::/64 Deny Spam
+2a00:23c8:1e83:df00::/64 Deny Spam
+Origin: GB
+Tag: British Telecom PLC
 ---
 recaptcha:
  enabled: true

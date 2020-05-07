@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2020.04.25).
+ * This file: Front-end handler (last modified: 2020.05.07).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -592,7 +592,8 @@ if (($CIDRAM['FE']['UserState'] === 1 || $CIDRAM['FE']['UserState'] === 2) && !$
     }
 }
 
-$CIDRAM['FE']['bNavBR'] = ($CIDRAM['FE']['UserState'] === 1) ? '<br /><br />' : '<br />';
+/** Line spacing fix. */
+$CIDRAM['FE']['bNav'] .= ($CIDRAM['FE']['UserState'] === 1) ? '<br /><br />' : '<br />';
 
 /** The user hasn't logged in, or hasn't authenticated yet. */
 if ($CIDRAM['FE']['UserState'] !== 1 && !$CIDRAM['FE']['CronMode']) {
@@ -603,7 +604,7 @@ if ($CIDRAM['FE']['UserState'] !== 1 && !$CIDRAM['FE']['CronMode']) {
     if ($CIDRAM['FE']['UserState'] === 2) {
 
         /** Provide the option to log out (omit home link). */
-        $CIDRAM['FE']['bNav'] = sprintf('<a href="?cidram-page=logout">%s</a>', $CIDRAM['L10N']->getString('link_log_out'));
+        $CIDRAM['FE']['bNav'] = sprintf('<a href="?cidram-page=logout">%s</a><br />', $CIDRAM['L10N']->getString('link_log_out'));
 
         /** Show them the two-factor authentication page. */
         $CIDRAM['FE']['FE_Content'] = $CIDRAM['ParseVars'](
@@ -611,6 +612,9 @@ if ($CIDRAM['FE']['UserState'] !== 1 && !$CIDRAM['FE']['CronMode']) {
             $CIDRAM['ReadFile']($CIDRAM['GetAssetPath']('_2fa.html'))
         );
     } else {
+
+        /** Omit the log out and home links. */
+        $CIDRAM['FE']['bNav'] = '';
 
         /** Show them the login page. */
         $CIDRAM['FE']['FE_Content'] = $CIDRAM['ParseVars'](
@@ -644,6 +648,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === '' && !$CIDRAM['FE']['CronMode']
     /** Operating system used. */
     $CIDRAM['FE']['info_os'] = php_uname();
 
+    /** Provide the log out and home links. */
     $CIDRAM['FE']['bNav'] = sprintf('<a href="?cidram-page=logout">%s</a>', $CIDRAM['L10N']->getString('link_log_out'));
 
     /** Build repository backup locations information. */

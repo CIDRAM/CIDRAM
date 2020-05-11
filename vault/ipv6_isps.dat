@@ -1,17 +1,18 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_isps.dat
 
-# Version: 2020.126.534
-# Last modified: 2020.05.06
+# Version: 2020.131.359
+# Last modified: 2020.05.11
 
 
 # ---
 # ASN 29182 ("ISPsystem").
-# %Listed, Google Malware Dashboard: 0.27%.
-# Stop Forum Spam (SFS) listings: 1,243.
+# %Listed, Google Malware Dashboard: 0.14%.
+# Stop Forum Spam (SFS) listings: 2,079.
 # Updated: 2020.03.13
 
-2a01:230::/46 Deny Generic
+2a01:230::/47 Deny Generic
+2a01:230:2::/48 Deny Generic
 2a06:dc40::/29 Deny Generic
 2a09:6280:4::/48 Deny Generic
 2a09:f900::/48 Deny Generic
@@ -130,8 +131,9 @@ recaptcha:
 # ignore.dat file default, and is marked for use with reCAPTCHA, so the false
 # positive risk shouldn't be too high. Hope to eventually scale down the listed
 # ranges here, but current incident reports are quite scattered across the ASN.
-# Stop Forum Spam (SFS) listings: 350.
-# Updated: 2019.12.27
+# (Mark US ranges as cloud; ID as spam).
+# Stop Forum Spam (SFS) listings: 258.
+# Updated: 2019.12.27 / Checked: 2020.05.11
 
 2400:8b00:100::/42 Deny Spam
 2400:8b00:200::/42 Deny Spam
@@ -303,9 +305,9 @@ recaptcha:
 # Major domestic ISP from Russia, but also a significant, long-term source of
 # spam, hack attempts, scraping, probing for vulnerabilities, and other kinds
 # of unwanted traffic.
-# %Listed, Google Malware Dashboard: 0.21% (AS44050).
-# Stop Forum Spam (SFS) listings: 323,997 (AS34665), 523,993 (AS44050).
-# Updated: 2020.03.21
+# %Listed, Google Malware Dashboard: 0.24% (AS44050).
+# Stop Forum Spam (SFS) listings: 1,292,218 (AS34665), 439,684 (AS44050).
+# Updated: 2020.03.21 / Checked: 2020.05.08
 
 2a02:c6c1::/48 Deny Generic
 Origin: GB
@@ -358,9 +360,9 @@ recaptcha:
 # the false positive risk, and I would encourage any CIDRAM users from Israel,
 # or targeting traffic from Israel, to list this section in their ignore.dat
 # file to reduce the false positive risk.
-# %Listed, Google Malware Dashboard: 0.43% (AS9116).
-# Stop Forum Spam (SFS) listings: 4,824 (AS9116).
-# Updated: 2016.12.10 / Checked: 2019.12.25
+# %Listed, Google Malware Dashboard: 0.40% (AS9116).
+# Stop Forum Spam (SFS) listings: 8,946 (AS9116).
+# Updated: 2016.12.10 / Checked: 2020.05.11
 
 2001:40a8::/32 Deny Spam
 Origin: IL
@@ -2047,6 +2049,51 @@ recaptcha:
 2a03:af60::/32 Deny Spam
 Origin: RU
 Tag: PJSC Moscow city
+---
+recaptcha:
+ enabled: true
+
+
+# ASN 53356 ("WestConnect Communications").
+# Canadian multiplay network (domestic ISP, webhosting, etc) caught spamming.
+# Stop Forum Spam (SFS) listings: 2,495.
+# Updated: 2020.05.11
+
+2a07:1c40:1028::/48 Deny Spam
+Origin: AT
+2a0c:b641:493::/48 Deny Spam
+2a0c:b642:1a0c::/48 Deny Spam
+Origin: BE
+2602:fed2::/48 Deny Spam
+2602:fed2:31::/48 Deny Spam
+2602:fed2:3eb::/48 Deny Spam
+2602:fed2:3ec::/47 Deny Spam
+2602:fed2:3ee::/48 Deny Spam
+2602:fed2:fb0::/44 Deny Spam
+2602:fed2:fc0::/44 Deny Spam
+2602:fed2:fe0::/44 Deny Spam
+2602:fed2:ff0::/48 Deny Spam
+2602:fed2:ff3::/48 Deny Spam
+2602:fed2:ff4::/48 Deny Spam
+2602:fed2:710d::/48 Deny Spam
+2602:fed2:7113::/48 Deny Spam
+2602:fed2:7118::/48 Deny Spam
+2602:fed2:7121::/48 Deny Spam
+2602:fed2:7305::/48 Deny Spam
+2602:fed2:730a::/48 Deny Spam
+Origin: CA
+2a06:e881:620c::/48 Deny Spam
+Origin: CH
+2a0f:9400:fb0::/44 Deny Spam
+2a0f:9400:7370::/44 Deny Spam
+2a0f:9400:7400::/39 Deny Spam
+2a0f:9400:7700::/40 Deny Spam
+2a0f:9400:7900::/40 Deny Spam
+2a0f:9400:800e::/48 Deny Spam
+Origin: GB
+2a0e:2b00::/29 Deny Spam
+Origin: LT
+Tag: WestConnect
 ---
 recaptcha:
  enabled: true

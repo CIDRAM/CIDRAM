@@ -1,8 +1,8 @@
 # IPv4 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv4_isps.dat
 
-# Version: 2020.126.534
-# Last modified: 2020.05.06
+# Version: 2020.131.359
+# Last modified: 2020.05.11
 
 
 # ---
@@ -200,9 +200,9 @@ recaptcha:
 
 
 # ASN 29182 ("ISPsystem").
-# %Listed, Google Malware Dashboard: 0.27%.
-# Stop Forum Spam (SFS) listings: 1,243.
-# Updated: 2020.03.13
+# %Listed, Google Malware Dashboard: 0.14%.
+# Stop Forum Spam (SFS) listings: 2,079.
+# Updated: 2020.05.08
 
 45.140.167.0/24 Deny Generic
 Origin: GB
@@ -221,11 +221,11 @@ Origin: GB
 82.202.166.0/23 Deny Generic
 82.202.168.0/21 Deny Generic
 83.220.168.0/21 Deny Generic
-89.19.43.0/24 Deny Generic
 91.240.84.0/22 Deny Generic
 92.63.96.0/20 Deny Generic
 94.250.248.0/21 Deny Generic
 149.154.64.0/21 Deny Generic
+178.250.156.0/22 Deny Generic
 185.43.4.0/22 Deny Generic
 185.60.132.0/22 Deny Generic
 185.63.188.0/22 Deny Generic
@@ -650,22 +650,27 @@ recaptcha:
 # ignore.dat file default, and is marked for use with reCAPTCHA, so the false
 # positive risk shouldn't be too high. Hope to eventually scale down the listed
 # ranges here, but current incident reports are quite scattered across the ASN.
-# Stop Forum Spam (SFS) listings: 350.
-# Updated: 2019.09.03 / Checked: 2019.12.27
+# (Mark US ranges as cloud; ID as spam).
+# Stop Forum Spam (SFS) listings: 258.
+# Updated: 2020.05.11
 
 103.10.64.0/22 Deny Spam
-103.105.24.0/21 Deny Spam
+103.105.24.0/23 Deny Spam
+103.105.27.0/24 Deny Spam
+103.105.28.0/22 Deny Spam
 103.105.32.0/22 Deny Spam
-103.108.20.0/22 Deny Spam
-103.108.24.0/21 Deny Spam
-103.108.32.0/21 Deny Spam
+103.108.20.0/23 Deny Spam
+103.108.22.0/24 Deny Spam
+103.108.27.0/24 Deny Spam
 114.142.168.0/21 Deny Spam
 116.206.8.0/23 Deny Spam
+116.206.11.0/24 Deny Spam
 116.206.12.0/22 Deny Spam
 116.206.28.0/22 Deny Spam
 116.206.32.0/23 Deny Spam
 116.206.35.0/24 Deny Spam
-116.206.36.0/22 Deny Spam
+116.206.36.0/24 Deny Spam
+116.206.38.0/23 Deny Spam
 116.206.40.0/24 Deny Spam
 116.206.42.0/23 Deny Spam
 124.153.32.0/23 Deny Spam
@@ -676,11 +681,11 @@ recaptcha:
 223.255.227.0/24 Deny Spam
 223.255.228.0/22 Deny Spam
 Origin: ID
-23.0.166.0/23 Deny Spam
-23.3.76.0/22 Deny Spam
-23.5.192.0/20 Deny Spam
-23.13.0.0/20 Deny Spam
-104.81.252.0/22 Deny Spam
+23.0.166.0/23 Deny Cloud
+23.3.76.0/22 Deny Cloud
+23.5.192.0/20 Deny Cloud
+23.13.0.0/20 Deny Cloud
+104.81.252.0/22 Deny Cloud
 Origin: US
 Tag: PT Hutchison
 ---
@@ -1309,17 +1314,19 @@ recaptcha:
 # Major domestic ISP from Russia, but also a significant, long-term source of
 # spam, hack attempts, scraping, probing for vulnerabilities, and other kinds
 # of unwanted traffic.
-# %Listed, Google Malware Dashboard: 0.21% (AS44050).
-# Stop Forum Spam (SFS) listings: 323,997 (AS34665), 523,993 (AS44050).
-# Updated: 2020.03.21
+# %Listed, Google Malware Dashboard: 0.24% (AS44050).
+# Stop Forum Spam (SFS) listings: 1,292,218 (AS34665), 439,684 (AS44050).
+# Updated: 2020.05.08
 
 5.8.8.0/21 Deny Generic
 5.8.19.0/24 Deny Generic
 5.8.20.0/22 Deny Generic
+5.8.36.0/22 Deny Generic
+5.8.44.0/22 Deny Generic
 5.8.48.0/21 Deny Generic
 5.8.56.0/23 Deny Generic
 5.8.59.0/24 Deny Generic
-5.8.61.0/24 Deny Generic
+5.8.60.0/23 Deny Generic
 5.8.62.0/24 Deny Generic
 5.8.65.0/24 Deny Generic
 5.8.66.0/23 Deny Generic
@@ -1330,13 +1337,13 @@ recaptcha:
 5.101.80.0/21 Deny Generic
 5.101.89.0/24 Deny Generic
 5.101.90.0/23 Deny Generic
+5.101.216.0/21 Deny Generic
 5.183.129.0/24 Deny Generic
 5.188.9.0/24 Deny Generic
 5.188.10.0/23 Deny Generic
 5.188.44.0/22 Deny Generic
 5.188.48.0/22 Deny Generic
-5.188.61.0/24 Deny Generic
-5.188.62.0/23 Deny Generic
+5.188.60.0/22 Deny Generic
 5.188.68.0/23 Deny Generic
 5.188.84.0/24 Deny Generic
 5.188.88.0/22 Deny Generic
@@ -1345,15 +1352,16 @@ recaptcha:
 5.188.188.0/22 Deny Generic
 5.188.192.0/23 Deny Generic
 5.188.200.0/22 Deny Generic
-5.188.204.0/23 Deny Generic
+5.188.204.0/24 Deny Generic
 5.188.207.0/24 Deny Generic
-5.188.208.0/21 Deny Generic
+5.188.208.0/22 Deny Generic
 5.188.220.0/23 Deny Generic
 5.188.223.0/24 Deny Generic
 5.188.224.0/21 Deny Generic
 5.188.233.0/24 Deny Generic
-5.188.235.0/24 Deny Generic
-5.189.220.0/22 Deny Generic
+5.188.234.0/23 Deny Generic
+5.189.200.0/21 Deny Generic
+5.189.248.0/22 Deny Generic
 31.40.200.0/24 Deny Generic
 31.40.202.0/24 Deny Generic
 31.44.184.0/23 Deny Generic
@@ -1361,11 +1369,11 @@ recaptcha:
 31.184.228.0/23 Deny Generic
 31.184.231.0/24 Deny Generic
 31.184.237.0/24 Deny Generic
-31.184.238.0/23 Deny Generic
 31.184.240.0/21 Deny Generic
 37.9.36.0/22 Deny Generic
 37.9.48.0/24 Deny Generic
 37.9.50.0/24 Deny Generic
+37.9.52.0/22 Deny Generic
 37.139.48.0/23 Deny Generic
 37.139.51.0/24 Deny Generic
 37.139.53.0/24 Deny Generic
@@ -1373,7 +1381,6 @@ recaptcha:
 37.139.56.0/22 Deny Generic
 45.11.23.0/24 Deny Generic
 45.14.222.0/24 Deny Generic
-45.80.120.0/22 Deny Generic
 45.81.138.0/24 Deny Generic
 45.84.178.0/24 Deny Generic
 45.86.171.0/24 Deny Generic
@@ -1401,28 +1408,26 @@ recaptcha:
 45.145.171.0/24 Deny Generic
 46.161.1.0/24 Deny Generic
 46.161.2.0/23 Deny Generic
-46.161.8.0/22 Deny Generic
+46.161.8.0/23 Deny Generic
+46.161.10.0/24 Deny Generic
 46.161.14.0/23 Deny Generic
-46.161.20.0/22 Deny Generic
+46.161.16.0/21 Deny Generic
 46.161.24.0/23 Deny Generic
-46.161.26.0/24 Deny Generic
 46.161.28.0/23 Deny Generic
 46.161.30.0/24 Deny Generic
 46.161.32.0/22 Deny Generic
+46.161.41.0/24 Deny Generic
 46.161.42.0/24 Deny Generic
 46.161.44.0/22 Deny Generic
 46.161.48.0/22 Deny Generic
 77.83.8.0/22 Deny Generic
 77.83.72.0/24 Deny Generic
 77.83.81.0/24 Deny Generic
-77.83.84.0/24 Deny Generic
-77.94.1.0/24 Deny Generic
 78.142.239.0/24 Deny Generic
 80.87.206.0/24 Deny Generic
 81.16.142.0/23 Deny Generic
 84.54.8.0/22 Deny Generic
 84.54.28.0/22 Deny Generic
-84.54.53.0/24 Deny Generic
 84.252.70.0/23 Deny Generic
 85.208.84.0/24 Deny Generic
 88.218.64.0/24 Deny Generic
@@ -1431,7 +1436,7 @@ recaptcha:
 91.188.212.0/22 Deny Generic
 91.188.221.0/24 Deny Generic
 91.188.236.0/22 Deny Generic
-91.188.244.0/23 Deny Generic
+91.188.245.0/24 Deny Generic
 91.193.110.0/23 Deny Generic
 91.200.84.0/24 Deny Generic
 91.203.232.0/23 Deny Generic
@@ -1462,6 +1467,7 @@ recaptcha:
 146.185.223.0/24 Deny Generic
 146.185.224.0/21 Deny Generic
 146.185.234.0/24 Deny Generic
+146.185.239.0/24 Deny Generic
 146.185.240.0/22 Deny Generic
 146.185.244.0/23 Deny Generic
 146.185.249.0/24 Deny Generic
@@ -1469,13 +1475,11 @@ recaptcha:
 146.185.252.0/24 Deny Generic
 176.53.164.0/22 Deny Generic
 176.53.172.0/22 Deny Generic
-176.53.186.0/24 Deny Generic
 176.119.143.0/24 Deny Generic
 185.162.233.0/24 Deny Generic
 188.119.76.0/22 Deny Generic
 188.143.128.0/17 Deny Generic
 192.144.8.0/22 Deny Generic
-192.144.31.0/24 Deny Generic
 193.32.190.0/24 Deny Generic
 193.36.56.0/22 Deny Generic
 193.93.60.0/23 Deny Generic
@@ -1492,14 +1496,12 @@ recaptcha:
 194.150.179.0/24 Deny Generic
 194.156.1.0/24 Deny Generic
 194.156.26.0/24 Deny Generic
-194.156.92.0/24 Deny Generic
 194.156.116.0/22 Deny Generic
 194.156.122.0/24 Deny Generic
 194.242.124.0/22 Deny Generic
 195.2.240.0/23 Deny Generic
 195.5.162.0/24 Deny Generic
 195.245.110.0/24 Deny Generic
-212.81.32.0/22 Deny Generic
 213.5.226.0/24 Deny Generic
 213.139.229.0/24 Deny Generic
 213.166.80.0/24 Deny Generic
@@ -1608,9 +1610,9 @@ recaptcha:
 # the false positive risk, and I would encourage any CIDRAM users from Israel,
 # or targeting traffic from Israel, to list this section in their ignore.dat
 # file to reduce the false positive risk.
-# %Listed, Google Malware Dashboard: 0.43% (AS9116).
-# Stop Forum Spam (SFS) listings: 4,824 (AS9116).
-# Updated: 2019.12.25
+# %Listed, Google Malware Dashboard: 0.40% (AS9116).
+# Stop Forum Spam (SFS) listings: 8,946 (AS9116).
+# Updated: 2020.05.11
 
 31.154.139.0/24 Deny Spam
 46.120.0.0/15 Deny Spam
@@ -1619,12 +1621,12 @@ recaptcha:
 80.178.0.0/15 Deny Spam
 80.230.0.0/16 Deny Spam
 81.5.0.0/18 Deny Spam
+82.102.159.0/24 Deny Spam
 82.102.161.0/24 Deny Spam
 83.130.0.0/16 Deny Spam
 84.94.0.0/15 Deny Spam
 84.228.0.0/15 Deny Spam
 87.68.0.0/14 Deny Spam
-176.231.66.0/24 Deny Spam
 176.231.158.0/24 Deny Spam
 192.114.84.0/22 Deny Spam
 192.114.160.0/19 Deny Spam
@@ -12535,22 +12537,35 @@ recaptcha:
 
 # ASN 52465 ("WNet Internet y Hosting").
 # Argentine multiplay network (domestic ISP, webhosting, etc) caught spamming.
-# Updated: 2019.12.26
+# Stop Forum Spam (SFS) listings: 197.
+# Updated: 2020.05.11
 
 161.0.72.11/32 Deny Spam
-168.121.39.18/32 Deny Spam
-200.229.252.22/32 Deny Spam
 Origin: AR
 Tag: WNet Internet y Hosting
 
 
 # ASN 53356 ("WestConnect Communications").
 # Canadian multiplay network (domestic ISP, webhosting, etc) caught spamming.
-# Stop Forum Spam (SFS) listings: 1,525.
-# Updated: 2019.12.27
+# Stop Forum Spam (SFS) listings: 2,495.
+# Updated: 2020.05.11
 
+23.129.32.0/24 Deny Spam
+103.144.176.0/23 Deny Spam
 104.218.63.0/24 Deny Spam
+161.129.60.0/24 Deny Spam
+167.88.48.0/24 Deny Spam
+167.88.50.0/23 Deny Spam
+206.83.41.0/24 Deny Spam
 Origin: CA
+45.148.76.0/22 Deny Spam
+Origin: GB
+193.142.147.0/24 Deny Spam
+Origin: NL
+23.152.225.0/24 Deny Spam
+23.154.80.0/24 Deny Spam
+44.70.48.0/23 Deny Spam
+Origin: US
 Tag: WestConnect
 ---
 recaptcha:

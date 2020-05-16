@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2020.04.25).
+ * This file: Front-end functions file (last modified: 2020.05.16).
  */
 
 /**
@@ -1463,7 +1463,7 @@ $CIDRAM['AppendTests'] = function (array &$Component, bool $ReturnState = false)
                 $StatusHead .= '<span class="txtRd">❌ ';
             }
             $StatusHead .= empty($ThisStatus['target_url']) ? $ThisStatus['context'] : (
-                '<a href="' . $ThisStatus['target_url'] . '">' . $ThisStatus['context'] . '</a>'
+                '<a href="' . $ThisStatus['target_url'] . '" rel="noopener noreferrer external">' . $ThisStatus['context'] . '</a>'
             );
             if (!$ReturnState) {
                 $CIDRAM['AppendToString']($TestDetails, '<br />', $StatusHead . '</span>');

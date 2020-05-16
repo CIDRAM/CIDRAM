@@ -7,12 +7,12 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Swedish language data for the front-end (last modified: 2020.04.23).
+# This file: Swedish language data for the front-end (last modified: 2020.05.16).
 ##/
 
 Extended Description Bypasses: "Standard bypass-filen som normalt ingår i huvudpaketet."
 Extended Description CIDRAM: "Huvudpaketet (minus signaturerna, dokumentationen och konfigurationen)."
-Extended Description Chart.js: "Gör det möjligt för framsidan att generera cirkeldiagram.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a> är tillgängligt via <a href="https://opensource.org/licenses/MIT">MIT license</a>."
+Extended Description Chart.js: "Gör det möjligt för framsidan att generera cirkeldiagram.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> är tillgängligt via <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
 Extended Description IPv4-Bogons: "Blockerar bogon/martian CIDRer."
 Extended Description IPv4-ISPs: "Blockerar farliga och spammiga internetleverantörer."
 Extended Description IPv4-Other: "Blockerar CIDRer för proxytjänster, VPNer och andra diverse oönskade tjänster."
@@ -21,7 +21,7 @@ Extended Description IPv6-Bogons: "Blockerar bogon/martian CIDRer."
 Extended Description IPv6-ISPs: "Blockerar farliga och spammiga internetleverantörer."
 Extended Description IPv6-Other: "Blockerar CIDRer för proxytjänster, VPNer och andra diverse oönskade tjänster."
 Extended Description IPv6: "Blockerar oönskade molntjänster och icke-mänskliga ändpunkter."
-Extended Description PHPMailer: "Krävs för att använda någon funktionalitet som involverar att skicka e-post.<br /><a href="https://github.com/PHPMailer/PHPMailer">PHPMailer</a> är tillgängligt via <a href="https://github.com/PHPMailer/PHPMailer/blob/master/LICENSE">LGPLv2.1</a>-licensen."
+Extended Description PHPMailer: "Krävs för att använda någon funktionalitet som involverar att skicka e-post.<br /><a href="https://github.com/PHPMailer/PHPMailer" hreflang="en" rel="noopener noreferrer external">PHPMailer</a> är tillgängligt via <a href="https://github.com/PHPMailer/PHPMailer/blob/master/LICENSE" hreflang="en-US" rel="noopener external">LGPLv2.1</a>-licensen."
 Extended Description flags.css: "Lägger flaggsupport till loggar sidan i frontenden."
 Extended Description module_abuseipdb.php: "Blockerar förfrågningar från IP-adresser som listas på AbuseIPDB."
 Extended Description module_badhosts.php: "Blockar värdar som ofta används av spammare, hackare och andra skändlig enheter."
@@ -31,7 +31,7 @@ Extended Description module_botua.php: "Blockerar användaragenter associerade m
 Extended Description module_cookies.php: "Ger vissa begränsade skydd mot farliga kakor."
 Extended Description module_extras.php: "Ger vissa begränsade skydd mot olika angreppsvektorer som vanligen används i förfrågningar."
 Extended Description module_projecthoneypot.php: "Blockerar förfrågningar från IP-adresser som listas på Project Honeypot."
-Extended Description module_refspam.php: "Blockering baserat på referensspam ger i allmänhet ingen meningsfull säkerhetsfördel, men i vissa fall kan det vara användbart för vissa användare, för att samla in mer information om förfrågningar och för att kunna rapportera det.<br />Genom att installera den här modulen installeras också Symfony polyfyllningar för <a href="https://github.com/symfony/polyfill-intl-idn">Intl/Idn</a> och <a href="https://github.com/symfony/polyfill-mbstring">Mbstring</a> (eftersom den här modulen kräver Idn-funktionalitet, som inte alla PHP-installationer tillhandahåller som standard), båda som är tillgängliga via <a href="https://opensource.org/licenses/MIT">MIT</a>-licensen."
+Extended Description module_refspam.php: "Blockering baserat på referensspam ger i allmänhet ingen meningsfull säkerhetsfördel, men i vissa fall kan det vara användbart för vissa användare, för att samla in mer information om förfrågningar och för att kunna rapportera det.<br />Genom att installera den här modulen installeras också Symfony polyfyllningar för <a href="https://github.com/symfony/polyfill-intl-idn" hreflang="en" rel="noopener noreferrer external">Intl/Idn</a> och <a href="https://github.com/symfony/polyfill-mbstring" hreflang="en" rel="noopener noreferrer external">Mbstring</a> (eftersom den här modulen kräver Idn-funktionalitet, som inte alla PHP-installationer tillhandahåller som standard), båda som är tillgängliga via <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a>-licensen."
 Extended Description module_sfs.php: "Skyddar registrerings och inloggningssidor mot IP-adresser som listas av SFS."
 Name Bypasses: "Standard signatur bypasses."
 Name CN_cidram.inc: "Kina IPv4-blocklista"
@@ -488,7 +488,7 @@ tip_pie_html: "Klicka på komponentnamnet för mer information."
 tip_range: "Hallå, {username}.<br />Den här sidan visar några grundläggande statistiska uppgifter om de signaturer som omfattas av de aktuella aktiva signaturfilerna."
 tip_range_subtractor: "Hallå, {username}.<br />Subtraktoren kan användas för att subtrahera ett intervall av IPer/CIDRer från ett annat."
 tip_sections_list: "Hallå, {username}.<br />Den här sidan visar vilka sektioner som finns i de aktuella aktiva signaturfilerna."
-tip_see_the_documentation: "Se <a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#SECTION6">dokumentationen</a> för information om de olika konfigurationsdirektiven och deras ändamål."
+tip_see_the_documentation: "Se <a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#SECTION6" hreflang="en" rel="noopener external">dokumentationen</a> för information om de olika konfigurationsdirektiven och deras ändamål."
 tip_statistics: "Hallå, {username}.<br />Den här sidan visar en viss användarstatistik för din CIDRAM-installation."
 tip_statistics_disabled: "Notera: Statistikspårning är för närvarande inaktiverad, men kan aktiveras via konfigurationssidan."
 tip_updates: "Hallå, {username}.<br />Du kan installera, avinstallera och uppdatera de olika komponenterna i CIDRAM (kärnpaketet, signaturer, L10N-filer, osv) med hjälp av uppdateringssidan."
@@ -501,34 +501,34 @@ info_some_useful_links: |
      <ul class="pieul">
        <li><span class="comCat" style="cursor:pointer">Verktyg, resurser, osv för CIDRAM.</span>
          <ul class="comSub">
-           <li><a href="https://github.com/CIDRAM/CIDRAM/issues">CIDRAM Issues @ GitHub</a> – Issues sida för CIDRAM (stöd, hjälp, osv).</li>
-           <li><a href="https://wordpress.org/plugins/cidram/">CIDRAM @ WordPress.org</a> – WordPress plugin för CIDRAM.</li>
-           <li><a href="https://bitbucket.org/macmathan/blocklists">macmathan/blocklists</a> – Innehåller valfria blocklistor och moduler för CIDRAM, t.ex. för blockering av farliga robotar, oönskade länder, föråldrade webbläsare, osv.</li>
-           <li><a href="https://github.com/CIDRAM/CIDRAM-Extras">CIDRAM/CIDRAM-Extras</a> – Olika extras.</li>
+           <li><a href="https://github.com/CIDRAM/CIDRAM/issues" hreflang="en" rel="noopener noreferrer external">CIDRAM Issues @ GitHub</a> – Issues sida för CIDRAM (stöd, hjälp, osv).</li>
+           <li><a href="https://wordpress.org/plugins/cidram/" rel="noopener noreferrer external">CIDRAM @ WordPress.org</a> – WordPress plugin för CIDRAM.</li>
+           <li><a href="https://bitbucket.org/macmathan/blocklists" hreflang="en" rel="noopener noreferrer external">macmathan/blocklists</a> – Innehåller valfria blocklistor och moduler för CIDRAM, t.ex. för blockering av farliga robotar, oönskade länder, föråldrade webbläsare, osv.</li>
+           <li><a href="https://github.com/CIDRAM/CIDRAM-Extras" hreflang="en" rel="noopener noreferrer external">CIDRAM/CIDRAM-Extras</a> – Olika extras.</li>
          </ul>
        </li>
        <li><span class="comCat" style="cursor:pointer">Grupper, forum, samhällen, osv.</span>
          <ul class="comSub">
-           <li><a href="https://www.facebook.com/groups/2204685680/">PHP.earth @ Facebook</a> – PHP lärande resurser och diskussion.</li>
-           <li><a href="https://www.stopforumspam.com/forum/">Forum @ Stop Forum Spam</a> – Användbart diskussionsforum om att stoppa forums spam.</li>
+           <li><a href="https://www.facebook.com/groups/2204685680/" rel="noopener noreferrer external">PHP.earth @ Facebook</a> – PHP lärande resurser och diskussion.</li>
+           <li><a href="https://www.stopforumspam.com/forum/" rel="noopener noreferrer external">Forum @ Stop Forum Spam</a> – Användbart diskussionsforum om att stoppa forums spam.</li>
          </ul>
        <li><span class="comCat" style="cursor:pointer">Andra användbara verktyg, resurser, tjänster, osv.</span>
          <ul class="comSub">
-           <li><a href="https://www.stopforumspam.com/">Stop Forum Spam</a> – Hanterar en databas med kända forumspammare. Användbar för att skydda webbplatser och forum mot spammare.</li>
-           <li><a href="https://bgp.he.net/">Hurricane Electric BGP Toolkit</a> – Få CIDRer från ASNer, bestäm ASN-relationer, upptäck ASNer baserat på nätverksnamn, osv.</li>
-           <li><a href="https://bgpview.io/">BGPView</a> – Få CIDRer från ASNer, bestäm ASN-relationer, upptäck ASNer baserat på nätverksnamn, osv.</li>
-           <li><a href="https://radar.qrator.net/">Radar av Qrator</a> – Användbart verktyg för att kontrollera ASN-anslutningar samt för annan information om ASNer.</li>
-           <li><a href="https://www.google.com/transparencyreport/safebrowsing/malware/">Google Malware Dashboard</a> – Visar rapporter om malwareinfektionshastigheter för ASNer.</li>
-           <li><a href="https://www.spamhaus.org/statistics/botnet-asn/">Spamhausprojektet</a> – Visar rapporter om botnätinfektionshastigheter för ASNer.</li>
-           <li><a href="https://www.abuseat.org/public/asn.html">Abuseat.orgs Sammansatta Blockeringslista</a> – Visar rapporter om botnätinfektionshastigheter för ASNer.</li>
-           <li><a href="https://abuseipdb.com/">AbuseIPDB</a> – Upprätthåller en databas med kända kränkande IP-adresser; Ger ett API för kontroll och rapportering av IP-adresser.</li>
+           <li><a href="https://www.stopforumspam.com/" rel="noopener noreferrer external">Stop Forum Spam</a> – Hanterar en databas med kända forumspammare. Användbar för att skydda webbplatser och forum mot spammare.</li>
+           <li><a href="https://bgp.he.net/" hreflang="en" rel="noopener noreferrer external">Hurricane Electric BGP Toolkit</a> – Få CIDRer från ASNer, bestäm ASN-relationer, upptäck ASNer baserat på nätverksnamn, osv.</li>
+           <li><a href="https://bgpview.io/" hreflang="en" rel="noopener noreferrer external">BGPView</a> – Få CIDRer från ASNer, bestäm ASN-relationer, upptäck ASNer baserat på nätverksnamn, osv.</li>
+           <li><a href="https://radar.qrator.net/" hreflang="en" rel="noopener noreferrer external">Radar av Qrator</a> – Användbart verktyg för att kontrollera ASN-anslutningar samt för annan information om ASNer.</li>
+           <li><a href="https://www.google.com/transparencyreport/safebrowsing/malware/" rel="noopener noreferrer external">Google Malware Dashboard</a> – Visar rapporter om malwareinfektionshastigheter för ASNer.</li>
+           <li><a href="https://www.spamhaus.org/statistics/botnet-asn/" rel="noopener noreferrer external">Spamhausprojektet</a> – Visar rapporter om botnätinfektionshastigheter för ASNer.</li>
+           <li><a href="https://www.abuseat.org/public/asn.html" hreflang="en" rel="noopener noreferrer external">Abuseat.orgs Sammansatta Blockeringslista</a> – Visar rapporter om botnätinfektionshastigheter för ASNer.</li>
+           <li><a href="https://abuseipdb.com/" hreflang="en" rel="noopener noreferrer external">AbuseIPDB</a> – Upprätthåller en databas med kända kränkande IP-adresser; Ger ett API för kontroll och rapportering av IP-adresser.</li>
          </ul>
        </li>
        <li><span class="comCat" style="cursor:pointer">Informations och lärande resurser.</span>
          <ul class="comSub">
-           <li><a href="https://php.earth/">PHP.earth</a> – PHP lärande resurser och diskussion.</li>
-           <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">Sårbarhetstabeller</a> – Listar säkra/osäkra versioner av olika paket (HHVM, PHP, phpMyAdmin, Python, osv).</li>
-           <li><a href="https://maikuolan.github.io/Compatibility-Charts/">Kompatibilitetstabeller</a> – Visar kompatibilitetsinformation för olika paket (CIDRAM, phpMussel, osv).</li>
+           <li><a href="https://php.earth/" hreflang="en" rel="noopener noreferrer external">PHP.earth</a> – PHP lärande resurser och diskussion.</li>
+           <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Sårbarhetstabeller</a> – Listar säkra/osäkra versioner av olika paket (HHVM, PHP, phpMyAdmin, Python, osv).</li>
+           <li><a href="https://maikuolan.github.io/Compatibility-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Kompatibilitetstabeller</a> – Visar kompatibilitetsinformation för olika paket (CIDRAM, phpMussel, osv).</li>
          </ul>
        </li>
      </ul>

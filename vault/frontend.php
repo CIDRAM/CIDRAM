@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2020.05.07).
+ * This file: Front-end handler (last modified: 2020.05.16).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -653,8 +653,8 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === '' && !$CIDRAM['FE']['CronMode']
 
     /** Build repository backup locations information. */
     $CIDRAM['FE']['BackupLocations'] = implode(' | ', [
-        '<a href="https://bitbucket.org/Maikuolan/cidram">Bitbucket</a>',
-        '<a href="https://sourceforge.net/projects/cidram/">SourceForge</a>'
+        '<a href="https://bitbucket.org/Maikuolan/cidram" hreflang="en-US" target="_blank" rel="noopener external">Bitbucket</a>',
+        '<a href="https://sourceforge.net/projects/cidram/" hreflang="en-US" target="_blank" rel="noopener external">SourceForge</a>'
     ]);
 
     /** Where to find remote version information? */
@@ -1888,7 +1888,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && ($CIDRAM['FE']['Per
         /** Append changelog. */
         $CIDRAM['Components']['ThisComponent']['Changelog'] = empty(
             $CIDRAM['Components']['ThisComponent']['Changelog']
-        ) ? '' : '<br /><a href="' . $CIDRAM['Components']['ThisComponent']['Changelog'] . '">Changelog</a>';
+        ) ? '' : '<br /><a href="' . $CIDRAM['Components']['ThisComponent']['Changelog'] . '" rel="noopener external">Changelog</a>';
 
         /** Append tests. */
         if (!empty($CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['ThisComponent']['ID']]['Tests'])) {
@@ -2034,7 +2034,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && ($CIDRAM['FE']['Per
         /** Append changelog. */
         $CIDRAM['Components']['ThisComponent']['Changelog'] = empty(
             $CIDRAM['Components']['ThisComponent']['Changelog']
-        ) ? '' : '<br /><a href="' . $CIDRAM['Components']['ThisComponent']['Changelog'] . '">Changelog</a>';
+        ) ? '' : '<br /><a href="' . $CIDRAM['Components']['ThisComponent']['Changelog'] . '" rel="noopener external">Changelog</a>';
 
         /** Append tests. */
         if (!empty($CIDRAM['Components']['ThisComponent']['Tests'])) {

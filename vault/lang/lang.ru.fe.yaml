@@ -7,12 +7,12 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Russian language data for the front-end (last modified: 2020.04.23).
+# This file: Russian language data for the front-end (last modified: 2020.05.16).
 ##/
 
 Extended Description Bypasses: "Стандартная сигнатуры байпасы, обычно включены в основной пакет."
 Extended Description CIDRAM: "Основной пакет (минус сигнатуры, документация, и конфигурация)."
-Extended Description Chart.js: "Позволяет фронтенд создавать круговые диаграммы.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a> доступен через <a href="https://opensource.org/licenses/MIT">MIT license</a>."
+Extended Description Chart.js: "Позволяет фронтенд создавать круговые диаграммы.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> доступен через <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
 Extended Description IPv4-Bogons: "Блокирует bogon/марсианин CIDRs."
 Extended Description IPv4-ISPs: "Блокирует опасно и спам-склонным интернет-провайдеры."
 Extended Description IPv4-Other: "Блокирует CIDRs для прокси-серверов, виртуальных частных сетей и различных других нежелательных услуг."
@@ -21,7 +21,7 @@ Extended Description IPv6-Bogons: "Блокирует bogon/марсианин C
 Extended Description IPv6-ISPs: "Блокирует опасно и спам-склонным интернет-провайдеры."
 Extended Description IPv6-Other: "Блокирует CIDRs для прокси-серверов, виртуальных частных сетей и различных других нежелательных услуг."
 Extended Description IPv6: "Блокирует нежелательные облачные сервисы и нечеловеческие конечные точки."
-Extended Description PHPMailer: "Требуется для использования любых функций, связанных с отправкой электронной почты.<br /><a href="https://github.com/PHPMailer/PHPMailer">PHPMailer</a> доступен через лицензию <a href="https://github.com/PHPMailer/PHPMailer/blob/master/LICENSE">LGPLv2.1</a>."
+Extended Description PHPMailer: "Требуется для использования любых функций, связанных с отправкой электронной почты.<br /><a href="https://github.com/PHPMailer/PHPMailer" hreflang="en" rel="noopener noreferrer external">PHPMailer</a> доступен через лицензию <a href="https://github.com/PHPMailer/PHPMailer/blob/master/LICENSE" hreflang="en-US" rel="noopener external">LGPLv2.1</a>."
 Extended Description flags.css: "Добавляет поддержку флагов на страницу журналов фронтенда."
 Extended Description module_abuseipdb.php: "Блокирует запросы от IP-адресов, перечисленных в AbuseIPDB."
 Extended Description module_badhosts.php: "Блокирует хосты, часто используемые спамерами, хакерами и другими гнусными объектами."
@@ -31,7 +31,7 @@ Extended Description module_botua.php: "Блокирует пользовате�
 Extended Description module_cookies.php: "Обеспечивает некоторые ограниченные средства защиты против опасных куки."
 Extended Description module_extras.php: "Обеспечивает некоторые ограниченные средства защиты против различных векторов атак обычно используются в запросах."
 Extended Description module_projecthoneypot.php: "Блокирует запросы от IP-адресов, перечисленных в Project Honeypot."
-Extended Description module_refspam.php: "Блокировка, основанная на реферальный спам, как правило, не дает сколько-нибудь значимого преимущества безопасности, но в некоторых случаях может быть полезным для некоторых пользователей, для сбора дополнительной информации о запросах и для возможности сообщить об этом.<br />Установка этого модуля также устанавливает полифилы Symfony для <a href="https://github.com/symfony/polyfill-intl-idn">Intl/Idn</a> и <a href="https://github.com/symfony/polyfill-mbstring">Mbstring</a> (потому что этот модуль требует функциональности Idn, которую не все установки PHP предоставляют по умолчанию), оба из которых доступно через лицензию <a href="https://opensource.org/licenses/MIT">MIT</a>."
+Extended Description module_refspam.php: "Блокировка, основанная на реферальный спам, как правило, не дает сколько-нибудь значимого преимущества безопасности, но в некоторых случаях может быть полезным для некоторых пользователей, для сбора дополнительной информации о запросах и для возможности сообщить об этом.<br />Установка этого модуля также устанавливает полифилы Symfony для <a href="https://github.com/symfony/polyfill-intl-idn" hreflang="en" rel="noopener noreferrer external">Intl/Idn</a> и <a href="https://github.com/symfony/polyfill-mbstring" hreflang="en" rel="noopener noreferrer external">Mbstring</a> (потому что этот модуль требует функциональности Idn, которую не все установки PHP предоставляют по умолчанию), оба из которых доступно через лицензию <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a>."
 Extended Description module_sfs.php: "Защищает страницы регистрации и входа в систему от IP-адресов, перечисленных в SFS."
 Name Bypasses: "Стандартная сигнатуры байпасы."
 Name CN_cidram.inc: "Китайский блоклист IPv4"
@@ -495,7 +495,7 @@ tip_pie_html: "Нажмите на название компонента для 
 tip_range: "Привет, {username}.<br />На этой странице показана базовая статистическая информация о диапазонах IP, охватываемых активными сигнатурными файлами."
 tip_range_subtractor: "Привет, {username}.<br />Вычитатель диапазона может использоваться для вычитания одного диапазона IP/CIDR из другого."
 tip_sections_list: "Привет, {username}.<br />На этой странице перечислены секций, которые существуют в активных файлах сигнатур."
-tip_see_the_documentation: "Просмотреть <a href="https://github.com/CIDRAM/Docs/blob/master/readme.ru.md\#SECTION6">документации</a> для получения информации о различных директив конфигурации и их целей."
+tip_see_the_documentation: "Просмотреть <a href="https://github.com/CIDRAM/Docs/blob/master/readme.ru.md\#SECTION6" hreflang="ru" rel="noopener external">документации</a> для получения информации о различных директив конфигурации и их целей."
 tip_statistics: "Привет, {username}.<br />На этой странице показаны основные статистические данные об использовании вашей CIDRAM-инсталляция."
 tip_statistics_disabled: "Заметка: Отслеживание статистики в настоящее время отключено, но может быть включено через страницу конфигурации."
 tip_updates: "Привет, {username}.<br />Обновления страница позволяет устанавливать, удалить и обновления для различных компонентов CIDRAM (пакет ядра, сигнатуры, L10N файлы, итд)."
@@ -508,34 +508,34 @@ info_some_useful_links: |
      <ul class="pieul">
        <li><span class="comCat" style="cursor:pointer">Инструменты, ресурсы и т.д. для CIDRAM.</span>
          <ul class="comSub">
-           <li><a href="https://github.com/CIDRAM/CIDRAM/issues">CIDRAM Вопросы @ GitHub</a> – Страница вопросы для CIDRAM (поддержка, помощь, и т.д.).</li>
-           <li><a href="https://wordpress.org/plugins/cidram/">CIDRAM @ WordPress.org</a> – WordPress плагин для CIDRAM.</li>
-           <li><a href="https://bitbucket.org/macmathan/blocklists">macmathan/blocklists</a> – Содержит дополнительные блоклисты и модули для CIDRAM, такие как блокирование опасных ботов, нежелательных стран, устаревшие браузеры, и т.д.</li>
-           <li><a href="https://github.com/CIDRAM/CIDRAM-Extras">CIDRAM/CIDRAM-Extras</a> – Различные дополнения.</li>
+           <li><a href="https://github.com/CIDRAM/CIDRAM/issues" hreflang="en" rel="noopener noreferrer external">CIDRAM Вопросы @ GitHub</a> – Страница вопросы для CIDRAM (поддержка, помощь, и т.д.).</li>
+           <li><a href="https://wordpress.org/plugins/cidram/" rel="noopener noreferrer external">CIDRAM @ WordPress.org</a> – WordPress плагин для CIDRAM.</li>
+           <li><a href="https://bitbucket.org/macmathan/blocklists" hreflang="en" rel="noopener noreferrer external">macmathan/blocklists</a> – Содержит дополнительные блоклисты и модули для CIDRAM, такие как блокирование опасных ботов, нежелательных стран, устаревшие браузеры, и т.д.</li>
+           <li><a href="https://github.com/CIDRAM/CIDRAM-Extras" hreflang="en" rel="noopener noreferrer external">CIDRAM/CIDRAM-Extras</a> – Различные дополнения.</li>
          </ul>
        </li>
        <li><span class="comCat" style="cursor:pointer">Группы, форумы, сообщества и т.д.</span>
          <ul class="comSub">
-           <li><a href="https://www.facebook.com/groups/2204685680/">PHP.earth @ Facebook</a> – PHP учебных ресурсов и обсуждение.</li>
-           <li><a href="https://www.stopforumspam.com/forum/">Форум @ Stop Forum Spam</a> – Полезное Форум о останавливая форум спам.</li>
+           <li><a href="https://www.facebook.com/groups/2204685680/" rel="noopener noreferrer external">PHP.earth @ Facebook</a> – PHP учебных ресурсов и обсуждение.</li>
+           <li><a href="https://www.stopforumspam.com/forum/" rel="noopener noreferrer external">Форум @ Stop Forum Spam</a> – Полезное Форум о останавливая форум спам.</li>
          </ul>
        <li><span class="comCat" style="cursor:pointer">Другие полезные инструменты, ресурсы, услуги и т.д.</span>
          <ul class="comSub">
-           <li><a href="https://www.stopforumspam.com/">Stop Forum Spam</a> – Поддерживает базу данных известных спамеров форума. Полезно для защиты сайтов и форумов от спамеров.</li>
-           <li><a href="https://bgp.he.net/">Hurricane Electric BGP Toolkit</a> – Получить CIDRs от ASNs, определить ASN отношения, обнаружить ASNs основанный на сетевых имен, и т.д.</li>
-           <li><a href="https://bgpview.io/">BGPView</a> – Получить CIDRs от ASNs, определить ASN отношения, обнаружить ASNs основанный на сетевых имен, и т.д.</li>
-           <li><a href="https://radar.qrator.net/">Radar от Qrator</a> – Полезный инструмент для проверки связности ASNs а также для различных других сведений о ASNs.</li>
-           <li><a href="https://www.google.com/transparencyreport/safebrowsing/malware/">Google Malware Dashboard</a> – Отображает отчеты о вредоносных программ уровень инфицирования для ASNs.</li>
-           <li><a href="https://www.spamhaus.org/statistics/botnet-asn/">Проект Spamhaus</a> – Отображает отчеты о ботнет ставок инфекции для ASNs.</li>
-           <li><a href="https://www.abuseat.org/public/asn.html">Список составных блокировок @ Abuseat.org</a> – Отображает отчеты о ботнет ставок инфекции для ASNs.</li>
-           <li><a href="https://abuseipdb.com/">AbuseIPDB</a> – Ведение базы данных известных оскорбительных IP-адресов; Предоставляет API для проверки и отчетности IP-адресов.</li>
+           <li><a href="https://www.stopforumspam.com/" rel="noopener noreferrer external">Stop Forum Spam</a> – Поддерживает базу данных известных спамеров форума. Полезно для защиты сайтов и форумов от спамеров.</li>
+           <li><a href="https://bgp.he.net/" hreflang="en" rel="noopener noreferrer external">Hurricane Electric BGP Toolkit</a> – Получить CIDRs от ASNs, определить ASN отношения, обнаружить ASNs основанный на сетевых имен, и т.д.</li>
+           <li><a href="https://bgpview.io/" hreflang="en" rel="noopener noreferrer external">BGPView</a> – Получить CIDRs от ASNs, определить ASN отношения, обнаружить ASNs основанный на сетевых имен, и т.д.</li>
+           <li><a href="https://radar.qrator.net/" hreflang="en" rel="noopener noreferrer external">Radar от Qrator</a> – Полезный инструмент для проверки связности ASNs а также для различных других сведений о ASNs.</li>
+           <li><a href="https://www.google.com/transparencyreport/safebrowsing/malware/" rel="noopener noreferrer external">Google Malware Dashboard</a> – Отображает отчеты о вредоносных программ уровень инфицирования для ASNs.</li>
+           <li><a href="https://www.spamhaus.org/statistics/botnet-asn/" rel="noopener noreferrer external">Проект Spamhaus</a> – Отображает отчеты о ботнет ставок инфекции для ASNs.</li>
+           <li><a href="https://www.abuseat.org/public/asn.html" hreflang="en" rel="noopener noreferrer external">Список составных блокировок @ Abuseat.org</a> – Отображает отчеты о ботнет ставок инфекции для ASNs.</li>
+           <li><a href="https://abuseipdb.com/" hreflang="en" rel="noopener noreferrer external">AbuseIPDB</a> – Ведение базы данных известных оскорбительных IP-адресов; Предоставляет API для проверки и отчетности IP-адресов.</li>
          </ul>
        </li>
        <li><span class="comCat" style="cursor:pointer">Информационные и учебные ресурсы.</span>
          <ul class="comSub">
-           <li><a href="https://php.earth/">PHP.earth</a> – PHP учебных ресурсов и обсуждение.</li>
-           <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">Таблицы Уязвимостей</a> – Список безопасных/небезопасных версий различных пакетов (HHVM, PHP, phpMyAdmin, Python, и т.д.).</li>
-           <li><a href="https://maikuolan.github.io/Compatibility-Charts/">Таблицы Совместимости</a> – Перечисляет информацию о совместимости для различных пакетов (CIDRAM, phpMussel, и т.д.).</li>
+           <li><a href="https://php.earth/" hreflang="en" rel="noopener noreferrer external">PHP.earth</a> – PHP учебных ресурсов и обсуждение.</li>
+           <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Таблицы Уязвимостей</a> – Список безопасных/небезопасных версий различных пакетов (HHVM, PHP, phpMyAdmin, Python, и т.д.).</li>
+           <li><a href="https://maikuolan.github.io/Compatibility-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Таблицы Совместимости</a> – Перечисляет информацию о совместимости для различных пакетов (CIDRAM, phpMussel, и т.д.).</li>
          </ul>
        </li>
      </ul>

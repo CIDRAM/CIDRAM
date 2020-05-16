@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6.dat
 
-# Version: 2020.131.359
-# Last modified: 2020.05.11
+# Version: 2020.136.416
+# Last modified: 2020.05.16
 
 
 # ---
@@ -3939,8 +3939,8 @@ Tag: zColo
 
 
 # ASN 61138 ("Zappie Host LLC").
-# Stop Forum Spam (SFS) listings: 64.
-# Updated: 2019.08.18 / Checked: 2019.12.15
+# Stop Forum Spam (SFS) listings: 28.
+# Updated: 2019.08.18 / Checked: 2020.05.14
 
 2a07:1c40:1021::/48 Deny Cloud
 Origin: AT
@@ -5070,8 +5070,8 @@ Tag: PLUTEX GmbH
 
 # ASN 29017 ("Gyron Internet Ltd").
 # Cloud/hosting network. Caught trying to access sensitive areas of websites.
-# %Listed, Google Malware Dashboard: 0.02%.
-# Updated: 2018.08.06 / Checked: 2019.12.15
+# Stop Forum Spam (SFS) listings: 1.
+# Updated: 2018.08.06 / Checked: 2020.05.14
 
 2a00:14f0::/32 Deny Cloud
 2a04:84c1::/32 Deny Cloud
@@ -5386,6 +5386,17 @@ Tag: CLOUD STAR
 2607:8500::/32 Deny Cloud
 Origin: US
 Tag: Rethem Hosting LLC
+
+
+# ASN 44220 ("Parfumuri Femei.com SRL").
+# Very high levels of spam originating from this network.
+# %Listed, Google Malware Dashboard: 1.19%.
+# Stop Forum Spam (SFS) listings: 51,411.
+# Updated: 2020.05.14
+
+2a09:a380::/29 Deny Cloud
+Origin: RO
+Tag: Parfumuri Femei
 
 
 # ASNs 18254, 49466 ("KLAYER LLC").
@@ -6038,8 +6049,8 @@ Tag: CJ2 Hosting B.V
 
 # ASN 36791 ("Portland Internet Hosting LLC").
 # Dedicated webhosting provider caught hammering website contact forms.
-# Stop Forum Spam (SFS) listings: 49.
-# Updated: 2020.01.01
+# Stop Forum Spam (SFS) listings: 31.
+# Updated: 2020.01.01 / Checked: 2020.05.16
 
 2001:470:50::/48 Deny Cloud
 Origin: US
@@ -6048,8 +6059,8 @@ Tag: Portland Internet Hosting
 
 # ASN 395092 ("Shock Hosting LLC").
 # Dedicated webhosting provider and a source of spam.
-# Stop Forum Spam (SFS) listings: 660.
-# Updated: 2020.01.01
+# Stop Forum Spam (SFS) listings: 1,311.
+# Updated: 2020.01.01 / Checked: 2020.05.16
 
 2a0d:9ec0::/48 Deny Cloud
 2a0d:d8c0::/48 Deny Cloud
@@ -6064,12 +6075,11 @@ Tag: Shock Hosting LLC
 
 # ASNs 54113, 394192 ("Fastly").
 # CDN, cloud provider, and also a source of spam.
-# %Listed, Google Malware Dashboard: 0.04% (AS54113).
-# Stop Forum Spam (SFS) listings: 613 (AS54113).
-# Updated: 2020.01.01
+# %Listed, Google Malware Dashboard: 0.03% (AS54113).
+# Stop Forum Spam (SFS) listings: 1,249 (AS54113).
+# Updated: 2020.05.16
 
 2a04:4e40::/48 Deny Cloud
-2a04:4e40:10::/48 Deny Cloud
 2a04:4e40:f0::/48 Deny Cloud
 2a04:4e40:200::/48 Deny Cloud
 2a04:4e40:210::/48 Deny Cloud
@@ -6084,6 +6094,7 @@ Tag: Shock Hosting LLC
 2a04:4e40:620::/48 Deny Cloud
 2a04:4e40:630::/48 Deny Cloud
 2a04:4e40:640::/48 Deny Cloud
+2a04:4e40:650::/48 Deny Cloud
 2a04:4e40:6f0::/48 Deny Cloud
 2a04:4e40:800::/48 Deny Cloud
 2a04:4e40:810::/48 Deny Cloud
@@ -6139,6 +6150,7 @@ Tag: Shock Hosting LLC
 2a04:4e40:2010::/48 Deny Cloud
 2a04:4e40:2020::/48 Deny Cloud
 2a04:4e40:2030::/48 Deny Cloud
+2a04:4e40:2040::/48 Deny Cloud
 2a04:4e40:2050::/48 Deny Cloud
 2a04:4e40:20f0::/48 Deny Cloud
 2a04:4e40:2200::/48 Deny Cloud
@@ -6147,6 +6159,7 @@ Tag: Shock Hosting LLC
 2a04:4e40:22f0::/48 Deny Cloud
 2a04:4e40:2400::/40 Deny Cloud
 2a04:4e40:2600::/48 Deny Cloud
+2a04:4e40:2610::/48 Deny Cloud
 2a04:4e40:26f0::/48 Deny Cloud
 2a04:4e40:2800::/40 Deny Cloud
 2a04:4e40:2a00::/48 Deny Cloud
@@ -6176,14 +6189,11 @@ Tag: Shock Hosting LLC
 2a04:4e40:3a40::/48 Deny Cloud
 2a04:4e40:3af0::/48 Deny Cloud
 2a04:4e40:3c00::/48 Deny Cloud
+2a04:4e40:3c10::/48 Deny Cloud
 2a04:4e40:3c20::/48 Deny Cloud
 2a04:4e40:3c30::/48 Deny Cloud
 2a04:4e40:3c40::/48 Deny Cloud
 2a04:4e40:3cf0::/48 Deny Cloud
-2a04:4e40:4000::/48 Deny Cloud
-2a04:4e40:4020::/48 Deny Cloud
-2a04:4e40:4040::/48 Deny Cloud
-2a04:4e40:40f0::/48 Deny Cloud
 2a04:4e40:4400::/48 Deny Cloud
 2a04:4e40:4410::/48 Deny Cloud
 2a04:4e40:4420::/48 Deny Cloud
@@ -6204,11 +6214,13 @@ Tag: Shock Hosting LLC
 2a04:4e40:4e00::/48 Deny Cloud
 2a04:4e40:4e10::/48 Deny Cloud
 2a04:4e40:4e20::/48 Deny Cloud
+2a04:4e40:4e30::/48 Deny Cloud
 2a04:4e40:4ef0::/48 Deny Cloud
 2a04:4e40:5000::/40 Deny Cloud
 2a04:4e40:5200::/48 Deny Cloud
 2a04:4e40:5210::/48 Deny Cloud
 2a04:4e40:5220::/48 Deny Cloud
+2a04:4e40:5230::/48 Deny Cloud
 2a04:4e40:5240::/48 Deny Cloud
 2a04:4e40:52f0::/48 Deny Cloud
 2a04:4e40:5400::/48 Deny Cloud
@@ -6216,14 +6228,12 @@ Tag: Shock Hosting LLC
 2a04:4e40:5420::/48 Deny Cloud
 2a04:4e40:5440::/48 Deny Cloud
 2a04:4e40:54f0::/48 Deny Cloud
-2a04:4e40:5800::/40 Deny Cloud
+2a04:4e40:5800::/48 Deny Cloud
+2a04:4e40:58f0::/48 Deny Cloud
 2a04:4e40:5c00::/48 Deny Cloud
 2a04:4e40:5cf0::/48 Deny Cloud
 2a04:4e40:6000::/48 Deny Cloud
 2a04:4e40:6010::/48 Deny Cloud
-2a04:4e40:6020::/48 Deny Cloud
-2a04:4e40:6030::/48 Deny Cloud
-2a04:4e40:6040::/48 Deny Cloud
 2a04:4e40:60f0::/48 Deny Cloud
 2a04:4e40:6400::/48 Deny Cloud
 2a04:4e40:6410::/48 Deny Cloud
@@ -6250,6 +6260,28 @@ Tag: Shock Hosting LLC
 2a04:4e40:7040::/48 Deny Cloud
 2a04:4e40:7050::/48 Deny Cloud
 2a04:4e40:70f0::/48 Deny Cloud
+2a04:4e40:7200::/48 Deny Cloud
+2a04:4e40:7210::/48 Deny Cloud
+2a04:4e40:7220::/48 Deny Cloud
+2a04:4e40:7240::/48 Deny Cloud
+2a04:4e40:7250::/48 Deny Cloud
+2a04:4e40:72f0::/48 Deny Cloud
+2a04:4e40:7400::/48 Deny Cloud
+2a04:4e40:7410::/48 Deny Cloud
+2a04:4e40:7430::/48 Deny Cloud
+2a04:4e40:7440::/48 Deny Cloud
+2a04:4e40:74f0::/48 Deny Cloud
+2a04:4e40:7600::/48 Deny Cloud
+2a04:4e40:7610::/48 Deny Cloud
+2a04:4e40:7630::/48 Deny Cloud
+2a04:4e40:7640::/48 Deny Cloud
+2a04:4e40:76f0::/48 Deny Cloud
+2a04:4e40:7800::/48 Deny Cloud
+2a04:4e40:7810::/48 Deny Cloud
+2a04:4e40:7820::/48 Deny Cloud
+2a04:4e40:7840::/48 Deny Cloud
+2a04:4e40:7850::/48 Deny Cloud
+2a04:4e40:78f0::/48 Deny Cloud
 2a04:4e40:8000::/48 Deny Cloud
 2a04:4e40:8010::/48 Deny Cloud
 2a04:4e40:8030::/48 Deny Cloud
@@ -6267,6 +6299,8 @@ Tag: Shock Hosting LLC
 2a04:4e40:9af0::/48 Deny Cloud
 2a04:4e40:9c00::/48 Deny Cloud
 2a04:4e40:9cf0::/48 Deny Cloud
+2a04:4e40:9e00::/48 Deny Cloud
+2a04:4e40:9ef0::/48 Deny Cloud
 2a04:4e40:a000::/48 Deny Cloud
 2a04:4e40:a020::/48 Deny Cloud
 2a04:4e40:a030::/48 Deny Cloud
@@ -6305,6 +6339,7 @@ Tag: Shock Hosting LLC
 2a04:4e40:bc00::/48 Deny Cloud
 2a04:4e40:bc10::/48 Deny Cloud
 2a04:4e40:bc20::/48 Deny Cloud
+2a04:4e40:bc30::/48 Deny Cloud
 2a04:4e40:bc40::/48 Deny Cloud
 2a04:4e40:bc50::/48 Deny Cloud
 2a04:4e40:bcf0::/48 Deny Cloud
@@ -6324,6 +6359,7 @@ Tag: Shock Hosting LLC
 2a04:4e40:c4f0::/48 Deny Cloud
 2a04:4e40:c800::/48 Deny Cloud
 2a04:4e40:c820::/48 Deny Cloud
+2a04:4e40:c830::/48 Deny Cloud
 2a04:4e40:c840::/48 Deny Cloud
 2a04:4e40:c850::/48 Deny Cloud
 2a04:4e40:c8f0::/48 Deny Cloud
@@ -6340,7 +6376,6 @@ Tag: Shock Hosting LLC
 2a04:4e40:ccf0::/48 Deny Cloud
 2a04:4e40:d000::/48 Deny Cloud
 2a04:4e40:d010::/48 Deny Cloud
-2a04:4e40:d030::/48 Deny Cloud
 2a04:4e40:d0f0::/48 Deny Cloud
 2a04:4e40:d400::/48 Deny Cloud
 2a04:4e40:d4f0::/48 Deny Cloud
@@ -6378,6 +6413,10 @@ Tag: Shock Hosting LLC
 2a04:4e40:f440::/48 Deny Cloud
 2a04:4e40:f450::/48 Deny Cloud
 2a04:4e40:f4f0::/48 Deny Cloud
+2a04:4e40:f600::/48 Deny Cloud
+2a04:4e40:f610::/48 Deny Cloud
+2a04:4e40:f630::/48 Deny Cloud
+2a04:4e40:f6f0::/48 Deny Cloud
 2a04:4e40:f800::/48 Deny Cloud
 2a04:4e40:f810::/48 Deny Cloud
 2a04:4e40:f820::/48 Deny Cloud

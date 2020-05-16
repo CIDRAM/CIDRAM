@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_isps.dat
 
-# Version: 2020.131.359
-# Last modified: 2020.05.11
+# Version: 2020.136.416
+# Last modified: 2020.05.16
 
 
 # ---
@@ -2132,6 +2132,28 @@ recaptcha:
  enabled: true
 
 
+# ASN 27699 ("TELEFNICA BRASIL S.A").
+# Brazilian domestic ISP and a source of spam. Just listing the specific
+# spammy IPs (not the entire network).
+# %Listed, abuseat.org (CBL-Listed): 1.02%.
+# Stop Forum Spam (SFS) listings: 2,972.
+# Updated: 2020.05.16
+
+2804:431:9700:2062::/64 Deny Spam
+2804:431:c7dc:910::/64 Deny Spam
+2804:431:cfe0:41b7::/64 Deny Spam
+2804:431:cff2:d4ee::/64 Deny Spam
+2804:431:cff3:5e0a::/64 Deny Spam
+2804:431:d700:2ce::/64 Deny Spam
+2804:431:e7c4::/48 Deny Spam
+2804:431:e7c5:2f8d::/64 Deny Spam
+Origin: BR
+Tag: TELEFNICA BRASIL S.A
+---
+recaptcha:
+ enabled: true
+
+
 # ASN 20115 ("Charter Communications").
 # Domestic ISP from the United States with some limited amount of spamming
 # (marked as "Spam") + caught by security honeypots (marked as "Malware").
@@ -2248,6 +2270,25 @@ Origin: MX
 2600:141c:5000::/48 Deny Cloud
 Origin: US
 Tag: Uninet
+---
+recaptcha:
+ enabled: true
+
+
+# ASN 9299 ("Philippine Long Distance Telephone Company").
+# Domestic ISP from the Philippines and a source of spam. Just listing the
+# specific spammy IPs (not the entire network).
+# %Listed, Google Malware Dashboard: 0.70%.
+# %Listed, abuseat.org (CBL-Listed): 1.16%.
+# Stop Forum Spam (SFS) listings: 3,206.
+# Updated: 2020.05.16
+
+2001:4451:4216:db00::/64 Deny Spam
+2001:4455:148:ec00::/64 Deny Spam
+2001:4455:173:1e00::/64 Deny Spam
+2001:4455:6b3:8c00::/64 Deny Spam
+Origin: PH
+Tag: Philippine Long Distance
 ---
 recaptcha:
  enabled: true

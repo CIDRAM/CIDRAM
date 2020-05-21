@@ -1,8 +1,8 @@
 # IPv4 signatures file (CIDRs for proxies, VPNs and other miscellaneous unwanted services).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv4_other.dat
 
-# Version: 2020.104.722
-# Last modified: 2020.04.13
+# Version: 2020.141.400
+# Last modified: 2020.05.21
 
 
 # ---
@@ -239,39 +239,34 @@ recaptcha:
 
 # ASN 36351 ("SoftLayer Technologies").
 # Careful when updating; Signatures reflect varying block reasons, split across multiple files.
-# %Listed, Google Malware Dashboard: 0.13%.
-# Stop Forum Spam (SFS) listings: 8,161.
+# Stop Forum Spam (SFS) listings: 10,530.
 
 # SoftLayer VPNs and proxies.
 # Includes: Anything citing "TEFINCOM", "Packet Flip", "VPN", "proxy", "Privat Kommunikation", "Secure Internet".
 # ^(.*(TEFINCOM|Packet Flip|VPN|Proxy|Privat Kommunikation|Secure Internet).*)$
 # Excludes: Everything else.
-# Updated: 2020.01.01
+# Updated: 2020.05.21
 
 185.99.135.0/24 Deny Proxy
 Origin: BY
 93.114.92.0/22 Deny Proxy
 185.153.176.0/23 Deny Proxy
-185.161.200.0/23 Deny Proxy
 185.203.122.0/24 Deny Proxy
 Origin: DE
 46.244.28.0/24 Deny Proxy
 85.203.23.0/24 Deny Proxy
 Origin: NL
-103.86.96.0/23 Deny Proxy
+103.86.97.0/24 Deny Proxy
 103.86.98.0/24 Deny Proxy
 Origin: PA
-192.121.245.0/24 Deny Proxy
 193.183.216.0/24 Deny Proxy
 194.132.123.0/24 Deny Proxy
 Origin: SE
-45.41.147.0/24 Deny Proxy
-45.56.146.0/24 Deny Proxy
 45.56.149.0/24 Deny Proxy
 45.56.151.0/24 Deny Proxy
 45.56.152.0/23 Deny Proxy
 45.56.154.0/24 Deny Proxy
-45.56.156.0/23 Deny Proxy
+45.56.157.0/24 Deny Proxy
 45.56.158.0/24 Deny Proxy
 45.74.31.0/24 Deny Proxy
 45.74.39.0/24 Deny Proxy
@@ -300,7 +295,6 @@ Origin: SE
 172.94.47.0/24 Deny Proxy
 172.94.98.0/23 Deny Proxy
 172.94.100.0/24 Deny Proxy
-172.94.103.0/24 Deny Proxy
 172.111.169.0/24 Deny Proxy
 172.111.173.0/24 Deny Proxy
 172.111.175.0/24 Deny Proxy
@@ -315,8 +309,6 @@ Origin: SE
 173.244.55.0/24 Deny Proxy
 192.253.242.0/24 Deny Proxy
 Origin: US
-196.52.96.0/24 Deny Proxy
-Origin: ZA
 Tag: SoftLayer VPNs
 
 
@@ -409,7 +401,6 @@ Tag: Packet Flip
 # Mark as spam (carries human endpoints, but also poses a spam risk):
 # - "^(.*(?:Svenska).*)$"
 # Everything else mark as generic.
-# %Listed, Google Malware Dashboard: 0.09% (AS43948).
 # Stop Forum Spam (SFS) listings: 1,044 (AS42708), 1 (AS43948).
 # Updated: 2020.01.23
 

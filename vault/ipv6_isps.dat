@@ -1,13 +1,12 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_isps.dat
 
-# Version: 2020.136.416
-# Last modified: 2020.05.16
+# Version: 2020.141.400
+# Last modified: 2020.05.21
 
 
 # ---
 # ASN 29182 ("ISPsystem").
-# %Listed, Google Malware Dashboard: 0.14%.
 # Stop Forum Spam (SFS) listings: 2,079.
 # Updated: 2020.03.13
 
@@ -23,7 +22,6 @@ Tag: ISPsystem
 
 
 # ASN 25504 ("Vautron Rechenzentrum AG").
-# %Listed, Google Malware Dashboard: 0.20%.
 # Updated: 2016.01.18 / Checked: 2020.01.12
 
 2001:67c:2394::/48 Deny Generic
@@ -33,7 +31,6 @@ Tag: Vautron Rech. AG
 
 
 # ASN 38955 ("World4You Internet Services").
-# %Listed, Google Malware Dashboard: 0.43%.
 # Updated: 2016.01.18 / Checked: 2020.03.22
 
 2a00:1a68::/32 Deny Generic
@@ -42,7 +39,6 @@ Tag: World4You
 
 
 # ASN 202425 ("IP Volume inc").
-# %Listed, Google Malware Dashboard: 0.08%.
 # Stop Forum Spam (SFS) listings: 1,452.
 # Updated: 2019.05.10 / Checked: 2020.01.12
 
@@ -66,7 +62,6 @@ recaptcha:
 
 # ASN 12880 ("Information Technology Company (ITC)").
 # Significant source of email harvesters and unauthorised scrapers.
-# %Listed, Google Malware Dashboard: 0.16%.
 # %Listed, abuseat.org (CBL-Listed): 2.52%.
 # Stop Forum Spam (SFS) listings: 699.
 # Updated: 2020.03.06
@@ -81,7 +76,6 @@ recaptcha:
 
 # ASNs 24940, 37153 ("Hetzner Online GmbH").
 # Ranges change frequently / Should update often.
-# %Listed, Google Malware Dashboard: 0.04% (AS24940), 0.22% (AS37153).
 # Stop Forum Spam (SFS) listings: 30,342 (AS24940), 544 (AS37153).
 # Updated: 2019.11.02 / Checked: 2020.02.12
 
@@ -102,7 +96,6 @@ Tag: Hetzner Online GmbH
 
 # ASN 51559 ("Server Internet Bilisim ve Bilgisayar Hizmetleri").
 # (Mark any LV announces as "Cloud" when updating).
-# %Listed, Google Malware Dashboard: 0.12%.
 # Stop Forum Spam (SFS) listings: 35.
 # Updated: 2020.01.12
 
@@ -181,7 +174,6 @@ recaptcha:
 
 
 # ASN 3223 ("Voxility LLC").
-# %Listed, Google Malware Dashboard: 0.35%.
 # Stop Forum Spam (SFS) listings: 2,248.
 # Updated: 2020.04.09
 
@@ -197,7 +189,6 @@ Tag: Voxility LLC
 
 
 # ASN 30968 ("INFOBOX").
-# %Listed, Google Malware Dashboard: 0.11%.
 # Stop Forum Spam (SFS) listings: 152.
 # Updated: 2016.01.18 / Checked: 2020.02.22
 
@@ -208,7 +199,6 @@ Tag: INFOBOX
 
 # ASN 49335 ("Mir Telematiki Ltd").
 # An ongoing source of all kinds of spam.
-# %Listed, Google Malware Dashboard: 0.17%.
 # Stop Forum Spam (SFS) listings: 1,316.
 # Updated: 2020.04.18
 
@@ -284,7 +274,6 @@ Tag: JPMorgan Chase & Co
 # Mark as spam (carries human endpoints, but also poses a spam risk):
 # - "^(.*(?:Svenska).*)$"
 # Everything else mark as generic.
-# %Listed, Google Malware Dashboard: 0.09% (AS43948).
 # Stop Forum Spam (SFS) listings: 1,044 (AS42708), 1 (AS43948).
 # Updated: 2020.01.23
 
@@ -305,7 +294,6 @@ recaptcha:
 # Major domestic ISP from Russia, but also a significant, long-term source of
 # spam, hack attempts, scraping, probing for vulnerabilities, and other kinds
 # of unwanted traffic.
-# %Listed, Google Malware Dashboard: 0.24% (AS44050).
 # Stop Forum Spam (SFS) listings: 1,292,218 (AS34665), 439,684 (AS44050).
 # Updated: 2020.03.21 / Checked: 2020.05.08
 
@@ -337,7 +325,6 @@ Tag: Trend Micro
 # Domestic Israeli ISP with human endpoints, but has some bad actors (spambots,
 # scrapers, etc). Marked for use with reCAPTCHA and included in ignore.dat by
 # default to reduce the false positive risk.
-# %Listed, Google Malware Dashboard: 0.10%.
 # %Listed, abuseat.org (CBL-Listed): 0.34%.
 # Stop Forum Spam (SFS) listings: 999.
 # Updated: 2019.12.04 / Checked: 2020.04.09
@@ -360,7 +347,6 @@ recaptcha:
 # the false positive risk, and I would encourage any CIDRAM users from Israel,
 # or targeting traffic from Israel, to list this section in their ignore.dat
 # file to reduce the false positive risk.
-# %Listed, Google Malware Dashboard: 0.40% (AS9116).
 # Stop Forum Spam (SFS) listings: 8,946 (AS9116).
 # Updated: 2016.12.10 / Checked: 2020.05.11
 
@@ -373,7 +359,6 @@ recaptcha:
 
 
 # ASN 51013 ("Websupport s.r.o").
-# %Listed, Google Malware Dashboard: 0.15%.
 # Updated: 2019.11.02 / Checked: 2020.03.05
 
 2a00:4b40::/32 Deny Generic
@@ -402,7 +387,6 @@ Tag: PP SKS-LUGAN
 
 # ASN 43260 ("DGN TEKNOLOJI BILISIM YAYINCILIK SANAYI VE LIMITED SIRKETI").
 # Caught trying to DDoS SFS.
-# %Listed, Google Malware Dashboard: 0.27%.
 # Stop Forum Spam (SFS) listings: 1,175.
 # Updated: 2020.03.21
 
@@ -433,7 +417,6 @@ Tag: DGN TEKNOLOJI
 # invalids removed when updating to reduce the risk of false positives. Their
 # network consists of a number of different ASNs, but only this specific ASN is
 # included here at this time.
-# %Listed, Google Malware Dashboard: 0.17%.
 # Stop Forum Spam (SFS) listings: 497.
 # Updated: 2016.12.24 / Modified: 2020.02.05
 
@@ -448,7 +431,6 @@ recaptcha:
 
 # ASN 6876 ("TeNeT Scientific Production Enterprise LLC").
 # Source of forum spam and other unwanted traffic.
-# %Listed, Google Malware Dashboard: 2.99%.
 # Stop Forum Spam (SFS) listings: 1,489.
 # Updated: 2016.07.20 / Checked: 2020.03.06
 
@@ -578,7 +560,6 @@ recaptcha:
 # ASNs 12530, 15895, 35081 ('"Kyivstar" PJSC').
 # Absolutely **INSANE** levels of spam coming from this network!! Shouldn't
 # ever, ever let them through, if at all possible.
-# %Listed, Google Malware Dashboard: 2.33% (AS12530).
 # Stop Forum Spam (SFS) listings: 24,107 (AS12530), 558,296 (AS15895), 1 (AS35081).
 # Updated: 2016.09.06 / Checked: 2020.01.09
 
@@ -634,7 +615,6 @@ Tag: Fregat
 
 
 # ASNs 35196, 48666 ("MAROSNET Telecommunication Company LLC").
-# %Listed, Google Malware Dashboard: 0.27% (AS48666).
 # Stop Forum Spam (SFS) listings: 27 (AS35196), 524 (AS48666).
 # Updated: 2020.03.10
 
@@ -710,7 +690,6 @@ recaptcha:
 # use with reCAPTCHA to reduce the false positive risk. Websites intended for
 # an Indian audience should keep it listed in their ignore.dat file. Possibly
 # may remove this section in the future if the network ever cleans up its act.
-# %Listed, Google Malware Dashboard: 0.39%.
 # %Listed, abuseat.org (CBL-Listed): 3.04%.
 # Stop Forum Spam (SFS) listings: 22,437.
 # Updated: 2020.03.21
@@ -829,7 +808,6 @@ recaptcha:
 # nor its listing at a number of BLs. Marked for use with reCAPTCHA to reduce
 # the false positive risk. Websites intended for a Chinese audience should keep
 # this section listed in their ignore.dat file.
-# %Listed, Google Malware Dashboard: 1.06%.
 # %Listed, abuseat.org (CBL-Listed): 0.54%.
 # Stop Forum Spam (SFS) listings: 22,506.
 # Updated: 2019.10.16 / Checked: 2020.02.13
@@ -882,7 +860,6 @@ recaptcha:
 # nor its listing at a number of BLs. Marked for use with reCAPTCHA to reduce
 # the false positive risk. Websites intended for a Chinese audience should keep
 # this section listed in their ignore.dat file.
-# %Listed, Google Malware Dashboard: 1.55%.
 # %Listed, abuseat.org (CBL-Listed): 0.30%.
 # Stop Forum Spam (SFS) listings: 2,940.
 # Updated: 2019.11.10 / Checked: 2020.03.21
@@ -935,7 +912,6 @@ recaptcha:
 # nor its listing at a number of BLs. Marked for use with reCAPTCHA to reduce
 # the false positive risk. Websites intended for a Chinese audience should keep
 # this section listed in their ignore.dat file.
-# %Listed, Google Malware Dashboard: 1.24%.
 # Stop Forum Spam (SFS) listings: 21,795.
 # Updated: 2020.03.21
 
@@ -1115,7 +1091,6 @@ recaptcha:
 # positive risk, and I would encourage any CIDRAM users from Taiwan, or
 # targeting traffic from Taiwan, to list this section in their ignore.dat file
 # to reduce the false positive risk.
-# %Listed, Google Malware Dashboard: 0.37%.
 # %Listed, abuseat.org (CBL-Listed): 0.73%.
 # Stop Forum Spam (SFS) listings: 13,885.
 # Updated: 2019.03.09 / Checked: 2020.03.06
@@ -1139,7 +1114,6 @@ recaptcha:
 # positive risk. When updating:
 # - Exclude 223.20x (all invalid and already listed elsewhere anyway).
 # - Exclude any IPv6 invalids.
-# %Listed, Google Malware Dashboard: 1.07% (AS4808), 1.40% (AS23724).
 # %Listed, abuseat.org (CBL-Listed): 0.25% (AS4808).
 # Stop Forum Spam (SFS) listings: 7,644 (AS4808), 21,972 (AS23724).
 # Updated: 2020.03.21
@@ -1177,7 +1151,6 @@ recaptcha:
 # reduce the false positive risk, and I would encourage any CIDRAM users from
 # Vietnam, or targeting traffic from Vietnam, to list this section in their
 # ignore.dat file to reduce the false positive risk.
-# %Listed, Google Malware Dashboard: 0.08%.
 # %Listed, abuseat.org (CBL-Listed): 5.47%.
 # Stop Forum Spam (SFS) listings: 21,149.
 # Updated: 2020.03.05
@@ -1261,7 +1234,6 @@ recaptcha:
 # ASN 18403 ("The Corporation for Financing & Promoting Technology").
 # Interlaces with human endpoints in Vietnam, but also a significant source of
 # spam, hacks, brute-forcing, probing, etc.
-# %Listed, Google Malware Dashboard: 0.24%.
 # %Listed, abuseat.org (CBL-Listed): 2.50%.
 # Stop Forum Spam (SFS) listings: 7,749.
 # Updated: 2020.02.11
@@ -1521,7 +1493,6 @@ recaptcha:
 # Chinese mobile phone and data carrier. Listed here because of numerous spam
 # events being detected. Websites intended for a Chinese audience should keep
 # it listed in their ignore.dat file. (Omit invalids when updating).
-# %Listed, Google Malware Dashboard: 0.42%.
 # %Listed, abuseat.org (CBL-Listed): 0.03%.
 # Stop Forum Spam (SFS) listings: 217.
 # Updated: 2020.03.22
@@ -1570,7 +1541,6 @@ recaptcha:
 # default).
 
 # ASN 12389 ("PJSC Rostelecom").
-# %Listed, Google Malware Dashboard: 0.39%.
 # %Listed, abuseat.org (CBL-Listed): 0.52%.
 # Stop Forum Spam (SFS) listings: 234,919.
 # Updated: 2019.03.17 / Checked: 2020.03.26
@@ -1590,7 +1560,6 @@ recaptcha:
 # Similarly to with the Rostelecom CIDRs, blocking the entirety of all
 # "Vimpelcom" ASNs could be problematic. Instead, we'll try to limit
 # listings to those CIDRs known to be problematic.
-# %Listed, Google Malware Dashboard: 0.40%.
 # Stop Forum Spam (SFS) listings: 3,963.
 # Updated: 2017.06.08 / Checked: 2020.03.26
 
@@ -1606,7 +1575,6 @@ recaptcha:
 # Similarly to with the Rostelecom CIDRs, blocking the entirety of all
 # "Vimpelcom" ASNs could be problematic. Instead, we'll try to limit
 # listings to those CIDRs known to be problematic.
-# %Listed, Google Malware Dashboard: 1.98%.
 # %Listed, abuseat.org (CBL-Listed): 7.70%.
 # Stop Forum Spam (SFS) listings: 9,116.
 # Updated: 2017.09.30 / Checked: 2020.03.26
@@ -1744,7 +1712,6 @@ recaptcha:
 
 # ASN 7642 ("Dhivehi Raajjeyge Gulhun Plc (Dhiraagu)").
 # ISP from the Maldives with human endpoints, but also a source of spam.
-# %Listed, Google Malware Dashboard: 4.17%.
 # Stop Forum Spam (SFS) listings: 140.
 # Updated: 2019.09.03 / Checked: 2020.05.06
 
@@ -1927,7 +1894,6 @@ recaptcha:
 
 
 # ASN 8708 ("RCS & RDS SA").
-# %Listed, Google Malware Dashboard: 0.36%.
 # %Listed, abuseat.org (CBL-Listed): 0.67%.
 # Stop Forum Spam (SFS) listings: 3,062.
 # Updated: 2018.06.24 / Checked: 2020.05.06
@@ -1942,14 +1908,13 @@ recaptcha:
 
 # ASN 36351 ("SoftLayer Technologies").
 # Careful when updating; Signatures reflect varying block reasons, split across multiple files.
-# %Listed, Google Malware Dashboard: 0.13%.
-# Stop Forum Spam (SFS) listings: 8,161.
+# Stop Forum Spam (SFS) listings: 10,530.
 
 # SoftLayer questionable multi-play networks, spammy ISPs, etc.
 # Includes: Anything citing "Consumer Pool", "Starry".
 # ^(.*(Consumer Pool|Starry).*)$
 # Excludes: Everything else.
-# Updated: 2018.06.24 / Checked: 2020.01.01
+# Updated: 2018.06.24 / Checked: 2020.05.21
 
 2403:ad80:10::/48 Deny Spam
 2403:ad80:20::/48 Deny Spam
@@ -1960,7 +1925,6 @@ Tag: SoftLayer Spam ISPs
 # ASNs 12322, 12876 ("ONLINE S.A.S").
 # A multiplay network (French domestic ISP, cloud provider, etc), caught trying
 # to DDoS SFS, caught attempting to hack honeypots, and a huge source of spam.
-# %Listed, Google Malware Dashboard: 0.76% (12322), 0.18% (AS12876).
 # Stop Forum Spam (SFS) listings: 729 (12322), 108,600 (AS12876).
 # Updated: 2018.06.24 / Checked: 2020.03.21
 
@@ -2103,7 +2067,6 @@ recaptcha:
 # Major domestic ISP in the United States; Should NEVER be blocked in entirety.
 # Listed here are some specific CIDRs/IPs on their network that pose a major
 # spam risk and/or are known sources of spam and/or other undesirable traffic.
-# %Listed, Google Malware Dashboard: 0.19% (AS7922).
 # %Listed, abuseat.org (CBL-Listed): 0.02% (AS7922).
 # Stop Forum Spam (SFS) listings: 6,681 (AS7922).
 # Updated: 2020.03.06
@@ -2120,7 +2083,6 @@ recaptcha:
 # Peering exchange provider in the United States; Should NEVER be blocked in
 # entirety. Listed here are some specific CIDRs/IPs on their network that pose
 # a risk for spamming and/or other undesirable traffic.
-# %Listed, Google Malware Dashboard: 0.07% (AS22773).
 # Stop Forum Spam (SFS) listings: 812 (AS22773).
 # Updated: 2020.03.06
 
@@ -2157,7 +2119,6 @@ recaptcha:
 # ASN 20115 ("Charter Communications").
 # Domestic ISP from the United States with some limited amount of spamming
 # (marked as "Spam") + caught by security honeypots (marked as "Malware").
-# %Listed, Google Malware Dashboard: 0.15%.
 # %Listed, abuseat.org (CBL-Listed): 0.18%.
 # Stop Forum Spam (SFS) listings: 1,647.
 # Updated: 2020.01.12
@@ -2217,7 +2178,6 @@ recaptcha:
 
 # ASN 34700 ("MAXNET TELECOM, LTD").
 # A Ukrainian domestic ISP and a significant source of spam.
-# %Listed, Google Malware Dashboard: 4.17%.
 # Stop Forum Spam (SFS) listings: 2,433.
 # Updated: 2020.02.17
 
@@ -2260,7 +2220,6 @@ recaptcha:
 # ASN 8151 ("Uninet S.A. de C.V").
 # Mexican domestic ISP and a source of spam. Just listing the specific spammy
 # IPs (not the entire network), plus US ranges (interlaced cloud).
-# %Listed, Google Malware Dashboard: 0.16%.
 # Stop Forum Spam (SFS) listings: 1,410.
 # Updated: 2020.03.13
 
@@ -2278,7 +2237,6 @@ recaptcha:
 # ASN 9299 ("Philippine Long Distance Telephone Company").
 # Domestic ISP from the Philippines and a source of spam. Just listing the
 # specific spammy IPs (not the entire network).
-# %Listed, Google Malware Dashboard: 0.70%.
 # %Listed, abuseat.org (CBL-Listed): 1.16%.
 # Stop Forum Spam (SFS) listings: 3,206.
 # Updated: 2020.05.16
@@ -2297,7 +2255,6 @@ recaptcha:
 # ASN 12849 ("Hot-Net internet services Ltd").
 # Israeli domestic ISP and a source of spam. Just listing the specific
 # spammy IPs (i.e., not the entire network).
-# %Listed, Google Malware Dashboard: 0.21%.
 # Stop Forum Spam (SFS) listings: 1,338.
 # Updated: 2020.03.13
 
@@ -2349,7 +2306,6 @@ recaptcha:
 
 # ASN 6830 ("Liberty Global B.V").
 # Source of forum spam and some email harvestors.
-# %Listed, Google Malware Dashboard: 0.27%.
 # Stop Forum Spam (SFS) listings: 11,199.
 # Updated: 2020.04.05
 

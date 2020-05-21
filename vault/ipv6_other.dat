@@ -1,8 +1,8 @@
 # IPv6 signatures file (CIDRs for proxies, VPNs and other miscellaneous unwanted services).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_other.dat
 
-# Version: 2020.101.595
-# Last modified: 2020.04.11
+# Version: 2020.141.400
+# Last modified: 2020.05.21
 
 
 # ---
@@ -111,14 +111,13 @@ recaptcha:
 
 # ASN 36351 ("SoftLayer Technologies").
 # Careful when updating; Signatures reflect varying block reasons, split across multiple files.
-# %Listed, Google Malware Dashboard: 0.13%.
-# Stop Forum Spam (SFS) listings: 8,161.
+# Stop Forum Spam (SFS) listings: 10,530.
 
 # SoftLayer VPNs and proxies.
 # Includes: Anything citing "TEFINCOM", "Packet Flip", "VPN", "proxy", "Privat Kommunikation", "Secure Internet".
 # ^(.*(TEFINCOM|Packet Flip|VPN|Proxy|Privat Kommunikation|Secure Internet).*)$
 # Excludes: Everything else.
-# Updated: 2019.12.14 / Checked: 2020.01.01
+# Updated: 2019.12.14 / Checked: 2020.05.21
 
 2602:ff84:1::/48 Deny Proxy
 2602:ff84:c::/47 Deny Proxy
@@ -151,7 +150,6 @@ Tag: F3 Netze e.V
 # Mark as spam (carries human endpoints, but also poses a spam risk):
 # - "^(.*(?:Svenska).*)$"
 # Everything else mark as generic.
-# %Listed, Google Malware Dashboard: 0.09% (AS43948).
 # Stop Forum Spam (SFS) listings: 1,044 (AS42708), 1 (AS43948).
 # Updated: 2020.01.23
 

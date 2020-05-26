@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Extended rules for some specific CIDRs (last modified: 2020.01.01).
+ * This file: Extended rules for some specific CIDRs (last modified: 2020.05.26).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -44,7 +44,7 @@ $CIDRAM['RunParamResCache']['rules_specific.php'] = function (array $Factors = [
             return;
         }
 
-        if (!$CIDRAM['CIDRAM_sapi']) {
+        if (empty($CIDRAM['CIDRAM_sapi'])) {
             $CIDRAM['BlockInfo']['ReasonMessage'] = $CIDRAM['L10N']->getString('ReasonMessage_Generic');
             if (!empty($CIDRAM['BlockInfo']['WhyReason'])) {
                 $CIDRAM['BlockInfo']['WhyReason'] .= ', ';
@@ -122,7 +122,7 @@ $CIDRAM['RunParamResCache']['rules_specific.php'] = function (array $Factors = [
         return;
     }
 
-    if (!$CIDRAM['CIDRAM_sapi']) {
+    if (empty($CIDRAM['CIDRAM_sapi'])) {
         $CIDRAM['BlockInfo']['ReasonMessage'] = $CIDRAM['L10N']->getString('ReasonMessage_Cloud');
         if (!empty($CIDRAM['BlockInfo']['WhyReason'])) {
             $CIDRAM['BlockInfo']['WhyReason'] .= ', ';

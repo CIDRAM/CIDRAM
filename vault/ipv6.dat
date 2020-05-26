@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6.dat
 
-# Version: 2020.141.400
-# Last modified: 2020.05.21
+# Version: 2020.146.370
+# Last modified: 2020.05.26
 
 
 # ---
@@ -700,42 +700,30 @@ Tag: Swiftway
 
 
 # ASN 6939 ("Hurricane Electric, Inc").
-# Stop Forum Spam (SFS) listings: 689.
-# Updated: 2020.01.01
+# Stop Forum Spam (SFS) listings: 699.
+# Updated: 2020.05.24
 
 # Note when updating: There are some CIDRs in BGP that shouldn't be included here as signatures.
 # - Anything marked as "invalid".
 # - "2001::/32" (provides "Teredo" tunneling).
 # - "2002::/16" (provides "6to4" bridging connectivity).
 # - "124.252.248.0/21" (suspected human endpoints).
-# - "AeroSurf" (human endpoints).
 # - "BLOOMINGDALE HOME TELEPHONE COMPANY, INC" (human endpoints).
 # - "Internet Assigned Numbers Authority" (bogons and unassigned or pending assignment).
 # - Anything labeled as "Broadband" (can reasonably assume as human endpoints).
-# I.e., "^200(?:1\:\:\/32|2\:\:\/16).*$|^.*(?:124\.252\.248\.0|AeroSurf|Broadband|invalid|Telephone).*$|^.*Authority$"
+# I.e., "^200(?:1\:\:\/32|2\:\:\/16).*$|^.*(?:124\.252\.248\.0|Broadband|invalid|Telephone).*$|^.*Authority$"
 # Also subtract from final aggregate:
 # - 65.49.67.0/24 (access provider / human endpoints).
 
-2a0f:302::/32 Run rules_as6939.php
-2a0f:306::/32 Run rules_as6939.php
-Origin: GB
 2001:df2:7900::/48 Run rules_as6939.php
 2400:7a00::/32 Run rules_as6939.php
 Origin: HK
-2a0f:102::/32 Run rules_as6939.php
-2a0f:106::/32 Run rules_as6939.php
-Origin: IE
-2a06:1c80::/32 Run rules_as6939.php
-Origin: NL
-2a09:bf00::/30 Run rules_as6939.php
 2a09:e380::/30 Run rules_as6939.php
-2a09:f600::/30 Run rules_as6939.php
-2a0d:b040::/30 Run rules_as6939.php
-2a0d:e2c0::/30 Run rules_as6939.php
 Origin: RU
 2001:470::/32 Run rules_as6939.php
 2001:49e8::/32 Run rules_as6939.php
 2600:7000::/24 Run rules_as6939.php
+2602:fd9b::/36 Run rules_as6939.php
 2602:feca::/36 Run rules_as6939.php
 2602:ff06:725::/48 Run rules_as6939.php
 2604:3540::/29 Run rules_as6939.php
@@ -746,10 +734,8 @@ Origin: RU
 2620:0:50c0::/48 Run rules_as6939.php
 2620:64:6000::/48 Run rules_as6939.php
 2620:138:c001::/48 Run rules_as6939.php
-2620:138:c002::/48 Run rules_as6939.php
 2a09:9f42::/31 Run rules_as6939.php
 2a09:9f45::/32 Run rules_as6939.php
-2a09:9f46::/32 Run rules_as6939.php
 Origin: US
 Tag: Hurricane Electric
 
@@ -767,8 +753,8 @@ Tag: Eonix Corporation
 
 
 # ASNs 32748, 46440 ("Steadfast Networks").
-# Stop Forum Spam (SFS) listings: 162 (AS32748).
-# Updated: 2018.10.05 / Checked: 2020.01.03
+# Stop Forum Spam (SFS) listings: 161 (AS32748).
+# Updated: 2018.10.05 / Checked: 2020.05.26
 
 2602:ffbb::/36 Deny Cloud
 2607:6980:13f0::/44 Deny Cloud
@@ -800,19 +786,19 @@ Tag: A2B IP B.V
 
 # ASNs 20860, 25108 ("IOMart").
 # Careful when updating; Also contains some proxies and VPNs (should be marked differently).
-# Stop Forum Spam (SFS) listings: 9,953 (AS20860), 4 (AS25108).
-# Updated: 2020.01.09
+# Stop Forum Spam (SFS) listings: 6,179 (AS20860), 7 (AS25108).
+# Updated: 2020.05.26
 
 2607:bd00:100::/48 Deny Cloud
 Origin: CA
 2001:1b40::/32 Deny Cloud
-2a00:42a0::/32 Deny Cloud
 2a00:5d80::/32 Deny Cloud
 2a00:e120::/32 Deny Cloud
 2a01:61c0::/40 Deny Cloud
 2a01:b040::/32 Deny Cloud
 2a02:8c8::/32 Deny Cloud
 2a02:2658::/32 Deny Cloud
+2a02:7f40::/32 Deny Cloud
 2a03:b200::/29 Deny Cloud
 2a03:ca80::/31 Deny Cloud
 2a03:f2c0::/32 Deny Cloud
@@ -1246,15 +1232,6 @@ Origin: SG
 2a0b:ae47:4::/48 Deny Cloud
 Origin: US
 Tag: Psychz Networks
-
-
-# ASN 36114 ("Versaweb, LLC").
-# Stop Forum Spam (SFS) listings: 193.
-# Updated: 2016.01.23 / Checked: 2020.01.03
-
-2605:6f80::/40 Deny Cloud
-Origin: US
-Tag: Versaweb, LLC
 
 
 # ASN 27176 ("DataWagon LLC").
@@ -3175,12 +3152,13 @@ Tag: Hosting Services Inc
 
 
 # ASNs 48337, 63949 ("Linode, LLC").
-# Stop Forum Spam (SFS) listings: 3,803 (AS63949).
-# Updated: 2020.01.03
+# Stop Forum Spam (SFS) listings: 3,929 (AS63949).
+# Updated: 2020.05.24
 
 2a01:7e00::/31 Deny Cloud
 Origin: GB
 2400:8901::/32 Deny Cloud
+Origin: SG
 2400:8902::/31 Deny Cloud
 2400:8904::/30 Deny Cloud
 2600:3c00::/30 Deny Cloud
@@ -3791,7 +3769,7 @@ Tag: Mainstream doo
 
 
 # ASNs 3595, 13354, 14313, 16626, 27325, 32952 ("zColo").
-# Updated: 2019.04.21 / Checked: 2020.01.03
+# Updated: 2019.04.21 / Checked: 2020.05.26
 
 2604:9100:1001::/48 Deny Cloud
 2606:4300:1::/48 Deny Cloud
@@ -4310,7 +4288,7 @@ Tag: Infium, UAB
 # ASNs 30548, 31034, 199653, 199883, 200185, 202242, 205727 ("Aruba S.p.A",
 # "Aruba SAS", "ARUBA NETWORKS, INC", "ArubaCloud Limited").
 # Caught attempting to hack honeypots.
-# Updated: 2018.02.24 / Checked: 2020.01.08
+# Updated: 2020.05.26
 
 2a03:2c40::/32 Deny Cloud
 2a03:a140::/32 Deny Cloud
@@ -4328,6 +4306,7 @@ Origin: GB
 2a04:e100::/31 Deny Cloud
 Origin: IT
 2620:11d:6000::/42 Deny Cloud
+2620:11d:60c0::/46 Deny Cloud
 Origin: US
 Tag: Aruba S.p.A
 
@@ -6267,8 +6246,8 @@ Tag: Fastly
 
 # ASN 42994 ("HQserv Communication Solutions").
 # Dedicated server farm/lease and a significant source of spam.
-# Stop Forum Spam (SFS) listings: 4,130.
-# Updated: 2020.01.06
+# Stop Forum Spam (SFS) listings: 2,604.
+# Updated: 2020.01.06 / Checked: 2020.05.26
 
 2a0a:1dc0::/29 Deny Cloud
 Origin: IL

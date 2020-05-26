@@ -214,7 +214,7 @@ CIDRAM:
 IPv4:
  Extended Description: Default IPv4 signatures normally included with the main package. Blocks unwanted cloud services and non-human endpoints.
  False Positive Risk: Low
- Version: 2020.141.400
+ Version: 2020.146.370
  Minimum Required: 1.0.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
  Uninstallable: true
@@ -224,7 +224,7 @@ IPv4:
   To:
    - ipv4.dat
   Checksum:
-   - 8db17e0e2b37fb7679a8d40afd2dee168bc19d43f5ba8d9221774bc6b6f7e096:875017
+   - 0af852934e9827c908d568dfa1eddb882a7c52b24a0af10b78f05c2a938cbcc7:875269
  Used with: ipv4
  Reannotate: components.dat
 IPv4-Bogons:
@@ -246,7 +246,7 @@ IPv4-Bogons:
 IPv4-ISPs:
  Extended Description: Default IPv4 signatures normally included with the main package. Blocks dangerous and spammy ISPs.
  False Positive Risk: Medium
- Version: 2020.141.400
+ Version: 2020.146.370
  Minimum Required: 1.0.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
  Uninstallable: true
@@ -256,13 +256,13 @@ IPv4-ISPs:
   To:
    - ipv4_isps.dat
   Checksum:
-   - bdf03bb5ab06276ee52e69db2a6e4abb6afe18bb77d9c6a0151bf071a0480deb:379656
+   - 8d82eaef4bbb6d0344d742053aa5dffa9105db8ad9c6a058a2e168b105f666f0:379008
  Used with: ipv4
  Reannotate: components.dat
 IPv4-Other:
  Extended Description: Default IPv4 signatures normally included with the main package. Blocks CIDRs for proxies, VPNs, and other miscellaneous unwanted services.
  False Positive Risk: Medium
- Version: 2020.141.400
+ Version: 2020.146.370
  Minimum Required: 1.0.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
  Uninstallable: true
@@ -272,13 +272,13 @@ IPv4-Other:
   To:
    - ipv4_other.dat
   Checksum:
-   - 2434b83cab26db7bba9bfcc330d54c4f1b3379317dc6fedb7b4b6e46dfb958d4:38773
+   - 7b15ebcb53318e4f58cb68d6d9332d4b7a93b1744e3b1ffcbe4cad5bd1357691:38775
  Used with: ipv4
  Reannotate: components.dat
 IPv6:
  Extended Description: Default IPv6 signatures normally included with the main package. Blocks unwanted cloud services and non-human endpoints.
  False Positive Risk: Low
- Version: 2020.141.400
+ Version: 2020.146.370
  Minimum Required: 1.0.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
  Uninstallable: true
@@ -288,7 +288,7 @@ IPv6:
   To:
    - ipv6.dat
   Checksum:
-   - a98788fca6fac53fcb4405b92925575a23ecc61ca4924af5c97831c1d9c3f1d6:168110
+   - c2db04674ff8faf29de324f79190c602c725266bac247df1b9ebae33abe10d70:167542
  Used with: ipv6
  Reannotate: components.dat
 IPv6-Bogons:
@@ -310,7 +310,7 @@ IPv6-Bogons:
 IPv6-ISPs:
  Extended Description: Default IPv6 signatures normally included with the main package. Blocks dangerous and spammy ISPs.
  False Positive Risk: Medium
- Version: 2020.141.400
+ Version: 2020.146.370
  Minimum Required: 1.0.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
  Uninstallable: true
@@ -320,13 +320,13 @@ IPv6-ISPs:
   To:
    - ipv6_isps.dat
   Checksum:
-   - 4d16a6dbbd9623a2d975c39d2782224215f03170f404b7b04de4f40370c23633:68079
+   - 94ab9b343fd854e9a3522e99bd341642b57b06aa6331e74cb824e8f1c3aa61ab:68443
  Used with: ipv6
  Reannotate: components.dat
 IPv6-Other:
  Extended Description: Default IPv6 signatures normally included with the main package. Blocks CIDRs for proxies, VPNs, and other miscellaneous unwanted services.
  False Positive Risk: Low
- Version: 2020.141.400
+ Version: 2020.146.370
  Minimum Required: 1.0.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
  Uninstallable: true
@@ -336,12 +336,12 @@ IPv6-Other:
   To:
    - ipv6_other.dat
   Checksum:
-   - 41f86d063332566ebee9a8238ed7ae465a7cb270a7c2e28c6cebb77e37a821a6:6862
+   - f1421b3fbfa89befae82626bd7cfa7a443dd86ea70ae964f7614e63213a869ff:6870
  Used with: ipv6
  Reannotate: components.dat
 Bypasses:
  False Positive Risk: Low
- Version: 2020.0.325
+ Version: 2020.146.370
  Minimum Required: 1.0.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
  Uninstallable: true
@@ -354,8 +354,8 @@ Bypasses:
    - rules_as6939.php
    - rules_specific.php
   Checksum:
-   - 63190c3e52e2569172be45ba037955f950f066ce44e285792b47be4b45df9a8d:2825
-   - 9568c12daa6b937399aa6f8776b50096e12af565bbeb3274cc458e07f7803ce8:4857
+   - 356f5b9c48dc9a56210339d4ec70b18a42c0170bbb63d1dd30bc89542fbfb50f:2831
+   - 0c1755949ba2e5430ea123eb4910e9741cc71299726e16260986e5da3936b5a2:4869
  Reannotate: components.dat
 l10n/en:
  Name: L10N: English

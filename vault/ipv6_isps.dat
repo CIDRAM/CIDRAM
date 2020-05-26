@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_isps.dat
 
-# Version: 2020.141.400
-# Last modified: 2020.05.21
+# Version: 2020.146.370
+# Last modified: 2020.05.26
 
 
 # ---
@@ -464,12 +464,12 @@ recaptcha:
 
 
 # ASN 17747 ("SITI NETWORKS LIMITED").
-# %Listed, abuseat.org (CBL-Listed): 17.86%.
-# Stop Forum Spam (SFS) listings: 1,467.
-# Updated: 2016.09.04 / Checked: 2020.01.06
+# Stop Forum Spam (SFS) listings: 2,795.
+# Updated: 2020.05.26
 
 2402:ea80::/48 Deny Spam
 2406:3c80::/46 Deny Spam
+2406:3c80:5::/48 Deny Spam
 Origin: IN
 Tag: SITI NETWORKS LTD
 ---
@@ -1484,6 +1484,21 @@ Origin: LK
 2600:1417:78::/48 Deny Spam
 Origin: US
 Tag: Bharti Airtel
+---
+recaptcha:
+ enabled: true
+
+
+# ASN 23944 ("SKYBroadband SKYCable Corporation").
+# ( CIDRs that we haven't yet seen any problems from have been omitted. I hope to eventually remove this section entirely. )
+# Stop Forum Spam (SFS) listings: 187.
+# Updated: 2020.05.26
+
+2404:3c00:482f:fcd0::/64 Deny Spam
+2404:3c00:503f:1700::/64 Deny Spam
+2404:3c00:a0af:ffb0::/64 Deny Spam
+Origin: PH
+Tag: SKYBROADBAND
 ---
 recaptcha:
  enabled: true

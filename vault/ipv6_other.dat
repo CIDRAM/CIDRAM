@@ -1,8 +1,8 @@
 # IPv6 signatures file (CIDRs for proxies, VPNs and other miscellaneous unwanted services).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_other.dat
 
-# Version: 2020.141.400
-# Last modified: 2020.05.21
+# Version: 2020.146.370
+# Last modified: 2020.05.26
 
 
 # ---
@@ -130,12 +130,13 @@ Tag: SoftLayer VPNs
 
 # ASN 205100 ("F3 Netze e.V").
 # Provides TOR exit nodes.
-# Stop Forum Spam (SFS) listings: 16,810.
-# Updated: 2018.04.23 / Checked: 2020.01.02
+# Stop Forum Spam (SFS) listings: 54,040.
+# Updated: 2020.05.26
 
 2a0b:f4c0::/40 Deny Proxy
 2a0b:f4c0:100::/48 Deny Proxy
 2a0b:f4c0:16c::/48 Deny Proxy
+2a0b:f4c0:1b4::/48 Deny Proxy
 Origin: DE
 Tag: F3 Netze e.V
 

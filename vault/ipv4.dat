@@ -1,8 +1,8 @@
 # IPv4 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv4.dat
 
-# Version: 2020.141.400
-# Last modified: 2020.05.21
+# Version: 2020.146.370
+# Last modified: 2020.05.26
 
 
 # ---
@@ -3677,19 +3677,18 @@ Tag: Inter Connects Inc
 
 
 # ASN 6939 ("Hurricane Electric, Inc").
-# Stop Forum Spam (SFS) listings: 689.
-# Updated: 2020.01.01
+# Stop Forum Spam (SFS) listings: 699.
+# Updated: 2020.05.24
 
 # Note when updating: There are some CIDRs in BGP that shouldn't be included here as signatures.
 # - Anything marked as "invalid".
 # - "2001::/32" (provides "Teredo" tunneling).
 # - "2002::/16" (provides "6to4" bridging connectivity).
 # - "124.252.248.0/21" (suspected human endpoints).
-# - "AeroSurf" (human endpoints).
 # - "BLOOMINGDALE HOME TELEPHONE COMPANY, INC" (human endpoints).
 # - "Internet Assigned Numbers Authority" (bogons and unassigned or pending assignment).
 # - Anything labeled as "Broadband" (can reasonably assume as human endpoints).
-# I.e., "^200(?:1\:\:\/32|2\:\:\/16).*$|^.*(?:124\.252\.248\.0|AeroSurf|Broadband|invalid|Telephone).*$|^.*Authority$"
+# I.e., "^200(?:1\:\:\/32|2\:\:\/16).*$|^.*(?:124\.252\.248\.0|Broadband|invalid|Telephone).*$|^.*Authority$"
 # Also subtract from final aggregate:
 # - 65.49.67.0/24 (access provider / human endpoints).
 
@@ -3698,7 +3697,6 @@ Tag: Inter Connects Inc
 Origin: AU
 104.194.4.0/24 Run rules_as6939.php
 104.254.152.0/21 Run rules_as6939.php
-162.247.12.0/22 Run rules_as6939.php
 Origin: CA
 103.96.214.0/24 Run rules_as6939.php
 Origin: CN
@@ -3706,6 +3704,7 @@ Origin: CN
 5.152.179.0/24 Run rules_as6939.php
 5.152.181.0/24 Run rules_as6939.php
 5.152.182.0/23 Run rules_as6939.php
+185.115.84.0/22 Run rules_as6939.php
 185.149.69.0/24 Run rules_as6939.php
 185.242.47.0/24 Run rules_as6939.php
 Origin: GB
@@ -3714,12 +3713,11 @@ Origin: GB
 103.193.186.0/23 Run rules_as6939.php
 Origin: HK
 45.95.98.0/24 Run rules_as6939.php
-185.101.97.0/24 Run rules_as6939.php
-185.101.98.0/24 Run rules_as6939.php
 185.114.36.0/24 Run rules_as6939.php
 Origin: NL
 23.142.192.0/24 Run rules_as6939.php
 23.145.128.0/24 Run rules_as6939.php
+23.146.80.0/24 Run rules_as6939.php
 23.175.160.0/24 Run rules_as6939.php
 38.72.144.0/20 Run rules_as6939.php
 38.87.144.0/23 Run rules_as6939.php
@@ -3749,38 +3747,40 @@ Origin: NL
 66.160.192.0/20 Run rules_as6939.php
 66.207.160.0/20 Run rules_as6939.php
 66.220.0.0/19 Run rules_as6939.php
+67.21.38.0/23 Run rules_as6939.php
 67.43.48.0/20 Run rules_as6939.php
 72.14.64.0/22 Run rules_as6939.php
 72.14.89.0/24 Run rules_as6939.php
+72.14.90.0/24 Run rules_as6939.php
 72.52.64.0/18 Run rules_as6939.php
 74.82.0.0/18 Run rules_as6939.php
 74.116.112.0/22 Run rules_as6939.php
 74.121.104.0/22 Run rules_as6939.php
 74.122.152.0/21 Run rules_as6939.php
-85.209.206.0/23 Run rules_as6939.php
 104.36.120.0/22 Run rules_as6939.php
+104.194.216.0/23 Run rules_as6939.php
 104.247.128.0/22 Run rules_as6939.php
 104.247.132.0/23 Run rules_as6939.php
 104.255.240.0/21 Run rules_as6939.php
 107.178.32.0/20 Run rules_as6939.php
-139.56.8.0/24 Run rules_as6939.php
 141.193.188.0/23 Run rules_as6939.php
+142.202.65.0/24 Run rules_as6939.php
 148.51.0.0/17 Run rules_as6939.php
+158.51.92.0/22 Run rules_as6939.php
+158.51.161.0/24 Run rules_as6939.php
 161.129.140.0/22 Run rules_as6939.php
 162.213.130.0/24 Run rules_as6939.php
 162.247.75.0/24 Run rules_as6939.php
 162.249.152.0/22 Run rules_as6939.php
-162.251.205.0/24 Run rules_as6939.php
-162.251.206.0/24 Run rules_as6939.php
 167.136.239.0/24 Run rules_as6939.php
 168.245.149.0/24 Run rules_as6939.php
 170.199.208.0/23 Run rules_as6939.php
 173.242.48.0/20 Run rules_as6939.php
 184.75.240.0/21 Run rules_as6939.php
 184.104.0.0/15 Run rules_as6939.php
-192.52.69.0/24 Run rules_as6939.php
 192.132.94.0/24 Run rules_as6939.php
 192.156.200.0/24 Run rules_as6939.php
+192.190.255.0/24 Run rules_as6939.php
 198.102.73.0/24 Run rules_as6939.php
 198.102.244.0/24 Run rules_as6939.php
 199.4.150.0/24 Run rules_as6939.php
@@ -3792,17 +3792,20 @@ Origin: NL
 199.233.90.0/24 Run rules_as6939.php
 199.245.105.0/24 Run rules_as6939.php
 204.13.226.0/23 Run rules_as6939.php
+204.14.80.0/22 Run rules_as6939.php
 204.62.157.0/24 Run rules_as6939.php
 204.238.49.0/24 Run rules_as6939.php
 205.159.239.0/24 Run rules_as6939.php
 207.126.64.0/19 Run rules_as6939.php
 208.64.56.0/21 Run rules_as6939.php
 208.79.140.0/22 Run rules_as6939.php
+208.80.92.0/22 Run rules_as6939.php
 209.51.160.0/19 Run rules_as6939.php
+209.66.117.0/24 Run rules_as6939.php
 209.130.152.0/22 Run rules_as6939.php
 209.135.0.0/19 Run rules_as6939.php
-209.146.4.0/24 Run rules_as6939.php
 209.150.160.0/19 Run rules_as6939.php
+209.160.106.0/23 Run rules_as6939.php
 216.66.0.0/18 Run rules_as6939.php
 216.66.64.0/19 Run rules_as6939.php
 216.99.220.0/23 Run rules_as6939.php
@@ -3906,8 +3909,8 @@ Tag: Eonix Corporation
 
 
 # ASNs 32748, 46440 ("Steadfast Networks").
-# Stop Forum Spam (SFS) listings: 162 (AS32748).
-# Updated: 2020.01.03
+# Stop Forum Spam (SFS) listings: 161 (AS32748).
+# Updated: 2020.01.03 / Checked: 2020.05.26
 
 23.29.128.0/19 Deny Cloud
 50.31.0.0/17 Deny Cloud
@@ -3966,8 +3969,8 @@ Tag: A2B IP B.V
 
 # ASNs 20860, 25108 ("IOMart").
 # Careful when updating; Also contains some proxies and VPNs (should be marked differently).
-# Stop Forum Spam (SFS) listings: 9,953 (AS20860), 4 (AS25108).
-# Updated: 2020.01.09
+# Stop Forum Spam (SFS) listings: 6,179 (AS20860), 7 (AS25108).
+# Updated: 2020.05.26
 
 182.54.237.0/24 Deny Proxy
 Origin: AU
@@ -3975,8 +3978,6 @@ Origin: AU
 Origin: BZ
 185.186.77.0/24 Deny Cloud
 Origin: CH
-190.121.209.0/24 Deny Cloud
-Origin: CW
 31.187.70.0/23 Deny Cloud
 185.187.240.0/24 Deny Cloud
 185.196.23.0/24 Deny Cloud
@@ -4023,6 +4024,7 @@ Origin: DK
 91.215.180.0/22 Deny Cloud
 91.225.0.0/22 Deny Cloud
 91.234.184.0/23 Deny Cloud
+91.237.74.0/23 Deny Cloud
 91.246.8.0/23 Deny Cloud
 92.63.128.0/20 Deny Cloud
 93.174.10.0/24 Deny Cloud
@@ -4045,6 +4047,7 @@ Origin: DK
 130.180.200.0/21 Deny Cloud
 130.185.144.0/21 Deny Cloud
 141.0.160.0/21 Deny Cloud
+141.98.60.0/22 Deny Cloud
 149.3.128.0/20 Deny Cloud
 149.255.96.0/20 Deny Cloud
 151.252.0.0/21 Deny Cloud
@@ -4063,14 +4066,13 @@ Origin: DK
 185.26.150.0/24 Deny Cloud
 185.32.109.0/24 Deny Cloud
 185.32.110.0/24 Deny Cloud
-185.34.252.0/22 Deny Cloud
+185.34.252.0/23 Deny Cloud
 185.35.77.0/24 Deny Cloud
 185.35.79.0/24 Deny Cloud
 185.36.76.0/22 Deny Cloud
 185.53.172.0/22 Deny Cloud
 185.76.148.0/22 Deny Cloud
 185.91.76.0/22 Deny Cloud
-185.92.252.0/22 Deny Cloud
 185.141.192.0/24 Deny Cloud
 185.141.195.0/24 Deny Cloud
 185.161.16.0/22 Deny Cloud
@@ -4109,25 +4111,20 @@ Origin: IL
 45.146.80.0/22 Deny Cloud
 193.37.72.0/22 Deny Cloud
 Origin: LT
-46.243.235.0/24 Deny Cloud
 86.107.42.0/24 Deny Cloud
-178.170.141.0/24 Deny Cloud
 188.72.99.0/24 Deny Cloud
 188.72.109.0/24 Deny Cloud
 Origin: NL
 185.108.105.0/24 Deny Cloud
 185.166.86.0/24 Deny Cloud
 Origin: PT
+89.43.47.0/24 Deny Cloud
+Origin: RO
 196.17.221.0/24 Deny Cloud
 196.18.215.0/24 Deny Cloud
 Origin: SC
-192.121.166.0/23 Deny Cloud
-Origin: SE
 37.247.116.0/23 Deny Cloud
 Origin: TR
-91.238.100.0/24 Deny Cloud
-185.255.98.0/23 Deny Cloud
-Origin: UA
 104.237.241.0/24 Deny Cloud
 172.111.141.0/24 Deny Cloud
 172.111.206.0/24 Deny Cloud
@@ -6682,8 +6679,8 @@ Tag: Psychz Networks
 
 
 # ASN 36114 ("Versaweb, LLC").
-# Stop Forum Spam (SFS) listings: 193.
-# Updated: 2020.01.03
+# Stop Forum Spam (SFS) listings: 80.
+# Updated: 2020.01.03 / Checked: 2020.05.24
 
 72.46.128.0/21 Deny Cloud
 72.46.136.0/22 Deny Cloud
@@ -17460,8 +17457,8 @@ Tag: Awareness Software
 
 
 # ASNs 48337, 63949 ("Linode, LLC").
-# Stop Forum Spam (SFS) listings: 3,803 (AS63949).
-# Updated: 2020.01.03
+# Stop Forum Spam (SFS) listings: 3,929 (AS63949).
+# Updated: 2020.05.24
 
 85.90.244.0/22 Deny Cloud
 109.237.24.0/22 Deny Cloud
@@ -17482,7 +17479,6 @@ Origin: EU
 212.111.40.0/22 Deny Cloud
 213.52.128.0/23 Deny Cloud
 213.52.130.0/24 Deny Cloud
-213.219.2.0/24 Deny Cloud
 Origin: GB
 45.118.132.0/22 Deny Cloud
 Origin: JP
@@ -17504,11 +17500,14 @@ Origin: SG
 45.79.64.0/19 Deny Cloud
 45.79.96.0/20 Deny Cloud
 45.79.112.0/22 Deny Cloud
+45.79.119.0/24 Deny Cloud
+45.79.120.0/21 Deny Cloud
 45.79.128.0/18 Deny Cloud
 45.79.192.0/19 Deny Cloud
 45.79.224.0/21 Deny Cloud
+45.79.236.0/24 Deny Cloud
+45.79.240.0/21 Deny Cloud
 50.116.0.0/18 Deny Cloud
-64.5.53.0/24 Deny Cloud
 64.22.71.0/24 Deny Cloud
 64.22.84.0/24 Deny Cloud
 64.22.103.0/24 Deny Cloud
@@ -17528,19 +17527,8 @@ Origin: SG
 66.246.75.0/24 Deny Cloud
 66.246.76.0/24 Deny Cloud
 66.246.138.0/24 Deny Cloud
-67.18.89.0/24 Deny Cloud
-67.18.92.0/24 Deny Cloud
-67.18.176.0/24 Deny Cloud
-67.18.186.0/23 Deny Cloud
-67.18.208.0/24 Deny Cloud
-69.56.173.0/24 Deny Cloud
-69.56.251.0/24 Deny Cloud
-69.93.127.0/24 Deny Cloud
+67.18.186.0/24 Deny Cloud
 69.164.192.0/19 Deny Cloud
-70.85.16.0/24 Deny Cloud
-70.85.31.0/24 Deny Cloud
-70.85.129.0/24 Deny Cloud
-70.87.222.0/24 Deny Cloud
 72.14.176.0/20 Deny Cloud
 74.82.2.0/23 Deny Cloud
 74.82.5.0/24 Deny Cloud
@@ -17565,6 +17553,7 @@ Origin: SG
 172.105.0.0/17 Deny Cloud
 172.105.134.0/23 Deny Cloud
 172.105.144.0/23 Deny Cloud
+172.105.147.0/24 Deny Cloud
 172.105.148.0/22 Deny Cloud
 172.105.152.0/21 Deny Cloud
 172.105.160.0/19 Deny Cloud
@@ -21555,7 +21544,7 @@ Tag: Mainstream doo
 
 
 # ASNs 3595, 13354, 14313, 16626, 27325, 32952 ("zColo").
-# Updated: 2020.01.03
+# Updated: 2020.05.26
 
 190.9.32.0/20 Deny Cloud
 190.114.0.0/24 Deny Cloud
@@ -21570,7 +21559,6 @@ Origin: PA
 64.22.108.0/24 Deny Cloud
 64.22.127.0/24 Deny Cloud
 64.64.222.0/23 Deny Cloud
-64.186.128.0/20 Deny Cloud
 66.219.32.0/19 Deny Cloud
 67.211.32.0/19 Deny Cloud
 69.80.72.0/24 Deny Cloud
@@ -21592,6 +21580,7 @@ Origin: PA
 162.252.168.0/24 Deny Cloud
 170.76.204.0/24 Deny Cloud
 184.75.248.0/21 Deny Cloud
+185.236.136.0/22 Deny Cloud
 192.188.253.0/24 Deny Cloud
 198.73.32.0/24 Deny Cloud
 198.154.96.0/19 Deny Cloud
@@ -21602,6 +21591,7 @@ Origin: PA
 204.75.12.0/22 Deny Cloud
 204.117.64.0/24 Deny Cloud
 205.214.72.0/21 Deny Cloud
+207.210.105.0/24 Deny Cloud
 207.210.122.0/23 Deny Cloud
 208.67.240.0/21 Deny Cloud
 208.74.16.0/21 Deny Cloud
@@ -23716,7 +23706,7 @@ Tag: Infium, UAB
 # ASNs 30548, 31034, 199653, 199883, 200185, 202242, 205727 ("Aruba S.p.A",
 # "Aruba SAS", "ARUBA NETWORKS, INC", "ArubaCloud Limited").
 # Caught attempting to hack honeypots.
-# Updated: 2020.01.08
+# Updated: 2020.05.26
 
 185.35.64.0/22 Deny Cloud
 Origin: DE
@@ -23729,9 +23719,7 @@ Origin: GB
 31.11.32.0/21 Deny Cloud
 31.14.128.0/20 Deny Cloud
 46.37.0.0/19 Deny Cloud
-62.149.128.0/19 Deny Cloud
-62.149.176.0/20 Deny Cloud
-62.149.192.0/18 Deny Cloud
+62.149.128.0/17 Deny Cloud
 77.81.224.0/20 Deny Cloud
 77.223.0.0/19 Deny Cloud
 80.73.224.0/20 Deny Cloud
@@ -23739,6 +23727,7 @@ Origin: GB
 80.211.0.0/17 Deny Cloud
 80.211.128.0/18 Deny Cloud
 80.211.224.0/19 Deny Cloud
+85.159.115.0/24 Deny Cloud
 85.235.128.0/19 Deny Cloud
 86.105.48.0/21 Deny Cloud
 89.36.208.0/20 Deny Cloud
@@ -23765,7 +23754,7 @@ Origin: GB
 185.62.0.0/22 Deny Cloud
 185.94.83.0/24 Deny Cloud
 185.135.102.0/24 Deny Cloud
-185.220.52.0/24 Deny Cloud
+185.220.52.0/23 Deny Cloud
 188.213.160.0/20 Deny Cloud
 193.42.14.0/24 Deny Cloud
 193.58.239.0/24 Deny Cloud
@@ -26404,22 +26393,36 @@ Tag: Flokinet Ltd
 
 
 # ASN 45753 ("Unit 1205-1207").
-# Confirmed data hosters: "Simcentric", "DATAPLUGS.COM", "Ethr.Net", "CLOUD LIMITED", "NETSEC", "Lighting Hosting".
-# ^.*(Simcentric|DATAPLUGS\.COM|Ethr\.Net|CLOUD LIMITED|NETSEC|Hosting).*$\n
-# Confirmed data hosters split to the cloud services signature files.
-# Everything else remains in the ISPs signature files.
-# Stop Forum Spam (SFS) listings: 16.
-# Updated: 2019.09.03 / Checked: 2020.01.01
+# Anything suggestive of potentially being residential or containing human
+# endpoints (e.g., mentions "plaza", "unit", "street", "building", "room") to
+# go to the ISP signatures. Everything else to go to the cloud signatures.
+# ^.*(plaza|unit|street|building|room).*$\n
+# Stop Forum Spam (SFS) listings: 30.
+# Updated: 2020.05.24
 
+103.42.104.0/22 Deny Cloud
+103.100.140.0/22 Deny Cloud
+106.3.86.0/24 Deny Cloud
+Origin: CN
 43.225.196.0/22 Deny Cloud
 52.128.224.0/19 Deny Cloud
 69.72.80.0/21 Deny Cloud
 103.1.224.0/22 Deny Cloud
 103.44.160.0/22 Deny Cloud
+103.70.76.0/23 Deny Cloud
 103.71.252.0/23 Deny Cloud
+103.89.72.0/24 Deny Cloud
+103.91.8.0/22 Deny Cloud
 103.117.144.0/22 Deny Cloud
+103.133.72.0/23 Deny Cloud
+103.133.74.0/24 Deny Cloud
 103.194.184.0/22 Deny Cloud
+103.199.104.0/22 Deny Cloud
 112.121.160.0/19 Deny Cloud
+119.42.144.0/21 Deny Cloud
+123.253.24.0/22 Deny Cloud
+137.59.20.0/22 Deny Cloud
+141.193.152.0/21 Deny Cloud
 148.66.0.0/19 Deny Cloud
 148.66.48.0/20 Deny Cloud
 180.178.32.0/19 Deny Cloud
@@ -26428,6 +26431,12 @@ Tag: Flokinet Ltd
 Origin: HK
 185.191.127.0/24 Deny Cloud
 Origin: NL
+63.216.57.0/24 Deny Cloud
+63.220.4.0/24 Deny Cloud
+63.220.7.0/24 Deny Cloud
+63.221.138.0/24 Deny Cloud
+103.72.82.0/23 Deny Cloud
+Origin: US
 Tag: Unit 1205-1207
 
 
@@ -30183,22 +30192,22 @@ Tag: Fastly
 
 # ASN 42994 ("HQserv Communication Solutions").
 # Dedicated server farm/lease and a significant source of spam.
-# Stop Forum Spam (SFS) listings: 4,130.
-# Updated: 2020.01.06
+# Stop Forum Spam (SFS) listings: 2,604.
+# Updated: 2020.05.26
 
 185.219.127.0/24 Deny Cloud
 Origin: DE
-185.253.69.0/24 Deny Cloud
-Origin: EE
-87.239.255.0/24 Deny Cloud
-Origin: GB
-185.147.140.0/22 Deny Cloud
 185.191.204.0/23 Deny Cloud
 Origin: IL
 45.66.48.0/24 Deny Cloud
 Origin: NL
+45.11.95.0/24 Deny Cloud
+77.83.247.0/24 Deny Cloud
+91.194.11.0/24 Deny Cloud
 193.43.72.0/24 Deny Cloud
 Origin: RU
+161.123.114.0/23 Deny Cloud
+Origin: ZA
 Tag: HQServ
 
 

@@ -1,8 +1,8 @@
 # IPv4 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv4_isps.dat
 
-# Version: 2020.141.400
-# Last modified: 2020.05.21
+# Version: 2020.146.370
+# Last modified: 2020.05.26
 
 
 # ---
@@ -1784,50 +1784,27 @@ Tag: 10dencehispahard
 
 
 # ASN 45753 ("Unit 1205-1207").
-# Confirmed data hosters: "Simcentric", "DATAPLUGS.COM", "Ethr.Net", "CLOUD LIMITED", "NETSEC", "Lighting Hosting".
-# ^.*(Simcentric|DATAPLUGS\.COM|Ethr\.Net|CLOUD LIMITED|NETSEC|Hosting).*$\n
-# Confirmed data hosters split to the cloud services signature files.
-# Everything else remains in the ISPs signature files.
-# Stop Forum Spam (SFS) listings: 16.
-# Updated: 2020.01.01
+# Anything suggestive of potentially being residential or containing human
+# endpoints (e.g., mentions "plaza", "unit", "street", "building", "room") to
+# go to the ISP signatures. Everything else to go to the cloud signatures.
+# ^.*(plaza|unit|street|building|room).*$\n
+# Stop Forum Spam (SFS) listings: 30.
+# Updated: 2020.05.24
 
-103.42.104.0/22 Deny Generic
 103.71.144.0/23 Deny Generic
-103.100.140.0/22 Deny Generic
-106.3.86.0/24 Deny Generic
-118.91.240.0/20 Deny Generic
-118.193.78.0/23 Deny Generic
-183.182.12.0/22 Deny Generic
 Origin: CN
-103.30.24.0/22 Deny Generic
-103.70.76.0/23 Deny Generic
 103.84.84.0/22 Deny Generic
-103.89.72.0/24 Deny Generic
-103.91.8.0/22 Deny Generic
-103.133.72.0/23 Deny Generic
-103.133.74.0/24 Deny Generic
-103.199.104.0/22 Deny Generic
 103.203.48.0/22 Deny Generic
 103.212.96.0/22 Deny Generic
 110.173.48.0/20 Deny Generic
 111.68.0.0/20 Deny Generic
 116.213.36.0/22 Deny Generic
-119.42.144.0/21 Deny Generic
-123.253.24.0/22 Deny Generic
-137.59.20.0/22 Deny Generic
 139.5.200.0/22 Deny Generic
-141.193.152.0/21 Deny Generic
 175.41.16.0/20 Deny Generic
 202.59.249.0/24 Deny Generic
 202.61.97.0/24 Deny Generic
 202.61.111.0/24 Deny Generic
 Origin: HK
-63.216.57.0/24 Deny Generic
-63.220.4.0/24 Deny Generic
-63.220.7.0/24 Deny Generic
-63.221.138.0/24 Deny Generic
-103.72.82.0/23 Deny Generic
-Origin: US
 Tag: Unit 1205-1207
 
 
@@ -2456,9 +2433,8 @@ recaptcha:
 
 
 # ASN 17747 ("SITI NETWORKS LIMITED").
-# %Listed, abuseat.org (CBL-Listed): 17.86%.
-# Stop Forum Spam (SFS) listings: 1,467.
-# Updated: 2020.01.06
+# Stop Forum Spam (SFS) listings: 2,795.
+# Updated: 2020.05.26
 
 43.230.132.0/22 Deny Spam
 45.117.200.0/21 Deny Spam
@@ -2467,6 +2443,7 @@ recaptcha:
 45.249.86.0/24 Deny Spam
 103.24.188.0/22 Deny Spam
 103.26.216.0/22 Deny Spam
+103.52.220.0/22 Deny Spam
 103.57.236.0/22 Deny Spam
 103.57.240.0/21 Deny Spam
 103.70.208.0/22 Deny Spam
@@ -6052,10 +6029,13 @@ recaptcha:
 
 # ASN 23944 ("SKYBroadband SKYCable Corporation").
 # ( CIDRs that we haven't yet seen any problems from have been omitted. I hope to eventually remove this section entirely. )
-# Stop Forum Spam (SFS) listings: 158.
-# Updated: 2019.08.27 / Checked: 2019.12.22
+# Stop Forum Spam (SFS) listings: 187.
+# Updated: 2020.05.26
 
-130.105.0.0/16 Deny Spam
+61.9.109.144/32 Deny Spam
+130.105.8.0/22 Deny Spam
+130.105.24.0/21 Deny Spam
+130.105.60.0/22 Deny Spam
 Origin: PH
 Tag: SKYBROADBAND
 ---
@@ -6259,8 +6239,8 @@ recaptcha:
 
 
 # ASN 24812 ("NPK Home-Net Ltd").
-# Stop Forum Spam (SFS) listings: 198.
-# Updated: 2019.03.20 / Checked: 2019.12.25
+# Stop Forum Spam (SFS) listings: 94.
+# Updated: 2019.03.20 / Checked: 2020.05.26
 
 176.105.192.0/19 Deny Spam
 Origin: UA

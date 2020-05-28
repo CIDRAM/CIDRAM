@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2020.05.16).
+ * This file: Front-end handler (last modified: 2020.05.28).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -1011,20 +1011,32 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'accounts' && $CIDRAM['FE']['Per
                 $CIDRAM['RowInfo']['AccPermissions'] = $CIDRAM['L10N']->getString('response_error');
             }
             $CIDRAM['RowInfo']['AccPassword'] = substr($CIDRAM['RowInfo']['AccPassword'], 0, -2);
+
+            /** Account password warnings. */
             if ($CIDRAM['RowInfo']['AccPassword'] === $CIDRAM['FE']['DefaultPassword']) {
                 $CIDRAM['RowInfo']['AccWarnings'] .= '<br /><div class="txtRd">' . $CIDRAM['L10N']->getString('state_default_password') . '</div>';
             } elseif ((
-                strlen($CIDRAM['RowInfo']['AccPassword']) !== 60 && strlen($CIDRAM['RowInfo']['AccPassword']) !== 96
+                strlen($CIDRAM['RowInfo']['AccPassword']) !== 60 &&
+                strlen($CIDRAM['RowInfo']['AccPassword']) !== 96 &&
+                strlen($CIDRAM['RowInfo']['AccPassword']) !== 97
             ) || (
-                strlen($CIDRAM['RowInfo']['AccPassword']) === 60 && !preg_match('/^\$2.\$\d\d\$/', $CIDRAM['RowInfo']['AccPassword'])
+                strlen($CIDRAM['RowInfo']['AccPassword']) === 60 &&
+                !preg_match('/^\$2.\$\d\d\$/', $CIDRAM['RowInfo']['AccPassword'])
             ) || (
-                strlen($CIDRAM['RowInfo']['AccPassword']) === 96 && !preg_match('/^\$argon2i\$/', $CIDRAM['RowInfo']['AccPassword'])
+                strlen($CIDRAM['RowInfo']['AccPassword']) === 96 &&
+                !preg_match('/^\$argon2i\$/', $CIDRAM['RowInfo']['AccPassword'])
+            ) || (
+                strlen($CIDRAM['RowInfo']['AccPassword']) === 97 &&
+                !preg_match('/^\$argon2id\$/', $CIDRAM['RowInfo']['AccPassword'])
             )) {
                 $CIDRAM['RowInfo']['AccWarnings'] .= '<br /><div class="txtRd">' . $CIDRAM['L10N']->getString('state_password_not_valid') . '</div>';
             }
+
+            /** Logged in notice. */
             if (strrpos($CIDRAM['FE']['SessionList'], "\n" . $CIDRAM['RowInfo']['AccUsername'] . ',') !== false) {
                 $CIDRAM['RowInfo']['AccWarnings'] .= '<br /><div class="txtGn">' . $CIDRAM['L10N']->getString('state_logged_in') . '</div>';
             }
+
             $CIDRAM['RowInfo']['AccID'] = bin2hex($CIDRAM['RowInfo']['AccUsername']);
             $CIDRAM['RowInfo']['AccUsername'] = htmlentities(base64_decode($CIDRAM['RowInfo']['AccUsername']));
             $CIDRAM['FE']['NewLineOffset'] = $CIDRAM['FE']['NewLinePos'];

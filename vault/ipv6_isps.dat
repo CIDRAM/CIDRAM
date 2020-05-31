@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_isps.dat
 
-# Version: 2020.146.370
-# Last modified: 2020.05.26
+# Version: 2020.151.320
+# Last modified: 2020.05.31
 
 
 # ---
@@ -62,9 +62,9 @@ recaptcha:
 
 # ASN 12880 ("Information Technology Company (ITC)").
 # Significant source of email harvesters and unauthorised scrapers.
-# %Listed, abuseat.org (CBL-Listed): 2.52%.
-# Stop Forum Spam (SFS) listings: 699.
-# Updated: 2020.03.06
+# %Listed, abuseat.org (CBL-Listed): 2.46%.
+# Stop Forum Spam (SFS) listings: 596.
+# Updated: 2020.03.06 / Checked: 2020.05.30
 
 2001:4188::/48 Deny Generic
 Origin: IR
@@ -96,14 +96,12 @@ Tag: Hetzner Online GmbH
 
 # ASN 51559 ("Server Internet Bilisim ve Bilgisayar Hizmetleri").
 # (Mark any LV announces as "Cloud" when updating).
-# Stop Forum Spam (SFS) listings: 35.
-# Updated: 2020.01.12
+# Stop Forum Spam (SFS) listings: 87.
+# Updated: 2020.05.29
 
-2a06:c3c0:2::/48 Deny Generic
-Origin: RU
 2a03:2100::/44 Deny Generic
+2a03:2100:10::/48 Deny Generic
 2a05:9bc0::/44 Deny Generic
-2a06:1580::/44 Deny Generic
 2a06:41c0::/46 Deny Generic
 2a06:41c0:4::/48 Deny Generic
 2a06:41c0:6::/47 Deny Generic
@@ -309,7 +307,7 @@ Tag: PIN-AS
 # ASNs 16880, 36421 ("Trend Micro Incorporated").
 # Follows their users around and attempts to get into restricted/private parts
 # of websites.
-# Updated: 2018.03.31 / Checked: 2020.01.12
+# Updated: 2018.03.31 / Checked: 2020.05.29
 
 2620:101:402d::/48 Deny Generic
 2620:101:4034::/47 Deny Generic
@@ -1740,8 +1738,8 @@ recaptcha:
 
 # ASN 41435 ("UnderNet LLC").
 # Caught attempting to hack WordPress sites.
-# Stop Forum Spam (SFS) listings: 1,118.
-# Updated: 2020.01.15
+# Stop Forum Spam (SFS) listings: 1,777.
+# Updated: 2020.01.15 / Checked: 2020.05.30
 
 2a0d:9880::/32 Deny Generic
 Origin: UA
@@ -2134,12 +2132,14 @@ recaptcha:
 # ASN 20115 ("Charter Communications").
 # Domestic ISP from the United States with some limited amount of spamming
 # (marked as "Spam") + caught by security honeypots (marked as "Malware").
-# %Listed, abuseat.org (CBL-Listed): 0.18%.
-# Stop Forum Spam (SFS) listings: 1,647.
-# Updated: 2020.01.12
+# %Listed, abuseat.org (CBL-Listed): 0.36%.
+# Stop Forum Spam (SFS) listings: 1,305.
+# Updated: 2020.05.29
 
-2600:6c44:7900:12af::/64 Deny Spam
+2600:6c44:4000:95::/64 Deny Spam
 2600:6c4e:1200:f5::/64 Deny Spam
+2600:6c55:7900:3b12::/64 Deny Spam
+2600:6c55:7b80:3d24::/64 Deny Spam
 Origin: US
 Tag: Charter Communications
 ---

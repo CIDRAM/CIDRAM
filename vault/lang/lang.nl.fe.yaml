@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Dutch language data for the front-end (last modified: 2020.05.16).
+# This file: Dutch language data for the front-end (last modified: 2020.06.02).
 ##/
 
 Extended Description Bypasses: "De standaard signature rondwegen normaal opgenomen met de primaire pakket."
@@ -332,6 +332,7 @@ label_your_ua: "Je UA:"
 link_accounts: "Accounts"
 link_aux: "Aanvullende Regels"
 link_cache_data: "Cachegegevens"
+link_chat: "Chat"
 link_cidr_calc: "CIDR Calculator"
 link_config: "Configuratie"
 link_documentation: "Documentatie"
@@ -495,24 +496,23 @@ tip_statistics: "Hallo, {username}.<br />Deze pagina bevat een aantal basisgebru
 tip_statistics_disabled: "Notitie: Statistische tracking is momenteel uitgeschakeld, maar kan via de configuratiepagina worden ingeschakeld."
 tip_updates: "Hallo, {username}.<br />De updates pagina stelt u in staat om de verschillende CIDRAM componenten te installeren, verwijderen, en actualiseren (de core pakket, signatures, L10N bestanden, enz)."
 title_login: "Inloggen"
-warning: "Waarschuwingen:"
-warning_signatures_1: "Geen signatuurbestanden zijn actief!"
+warning_signatures_1: "Waarschuwing: Geen signatuurbestanden zijn actief!"
 
 info_some_useful_links: |
  Enkele nuttige links:<br />
      <ul class="pieul">
        <li><span class="comCat" style="cursor:pointer">Tools, bronnen, enz. voor CIDRAM.</span>
          <ul class="comSub">
-           <li><a href="https://github.com/CIDRAM/CIDRAM/issues" hreflang="en" rel="noopener noreferrer external">CIDRAM Kwesties @ GitHub</a> – Kwesties pagina voor CIDRAM (steun, hulp, enz).</li>
-           <li><a href="https://wordpress.org/plugins/cidram/" rel="noopener noreferrer external">CIDRAM @ WordPress.org</a> – WordPress plugin voor CIDRAM.</li>
+           <li><a href="https://github.com/CIDRAM/CIDRAM/issues" hreflang="en" rel="noopener noreferrer external">CIDRAM/CIDRAM/issues</a> – Kwesties pagina voor CIDRAM (steun, hulp, enz).</li>
+           <li><a href="https://wordpress.org/plugins/cidram/" rel="noopener noreferrer external">CIDRAM@WordPress.org</a> – WordPress plugin voor CIDRAM.</li>
            <li><a href="https://bitbucket.org/macmathan/blocklists" hreflang="en" rel="noopener noreferrer external">macmathan/blocklists</a> – Bevat optionele blokkeerlijsten en modules voor CIDRAM, zoals voor het blokkeren van gevaarlijke bots, ongewenste landen, verouderde browsers, enz.</li>
            <li><a href="https://github.com/CIDRAM/CIDRAM-Extras" hreflang="en" rel="noopener noreferrer external">CIDRAM/CIDRAM-Extras</a> – Diverse extra's.</li>
          </ul>
        </li>
        <li><span class="comCat" style="cursor:pointer">Groepen, forums, communities, enz.</span>
          <ul class="comSub">
-           <li><a href="https://www.facebook.com/groups/2204685680/" rel="noopener noreferrer external">PHP.earth @ Facebook</a> – PHP leermiddelen en discussie.</li>
-           <li><a href="https://www.stopforumspam.com/forum/" rel="noopener noreferrer external">Forum @ Stop Forum Spam</a> – Nuttig discussieforum over het stoppen forum spam.</li>
+           <li><a href="https://www.facebook.com/groups/2204685680/" rel="noopener noreferrer external">PHP.earth@Facebook</a> – PHP leermiddelen en discussie.</li>
+           <li><a href="https://www.stopforumspam.com/forum/" rel="noopener noreferrer external">Forum@Stop Forum Spam</a> – Nuttig discussieforum over het stoppen forum spam.</li>
          </ul>
        <li><span class="comCat" style="cursor:pointer">Andere handige tools, bronnen, diensten, enz.</span>
          <ul class="comSub">
@@ -520,9 +520,8 @@ info_some_useful_links: |
            <li><a href="https://bgp.he.net/" hreflang="en" rel="noopener noreferrer external">Hurricane Electric BGP Toolkit</a> – Krijg CIDR's van ASN, bepalen ASN relaties, ontdek ASN's op basis van netwerknamen, enz.</li>
            <li><a href="https://bgpview.io/" hreflang="en" rel="noopener noreferrer external">BGPView</a> – Krijg CIDR's van ASN, bepalen ASN relaties, ontdek ASN's op basis van netwerknamen, enz.</li>
            <li><a href="https://radar.qrator.net/" hreflang="en" rel="noopener noreferrer external">Radar van Qrator</a> – Handig hulpmiddel voor het controleren van de connectiviteit van ASN's en ook voor diverse andere informatie over ASN's.</li>
-           <li><a href="https://www.google.com/transparencyreport/safebrowsing/malware/" rel="noopener noreferrer external">Google Malware Dashboard</a> – Geeft rapporten over malware-infectie tarieven voor ASN.</li>
            <li><a href="https://www.spamhaus.org/statistics/botnet-asn/" rel="noopener noreferrer external">Het Spamhaus Project</a> – Geeft rapporten over botnet infectie tarieven voor ASN.</li>
-           <li><a href="https://www.abuseat.org/public/asn.html" hreflang="en" rel="noopener noreferrer external">Composite Blocking List @ Abuseat.org</a> – Geeft rapporten over botnet infectie tarieven voor ASN.</li>
+           <li><a href="https://www.abuseat.org/public/asn.html" hreflang="en" rel="noopener noreferrer external">Composite Blocking List@Abuseat.org</a> – Geeft rapporten over botnet infectie tarieven voor ASN.</li>
            <li><a href="https://abuseipdb.com/" hreflang="en" rel="noopener noreferrer external">AbuseIPDB</a> – Onderhoudt een database van bekende beledigend IP's; Biedt een API voor het controleren en rapporteren van IP's.</li>
          </ul>
        </li>

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Configuration defaults file (last modified: 2020.02.01).
+# This file: Configuration defaults file (last modified: 2020.06.02).
 ##/
 
 Config Defaults:
@@ -40,6 +40,8 @@ Config Defaults:
     Statistics: "Statistics"
     Webhooks: "Webhooks"
     Output: "Output"
+   value_preg_filter:
+    "~\s~": ""
   truncate:
    type: "kb"
    default: "0KB"
@@ -261,6 +263,8 @@ Config Defaults:
   default_dns:
    type: "string"
    default: "8.8.8.8,8.8.4.4"
+   value_preg_filter:
+    "~\s~": ""
   search_engine_verification:
    type: "bool"
    default: true
@@ -313,13 +317,19 @@ Config Defaults:
     GitHub: "GitHub"
     BitBucket: "BitBucket"
     NotABug: "NotABug"
+   value_preg_filter:
+    "~\s~": ""
  signatures:
   ipv4:
    type: "string"
    default: "ipv4.dat,ipv4_bogons.dat,ipv4_custom.dat,ipv4_isps.dat,ipv4_other.dat"
+   value_preg_filter:
+    "~\s~": ""
   ipv6:
    type: "string"
    default: "ipv6.dat,ipv6_bogons.dat,ipv6_custom.dat,ipv6_isps.dat,ipv6_other.dat"
+   value_preg_filter:
+    "~\s~": ""
   block_cloud:
    type: "bool"
    default: true

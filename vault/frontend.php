@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2020.05.28).
+ * This file: Front-end handler (last modified: 2020.06.03).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -49,11 +49,6 @@ $CIDRAM['FE'] = [
 
     /** Font magnification. */
     'Magnification' => $CIDRAM['Config']['template_data']['magnification'],
-
-    /** Warns if maintenance mode is enabled. */
-    'MaintenanceWarning' => (
-        $CIDRAM['Config']['general']['maintenance_mode']
-    ) ? "\n<div class=\"center\"><span class=\"txtRd\">" . $CIDRAM['L10N']->getString('state_maintenance_mode') . '</span></div><hr />' : '',
 
     /** Define active configuration file. */
     'ActiveConfigFile' => !empty($CIDRAM['Overrides']) ? $CIDRAM['Domain'] . '.config.ini' : 'config.ini',
@@ -123,9 +118,47 @@ $CIDRAM['FE'] = [
     'ASYNC' => !empty($_POST['ASYNC']),
 
     /** Will be populated by the page title. */
-    'FE_Title' => ''
+    'FE_Title' => '',
 
+    /**
+     * Defining some links here instead of in the template files or the L10N
+     * data so that it'll be easier to change them in the future if and when
+     * needed due to less potential duplication across the codebase (this
+     * excludes links shown at the front-end homepage).
+     */
+    'URL-Chat' => 'https://gitter.im/CIDRAM/Lobby',
+    'URL-Documentation' => 'https://cidram.github.io/#documentation',
+    'URL-Website' => 'https://cidram.github.io/'
 ];
+
+/** Append "@ Gitter" to the chat link text. */
+if (isset($CIDRAM['L10N']->Data['link_chat'])) {
+    $CIDRAM['L10N']->Data['link_chat'] .= '@Gitter';
+} else {
+    $CIDRAM['L10N']->Data['link_chat'] = '@Gitter';
+}
+
+/** Assign website link text. */
+$CIDRAM['L10N']->Data['link_website'] = 'CIDRAM@GitHub';
+
+/** To be populated by warnings. */
+$CIDRAM['Warnings'] = [];
+
+/** Warns if maintenance mode is enabled. */
+if ($CIDRAM['Config']['general']['maintenance_mode']) {
+    $CIDRAM['Warnings'][] = '<span class="txtRd"><u>' . $CIDRAM['L10N']->getString('state_maintenance_mode') . '</u></span>';
+}
+
+/** Warngs if no signature files are active. */
+if (empty($CIDRAM['Config']['signatures']['ipv4']) && empty($CIDRAM['Config']['signatures']['ipv6'])) {
+    $CIDRAM['Warnings'][] = '<span class="txtRd"><u>' . $CIDRAM['L10N']->getString('warning_signatures_1') . '</u></span>';
+}
+
+/** Prepare warnings. */
+$CIDRAM['FE']['MaintenanceWarning'] = $CIDRAM['Warnings'] ? "\n<div class=\"center\">⚠️ " . implode(" ⚠️<br />\n⚠️ ", $CIDRAM['Warnings']) . ' ⚠️</div><hr />' : '';
+
+/** Cleanup. */
+unset($CIDRAM['Warnings']);
 
 /** Menu toggle JavaScript, needed by some front-end pages. */
 $CIDRAM['MenuToggle'] = '<script type="text/javascript">' .
@@ -653,8 +686,8 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === '' && !$CIDRAM['FE']['CronMode']
 
     /** Build repository backup locations information. */
     $CIDRAM['FE']['BackupLocations'] = implode(' | ', [
-        '<a href="https://bitbucket.org/Maikuolan/cidram" hreflang="en-US" target="_blank" rel="noopener external">Bitbucket</a>',
-        '<a href="https://sourceforge.net/projects/cidram/" hreflang="en-US" target="_blank" rel="noopener external">SourceForge</a>'
+        '<a href="https://bitbucket.org/Maikuolan/cidram" hreflang="en-US" target="_blank" rel="noopener external">CIDRAM@Bitbucket</a>',
+        '<a href="https://sourceforge.net/projects/cidram/" hreflang="en-US" target="_blank" rel="noopener external">CIDRAM@SourceForge</a>'
     ]);
 
     /** Where to find remote version information? */
@@ -772,15 +805,6 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === '' && !$CIDRAM['FE']['CronMode']
     $CIDRAM['FE']['Extensions'] = implode("\n", $CIDRAM['FE']['Extensions']);
     $CIDRAM['FE']['ExtensionIsAvailable'] = $CIDRAM['LTRinRTF']($CIDRAM['L10N']->getString('label_extension') . '➡' . $CIDRAM['L10N']->getString('label_installed_available'));
     unset($CIDRAM['ExtVer'], $CIDRAM['ThisResponse'], $CIDRAM['ThisExtension']);
-
-    /** Process warnings. */
-    $CIDRAM['FE']['Warnings'] = '';
-    if (empty($CIDRAM['Config']['signatures']['ipv4']) && empty($CIDRAM['Config']['signatures']['ipv6'])) {
-        $CIDRAM['FE']['Warnings'] .= '<li>' . $CIDRAM['L10N']->getString('warning_signatures_1') . '</li>';
-    }
-    if ($CIDRAM['FE']['Warnings']) {
-        $CIDRAM['FE']['Warnings'] = '<hr />' . $CIDRAM['L10N']->getString('warning') . '<br /><div class="txtRd"><ul>' . $CIDRAM['FE']['Warnings'] . '</ul></div>';
-    }
 
     /** Parse output. */
     $CIDRAM['FE']['FE_Content'] = $CIDRAM['ParseVars'](
@@ -3175,6 +3199,13 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-test' && $CIDRAM['FE']['Perm
                             $CIDRAM['ThisIP']['YesNo']
                         );
                     }
+                }
+                if ($CIDRAM['BlockInfo']['Ignored']) {
+                    $CIDRAM['ThisIP']['YesNo'] .= sprintf(
+                        ', +%s (%s)',
+                        $CIDRAM['L10N']->getString('state_ignored'),
+                        $CIDRAM['BlockInfo']['Ignored']
+                    );
                 }
             } elseif ($CIDRAM['BlockInfo']['Ignored']) {
                 $CIDRAM['ThisIP']['YesNo'] = sprintf(

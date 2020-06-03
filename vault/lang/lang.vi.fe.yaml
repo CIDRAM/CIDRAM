@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Vietnamese language data for the front-end (last modified: 2020.05.16).
+# This file: Vietnamese language data for the front-end (last modified: 2020.06.02).
 ##/
 
 Extended Description Bypasses: "Các tập tin đường tránh chữ ký mặc định thường bao gồm với gói thầu chính."
@@ -326,6 +326,7 @@ label_your_ua: "UA của bạn:"
 link_accounts: "Tài khoản"
 link_aux: "Quy tắc phụ trợ"
 link_cache_data: "Dữ liệu cache"
+link_chat: "Chat"
 link_cidr_calc: "Máy tính CIDR"
 link_config: "Cấu hình"
 link_documentation: "Tài liệu"
@@ -485,24 +486,23 @@ tip_statistics: "Xin chào, {username}.<br />Trang này cho thấy một số th
 tip_statistics_disabled: "Lưu ý: Giám sát thống kê hiện bị vô hiệu hóa, nhưng có thể được kích hoạt thông qua trang cấu hình."
 tip_updates: "Xin chào, {username}.<br />Trang cập nhật cho phép bạn cài đặt, gỡ bỏ cài đặt, và cập nhật các gói khác nhau cho CIDRAM (các gói cốt lõi, chữ ký, bổ sung, các tập tin L10N, vv)."
 title_login: "Đăng Nhập"
-warning: "Cảnh báo:"
-warning_signatures_1: "Không có tập tin chữ ký nào đang hoạt động!"
+warning_signatures_1: "Cảnh báo: Không có tập tin chữ ký nào đang hoạt động!"
 
 info_some_useful_links: |
  Một số liên kết hữu ích:<br />
      <ul class="pieul">
        <li><span class="comCat" style="cursor:pointer">Công cụ, tài nguyên, vv cho CIDRAM.</span>
          <ul class="comSub">
-           <li><a href="https://github.com/CIDRAM/CIDRAM/issues" hreflang="en" rel="noopener noreferrer external">Vấn đề cho CIDRAM @ GitHub</a> – Trang các vấn đề cho CIDRAM (hỗ trợ, vv).</li>
-           <li><a href="https://wordpress.org/plugins/cidram/" rel="noopener noreferrer external">CIDRAM @ WordPress.org</a> – Plugin WordPress cho CIDRAM.</li>
+           <li><a href="https://github.com/CIDRAM/CIDRAM/issues" hreflang="en" rel="noopener noreferrer external">CIDRAM/CIDRAM/issues</a> – Trang các vấn đề cho CIDRAM (hỗ trợ, vv).</li>
+           <li><a href="https://wordpress.org/plugins/cidram/" rel="noopener noreferrer external">CIDRAM@WordPress.org</a> – Plugin WordPress cho CIDRAM.</li>
            <li><a href="https://bitbucket.org/macmathan/blocklists" hreflang="en" rel="noopener noreferrer external">macmathan/blocklists</a> – Chứa danh sách chặn và mô-đun tùy chọn cho CIDRAM chẳng hạn như để chặn chương trình nguy hiểm, quốc gia không mong muốn, trình duyệt lỗi thời, vv.</li>
            <li><a href="https://github.com/CIDRAM/CIDRAM-Extras" hreflang="en" rel="noopener noreferrer external">CIDRAM/CIDRAM-Extras</a> – Bổ sung khác nhau.</li>
          </ul>
        </li>
        <li><span class="comCat" style="cursor:pointer">Nhóm, diễn đàn, cộng đồng, vv.</span>
          <ul class="comSub">
-           <li><a href="https://www.facebook.com/groups/2204685680/" rel="noopener noreferrer external">PHP.earth @ Facebook</a> – PHP tài nguyên học tập và thảo luận.</li>
-           <li><a href="https://www.stopforumspam.com/forum/" rel="noopener noreferrer external">Diễn đàn @ Stop Forum Spam</a> – Diễn đàn thảo luận hữu ích về việc ngưng diễn đàn thư rác.</li>
+           <li><a href="https://www.facebook.com/groups/2204685680/" rel="noopener noreferrer external">PHP.earth@Facebook</a> – PHP tài nguyên học tập và thảo luận.</li>
+           <li><a href="https://www.stopforumspam.com/forum/" rel="noopener noreferrer external">Diễn đàn@Stop Forum Spam</a> – Diễn đàn thảo luận hữu ích về việc ngưng diễn đàn thư rác.</li>
          </ul>
        <li><span class="comCat" style="cursor:pointer">Công cụ, tài nguyên, dịch vụ, vv hữu ích khác.</span>
          <ul class="comSub">
@@ -510,9 +510,8 @@ info_some_useful_links: |
            <li><a href="https://bgp.he.net/" hreflang="en" rel="noopener noreferrer external">Hurricane Electric BGP Toolkit</a> – Nhận các CIDR từ các ASN, xác định các mối quan hệ các ASN, khám phá vùng các ASN dựa trên các tên mạng, vv.</li>
            <li><a href="https://bgpview.io/" hreflang="en" rel="noopener noreferrer external">BGPView</a> – Nhận các CIDR từ các ASN, xác định các mối quan hệ các ASN, khám phá vùng các ASN dựa trên các tên mạng, vv.</li>
            <li><a href="https://radar.qrator.net/" hreflang="en" rel="noopener noreferrer external">Radar bởi Qrator</a> – Công cụ hữu ích để kiểm tra kết nối ASN cũng như cho nhiều thông tin khác về ASN.</li>
-           <li><a href="https://www.google.com/transparencyreport/safebrowsing/malware/" rel="noopener noreferrer external">Google Malware Dashboard</a> – Hiển thị báo cáo về tỷ lệ lây nhiễm phần mềm độc hại cho các ASN.</li>
            <li><a href="https://www.spamhaus.org/statistics/botnet-asn/" rel="noopener noreferrer external">Dự án Spamhaus</a> – Hiển thị báo cáo về tỷ lệ lây nhiễm chương trình thư rác cho các ASN.</li>
-           <li><a href="https://www.abuseat.org/public/asn.html" hreflang="en" rel="noopener noreferrer external">Danh sách chặn hỗn hợp @ Abuseat.org</a> – Hiển thị báo cáo về tỷ lệ lây nhiễm chương trình thư rác cho các ASN.</li>
+           <li><a href="https://www.abuseat.org/public/asn.html" hreflang="en" rel="noopener noreferrer external">Danh sách chặn hỗn hợp@Abuseat.org</a> – Hiển thị báo cáo về tỷ lệ lây nhiễm chương trình thư rác cho các ASN.</li>
            <li><a href="https://abuseipdb.com/" hreflang="en" rel="noopener noreferrer external">AbuseIPDB</a> – Duy trì một cơ sở dữ liệu của các IP mà lạm dụng và biết; Cung cấp một API để kiểm tra và báo cáo các IP.</li>
          </ul>
        </li>

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2020.05.16).
+ * This file: Front-end functions file (last modified: 2020.06.03).
  */
 
 /**
@@ -348,17 +348,28 @@ $CIDRAM['AppendToString'] = function (&$String, $Delimit = '', $Append = '') {
  */
 $CIDRAM['SanityCheck'] = function ($FileName, $FileData) {
 
+    /** A very simple, rudimentary check for unwanted, possibly maliciously inserted HTML. */
+    if ($FileData && preg_match('~<(?:html|body)~i', $FileData)) {
+        return false;
+    }
+
     /** Check whether YAML is valid. */
     if (preg_match('~\.ya?ml$~i', $FileName)) {
         $ThisYAML = new \Maikuolan\Common\YAML();
         if (!($ThisYAML->process($FileData, $ThisYAML->Data))) {
             return false;
         }
+        return true;
     }
 
-    /** A very simple, rudimentary check for unwanted, possibly maliciously inserted HTML. */
-    if ($FileData && preg_match('~<(?:html|body)~i', $FileData)) {
-        return false;
+    /** Check whether GIF is valid. */
+    if (preg_match('~\.gif$~i', $FileName)) {
+        return preg_match('~^GIF8[79]a~', $FileData);
+    }
+
+    /** Check whether PNG is valid. */
+    if (preg_match('~\.png$~i', $FileName)) {
+        return preg_match('~^\x89PNG~', $FileData);
     }
 
     /** Passed. */

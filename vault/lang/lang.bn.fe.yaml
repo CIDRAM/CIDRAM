@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Bangla language data for the front-end (last modified: 2020.05.16).
+# This file: Bangla language data for the front-end (last modified: 2020.06.02).
 ##/
 
 Extended Description Bypasses: "ডিফল্ট স্বাক্ষর বাইপাস ফাইল সাধারণত প্রধান প্যাকেজ সহ অন্তর্ভুক্ত।"
@@ -324,6 +324,7 @@ label_your_ua: "আপনার UA:"
 link_accounts: "অ্যাকাউন্ট"
 link_aux: "অক্সিলিয়ারি নিয়ম"
 link_cache_data: "ক্যাশ ডেটা"
+link_chat: "চ্যাট"
 link_cidr_calc: "CIDR ক্যালকুলেটর"
 link_config: "কনফিগারেশন"
 link_documentation: "ডকুমেন্টেশনটি"
@@ -483,24 +484,23 @@ tip_statistics: "হ্যালো, {username}।<br />এই পৃষ্ঠ�
 tip_statistics_disabled: "নোট: পরিসংখ্যান ট্র্যাকিং বর্তমানে অক্ষম আছে, তবে কনফিগারেশন পৃষ্ঠার মাধ্যমে সক্ষম করা যেতে পারে।"
 tip_updates: "হ্যালো, {username}।<br />আপডেট পৃষ্ঠাটি আপনাকে CIDRAM কম্পোনেন্ট ইনস্টল, আনইনস্টল এবং আপডেট করতে দেয় (কোর প্যাকেজ, স্বাক্ষর, L10N ফাইল, ইত্যাদি)।"
 title_login: "লগ ইন"
-warning: "সতর্কবাণী:"
-warning_signatures_1: "কোন স্বাক্ষর ফাইল সক্রিয় নেই!"
+warning_signatures_1: "সতর্কতা: কোন স্বাক্ষর ফাইল সক্রিয় নেই!"
 
 info_some_useful_links: |
  কিছু দরকারী লিঙ্ক:<br />
      <ul class="pieul">
        <li><span class="comCat" style="cursor:pointer">CIDRAM জন্য সরঞ্জাম, সম্পদ, ইত্যাদি।</span>
          <ul class="comSub">
-           <li><a href="https://github.com/CIDRAM/CIDRAM/issues" hreflang="en" rel="noopener noreferrer external">CIDRAM সমর্থন @ GitHub</a> – CIDRAM সমর্থন পৃষ্ঠা (সহায়তা, সহায়তা, ইত্যাদির জন্য)।</li>
-           <li><a href="https://wordpress.org/plugins/cidram/" rel="noopener noreferrer external">CIDRAM @ WordPress.org</a> – CIDRAM জন্য WordPress প্লাগইন।</li>
+           <li><a href="https://github.com/CIDRAM/CIDRAM/issues" hreflang="en" rel="noopener noreferrer external">CIDRAM/CIDRAM/issues</a> – CIDRAM সমর্থন পৃষ্ঠা (সহায়তা, সহায়তা, ইত্যাদির জন্য)।</li>
+           <li><a href="https://wordpress.org/plugins/cidram/" rel="noopener noreferrer external">CIDRAM@WordPress.org</a> – CIDRAM জন্য WordPress প্লাগইন।</li>
            <li><a href="https://bitbucket.org/macmathan/blocklists" hreflang="en" rel="noopener noreferrer external">macmathan/blocklists</a> – CIDRAM এর জন্য ঐচ্ছিক ব্লক-লিস্ট এবং মডিউল রয়েছে যেমন বিপজ্জনক বট, অবাঞ্ছিত দেশ, পুরনো ব্রাউজার ইত্যাদি অবরুদ্ধ করা।</li>
            <li><a href="https://github.com/CIDRAM/CIDRAM-Extras" hreflang="en" rel="noopener noreferrer external">CIDRAM/CIDRAM-Extras</a> – বিভিন্ন অতিরিক্ত।</li>
          </ul>
        </li>
        <li><span class="comCat" style="cursor:pointer">গ্রুপ, ফোরাম, সম্প্রদায়, ইত্যাদি।</span>
          <ul class="comSub">
-           <li><a href="https://www.facebook.com/groups/2204685680/" rel="noopener noreferrer external">PHP.earth @ Facebook</a> – PHP লার্নিং সম্পদ এবং আলোচনা।</li>
-           <li><a href="https://www.stopforumspam.com/forum/" rel="noopener noreferrer external">ফোরাম @ Stop Forum Spam</a> – ফোরাম স্প্যাম বন্ধ করার জন্য দরকারী আলোচনা ফোরাম।</li>
+           <li><a href="https://www.facebook.com/groups/2204685680/" rel="noopener noreferrer external">PHP.earth@Facebook</a> – PHP লার্নিং সম্পদ এবং আলোচনা।</li>
+           <li><a href="https://www.stopforumspam.com/forum/" rel="noopener noreferrer external">ফোরাম@Stop Forum Spam</a> – ফোরাম স্প্যাম বন্ধ করার জন্য দরকারী আলোচনা ফোরাম।</li>
          </ul>
        <li><span class="comCat" style="cursor:pointer">অন্যান্য দরকারী সরঞ্জাম, সম্পদ, সেবা, ইত্যাদি।</span>
          <ul class="comSub">
@@ -508,7 +508,6 @@ info_some_useful_links: |
            <li><a href="https://bgp.he.net/" hreflang="en" rel="noopener noreferrer external">Hurricane Electric BGP টুলকিট</a> – ASNগুলি থেকে CIDRগুলি পান, ASN সম্পর্কগুলি নির্ধারণ করুন, নেটওয়ার্ক নাম উপর ভিত্তি করে ASNগুলি আবিষ্কার, ইত্যাদি।</li>
            <li><a href="https://bgpview.io/" hreflang="en" rel="noopener noreferrer external">BGPView</a> – ASNগুলি থেকে CIDRগুলি পান, ASN সম্পর্কগুলি নির্ধারণ করুন, নেটওয়ার্ক নাম উপর ভিত্তি করে ASNগুলি আবিষ্কার, ইত্যাদি।</li>
            <li><a href="https://radar.qrator.net/" hreflang="en" rel="noopener noreferrer external">Qrator Radar</a> – দরকারী ASN সংযোগ পরীক্ষা সরঞ্জাম।</li>
-           <li><a href="https://www.google.com/transparencyreport/safebrowsing/malware/" rel="noopener noreferrer external">Google ম্যালওয়ারের ড্যাশবোর্ড</a> – ASNগুলি জন্য ম্যালওয়্যার সংক্রমণের হার রিপোর্ট।</li>
            <li><a href="https://www.spamhaus.org/statistics/botnet-asn/" rel="noopener noreferrer external">The Spamhaus Project</a> – ASNগুলি এর জন্য ম্যালওয়ার সংক্রমণের হার সংক্রান্ত প্রতিবেদনগুলি প্রদর্শন করে।</li>
            <li><a href="https://www.abuseat.org/public/asn.html" hreflang="en" rel="noopener noreferrer external">Abuseat.org কম্পোজিট ব্লকিং তালিকা</a> – ASNগুলি এর জন্য ম্যালওয়ার সংক্রমণের হার সংক্রান্ত প্রতিবেদনগুলি প্রদর্শন করে।</li>
            <li><a href="https://abuseipdb.com/" hreflang="en" rel="noopener noreferrer external">AbuseIPDB</a> – একটি পরিচিত অপমানজনক IPগুলি ডাটাবেস বজায় রাখে; IPগুলি চেক এবং রিপোর্ট করার জন্য একটি API উপলব্ধ করে।</li>

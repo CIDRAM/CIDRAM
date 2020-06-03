@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Spanish language data for the front-end (last modified: 2020.05.16).
+# This file: Spanish language data for the front-end (last modified: 2020.06.02).
 ##/
 
 Extended Description Bypasses: "Los archivos para bypass de firmas estándar normalmente se incluyen con el paquete principal."
@@ -332,6 +332,7 @@ label_your_ua: "Tu UA:"
 link_accounts: "Cuentas"
 link_aux: "Reglas Auxiliares"
 link_cache_data: "Datos de Caché"
+link_chat: "Chat"
 link_cidr_calc: "Calculadora CIDR"
 link_config: "Configuración"
 link_documentation: "Documentación"
@@ -495,24 +496,23 @@ tip_statistics: "Hola, {username}.<br />Esta página muestra algunas estadístic
 tip_statistics_disabled: "Nota: El seguimiento de estadísticas está actualmente deshabilitado, pero se puede habilitar a través de la página de configuración."
 tip_updates: "Hola, {username}.<br />La página de actualizaciones permite instalar, desinstalar y actualizar los diversos componentes de CIDRAM (el paquete básico, firmas, archivos de L10N, etc)."
 title_login: "Login"
-warning: "Advertencias:"
-warning_signatures_1: "¡No hay archivos de firma activos!"
+warning_signatures_1: "Advertencia: ¡No hay archivos de firma activos!"
 
 info_some_useful_links: |
  Algunos enlaces útiles:<br />
      <ul class="pieul">
        <li><span class="comCat" style="cursor:pointer">Herramientas, recursos, etc. para CIDRAM.</span>
          <ul class="comSub">
-           <li><a href="https://github.com/CIDRAM/CIDRAM/issues" hreflang="en" rel="noopener noreferrer external">Problemas de CIDRAM @ GitHub</a> – Página de problemas para CIDRAM (apoyo, asistencia, etc).</li>
-           <li><a href="https://wordpress.org/plugins/cidram/" rel="noopener noreferrer external">CIDRAM @ WordPress.org</a> – WordPress plugin para CIDRAM.</li>
+           <li><a href="https://github.com/CIDRAM/CIDRAM/issues" hreflang="en" rel="noopener noreferrer external">CIDRAM/CIDRAM/issues</a> – Página de problemas para CIDRAM (apoyo, asistencia, etc).</li>
+           <li><a href="https://wordpress.org/plugins/cidram/" rel="noopener noreferrer external">CIDRAM@WordPress.org</a> – WordPress plugin para CIDRAM.</li>
            <li><a href="https://bitbucket.org/macmathan/blocklists" hreflang="en" rel="noopener noreferrer external">macmathan/blocklists</a> – Contiene listas de bloqueo y módulos opcionales para CIDRAM, como para bloquear bots peligrosos, países no deseados, navegadores desactualizados, etc.</li>
            <li><a href="https://github.com/CIDRAM/CIDRAM-Extras" hreflang="en" rel="noopener noreferrer external">CIDRAM/CIDRAM-Extras</a> – Varios extras.</li>
          </ul>
        </li>
        <li><span class="comCat" style="cursor:pointer">Grupos, foros, comunidades, etc.</span>
          <ul class="comSub">
-           <li><a href="https://www.facebook.com/groups/2204685680/" rel="noopener noreferrer external">PHP.earth @ Facebook</a> – PHP recursos de aprendizaje y discusión.</li>
-           <li><a href="https://www.stopforumspam.com/forum/" rel="noopener noreferrer external">Forum @ Stop Forum Spam</a> – Útil foro de discusión sobre detener spam de foro.</li>
+           <li><a href="https://www.facebook.com/groups/2204685680/" rel="noopener noreferrer external">PHP.earth@Facebook</a> – PHP recursos de aprendizaje y discusión.</li>
+           <li><a href="https://www.stopforumspam.com/forum/" rel="noopener noreferrer external">Forum@Stop Forum Spam</a> – Útil foro de discusión sobre detener spam de foro.</li>
          </ul>
        <li><span class="comCat" style="cursor:pointer">Otras herramientas, recursos, servicios, etc que son útiles.</span>
          <ul class="comSub">
@@ -520,9 +520,8 @@ info_some_useful_links: |
            <li><a href="https://bgp.he.net/" hreflang="en" rel="noopener noreferrer external">Hurricane Electric BGP Toolkit</a> – Obtener CIDRs de ASNs, Determinar las relaciones de las ASNs, Descubre los ASNs basados en nombres de redes, etc.</li>
            <li><a href="https://bgpview.io/" hreflang="en" rel="noopener noreferrer external">BGPView</a> – Obtener CIDRs de ASNs, Determinar las relaciones de las ASNs, Descubre los ASNs basados en nombres de redes, etc.</li>
            <li><a href="https://radar.qrator.net/" hreflang="en" rel="noopener noreferrer external">Radar por Qrator</a> – Útil herramienta para comprobar la conectividad de los ASNs así como para otras informaciones sobre los ASNs.</li>
-           <li><a href="https://www.google.com/transparencyreport/safebrowsing/malware/" rel="noopener noreferrer external">Google Malware Dashboard</a> – Muestra informes sobre las tasas de infección de malware para los ASNs.</li>
            <li><a href="https://www.spamhaus.org/statistics/botnet-asn/" rel="noopener noreferrer external">El Proyecto Spamhaus</a> – Muestra informes sobre las tasas de infección por botnets para los ASNs.</li>
-           <li><a href="https://www.abuseat.org/public/asn.html" hreflang="en" rel="noopener noreferrer external">Lista de bloqueo compuesto @ Abuseat.org</a> – Muestra informes sobre las tasas de infección por botnets para los ASNs.</li>
+           <li><a href="https://www.abuseat.org/public/asn.html" hreflang="en" rel="noopener noreferrer external">Lista de bloqueo compuesto@Abuseat.org</a> – Muestra informes sobre las tasas de infección por botnets para los ASNs.</li>
            <li><a href="https://abuseipdb.com/" hreflang="en" rel="noopener noreferrer external">AbuseIPDB</a> – Mantiene una base de datos de IPs abusivos conocidos; Proporciona una API para comprobar e informar IPs.</li>
          </ul>
        </li>

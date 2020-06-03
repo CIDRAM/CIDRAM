@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Russian language data for the front-end (last modified: 2020.05.16).
+# This file: Russian language data for the front-end (last modified: 2020.06.02).
 ##/
 
 Extended Description Bypasses: "Стандартная сигнатуры байпасы, обычно включены в основной пакет."
@@ -335,6 +335,7 @@ label_your_ua: "Ваш UA:"
 link_accounts: "Учетными Записями"
 link_aux: "Вспомогательные Правила"
 link_cache_data: "Данные Кэша"
+link_chat: "Чат"
 link_cidr_calc: "Калькулятор CIDR"
 link_config: "Конфигурация"
 link_documentation: "Документация"
@@ -500,24 +501,23 @@ tip_statistics: "Привет, {username}.<br />На этой странице �
 tip_statistics_disabled: "Заметка: Отслеживание статистики в настоящее время отключено, но может быть включено через страницу конфигурации."
 tip_updates: "Привет, {username}.<br />Обновления страница позволяет устанавливать, удалить и обновления для различных компонентов CIDRAM (пакет ядра, сигнатуры, L10N файлы, итд)."
 title_login: "Войти"
-warning: "Предупреждения:"
-warning_signatures_1: "Активные файлы сигнатуры не активны!"
+warning_signatures_1: "Предупреждение: Активные файлы сигнатуры не активны!"
 
 info_some_useful_links: |
  Некоторые полезные ссылки:<br />
      <ul class="pieul">
        <li><span class="comCat" style="cursor:pointer">Инструменты, ресурсы и т.д. для CIDRAM.</span>
          <ul class="comSub">
-           <li><a href="https://github.com/CIDRAM/CIDRAM/issues" hreflang="en" rel="noopener noreferrer external">CIDRAM Вопросы @ GitHub</a> – Страница вопросы для CIDRAM (поддержка, помощь, и т.д.).</li>
-           <li><a href="https://wordpress.org/plugins/cidram/" rel="noopener noreferrer external">CIDRAM @ WordPress.org</a> – WordPress плагин для CIDRAM.</li>
+           <li><a href="https://github.com/CIDRAM/CIDRAM/issues" hreflang="en" rel="noopener noreferrer external">CIDRAM/CIDRAM/issues</a> – Страница вопросы для CIDRAM (поддержка, помощь, и т.д.).</li>
+           <li><a href="https://wordpress.org/plugins/cidram/" rel="noopener noreferrer external">CIDRAM@WordPress.org</a> – WordPress плагин для CIDRAM.</li>
            <li><a href="https://bitbucket.org/macmathan/blocklists" hreflang="en" rel="noopener noreferrer external">macmathan/blocklists</a> – Содержит дополнительные блоклисты и модули для CIDRAM, такие как блокирование опасных ботов, нежелательных стран, устаревшие браузеры, и т.д.</li>
            <li><a href="https://github.com/CIDRAM/CIDRAM-Extras" hreflang="en" rel="noopener noreferrer external">CIDRAM/CIDRAM-Extras</a> – Различные дополнения.</li>
          </ul>
        </li>
        <li><span class="comCat" style="cursor:pointer">Группы, форумы, сообщества и т.д.</span>
          <ul class="comSub">
-           <li><a href="https://www.facebook.com/groups/2204685680/" rel="noopener noreferrer external">PHP.earth @ Facebook</a> – PHP учебных ресурсов и обсуждение.</li>
-           <li><a href="https://www.stopforumspam.com/forum/" rel="noopener noreferrer external">Форум @ Stop Forum Spam</a> – Полезное Форум о останавливая форум спам.</li>
+           <li><a href="https://www.facebook.com/groups/2204685680/" rel="noopener noreferrer external">PHP.earth@Facebook</a> – PHP учебных ресурсов и обсуждение.</li>
+           <li><a href="https://www.stopforumspam.com/forum/" rel="noopener noreferrer external">Форум@Stop Forum Spam</a> – Полезное Форум о останавливая форум спам.</li>
          </ul>
        <li><span class="comCat" style="cursor:pointer">Другие полезные инструменты, ресурсы, услуги и т.д.</span>
          <ul class="comSub">
@@ -525,9 +525,8 @@ info_some_useful_links: |
            <li><a href="https://bgp.he.net/" hreflang="en" rel="noopener noreferrer external">Hurricane Electric BGP Toolkit</a> – Получить CIDRs от ASNs, определить ASN отношения, обнаружить ASNs основанный на сетевых имен, и т.д.</li>
            <li><a href="https://bgpview.io/" hreflang="en" rel="noopener noreferrer external">BGPView</a> – Получить CIDRs от ASNs, определить ASN отношения, обнаружить ASNs основанный на сетевых имен, и т.д.</li>
            <li><a href="https://radar.qrator.net/" hreflang="en" rel="noopener noreferrer external">Radar от Qrator</a> – Полезный инструмент для проверки связности ASNs а также для различных других сведений о ASNs.</li>
-           <li><a href="https://www.google.com/transparencyreport/safebrowsing/malware/" rel="noopener noreferrer external">Google Malware Dashboard</a> – Отображает отчеты о вредоносных программ уровень инфицирования для ASNs.</li>
            <li><a href="https://www.spamhaus.org/statistics/botnet-asn/" rel="noopener noreferrer external">Проект Spamhaus</a> – Отображает отчеты о ботнет ставок инфекции для ASNs.</li>
-           <li><a href="https://www.abuseat.org/public/asn.html" hreflang="en" rel="noopener noreferrer external">Список составных блокировок @ Abuseat.org</a> – Отображает отчеты о ботнет ставок инфекции для ASNs.</li>
+           <li><a href="https://www.abuseat.org/public/asn.html" hreflang="en" rel="noopener noreferrer external">Список составных блокировок@Abuseat.org</a> – Отображает отчеты о ботнет ставок инфекции для ASNs.</li>
            <li><a href="https://abuseipdb.com/" hreflang="en" rel="noopener noreferrer external">AbuseIPDB</a> – Ведение базы данных известных оскорбительных IP-адресов; Предоставляет API для проверки и отчетности IP-адресов.</li>
          </ul>
        </li>

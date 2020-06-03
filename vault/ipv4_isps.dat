@@ -1,8 +1,8 @@
 # IPv4 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv4_isps.dat
 
-# Version: 2020.151.320
-# Last modified: 2020.05.31
+# Version: 2020.154.773
+# Last modified: 2020.06.03
 
 
 # ---
@@ -1325,13 +1325,12 @@ recaptcha:
 # Major domestic ISP from Russia, but also a significant, long-term source of
 # spam, hack attempts, scraping, probing for vulnerabilities, and other kinds
 # of unwanted traffic.
-# Stop Forum Spam (SFS) listings: 1,292,218 (AS34665), 439,684 (AS44050).
-# Updated: 2020.05.08
+# Stop Forum Spam (SFS) listings: 1,312,269 (AS34665), 374,713 (AS44050).
+# Updated: 2020.06.03
 
 5.8.8.0/21 Deny Generic
 5.8.19.0/24 Deny Generic
 5.8.20.0/22 Deny Generic
-5.8.36.0/22 Deny Generic
 5.8.44.0/22 Deny Generic
 5.8.48.0/21 Deny Generic
 5.8.56.0/23 Deny Generic
@@ -1340,9 +1339,7 @@ recaptcha:
 5.8.62.0/24 Deny Generic
 5.8.65.0/24 Deny Generic
 5.8.66.0/23 Deny Generic
-5.8.88.0/22 Deny Generic
 5.101.0.0/21 Deny Generic
-5.101.40.0/22 Deny Generic
 5.101.64.0/21 Deny Generic
 5.101.80.0/21 Deny Generic
 5.101.89.0/24 Deny Generic
@@ -1359,7 +1356,6 @@ recaptcha:
 5.188.88.0/22 Deny Generic
 5.188.165.0/24 Deny Generic
 5.188.166.0/24 Deny Generic
-5.188.188.0/22 Deny Generic
 5.188.192.0/23 Deny Generic
 5.188.200.0/22 Deny Generic
 5.188.204.0/24 Deny Generic
@@ -1379,6 +1375,7 @@ recaptcha:
 31.184.228.0/23 Deny Generic
 31.184.231.0/24 Deny Generic
 31.184.237.0/24 Deny Generic
+31.184.238.0/23 Deny Generic
 31.184.240.0/21 Deny Generic
 37.9.36.0/22 Deny Generic
 37.9.48.0/24 Deny Generic
@@ -1521,7 +1518,6 @@ recaptcha:
 Origin: RU
 185.181.164.0/24 Deny Generic
 185.253.217.0/24 Deny Generic
-193.105.135.0/24 Deny Generic
 Origin: UA
 Tag: PIN-AS
 ---
@@ -10494,13 +10490,12 @@ recaptcha:
 
 # ASN 6849 ("Ukrtelecom").
 # %Listed, abuseat.org (CBL-Listed): 0.40%.
-# Stop Forum Spam (SFS) listings: 2,072.
-# Updated: 2020.04.19
+# Stop Forum Spam (SFS) listings: 1,889.
+# Updated: 2020.06.03
 
 93.170.54.0/24 Deny Spam
 93.170.186.0/24 Deny Spam
 93.171.138.0/24 Deny Spam
-95.47.137.0/24 Deny Spam
 Origin: CZ
 91.230.251.0/24 Deny Spam
 Origin: GB
@@ -10514,6 +10509,7 @@ Origin: GB
 95.132.0.0/14 Deny Spam
 178.92.0.0/14 Deny Spam
 185.36.56.0/22 Deny Spam
+193.105.135.0/24 Deny Spam
 195.5.0.0/18 Deny Spam
 195.93.172.0/24 Deny Spam
 195.206.238.0/24 Deny Spam
@@ -14438,6 +14434,21 @@ recaptcha:
 196.207.126.0/24 Deny Malware
 Origin: IN
 Tag: Ani Network Pvt Ltd
+---
+recaptcha:
+ enabled: true
+
+
+# ASN 39087 ("P.A.K.T LLC").
+# Russian domestic ISP. Some IPs here caught spamming; Some IPs here caught
+# attacking WordPress websites. Just listing those (not the whole network).
+# Stop Forum Spam (SFS) listings: 4.
+# Updated: 2020.06.03
+
+185.97.201.0/24 Deny Spam
+185.97.203.0/24 Deny Malware
+Origin: RU
+Tag: P.A.K.T LLC
 ---
 recaptcha:
  enabled: true

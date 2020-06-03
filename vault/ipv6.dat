@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6.dat
 
-# Version: 2020.151.320
-# Last modified: 2020.05.31
+# Version: 2020.154.773
+# Last modified: 2020.06.03
 
 
 # ---
@@ -208,8 +208,8 @@ Tag: GoDaddy.com, LLC
 
 
 # ASN 8560 ("1&1 IONOS SE").
-# Stop Forum Spam (SFS) listings: 3,510.
-# Updated: 2018.04.10 / Checked: 2020.01.19
+# Stop Forum Spam (SFS) listings: 3,943.
+# Updated: 2018.04.10 / Checked: 2020.06.03
 
 2001:8d8::/32 Deny Cloud
 2a0d:7f00::/29 Deny Cloud
@@ -1073,9 +1073,8 @@ Tag: Black Lotus
 
 # ASNs 8100, 29761 ("QuadraNet, Inc").
 # Ranges change frequently / Should update often.
-# Mark "VPNSECURE" (37.139.70.0/24) as a proxy.
-# Stop Forum Spam (SFS) listings: 82,300 (AS8100).
-# Updated: 2020.05.11
+# Stop Forum Spam (SFS) listings: 84,050 (AS8100).
+# Updated: 2020.06.03
 
 2a07:1c44:1820::/48 Deny Cloud
 Origin: AT
@@ -1091,7 +1090,6 @@ Origin: UA
 2602:ff96:4::/48 Deny Cloud
 2602:ff96:11::/48 Deny Cloud
 2602:ff96:14::/48 Deny Cloud
-2602:ffe5:4::/48 Deny Cloud
 2602:fff6:1::/48 Deny Cloud
 2602:fff6:2::/47 Deny Cloud
 2602:fff6:6::/48 Deny Cloud
@@ -1101,6 +1099,8 @@ Origin: UA
 2607:ff48::/32 Deny Cloud
 2620:134:8004::/47 Deny Cloud
 Origin: US
+2602:ffe5:4::/48 Deny Cloud
+Origin: XR
 Tag: QuadraNet, Inc
 
 
@@ -2072,8 +2072,8 @@ Tag: GHOSTnet GmbH
 
 
 # ASN 21859 ("Zenlayer Inc").
-# Stop Forum Spam (SFS) listings: 6,820.
-# Updated: 2020.04.27
+# Stop Forum Spam (SFS) listings: 7,023.
+# Updated: 2020.06.03
 
 2400:ba41:1::/48 Deny Cloud
 2407:6a80::/32 Deny Cloud
@@ -2081,8 +2081,8 @@ Origin: CN
 2a0b:21c0:1000::/36 Deny Cloud
 2a0b:21c0:2000::/35 Deny Cloud
 2a0b:21c0:4000::/34 Deny Cloud
-2a0b:21c0:8000::/35 Deny Cloud
-2a0b:21c0:a000::/36 Deny Cloud
+2a0b:21c0:8000::/34 Deny Cloud
+2a0b:21c0:c000::/36 Deny Cloud
 Origin: DE
 2602:ffe4::/37 Deny Cloud
 2602:ffe4:800::/38 Deny Cloud
@@ -2104,21 +2104,10 @@ Origin: DE
 2604:980:2000::/35 Deny Cloud
 2604:980:4000::/35 Deny Cloud
 2604:980:7000::/36 Deny Cloud
-2604:980:8000::/35 Deny Cloud
+2604:980:8000::/34 Deny Cloud
 2607:a400::/32 Deny Cloud
 Origin: US
 Tag: Zenlayer Inc
-
-
-# ASN 22923 ("Yesup Ecommerce Solutions Inc").
-# Stop Forum Spam (SFS) listings: 1,602.
-# Updated: 2019.09.15 / Checked: 2020.01.19
-
-2604:6880::/32 Deny Cloud
-Origin: CA
-2a0a:9204:ab6d::/48 Deny Cloud
-Origin: DE
-Tag: Yesup Ecommerce
 
 
 # ASN 30475 ("Handy Networks, LLC").
@@ -3570,8 +3559,8 @@ Tag: Nexeon Technologies
 
 
 # ASN 48096 ("OOO IT-Grad").
-# Stop Forum Spam (SFS) listings: 29.
-# Updated: 2019.09.15 / Checked: 2020.01.19
+# Stop Forum Spam (SFS) listings: 9.
+# Updated: 2019.09.15 / Checked: 2020.06.03
 
 2a04:c900:1000::/36 Deny Cloud
 2a04:c900:3000::/36 Deny Cloud
@@ -5282,20 +5271,23 @@ Tag: Portlane Networks AB
 
 # ASN 25780 ("HugeServer Networks, LLC").
 # Caught trying to hack WordPress sites.
-# Stop Forum Spam (SFS) listings: 153.
-# Updated: 2019.05.02 / Checked: 2020.01.19
+# Stop Forum Spam (SFS) listings: 114.
+# Updated: 2020.06.03
 
 2a03:a3a0::/32 Deny Cloud
 Origin: NL
 2604:34c0::/32 Deny Cloud
 2604:6b40::/32 Deny Cloud
-2605:8680::/40 Deny Cloud
+2605:8680::/48 Deny Cloud
+2605:8680:12::/47 Deny Cloud
 2605:8680:ff1::/48 Deny Cloud
 2605:8680:ff2::/47 Deny Cloud
 2605:8680:eeee::/48 Deny Cloud
 2605:8680:efef::/48 Deny Cloud
 2605:8680:fffe::/47 Deny Cloud
 2605:8681::/32 Deny Cloud
+2605:868f::/32 Deny Cloud
+2605:b4c0:1234::/48 Deny Cloud
 Origin: US
 Tag: HugeServer Networks
 

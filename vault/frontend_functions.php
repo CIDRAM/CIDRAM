@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2020.06.03).
+ * This file: Front-end functions file (last modified: 2020.06.07).
  */
 
 /**
@@ -591,6 +591,9 @@ $CIDRAM['Logs-RecursiveList'] = function (string $Base) use (&$CIDRAM): array {
  * @return bool True for when in use; False for when not in use.
  */
 $CIDRAM['IsInUse'] = function (array $Component) use (&$CIDRAM): bool {
+    if ($Component['Name'] === 'L10N: ' . $CIDRAM['L10N']->getString('Local Name')) {
+        return true;
+    }
     $Files = $Component['Files']['To'] ?? [];
     $CIDRAM['Arrayify']($Files);
     $UsedWith = $Component['Used with'] ?? '';

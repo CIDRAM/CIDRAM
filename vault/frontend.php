@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2020.06.03).
+ * This file: Front-end handler (last modified: 2020.06.07).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -1803,9 +1803,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && ($CIDRAM['FE']['Per
             }
             if (!empty($CIDRAM['Components']['ThisComponent']['Files']['To'])) {
                 $CIDRAM['Activable'] = $CIDRAM['IsActivable']($CIDRAM['Components']['ThisComponent']);
-                if (preg_match('~^(?:l10n/' . preg_quote(
-                    $CIDRAM['Config']['general']['lang']
-                ) . '|theme/' . preg_quote(
+                if (preg_match('~^(?:theme/' . preg_quote(
                     $CIDRAM['Config']['template_data']['theme']
                 ) . '|CIDRAM.*|Common Classes Package)$~i', $CIDRAM['Components']['Key']) || $CIDRAM['IsInUse'](
                     $CIDRAM['Components']['ThisComponent']
@@ -1831,7 +1829,10 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && ($CIDRAM['FE']['Per
                         $CIDRAM['Components']['ThisComponent']['Options'] .=
                             '<option value="uninstall-component">' . $CIDRAM['L10N']->getString('field_uninstall') . '</option>';
                     }
-                    if (!empty($CIDRAM['Components']['ThisComponent']['Provisional'])) {
+                    if (
+                        !empty($CIDRAM['Components']['ThisComponent']['Provisional']) ||
+                        ($CIDRAM['Config']['general']['lang_override'] && preg_match('~^L10N\:~', $CIDRAM['Components']['ThisComponent']['Name']))
+                    ) {
                         $CIDRAM['AppendToString']($CIDRAM['Components']['ThisComponent']['StatusOptions'], '<hr />',
                             '<div class="txtOe">' . $CIDRAM['L10N']->getString('state_component_is_provisional') . '</div>'
                         );

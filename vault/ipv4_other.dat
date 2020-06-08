@@ -1,8 +1,8 @@
 # IPv4 signatures file (CIDRs for proxies, VPNs and other miscellaneous unwanted services).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv4_other.dat
 
-# Version: 2020.146.370
-# Last modified: 2020.05.26
+# Version: 2020.159.541
+# Last modified: 2020.06.08
 
 
 # ---
@@ -434,7 +434,7 @@ Tag: Emerald Onion
 # The DROP/EDROP text lists are copyrighted to Spamhaus.org; Spamhaus DROP/EDROP as plain text lists are free for
 # commercial and non-commercial usage. If you want to redistribute one of the plain text feeds please ensure that you
 # name Spamhaus as source of the data. (For example, include the copyright statement at the top of the list).
-# Updated: 2020.04.11
+# Updated: 2020.06.08
 # Refer spamhaus.org/drop/drop.txt
 # Refer spamhaus.org/drop/edrop.txt
 
@@ -496,7 +496,10 @@ Tag: Emerald Onion
 45.117.232.0/22 Deny Spam
 45.121.204.0/22 Deny Spam
 45.130.100.0/22 Deny Spam
+45.135.193.0/24 Deny Spam
+45.143.223.0/24 Deny Spam
 45.159.56.0/22 Deny Spam
+45.190.220.0/24 Deny Spam
 45.220.64.0/18 Deny Spam
 46.148.112.0/24 Deny Spam
 46.148.120.0/24 Deny Spam
@@ -541,7 +544,6 @@ Tag: Emerald Onion
 91.200.82.0/23 Deny Spam
 91.200.164.0/24 Deny Spam
 91.200.248.0/22 Deny Spam
-91.209.12.0/24 Deny Spam
 91.216.3.0/24 Deny Spam
 91.218.236.0/22 Deny Spam
 91.220.163.0/24 Deny Spam
@@ -562,7 +564,6 @@ Tag: Emerald Onion
 101.202.0.0/16 Deny Spam
 101.203.128.0/19 Deny Spam
 101.248.0.0/15 Deny Spam
-101.252.0.0/15 Deny Spam
 102.11.224.0/19 Deny Spam
 102.13.240.0/20 Deny Spam
 102.18.224.0/19 Deny Spam
@@ -624,14 +625,12 @@ Tag: Emerald Onion
 104.153.244.0/22 Deny Spam
 104.166.96.0/19 Deny Spam
 104.207.64.0/19 Deny Spam
-104.222.160.0/19 Deny Spam
 104.233.0.0/18 Deny Spam
 104.239.0.0/17 Deny Spam
 104.243.192.0/20 Deny Spam
 104.247.96.0/19 Deny Spam
 104.250.192.0/18 Deny Spam
 106.95.0.0/16 Deny Spam
-107.155.128.0/18 Deny Spam
 107.182.112.0/20 Deny Spam
 107.182.240.0/20 Deny Spam
 107.190.160.0/20 Deny Spam
@@ -771,7 +770,6 @@ Tag: Emerald Onion
 155.108.0.0/16 Deny Spam
 155.159.0.0/16 Deny Spam
 155.204.0.0/16 Deny Spam
-155.235.0.0/16 Deny Spam
 155.249.0.0/16 Deny Spam
 156.96.0.0/16 Deny Spam
 157.115.0.0/16 Deny Spam
@@ -784,7 +782,6 @@ Tag: Emerald Onion
 159.80.0.0/16 Deny Spam
 159.85.0.0/16 Deny Spam
 159.151.0.0/16 Deny Spam
-159.174.0.0/16 Deny Spam
 159.219.0.0/16 Deny Spam
 159.223.0.0/16 Deny Spam
 159.229.0.0/16 Deny Spam
@@ -922,17 +919,12 @@ Tag: Emerald Onion
 185.0.96.0/19 Deny Spam
 185.14.192.0/23 Deny Spam
 185.14.195.0/24 Deny Spam
-185.17.96.0/22 Deny Spam
 185.21.8.0/22 Deny Spam
 185.30.168.0/22 Deny Spam
-185.35.136.0/22 Deny Spam
-185.68.156.0/22 Deny Spam
 185.71.0.0/22 Deny Spam
-185.72.68.0/22 Deny Spam
 185.77.248.0/24 Deny Spam
 185.101.68.0/24 Deny Spam
 185.101.71.0/24 Deny Spam
-185.103.72.0/22 Deny Spam
 185.105.56.0/22 Deny Spam
 185.110.0.0/22 Deny Spam
 185.116.172.0/23 Deny Spam
@@ -967,7 +959,6 @@ Tag: Emerald Onion
 185.161.148.0/22 Deny Spam
 185.165.24.0/22 Deny Spam
 185.165.153.0/24 Deny Spam
-185.167.116.0/22 Deny Spam
 185.175.140.0/22 Deny Spam
 185.180.192.0/22 Deny Spam
 185.184.192.0/22 Deny Spam
@@ -975,11 +966,7 @@ Tag: Emerald Onion
 185.187.236.0/22 Deny Spam
 185.194.100.0/22 Deny Spam
 185.195.188.0/22 Deny Spam
-185.199.240.0/22 Deny Spam
 185.203.64.0/22 Deny Spam
-185.205.180.0/22 Deny Spam
-185.208.152.0/22 Deny Spam
-185.212.56.0/22 Deny Spam
 185.215.132.0/22 Deny Spam
 185.227.200.0/22 Deny Spam
 185.238.176.0/22 Deny Spam
@@ -1071,6 +1058,9 @@ Tag: Emerald Onion
 196.246.0.0/16 Deny Spam
 197.154.0.0/16 Deny Spam
 197.231.208.0/22 Deny Spam
+197.242.100.0/22 Deny Spam
+197.242.104.0/21 Deny Spam
+197.242.112.0/23 Deny Spam
 198.13.0.0/20 Deny Spam
 198.20.16.0/20 Deny Spam
 198.45.32.0/20 Deny Spam
@@ -1339,8 +1329,8 @@ Tag: Octopusnet VPN
 # A *huge* source of spam! Went from zero reports at SFS to 38,300+ reports in
 # the course of less than three months; Should be cautious about removal, even
 # if the reports subside in the future.
-# Stop Forum Spam (SFS) listings: 38,300.
-# Updated: 2019.10.02 / Checked: 2020.01.15
+# Stop Forum Spam (SFS) listings: 82,333.
+# Updated: 2019.10.02 / Checked: 2020.06.08
 
 109.70.100.0/24 Deny Proxy
 Origin: AT

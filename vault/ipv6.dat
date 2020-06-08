@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6.dat
 
-# Version: 2020.154.773
-# Last modified: 2020.06.03
+# Version: 2020.159.541
+# Last modified: 2020.06.08
 
 
 # ---
@@ -815,7 +815,7 @@ Tag: IOMart
 
 # ASN 35425 ("Bytemark Limited").
 # Stop Forum Spam (SFS) listings: 5.
-# Updated: 2020.01.24
+# Updated: 2020.01.24 / Checked: 2020.06.08
 
 2001:41c8::/29 Deny Cloud
 2a0f:23c7::/32 Deny Cloud
@@ -3651,8 +3651,8 @@ Tag: meerfarbig
 
 # ASNs 38719, 135132 ("Dreamscape Networks Pty Ltd").
 # Dedicated webhosting provider and an occasional source of spam.
-# Stop Forum Spam (SFS) listings: 25 (AS38719).
-# Updated: 2019.04.18 / Checked: 2020.01.01
+# Stop Forum Spam (SFS) listings: 73 (AS38719), 7 (AS135132).
+# Updated: 2020.06.08
 
 2402:af00::/32 Deny Cloud
 2402:cb40::/32 Deny Cloud
@@ -3664,8 +3664,6 @@ Origin: AU
 Origin: GB
 2405:df80::/32 Deny Cloud
 Origin: PH
-2a04:8b40::/29 Deny Cloud
-Origin: RU
 2400:8240::/32 Deny Cloud
 Origin: SG
 Tag: Dreamscape Networks
@@ -3876,7 +3874,7 @@ Tag: Server Central Network
 # ASNs 7181, 7349, 11274, 17113, 17378, 19019, 26094, 30340, 30496, 36024 ("TierPoint, LLC").
 # Dedicated colo/cloud provider; A source of spam, brute-force and hack
 # attempts, probing/scanning and other unwanted traffic.
-# Updated: 2020.01.23
+# Updated: 2020.06.08
 
 2001:438:fffd:6c::/64 Deny Cloud
 2001:19b8::/32 Deny Cloud
@@ -3888,6 +3886,7 @@ Tag: Server Central Network
 2600:2c00:c000::/36 Deny Cloud
 2600:2c00:f000::/36 Deny Cloud
 2600:2c01:6000::/36 Deny Cloud
+2600:4c00::/39 Deny Cloud
 2604:7e00::/32 Deny Cloud
 2605:7700::/48 Deny Cloud
 2606:4300::/48 Deny Cloud
@@ -3995,11 +3994,13 @@ Origin: FI
 Tag: Oy Creanova Hosting
 
 
-# ASN 49505 ("Selectel Ltd").
-# Stop Forum Spam (SFS) listings: 9,489.
-# Updated: 2017.05.12 / Checked: 2020.03.21
+# ASNs 49505, 50340, 60084, 61976 ("Selectel Ltd").
+# Data center + server farm; SSH and brute-force attacks; A source of spam.
+# Stop Forum Spam (SFS) listings: 9,633 (AS49505), 3,169 (AS50340).
+# Updated: 2020.06.08
 
 2a00:ab00::/32 Deny Cloud
+2a0d:3c44::/32 Deny Cloud
 Origin: RU
 Tag: Selectel Ltd
 

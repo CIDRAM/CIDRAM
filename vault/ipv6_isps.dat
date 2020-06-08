@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_isps.dat
 
-# Version: 2020.154.773
-# Last modified: 2020.06.03
+# Version: 2020.159.541
+# Last modified: 2020.06.08
 
 
 # ---
@@ -157,13 +157,14 @@ recaptcha:
 
 
 # ASN 24203 ("PT Excelcomindo Pratama").
-# %Listed, abuseat.org (CBL-Listed): 43.11%.
-# Stop Forum Spam (SFS) listings: 144.
-# Updated: 2017.12.08 / Checked: 2020.01.23
+# (Mark US as cloud).
+# %Listed, abuseat.org (CBL-Listed): 29.25%.
+# Stop Forum Spam (SFS) listings: 195.
+# Updated: 2017.12.08 / Checked: 2020.06.04
 
 2400:9800::/32 Deny Spam
 Origin: ID
-2600:1417:3000::/48 Deny Spam
+2600:1417:3000::/48 Deny Cloud
 Origin: US
 Tag: PT Excelcomindo
 ---
@@ -243,8 +244,8 @@ recaptcha:
 
 
 # ASN 41011 ("CH-NET S.R.L").
-# Stop Forum Spam (SFS) listings: 177.
-# Updated: 2020.01.24
+# Stop Forum Spam (SFS) listings: 209.
+# Updated: 2020.01.24 / Checked: 2020.06.06
 
 2001:67c:2100::/48 Deny Generic
 2a06:afc0::/48 Deny Generic
@@ -657,10 +658,15 @@ Tag: ALEXHOST SRL
 # number of human endpoints, but not an actual domestic ISP; requests likely
 # not immediately traceable to any specific individuals. A long history of
 # unwanted traffic from their network.
-# Updated: 2017.07.08 / Checked: 2020.01.24
+# Updated: 2020.06.08
 
 2a00:8860::/32 Deny Generic
 Origin: EU
+2a01:b960:2307::/48 Deny Generic
+2a01:b960:230b::/48 Deny Generic
+Origin: NL
+2607:ff00:500::/40 Deny Generic
+Origin: US
 Tag: PHOENIX NAP, LLC
 
 
@@ -2076,15 +2082,15 @@ recaptcha:
  enabled: true
 
 
-# ASNs 7922, 33668 ("Comcast Cable Communications, LLC").
+# ASNs 7725, 7922, 33668 ("Comcast Cable Communications, LLC").
 # Major domestic ISP in the United States; Should NEVER be blocked in entirety.
 # Listed here are some specific CIDRs/IPs on their network that pose a major
 # spam risk and/or are known sources of spam and/or other undesirable traffic.
 # %Listed, abuseat.org (CBL-Listed): 0.02% (AS7922).
-# Stop Forum Spam (SFS) listings: 6,681 (AS7922).
-# Updated: 2020.03.06
+# Stop Forum Spam (SFS) listings: 7,090 (AS7922).
+# Updated: 2020.06.04
 
-2601:155:1:26b0::/64 Deny Spam
+2601:c2:8200:6d70::/64 Deny Spam
 Origin: US
 Tag: Comcast Spam IPs
 ---
@@ -2235,10 +2241,15 @@ recaptcha:
 # ASN 8151 ("Uninet S.A. de C.V").
 # Mexican domestic ISP and a source of spam. Just listing the specific spammy
 # IPs (not the entire network), plus US ranges (interlaced cloud).
-# Stop Forum Spam (SFS) listings: 1,410.
-# Updated: 2020.03.13
+# %Listed, abuseat.org (CBL-Listed): 0.88%.
+# Stop Forum Spam (SFS) listings: 1,541.
+# Updated: 2020.06.04
 
-2806:10be:6:12b::/64 Deny Spam
+2806:1000:8100:66ed::/64 Deny Spam
+2806:1000:8102:a27d::/64 Deny Spam
+2806:103e:1a:9776::/64 Deny Spam
+2806:10a6:10:8cfc::/64 Deny Spam
+2806:10ae:a:ee24::/64 Deny Spam
 Origin: MX
 2600:141c:7::/48 Deny Cloud
 2600:141c:5000::/48 Deny Cloud

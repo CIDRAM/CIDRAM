@@ -8,35 +8,51 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: IP aggregator (last modified: 2020.02.08).
+ * This file: IP aggregator (last modified: 2020.06.11).
  */
 
 namespace CIDRAM\Aggregator;
 
 class Aggregator
 {
-    /** Outout. */
+    /**
+     * @var string Output.
+     */
     public $Output = '';
 
-    /** Access parent scope data, closures, variables, etc. */
+    /**
+     * @var array Access parent scope data, closures, variables, etc.
+     */
     public $CIDRAM = [];
 
-    /** Conversion tables for netmasks to IPv4. */
+    /**
+     * @var array Conversion tables for netmasks to IPv4.
+     */
     private $TableNetmaskIPv4 = [];
 
-    /** Conversion tables for netmasks to IPv6. */
+    /**
+     * @var array Conversion tables for netmasks to IPv6.
+     */
     private $TableNetmaskIPv6 = [];
 
-    /** Conversion tables for IPv4 to netmasks. */
+    /**
+     * @var array Conversion tables for IPv4 to netmasks.
+     */
     private $TableIPv4Netmask = [];
 
-    /** Conversion tables for IPv6 to netmasks. */
+    /**
+     * @var array Conversion tables for IPv6 to netmasks.
+     */
     private $TableIPv6Netmask = [];
 
-    /** Specifies the format to use for Aggregator output. 0 = CIDR notation [default]. 1 = Netmask notation. */
+    /**
+     * @var int Specifies the format to use for Aggregator output. 0 = CIDR notation [default]. 1 = Netmask notation.
+     */
     private $Mode = 0;
 
-    /** Optional callback. */
+    /**
+     * @var array Optional callbacks.
+     */
     public $callbacks = [];
 
     public function __construct(array &$CIDRAM, $Mode = 0)
@@ -75,8 +91,8 @@ class Aggregator
      * Aggregate it!
      *
      * @param string|array $In The IPs/CIDRs/netmasks to be aggregated. Should
-     * either be a string, with entries separated by lines, or be an array, an
-     * entry to each element.
+     *          either be a string, with entries separated by lines, or an
+     *          array with an entry to each element.
      * @return string The aggregated data.
      */
     public function aggregate($In)
@@ -91,7 +107,11 @@ class Aggregator
         return $this->Output;
     }
 
-    /** Strips invalid characters from lines and sorts entries. */
+    /**
+     * Strips invalid characters from lines and sorts entries.
+     *
+     * @param string|array
+     */
     private function stripInvalidCharactersAndSort(&$In)
     {
         if (!is_array($In)) {
@@ -180,7 +200,11 @@ class Aggregator
         $In = implode("\n", $In);
     }
 
-    /** Strips invalid ranges and subordinates. */
+    /**
+     * Strips invalid ranges and subordinates.
+     *
+     * @param string
+     */
     private function stripInvalidRangesAndSubs(&$In)
     {
         if (isset($this->callbacks['newParse']) && is_callable($this->callbacks['newParse'])) {
@@ -270,7 +294,11 @@ class Aggregator
         }
     }
 
-    /** Merges ranges. */
+    /**
+     * Merges ranges.
+     *
+     * @param string
+     */
     private function mergeRanges(&$In)
     {
         while (true) {
@@ -320,7 +348,11 @@ class Aggregator
         }
     }
 
-    /** Optionally converts output to netmask notation. */
+    /**
+     * Optionally converts output to netmask notation.
+     *
+     * @param string
+     */
     private function convertToNetmasks(&$In)
     {
         if (isset($this->callbacks['newParse']) && is_callable($this->callbacks['newParse'])) {

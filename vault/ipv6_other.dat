@@ -1,8 +1,8 @@
 # IPv6 signatures file (CIDRs for proxies, VPNs and other miscellaneous unwanted services).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_other.dat
 
-# Version: 2020.159.541
-# Last modified: 2020.06.08
+# Version: 2020.162.434
+# Last modified: 2020.06.11
 
 
 # ---
@@ -142,17 +142,17 @@ Tag: F3 Netze e.V
 
 
 # ASNs 42708, 43948 ("GleSYS AB"; formerly "Portlane AB").
-# Exclude (carries human endpoints and seems clean):
+# Exclude (carries human endpoints and seems clean *at the moment*):
 # - "^.*Internetbolaget.*$\n"
 # Mark as proxy:
-# - "^(.*(?:Tunnel|Edelino).*)$"
+# - "^(.*(?:Tunnel|Anonine|Edelino).*)$"
 # Mark as cloud:
-# - "^(.*(?:Host|Netelia|Sveaab|GleSYS|Servinga|Webbplatsen|InfoGuard).*)$"
+# - "^(.*(?:Host|HZ|Netelia|Sveaab|GleSYS|Servinga|Webbplatsen|InfoGuard).*)$"
 # Mark as spam (carries human endpoints, but also poses a spam risk):
 # - "^(.*(?:Svenska).*)$"
 # Everything else mark as generic.
-# Stop Forum Spam (SFS) listings: 1,044 (AS42708), 1 (AS43948).
-# Updated: 2020.01.23
+# Stop Forum Spam (SFS) listings: 2,786 (AS42708), 1 (AS43948).
+# Updated: 2020.01.23 / Checked: 2020.06.11
 
 2a02:7ac0::/32 Deny Proxy
 Origin: SE

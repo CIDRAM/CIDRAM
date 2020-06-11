@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6.dat
 
-# Version: 2020.159.541
-# Last modified: 2020.06.08
+# Version: 2020.162.434
+# Last modified: 2020.06.11
 
 
 # ---
@@ -1880,8 +1880,8 @@ Tag: Bradler & Krantz
 # ASN 34762 ("Combell NV").
 # Dedicated webhosting provider.
 # (Can omit anything under 44../8; clean).
-# Stop Forum Spam (SFS) listings: 261.
-# Updated: 2020.01.25
+# Stop Forum Spam (SFS) listings: 506.
+# Updated: 2020.01.25 / Checked: 2020.06.11
 
 2a00:1c98::/32 Deny Cloud
 2a00:7000::/32 Deny Cloud
@@ -1979,8 +1979,8 @@ Tag: ClaraNET LTD
 # A *HUGE* source of forum/blog/website spam unending, as well as malware and
 # numerous other kinds of unwanted traffic! Dedicated webhosting provider and
 # data center, so the chances of false positives should be zero.
-# Stop Forum Spam (SFS) listings: 39,759.
-# Updated: 2020.01.25
+# Stop Forum Spam (SFS) listings: 45,672.
+# Updated: 2020.01.25 / Checked: 2020.06.11
 
 2a03:f80:373::/48 Deny Cloud
 Origin: AT
@@ -2750,8 +2750,8 @@ Tag: Alibaba Advertising
 # ASNs 45090, 132203, 132591 ("Shenzhen Tencent Computer Systems Company Limited").
 # Dedicated server farm/lease and cloud provider, and an ongoing, long-term
 # source of just about every kind of unwanted traffic you could imagine.
-# Stop Forum Spam (SFS) listings: 831 (AS45090), 578 (AS132203).
-# Updated: 2020.01.25
+# Stop Forum Spam (SFS) listings: 592 (AS45090), 443 (AS132203).
+# Updated: 2020.01.25 / Checked: 2020.06.11
 
 2001:df6:f400::/48 Deny Cloud
 2402:4e00::/32 Deny Cloud
@@ -3313,8 +3313,8 @@ Tag: EQUINIX BRASIL SP
 
 
 # ASN 6364 ("Atlantic.net, Inc").
-# Stop Forum Spam (SFS) listings: 5.
-# Updated: 2016.07.02 / Checked: 2020.01.25
+# Stop Forum Spam (SFS) listings: 7.
+# Updated: 2016.07.02 / Checked: 2020.06.11
 
 2607:f170::/32 Deny Cloud
 Origin: US
@@ -5223,7 +5223,7 @@ Tag: CLOUD STAR
 
 # ASN 14987 ("Rethem Hosting LLC").
 # Dedicated webhosting provider and an occasional source of spam.
-# Updated: 2019.03.30 / Checked: 2020.01.02
+# Updated: 2019.03.30 / Checked: 2020.06.11
 
 2001:550:101::/48 Deny Cloud
 2607:8500::/32 Deny Cloud
@@ -5253,16 +5253,17 @@ Tag: KLAYER LLC
 # Exclude (carries human endpoints and seems clean *at the moment*):
 # - "^.*Internetbolaget.*$\n"
 # Mark as proxy:
-# - "^(.*(?:Tunnel|Edelino).*)$"
+# - "^(.*(?:Tunnel|Anonine|Edelino).*)$"
 # Mark as cloud:
-# - "^(.*(?:Host|Netelia|Sveaab|GleSYS|Servinga|Webbplatsen|InfoGuard).*)$"
+# - "^(.*(?:Host|HZ|Netelia|Sveaab|GleSYS|Servinga|Webbplatsen|InfoGuard).*)$"
 # Mark as spam (carries human endpoints, but also poses a spam risk):
 # - "^(.*(?:Svenska).*)$"
 # Everything else mark as generic.
-# Stop Forum Spam (SFS) listings: 1,044 (AS42708), 1 (AS43948).
-# Updated: 2019.05.02 / Checked: 2020.01.23
+# Stop Forum Spam (SFS) listings: 2,786 (AS42708), 1 (AS43948).
+# Updated: 2020.06.11
 
 2a01:8640:6::/48 Deny Cloud
+2a01:8640:9::/48 Deny Cloud
 Origin: GB
 2a00:1a28::/32 Deny Cloud
 2a02:750::/29 Deny Cloud
@@ -6541,3 +6542,14 @@ Tag: Host Networks
 2a02:3b8::/32 Deny Cloud
 Origin: ES
 Tag: acens Technologies
+
+
+# ASN 41075 ("ATW Internet Kft").
+# Hungarian webhosting provider. DDoS and brute-force attacks detected from
+# this network.
+# Updated: 2020.06.11
+
+2a01:270::/32 Deny Cloud
+2a01:47c1::/32 Deny Cloud
+Origin: HU
+Tag: ATW Internet Kft

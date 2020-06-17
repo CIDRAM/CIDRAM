@@ -1,8 +1,8 @@
 # IPv6 signatures file (CIDRs for proxies, VPNs and other miscellaneous unwanted services).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_other.dat
 
-# Version: 2020.162.434
-# Last modified: 2020.06.11
+# Version: 2020.168.432
+# Last modified: 2020.06.17
 
 
 # ---
@@ -16,9 +16,10 @@
 # listing the ASN in entirety. Listings have also been split across different
 # signature files as to list at the signature files where best suited.
 
-# Cogent Communications' Wikipedia page:
+# Stop Forum Spam (SFS) listings: 13,757.
+
+# See:
 # - en.wikipedia.org/wiki/Cogent_Communications
-# See also:
 # - bgpmon.net/large-scale-bgp-hijack-out-of-india/
 # - forums.spybot.info/showthread.php?23632-SPAM-frauds-fakes-and-other-MALWARE-deliveries/page37
 # - dyn.com/blog/mitm-internet-hijacking/
@@ -26,87 +27,17 @@
 # Cogent VPNs+Proxies (AzireVPN, OVPN, BeeVPN ApS, Windscribe, etc; "^.*(?:Prox|Windscribe|VPN).*$").
 # Exclude invalids to reduce the false positive risk.
 
-# Updated: 2020.01.03 / Checked: 2020.01.26
-2001:978:f00::/48 Deny Proxy
+# Updated: 2020.06.17
 2001:978:1403::/48 Deny Proxy
 Origin: DE
 Tag: Cogent VPNs+Proxies
 
-# No announce description (a frequent source of spam + other generally
-# unwanted; exclude invalids to reduce the false positive risk).
+# Cogent bogons.
 
-# Updated: 2020.01.26
-2a03:f80:420::/48 Deny Generic
-Origin: AT
-2602:feb0::/36 Deny Generic
-Origin: CA
-2001:978:907::/48 Deny Generic
-2001:978:a01:8000::/49 Deny Generic
-2001:978:1404::/47 Deny Generic
-2001:978:2102::/48 Deny Generic
-2001:978:3c0a::/47 Deny Generic
-2001:978:6713::/48 Deny Generic
-2001:978:a501::/48 Deny Generic
-2001:978:ae00::/48 Deny Generic
-2001:978:b700::/48 Deny Generic
-2a0f:5140::/31 Deny Generic
-Origin: DE
-2a0e:78c0::/29 Deny Generic
-Origin: FR
-2a0f:5944::/31 Deny Generic
-Origin: GB
-2402:4480:302::/47 Deny Generic
-Origin: HK
-2a07:85c3::/48 Deny Generic
-Origin: NL
-2001:550:408::/48 Deny Generic
-2001:550:905::/48 Deny Generic
-2001:550:a0e:8000::/49 Deny Generic
-2001:550:1500::/48 Deny Generic
-2001:550:1b08::/48 Deny Generic
-2001:550:1d01::/48 Deny Generic
-2001:550:1d07::/48 Deny Generic
-2001:550:2109::/48 Deny Generic
-2001:550:2200:500::/56 Deny Generic
-2001:550:221c::/47 Deny Generic
-2001:550:221e::/48 Deny Generic
-2001:550:2603::/48 Deny Generic
-2001:550:2604::/48 Deny Generic
-2001:550:3d09::/48 Deny Generic
-2001:550:3d0b::/48 Deny Generic
-2001:550:4600::/48 Deny Generic
-2001:550:4602::/48 Deny Generic
-2001:550:4a01::/64 Deny Generic
-2001:550:5607::/48 Deny Generic
-2001:550:5c03::/48 Deny Generic
-2001:550:6205::/48 Deny Generic
-2001:550:6a00::/48 Deny Generic
-2001:550:7709::/48 Deny Generic
-2001:550:9801::/48 Deny Generic
-2001:550:9802::/48 Deny Generic
-2001:49f0:d099::/48 Deny Generic
-2001:49f0:d0a3::/48 Deny Generic
-2001:49f0:d0b0::/46 Deny Generic
-2001:49f0:d0b5::/48 Deny Generic
-2001:49f0:d0b6::/47 Deny Generic
-2001:49f0:d0ba::/47 Deny Generic
-2001:49f0:d0bc::/47 Deny Generic
-2001:49f0:d0be::/48 Deny Generic
-2001:49f0:d0c1::/48 Deny Generic
-2001:49f0:d0c2::/47 Deny Generic
-2001:49f0:d0c4::/48 Deny Generic
-2001:49f0:d0c6::/47 Deny Generic
-2001:49f0:d0c8::/47 Deny Generic
-2001:49f0:d0d0::/46 Deny Generic
-2001:49f0:d0d5::/48 Deny Generic
-2001:49f0:d0d7::/48 Deny Generic
-2001:49f0:d0d8::/48 Deny Generic
-2001:49f0:d0df::/48 Deny Generic
-Origin: US
-Tag: Cogent Other
----
-recaptcha:
- enabled: true
+# Updated: 2020.06.17
+2605:d400::/32 Deny Bogon
+Origin: XR
+Tag: Cogent Bogons
 
 
 # ASN 36351 ("SoftLayer Technologies").

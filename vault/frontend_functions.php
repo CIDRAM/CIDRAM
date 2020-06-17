@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2020.06.15).
+ * This file: Front-end functions file (last modified: 2020.06.17).
  */
 
 /**
@@ -2977,6 +2977,7 @@ $CIDRAM['FELogger'] = function ($IPAddr, $User, $Message) use (&$CIDRAM) {
     /** Guard. */
     if (
         empty($CIDRAM['FE']['DateTime']) ||
+        !$CIDRAM['Config']['general']['FrontEndLog'] ||
         !($File = $CIDRAM['BuildPath']($CIDRAM['Vault'] . $CIDRAM['Config']['general']['FrontEndLog']))
     ) {
         return;

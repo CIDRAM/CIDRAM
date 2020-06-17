@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Output generator (last modified: 2020.04.25).
+ * This file: Output generator (last modified: 2020.06.15).
  */
 
 /** Initialise cache. */
@@ -825,13 +825,6 @@ if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
     if (empty($CIDRAM['Flag Don\'t Log']) && (
         $CIDRAM['Config']['general']['log_banned_ips'] || empty($CIDRAM['Banned'])
     )) {
-
-        /** Applies formatting for dynamic log filenames. */
-        $CIDRAM['LogFileNames'] = $CIDRAM['TimeFormat']($CIDRAM['Now'], [
-            'logfile' => $CIDRAM['Config']['general']['logfile'],
-            'logfile_apache' => $CIDRAM['Config']['general']['logfile_apache'],
-            'logfile_serialized' => $CIDRAM['Config']['general']['logfile_serialized']
-        ]);
 
         /** Write to logs. */
         $CIDRAM['Events']->fireEvent('writeToLog');

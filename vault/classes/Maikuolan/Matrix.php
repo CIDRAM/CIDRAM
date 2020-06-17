@@ -1,6 +1,6 @@
 <?php
 /**
- * Matrix handler (last modified: 2020.01.24).
+ * Matrix handler (last modified: 2020.06.11).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -18,9 +18,24 @@ namespace Maikuolan\Common;
 
 class Matrix
 {
+    /**
+     * @var array The actual matrix data.
+     */
     public $Matrix = [];
+
+    /**
+     * @var int The number of dimensions possessed by the matrix.
+     */
     public $Dimensions = 1;
+
+    /**
+     * @var array|int The magnitude possessed by each vector.
+     */
     public $Magnitude = 1;
+
+    /**
+     * @var mixed The default data to be used to populate each coordinate.
+     */
     public $Data = [];
 
     /**
@@ -47,7 +62,6 @@ class Matrix
      */
     private function populateVector(array &$Vector, int $Dimension)
     {
-
         /** Fill the coordinate with the specified data and exit. */
         if ($Dimension >= $this->Dimensions) {
             $Vector = $this->Data;
@@ -81,7 +95,6 @@ class Matrix
      */
     public function iterateCallback($Description, callable $Callback = null, ...$Data)
     {
-
         /** Guard. */
         if (!is_string($Description) && !is_int($Description)) {
             return;
@@ -169,7 +182,6 @@ class Matrix
      */
     private function iterateCallbackGeneratorInner(array &$Matrix, array &$Indexes, int $Depth, string $KeyRoot = '', callable $Callback, array $Data): \Generator
     {
-
         /** Get current indexes. */
         $Index = $Indexes[$Depth];
 

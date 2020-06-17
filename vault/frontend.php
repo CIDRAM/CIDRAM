@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2020.06.07).
+ * This file: Front-end handler (last modified: 2020.06.15).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -2547,11 +2547,11 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'file-manager' && $CIDRAM['FE'][
 
                     /** Add parent directories. */
                     while (strpos($CIDRAM['ThisName'], '/') !== false || strpos($CIDRAM['ThisName'], "\\") !== false) {
-                        $CIDRAM['Separator'] = (strpos($CIDRAM['ThisName'], '/') !== false) ? '/' : "\\";
-                        $CIDRAM['ThisDir'] = substr($CIDRAM['ThisName'], 0, strpos($CIDRAM['ThisName'], $CIDRAM['Separator']));
+                        $Separator = (strpos($CIDRAM['ThisName'], '/') !== false) ? '/' : "\\";
+                        $CIDRAM['ThisDir'] = substr($CIDRAM['ThisName'], 0, strpos($CIDRAM['ThisName'], $Separator));
                         $CIDRAM['ThisPath'] .= $CIDRAM['ThisDir'] . '/';
                         $CIDRAM['ThisName'] = substr($CIDRAM['ThisName'], strlen($CIDRAM['ThisDir']) + 1);
-                        if (!file_exists($CIDRAM['ThisPath']) || !is_dir($CIDRAM['ThisPath'])) {
+                        if (!is_dir($CIDRAM['ThisPath'])) {
                             mkdir($CIDRAM['ThisPath']);
                         }
                     }

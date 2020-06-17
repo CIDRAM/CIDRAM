@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Language handler (last modified: 2019.08.19).
+ * This file: Language handler (last modified: 2020.06.12).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -110,7 +110,7 @@ if (!$CIDRAM['Config']['general']['lang_override'] || empty($_SERVER['HTTP_ACCEP
         $CIDRAM['L10N-Lang-Attache'] = ($CIDRAM['Config']['general']['lang'] === $CIDRAM['Client-L10N']['Accepted']) ? '' : sprintf(
             ' lang="%s" dir="%s"',
             $CIDRAM['Client-L10N']['Accepted'],
-            isset($CIDRAM['Client-L10N']['Data']['Text Direction']) ? $CIDRAM['Client-L10N']['Data']['Text Direction'] : 'ltr'
+            $CIDRAM['Client-L10N']['Data']['Text Direction'] ?? 'ltr'
         );
         $CIDRAM['Client-L10N'] = $CIDRAM['Client-L10N']['Data'];
     }

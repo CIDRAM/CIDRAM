@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2020.06.07).
+ * This file: Front-end functions file (last modified: 2020.06.15).
  */
 
 /**
@@ -1780,11 +1780,11 @@ $CIDRAM['UpdatesHandler-Update'] = function ($ID) use (&$CIDRAM) {
                 $ThisName = $ThisFileName;
                 $ThisPath = $CIDRAM['Vault'];
                 while (strpos($ThisName, '/') !== false || strpos($ThisName, "\\") !== false) {
-                    $CIDRAM['Separator'] = (strpos($ThisName, '/') !== false) ? '/' : "\\";
-                    $CIDRAM['ThisDir'] = substr($ThisName, 0, strpos($ThisName, $CIDRAM['Separator']));
+                    $Separator = (strpos($ThisName, '/') !== false) ? '/' : "\\";
+                    $CIDRAM['ThisDir'] = substr($ThisName, 0, strpos($ThisName, $Separator));
                     $ThisPath .= $CIDRAM['ThisDir'] . '/';
                     $ThisName = substr($ThisName, strlen($CIDRAM['ThisDir']) + 1);
-                    if (!file_exists($ThisPath) || !is_dir($ThisPath)) {
+                    if (!is_dir($ThisPath)) {
                         mkdir($ThisPath);
                     }
                 }
@@ -2192,7 +2192,7 @@ $CIDRAM['UpdatesHandler-Repair'] = function ($ID) use (&$CIDRAM) {
                     $ThisDir = substr($ThisName, 0, strpos($ThisName, $Separator));
                     $ThisPath .= $ThisDir . '/';
                     $ThisName = substr($ThisName, strlen($ThisDir) + 1);
-                    if (!file_exists($ThisPath) || !is_dir($ThisPath)) {
+                    if (!is_dir($ThisPath)) {
                         mkdir($ThisPath);
                     }
                 }
@@ -2971,29 +2971,26 @@ $CIDRAM['GenerateConfirm'] = function (string $Action, string $Form) use (&$CIDR
 $CIDRAM['FELogger'] = function (string $IPAddr, string $User, string $Message) use (&$CIDRAM) {
 
     /** Guard. */
-    if (!$CIDRAM['Config']['general']['frontend_log'] || empty($CIDRAM['FE']['DateTime'])) {
+    if (
+        empty($CIDRAM['FE']['DateTime']) ||
+        !($File = $CIDRAM['BuildPath']($CIDRAM['Vault'] . $CIDRAM['Config']['general']['frontend_log']))
+    ) {
         return;
     }
-
-    /** Applies formatting for dynamic log filenames. */
-    $File = $CIDRAM['TimeFormat']($CIDRAM['Now'], $CIDRAM['Config']['general']['frontend_log']);
 
     $Data = $CIDRAM['Config']['legal']['pseudonymise_ip_addresses'] ? $CIDRAM['Pseudonymise-IP']($IPAddr) : $IPAddr;
     $Data .= ' - ' . $CIDRAM['FE']['DateTime'] . ' - "' . $User . '" - ' . $Message . "\n";
 
-    $WriteMode = (!file_exists($CIDRAM['Vault'] . $File) || (
+    $WriteMode = (!file_exists($File) || (
         $CIDRAM['Config']['general']['truncate'] > 0 &&
-        filesize($CIDRAM['Vault'] . $File) >= $CIDRAM['ReadBytes']($CIDRAM['Config']['general']['truncate'])
+        filesize($File) >= $CIDRAM['ReadBytes']($CIDRAM['Config']['general']['truncate'])
     )) ? 'w' : 'a';
 
-    /** Build the path to the log and write it. */
-    if ($CIDRAM['BuildLogPath']($File)) {
-        $Handle = fopen($CIDRAM['Vault'] . $File, $WriteMode);
-        fwrite($Handle, $Data);
-        fclose($Handle);
-        if ($WriteMode === 'w') {
-            $CIDRAM['LogRotation']($CIDRAM['Config']['general']['frontend_log']);
-        }
+    $Handle = fopen($File, $WriteMode);
+    fwrite($Handle, $Data);
+    fclose($Handle);
+    if ($WriteMode === 'w') {
+        $CIDRAM['LogRotation']($CIDRAM['Config']['general']['frontend_log']);
     }
 };
 

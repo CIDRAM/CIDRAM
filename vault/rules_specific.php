@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Extended rules for some specific CIDRs (last modified: 2020.05.26).
+ * This file: Extended rules for some specific CIDRs (last modified: 2020.06.17).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -35,31 +35,6 @@ if (!isset($CIDRAM['RunParamResCache'])) {
  * @param string $Tag The triggered rule's section's name (if there's any).
  */
 $CIDRAM['RunParamResCache']['rules_specific.php'] = function (array $Factors = [], $FactorIndex = 0, $LN = '', $Tag = '') use (&$CIDRAM) {
-
-    /** Handle PSINet prefixes here. */
-    if ($Tag === 'PSINet, Inc') {
-
-        /** Skip processing if signatures have already been triggered or if the "block_generic" directive is false. */
-        if ($CIDRAM['BlockInfo']['SignatureCount'] > 0 || !$CIDRAM['Config']['signatures']['block_generic']) {
-            return;
-        }
-
-        if (empty($CIDRAM['CIDRAM_sapi'])) {
-            $CIDRAM['BlockInfo']['ReasonMessage'] = $CIDRAM['L10N']->getString('ReasonMessage_Generic');
-            if (!empty($CIDRAM['BlockInfo']['WhyReason'])) {
-                $CIDRAM['BlockInfo']['WhyReason'] .= ', ';
-            }
-            $CIDRAM['BlockInfo']['WhyReason'] .= $CIDRAM['L10N']->getString('Short_Generic') . $LN;
-            if (!empty($CIDRAM['BlockInfo']['Signatures'])) {
-                $CIDRAM['BlockInfo']['Signatures'] .= ', ';
-            }
-        }
-        $CIDRAM['BlockInfo']['Signatures'] .= $Factors[$FactorIndex];
-        $CIDRAM['BlockInfo']['SignatureCount']++;
-
-        /** Exit. */
-        return;
-    }
 
     /** Skip further processing if the "block_cloud" directive is false, or if no section tag has been defined. */
     if (!$CIDRAM['Config']['signatures']['block_cloud'] || !$Tag) {

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Event handlers file (last modified: 2019.09.24).
+ * This file: Event handlers file (last modified: 2020.06.15).
  */
 
 /**
@@ -19,29 +19,24 @@
 $CIDRAM['Events']->addHandler('writeToLog', function () use (&$CIDRAM) {
 
     /** Guard. */
-    if (!$CIDRAM['Config']['general']['logfile'] || empty($CIDRAM['LogFileNames']['logfile'])) {
+    if (!$Filename = $CIDRAM['BuildPath']($CIDRAM['Vault'] . $CIDRAM['Config']['general']['logfile'])) {
         return false;
     }
 
-    $Data = !file_exists($CIDRAM['Vault'] . $CIDRAM['LogFileNames']['logfile']) || (
+    $Data = !file_exists($Filename) || (
         $CIDRAM['Config']['general']['truncate'] > 0 &&
-        filesize($CIDRAM['Vault'] . $CIDRAM['LogFileNames']['logfile']) >= $CIDRAM['ReadBytes']($CIDRAM['Config']['general']['truncate'])
+        filesize($Filename) >= $CIDRAM['ReadBytes']($CIDRAM['Config']['general']['truncate'])
     ) ? "\x3c\x3fphp die; \x3f\x3e\n\n" : '';
     $WriteMode = !empty($Data) ? 'w' : 'a';
     $Data .= $CIDRAM['ParseVars']($CIDRAM['Parsables'], $CIDRAM['FieldTemplates']['Logs'] . "\n");
 
-    /** Build the path to the log and write it. */
-    if ($CIDRAM['BuildLogPath']($CIDRAM['LogFileNames']['logfile'])) {
-        $File = fopen($CIDRAM['Vault'] . $CIDRAM['LogFileNames']['logfile'], $WriteMode);
-        fwrite($File, $Data);
-        fclose($File);
-        if ($WriteMode === 'w') {
-            $CIDRAM['LogRotation']($CIDRAM['Config']['general']['logfile']);
-        }
-        return true;
+    $File = fopen($Filename, $WriteMode);
+    fwrite($File, $Data);
+    fclose($File);
+    if ($WriteMode === 'w') {
+        $CIDRAM['LogRotation']($CIDRAM['Config']['general']['logfile']);
     }
-
-    return false;
+    return true;
 });
 
 /**
@@ -53,9 +48,8 @@ $CIDRAM['Events']->addHandler('writeToLog', function () use (&$CIDRAM) {
 
     /** Guard. */
     if (
-        !$CIDRAM['Config']['general']['logfileApache'] ||
-        empty($CIDRAM['LogFileNames']['logfileApache']) ||
-        empty($CIDRAM['BlockInfo'])
+        empty($CIDRAM['BlockInfo']) ||
+        !($Filename = $CIDRAM['BuildPath']($CIDRAM['Vault'] . $CIDRAM['Config']['general']['logfileApache']))
     ) {
         return false;
     }
@@ -72,23 +66,18 @@ $CIDRAM['Events']->addHandler('writeToLog', function () use (&$CIDRAM) {
         (empty($CIDRAM['BlockInfo']['Referrer']) ? '-' : $CIDRAM['BlockInfo']['Referrer']),
         (empty($CIDRAM['BlockInfo']['UA']) ? '-' : $CIDRAM['BlockInfo']['UA'])
     );
-    $WriteMode = !file_exists($CIDRAM['Vault'] . $CIDRAM['LogFileNames']['logfileApache']) || (
+    $WriteMode = !file_exists($Filename) || (
         $CIDRAM['Config']['general']['truncate'] > 0 &&
-        filesize($CIDRAM['Vault'] . $CIDRAM['LogFileNames']['logfileApache']) >= $CIDRAM['ReadBytes']($CIDRAM['Config']['general']['truncate'])
+        filesize($Filename) >= $CIDRAM['ReadBytes']($CIDRAM['Config']['general']['truncate'])
     ) ? 'w' : 'a';
 
-    /** Build the path to the log and write it. */
-    if ($CIDRAM['BuildLogPath']($CIDRAM['LogFileNames']['logfileApache'])) {
-        $File = fopen($CIDRAM['Vault'] . $CIDRAM['LogFileNames']['logfileApache'], $WriteMode);
-        fwrite($File, $Data);
-        fclose($File);
-        if ($WriteMode === 'w') {
-            $CIDRAM['LogRotation']($CIDRAM['Config']['general']['logfileApache']);
-        }
-        return true;
+    $File = fopen($Filename, $WriteMode);
+    fwrite($File, $Data);
+    fclose($File);
+    if ($WriteMode === 'w') {
+        $CIDRAM['LogRotation']($CIDRAM['Config']['general']['logfileApache']);
     }
-
-    return false;
+    return true;
 });
 
 /**
@@ -100,36 +89,32 @@ $CIDRAM['Events']->addHandler('writeToLog', function () use (&$CIDRAM) {
 
     /** Guard. */
     if (
-        !$CIDRAM['Config']['general']['logfileSerialized'] ||
-        empty($CIDRAM['LogFileNames']['logfileSerialized']) ||
-        empty($CIDRAM['BlockInfo'])
+        empty($CIDRAM['BlockInfo']) ||
+        !($Filename = $CIDRAM['BuildPath']($CIDRAM['Vault'] . $CIDRAM['Config']['general']['logfileSerialized']))
     ) {
         return false;
     }
 
     $BlockInfo = $CIDRAM['BlockInfo'];
     unset($BlockInfo['EmailAddr'], $BlockInfo['UALC'], $BlockInfo['favicon']);
+
     /** Remove empty entries prior to serialising. */
     $BlockInfo = array_filter($BlockInfo, function ($Value) {
         return !(is_string($Value) && empty($Value));
     });
-    $WriteMode = !file_exists($CIDRAM['Vault'] . $CIDRAM['LogFileNames']['logfileSerialized']) || (
+
+    $WriteMode = !file_exists($Filename) || (
         $CIDRAM['Config']['general']['truncate'] > 0 &&
-        filesize($CIDRAM['Vault'] . $CIDRAM['LogFileNames']['logfileSerialized']) >= $CIDRAM['ReadBytes']($CIDRAM['Config']['general']['truncate'])
+        filesize($Filename) >= $CIDRAM['ReadBytes']($CIDRAM['Config']['general']['truncate'])
     ) ? 'w' : 'a';
 
-    /** Build the path to the log and write it. */
-    if ($CIDRAM['BuildLogPath']($CIDRAM['LogFileNames']['logfileSerialized'])) {
-        $File = fopen($CIDRAM['Vault'] . $CIDRAM['LogFileNames']['logfileSerialized'], $WriteMode);
-        fwrite($File, serialize($BlockInfo) . "\n");
-        fclose($File);
-        if ($WriteMode === 'w') {
-            $CIDRAM['LogRotation']($CIDRAM['Config']['general']['logfileSerialized']);
-        }
-        return true;
+    $File = fopen($Filename, $WriteMode);
+    fwrite($File, serialize($BlockInfo) . "\n");
+    fclose($File);
+    if ($WriteMode === 'w') {
+        $CIDRAM['LogRotation']($CIDRAM['Config']['general']['logfileSerialized']);
     }
-
-    return false;
+    return true;
 });
 
 /**
@@ -140,16 +125,17 @@ $CIDRAM['Events']->addHandler('writeToLog', function () use (&$CIDRAM) {
 $CIDRAM['Events']->addHandler('reCaptchaLog', function () use (&$CIDRAM) {
 
     /** Guard. */
-    if (!$CIDRAM['Config']['recaptcha']['logfile'] || !$CIDRAM['reCAPTCHA']['Loggable'] || empty($CIDRAM['BlockInfo'])) {
+    if (
+        !$CIDRAM['reCAPTCHA']['Loggable'] ||
+        empty($CIDRAM['BlockInfo']) ||
+        !($Filename = $CIDRAM['BuildPath']($CIDRAM['Vault'] . $CIDRAM['Config']['recaptcha']['logfile']))
+    ) {
         return false;
     }
 
-    /** Applies formatting for dynamic log filenames. */
-    $Filename = $CIDRAM['TimeFormat']($CIDRAM['Now'], $CIDRAM['Config']['recaptcha']['logfile']);
-
-    $WriteMode = !file_exists($CIDRAM['Vault'] . $Filename) || (
+    $WriteMode = !file_exists($Filename) || (
         $CIDRAM['Config']['general']['truncate'] > 0 &&
-        filesize($CIDRAM['Vault'] . $Filename) >= $CIDRAM['ReadBytes']($CIDRAM['Config']['general']['truncate'])
+        filesize($Filename) >= $CIDRAM['ReadBytes']($CIDRAM['Config']['general']['truncate'])
     ) ? 'w' : 'a';
     $Data = sprintf(
         "%1\$s%2\$s - %3\$s%4\$s - %5\$s%6\$s\n",
@@ -166,18 +152,13 @@ $CIDRAM['Events']->addHandler('reCaptchaLog', function () use (&$CIDRAM) {
         $Data .= "\n";
     }
 
-    /** Build the path to the log and write it. */
-    if ($CIDRAM['BuildLogPath']($Filename)) {
-        $File = fopen($CIDRAM['Vault'] . $Filename, $WriteMode);
-        fwrite($File, $Data);
-        fclose($File);
-        if ($WriteMode === 'w') {
-            $CIDRAM['LogRotation']($CIDRAM['Config']['recaptcha']['logfile']);
-        }
-        return true;
+    $File = fopen($Filename, $WriteMode);
+    fwrite($File, $Data);
+    fclose($File);
+    if ($WriteMode === 'w') {
+        $CIDRAM['LogRotation']($CIDRAM['Config']['recaptcha']['logfile']);
     }
-
-    return false;
+    return true;
 });
 
 /**
@@ -238,16 +219,16 @@ $CIDRAM['Events']->addHandler('final', function () use (&$CIDRAM) {
     unset($CIDRAM['Stage']);
 
     /** Guard. */
-    if (!$CIDRAM['Config']['general']['error_log'] || !isset($CIDRAM['Pending-Error-Log-Data'])) {
+    if (
+        !isset($CIDRAM['Pending-Error-Log-Data']) ||
+        !($File = $CIDRAM['BuildPath']($CIDRAM['Vault'] . $CIDRAM['Config']['general']['error_log']))
+    ) {
         return false;
     }
 
-    /** Applies formatting for dynamic log filenames. */
-    $File = $CIDRAM['TimeFormat']($CIDRAM['Now'], $CIDRAM['Config']['general']['error_log']);
-
-    if (!file_exists($CIDRAM['Vault'] . $File) || !filesize($CIDRAM['Vault'] . $File) || (
+    if (!file_exists($File) || !filesize($File) || (
         $CIDRAM['Config']['general']['truncate'] > 0 &&
-        filesize($CIDRAM['Vault'] . $File) >= $CIDRAM['ReadBytes']($CIDRAM['Config']['general']['truncate'])
+        filesize($File) >= $CIDRAM['ReadBytes']($CIDRAM['Config']['general']['truncate'])
     )) {
         $WriteMode = 'w';
         $Data = $CIDRAM['L10N']->getString('error_log_header') . "\n=====\n" . $CIDRAM['Pending-Error-Log-Data'];
@@ -256,18 +237,13 @@ $CIDRAM['Events']->addHandler('final', function () use (&$CIDRAM) {
         $Data = $CIDRAM['Pending-Error-Log-Data'];
     }
 
-    /** Build the path to the log and write it. */
-    if ($CIDRAM['BuildLogPath']($File)) {
-        $Handle = fopen($CIDRAM['Vault'] . $File, $WriteMode);
-        fwrite($Handle, $Data);
-        fclose($Handle);
-        if ($WriteMode === 'w') {
-            $CIDRAM['LogRotation']($CIDRAM['Config']['general']['error_log']);
-        }
-        return true;
+    $Handle = fopen($File, $WriteMode);
+    fwrite($Handle, $Data);
+    fclose($Handle);
+    if ($WriteMode === 'w') {
+        $CIDRAM['LogRotation']($CIDRAM['Config']['general']['error_log']);
     }
-
-    return false;
+    return true;
 });
 
 /**
@@ -279,28 +255,20 @@ $CIDRAM['Events']->addHandler('final', function () use (&$CIDRAM) {
 $CIDRAM['Events']->addHandler('writeToPHPMailerEventLog', function ($Data) use (&$CIDRAM) {
 
     /** Guard. */
-    if (!$CIDRAM['Config']['PHPMailer']['EventLog']) {
+    if (!$EventLog = $CIDRAM['BuildPath']($CIDRAM['Vault'] . $CIDRAM['Config']['PHPMailer']['event_log'])) {
         return false;
     }
 
-    /** Applies formatting for dynamic log filenames. */
-    $EventLog = $CIDRAM['TimeFormat']($CIDRAM['Now'], $CIDRAM['Config']['PHPMailer']['EventLog']);
-
-    $WriteMode = (!file_exists($CIDRAM['Vault'] . $EventLog) || (
+    $WriteMode = (!file_exists($EventLog) || (
         $CIDRAM['Config']['general']['truncate'] > 0 &&
-        filesize($CIDRAM['Vault'] . $EventLog) >= $CIDRAM['ReadBytes']($CIDRAM['Config']['general']['truncate'])
+        filesize($EventLog) >= $CIDRAM['ReadBytes']($CIDRAM['Config']['general']['truncate'])
     )) ? 'w' : 'a';
 
-    /** Build the path to the log and write it. */
-    if ($CIDRAM['BuildLogPath']($EventLog)) {
-        $Handle = fopen($CIDRAM['Vault'] . $EventLog, $WriteMode);
-        fwrite($Handle, $Data);
-        fclose($Handle);
-        if ($WriteMode === 'w') {
-            $CIDRAM['LogRotation']($CIDRAM['Config']['PHPMailer']['EventLog']);
-        }
-        return true;
+    $Handle = fopen($EventLog, $WriteMode);
+    fwrite($Handle, $Data);
+    fclose($Handle);
+    if ($WriteMode === 'w') {
+        $CIDRAM['LogRotation']($CIDRAM['Config']['PHPMailer']['EventLog']);
     }
-
-    return false;
+    return true;
 });

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2020.05.16).
+ * This file: Functions file (last modified: 2020.06.15).
  */
 
 /**
@@ -69,19 +69,19 @@ $CIDRAM['ReadFile'] = function ($File) {
  * Replaces encapsulated substrings within a string using the values of the
  * corresponding elements within an array.
  *
- * @param array $Needle An array containing replacement values.
+ * @param array $Needles An array containing replacement values.
  * @param string $Haystack The string to work with.
  * @return string The string with its encapsulated substrings replaced.
  */
-$CIDRAM['ParseVars'] = function (array $Needle, $Haystack) {
+$CIDRAM['ParseVars'] = function (array $Needles, $Haystack) {
     if (empty($Haystack)) {
         return '';
     }
-    array_walk($Needle, function ($Value, $Key) use (&$Haystack) {
+    foreach ($Needles as $Key => $Value) {
         if (!is_array($Value)) {
             $Haystack = str_replace('{' . $Key . '}', $Value, $Haystack);
         }
-    });
+    }
     return $Haystack;
 };
 
@@ -1567,7 +1567,9 @@ $CIDRAM['Resolve6to4'] = function ($In) {
     return '';
 };
 
-/** Initialise cache. */
+/**
+ * Initialise the cache.
+ */
 $CIDRAM['InitialiseCache'] = function () use (&$CIDRAM) {
 
     /** Create new cache object. */
@@ -1744,25 +1746,55 @@ $CIDRAM['SocialMediaVerification'] = function () use (&$CIDRAM) {
 };
 
 /**
- * Build directory path for logfiles.
+ * Build any missing parts of the given path, apply date/time replacements, and
+ * check whether the path is writable.
  *
- * @param string $File The file we're building for.
- * @return bool True on success; False on failure.
+ * @param string $Path The path we're building for.
+ * @param bool $PointsToFile Whether the path ultimately points to a file or a
+ *      directory.
+ * @return string If all missing parts were successfully built and the final
+ *      rebuilt path is writable, returns the final rebuilt path. Otherwise,
+ *      returns an empty string.
  */
-$CIDRAM['BuildLogPath'] = function ($File) use (&$CIDRAM) {
-    $ThisPath = $CIDRAM['Vault'];
-    $File = str_replace("\\", '/', $File);
-    while (strpos($File, '/') !== false) {
-        $Dir = substr($File, 0, strpos($File, '/'));
-        $ThisPath .= $Dir . '/';
-        $File = substr($File, strlen($Dir) + 1);
-        if (!file_exists($ThisPath) || !is_dir($ThisPath)) {
-            if (!mkdir($ThisPath)) {
-                return false;
-            }
+$CIDRAM['BuildPath'] = function ($Path, $PointsToFile = true) use (&$CIDRAM) {
+
+    /** Guard. */
+    if (!is_string($Path) || empty($Path)) {
+        return '';
+    }
+
+    /** Applies time/date replacements. */
+    $Path = $CIDRAM['TimeFormat']($CIDRAM['Now'], $Path);
+
+    /** Split path into steps. */
+    $Steps = preg_split('~[\\\/]~', $Path);
+
+    $Rebuilt = '';
+    $File = $PointsToFile ? array_pop($Steps) : '';
+
+    /** Build directories. */
+    foreach ($Steps as $Step) {
+        $Rebuilt .= ($Rebuilt ? DIRECTORY_SEPARATOR : '') . $Step;
+        if (preg_match('~^\.+$~', $Step)) {
+            continue;
+        }
+        if (!is_dir($Rebuilt) && !mkdir($Rebuilt)) {
+            return '';
         }
     }
-    return true;
+
+    /** Return an empty string if the final rebuilt path isn't writable. */
+    if (!is_writable($Rebuilt)) {
+        return '';
+    }
+
+    /** Append file. */
+    if ($File) {
+        $Rebuilt .= ($Rebuilt ? DIRECTORY_SEPARATOR : '') . $File;
+    }
+
+    /** Return the final rebuilt path. */
+    return $Rebuilt;
 };
 
 /**

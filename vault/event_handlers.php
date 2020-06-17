@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Event handlers file (last modified: 2020.06.15).
+ * This file: Event handlers file (last modified: 2020.06.17).
  */
 
 /**
@@ -19,7 +19,10 @@
 $CIDRAM['Events']->addHandler('writeToLog', function () use (&$CIDRAM): bool {
 
     /** Guard. */
-    if (!$Filename = $CIDRAM['BuildPath']($CIDRAM['Vault'] . $CIDRAM['Config']['general']['logfile'])) {
+    if (
+        !$CIDRAM['Config']['general']['logfile'] ||
+        !($Filename = $CIDRAM['BuildPath']($CIDRAM['Vault'] . $CIDRAM['Config']['general']['logfile']))
+    ) {
         return false;
     }
 
@@ -49,6 +52,7 @@ $CIDRAM['Events']->addHandler('writeToLog', function () use (&$CIDRAM): bool {
     /** Guard. */
     if (
         empty($CIDRAM['BlockInfo']) ||
+        !$CIDRAM['Config']['general']['logfile_apache'] ||
         !($Filename = $CIDRAM['BuildPath']($CIDRAM['Vault'] . $CIDRAM['Config']['general']['logfile_apache']))
     ) {
         return false;
@@ -90,6 +94,7 @@ $CIDRAM['Events']->addHandler('writeToLog', function () use (&$CIDRAM): bool {
     /** Guard. */
     if (
         empty($CIDRAM['BlockInfo']) ||
+        !$CIDRAM['Config']['general']['logfile_serialized'] ||
         !($Filename = $CIDRAM['BuildPath']($CIDRAM['Vault'] . $CIDRAM['Config']['general']['logfile_serialized']))
     ) {
         return false;
@@ -128,6 +133,7 @@ $CIDRAM['Events']->addHandler('reCaptchaLog', function () use (&$CIDRAM): bool {
     if (
         !$CIDRAM['reCAPTCHA']['Loggable'] ||
         empty($CIDRAM['BlockInfo']) ||
+        !$CIDRAM['Config']['recaptcha']['logfile'] ||
         !($Filename = $CIDRAM['BuildPath']($CIDRAM['Vault'] . $CIDRAM['Config']['recaptcha']['logfile']))
     ) {
         return false;
@@ -221,6 +227,7 @@ $CIDRAM['Events']->addHandler('final', function () use (&$CIDRAM): bool {
     /** Guard. */
     if (
         !isset($CIDRAM['Pending-Error-Log-Data']) ||
+        !$CIDRAM['Config']['general']['error_log'] ||
         !($File = $CIDRAM['BuildPath']($CIDRAM['Vault'] . $CIDRAM['Config']['general']['error_log']))
     ) {
         return false;
@@ -255,7 +262,10 @@ $CIDRAM['Events']->addHandler('final', function () use (&$CIDRAM): bool {
 $CIDRAM['Events']->addHandler('writeToPHPMailerEventLog', function (string $Data) use (&$CIDRAM): bool {
 
     /** Guard. */
-    if (!$EventLog = $CIDRAM['BuildPath']($CIDRAM['Vault'] . $CIDRAM['Config']['PHPMailer']['event_log'])) {
+    if (
+        !$CIDRAM['Config']['PHPMailer']['event_log'] ||
+        !($EventLog = $CIDRAM['BuildPath']($CIDRAM['Vault'] . $CIDRAM['Config']['PHPMailer']['event_log']))
+    ) {
         return false;
     }
 

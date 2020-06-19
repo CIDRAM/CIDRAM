@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2020.06.17).
+ * This file: Functions file (last modified: 2020.06.19).
  */
 
 /**
@@ -1767,7 +1767,7 @@ $CIDRAM['BuildPath'] = function ($Path, $PointsToFile = true) use (&$CIDRAM) {
     $Path = $CIDRAM['TimeFormat']($CIDRAM['Now'], $Path);
 
     /** Split path into steps. */
-    $Steps = preg_split('~[\\\/]~', $Path, PREG_SPLIT_NO_EMPTY);
+    $Steps = preg_split('~[\\\/]~', $Path, -1, PREG_SPLIT_NO_EMPTY);
 
     $Rebuilt = '';
     $File = $PointsToFile ? array_pop($Steps) : '';

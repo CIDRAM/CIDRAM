@@ -1,8 +1,8 @@
 # IPv4 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv4.dat
 
-# Version: 2020.168.432
-# Last modified: 2020.06.17
+# Version: 2020.171.406
+# Last modified: 2020.06.20
 
 
 # ---
@@ -13380,8 +13380,8 @@ Tag: WebNX, Inc
 
 
 # ASN 198068 ("FASTVPS EESTI OU").
-# Stop Forum Spam (SFS) listings: 37.
-# Updated: 2019.04.16 / Checked: 2020.01.30
+# Stop Forum Spam (SFS) listings: 35.
+# Updated: 2019.04.16 / Checked: 2020.06.20
 
 5.45.112.0/20 Deny Cloud
 5.101.112.0/20 Deny Cloud
@@ -24981,8 +24981,8 @@ Tag: Brandwatch
 
 # ASN 49531 ("Limited Company Megaton" / '"NetCom-R" LLC').
 # Caught trying to snoop into admin areas of websites and spamming.
-# Stop Forum Spam (SFS) listings: 9.
-# Updated: 2020.01.30
+# Stop Forum Spam (SFS) listings: 1.
+# Updated: 2020.01.30 / Checked: 2020.06.20
 
 91.214.204.0/22 Deny Cloud
 93.92.32.0/21 Deny Cloud
@@ -26358,8 +26358,9 @@ Tag: REG.RU
 
 
 # ASNs 4769, 46015, 55405, 136170 ("Exa Bytes Network Sdn.Bhd").
-# Malware detected on network; Future C&C risk.
-# Updated: 2020.01.30
+# DDoS, hacking, xmlrpc attacks, and brute-force attempts detected originating
+# from this network.
+# Updated: 2020.06.20
 
 103.82.240.0/22 Deny Cloud
 202.179.136.0/23 Deny Cloud
@@ -26377,9 +26378,10 @@ Origin: ID
 137.59.108.0/22 Deny Cloud
 202.157.176.0/23 Deny Cloud
 202.157.182.0/23 Deny Cloud
-202.157.184.0/22 Deny Cloud
+202.157.184.0/23 Deny Cloud
+202.157.187.0/24 Deny Cloud
 202.157.188.0/23 Deny Cloud
-203.142.0.0/21 Deny Cloud
+203.142.6.0/23 Deny Cloud
 Origin: MY
 117.121.240.0/24 Deny Cloud
 Origin: SG
@@ -26400,8 +26402,8 @@ Tag: ARDH GLOBAL
 
 
 # ASN 24971 ("Master Internet s.r.o").
-# Stop Forum Spam (SFS) listings: 398.
-# Updated: 2020.01.30
+# Stop Forum Spam (SFS) listings: 407.
+# Updated: 2020.01.30 / Checked: 2020.06.20
 
 5.180.200.0/22 Deny Cloud
 37.205.8.0/21 Deny Proxy
@@ -31172,6 +31174,76 @@ Tag: acens Technologies
 195.246.199.0/24 Deny Cloud
 Origin: HU
 Tag: ATW Internet Kft
+
+
+# ASN 48090 ("PPTECHNOLOGY LIMITED").
+# DDoS, SSH and brute-force attacks detected originating from this network.
+# Stop Forum Spam (SFS) listings: 75.
+# Updated: 2020.06.20
+
+45.148.10.0/24 Deny Malware
+Origin: IT
+2.57.123.0/24 Deny Malware
+Origin: RO
+Tag: PPTECHNOLOGY LIMITED
+
+
+# ASNs 39517, 48874 ("HOSTMAZE INC SRL-D").
+# DDoS, SSH and brute-force attacks detected originating from this network.
+# Stop Forum Spam (SFS) listings: 1 (AS48874).
+# Updated: 2020.06.20
+
+85.204.116.0/24 Deny Cloud
+86.104.10.0/24 Deny Cloud
+86.104.194.0/24 Deny Cloud
+89.32.41.0/24 Deny Cloud
+89.40.73.0/24 Deny Cloud
+178.156.202.0/24 Deny Cloud
+185.232.67.0/24 Deny Cloud
+Origin: RO
+Tag: HOSTMAZE INC SRL-D
+
+
+# ASN 48817 ("Chelyshev Sergej Aleksandrovich" or "IP Kiktev Nikolay Vladimirovich").
+# Private Russian network. Thousands upon thousands of regular hack attempts,
+# DDoS, SSH and brute-force attacks reported on a regular basis unending.
+# Updated: 2020.06.20
+
+92.63.194.0/24 Deny Malware
+185.156.73.0/24 Deny Malware
+Origin: RU
+Tag: Aleksandrovich/Vladimirovich
+
+
+# ASN 202729 ('OOO "Patent-Media"').
+# Private Russian network. Hack attempts, DDoS, SSH and brute-force attacks
+# reported on a regular basis unending.
+# Updated: 2020.06.20
+
+45.143.200.0/24 Deny Malware
+Origin: RU
+Tag: OOO Patent-Media
+
+
+# ASN 34989 ("ServeTheWorld AS").
+# Norwegian server farm. A huge source of spam.
+# Stop Forum Spam (SFS) listings: 4,450.
+# Updated: 2020.06.20
+
+83.143.80.0/21 Deny Cloud
+91.189.176.0/21 Deny Cloud
+93.113.131.0/24 Deny Cloud
+94.177.112.0/24 Deny Cloud
+185.83.20.0/22 Deny Cloud
+185.101.32.0/22 Deny Cloud
+185.117.97.0/24 Deny Cloud
+185.126.36.0/22 Deny Cloud
+194.242.10.0/23 Deny Cloud
+217.170.192.0/20 Deny Cloud
+Origin: NO
+172.94.70.0/24 Deny Cloud
+Origin: US
+Tag: ServeTheWorld AS
 
 
 # ---

@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_isps.dat
 
-# Version: 2020.168.432
-# Last modified: 2020.06.17
+# Version: 2020.171.406
+# Last modified: 2020.06.20
 
 
 # ---
@@ -2447,6 +2447,21 @@ recaptcha:
 2804:31fc::/32 Deny Malware
 Origin: BR
 Tag: BROSEGHINI LTDA EPP
+---
+recaptcha:
+ enabled: true
+
+
+# ASN 12297 ("Vodafone Libertel B.V").
+# Dutch mobile internet provider. SSH and brute-force attacks detected
+# originating from *some parts* of this network, as well as spam campaigns
+# originating from *some specific IPs* of this network.
+# Stop Forum Spam (SFS) listings: 537.
+# Updated: 2020.06.20
+
+2001:1c05:3202:4b00::/64 Deny Spam
+Origin: NL
+Tag: Vodafone Libertel
 ---
 recaptcha:
  enabled: true

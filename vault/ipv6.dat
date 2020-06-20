@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6.dat
 
-# Version: 2020.168.432
-# Last modified: 2020.06.17
+# Version: 2020.171.406
+# Last modified: 2020.06.20
 
 
 # ---
@@ -2243,8 +2243,8 @@ Tag: WebNX, Inc
 
 
 # ASN 198068 ("FASTVPS EESTI OU").
-# Stop Forum Spam (SFS) listings: 37.
-# Updated: 2020.01.30
+# Stop Forum Spam (SFS) listings: 35.
+# Updated: 2020.01.30 / Checked: 2020.06.20
 
 2a03:f480:1::/48 Deny Cloud
 2a03:f480:2::/47 Deny Cloud
@@ -4825,8 +4825,9 @@ Tag: REG.RU
 
 
 # ASNs 4769, 46015, 55405, 136170 ("Exa Bytes Network Sdn.Bhd").
-# Malware detected on network; Future C&C risk.
-# Updated: 2018.06.19 / Checked: 2020.01.30
+# DDoS, hacking, xmlrpc attacks, and brute-force attempts detected originating
+# from this network.
+# Updated: 2018.06.19 / Checked: 2020.06.20
 
 2402:6c00::/32 Deny Cloud
 Origin: MY
@@ -4844,8 +4845,8 @@ Tag: ARDH GLOBAL
 
 
 # ASN 24971 ("Master Internet s.r.o").
-# Stop Forum Spam (SFS) listings: 398.
-# Updated: 2020.01.30
+# Stop Forum Spam (SFS) listings: 407.
+# Updated: 2020.01.30 / Checked: 2020.06.20
 
 2001:678:a50::/48 Deny Cloud
 2001:67c:68::/48 Deny Cloud
@@ -6532,3 +6533,13 @@ Tag: acens Technologies
 2a01:47c1::/32 Deny Cloud
 Origin: HU
 Tag: ATW Internet Kft
+
+
+# ASNs 39517, 48874 ("HOSTMAZE INC SRL-D").
+# DDoS, SSH and brute-force attacks detected originating from this network.
+# Stop Forum Spam (SFS) listings: 1 (AS48874).
+# Updated: 2020.06.20
+
+2a02:13f0:8100::/48 Deny Cloud
+Origin: RO
+Tag: HOSTMAZE INC SRL-D

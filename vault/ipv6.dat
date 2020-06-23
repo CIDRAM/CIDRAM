@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6.dat
 
-# Version: 2020.171.406
-# Last modified: 2020.06.20
+# Version: 2020.174.306
+# Last modified: 2020.06.23
 
 
 # ---
@@ -1249,18 +1249,17 @@ Tag: DataWagon LLC
 # ASNs 20473, 46407 ("Choopa, LLC").
 # Ranges change frequently / Should update often.
 # (Can omit anything under 44../8; clean).
-# Stop Forum Spam (SFS) listings: 15,402 (AS20473).
-# Updated: 2020.01.31
+# Stop Forum Spam (SFS) listings: 23,630 (AS20473).
+# Updated: 2020.06.22
 
 2a07:1c44:7017::/48 Deny Cloud
-2a07:1c44:8400::/48 Deny Cloud
+2a07:1c44:8400::/47 Deny Cloud
 Origin: AT
 2602:fed2:710e::/48 Deny Cloud
+2602:fed2:7306::/48 Deny Cloud
+2602:fed2:7800::/41 Deny Cloud
+2602:fed2:7880::/44 Deny Cloud
 Origin: CA
-2a06:e881:5901::/48 Deny Cloud
-Origin: CH
-2001:df1:b980::/48 Deny Cloud
-Origin: CN
 2001:678:a90::/48 Deny Cloud
 2a03:13a2:283f::/48 Deny Cloud
 2a03:13a2:343e::/48 Deny Cloud
@@ -1275,7 +1274,10 @@ Origin: CN
 2a09:e1c1:f000::/44 Deny Cloud
 2a0a:7180:80::/48 Deny Cloud
 2a0c:da01::/48 Deny Cloud
+2a0e:b107:19e::/48 Deny Cloud
 Origin: DE
+2a0a:3400::/29 Deny Cloud
+Origin: DK
 2a06:7a05::/48 Deny Cloud
 Origin: EU
 2001:678:90c::/48 Deny Cloud
@@ -1284,18 +1286,18 @@ Origin: EU
 2a0f:d3c0:ff00::/48 Deny Cloud
 Origin: FR
 2a0f:5100:a01::/48 Deny Cloud
+2a0f:9400:7628::/48 Deny Cloud
+2a0f:9400:801c::/48 Deny Cloud
 Origin: GB
 2402:9e80:10::/48 Deny Cloud
 Origin: HK
-2001:678:214::/48 Deny Cloud
 2a0e:aa47::/48 Deny Cloud
 Origin: HU
-2401:c080:1000::/37 Deny Cloud
-2401:c080:1800::/38 Deny Cloud
+2401:c080:1000::/36 Deny Cloud
 Origin: JP
 2a00:fd40:6::/48 Deny Cloud
 2a06:2d40::/47 Deny Cloud
-2a09:d680::/31 Deny Cloud
+2a09:d680::/30 Deny Cloud
 2a0c:7e40:7bb1::/48 Deny Cloud
 2a0c:7e40:b397::/48 Deny Cloud
 2a0c:7e41:5357::/48 Deny Cloud
@@ -1312,10 +1314,6 @@ Origin: JP
 2a0c:7e46:4f08::/48 Deny Cloud
 2a0c:7e47:c909::/48 Deny Cloud
 Origin: NL
-2a09:7587::/32 Deny Cloud
-2a09:b107::/32 Deny Cloud
-2a0d:21c7::/32 Deny Cloud
-Origin: RU
 2403:7f40:ff00::/48 Deny Cloud
 Origin: TW
 2001:19f0::/38 Deny Cloud
@@ -1338,6 +1336,8 @@ Origin: TW
 2602:ffb0:7::/48 Deny Cloud
 2602:ffb0:1b::/48 Deny Cloud
 2602:ffb0:29::/48 Deny Cloud
+2602:ffc5:108::/48 Deny Cloud
+2602:ffc5:200::/48 Deny Cloud
 2602:fff6:4::/48 Deny Cloud
 2607:6980:50b0::/44 Deny Cloud
 2607:7180::/32 Deny Cloud
@@ -1946,10 +1946,11 @@ Tag: EDIS GmbH
 
 
 # ASNs 8272, 8426, 34948 ("ClaraNET LTD").
-# Stop Forum Spam (SFS) listings: 19 (AS8426).
-# Updated: 2020.01.31
+# Stop Forum Spam (SFS) listings: 31 (AS8426).
+# Updated: 2020.06.22
 
 2a00:1798::/32 Deny Cloud
+2a01:6780:7::/48 Deny Cloud
 Origin: DE
 2a02:a0::/32 Deny Cloud
 Origin: ES
@@ -1962,6 +1963,7 @@ Origin: FR
 2001:67c:27dc::/48 Deny Cloud
 2001:a88::/32 Deny Cloud
 2a00:ed0::/32 Deny Cloud
+2a02:e100::/29 Deny Cloud
 Origin: GB
 2a02:830::/32 Deny Cloud
 Origin: NL
@@ -4084,8 +4086,8 @@ Tag: Confluence
 
 # ASN 25369 ("Hydra Communications Ltd").
 # (Can omit anything under 44../8; clean).
-# Stop Forum Spam (SFS) listings: 8,800.
-# Updated: 2020.01.31
+# Stop Forum Spam (SFS) listings: 8,643.
+# Updated: 2020.01.31 / Checked: 2020.06.22
 
 2a06:8dc6::/44 Deny Cloud
 2a06:8dc7::/48 Deny Cloud
@@ -4994,8 +4996,8 @@ Tag: ProfitBricks
 
 
 # ASN 44901 ("BelCloud Hosting Corporation").
-# Stop Forum Spam (SFS) listings: 241.
-# Updated: 2020.01.31
+# Stop Forum Spam (SFS) listings: 609.
+# Updated: 2020.01.31 / Checked: 2020.06.22
 
 2a07:5740::/31 Deny Cloud
 2a09:be80::/32 Deny Cloud
@@ -5585,12 +5587,121 @@ Tag: Business Network Ltd
 
 # ASNs 47172, 209829 ("Greenhost BV").
 # Dedicatd webhosting provider caught spamming forums.
-# Stop Forum Spam (SFS) listings: 89 (AS47172), 1 (AS209829).
-# Updated: 2019.09.30 / Checked: 2020.01.31
+# Stop Forum Spam (SFS) listings: 55 (AS47172), 2 (AS209829).
+# Updated: 2019.09.30 / Checked: 2020.06.23
 
 2a00:c6c0::/48 Deny Cloud
 Origin: NL
 Tag: Greenhost BV
+
+
+# ASN 11172 ("Alestra, S. de R.L. de C.V").
+# Network caught spamming, brute-forcing, attempting SSH attacks plus other
+# unwanted traffic. Network might be dedicated cloud, or might be multiplay,
+# but unable to confirm (homepage unavailable + information is scarce).
+# Stop Forum Spam (SFS) listings: 50.
+# Updated: 2020.06.23
+
+2001:1248:1::/48 Deny Cloud
+2001:1248:2::/47 Deny Cloud
+2001:1248:4::/47 Deny Cloud
+2001:1248:6::/48 Deny Cloud
+2001:1248:5500::/40 Deny Cloud
+2001:1248:5600::/39 Deny Cloud
+2001:1248:5900::/40 Deny Cloud
+2001:1248:7000::/41 Deny Cloud
+2001:1248:8000::/40 Deny Cloud
+2001:1248:8200::/39 Deny Cloud
+2001:1248:8400::/40 Deny Cloud
+2001:1248:8600::/40 Deny Cloud
+2001:1248:8700::/41 Deny Cloud
+2001:1248:87b0::/44 Deny Cloud
+2001:1248:87c0::/42 Deny Cloud
+2001:1248:8800::/42 Deny Cloud
+2001:1248:88b0::/44 Deny Cloud
+2001:1248:8900::/40 Deny Cloud
+2001:1248:9500::/41 Deny Cloud
+2001:1248:95b0::/44 Deny Cloud
+2001:1248:95c0::/42 Deny Cloud
+2001:1248:9600::/41 Deny Cloud
+2001:1248:96b0::/44 Deny Cloud
+2001:1248:96c0::/42 Deny Cloud
+2001:1248:9700::/41 Deny Cloud
+2001:1248:97b0::/44 Deny Cloud
+2001:1248:97c0::/42 Deny Cloud
+2001:1248:9800::/47 Deny Cloud
+2001:1248:9803::/48 Deny Cloud
+2001:1248:9804::/46 Deny Cloud
+2001:1248:9808::/45 Deny Cloud
+2001:1248:9810::/44 Deny Cloud
+2001:1248:9820::/45 Deny Cloud
+2001:1248:9828::/47 Deny Cloud
+2001:1248:982a::/48 Deny Cloud
+2001:1248:982c::/46 Deny Cloud
+2001:1248:9830::/45 Deny Cloud
+2001:1248:9838::/46 Deny Cloud
+2001:1248:983d::/48 Deny Cloud
+2001:1248:983e::/48 Deny Cloud
+2001:1248:9840::/42 Deny Cloud
+2001:1248:9880::/47 Deny Cloud
+2001:1248:9882::/48 Deny Cloud
+2001:1248:9884::/46 Deny Cloud
+2001:1248:9888::/45 Deny Cloud
+2001:1248:9890::/44 Deny Cloud
+2001:1248:98a0::/46 Deny Cloud
+2001:1248:98a5::/48 Deny Cloud
+2001:1248:98a7::/48 Deny Cloud
+2001:1248:98a8::/45 Deny Cloud
+2001:1248:98b0::/45 Deny Cloud
+2001:1248:98b8::/46 Deny Cloud
+2001:1248:98bc::/47 Deny Cloud
+2001:1248:98be::/48 Deny Cloud
+2001:1248:98c0::/45 Deny Cloud
+2001:1248:98c8::/46 Deny Cloud
+2001:1248:98cc::/47 Deny Cloud
+2001:1248:98ce::/48 Deny Cloud
+2001:1248:98d0::/45 Deny Cloud
+2001:1248:98d8::/47 Deny Cloud
+2001:1248:98dc::/46 Deny Cloud
+2001:1248:98e0::/47 Deny Cloud
+2001:1248:98e3::/48 Deny Cloud
+2001:1248:98e5::/48 Deny Cloud
+2001:1248:98e6::/48 Deny Cloud
+2001:1248:98e8::/45 Deny Cloud
+2001:1248:98f0::/45 Deny Cloud
+2001:1248:98f8::/47 Deny Cloud
+2001:1248:98fb::/48 Deny Cloud
+2001:1248:98fc::/47 Deny Cloud
+2001:1248:98fe::/48 Deny Cloud
+2001:1248:9900::/40 Deny Cloud
+2001:1248:a000::/47 Deny Cloud
+2001:1248:a002::/48 Deny Cloud
+2001:1248:a006::/47 Deny Cloud
+2001:1248:a008::/47 Deny Cloud
+2001:1248:a00a::/48 Deny Cloud
+2001:1248:a00c::/47 Deny Cloud
+2001:1248:a00e::/48 Deny Cloud
+2001:1248:a015::/48 Deny Cloud
+2001:1248:a016::/47 Deny Cloud
+2001:1248:a019::/48 Deny Cloud
+2001:1248:a01a::/47 Deny Cloud
+2001:1248:a01c::/46 Deny Cloud
+2001:1248:a020::/45 Deny Cloud
+2001:1248:a028::/46 Deny Cloud
+2001:1248:a02c::/48 Deny Cloud
+2001:1248:a02e::/47 Deny Cloud
+2001:1248:a400::/41 Deny Cloud
+2001:1248:a4b0::/44 Deny Cloud
+2001:1248:a4c0::/42 Deny Cloud
+2001:1248:a500::/41 Deny Cloud
+2001:1248:a600::/41 Deny Cloud
+2001:1248:a680::/42 Deny Cloud
+2001:1248:c201::/48 Deny Cloud
+Origin: MX
+Tag: Alestra
+---
+recaptcha:
+ enabled: true
 
 
 # ASN 48524 ("INTERRA telecommunications group, Ltd").
@@ -6543,3 +6654,12 @@ Tag: ATW Internet Kft
 2a02:13f0:8100::/48 Deny Cloud
 Origin: RO
 Tag: HOSTMAZE INC SRL-D
+
+
+# ASN 20052 ("Arbor Networks, Inc").
+# Vulnerability scanner + unwanted traffic.
+# Updated: 2020.06.22
+
+2620:11e:1000::/48 Deny Cloud
+Origin: US
+Tag: Arbor Networks, Inc

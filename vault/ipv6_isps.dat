@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_isps.dat
 
-# Version: 2020.171.406
-# Last modified: 2020.06.20
+# Version: 2020.174.306
+# Last modified: 2020.06.23
 
 
 # ---
@@ -1233,9 +1233,9 @@ recaptcha:
 # ASN 18403 ("The Corporation for Financing & Promoting Technology").
 # Interlaces with human endpoints in Vietnam, but also a significant source of
 # spam, hacks, brute-forcing, probing, etc.
-# %Listed, abuseat.org (CBL-Listed): 2.50%.
-# Stop Forum Spam (SFS) listings: 7,749.
-# Updated: 2020.02.11
+# %Listed, abuseat.org (CBL-Listed): 4.65%.
+# Stop Forum Spam (SFS) listings: 10,487.
+# Updated: 2020.02.11 / Checked: 2020.06.23
 
 2001:df2:d900::/48 Deny Generic
 2001:df6:1e00::/48 Deny Generic
@@ -2034,6 +2034,7 @@ recaptcha:
 
 
 # ASN 53356 ("WestConnect Communications").
+# (Can omit anything under 44../8; clean).
 # Canadian multiplay network (domestic ISP, webhosting, etc) caught spamming.
 # Stop Forum Spam (SFS) listings: 2,495.
 # Updated: 2020.05.11
@@ -2149,6 +2150,20 @@ recaptcha:
  enabled: true
 
 
+# ASNs 17072, 22884 ("TOTAL PLAY TELECOMUNICACIONES SA DE CV").
+# Mexican domestic ISP; also a notable source of forum and blog spam. Listing
+# just the currently affected ranges (not the entire network).
+# Stop Forum Spam (SFS) listings: 566 (AS17072), 1,111 (AS22884).
+# Updated: 2020.06.22
+
+2806:2f0:8000:aae::/64 Deny Spam
+Origin: MX
+Tag: TOTAL PLAY TELECOMUNICACIONES
+---
+recaptcha:
+ enabled: true
+
+
 # ASN 24309 ("Atria Convergence Technologies Pvt. Ltd. Broadband Internet
 # Service Provider INDIA"). An Indian domestic ISP caught spamming. Listing
 # just the affected ranges, plus all US ranges (interlaced cloud ranges).
@@ -2257,16 +2272,16 @@ recaptcha:
 
 
 # ASN 9299 ("Philippine Long Distance Telephone Company").
-# Domestic ISP from the Philippines and a source of spam. Just listing the
-# specific spammy IPs (not the entire network).
-# %Listed, abuseat.org (CBL-Listed): 1.16%.
-# Stop Forum Spam (SFS) listings: 3,206.
-# Updated: 2020.05.16
+# Philippines domestic ISP. XRumer, attempted hack attempts, brute-force and
+# SSH attacks detected from this network. Marked for use with reCAPTCHA.
+# Listing only the offending ranges/addresses (spam/malware).
+# %Listed, abuseat.org (CBL-Listed): 1.27%.
+# Stop Forum Spam (SFS) listings: 3,451.
+# Updated: 2020.06.22
 
-2001:4451:4216:db00::/64 Deny Spam
-2001:4455:148:ec00::/64 Deny Spam
-2001:4455:173:1e00::/64 Deny Spam
-2001:4455:6b3:8c00::/64 Deny Spam
+2001:4451:8212:5b00::/64 Deny Spam
+2001:4454:330:3600::/64 Deny Spam
+2001:4455:6bb:5800::/64 Deny Spam
 Origin: PH
 Tag: Philippine Long Distance
 ---
@@ -2462,6 +2477,58 @@ recaptcha:
 2001:1c05:3202:4b00::/64 Deny Spam
 Origin: NL
 Tag: Vodafone Libertel
+---
+recaptcha:
+ enabled: true
+
+
+# ASN 7018 ("AT&T Services, Inc").
+# Major domestic ISP in the United States; Should NEVER be blocked in entirety.
+# Listed here are some specific CIDRs/IPs where spam and/or other undesirable
+# traffic has been detected (spam/malware).
+# Stop Forum Spam (SFS) listings: 1,247.
+# Updated: 2020.06.22
+
+2600:1700:80:84e0::/64 Deny Spam
+2600:1700:6a40:5b70::/64 Deny Spam
+2600:1700:b420:cec0::/64 Deny Spam
+2600:1700:c021:fa40::/64 Deny Spam
+2600:1700:e4a0:e400::/64 Deny Spam
+2600:1702:c11:5400::/64 Deny Spam
+Origin: US
+Tag: AT&T Services, Inc
+---
+recaptcha:
+ enabled: true
+
+
+# ASN 224 ("UNINETT AS").
+# Norwegian educational infrastructure provider. Marked for use with reCAPTCHA
+# due to moderate risk of human endpoints being present. Hack, SSH, and
+# brute-force attempts detected originating from this network.
+# Stop Forum Spam (SFS) listings: 6.
+# Updated: 2020.06.22
+
+2001:67c:714::/48 Deny Malware
+2001:700::/32 Deny Malware
+Origin: NO
+Tag: UNINETT AS
+---
+recaptcha:
+ enabled: true
+
+
+# ASN 21928 ("T-Mobile USA, Inc").
+# U.S. mobile provider; SSH and brute-force attacks detected originating from
+# *some specific IPs* here. Spam events detected originating from *some
+# specific IPs* here.
+# Stop Forum Spam (SFS) listings: 85.
+# Updated: 2020.06.22
+
+2607:fb90:837b:ac0d::/64 Deny Spam
+2607:fb90:ac25:a55e::/64 Deny Spam
+Origin: US
+Tag: T-Mobile USA, Inc
 ---
 recaptcha:
  enabled: true

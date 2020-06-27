@@ -1,8 +1,8 @@
 # IPv4 signatures file (CIDRs for proxies, VPNs and other miscellaneous unwanted services).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv4_other.dat
 
-# Version: 2020.168.432
-# Last modified: 2020.06.17
+# Version: 2020.178.331
+# Last modified: 2020.06.27
 
 
 # ---
@@ -1099,7 +1099,7 @@ Tag: Spamhaus DROP/EDROP
 # Duplicates, bogons, etc removed.
 # Refer stopforumspam.com/downloads/toxic_ip_cidr.txt
 
-# "Beliefnet". Updated: 2019.10.23 / Checked: 2020.02.21
+# "Beliefnet". Updated: 2019.10.23 / Checked: 2020.06.27
 174.76.30.0/24 Deny Spam
 174.77.145.0/24 Deny Spam
 Origin: US
@@ -1142,8 +1142,8 @@ Tag: Applied Privacy
 # Primarily provides anonymous proxy services. Under investigation for fraud.
 # Spam, hacking attempts, vulnerability probes, and other kinds of nefarious
 # and unwanted activity originating from their network. Regarded as high risk.
-# Stop Forum Spam (SFS) listings: 171 (AS50495), 18 (AS62874).
-# Updated: 2020.03.25
+# Stop Forum Spam (SFS) listings: 166 (AS50495), 89 (AS62874).
+# Updated: 2020.06.27
 
 185.134.220.0/22 Deny Proxy
 Origin: DE
@@ -1152,19 +1152,26 @@ Origin: DE
 Origin: FR
 45.87.128.0/23 Deny Proxy
 45.154.148.0/23 Deny Proxy
+212.102.124.0/24 Deny Proxy
 Origin: GB
 194.14.219.0/24 Deny Proxy
 Origin: SE
 45.41.128.0/18 Deny Proxy
-45.56.128.0/18 Deny Proxy
-45.61.64.0/18 Deny Proxy
+45.56.131.0/24 Deny Proxy
+45.56.132.0/22 Deny Proxy
+45.56.144.0/23 Deny Proxy
+45.56.147.0/24 Deny Proxy
+45.56.168.0/24 Deny Proxy
+45.56.184.0/22 Deny Proxy
+45.61.88.0/21 Deny Proxy
+45.61.104.0/21 Deny Proxy
 64.57.136.0/21 Deny Proxy
 104.37.24.0/21 Deny Proxy
 104.143.80.0/20 Deny Proxy
 104.194.192.0/21 Deny Proxy
 104.194.204.0/22 Deny Proxy
 104.194.208.0/22 Deny Proxy
-104.194.222.0/23 Deny Proxy
+104.194.223.0/24 Deny Proxy
 104.200.68.0/22 Deny Proxy
 104.200.76.0/22 Deny Proxy
 104.232.196.0/22 Deny Proxy
@@ -1176,6 +1183,7 @@ Origin: SE
 162.249.164.0/22 Deny Proxy
 167.160.32.0/20 Deny Proxy
 167.160.48.0/21 Deny Proxy
+167.160.60.0/24 Deny Proxy
 Origin: US
 Tag: Web2Objects LLC
 

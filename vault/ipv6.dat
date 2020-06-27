@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6.dat
 
-# Version: 2020.174.306
-# Last modified: 2020.06.23
+# Version: 2020.178.331
+# Last modified: 2020.06.27
 
 
 # ---
@@ -1603,8 +1603,8 @@ Tag: Continuum
 
 # ASN 51167 ("Contabo GmbH").
 # Caught spamming while pretending to be Google.
-# Stop Forum Spam (SFS) listings: 18,404.
-# Updated: 2019.07.13 / Checked: 2020.03.30
+# Stop Forum Spam (SFS) listings: 26,193.
+# Updated: 2019.07.13 / Checked: 2020.06.27
 
 2a02:c200::/32 Deny Cloud
 2a02:c205::/32 Deny Cloud
@@ -3218,10 +3218,10 @@ Tag: Linode, LLC
 
 
 # ASN 22653 ("Cyber Wurx LLC").
-# Updated: 2018.02.04 / Checked: 2020.01.31
+# XMLRPC attacks detected originating from this network.
+# Updated: 2020.06.25
 
 2607:1a00::/32 Deny Cloud
-2a0c:8600::/29 Deny Cloud
 Origin: US
 Tag: Cyber Wurx LLC
 
@@ -3334,8 +3334,8 @@ Tag: Atlantic.net, Inc
 
 
 # ASN 43333 ("NEPHAX Spolka jawna Arkadiusz Kawalec Michal Podsiadly").
-# Stop Forum Spam (SFS) listings: 35.
-# Updated: 2016.07.10 / Checked: 2020.01.31
+# Stop Forum Spam (SFS) listings: 129.
+# Updated: 2016.07.10 / Checked: 2020.06.25
 
 2a02:ee0::/32 Deny Cloud
 Origin: PL
@@ -3344,7 +3344,7 @@ Tag: NEPHAX
 
 # ASN 52284 ("Panamaserver.com").
 # Recently caught faking as Googlebot.
-# Updated: 2016.07.10 / Checked: 2020.01.31
+# Updated: 2016.07.10 / Checked: 2020.06.25
 
 2803:200::/32 Deny Cloud
 Origin: PA
@@ -6663,3 +6663,78 @@ Tag: HOSTMAZE INC SRL-D
 2620:11e:1000::/48 Deny Cloud
 Origin: US
 Tag: Arbor Networks, Inc
+
+
+# ASN 42473 ("ANEXIA Internetdienstleistungs GmbH").
+# Dedicated server farm and a source of spam.
+# Stop Forum Spam (SFS) listings: 2,457.
+# Updated: 2020.06.26
+
+2001:67c:240::/48 Deny Cloud
+2a00:11c0::/45 Deny Cloud
+2a00:11c0:8::/46 Deny Cloud
+2a00:11c0:d::/48 Deny Cloud
+2a00:11c0:e::/47 Deny Cloud
+2a00:11c0:10::/45 Deny Cloud
+2a00:11c0:18::/46 Deny Cloud
+2a00:11c0:1c::/48 Deny Cloud
+2a00:11c0:1e::/47 Deny Cloud
+2a00:11c0:20::/47 Deny Cloud
+2a00:11c0:25::/48 Deny Cloud
+2a00:11c0:26::/47 Deny Cloud
+2a00:11c0:28::/48 Deny Cloud
+2a00:11c0:2a::/47 Deny Cloud
+2a00:11c0:2c::/46 Deny Cloud
+2a00:11c0:30::/45 Deny Cloud
+2a00:11c0:39::/48 Deny Cloud
+2a00:11c0:3b::/48 Deny Cloud
+2a00:11c0:3e::/48 Deny Cloud
+2a00:11c0:40::/48 Deny Cloud
+2a00:11c0:44::/47 Deny Cloud
+2a00:11c0:46::/48 Deny Cloud
+2a00:11c0:4a::/48 Deny Cloud
+2a00:11c0:63::/48 Deny Cloud
+2a00:11c0:66::/47 Deny Cloud
+2a00:11c0:68::/48 Deny Cloud
+2a00:11c0:76::/48 Deny Cloud
+2a00:11c0:78::/48 Deny Cloud
+2a00:11c0:82::/47 Deny Cloud
+2a00:11c0:84::/47 Deny Cloud
+2a00:11c0:dd::/48 Deny Cloud
+2a00:11c0:df::/48 Deny Cloud
+2a00:11c0:235::/48 Deny Cloud
+2a00:11c0:1337::/48 Deny Cloud
+2a00:11c0:1799::/48 Deny Cloud
+2a00:11c0:9020::/48 Deny Cloud
+2a00:11c0:beef::/48 Deny Cloud
+2a01:aea0::/32 Deny Cloud
+Origin: AT
+2803:ad80::/48 Deny Cloud
+2803:ad80:16::/48 Deny Cloud
+2803:ad80:69::/48 Deny Cloud
+Origin: PA
+2605:380:19::/48 Deny Cloud
+2605:380:32::/48 Deny Cloud
+2605:380:40::/48 Deny Cloud
+2605:380:53::/48 Deny Cloud
+2605:380:54::/46 Deny Cloud
+2605:380:58::/48 Deny Cloud
+Origin: US
+Tag: ANEXIA
+
+
+# ASN 204957 ("ITL-Bulgaria Ltd").
+# Dedicated server farm and a source of spam.
+# Stop Forum Spam (SFS) listings: 809.
+# Updated: 2020.06.26
+
+2a05:9400::/30 Deny Cloud
+2a05:9404::/31 Deny Cloud
+2a05:9406::/32 Deny Cloud
+2a0a:8c41::/32 Deny Cloud
+2a0a:8c42::/31 Deny Cloud
+2a0a:8c44::/32 Deny Cloud
+Origin: BG
+2a0e:40c0:3::/48 Deny Cloud
+Origin: UA
+Tag: ITL-Bulgaria Ltd

@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_isps.dat
 
-# Version: 2020.174.306
-# Last modified: 2020.06.23
+# Version: 2020.178.331
+# Last modified: 2020.06.27
 
 
 # ---
@@ -1909,9 +1909,11 @@ recaptcha:
 
 
 # ASN 8708 ("RCS & RDS SA").
-# %Listed, abuseat.org (CBL-Listed): 0.67%.
-# Stop Forum Spam (SFS) listings: 3,062.
-# Updated: 2018.06.24 / Checked: 2020.05.06
+# Romanian domestic ISP; Also a frequent source of spam, hack attempts, and
+# other unwanted traffic.
+# %Listed, abuseat.org (CBL-Listed): 0.61%.
+# Stop Forum Spam (SFS) listings: 3,347.
+# Updated: 2018.06.24 / Checked: 2020.06.27
 
 2a02:2f00::/28 Deny Generic
 Origin: RO
@@ -2529,6 +2531,60 @@ recaptcha:
 2607:fb90:ac25:a55e::/64 Deny Spam
 Origin: US
 Tag: T-Mobile USA, Inc
+---
+recaptcha:
+ enabled: true
+
+
+# ASN 5617 ("Orange Polska Spolka Akcyjna).
+# Major Polish domestic ISP; Also a *HUGE* source of forum+blog spam! Listing
+# the entire ASN, but also including it in ignore.dat by default.
+# %Listed, abuseat.org (CBL-Listed): 0.18%.
+# Stop Forum Spam (SFS) listings: 88,442.
+# Updated: 2020.06.23
+
+2a01:1000::/21 Deny Spam
+Origin: PL
+Tag: Orange Polska Spolka Akcyjna
+---
+recaptcha:
+ enabled: true
+
+
+# ASN 4761 ("INDOSAT Internet Network Provider).
+# Indonesian domestic ISP; Also a source of spam. Also SSH, brute-force, and
+# hack attempts reportedly seen from this network. Listing just the affected
+# ranges/addresses for the moment (plus all US ranges, which are cloud).
+# %Listed, abuseat.org (CBL-Listed): 0.84%.
+# Stop Forum Spam (SFS) listings: 817.
+# Updated: 2020.06.27
+
+2620:107:4008:12e::/64 Deny Cloud
+Origin: US
+Tag: INDOSAT
+---
+recaptcha:
+ enabled: true
+
+
+# ASNs 7713, 17974 ("PT Telekomunikasi Indonesia).
+# Indonesian domestic ISP; Also a source of spam. Also SSH, brute-force, and
+# hack attempts reportedly seen from this network. Listing just the affected
+# ranges/addresses for the moment (plus all US ranges, which are cloud).
+# Stop Forum Spam (SFS) listings: 12,677 (AS7713), 1,537 (AS17974).
+# Updated: 2020.06.27
+
+2001:504:0:2::/63 Deny Cloud
+2001:504:0:4::/63 Deny Cloud
+2001:504:13::/64 Deny Cloud
+2001:504:30::/64 Deny Cloud
+2620:107:4008:182::/64 Deny Cloud
+2620:107:4008:365::/64 Deny Cloud
+2620:107:4008:4df::/64 Deny Cloud
+2620:107:4008:7c3::/64 Deny Cloud
+2620:107:4008:86d::/64 Deny Cloud
+Origin: US
+Tag: PT Telekomunikasi Indonesia
 ---
 recaptcha:
  enabled: true

@@ -1,86 +1,110 @@
 ---
 CN_cidram.inc
  Name: China IPv4 blocklist
- Extended Description: Optional blocklist, built with data from <a href="http://www.okean.com/">Okean</a>.<br />Support: <a href="https://bitbucket.org/macmathan/blocklists">BitBucket/macmathan/blocklists</a>
+ Extended Description: Optional blocklist, built with data from <a href="http://www.okean.com/">Okean</a>.<br />Support: <a href="https://support.macmathan.info">support.macmathan.info</a>
+ False Positive Risk: Low
  Minimum Required: 0.6.0-DEV
- Remote: https://bitbucket.org/macmathan/blocklists/raw/master/cidramblocklists.dat
+ Remote: https://git.macmathan.info/blocklists/raw/downloads/cidramblocklists.dat
  Uninstallable: true
+ Used with: ipv4
  Reannotate: cidramblocklists.dat
 KR_cidram.inc
  Name: South Korea IPv4 blocklist
- Extended Description: Optional blocklist, built with data from <a href="http://www.okean.com/">Okean</a>.<br />Support: <a href="https://bitbucket.org/macmathan/blocklists">BitBucket/macmathan/blocklists</a>
+ Extended Description: Optional blocklist, built with data from <a href="http://www.okean.com/">Okean</a>.<br />Support: <a href="https://support.macmathan.info">support.macmathan.info</a>
+ False Positive Risk: Low
  Minimum Required: 0.6.0-DEV
- Remote: https://bitbucket.org/macmathan/blocklists/raw/master/cidramblocklists.dat
+ Remote: https://git.macmathan.info/blocklists/raw/downloads/cidramblocklists.dat
  Uninstallable: true
+ Used with: ipv4
  Reannotate: cidramblocklists.dat
 aws_cidram.inc
  Name: Amazon Web Services IPv4 blocklist
- Extended Description: Optional blocklist, compiled from Amazon's own public data.<br />Support: <a href="https://bitbucket.org/macmathan/blocklists">BitBucket/macmathan/blocklists</a>
+ Extended Description: Optional blocklist, compiled from Amazon's own public data.<br />Support: <a href="https://support.macmathan.info">support.macmathan.info</a>
+ False Positive Risk: Low
  Minimum Required: 0.6.0-DEV
- Remote: https://bitbucket.org/macmathan/blocklists/raw/master/cidramblocklists.dat
+ Remote: https://git.macmathan.info/blocklists/raw/downloads/cidramblocklists.dat
  Uninstallable: true
+ Used with: ipv4
  Reannotate: cidramblocklists.dat
 aws_cidram_ipv6.inc
  Name: Amazon Web Services IPv6 blocklist
- Extended Description: Optional blocklist, compiled from Amazon's own public data.<br />Support: <a href="https://bitbucket.org/macmathan/blocklists">BitBucket/macmathan/blocklists</a>
+ Extended Description: Optional blocklist, compiled from Amazon's own public data.<br />Support: <a href="https://support.macmathan.info">support.macmathan.info</a>
+ False Positive Risk: Low
  Minimum Required: 0.6.0-DEV
- Remote: https://bitbucket.org/macmathan/blocklists/raw/master/cidramblocklists.dat
+ Remote: https://git.macmathan.info/blocklists/raw/downloads/cidramblocklists.dat
  Uninstallable: true
+ Used with: ipv6
  Reannotate: cidramblocklists.dat
 cfrp_cidram.inc
  Name: Cloudflare IPv4 blocklist
- Extended Description: Optional blocklist, compiled from Cloudflare's own public data.<br />Support: <a href="https://bitbucket.org/macmathan/blocklists">BitBucket/macmathan/blocklists</a>
+ Extended Description: Optional blocklist, compiled from Cloudflare's own public data.<br />Support: <a href="https://support.macmathan.info">support.macmathan.info</a>
+ False Positive Risk: Low
  Minimum Required: 0.6.0-DEV
- Remote: https://bitbucket.org/macmathan/blocklists/raw/master/cidramblocklists.dat
+ Remote: https://git.macmathan.info/blocklists/raw/downloads/cidramblocklists.dat
  Uninstallable: true
+ Used with: ipv4
  Reannotate: cidramblocklists.dat
 cfrp_cidram_ipv6.inc
  Name: Cloudflare IPv6 blocklist
- Extended Description: Optional blocklist, compiled from Cloudflare's own public data.<br />Support: <a href="https://bitbucket.org/macmathan/blocklists">BitBucket/macmathan/blocklists</a>
+ Extended Description: Optional blocklist, compiled from Cloudflare's own public data.<br />Support: <a href="https://support.macmathan.info">support.macmathan.info</a>
+ False Positive Risk: Low
  Minimum Required: 0.6.0-DEV
- Remote: https://bitbucket.org/macmathan/blocklists/raw/master/cidramblocklists.dat
+ Remote: https://git.macmathan.info/blocklists/raw/downloads/cidramblocklists.dat
  Uninstallable: true
+ Used with: ipv6
  Reannotate: cidramblocklists.dat
 cldbyp_cidram.inc
  Name: Cloud Services Bypass module
- Extended Description: Optional bypass module, allows access to search engines originating from IP-space covered by one or more of the optional cloud service blocklists (AWS, GCP, MSAZ).<br />Support: <a href="https://bitbucket.org/macmathan/blocklists">BitBucket/macmathan/blocklists</a>
+ Extended Description: Optional bypass module, allows access to search engines originating from IP-space covered by one or more of the optional cloud service blocklists (AWS, GCP, MSAZ).<br />Support: <a href="https://support.macmathan.info">support.macmathan.info</a>
+ False Positive Risk: Low
  Minimum Required: 0.6.0-DEV
- Remote: https://bitbucket.org/macmathan/blocklists/raw/master/cidramblocklists.dat
+ Remote: https://git.macmathan.info/blocklists/raw/downloads/cidramblocklists.dat
  Uninstallable: true
+ Used with: modules
  Reannotate: cidramblocklists.dat
 gcp_cidram.inc
  Name: Google Cloud Platform IPv4 blocklist
- Extended Description: Optional blocklist, compiled from Google's own public data.<br />Support: <a href="https://bitbucket.org/macmathan/blocklists">BitBucket/macmathan/blocklists</a>
+ Extended Description: Optional blocklist, compiled from Google's own public data.<br />Support: <a href="https://support.macmathan.info">support.macmathan.info</a>
+ False Positive Risk: Low
  Minimum Required: 0.6.0-DEV
- Remote: https://bitbucket.org/macmathan/blocklists/raw/master/cidramblocklists.dat
+ Remote: https://git.macmathan.info/blocklists/raw/downloads/cidramblocklists.dat
  Uninstallable: true
+ Used with: ipv4
  Reannotate: cidramblocklists.dat
 gcp_cidram_ipv6.inc
  Name: Google Cloud Platform IPv6 blocklist
- Extended Description: Optional blocklist, compiled from Google's own public data.<br />Support: <a href="https://bitbucket.org/macmathan/blocklists">BitBucket/macmathan/blocklists</a>
+ Extended Description: Optional blocklist, compiled from Google's own public data.<br />Support: <a href="https://support.macmathan.info">support.macmathan.info</a>
+ False Positive Risk: Low
  Minimum Required: 0.6.0-DEV
- Remote: https://bitbucket.org/macmathan/blocklists/raw/master/cidramblocklists.dat
+ Remote: https://git.macmathan.info/blocklists/raw/downloads/cidramblocklists.dat
  Uninstallable: true
+ Used with: ipv6
  Reannotate: cidramblocklists.dat
 msaz_cidram.inc
  Name: Microsoft Azure IPv4 blocklist
- Extended Description: Optional blocklist, compiled from Microsoft's own public data.<br />Support: <a href="https://bitbucket.org/macmathan/blocklists">BitBucket/macmathan/blocklists</a>
+ Extended Description: Optional blocklist, compiled from Microsoft's own public data.<br />Support: <a href="https://support.macmathan.info">support.macmathan.info</a>
+ False Positive Risk: Low
  Minimum Required: 0.6.0-DEV
- Remote: https://bitbucket.org/macmathan/blocklists/raw/master/cidramblocklists.dat
+ Remote: https://git.macmathan.info/blocklists/raw/downloads/cidramblocklists.dat
  Uninstallable: true
+ Used with: ipv4
  Reannotate: cidramblocklists.dat
 tpbm_cidram.inc
  Name: Tor Project Exit Nodes Block Module
- Extended Description: Optional module, prohibits access from The Tor Project's exit nodes (supports both IPv4 and IPv6) through DNSEL lookups in real time.<br />Support: <a href="https://bitbucket.org/macmathan/blocklists">BitBucket/macmathan/blocklists</a>
+ Extended Description: Optional module, prohibits access from The Tor Project's exit nodes (supports both IPv4 and IPv6) through DNSEL lookups in real time.<br />Support: <a href="https://support.macmathan.info">support.macmathan.info</a>
+ False Positive Risk: Low
  Minimum Required: 0.6.0-DEV
- Remote: https://bitbucket.org/macmathan/blocklists/raw/master/cidramblocklists.dat
+ Remote: https://git.macmathan.info/blocklists/raw/downloads/cidramblocklists.dat
  Uninstallable: true
+ Used with: modules
  Reannotate: cidramblocklists.dat
 mcm_bobuam.php
  Name: Bot Or Browser User Agent Module (BOBUAM)
- Extended Description: Optional module, a 3-in-1module which detects unwanted bots, old browsers, and performs some sanity checks.<br />Contains some data from the Wordpress plugin "Stop Bad Bots" by William "Bill" Minozzi.<br />(A few webservices bots might need bypasses.)<br />Support: <a href="https://bitbucket.org/macmathan/blocklists">BitBucket/macmathan/blocklists</a>
+ Extended Description: Optional module, a 3-in-1module which detects unwanted bots, old browsers, and performs some sanity checks.<br />Contains some data from the Wordpress plugin "Stop Bad Bots" by William "Bill" Minozzi.<br />(A few webservices bots might need bypasses.)<br />Support: <a href="https://support.macmathan.info">support.macmathan.info</a>
+ False Positive Risk: Medium
  Minimum Required: 1.15.1
- Remote: https://bitbucket.org/macmathan/blocklists/raw/master/cidramblocklists.dat
+ Remote: https://git.macmathan.info/blocklists/raw/downloads/cidramblocklists.dat
  Uninstallable: true
+ Used with: modules
  Reannotate: cidramblocklists.dat
 

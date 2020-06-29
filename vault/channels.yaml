@@ -7,12 +7,13 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Alternative channels data for failed curl requests (last modified: 2019.12.31).
+# This file: Alternative channels data for failed curl requests (last modified: 2020.06.29).
 ##/
 
 Triggers:
  GitHub: "https://raw.githubusercontent.com/"
  BitBucket: "https://bitbucket.org/"
+ macmathan.info: "https://git.macmathan.info/"
 GitHub:
  v1 components:
   GitHub: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/"
@@ -20,13 +21,17 @@ GitHub:
  v2 components:
   GitHub: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v2/vault/"
   BitBucket: "https://bitbucket.org/Maikuolan/cidram/raw/v2/vault/"
+ v3 components:
+  GitHub: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/"
+  BitBucket: "https://bitbucket.org/Maikuolan/cidram/raw/v3/vault/"
  Extras repo:
   GitHub: "https://raw.githubusercontent.com/CIDRAM/CIDRAM-Extras/master/"
   BitBucket: "https://bitbucket.org/Maikuolan/cidram-extras/raw/master/"
  Charts:
   GitHub: "https://raw.githubusercontent.com/Maikuolan/Compatibility-Charts/"
   BitBucket: "https://bitbucket.org/Maikuolan/compatibility-charts/raw/"
-BitBucket:
+macmathan.info:
  Macmathan's blocklists:
-  BitBucket: "https://bitbucket.org/macmathan/blocklists/raw/master/"
+  macmathan.info: "https://git.macmathan.info/blocklists/raw/downloads"
   NotABug: "https://notabug.org/macmathan/blocklists/raw/master/"
+  BitBucket: "https://bitbucket.org/macmathan/blocklists/raw/master/"

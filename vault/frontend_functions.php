@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2020.06.29).
+ * This file: Front-end functions file (last modified: 2020.06.30).
  */
 
 /**
@@ -1036,7 +1036,7 @@ $CIDRAM['SimulateBlockEvent'] = function ($Addr, $Modules = false, $Aux = false,
  * @param string $ChoiceKey Language code.
  * @return bool Valid/Invalid.
  */
-$CIDRAM['FilterLang'] = function (string $ChoiceKey) use (&$CIDRAM) {
+$CIDRAM['FilterLang'] = function ($ChoiceKey) use (&$CIDRAM) {
     $Path = $CIDRAM['Vault'] . 'lang/lang.' . $ChoiceKey;
     return (file_exists($Path . '.yaml') && file_exists($Path . '.fe.yaml'));
 };
@@ -1048,7 +1048,7 @@ $CIDRAM['FilterLang'] = function (string $ChoiceKey) use (&$CIDRAM) {
  * @param string $ChoiceKey Hash algorithm.
  * @return bool Available/Unavailable.
  */
-$CIDRAM['FilterByDefined'] = function (string $ChoiceKey) {
+$CIDRAM['FilterByDefined'] = function ($ChoiceKey) {
     return defined($ChoiceKey);
 };
 
@@ -1059,7 +1059,7 @@ $CIDRAM['FilterByDefined'] = function (string $ChoiceKey) {
  * @param string $ChoiceKey Theme ID.
  * @return bool Valid/Invalid.
  */
-$CIDRAM['FilterTheme'] = function (string $ChoiceKey) use (&$CIDRAM) {
+$CIDRAM['FilterTheme'] = function ($ChoiceKey) use (&$CIDRAM) {
     if ($ChoiceKey === 'default') {
         return true;
     }

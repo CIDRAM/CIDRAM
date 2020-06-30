@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2020.06.20).
+ * This file: Front-end functions file (last modified: 2020.06.29).
  */
 
 /**
@@ -387,7 +387,7 @@ $CIDRAM['FileManager-RecursiveList'] = function ($Base) use (&$CIDRAM) {
     $Arr = [];
     $Key = -1;
     $Offset = strlen($Base);
-    $List = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($Base), RecursiveIteratorIterator::SELF_FIRST);
+    $List = new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator($Base), \RecursiveIteratorIterator::SELF_FIRST);
     foreach ($List as $Item => $List) {
         $Key++;
         $ThisName = substr($Item, $Offset);
@@ -575,7 +575,7 @@ $CIDRAM['FileManager-PathSecurityCheck'] = function ($Path) {
  */
 $CIDRAM['Logs-RecursiveList'] = function ($Base) use (&$CIDRAM) {
     $Arr = [];
-    $List = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($Base), RecursiveIteratorIterator::SELF_FIRST);
+    $List = new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator($Base), \RecursiveIteratorIterator::SELF_FIRST);
     foreach ($List as $Item => $List) {
         $ThisName = str_replace("\\", '/', substr($Item, strlen($Base)));
         if (!is_file($Item) || !is_readable($Item) || is_dir($Item) || !$CIDRAM['FileManager-IsLogFile']($ThisName)) {
@@ -1036,7 +1036,7 @@ $CIDRAM['SimulateBlockEvent'] = function ($Addr, $Modules = false, $Aux = false,
  * @param string $ChoiceKey Language code.
  * @return bool Valid/Invalid.
  */
-$CIDRAM['FilterLang'] = function ($ChoiceKey) use (&$CIDRAM) {
+$CIDRAM['FilterLang'] = function (string $ChoiceKey) use (&$CIDRAM) {
     $Path = $CIDRAM['Vault'] . 'lang/lang.' . $ChoiceKey;
     return (file_exists($Path . '.yaml') && file_exists($Path . '.fe.yaml'));
 };
@@ -1046,16 +1046,10 @@ $CIDRAM['FilterLang'] = function ($ChoiceKey) use (&$CIDRAM) {
  * the basis of their availability.
  *
  * @param string $ChoiceKey Hash algorithm.
- * @return bool Valid/Invalid.
+ * @return bool Available/Unavailable.
  */
-$CIDRAM['FilterAlgo'] = function ($ChoiceKey) use (&$CIDRAM) {
-    if ($ChoiceKey === 'PASSWORD_ARGON2I') {
-        return !$CIDRAM['VersionCompare'](PHP_VERSION, '7.2.0RC1');
-    }
-    if ($ChoiceKey === 'PASSWORD_ARGON2ID') {
-        return !$CIDRAM['VersionCompare'](PHP_VERSION, '7.3.0');
-    }
-    return true;
+$CIDRAM['FilterByDefined'] = function (string $ChoiceKey) {
+    return defined($ChoiceKey);
 };
 
 /**
@@ -1065,7 +1059,7 @@ $CIDRAM['FilterAlgo'] = function ($ChoiceKey) use (&$CIDRAM) {
  * @param string $ChoiceKey Theme ID.
  * @return bool Valid/Invalid.
  */
-$CIDRAM['FilterTheme'] = function ($ChoiceKey) use (&$CIDRAM) {
+$CIDRAM['FilterTheme'] = function (string $ChoiceKey) use (&$CIDRAM) {
     if ($ChoiceKey === 'default') {
         return true;
     }
@@ -3268,7 +3262,8 @@ $CIDRAM['AuxGenerateFEData'] = function () use (&$CIDRAM) {
                         $Values = [$Values];
                     }
                     foreach ($Values as $Value) {
-                        $Output .= "\n              <dd><span style=\"float:" . $CIDRAM['FE']['FE_Align'] . '">' . $ThisSource . '&nbsp;≠&nbsp;</span><code>' . $Value . '</code></dd>';
+                        $Operator = $CIDRAM['OperatorFromAuxValue']($Value, true);
+                        $Output .= "\n              <dd><span style=\"float:" . $CIDRAM['FE']['FE_Align'] . '">' . $ThisSource . '&nbsp;' . $Operator . '&nbsp;</span><code>' . $Value . '</code></dd>';
                     }
                 }
             }
@@ -3283,7 +3278,8 @@ $CIDRAM['AuxGenerateFEData'] = function () use (&$CIDRAM) {
                         $Values = [$Values];
                     }
                     foreach ($Values as $Value) {
-                        $Output .= "\n              <dd><span style=\"float:" . $CIDRAM['FE']['FE_Align'] . '">' . $ThisSource . '&nbsp;=&nbsp;</span><code>' . $Value . '</code></dd>';
+                        $Operator = $CIDRAM['OperatorFromAuxValue']($Value);
+                        $Output .= "\n              <dd><span style=\"float:" . $CIDRAM['FE']['FE_Align'] . '">' . $ThisSource . '&nbsp;' . $Operator . '&nbsp;</span><code>' . $Value . '</code></dd>';
                     }
                 }
             }

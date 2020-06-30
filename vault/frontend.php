@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2020.06.15).
+ * This file: Front-end handler (last modified: 2020.06.29).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -149,7 +149,7 @@ if ($CIDRAM['Config']['general']['maintenance_mode']) {
     $CIDRAM['Warnings'][] = '<span class="txtRd"><u>' . $CIDRAM['L10N']->getString('state_maintenance_mode') . '</u></span>';
 }
 
-/** Warngs if no signature files are active. */
+/** Warns if no signature files are active. */
 if (empty($CIDRAM['Config']['signatures']['ipv4']) && empty($CIDRAM['Config']['signatures']['ipv6'])) {
     $CIDRAM['Warnings'][] = '<span class="txtRd"><u>' . $CIDRAM['L10N']->getString('warning_signatures_1') . '</u></span>';
 }
@@ -787,7 +787,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === '' && !$CIDRAM['FE']['CronMode']
         ['Lib' => 'pdo', 'Name' => 'PDO', 'Drivers' => (class_exists('\PDO') ? \PDO::getAvailableDrivers() : [])]
     ] as $CIDRAM['ThisExtension']) {
         if (extension_loaded($CIDRAM['ThisExtension']['Lib'])) {
-            $CIDRAM['ExtVer'] = (new ReflectionExtension($CIDRAM['ThisExtension']['Lib']))->getVersion();
+            $CIDRAM['ExtVer'] = (new \ReflectionExtension($CIDRAM['ThisExtension']['Lib']))->getVersion();
             $CIDRAM['ThisResponse'] = '<span class="txtGn">' . $CIDRAM['L10N']->getString('response_yes') . ' (' . $CIDRAM['ExtVer'] . ')';
             if (!empty($CIDRAM['ThisExtension']['Drivers'])) {
                 $CIDRAM['ThisResponse'] .= ', {' . implode(', ', $CIDRAM['ThisExtension']['Drivers']) . '}';
@@ -1337,7 +1337,10 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
                 }
                 foreach ($CIDRAM['DirValue']['choices'] as $CIDRAM['ChoiceKey'] => $CIDRAM['ChoiceValue']) {
                     if (isset($CIDRAM['DirValue']['choice_filter'])) {
-                        if (!$CIDRAM[$CIDRAM['DirValue']['choice_filter']]($CIDRAM['ChoiceKey'], $CIDRAM['ChoiceValue'])) {
+                        if (
+                            !is_string($CIDRAM['ChoiceValue']) ||
+                            !$CIDRAM[$CIDRAM['DirValue']['choice_filter']]($CIDRAM['ChoiceKey'], $CIDRAM['ChoiceValue'])
+                        ) {
                             continue;
                         }
                     }
@@ -3746,6 +3749,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'aux' && $CIDRAM['FE']['Permissi
             'rURI' => $CIDRAM['L10N']->getString('field_rURI'),
             'Request_Method' => $CIDRAM['L10N']->getString('field_Request_Method'),
             'Hostname' => $CIDRAM['L10N']->getString('field_hostname'),
+            'Infractions' => $CIDRAM['L10N']->getString('field_infractions'),
             'ASNLookup' => $CIDRAM['L10N']->getString('field_asnlookup'),
             'CCLookup' => $CIDRAM['L10N']->getString('field_cclookup'),
             'Verified' => $CIDRAM['L10N']->getString('field_verified')

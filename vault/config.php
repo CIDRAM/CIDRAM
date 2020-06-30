@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Configuration handler (last modified: 2020.06.19).
+ * This file: Configuration handler (last modified: 2020.06.25).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -173,7 +173,7 @@ if (!empty($_SERVER['QUERY_STRING'])) {
 /** Set default hashing algorithm. */
 $CIDRAM['DefaultAlgo'] = (
     !empty($CIDRAM['Config']['general']['default_algo']) && defined($CIDRAM['Config']['general']['default_algo'])
-) ? constant($CIDRAM['Config']['general']['default_algo']) : 1;
+) ? constant($CIDRAM['Config']['general']['default_algo']) : PASSWORD_DEFAULT;
 
 /** Revert script ident if "hide_version" is true. */
 if (!empty($CIDRAM['Config']['general']['hide_version'])) {

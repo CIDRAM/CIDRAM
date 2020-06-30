@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2020.06.20).
+ * This file: Functions file (last modified: 2020.06.29).
  */
 
 /**
@@ -1885,7 +1885,7 @@ $CIDRAM['LogRotation'] = function ($Pattern) use (&$CIDRAM) {
     $Pattern = $CIDRAM['BuildLogPattern']($Pattern);
     $Arr = [];
     $Offset = strlen($CIDRAM['Vault']);
-    $List = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($CIDRAM['Vault']), RecursiveIteratorIterator::SELF_FIRST);
+    $List = new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator($CIDRAM['Vault']), \RecursiveIteratorIterator::SELF_FIRST);
     foreach ($List as $Item => $List) {
         $ItemFixed = str_replace("\\", '/', substr($Item, $Offset));
         if ($ItemFixed && preg_match($Pattern, $ItemFixed) && is_readable($Item)) {
@@ -1994,8 +1994,27 @@ $CIDRAM['AuxMatch'] = function ($Criteria, $Actual, $Method = '') use (&$CIDRAM)
 
     /** Perform a match using direct string comparison. */
     foreach ($Criteria as $TestCase) {
-        if ($TestCase === $Actual) {
-            return true;
+        $Operator = $CIDRAM['OperatorFromAuxValue']($TestCase);
+        if ($Operator === '=') {
+            if ($Actual === $TestCase) {
+                return true;
+            }
+        } elseif ($Operator === '>') {
+            if ($CIDRAM['AuxIntFromString']($Actual) > $CIDRAM['AuxIntFromString']($TestCase)) {
+                return true;
+            }
+        } elseif ($Operator === '≥') {
+            if ($CIDRAM['AuxIntFromString']($Actual) >= $CIDRAM['AuxIntFromString']($TestCase)) {
+                return true;
+            }
+        } elseif ($Operator === '<') {
+            if ($CIDRAM['AuxIntFromString']($Actual) < $CIDRAM['AuxIntFromString']($TestCase)) {
+                return true;
+            }
+        } elseif ($Operator === '≤') {
+            if ($CIDRAM['AuxIntFromString']($Actual) <= $CIDRAM['AuxIntFromString']($TestCase)) {
+                return true;
+            }
         }
     }
 
@@ -2261,6 +2280,70 @@ $CIDRAM['Aux'] = function () use (&$CIDRAM) {
             }
         }
     }
+};
+
+/**
+ * Get operator from auxiliary rule values.
+ *
+ * @param string $Value The auxiliary rule value.
+ * @param bool $Negate Whether to negate the operator.
+ * @return string The operator.
+ */
+$CIDRAM['OperatorFromAuxValue'] = function (&$Value, $Negate = false) {
+    $Stub = substr($Value, 0, 1);
+    if ($Stub === '>') {
+        $Value = substr($Value, 1);
+        $Stub = substr($Value, 0, 1);
+        if ($Stub === '=') {
+            $Value = substr($Value, 1);
+            return $Negate ? '≱' : '≥';
+        }
+        return $Negate ? '≯' : '>';
+    }
+    if ($Stub === '<') {
+        $Value = substr($Value, 1);
+        $Stub = substr($Value, 0, 1);
+        if ($Stub === '=') {
+            $Value = substr($Value, 1);
+            return $Negate ? '≰' : '≤';
+        }
+        return $Negate ? '≮' : '<';
+    }
+    if ($Stub === "\xe2") {
+        $Stub = substr($Value, 1, 2);
+        if ($Stub === "\x89\xa5") {
+            $Value = substr($Value, 3);
+            return $Negate ? '≱' : '≥';
+        }
+        if ($Stub === "\x89\xa4") {
+            $Value = substr($Value, 3);
+            return $Negate ? '≰' : '≤';
+        }
+    }
+    return $Negate ? '≠' : '=';
+};
+
+/**
+ * Attempt to discern an integer from a supplied string (useful in case the
+ * related functionality needs to be expanded in the future, which can be done
+ * as/when needed, and to align the behaviour of the auxiliary rules closures
+ * with user expectations).
+ *
+ * @param string $Value The supplied string.
+ * @return int An integer.
+ */
+$CIDRAM['AuxIntFromString'] = function ($Value) {
+    /**
+     * Did the user want to match an IPv4 address? (Matching is intentionally
+     * loose and lazy here).
+     */
+    if (preg_match('~^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}$~', $Value)) {
+        $Value = explode('.', $Value);
+        return ($Value[0] * 16777216) + ($Value[1] * 65536) + ($Value[2] * 256) + $Value[3];
+    }
+
+    /** Doesn't seem to be anything special here, so we'll just cast directly to int. */
+    return (int)$Value;
 };
 
 /**

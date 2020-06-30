@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: German language data for the front-end (last modified: 2020.06.03).
+# This file: German language data for the front-end (last modified: 2020.06.29).
 ##/
 
 Extended Description Bypasses: "Die Standard-Signatur-Bypass-Dateien, die normalerweise im Hauptpaket enthalten sind."
@@ -264,7 +264,7 @@ label_aux_modify_rule: "Ändern Sie die Regel"
 label_aux_move_bottom: "Verschieben Sie die Regel nach unten"
 label_aux_move_top: "Verschieben Sie die Regel nach oben"
 label_aux_mtdReg: "Reguläre Ausdrücke"
-label_aux_mtdStr: "direkter String Vergleich"
+label_aux_mtdStr: "direkter String-Vergleich"
 label_aux_mtdWin: "Wildcards im Windows-Stil"
 label_aux_name: "Ein Name für die neue Regel:"
 label_aux_reason: "Der Grund, der dem Benutzer beim Blockiert gegeben wird:"
@@ -468,7 +468,9 @@ switch-tracking-hide-banned-blocked-set-true: "Verbergen Sie verbotene/blockiert
 tip_2fa_sent: "Eine E-Mail mit einem Zwei-Faktor-Authentifizierungscode wurde an Ihre E-Mail-Adresse gesendet. Bitte bestätigen Sie diesen Code, um Zugang zum Frontend zu erhalten. Wenn Sie diese E-Mail nicht erhalten haben, versuchen Sie sich auszuloggen, warten Sie 10 Minuten, und melden Sie sich einzuloggen, um eine neue E-Mail mit einem neuen Code zu erhalten."
 tip_accounts: "Hallo, {username}.<br />Das Kontenseite macht es möglich zu kontrollieren, wer kann Zugriff auf der CIDRAM Frontend haben."
 tip_aux: "Hallo, {username}.<br />Sie können diese Seite verwenden, um Hilfsregeln für CIDRAM zu erstellen, zu löschen und zu ändern."
+tip_aux_operators: "Hinweis: Wenn eine Bedingung eine andere Art von Operator benötigt, Sie können es an den Anfang seines Wertes setzen (erfordert einen direkter String-Vergleich)."
 tip_aux_priority: "Priorität (höchste➡(gleich🔄äquivalent)➡niedrigste):"
+tip_aux_webhooks: "Wenn eine Regel ausgelöst wird, CIDRAM versucht, alle Webhooks verbundenen über das Ereignis zu informieren."
 tip_cache_data: "Hallo, {username}.<br />Hier können Sie den Inhalt des Cache überprüfen."
 tip_cidr_calc: "Hallo, {username}.<br />Mit dem CIDR-Rechner können Sie berechnen, zu welchen CIDRs eine IP-Adresse gehört."
 tip_condition_placeholder: "Geben Sie einen Wert an, oder lassen Sie das Feld leer, um es zu ignorieren."
@@ -507,7 +509,7 @@ info_some_useful_links: |
          <ul class="comSub">
            <li><a href="https://github.com/CIDRAM/CIDRAM/issues" hreflang="en" rel="noopener noreferrer external">CIDRAM/CIDRAM/issues</a> – Fragen-Seite für CIDRAM (Unterstützung, u.s.w.).</li>
            <li><a href="https://wordpress.org/plugins/cidram/" rel="noopener noreferrer external">CIDRAM@WordPress.org</a> – WordPress Plugin für CIDRAM.</li>
-           <li><a href="https://bitbucket.org/macmathan/blocklists" hreflang="en" rel="noopener noreferrer external">macmathan/blocklists</a> – Enthält optionale Blocklisten und Module für CIDRAM, wie zum Beispiel zum Blockieren gefährlicher Bots, unerwünschter Länder, veralteter Browser, u.s.w.</li>
+           <li><a href="https://git.macmathan.info/blocklists/" hreflang="en" rel="noopener noreferrer external">macmathan.info/blocklists</a> – Enthält optionale Blocklisten und Module für CIDRAM, wie zum Beispiel zum Blockieren gefährlicher Bots, unerwünschter Länder, veralteter Browser, u.s.w.</li>
            <li><a href="https://github.com/CIDRAM/CIDRAM-Extras" hreflang="en" rel="noopener noreferrer external">CIDRAM/CIDRAM-Extras</a> – Sonstiges Extras.</li>
          </ul>
        </li>

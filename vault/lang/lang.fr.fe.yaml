@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: French language data for the front-end (last modified: 2020.06.03).
+# This file: French language data for the front-end (last modified: 2020.06.29).
 ##/
 
 Extended Description Bypasses: "Les fichiers pour contourner les signatures standard qui sont normalement inclus dans le paquet principal."
@@ -472,7 +472,9 @@ switch-tracking-hide-banned-blocked-set-true: "Omettre les IP interdites/bloqué
 tip_2fa_sent: "Un e-mail contenant un code d'authentification à deux facteurs a été envoyé à votre adresse e-mail. Veuillez confirmer ce code ci-dessous pour obtenir un accès frontal. Si vous n'avez pas reçu cet e-mail, essayez de vous déconnecter, d'attendre 10 minutes, et de vous reconnecter pour recevoir un nouvel e-mail contenant un nouveau code."
 tip_accounts: "Bonjour, {username}.<br />La page des comptes vous permet de contrôler qui peut accéder l'accès frontal de CIDRAM."
 tip_aux: "Bonjour, {username}.<br />Vous pouvez utiliser cette page pour créer, supprimer et modifier des règles auxiliaires pour CIDRAM."
+tip_aux_operators: "Remarque : Si une condition a besoin d'un autre type d'opérateur, vous pouvez l'ajouter au début de sa valeur (nécessite une comparaison directe de chaînes)."
 tip_aux_priority: "Priorité (plus haut➡(égale🔄équivalent)➡plus bas) :"
+tip_aux_webhooks: "Lorsqu'une règle est déclenchée, CIDRAM tentera d'informer tous les webhooks connectés de l'événement."
 tip_cache_data: "Bonjour, {username}.<br />Ici vous pouvez revoir le contenu du cache."
 tip_cidr_calc: "Bonjour, {username}.<br />Le calculatrice CIDR vous permet de calculer les CIDR auxquels une adresse IP appartient."
 tip_condition_placeholder: "Spécifiez une valeur, ou laissez vide pour ne pas en tenir compte."
@@ -511,7 +513,7 @@ info_some_useful_links: |
          <ul class="comSub">
            <li><a href="https://github.com/CIDRAM/CIDRAM/issues" hreflang="en" rel="noopener noreferrer external">CIDRAM/CIDRAM/issues</a> – Page de problèmes pour CIDRAM (soutien, assistance, etc).</li>
            <li><a href="https://wordpress.org/plugins/cidram/" rel="noopener noreferrer external">CIDRAM@WordPress.org</a> – WordPress plugin pour CIDRAM.</li>
-           <li><a href="https://bitbucket.org/macmathan/blocklists" hreflang="en" rel="noopener noreferrer external">macmathan/blocklists</a> – Contient des listes de blocage optionnelles et des modules pour CIDRAM tels que le blocage de robots dangereux, des pays indésirables, des navigateurs obsolètes, etc.</li>
+           <li><a href="https://git.macmathan.info/blocklists/" hreflang="en" rel="noopener noreferrer external">macmathan.info/blocklists</a> – Contient des listes de blocage optionnelles et des modules pour CIDRAM tels que le blocage de robots dangereux, des pays indésirables, des navigateurs obsolètes, etc.</li>
            <li><a href="https://github.com/CIDRAM/CIDRAM-Extras" hreflang="en" rel="noopener noreferrer external">CIDRAM/CIDRAM-Extras</a> – Divers extras.</li>
          </ul>
        </li>

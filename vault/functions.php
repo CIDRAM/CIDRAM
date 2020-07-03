@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2020.06.29).
+ * This file: Functions file (last modified: 2020.07.03).
  */
 
 /**
@@ -50,18 +50,15 @@ $CIDRAM['ReadFile'] = function ($File) {
     /** Default blocksize (128KB). */
     static $Blocksize = 131072;
 
-    $Filesize = filesize($File);
-    $Size = ($Filesize && $Blocksize) ? ceil($Filesize / $Blocksize) : 0;
     $Data = '';
-    if ($Size > 0) {
-        $Handle = fopen($File, 'rb');
-        $r = 0;
-        while ($r < $Size) {
-            $Data .= fread($Handle, $Blocksize);
-            $r++;
-        }
-        fclose($Handle);
+    $Handle = fopen($File, 'rb');
+    if (!is_resource($Handle)) {
+        return '';
     }
+    while (!feof($Handle)) {
+        $Data .= fread($Handle, $Blocksize);
+    }
+    fclose($Handle);
     return $Data;
 };
 
@@ -1846,27 +1843,30 @@ $CIDRAM['BuildLogPattern'] = function ($Str, $GZ = false) {
  * GZ-compress a file (used by log rotation).
  *
  * @param string $File The file to GZ-compress.
- * @return bool True if the file exists and is readable; False otherwise.
+ * @return bool True on success; False on failure.
  */
 $CIDRAM['GZCompressFile'] = function ($File) {
     if (!is_file($File) || !is_readable($File)) {
         return false;
     }
+
+    /** Default blocksize (128KB). */
     static $Blocksize = 131072;
-    $Filesize = filesize($File);
-    $Size = ($Filesize && $Blocksize) ? ceil($Filesize / $Blocksize) : 0;
-    if ($Size > 0) {
-        $Handle = fopen($File, 'rb');
-        $HandleGZ = gzopen($File . '.gz', 'wb');
-        $Block = 0;
-        while ($Block < $Size) {
-            $Data = fread($Handle, $Blocksize);
-            gzwrite($HandleGZ, $Data);
-            $Block++;
-        }
-        gzclose($HandleGZ);
-        fclose($Handle);
+
+    $Handle = fopen($File, 'rb');
+    if (!is_resource($Handle)) {
+        return false;
     }
+    $HandleGZ = gzopen($File . '.gz', 'wb');
+    if (!is_resource($HandleGZ)) {
+        return false;
+    }
+    while (!feof($Handle)) {
+        $Data = fread($Handle, $Blocksize);
+        gzwrite($HandleGZ, $Data);
+    }
+    gzclose($HandleGZ);
+    fclose($Handle);
     return true;
 };
 
@@ -1911,7 +1911,7 @@ $CIDRAM['LogRotation'] = function ($Pattern) use (&$CIDRAM) {
             }
         }
     }
-    return $Err ? false : true;
+    return $Err === 0;
 };
 
 /**

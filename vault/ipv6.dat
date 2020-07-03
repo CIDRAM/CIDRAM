@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6.dat
 
-# Version: 2020.181.697
-# Last modified: 2020.06.30
+# Version: 2020.184.364
+# Last modified: 2020.07.03
 
 
 # ---
@@ -3157,8 +3157,8 @@ Tag: Reasonnet IP
 
 
 # ASN 25820 ("IT7 Networks Inc").
-# Stop Forum Spam (SFS) listings: 514.
-# Updated: 2020.02.11
+# Stop Forum Spam (SFS) listings: 709.
+# Updated: 2020.02.11 / Checked: 2020.07.03
 
 2607:8700:101::/48 Deny Cloud
 2607:8700:102::/48 Deny Cloud
@@ -3420,7 +3420,8 @@ Tag: CyberWorld
 
 # ASN 12637 ("Seeweb S.r.l").
 # (Can omit anything under 44../8; clean).
-# Updated: 2020.02.10
+# Stop Forum Spam (SFS) listings: 1.
+# Updated: 2020.07.03
 
 2a04:2700::/29 Deny Cloud
 2a05:b6c0::/31 Deny Cloud
@@ -3432,7 +3433,6 @@ Tag: CyberWorld
 Origin: HR
 2001:4b78::/29 Deny Cloud
 2a05:be80::/29 Deny Cloud
-2a07:50c0::/29 Deny Cloud
 Origin: IT
 2a02:e9::/32 Deny Cloud
 2a02:ea::/31 Deny Cloud
@@ -6402,43 +6402,115 @@ Tag: Sundance International
 # ASN 208861 ("LLC Cloud Networks").
 # Caught attempting to attack and brute-force honeypots, and scanning for
 # vulnerabilities.
-# Updated: 2020.02.11
+# Updated: 2020.07.03
 
-2a09:400::/30 Deny Cloud
+2a0f:3380::/29 Deny Cloud
+2a0f:4680::/29 Deny Cloud
+2a0f:5580::/29 Deny Cloud
+2a0f:7300::/29 Deny Cloud
+2a10:2ec1::/32 Deny Cloud
+2a10:2ec2::/32 Deny Cloud
+2a10:2ec4::/32 Deny Cloud
+2a10:2ec7:2000::/36 Deny Cloud
+2a10:2ec7:4000::/36 Deny Cloud
+2a10:2ec7:6000::/35 Deny Cloud
+2a10:2ec7:8000::/35 Deny Cloud
+Origin: CZ
+2a10:5480::/29 Deny Cloud
+Origin: ME
+2a0a:cd42::/32 Deny Cloud
+2a0a:cd46::/32 Deny Cloud
+Origin: NL
+2a03:f7c0::/29 Deny Cloud
+2a05:b1c0::/29 Deny Cloud
+2a05:fb40::/32 Deny Cloud
+2a05:fb43::/32 Deny Cloud
+2a05:fb46::/31 Deny Cloud
+2a07:14c0:a000::/36 Deny Cloud
+2a09:400::/35 Deny Cloud
+2a09:400:3000::/36 Deny Cloud
+2a09:400:8000::/35 Deny Cloud
+2a09:401::/32 Deny Cloud
+2a09:402::/31 Deny Cloud
 2a09:404::/31 Deny Cloud
 2a09:406::/32 Deny Cloud
-2a09:407::/33 Deny Cloud
-2a09:407:8000::/35 Deny Cloud
+2a09:407:1000::/36 Deny Cloud
+2a09:407:2000::/35 Deny Cloud
+2a09:407:4000::/34 Deny Cloud
+2a09:407:8000::/34 Deny Cloud
+2a09:407:e000::/35 Deny Cloud
 2a09:3500::/30 Deny Cloud
-2a09:a4c0::/30 Deny Cloud
-2a09:a4c4::/31 Deny Cloud
+2a09:3504::/31 Deny Cloud
+2a09:3506::/32 Deny Cloud
+2a09:a4c0::/31 Deny Cloud
+2a09:a4c5::/32 Deny Cloud
 2a09:a4c6::/32 Deny Cloud
-2a09:a4c7::/36 Deny Cloud
+2a09:a4c7:4000::/36 Deny Cloud
+2a09:a4c7:8000::/35 Deny Cloud
+2a09:bd80::/29 Deny Cloud
+2a0b:da00::/29 Deny Cloud
+2a0c:5c0::/29 Deny Cloud
+2a0c:2100::/29 Deny Cloud
+2a0c:5247:3000::/36 Deny Cloud
+2a0c:5247:6000::/36 Deny Cloud
+2a0c:5d00::/29 Deny Cloud
+2a0c:65c0::/29 Deny Cloud
+2a0c:6900::/31 Deny Cloud
+2a0c:6980::/29 Deny Cloud
+2a0c:77c0::/29 Deny Cloud
+2a0c:aa40::/29 Deny Cloud
+2a0c:ab02::/31 Deny Cloud
+2a0c:ab04::/31 Deny Cloud
+2a0c:ab06::/32 Deny Cloud
+2a0c:ab07:1000::/36 Deny Cloud
+2a0c:ab07:3000::/36 Deny Cloud
+2a0c:ab07:4000::/34 Deny Cloud
+2a0c:ab07:8000::/35 Deny Cloud
+2a0c:f640::/29 Deny Cloud
+2a0d:2cc0::/29 Deny Cloud
+2a0d:2dc0::/29 Deny Cloud
+2a0d:88c0::/29 Deny Cloud
+2a0d:e4c4:1000::/36 Deny Cloud
+2a0d:e4c4:2000::/36 Deny Cloud
+2a0d:e4c7::/32 Deny Cloud
+2a0f:1180::/29 Deny Cloud
+2a0f:2380::/29 Deny Cloud
+2a0f:4580::/29 Deny Cloud
+2a0f:7100::/29 Deny Cloud
+2a0f:7b80::/29 Deny Cloud
 2a0f:9880::/30 Deny Cloud
 2a0f:9884::/31 Deny Cloud
-2a0f:9886::/32 Deny Cloud
-2a0f:cc87::/33 Deny Cloud
-2a0f:cc87:8000::/34 Deny Cloud
+2a0f:a500::/29 Deny Cloud
+2a0f:a700::/29 Deny Cloud
+2a0f:c580::/30 Deny Cloud
+2a0f:c584::/32 Deny Cloud
+2a0f:c586::/32 Deny Cloud
+2a0f:c780::/29 Deny Cloud
+2a0f:cc80::/32 Deny Cloud
+2a0f:cc82::/32 Deny Cloud
+2a0f:cc87::/36 Deny Cloud
+2a0f:cc87:4000::/35 Deny Cloud
+2a0f:cc87:7000::/36 Deny Cloud
+2a0f:cc87:8000::/36 Deny Cloud
+2a0f:cc87:a000::/35 Deny Cloud
 2a0f:cc87:c000::/35 Deny Cloud
 2a0f:cc87:e000::/36 Deny Cloud
+2a0f:cf80::/29 Deny Cloud
+2a10:7980::/29 Deny Cloud
 Origin: RU
 Tag: LLC Cloud Networks
 
 
 # ASN 197706 ("Keminet SHPK").
 # Caught spamming honeypots and probing for vulnerabilities.
-# Stop Forum Spam (SFS) listings: 2,428.
-# Updated: 2020.02.11
+# Stop Forum Spam (SFS) listings: 1,776.
+# Updated: 2020.07.03
 
 2a04:27c0::/29 Deny Cloud
 2a09:6e40::/29 Deny Cloud
 2a09:6ec0::/29 Deny Cloud
-2a0d:1dc0::/29 Deny Cloud
-2a0d:27c0::/29 Deny Cloud
 2a0d:42c0::/29 Deny Cloud
 2a0d:4940::/29 Deny Cloud
-2a0d:4a40::/29 Deny Cloud
-2a0e:3f00::/29 Deny Cloud
 2a0e:4f00::/29 Deny Cloud
 2a0e:abc0::/29 Deny Cloud
 2a0e:d4c0::/29 Deny Cloud

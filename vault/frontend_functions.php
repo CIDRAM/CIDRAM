@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2020.06.29).
+ * This file: Front-end functions file (last modified: 2020.07.01).
  */
 
 /**
@@ -1638,7 +1638,10 @@ $CIDRAM['UpdatesHandler-Update'] = function ($ID) use (&$CIDRAM) {
         $BytesAdded = 0;
         $BytesRemoved = 0;
         $TimeRequired = microtime(true);
-        if ($Reactivate = $CIDRAM['IsInUse']($CIDRAM['Components']['Meta'][$ThisTarget])) {
+        if (
+            $CIDRAM['IsActivable']($CIDRAM['Components']['Meta'][$ThisTarget]) &&
+            ($Reactivate = $CIDRAM['IsInUse']($CIDRAM['Components']['Meta'][$ThisTarget]))
+        ) {
             $CIDRAM['UpdatesHandler-Deactivate']($ThisTarget);
         }
         $CIDRAM['Components']['RemoteMeta'] = [];

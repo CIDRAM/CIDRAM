@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2020.06.29).
+ * This file: Front-end handler (last modified: 2020.07.02).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -624,9 +624,6 @@ if (($CIDRAM['FE']['UserState'] === 1 || $CIDRAM['FE']['UserState'] === 2) && !$
         );
     }
 }
-
-/** Line spacing fix. */
-$CIDRAM['FE']['bNav'] .= ($CIDRAM['FE']['UserState'] === 1) ? '<br /><br />' : '<br />';
 
 /** The user hasn't logged in, or hasn't authenticated yet. */
 if ($CIDRAM['FE']['UserState'] !== 1 && !$CIDRAM['FE']['CronMode']) {
@@ -1323,7 +1320,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
             }
             if ($CIDRAM['DirValue']['type'] === 'timezone') {
                 $CIDRAM['DirValue']['choices'] = ['SYSTEM' => $CIDRAM['L10N']->getString('field_system_timezone')];
-                foreach (array_unique(DateTimeZone::listIdentifiers()) as $CIDRAM['DirValue']['ChoiceValue']) {
+                foreach (array_unique(\DateTimeZone::listIdentifiers()) as $CIDRAM['DirValue']['ChoiceValue']) {
                     $CIDRAM['DirValue']['choices'][$CIDRAM['DirValue']['ChoiceValue']] = $CIDRAM['DirValue']['ChoiceValue'];
                 }
             }

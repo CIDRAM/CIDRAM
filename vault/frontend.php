@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2020.07.02).
+ * This file: Front-end handler (last modified: 2020.07.04).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -386,7 +386,7 @@ if ($CIDRAM['FE']['FormTarget'] === 'login' || $CIDRAM['FE']['CronMode']) {
                     $CIDRAM['FE']['state_msg'] = $CIDRAM['L10N']->getString('response_login_wrong_endpoint');
                 } else {
                     if (!$CIDRAM['FE']['CronMode']) {
-                        $CIDRAM['FE']['SessionKey'] = md5($CIDRAM['GenerateSalt']());
+                        $CIDRAM['FE']['SessionKey'] = hash('md5', $CIDRAM['GenerateSalt']());
                         $CIDRAM['FE']['Cookie'] = $_POST['username'] . $CIDRAM['FE']['SessionKey'];
                         setcookie('CIDRAM-ADMIN', $CIDRAM['FE']['Cookie'], $CIDRAM['Now'] + 604800, '/', $CIDRAM['HTTP_HOST'], false, true);
                         $CIDRAM['FE']['ThisSession'] = $CIDRAM['FE']['User'] . ',' . password_hash(
@@ -869,7 +869,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'flags' && $CIDRAM['FE']['Permis
 elseif ($CIDRAM['QueryVars']['cidram-page'] === 'accounts' && $CIDRAM['FE']['Permissions'] === 1) {
 
     /** $_POST overrides for mobile display. */
-    if (!empty($_POST['username']) && !empty($_POST['do_mob']) && (!empty($_POST['password_mob']) || $_POST['do_mob'] == 'delete-account')) {
+    if (!empty($_POST['username']) && !empty($_POST['do_mob']) && (!empty($_POST['password_mob']) || $_POST['do_mob'] === 'delete-account')) {
         $_POST['do'] = $_POST['do_mob'];
     }
     if (empty($_POST['username']) && !empty($_POST['username_mob'])) {

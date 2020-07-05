@@ -1,6 +1,6 @@
 <?php
 /**
- * A simple, unified cache handler (last modified: 2020.06.11).
+ * A simple, unified cache handler (last modified: 2020.07.05).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -258,11 +258,8 @@ class Cache
                         fclose($Handle);
                         return false;
                     }
-                    $Size = ($Filesize && self::BLOCKSIZE) ? ceil($Filesize / self::BLOCKSIZE) : 0;
-                    $Step = 0;
-                    while ($Step < $Size) {
+                    while (!feof($Handle)) {
                         $Data .= fread($Handle, self::BLOCKSIZE);
-                        $Step++;
                     }
                     flock($Handle, LOCK_UN);
                     fclose($Handle);

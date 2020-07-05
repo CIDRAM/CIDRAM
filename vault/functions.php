@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2020.07.03).
+ * This file: Functions file (last modified: 2020.07.05).
  */
 
 /** Autoloader for CIDRAM classes. */
@@ -908,7 +908,7 @@ $CIDRAM['DNS-Reverse'] = function (string $Addr, string $DNS = '', int $Timeout 
     /** Some safety mechanisms. */
     if (!isset($CIDRAM['_allow_url_fopen'])) {
         $CIDRAM['_allow_url_fopen'] = ini_get('allow_url_fopen');
-        $CIDRAM['_allow_url_fopen'] = !(!$CIDRAM['_allow_url_fopen'] || $CIDRAM['_allow_url_fopen'] == 'Off');
+        $CIDRAM['_allow_url_fopen'] = !(!$CIDRAM['_allow_url_fopen'] || $CIDRAM['_allow_url_fopen'] === 'Off');
     }
     if (!$CIDRAM['Root'] || empty($Lookup) || !function_exists('fsockopen') || !$CIDRAM['_allow_url_fopen']) {
         return $Addr;
@@ -1256,19 +1256,20 @@ $CIDRAM['UA-X-Match'] = function (string $Datapoint, $Expected, string $Friendly
  * @return bool Returns true if the signature was triggered, and false if it
  *      wasn't. Should correspond to the truthiness of $Condition.
  */
-$CIDRAM['Trigger'] = function ($Condition, $ReasonShort, $ReasonLong = '', array $DefineOptions = []) use (&$CIDRAM) {
+$CIDRAM['Trigger'] = function (bool $Condition, string $ReasonShort, string $ReasonLong = '', array $DefineOptions = []) use (&$CIDRAM): bool {
     if (!$Condition) {
         return false;
     }
     if (!$ReasonLong) {
         $ReasonLong = $CIDRAM['L10N']->getString('denied');
     }
-    if (is_array($DefineOptions) && !empty($DefineOptions)) {
+    if (!empty($DefineOptions)) {
         foreach ($DefineOptions as $CatKey => $CatValue) {
-            if (is_array($CatValue) && !empty($CatValue)) {
-                foreach ($CatValue as $OptionKey => $OptionValue) {
-                    $CIDRAM['Config'][$CatKey][$OptionKey] = $OptionValue;
-                }
+            if (!is_array($CatValue)) {
+                continue;
+            }
+            foreach ($CatValue as $OptionKey => $OptionValue) {
+                $CIDRAM['Config'][$CatKey][$OptionKey] = $OptionValue;
             }
         }
     }
@@ -1301,16 +1302,17 @@ $CIDRAM['Trigger'] = function ($Condition, $ReasonShort, $ReasonLong = '', array
  * @return bool Returns true if the bypass was triggered, and false if it
  *      wasn't. Should correspond to the truthiness of $Condition.
  */
-$CIDRAM['Bypass'] = function ($Condition, $ReasonShort, array $DefineOptions = []) use (&$CIDRAM) {
+$CIDRAM['Bypass'] = function (bool $Condition, string $ReasonShort, array $DefineOptions = []) use (&$CIDRAM): bool {
     if (!$Condition) {
         return false;
     }
-    if (is_array($DefineOptions) && !empty($DefineOptions)) {
+    if (!empty($DefineOptions)) {
         foreach ($DefineOptions as $CatKey => $CatValue) {
-            if (is_array($CatValue) && !empty($CatValue)) {
-                foreach ($CatValue as $OptionKey => $OptionValue) {
-                    $CIDRAM['Config'][$CatKey][$OptionKey] = $OptionValue;
-                }
+            if (!is_array($CatValue)) {
+                continue;
+            }
+            foreach ($CatValue as $OptionKey => $OptionValue) {
+                $CIDRAM['Config'][$CatKey][$OptionKey] = $OptionValue;
             }
         }
     }

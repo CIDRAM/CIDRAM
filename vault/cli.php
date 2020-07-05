@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: CLI handler (last modified: 2019.02.06).
+ * This file: CLI handler (last modified: 2020.07.04).
  */
 
 /** Fallback for missing $_SERVER superglobal. */
@@ -247,7 +247,7 @@ if ($CIDRAM['argv'][1] === '-h') {
     if (empty($FileToValidate)) {
         die($CIDRAM['ValidatorMsg']($CIDRAM['L10N']->getString('CLI_VF_Level_3'), $CIDRAM['L10N']->getString('CLI_VF_Empty')) . "\n");
     }
-    $ModCheckBefore = '[' . md5($FileToValidate) . ':' . strlen($FileToValidate) . ']';
+    $ModCheckBefore = '[' . hash('md5', $FileToValidate) . ':' . strlen($FileToValidate) . ']';
     $Operations = $Changes = 0;
     if ($LNs = substr_count($FileToValidate, "\r")) {
         $FileToValidate = (strpos($FileToValidate, "\r\n")) ? str_replace("\r", '', $FileToValidate) : str_replace("\r", "\n", $FileToValidate);
@@ -415,7 +415,7 @@ if ($CIDRAM['argv'][1] === '-h') {
         }
     }
     $FileToValidate = substr($FileToValidate, 1);
-    if ($ModCheckBefore !== '[' . md5($FileToValidate) . ':' . strlen($FileToValidate) . ']') {
+    if ($ModCheckBefore !== '[' . hash('md5', $FileToValidate) . ':' . strlen($FileToValidate) . ']') {
         $Handle = fopen($CIDRAM['Vault'] . $CIDRAM['argv'][2] . '.fixed', 'w');
         fwrite($Handle, $FileToValidate);
         fclose($Handle);

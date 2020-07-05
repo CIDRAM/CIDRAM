@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2020.07.03).
+ * This file: Functions file (last modified: 2020.07.04).
  */
 
 /**
@@ -931,7 +931,7 @@ $CIDRAM['DNS-Reverse'] = function ($Addr, $DNS = '', $Timeout = 5) use (&$CIDRAM
     /** Some safety mechanisms. */
     if (!isset($CIDRAM['_allow_url_fopen'])) {
         $CIDRAM['_allow_url_fopen'] = ini_get('allow_url_fopen');
-        $CIDRAM['_allow_url_fopen'] = !(!$CIDRAM['_allow_url_fopen'] || $CIDRAM['_allow_url_fopen'] == 'Off');
+        $CIDRAM['_allow_url_fopen'] = !(!$CIDRAM['_allow_url_fopen'] || $CIDRAM['_allow_url_fopen'] === 'Off');
     }
     if (!$CIDRAM['Root'] || empty($Lookup) || !function_exists('fsockopen') || !$CIDRAM['_allow_url_fopen']) {
         return $Addr;

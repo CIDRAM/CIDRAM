@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2020.07.01).
+ * This file: Front-end functions file (last modified: 2020.07.05).
  */
 
 /**
@@ -742,8 +742,15 @@ $CIDRAM['FetchRemote-ContextFree'] = function (&$RemoteData, &$Remote) use (&$CI
  * @param array $Component An array of the component metadata.
  * @return bool True for when activable; False for when not activable.
  */
-$CIDRAM['IsActivable'] = function (array &$Component) {
-    return (!empty($Component['Used with']) || (!empty($Component['Extended Description']) && strpos($Component['Extended Description'], 'signatures-&gt;') !== false));
+$CIDRAM['IsActivable'] = function (array &$Component) use (&$CIDRAM) {
+    if (!empty($Component['Used with'])) {
+        return true;
+    }
+    $Description = $Component['Extended Description'];
+    if (is_array($Description)) {
+        $CIDRAM['IsolateL10N']($Description, $CIDRAM['Config']['general']['lang']);
+    }
+    return (is_string($Description) && $Description && strpos($Description, 'signatures-&gt;') !== false);
 };
 
 /**
@@ -1748,8 +1755,8 @@ $CIDRAM['UpdatesHandler-Update'] = function ($ID) use (&$CIDRAM) {
                     $ThisChecksum = $CIDRAM['Components']['RemoteMeta'][$ThisTarget]['Files']['Checksum'][$Iterate];
                     $ThisLen = strlen($ThisFile);
                     if (
-                        (md5($ThisFile) . ':' . $ThisLen) !== $ThisChecksum &&
-                        (sha1($ThisFile) . ':' . $ThisLen) !== $ThisChecksum &&
+                        (hash('md5', $ThisFile) . ':' . $ThisLen) !== $ThisChecksum &&
+                        (hash('sha1', $ThisFile) . ':' . $ThisLen) !== $ThisChecksum &&
                         (hash('sha256', $ThisFile) . ':' . $ThisLen) !== $ThisChecksum
                     ) {
                         $CIDRAM['FE']['state_msg'] .=
@@ -2163,8 +2170,8 @@ $CIDRAM['UpdatesHandler-Repair'] = function ($ID) use (&$CIDRAM) {
                 $LocalFile = $CIDRAM['ReadFile']($CIDRAM['Vault'] . $RemoteFileTo);
                 $LocalFileSize = strlen($LocalFile);
                 if (
-                    (md5($LocalFile) . ':' . $LocalFileSize) === $RemoteChecksum ||
-                    (sha1($LocalFile) . ':' . $LocalFileSize) === $RemoteChecksum ||
+                    (hash('md5', $LocalFile) . ':' . $LocalFileSize) === $RemoteChecksum ||
+                    (hash('sha1', $LocalFile) . ':' . $LocalFileSize) === $RemoteChecksum ||
                     (hash('sha256', $LocalFile) . ':' . $LocalFileSize) === $RemoteChecksum
                 ) {
                     continue;
@@ -2179,8 +2186,8 @@ $CIDRAM['UpdatesHandler-Repair'] = function ($ID) use (&$CIDRAM) {
                 }
                 $RemoteFileSize = strlen($RemoteFile);
                 if ((
-                    (md5($RemoteFile) . ':' . $RemoteFileSize) !== $RemoteChecksum &&
-                    (sha1($RemoteFile) . ':' . $RemoteFileSize) !== $RemoteChecksum &&
+                    (hash('md5', $RemoteFile) . ':' . $RemoteFileSize) !== $RemoteChecksum &&
+                    (hash('sha1', $RemoteFile) . ':' . $RemoteFileSize) !== $RemoteChecksum &&
                     (hash('sha256', $RemoteFile) . ':' . $RemoteFileSize) !== $RemoteChecksum
                 ) || (
                     preg_match('~\.(?:css|dat|gif|inc|jpe?g|php|png|ya?ml|[a-z]{0,2}db)$~i', $RemoteFileTo) &&
@@ -2306,9 +2313,9 @@ $CIDRAM['UpdatesHandler-Verify'] = function ($ID) use (&$CIDRAM) {
             $Len = strlen($ThisFileData);
             $HashPartLen = strpos($Checksum, ':') ?: 64;
             if ($HashPartLen === 32) {
-                $Actual = md5($ThisFileData) . ':' . $Len;
+                $Actual = hash('md5', $ThisFileData) . ':' . $Len;
             } else {
-                $Actual = (($HashPartLen === 40) ? sha1($ThisFileData) : hash('sha256', $ThisFileData)) . ':' . $Len;
+                $Actual = (($HashPartLen === 40) ? hash('sha1', $ThisFileData) : hash('sha256', $ThisFileData)) . ':' . $Len;
             }
 
             /** Integrity check. */

@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6.dat
 
-# Version: 2020.184.364
-# Last modified: 2020.07.03
+# Version: 2020.186.220
+# Last modified: 2020.07.05
 
 
 # ---
@@ -1021,19 +1021,14 @@ Tag: Internap Network
 
 
 # ASNs 23033, 32875 ("Wowrack.com").
-# Stop Forum Spam (SFS) listings: 350 (AS23033), 184 (AS32875).
-# Updated: 2019.10.12 / Checked: 2020.02.12
+# Stop Forum Spam (SFS) listings: 561 (AS23033), 258 (AS32875).
+# Updated: 2020.07.05
 
-2a07:9944:1d::/48 Deny Cloud
-Origin: EU
-2001:df6:6c00::/48 Deny Cloud
-Origin: IN
 2602:febc::/36 Deny Cloud
 2602:ffca::/36 Deny Cloud
 2604:c00::/32 Deny Cloud
 2605:fe00::/36 Deny Cloud
 2606:6680:19::/48 Deny Cloud
-2606:6680:20::/48 Deny Cloud
 2607:f8f8::/32 Deny Cloud
 Origin: US
 Tag: Wowrack.com
@@ -1611,8 +1606,8 @@ Tag: Contabo GmbH
 
 
 # ASN 45815 ("ESDS Software Solution").
-# Stop Forum Spam (SFS) listings: 2.
-# Updated: 2017.01.25 / Checked: 2020.02.12
+# Stop Forum Spam (SFS) listings: 6.
+# Updated: 2017.01.25 / Checked: 2020.07.05
 
 2400:5300::/47 Deny Cloud
 Origin: IN
@@ -2132,8 +2127,8 @@ Tag: Handy Networks
 
 # ASNs 19693, 31863, 32882, 44332 ("Centrilogic, Inc").
 # (Can omit anything under 44../8; clean).
-# Stop Forum Spam (SFS) listings: 35 (AS19693), 751 (AS31863).
-# Updated: 2020.02.12
+# Stop Forum Spam (SFS) listings: 851 (AS31863).
+# Updated: 2020.02.12 / Checked: 2020.07.05
 
 2a00:d8a0::/29 Deny Cloud
 Origin: GB
@@ -2159,11 +2154,12 @@ Tag: Beijing Blue
 
 
 # ASN 53340 ("VegasNAP, LLC").
-# Stop Forum Spam (SFS) listings: 166.
-# Updated: 2020.02.12
+# Stop Forum Spam (SFS) listings: 244.
+# Updated: 2020.07.05
 
 2604:2280::/40 Deny Cloud
-2604:2280:4100::/40 Deny Cloud
+2604:2280:4000::/39 Deny Cloud
+2604:2280:4200::/40 Deny Cloud
 2604:2280:ff00::/40 Deny Cloud
 2605:6f80:ffff::/48 Deny Cloud
 2606:6680:5::/48 Deny Cloud
@@ -2791,8 +2787,8 @@ Tag: DataWeb Global
 
 
 # ASN 44112 ("SpaceWeb Ltd").
-# Stop Forum Spam (SFS) listings: 2.
-# Updated: 2016.04.29 / Checked: 2020.01.03
+# Port scans and brute-force attempts detected originating from this network.
+# Updated: 2016.04.29 / Checked: 2020.07.05
 
 2a02:408:7722::/48 Deny Cloud
 Origin: RU
@@ -2893,8 +2889,8 @@ Tag: HighSpeed Office Ltd
 
 
 # ASN 47447 ("23Media GmbH").
-# Stop Forum Spam (SFS) listings: 1,964.
-# Updated: 2020.02.12
+# Stop Forum Spam (SFS) listings: 2,368.
+# Updated: 2020.02.12 / Checked: 2020.07.05
 
 2a03:f80:49::/48 Deny Cloud
 Origin: AT
@@ -3099,8 +3095,8 @@ Tag: RouteLabel V.O.F
 
 
 # ASN 42632 ("MnogoByte LLC").
-# Stop Forum Spam (SFS) listings: 724.
-# Updated: 2018.08.05 / Checked: 2020.02.10
+# Stop Forum Spam (SFS) listings: 632.
+# Updated: 2020.07.05
 
 2001:67c:1688::/48 Deny Cloud
 2a02:878:1::/48 Deny Cloud
@@ -3109,6 +3105,7 @@ Tag: RouteLabel V.O.F
 2a02:878:10::/48 Deny Cloud
 2a02:878:a801::/48 Deny Cloud
 2a02:878:a80e::/48 Deny Cloud
+2a05:5940::/29 Deny Cloud
 Origin: RU
 Tag: MnogoByte LLC
 
@@ -3300,8 +3297,8 @@ Tag: Endurance Int
 # ASN 17819 ("Equinix Asia Pacific").
 # Include "Upright Inc", "Equinix", and everything in HK. Ignore the rest.
 # ^(HK\t.*|.*Upright.*|.*Equinix.*)\x01$
-# Stop Forum Spam (SFS) listings: 35.
-# Updated: 2019.04.23 / Checked: 2020.02.10
+# Stop Forum Spam (SFS) listings: 19.
+# Updated: 2019.04.23 / Checked: 2020.07.05
 
 2404:4f00::/32 Deny Cloud
 Origin: AU
@@ -3703,17 +3700,6 @@ Origin: PL
 Tag: SPRINT
 
 
-# ASN 55286 ("B2 Net Solutions Inc").
-# Mark "Packet Flip", and other CIDRs identifying as proxies (e.g., Proxy6), as
-# proxies (i.e., "^(.*(?:Packet Flip|Proxy).*)$").
-# Stop Forum Spam (SFS) listings: 57,541.
-# Updated: 2017.12.18 / Checked: 2020.02.11
-
-2607:4300::/48 Deny Cloud
-Origin: CA
-Tag: B2 Net Solutions
-
-
 # ASNs 24669, 34202, 35545, 62240, 202791, 202792, 206136, 206144, 206986,
 # 207158 ("Clouvider Limited").
 # Updated: 2020.03.06
@@ -3775,12 +3761,17 @@ Tag: Sternforth Ltd
 
 
 # ASN 44812 ("IT Expert LLC").
-# Stop Forum Spam (SFS) listings: 798.
-# Updated: 2019.10.12 / Checked: 2020.02.12
+# Stop Forum Spam (SFS) listings: 725.
+# Updated: 2020.07.05
 
 2a07:ac80::/29 Deny Cloud
-2a09:9446::/32 Deny Cloud
+2a09:4d40::/29 Deny Cloud
 2a0b:2d84::/32 Deny Cloud
+2a0e:fb42::/32 Deny Cloud
+2a0f:26c3::/32 Deny Cloud
+2a0f:26c7::/32 Deny Cloud
+2a0f:3102::/32 Deny Cloud
+2a0f:9481::/32 Deny Cloud
 Origin: RU
 Tag: IT Expert LLC
 
@@ -4292,8 +4283,8 @@ Tag: SAPIOTERRA, LLC
 
 
 # ASN 50297 ("Infium, UAB").
-# Stop Forum Spam (SFS) listings: 325.
-# Updated: 2018.03.14 / Checked: 2020.02.11
+# Stop Forum Spam (SFS) listings: 326.
+# Updated: 2018.03.14 / Checked: 2020.07.05
 
 2001:67c:28f8::/48 Deny Cloud
 Origin: LT
@@ -4730,12 +4721,10 @@ Tag: KPNQWest Italia
 
 # ASNs 41564, 58065 ("Packet Exchange Limited").
 # Caught XRumer operating on this network.
-# Stop Forum Spam (SFS) listings: 10,149 (AS41564), 5,381 (AS58065).
-# Updated: 2018.05.25 / Checked: 2020.02.10
+# Stop Forum Spam (SFS) listings: 11,222 (AS41564), 7,661 (AS58065).
+# Updated: 2020.07.05
 
-2a02:5740::/46 Deny Cloud
-2a02:5740:4::/47 Deny Cloud
-2a02:5740:6::/48 Deny Cloud
+2a02:5740::/47 Deny Cloud
 Origin: EE
 Tag: Packet Exchange Limited
 ---
@@ -4867,8 +4856,8 @@ Tag: Master Internet
 
 
 # ASN 200651 ("Flokinet Ltd").
-# Stop Forum Spam (SFS) listings: 13,652.
-# Updated: 2018.06.25 / Checked: 2020.01.03
+# Stop Forum Spam (SFS) listings: 16,612.
+# Updated: 2018.06.25 / Checked: 2020.07.05
 
 2a06:1700::/47 Deny Cloud
 2a06:1700:2::/48 Deny Cloud
@@ -6811,3 +6800,16 @@ Origin: BG
 2a0e:40c0:3::/48 Deny Cloud
 Origin: UA
 Tag: ITL-Bulgaria Ltd
+
+
+# ASN 35041 ("Binero AB").
+# Infrastructure and cloud provider; Drive-by WordPress hack attempts,
+# brute-force attacks, XMLRPC attacks, and webapp attacks detected originating
+# from this network.
+# Stop Forum Spam (SFS) listings: 43.
+# Updated: 2020.07.05
+
+2a05:4540::/29 Deny Cloud
+2a06:1000::/29 Deny Cloud
+Origin: SE
+Tag: Binero AB

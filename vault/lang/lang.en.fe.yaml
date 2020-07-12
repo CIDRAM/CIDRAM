@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: English language data for the front-end (last modified: 2020.06.29).
+# This file: English language data for the front-end (last modified: 2020.07.08).
 ##/
 
 Extended Description Bypasses: "The default signature bypass files normally included with the main package."
@@ -110,7 +110,7 @@ config_general_social_media_verification: "Attempt to verify social media reques
 config_general_statistics: "Track CIDRAM usage statistics? True = Yes; False = No [Default]."
 config_general_timeFormat: "The date/time notation format used by CIDRAM. Additional options may be added upon request."
 config_general_timeOffset: "Timezone offset in minutes."
-config_general_timezone: "Your timezone."
+config_general_timezone: "This is used to specify the timezone to use (e.g., Africa/Cairo, America/New_York, Asia/Tokyo, Australia/Perth, Europe/Berlin, Pacific/Guam, etc). Specify "SYSTEM" to let PHP handle this for you automatically."
 config_general_truncate: "Truncate logfiles when they reach a certain size? Value is the maximum size in B/KB/MB/GB/TB that a logfile may grow to before being truncated. The default value of 0KB disables truncation (logfiles can grow indefinitely). Note: Applies to individual logfiles! The size of logfiles is not considered collectively."
 config_legal: "Configuration for legal requirements."
 config_legal_omit_hostname: "Omit hostnames from logs? True = Yes; False = No [Default]."
@@ -317,6 +317,7 @@ label_reCAPTCHA: "reCAPTCHA attempts"
 label_results: "Results (%s in – %s rejected – %s accepted – %s merged – %s out):"
 label_sanity_check: "Sanity check: "
 label_sapi: "SAPI used:"
+label_see_also: "See also:"
 label_show: "Show"
 label_show_by_origin: "Show by origin"
 label_signature_type: "Signature type:"

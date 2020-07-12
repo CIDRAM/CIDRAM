@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Swedish language data for the front-end (last modified: 2020.06.29).
+# This file: Swedish language data for the front-end (last modified: 2020.07.08).
 ##/
 
 Extended Description Bypasses: "Standard bypass-filen som normalt ingår i huvudpaketet."
@@ -110,7 +110,7 @@ config_general_social_media_verification: "Försök att verifiera sociala medier
 config_general_statistics: "Spåra statistik för CIDRAM? True = Ja; False = Nej [Standard]."
 config_general_time_format: "Datum/tid notationsformat som används av CIDRAM. Ytterligare alternativ kan läggas till på begäran."
 config_general_time_offset: "Tidszonen kompenseras i minuter."
-config_general_timezone: "Din tidszon."
+config_general_timezone: "Detta används för att specificera den tidszon som ska användas (t.ex., Africa/Cairo, America/New_York, Asia/Tokyo, Australia/Perth, Europe/Berlin, Pacific/Guam, osv). Ange "SYSTEM" för att låta PHP hantera detta åt dig automatiskt."
 config_general_truncate: "Avkorta loggfiler när de når en viss storlek? Värdet är den maximala storleken i B/KB/MB/GB/TB som en loggfil kan växa till innan den trunkeras. Standardvärdet på 0KB inaktiverar avkortning (loggfiler kan växa i obestämd tid). Notera: Gäller enskilda loggfiler! Loggfiler storlek anses inte kollektivt."
 config_legal: "Konfiguration för lagkrav."
 config_legal_omit_hostname: "Utelämna värdnamn från loggar? True = Ja; False = Nej [Standard]."
@@ -315,6 +315,7 @@ label_reCAPTCHA: "reCAPTCHA försöken"
 label_results: "Resultat (%s i – %s avvisade – %s accepterad – %s kombinerad – %s ut):"
 label_sanity_check: "Säkerhetskontroll: "
 label_sapi: "SAPI som används:"
+label_see_also: "Se även:"
 label_show: "Visa"
 label_show_by_origin: "Visa efter ursprung"
 label_signature_type: "Signaturtyp:"

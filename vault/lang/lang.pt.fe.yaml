@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Portuguese language data for the front-end (last modified: 2020.06.29).
+# This file: Portuguese language data for the front-end (last modified: 2020.07.08).
 ##/
 
 Extended Description Bypasses: "Os arquivos para bypass das assinaturas padrão normalmente incluído com o pacote principal."
@@ -110,7 +110,7 @@ config_general_social_media_verification: "Tentativa de verificar solicitações
 config_general_statistics: "Monitorar as estatísticas de uso do CIDRAM? True = Sim; False = Não [Padrão]."
 config_general_time_format: "O formato de notação de data/tempo utilizado pelo CIDRAM. Opções adicionais podem ser adicionadas a pedido."
 config_general_time_offset: "Deslocamento do fuso horário em minutos."
-config_general_timezone: "O seu fuso horário."
+config_general_timezone: "Isso é usado para especificar o fuso horário a ser usado (por exemplo, Africa/Cairo, America/New_York, Asia/Tokyo, Australia/Perth, Europe/Berlin, Pacific/Guam, etc). Especifique "SYSTEM" para permitir que o PHP lide com isso automaticamente."
 config_general_truncate: "Truncar arquivos de log quando atingem um determinado tamanho? Valor é o tamanho máximo em B/KB/MB/GB/TB que um arquivo de log pode crescer antes de ser truncado. O valor padrão de 0KB desativa o truncamento (arquivos de log podem crescer indefinidamente). Nota: Aplica-se a arquivos de log individuais! O tamanho dos arquivos de log não é considerado coletivamente."
 config_legal: "Configuração para requisitos legais."
 config_legal_omit_hostname: "Omitir nomes de host de logs? True = Sim; False = Não [Padrão]."
@@ -317,6 +317,7 @@ label_reCAPTCHA: "reCAPTCHA tentativas"
 label_results: "Resultados (%s entrada – %s rejeitado – %s aceito – %s mesclado – %s saída):"
 label_sanity_check: "Verificação de sanidade: "
 label_sapi: "SAPI usada:"
+label_see_also: "Veja também:"
 label_show: "Mostrar"
 label_show_by_origin: "Mostrar por origem"
 label_signature_type: "Tipo de assinatura:"

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Arabic language data for the front-end (last modified: 2020.06.29).
+# This file: Arabic language data for the front-end (last modified: 2020.07.08).
 ##/
 
 Extended Description Bypasses: "ملفات الالتفافية التوقيع القياسية المدرجة عادة مع الحزمة الرئيسية."
@@ -108,7 +108,7 @@ config_general_social_media_verification: "محاولة التحقق من طلب
 config_general_statistics: "هل تريد تتبع إحصاءات استخدام CIDRAM؟ صحيح/True = نعم؛ زائفة/False = لا [افتراضي]."
 config_general_time_format: "شكل التواريخ المستخدم من قبل CIDRAM. ويمكن إضافة خيارات إضافية عند الطلب."
 config_general_time_offset: "المنطقة الزمنية تعويض في غضون دقائق."
-config_general_timezone: "المنطقة الزمنية."
+config_general_timezone: "يتم استخدام هذا لتحديد المنطقة الزمنية للاستخدام (على سبيل المثال، Africa/Cairo، America/New_York، Asia/Tokyo، Australia/Perth، Europe/Berlin، Pacific/Guam، إلخ). حدد "SYSTEM" للسماح لـ PHP بمعالجة هذا الأمر تلقائيًا."
 config_general_truncate: "اقتطاع ملفات السجل عندما تصل إلى حجم معين؟ القيمة هي الحجم الأقصى في بايت/كيلوبايت/ميغابايت/غيغابايت/تيرابايت الذي قد ينمو ملفات السجل إلى قبل اقتطاعه. القيمة الافتراضية 0KB تعطيل اقتطاع (ملفات السجل يمكن أن تنمو إلى أجل غير مسمى). ملاحظة: ينطبق على ملفات السجل الفردية! ولا يعتبر حجمها جماعيا."
 config_legal: "التكوين للمتطلبات القانونية."
 config_legal_omit_hostname: "حذف أسماء المضيف من السجلات؟ صحيح/True = نعم؛ زائفة/False = لا [افتراضي]."
@@ -309,6 +309,7 @@ label_reCAPTCHA: "محاولات reCAPTCHA"
 label_results: "النتائج (%s في – %s مرفوض – %s قبلت – %s اندمجت – %s خارج):"
 label_sanity_check: "التحقق من التعقل: "
 label_sapi: "SAPI المستخدمة:"
+label_see_also: "أنظر أيضا:"
 label_show: "اظهره"
 label_show_by_origin: "عرض حسب الأصل"
 label_signature_type: "نوع التوقيع:"

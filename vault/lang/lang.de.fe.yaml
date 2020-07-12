@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: German language data for the front-end (last modified: 2020.06.29).
+# This file: German language data for the front-end (last modified: 2020.07.08).
 ##/
 
 Extended Description Bypasses: "Die Standard-Signatur-Bypass-Dateien, die normalerweise im Hauptpaket enthalten sind."
@@ -110,7 +110,7 @@ config_general_social_media_verification: "Versuchen Sie, Social Media Anfragen 
 config_general_statistics: "CIDRAM-Nutzungsstatistiken verfolgen? True = Ja; False = Nein [Standardeinstellung]."
 config_general_time_format: "Das Datumsformat verwendet von CIDRAM. Zusätzliche Optionen können auf Anfrage hinzugefügt werden."
 config_general_time_offset: "Zeitzonenversatz in Minuten."
-config_general_timezone: "Ihre Zeitzone."
+config_general_timezone: "Gibt welche Zeitzone verwendet werden soll an (z.B., Africa/Cairo, America/New_York, Asia/Tokyo, Australia/Perth, Europe/Berlin, Pacific/Guam, u.s.w.). Damit PHP dies automatisch für Sie erledigt, geben Sie "SYSTEM" an."
 config_general_truncate: "Protokolldateien kürzen wenn diese eine bestimmte Größe erreichen? Wert ist die maximale Größe in B/KB/MB/GB/TB, die eine Protokolldatei erreichen kann, bevor sie gekürtzt wird. Der Standardwert von 0KB deaktiviert die Kürzung (Protokolldateien können unbegrenzt wachsen). Beachten: Gilt für einzelne Protokolldateien! Die Größe der Protokolldateien gilt nicht in der Summe aller Protokolldateien."
 config_legal: "Konfiguration für gesetzliche Anforderungen."
 config_legal_omit_hostname: "Hostnamen aus Protokollen auslassen? True = Ja; False = Nein [Standardeinstellung]."
@@ -317,6 +317,7 @@ label_reCAPTCHA: "reCAPTCHA versucht"
 label_results: "Ergebnisse (%s eingegeben – %s abgelehnt – %s akzeptiert – %s fusionierte – %s ausgegeben):"
 label_sanity_check: "Gesundheitsüberprüfung: "
 label_sapi: "SAPI verwendet:"
+label_see_also: "Siehe auch:"
 label_show: "Zeig"
 label_show_by_origin: "Durch Ursprung anzeigen"
 label_signature_type: "Signaturtyp:"

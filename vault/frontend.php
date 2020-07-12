@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2020.07.04).
+ * This file: Front-end handler (last modified: 2020.07.12).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -468,11 +468,18 @@ if ($CIDRAM['FE']['FormTarget'] === 'login' || $CIDRAM['FE']['CronMode']) {
         ) ? 'state_logged_in_2fa_pending' : 'state_logged_in');
     }
 
+    /** Safer for the front-end logger. */
+    $CIDRAM['NameToLog'] = preg_replace('~[\x00-\x1f]~', '', $_POST['username'] ?? '');
+
     /** Handle front-end logging. */
-    $CIDRAM['FELogger']($_SERVER[$CIDRAM['IPAddr']], (
-        empty($_POST['username']) ? '' : $_POST['username']
-    ), empty($CIDRAM['LoggerMessage']) ? '' : $CIDRAM['LoggerMessage']);
-    unset($CIDRAM['LoggerMessage']);
+    $CIDRAM['FELogger'](
+        $_SERVER[$CIDRAM['IPAddr']],
+        $CIDRAM['NameToLog'],
+        $CIDRAM['LoggerMessage'] ?? ''
+    );
+
+    /** Cleanup. */
+    unset($CIDRAM['NameToLog'], $CIDRAM['LoggerMessage']);
 }
 
 /** Determine whether the user has logged in. */
@@ -635,6 +642,9 @@ if ($CIDRAM['FE']['UserState'] !== 1 && !$CIDRAM['FE']['CronMode']) {
 
         /** Provide the option to log out (omit home link). */
         $CIDRAM['FE']['bNav'] = sprintf('<a href="?cidram-page=logout">%s</a><br />', $CIDRAM['L10N']->getString('link_log_out'));
+
+        /** Aesthetic spacer. */
+        $CIDRAM['FE']['2fa_status_spacer'] = empty($CIDRAM['FE']['state_msg']) ? '' : '<br /><br />';
 
         /** Show them the two-factor authentication page. */
         $CIDRAM['FE']['FE_Content'] = $CIDRAM['ParseVars'](
@@ -1419,6 +1429,17 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
                 );
             }
             $CIDRAM['ThisDir']['FieldOut'] .= $CIDRAM['ThisDir']['Preview'];
+            if (!empty($CIDRAM['DirValue']['See also']) && is_array($CIDRAM['DirValue']['See also'])) {
+                $CIDRAM['ThisDir']['FieldOut'] .= sprintf("\n<br /><br />%s<ul>\n", $CIDRAM['L10N']->getString('label_see_also'));
+                foreach ($CIDRAM['DirValue']['See also'] as $CIDRAM['DirValue']['Ref key'] => $CIDRAM['DirValue']['Ref link']) {
+                    $CIDRAM['ThisDir']['FieldOut'] .= sprintf(
+                        '<li><a dir="ltr" href="%s">%s</a></li>',
+                        $CIDRAM['DirValue']['Ref link'],
+                        $CIDRAM['DirValue']['Ref key']
+                    );
+                }
+                $CIDRAM['ThisDir']['FieldOut'] .= "\n</ul>";
+            }
             $CIDRAM['FE']['ConfigFields'] .= $CIDRAM['ParseVars'](
                 $CIDRAM['L10N']->Data + $CIDRAM['ThisDir'], $CIDRAM['FE']['ConfigRow']
             );

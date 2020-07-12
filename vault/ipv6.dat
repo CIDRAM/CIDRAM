@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6.dat
 
-# Version: 2020.186.220
-# Last modified: 2020.07.05
+# Version: 2020.193.592
+# Last modified: 2020.07.12
 
 
 # ---
@@ -6508,6 +6508,19 @@ Origin: AL
 Tag: Keminet SHPK
 
 
+# ASN 62355 ("Network Dedicated SAS").
+# Caught attempting to request protected resources and spamming honeypots.
+# Stop Forum Spam (SFS) listings: 747.
+# Updated: 2020.07.12
+
+2a04:7a40::/29 Deny Cloud
+Origin: CH
+2a00:55a0:5::/48 Deny Cloud
+2a00:55a0:10::/48 Deny Cloud
+Origin: IL
+Tag: Network Dedicated SAS
+
+
 # ASN 54538 ("PALO ALTO NETWORKS").
 # Hacking, brute-force attempts, DDoS attempts, and probing for vulnerabilities
 # detected from this network. (Omitting SG entries to reduce the false positive
@@ -6522,8 +6535,8 @@ Tag: PALO ALTO NETWORKS
 
 # ASN 60068 ("Datacamp Limited").
 # CDN, DDoS protection and cloud provider; Spambots detected at this network.
-# Stop Forum Spam (SFS) listings: 36,478.
-# Updated: 2020.03.01
+# Stop Forum Spam (SFS) listings: 50,969.
+# Updated: 2020.07.09
 
 2a02:6ea0:babe::/48 Deny Cloud
 2a02:6ea0:c000::/37 Deny Cloud
@@ -6531,11 +6544,10 @@ Tag: PALO ALTO NETWORKS
 2a02:6ea0:cc00::/40 Deny Cloud
 2a02:6ea0:cd77::/48 Deny Cloud
 2a02:6ea0:ce00::/39 Deny Cloud
-2a02:6ea0:d000::/48 Deny Cloud
 2a02:6ea0:d100::/40 Deny Cloud
 2a02:6ea0:d200::/39 Deny Cloud
-2a02:6ea0:d400::/39 Deny Cloud
-2a02:6ea0:d600::/40 Deny Cloud
+2a02:6ea0:d400::/38 Deny Cloud
+2a02:6ea0:d800::/39 Deny Cloud
 Origin: GB
 2a05:6200:74::/48 Deny Cloud
 Origin: NL
@@ -6813,3 +6825,46 @@ Tag: ITL-Bulgaria Ltd
 2a06:1000::/29 Deny Cloud
 Origin: SE
 Tag: Binero AB
+
+
+# ASN 12260 ("Colostore.com").
+# Brute-force and XMLRPC attacks detected originating from this network.
+# Stop Forum Spam (SFS) listings: 1.
+# Updated: 2020.07.09
+
+2607:5b00::/32 Deny Cloud
+Origin: US
+Tag: Colostore.com
+
+
+# ASN 61323 ("UKFAST.NET LIMITED").
+# Brute-force and XMLRPC attacks detected originating from this network.
+# Stop Forum Spam (SFS) listings: 42.
+# Updated: 2020.07.09
+
+2a02:21a8::/47 Deny Cloud
+2a02:21a8:2::/48 Deny Cloud
+2a02:22d0::/32 Deny Cloud
+2a09:b200:6::/48 Deny Cloud
+2a09:b600:5::/48 Deny Cloud
+2a09:ba00:4::/48 Deny Cloud
+2a0c:3dc0::/29 Deny Cloud
+Origin: GB
+2602:fef6::/36 Deny Cloud
+Origin: US
+Tag: UKFAST.NET LIMITED
+
+
+# ASN 32244 ("Liquid Web, L.L.C").
+# WordPress/XMLRPC attacks detected originating from this network.
+# Stop Forum Spam (SFS) listings: 37.
+# Updated: 2020.07.09
+
+2607:fcc0:6000::/35 Deny Cloud
+Origin: CA
+2607:fad0::/42 Deny Cloud
+2607:fad0:1000::/36 Deny Cloud
+2607:fad0:2000::/35 Deny Cloud
+2620:139:5002::/48 Deny Cloud
+Origin: US
+Tag: Liquid Web

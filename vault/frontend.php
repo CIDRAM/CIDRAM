@@ -630,6 +630,123 @@ if (($CIDRAM['FE']['UserState'] === 1 || $CIDRAM['FE']['UserState'] === 2) && !$
             $CIDRAM['ReadFile']($CIDRAM['GetAssetPath']('_nav_logs_access_only.html'))
         );
     }
+
+    /** Where to find remote version information? */
+    $CIDRAM['RemoteVerPath'] = 'https://raw.githubusercontent.com/Maikuolan/Compatibility-Charts/gh-pages/';
+
+    /** Fetch remote CIDRAM version information and cache it if necessary. */
+    if (($CIDRAM['Remote-YAML-CIDRAM'] = $CIDRAM['FECacheGet']($CIDRAM['FE']['Cache'], 'cidram-ver.yaml')) === false) {
+        $CIDRAM['Remote-YAML-CIDRAM'] = $CIDRAM['Request']($CIDRAM['RemoteVerPath'] . 'cidram-ver.yaml', [], 8);
+        $CIDRAM['FECacheAdd']($CIDRAM['FE']['Cache'], $CIDRAM['FE']['Rebuild'], 'cidram-ver.yaml', $CIDRAM['Remote-YAML-CIDRAM'] ?: '-', $CIDRAM['Now'] + 86400);
+    }
+
+    /** Major version notice. */
+    $CIDRAM['MajorVersionNotice'] = '';
+
+    /** Process remote CIDRAM version information. */
+    if (empty($CIDRAM['Remote-YAML-CIDRAM'])) {
+
+        /** CIDRAM latest stable. */
+        $CIDRAM['FE']['info_cidram_stable'] = $CIDRAM['L10N']->getString('response_error');
+
+        /** CIDRAM latest unstable. */
+        $CIDRAM['FE']['info_cidram_unstable'] = $CIDRAM['L10N']->getString('response_error');
+
+        /** CIDRAM branch latest stable. */
+        $CIDRAM['FE']['info_cidram_branch'] = $CIDRAM['L10N']->getString('response_error');
+    } else {
+        $CIDRAM['Remote-YAML-CIDRAM-Array'] = (new \Maikuolan\Common\YAML($CIDRAM['Remote-YAML-CIDRAM']))->Data;
+
+        /** CIDRAM latest stable. */
+        if (empty($CIDRAM['Remote-YAML-CIDRAM-Array']['Stable'])) {
+            $CIDRAM['FE']['info_cidram_stable'] = $CIDRAM['L10N']->getString('response_error');
+        } else {
+            $CIDRAM['FE']['MajorVersionCurrent'] = (int)substr(
+                $CIDRAM['ScriptVersion'],
+                0,
+                strpos($CIDRAM['ScriptVersion'], '.') ?: strlen($CIDRAM['ScriptVersion'])
+            );
+            $CIDRAM['FE']['MajorVersionLatest'] = (int)substr(
+                $CIDRAM['Remote-YAML-CIDRAM-Array']['Stable'],
+                0,
+                strpos($CIDRAM['Remote-YAML-CIDRAM-Array']['Stable'], '.') ?: strlen($CIDRAM['Remote-YAML-CIDRAM-Array']['Stable'])
+            );
+            if (
+                $CIDRAM['FE']['MajorVersionCurrent'] < $CIDRAM['FE']['MajorVersionLatest'] &&
+                !empty($CIDRAM['Remote-YAML-CIDRAM-Array']['Stable Minimum PHP Required']) &&
+                is_string($CIDRAM['Remote-YAML-CIDRAM-Array']['Stable Minimum PHP Required']) &&
+                version_compare(PHP_VERSION, $CIDRAM['Remote-YAML-CIDRAM-Array']['Stable Minimum PHP Required'], '>=')
+            ) {
+                $CIDRAM['MajorVersionNotice'] = sprintf(
+                    $CIDRAM['L10N']->getString('notice_new_major_version'),
+                    'CIDRAM v' . $CIDRAM['Remote-YAML-CIDRAM-Array']['Stable'],
+                    $CIDRAM['ScriptIdent']
+                );
+            }
+            $CIDRAM['FE']['info_cidram_stable'] = $CIDRAM['Remote-YAML-CIDRAM-Array']['Stable'];
+        }
+
+        /** CIDRAM latest unstable. */
+        $CIDRAM['FE']['info_cidram_unstable'] = empty($CIDRAM['Remote-YAML-CIDRAM-Array']['Unstable']) ?
+            $CIDRAM['L10N']->getString('response_error') : $CIDRAM['Remote-YAML-CIDRAM-Array']['Unstable'];
+
+        /** CIDRAM branch latest stable. */
+        if ($CIDRAM['ThisBranch'] = substr($CIDRAM['ScriptVersion'], 0, strpos($CIDRAM['ScriptVersion'], '.') ?: 1)) {
+            $CIDRAM['ThisBranch'] = 'v' . ($CIDRAM['ThisBranch'] ?: 1);
+            if (empty($CIDRAM['Remote-YAML-CIDRAM-Array']['Branch'][$CIDRAM['ThisBranch']]['Latest'])) {
+                $CIDRAM['FE']['info_cidram_branch'] = $CIDRAM['L10N']->getString('response_error');
+            } else {
+                $CIDRAM['FE']['info_cidram_branch'] = $CIDRAM['Remote-YAML-CIDRAM-Array']['Branch'][$CIDRAM['ThisBranch']]['Latest'];
+            }
+        } else {
+            $CIDRAM['FE']['info_php_branch'] = $CIDRAM['L10N']->getString('response_error');
+        }
+    }
+
+    /** Cleanup. */
+    unset($CIDRAM['Remote-YAML-CIDRAM-Array'], $CIDRAM['Remote-YAML-CIDRAM']);
+
+    /** Fetch remote PHP version information and cache it if necessary. */
+    if (($CIDRAM['Remote-YAML-PHP'] = $CIDRAM['FECacheGet']($CIDRAM['FE']['Cache'], 'php-ver.yaml')) === false) {
+        $CIDRAM['Remote-YAML-PHP'] = $CIDRAM['Request']($CIDRAM['RemoteVerPath'] . 'php-ver.yaml', [], 8);
+        $CIDRAM['FECacheAdd']($CIDRAM['FE']['Cache'], $CIDRAM['FE']['Rebuild'], 'php-ver.yaml', $CIDRAM['Remote-YAML-PHP'] ?: '-', $CIDRAM['Now'] + 86400);
+    }
+
+    /** Process remote PHP version information. */
+    if (empty($CIDRAM['Remote-YAML-PHP'])) {
+
+        /** PHP latest stable. */
+        $CIDRAM['FE']['info_php_stable'] = $CIDRAM['L10N']->getString('response_error');
+
+        /** PHP latest unstable. */
+        $CIDRAM['FE']['info_php_unstable'] = $CIDRAM['L10N']->getString('response_error');
+
+        /** PHP branch latest stable. */
+        $CIDRAM['FE']['info_php_branch'] = $CIDRAM['L10N']->getString('response_error');
+    } else {
+        $CIDRAM['Remote-YAML-PHP-Array'] = (new \Maikuolan\Common\YAML($CIDRAM['Remote-YAML-PHP']))->Data;
+
+        /** PHP latest stable. */
+        $CIDRAM['FE']['info_php_stable'] = empty($CIDRAM['Remote-YAML-PHP-Array']['Stable']) ?
+            $CIDRAM['L10N']->getString('response_error') : $CIDRAM['Remote-YAML-PHP-Array']['Stable'];
+
+        /** PHP latest unstable. */
+        $CIDRAM['FE']['info_php_unstable'] = empty($CIDRAM['Remote-YAML-PHP-Array']['Unstable']) ?
+            $CIDRAM['L10N']->getString('response_error') : $CIDRAM['Remote-YAML-PHP-Array']['Unstable'];
+
+        /** PHP branch latest stable. */
+        if ($CIDRAM['ThisBranch'] = substr(PHP_VERSION, 0, strpos(PHP_VERSION, '.') ?: 0)) {
+            $CIDRAM['ThisBranch'] .= substr(PHP_VERSION, strlen($CIDRAM['ThisBranch']) + 1, strpos(PHP_VERSION, '.', strlen($CIDRAM['ThisBranch'])) ?: 0);
+            $CIDRAM['ThisBranch'] = 'php' . $CIDRAM['ThisBranch'];
+            $CIDRAM['FE']['info_php_branch'] = empty($CIDRAM['Remote-YAML-PHP-Array']['Branch'][$CIDRAM['ThisBranch']]['Latest']) ?
+                $CIDRAM['L10N']->getString('response_error') : $CIDRAM['Remote-YAML-PHP-Array']['Branch'][$CIDRAM['ThisBranch']]['Latest'];
+        } else {
+            $CIDRAM['FE']['info_php_branch'] = $CIDRAM['L10N']->getString('response_error');
+        }
+    }
+
+    /** Cleanup. */
+    unset($CIDRAM['Remote-YAML-PHP-Array'], $CIDRAM['Remote-YAML-PHP'], $CIDRAM['ThisBranch'], $CIDRAM['RemoteVerPath']);
 }
 
 /** The user hasn't logged in, or hasn't authenticated yet. */
@@ -696,92 +813,6 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === '' && !$CIDRAM['FE']['CronMode']
         '<a href="https://bitbucket.org/Maikuolan/cidram" hreflang="en-US" target="_blank" rel="noopener external">CIDRAM@Bitbucket</a>',
         '<a href="https://sourceforge.net/projects/cidram/" hreflang="en-US" target="_blank" rel="noopener external">CIDRAM@SourceForge</a>'
     ]);
-
-    /** Where to find remote version information? */
-    $CIDRAM['RemoteVerPath'] = 'https://raw.githubusercontent.com/Maikuolan/Compatibility-Charts/gh-pages/';
-
-    /** Fetch remote CIDRAM version information and cache it if necessary. */
-    if (($CIDRAM['Remote-YAML-CIDRAM'] = $CIDRAM['FECacheGet']($CIDRAM['FE']['Cache'], 'cidram-ver.yaml')) === false) {
-        $CIDRAM['Remote-YAML-CIDRAM'] = $CIDRAM['Request']($CIDRAM['RemoteVerPath'] . 'cidram-ver.yaml', [], 8);
-        $CIDRAM['FECacheAdd']($CIDRAM['FE']['Cache'], $CIDRAM['FE']['Rebuild'], 'cidram-ver.yaml', $CIDRAM['Remote-YAML-CIDRAM'] ?: '-', $CIDRAM['Now'] + 86400);
-    }
-
-    /** Process remote CIDRAM version information. */
-    if (empty($CIDRAM['Remote-YAML-CIDRAM'])) {
-
-        /** CIDRAM latest stable. */
-        $CIDRAM['FE']['info_cidram_stable'] = $CIDRAM['L10N']->getString('response_error');
-
-        /** CIDRAM latest unstable. */
-        $CIDRAM['FE']['info_cidram_unstable'] = $CIDRAM['L10N']->getString('response_error');
-
-        /** CIDRAM branch latest stable. */
-        $CIDRAM['FE']['info_cidram_branch'] = $CIDRAM['L10N']->getString('response_error');
-    } else {
-        $CIDRAM['Remote-YAML-CIDRAM-Array'] = (new \Maikuolan\Common\YAML($CIDRAM['Remote-YAML-CIDRAM']))->Data;
-
-        /** CIDRAM latest stable. */
-        $CIDRAM['FE']['info_cidram_stable'] = empty($CIDRAM['Remote-YAML-CIDRAM-Array']['Stable']) ?
-            $CIDRAM['L10N']->getString('response_error') : $CIDRAM['Remote-YAML-CIDRAM-Array']['Stable'];
-
-        /** CIDRAM latest unstable. */
-        $CIDRAM['FE']['info_cidram_unstable'] = empty($CIDRAM['Remote-YAML-CIDRAM-Array']['Unstable']) ?
-            $CIDRAM['L10N']->getString('response_error') : $CIDRAM['Remote-YAML-CIDRAM-Array']['Unstable'];
-
-        /** CIDRAM branch latest stable. */
-        if ($CIDRAM['ThisBranch'] = substr($CIDRAM['FE']['ScriptVersion'], 0, strpos($CIDRAM['FE']['ScriptVersion'], '.') ?: 0)) {
-            $CIDRAM['ThisBranch'] = 'v' . ($CIDRAM['ThisBranch'] ?: 1);
-            $CIDRAM['FE']['info_cidram_branch'] = empty($CIDRAM['Remote-YAML-CIDRAM-Array']['Branch'][$CIDRAM['ThisBranch']]['Latest']) ?
-                $CIDRAM['L10N']->getString('response_error') : $CIDRAM['Remote-YAML-CIDRAM-Array']['Branch'][$CIDRAM['ThisBranch']]['Latest'];
-        } else {
-            $CIDRAM['FE']['info_php_branch'] = $CIDRAM['L10N']->getString('response_error');
-        }
-    }
-
-    /** Cleanup. */
-    unset($CIDRAM['Remote-YAML-CIDRAM-Array'], $CIDRAM['Remote-YAML-CIDRAM']);
-
-    /** Fetch remote PHP version information and cache it if necessary. */
-    if (($CIDRAM['Remote-YAML-PHP'] = $CIDRAM['FECacheGet']($CIDRAM['FE']['Cache'], 'php-ver.yaml')) === false) {
-        $CIDRAM['Remote-YAML-PHP'] = $CIDRAM['Request']($CIDRAM['RemoteVerPath'] . 'php-ver.yaml', [], 8);
-        $CIDRAM['FECacheAdd']($CIDRAM['FE']['Cache'], $CIDRAM['FE']['Rebuild'], 'php-ver.yaml', $CIDRAM['Remote-YAML-PHP'] ?: '-', $CIDRAM['Now'] + 86400);
-    }
-
-    /** Process remote PHP version information. */
-    if (empty($CIDRAM['Remote-YAML-PHP'])) {
-
-        /** PHP latest stable. */
-        $CIDRAM['FE']['info_php_stable'] = $CIDRAM['L10N']->getString('response_error');
-
-        /** PHP latest unstable. */
-        $CIDRAM['FE']['info_php_unstable'] = $CIDRAM['L10N']->getString('response_error');
-
-        /** PHP branch latest stable. */
-        $CIDRAM['FE']['info_php_branch'] = $CIDRAM['L10N']->getString('response_error');
-    } else {
-        $CIDRAM['Remote-YAML-PHP-Array'] = (new \Maikuolan\Common\YAML($CIDRAM['Remote-YAML-PHP']))->Data;
-
-        /** PHP latest stable. */
-        $CIDRAM['FE']['info_php_stable'] = empty($CIDRAM['Remote-YAML-PHP-Array']['Stable']) ?
-            $CIDRAM['L10N']->getString('response_error') : $CIDRAM['Remote-YAML-PHP-Array']['Stable'];
-
-        /** PHP latest unstable. */
-        $CIDRAM['FE']['info_php_unstable'] = empty($CIDRAM['Remote-YAML-PHP-Array']['Unstable']) ?
-            $CIDRAM['L10N']->getString('response_error') : $CIDRAM['Remote-YAML-PHP-Array']['Unstable'];
-
-        /** PHP branch latest stable. */
-        if ($CIDRAM['ThisBranch'] = substr(PHP_VERSION, 0, strpos(PHP_VERSION, '.') ?: 0)) {
-            $CIDRAM['ThisBranch'] .= substr(PHP_VERSION, strlen($CIDRAM['ThisBranch']) + 1, strpos(PHP_VERSION, '.', strlen($CIDRAM['ThisBranch'])) ?: 0);
-            $CIDRAM['ThisBranch'] = 'php' . $CIDRAM['ThisBranch'];
-            $CIDRAM['FE']['info_php_branch'] = empty($CIDRAM['Remote-YAML-PHP-Array']['Branch'][$CIDRAM['ThisBranch']]['Latest']) ?
-                $CIDRAM['L10N']->getString('response_error') : $CIDRAM['Remote-YAML-PHP-Array']['Branch'][$CIDRAM['ThisBranch']]['Latest'];
-        } else {
-            $CIDRAM['FE']['info_php_branch'] = $CIDRAM['L10N']->getString('response_error');
-        }
-    }
-
-    /** Cleanup. */
-    unset($CIDRAM['Remote-YAML-PHP-Array'], $CIDRAM['Remote-YAML-PHP'], $CIDRAM['ThisBranch'], $CIDRAM['RemoteVerPath']);
 
     /** Extension availability. */
     $CIDRAM['FE']['Extensions'] = [];
@@ -1591,6 +1622,11 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'cache-data' && $CIDRAM['FE']['P
 
 /** Updates. */
 elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && ($CIDRAM['FE']['Permissions'] === 1 || ($CIDRAM['FE']['Permissions'] === 3 && $CIDRAM['FE']['CronMode']))) {
+
+    /** Include major version notice (if relevant). */
+    if ($CIDRAM['MajorVersionNotice']) {
+        $CIDRAM['FE']['state_msg'] .= $CIDRAM['MajorVersionNotice'] . '<hr />';
+    }
 
     $CIDRAM['FE']['UpdatesFormTarget'] = 'cidram-page=updates';
     $CIDRAM['FE']['UpdatesFormTargetControls'] = '';

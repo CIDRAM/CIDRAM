@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2020.07.12).
+ * This file: Front-end functions file (last modified: 2020.07.13).
  */
 
 /**
@@ -3037,6 +3037,9 @@ $CIDRAM['SendEmail'] = function (array $Recipients = [], string $Subject = '', s
 
             /** Tell PHPMailer to use SMTP. */
             $Mail->isSMTP();
+
+            /** Tell PHPMailer to always use UTF-8. */
+            $Mail->CharSet = 'utf-8';
 
             /** Disable debugging. */
             $Mail->SMTPDebug = 0;

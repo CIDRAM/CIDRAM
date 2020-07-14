@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2020.07.13).
+ * This file: Front-end functions file (last modified: 2020.07.14).
  */
 
 /**
@@ -745,6 +745,9 @@ $CIDRAM['FetchRemote-ContextFree'] = function (&$RemoteData, &$Remote) use (&$CI
 $CIDRAM['IsActivable'] = function (array &$Component) use (&$CIDRAM) {
     if (!empty($Component['Used with'])) {
         return true;
+    }
+    if (!isset($Component['Extended Description'])) {
+        return false;
     }
     $Description = $Component['Extended Description'];
     if (is_array($Description)) {
@@ -1900,7 +1903,7 @@ $CIDRAM['UpdatesHandler-Update'] = function ($ID) use (&$CIDRAM) {
             $BytesRemoved,
             $CIDRAM['NumberFormatter']->format(microtime(true) - $TimeRequired, 3)
         );
-        if ($Reactivate) {
+        if (!empty($Reactivate)) {
             $CIDRAM['UpdatesHandler-Activate']($ThisTarget);
         }
     }

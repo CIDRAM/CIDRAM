@@ -1,8 +1,8 @@
 # IPv4 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv4_isps.dat
 
-# Version: 2020.193.592
-# Last modified: 2020.07.12
+# Version: 2020.203.359
+# Last modified: 2020.07.22
 
 
 # ---
@@ -1652,7 +1652,8 @@ Tag: Websupport s.r.o
 
 
 # ASN 51191 ("Xirra GmbH").
-# Updated: 2016.01.21 / Checked: 2020.01.09
+# Stop Forum Spam (SFS) listings: 2.
+# Updated: 2020.07.22
 
 91.232.96.0/23 Deny Generic
 130.185.104.0/21 Deny Generic
@@ -1660,12 +1661,14 @@ Tag: Websupport s.r.o
 185.108.216.0/22 Deny Generic
 195.138.240.0/21 Deny Generic
 Origin: DE
+185.169.24.0/24 Deny Generic
+Origin: IT
 Tag: Xirra GmbH
 
 
 # ASN 35804 ("PP SKS-LUGAN").
-# Stop Forum Spam (SFS) listings: 55.
-# Updated: 2018.08.05 / Checked: 2020.01.09
+# Stop Forum Spam (SFS) listings: 50.
+# Updated: 2018.08.05 / Checked: 2020.07.22
 
 91.202.212.0/22 Deny Generic
 194.79.60.0/22 Deny Generic
@@ -8364,7 +8367,7 @@ recaptcha:
 # ASN 133610 ("BRAC").
 # An NGO charity whose IPs were caught being used in attempts to hack into WordPress installations.
 # Refer abuseipdb.com/check/103.43.93.26 for example.
-# Updated: 2017.10.20 / Checked: 2020.01.09
+# Updated: 2017.10.20 / Checked: 2020.07.22
 
 103.43.93.0/24 Deny Generic
 103.238.63.0/24 Deny Generic
@@ -10098,9 +10101,9 @@ recaptcha:
 # ASNs 9198, 50482 ("JSC Kazakhtelecom").
 # Legit ISP in Kazakhstan carrying human endpoints, but also a significant
 # source of spam, hacking, brute-force attempts, and other unwanted requests.
-# %Listed, abuseat.org (CBL-Listed): 0.72% (AS9198).
-# Stop Forum Spam (SFS) listings: 2,212 (AS9198), 148 (AS50482).
-# Updated: 2019.09.10 / Checked: 2020.01.06
+# %Listed, abuseat.org (CBL-Listed): 0.60% (AS9198).
+# Stop Forum Spam (SFS) listings: 1,792 (AS9198), 127 (AS50482).
+# Updated: 2019.09.10 / Checked: 2020.07.22
 
 2.132.0.0/14 Deny Spam
 5.63.64.0/18 Deny Spam
@@ -10395,8 +10398,8 @@ recaptcha:
 
 # ASN 196777 ("SKORUK ANDRIY OLEKSANDROVYCH").
 # Spambots hosted by this network caught by honeypots.
-# Stop Forum Spam (SFS) listings: 1,879.
-# Updated: 2020.02.21
+# Stop Forum Spam (SFS) listings: 3,625.
+# Updated: 2020.02.21 / Checked: 2020.07.22
 
 37.143.132.0/22 Deny Spam
 91.214.84.0/22 Deny Spam
@@ -10982,8 +10985,8 @@ Tag: OptiMax
 
 # ASN 6830 ("Liberty Global B.V").
 # Source of forum spam and some email harvestors.
-# Stop Forum Spam (SFS) listings: 11,199.
-# Updated: 2020.04.05
+# Stop Forum Spam (SFS) listings: 12,110.
+# Updated: 2020.07.21
 
 62.99.128.0/17 Deny Spam
 62.178.0.0/16 Deny Spam
@@ -11141,7 +11144,6 @@ Origin: CH
 185.189.4.0/22 Deny Spam
 185.219.60.0/22 Deny Spam
 188.94.232.0/21 Deny Spam
-188.122.192.0/19 Deny Spam
 193.84.128.0/23 Deny Spam
 213.192.0.0/18 Deny Spam
 213.220.192.0/18 Deny Spam
@@ -11180,6 +11182,7 @@ Origin: CZ
 109.192.0.0/15 Deny Spam
 130.180.0.0/17 Deny Spam
 134.3.0.0/16 Deny Spam
+147.78.16.0/24 Deny Spam
 149.172.0.0/16 Deny Spam
 176.198.0.0/15 Deny Spam
 178.200.0.0/14 Deny Spam
@@ -11252,13 +11255,10 @@ Origin: LI
 89.98.0.0/15 Deny Spam
 92.108.0.0/14 Deny Spam
 92.235.0.0/18 Deny Spam
-92.235.64.0/19 Deny Spam
 94.168.0.0/17 Deny Spam
 94.170.0.0/15 Deny Spam
 94.172.0.0/16 Deny Spam
 95.96.0.0/15 Deny Spam
-109.110.192.0/19 Deny Spam
-145.8.180.0/24 Deny Spam
 178.84.0.0/15 Deny Spam
 195.34.130.0/24 Deny Spam
 195.34.132.0/22 Deny Spam
@@ -11376,7 +11376,6 @@ Origin: PL
 93.113.32.0/23 Deny Spam
 93.113.241.0/24 Deny Spam
 93.113.242.0/23 Deny Spam
-93.115.9.0/24 Deny Spam
 93.117.66.0/23 Deny Spam
 93.117.138.0/23 Deny Spam
 93.117.154.0/23 Deny Spam
@@ -11386,7 +11385,6 @@ Origin: PL
 93.119.138.0/23 Deny Spam
 93.119.224.0/23 Deny Spam
 93.119.226.0/24 Deny Spam
-94.176.97.0/24 Deny Spam
 95.76.0.0/15 Deny Spam
 185.63.136.0/22 Deny Spam
 188.208.117.0/24 Deny Spam
@@ -11395,8 +11393,6 @@ Origin: PL
 188.214.195.0/24 Deny Spam
 188.214.196.0/23 Deny Spam
 188.240.64.0/22 Deny Spam
-188.241.59.0/24 Deny Spam
-188.241.192.0/24 Deny Spam
 193.178.165.0/24 Deny Spam
 193.226.3.0/24 Deny Spam
 193.226.30.0/24 Deny Spam
@@ -11416,7 +11412,6 @@ Origin: PL
 193.230.177.0/24 Deny Spam
 193.230.193.0/24 Deny Spam
 193.230.202.0/23 Deny Spam
-193.230.231.0/24 Deny Spam
 193.230.240.0/24 Deny Spam
 193.230.244.0/24 Deny Spam
 193.230.247.0/24 Deny Spam
@@ -12827,13 +12822,13 @@ recaptcha:
 # (marked as "Spam") and other unwanted traffic (marked as "Malware" or
 # "Generic", depending on the kind of unwanted traffic in question). Listing
 # IPs/CIDRs here as per necessary, to be regularly reviewed.
-# Stop Forum Spam (SFS) listings: 375.
-# Updated: 2020.05.30
+# Stop Forum Spam (SFS) listings: 387.
+# Updated: 2020.07.22
 
 4.2.2.1/32 Deny Generic
 4.2.2.2/32 Deny Generic
+4.14.219.157/32 Deny Spam
 171.74.144.60/32 Deny Spam
-186.250.53.145/32 Deny Spam
 186.250.53.221/32 Deny Spam
 199.76.13.235/32 Deny Malware
 212.72.47.218/32 Deny Spam
@@ -15031,6 +15026,22 @@ Origin: DE
 141.101.134.52/32 Deny Spam
 Origin: NL
 Tag: Netzbetrieb GmbH
+---
+recaptcha:
+ enabled: true
+
+
+# ASN 201435 ("RUSCABLE S. L").
+# Apparently a Russian cable internet provider (although BGP says these ranges
+# resolve back to Spain)..? Drive-by WordPress attacks and XMLRPC attacks
+# detected originating from these ranges.
+# Stop Forum Spam (SFS) listings: 4.
+# Updated: 2020.07.22
+
+185.72.52.0/22 Deny Malware
+193.39.216.0/22 Deny Malware
+Origin: ES
+Tag: RUSCABLE
 ---
 recaptcha:
  enabled: true

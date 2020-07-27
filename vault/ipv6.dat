@@ -1,16 +1,16 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6.dat
 
-# Version: 2020.203.359
-# Last modified: 2020.07.22
+# Version: 2020.208.137
+# Last modified: 2020.07.27
 
 
 # ---
 # ASN 46844 ("Sharktech").
 # Source of forum spam and malware.
 # Ranges change frequently / Should update often.
-# Stop Forum Spam (SFS) listings: 7,439.
-# Updated: 2020.02.26
+# Stop Forum Spam (SFS) listings: 12,221.
+# Updated: 2020.02.26 / Checked: 2020.07.27
 
 2a00:c2c0:ffff::/48 Deny Cloud
 Origin: NL
@@ -1844,15 +1844,6 @@ Tag: MBA DATACENTERS S.L
 2607:ff10::/32 Deny Cloud
 Origin: US
 Tag: CariNet, Inc
-
-
-# ASN 263237 ("POWER HOST E.I.R.L").
-# Updated: 2020.02.25
-
-2803:8180::/45 Deny Cloud
-2803:8180:8::/47 Deny Cloud
-Origin: CL
-Tag: POWER HOST E.I.R.L
 
 
 # ASN 29141 ("Bradler & Krantz GmbH & Co. KG").
@@ -4968,7 +4959,7 @@ Tag: Anonymize, Inc
 
 
 # ASNs 51862, 54548 ("ProfitBricks, Inc").
-# Dedicated hosting provider. IoT attacks, honeypot attacks, and porn scanning
+# Dedicated hosting provider. IoT attacks, honeypot attacks, and port scanning
 # detected originating from this network.
 # Updated: 2018.12.31 / Checked: 2020.07.22
 
@@ -5056,28 +5047,28 @@ Tag: Colo America Corp
 
 
 # ASN 136557 ("Host Universal Pty Ltd").
-# Stop Forum Spam (SFS) listings: 6,544.
-# Updated: 2020.02.21
+# Stop Forum Spam (SFS) listings: 8,399.
+# Updated: 2020.07.27
 
 2402:7340:1::/48 Deny Cloud
-2402:7340:2::/48 Deny Cloud
+2402:7340:2::/47 Deny Cloud
 2404:f780:1::/48 Deny Cloud
-2404:f780:2::/47 Deny Cloud
+2404:f780:2::/48 Deny Cloud
 2404:f780:4::/47 Deny Cloud
 2404:f780:8::/48 Deny Cloud
+2404:f780:100::/48 Deny Cloud
 2405:9640::/48 Deny Cloud
+2406:3a00:10::/48 Deny Cloud
+2406:d500:3::/48 Deny Cloud
 2406:d500:4::/48 Deny Cloud
 2406:d500:6::/48 Deny Cloud
 2406:d500:9::/48 Deny Cloud
 2406:d500:12::/48 Deny Cloud
 2406:d500:14::/48 Deny Cloud
-2406:d500:ee::/48 Deny Cloud
 2406:d501::/32 Deny Cloud
 Origin: AU
 2a09:54c0::/48 Deny Cloud
 Origin: CY
-2a0d:7f47::/48 Deny Cloud
-Origin: GB
 2402:9e80:6::/48 Deny Cloud
 Origin: HK
 2402:bd80::/32 Deny Cloud
@@ -5086,7 +5077,6 @@ Origin: HK
 Origin: IN
 2001:df4:fc00::/48 Deny Cloud
 2402:bd82::/31 Deny Cloud
-2404:ddc0:6000::/36 Deny Cloud
 Origin: NZ
 Tag: Host Universal Pty Ltd
 
@@ -6519,7 +6509,7 @@ Tag: Network Dedicated SAS
 # Hacking, brute-force attempts, DDoS attempts, and probing for vulnerabilities
 # detected from this network. (Omitting SG entries to reduce the false positive
 # risk).
-# Updated: 2020.02.26
+# Updated: 2020.02.26 / Checked: 2020.07.23
 
 2604:a940::/47 Deny Cloud
 2620:52:c000::/48 Deny Cloud
@@ -6886,3 +6876,36 @@ Tag: Beijing Qihu
 2407:7800::/32 Deny Cloud
 Origin: AU
 Tag: Digital Pacific AU
+
+
+# ASNs 44685, 47285 ("Patron Technology Persia Ltd").
+# Dedicated hosting provider. Some weird, abnormal requests seen originating
+# from this network.
+# Updated: 2020.07.23
+
+2a07:a580::/29 Deny Cloud
+2a0c:6700::/30 Deny Cloud
+Origin: IR
+Tag: Patron Technology Persia Ltd
+
+
+# ASN 48896 ("dhosting.pl Sp. z o.o").
+# Dedicated webhosting provider. Drive-by WordPress attacks detected
+# originating from this network.
+# Stop Forum Spam (SFS) listings: 3.
+# Updated: 2020.07.27
+
+2001:67c:1c8::/48 Deny Cloud
+Origin: PL
+Tag: dhosting.pl
+
+
+# ASN 7684 ("SAKURA Internet Inc").
+# Dedicated webhosting provider. Drive-by WordPress attacks detected
+# originating from this network.
+# Stop Forum Spam (SFS) listings: 41.
+# Updated: 2020.07.27
+
+2401:2500::/32 Deny Cloud
+Origin: JP
+Tag: SAKURA Internet Inc

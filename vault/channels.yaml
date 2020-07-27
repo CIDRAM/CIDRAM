@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Alternative channels data for failed curl requests (last modified: 2020.07.23).
+# This file: Alternative channels data for failed curl requests (last modified: 2020.07.27).
 ##/
 
 Triggers:
@@ -41,3 +41,6 @@ BitBucket:
  Fix master to downloads (Macmathan's blocklists):
   BitBucket: "https://bitbucket.org/macmathan/blocklists/raw/master"
   macmathan.info: "https://git.macmathan.info/blocklists/raw/downloads"
+GoogleDNS:
+ Used to forcibly disable Gooogle DNS (no alternative channels):
+  GoogleDNS: "https://dns.google.com/resolve"

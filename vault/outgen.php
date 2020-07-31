@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Output generator (last modified: 2020.06.15).
+ * This file: Output generator (last modified: 2020.07.31).
  */
 
 /** Initialise cache. */
@@ -690,9 +690,18 @@ if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
     }
 
     /** Parsed to the template file upon generating HTML output. */
-    $CIDRAM['Parsables'] = $CIDRAM['FieldTemplates'] + $CIDRAM['Config']['template_data'] + $CIDRAM['BlockInfo'] + [
-        'L10N-Lang-Attache' => $CIDRAM['L10N-Lang-Attache']
-    ];
+    $CIDRAM['Parsables'] = array_merge(
+        $CIDRAM['FieldTemplates'],
+        $CIDRAM['Config']['template_data'],
+        $CIDRAM['BlockInfo'],
+        [
+            'L10N-Lang-Attache' => $CIDRAM['L10N-Lang-Attache'],
+            'GeneratedBy' => sprintf(
+                $CIDRAM['Client-L10N']->getString('generated_by'),
+                '<div id="ScriptIdent" dir="ltr">' . $CIDRAM['ScriptIdent'] . '</div>'
+            )
+        ]
+    );
 
     /** Pull relevant client-specified L10N data first. */
     if (!empty($CIDRAM['L10N-Lang-Attache'])) {

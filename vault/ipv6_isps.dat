@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_isps.dat
 
-# Version: 2020.208.137
-# Last modified: 2020.07.23
+# Version: 2020.213.330
+# Last modified: 2020.07.30
 
 
 # ---
@@ -1654,26 +1654,38 @@ recaptcha:
 # section listed in their ignore.dat file. Section also marked for use with
 # reCAPTCHA by default. Currently listing only the most severely offending
 # ranges in the network (i.e., not the entire network).
-# Updated: 2020.02.21
+# Updated: 2020.07.30
 
-2a02:2698:242a:1fad::/64 Deny Spam
-2a02:2698:4c00::/38 Deny Spam
-2a02:2698:5023:52d::/64 Deny Spam
 2a02:2698:6800::/38 Deny Spam
-2a02:2698:a000::/48 Deny Spam
-2a03:1ac0:503:c000::/51 Deny Spam
-2a03:1ac0:5a4:8000::/49 Deny Spam
+2a02:2698:7000::/38 Deny Spam
+2a02:2698:802a:1180::/64 Deny Spam
+2a02:2698:9000::/38 Deny Spam
+2a03:1ac0:503:f000::/52 Deny Spam
+2a03:1ac0:5a4:8000::/50 Deny Spam
 2a03:1ac0:5a5:2000::/51 Deny Spam
-2a03:1ac0:5a6:c000::/51 Deny Spam
-2a03:1ac0:2570:8000::/52 Deny Spam
+2a03:1ac0:5a5:c000::/52 Deny Spam
+2a03:1ac0:5a6:e000::/53 Deny Spam
+2a03:1ac0:5a7:9000::/52 Deny Spam
+2a03:1ac0:2570:7000::/53 Deny Spam
+2a03:1ac0:2571:8000::/50 Deny Spam
+2a03:1ac0:2571:f800::/53 Deny Spam
 2a03:1ac0:2e00::/48 Deny Spam
 2a03:1ac0:5571:2000::/51 Deny Spam
-2a03:1ac0:5b90:b800::/54 Deny Spam
-2a03:1ac0:5cff:f400::/55 Deny Spam
-2a03:1ac0:5f4f::/48 Deny Spam
-2a03:1ac0:6dc2:9f00::/56 Deny Spam
-2a03:1ac0:6dc2:e000::/52 Deny Spam
-2a03:1ac0:b0d5::/51 Deny Spam
+2a03:1ac0:5b90:8400::/54 Deny Spam
+2a03:1ac0:5b90:be00::/55 Deny Spam
+2a03:1ac0:5cff:f600::/55 Deny Spam
+2a03:1ac0:5eb4:2000::/53 Deny Spam
+2a03:1ac0:5eb5:2000::/52 Deny Spam
+2a03:1ac0:5f4e:8000::/50 Deny Spam
+2a03:1ac0:6dc3:1000::/52 Deny Spam
+2a03:1ac0:b0d4:4000::/52 Deny Spam
+2a03:1ac0:bcba:3000::/53 Deny Spam
+2a03:1ac0:bce8::/50 Deny Spam
+2a03:1ac0:bceb:7000::/53 Deny Spam
+2a03:1ac0:bceb:8000::/50 Deny Spam
+2a03:1ac0:c196:6900::/56 Deny Spam
+2a03:1ac0:c2be:3400::/56 Deny Spam
+2a03:1ac0:c2be:3700::/56 Deny Spam
 Origin: RU
 Tag: ER-Telecom Holding
 ---

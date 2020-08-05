@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2020.07.31).
+ * This file: Front-end handler (last modified: 2020.08.04).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -103,11 +103,18 @@ $CIDRAM['FE'] = [
     /** Will be populated by the current session data. */
     'ThisSession' => '',
 
-    /** Populated by [Home | Log Out] by default; Replaced by [Log Out] for some specific pages (e.g., the homepage). */
-    'bNav' => sprintf(
-        '<a href="?">%s</a> | <a href="?cidram-page=logout">%s</a>',
-        $CIDRAM['L10N']->getString('link_home'),
+    /** Used to log out. */
+    'LogoutButton' => sprintf(
+        '<form action="?cidram-page=logout" method="POST" style="display:inline">%s%s<input type="submit" id="logoutbutton" value="%s" class="auto" /></form>',
+        '<input name="hostname" id="hostnameoverride" type="hidden" value="" />',
+        '<script type="text/javascript">document.getElementById(\'hostnameoverride\').value=window.location.hostname;</script>',
         $CIDRAM['L10N']->getString('link_log_out')
+    ),
+
+    /** Used to return home. */
+    'HomeButton' => sprintf(
+        '<form action="?" method="GET" style="display:inline"><input type="submit" id="homebutton" value="%s" class="auto" /></form>',
+        $CIDRAM['L10N']->getString('link_home')
     ),
 
     /** State reflecting whether the current request is cronable. */
@@ -135,6 +142,9 @@ $CIDRAM['FE'] = [
     'URL-Documentation' => 'https://cidram.github.io/#documentation',
     'URL-Website' => 'https://cidram.github.io/'
 ];
+
+/** Populated by [Home | Log Out] by default; Replaced by [Log Out] for some specific pages (e.g., the homepage). */
+$CIDRAM['FE']['bNav'] = $CIDRAM['FE']['HomeButton'] . ' ' . $CIDRAM['FE']['LogoutButton'];
 
 /** Append "@ Gitter" to the chat link text. */
 if (isset($CIDRAM['L10N']->Data['link_chat'])) {
@@ -393,7 +403,7 @@ if ($CIDRAM['FE']['FormTarget'] === 'login' || $CIDRAM['FE']['CronMode']) {
                     if (!$CIDRAM['FE']['CronMode']) {
                         $CIDRAM['FE']['SessionKey'] = hash('md5', $CIDRAM['GenerateSalt']());
                         $CIDRAM['FE']['Cookie'] = $_POST['username'] . $CIDRAM['FE']['SessionKey'];
-                        setcookie('CIDRAM-ADMIN', $CIDRAM['FE']['Cookie'], $CIDRAM['Now'] + 604800, '/', $CIDRAM['HTTP_HOST'], false, true);
+                        setcookie('CIDRAM-ADMIN', $CIDRAM['FE']['Cookie'], $CIDRAM['Now'] + 604800, '/', $CIDRAM['HostnameOverride'] ?: $CIDRAM['HTTP_HOST'], false, true);
                         $CIDRAM['FE']['ThisSession'] = $CIDRAM['FE']['User'] . ',' . password_hash(
                             $CIDRAM['FE']['SessionKey'], $CIDRAM['DefaultAlgo']
                         ) . ',' . ($CIDRAM['Now'] + 604800) . "\n";
@@ -614,7 +624,7 @@ if (($CIDRAM['FE']['UserState'] === 1 || $CIDRAM['FE']['UserState'] === 2) && !$
         $CIDRAM['FE']['Rebuild'] = true;
         $CIDRAM['FE']['UserState'] = 0;
         $CIDRAM['FE']['Permissions'] = 0;
-        setcookie('CIDRAM-ADMIN', '', -1, '/', $CIDRAM['HTTP_HOST'], false, true);
+        setcookie('CIDRAM-ADMIN', '', -1, '/', $CIDRAM['HostnameOverride'] ?: $CIDRAM['HTTP_HOST'], false, true);
         $CIDRAM['FECacheRemove']($CIDRAM['FE']['Cache'], $CIDRAM['FE']['Rebuild'], '2FA-State:' . $_COOKIE['CIDRAM-ADMIN']);
         $CIDRAM['FELogger']($_SERVER[$CIDRAM['IPAddr']], $CIDRAM['FE']['UserRaw'], $CIDRAM['L10N']->getString('state_logged_out'));
     }
@@ -763,7 +773,7 @@ if ($CIDRAM['FE']['UserState'] !== 1 && !$CIDRAM['FE']['CronMode']) {
     if ($CIDRAM['FE']['UserState'] === 2) {
 
         /** Provide the option to log out (omit home link). */
-        $CIDRAM['FE']['bNav'] = sprintf('<a href="?cidram-page=logout">%s</a><br />', $CIDRAM['L10N']->getString('link_log_out'));
+        $CIDRAM['FE']['bNav'] = $CIDRAM['FE']['LogoutButton'];
 
         /** Aesthetic spacer. */
         $CIDRAM['FE']['2fa_status_spacer'] = empty($CIDRAM['FE']['state_msg']) ? '' : '<br /><br />';
@@ -810,8 +820,8 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === '' && !$CIDRAM['FE']['CronMode']
     /** Operating system used. */
     $CIDRAM['FE']['info_os'] = php_uname();
 
-    /** Provide the log out and home links. */
-    $CIDRAM['FE']['bNav'] = sprintf('<a href="?cidram-page=logout">%s</a>', $CIDRAM['L10N']->getString('link_log_out'));
+    /** Provide the option to log out (omit home link). */
+    $CIDRAM['FE']['bNav'] = $CIDRAM['FE']['LogoutButton'];
 
     /** Build repository backup locations information. */
     $CIDRAM['FE']['BackupLocations'] = implode(' | ', [

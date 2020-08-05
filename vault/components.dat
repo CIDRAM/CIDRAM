@@ -1,7 +1,7 @@
 ---
 CIDRAM:
  Name: CIDRAM
- Version: 1.17.4-DEV+20213716
+ Version: 1.17.4-DEV+20217400
  Minimum Required: 1.0.0
  Changelog: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/Changelog.txt
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
@@ -10,9 +10,7 @@ CIDRAM:
   - WP-Ver
  Files:
   From:
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/.htaccess
    - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/channels.yaml
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/classes/.htaccess
    - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/classes/Aggregator.php
    - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/classes/Reporter.php
    - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/classes/Maikuolan/Cache.php
@@ -27,7 +25,6 @@ CIDRAM:
    - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/config.php
    - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/config.yaml
    - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/event_handlers.php
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/.htaccess
    - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/_2fa.html
    - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/_accounts.html
    - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/_accounts_row.html
@@ -63,13 +60,18 @@ CIDRAM:
    - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/frontend.css
    - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/frontend.html
    - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/icons.php
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/lock_bl_c.png
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/lock_bl_o.png
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/lock_rd_c.png
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/lock_rd_o.png
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/lock_wt_c.png
+   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/lock_wt_o.png
    - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/pips.php
    - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/scripts.js
    - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/frontend.php
    - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/frontend_functions.php
    - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/functions.php
    - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang.php
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/.htaccess
    - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/outgen.php
    - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/php5.4.x.php
    - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/recaptcha.php
@@ -77,9 +79,7 @@ CIDRAM:
    - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/template_default.html
    - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/verification.yaml
   To:
-   - .htaccess
    - channels.yaml
-   - classes/.htaccess
    - classes/Aggregator.php
    - classes/Reporter.php
    - classes/Maikuolan/Cache.php
@@ -94,7 +94,6 @@ CIDRAM:
    - config.php
    - config.yaml
    - event_handlers.php
-   - fe_assets/.htaccess
    - fe_assets/_2fa.html
    - fe_assets/_accounts.html
    - fe_assets/_accounts_row.html
@@ -130,13 +129,18 @@ CIDRAM:
    - fe_assets/frontend.css
    - fe_assets/frontend.html
    - fe_assets/icons.php
+   - fe_assets/lock_bl_c.png
+   - fe_assets/lock_bl_o.png
+   - fe_assets/lock_rd_c.png
+   - fe_assets/lock_rd_o.png
+   - fe_assets/lock_wt_c.png
+   - fe_assets/lock_wt_o.png
    - fe_assets/pips.php
    - fe_assets/scripts.js
    - frontend.php
    - frontend_functions.php
    - functions.php
    - lang.php
-   - lang/.htaccess
    - outgen.php
    - php5.4.x.php
    - recaptcha.php
@@ -144,9 +148,7 @@ CIDRAM:
    - template_default.html
    - verification.yaml
   Checksum:
-   - 8e03209e7fc6641b45094e584340feff:83
    - 42bde837c9d56ac852101815103d52481e07b434b49fa31eb144f19af407b90e:1970
-   - 8e03209e7fc6641b45094e584340feff:83
    - 60ee77864a59136a8d77eb64572be34e85162e17eb39fd21544c396ddd186d59:15188
    - 187b999e7d8c8a0ede420a9021f6768d1484d453a3bf7c3e6b4b9cc2d78c09d3:2822
    - 97be64e5896846e64a2e0776a7531a34fb231c219b7f4f31ca600d6ae2bdcbfd:26092
@@ -158,10 +160,9 @@ CIDRAM:
    - 2b38512a05623555f41975334c4731ddd061c2ba5e2fa20c0da95d1080c98346:19539
    - 676a9676cf0613cafc99684b0765fadd97b2feeccc0b875991b154f301057371:10446
    - 7fe0893624c9e89532af03d4c834f0251085c8637afab0771c91392a58a18913:25093
-   - 7e2b1f4181fc9465656b45b78341fbd4ec14364d721b2f17b05b0df6e8208da1:7289
+   - 0d5557ce34686621eb309575927b85159e240414d18160ea75ab7029acafdbcc:7453
    - fd350cf7f819bf3e8d9963adca34664ace2b092c3630f34ea86f93ca145a6e8f:15447
    - 7d8cbb574666b00d6df9448fefae140fcf6203f01b3d8b315500e43d79b36430:9764
-   - 8e03209e7fc6641b45094e584340feff:83
    - cdb91aefd05a3a7fb5d51a81888b4cffab18ce9bb9ede0bb49451f95c2be5e07:528
    - dd925fa21d11fdd4eb99f52fde1293d459b79321fcb8ef298a6c58a07dcd7046:2061
    - e4c49534b94abd638b2a504510698158ca0993120ff692264c220d52f47fcd42:1411
@@ -182,7 +183,7 @@ CIDRAM:
    - 9f6468ca626bca734accbc11f712481b:144
    - 088137185e4306165def0be07599ba1e:1072
    - 909c188c2e0441b71b6103ef4e6b245f:269
-   - aa43100ca46b260011cb5ac6d3bb73b53f12d48102dc4c63d1770fa72fe7c853:2283
+   - aecfc26b133320a7b90eae098673557fda8ac946eb867a7dca8a2a9ce0789420:2474
    - 749de04cb60d473288ff36b0cc4bc9a3:331
    - fe930a5c196920d4a0860448a9ea7ddcd24118e72bee486b117ce7acf735f64f:1816
    - 33c75d11bd1a4030c095080a63c0d29b8a704c4562e9d91ae0a02e6574d4a03d:669
@@ -190,23 +191,28 @@ CIDRAM:
    - 6820fc5501b275fef9db291263d6fed2:184
    - ecaa7ed57dedcd8acad59db0a42f12aad90239e22486f17b12c48e094c3deff4:1236
    - bc1ec2e28f9e7a964e11a445706806f3:107
-   - c823c7455de7ccf7f0d9364e93f04014:2697
-   - 12690769246ca430e8fe93b136d13874:952
-   - 459f4352c0b6048b4b5c1f2f13e5ef33:647
+   - f76f2ff6fb23423d5822dc91e4d8f1d395415222af81a7872d7133862d054eff:2697
+   - 52f72c74fedd12eea815d58e741f47ba3770b1a55171953561d0a3eb0a8dd48d:952
+   - 5c03c03699930672c6489674595af99cb0f1f73751203ec6aba60d02b5bfd951:647
    - 3ec16818def28f4ab0fe1c6c95c06119f47169aea1975d741628e63da772d5c2:6274
-   - aebc00b04edce4dbb88cbde59c26441090fd5e98e1f90feafe847426031a5d02:4909
+   - 646fe61839979de8964a2afc308025b32e8791d200538800ad4284450de83e2b:5202
    - e2f511f6dbf63ee4065e205c1c266693293e9ac6bea6408d087267ff3e3cdff6:982
-   - f82b848ae0f532ee63cff24c69bdf07b:17536
-   - 095216bc177b88dc81c15c4d4e42bd49:877
+   - 660d1f7acd81d904d6429bf4cc961a9ea7ffc8bb3f2d252f2d13c873ff7ce53e:17536
+   - e07cbd9cd2f45d147de14a63a222860639a3cb2f158088ebb82b70bb5e7306c2:776
+   - 240b0d3b501aa8715c43aff11340e921c1d19c384e17d9947dbb231367bdb20d:806
+   - 4f881a40dee13d495d32364923ccf71c9f43916be33c0aa8e2f7fa2d2daaabde:788
+   - ea0da98550d384c33d602b7b6343ca071caa252cc8b0d5a289461ca6c83bb0f4:795
+   - e92590ab306614305ee17863d4c313dd4ac0ea5c75552236e83fb09779f01452:761
+   - 5635e13d7cecabf5e397c79932474442c11f116fabbd5b012248f957056a3158:776
+   - 8627543d60036a14e2d1033e63cd703d64b83ebc539d05b40b2aeedbb5d2f2a7:765
    - 6333e24956c882f92e41b3c06b4088a6:996
-   - 022dc6257ec781acf8c851ca4606ee1322ddaeb5ae5c7124884c6b3042d3a842:216153
+   - f60cd18e6788f50ea124b3a5402f2f7c0e55eea2ddcc77168607c0cab345ef1a:216726
    - 1ea08add70ac5f52c09118fade225f78875891cedab05644a3208b715a8af84b:157475
    - 5148099d163fccfcfe60405499458c2a8439138d62a06954b582e93f196779de:96933
    - c24c4c807851436bf8a66d02e99fab23873b485eb8c8609d9424a4f5c86557fc:5876
-   - 8e03209e7fc6641b45094e584340feff:83
    - 646721e8533361f5f1bf8d753cb248311cdcb98f869bfdb55be1962548c1bc17:36583
    - 74a6105c3d2ed17f228513dce4b78153:1672
-   - 40aeeff9d4d02f937969c41bbf015eab55fb8e5303b76814671021999f939991:12673
+   - 7a897193decdc86a364af3781db9c41059a3674fd6661b6b124d1fa5b8d7bd7e:12848
    - 3419ae719e4a8d96e084a207d05793c2079d66decccbc1c4a1976a4047f0da72:1175
    - 6c3154ee97aff637c309a4b10b3d64918cbc6c78fd140309cfb45cdb7274142a:2452
    - d5d8bc5475c4d526e7bd519c466d50a81cc62dbe185fdd80aabf4e6064a1fdf9:3943
@@ -214,7 +220,7 @@ CIDRAM:
 IPv4:
  Extended Description: Default IPv4 signatures normally included with the main package. Blocks unwanted cloud services and non-human endpoints.
  False Positive Risk: Low
- Version: 2020.213.330
+ Version: 2020.217.664
  Minimum Required: 1.0.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
  Uninstallable: true
@@ -224,7 +230,7 @@ IPv4:
   To:
    - ipv4.dat
   Checksum:
-   - d8ba7a63828d2537029ac402a81cfb90c9e22feea4e53a91e0e1451edd19a181:914496
+   - 4efcb051b09aea51cd6795ec5c97772729b09555f0216cebaa7b52f2b5007299:918120
  Used with: ipv4
  Reannotate: components.dat
 IPv4-Bogons:
@@ -246,7 +252,7 @@ IPv4-Bogons:
 IPv4-ISPs:
  Extended Description: Default IPv4 signatures normally included with the main package. Blocks dangerous and spammy ISPs.
  False Positive Risk: Medium
- Version: 2020.213.330
+ Version: 2020.217.664
  Minimum Required: 1.0.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
  Uninstallable: true
@@ -256,13 +262,13 @@ IPv4-ISPs:
   To:
    - ipv4_isps.dat
   Checksum:
-   - f8fd72f3b6bd74b57ee0d7a007888ff6e87d673c55e117f50bdac684ec4988a3:388779
+   - 5b4b11fe44032ce3b193f3d27608f966bae389a7d0a0fd544baf26b5261881f5:387925
  Used with: ipv4
  Reannotate: components.dat
 IPv4-Other:
  Extended Description: Default IPv4 signatures normally included with the main package. Blocks CIDRs for proxies, VPNs, and other miscellaneous unwanted services.
  False Positive Risk: Medium
- Version: 2020.178.331
+ Version: 2020.217.664
  Minimum Required: 1.0.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
  Uninstallable: true
@@ -272,13 +278,13 @@ IPv4-Other:
   To:
    - ipv4_other.dat
   Checksum:
-   - a81f823b8ae156e8f66d1be9d19c539f5d0e46c4f99e0d9e353e48b872ec352e:33266
+   - 018962ad4532f86124c0038b767aced0dfe0961f5c397cf1d276e96d3938793b:32930
  Used with: ipv4
  Reannotate: components.dat
 IPv6:
  Extended Description: Default IPv6 signatures normally included with the main package. Blocks unwanted cloud services and non-human endpoints.
  False Positive Risk: Low
- Version: 2020.213.330
+ Version: 2020.217.664
  Minimum Required: 1.0.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
  Uninstallable: true
@@ -288,7 +294,7 @@ IPv6:
   To:
    - ipv6.dat
   Checksum:
-   - 5bfd9d66b0ec95d8e275725dd9b2f8ade7f4f6d5bb96959bdb88336a89aa6d7b:181004
+   - 1d425df972eac906927e85c2727606f581263a0dc68a6fe79f9da2b5cf9130d5:181267
  Used with: ipv6
  Reannotate: components.dat
 IPv6-Bogons:
@@ -310,7 +316,7 @@ IPv6-Bogons:
 IPv6-ISPs:
  Extended Description: Default IPv6 signatures normally included with the main package. Blocks dangerous and spammy ISPs.
  False Positive Risk: Medium
- Version: 2020.213.330
+ Version: 2020.217.664
  Minimum Required: 1.0.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
  Uninstallable: true
@@ -320,13 +326,13 @@ IPv6-ISPs:
   To:
    - ipv6_isps.dat
   Checksum:
-   - 5ec2cc9f45a16b211728934b345584e8de11e24c3bf7e8b3b9e62d31ab4df04a:78602
+   - 969fba19b6513e772fe585cf583618293ca31fc9b58eab8f5c42772135d1abe3:78473
  Used with: ipv6
  Reannotate: components.dat
 IPv6-Other:
  Extended Description: Default IPv6 signatures normally included with the main package. Blocks CIDRs for proxies, VPNs, and other miscellaneous unwanted services.
  False Positive Risk: Low
- Version: 2020.178.331
+ Version: 2020.217.664
  Minimum Required: 1.0.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
  Uninstallable: true
@@ -336,7 +342,7 @@ IPv6-Other:
   To:
    - ipv6_other.dat
   Checksum:
-   - 770f02b0a4deed2aabb3e33d59cc5bd2d8f6e3c95e77690d76e87990d16841d6:4794
+   - a916966fa9c76b3a5c573d643e8e729981e4491cd26f3b37727f801d0c52643e:4816
  Used with: ipv6
  Reannotate: components.dat
 Bypasses:

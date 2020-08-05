@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: reCAPTCHA module (last modified: 2020.01.25).
+ * This file: reCAPTCHA module (last modified: 2020.08.04).
  */
 
 /**
@@ -30,23 +30,26 @@ $CIDRAM['reCAPTCHA']['DoResponse'] = function () use (&$CIDRAM) {
 /** Generate reCAPTCHA form template data. */
 $CIDRAM['reCAPTCHA']['GenerateTemplateData'] = function ($SiteKey, $API, $CookieWarn = false) {
     $CookieWarn = $CookieWarn ? '<br />{recaptcha_cookie_warning}' : '';
+    $HostnameInsert = '<input type="hidden" id="hostnameoverride" name="hostname" value="">';
+    $Script = '<script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>';
+    $Script .= '<script type="text/javascript">document.getElementById(\'hostnameoverride\').value=window.location.hostname;</script>';
     return $API === 'Invisible' ?
         "\n<hr />\n<p class=\"detected\">{recaptcha_message_invisible}" . $CookieWarn . "<br /></p>\n" .
-        "<div class=\"gForm\">" .
-            "<div id=\"gForm\" class=\"g-recaptcha\" data-sitekey=\"" . $SiteKey .
-            "\" data-callback=\"onSubmitCallback\" data-size=\"invisible\"></div>" .
+        '<div class="gForm">' .
+            '<div id="gForm" class="g-recaptcha" data-sitekey="' . $SiteKey .
+            '" data-callback="onSubmitCallback" data-size="invisible"></div>' .
         "</div>\n" .
-        "<form id=\"gF\" method=\"POST\" action=\"\" class=\"gForm\">" .
-            "<input id=\"rData\" type=\"hidden\" name=\"g-recaptcha-response\" value=\"\">" .
+        '<form id="gF" method="POST" action="" class="gForm">' .
+            '<input id="rData" type="hidden" name="g-recaptcha-response" value="">' . $HostnameInsert .
         "</form>\n" .
         "<script type=\"text/javascript\">function onSubmitCallback(token){document.getElementById('rData').value=token;document.getElementById('gF').submit()}</script>\n" .
-        "<script src=\"https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit\" async defer></script>\n"
+        $Script . "\n"
     :
         "\n<hr />\n<p class=\"detected\">{recaptcha_message}" . $CookieWarn . "<br /></p>\n" .
-        "<form method=\"POST\" action=\"\" class=\"gForm\" onsubmit=\"javascript:grecaptcha.execute();\">" .
-            "<div id=\"gForm\"></div><div><input type=\"submit\" value=\"{recaptcha_submit}\" /></div>" .
+        '<form method="POST" action="" class="gForm" onsubmit="javascript:grecaptcha.execute()">' .
+            '<div id="gForm"></div><div>' . $HostnameInsert . '<input type="submit" value="{recaptcha_submit}" /></div>' .
         "</form>\n" .
-        "<script src=\"https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit\" async defer></script>";
+        $Script;
 };
 
 /** Generate reCAPTCHA callback data. */
@@ -55,7 +58,7 @@ $CIDRAM['reCAPTCHA']['GenerateCallbackData'] = function ($SiteKey, $API) {
     $More = ($API === 'Invisible') ? "grecaptcha.execute();" : '';
     return
         "\n  <script type=\"text/javascript\">" .
-        "var onloadCallback=function(){grecaptcha.render(" . $Params . ');' . $More . '}</script>';
+        'var onloadCallback=function(){grecaptcha.render(' . $Params . ');' . $More . '}</script>';
 };
 
 /** Generate data for failed attempts. */
@@ -165,7 +168,7 @@ if ($CIDRAM['Config']['recaptcha']['lockuser']) {
                 }
                 $CIDRAM['reCAPTCHA']['UsrHash'] = password_hash($CIDRAM['reCAPTCHA']['Cookie'], $CIDRAM['DefaultAlgo']);
                 $CIDRAM['reCAPTCHA']['Cookie'] = $CIDRAM['reCAPTCHA']['UsrHash'] . ',' . base64_encode($CIDRAM['reCAPTCHA']['UsrSalt']);
-                setcookie('CIDRAM', $CIDRAM['reCAPTCHA']['Cookie'], $CIDRAM['Now'] + $CIDRAM['reCAPTCHA']['Expiry'], '/', $CIDRAM['HTTP_HOST'], false, true);
+                setcookie('CIDRAM', $CIDRAM['reCAPTCHA']['Cookie'], $CIDRAM['Now'] + $CIDRAM['reCAPTCHA']['Expiry'], '/', $CIDRAM['HostnameOverride'] ?: $CIDRAM['HTTP_HOST'], false, true);
                 /** Reset signature count. */
                 $CIDRAM['BlockInfo']['SignatureCount'] = 0;
                 /** Append to the hash list. */

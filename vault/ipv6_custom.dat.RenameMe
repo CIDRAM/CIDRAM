@@ -28,13 +28,17 @@
 # "ff01::2/124" would NOT be recognised by the script, but "ff01::2/127", "ff01::4/126", "ff01::8/125" and
 # "ff01::10/127" used in conjunction, WOULD be recognised by the script).
 
-# Anything in the signature files not recognised as a signature nor as signature-related syntax by the script will be
-# IGNORED, therefore meaning that you can safely put any non-signature data that you want into the signature files
-# without breaking them and without breaking the script. Comments are acceptable in the signature files, and no special
-# formatting is required for them. Shell-style hashing for comments is preferred, but not enforced; Functionally, it
-# makes no difference to the script whether or not you choose to use Shell-style hashing for comments, but using
-# Shell-style hashing helps IDEs and plain-text editors to correctly highlight the various parts of the signature files
-# (and so, Shell-style hashing can assist as a visual aid while editing).
+# Anything in the signature files not recognised as a signature nor as
+# signature-related syntax by the script will be IGNORED, therefore meaning
+# that you can safely put any non-signature data that you want into the
+# signature files without breaking them and without breaking the script.
+# Comments are acceptable in the signature files, and no special formatting is
+# required for them. Shell-style hashing for comments is preferred, but not
+# enforced; Functionally, it makes no difference to the script whether or not
+# you choose to use Shell-style hashing for comments, but using Shell-style
+# hashing helps IDEs and plain-text editors to correctly highlight the various
+# parts of the signature files (and so, Shell-style hashing can assist as a
+# visual aid while editing).
 
 # The possible values of %Function% are as follows:
 # - Run
@@ -158,35 +162,47 @@
 
 # Section tags and expiry tags may be used in conjunction, and both are optional.
 
-# A simplified form of YAML markup may be used in signature files for the purpose of defining behaviours and settings
-# specific to individual signature sections. This may be useful if you want the value of your configuration directives
-# to differ on the basis of individual signatures and signature sections (for example; if you want to supply an email
-# address for support tickets for any users blocked by one particular signature, but don't want to supply an email
-# address for support tickets for users blocked by any other signatures; if you want some specific signatures to
-# trigger a page redirect; if you want to mark a signature section for use with reCAPTCHA; if you want to log blocked
-# access attempts to separate files on the basis of individual signatures and/or signature sections).
+# A simplified form of YAML markup may be used in signature files for the
+# purpose of defining behaviours and settings specific to individual signature
+# sections. This may be useful if you want the value of your configuration
+# directives to differ on the basis of individual signatures and signature
+# sections (for example; if you want to supply an email address for support
+# tickets for any users blocked by one particular signature, but don't want to
+# supply an email address for support tickets for users blocked by any other
+# signatures; if you want some specific signatures to trigger a page redirect;
+# if you want to mark a signature section for use with reCAPTCHA; if you want
+# to log blocked access attempts to separate files on the basis of individual
+# signatures and/or signature sections).
 
-# Use of YAML markup in the signature files is entirely optional (ie, you may use it if you wish to do so, but you are
-# not required to do so), and is able to leverage most (but not all) configuration directives.
+# Use of YAML markup in the signature files is entirely optional (i.e., you may
+# use it if you wish to do so, but you are not required to do so), and is able
+# to leverage most (but not all) configuration directives.
 
-# Note: YAML markup implementation in CIDRAM is very simplistic and very limited; It is intended to fulfill
-# requirements specific to CIDRAM in a manner that has the familiarity of YAML markup, but neither follows nor complies
-# with official specifications (and therefore won't behave in the same way as more thorough implementations elsewhere,
-# and may not be appropriate for other projects elsewhere).
+# Note: YAML markup implementation in CIDRAM is very simplistic and very
+# limited; It is intended to fulfill requirements specific to CIDRAM in a
+# manner that has the familiarity of YAML markup, but neither follows nor
+# complies with official specifications (and therefore won't behave in the same
+# way as more thorough implementations elsewhere, and may not be appropriate
+# for other projects elsewhere).
 
-# In CIDRAM, YAML markup segments are identified to the script by three dashes ("---"), and terminate alongside their
-# containing signature sections by double-linebreaks. A typical YAML markup segment within a signature section consists
-# of three dashes on a line immediately after the list of CIDRS and any tags, followed by a two dimensional list of
-# key-value pairs (first dimension, configuration directive categories; second dimension, configuration directives) for
-# which configuration directives should be modified (and to which values) whenever a signature within that signature
-# section is triggered.
+# In CIDRAM, YAML markup segments are identified to the script by three dashes
+# ("---"), and terminate alongside their containing signature sections by
+# double-linebreaks. A typical YAML markup segment within a signature section
+# consists of three dashes on a line immediately after the list of CIDRs and
+# any tags, followed by a two dimensional list of key-value pairs (first
+# dimension, configuration directive categories; second dimension,
+# configuration directives) for which configuration directives should be
+# modified (and to which values) whenever a signature within that signature
+# section is triggered (see the examples below).
 
-# Refer to the documentation for more information regarding what you've read thus far.
+# Refer to the documentation for more information regarding what you've read
+# thus far.
 
-
-# Everything above this line is purely informative, included here for your benefit, to help you better understand how
-# to write and how to manage custom signatures for CIDRAM. If you want to reduce file bloat, and/or if you feel that
-# you don't need the above information, you may remove it from this file (doing so won't negatively impact the script).
+# Everything above this line is purely informative, included here for your
+# benefit, to help you better understand how to write and how to manage custom
+# signatures for CIDRAM. If you want to reduce file bloat, or if you feel that
+# you don't need the above information, you may remove it from this file (doing
+# so won't negatively impact the script).
 
 # ---
 # > ADD YOUR CUSTOM SIGNATURES AFTER THIS LINE <

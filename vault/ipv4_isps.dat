@@ -1,8 +1,8 @@
 # IPv4 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv4_isps.dat
 
-# Version: 2020.213.330
-# Last modified: 2020.07.30
+# Version: 2020.217.664
+# Last modified: 2020.08.05
 
 
 # ---
@@ -81,8 +81,8 @@ recaptcha:
 
 
 # ASN 26658 ("HT").
-# Stop Forum Spam (SFS) listings: 2,312.
-# Updated: 2018.08.22 / Checked: 2020.01.24
+# Stop Forum Spam (SFS) listings: 3,102.
+# Updated: 2020.08.05
 
 14.192.20.0/22 Deny Generic
 27.0.156.0/22 Deny Generic
@@ -167,6 +167,7 @@ Origin: HK
 107.178.160.0/19 Deny Generic
 107.190.226.0/23 Deny Generic
 107.190.228.0/22 Deny Generic
+142.202.140.0/22 Deny Generic
 146.148.128.0/19 Deny Generic
 146.148.176.0/20 Deny Generic
 146.148.192.0/18 Deny Generic
@@ -230,32 +231,6 @@ Origin: UA
 Tag: ISPsystem
 
 
-# ASN 25504 ("Vautron Rechenzentrum AG").
-# Updated: 2017.05.21 / Checked: 2020.01.12
-
-46.175.56.0/21 Deny Generic
-83.243.56.0/21 Deny Generic
-89.200.168.0/21 Deny Generic
-91.198.21.0/24 Deny Generic
-91.223.141.0/24 Deny Generic
-91.223.145.0/24 Deny Generic
-91.247.144.0/23 Deny Generic
-94.102.208.0/20 Deny Generic
-109.235.56.0/21 Deny Generic
-151.252.48.0/20 Deny Generic
-158.58.144.0/21 Deny Generic
-185.90.232.0/22 Deny Generic
-193.111.208.0/22 Deny Generic
-193.150.4.0/23 Deny Generic
-193.254.184.0/21 Deny Generic
-195.191.92.0/23 Deny Generic
-Origin: DE
-46.151.160.0/21 Deny Generic
-91.233.26.0/23 Deny Generic
-Origin: RO
-Tag: Vautron Rech. AG
-
-
 # ASN 38955 ("World4You Internet Services").
 # Updated: 2020.03.22
 
@@ -268,9 +243,11 @@ Tag: World4You
 
 
 # ASN 202425 ("IP Volume inc").
-# Stop Forum Spam (SFS) listings: 1,452.
-# Updated: 2019.09.27 / Checked: 2020.01.12
+# Stop Forum Spam (SFS) listings: 4,595.
+# Updated: 2020.08.05
 
+45.129.33.0/24 Deny Generic
+Origin: DE
 80.82.64.0/22 Deny Generic
 80.82.68.0/23 Deny Generic
 80.82.70.0/24 Deny Generic
@@ -317,8 +294,8 @@ recaptcha:
 # ASN 12880 ("Information Technology Company (ITC)").
 # Significant source of email harvesters and unauthorised scrapers.
 # %Listed, abuseat.org (CBL-Listed): 2.46%.
-# Stop Forum Spam (SFS) listings: 596.
-# Updated: 2020.05.30
+# Stop Forum Spam (SFS) listings: 586.
+# Updated: 2020.05.30 / Checked: 2020.08.05
 
 10.201.25.0/24 Deny Generic
 Origin: AQ
@@ -1724,17 +1701,6 @@ recaptcha:
  enabled: true
 
 
-# ASN 47155 ("ViaEuropa i Lund AB").
-# No recent reports or bad activity detected. Possible candidate for future removal.
-# Refer stopforumspam.com/forum/viewtopic.php?id=4676
-# Updated: 2016.04.17 / Checked: 2020.01.15
-
-93.182.128.0/18 Deny Spam
-185.123.228.0/22 Deny Spam
-Origin: SE
-Tag: ViaEuropa
-
-
 # ASN 37254 ("GREEN FLASH TRADING").
 # At last check, unwanted traffic not detected outside of 41.76.218.96/27
 # anymore; removing everything else for the moment, pending the next check.
@@ -2695,8 +2661,9 @@ recaptcha:
 # ASNs 12530, 15895, 35081 ('"Kyivstar" PJSC').
 # Absolutely **INSANE** levels of spam coming from this network!! Shouldn't
 # ever, ever let them through, if at all possible.
-# Stop Forum Spam (SFS) listings: 24,107 (AS12530), 558,296 (AS15895), 1 (AS35081).
-# Updated: 2016.09.06 / Checked: 2020.01.09
+# %Listed, abuseat.org (CBL-Listed): 1.35% (AS15895).
+# Stop Forum Spam (SFS) listings: 8,889 (AS12530), 177,331 (AS15895), 1 (AS35081).
+# Updated: 2016.09.06 / Checked: 2020.08.05
 
 5.248.0.0/16 Deny Spam
 37.115.0.0/16 Deny Spam

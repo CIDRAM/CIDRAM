@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6.dat
 
-# Version: 2020.213.330
-# Last modified: 2020.08.01
+# Version: 2020.217.664
+# Last modified: 2020.08.05
 
 
 # ---
@@ -178,8 +178,8 @@ Tag: Masterhost
 
 
 # ASNs 26496, 30083, 398107 ("GoDaddy.com, LLC").
-# Stop Forum Spam (SFS) listings: 18,322 (AS26496), 271 (AS30083).
-# Updated: 2020.04.27
+# Stop Forum Spam (SFS) listings: 18,476 (AS26496), 277 (AS30083).
+# Updated: 2020.08.05
 
 2407:1c00::/32 Deny Cloud
 Origin: SG
@@ -187,22 +187,14 @@ Origin: SG
 2607:f208:8::/48 Deny Cloud
 2607:f208:209::/48 Deny Cloud
 2607:f208:305::/48 Deny Cloud
-2607:f208:400::/42 Deny Cloud
-2607:f208:440::/43 Deny Cloud
 2607:f208:500::/44 Deny Cloud
 2607:f208:530::/44 Deny Cloud
 2607:f208:560::/44 Deny Cloud
 2607:f208:580::/44 Deny Cloud
-2607:f208:1020::/44 Deny Cloud
-2607:f208:1160::/44 Deny Cloud
-2607:f208:4000::/40 Deny Cloud
-2607:f208:4f02::/48 Deny Cloud
 2607:f208:5000::/40 Deny Cloud
-2607:f208:5f01::/48 Deny Cloud
 2607:f208:5f02::/48 Deny Cloud
 2607:f208:a010::/48 Deny Cloud
-2607:f208:a110::/48 Deny Cloud
-2607:f208:af00::/47 Deny Cloud
+2607:f208:af01::/48 Deny Cloud
 Origin: US
 Tag: GoDaddy.com, LLC
 
@@ -490,8 +482,8 @@ Tag: svyazy
 
 
 # ASN 35415 ("Webzilla B.V").
-# Stop Forum Spam (SFS) listings: 11.
-# Updated: 2020.03.01
+# Stop Forum Spam (SFS) listings: 30.
+# Updated: 2020.03.01 / Checked: 2020.08.05
 
 2a0f:9640::/29 Deny Cloud
 Origin: CY
@@ -1189,27 +1181,27 @@ Tag: Private Layer INC
 
 # ASN 40676 ("Psychz Networks").
 # Ranges change frequently / Should update often.
-# Stop Forum Spam (SFS) listings: 4,580.
-# Updated: 2020.03.30
+# Stop Forum Spam (SFS) listings: 3,409.
+# Updated: 2020.08.05
 
-2001:df2:c600::/48 Deny Cloud
-Origin: AU
 2a07:9944:1b::/48 Deny Cloud
 2a07:9944:1c::/48 Deny Cloud
 Origin: EU
 2a0a:6700::/45 Deny Cloud
+2a0a:7740::/48 Deny Cloud
 2a0e:3840:2::/48 Deny Cloud
+2a0f:9980:6::/48 Deny Cloud
 Origin: GB
 2a06:a006:c5::/48 Deny Cloud
-2a06:a006:f1::/48 Deny Cloud
 Origin: IS
 2a10:3b00::/48 Deny Cloud
+2a10:3b00:2::/47 Deny Cloud
+2a10:3b00:4::/48 Deny Cloud
 Origin: IT
 2a0d:df40::/29 Deny Cloud
 Origin: LT
-2403:cfc0:1008::/48 Deny Cloud
 2a0f:2c80::/48 Deny Cloud
-Origin: SG
+Origin: NL
 2602:fdba::/36 Deny Cloud
 2602:fea6::/36 Deny Cloud
 2602:ff96:5::/48 Deny Cloud
@@ -1220,9 +1212,12 @@ Origin: SG
 2602:ff96:1f::/48 Deny Cloud
 2602:ff96:1fe::/48 Deny Cloud
 2602:ffb0:11::/48 Deny Cloud
+2602:ffc5:110::/44 Deny Cloud
+2602:ffc5:130::/44 Deny Cloud
 2604:980:1::/48 Deny Cloud
 2604:6600::/32 Deny Cloud
 2605:6c80:7::/48 Deny Cloud
+2605:6c80:8000::/33 Deny Cloud
 2606:1780::/32 Deny Cloud
 2606:6680:2::/48 Deny Cloud
 2606:6680:4::/48 Deny Cloud
@@ -1232,7 +1227,11 @@ Origin: SG
 2606:6680:15::/48 Deny Cloud
 2606:6680:16::/47 Deny Cloud
 2606:6680:18::/48 Deny Cloud
-2606:f180::/47 Deny Cloud
+2606:6680:21::/48 Deny Cloud
+2606:6680:22::/47 Deny Cloud
+2606:6680:24::/48 Deny Cloud
+2606:f180::/46 Deny Cloud
+2606:f180:6::/48 Deny Cloud
 2a0b:ae40:1::/48 Deny Cloud
 2a0b:ae40:2::/47 Deny Cloud
 2a0b:ae40:4::/48 Deny Cloud
@@ -2183,10 +2182,9 @@ Tag: Aktsiaselts
 
 
 # ASN 54290 ("Hostwinds LLC").
-# Stop Forum Spam (SFS) listings: 465.
-# Updated: 2019.03.26 / Checked: 2020.04.19
+# Stop Forum Spam (SFS) listings: 472.
+# Updated: 2020.08.05
 
-2a06:4700::/29 Deny Cloud
 2a0d:7c40::/29 Deny Cloud
 Origin: NL
 2607:5500::/31 Deny Cloud
@@ -3685,7 +3683,7 @@ Tag: Dreamscape Networks
 
 
 # ASN 22458 ("NetSource Communications, Inc").
-# Updated: 2019.10.26 / Checked: 2020.02.29
+# Updated: 2019.10.26 / Checked: 2020.08.05
 
 2604:f80::/32 Deny Cloud
 Origin: US
@@ -6918,3 +6916,14 @@ Tag: dhosting.pl
 2401:2500::/32 Deny Cloud
 Origin: JP
 Tag: SAKURA Internet Inc
+
+
+# ASN 25504 ("Vautron Rechenzentrum AG").
+# Server farm, colo/infrastructure provider, hosting provider.
+# Brute-force attempts and SSH attacks detected originating from this network.
+# Updated: 2016.01.18 / Checked: 2020.08.05
+
+2001:67c:2394::/48 Deny Cloud
+2a00:19e0::/29 Deny Cloud
+Origin: DE
+Tag: Vautron Rech. AG

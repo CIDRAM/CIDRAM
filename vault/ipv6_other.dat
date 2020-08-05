@@ -1,8 +1,8 @@
 # IPv6 signatures file (CIDRs for proxies, VPNs and other miscellaneous unwanted services).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_other.dat
 
-# Version: 2020.178.331
-# Last modified: 2020.06.27
+# Version: 2020.217.664
+# Last modified: 2020.08.05
 
 
 # ---
@@ -61,8 +61,8 @@ Tag: SoftLayer VPNs
 
 # ASN 205100 ("F3 Netze e.V").
 # Provides TOR exit nodes.
-# Stop Forum Spam (SFS) listings: 54,040.
-# Updated: 2020.05.26
+# Stop Forum Spam (SFS) listings: 60,805.
+# Updated: 2020.05.26 / Checked: 2020.08.05
 
 2a0b:f4c0::/40 Deny Proxy
 2a0b:f4c0:100::/48 Deny Proxy
@@ -95,8 +95,8 @@ recaptcha:
 
 # ASN 396507 ("Emerald Onion").
 # Anonymous tor endpoint; Significant source of spam.
-# Stop Forum Spam (SFS) listings: 53,259.
-# Updated: 2019.05.03 / Checked: 2020.04.11
+# Stop Forum Spam (SFS) listings: 46,294.
+# Updated: 2019.05.03 / Checked: 2020.08.05
 
 2620:18c::/36 Deny Proxy
 Origin: US
@@ -106,7 +106,7 @@ Tag: Emerald Onion
 # Octopusnet VPN (mostly from AS44724, but we'll update via announces instead,
 # because we don't need to block the entire ASN, and there could be stray CIDRs
 # too). Proxy service with a history of spam events.
-# Updated: 2019.12.14 / Checked: 2020.04.11
+# Updated: 2019.12.14 / Checked: 2020.08.05
 
 2a04:db80::/32 Deny Proxy
 Origin: RU

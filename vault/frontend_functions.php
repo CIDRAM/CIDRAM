@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2020.07.14).
+ * This file: Front-end functions file (last modified: 2020.08.06).
  */
 
 /**
@@ -1822,11 +1822,11 @@ $CIDRAM['UpdatesHandler-Update'] = function ($ID) use (&$CIDRAM) {
                     !empty($CIDRAM['Components']['RemoteMeta'][$ThisTarget]['Files']['To']) &&
                     is_array($CIDRAM['Components']['RemoteMeta'][$ThisTarget]['Files']['To'])
                 ) {
-                    array_walk($CIDRAM['Components']['RemoteMeta'][$ThisTarget]['Files']['To'], function ($ThisFile) use (&$CIDRAM) {
+                    foreach ($CIDRAM['Components']['RemoteMeta'][$ThisTarget]['Files']['To'] as $ThisFile) {
                         if (!empty($ThisFile) && $CIDRAM['Traverse']($ThisFile)) {
                             $CIDRAM['DeleteDirectory']($ThisFile);
                         }
-                    });
+                    }
                 }
                 $UpdateFailed = true;
             } else {
@@ -1834,7 +1834,7 @@ $CIDRAM['UpdatesHandler-Update'] = function ($ID) use (&$CIDRAM) {
                 if (!empty($CIDRAM['Components']['Meta'][$ThisTarget]['Files']['To'])) {
                     $ThisArr = $CIDRAM['Components']['Meta'][$ThisTarget]['Files']['To'];
                     $CIDRAM['Arrayify']($ThisArr);
-                    array_walk($ThisArr, function ($ThisFile) use (&$CIDRAM) {
+                    foreach ($ThisArr as $ThisFile) {
                         if (!empty($ThisFile) && $CIDRAM['Traverse']($ThisFile)) {
                             if (file_exists($CIDRAM['Vault'] . $ThisFile . '.rollback')) {
                                 unlink($CIDRAM['Vault'] . $ThisFile . '.rollback');
@@ -1849,8 +1849,8 @@ $CIDRAM['UpdatesHandler-Update'] = function ($ID) use (&$CIDRAM) {
                                 $CIDRAM['DeleteDirectory']($ThisFile);
                             }
                         }
-                    });
-                    unset($ThisArr);
+                    }
+                    unset($ThisFile, $ThisArr);
                 }
 
                 /** Assign updated component annotation. */
@@ -1942,19 +1942,20 @@ $CIDRAM['UpdatesHandler-Uninstall'] = function ($ID) use (&$CIDRAM) {
             "\n",
             $OldMetaMatches
         ), $OldMeta);
-        array_walk($CIDRAM['Components']['Meta'][$ID]['Files']['To'], function ($ThisFile) use (&$CIDRAM, &$BytesRemoved) {
-            if (!empty($ThisFile) && $CIDRAM['Traverse']($ThisFile)) {
-                if (file_exists($CIDRAM['Vault'] . $ThisFile)) {
-                    $BytesRemoved += filesize($CIDRAM['Vault'] . $ThisFile);
-                    unlink($CIDRAM['Vault'] . $ThisFile);
-                }
-                if (file_exists($CIDRAM['Vault'] . $ThisFile . '.rollback')) {
-                    $BytesRemoved += filesize($CIDRAM['Vault'] . $ThisFile . '.rollback');
-                    unlink($CIDRAM['Vault'] . $ThisFile . '.rollback');
-                }
-                $CIDRAM['DeleteDirectory']($ThisFile);
+        foreach ($CIDRAM['Components']['Meta'][$ID]['Files']['To'] as $ThisFile) {
+            if (empty($ThisFile) || !$CIDRAM['Traverse']($ThisFile)) {
+                continue;
             }
-        });
+            if (file_exists($CIDRAM['Vault'] . $ThisFile)) {
+                $BytesRemoved += filesize($CIDRAM['Vault'] . $ThisFile);
+                unlink($CIDRAM['Vault'] . $ThisFile);
+            }
+            if (file_exists($CIDRAM['Vault'] . $ThisFile . '.rollback')) {
+                $BytesRemoved += filesize($CIDRAM['Vault'] . $ThisFile . '.rollback');
+                unlink($CIDRAM['Vault'] . $ThisFile . '.rollback');
+            }
+            $CIDRAM['DeleteDirectory']($ThisFile);
+        }
         $CIDRAM['Updater-IO']->writeFile($CIDRAM['Vault'] . $CIDRAM['Components']['Meta'][$ID]['Reannotate'], $NewMeta);
         $CIDRAM['Components']['Meta'][$ID]['Version'] = false;
         $CIDRAM['Components']['Meta'][$ID]['Files'] = false;

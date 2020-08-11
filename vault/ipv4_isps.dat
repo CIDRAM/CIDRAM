@@ -1,8 +1,12 @@
 # IPv4 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv4_isps.dat
 
-# Version: 2020.217.664
-# Last modified: 2020.08.05
+# Version: 2020.223.459
+# Last modified: 2020.08.11
+
+# False positive risk (an approximate, rough estimate only):
+# Standard usage, i.e., with ignore.dat, with reCAPTCHA, with "extended rules" (default bypasses): « [ ]Low [x]Medium [ ]High »
+#    Exported usage, i.e., w/o ignore.dat, w/o reCAPTCHA, w/o "extended rules" (default bypasses): « [ ]Low [ ]Medium [x]High »
 
 
 # ---
@@ -5114,9 +5118,9 @@ recaptcha:
 # reduce the false positive risk, and I would encourage any CIDRAM users from
 # Vietnam, or targeting traffic from Vietnam, to list this section in their
 # ignore.dat file to reduce the false positive risk.
-# %Listed, abuseat.org (CBL-Listed): 5.47%.
-# Stop Forum Spam (SFS) listings: 21,149.
-# Updated: 2020.03.05
+# %Listed, abuseat.org (CBL-Listed): 6.34%.
+# Stop Forum Spam (SFS) listings: 30,846.
+# Updated: 2020.08.11
 
 23.50.12.0/22 Deny Generic
 23.53.208.0/21 Deny Generic
@@ -5127,23 +5131,8 @@ recaptcha:
 104.67.32.0/19 Deny Generic
 104.68.128.0/19 Deny Generic
 Origin: US
-14.160.0.0/12 Deny Generic
-14.176.0.0/15 Deny Generic
-14.178.0.0/17 Deny Generic
-14.178.128.0/18 Deny Generic
-14.181.0.0/16 Deny Generic
-14.182.0.0/15 Deny Generic
-14.184.0.0/13 Deny Generic
-14.224.0.0/18 Deny Generic
-14.225.0.0/17 Deny Generic
-14.225.192.0/18 Deny Generic
-14.226.0.0/15 Deny Generic
-14.228.0.0/14 Deny Generic
-14.232.0.0/14 Deny Generic
-14.236.0.0/15 Deny Generic
-14.238.0.0/17 Deny Generic
-14.239.0.0/16 Deny Generic
-14.240.0.0/12 Deny Generic
+14.160.0.0/11 Deny Generic
+14.224.0.0/11 Deny Generic
 43.239.220.0/23 Deny Generic
 45.124.92.0/22 Deny Generic
 45.254.32.0/22 Deny Generic
@@ -5164,6 +5153,7 @@ Origin: US
 103.107.180.0/22 Deny Generic
 103.125.192.0/22 Deny Generic
 103.131.68.0/22 Deny Generic
+103.148.56.0/23 Deny Generic
 103.199.8.0/23 Deny Generic
 103.207.36.0/22 Deny Generic
 103.223.4.0/22 Deny Generic
@@ -5171,52 +5161,20 @@ Origin: US
 103.238.214.0/23 Deny Generic
 103.250.24.0/22 Deny Generic
 103.255.236.0/22 Deny Generic
-113.160.0.0/12 Deny Generic
-113.176.0.0/16 Deny Generic
-113.177.0.0/17 Deny Generic
-113.177.128.0/18 Deny Generic
-113.178.0.0/15 Deny Generic
-113.180.0.0/14 Deny Generic
-113.184.0.0/16 Deny Generic
-113.185.0.0/17 Deny Generic
-113.185.128.0/18 Deny Generic
-113.186.0.0/15 Deny Generic
-113.188.0.0/15 Deny Generic
-113.190.0.0/16 Deny Generic
-113.191.0.0/18 Deny Generic
-113.191.192.0/18 Deny Generic
-123.16.0.0/13 Deny Generic
-123.24.0.0/14 Deny Generic
-123.28.0.0/16 Deny Generic
-123.29.0.0/17 Deny Generic
-123.29.128.0/18 Deny Generic
-123.30.0.0/16 Deny Generic
-123.31.0.0/18 Deny Generic
-123.31.128.0/18 Deny Generic
+113.160.0.0/11 Deny Generic
+123.16.0.0/12 Deny Generic
 146.196.64.0/22 Deny Generic
 157.119.246.0/23 Deny Generic
 202.92.4.0/22 Deny Generic
 203.160.0.0/23 Deny Generic
 203.160.132.0/22 Deny Generic
-203.162.0.0/17 Deny Generic
-203.162.128.0/18 Deny Generic
-203.162.200.0/21 Deny Generic
-203.162.224.0/19 Deny Generic
+203.162.0.0/16 Deny Generic
 203.210.128.0/17 Deny Generic
 221.132.16.0/20 Deny Generic
 221.132.32.0/21 Deny Generic
 221.132.47.0/24 Deny Generic
 221.132.48.0/21 Deny Generic
-222.252.0.0/15 Deny Generic
-222.254.0.0/16 Deny Generic
-222.255.0.0/18 Deny Generic
-222.255.64.0/19 Deny Generic
-222.255.96.0/21 Deny Generic
-222.255.112.0/20 Deny Generic
-222.255.128.0/18 Deny Generic
-222.255.192.0/19 Deny Generic
-222.255.224.0/20 Deny Generic
-222.255.248.0/21 Deny Generic
+222.252.0.0/14 Deny Generic
 Origin: VN
 Tag: VNPT Corp
 ---
@@ -11765,17 +11723,29 @@ recaptcha:
 # Peering exchange provider in the United States; Should NEVER be blocked in
 # entirety. Listed here are some specific CIDRs/IPs on their network that pose
 # a risk for spamming and/or other undesirable traffic.
-# Stop Forum Spam (SFS) listings: 812 (AS22773).
-# Updated: 2020.03.12
+# Stop Forum Spam (SFS) listings: 1,507.
+# Updated: 2020.08.11
 
-68.15.56.242/32 Deny Spam
-68.102.17.150/32 Deny Spam
-68.105.24.106/32 Deny Spam
+68.0.179.135/32 Deny Spam
+68.4.245.95/32 Deny Spam
+68.8.230.16/32 Deny Spam
+68.9.206.125/32 Deny Spam
+68.13.231.154/32 Deny Spam
+68.14.114.47/32 Deny Spam
+68.98.5.153/32 Deny Spam
+68.100.120.39/32 Deny Spam
+68.100.136.85/32 Deny Spam
+68.101.148.230/32 Deny Spam
+68.101.244.43/32 Deny Spam
+68.104.60.64/32 Deny Spam
 70.162.234.150/32 Deny Spam
-72.214.83.241/32 Deny Malware
-98.162.25.7/32 Deny Spam
-98.162.25.29/32 Deny Spam
-209.242.130.58/32 Deny Spam
+72.214.83.0/24 Deny Malware
+98.161.14.88/32 Deny Spam
+98.161.36.26/32 Deny Spam
+98.161.153.210/32 Deny Spam
+98.162.25.0/24 Deny Spam
+98.162.96.0/24 Deny Spam
+204.62.102.131/32 Deny Spam
 Origin: US
 Tag: Cox Spam IPs
 ---

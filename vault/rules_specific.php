@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Extended rules for some specific CIDRs (last modified: 2020.06.17).
+ * This file: Extended rules for some specific CIDRs (last modified: 2020.08.11).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -93,7 +93,11 @@ $CIDRAM['RunParamResCache']['rules_specific.php'] = function (array $Factors = [
 
     /** Disqus bypass. */
     if ($Tag === 'SoftLayer' && strpos($CIDRAM['BlockInfo']['UALC'], 'disqus') !== false) {
-        $CIDRAM['Flag-Bypass-Bingbot-Check'] = true;
+        return;
+    }
+
+    /** AbuseIPDB webmaster verification bot bypass. */
+    if ($Tag === 'Digital Ocean, Inc' && $CIDRAM['BlockInfo']['UA'] === 'AbuseIPDB_Bot/1.0') {
         return;
     }
 

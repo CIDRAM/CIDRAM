@@ -1,8 +1,12 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6.dat
 
-# Version: 2020.217.664
-# Last modified: 2020.08.05
+# Version: 2020.223.459
+# Last modified: 2020.08.11
+
+# False positive risk (an approximate, rough estimate only):
+# Standard usage, i.e., with ignore.dat, with reCAPTCHA, with "extended rules" (default bypasses): « [x]Low [ ]Medium [ ]High »
+#    Exported usage, i.e., w/o ignore.dat, w/o reCAPTCHA, w/o "extended rules" (default bypasses): « [ ]Low [x]Medium [ ]High »
 
 
 # ---
@@ -469,8 +473,8 @@ Tag: eServer.ru
 
 
 # ASNs 6870, 12722 ("RECONN. Operator svyazy Ltd").
-# Stop Forum Spam (SFS) listings: 1,406 (AS6870), 177 (AS12722).
-# Updated: 2019.02.28 / Checked: 2020.03.01
+# Stop Forum Spam (SFS) listings: 2,306 (AS6870), 536 (AS12722).
+# Updated: 2019.02.28 / Checked: 2020.08.11
 
 2a02:c6c0::/32 Deny Cloud
 Origin: GB
@@ -829,13 +833,14 @@ Origin: GB
 Tag: Bytemark Limited
 
 
-# ASNs 14061, 39690, 46652 ("DigitalOcean, LLC", "Digital Ocean SRL", "ServerStack, Inc").
+# ASNs 14061, 46652, 205301, 209396 ("DigitalOcean, LLC", "ServerStack, Inc", "Digital Ocean SRL").
 # Ranges change frequently / Should update often.
-# Remove unassigned prior to aggregating (e.g., 10.0.0.0/8).
-# Mirai detected on this network.
-# %Listed, abuseat.org (CBL-Listed): 0.52% (AS14061).
-# Stop Forum Spam (SFS) listings: 42,148 (AS14061).
-# Updated: 2020.03.27
+# Notes for when updating:
+# - Remove unassigned prior to aggregating (e.g., 10.0.0.0/8).
+# - Contains one "Run" signature.
+# %Listed, abuseat.org (CBL-Listed): 0.42% (AS14061).
+# Stop Forum Spam (SFS) listings: 31,730 (AS14061).
+# Updated: 2020.03.27 / Checked: 2020.08.11
 
 2a03:b0c0::/46 Deny Cloud
 Origin: NL
@@ -844,7 +849,7 @@ Origin: NL
 Origin: SG
 2604:a880::/46 Deny Cloud
 2604:a880:4::/48 Deny Cloud
-2604:a880:400::/48 Deny Cloud
+2604:a880:400::/48 Run rules_specific.php
 2604:a880:800::/48 Deny Cloud
 2604:a880:cad::/48 Deny Cloud
 Origin: US
@@ -2697,9 +2702,11 @@ Tag: InMotion Hosting, Inc
 
 
 # ASN 53755 ("Input Output Flood LLC").
-# Stop Forum Spam (SFS) listings: 506.
-# Updated: 2020.03.03
+# Stop Forum Spam (SFS) listings: 554.
+# Updated: 2020.08.11
 
+2a0d:da07::/32 Deny Cloud
+Origin: GB
 2604:6280::/32 Deny Cloud
 Origin: US
 Tag: IOFlood LLC
@@ -3368,7 +3375,7 @@ Tag: Data Room, Inc
 # ASN 30870 ("Trans-IX B.V").
 # Some recent reports of brute-force attempts at AbuseIPDB. No other recent
 # reports or bad activity detected. Possible candidate for future removal.
-# Updated: 2020.03.03
+# Updated: 2020.03.03 / Checked: 2020.08.11
 
 2001:16f8:15::/48 Deny Cloud
 2001:16f8:666::/48 Deny Cloud
@@ -4323,8 +4330,8 @@ Tag: Aruba S.p.A
 
 
 # ASN 45671 ("Wholesale Services Provider").
-# Stop Forum Spam (SFS) listings: 342.
-# Updated: 2020.06.30
+# Stop Forum Spam (SFS) listings: 372.
+# Updated: 2020.06.30 / Checked: 2020.08.08
 
 2001:df1:6800::/48 Deny Cloud
 2400:8100::/32 Deny Cloud
@@ -5425,7 +5432,8 @@ Tag: Accuserv Inc
 
 # ASN 31463 ("4D Data Centres Limited").
 # Source of forum spam.
-# Updated: 2020.03.04
+# Stop Forum Spam (SFS) listings: 1.
+# Updated: 2020.03.04 / Checked: 2020.08.11
 
 2a00:1c18::/29 Deny Cloud
 2a07:45c2::/40 Deny Cloud
@@ -6548,8 +6556,8 @@ Tag: CDN77
 # ASN 131386 ("Long Van System Solution JSC").
 # Caught trying to brute-force login/auth pages and a significant source of
 # forum spam.
-# Stop Forum Spam (SFS) listings: 1,724.
-# Updated: 2020.03.03
+# Stop Forum Spam (SFS) listings: 232.
+# Updated: 2020.03.03 / Checked: 2020.08.11
 
 2403:bf40::/48 Deny Cloud
 Origin: VN
@@ -6927,3 +6935,16 @@ Tag: SAKURA Internet Inc
 2a00:19e0::/29 Deny Cloud
 Origin: DE
 Tag: Vautron Rech. AG
+
+
+# ASN 38880 ("Micron21 Datacentre Pty Ltd").
+# SSH and brute-force attacks detected originating from this network.
+# Updated: 2020.08.08
+
+2001:df1:cc00::/48 Deny Cloud
+2001:df6:2400::/48 Deny Cloud
+2400:9c00::/32 Deny Cloud
+2405:c400:175::/48 Deny Cloud
+2405:c400:176::/48 Deny Cloud
+Origin: AU
+Tag: Micron21 Datacentre

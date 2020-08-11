@@ -1,8 +1,12 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_isps.dat
 
-# Version: 2020.217.664
-# Last modified: 2020.08.05
+# Version: 2020.223.459
+# Last modified: 2020.08.11
+
+# False positive risk (an approximate, rough estimate only):
+# Standard usage, i.e., with ignore.dat, with reCAPTCHA, with "extended rules" (default bypasses): « [ ]Low [x]Medium [ ]High »
+#    Exported usage, i.e., w/o ignore.dat, w/o reCAPTCHA, w/o "extended rules" (default bypasses): « [ ]Low [ ]Medium [x]High »
 
 
 # ---
@@ -1125,78 +1129,13 @@ recaptcha:
 # reduce the false positive risk, and I would encourage any CIDRAM users from
 # Vietnam, or targeting traffic from Vietnam, to list this section in their
 # ignore.dat file to reduce the false positive risk.
-# %Listed, abuseat.org (CBL-Listed): 5.47%.
-# Stop Forum Spam (SFS) listings: 21,149.
-# Updated: 2020.03.05
+# %Listed, abuseat.org (CBL-Listed): 6.34%.
+# Stop Forum Spam (SFS) listings: 30,846.
+# Updated: 2020.08.11
 
 2001:df2:ca00::/48 Deny Generic
 2001:df2:ce00::/48 Deny Generic
-2001:ee0:100::/40 Deny Generic
-2001:ee0:200::/40 Deny Generic
-2001:ee0:300::/47 Deny Generic
-2001:ee0:305::/48 Deny Generic
-2001:ee0:1006::/48 Deny Generic
-2001:ee0:1080::/48 Deny Generic
-2001:ee0:2f00::/43 Deny Generic
-2001:ee0:3100::/43 Deny Generic
-2001:ee0:3200::/40 Deny Generic
-2001:ee0:4000::/39 Deny Generic
-2001:ee0:4240::/42 Deny Generic
-2001:ee0:4280::/42 Deny Generic
-2001:ee0:4340::/42 Deny Generic
-2001:ee0:4380::/42 Deny Generic
-2001:ee0:4400::/42 Deny Generic
-2001:ee0:44c0::/42 Deny Generic
-2001:ee0:4500::/42 Deny Generic
-2001:ee0:4580::/41 Deny Generic
-2001:ee0:4640::/42 Deny Generic
-2001:ee0:4680::/41 Deny Generic
-2001:ee0:4700::/40 Deny Generic
-2001:ee0:4800::/39 Deny Generic
-2001:ee0:4b00::/40 Deny Generic
-2001:ee0:4c00::/39 Deny Generic
-2001:ee0:4e00::/41 Deny Generic
-2001:ee0:4e80::/42 Deny Generic
-2001:ee0:4f00::/40 Deny Generic
-2001:ee0:5000::/38 Deny Generic
-2001:ee0:5400::/39 Deny Generic
-2001:ee0:5600::/40 Deny Generic
-2001:ee0:5700::/41 Deny Generic
-2001:ee0:7240::/42 Deny Generic
-2001:ee0:7280::/42 Deny Generic
-2001:ee0:7340::/42 Deny Generic
-2001:ee0:73c0::/42 Deny Generic
-2001:ee0:7400::/42 Deny Generic
-2001:ee0:74c0::/42 Deny Generic
-2001:ee0:7500::/42 Deny Generic
-2001:ee0:7580::/41 Deny Generic
-2001:ee0:7640::/42 Deny Generic
-2001:ee0:7680::/41 Deny Generic
-2001:ee0:7700::/42 Deny Generic
-2001:ee0:7780::/41 Deny Generic
-2001:ee0:7800::/39 Deny Generic
-2001:ee0:8000::/40 Deny Generic
-2001:ee0:8900::/40 Deny Generic
-2001:ee0:8a00::/40 Deny Generic
-2001:ee0:8d00::/40 Deny Generic
-2001:ee0:8e00::/40 Deny Generic
-2001:ee0:9000::/40 Deny Generic
-2001:ee0:9300::/40 Deny Generic
-2001:ee0:9400::/38 Deny Generic
-2001:ee0:9800::/38 Deny Generic
-2001:ee0:9c00::/40 Deny Generic
-2001:ee0:9e00::/39 Deny Generic
-2001:ee0:a000::/39 Deny Generic
-2001:ee0:a200::/40 Deny Generic
-2001:ee0:a400::/38 Deny Generic
-2001:ee0:c100::/40 Deny Generic
-2001:ee0:c200::/39 Deny Generic
-2001:ee0:c400::/38 Deny Generic
-2001:ee0:c800::/37 Deny Generic
-2001:ee0:d000::/40 Deny Generic
-2001:ee0:dd00::/40 Deny Generic
-2001:ee0:e800::/40 Deny Generic
-2001:ee0:ff00::/40 Deny Generic
+2001:ee0::/32 Deny Generic
 2405:f980::/48 Deny Generic
 Origin: VN
 Tag: VNPT Corp
@@ -2092,10 +2031,14 @@ recaptcha:
 # Peering exchange provider in the United States; Should NEVER be blocked in
 # entirety. Listed here are some specific CIDRs/IPs on their network that pose
 # a risk for spamming and/or other undesirable traffic.
-# Stop Forum Spam (SFS) listings: 812 (AS22773).
-# Updated: 2020.03.06
+# Stop Forum Spam (SFS) listings: 1,507.
+# Updated: 2020.08.11
 
-2600:8801:2c03:b200::/64 Deny Spam
+2600:8800:a600:6ad::/64 Deny Spam
+2600:8802:2300:1110::/64 Deny Spam
+2600:8802:4300:9100::/64 Deny Spam
+2600:8804:8182:e700::/64 Deny Spam
+2600:8805:aa80:11a::/64 Deny Spam
 Origin: US
 Tag: Cox Spam IPs
 ---

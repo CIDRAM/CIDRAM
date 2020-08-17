@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_isps.dat
 
-# Version: 2020.223.459
-# Last modified: 2020.08.11
+# Version: 2020.229.325
+# Last modified: 2020.08.17
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage, i.e., with ignore.dat, with reCAPTCHA, with "extended rules" (default bypasses): « [ ]Low [x]Medium [ ]High »
@@ -11,11 +11,10 @@
 
 # ---
 # ASN 29182 ("ISPsystem").
-# Stop Forum Spam (SFS) listings: 2,079.
-# Updated: 2020.03.13
+# Stop Forum Spam (SFS) listings: 3,502.
+# Updated: 2020.08.17
 
-2a01:230::/47 Deny Generic
-2a01:230:2::/48 Deny Generic
+2a01:230::/46 Deny Generic
 2a06:dc40::/29 Deny Generic
 2a09:6280:4::/48 Deny Generic
 2a09:f900::/48 Deny Generic
@@ -44,8 +43,7 @@ Tag: IP Volume inc
 
 # ASN 48159 ("Telecommunication Infrastructure Company").
 # Significant source of I.P. thieves, email harvestors, and unauthorised scrapers.
-# Stop Forum Spam (SFS) listings: 69.
-# Updated: 2019.07.03 / Checked: 2020.03.06
+# Updated: 2019.07.03 / Checked: 2020.08.17
 
 2a03:57c0::/32 Deny Generic
 Origin: IR
@@ -1556,8 +1554,8 @@ recaptcha:
 
 
 # ASN 15774 ("Closed Joint Stock Company TransTeleCom").
-# Stop Forum Spam (SFS) listings: 1,209.
-# Updated: 2019.11.08 / Checked: 2020.03.10
+# Stop Forum Spam (SFS) listings: 1,131.
+# Updated: 2019.11.08 / Checked: 2020.08.17
 
 2a02:618:6::/47 Deny Spam
 2a02:28d8::/36 Deny Spam

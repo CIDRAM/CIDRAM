@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2020.08.04).
+ * This file: Front-end handler (last modified: 2020.08.22).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -144,7 +144,7 @@ $CIDRAM['FE'] = [
 ];
 
 /** Populated by [Home | Log Out] by default; Replaced by [Log Out] for some specific pages (e.g., the homepage). */
-$CIDRAM['FE']['bNav'] = $CIDRAM['FE']['HomeButton'] . ' ' . $CIDRAM['FE']['LogoutButton'];
+$CIDRAM['FE']['bNav'] = $CIDRAM['FE']['HomeButton'] . $CIDRAM['FE']['LogoutButton'];
 
 /** Append "@ Gitter" to the chat link text. */
 if (isset($CIDRAM['L10N']->Data['link_chat'])) {

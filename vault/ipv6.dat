@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6.dat
 
-# Version: 2020.229.325
-# Last modified: 2020.08.17
+# Version: 2020.234.385
+# Last modified: 2020.08.22
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage, i.e., with ignore.dat, with reCAPTCHA, with "extended rules" (default bypasses): « [x]Low [ ]Medium [ ]High »
@@ -451,7 +451,8 @@ Tag: SoftLayer
 
 
 # ASN 42244 ("Hosting Operator eServer.ru Ltd").
-# Updated: 2018.08.25 / Checked: 2020.01.15
+# Stop Forum Spam (SFS) listings: 36.
+# Updated: 2018.08.25 / Checked: 2020.08.22
 
 2a0a:2540::/29 Deny Cloud
 Origin: RU
@@ -2806,10 +2807,11 @@ Tag: SpaceWeb Ltd
 
 
 # ASN 43391 ("Netdirekt A.S").
-# Stop Forum Spam (SFS) listings: 12.
-# Updated: 2016.04.29 / Checked: 2020.03.10
+# Stop Forum Spam (SFS) listings: 8.
+# Updated: 2020.08.22
 
 2a01:aac0::/32 Deny Cloud
+2a0a:be80::/29 Deny Cloud
 Origin: TR
 Tag: Netdirekt A.S
 
@@ -2823,15 +2825,6 @@ Origin: DE
 Tag: EVANZO GmbH
 
 
-# ASN 37943 ("ZhengZhou GIANT Computer Network Technology Co., Ltd").
-# Stop Forum Spam (SFS) listings: 12.
-# Updated: 2016.05.01 / Checked: 2020.01.15
-
-2400:a480::/32 Deny Cloud
-Origin: CN
-Tag: ZhengZhou GIANT
-
-
 # ASN 34233 ("Superior B.V").
 # Updated: 2016.12.10 / Checked: 2020.02.10
 
@@ -2842,8 +2835,8 @@ Tag: Superior B.V
 
 
 # ASN 27715 ("Locaweb Servios de Internet S/A").
-# Stop Forum Spam (SFS) listings: 433.
-# Updated: 2016.05.01 / Checked: 2020.03.10
+# Stop Forum Spam (SFS) listings: 76.
+# Updated: 2016.05.01 / Checked: 2020.08.22
 
 2804:218::/32 Deny Cloud
 Origin: BR
@@ -3133,6 +3126,15 @@ Origin: AT
 2a0e:7b80::/32 Deny Cloud
 Origin: DE
 Tag: ScaleUp Technologies
+
+
+# ASN 15244 ("Lunar Pages").
+# Brute-force attempts detected from this network.
+# Updated: 2020.08.22
+
+2606:bd00::/48 Deny Cloud
+Origin: US
+Tag: Lunar Pages
 
 
 # ASN 13213 ("UK-2 Limited").
@@ -4512,13 +4514,12 @@ Tag: SOFTplus
 
 # ASN 63199 ("Capitalonline Data Service Co.,LTD").
 # Source of forum spam and other unwanted traffic.
-# Stop Forum Spam (SFS) listings: 254.
-# Updated: 2019.07.04 / Checked: 2020.03.10
+# Stop Forum Spam (SFS) listings: 241.
+# Updated: 2020.08.22
 
 2400:5280::/36 Deny Cloud
 2400:5280:1000::/37 Deny Cloud
 2400:5280:1800::/38 Deny Cloud
-2400:5280:2000::/38 Deny Cloud
 2400:5280:fc00::/38 Deny Cloud
 Origin: CN
 2001:550:2801::/48 Deny Cloud
@@ -5291,17 +5292,16 @@ Tag: Onramp Access LLC
 
 
 # ASN 1764 ("Next Layer Telekommunikationsdienstleistungs- und Beratungs GmbH").
-# Caught trying to hack WordPress sites + massive source of spam. Seems to be a
-# cloud provider and no evidence of human endpoints currently, but should keep
-# an out for potential false positives (large range of provided services; easy
-# to miss something). Re-check when updating.
-# Stop Forum Spam (SFS) listings: 42,995.
-# Updated: 2019.10.02 / Checked: 2020.01.15
+# Caught trying to hack WordPress sites + massive source of spam. No evidence
+# of human endpoints at this time, but recheck this whenever updating in case.
+# Stop Forum Spam (SFS) listings: 8,183.
+# Updated: 2020.08.22
 
 2001:67c:22a0::/48 Deny Cloud
 2001:4b60:100::/48 Deny Cloud
 2a01:190::/29 Deny Cloud
 2a03:e600::/32 Deny Cloud
+2a04:9300::/29 Deny Cloud
 2a05:dd80::/29 Deny Cloud
 2a07:3740::/29 Deny Cloud
 2a07:4080::/29 Deny Cloud
@@ -5696,8 +5696,8 @@ recaptcha:
 
 # ASN 48524 ("INTERRA telecommunications group, Ltd").
 # Caught attempting to hack WordPress sites.
-# Stop Forum Spam (SFS) listings: 408.
-# Updated: 2019.10.02 / Checked: 2020.01.15
+# Stop Forum Spam (SFS) listings: 1,585.
+# Updated: 2019.10.02 / Checked: 2020.08.22
 
 2a03:dec0::/32 Deny Cloud
 Origin: RU
@@ -6948,3 +6948,17 @@ Tag: Micron21 Datacentre
 2a0c:5500:4::/48 Deny Cloud
 Origin: ES
 Tag: EasyDataHost S.L
+
+
+# ASNs 46516, 134450, 203020, 204287, 396931 ("HostRoyale LLC").
+# Dedicated webhosting provider. A significant source of spam, network abuse,
+# and various other kinds of unwanted traffic.
+# Stop Forum Spam (SFS) listings: 44 (AS134450), 4,741 (AS203020), 9,801 (AS204287).
+# Updated: 2020.08.22
+
+2a07:3403::/32 Deny Cloud
+2a07:3404::/32 Deny Cloud
+Origin: DE
+2600:2900::/28 Deny Cloud
+Origin: US
+Tag: HostRoyale LLC

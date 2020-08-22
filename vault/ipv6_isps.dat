@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_isps.dat
 
-# Version: 2020.229.325
-# Last modified: 2020.08.17
+# Version: 2020.234.385
+# Last modified: 2020.08.22
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage, i.e., with ignore.dat, with reCAPTCHA, with "extended rules" (default bypasses): « [ ]Low [x]Medium [ ]High »
@@ -585,13 +585,12 @@ Tag: Fregat
 
 
 # ASNs 35196, 48666 ("MAROSNET Telecommunication Company LLC").
-# Stop Forum Spam (SFS) listings: 27 (AS35196), 524 (AS48666).
-# Updated: 2020.03.10
+# Stop Forum Spam (SFS) listings: 254 (AS35196), 223 (AS48666).
+# Updated: 2020.08.22
 
 2a02:f680::/29 Deny Spam
 2a0a:9301:1::/48 Deny Spam
 2a0a:9302::/32 Deny Spam
-2a0c:6ec0::/48 Deny Spam
 Origin: RU
 Tag: MAROSNET
 
@@ -644,8 +643,8 @@ Tag: PHOENIX NAP, LLC
 
 # ASNs 24955, 41704 ("Orenburgskaya Gorodskaya Set, ZAO").
 # Caught spamming while pretending to be Google.
-# Stop Forum Spam (SFS) listings: 55,242 (AS24955), 14,481 (AS41704).
-# Updated: 2019.11.08 / Checked: 2020.03.10
+# Stop Forum Spam (SFS) listings: 65,612 (AS24955), 13,817 (AS41704).
+# Updated: 2019.11.08 / Checked: 2020.08.22
 
 2a02:1c8::/47 Deny Spam
 2a02:1c8:7::/48 Deny Spam
@@ -2218,20 +2217,6 @@ recaptcha:
 2001:4455:6bb:5800::/64 Deny Spam
 Origin: PH
 Tag: Philippine Long Distance
----
-recaptcha:
- enabled: true
-
-
-# ASN 12849 ("Hot-Net internet services Ltd").
-# Israeli domestic ISP and a source of spam. Just listing the specific
-# spammy IPs (i.e., not the entire network).
-# Stop Forum Spam (SFS) listings: 1,338.
-# Updated: 2020.03.13
-
-2a00:a040:180::/44 Deny Spam
-Origin: IL
-Tag: Hot-Net internet
 ---
 recaptcha:
  enabled: true

@@ -1,8 +1,8 @@
 # IPv4 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv4_isps.dat
 
-# Version: 2020.234.385
-# Last modified: 2020.08.22
+# Version: 2020.244.693
+# Last modified: 2020.09.01
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage, i.e., with ignore.dat, with reCAPTCHA, with "extended rules" (default bypasses): « [ ]Low [x]Medium [ ]High »
@@ -238,7 +238,7 @@ Tag: ISPsystem
 
 
 # ASN 38955 ("World4You Internet Services").
-# Updated: 2020.03.22
+# Updated: 2020.03.22 / Checked: 2020.09.01
 
 81.19.144.0/20 Deny Generic
 178.23.80.0/21 Deny Generic
@@ -1753,135 +1753,109 @@ Tag: Unit 1205-1207
 
 # ASN 43260 ("DGN TEKNOLOJI BILISIM YAYINCILIK SANAYI VE LIMITED SIRKETI").
 # Caught trying to DDoS SFS.
-# Stop Forum Spam (SFS) listings: 1,175.
-# Updated: 2020.03.21
+# Stop Forum Spam (SFS) listings: 893.
+# Updated: 2020.09.01
 
+193.17.4.0/24 Deny Generic
+193.17.6.0/24 Deny Generic
+193.35.152.0/23 Deny Generic
+193.35.154.0/24 Deny Generic
+Origin: BG
 185.254.52.0/24 Deny Generic
 Origin: CH
-185.71.216.0/24 Deny Generic
+185.71.216.0/22 Deny Generic
 Origin: CY
-45.86.52.0/22 Deny Generic
-45.155.128.0/22 Deny Generic
-95.141.18.0/23 Deny Generic
-95.141.20.0/24 Deny Generic
-95.141.23.0/24 Deny Generic
-95.141.24.0/23 Deny Generic
-95.141.26.0/24 Deny Generic
-95.141.28.0/22 Deny Generic
-194.35.224.0/22 Deny Generic
+95.141.19.0/24 Deny Generic
+95.141.26.0/23 Deny Generic
+95.141.29.0/24 Deny Generic
+95.141.30.0/24 Deny Generic
 Origin: DE
 185.254.30.0/24 Deny Generic
 Origin: DK
-185.129.16.0/22 Deny Generic
-185.231.108.0/22 Deny Generic
+185.129.18.0/23 Deny Generic
 Origin: EE
+93.190.15.0/24 Deny Generic
+193.111.78.0/24 Deny Generic
+Origin: FI
 194.62.52.0/24 Deny Generic
+194.62.54.0/24 Deny Generic
 Origin: FR
-46.38.148.0/22 Deny Generic
-77.83.242.0/24 Deny Generic
 185.143.72.0/22 Deny Generic
+185.243.181.0/24 Deny Generic
 185.243.183.0/24 Deny Generic
+185.249.203.0/24 Deny Generic
 185.250.210.0/24 Deny Generic
 212.107.15.0/24 Deny Generic
 Origin: GB
-185.178.56.0/22 Deny Generic
-Origin: GE
+93.190.8.0/24 Deny Generic
+93.190.10.0/24 Deny Generic
+Origin: GR
 109.236.48.0/24 Deny Generic
 185.254.237.0/24 Deny Generic
+185.254.238.0/23 Deny Generic
 Origin: IT
-45.8.172.0/22 Deny Generic
-45.87.44.0/22 Deny Generic
-45.131.168.0/22 Deny Generic
-45.137.96.0/22 Deny Generic
+77.73.128.0/23 Deny Generic
+77.73.132.0/24 Deny Generic
+Origin: KZ
+45.131.170.0/23 Deny Generic
 45.138.12.0/22 Deny Generic
-91.132.160.0/22 Deny Generic
-141.98.24.0/22 Deny Generic
-185.254.18.0/24 Deny Generic
-193.31.15.0/24 Deny Generic
-193.31.60.0/24 Deny Generic
-193.31.62.0/24 Deny Generic
+85.8.168.0/22 Deny Generic
 194.121.51.0/24 Deny Generic
-194.121.59.0/24 Deny Generic
-194.124.144.0/24 Deny Generic
 194.124.200.0/24 Deny Generic
+212.60.0.0/22 Deny Generic
 Origin: LT
-45.143.8.0/22 Deny Generic
-Origin: NL
-91.149.198.0/23 Deny Generic
-91.149.213.0/24 Deny Generic
-91.149.215.0/24 Deny Generic
-91.149.222.0/24 Deny Generic
-91.149.228.0/22 Deny Generic
-91.149.232.0/23 Deny Generic
-91.149.235.0/24 Deny Generic
-91.149.236.0/22 Deny Generic
-91.149.240.0/24 Deny Generic
-91.149.242.0/23 Deny Generic
-91.149.248.0/21 Deny Generic
+160.20.108.0/24 Deny Generic
+Origin: NO
+91.149.200.0/23 Deny Generic
 Origin: PL
-45.151.136.0/22 Deny Generic
+45.8.99.0/24 Deny Generic
+45.66.116.0/24 Deny Generic
+45.66.118.0/23 Deny Generic
+45.82.13.0/24 Deny Generic
 84.54.36.0/24 Deny Generic
-92.118.113.0/24 Deny Generic
-92.118.114.0/23 Deny Generic
-185.156.177.0/24 Deny Generic
-185.197.74.0/23 Deny Generic
-185.237.192.0/22 Deny Generic
-185.247.187.0/24 Deny Generic
-194.187.120.0/24 Deny Generic
+185.103.164.0/22 Deny Generic
+185.197.75.0/24 Deny Generic
 194.187.122.0/24 Deny Generic
 Origin: RU
 5.252.204.0/22 Deny Generic
-31.14.52.0/24 Deny Generic
 31.210.152.0/22 Deny Generic
 31.210.157.0/24 Deny Generic
 31.210.158.0/23 Deny Generic
-31.214.129.0/24 Deny Generic
-31.214.152.0/24 Deny Generic
-37.156.246.0/24 Deny Generic
 37.247.96.0/22 Deny Generic
 37.247.100.0/24 Deny Generic
 37.247.102.0/23 Deny Generic
 37.247.104.0/21 Deny Generic
 45.131.196.0/22 Deny Generic
-45.139.204.0/22 Deny Generic
-45.151.12.0/22 Deny Generic
 46.20.0.0/21 Deny Generic
-46.20.9.0/24 Deny Generic
+46.20.8.0/23 Deny Generic
 46.20.11.0/24 Deny Generic
 46.20.14.0/24 Deny Generic
-89.45.94.0/24 Deny Generic
 89.107.224.0/21 Deny Generic
-93.113.96.0/24 Deny Generic
-93.190.216.0/24 Deny Generic
 93.190.218.0/23 Deny Generic
 95.130.168.0/22 Deny Generic
 95.130.172.0/23 Deny Generic
 95.130.175.0/24 Deny Generic
-109.230.196.0/24 Deny Generic
 109.235.248.0/21 Deny Generic
-134.255.199.0/24 Deny Generic
+176.98.40.0/24 Deny Generic
 185.28.60.0/22 Deny Generic
 185.29.120.0/24 Deny Generic
 185.29.122.0/24 Deny Generic
 185.32.12.0/23 Deny Generic
-185.78.84.0/22 Deny Generic
-185.82.220.0/22 Deny Generic
+185.78.86.0/24 Deny Generic
 185.85.72.0/22 Deny Generic
 185.85.188.0/24 Deny Generic
 185.86.4.0/24 Deny Generic
 185.86.7.0/24 Deny Generic
 185.86.12.0/24 Deny Generic
-185.86.15.0/24 Deny Generic
-185.86.80.0/22 Deny Generic
+185.86.14.0/23 Deny Generic
 185.86.152.0/23 Deny Generic
-185.86.155.0/24 Deny Generic
 185.87.120.0/24 Deny Generic
 185.93.68.0/24 Deny Generic
 185.93.70.0/23 Deny Generic
-185.98.62.0/23 Deny Generic
-185.103.196.0/22 Deny Generic
+185.98.63.0/24 Deny Generic
+185.103.196.0/23 Deny Generic
+185.103.198.0/24 Deny Generic
 185.106.20.0/22 Deny Generic
-185.111.244.0/22 Deny Generic
 185.122.200.0/22 Deny Generic
 185.124.84.0/22 Deny Generic
 185.128.112.0/22 Deny Generic
@@ -1889,22 +1863,23 @@ Origin: RU
 185.141.32.0/22 Deny Generic
 185.160.28.0/22 Deny Generic
 185.174.69.0/24 Deny Generic
-185.174.70.0/23 Deny Generic
-185.184.25.0/24 Deny Generic
-185.184.26.0/23 Deny Generic
-185.185.233.0/24 Deny Generic
+185.174.71.0/24 Deny Generic
+185.184.27.0/24 Deny Generic
 185.185.234.0/24 Deny Generic
-185.198.72.0/22 Deny Generic
+185.198.72.0/24 Deny Generic
+185.198.74.0/23 Deny Generic
 185.248.56.0/22 Deny Generic
-185.250.240.0/24 Deny Generic
-185.250.242.0/23 Deny Generic
-185.255.92.0/22 Deny Generic
+185.250.240.0/23 Deny Generic
+185.255.92.0/24 Deny Generic
+185.255.94.0/23 Deny Generic
 193.164.4.0/24 Deny Generic
-193.164.7.0/24 Deny Generic
-194.113.194.0/23 Deny Generic
+194.31.59.0/24 Deny Generic
 194.113.210.0/23 Deny Generic
+213.142.134.0/24 Deny Generic
 Origin: TR
-212.68.180.0/22 Deny Generic
+45.149.24.0/22 Deny Generic
+212.111.214.0/23 Deny Generic
+212.111.216.0/22 Deny Generic
 Origin: UA
 74.199.143.0/24 Deny Generic
 76.74.61.0/24 Deny Generic
@@ -3140,63 +3115,113 @@ recaptcha:
 # use with reCAPTCHA to reduce the false positive risk. Websites intended for
 # an Indian audience should keep it listed in their ignore.dat file. Possibly
 # may remove this section in the future if the network ever cleans up its act.
-# %Listed, abuseat.org (CBL-Listed): 3.04%.
-# Stop Forum Spam (SFS) listings: 22,437.
-# Updated: 2020.03.21
+# (US ranges marked as cloud).
+# %Listed, abuseat.org (CBL-Listed): 1.31%.
+# Stop Forum Spam (SFS) listings: 21,006.
+# Updated: 2020.09.01
 
-210.0.0.0/16 Deny Spam
-Origin: AU
+27.0.244.0/22 Deny Spam
+43.239.244.0/22 Deny Spam
 43.242.104.0/22 Deny Spam
-45.122.142.0/23 Deny Spam
+45.116.180.0/22 Deny Spam
+45.118.88.0/22 Deny Spam
+45.118.200.0/22 Deny Spam
+45.118.212.0/22 Deny Spam
+45.118.228.0/22 Deny Spam
+45.118.240.0/22 Deny Spam
+45.119.24.0/22 Deny Spam
+45.119.180.0/22 Deny Spam
+45.119.184.0/21 Deny Spam
+45.119.192.0/22 Deny Spam
+45.119.224.0/22 Deny Spam
+45.119.244.0/22 Deny Spam
+45.119.248.0/22 Deny Spam
+45.120.8.0/22 Deny Spam
+45.120.32.0/22 Deny Spam
+45.120.60.0/22 Deny Spam
+45.120.72.0/22 Deny Spam
+45.120.88.0/22 Deny Spam
+45.121.16.0/22 Deny Spam
+45.121.76.0/22 Deny Spam
+45.126.66.0/23 Deny Spam
+45.126.104.0/22 Deny Spam
+45.127.80.0/22 Deny Spam
+45.127.208.0/22 Deny Spam
 59.88.0.0/13 Deny Spam
 59.96.0.0/14 Deny Spam
 61.0.0.0/14 Deny Spam
-103.205.226.0/23 Deny Spam
+103.35.192.0/22 Deny Spam
+103.59.0.0/22 Deny Spam
+103.59.28.0/22 Deny Spam
+103.59.224.0/22 Deny Spam
+103.59.240.0/20 Deny Spam
+103.60.0.0/22 Deny Spam
+103.60.28.0/22 Deny Spam
+103.60.116.0/22 Deny Spam
+103.60.140.0/22 Deny Spam
+103.66.160.0/22 Deny Spam
+103.69.56.0/22 Deny Spam
+103.78.4.0/22 Deny Spam
+103.196.216.0/22 Deny Spam
+103.199.180.0/22 Deny Spam
+103.199.188.0/22 Deny Spam
+103.199.200.0/22 Deny Spam
+103.205.216.0/22 Deny Spam
+103.213.32.0/21 Deny Spam
+103.219.8.0/22 Deny Spam
 103.225.12.0/22 Deny Spam
+103.236.156.0/22 Deny Spam
+103.236.164.0/22 Deny Spam
+103.236.204.0/22 Deny Spam
+103.246.40.0/22 Deny Spam
+103.247.52.0/22 Deny Spam
+103.253.128.0/22 Deny Spam
 117.192.0.0/10 Deny Spam
 120.58.0.0/21 Deny Spam
 158.144.183.0/24 Deny Spam
-160.238.90.0/23 Deny Spam
-202.136.80.0/22 Deny Spam
+160.202.200.0/21 Deny Spam
+192.140.236.0/22 Deny Spam
+192.140.240.0/22 Deny Spam
+203.76.177.0/24 Deny Spam
 210.212.0.0/16 Deny Spam
 218.248.0.0/16 Deny Spam
 Origin: IN
-23.6.208.0/20 Deny Spam
-23.47.126.0/24 Deny Spam
-23.60.169.0/24 Deny Spam
-23.65.96.0/20 Deny Spam
-23.65.112.0/22 Deny Spam
-23.67.148.0/23 Deny Spam
-72.246.76.0/22 Deny Spam
-104.70.172.0/23 Deny Spam
-104.70.174.0/24 Deny Spam
-104.95.97.0/24 Deny Spam
-104.95.190.0/24 Deny Spam
-104.112.227.0/24 Deny Spam
-104.114.66.0/23 Deny Spam
-104.114.68.0/22 Deny Spam
-104.114.80.0/20 Deny Spam
-104.114.96.0/20 Deny Spam
-104.118.7.0/24 Deny Spam
-173.222.64.0/20 Deny Spam
-173.223.208.0/20 Deny Spam
-184.25.0.0/20 Deny Spam
-184.25.108.0/24 Deny Spam
-184.26.38.0/23 Deny Spam
-184.26.139.0/24 Deny Spam
-184.26.184.0/22 Deny Spam
-184.27.48.0/20 Deny Spam
-184.27.132.0/23 Deny Spam
-184.27.142.0/23 Deny Spam
-184.27.205.0/24 Deny Spam
-184.51.60.0/23 Deny Spam
-184.51.64.0/22 Deny Spam
-184.51.92.0/22 Deny Spam
-184.51.158.0/24 Deny Spam
-184.84.167.0/24 Deny Spam
+23.6.208.0/20 Deny Cloud
+23.34.252.0/22 Deny Cloud
+23.47.126.0/24 Deny Cloud
+23.60.169.0/24 Deny Cloud
+23.65.96.0/20 Deny Cloud
+23.65.112.0/22 Deny Cloud
+23.67.148.0/23 Deny Cloud
+23.212.5.0/24 Deny Cloud
+72.246.76.0/22 Deny Cloud
+104.70.172.0/23 Deny Cloud
+104.70.174.0/24 Deny Cloud
+104.95.97.0/24 Deny Cloud
+104.95.190.0/24 Deny Cloud
+104.112.227.0/24 Deny Cloud
+104.114.66.0/23 Deny Cloud
+104.114.68.0/22 Deny Cloud
+104.114.80.0/20 Deny Cloud
+104.114.96.0/20 Deny Cloud
+104.118.7.0/24 Deny Cloud
+173.222.64.0/20 Deny Cloud
+173.223.208.0/20 Deny Cloud
+184.25.0.0/20 Deny Cloud
+184.25.108.0/24 Deny Cloud
+184.26.38.0/23 Deny Cloud
+184.26.139.0/24 Deny Cloud
+184.26.184.0/22 Deny Cloud
+184.27.48.0/20 Deny Cloud
+184.27.132.0/23 Deny Cloud
+184.27.142.0/23 Deny Cloud
+184.27.205.0/24 Deny Cloud
+184.51.60.0/23 Deny Cloud
+184.51.64.0/22 Deny Cloud
+184.51.92.0/22 Deny Cloud
+184.51.158.0/24 Deny Cloud
+184.84.167.0/24 Deny Cloud
 Origin: US
-117.0.0.0/16 Deny Spam
-Origin: VN
 Tag: BSNL
 ---
 recaptcha:
@@ -3701,14 +3726,12 @@ recaptcha:
 # nor its listing at a number of BLs. Marked for use with reCAPTCHA to reduce
 # the false positive risk. Websites intended for a Chinese audience should keep
 # this section listed in their ignore.dat file.
-# %Listed, abuseat.org (CBL-Listed): 0.30%.
-# Stop Forum Spam (SFS) listings: 2,940.
-# Updated: 2020.03.21
+# Stop Forum Spam (SFS) listings: 4,403.
+# Updated: 2020.09.01
 
 27.109.124.0/22 Deny Generic
 36.111.0.0/19 Deny Generic
 43.228.148.0/22 Deny Generic
-43.228.152.0/22 Deny Generic
 43.240.124.0/24 Deny Generic
 43.240.126.0/23 Deny Generic
 43.240.192.0/21 Deny Generic
@@ -3730,9 +3753,7 @@ recaptcha:
 61.152.0.0/16 Deny Generic
 61.165.0.0/16 Deny Generic
 61.169.0.0/16 Deny Generic
-61.170.0.0/18 Deny Generic
-61.170.128.0/17 Deny Generic
-61.171.0.0/16 Deny Generic
+61.170.0.0/15 Deny Generic
 61.172.0.0/15 Deny Generic
 101.52.252.0/22 Deny Generic
 101.80.0.0/12 Deny Generic
@@ -3749,10 +3770,10 @@ recaptcha:
 103.25.64.0/23 Deny Generic
 103.28.212.0/22 Deny Generic
 103.36.132.0/22 Deny Generic
-103.38.252.0/23 Deny Generic
 103.47.136.0/22 Deny Generic
 103.55.172.0/22 Deny Generic
 103.60.228.0/23 Deny Generic
+103.65.8.0/22 Deny Generic
 103.76.92.0/22 Deny Generic
 103.98.220.0/22 Deny Generic
 103.101.124.0/23 Deny Generic
@@ -3760,6 +3781,7 @@ recaptcha:
 103.108.244.0/24 Deny Generic
 103.116.76.0/23 Deny Generic
 103.116.78.0/24 Deny Generic
+103.147.124.0/24 Deny Generic
 103.192.212.0/22 Deny Generic
 103.192.252.0/22 Deny Generic
 103.198.124.0/22 Deny Generic
@@ -3771,6 +3793,7 @@ recaptcha:
 103.202.144.0/22 Deny Generic
 103.211.44.0/22 Deny Generic
 103.222.40.0/22 Deny Generic
+103.228.228.0/22 Deny Generic
 103.234.128.0/22 Deny Generic
 103.242.168.0/23 Deny Generic
 103.242.170.0/24 Deny Generic
@@ -3780,6 +3803,7 @@ recaptcha:
 106.75.224.0/19 Deny Generic
 110.43.64.0/20 Deny Generic
 110.43.128.0/19 Deny Generic
+113.21.237.0/24 Deny Generic
 113.31.96.0/19 Deny Generic
 113.31.144.0/20 Deny Generic
 114.28.68.0/22 Deny Generic
@@ -3787,11 +3811,12 @@ recaptcha:
 114.28.128.0/19 Deny Generic
 114.67.64.0/18 Deny Generic
 114.80.0.0/12 Deny Generic
-115.168.41.0/24 Deny Generic
-115.168.73.0/24 Deny Generic
 116.63.32.0/19 Deny Generic
+116.63.96.0/20 Deny Generic
 116.192.0.0/16 Deny Generic
-116.198.160.0/19 Deny Generic
+116.198.144.0/20 Deny Generic
+116.198.160.0/20 Deny Generic
+116.198.176.0/21 Deny Generic
 116.224.0.0/12 Deny Generic
 116.246.0.0/15 Deny Generic
 117.74.128.0/20 Deny Generic
@@ -3815,7 +3840,7 @@ recaptcha:
 120.92.224.0/20 Deny Generic
 120.132.136.0/22 Deny Generic
 120.132.192.0/23 Deny Generic
-120.133.224.0/22 Deny Generic
+120.133.224.0/21 Deny Generic
 120.133.236.0/22 Deny Generic
 120.136.156.0/22 Deny Generic
 120.136.160.0/21 Deny Generic
@@ -3824,6 +3849,7 @@ recaptcha:
 121.46.248.0/22 Deny Generic
 121.46.252.0/23 Deny Generic
 121.46.254.0/24 Deny Generic
+122.9.64.0/19 Deny Generic
 122.112.192.0/22 Deny Generic
 124.74.0.0/15 Deny Generic
 124.76.0.0/14 Deny Generic
@@ -3897,6 +3923,7 @@ recaptcha:
 222.72.0.0/15 Deny Generic
 Origin: CN
 103.31.72.0/24 Deny Generic
+103.38.252.0/23 Deny Generic
 Origin: HK
 129.223.254.0/24 Deny Generic
 160.83.110.0/24 Deny Generic
@@ -3918,8 +3945,8 @@ recaptcha:
 # nor its listing at a number of BLs. Marked for use with reCAPTCHA to reduce
 # the false positive risk. Websites intended for a Chinese audience should keep
 # this section listed in their ignore.dat file.
-# Stop Forum Spam (SFS) listings: 21,795.
-# Updated: 2020.03.21
+# Stop Forum Spam (SFS) listings: 11,943.
+# Updated: 2020.09.01
 
 1.24.0.0/13 Deny Generic
 1.56.0.0/13 Deny Generic
@@ -3938,6 +3965,7 @@ recaptcha:
 39.64.0.0/11 Deny Generic
 42.4.0.0/14 Deny Generic
 42.48.0.0/15 Deny Generic
+42.51.0.0/16 Deny Generic
 42.52.0.0/14 Deny Generic
 42.56.0.0/14 Deny Generic
 42.63.0.0/16 Deny Generic
@@ -3950,27 +3978,23 @@ recaptcha:
 43.224.12.0/22 Deny Generic
 43.224.24.0/22 Deny Generic
 43.224.52.0/23 Deny Generic
+43.224.56.0/22 Deny Generic
 43.224.80.0/22 Deny Generic
-43.224.160.0/22 Deny Generic
 43.224.208.0/22 Deny Generic
-43.225.180.0/22 Deny Generic
 43.226.116.0/22 Deny Generic
 43.226.120.0/22 Deny Generic
 43.226.160.0/21 Deny Generic
 43.227.104.0/22 Deny Generic
-43.227.152.0/22 Deny Generic
-43.227.196.0/22 Deny Generic
-43.227.200.0/21 Deny Generic
-43.227.208.0/20 Deny Generic
-43.228.0.0/21 Deny Generic
-43.228.64.0/21 Deny Generic
 43.231.32.0/20 Deny Generic
+43.231.144.0/20 Deny Generic
 43.239.120.0/22 Deny Generic
 43.240.0.0/22 Deny Generic
 43.240.56.0/22 Deny Generic
 43.240.72.0/22 Deny Generic
 43.240.204.0/22 Deny Generic
 43.241.50.0/23 Deny Generic
+43.241.180.0/22 Deny Generic
+43.242.64.0/22 Deny Generic
 43.242.152.0/21 Deny Generic
 43.242.164.0/22 Deny Generic
 43.242.180.0/22 Deny Generic
@@ -3979,13 +4003,16 @@ recaptcha:
 43.243.156.0/22 Deny Generic
 43.243.228.0/22 Deny Generic
 43.246.228.0/23 Deny Generic
-43.247.4.0/22 Deny Generic
+43.247.4.0/24 Deny Generic
+43.247.88.0/22 Deny Generic
 43.248.20.0/22 Deny Generic
 43.248.184.0/21 Deny Generic
 43.248.192.0/20 Deny Generic
 43.248.244.0/22 Deny Generic
 43.249.136.0/22 Deny Generic
+43.249.144.0/22 Deny Generic
 43.249.192.0/22 Deny Generic
+43.249.236.0/22 Deny Generic
 43.250.4.0/22 Deny Generic
 43.250.32.0/22 Deny Generic
 43.250.112.0/22 Deny Generic
@@ -3994,16 +4021,20 @@ recaptcha:
 43.250.244.0/22 Deny Generic
 43.251.36.0/22 Deny Generic
 43.254.8.0/22 Deny Generic
+43.254.52.0/22 Deny Generic
 43.254.136.0/22 Deny Generic
 43.254.168.0/22 Deny Generic
+43.255.84.0/22 Deny Generic
 45.113.24.0/22 Deny Generic
 45.113.240.0/23 Deny Generic
 45.113.252.0/22 Deny Generic
 45.115.164.0/22 Deny Generic
 45.119.68.0/22 Deny Generic
 45.120.100.0/22 Deny Generic
+45.124.80.0/22 Deny Generic
 45.125.44.0/22 Deny Generic
 45.250.32.0/21 Deny Generic
+45.250.40.0/22 Deny Generic
 45.252.104.0/22 Deny Generic
 45.254.48.0/23 Deny Generic
 49.4.96.0/21 Deny Generic
@@ -4075,6 +4106,7 @@ recaptcha:
 61.241.192.0/19 Deny Generic
 61.242.128.0/17 Deny Generic
 61.243.0.0/18 Deny Generic
+61.243.96.0/20 Deny Generic
 61.243.112.0/21 Deny Generic
 61.243.124.0/22 Deny Generic
 61.243.128.0/18 Deny Generic
@@ -4104,6 +4136,7 @@ recaptcha:
 103.21.116.0/22 Deny Generic
 103.24.228.0/22 Deny Generic
 103.27.4.0/22 Deny Generic
+103.27.240.0/22 Deny Generic
 103.28.204.0/22 Deny Generic
 103.31.200.0/22 Deny Generic
 103.35.220.0/23 Deny Generic
@@ -4115,8 +4148,6 @@ recaptcha:
 103.40.232.0/22 Deny Generic
 103.41.164.0/22 Deny Generic
 103.45.72.0/21 Deny Generic
-103.46.128.0/21 Deny Generic
-103.46.136.0/22 Deny Generic
 103.52.176.0/22 Deny Generic
 103.53.204.0/22 Deny Generic
 103.56.32.0/22 Deny Generic
@@ -4134,14 +4165,14 @@ recaptcha:
 103.98.44.0/23 Deny Generic
 103.98.168.0/22 Deny Generic
 103.107.188.0/22 Deny Generic
-103.107.192.0/22 Deny Generic
 103.107.212.0/22 Deny Generic
 103.110.132.0/22 Deny Generic
 103.110.156.0/22 Deny Generic
-103.120.72.0/24 Deny Generic
+103.114.100.0/22 Deny Generic
 103.120.224.0/22 Deny Generic
 103.135.80.0/23 Deny Generic
 103.135.161.0/24 Deny Generic
+103.145.188.0/23 Deny Generic
 103.192.4.0/23 Deny Generic
 103.193.188.0/22 Deny Generic
 103.198.64.0/22 Deny Generic
@@ -4153,18 +4184,19 @@ recaptcha:
 103.211.220.0/22 Deny Generic
 103.213.96.0/22 Deny Generic
 103.214.48.0/22 Deny Generic
+103.219.28.0/22 Deny Generic
 103.219.32.0/21 Deny Generic
 103.220.124.0/22 Deny Generic
 103.221.140.0/22 Deny Generic
 103.224.228.0/23 Deny Generic
-103.226.132.0/22 Deny Generic
 103.227.120.0/23 Deny Generic
 103.227.136.0/22 Deny Generic
+103.227.228.0/22 Deny Generic
 103.229.148.0/22 Deny Generic
 103.229.212.0/22 Deny Generic
-103.231.144.0/22 Deny Generic
+103.231.144.0/23 Deny Generic
+103.231.146.0/24 Deny Generic
 103.232.144.0/22 Deny Generic
-103.233.4.0/22 Deny Generic
 103.234.56.0/22 Deny Generic
 103.236.120.0/22 Deny Generic
 103.236.240.0/22 Deny Generic
@@ -4202,7 +4234,7 @@ recaptcha:
 110.240.0.0/12 Deny Generic
 111.85.0.0/16 Deny Generic
 111.160.0.0/13 Deny Generic
-111.202.242.0/23 Deny Generic
+111.202.242.0/24 Deny Generic
 111.202.244.0/24 Deny Generic
 111.202.246.0/24 Deny Generic
 111.203.27.0/24 Deny Generic
@@ -4218,13 +4250,7 @@ recaptcha:
 112.224.0.0/11 Deny Generic
 113.0.0.0/13 Deny Generic
 113.8.0.0/15 Deny Generic
-113.31.16.0/20 Deny Generic
 113.31.32.0/20 Deny Generic
-113.31.80.0/21 Deny Generic
-113.31.88.0/22 Deny Generic
-113.31.92.0/23 Deny Generic
-113.31.128.0/21 Deny Generic
-113.31.136.0/22 Deny Generic
 113.56.0.0/15 Deny Generic
 113.58.0.0/16 Deny Generic
 113.59.0.0/17 Deny Generic
@@ -4237,10 +4263,9 @@ recaptcha:
 113.224.0.0/12 Deny Generic
 114.28.248.0/21 Deny Generic
 114.60.0.0/14 Deny Generic
+114.110.64.0/18 Deny Generic
 114.111.0.0/19 Deny Generic
 114.112.144.0/20 Deny Generic
-114.114.112.0/21 Deny Generic
-114.118.128.0/17 Deny Generic
 114.247.44.0/24 Deny Generic
 114.255.106.0/24 Deny Generic
 115.31.64.0/22 Deny Generic
@@ -4266,6 +4291,7 @@ recaptcha:
 116.136.0.0/14 Deny Generic
 116.140.0.0/17 Deny Generic
 116.140.128.0/18 Deny Generic
+116.141.0.0/16 Deny Generic
 116.147.0.0/16 Deny Generic
 116.148.0.0/15 Deny Generic
 116.153.0.0/16 Deny Generic
@@ -4274,15 +4300,13 @@ recaptcha:
 116.162.0.0/16 Deny Generic
 116.163.0.0/18 Deny Generic
 116.167.0.0/16 Deny Generic
-116.168.0.0/16 Deny Generic
+116.168.0.0/15 Deny Generic
 116.171.0.0/16 Deny Generic
 116.174.0.0/15 Deny Generic
-116.177.0.0/16 Deny Generic
-116.178.0.0/15 Deny Generic
+116.176.0.0/14 Deny Generic
 116.255.128.0/17 Deny Generic
 117.8.0.0/13 Deny Generic
 117.48.144.0/20 Deny Generic
-117.72.255.0/24 Deny Generic
 117.74.64.0/20 Deny Generic
 117.121.128.0/20 Deny Generic
 118.26.116.0/22 Deny Generic
@@ -4294,7 +4318,7 @@ recaptcha:
 118.126.128.0/17 Deny Generic
 118.132.0.0/14 Deny Generic
 118.184.168.0/21 Deny Generic
-118.184.176.0/20 Deny Generic
+118.184.176.0/21 Deny Generic
 118.184.192.0/19 Deny Generic
 118.187.0.0/16 Deny Generic
 118.191.4.0/22 Deny Generic
@@ -4324,6 +4348,8 @@ recaptcha:
 120.65.0.0/16 Deny Generic
 120.92.240.0/20 Deny Generic
 120.128.0.0/21 Deny Generic
+120.132.0.0/19 Deny Generic
+120.132.96.0/20 Deny Generic
 121.16.0.0/12 Deny Generic
 121.46.192.0/21 Deny Generic
 121.46.200.0/22 Deny Generic
@@ -4362,6 +4388,7 @@ recaptcha:
 125.34.240.0/24 Deny Generic
 125.34.243.0/24 Deny Generic
 125.34.244.0/24 Deny Generic
+125.34.252.0/23 Deny Generic
 125.34.254.0/24 Deny Generic
 125.35.128.0/17 Deny Generic
 125.36.0.0/14 Deny Generic
@@ -4402,7 +4429,6 @@ recaptcha:
 180.129.128.0/17 Deny Generic
 180.130.0.0/16 Deny Generic
 180.178.252.0/22 Deny Generic
-180.223.0.0/17 Deny Generic
 182.54.0.0/17 Deny Generic
 182.88.0.0/14 Deny Generic
 182.112.0.0/12 Deny Generic
@@ -4412,7 +4438,6 @@ recaptcha:
 202.38.164.0/22 Deny Generic
 202.63.160.0/20 Deny Generic
 202.75.208.0/21 Deny Generic
-202.90.20.0/22 Deny Generic
 202.91.224.0/20 Deny Generic
 202.96.64.0/19 Deny Generic
 202.97.128.0/17 Deny Generic
@@ -4443,10 +4468,7 @@ recaptcha:
 210.51.212.0/22 Deny Generic
 210.76.32.0/19 Deny Generic
 210.76.160.0/19 Deny Generic
-211.90.0.0/18 Deny Generic
-211.90.64.0/20 Deny Generic
-211.90.80.0/21 Deny Generic
-211.90.96.0/19 Deny Generic
+211.90.0.0/17 Deny Generic
 211.90.216.0/21 Deny Generic
 211.90.224.0/19 Deny Generic
 211.91.0.0/18 Deny Generic
@@ -4467,6 +4489,7 @@ recaptcha:
 211.93.128.0/19 Deny Generic
 211.93.160.0/21 Deny Generic
 211.93.192.0/21 Deny Generic
+211.93.224.0/19 Deny Generic
 211.94.192.0/18 Deny Generic
 211.97.64.0/18 Deny Generic
 211.97.128.0/19 Deny Generic
@@ -4501,7 +4524,6 @@ recaptcha:
 218.106.144.0/20 Deny Generic
 218.107.192.0/19 Deny Generic
 218.242.0.0/16 Deny Generic
-219.83.160.0/21 Deny Generic
 219.154.0.0/15 Deny Generic
 219.156.0.0/15 Deny Generic
 219.158.0.0/19 Deny Generic
@@ -4513,6 +4535,7 @@ recaptcha:
 220.114.250.0/23 Deny Generic
 220.192.0.0/18 Deny Generic
 220.192.128.0/19 Deny Generic
+220.192.160.0/20 Deny Generic
 220.192.176.0/21 Deny Generic
 220.192.192.0/18 Deny Generic
 220.193.0.0/17 Deny Generic
@@ -4531,7 +4554,7 @@ recaptcha:
 220.201.0.0/16 Deny Generic
 220.202.0.0/16 Deny Generic
 220.203.32.0/19 Deny Generic
-220.205.120.0/22 Deny Generic
+220.205.0.0/16 Deny Generic
 220.207.184.0/22 Deny Generic
 220.231.0.0/18 Deny Generic
 220.234.0.0/16 Deny Generic
@@ -4684,11 +4707,10 @@ recaptcha:
 # positive risk. When updating:
 # - Exclude 223.20x (all invalid and already listed elsewhere anyway).
 # - Exclude any IPv6 invalids.
-# %Listed, abuseat.org (CBL-Listed): 0.25% (AS4808).
-# Stop Forum Spam (SFS) listings: 7,644 (AS4808), 21,972 (AS23724).
-# Updated: 2020.03.21
+# %Listed, abuseat.org (CBL-Listed): 0.06% (AS4808).
+# Stop Forum Spam (SFS) listings: 4,984 (AS4808), 16,134 (AS23724).
+# Updated: 2020.09.01
 
-202.94.1.0/24 Deny Generic
 202.136.255.0/24 Deny Generic
 Origin: AU
 1.94.0.0/15 Deny Generic
@@ -4696,42 +4718,65 @@ Origin: AU
 1.119.192.0/21 Deny Generic
 1.119.200.0/22 Deny Generic
 1.203.112.0/23 Deny Generic
+1.203.115.0/24 Deny Generic
 1.203.124.0/22 Deny Generic
-36.51.253.0/24 Deny Generic
+14.130.0.0/15 Deny Generic
+14.192.60.0/22 Deny Generic
+36.51.252.0/23 Deny Generic
 36.110.128.0/17 Deny Generic
 36.111.88.0/24 Deny Generic
+36.112.114.0/24 Deny Generic
+36.112.128.0/21 Deny Generic
+36.112.136.0/22 Deny Generic
+36.112.142.0/23 Deny Generic
+36.112.145.0/24 Deny Generic
+36.112.146.0/23 Deny Generic
+36.112.148.0/23 Deny Generic
+36.112.150.0/24 Deny Generic
+36.112.154.0/23 Deny Generic
+36.112.156.0/24 Deny Generic
+36.112.168.0/23 Deny Generic
 42.62.0.0/17 Deny Generic
+42.158.0.0/16 Deny Generic
+43.224.72.0/22 Deny Generic
 43.224.212.0/22 Deny Generic
 43.226.236.0/22 Deny Generic
 43.227.140.0/22 Deny Generic
 43.227.252.0/22 Deny Generic
-43.231.160.0/22 Deny Generic
-43.231.164.0/23 Deny Generic
-43.231.166.0/24 Deny Generic
+43.228.36.0/22 Deny Generic
+43.231.160.0/21 Deny Generic
+43.231.168.0/23 Deny Generic
+43.231.170.0/24 Deny Generic
 43.240.136.0/22 Deny Generic
 43.240.200.0/23 Deny Generic
 43.240.244.0/22 Deny Generic
 43.240.248.0/21 Deny Generic
 43.241.0.0/22 Deny Generic
 43.241.76.0/22 Deny Generic
+43.241.208.0/20 Deny Generic
+43.241.224.0/20 Deny Generic
 43.242.48.0/22 Deny Generic
 43.242.84.0/22 Deny Generic
-43.242.196.0/22 Deny Generic
 43.243.136.0/22 Deny Generic
 43.243.232.0/22 Deny Generic
 43.247.176.0/20 Deny Generic
 43.248.48.0/22 Deny Generic
 43.254.24.0/24 Deny Generic
 43.254.116.0/22 Deny Generic
-43.254.192.0/22 Deny Generic
+45.119.104.0/22 Deny Generic
 45.254.64.0/20 Deny Generic
+49.4.32.0/20 Deny Generic
 49.4.128.0/18 Deny Generic
 49.7.0.0/16 Deny Generic
+54.222.60.0/22 Deny Generic
 58.68.128.0/20 Deny Generic
 58.68.144.0/21 Deny Generic
 58.68.179.0/24 Deny Generic
 58.68.180.0/24 Deny Generic
 58.68.224.0/19 Deny Generic
+58.83.128.0/17 Deny Generic
+59.151.0.0/17 Deny Generic
+60.194.0.0/15 Deny Generic
 60.206.0.0/15 Deny Generic
 61.4.176.0/20 Deny Generic
 61.48.0.0/14 Deny Generic
@@ -4742,51 +4787,60 @@ Origin: AU
 101.36.128.0/17 Deny Generic
 101.38.0.0/16 Deny Generic
 101.41.0.0/16 Deny Generic
+101.52.240.0/21 Deny Generic
 101.199.96.0/21 Deny Generic
 101.199.112.0/23 Deny Generic
 101.199.114.0/24 Deny Generic
 101.199.125.0/24 Deny Generic
-101.236.128.0/17 Deny Generic
-101.251.200.0/21 Deny Generic
-101.251.208.0/20 Deny Generic
-101.251.224.0/19 Deny Generic
+101.236.0.0/16 Deny Generic
+101.251.192.0/18 Deny Generic
 101.254.0.0/16 Deny Generic
+103.1.8.0/23 Deny Generic
 103.2.108.0/22 Deny Generic
 103.3.120.0/22 Deny Generic
 103.8.156.0/22 Deny Generic
-103.8.220.0/22 Deny Generic
 103.10.84.0/22 Deny Generic
+103.15.96.0/22 Deny Generic
 103.16.124.0/22 Deny Generic
+103.17.40.0/22 Deny Generic
 103.18.208.0/22 Deny Generic
 103.19.46.0/23 Deny Generic
-103.19.232.0/22 Deny Generic
 103.20.128.0/22 Deny Generic
 103.25.20.0/22 Deny Generic
 103.25.24.0/22 Deny Generic
 103.25.36.0/22 Deny Generic
+103.26.0.0/22 Deny Generic
+103.26.64.0/22 Deny Generic
 103.28.8.0/22 Deny Generic
 103.29.16.0/22 Deny Generic
 103.30.148.0/22 Deny Generic
 103.31.52.0/22 Deny Generic
 103.31.148.0/22 Deny Generic
-103.36.220.0/23 Deny Generic
+103.36.221.0/24 Deny Generic
 103.37.72.0/22 Deny Generic
+103.37.136.0/21 Deny Generic
+103.37.144.0/20 Deny Generic
+103.37.160.0/21 Deny Generic
 103.37.252.0/22 Deny Generic
 103.38.224.0/22 Deny Generic
+103.43.100.0/22 Deny Generic
 103.43.184.0/22 Deny Generic
 103.48.232.0/23 Deny Generic
 103.53.208.0/22 Deny Generic
+103.59.148.0/22 Deny Generic
 103.61.153.0/24 Deny Generic
 103.61.154.0/23 Deny Generic
 103.72.172.0/24 Deny Generic
+103.74.24.0/21 Deny Generic
 103.76.60.0/22 Deny Generic
 103.79.24.0/22 Deny Generic
+103.82.224.0/22 Deny Generic
 103.85.172.0/22 Deny Generic
 103.85.176.0/22 Deny Generic
 103.90.176.0/22 Deny Generic
 103.90.188.0/22 Deny Generic
 103.91.176.0/22 Deny Generic
-103.93.180.0/23 Deny Generic
+103.93.180.0/22 Deny Generic
 103.100.64.0/22 Deny Generic
 103.102.192.0/22 Deny Generic
 103.102.200.0/22 Deny Generic
@@ -4796,14 +4850,26 @@ Origin: AU
 103.121.52.0/24 Deny Generic
 103.121.164.0/23 Deny Generic
 103.121.166.0/24 Deny Generic
+103.125.196.0/24 Deny Generic
 103.131.152.0/23 Deny Generic
 103.131.168.0/22 Deny Generic
 103.135.160.0/24 Deny Generic
+103.135.162.0/24 Deny Generic
 103.141.10.0/23 Deny Generic
 103.143.228.0/23 Deny Generic
+103.149.242.0/24 Deny Generic
+103.151.148.0/24 Deny Generic
+103.219.64.0/23 Deny Generic
+103.227.76.0/22 Deny Generic
+103.227.80.0/22 Deny Generic
 103.227.122.0/23 Deny Generic
 103.228.204.0/23 Deny Generic
+103.231.64.0/21 Deny Generic
 103.234.20.0/22 Deny Generic
+103.235.85.0/24 Deny Generic
+103.235.220.0/22 Deny Generic
+103.235.224.0/19 Deny Generic
+103.237.0.0/20 Deny Generic
 103.237.248.0/21 Deny Generic
 103.238.0.0/21 Deny Generic
 103.238.144.0/22 Deny Generic
@@ -4816,8 +4882,11 @@ Origin: AU
 103.244.59.0/24 Deny Generic
 103.244.64.0/22 Deny Generic
 103.244.80.0/22 Deny Generic
+103.244.232.0/22 Deny Generic
 103.244.252.0/22 Deny Generic
+103.247.168.0/22 Deny Generic
 103.249.52.0/22 Deny Generic
+103.249.252.0/22 Deny Generic
 103.252.36.0/22 Deny Generic
 103.254.112.0/22 Deny Generic
 103.254.188.0/22 Deny Generic
@@ -4831,22 +4900,30 @@ Origin: AU
 106.3.128.0/19 Deny Generic
 106.3.192.0/20 Deny Generic
 106.3.248.0/21 Deny Generic
+106.13.244.0/22 Deny Generic
 106.13.248.0/23 Deny Generic
+106.37.72.0/22 Deny Generic
+106.38.138.0/23 Deny Generic
 106.38.176.0/20 Deny Generic
 106.38.192.0/18 Deny Generic
 106.39.160.0/19 Deny Generic
 106.39.192.0/18 Deny Generic
 106.48.0.0/21 Deny Generic
 106.49.80.0/21 Deny Generic
+106.74.80.0/23 Deny Generic
+106.75.0.0/17 Deny Generic
 106.120.144.0/20 Deny Generic
 106.120.160.0/19 Deny Generic
 110.40.0.0/21 Deny Generic
 110.40.12.0/22 Deny Generic
+110.43.64.0/19 Deny Generic
+110.43.96.0/20 Deny Generic
+110.43.192.0/19 Deny Generic
 110.172.192.0/20 Deny Generic
 110.172.211.0/24 Deny Generic
 110.172.213.0/24 Deny Generic
 110.172.214.0/23 Deny Generic
-110.172.216.0/23 Deny Generic
+110.172.217.0/24 Deny Generic
 110.172.221.0/24 Deny Generic
 110.172.224.0/19 Deny Generic
 110.173.0.0/22 Deny Generic
@@ -4865,6 +4942,7 @@ Origin: AU
 113.208.112.0/21 Deny Generic
 113.209.0.0/16 Deny Generic
 114.64.0.0/15 Deny Generic
+114.67.224.0/19 Deny Generic
 114.110.0.0/20 Deny Generic
 114.112.32.0/19 Deny Generic
 114.112.64.0/19 Deny Generic
@@ -4874,22 +4952,26 @@ Origin: AU
 114.112.124.0/22 Deny Generic
 114.112.136.0/21 Deny Generic
 114.112.144.0/21 Deny Generic
-114.112.161.0/24 Deny Generic
-114.112.162.0/23 Deny Generic
-114.112.164.0/24 Deny Generic
+114.112.160.0/20 Deny Generic
 114.113.16.0/20 Deny Generic
 114.113.32.0/19 Deny Generic
 114.113.64.0/18 Deny Generic
 114.113.144.0/20 Deny Generic
 114.113.220.0/22 Deny Generic
+114.113.224.0/20 Deny Generic
 114.115.0.0/16 Deny Generic
 114.116.0.0/17 Deny Generic
 114.116.128.0/18 Deny Generic
 114.116.192.0/19 Deny Generic
-114.118.32.0/19 Deny Generic
-114.118.64.0/18 Deny Generic
+114.118.0.0/17 Deny Generic
 114.240.0.0/12 Deny Generic
+115.33.0.0/16 Deny Generic
+115.34.0.0/15 Deny Generic
 115.100.248.0/22 Deny Generic
+115.182.0.0/20 Deny Generic
+115.182.48.0/20 Deny Generic
+115.182.64.0/20 Deny Generic
+115.182.192.0/18 Deny Generic
 115.183.0.0/16 Deny Generic
 116.63.0.0/19 Deny Generic
 116.70.0.0/18 Deny Generic
@@ -4897,10 +4979,16 @@ Origin: AU
 116.193.16.0/23 Deny Generic
 116.193.18.0/24 Deny Generic
 116.196.64.0/18 Deny Generic
+116.198.0.0/18 Deny Generic
+116.213.64.0/18 Deny Generic
+116.213.128.0/19 Deny Generic
 116.213.168.0/21 Deny Generic
-116.213.224.0/21 Deny Generic
-116.218.0.0/17 Deny Generic
-116.243.0.0/16 Deny Generic
+116.213.176.0/20 Deny Generic
+116.213.192.0/19 Deny Generic
+116.213.224.0/20 Deny Generic
+116.216.0.0/16 Deny Generic
+116.218.0.0/16 Deny Generic
+116.242.0.0/15 Deny Generic
 117.48.0.0/18 Deny Generic
 117.48.64.0/20 Deny Generic
 117.48.80.0/21 Deny Generic
@@ -4909,13 +4997,17 @@ Origin: AU
 117.50.0.0/16 Deny Generic
 117.73.0.0/20 Deny Generic
 117.73.16.0/21 Deny Generic
-117.79.85.0/24 Deny Generic
-117.79.88.0/23 Deny Generic
-117.79.136.0/21 Deny Generic
-117.79.152.0/23 Deny Generic
+117.79.80.0/20 Deny Generic
+117.79.128.0/19 Deny Generic
+117.79.224.0/20 Deny Generic
 117.79.241.0/24 Deny Generic
 117.79.242.0/24 Deny Generic
-117.121.160.0/20 Deny Generic
+117.100.0.0/15 Deny Generic
+117.114.255.0/24 Deny Generic
+117.121.0.0/18 Deny Generic
+117.121.64.0/19 Deny Generic
+117.121.96.0/20 Deny Generic
+117.121.128.0/18 Deny Generic
 117.122.128.0/17 Deny Generic
 118.26.40.0/22 Deny Generic
 118.26.44.0/23 Deny Generic
@@ -4926,24 +5018,35 @@ Origin: AU
 118.26.196.0/24 Deny Generic
 118.26.200.0/21 Deny Generic
 118.26.208.0/20 Deny Generic
+118.26.224.0/19 Deny Generic
 118.126.128.0/17 Deny Generic
+118.144.0.0/18 Deny Generic
+118.144.96.0/19 Deny Generic
+118.144.128.0/17 Deny Generic
+118.186.32.0/24 Deny Generic
+118.186.34.0/23 Deny Generic
+118.186.36.0/22 Deny Generic
+118.186.56.0/21 Deny Generic
+118.186.64.0/21 Deny Generic
 118.186.80.0/21 Deny Generic
 118.186.192.0/19 Deny Generic
 118.186.224.0/21 Deny Generic
 118.186.240.0/21 Deny Generic
+118.191.192.0/23 Deny Generic
 118.193.96.0/19 Deny Generic
-118.194.32.0/21 Deny Generic
-118.194.48.0/20 Deny Generic
+118.194.32.0/19 Deny Generic
 118.194.128.0/21 Deny Generic
 118.194.160.0/22 Deny Generic
 118.194.240.0/21 Deny Generic
 118.198.0.0/15 Deny Generic
 118.207.0.0/16 Deny Generic
+118.244.0.0/17 Deny Generic
 118.247.0.0/16 Deny Generic
 119.2.0.0/19 Deny Generic
 119.18.192.0/20 Deny Generic
 119.57.0.0/16 Deny Generic
-119.80.32.0/21 Deny Generic
+119.61.0.0/16 Deny Generic
+119.80.32.0/20 Deny Generic
 119.80.160.0/19 Deny Generic
 119.80.192.0/21 Deny Generic
 119.80.200.0/22 Deny Generic
@@ -4954,14 +5057,31 @@ Origin: AU
 119.161.128.0/22 Deny Generic
 119.161.168.0/22 Deny Generic
 119.161.180.0/22 Deny Generic
-119.253.32.0/20 Deny Generic
-119.253.56.0/21 Deny Generic
-119.253.64.0/20 Deny Generic
+119.253.32.0/19 Deny Generic
+119.253.64.0/19 Deny Generic
+119.254.0.0/20 Deny Generic
+119.254.224.0/20 Deny Generic
+120.52.31.0/24 Deny Generic
+120.92.0.0/17 Deny Generic
+120.92.128.0/18 Deny Generic
+120.92.192.0/19 Deny Generic
+120.92.224.0/20 Deny Generic
+120.131.0.0/20 Deny Generic
 120.132.32.0/19 Deny Generic
 120.132.64.0/19 Deny Generic
+120.132.128.0/17 Deny Generic
 120.133.0.0/16 Deny Generic
+120.134.0.0/15 Deny Generic
+120.136.22.0/24 Deny Generic
 121.52.208.0/20 Deny Generic
+121.69.0.0/16 Deny Generic
+121.71.0.0/16 Deny Generic
 121.101.208.0/20 Deny Generic
+122.9.0.0/19 Deny Generic
+122.9.32.0/20 Deny Generic
+122.10.228.0/22 Deny Generic
+122.10.232.0/21 Deny Generic
+122.10.240.0/22 Deny Generic
 122.11.32.0/19 Deny Generic
 122.14.0.0/18 Deny Generic
 122.14.192.0/18 Deny Generic
@@ -4971,6 +5091,7 @@ Origin: AU
 122.115.0.0/20 Deny Generic
 122.115.32.0/19 Deny Generic
 122.115.224.0/20 Deny Generic
+123.58.0.0/19 Deny Generic
 123.59.0.0/16 Deny Generic
 123.103.2.0/23 Deny Generic
 123.103.4.0/22 Deny Generic
@@ -4989,14 +5110,18 @@ Origin: AU
 124.14.64.0/18 Deny Generic
 124.14.224.0/19 Deny Generic
 124.40.112.0/20 Deny Generic
-124.42.64.0/19 Deny Generic
+124.42.64.0/18 Deny Generic
 124.64.0.0/15 Deny Generic
+124.68.128.0/24 Deny Generic
+124.126.14.0/23 Deny Generic
 124.126.250.0/24 Deny Generic
+124.126.255.0/24 Deny Generic
+124.192.0.0/15 Deny Generic
 124.200.0.0/16 Deny Generic
+124.202.0.0/17 Deny Generic
 124.202.160.0/19 Deny Generic
 124.202.192.0/18 Deny Generic
-124.204.128.0/17 Deny Generic
-124.205.0.0/16 Deny Generic
+124.204.0.0/14 Deny Generic
 124.243.192.0/18 Deny Generic
 124.248.32.0/20 Deny Generic
 124.248.48.0/21 Deny Generic
@@ -5009,14 +5134,22 @@ Origin: AU
 125.254.168.0/21 Deny Generic
 125.254.176.0/21 Deny Generic
 125.254.192.0/18 Deny Generic
-139.198.0.0/21 Deny Generic
-139.220.194.0/23 Deny Generic
-140.210.0.0/19 Deny Generic
+139.159.0.0/19 Deny Generic
+139.198.0.0/20 Deny Generic
+139.198.64.0/18 Deny Generic
+139.220.192.0/22 Deny Generic
+139.220.240.0/22 Deny Generic
+140.210.0.0/20 Deny Generic
 140.210.64.0/18 Deny Generic
 150.242.184.0/22 Deny Generic
 150.242.248.0/22 Deny Generic
 161.207.0.0/16 Deny Generic
+163.53.40.0/22 Deny Generic
+163.53.100.0/22 Deny Generic
+163.53.104.0/22 Deny Generic
+163.53.112.0/20 Deny Generic
 168.160.224.0/19 Deny Generic
+171.84.0.0/21 Deny Generic
 175.25.16.0/20 Deny Generic
 175.25.32.0/19 Deny Generic
 175.25.160.0/19 Deny Generic
@@ -5030,18 +5163,19 @@ Origin: AU
 180.89.64.0/19 Deny Generic
 180.149.128.0/19 Deny Generic
 180.150.176.0/20 Deny Generic
-180.184.48.0/22 Deny Generic
-180.185.0.0/22 Deny Generic
 180.186.0.0/16 Deny Generic
 180.210.236.0/22 Deny Generic
 182.18.0.0/18 Deny Generic
 182.18.72.0/21 Deny Generic
 182.48.96.0/20 Deny Generic
 182.48.112.0/21 Deny Generic
+182.174.0.0/15 Deny Generic
+183.84.0.0/15 Deny Generic
 202.4.252.0/22 Deny Generic
 202.38.8.0/21 Deny Generic
 202.38.147.0/24 Deny Generic
 202.38.161.0/24 Deny Generic
+202.43.144.0/20 Deny Generic
 202.85.208.0/20 Deny Generic
 202.91.176.0/21 Deny Generic
 202.91.184.0/23 Deny Generic
@@ -5058,6 +5192,7 @@ Origin: AU
 202.130.224.0/20 Deny Generic
 202.130.240.0/21 Deny Generic
 202.142.16.0/20 Deny Generic
+202.152.176.0/20 Deny Generic
 202.165.208.0/20 Deny Generic
 202.189.4.0/22 Deny Generic
 202.189.8.0/22 Deny Generic
@@ -5071,8 +5206,8 @@ Origin: AU
 203.100.92.0/22 Deny Generic
 203.100.192.0/20 Deny Generic
 203.130.40.0/21 Deny Generic
-203.196.5.0/24 Deny Generic
-203.196.6.0/24 Deny Generic
+203.134.240.0/21 Deny Generic
+203.196.0.0/21 Deny Generic
 203.208.0.0/20 Deny Generic
 203.212.0.0/21 Deny Generic
 203.212.8.0/22 Deny Generic
@@ -5087,9 +5222,11 @@ Origin: AU
 210.13.0.0/18 Deny Generic
 210.13.240.0/20 Deny Generic
 210.14.128.0/19 Deny Generic
+210.56.192.0/19 Deny Generic
 210.72.160.0/19 Deny Generic
 210.72.192.0/19 Deny Generic
 210.73.112.0/20 Deny Generic
+210.73.208.0/20 Deny Generic
 210.73.224.0/19 Deny Generic
 210.74.64.0/23 Deny Generic
 210.74.107.0/24 Deny Generic
@@ -5103,7 +5240,11 @@ Origin: AU
 210.77.190.0/24 Deny Generic
 210.77.192.0/18 Deny Generic
 210.78.48.0/20 Deny Generic
-210.78.128.0/19 Deny Generic
+210.78.128.0/24 Deny Generic
+210.78.133.0/24 Deny Generic
+210.78.136.0/22 Deny Generic
+210.78.144.0/23 Deny Generic
+210.78.147.0/24 Deny Generic
 210.79.224.0/19 Deny Generic
 210.82.0.0/17 Deny Generic
 210.192.96.0/21 Deny Generic
@@ -5113,41 +5254,55 @@ Origin: AU
 211.94.128.0/18 Deny Generic
 211.99.32.0/19 Deny Generic
 211.99.64.0/19 Deny Generic
+211.99.160.0/19 Deny Generic
+211.99.192.0/18 Deny Generic
 211.100.0.0/18 Deny Generic
-211.100.72.0/24 Deny Generic
+211.100.64.0/19 Deny Generic
+211.100.192.0/20 Deny Generic
 211.100.224.0/19 Deny Generic
 211.102.208.0/20 Deny Generic
 211.102.248.0/21 Deny Generic
-211.103.128.0/19 Deny Generic
+211.103.128.0/17 Deny Generic
+211.144.4.0/23 Deny Generic
+211.144.6.0/24 Deny Generic
 211.144.9.0/24 Deny Generic
+211.144.10.0/24 Deny Generic
 211.144.12.0/22 Deny Generic
+211.144.16.0/24 Deny Generic
+211.144.19.0/24 Deny Generic
 211.144.20.0/24 Deny Generic
-211.144.25.0/24 Deny Generic
+211.144.22.0/24 Deny Generic
+211.144.24.0/23 Deny Generic
+211.144.27.0/24 Deny Generic
+211.144.28.0/22 Deny Generic
 211.144.224.0/19 Deny Generic
 211.145.0.0/18 Deny Generic
 211.145.64.0/20 Deny Generic
 211.147.0.0/18 Deny Generic
 211.147.208.0/20 Deny Generic
+211.150.0.0/18 Deny Generic
+211.150.64.0/19 Deny Generic
 211.150.100.0/23 Deny Generic
+211.150.114.0/23 Deny Generic
 211.151.0.0/16 Deny Generic
 211.152.0.0/19 Deny Generic
+211.152.96.0/19 Deny Generic
 211.154.0.0/19 Deny Generic
+211.154.96.0/19 Deny Generic
 211.154.192.0/18 Deny Generic
 211.155.32.0/19 Deny Generic
-211.155.88.0/21 Deny Generic
+211.155.80.0/20 Deny Generic
 211.155.160.0/21 Deny Generic
 211.155.240.0/20 Deny Generic
+211.157.0.0/19 Deny Generic
 211.157.96.0/19 Deny Generic
-211.157.208.0/20 Deny Generic
-211.157.226.0/24 Deny Generic
+211.157.128.0/17 Deny Generic
 211.159.0.0/18 Deny Generic
 211.167.176.0/20 Deny Generic
 218.30.25.0/24 Deny Generic
 218.30.26.0/23 Deny Generic
 218.30.28.0/23 Deny Generic
 218.30.96.0/19 Deny Generic
-218.30.223.0/24 Deny Generic
-218.30.254.0/24 Deny Generic
 218.106.160.0/19 Deny Generic
 218.107.128.0/18 Deny Generic
 218.240.0.0/19 Deny Generic
@@ -5162,25 +5317,23 @@ Origin: AU
 218.244.56.0/23 Deny Generic
 218.244.58.0/24 Deny Generic
 218.244.60.0/22 Deny Generic
+218.244.96.0/19 Deny Generic
 218.244.160.0/19 Deny Generic
+218.245.0.0/21 Deny Generic
 218.246.32.0/22 Deny Generic
-218.246.56.0/21 Deny Generic
 218.247.128.0/17 Deny Generic
 218.249.0.0/16 Deny Generic
 219.141.220.0/24 Deny Generic
 219.142.78.0/24 Deny Generic
 219.142.118.0/24 Deny Generic
 219.158.128.0/17 Deny Generic
-219.232.12.0/22 Deny Generic
-219.232.20.0/22 Deny Generic
-219.232.24.0/21 Deny Generic
+219.232.0.0/19 Deny Generic
 219.232.96.0/19 Deny Generic
 219.232.224.0/19 Deny Generic
 219.234.0.0/21 Deny Generic
+219.235.12.0/22 Deny Generic
 219.235.32.0/19 Deny Generic
-219.238.0.0/18 Deny Generic
-219.238.128.0/18 Deny Generic
-219.239.0.0/16 Deny Generic
+219.238.0.0/15 Deny Generic
 220.181.0.0/17 Deny Generic
 220.181.128.0/20 Deny Generic
 220.181.144.0/24 Deny Generic
@@ -5200,8 +5353,8 @@ Origin: AU
 220.207.254.0/23 Deny Generic
 220.243.128.0/18 Deny Generic
 220.249.0.0/18 Deny Generic
-221.122.48.0/20 Deny Generic
-221.122.64.0/18 Deny Generic
+221.122.0.0/16 Deny Generic
+221.123.128.0/17 Deny Generic
 221.216.0.0/13 Deny Generic
 222.128.0.0/14 Deny Generic
 223.20.0.0/15 Deny Generic
@@ -5215,6 +5368,8 @@ Origin: TW
 140.242.224.0/24 Deny Generic
 204.55.160.0/24 Deny Generic
 Origin: US
+202.94.1.0/24 Deny Generic
+Origin: XP
 Tag: China Unicom 4808
 ---
 recaptcha:
@@ -6056,62 +6211,21 @@ recaptcha:
 
 
 # ASN 9808 ("Guangdong Mobile Communication Co.Ltd").
-# Chinese mobile phone and data carrier. Listed here because of numerous spam
-# events being detected. Websites intended for a Chinese audience should keep
-# it listed in their ignore.dat file. (Omit invalids when updating).
-# %Listed, abuseat.org (CBL-Listed): 0.03%.
-# Stop Forum Spam (SFS) listings: 217.
-# Updated: 2020.03.22
+# Chinese mobile phone and data carrier. Numerous spam events from here plus
+# some occasional brute-force attempts. Listing just the currently affected
+# ranges for the moment (since 2020.09).
+# Stop Forum Spam (SFS) listings: 83.
+# Updated: 2020.09.01
 
-27.0.160.0/21 Deny Spam
-36.128.0.0/10 Deny Spam
-39.128.0.0/10 Deny Spam
-43.251.244.0/22 Deny Spam
-103.20.112.0/22 Deny Spam
-103.21.176.0/22 Deny Spam
-103.37.72.0/22 Deny Spam
-103.79.24.0/23 Deny Spam
-103.79.27.0/24 Deny Spam
-103.216.4.0/22 Deny Spam
-103.217.168.0/22 Deny Spam
-103.253.232.0/22 Deny Spam
-110.237.0.0/16 Deny Spam
-111.0.0.0/10 Deny Spam
-112.0.0.0/10 Deny Spam
-117.128.0.0/10 Deny Spam
-118.26.197.0/24 Deny Spam
-118.26.198.0/23 Deny Spam
-119.161.172.0/22 Deny Spam
-119.161.176.0/22 Deny Spam
-120.192.0.0/10 Deny Spam
-121.255.0.0/16 Deny Spam
-125.254.160.0/21 Deny Spam
-125.254.184.0/22 Deny Spam
-125.254.188.0/23 Deny Spam
-125.254.190.0/24 Deny Spam
-163.53.172.0/22 Deny Spam
-175.102.160.0/20 Deny Spam
-175.102.176.0/23 Deny Spam
-175.102.185.0/24 Deny Spam
-175.102.186.0/23 Deny Spam
-175.102.188.0/22 Deny Spam
-175.102.192.0/22 Deny Spam
-182.50.112.0/21 Deny Spam
-182.50.120.0/22 Deny Spam
-182.50.124.0/23 Deny Spam
-182.157.0.0/16 Deny Spam
-183.192.0.0/10 Deny Spam
-202.123.120.0/22 Deny Spam
-202.141.176.0/20 Deny Spam
-203.130.32.0/22 Deny Spam
-203.212.12.0/22 Deny Spam
-211.103.0.0/17 Deny Spam
-211.136.0.0/13 Deny Spam
-211.148.224.0/19 Deny Spam
-218.200.0.0/13 Deny Spam
-221.130.0.0/15 Deny Spam
-221.176.0.0/13 Deny Spam
-223.64.0.0/10 Deny Spam
+112.2.95.114/32 Deny Spam
+112.3.62.130/32 Deny Spam
+112.4.232.37/32 Deny Spam
+112.5.243.0/24 Deny Malware
+183.192.229.98/32 Deny Spam
+183.192.238.64/32 Deny Spam
+218.200.61.170/32 Deny Spam
+218.204.138.137/32 Deny Malware
+223.68.190.130/32 Deny Spam
 Origin: CN
 Tag: Guangdong Mobile
 ---
@@ -6197,9 +6311,8 @@ recaptcha:
 
 
 # ASN 44725 ("Sinam").
-# %Listed, abuseat.org (CBL-Listed): 31.16%.
-# Stop Forum Spam (SFS) listings: 933.
-# Updated: 2020.03.13
+# Stop Forum Spam (SFS) listings: 1,355.
+# Updated: 2020.03.13 / Checked: 2020.08.27
 
 5.250.192.0/19 Deny Spam
 31.171.0.0/18 Deny Spam
@@ -9510,8 +9623,8 @@ Tag: SoftLayer Spam ISPs
 # ASNs 12322, 12876 ("ONLINE S.A.S").
 # A multiplay network (French domestic ISP, cloud provider, etc), caught trying
 # to DDoS SFS, caught attempting to hack honeypots, and a huge source of spam.
-# Stop Forum Spam (SFS) listings: 729 (12322), 108,600 (AS12876).
-# Updated: 2020.03.21
+# Stop Forum Spam (SFS) listings: 712 (12322), 96,767 (AS12876).
+# Updated: 2020.03.21 / Checked: 2020.09.01
 
 51.15.0.0/16 Deny Spam
 51.158.0.0/15 Deny Spam
@@ -9581,20 +9694,20 @@ Tag: IT Systems LLC
 
 # ASNs 31343, 38978, 43656 ("Intertelecom Ltd").
 # Caught trying to hack into WordPress sites.
-# Stop Forum Spam (SFS) listings: 201 (AS31343), 14 (AS43656).
-# Updated: 2020.03.25
+# Stop Forum Spam (SFS) listings: 201 (AS31343), 18 (AS43656).
+# Updated: 2020.09.01
 
 93.170.64.0/21 Deny Generic
 Origin: CZ
 194.6.216.0/22 Deny Generic
 Origin: RU
 37.19.128.0/17 Deny Generic
-46.247.128.0/19 Deny Generic
 78.111.176.0/20 Deny Generic
 91.198.83.0/24 Deny Generic
-93.180.192.0/18 Deny Generic
-95.111.128.0/18 Deny Generic
-95.111.192.0/19 Deny Generic
+93.180.192.0/20 Deny Generic
+93.180.216.0/21 Deny Generic
+93.180.224.0/19 Deny Generic
+95.111.128.0/19 Deny Generic
 130.180.208.0/20 Deny Generic
 194.28.4.0/22 Deny Generic
 195.128.182.0/23 Deny Generic
@@ -10455,20 +10568,19 @@ recaptcha:
 
 # ASN 9930 ("TIME dotCom Berhad"). A major Malaysian domestic ISP, but also
 # most recently a notable source of forum spam.
-# Stop Forum Spam (SFS) listings: 871.
-# Updated: 2020.03.25
+# Stop Forum Spam (SFS) listings: 438.
+# Updated: 2020.09.01
 
-61.6.21.178/32 Deny Spam
-61.6.73.219/32 Deny Spam
-202.184.40.4/32 Deny Spam
-202.184.100.69/32 Deny Spam
-202.186.110.4/32 Deny Spam
-202.186.130.56/32 Deny Spam
-202.186.242.57/32 Deny Spam
+161.142.224.76/32 Deny Spam
+202.184.99.26/32 Deny Spam
+202.185.169.96/32 Deny Spam
+202.187.4.192/32 Deny Spam
 202.187.58.131/32 Deny Spam
-211.24.105.86/32 Deny Spam
-211.24.105.152/32 Deny Spam
-211.25.204.129/32 Deny Spam
+202.187.208.29/32 Deny Spam
+203.121.54.170/32 Deny Spam
+211.24.105.19/32 Deny Spam
+211.24.110.192/32 Deny Spam
+211.25.118.18/32 Deny Spam
 Origin: MY
 Tag: TIME dotCom Berhad
 ---
@@ -12082,7 +12194,7 @@ recaptcha:
 # vulnerabilities. Just listing the affected address/ranges (spam/malware).
 # %Listed, abuseat.org (CBL-Listed): 0.17%.
 # Stop Forum Spam (SFS) listings: 1,887.
-# Updated: 2020.07.23
+# Updated: 2020.07.23 / Modified: 2020.09.01
 
 14.33.75.22/32 Deny Spam
 14.41.38.87/32 Deny Malware
@@ -12106,6 +12218,7 @@ recaptcha:
 211.255.150.6/32 Deny Spam
 218.156.164.148/32 Deny Malware
 220.71.52.229/32 Deny Spam
+221.146.132.137/32 Deny Malware
 222.96.237.2/32 Deny Spam
 222.121.59.89/32 Deny Malware
 Origin: KR
@@ -12541,52 +12654,44 @@ recaptcha:
 # ASN 24309 ("Atria Convergence Technologies Pvt. Ltd. Broadband Internet
 # Service Provider INDIA"). An Indian domestic ISP caught spamming. Listing
 # just the affected ranges, plus all US ranges (interlaced cloud ranges).
-# %Listed, abuseat.org (CBL-Listed): 8.31%.
-# Stop Forum Spam (SFS) listings: 2,721.
-# Updated: 2020.03.13
+# %Listed, abuseat.org (CBL-Listed): 7.30%.
+# Stop Forum Spam (SFS) listings: 1,812.
+# Updated: 2020.08.27
 
-49.204.69.206/32 Deny Spam
-49.205.78.0/23 Deny Spam
-49.205.217.0/24 Deny Spam
-49.205.218.0/23 Deny Spam
-49.206.8.0/23 Deny Spam
-49.206.13.107/32 Deny Spam
-49.206.15.86/32 Deny Spam
-49.206.124.0/23 Deny Spam
-49.206.126.0/24 Deny Spam
-49.206.130.206/32 Deny Spam
-49.206.132.222/32 Deny Spam
-49.206.135.170/32 Deny Spam
-49.206.143.0/24 Deny Spam
-49.206.145.218/32 Deny Spam
-49.206.148.0/23 Deny Spam
-49.206.151.0/24 Deny Spam
-49.206.152.0/24 Deny Spam
-49.206.155.51/32 Deny Spam
+49.204.224.229/32 Deny Spam
+49.204.227.153/32 Deny Spam
+49.205.79.31/32 Deny Spam
+49.205.81.201/32 Deny Spam
+49.205.83.174/32 Deny Spam
+49.205.84.230/32 Deny Spam
+49.205.85.0/24 Deny Spam
+49.206.3.8/32 Deny Spam
+49.206.127.97/32 Deny Spam
+49.206.143.110/32 Deny Spam
 49.206.157.232/32 Deny Spam
-49.206.231.227/32 Deny Spam
 49.207.55.124/32 Deny Spam
-49.207.59.0/24 Deny Spam
-49.207.61.45/32 Deny Spam
-49.207.130.70/32 Deny Spam
-49.207.135.5/32 Deny Spam
-49.207.136.163/32 Deny Spam
-49.207.143.195/32 Deny Spam
-49.207.180.112/32 Deny Spam
-106.51.2.0/23 Deny Spam
-106.51.77.141/32 Deny Spam
-106.51.80.0/24 Deny Spam
-106.51.104.0/24 Deny Spam
-106.51.106.0/23 Deny Spam
-106.51.108.0/23 Deny Spam
-106.51.137.98/32 Deny Spam
-106.51.153.77/32 Deny Malware
-106.51.155.42/32 Deny Spam
-124.123.105.206/32 Deny Spam
-124.123.107.229/32 Deny Spam
-183.82.18.33/32 Deny Spam
-183.82.32.56/32 Deny Spam
-183.83.152.222/32 Deny Spam
+49.207.128.0/24 Deny Spam
+49.207.133.200/32 Deny Spam
+49.207.134.0/24 Deny Spam
+49.207.136.96/32 Deny Spam
+49.207.137.82/32 Deny Spam
+49.207.140.45/32 Deny Spam
+49.207.193.111/32 Deny Spam
+49.207.197.224/32 Deny Spam
+49.207.199.2/32 Deny Spam
+49.207.207.98/32 Deny Spam
+49.207.211.132/32 Deny Spam
+49.207.216.57/32 Deny Spam
+106.51.2.56/32 Deny Spam
+106.51.3.132/32 Deny Spam
+106.51.83.188/32 Deny Spam
+106.51.104.189/32 Deny Spam
+106.51.105.142/32 Deny Spam
+106.51.107.223/32 Deny Spam
+106.51.153.0/24 Deny Malware
+106.51.234.172/32 Deny Spam
+106.51.240.10/32 Deny Spam
+183.83.152.132/32 Deny Spam
 202.83.18.204/32 Deny Spam
 Origin: IN
 23.2.0.0/24 Deny Cloud
@@ -13124,44 +13229,44 @@ recaptcha:
 # ASN 6697 ("Republican Unitary Telecommunication Enterprise Beltelecom").
 # A Belarusian domestic ISP and a significant source of spam. Will attempt to
 # list only the worst affected ranges (i.e., not the entire network), to reduce
-# the risk of false positives.
-# Stop Forum Spam (SFS) listings: 24,861.
-# Updated: 2020.03.11
+# the risk of false positives. (Affected ranged are slowly edging towards the
+# entire network. Might stop being selective at the next update if it's still
+# getting worse at that point).
+# Stop Forum Spam (SFS) listings: 18,431.
+# Updated: 2020.08.27
 
-37.44.64.0/18 Deny Spam
+37.44.71.0/24 Deny Spam
+37.44.73.0/24 Deny Spam
 37.45.0.0/16 Deny Spam
-37.212.0.0/14 Deny Spam
-82.209.216.0/24 Deny Spam
-86.57.136.0/24 Deny Spam
-86.57.148.0/24 Deny Spam
-86.57.177.0/24 Deny Spam
-93.84.74.0/24 Deny Spam
-93.84.135.0/24 Deny Spam
-93.84.136.0/24 Deny Spam
-93.84.142.0/24 Deny Spam
-93.84.180.0/24 Deny Spam
-93.85.77.0/24 Deny Spam
-178.120.45.109/32 Deny Spam
-178.120.69.246/32 Deny Spam
-178.120.207.188/32 Deny Spam
-178.120.211.122/32 Deny Spam
-178.120.212.29/32 Deny Spam
-178.120.216.204/32 Deny Spam
-178.120.217.218/32 Deny Spam
-178.120.238.47/32 Deny Spam
-178.120.243.45/32 Deny Spam
-178.121.12.33/32 Deny Spam
-178.121.204.19/32 Deny Spam
-178.121.219.242/32 Deny Spam
-178.121.236.227/32 Deny Spam
-178.122.70.131/32 Deny Spam
-178.125.197.198/32 Deny Spam
-178.127.77.16/32 Deny Spam
-178.127.81.117/32 Deny Spam
-178.127.102.92/32 Deny Spam
-178.127.110.46/32 Deny Spam
-178.127.113.41/32 Deny Spam
-178.127.234.44/32 Deny Spam
+37.212.0.0/16 Deny Spam
+37.214.140.243/32 Deny Spam
+37.214.201.0/24 Deny Spam
+37.214.226.0/24 Deny Spam
+37.215.19.46/32 Deny Spam
+37.215.56.6/32 Deny Spam
+37.215.137.18/32 Deny Spam
+37.215.244.31/32 Deny Spam
+86.57.165.28/32 Deny Spam
+86.57.177.8/32 Deny Spam
+93.84.131.0/24 Deny Spam
+93.85.136.0/24 Deny Spam
+93.85.150.39/32 Deny Spam
+178.120.216.0/24 Deny Spam
+178.120.238.0/24 Deny Spam
+178.121.117.160/32 Deny Spam
+178.121.122.0/24 Deny Spam
+178.121.233.176/32 Deny Spam
+178.122.64.0/24 Deny Spam
+178.122.90.0/24 Deny Spam
+178.122.115.16/32 Deny Spam
+178.122.198.220/32 Deny Spam
+178.123.51.0/24 Deny Spam
+178.124.14.67/32 Deny Spam
+178.125.29.0/24 Deny Spam
+178.127.48.0/20 Deny Spam
+178.127.64.0/18 Deny Spam
+178.127.176.0/20 Deny Spam
+178.127.192.0/18 Deny Spam
 Origin: BY
 Tag: Beltelecom
 ---
@@ -13172,7 +13277,7 @@ recaptcha:
 # ASN 47610 ("RWTH Aachen University").
 # Temporary listing due to port scans and other suspicious traffic originating
 # from the specific listed ranges. (At last check: Still looks really bad. Might
-# make permanent and upgrade to entire network at next check if it persists).
+# make permanent and upgrade to the entire network at next check if it persists).
 # Updated: 2020.03.11 / Checked: 2020.08.22
 
 137.226.113.0/24 Deny Malware
@@ -13186,26 +13291,24 @@ recaptcha:
 # ASN 1680 ("Cellcom Fixed Line Communication L.P").
 # Israeli domestic ISP and a source of spam. Just listing the specific
 # offending IL-based IPs, plus all ranges which aren't IL-based (cloud).
-# Stop Forum Spam (SFS) listings: 2,120.
-# Updated: 2020.03.13
+# Stop Forum Spam (SFS) listings: 2,190.
+# Updated: 2020.08.27
 
 88.221.152.0/21 Deny Cloud
 92.122.12.0/22 Deny Cloud
 92.123.200.0/22 Deny Cloud
 95.101.160.0/22 Deny Cloud
 Origin: EU
-46.116.27.155/32 Deny Malware
+80.250.152.127/32 Deny Spam
+82.166.20.141/32 Deny Spam
+82.166.152.154/32 Deny Spam
 85.250.52.32/32 Deny Spam
-85.250.124.138/32 Deny Spam
-85.250.190.130/32 Deny Spam
-85.250.230.146/32 Deny Spam
-89.139.148.154/32 Deny Spam
+85.250.116.199/32 Deny Spam
+89.139.82.114/32 Deny Spam
 93.173.69.234/32 Deny Spam
-93.173.91.116/32 Deny Spam
-109.186.75.72/32 Deny Spam
+93.173.91.0/24 Deny Spam
 109.186.82.211/32 Deny Spam
 109.186.217.71/32 Deny Spam
-176.12.219.162/32 Deny Spam
 217.132.173.190/32 Deny Spam
 Origin: IL
 45.93.82.0/24 Deny Cloud
@@ -13216,12 +13319,6 @@ Origin: RU
 184.29.70.0/23 Deny Cloud
 199.203.0.0/16 Deny Cloud
 207.232.0.0/18 Deny Cloud
-209.88.156.0/23 Deny Cloud
-209.88.172.0/22 Deny Cloud
-209.88.176.0/20 Deny Cloud
-209.88.192.0/21 Deny Cloud
-216.72.32.0/22 Deny Cloud
-216.72.40.0/22 Deny Cloud
 Origin: US
 Tag: Cellcom Fixed
 ---
@@ -13314,8 +13411,8 @@ recaptcha:
 # as low-end C&Cs and for malware distribution. Marked for use with reCAPTCHA,
 # as it should allow human users to still have access, while blocking most of
 # the automated traffic.
-# Stop Forum Spam (SFS) listings: 165.
-# Updated: 2020.03.21
+# Stop Forum Spam (SFS) listings: 97.
+# Updated: 2020.03.21 / Checked: 2020.09.01
 
 176.113.208.0/20 Deny Malware
 194.31.68.0/23 Deny Malware
@@ -14214,16 +14311,15 @@ recaptcha:
 # to moderate risk of human endpoints being present. Hack, SSH, brute-force,
 # and spam events detected originating from this network. Listing just the
 # affected addresses/ranges. Censys scanner originates from here.
-# Stop Forum Spam (SFS) listings: 1,559.
-# Updated: 2020.06.23
+# Stop Forum Spam (SFS) listings: 962.
+# Updated: 2020.09.01
 
 35.0.116.46/32 Deny Malware
-35.0.116.226/32 Deny Spam
-35.0.117.74/32 Deny Spam
+35.0.127.52/32 Deny Spam
 35.0.117.193/32 Deny Malware
 35.0.127.52/32 Deny Malware
 192.35.168.0/23 Deny Malware
-207.72.1.96/32 Deny Malware
+198.108.66.0/24 Deny Malware
 Origin: US
 Tag: Merit Network Inc
 ---
@@ -14873,3 +14969,35 @@ Origin: EU
 196.245.248.0/21 Deny Spam
 Origin: SC
 Tag: Global Offshore Limited
+
+
+# ASN 5511 ("Orange S.A").
+# Spam originating from some specific, narrow ranges at this network. Just
+# blocking the currently affected ranges only ("ZSCALER, INC") and any residual
+# affected addresses.
+# Note: The network itself is French, but all the currently affected ranges are
+# based in the US, hence the US origin tag.
+# Stop Forum Spam (SFS) listings: 231.
+# Updated: 2020.08.27
+
+165.225.204.0/23 Deny Spam
+Origin: US
+Tag: Orange S.A
+
+
+# ASN 45429 ("CAMBODIAN SINGMENG TELEMEDIA CO., LTD").
+# Cambodian domestic ISP. Spam, brute-force attacks, and SSH attacks detected
+# from throughout this network.
+# Stop Forum Spam (SFS) listings: 561.
+# Updated: 2020.09.01
+
+27.109.116.0/22 Deny Malware
+103.23.132.0/22 Deny Malware
+111.92.240.0/22 Deny Malware
+114.134.184.0/21 Deny Malware
+115.178.24.0/22 Deny Malware
+Origin: KH
+Tag: CAMBODIAN SINGMENG TELEMEDIA
+---
+recaptcha:
+ enabled: true

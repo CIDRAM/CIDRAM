@@ -1,8 +1,8 @@
 # IPv4 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv4_isps.dat
 
-# Version: 2020.244.693
-# Last modified: 2020.09.01
+# Version: 2020.254.603
+# Last modified: 2020.09.11
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage, i.e., with ignore.dat, with reCAPTCHA, with "extended rules" (default bypasses): « [ ]Low [x]Medium [ ]High »
@@ -1714,7 +1714,8 @@ recaptcha:
 
 
 # ASN 197712 ("10dencehispahard, S.L").
-# Updated: 2018.08.25 / Checked: 2020.01.24
+# SQL injection attempts detected originating from this network.
+# Updated: 2018.08.25 / Checked: 2020.09.08
 
 46.16.56.0/21 Deny Generic
 134.0.8.0/21 Deny Generic
@@ -1929,7 +1930,7 @@ recaptcha:
 
 # ASN 203912 ("Sicres SRL").
 # Caught distributing ransomware (188.0.236.7:443).
-# Updated: 2019.04.18 / Modified: 2020.01.28
+# Updated: 2019.04.18 / Modified: 2020.01.28 / Checked: 2020.09.08
 
 178.175.244.0/24 Deny Malware
 185.172.28.0/22 Deny Malware
@@ -2860,8 +2861,8 @@ Tag: Fregat
 
 
 # ASN 49204 ('TOV "ITT"').
-# Stop Forum Spam (SFS) listings: 1,213.
-# Updated: 2016.09.06 / Checked: 2020.01.30
+# Stop Forum Spam (SFS) listings: 39.
+# Updated: 2016.09.06 / Checked: 2020.09.09
 
 195.238.108.0/22 Deny Spam
 Origin: UA
@@ -5376,18 +5377,19 @@ recaptcha:
  enabled: true
 
 
-# ASN 45899 ("VietNam Post and Telecom Corporation").
-# Would prefer to not include this ASN in this file due to the high risk of
-# false positives, but the amount of attempted spamming, hacking, probing, etc
-# seen from this ASN, plus its presence in numerous worst offenders lists and
-# blacklists, are not ignorable at this time. Marked for use with reCAPTCHA to
-# reduce the false positive risk, and I would encourage any CIDRAM users from
-# Vietnam, or targeting traffic from Vietnam, to list this section in their
-# ignore.dat file to reduce the false positive risk.
-# %Listed, abuseat.org (CBL-Listed): 6.34%.
-# Stop Forum Spam (SFS) listings: 30,846.
-# Updated: 2020.08.11
+# ASNs 7643, 45899, 135905 ("VietNam Post and Telecom Corporation").
+# A *major* Vietnamese domestic ISP, but also a significant source of spam,
+# hack attempts, probing, etc. Marked for use with reCAPTCHA and also listed
+# in the ignore.dat file by default to reduce the false positive risk. I would
+# encourage any CIDRAM users from Vietnam, or targeting traffic from Vietnam,
+# to keep it listed in their ignore.dat file (others may want unignore it at
+# their own discretion).
+# %Listed, abuseat.org (CBL-Listed): 6.34% (AS45899).
+# Stop Forum Spam (SFS) listings: 112 (AS7643), 29,855 (AS45899), 812 (AS135905).
+# Updated: 2020.09.04
 
+129.227.184.0/23 Deny Generic
+Origin: SG
 23.50.12.0/22 Deny Generic
 23.53.208.0/21 Deny Generic
 23.60.70.0/23 Deny Generic
@@ -5400,30 +5402,81 @@ Origin: US
 14.160.0.0/11 Deny Generic
 14.224.0.0/11 Deny Generic
 43.239.220.0/23 Deny Generic
+45.117.156.0/22 Deny Generic
+45.120.224.0/24 Deny Generic
+45.124.84.0/22 Deny Generic
 45.124.92.0/22 Deny Generic
+45.125.238.0/24 Deny Generic
 45.254.32.0/22 Deny Generic
 61.14.232.0/22 Deny Generic
+103.3.244.0/22 Deny Generic
 103.9.76.0/22 Deny Generic
+103.9.206.0/23 Deny Generic
 103.10.44.0/22 Deny Generic
 103.42.56.0/22 Deny Generic
 103.47.192.0/23 Deny Generic
-103.48.191.0/24 Deny Generic
+103.48.80.0/22 Deny Generic
+103.48.188.0/22 Deny Generic
 103.53.168.0/23 Deny Generic
+103.54.248.0/22 Deny Generic
 103.56.156.0/22 Deny Generic
 103.57.220.0/22 Deny Generic
-103.68.252.0/22 Deny Generic
-103.69.192.0/23 Deny Generic
+103.68.248.0/21 Deny Generic
+103.69.192.0/22 Deny Generic
+103.75.184.0/22 Deny Generic
+103.78.92.0/24 Deny Generic
 103.79.140.0/22 Deny Generic
+103.82.24.0/22 Deny Generic
 103.82.36.0/22 Deny Generic
 103.84.76.0/22 Deny Generic
+103.89.88.0/22 Deny Generic
+103.90.220.0/23 Deny Generic
+103.90.222.0/24 Deny Generic
+103.90.224.0/22 Deny Generic
+103.97.124.0/24 Deny Generic
+103.99.0.0/22 Deny Generic
+103.103.116.0/22 Deny Generic
 103.107.180.0/22 Deny Generic
+103.109.40.0/22 Deny Generic
+103.113.88.0/22 Deny Generic
+103.114.104.0/22 Deny Generic
+103.119.84.0/22 Deny Generic
+103.125.188.0/22 Deny Generic
 103.125.192.0/22 Deny Generic
+103.130.56.0/22 Deny Generic
 103.131.68.0/22 Deny Generic
+103.133.104.0/21 Deny Generic
+103.138.88.0/22 Deny Generic
+103.138.108.0/23 Deny Generic
+103.139.44.0/23 Deny Generic
+103.139.202.0/23 Deny Generic
+103.140.250.0/23 Deny Generic
+103.141.136.0/22 Deny Generic
+103.143.144.0/23 Deny Generic
+103.145.4.0/23 Deny Generic
+103.145.252.0/22 Deny Generic
+103.147.34.0/23 Deny Generic
+103.147.184.0/23 Deny Generic
+103.147.188.0/23 Deny Generic
 103.148.56.0/23 Deny Generic
+103.149.12.0/23 Deny Generic
+103.149.98.0/23 Deny Generic
+103.149.250.0/23 Deny Generic
+103.151.122.0/23 Deny Generic
+103.151.124.0/23 Deny Generic
+103.151.240.0/23 Deny Generic
+103.151.244.0/23 Deny Generic
+103.152.50.0/23 Deny Generic
+103.153.72.0/21 Deny Generic
+103.153.216.0/23 Deny Generic
 103.199.8.0/23 Deny Generic
+103.200.20.0/23 Deny Generic
+103.200.23.0/24 Deny Generic
 103.207.36.0/22 Deny Generic
 103.223.4.0/22 Deny Generic
+103.226.248.0/22 Deny Generic
 103.237.96.0/22 Deny Generic
+103.238.80.0/22 Deny Generic
 103.238.214.0/23 Deny Generic
 103.250.24.0/22 Deny Generic
 103.255.236.0/22 Deny Generic
@@ -5431,6 +5484,7 @@ Origin: US
 123.16.0.0/12 Deny Generic
 146.196.64.0/22 Deny Generic
 157.119.246.0/23 Deny Generic
+180.214.236.0/22 Deny Generic
 202.92.4.0/22 Deny Generic
 203.160.0.0/23 Deny Generic
 203.160.132.0/22 Deny Generic
@@ -7397,8 +7451,8 @@ recaptcha:
 # ASN 3255 (State Enterprise Scientific and Telecommunication Centre "Ukrainian
 # Academic and Research Network" of the Institute for Condensed Matter Physics
 # of the National Academy of Science of Ukraine / UARNet).
-# Stop Forum Spam (SFS) listings: 1,471.
-# Updated: 2020.03.26
+# Stop Forum Spam (SFS) listings: 1,536.
+# Updated: 2020.09.08
 
 193.232.65.0/24 Deny Spam
 Origin: RU
@@ -7430,16 +7484,14 @@ Origin: RU
 194.44.12.0/23 Deny Spam
 194.44.15.0/24 Deny Spam
 194.44.16.0/22 Deny Spam
-194.44.20.0/23 Deny Spam
+194.44.20.0/24 Deny Spam
 194.44.24.0/24 Deny Spam
 194.44.26.0/23 Deny Spam
 194.44.29.0/24 Deny Spam
-194.44.30.0/23 Deny Spam
+194.44.31.0/24 Deny Spam
 194.44.32.0/22 Deny Spam
 194.44.36.0/23 Deny Spam
-194.44.40.0/23 Deny Spam
-194.44.43.0/24 Deny Spam
-194.44.44.0/22 Deny Spam
+194.44.40.0/21 Deny Spam
 194.44.48.0/23 Deny Spam
 194.44.50.0/24 Deny Spam
 194.44.52.0/23 Deny Spam
@@ -7454,11 +7506,13 @@ Origin: RU
 194.44.72.0/21 Deny Spam
 194.44.80.0/21 Deny Spam
 194.44.89.0/24 Deny Spam
-194.44.90.0/23 Deny Spam
+194.44.91.0/24 Deny Spam
 194.44.92.0/22 Deny Spam
-194.44.98.0/23 Deny Spam
+194.44.98.0/24 Deny Spam
 194.44.100.0/22 Deny Spam
-194.44.104.0/21 Deny Spam
+194.44.104.0/24 Deny Spam
+194.44.106.0/23 Deny Spam
+194.44.108.0/22 Deny Spam
 194.44.112.0/20 Deny Spam
 194.44.128.0/21 Deny Spam
 194.44.136.0/22 Deny Spam
@@ -7468,7 +7522,7 @@ Origin: RU
 194.44.154.0/23 Deny Spam
 194.44.156.0/22 Deny Spam
 194.44.160.0/20 Deny Spam
-194.44.176.0/23 Deny Spam
+194.44.177.0/24 Deny Spam
 194.44.178.0/24 Deny Spam
 194.44.180.0/22 Deny Spam
 194.44.184.0/21 Deny Spam
@@ -7484,14 +7538,14 @@ Origin: RU
 194.44.220.0/22 Deny Spam
 194.44.224.0/19 Deny Spam
 195.69.246.0/24 Deny Spam
-213.174.0.0/23 Deny Spam
+213.174.1.0/24 Deny Spam
 213.174.2.0/24 Deny Spam
 213.174.4.0/23 Deny Spam
 213.174.6.0/24 Deny Spam
 213.174.8.0/21 Deny Spam
-213.174.20.0/23 Deny Spam
+213.174.21.0/24 Deny Spam
 213.174.22.0/24 Deny Spam
-213.174.31.0/24 Deny Spam
+213.174.30.0/23 Deny Spam
 217.65.248.0/21 Deny Spam
 Origin: UA
 Tag: UARNet
@@ -7996,7 +8050,7 @@ Tag: BRAC
 
 
 # ASN 41109 ("Center of Children Telemedicin and new information technologis").
-# Updated: 2017.10.23 / Checked: 2020.01.30
+# Updated: 2017.10.23 / Checked: 2020.09.09
 
 81.200.80.0/20 Deny Generic
 Origin: RU
@@ -14998,6 +15052,83 @@ Tag: Orange S.A
 115.178.24.0/22 Deny Malware
 Origin: KH
 Tag: CAMBODIAN SINGMENG TELEMEDIA
+---
+recaptcha:
+ enabled: true
+
+
+# ASN 34224 ("Neterra Ltd").
+# Major Bulgarian complex ISP and routing provider. Also a source of spam and
+# other unwanted traffic. Listing just the known affected ranges only.
+# Stop Forum Spam (SFS) listings: 3,105.
+# Updated: 2020.09.04
+
+31.13.195.0/24 Deny Spam
+87.120.37.0/24 Deny Spam
+87.120.254.0/24 Deny Spam
+87.121.0.199/32 Deny Spam
+87.121.52.41/32 Deny Spam
+91.92.109.43/32 Deny Spam
+212.73.131.30/32 Deny Spam
+Origin: BG
+Tag: Neterra Ltd
+---
+recaptcha:
+ enabled: true
+
+
+# ASN 43754 ("Asiatech Data Transmission company").
+# Iranian transit network. Also a source of spam. Listing just the known
+# affected ranges only.
+# Stop Forum Spam (SFS) listings: 632.
+# Updated: 2020.09.04
+
+31.25.135.80/32 Deny Spam
+37.156.10.206/32 Deny Spam
+46.245.104.178/32 Deny Spam
+77.238.123.226/32 Deny Spam
+79.127.33.146/32 Deny Spam
+79.127.56.186/32 Deny Spam
+86.57.32.177/32 Deny Spam
+86.57.111.115/32 Deny Spam
+93.115.147.0/32 Deny Spam
+95.82.7.120/32 Deny Spam
+95.82.12.29/32 Deny Spam
+176.65.241.140/32 Deny Spam
+178.22.121.69/32 Deny Spam
+185.112.35.27/32 Deny Spam
+Origin: IR
+Tag: Asiatech
+---
+recaptcha:
+ enabled: true
+
+
+# ASN 680 ("Verein zur Foerderung eines Deutschen Forschungsnetzes e.V").
+# Scientific research and education organisation. A very large number of
+# universities in Europe route through this ASN, with mostly human endpoints,
+# so this ASN should definitely never be blocked in entirety. However, it's
+# also a source of spam and various other unwanted traffic. As such, the
+# specific known currently affected ranges are listed here.
+# Stop Forum Spam (SFS) listings: 2,132.
+# Updated: 2020.09.11
+
+130.149.80.199/32 Deny Spam
+131.220.6.0/24 Deny Malware
+134.76.251.134/32 Deny Spam
+134.169.94.118/32 Deny Spam
+141.39.214.208/32 Deny Spam
+141.41.247.26/32 Deny Spam
+188.1.67.1/32 Deny Malware
+192.53.103.119/32 Deny Spam
+193.174.1.218/32 Deny Spam
+193.175.244.0/24 Deny Spam
+194.94.198.155/32 Deny Spam
+195.37.142.70/32 Deny Spam
+195.37.166.236/32 Deny Spam
+195.37.209.9/32 Deny Spam
+Origin: DE
+Tag: DFN
 ---
 recaptcha:
  enabled: true

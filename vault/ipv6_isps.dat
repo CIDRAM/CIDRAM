@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_isps.dat
 
-# Version: 2020.244.693
-# Last modified: 2020.09.01
+# Version: 2020.254.603
+# Last modified: 2020.09.11
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage, i.e., with ignore.dat, with reCAPTCHA, with "extended rules" (default bypasses): « [ ]Low [x]Medium [ ]High »
@@ -1172,21 +1172,38 @@ recaptcha:
  enabled: true
 
 
-# ASN 45899 ("VietNam Post and Telecom Corporation").
-# Would prefer to not include this ASN in this file due to the high risk of
-# false positives, but the amount of attempted spamming, hacking, probing, etc
-# seen from this ASN, plus its presence in numerous worst offenders lists and
-# blacklists, are not ignorable at this time. Marked for use with reCAPTCHA to
-# reduce the false positive risk, and I would encourage any CIDRAM users from
-# Vietnam, or targeting traffic from Vietnam, to list this section in their
-# ignore.dat file to reduce the false positive risk.
-# %Listed, abuseat.org (CBL-Listed): 6.34%.
-# Stop Forum Spam (SFS) listings: 30,846.
-# Updated: 2020.08.11
+# ASNs 7643, 45899, 135905 ("VietNam Post and Telecom Corporation").
+# A *major* Vietnamese domestic ISP, but also a significant source of spam,
+# hack attempts, probing, etc. Marked for use with reCAPTCHA and also listed
+# in the ignore.dat file by default to reduce the false positive risk. I would
+# encourage any CIDRAM users from Vietnam, or targeting traffic from Vietnam,
+# to keep it listed in their ignore.dat file (others may want unignore it at
+# their own discretion).
+# %Listed, abuseat.org (CBL-Listed): 6.34% (AS45899).
+# Stop Forum Spam (SFS) listings: 112 (AS7643), 29,855 (AS45899), 812 (AS135905).
+# Updated: 2020.09.04
 
+2602:ffe4:c34::/48 Deny Generic
+Origin: US
 2001:df2:ca00::/48 Deny Generic
 2001:df2:ce00::/48 Deny Generic
+2001:df3:900::/48 Deny Generic
+2001:df3:5c00::/48 Deny Generic
+2001:df4:2d00::/48 Deny Generic
+2001:df7:c600::/48 Deny Generic
+2001:df7:cc00::/48 Deny Generic
+2001:df7:ce00::/48 Deny Generic
 2001:ee0::/32 Deny Generic
+2400:6540::/48 Deny Generic
+2401:1cc0::/48 Deny Generic
+2401:c440::/48 Deny Generic
+2402:6440:1::/48 Deny Generic
+2402:6440:2::/48 Deny Generic
+2403:6a40:1::/48 Deny Generic
+2403:b3c0::/48 Deny Generic
+2404:c6c0::/48 Deny Generic
+2405:1040::/48 Deny Generic
+2405:10c0::/48 Deny Generic
 2405:f980::/48 Deny Generic
 Origin: VN
 Tag: VNPT Corp
@@ -1566,8 +1583,8 @@ recaptcha:
 # ASN 3255 (State Enterprise Scientific and Telecommunication Centre "Ukrainian
 # Academic and Research Network" of the Institute for Condensed Matter Physics
 # of the National Academy of Science of Ukraine / UARNet).
-# Stop Forum Spam (SFS) listings: 1,471.
-# Updated: 2017.07.08 / Checked: 2020.03.26
+# Stop Forum Spam (SFS) listings: 1,536.
+# Updated: 2017.07.08 / Checked: 2020.09.08
 
 2a00:fc00::/32 Deny Spam
 Origin: UA
@@ -2720,6 +2737,23 @@ Origin: PL
 2620:107:4008:86d::/64 Deny Cloud
 Origin: US
 Tag: PT Telekomunikasi Indonesia
+---
+recaptcha:
+ enabled: true
+
+
+# ASN 680 ("Verein zur Foerderung eines Deutschen Forschungsnetzes e.V").
+# Scientific research and education organisation. A very large number of
+# universities in Europe route through this ASN, with mostly human endpoints,
+# so this ASN should definitely never be blocked in entirety. However, it's
+# also a source of spam and various other unwanted traffic. As such, the
+# specific known currently affected ranges are listed here.
+# Stop Forum Spam (SFS) listings: 2,132.
+# Updated: 2020.09.11
+
+2a00:5ba0:10:2242::/64 Deny Malware
+Origin: DE
+Tag: DFN
 ---
 recaptcha:
  enabled: true

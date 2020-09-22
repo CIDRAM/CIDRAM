@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_isps.dat
 
-# Version: 2020.254.603
-# Last modified: 2020.09.11
+# Version: 2020.263.243
+# Last modified: 2020.09.20
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage, i.e., with ignore.dat, with reCAPTCHA, with "extended rules" (default bypasses): « [ ]Low [x]Medium [ ]High »
@@ -1488,8 +1488,8 @@ recaptcha:
 # ASN 9387 ("AUGERE-Pakistan").
 # Listed due to spam incidence. Reduced reports this past year; maybe I could
 # eventually delist this section finally? We'll see how it goes.
-# Stop Forum Spam (SFS) listings: 23.
-# Updated: 2017.03.22 / Checked: 2020.03.26
+# Stop Forum Spam (SFS) listings: 17.
+# Updated: 2017.03.22 / Checked: 2020.09.19
 
 2401:4100::/32 Deny Spam
 Origin: PK
@@ -1520,9 +1520,9 @@ recaptcha:
 # default).
 
 # ASN 12389 ("PJSC Rostelecom").
-# %Listed, abuseat.org (CBL-Listed): 0.52%.
-# Stop Forum Spam (SFS) listings: 234,919.
-# Updated: 2019.03.17 / Checked: 2020.03.26
+# %Listed, abuseat.org (CBL-Listed): 0.34%.
+# Stop Forum Spam (SFS) listings: 214,004.
+# Updated: 2019.03.17 / Checked: 2020.09.19
 
 2a00:1640::/32 Deny Spam
 2a00:1e88::/32 Deny Spam
@@ -1535,30 +1535,15 @@ recaptcha:
  enabled: true
 
 
-# ASN 8402 ("OJSC Vimpelcom").
+# ASNs 3216, 8402 ("PJSC Vimpelcom", "OJSC Vimpelcom").
 # Similarly to with the Rostelecom CIDRs, blocking the entirety of all
 # "Vimpelcom" ASNs could be problematic. Instead, we'll try to limit
 # listings to those CIDRs known to be problematic.
-# Stop Forum Spam (SFS) listings: 3,963.
-# Updated: 2017.06.08 / Checked: 2020.03.26
+# Stop Forum Spam (SFS) listings: 16,992 (AS3216), 7,598 (AS8402).
+# Updated: 2020.09.19
 
-2a00:18c0::/32 Deny Generic
-Origin: RU
-Tag: OJSC Vimpelcom
----
-recaptcha:
- enabled: true
-
-
-# ASN 3216 ("PJSC Vimpelcom").
-# Similarly to with the Rostelecom CIDRs, blocking the entirety of all
-# "Vimpelcom" ASNs could be problematic. Instead, we'll try to limit
-# listings to those CIDRs known to be problematic.
-# %Listed, abuseat.org (CBL-Listed): 7.70%.
-# Stop Forum Spam (SFS) listings: 9,116.
-# Updated: 2017.09.30 / Checked: 2020.03.26
-
-2a00:1248::/32 Deny Generic
+2a00:1248::/32 Deny Spam
+2a00:18c0::/32 Deny Spam
 Origin: RU
 Tag: PJSC Vimpelcom
 ---
@@ -2295,11 +2280,12 @@ recaptcha:
 # ASN 13489 ("EPM Telecomunicaciones S.A. E.S.P").
 # Source of forum spam and some email harvestors.
 # (Mark EU and US CIDRs as cloud; the rest as spam).
-# %Listed, abuseat.org (CBL-Listed): 0.38%.
-# Stop Forum Spam (SFS) listings: 6,140.
-# Updated: 2020.04.05
+# %Listed, abuseat.org (CBL-Listed): 0.39%.
+# Stop Forum Spam (SFS) listings: 6,748.
+# Updated: 2020.09.20
 
 2800:e0::/28 Deny Spam
+2801:17:2800::/48 Deny Spam
 2801:19:4800::/48 Deny Spam
 2801:1d:4800::/48 Deny Spam
 2801:11c:a0::/43 Deny Spam
@@ -2315,225 +2301,11 @@ recaptcha:
 
 # ASN 6830 ("Liberty Global B.V").
 # Source of forum spam and some email harvestors.
-# Stop Forum Spam (SFS) listings: 12,110.
+# Stop Forum Spam (SFS) listings: 11,907.
 # Updated: 2020.07.21
 
-2001:730::/29 Deny Spam
-2a02:8380::/28 Deny Spam
-Origin: AT
-2001:678:310::/48 Deny Spam
-2001:67c:2350::/48 Deny Spam
-2a00:e2c0::/32 Deny Spam
-2a02:aa00::/27 Deny Spam
-2a03:5120::/40 Deny Spam
-2a05:e100::/48 Deny Spam
-2a07:291b::/32 Deny Spam
-2a0d:ed80:300::/40 Deny Spam
-Origin: CH
-2001:67c:1b50::/48 Deny Spam
-2001:67c:2d2c::/48 Deny Spam
-2a00:1e60::/32 Deny Spam
-2a01:5e0::/32 Deny Spam
-2a02:8300::/28 Deny Spam
-2a04:4d40::/29 Deny Spam
-2a0b:c180::/32 Deny Spam
-2a0b:d780::/29 Deny Spam
-2a0b:e440::/29 Deny Spam
-Origin: CZ
-2a01:b460::/32 Deny Spam
-2a02:908::/32 Deny Spam
-2a02:3102:8100::/46 Deny Spam
-2a02:3102:8110::/46 Deny Spam
-2a02:3102:8200::/46 Deny Spam
-2a02:3102:8210::/46 Deny Spam
-2a02:3102:8220::/46 Deny Spam
-2a02:3102:8300::/46 Deny Spam
-2a02:3102:8400::/46 Deny Spam
-2a02:3102:8410::/46 Deny Spam
-2a02:3102:8420::/46 Deny Spam
-2a02:3102:8430::/46 Deny Spam
-2a02:3102:8440::/46 Deny Spam
-2a02:3102:8460::/46 Deny Spam
-2a02:3102:8500::/46 Deny Spam
-2a02:3102:8510::/46 Deny Spam
-2a02:3102:8600::/46 Deny Spam
-2a02:3102:8700::/46 Deny Spam
-2a02:3102:8710::/46 Deny Spam
-2a02:3102:8720::/46 Deny Spam
-2a02:3102:8800::/46 Deny Spam
-2a02:3102:8a00::/46 Deny Spam
-2a02:3102:8a10::/46 Deny Spam
-2a02:3102:8a20::/46 Deny Spam
-2a02:3102:8b00::/46 Deny Spam
-2a02:3102:8c00::/46 Deny Spam
-2a02:3102:8c10::/46 Deny Spam
-2a02:3102:8c20::/46 Deny Spam
-2a02:3102:8c30::/46 Deny Spam
-2a02:3102:8c40::/46 Deny Spam
-2a02:3102:8d00::/46 Deny Spam
-2a02:3102:8d10::/46 Deny Spam
-2a02:3102:8d20::/46 Deny Spam
-2a02:3102:8e00::/46 Deny Spam
-2a02:3102:8e10::/46 Deny Spam
-2a02:3102:8e20::/46 Deny Spam
-2a02:3102:8e30::/46 Deny Spam
-2a02:3102:8f00::/46 Deny Spam
-2a02:3102:8f10::/46 Deny Spam
-2a02:3102:9400::/46 Deny Spam
-2a02:3102:9500::/46 Deny Spam
-2a02:3102:9510::/46 Deny Spam
-2a02:3102:9600::/46 Deny Spam
-2a02:3102:9700::/46 Deny Spam
-2a02:3102:9710::/46 Deny Spam
-2a02:3102:9720::/46 Deny Spam
-2a02:3102:9800::/46 Deny Spam
-2a02:3102:9910::/46 Deny Spam
-2a02:3102:9920::/46 Deny Spam
-2a02:3102:9a00::/46 Deny Spam
-2a02:3102:9b00::/46 Deny Spam
-2a02:3102:9b10::/46 Deny Spam
-2a02:3102:9c00::/46 Deny Spam
-2a02:3102:9c10::/46 Deny Spam
-2a02:3102:9d00::/46 Deny Spam
-2a02:3102:9e00::/46 Deny Spam
-2a02:3102:9e10::/46 Deny Spam
-2a02:3102:9e20::/46 Deny Spam
-2a02:3102:9e30::/46 Deny Spam
-2a02:3102:9e40::/46 Deny Spam
-2a02:3102:9f00::/46 Deny Spam
-2a02:3102:9f10::/46 Deny Spam
-2a02:3102:9f20::/46 Deny Spam
-2a02:3102:a000::/46 Deny Spam
-2a02:3102:a100::/46 Deny Spam
-2a02:3102:a200::/46 Deny Spam
-2a02:3102:a210::/46 Deny Spam
-2a02:3102:a220::/46 Deny Spam
-2a02:3102:a230::/46 Deny Spam
-2a02:3102:a400::/46 Deny Spam
-2a02:3102:a510::/46 Deny Spam
-2a02:3102:a520::/46 Deny Spam
-2a02:3102:a530::/46 Deny Spam
-2a02:3102:a600::/46 Deny Spam
-2a02:3102:a610::/46 Deny Spam
-2a02:3102:a620::/46 Deny Spam
-2a02:3102:a630::/46 Deny Spam
-2a02:3102:a640::/46 Deny Spam
-2a02:3102:a650::/46 Deny Spam
-2a02:3102:a800::/46 Deny Spam
-2a02:3102:a810::/46 Deny Spam
-2a02:3102:a900::/46 Deny Spam
-2a02:3102:a910::/46 Deny Spam
-2a02:3102:aa00::/46 Deny Spam
-2a02:3102:aa20::/46 Deny Spam
-2a02:3102:aa30::/46 Deny Spam
-2a02:3102:aa40::/46 Deny Spam
-2a02:3102:aa50::/46 Deny Spam
-2a02:3102:ab00::/46 Deny Spam
-2a02:3102:ab10::/46 Deny Spam
-2a02:3102:ab20::/46 Deny Spam
-2a02:3102:ab30::/46 Deny Spam
-2a02:3102:ad00::/46 Deny Spam
-2a02:3102:ad10::/46 Deny Spam
-2a02:3102:ad20::/46 Deny Spam
-2a02:3102:af00::/46 Deny Spam
-2a02:3102:af10::/46 Deny Spam
-2a02:3102:b000::/46 Deny Spam
-2a02:3102:b010::/46 Deny Spam
-2a02:3102:b020::/46 Deny Spam
-2a02:3102:b030::/46 Deny Spam
-2a02:3102:b040::/46 Deny Spam
-2a02:3102:b050::/46 Deny Spam
-2a02:3102:b100::/46 Deny Spam
-2a02:3102:b120::/46 Deny Spam
-2a02:3102:b220::/46 Deny Spam
-2a02:3102:b300::/46 Deny Spam
-2a02:3102:b310::/46 Deny Spam
-2a02:3102:b400::/46 Deny Spam
-2a02:3102:b410::/46 Deny Spam
-2a02:3102:b420::/46 Deny Spam
-2a02:3102:b450::/46 Deny Spam
-2a02:3102:b460::/46 Deny Spam
-2a02:3102:b500::/46 Deny Spam
-2a02:3102:b540::/46 Deny Spam
-2a02:3102:b580::/46 Deny Spam
-2a02:3102:b700::/46 Deny Spam
-2a02:3102:b800::/46 Deny Spam
-2a02:3102:b900::/46 Deny Spam
-2a02:3102:b910::/46 Deny Spam
-2a02:3102:b920::/46 Deny Spam
-2a02:3102:ba00::/46 Deny Spam
-2a02:3102:ba10::/46 Deny Spam
-2a02:3102:ba20::/46 Deny Spam
-2a02:3102:bb00::/46 Deny Spam
-2a02:3102:bb10::/46 Deny Spam
-2a02:3102:bd00::/46 Deny Spam
-2a02:3102:bd10::/46 Deny Spam
-2a02:3102:bd20::/46 Deny Spam
-2a02:3102:be00::/46 Deny Spam
-2a02:3102:be20::/46 Deny Spam
-2a02:3102:be30::/46 Deny Spam
-2a02:3102:be40::/46 Deny Spam
-2a02:3102:bf00::/46 Deny Spam
-2a02:3102:bf10::/46 Deny Spam
-2a02:3102:bf20::/46 Deny Spam
-2a02:3102:c000::/46 Deny Spam
-2a02:3102:c010::/46 Deny Spam
-2a02:3102:c100::/46 Deny Spam
-2a02:3102:c120::/46 Deny Spam
-2a02:3102:c200::/46 Deny Spam
-2a02:3102:c210::/46 Deny Spam
-2a02:3102:c220::/46 Deny Spam
-2a02:3102:c230::/46 Deny Spam
-2a02:3102:c260::/46 Deny Spam
-2a02:3102:c270::/46 Deny Spam
-2a02:3102:c284::/46 Deny Spam
-2a02:3102:c288::/45 Deny Spam
-2a02:3102:c300::/46 Deny Spam
-2a02:3102:c310::/46 Deny Spam
-2a02:3102:c320::/46 Deny Spam
-2a02:3102:c330::/46 Deny Spam
-2a02:3102:c3a0::/46 Deny Spam
-2a02:3102:c400::/46 Deny Spam
-2a02:3102:c410::/46 Deny Spam
-2a02:3102:c510::/46 Deny Spam
-2a02:3102:c520::/46 Deny Spam
-2a02:3102:c530::/46 Deny Spam
-2a02:3102:c540::/46 Deny Spam
-2a02:3102:c600::/46 Deny Spam
-2a02:3102:c610::/46 Deny Spam
-2a02:3102:c620::/46 Deny Spam
-2a02:3102:c630::/46 Deny Spam
-2a02:3102:c640::/46 Deny Spam
-2a02:3102:c650::/46 Deny Spam
-2a02:3102:c700::/46 Deny Spam
-2a02:3102:c710::/46 Deny Spam
-2a02:3102:ca00::/46 Deny Spam
-2a02:3102:ca10::/46 Deny Spam
-2a02:3102:cb00::/46 Deny Spam
-2a02:3102:cb10::/46 Deny Spam
-2a02:3102:cb20::/46 Deny Spam
-2a02:3102:cb30::/46 Deny Spam
-2a02:3102:cb40::/46 Deny Spam
-2a02:3102:cb50::/46 Deny Spam
-2a02:3102:cb60::/46 Deny Spam
-2a02:45c0:14::/48 Deny Spam
-2a02:45c0:17::/48 Deny Spam
-2a02:8070::/31 Deny Spam
-2a03:4b20:f000::/36 Deny Spam
-Origin: DE
-2a02:ab80::/28 Deny Spam
-Origin: HU
-2a02:8080::/29 Deny Spam
-Origin: IE
-2a02:a200::/27 Deny Spam
-Origin: NL
-2001:4050::/32 Deny Spam
-2a02:a300::/27 Deny Spam
-Origin: PL
-2a04:2400::/27 Deny Spam
-Origin: RO
-2a02:ab00::/29 Deny Spam
-Origin: SK
+2a02:908:13b7:c840::/64 Deny Spam
+2a02:ab88:3642:2700::/64 Deny Spam
 Tag: Liberty Global
 ---
 recaptcha:

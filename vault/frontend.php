@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2020.08.22).
+ * This file: Front-end handler (last modified: 2020.09.24).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -3713,7 +3713,8 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'aux' && $CIDRAM['FE']['Permissi
         /** Process other options and special flags. */
         foreach ([
             ['recaptchaEnabledTrue', 'Mark for use with reCAPTCHA'],
-            ['suppressOutputTemplate', 'Suppress output template']
+            ['suppressOutputTemplate', 'Suppress output template'],
+            ['forciblyDisableIPTracking', 'Forcibly disable IP tracking']
         ] as $CIDRAM['AuxSpecialFlag']) {
             if (isset($_POST[$CIDRAM['AuxSpecialFlag'][0]]) && $_POST[$CIDRAM['AuxSpecialFlag'][0]] === 'on') {
                 $CIDRAM['AuxData'][$_POST['ruleName']][$CIDRAM['AuxSpecialFlag'][1]] = true;

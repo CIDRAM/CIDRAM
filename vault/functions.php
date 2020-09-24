@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2020.07.05).
+ * This file: Functions file (last modified: 2020.09.24).
  */
 
 /** Autoloader for CIDRAM classes. */
@@ -2029,6 +2029,11 @@ $CIDRAM['AuxAction'] = function (string $Action, string $Name, string $Reason = 
         $CIDRAM['Suppress output template'] = true;
     }
 
+    /** Forcibly disable IP tracking. */
+    if (!empty($Flags['Forcibly disable IP tracking']) && !empty($CIDRAM['Trackable'])) {
+        $CIDRAM['Trackable'] = false;
+    }
+
     /** Whitelist. */
     if ($Action === 'Whitelist') {
         $CIDRAM['ZeroOutBlockInfo'](true);
@@ -2140,7 +2145,8 @@ $CIDRAM['Aux'] = function () use (&$CIDRAM) {
         /** Other options and special flags to apply (if any have been specified). */
         $Flags = [
             'Mark for use with reCAPTCHA' => !empty($Data['Mark for use with reCAPTCHA']),
-            'Suppress output template' => !empty($Data['Suppress output template'])
+            'Suppress output template' => !empty($Data['Suppress output template']),
+            'Forcibly disable IP tracking' => !empty($Data['Forcibly disable IP tracking'])
         ];
 
         /** Iterate through modes. */

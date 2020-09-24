@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2020.08.06).
+ * This file: Front-end functions file (last modified: 2020.09.24).
  */
 
 /**
@@ -3239,7 +3239,8 @@ $CIDRAM['AuxGenerateFEData'] = function () use (&$CIDRAM) {
         $Flags = [];
         foreach ([
             ['Mark for use with reCAPTCHA', 'label_aux_special_recaptcha'],
-            ['Suppress output template', 'label_aux_special_suppress']
+            ['Suppress output template', 'label_aux_special_suppress'],
+            ['Forcibly disable IP tracking', 'label_aux_special_ip_tracking']
         ] as $Flag) {
             if (!empty($Data[$Flag[0]]) && $Label = $CIDRAM['L10N']->getString($Flag[1])) {
                 $Flags[] = $Label;

@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6.dat
 
-# Version: 2020.263.243
-# Last modified: 2020.09.22
+# Version: 2020.268.346
+# Last modified: 2020.09.25
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage, i.e., with ignore.dat, with reCAPTCHA, with "extended rules" (default bypasses): « [x]Low [ ]Medium [ ]High »
@@ -712,17 +712,6 @@ Origin: US
 Tag: Rackspace Hosting
 
 
-# ASN 35017 ("Swiftway Communications, Inc").
-# Stop Forum Spam (SFS) listings: 558.
-# Updated: 2020.04.07
-
-2a02:748:4000::/35 Deny Cloud
-2a02:748:a000::/35 Deny Cloud
-2a02:748:e000::/35 Deny Cloud
-Origin: DE
-Tag: Swiftway
-
-
 # ASN 6939 ("Hurricane Electric, Inc").
 # Stop Forum Spam (SFS) listings: 699.
 # Updated: 2020.05.24
@@ -1418,14 +1407,13 @@ Tag: AS46562
 # significant source of ongoing spam, hack attempts, and other nefarious
 # traffic over the course of many years.
 # (When updating, mark EU origin as proxy; everything else as cloud).
-# Updated: 2020.04.05
+# Updated: 2020.09.25
 
 2001:830::/32 Deny Cloud
 2001:aa8::/32 Deny Cloud
 2001:1520::/32 Deny Cloud
 2a00:e10::/32 Deny Cloud
 2a00:1158::/32 Deny Cloud
-2a00:1168::/32 Deny Cloud
 2a00:1c90::/32 Deny Cloud
 2a00:74c0::/32 Deny Cloud
 2a01:488::/32 Deny Cloud
@@ -1455,6 +1443,8 @@ Origin: SG
 2603:5:2200::/40 Deny Cloud
 2604:bc80::/32 Deny Cloud
 2606:e180::/32 Deny Cloud
+2607:f208:d310::/44 Deny Cloud
+2607:f208:df05::/48 Deny Cloud
 Origin: US
 Tag: Host Europe GmbH
 
@@ -1642,16 +1632,22 @@ Tag: ESDS
 
 # ASN 51430 ("AltusHost B.V").
 # Dedicated webhosting provider. Source of blog and forum spam.
-# Stop Forum Spam (SFS) listings: 8,590.
-# Updated: 2020.04.07
+# Stop Forum Spam (SFS) listings: 7,966.
+# Updated: 2020.09.25
 
 2a00:7140::/32 Deny Cloud
 2a00:7142::/31 Deny Cloud
 2a00:7144::/32 Deny Cloud
 2a00:7145::/48 Deny Cloud
+2a00:7145:b1::/48 Deny Cloud
 2a00:7146::/48 Deny Cloud
 2a00:7147:22::/48 Deny Cloud
 2a00:7147:b1::/48 Deny Cloud
+2a00:7147:e1::/48 Deny Cloud
+2a00:7147:e2::/47 Deny Cloud
+2a00:7147:e4::/46 Deny Cloud
+2a00:7147:e8::/47 Deny Cloud
+2a00:7147:e10::/48 Deny Cloud
 Origin: NL
 Tag: AltusHost B.V
 
@@ -1786,9 +1782,10 @@ Tag: QuickPacket, LLC
 
 
 # ASNs 10480, 29802, 54540 ("HIVELOCITY VENTURES CORP").
+# Ranges change frequently / Should update often.
 # (Can omit anything under 44../8; clean).
-# Stop Forum Spam (SFS) listings: 5,952 (AS29802), 46 (AS54540).
-# Updated: 2020.07.22
+# Stop Forum Spam (SFS) listings: 5,433 (AS29802), 58 (AS54540).
+# Updated: 2020.09.25
 
 2804:2a88:10::/48 Deny Cloud
 Origin: BR
@@ -1799,18 +1796,23 @@ Origin: BR
 2a02:748:c000::/34 Deny Cloud
 2a0f:5180::/32 Deny Cloud
 Origin: DE
+2402:9e80:8::/48 Deny Cloud
+Origin: HK
 2a0a:1f45::/32 Deny Cloud
+2a0b:b87:ffd1::/48 Deny Cloud
 Origin: NL
-2001:504:3c::/48 Deny Cloud
 2600:c04:1022::/48 Deny Cloud
-2602:fdf1::/36 Deny Cloud
 2602:ff16:1::/48 Deny Cloud
 2602:ff16:2::/47 Deny Cloud
-2602:ff16:4::/48 Deny Cloud
+2602:ff16:4::/47 Deny Cloud
 2602:ff16:6::/48 Deny Cloud
+2602:ff16:9::/48 Deny Cloud
 2602:ff71:1001::/48 Deny Cloud
 2602:ff71:1021::/48 Deny Cloud
+2602:ffc5:180::/47 Deny Cloud
+2602:ffc5:182::/48 Deny Cloud
 2602:ffd1::/46 Deny Cloud
+2602:ffd1:4::/48 Deny Cloud
 2602:fff6:f::/48 Deny Cloud
 2604:880:1::/48 Deny Cloud
 2604:880:2::/47 Deny Cloud
@@ -1818,7 +1820,8 @@ Origin: NL
 2604:880:a::/48 Deny Cloud
 2604:880:d::/48 Deny Cloud
 2604:880:e::/48 Deny Cloud
-2604:880:10::/46 Deny Cloud
+2604:880:11::/48 Deny Cloud
+2604:880:12::/47 Deny Cloud
 2604:880:26::/47 Deny Cloud
 2604:880:32::/48 Deny Cloud
 2604:880:35::/48 Deny Cloud
@@ -1826,7 +1829,7 @@ Origin: NL
 2604:880:3c::/48 Deny Cloud
 2604:880:41::/48 Deny Cloud
 2604:880:4c::/46 Deny Cloud
-2604:880:50::/47 Deny Cloud
+2604:880:50::/48 Deny Cloud
 2604:880:54::/48 Deny Cloud
 2604:880:58::/47 Deny Cloud
 2604:880:5a::/48 Deny Cloud
@@ -1845,11 +1848,11 @@ Origin: NL
 2604:4500:b00::/40 Deny Cloud
 2604:4500:c00::/39 Deny Cloud
 2604:4500:e00::/40 Deny Cloud
-2604:4d40:4000::/36 Deny Cloud
 2604:8380::/32 Deny Cloud
 2606:cd80:1::/48 Deny Cloud
 2620:13e:e000::/48 Deny Cloud
-2620:1e8:2::/48 Deny Cloud
+2620:1e8:1::/48 Deny Cloud
+2620:1e8:2::/47 Deny Cloud
 2620:1e8:4::/47 Deny Cloud
 Origin: US
 Tag: HIVELOCITY VENTURES
@@ -2692,8 +2695,8 @@ Tag: Amazon.com, Inc
 
 
 # ASN 62282 ("UAB Rakrejus").
-# Stop Forum Spam (SFS) listings: 10,008.
-# Updated: 2016.10.01 / Checked: 2020.04.05
+# Stop Forum Spam (SFS) listings: 8,496.
+# Updated: 2016.10.01 / Checked: 2020.09.25
 
 2a01:41a0::/32 Deny Cloud
 2a02:7b40::/32 Deny Cloud
@@ -3145,8 +3148,8 @@ Tag: Lunar Pages
 
 
 # ASN 13213 ("UK-2 Limited").
-# Stop Forum Spam (SFS) listings: 5,955.
-# Updated: 2018.01.08 / Checked: 2020.04.07
+# Stop Forum Spam (SFS) listings: 22,423.
+# Updated: 2018.01.08 / Checked: 2020.09.25
 
 2a02:2498::/32 Deny Cloud
 Origin: GB
@@ -3857,8 +3860,8 @@ Tag: InterCloud ltd
 
 
 # ASN 197540 ("netcup GmbH").
-# Stop Forum Spam (SFS) listings: 3,148.
-# Updated: 2017.02.15 / Checked: 2020.04.07
+# Stop Forum Spam (SFS) listings: 5,673.
+# Updated: 2017.02.15 / Checked: 2020.09.25
 
 2a04:b500::/32 Deny Cloud
 Origin: CH
@@ -3932,8 +3935,8 @@ Tag: ITL Company
 
 
 # ASN 395111 ("KVCHOSTING.COM LLC").
-# Stop Forum Spam (SFS) listings: 3,842.
-# Updated: 2017.03.11 / Checked: 2020.04.07
+# Stop Forum Spam (SFS) listings: 5,013.
+# Updated: 2017.03.11 / Checked: 2020.09.25
 
 2602:ff3c::/36 Deny Cloud
 Origin: US
@@ -4599,8 +4602,8 @@ Tag: Namecheap, Inc
 
 
 # ASN 49349 ("Dotsi, Unipessoal Lda").
-# Stop Forum Spam (SFS) listings: 323.
-# Updated: 2018.04.23 / Checked: 2020.04.05
+# Stop Forum Spam (SFS) listings: 49.
+# Updated: 2018.04.23 / Checked: 2020.09.25
 
 2a00:1c60::/32 Deny Cloud
 Origin: PT

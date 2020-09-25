@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_isps.dat
 
-# Version: 2020.263.243
-# Last modified: 2020.09.20
+# Version: 2020.268.346
+# Last modified: 2020.09.25
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage, i.e., with ignore.dat, with reCAPTCHA, with "extended rules" (default bypasses): « [ ]Low [x]Medium [ ]High »
@@ -2301,11 +2301,14 @@ recaptcha:
 
 # ASN 6830 ("Liberty Global B.V").
 # Source of forum spam and some email harvestors.
-# Stop Forum Spam (SFS) listings: 11,907.
-# Updated: 2020.07.21
+# Stripped back to just the specific offending addresses/ranges (2020.09) to
+# reduce the risk of false positives.
+# Stop Forum Spam (SFS) listings: 11,923.
+# Updated: 2020.09.25
 
-2a02:908:13b7:c840::/64 Deny Spam
-2a02:ab88:3642:2700::/64 Deny Spam
+2a02:908:c30:b1a0::/64 Deny Spam
+2a02:aa12:1540:f700::/64 Deny Spam
+Origin: EU
 Tag: Liberty Global
 ---
 recaptcha:

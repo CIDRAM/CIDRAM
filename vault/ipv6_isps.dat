@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_isps.dat
 
-# Version: 2020.268.346
-# Last modified: 2020.09.25
+# Version: 2020.273.299
+# Last modified: 2020.09.30
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage, i.e., with ignore.dat, with reCAPTCHA, with "extended rules" (default bypasses): « [ ]Low [x]Medium [ ]High »
@@ -166,13 +166,13 @@ recaptcha:
 
 
 # ASN 3223 ("Voxility LLC").
-# Stop Forum Spam (SFS) listings: 2,248.
-# Updated: 2020.04.09
+# Stop Forum Spam (SFS) listings: 2,056.
+# Updated: 2020.09.30
 
 2a03:5180::/45 Deny Generic
 2a03:5180:8::/47 Deny Generic
 2a03:5180:a::/48 Deny Generic
-2a03:5180:c::/48 Deny Generic
+2a03:5180:c::/46 Deny Generic
 2a03:5180:10::/47 Deny Generic
 Origin: RO
 2602:ff84:8::/48 Deny Generic
@@ -452,35 +452,66 @@ recaptcha:
 # Significant source of forum/blog spam. Also a legit Indian ISP with human
 # endpoints. Websites based in, or targeted towards an Indian audience, should
 # keep it listed in their ignore.dat file. Marked for use with reCAPTCHA.
-# %Listed, abuseat.org (CBL-Listed): 36.40%.
-# Stop Forum Spam (SFS) listings: 466.
-# Updated: 2020.04.09
+# %Listed, abuseat.org (CBL-Listed): 32.59%.
+# Stop Forum Spam (SFS) listings: 1,020.
+# Updated: 2020.09.30
 
 2402:8100:b::/48 Deny Spam
-2402:8100:2000::/41 Deny Spam
+2402:8100:2008::/45 Deny Spam
+2402:8100:2010::/44 Deny Spam
+2402:8100:2020::/43 Deny Spam
+2402:8100:2040::/42 Deny Spam
 2402:8100:2080::/42 Deny Spam
 2402:8100:20c4::/47 Deny Spam
 2402:8100:20c7::/48 Deny Spam
+2402:8100:20cd::/48 Deny Spam
 2402:8100:20ce::/47 Deny Spam
 2402:8100:20d0::/47 Deny Spam
-2402:8100:20d2::/48 Deny Spam
 2402:8100:20d4::/48 Deny Spam
 2402:8100:2100::/45 Deny Spam
 2402:8100:2108::/46 Deny Spam
+2402:8100:210c::/47 Deny Spam
 2402:8100:2110::/45 Deny Spam
 2402:8100:2118::/46 Deny Spam
+2402:8100:211c::/47 Deny Spam
 2402:8100:2140::/42 Deny Spam
-2402:8100:2180::/43 Deny Spam
+2402:8100:2180::/47 Deny Spam
+2402:8100:2183::/48 Deny Spam
+2402:8100:2184::/47 Deny Spam
+2402:8100:2187::/48 Deny Spam
+2402:8100:2188::/47 Deny Spam
+2402:8100:218b::/48 Deny Spam
+2402:8100:218c::/47 Deny Spam
+2402:8100:218f::/48 Deny Spam
+2402:8100:2190::/47 Deny Spam
+2402:8100:2193::/48 Deny Spam
+2402:8100:2194::/47 Deny Spam
+2402:8100:2197::/48 Deny Spam
+2402:8100:2198::/47 Deny Spam
+2402:8100:219b::/48 Deny Spam
+2402:8100:219c::/47 Deny Spam
+2402:8100:219f::/48 Deny Spam
 2402:8100:21c0::/45 Deny Spam
 2402:8100:21d0::/45 Deny Spam
 2402:8100:21e0::/43 Deny Spam
 2402:8100:2200::/43 Deny Spam
-2402:8100:2240::/43 Deny Spam
+2402:8100:2240::/42 Deny Spam
 2402:8100:2280::/41 Deny Spam
 2402:8100:2300::/42 Deny Spam
 2402:8100:2380::/42 Deny Spam
-2402:8100:23c0::/48 Deny Spam
+2402:8100:23c0::/43 Deny Spam
+2402:8100:2400::/43 Deny Spam
+2402:8100:24c0::/45 Deny Spam
+2402:8100:24d0::/44 Deny Spam
+2402:8100:24e0::/43 Deny Spam
+2402:8100:2510::/44 Deny Spam
+2402:8100:2520::/43 Deny Spam
+2402:8100:2540::/45 Deny Spam
 2402:8100:2800::/41 Deny Spam
+2402:8100:2880::/44 Deny Spam
+2402:8100:2890::/45 Deny Spam
+2402:8100:2898::/46 Deny Spam
+2402:8100:289c::/47 Deny Spam
 2402:8100:3000::/43 Deny Spam
 2402:8100:3020::/44 Deny Spam
 2402:8100:3030::/48 Deny Spam

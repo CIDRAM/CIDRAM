@@ -1,8 +1,8 @@
 # IPv4 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv4_isps.dat
 
-# Version: 2020.273.299
-# Last modified: 2020.09.30
+# Version: 2020.278.580
+# Last modified: 2020.10.05
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage, i.e., with ignore.dat, with reCAPTCHA, with "extended rules" (default bypasses): « [ ]Low [x]Medium [ ]High »
@@ -1505,14 +1505,14 @@ Tag: Trend Micro
 # ASN 8551 ("Bezeq International-Ltd").
 # Domestic Israeli ISP with human endpoints, but has some bad actors (spambots,
 # scrapers, etc). Marked for use with reCAPTCHA and included in ignore.dat by
-# default to reduce the false positive risk.
-# %Listed, abuseat.org (CBL-Listed): 0.34%.
-# Stop Forum Spam (SFS) listings: 999.
-# Updated: 2020.04.09
+# default to reduce the false positive risk. Non-IL ranges marked as cloud.
+# %Listed, abuseat.org (CBL-Listed): 0.27%.
+# Stop Forum Spam (SFS) listings: 822.
+# Updated: 2020.10.05
 
-92.122.128.0/20 Deny Generic
-95.100.204.0/22 Deny Generic
-95.101.4.0/22 Deny Generic
+92.122.128.0/20 Deny Cloud
+95.100.204.0/22 Deny Cloud
+95.101.4.0/22 Deny Cloud
 Origin: EU
 31.168.0.0/16 Deny Generic
 62.219.0.0/16 Deny Generic
@@ -1525,6 +1525,7 @@ Origin: EU
 109.64.0.0/14 Deny Generic
 128.139.194.0/24 Deny Generic
 141.226.80.0/23 Deny Generic
+147.235.229.0/24 Deny Generic
 185.187.32.0/22 Deny Generic
 192.114.11.0/24 Deny Generic
 192.114.40.0/21 Deny Generic
@@ -1542,21 +1543,21 @@ Origin: EU
 212.179.0.0/16 Deny Generic
 217.22.112.0/20 Deny Generic
 Origin: IL
-23.34.224.0/20 Deny Generic
-23.45.121.0/24 Deny Generic
-23.195.8.0/22 Deny Generic
-72.246.151.0/24 Deny Generic
-104.70.127.0/24 Deny Generic
-104.70.176.0/23 Deny Generic
-104.70.186.0/23 Deny Generic
-104.74.71.0/24 Deny Generic
-104.77.202.0/24 Deny Generic
-104.79.198.0/23 Deny Generic
-104.79.200.0/22 Deny Generic
-104.79.208.0/20 Deny Generic
-104.79.224.0/20 Deny Generic
-184.27.128.0/23 Deny Generic
-206.82.140.0/24 Deny Generic
+23.34.224.0/20 Deny Cloud
+23.45.121.0/24 Deny Cloud
+23.195.8.0/22 Deny Cloud
+72.246.151.0/24 Deny Cloud
+104.70.127.0/24 Deny Cloud
+104.70.176.0/23 Deny Cloud
+104.70.186.0/23 Deny Cloud
+104.74.71.0/24 Deny Cloud
+104.77.202.0/24 Deny Cloud
+104.79.198.0/23 Deny Cloud
+104.79.200.0/22 Deny Cloud
+104.79.208.0/20 Deny Cloud
+104.79.224.0/20 Deny Cloud
+184.27.128.0/23 Deny Cloud
+206.82.140.0/24 Deny Cloud
 Origin: US
 Tag: Bezeq International
 ---
@@ -2559,12 +2560,12 @@ recaptcha:
 # A domestic ISP from Pakistan caught spamming, hacking, port scanning,
 # brute-forcing, etc; currently only listing 175.107.* addresses, as the
 # unwanted activity seems limited to those ranges at this time.
-# Stop Forum Spam (SFS) listings: 256.
-# Updated: 2020.04.09
+# Stop Forum Spam (SFS) listings: 272.
+# Updated: 2020.10.05
 
 175.107.0.0/19 Deny Spam
 175.107.32.0/24 Deny Spam
-175.107.34.0/24 Deny Spam
+175.107.34.0/23 Deny Spam
 175.107.36.0/22 Deny Spam
 175.107.40.0/21 Deny Spam
 175.107.48.0/21 Deny Spam
@@ -2578,11 +2579,12 @@ recaptcha:
 
 
 # ASN 45804 ("MEGHBELA BROADBAND").
-# Significant source of forum/blog spam. Also a legit Indian ISP with human
-# endpoints. Websites based in, or targeted towards an Indian audience, should
-# keep it listed in their ignore.dat file. Marked for use with reCAPTCHA.
-# Stop Forum Spam (SFS) listings: 311.
-# Updated: 2020.04.09
+# Domestic Indian ISP. Also a source of forum/blog spam, brute-force, and SSH
+# hack attempts. Websites targeted towards an Indian audience should keep it
+# listed in their ignore.dat file. Marked for use with reCAPTCHA. Only listing
+# IPv4 for now, since IPv6 addresses at their network seem clean at the moment.
+# Stop Forum Spam (SFS) listings: 237.
+# Updated: 2020.10.05
 
 43.239.80.0/22 Deny Spam
 43.251.168.0/21 Deny Spam
@@ -2593,7 +2595,6 @@ recaptcha:
 45.248.56.0/22 Deny Spam
 45.251.60.0/22 Deny Spam
 103.10.208.0/22 Deny Spam
-103.25.152.0/24 Deny Spam
 103.27.2.0/24 Deny Spam
 103.27.140.0/22 Deny Spam
 103.56.236.0/22 Deny Spam
@@ -10024,8 +10025,8 @@ recaptcha:
 
 # ASN 137432 ("BKB Network").
 # Caught using automated hacktools to try hacking into honeypots.
-# Stop Forum Spam (SFS) listings: 148.
-# Updated: 2020.04.09
+# Stop Forum Spam (SFS) listings: 59.
+# Updated: 2020.04.09 / Checked: 2020.10.05
 
 103.108.88.0/22 Deny Generic
 103.145.132.0/24 Deny Generic
@@ -11081,16 +11082,12 @@ Tag: Redes y Telecomunicaciones
 # outside of Mexico. Listed are due to detected/reported spam incidents. To
 # avoid false positives, listing only the affected ranges (i.e., not the entire
 # network). Hope to eventually delist entirely.
-# Stop Forum Spam (SFS) listings: 95.
-# Updated: 2020.04.11
+# Stop Forum Spam (SFS) listings: 84.
+# Updated: 2020.10.05
 
-168.90.71.173/32 Deny Generic
-187.160.10.29/32 Deny Spam
-187.160.113.194/32 Deny Generic
-187.161.240.1/32 Deny Spam
+187.160.10.49/32 Deny Spam
+187.161.106.113/32 Deny Spam
 200.188.154.9/32 Deny Spam
-207.248.36.26/32 Deny Generic
-207.248.52.50/32 Deny Generic
 207.248.62.98/32 Deny Malware
 Origin: MX
 Tag: TV Internacional
@@ -13197,21 +13194,19 @@ recaptcha:
 
 
 # ASN 51155 ("TB Telecom Sp. z o. o").
-# Polish domestic ISP; mostly clean, but some spam and other unwanted traffic
-# coming from some specific IPs at their network; for the moment, just listing
-# those, and not the entire network.
-# Stop Forum Spam (SFS) listings: 113.
-# Updated: 2020.04.11
+# Polish domestic ISP. Also a source of spam and brute-force attacks.
+# For now, listing just the affected ranges/addresses; not the entire network.
+# Stop Forum Spam (SFS) listings: 172.
+# Updated: 2020.10.05
 
-46.227.36.54/32 Deny Spam
-46.227.36.147/32 Deny Spam
-46.227.39.232/32 Deny Malware
+46.227.39.0/24 Deny Malware
 178.19.179.241/32 Deny Malware
-178.19.180.202/32 Deny Spam
-178.19.187.84/32 Deny Spam
-185.6.30.238/32 Deny Malware
+178.19.187.84/32 Deny Malware
 Origin: PL
 Tag: TB Telecom
+---
+recaptcha:
+ enabled: true
 
 
 # ASN 38732 ("CMC Telecom Infrastructure Company").

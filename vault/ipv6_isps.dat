@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_isps.dat
 
-# Version: 2020.273.299
-# Last modified: 2020.09.30
+# Version: 2020.278.580
+# Last modified: 2020.10.05
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage, i.e., with ignore.dat, with reCAPTCHA, with "extended rules" (default bypasses): « [ ]Low [x]Medium [ ]High »
@@ -311,16 +311,17 @@ Tag: Trend Micro
 # ASN 8551 ("Bezeq International-Ltd").
 # Domestic Israeli ISP with human endpoints, but has some bad actors (spambots,
 # scrapers, etc). Marked for use with reCAPTCHA and included in ignore.dat by
-# default to reduce the false positive risk.
-# %Listed, abuseat.org (CBL-Listed): 0.34%.
-# Stop Forum Spam (SFS) listings: 999.
-# Updated: 2019.12.04 / Checked: 2020.04.09
+# default to reduce the false positive risk. Non-IL ranges marked as cloud.
+# %Listed, abuseat.org (CBL-Listed): 0.27%.
+# Stop Forum Spam (SFS) listings: 822.
+# Updated: 2020.10.05
 
-2a02:26f0:8000::/48 Deny Generic
+2a02:26f0:8000::/48 Deny Cloud
 Origin: EU
 2001:4cd0::/29 Deny Generic
+2a10:8000::/28 Deny Generic
 Origin: IL
-2620:11b:e0be::/48 Deny Generic
+2620:11b:e0be::/48 Deny Cloud
 Origin: US
 Tag: Bezeq International
 ---
@@ -1693,8 +1694,8 @@ recaptcha:
 
 # ASN 137432 ("BKB Network").
 # Caught using automated hacktools to try hacking into honeypots.
-# Stop Forum Spam (SFS) listings: 266.
-# Updated: 2019.12.06 / Checked: 2020.04.09
+# Stop Forum Spam (SFS) listings: 59.
+# Updated: 2019.12.06 / Checked: 2020.10.05
 
 2402:68c0::/32 Deny Generic
 Origin: BD

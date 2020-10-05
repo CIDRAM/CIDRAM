@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6.dat
 
-# Version: 2020.273.299
-# Last modified: 2020.09.30
+# Version: 2020.278.580
+# Last modified: 2020.10.05
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage, i.e., with ignore.dat, with reCAPTCHA, with "extended rules" (default bypasses): « [x]Low [ ]Medium [ ]High »
@@ -76,40 +76,18 @@ Tag: CST-NET
 
 
 # ASN 46573 ("Global Frag Networks").
-# Stop Forum Spam (SFS) listings: 531.
-# Updated: 2020.04.11
+# Stop Forum Spam (SFS) listings: 590.
+# Updated: 2020.10.05
 
 2602:fdd3::/36 Deny Cloud
 Origin: CA
-2a0e:8780::/29 Deny Cloud
-2a0f:1940::/30 Deny Cloud
-2a0f:19c0::/29 Deny Cloud
-2a0f:1a40::/29 Deny Cloud
-2a0f:1ac0::/29 Deny Cloud
-2a0f:2040::/29 Deny Cloud
-2a0f:20c0::/29 Deny Cloud
-2a0f:2140::/29 Deny Cloud
-2a0f:21c0::/29 Deny Cloud
-2a0f:2240::/29 Deny Cloud
-2a0f:f380::/29 Deny Cloud
-2a0f:f480::/29 Deny Cloud
-2a0f:f580::/29 Deny Cloud
-2a0f:f680::/29 Deny Cloud
-2a0f:f780::/29 Deny Cloud
-2a0f:f980::/29 Deny Cloud
-Origin: NL
-2a07:eb00::/29 Deny Cloud
-2a09:200::/29 Deny Cloud
-2a09:8600::/29 Deny Cloud
-2a09:f600::/29 Deny Cloud
-2a09:f800::/29 Deny Cloud
-2a0d:69c0::/29 Deny Cloud
-2a0d:87c4::/30 Deny Cloud
-2a0d:b040::/29 Deny Cloud
-2a0d:ba44::/30 Deny Cloud
-2a0d:bf40::/29 Deny Cloud
-Origin: RU
+2a0f:100::/29 Deny Cloud
+Origin: IE
 2604:d180::/32 Deny Cloud
+2605:5fc1::/32 Deny Cloud
+2605:5fc2::/32 Deny Cloud
+2605:5fc8::/32 Deny Cloud
+2605:5fcd::/32 Deny Cloud
 Origin: US
 Tag: Global Frag Networks
 
@@ -3920,17 +3898,18 @@ Tag: TierPoint, LLC
 
 # ASNs 15626, 21100, 50979, 59729 ("ITL Company").
 # Significant source of forum/blog spam.
-# Stop Forum Spam (SFS) listings: 890 (AS15626), 12,931 (AS21100), 666 (AS50979), 952 (AS59729).
-# Updated: 2020.04.11
+# Stop Forum Spam (SFS) listings: 1,700 (AS15626), 2,264 (AS21100), 535 (AS50979), 1,561 (AS59729).
+# Updated: 2020.10.05
 
 2001:67c:2f4c::/48 Deny Cloud
+2001:67c:2f5c::/48 Deny Cloud
 2001:67c:2f6c::/48 Deny Cloud
 2a0a:8c40::/32 Deny Cloud
 Origin: BG
-2a02:27a8::/32 Deny Cloud
-2a02:27aa::/32 Deny Cloud
+2a02:27a8::/30 Deny Cloud
 2a02:27ac::/32 Deny Cloud
 2a0e:40c0:1::/48 Deny Cloud
+2a0e:40c0:2::/48 Deny Cloud
 2a0e:40c0:4::/48 Deny Cloud
 Origin: UA
 Tag: ITL Company
@@ -4137,14 +4116,13 @@ Origin: GB
 Tag: 24 SHELLS
 
 
-# ASNs 11588, 12989, 18607, 20446, 33438, 64259, 199156 ("Highwinds Network
-# Group, Inc"). IP transit, CDN, and colo provider; also a source of spam.
-# Updated: 2020.04.09
+# ASNs 11588, 12989, 20446, 33438, 199156 ("Highwinds Network Group, Inc").
+# IP transit, CDN, and colo provider; also a source of spam.
+# Updated: 2020.10.05
 
 2804:266c::/32 Deny Cloud
 Origin: BR
 2a03:efc0:200::/40 Deny Cloud
-2a03:efc0:500::/40 Deny Cloud
 2a03:efc0:700::/40 Deny Cloud
 2a03:efc0:900::/40 Deny Cloud
 2a03:efc0:1100::/40 Deny Cloud
@@ -4164,15 +4142,12 @@ Origin: GB
 Origin: JP
 2001:4de0:101::/48 Deny Cloud
 2001:4de0:200::/40 Deny Cloud
-2001:4de0:402::/48 Deny Cloud
-2001:4de0:500::/40 Deny Cloud
-2001:4de0:600::/39 Deny Cloud
+2001:4de0:400::/38 Deny Cloud
+2001:4de0:1000::/48 Deny Cloud
 2001:4de0:2000::/38 Deny Cloud
 2001:4de0:2400::/40 Deny Cloud
 2001:4de0:3000::/39 Deny Cloud
-2001:4de0:4006::/48 Deny Cloud
-2001:4de0:4100::/40 Deny Cloud
-2001:4de0:4200::/39 Deny Cloud
+2001:4de0:4000::/38 Deny Cloud
 2001:4de0:5010::/48 Deny Cloud
 2001:4de0:6000::/40 Deny Cloud
 2001:4de0:6102::/48 Deny Cloud
@@ -4197,6 +4172,7 @@ Origin: NL
 2407:1580:1100::/40 Deny Cloud
 2407:1580:1200::/40 Deny Cloud
 2407:1580:1400::/38 Deny Cloud
+2407:1580:1800::/40 Deny Cloud
 2604:6840:1200::/39 Deny Cloud
 2604:6840:1400::/38 Deny Cloud
 2604:6840:1800::/38 Deny Cloud
@@ -4206,8 +4182,6 @@ Origin: NL
 2604:ea80::/32 Deny Cloud
 2604:fc80::/32 Deny Cloud
 2606:b300::/33 Deny Cloud
-2606:ce80::/48 Deny Cloud
-2606:ce80:6::/48 Deny Cloud
 2606:ce80:6100::/40 Deny Cloud
 2606:ce80:6200::/39 Deny Cloud
 2606:ce80:6400::/38 Deny Cloud
@@ -4648,32 +4622,35 @@ Tag: Servers.com
 
 
 # ASNs 43345, 48635, 200837, 202861, 205631 ("PCextreme B.V", formerly "Astralus B.V").
-# Stop Forum Spam (SFS) listings: 1,118 (AS48635).
-# Updated: 2020.04.10
+# Stop Forum Spam (SFS) listings: 1,478 (AS48635).
+# Updated: 2020.10.05
 
 2a05:1500::/40 Deny Cloud
 2a05:1500:100::/47 Deny Cloud
+2a05:1500:102::/48 Deny Cloud
 2a05:1500:300::/40 Deny Cloud
-2a05:1500:400::/39 Deny Cloud
-2a05:1500:600::/40 Deny Cloud
+2a05:1500:400::/38 Deny Cloud
 2a05:1500:ff00::/40 Deny Cloud
 Origin: DE
 2001:67c:28fc::/48 Deny Cloud
 2001:1460::/32 Deny Cloud
-2a00:f10::/32 Deny Cloud
+2a00:f10::/29 Deny Cloud
+2a00:8ee2::/40 Deny Cloud
 2a00:9b60::/40 Deny Cloud
 2a01:b940::/31 Deny Cloud
+2a01:b942::/32 Deny Cloud
 2a01:b944::/32 Deny Cloud
 2a02:13b0:1::/48 Deny Cloud
 2a02:13b0:100::/40 Deny Cloud
+2a02:2968::/29 Deny Cloud
 2a03:3060:a::/48 Deny Cloud
 2a04:6bc0::/36 Deny Cloud
 2a05:a280::/29 Deny Cloud
-2a05:c580::/29 Deny Cloud
+2a05:cfc0::/29 Deny Cloud
 2a07:ae80::/29 Deny Cloud
 2a0b:7280::/29 Deny Cloud
 2a0b:8f80::/48 Deny Cloud
-2a0c:84c0::/48 Deny Cloud
+2a0c:84c0::/29 Deny Cloud
 Origin: NL
 Tag: Astralus B.V
 
@@ -5834,14 +5811,20 @@ Tag: IT-GRAD NL B.V
 
 # ASN 136907 ("HUAWEI CLOUDS").
 # A source of forum spam and caught hitting honeypots.
-# Stop Forum Spam (SFS) listings: 4,737.
-# Updated: 2020.04.09
+# Stop Forum Spam (SFS) listings: 1,533.
+# Updated: 2020.10.05
 
 2405:f080::/39 Deny Cloud
+2405:f080:200::/48 Deny Cloud
 2405:f080:400::/39 Deny Cloud
+2405:f080:600::/48 Deny Cloud
 2405:f080:e00::/47 Deny Cloud
-2405:f080:1000::/39 Deny Cloud
+2405:f080:e08::/47 Deny Cloud
+2405:f080:1000::/38 Deny Cloud
+2405:f080:1e02::/47 Deny Cloud
 2405:f080:2000::/39 Deny Cloud
+2405:f080:2400::/39 Deny Cloud
+2405:f080:2e00::/47 Deny Cloud
 Origin: SG
 Tag: HUAWEI CLOUDS
 
@@ -6761,8 +6744,8 @@ Tag: Aixit GmbH
 
 # ASNs 25697, 202053 ("UpCloud USA Inc", "UpCloud Ltd").
 # Dedicated cloud provider and a source of spam.
-# Stop Forum Spam (SFS) listings: 456 (AS25697), 597 (AS202053).
-# Updated: 2020.04.10
+# Stop Forum Spam (SFS) listings: 484 (AS25697), 837 (AS202053).
+# Updated: 2020.04.10 / Checked: 2020.10.05
 
 2a04:3540::/30 Deny Cloud
 2a04:3544::/31 Deny Cloud

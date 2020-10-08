@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Thai language data for the front-end (last modified: 2020.09.24).
+# This file: Thai language data for the front-end (last modified: 2020.10.06).
 ##/
 
 Extended Description Bypasses: "ไฟล์บายพาสลายเซ็นเริ่มต้นที่รวมอยู่ในแพคเกจหลัก."
@@ -188,6 +188,7 @@ field_deactivate: "ปิดใช้งาน"
 field_delete: "ลบ"
 field_delete_account: "ลบบัญชี"
 field_download_file: "ดาวน์โหลด"
+field_execution_order: "ลำดับการดำเนินการ:"
 field_edit_file: "เปลี่ยนแปลง"
 field_expiry: "หมดอายุ"
 field_false: "False (เท็จ)"
@@ -258,6 +259,8 @@ label_aux_logic_all: "เพื่อเรียกกฎ เงื่อนไ
 label_aux_logic_any: "เงื่อนไขใด ๆ "เท่ากับ" (=) อาจเรียกใช้กฎได้ตราบใดที่เงื่อนไข "ไม่เท่ากับ" (≠) ทั้งหมดจะได้รับการปฏิบัติตาม."
 label_aux_menu_action: "หากเป็นไปตามเงื่อนไขให้%sคำขอ."
 label_aux_menu_method: "ใช้%sเพื่อทดสอบเงื่อนไข."
+label_aux_mode_edit: "โหมดแก้ไข"
+label_aux_mode_view: "โหมดการแสดงผล"
 label_aux_modify_rule: "ปรับเปลี่ยนกฎ"
 label_aux_move_bottom: "ย้ายกฎไปด้านล่าง"
 label_aux_move_top: "ย้ายกฎไปด้านบน"
@@ -331,6 +334,7 @@ link_cache_data: "ข้อมูลแคช"
 link_chat: "แชท"
 link_cidr_calc: "เครื่องคิดเลข CIDR"
 link_config: "การกำหนดค่า"
+link_copy_to_clipboard: "คัดลอกไปที่คลิปบอร์ด"
 link_documentation: "เอกสาร"
 link_file_manager: "ตัวจัดการไฟล์"
 link_fixer: "เครื่องมือซ่อมแซมไฟล์ลายเซ็น"
@@ -341,6 +345,7 @@ link_ip_tracking: "การติดตาม IP"
 link_log_out: "ออกจากระบบ"
 link_logs: "บันทึก"
 link_range: "ตารางช่วง"
+link_range_intersector: "ตัวตัดช่วง"
 link_range_subtractor: "ตัวลบช่วง"
 link_sections_list: "รายการส่วน"
 link_statistics: "สถิติ"
@@ -371,6 +376,7 @@ response_activation_failed: "ล้มเหลวเปิดใช้งาน
 response_aux_none: "ขณะนี้ยังไม่มีกฎเสริมใด ๆ."
 response_aux_rule_created_successfully: "กฎเสริมใหม่ "%s" ถูกสร้าง."
 response_aux_rule_deleted_successfully: "กฎเสริม "%s" ถูกลบแล้ว."
+response_aux_updated: "อัปเดตกฎเสริมสำเร็จแล้ว."
 response_checksum_error: "ข้อผิดพลาด checksum! ไฟล์ถูกปฏิเสธ!"
 response_component_successfully_installed: "คอมโพเนนต์สำเร็จแล้วในการติดตั้ง."
 response_component_successfully_uninstalled: "คอมโพเนนต์สำเร็จแล้วถอนการติดตั้ง."
@@ -484,6 +490,7 @@ tip_login: "ค่าเริ่มต้นชื่อผู้ใช้: <sp
 tip_logs: "สวัสดี {username}.<br />เลือกไฟล์บันทึกจากรายการด้านล่างเพื่อดูเนื้อหาของไฟล์บันทึกนั้น."
 tip_pie_html: "คลิกที่ชื่อองค์ประกอบเพื่อดูรายละเอียดเพิ่มเติม."
 tip_range: "สวัสดี {username}.<br />หน้านี้แสดงข้อมูลสถิติพื้นฐานบางอย่างเกี่ยวกับช่วง IP ที่ครอบคลุมโดยไฟล์ลายเซ็นที่ใช้งานอยู่ในปัจจุบัน."
+tip_range_intersector: "สวัสดี {username}.<br />ตัวตัดช่วงสามารถใช้เพื่อกำหนดปัจจัยทั่วไปจากช่วงสองชุด."
 tip_range_subtractor: "สวัสดี {username}.<br />ตัวลบช่วงสามารถใช้เพื่อลบช่วงหนึ่งของ IP/CIDR จากช่วงอื่น."
 tip_sections_list: "สวัสดี {username}.<br />หน้านี้แสดงรายการส่วนที่มีอยู่ในไฟล์ลายเซ็นที่ใช้งานอยู่ในปัจจุบัน."
 tip_see_the_documentation: "ดูที่<a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#SECTION6" hreflang="en" rel="noopener external">เอกสาร</a>สำหรับข้อมูลเกี่ยวกับคำสั่งการกำหนดค่าต่างๆและวัตถุประสงค์ของพวกเขา."

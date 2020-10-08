@@ -7,69 +7,70 @@
     <table><tr><td class="spanner">
       <form id="statForm" action="?cidram-page=statistics" method="POST">
         <input name="ClearStats" type="hidden" value="1" />
-        <input onclick="{Confirm-ClearAll}" type="button" value="{field_clear_all}" class="auto" />
+        <input type="button" value="{link_copy_to_clipboard}" class="auto" onclick="javascript:if(navigator.clipboard){var doCopy='{label_blocked}\nIPv4 – {Blocked-IPv4}\nIPv6 – {Blocked-IPv6}\n{label_other} – {Blocked-Other}\n{label_total} – {Blocked-Total}\n\n{label_banned}\nIPv4 – {Banned-IPv4}\nIPv6 – {Banned-IPv6}\n{label_total} – {Banned-Total}\n\n{label_reCAPTCHA}\n{recaptcha_failed} – {reCAPTCHA-Failed}\n{recaptcha_passed} – {reCAPTCHA-Passed}\n{label_total} – {reCAPTCHA-Total}\n\n{label_other}\n{label_other-Since} – {Other-Since}\n{label_other-ActiveIPv4} – {Other-ActiveIPv4}\n{label_other-ActiveIPv6} – {Other-ActiveIPv6}\n{label_other-ActiveModules} – {Other-ActiveModules}\n';navigator.clipboard.writeText(doCopy);alert(doCopy)}else{alert('{response_failed}')}" />
+        <input type="button" value="{field_clear_all}" class="auto" onclick="{Confirm-ClearAll}" />
       </form>
     </td></tr></table>
     <table>
       <tr><td class="center h4f" colspan="2"><div class="s">{label_blocked}</div></td></tr>
       <tr>
         <td class="h3"><div class="s">IPv4</div></td>
-        <td class="h3f">{Blocked-IPv4}</td>
+        <td class="h3f"><div class="s">{Blocked-IPv4}</div></td>
       </tr>
       <tr>
         <td class="h3"><div class="s">IPv6</div></td>
-        <td class="h3f">{Blocked-IPv6}</td>
+        <td class="h3f"><div class="s">{Blocked-IPv6}</div></td>
       </tr>
       <tr>
         <td class="h3"><div class="s">{label_other}</div></td>
-        <td class="h3f">{Blocked-Other}</td>
+        <td class="h3f"><div class="s">{Blocked-Other}</div></td>
       </tr>
       <tr>
         <td class="h3"><div class="s">{label_total}</div></td>
-        <td class="h3f">{Blocked-Total}</td>
+        <td class="h3f"><div class="s">{Blocked-Total}</div></td>
       </tr>
       <tr><td class="center h4f" colspan="2"><div class="s">{label_banned}</div></td></tr>
       <tr>
         <td class="h3"><div class="s">IPv4</div></td>
-        <td class="h3f">{Banned-IPv4}</td>
+        <td class="h3f"><div class="s">{Banned-IPv4}</div></td>
       </tr>
       <tr>
         <td class="h3"><div class="s">IPv6</div></td>
-        <td class="h3f">{Banned-IPv6}</td>
+        <td class="h3f"><div class="s">{Banned-IPv6}</div></td>
       </tr>
       <tr>
         <td class="h3"><div class="s">{label_total}</div></td>
-        <td class="h3f">{Banned-Total}</td>
+        <td class="h3f"><div class="s">{Banned-Total}</div></td>
       </tr>
       <tr><td class="center h4f" colspan="2"><div class="s">{label_reCAPTCHA}</div></td></tr>
       <tr>
         <td class="h3"><div class="s">{recaptcha_failed}</div></td>
-        <td class="h3f">{reCAPTCHA-Failed}</td>
+        <td class="h3f"><div class="s">{reCAPTCHA-Failed}</div></td>
       </tr>
       <tr>
         <td class="h3"><div class="s">{recaptcha_passed}</div></td>
-        <td class="h3f">{reCAPTCHA-Passed}</td>
+        <td class="h3f"><div class="s">{reCAPTCHA-Passed}</div></td>
       </tr>
       <tr>
         <td class="h3"><div class="s">{label_total}</div></td>
-        <td class="h3f">{reCAPTCHA-Total}</td>
+        <td class="h3f"><div class="s">{reCAPTCHA-Total}</div></td>
       </tr>
       <tr><td class="center h4f" colspan="2"><div class="s">{label_other}</div></td></tr>
       <tr>
         <td class="h3"><div class="s">{label_other-Since}</div></td>
-        <td class="h3f">{Other-Since}</td>
+        <td class="h3f"><div class="s">{Other-Since}</div></td>
       </tr>
       <tr>
         <td class="h3"><div class="s">{label_other-ActiveIPv4}</div></td>
-        <td class="h3f">{Other-ActiveIPv4}</td>
+        <td class="h3f"><div class="{ClassActiveIPv4}">{Other-ActiveIPv4}</div></td>
       </tr>
       <tr>
         <td class="h3"><div class="s">{label_other-ActiveIPv6}</div></td>
-        <td class="h3f">{Other-ActiveIPv6}</td>
+        <td class="h3f"><div class="{ClassActiveIPv6}">{Other-ActiveIPv6}</div></td>
       </tr>
       <tr>
         <td class="h3"><div class="s">{label_other-ActiveModules}</div></td>
-        <td class="h3f">{Other-ActiveModules}</td>
+        <td class="h3f"><div class="{ClassActiveModules}">{Other-ActiveModules}</div></td>
       </tr>
     </table>
   </td>

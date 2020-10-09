@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2020.09.24).
+ * This file: Front-end functions file (last modified: 2020.10.09).
  */
 
 /**
@@ -3172,11 +3172,17 @@ $CIDRAM['2FA-Number'] = function () {
 
 /**
  * Generates the rules data displayed on the auxiliary rules page.
+ *
+ * @param bool $Mode Whether view mode (false) or edit mode (true).
+ * @return string The generated auxiliary rules data.
  */
-$CIDRAM['AuxGenerateFEData'] = function () use (&$CIDRAM) {
+$CIDRAM['AuxGenerateFEData'] = function ($Mode = false) use (&$CIDRAM) {
 
     /** Populate output here. */
     $Output = '';
+
+    /** JavaScript stuff to append to output after everything else. */
+    $JSAppend = '';
 
     /** Potential sources. */
     $Sources = preg_replace('~(?: | )?(?:：|:) ?$~', '', $CIDRAM['SourcesL10N']);
@@ -3189,8 +3195,27 @@ $CIDRAM['AuxGenerateFEData'] = function () use (&$CIDRAM) {
     /** Count entries (needed for offering first and last move options). */
     $Count = count($CIDRAM['AuxData']);
 
-    /** Useful to know whether we're at the first or last rule (due to the "move to the ..." options. */
-    $Current = 1;
+    /** Append empty rule if editing. */
+    if ($Mode) {
+        $CIDRAM['AuxData'][] = [];
+        $Count++;
+        $Current = 0;
+    } else {
+        /** Useful to know whether we're at the first or last rule (due to the "move to the ..." options. */
+        $Current = 1;
+    }
+
+    /** Style class. */
+    $StyleClass = 'ng1';
+
+    /** Update button before. */
+    if ($Mode) {
+        $Output .= sprintf(
+            '<div class="%s"><center><input onclick="javascript:updateRules()" type="button" value="%s" class="auto" /></center></div>',
+            $StyleClass,
+            $CIDRAM['L10N']->getString('field_update_all')
+        );
+    };
 
     /** Iterate through the auxiliary rules. */
     foreach ($CIDRAM['AuxData'] as $Name => $Data) {
@@ -3198,134 +3223,327 @@ $CIDRAM['AuxGenerateFEData'] = function () use (&$CIDRAM) {
         /** Rule row ID. */
         $RuleClass = preg_replace('~^0+~', '', bin2hex($Name));
 
-        /** Figure out which options are available for the rule. */
-        $Options = ['(<span style="cursor:pointer" onclick="javascript:%1$s(\'%2$s\',\'%3$s\')"><code class="s">%4$s</code></span>)'];
-        $Options['delRule'] = sprintf($Options[0], 'delRule', $Name, $RuleClass, $CIDRAM['L10N']->getString('field_delete'));
-        if ($Count > 1) {
-            if ($Current !== 1) {
-                $Options['moveToTop'] = sprintf($Options[0], 'moveToTop', $Name, $RuleClass, $CIDRAM['L10N']->getString('label_aux_move_top'));
+        if ($Mode) {
+            /** Update cell style. */
+            $StyleClass = $StyleClass === 'ng1' ? 'ng2' : 'ng1';
+
+            /** Rule begin and rule name. */
+            $Output .= sprintf(
+                '%1$s<div class="%2$s"><dl><dt class="s">%4$s</dt><dd><input type="text" name="ruleName[%5$s]" class="f400" value="%3$s" /></dd></dl>',
+                "\n      ", $StyleClass, $Name, $CIDRAM['L10N']->getString('field_new_name'), $Current
+            );
+
+            /** Set rule priority (rearranges the rules). */
+            $Output .= sprintf(
+                '%1$s<dl><dt class="s">%3$s</dt><dd><input type="text" name="rulePriority[%2$s]" class="f400" value="%2$s" /></dd></dl>',
+                "\n      ", $Current, $CIDRAM['L10N']->getString('field_execution_order')
+            );
+
+            /** Rule reason. */
+            $Output .= sprintf(
+                '<dl><dt class="s" id="%4$sruleReasonDt">%2$s</dt><dd id="%4$sruleReasonDd"><input type="text" name="ruleReason[%3$s]" class="f400" value="%1$s" /></dd></dl>',
+                isset($Data['Reason']) ? $Data['Reason'] : '', $CIDRAM['L10N']->getString('label_aux_reason'), $Current, $RuleClass
+            );
+
+            /** Redirect target. */
+            $Output .= sprintf(
+                '<dl><dt class="s" id="%4$sruleTargetDt">%2$s</dt><dd id="%4$sruleTargetDd"><input type="text" name="ruleTarget[%3$s]" class="f400" value="%1$s" /></dd></dl>',
+                isset($Data['Target']) ? $Data['Target'] : '', $CIDRAM['L10N']->getString('label_aux_target'), $Current, $RuleClass
+            );
+
+            /** Status code override. */
+            $Output .= sprintf('<dl><dt class="s">%1$s</dt><dd>', $CIDRAM['L10N']->getString('label_aux_http_status_code_override'));
+            $Output .= sprintf(
+                '<span id="%1$sstatGroupX"><input type="radio" class="auto" id="%1$sstatusCodeX" name="statusCode[%3$s]" value="0" %2$s/> 🗙</span>',
+                $RuleClass, empty($Data['Status Code']) ? 'checked="true" ' : '', $Current
+            );
+            foreach ([['3', ['301', '307', '308']], ['45', ['403', '410', '418', '451', '503']]] as $StatGroup) {
+                $Output .= sprintf('<span id="%1$sstatGroup%2$s">', $RuleClass, $StatGroup[0]);
+                foreach ($StatGroup[1] as $StatusCode) {
+                    $Output .= sprintf(
+                        '<input type="radio" class="auto" id="%1$sstatusCode%2$s" name="statusCode[%4$s]" value="%2$s" %3$s/> %2$s',
+                        $RuleClass, $StatusCode, isset($Data['Status Code']) && $Data['Status Code'] === $StatusCode ? ' checked="true"' : '', $Current
+                    );
+                }
+                $Output .= '</span>';
             }
-            if ($Current !== $Count) {
-                $Options['moveToBottom'] = sprintf($Options[0], 'moveToBottom', $Name, $RuleClass, $CIDRAM['L10N']->getString('label_aux_move_bottom'));
+            $Output .= '</dd></dl>';
+
+            /** Where to get conditions from. */
+            $ConditionsFrom = '';
+
+            /** Action menu. */
+            $Output .= sprintf('<dl><dt><select id="act%1$s" name="act[%1$s]" class="auto" onchange="javascript:onAuxActionChange(this.value,\'%2$s\',\'%1$s\')">', $Current, $RuleClass);
+            foreach ([
+                ['actWhl', 'optActWhl', 'Whitelist'],
+                ['actGrl', 'optActGrl', 'Greylist'],
+                ['actBlk', 'optActBlk', 'Block'],
+                ['actByp', 'optActByp', 'Bypass'],
+                ['actLog', 'optActLog', 'Don\'t log'],
+                ['actRdr', 'optActRdr', 'Redirect']
+            ] as $MenuOption) {
+                $Output .= sprintf(
+                    '<option value="%1$s"%2$s>%3$s</option>',
+                    $MenuOption[0], empty($Data[$MenuOption[2]]) ? '' : ' selected', $CIDRAM['FE'][$MenuOption[1]]
+                );
+                if (!empty($Data[$MenuOption[2]])) {
+                    $ConditionsFrom = $MenuOption[2];
+                    $JSAppend .= sprintf('onAuxActionChange(\'%1$s\',\'%2$s\',\'%3$s\');', $MenuOption[2], $RuleClass, $Current);
+                }
             }
+            $Output .= sprintf(
+                '</select><input type="button" onclick="javascript:addCondition(%2$s)" value="%1$s" class="auto" /></dt>',
+                $CIDRAM['L10N']->getString('field_add_more_conditions'), $Current
+            );
+            $Output .= sprintf('<dd id="%1$sconditions">', $Current);
+
+            /** Populate conditions. */
+            if ($ConditionsFrom && is_array($Data[$ConditionsFrom])) {
+                $Iteration = 0;
+                $ConditionFormTemplate = '
+        <div>
+          <select name="conSourceType[%1$s][%2$s]" class="auto">%3$s</select>
+          <select name="conIfOrNot[%1$s][%2$s]" class="auto"><option value="If"%6$s>=</option><option value="Not"%7$s>≠</option></select>
+          <input type="text" name="conSourceValue[%1$s][%2$s]" placeholder="%4$s" class="f400" value="%5$s" />
+        </div>';
+                foreach ([['If matches', ' selected', ''], ['But not if matches', '', ' selected']] as $ModeSet) {
+                    if (isset($Data[$ConditionsFrom][$ModeSet[0]]) && is_array($Data[$ConditionsFrom][$ModeSet[0]])) {
+                        foreach ($Data[$ConditionsFrom][$ModeSet[0]] as $Key => $Values) {
+                            $ThisSources = str_replace('value="' . $Key . '">', 'value="' . $Key . '" selected>', $CIDRAM['FE']['conSources']);
+                            foreach ($Values as $Condition) {
+                                $Output .= sprintf(
+                                    $ConditionFormTemplate,
+                                    $Current,
+                                    $Iteration,
+                                    $ThisSources,
+                                    $CIDRAM['L10N']->getString('tip_condition_placeholder'),
+                                    $Condition,
+                                    $ModeSet[1],
+                                    $ModeSet[2]
+                                );
+                                $Iteration++;
+                            }
+                        }
+                    }
+                }
+            }
+            $Output .= '</dd></dl>';
+
+            /** Webhook button. */
+            $Output .= sprintf(
+                '<dl><dt><input type="button" onclick="javascript:addWebhook(%1$s)" value="%2$s" class="auto" /></dt><dd id="%1$swebhooks">',
+                $Current,
+                $CIDRAM['L10N']->getString('field_add_webhook')
+            );
+
+            /** Populate webhooks. */
+            if (isset($Data['Webhooks']) && is_array($Data['Webhooks'])) {
+                $Iteration = 0;
+                foreach ($Data['Webhooks'] as $Webhook) {
+                    $Output .= sprintf(
+                        '<input type="text" name="webhooks[%1$s][%2$s]" placeholder="%3$s" class="f400" value="%4$s" />',
+                        $Current,
+                        $Iteration,
+                        $CIDRAM['L10N']->getString('tip_condition_placeholder'),
+                        $Webhook
+                    );
+                    $Iteration++;
+                }
+            }
+            $Output .= '</dd></dl>';
+
+            /** Match method. */
+            if (empty($Data['Method'])) {
+                $MethodData = [' selected', '', ''];
+            } elseif ($Data['Method'] === 'RegEx') {
+                $MethodData = ['', ' selected', ''];
+            } elseif ($Data['Method'] === 'WinEx') {
+                $MethodData = ['', '', ' selected'];
+            } else {
+                $MethodData = ['', '', ''];
+            }
+            $Output .= sprintf(
+                '<dl><dt><select name="mtd[%1$s]" class="auto"><option value="mtdStr"%5$s>%2$s</option><option value="mtdReg"%6$s>%3$s</option><option value="mtdWin"%7$s>%4$s</option></select></dt></dl>',
+                $Current,
+                $CIDRAM['FE']['optMtdStr'],
+                $CIDRAM['FE']['optMtdReg'],
+                $CIDRAM['FE']['optMtdWin'],
+                $MethodData[0],
+                $MethodData[1],
+                $MethodData[2]
+            );
+
+            /** Match logic. */
+            if (empty($Data['Method'])) {
+                $LogicData = [' selected', '', ''];
+            } elseif ($Data['Method'] === 'RegEx') {
+                $LogicData = ['', ' selected', ''];
+            } else {
+                $MethodData = ['', '', ''];
+            }
+            $Output .= sprintf(
+                '<dl><dt><select id="logic[%1$s]" name="logic[%1$s]" class="flong"><option value="Any">%2$s</option><option value="All">%3$s</option></select></dt></dl>',
+                $Current,
+                $CIDRAM['L10N']->getString('label_aux_logic_any'),
+                $CIDRAM['L10N']->getString('label_aux_logic_all')
+            );
+
+            /** Other options and special flags. */
+            $Output .= sprintf(
+                '<dl><dt>%5$srecaptchaEnabledTrue[%1$s]"%6$s /> %2$s<br />%5$ssuppressOutputTemplate[%1$s]"%7$s /> %3$s<br />%5$sforciblyDisableIPTracking[%1$s]"%8$s /> %4$s</dt></dl>',
+                $Current,
+                $CIDRAM['L10N']->getString('label_aux_special_recaptcha'),
+                $CIDRAM['L10N']->getString('label_aux_special_suppress'),
+                $CIDRAM['L10N']->getString('label_aux_special_ip_tracking'),
+                '<input type="checkbox" class="auto" name="',
+                empty($Data['Mark for use with reCAPTCHA']) ? '' : ' checked',
+                empty($Data['Suppress output template']) ? '' : ' checked',
+                empty($Data['Forcibly disable IP tracking']) ? '' : ' checked'
+            );
+
+            /** Finish writing new rule. */
+            $Output .= '</dd></dl></div>';
+            $Current++;
+        } else {
+            /** Figure out which options are available for the rule. */
+            $Options = ['(<span style="cursor:pointer" onclick="javascript:%1$s(\'%2$s\',\'%3$s\')"><code class="s">%4$s</code></span>)'];
+            $Options['delRule'] = sprintf($Options[0], 'delRule', $Name, $RuleClass, $CIDRAM['L10N']->getString('field_delete'));
+            if ($Count > 1) {
+                if ($Current !== 1) {
+                    $Options['moveToTop'] = sprintf($Options[0], 'moveToTop', $Name, $RuleClass, $CIDRAM['L10N']->getString('label_aux_move_top'));
+                }
+                if ($Current !== $Count) {
+                    $Options['moveToBottom'] = sprintf($Options[0], 'moveToBottom', $Name, $RuleClass, $CIDRAM['L10N']->getString('label_aux_move_bottom'));
+                }
+            }
+            unset($Options[0]);
+            $Options = ' – ' . implode(' ', $Options);
+
+            /** Begin generating rule output. */
+            $Output .= sprintf(
+                '%1$s<li class="%2$s"><span class="comCat" style="cursor:pointer"><span class="s">%3$s</span></span>%4$s%1$s<br /><br /><ul class="comSub">'
+            , "\n        ", $RuleClass, $Name, $Options);
+
+            /** Additional details about the rule to print to the page (e.g., detailed block reason). */
+            foreach ([
+                ['Reason', 'label_aux_reason'],
+                ['Target', 'label_aux_target'],
+                ['Webhooks', 'label_aux_webhooks']
+            ] as $Details) {
+                if (!empty($Data[$Details[0]]) && $Label = $CIDRAM['L10N']->getString($Details[1])) {
+                    if (is_array($Data[$Details[0]])) {
+                        $Data[$Details[0]] = implode('</dd><dd>', $Data[$Details[0]]);
+                    }
+                    $Output .= "\n            <li><dl><dt class=\"s\">" . $Label . '</dt><dd>' . $Data[$Details[0]] . '</dd></dl></li>';
+                }
+            }
+
+            /** Display the status code to be applied. */
+            if (!empty($Data['Status Code']) && $Data['Status Code'] > 200 && $StatusCode = $CIDRAM['GetStatusHTTP']($Data['Status Code'])) {
+                $Output .= "\n            <li><dl><dt class=\"s\">" . $CIDRAM['L10N']->getString('label_aux_http_status_code_override') . '</dt><dd>' . $Data['Status Code'] . ' ' . $StatusCode . '</dd></dl></li>';
+            }
+
+            /** Display other options and special flags. */
+            $Flags = [];
+            foreach ([
+                ['Mark for use with reCAPTCHA', 'label_aux_special_recaptcha'],
+                ['Suppress output template', 'label_aux_special_suppress'],
+                ['Forcibly disable IP tracking', 'label_aux_special_ip_tracking']
+            ] as $Flag) {
+                if (!empty($Data[$Flag[0]]) && $Label = $CIDRAM['L10N']->getString($Flag[1])) {
+                    $Flags[] = $Label;
+                }
+            }
+            if (count($Flags)) {
+                $Output .= "\n            <li><dl><dt class=\"s\">" . $CIDRAM['L10N']->getString('label_aux_special') . '</dt><dd>' . implode('<br />', $Flags) . '</dd></dl></li>';
+            }
+
+            /** Iterate through actions. */
+            foreach ([
+                ['Whitelist', 'optActWhl'],
+                ['Greylist', 'optActGrl'],
+                ['Block', 'optActBlk'],
+                ['Bypass', 'optActByp'],
+                ['Don\'t log', 'optActLog'],
+                ['Redirect', 'optActRdr']
+            ] as $Action) {
+
+                /** Skip action if the current rule doesn't use this action. */
+                if (empty($Data[$Action[0]])) {
+                    continue;
+                }
+
+                /** Show the appropriate label for this action. */
+                $Output .= sprintf(
+                    '%1$s<li>%1$s  <dl><dt class="s">%2$s</dt>'
+                , "\n            ", $CIDRAM['FE'][$Action[1]]);
+
+                /** List all "not equals" conditions . */
+                if (!empty($Data[$Action[0]]['But not if matches'])) {
+
+                    /** Iterate through sources. */
+                    foreach ($Data[$Action[0]]['But not if matches'] as $Source => $Values) {
+                        $ThisSource = isset($Sources[$Source]) ? $Sources[$Source] : $Source;
+                        if (!is_array($Values)) {
+                            $Values = [$Values];
+                        }
+                        foreach ($Values as $Value) {
+                            $Operator = $CIDRAM['OperatorFromAuxValue']($Value, true);
+                            $Output .= "\n              <dd><span style=\"float:" . $CIDRAM['FE']['FE_Align'] . '">' . $ThisSource . '&nbsp;' . $Operator . '&nbsp;</span><code>' . $Value . '</code></dd>';
+                        }
+                    }
+                }
+
+                /** List all "equals" conditions . */
+                if (!empty($Data[$Action[0]]['If matches'])) {
+
+                    /** Iterate through sources. */
+                    foreach ($Data[$Action[0]]['If matches'] as $Source => $Values) {
+                        $ThisSource = isset($Sources[$Source]) ? $Sources[$Source] : $Source;
+                        if (!is_array($Values)) {
+                            $Values = [$Values];
+                        }
+                        foreach ($Values as $Value) {
+                            $Operator = $CIDRAM['OperatorFromAuxValue']($Value);
+                            $Output .= "\n              <dd><span style=\"float:" . $CIDRAM['FE']['FE_Align'] . '">' . $ThisSource . '&nbsp;' . $Operator . '&nbsp;</span><code>' . $Value . '</code></dd>';
+                        }
+                    }
+                }
+
+                /** Finish writing conditions list. */
+                $Output .= "\n            </dl></li>";
+            }
+
+            /** Show the method to be used. */
+            $Output .= "\n            <li><dl><dt><em>" . (isset($Data['Method']) ? (
+                $Data['Method'] === 'RegEx' ? $CIDRAM['FE']['optMtdReg'] : (
+                    $Data['Method'] === 'WinEx' ? $CIDRAM['FE']['optMtdWin'] : $CIDRAM['FE']['optMtdStr']
+                )
+            ) : $CIDRAM['FE']['optMtdStr']) . '</em></dt></dl></li>';
+
+            /** Describe matching logic used. */
+            $Output .= "\n            <li><dl><dt><em>" . $CIDRAM['L10N']->getString(
+                (!empty($Data['Logic']) && $Data['Logic'] !== 'Any') ? 'label_aux_logic_all' : 'label_aux_logic_any'
+            ) . '</em></dt></dl></li>';
+
+            /** Finish writing new rule. */
+            $Output .= "\n          </ul>\n        </li>";
             $Current++;
         }
-        unset($Options[0]);
-        $Options = ' – ' . implode(' ', $Options);
-
-        /** Begin generating rule output. */
-        $Output .= sprintf(
-            '%1$s<li class="%2$s"><span class="comCat" style="cursor:pointer"><span class="s">%3$s</span></span>%4$s%1$s<br /><br /><ul class="comSub">'
-        , "\n        ", $RuleClass, $Name, $Options);
-
-        /** Additional details about the rule to print to the page (e.g., detailed block reason). */
-        foreach ([
-            ['Reason', 'label_aux_reason'],
-            ['Target', 'label_aux_target'],
-            ['Webhooks', 'label_aux_webhooks']
-        ] as $Details) {
-            if (!empty($Data[$Details[0]]) && $Label = $CIDRAM['L10N']->getString($Details[1])) {
-                if (is_array($Data[$Details[0]])) {
-                    $Data[$Details[0]] = implode('</dd><dd>', $Data[$Details[0]]);
-                }
-                $Output .= "\n            <li><dl><dt class=\"s\">" . $Label . '</dt><dd>' . $Data[$Details[0]] . '</dd></dl></li>';
-            }
-        }
-
-        /** Display the status code to be applied. */
-        if (!empty($Data['Status Code']) && $Data['Status Code'] > 200 && $StatusCode = $CIDRAM['GetStatusHTTP']($Data['Status Code'])) {
-            $Output .= "\n            <li><dl><dt class=\"s\">" . $CIDRAM['L10N']->getString('label_aux_http_status_code_override') . '</dt><dd>' . $Data['Status Code'] . ' ' . $StatusCode . '</dd></dl></li>';
-        }
-
-        /** Display other options and special flags. */
-        $Flags = [];
-        foreach ([
-            ['Mark for use with reCAPTCHA', 'label_aux_special_recaptcha'],
-            ['Suppress output template', 'label_aux_special_suppress'],
-            ['Forcibly disable IP tracking', 'label_aux_special_ip_tracking']
-        ] as $Flag) {
-            if (!empty($Data[$Flag[0]]) && $Label = $CIDRAM['L10N']->getString($Flag[1])) {
-                $Flags[] = $Label;
-            }
-        }
-        if (count($Flags)) {
-            $Output .= "\n            <li><dl><dt class=\"s\">" . $CIDRAM['L10N']->getString('label_aux_special') . '</dt><dd>' . implode('<br />', $Flags) . '</dd></dl></li>';
-        }
-
-        /** Iterate through actions. */
-        foreach ([
-            ['Whitelist', 'optActWhl'],
-            ['Greylist', 'optActGrl'],
-            ['Block', 'optActBlk'],
-            ['Bypass', 'optActByp'],
-            ['Don\'t log', 'optActLog'],
-            ['Redirect', 'optActRdr']
-        ] as $Action) {
-
-            /** Skip action if the current rule doesn't use this action. */
-            if (empty($Data[$Action[0]])) {
-                continue;
-            }
-
-            /** Show the appropriate label for this action. */
-            $Output .= sprintf(
-                '%1$s<li>%1$s  <dl><dt class="s">%2$s</dt>'
-            , "\n            ", $CIDRAM['FE'][$Action[1]]);
-
-            /** List all "not equals" conditions . */
-            if (!empty($Data[$Action[0]]['But not if matches'])) {
-
-                /** Iterate through sources. */
-                foreach ($Data[$Action[0]]['But not if matches'] as $Source => $Values) {
-                    $ThisSource = isset($Sources[$Source]) ? $Sources[$Source] : $Source;
-                    if (!is_array($Values)) {
-                        $Values = [$Values];
-                    }
-                    foreach ($Values as $Value) {
-                        $Operator = $CIDRAM['OperatorFromAuxValue']($Value, true);
-                        $Output .= "\n              <dd><span style=\"float:" . $CIDRAM['FE']['FE_Align'] . '">' . $ThisSource . '&nbsp;' . $Operator . '&nbsp;</span><code>' . $Value . '</code></dd>';
-                    }
-                }
-            }
-
-            /** List all "equals" conditions . */
-            if (!empty($Data[$Action[0]]['If matches'])) {
-
-                /** Iterate through sources. */
-                foreach ($Data[$Action[0]]['If matches'] as $Source => $Values) {
-                    $ThisSource = isset($Sources[$Source]) ? $Sources[$Source] : $Source;
-                    if (!is_array($Values)) {
-                        $Values = [$Values];
-                    }
-                    foreach ($Values as $Value) {
-                        $Operator = $CIDRAM['OperatorFromAuxValue']($Value);
-                        $Output .= "\n              <dd><span style=\"float:" . $CIDRAM['FE']['FE_Align'] . '">' . $ThisSource . '&nbsp;' . $Operator . '&nbsp;</span><code>' . $Value . '</code></dd>';
-                    }
-                }
-            }
-
-            /** Finish writing conditions list. */
-            $Output .= "\n            </dl></li>";
-        }
-
-        /** Show the method to be used. */
-        $Output .= "\n            <li><dl><dt><em>" . (isset($Data['Method']) ? (
-            $Data['Method'] === 'RegEx' ? $CIDRAM['FE']['optMtdReg'] : (
-                $Data['Method'] === 'WinEx' ? $CIDRAM['FE']['optMtdWin'] : $CIDRAM['FE']['optMtdStr']
-            )
-        ) : $CIDRAM['FE']['optMtdStr']) . '</em></dt></dl></li>';
-
-        /** Describe matching logic used. */
-        $Output .= "\n            <li><dl><dt><em>" . $CIDRAM['L10N']->getString(
-            (!empty($Data['Logic']) && $Data['Logic'] !== 'Any') ? 'label_aux_logic_all' : 'label_aux_logic_any'
-        ) . '</em></dt></dl></li>';
-
-        /** Finish writing new rule. */
-        $Output .= "\n          </ul>\n        </li>";
     }
 
+    /** Update button after. */
+    if ($Mode) {
+        $StyleClass = $StyleClass === 'ng1' ? 'ng2' : 'ng1';
+        $Output .= sprintf(
+            '<div class="%s"><center><input onclick="javascript:updateRules()" type="button" value="%s" class="auto" /></center></div>',
+            $StyleClass,
+            $CIDRAM['L10N']->getString('field_update_all')
+        );
+    };
+
     /** Exit with generated output. */
-    return $Output;
+    return $Output . '<script type="text/javascript">' . $JSAppend . '</script>';
 };
 
 /**

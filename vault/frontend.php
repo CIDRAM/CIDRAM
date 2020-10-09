@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2020.09.24).
+ * This file: Front-end handler (last modified: 2020.10.08).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -831,6 +831,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === '' && !$CIDRAM['FE']['CronMode']
 
     /** Extension availability. */
     $CIDRAM['FE']['Extensions'] = [];
+    $CIDRAM['FE']['ExtensionsCopyData'] = '';
     foreach ([
         ['Lib' => 'pcre', 'Name' => 'PCRE'],
         ['Lib' => 'curl', 'Name' => 'cURL'],
@@ -841,12 +842,18 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === '' && !$CIDRAM['FE']['CronMode']
     ] as $CIDRAM['ThisExtension']) {
         if (extension_loaded($CIDRAM['ThisExtension']['Lib'])) {
             $CIDRAM['ExtVer'] = (new \ReflectionExtension($CIDRAM['ThisExtension']['Lib']))->getVersion();
-            $CIDRAM['ThisResponse'] = '<span class="txtGn">' . $CIDRAM['L10N']->getString('response_yes') . ' (' . $CIDRAM['ExtVer'] . ')';
+            $CIDRAM['ThisResponse'] = $CIDRAM['L10N']->getString('response_yes') . ' (' . $CIDRAM['ExtVer'] . ')';
             if (!empty($CIDRAM['ThisExtension']['Drivers'])) {
                 $CIDRAM['ThisResponse'] .= ', {' . implode(', ', $CIDRAM['ThisExtension']['Drivers']) . '}';
             }
-            $CIDRAM['ThisResponse'] .= '</span>';
+            $CIDRAM['FE']['ExtensionsCopyData'] .= $CIDRAM['LTRinRTF'](
+                sprintf('- %1$s➡%2$s\n', $CIDRAM['ThisExtension']['Name'], $CIDRAM['ThisResponse'])
+            );
+            $CIDRAM['ThisResponse'] = '<span class="txtGn">' . $CIDRAM['ThisResponse'] . '</span>';
         } else {
+            $CIDRAM['FE']['ExtensionsCopyData'] .= $CIDRAM['LTRinRTF'](
+                sprintf('- %1$s➡%2$s\n', $CIDRAM['ThisExtension']['Name'], $CIDRAM['L10N']->getString('response_no'))
+            );
             $CIDRAM['ThisResponse'] = '<span class="txtRd">' . $CIDRAM['L10N']->getString('response_no') . '</span>';
         }
         $CIDRAM['FE']['Extensions'][] = '    <li><small>' . $CIDRAM['LTRinRTF'](sprintf(
@@ -858,6 +865,29 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === '' && !$CIDRAM['FE']['CronMode']
     $CIDRAM['FE']['Extensions'] = implode("\n", $CIDRAM['FE']['Extensions']);
     $CIDRAM['FE']['ExtensionIsAvailable'] = $CIDRAM['LTRinRTF']($CIDRAM['L10N']->getString('label_extension') . '➡' . $CIDRAM['L10N']->getString('label_installed_available'));
     unset($CIDRAM['ExtVer'], $CIDRAM['ThisResponse'], $CIDRAM['ThisExtension']);
+
+    /** Build clipboard data. */
+    $CIDRAM['FE']['HomeCopyData'] = sprintf(
+        '%1$s\n\n- %2$s %3$s\n- %4$s %5$s\n- %6$s %7$s\n- %8$s %9$s\n\n- %10$s %11$s\n- %4$s %12$s\n- %6$s %13$s\n- %8$s %14$s\n- %15$s %16$s\n\n%17$s\n%18$s',
+        $CIDRAM['L10N']->getString('label_sysinfo'),
+        $CIDRAM['L10N']->getString('label_cidram'),
+        $CIDRAM['FE']['ScriptVersion'],
+        $CIDRAM['L10N']->getString('label_branch'),
+        $CIDRAM['FE']['info_cidram_branch'],
+        $CIDRAM['L10N']->getString('label_stable'),
+        $CIDRAM['FE']['info_cidram_stable'],
+        $CIDRAM['L10N']->getString('label_unstable'),
+        $CIDRAM['FE']['info_cidram_unstable'],
+        $CIDRAM['L10N']->getString('label_php'),
+        $CIDRAM['FE']['info_php'],
+        $CIDRAM['FE']['info_php_branch'],
+        $CIDRAM['FE']['info_php_stable'],
+        $CIDRAM['FE']['info_php_unstable'],
+        $CIDRAM['L10N']->getString('label_sapi'),
+        $CIDRAM['FE']['info_sapi'],
+        $CIDRAM['FE']['ExtensionIsAvailable'],
+        $CIDRAM['FE']['ExtensionsCopyData']
+    );
 
     /** Parse output. */
     $CIDRAM['FE']['FE_Content'] = $CIDRAM['ParseVars'](
@@ -3574,12 +3604,10 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'statistics' && $CIDRAM['FE']['P
     }
 
     /** Statistics have been counted since... */
-    $CIDRAM['FE']['Other-Since'] = '<span class="s">' . (
-        empty($CIDRAM['Statistics']['Other-Since']) ? '-' : $CIDRAM['TimeFormat'](
-            $CIDRAM['Statistics']['Other-Since'],
-            $CIDRAM['Config']['general']['timeFormat']
-        )
-    ) . '</span>';
+    $CIDRAM['FE']['Other-Since'] = empty($CIDRAM['Statistics']['Other-Since']) ? '-' : $CIDRAM['TimeFormat'](
+        $CIDRAM['Statistics']['Other-Since'],
+        $CIDRAM['Config']['general']['timeFormat']
+    );
 
     /** Fetch and process various statistics. */
     foreach ([
@@ -3591,9 +3619,9 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'statistics' && $CIDRAM['FE']['P
         ['reCAPTCHA-Failed', 'reCAPTCHA-Total'],
         ['reCAPTCHA-Passed', 'reCAPTCHA-Total']
     ] as $CIDRAM['TheseStats']) {
-        $CIDRAM['FE'][$CIDRAM['TheseStats'][0]] = '<span class="s">' . $CIDRAM['NumberFormatter']->format(
+        $CIDRAM['FE'][$CIDRAM['TheseStats'][0]] = $CIDRAM['NumberFormatter']->format(
             empty($CIDRAM['Statistics'][$CIDRAM['TheseStats'][0]]) ? 0 : $CIDRAM['Statistics'][$CIDRAM['TheseStats'][0]]
-        ) . '</span>';
+        );
         if (!isset($CIDRAM['FE'][$CIDRAM['TheseStats'][1]])) {
             $CIDRAM['FE'][$CIDRAM['TheseStats'][1]] = 0;
         }
@@ -3604,31 +3632,32 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'statistics' && $CIDRAM['FE']['P
 
     /** Fetch and process totals. */
     foreach (['Blocked-Total', 'Banned-Total', 'reCAPTCHA-Total'] as $CIDRAM['TheseStats']) {
-        $CIDRAM['FE'][$CIDRAM['TheseStats']] = '<span class="s">' . $CIDRAM['NumberFormatter']->format(
+        $CIDRAM['FE'][$CIDRAM['TheseStats']] = $CIDRAM['NumberFormatter']->format(
             $CIDRAM['FE'][$CIDRAM['TheseStats']]
-        ) . '</span>';
+        );
     }
 
     /** Active signature files. */
     foreach ([
-        ['ipv4', 'Other-ActiveIPv4'],
-        ['ipv6', 'Other-ActiveIPv6'],
-        ['modules', 'Other-ActiveModules']
+        ['ipv4', 'Other-ActiveIPv4', 'ClassActiveIPv4'],
+        ['ipv6', 'Other-ActiveIPv6', 'ClassActiveIPv6'],
+        ['modules', 'Other-ActiveModules', 'ClassActiveModules']
     ] as $CIDRAM['TheseStats']) {
         if (empty($CIDRAM['Config']['signatures'][$CIDRAM['TheseStats'][0]])) {
-            $CIDRAM['FE'][$CIDRAM['TheseStats'][1]] = '<span class="txtRd">' . $CIDRAM['NumberFormatter']->format(0) . '</span>';
+            $CIDRAM['FE'][$CIDRAM['TheseStats'][1]] = $CIDRAM['NumberFormatter']->format(0);
+            $CIDRAM['FE'][$CIDRAM['TheseStats'][2]] = 'txtRd';
         } else {
             $CIDRAM['FE'][$CIDRAM['TheseStats'][1]] = 0;
             $CIDRAM['StatWorking'] = explode(',', $CIDRAM['Config']['signatures'][$CIDRAM['TheseStats'][0]]);
-            array_walk($CIDRAM['StatWorking'], function ($SigFile) use (&$CIDRAM) {
-                if (!empty($SigFile) && is_readable($CIDRAM['Vault'] . $SigFile)) {
+            foreach (explode(',', $CIDRAM['Config']['signatures'][$CIDRAM['TheseStats'][0]]) as $CIDRAM['StatWorking']) {
+                if (strlen($CIDRAM['StatWorking']) && is_readable($CIDRAM['Vault'] . $CIDRAM['StatWorking'])) {
                     $CIDRAM['FE'][$CIDRAM['TheseStats'][1]]++;
                 }
-            });
-            $CIDRAM['StatColour'] = $CIDRAM['FE'][$CIDRAM['TheseStats'][1]] ? 'txtGn' : 'txtRd';
-            $CIDRAM['FE'][$CIDRAM['TheseStats'][1]] = '<span class="' . $CIDRAM['StatColour'] . '">' . $CIDRAM['NumberFormatter']->format(
+            }
+            $CIDRAM['FE'][$CIDRAM['TheseStats'][1]] = $CIDRAM['NumberFormatter']->format(
                 $CIDRAM['FE'][$CIDRAM['TheseStats'][1]]
-            ) . '</span>';
+            );
+            $CIDRAM['FE'][$CIDRAM['TheseStats'][2]] = $CIDRAM['FE'][$CIDRAM['TheseStats'][1]] ? 'txtGn' : 'txtRd';
         }
     }
 
@@ -3645,7 +3674,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'statistics' && $CIDRAM['FE']['P
     unset($CIDRAM['StatColour'], $CIDRAM['StatWorking'], $CIDRAM['TheseStats']);
 }
 
-/** Auxiliary Rules. */
+/** Auxiliary rules (view mode). */
 elseif ($CIDRAM['QueryVars']['cidram-page'] === 'aux' && $CIDRAM['FE']['Permissions'] === 1) {
 
     /** Attempt to parse the auxiliary rules file. */
@@ -3930,6 +3959,71 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'aux' && $CIDRAM['FE']['Permissi
             unset($CIDRAM['NewAuxData']);
         }
     }
+}
+
+/** Auxiliary rules (edit mode). */
+elseif ($CIDRAM['QueryVars']['cidram-page'] === 'aux-edit' && $CIDRAM['FE']['Permissions'] === 1) {
+
+    /** Page initial prepwork. */
+    $CIDRAM['InitialPrepwork']($CIDRAM['L10N']->getString('link_aux'), $CIDRAM['L10N']->getString('tip_aux'));
+
+    /** Append JavaScript specific to the auxiliary rules page. */
+    $CIDRAM['FE']['JS'] .= $CIDRAM['ParseVars'](
+        ['tip_condition_placeholder' => $CIDRAM['L10N']->getString('tip_condition_placeholder')],
+        $CIDRAM['ReadFile']($CIDRAM['GetAssetPath']('auxiliary.js'))
+    );
+
+    /** Populate methods. */
+    $CIDRAM['FE']['optMtdStr'] = sprintf($CIDRAM['L10N']->getString('label_aux_menu_method'), $CIDRAM['L10N']->getString('label_aux_mtdStr'));
+    $CIDRAM['FE']['optMtdReg'] = sprintf($CIDRAM['L10N']->getString('label_aux_menu_method'), $CIDRAM['L10N']->getString('label_aux_mtdReg'));
+    $CIDRAM['FE']['optMtdWin'] = sprintf($CIDRAM['L10N']->getString('label_aux_menu_method'), $CIDRAM['L10N']->getString('label_aux_mtdWin'));
+
+    /** Populate actions. */
+    $CIDRAM['FE']['optActWhl'] = sprintf($CIDRAM['L10N']->getString('label_aux_menu_action'), $CIDRAM['L10N']->getString('label_aux_actWhl'));
+    $CIDRAM['FE']['optActGrl'] = sprintf($CIDRAM['L10N']->getString('label_aux_menu_action'), $CIDRAM['L10N']->getString('label_aux_actGrl'));
+    $CIDRAM['FE']['optActBlk'] = sprintf($CIDRAM['L10N']->getString('label_aux_menu_action'), $CIDRAM['L10N']->getString('label_aux_actBlk'));
+    $CIDRAM['FE']['optActByp'] = sprintf($CIDRAM['L10N']->getString('label_aux_menu_action'), $CIDRAM['L10N']->getString('label_aux_actByp'));
+    $CIDRAM['FE']['optActLog'] = sprintf($CIDRAM['L10N']->getString('label_aux_menu_action'), $CIDRAM['L10N']->getString('label_aux_actLog'));
+    $CIDRAM['FE']['optActRdr'] = sprintf($CIDRAM['L10N']->getString('label_aux_menu_action'), $CIDRAM['L10N']->getString('label_aux_actRdr'));
+
+    /** Fetch sources L10N fields. */
+    $CIDRAM['SourcesL10N'] = [
+        'IPAddr' => $CIDRAM['L10N']->getString('field_ipaddr'),
+        'IPAddrResolved' => $CIDRAM['L10N']->getString('field_ipaddr_resolved'),
+        'Query' => $CIDRAM['L10N']->getString('field_query'),
+        'Referrer' => $CIDRAM['L10N']->getString('field_referrer'),
+        'UA' => $CIDRAM['L10N']->getString('field_ua'),
+        'UALC' => $CIDRAM['L10N']->getString('field_ualc'),
+        'SignatureCount' => $CIDRAM['L10N']->getString('field_sigcount'),
+        'Signatures' => $CIDRAM['L10N']->getString('field_sigref'),
+        'WhyReason' => $CIDRAM['L10N']->getString('field_whyreason'),
+        'ReasonMessage' => $CIDRAM['L10N']->getString('field_reasonmessage'),
+        'rURI' => $CIDRAM['L10N']->getString('field_rURI'),
+        'Request_Method' => $CIDRAM['L10N']->getString('field_Request_Method'),
+        'Hostname' => $CIDRAM['L10N']->getString('field_hostname'),
+        'Infractions' => $CIDRAM['L10N']->getString('field_infractions'),
+        'ASNLookup' => $CIDRAM['L10N']->getString('field_asnlookup'),
+        'CCLookup' => $CIDRAM['L10N']->getString('field_cclookup'),
+        'Verified' => $CIDRAM['L10N']->getString('field_verified')
+    ];
+
+    /** Populate sources. */
+    $CIDRAM['FE']['conSources'] = $CIDRAM['GenerateOptions']($CIDRAM['SourcesL10N'], '~(?: | )?(?:：|:) ?$~');
+
+    /** Process auxiliary rules. */
+    $CIDRAM['FE']['Data'] = '      ' . $CIDRAM['AuxGenerateFEData'](true);
+
+    /** Cleanup. */
+    unset($CIDRAM['SourcesL10N']);
+
+    /** Parse output. */
+    $CIDRAM['FE']['FE_Content'] = $CIDRAM['ParseVars'](
+        $CIDRAM['L10N']->Data + $CIDRAM['FE'],
+        $CIDRAM['ReadFile']($CIDRAM['GetAssetPath']('_aux_edit.html'))
+    ) . $CIDRAM['MenuToggle'];
+
+    /** Send output. */
+    echo $CIDRAM['SendOutput']();
 }
 
 /** Logs. */

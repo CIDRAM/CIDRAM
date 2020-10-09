@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_isps.dat
 
-# Version: 2020.278.580
-# Last modified: 2020.10.05
+# Version: 2020.282.650
+# Last modified: 2020.10.09
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage, i.e., with ignore.dat, with reCAPTCHA, with "extended rules" (default bypasses): « [ ]Low [x]Medium [ ]High »
@@ -191,31 +191,22 @@ Tag: INFOBOX
 
 # ASN 49335 ("Mir Telematiki Ltd").
 # An ongoing source of all kinds of spam.
-# Stop Forum Spam (SFS) listings: 1,316.
-# Updated: 2020.04.18
+# Stop Forum Spam (SFS) listings: 1,855.
+# Updated: 2020.10.09
 
-2a0c:46c0::/29 Deny Spam
-Origin: DK
-2a05:4f80::/29 Deny Spam
-Origin: ES
-2a03:f3c0::/29 Deny Spam
-Origin: GB
-2a0c:5c40::/29 Deny Spam
-Origin: IT
 2a0b:b86:fff0::/44 Deny Spam
 2a0b:b87:ffc0::/44 Deny Spam
 2a0b:7086:fff0::/44 Deny Spam
 2a0b:7087:fff0::/44 Deny Spam
 Origin: NL
-2a0c:7a40::/29 Deny Spam
-Origin: NO
-2a0c:67c0::/29 Deny Spam
-Origin: PT
 2a05:b80::/29 Deny Spam
 2a0a:b385::/32 Deny Spam
 2a0a:f9c4::/32 Deny Spam
 Origin: RU
-2a0b:6780::/29 Deny Spam
+2a03:f3c0::/29 Deny Spam
+2a05:4f80::/29 Deny Spam
+2a0c:5c40::/29 Deny Spam
+2a0c:7a40::/29 Deny Spam
 Origin: TR
 Tag: Mir Telematiki Ltd
 
@@ -2335,12 +2326,13 @@ recaptcha:
 # Source of forum spam and some email harvestors.
 # Stripped back to just the specific offending addresses/ranges (2020.09) to
 # reduce the risk of false positives.
-# Stop Forum Spam (SFS) listings: 11,923.
-# Updated: 2020.09.25
+# Stop Forum Spam (SFS) listings: 12,013.
+# Updated: 2020.10.09
 
-2a02:908:c30:b1a0::/64 Deny Spam
-2a02:aa12:1540:f700::/64 Deny Spam
-Origin: EU
+2a02:908:380:9800::/64 Deny Spam
+Origin: DE
+2a02:a313:823d:4e00::/64 Deny Spam
+Origin: PL
 Tag: Liberty Global
 ---
 recaptcha:

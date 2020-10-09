@@ -1,8 +1,8 @@
 # IPv4 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv4_isps.dat
 
-# Version: 2020.278.580
-# Last modified: 2020.10.05
+# Version: 2020.282.650
+# Last modified: 2020.10.09
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage, i.e., with ignore.dat, with reCAPTCHA, with "extended rules" (default bypasses): « [ ]Low [x]Medium [ ]High »
@@ -1086,12 +1086,14 @@ Tag: INFOBOX
 
 # ASN 49335 ("Mir Telematiki Ltd").
 # An ongoing source of all kinds of spam.
-# Stop Forum Spam (SFS) listings: 1,316.
-# Updated: 2020.04.18
+# Stop Forum Spam (SFS) listings: 1,855.
+# Updated: 2020.10.09
 
 86.105.227.0/24 Deny Spam
 86.106.102.0/24 Deny Spam
 Origin: EU
+103.155.92.0/24 Deny Spam
+Origin: MY
 46.243.220.0/24 Deny Spam
 94.177.123.0/24 Deny Spam
 Origin: NL
@@ -10693,62 +10695,68 @@ Tag: OptiMax
 # Source of forum spam and some email harvestors.
 # Stripped back to just the specific offending addresses/ranges (2020.09) to
 # reduce the risk of false positives.
-# Stop Forum Spam (SFS) listings: 11,923.
-# Updated: 2020.09.25
+# Stop Forum Spam (SFS) listings: 12,013.
+# Updated: 2020.10.09
 
-31.5.52.0/24 Deny Spam
-31.5.101.0/24 Deny Spam
-31.178.150.0/24 Deny Spam
-37.201.116.0/24 Deny Spam
-37.201.185.0/24 Deny Spam
+212.186.237.0/24 Deny Spam
+Origin: AT
 46.167.244.0/24 Deny Spam
-62.99.155.0/24 Deny Spam
 77.48.23.0/24 Deny Spam
-77.48.26.0/24 Deny Spam
 77.48.137.0/24 Deny Spam
 77.48.230.0/24 Deny Spam
-77.250.227.0/24 Deny Spam
 78.45.8.0/24 Deny Spam
-78.96.20.0/24 Deny Spam
-78.96.77.0/24 Deny Spam
-78.96.125.0/24 Deny Spam
-78.139.50.0/24 Deny Spam
-80.99.59.0/24 Deny Spam
-80.99.251.0/24 Deny Spam
-82.208.133.0/24 Deny Spam
-83.103.206.0/24 Deny Spam
-83.144.117.0/24 Deny Spam
-84.117.149.0/24 Deny Spam
-86.101.129.0/24 Deny Spam
-86.101.145.0/24 Deny Spam
 88.146.204.0/24 Deny Spam
-89.64.51.0/24 Deny Spam
-89.64.60.0/24 Deny Spam
-89.67.149.0/24 Deny Spam
-89.67.200.0/24 Deny Spam
-89.70.178.0/24 Deny Spam
-89.74.155.0/24 Deny Spam
-89.133.95.0/24 Deny Spam
-89.133.180.0/24 Deny Spam
-89.136.247.0/24 Deny Spam
 93.99.6.0/24 Deny Spam
 93.99.51.0/24 Deny Spam
 93.99.193.0/24 Deny Spam
-94.172.221.0/24 Deny Spam
-94.172.237.0/24 Deny Spam
-94.172.238.0/24 Deny Spam
+Origin: CZ
+37.24.46.0/24 Deny Spam
+37.201.116.0/24 Deny Spam
+46.5.230.0/24 Deny Spam
+95.223.228.0/24 Deny Spam
+109.91.37.0/24 Deny Spam
+Origin: DE
+80.99.251.0/24 Deny Spam
+86.101.145.0/24 Deny Spam
+86.101.153.0/24 Deny Spam
+86.101.155.0/24 Deny Spam
+89.133.95.0/24 Deny Spam
+89.133.180.0/24 Deny Spam
+178.48.43.0/24 Deny Spam
+178.48.68.0/24 Deny Spam
+Origin: HU
+89.101.68.0/24 Deny Spam
+Origin: IE
+31.5.52.0/24 Deny Spam
+31.5.130.0/24 Deny Spam
+31.5.177.0/24 Deny Spam
+77.250.227.0/24 Deny Spam
+84.117.149.0/24 Deny Spam
+94.172.123.0/24 Deny Spam
+94.172.219.0/24 Deny Spam
+213.127.229.0/24 Deny Spam
+Origin: NL
+83.144.117.0/24 Deny Spam
+89.64.51.0/24 Deny Spam
+89.64.55.0/24 Deny Spam
+89.64.88.0/24 Deny Spam
+89.74.73.0/24 Deny Spam
+89.77.214.0/24 Deny Spam
+Origin: PL
+78.96.20.0/24 Deny Spam
+78.96.77.0/24 Deny Spam
+78.96.125.0/24 Deny Spam
+82.208.133.0/24 Deny Spam
+82.210.178.0/24 Deny Spam
+83.103.195.0/24 Deny Spam
+83.103.206.0/24 Deny Spam
+89.136.247.0/24 Deny Spam
+89.137.200.0/24 Deny Spam
+95.77.16.0/24 Deny Spam
 95.77.103.0/24 Deny Spam
 95.77.175.0/24 Deny Spam
 95.77.197.0/24 Deny Spam
-95.97.209.0/24 Deny Spam
-95.223.228.0/24 Deny Spam
-109.91.37.0/24 Deny Spam
-178.48.43.0/24 Deny Spam
-178.48.68.0/24 Deny Spam
-185.134.80.0/24 Deny Spam
-213.127.86.0/24 Deny Spam
-213.127.229.0/24 Deny Spam
-Origin: EU
+Origin: RO
 Tag: Liberty Global
 ---
 recaptcha:
@@ -14742,6 +14750,19 @@ recaptcha:
 216.170.240.98/32 Deny Malware
 Origin: US
 Tag: TDS TELECOM
+---
+recaptcha:
+ enabled: true
+
+
+# ASN 138606 ("Suga Pte. Ltd").
+# A small umbrella for range of different ventures. Also a source of spam.
+# Stop Forum Spam (SFS) listings: 329.
+# Updated: 2020.10.09
+
+103.134.92.0/22 Deny Spam
+Origin: SG
+Tag: Suga Pte. Ltd
 ---
 recaptcha:
  enabled: true

@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6.dat
 
-# Version: 2020.278.580
-# Last modified: 2020.10.05
+# Version: 2020.282.650
+# Last modified: 2020.10.09
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage, i.e., with ignore.dat, with reCAPTCHA, with "extended rules" (default bypasses): « [x]Low [ ]Medium [ ]High »
@@ -907,9 +907,8 @@ Tag: InfoRelay Online
 
 
 # ASN 29854 ("WestHost, Inc").
-# Mark "Secure Internet LLC", "VPN Consumer Network" CIDRs as proxies.
-# Stop Forum Spam (SFS) listings: 203.
-# Updated: 2018.05.04 / Checked: 2020.02.11
+# Stop Forum Spam (SFS) listings: 365.
+# Updated: 2018.05.04 / Checked: 2020.10.09
 
 2a0c:4180::/29 Deny Cloud
 Origin: RU
@@ -1838,8 +1837,8 @@ Tag: HIVELOCITY VENTURES
 
 
 # ASN 13739 ("Datacenter IP, LLC").
-# Stop Forum Spam (SFS) listings: 156.
-# Updated: 2018.08.05 / Checked: 2020.02.11
+# Stop Forum Spam (SFS) listings: 19.
+# Updated: 2018.08.05 / Checked: 2020.10.09
 
 2a0c:acc0::/29 Deny Cloud
 Origin: AT
@@ -2018,9 +2017,11 @@ Tag: Media-Hosts Inc
 
 
 # ASN 53667 ("FranTech Solutions").
-# Stop Forum Spam (SFS) listings: 46,063.
-# Updated: 2020.04.13
+# Stop Forum Spam (SFS) listings: 51,143.
+# Updated: 2020.10.09
 
+2a0f:9400:7a01::/48 Deny Cloud
+Origin: GB
 2604:4d40:2000::/36 Deny Cloud
 2605:6400:1::/48 Deny Cloud
 2605:6400:2::/47 Deny Cloud
@@ -2031,6 +2032,7 @@ Tag: Media-Hosts Inc
 2605:6400:300::/48 Deny Cloud
 2605:6400:9001::/48 Deny Cloud
 2605:6400:9002::/47 Deny Cloud
+2620:8b:a000::/48 Deny Cloud
 Origin: US
 Tag: FranTech Solutions
 
@@ -2816,7 +2818,7 @@ Tag: EVANZO GmbH
 
 
 # ASN 34233 ("Superior B.V").
-# Updated: 2016.12.10 / Checked: 2020.02.10
+# Updated: 2016.12.10 / Checked: 2020.10.09
 
 2a00:a0c0::/32 Deny Cloud
 2a06:f700::/29 Deny Cloud
@@ -4392,8 +4394,8 @@ Tag: Server Plus Ltd
 
 # ASN 198605 ("AVAST Software s.r.o.").
 # Caught attempting to access sensitive parts of WP sites for unknown reasons.
-# Stop Forum Spam (SFS) listings: 9,781.
-# Updated: 2020.04.13
+# Stop Forum Spam (SFS) listings: 9,166.
+# Updated: 2020.04.13 / Checked: 2020.10.09
 
 2001:67c:284::/48 Deny Cloud
 2a0b:e181::/40 Deny Cloud
@@ -4929,7 +4931,7 @@ Tag: YISP B.V
 
 # ASN 39790 ("Web4U s.r.o").
 # Caught trying to hack WordPress sites.
-# Updated: 2018.09.17 / Checked: 2020.02.10
+# Updated: 2018.09.17 / Checked: 2020.10.09
 
 2001:1568::/32 Deny Cloud
 Origin: CZ
@@ -5853,8 +5855,8 @@ Tag: QTS LLC
 
 # ASN 35758 ("Rachamim Aviel Twito trading as A.B INTERNET SOLUTIONS").
 # A small, international multiplay network; Caught spamming forums and blogs.
-# Stop Forum Spam (SFS) listings: 457.
-# Updated: 2020.04.13
+# Stop Forum Spam (SFS) listings: 128.
+# Updated: 2020.04.13 / Checked: 2020.10.09
 
 2a0a:1dc4::/30 Deny Cloud
 Origin: IL
@@ -5863,8 +5865,8 @@ Tag: Rachamim Aviel Twito
 
 # ASN 23470 ("ReliableSite.Net LLC").
 # Dedicated hosting provider caught spamming.
-# Stop Forum Spam (SFS) listings: 85.
-# Updated: 2020.04.13
+# Stop Forum Spam (SFS) listings: 715.
+# Updated: 2020.10.09
 
 2602:fed2:7106::/48 Deny Cloud
 2602:fed2:7308::/48 Deny Cloud
@@ -5875,9 +5877,8 @@ Origin: CN
 2a04:ff00:500::/48 Deny Cloud
 Origin: CZ
 2a0f:9400:8005::/48 Deny Cloud
+2a0f:9400:8012::/48 Deny Cloud
 Origin: GB
-2a0b:3c40:14::/48 Deny Cloud
-Origin: NL
 2a0f:8600::/48 Deny Cloud
 Origin: RO
 2600:9400::/28 Deny Cloud
@@ -7101,3 +7102,646 @@ Tag: Leonet srl
 2a02:2350::/32 Deny Cloud
 Origin: DK
 Tag: One.com A/S
+
+
+# ---
+# Microsoft Azure IPv6 CIDRs.
+# Updated: 2020.10.09
+# Refer microsoft.com/en-us/download/details.aspx?id=56519
+# Refer microsoft.com/en-us/download/details.aspx?id=57062
+# Refer microsoft.com/en-us/download/details.aspx?id=57063
+# Refer microsoft.com/en-us/download/details.aspx?id=57064
+
+2404:7940::/47 Run rules_specific.php
+2404:7940:100::/47 Run rules_specific.php
+2404:7940:200::/47 Run rules_specific.php
+2404:7940:300::/47 Run rules_specific.php
+2406:e500:2000::/38 Run rules_specific.php
+2406:e500:4800::/63 Run rules_specific.php
+2406:e500:4801::/63 Run rules_specific.php
+2406:e500:4804::/63 Run rules_specific.php
+2406:e500:4805::/63 Run rules_specific.php
+Origin: CN
+2a01:4180:2000::/40 Run rules_specific.php
+2a01:4180:2400::/40 Run rules_specific.php
+2a01:4180:c001:8::/61 Run rules_specific.php
+2a01:4180:c003:8::/61 Run rules_specific.php
+Origin: DE
+2001:489a:2206::/63 Run rules_specific.php
+2001:489a:2206:10::/63 Run rules_specific.php
+2001:489a:2206:20::/63 Run rules_specific.php
+2001:489a:2206:30::/63 Run rules_specific.php
+2001:489a:2206:8000::/63 Run rules_specific.php
+2001:489a:2206:8010::/63 Run rules_specific.php
+2001:489a:3000::/46 Run rules_specific.php
+2001:489a:3100::/46 Run rules_specific.php
+2001:489a:3200::/46 Run rules_specific.php
+2001:489a:3300::/46 Run rules_specific.php
+2001:489a:3400::/46 Run rules_specific.php
+2001:489a:3601::/48 Run rules_specific.php
+2001:489a:3602::/48 Run rules_specific.php
+2001:489a:3604::/48 Run rules_specific.php
+2603:1000::/47 Run rules_specific.php
+2603:1000:3::/48 Run rules_specific.php
+2603:1000:4::/48 Run rules_specific.php
+2603:1000:100::/47 Run rules_specific.php
+2603:1000:103::/48 Run rules_specific.php
+2603:1000:104::/48 Run rules_specific.php
+2603:1006:1400::/63 Run rules_specific.php
+2603:1006:1401::/63 Run rules_specific.php
+2603:1006:1500::/64 Run rules_specific.php
+2603:1006:1500:4::/64 Run rules_specific.php
+2603:1006:2000::/48 Run rules_specific.php
+2603:1007:200::/48 Run rules_specific.php
+2603:1010::/46 Run rules_specific.php
+2603:1010:5::/48 Run rules_specific.php
+2603:1010:6::/48 Run rules_specific.php
+2603:1010:100::/40 Run rules_specific.php
+2603:1010:200::/47 Run rules_specific.php
+2603:1010:202::/48 Run rules_specific.php
+2603:1010:204::/47 Run rules_specific.php
+2603:1010:300::/47 Run rules_specific.php
+2603:1010:303::/48 Run rules_specific.php
+2603:1010:304::/48 Run rules_specific.php
+2603:1010:400::/47 Run rules_specific.php
+2603:1010:403::/48 Run rules_specific.php
+2603:1010:404::/48 Run rules_specific.php
+2603:1016:1400::/48 Run rules_specific.php
+2603:1016:2400::/46 Run rules_specific.php
+2603:1016:2500::/64 Run rules_specific.php
+2603:1016:2500:4::/64 Run rules_specific.php
+2603:1016:2500:8::/64 Run rules_specific.php
+2603:1016:2500:c::/64 Run rules_specific.php
+2603:1017::/48 Run rules_specific.php
+2603:1020::/47 Run rules_specific.php
+2603:1020:2::/48 Run rules_specific.php
+2603:1020:4::/47 Run rules_specific.php
+2603:1020:100::/47 Run rules_specific.php
+2603:1020:103::/48 Run rules_specific.php
+2603:1020:104::/48 Run rules_specific.php
+2603:1020:200::/46 Run rules_specific.php
+2603:1020:205::/48 Run rules_specific.php
+2603:1020:206::/48 Run rules_specific.php
+2603:1020:300::/47 Run rules_specific.php
+2603:1020:302::/48 Run rules_specific.php
+2603:1020:304::/47 Run rules_specific.php
+2603:1020:400::/47 Run rules_specific.php
+2603:1020:402::/48 Run rules_specific.php
+2603:1020:404::/47 Run rules_specific.php
+2603:1020:500::/47 Run rules_specific.php
+2603:1020:503::/48 Run rules_specific.php
+2603:1020:504::/48 Run rules_specific.php
+2603:1020:600::/47 Run rules_specific.php
+2603:1020:602::/48 Run rules_specific.php
+2603:1020:604::/47 Run rules_specific.php
+2603:1020:700::/47 Run rules_specific.php
+2603:1020:702::/48 Run rules_specific.php
+2603:1020:704::/47 Run rules_specific.php
+2603:1020:800::/47 Run rules_specific.php
+2603:1020:802::/48 Run rules_specific.php
+2603:1020:804::/47 Run rules_specific.php
+2603:1020:900::/47 Run rules_specific.php
+2603:1020:902::/48 Run rules_specific.php
+2603:1020:904::/47 Run rules_specific.php
+2603:1020:a00::/47 Run rules_specific.php
+2603:1020:a03::/48 Run rules_specific.php
+2603:1020:a04::/48 Run rules_specific.php
+2603:1020:b00::/47 Run rules_specific.php
+2603:1020:b03::/48 Run rules_specific.php
+2603:1020:b04::/48 Run rules_specific.php
+2603:1020:c00::/47 Run rules_specific.php
+2603:1020:c03::/48 Run rules_specific.php
+2603:1020:c04::/48 Run rules_specific.php
+2603:1020:d00::/47 Run rules_specific.php
+2603:1020:d03::/48 Run rules_specific.php
+2603:1020:d04::/48 Run rules_specific.php
+2603:1020:e00::/47 Run rules_specific.php
+2603:1020:e03::/48 Run rules_specific.php
+2603:1020:e04::/48 Run rules_specific.php
+2603:1020:f00::/47 Run rules_specific.php
+2603:1020:f03::/48 Run rules_specific.php
+2603:1020:f04::/48 Run rules_specific.php
+2603:1020:1004::/121 Run rules_specific.php
+2603:1020:1004::140/122 Run rules_specific.php
+2603:1020:1004::180/121 Run rules_specific.php
+2603:1020:1004::200/120 Run rules_specific.php
+2603:1020:1004::300/123 Run rules_specific.php
+2603:1020:1004::340/122 Run rules_specific.php
+2603:1020:1004::380/121 Run rules_specific.php
+2603:1020:1004::480/121 Run rules_specific.php
+2603:1020:1004::500/122 Run rules_specific.php
+2603:1020:1004::5a0/123 Run rules_specific.php
+2603:1020:1004::5c0/122 Run rules_specific.php
+2603:1020:1004::600/119 Run rules_specific.php
+2603:1020:1004:1::/121 Run rules_specific.php
+2603:1020:1004:1::80/122 Run rules_specific.php
+2603:1020:1004:1::100/121 Run rules_specific.php
+2603:1020:1004:1::1a0/125 Run rules_specific.php
+2603:1020:1004:1::1e0/124 Run rules_specific.php
+2603:1020:1004:1::1f0/125 Run rules_specific.php
+2603:1020:1004:1::300/120 Run rules_specific.php
+2603:1020:1004:1::400/120 Run rules_specific.php
+2603:1020:1004:1::500/123 Run rules_specific.php
+2603:1020:1004:400::80/121 Run rules_specific.php
+2603:1020:1004:400::100/121 Run rules_specific.php
+2603:1020:1004:400::180/122 Run rules_specific.php
+2603:1020:1004:400::1c0/124 Run rules_specific.php
+2603:1020:1004:400::1d0/125 Run rules_specific.php
+2603:1020:1004:400::1e0/123 Run rules_specific.php
+2603:1020:1004:400::200/119 Run rules_specific.php
+2603:1020:1004:402::/123 Run rules_specific.php
+2603:1020:1004:403::/123 Run rules_specific.php
+2603:1020:1004:800::80/122 Run rules_specific.php
+2603:1020:1004:800::c0/123 Run rules_specific.php
+2603:1020:1004:800::f0/124 Run rules_specific.php
+2603:1020:1004:800::100/120 Run rules_specific.php
+2603:1020:1004:800::300/121 Run rules_specific.php
+2603:1020:1004:800::380/122 Run rules_specific.php
+2603:1020:1004:800::3d0/124 Run rules_specific.php
+2603:1020:1004:800::3e0/125 Run rules_specific.php
+2603:1020:1004:800::3f0/124 Run rules_specific.php
+2603:1020:1004:802::/123 Run rules_specific.php
+2603:1020:1004:803::/123 Run rules_specific.php
+2603:1020:1004:c02::80/122 Run rules_specific.php
+2603:1020:1004:c02::c0/123 Run rules_specific.php
+2603:1020:1004:c02::200/120 Run rules_specific.php
+2603:1020:1004:c02::300/121 Run rules_specific.php
+2603:1020:1004:c02::380/124 Run rules_specific.php
+2603:1020:1004:c03::/123 Run rules_specific.php
+2603:1020:1004:c04::/123 Run rules_specific.php
+2603:1020:1104::/121 Run rules_specific.php
+2603:1020:1104::140/122 Run rules_specific.php
+2603:1020:1104::180/121 Run rules_specific.php
+2603:1020:1104::200/123 Run rules_specific.php
+2603:1020:1104::240/122 Run rules_specific.php
+2603:1020:1104::280/121 Run rules_specific.php
+2603:1020:1104::300/122 Run rules_specific.php
+2603:1020:1104::520/123 Run rules_specific.php
+2603:1020:1104::5a0/125 Run rules_specific.php
+2603:1020:1104::5e0/123 Run rules_specific.php
+2603:1020:1104::600/119 Run rules_specific.php
+2603:1020:1104:1::/120 Run rules_specific.php
+2603:1020:1104:1::100/122 Run rules_specific.php
+2603:1020:1104:1::140/124 Run rules_specific.php
+2603:1020:1104:1::150/125 Run rules_specific.php
+2603:1020:1104:1::160/123 Run rules_specific.php
+2603:1020:1104:1::180/121 Run rules_specific.php
+2603:1020:1104:400::80/121 Run rules_specific.php
+2603:1020:1104:400::100/122 Run rules_specific.php
+2603:1020:1104:400::140/123 Run rules_specific.php
+2603:1020:1104:400::170/124 Run rules_specific.php
+2603:1020:1104:400::180/122 Run rules_specific.php
+2603:1020:1104:400::1c0/123 Run rules_specific.php
+2603:1020:1104:400::200/121 Run rules_specific.php
+2603:1020:1104:400::280/122 Run rules_specific.php
+2603:1020:1104:400::2c0/124 Run rules_specific.php
+2603:1020:1104:400::2d0/125 Run rules_specific.php
+2603:1020:1104:400::2e0/123 Run rules_specific.php
+2603:1020:1104:400::300/120 Run rules_specific.php
+2603:1020:1104:400::500/122 Run rules_specific.php
+2603:1020:1104:402::/123 Run rules_specific.php
+2603:1026:2400::/47 Run rules_specific.php
+2603:1026:2403::/48 Run rules_specific.php
+2603:1026:2404::/46 Run rules_specific.php
+2603:1026:2409::/48 Run rules_specific.php
+2603:1026:240a::/47 Run rules_specific.php
+2603:1026:240c::/46 Run rules_specific.php
+2603:1026:2410::/47 Run rules_specific.php
+2603:1026:2500:8::/64 Run rules_specific.php
+2603:1026:2500:c::/64 Run rules_specific.php
+2603:1026:2500:10::/64 Run rules_specific.php
+2603:1026:2500:14::/64 Run rules_specific.php
+2603:1026:2500:18::/64 Run rules_specific.php
+2603:1026:2500:1c::/64 Run rules_specific.php
+2603:1026:2500:20::/64 Run rules_specific.php
+2603:1026:2500:24::/64 Run rules_specific.php
+2603:1026:2500:28::/64 Run rules_specific.php
+2603:1026:2500:2c::/64 Run rules_specific.php
+2603:1026:2500:30::/64 Run rules_specific.php
+2603:1026:2500:34::/64 Run rules_specific.php
+2603:1026:3000::/48 Run rules_specific.php
+2603:1027:1::/48 Run rules_specific.php
+2603:1030::/45 Run rules_specific.php
+2603:1030:8::/48 Run rules_specific.php
+2603:1030:9::/56 Run rules_specific.php
+2603:1030:9:100::/59 Run rules_specific.php
+2603:1030:9:120::/63 Run rules_specific.php
+2603:1030:a::/47 Run rules_specific.php
+2603:1030:d::/48 Run rules_specific.php
+2603:1030:e::/47 Run rules_specific.php
+2603:1030:10::/48 Run rules_specific.php
+2603:1030:104::/121 Run rules_specific.php
+2603:1030:104::80/122 Run rules_specific.php
+2603:1030:104::100/120 Run rules_specific.php
+2603:1030:104::300/123 Run rules_specific.php
+2603:1030:104:1::/121 Run rules_specific.php
+2603:1030:104:1::140/122 Run rules_specific.php
+2603:1030:104:1::180/121 Run rules_specific.php
+2603:1030:104:1::200/120 Run rules_specific.php
+2603:1030:104:1::300/123 Run rules_specific.php
+2603:1030:104:1::340/122 Run rules_specific.php
+2603:1030:104:1::380/121 Run rules_specific.php
+2603:1030:104:1::480/121 Run rules_specific.php
+2603:1030:104:1::500/122 Run rules_specific.php
+2603:1030:104:1::5a0/123 Run rules_specific.php
+2603:1030:104:1::5c0/122 Run rules_specific.php
+2603:1030:104:1::600/119 Run rules_specific.php
+2603:1030:104:400::/123 Run rules_specific.php
+2603:1030:104:401::/123 Run rules_specific.php
+2603:1030:104:402::80/121 Run rules_specific.php
+2603:1030:104:402::100/122 Run rules_specific.php
+2603:1030:104:402::140/123 Run rules_specific.php
+2603:1030:104:402::170/124 Run rules_specific.php
+2603:1030:104:402::180/122 Run rules_specific.php
+2603:1030:104:402::1c0/123 Run rules_specific.php
+2603:1030:104:402::200/121 Run rules_specific.php
+2603:1030:104:402::280/122 Run rules_specific.php
+2603:1030:104:402::2c0/124 Run rules_specific.php
+2603:1030:104:402::2d0/125 Run rules_specific.php
+2603:1030:104:402::2e0/123 Run rules_specific.php
+2603:1030:104:402::300/121 Run rules_specific.php
+2603:1030:104:402::380/122 Run rules_specific.php
+2603:1030:104:402::3c0/124 Run rules_specific.php
+2603:1030:104:402::3e0/123 Run rules_specific.php
+2603:1030:107::/121 Run rules_specific.php
+2603:1030:107::140/122 Run rules_specific.php
+2603:1030:107::180/121 Run rules_specific.php
+2603:1030:107::200/123 Run rules_specific.php
+2603:1030:107::240/122 Run rules_specific.php
+2603:1030:107::280/121 Run rules_specific.php
+2603:1030:107::300/122 Run rules_specific.php
+2603:1030:107::540/123 Run rules_specific.php
+2603:1030:107::580/125 Run rules_specific.php
+2603:1030:107::600/120 Run rules_specific.php
+2603:1030:107::700/123 Run rules_specific.php
+2603:1030:107::720/124 Run rules_specific.php
+2603:1030:107::730/125 Run rules_specific.php
+2603:1030:107::740/122 Run rules_specific.php
+2603:1030:107::780/121 Run rules_specific.php
+2603:1030:107:1::/119 Run rules_specific.php
+2603:1030:107:1::200/122 Run rules_specific.php
+2603:1030:107:400::/120 Run rules_specific.php
+2603:1030:107:400::100/122 Run rules_specific.php
+2603:1030:107:400::140/123 Run rules_specific.php
+2603:1030:107:400::180/121 Run rules_specific.php
+2603:1030:107:400::200/122 Run rules_specific.php
+2603:1030:107:400::240/124 Run rules_specific.php
+2603:1030:107:400::260/123 Run rules_specific.php
+2603:1030:107:400::280/121 Run rules_specific.php
+2603:1030:107:400::300/121 Run rules_specific.php
+2603:1030:107:400::380/122 Run rules_specific.php
+2603:1030:107:400::3c0/123 Run rules_specific.php
+2603:1030:107:401::40/122 Run rules_specific.php
+2603:1030:107:402::40/123 Run rules_specific.php
+2603:1030:208::/46 Run rules_specific.php
+2603:1030:20c::/47 Run rules_specific.php
+2603:1030:20e::/48 Run rules_specific.php
+2603:1030:210::/47 Run rules_specific.php
+2603:1030:400::/48 Run rules_specific.php
+2603:1030:401::/56 Run rules_specific.php
+2603:1030:401:100::/58 Run rules_specific.php
+2603:1030:401:140::/59 Run rules_specific.php
+2603:1030:401:160::/63 Run rules_specific.php
+2603:1030:402::/47 Run rules_specific.php
+2603:1030:405::/48 Run rules_specific.php
+2603:1030:406::/47 Run rules_specific.php
+2603:1030:408::/47 Run rules_specific.php
+2603:1030:40a::/61 Run rules_specific.php
+2603:1030:40a:8::/63 Run rules_specific.php
+2603:1030:40b::/48 Run rules_specific.php
+2603:1030:40c::/47 Run rules_specific.php
+2603:1030:504::/121 Run rules_specific.php
+2603:1030:504::80/122 Run rules_specific.php
+2603:1030:504::100/121 Run rules_specific.php
+2603:1030:504::1a0/125 Run rules_specific.php
+2603:1030:504::1e0/124 Run rules_specific.php
+2603:1030:504::1f0/125 Run rules_specific.php
+2603:1030:504::300/120 Run rules_specific.php
+2603:1030:504::400/120 Run rules_specific.php
+2603:1030:504::500/123 Run rules_specific.php
+2603:1030:504:1::/121 Run rules_specific.php
+2603:1030:504:1::140/122 Run rules_specific.php
+2603:1030:504:1::180/121 Run rules_specific.php
+2603:1030:504:1::200/120 Run rules_specific.php
+2603:1030:504:1::300/123 Run rules_specific.php
+2603:1030:504:1::340/122 Run rules_specific.php
+2603:1030:504:1::380/121 Run rules_specific.php
+2603:1030:504:1::480/121 Run rules_specific.php
+2603:1030:504:1::500/122 Run rules_specific.php
+2603:1030:504:1::5a0/123 Run rules_specific.php
+2603:1030:504:1::5c0/122 Run rules_specific.php
+2603:1030:504:1::600/119 Run rules_specific.php
+2603:1030:504:400::/123 Run rules_specific.php
+2603:1030:504:401::/123 Run rules_specific.php
+2603:1030:504:402::80/121 Run rules_specific.php
+2603:1030:504:402::100/121 Run rules_specific.php
+2603:1030:504:402::180/122 Run rules_specific.php
+2603:1030:504:402::1c0/124 Run rules_specific.php
+2603:1030:504:402::1d0/125 Run rules_specific.php
+2603:1030:504:402::1e0/123 Run rules_specific.php
+2603:1030:504:402::200/119 Run rules_specific.php
+2603:1030:504:800::/123 Run rules_specific.php
+2603:1030:504:801::/123 Run rules_specific.php
+2603:1030:504:802::80/122 Run rules_specific.php
+2603:1030:504:802::c0/123 Run rules_specific.php
+2603:1030:504:802::f0/124 Run rules_specific.php
+2603:1030:504:802::100/120 Run rules_specific.php
+2603:1030:504:802::200/120 Run rules_specific.php
+2603:1030:504:802::300/121 Run rules_specific.php
+2603:1030:504:802::380/122 Run rules_specific.php
+2603:1030:504:802::3d0/124 Run rules_specific.php
+2603:1030:504:802::3e0/125 Run rules_specific.php
+2603:1030:504:802::3f0/124 Run rules_specific.php
+2603:1030:504:c00::/123 Run rules_specific.php
+2603:1030:504:c01::/123 Run rules_specific.php
+2603:1030:504:c02::80/122 Run rules_specific.php
+2603:1030:504:c02::c0/123 Run rules_specific.php
+2603:1030:504:c02::100/123 Run rules_specific.php
+2603:1030:504:c02::200/120 Run rules_specific.php
+2603:1030:504:c02::300/121 Run rules_specific.php
+2603:1030:504:c02::380/124 Run rules_specific.php
+2603:1030:600::/46 Run rules_specific.php
+2603:1030:604::/47 Run rules_specific.php
+2603:1030:607::/48 Run rules_specific.php
+2603:1030:608::/48 Run rules_specific.php
+2603:1030:800::/48 Run rules_specific.php
+2603:1030:802::/47 Run rules_specific.php
+2603:1030:804::/58 Run rules_specific.php
+2603:1030:804:40::/60 Run rules_specific.php
+2603:1030:804:53::/64 Run rules_specific.php
+2603:1030:804:54::/64 Run rules_specific.php
+2603:1030:804:5b::/64 Run rules_specific.php
+2603:1030:804:5c::/62 Run rules_specific.php
+2603:1030:804:60::/62 Run rules_specific.php
+2603:1030:804:67::/64 Run rules_specific.php
+2603:1030:804:68::/61 Run rules_specific.php
+2603:1030:804:70::/60 Run rules_specific.php
+2603:1030:804:80::/59 Run rules_specific.php
+2603:1030:804:a0::/62 Run rules_specific.php
+2603:1030:804:a4::/64 Run rules_specific.php
+2603:1030:804:a6::/63 Run rules_specific.php
+2603:1030:804:a8::/61 Run rules_specific.php
+2603:1030:804:b0::/62 Run rules_specific.php
+2603:1030:804:b4::/64 Run rules_specific.php
+2603:1030:804:b6::/63 Run rules_specific.php
+2603:1030:804:b8::/61 Run rules_specific.php
+2603:1030:804:c0::/61 Run rules_specific.php
+2603:1030:804:c8::/62 Run rules_specific.php
+2603:1030:804:cc::/63 Run rules_specific.php
+2603:1030:804:d2::/63 Run rules_specific.php
+2603:1030:804:d4::/62 Run rules_specific.php
+2603:1030:804:d8::/61 Run rules_specific.php
+2603:1030:804:e0::/60 Run rules_specific.php
+2603:1030:804:f0::/62 Run rules_specific.php
+2603:1030:804:f4::/64 Run rules_specific.php
+2603:1030:805::/48 Run rules_specific.php
+2603:1030:806::/47 Run rules_specific.php
+2603:1030:a00::/46 Run rules_specific.php
+2603:1030:a04::/48 Run rules_specific.php
+2603:1030:a06::/47 Run rules_specific.php
+2603:1030:a08::/48 Run rules_specific.php
+2603:1030:b00::/47 Run rules_specific.php
+2603:1030:b03::/48 Run rules_specific.php
+2603:1030:b04::/47 Run rules_specific.php
+2603:1030:c00::/48 Run rules_specific.php
+2603:1030:c02::/47 Run rules_specific.php
+2603:1030:c04::/46 Run rules_specific.php
+2603:1030:d00::/48 Run rules_specific.php
+2603:1030:e01:2::/64 Run rules_specific.php
+2603:1030:f00::/47 Run rules_specific.php
+2603:1030:f02::/48 Run rules_specific.php
+2603:1030:f04::/47 Run rules_specific.php
+2603:1030:f06::/48 Run rules_specific.php
+2603:1030:1000::/47 Run rules_specific.php
+2603:1030:1002::/48 Run rules_specific.php
+2603:1030:1004::/47 Run rules_specific.php
+2603:1036:9ff:ffff::/64 Run rules_specific.php
+2603:1036:120d::/48 Run rules_specific.php
+2603:1036:2400::/45 Run rules_specific.php
+2603:1036:2408::/47 Run rules_specific.php
+2603:1036:240a::/48 Run rules_specific.php
+2603:1036:240d::/48 Run rules_specific.php
+2603:1036:2500::/64 Run rules_specific.php
+2603:1036:2500:4::/64 Run rules_specific.php
+2603:1036:2500:8::/64 Run rules_specific.php
+2603:1036:2500:10::/64 Run rules_specific.php
+2603:1036:2500:14::/64 Run rules_specific.php
+2603:1036:2500:1c::/64 Run rules_specific.php
+2603:1036:2500:20::/64 Run rules_specific.php
+2603:1036:2500:24::/64 Run rules_specific.php
+2603:1036:2500:2c::/64 Run rules_specific.php
+2603:1036:2500:30::/64 Run rules_specific.php
+2603:1036:2500:34::/64 Run rules_specific.php
+2603:1036:3000::/48 Run rules_specific.php
+2603:1037:1::/48 Run rules_specific.php
+2603:1039:205::/48 Run rules_specific.php
+2603:1040::/47 Run rules_specific.php
+2603:1040:2::/48 Run rules_specific.php
+2603:1040:4::/47 Run rules_specific.php
+2603:1040:200::/46 Run rules_specific.php
+2603:1040:204::/48 Run rules_specific.php
+2603:1040:206::/47 Run rules_specific.php
+2603:1040:400::/46 Run rules_specific.php
+2603:1040:404::/48 Run rules_specific.php
+2603:1040:406::/47 Run rules_specific.php
+2603:1040:600::/46 Run rules_specific.php
+2603:1040:605::/48 Run rules_specific.php
+2603:1040:606::/48 Run rules_specific.php
+2603:1040:800::/46 Run rules_specific.php
+2603:1040:805::/48 Run rules_specific.php
+2603:1040:806::/48 Run rules_specific.php
+2603:1040:900::/47 Run rules_specific.php
+2603:1040:903::/48 Run rules_specific.php
+2603:1040:904::/48 Run rules_specific.php
+2603:1040:a00::/46 Run rules_specific.php
+2603:1040:a05::/48 Run rules_specific.php
+2603:1040:a06::/48 Run rules_specific.php
+2603:1040:b00::/47 Run rules_specific.php
+2603:1040:b03::/48 Run rules_specific.php
+2603:1040:b04::/48 Run rules_specific.php
+2603:1040:c00::/46 Run rules_specific.php
+2603:1040:c05::/48 Run rules_specific.php
+2603:1040:c06::/48 Run rules_specific.php
+2603:1040:d04::/121 Run rules_specific.php
+2603:1040:d04::140/122 Run rules_specific.php
+2603:1040:d04::180/121 Run rules_specific.php
+2603:1040:d04::200/120 Run rules_specific.php
+2603:1040:d04::300/123 Run rules_specific.php
+2603:1040:d04::340/122 Run rules_specific.php
+2603:1040:d04::380/121 Run rules_specific.php
+2603:1040:d04::480/121 Run rules_specific.php
+2603:1040:d04::500/122 Run rules_specific.php
+2603:1040:d04::5a0/123 Run rules_specific.php
+2603:1040:d04::5c0/122 Run rules_specific.php
+2603:1040:d04::600/119 Run rules_specific.php
+2603:1040:d04:1::/121 Run rules_specific.php
+2603:1040:d04:1::80/122 Run rules_specific.php
+2603:1040:d04:1::100/121 Run rules_specific.php
+2603:1040:d04:1::1a0/125 Run rules_specific.php
+2603:1040:d04:1::1e0/124 Run rules_specific.php
+2603:1040:d04:1::1f0/125 Run rules_specific.php
+2603:1040:d04:1::300/120 Run rules_specific.php
+2603:1040:d04:1::400/120 Run rules_specific.php
+2603:1040:d04:1::500/123 Run rules_specific.php
+2603:1040:d04:400::80/121 Run rules_specific.php
+2603:1040:d04:400::100/121 Run rules_specific.php
+2603:1040:d04:400::180/122 Run rules_specific.php
+2603:1040:d04:400::1c0/124 Run rules_specific.php
+2603:1040:d04:400::1d0/125 Run rules_specific.php
+2603:1040:d04:400::1e0/123 Run rules_specific.php
+2603:1040:d04:400::200/119 Run rules_specific.php
+2603:1040:d04:402::/123 Run rules_specific.php
+2603:1040:d04:403::/123 Run rules_specific.php
+2603:1040:d04:800::80/122 Run rules_specific.php
+2603:1040:d04:800::c0/123 Run rules_specific.php
+2603:1040:d04:800::f0/124 Run rules_specific.php
+2603:1040:d04:800::100/120 Run rules_specific.php
+2603:1040:d04:800::300/121 Run rules_specific.php
+2603:1040:d04:800::380/122 Run rules_specific.php
+2603:1040:d04:800::3d0/124 Run rules_specific.php
+2603:1040:d04:800::3e0/125 Run rules_specific.php
+2603:1040:d04:800::3f0/124 Run rules_specific.php
+2603:1040:d04:802::/123 Run rules_specific.php
+2603:1040:d04:803::/123 Run rules_specific.php
+2603:1040:d04:c02::80/122 Run rules_specific.php
+2603:1040:d04:c02::c0/123 Run rules_specific.php
+2603:1040:d04:c02::200/120 Run rules_specific.php
+2603:1040:d04:c02::300/121 Run rules_specific.php
+2603:1040:d04:c02::380/124 Run rules_specific.php
+2603:1040:d04:c03::/123 Run rules_specific.php
+2603:1040:d04:c04::/123 Run rules_specific.php
+2603:1040:e00::/47 Run rules_specific.php
+2603:1040:e02::/48 Run rules_specific.php
+2603:1040:e04::/47 Run rules_specific.php
+2603:1040:f00::/47 Run rules_specific.php
+2603:1040:f02::/48 Run rules_specific.php
+2603:1040:f04::/47 Run rules_specific.php
+2603:1040:1104::/121 Run rules_specific.php
+2603:1040:1104::140/122 Run rules_specific.php
+2603:1040:1104::180/121 Run rules_specific.php
+2603:1040:1104::200/123 Run rules_specific.php
+2603:1040:1104::240/122 Run rules_specific.php
+2603:1040:1104::280/121 Run rules_specific.php
+2603:1040:1104::300/122 Run rules_specific.php
+2603:1040:1104::520/123 Run rules_specific.php
+2603:1040:1104::5a0/125 Run rules_specific.php
+2603:1040:1104::5e0/123 Run rules_specific.php
+2603:1040:1104::600/119 Run rules_specific.php
+2603:1040:1104:1::/120 Run rules_specific.php
+2603:1040:1104:1::100/122 Run rules_specific.php
+2603:1040:1104:1::140/124 Run rules_specific.php
+2603:1040:1104:1::150/125 Run rules_specific.php
+2603:1040:1104:1::160/123 Run rules_specific.php
+2603:1040:1104:1::180/121 Run rules_specific.php
+2603:1040:1104:400::80/121 Run rules_specific.php
+2603:1040:1104:400::100/122 Run rules_specific.php
+2603:1040:1104:400::140/123 Run rules_specific.php
+2603:1040:1104:400::170/124 Run rules_specific.php
+2603:1040:1104:400::180/122 Run rules_specific.php
+2603:1040:1104:400::1c0/123 Run rules_specific.php
+2603:1040:1104:400::200/121 Run rules_specific.php
+2603:1040:1104:400::280/122 Run rules_specific.php
+2603:1040:1104:400::2c0/124 Run rules_specific.php
+2603:1040:1104:400::2d0/125 Run rules_specific.php
+2603:1040:1104:400::2e0/123 Run rules_specific.php
+2603:1040:1104:400::300/120 Run rules_specific.php
+2603:1040:1104:400::500/122 Run rules_specific.php
+2603:1040:1104:402::/123 Run rules_specific.php
+2603:1046:1400::/45 Run rules_specific.php
+2603:1046:1408::/48 Run rules_specific.php
+2603:1046:140a::/47 Run rules_specific.php
+2603:1046:1500::/64 Run rules_specific.php
+2603:1046:1500:4::/64 Run rules_specific.php
+2603:1046:1500:8::/64 Run rules_specific.php
+2603:1046:1500:14::/64 Run rules_specific.php
+2603:1046:1500:18::/64 Run rules_specific.php
+2603:1046:1500:1c::/64 Run rules_specific.php
+2603:1046:1500:20::/64 Run rules_specific.php
+2603:1046:1500:24::/64 Run rules_specific.php
+2603:1046:1500:28::/64 Run rules_specific.php
+2603:1046:1500:2c::/64 Run rules_specific.php
+2603:1046:1500:30::/64 Run rules_specific.php
+2603:1046:2000::/48 Run rules_specific.php
+2603:1047:1::/48 Run rules_specific.php
+2603:1050:1::/48 Run rules_specific.php
+2603:1050:2::/47 Run rules_specific.php
+2603:1050:5::/48 Run rules_specific.php
+2603:1050:6::/48 Run rules_specific.php
+2603:1050:100::/40 Run rules_specific.php
+2603:1050:211::/48 Run rules_specific.php
+2603:1050:300::/40 Run rules_specific.php
+2603:1050:400::/48 Run rules_specific.php
+2603:1050:402::/47 Run rules_specific.php
+2603:1056:1400::/46 Run rules_specific.php
+2603:1056:1500::/64 Run rules_specific.php
+2603:1056:1500:4::/64 Run rules_specific.php
+2603:1056:2000::/48 Run rules_specific.php
+2603:1057:2::/48 Run rules_specific.php
+2603:1061:1002::/48 Run rules_specific.php
+2620:1ec:4::/46 Run rules_specific.php
+2620:1ec:a::/47 Run rules_specific.php
+2620:1ec:c::/47 Run rules_specific.php
+2620:1ec:12::/47 Run rules_specific.php
+2620:1ec:21::/48 Run rules_specific.php
+2620:1ec:22::/48 Run rules_specific.php
+2620:1ec:26::/63 Run rules_specific.php
+2620:1ec:26:2::/64 Run rules_specific.php
+2620:1ec:28::/47 Run rules_specific.php
+2620:1ec:34::/48 Run rules_specific.php
+2620:1ec:39::/48 Run rules_specific.php
+2620:1ec:3e::/47 Run rules_specific.php
+2620:1ec:40::/46 Run rules_specific.php
+2620:1ec:44::/47 Run rules_specific.php
+2620:1ec:8f0::/44 Run rules_specific.php
+2620:1ec:900::/44 Run rules_specific.php
+2620:1ec:a92::/48 Run rules_specific.php
+2620:1ec:bdf::/48 Run rules_specific.php
+2620:1ec:c11::/48 Run rules_specific.php
+2a01:111:2003::/48 Run rules_specific.php
+2a01:111:202c::/46 Run rules_specific.php
+2a01:111:2050::/44 Run rules_specific.php
+2a01:111:f100:1000::/62 Run rules_specific.php
+2a01:111:f100:1004::/63 Run rules_specific.php
+2a01:111:f100:2000::/51 Run rules_specific.php
+2a01:111:f100:4002::/64 Run rules_specific.php
+2a01:111:f100:5000::/52 Run rules_specific.php
+2a01:111:f100:6000::/64 Run rules_specific.php
+2a01:111:f100:7000::6fdd:5343/128 Run rules_specific.php
+2a01:111:f100:9001::1761:91e4/128 Run rules_specific.php
+2a01:111:f100:9001::1761:958a/128 Run rules_specific.php
+2a01:111:f100:9001::1761:9696/128 Run rules_specific.php
+2a01:111:f100:a000::/63 Run rules_specific.php
+2a01:111:f100:a002::/64 Run rules_specific.php
+2a01:111:f100:a004::/64 Run rules_specific.php
+2a01:111:f403:c000::/64 Run rules_specific.php
+2a01:111:f403:c004::/62 Run rules_specific.php
+2a01:111:f403:c100::/64 Run rules_specific.php
+2a01:111:f403:c10c::/62 Run rules_specific.php
+2a01:111:f403:c800::/64 Run rules_specific.php
+2a01:111:f403:c804::/62 Run rules_specific.php
+2a01:111:f403:c900::/64 Run rules_specific.php
+2a01:111:f403:c904::/62 Run rules_specific.php
+2a01:111:f403:c908::/61 Run rules_specific.php
+2a01:111:f403:c910::/62 Run rules_specific.php
+2a01:111:f403:d000::/64 Run rules_specific.php
+2a01:111:f403:d004::/62 Run rules_specific.php
+2a01:111:f403:d100::/64 Run rules_specific.php
+2a01:111:f403:d104::/62 Run rules_specific.php
+2a01:111:f403:d108::/61 Run rules_specific.php
+2a01:111:f403:d120::/62 Run rules_specific.php
+2a01:111:f403:d800::/64 Run rules_specific.php
+2a01:111:f403:d804::/62 Run rules_specific.php
+2a01:111:f403:d900::/64 Run rules_specific.php
+2a01:111:f403:d904::/62 Run rules_specific.php
+2a01:111:f403:d908::/61 Run rules_specific.php
+2a01:111:f403:d910::/62 Run rules_specific.php
+2a01:111:f403:e000::/64 Run rules_specific.php
+2a01:111:f403:e004::/62 Run rules_specific.php
+2a01:111:f403:e008::/61 Run rules_specific.php
+2a01:111:f403:e010::/62 Run rules_specific.php
+2a01:111:f403:f000::/64 Run rules_specific.php
+2a01:111:f403:f800::/61 Run rules_specific.php
+2a01:111:f403:f900::/60 Run rules_specific.php
+2a01:111:f403:f910::/62 Run rules_specific.php
+Origin: US
+Tag: Azure

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2020.10.08).
+ * This file: Front-end handler (last modified: 2020.10.09).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -3006,6 +3006,87 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'range' && $CIDRAM['FE']['Permis
     echo $CIDRAM['SendOutput']();
 }
 
+/** Range Intersector. */
+elseif ($CIDRAM['QueryVars']['cidram-page'] === 'range-intersector' && $CIDRAM['FE']['Permissions'] === 1) {
+
+    /** Page initial prepwork. */
+    $CIDRAM['InitialPrepwork']($CIDRAM['L10N']->getString('link_range_intersector'), $CIDRAM['L10N']->getString('tip_range_intersector'), false);
+
+    /** Output format. */
+    $CIDRAM['OutputFormat'] = (isset($_POST['format']) && $_POST['format'] === 'Netmask') ? 1 : 0;
+
+    /** Output format menu. */
+    $CIDRAM['FE']['OutputFormat'] = sprintf(
+        '%1$sCIDR" value="CIDR"%2$s%6$sformatCIDR">%3$s</label><br />%1$sNetmask" value="Netmask"%4$s%6$sformatNetmask">%5$s</label>',
+        '<input type="radio" class="auto" name="format" id="format',
+        $CIDRAM['OutputFormat'] !== 1 ? ' checked' : '',
+        $CIDRAM['L10N']->getString('field_cidr'),
+        $CIDRAM['OutputFormat'] === 1 ? ' checked' : '',
+        $CIDRAM['L10N']->getString('field_netmask'),
+        ' /><label for="'
+    );
+
+    /** Default values for inputs. */
+    $CIDRAM['FE']['Intersector_A'] = isset($_POST['A']) ? $_POST['A'] : '';
+    $CIDRAM['FE']['Intersector_B'] = isset($_POST['B']) ? $_POST['B'] : '';
+
+    /** Default value for output. */
+    $CIDRAM['FE']['Intersector_AB'] = '';
+
+    /** Data was submitted for intersection. */
+    if (isset($_POST['A'], $_POST['B'])) {
+        $CIDRAM['Intersection'] = [
+            'A' => str_replace("\r", '', trim($_POST['A'])),
+            'B' => str_replace("\r", '', trim($_POST['B']))
+        ];
+
+        /** We'll aggregate the latter set before intersecting it with the former. */
+        $CIDRAM['Aggregator'] = new \CIDRAM\Aggregator\Aggregator($CIDRAM);
+        if ($CIDRAM['Intersection']['B']) {
+            $CIDRAM['Intersection']['B'] = "\n" . $CIDRAM['Aggregator']->aggregate(
+                $CIDRAM['Intersection']['B']
+            ) . "\n";
+        }
+
+        /** Beginning intersection process here. */
+        if ($CIDRAM['Intersection']['A'] && $CIDRAM['Intersection']['B']) {
+            $CIDRAM['FE']['Intersector_AB'] = $CIDRAM['IntersectCIDR'](
+                $CIDRAM['Intersection']['A'],
+                $CIDRAM['Intersection']['B'],
+                $CIDRAM['OutputFormat']
+            );
+        }
+
+        /** Cleanup. */
+        unset($CIDRAM['Intersection'], $CIDRAM['Aggregator']);
+    }
+
+    /** Calculate page load time (useful for debugging). */
+    $CIDRAM['FE']['ProcessTime'] = microtime(true) - $_SERVER['REQUEST_TIME_FLOAT'];
+    $CIDRAM['FE']['state_msg'] .= sprintf(
+        $CIDRAM['L10N']->getPlural($CIDRAM['FE']['ProcessTime'], 'state_loadtime'),
+        $CIDRAM['NumberFormatter']->format($CIDRAM['FE']['ProcessTime'], 3)
+    );
+
+    /** Parse output. */
+    $CIDRAM['FE']['FE_Content'] = $CIDRAM['ParseVars'](
+        $CIDRAM['L10N']->Data + $CIDRAM['FE'],
+        $CIDRAM['ReadFile']($CIDRAM['GetAssetPath']('_range_intersector.html'))
+    );
+
+    /** Strip output row if input doesn't exist. */
+    if ($CIDRAM['FE']['Intersector_AB'] !== '') {
+        $CIDRAM['FE']['FE_Content'] = str_replace(['<!-- Output Begin -->', '<!-- Output End -->'], '', $CIDRAM['FE']['FE_Content']);
+    } else {
+        $CIDRAM['FE']['FE_Content'] =
+            substr($CIDRAM['FE']['FE_Content'], 0, strpos($CIDRAM['FE']['FE_Content'], '<!-- Output Begin -->')) .
+            substr($CIDRAM['FE']['FE_Content'], strpos($CIDRAM['FE']['FE_Content'], '<!-- Output End -->') + 19);
+    }
+
+    /** Send output. */
+    echo $CIDRAM['SendOutput']();
+}
+
 /** Range Subtractor. */
 elseif ($CIDRAM['QueryVars']['cidram-page'] === 'range-subtractor' && $CIDRAM['FE']['Permissions'] === 1) {
 
@@ -3041,15 +3122,9 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'range-subtractor' && $CIDRAM['F
         ];
 
         /**
-         * We'll aggregate A, B prior to subtraction, and A-B after
-         * subtraction, for a cleaner and faster operation.
+         * We'll aggregate B prior to subtraction for better optimisation.
          */
         $CIDRAM['Aggregator'] = new \CIDRAM\Aggregator\Aggregator($CIDRAM);
-        if ($CIDRAM['Subtraction']['A']) {
-            $CIDRAM['Subtraction']['A'] = $CIDRAM['Aggregator']->aggregate(
-                $CIDRAM['Subtraction']['A'] . "\n" . $CIDRAM['Subtraction']['B']
-            ) . "\n";
-        }
         if ($CIDRAM['Subtraction']['B']) {
             $CIDRAM['Subtraction']['B'] = $CIDRAM['Aggregator']->aggregate(
                 $CIDRAM['Subtraction']['B']
@@ -3058,18 +3133,11 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'range-subtractor' && $CIDRAM['F
 
         /** Beginning subtraction process here. */
         if ($CIDRAM['Subtraction']['A'] && $CIDRAM['Subtraction']['B']) {
-            $CIDRAM['Subtraction']['A'] = $CIDRAM['SubtractCIDR'](
+            $CIDRAM['FE']['Subtractor_AB'] = $CIDRAM['SubtractCIDR'](
                 $CIDRAM['Subtraction']['A'],
-                $CIDRAM['Subtraction']['B']
+                $CIDRAM['Subtraction']['B'],
+                $CIDRAM['OutputFormat']
             );
-
-            /** Enable netmasks if selected. */
-            if ($CIDRAM['OutputFormat']) {
-                $CIDRAM['Aggregator'] = new \CIDRAM\Aggregator\Aggregator($CIDRAM, $CIDRAM['OutputFormat']);
-            }
-
-            /** Optimise results. */
-            $CIDRAM['FE']['Subtractor_AB'] = $CIDRAM['Aggregator']->aggregate($CIDRAM['Subtraction']['A']);
         }
 
         /** Cleanup. */

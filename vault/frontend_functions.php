@@ -3737,40 +3737,102 @@ $CIDRAM['SplitCIDR'] = function (string $CIDR) use (&$CIDRAM): array {
 };
 
 /**
+ * Returns the intersect of two sets of CIDRs.
+ *
+ * @param string $A Set A.
+ * @param string $B Set B.
+ * @param int $Format The format to return the results as.
+ *      1 = Netmasks. 0 = CIDRs.
+ * @return string The intersect.
+ */
+$CIDRAM['IntersectCIDR'] = function (string $A = '', string $B = '', int $Format = 0) use (&$CIDRAM): string {
+    $StrObject = new \Maikuolan\Common\ComplexStringHandler(
+        $A . "\n",
+        '~(?<=\n)(?:\n|Expires\: \d{4}\.\d\d\.\d\d|Origin\: [A-Z]{2}|(?:\#|Tag\: |Defers to\: )[^\n]+)+\n~',
+        function (string $Data) use (&$CIDRAM, $B, $Format): string {
+            $Data = "\n" . $CIDRAM['Aggregator']->aggregate($Data) . "\n";
+            $Intersect = '';
+            $LPos = 0;
+            while (($NPos = strpos($B, "\n", $LPos)) !== false) {
+                $Line = substr($B, $LPos, $NPos - $LPos);
+                $LPos = $NPos + 1;
+                if (($DPos = strpos($Line, '/')) !== false) {
+                    $Range = substr($Line, $DPos + 1);
+                    $Base = substr($Line, 0, $DPos);
+                } else {
+                    continue;
+                }
+                if (!$CIDRs = $CIDRAM['ExpandIPv4']($Base)) {
+                    if (!$CIDRs = $CIDRAM['ExpandIPv6']($Base)) {
+                        continue;
+                    }
+                }
+                foreach ($CIDRs as $Key => $Actual) {
+                    if (strpos($Data, "\n" . $Actual . "\n") === false) {
+                        continue;
+                    }
+                    $Intersect .= $Line . "\n";
+                    break;
+                }
+            }
+            $Aggregator = new \CIDRAM\Aggregator\Aggregator($CIDRAM, $Format);
+            return trim($Aggregator->aggregate($Intersect));
+        }
+    );
+    $StrObject->iterateClosure(function (string $Data): string {
+        return "\n" . $Data;
+    }, true);
+    return trim($StrObject->recompile());
+};
+
+/**
  * Subtracts subtrahend CIDRs from minuend CIDRs and returns the difference.
  *
  * @param string $Minuend The minuend (assumes no erroneous data).
  * @param string $Subtrahend The subtrahend (assumes no erroneous data).
+ * @param int $Format The format to return the results as.
+ *      1 = Netmasks. 0 = CIDRs.
  * @return string The difference.
  */
-$CIDRAM['SubtractCIDR'] = function (string $Minuend = '', string $Subtrahend = '') use (&$CIDRAM): string {
-    $LPos = 0;
-    $Minuend = "\n" . $Minuend;
-    while (($NPos = strpos($Subtrahend, "\n", $LPos)) !== false) {
-        $Line = substr($Subtrahend, $LPos, $NPos - $LPos);
-        $LPos = $NPos + 1;
-        if (($DPos = strpos($Line, '/')) !== false) {
-            $Range = substr($Line, $DPos + 1);
-            $Base = substr($Line, 0, $DPos);
-        } else {
-            continue;
-        }
-        if (!$CIDRs = $CIDRAM['ExpandIPv4']($Base, false, $Range)) {
-            if (!$CIDRs = $CIDRAM['ExpandIPv6']($Base, false, $Range)) {
-                continue;
+$CIDRAM['SubtractCIDR'] = function (string $Minuend = '', string $Subtrahend = '', int $Format = 0) use (&$CIDRAM): string {
+    $StrObject = new \Maikuolan\Common\ComplexStringHandler(
+        $Minuend . "\n",
+        '~(?<=\n)(?:\n|Expires\: \d{4}\.\d\d\.\d\d|Origin\: [A-Z]{2}|(?:\#|Tag\: |Defers to\: )[^\n]+)+\n~',
+        function (string $Minuend) use (&$CIDRAM, $Subtrahend, $Format): string {
+            $Minuend = "\n" . $CIDRAM['Aggregator']->aggregate($Minuend) . "\n";
+            $LPos = 0;
+            while (($NPos = strpos($Subtrahend, "\n", $LPos)) !== false) {
+                $Line = substr($Subtrahend, $LPos, $NPos - $LPos);
+                $LPos = $NPos + 1;
+                if (($DPos = strpos($Line, '/')) !== false) {
+                    $Range = substr($Line, $DPos + 1);
+                    $Base = substr($Line, 0, $DPos);
+                } else {
+                    continue;
+                }
+                if (!$CIDRs = $CIDRAM['ExpandIPv4']($Base, false, $Range)) {
+                    if (!$CIDRs = $CIDRAM['ExpandIPv6']($Base, false, $Range)) {
+                        continue;
+                    }
+                }
+                foreach ($CIDRs as $Key => $Actual) {
+                    if (strpos($Minuend, "\n" . $Actual . "\n") === false) {
+                        continue;
+                    }
+                    if ($Range > ($Key + 1) && $Split = $CIDRAM['SplitCIDR']($Actual)) {
+                        $Minuend .= implode("\n", $Split) . "\n";
+                    }
+                    $Minuend = str_replace("\n" . $Actual . "\n", "\n", $Minuend);
+                }
             }
+            $Aggregator = new \CIDRAM\Aggregator\Aggregator($CIDRAM, $Format);
+            return trim($Aggregator->aggregate($Minuend));
         }
-        foreach ($CIDRs as $Key => $Actual) {
-            if (strpos($Minuend, "\n" . $Actual . "\n") === false) {
-                continue;
-            }
-            if ($Range > ($Key + 1) && $Split = $CIDRAM['SplitCIDR']($Actual)) {
-                $Minuend .= implode("\n", $Split) . "\n";
-            }
-            $Minuend = str_replace("\n" . $Actual . "\n", "\n", $Minuend);
-        }
-    }
-    return substr($Minuend, 1);
+    );
+    $StrObject->iterateClosure(function (string $Data): string {
+        return "\n" . $Data;
+    }, true);
+    return trim($StrObject->recompile());
 };
 
 /**

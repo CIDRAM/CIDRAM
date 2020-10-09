@@ -5,15 +5,15 @@
   <td class="right extend">
     <div class="s">{state_msg}</div>
     <table>
-      <form action="?cidram-page=range-subtractor" method="POST">
+      <form action="?cidram-page=range-intersector" method="POST">
         <tr>
           <td colspan="2" class="h3f">
-            <div class="center"><span class="s">Minuend (A)<br /></span><textarea name="A">{Subtractor_A}</textarea></div>
+            <div class="center"><span class="s">A<br /></span><textarea name="A">{Intersector_A}</textarea></div>
           </td>
         </tr>
         <tr>
           <td colspan="2" class="h3f">
-            <div class="center"><span class="s">Subtrahend (B)<br /></span><textarea name="B">{Subtractor_B}</textarea></div>
+            <div class="center"><span class="s">B<br /></span><textarea name="B">{Intersector_B}</textarea></div>
           </td>
         </tr>
         <tr>
@@ -31,7 +31,7 @@
         <tr>
           <td colspan="2" class="h4f">
             <div class="center">
-              <span class="s">{label_difference} (A-B)<br /></span><textarea readonly>{Subtractor_AB}</textarea>
+              <span class="s">{label_intersect} (A∩B)<br /></span><textarea readonly>{Intersector_AB}</textarea>
             </div>
           </td>
         </tr><!-- Output End -->

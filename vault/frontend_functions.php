@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2020.10.09).
+ * This file: Front-end functions file (last modified: 2020.10.10).
  */
 
 /**
@@ -3211,7 +3211,7 @@ $CIDRAM['AuxGenerateFEData'] = function ($Mode = false) use (&$CIDRAM) {
     /** Update button before. */
     if ($Mode) {
         $Output .= sprintf(
-            '<div class="%s"><center><input onclick="javascript:updateRules()" type="button" value="%s" class="auto" /></center></div>',
+            '<div class="%s"><center><input type="submit" value="%s" class="auto" /></center></div>',
             $StyleClass,
             $CIDRAM['L10N']->getString('field_update_all')
         );
@@ -3230,7 +3230,7 @@ $CIDRAM['AuxGenerateFEData'] = function ($Mode = false) use (&$CIDRAM) {
             /** Rule begin and rule name. */
             $Output .= sprintf(
                 '%1$s<div class="%2$s"><dl><dt class="s">%4$s</dt><dd><input type="text" name="ruleName[%5$s]" class="f400" value="%3$s" /></dd></dl>',
-                "\n      ", $StyleClass, $Name, $CIDRAM['L10N']->getString('field_new_name'), $Current
+                "\n      ", $StyleClass, empty($Name) ? '' : $Name, $CIDRAM['L10N']->getString('field_new_name'), $Current
             );
 
             /** Set rule priority (rearranges the rules). */
@@ -3288,11 +3288,11 @@ $CIDRAM['AuxGenerateFEData'] = function ($Mode = false) use (&$CIDRAM) {
                 );
                 if (!empty($Data[$MenuOption[2]])) {
                     $ConditionsFrom = $MenuOption[2];
-                    $JSAppend .= sprintf('onAuxActionChange(\'%1$s\',\'%2$s\',\'%3$s\');', $MenuOption[2], $RuleClass, $Current);
+                    $JSAppend .= sprintf('onAuxActionChange(\'%1$s\',\'%2$s\',\'%3$s\');', $MenuOption[0], $RuleClass, $Current);
                 }
             }
             $Output .= sprintf(
-                '</select><input type="button" onclick="javascript:addCondition(%2$s)" value="%1$s" class="auto" /></dt>',
+                '</select><input type="button" onclick="javascript:addCondition(\'%2$s\')" value="%1$s" class="auto" /></dt>',
                 $CIDRAM['L10N']->getString('field_add_more_conditions'), $Current
             );
             $Output .= sprintf('<dd id="%1$sconditions">', $Current);
@@ -3300,12 +3300,11 @@ $CIDRAM['AuxGenerateFEData'] = function ($Mode = false) use (&$CIDRAM) {
             /** Populate conditions. */
             if ($ConditionsFrom && is_array($Data[$ConditionsFrom])) {
                 $Iteration = 0;
-                $ConditionFormTemplate = '
-        <div>
-          <select name="conSourceType[%1$s][%2$s]" class="auto">%3$s</select>
-          <select name="conIfOrNot[%1$s][%2$s]" class="auto"><option value="If"%6$s>=</option><option value="Not"%7$s>≠</option></select>
-          <input type="text" name="conSourceValue[%1$s][%2$s]" placeholder="%4$s" class="f400" value="%5$s" />
-        </div>';
+                $ConditionFormTemplate =
+                    "\n<div>" . 
+                    '<select name="conSourceType[%1$s][%2$s]" class="auto">%3$s</select>' .
+                    '<select name="conIfOrNot[%1$s][%2$s]" class="auto"><option value="If"%6$s>=</option><option value="Not"%7$s>≠</option></select>' .
+                    '<input type="text" name="conSourceValue[%1$s][%2$s]" placeholder="%4$s" class="f400" value="%5$s" /></div>';
                 foreach ([['If matches', ' selected', ''], ['But not if matches', '', ' selected']] as $ModeSet) {
                     if (isset($Data[$ConditionsFrom][$ModeSet[0]]) && is_array($Data[$ConditionsFrom][$ModeSet[0]])) {
                         foreach ($Data[$ConditionsFrom][$ModeSet[0]] as $Key => $Values) {
@@ -3331,7 +3330,7 @@ $CIDRAM['AuxGenerateFEData'] = function ($Mode = false) use (&$CIDRAM) {
 
             /** Webhook button. */
             $Output .= sprintf(
-                '<dl><dt><input type="button" onclick="javascript:addWebhook(%1$s)" value="%2$s" class="auto" /></dt><dd id="%1$swebhooks">',
+                '<dl><dt><input type="button" onclick="javascript:addWebhook(\'%1$s\')" value="%2$s" class="auto" /></dt><dd id="%1$swebhooks">',
                 $Current,
                 $CIDRAM['L10N']->getString('field_add_webhook')
             );
@@ -3536,7 +3535,7 @@ $CIDRAM['AuxGenerateFEData'] = function ($Mode = false) use (&$CIDRAM) {
     if ($Mode) {
         $StyleClass = $StyleClass === 'ng1' ? 'ng2' : 'ng1';
         $Output .= sprintf(
-            '<div class="%s"><center><input onclick="javascript:updateRules()" type="button" value="%s" class="auto" /></center></div>',
+            '<div class="%s"><center><input type="submit" value="%s" class="auto" /></center></div>',
             $StyleClass,
             $CIDRAM['L10N']->getString('field_update_all')
         );

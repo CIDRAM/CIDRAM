@@ -60,19 +60,17 @@
           <li>
             <dl>
               <dt class="s">
-                <select id="act" name="act" class="auto" onchange="javascript:onAuxActionChange(this.value)">
+                <select id="act" name="act" class="auto" onchange="javascript:onAuxActionChange(this.value,'','')">
                   <option value="actWhl">{optActWhl}</option>
                   <option value="actGrl">{optActGrl}</option>
                   <option value="actBlk" selected>{optActBlk}</option>
                   <option value="actByp">{optActByp}</option>
                   <option value="actLog">{optActLog}</option>
                   <option value="actRdr">{optActRdr}</option>
-                </select><input type="button" onclick="javascript:addCondition()" value="{field_add_more_conditions} [1]" class="auto" accesskey="1" />
+                </select><input type="button" onclick="javascript:addCondition('')" value="{field_add_more_conditions} [1]" class="auto" accesskey="1" />
               </dt>
               <dd id="conditions">
-                <select name="conSourceType[]" class="auto">{conSources}</select>
-                <select name="conIfOrNot[]" class="auto"><option value="If">=</option><option value="Not">≠</option></select>
-                <input type="text" name="conSourceValue[]" placeholder="{tip_condition_placeholder}" class="f400" />
+                <select name="conSourceType[]" class="auto">{conSources}</select><select name="conIfOrNot[]" class="auto"><option value="If">=</option><option value="Not">≠</option></select><input type="text" name="conSourceValue[]" placeholder="{tip_condition_placeholder}" class="f400" />
               </dd>
             </dl>
           </li>
@@ -83,7 +81,7 @@
           <li>
             <dl>
               <dt class="s">
-                <input type="button" onclick="javascript:addWebhook()" value="{field_add_webhook} [0]" class="auto" accesskey="0" />
+                <input type="button" onclick="javascript:addWebhook('')" value="{field_add_webhook} [0]" class="auto" accesskey="0" />
               </dt>
               <dd id="webhooks"></dd>
             </dl>

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2020.10.09).
+ * This file: Front-end handler (last modified: 2020.10.10).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -4077,6 +4077,118 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'aux-edit' && $CIDRAM['FE']['Per
 
     /** Populate sources. */
     $CIDRAM['FE']['conSources'] = $CIDRAM['GenerateOptions']($CIDRAM['SourcesL10N'], '~(?: | )?(?:：|:) ?$~');
+
+    /** Update auxiliary rules. */
+    if (isset($_POST, $_POST['rulePriority']) && is_array($_POST['rulePriority'])) {
+        $CIDRAM['NewAuxArr'] = [];
+        foreach ($_POST['rulePriority'] as $CIDRAM['Iterant'] => $CIDRAM['Priority']) {
+            if (!isset($_POST['ruleName'], $_POST['ruleName'][$CIDRAM['Iterant']]) || empty($_POST['ruleName'][$CIDRAM['Iterant']])) {
+                continue;
+            }
+            $CIDRAM['NewAuxArr'][$_POST['ruleName'][$CIDRAM['Iterant']]] = ['Priority' => $CIDRAM['Priority']];
+            if (isset($_POST['mtd'], $_POST['mtd'][$CIDRAM['Iterant']]) && !empty($_POST['mtd'][$CIDRAM['Iterant']])) {
+                if ($_POST['mtd'][$CIDRAM['Iterant']] === 'mtdReg') {
+                    $CIDRAM['NewAuxArr'][$_POST['ruleName'][$CIDRAM['Iterant']]]['Method'] = 'RegEx';
+                } elseif ($_POST['mtd'][$CIDRAM['Iterant']] === 'mtdWin') {
+                    $CIDRAM['NewAuxArr'][$_POST['ruleName'][$CIDRAM['Iterant']]]['Method'] = 'WinEx';
+                }
+            }
+            if (isset($_POST['logic'], $_POST['logic'][$CIDRAM['Iterant']]) && !empty($_POST['logic'][$CIDRAM['Iterant']])) {
+                $CIDRAM['NewAuxArr'][$_POST['ruleName'][$CIDRAM['Iterant']]]['Logic'] = $_POST['logic'][$CIDRAM['Iterant']];
+            }
+            if (isset($_POST['ruleReason'], $_POST['ruleReason'][$CIDRAM['Iterant']]) && !empty($_POST['ruleReason'][$CIDRAM['Iterant']])) {
+                $CIDRAM['NewAuxArr'][$_POST['ruleName'][$CIDRAM['Iterant']]]['Reason'] = $_POST['ruleReason'][$CIDRAM['Iterant']];
+            }
+            if (isset($_POST['ruleTarget'], $_POST['ruleTarget'][$CIDRAM['Iterant']]) && !empty($_POST['ruleTarget'][$CIDRAM['Iterant']])) {
+                $CIDRAM['NewAuxArr'][$_POST['ruleName'][$CIDRAM['Iterant']]]['Target'] = $_POST['ruleTarget'][$CIDRAM['Iterant']];
+            }
+            if (isset($_POST['statusCode'], $_POST['statusCode'][$CIDRAM['Iterant']]) && !empty($_POST['statusCode'][$CIDRAM['Iterant']])) {
+                $CIDRAM['NewAuxArr'][$_POST['ruleName'][$CIDRAM['Iterant']]]['Status Code'] = $_POST['statusCode'][$CIDRAM['Iterant']];
+            }
+            $CIDRAM['NewAuxArr'][$_POST['ruleName'][$CIDRAM['Iterant']]]['Action'] = isset($_POST['act'], $_POST['act'][$CIDRAM['Iterant']]) ? $_POST['act'][$CIDRAM['Iterant']] : '';
+            $CIDRAM['NewAuxArr'][$_POST['ruleName'][$CIDRAM['Iterant']]]['SourceType'] = isset($_POST['conSourceType'], $_POST['conSourceType'][$CIDRAM['Iterant']]) ? $_POST['conSourceType'][$CIDRAM['Iterant']] : '';
+            $CIDRAM['NewAuxArr'][$_POST['ruleName'][$CIDRAM['Iterant']]]['IfOrNot'] = isset($_POST['conIfOrNot'], $_POST['conIfOrNot'][$CIDRAM['Iterant']]) ? $_POST['conIfOrNot'][$CIDRAM['Iterant']] : '';
+            $CIDRAM['NewAuxArr'][$_POST['ruleName'][$CIDRAM['Iterant']]]['SourceValue'] = isset($_POST['conSourceValue'], $_POST['conSourceValue'][$CIDRAM['Iterant']]) ? $_POST['conSourceValue'][$CIDRAM['Iterant']] : '';
+            if (isset($_POST['recaptchaEnabledTrue'], $_POST['recaptchaEnabledTrue'][$CIDRAM['Iterant']]) && !empty($_POST['recaptchaEnabledTrue'][$CIDRAM['Iterant']])) {
+                $CIDRAM['NewAuxArr'][$_POST['ruleName'][$CIDRAM['Iterant']]]['Mark for use with reCAPTCHA'] = true;
+            }
+            if (isset($_POST['suppressOutputTemplate'], $_POST['suppressOutputTemplate'][$CIDRAM['Iterant']]) && !empty($_POST['suppressOutputTemplate'][$CIDRAM['Iterant']])) {
+                $CIDRAM['NewAuxArr'][$_POST['ruleName'][$CIDRAM['Iterant']]]['Suppress output template'] = true;
+            }
+            if (isset($_POST['forciblyDisableIPTracking'], $_POST['forciblyDisableIPTracking'][$CIDRAM['Iterant']]) && !empty($_POST['forciblyDisableIPTracking'][$CIDRAM['Iterant']])) {
+                $CIDRAM['NewAuxArr'][$_POST['ruleName'][$CIDRAM['Iterant']]]['Forcibly disable IP tracking'] = true;
+            }
+        }
+        uasort($CIDRAM['NewAuxArr'], function ($A, $B) {
+            if ($A['Priority'] === $B['Priority']) {
+                return 0;
+            }
+            if (!strlen($A['Priority'])) {
+                return strlen($B['Priority']) ? -1 : 0;
+            }
+            if (!strlen($B['Priority'])) {
+                return strlen($A['Priority']) ? 1 : 0;
+            }
+            return $A['Priority'] < $B['Priority'] ? -1 : 1;
+        });
+        foreach ($CIDRAM['NewAuxArr'] as $CIDRAM['Iterant'] => &$CIDRAM['Data']) {
+            if ($CIDRAM['Data']['Action'] === 'actWhl') {
+                $CIDRAM['Data']['Action'] = 'Whitelist';
+            } elseif ($CIDRAM['Data']['Action'] === 'actGrl') {
+                $CIDRAM['Data']['Action'] = 'Greylist';
+            } elseif ($CIDRAM['Data']['Action'] === 'actBlk') {
+                $CIDRAM['Data']['Action'] = 'Block';
+            } elseif ($CIDRAM['Data']['Action'] === 'actByp') {
+                $CIDRAM['Data']['Action'] = 'Bypass';
+            } elseif ($CIDRAM['Data']['Action'] === 'actLog') {
+                $CIDRAM['Data']['Action'] = 'Don\'t log';
+            } elseif ($CIDRAM['Data']['Action'] === 'actRdr') {
+                $CIDRAM['Data']['Action'] = 'Redirect';
+            }
+            if (is_array($CIDRAM['Data']['SourceType'])) {
+                foreach ($CIDRAM['Data']['SourceType'] as $CIDRAM['IterantInner'] => $CIDRAM['DataInner']) {
+                    if (!isset(
+                        $CIDRAM['Data']['IfOrNot'],
+                        $CIDRAM['Data']['IfOrNot'][$CIDRAM['IterantInner']],
+                        $CIDRAM['Data']['SourceValue'],
+                        $CIDRAM['Data']['SourceValue'][$CIDRAM['IterantInner']]
+                    )) {
+                        continue;
+                    }
+                    if (!isset($CIDRAM['Data'][$CIDRAM['Data']['Action']])) {
+                        $CIDRAM['Data'][$CIDRAM['Data']['Action']] = [];
+                    }
+                    if ($CIDRAM['Data']['IfOrNot'][$CIDRAM['IterantInner']] === 'If') {
+                        if (!isset($CIDRAM['Data'][$CIDRAM['Data']['Action']]['If matches'])) {
+                            $CIDRAM['Data'][$CIDRAM['Data']['Action']]['If matches'] = [];
+                        }
+                        if (!isset($CIDRAM['Data'][$CIDRAM['Data']['Action']]['If matches'][$CIDRAM['DataInner']])) {
+                            $CIDRAM['Data'][$CIDRAM['Data']['Action']]['If matches'][$CIDRAM['DataInner']] = [];
+                        }
+                        $CIDRAM['Data'][$CIDRAM['Data']['Action']]['If matches'][$CIDRAM['DataInner']][] = $CIDRAM['Data']['SourceValue'][$CIDRAM['IterantInner']];
+                    } elseif ($CIDRAM['Data']['IfOrNot'][$CIDRAM['IterantInner']] === 'Not') {
+                        if (!isset($CIDRAM['Data'][$CIDRAM['Data']['Action']]['But not if matches'])) {
+                            $CIDRAM['Data'][$CIDRAM['Data']['Action']]['But not if matches'] = [];
+                        }
+                        if (!isset($CIDRAM['Data'][$CIDRAM['Data']['Action']]['But not if matches'][$CIDRAM['DataInner']])) {
+                            $CIDRAM['Data'][$CIDRAM['Data']['Action']]['But not if matches'][$CIDRAM['DataInner']] = [];
+                        }
+                        $CIDRAM['Data'][$CIDRAM['Data']['Action']]['But not if matches'][$CIDRAM['DataInner']][] = $CIDRAM['Data']['SourceValue'][$CIDRAM['IterantInner']];
+                    }
+                }
+            }
+            unset($CIDRAM['Data']['Priority'], $CIDRAM['Data']['SourceType'], $CIDRAM['Data']['IfOrNot'], $CIDRAM['Data']['SourceValue'], $CIDRAM['Data']['Action']);
+        }
+
+        /** Reconstruct and update auxiliary rules data. */
+        if ($CIDRAM['NewAuxArr'] = $CIDRAM['YAML']->reconstruct($CIDRAM['NewAuxArr'])) {
+            $CIDRAM['Handle'] = fopen($CIDRAM['Vault'] . 'auxiliary.yaml', 'wb');
+            fwrite($CIDRAM['Handle'], $CIDRAM['NewAuxArr']);
+            fclose($CIDRAM['Handle']);
+            $CIDRAM['FE']['state_msg'] = $CIDRAM['L10N']->getString('response_aux_updated');
+        }
+        unset($CIDRAM['IterantInner'], $CIDRAM['DataInner']);
+    }
 
     /** Process auxiliary rules. */
     $CIDRAM['FE']['Data'] = '      ' . $CIDRAM['AuxGenerateFEData'](true);

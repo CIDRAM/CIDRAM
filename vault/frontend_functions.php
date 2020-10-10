@@ -3747,31 +3747,37 @@ $CIDRAM['SplitCIDR'] = function (string $CIDR) use (&$CIDRAM): array {
 $CIDRAM['IntersectCIDR'] = function (string $A = '', string $B = '', int $Format = 0) use (&$CIDRAM): string {
     $StrObject = new \Maikuolan\Common\ComplexStringHandler(
         $A . "\n",
-        '~(?<=\n)(?:\n|Expires\: \d{4}\.\d\d\.\d\d|Origin\: [A-Z]{2}|(?:\#|Tag\: |Defers to\: )[^\n]+)+\n~',
+        $CIDRAM['RegExTags'],
         function (string $Data) use (&$CIDRAM, $B, $Format): string {
             $Data = "\n" . $CIDRAM['Aggregator']->aggregate($Data) . "\n";
             $Intersect = '';
-            $LPos = 0;
-            while (($NPos = strpos($B, "\n", $LPos)) !== false) {
-                $Line = substr($B, $LPos, $NPos - $LPos);
-                $LPos = $NPos + 1;
-                if (($DPos = strpos($Line, '/')) !== false) {
-                    $Range = substr($Line, $DPos + 1);
-                    $Base = substr($Line, 0, $DPos);
-                } else {
-                    continue;
-                }
-                if (!$CIDRs = $CIDRAM['ExpandIPv4']($Base)) {
-                    if (!$CIDRs = $CIDRAM['ExpandIPv6']($Base)) {
+            foreach ([['B', 'Data'], ['Data', 'B']] as $Points) {
+                $LPos = 0;
+                while (($NPos = strpos(${$Points[0]}, "\n", $LPos)) !== false) {
+                    $Line = substr(${$Points[0]}, $LPos, $NPos - $LPos);
+                    $LPos = $NPos + 1;
+                    if (($DPos = strpos($Line, '/')) !== false) {
+                        $Range = substr($Line, $DPos + 1);
+                        $Base = substr($Line, 0, $DPos);
+                    } else {
                         continue;
                     }
-                }
-                foreach ($CIDRs as $Key => $Actual) {
-                    if (strpos($Data, "\n" . $Actual . "\n") === false) {
-                        continue;
+                    if (!$CIDRs = $CIDRAM['ExpandIPv4']($Base)) {
+                        if (!$CIDRs = $CIDRAM['ExpandIPv6']($Base)) {
+                            continue;
+                        }
                     }
-                    $Intersect .= $Line . "\n";
-                    break;
+                    foreach ($CIDRs as $Key => $Actual) {
+                        if (strpos(${$Points[1]}, "\n" . $Actual . "\n") === false) {
+                            continue;
+                        }
+                        if (($Key + 1) > (int)$Range) {
+                            $Intersect .= $Actual . "\n";
+                        } else {
+                            $Intersect .= $Line . "\n";
+                        }
+                        break;
+                    }
                 }
             }
             $Aggregator = new \CIDRAM\Aggregator\Aggregator($CIDRAM, $Format);
@@ -3796,9 +3802,9 @@ $CIDRAM['IntersectCIDR'] = function (string $A = '', string $B = '', int $Format
 $CIDRAM['SubtractCIDR'] = function (string $Minuend = '', string $Subtrahend = '', int $Format = 0) use (&$CIDRAM): string {
     $StrObject = new \Maikuolan\Common\ComplexStringHandler(
         $Minuend . "\n",
-        '~(?<=\n)(?:\n|Expires\: \d{4}\.\d\d\.\d\d|Origin\: [A-Z]{2}|(?:\#|Tag\: |Defers to\: )[^\n]+)+\n~',
+        $CIDRAM['RegExTags'],
         function (string $Minuend) use (&$CIDRAM, $Subtrahend, $Format): string {
-            $Minuend = "\n" . $CIDRAM['Aggregator']->aggregate($Minuend) . "\n";
+            $Minuend = "\n" . $CIDRAM['Aggregator']->aggregate($Minuend . "\n" . $Subtrahend) . "\n";
             $LPos = 0;
             while (($NPos = strpos($Subtrahend, "\n", $LPos)) !== false) {
                 $Line = substr($Subtrahend, $LPos, $NPos - $LPos);

@@ -143,6 +143,9 @@ $CIDRAM['FE'] = [
     'URL-Website' => 'https://cidram.github.io/'
 ];
 
+/** Regular expression used to separate signature sections and tags. */
+$CIDRAM['RegExTags'] = '~(?<=\n)(?:\n|Expires\: \d{4}\.\d\d\.\d\d|Origin\: [A-Z]{2}|(?:\#|Tag\: |Defers to\: )[^\n]+| *\/\*\*(?:\n *\*[^\n]*)*\/| *\/\*\*? [^\n*]+\*\/|---\n(?:[^\n:]+\:(?:\n +[^\n:]+\: [^\n]+)+)+)+\n~';
+
 /** Populated by [Home | Log Out] by default; Replaced by [Log Out] for some specific pages (e.g., the homepage). */
 $CIDRAM['FE']['bNav'] = $CIDRAM['FE']['HomeButton'] . $CIDRAM['FE']['LogoutButton'];
 
@@ -613,6 +616,9 @@ if ($CIDRAM['FE']['UserState'] !== 1 && $CIDRAM['FE']['ASYNC']) {
     die($CIDRAM['L10N']->getString('state_async_deny'));
 }
 
+/** Major version notice. */
+$CIDRAM['MajorVersionNotice'] = '';
+
 /** Only execute this code block for users that are logged in or awaiting two-factor authentication. */
 if (($CIDRAM['FE']['UserState'] === 1 || $CIDRAM['FE']['UserState'] === 2) && !$CIDRAM['FE']['CronMode']) {
 
@@ -654,9 +660,6 @@ if (($CIDRAM['FE']['UserState'] === 1 || $CIDRAM['FE']['UserState'] === 2) && !$
         $CIDRAM['Remote-YAML-CIDRAM'] = $CIDRAM['Request']($CIDRAM['RemoteVerPath'] . 'cidram-ver.yaml', [], 8);
         $CIDRAM['FECacheAdd']($CIDRAM['FE']['Cache'], $CIDRAM['FE']['Rebuild'], 'cidram-ver.yaml', $CIDRAM['Remote-YAML-CIDRAM'] ?: '-', $CIDRAM['Now'] + 86400);
     }
-
-    /** Major version notice. */
-    $CIDRAM['MajorVersionNotice'] = '';
 
     /** Process remote CIDRAM version information. */
     if (empty($CIDRAM['Remote-YAML-CIDRAM'])) {
@@ -2400,7 +2403,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'fixer' && $CIDRAM['FE']['Permis
         }
         $CIDRAM['Fixer']['StrObject'] = new \Maikuolan\Common\ComplexStringHandler(
             "\n" . $CIDRAM['FE']['FixerOutput'] . "\n",
-            '~(?<=\n)(?:\n|Expires\: \d{4}\.\d\d\.\d\d|Origin\: [A-Z]{2}|(?:\#|Tag\: |Defers to\: )[^\n]+| *\/\*\*(?:\n *\*[^\n]*)*\/| *\/\*\*? [^\n*]+\*\/|---\n(?:[^\n:]+\:(?:\n +[^\n:]+\: [^\n]+)+)+)+\n~',
+            $CIDRAM['RegExTags'],
             function ($Data) use (&$CIDRAM) {
                 if (!$Data = trim($Data)) {
                     return '';
@@ -3203,7 +3206,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-aggregator' && $CIDRAM['FE']
             $CIDRAM['NetResults'] = ['In' => 0, 'Rejected' => 0, 'Accepted' => 0, 'Merged' => 0, 'Out' => 0];
             $CIDRAM['StrObject'] = new \Maikuolan\Common\ComplexStringHandler(
                 "\n" . $CIDRAM['FE']['input'] . "\n",
-                '~(?<=\n)(?:\n|Expires\: \d{4}\.\d\d\.\d\d|Origin\: [A-Z]{2}|(?:\#|Tag\: |Defers to\: )[^\n]+)+\n~',
+                $CIDRAM['RegExTags'],
                 function ($Data) use (&$CIDRAM) {
                     if (!$Data = trim($Data)) {
                         return '';

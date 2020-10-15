@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_isps.dat
 
-# Version: 2020.282.650
-# Last modified: 2020.10.09
+# Version: 2020.288.436
+# Last modified: 2020.10.15
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage, i.e., with ignore.dat, with reCAPTCHA, with "extended rules" (default bypasses): « [ ]Low [x]Medium [ ]High »
@@ -181,8 +181,8 @@ Tag: Voxility LLC
 
 
 # ASN 30968 ("INFOBOX").
-# Stop Forum Spam (SFS) listings: 152.
-# Updated: 2016.01.18 / Checked: 2020.02.22
+# Stop Forum Spam (SFS) listings: 22.
+# Updated: 2016.01.18 / Checked: 2020.10.10
 
 2a02:440::/32 Deny Generic
 Origin: RU
@@ -215,9 +215,9 @@ Tag: Mir Telematiki Ltd
 # *Extreme*, unrepentant, unending source of spam over the course of many,
 # many years. XRumer plus others operating on their network. Highly unlikely to
 # ever delist.
-# %Listed, abuseat.org (CBL-Listed): 1.07%.
-# Stop Forum Spam (SFS) listings: 32,476.
-# Updated: 2017.03.22 / Checked: 2020.04.19
+# %Listed, abuseat.org (CBL-Listed): 1.05%.
+# Stop Forum Spam (SFS) listings: 20,566.
+# Updated: 2017.03.22 / Checked: 2020.10.10
 
 2404:7000::/32 Deny Spam
 Origin: PK
@@ -809,8 +809,8 @@ recaptcha:
 # the false positive risk. Websites intended for a Chinese audience should keep
 # this section listed in their ignore.dat file.
 # %Listed, abuseat.org (CBL-Listed): 0.81%.
-# Stop Forum Spam (SFS) listings: 21,876.
-# Updated: 2019.10.16 / Checked: 2020.07.12
+# Stop Forum Spam (SFS) listings: 10,885.
+# Updated: 2020.10.10
 
 2406:8500::/32 Deny Generic
 240e::/20 Deny Generic
@@ -823,13 +823,13 @@ Origin: CN
 2a04:f580:8210::/47 Deny Generic
 2a04:f580:8290::/48 Deny Generic
 Origin: GB
-2400:9380:8000::/47 Deny Generic
+2400:9380:8001::/48 Deny Generic
 2400:9380:8003::/48 Deny Generic
 2400:9380:8020::/47 Deny Generic
 2400:9380:8030::/48 Deny Generic
 2400:9380:8040::/48 Deny Generic
 2400:9380:8140::/48 Deny Generic
-2400:9380:8200::/47 Deny Generic
+2400:9380:8201::/48 Deny Generic
 2400:9380:8221::/48 Deny Generic
 2400:9380:8301::/48 Deny Generic
 Origin: HK
@@ -1258,13 +1258,13 @@ recaptcha:
  enabled: true
 
 
-# ASNs 9498, 9730, 24560, 37140, 45517, 45609, 132045 ("Bharti Airtel").
+# ASNs 9498, 9730, 24560, 37140, 45609, 132045 ("Bharti Airtel").
 # Interlaces with numerous providers and contains a significant number of human
 # endpoints in India, but is also a significant source of spam. Marked for use
 # with reCAPTCHA to reduce the risk of false positives. CIDRAM users that
 # expect traffic from India should list this section in their ignore.dat file.
 # - When updating, remove anything from AU, IE, Facebook; ^(AU\t|IE\t|.*Facebook).*$\n
-# Updated: 2020.04.27
+# Updated: 2020.10.10
 
 2401:4900:50::/48 Deny Spam
 2401:4900:808::/45 Deny Spam
@@ -1294,31 +1294,29 @@ recaptcha:
 2401:4900:18e0::/45 Deny Spam
 2401:4900:18e8::/46 Deny Spam
 2401:4900:18f0::/44 Deny Spam
-2401:4900:1900::/43 Deny Spam
-2401:4900:1950::/45 Deny Spam
-2401:4900:1958::/47 Deny Spam
-2401:4900:195a::/48 Deny Spam
-2401:4900:1970::/44 Deny Spam
-2401:4900:1980::/41 Deny Spam
+2401:4900:1900::/40 Deny Spam
 2401:4900:1a50::/44 Deny Spam
 2401:4900:1a70::/44 Deny Spam
 2401:4900:1a80::/44 Deny Spam
 2401:4900:1aa0::/44 Deny Spam
 2401:4900:1af0::/44 Deny Spam
 2401:4900:1b10::/44 Deny Spam
-2401:4900:1b30::/44 Deny Spam
+2401:4900:1b20::/43 Deny Spam
 2401:4900:1b60::/44 Deny Spam
 2401:4900:1b80::/43 Deny Spam
+2401:4900:1bc0::/44 Deny Spam
 2401:4900:1c00::/46 Deny Spam
 2401:4900:1c0a::/47 Deny Spam
 2401:4900:1d00::/41 Deny Spam
-2401:4900:1f21::/48 Deny Spam
+2401:4900:1f20::/47 Deny Spam
 2401:4900:1f2e::/47 Deny Spam
 2401:4900:1f30::/44 Deny Spam
 2401:4900:1f80::/44 Deny Spam
 2401:4900:1fe0::/43 Deny Spam
-2401:4900:2000::/48 Deny Spam
-2401:4900:2080::/48 Deny Spam
+2401:4900:2000::/46 Deny Spam
+2401:4900:2004::/47 Deny Spam
+2401:4900:2080::/46 Deny Spam
+2401:4900:2084::/47 Deny Spam
 2401:4900:2100::/46 Deny Spam
 2401:4900:2104::/47 Deny Spam
 2401:4900:2150::/44 Deny Spam
@@ -1361,11 +1359,14 @@ recaptcha:
 2401:4900:3670::/44 Deny Spam
 2401:4900:3680::/42 Deny Spam
 2401:4900:36c0::/44 Deny Spam
+2401:4900:3760::/44 Deny Spam
 2401:4900:3820::/44 Deny Spam
 2401:4900:3840::/43 Deny Spam
 2401:4900:38c0::/44 Deny Spam
+2401:4900:38e0::/43 Deny Spam
 2401:4900:3920::/43 Deny Spam
 2401:4900:3990::/44 Deny Spam
+2401:4900:39b0::/44 Deny Spam
 2401:4900:3a00::/43 Deny Spam
 2401:4900:3a20::/45 Deny Spam
 2401:4900:3a28::/48 Deny Spam
@@ -1374,7 +1375,10 @@ recaptcha:
 2401:4900:3a2e::/48 Deny Spam
 2401:4900:3a60::/43 Deny Spam
 2401:4900:3a80::/44 Deny Spam
-2401:4900:3b00::/44 Deny Spam
+2401:4900:3af0::/48 Deny Spam
+2401:4900:3b00::/42 Deny Spam
+2401:4900:3b70::/44 Deny Spam
+2401:4900:3bc0::/44 Deny Spam
 2401:4900:4020::/44 Deny Spam
 2401:4900:4040::/44 Deny Spam
 2401:4900:40a0::/43 Deny Spam
@@ -1390,6 +1394,7 @@ recaptcha:
 2401:4900:4450::/44 Deny Spam
 2401:4900:4460::/43 Deny Spam
 2401:4900:4480::/44 Deny Spam
+2401:4900:44c0::/43 Deny Spam
 2401:4900:44e0::/44 Deny Spam
 2401:4900:4530::/46 Deny Spam
 2401:4900:4538::/45 Deny Spam
@@ -1401,34 +1406,69 @@ recaptcha:
 2401:4900:4680::/44 Deny Spam
 2401:4900:46a0::/44 Deny Spam
 2401:4900:46c0::/43 Deny Spam
+2401:4900:4700::/43 Deny Spam
+2401:4900:4720::/44 Deny Spam
 2401:4900:4790::/44 Deny Spam
 2401:4900:47a0::/44 Deny Spam
+2401:4900:47d0::/44 Deny Spam
+2401:4900:47f0::/44 Deny Spam
 2401:4900:4820::/43 Deny Spam
 2401:4900:4840::/44 Deny Spam
 2401:4900:4900::/43 Deny Spam
 2401:4900:4940::/44 Deny Spam
 2401:4900:4990::/44 Deny Spam
 2401:4900:49a0::/44 Deny Spam
-2401:4900:4a60::/45 Deny Spam
-2401:4900:4a68::/48 Deny Spam
+2401:4900:4a60::/46 Deny Spam
+2401:4900:4a64::/48 Deny Spam
 2401:4900:4a90::/44 Deny Spam
-2401:4900:4aa0::/47 Deny Spam
-2401:4900:4aa2::/48 Deny Spam
-2401:4900:4ac0::/48 Deny Spam
+2401:4900:4aa0::/45 Deny Spam
+2401:4900:4aa8::/47 Deny Spam
+2401:4900:4aaa::/48 Deny Spam
+2401:4900:4ac0::/44 Deny Spam
+2401:4900:4ad0::/46 Deny Spam
+2401:4900:4ad4::/48 Deny Spam
 2401:4900:4b30::/44 Deny Spam
 2401:4900:4b50::/44 Deny Spam
 2401:4900:4bb0::/44 Deny Spam
-2401:4900:4bc0::/44 Deny Spam
+2401:4900:4bc0::/43 Deny Spam
+2401:4900:4c10::/44 Deny Spam
+2401:4900:4c60::/44 Deny Spam
+2401:4900:4ca0::/44 Deny Spam
+2401:4900:4cc0::/44 Deny Spam
+2401:4900:4ce0::/44 Deny Spam
+2401:4900:4d00::/44 Deny Spam
+2401:4900:4d20::/44 Deny Spam
+2401:4900:4d40::/44 Deny Spam
+2401:4900:4e40::/44 Deny Spam
+2401:4900:5000::/44 Deny Spam
+2401:4900:5020::/45 Deny Spam
+2401:4900:5028::/48 Deny Spam
+2401:4900:5030::/47 Deny Spam
 2401:4900:5040::/43 Deny Spam
 2401:4900:5070::/44 Deny Spam
 2401:4900:5080::/45 Deny Spam
 2401:4900:5090::/44 Deny Spam
+2401:4900:50a0::/48 Deny Spam
 2401:4900:5110::/44 Deny Spam
 2401:4900:5130::/44 Deny Spam
 2401:4900:5170::/44 Deny Spam
 2401:4900:5190::/45 Deny Spam
-2401:4900:5198::/47 Deny Spam
-2401:4900:51c0::/44 Deny Spam
+2401:4900:5198::/46 Deny Spam
+2401:4900:519c::/47 Deny Spam
+2401:4900:519e::/48 Deny Spam
+2401:4900:51c0::/42 Deny Spam
+2401:4900:5230::/44 Deny Spam
+2401:4900:5240::/44 Deny Spam
+2401:4900:5270::/44 Deny Spam
+2401:4900:5290::/44 Deny Spam
+2401:4900:52b0::/44 Deny Spam
+2401:4900:5810::/44 Deny Spam
+2401:4900:5820::/44 Deny Spam
+2401:4900:5850::/44 Deny Spam
+2401:4900:5870::/44 Deny Spam
+2401:4900:58a0::/43 Deny Spam
+2401:4900:58c0::/44 Deny Spam
+2401:4900:5910::/44 Deny Spam
 2403:c00:3::/48 Deny Spam
 2404:1f00:ffa0::/47 Deny Spam
 2404:a800::/32 Deny Spam
@@ -1438,18 +1478,28 @@ recaptcha:
 2407:7400::/48 Deny Spam
 Origin: IN
 2400:ff00::/32 Deny Spam
-Origin: LK
 2600:140f:b::/48 Deny Spam
 2600:140f:d::/48 Deny Spam
 2600:140f:e::/48 Deny Spam
 2600:140f:200::/48 Deny Spam
 2600:140f:800::/48 Deny Spam
+2600:140f:a00::/48 Deny Spam
+2600:140f:e00::/48 Deny Spam
 2600:140f:1200::/48 Deny Spam
+2600:140f:1600::/48 Deny Spam
 2600:140f:1800::/48 Deny Spam
+2600:140f:1a00::/48 Deny Spam
 2600:140f:2400::/48 Deny Spam
 2600:140f:2800::/48 Deny Spam
+2600:140f:2a00::/48 Deny Spam
 2600:140f:2c00::/48 Deny Spam
+2600:140f:3600::/48 Deny Spam
+2600:140f:3a00::/48 Deny Spam
 2600:140f:3c00::/48 Deny Spam
+2600:140f:3e00::/48 Deny Spam
+2600:140f:4200::/48 Deny Spam
+2600:140f:4600::/48 Deny Spam
+2600:140f:4a00::/48 Deny Spam
 2600:140f:4c00::/48 Deny Spam
 2600:140f:5000::/48 Deny Spam
 2600:140f:5400::/48 Deny Spam
@@ -1698,8 +1748,8 @@ recaptcha:
 
 # ASN 16010 ("Magticom Ltd").
 # Spam events originating from this network slowly becoming worse over time.
-# Stop Forum Spam (SFS) listings: 42,432.
-# Updated: 2019.08.18 / Checked: 2020.04.27
+# Stop Forum Spam (SFS) listings: 3,933.
+# Updated: 2019.08.18 / Checked: 2020.10.15
 
 2a0b:6200::/29 Deny Spam
 Origin: GE
@@ -1734,8 +1784,8 @@ Tag: UnderNet LLC
 
 # ASNs 8369, 198675, 199619 ("Intersvyaz-2 JSC").
 # Caught trying to hack into WordPress sites.
-# Stop Forum Spam (SFS) listings: 3,324 (AS8369).
-# Updated: 2018.03.27 / Checked: 2020.04.27
+# Stop Forum Spam (SFS) listings: 3,391 (AS8369).
+# Updated: 2018.03.27 / Checked: 2020.10.15
 
 2a02:22a8::/32 Deny Generic
 Origin: RU
@@ -1777,8 +1827,8 @@ recaptcha:
 
 # ASN 198093 ("Foreningen for digitala fri- och rattigheter").
 # Dead homepage and high levels of automated spam from this ASN.
-# Stop Forum Spam (SFS) listings: 9,397.
-# Updated: 2017.12.11 / Checked: 2020.02.22
+# Stop Forum Spam (SFS) listings: 8,111.
+# Updated: 2017.12.11 / Checked: 2020.10.10
 
 2001:67c:16b0::/48 Deny Spam
 2001:67c:289c::/48 Deny Spam
@@ -1807,18 +1857,24 @@ recaptcha:
 
 # ASN 9009 ("M247 Ltd").
 # Multiplay network providing broadband connectivity, server leasing, line rental, webhosting services and others.
-# Marked as "Server" or "Host" to go to the cloud/hosting signatures ^(.*(?:Host|Server).*)\x01$
+# Marked as "Server", "Host", "Datacenter" to go to the cloud/hosting signatures ^(.*(?:Host|Server|Data ?cent(?:er|re)).*)\x01$
 # Marked as "Secure Internet LLC" to go to the proxy/other signatures ^(.*(?:Secure Internet LLC).*)\x01$
 # Everything else to go to the ISPs signatures. When updating, remove all subordinates of 38.0.0.0/8 from final
 # aggregate (already blocked elsewhere and don't want duplicates).
-# Stop Forum Spam (SFS) listings: 222,096.
-# Updated: 2020.04.13
+# Stop Forum Spam (SFS) listings: 210,121.
+# Updated: 2020.10.10
 
+2a03:f80:33::/48 Deny Spam
 2a03:f80:40::/48 Deny Spam
+2a03:f80:45::/48 Deny Spam
+2a03:f80:47::/48 Deny Spam
 2a03:f80:61::/48 Deny Spam
 2a03:f80:65::/48 Deny Spam
 2a03:f80:81::/48 Deny Spam
 2a03:f80:381::/48 Deny Spam
+2a03:f80:852::/48 Deny Spam
+2a03:f80:971::/48 Deny Spam
+2a07:de00::/29 Deny Spam
 Origin: AT
 2604:17c0::/41 Deny Spam
 2604:17c0:80::/42 Deny Spam
@@ -1831,7 +1887,7 @@ Origin: DE
 Origin: EE
 2a01:300::/29 Deny Spam
 Origin: EU
-2001:ac8::/31 Deny Spam
+2001:ac8::/32 Deny Spam
 2a00:b320::/48 Deny Spam
 2a02:40::/32 Deny Spam
 2a02:710:1000:700::/56 Deny Spam
@@ -1847,11 +1903,10 @@ Origin: EU
 2a07:a343:e0f0::/44 Deny Spam
 2a07:a343:f210::/44 Deny Spam
 2a0a:b640:1::/48 Deny Spam
-2a0a:b640:2::/47 Deny Spam
+2a0a:b640:2::/48 Deny Spam
+2a0c:a940::/29 Deny Spam
 2a0e:7a80::/29 Deny Spam
 Origin: GB
-2a00:55a0:5::/48 Deny Spam
-2a00:55a0:10::/48 Deny Spam
 2a00:55a0:ea00::/40 Deny Spam
 2a00:55a0:f000::/40 Deny Spam
 2a00:55a0:f900::/40 Deny Spam
@@ -1868,9 +1923,12 @@ Origin: LT
 2a0e:1d80:2::/47 Deny Spam
 2a0e:1d80:4::/47 Deny Spam
 Origin: RO
-2a07:de00::/29 Deny Spam
+2a05:f680::/29 Deny Spam
+2a0d:87c0::/29 Deny Spam
+2a0d:ba40::/29 Deny Spam
 Origin: RU
 2001:550:1d05::/48 Deny Spam
+2605:3b80:cad::/48 Deny Spam
 2607:6980:e710::/44 Deny Spam
 2a09:9bc0:a::/48 Deny Spam
 2a0d:5600:1::/48 Deny Spam
@@ -1997,8 +2055,8 @@ recaptcha:
 
 # ASN 263500 ("Star Telecom S/A").
 # Source of forum spam and some email harvestors.
-# Stop Forum Spam (SFS) listings: 472.
-# Updated: 2019.10.24 / Checked: 2020.02.22
+# Stop Forum Spam (SFS) listings: 424.
+# Updated: 2019.10.24 / Checked: 2020.10.10
 
 2804:12d8::/32 Deny Spam
 Origin: BR
@@ -2343,10 +2401,11 @@ recaptcha:
 # Australia's largest domestic ISP. Mostly benign, but malware and spambots
 # detected at some specific addresses in the network. Listing just those IPs.
 # Stop Forum Spam (SFS) listings: 346.
-# Updated: 2020.05.01
+# Updated: 2020.10.15
 
-2001:8003:2471:da01::/64 Deny Spam
-2001:8003:e1de:701::/64 Deny Spam
+2001:8003:5c1b:ad00::/64 Deny Spam
+2001:8003:dc34:9200::/64 Deny Spam
+2001:8003:f111:9f00::/64 Deny Spam
 Origin: AU
 Tag: Telstra Corporation
 ---

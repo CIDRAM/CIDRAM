@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6.dat
 
-# Version: 2020.282.650
-# Last modified: 2020.10.09
+# Version: 2020.288.436
+# Last modified: 2020.10.15
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage, i.e., with ignore.dat, with reCAPTCHA, with "extended rules" (default bypasses): « [x]Low [ ]Medium [ ]High »
@@ -1728,8 +1728,8 @@ Tag: Rose Hosting
 
 
 # ASN 5693 ("Latisys-Irvine, LLC").
-# Stop Forum Spam (SFS) listings: 19.
-# Updated: 2016.04.03 / Checked: 2020.04.18
+# Stop Forum Spam (SFS) listings: 8.
+# Updated: 2016.04.03 / Checked: 2020.10.15
 
 2001:1990::/32 Deny Cloud
 Origin: US
@@ -2770,8 +2770,7 @@ Tag: Shenzhen Tencent
 
 
 # ASN 24413 ("ShenZhen Sunrise Technology Co.,Ltd").
-# Stop Forum Spam (SFS) listings: 8.
-# Updated: 2018.08.05 / Checked: 2020.04.18
+# Updated: 2018.08.05 / Checked: 2020.10.15
 
 2402:33c0::/32 Deny Cloud
 Origin: CN
@@ -3105,15 +3104,15 @@ Tag: MnogoByte LLC
 
 
 # ASN 29014 ("ScaleUp Technologies GmbH & Co. KG").
-# Updated: 2020.04.19
+# Updated: 2020.10.14
 
 2a0e:37c0::/32 Deny Cloud
 Origin: AT
+2001:678:df0::/48 Deny Cloud
 2a00:12e8::/32 Deny Cloud
 2a00:1c38::/47 Deny Cloud
 2a00:1c39::/32 Deny Cloud
 2a0b:2a40::/29 Deny Cloud
-2a0b:f080::/32 Deny Cloud
 2a0e:7b80::/32 Deny Cloud
 Origin: DE
 Tag: ScaleUp Technologies
@@ -4229,18 +4228,20 @@ Tag: WEBSITEWELCOME.COM
 
 # ASN 18229 ("CtrlS Datacenters Ltd").
 # Some IPs on this ASN caught probing for database dumps.
-# Stop Forum Spam (SFS) listings: 469.
-# Updated: 2019.12.08 / Checked: 2020.04.19
+# Stop Forum Spam (SFS) listings: 294.
+# Updated: 2020.10.15
 
 2001:df0:fc00::/48 Deny Cloud
 2001:df4:5100::/48 Deny Cloud
 2001:df6:6900::/48 Deny Cloud
 2400:3b00::/47 Deny Cloud
 2400:3b00:2::/48 Deny Cloud
+2400:3b00:f::/48 Deny Cloud
 2400:3b00:20::/48 Deny Cloud
 2400:3b00:30::/48 Deny Cloud
 2400:3b00:40::/48 Deny Cloud
 2400:3b00:50::/48 Deny Cloud
+2406:56c0::/32 Deny Cloud
 Origin: IN
 Tag: CtrlS Datacenters
 
@@ -4722,18 +4723,14 @@ recaptcha:
 
 
 # ASN 42926 ("Radore Veri Merkezi Hizmetleri A.S").
-# Stop Forum Spam (SFS) listings: 1,058.
-# Updated: 2020.05.01
+# Stop Forum Spam (SFS) listings: 666.
+# Updated: 2020.10.15
 
 2a0e:1b40::/29 Deny Cloud
 Origin: LT
 2a01:790::/32 Deny Cloud
-2a05:88c0::/29 Deny Cloud
 2a05:a740::/29 Deny Cloud
-2a06:f7c0::/29 Deny Cloud
-2a09:cfc0::/29 Deny Cloud
 2a0b:5ec0::/29 Deny Cloud
-2a0c:f500::/29 Deny Cloud
 2a0f:e80::/29 Deny Cloud
 Origin: TR
 Tag: Radore Veri Merkezi
@@ -5161,8 +5158,8 @@ Tag: DediPath
 
 
 # ASNs 36444, 52924, 202521 ("NEXCESS.NET L.L.C").
-# Stop Forum Spam (SFS) listings: 12 (AS36444), 1 (AS52924).
-# Updated: 2019.03.19 / Checked: 2020.04.18
+# Stop Forum Spam (SFS) listings: 8 (AS36444), 1 (AS52924).
+# Updated: 2019.03.19 / Checked: 2020.10.14
 
 2a07:45c4::/40 Deny Cloud
 Origin: GB
@@ -5172,7 +5169,8 @@ Tag: NEXCESS.NET
 
 
 # ASN 13830 ("Nexril").
-# Updated: 2019.12.08 / Checked: 2020.04.19
+# Stop Forum Spam (SFS) listings: 8.
+# Updated: 2020.10.14
 
 2a07:1c40:1020::/48 Deny Cloud
 Origin: AT
@@ -5183,6 +5181,7 @@ Origin: CH
 2001:506:30::/48 Deny Cloud
 2602:fece::/36 Deny Cloud
 2604:fbc0::/36 Deny Cloud
+2620:87:a000::/48 Deny Cloud
 Origin: US
 Tag: Nexril
 
@@ -5275,12 +5274,12 @@ Tag: HugeServer Networks
 
 # ASN 9009 ("M247 Ltd").
 # Multiplay network providing broadband connectivity, server leasing, line rental, webhosting services and others.
-# Marked as "Server" or "Host" to go to the cloud/hosting signatures ^(.*(?:Host|Server).*)\x01$
+# Marked as "Server", "Host", "Datacenter" to go to the cloud/hosting signatures ^(.*(?:Host|Server|Data ?cent(?:er|re)).*)\x01$
 # Marked as "Secure Internet LLC" to go to the proxy/other signatures ^(.*(?:Secure Internet LLC).*)\x01$
 # Everything else to go to the ISPs signatures. When updating, remove all subordinates of 38.0.0.0/8 from final
 # aggregate (already blocked elsewhere and don't want duplicates).
-# Stop Forum Spam (SFS) listings: 222,096.
-# Updated: 2019.05.13 / Checked: 2020.04.13
+# Stop Forum Spam (SFS) listings: 210,121.
+# Updated: 2019.05.13 / Checked: 2020.10.10
 
 2001:ac8:44::/48 Deny Cloud
 Origin: GB
@@ -5895,7 +5894,7 @@ Tag: ReliableSite.Net LLC
 # ASN 39782 ("Rack Sphere Hosting S.A").
 # Webhosting company caught spamming and attacking WordPress sites.
 # When updating: Check against AbuseIPDB records and remove invalids.
-# Updated: 2019.12.08 / Checked: 2020.04.19
+# Updated: 2019.12.08 / Checked: 2020.10.14
 
 2a0c:b200::/29 Deny Cloud
 Origin: CH
@@ -5915,8 +5914,8 @@ Tag: Root Level Technology
 
 # ASN 48282 ("Hosting technology LTD").
 # Dedicated webhosting provider and a significant source of spam.
-# Stop Forum Spam (SFS) listings: 6,436.
-# Updated: 2020.04.19
+# Stop Forum Spam (SFS) listings: 12,832.
+# Updated: 2020.04.19 / Checked: 2020.10.14
 
 2a06:7740::/48 Deny Cloud
 2a0d:8480::/46 Deny Cloud
@@ -6763,8 +6762,8 @@ Tag: UpCloud
 
 # ASN 30736 ("ASERGO Scandinavia ApS").
 # Dedicated webhosting provider and a source of spam.
-# Stop Forum Spam (SFS) listings: 169.
-# Updated: 2020.04.18
+# Stop Forum Spam (SFS) listings: 44.
+# Updated: 2020.04.18 / Checked: 2020.10.10
 
 2a00:9080::/32 Deny Cloud
 Origin: DK

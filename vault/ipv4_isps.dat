@@ -1,8 +1,8 @@
 # IPv4 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv4_isps.dat
 
-# Version: 2020.288.436
-# Last modified: 2020.10.15
+# Version: 2020.292.500
+# Last modified: 2020.10.19
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage, i.e., with ignore.dat, with reCAPTCHA, with "extended rules" (default bypasses): « [ ]Low [x]Medium [ ]High »
@@ -3746,8 +3746,8 @@ recaptcha:
 # nor its listing at a number of BLs. Marked for use with reCAPTCHA to reduce
 # the false positive risk. Websites intended for a Chinese audience should keep
 # this section listed in their ignore.dat file.
-# Stop Forum Spam (SFS) listings: 4,403.
-# Updated: 2020.09.01
+# Stop Forum Spam (SFS) listings: 4,378.
+# Updated: 2020.10.19
 
 27.109.124.0/22 Deny Generic
 36.111.0.0/19 Deny Generic
@@ -3801,7 +3801,9 @@ recaptcha:
 103.108.244.0/24 Deny Generic
 103.116.76.0/23 Deny Generic
 103.116.78.0/24 Deny Generic
+103.144.158.0/24 Deny Generic
 103.147.124.0/24 Deny Generic
+103.156.68.0/23 Deny Generic
 103.192.212.0/22 Deny Generic
 103.192.252.0/22 Deny Generic
 103.198.124.0/22 Deny Generic
@@ -9741,28 +9743,6 @@ recaptcha:
  enabled: true
 
 
-# ASN 9123 ("OOO TimeWeb").
-# Split to ISPs signature files:
-# - "residential ethernet networks".
-# - "trade center public wi-fi & campus connectivity".
-# - "bank campus network & e-commerce cluster".
-# - "corporate internet gate".
-# ^.*(residential|trade center|campus connectivity|bank campus|corporate internet gate).*$
-# Everything else in the cloud services signature files.
-# Stop Forum Spam (SFS) listings: 148.
-# Updated: 2019.03.27 / Checked: 2020.04.19
-
-188.225.8.0/21 Deny Generic
-188.225.40.0/21 Deny Generic
-188.225.56.0/21 Deny Generic
-188.225.80.0/21 Deny Generic
-Origin: RU
-Tag: OOO TimeWeb
----
-recaptcha:
- enabled: true
-
-
 # ASN 13249 ("IT Systems LLC").
 # Caught trying to hack into WordPress sites.
 # Updated: 2018.07.28 / Checked: 2020.04.19
@@ -10229,13 +10209,12 @@ recaptcha:
 
 # ASNs 20850, 25229, 39049 ("Kyivski Telekomunikatsiyni Merezhi LLC").
 # Huge source of spam and also caught attempting to hack WordPress sites.
-# Stop Forum Spam (SFS) listings: 5 (AS20850), 15,035 (AS25229).
-# Updated: 2020.05.31
+# Stop Forum Spam (SFS) listings: 5 (AS20850), 13,151 (AS25229), 2 (AS39049).
+# Updated: 2020.10.19
 
-93.170.27.0/24 Deny Spam
-Origin: CZ
+31.172.65.0/24 Deny Spam
+Origin: NL
 45.137.155.0/24 Deny Spam
-45.151.62.0/23 Deny Spam
 45.153.229.0/24 Deny Spam
 194.61.120.0/24 Deny Spam
 Origin: RU
@@ -10320,6 +10299,7 @@ Origin: RU
 188.230.124.0/24 Deny Spam
 188.230.126.0/23 Deny Spam
 193.189.96.0/23 Deny Spam
+194.143.146.0/24 Deny Spam
 195.42.126.0/23 Deny Spam
 195.66.136.0/23 Deny Spam
 Origin: UA
@@ -10342,18 +10322,44 @@ Tag: UnderNet LLC
 
 # ASN 18101 ("Reliance Communications Ltd").
 # Caught spamming and occasionally attempting to hack WordPress sites. Also a
-# very large, legit ISP in India, so just listing the specific offending IPs
-# instead of listing the entire ASN.
-# Stop Forum Spam (SFS) listings: 451.
-# Updated: 2020.05.30
+# very large, legit ISP in India, so just listing the offending
+# addresses/ranges (spam/malware), plus the "Data-Centre" and Akamai announced
+# ranges (cloud), "^(.*(?:Data-Centre|Akamai).*)\x01$"; not the entire network.
+# Stop Forum Spam (SFS) listings: 3,763.
+# Updated: 2020.10.19
 
 115.248.223.180/32 Deny Malware
-115.248.237.77/32 Deny Spam
+115.249.31.3/32 Deny Spam
 202.138.127.66/32 Deny Spam
-220.225.104.3/32 Deny Spam
-220.227.0.209/32 Deny Spam
-220.227.71.226/32 Deny Malware
+220.225.7.99/32 Deny Spam
+220.226.0.0/19 Deny Cloud
+220.226.96.0/20 Deny Cloud
 Origin: IN
+118.214.32.0/20 Deny Cloud
+118.214.128.0/20 Deny Cloud
+Origin: SG
+23.5.161.0/24 Deny Cloud
+23.12.156.0/23 Deny Cloud
+23.15.6.0/24 Deny Cloud
+23.47.224.0/19 Deny Cloud
+23.49.50.0/23 Deny Cloud
+23.49.52.0/22 Deny Cloud
+23.49.64.0/20 Deny Cloud
+23.58.96.0/20 Deny Cloud
+23.64.12.0/24 Deny Cloud
+96.6.32.0/21 Deny Cloud
+104.65.224.0/20 Deny Cloud
+104.70.162.0/24 Deny Cloud
+104.70.170.0/24 Deny Cloud
+104.118.218.0/23 Deny Cloud
+104.119.36.0/22 Deny Cloud
+104.119.48.0/20 Deny Cloud
+184.27.203.0/24 Deny Cloud
+184.29.74.0/23 Deny Cloud
+184.29.76.0/23 Deny Cloud
+184.51.5.0/24 Deny Cloud
+184.51.6.0/24 Deny Cloud
+Origin: US
 Tag: Reliance Communications
 ---
 recaptcha:
@@ -14781,6 +14787,72 @@ recaptcha:
 103.134.92.0/22 Deny Spam
 Origin: SG
 Tag: Suga Pte. Ltd
+---
+recaptcha:
+ enabled: true
+
+
+# ASN 35393 ("CTS Computers and Telecommunications Systems SAS").
+# French multiplay network (fibreoptic networks, server farms,
+# cloud/lease/webhost, ISP, etc). Not sure how to distinguish which ranges
+# belong to which parts of their service, so to play it safe, just listing the
+# specific ranges connected to unwanted events/traffic (including brute-force
+# attacks, SSH attacks, spam, etc events).
+# Stop Forum Spam (SFS) listings: 6.
+# Updated: 2020.10.19
+
+46.21.198.0/24 Deny Malware
+Origin: FR
+Tag: CTS SAS
+---
+recaptcha:
+ enabled: true
+
+
+# ASN 17809 ("VEE TIME CORP").
+# Taiwanese domestic ISP, and also a source of brute-force, honeypot, and SSH
+# attacks. Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 4.
+# Updated: 2020.10.19
+
+203.217.101.237/32 Deny Malware
+203.217.113.163/32 Deny Malware
+Origin: TW
+Tag: VEE TIME CORP
+---
+recaptcha:
+ enabled: true
+
+
+# ASN 17882 ("The first E-commerce and TriplePlay Service ISP in Mongolia").
+# Mongolian tripleplay network, and also a source of spam and other unwanted
+# traffic. Listing all ranges identifying as cloud (data centers) plus any
+# other affected addresses/ranges (not the entire network).
+# Stop Forum Spam (SFS) listings: 2,351.
+# Updated: 2020.10.19
+
+43.228.131.115/32 Deny Spam
+66.181.161.95/32 Deny Spam
+103.229.120.0/22 Deny Cloud
+202.70.34.82/32 Deny Spam
+202.70.47.162/32 Deny Spam
+122.201.16.0/24 Deny Cloud
+Origin: MN
+Tag: Unitel LLC
+---
+recaptcha:
+ enabled: true
+
+
+# ASN 33788 ("Kanar Telecommunication (Canar Telecom Co.Ltd)").
+# Sudanese domestic ISP. Brute-force and hack attempts detected from some
+# specific addresses at this network.
+# Stop Forum Spam (SFS) listings: 12.
+# Updated: 2020.10.19
+
+196.29.164.164/32 Deny Malware
+Origin: SD
+Tag: Canar Telecom
 ---
 recaptcha:
  enabled: true

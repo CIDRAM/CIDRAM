@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_isps.dat
 
-# Version: 2020.288.436
-# Last modified: 2020.10.15
+# Version: 2020.292.500
+# Last modified: 2020.10.19
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage, i.e., with ignore.dat, with reCAPTCHA, with "extended rules" (default bypasses): « [ ]Low [x]Medium [ ]High »
@@ -860,13 +860,14 @@ recaptcha:
 # nor its listing at a number of BLs. Marked for use with reCAPTCHA to reduce
 # the false positive risk. Websites intended for a Chinese audience should keep
 # this section listed in their ignore.dat file.
-# Stop Forum Spam (SFS) listings: 4,403.
-# Updated: 2020.09.01
+# Stop Forum Spam (SFS) listings: 4,378.
+# Updated: 2020.10.19
 
 2401:1d40:2000::/48 Deny Generic
 2401:1d40:2100::/48 Deny Generic
 2401:1d40:2f00::/48 Deny Generic
 2402:6f40:1::/48 Deny Generic
+2403:1ec0:1610::/48 Deny Generic
 2405:7040:6000::/48 Deny Generic
 240e:18::/31 Deny Generic
 240e:2e::/33 Deny Generic

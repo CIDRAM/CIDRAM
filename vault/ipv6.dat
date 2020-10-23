@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6.dat
 
-# Version: 2020.292.500
-# Last modified: 2020.10.19
+# Version: 2020.296.168
+# Last modified: 2020.10.23
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage, i.e., with ignore.dat, with reCAPTCHA, with "extended rules" (default bypasses): « [x]Low [ ]Medium [ ]High »
@@ -856,8 +856,8 @@ Tag: Tzulo Inc
 
 
 # ASN 17139 ("Corporate Colocation Inc").
-# Stop Forum Spam (SFS) listings: 1.
-# Updated: 2018.05.04 / Checked: 2020.04.27
+# Stop Forum Spam (SFS) listings: 11.
+# Updated: 2018.05.04 / Checked: 2020.10.23
 
 2401:f500:1::/48 Deny Cloud
 Origin: NZ
@@ -1112,8 +1112,8 @@ Tag: Connexions4London
 
 
 # ASN 32475 ("SingleHop, Inc").
-# Stop Forum Spam (SFS) listings: 190.
-# Updated: 2019.08.11 / Checked: 2020.04.27
+# Stop Forum Spam (SFS) listings: 152.
+# Updated: 2019.08.11 / Checked: 2020.10.23
 
 2607:f978:5::/48 Deny Cloud
 2607:f978:7::/48 Deny Cloud
@@ -1122,8 +1122,8 @@ Tag: SingleHop, Inc
 
 
 # ASN 29550 ("eUKhost LTD").
-# Stop Forum Spam (SFS) listings: 60.
-# Updated: 2017.03.19 / Checked: 2020.04.27
+# Stop Forum Spam (SFS) listings: 54.
+# Updated: 2017.03.19 / Checked: 2020.10.23
 
 2a02:af8::/32 Deny Cloud
 Origin: GB
@@ -1586,12 +1586,12 @@ Tag: Continuum
 
 # ASN 51167 ("Contabo GmbH").
 # Caught spamming while pretending to be Google.
-# Stop Forum Spam (SFS) listings: 26,193.
-# Updated: 2019.07.13 / Checked: 2020.06.27
+# Stop Forum Spam (SFS) listings: 27,040.
+# Updated: 2020.10.23
 
 2a02:c200::/32 Deny Cloud
 2a02:c205::/32 Deny Cloud
-2a02:c207::/32 Deny Cloud
+2a02:c206::/31 Deny Cloud
 Origin: DE
 2a09:9442::/32 Deny Cloud
 Origin: RU
@@ -1630,10 +1630,10 @@ Tag: AltusHost B.V
 
 
 # "Akamai Technologies" (too many ASNs to list; excluding invalids).
-# Updated: 2020.04.27
+# Updated: 2020.10.23
 
-2800:550:2a::/48 Deny Cloud
-Origin: CL
+2600:1408:2400::/48 Deny Cloud
+Origin: AQ
 2a02:2370:1::/48 Deny Cloud
 2a02:2370:2::/47 Deny Cloud
 2a02:2370:4::/47 Deny Cloud
@@ -1648,8 +1648,8 @@ Origin: CL
 2a02:2370:f000::/48 Deny Cloud
 2a02:26f0::/32 Deny Cloud
 Origin: EU
-2404:c800:8203::/48 Deny Cloud
-Origin: HK
+2a01:348:317::/48 Deny Cloud
+Origin: GB
 2001:218:3004::/48 Deny Cloud
 Origin: JP
 2404:4e00:1::/48 Deny Cloud
@@ -1665,53 +1665,27 @@ Origin: JP
 2404:4e00:8000::/48 Deny Cloud
 2404:4e00:c000::/48 Deny Cloud
 Origin: SG
-2405:9800:b::/48 Deny Cloud
-Origin: TH
-2001:4546:1003::/48 Deny Cloud
-Origin: TW
-2001:418:1401:4::/64 Deny Cloud
-2001:418:1401:7::/64 Deny Cloud
-2001:418:1401:9::/64 Deny Cloud
-2001:418:1401:e::/63 Deny Cloud
-2001:418:141f:100::/56 Deny Cloud
-2001:418:141f:200::/56 Deny Cloud
-2001:418:1420:200::/56 Deny Cloud
-2001:418:142d:100::/56 Deny Cloud
-2001:418:142e:100::/56 Deny Cloud
-2001:418:142e:200::/55 Deny Cloud
-2001:418:143a:100::/56 Deny Cloud
-2001:418:143b:100::/56 Deny Cloud
-2001:418:1456:a00::/56 Deny Cloud
-2001:418:1456:1300::/56 Deny Cloud
-2001:418:1456:1900::/56 Deny Cloud
-2001:418:1c01:1::/64 Deny Cloud
 2001:418:2401:1::/64 Deny Cloud
-2001:418:8001::/48 Deny Cloud
-2001:418:8404:1::/64 Deny Cloud
 2001:428:1802:9::/64 Deny Cloud
 2001:428:2001:205::/64 Deny Cloud
-2001:428:2001:302::/64 Deny Cloud
-2001:438:fffd:13::/64 Deny Cloud
 2001:57a:102::/47 Deny Cloud
-2001:590:1801::/48 Deny Cloud
-2001:5a0:3a03::/48 Deny Cloud
 2001:4878::/32 Deny Cloud
 2600:1400::/24 Deny Cloud
-2605:3c80:fc::/46 Deny Cloud
 2606:6c00:2::/48 Deny Cloud
 2606:6c00:4::/46 Deny Cloud
 2606:6c00:8::/47 Deny Cloud
 2606:6c00:100::/48 Deny Cloud
 2606:6c00:102::/48 Deny Cloud
 2606:6c00:104::/46 Deny Cloud
-2606:6c00:108::/48 Deny Cloud
-2606:6c00:120::/44 Deny Cloud
+2606:6c00:108::/47 Deny Cloud
+2606:6c00:2000::/48 Deny Cloud
 2606:6c00:4000::/48 Deny Cloud
 2606:6c00:8000::/48 Deny Cloud
 2606:6c00:a000::/48 Deny Cloud
 2606:6c00:c000::/48 Deny Cloud
 2620:0:b60::/47 Deny Cloud
-2620:104:a000::/44 Deny Cloud
+2620:104:a00b::/48 Deny Cloud
+2620:104:a00c::/48 Deny Cloud
 2620:118:7000::/44 Deny Cloud
 Origin: US
 Tag: Akamai Technologies
@@ -1847,8 +1821,8 @@ Tag: Datacenter IP, LLC
 
 
 # ASN 43578 ("MBA DATACENTERS S.L").
-# Stop Forum Spam (SFS) listings: 12.
-# Updated: 2019.03.30 / Checked: 2020.04.27
+# Stop Forum Spam (SFS) listings: 4.
+# Updated: 2019.03.30 / Checked: 2020.10.21
 
 2a04:b880::/48 Deny Cloud
 2a04:b880:5::/48 Deny Cloud
@@ -2676,8 +2650,8 @@ Tag: InMotion Hosting, Inc
 
 
 # ASN 53755 ("Input Output Flood LLC").
-# Stop Forum Spam (SFS) listings: 527.
-# Updated: 2020.08.11 / Checked: 2020.08.17
+# Stop Forum Spam (SFS) listings: 671.
+# Updated: 2020.08.11 / Checked: 2020.10.21
 
 2a0d:da07::/32 Deny Cloud
 Origin: GB
@@ -2890,8 +2864,8 @@ Tag: 23Media GmbH
 
 
 # ASN 49544 ("i3d B.V").
-# Stop Forum Spam (SFS) listings: 224.
-# Updated: 2020.06.17
+# Stop Forum Spam (SFS) listings: 6,736.
+# Updated: 2020.10.21
 
 2403:1480:9000::/36 Deny Cloud
 Origin: AU
@@ -2900,11 +2874,11 @@ Origin: AU
 Origin: BE
 2a06:7a00::/48 Deny Cloud
 Origin: EU
-2402:c080::/31 Deny Cloud
-Origin: JP
 2a00:1630::/29 Deny Cloud
 2a00:1708::/32 Deny Cloud
-2a00:1d20::/31 Deny Cloud
+2a00:1d20::/30 Deny Cloud
+2a00:1d24::/32 Deny Cloud
+2a00:1d27::/32 Deny Cloud
 2a03:3a60::/32 Deny Cloud
 2a04:c600::/29 Deny Cloud
 2a05:6440::/29 Deny Cloud
@@ -4074,8 +4048,8 @@ Tag: Hydra Communications
 
 # ASN 203523 ("Virtono Networks SRL").
 # Network infested by XRumer.
-# Stop Forum Spam (SFS) listings: 195.
-# Updated: 2019.12.10 / Checked: 2020.04.27
+# Stop Forum Spam (SFS) listings: 130.
+# Updated: 2019.12.10 / Checked: 2020.10.21
 
 2a0e:1d80::/47 Deny Cloud
 Origin: RO
@@ -4200,7 +4174,7 @@ Tag: CyrusOne LLC
 
 # Announcing as: "WEBSITEWELCOME".
 # Various ASNs; Sourced from HE.
-# Updated: 2017.09.25 / Checked: 2020.05.30
+# Updated: 2017.09.25 / Checked: 2020.10.21
 
 2605:f300:ffff::/48 Deny Cloud
 Origin: US
@@ -4391,8 +4365,8 @@ Tag: AVAST Software
 
 # ASN 43317 ('OOO "Fishnet Communications"').
 # Caught spamming while pretending to be Google.
-# Stop Forum Spam (SFS) listings: 3,353.
-# Updated: 2019.03.10 / Checked: 2020.04.27
+# Stop Forum Spam (SFS) listings: 3,752.
+# Updated: 2019.03.10 / Checked: 2020.10.21
 
 2a00:1838::/32 Deny Cloud
 2a0a:4784::/32 Deny Cloud
@@ -7083,6 +7057,18 @@ Tag: Leonet srl
 2a02:2350::/32 Deny Cloud
 Origin: DK
 Tag: One.com A/S
+
+
+# ASN 64425 ("SKB Enterprise B.V").
+# Dedicated webhosting provider caught port scanning.
+# Updated: 2020.10.23
+
+2a0d:2406:200::/39 Deny Cloud
+2a0d:2406:600::/39 Deny Cloud
+2a0f:5e01::/32 Deny Cloud
+2a0f:5e02::/32 Deny Cloud
+Origin: NL
+Tag: SKB Enterprise B.V
 
 
 # ---

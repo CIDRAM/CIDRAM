@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_isps.dat
 
-# Version: 2020.292.500
-# Last modified: 2020.10.19
+# Version: 2020.296.168
+# Last modified: 2020.10.23
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage, i.e., with ignore.dat, with reCAPTCHA, with "extended rules" (default bypasses): « [ ]Low [x]Medium [ ]High »
@@ -2418,17 +2418,12 @@ recaptcha:
 # A domestic ISP from the UK, but forum spam incidents detected from some
 # specific addresses, plus Mirai detected at some specific addresses. Listing
 # just the specific offending addresses here (not the whole network).
-# %Listed, abuseat.org (CBL-Listed): 0.09%.
-# Stop Forum Spam (SFS) listings: 984.
-# Updated: 2020.05.06
+# %Listed, abuseat.org (CBL-Listed): 0.11%.
+# Stop Forum Spam (SFS) listings: 986.
+# Updated: 2020.10.23
 
-2a02:c7d:51b6:c700::/64 Deny Spam
-2a02:c7f:1492:da00::/64 Deny Spam
-2a02:c7f:1e21:7000::/64 Deny Spam
-2a02:c7f:4406:ef00::/64 Deny Spam
-2a02:c7f:9401:c100::/64 Deny Spam
-2a02:c7f:9d03:a500::/64 Deny Spam
-2a02:c7f:c035:9c00::/64 Deny Spam
+2a02:c7f:c233:a500::/64 Deny Spam
+2a02:c7f:cad9:1500::/64 Deny Spam
 Origin: GB
 Tag: Sky UK Limited
 ---

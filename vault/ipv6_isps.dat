@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_isps.dat
 
-# Version: 2020.296.168
-# Last modified: 2020.10.23
+# Version: 2020.303.448
+# Last modified: 2020.10.30
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage, i.e., with ignore.dat, with reCAPTCHA, with "extended rules" (default bypasses): « [ ]Low [x]Medium [ ]High »
@@ -620,11 +620,11 @@ Origin: RU
 Tag: MAROSNET
 
 
-# ASNs 7552, 24086, 37620, 133606, 262210 ("Viettel Corporation").
+# ASNs 7552, 24086, 37620, 262210 ("Viettel Corporation").
 # A HUGE source of forum spam, but also a legit ISP with human endpoints.
 # Serves mostly Vietnam, but also several African countries. Including only the
 # specific affected ASNs (several clean ASNs have been intentionally omitted).
-# Updated: 2018.10.25 / Checked: 2020.05.06
+# Updated: 2018.10.25 / Checked: 2020.10.30
 
 2800:cc0::/32 Deny Spam
 Origin: PE
@@ -1762,8 +1762,8 @@ recaptcha:
 
 # ASN 7642 ("Dhivehi Raajjeyge Gulhun Plc (Dhiraagu)").
 # ISP from the Maldives with human endpoints, but also a source of spam.
-# Stop Forum Spam (SFS) listings: 140.
-# Updated: 2019.09.03 / Checked: 2020.05.06
+# Stop Forum Spam (SFS) listings: 103.
+# Updated: 2019.09.03 / Checked: 2020.10.30
 
 2406:e400::/32 Deny Spam
 Origin: MV
@@ -2435,17 +2435,13 @@ recaptcha:
 # A domestic ISP from the UK, but forum spam incidents detected from some
 # specific addresses, plus Mirai detected at some specific addresses. Listing
 # just the specific offending addresses here (not the whole network).
-# Stop Forum Spam (SFS) listings: 525.
-# Updated: 2020.05.06
+# %Listed, abuseat.org (CBL-Listed): 0.54%.
+# Stop Forum Spam (SFS) listings: 847.
+# Updated: 2020.10.30
 
-2a00:23c4:2705:cc00::/64 Deny Spam
-2a00:23c4:ad07:600::/64 Deny Spam
-2a00:23c5:f315:4900::/64 Deny Spam
-2a00:23c6:362f:a501::/64 Deny Spam
-2a00:23c6:ab89:c01::/64 Deny Spam
-2a00:23c7:46e6:2301::/64 Deny Spam
-2a00:23c8:907:7701::/64 Deny Spam
-2a00:23c8:1e83:df00::/64 Deny Spam
+2a00:23a8:8a3:1200::/64 Deny Spam
+2a00:23c4:e882:b100::/64 Deny Spam
+2a00:23c5:5586:c701::/64 Deny Spam
 Origin: GB
 Tag: British Telecom PLC
 ---

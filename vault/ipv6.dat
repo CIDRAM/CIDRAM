@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6.dat
 
-# Version: 2020.296.168
-# Last modified: 2020.10.23
+# Version: 2020.303.448
+# Last modified: 2020.10.30
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage, i.e., with ignore.dat, with reCAPTCHA, with "extended rules" (default bypasses): « [x]Low [ ]Medium [ ]High »
@@ -117,8 +117,8 @@ Tag: New Dream Network
 
 
 # ASN 33182 ("HostDime.com, Inc").
-# Stop Forum Spam (SFS) listings: 2,328.
-# Updated: 2019.12.18 / Checked: 2020.05.06
+# Stop Forum Spam (SFS) listings: 1,850.
+# Updated: 2020.10.30
 
 2804:9c4::/32 Deny Cloud
 Origin: BR
@@ -128,8 +128,6 @@ Origin: CO
 Origin: GB
 2404:a700::/32 Deny Cloud
 Origin: IN
-2806:213::/32 Deny Cloud
-Origin: MX
 2605:2080::/33 Deny Cloud
 2607:fcd8::/43 Deny Cloud
 2607:fcd8:20::/44 Deny Cloud
@@ -832,8 +830,8 @@ Tag: Digital Ocean, Inc
 
 
 # ASN 5577 ("Root SA").
-# Stop Forum Spam (SFS) listings: 1,071.
-# Updated: 2020.05.01
+# Stop Forum Spam (SFS) listings: 751.
+# Updated: 2020.05.01 / Checked: 2020.10.26
 
 2001:67c:15a3::/48 Deny Cloud
 Origin: CZ
@@ -876,13 +874,10 @@ Origin: CA
 Tag: iWeb
 
 
-# ASNs 13926, 22781, 29713, 62651 ("Strong Technology, LLC", formerly
-# "Reliable Hosting Services").
-# Stop Forum Spam (SFS) listings: 361 (AS13926), 13 (AS22781), 2 (AS29713), 431 (AS62651).
-# Updated: 2019.12.23 / Checked: 2020.05.06
+# ASNs 13926, 22781, 29713 ("Strong Technology, LLC").
+# Stop Forum Spam (SFS) listings: 410 (AS13926), 12 (AS22781), 16 (AS29713).
+# Updated: 2020.10.30
 
-2a0e:be00::/29 Deny Cloud
-Origin: LT
 2604:4100::/36 Deny Cloud
 2606:b300:8000::/40 Deny Cloud
 2607:fb50::/32 Deny Cloud
@@ -1230,10 +1225,11 @@ Tag: Psychz Networks
 
 # ASN 27176 ("DataWagon LLC").
 # A source of forum spam.
-# Stop Forum Spam (SFS) listings: 102.
-# Updated: 2020.05.06
+# Stop Forum Spam (SFS) listings: 28.
+# Updated: 2020.10.30
 
 2a07:d9c0::/30 Deny Cloud
+Origin: AT
 2a0b:2a87::/32 Deny Cloud
 Origin: RU
 2605:aa80::/32 Deny Cloud
@@ -2733,8 +2729,8 @@ Tag: ShenZhen Sunrise
 
 
 # ASN 39572 ("DataWeb Global Group B.V").
-# Stop Forum Spam (SFS) listings: 365.
-# Updated: 2019.08.13 / Checked: 2020.05.01
+# Stop Forum Spam (SFS) listings: 140.
+# Updated: 2019.08.13 / Checked: 2020.10.26
 
 2a02:b48::/31 Deny Cloud
 2a02:b4a::/32 Deny Cloud
@@ -3127,15 +3123,14 @@ Tag: OPTICAL TECHNOLOGIES
 
 
 # ASNs 29302, 32780 ("Hosting Services Inc").
-# Stop Forum Spam (SFS) listings: 93 (AS29302), 3,808 (AS32780).
-# Updated: 2020.05.01
+# Stop Forum Spam (SFS) listings: 65 (AS29302), 2,441 (AS32780).
+# Updated: 2020.10.26
 
-2607:5880::/48 Deny Cloud
-Origin: CA
 2602:ffb0:27::/48 Deny Cloud
 2602:ffb0:ffd::/48 Deny Cloud
 2606:2e00:8000::/48 Deny Cloud
-2606:2e00:8002::/47 Deny Cloud
+2606:2e00:8003::/48 Deny Cloud
+2606:2e00:8007::/48 Deny Cloud
 Origin: US
 Tag: Hosting Services Inc
 
@@ -3449,8 +3444,8 @@ Tag: Net Access Corp
 
 
 # ASN 19318 ("Interserver, Inc").
-# Stop Forum Spam (SFS) listings: 140.
-# Updated: 2018.06.09 / Checked: 2020.02.21
+# Stop Forum Spam (SFS) listings: 403.
+# Updated: 2018.06.09 / Checked: 2020.10.30
 
 2604:a00::/32 Deny Cloud
 Origin: US
@@ -3931,8 +3926,8 @@ Tag: Oy Creanova Hosting
 
 # ASNs 49505, 50340, 60084, 61976 ("Selectel Ltd").
 # Data center + server farm; SSH and brute-force attacks; A source of spam.
-# Stop Forum Spam (SFS) listings: 9,633 (AS49505), 3,169 (AS50340).
-# Updated: 2020.06.08
+# Stop Forum Spam (SFS) listings: 10,636 (AS49505), 3,349 (AS50340).
+# Updated: 2020.06.08 / Checked: 2020.10.30
 
 2a00:ab00::/32 Deny Cloud
 2a0d:3c44::/32 Deny Cloud
@@ -4160,7 +4155,7 @@ Tag: HostPalace
 # Server farm + cloud provider. Probing for database dumps + SSH brute-forcing
 # detected from some IPs at this network. (Just blocking this ASN; Not the
 # others. Remove invalids when updating).
-# Updated: 2019.12.15 / Checked: 2020.05.01
+# Updated: 2019.12.15 / Checked: 2020.10.26
 
 2605:9600::/32 Deny Cloud
 2607:ff70::/32 Deny Cloud
@@ -4213,8 +4208,8 @@ Tag: ACTIVE 24
 
 # ASN 29278 ("Deninet KFT").
 # IPs on this ASN caught attempting to hack users; SQLi galore.
-# Stop Forum Spam (SFS) listings: 2,484.
-# Updated: 2017.10.29 / Checked: 2020.05.01
+# Stop Forum Spam (SFS) listings: 2,810.
+# Updated: 2017.10.29 / Checked: 2020.10.26
 
 2a02:730::/32 Deny Cloud
 Origin: HU
@@ -4640,8 +4635,8 @@ Tag: Hostio Solutions B.V
 
 
 # ASN 23338 ("DCS Pacific Star, LLC").
-# Stop Forum Spam (SFS) listings: 15.
-# Updated: 2018.05.18 / Checked: 2020.05.01
+# Stop Forum Spam (SFS) listings: 43.
+# Updated: 2018.05.18 / Checked: 2020.10.26
 
 2606:b680::/32 Deny Cloud
 Origin: US
@@ -4908,10 +4903,12 @@ Tag: TakeWYN
 # ASNs 34962, 206898 ("Anonymize, Inc", "Sibyl System LTD").
 # Malware detected on network; Future C&C risk.
 # (Mark "Anonymize, Inc" CIDRs as proxy; everything else as cloud).
-# Updated: 2019.12.23 / Checked: 2020.05.06
+# Updated: 2020.10.30
 
 2a05:9f06::/31 Deny Cloud
 Origin: PT
+2001:470:138::/48 Deny Cloud
+Origin: US
 Tag: Anonymize, Inc
 
 
@@ -6592,8 +6589,8 @@ Tag: PALO ALTO NETWORKS
 
 # ASN 60068 ("Datacamp Limited").
 # CDN, DDoS protection and cloud provider; Spambots detected at this network.
-# Stop Forum Spam (SFS) listings: 50,969.
-# Updated: 2020.07.09
+# Stop Forum Spam (SFS) listings: 79,300.
+# Updated: 2020.10.30
 
 2a02:6ea0:babe::/48 Deny Cloud
 2a02:6ea0:c000::/37 Deny Cloud
@@ -6605,6 +6602,7 @@ Tag: PALO ALTO NETWORKS
 2a02:6ea0:d200::/39 Deny Cloud
 2a02:6ea0:d400::/38 Deny Cloud
 2a02:6ea0:d800::/39 Deny Cloud
+2a02:6ea0:da00::/40 Deny Cloud
 Origin: GB
 2a05:6200:74::/48 Deny Cloud
 Origin: NL
@@ -7069,6 +7067,17 @@ Tag: One.com A/S
 2a0f:5e02::/32 Deny Cloud
 Origin: NL
 Tag: SKB Enterprise B.V
+
+
+# ASN 30860 ("Virtual Systems LLC").
+# Server farm and a source of spam.
+# Stop Forum Spam (SFS) listings: 3,281.
+# Updated: 2020.10.26
+
+2a00:17a0:1005::/48 Deny Cloud
+2a09:2dc0::/29 Deny Cloud
+Origin: UA
+Tag: Virtual Systems LLC
 
 
 # ---

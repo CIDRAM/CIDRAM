@@ -1,8 +1,8 @@
 # IPv4 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv4_isps.dat
 
-# Version: 2020.296.168
-# Last modified: 2020.10.23
+# Version: 2020.303.448
+# Last modified: 2020.10.30
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage, i.e., with ignore.dat, with reCAPTCHA, with "extended rules" (default bypasses): « [ ]Low [x]Medium [ ]High »
@@ -2922,30 +2922,17 @@ Origin: RU
 Tag: MAROSNET
 
 
-# ASNs 7552, 24086, 37620, 133606, 262210 ("Viettel Corporation").
+# ASNs 7552, 24086, 37620, 262210 ("Viettel Corporation").
 # A HUGE source of forum spam, but also a legit ISP with human endpoints.
 # Serves mostly Vietnam, but also several African countries. Including only the
 # specific affected ASNs (several clean ASNs have been intentionally omitted).
-# Updated: 2020.05.06
+# Updated: 2020.10.30
 
 41.244.0.0/16 Deny Spam
 Origin: CM
 131.255.192.0/22 Deny Spam
 181.176.0.0/16 Deny Spam
 Origin: PE
-43.254.56.0/22 Deny Spam
-103.238.116.0/22 Deny Spam
-Origin: TL
-100.144.128.0/17 Deny Spam
-100.145.0.0/16 Deny Spam
-100.146.0.0/15 Deny Spam
-100.148.0.0/17 Deny Spam
-100.149.0.0/17 Deny Spam
-100.153.0.0/16 Deny Spam
-100.154.0.0/17 Deny Spam
-100.155.0.0/16 Deny Spam
-100.156.0.0/17 Deny Spam
-Origin: US
 27.64.0.0/12 Deny Spam
 103.84.76.0/22 Deny Spam
 103.241.248.0/22 Deny Spam
@@ -10056,8 +10043,8 @@ recaptcha:
 
 # ASN 7642 ("Dhivehi Raajjeyge Gulhun Plc (Dhiraagu)").
 # ISP from the Maldives with human endpoints, but also a source of spam.
-# Stop Forum Spam (SFS) listings: 140.
-# Updated: 2020.05.06
+# Stop Forum Spam (SFS) listings: 103.
+# Updated: 2020.05.06 / Checked: 2020.10.30
 
 27.114.128.0/18 Deny Spam
 43.226.220.0/22 Deny Spam
@@ -11487,32 +11474,41 @@ recaptcha:
 # A domestic ISP from the UK, but forum spam incidents detected from some
 # specific addresses, plus Mirai detected at some specific addresses. Listing
 # just the specific offending addresses here (not the whole network).
-# Stop Forum Spam (SFS) listings: 525.
-# Updated: 2020.05.06
+# %Listed, abuseat.org (CBL-Listed): 0.54%.
+# Stop Forum Spam (SFS) listings: 847.
+# Updated: 2020.10.30
 
-31.52.15.126/32 Deny Spam
+31.49.232.180/32 Deny Spam
 31.52.157.0/24 Deny Malware
-31.53.200.4/32 Deny Spam
-31.53.208.233/32 Deny Spam
-62.6.237.182/32 Deny Spam
-81.133.122.122/32 Deny Spam
-86.128.6.98/32 Deny Spam
-86.136.167.103/32 Deny Spam
-86.138.41.144/32 Deny Spam
-86.142.163.165/32 Deny Spam
-86.147.14.158/32 Deny Spam
-86.154.217.118/32 Deny Spam
-86.154.250.54/32 Deny Spam
-86.155.12.184/32 Deny Spam
-86.155.34.187/32 Deny Spam
-86.160.241.82/32 Deny Spam
-86.161.197.6/32 Deny Spam
-86.168.137.25/32 Deny Spam
-86.177.79.192/32 Deny Spam
-86.184.98.208/32 Deny Spam
-86.185.8.144/32 Deny Spam
-109.152.105.222/32 Deny Spam
-109.156.50.188/32 Deny Spam
+31.54.231.106/32 Deny Spam
+81.136.112.129/32 Deny Spam
+86.130.179.88/32 Deny Spam
+86.131.148.251/32 Deny Spam
+86.132.58.156/32 Deny Spam
+86.133.96.114/32 Deny Spam
+86.137.188.145/32 Deny Spam
+86.138.64.105/32 Deny Spam
+86.146.175.210/32 Deny Spam
+86.146.212.157/32 Deny Spam
+86.148.176.218/32 Deny Spam
+86.150.233.79/32 Deny Spam
+86.150.255.19/32 Deny Spam
+86.156.233.98/32 Deny Spam
+86.159.78.88/32 Deny Spam
+86.165.21.212/32 Deny Spam
+86.167.26.98/32 Deny Spam
+86.168.187.32/32 Deny Spam
+86.174.91.191/32 Deny Spam
+86.180.118.128/32 Deny Spam
+86.187.174.104/32 Deny Spam
+86.188.14.25/32 Deny Spam
+86.190.170.185/32 Deny Spam
+86.191.117.18/32 Deny Spam
+109.144.23.34/32 Deny Spam
+109.147.229.138/32 Deny Spam
+109.156.41.77/32 Deny Spam
+147.148.49.89/32 Deny Spam
+213.120.213.251/32 Deny Spam
 Origin: GB
 Tag: British Telecom PLC
 ---

@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6.dat
 
-# Version: 2020.303.448
-# Last modified: 2020.10.30
+# Version: 2020.308.577
+# Last modified: 2020.11.04
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage, i.e., with ignore.dat, with reCAPTCHA, with "extended rules" (default bypasses): « [x]Low [ ]Medium [ ]High »
@@ -28,8 +28,8 @@ Tag: Sharktech
 
 
 # ASN 35916 ("MULTACOM CORPORATION").
-# Stop Forum Spam (SFS) listings: 243.
-# Updated: 2020.09.04
+# Stop Forum Spam (SFS) listings: 244.
+# Updated: 2020.11.04
 
 2a09:dc04::/30 Deny Cloud
 Origin: NL
@@ -42,12 +42,13 @@ Origin: NL
 2a0f:8b84::/32 Deny Cloud
 2a0f:8b86::/32 Deny Cloud
 Origin: RO
-2a07:dec0::/30 Deny Cloud
 2a0d:5980::/29 Deny Cloud
 2a0d:6900::/29 Deny Cloud
 2a0d:9480::/29 Deny Cloud
 2a0d:d480::/29 Deny Cloud
 Origin: RU
+2a07:dec0::/30 Deny Cloud
+Origin: TR
 2607:9a00::/32 Deny Cloud
 2607:f130::/32 Deny Cloud
 Origin: US
@@ -55,12 +56,13 @@ Tag: Multacom Corp
 
 
 # ASN 58879 ("ShangHai AnchNet Tec").
-# Stop Forum Spam (SFS) listings: 117.
-# Updated: 2020.05.08
+# Stop Forum Spam (SFS) listings: 141.
+# Updated: 2020.11.04
 
 2001:df2:6680::/48 Deny Cloud
 Origin: CN
 2404:de80::/39 Deny Cloud
+2404:de80:400::/40 Deny Cloud
 Origin: HK
 Tag: ShangHai AnchNet Tec
 
@@ -670,7 +672,7 @@ Tag: HOSTKEY B.V
 #   44716, 45187, 54636, 58683.
 # Subtract when updating:
 # - 162.13.83.46/32 (used by "googlealert.com", "gigaalert.com", "copyscape.com").
-# Updated: 2020.05.08
+# Updated: 2020.05.08 / Checked: 2020.11.04
 
 2a0b:440::/32 Deny Cloud
 Origin: DE
@@ -842,13 +844,15 @@ Tag: Root SA
 
 # ASN 11878 ("Tzulo Inc").
 # Dedicated cloud provider + source of forum and blog spam.
-# Stop Forum Spam (SFS) listings: 2,838.
-# Updated: 2020.05.08
+# Stop Forum Spam (SFS) listings: 2,599.
+# Updated: 2020.11.04
 
 2607:2780::/48 Deny Cloud
 2607:9000::/35 Deny Cloud
 2607:9000:4000::/34 Deny Cloud
-2607:9000:8000::/33 Deny Cloud
+2607:9000:8000::/36 Deny Cloud
+2607:9000:a000::/35 Deny Cloud
+2607:9000:c000::/34 Deny Cloud
 Origin: US
 Tag: Tzulo Inc
 
@@ -2893,11 +2897,9 @@ Tag: i3d B.V
 
 # ASN 50673 ("Serverius Holding B.V").
 # Ranges change frequently / Should update often.
-# Stop Forum Spam (SFS) listings: 9,241.
-# Updated: 2020.05.08
+# Stop Forum Spam (SFS) listings: 5,287.
+# Updated: 2020.11.04
 
-2a09:7c44::/32 Deny Cloud
-Origin: MD
 2001:67c:b0::/48 Deny Cloud
 2001:7f8:e::/48 Deny Cloud
 2a00:1ca8::/32 Deny Cloud
@@ -2912,7 +2914,9 @@ Origin: MD
 2a09:aa80::/32 Deny Cloud
 2a0a:3f40::/32 Deny Cloud
 2a0a:6f80::/32 Deny Cloud
+2a0c:480::/32 Deny Cloud
 2a0c:a340::/29 Deny Cloud
+2a0d:f300::/32 Deny Cloud
 2a0f:4a80::/48 Deny Cloud
 Origin: NL
 2a07:c800::/29 Deny Cloud
@@ -4471,18 +4475,11 @@ Tag: Capitalonline
 
 # ASN 37560 ("Cyberdyne S.A").
 # Significant source of forum and blog spam.
-# Stop Forum Spam (SFS) listings: 2,645.
-# Updated: 2019.12.22 / Checked: 2020.05.08
+# Stop Forum Spam (SFS) listings: 503.
+# Updated: 2020.11.04
 
 2001:67c:1350::/48 Deny Cloud
 Origin: CY
-2c0f:f930::/32 Deny Cloud
-Origin: LR
-2a02:6f8::/32 Deny Cloud
-2a0a:3840::/29 Deny Cloud
-2a0e:d9c0::/29 Deny Cloud
-2a0f:5e80::/29 Deny Cloud
-Origin: SE
 Tag: Cyberdyne S.A
 
 
@@ -4688,8 +4685,8 @@ Tag: Radore Veri Merkezi
 
 # ASN 204655 ("Novogara LTD").
 # Spam tolerant network.
-# Stop Forum Spam (SFS) listings: 11.
-# Updated: 2019.08.27 / Checked: 2020.05.08
+# Stop Forum Spam (SFS) listings: 2.
+# Updated: 2019.08.27 / Checked: 2020.11.04
 
 2a0b:b7c0::/30 Deny Cloud
 Origin: NL
@@ -4725,17 +4722,6 @@ Origin: ES
 2a0b:b87:ffef::/48 Deny Cloud
 Origin: NL
 Tag: First Colo GmbH
-
-
-# ASN 62088 ("Sinarohost LTD").
-# Malware detected on network; Future C&C risk.
-# Stop Forum Spam (SFS) listings: 322.
-# Updated: 2020.05.08
-
-2a01:9520::/31 Deny Cloud
-2a01:9522::/32 Deny Cloud
-Origin: GB
-Tag: Sinarohost LTD
 
 
 # ASN 197695 ("Domain names registrar REG.RU").
@@ -7082,7 +7068,7 @@ Tag: Virtual Systems LLC
 
 # ---
 # Microsoft Azure IPv6 CIDRs.
-# Updated: 2020.10.09
+# Updated: 2020.11.04
 # Refer microsoft.com/en-us/download/details.aspx?id=56519
 # Refer microsoft.com/en-us/download/details.aspx?id=57062
 # Refer microsoft.com/en-us/download/details.aspx?id=57063
@@ -7302,6 +7288,7 @@ Origin: DE
 2603:1030:9::/56 Run rules_specific.php
 2603:1030:9:100::/59 Run rules_specific.php
 2603:1030:9:120::/63 Run rules_specific.php
+2603:1030:9:122::/64 Run rules_specific.php
 2603:1030:a::/47 Run rules_specific.php
 2603:1030:d::/48 Run rules_specific.php
 2603:1030:e::/47 Run rules_specific.php
@@ -7348,6 +7335,7 @@ Origin: DE
 2603:1030:107::300/122 Run rules_specific.php
 2603:1030:107::540/123 Run rules_specific.php
 2603:1030:107::580/125 Run rules_specific.php
+2603:1030:107::5c0/122 Run rules_specific.php
 2603:1030:107::600/120 Run rules_specific.php
 2603:1030:107::700/123 Run rules_specific.php
 2603:1030:107::720/124 Run rules_specific.php
@@ -7377,7 +7365,9 @@ Origin: DE
 2603:1030:401::/56 Run rules_specific.php
 2603:1030:401:100::/58 Run rules_specific.php
 2603:1030:401:140::/59 Run rules_specific.php
-2603:1030:401:160::/63 Run rules_specific.php
+2603:1030:401:160::/60 Run rules_specific.php
+2603:1030:401:170::/61 Run rules_specific.php
+2603:1030:401:178::/62 Run rules_specific.php
 2603:1030:402::/47 Run rules_specific.php
 2603:1030:405::/48 Run rules_specific.php
 2603:1030:406::/47 Run rules_specific.php
@@ -7419,7 +7409,7 @@ Origin: DE
 2603:1030:504:800::/123 Run rules_specific.php
 2603:1030:504:801::/123 Run rules_specific.php
 2603:1030:504:802::80/122 Run rules_specific.php
-2603:1030:504:802::c0/123 Run rules_specific.php
+2603:1030:504:802::d0/124 Run rules_specific.php
 2603:1030:504:802::f0/124 Run rules_specific.php
 2603:1030:504:802::100/120 Run rules_specific.php
 2603:1030:504:802::200/120 Run rules_specific.php
@@ -7468,8 +7458,8 @@ Origin: DE
 2603:1030:804:d4::/62 Run rules_specific.php
 2603:1030:804:d8::/61 Run rules_specific.php
 2603:1030:804:e0::/60 Run rules_specific.php
-2603:1030:804:f0::/62 Run rules_specific.php
-2603:1030:804:f4::/64 Run rules_specific.php
+2603:1030:804:f0::/61 Run rules_specific.php
+2603:1030:804:f8::/63 Run rules_specific.php
 2603:1030:805::/48 Run rules_specific.php
 2603:1030:806::/47 Run rules_specific.php
 2603:1030:a00::/46 Run rules_specific.php
@@ -7491,7 +7481,10 @@ Origin: DE
 2603:1030:1000::/47 Run rules_specific.php
 2603:1030:1002::/48 Run rules_specific.php
 2603:1030:1004::/47 Run rules_specific.php
+2603:1036:903::/63 Run rules_specific.php
+2603:1036:903:2::/64 Run rules_specific.php
 2603:1036:9ff:ffff::/64 Run rules_specific.php
+2603:1036:d20::/64 Run rules_specific.php
 2603:1036:120d::/48 Run rules_specific.php
 2603:1036:2400::/45 Run rules_specific.php
 2603:1036:2408::/47 Run rules_specific.php

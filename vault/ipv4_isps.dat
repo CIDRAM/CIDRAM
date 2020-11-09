@@ -1,8 +1,8 @@
 # IPv4 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv4_isps.dat
 
-# Version: 2020.303.448
-# Last modified: 2020.10.30
+# Version: 2020.313.329
+# Last modified: 2020.11.09
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage, i.e., with ignore.dat, with reCAPTCHA, with "extended rules" (default bypasses): « [ ]Low [x]Medium [ ]High »
@@ -627,8 +627,8 @@ recaptcha:
 # positive risk shouldn't be too high. Hope to eventually scale down the listed
 # ranges here, but current incident reports are quite scattered across the ASN.
 # (Mark US ranges as cloud; ID as spam).
-# Stop Forum Spam (SFS) listings: 258.
-# Updated: 2020.05.11
+# Stop Forum Spam (SFS) listings: 503.
+# Updated: 2020.11.09
 
 103.10.64.0/22 Deny Spam
 103.105.24.0/23 Deny Spam
@@ -638,6 +638,7 @@ recaptcha:
 103.108.20.0/23 Deny Spam
 103.108.22.0/24 Deny Spam
 103.108.27.0/24 Deny Spam
+103.108.28.0/23 Deny Spam
 114.142.168.0/21 Deny Spam
 116.206.8.0/23 Deny Spam
 116.206.11.0/24 Deny Spam
@@ -1558,23 +1559,21 @@ recaptcha:
 # the false positive risk, and I would encourage any CIDRAM users from Israel,
 # or targeting traffic from Israel, to list this section in their ignore.dat
 # file to reduce the false positive risk.
-# Stop Forum Spam (SFS) listings: 8,946 (AS9116).
-# Updated: 2020.05.11
+# Stop Forum Spam (SFS) listings: 15,767 (AS9116).
+# Updated: 2020.11.09
 
 31.154.139.0/24 Deny Spam
-46.120.0.0/15 Deny Spam
 62.128.32.0/19 Deny Spam
 77.124.0.0/14 Deny Spam
 80.178.0.0/15 Deny Spam
 80.230.0.0/16 Deny Spam
 81.5.0.0/18 Deny Spam
-82.102.159.0/24 Deny Spam
 82.102.161.0/24 Deny Spam
 83.130.0.0/16 Deny Spam
 84.94.0.0/15 Deny Spam
 84.228.0.0/15 Deny Spam
 87.68.0.0/14 Deny Spam
-176.231.158.0/24 Deny Spam
+185.191.204.0/24 Deny Spam
 192.114.84.0/22 Deny Spam
 192.114.160.0/19 Deny Spam
 192.115.72.0/21 Deny Spam
@@ -1591,6 +1590,8 @@ recaptcha:
 212.199.0.0/16 Deny Spam
 213.8.0.0/16 Deny Spam
 Origin: IL
+17.235.247.0/24 Deny Spam
+Origin: US
 Tag: 012 Smile
 ---
 recaptcha:
@@ -11517,40 +11518,14 @@ recaptcha:
 
 
 # ASN 52465 ("WNet Internet y Hosting").
-# Argentine multiplay network (domestic ISP, webhosting, etc) caught spamming.
-# Stop Forum Spam (SFS) listings: 197.
-# Updated: 2020.05.11
+# Argentine multiplay network (domestic ISP, webhosting, etc) caught spamming and attacking honeypots.
+# Stop Forum Spam (SFS) listings: 139.
+# Updated: 2020.11.09
 
-161.0.72.11/32 Deny Spam
+161.0.72.11/32 Deny Malware
+161.0.72.47/32 Deny Malware
 Origin: AR
 Tag: WNet Internet y Hosting
-
-
-# ASN 53356 ("WestConnect Communications").
-# (Can omit anything under 44../8; clean).
-# Canadian multiplay network (domestic ISP, webhosting, etc) caught spamming.
-# Stop Forum Spam (SFS) listings: 2,495.
-# Updated: 2020.05.11 / Modified: 2020.06.22
-
-23.129.32.0/24 Deny Spam
-103.144.176.0/23 Deny Spam
-104.218.63.0/24 Deny Spam
-161.129.60.0/24 Deny Spam
-167.88.48.0/24 Deny Spam
-167.88.50.0/23 Deny Spam
-206.83.41.0/24 Deny Spam
-Origin: CA
-45.148.76.0/22 Deny Spam
-Origin: GB
-193.142.147.0/24 Deny Spam
-Origin: NL
-23.152.225.0/24 Deny Spam
-23.154.80.0/24 Deny Spam
-Origin: US
-Tag: WestConnect
----
-recaptcha:
- enabled: true
 
 
 # ASNs 7725, 7922, 33668 ("Comcast Cable Communications, LLC").
@@ -14857,6 +14832,33 @@ recaptcha:
 178.80.45.151/32 Deny Spam
 Origin: SA
 Tag: Etihad Etisalat
+---
+recaptcha:
+ enabled: true
+
+
+# ASN 39351 ("31173 Services AB").
+# Webhosting and colocation provider, and also a source of spam and other
+# unwanted traffic. Placed into the ISPs file and marked with reCAPTCHA due to
+# the risk of false positives (some companies and networks in Stockholm may use
+# this network).
+# Stop Forum Spam (SFS) listings: 3,966.
+# Updated: 2020.11.09
+
+45.83.220.0/24 Deny Spam
+45.129.56.0/24 Deny Spam
+45.159.212.0/22 Deny Spam
+141.98.252.0/24 Deny Spam
+141.98.254.0/23 Deny Spam
+185.65.132.0/22 Deny Spam
+185.195.232.0/23 Deny Spam
+185.209.196.0/23 Deny Spam
+185.213.152.0/22 Deny Spam
+193.32.126.0/23 Deny Spam
+193.32.248.0/23 Deny Spam
+193.138.216.0/22 Deny Spam
+Origin: SE
+Tag: 31173 Services AB
 ---
 recaptcha:
  enabled: true

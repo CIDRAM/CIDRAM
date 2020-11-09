@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_isps.dat
 
-# Version: 2020.303.448
-# Last modified: 2020.10.30
+# Version: 2020.313.329
+# Last modified: 2020.11.09
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage, i.e., with ignore.dat, with reCAPTCHA, with "extended rules" (default bypasses): « [ ]Low [x]Medium [ ]High »
@@ -116,13 +116,14 @@ recaptcha:
 # positive risk shouldn't be too high. Hope to eventually scale down the listed
 # ranges here, but current incident reports are quite scattered across the ASN.
 # (Mark US ranges as cloud; ID as spam).
-# Stop Forum Spam (SFS) listings: 258.
-# Updated: 2019.12.27 / Checked: 2020.05.11
+# Stop Forum Spam (SFS) listings: 503.
+# Updated: 2020.11.09
 
 2400:8b00:100::/42 Deny Spam
 2400:8b00:200::/42 Deny Spam
 2400:8b00:300::/42 Deny Spam
-2400:8b00:500::/42 Deny Spam
+2400:8b00:500::/43 Deny Spam
+2400:8b00:530::/44 Deny Spam
 2400:8b00:600::/42 Deny Spam
 2400:8b00:700::/42 Deny Spam
 2400:8b00:800::/42 Deny Spam
@@ -140,6 +141,8 @@ recaptcha:
 2400:8b00:f00::/42 Deny Spam
 2400:8b00:f80::/42 Deny Spam
 2400:8b00:1000::/44 Deny Spam
+2400:8b00:1600::/42 Deny Spam
+2400:8b00:1800::/42 Deny Spam
 2400:8b00:2000::/42 Deny Spam
 2400:8b00:2100::/42 Deny Spam
 Origin: ID
@@ -326,8 +329,8 @@ recaptcha:
 # the false positive risk, and I would encourage any CIDRAM users from Israel,
 # or targeting traffic from Israel, to list this section in their ignore.dat
 # file to reduce the false positive risk.
-# Stop Forum Spam (SFS) listings: 8,946 (AS9116).
-# Updated: 2016.12.10 / Checked: 2020.05.11
+# Stop Forum Spam (SFS) listings: 15,767 (AS9116).
+# Updated: 2016.12.10 / Checked: 2020.11.09
 
 2001:40a8::/32 Deny Spam
 Origin: IL
@@ -2081,52 +2084,6 @@ recaptcha:
  enabled: true
 
 
-# ASN 53356 ("WestConnect Communications").
-# (Can omit anything under 44../8; clean).
-# Canadian multiplay network (domestic ISP, webhosting, etc) caught spamming.
-# Stop Forum Spam (SFS) listings: 2,495.
-# Updated: 2020.05.11
-
-2a07:1c40:1028::/48 Deny Spam
-Origin: AT
-2a0c:b641:493::/48 Deny Spam
-2a0c:b642:1a0c::/48 Deny Spam
-Origin: BE
-2602:fed2::/48 Deny Spam
-2602:fed2:31::/48 Deny Spam
-2602:fed2:3eb::/48 Deny Spam
-2602:fed2:3ec::/47 Deny Spam
-2602:fed2:3ee::/48 Deny Spam
-2602:fed2:fb0::/44 Deny Spam
-2602:fed2:fc0::/44 Deny Spam
-2602:fed2:fe0::/44 Deny Spam
-2602:fed2:ff0::/48 Deny Spam
-2602:fed2:ff3::/48 Deny Spam
-2602:fed2:ff4::/48 Deny Spam
-2602:fed2:710d::/48 Deny Spam
-2602:fed2:7113::/48 Deny Spam
-2602:fed2:7118::/48 Deny Spam
-2602:fed2:7121::/48 Deny Spam
-2602:fed2:7305::/48 Deny Spam
-2602:fed2:730a::/48 Deny Spam
-Origin: CA
-2a06:e881:620c::/48 Deny Spam
-Origin: CH
-2a0f:9400:fb0::/44 Deny Spam
-2a0f:9400:7370::/44 Deny Spam
-2a0f:9400:7400::/39 Deny Spam
-2a0f:9400:7700::/40 Deny Spam
-2a0f:9400:7900::/40 Deny Spam
-2a0f:9400:800e::/48 Deny Spam
-Origin: GB
-2a0e:2b00::/29 Deny Spam
-Origin: LT
-Tag: WestConnect
----
-recaptcha:
- enabled: true
-
-
 # ASNs 7725, 7922, 33668 ("Comcast Cable Communications, LLC").
 # Major domestic ISP in the United States; Should NEVER be blocked in entirety.
 # Listed here are some specific CIDRs/IPs on their network that pose a major
@@ -2604,6 +2561,27 @@ recaptcha:
 2a00:5ba0:10:2242::/64 Deny Malware
 Origin: DE
 Tag: DFN
+---
+recaptcha:
+ enabled: true
+
+
+# ASN 39351 ("31173 Services AB").
+# Webhosting and colocation provider, and also a source of spam and other
+# unwanted traffic. Placed into the ISPs file and marked with reCAPTCHA due to
+# the risk of false positives (some companies and networks in Stockholm may use
+# this network).
+# Stop Forum Spam (SFS) listings: 3,966.
+# Updated: 2020.11.09
+
+2a03:1b20:1::/48 Deny Spam
+2a03:1b20:2::/47 Deny Spam
+2a03:1b20:4::/46 Deny Spam
+2a03:1b20:8::/47 Deny Spam
+2a03:1b20:a::/48 Deny Spam
+2a0f:8980::/32 Deny Spam
+Origin: SE
+Tag: 31173 Services AB
 ---
 recaptcha:
  enabled: true

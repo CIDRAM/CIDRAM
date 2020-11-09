@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6.dat
 
-# Version: 2020.308.577
-# Last modified: 2020.11.04
+# Version: 2020.313.329
+# Last modified: 2020.11.09
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage, i.e., with ignore.dat, with reCAPTCHA, with "extended rules" (default bypasses): « [x]Low [ ]Medium [ ]High »
@@ -927,12 +927,14 @@ Tag: WholeSale Internet
 
 
 # ASN 33387 ("DataShack, LC").
-# Stop Forum Spam (SFS) listings: 1,353.
-# Updated: 2019.04.07 / Checked: 2020.05.08
+# Stop Forum Spam (SFS) listings: 1,692.
+# Updated: 2020.11.09
 
 2a0a:1f43::/32 Deny Cloud
 Origin: NL
 2604:4300::/32 Deny Cloud
+2606:6680:27::/48 Deny Cloud
+2606:6680:28::/48 Deny Cloud
 Origin: US
 Tag: DataShack, LC
 
@@ -1137,7 +1139,7 @@ Tag: eUKhost LTD
 # clean, and there's some risk of false positives occurring. Remove invalids
 # when updating to reduce the risk. Redacted to just two ASNs at last update.
 # Stop Forum Spam (SFS) listings: 7 (AS12703).
-# Updated: 2019.12.22 / Checked: 2020.05.08
+# Updated: 2019.12.22 / Checked: 2020.11.09
 
 2a00:85a0::/32 Deny Cloud
 2a01:5ae0::/32 Deny Cloud
@@ -2694,8 +2696,9 @@ Tag: Alibaba
 
 
 # ASN 37963 ("Hangzhou Alibaba Advertising Co.,Ltd.").
-# Stop Forum Spam (SFS) listings: 3,800.
-# Updated: 2018.10.14 / Checked: 2020.05.08
+# Dedicated server farm and a consistent source of forum and blog spam.
+# Stop Forum Spam (SFS) listings: 4,314.
+# Updated: 2018.10.14 / Checked: 2020.11.09
 
 2400:3200::/32 Deny Cloud
 2400:b200::/32 Deny Cloud
@@ -3920,8 +3923,8 @@ Tag: DATAPRO
 
 
 # ASN 51765 ("Oy Creanova Hosting Solutions Ltd").
-# Stop Forum Spam (SFS) listings: 18,203.
-# Updated: 2019.09.15 / Checked: 2020.05.11
+# Stop Forum Spam (SFS) listings: 13,226.
+# Updated: 2019.09.15 / Checked: 2020.11.09
 
 2a0c:f040::/48 Deny Cloud
 Origin: FI
@@ -4147,10 +4150,10 @@ Tag: Highwinds
 
 # ASN 134512 ("HostPalace Web Solution Private Limited").
 # Dedicated webhosting provider + source of forum and blog spam.
-# Stop Forum Spam (SFS) listings: 50.
-# Updated: 2019.12.22 / Checked: 2020.05.08
+# Stop Forum Spam (SFS) listings: 13.
+# Updated: 2020.11.09
 
-2a04:f780::/29 Deny Cloud
+2a04:f780:1000::/36 Deny Cloud
 Origin: IN
 Tag: HostPalace
 
@@ -4402,14 +4405,15 @@ Tag: CloudSol
 
 
 # ASN 55720 ("Gigabit Hosting Sdn Bhd").
-# Stop Forum Spam (SFS) listings: 800.
-# Updated: 2019.08.11 / Checked: 2020.05.11
+# Stop Forum Spam (SFS) listings: 183.
+# Updated: 2020.11.09
 
 2402:90c0::/32 Deny Cloud
 Origin: HK
 2400:5680::/32 Deny Cloud
 2401:340::/32 Deny Cloud
 2402:9500::/32 Deny Cloud
+2407:5d00::/32 Deny Cloud
 Origin: MY
 Tag: Gigabit Hosting
 
@@ -4643,9 +4647,9 @@ Tag: DCS Pacific Star
 # ASNs 3302, 5396, 5602 ("KPNQWest Italia S.p.a").
 # Primarily a server farm + data center, but also provides FTTC-FTTH and
 # related services (so, a multiplay network). When updating, to reduce the
-# false positive risk, remove "^.*(invalid|infracom|fibra).*$\n".
-# Stop Forum Spam (SFS) listings: 29 (AS3302), 340 (AS5396), 88 (AS5602).
-# Updated: 2019.12.22 / Checked: 2020.05.08
+# false positive risk, remove "^.*(invalid|xdsl|voip|infracom|fibra).*$\n".
+# Stop Forum Spam (SFS) listings: 37 (AS3302), 50 (AS5396), 91 (AS5602).
+# Updated: 2019.12.22 / Checked: 2020.11.09
 
 2001:1450::/32 Deny Cloud
 2a00:f58::/32 Deny Cloud
@@ -4726,14 +4730,18 @@ Tag: First Colo GmbH
 
 # ASN 197695 ("Domain names registrar REG.RU").
 # Malware detected on network; Future C&C risk.
-# Stop Forum Spam (SFS) listings: 540.
-# Updated: 2018.06.19 / Checked: 2020.05.11
+# Stop Forum Spam (SFS) listings: 431.
+# Updated: 2020.11.09
 
 2a00:1b48::/32 Deny Cloud
 2a00:f940:1::/48 Deny Cloud
 2a00:f940:2::/47 Deny Cloud
 2a00:f940:4::/46 Deny Cloud
-2a00:f940:8::/47 Deny Cloud
+2a00:f940:9::/48 Deny Cloud
+2a03:4900::/47 Deny Cloud
+2a03:4900:2::/48 Deny Cloud
+2a03:4900:5::/48 Deny Cloud
+2a03:4900:6::/48 Deny Cloud
 Origin: RU
 Tag: REG.RU
 
@@ -4877,8 +4885,8 @@ Tag: Web4U s.r.o
 # Caught trying to hack WordPress sites, caught performing unauthorised port
 # scans, caught brute-forcing, probing for vulnerabilities, plus other
 # nefarious activity.
-# Stop Forum Spam (SFS) listings: 1 (AS3267), 38 (AS48693).
-# Updated: 2019.03.27 / Checked: 2020.05.11
+# Stop Forum Spam (SFS) listings: 1 (AS3267), 50 (AS48693).
+# Updated: 2019.03.27 / Checked: 2020.11.09
 
 2001:b08::/32 Deny Cloud
 2a07:a6c0::/29 Deny Cloud
@@ -5866,8 +5874,8 @@ Tag: HOSTING.CL
 
 # ASN 209737 ("Muhammet Meric trading as Meric Hosting").
 # Dedicated webhosting provider and an occasional source of spam.
-# Stop Forum Spam (SFS) listings: 146.
-# Updated: 2019.12.27 / Checked: 2020.05.11
+# Stop Forum Spam (SFS) listings: 64.
+# Updated: 2019.12.27 / Checked: 2020.11.09
 
 2a09:8780::/29 Deny Cloud
 Origin: TR
@@ -7064,6 +7072,117 @@ Tag: SKB Enterprise B.V
 2a09:2dc0::/29 Deny Cloud
 Origin: UA
 Tag: Virtual Systems LLC
+
+
+# ASN 13768 ("Aptum Technologies").
+# Server farm and a source of spam and other kinds of unwanted traffic.
+# Stop Forum Spam (SFS) listings: 106.
+# Updated: 2020.11.09
+
+2001:1978:202::/48 Deny Cloud
+2001:1978:1000::/39 Deny Cloud
+2001:1978:1300::/40 Deny Cloud
+2001:1978:1400::/38 Deny Cloud
+2001:1978:1800::/38 Deny Cloud
+2001:1978:1c00::/40 Deny Cloud
+2001:1978:1e00::/40 Deny Cloud
+2001:1978:2000::/40 Deny Cloud
+2001:1978:2300::/40 Deny Cloud
+2001:1978:2400::/39 Deny Cloud
+2605:9300:1::/48 Deny Cloud
+2607:d500:300::/40 Deny Cloud
+2607:d500:600::/40 Deny Cloud
+2607:d500:d00::/40 Deny Cloud
+2620:11c:c001::/48 Deny Cloud
+Origin: CA
+2a03:8a00::/36 Deny Cloud
+Origin: GB
+2605:6c80:3::/48 Deny Cloud
+2606:be00::/40 Deny Cloud
+2607:f170:20::/44 Deny Cloud
+Origin: US
+Tag: Aptum Technologies
+
+
+# ASNs 45012, 45031, 57739 ("dogado GmbH").
+# Dedicated cloud hosting data center and also a source of unwanted traffic.
+# Stop Forum Spam (SFS) listings: 48 (AS45012), 3 (AS45031).
+# Updated: 2020.11.09
+
+2a00:5300::/32 Deny Cloud
+2a00:fa40::/32 Deny Cloud
+2a02:a60::/32 Deny Cloud
+2a02:2b80:1::/48 Deny Cloud
+Origin: DE
+Tag: dogado GmbH
+
+
+# ASN 53356 ("Free Range Cloud Hosting Inc").
+# (Can omit anything under 44../8; clean).
+# Canadian cloud hosting network and a source of spam.
+# Stop Forum Spam (SFS) listings: 1,745.
+# Updated: 2020.11.09
+
+2a07:1c40:1028::/48 Deny Cloud
+Origin: AT
+2a0c:b641:493::/48 Deny Cloud
+2a0c:b642:1a0c::/48 Deny Cloud
+Origin: BE
+2602:fed2::/48 Deny Cloud
+2602:fed2:3eb::/48 Deny Cloud
+2602:fed2:3ec::/47 Deny Cloud
+2602:fed2:3ee::/48 Deny Cloud
+2602:fed2:fa0::/43 Deny Cloud
+2602:fed2:fc0::/44 Deny Cloud
+2602:fed2:fe0::/44 Deny Cloud
+2602:fed2:ff4::/48 Deny Cloud
+2602:fed2:1100::/40 Deny Cloud
+2602:fed2:710d::/48 Deny Cloud
+2602:fed2:7113::/48 Deny Cloud
+2602:fed2:7118::/48 Deny Cloud
+2602:fed2:7121::/48 Deny Cloud
+2602:fed2:7128::/48 Deny Cloud
+2602:fed2:712d::/48 Deny Cloud
+2602:fed2:7305::/48 Deny Cloud
+2602:fed2:730a::/48 Deny Cloud
+2602:fed2:730c::/47 Deny Cloud
+2602:fed2:730f::/48 Deny Cloud
+2602:fed2:7600::/40 Deny Cloud
+2602:fed2:7700::/47 Deny Cloud
+2602:fed2:7705::/48 Deny Cloud
+2602:ffb1:300::/48 Deny Cloud
+Origin: CA
+2a06:e881:620c::/48 Deny Cloud
+Origin: CH
+2a0f:9400:fb0::/44 Deny Cloud
+2a0f:9400:7700::/40 Deny Cloud
+2a0f:9400:800e::/48 Deny Cloud
+2a0f:9400:801d::/48 Deny Cloud
+2a0f:9400:801e::/48 Deny Cloud
+2a0f:9400:8024::/47 Deny Cloud
+Origin: GB
+2a0e:2b00::/29 Deny Cloud
+Origin: LT
+2a04:a5c6:aff0::/48 Deny Cloud
+2a04:a5c7:4e12::/48 Deny Cloud
+2a09:aa00:28f::/48 Deny Cloud
+2a09:aa02:305e::/48 Deny Cloud
+2a09:f101:1f2c::/48 Deny Cloud
+2a0a:8581:bb29::/48 Deny Cloud
+2a0a:8587:a2b9::/48 Deny Cloud
+2a0d:f741::/48 Deny Cloud
+2a0d:f745:9188::/48 Deny Cloud
+2a0e:b607:a6c9::/48 Deny Cloud
+2a0f:db80:ee37::/48 Deny Cloud
+2a0f:db85:388a::/48 Deny Cloud
+2a10:4102:f1ff::/48 Deny Cloud
+2a10:4705:831a::/48 Deny Cloud
+2a10:4900:bc6f::/48 Deny Cloud
+Origin: RU
+2620:13a:c011::/48 Deny Cloud
+2620:13a:c012::/48 Deny Cloud
+Origin: US
+Tag: Free Range Cloud Hosting Inc
 
 
 # ---

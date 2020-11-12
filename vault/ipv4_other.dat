@@ -1,8 +1,8 @@
 # IPv4 signatures file (CIDRs for proxies, VPNs and other miscellaneous unwanted services).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv4_other.dat
 
-# Version: 2020.303.448
-# Last modified: 2020.10.30
+# Version: 2020.316.087
+# Last modified: 2020.11.12
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage, i.e., with ignore.dat, with reCAPTCHA, with "extended rules" (default bypasses): « [ ]Low [x]Medium [ ]High »
@@ -1310,17 +1310,21 @@ Origin: US
 Tag: Web2Objects LLC
 
 
-# ASN 9009 ("M247 Ltd").
+# ASNs 9009, 16247 ("M247 Ltd").
 # Multiplay network providing broadband connectivity, server leasing, line rental, webhosting services and others.
-# Marked as "Server", "Host", "Datacenter" to go to the cloud/hosting signatures ^(.*(?:Host|Server|Data ?cent(?:er|re)).*)\x01$
-# Marked as "Secure Internet LLC" to go to the proxy/other signatures ^(.*(?:Secure Internet LLC).*)\x01$
+# "BraveWay", "Server", "Host", "Datacenter", "Virtual" as cloud ^(.*(?:BraveWay|Host|Virtual|Server|Data ?cent(?:er|re)).*)\x01$
+# "VPN", "Secure Internet LLC" as proxy/other ^(.*(?:VPN|Secure Internet LLC).*)\x01$
 # Everything else to go to the ISPs signatures. When updating, remove all subordinates of 38.0.0.0/8 from final
-# aggregate (already blocked elsewhere and don't want duplicates).
-# Stop Forum Spam (SFS) listings: 210,121.
-# Updated: 2020.10.10
+# aggregate to avoid duplicity (already blocked elsewhere).
+# Stop Forum Spam (SFS) listings: 180,796 (AS9009), 831 (AS16247).
+# Updated: 2020.11.12
 
+37.139.70.0/24 Deny Proxy
+Origin: EU
+45.56.143.0/24 Deny Proxy
 45.74.16.0/24 Deny Proxy
 45.74.27.0/24 Deny Proxy
+45.74.29.0/24 Deny Proxy
 45.74.38.0/23 Deny Proxy
 45.74.45.0/24 Deny Proxy
 104.37.6.0/24 Deny Proxy
@@ -1370,6 +1374,8 @@ Tag: Web2Objects LLC
 172.111.250.0/24 Deny Proxy
 172.111.253.0/24 Deny Proxy
 Origin: US
+196.53.108.0/24 Deny Proxy
+Origin: ZA
 Tag: M247 Ltd
 ---
 recaptcha:

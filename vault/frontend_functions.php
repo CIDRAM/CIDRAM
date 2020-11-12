@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2020.10.10).
+ * This file: Front-end functions file (last modified: 2020.11.12).
  */
 
 /**
@@ -718,7 +718,7 @@ $CIDRAM['FetchRemote'] = function () use (&$CIDRAM) {
  */
 $CIDRAM['FetchRemote-ContextFree'] = function (&$RemoteData, &$Remote) use (&$CIDRAM) {
     $RemoteData = $CIDRAM['FECacheGet']($CIDRAM['FE']['Cache'], $Remote);
-    if (!$RemoteData) {
+    if ($RemoteData === false) {
         $RemoteData = $CIDRAM['Request']($Remote);
         if (strtolower(substr($Remote, -2)) === 'gz' && substr($RemoteData, 0, 2) === "\x1f\x8b") {
             $RemoteData = gzdecode($RemoteData);
@@ -2120,15 +2120,15 @@ $CIDRAM['UpdatesHandler-Repair'] = function ($ID) use (&$CIDRAM) {
             $CIDRAM['UpdatesHandler-Deactivate']($ThisTarget);
         }
         $CIDRAM['FE']['state_msg'] .= '<code>' . $ThisTarget . '</code> – ';
+        $TempMeta = [];
+        $RemoteData = '';
+        $CIDRAM['FetchRemote-ContextFree']($RemoteData, $CIDRAM['Components']['Meta'][$ThisTarget]['Remote']);
+        if ($Extracted = $CIDRAM['ExtractPage']($RemoteData)) {
+            $CIDRAM['YAML']->process($Extracted, $TempMeta);
+        }
         if (!isset($CIDRAM['Components']['RemoteMeta'], $CIDRAM['Components']['RemoteMeta'][$ThisTarget])) {
             if (!isset($CIDRAM['Components']['RemoteMeta'])) {
                 $CIDRAM['Components']['RemoteMeta'] = [];
-            }
-            $TempMeta = [];
-            $RemoteData = '';
-            $CIDRAM['FetchRemote-ContextFree']($RemoteData, $CIDRAM['Components']['Meta'][$ThisTarget]['Remote']);
-            if ($Extracted = $CIDRAM['ExtractPage']($RemoteData)) {
-                $CIDRAM['YAML']->process($Extracted, $TempMeta);
             }
             foreach ($TempMeta as $TempKey => $TempData) {
                 if (!isset($CIDRAM['Components']['RemoteMeta'][$TempKey])) {

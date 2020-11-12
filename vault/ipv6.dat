@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6.dat
 
-# Version: 2020.313.329
-# Last modified: 2020.11.09
+# Version: 2020.316.087
+# Last modified: 2020.11.12
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage, i.e., with ignore.dat, with reCAPTCHA, with "extended rules" (default bypasses): « [x]Low [ ]Medium [ ]High »
@@ -1025,6 +1025,23 @@ Tag: Internap Network
 2607:f8f8::/32 Deny Cloud
 Origin: US
 Tag: Wowrack.com
+
+
+# ASNs 29262, 201064 ("IDEAL HOSTING SUNUCUNINTERNET HIZ. TIC. LTDSTI").
+# Dedicated webhosting provider and an ongoing source of spam and other
+# unwanted activity.
+# Stop Forum Spam (SFS) listings: 2,058 (AS29262).
+# Updated: 2020.11.12
+
+2a03:f3c0::/29 Deny Cloud
+2a06:3440::/29 Deny Cloud
+2a07:fe40::/29 Deny Cloud
+2a0b:6780::/29 Deny Cloud
+2a0c:46c0::/29 Deny Cloud
+2a0c:67c0::/29 Deny Cloud
+2a0d:7c0::/29 Deny Cloud
+Origin: TR
+Tag: IDEAL HOSTING
 
 
 # ASN 11051 ("Cyberverse, Inc").
@@ -3186,15 +3203,13 @@ Tag: Host Sailor Ltd
 # farms, cloud services, server leasing, etc; all listed here listed due to a
 # range of various different reasons. Possibility of *some* human endpoints,
 # like 154.16.63.0/24, 182.54.239.0/24, etc (just double-check when updating).
-# Stop Forum Spam (SFS) listings: 10 (AS61102), 32,088 (AS61317).
-# Updated: 2020.05.11
+# Stop Forum Spam (SFS) listings: 13 (AS61102), 76,923 (AS61317).
+# Updated: 2020.11.12
 
 2a03:f80:972::/48 Deny Cloud
 Origin: AT
-2801:80:3aa0::/43 Deny Cloud
-Origin: BR
 2803:7f20::/32 Deny Cloud
-Origin: BZ
+Origin: CZ
 2803:80::/32 Deny Cloud
 Origin: CL
 2a00:d1a0::/32 Deny Cloud
@@ -3884,8 +3899,8 @@ Tag: KVCHOSTING.COM LLC
 
 # ASNs 49453, 57172 ("Global Layer B.V").
 # Dedicated cloud and webhosting provider and a significant source of spam.
-# Stop Forum Spam (SFS) listings: 14,642 (AS49453), 6,303 (AS57172).
-# Updated: 2019.12.27 / Checked: 2020.05.11
+# Stop Forum Spam (SFS) listings: 7,277 (AS49453), 2,395 (AS57172).
+# Updated: 2019.12.27 / Checked: 2020.11.12
 
 2a00:1678::/32 Deny Cloud
 Origin: NL
@@ -5146,16 +5161,6 @@ Origin: US
 Tag: Rethem Hosting LLC
 
 
-# ASN 44220 ("Parfumuri Femei.com SRL").
-# Very high levels of spam originating from this network.
-# Stop Forum Spam (SFS) listings: 51,411.
-# Updated: 2020.05.14
-
-2a09:a380::/29 Deny Cloud
-Origin: RO
-Tag: Parfumuri Femei
-
-
 # ASNs 18254, 49466 ("KLAYER LLC").
 # Updated: 2020.05.17
 
@@ -5209,14 +5214,14 @@ Origin: US
 Tag: HugeServer Networks
 
 
-# ASN 9009 ("M247 Ltd").
+# ASNs 9009, 16247 ("M247 Ltd").
 # Multiplay network providing broadband connectivity, server leasing, line rental, webhosting services and others.
-# Marked as "Server", "Host", "Datacenter" to go to the cloud/hosting signatures ^(.*(?:Host|Server|Data ?cent(?:er|re)).*)\x01$
-# Marked as "Secure Internet LLC" to go to the proxy/other signatures ^(.*(?:Secure Internet LLC).*)\x01$
+# "BraveWay", "Server", "Host", "Datacenter", "Virtual" as cloud ^(.*(?:BraveWay|Host|Virtual|Server|Data ?cent(?:er|re)).*)\x01$
+# "VPN", "Secure Internet LLC" as proxy/other ^(.*(?:VPN|Secure Internet LLC).*)\x01$
 # Everything else to go to the ISPs signatures. When updating, remove all subordinates of 38.0.0.0/8 from final
-# aggregate (already blocked elsewhere and don't want duplicates).
-# Stop Forum Spam (SFS) listings: 210,121.
-# Updated: 2019.05.13 / Checked: 2020.10.10
+# aggregate to avoid duplicity (already blocked elsewhere).
+# Stop Forum Spam (SFS) listings: 180,796 (AS9009), 831 (AS16247).
+# Updated: 2019.05.13 / Checked: 2020.11.12
 
 2001:ac8:44::/48 Deny Cloud
 Origin: GB
@@ -5884,8 +5889,8 @@ Tag: Meric Hosting
 
 # ASNs 200557, 202759, 206485 ("UGB Hosting OU").
 # Dedicated webhosting provider and a significant source of spam.
-# Stop Forum Spam (SFS) listings: 23,771 (AS200557), 7 (AS202759), 20,185 (AS206485).
-# Updated: 2019.12.27 / Checked: 2020.05.11
+# Stop Forum Spam (SFS) listings: 14,933 (AS200557), 214 (AS202759), 7,635 (AS206485).
+# Updated: 2019.12.27 / Checked: 2020.11.12
 
 2a07:9280::/29 Deny Cloud
 2a0b:ac40::/29 Deny Cloud
@@ -7183,6 +7188,19 @@ Origin: RU
 2620:13a:c012::/48 Deny Cloud
 Origin: US
 Tag: Free Range Cloud Hosting Inc
+
+
+# ASN 39798 ("MivoCloud SRL").
+# Moldovan webhosting provider and a source of spam.
+# Stop Forum Spam (SFS) listings: 2,498.
+# Updated: 2020.11.12
+
+2001:67c:2db8::/48 Deny Cloud
+2a0a:c800::/31 Deny Cloud
+2a0a:c802::/46 Deny Cloud
+2a0a:c802:4::/48 Deny Cloud
+Origin: MD
+Tag: MivoCloud SRL
 
 
 # ---

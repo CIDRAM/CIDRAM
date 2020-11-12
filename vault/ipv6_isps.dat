@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_isps.dat
 
-# Version: 2020.313.329
-# Last modified: 2020.11.09
+# Version: 2020.316.087
+# Last modified: 2020.11.12
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage, i.e., with ignore.dat, with reCAPTCHA, with "extended rules" (default bypasses): « [ ]Low [x]Medium [ ]High »
@@ -1859,14 +1859,14 @@ recaptcha:
  enabled: true
 
 
-# ASN 9009 ("M247 Ltd").
+# ASNs 9009, 16247 ("M247 Ltd").
 # Multiplay network providing broadband connectivity, server leasing, line rental, webhosting services and others.
-# Marked as "Server", "Host", "Datacenter" to go to the cloud/hosting signatures ^(.*(?:Host|Server|Data ?cent(?:er|re)).*)\x01$
-# Marked as "Secure Internet LLC" to go to the proxy/other signatures ^(.*(?:Secure Internet LLC).*)\x01$
+# "BraveWay", "Server", "Host", "Datacenter", "Virtual" as cloud ^(.*(?:BraveWay|Host|Virtual|Server|Data ?cent(?:er|re)).*)\x01$
+# "VPN", "Secure Internet LLC" as proxy/other ^(.*(?:VPN|Secure Internet LLC).*)\x01$
 # Everything else to go to the ISPs signatures. When updating, remove all subordinates of 38.0.0.0/8 from final
-# aggregate (already blocked elsewhere and don't want duplicates).
-# Stop Forum Spam (SFS) listings: 210,121.
-# Updated: 2020.10.10
+# aggregate to avoid duplicity (already blocked elsewhere).
+# Stop Forum Spam (SFS) listings: 180,796 (AS9009), 831 (AS16247).
+# Updated: 2020.11.12
 
 2a03:f80:33::/48 Deny Spam
 2a03:f80:40::/48 Deny Spam
@@ -1908,6 +1908,7 @@ Origin: EU
 2a07:a343:f210::/44 Deny Spam
 2a0a:b640:1::/48 Deny Spam
 2a0a:b640:2::/48 Deny Spam
+2a0a:c200:2::/48 Deny Spam
 2a0c:a940::/29 Deny Spam
 2a0e:7a80::/29 Deny Spam
 Origin: GB
@@ -1929,8 +1930,9 @@ Origin: LT
 Origin: RO
 2a05:f680::/29 Deny Spam
 2a0d:87c0::/29 Deny Spam
-2a0d:ba40::/29 Deny Spam
 Origin: RU
+2a0d:ba40::/29 Deny Spam
+Origin: TR
 2001:550:1d05::/48 Deny Spam
 2605:3b80:cad::/48 Deny Spam
 2607:6980:e710::/44 Deny Spam
@@ -2117,28 +2119,6 @@ recaptcha:
 2600:8805:aa80:11a::/64 Deny Spam
 Origin: US
 Tag: Cox Spam IPs
----
-recaptcha:
- enabled: true
-
-
-# ASN 27699 ("TELEFNICA BRASIL S.A").
-# Brazilian domestic ISP and a source of spam. Just listing the specific
-# spammy IPs (not the entire network).
-# %Listed, abuseat.org (CBL-Listed): 1.02%.
-# Stop Forum Spam (SFS) listings: 2,972.
-# Updated: 2020.05.16
-
-2804:431:9700:2062::/64 Deny Spam
-2804:431:c7dc:910::/64 Deny Spam
-2804:431:cfe0:41b7::/64 Deny Spam
-2804:431:cff2:d4ee::/64 Deny Spam
-2804:431:cff3:5e0a::/64 Deny Spam
-2804:431:d700:2ce::/64 Deny Spam
-2804:431:e7c4::/48 Deny Spam
-2804:431:e7c5:2f8d::/64 Deny Spam
-Origin: BR
-Tag: TELEFNICA BRASIL S.A
 ---
 recaptcha:
  enabled: true

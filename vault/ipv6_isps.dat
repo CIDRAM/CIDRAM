@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_isps.dat
 
-# Version: 2020.316.087
-# Last modified: 2020.11.12
+# Version: 2020.321.644
+# Last modified: 2020.11.17
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage, i.e., with ignore.dat, with reCAPTCHA, with "extended rules" (default bypasses): « [ ]Low [x]Medium [ ]High »
@@ -1206,9 +1206,9 @@ recaptcha:
 # encourage any CIDRAM users from Vietnam, or targeting traffic from Vietnam,
 # to keep it listed in their ignore.dat file (others may want unignore it at
 # their own discretion).
-# %Listed, abuseat.org (CBL-Listed): 6.34% (AS45899).
-# Stop Forum Spam (SFS) listings: 112 (AS7643), 29,855 (AS45899), 812 (AS135905).
-# Updated: 2020.09.04
+# %Listed, abuseat.org (CBL-Listed): 0.74% (AS45899).
+# Stop Forum Spam (SFS) listings: 91 (AS7643), 28,974 (AS45899), 261 (AS135905).
+# Updated: 2020.11.17
 
 2602:ffe4:c34::/48 Deny Generic
 Origin: US
@@ -1217,12 +1217,12 @@ Origin: US
 2001:df3:900::/48 Deny Generic
 2001:df3:5c00::/48 Deny Generic
 2001:df4:2d00::/48 Deny Generic
+2001:df4:d500::/48 Deny Generic
 2001:df7:c600::/48 Deny Generic
 2001:df7:cc00::/48 Deny Generic
 2001:df7:ce00::/48 Deny Generic
 2001:ee0::/32 Deny Generic
 2400:6540::/48 Deny Generic
-2401:1cc0::/48 Deny Generic
 2401:c440::/48 Deny Generic
 2402:6440:1::/48 Deny Generic
 2402:6440:2::/48 Deny Generic
@@ -1232,6 +1232,7 @@ Origin: US
 2405:1040::/48 Deny Generic
 2405:10c0::/48 Deny Generic
 2405:f980::/48 Deny Generic
+2406:5f40::/48 Deny Generic
 Origin: VN
 Tag: VNPT Corp
 ---
@@ -2264,14 +2265,14 @@ recaptcha:
 # ASN 9299 ("Philippine Long Distance Telephone Company").
 # Philippines domestic ISP. XRumer, attempted hack attempts, brute-force and
 # SSH attacks detected from this network. Marked for use with reCAPTCHA.
-# Listing only the offending ranges/addresses (spam/malware).
-# %Listed, abuseat.org (CBL-Listed): 1.27%.
-# Stop Forum Spam (SFS) listings: 3,451.
-# Updated: 2020.06.22
+# Listing only the offending ranges/addresses (spam/malware) plus all
+# ranges/addresses from SC+US (cloud).
+# %Listed, abuseat.org (CBL-Listed): 0.89%.
+# Stop Forum Spam (SFS) listings: 6,321.
+# Updated: 2020.11.15
 
-2001:4451:8212:5b00::/64 Deny Spam
-2001:4454:330:3600::/64 Deny Spam
-2001:4455:6bb:5800::/64 Deny Spam
+2001:4453:3fc:bf00::/64 Deny Spam
+2001:4455:42e:5d00::/64 Deny Spam
 Origin: PH
 Tag: Philippine Long Distance
 ---
@@ -2562,6 +2563,19 @@ recaptcha:
 2a0f:8980::/32 Deny Spam
 Origin: SE
 Tag: 31173 Services AB
+---
+recaptcha:
+ enabled: true
+
+
+# ASN 30779 ("TRK Cable TV LLC").
+# Ukrainian cable TV provider and a source of forum and blog spam.
+# Stop Forum Spam (SFS) listings: 4,328.
+# Updated: 2020.11.15
+
+2001:67c:203c::/48 Deny Spam
+Origin: UA
+Tag: TRK Cable TV LLC
 ---
 recaptcha:
  enabled: true

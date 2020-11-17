@@ -1,8 +1,8 @@
 # IPv4 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv4_isps.dat
 
-# Version: 2020.316.087
-# Last modified: 2020.11.12
+# Version: 2020.321.644
+# Last modified: 2020.11.17
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage, i.e., with ignore.dat, with reCAPTCHA, with "extended rules" (default bypasses): « [ ]Low [x]Medium [ ]High »
@@ -5393,12 +5393,10 @@ recaptcha:
 # encourage any CIDRAM users from Vietnam, or targeting traffic from Vietnam,
 # to keep it listed in their ignore.dat file (others may want unignore it at
 # their own discretion).
-# %Listed, abuseat.org (CBL-Listed): 6.34% (AS45899).
-# Stop Forum Spam (SFS) listings: 112 (AS7643), 29,855 (AS45899), 812 (AS135905).
-# Updated: 2020.09.04
+# %Listed, abuseat.org (CBL-Listed): 0.74% (AS45899).
+# Stop Forum Spam (SFS) listings: 91 (AS7643), 28,974 (AS45899), 261 (AS135905).
+# Updated: 2020.11.17
 
-129.227.184.0/23 Deny Generic
-Origin: SG
 23.50.12.0/22 Deny Generic
 23.53.208.0/21 Deny Generic
 23.60.70.0/23 Deny Generic
@@ -5437,9 +5435,8 @@ Origin: US
 103.79.140.0/22 Deny Generic
 103.82.24.0/22 Deny Generic
 103.82.36.0/22 Deny Generic
-103.84.76.0/22 Deny Generic
 103.89.88.0/22 Deny Generic
-103.90.220.0/23 Deny Generic
+103.90.220.0/24 Deny Generic
 103.90.222.0/24 Deny Generic
 103.90.224.0/22 Deny Generic
 103.97.124.0/24 Deny Generic
@@ -5471,6 +5468,7 @@ Origin: US
 103.149.12.0/23 Deny Generic
 103.149.98.0/23 Deny Generic
 103.149.250.0/23 Deny Generic
+103.150.241.0/24 Deny Generic
 103.151.122.0/23 Deny Generic
 103.151.124.0/23 Deny Generic
 103.151.240.0/23 Deny Generic
@@ -5478,6 +5476,12 @@ Origin: US
 103.152.50.0/23 Deny Generic
 103.153.72.0/21 Deny Generic
 103.153.216.0/23 Deny Generic
+103.153.254.0/23 Deny Generic
+103.154.244.0/23 Deny Generic
+103.155.80.0/22 Deny Generic
+103.155.228.0/23 Deny Generic
+103.156.90.0/23 Deny Generic
+103.156.92.0/23 Deny Generic
 103.199.8.0/23 Deny Generic
 103.200.20.0/23 Deny Generic
 103.200.23.0/24 Deny Generic
@@ -10076,76 +10080,6 @@ recaptcha:
  enabled: true
 
 
-# ASN 9299 ("Philippine Long Distance Telephone Company").
-# Philippines domestic ISP. XRumer, attempted hack attempts, brute-force and
-# SSH attacks detected from this network. Marked for use with reCAPTCHA.
-# Listing only the offending ranges/addresses (spam/malware).
-# %Listed, abuseat.org (CBL-Listed): 1.27%.
-# Stop Forum Spam (SFS) listings: 3,451.
-# Updated: 2020.06.22
-
-49.144.68.0/24 Deny Spam
-49.144.141.124/32 Deny Spam
-49.145.52.67/32 Deny Spam
-49.145.109.182/32 Deny Spam
-49.145.135.126/32 Deny Spam
-49.145.137.50/32 Deny Spam
-49.145.231.0/24 Deny Malware
-49.145.236.163/32 Deny Spam
-49.145.239.217/32 Deny Spam
-49.146.0.0/24 Deny Malware
-49.146.3.79/32 Deny Spam
-49.146.4.1/32 Deny Spam
-49.146.14.0/24 Deny Spam
-49.146.35.29/32 Deny Spam
-49.146.216.138/32 Deny Spam
-49.149.64.77/32 Deny Spam
-49.149.66.176/32 Deny Spam
-49.149.67.39/32 Deny Spam
-49.149.70.62/32 Deny Spam
-49.149.73.117/32 Deny Spam
-49.149.104.0/24 Deny Malware
-49.149.105.67/32 Deny Spam
-49.149.106.231/32 Deny Spam
-49.149.110.205/32 Deny Spam
-49.150.101.248/32 Deny Spam
-58.69.173.0/24 Deny Malware
-112.200.40.23/32 Deny Spam
-112.200.58.155/32 Deny Spam
-112.200.102.235/32 Deny Spam
-112.201.66.154/32 Deny Spam
-112.201.68.7/32 Deny Spam
-112.202.18.109/32 Deny Spam
-112.202.208.144/32 Deny Malware
-112.206.1.50/32 Deny Spam
-112.206.71.66/32 Deny Spam
-112.206.168.240/32 Deny Spam
-112.206.171.140/32 Deny Spam
-112.206.175.77/32 Deny Spam
-112.206.198.101/32 Deny Spam
-112.211.8.183/32 Deny Spam
-112.211.15.23/32 Deny Malware
-112.211.74.243/32 Deny Spam
-112.211.93.135/32 Deny Spam
-119.94.175.0/24 Deny Malware
-122.2.112.3/32 Deny Spam
-122.2.118.236/32 Deny Spam
-122.3.252.0/24 Deny Spam
-122.3.255.114/32 Deny Spam
-122.52.233.104/32 Deny Spam
-122.53.99.50/32 Deny Spam
-122.53.187.102/32 Deny Malware
-124.104.11.174/32 Deny Malware
-124.104.11.210/32 Deny Malware
-124.104.168.218/32 Deny Spam
-124.105.55.176/32 Deny Spam
-Origin: PH
-Tag: AS9299
----
-recaptcha:
- enabled: true
-
-
 # ASN 9873 ("Lao Telecom Communication, LTC").
 # Legit ISP in Laos (i.e., has human endpoints). Listing here the specific
 # CIDRs where there's evidence of unwanted traffic, but leaving out the rest.
@@ -10326,16 +10260,6 @@ recaptcha:
  enabled: true
 
 
-# ASN 198540 ("Przedsiebiorstwo Uslug Specjalistycznych ELAN mgr inz. Andrzej Niechcial").
-# Significant source of forum spam.
-# Stop Forum Spam (SFS) listings: 16,606.
-# Updated: 2019.10.23 / Checked: 2020.02.22
-
-91.236.74.0/23 Deny Spam
-Origin: PL
-Tag: Andrzej Niechcial
-
-
 # ASN 263500 ("Star Telecom S/A").
 # Source of forum spam and some email harvestors.
 # Stop Forum Spam (SFS) listings: 424.
@@ -10351,8 +10275,8 @@ recaptcha:
 
 # ASN 47117 ("Sibline Ltd").
 # Source of forum spam and some email harvestors.
-# Stop Forum Spam (SFS) listings: 174.
-# Updated: 2019.10.24 / Checked: 2020.02.22
+# Stop Forum Spam (SFS) listings: 66.
+# Updated: 2019.10.24 / Checked: 2020.11.15
 
 194.8.136.0/22 Deny Spam
 195.158.250.0/23 Deny Spam
@@ -10386,8 +10310,8 @@ recaptcha:
 
 # ASN 48574 ("Planet A, a.s").
 # Source of forum spam and some email harvestors.
-# Stop Forum Spam (SFS) listings: 524.
-# Updated: 2019.10.24 / Checked: 2020.02.22
+# Stop Forum Spam (SFS) listings: 894.
+# Updated: 2019.10.24 / Checked: 2020.11.15
 
 109.238.208.0/20 Deny Spam
 185.248.176.0/22 Deny Spam
@@ -11607,32 +11531,44 @@ recaptcha:
 
 # ASN 23693 ("PT. Telekomunikasi Selular").
 # Indonesian domestic ISP and a source of spam. Just listing the specific
-# spammy IPs (not the entire network).
-# %Listed, abuseat.org (CBL-Listed): 0.99%.
-# Stop Forum Spam (SFS) listings: 579.
-# Updated: 2020.05.16
+# spammy IPs (not the entire network), plus all US ranges/addresses.
+# %Listed, abuseat.org (CBL-Listed): 0.82%.
+# Stop Forum Spam (SFS) listings: 1,378.
+# Updated: 2020.11.15
 
-114.122.22.43/32 Deny Spam
-114.122.69.153/32 Deny Spam
-114.122.75.93/32 Deny Spam
-114.124.28.239/32 Deny Spam
-114.124.36.86/32 Deny Spam
-114.124.139.58/32 Deny Spam
-114.124.143.138/32 Deny Spam
-114.124.164.186/32 Deny Spam
-114.124.170.231/32 Deny Spam
-114.125.26.187/32 Deny Spam
-114.125.94.229/32 Deny Spam
-114.125.252.10/32 Deny Spam
-182.0.141.194/32 Deny Spam
-182.1.71.51/32 Deny Spam
-182.1.92.215/32 Deny Spam
-182.1.232.216/32 Deny Spam
-182.2.71.178/32 Deny Spam
-182.2.138.153/32 Deny Spam
-182.2.164.3/32 Deny Spam
-182.2.171.218/32 Deny Spam
+114.122.11.161/32 Deny Spam
+114.122.68.0/23 Deny Spam
+114.122.71.0/24 Deny Spam
+114.122.72.194/32 Deny Spam
+114.122.74.156/32 Deny Spam
+114.122.101.63/32 Deny Spam
+114.122.102.208/32 Deny Spam
+114.122.103.0/24 Deny Spam
+114.122.104.0/22 Deny Spam
+114.122.197.139/32 Deny Spam
+114.122.198.139/32 Deny Spam
+114.124.130.0/24 Deny Spam
+114.124.137.116/32 Deny Spam
+114.125.125.96/32 Deny Spam
+114.125.223.149/32 Deny Spam
+114.125.251.0/24 Deny Spam
+182.0.141.108/32 Deny Spam
+182.0.144.83/32 Deny Spam
+182.0.150.75/32 Deny Spam
+182.1.18.187/32 Deny Spam
+182.1.81.165/32 Deny Spam
+182.1.84.105/32 Deny Spam
+182.1.94.65/32 Deny Spam
+182.1.174.197/32 Deny Spam
+182.2.41.86/32 Deny Spam
 Origin: ID
+23.43.248.0/24 Deny Cloud
+23.195.48.0/21 Deny Cloud
+23.195.56.0/22 Deny Cloud
+23.209.192.0/19 Deny Cloud
+23.219.186.0/23 Deny Cloud
+23.219.188.0/22 Deny Cloud
+Origin: US
 Tag: Telekomunikasi Selular
 ---
 recaptcha:
@@ -11875,45 +11811,47 @@ recaptcha:
 # ASN 8048 ("CANTV Servicios, Venezuela").
 # Venezuelan domestic ISP and a source of spam. Just listing the specific
 # spammy IPs (not the entire network).
-# %Listed, abuseat.org (CBL-Listed): 5.34%.
-# Stop Forum Spam (SFS) listings: 1,532.
-# Updated: 2020.05.16
+# %Listed, abuseat.org (CBL-Listed): 2.78%.
+# Stop Forum Spam (SFS) listings: 1,806.
+# Updated: 2020.11.15
 
-186.88.155.130/32 Deny Spam
-186.89.170.118/32 Deny Spam
-186.89.244.23/32 Deny Spam
-186.89.251.207/32 Deny Spam
-186.90.130.58/32 Deny Spam
-186.90.151.82/32 Deny Spam
-186.90.191.120/32 Deny Spam
-186.91.1.223/32 Deny Spam
-186.93.59.152/32 Deny Spam
-186.95.99.65/32 Deny Spam
-190.38.143.234/32 Deny Spam
-190.39.4.255/32 Deny Spam
-190.39.20.122/32 Deny Spam
-190.72.169.165/32 Deny Spam
-190.72.174.105/32 Deny Spam
-190.73.185.213/32 Deny Spam
-190.74.52.249/32 Deny Spam
-190.75.229.222/32 Deny Spam
-190.75.231.247/32 Deny Spam
-190.75.253.157/32 Deny Spam
-190.198.215.216/32 Deny Spam
-190.198.221.106/32 Deny Spam
-190.199.135.234/32 Deny Spam
-190.200.20.10/32 Deny Spam
-190.202.235.188/32 Deny Spam
-190.205.239.8/32 Deny Spam
-190.206.220.111/32 Deny Spam
-190.207.89.87/32 Deny Spam
-200.44.192.191/32 Deny Spam
-200.44.224.18/32 Deny Spam
-200.84.10.134/32 Deny Spam
-200.109.137.121/32 Deny Spam
-200.109.154.168/32 Deny Spam
-201.208.225.69/32 Deny Spam
-201.248.26.161/32 Deny Spam
+186.88.104.202/32 Deny Spam
+186.89.200.1/32 Deny Spam
+186.91.158.145/32 Deny Spam
+186.91.212.241/32 Deny Spam
+186.92.11.66/32 Deny Spam
+186.92.252.160/32 Deny Spam
+186.94.107.230/32 Deny Spam
+186.94.201.133/32 Deny Spam
+186.95.129.147/32 Deny Spam
+190.36.103.42/32 Deny Spam
+190.36.108.230/32 Deny Spam
+190.37.122.199/32 Deny Spam
+190.38.154.174/32 Deny Spam
+190.38.237.79/32 Deny Spam
+190.39.100.154/32 Deny Spam
+190.72.61.72/32 Deny Spam
+190.73.100.2/32 Deny Spam
+190.73.110.172/32 Deny Spam
+190.73.224.84/32 Deny Spam
+190.73.233.217/32 Deny Spam
+190.75.98.46/32 Deny Spam
+190.75.227.9/32 Deny Spam
+190.198.108.96/32 Deny Spam
+190.198.171.193/32 Deny Spam
+190.200.21.48/32 Deny Spam
+190.200.64.146/32 Deny Spam
+190.204.130.169/32 Deny Spam
+190.205.146.178/32 Deny Spam
+190.207.234.54/32 Deny Spam
+200.44.66.14/32 Deny Spam
+200.84.76.18/32 Deny Spam
+200.84.252.89/32 Deny Spam
+201.242.125.204/32 Deny Spam
+201.243.30.132/32 Deny Spam
+201.243.170.221/32 Deny Spam
+201.248.219.61/32 Deny Spam
+201.249.117.196/32 Deny Spam
 201.249.190.235/32 Deny Spam
 Origin: VE
 Tag: CANTV Servicios
@@ -11981,59 +11919,96 @@ recaptcha:
 
 
 # ASN 9299 ("Philippine Long Distance Telephone Company").
-# Domestic ISP from the Philippines and a source of spam. Just listing the
-# specific spammy IPs (not the entire network).
-# %Listed, abuseat.org (CBL-Listed): 1.16%.
-# Stop Forum Spam (SFS) listings: 3,206.
-# Updated: 2020.05.16
+# Philippines domestic ISP. XRumer, attempted hack attempts, brute-force and
+# SSH attacks detected from this network. Marked for use with reCAPTCHA.
+# Listing only the offending ranges/addresses (spam/malware) plus all
+# ranges/addresses from SC+US (cloud).
+# %Listed, abuseat.org (CBL-Listed): 0.89%.
+# Stop Forum Spam (SFS) listings: 6,321.
+# Updated: 2020.11.15
 
-49.144.5.233/32 Deny Spam
-49.144.13.194/32 Deny Spam
-49.144.68.0/24 Deny Spam
-49.144.73.131/32 Deny Spam
-49.144.140.252/32 Deny Spam
-49.145.17.211/32 Deny Spam
-49.145.100.173/32 Deny Spam
-49.145.110.102/32 Deny Spam
-49.145.135.126/32 Deny Spam
-49.145.162.83/32 Deny Spam
-49.145.167.239/32 Deny Spam
-49.145.194.237/32 Deny Spam
-49.145.198.197/32 Deny Spam
-49.145.203.163/32 Deny Spam
-49.145.225.0/24 Deny Spam
-49.145.234.148/32 Deny Spam
-49.145.235.112/32 Deny Spam
-49.145.236.57/32 Deny Spam
+49.144.6.176/32 Deny Spam
+49.144.8.240/32 Deny Spam
+49.144.68.0/24 Deny Malware
+49.144.128.146/32 Deny Spam
+49.144.168.37/32 Deny Spam
+49.144.222.100/32 Deny Spam
+49.145.33.125/32 Deny Spam
+49.145.35.70/32 Deny Spam
+49.145.64.161/32 Deny Spam
+49.145.207.94/32 Deny Spam
+49.145.225.0/24 Deny Malware
+49.145.231.0/24 Deny Malware
+49.145.237.154/32 Deny Spam
 49.145.239.217/32 Deny Spam
-49.146.2.197/32 Deny Spam
-49.146.7.148/32 Deny Spam
-49.146.8.85/32 Deny Spam
-49.146.9.0/24 Deny Spam
-49.147.106.134/32 Deny Spam
-49.149.72.232/32 Deny Spam
-49.149.78.116/32 Deny Spam
-49.149.79.124/32 Deny Spam
-49.149.100.160/32 Deny Spam
-49.149.208.166/32 Deny Spam
-112.200.107.142/32 Deny Spam
+49.146.0.0/24 Deny Malware
+49.146.9.0/24 Deny Malware
+49.146.11.121/32 Deny Spam
+49.146.14.0/24 Deny Malware
+49.146.33.15/32 Deny Spam
+49.146.38.0/24 Deny Spam
+49.146.40.17/32 Deny Spam
+49.146.41.24/32 Deny Spam
+49.146.46.116/32 Deny Spam
+49.146.54.178/32 Deny Spam
+49.146.228.38/32 Deny Spam
+49.146.230.187/32 Deny Spam
+49.149.22.184/32 Deny Spam
+49.149.25.96/32 Deny Spam
+49.149.65.137/32 Deny Spam
+49.149.71.97/32 Deny Spam
+49.149.78.194/32 Deny Spam
+49.149.101.121/32 Deny Spam
+49.149.104.0/24 Deny Malware
+49.149.105.178/32 Deny Spam
+49.149.129.147/32 Deny Spam
+49.150.66.214/32 Deny Spam
+49.150.68.89/32 Deny Spam
+49.150.134.133/32 Deny Spam
+49.150.225.32/32 Deny Spam
+58.69.173.0/24 Deny Malware
+112.200.110.179/32 Deny Spam
+112.200.198.136/32 Deny Spam
+112.201.114.153/32 Deny Spam
+112.201.164.34/32 Deny Spam
 112.202.18.109/32 Deny Spam
-112.203.120.254/32 Deny Spam
-112.203.230.31/32 Deny Spam
-112.206.18.37/32 Deny Spam
-112.206.19.6/32 Deny Spam
-112.211.11.23/32 Deny Spam
-112.211.144.174/32 Deny Spam
-122.3.179.114/32 Deny Spam
-122.3.252.187/32 Deny Spam
+112.202.131.249/32 Deny Spam
+112.202.208.0/24 Deny Malware
+112.203.235.6/32 Deny Spam
+112.205.131.126/32 Deny Spam
+112.205.167.196/32 Deny Spam
+112.205.246.46/32 Deny Spam
+112.206.97.64/32 Deny Spam
+112.211.0.110/32 Deny Spam
+112.211.15.0/24 Deny Malware
+119.94.175.0/24 Deny Malware
+122.2.97.133/32 Deny Spam
+122.2.108.190/32 Deny Spam
+122.3.252.0/24 Deny Malware
 122.3.255.114/32 Deny Spam
-122.52.233.104/32 Deny Spam
-122.53.44.45/32 Deny Spam
 122.53.99.50/32 Deny Spam
-122.54.20.220/32 Deny Spam
-124.105.35.0/24 Deny Spam
+122.53.187.118/32 Deny Malware
+124.104.11.0/24 Deny Malware
+124.105.35.0/24 Deny Malware
 124.105.55.176/32 Deny Spam
+124.106.131.219/32 Deny Spam
+124.106.179.129/32 Deny Spam
 Origin: PH
+156.240.56.0/24 Deny Cloud
+Origin: SC
+23.7.240.0/22 Deny Cloud
+23.7.246.0/23 Deny Cloud
+23.8.144.0/20 Deny Cloud
+23.8.208.0/20 Deny Cloud
+23.46.96.0/20 Deny Cloud
+23.220.204.0/23 Deny Cloud
+104.77.84.0/24 Deny Cloud
+104.105.0.0/19 Deny Cloud
+122.252.128.0/21 Deny Cloud
+184.29.72.0/23 Deny Cloud
+184.84.188.0/22 Deny Cloud
+184.85.218.0/24 Deny Cloud
+Origin: US
 Tag: Philippine Long Distance
 ---
 recaptcha:
@@ -14885,6 +14860,40 @@ recaptcha:
 Origin: US
 Tag: CenturyLink Communications, LLC
 Expires: 2021.02.01
+---
+recaptcha:
+ enabled: true
+
+
+# ASN 30779 ("TRK Cable TV LLC").
+# Ukrainian cable TV provider and a source of forum and blog spam.
+# Stop Forum Spam (SFS) listings: 4,328.
+# Updated: 2020.11.15
+
+88.135.224.0/19 Deny Spam
+176.100.160.0/19 Deny Spam
+193.19.74.0/23 Deny Spam
+193.34.20.0/22 Deny Spam
+Origin: UA
+Tag: TRK Cable TV LLC
+---
+recaptcha:
+ enabled: true
+
+
+# ASN 43966 ("IT REGION LTD").
+# Russian domestic ISP and a source of scammers, and forum and blog spam.
+# Stop Forum Spam (SFS) listings: 550.
+# Updated: 2020.11.15
+
+79.173.64.0/23 Deny Spam
+79.173.80.0/20 Deny Spam
+91.227.44.0/22 Deny Spam
+94.243.192.0/20 Deny Spam
+94.243.224.0/20 Deny Spam
+193.111.252.0/22 Deny Spam
+Origin: RU
+Tag: IT REGION LTD
 ---
 recaptcha:
  enabled: true

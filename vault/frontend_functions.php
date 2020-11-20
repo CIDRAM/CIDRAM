@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2020.11.13).
+ * This file: Front-end functions file (last modified: 2020.11.20).
  */
 
 /**
@@ -362,13 +362,14 @@ $CIDRAM['SanityCheck'] = function (string $FileName, string $FileData): bool {
     }
 
     /** Check whether GIF is valid. */
-    if (preg_match('~\.gif$~i', $FileName)) {
-        return preg_match('~^GIF8[79]a~', $FileData);
+    if (strtolower(substr($FileName, -4)) === '.gif') {
+        $Sample = substr($FileData, 0, 6);
+        return $Sample === 'GIF87a' || $Sample === 'GIF89a';
     }
 
     /** Check whether PNG is valid. */
-    if (preg_match('~\.png$~i', $FileName)) {
-        return preg_match('~^\x89PNG~', $FileData);
+    if (strtolower(substr($FileName, -4)) === '.png') {
+        return substr($FileData, 0, 4) === "\x89PNG";
     }
 
     /** Passed. */
@@ -418,7 +419,7 @@ $CIDRAM['FileManager-RecursiveList'] = function (string $Base) use (&$CIDRAM): a
                     }
                 } elseif (preg_match('~(?:[^|/]\.ht|\.safety$|^salt\.dat$)~i', $ThisNameFixed)) {
                     $Component = $CIDRAM['L10N']->getString('label_fmgr_safety');
-                } elseif (preg_match('/^config\.ini$/i', $ThisNameFixed)) {
+                } elseif (strtolower($ThisNameFixed) === 'config.ini') {
                     $Component = $CIDRAM['L10N']->getString('link_config');
                 } elseif ($CIDRAM['FileManager-IsLogFile']($ThisNameFixed)) {
                     $Component = $CIDRAM['L10N']->getString('link_logs');

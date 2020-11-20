@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: reCAPTCHA module (last modified: 2020.08.04).
+ * This file: reCAPTCHA module (last modified: 2020.10.27).
  */
 
 /**
@@ -123,8 +123,8 @@ if ($CIDRAM['Config']['recaptcha']['lockuser']) {
             ) : $CIDRAM['Meld'](
                 $CIDRAM['Salt'], $CIDRAM['reCAPTCHA']['UsrSalt']
             );
-            if (strpos($CIDRAM['reCAPTCHA']['UsrMeld'], "\x00") !== false) {
-                $CIDRAM['reCAPTCHA']['UsrMeld'] = str_replace("\x00", '', $CIDRAM['reCAPTCHA']['UsrMeld']);
+            if (strpos($CIDRAM['reCAPTCHA']['UsrMeld'], "\0") !== false) {
+                $CIDRAM['reCAPTCHA']['UsrMeld'] = str_replace("\0", '', $CIDRAM['reCAPTCHA']['UsrMeld']);
             }
         }
     }
@@ -163,8 +163,8 @@ if ($CIDRAM['Config']['recaptcha']['lockuser']) {
                 ) : $CIDRAM['Meld'](
                     $CIDRAM['Salt'], $CIDRAM['reCAPTCHA']['UsrSalt']
                 );
-                if (strpos($CIDRAM['reCAPTCHA']['Cookie'], "\x00") !== false) {
-                    $CIDRAM['reCAPTCHA']['Cookie'] = str_replace("\x00", '', $CIDRAM['reCAPTCHA']['Cookie']);
+                if (strpos($CIDRAM['reCAPTCHA']['Cookie'], "\0") !== false) {
+                    $CIDRAM['reCAPTCHA']['Cookie'] = str_replace("\0", '', $CIDRAM['reCAPTCHA']['Cookie']);
                 }
                 $CIDRAM['reCAPTCHA']['UsrHash'] = password_hash($CIDRAM['reCAPTCHA']['Cookie'], $CIDRAM['DefaultAlgo']);
                 $CIDRAM['reCAPTCHA']['Cookie'] = $CIDRAM['reCAPTCHA']['UsrHash'] . ',' . base64_encode($CIDRAM['reCAPTCHA']['UsrSalt']);

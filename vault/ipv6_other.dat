@@ -1,8 +1,8 @@
 # IPv6 signatures file (CIDRs for proxies, VPNs and other miscellaneous unwanted services).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_other.dat
 
-# Version: 2020.303.448
-# Last modified: 2020.10.30
+# Version: 2020.325.584
+# Last modified: 2020.11.21
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage, i.e., with ignore.dat, with reCAPTCHA, with "extended rules" (default bypasses): « [x]Low [ ]Medium [ ]High »
@@ -46,13 +46,13 @@ Tag: Cogent Bogons
 
 # ASN 36351 ("SoftLayer Technologies").
 # Careful when updating; Signatures reflect varying block reasons, split across multiple files.
-# Stop Forum Spam (SFS) listings: 10,530.
+# Stop Forum Spam (SFS) listings: 7,200.
 
 # SoftLayer VPNs and proxies.
-# Includes: Anything citing "TEFINCOM", "Packet Flip", "VPN", "proxy", "Privat Kommunikation", "Secure Internet".
-# ^(.*(TEFINCOM|Packet Flip|VPN|Proxy|Privat Kommunikation|Secure Internet).*)$
+# Includes: Anything citing "TEFINCOM", "Packet Flip", "VPN", "proxy", "Secure Internet".
+# ^(.*(TEFINCOM|Packet Flip|VPN|Proxy|Secure Internet).*)$
 # Excludes: Everything else.
-# Updated: 2019.12.14 / Checked: 2020.05.21
+# Updated: 2019.12.14 / Checked: 2020.11.21
 
 2602:ff84:1::/48 Deny Proxy
 2602:ff84:c::/47 Deny Proxy

@@ -1,8 +1,8 @@
 # IPv4 signatures file (CIDRs for proxies, VPNs and other miscellaneous unwanted services).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv4_other.dat
 
-# Version: 2020.316.087
-# Last modified: 2020.11.12
+# Version: 2020.325.584
+# Last modified: 2020.11.21
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage, i.e., with ignore.dat, with reCAPTCHA, with "extended rules" (default bypasses): « [ ]Low [x]Medium [ ]High »
@@ -43,13 +43,13 @@ Tag: Cogent VPNs+Proxies
 
 # ASN 36351 ("SoftLayer Technologies").
 # Careful when updating; Signatures reflect varying block reasons, split across multiple files.
-# Stop Forum Spam (SFS) listings: 10,530.
+# Stop Forum Spam (SFS) listings: 7,200.
 
 # SoftLayer VPNs and proxies.
-# Includes: Anything citing "TEFINCOM", "Packet Flip", "VPN", "proxy", "Privat Kommunikation", "Secure Internet".
-# ^(.*(TEFINCOM|Packet Flip|VPN|Proxy|Privat Kommunikation|Secure Internet).*)$
+# Includes: Anything citing "TEFINCOM", "Packet Flip", "VPN", "proxy", "Secure Internet".
+# ^(.*(TEFINCOM|Packet Flip|VPN|Proxy|Secure Internet).*)$
 # Excludes: Everything else.
-# Updated: 2020.05.21
+# Updated: 2020.11.21
 
 185.99.135.0/24 Deny Proxy
 Origin: BY
@@ -57,37 +57,22 @@ Origin: BY
 185.153.176.0/23 Deny Proxy
 185.203.122.0/24 Deny Proxy
 Origin: DE
-46.244.28.0/24 Deny Proxy
 85.203.23.0/24 Deny Proxy
 Origin: NL
 103.86.97.0/24 Deny Proxy
 103.86.98.0/24 Deny Proxy
 Origin: PA
-193.183.216.0/24 Deny Proxy
-194.132.123.0/24 Deny Proxy
-Origin: SE
 45.56.149.0/24 Deny Proxy
-45.56.151.0/24 Deny Proxy
 45.56.152.0/23 Deny Proxy
-45.56.154.0/24 Deny Proxy
 45.56.157.0/24 Deny Proxy
-45.56.158.0/24 Deny Proxy
-45.74.31.0/24 Deny Proxy
-45.74.39.0/24 Deny Proxy
 45.74.41.0/24 Deny Proxy
 45.74.43.0/24 Deny Proxy
-64.64.108.0/24 Deny Proxy
+98.159.233.0/24 Deny Proxy
 104.37.1.0/24 Deny Proxy
 104.37.3.0/24 Deny Proxy
 104.37.5.0/24 Deny Proxy
 104.143.92.0/24 Deny Proxy
-104.143.95.0/24 Deny Proxy
-104.194.203.0/24 Deny Proxy
-104.194.218.0/24 Deny Proxy
-104.238.32.0/24 Deny Proxy
 104.238.45.0/24 Deny Proxy
-104.238.51.0/24 Deny Proxy
-104.238.62.0/24 Deny Proxy
 104.243.245.0/24 Deny Proxy
 104.243.253.0/24 Deny Proxy
 104.243.255.0/24 Deny Proxy
@@ -102,17 +87,16 @@ Origin: SE
 172.111.169.0/24 Deny Proxy
 172.111.173.0/24 Deny Proxy
 172.111.175.0/24 Deny Proxy
-172.111.178.0/24 Deny Proxy
 172.111.187.0/24 Deny Proxy
 172.111.192.0/24 Deny Proxy
 172.111.199.0/24 Deny Proxy
-173.239.195.0/24 Deny Proxy
-173.239.197.0/24 Deny Proxy
+172.111.218.0/24 Deny Proxy
 173.239.198.0/24 Deny Proxy
 173.239.207.0/24 Deny Proxy
-173.244.55.0/24 Deny Proxy
 192.253.242.0/24 Deny Proxy
 Origin: US
+196.52.38.0/24 Deny Proxy
+Origin: ZA
 Tag: SoftLayer VPNs
 
 

@@ -1,8 +1,8 @@
 # IPv4 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv4_isps.dat
 
-# Version: 2020.321.644
-# Last modified: 2020.11.17
+# Version: 2020.325.584
+# Last modified: 2020.11.21
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage, i.e., with ignore.dat, with reCAPTCHA, with "extended rules" (default bypasses): « [ ]Low [x]Medium [ ]High »
@@ -8014,7 +8014,7 @@ recaptcha:
 # ASNs 49775, 59665 ("Ultra-Telecom LLC").
 # Known C&Cs operating from this network and also a source of forum spam.
 # Stop Forum Spam (SFS) listings: 7 (AS59665).
-# Updated: 2017.07.12 / Checked: 2020.02.25
+# Updated: 2017.07.12 / Checked: 2020.11.21
 
 176.124.144.0/22 Deny Spam
 195.160.164.0/23 Deny Spam
@@ -9641,24 +9641,21 @@ recaptcha:
 
 # ASN 36351 ("SoftLayer Technologies").
 # Careful when updating; Signatures reflect varying block reasons, split across multiple files.
-# Stop Forum Spam (SFS) listings: 10,530.
+# Stop Forum Spam (SFS) listings: 7,200.
 
 # SoftLayer questionable multi-play networks, spammy ISPs, etc.
 # Includes: Anything citing "Consumer Pool", "Starry".
 # ^(.*(Consumer Pool|Starry).*)$
 # Excludes: Everything else.
-# Updated: 2020.05.21
+# Updated: 2020.11.21
 
 31.14.72.0/23 Deny Spam
-31.14.74.0/24 Deny Spam
 95.142.114.0/24 Deny Spam
 95.142.117.0/24 Deny Spam
 95.142.120.0/24 Deny Spam
 95.142.126.0/24 Deny Spam
 185.54.231.0/24 Deny Spam
 Origin: CZ
-5.62.22.0/23 Deny Spam
-Origin: GB
 103.56.216.0/24 Deny Spam
 103.56.218.0/23 Deny Spam
 103.194.40.0/24 Deny Spam
@@ -9666,6 +9663,8 @@ Origin: GB
 103.204.174.0/24 Deny Spam
 122.128.96.0/23 Deny Spam
 Origin: HK
+196.52.38.0/24 Deny Spam
+Origin: ZA
 Tag: SoftLayer Spam ISPs
 
 
@@ -13171,33 +13170,14 @@ recaptcha:
 
 # ASN 38732 ("CMC Telecom Infrastructure Company").
 # Vietnamese domestic ISP; Huge source of spam, malware, attacks, etc.
-# Stop Forum Spam (SFS) listings: 97.
-# Updated: 2020.05.21
+# Stop Forum Spam (SFS) listings: 150.
+# Updated: 2020.11.21
 
 45.122.253.0/24 Deny Malware
 101.99.3.0/24 Deny Malware
 103.21.148.0/22 Deny Malware
 103.63.108.0/23 Deny Malware
-103.252.0.0/22 Deny Malware
-115.146.120.0/21 Deny Malware
-124.158.0.0/21 Deny Malware
-183.91.14.0/24 Deny Malware
-Origin: VN
-Tag: CMC Telecom
----
-recaptcha:
- enabled: true
-
-
-# ASN 38732 ("CMC Telecom Infrastructure Company").
-# Vietnamese domestic ISP; Huge source of spam, malware, attacks, etc.
-# Stop Forum Spam (SFS) listings: 97.
-# Updated: 2020.05.21
-
-45.122.253.0/24 Deny Malware
-101.99.3.0/24 Deny Malware
-103.21.148.0/22 Deny Malware
-103.63.108.0/23 Deny Malware
+103.152.164.0/23 Deny Malware
 103.252.0.0/22 Deny Malware
 115.146.120.0/21 Deny Malware
 124.158.0.0/21 Deny Malware
@@ -13211,8 +13191,8 @@ recaptcha:
 
 # ASN 206358 ('N.P.SH "ISP - Broadcast"').
 # Albanian domestic ISP; Caught trying to hack phpMyAdmin.
-# Stop Forum Spam (SFS) listings: 285.
-# Updated: 2020.05.21
+# Stop Forum Spam (SFS) listings: 283.
+# Updated: 2020.05.21 / Checked: 2020.11.21
 
 185.188.216.0/22 Deny Malware
 Origin: AL
@@ -13224,8 +13204,7 @@ recaptcha:
 
 # ASN 203028 ("PRYMAS INWESTYCJE SPOLKA Z OGRANICZONA ODPOWIEDZIALNOSCIA SPOLKA KOMANDYTOWA").
 # Polish ISP caught spamming and port scanning.
-# Stop Forum Spam (SFS) listings: 20.
-# Updated: 2020.05.21
+# Updated: 2020.05.21 / Checked: 2020.11.21
 
 185.147.68.0/22 Deny Spam
 Origin: PL
@@ -13239,8 +13218,8 @@ recaptcha:
 # Cloud/Gaming/Webhosting provider and a significant source of forum spam and
 # website hammering/flooding/other abuse.
 # List in ISPs file: "^.*Internetbolaget.*$\n"; Everything else in the clouds.
-# Stop Forum Spam (SFS) listings: 1,529.
-# Updated: 2020.05.21
+# Stop Forum Spam (SFS) listings: 1,476.
+# Updated: 2020.05.21 / Checked: 2020.11.21
 
 192.36.23.0/24 Deny Spam
 192.36.24.0/24 Deny Spam
@@ -14894,6 +14873,88 @@ recaptcha:
 193.111.252.0/22 Deny Spam
 Origin: RU
 Tag: IT REGION LTD
+---
+recaptcha:
+ enabled: true
+
+
+# ASNs 31593, 34187 ("LLC Renome-Service").
+# Ukrainian TV cable provider and a significant source of spam.
+# Stop Forum Spam (SFS) listings: 6,406 (AS31593), 558 (AS34187).
+# Updated: 2020.11.21
+
+46.33.32.0/21 Deny Spam
+46.33.40.0/22 Deny Spam
+46.33.56.0/22 Deny Spam
+78.26.128.0/17 Deny Spam
+185.70.108.0/22 Deny Spam
+193.22.84.0/24 Deny Spam
+195.245.118.0/23 Deny Spam
+Origin: UA
+Tag: LLC Renome-Service
+
+
+# ASN 21021 ("Multimedia Polska Sp. z o.o.").
+# Polish multiplay network and a source of spam. Listing just the specific
+# offending ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 2,628.
+# Updated: 2020.11.21
+
+37.190.171.128/32 Deny Spam
+46.186.98.225/32 Deny Spam
+81.190.43.193/32 Deny Spam
+81.190.47.196/32 Deny Malware
+81.190.52.162/32 Deny Spam
+87.116.216.0/24 Deny Malware
+89.17.232.123/32 Deny Spam
+89.228.193.206/32 Deny Spam
+89.229.144.161/32 Deny Spam
+89.229.147.0/24 Deny Spam
+89.229.149.145/32 Deny Spam
+89.229.151.58/32 Deny Malware
+89.229.152.175/32 Deny Spam
+89.229.153.91/32 Deny Spam
+89.229.155.0/24 Deny Malware
+89.229.159.103/32 Deny Spam
+89.230.173.0/24 Deny Malware
+89.231.66.168/32 Deny Spam
+89.231.157.74/32 Deny Spam
+89.231.217.78/32 Deny Spam
+94.251.207.0/24 Deny Spam
+176.221.104.2/32 Deny Spam
+176.221.116.10/32 Deny Spam
+176.221.121.0/24 Deny Malware
+176.221.122.213/32 Deny Spam
+176.221.123.159/32 Deny Spam
+Origin: PL
+Tag: Multimedia Polska
+---
+recaptcha:
+ enabled: true
+
+
+# ASN 133480 ("Intergrid Group Pty Ltd").
+# Australian multiplay network and a source of spam. Listing just the specific
+# offending ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 394.
+# Updated: 2020.11.21
+
+103.77.234.217/32 Deny Spam
+103.216.197.231/32 Deny Spam
+103.231.89.2/32 Deny Spam
+103.231.90.186/32 Deny Spam
+103.231.91.146/32 Deny Spam
+Origin: AU
+103.75.119.101/32 Deny Spam
+Origin: CA
+185.54.228.0/24 Deny Spam
+Origin: CZ
+5.62.23.0/24 Deny Spam
+Origin: GB
+103.108.92.190/32 Deny Spam
+103.108.94.0/24 Deny Spam
+Origin: NZ
+Tag: Intergrid Group Pty Ltd
 ---
 recaptcha:
  enabled: true

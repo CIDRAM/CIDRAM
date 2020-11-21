@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6.dat
 
-# Version: 2020.321.644
-# Last modified: 2020.11.17
+# Version: 2020.325.584
+# Last modified: 2020.11.21
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage, i.e., with ignore.dat, with reCAPTCHA, with "extended rules" (default bypasses): « [x]Low [ ]Medium [ ]High »
@@ -357,25 +357,23 @@ Tag: Agava Ltd
 
 # ASN 36351 ("SoftLayer Technologies").
 # Careful when updating; Signatures reflect varying block reasons, split across multiple files.
-# Stop Forum Spam (SFS) listings: 10,530.
+# Stop Forum Spam (SFS) listings: 7,200.
 
 # SoftLayer cloud services, webhosting providers, etc.
 # This section all as "Run rules_specific.php".
-# Excludes: Anything citing "TEFINCOM", "Packet Flip", "VPN", "proxy", "Privat Kommunikation", "Secure Internet" (VPNs
-# and proxies; covered elsewhere).
-# ^(.*(TEFINCOM|Packet Flip|VPN|Proxy|Privat Kommunikation|Secure Internet).*)$
+# Excludes: Anything citing "TEFINCOM", "Packet Flip", "VPN", "proxy", "Secure Internet" (VPNs and proxies; covered elsewhere).
+# ^(.*(TEFINCOM|Packet Flip|VPN|Proxy|Secure Internet).*)$\n
 # Excludes: Anything citing "Telecom", "AT&T", "American Heart Association" (not cloud services; shouldn't be blocked).
-# ^(.*(Telecom|AT&T|American Heart Association).*)$
+# ^(.*(Telecom|AT&T|American Heart Association).*)$\n
 # Excludes: Anything citing "Consumer Pool", "Starry" (not cloud services; blocked as generic via spammy ISPs).
-# ^(.*(Consumer Pool|Starry).*)$
+# ^(.*(Consumer Pool|Starry).*)$\n
 # Excludes: Anything citing "Vonex" (clean; don't need to block).
-# ^(.*(Vonex).*)$
+# ^(.*(Vonex).*)$\n
 # Includes: Everything else.
-# Updated: 2020.05.21
+# Updated: 2020.11.21
 
 2402:2f80::/48 Run rules_specific.php
 2403:1480:1000::/36 Run rules_specific.php
-2403:5680::/48 Run rules_specific.php
 Origin: AU
 2803:3240:1::/48 Run rules_specific.php
 Origin: BZ
@@ -384,9 +382,9 @@ Origin: DE
 2a04:f400:3000::/48 Run rules_specific.php
 Origin: EU
 2a02:2498:3::/48 Run rules_specific.php
+2a05:3343::/42 Run rules_specific.php
 2a05:dfc7:30::/48 Run rules_specific.php
 Origin: GB
-2402:9e80::/48 Run rules_specific.php
 2403:a280:8000::/36 Run rules_specific.php
 Origin: HK
 2001:df3:8800::/48 Run rules_specific.php
@@ -409,9 +407,10 @@ Origin: NL
 2401:c900:1800::/40 Run rules_specific.php
 2401:c900:1f00::/40 Run rules_specific.php
 2401:c900:2000::/39 Run rules_specific.php
+2401:c900:2700::/40 Run rules_specific.php
+2401:c900:2800::/39 Run rules_specific.php
 2402:b180:1::/48 Run rules_specific.php
 Origin: SG
-2402:e380::/48 Run rules_specific.php
 2602:ff1c:1::/48 Run rules_specific.php
 2602:ff84:e::/48 Run rules_specific.php
 2602:ff84:13::/48 Run rules_specific.php
@@ -423,8 +422,8 @@ Origin: SG
 2606:2e00:8020::/48 Run rules_specific.php
 2606:2e00:8021::/64 Run rules_specific.php
 2606:2e00:8022::/64 Run rules_specific.php
-2606:2e00:8023::/64 Run rules_specific.php
-2606:2e00:8024::/48 Run rules_specific.php
+2606:2e00:8024::/47 Run rules_specific.php
+2606:2e00:8026::/48 Run rules_specific.php
 2607:6980:e000::/44 Run rules_specific.php
 2607:f0d0::/32 Run rules_specific.php
 2620:11b:3002::/48 Run rules_specific.php
@@ -1712,15 +1711,6 @@ Origin: US
 Tag: Akamai Technologies
 
 
-# ASN 6428 ("Rose Hosting").
-# Stop Forum Spam (SFS) listings: 53.
-# Updated: 2017.10.30 / Checked: 2020.05.21
-
-2606:9200::/32 Deny Cloud
-Origin: US
-Tag: Rose Hosting
-
-
 # ASN 5693 ("Latisys-Irvine, LLC").
 # Stop Forum Spam (SFS) listings: 8.
 # Updated: 2016.04.03 / Checked: 2020.10.15
@@ -1857,8 +1847,8 @@ Tag: MBA DATACENTERS S.L
 
 # ASN 10439 ("CariNet, Inc").
 # Caught attempting to hack honeypots.
-# Stop Forum Spam (SFS) listings: 2.
-# Updated: 2016.04.08 / Checked: 2020.02.25
+# Stop Forum Spam (SFS) listings: 1.
+# Updated: 2016.04.08 / Checked: 2020.11.21
 
 2607:ff10::/32 Deny Cloud
 Origin: US
@@ -2788,8 +2778,7 @@ Tag: Netdirekt A.S
 
 
 # ASN 42730 ("EVANZO e-commerce GmbH").
-# Stop Forum Spam (SFS) listings: 64.
-# Updated: 2016.04.29 / Checked: 2020.02.25
+# Updated: 2016.04.29 / Checked: 2020.11.21
 
 2a00:6800::/32 Deny Cloud
 Origin: DE
@@ -4043,7 +4032,7 @@ Tag: HostMySite
 
 
 # ASN 40034 ("Confluence Networks Inc").
-# Updated: 2020.05.21
+# Updated: 2020.05.21 / Checked: 2020.11.21
 
 2604:10c0::/47 Deny Cloud
 2604:10c0:ffff::/48 Deny Cloud
@@ -6663,8 +6652,8 @@ Tag: Long Van
 # Cloud/Gaming/Webhosting provider and a significant source of forum spam and
 # website hammering/flooding/other abuse.
 # List in ISPs file: "^.*Internetbolaget.*$\n"; Everything else in the clouds.
-# Stop Forum Spam (SFS) listings: 1,529.
-# Updated: 2020.03.05 / Modified: 2020.05.21
+# Stop Forum Spam (SFS) listings: 1,476.
+# Updated: 2020.03.05 / Modified: 2020.05.21 / Checked: 2020.11.21
 
 2001:df2:5480::/48 Deny Cloud
 Origin: TW
@@ -7252,6 +7241,17 @@ Tag: MivoCloud SRL
 2401:da40::/32 Deny Cloud
 Origin: HK
 Tag: DXTL Tseung Kwan O Service
+
+
+# ASN 132372 ("GB Network Solutions Sdn. Bhd").
+# Webhosting provider and an occasional source of spam.
+# Stop Forum Spam (SFS) listings: 102.
+# Updated: 2020.11.21
+
+2403:4ac0::/32 Deny Cloud
+2403:fd40:1001::/48 Deny Cloud
+Origin: MY
+Tag: GB Network Solutions
 
 
 # ---

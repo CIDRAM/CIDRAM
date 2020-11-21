@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_isps.dat
 
-# Version: 2020.321.644
-# Last modified: 2020.11.17
+# Version: 2020.325.584
+# Last modified: 2020.11.21
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage, i.e., with ignore.dat, with reCAPTCHA, with "extended rules" (default bypasses): « [ ]Low [x]Medium [ ]High »
@@ -1975,13 +1975,13 @@ recaptcha:
 
 # ASN 36351 ("SoftLayer Technologies").
 # Careful when updating; Signatures reflect varying block reasons, split across multiple files.
-# Stop Forum Spam (SFS) listings: 10,530.
+# Stop Forum Spam (SFS) listings: 7,200.
 
 # SoftLayer questionable multi-play networks, spammy ISPs, etc.
 # Includes: Anything citing "Consumer Pool", "Starry".
 # ^(.*(Consumer Pool|Starry).*)$
 # Excludes: Everything else.
-# Updated: 2018.06.24 / Checked: 2020.05.21
+# Updated: 2018.06.24 / Checked: 2020.11.21
 
 2403:ad80:10::/48 Deny Spam
 2403:ad80:20::/48 Deny Spam
@@ -2297,6 +2297,19 @@ recaptcha:
  enabled: true
 
 
+# ASN 38732 ("CMC Telecom Infrastructure Company").
+# Vietnamese domestic ISP; Huge source of spam, malware, attacks, etc.
+# Stop Forum Spam (SFS) listings: 150.
+# Updated: 2020.11.21
+
+2406:30c0::/48 Deny Malware
+Origin: VN
+Tag: CMC Telecom
+---
+recaptcha:
+ enabled: true
+
+
 # ASN 13489 ("EPM Telecomunicaciones S.A. E.S.P").
 # Source of forum spam and some email harvestors.
 # (Mark EU and US CIDRs as cloud; the rest as spam).
@@ -2579,3 +2592,13 @@ Tag: TRK Cable TV LLC
 ---
 recaptcha:
  enabled: true
+
+
+# ASNs 31593, 34187 ("LLC Renome-Service").
+# Ukrainian TV cable provider and a significant source of spam.
+# Stop Forum Spam (SFS) listings: 6,406 (AS31593), 558 (AS34187).
+# Updated: 2020.11.21
+
+2a03:1240::/48 Deny Spam
+Origin: UA
+Tag: LLC Renome-Service

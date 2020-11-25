@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_isps.dat
 
-# Version: 2020.325.584
-# Last modified: 2020.11.21
+# Version: 2020.329.404
+# Last modified: 2020.11.25
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage, i.e., with ignore.dat, with reCAPTCHA, with "extended rules" (default bypasses): « [ ]Low [x]Medium [ ]High »
@@ -430,8 +430,8 @@ recaptcha:
 
 
 # ASN 17747 ("SITI NETWORKS LIMITED").
-# Stop Forum Spam (SFS) listings: 2,795.
-# Updated: 2020.05.26
+# Stop Forum Spam (SFS) listings: 4,755.
+# Updated: 2020.05.26 / Checked: 2020.11.25
 
 2402:ea80::/48 Deny Spam
 2406:3c80::/46 Deny Spam
@@ -569,8 +569,8 @@ Tag: Kyivstar
 
 # ASN 13188 ("CONTENT DELIVERY NETWORK LTD", A.K.A. "TRIOLAN, UA").
 # Significant source of spam, hack attempts, scraping, etc.
-# Stop Forum Spam (SFS) listings: 8,552.
-# Updated: 2019.11.10 / Checked: 2020.03.21
+# Stop Forum Spam (SFS) listings: 21,655.
+# Updated: 2019.11.10 / Checked: 2020.11.23
 
 2a03:7380::/38 Deny Spam
 2a03:7380:400::/39 Deny Spam
@@ -1550,8 +1550,8 @@ recaptcha:
 
 # ASN 23944 ("SKYBroadband SKYCable Corporation").
 # ( CIDRs that we haven't yet seen any problems from have been omitted. I hope to eventually remove this section entirely. )
-# Stop Forum Spam (SFS) listings: 187.
-# Updated: 2020.05.26
+# Stop Forum Spam (SFS) listings: 209.
+# Updated: 2020.05.26 / Checked: 2020.11.25
 
 2404:3c00:482f:fcd0::/64 Deny Spam
 2404:3c00:503f:1700::/64 Deny Spam
@@ -1698,39 +1698,37 @@ recaptcha:
 # source of spam. Websites intended for a Russian audience should keep this
 # section listed in their ignore.dat file. Section also marked for use with
 # reCAPTCHA by default. Currently listing only the most severely offending
-# ranges in the network (i.e., not the entire network).
-# Updated: 2020.07.30
+# ranges in the network (i.e., not the entire network). Also contains some
+# "malware" marked ranges.
+# Updated: 2020.11.23
 
+2a02:2698:6000::/38 Deny Spam
 2a02:2698:6800::/38 Deny Spam
-2a02:2698:7000::/38 Deny Spam
-2a02:2698:802a:1180::/64 Deny Spam
-2a02:2698:9000::/38 Deny Spam
-2a03:1ac0:503:f000::/52 Deny Spam
+2a03:1ac0:503:e800::/53 Deny Spam
 2a03:1ac0:5a4:8000::/50 Deny Spam
 2a03:1ac0:5a5:2000::/51 Deny Spam
-2a03:1ac0:5a5:c000::/52 Deny Spam
-2a03:1ac0:5a6:e000::/53 Deny Spam
-2a03:1ac0:5a7:9000::/52 Deny Spam
-2a03:1ac0:2570:7000::/53 Deny Spam
-2a03:1ac0:2571:8000::/50 Deny Spam
-2a03:1ac0:2571:f800::/53 Deny Spam
+2a03:1ac0:5a5:b000::/53 Deny Spam
+2a03:1ac0:5a5:f000::/52 Deny Spam
+2a03:1ac0:5a6:e800::/53 Deny Spam
+2a03:1ac0:5a7:3000::/53 Deny Spam
+2a03:1ac0:5a7:7000::/52 Deny Spam
+2a03:1ac0:2570:2000::/53 Deny Spam
+2a03:1ac0:2570:e000::/52 Deny Spam
 2a03:1ac0:2e00::/48 Deny Spam
+2a03:1ac0:2e93:6000::/51 Deny Spam
+2a03:1ac0:2e93:d000::/52 Deny Spam
+2a03:1ac0:2e93:f000::/53 Deny Spam
 2a03:1ac0:5571:2000::/51 Deny Spam
-2a03:1ac0:5b90:8400::/54 Deny Spam
-2a03:1ac0:5b90:be00::/55 Deny Spam
-2a03:1ac0:5cff:f600::/55 Deny Spam
-2a03:1ac0:5eb4:2000::/53 Deny Spam
-2a03:1ac0:5eb5:2000::/52 Deny Spam
-2a03:1ac0:5f4e:8000::/50 Deny Spam
-2a03:1ac0:6dc3:1000::/52 Deny Spam
-2a03:1ac0:b0d4:4000::/52 Deny Spam
-2a03:1ac0:bcba:3000::/53 Deny Spam
-2a03:1ac0:bce8::/50 Deny Spam
-2a03:1ac0:bceb:7000::/53 Deny Spam
-2a03:1ac0:bceb:8000::/50 Deny Spam
-2a03:1ac0:c196:6900::/56 Deny Spam
-2a03:1ac0:c2be:3400::/56 Deny Spam
-2a03:1ac0:c2be:3700::/56 Deny Spam
+2a03:1ac0:5eb4:3800::/53 Deny Spam
+2a03:1ac0:6dc3:e000::/52 Deny Spam
+2a03:1ac0:b0d4:2000::/52 Deny Spam
+2a03:1ac0:b0d4:3800::/53 Deny Spam
+2a03:1ac0:b0d5:2000::/53 Deny Spam
+2a03:1ac0:b0d5:8800::/53 Deny Spam
+2a03:1ac0:b0d6:b000::/53 Deny Spam
+2a03:1ac0:b0d7:4000::/53 Deny Spam
+2a03:1ac0:bcbb:d000::/53 Deny Spam
+2a03:1ac0:d90c:4000::/52 Deny Spam
 Origin: RU
 Tag: ER-Telecom Holding
 ---
@@ -2091,14 +2089,14 @@ recaptcha:
 # Major domestic ISP in the United States; Should NEVER be blocked in entirety.
 # Listed here are some specific CIDRs/IPs on their network that pose a major
 # spam risk and/or are known sources of spam and/or other undesirable traffic.
-# %Listed, abuseat.org (CBL-Listed): 0.02% (AS7922).
-# Stop Forum Spam (SFS) listings: 6,968 (AS7922).
-# Updated: 2020.07.23
+# %Listed, abuseat.org (CBL-Listed): 0.03% (AS7922).
+# Stop Forum Spam (SFS) listings: 6,183 (AS7922).
+# Updated: 2020.11.23
 
 2601:14c:4200:bb10::/64 Deny Spam
-2601:191:8580:9050::/64 Deny Spam
-2601:248:301:3c00::/64 Deny Spam
-2603:3003:1dcf:e000::/64 Deny Spam
+2601:204:d401:8ad0::/64 Deny Spam
+2601:205:c200:6480::/64 Deny Spam
+2601:2c7:4480:2980::/64 Deny Spam
 Origin: US
 Tag: Comcast Spam IPs
 ---

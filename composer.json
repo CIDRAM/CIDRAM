@@ -16,10 +16,10 @@
         "ext-pcre": "*"
     },
     "suggest": {
+        "ext-apcu": "*",
         "ext-curl": "*"
     },
-    "require-dev": {
-        "codeception/codeception": "^2.3",
-        "symfony/event-dispatcher": "3.4.28"
+    "scripts": {
+        "test": "@php tests.php"
     }
 }

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Language handler (last modified: 2019.08.19).
+ * This file: Language handler (last modified: 2020.11.27).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -24,9 +24,11 @@ if (empty($CIDRAM['Config']['general']['lang'])) {
 /** L10N data. */
 $CIDRAM['L10N'] = ['Configured' => [], 'ConfiguredData' => '', 'Fallbacks' => [], 'FallbackData' => ''];
 
-/** If the language directive is set to English, don't bother about fallbacks. */
+/**
+ * If the language directive is set to English, don't bother about fallbacks.
+ * If it isn't set to English, we'll use English as the fallback.
+ */
 if ($CIDRAM['Config']['general']['lang'] === 'en') {
-
     if ($CIDRAM['CIDRAM_sapi'] && empty($CIDRAM['Alternate'])) {
         /** CLI-mode L10N data. */
         $CIDRAM['L10N']['Configured'][] = $CIDRAM['Vault'] . 'lang/lang.en.cli.yaml';
@@ -43,10 +45,7 @@ if ($CIDRAM['Config']['general']['lang'] === 'en') {
             $CIDRAM['L10N']['Configured'][] = $CIDRAM['Vault'] . 'lang/lang.en.fe.yaml';
         }
     }
-
-/** If the language directive isn't set to English, we'll use English as the fallback. */
 } else {
-
     if ($CIDRAM['CIDRAM_sapi'] && empty($CIDRAM['Alternate'])) {
         /** CLI-mode L10N data. */
         $CIDRAM['L10N']['Configured'][] = $CIDRAM['Vault'] . 'lang/lang.' . $CIDRAM['Config']['general']['lang'] . '.cli.yaml';
@@ -66,7 +65,6 @@ if ($CIDRAM['Config']['general']['lang'] === 'en') {
             $CIDRAM['L10N']['Fallbacks'][] = $CIDRAM['Vault'] . 'lang/lang.en.fe.yaml';
         }
     }
-
 }
 
 /** Load the L10N data. */

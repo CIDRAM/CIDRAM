@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2020.10.10).
+ * This file: Front-end handler (last modified: 2020.11.27).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -229,7 +229,6 @@ if (empty($CIDRAM['L10N']->Data['Text Direction']) || $CIDRAM['L10N']->Data['Tex
 
 /** A simple passthru for non-private theme images and related data. */
 if (!empty($CIDRAM['QueryVars']['cidram-asset'])) {
-
     $CIDRAM['Success'] = false;
 
     if (
@@ -355,7 +354,8 @@ $CIDRAM['InitialiseCache']();
 
 /** Brute-force security check. */
 if (($CIDRAM['LoginAttempts'] = (int)$CIDRAM['FECacheGet'](
-    $CIDRAM['FE']['Cache'], 'LoginAttempts' . $_SERVER[$CIDRAM['IPAddr']]
+    $CIDRAM['FE']['Cache'],
+    'LoginAttempts' . $_SERVER[$CIDRAM['IPAddr']]
 )) && ($CIDRAM['LoginAttempts'] >= $CIDRAM['Config']['general']['max_login_attempts'])) {
     header('Content-Type: text/plain');
     die('[CIDRAM] ' . $CIDRAM['L10N']->getString('max_login_attempts_exceeded'));
@@ -363,7 +363,8 @@ if (($CIDRAM['LoginAttempts'] = (int)$CIDRAM['FECacheGet'](
 
 /** Brute-force security check (2FA). */
 if (($CIDRAM['Failed2FA'] = (int)$CIDRAM['FECacheGet'](
-    $CIDRAM['FE']['Cache'], 'Failed2FA' . $_SERVER[$CIDRAM['IPAddr']]
+    $CIDRAM['FE']['Cache'],
+    'Failed2FA' . $_SERVER[$CIDRAM['IPAddr']]
 )) && ($CIDRAM['Failed2FA'] >= $CIDRAM['Config']['general']['max_login_attempts'])) {
     header('Content-Type: text/plain');
     die('[CIDRAM] ' . $CIDRAM['L10N']->getString('max_login_attempts_exceeded'));
@@ -378,7 +379,6 @@ if ($CIDRAM['FE']['FormTarget'] === 'login' || $CIDRAM['FE']['CronMode']) {
         $CIDRAM['FE']['UserState'] = -1;
         $CIDRAM['FE']['state_msg'] = $CIDRAM['L10N']->getString('response_login_username_field_empty');
     } elseif (!empty($_POST['username']) && !empty($_POST['password'])) {
-
         $CIDRAM['FE']['UserState'] = -1;
         $CIDRAM['FE']['UserRaw'] = $_POST['username'];
         $CIDRAM['FE']['User'] = base64_encode($CIDRAM['FE']['UserRaw']);
@@ -395,7 +395,9 @@ if ($CIDRAM['FE']['FormTarget'] === 'login' || $CIDRAM['FE']['CronMode']) {
             $CIDRAM['FE']['Password'] = substr($CIDRAM['FE']['Password'], 0, -2);
             if (password_verify($_POST['password'], $CIDRAM['FE']['Password'])) {
                 $CIDRAM['FECacheRemove'](
-                    $CIDRAM['FE']['Cache'], $CIDRAM['FE']['Rebuild'], 'LoginAttempts' . $_SERVER[$CIDRAM['IPAddr']]
+                    $CIDRAM['FE']['Cache'],
+                    $CIDRAM['FE']['Rebuild'],
+                    'LoginAttempts' . $_SERVER[$CIDRAM['IPAddr']]
                 );
                 if (($CIDRAM['FE']['Permissions'] === 3 && (
                     !$CIDRAM['FE']['CronMode'] || substr($CIDRAM['FE']['UA'], 0, 10) !== 'Cronable v'
@@ -408,7 +410,8 @@ if ($CIDRAM['FE']['FormTarget'] === 'login' || $CIDRAM['FE']['CronMode']) {
                         $CIDRAM['FE']['Cookie'] = $_POST['username'] . $CIDRAM['FE']['SessionKey'];
                         setcookie('CIDRAM-ADMIN', $CIDRAM['FE']['Cookie'], $CIDRAM['Now'] + 604800, '/', $CIDRAM['HostnameOverride'] ?: $CIDRAM['HTTP_HOST'], false, true);
                         $CIDRAM['FE']['ThisSession'] = $CIDRAM['FE']['User'] . ',' . password_hash(
-                            $CIDRAM['FE']['SessionKey'], $CIDRAM['DefaultAlgo']
+                            $CIDRAM['FE']['SessionKey'],
+                            $CIDRAM['DefaultAlgo']
                         ) . ',' . ($CIDRAM['Now'] + 604800) . "\n";
                         $CIDRAM['FE']['SessionList'] .= $CIDRAM['FE']['ThisSession'];
 
@@ -502,7 +505,6 @@ if ($CIDRAM['FE']['FormTarget'] === 'login' || $CIDRAM['FE']['CronMode']) {
 
 /** Determine whether the user has logged in. */
 elseif (!empty($_COOKIE['CIDRAM-ADMIN'])) {
-
     $CIDRAM['FE']['UserState'] = -1;
     $CIDRAM['FE']['SessionKey'] = substr($_COOKIE['CIDRAM-ADMIN'], -32);
     $CIDRAM['FE']['UserRaw'] = substr($_COOKIE['CIDRAM-ADMIN'], 0, -32);
@@ -521,7 +523,9 @@ elseif (!empty($_COOKIE['CIDRAM-ADMIN'])) {
                 $CIDRAM['FE']['SessionList'],
                 $CIDRAM['FE']['SessionOffset'],
                 $CIDRAM['ZeroMin'](strpos(
-                    $CIDRAM['FE']['SessionList'], "\n", $CIDRAM['FE']['SessionOffset']
+                    $CIDRAM['FE']['SessionList'],
+                    "\n",
+                    $CIDRAM['FE']['SessionOffset']
                 ), $CIDRAM['FE']['SessionOffset'] * -1)
             );
             $CIDRAM['FE']['SEDelimiter'] = strrpos($CIDRAM['FE']['SessionEntry'], ',');
@@ -599,7 +603,9 @@ elseif (!empty($_COOKIE['CIDRAM-ADMIN'])) {
             $CIDRAM['FE']['state_msg'] = '<div class="txtRd">' . $CIDRAM['L10N']->getString('response_2fa_invalid') . '<br /><br /></div>';
         } else {
             $CIDRAM['FECacheRemove'](
-                $CIDRAM['FE']['Cache'], $CIDRAM['FE']['Rebuild'], 'Failed2FA' . $_SERVER[$CIDRAM['IPAddr']]
+                $CIDRAM['FE']['Cache'],
+                $CIDRAM['FE']['Rebuild'],
+                'Failed2FA' . $_SERVER[$CIDRAM['IPAddr']]
             );
             if ($CIDRAM['Config']['general']['FrontEndLog']) {
                 $CIDRAM['FELogger']($_SERVER[$CIDRAM['IPAddr']], $CIDRAM['FE']['UserRaw'], $CIDRAM['L10N']->getString('response_2fa_valid'));
@@ -621,7 +627,6 @@ $CIDRAM['MajorVersionNotice'] = '';
 
 /** Only execute this code block for users that are logged in or awaiting two-factor authentication. */
 if (($CIDRAM['FE']['UserState'] === 1 || $CIDRAM['FE']['UserState'] === 2) && !$CIDRAM['FE']['CronMode']) {
-
     if ($CIDRAM['QueryVars']['cidram-page'] === 'logout') {
 
         /** Log out the user. */
@@ -637,7 +642,6 @@ if (($CIDRAM['FE']['UserState'] === 1 || $CIDRAM['FE']['UserState'] === 2) && !$
 
     /** If the user has complete access. */
     if ($CIDRAM['FE']['Permissions'] === 1) {
-
         $CIDRAM['FE']['nav'] = $CIDRAM['ParseVars'](
             $CIDRAM['L10N']->Data + $CIDRAM['FE'],
             $CIDRAM['ReadFile']($CIDRAM['GetAssetPath']('_nav_complete_access.html'))
@@ -645,7 +649,6 @@ if (($CIDRAM['FE']['UserState'] === 1 || $CIDRAM['FE']['UserState'] === 2) && !$
 
     /** If the user has logs access only. */
     } elseif ($CIDRAM['FE']['Permissions'] === 2) {
-
         $CIDRAM['FE']['nav'] = $CIDRAM['ParseVars'](
             $CIDRAM['L10N']->Data + $CIDRAM['FE'],
             $CIDRAM['ReadFile']($CIDRAM['GetAssetPath']('_nav_logs_access_only.html'))
@@ -904,7 +907,6 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === '' && !$CIDRAM['FE']['CronMode']
 
 /** A simple passthru for the file manager icons. */
 elseif ($CIDRAM['QueryVars']['cidram-page'] === 'icon' && $CIDRAM['FE']['Permissions'] === 1) {
-
     if (
         !empty($CIDRAM['QueryVars']['file']) &&
         $CIDRAM['FileManager-PathSecurityCheck']($CIDRAM['QueryVars']['file']) &&
@@ -913,10 +915,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'icon' && $CIDRAM['FE']['Permiss
     ) {
         header('Content-Type: image/x-icon');
         echo $CIDRAM['ReadFile']($CIDRAM['Vault'] . $CIDRAM['QueryVars']['file']);
-    }
-
-    elseif (!empty($CIDRAM['QueryVars']['icon'])) {
-
+    } elseif (!empty($CIDRAM['QueryVars']['icon'])) {
         $CIDRAM['Icons_Handler_Path'] = $CIDRAM['GetAssetPath']('icons.php');
         if (is_readable($CIDRAM['Icons_Handler_Path'])) {
 
@@ -994,7 +993,9 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'accounts' && $CIDRAM['FE']['Per
                 ];
                 $CIDRAM['FE']['NewLineOffset'] = 0;
                 while (($CIDRAM['FE']['NewLinePos'] = strpos(
-                    $CIDRAM['FE']['UserList'], "\n", $CIDRAM['FE']['NewLineOffset'] + 1
+                    $CIDRAM['FE']['UserList'],
+                    "\n",
+                    $CIDRAM['FE']['NewLineOffset'] + 1
                 )) !== false) {
                     $CIDRAM['FE']['NewLine'] = substr(
                         $CIDRAM['FE']['UserList'],
@@ -1100,7 +1101,9 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'accounts' && $CIDRAM['FE']['Per
         $CIDRAM['FE']['NewLineOffset'] = 0;
 
         while (($CIDRAM['FE']['NewLinePos'] = strpos(
-            $CIDRAM['FE']['UserList'], "\n", $CIDRAM['FE']['NewLineOffset'] + 1
+            $CIDRAM['FE']['UserList'],
+            "\n",
+            $CIDRAM['FE']['NewLineOffset'] + 1
         )) !== false) {
             $CIDRAM['FE']['NewLine'] = substr(
                 $CIDRAM['FE']['UserList'],
@@ -1151,7 +1154,8 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'accounts' && $CIDRAM['FE']['Per
             $CIDRAM['RowInfo']['AccUsername'] = htmlentities(base64_decode($CIDRAM['RowInfo']['AccUsername']));
             $CIDRAM['FE']['NewLineOffset'] = $CIDRAM['FE']['NewLinePos'];
             $CIDRAM['FE']['Accounts'] .= $CIDRAM['ParseVars'](
-                $CIDRAM['L10N']->Data + $CIDRAM['RowInfo'], $CIDRAM['FE']['AccountsRow']
+                $CIDRAM['L10N']->Data + $CIDRAM['RowInfo'],
+                $CIDRAM['FE']['AccountsRow']
             );
         }
         unset($CIDRAM['RowInfo']);
@@ -1212,7 +1216,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
         }
         $CIDRAM['RegenerateConfig'] .= "\r\n\r\n";
         $CIDRAM['FE']['ConfigFields'] .= sprintf(
-                '<table><tr><td class="ng2"><div id="%1$s-container" class="s">' .
+            '<table><tr><td class="ng2"><div id="%1$s-container" class="s">' .
                 '<a class="showlink" id="%1$s-showlink" href="#%1$s-container" onclick="javascript:showid(\'%1$s-hidelink\');hideid(\'%1$s-showlink\');show(\'%1$s-row\')">%1$s</a>' .
                 '<a class="hidelink" id="%1$s-hidelink" %2$s href="#" onclick="javascript:showid(\'%1$s-showlink\');hideid(\'%1$s-hidelink\');hide(\'%1$s-row\')">%1$s</a>' .
                 "%3\$s</div></td></tr></table>\n<span class=\"%1\$s-row\" %2\$s><table>\n",
@@ -1305,7 +1309,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
                 $CIDRAM['ThisDir']['Trigger'] = ' onchange="javascript:' . $CIDRAM['ThisDir']['DirLangKey'] . '_function();" onkeyup="javascript:' . $CIDRAM['ThisDir']['DirLangKey'] . '_function();"';
                 if ($CIDRAM['DirValue']['preview'] === 'kb') {
                     $CIDRAM['ThisDir']['Preview'] .= sprintf(
-                            '<script type="text/javascript">function %1$s_function(){var e=%7$s?%7$s(' .
+                        '<script type="text/javascript">function %1$s_function(){var e=%7$s?%7$s(' .
                             '\'%1$s_field\').value:%8$s&&!%7$s?%8$s.%1$s_field.value:\'\',z=e.replace' .
                             '(/o$/i,\'b\').substr(-2).toLowerCase(),y=\'kb\'==z?1:\'mb\'==z?1024:\'gb' .
                             '\'==z?1048576:\'tb\'==z?1073741824:\'b\'==e.substr(-1)?.0009765625:1,e=e' .
@@ -1326,7 +1330,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
                     );
                 } elseif ($CIDRAM['DirValue']['preview'] === 'seconds') {
                     $CIDRAM['ThisDir']['Preview'] .= sprintf(
-                            '<script type="text/javascript">function %1$s_function(){var t=%9$s?%9$s(' .
+                        '<script type="text/javascript">function %1$s_function(){var t=%9$s?%9$s(' .
                             '\'%1$s_field\').value:%10$s&&!%9$s?%10$s.%1$s_field.value:\'\',e=isNaN(t' .
                             ')?0:0>t?t*-1:t,n=e?Math.floor(e/31536e3):0,e=e?e-31536e3*n:0,o=e?Math.fl' .
                             'oor(e/2592e3):0,e=e-2592e3*o,l=e?Math.floor(e/604800):0,e=e-604800*l,r=e' .
@@ -1350,7 +1354,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
                     );
                 } elseif ($CIDRAM['DirValue']['preview'] === 'minutes') {
                     $CIDRAM['ThisDir']['Preview'] .= sprintf(
-                            '<script type="text/javascript">function %1$s_function(){var t=%9$s?%9$s(' .
+                        '<script type="text/javascript">function %1$s_function(){var t=%9$s?%9$s(' .
                             '\'%1$s_field\').value:%10$s&&!%9$s?%10$s.%1$s_field.value:\'\',e=isNaN(t' .
                             ')?0:0>t?t*-1:t,n=e?Math.floor(e/525600):0,e=e?e-525600*n:0,o=e?Math.floo' .
                             'r(e/43200):0,e=e-43200*o,l=e?Math.floor(e/10080):0,e=e-10080*l,r=e?Math.' .
@@ -1374,7 +1378,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
                     );
                 } elseif ($CIDRAM['DirValue']['preview'] === 'hours') {
                     $CIDRAM['ThisDir']['Preview'] .= sprintf(
-                            '<script type="text/javascript">function %1$s_function(){var t=%9$s?%9$s(' .
+                        '<script type="text/javascript">function %1$s_function(){var t=%9$s?%9$s(' .
                             '\'%1$s_field\').value:%10$s&&!%9$s?%10$s.%1$s_field.value:\'\',e=isNaN(t' .
                             ')?0:0>t?t*-1:t,n=e?Math.floor(e/8760):0,e=e?e-8760*n:0,o=e?Math.floor(e/' .
                             '720):0,e=e-720*o,l=e?Math.floor(e/168):0,e=e-168*l,r=e?Math.floor(e/24):' .
@@ -1397,7 +1401,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
                     );
                 } elseif ($CIDRAM['DirValue']['preview'] === 'allow_other') {
                     $CIDRAM['ThisDir']['Preview'] .= sprintf(
-                            '<script type="text/javascript">function %1$s_function(){var e=%2$s?%2$s(' .
+                        '<script type="text/javascript">function %1$s_function(){var e=%2$s?%2$s(' .
                             '\'%1$s_field\').value:%3$s&&!%2$s?%3$s.%1$s_field.value:\'\';e==\'Other\'' .
                             '?showid(\'%4$s_field\'):hideid(\'%4$s_field\')};%1$s_function();</script>',
                         $CIDRAM['ThisDir']['DirLangKey'],
@@ -1469,7 +1473,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
                 }
             } elseif ($CIDRAM['DirValue']['type'] === 'bool') {
                 $CIDRAM['ThisDir']['FieldOut'] = sprintf(
-                        '<select class="auto" name="%1$s" id="%1$s_field"%2$s>' .
+                    '<select class="auto" name="%1$s" id="%1$s_field"%2$s>' .
                         '<option value="true"%5$s>%3$s</option><option value="false"%6$s>%4$s</option>' .
                         '</select>',
                     $CIDRAM['ThisDir']['DirLangKey'],
@@ -1520,7 +1524,8 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
                 $CIDRAM['ThisDir']['FieldOut'] .= "\n</ul>";
             }
             $CIDRAM['FE']['ConfigFields'] .= $CIDRAM['ParseVars'](
-                $CIDRAM['L10N']->Data + $CIDRAM['ThisDir'], $CIDRAM['FE']['ConfigRow']
+                $CIDRAM['L10N']->Data + $CIDRAM['ThisDir'],
+                $CIDRAM['FE']['ConfigRow']
             );
         }
         $CIDRAM['CatKeyFriendly'] = $CIDRAM['L10N']->getString('config_' . $CIDRAM['CatKey'] . '_label') ?: (
@@ -1913,7 +1918,9 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && ($CIDRAM['FE']['Per
                 ) . '|CIDRAM.*|Common Classes Package)$~i', $CIDRAM['Components']['Key']) || $CIDRAM['IsInUse'](
                     $CIDRAM['Components']['ThisComponent']
                 )) {
-                    $CIDRAM['AppendToString']($CIDRAM['Components']['ThisComponent']['StatusOptions'], '<hr />',
+                    $CIDRAM['AppendToString'](
+                        $CIDRAM['Components']['ThisComponent']['StatusOptions'],
+                        '<hr />',
                         '<div class="txtGn">' . $CIDRAM['L10N']->getString('state_component_is_active') . '</div>'
                     );
                     if ($CIDRAM['Activable']) {
@@ -1938,11 +1945,15 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && ($CIDRAM['FE']['Per
                         !empty($CIDRAM['Components']['ThisComponent']['Provisional']) ||
                         ($CIDRAM['Config']['general']['lang_override'] && preg_match('~^L10N\:~', $CIDRAM['Components']['ThisComponent']['Name']))
                     ) {
-                        $CIDRAM['AppendToString']($CIDRAM['Components']['ThisComponent']['StatusOptions'], '<hr />',
+                        $CIDRAM['AppendToString'](
+                            $CIDRAM['Components']['ThisComponent']['StatusOptions'],
+                            '<hr />',
                             '<div class="txtOe">' . $CIDRAM['L10N']->getString('state_component_is_provisional') . '</div>'
                         );
                     } else {
-                        $CIDRAM['AppendToString']($CIDRAM['Components']['ThisComponent']['StatusOptions'], '<hr />',
+                        $CIDRAM['AppendToString'](
+                            $CIDRAM['Components']['ThisComponent']['StatusOptions'],
+                            '<hr />',
                             '<div class="txtRd">' . $CIDRAM['L10N']->getString('state_component_is_inactive') . '</div>'
                         );
                     }
@@ -2020,7 +2031,9 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && ($CIDRAM['FE']['Per
             $CIDRAM['Components']['ThisComponent']['LatestSize'] = '';
         }
         if (!empty($CIDRAM['Components']['ThisComponent']['Options'])) {
-            $CIDRAM['AppendToString']($CIDRAM['Components']['ThisComponent']['StatusOptions'], '<hr />',
+            $CIDRAM['AppendToString'](
+                $CIDRAM['Components']['ThisComponent']['StatusOptions'],
+                '<hr />',
                 '<select name="do" class="auto">' . $CIDRAM['Components']['ThisComponent']['Options'] .
                 '</select><input type="submit" value="' . $CIDRAM['L10N']->getString('field_ok') . '" class="auto" />'
             );
@@ -2031,11 +2044,6 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && ($CIDRAM['FE']['Per
         $CIDRAM['Components']['ThisComponent']['Changelog'] = empty(
             $CIDRAM['Components']['ThisComponent']['Changelog']
         ) ? '' : '<br /><a href="' . $CIDRAM['Components']['ThisComponent']['Changelog'] . '" rel="noopener external">Changelog</a>';
-
-        /** Append tests. */
-        if (!empty($CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['ThisComponent']['ID']]['Tests'])) {
-            $CIDRAM['AppendTests']($CIDRAM['Components']['ThisComponent']);
-        }
 
         /** Append filename. */
         $CIDRAM['Components']['ThisComponent']['Filename'] = (
@@ -2121,7 +2129,9 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && ($CIDRAM['FE']['Per
         );
         $CIDRAM['ThisOffset'] = strlen($CIDRAM['ThisOffset'][0][0]) * -1;
         $CIDRAM['Components']['Remotes'][$CIDRAM['Components']['ReannotateThis']] = substr(
-            $CIDRAM['Components']['Remotes'][$CIDRAM['Components']['ReannotateThis']], 0, $CIDRAM['ThisOffset']
+            $CIDRAM['Components']['Remotes'][$CIDRAM['Components']['ReannotateThis']],
+            0,
+            $CIDRAM['ThisOffset']
         ) . $CIDRAM['Components']['RemoteDataThis'] . "\n";
         $CIDRAM['PrepareName']($CIDRAM['Components']['ThisComponent'], $CIDRAM['Components']['Key']);
         $CIDRAM['PrepareExtendedDescription']($CIDRAM['Components']['ThisComponent'], $CIDRAM['Components']['Key']);
@@ -2177,11 +2187,6 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && ($CIDRAM['FE']['Per
         $CIDRAM['Components']['ThisComponent']['Changelog'] = empty(
             $CIDRAM['Components']['ThisComponent']['Changelog']
         ) ? '' : '<br /><a href="' . $CIDRAM['Components']['ThisComponent']['Changelog'] . '" rel="noopener external">Changelog</a>';
-
-        /** Append tests. */
-        if (!empty($CIDRAM['Components']['ThisComponent']['Tests'])) {
-            $CIDRAM['AppendTests']($CIDRAM['Components']['ThisComponent']);
-        }
 
         /** Append filename (empty). */
         $CIDRAM['Components']['ThisComponent']['Filename'] = '';
@@ -2524,7 +2529,6 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'file-manager' && $CIDRAM['FE'][
 
     /** Show/hide pie charts link and etc. */
     if (!$CIDRAM['PieFile']) {
-
         $CIDRAM['FE']['FMgrFormTarget'] = 'cidram-page=file-manager';
         $CIDRAM['FE']['ShowHideLink'] = '<a href="?cidram-page=file-manager&show=true">' . $CIDRAM['L10N']->getString('label_show') . '</a>';
     } else {
@@ -2595,7 +2599,6 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'file-manager' && $CIDRAM['FE'][
 
         /** Delete a file. */
         if ($_POST['do'] === 'delete-file') {
-
             if (is_dir($CIDRAM['Vault'] . $_POST['filename'])) {
                 if ($CIDRAM['IsDirEmpty']($CIDRAM['Vault'] . $_POST['filename'])) {
                     rmdir($CIDRAM['Vault'] . $_POST['filename']);
@@ -2612,9 +2615,8 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'file-manager' && $CIDRAM['FE'][
                 $CIDRAM['FE']['state_msg'] = $CIDRAM['L10N']->getString('response_file_deleted');
             }
 
-        /** Rename a file. */
+            /** Rename a file. */
         } elseif ($_POST['do'] === 'rename-file' && isset($_POST['filename'])) {
-
             if (isset($_POST['filename_new'])) {
 
                 /** Check whether safe. */
@@ -2643,7 +2645,6 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'file-manager' && $CIDRAM['FE'][
 
                 /** Rename the file. */
                 if ($CIDRAM['SafeToContinue']) {
-
                     $CIDRAM['ThisName'] = $_POST['filename_new'];
                     $CIDRAM['ThisPath'] = $CIDRAM['Vault'];
 
@@ -2685,11 +2686,9 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'file-manager' && $CIDRAM['FE'][
                 die;
             }
 
-        /** Edit a file. */
+            /** Edit a file. */
         } elseif ($_POST['do'] === 'edit-file') {
-
             if (isset($_POST['content'])) {
-
                 $_POST['content'] = str_replace("\r", '', $_POST['content']);
                 $CIDRAM['OldData'] = $CIDRAM['ReadFile']($CIDRAM['Vault'] . $_POST['filename']);
                 if (strpos($CIDRAM['OldData'], "\r\n") !== false && strpos($CIDRAM['OldData'], "\n\n") === false) {
@@ -2717,9 +2716,8 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'file-manager' && $CIDRAM['FE'][
                 die;
             }
 
-        /** Download a file. */
+            /** Download a file. */
         } elseif ($_POST['do'] === 'download-file') {
-
             header('Content-Type: application/octet-stream');
             header('Content-Transfer-Encoding: Binary');
             header('Content-disposition: attachment; filename="' . basename($_POST['filename']) . '"');
@@ -2849,7 +2847,8 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'file-manager' && $CIDRAM['FE'][
                 '<input type="submit" value="' . $CIDRAM['L10N']->getString('field_ok') . '" class="auto" />';
         }
         $CIDRAM['FE']['FilesData'] .= $CIDRAM['ParseVars'](
-            $CIDRAM['L10N']->Data + $CIDRAM['FE'] + $ThisFile, $CIDRAM['FE']['FilesRow']
+            $CIDRAM['L10N']->Data + $CIDRAM['FE'] + $ThisFile,
+            $CIDRAM['FE']['FilesRow']
         );
     });
 
@@ -2875,7 +2874,6 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'file-manager' && $CIDRAM['FE'][
 
 /** Sections List. */
 elseif ($CIDRAM['QueryVars']['cidram-page'] === 'sections' && $CIDRAM['FE']['Permissions'] === 1) {
-
     if (!$CIDRAM['FE']['ASYNC']) {
 
         /** Page initial prepwork. */
@@ -3423,7 +3421,6 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-test' && $CIDRAM['FE']['Perm
 
 /** IP Tracking. */
 elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-tracking' && $CIDRAM['FE']['Permissions'] === 1) {
-
     $CIDRAM['FE']['TrackingFilter'] = 'cidram-page=ip-tracking';
     $CIDRAM['FE']['TrackingFilterControls'] = '';
     $CIDRAM['StateModified'] = false;
@@ -3491,7 +3488,6 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-tracking' && $CIDRAM['FE']['
     );
 
     if (!$CIDRAM['FE']['ASYNC']) {
-
         uasort($CIDRAM['Tracking'], function ($A, $B) {
             if (empty($A['Time']) || empty($B['Time']) || $A['Time'] === $B['Time']) {
                 return 0;
@@ -3995,7 +3991,6 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'aux' && $CIDRAM['FE']['Permissi
 
         /** Move an auxiliary rule to the top of the list. */
         elseif (isset($_POST['auxT'], $CIDRAM['AuxData'][$_POST['auxT']])) {
-
             $CIDRAM['Split'] = [$_POST['auxT'] => $CIDRAM['AuxData'][$_POST['auxT']]];
             unset($CIDRAM['AuxData'][$_POST['auxT']]);
             $CIDRAM['AuxData'] = array_merge($CIDRAM['Split'], $CIDRAM['AuxData']);
@@ -4011,7 +4006,6 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'aux' && $CIDRAM['FE']['Permissi
 
         /** Move an auxiliary rule to the bottom of the list. */
         elseif (isset($_POST['auxB'], $CIDRAM['AuxData'][$_POST['auxB']])) {
-
             $CIDRAM['Split'] = [$_POST['auxB'] => $CIDRAM['AuxData'][$_POST['auxB']]];
             unset($CIDRAM['AuxData'][$_POST['auxB']]);
             $CIDRAM['AuxData'] = array_merge($CIDRAM['AuxData'], $CIDRAM['Split']);
@@ -4333,9 +4327,13 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'logs' && $CIDRAM['FE']['Permiss
         $CIDRAM['FE']['TextModeSwitchLink'] .= '&text-mode=';
         $CIDRAM['FE']['BlockLink'] .= $CIDRAM['FE']['TextModeSwitchLink'] . $CIDRAM['FE']['TextModeLinks'];
         $CIDRAM['FE']['logfileData'] = $CIDRAM['FE']['TextMode'] ? str_replace(
-            ['<', '>', "\r", "\n"], ['&lt;', '&gt;', '', "<br />\n"], $CIDRAM['FE']['logfileData']
+            ['<', '>', "\r", "\n"],
+            ['&lt;', '&gt;', '', "<br />\n"],
+            $CIDRAM['FE']['logfileData']
         ) : str_replace(
-            ['<', '>', "\r"], ['&lt;', '&gt;', ''], $CIDRAM['FE']['logfileData']
+            ['<', '>', "\r"],
+            ['&lt;', '&gt;', ''],
+            $CIDRAM['FE']['logfileData']
         );
         $CIDRAM['FE']['mod_class_nav'] = ' big';
         $CIDRAM['FE']['mod_class_right'] = ' extend';

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Report orchestrator (last modified: 2020.06.11).
+ * This file: Report orchestrator (last modified: 2020.11.27).
  */
 
 namespace CIDRAM\Core;
@@ -93,9 +93,7 @@ class Reporter
 
                 /** Call handler. */
                 $Handler($Report);
-
             }
-
         }
 
         /** Flush old reports. */

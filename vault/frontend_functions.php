@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2020.11.20).
+ * This file: Front-end functions file (last modified: 2020.11.27).
  */
 
 /**
@@ -457,8 +457,9 @@ $CIDRAM['FileManager-RecursiveList'] = function (string $Base) use (&$CIDRAM): a
                 if (preg_match(
                     '/^(?:.?[BGL]Z.?|7Z|A(CE|LZ|P[KP]|R[CJ]?)?|B([AH]|Z2?)|CAB|DMG|' .
                     'I(CE|SO)|L(HA|Z[HOWX]?)|P(AK|AQ.?|CK|EA)|RZ|S(7Z|EA|EN|FX|IT.?|QX)|' .
-                    'X(P3|Z)|YZ1|Z(IP.?|Z)?|(J|M|PH|R|SH|T|X)AR)$/'
-                , $Ext)) {
+                    'X(P3|Z)|YZ1|Z(IP.?|Z)?|(J|M|PH|R|SH|T|X)AR)$/',
+                    $Ext
+                )) {
                     $Arr[$Key]['CanEdit'] = false;
                     $Arr[$Key]['Icon'] = 'icon=archive';
                 } elseif (preg_match('/^[SDX]?HT[AM]L?$/', $Ext)) {
@@ -483,20 +484,23 @@ $CIDRAM['FileManager-RecursiveList'] = function (string $Base) use (&$CIDRAM): a
                     $Arr[$Key]['CanEdit'] = false;
                     $Arr[$Key]['Icon'] = 'icon=swf';
                 } elseif (preg_match(
-                    '/^(?:BM[2P]|C(D5|GM)|D(IB|W[FG]|XF)|ECW|FITS|GIF|IMG|J(F?IF?|P[2S]|PE?G?2?|XR)|P(BM|CX|DD|GM|IC|N[GMS]|PM|S[DP])|S(ID|V[AG])|TGA|W(BMP?|EBP|MP)|X(CF|BMP))$/'
-                , $Ext)) {
+                    '/^(?:BM[2P]|C(D5|GM)|D(IB|W[FG]|XF)|ECW|FITS|GIF|IMG|J(F?IF?|P[2S]|PE?G?2?|XR)|P(BM|CX|DD|GM|IC|N[GMS]|PM|S[DP])|S(ID|V[AG])|TGA|W(BMP?|EBP|MP)|X(CF|BMP))$/',
+                    $Ext
+                )) {
                     $Arr[$Key]['CanEdit'] = false;
                     $Arr[$Key]['Icon'] = 'icon=image';
                 } elseif (preg_match(
                     '/^(?:H?264|3GP(P2)?|A(M[CV]|VI)|BIK|D(IVX|V5?)|F([4L][CV]|MV)|GIFV|HLV|' .
-                    'M(4V|OV|P4|PE?G[4V]?|KV|VR)|OGM|V(IDEO|OB)|W(EBM|M[FV]3?)|X(WMV|VID))$/'
-                , $Ext)) {
+                    'M(4V|OV|P4|PE?G[4V]?|KV|VR)|OGM|V(IDEO|OB)|W(EBM|M[FV]3?)|X(WMV|VID))$/',
+                    $Ext
+                )) {
                     $Arr[$Key]['CanEdit'] = false;
                     $Arr[$Key]['Icon'] = 'icon=video';
                 } elseif (preg_match(
                     '/^(?:3GA|A(AC|IFF?|SF|U)|CDA|FLAC?|M(P?4A|IDI|KA|P[A23])|OGG|PCM|' .
-                    'R(AM?|M[AX])|SWA|W(AVE?|MA))$/'
-                , $Ext)) {
+                    'R(AM?|M[AX])|SWA|W(AVE?|MA))$/',
+                    $Ext
+                )) {
                     $Arr[$Key]['CanEdit'] = false;
                     $Arr[$Key]['Icon'] = 'icon=audio';
                 } elseif (preg_match('/^(?:MD|NFO|RTF|TXT)$/', $Ext)) {
@@ -1436,94 +1440,6 @@ $CIDRAM['FilterSwitch'] = function (array $Switches, string $Selector, bool &$St
 };
 
 /**
- * Appends test data onto component metadata.
- *
- * @param array $Component The component to append test data onto.
- * @param bool $ReturnState Whether to operate as a function or a procedure.
- * @return bool|null Indicates whether tests have passed, when operating as a function.
- */
-$CIDRAM['AppendTests'] = function (array &$Component, bool $ReturnState = false) use (&$CIDRAM) {
-    $TestData = $CIDRAM['FECacheGet'](
-        $CIDRAM['FE']['Cache'],
-        $CIDRAM['Components']['RemoteMeta'][$Component['ID']]['Tests']
-    );
-    if (!$TestData) {
-        $TestData = $CIDRAM['Request'](
-            $CIDRAM['Components']['RemoteMeta'][$Component['ID']]['Tests']
-        ) ?: '-';
-        $CIDRAM['FECacheAdd'](
-            $CIDRAM['FE']['Cache'],
-            $CIDRAM['FE']['Rebuild'],
-            $CIDRAM['Components']['RemoteMeta'][$Component['ID']]['Tests'],
-            $TestData,
-            $CIDRAM['Now'] + 1800
-        );
-    }
-    if (substr($TestData, 0, 1) === '{' && substr($TestData, -1) === '}') {
-        $TestData = json_decode($TestData, true, 5);
-    }
-    if (!empty($TestData['statuses']) && is_array($TestData['statuses'])) {
-        $TestsTotal = 0;
-        $TestsPassed = 0;
-        $TestDetails = '';
-        foreach ($TestData['statuses'] as $ThisStatus) {
-            if (empty($ThisStatus['context']) || empty($ThisStatus['state'])) {
-                continue;
-            }
-            $TestsTotal++;
-            $StatusHead = '';
-            if ($ThisStatus['state'] === 'success') {
-                if ($TestsPassed !== '?') {
-                    $TestsPassed++;
-                }
-                $StatusHead .= '<span class="txtGn">✔️ ';
-            } elseif ($ThisStatus['state'] === 'pending') {
-                $TestsPassed = '?';
-                $StatusHead .= '<span class="txtOe">❓ ';
-            } else {
-                if ($ReturnState) {
-                    return false;
-                }
-                $StatusHead .= '<span class="txtRd">❌ ';
-            }
-            $StatusHead .= empty($ThisStatus['target_url']) ? $ThisStatus['context'] : (
-                '<a href="' . $ThisStatus['target_url'] . '" rel="noopener noreferrer external">' . $ThisStatus['context'] . '</a>'
-            );
-            if (!$ReturnState) {
-                $CIDRAM['AppendToString']($TestDetails, '<br />', $StatusHead . '</span>');
-            }
-        }
-        if (!$ReturnState) {
-            if ($TestsTotal === $TestsPassed) {
-                $TestClr = 'txtGn';
-            } else {
-                $TestClr = ($TestsPassed === '?' || $TestsPassed >= ($TestsTotal / 2)) ? 'txtOe' : 'txtRd';
-            }
-            $TestsTotal = sprintf(
-                '<span class="%1$s">%2$s/%3$s</span><br /><span id="%4$s-showtests">' .
-                '<input class="auto" type="button" onclick="javascript:showid(\'%4$s-tests\');hideid(\'%4$s-showtests\');showid(\'%4$s-hidetests\')" value="+" />' .
-                '</span><span id="%4$s-hidetests" style="display:none">' .
-                '<input class="auto" type="button" onclick="javascript:hideid(\'%4$s-tests\');showid(\'%4$s-showtests\');hideid(\'%4$s-hidetests\')" value="-" />' .
-                '</span><span id="%4$s-tests" style="display:none"><br />%5$s</span>',
-                $TestClr,
-                ($TestsPassed === '?' ? '?' : $CIDRAM['NumberFormatter']->format($TestsPassed)),
-                $CIDRAM['NumberFormatter']->format($TestsTotal),
-                $Component['ID'],
-                $TestDetails
-            );
-            $CIDRAM['AppendToString'](
-                $Component['StatusOptions'],
-                '<hr />',
-                '<div class="s">' . $CIDRAM['L10N']->getString('label_tests') . ' ' . $TestsTotal
-            );
-        }
-    }
-    if ($ReturnState) {
-        return true;
-    }
-};
-
-/**
  * Traversal detection.
  *
  * @param string $Path The path to check for traversal.
@@ -1686,9 +1602,7 @@ $CIDRAM['UpdatesHandler-Update'] = function ($ID) use (&$CIDRAM) {
             ($NewMeta = $CIDRAM['Components']['Meta'][$ThisTarget]['RemoteData']) &&
             preg_match("~(\n" . preg_quote($ThisTarget) . ":?)(\n [^\n]*)*\n~i", $NewMeta, $NewMetaMatches) &&
             ($NewMetaMatches = $NewMetaMatches[0]) &&
-            (!$CIDRAM['FE']['CronMode'] || empty(
-                $CIDRAM['Components']['Meta'][$ThisTarget]['Tests']
-            ) || $CIDRAM['AppendTests']($CIDRAM['Components']['Meta'][$ThisTarget], true))
+            !$CIDRAM['FE']['CronMode']
         ) {
             $Congruents[$ThisReannotate] = $NewMeta;
             $CIDRAM['Arrayify']($CIDRAM['Components']['RemoteMeta'][$ThisTarget]['Files']);
@@ -1745,9 +1659,9 @@ $CIDRAM['UpdatesHandler-Update'] = function ($ID) use (&$CIDRAM) {
                     continue;
                 }
                 if (
-                    strtolower(substr(
-                        $CIDRAM['Components']['RemoteMeta'][$ThisTarget]['Files']['From'][$Iterate], -2
-                    )) === 'gz' &&
+                    strtolower(
+                        substr($CIDRAM['Components']['RemoteMeta'][$ThisTarget]['Files']['From'][$Iterate], -2)
+                    ) === 'gz' &&
                     strtolower(substr($ThisFileName, -2)) !== 'gz' &&
                     substr($ThisFile, 0, 2) === "\x1f\x8b"
                 ) {
@@ -1991,10 +1905,9 @@ $CIDRAM['UpdatesHandler-Activate'] = function (string $ID) use (&$CIDRAM) {
     ];
     $InUse = $CIDRAM['ComponentFunctionUpdatePrep']($ID);
     $CIDRAM['FE']['state_msg'] .= '<code>' . $ID . '</code> – ';
-    if (
-        empty($InUse) &&
-        !empty($CIDRAM['Components']['Meta'][$ID]['Files']['To']) && (
-            !empty($CIDRAM['Components']['Meta'][$ID]['Used with']) || !empty($CIDRAM['Components']['Meta'][$ID]['Extended Description'])
+    if (empty($InUse) && !empty($CIDRAM['Components']['Meta'][$ID]['Files']['To']) && (
+        !empty($CIDRAM['Components']['Meta'][$ID]['Used with']) ||
+        !empty($CIDRAM['Components']['Meta'][$ID]['Extended Description'])
     )) {
         $UsedWith = empty($CIDRAM['Components']['Meta'][$ID]['Used with']) ? '' : $CIDRAM['Components']['Meta'][$ID]['Used with'];
         $Description = empty($CIDRAM['Components']['Meta'][$ID]['Extended Description']) ? '' : $CIDRAM['Components']['Meta'][$ID]['Extended Description'];
@@ -3277,39 +3190,56 @@ $CIDRAM['AuxGenerateFEData'] = function (bool $Mode = false) use (&$CIDRAM): str
             /** Rule begin and rule name. */
             $Output .= sprintf(
                 '%1$s<div class="%2$s"><dl><dt class="s">%4$s</dt><dd><input type="text" name="ruleName[%5$s]" class="f400" value="%3$s" /></dd></dl>',
-                "\n      ", $StyleClass, empty($Name) ? '' : $Name, $CIDRAM['L10N']->getString('field_new_name'), $Current
+                "\n      ",
+                $StyleClass,
+                empty($Name) ? '' : $Name,
+                $CIDRAM['L10N']->getString('field_new_name'),
+                $Current
             );
 
             /** Set rule priority (rearranges the rules). */
             $Output .= sprintf(
                 '%1$s<dl><dt class="s">%3$s</dt><dd><input type="text" name="rulePriority[%2$s]" class="f400" value="%2$s" /></dd></dl>',
-                "\n      ", $Current, $CIDRAM['L10N']->getString('field_execution_order')
+                "\n      ",
+                $Current,
+                $CIDRAM['L10N']->getString('field_execution_order')
             );
 
             /** Rule reason. */
             $Output .= sprintf(
                 '<dl><dt class="s" id="%4$sruleReasonDt">%2$s</dt><dd id="%4$sruleReasonDd"><input type="text" name="ruleReason[%3$s]" class="f400" value="%1$s" /></dd></dl>',
-                isset($Data['Reason']) ? $Data['Reason'] : '', $CIDRAM['L10N']->getString('label_aux_reason'), $Current, $RuleClass
+                isset($Data['Reason']) ? $Data['Reason'] : '',
+                $CIDRAM['L10N']->getString('label_aux_reason'),
+                $Current,
+                $RuleClass
             );
 
             /** Redirect target. */
             $Output .= sprintf(
                 '<dl><dt class="s" id="%4$sruleTargetDt">%2$s</dt><dd id="%4$sruleTargetDd"><input type="text" name="ruleTarget[%3$s]" class="f400" value="%1$s" /></dd></dl>',
-                isset($Data['Target']) ? $Data['Target'] : '', $CIDRAM['L10N']->getString('label_aux_target'), $Current, $RuleClass
+                isset($Data['Target']) ? $Data['Target'] : '',
+                $CIDRAM['L10N']->getString('label_aux_target'),
+                $Current,
+                $RuleClass
             );
 
             /** Status code override. */
             $Output .= sprintf('<dl><dt class="s">%1$s</dt><dd>', $CIDRAM['L10N']->getString('label_aux_http_status_code_override'));
             $Output .= sprintf(
                 '<span id="%1$sstatGroupX"><input type="radio" class="auto" id="%1$sstatusCodeX" name="statusCode[%3$s]" value="0" %2$s/> 🗙</span>',
-                $RuleClass, empty($Data['Status Code']) ? 'checked="true" ' : '', $Current
+                $RuleClass,
+                empty($Data['Status Code']) ? 'checked="true" ' : '',
+                $Current
             );
             foreach ([['3', ['301', '307', '308']], ['45', ['403', '410', '418', '451', '503']]] as $StatGroup) {
                 $Output .= sprintf('<span id="%1$sstatGroup%2$s">', $RuleClass, $StatGroup[0]);
                 foreach ($StatGroup[1] as $StatusCode) {
                     $Output .= sprintf(
                         '<input type="radio" class="auto" id="%1$sstatusCode%2$s" name="statusCode[%4$s]" value="%2$s" %3$s/> %2$s',
-                        $RuleClass, $StatusCode, isset($Data['Status Code']) && $Data['Status Code'] === $StatusCode ? ' checked="true"' : '', $Current
+                        $RuleClass,
+                        $StatusCode,
+                        isset($Data['Status Code']) && $Data['Status Code'] === $StatusCode ? ' checked="true"' : '',
+                        $Current
                     );
                 }
                 $Output .= '</span>';
@@ -3331,7 +3261,9 @@ $CIDRAM['AuxGenerateFEData'] = function (bool $Mode = false) use (&$CIDRAM): str
             ] as $MenuOption) {
                 $Output .= sprintf(
                     '<option value="%1$s"%2$s>%3$s</option>',
-                    $MenuOption[0], empty($Data[$MenuOption[2]]) ? '' : ' selected', $CIDRAM['FE'][$MenuOption[1]]
+                    $MenuOption[0],
+                    empty($Data[$MenuOption[2]]) ? '' : ' selected',
+                    $CIDRAM['FE'][$MenuOption[1]]
                 );
                 if (!empty($Data[$MenuOption[2]])) {
                     $ConditionsFrom = $MenuOption[2];
@@ -3340,7 +3272,8 @@ $CIDRAM['AuxGenerateFEData'] = function (bool $Mode = false) use (&$CIDRAM): str
             }
             $Output .= sprintf(
                 '</select><input type="button" onclick="javascript:addCondition(\'%2$s\')" value="%1$s" class="auto" /></dt>',
-                $CIDRAM['L10N']->getString('field_add_more_conditions'), $Current
+                $CIDRAM['L10N']->getString('field_add_more_conditions'),
+                $Current
             );
             $Output .= sprintf('<dd id="%1$sconditions">', $Current);
 
@@ -3348,7 +3281,7 @@ $CIDRAM['AuxGenerateFEData'] = function (bool $Mode = false) use (&$CIDRAM): str
             if ($ConditionsFrom && is_array($Data[$ConditionsFrom])) {
                 $Iteration = 0;
                 $ConditionFormTemplate =
-                    "\n<div>" . 
+                    "\n<div>" .
                     '<select name="conSourceType[%1$s][%2$s]" class="auto">%3$s</select>' .
                     '<select name="conIfOrNot[%1$s][%2$s]" class="auto"><option value="If"%6$s>=</option><option value="Not"%7$s>≠</option></select>' .
                     '<input type="text" name="conSourceValue[%1$s][%2$s]" placeholder="%4$s" class="f400" value="%5$s" /></div>';
@@ -3467,8 +3400,12 @@ $CIDRAM['AuxGenerateFEData'] = function (bool $Mode = false) use (&$CIDRAM): str
 
             /** Begin generating rule output. */
             $Output .= sprintf(
-                '%1$s<li class="%2$s"><span class="comCat" style="cursor:pointer"><span class="s">%3$s</span></span>%4$s%1$s<br /><br /><ul class="comSub">'
-            , "\n        ", $RuleClass, $Name, $Options);
+                '%1$s<li class="%2$s"><span class="comCat" style="cursor:pointer"><span class="s">%3$s</span></span>%4$s%1$s<br /><br /><ul class="comSub">',
+                "\n        ",
+                $RuleClass,
+                $Name,
+                $Options
+            );
 
             /** Additional details about the rule to print to the page (e.g., detailed block reason). */
             foreach ([
@@ -3521,8 +3458,10 @@ $CIDRAM['AuxGenerateFEData'] = function (bool $Mode = false) use (&$CIDRAM): str
 
                 /** Show the appropriate label for this action. */
                 $Output .= sprintf(
-                    '%1$s<li>%1$s  <dl><dt class="s">%2$s</dt>'
-                , "\n            ", $CIDRAM['FE'][$Action[1]]);
+                    '%1$s<li>%1$s  <dl><dt class="s">%2$s</dt>',
+                    "\n            ",
+                    $CIDRAM['FE'][$Action[1]]
+                );
 
                 /** List all "not equals" conditions . */
                 if (!empty($Data[$Action[0]]['But not if matches'])) {
@@ -4162,11 +4101,11 @@ $CIDRAM['Matrix-Create'] = function (string &$Source, string $Destination = '', 
     imageline($CIDRAM['Matrix-Image'], 284, 307, 543, 307, 16777215);
 
     imagestring($CIDRAM['Matrix-Image'], 2, 12, 2, 'CIDRAM signature file analysis (image generated ' . date('Y.m.d', time()) . ').', 16777215);
-    imagefilledrectangle($CIDRAM['Matrix-Image'] , 12, 14, 22, 24, 16711680);
+    imagefilledrectangle($CIDRAM['Matrix-Image'], 12, 14, 22, 24, 16711680);
     imagestring($CIDRAM['Matrix-Image'], 2, 24, 12, '"Deny" signatures', 16711680);
-    imagefilledrectangle($CIDRAM['Matrix-Image'] , 130, 14, 140, 24, 65280);
+    imagefilledrectangle($CIDRAM['Matrix-Image'], 130, 14, 140, 24, 65280);
     imagestring($CIDRAM['Matrix-Image'], 2, 142, 12, '"Whitelist" + "Greylist" signatures', 65280);
-    imagefilledrectangle($CIDRAM['Matrix-Image'] , 356, 14, 366, 24, 255);
+    imagefilledrectangle($CIDRAM['Matrix-Image'], 356, 14, 366, 24, 255);
     imagestring($CIDRAM['Matrix-Image'], 2, 368, 12, '"Run" signatures', 255);
 
     imagestring($CIDRAM['Matrix-Image'], 2, 14, 36, '< 0.0.0.0/8        IPv4      255.0.0.0/8 >', 16777215);

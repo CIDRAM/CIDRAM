@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Output generator (last modified: 2020.07.31).
+ * This file: Output generator (last modified: 2020.11.27).
  */
 
 /** Initialise cache. */
@@ -719,21 +719,17 @@ if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
     if (!empty($CIDRAM['Banned']) && $CIDRAM['Config']['general']['ban_override'] > 400 && (
         $CIDRAM['ThisStatusHTTP'] = $CIDRAM['GetStatusHTTP']($CIDRAM['Config']['general']['ban_override'])
     )) {
-
         $CIDRAM['errCode'] = $CIDRAM['Config']['general']['ban_override'];
         header('HTTP/1.0 ' . $CIDRAM['errCode'] . ' ' . $CIDRAM['ThisStatusHTTP']);
         header('HTTP/1.1 ' . $CIDRAM['errCode'] . ' ' . $CIDRAM['ThisStatusHTTP']);
         header('Status: ' . $CIDRAM['errCode'] . ' ' . $CIDRAM['ThisStatusHTTP']);
         $CIDRAM['HTML'] = '';
-
     } elseif (!empty($CIDRAM['RL_Status']) && ($CIDRAM['BlockInfo']['SignatureCount'] * 1) === 1) {
-
         header('HTTP/1.0 429 ' . $CIDRAM['RL_Status']);
         header('HTTP/1.1 429 ' . $CIDRAM['RL_Status']);
         header('Status: 429 ' . $CIDRAM['RL_Status']);
         header('Retry-After: ' . floor($CIDRAM['Config']['rate_limiting']['allowance_period'] * 3600));
         $CIDRAM['HTML'] = '';
-
     } elseif (!$CIDRAM['Config']['general']['silent_mode']) {
 
         /** Fetch appropriate status code based on either "forbid_on_block" or "Aux Status Code". */

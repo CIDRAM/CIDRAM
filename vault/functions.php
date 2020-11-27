@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2020.09.24).
+ * This file: Functions file (last modified: 2020.11.27).
  */
 
 /** Autoloader for CIDRAM classes. */
@@ -175,7 +175,8 @@ $CIDRAM['ExpandIPv6'] = function (string $Addr, bool $ValidateOnly = false, int 
         '2[0-4]\d)|(\d{1,2}))\b))|([\da-f]{1,4}\:\:([\da-f]{1,4}\:){0,5}[\da-f]{1' .
         ',4})|(\:\:([\da-f]{1,4}\:){0,6}[\da-f]{1,4})|(([\da-f]{1,4}\:){1,7}\:))$' .
         '/i',
-    $Addr)) {
+        $Addr
+    )) {
         return false;
     }
 
@@ -806,7 +807,11 @@ $CIDRAM['Request'] = function (string $URI, $Params = [], int $Timeout = -1, arr
 
         /** Used for debugging. */
         $CIDRAM['DebugMessage'](sprintf(
-            "\r%s - %s - %s - %s\n", $Post ? 'POST' : 'GET', $URI, $Info['http_code'], (floor($Time * 100) / 100) . 's'
+            "\r%s - %s - %s - %s\n",
+            $Post ? 'POST' : 'GET',
+            $URI,
+            $Info['http_code'],
+            (floor($Time * 100) / 100) . 's'
         ));
 
         /** Most recent HTTP code flag. */
@@ -821,7 +826,11 @@ $CIDRAM['Request'] = function (string $URI, $Params = [], int $Timeout = -1, arr
 
         /** Used for debugging. */
         $CIDRAM['DebugMessage'](sprintf(
-            "\r%s - %s - %s - %s\n", $Post ? 'POST' : 'GET', $URI, 200, (floor($Time * 100) / 100) . 's'
+            "\r%s - %s - %s - %s\n",
+            $Post ? 'POST' : 'GET',
+            $URI,
+            200,
+            (floor($Time * 100) / 100) . 's'
         ));
 
         /** Most recent HTTP code flag. */
@@ -864,7 +873,9 @@ $CIDRAM['DNS-Reverse'] = function (string $Addr, string $DNS = '', int $Timeout 
     if (strpos($Addr, '.') !== false && strpos($Addr, ':') === false && preg_match(
         '/^([01]?\d{1,2}|2[0-4]\d|25[0-5])\.([01]?\d{1,2}|2[0-4]\d|25[0-5])' .
         '\.([01]?\d{1,2}|2[0-4]\d|25[0-5])\.([01]?\d{1,2}|2[0-4]\d|25[0-5])$/i',
-    $Addr, $Octets)) {
+        $Addr,
+        $Octets
+    )) {
         $Lookup =
             chr(strlen($Octets[4])) . $Octets[4] .
             chr(strlen($Octets[3])) . $Octets[3] .

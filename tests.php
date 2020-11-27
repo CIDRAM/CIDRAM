@@ -17,7 +17,7 @@ define('CIDRAM', true);
 // Global variable for all our closures, plus vault path declaration.
 $CIDRAM = ['Vault' => __DIR__ . DIRECTORY_SEPARATOR . 'vault' . DIRECTORY_SEPARATOR];
 
-// Fetch phpMussel configuration.
+// Fetch CIDRAM configuration.
 $CIDRAM_Config = parse_ini_file($CIDRAM['Vault'] . 'config.ini.RenameMe', true);
 $CIDRAM_Config['general']['disable_cli'] = true;
 $CIDRAM_Config['supplementary_cache_options']['enable_apcu'] = true;

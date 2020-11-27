@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6.dat
 
-# Version: 2020.329.404
-# Last modified: 2020.11.25
+# Version: 2020.331.542
+# Last modified: 2020.11.27
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage, i.e., with ignore.dat, with reCAPTCHA, with "extended rules" (default bypasses): « [x]Low [ ]Medium [ ]High »
@@ -98,9 +98,10 @@ Tag: Global Frag Networks
 # I don't anticipate ever removing these listings. Have been blocking them due
 # to all kinds of unwanted traffic of all descriptions from their network since
 # many years before CIDRAM existed.
-# Stop Forum Spam (SFS) listings: 367.
-# Updated: 2020.05.29
+# Stop Forum Spam (SFS) listings: 259.
+# Updated: 2020.11.27
 
+2600:bc00::/24 Deny Cloud
 2605:7280::/32 Deny Cloud
 Origin: US
 Tag: PEG TECH INC
@@ -2104,10 +2105,11 @@ Tag: Zenlayer Inc
 # ASN 30475 ("Handy Networks, LLC").
 # Server farm and a source of spam and other unwanted activity.
 # (Can omit anything under 44../8; clean).
-# Stop Forum Spam (SFS) listings: 235.
-# Updated: 2018.07.09 / Checked: 2020.05.29
+# Stop Forum Spam (SFS) listings: 312.
+# Updated: 2020.11.27
 
 2602:fff6:d::/48 Deny Cloud
+2603:f010::/29 Deny Cloud
 2606:6680:6::/48 Deny Cloud
 2607:fc88::/32 Deny Cloud
 Origin: US
@@ -3005,11 +3007,12 @@ Tag: NForce Entertainment
 
 
 # ASN 55990 ("Huawei Cloud Service data center").
-# Stop Forum Spam (SFS) listings: 28.
-# Updated: 2018.12.06 / Checked: 2020.05.29
+# Stop Forum Spam (SFS) listings: 51.
+# Updated: 2020.11.27
 
 2407:c080::/36 Deny Cloud
 2407:c080:1000::/37 Deny Cloud
+2407:c080:7000::/47 Deny Cloud
 Origin: CN
 Tag: Huawei Cloud Service
 

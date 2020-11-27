@@ -1,8 +1,8 @@
 # IPv4 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv4_isps.dat
 
-# Version: 2020.329.404
-# Last modified: 2020.11.25
+# Version: 2020.331.542
+# Last modified: 2020.11.27
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage, i.e., with ignore.dat, with reCAPTCHA, with "extended rules" (default bypasses): « [ ]Low [x]Medium [ ]High »
@@ -495,45 +495,61 @@ Tag: Hetzner Online GmbH
 
 # ASN 51559 ("Server Internet Bilisim ve Bilgisayar Hizmetleri").
 # (Mark any LV announces as "Cloud" when updating).
-# Stop Forum Spam (SFS) listings: 87.
-# Updated: 2020.05.29
+# Stop Forum Spam (SFS) listings: 204.
+# Updated: 2020.11.27
 
-5.182.232.0/22 Deny Generic
+45.131.16.0/24 Deny Generic
+45.131.19.0/24 Deny Generic
 Origin: AT
+83.150.219.0/24 Deny Generic
+Origin: BG
+45.90.220.0/24 Deny Generic
+185.111.156.0/24 Deny Generic
+185.111.159.0/24 Deny Generic
+185.207.251.0/24 Deny Generic
+Origin: DE
+185.100.212.0/23 Deny Generic
+Origin: GB
 5.180.45.0/24 Deny Cloud
+213.21.228.0/24 Deny Cloud
+213.21.233.0/24 Deny Cloud
+213.21.237.0/24 Deny Cloud
+213.21.238.0/24 Deny Cloud
 Origin: LV
+45.81.149.0/24 Deny Generic
+185.199.227.0/24 Deny Generic
+Origin: NL
+45.15.220.0/24 Deny Generic
 212.22.69.0/24 Deny Generic
 Origin: RU
+113.20.158.0/23 Deny Generic
+Origin: SG
 31.192.208.0/21 Deny Generic
+45.10.149.0/24 Deny Generic
 45.11.97.0/24 Deny Generic
-45.84.188.0/24 Deny Generic
-45.84.190.0/24 Deny Generic
 45.133.37.0/24 Deny Generic
+45.133.39.0/24 Deny Generic
+45.139.202.0/24 Deny Generic
 45.139.220.0/24 Deny Generic
-45.143.96.0/24 Deny Generic
-45.143.99.0/24 Deny Generic
+45.139.223.0/24 Deny Generic
+45.147.19.0/24 Deny Generic
 45.158.12.0/24 Deny Generic
 88.214.43.0/24 Deny Generic
 89.43.28.0/22 Deny Generic
 89.43.64.0/22 Deny Generic
-89.252.128.0/22 Deny Generic
-89.252.132.0/24 Deny Generic
-89.252.134.0/23 Deny Generic
-89.252.136.0/21 Deny Generic
-89.252.145.0/24 Deny Generic
-89.252.146.0/23 Deny Generic
+89.252.128.0/20 Deny Generic
+89.252.144.0/22 Deny Generic
 89.252.148.0/23 Deny Generic
 89.252.150.0/24 Deny Generic
+89.252.153.0/24 Deny Generic
 89.252.155.0/24 Deny Generic
-89.252.156.0/22 Deny Generic
-89.252.160.0/21 Deny Generic
-89.252.168.0/23 Deny Generic
-89.252.171.0/24 Deny Generic
-89.252.172.0/22 Deny Generic
+89.252.156.0/23 Deny Generic
+89.252.158.0/24 Deny Generic
+89.252.160.0/20 Deny Generic
 89.252.176.0/22 Deny Generic
 89.252.180.0/23 Deny Generic
 89.252.189.0/24 Deny Generic
-89.252.190.0/24 Deny Generic
+91.151.94.0/23 Deny Generic
 91.227.4.0/23 Deny Generic
 91.227.6.0/24 Deny Generic
 91.229.35.0/24 Deny Generic
@@ -543,10 +559,10 @@ Origin: RU
 94.102.0.0/21 Deny Generic
 94.102.8.0/23 Deny Generic
 94.102.11.0/24 Deny Generic
-94.102.12.0/23 Deny Generic
-94.102.15.0/24 Deny Generic
+94.102.12.0/22 Deny Generic
 95.173.160.0/22 Deny Generic
 95.173.164.0/23 Deny Generic
+95.173.166.0/24 Deny Generic
 95.173.168.0/22 Deny Generic
 95.173.172.0/24 Deny Generic
 95.173.177.0/24 Deny Generic
@@ -556,19 +572,28 @@ Origin: RU
 159.253.32.0/20 Deny Generic
 185.83.144.0/22 Deny Generic
 185.95.84.0/22 Deny Generic
-185.106.208.0/22 Deny Generic
-185.126.216.0/22 Deny Generic
-185.149.100.0/22 Deny Generic
-185.169.183.0/24 Deny Generic
+185.126.217.0/24 Deny Generic
+185.126.219.0/24 Deny Generic
+185.148.240.0/24 Deny Generic
+185.148.242.0/24 Deny Generic
 185.171.88.0/22 Deny Generic
-185.174.21.0/24 Deny Generic
-185.174.23.0/24 Deny Generic
 185.174.28.0/23 Deny Generic
 185.174.30.0/24 Deny Generic
-193.169.238.0/24 Deny Generic
+194.5.232.0/24 Deny Generic
+194.5.236.0/23 Deny Generic
 213.238.179.0/24 Deny Generic
 213.238.181.0/24 Deny Generic
+213.238.187.0/24 Deny Generic
 Origin: TR
+66.225.220.0/23 Deny Generic
+75.102.8.0/23 Deny Generic
+193.135.157.0/24 Deny Generic
+199.101.196.0/23 Deny Generic
+205.234.146.0/24 Deny Generic
+205.234.161.0/24 Deny Generic
+205.234.171.0/24 Deny Generic
+205.234.189.0/24 Deny Generic
+Origin: US
 Tag: AS51559
 ---
 recaptcha:
@@ -12074,18 +12099,34 @@ recaptcha:
 
 # ASN 41164 ("Telia Norge AS").
 # Domestic ISP from Norway with some limited amount of spamming (marked as
-# "Spam") + caught by security honeypots (marked as "Malware").
-# Stop Forum Spam (SFS) listings: 284.
-# Updated: 2020.05.29
+# "Spam") + caught by security honeypots (marked as "Malware"). Mark US
+# ranges as "Cloud" when updating.
+# Stop Forum Spam (SFS) listings: 270.
+# Updated: 2020.11.27
 
+46.212.140.103/32 Deny Spam
+46.212.216.51/32 Deny Spam
 84.208.62.38/32 Deny Malware
-84.208.97.190/32 Deny Spam
-84.209.63.124/32 Deny Spam
+84.208.143.234/32 Deny Spam
+84.208.158.18/32 Deny Spam
+84.208.198.239/32 Deny Spam
+84.209.61.235/32 Deny Spam
 84.209.130.200/32 Deny Spam
+84.209.137.138/32 Deny Spam
+84.209.139.0/32 Deny Spam
 84.209.141.235/32 Deny Spam
-84.210.234.105/32 Deny Malware
-84.214.150.146/32 Deny Spam
+84.209.162.207/32 Deny Spam
+84.209.190.197/32 Deny Spam
+84.211.19.255/32 Deny Spam
+84.213.72.230/32 Deny Spam
+84.214.240.45/32 Deny Spam
+84.215.226.7/32 Deny Spam
 Origin: NO
+23.5.48.0/20 Deny Cloud
+96.6.144.0/20 Deny Cloud
+173.222.240.0/22 Deny Cloud
+184.28.232.0/23 Deny Cloud
+Origin: US
 Tag: Telia Norge AS
 ---
 recaptcha:
@@ -12095,42 +12136,45 @@ recaptcha:
 # ASN 20115 ("Charter Communications").
 # Domestic ISP from the United States with some limited amount of spamming
 # (marked as "Spam") + caught by security honeypots (marked as "Malware").
-# %Listed, abuseat.org (CBL-Listed): 0.36%.
-# Stop Forum Spam (SFS) listings: 1,305.
-# Updated: 2020.05.29
+# %Listed, abuseat.org (CBL-Listed): 0.91%.
+# Stop Forum Spam (SFS) listings: 1,948.
+# Updated: 2020.11.27
 
-24.107.120.217/32 Deny Spam
-24.107.216.210/32 Deny Spam
-24.176.128.219/32 Deny Spam
+24.107.51.96/32 Deny Spam
+24.176.52.62/32 Deny Spam
 24.181.205.130/32 Deny Spam
-24.216.185.106/32 Deny Spam
-24.217.184.216/32 Deny Spam
-47.5.140.10/32 Deny Spam
-47.7.118.63/32 Deny Spam
-47.27.233.134/32 Deny Spam
-47.28.40.134/32 Deny Spam
-47.35.159.213/32 Deny Spam
-47.36.21.112/32 Deny Spam
-47.37.158.128/32 Deny Spam
-47.38.9.181/32 Deny Spam
-47.49.12.168/32 Deny Spam
+24.241.56.137/32 Deny Spam
+24.241.212.44/32 Deny Spam
+47.13.1.163/32 Deny Spam
+47.13.172.230/32 Deny Spam
+47.32.148.56/32 Deny Spam
+47.34.171.225/32 Deny Spam
+47.35.41.6/32 Deny Spam
+47.36.204.46/32 Deny Spam
+47.49.12.0/24 Deny Spam
 47.49.147.253/32 Deny Spam
+47.49.171.19/32 Deny Spam
 47.49.232.14/32 Deny Spam
-47.226.139.25/32 Deny Spam
-66.169.230.237/32 Deny Spam
-66.188.66.89/32 Deny Spam
-66.189.239.230/32 Deny Spam
-66.190.69.118/32 Deny Spam
-66.215.44.101/32 Deny Spam
-68.114.250.88/32 Deny Spam
-71.81.84.71/32 Deny Spam
+68.114.48.149/32 Deny Spam
+68.119.147.24/32 Deny Spam
+71.14.48.162/32 Deny Spam
+71.80.110.112/32 Deny Spam
 71.81.205.57/32 Deny Spam
 71.85.117.51/32 Deny Malware
-96.40.244.89/32 Deny Spam
-96.41.95.100/32 Deny Spam
-131.93.2.201/32 Deny Spam
+75.139.44.98/32 Deny Spam
+75.139.151.168/32 Deny Spam
+75.141.248.131/32 Deny Spam
+96.33.79.64/32 Deny Spam
+96.41.252.237/32 Deny Spam
+97.85.35.138/32 Deny Spam
+97.85.208.2/32 Deny Spam
+97.94.7.224/32 Deny Spam
+104.159.146.47/32 Deny Spam
+131.150.255.135/32 Deny Spam
+138.229.222.228/32 Deny Spam
 172.221.14.27/32 Deny Spam
-174.83.137.195/32 Deny Spam
+172.221.131.155/32 Deny Spam
+174.85.88.21/32 Deny Spam
 Origin: US
 Tag: Charter Communications
 ---
@@ -13378,8 +13422,8 @@ recaptcha:
 
 # ASN 9416 ("Hoshin Multimedia Center Inc").
 # Taiwanese ISP. Some IPs here caught attacking honeypots.
-# Stop Forum Spam (SFS) listings: 30.
-# Updated: 2020.05.29
+# Stop Forum Spam (SFS) listings: 10.
+# Updated: 2020.05.29 / Checked: 2020.11.27
 
 111.185.171.0/24 Deny Malware
 Origin: TW

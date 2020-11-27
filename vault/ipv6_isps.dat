@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_isps.dat
 
-# Version: 2020.329.404
-# Last modified: 2020.11.25
+# Version: 2020.331.542
+# Last modified: 2020.11.27
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage, i.e., with ignore.dat, with reCAPTCHA, with "extended rules" (default bypasses): « [ ]Low [x]Medium [ ]High »
@@ -89,8 +89,8 @@ Tag: Hetzner Online GmbH
 
 # ASN 51559 ("Server Internet Bilisim ve Bilgisayar Hizmetleri").
 # (Mark any LV announces as "Cloud" when updating).
-# Stop Forum Spam (SFS) listings: 87.
-# Updated: 2020.05.29
+# Stop Forum Spam (SFS) listings: 204.
+# Updated: 2020.05.29 / Checked: 2020.11.27
 
 2a03:2100::/44 Deny Generic
 2a03:2100:10::/48 Deny Generic
@@ -2126,14 +2126,13 @@ recaptcha:
 # ASN 20115 ("Charter Communications").
 # Domestic ISP from the United States with some limited amount of spamming
 # (marked as "Spam") + caught by security honeypots (marked as "Malware").
-# %Listed, abuseat.org (CBL-Listed): 0.36%.
-# Stop Forum Spam (SFS) listings: 1,305.
-# Updated: 2020.05.29
+# %Listed, abuseat.org (CBL-Listed): 0.91%.
+# Stop Forum Spam (SFS) listings: 1,948.
+# Updated: 2020.11.27
 
-2600:6c44:4000:95::/64 Deny Spam
+2600:6c4a:4c7f:a071::/64 Deny Spam
 2600:6c4e:1200:f5::/64 Deny Spam
-2600:6c55:7900:3b12::/64 Deny Spam
-2600:6c55:7b80:3d24::/64 Deny Spam
+2600:6c52:7d80:16::/64 Deny Spam
 Origin: US
 Tag: Charter Communications
 ---

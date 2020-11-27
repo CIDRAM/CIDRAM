@@ -16,11 +16,10 @@
         "ext-pcre": "*"
     },
     "suggest": {
-        "php": ">=7.2.0 (this package performs significantly better with PHP >= 7.2.0).",
+        "ext-apcu": "*",
         "ext-curl": "*"
     },
-    "require-dev": {
-        "codeception/codeception": "^2.3",
-        "symfony/event-dispatcher": "3.4.28"
+    "scripts": {
+        "test": "@php tests.php"
     }
 }

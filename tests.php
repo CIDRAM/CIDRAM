@@ -1,4 +1,11 @@
 <?php
+/**
+ * This file is a part of the CIDRAM package.
+ * Homepage: https://cidram.github.io/
+ *
+ * CIDRAM COPYRIGHT 2016 and beyond by Caleb Mazalevskis (Maikuolan).
+ */
+
 // Prevent running tests outside of Composer (if the package is deployed
 // somewhere live with this file still intact, useful to prevent hammering and
 // cycles being needlessly wasted).

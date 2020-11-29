@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2020.11.27).
+ * This file: Front-end handler (last modified: 2020.11.29).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -2599,7 +2599,6 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'file-manager' && $CIDRAM['FE'][
         is_readable($CIDRAM['Vault'] . $_POST['filename']) &&
         $CIDRAM['FileManager-PathSecurityCheck']($_POST['filename'])
     ) {
-
         /** Delete a file. */
         if ($_POST['do'] === 'delete-file') {
             if (is_dir($CIDRAM['Vault'] . $_POST['filename'])) {
@@ -2617,9 +2616,10 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'file-manager' && $CIDRAM['FE'][
 
                 $CIDRAM['FE']['state_msg'] = $CIDRAM['L10N']->getString('response_file_deleted');
             }
+        }
 
-            /** Rename a file. */
-        } elseif ($_POST['do'] === 'rename-file' && isset($_POST['filename'])) {
+        /** Rename a file. */
+        if ($_POST['do'] === 'rename-file' && isset($_POST['filename'])) {
             if (isset($_POST['filename_new'])) {
 
                 /** Check whether safe. */
@@ -2688,9 +2688,10 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'file-manager' && $CIDRAM['FE'][
                 echo $CIDRAM['SendOutput']();
                 die;
             }
+        }
 
-            /** Edit a file. */
-        } elseif ($_POST['do'] === 'edit-file') {
+        /** Edit a file. */
+        if ($_POST['do'] === 'edit-file') {
             if (isset($_POST['content'])) {
                 $_POST['content'] = str_replace("\r", '', $_POST['content']);
                 $CIDRAM['OldData'] = $CIDRAM['ReadFile']($CIDRAM['Vault'] . $_POST['filename']);
@@ -2718,9 +2719,10 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'file-manager' && $CIDRAM['FE'][
                 echo $CIDRAM['SendOutput']();
                 die;
             }
+        }
 
-            /** Download a file. */
-        } elseif ($_POST['do'] === 'download-file') {
+        /** Download a file. */
+        if ($_POST['do'] === 'download-file') {
             header('Content-Type: application/octet-stream');
             header('Content-Transfer-Encoding: Binary');
             header('Content-disposition: attachment; filename="' . basename($_POST['filename']) . '"');

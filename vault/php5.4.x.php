@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Polyfills for PHP 5.4.X (last modified: 2020.11.27).
+ * This file: Polyfills for PHP 5.4.X (last modified: 2020.11.29).
  */
 
 if (!defined('PASSWORD_BCRYPT')) {
@@ -23,7 +23,6 @@ if (!function_exists('password_hash')) {
     function password_hash($Password, $Algo, array $Options = [])
     {
         $Cost = empty($Options['cost']) ? 10 : (int)$Options['cost'];
-
         if (empty($Options['salt'])) {
             if ($Algo === 1) {
                 $CostLen = strlen($Cost);
@@ -47,7 +46,6 @@ if (!function_exists('password_hash')) {
         } else {
             $Salt = (string)$Options['salt'];
         }
-
         return crypt($Password, $Salt);
     }
 }

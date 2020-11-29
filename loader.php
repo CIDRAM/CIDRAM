@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The loader (last modified: 2019.03.02).
+ * This file: The loader (last modified: 2020.11.29).
  */
 
 /**
@@ -81,7 +81,7 @@ if (!defined('CIDRAM')) {
     /** Load the language handler. */
     require $CIDRAM['Vault'] . 'lang.php';
 
-    /* This code block only executed if we're NOT in CLI mode (or if we're running via Cronable). */
+    /** This code block only executed if we're NOT in CLI mode (or if we're running via Cronable). */
     if (!$CIDRAM['CIDRAM_sapi'] || $CIDRAM['Alternate']) {
 
         /**
@@ -109,7 +109,6 @@ if (!defined('CIDRAM')) {
         ) {
             require $CIDRAM['Vault'] . 'frontend.php';
         }
-
     }
 
     /** This code block only executed if we're in CLI mode. */

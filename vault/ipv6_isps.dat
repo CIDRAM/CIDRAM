@@ -341,9 +341,13 @@ recaptcha:
 
 
 # ASN 51013 ("Websupport s.r.o").
-# Updated: 2019.11.02 / Checked: 2020.03.05
+# Stop Forum Spam (SFS) listings: 46.
+# Updated: 2020.12.03
 
+2a02:250:2::/48 Deny Generic
+Origin: SE
 2a00:4b40::/32 Deny Generic
+2a0e:bb40::/48 Deny Generic
 Origin: SK
 Tag: Websupport s.r.o
 
@@ -397,8 +401,8 @@ Tag: DGN TEKNOLOJI
 
 # ASN 6876 ("TeNeT Scientific Production Enterprise LLC").
 # Source of forum spam and other unwanted traffic.
-# Stop Forum Spam (SFS) listings: 1,489.
-# Updated: 2016.07.20 / Checked: 2020.03.06
+# Stop Forum Spam (SFS) listings: 1,870.
+# Updated: 2016.07.20 / Checked: 2020.12.03
 
 2a04:2c00::/29 Deny Generic
 Origin: UA
@@ -1111,12 +1115,30 @@ recaptcha:
 # ignorable at this time. Marked for use with reCAPTCHA to reduce the false
 # positive risk, and I would encourage any CIDRAM users from Taiwan, or
 # targeting traffic from Taiwan, to list this section in their ignore.dat file
-# to reduce the false positive risk.
-# %Listed, abuseat.org (CBL-Listed): 0.73%.
-# Stop Forum Spam (SFS) listings: 13,885.
-# Updated: 2019.03.09 / Checked: 2020.03.06
+# to reduce the false positive risk. Non-TW ranges as cloud.
+# %Listed, abuseat.org (CBL-Listed): 0.48%.
+# Stop Forum Spam (SFS) listings: 16,312.
+# Updated: 2020.12.03
 
-2001:b000::/21 Deny Generic
+2001:b000:100::/40 Deny Generic
+2001:b000:200::/39 Deny Generic
+2001:b000:400::/38 Deny Generic
+2001:b000:800::/37 Deny Generic
+2001:b000:1000::/36 Deny Generic
+2001:b000:2000::/35 Deny Generic
+2001:b000:4000::/34 Deny Generic
+2001:b000:8000::/33 Deny Generic
+2001:b001::/32 Deny Generic
+2001:b002::/31 Deny Generic
+2001:b004::/30 Deny Generic
+2001:b008::/29 Deny Generic
+2001:b010::/28 Deny Generic
+2001:b020::/27 Deny Generic
+2001:b040::/26 Deny Generic
+2001:b080::/25 Deny Generic
+2001:b100::/24 Deny Generic
+2001:b200::/23 Deny Generic
+2001:b400::/22 Deny Generic
 2405:6100::/32 Deny Generic
 2406:300::/32 Deny Generic
 2407:4700::/32 Deny Generic
@@ -1132,17 +1154,14 @@ recaptcha:
 # activity. Marked for use with reCAPTCHA to reduce the false positive risk.
 # CIDRAM users from, or targeting traffic from Taiwan and/or mainland China
 # should keep the section listed in their ignore.dat file to reduce the false
-# positive risk. When updating:
-# - Exclude 223.20x (all invalid and already listed elsewhere anyway).
-# - Exclude any IPv6 invalids.
-# %Listed, abuseat.org (CBL-Listed): 0.06% (AS4808).
-# Stop Forum Spam (SFS) listings: 4,984 (AS4808), 16,134 (AS23724).
-# Updated: 2020.09.01
+# positive risk. When updating, exclude all IPv6 invalids.
+# %Listed, abuseat.org (CBL-Listed): 0.10% (AS4808).
+# Stop Forum Spam (SFS) listings: 4,907 (AS4808), 9,471 (AS23724).
+# Updated: 2020.12.03
 
-2400:5280:f800::/38 Deny Generic
-2400:89c0:1010::/44 Deny Generic
-2400:89c0:1020::/43 Deny Generic
+2400:5280:f803::/48 Deny Generic
 2400:89c0:1050::/46 Deny Generic
+2400:89c0:1091::/48 Deny Generic
 2400:89c0:6000::/48 Deny Generic
 2401:1d40::/48 Deny Generic
 2401:1d40:f8::/45 Deny Generic
@@ -1156,32 +1175,13 @@ recaptcha:
 2402:dfc0::/44 Deny Generic
 2402:dfc0:50::/44 Deny Generic
 2402:ef40::/32 Deny Generic
-2403:1ec0:1200::/48 Deny Generic
 2403:5280::/32 Deny Generic
+2403:5c80::/48 Deny Generic
 2403:a140:10::/48 Deny Generic
 2405:1480:2000::/48 Deny Generic
 2406:cf00::/48 Deny Generic
 2406:cf00:1000::/43 Deny Generic
 2407:c080:7800::/44 Deny Generic
-2408:8000:1000::/36 Deny Generic
-2408:8020::/30 Deny Generic
-2408:8024::/33 Deny Generic
-2408:80e0:4000::/34 Deny Generic
-2408:80e0:8000::/33 Deny Generic
-2408:80f0:4000::/34 Deny Generic
-2408:80f0:8000::/33 Deny Generic
-2408:8140:2000::/48 Deny Generic
-2408:8206::/31 Deny Generic
-2408:8208::/30 Deny Generic
-2408:8306::/31 Deny Generic
-2408:8308::/30 Deny Generic
-2408:84e1::/32 Deny Generic
-2408:8606::/31 Deny Generic
-2408:8608::/30 Deny Generic
-2408:8706::/31 Deny Generic
-2408:8708::/30 Deny Generic
-2408:8806::/44 Deny Generic
-2408:8806:20::/44 Deny Generic
 240e:0:9000::/36 Deny Generic
 240e:83::/37 Deny Generic
 240e:83:ff00::/40 Deny Generic

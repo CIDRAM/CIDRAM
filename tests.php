@@ -27,7 +27,6 @@ $CIDRAM = ['Vault' => __DIR__ . DIRECTORY_SEPARATOR . 'vault' . DIRECTORY_SEPARA
 
 // Fetch CIDRAM configuration.
 $CIDRAM_Config = parse_ini_file($CIDRAM['Vault'] . 'config.ini.RenameMe', true);
-$CIDRAM_Config['general']['disable_cli'] = true;
 $CIDRAM_Config['supplementary_cache_options']['enable_apcu'] = true;
 
 // Load each required file or exit immediately if any of them don't exist.

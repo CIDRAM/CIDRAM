@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2020.11.27).
+ * This file: Functions file (last modified: 2020.12.04).
  */
 
 /**
@@ -192,10 +192,10 @@ $CIDRAM['ExpandIPv6'] = function ($Addr, $ValidateOnly = false, $FactorLimit = 1
         return true;
     }
     $NAddr = $Addr;
-    if (preg_match('/^\:\:/i', $NAddr)) {
+    if (substr($NAddr, 0, 2) === '::') {
         $NAddr = '0' . $NAddr;
     }
-    if (preg_match('/\:\:$/i', $NAddr)) {
+    if (substr($NAddr, -2) === '::') {
         $NAddr .= '0';
     }
     if (strpos($NAddr, '::') !== false) {

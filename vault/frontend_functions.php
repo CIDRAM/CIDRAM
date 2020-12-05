@@ -1608,8 +1608,7 @@ $CIDRAM['UpdatesHandler-Update'] = function ($ID) use (&$CIDRAM) {
             ($OldMetaMatches = $OldMetaMatches[0]) &&
             ($NewMeta = $CIDRAM['Components']['Meta'][$ThisTarget]['RemoteData']) &&
             preg_match("~(\n" . preg_quote($ThisTarget) . ":?)(\n [^\n]*)*\n~i", $NewMeta, $NewMetaMatches) &&
-            ($NewMetaMatches = $NewMetaMatches[0]) &&
-            !$CIDRAM['FE']['CronMode']
+            ($NewMetaMatches = $NewMetaMatches[0])
         ) {
             $Congruents[$ThisReannotate] = $NewMeta;
             $CIDRAM['Arrayify']($CIDRAM['Components']['RemoteMeta'][$ThisTarget]['Files']);

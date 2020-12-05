@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2020.12.03).
+ * This file: Front-end handler (last modified: 2020.12.05).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -627,9 +627,8 @@ $CIDRAM['MajorVersionNotice'] = '';
 
 /** Only execute this code block for users that are logged in or awaiting two-factor authentication. */
 if (($CIDRAM['FE']['UserState'] === 1 || $CIDRAM['FE']['UserState'] === 2) && !$CIDRAM['FE']['CronMode']) {
+    /** Log out the user. */
     if ($CIDRAM['QueryVars']['cidram-page'] === 'logout') {
-
-        /** Log out the user. */
         $CIDRAM['FE']['SessionList'] = str_ireplace($CIDRAM['FE']['ThisSession'], '', $CIDRAM['FE']['SessionList']);
         $CIDRAM['FE']['ThisSession'] = '';
         $CIDRAM['FE']['Rebuild'] = true;
@@ -640,15 +639,14 @@ if (($CIDRAM['FE']['UserState'] === 1 || $CIDRAM['FE']['UserState'] === 2) && !$
         $CIDRAM['FELogger']($_SERVER[$CIDRAM['IPAddr']], $CIDRAM['FE']['UserRaw'], $CIDRAM['L10N']->getString('state_logged_out'));
     }
 
-    /** If the user has complete access. */
     if ($CIDRAM['FE']['Permissions'] === 1) {
+        /** If the user has complete access. */
         $CIDRAM['FE']['nav'] = $CIDRAM['ParseVars'](
             $CIDRAM['L10N']->Data + $CIDRAM['FE'],
             $CIDRAM['ReadFile']($CIDRAM['GetAssetPath']('_nav_complete_access.html'))
         );
-
-    /** If the user has logs access only. */
     } elseif ($CIDRAM['FE']['Permissions'] === 2) {
+        /** If the user has logs access only. */
         $CIDRAM['FE']['nav'] = $CIDRAM['ParseVars'](
             $CIDRAM['L10N']->Data + $CIDRAM['FE'],
             $CIDRAM['ReadFile']($CIDRAM['GetAssetPath']('_nav_logs_access_only.html'))
@@ -765,6 +763,12 @@ if (($CIDRAM['FE']['UserState'] === 1 || $CIDRAM['FE']['UserState'] === 2) && !$
             $CIDRAM['FE']['info_php_branch'] = $CIDRAM['L10N']->getString('response_error');
         }
     }
+
+    /** Get cached logs link. */
+    $CIDRAM['FE']['CachedLogsLink'] = $CIDRAM['FECacheGet'](
+        $CIDRAM['FE']['Cache'],
+        'CachedLogsLink-' . $CIDRAM['FE']['UserRaw']
+    ) ?: '?cidram-page=logs';
 
     /** Cleanup. */
     unset($CIDRAM['Remote-YAML-PHP-Array'], $CIDRAM['Remote-YAML-PHP'], $CIDRAM['ThisBranch'], $CIDRAM['RemoteVerPath']);
@@ -4240,14 +4244,11 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'logs' && $CIDRAM['FE']['Permiss
         'Out' => ''
     ];
 
-    /** Text mode switch link base. */
-    $CIDRAM['FE']['TextModeSwitchLink'] = '';
+    $CIDRAM['FE']['SearchInfo'] = '';
+    $CIDRAM['FE']['SearchQuery'] = '';
 
     /** Default field separator. */
     $CIDRAM['FE']['FieldSeparator'] = ': ';
-
-    /** Link to search for related blocks and search information readout. */
-    $CIDRAM['FE']['SearchInfo'] = $CIDRAM['FE']['SearchQuery'] = $CIDRAM['FE']['BlockLink'] = '';
 
     /** Add flags CSS. */
     if ($CIDRAM['FE']['Flags'] = file_exists($CIDRAM['Vault'] . 'fe_assets/flags.css')) {
@@ -4255,14 +4256,49 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'logs' && $CIDRAM['FE']['Permiss
     }
 
     /** How to display the log data? */
-    $CIDRAM['FE']['TextMode'] = false;
-    if (empty($CIDRAM['QueryVars']['text-mode']) || $CIDRAM['QueryVars']['text-mode'] === 'false') {
-        $CIDRAM['FE']['TextModeLinks'] = 'false';
-    } elseif ($CIDRAM['QueryVars']['text-mode'] === 'tally') {
+    if (!isset($CIDRAM['QueryVars']['textMode'])) {
+        $CIDRAM['FE']['TextModeLinks'] = 'simple';
+    } elseif ($CIDRAM['QueryVars']['textMode'] === 'fancy') {
+        $CIDRAM['FE']['TextModeLinks'] = 'fancy';
+    } elseif ($CIDRAM['QueryVars']['textMode'] === 'tally') {
         $CIDRAM['FE']['TextModeLinks'] = 'tally';
     } else {
-        $CIDRAM['FE']['TextModeLinks'] = 'true';
-        $CIDRAM['FE']['TextMode'] = true;
+        $CIDRAM['FE']['TextModeLinks'] = 'simple';
+    }
+
+    /** Sort order */
+    if (empty($CIDRAM['QueryVars']['sortOrder']) || $CIDRAM['QueryVars']['sortOrder'] === 'ascending') {
+        $CIDRAM['FE']['SortOrder'] = 'ascending';
+    } else {
+        $CIDRAM['FE']['SortOrder'] = 'descending';
+    }
+
+    /** Remember display preferences? */
+    $CIDRAM['FE']['Remember'] = isset($CIDRAM['QueryVars']['remember']) && $CIDRAM['QueryVars']['remember'] === 'on';
+
+    /** Define query for search filters. */
+    $CIDRAM['FE']['BlockLink'] = sprintf(
+        '?cidram-page=logs&textMode=%s&sortOrder=%s%s%s',
+        $CIDRAM['FE']['TextModeLinks'],
+        $CIDRAM['FE']['SortOrder'],
+        $CIDRAM['FE']['Remember'] ? '&remember=on' : '',
+        empty($CIDRAM['QueryVars']['logfile']) ? '' : '&logfile=' . $CIDRAM['QueryVars']['logfile']
+    );
+
+    /** Remember search filters. */
+    if ($CIDRAM['FE']['Remember'] && $CIDRAM['FE']['BlockLink'] !== $CIDRAM['FE']['CachedLogsLink']) {
+        $CIDRAM['FECacheAdd'](
+            $CIDRAM['FE']['Cache'],
+            $CIDRAM['FE']['Rebuild'],
+            'CachedLogsLink-' . $CIDRAM['FE']['UserRaw'],
+            $CIDRAM['FE']['BlockLink'],
+            $CIDRAM['Now'] + 31536000
+        );
+        $CIDRAM['FE']['FE_Content'] = str_replace(
+            ' href="' . $CIDRAM['FE']['CachedLogsLink'] . '">',
+            ' href="' . $CIDRAM['FE']['BlockLink'] . '">',
+            $CIDRAM['FE']['FE_Content']
+        );
     }
 
     /** Define log data. */
@@ -4271,7 +4307,6 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'logs' && $CIDRAM['FE']['Permiss
     } elseif (empty($CIDRAM['FE']['LogFiles']['Files'][$CIDRAM['QueryVars']['logfile']])) {
         $CIDRAM['FE']['logfileData'] = $CIDRAM['L10N']->getString('logs_logfile_doesnt_exist');
     } else {
-        $CIDRAM['FE']['TextModeSwitchLink'] .= '?cidram-page=logs&logfile=' . $CIDRAM['QueryVars']['logfile'];
         if (strtolower(substr($CIDRAM['QueryVars']['logfile'], -3)) === '.gz') {
             $CIDRAM['GZLogHandler'] = gzopen($CIDRAM['Vault'] . $CIDRAM['QueryVars']['logfile'], 'rb');
             $CIDRAM['FE']['logfileData'] = '';
@@ -4343,9 +4378,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'logs' && $CIDRAM['FE']['Permiss
             );
         }
 
-        $CIDRAM['FE']['TextModeSwitchLink'] .= '&text-mode=';
-        $CIDRAM['FE']['BlockLink'] .= $CIDRAM['FE']['TextModeSwitchLink'] . $CIDRAM['FE']['TextModeLinks'];
-        $CIDRAM['FE']['logfileData'] = $CIDRAM['FE']['TextMode'] ? str_replace(
+        $CIDRAM['FE']['logfileData'] = $CIDRAM['FE']['TextModeLinks'] === 'fancy' ? str_replace(
             ['<', '>', "\r", "\n"],
             ['&lt;', '&gt;', '', "<br />\n"],
             $CIDRAM['FE']['logfileData']
@@ -4361,20 +4394,39 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'logs' && $CIDRAM['FE']['Permiss
         $CIDRAM['FE']['mod_class_nav'] = ' extend';
         $CIDRAM['FE']['mod_class_right'] = ' big';
     }
-    if (empty($CIDRAM['FE']['TextModeSwitchLink'])) {
-        $CIDRAM['FE']['TextModeSwitchLink'] .= '?cidram-page=logs&text-mode=';
-    }
-    $CIDRAM['FE']['SearchPart'] = empty($CIDRAM['QueryVars']['search']) ? '' : '&search=' . $CIDRAM['QueryVars']['search'];
 
-    /** Text mode switch link formatted. */
+    /** Logs control form. */
     $CIDRAM['FE']['TextModeSwitchLink'] = sprintf(
-        $CIDRAM['L10N']->getString('link_textmode'),
-        $CIDRAM['FE']['TextModeSwitchLink'],
-        $CIDRAM['FE']['SearchPart']
+        '<td class="h2"><span class="s">%1$s<br /><select name="textMode" class="auto">' .
+        '<option value="simple"%2$s>%3$s</option>' .
+        '<option value="fancy"%4$s>%5$s</option>' .
+        '<option value="tally"%6$s>%7$s</option>' .
+        '</select></span></td><td class="h2"><span class="s">' .
+        '<input type="radio" class="auto" name="sortOrder" value="ascending" id="sOa"%8$s /><label for="sOa">%9$s</label><br />' .
+        '<input type="radio" class="auto" name="sortOrder" value="descending" id="sOd"%10$s /><label for="sOd">%11$s</label>' .
+        '</span></td><td class="h4f"><span class="s">' .
+        '<input type="checkbox" name="remember" class="auto" id="remember"%12$s /> <label for="remember">%13$s</label><br />' .
+        '<input type="hidden" name="logfile" value="%14$s" /><input type="submit" value="%15$s" />' .
+        '</span></td>',
+        $CIDRAM['L10N']->getString('label_textmode'),
+        $CIDRAM['FE']['TextModeLinks'] === 'simple' ? ' selected' : '',
+        $CIDRAM['L10N']->getString('label_textmode_simple'),
+        $CIDRAM['FE']['TextModeLinks'] === 'fancy' ? ' selected' : '',
+        $CIDRAM['L10N']->getString('label_textmode_fancy'),
+        $CIDRAM['FE']['TextModeLinks'] === 'tally' ? ' selected' : '',
+        $CIDRAM['L10N']->getString('label_textmode_tally'),
+        $CIDRAM['FE']['SortOrder'] === 'ascending' ? ' checked' : '',
+        $CIDRAM['L10N']->getString('switch-descending-order-set-false'),
+        $CIDRAM['FE']['SortOrder'] === 'descending' ? ' checked' : '',
+        $CIDRAM['L10N']->getString('switch-descending-order-set-true'),
+        $CIDRAM['FE']['Remember'] ? ' checked' : '',
+        $CIDRAM['L10N']->getString('label_remember'),
+        $CIDRAM['QueryVars']['logfile'] ?? '',
+        $CIDRAM['L10N']->getString('field_ok')
     );
 
     /** Prepare log data formatting. */
-    if ($CIDRAM['FE']['TextMode']) {
+    if ($CIDRAM['FE']['TextModeLinks'] === 'fancy') {
         $CIDRAM['Formatter']($CIDRAM['FE']['logfileData'], $CIDRAM['FE']['BlockLink'], $CIDRAM['FE']['SearchQuery'], $CIDRAM['FE']['FieldSeparator'], $CIDRAM['FE']['Flags']);
     } elseif ($CIDRAM['FE']['TextModeLinks'] === 'tally') {
         $CIDRAM['FE']['logfileData'] = $CIDRAM['Tally'](
@@ -4383,25 +4435,32 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'logs' && $CIDRAM['FE']['Permiss
             [$CIDRAM['L10N']->getString('field_id'), $CIDRAM['L10N']->getString('field_datetime')]
         );
     } else {
-        $CIDRAM['FE']['logfileData'] = '<textarea readonly>' . $CIDRAM['FE']['logfileData'] . '</textarea>';
+        if ($CIDRAM['FE']['SortOrder'] === 'descending') {
+            $CIDRAM['FE']['BlockSeparator'] = strpos($CIDRAM['FE']['logfileData'], "\n\n") !== false ? "\n\n" : "\n";
+            $CIDRAM['FE']['logfileData'] = explode($CIDRAM['FE']['BlockSeparator'], $CIDRAM['FE']['logfileData']);
+            $CIDRAM['FE']['logfileData'] = implode($CIDRAM['FE']['BlockSeparator'], array_reverse($CIDRAM['FE']['logfileData']));
+        }
+        $CIDRAM['FE']['logfileData'] = '<textarea readonly>' . trim($CIDRAM['FE']['logfileData']) . '</textarea>';
     }
 
-    /** Define logfile list. */
-    array_walk($CIDRAM['FE']['LogFiles']['Files'], function ($Arr) use (&$CIDRAM) {
+    /** Generate a list of the logs. */
+    foreach ($CIDRAM['FE']['LogFiles']['Files'] as $CIDRAM['FE']['LogFiles']['ThisLogFile']) {
         $CIDRAM['FE']['LogFiles']['Out'] .= sprintf(
-            '      <a href="?cidram-page=logs&logfile=%1$s&text-mode=%3$s">%1$s</a> – %2$s<br />',
-            $Arr['Filename'],
-            $Arr['Filesize'],
-            $CIDRAM['FE']['TextModeLinks']
+            '      <a href="?cidram-page=logs&textMode=%1$s&sortOrder=%2$s%3$s&logfile=%4$s">%4$s</a> – %5$s<br />',
+            $CIDRAM['FE']['TextModeLinks'],
+            $CIDRAM['FE']['SortOrder'],
+            $CIDRAM['FE']['Remember'] ? '&remember=on' : '',
+            $CIDRAM['FE']['LogFiles']['ThisLogFile']['Filename'],
+            $CIDRAM['FE']['LogFiles']['ThisLogFile']['Filesize']
         ) . "\n";
-    });
+    }
 
     /** Calculate page load time (useful for debugging). */
     $CIDRAM['FE']['ProcessTime'] = microtime(true) - $_SERVER['REQUEST_TIME_FLOAT'];
-    $CIDRAM['FE']['SearchInfo'] .= '<br />' . sprintf(
+    $CIDRAM['FE']['SearchInfo'] = '<td colspan="3" class="spanner">' . sprintf(
         $CIDRAM['L10N']->getPlural($CIDRAM['FE']['ProcessTime'], 'state_loadtime'),
         $CIDRAM['NumberFormatter']->format($CIDRAM['FE']['ProcessTime'], 3)
-    );
+    ) . $CIDRAM['FE']['SearchInfo'] . '</td>';
 
     /** Set logfile list or no logfiles available message. */
     $CIDRAM['FE']['LogFiles'] = $CIDRAM['FE']['LogFiles']['Out'] ?: $CIDRAM['L10N']->getString('logs_no_logfiles_available');

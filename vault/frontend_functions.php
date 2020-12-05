@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2020.11.27).
+ * This file: Front-end functions file (last modified: 2020.12.05).
  */
 
 /**
@@ -1089,7 +1089,7 @@ $CIDRAM['FilterTheme'] = function (string $ChoiceKey) use (&$CIDRAM): bool {
  * @param string $FieldSeparator Used to distinguish between a field's name and its content.
  * @param bool $Flags Tells the formatter whether the flags CSS file is available.
  */
-$CIDRAM['Formatter'] = function (string &$In, string $BlockLink = '', string $Current = '', string $FieldSeparator = ': ', bool $Flags = false) {
+$CIDRAM['Formatter'] = function (string &$In, string $BlockLink = '', string $Current = '', string $FieldSeparator = ': ', bool $Flags = false) use (&$CIDRAM) {
     static $MaxBlockSize = 65536;
     if (strpos($In, "<br />\n") === false) {
         $In = '<div class="hB hFd s">' . $In . '</div>';
@@ -1197,17 +1197,20 @@ $CIDRAM['Formatter'] = function (string &$In, string $BlockLink = '', string $Cu
         $Out .= substr($Section, 0, $BlockSeparatorLen * -1);
     }
     $Out = substr($Out, 1);
-    $In = '';
+    $In = [];
     $BlockStart = 0;
     $BlockEnd = 0;
     while ($BlockEnd !== false) {
         $Darken = empty($Darken);
         $Style = '<div class="h' . ($Darken ? 'B' : 'W') . ' hFd fW">';
         $BlockEnd = strpos($Out, $BlockSeparator, $BlockStart);
-        $In .= $Style . substr($Out, $BlockStart, $BlockEnd - $BlockStart + $BlockSeparatorLen) . '</div>';
+        $In[] = $Style . substr($Out, $BlockStart, $BlockEnd - $BlockStart + $BlockSeparatorLen) . '</div>';
         $BlockStart = $BlockEnd + $BlockSeparatorLen;
     }
-    $In = str_replace("<br />\n</div>", "<br /></div>\n", $In);
+    if ($CIDRAM['FE']['SortOrder'] === 'descending') {
+        $In = array_reverse($In);
+    }
+    $In = str_replace("<br />\n</div>", "<br /></div>\n", implode('', $In));
 };
 
 /**
@@ -1265,7 +1268,11 @@ $CIDRAM['Tally'] = function (string $In, string $BlockLink, array $Exclusions = 
     $Out = '<table>';
     foreach ($Data as $Field => $Entries) {
         $Out .= '<tr><td class="h2f" colspan="2"><div class="s">' . $Field . "</div></td></tr>\n";
-        arsort($Entries, SORT_NUMERIC);
+        if ($CIDRAM['FE']['SortOrder'] === 'descending') {
+            arsort($Entries, SORT_NUMERIC);
+        } else {
+            asort($Entries, SORT_NUMERIC);
+        }
         foreach ($Entries as $Entry => $Count) {
             if (!(substr($Entry, 0, 1) === '[' && substr($Entry, 3, 1) === ']')) {
                 $Entry .= ' <a href="' . $BlockLink . '&search=' . str_replace('=', '_', base64_encode($Entry)) . '">»</a>';

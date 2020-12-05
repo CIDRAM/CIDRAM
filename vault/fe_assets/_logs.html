@@ -7,8 +7,18 @@
     </div></td></tr></table>
   </td>
   <td class="right{mod_class_right}">
-  <span class="s">{TextModeSwitchLink}{SearchInfo}</span>
-  <hr />
+  <span class="s">
+    <form method="GET" action=""><input type="hidden" name="cidram-page" value="logs" />
+      <table>
+        <tr>
+          {TextModeSwitchLink}
+        </tr>
+        <tr>
+          {SearchInfo}
+        </tr>
+      </table>
+    </form>
+  </span>
 {logfileData}
   </td>
 </tr>

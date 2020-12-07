@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_isps.dat
 
-# Version: 2020.331.542
-# Last modified: 2020.11.27
+# Version: 2020.341.342
+# Last modified: 2020.12.07
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage, i.e., with ignore.dat, with reCAPTCHA, with "extended rules" (default bypasses): « [ ]Low [x]Medium [ ]High »
@@ -154,9 +154,9 @@ recaptcha:
 
 # ASN 24203 ("PT Excelcomindo Pratama").
 # (Mark US as cloud).
-# %Listed, abuseat.org (CBL-Listed): 29.25%.
-# Stop Forum Spam (SFS) listings: 195.
-# Updated: 2017.12.08 / Checked: 2020.06.04
+# %Listed, abuseat.org (CBL-Listed): 24.85%.
+# Stop Forum Spam (SFS) listings: 342.
+# Updated: 2017.12.08 / Checked: 2020.12.07
 
 2400:9800::/32 Deny Spam
 Origin: ID
@@ -275,8 +275,8 @@ recaptcha:
 # Major domestic ISP from Russia, but also a significant, long-term source of
 # spam, hack attempts, scraping, probing for vulnerabilities, and other kinds
 # of unwanted traffic.
-# Stop Forum Spam (SFS) listings: 1,312,269 (AS34665), 374,713 (AS44050).
-# Updated: 2020.03.21 / Checked: 2020.06.03
+# Stop Forum Spam (SFS) listings: 1,504,028 (AS34665), 62,593 (AS44050).
+# Updated: 2020.03.21 / Checked: 2020.12.06
 
 2a02:c6c1::/48 Deny Generic
 Origin: GB

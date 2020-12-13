@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6.dat
 
-# Version: 2020.341.342
-# Last modified: 2020.12.07
+# Version: 2020.347.265
+# Last modified: 2020.12.13
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage, i.e., with ignore.dat, with reCAPTCHA, with "extended rules" (default bypasses): « [x]Low [ ]Medium [ ]High »
@@ -785,8 +785,7 @@ Tag: IOMart
 
 
 # ASN 35425 ("Bytemark Limited").
-# Stop Forum Spam (SFS) listings: 5.
-# Updated: 2020.01.24 / Checked: 2020.06.08
+# Updated: 2020.01.24 / Checked: 2020.12.13
 
 2001:41c8::/29 Deny Cloud
 2a0f:23c7::/32 Deny Cloud
@@ -1852,8 +1851,8 @@ Tag: Bradler & Krantz
 # ASN 34762 ("Combell NV").
 # Dedicated webhosting provider.
 # (Can omit anything under 44../8; clean).
-# Stop Forum Spam (SFS) listings: 506.
-# Updated: 2020.01.25 / Checked: 2020.06.11
+# Stop Forum Spam (SFS) listings: 1,108.
+# Updated: 2020.12.13
 
 2a00:1c98::/32 Deny Cloud
 2a00:7000::/32 Deny Cloud
@@ -1864,10 +1863,6 @@ Tag: Bradler & Krantz
 2a09:e940::/32 Deny Cloud
 2a0d:5040::/31 Deny Cloud
 Origin: BE
-2a00:1bd8::/32 Deny Cloud
-2a02:2858::/40 Deny Cloud
-2a02:2858:200::/39 Deny Cloud
-2a02:2858:400::/40 Deny Cloud
 2a0a:640::/32 Deny Cloud
 Origin: NL
 Tag: Combell NV
@@ -2783,14 +2778,17 @@ Tag: Alibaba Advertising
 # ASNs 45090, 132203, 132591 ("Shenzhen Tencent Computer Systems Company Limited").
 # Dedicated server farm/lease and cloud provider, and an ongoing, long-term
 # source of just about every kind of unwanted traffic you could imagine.
-# Stop Forum Spam (SFS) listings: 592 (AS45090), 443 (AS132203).
-# Updated: 2020.01.25 / Checked: 2020.06.11
+# Stop Forum Spam (SFS) listings: 499 (AS45090), 830 (AS132203).
+# Updated: 2020.12.13
 
 2001:df6:f400::/48 Deny Cloud
 2402:4e00::/32 Deny Cloud
 Origin: CN
 240d:c000:1000::/36 Deny Cloud
-240d:c000:2000::/36 Deny Cloud
+240d:c000:2000::/35 Deny Cloud
+240d:c010::/47 Deny Cloud
+240d:c010:12::/48 Deny Cloud
+240d:c010:18::/47 Deny Cloud
 240d:c040::/44 Deny Cloud
 Origin: SG
 Tag: Shenzhen Tencent
@@ -3332,8 +3330,8 @@ Tag: EQUINIX BRASIL SP
 
 
 # ASN 6364 ("Atlantic.net, Inc").
-# Stop Forum Spam (SFS) listings: 7.
-# Updated: 2016.07.02 / Checked: 2020.06.11
+# Stop Forum Spam (SFS) listings: 16.
+# Updated: 2016.07.02 / Checked: 2020.12.13
 
 2607:f170::/32 Deny Cloud
 Origin: US
@@ -3894,7 +3892,7 @@ Tag: Server Central Network
 # ASNs 7181, 7349, 11274, 17113, 17378, 19019, 26094, 30340, 30496, 36024 ("TierPoint, LLC").
 # Dedicated colo/cloud provider; A source of spam, brute-force and hack
 # attempts, probing/scanning and other unwanted traffic.
-# Updated: 2020.06.08
+# Updated: 2020.12.13
 
 2001:438:fffd:6c::/64 Deny Cloud
 2001:19b8::/32 Deny Cloud
@@ -3906,10 +3904,9 @@ Tag: Server Central Network
 2600:2c00:c000::/36 Deny Cloud
 2600:2c00:f000::/36 Deny Cloud
 2600:2c01:6000::/36 Deny Cloud
-2600:4c00::/39 Deny Cloud
+2602:fd32:1::/48 Deny Cloud
 2604:7e00::/32 Deny Cloud
 2605:7700::/48 Deny Cloud
-2606:4300::/48 Deny Cloud
 2606:a700::/32 Deny Cloud
 2607:f198::/32 Deny Cloud
 2607:f3f8::/32 Deny Cloud
@@ -4373,8 +4370,8 @@ Tag: Servers Australia
 
 
 # ASN 49981 ("WorldStream").
-# Stop Forum Spam (SFS) listings: 20,215.
-# Updated: 2020.06.17
+# Stop Forum Spam (SFS) listings: 19,422.
+# Updated: 2020.12.13
 
 2a06:e881:6000::/44 Deny Cloud
 Origin: CH
@@ -4382,25 +4379,24 @@ Origin: CH
 Origin: FR
 2a04:92c7:16::/48 Deny Cloud
 Origin: GB
+2405:bc40::/34 Deny Cloud
+Origin: IN
 2001:16c0:fefe::/48 Deny Cloud
 Origin: IR
 2a00:7c80::/32 Deny Cloud
 2a06:3880::/29 Deny Cloud
-2a0a:1f41::/32 Deny Cloud
+2a09:3a00:3000::/40 Deny Cloud
 2a0d:3ec0::/32 Deny Cloud
 2a0e:3dc0::/32 Deny Cloud
+2a10:6340::/48 Deny Cloud
 Origin: NL
 2a06:d641::/32 Deny Cloud
-2a06:d645::/32 Deny Cloud
-2a06:d646::/32 Deny Cloud
 2a07:ca04::/32 Deny Cloud
 2a09:9441::/32 Deny Cloud
 2a09:9446::/32 Deny Cloud
 2a0b:bd00::/31 Deny Cloud
 2a0f:8442::/32 Deny Cloud
 Origin: RU
-2a0a:e2c2::/32 Deny Cloud
-Origin: UA
 Tag: WorldStream
 
 
@@ -5192,7 +5188,7 @@ Tag: XEMU
 
 # ASN 14987 ("Rethem Hosting LLC").
 # Dedicated webhosting provider and an occasional source of spam.
-# Updated: 2019.03.30 / Checked: 2020.06.11
+# Updated: 2019.03.30 / Checked: 2020.12.13
 
 2001:550:101::/48 Deny Cloud
 2607:8500::/32 Deny Cloud
@@ -6825,7 +6821,7 @@ Tag: acens Technologies
 # ASN 41075 ("ATW Internet Kft").
 # Hungarian webhosting provider. DDoS and brute-force attacks detected from
 # this network.
-# Updated: 2020.06.11
+# Updated: 2020.06.11 / Checked: 2020.12.13
 
 2a01:270::/32 Deny Cloud
 2a01:47c1::/32 Deny Cloud

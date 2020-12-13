@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_isps.dat
 
-# Version: 2020.341.342
-# Last modified: 2020.12.07
+# Version: 2020.347.265
+# Last modified: 2020.12.13
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage, i.e., with ignore.dat, with reCAPTCHA, with "extended rules" (default bypasses): « [ ]Low [x]Medium [ ]High »
@@ -231,8 +231,8 @@ recaptcha:
 
 
 # ASN 41011 ("CH-NET S.R.L").
-# Stop Forum Spam (SFS) listings: 209.
-# Updated: 2020.01.24 / Checked: 2020.06.06
+# Stop Forum Spam (SFS) listings: 68.
+# Updated: 2020.01.24 / Checked: 2020.12.13
 
 2001:67c:2100::/48 Deny Generic
 2a06:afc0::/48 Deny Generic
@@ -661,13 +661,16 @@ Tag: ALEXHOST SRL
 # number of human endpoints, but not an actual domestic ISP; requests likely
 # not immediately traceable to any specific individuals. A long history of
 # unwanted traffic from their network.
-# Updated: 2020.06.08
+# Updated: 2020.12.13
 
-2a00:8860::/32 Deny Generic
+2a00:8860:100::/40 Deny Generic
+2a00:8860:700::/40 Deny Generic
+2a00:8860:b00::/40 Deny Generic
 Origin: EU
 2a01:b960:2307::/48 Deny Generic
 2a01:b960:230b::/48 Deny Generic
 Origin: NL
+2607:6003:2305::/48 Deny Generic
 2607:ff00:500::/40 Deny Generic
 Origin: US
 Tag: PHOENIX NAP, LLC
@@ -2400,8 +2403,7 @@ recaptcha:
 # ASN 53022 ("BROSEGHINI LTDA EPP").
 # Brazilian domestic ISP. DDoS, SSH and brute-force attacks detected
 # originating from this network.
-# Stop Forum Spam (SFS) listings: 2.
-# Updated: 2020.06.11
+# Updated: 2020.06.11 / Checked: 2020.12.13
 
 2804:31fc::/32 Deny Malware
 Origin: BR

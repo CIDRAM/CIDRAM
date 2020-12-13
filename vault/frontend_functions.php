@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2020.12.05).
+ * This file: Front-end functions file (last modified: 2020.12.13).
  */
 
 /**
@@ -145,7 +145,6 @@ $CIDRAM['FormatFilesize'] = function (int &$Filesize) use (&$CIDRAM) {
  * @param string $Entry Name of the cache entry to be deleted.
  */
 $CIDRAM['FECacheRemove'] = function (string &$Source, bool &$Rebuild, string $Entry) use (&$CIDRAM) {
-
     /** Override if using a different preferred caching mechanism. */
     if ($CIDRAM['Cache']->Using && $CIDRAM['Cache']->Using !== 'FF') {
         if ($Entry === '__') {
@@ -185,7 +184,6 @@ $CIDRAM['FECacheRemove'] = function (string &$Source, bool &$Rebuild, string $En
  * @param int $Expires When should the cache entry expire (be deleted).
  */
 $CIDRAM['FECacheAdd'] = function (string &$Source, bool &$Rebuild, string $Entry, string $Data, int $Expires) use (&$CIDRAM) {
-
     /** Override if using a different preferred caching mechanism. */
     if ($CIDRAM['Cache']->Using && $CIDRAM['Cache']->Using !== 'FF') {
         $CIDRAM['Cache']->setEntry($Entry, $Data, $Expires - $CIDRAM['Now']);
@@ -209,7 +207,6 @@ $CIDRAM['FECacheAdd'] = function (string &$Source, bool &$Rebuild, string $Entry
  * @return string|bool Returned cache entry data (or false on failure).
  */
 $CIDRAM['FECacheGet'] = function (string &$Source, string $Entry) use (&$CIDRAM) {
-
     /** Override if using a different preferred caching mechanism. */
     if ($CIDRAM['Cache']->Using && $CIDRAM['Cache']->Using !== 'FF') {
 
@@ -909,7 +906,6 @@ $CIDRAM['ComponentFunctionUpdatePrep'] = function (string $Targets) use (&$CIDRA
  * @param bool $Verification Specifies whether to test against search engine and social media verification.
  */
 $CIDRAM['SimulateBlockEvent'] = function (string $Addr, bool $Modules = false, bool $Aux = false, bool $Verification = false) use (&$CIDRAM) {
-
     /** Reset bypass flags (needed to prevent falsing due to search engine verification). */
     $CIDRAM['ResetBypassFlags']();
 
@@ -1500,7 +1496,6 @@ $CIDRAM['UpdatesSortFunc'] = function (array $Arr) use (&$CIDRAM): string {
  *      perform the specified action upon.
  */
 $CIDRAM['UpdatesHandler'] = function (string $Action, $ID = '') use (&$CIDRAM) {
-
     /** Support for executor calls. */
     if (empty($ID) && ($Pos = strpos($Action, ' ')) !== false) {
         $ID = substr($Action, $Pos + 1);
@@ -2853,7 +2848,6 @@ $CIDRAM['RangeTablesHandler'] = function (array $IPv4, array $IPv6) use (&$CIDRA
  * @param bool $JS Whether to include the standard front-end JavaScript boilerplate.
  */
 $CIDRAM['InitialPrepwork'] = function (string $Title = '', string $Tips = '', bool $JS = true) use (&$CIDRAM) {
-
     /** Set page title. */
     $CIDRAM['FE']['FE_Title'] = 'CIDRAM – ' . $Title;
 
@@ -2950,7 +2944,6 @@ $CIDRAM['GenerateConfirm'] = function (string $Action, string $Form) use (&$CIDR
  * @param string $Message The message to be logged.
  */
 $CIDRAM['FELogger'] = function (string $IPAddr, string $User, string $Message) use (&$CIDRAM) {
-
     /** Guard. */
     if (
         empty($CIDRAM['FE']['DateTime']) ||

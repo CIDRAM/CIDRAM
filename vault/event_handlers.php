@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Event handlers file (last modified: 2020.06.17).
+ * This file: Event handlers file (last modified: 2020.12.13).
  */
 
 /**
@@ -17,7 +17,6 @@
  * @return bool True on success; False on failure.
  */
 $CIDRAM['Events']->addHandler('writeToLog', function () use (&$CIDRAM): bool {
-
     /** Guard. */
     if (
         !$CIDRAM['Config']['general']['logfile'] ||
@@ -48,7 +47,6 @@ $CIDRAM['Events']->addHandler('writeToLog', function () use (&$CIDRAM): bool {
  * @return bool True on success; False on failure.
  */
 $CIDRAM['Events']->addHandler('writeToLog', function () use (&$CIDRAM): bool {
-
     /** Guard. */
     if (
         empty($CIDRAM['BlockInfo']) ||
@@ -90,7 +88,6 @@ $CIDRAM['Events']->addHandler('writeToLog', function () use (&$CIDRAM): bool {
  * @return bool True on success; False on failure.
  */
 $CIDRAM['Events']->addHandler('writeToLog', function () use (&$CIDRAM): bool {
-
     /** Guard. */
     if (
         empty($CIDRAM['BlockInfo']) ||
@@ -128,7 +125,6 @@ $CIDRAM['Events']->addHandler('writeToLog', function () use (&$CIDRAM): bool {
  * @return bool True on success; False on failure.
  */
 $CIDRAM['Events']->addHandler('reCaptchaLog', function () use (&$CIDRAM): bool {
-
     /** Guard. */
     if (
         !$CIDRAM['reCAPTCHA']['Loggable'] ||
@@ -173,7 +169,6 @@ $CIDRAM['Events']->addHandler('reCaptchaLog', function () use (&$CIDRAM): bool {
  * @return bool True on success; False on failure.
  */
 $CIDRAM['Events']->addHandler('error', function (string $Data) use (&$CIDRAM): bool {
-
     /** Guard. */
     if (
         !$CIDRAM['Config']['general']['error_log'] ||
@@ -220,7 +215,6 @@ $CIDRAM['Events']->addHandler('error', function (string $Data) use (&$CIDRAM): b
  * @return bool True on success; False on failure.
  */
 $CIDRAM['Events']->addHandler('final', function () use (&$CIDRAM): bool {
-
     /** Cleanup. */
     unset($CIDRAM['Stage']);
 
@@ -260,7 +254,6 @@ $CIDRAM['Events']->addHandler('final', function () use (&$CIDRAM): bool {
  * @return bool True on success; False on failure.
  */
 $CIDRAM['Events']->addHandler('writeToPHPMailerEventLog', function (string $Data) use (&$CIDRAM): bool {
-
     /** Guard. */
     if (
         !$CIDRAM['Config']['PHPMailer']['event_log'] ||

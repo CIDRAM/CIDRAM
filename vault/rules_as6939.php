@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Extended rules for AS6939 CIDRs (last modified: 2020.01.01).
+ * This file: Extended rules for AS6939 CIDRs (last modified: 2020.12.13).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -35,7 +35,6 @@ if (!isset($CIDRAM['RunParamResCache'])) {
  * @param string $Tag The triggered rule's section's name (if there's any).
  */
 $CIDRAM['RunParamResCache']['rules_as6939.php'] = function (array $Factors = [], int $FactorIndex = 0, string $LN = '', string $Tag = '') use (&$CIDRAM) {
-
     /** Skip further processing if the "block_cloud" directive is false. */
     if (!$CIDRAM['Config']['signatures']['block_cloud']) {
         return;

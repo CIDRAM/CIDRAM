@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Extended rules for some specific CIDRs (last modified: 2020.08.11).
+ * This file: Extended rules for some specific CIDRs (last modified: 2020.12.13).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -35,7 +35,6 @@ if (!isset($CIDRAM['RunParamResCache'])) {
  * @param string $Tag The triggered rule's section's name (if there's any).
  */
 $CIDRAM['RunParamResCache']['rules_specific.php'] = function (array $Factors = [], int $FactorIndex = 0, string $LN = '', string $Tag = '') use (&$CIDRAM) {
-
     /** Skip further processing if the "block_cloud" directive is false, or if no section tag has been defined. */
     if (!$CIDRAM['Config']['signatures']['block_cloud'] || !$Tag) {
         return;
@@ -48,10 +47,7 @@ $CIDRAM['RunParamResCache']['rules_specific.php'] = function (array $Factors = [
          * Feedspot bypass.
          * See: https://udger.com/resources/ua-list/bot-detail?bot=Feedspotbot
          */
-        if (
-            strpos($CIDRAM['BlockInfo']['UA'], '+https://www.feedspot.com/fs/fetcher') !== false &&
-            ($Factors[31] === '54.186.248.49/32' || $Factors[31] === '54.245.252.119/32')
-        ) {
+        if (strpos($CIDRAM['BlockInfo']['UA'], '+https://www.feedspot.com/fs/fetcher') !== false) {
             return;
         }
 

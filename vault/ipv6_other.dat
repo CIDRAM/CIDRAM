@@ -1,8 +1,8 @@
 # IPv6 signatures file (CIDRs for proxies, VPNs and other miscellaneous unwanted services).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_other.dat
 
-# Version: 2020.325.584
-# Last modified: 2020.11.21
+# Version: 2020.352.092
+# Last modified: 2020.12.18
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage, i.e., with ignore.dat, with reCAPTCHA, with "extended rules" (default bypasses): « [x]Low [ ]Medium [ ]High »
@@ -20,7 +20,8 @@
 # listing the ASN in entirety. Listings have also been split across different
 # signature files as to list at the signature files where best suited.
 
-# Stop Forum Spam (SFS) listings: 13,757.
+# %Listed, abuseat.org (CBL-Listed): 2.47%.
+# Stop Forum Spam (SFS) listings: 10,645.
 
 # See:
 # - en.wikipedia.org/wiki/Cogent_Communications
@@ -28,17 +29,17 @@
 # - forums.spybot.info/showthread.php?23632-SPAM-frauds-fakes-and-other-MALWARE-deliveries/page37
 # - dyn.com/blog/mitm-internet-hijacking/
 
-# Cogent VPNs+Proxies (AzireVPN, OVPN, BeeVPN ApS, Windscribe, etc; "^.*(?:Prox|Windscribe|VPN).*$").
+# Cogent VPNs+Proxies "^.*(?:Prox|Windscribe|VPN).*$".
 # Exclude invalids to reduce the false positive risk.
+# Updated: 2020.12.18
 
-# Updated: 2020.06.17
 2001:978:1403::/48 Deny Proxy
-Origin: DE
+Origin: US
 Tag: Cogent VPNs+Proxies
 
 # Cogent bogons.
+# Updated: 2020.06.17 / Checked: 2020.12.18
 
-# Updated: 2020.06.17
 2605:d400::/32 Deny Bogon
 Origin: XR
 Tag: Cogent Bogons
@@ -83,11 +84,9 @@ Tag: F3 Netze e.V
 # - "^(.*(?:Tunnel|Anonine|Edelino).*)$"
 # Mark as cloud:
 # - "^(.*(?:Host|HZ|Netelia|Sveaab|GleSYS|Servinga|Webbplatsen|InfoGuard).*)$"
-# Mark as spam (carries human endpoints, but also poses a spam risk):
-# - "^(.*(?:Svenska).*)$"
-# Everything else mark as generic.
-# Stop Forum Spam (SFS) listings: 2,786 (AS42708), 1 (AS43948).
-# Updated: 2020.01.23 / Checked: 2020.06.11
+# Everything else mark as spam.
+# Stop Forum Spam (SFS) listings: 8,852 (AS42708), 631 (AS43948).
+# Updated: 2020.01.23 / Checked: 2020.12.15
 
 2a02:7ac0::/32 Deny Proxy
 Origin: SE

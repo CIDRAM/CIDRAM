@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_isps.dat
 
-# Version: 2020.352.092
-# Last modified: 2020.12.18
+# Version: 2020.356.511
+# Last modified: 2020.12.22
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage, i.e., with ignore.dat, with reCAPTCHA, with "extended rules" (default bypasses): « [ ]Low [x]Medium [ ]High »
@@ -33,11 +33,11 @@ Tag: World4You
 
 
 # ASN 202425 ("IP Volume inc").
-# Stop Forum Spam (SFS) listings: 4,595.
-# Updated: 2019.05.10 / Checked: 2020.08.05
+# Stop Forum Spam (SFS) listings: 4,280.
+# Updated: 2020.12.20
 
 2a02:6c8:8000::/33 Deny Generic
-Origin: NL
+Origin: GB
 Tag: IP Volume inc
 
 
@@ -348,17 +348,6 @@ Origin: SE
 2a0e:bb40::/48 Deny Generic
 Origin: SK
 Tag: Websupport s.r.o
-
-
-# ASN 51191 ("Xirra GmbH").
-# Stop Forum Spam (SFS) listings: 2.
-# Updated: 2016.01.21 / Checked: 2020.07.22
-
-2a01:4a0:2000::/47 Deny Generic
-2a01:4a0:2002::/48 Deny Generic
-2a06:4b00::/29 Deny Generic
-Origin: DE
-Tag: Xirra GmbH
 
 
 # ASN 35804 ("PP SKS-LUGAN").
@@ -2061,6 +2050,18 @@ recaptcha:
  enabled: true
 
 
+# ASN 8220 ("COLT Technology Services Group Limited").
+# Major multiplay network with multiple ASNs. Spam, malware, and other unwanted
+# traffic seen from this network. Listing only the specific known affected
+# ranges/addresses from this specific ASN for the moment.
+# Stop Forum Spam (SFS) listings: 2,318.
+# Updated: 2020.12.20
+
+2001:920:198c:83c::/64 Deny Spam
+Origin: GB
+Tag: COLT Technology SGL
+
+
 # ASNs 7725, 7922, 33668 ("Comcast Cable Communications, LLC").
 # Major domestic ISP in the United States; Should NEVER be blocked in entirety.
 # Listed here are some specific CIDRs/IPs on their network that pose a major
@@ -2386,21 +2387,6 @@ recaptcha:
  enabled: true
 
 
-# ASN 12297 ("Vodafone Libertel B.V").
-# Dutch mobile internet provider. SSH and brute-force attacks detected
-# originating from *some parts* of this network, as well as spam campaigns
-# originating from *some specific IPs* of this network.
-# Stop Forum Spam (SFS) listings: 537.
-# Updated: 2020.06.20
-
-2001:1c05:3202:4b00::/64 Deny Spam
-Origin: NL
-Tag: Vodafone Libertel
----
-recaptcha:
- enabled: true
-
-
 # ASN 7018 ("AT&T Services, Inc").
 # Major domestic ISP in the United States; Should NEVER be blocked in entirety.
 # Listed here are some specific CIDRs/IPs where spam and/or other undesirable
@@ -2439,13 +2425,16 @@ recaptcha:
 
 # ASN 21928 ("T-Mobile USA, Inc").
 # U.S. mobile provider; SSH and brute-force attacks detected originating from
-# *some specific IPs* here. Spam events detected originating from *some
-# specific IPs* here.
-# Stop Forum Spam (SFS) listings: 85.
-# Updated: 2020.06.22
+# parts of this network (and gradually getting worse). Currently just listing
+# the offending ranges/addresses.
+# Stop Forum Spam (SFS) listings: 304.
+# Updated: 2020.12.22
 
-2607:fb90:837b:ac0d::/64 Deny Spam
-2607:fb90:ac25:a55e::/64 Deny Spam
+2607:fb90:5c81:6372::/64 Deny Spam
+2607:fb90:6e7e:641c::/64 Deny Spam
+2607:fb90:6f53:5ea5::/64 Deny Spam
+2607:fb90:7b7f:aedb::/64 Deny Spam
+2607:fb90:99d1:4ffd::/64 Deny Spam
 Origin: US
 Tag: T-Mobile USA, Inc
 ---

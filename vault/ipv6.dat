@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6.dat
 
-# Version: 2020.352.092
-# Last modified: 2020.12.18
+# Version: 2020.356.511
+# Last modified: 2020.12.22
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage, i.e., with ignore.dat, with reCAPTCHA, with "extended rules" (default bypasses): « [x]Low [ ]Medium [ ]High »
@@ -1657,10 +1657,22 @@ Tag: AltusHost B.V
 
 
 # "Akamai Technologies" (too many ASNs to list; excluding invalids).
-# Updated: 2020.10.23
+# Updated: 2020.12.22
 
-2600:1408:2400::/48 Deny Cloud
-Origin: AQ
+2804:3f8:1:d::/64 Deny Cloud
+Origin: BR
+2800:550:2a::/48 Deny Cloud
+Origin: CL
+2001:4c08:2026::/48 Deny Cloud
+2a01:348:317::/48 Deny Cloud
+Origin: GB
+2404:c800:8203::/48 Deny Cloud
+Origin: HK
+2001:218:3004::/48 Deny Cloud
+2400:2000:6::/47 Deny Cloud
+2400:2000:b::/48 Deny Cloud
+2400:2000:c::/48 Deny Cloud
+Origin: JP
 2a02:2370:1::/48 Deny Cloud
 2a02:2370:2::/47 Deny Cloud
 2a02:2370:4::/47 Deny Cloud
@@ -1669,16 +1681,13 @@ Origin: AQ
 2a02:2370:102::/47 Deny Cloud
 2a02:2370:104::/47 Deny Cloud
 2a02:2370:106::/48 Deny Cloud
+2a02:2370:1000::/48 Deny Cloud
 2a02:2370:4000::/48 Deny Cloud
 2a02:2370:8000::/48 Deny Cloud
 2a02:2370:c000::/48 Deny Cloud
 2a02:2370:f000::/48 Deny Cloud
 2a02:26f0::/32 Deny Cloud
-Origin: EU
-2a01:348:317::/48 Deny Cloud
-Origin: GB
-2001:218:3004::/48 Deny Cloud
-Origin: JP
+Origin: NL
 2404:4e00:1::/48 Deny Cloud
 2404:4e00:3::/48 Deny Cloud
 2404:4e00:4::/46 Deny Cloud
@@ -1691,13 +1700,38 @@ Origin: JP
 2404:4e00:2000::/48 Deny Cloud
 2404:4e00:8000::/48 Deny Cloud
 2404:4e00:c000::/48 Deny Cloud
+2405:9600::/32 Deny Cloud
+2406:3000:35::/48 Deny Cloud
 Origin: SG
+2405:9800:b::/48 Deny Cloud
+Origin: TH
+2001:4546:1003::/48 Deny Cloud
+Origin: TW
+2001:418:1401:4::/64 Deny Cloud
+2001:418:1401:7::/64 Deny Cloud
+2001:418:1401:9::/64 Deny Cloud
+2001:418:1401:e::/63 Deny Cloud
+2001:418:141f:100::/56 Deny Cloud
+2001:418:141f:200::/56 Deny Cloud
+2001:418:1420:200::/56 Deny Cloud
+2001:418:142e:200::/55 Deny Cloud
+2001:418:143a:100::/56 Deny Cloud
+2001:418:143b:100::/56 Deny Cloud
+2001:418:1456:a00::/56 Deny Cloud
+2001:418:1456:1300::/56 Deny Cloud
+2001:418:1456:1900::/56 Deny Cloud
+2001:418:1c01:1::/64 Deny Cloud
 2001:418:2401:1::/64 Deny Cloud
+2001:418:8001::/48 Deny Cloud
+2001:418:8404:1::/64 Deny Cloud
 2001:428:1802:9::/64 Deny Cloud
 2001:428:2001:205::/64 Deny Cloud
+2001:438:fffd:13::/64 Deny Cloud
 2001:57a:102::/47 Deny Cloud
+2001:590:1801::/48 Deny Cloud
 2001:4878::/32 Deny Cloud
 2600:1400::/24 Deny Cloud
+2605:3c80:fc::/46 Deny Cloud
 2606:6c00:2::/48 Deny Cloud
 2606:6c00:4::/46 Deny Cloud
 2606:6c00:8::/47 Deny Cloud
@@ -1711,9 +1745,7 @@ Origin: SG
 2606:6c00:a000::/48 Deny Cloud
 2606:6c00:c000::/48 Deny Cloud
 2620:0:b60::/47 Deny Cloud
-2620:104:a00b::/48 Deny Cloud
-2620:104:a00c::/48 Deny Cloud
-2620:118:7000::/44 Deny Cloud
+2620:104:a000::/44 Deny Cloud
 Origin: US
 Tag: Akamai Technologies
 
@@ -4817,7 +4849,7 @@ Tag: REG.RU
 # ASNs 4769, 46015, 55405, 136170 ("Exa Bytes Network Sdn.Bhd").
 # DDoS, hacking, xmlrpc attacks, and brute-force attempts detected originating
 # from this network.
-# Updated: 2018.06.19 / Checked: 2020.06.20
+# Updated: 2018.06.19 / Checked: 2020.12.22
 
 2402:6c00::/32 Deny Cloud
 Origin: MY
@@ -6858,8 +6890,8 @@ Tag: ATW Internet Kft
 
 # ASNs 39517, 48874 ("HOSTMAZE INC SRL-D").
 # DDoS, SSH and brute-force attacks detected originating from this network.
-# Stop Forum Spam (SFS) listings: 1 (AS48874).
-# Updated: 2020.06.20
+# Stop Forum Spam (SFS) listings: 73 (AS48874).
+# Updated: 2020.06.20 / Checked: 2020.12.22
 
 2a02:13f0:8100::/48 Deny Cloud
 Origin: RO

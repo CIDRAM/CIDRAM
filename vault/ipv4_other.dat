@@ -1,8 +1,8 @@
 # IPv4 signatures file (CIDRs for proxies, VPNs and other miscellaneous unwanted services).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv4_other.dat
 
-# Version: 2020.352.092
-# Last modified: 2020.12.18
+# Version: 2020.363.601
+# Last modified: 2020.12.29
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage, i.e., with ignore.dat, with reCAPTCHA, with "extended rules" (default bypasses): « [ ]Low [x]Medium [ ]High »
@@ -211,8 +211,8 @@ recaptcha:
 
 # ASN 396507 ("Emerald Onion").
 # Anonymous tor endpoint; Significant source of spam.
-# Stop Forum Spam (SFS) listings: 46,294.
-# Updated: 2020.08.05
+# Stop Forum Spam (SFS) listings: 21,557.
+# Updated: 2020.08.05 / Checked: 2020.12.29
 
 23.129.64.0/24 Deny Proxy
 103.232.206.0/23 Deny Proxy
@@ -1265,7 +1265,7 @@ Tag: Beliefnet
 # Octopusnet VPN (mostly from AS44724, but we'll update via announces instead,
 # because we don't need to block the entire ASN, and there could be stray CIDRs
 # too). Proxy service with a history of spam events.
-# Updated: 2020.08.05
+# Updated: 2020.12.29
 
 46.46.17.0/24 Deny Proxy
 46.46.24.0/21 Deny Proxy
@@ -1273,7 +1273,7 @@ Tag: Beliefnet
 46.46.48.0/20 Deny Proxy
 83.217.28.0/22 Deny Proxy
 95.154.64.0/19 Deny Proxy
-95.154.96.0/20 Deny Proxy
+95.154.96.0/21 Deny Proxy
 95.154.112.0/22 Deny Proxy
 95.154.116.0/23 Deny Proxy
 95.154.120.0/21 Deny Proxy
@@ -1299,18 +1299,23 @@ Tag: Applied Privacy
 # Primarily provides anonymous proxy services. Under investigation for fraud.
 # Spam, hacking attempts, vulnerability probes, and other kinds of nefarious
 # and unwanted activity originating from their network. Regarded as high risk.
-# Stop Forum Spam (SFS) listings: 166 (AS50495), 89 (AS62874).
-# Updated: 2020.06.27
+# Stop Forum Spam (SFS) listings: 60 (AS50495), 91 (AS62874).
+# Updated: 2020.12.25
 
-185.134.220.0/22 Deny Proxy
-Origin: DE
 77.83.232.0/22 Deny Proxy
+83.136.221.0/24 Deny Proxy
+91.223.99.0/24 Deny Proxy
+91.223.102.0/24 Deny Proxy
+91.223.126.0/24 Deny Proxy
+91.223.163.0/24 Deny Proxy
+91.239.64.0/24 Deny Proxy
 194.39.32.0/22 Deny Proxy
-Origin: FR
-45.87.128.0/23 Deny Proxy
-45.154.148.0/23 Deny Proxy
+195.234.99.0/24 Deny Proxy
+Origin: DE
 212.102.124.0/24 Deny Proxy
 Origin: GB
+204.225.218.0/24 Deny Proxy
+Origin: LT
 194.14.219.0/24 Deny Proxy
 Origin: SE
 45.41.128.0/18 Deny Proxy
@@ -1322,6 +1327,8 @@ Origin: SE
 45.56.184.0/22 Deny Proxy
 45.61.88.0/21 Deny Proxy
 45.61.104.0/21 Deny Proxy
+45.61.115.0/24 Deny Proxy
+45.61.124.0/22 Deny Proxy
 64.57.136.0/21 Deny Proxy
 104.37.24.0/21 Deny Proxy
 104.143.80.0/20 Deny Proxy
@@ -1334,7 +1341,7 @@ Origin: SE
 104.232.196.0/22 Deny Proxy
 104.232.208.0/21 Deny Proxy
 104.238.32.0/21 Deny Proxy
-104.238.42.0/24 Deny Proxy
+104.238.40.0/24 Deny Proxy
 104.238.52.0/22 Deny Proxy
 142.147.128.0/17 Deny Proxy
 162.249.164.0/22 Deny Proxy

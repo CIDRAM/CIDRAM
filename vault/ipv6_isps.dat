@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_isps.dat
 
-# Version: 2020.356.511
-# Last modified: 2020.12.22
+# Version: 2020.363.601
+# Last modified: 2020.12.29
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage, i.e., with ignore.dat, with reCAPTCHA, with "extended rules" (default bypasses): « [ ]Low [x]Medium [ ]High »
@@ -69,14 +69,13 @@ recaptcha:
 
 # ASNs 24940, 37153 ("Hetzner Online GmbH").
 # Ranges change frequently / Should update often.
-# Stop Forum Spam (SFS) listings: 45,189 (AS24940), 351 (AS37153).
-# Updated: 2019.11.02 / Checked: 2020.06.30
+# Stop Forum Spam (SFS) listings: 38,208 (AS24940), 153 (AS37153).
+# Updated: 2020.12.29
 
 2001:67c:1164::/48 Deny Generic
 2a01:4f8::/29 Deny Generic
 2a01:b140::/29 Deny Generic
 2a06:be80::/29 Deny Generic
-2a0d:7e00::/48 Deny Generic
 2a0e:2c80::/29 Deny Generic
 Origin: DE
 2a06:1301:4050::/48 Deny Generic
@@ -242,7 +241,7 @@ Tag: CH-NET S.R.L
 
 
 # ASN 7743 ("JPMorgan Chase & Co").
-# Updated: 2019.06.02 / Checked: 2020.04.08
+# Updated: 2019.06.02 / Checked: 2020.12.26
 
 2620:11::/45 Deny Generic
 2620:11:8::/47 Deny Generic
@@ -620,10 +619,11 @@ recaptcha:
 # ASNs 200019, 207636 ("ALEXHOST SRL").
 # A significant source of spam, hacking, and other nefarious activity.
 # Ranges change frequently / Should update often.
-# Stop Forum Spam (SFS) listings: 1,300 (AS200019).
-# Updated: 2020.06.28
+# Stop Forum Spam (SFS) listings: 2,031 (AS200019).
+# Updated: 2020.12.28
 
 2001:678:6d4::/48 Deny Malware
+2a09:7c40::/30 Deny Malware
 2a09:7c46::/32 Deny Malware
 2a0f:5f40::/29 Deny Malware
 Origin: MD
@@ -1220,19 +1220,20 @@ recaptcha:
 # ASN 18403 ("The Corporation for Financing & Promoting Technology").
 # Interlaces with human endpoints in Vietnam, but also a significant source of
 # spam, hacks, brute-forcing, probing, etc.
-# %Listed, abuseat.org (CBL-Listed): 4.65%.
-# Stop Forum Spam (SFS) listings: 10,487.
-# Updated: 2020.02.11 / Checked: 2020.06.23
+# %Listed, abuseat.org (CBL-Listed): 2.60%.
+# Stop Forum Spam (SFS) listings: 10,059.
+# Updated: 2020.12.28
 
 2001:df2:d900::/48 Deny Generic
 2001:df6:1e00::/48 Deny Generic
-2403:6a40::/48 Deny Generic
 2404:b740::/48 Deny Generic
 2404:dac0::/48 Deny Generic
 2404:ef80::/48 Deny Generic
 2405:19c0::/48 Deny Generic
 2405:1ac0::/48 Deny Generic
 2405:4800::/30 Deny Generic
+2406:a6c0::/48 Deny Generic
+2406:cbc0::/48 Deny Generic
 Origin: VN
 Tag: CFPT
 ---
@@ -1806,14 +1807,9 @@ Tag: Foreningen
 
 # ASN 31148 ("Freenet Ltd").
 # Ukrainian ISP with human endpoints, but also a frequent source of spam and
-# hack attempts. Numerous listings at AbuseIPDB.com! Marked for use with
-# reCAPTCHA to reduce the false positive risk, and CIDRAM users from the
-# Ukraine, or targeting traffic from the Ukraine, should list this section in
-# their ignore.dat file to reduce the false positive risk (but the ISP could be
-# considered high risk for others elsewhere, so would best continue to be
-# blocked).
-# Stop Forum Spam (SFS) listings: 1,892.
-# Updated: 2018.02.20 / Checked: 2020.04.09
+# hack attempts (refer to AbuseIPDB reports).
+# Stop Forum Spam (SFS) listings: 1,230.
+# Updated: 2018.02.20 / Checked: 2020.12.26
 
 2a00:1228::/32 Deny Generic
 Origin: UA
@@ -1924,11 +1920,11 @@ recaptcha:
 # ASN 8708 ("RCS & RDS SA").
 # Romanian domestic ISP; Also a frequent source of spam, hack attempts, and
 # other unwanted traffic.
-# %Listed, abuseat.org (CBL-Listed): 0.61%.
-# Stop Forum Spam (SFS) listings: 3,347.
-# Updated: 2018.06.24 / Checked: 2020.06.27
+# %Listed, abuseat.org (CBL-Listed): 0.35%.
+# Stop Forum Spam (SFS) listings: 3,706.
+# Updated: 2018.06.24 / Modified: 2020.12.29
 
-2a02:2f00::/28 Deny Generic
+2a02:2f00::/28 Deny Spam
 Origin: RO
 Tag: RCS & RDS SA
 ---
@@ -2120,10 +2116,10 @@ recaptcha:
 # ASNs 17072, 22884 ("TOTAL PLAY TELECOMUNICACIONES SA DE CV").
 # Mexican domestic ISP; also a notable source of forum and blog spam. Listing
 # just the currently affected ranges (not the entire network).
-# Stop Forum Spam (SFS) listings: 566 (AS17072), 1,111 (AS22884).
-# Updated: 2020.06.22
+# Stop Forum Spam (SFS) listings: 228 (AS17072), 856 (AS22884).
+# Updated: 2020.12.25
 
-2806:2f0:8000:aae::/64 Deny Spam
+2806:2f0:4021:46c8::/64 Deny Spam
 Origin: MX
 Tag: TOTAL PLAY TELECOMUNICACIONES
 ---
@@ -2391,15 +2387,19 @@ recaptcha:
 # Major domestic ISP in the United States; Should NEVER be blocked in entirety.
 # Listed here are some specific CIDRs/IPs where spam and/or other undesirable
 # traffic has been detected (spam/malware).
-# Stop Forum Spam (SFS) listings: 1,247.
-# Updated: 2020.06.22
+# Stop Forum Spam (SFS) listings: 1,576.
+# Updated: 2020.12.25
 
-2600:1700:80:84e0::/64 Deny Spam
-2600:1700:6a40:5b70::/64 Deny Spam
-2600:1700:b420:cec0::/64 Deny Spam
-2600:1700:c021:fa40::/64 Deny Spam
-2600:1700:e4a0:e400::/64 Deny Spam
-2600:1702:c11:5400::/64 Deny Spam
+2600:1700:a50:5f10::/64 Deny Spam
+2600:1700:4752:1ed0::/64 Deny Spam
+2600:1700:62d8:4010::/64 Deny Spam
+2600:1700:7c08:a2b0::/64 Deny Spam
+2600:1700:95c0:1a50::/64 Deny Spam
+2600:1700:9c91:f80::/64 Deny Spam
+2600:1700:d590:e110::/64 Deny Spam
+2600:1700:e231:aa0::/64 Deny Spam
+2600:1700:eec0:6830::/64 Deny Spam
+2602:306:c48e:19c0::/64 Deny Spam
 Origin: US
 Tag: AT&T Services, Inc
 ---
@@ -2411,8 +2411,8 @@ recaptcha:
 # Norwegian educational infrastructure provider. Marked for use with reCAPTCHA
 # due to moderate risk of human endpoints being present. Hack, SSH, and
 # brute-force attempts detected originating from this network.
-# Stop Forum Spam (SFS) listings: 6.
-# Updated: 2020.06.22
+# Stop Forum Spam (SFS) listings: 7.
+# Updated: 2020.06.22 / Checked: 2020.12.25
 
 2001:67c:714::/48 Deny Malware
 2001:700::/32 Deny Malware
@@ -2445,9 +2445,9 @@ recaptcha:
 # ASN 5617 ("Orange Polska Spolka Akcyjna).
 # Major Polish domestic ISP; Also a *HUGE* source of forum+blog spam! Listing
 # the entire ASN, but also including it in ignore.dat by default.
-# %Listed, abuseat.org (CBL-Listed): 0.18%.
-# Stop Forum Spam (SFS) listings: 88,442.
-# Updated: 2020.06.23
+# %Listed, abuseat.org (CBL-Listed): 0.11%.
+# Stop Forum Spam (SFS) listings: 74,452.
+# Updated: 2020.06.23 / Checked: 2020.12.25
 
 2a01:1000::/21 Deny Spam
 Origin: PL
@@ -2461,9 +2461,9 @@ recaptcha:
 # Indonesian domestic ISP; Also a source of spam. Also SSH, brute-force, and
 # hack attempts reportedly seen from this network. Listing just the affected
 # ranges/addresses for the moment (plus all US ranges, which are cloud).
-# %Listed, abuseat.org (CBL-Listed): 0.84%.
-# Stop Forum Spam (SFS) listings: 817.
-# Updated: 2020.06.27
+# %Listed, abuseat.org (CBL-Listed): 0.85%.
+# Stop Forum Spam (SFS) listings: 1,298.
+# Updated: 2020.06.27 / Checked: 2020.12.25
 
 2620:107:4008:12e::/64 Deny Cloud
 Origin: US

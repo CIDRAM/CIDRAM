@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_isps.dat
 
-# Version: 2020.363.601
-# Last modified: 2020.12.29
+# Version: 2021.2.620
+# Last modified: 2021.01.03
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage, i.e., with ignore.dat, with reCAPTCHA, with "extended rules" (default bypasses): « [ ]Low [x]Medium [ ]High »
@@ -1610,8 +1610,8 @@ recaptcha:
 # ASN 31200 ("Novotelecom Ltd").
 # When updating ASNs, only block the problematic ASNs (those with known cases
 # of hacking events, spamming, etc); don't block the entire network.
-# Stop Forum Spam (SFS) listings: 764.
-# Updated: 2017.09.30 / Checked: 2020.04.19
+# Stop Forum Spam (SFS) listings: 632.
+# Updated: 2017.09.30 / Checked: 2021.01.02
 
 2a00:7700::/32 Deny Generic
 Origin: RU
@@ -1636,8 +1636,8 @@ recaptcha:
 
 
 # ASN 44493 ("Chelyabinsk-Signal").
-# Stop Forum Spam (SFS) listings: 485.
-# Updated: 2017.07.08 / Checked: 2020.04.19
+# Stop Forum Spam (SFS) listings: 163.
+# Updated: 2017.07.08 / Checked: 2021.01.02
 
 2a03:a0e0::/32 Deny Spam
 Origin: RU
@@ -1965,7 +1965,7 @@ recaptcha:
 
 # ASN 13249 ("IT Systems LLC").
 # Caught trying to hack into WordPress sites.
-# Updated: 2018.07.28 / Checked: 2020.04.19
+# Updated: 2018.07.28 / Checked: 2021.01.02
 
 2a00:1d88::/32 Deny Generic
 Origin: UA
@@ -2142,24 +2142,10 @@ recaptcha:
  enabled: true
 
 
-# ASN 5610 ("O2 Czech Republic, a.s"). A Czech domestic ISP caught spamming.
-# Listing just the affected ranges (not the whole network).
-# Stop Forum Spam (SFS) listings: 657.
-# Updated: 2020.07.12
-
-2a00:1028:83d0:4932::/64 Deny Spam
-2a00:1028:96c3:c3a::/64 Deny Spam
-Origin: CZ
-Tag: O2 Czech Republic
----
-recaptcha:
- enabled: true
-
-
 # ASN 39608 ("Lanet Network Ltd").
 # A Ukrainian domestic ISP and a significant source of spam.
-# Stop Forum Spam (SFS) listings: 9,330.
-# Updated: 2020.02.14 / Checked: 2020.07.12
+# Stop Forum Spam (SFS) listings: 4,898.
+# Updated: 2020.02.14 / Checked: 2021.01.03
 
 2a01:5800::/32 Deny Spam
 2a01:bf20::/32 Deny Spam
@@ -2172,8 +2158,8 @@ recaptcha:
 
 # ASN 25159 ("PJSC MegaFon").
 # A Russian domestic ISP and a significant source of spam.
-# Stop Forum Spam (SFS) listings: 1,828.
-# Updated: 2020.02.14 / Checked: 2020.07.12
+# Stop Forum Spam (SFS) listings: 1,847.
+# Updated: 2020.02.14 / Checked: 2021.01.03
 
 2a03:d000:4000::/36 Deny Spam
 Origin: RU

@@ -1,8 +1,8 @@
 # IPv4 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv4_isps.dat
 
-# Version: 2021.2.620
-# Last modified: 2021.01.03
+# Version: 2021.9.631
+# Last modified: 2021.01.10
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage, i.e., with ignore.dat, with reCAPTCHA, with "extended rules" (default bypasses): « [ ]Low [x]Medium [ ]High »
@@ -1609,8 +1609,8 @@ recaptcha:
 # Network is slowly improving. Redacting listings down to just 41.58.*, as the
 # only incidents since the last few checks seemed to have originated from that
 # pariticular range. May be able to eventually delist this section, hopefully.
-# Stop Forum Spam (SFS) listings: 18.
-# Updated: 2019.12.12 / Checked: 2020.04.27
+# Stop Forum Spam (SFS) listings: 38.
+# Updated: 2019.12.12 / Checked: 2021.01.10
 
 41.58.0.0/16 Deny Generic
 Origin: NG
@@ -11726,42 +11726,56 @@ recaptcha:
  enabled: true
 
 
-# ASN 36903 ("Office National des Postes et Telecommunications ONPT (Maroc Telecom) / IAM").
+# ASNs 6713, 36903 ("Office National des Postes et Telecommunications ONPT (Maroc Telecom) / IAM").
 # Moroccan domestic ISP and a source of spam. Just listing the specific spammy
-# IPs (not the entire network).
-# %Listed, abuseat.org (CBL-Listed): 5.75%.
-# Stop Forum Spam (SFS) listings: 1,078.
-# Updated: 2020.08.17
+# IPs (not the entire network) + some malware affected ranges.
+# %Listed, abuseat.org (CBL-Listed): 0.12% (AS6713), 4.34% (AS36903).
+# Stop Forum Spam (SFS) listings: 159 (AS6713), 1,215 (AS36903).
+# Updated: 2021.01.05
 
-41.141.42.48/32 Deny Spam
-41.143.10.78/32 Deny Spam
-41.143.142.52/32 Deny Spam
-41.143.244.41/32 Deny Spam
-41.250.85.119/32 Deny Spam
-41.251.67.53/32 Deny Spam
-105.155.58.29/32 Deny Spam
-105.155.162.253/32 Deny Spam
-105.156.13.83/32 Deny Spam
-105.156.118.85/32 Deny Spam
-105.157.221.240/32 Deny Spam
-105.157.252.187/32 Deny Spam
-105.158.179.35/32 Deny Spam
-105.158.211.198/32 Deny Spam
-105.159.132.196/32 Deny Spam
-160.176.6.213/32 Deny Spam
-160.178.157.128/32 Deny Spam
-160.179.243.178/32 Deny Spam
-196.64.119.142/32 Deny Spam
-196.65.37.22/32 Deny Spam
-196.65.62.148/32 Deny Spam
-196.65.88.92/32 Deny Spam
-196.65.163.126/32 Deny Spam
-196.65.242.236/32 Deny Spam
-196.70.53.248/32 Deny Spam
-196.74.56.31/32 Deny Spam
-196.75.16.15/32 Deny Spam
-196.75.30.81/32 Deny Spam
-196.77.9.40/32 Deny Spam
+41.140.47.224/32 Deny Spam
+41.140.161.210/32 Deny Spam
+41.141.228.233/32 Deny Spam
+41.143.203.153/32 Deny Spam
+41.249.46.13/32 Deny Spam
+41.249.175.1/32 Deny Spam
+41.249.198.108/32 Deny Spam
+41.250.130.129/32 Deny Spam
+41.250.151.221/32 Deny Spam
+41.251.18.110/32 Deny Spam
+102.78.145.240/32 Deny Spam
+102.78.159.117/32 Deny Spam
+105.154.140.102/32 Deny Spam
+105.154.200.149/32 Deny Spam
+105.155.169.112/32 Deny Spam
+105.155.181.234/32 Deny Spam
+105.156.78.61/32 Deny Spam
+105.156.117.31/32 Deny Spam
+105.156.159.151/32 Deny Spam
+105.156.238.199/32 Deny Spam
+105.157.34.13/32 Deny Spam
+105.157.92.42/32 Deny Spam
+105.158.74.0/24 Deny Malware
+105.158.131.244/32 Deny Spam
+105.159.25.10/32 Deny Spam
+105.159.94.70/32 Deny Spam
+105.159.241.183/32 Deny Spam
+160.176.163.41/32 Deny Spam
+160.177.69.95/32 Deny Spam
+160.178.98.248/32 Deny Spam
+160.178.164.212/32 Deny Spam
+160.178.200.40/32 Deny Spam
+160.179.248.111/32 Deny Spam
+196.64.6.122/32 Deny Spam
+196.64.124.200/32 Deny Spam
+196.65.62.113/32 Deny Spam
+196.65.74.0/32 Deny Spam
+196.65.165.98/32 Deny Spam
+196.70.45.0/24 Deny Spam
+196.70.49.208/32 Deny Spam
+196.70.86.245/32 Deny Spam
+196.75.225.49/32 Deny Spam
+196.217.20.60/32 Deny Spam
 Origin: MA
 Tag: Maroc Telecom
 ---
@@ -15234,6 +15248,23 @@ recaptcha:
 193.180.164.0/24 Deny Spam
 Origin: SE
 Tag: Obenetwork AB
+---
+recaptcha:
+ enabled: true
+
+
+# ASN 25521 ("Industrial Media Network").
+# Ukrainian domestic ISP. Spam, DDoS attacks, brute-force attacks, and port
+# scanning detected from some specific addresses at this network.
+# Stop Forum Spam (SFS) listings: 146.
+# Updated: 2021.01.10
+
+46.30.165.148/32 Deny Spam
+82.193.104.168/32 Deny Malware
+93.188.35.125/32 Deny Spam
+93.188.39.14/32 Deny Spam
+Origin: UA
+Tag: IPnet
 ---
 recaptcha:
  enabled: true

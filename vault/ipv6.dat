@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6.dat
 
-# Version: 2021.2.620
-# Last modified: 2021.01.03
+# Version: 2021.9.631
+# Last modified: 2021.01.10
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage, i.e., with ignore.dat, with reCAPTCHA, with "extended rules" (default bypasses): « [x]Low [ ]Medium [ ]High »
@@ -475,7 +475,7 @@ Tag: Webzilla B.V
 
 # ASNs 28271, 52550 ("DataCorpore Servios e Representaes").
 # Stop Forum Spam (SFS) listings: 104 (AS28271).
-# Updated: 2018.09.16 / Checked: 2020.05.01
+# Updated: 2018.09.16 / Checked: 2021.01.10
 
 2804:4c4::/32 Deny Cloud
 2804:cc0::/32 Deny Cloud
@@ -1007,16 +1007,21 @@ Tag: Internap Network
 
 
 # ASNs 23033, 32875 ("Wowrack.com").
-# Stop Forum Spam (SFS) listings: 561 (AS23033), 258 (AS32875).
-# Updated: 2020.07.05
+# Stop Forum Spam (SFS) listings: 181 (AS23033), 1,074 (AS32875).
+# Updated: 2021.01.10
 
+2a07:9944:1d::/48 Deny Cloud
+Origin: GB
 2602:febc::/36 Deny Cloud
 2602:ffca::/36 Deny Cloud
 2604:c00::/32 Deny Cloud
 2605:fe00::/36 Deny Cloud
 2606:6680:19::/48 Deny Cloud
+2606:6680:20::/48 Deny Cloud
 2607:f8f8::/32 Deny Cloud
 Origin: US
+2001:df6:6c00::/48 Deny Cloud
+Origin: XP
 Tag: Wowrack.com
 
 
@@ -1050,7 +1055,7 @@ Tag: Cyberverse, Inc
 
 # ASN 54489 ("CoreSpace, Inc").
 # (Can omit anything under 44../8; clean).
-# Updated: 2016.01.22 / Checked: 2020.05.01
+# Updated: 2016.01.22 / Checked: 2021.01.10
 
 2604:7780::/32 Deny Cloud
 Origin: US
@@ -1058,7 +1063,7 @@ Tag: CoreSpace, Inc
 
 
 # ASN 32421 ("Black Lotus Communications").
-# Updated: 2018.04.30 / Checked: 2020.04.27
+# Updated: 2018.04.30 / Checked: 2021.01.10
 
 2001:67c:2f08::/48 Deny Cloud
 Origin: GB
@@ -1483,18 +1488,17 @@ Tag: Enzu Inc
 
 
 # ASN 18779 ("EGIHosting").
-# Stop Forum Spam (SFS) listings: 125.
-# Updated: 2020.09.04
+# Stop Forum Spam (SFS) listings: 167.
+# Updated: 2021.01.10
 
+2a0c:7080::/29 Deny Cloud
+Origin: RU
+2a02:f240::/29 Deny Cloud
+2a0c:47c0::/29 Deny Cloud
 2a0c:7dc0::/29 Deny Cloud
 2a0c:89c0::/29 Deny Cloud
-Origin: BG
-2a0c:47c0::/29 Deny Cloud
-Origin: CH
 2a0c:9ac0::/29 Deny Cloud
-Origin: FI
-2a02:f240::/29 Deny Cloud
-Origin: NO
+Origin: TR
 2604:bc0:3::/48 Deny Cloud
 2607:f358::/32 Deny Cloud
 Origin: US
@@ -1649,8 +1653,8 @@ Tag: Contabo GmbH
 
 
 # ASN 45815 ("ESDS Software Solution").
-# Stop Forum Spam (SFS) listings: 6.
-# Updated: 2017.01.25 / Checked: 2020.07.05
+# Stop Forum Spam (SFS) listings: 33.
+# Updated: 2017.01.25 / Checked: 2021.01.10
 
 2400:5300::/47 Deny Cloud
 Origin: IN
@@ -2195,12 +2199,11 @@ Tag: Centrilogic
 
 
 # ASN 53340 ("VegasNAP, LLC").
-# Stop Forum Spam (SFS) listings: 244.
-# Updated: 2020.07.05
+# Stop Forum Spam (SFS) listings: 243.
+# Updated: 2021.01.10
 
 2604:2280::/40 Deny Cloud
-2604:2280:4000::/39 Deny Cloud
-2604:2280:4200::/40 Deny Cloud
+2604:2280:4000::/38 Deny Cloud
 2604:2280:ff00::/40 Deny Cloud
 2605:6f80:ffff::/48 Deny Cloud
 2606:6680:5::/48 Deny Cloud
@@ -3178,19 +3181,20 @@ Tag: RamNode LLC
 
 
 # ASN 198203 ("RouteLabel V.O.F").
-# Stop Forum Spam (SFS) listings: 38.
-# Updated: 2018.04.03 / Checked: 2020.04.27
+# Stop Forum Spam (SFS) listings: 8.
+# Updated: 2021.01.10
 
+2a03:afe0::/29 Deny Cloud
+Origin: GB
 2a00:d880::/32 Deny Cloud
 2a02:50e0::/32 Deny Cloud
-2a03:afe0::/29 Deny Cloud
 Origin: NL
 Tag: RouteLabel V.O.F
 
 
 # ASN 42632 ("MnogoByte LLC").
-# Stop Forum Spam (SFS) listings: 632.
-# Updated: 2020.07.05
+# Stop Forum Spam (SFS) listings: 215.
+# Updated: 2020.07.05 / Checked: 2021.01.10
 
 2001:67c:1688::/48 Deny Cloud
 2a02:878:1::/48 Deny Cloud
@@ -3456,8 +3460,8 @@ Tag: Trans-IX B.V
 
 
 # ASN 31103 ("Keyweb AG").
-# Stop Forum Spam (SFS) listings: 9,549.
-# Updated: 2019.12.10 / Checked: 2020.04.27
+# Stop Forum Spam (SFS) listings: 6,157.
+# Updated: 2019.12.10 / Checked: 2021.01.10
 
 2001:1b60::/29 Deny Cloud
 Origin: DE
@@ -3839,18 +3843,22 @@ Origin: IE
 Tag: Sternforth Ltd
 
 
-# ASN 44812 ("IT Expert LLC").
-# Stop Forum Spam (SFS) listings: 725.
-# Updated: 2020.07.05
+# ASNs 44812, 206766 ("IT Expert LLC").
+# Stop Forum Spam (SFS) listings: 194 (AS44812), 185 (AS206766).
+# Updated: 2021.01.10
 
+2a05:545::/32 Deny Cloud
+2a06:c004::/32 Deny Cloud
+2a06:c006::/32 Deny Cloud
 2a07:ac80::/29 Deny Cloud
 2a09:4d40::/29 Deny Cloud
+2a09:9443::/32 Deny Cloud
+2a0a:f580::/32 Deny Cloud
+2a0b:1580::/29 Deny Cloud
 2a0b:2d84::/32 Deny Cloud
-2a0e:fb42::/32 Deny Cloud
-2a0f:26c3::/32 Deny Cloud
+2a0e:eec0::/32 Deny Cloud
 2a0f:26c7::/32 Deny Cloud
-2a0f:3102::/32 Deny Cloud
-2a0f:9481::/32 Deny Cloud
+2a0f:8441::/32 Deny Cloud
 Origin: RU
 Tag: IT Expert LLC
 
@@ -4344,7 +4352,7 @@ Tag: CtrlS Datacenters
 # ASN 25234 ("ACTIVE 24 Sp. z o.o.").
 # Note when updating: Also contains "proxy" signatures.
 # Some IPs on these ASNs caught probing for database dumps.
-# Updated: 2017.09.25 / Checked: 2020.04.27
+# Updated: 2017.09.25 / Checked: 2021.01.10
 
 2a02:4a8::/32 Deny Cloud
 Origin: CZ
@@ -4371,8 +4379,8 @@ Tag: SAPIOTERRA, LLC
 
 
 # ASN 50297 ("Infium, UAB").
-# Stop Forum Spam (SFS) listings: 326.
-# Updated: 2018.03.14 / Checked: 2020.07.05
+# Stop Forum Spam (SFS) listings: 309.
+# Updated: 2018.03.14 / Checked: 2021.01.10
 
 2001:67c:28f8::/48 Deny Cloud
 Origin: LT
@@ -4773,11 +4781,14 @@ Tag: KPNQWest Italia
 
 # ASNs 41564, 58065 ("Packet Exchange Limited").
 # Caught XRumer operating on this network.
-# Stop Forum Spam (SFS) listings: 11,222 (AS41564), 7,661 (AS58065).
-# Updated: 2020.07.05
+# Stop Forum Spam (SFS) listings: 54,315 (AS41564), 17,180 (AS58065).
+# Updated: 2021.01.10
 
 2a02:5740::/47 Deny Cloud
-Origin: EE
+2a02:5740:9::/48 Deny Cloud
+2a02:5740:21::/48 Deny Cloud
+2a02:5740:24::/48 Deny Cloud
+Origin: US
 Tag: Packet Exchange Limited
 ---
 recaptcha:
@@ -5068,10 +5079,20 @@ Origin: UA
 Tag: Cosmonova LLC
 
 
+# ASN 44709 ("O.M.C. COMPUTERS & COMMUNICATIONS LTD").
+# Stop Forum Spam (SFS) listings: 57.
+# Updated: 2021.01.10
+
+2a06:c5c0:700::/48 Deny Cloud
+2a06:c5c0:900::/48 Deny Cloud
+Origin: IL
+Tag: O.M.C. C.C. LTD
+
+
 # ASN 54456 ("CloudAccess.net, LLC").
-# No listings at Google or SFS at the time of last check, but still reports of
-# hack attempts, spamming, etc at AbuseIPDB. Should reevaluate at next update.
-# Updated: 2019.02.08 / Checked: 2020.04.27
+# Some reports of hack attempts, spamming, etc at AbuseIPDB.
+# Stop Forum Spam (SFS) listings: 1.
+# Updated: 2019.02.08 / Checked: 2021.01.10
 
 2607:1b00:1::/48 Deny Cloud
 2607:1b00:2::/47 Deny Cloud
@@ -5574,8 +5595,8 @@ Tag: MVPS LTD
 
 # ASN 134113 ("Kazi Sazzad Hossain T/A Millennium Computers & Networking").
 # Caught trying to hack WordPress sites.
-# Stop Forum Spam (SFS) listings: 29.
-# Updated: 2019.07.21 / Checked: 2020.05.01
+# Stop Forum Spam (SFS) listings: 99.
+# Updated: 2019.07.21 / Checked: 2021.01.10
 
 2403:140::/32 Deny Cloud
 Origin: BD
@@ -7450,6 +7471,16 @@ Origin: NL
 2606:ed00::/32 Deny Cloud
 Origin: US
 Tag: Des Capital B.V
+
+
+# ASN 34773 ("Vhost Meremeta Ltd").
+# Email scrapers and spambots detected at this network.
+# Updated: 2021.01.10
+
+2a0a:1b80::/30 Deny Cloud
+2a0a:1b84::/31 Deny Cloud
+Origin: KE
+Tag: Vhost Meremeta Ltd
 
 
 # ---

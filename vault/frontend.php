@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2020.12.09).
+ * This file: Front-end handler (last modified: 2021.01.10).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -1447,7 +1447,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
                         $CIDRAM['ThisDir']['FieldOut'] .= sprintf(
                             '<input type="checkbox" class="auto" name="%1$s" id="%1$s"%2$s /><label for="%1$s" class="s">%3$s</label><br />',
                             $CIDRAM['ThisDir']['DirLangKey'] . '_' . $CIDRAM['ChoiceKey'],
-                            $CIDRAM['in_csv']($CIDRAM['ChoiceKey'], $CIDRAM['Config'][$CIDRAM['CatKey']][$CIDRAM['DirKey']]) ? ' checked' : '',
+                            $CIDRAM['Request']->inCsv($CIDRAM['ChoiceKey'], $CIDRAM['Config'][$CIDRAM['CatKey']][$CIDRAM['DirKey']]) ? ' checked' : '',
                             $CIDRAM['ChoiceValue']
                         );
                     } else {

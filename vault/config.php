@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Configuration handler (last modified: 2020.10.05).
+ * This file: Configuration handler (last modified: 2021.01.10).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -17,16 +17,13 @@ if (!defined('CIDRAM')) {
 }
 
 /** CIDRAM version number (SemVer). */
-$CIDRAM['ScriptVersion'] = '1.17.4';
+$CIDRAM['ScriptVersion'] = '1.18.0';
 
 /** CIDRAM version identifier (complete notation). */
 $CIDRAM['ScriptIdent'] = 'CIDRAM v' . $CIDRAM['ScriptVersion'];
 
 /** CIDRAM User Agent (for external requests). */
 $CIDRAM['ScriptUA'] = $CIDRAM['ScriptIdent'] . ' (https://cidram.github.io/)';
-
-/** Default timeout (for external requests). */
-$CIDRAM['Timeout'] = 12;
 
 /** Determine PHP path. */
 $CIDRAM['CIDRAM_PHP'] = defined('PHP_BINARY') ? PHP_BINARY : '';
@@ -182,3 +179,15 @@ $CIDRAM['DefaultAlgo'] = (
 if (!empty($CIDRAM['Config']['general']['hide_version'])) {
     $CIDRAM['ScriptIdent'] = 'CIDRAM';
 }
+
+/** Instantiate the request class. */
+$CIDRAM['Request'] = new \Maikuolan\Common\Request();
+$CIDRAM['Request']->Channels = (
+    $Channels = $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'channels.yaml')
+) ? (new \Maikuolan\Common\YAML($Channels))->Data : [];
+if (!isset($CIDRAM['Request']->Channels['Triggers'])) {
+    $CIDRAM['Request']->Channels['Triggers'] = [];
+}
+$CIDRAM['Request']->Disabled = $CIDRAM['Config']['general']['disabled_channels'];
+$CIDRAM['Request']->UserAgent = $CIDRAM['ScriptUA'];
+$CIDRAM['Request']->SendToOut = (defined('DEV_DEBUG_MODE') && DEV_DEBUG_MODE === true);

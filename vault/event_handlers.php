@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Event handlers file (last modified: 2020.12.13).
+ * This file: Event handlers file (last modified: 2021.01.10).
  */
 
 /**
@@ -173,7 +173,7 @@ $CIDRAM['Events']->addHandler('error', function (string $Data) use (&$CIDRAM): b
     if (
         !$CIDRAM['Config']['general']['error_log'] ||
         empty($CIDRAM['Stage']) ||
-        !$CIDRAM['in_csv']($CIDRAM['Stage'], $CIDRAM['Config']['general']['error_log_stages'])
+        !$CIDRAM['Request']->inCsv($CIDRAM['Stage'], $CIDRAM['Config']['general']['error_log_stages'])
     ) {
         return false;
     }

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2020.12.13).
+ * This file: Functions file (last modified: 2021.01.10).
  */
 
 /** Autoloader for CIDRAM classes. */
@@ -699,148 +699,6 @@ $CIDRAM['Supplementary'] = function (string $Source) use (&$CIDRAM): array {
         }
     }
     return $Out;
-};
-
-/**
- * Used to send cURL requests.
- *
- * @param string $URI The resource to request.
- * @param mixed $Params If empty or omitted, CURLOPT_POST is false. Otherwise,
- *      CURLOPT_POST is true, and the parameter is used to supply
- *      CURLOPT_POSTFIELDS. Normally an associative array of key-value pairs,
- *      but can be any kind of value supported by CURLOPT_POSTFIELDS. Optional.
- * @param int $Timeout An optional timeout limit.
- * @param array $Headers An optional array of headers to send with the request.
- * @param int $Depth Recursion depth of the current closure instance.
- * @return string The results of the request, or an empty string upon failure.
- */
-$CIDRAM['Request'] = function (string $URI, $Params = [], int $Timeout = -1, array $Headers = [], int $Depth = 0) use (&$CIDRAM): string {
-
-    /** Fetch channel information. */
-    if (!isset($CIDRAM['Channels'])) {
-        $CIDRAM['Channels'] = (
-            $Channels = $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'channels.yaml')
-        ) ? (new \Maikuolan\Common\YAML($Channels))->Data : [];
-        if (!isset($CIDRAM['Channels']['Triggers'])) {
-            $CIDRAM['Channels']['Triggers'] = [];
-        }
-    }
-
-    /** Test channel triggers. */
-    foreach ($CIDRAM['Channels']['Triggers'] as $TriggerName => $TriggerURI) {
-        if (
-            !isset($CIDRAM['Channels'][$TriggerName]) ||
-            !is_array($CIDRAM['Channels'][$TriggerName]) ||
-            substr($URI, 0, strlen($TriggerURI)) !== $TriggerURI
-        ) {
-            continue;
-        }
-        foreach ($CIDRAM['Channels'][$TriggerName] as $Channel => $Options) {
-            if (!is_array($Options) || !isset($Options[$TriggerName])) {
-                continue;
-            }
-            $Len = strlen($Options[$TriggerName]);
-            if (substr($URI, 0, $Len) !== $Options[$TriggerName]) {
-                continue;
-            }
-            unset($Options[$TriggerName]);
-            if (empty($Options) || $CIDRAM['in_csv'](key($Options), $CIDRAM['Config']['general']['disabled_channels'])) {
-                continue;
-            }
-            $AlternateURI = current($Options) . substr($URI, $Len);
-            break;
-        }
-        if ($CIDRAM['in_csv']($TriggerName, $CIDRAM['Config']['general']['disabled_channels'])) {
-            if (isset($AlternateURI)) {
-                return $CIDRAM['Request']($AlternateURI, $Params, $Timeout, $Headers, $Depth);
-            }
-            return '';
-        }
-        if (isset($CIDRAM['Channels']['Overrides'], $CIDRAM['Channels']['Overrides'][$TriggerName])) {
-            $Overrides = $CIDRAM['Channels']['cURL Overrides'][$TriggerName];
-        }
-        break;
-    }
-
-    /** Empty overrides in case none declared. */
-    $Overrides = [];
-
-    /** Initialise the cURL session. */
-    $Request = curl_init($URI);
-
-    $LCURI = strtolower($URI);
-    $SSL = (substr($LCURI, 0, 6) === 'https:');
-
-    curl_setopt($Request, CURLOPT_FRESH_CONNECT, true);
-    curl_setopt($Request, CURLOPT_HEADER, false);
-    if (empty($Params)) {
-        curl_setopt($Request, CURLOPT_POST, false);
-        $Post = false;
-    } else {
-        curl_setopt($Request, CURLOPT_POST, true);
-        curl_setopt($Request, CURLOPT_POSTFIELDS, $Params);
-        $Post = true;
-    }
-    if ($SSL) {
-        curl_setopt($Request, CURLOPT_PROTOCOLS, CURLPROTO_HTTPS);
-        curl_setopt($Request, CURLOPT_SSL_VERIFYPEER, (
-            isset($Overrides['CURLOPT_SSL_VERIFYPEER']) ? !empty($Overrides['CURLOPT_SSL_VERIFYPEER']) : false
-        ));
-    }
-    curl_setopt($Request, CURLOPT_FOLLOWLOCATION, true);
-    curl_setopt($Request, CURLOPT_MAXREDIRS, 1);
-    curl_setopt($Request, CURLOPT_RETURNTRANSFER, true);
-    curl_setopt($Request, CURLOPT_TIMEOUT, ($Timeout > 0 ? $Timeout : $CIDRAM['Timeout']));
-    curl_setopt($Request, CURLOPT_USERAGENT, $CIDRAM['ScriptUA']);
-    curl_setopt($Request, CURLOPT_HTTPHEADER, $Headers ?: []);
-    $Time = microtime(true);
-
-    /** Execute and get the response. */
-    $Response = curl_exec($Request);
-
-    /** Used for debugging. */
-    $Time = microtime(true) - $Time;
-
-    /** Check for problems (e.g., resource not found, server errors, etc). */
-    if (($Info = curl_getinfo($Request)) && is_array($Info) && isset($Info['http_code'])) {
-
-        /** Used for debugging. */
-        $CIDRAM['DebugMessage'](sprintf(
-            "\r%s - %s - %s - %s\n",
-            $Post ? 'POST' : 'GET',
-            $URI,
-            $Info['http_code'],
-            (floor($Time * 100) / 100) . 's'
-        ));
-
-        /** Most recent HTTP code flag. */
-        $CIDRAM['Most-Recent-HTTP-Code'] = $Info['http_code'];
-
-        /** Request failed. Try again using an alternative address. */
-        if ($Info['http_code'] >= 400 && isset($AlternateURI) && $Depth < 3) {
-            curl_close($Request);
-            return $CIDRAM['Request']($AlternateURI, $Params, $Timeout, $Headers, $Depth + 1);
-        }
-    } else {
-
-        /** Used for debugging. */
-        $CIDRAM['DebugMessage'](sprintf(
-            "\r%s - %s - %s - %s\n",
-            $Post ? 'POST' : 'GET',
-            $URI,
-            200,
-            (floor($Time * 100) / 100) . 's'
-        ));
-
-        /** Most recent HTTP code flag. */
-        $CIDRAM['Most-Recent-HTTP-Code'] = 200;
-    }
-
-    /** Close the cURL session. */
-    curl_close($Request);
-
-    /** Return the results of the request. */
-    return $Response;
 };
 
 /**
@@ -2413,28 +2271,6 @@ $CIDRAM['RL_Get_Usage'] = function () use (&$CIDRAM) {
 };
 
 /**
- * Checks for a value within CSV.
- *
- * @param string $Value The value to look for.
- * @param string $CSV The CSV to look in.
- * @return bool True when found; False when not found.
- */
-$CIDRAM['in_csv'] = function (string $Value, string $CSV): bool {
-    if (!$Value || !$CSV) {
-        return false;
-    }
-    $Arr = explode(',', $CSV);
-    if (strpos($CSV, '"') !== false) {
-        foreach ($Arr as &$Item) {
-            if (substr($Item, 0, 1) === '"' && substr($Item, -1) === '"') {
-                $Item = substr($Item, 1, -1);
-            }
-        }
-    }
-    return in_array($Value, $Arr, true);
-};
-
-/**
  * Initialises an error handler to catch any errors generated by CIDRAM when
  * needed.
  */
@@ -2524,23 +2360,8 @@ $CIDRAM['GenerateID'] = function (): string {
     return $Time;
 };
 
-/**
- * Prints debug messages (used in dev; not needed for production).
- *
- * @param string $Message The debug message to send.
- */
-$CIDRAM['DebugMessage'] = function (string $Message) {
-    if (!defined('DEV_DEBUG_MODE') || DEV_DEBUG_MODE !== true) {
-        return;
-    }
-    $Handle = fopen('php://stdout', 'wb');
-    fwrite($Handle, $Message);
-    fclose($Handle);
-};
-
 /** Make sure the vault is defined so that tests don't break. */
 if (isset($CIDRAM['Vault'])) {
-
     /** Load all default event handlers. */
     require $CIDRAM['Vault'] . 'event_handlers.php';
 }

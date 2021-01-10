@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Output generator (last modified: 2020.11.27).
+ * This file: Output generator (last modified: 2021.01.10).
  */
 
 /** Initialise cache. */
@@ -281,8 +281,8 @@ if (!empty($CIDRAM['TestResults']) && $CIDRAM['BlockInfo']['SignatureCount'] && 
  * need it, but I really don't recommend using this feature if at all possible.
  */
 if ($CIDRAM['RL_Active'] && isset($CIDRAM['Factors']) && (!$CIDRAM['Config']['rate_limiting']['exceptions'] || (
-    !($CIDRAM['BlockInfo']['Verified'] && $CIDRAM['in_csv']('Verified', $CIDRAM['Config']['rate_limiting']['exceptions'])) &&
-    !(!empty($CIDRAM['Whitelisted']) && $CIDRAM['in_csv']('Whitelisted', $CIDRAM['Config']['rate_limiting']['exceptions']))
+    !($CIDRAM['BlockInfo']['Verified'] && $CIDRAM['Request']->inCsv('Verified', $CIDRAM['Config']['rate_limiting']['exceptions'])) &&
+    !(!empty($CIDRAM['Whitelisted']) && $CIDRAM['Request']->inCsv('Whitelisted', $CIDRAM['Config']['rate_limiting']['exceptions']))
 ))) {
     $CIDRAM['Stage'] = 'RL';
     if (
@@ -436,7 +436,7 @@ if (!empty($CIDRAM['Webhooks']) || !empty($CIDRAM['Config']['Webhook']['URL'])) 
     }
 
     /** Set timeout. */
-    $CIDRAM['WebhookTimeout'] = $CIDRAM['Config']['Webhook']['Timeout'] ?? $CIDRAM['Timeout'];
+    $CIDRAM['WebhookTimeout'] = $CIDRAM['Config']['Webhook']['Timeout'] ?? $CIDRAM['Request']->DefaultTimeout;
 
     /** Process any special parameters. */
     if (empty($CIDRAM['Config']['Webhook']['Params'])) {

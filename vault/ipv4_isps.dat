@@ -1,8 +1,8 @@
 # IPv4 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv4_isps.dat
 
-# Version: 2021.9.631
-# Last modified: 2021.01.10
+# Version: 2021.10.539
+# Last modified: 2021.01.11
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage, i.e., with ignore.dat, with reCAPTCHA, with "extended rules" (default bypasses): « [ ]Low [x]Medium [ ]High »
@@ -1475,28 +1475,6 @@ recaptcha:
  enabled: true
 
 
-# ASNs 16880, 36421 ("Trend Micro Incorporated").
-# Follows their users around and attempts to get into restricted/private parts
-# of websites.
-# Updated: 2020.01.12 / Checked: 2020.05.29
-
-150.70.0.0/20 Deny Generic
-150.70.31.0/24 Deny Generic
-150.70.48.0/20 Deny Generic
-150.70.80.0/20 Deny Generic
-150.70.160.0/19 Deny Generic
-150.70.192.0/21 Deny Generic
-150.70.224.0/20 Deny Generic
-Origin: JP
-202.3.185.0/24 Deny Generic
-Origin: TW
-66.180.80.0/20 Deny Generic
-216.99.128.0/20 Deny Generic
-216.104.16.0/20 Deny Generic
-Origin: US
-Tag: Trend Micro
-
-
 # ASN 8551 ("Bezeq International-Ltd").
 # Domestic Israeli ISP with human endpoints, but has some bad actors (spambots,
 # scrapers, etc). Marked for use with reCAPTCHA and included in ignore.dat by
@@ -2852,8 +2830,8 @@ Tag: AS13188-CDN-LTD
 
 
 # ASN 15377 ('ISP "Fregat" Ltd.').
-# Stop Forum Spam (SFS) listings: 1,152.
-# Updated: 2019.08.29 / Checked: 2020.05.06
+# Stop Forum Spam (SFS) listings: 1,841.
+# Updated: 2019.08.29 / Checked: 2021.01.11
 
 5.252.180.0/22 Deny Spam
 46.98.0.0/16 Deny Spam
@@ -3056,8 +3034,8 @@ Tag: PHOENIX NAP, LLC
 
 
 # ASN 34300 ("JSC Internet-Cosmos").
-# Stop Forum Spam (SFS) listings: 732.
-# Updated: 2019.02.14 / Checked: 2020.05.21
+# Stop Forum Spam (SFS) listings: 5,228.
+# Updated: 2019.02.14 / Checked: 2021.01.11
 
 62.173.128.0/19 Deny Spam
 85.93.128.0/19 Deny Spam
@@ -6450,8 +6428,8 @@ recaptcha:
 
 
 # ASN 24812 ("NPK Home-Net Ltd").
-# Stop Forum Spam (SFS) listings: 94.
-# Updated: 2019.03.20 / Checked: 2020.05.26
+# Stop Forum Spam (SFS) listings: 125.
+# Updated: 2019.03.20 / Checked: 2021.01.11
 
 176.105.192.0/19 Deny Spam
 Origin: UA
@@ -9892,23 +9870,24 @@ recaptcha:
 # ASN 8359 ("MTS PJSC").
 # Caught trying to hack WordPress sites, a significant amount of other
 # unsavoury behaviour detected, and a significant source of spam.
-# Stop Forum Spam (SFS) listings: 5,630.
-# Updated: 2020.07.12
+# %Listed, abuseat.org (CBL-Listed): 0.61%.
+# Stop Forum Spam (SFS) listings: 4,802.
+# Updated: 2021.01.11
 
 141.101.232.0/24 Deny Spam
 Origin: NL
 5.144.96.0/19 Deny Spam
 62.5.128.0/17 Deny Spam
+62.105.44.0/22 Deny Spam
 62.105.48.0/21 Deny Spam
-62.105.58.0/23 Deny Spam
+62.105.56.0/22 Deny Spam
 62.113.88.0/24 Deny Spam
 62.118.0.0/16 Deny Spam
 62.152.64.0/19 Deny Spam
 62.220.43.0/24 Deny Spam
 80.83.228.0/22 Deny Spam
-80.83.232.0/23 Deny Spam
-80.83.234.0/24 Deny Spam
-80.83.238.0/23 Deny Spam
+80.83.232.0/21 Deny Spam
+81.23.160.0/20 Deny Spam
 81.177.72.0/21 Deny Spam
 81.195.0.0/16 Deny Spam
 81.201.16.0/20 Deny Spam
@@ -9924,12 +9903,14 @@ Origin: NL
 89.175.0.0/16 Deny Spam
 91.76.0.0/14 Deny Spam
 91.216.147.0/24 Deny Spam
+92.39.64.0/20 Deny Spam
 94.72.0.0/18 Deny Spam
 109.236.96.0/20 Deny Spam
 176.118.8.0/21 Deny Spam
 176.118.16.0/20 Deny Spam
 176.222.200.0/21 Deny Spam
 176.241.96.0/21 Deny Spam
+178.141.0.0/16 Deny Spam
 185.59.138.0/23 Deny Spam
 185.103.26.0/23 Deny Spam
 193.107.232.0/22 Deny Spam
@@ -10306,14 +10287,13 @@ Tag: Kyivski Merezhi
 
 # ASN 41435 ("UnderNet LLC").
 # Caught attempting to hack WordPress sites.
-# Stop Forum Spam (SFS) listings: 1,777.
-# Updated: 2019.10.01 / Checked: 2020.05.30
+# Stop Forum Spam (SFS) listings: 1,225.
+# Updated: 2021.01.11
 
 79.110.128.0/20 Deny Generic
 91.193.32.0/22 Deny Generic
 176.104.0.0/18 Deny Generic
 194.9.36.0/23 Deny Generic
-213.109.80.0/20 Deny Generic
 Origin: UA
 Tag: UnderNet LLC
 
@@ -10550,14 +10530,21 @@ recaptcha:
 # ASN 13030 ("Init7"). Swiss multiplay network (domestic ISP, webhosting, etc).
 # Listed due to hacking and brute-force attempts detected. Listing only
 # the specific addresses known to be recently/currently affected.
-# Stop Forum Spam (SFS) listings: 497.
-# Updated: 2020.08.17 / Checked: 2020.10.10
+# Stop Forum Spam (SFS) listings: 1,183.
+# Updated: 2021.01.11
 
 77.109.172.189/32 Deny Malware
 77.109.173.12/32 Deny Malware
-77.109.191.140/32 Deny Malware
+77.109.191.0/24 Deny Malware
+81.6.43.0/24 Deny Malware
+85.195.192.0/24 Deny Malware
+85.195.206.0/24 Deny Malware
+213.144.130.53/32 Deny Spam
 Origin: CH
 Tag: Init7
+---
+recaptcha:
+ enabled: true
 
 
 # ASN 51815 ("IP-Only Networks AB"). Multiplay network. **HUGE** amounts of
@@ -12382,10 +12369,11 @@ recaptcha:
 
 # ASN 135763 ("GAYATRI COMMUNICATIONS"). A small Indian domestic ISP caught
 # spamming. Listing just the affected ranges.
-# Stop Forum Spam (SFS) listings: 83.
-# Updated: 2020.07.12
+# Stop Forum Spam (SFS) listings: 85.
+# Updated: 2021.01.11
 
 103.70.153.0/24 Deny Spam
+103.70.154.43/32 Deny Spam
 Origin: IN
 Tag: GAYATRI COMMUNICATIONS
 ---
@@ -12505,27 +12493,31 @@ recaptcha:
 # ASN 12741 ("Netia SA"). A Polish multiplay network caught spamming. Listing
 # just the worst affected ranges (not the whole network). Also listing some IPs
 # where other unsavoury activity has been detected ("Malware").
-# Stop Forum Spam (SFS) listings: 757.
-# Updated: 2020.07.12
+# Stop Forum Spam (SFS) listings: 983.
+# Updated: 2021.01.11
 
-5.226.70.68/32 Deny Spam
-37.128.66.212/32 Deny Spam
-46.175.15.30/32 Deny Spam
-62.111.176.170/32 Deny Spam
-62.148.67.62/32 Deny Malware
-62.244.143.248/32 Deny Spam
+62.87.151.0/24 Deny Spam
+62.148.67.0/24 Deny Malware
+62.244.140.0/24 Deny Spam
 77.252.26.71/32 Deny Spam
-77.253.135.224/32 Deny Spam
-77.253.137.102/32 Deny Spam
-77.254.243.63/32 Deny Spam
-78.11.32.2/31 Deny Malware
-83.238.39.241/32 Deny Spam
-193.239.101.104/32 Deny Spam
-193.239.102.12/32 Deny Spam
-194.28.80.105/32 Deny Spam
-213.17.155.106/32 Deny Spam
-213.238.67.121/32 Deny Spam
-213.241.10.15/32 Deny Spam
+77.252.62.177/32 Deny Spam
+77.254.243.0/24 Deny Spam
+78.8.174.0/24 Deny Spam
+78.9.82.225/32 Deny Spam
+78.11.32.0/24 Deny Malware
+81.219.10.0/24 Deny Spam
+83.238.39.0/24 Deny Spam
+83.238.91.143/32 Deny Spam
+85.128.16.0/24 Deny Spam
+87.204.120.107/32 Deny Spam
+87.204.158.101/32 Deny Spam
+178.36.241.59/32 Deny Spam
+193.239.101.0/24 Deny Spam
+193.239.102.0/24 Deny Spam
+194.28.80.0/24 Deny Spam
+213.186.69.250/32 Deny Spam
+213.216.80.0/24 Deny Spam
+213.241.53.0/24 Deny Spam
 Origin: PL
 Tag: Netia SA
 ---
@@ -15265,6 +15257,72 @@ recaptcha:
 93.188.39.14/32 Deny Spam
 Origin: UA
 Tag: IPnet
+---
+recaptcha:
+ enabled: true
+
+
+# ASN 16135 ("TURKCELL ILETISIM HIZMETLERI A.S").
+# Turkish mobile data provider. Spam detected from some ranges at this network.
+# Stop Forum Spam (SFS) listings: 896.
+# Updated: 2021.01.11
+
+5.24.160.121/32 Deny Spam
+5.25.144.195/32 Deny Spam
+5.25.156.241/32 Deny Spam
+5.25.173.73/32 Deny Spam
+5.25.176.141/32 Deny Spam
+31.141.94.185/32 Deny Spam
+31.142.70.247/32 Deny Spam
+31.142.79.111/32 Deny Spam
+176.91.132.131/32 Deny Spam
+176.237.66.173/32 Deny Spam
+176.237.83.148/32 Deny Spam
+178.241.6.190/32 Deny Spam
+178.241.22.39/32 Deny Spam
+178.241.192.111/32 Deny Spam
+178.242.41.0/24 Deny Spam
+178.242.114.0/24 Deny Spam
+178.244.203.202/32 Deny Spam
+188.57.52.23/32 Deny Spam
+188.57.104.142/32 Deny Spam
+188.57.107.159/32 Deny Spam
+188.59.186.0/24 Deny Spam
+213.43.22.19/32 Deny Spam
+213.43.36.246/32 Deny Spam
+213.43.40.219/32 Deny Spam
+213.43.68.30/32 Deny Spam
+213.43.116.234/32 Deny Spam
+Origin: TR
+Tag: TURKCELL ILETISIM HIZMETLERI
+---
+recaptcha:
+ enabled: true
+
+
+# ASN 58678 ("Intech Online Private Limited").
+# Indian domestic ISP. Spam detected from some ranges at this network.
+# US ranges as cloud.
+# Stop Forum Spam (SFS) listings: 202.
+# Updated: 2021.01.11
+
+43.241.28.0/24 Deny Spam
+43.241.130.182/32 Deny Spam
+43.241.134.155/32 Deny Spam
+43.242.224.50/32 Deny Spam
+103.59.190.0/24 Deny Spam
+103.137.155.89/32 Deny Spam
+103.216.147.173/32 Deny Spam
+103.219.165.151/32 Deny Spam
+103.220.213.8/32 Deny Spam
+Origin: IN
+154.61.69.0/24 Deny Cloud
+154.61.72.0/24 Deny Cloud
+154.61.74.0/23 Deny Cloud
+154.61.76.0/23 Deny Cloud
+154.61.80.0/24 Deny Cloud
+Origin: US
+Tag: Intech Online
 ---
 recaptcha:
  enabled: true

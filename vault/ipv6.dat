@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6.dat
 
-# Version: 2021.9.631
-# Last modified: 2021.01.10
+# Version: 2021.10.539
+# Last modified: 2021.01.11
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage, i.e., with ignore.dat, with reCAPTCHA, with "extended rules" (default bypasses): « [x]Low [ ]Medium [ ]High »
@@ -2183,8 +2183,8 @@ Tag: Handy Networks
 
 # ASNs 19693, 31863, 32882, 44332 ("Centrilogic, Inc").
 # (Can omit anything under 44../8; clean).
-# Stop Forum Spam (SFS) listings: 851 (AS31863).
-# Updated: 2020.02.12 / Checked: 2020.07.05
+# Stop Forum Spam (SFS) listings: 912 (AS31863).
+# Updated: 2020.02.12 / Checked: 2021.01.11
 
 2a00:d8a0::/29 Deny Cloud
 Origin: GB
@@ -3076,8 +3076,8 @@ Tag: Serverius Holding
 
 # ASN 20857 ("Transip B.V").
 # VPS provider and a source of spam + other unwanted traffic.
-# Stop Forum Spam (SFS) listings: 96.
-# Updated: 2017.11.12 / Checked: 2020.05.08
+# Stop Forum Spam (SFS) listings: 44.
+# Updated: 2017.11.12 / Checked: 2021.01.11
 
 2a01:7c8::/32 Deny Cloud
 Origin: NL
@@ -3390,8 +3390,8 @@ Tag: Endurance Int
 # ASN 17819 ("Equinix Asia Pacific").
 # Include "Upright Inc", "Equinix", and everything in HK. Ignore the rest.
 # ^(HK\t.*|.*Upright.*|.*Equinix.*)\x01$
-# Stop Forum Spam (SFS) listings: 19.
-# Updated: 2019.04.23 / Checked: 2020.07.05
+# Stop Forum Spam (SFS) listings: 3.
+# Updated: 2019.04.23 / Checked: 2021.01.11
 
 2404:4f00::/32 Deny Cloud
 Origin: AU
@@ -3781,6 +3781,15 @@ Origin: PL
 2a0d:c740:3c::/48 Deny Cloud
 Origin: US
 Tag: SPRINT
+
+
+# ASN 55286 ("B2 Net Solutions Inc").
+# Stop Forum Spam (SFS) listings: 68,059.
+# Updated: 2021.01.11
+
+2607:4300::/48 Deny Cloud
+Origin: CA
+Tag: B2 Net Solutions
 
 
 # ASNs 24669, 34202, 62240, 202792, 206136, 206144, 206986, 207158 ("Clouvider Limited").
@@ -6717,13 +6726,13 @@ Origin: AL
 Tag: Keminet SHPK
 
 
-# ASN 62355 ("Network Dedicated SAS").
+# ASNs 62355, 202769 ("Network Dedicated SAS").
 # Caught attempting to request protected resources and spamming honeypots.
-# Stop Forum Spam (SFS) listings: 747.
-# Updated: 2020.07.12
+# Stop Forum Spam (SFS) listings: 884 (AS62355), 12 (AS202769).
+# Updated: 2021.01.11
 
 2a04:7a40::/29 Deny Cloud
-Origin: CH
+Origin: CO
 2a00:55a0:5::/48 Deny Cloud
 2a00:55a0:10::/48 Deny Cloud
 Origin: IL
@@ -7038,8 +7047,8 @@ Tag: Binero AB
 
 # ASN 12260 ("Colostore.com").
 # Brute-force and XMLRPC attacks detected originating from this network.
-# Stop Forum Spam (SFS) listings: 1.
-# Updated: 2020.07.09
+# Stop Forum Spam (SFS) listings: 2.
+# Updated: 2020.07.09 / Checked: 2021.01.11
 
 2607:5b00::/32 Deny Cloud
 Origin: US
@@ -7048,8 +7057,8 @@ Tag: Colostore.com
 
 # ASN 61323 ("UKFAST.NET LIMITED").
 # Brute-force and XMLRPC attacks detected originating from this network.
-# Stop Forum Spam (SFS) listings: 42.
-# Updated: 2020.07.09
+# Stop Forum Spam (SFS) listings: 1.
+# Updated: 2020.07.09 / Checked: 2021.01.11
 
 2a02:21a8::/47 Deny Cloud
 2a02:21a8:2::/48 Deny Cloud
@@ -7481,6 +7490,20 @@ Tag: Des Capital B.V
 2a0a:1b84::/31 Deny Cloud
 Origin: KE
 Tag: Vhost Meremeta Ltd
+
+
+# ASNs 16880, 36421 ("Trend Micro Incorporated").
+# Follows their users around, attempting to access restricted/private areas of
+# websites.
+# Updated: 2021.01.11
+
+2620:101:402d::/48 Deny Cloud
+2620:101:4034::/47 Deny Cloud
+2620:101:4036::/48 Deny Cloud
+2620:101:403a::/48 Deny Cloud
+2620:101:403c::/48 Deny Cloud
+Origin: US
+Tag: Trend Micro
 
 
 # ---

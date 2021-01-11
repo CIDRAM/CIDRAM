@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_isps.dat
 
-# Version: 2021.2.620
-# Last modified: 2021.01.03
+# Version: 2021.10.539
+# Last modified: 2021.01.11
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage, i.e., with ignore.dat, with reCAPTCHA, with "extended rules" (default bypasses): « [ ]Low [x]Medium [ ]High »
@@ -282,21 +282,6 @@ Origin: GB
 2a0d:1ac3::/32 Deny Generic
 Origin: RU
 Tag: PIN-AS
-
-
-# ASNs 16880, 36421 ("Trend Micro Incorporated").
-# Follows their users around and attempts to get into restricted/private parts
-# of websites.
-# Updated: 2018.03.31 / Checked: 2020.05.29
-
-2620:101:402d::/48 Deny Generic
-2620:101:4034::/47 Deny Generic
-2620:101:4036::/48 Deny Generic
-2620:101:403a::/48 Deny Generic
-2620:101:403c::/48 Deny Generic
-2620:101:403f::/48 Deny Generic
-Origin: US
-Tag: Trend Micro
 
 
 # ASN 8551 ("Bezeq International-Ltd").
@@ -579,8 +564,8 @@ Tag: AS13188-CDN-LTD
 
 
 # ASN 15377 ('ISP "Fregat" Ltd.').
-# Stop Forum Spam (SFS) listings: 1,152.
-# Updated: 2019.08.29 / Checked: 2020.05.06
+# Stop Forum Spam (SFS) listings: 1,841.
+# Updated: 2019.08.29 / Checked: 2021.01.11
 
 2a00:4f00::/32 Deny Spam
 2a05:2580::/29 Deny Spam
@@ -1755,8 +1740,8 @@ recaptcha:
 
 # ASN 41435 ("UnderNet LLC").
 # Caught attempting to hack WordPress sites.
-# Stop Forum Spam (SFS) listings: 1,777.
-# Updated: 2020.01.15 / Checked: 2020.05.30
+# Stop Forum Spam (SFS) listings: 1,225.
+# Updated: 2020.01.15 / Checked: 2021.01.11
 
 2a0d:9880::/32 Deny Generic
 Origin: UA
@@ -2004,8 +1989,9 @@ recaptcha:
 # ASN 8359 ("MTS PJSC").
 # Caught trying to hack WordPress sites, a significant amount of other
 # unsavoury behaviour detected, and a significant source of spam.
-# Stop Forum Spam (SFS) listings: 5,630.
-# Updated: 2018.09.23 / Modified: 2020.02.14 / Checked: 2020.07.12
+# %Listed, abuseat.org (CBL-Listed): 0.61%.
+# Stop Forum Spam (SFS) listings: 4,802.
+# Updated: 2018.09.23 / Modified: 2020.02.14 / Checked: 2021.01.11
 
 2a00:f00::/32 Deny Spam
 2a00:1fa0::/29 Deny Spam
@@ -2549,3 +2535,17 @@ recaptcha:
 2a03:1240::/48 Deny Spam
 Origin: UA
 Tag: LLC Renome-Service
+
+
+# ASN 13030 ("Init7"). Swiss multiplay network (domestic ISP, webhosting, etc).
+# Listed due to hacking and brute-force attempts detected. Listing only
+# the specific addresses known to be recently/currently affected.
+# Stop Forum Spam (SFS) listings: 1,183.
+# Updated: 2021.01.11
+
+2a02:168:2000:61::/64 Deny Spam
+Origin: CH
+Tag: Init7
+---
+recaptcha:
+ enabled: true

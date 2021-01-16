@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (traditional) language data for the front-end (last modified: 2020.12.10).
+# This file: Chinese (traditional) language data for the front-end (last modified: 2021.01.16).
 ##/
 
 Extended Description Bypasses: "標準簽名旁路文件通常包括在主包。"
@@ -30,6 +30,7 @@ Extended Description module_bgpview.php: "利用<a href="https://bgpview.io/" hr
 Extended Description module_botua.php: "阻止不需要的機器人和惡意活動相關聯的用戶代理。"
 Extended Description module_cookies.php: "提供一些針對危險cookie的有限保護。"
 Extended Description module_extras.php: "提供一些有限的保護針對各種攻擊向量常用於請求。"
+Extended Description module_httpver.php: "通過CIDRAM配置可以阻止特定的協議和HTTP版本。"
 Extended Description module_projecthoneypot.php: "阻止來自Project Honeypot列出的IP的請求。"
 Extended Description module_refspam.php: "基於引薦來源垃圾郵件阻止通常不會提供任何有意義的安全利益，但在某些情況下，對某些用戶可能有用，用於收集有關請求的更多信息，以及能夠報告它。<br />通過安裝此模塊，還將安裝用於<a href="https://github.com/symfony/polyfill-intl-idn" hreflang="en" rel="noopener noreferrer external">Intl/Idn</a>和<a href="https://github.com/symfony/polyfill-mbstring" hreflang="en" rel="noopener noreferrer external">Mbstring</a>的Symfony polyfills（因為此模塊需要Idn功能性，但並非所有PHP安裝都默認提供該功能性）。​這兩個都可以通過<a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a>許可獲得。"
 Extended Description module_sfs.php: "防止通過SFS列出的IP地址訪問註冊和登錄頁面。"
@@ -54,6 +55,7 @@ Name module_bgpview.php: "BGPView 模塊"
 Name module_botua.php: "可選的用戶代理模塊"
 Name module_cookies.php: "可選cookie掃描器模塊"
 Name module_extras.php: "可選安全附加模塊"
+Name module_httpver.php: "HTTP版本檢查器模塊"
 Name module_projecthoneypot.php: "Project Honeypot 模塊"
 Name module_refspam.php: "引薦來源垃圾郵件模塊"
 Name module_sfs.php: "Stop Forum Spam 模塊"

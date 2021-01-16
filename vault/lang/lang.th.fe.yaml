@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Thai language data for the front-end (last modified: 2020.12.10).
+# This file: Thai language data for the front-end (last modified: 2021.01.16).
 ##/
 
 Extended Description Bypasses: "ไฟล์บายพาสลายเซ็นเริ่มต้นที่รวมอยู่ในแพคเกจหลัก."
@@ -30,6 +30,7 @@ Extended Description module_bgpview.php: "ใช้ <a href="https://bgpview.io/
 Extended Description module_botua.php: "บล็อกตัวแทนผู้ใช้ที่เกี่ยวข้องกับบอทและกิจกรรมที่ไม่เป็นที่ต้องการ."
 Extended Description module_cookies.php: "ให้การป้องกันที่ จำกัด สำหรับคุกกี้ที่เป็นอันตราย."
 Extended Description module_extras.php: "ให้การป้องกันที่ จำกัด กับเวกเตอร์การโจมตีต่างๆที่ใช้ทั่วไปในคำขอ."
+Extended Description module_httpver.php: "ทำให้สามารถบล็อกโปรโตคอลและเวอร์ชัน HTTP เฉพาะผ่านการกำหนดค่า CIDRAM."
 Extended Description module_projecthoneypot.php: "บล็อกคำขอจาก IP ที่แสดงรายการไว้ที่ Project Honeypot."
 Extended Description module_refspam.php: "การปิดกั้นโดยอ้างอิงจากสแปมอ้างอิงจะไม่ให้ประโยชน์ด้านความปลอดภัยที่มีความหมาย แต่ในบางกรณีอาจมีประโยชน์สำหรับผู้ใช้บางคน เพื่อรวบรวมข้อมูลเพิ่มเติมเกี่ยวกับคำขอและเพื่อให้สามารถรายงานได้.<br />การติดตั้งโมดูลนี้ยังติดตั้ง Symfony polyfills สำหรับ <a href="https://github.com/symfony/polyfill-intl-idn" hreflang="en" rel="noopener noreferrer external">Intl/Idn</a> และ <a href="https://github.com/symfony/polyfill-mbstring" hreflang="en" rel="noopener noreferrer external">Mbstring</a> (เพราะโมดูลนี้ต้องการฟังก์ชั่น Idn ซึ่งการติดตั้ง PHP ทั้งหมดไม่ได้มีให้ตามค่าเริ่มต้น) ทั้งสองอย่างนี้มีให้ใช้ผ่านทางใบอนุญาต <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a>."
 Extended Description module_sfs.php: "ปกป้องหน้าการลงทะเบียนและเข้าสู่ระบบต่อต้าน IP ที่ระบุโดย SFS."
@@ -54,6 +55,7 @@ Name module_bgpview.php: "โมดูล BGPView"
 Name module_botua.php: "โมดูลตัวแทนผู้ใช้"
 Name module_cookies.php: "โมดูลสแกนเนอร์คุกกี้ตัวเลือก"
 Name module_extras.php: "โมดูลเสริมความปลอดภัยเพิ่มเติม"
+Name module_httpver.php: "โมดูลตัวตรวจสอบเวอร์ชัน HTTP"
 Name module_projecthoneypot.php: "โมดูล Project Honeypot"
 Name module_refspam.php: "โมดูลสแปมผู้อ้างอิง"
 Name module_sfs.php: "โมดูล Stop Forum Spam"

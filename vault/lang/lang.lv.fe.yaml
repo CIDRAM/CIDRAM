@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Latvian language data for the front-end (last modified: 2020.12.10).
+# This file: Latvian language data for the front-end (last modified: 2021.01.16).
 ##/
 
 Extended Description Bypasses: "Noklusējuma paraksta apiešana faili, kas parasti ir iekļauti galvenajā paketē."
@@ -30,6 +30,7 @@ Extended Description module_bgpview.php: "Izmanto <a href="https://bgpview.io/" 
 Extended Description module_botua.php: "Bloķē lietotāju aģentus, kas saistīti ar nevēlamiem robotiem un nožēlojamām darbībām."
 Extended Description module_cookies.php: "Nodrošina ierobežotu aizsardzību pret bīstamām sīkdatnēm."
 Extended Description module_extras.php: "Nodrošina ierobežotu aizsardzību pret dažādiem uzbrukumu vektoriem, kurus parasti izmanto pieprasījumos."
+Extended Description module_httpver.php: "Ļauj bloķēt noteiktus protokolus un HTTP versijas, izmantojot CIDRAM konfigurāciju."
 Extended Description module_projecthoneypot.php: "Bloķē pieprasījumus no IP, kas uzskaitīti vietnē Project Honeypot."
 Extended Description module_refspam.php: "Bloķēšana, pamatojoties uz novirzītāja surogātpastu, parasti nesniegs nozīmīgus drošības ieguvumus, taču dažos gadījumos tas varētu būt noderīgs dažiem lietotājiem, lai savāktu vairāk informācijas par pieprasījumiem un par iespēju par to ziņot.<br />Instalējot šo moduli, tiek instalēti arī Symfony polifilmi <a href="https://github.com/symfony/polyfill-intl-idn" hreflang="en" rel="noopener noreferrer external">Intl/Idn</a> un <a href="https://github.com/symfony/polyfill-mbstring" hreflang="en" rel="noopener noreferrer external">Mbstring</a> (jo šim modulim ir nepieciešama Idn funkcionalitāte, ko ne visas PHP instalācijas nodrošina pēc noklusējuma), abi ir pieejami, izmantojot <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a> licenci."
 Extended Description module_sfs.php: "Aizsargā reģistrācijas un ielogošanās lapas pret SFS uzskaitītajiem IP."
@@ -54,6 +55,7 @@ Name module_bgpview.php: "BGPView modulis"
 Name module_botua.php: "Neobligāts lietotāja aģentu modulis"
 Name module_cookies.php: "Neobligāts sīkdatņu skeneru modulis"
 Name module_extras.php: "Neobligāts drošības ekstras modulis"
+Name module_httpver.php: "HTTP versiju pārbaudītāja modulis"
 Name module_projecthoneypot.php: "Project Honeypot modulis"
 Name module_refspam.php: "Novirzītāja surogātpastu modulis"
 Name module_sfs.php: "Stop Forum Spam modulis"

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Arabic language data for the front-end (last modified: 2020.12.10).
+# This file: Arabic language data for the front-end (last modified: 2021.01.16).
 ##/
 
 Extended Description Bypasses: "ملفات الالتفافية التوقيع القياسية المدرجة عادة مع الحزمة الرئيسية."
@@ -30,6 +30,7 @@ Extended Description module_bgpview.php: "يستخدم <a href="https://bgpview.
 Extended Description module_botua.php: "حظر وكلاء المستخدمين المرتبطين ببرامج الروبوت غير المرغوب فيها والنشاط الشنيع."
 Extended Description module_cookies.php: "يوفر بعض الحماية المحدودة ضد ملفات تعريف الارتباط الخطيرة."
 Extended Description module_extras.php: "يوفر بعض الحماية محدودة ضد مختلف ناقلات هجوم تستخدم عادة في طلبات."
+Extended Description module_httpver.php: "يجعل من الممكن حظر بروتوكولات معينة وإصدارات HTTP من خلال تكوين CIDRAM."
 Extended Description module_projecthoneypot.php: "بحظر الطلبات من عناوين IP المدرجة في Project Honeypot."
 Extended Description module_refspam.php: "لا يوفر الحظر بناءً على الإحالة غير المرغوب فيها عمومًا أي فائدة أمنية ذات مغزى، ولكن في بعض الحالات، قد يكون مفيدًا لبعض المستخدمين، ولجمع مزيد من المعلومات حول الطلبات، وللتمكن من الإبلاغ عنها.<br />يؤدي تثبيت هذه الوحدة النمطية أيضًا إلى تثبيت polyfill لـ Symfony لـ <a dir="ltr" href="https://github.com/symfony/polyfill-intl-idn" hreflang="en" rel="noopener noreferrer external">Intl/Idn</a> و <a dir="ltr" href="https://github.com/symfony/polyfill-mbstring" hreflang="en" rel="noopener noreferrer external">Mbstring</a> (لأن هذه الوحدة تتطلب وظيفة Idn، والتي لا توفرها جميع عمليات تثبيت PHP بشكل افتراضي)، كلاهما متاح عبر ترخيص <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a>."
 Extended Description module_sfs.php: "يحمي تسجيل صفحات ضد عناوين IP المدرجة من قبل SFS."
@@ -52,6 +53,7 @@ Name module_bgpview.php: "BGPView وحدة"
 Name module_botua.php: "وحدة وكلاء المستخدم الاختيارية"
 Name module_cookies.php: "كوكي الماسح الضوئي"
 Name module_extras.php: "وحدة اشياء الأمن اختياري"
+Name module_httpver.php: "وحدة مدقق إصدار HTTP"
 Name module_projecthoneypot.php: "Project Honeypot وحدة"
 Name module_refspam.php: "وحدة للإحالة البريد المزعج"
 Name module_sfs.php: "Stop Forum Spam وحدة"

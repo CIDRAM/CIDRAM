@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Indonesian language data for the front-end (last modified: 2020.12.10).
+# This file: Indonesian language data for the front-end (last modified: 2021.01.16).
 ##/
 
 Extended Description Bypasses: "File untuk bypass tanda tangan standar yang biasanya disertakan dengan paket utama."
@@ -30,6 +30,7 @@ Extended Description module_bgpview.php: "Memanfaatkan <a href="https://bgpview.
 Extended Description module_botua.php: "Memblokir agen pengguna yang terkait dengan bot yang tidak diinginkan dan aktivitas jahat."
 Extended Description module_cookies.php: "Menyediakan beberapa perlindungan terbatas terhadap cookie berbahaya."
 Extended Description module_extras.php: "Menyediakan beberapa perlindungan terbatas terhadap berbagai vektor serangan umum digunakan dalam permintaan."
+Extended Description module_httpver.php: "Memungkinkan untuk memblokir protokol tertentu dan versi HTTP melalui konfigurasi CIDRAM."
 Extended Description module_projecthoneypot.php: "Memblokir permintaan dari IP yang terdaftar oleh Project Honeypot."
 Extended Description module_refspam.php: "Memblokir berdasarkan spam pengarah umumnya tidak akan memberikan manfaat keamanan yang berarti, tetapi dalam beberapa kasus, dapat bermanfaat bagi beberapa pengguna, untuk mengumpulkan lebih banyak informasi tentang permintaan, dan untuk dapat melaporkannya.<br />Menginstal modul ini juga menginstal polyfill Symfony untuk <a href="https://github.com/symfony/polyfill-intl-idn" hreflang="en" rel="noopener noreferrer external">Intl/Idn</a> dan <a href="https://github.com/symfony/polyfill-mbstring" hreflang="en" rel="noopener noreferrer external">Mbstring</a> (karena modul ini memerlukan fungsionalitas Idn, yang tidak semua instalasi PHP menyediakan secara default), keduanya tersedia melalui lisensi <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a>."
 Extended Description module_sfs.php: "Melindungi halaman pendaftaran dan login terhadap IP yang terdaftar oleh SFS."
@@ -54,6 +55,7 @@ Name module_bgpview.php: "Modul BGPView"
 Name module_botua.php: "Modul agen pengguna opsional"
 Name module_cookies.php: "Modul scanner cookie opsional"
 Name module_extras.php: "Modul tambahan keamanan opsional"
+Name module_httpver.php: "Modul pemeriksa versi HTTP"
 Name module_projecthoneypot.php: "Modul Project Honeypot"
 Name module_refspam.php: "Modul spam pengarah"
 Name module_sfs.php: "Modul Stop Forum Spam"

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: English language data for the front-end (last modified: 2020.12.10).
+# This file: English language data for the front-end (last modified: 2021.01.16).
 ##/
 
 Extended Description Bypasses: "The default signature bypass files normally included with the main package."
@@ -30,6 +30,7 @@ Extended Description module_bgpview.php: "Leverages the <a href="https://bgpview
 Extended Description module_botua.php: "Blocks user agents associated with unwanted bots and nefarious activity."
 Extended Description module_cookies.php: "Provides some limited protections against dangerous cookies."
 Extended Description module_extras.php: "Provides some limited protections against various attack vectors commonly used in requests."
+Extended Description module_httpver.php: "Makes it possible to block specific protocols and HTTP versions through the CIDRAM configuration."
 Extended Description module_projecthoneypot.php: "Blocks requests from IPs listed at Project Honeypot."
 Extended Description module_refspam.php: "Blocking based on referrer spam won't generally provide any meaningful security benefit, but in some cases, could be useful for some users, for gathering more information about requests, and for being able to report it.<br />Installing this module also installs the Symfony polyfills for <a href="https://github.com/symfony/polyfill-intl-idn" hreflang="en" rel="noopener noreferrer external">Intl/Idn</a> and <a href="https://github.com/symfony/polyfill-mbstring" hreflang="en" rel="noopener noreferrer external">Mbstring</a> (because this module requires Idn functionality, which not all PHP installations provide by default), both which are available via the <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
 Extended Description module_sfs.php: "Protects registration and login pages against IPs listed by SFS."
@@ -54,6 +55,7 @@ Name module_bgpview.php: "BGPView module"
 Name module_botua.php: "Optional user agents module"
 Name module_cookies.php: "Optional cookie scanner module"
 Name module_extras.php: "Optional security extras module"
+Name module_httpver.php: "HTTP version checker module"
 Name module_projecthoneypot.php: "Project Honeypot module"
 Name module_refspam.php: "Referrer spam module"
 Name module_sfs.php: "Stop Forum Spam module"

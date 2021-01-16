@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Hindi language data for the front-end (last modified: 2020.12.10).
+# This file: Hindi language data for the front-end (last modified: 2021.01.16).
 ##/
 
 Extended Description Bypasses: "डिफ़ॉल्ट हस्ताक्षर बाईपास फ़ाइलों को सामान्यतः मुख्य पैकेज के साथ शामिल किया गया था।"
@@ -30,6 +30,7 @@ Extended Description module_bgpview.php: "CIDRAM के लिए ASN और द
 Extended Description module_botua.php: "अवांछित बॉट और घृणित गतिविधि से जुड़े उपयोगकर्ता एजेंट ब्लॉक।"
 Extended Description module_cookies.php: "खतरनाक कुकीज़ के विरुद्ध कुछ सीमित सुरक्षा प्रदान करता है।"
 Extended Description module_extras.php: "आम तौर पर अनुरोधों में उपयोग किए गए विभिन्न हमले वाले वैक्टर के खिलाफ कुछ सीमित सुरक्षा प्रदान करता है।"
+Extended Description module_httpver.php: "CIDRAM कॉन्फ़िगरेशन के माध्यम से विशिष्ट प्रोटोकॉल और HTTP संस्करणों को ब्लॉक करना संभव बनाता है।"
 Extended Description module_projecthoneypot.php: "Project Honeypot पर सूचीबद्ध IP से अनुरोध ब्लॉक करता है।"
 Extended Description module_refspam.php: "रेफरल स्पैम पर आधारित ब्लॉकिंग आम तौर पर कोई सार्थक सुरक्षा लाभ प्रदान नहीं करेगा, लेकिन कुछ मामलों में, कुछ उपयोगकर्ताओं के लिए उपयोगी हो सकता है, अनुरोधों के बारे में अधिक जानकारी इकट्ठा करने के लिए, और इसे रिपोर्ट करने में सक्षम होने के लिए।<br />इस मॉड्यूल को स्थापित करने से <a href="https://github.com/symfony/polyfill-intl-idn" hreflang="en" rel="noopener noreferrer external">Intl/Idn</a> और <a href="https://github.com/symfony/polyfill-mbstring" hreflang="en" rel="noopener noreferrer external">Mbstring</a> के लिए Symfony Polyfill स्थापित होते हैं (क्योंकि इस मॉड्यूल में Idn कार्यक्षमता की आवश्यकता होती है, जो डिफ़ॉल्ट रूप से सभी PHP संस्थापन प्रदान नहीं करते हैं), दोनों जो <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a> लाइसेंस के माध्यम से उपलब्ध हैं।"
 Extended Description module_sfs.php: "एसएफएस द्वारा सूचीबद्ध IP पते से पंजीकरण और लॉगिन पृष्ठ की सुरक्षा करता है।"
@@ -54,6 +55,7 @@ Name module_bgpview.php: "BGPView मॉड्यूल"
 Name module_botua.php: "वैकल्पिक उपयोगकर्ता एजेंट मॉड्यूल"
 Name module_cookies.php: "वैकल्पिक कुकी स्कैनर मॉड्यूल"
 Name module_extras.php: "वैकल्पिक सुरक्षा एक्स्ट्रा मॉड्यूल"
+Name module_httpver.php: "HTTP संस्करण चेकर मॉड्यूल"
 Name module_projecthoneypot.php: "Project Honeypot मॉड्यूल"
 Name module_refspam.php: "रेफ़रर स्पैम मॉड्यूल"
 Name module_sfs.php: "Stop Forum Spam मॉड्यूल"

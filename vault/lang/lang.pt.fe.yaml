@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Portuguese language data for the front-end (last modified: 2020.12.10).
+# This file: Portuguese language data for the front-end (last modified: 2021.01.16).
 ##/
 
 Extended Description Bypasses: "Os arquivos para bypass das assinaturas padrão normalmente incluído com o pacote principal."
@@ -30,6 +30,7 @@ Extended Description module_bgpview.php: "Aproveita a API <a href="https://bgpvi
 Extended Description module_botua.php: "Bloqueia os agentes do usuário associados a bots indesejados e atividades nefastas."
 Extended Description module_cookies.php: "Fornece algumas proteções limitadas contra cookies perigosos."
 Extended Description module_extras.php: "Fornece algumas proteções limitadas contra vários vectores de ataque comumente usado em solicitações."
+Extended Description module_httpver.php: "Possibilita o bloqueio de protocolos específicos e versões HTTP por meio da configuração CIDRAM."
 Extended Description module_projecthoneypot.php: "Bloqueia solicitações de IPs listados no Project Honeypot."
 Extended Description module_refspam.php: "O bloqueio baseado em spam de referência geralmente não fornece nenhum benefício de segurança significativoBloqueio baseado em spam de referência geralmente não fornece nenhum benefício de segurança significativo, mas, em alguns casos, pode ser útil para alguns usuários, para reunir mais informações sobre solicitações e para relatá-las.<br />A instalação deste módulo também instala os polyfills do Symfony para <a href="https://github.com/symfony/polyfill-intl-idn" hreflang="en" rel="noopener noreferrer external">Intl/Idn</a> e <a href="https://github.com/symfony/polyfill-mbstring" hreflang="en" rel="noopener noreferrer external">Mbstring</a> (porque este módulo requer a funcionalidade Idn, que nem todas as instalações PHP fornecem por padrão), ambos que estão disponíveis através da licença <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a>."
 Extended Description module_sfs.php: "Protege as páginas de registro e login contra IPs listados pelo SFS."
@@ -54,6 +55,7 @@ Name module_bgpview.php: "Módulo BGPView"
 Name module_botua.php: "Módulo de agentes do usuário opcional"
 Name module_cookies.php: "Módulo opcional para análise de cookies"
 Name module_extras.php: "Módulo de extras de segurança opcional"
+Name module_httpver.php: "Módulo verificador de versão HTTP"
 Name module_projecthoneypot.php: "Módulo Project Honeypot"
 Name module_refspam.php: "Módulo de spam de referência"
 Name module_sfs.php: "Módulo Stop Forum Spam"

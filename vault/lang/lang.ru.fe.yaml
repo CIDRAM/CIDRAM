@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Russian language data for the front-end (last modified: 2020.12.10).
+# This file: Russian language data for the front-end (last modified: 2021.01.16).
 ##/
 
 Extended Description Bypasses: "Стандартная сигнатуры байпасы, обычно включены в основной пакет."
@@ -30,6 +30,7 @@ Extended Description module_bgpview.php: "Использует API <a href="http
 Extended Description module_botua.php: "Блокирует пользовательские агенты, связанные с нежелательными ботами и нечестной деятельностью."
 Extended Description module_cookies.php: "Обеспечивает некоторые ограниченные средства защиты против опасных куки."
 Extended Description module_extras.php: "Обеспечивает некоторые ограниченные средства защиты против различных векторов атак обычно используются в запросах."
+Extended Description module_httpver.php: "Дает возможность блокировать определенные протоколы и версии HTTP через конфигурацию CIDRAM."
 Extended Description module_projecthoneypot.php: "Блокирует запросы от IP-адресов, перечисленных в Project Honeypot."
 Extended Description module_refspam.php: "Блокировка, основанная на реферальный спам, как правило, не дает сколько-нибудь значимого преимущества безопасности, но в некоторых случаях может быть полезным для некоторых пользователей, для сбора дополнительной информации о запросах и для возможности сообщить об этом.<br />Установка этого модуля также устанавливает полифилы Symfony для <a href="https://github.com/symfony/polyfill-intl-idn" hreflang="en" rel="noopener noreferrer external">Intl/Idn</a> и <a href="https://github.com/symfony/polyfill-mbstring" hreflang="en" rel="noopener noreferrer external">Mbstring</a> (потому что этот модуль требует функциональности Idn, которую не все установки PHP предоставляют по умолчанию), оба из которых доступно через лицензию <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a>."
 Extended Description module_sfs.php: "Защищает страницы регистрации и входа в систему от IP-адресов, перечисленных в SFS."
@@ -54,6 +55,7 @@ Name module_bgpview.php: "Модуль BGPView"
 Name module_botua.php: "Модуль дополнительных пользовательских агентов"
 Name module_cookies.php: "Куки сканер модуль необязательный"
 Name module_extras.php: "Модуль необязательный дополнительные безопасности"
+Name module_httpver.php: "Модуль проверки версии HTTP"
 Name module_projecthoneypot.php: "Модуль Project Honeypot"
 Name module_refspam.php: "Реферальный спам модуль"
 Name module_sfs.php: "Модуль Stop Forum Spam"

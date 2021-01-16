@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Dutch language data for the front-end (last modified: 2020.12.10).
+# This file: Dutch language data for the front-end (last modified: 2021.01.16).
 ##/
 
 Extended Description Bypasses: "De standaard signature rondwegen normaal opgenomen met de primaire pakket."
@@ -30,6 +30,7 @@ Extended Description module_badtlds.php: "Blokkeert hosts van TLD's die vaak wor
 Extended Description module_botua.php: "Blokkeert gebruikersagenten die zijn gekoppeld aan ongewenste bots en schadelijke activiteiten."
 Extended Description module_cookies.php: "Biedt een beperkte bescherming tegen gevaarlijke cookies."
 Extended Description module_extras.php: "Biedt een beperkte bescherming tegen verschillende aanvalsvectoren vaak gebruikt in aanvragen."
+Extended Description module_httpver.php: "Maakt het mogelijk om specifieke protocollen en HTTP-versies te blokkeren via de CIDRAM-configuratie."
 Extended Description module_projecthoneypot.php: "Blokkeert aanvragen van IP's die worden vermeld op Project Honeypot."
 Extended Description module_refspam.php: "Blokkering op basis van verwijzende spam levert over het algemeen geen betekenisvol beveiligingsvoordeel op, maar in sommige gevallen kan het nuttig zijn voor sommige gebruikers, voor het verzamelen van meer informatie over verzoeken en erover te rapporteren.<br />Door deze module te installeren, worden ook de Symfony-polyfills voor <a href="https://github.com/symfony/polyfill-intl-idn" hreflang="en" rel="noopener noreferrer external">Intl/Idn</a> en <a href="https://github.com/symfony/polyfill-mbstring" hreflang="en" rel="noopener noreferrer external">Mbstring</a> geïnstalleerd (omdat deze module Idn-functionaliteit vereist, die niet alle PHP-installaties standaard bieden), beide die zijn beschikbaar via de <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a> licentie."
 Extended Description module_sfs.php: "Beschermt registratie en login tegen IP's die door SFS worden vermeld."
@@ -53,6 +54,7 @@ Name module_baidublocker.php: "Baidu blokker module"
 Name module_botua.php: "Optionele gebruikersagent module"
 Name module_cookies.php: "Optionele cookie-scanner module"
 Name module_extras.php: "Optionele beveiliging extra module"
+Name module_httpver.php: "HTTP versie controle module"
 Name module_projecthoneypot.php: "Project Honeypot module"
 Name module_refspam.php: "Verwijzersspam module"
 Name module_sfs.php: "Stop Forum Spam module"

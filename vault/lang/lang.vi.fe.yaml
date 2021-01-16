@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Vietnamese language data for the front-end (last modified: 2020.12.10).
+# This file: Vietnamese language data for the front-end (last modified: 2021.01.16).
 ##/
 
 Extended Description Bypasses: "Các tập tin đường tránh chữ ký mặc định thường bao gồm với gói thầu chính."
@@ -30,6 +30,7 @@ Extended Description module_badtlds.php: "Chặn các máy chủ web của các 
 Extended Description module_botua.php: "Chặn các đại lý người dùng liên quan đến các chương trình không mong muốn và hoạt động bất chính."
 Extended Description module_cookies.php: "Cung cấp một số bảo vệ hạn chế đối với cookie nguy hiểm."
 Extended Description module_extras.php: "Cung cấp một số bảo vệ hạn chế chống vectơ tấn công khác nhau thường được sử dụng trong các yêu cầu."
+Extended Description module_httpver.php: "Bạn có thể chặn các giao thức và phiên bản HTTP cụ thể thông qua cấu hình CIDRAM."
 Extended Description module_projecthoneypot.php: "Chặn các yêu cầu từ IP được liệt kê tại Project Honeypot."
 Extended Description module_refspam.php: "Chặn dựa trên spam giới thiệu thường không cung cấp bất kỳ lợi ích bảo mật có ý nghĩa nào, nhưng trong một số trường hợp, có thể hữu ích cho một số người dùng, để thu thập thêm thông tin về các yêu cầu và để có thể báo cáo nó.<br />Bằng cách cài đặt mô-đun này, các polyfill Symfony cho <a href="https://github.com/symfony/polyfill-intl-idn" hreflang="en" rel="noopener noreferrer external">Intl/Idn</a> và <a href="https://github.com/symfony/polyfill-mbstring" hreflang="en" rel="noopener noreferrer external">Mbstring</a> cũng sẽ được cài đặt (bởi vì mô-đun này yêu cầu chức năng "Idn", và không phải tất cả các cài đặt PHP cung cấp nó theo mặc định). Cả hai đều có sẵn thông qua giấy phép <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a>."
 Extended Description module_sfs.php: "Bảo vệ các trang đăng ký và đăng nhập đối với các địa chỉ IP do SFS liệt kê."
@@ -53,6 +54,7 @@ Name module_baidublocker.php: "Mô-đun cho chặn Baidu"
 Name module_botua.php: "Mô-đun đại lý người dùng tùy chọn"
 Name module_cookies.php: "Mô-đun tùy chọn cho cookie quét"
 Name module_extras.php: "Mô-đun tùy chọn cho bảo mật tính năng bổ sung"
+Name module_httpver.php: "Mô-đun kiểm tra phiên bản HTTP"
 Name module_projecthoneypot.php: "Mô-đun Project Honeypot"
 Name module_refspam.php: "Mô-đun spam giới thiệu"
 Name module_sfs.php: "Mô-đun Stop Forum Spam"

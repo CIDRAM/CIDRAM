@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: French language data for the front-end (last modified: 2020.12.10).
+# This file: French language data for the front-end (last modified: 2021.01.16).
 ##/
 
 Extended Description Bypasses: "Les fichiers pour contourner les signatures standard qui sont normalement inclus dans le paquet principal."
@@ -30,6 +30,7 @@ Extended Description module_badtlds.php: "Bloque les hôtes appartenant aux TLDs
 Extended Description module_botua.php: "Bloque les agents utilisateurs associés aux bots indésirables et aux activités malveillantes."
 Extended Description module_cookies.php: "Fournit quelques protections limitées contre les cookies dangereux."
 Extended Description module_extras.php: "Fournit quelques protections limitées contre divers vecteurs d'attaque communément utilisé dans les requêtes."
+Extended Description module_httpver.php: "Permet de bloquer des protocoles spécifiques et des versions HTTP via la configuration CIDRAM."
 Extended Description module_projecthoneypot.php: "Bloque les requêtes des adresses IP répertoriées dans Project Honeypot."
 Extended Description module_refspam.php: "Le blocage basé sur le spam référent ne procure généralement aucun avantage de sécurité significatif, mais dans certains cas, cela pourrait être utile à certains utilisateurs pour rassembler plus d'informations sur les requêtes et pour pouvoir les signaler.<br />L'installation de ce module installe également les polyfills Symfony pour <a href="https://github.com/symfony/polyfill-intl-idn" hreflang="en" rel="noopener noreferrer external">Intl/Idn</a> et <a href="https://github.com/symfony/polyfill-mbstring" hreflang="en" rel="noopener noreferrer external">Mbstring</a> (car ce module nécessite la fonctionnalité Idn, que ne toutes pas les installations PHP fournissent par défaut), les deux qui sont disponibles via la licence <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a>."
 Extended Description module_sfs.php: "Protège l'enregistrement et les pages de connexion contre les adresses IP répertoriées par SFS."
@@ -53,6 +54,7 @@ Name module_baidublocker.php: "Module de blocage pour Baidu"
 Name module_botua.php: "Module optionnel d'agents utilisateurs"
 Name module_cookies.php: "Module optionnel pour l'analyse des cookies"
 Name module_extras.php: "Module optionnel pour la sécurité supplémentaire"
+Name module_httpver.php: "Module de vérification de version HTTP"
 Name module_projecthoneypot.php: "Module Project Honeypot"
 Name module_refspam.php: "Module spam référent"
 Name module_sfs.php: "Module Stop Forum Spam"

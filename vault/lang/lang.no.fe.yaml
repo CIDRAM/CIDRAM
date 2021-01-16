@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Norwegian language data for the front-end (last modified: 2020.12.10).
+# This file: Norwegian language data for the front-end (last modified: 2021.01.16).
 ##/
 
 Extended Description Bypasses: "Standard-signatur-bypass-filene som normalt følger med hovedpakken."
@@ -30,6 +30,7 @@ Extended Description module_badtlds.php: "Blokker vertene som tilhører TLDer of
 Extended Description module_botua.php: "Blokkerer brukeragenter assosiert med uønskede bots og ufarlig aktivitet."
 Extended Description module_cookies.php: "Gir noen begrensede beskyttelser mot farlige informasjonskapsler."
 Extended Description module_extras.php: "Gir noen begrensede beskyttelser mot ulike angrepsvektorer som ofte brukes i forespørsler."
+Extended Description module_httpver.php: "Gjør det mulig å blokkere spesifikke protokoller og HTTP-versjoner gjennom CIDRAM-konfigurasjonen."
 Extended Description module_projecthoneypot.php: "Blokkerer forespørsler fra IP-er oppført på Project Honeypot."
 Extended Description module_refspam.php: "Blokkering basert på referansesøppel vil vanligvis ikke gi noen meningsfull sikkerhetsgevinst, men i noen tilfeller kan det være nyttig for noen brukere, for å samle mer informasjon om forespørsler og for å kunne rapportere det.<br />Ved å installere denne modulen installeres også Symfony-polyfyllene for <a href="https://github.com/symfony/polyfill-intl-idn" hreflang="en" rel="noopener noreferrer external">Intl/Idn</a> og <a href="https://github.com/symfony/polyfill-mbstring" hreflang="en" rel="noopener noreferrer external">Mbstring</a> (fordi denne modulen krever Idn-funksjonalitet, som ikke alle PHP-installasjoner leverer som standard), begge som er tilgjengelige via <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a> lisensen."
 Extended Description module_sfs.php: "Beskytter registrerings og innloggingssider mot IP-adresser oppført av SFS."
@@ -53,6 +54,7 @@ Name module_baidublocker.php: "Baidu blokkeringsmodul"
 Name module_botua.php: "Valgfri brukeragentmodul"
 Name module_cookies.php: "Valgfrie informasjonskapselskannermodul"
 Name module_extras.php: "Valgfrie sikkerhetstilleggsmodul"
+Name module_httpver.php: "HTTP-versjonskontrollmodul"
 Name module_projecthoneypot.php: "Project Honeypot modul"
 Name module_refspam.php: "Henvisende spam modul"
 Name module_sfs.php: "Stop Forum Spam modul"

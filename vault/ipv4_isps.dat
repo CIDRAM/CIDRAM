@@ -1,8 +1,8 @@
 # IPv4 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv4_isps.dat
 
-# Version: 2021.10.539
-# Last modified: 2021.01.11
+# Version: 2021.15.437
+# Last modified: 2021.01.16
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage, i.e., with ignore.dat, with reCAPTCHA, with "extended rules" (default bypasses): « [ ]Low [x]Medium [ ]High »
@@ -900,11 +900,10 @@ recaptcha:
 
 
 # ASN 16322 ("Pars Online PJS").
-# %Listed, abuseat.org (CBL-Listed): 3.34%.
-# Stop Forum Spam (SFS) listings: 712.
-# Updated: 2020.07.12
+# %Listed, abuseat.org (CBL-Listed): 2.97%.
+# Stop Forum Spam (SFS) listings: 386.
+# Updated: 2021.01.14
 
-5.78.0.0/16 Deny Spam
 31.214.132.0/23 Deny Spam
 31.214.146.0/23 Deny Spam
 31.214.154.0/24 Deny Spam
@@ -918,19 +917,29 @@ recaptcha:
 37.228.131.0/24 Deny Spam
 37.228.133.0/24 Deny Spam
 37.228.135.0/24 Deny Spam
+37.228.136.0/22 Deny Spam
 46.41.192.0/18 Deny Spam
 46.62.128.0/17 Deny Spam
+46.167.128.0/19 Deny Spam
+46.224.160.0/19 Deny Spam
+46.224.192.0/18 Deny Spam
+46.225.0.0/18 Deny Spam
+46.225.160.0/19 Deny Spam
+46.225.192.0/19 Deny Spam
 46.251.224.0/24 Deny Spam
 46.251.226.0/24 Deny Spam
 46.251.237.0/24 Deny Spam
+77.42.0.0/17 Deny Spam
 82.99.192.0/18 Deny Spam
+87.107.134.0/24 Deny Spam
 91.98.0.0/15 Deny Spam
 95.156.222.0/23 Deny Spam
 95.156.233.0/24 Deny Spam
 95.156.234.0/23 Deny Spam
+95.156.236.0/23 Deny Spam
 95.156.248.0/23 Deny Spam
-109.206.254.0/24 Deny Spam
 109.230.192.0/23 Deny Spam
+109.230.200.0/24 Deny Spam
 109.230.204.0/22 Deny Spam
 109.230.221.0/24 Deny Spam
 109.230.223.0/24 Deny Spam
@@ -941,10 +950,11 @@ recaptcha:
 134.255.200.0/21 Deny Spam
 134.255.245.0/24 Deny Spam
 134.255.246.0/24 Deny Spam
-134.255.248.0/23 Deny Spam
+134.255.249.0/24 Deny Spam
 178.169.0.0/19 Deny Spam
 185.10.71.0/24 Deny Spam
-188.245.0.0/16 Deny Spam
+185.13.228.0/22 Deny Spam
+185.178.105.0/24 Deny Spam
 213.217.32.0/19 Deny Spam
 Origin: IR
 Tag: Pars Online PJS
@@ -9952,51 +9962,81 @@ recaptcha:
 # been caught spamming. Listing just these, rather than the entire ASNs, as to
 # reduce the risk of false positives. Note that this network consists of a VERY
 # large number of different ASNs.
-# Updated: 2020.07.12
+# Updated: 2021.01.14
 
-31.15.88.108/32 Deny Spam
-31.15.89.0/24 Deny Spam
-31.29.196.111/32 Deny Spam
-31.29.197.137/32 Deny Spam
-46.172.10.186/32 Deny Spam
-46.172.17.0/24 Deny Spam
-46.172.18.0/24 Deny Spam
-62.16.60.197/32 Deny Spam
-77.43.158.210/32 Deny Spam
-77.43.185.92/32 Deny Spam
-77.66.203.114/32 Deny Spam
-78.153.4.122/32 Deny Spam
-80.80.99.84/32 Deny Spam
-88.80.48.153/32 Deny Spam
-88.80.62.211/32 Deny Spam
-89.251.144.37/32 Deny Spam
-91.186.115.21/32 Deny Spam
-92.39.70.138/32 Deny Spam
-94.140.138.143/32 Deny Spam
+31.15.80.0/20 Deny Spam
+31.29.142.44/32 Deny Spam
+62.182.136.0/21 Deny Spam
+77.43.144.243/32 Deny Spam
+77.43.158.38/32 Deny Spam
+77.43.185.102/32 Deny Spam
+77.66.176.0/20 Deny Spam
+77.66.200.0/21 Deny Spam
+77.94.208.117/32 Deny Spam
+77.94.214.11/32 Deny Spam
+77.94.217.0/24 Deny Spam
+79.143.225.0/24 Deny Spam
+85.117.82.3/32 Deny Spam
+85.140.32.180/32 Deny Spam
+85.140.94.0/24 Deny Spam
+89.251.144.0/24 Deny Spam
+91.223.226.0/24 Deny Spam
+92.39.217.119/32 Deny Spam
 94.140.142.4/32 Deny Spam
-94.140.143.198/32 Deny Spam
-95.139.113.186/32 Deny Spam
-95.139.117.253/32 Deny Spam
-95.153.128.147/32 Deny Spam
-95.153.129.0/24 Deny Spam
-95.153.130.68/32 Deny Spam
-95.175.225.34/32 Deny Spam
-95.175.228.0/24 Deny Spam
-109.94.182.0/24 Deny Spam
-109.174.19.134/32 Deny Spam
-109.174.112.0/24 Deny Spam
-109.198.170.168/32 Deny Spam
-109.198.179.179/32 Deny Spam
+94.243.27.97/32 Deny Spam
+94.243.27.152/32 Deny Spam
+95.104.164.225/32 Deny Spam
+95.104.169.237/32 Deny Spam
+95.104.174.0/24 Deny Spam
+95.139.40.0/21 Deny Spam
+95.139.96.0/19 Deny Spam
+95.153.128.0/21 Deny Spam
+95.153.136.0/22 Deny Spam
+95.153.144.0/24 Deny Spam
+95.153.222.0/23 Deny Spam
+95.153.224.0/21 Deny Spam
+95.153.232.0/22 Deny Spam
+95.153.236.0/23 Deny Spam
+95.153.239.0/24 Deny Spam
+95.153.240.0/20 Deny Spam
+109.174.19.0/24 Deny Spam
+109.196.192.0/20 Deny Spam
+109.198.167.101/32 Deny Spam
+109.198.168.247/32 Deny Spam
+176.52.96.43/32 Deny Spam
+176.52.96.209/32 Deny Spam
 178.17.177.0/24 Deny Spam
-178.141.154.99/32 Deny Spam
-178.155.4.0/23 Deny Spam
-178.155.12.177/32 Deny Spam
-178.217.40.208/32 Deny Spam
+178.17.182.171/32 Deny Spam
+178.141.33.0/24 Deny Spam
+178.141.61.0/24 Deny Spam
+178.141.107.9/32 Deny Spam
+178.141.154.0/24 Deny Spam
+178.141.189.0/24 Deny Spam
+178.155.0.0/19 Deny Spam
+178.155.32.0/20 Deny Spam
+178.155.48.0/22 Deny Spam
+178.155.53.0/24 Deny Spam
+178.155.54.0/23 Deny Spam
+178.155.56.0/21 Deny Spam
+178.155.64.0/18 Deny Spam
+178.217.40.0/24 Deny Spam
+178.217.43.0/24 Deny Spam
 178.218.104.0/24 Deny Spam
-185.52.142.152/32 Deny Spam
+185.35.192.0/23 Deny Spam
+192.162.0.0/22 Deny Spam
+195.62.54.0/23 Deny Spam
 212.74.202.253/32 Deny Spam
 212.74.203.1/32 Deny Spam
-213.27.0.200/32 Deny Spam
+213.27.0.0/24 Deny Spam
+213.27.32.95/32 Deny Spam
+213.87.121.44/32 Deny Spam
+213.87.122.51/32 Deny Spam
+213.87.122.208/32 Deny Spam
+213.87.123.154/32 Deny Spam
+213.176.252.89/32 Deny Spam
+217.74.240.0/21 Deny Spam
+217.74.248.0/22 Deny Spam
+217.74.255.0/24 Deny Spam
 Origin: RU
 Tag: MTS PJSC Supplemental
 ---
@@ -15323,6 +15363,85 @@ Origin: IN
 154.61.80.0/24 Deny Cloud
 Origin: US
 Tag: Intech Online
+---
+recaptcha:
+ enabled: true
+
+
+# ASN 786 ("Jisc Services Limited").
+# Malware and webapp attacks detected from a specific address here.
+# Stop Forum Spam (SFS) listings: 43.
+# Updated: 2021.01.14
+
+85.12.65.12/32 Deny Malware
+Origin: GB
+Tag: Jisc Services Limited
+
+
+# ASN 577 ("Bell Canada").
+# Canadian domestic ISP. Some spam events and probing for vulnerabilities
+# detected from this network. (Large network. Careful what's added here).
+# US ranges included as cloud (Akamai stuff).
+# %Listed, abuseat.org (CBL-Listed): 0.12%.
+# Stop Forum Spam (SFS) listings: 1,424.
+# Updated: 2021.01.16
+
+50.101.104.58/32 Deny Spam
+64.229.72.27/32 Deny Spam
+65.93.61.48/32 Deny Spam
+65.94.199.0/24 Deny Spam
+70.48.110.13/32 Deny Spam
+70.49.223.0/24 Deny Spam
+70.51.106.184/32 Deny Spam
+70.52.36.98/32 Deny Spam
+70.55.80.94/32 Deny Spam
+74.12.139.0/24 Deny Spam
+76.65.21.121/32 Deny Spam
+76.66.86.39/32 Deny Spam
+76.67.144.248/32 Deny Spam
+76.68.3.88/32 Deny Spam
+76.68.34.63/32 Deny Malware
+138.34.45.133/32 Deny Spam
+142.112.145.68/32 Deny Spam
+142.113.57.0/24 Deny Spam
+142.113.157.184/32 Deny Spam
+142.114.45.81/32 Deny Spam
+142.118.175.230/32 Deny Spam
+142.119.3.164/32 Deny Spam
+142.126.170.166/32 Deny Spam
+142.127.198.143/32 Deny Spam
+142.183.209.146/32 Deny Spam
+184.147.148.65/32 Deny Spam
+184.148.102.233/32 Deny Spam
+184.149.34.0/24 Deny Spam
+205.236.15.0/24 Deny Spam
+Origin: CA
+23.34.192.0/19 Deny Cloud
+23.40.120.0/22 Deny Cloud
+23.58.84.0/22 Deny Cloud
+23.58.112.0/20 Deny Cloud
+23.58.128.0/20 Deny Cloud
+23.58.144.0/21 Deny Cloud
+23.58.160.0/19 Deny Cloud
+23.59.162.0/24 Deny Cloud
+23.74.8.0/22 Deny Cloud
+64.84.12.0/24 Deny Cloud
+104.88.156.0/22 Deny Cloud
+104.96.163.0/24 Deny Cloud
+104.96.164.0/22 Deny Cloud
+104.96.168.0/24 Deny Cloud
+104.98.196.0/22 Deny Cloud
+170.224.210.0/23 Deny Cloud
+184.24.144.0/23 Deny Cloud
+184.26.176.0/22 Deny Cloud
+184.28.42.0/23 Deny Cloud
+184.29.112.0/20 Deny Cloud
+184.84.32.0/20 Deny Cloud
+184.84.184.0/22 Deny Cloud
+199.43.208.0/22 Deny Cloud
+216.228.233.0/24 Deny Cloud
+Origin: US
+Tag: Bell Canada
 ---
 recaptcha:
  enabled: true

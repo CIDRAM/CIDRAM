@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_isps.dat
 
-# Version: 2021.10.539
-# Last modified: 2021.01.11
+# Version: 2021.15.437
+# Last modified: 2021.01.16
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage, i.e., with ignore.dat, with reCAPTCHA, with "extended rules" (default bypasses): « [ ]Low [x]Medium [ ]High »
@@ -2000,6 +2000,24 @@ Origin: RU
 2a01:7c0::/32 Deny Spam
 Origin: UA
 Tag: MTS PJSC
+---
+recaptcha:
+ enabled: true
+
+
+# ASNs 15640, 21365, 25086, 28884, 29190, 29497, 30881, 30922, 31286,
+# 31558, 39001, 39858, 41209, 41771, 41822, 42087, 43038, 43318, 44677, 44895,
+# 48000, 48212, 48612, 49350, 60496, 197023, 197070 ("MTS PJSC").
+# Additional ASNs owned by the same network as the ASN covered by the previous
+# signature section (MTS PJSC). These particular IPs/ranges included as they've
+# been caught spamming. Listing just these, rather than the entire ASNs, as to
+# reduce the risk of false positives. Note that this network consists of a VERY
+# large number of different ASNs.
+# Updated: 2021.01.14
+
+2a00:1fa1::/33 Deny Spam
+Origin: RU
+Tag: MTS PJSC Supplemental
 ---
 recaptcha:
  enabled: true

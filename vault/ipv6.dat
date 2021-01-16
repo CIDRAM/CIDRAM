@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6.dat
 
-# Version: 2021.10.539
-# Last modified: 2021.01.11
+# Version: 2021.15.437
+# Last modified: 2021.01.16
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage, i.e., with ignore.dat, with reCAPTCHA, with "extended rules" (default bypasses): « [x]Low [ ]Medium [ ]High »
@@ -3916,22 +3916,20 @@ Tag: zColo
 
 
 # ASN 61138 ("Zappie Host LLC").
-# Stop Forum Spam (SFS) listings: 28.
-# Updated: 2019.08.18 / Checked: 2020.05.14
+# Stop Forum Spam (SFS) listings: 12.
+# Updated: 2021.01.16
 
 2a07:1c40:1021::/48 Deny Cloud
 Origin: AT
 2a0c:b642:1a0e::/48 Deny Cloud
 Origin: BE
-2a06:1280::/32 Deny Cloud
-Origin: BY
 2a06:e881:6203::/48 Deny Cloud
 Origin: CH
-2a06:9f40::/29 Deny Cloud
-Origin: NO
 2c0f:f530::/44 Deny Cloud
 2c0f:f530:20::/44 Deny Cloud
 Origin: SC
+2a06:1280::/32 Deny Cloud
+Origin: US
 Tag: Zappie Host LLC
 
 
@@ -3956,8 +3954,9 @@ Tag: netcup GmbH
 
 
 # ASNs 19531, 43755 ("Nodes Direct").
-# No recent reports or bad activity detected. Possible candidate for future removal.
-# Updated: 2018.09.14 / Checked: 2020.05.01
+# Brute-force attacks and hack attempts directed from this network (refer to
+# AbuseIPDB reports for more information).
+# Updated: 2018.09.14 / Checked: 2021.01.14
 
 2604:4600::/28 Deny Cloud
 Origin: US
@@ -4956,10 +4955,11 @@ Tag: PLUTEX GmbH
 # ASN 29017 ("Gyron Internet Ltd").
 # Cloud/hosting network. Caught trying to access sensitive areas of websites.
 # Stop Forum Spam (SFS) listings: 1.
-# Updated: 2018.08.06 / Checked: 2020.05.14
+# Updated: 2021.01.16
 
 2a00:14f0::/32 Deny Cloud
 2a04:84c1::/32 Deny Cloud
+2a06:a8c0:1::/48 Deny Cloud
 Origin: GB
 Tag: Gyron Internet Ltd
 
@@ -5990,8 +5990,7 @@ Tag: Rack Sphere Hosting
 
 # ASN 394844 ("Root Level Technology, LLC").
 # Dedicated server farm/lease and an occasional source of spam.
-# Stop Forum Spam (SFS) listings: 4.
-# Updated: 2019.12.26 / Checked: 2020.05.11
+# Updated: 2019.12.26 / Checked: 2021.01.14
 
 2605:2080:8000::/34 Deny Cloud
 2607:d100::/32 Deny Cloud
@@ -6050,10 +6049,10 @@ Origin: GB
 Tag: Krystal Hosting Ltd
 
 
-# ASN 136171 ("Medha Hosting").
+# ASNs 132925, 136171 ("Medha Hosting").
 # Suspected email harvester detected at this network.
-# Stop Forum Spam (SFS) listings: 1.
-# Updated: 2020.01.01 / Checked: 2020.05.17
+# Stop Forum Spam (SFS) listings: 7 (AS136171).
+# Updated: 2020.01.01 / Checked: 2021.01.16
 
 2400:8dc0::/48 Deny Cloud
 Origin: IN
@@ -7504,6 +7503,25 @@ Tag: Vhost Meremeta Ltd
 2620:101:403c::/48 Deny Cloud
 Origin: US
 Tag: Trend Micro
+
+
+# ASN 209181 ("Zenex 5ive Limited").
+# Constant port scanning and occasional spam detected from this network.
+# Stop Forum Spam (SFS) listings: 184.
+# Updated: 2021.01.14
+
+2a09:e9c0::/29 Deny Cloud
+Origin: GB
+Tag: Zenex 5ive Limited
+
+
+# ASN 208046 ("Maximilian Kutzner trading as HostSlick").
+# Dedicated webhosting provider. Regular hack attempts detected from this network.
+# Updated: 2021.01.16
+
+2a0f:ca80::/48 Deny Cloud
+Origin: DE
+Tag: HostSlick
 
 
 # ---

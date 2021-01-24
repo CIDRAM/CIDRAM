@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_isps.dat
 
-# Version: 2021.15.437
-# Last modified: 2021.01.16
+# Version: 2021.23.137
+# Last modified: 2021.01.24
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage, i.e., with ignore.dat, with reCAPTCHA, with "extended rules" (default bypasses): « [ ]Low [x]Medium [ ]High »
@@ -2188,14 +2188,13 @@ recaptcha:
 
 # ASN 28573 ("CLARO S.A"). A Brazilian domestic ISP caught spamming. Listing
 # just the affected ranges, plus all US ranges (interlaced cloud ranges).
-# %Listed, abuseat.org (CBL-Listed): 0.22%.
-# Stop Forum Spam (SFS) listings: 5,181.
-# Updated: 2020.07.23
+# %Listed, abuseat.org (CBL-Listed): 0.15%.
+# Stop Forum Spam (SFS) listings: 5,229.
+# Updated: 2021.01.24
 
-2804:14c:90:89af::/64 Deny Spam
-2804:14c:bf48:9399::/64 Deny Spam
-2804:14d:32a3:3190::/64 Deny Spam
-2804:14d:4e83:4602::/64 Deny Spam
+2804:14c:63:3039::/64 Deny Spam
+2804:14c:b0:960f::/64 Deny Spam
+2804:14d:90af:8ea1::/64 Deny Spam
 Origin: BR
 Tag: CLARO S.A
 ---
@@ -2206,12 +2205,17 @@ recaptcha:
 # ASN 8151 ("Uninet S.A. de C.V").
 # Mexican domestic ISP and a source of spam. Just listing the specific spammy
 # IPs (not the entire network), plus US ranges (confirmed cloud hosters).
-# %Listed, abuseat.org (CBL-Listed): 0.88%.
-# Stop Forum Spam (SFS) listings: 1,596.
-# Updated: 2020.07.23
+# %Listed, abuseat.org (CBL-Listed): 0.33%.
+# Stop Forum Spam (SFS) listings: 1,825.
+# Updated: 2021.01.24
 
-2806:104e:13:a3c::/64 Deny Spam
-2806:108e:f:8a20::/64 Deny Spam
+2806:1016:b:181d::/64 Deny Spam
+2806:108e:15:1531::/64 Deny Spam
+2806:10a6:7:3f3f::/64 Deny Spam
+2806:10a6:e:1563::/64 Deny Spam
+2806:10a6:11:e84::/64 Deny Spam
+2806:10a6:11:104f::/64 Deny Spam
+2806:10a6:12:1f48::/64 Deny Spam
 Origin: MX
 2600:141c:7::/48 Deny Cloud
 2600:141c:5000::/48 Deny Cloud
@@ -2467,26 +2471,36 @@ recaptcha:
 # Indonesian domestic ISP; Also a source of spam. Also SSH, brute-force, and
 # hack attempts reportedly seen from this network. Listing just the affected
 # ranges/addresses for the moment (plus all confirmed cloud hosters).
-# Stop Forum Spam (SFS) listings: 12,371 (AS7713), 1,571 (AS17974).
-# Updated: 2020.07.23
+# Stop Forum Spam (SFS) listings: 21,110 (AS7713), 1,504 (AS17974).
+# Updated: 2021.01.21
 
-2a01:62e0:f001:dc::/64 Deny Cloud
-2a01:62e0:f001:13f::/64 Deny Cloud
-Origin: EU
+2001:7f8:43::/64 Deny Cloud
+2001:7f8:54::/64 Deny Cloud
+Origin: FR
+2001:4488::/31 Deny Cloud
+2001:448a::/32 Deny Cloud
+Origin: ID
 2001:de8:7::/64 Deny Cloud
+2403:c780:b800:bb00::/64 Deny Cloud
 Origin: JP
-2001:478:132::/64 Deny Cloud
-Origin: KN
 2001:7f8:42::/64 Deny Cloud
 Origin: PL
 2001:504:0:2::/63 Deny Cloud
 2001:504:0:5::/64 Deny Cloud
 2001:504:13::/64 Deny Cloud
 2001:504:30::/64 Deny Cloud
-2620:107:4008:182::/64 Deny Cloud
+2620:107:4008:365::/64 Deny Cloud
+2620:107:4008:4df::/64 Deny Cloud
 2620:107:4008:7c3::/64 Deny Cloud
 2620:107:4008:7f8::/64 Deny Cloud
 2620:107:4008:86d::/64 Deny Cloud
+2620:107:4008:9b6::/64 Deny Cloud
+2620:107:4008:9ca::/64 Deny Cloud
+2620:107:4008:b35::/64 Deny Cloud
+2a01:62e0:f001:db::/64 Deny Cloud
+2a01:62e0:f001:dc::/64 Deny Cloud
+2a01:62e0:f001:e7::/64 Deny Cloud
+2a01:62e0:f001:13f::/64 Deny Cloud
 Origin: US
 Tag: PT Telekomunikasi Indonesia
 ---

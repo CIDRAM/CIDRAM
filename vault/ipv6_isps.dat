@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_isps.dat
 
-# Version: 2021.23.137
-# Last modified: 2021.01.24
+# Version: 2021.26.476
+# Last modified: 2021.01.27
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage, i.e., with ignore.dat, with reCAPTCHA, with "extended rules" (default bypasses): « [ ]Low [x]Medium [ ]High »
@@ -2578,6 +2578,27 @@ Tag: LLC Renome-Service
 2a02:168:2000:61::/64 Deny Spam
 Origin: CH
 Tag: Init7
+---
+recaptcha:
+ enabled: true
+
+
+# ASNs 16276, 35540 ("OVH Systems").
+# Multiplay network; predominantly a cloud provider, server leaser, etc; Also
+# some ADSL connectivity provided by their network (some risk of human endpoints).
+# A significant source of spam; Caught attempting to hack honeypots.
+# Stop Forum Spam (SFS) listings: 683,832 (AS16276), 5 (AS35540).
+# Updated: 2021.01.27
+
+2607:5300::/32 Run rules_specific.php
+Origin: CA
+2001:41d0::/32 Run rules_specific.php
+Origin: FR
+2402:1f00::/32 Run rules_specific.php
+Origin: HK
+2604:2dc0::/32 Run rules_specific.php
+Origin: US
+Tag: OVH Systems
 ---
 recaptcha:
  enabled: true

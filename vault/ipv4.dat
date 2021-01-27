@@ -1,8 +1,8 @@
 # IPv4 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv4.dat
 
-# Version: 2021.23.137
-# Last modified: 2021.01.24
+# Version: 2021.26.476
+# Last modified: 2021.01.27
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage, i.e., with ignore.dat, with reCAPTCHA, with "extended rules" (default bypasses): « [x]Low [ ]Medium [ ]High »
@@ -1156,116 +1156,6 @@ Origin: PL
 216.250.112.0/20 Deny Cloud
 Origin: US
 Tag: 1&1 Internet SE
-
-
-# ASNs 16276, 35540 ("OVH Systems").
-# Caught attempting to hack honeypots.
-# Stop Forum Spam (SFS) listings: 598,374 (AS16276), 6 (AS35540).
-# Updated: 2020.09.20
-
-193.109.63.0/24 Deny Cloud
-Origin: BE
-51.79.0.0/16 Deny Cloud
-51.161.0.0/16 Deny Cloud
-51.222.0.0/16 Deny Cloud
-54.39.0.0/16 Deny Cloud
-66.70.128.0/17 Deny Cloud
-139.99.0.0/16 Deny Cloud
-142.4.192.0/19 Deny Cloud
-142.44.128.0/17 Deny Cloud
-144.217.0.0/16 Deny Cloud
-149.56.0.0/16 Deny Cloud
-158.69.0.0/16 Deny Cloud
-167.114.0.0/16 Deny Cloud
-192.95.0.0/18 Deny Cloud
-192.99.0.0/16 Deny Cloud
-198.27.64.0/18 Deny Cloud
-198.50.128.0/17 Deny Cloud
-198.100.144.0/20 Deny Cloud
-198.245.48.0/20 Deny Cloud
-Origin: CA
-185.228.96.0/22 Deny Cloud
-Origin: ES
-5.39.0.0/17 Deny Cloud
-5.135.0.0/16 Deny Cloud
-5.196.0.0/16 Deny Cloud
-37.59.0.0/16 Deny Cloud
-37.60.48.0/20 Deny Cloud
-37.187.0.0/16 Deny Cloud
-46.105.0.0/16 Deny Cloud
-51.38.0.0/16 Deny Cloud
-51.68.0.0/16 Deny Cloud
-51.75.0.0/16 Deny Cloud
-51.77.0.0/16 Deny Cloud
-51.83.0.0/16 Deny Cloud
-51.89.0.0/16 Deny Cloud
-51.91.0.0/16 Deny Cloud
-51.178.0.0/16 Deny Cloud
-51.195.0.0/16 Deny Cloud
-51.210.0.0/16 Deny Cloud
-51.254.0.0/15 Deny Cloud
-54.36.0.0/15 Deny Cloud
-54.38.0.0/16 Deny Cloud
-79.137.0.0/17 Deny Cloud
-87.98.128.0/17 Deny Cloud
-91.121.0.0/16 Deny Cloud
-91.134.0.0/16 Deny Cloud
-92.222.0.0/16 Deny Cloud
-94.23.0.0/16 Deny Cloud
-109.190.0.0/16 Deny Cloud
-137.74.0.0/16 Deny Cloud
-145.239.0.0/16 Deny Cloud
-146.59.0.0/16 Deny Cloud
-147.135.128.0/17 Deny Cloud
-149.202.0.0/16 Deny Cloud
-151.127.0.0/16 Deny Cloud
-164.132.0.0/16 Deny Cloud
-176.31.0.0/16 Deny Cloud
-178.32.0.0/15 Deny Cloud
-185.12.32.0/23 Deny Cloud
-188.165.0.0/16 Deny Cloud
-193.70.0.0/17 Deny Cloud
-193.104.19.0/24 Deny Cloud
-213.32.0.0/17 Deny Cloud
-213.186.32.0/19 Deny Cloud
-213.251.128.0/18 Deny Cloud
-217.182.0.0/16 Deny Cloud
-Origin: FR
-46.244.32.0/20 Deny Cloud
-92.246.224.0/19 Deny Cloud
-185.45.160.0/22 Deny Cloud
-195.110.30.0/23 Deny Cloud
-195.246.232.0/23 Deny Cloud
-Origin: GB
-103.5.12.0/22 Deny Cloud
-Origin: HK
-151.80.0.0/16 Deny Cloud
-Origin: IT
-144.2.32.0/19 Deny Cloud
-Origin: NL
-91.90.88.0/21 Deny Cloud
-Origin: PL
-8.7.244.0/24 Deny Cloud
-8.18.128.0/24 Deny Cloud
-8.18.172.0/24 Deny Cloud
-8.20.110.0/24 Deny Cloud
-8.21.41.0/24 Deny Cloud
-8.24.8.0/21 Deny Cloud
-8.26.94.0/24 Deny Cloud
-8.29.224.0/24 Deny Cloud
-8.30.208.0/21 Deny Cloud
-8.33.96.0/21 Deny Cloud
-8.33.128.0/21 Deny Cloud
-8.33.136.0/23 Deny Cloud
-23.92.224.0/19 Deny Cloud
-51.81.0.0/16 Deny Cloud
-107.189.64.0/18 Deny Cloud
-147.135.0.0/17 Deny Cloud
-192.240.152.0/21 Deny Cloud
-205.218.49.0/24 Deny Cloud
-216.32.192.0/24 Deny Cloud
-Origin: US
-Tag: OVH Systems
 
 
 # ASN 46606 ("Unified Layer").

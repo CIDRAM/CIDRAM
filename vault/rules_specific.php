@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Extended rules for some specific CIDRs (last modified: 2020.12.13).
+ * This file: Extended rules for some specific CIDRs (last modified: 2021.01.27).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -35,6 +35,59 @@ if (!isset($CIDRAM['RunParamResCache'])) {
  * @param string $Tag The triggered rule's section's name (if there's any).
  */
 $CIDRAM['RunParamResCache']['rules_specific.php'] = function (array $Factors = [], int $FactorIndex = 0, string $LN = '', string $Tag = '') use (&$CIDRAM) {
+    /**
+     * OVH rules (determine which directive the signatures should fall under,
+     * since in order to do so, it requires additional checks beyond just the
+     * range itself; i.e., checking the hostname).
+     */
+    if ($Tag === 'OVH Systems') {
+        /** Fetch hostname. */
+        if (empty($CIDRAM['Hostname'])) {
+            $CIDRAM['Hostname'] = $CIDRAM['DNS-Reverse']($CIDRAM['BlockInfo']['IPAddr']);
+        }
+
+        /** ADSL hostnames (should fall under "spam" directive, since not a cloud service). */
+        if (preg_match('~(?:dsl\.ovh|ovhtelecom)\.fr$~i', $CIDRAM['Hostname'])) {
+            /** Return early if "block_spam" is false. */
+            if (!$CIDRAM['Config']['signatures']['block_spam']) {
+                return;
+            }
+
+            $CIDRAM['BlockInfo']['ReasonMessage'] = $CIDRAM['L10N']->getString('ReasonMessage_Spam');
+            if (!empty($CIDRAM['BlockInfo']['WhyReason'])) {
+                $CIDRAM['BlockInfo']['WhyReason'] .= ', ';
+            }
+            $CIDRAM['BlockInfo']['WhyReason'] .= $CIDRAM['L10N']->getString('Short_Spam') . $LN;
+            if (!empty($CIDRAM['BlockInfo']['Signatures'])) {
+                $CIDRAM['BlockInfo']['Signatures'] .= ', ';
+            }
+            $CIDRAM['BlockInfo']['Signatures'] .= $Factors[$FactorIndex];
+            $CIDRAM['BlockInfo']['SignatureCount']++;
+
+            /** Exit. */
+            return;
+        }
+
+        /** Return early if "block_cloud" is false. */
+        if (!$CIDRAM['Config']['signatures']['block_cloud']) {
+            return;
+        }
+
+        $CIDRAM['BlockInfo']['ReasonMessage'] = $CIDRAM['L10N']->getString('ReasonMessage_Cloud');
+        if (!empty($CIDRAM['BlockInfo']['WhyReason'])) {
+            $CIDRAM['BlockInfo']['WhyReason'] .= ', ';
+        }
+        $CIDRAM['BlockInfo']['WhyReason'] .= $CIDRAM['L10N']->getString('Short_Cloud') . $LN;
+        if (!empty($CIDRAM['BlockInfo']['Signatures'])) {
+            $CIDRAM['BlockInfo']['Signatures'] .= ', ';
+        }
+        $CIDRAM['BlockInfo']['Signatures'] .= $Factors[$FactorIndex];
+        $CIDRAM['BlockInfo']['SignatureCount']++;
+
+        /** Exit. */
+        return;
+    }
+
     /** Skip further processing if the "block_cloud" directive is false, or if no section tag has been defined. */
     if (!$CIDRAM['Config']['signatures']['block_cloud'] || !$Tag) {
         return;
@@ -42,7 +95,6 @@ $CIDRAM['RunParamResCache']['rules_specific.php'] = function (array $Factors = [
 
     /** Amazon AWS bypasses. */
     if ($Tag === 'Amazon.com, Inc') {
-
         /**
          * Feedspot bypass.
          * See: https://udger.com/resources/ua-list/bot-detail?bot=Feedspotbot
@@ -75,7 +127,6 @@ $CIDRAM['RunParamResCache']['rules_specific.php'] = function (array $Factors = [
 
     /** Automattic bypasses. */
     if ($Tag === 'Automattic') {
-
         /** Feedbot bypass. */
         if (strpos($CIDRAM['BlockInfo']['UALC'], 'wp.com feedbot/1.0 (+https://wp.com)') !== false) {
             return;

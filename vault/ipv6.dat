@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6.dat
 
-# Version: 2021.23.137
-# Last modified: 2021.01.24
+# Version: 2021.26.476
+# Last modified: 2021.01.27
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage, i.e., with ignore.dat, with reCAPTCHA, with "extended rules" (default bypasses): « [x]Low [ ]Medium [ ]High »
@@ -204,22 +204,6 @@ Origin: GB
 2607:f1c0::/32 Deny Cloud
 Origin: US
 Tag: 1&1 Internet SE
-
-
-# ASNs 16276, 35540 ("OVH Systems").
-# Caught attempting to hack honeypots.
-# Stop Forum Spam (SFS) listings: 598,374 (AS16276), 6 (AS35540).
-# Updated: 2017.05.06 / Checked: 2020.09.20
-
-2607:5300::/32 Deny Cloud
-Origin: CA
-2001:41d0::/32 Deny Cloud
-Origin: FR
-2402:1f00::/32 Deny Cloud
-Origin: HK
-2604:2dc0::/32 Deny Cloud
-Origin: US
-Tag: OVH Systems
 
 
 # ASN 27823 ("Dattatec.com").

@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_isps.dat
 
-# Version: 2021.26.476
-# Last modified: 2021.01.27
+# Version: 2021.32.609
+# Last modified: 2021.02.02
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage, i.e., with ignore.dat, with reCAPTCHA, with "extended rules" (default bypasses): « [ ]Low [x]Medium [ ]High »
@@ -2181,6 +2181,24 @@ recaptcha:
 2a00:1210::/32 Deny Spam
 Origin: UA
 Tag: MAXNET TELECOM
+---
+recaptcha:
+ enabled: true
+
+
+# ASN 6799 ("Ote SA (Hellenic Telecommunications Organisation)").
+# A Greek domestic ISP and a source of spam. Listing just the affected
+# ranges/addresses only (plus all US ranges).
+# %Listed, abuseat.org (CBL-Listed): 0.48%.
+# Stop Forum Spam (SFS) listings: 3,287.
+# Updated: 2021.02.02
+
+2a02:587:2933:1e00::/64 Deny Spam
+2a02:587:3d1f:b000::/64 Deny Spam
+2a02:587:4607:6000::/64 Deny Spam
+2a02:587:c43b:2c55::/64 Deny Spam
+Origin: GR
+Tag: Ote SA
 ---
 recaptcha:
  enabled: true

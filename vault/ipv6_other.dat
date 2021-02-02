@@ -1,8 +1,8 @@
 # IPv6 signatures file (CIDRs for proxies, VPNs and other miscellaneous unwanted services).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_other.dat
 
-# Version: 2020.363.601
-# Last modified: 2020.12.29
+# Version: 2021.32.609
+# Last modified: 2021.02.02
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage, i.e., with ignore.dat, with reCAPTCHA, with "extended rules" (default bypasses): « [x]Low [ ]Medium [ ]High »
@@ -65,14 +65,15 @@ Tag: SoftLayer VPNs
 
 
 # ASN 205100 ("F3 Netze e.V").
-# Provides TOR exit nodes.
-# Stop Forum Spam (SFS) listings: 60,805.
-# Updated: 2020.05.26 / Checked: 2020.08.05
+# Provides TOR exit nodes. A significant source of spam.
+# Stop Forum Spam (SFS) listings: 96,683.
+# Updated: 2021.02.02
 
 2a0b:f4c0::/40 Deny Proxy
 2a0b:f4c0:100::/48 Deny Proxy
 2a0b:f4c0:16c::/48 Deny Proxy
 2a0b:f4c0:1b4::/48 Deny Proxy
+2a0b:f4c0:400::/48 Deny Proxy
 Origin: DE
 Tag: F3 Netze e.V
 
@@ -120,8 +121,8 @@ Tag: Octopusnet VPN
 # A *huge* source of spam! Went from zero reports at SFS to 38,300+ reports in
 # the course of less than three months; Should be cautious about removal, even
 # if the reports subside in the future.
-# Stop Forum Spam (SFS) listings: 82,333.
-# Updated: 2019.10.02 / Checked: 2020.06.08
+# Stop Forum Spam (SFS) listings: 90,810.
+# Updated: 2019.10.02 / Checked: 2021.02.02
 
 2a03:e600:100::/48 Deny Proxy
 Origin: AT

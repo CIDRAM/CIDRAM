@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Output generator (last modified: 2021.01.10).
+ * This file: Output generator (last modified: 2021.02.05).
  */
 
 /** Initialise cache. */
@@ -352,7 +352,6 @@ if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
             )
         )
     ) {
-
         /**
          * Check whether the salt file exists; If it doesn't, generate a new salt
          * and create the file. If it does, fetch it and extract its content for

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Thai language data for the front-end (last modified: 2021.01.16).
+# This file: Thai language data for the front-end (last modified: 2021.02.05).
 ##/
 
 Extended Description Bypasses: "ไฟล์บายพาสลายเซ็นเริ่มต้นที่รวมอยู่ในแพคเกจหลัก."
@@ -80,6 +80,7 @@ config_general_allow_gethostbyaddr_lookup: "อนุญาตให้มีก
 config_general_ban_override: "แทนที่ "forbid_on_block" เมื่อ "infraction_limit" ได้รับการเกินหรือไม่? เมื่อแทนที่: คำขอที่ถูกบล็อกกลับหน้าเปล่า (ไฟล์เทมเพลตจะไม่ถูกใช้). 200 = อย่าแทนที่ [ค่าเริ่มต้น]. ค่าอื่น ๆ จะเหมือนกับค่าที่ใช้ได้สำหรับ "forbid_on_block"."
 config_general_default_algo: "กำหนดว่าจะใช้อัลกอริทึมใดสำหรับรหัสผ่านและเซสชันในอนาคต. ตัวเลือก: PASSWORD_DEFAULT (ค่าเริ่มต้น), PASSWORD_BCRYPT, PASSWORD_ARGON2I (ต้องการ PHP &gt;= 7.2.0), PASSWORD_ARGON2ID (ต้องการ PHP &gt;= 7.3.0)."
 config_general_default_dns: "รายการคั่นด้วยจุลภาคของเซิร์ฟเวอร์ DNS ใช้สำหรับการค้นหาชื่อโฮสต์. ค่าเริ่มต้น = "8.8.8.8,8.8.4.4" (Google DNS). คำเตือน: อย่าเปลี่ยนสิ่งนี้จนกว่าคุณจะรู้ว่าคุณกำลังทำอะไร!"
+config_general_default_timeout: "หมดเวลาเริ่มต้นที่จะใช้สำหรับคำขอภายนอก? ค่าเริ่มต้น = 12 วินาที."
 config_general_disable_cli: "ปิดใช้งานโหมด CLI หรือไม่? โหมด CLI ถูกเปิดใช้งานตามค่าเริ่มต้น แต่บางครั้งอาจรบกวนการทำงานของเครื่องมือทดสอบบางอย่าง (เช่น PHPUnit) และแอพพลิเคชั่น CLI อื่น ๆ. ถ้าคุณไม่จำเป็นต้องปิดใช้งานโหมด CLI คุณควรละเว้นคำสั่งนี้. False = เปิดใช้งานโหมด CLI [ค่าเริ่มต้น]; True = ปิดใช้งานโหมด CLI."
 config_general_disable_frontend: "ปิดใช้งานการเข้าถึง front-end หรือไม่? การเข้าถึง front-end ทำให้ CIDRAM สามารถจัดการได้ดีขึ้น แต่ก็อาจเป็นความเสี่ยงด้านความปลอดภัยที่อาจเกิดขึ้นด้วย. ขอแนะนำให้จัดการ CIDRAM ผ่านทางแบ็คเอนด์เมื่อใดก็ตามที่เป็นไปได้ แต่จะมีการเข้าถึง front-end เมื่อไม่สามารถทำได้. โปรดปิดใช้งานหากคุณไม่ต้องการ. False = เปิดใช้งานการเข้าถึง front-end; True = ปิดการใช้งานการเข้าถึง front-end [ค่าเริ่มต้น]."
 config_general_disable_webfonts: "หยุดใช้ webfonts หรือไม่? True = หยุดใช้ [ค่าเริ่มต้น]; False = ไม่หยุดใช้."

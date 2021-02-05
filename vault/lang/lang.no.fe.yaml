@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Norwegian language data for the front-end (last modified: 2021.01.16).
+# This file: Norwegian language data for the front-end (last modified: 2021.02.05).
 ##/
 
 Extended Description Bypasses: "Standard-signatur-bypass-filene som normalt følger med hovedpakken."
@@ -80,6 +80,7 @@ config_general_allow_gethostbyaddr_lookup: "Tillat gethostbyaddr oppslag når UD
 config_general_ban_override: "Overstyr "forbid_on_block" når "infraction_limit" overskrides? Når overstyrende: Blokkerte forespørsler returnerer en tom side (malfiler blir ikke brukt). 200 = Ikke overstyre [Standardverdi]. Andre verdier er de samme som tilgjengelige verdier for "forbid_on_block"."
 config_general_default_algo: "Definerer hvilken algoritme som skal brukes for alle fremtidige passord og økter. Alternativer: PASSWORD_DEFAULT (standardverdi), PASSWORD_BCRYPT, PASSWORD_ARGON2I (krever PHP &gt;= 7.2.0), PASSWORD_ARGON2ID (krever PHP &gt;= 7.3.0)."
 config_general_default_dns: "En kommaseparert liste over DNS-servere som skal brukes til vertsnavn-oppslag. Standardverdi = "8.8.8.8,8.8.4.4" (Google DNS). ADVARSEL: Ikke endre dette med mindre du vet hva du gjør!"
+config_general_default_timeout: "Standard tidsavbrudd for eksterne forespørsler? Standardverdi = 12 sekunder."
 config_general_disable_frontend: "Deaktiver tilgang til frontenden? Frontend tilgang kan gjøre CIDRAM mer overskuelig, men kan også være en potensiell sikkerhetsrisiko også. Det anbefales å administrere CIDRAM via bakenden når det er mulig, men frontend tilgang er gitt for når det ikke er mulig. Hold den deaktivert med mindre du trenger det. False = Aktiver tilgang til frontenden; True = Deaktiver tilgang til frontenden [Standardverdi]."
 config_general_disable_webfonts: "Deaktiver webfonter? True = Ja [Standardverdi]; False = Nei."
 config_general_disabled_channels: "Dette kan brukes til å forhindre CIDRAM i å bruke bestemte kanaler når du sender forespørsler (f.eks, når du oppdaterer, når du henter komponentmetadata, osv)."

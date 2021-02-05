@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: English language data for the front-end (last modified: 2021.01.16).
+# This file: English language data for the front-end (last modified: 2021.02.05).
 ##/
 
 Extended Description Bypasses: "The default signature bypass files normally included with the main package."
@@ -80,6 +80,7 @@ config_general_allow_gethostbyaddr_lookup: "Allow gethostbyaddr lookups when UDP
 config_general_ban_override: "Override "forbid_on_block" when "infraction_limit" is exceeded? When overriding: Blocked requests return a blank page (template files aren't used). 200 = Don't override [Default]. Other values are the same as the available values for "forbid_on_block"."
 config_general_default_algo: "Defines which algorithm to use for all future passwords and sessions. Options: PASSWORD_DEFAULT (default), PASSWORD_BCRYPT, PASSWORD_ARGON2I (requires PHP &gt;= 7.2.0), PASSWORD_ARGON2ID (requires PHP &gt;= 7.3.0)."
 config_general_default_dns: "A comma delimited list of DNS servers to use for hostname lookups. Default = "8.8.8.8,8.8.4.4" (Google DNS). WARNING: Don't change this unless you know what you're doing!"
+config_general_default_timeout: "Default timeout to use for external requests? Default = 12 seconds."
 config_general_disable_frontend: "Disable front-end access? Front-end access can make CIDRAM more manageable, but can also be a potential security risk, too. It's recommended to manage CIDRAM via the back-end whenever possible, but front-end access is provided for when it isn't possible. Keep it disabled unless you need it. False = Enable front-end access; True = Disable front-end access [Default]."
 config_general_disable_webfonts: "Disable webfonts? True = Yes [Default]; False = No."
 config_general_disabled_channels: "This can be used to prevent CIDRAM from using particular channels when sending requests (e.g., when updating, when fetching component metadata, etc)."

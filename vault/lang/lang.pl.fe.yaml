@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Polish language data for the front-end (last modified: 2021.01.16).
+# This file: Polish language data for the front-end (last modified: 2021.02.05).
 ##/
 
 Extended Description Bypasses: "Domyślne pliki pomijania podpisów zwykle zawarte w pakiecie głównym."
@@ -80,6 +80,7 @@ config_general_allow_gethostbyaddr_lookup: "Zezwolić na wyszukiwanie gethostbya
 config_general_ban_override: "Zastąpić „forbid_on_block”, gdy zostanie przekroczony „infraction_limit”? Podczas nadpisywania: Zablokowane żądania zwracają pustą stronę (pliki szablonów nie są używane). 200 = Nie zastępuj [Domyślna]. Inne wartości są takie same, jak dostępne wartości dla „forbid_on_block”."
 config_general_default_algo: "Określa, którego algorytmu należy używać dla wszystkich przyszłych haseł i sesji. Opcje: PASSWORD_DEFAULT (domyślna), PASSWORD_BCRYPT, PASSWORD_ARGON2I (wymaga PHP &gt;= 7.2.0), PASSWORD_ARGON2ID (wymaga PHP &gt;= 7.3.0)."
 config_general_default_dns: "Rozdzielona przecinkami lista serwerów DNS używanych do wyszukiwania nazw hostów. Domyślna = "8.8.8.8,8.8.4.4" (Google DNS). OSTRZEŻENIE: Nie zmieniaj tego, chyba że wiesz, co robisz!"
+config_general_default_timeout: "Domyślny limit czasu używany dla żądań zewnętrznych? Domyślna = 12 sekund."
 config_general_disable_frontend: "Wyłączyć dostęp do interfejsu użytkownika? Interfejs użytkownika może sprawić, że CIDRAM będzie łatwiejszy w zarządzaniu, ale może również stanowić potencjalne zagrożenie bezpieczeństwa. Dostęp do interfejsu użytkownika jest zapewniany dla wygody, ale należy go włączać tylko wtedy, gdy jest to potrzebne. False (Fałszywy) = Włącz dostęp do interfejsu użytkownika; True (Prawdziwe) = Wyłącz dostęp do interfejsu użytkownika [Domyślna]."
 config_general_disable_webfonts: "Wyłączyć czcionki internetowe? True (Prawdziwe) = Tak [Domyślna]; False (Fałszywy) = Nie."
 config_general_disabled_channels: "Można tego użyć, aby zapobiec korzystaniu przez CIDRAM z określonych kanałów podczas wysyłania żądań (n.p., podczas aktualizacji, podczas pobierania metadanych komponentu, itp)."

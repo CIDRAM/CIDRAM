@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Dutch language data for the front-end (last modified: 2021.01.16).
+# This file: Dutch language data for the front-end (last modified: 2021.02.05).
 ##/
 
 Extended Description Bypasses: "De standaard signature rondwegen normaal opgenomen met de primaire pakket."
@@ -80,6 +80,7 @@ config_general_allow_gethostbyaddr_lookup: "Zoeken op gethostbyaddr toestaan als
 config_general_ban_override: "Overrijden "forbid_on_block" wanneer "infraction_limit" wordt overschreden? Wanneer het overrijdt: Geblokkeerde verzoeken retourneert een lege pagina (template bestanden worden niet gebruikt). 200 = Niet overrijden [Standaard]. Andere waarden zijn hetzelfde als de beschikbare waarden voor "forbid_on_block"."
 config_general_default_algo: "Definieert welk algoritme u wilt gebruiken voor alle toekomstige wachtwoorden en sessies. Opties: PASSWORD_DEFAULT (standaard), PASSWORD_BCRYPT, PASSWORD_ARGON2I (vereist PHP &gt;= 7.2.0), PASSWORD_ARGON2ID (vereist PHP &gt;= 7.3.0)."
 config_general_default_dns: "Een door komma's gescheiden lijst met DNS-servers te gebruiken voor de hostnaam lookups. Standaard = "8.8.8.8,8.8.4.4" (Google DNS). WAARSCHUWING: Verander dit niet tenzij u weet wat u doet!"
+config_general_default_timeout: "Standaard time-out om te gebruiken voor externe verzoeken? Standaard = 12 seconden."
 config_general_disable_frontend: "Uitschakelen frontend toegang? frontend toegang kan CIDRAM beter beheersbaar te maken, maar kan ook een potentieel gevaar voor de veiligheid zijn. Het is aan te raden om CIDRAM te beheren via het backend wanneer mogelijk, maar frontend toegang is hier voorzien voor wanneer het niet mogelijk is. Hebben het uitgeschakeld tenzij u het nodig hebt. False = Inschakelen frontend toegang; True = Uitschakelen frontend toegang [Standaard]."
 config_general_disable_webfonts: "Uitschakelen webfonts? True = Ja [Standaard]; False = Nee."
 config_general_disabled_channels: "Dit kan worden gebruikt om te voorkomen dat CIDRAM bepaalde kanalen gebruikt bij het verzenden van verzoeken (b.v., bij het bijwerken, bij het ophalen van metagegevens van componenten, enzovoort)."

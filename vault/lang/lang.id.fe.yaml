@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Indonesian language data for the front-end (last modified: 2021.01.16).
+# This file: Indonesian language data for the front-end (last modified: 2021.02.05).
 ##/
 
 Extended Description Bypasses: "File untuk bypass tanda tangan standar yang biasanya disertakan dengan paket utama."
@@ -80,6 +80,7 @@ config_general_allow_gethostbyaddr_lookup: "Izinkan menggunakan gethostbyaddr sa
 config_general_ban_override: "Mengesampingkan "forbid_on_block" ketika "infraction_limit" adalah melampaui? Ketika mengesampingkan: Permintaan diblokir menghasilkan halaman kosong (file template tidak digunakan). 200 = Jangan mengesampingkan [Default]. Nilai lainnya sama dengan nilai yang tersedia untuk "forbid_on_block"."
 config_general_default_algo: "Mendefinisikan algoritma mana yang akan digunakan untuk semua password dan sesi di masa depan. Opsi: PASSWORD_DEFAULT (default), PASSWORD_BCRYPT, PASSWORD_ARGON2I (membutuhkan PHP &gt;= 7.2.0), PASSWORD_ARGON2ID (membutuhkan PHP &gt;= 7.3.0)."
 config_general_default_dns: "Sebuah daftar dipisahkan dengan koma dari server DNS yang digunakan untuk pencarian nama host. Default = "8.8.8.8,8.8.4.4" (Google DNS). PERINGATAN: Jangan ganti ini kecuali Anda tahu apa yang Anda lakukan!"
+config_general_default_timeout: "Batas waktu default untuk digunakan untuk permintaan eksternal? Default = 12 detik."
 config_general_disable_frontend: "Menonaktifkan akses bagian depan? Akses bagian depan dapat membuat CIDRAM lebih mudah dikelola, tapi juga dapat menjadi potensial resiko keamanan. Itu direkomendasi untuk mengelola CIDRAM melalui bagian belakang bila mungkin, tapi akses bagian depan yang disediakan untuk saat itu tidak mungkin. Memilikinya dinonaktifkan kecuali jika Anda membutuhkannya. False = Mengaktifkan akses bagian depan; True = Menonaktifkan akses bagian depan [Default]."
 config_general_disable_webfonts: "Menonaktifkan webfonts? True = Ya [Default]; False = Tidak."
 config_general_disabled_channels: "Ini dapat digunakan untuk mencegah CIDRAM dari menggunakan saluran tertentu saat mengirim permintaan (misalnya, saat memperbarui, saat mengambil metadata komponen, dll)."

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Vietnamese language data for the front-end (last modified: 2021.01.16).
+# This file: Vietnamese language data for the front-end (last modified: 2021.02.05).
 ##/
 
 Extended Description Bypasses: "Các tập tin đường tránh chữ ký mặc định thường bao gồm với gói thầu chính."
@@ -80,6 +80,7 @@ config_general_allow_gethostbyaddr_lookup: "Cho phép tra cứu gethostbyaddr kh
 config_general_ban_override: "Ghi đè "forbid_on_block" khi "infraction_limit" bị vượt quá? Khi ghi đè: Các yêu cầu bị chặn sản xuất một trang trống (tập tin mẫu không được sử dụng). 200 = Không ghi đè [Mặc định]. Các giá trị khác giống với các giá trị có sẵn cho "forbid_on_block"."
 config_general_default_algo: "Xác định thuật toán nào sẽ sử dụng cho tất cả các mật khẩu và phiên trong tương lai. Tùy chọn: PASSWORD_DEFAULT (mặc định), PASSWORD_BCRYPT, PASSWORD_ARGON2I (yêu cầu PHP &gt;= 7.2.0), PASSWORD_ARGON2ID (yêu cầu PHP &gt;= 7.3.0)."
 config_general_default_dns: "Một dấu phẩy phân cách danh sách các máy chủ DNS để sử dụng cho tra cứu tên máy. Mặc định = "8.8.8.8,8.8.4.4" (Google DNS). CẢNH BÁO: Không thay đổi này, trừ khi bạn biết những gì bạn đang làm!"
+config_general_default_timeout: "Thời gian chờ mặc định để sử dụng cho các yêu cầu bên ngoài? Mặc định = 12 giây."
 config_general_disable_frontend: "Vô hiệu hóa truy cập front-end? Truy cập front-end có thể làm cho CIDRAM dễ quản lý hơn, nhưng cũng có thể là một nguy cơ bảo mật tiềm năng. Đó là khuyến cáo để quản lý CIDRAM từ các back-end bất cứ khi nào có thể, nhưng truy cập front-end là cung cấp khi nó không phải là có thể. Giữ nó vô hiệu hóa trừ khi bạn cần nó. False = Kích hoạt truy cập front-end; True = Vô hiệu hóa truy cập front-end [Mặc định]."
 config_general_disable_webfonts: "Vô hiệu hóa các webfont? True = Vâng [Mặc định]; False = Không."
 config_general_disabled_channels: "Điều này có thể được sử dụng để ngăn CIDRAM sử dụng các kênh cụ thể khi gửi yêu cầu (ví dụ, khi cập nhật, khi lấy siêu dữ liệu thành phần, vv)."

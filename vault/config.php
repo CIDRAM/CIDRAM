@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Configuration handler (last modified: 2021.01.10).
+ * This file: Configuration handler (last modified: 2021.02.05).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -173,6 +173,7 @@ if (!empty($CIDRAM['Config']['general']['hide_version'])) {
 
 /** Instantiate the request class. */
 $CIDRAM['Request'] = new \Maikuolan\Common\Request();
+$CIDRAM['Request']->DefaultTimeout = $CIDRAM['Config']['general']['default_timeout'];
 $CIDRAM['Request']->Channels = (
     $Channels = $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'channels.yaml')
 ) ? (new \Maikuolan\Common\YAML($Channels))->Data : [];

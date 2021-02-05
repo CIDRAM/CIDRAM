@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: French language data for the front-end (last modified: 2021.01.16).
+# This file: French language data for the front-end (last modified: 2021.02.05).
 ##/
 
 Extended Description Bypasses: "Les fichiers pour contourner les signatures standard qui sont normalement inclus dans le paquet principal."
@@ -80,6 +80,7 @@ config_general_allow_gethostbyaddr_lookup: "Autoriser les recherches par gethost
 config_general_ban_override: "Remplacer « forbid_on_block » lorsque « infraction_limit » est dépassé ? En cas de remplacement : Les requêtes bloquées renvoient une page blanche (les fichiers modèles ne sont pas utilisés). 200 = Ne pas remplacer [Défaut]. Les autres valeurs sont les mêmes que les valeurs disponibles pour « forbid_on_block »."
 config_general_default_algo: "Définit quel algorithme utiliser pour tous les mots de passe et les sessions à l'avenir. Options : PASSWORD_DEFAULT (défaut), PASSWORD_BCRYPT, PASSWORD_ARGON2I (nécessite PHP &gt;= 7.2.0), PASSWORD_ARGON2ID (nécessite PHP &gt;= 7.3.0)."
 config_general_default_dns: "Une liste délimitée par des virgules de serveurs DNS à utiliser pour les recherches de noms d'hôtes. Par Défaut = « 8.8.8.8,8.8.4.4 » (Google DNS). AVERTISSEMENT : Ne pas changer si vous ne sais pas ce que vous faites !"
+config_general_default_timeout: "Délai d'attente par défaut à utiliser pour les requêtes externes ? Défaut = 12 secondes."
 config_general_disable_frontend: "Désactiver l'accès frontal ? L'accès frontal peut rendre CIDRAM plus facile à gérer, mais peut aussi être un risque potentiel pour la sécurité. Il est recommandé de gérer CIDRAM via le back-end chaque fois que possible, mais l'accès frontal est prévu pour quand il est impossible. Seulement activer si vous avez besoin. False = Activer l'accès frontal ; True = Désactiver l'accès frontal [Défaut]."
 config_general_disable_webfonts: "Désactiver les webfonts ? True = Oui [Défaut] ; False = Non."
 config_general_disabled_channels: "Ceci peut être utilisé pour empêcher CIDRAM d'utiliser des canaux particuliers lors de l'envoi de requêtes (par exemple, lors de la mise à jour, lors de l'extraction de métadonnées de composant, etc)."

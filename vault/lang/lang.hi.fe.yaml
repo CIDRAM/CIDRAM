@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Hindi language data for the front-end (last modified: 2021.01.16).
+# This file: Hindi language data for the front-end (last modified: 2021.02.05).
 ##/
 
 Extended Description Bypasses: "डिफ़ॉल्ट हस्ताक्षर बाईपास फ़ाइलों को सामान्यतः मुख्य पैकेज के साथ शामिल किया गया था।"
@@ -80,6 +80,7 @@ config_general_allow_gethostbyaddr_lookup: "जब UDP अनुपलब्ध 
 config_general_ban_override: "विलोपन "forbid_on_block" कब "infraction_limit" पार कर रहा है? अधिभावी कब: विचाराधीन अनुरोध एक खाली पेज वापस (टेम्पलेट फाइलों का उपयोग नहीं कर रहे हैं)। 200 = ओवरराइड न करें [डिफ़ॉल्ट]। अन्य मान "forbid_on_block" के लिए उपलब्ध मानों के समान हैं।"
 config_general_default_algo: "परिभाषित करता है कि भविष्य के सभी पासवर्ड और सत्रों के लिए किस एल्गोरिथम का उपयोग करना है। विकल्प: PASSWORD_DEFAULT (डिफ़ॉल्ट), PASSWORD_BCRYPT, PASSWORD_ARGON2I (PHP &gt;= 7.2.0 की आवश्यकता है), PASSWORD_ARGON2ID (PHP &gt;= 7.3.0 की आवश्यकता है)।"
 config_general_default_dns: "होस्ट नाम लुकअप के लिए उपयोग करने के लिए DNS सर्वर की अल्पविराम सीमांकित सूची। डिफ़ॉल्ट = "8.8.8.8,8.8.4.4" (Google DNS)। चेतावनी: जब तक कि आप को पता है तुम क्या कर रहे हो उसे बदल नहीं!"
+config_general_default_timeout: "बाहरी अनुरोधों के लिए उपयोग करने के लिए डिफ़ॉल्ट टाइमआउट? डिफ़ॉल्ट = 12 सेकंड।"
 config_general_disable_frontend: "सामने के अंत पहुँच अक्षम? सामने के अंत पहुंच CIDRAM को और अधिक प्रबंधनीय बना सकता है, लेकिन यह भी एक संभावित सुरक्षा जोखिम भी हो सकता है। जब भी संभव हो, बैक-एंड के माध्यम से CIDRAM का प्रबंधन करने की सिफारिश की जाती है, लेकिन सुविधा के लिए सामने के अंत पहुँच भी प्रदान किया जाता है। इसे तब तक अक्षम रखें जब तक आपको इसकी आवश्यकता न हो। False(झूठी) = सामने के अंत पहुँच सक्षम करें; True(सच्चे) = सामने के अंत पहुँच अक्षम करें [डिफ़ॉल्ट]।"
 config_general_disable_webfonts: "निष्क्रिय वेब फोंट? True(सच्चे) = हाँ [डिफ़ॉल्ट]; False(झूठी) = नहीं।"
 config_general_disabled_channels: "अनुरोध भेजने पर विशेष चैनल का उपयोग करने से CIDRAM को रोकने के लिए इसका उपयोग किया जा सकता है (उदाहरण के लिए, अपडेट करते समय, घटक मेटाडेटा लाने पर, आदि)।"

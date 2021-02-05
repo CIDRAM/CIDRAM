@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Turkish language data for the front-end (last modified: 2021.01.16).
+# This file: Turkish language data for the front-end (last modified: 2021.02.05).
 ##/
 
 Extended Description Bypasses: "Varsayılan imza bypass'lar, normalde ana paketle birlikte verilir."
@@ -80,6 +80,7 @@ config_general_allow_gethostbyaddr_lookup: "UDP kullanılamadığında gethostby
 config_general_ban_override: ""infraction_limit" aşıldığında "forbid_on_block"u geçersiz kıl? Geçersiz kılarken: Engellenen istekler boş bir sayfa verir (şablon dosyaları kullanılmaz). 200 = [Varsayılan] değerini geçersiz kılmayın. Diğer değerler "forbid_on_block" için mevcut değerler ile aynıdır."
 config_general_default_algo: "Gelecekteki tüm şifreler ve oturumlar için hangi algoritmayı kullanacağını tanımlar. Options: PASSWORD_DEFAULT (varsayılan), PASSWORD_BCRYPT, PASSWORD_ARGON2I (PHP &gt;= 7.2.0 gerektirir), PASSWORD_ARGON2ID (PHP &gt;= 7.3.0 gerektirir)."
 config_general_default_dns: "Ana makine adı aramalarda kullanılacak virgülle ayrılmış DNS sunucuları listesi. Varsayılan = "8.8.8.8,8.8.4.4" (Google DNS). UYARI: Ne yaptığınızı bilmiyorsanız bunu değiştirmeyin!"
+config_general_default_timeout: "Harici istekler için kullanılacak varsayılan zaman aşımı? Varsayılan = 12 saniye."
 config_general_disable_frontend: "Ön uç erişimini devre dışı bırak? Ön uç erişimi CIDRAM'ın daha yönetilebilir hale getirebilir, ancak potansiyel bir güvenlik riski de oluşturabilir. CIDRAM'ın mümkün olduğunda arka ucundan yönetmesi önerilir, ancak kolaylık sağlamak için ön uç erişimi sağlanmıştır. İhtiyacınız olmadıkça devre dışı bırakın. False = Ön uç erişimini etkinleştir; True = Ön uç erişimini devre dışı bırak [Varsayılan]."
 config_general_disable_webfonts: "Webfontlarını devre dışı bırak? Doğru/True = Evet [Varsayılan]; Yanlış/False = Hayır."
 config_general_disabled_channels: "Bu, istek gönderirken CIDRAM'ın belirli kanalları kullanmasını önlemek için kullanılabilir (örneğin, güncelleme yaparken, bileşen meta verileri alınırken, vb.)."

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Configuration defaults file (last modified: 2020.12.04).
+# This file: Configuration defaults file (last modified: 2021.02.05).
 ##/
 
 Config Defaults:
@@ -329,6 +329,10 @@ Config Defaults:
     GoogleDNS: "GoogleDNS"
    value_preg_filter:
     "~\s~": ""
+  default_timeout:
+   type: "int"
+   default: 12
+   preview: "seconds"
  signatures:
   ipv4:
    type: "string"

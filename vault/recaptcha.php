@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: reCAPTCHA module (last modified: 2020.11.27).
+ * This file: reCAPTCHA module (last modified: 2021.02.05).
  */
 
 /**
@@ -28,28 +28,32 @@ $CIDRAM['reCAPTCHA']['DoResponse'] = function () use (&$CIDRAM) {
 };
 
 /** Generate reCAPTCHA form template data. */
-$CIDRAM['reCAPTCHA']['GenerateTemplateData'] = function (string $SiteKey, string $API, bool $CookieWarn = false): string {
-    $CookieWarn = $CookieWarn ? '<br />{recaptcha_cookie_warning}' : '';
+$CIDRAM['reCAPTCHA']['GenerateTemplateData'] = function (string $SiteKey, string $API, bool $CookieWarn = false, bool $ApiMessage = false): string {
     $HostnameInsert = '<input type="hidden" id="hostnameoverride" name="hostname" value="">';
     $Script = '<script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>';
     $Script .= '<script type="text/javascript">document.getElementById(\'hostnameoverride\').value=window.location.hostname;</script>';
-    return $API === 'Invisible' ?
-        "\n<hr />\n<p class=\"detected\">{recaptcha_message_invisible}" . $CookieWarn . "<br /></p>\n" .
+    return $API === 'Invisible' ? sprintf(
+        "\n<hr />\n<p class=\"detected\">%s%s<br /></p>\n" .
         '<div class="gForm">' .
-            '<div id="gForm" class="g-recaptcha" data-sitekey="' . $SiteKey .
-            '" data-callback="onSubmitCallback" data-size="invisible"></div>' .
+            '<div id="gForm" class="g-recaptcha" data-sitekey="%s" data-callback="onSubmitCallback" data-size="invisible"></div>' .
         "</div>\n" .
         '<form id="gF" method="POST" action="" class="gForm">' .
-            '<input id="rData" type="hidden" name="g-recaptcha-response" value="">' . $HostnameInsert .
+            '<input id="rData" type="hidden" name="g-recaptcha-response" value="">%s' .
         "</form>\n" .
-        "<script type=\"text/javascript\">function onSubmitCallback(token){document.getElementById('rData').value=token;document.getElementById('gF').submit()}</script>\n" .
-        $Script . "\n"
-    :
-        "\n<hr />\n<p class=\"detected\">{recaptcha_message}" . $CookieWarn . "<br /></p>\n" .
+        "<script type=\"text/javascript\">function onSubmitCallback(token){document.getElementById('rData').value=token;document.getElementById('gF').submit()}</script>\n",
+        $ApiMessage ? '{recaptcha_message_invisible}' : '',
+        $CookieWarn ? '<br />{recaptcha_cookie_warning}' : '',
+        $SiteKey,
+        $HostnameInsert
+    ) . $Script . "\n" : sprintf(
+        "\n<hr />\n<p class=\"detected\">%s%s<br /></p>\n" .
         '<form method="POST" action="" class="gForm" onsubmit="javascript:grecaptcha.execute()">' .
-            '<div id="gForm"></div><div>' . $HostnameInsert . '<input type="submit" value="{recaptcha_submit}" /></div>' .
-        "</form>\n" .
-        $Script;
+            '<div id="gForm"></div><div>%s<input type="submit" value="{recaptcha_submit}" /></div>' .
+        "</form>\n",
+        $ApiMessage ? '{recaptcha_message}' : '',
+        $CookieWarn ? '<br />{recaptcha_cookie_warning}' : '',
+        $HostnameInsert
+    ) . $Script;
 };
 
 /** Generate reCAPTCHA callback data. */
@@ -84,7 +88,7 @@ $CIDRAM['reCAPTCHA']['GeneratePassed'] = function () use (&$CIDRAM) {
 };
 
 /** Data generation container. */
-$CIDRAM['reCAPTCHA']['GenerateContainer'] = function (bool $CookieWarn = false) use (&$CIDRAM) {
+$CIDRAM['reCAPTCHA']['GenerateContainer'] = function (bool $CookieWarn = false, bool $ApiMessage = false) use (&$CIDRAM) {
     if (!$CIDRAM['reCAPTCHA']['Bypass']) {
         $CIDRAM['Config']['template_data']['recaptcha_api_include'] = $CIDRAM['reCAPTCHA']['GenerateCallbackData'](
             $CIDRAM['Config']['recaptcha']['sitekey'],
@@ -93,14 +97,14 @@ $CIDRAM['reCAPTCHA']['GenerateContainer'] = function (bool $CookieWarn = false) 
         $CIDRAM['Config']['template_data']['recaptcha_div_include'] = $CIDRAM['reCAPTCHA']['GenerateTemplateData'](
             $CIDRAM['Config']['recaptcha']['sitekey'],
             $CIDRAM['Config']['recaptcha']['api'],
-            $CookieWarn
+            $CookieWarn,
+            $ApiMessage
         );
     }
 };
 
 /** Refer to the documentation regarding the behaviour of "lockuser". */
 if ($CIDRAM['Config']['recaptcha']['lockuser']) {
-
     /** Attempt to load the hash list. */
     if (file_exists($CIDRAM['Vault'] . 'hashes.dat')) {
         $CIDRAM['reCAPTCHA']['HashList'] = $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'hashes.dat');
@@ -153,9 +157,9 @@ if ($CIDRAM['Config']['recaptcha']['lockuser']) {
             $CIDRAM['Tracking-Modified'] = true;
         }
     } else {
-
         /** Set status for reCAPTCHA block information. */
         $CIDRAM['BlockInfo']['reCAPTCHA'] = $CIDRAM['L10N']->getString('recaptcha_enabled');
+
         /** We've received a response. */
         if (isset($_POST['g-recaptcha-response'])) {
             $CIDRAM['reCAPTCHA']['Loggable'] = true;
@@ -193,7 +197,10 @@ if ($CIDRAM['Config']['recaptcha']['lockuser']) {
          * reCAPTCHA template data included if reCAPTCHA not being bypassed.
          * Note: Cookie warning IS included here due to expected behaviour when lockuser is TRUE.
          */
-        $CIDRAM['reCAPTCHA']['GenerateContainer']($CIDRAM['Config']['recaptcha']['show_cookie_warning']);
+        $CIDRAM['reCAPTCHA']['GenerateContainer'](
+            $CIDRAM['Config']['recaptcha']['show_cookie_warning'],
+            $CIDRAM['Config']['recaptcha']['show_api_message']
+        );
     }
 
     /** Update the hash list if any changes were made. */
@@ -230,9 +237,9 @@ if ($CIDRAM['Config']['recaptcha']['lockuser']) {
             $CIDRAM['Tracking-Modified'] = true;
         }
     } else {
-
         /** Set status for reCAPTCHA block information. */
         $CIDRAM['BlockInfo']['reCAPTCHA'] = $CIDRAM['L10N']->getString('recaptcha_enabled');
+
         /** We've received a response. */
         if (isset($_POST['g-recaptcha-response'])) {
             $CIDRAM['reCAPTCHA']['Loggable'] = true;
@@ -255,7 +262,10 @@ if ($CIDRAM['Config']['recaptcha']['lockuser']) {
          * reCAPTCHA template data included if reCAPTCHA not being bypassed.
          * Note: Cookie warning is NOT included here due to expected behaviour when lockuser is FALSE.
          */
-        $CIDRAM['reCAPTCHA']['GenerateContainer']();
+        $CIDRAM['reCAPTCHA']['GenerateContainer'](
+            false,
+            $CIDRAM['Config']['recaptcha']['show_api_message']
+        );
     }
 
     /** Update the IP bypass list if any changes were made. */

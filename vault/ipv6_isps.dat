@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_isps.dat
 
-# Version: 2021.32.609
-# Last modified: 2021.02.02
+# Version: 2021.37.311
+# Last modified: 2021.02.07
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage, i.e., with ignore.dat, with reCAPTCHA, with "extended rules" (default bypasses): « [ ]Low [x]Medium [ ]High »
@@ -777,9 +777,9 @@ recaptcha:
 # nor its listing at a number of BLs. Marked for use with reCAPTCHA to reduce
 # the false positive risk. Websites intended for a Chinese audience should keep
 # this section listed in their ignore.dat file.
-# %Listed, abuseat.org (CBL-Listed): 0.81%.
-# Stop Forum Spam (SFS) listings: 10,885.
-# Updated: 2020.10.10
+# %Listed, abuseat.org (CBL-Listed): 0.70%.
+# Stop Forum Spam (SFS) listings: 8,919.
+# Updated: 2020.10.10 / Checked: 2021.02.05
 
 2406:8500::/32 Deny Generic
 240e::/20 Deny Generic
@@ -1919,13 +1919,13 @@ recaptcha:
 
 # ASN 36351 ("SoftLayer Technologies").
 # Careful when updating; Signatures reflect varying block reasons, split across multiple files.
-# Stop Forum Spam (SFS) listings: 7,200.
+# Stop Forum Spam (SFS) listings: 6,594.
 
 # SoftLayer questionable multi-play networks, spammy ISPs, etc.
 # Includes: Anything citing "Consumer Pool", "Starry".
 # ^(.*(Consumer Pool|Starry).*)$
 # Excludes: Everything else.
-# Updated: 2018.06.24 / Checked: 2020.11.21
+# Updated: 2018.06.24 / Checked: 2021.02.04
 
 2403:ad80:10::/48 Deny Spam
 2403:ad80:20::/48 Deny Spam
@@ -2060,6 +2060,38 @@ recaptcha:
 2001:920:198c:83c::/64 Deny Spam
 Origin: GB
 Tag: COLT Technology SGL
+
+
+# ASN 4788 ("TM Net, Internet Service Provider").
+# A major Malaysian domestic ISP, but also a notable source of spam and webapp
+# attacks (spam/malware). Listing all AU+SG+US ranges, plus any affected MY
+# ranges/addresses from the remainder (exclude unaffected).
+# %Listed, abuseat.org (CBL-Listed): 0.39%.
+# Stop Forum Spam (SFS) listings: 29,881.
+# Updated: 2021.02.07
+
+2600:1417:3d::/64 Deny Cloud
+2600:1417:58:100::/56 Deny Cloud
+Origin: US
+Tag: TM Net
+---
+recaptcha:
+ enabled: true
+
+
+# ASN 17971 ("TM-VADS DC Hosting").
+# A Malaysian multiplay network (offers primarily webhosting), but also a
+# source of brute-force and SSH attacks. Listing just the affected
+# ranges/addresses for now, plus confirmed hoster/cloud ranges.
+# Stop Forum Spam (SFS) listings: 2.
+# Updated: 2021.02.07
+
+2401:b000::/32 Deny Cloud
+Origin: MY
+Tag: TM-VADS DC Hosting
+---
+recaptcha:
+ enabled: true
 
 
 # ASNs 7725, 7922, 33668 ("Comcast Cable Communications, LLC").

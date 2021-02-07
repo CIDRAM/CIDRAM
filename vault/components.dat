@@ -1,7 +1,7 @@
 ---
 CIDRAM:
  Name: CIDRAM
- Version: 1.18.0-DEV+21009482
+ Version: 1.18.0-DEV+21035654
  Minimum Required: 1.0.0
  Changelog: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/Changelog.txt
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
@@ -167,8 +167,8 @@ CIDRAM:
    - 791344e24dbc967994ad09cf2d25eeac0783c72775d9fcab022cd4dfe43e73ee:7796
    - 676a9676cf0613cafc99684b0765fadd97b2feeccc0b875991b154f301057371:10446
    - 7fe0893624c9e89532af03d4c834f0251085c8637afab0771c91392a58a18913:25093
-   - 6a0a8b1af22c3d71f7828c1ac2050333c48d8dd25abd1a1fcd0aa3888261b4dd:7965
-   - e6f0a7608f9695ad09a272867b04f5944f9008fd4055b4a9848a37ac7128685b:15545
+   - b65fdfb769e3ed7fa9ed525c0debbc24d6d58157d982c44f2c18a19a33a8187f:8051
+   - fc6775cc183df01151e2a3862ea0c871b0b4371adef70734928f3ed5c4bb63ac:15669
    - 2cc62b4df5ddc14586d3c8189b26b1746d753699affdc1976aede3acca052b5a:9765
    - cdb91aefd05a3a7fb5d51a81888b4cffab18ce9bb9ede0bb49451f95c2be5e07:528
    - dd925fa21d11fdd4eb99f52fde1293d459b79321fcb8ef298a6c58a07dcd7046:2061
@@ -204,7 +204,7 @@ CIDRAM:
    - ee4abd6dd391047e2bfbd5ec96c61edd745592bb9215c09834ddcd0b80860f23:951
    - 5c03c03699930672c6489674595af99cb0f1f73751203ec6aba60d02b5bfd951:647
    - 5d182fca2d1865d72f28fe2fc7a32bcd60874cda0d76027c1f17ac6c3793a811:7143
-   - 132445681b12a83af0868e226eb4e1e09a0b3930f9d7cde3f9a4e706f5f88503:6082
+   - f1ce53d0097875fd2f311b0e64058eaaafb0399212a556c515fc5b98fa4b950b:6119
    - e2f511f6dbf63ee4065e205c1c266693293e9ac6bea6408d087267ff3e3cdff6:982
    - 660d1f7acd81d904d6429bf4cc961a9ea7ffc8bb3f2d252f2d13c873ff7ce53e:17536
    - e07cbd9cd2f45d147de14a63a222860639a3cb2f158088ebb82b70bb5e7306c2:776
@@ -219,9 +219,9 @@ CIDRAM:
    - 103931e52644953c004abdf662ed8a3c96869bec1e3dffcb42e3d92219df6dc7:172133
    - 61ef74de9c010faa209e35bc6721d11b16630d4e2f1397a2806b07bbf053ecb6:91191
    - 844ebdf1a741279bf41301091f7a3ddf582e60eb5fdb34db60f88a0c9f6ba4da:5852
-   - 806e45a33961af89dbe449d99ba146708c431ef641ae5d35696cf823372c3e75:36611
+   - 274f2bf34d0e279de646b6c2fcab978f195beba34fbcd1528530bfc1ce67aa55:36610
    - ee98b16e3880618a5fbf6b7e70f89eb1dbd36ea4d83a91f0b0060f8830d461bc:1661
-   - c4da3ab15382e12180af0eff3e097714cd19d50b3716e1b3474a33271cb50731:12982
+   - ef5b0540838ae805784fca94a147edb46600a505f4e90c7f0ffd8f97fbb727be:13325
    - 3419ae719e4a8d96e084a207d05793c2079d66decccbc1c4a1976a4047f0da72:1175
    - db36ca79649018afb2247f836cfd4ea1f48bde0d2c02db0e1684d1ba2a00bd9c:2540
    - aa36e36756e5740cdbb1d20a8a2d1ac20e2e8539635bc10aa741142da50dff1a:4003
@@ -229,7 +229,7 @@ CIDRAM:
 IPv4:
  Extended Description: Default IPv4 signatures normally included with the main package. Blocks unwanted cloud services and non-human endpoints.
  False Positive Risk: Low
- Version: 2021.32.609
+ Version: 2021.37.311
  Minimum Required: 1.0.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
  Uninstallable: true
@@ -239,7 +239,7 @@ IPv4:
   To:
    - ipv4.dat
   Checksum:
-   - 7f93f3eb134f92b9b14817bb23a9d19d5c7b6f80910b5479696faca2948912df:907537
+   - 6730ec4171be6c8fb4f7659d093fb511a1880f9c9a8157c5884fc346618e0eb5:899574
  Used with: ipv4
  Reannotate: components.dat
 IPv4-Bogons:
@@ -261,7 +261,7 @@ IPv4-Bogons:
 IPv4-ISPs:
  Extended Description: Default IPv4 signatures normally included with the main package. Blocks dangerous and spammy ISPs.
  False Positive Risk: Medium
- Version: 2021.32.609
+ Version: 2021.37.311
  Minimum Required: 1.0.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
  Uninstallable: true
@@ -271,13 +271,13 @@ IPv4-ISPs:
   To:
    - ipv4_isps.dat
   Checksum:
-   - 0f67a32904f73d291458d6c2431dc3c7e20361a3f84dabb9d20af9f4451c4201:413560
+   - 22d24f7990c1ab773f0ff78763ce152fe96ae7e7a39a28c8bb938816f1a5c2df:415427
  Used with: ipv4
  Reannotate: components.dat
 IPv4-Other:
  Extended Description: Default IPv4 signatures normally included with the main package. Blocks CIDRs for proxies, VPNs, and other miscellaneous unwanted services.
  False Positive Risk: Medium
- Version: 2021.32.609
+ Version: 2021.37.311
  Minimum Required: 1.0.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
  Uninstallable: true
@@ -287,13 +287,13 @@ IPv4-Other:
   To:
    - ipv4_other.dat
   Checksum:
-   - 7b8ac48e3d0fad79e4486b9c979dfcbcaecf75a5dc4e69ebbe3c54b66fdb2afa:37595
+   - 725daf57cb45dc31afe7b47c34e978ab95681536e3e52cf92cf590d3e4762e85:37264
  Used with: ipv4
  Reannotate: components.dat
 IPv6:
  Extended Description: Default IPv6 signatures normally included with the main package. Blocks unwanted cloud services and non-human endpoints.
  False Positive Risk: Low
- Version: 2021.32.609
+ Version: 2021.37.311
  Minimum Required: 1.0.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
  Uninstallable: true
@@ -303,7 +303,7 @@ IPv6:
   To:
    - ipv6.dat
   Checksum:
-   - 033ca68add45cdfbcf1adc04406ef000792ceaf9d50b626164c8909cd1cbfaa0:230731
+   - 6cf67769ed29a06d9bc168d50fdf1ea7fd80004f49ebb5763b9c05b22d666a3a:231113
  Used with: ipv6
  Reannotate: components.dat
 IPv6-Bogons:
@@ -325,7 +325,7 @@ IPv6-Bogons:
 IPv6-ISPs:
  Extended Description: Default IPv6 signatures normally included with the main package. Blocks dangerous and spammy ISPs.
  False Positive Risk: Medium
- Version: 2021.32.609
+ Version: 2021.37.311
  Minimum Required: 1.0.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
  Uninstallable: true
@@ -335,13 +335,13 @@ IPv6-ISPs:
   To:
    - ipv6_isps.dat
   Checksum:
-   - 4dd8f56f0cc01ceee17a4b25338392e63c3b1e6e757881d349eaa4ad6c9ba6d6:74939
+   - b592bffc58e3f6f4811e2dcf9ee968b671e66e0a88b1fad44eda5c881e860a42:75845
  Used with: ipv6
  Reannotate: components.dat
 IPv6-Other:
  Extended Description: Default IPv6 signatures normally included with the main package. Blocks CIDRs for proxies, VPNs, and other miscellaneous unwanted services.
  False Positive Risk: Low
- Version: 2021.32.609
+ Version: 2021.37.311
  Minimum Required: 1.0.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
  Uninstallable: true
@@ -351,7 +351,7 @@ IPv6-Other:
   To:
    - ipv6_other.dat
   Checksum:
-   - 85c0761f3ff1264b73fbf5e1b32f11a1dab1384ffb3f9b8a7e5bd5396b4d4769:5317
+   - c67ceb0a8eeb822248feeba5180f4eb0c9786d4fe9b162e39243c44708b5df0b:5319
  Used with: ipv6
  Reannotate: components.dat
 Bypasses:
@@ -375,7 +375,7 @@ Bypasses:
 l10n/en:
  Name: L10N: English
  Extended Description: English language data
- Version: 2021.15.381
+ Version: 2021.37.311
  Minimum Required: 1.10.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
  Uninstallable: true
@@ -390,13 +390,13 @@ l10n/en:
    - lang/lang.en.yaml
   Checksum:
    - b99e12d3b56893d61968ae0b83e58ea87ce97b0f4de799d25597fabfc4c30d5b:3490
-   - e945969dd13032156f9cfd89638d90d16131c55d5004771dc4052f2601a82b00:46221
+   - f76aeb3bfcc99b322de65f6fff801dae422536b8ae15a2f38c3b070ac1b25557:46412
    - f34569769c30856df5cd67e30424ea574b2a7aefdf84a67c3f899fae8d2f384b:4226
  Reannotate: components.dat
 l10n/ar:
  Name: L10N: العربية
  Extended Description: ملفات اللغة العربية
- Version: 2021.15.381
+ Version: 2021.37.311
  Minimum Required: 1.10.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
  Uninstallable: true
@@ -411,13 +411,13 @@ l10n/ar:
    - lang/lang.ar.yaml
   Checksum:
    - f862c0ba33a71c49e68e97000f05691683c8f73938f72f199b01a5313885366e:4224
-   - 7cbd738c6ebfa787979b02a716990bd05003bcaecab0de37453d4b28fda75408:62525
+   - 126a617050c9137746acd57c607f4486526f1f2848bfed8e38de01d9d8e78bfd:62816
    - 9b700108df38f715237f0be2cc7bd2e2d9a6c8fcd245962a583f06a8008c8adf:4465
  Reannotate: components.dat
 l10n/bn:
  Name: L10N: বাংলা
  Extended Description: বাংলা ভাষার তথ্য
- Version: 2021.15.381
+ Version: 2021.37.311
  Minimum Required: 1.10.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
  Uninstallable: true
@@ -432,13 +432,13 @@ l10n/bn:
    - lang/lang.bn.yaml
   Checksum:
    - 2f8140d486913ff9bfb468b669f8d511c76dfdc8426a9fc874174a619b08275f:6377
-   - 631942e0b9f6ed602821fb2abb3e0a8887e6b5ae02e14b698a04ef425bab89a2:91063
+   - 61a410133b3e91ec1c56ff49f9a95bc3114a36536d209b0da6c104a34dc4625f:91457
    - 1c99398a2f22c75d8a5263c0691fd428b7fd2502b0c9bf71f8844a482bcc0631:8997
  Reannotate: components.dat
 l10n/de:
  Name: L10N: Deutsche
  Extended Description: Deutsche Sprachdateien
- Version: 2021.15.381
+ Version: 2021.37.311
  Minimum Required: 1.10.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
  Uninstallable: true
@@ -453,13 +453,13 @@ l10n/de:
    - lang/lang.de.yaml
   Checksum:
    - 56f1b54ba49adfc26d788c3f5e95d0aefb62e2c583c8f81bc258754f478be5da:3813
-   - 8256ba688a55ff9c3ff94b5f3882c362642404f2ef85d0593167bcd752a4a064:52468
+   - 55f87bcf71057978a9a889f67665856678c71cc6268e7ab5caa730af6b4e89ac:52691
    - a03cdf971dc8426388ff1041a45aa992c90b6742b30e443a6c8f14487d6ab1a4:4746
  Reannotate: components.dat
 l10n/es:
  Name: L10N: Español
  Extended Description: Lingüísticos datos Español
- Version: 2021.15.381
+ Version: 2021.37.311
  Minimum Required: 1.10.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
  Uninstallable: true
@@ -474,13 +474,13 @@ l10n/es:
    - lang/lang.es.yaml
   Checksum:
    - abb4bd3d9bfe47ff7e2feeb7ccb0af5b524c259c5cbbbb942e6e7652d1d3a319:3756
-   - 99f8c6622b14f3a848073c3dd35e12b37375f69b7d6ed482f00342999457f819:52888
+   - bd9beb71de09328e647623f5ce59c54ff6f5e7a1273c8c56e411fdaaa456a5cc:53122
    - 468f693e760ebb05d22f7ea15d0259501257fa39bbdd313338a3452689497161:4585
  Reannotate: components.dat
 l10n/fr:
  Name: L10N: Français
  Extended Description: Linguistiques données en Français
- Version: 2021.15.381
+ Version: 2021.37.311
  Minimum Required: 1.10.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
  Uninstallable: true
@@ -495,13 +495,13 @@ l10n/fr:
    - lang/lang.fr.yaml
   Checksum:
    - 6bbf33d23b764ccf1bceacacf3418782ee49bb70cf6b810a1e18751b62c54c56:3954
-   - 010ebd4228f78135b14fb727466a78eb48f5d3289f2c775633e5bb98831e119d:54031
+   - 4017464283724b1dff37482bc35d4168b0278983040ea6f66e0fd34d1077c2d3:54266
    - 86d78545c9ccfbf5abe60e8c0dff280d96205993081f97a56d380d825c1fc1b4:4850
  Reannotate: components.dat
 l10n/hi:
  Name: L10N: हिंदी
  Extended Description: हिंदी भाषा डाटा
- Version: 2021.15.381
+ Version: 2021.37.311
  Minimum Required: 1.10.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
  Uninstallable: true
@@ -516,13 +516,13 @@ l10n/hi:
    - lang/lang.hi.yaml
   Checksum:
    - 4c2e6854b94b898a44d6651f53d7d113c7249af5550f2bda4189e493f605a200:6883
-   - 6cd6e86baf2c5cd462c3d86b9c9b8f817cdf93e709668658faf99591800a2a65:91265
+   - 83cc8acb50e60cf0d0a5e6f62f3d1542cedcfd7643803be1cd3c64f8eaa46b04:91677
    - 8e1a98b9e666e914ee5836dc9b4458ec9e0b71bc1fc4fa77d7b15acbb91eb674:8224
  Reannotate: components.dat
 l10n/id:
  Name: L10N: Bahasa Indonesia
  Extended Description: File Bahasa Indonesia
- Version: 2021.15.381
+ Version: 2021.37.311
  Minimum Required: 1.10.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
  Uninstallable: true
@@ -537,13 +537,13 @@ l10n/id:
    - lang/lang.id.yaml
   Checksum:
    - 8a5d2a01ae56afa4d6ac12030e684478333d42e79efdb3769fb8000b69e07480:3620
-   - e4d68897d070bed66c688ab194497120e14e2b80926a34f27a70d8d20fdd5df5:48866
+   - 16d069add03a42d72c69c238fc999760310e0d21f35fe551603056d0115c6a31:49078
    - 9cf0e52bdd0e2f3ea0b731740fb5c922e33dc9927bcab46f22495852e6b22d38:4458
  Reannotate: components.dat
 l10n/it:
  Name: L10N: Italiana
  Extended Description: Linguistici dati Italiana
- Version: 2021.15.381
+ Version: 2021.37.311
  Minimum Required: 1.10.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
  Uninstallable: true
@@ -558,13 +558,13 @@ l10n/it:
    - lang/lang.it.yaml
   Checksum:
    - 194fb2c526f08a93fe1214ab1ab48a50a81490088c602daece8fd870db9456ab:3666
-   - 2523e9b4b1e4a4d891960e78adb3a3acc9cc606eace22018e1c8b4cc0218af95:51540
+   - ce5ecf7dafd79b8c4a919a7e3eb2a519b982052a5aa7c6178564446775682b1d:51766
    - ad5dc367ee539d47937c6b107e04ff0d2d63d8298a5a44a5075c919546eed99e:4679
  Reannotate: components.dat
 l10n/ja:
  Name: L10N: 日本語
  Extended Description: 日本語言語データ
- Version: 2021.15.381
+ Version: 2021.37.311
  Minimum Required: 1.10.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
  Uninstallable: true
@@ -579,13 +579,13 @@ l10n/ja:
    - lang/lang.ja.yaml
   Checksum:
    - 000d9859ca17c0daa637cdaff12090a8b3bb638289b5d1fd035e43c6369f362b:4760
-   - d814c3aab96eacf79bccc66ae3d08c6bd88db1ee8f68f04ea122029f88f24781:64113
+   - d45ec0f5c5650fcf348ba3235e266328513ae9b42db9bb8c2c686e1448cb0659:64421
    - 898bc38581fa3592b155e64666e6a4acf84b4e07628aed003cb3b833cf07de6f:5191
  Reannotate: components.dat
 l10n/ko:
  Name: L10N: 한국어
  Extended Description: 한국어 언어 데이터
- Version: 2021.15.381
+ Version: 2021.37.311
  Minimum Required: 1.10.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
  Uninstallable: true
@@ -600,13 +600,13 @@ l10n/ko:
    - lang/lang.ko.yaml
   Checksum:
    - 0f77e554013e62c1275707210e5912a5073581005966d1a67bd043701265c214:3972
-   - 36df0c0a1da168c8881c07aa072f3d99ab5e702e1804650b36c19bd5579c2b86:53217
+   - ae9c4279897edc18efa089eb927cc4a09c2a2efd32faa5a2e05ac753e9d3e53b:53491
    - c4bd732fe702eb8b39c9e4d33d1f3a1cdf7f3d49ae601683773c356e7a351e5d:4362
  Reannotate: components.dat
 l10n/nl:
  Name: L10N: Nederlandse
  Extended Description: Nederlandse lokalisatie
- Version: 2021.15.381
+ Version: 2021.37.311
  Minimum Required: 1.10.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
  Uninstallable: true
@@ -621,13 +621,13 @@ l10n/nl:
    - lang/lang.nl.yaml
   Checksum:
    - 51c291c8f50b3765a9764383a41c3a547e6a36bdb30a1e26c6b6d91a985aeec2:3663
-   - c41019efe57ee9640d570c903a46aceb04b046941b097db0240ca547104e4e48:50231
+   - 9b05f850c674ea905e58517bd05a04114e17bf2fa4160b9123a79e31c4df1ee1:50450
    - 3e9578c9c34c4b206356ec435207342ebaaa8d15598f22a91f07e613afbfaa14:4500
  Reannotate: components.dat
 l10n/no:
  Name: L10N: Norsk
  Extended Description: Norsk språkdata
- Version: 2021.15.381
+ Version: 2021.37.311
  Minimum Required: 1.10.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
  Uninstallable: true
@@ -642,13 +642,13 @@ l10n/no:
    - lang/lang.no.yaml
   Checksum:
    - 8b2917bac741e15f80309948499543166f951f32c3f0b3d7c3cb6cc97ecc74f1:3573
-   - 906acdb9abded27d2f0a9f6a7f13d4e8f7d114304420893f90912db21a86f0bb:47749
+   - 6107d01838e41e7382d3999fc001b4de182a4e0ea0cf1f14d213c6eb9996060b:47961
    - 972614231df704f21c92f16b96e8fdfa2a9579e57a63056db4064d6ba4a01ac6:4418
  Reannotate: components.dat
 l10n/pt:
  Name: L10N: Português
  Extended Description: Linguagem dados Português
- Version: 2021.15.381
+ Version: 2021.37.311
  Minimum Required: 1.10.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
  Uninstallable: true
@@ -663,13 +663,13 @@ l10n/pt:
    - lang/lang.pt.yaml
   Checksum:
    - 133660fca72843da86cd90b5f4d88dddd56a188247f1bea5beacc275438ccda2:3730
-   - a7544ecab062e03a8325e91a2260a398683750a4745fb88c2b3731beddb706e5:51159
+   - 82f271aa1ead3713aee2c94c3f99cfc2527f1568d8e9cabaf5902752f97ee627:51374
    - f5fe9ecdb619ab6166900ed51619a65a87518d33963439483f2f775a3ea76b20:4519
  Reannotate: components.dat
 l10n/ru:
  Name: L10N: Русский
  Extended Description: Русском языковые файлы
- Version: 2021.15.381
+ Version: 2021.37.311
  Minimum Required: 1.10.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
  Uninstallable: true
@@ -684,13 +684,13 @@ l10n/ru:
    - lang/lang.ru.yaml
   Checksum:
    - df46a464f50f749adb42072c6af955ba6f8fcc63e6b0e6082b1501f1368700f9:5273
-   - 71f7f100a38bc2e9926b0463b09d8942b28030d4be1524f848afbf0f9d6cad53:75048
+   - 9681d619daafcefac40a1794b5fd8d881158506306fff371eab398665692f0c4:75324
    - 8d7d7c944382155da92d0ecdd41ebdb61980150fb48359a196b347fe2def0168:6954
  Reannotate: components.dat
 l10n/sv:
  Name: L10N: Svenska
  Extended Description: Svenska språkdata
- Version: 2021.15.381
+ Version: 2021.37.311
  Minimum Required: 1.10.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
  Uninstallable: true
@@ -705,13 +705,13 @@ l10n/sv:
    - lang/lang.sv.yaml
   Checksum:
    - a41a1cb77831120d969d084d927ffe748665083b44bb42f0917b66ddc5ff70f7:3595
-   - adffb7d17824ef1115559360c8e59b764f051a18e63ea73e97e1766124735565:48833
+   - e6ce1ccee7b9ed714d5e81cbc2aa97281893fe3bc86aa01be713fb31aef99108:49049
    - 5f65ec9e624b2bdc56ce6df82551a8c5ef58b0a4a05482fde7e5a72d31ecc4d2:4485
  Reannotate: components.dat
 l10n/th:
  Name: L10N: ภาษาไทย
  Extended Description: ข้อมูลภาษาไทย
- Version: 2021.15.381
+ Version: 2021.37.311
  Minimum Required: 1.10.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
  Uninstallable: true
@@ -726,13 +726,13 @@ l10n/th:
    - lang/lang.th.yaml
   Checksum:
    - e37521deed8771610e827f9aa7af27867d396fa2d06955cb083c47adf486dafb:6330
-   - fd7699f9ab4f944bade60bf3e5bc0cc099490fd0a8faa0f789b63f465e21e701:85363
+   - 1f66cb40af5e42b0f14160b20fa09f4919028bfe62904465dc37ff8e36cb1773:85737
    - d22e523584baf938ed7ff2f96941ac954fa61a247a101dda8d1e194679e5f79e:7873
  Reannotate: components.dat
 l10n/tr:
  Name: L10N: Türkçe
  Extended Description: Türkçe dili verileri
- Version: 2021.15.381
+ Version: 2021.37.311
  Minimum Required: 1.10.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
  Uninstallable: true
@@ -747,13 +747,13 @@ l10n/tr:
    - lang/lang.tr.yaml
   Checksum:
    - 8cf05cb033077d1dbbc1f57c2981acc0c3b398435d0c447ecb04168669c904e0:3615
-   - 1a9636cd1c2d75adb7ea81aed45ba43d50084651e439a181bbc7def14bd4ebb9:51088
+   - c6faf7291eb65ae95fccfa92ec1e071f6b821cea1b23d530bbbc00ebf2e9cede:51328
    - 0d980d94d8e5a0303162c95099059f82e9ff68e395ea1d1f8216f588174a849e:4655
  Reannotate: components.dat
 l10n/ur:
  Name: L10N: ‏اردو‏
  Extended Description: ‏اردو‏ زبان فائلوں
- Version: 2021.15.381
+ Version: 2021.37.311
  Minimum Required: 1.10.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
  Uninstallable: true
@@ -768,13 +768,13 @@ l10n/ur:
    - lang/lang.ur.yaml
   Checksum:
    - 4fe5e61b028f0631436c4602a8bf4b59ac2a4d7cb5492ceb96f49eff2b4deb9c:4929
-   - 634cfb7bafb1bc585895a93df1e93d4379c2d7baba91c5d4099d89e0306e3802:67405
+   - 9476ae197b2e23e6ea47d356c009ecaf449b17167b5a72b02430ad9d5c744a8d:67768
    - 3b8ddace908d9bcc38da70996a09e8f28b78bf2adbe429c1470477dd2f3e3f0e:6439
  Reannotate: components.dat
 l10n/vi:
  Name: L10N: Tiếng Việt
  Extended Description: Dữ liệu tiếng Việt
- Version: 2021.15.381
+ Version: 2021.37.311
  Minimum Required: 1.10.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
  Uninstallable: true
@@ -789,13 +789,13 @@ l10n/vi:
    - lang/lang.vi.yaml
   Checksum:
    - ecbf8d25e4a24df30ffabefaa6af4a4a95216c261b1ee1875d7be32622760ef2:4358
-   - 2fda61c977df87e0f882cfd87e6abb59eed4b910b7cb0c46ab491c0f2f5ae477:57606
+   - e7c2d1cc7b34e642b86cddfa7abf8cfcbac58f0ed182f9694d9359337440c0b9:57862
    - 39f065da2a394b9707420725b1a9f5d6f677a77f6903a7df6201e93001167250:5586
  Reannotate: components.dat
 l10n/zh-TW:
  Name: L10N: 中文（傳統）
  Extended Description: 中文（傳統）語言數據
- Version: 2021.15.381
+ Version: 2021.37.311
  Minimum Required: 1.10.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
  Uninstallable: true
@@ -810,13 +810,13 @@ l10n/zh-TW:
    - lang/lang.zh-tw.yaml
   Checksum:
    - c360c6e58653d4dba998874e960dae8eeb2963f4084f2623f0674f40e4425dfe:3367
-   - d992c143ba11b182be29f690897b565c8234819491e888bcef318a38f52c0503:44683
+   - 789f0aa95ae930e34eb33e15d9d17326290f997debe24dd6f3a727c5bd463783:44896
    - 7c6712cde61fa9902edacb1d02102d5700d8cbef0c139dc987f073a4251c301a:3951
  Reannotate: components.dat
 l10n/zh:
  Name: L10N: 中文（简体）
  Extended Description: 中文（简体）语言数据
- Version: 2021.15.381
+ Version: 2021.37.311
  Minimum Required: 1.10.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
  Uninstallable: true
@@ -831,7 +831,7 @@ l10n/zh:
    - lang/lang.zh.yaml
   Checksum:
    - 85a885aa2d87579fe0a657d1b2569ac6575d5dcca947aae8895a9f7033275b2e:3366
-   - 828f5f65d3c3c984c9ba72cbe83942e204bcbf594e67db0a45e491a7af3c0a88:44670
+   - 35e327de20d4129babf700f8ae9d6b041dea8aa0ab9bcf5888402f8acdb45340:44883
    - ac5d04bbf5f404a08fe857171aa8ee55cdc5e65838eb4966dc8b3b4effbd004c:3947
  Reannotate: components.dat
 

@@ -1,8 +1,8 @@
 # IPv6 signatures file (CIDRs for proxies, VPNs and other miscellaneous unwanted services).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_other.dat
 
-# Version: 2021.32.609
-# Last modified: 2021.02.02
+# Version: 2021.37.311
+# Last modified: 2021.02.07
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage, i.e., with ignore.dat, with reCAPTCHA, with "extended rules" (default bypasses): « [x]Low [ ]Medium [ ]High »
@@ -47,13 +47,13 @@ Tag: Cogent Bogons
 
 # ASN 36351 ("SoftLayer Technologies").
 # Careful when updating; Signatures reflect varying block reasons, split across multiple files.
-# Stop Forum Spam (SFS) listings: 7,200.
+# Stop Forum Spam (SFS) listings: 6,594.
 
 # SoftLayer VPNs and proxies.
 # Includes: Anything citing "TEFINCOM", "Packet Flip", "VPN", "proxy", "Secure Internet".
 # ^(.*(TEFINCOM|Packet Flip|VPN|Proxy|Secure Internet).*)$
 # Excludes: Everything else.
-# Updated: 2019.12.14 / Checked: 2020.11.21
+# Updated: 2019.12.14 / Checked: 2021.02.04
 
 2602:ff84:1::/48 Deny Proxy
 2602:ff84:c::/47 Deny Proxy
@@ -158,11 +158,11 @@ Tag: Web2Objects LLC
 
 # ASN 197640 ("OverPlay.Net LP").
 # A paid VPN provider and a source of spam.
-# Stop Forum Spam (SFS) listings: 109.
-# Updated: 2020.10.30
+# Stop Forum Spam (SFS) listings: 1,174.
+# Updated: 2021.02.07
 
 2a03:efc0:500::/40 Deny Proxy
-Origin: GB
+Origin: US
 Tag: OverPlay.Net LP
 ---
 recaptcha:

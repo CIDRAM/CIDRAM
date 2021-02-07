@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6.dat
 
-# Version: 2021.32.609
-# Last modified: 2021.02.02
+# Version: 2021.37.311
+# Last modified: 2021.02.07
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage, i.e., with ignore.dat, with reCAPTCHA, with "extended rules" (default bypasses): « [x]Low [ ]Medium [ ]High »
@@ -170,8 +170,8 @@ Tag: Masterhost
 
 
 # ASNs 26496, 30083, 398107 ("GoDaddy.com, LLC").
-# Stop Forum Spam (SFS) listings: 18,476 (AS26496), 277 (AS30083).
-# Updated: 2020.08.05
+# Stop Forum Spam (SFS) listings: 11,343 (AS26496), 170 (AS30083).
+# Updated: 2021.02.05
 
 2407:1c00::/32 Deny Cloud
 Origin: SG
@@ -183,10 +183,6 @@ Origin: SG
 2607:f208:530::/44 Deny Cloud
 2607:f208:560::/44 Deny Cloud
 2607:f208:580::/44 Deny Cloud
-2607:f208:5000::/40 Deny Cloud
-2607:f208:5f02::/48 Deny Cloud
-2607:f208:a010::/48 Deny Cloud
-2607:f208:af01::/48 Deny Cloud
 Origin: US
 Tag: GoDaddy.com, LLC
 
@@ -331,7 +327,7 @@ Tag: Leaseweb
 
 # ASN 36351 ("SoftLayer Technologies").
 # Careful when updating; Signatures reflect varying block reasons, split across multiple files.
-# Stop Forum Spam (SFS) listings: 7,200.
+# Stop Forum Spam (SFS) listings: 6,594.
 
 # SoftLayer cloud services, webhosting providers, etc.
 # This section all as "Run rules_specific.php".
@@ -344,7 +340,7 @@ Tag: Leaseweb
 # Excludes: Anything citing "Vonex" (clean; don't need to block).
 # ^(.*(Vonex).*)$\n
 # Includes: Everything else.
-# Updated: 2020.11.21
+# Updated: 2021.02.04
 
 2402:2f80::/48 Run rules_specific.php
 2403:1480:1000::/36 Run rules_specific.php
@@ -352,12 +348,9 @@ Origin: AU
 2803:3240:1::/48 Run rules_specific.php
 Origin: BZ
 2a01:6f0:fffe::/48 Run rules_specific.php
+2a05:a880:dc20::/48 Run rules_specific.php
 Origin: DE
-2a04:f400:3000::/48 Run rules_specific.php
-Origin: EU
 2a02:2498:3::/48 Run rules_specific.php
-2a05:3343::/42 Run rules_specific.php
-2a05:dfc7:30::/48 Run rules_specific.php
 Origin: GB
 2403:a280:8000::/36 Run rules_specific.php
 Origin: HK
@@ -375,6 +368,8 @@ Origin: IN
 2a03:8180:2200::/40 Run rules_specific.php
 2a0f:2740::/29 Run rules_specific.php
 Origin: NL
+2a05:3343::/42 Run rules_specific.php
+Origin: NZ
 2401:c900:1000::/38 Run rules_specific.php
 2401:c900:1400::/39 Run rules_specific.php
 2401:c900:1600::/40 Run rules_specific.php
@@ -403,6 +398,8 @@ Origin: SG
 2620:11b:3002::/48 Run rules_specific.php
 2620:121:5000::/47 Run rules_specific.php
 2620:121:5002::/48 Run rules_specific.php
+2a04:f400:3000::/48 Run rules_specific.php
+2a05:dfc7:30::/48 Run rules_specific.php
 Origin: US
 2803:2f40:ffff::/48 Run rules_specific.php
 Origin: UY
@@ -447,15 +444,13 @@ Tag: svyazy
 
 
 # ASN 35415 ("Webzilla B.V").
-# Stop Forum Spam (SFS) listings: 30.
-# Updated: 2020.03.01 / Checked: 2020.08.05
+# Stop Forum Spam (SFS) listings: 10.
+# Updated: 2021.02.05
 
 2a0f:9640::/29 Deny Cloud
 Origin: CY
 2a00:1178::/32 Deny Cloud
 Origin: NL
-2a06:78c0::/48 Deny Cloud
-Origin: RU
 Tag: Webzilla B.V
 
 
@@ -2236,12 +2231,11 @@ Tag: Aktsiaselts
 
 
 # ASN 54290 ("Hostwinds LLC").
-# Stop Forum Spam (SFS) listings: 472.
-# Updated: 2020.08.05
+# Stop Forum Spam (SFS) listings: 363.
+# Updated: 2021.02.05
 
-2a0d:7c40::/29 Deny Cloud
-Origin: NL
 2607:5500::/31 Deny Cloud
+2a0d:7c40::/32 Deny Cloud
 Origin: US
 Tag: Hostwinds LLC
 
@@ -2277,8 +2271,8 @@ Tag: WebNX, Inc
 
 
 # ASN 198068 ("FASTVPS EESTI OU").
-# Stop Forum Spam (SFS) listings: 35.
-# Updated: 2020.01.30 / Checked: 2020.06.20
+# Stop Forum Spam (SFS) listings: 3.
+# Updated: 2020.01.30 / Checked: 2021.02.07
 
 2a03:f480:1::/48 Deny Cloud
 2a03:f480:2::/47 Deny Cloud
@@ -3771,7 +3765,7 @@ Tag: Dreamscape Networks
 
 
 # ASN 22458 ("NetSource Communications, Inc").
-# Updated: 2019.10.26 / Checked: 2020.08.05
+# Updated: 2019.10.26 / Checked: 2021.02.05
 
 2604:f80::/32 Deny Cloud
 Origin: US
@@ -4908,14 +4902,15 @@ Tag: ARDH GLOBAL
 
 
 # ASN 24971 ("Master Internet s.r.o").
-# Stop Forum Spam (SFS) listings: 407.
-# Updated: 2020.01.30 / Checked: 2020.06.20
+# Stop Forum Spam (SFS) listings: 27.
+# Updated: 2021.02.07
 
 2001:678:a50::/48 Deny Cloud
 2001:67c:68::/48 Deny Cloud
+2a00:8220::/32 Deny Cloud
 2a00:a5a0::/32 Deny Cloud
 2a01:430::/32 Deny Cloud
-2a03:3b40::/38 Deny Proxy
+2a03:3b40::/38 Deny Cloud
 2a03:7460::/32 Deny Cloud
 2a07:4880::/29 Deny Cloud
 2a0b:3240::/32 Deny Cloud
@@ -4983,8 +4978,8 @@ Tag: White Sands Hosting
 
 
 # ASN 64267 ("Sprious LLC").
-# Stop Forum Spam (SFS) listings: 73,571.
-# Updated: 2018.09.07 / Checked: 2020.06.28
+# Stop Forum Spam (SFS) listings: 38,885.
+# Updated: 2018.09.07 / Checked: 2021.02.07
 
 2602:fefa::/32 Deny Cloud
 Origin: US
@@ -5659,9 +5654,9 @@ Tag: Business Network Ltd
 
 
 # ASNs 47172, 209829 ("Greenhost BV").
-# Dedicatd webhosting provider caught spamming forums.
-# Stop Forum Spam (SFS) listings: 55 (AS47172), 2 (AS209829).
-# Updated: 2019.09.30 / Checked: 2020.06.23
+# Dedicated webhosting provider caught spamming forums.
+# Stop Forum Spam (SFS) listings: 46 (AS47172), 1 (AS209829).
+# Updated: 2019.09.30 / Checked: 2021.02.07
 
 2a00:c6c0::/48 Deny Cloud
 Origin: NL
@@ -7556,6 +7551,28 @@ Origin: GB
 2a0e:f380::/32 Deny Cloud
 Origin: US
 Tag: Hyonix LLC
+
+
+# ASN 201814 ("Meverywhere sp. z o.o").
+# Polish infrastructure and colocation provider. Caught port scanning and
+# probing for vulnerabilities.
+# Stop Forum Spam (SFS) listings: 1.
+# Updated: 2021.02.04
+
+2a03:cfc0::/32 Deny Cloud
+Origin: PL
+Tag: Meverywhere
+
+
+# ASN 213373 ("IP Connect Inc").
+# Infrastructure provider from Seychelles. Email harvestors and brute-force
+# attempts detected from this network.
+# Stop Forum Spam (SFS) listings: 157.
+# Updated: 2021.02.05
+
+2a10:5fc0::/29 Deny Cloud
+Origin: SC
+Tag: IP Connect Inc
 
 
 # ---

@@ -1,8 +1,8 @@
 # IPv4 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv4_isps.dat
 
-# Version: 2021.32.609
-# Last modified: 2021.02.02
+# Version: 2021.37.311
+# Last modified: 2021.02.07
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage, i.e., with ignore.dat, with reCAPTCHA, with "extended rules" (default bypasses): « [ ]Low [x]Medium [ ]High »
@@ -86,8 +86,8 @@ recaptcha:
 
 
 # ASN 26658 ("HT").
-# Stop Forum Spam (SFS) listings: 3,102.
-# Updated: 2020.08.05
+# Stop Forum Spam (SFS) listings: 2,373.
+# Updated: 2020.08.05 / Checked: 2021.02.05
 
 14.192.20.0/22 Deny Generic
 27.0.156.0/22 Deny Generic
@@ -3219,13 +3219,12 @@ recaptcha:
 # nor its listing at a number of BLs. Marked for use with reCAPTCHA to reduce
 # the false positive risk. Websites intended for a Chinese audience should keep
 # this section listed in their ignore.dat file.
-# %Listed, abuseat.org (CBL-Listed): 0.81%.
-# Stop Forum Spam (SFS) listings: 10,885.
-# Updated: 2020.10.10
+# %Listed, abuseat.org (CBL-Listed): 0.70%.
+# Stop Forum Spam (SFS) listings: 8,919.
+# Updated: 2021.02.05
 
 147.78.134.0/23 Deny Generic
 Origin: AE
-1.1.8.0/24 Deny Generic
 1.48.0.0/15 Deny Generic
 1.50.0.0/16 Deny Generic
 1.68.0.0/14 Deny Generic
@@ -3258,7 +3257,6 @@ Origin: AE
 36.108.0.0/15 Deny Generic
 36.111.0.0/16 Deny Generic
 36.112.13.0/24 Deny Generic
-42.83.78.0/24 Deny Generic
 42.88.0.0/13 Deny Generic
 42.97.0.0/16 Deny Generic
 42.99.0.0/18 Deny Generic
@@ -3279,12 +3277,12 @@ Origin: AE
 59.42.0.0/16 Deny Generic
 59.44.0.0/14 Deny Generic
 59.48.0.0/12 Deny Generic
+59.82.64.0/18 Deny Generic
 59.107.0.0/17 Deny Generic
 59.172.0.0/14 Deny Generic
 60.55.0.0/16 Deny Generic
 60.160.0.0/11 Deny Generic
 60.235.0.0/16 Deny Generic
-61.29.128.0/17 Deny Generic
 61.128.0.0/16 Deny Generic
 61.130.0.0/15 Deny Generic
 61.132.0.0/16 Deny Generic
@@ -3376,10 +3374,8 @@ Origin: AE
 113.220.0.0/14 Deny Generic
 113.240.0.0/13 Deny Generic
 113.248.0.0/14 Deny Generic
-114.67.0.0/18 Deny Generic
 114.96.0.0/13 Deny Generic
 114.104.0.0/14 Deny Generic
-114.112.225.0/24 Deny Generic
 114.113.250.0/24 Deny Generic
 114.114.112.0/21 Deny Generic
 114.135.0.0/16 Deny Generic
@@ -3417,6 +3413,7 @@ Origin: AE
 118.120.0.0/14 Deny Generic
 118.124.0.0/15 Deny Generic
 118.180.0.0/14 Deny Generic
+118.184.152.0/21 Deny Generic
 118.186.0.0/15 Deny Generic
 118.192.0.0/16 Deny Generic
 118.213.0.0/16 Deny Generic
@@ -3436,6 +3433,7 @@ Origin: AE
 120.31.66.0/23 Deny Generic
 120.31.68.0/22 Deny Generic
 120.31.128.0/20 Deny Generic
+120.31.144.0/24 Deny Generic
 120.32.0.0/13 Deny Generic
 120.40.0.0/14 Deny Generic
 120.68.0.0/14 Deny Generic
@@ -3675,7 +3673,6 @@ Origin: AE
 223.214.0.0/15 Deny Generic
 223.220.0.0/15 Deny Generic
 223.240.0.0/13 Deny Generic
-223.252.160.0/24 Deny Generic
 Origin: CN
 5.154.144.0/22 Deny Generic
 81.173.16.0/21 Deny Generic
@@ -9729,20 +9726,15 @@ recaptcha:
 
 # ASN 36351 ("SoftLayer Technologies").
 # Careful when updating; Signatures reflect varying block reasons, split across multiple files.
-# Stop Forum Spam (SFS) listings: 7,200.
+# Stop Forum Spam (SFS) listings: 6,594.
 
 # SoftLayer questionable multi-play networks, spammy ISPs, etc.
 # Includes: Anything citing "Consumer Pool", "Starry".
 # ^(.*(Consumer Pool|Starry).*)$
 # Excludes: Everything else.
-# Updated: 2020.11.21
+# Updated: 2021.02.04
 
 31.14.72.0/23 Deny Spam
-95.142.114.0/24 Deny Spam
-95.142.117.0/24 Deny Spam
-95.142.120.0/24 Deny Spam
-95.142.126.0/24 Deny Spam
-185.54.231.0/24 Deny Spam
 Origin: CZ
 103.56.216.0/24 Deny Spam
 103.56.218.0/23 Deny Spam
@@ -9751,8 +9743,12 @@ Origin: CZ
 103.204.174.0/24 Deny Spam
 122.128.96.0/23 Deny Spam
 Origin: HK
-196.52.38.0/24 Deny Spam
-Origin: ZA
+95.142.114.0/24 Deny Spam
+95.142.117.0/24 Deny Spam
+95.142.120.0/24 Deny Spam
+95.142.126.0/24 Deny Spam
+185.54.231.0/24 Deny Spam
+Origin: SK
 Tag: SoftLayer Spam ISPs
 
 
@@ -10602,58 +10598,117 @@ Origin: SE
 Tag: Temp/AS51815
 
 
-# ASN 4788 ("TM Net, Internet Service Provider"). A major Malaysian domestic
-# ISP, but also a notable source of spam and webapp attacks (spam/malware).
-# %Listed, abuseat.org (CBL-Listed): 1.41%.
-# Stop Forum Spam (SFS) listings: 11,168.
-# Updated: 2020.06.28 / Modified: 2020.06.30
+# ASN 4788 ("TM Net, Internet Service Provider").
+# A major Malaysian domestic ISP, but also a notable source of spam and webapp
+# attacks (spam/malware). Listing all AU+SG+US ranges, plus any affected MY
+# ranges/addresses from the remainder (exclude unaffected).
+# %Listed, abuseat.org (CBL-Listed): 0.39%.
+# Stop Forum Spam (SFS) listings: 29,881.
+# Updated: 2021.02.07
 
+202.73.144.0/20 Deny Bogon
+Origin: AU
 1.9.111.145/32 Deny Spam
-1.9.164.242/32 Deny Spam
+1.9.164.0/24 Deny Spam
 1.9.167.35/32 Deny Spam
+1.9.213.114/32 Deny Spam
 1.32.59.217/32 Deny Spam
-42.188.43.38/32 Deny Spam
-42.188.186.220/32 Deny Spam
-42.188.195.136/32 Deny Spam
-49.236.195.0/24 Deny Malware
-60.48.222.6/32 Deny Spam
-60.49.107.0/24 Deny Spam
-60.53.3.200/32 Deny Spam
-115.132.227.153/32 Deny Spam
-115.133.87.247/32 Deny Spam
-115.135.107.193/32 Deny Spam
-118.101.226.186/32 Deny Spam
-124.13.22.252/32 Deny Spam
-124.13.53.93/32 Deny Spam
-124.13.180.179/32 Deny Spam
+42.188.14.91/32 Deny Spam
+42.190.76.12/32 Deny Spam
+42.191.177.171/32 Deny Spam
+60.48.96.28/32 Deny Spam
+60.49.84.181/32 Deny Spam
+60.49.107.0/24 Deny Malware
+60.50.16.200/32 Deny Spam
+60.52.110.71/32 Deny Spam
+115.134.188.74/32 Deny Spam
+115.135.112.214/32 Deny Spam
+115.135.226.110/32 Deny Spam
+115.135.248.250/32 Deny Spam
+118.101.68.217/32 Deny Spam
+118.101.145.33/32 Deny Spam
+124.13.22.0/24 Deny Spam
+124.13.53.0/24 Deny Spam
+124.13.95.0/24 Deny Spam
+124.13.183.151/32 Deny Spam
+147.158.120.97/32 Deny Spam
+147.158.149.143/32 Deny Spam
+147.158.177.218/32 Deny Spam
+147.158.206.173/32 Deny Spam
 175.136.210.109/32 Deny Malware
-175.137.222.11/32 Deny Spam
-175.138.81.138/32 Deny Spam
-175.138.112.242/31 Deny Spam
-175.139.128.0/19 Deny Spam
-175.139.160.0/22 Deny Spam
-175.139.164.0/24 Deny Malware
-175.139.165.0/24 Deny Spam
-175.139.166.0/23 Deny Spam
-175.139.168.0/21 Deny Spam
-175.139.176.0/20 Deny Spam
-175.139.192.0/18 Deny Spam
-175.140.151.199/32 Deny Spam
-175.140.184.77/32 Deny Spam
+175.138.73.0/24 Deny Spam
+175.138.188.97/32 Deny Spam
+175.139.154.0/24 Deny Spam
+175.139.164.0/23 Deny Malware
+175.139.166.172/32 Deny Spam
+175.139.167.0/24 Deny Spam
+175.139.225.0/24 Deny Spam
+175.139.226.0/24 Deny Spam
+175.140.101.0/24 Deny Spam
+175.140.121.232/32 Deny Spam
+175.140.151.0/24 Deny Spam
+175.140.183.48/32 Deny Spam
+175.140.184.0/24 Deny Spam
+175.141.147.0/24 Deny Spam
+175.141.168.0/24 Deny Spam
+175.141.171.0/24 Deny Spam
+175.141.193.0/24 Deny Spam
+175.141.244.0/24 Deny Spam
 175.143.51.221/32 Deny Spam
-175.143.62.54/32 Deny Spam
-175.144.198.13/32 Deny Spam
-202.188.219.249/32 Deny Spam
+175.143.114.0/23 Deny Spam
+175.144.158.169/32 Deny Spam
+175.144.244.240/32 Deny Spam
+175.145.232.41/32 Deny Spam
 203.106.184.0/24 Deny Malware
 203.106.194.0/24 Deny Malware
 210.186.50.0/24 Deny Malware
-210.186.132.80/32 Deny Spam
-219.92.54.249/32 Deny Spam
+210.186.255.192/32 Deny Spam
+210.187.244.54/32 Deny Spam
 219.92.205.0/24 Deny Malware
 219.93.121.0/24 Deny Malware
-219.95.141.49/32 Deny Spam
 Origin: MY
+23.6.120.0/24 Deny Cloud
+23.15.16.0/20 Deny Cloud
+23.51.32.0/19 Deny Cloud
+23.197.60.0/23 Deny Cloud
+23.200.82.0/23 Deny Cloud
+23.201.156.0/22 Deny Cloud
+23.212.55.0/24 Deny Cloud
+104.66.0.0/19 Deny Cloud
+104.77.82.0/24 Deny Cloud
+107.155.26.0/24 Deny Cloud
+173.222.152.0/22 Deny Cloud
+173.223.40.0/22 Deny Cloud
+184.28.140.0/22 Deny Cloud
+184.29.96.0/22 Deny Cloud
+184.51.32.0/24 Deny Cloud
+Origin: US
 Tag: TM Net
+---
+recaptcha:
+ enabled: true
+
+
+# ASN 17971 ("TM-VADS DC Hosting").
+# A Malaysian multiplay network (offers primarily webhosting), but also a
+# source of brute-force and SSH attacks. Listing just the affected
+# ranges/addresses for now, plus confirmed hoster/cloud ranges.
+# Stop Forum Spam (SFS) listings: 2.
+# Updated: 2021.02.07
+
+49.236.192.0/20 Deny Cloud
+112.137.160.0/20 Deny Cloud
+119.110.96.0/20 Deny Cloud
+202.71.100.52/32 Deny Malware
+202.71.102.0/24 Deny Malware
+202.71.103.68/32 Deny Malware
+202.71.111.119/32 Deny Malware
+202.75.32.0/20 Deny Cloud
+202.75.48.0/21 Deny Cloud
+202.75.56.0/22 Deny Cloud
+210.48.144.0/20 Deny Cloud
+Origin: MY
+Tag: TM-VADS DC Hosting
 ---
 recaptcha:
  enabled: true
@@ -15732,3 +15787,19 @@ recaptcha:
 91.236.74.0/24 Deny Spam
 Origin: RO
 Tag: Mechmet CHATIP MEMET
+
+
+# ASN 10036 ("DLIVE").
+# South Korean domestic broadband provider. Also a source of spam,
+# brute-force attempts, and port scans. Listing just the affected ranges/IPs.
+# Stop Forum Spam (SFS) listings: 23.
+# Updated: 2021.02.04
+
+58.141.80.151/32 Deny Spam
+101.235.245.57/32 Deny Spam
+211.172.4.167/32 Deny Malware
+Origin: KR
+Tag: DLIVE
+---
+recaptcha:
+ enabled: true

@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_isps.dat
 
-# Version: 2021.37.311
-# Last modified: 2021.02.07
+# Version: 2021.40.594
+# Last modified: 2021.02.10
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage, i.e., with ignore.dat, with reCAPTCHA, with "extended rules" (default bypasses): « [ ]Low [x]Medium [ ]High »
@@ -2117,14 +2117,11 @@ recaptcha:
 # Peering exchange provider in the United States; Should NEVER be blocked in
 # entirety. Listed here are some specific CIDRs/IPs on their network that pose
 # a risk for spamming and/or other undesirable traffic.
-# Stop Forum Spam (SFS) listings: 1,507.
-# Updated: 2020.08.11
+# %Listed, abuseat.org (CBL-Listed): 0.02%.
+# Stop Forum Spam (SFS) listings: 2,133.
+# Updated: 2021.02.10
 
-2600:8800:a600:6ad::/64 Deny Spam
-2600:8802:2300:1110::/64 Deny Spam
-2600:8802:4300:9100::/64 Deny Spam
-2600:8804:8182:e700::/64 Deny Spam
-2600:8805:aa80:11a::/64 Deny Spam
+2600:8807:5680:8b0::/64 Deny Spam
 Origin: US
 Tag: Cox Spam IPs
 ---
@@ -2132,16 +2129,16 @@ recaptcha:
  enabled: true
 
 
-# ASN 20115 ("Charter Communications").
+# ASNs 10796, 20115 ("Charter Communications").
 # Domestic ISP from the United States with some limited amount of spamming
 # (marked as "Spam") + caught by security honeypots (marked as "Malware").
-# %Listed, abuseat.org (CBL-Listed): 0.91%.
-# Stop Forum Spam (SFS) listings: 1,948.
-# Updated: 2020.11.27
+# %Listed, abuseat.org (CBL-Listed): 0.72% (AS10796), 0.85% (AS20115).
+# Stop Forum Spam (SFS) listings: 752 (AS10796), 2,206 (AS20115).
+# Updated: 2021.02.08
 
-2600:6c4a:4c7f:a071::/64 Deny Spam
-2600:6c4e:1200:f5::/64 Deny Spam
-2600:6c52:7d80:16::/64 Deny Spam
+2600:6c47:a200:154b::/64 Deny Spam
+2603:6000:aa0e:9800::/64 Deny Spam
+2603:6011:8946:1c00::/64 Deny Spam
 Origin: US
 Tag: Charter Communications
 ---

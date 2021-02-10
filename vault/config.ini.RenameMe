@@ -43,7 +43,9 @@ log_rotation_limit=0
 ; logfiles, until the limit is no longer exceeded.
 log_rotation_action='Delete'
 
-; Your timezone.
+; This is used to specify the timezone to use (e.g., Africa/Cairo,
+; America/New_York, Asia/Tokyo, Australia/Perth, Europe/Berlin, Pacific/Guam,
+; etc). Specify "SYSTEM" to let PHP handle this for you automatically.
 timezone='SYSTEM'
 
 ; Timezone offset in minutes.
@@ -200,6 +202,9 @@ log_sanitisation=false
 ; etc).
 disabled_channels=''
 
+; Default timeout to use for external requests? Default = 12 seconds.
+default_timeout=12
+
 
 [signatures]
 ; Configuration for signatures, signature files, modules, etc.
@@ -305,6 +310,9 @@ api='V2'
 
 ; Show cookie warning? True = Yes [Default]; False = No.
 show_cookie_warning=true
+
+; Show API message? True = Yes [Default]; False = No.
+show_api_message=true
 
 
 [legal]

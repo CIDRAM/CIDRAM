@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6.dat
 
-# Version: 2021.37.311
-# Last modified: 2021.02.07
+# Version: 2021.40.594
+# Last modified: 2021.02.10
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage, i.e., with ignore.dat, with reCAPTCHA, with "extended rules" (default bypasses): « [x]Low [ ]Medium [ ]High »
@@ -430,9 +430,9 @@ Origin: SK
 Tag: eServer.ru
 
 
-# ASNs 6870, 12722 ("RECONN. Operator svyazy Ltd").
-# Stop Forum Spam (SFS) listings: 2,306 (AS6870), 536 (AS12722).
-# Updated: 2019.02.28 / Checked: 2020.08.11
+# ASN 12722 ("RECONN. Operator svyazy Ltd").
+# Stop Forum Spam (SFS) listings: 604.
+# Updated: 2019.02.28 / Checked: 2021.02.10
 
 2a02:c6c0::/32 Deny Cloud
 Origin: GB
@@ -782,23 +782,21 @@ Tag: Bytemark Limited
 
 # ASNs 14061, 46652, 205301, 209396 ("DigitalOcean, LLC", "ServerStack, Inc", "Digital Ocean SRL").
 # Ranges change frequently / Should update often.
-# Notes for when updating:
-# - Remove unassigned prior to aggregating (e.g., 10.0.0.0/8).
-# - Contains one "Run" signature.
-# %Listed, abuseat.org (CBL-Listed): 0.42% (AS14061).
-# Stop Forum Spam (SFS) listings: 31,730 (AS14061).
-# Updated: 2020.03.27 / Checked: 2020.08.11
+# %Listed, abuseat.org (CBL-Listed): 0.48% (AS14061).
+# Stop Forum Spam (SFS) listings: 75,606 (AS14061).
+# Updated: 2021.02.10
 
-2a03:b0c0::/46 Deny Cloud
-Origin: NL
 2400:6180::/48 Deny Cloud
 2400:6180:100::/40 Deny Cloud
+2400:6180:f000::/36 Deny Cloud
 Origin: SG
 2604:a880::/46 Deny Cloud
 2604:a880:4::/48 Deny Cloud
-2604:a880:400::/48 Run rules_specific.php
+2604:a880:50::/48 Deny Cloud
+2604:a880:400::/48 Deny Cloud
 2604:a880:800::/48 Deny Cloud
 2604:a880:cad::/48 Deny Cloud
+2a03:b0c0::/46 Deny Cloud
 Origin: US
 Tag: Digital Ocean, Inc
 
@@ -1933,7 +1931,8 @@ Tag: CariNet, Inc
 
 # ASN 29141 ("Bradler & Krantz GmbH & Co. KG").
 # Dedicated data center. Brute-force attempts occasionally detected from this network.
-# Updated: 2016.04.10 / Checked: 2020.06.30
+# Stop Forum Spam (SFS) listings: 1.
+# Updated: 2016.04.10 / Checked: 2021.02.10
 
 2a02:e00::/32 Deny Cloud
 Origin: DE
@@ -1983,8 +1982,8 @@ Tag: Daniela Agro
 
 
 # ASNs 48496, 52173 ("Makonix SIA").
-# Stop Forum Spam (SFS) listings: 504 (AS48496), 528 (AS52173).
-# Updated: 2020.02.09 / Checked: 2020.06.30
+# Stop Forum Spam (SFS) listings: 197 (AS48496), 529 (AS52173).
+# Updated: 2020.02.09 / Checked: 2021.02.10
 
 2a02:7aa0:1619::/48 Deny Cloud
 2a02:7aa0:5000::/48 Deny Cloud
@@ -3551,15 +3550,17 @@ Tag: Affinity Internet, Inc
 
 
 # ASNs 52048, 60567, 202920, 203557 ("DataClub S.A").
-# Stop Forum Spam (SFS) listings: 681 (AS52048), 185 (AS60567).
-# Updated: 2020.02.09 / Checked: 2020.06.30
+# Stop Forum Spam (SFS) listings: 861 (AS52048), 133 (AS60567).
+# Updated: 2021.02.10
 
 2a02:4840::/47 Deny Cloud
 2a02:4840:2::/48 Deny Cloud
 2a02:4840:101::/48 Deny Cloud
 2a02:4840:200::/47 Deny Cloud
 2a02:4840:1000::/48 Deny Cloud
-Origin: LV
+Origin: BZ
+2a06:c3c0::/48 Deny Cloud
+Origin: RU
 Tag: DataClub S.A
 
 
@@ -4427,10 +4428,11 @@ Tag: Aruba S.p.A
 
 
 # ASN 45671 ("Wholesale Services Provider").
-# Stop Forum Spam (SFS) listings: 372.
-# Updated: 2020.06.30 / Checked: 2020.08.08
+# Stop Forum Spam (SFS) listings: 629.
+# Updated: 2021.02.10
 
 2001:df1:6800::/48 Deny Cloud
+2001:df5:1680::/48 Deny Cloud
 2400:8100::/32 Deny Cloud
 2400:d400:1::/48 Deny Cloud
 2400:d400:2::/48 Deny Cloud
@@ -5503,15 +5505,16 @@ Tag: Accuserv Inc
 # ASN 31463 ("4D Data Centres Limited").
 # Source of forum spam.
 # Stop Forum Spam (SFS) listings: 1.
-# Updated: 2020.03.04 / Checked: 2020.08.11
+# Updated: 2021.02.10
 
 2a00:1c18::/29 Deny Cloud
-2a07:45c2::/40 Deny Cloud
 2a0c:bc80::/32 Deny Cloud
 2a0d:4140::/32 Deny Cloud
 2a0f:64c0::/29 Deny Cloud
+2a10:4a40:4ddc::/48 Deny Cloud
 Origin: GB
 2607:8b00:1::/48 Deny Cloud
+2a07:45c2::/40 Deny Cloud
 Origin: US
 Tag: 4D Data
 
@@ -6779,8 +6782,8 @@ Tag: CDN77
 # ASN 131386 ("Long Van System Solution JSC").
 # Caught trying to brute-force login/auth pages and a significant source of
 # forum spam.
-# Stop Forum Spam (SFS) listings: 232.
-# Updated: 2020.03.03 / Checked: 2020.08.11
+# Stop Forum Spam (SFS) listings: 71.
+# Updated: 2020.03.03 / Checked: 2021.02.10
 
 2403:bf40::/48 Deny Cloud
 Origin: VN
@@ -7169,7 +7172,7 @@ Tag: Vautron Rech. AG
 
 # ASN 38880 ("Micron21 Datacentre Pty Ltd").
 # SSH and brute-force attacks detected originating from this network.
-# Updated: 2020.08.08
+# Updated: 2020.08.08 / Checked: 2021.02.10
 
 2001:df1:cc00::/48 Deny Cloud
 2001:df6:2400::/48 Deny Cloud
@@ -7573,6 +7576,24 @@ Tag: Meverywhere
 2a10:5fc0::/29 Deny Cloud
 Origin: SC
 Tag: IP Connect Inc
+
+
+# ASN 35048 ("Biterika Group LLC").
+# Fraudulent Russian ISP running predominantly server farms, VPS, proxies, etc.
+# Refer scamalytics.com/ip/isp/biterika-group-llc
+# Also a *massive* source of spam!
+# Stop Forum Spam (SFS) listings: 214,856.
+# Updated: 2021.02.08
+
+2a06:d647::/32 Deny Cloud
+2a0a:5680::/29 Deny Cloud
+2a0a:b387::/32 Deny Cloud
+2a0b:2d87::/32 Deny Cloud
+2a0e:cd40::/29 Deny Cloud
+Origin: RU
+2a07:ca07::/32 Deny Cloud
+Origin: VG
+Tag: Biterika Group LLC
 
 
 # ---

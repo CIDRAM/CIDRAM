@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2021.01.10).
+ * This file: Functions file (last modified: 2021.02.14).
  */
 
 /** Autoloader for CIDRAM classes. */
@@ -385,9 +385,14 @@ $CIDRAM['CheckFactors'] = function (array $Files, array $Factors) use (&$CIDRAM)
                     $CIDRAM['BlockInfo']['Ignored'] .= $CIDRAM['BlockInfo']['Ignored'] ? ', ' . $Tag : $Tag;
                     continue;
                 }
-                $Origin = (
-                    $Origin = $CIDRAM['Getter']($Files[$FileIndex], $PosA, 'Origin', '')
-                ) ? ', [' . $Origin . ']' : '';
+                $Origin = $CIDRAM['Getter']($Files[$FileIndex], $PosA, 'Origin', '');
+                if ($Origin) {
+                    if (!empty($CIDRAM['Ignore'][$Tag . ':' . $Origin])) {
+                        $CIDRAM['BlockInfo']['Ignored'] .= $CIDRAM['BlockInfo']['Ignored'] ? ', ' . $Tag . ':' . $Origin : $Tag . ':' . $Origin;
+                        continue;
+                    }
+                    $Origin = ', [' . $Origin . ']';
+                }
                 if (
                     ($PosX = strpos($Files[$FileIndex], "\n---\n", $PosA)) &&
                     ($PosY = strpos($Files[$FileIndex], "\n\n", ($PosX + 1))) &&

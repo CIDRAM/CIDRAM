@@ -1,14 +1,21 @@
-# If you want CIDRAM to completely ignore some specific sections within any of the signature files, you can use the
-# "ignore.dat" file to specify which sections to ignore. On a new line, write "Ignore", followed by a space, followed
-# by the name of the section that you want CIDRAM to ignore (anything else in this file won't have any effect on
-# CIDRAM and can be treated in the same manner as comments, documentation markup, etc).
+# If you want CIDRAM to completely ignore some specific sections within any of
+# the signature files, you can use the "ignore.dat" file to specify which
+# sections to ignore. On a new line, write "Ignore", followed by a space,
+# followed by the name of the section that you want CIDRAM to ignore (anything
+# else in this file won't have any effect on CIDRAM and can be treated in the
+# same manner as comments, documentation markup, etc).
 
-# The entries below correspond to signature sections considered to pose a high false positive risk, and also serve as
-# an example of how to list entries in this file. If you feel that you don't need them (e.g., if they relate to a
-# demographic/region that doesn't need to be served from your website), you should comment them out or remove them from
-# this file entirely, to maximise the benefit that CIDRAM can provide. Alternatively, you could also enable CIDRAM's
-# reCAPTCHA feature, which would require that users connecting from IP addresses associated with these signature
-# sections complete a reCAPTCHA instance in order to be granted access to your website.
+# It's also possible to ignore some specific parts of specific sections, on the
+# basis of the country of origin (i.e., to ignore those signatures within a
+# specific signature section which originate from a specific country of
+# origin), thus allowing further fine-tuning of how CIDRAM processes its
+# signature files. To do this, add ":XX" after the name of the section, using
+# the 3166-1 alpha-2 country code instead of XX (e.g., AU for Australia, US for
+# the United States, CN for China, FR for France, etc).
+
+# The entries below serve as an example. If they relate to a demographic/region
+# that doesn't need to be served from your website or if you otherwise don't
+# need them, you can comment them out or remove them entirely.
 
 # Relating to China, Taiwan, Hong Kong, and surrounding areas:
 Ignore China Backbone 4134
@@ -16,9 +23,8 @@ Ignore China Backbone 4837
 Ignore China Telecom 4812
 Ignore China Unicom 4808
 Ignore DCBG
-Ignore Guangdong Mobile
+Ignore Guangdong Mobile:CN
 Ignore Sun Network HK
-Ignore VpsQuan LLC
 
 # Relating to Vietnam:
 Ignore CFPT
@@ -27,75 +33,74 @@ Ignore VNPT Corp
 Ignore Viettel Corporation
 
 # Relating to India:
-Ignore Alliance Broadband
-Ignore BSNL
-Ignore Bharti Airtel
-Ignore Idea Cellular Ltd
-Ignore MEGHBELA BROADBAND
-Ignore SITI NETWORKS LTD
-Ignore WISH NET
+Ignore Alliance Broadband:IN
+Ignore BSNL:IN
+Ignore Bharti Airtel:IN
+Ignore Idea Cellular Ltd:IN
+Ignore MEGHBELA BROADBAND:IN
+Ignore SITI NETWORKS LTD:IN
+Ignore WISH NET:IN
 
 # Relating to Pakistan:
-Ignore AUGERE-Pakistan
-Ignore Pakistan Telecom
+Ignore AUGERE-Pakistan:PK
+Ignore Pakistan Telecom:PK
 
 # Relating to Iran:
-Ignore AS12880
-Ignore AS48159
+Ignore AS12880:IR
+Ignore AS48159:IR
 
 # Relating to Israel:
-Ignore 012 Smile Communications LTD
-Ignore Bezeq International
+Ignore 012 Smile Communications LTD:IL
+Ignore Bezeq International:IL
 
 # Relating to Indonesia:
-Ignore INDOSAT
-Ignore PT Excelcomindo
-Ignore PT Hutchison
-Ignore PT Telekomunikasi Indonesia
+Ignore INDOSAT:ID
+Ignore PT Excelcomindo:ID
+Ignore PT Hutchison:ID
+Ignore PT Telekomunikasi Indonesia:ID
 
 # Relating to Russia:
-Ignore Chelyabinsk-Signal
-Ignore ER-Telecom Holding
-Ignore Novotelecom Ltd
-Ignore OJSC Vimpelcom
-Ignore PIN-AS
-Ignore PJSC Rostelecom
-Ignore PJSC Vimpelcom
-Ignore T2 Mobile LLC
-Ignore TransTeleCom
-Ignore Ufanet
-Ignore Ultra-Telecom LLC
+Ignore Chelyabinsk-Signal:RU
+Ignore ER-Telecom Holding:RU
+Ignore Novotelecom Ltd:RU
+Ignore PIN-AS:RU
+Ignore PJSC Rostelecom:RU
+Ignore PJSC Vimpelcom:RU
+Ignore T2 Mobile LLC:RU
+Ignore TransTeleCom:RU
+Ignore Ufanet:RU
+Ignore Ultra-Telecom LLC:RU
 
 # Relating to Belarus:
-Ignore Beltelecom
+Ignore Beltelecom:BY
 
 # Relating to France:
 Ignore ONLINE S.A.S
 
 # Relating to Kazakhstan:
-Ignore JSC Kazakhtelecom
+Ignore JSC Kazakhtelecom:KZ
 
 # Relating to the Philippines:
-Ignore SKYBROADBAND
+Ignore SKYBROADBAND:PH
 
 # Relating to the Maldives:
-Ignore Dhivehi Raajjeyge
+Ignore Dhivehi Raajjeyge:MV
 
 # Relating to Laos:
-Ignore Lao Telecom
+Ignore Lao Telecom:LA
 
 # Relating to Romania:
-Ignore RCS & RDS SA
+Ignore RCS & RDS SA:RO
 
 # Relating to Mexico:
-Ignore TOTAL PLAY TELECOMUNICACIONES
-Ignore Alestra
+Ignore TOTAL PLAY TELECOMUNICACIONES:MX
+Ignore Alestra:MX
 
 # Relating to Albania:
-Ignore N.P.SH
+Ignore N.P.SH:AL
 
 # Relating to Sweden:
-Ignore Internet Vikings
+Ignore Internet Vikings:SE
 
 # Relating to Poland:
-Ignore Orange Polska Spolka Akcyjna
+Ignore Orange Polska Spolka Akcyjna:PL

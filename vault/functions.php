@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2021.02.16).
+ * This file: Functions file (last modified: 2021.02.18).
  */
 
 /** Autoloader for CIDRAM classes. */
@@ -421,10 +421,8 @@ $CIDRAM['CheckFactors'] = function (array $Files, array $Factors) use (&$CIDRAM)
                         if (file_exists($CIDRAM['Vault'] . $Signature)) {
                             require_once $CIDRAM['Vault'] . $Signature;
                         } else {
-                            throw new \Exception($CIDRAM['ParseVars'](
-                                ['FileName' => $Signature],
-                                '[CIDRAM] ' . $CIDRAM['L10N']->getString('Error_MissingRequire')
-                            ));
+                            $CIDRAM['ExtraErrorInfo'] = $Signature;
+                            trigger_error($CIDRAM['L10N']->getString('Error_MissingRequire'), E_USER_WARNING);
                         }
                     }
                 }
@@ -1889,6 +1887,9 @@ $CIDRAM['AuxMatch'] = function ($Criteria, string $Actual, string $Method = '') 
  * @return bool Whether the calling parent should return immediately.
  */
 $CIDRAM['AuxAction'] = function (string $Action, string $Name, string $Reason = '', string $Target = '', int $StatusCode = 200, array $Webhooks = [], array $Flags = [], string $Run = '') use (&$CIDRAM): bool {
+    /** In case errors occur. */
+    $CIDRAM['ExtraErrorInfo'] = $Name;
+
     /** Apply webhooks. */
     if (!empty($Webhooks)) {
         $CIDRAM['Webhooks'] = isset($CIDRAM['Webhooks']) ? array_merge($CIDRAM['Webhooks'], $Webhooks) : $Webhooks;
@@ -1920,10 +1921,7 @@ $CIDRAM['AuxAction'] = function (string $Action, string $Name, string $Reason = 
             if (file_exists($CIDRAM['Vault'] . $Run)) {
                 require_once $CIDRAM['Vault'] . $Run;
             } else {
-                throw new \Exception($CIDRAM['ParseVars'](
-                    ['FileName' => $Run],
-                    '[CIDRAM] ' . $CIDRAM['L10N']->getString('Error_MissingRequire')
-                ));
+                trigger_error($CIDRAM['L10N']->getString('Error_MissingRequire'), E_USER_WARNING);
             }
         }
         if ($RunExitCode === 0) {
@@ -2326,7 +2324,9 @@ $CIDRAM['InitialiseErrorHandler'] = function () use (&$CIDRAM) {
         ) {
             $errfile = substr($errfile, $VaultLen);
         }
-        $CIDRAM['Errors'][] = [$errno, $errstr, $errfile, $errline];
+        $ExtraErrorInfo = $CIDRAM['ExtraErrorInfo'] ?? '';
+        $CIDRAM['Errors'][] = [$errno, $errstr, $errfile, $errline, $ExtraErrorInfo];
+        $CIDRAM['ExtraErrorInfo'] = '';
         if ($CIDRAM['Events']->assigned('error')) {
             $CIDRAM['Events']->fireEvent('error', serialize([$errno, $errstr, $errfile, $errline]));
         }

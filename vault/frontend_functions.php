@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2021.02.16).
+ * This file: Front-end functions file (last modified: 2021.02.18).
  */
 
 /**
@@ -959,6 +959,9 @@ $CIDRAM['SimulateBlockEvent'] = function ($Addr, $Modules = false, $Aux = false,
         $CIDRAM['BlockInfo']['rURI'] .= '?' . $CIDRAM['FE']['custom-query'];
     }
 
+    /** Catch run errors. */
+    $CIDRAM['InitialiseErrorHandler']();
+
     /** Standard IP check. */
     try {
         $CIDRAM['Caught'] = false;
@@ -978,6 +981,10 @@ $CIDRAM['SimulateBlockEvent'] = function ($Addr, $Modules = false, $Aux = false,
             $CIDRAM['Caught'] = true;
         }
     }
+
+    /** Prepare run errors. */
+    $CIDRAM['RunErrors'] = $CIDRAM['Errors'];
+    $CIDRAM['RestoreErrorHandler']();
 
     /** Instantiate report orchestrator (used by some modules). */
     $CIDRAM['Reporter'] = new \CIDRAM\Core\Reporter();

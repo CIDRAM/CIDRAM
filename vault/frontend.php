@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2021.01.10).
+ * This file: Front-end handler (last modified: 2021.02.16).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -3828,14 +3828,19 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'aux' && $CIDRAM['FE']['Permissi
             'actGrl' => 'Greylist',
             'actByp' => 'Bypass',
             'actLog' => 'Don\'t log',
-            'actRdr' => 'Redirect'
+            'actRdr' => 'Redirect',
+            'actRun' => 'Run',
         ];
 
         /** Determine appropriate action for new rule. */
         $CIDRAM['Action'] = isset($CIDRAM['Actions'][$_POST['act']]) ? $CIDRAM['Actions'][$_POST['act']] : 'Block';
 
         /** Construct new rule action array. */
-        $CIDRAM['AuxData'][$_POST['ruleName']][$CIDRAM['Action']] = ['If matches' => [], 'But not if matches' => []];
+        if ($CIDRAM['Action'] === 'Run' && isset($_POST['ruleRun'])) {
+            $CIDRAM['AuxData'][$_POST['ruleName']][$CIDRAM['Action']] = ['File' => $_POST['ruleRun'], 'If matches' => [], 'But not if matches' => []];
+        } else {
+            $CIDRAM['AuxData'][$_POST['ruleName']][$CIDRAM['Action']] = ['If matches' => [], 'But not if matches' => []];
+        }
 
         /** Determine number of new rule conditions to construct. */
         $CIDRAM['AuxConditions'] = count($_POST['conSourceType']);
@@ -3923,6 +3928,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'aux' && $CIDRAM['FE']['Permissi
         $CIDRAM['FE']['optActByp'] = sprintf($CIDRAM['L10N']->getString('label_aux_menu_action'), $CIDRAM['L10N']->getString('label_aux_actByp'));
         $CIDRAM['FE']['optActLog'] = sprintf($CIDRAM['L10N']->getString('label_aux_menu_action'), $CIDRAM['L10N']->getString('label_aux_actLog'));
         $CIDRAM['FE']['optActRdr'] = sprintf($CIDRAM['L10N']->getString('label_aux_menu_action'), $CIDRAM['L10N']->getString('label_aux_actRdr'));
+        $CIDRAM['FE']['optActRun'] = sprintf($CIDRAM['L10N']->getString('label_aux_menu_action'), $CIDRAM['L10N']->getString('label_aux_actRun'));
 
         /** Fetch sources L10N fields. */
         $CIDRAM['SourcesL10N'] = [
@@ -3967,7 +3973,8 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'aux' && $CIDRAM['FE']['Permissi
             $CIDRAM['L10N']->getString('label_aux_actBlk'),
             $CIDRAM['L10N']->getString('label_aux_actByp'),
             $CIDRAM['L10N']->getString('label_aux_actLog'),
-            $CIDRAM['L10N']->getString('label_aux_actRdr')
+            $CIDRAM['L10N']->getString('label_aux_actRdr'),
+            $CIDRAM['L10N']->getString('label_aux_actRun')
         );
 
         /** Priority information about status codes. */
@@ -4074,6 +4081,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'aux-edit' && $CIDRAM['FE']['Per
     $CIDRAM['FE']['optActByp'] = sprintf($CIDRAM['L10N']->getString('label_aux_menu_action'), $CIDRAM['L10N']->getString('label_aux_actByp'));
     $CIDRAM['FE']['optActLog'] = sprintf($CIDRAM['L10N']->getString('label_aux_menu_action'), $CIDRAM['L10N']->getString('label_aux_actLog'));
     $CIDRAM['FE']['optActRdr'] = sprintf($CIDRAM['L10N']->getString('label_aux_menu_action'), $CIDRAM['L10N']->getString('label_aux_actRdr'));
+    $CIDRAM['FE']['optActRun'] = sprintf($CIDRAM['L10N']->getString('label_aux_menu_action'), $CIDRAM['L10N']->getString('label_aux_actRun'));
 
     /** Fetch sources L10N fields. */
     $CIDRAM['SourcesL10N'] = [
@@ -4123,6 +4131,9 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'aux-edit' && $CIDRAM['FE']['Per
             if (isset($_POST['ruleTarget'], $_POST['ruleTarget'][$CIDRAM['Iterant']]) && !empty($_POST['ruleTarget'][$CIDRAM['Iterant']])) {
                 $CIDRAM['NewAuxArr'][$_POST['ruleName'][$CIDRAM['Iterant']]]['Target'] = $_POST['ruleTarget'][$CIDRAM['Iterant']];
             }
+            if (isset($_POST['ruleRun'], $_POST['ruleRun'][$CIDRAM['Iterant']]) && !empty($_POST['ruleRun'][$CIDRAM['Iterant']])) {
+                $CIDRAM['NewAuxArr'][$_POST['ruleName'][$CIDRAM['Iterant']]]['Run'] = ['File' => $_POST['ruleRun'][$CIDRAM['Iterant']]];
+            }
             if (isset($_POST['statusCode'], $_POST['statusCode'][$CIDRAM['Iterant']]) && !empty($_POST['statusCode'][$CIDRAM['Iterant']])) {
                 $CIDRAM['NewAuxArr'][$_POST['ruleName'][$CIDRAM['Iterant']]]['Status Code'] = $_POST['statusCode'][$CIDRAM['Iterant']];
             }
@@ -4165,6 +4176,8 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'aux-edit' && $CIDRAM['FE']['Per
                 $CIDRAM['Data']['Action'] = 'Don\'t log';
             } elseif ($CIDRAM['Data']['Action'] === 'actRdr') {
                 $CIDRAM['Data']['Action'] = 'Redirect';
+            } elseif ($CIDRAM['Data']['Action'] === 'actRun') {
+                $CIDRAM['Data']['Action'] = 'Run';
             }
             if (is_array($CIDRAM['Data']['SourceType'])) {
                 foreach ($CIDRAM['Data']['SourceType'] as $CIDRAM['IterantInner'] => $CIDRAM['DataInner']) {

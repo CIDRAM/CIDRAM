@@ -72,6 +72,13 @@ function onAuxActionChange(e, p, i) {
   if ('actBlk' !== e && 'actRdr' !== e) {
     document.getElementById(p+'statusCodeX').checked = true;
   }
+  if ('actRun' === e) {
+    document.getElementById(i.length < 1 ? 'ruleRunDd' : p+'ruleRunDd').style.filter = '';
+    document.getElementById(i.length < 1 ? 'ruleRunDt' : p+'ruleRunDt').style.textDecoration = 'none';
+  } else {
+    document.getElementById(i.length < 1 ? 'ruleRunDd' : p+'ruleRunDd').style.filter = 'grayscale(80%) brightness(80%)';
+    document.getElementById(i.length < 1 ? 'ruleRunDt' : p+'ruleRunDt').style.textDecoration = 'line-through';
+  }
 }
 
 var conIn = 1;

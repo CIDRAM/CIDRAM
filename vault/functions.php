@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2021.02.14).
+ * This file: Functions file (last modified: 2021.02.16).
  */
 
 /**
@@ -1903,9 +1903,10 @@ $CIDRAM['AuxMatch'] = function ($Criteria, $Actual, $Method = '') use (&$CIDRAM)
  * @param int $StatusCode The status code to apply (if any has been set).
  * @param array $Webhooks Any webhooks included with the auxiliary rule.
  * @param array $Flags Any other options and special flags included with the auxiliary rule.
+ * @param string $Run The name of the file to execute (when this action is used).
  * @return bool Whether the calling parent should return immediately.
  */
-$CIDRAM['AuxAction'] = function ($Action, $Name, $Reason = '', $Target = '', $StatusCode = 200, array $Webhooks = [], array $Flags = []) use (&$CIDRAM) {
+$CIDRAM['AuxAction'] = function ($Action, $Name, $Reason = '', $Target = '', $StatusCode = 200, array $Webhooks = [], array $Flags = [], $Run = '') use (&$CIDRAM) {
     /** Apply webhooks. */
     if (!empty($Webhooks)) {
         $CIDRAM['Webhooks'] = isset($CIDRAM['Webhooks']) ? array_merge($CIDRAM['Webhooks'], $Webhooks) : $Webhooks;
@@ -1926,19 +1927,41 @@ $CIDRAM['AuxAction'] = function ($Action, $Name, $Reason = '', $Target = '', $St
         $CIDRAM['Trackable'] = false;
     }
 
+    $RunExitCode = 0;
+    if ($Action === 'Run' && $Run !== '') {
+        if (!isset($CIDRAM['AuxRunResCache'])) {
+            $CIDRAM['AuxRunResCache'] = [];
+        }
+        if (isset($CIDRAM['AuxRunResCache'][$Run]) && is_object($CIDRAM['AuxRunResCache'][$Run])) {
+            $RunExitCode = $CIDRAM['AuxRunResCache'][$Run]();
+        } else {
+            if (file_exists($CIDRAM['Vault'] . $Run)) {
+                require_once $CIDRAM['Vault'] . $Run;
+            } else {
+                throw new \Exception($CIDRAM['ParseVars'](
+                    ['FileName' => $Run],
+                    '[CIDRAM] ' . $CIDRAM['L10N']->getString('Error_MissingRequire')
+                ));
+            }
+        }
+        if ($RunExitCode === 0) {
+            return true;
+        }
+    }
+
     /** Whitelist. */
-    if ($Action === 'Whitelist') {
+    if ($Action === 'Whitelist' || $RunExitCode === 3) {
         $CIDRAM['ZeroOutBlockInfo'](true);
         return true;
     }
 
     /** Greylist. */
-    if ($Action === 'Greylist') {
+    if ($Action === 'Greylist' || $RunExitCode === 2) {
         $CIDRAM['ZeroOutBlockInfo']();
     }
 
     /** Block. */
-    elseif ($Action === 'Block') {
+    elseif ($Action === 'Block' || $RunExitCode === 1) {
         $CIDRAM['Trigger'](true, $Name, $Reason);
         if ($StatusCode > 400) {
             $CIDRAM['Aux Status Code'] = $StatusCode;
@@ -1999,7 +2022,7 @@ $CIDRAM['Aux'] = function () use (&$CIDRAM) {
     ];
 
     /** Potential modes. */
-    static $Modes = ['Whitelist', 'Greylist', 'Block', 'Bypass', 'Don\'t log', 'Redirect'];
+    static $Modes = ['Whitelist', 'Greylist', 'Block', 'Bypass', 'Don\'t log', 'Redirect', 'Run'];
 
     /** Attempt to parse the auxiliary rules file. */
     if (!isset($CIDRAM['AuxData'])) {
@@ -2025,6 +2048,9 @@ $CIDRAM['Aux'] = function () use (&$CIDRAM) {
 
         /** Redirect target. */
         $Target = (string)(empty($Data['Target']) ? '' : $Data['Target']);
+
+        /** Run target. */
+        $Run = (string)(empty($Data['Run']['File']) ? '' : $Data['Run']['File']);
 
         /** Status code to apply (if any has been specified). */
         $StatusCode = (int)(empty($Data['Status Code']) ? 200 : $Data['Status Code']);
@@ -2113,7 +2139,7 @@ $CIDRAM['Aux'] = function () use (&$CIDRAM) {
                                         if ($Logic === 'All') {
                                             continue;
                                         }
-                                        if ($CIDRAM['AuxAction']($Mode, $Name, $Reason, $Target, $StatusCode, $Webhooks, $Flags)) {
+                                        if ($CIDRAM['AuxAction']($Mode, $Name, $Reason, $Target, $StatusCode, $Webhooks, $Flags, $Run)) {
                                             return;
                                         }
                                         continue 4;
@@ -2137,7 +2163,7 @@ $CIDRAM['Aux'] = function () use (&$CIDRAM) {
                                 if ($Logic === 'All') {
                                     continue;
                                 }
-                                if ($CIDRAM['AuxAction']($Mode, $Name, $Reason, $Target, $StatusCode, $Webhooks, $Flags)) {
+                                if ($CIDRAM['AuxAction']($Mode, $Name, $Reason, $Target, $StatusCode, $Webhooks, $Flags, $Run)) {
                                     return;
                                 }
                                 continue 3;
@@ -2150,7 +2176,7 @@ $CIDRAM['Aux'] = function () use (&$CIDRAM) {
             }
 
             /** Perform action for matching rules requiring all conditions to be met. */
-            if ($Logic === 'All' && $Matched && $CIDRAM['AuxAction']($Mode, $Name, $Reason, $Target, $StatusCode, $Webhooks, $Flags)) {
+            if ($Logic === 'All' && $Matched && $CIDRAM['AuxAction']($Mode, $Name, $Reason, $Target, $StatusCode, $Webhooks, $Flags, $Run)) {
                 return;
             }
         }

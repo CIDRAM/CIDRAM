@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2020.12.13).
+ * This file: Front-end functions file (last modified: 2021.02.16).
  */
 
 /**
@@ -3224,6 +3224,15 @@ $CIDRAM['AuxGenerateFEData'] = function ($Mode = false) use (&$CIDRAM) {
                 $RuleClass
             );
 
+            /** Run target. */
+            $Output .= sprintf(
+                '<dl><dt class="s" id="%4$sruleRunDt">%2$s</dt><dd id="%4$sruleRunDd"><input type="text" name="ruleRun[%3$s]" class="f400" value="%1$s" /></dd></dl>',
+                isset($Data['Run']['File']) ? $Data['Run']['File'] : '',
+                $CIDRAM['L10N']->getString('label_aux_run'),
+                $Current,
+                $RuleClass
+            );
+
             /** Status code override. */
             $Output .= sprintf('<dl><dt class="s">%1$s</dt><dd>', $CIDRAM['L10N']->getString('label_aux_http_status_code_override'));
             $Output .= sprintf(
@@ -3258,7 +3267,8 @@ $CIDRAM['AuxGenerateFEData'] = function ($Mode = false) use (&$CIDRAM) {
                 ['actBlk', 'optActBlk', 'Block'],
                 ['actByp', 'optActByp', 'Bypass'],
                 ['actLog', 'optActLog', 'Don\'t log'],
-                ['actRdr', 'optActRdr', 'Redirect']
+                ['actRdr', 'optActRdr', 'Redirect'],
+                ['actRun', 'optActRun', 'Run']
             ] as $MenuOption) {
                 $Output .= sprintf(
                     '<option value="%1$s"%2$s>%3$s</option>',
@@ -3449,7 +3459,8 @@ $CIDRAM['AuxGenerateFEData'] = function ($Mode = false) use (&$CIDRAM) {
                 ['Block', 'optActBlk'],
                 ['Bypass', 'optActByp'],
                 ['Don\'t log', 'optActLog'],
-                ['Redirect', 'optActRdr']
+                ['Redirect', 'optActRdr'],
+                ['Run', 'optActRun']
             ] as $Action) {
 
                 /** Skip action if the current rule doesn't use this action. */
@@ -3498,6 +3509,11 @@ $CIDRAM['AuxGenerateFEData'] = function ($Mode = false) use (&$CIDRAM) {
 
                 /** Finish writing conditions list. */
                 $Output .= "\n            </dl></li>";
+            }
+
+            /** Cite the file to run. */
+            if (!empty($Data['Run']['File']) && $Label = $CIDRAM['L10N']->getString('label_aux_run')) {
+                $Output .= "\n            <li><dl><dt class=\"s\">" . $Label . '</dt><dd>' . $Data['Run']['File'] . '</dd></dl></li>';
             }
 
             /** Show the method to be used. */

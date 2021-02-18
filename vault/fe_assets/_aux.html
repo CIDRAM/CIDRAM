@@ -37,6 +37,14 @@
           </li>
           <li>
             <dl>
+              <dt id="ruleRunDt" class="s" style="text-decoration:line-through">{label_aux_run}</dt>
+              <dd id="ruleRunDd" style="filter:grayscale(80%) brightness(80%)">
+                <input type="text" id="ruleRun" name="ruleRun" class="f400" />
+              </dd>
+            </dl>
+          </li>
+          <li>
+            <dl>
               <dt class="s">{label_aux_http_status_code_override}</dt>
               <dd>
                 <span id="statGroupX">
@@ -67,6 +75,7 @@
                   <option value="actByp">{optActByp}</option>
                   <option value="actLog">{optActLog}</option>
                   <option value="actRdr">{optActRdr}</option>
+                  <option value="actRun">{optActRun}</option>
                 </select><input type="button" onclick="javascript:addCondition('')" value="{field_add_more_conditions} [1]" class="auto" accesskey="1" />
               </dt>
               <dd id="conditions">

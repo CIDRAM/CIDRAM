@@ -2338,10 +2338,10 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'fixer' && $CIDRAM['FE']['Permis
     $CIDRAM['InitialPrepwork']($CIDRAM['L10N']->getString('link_fixer'), $CIDRAM['L10N']->getString('tip_fixer'));
 
     /** Preferred source. */
-    $CIDRAM['PreferredSource'] = !empty($_POST['preferredSource']) ? $_POST['preferredSource'] : '';
+    $CIDRAM['PreferredSource'] = $_POST['preferredSource'] ?? '';
 
     /** Direct input. */
-    $CIDRAM['FE']['DirectInput'] = !empty($_POST['DirectInput']) ? $_POST['DirectInput'] : '';
+    $CIDRAM['FE']['DirectInput'] = $_POST['DirectInput'] ?? '';
 
     /** Preferred source menu. */
     $CIDRAM['FE']['PreferredSource'] = sprintf(
@@ -3035,8 +3035,8 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'range-intersector' && $CIDRAM['
     );
 
     /** Default values for inputs. */
-    $CIDRAM['FE']['Intersector_A'] = isset($_POST['A']) ? $_POST['A'] : '';
-    $CIDRAM['FE']['Intersector_B'] = isset($_POST['B']) ? $_POST['B'] : '';
+    $CIDRAM['FE']['Intersector_A'] = $_POST['A'] ?? '';
+    $CIDRAM['FE']['Intersector_B'] = $_POST['B'] ?? '';
 
     /** Default value for output. */
     $CIDRAM['FE']['Intersector_AB'] = '';
@@ -3312,7 +3312,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-test' && $CIDRAM['FE']['Perm
 
     /** Fetch custom fields if specified. */
     foreach (['custom-query', 'custom-referrer', 'custom-ua'] as $CIDRAM['ThisField']) {
-        $CIDRAM['FE'][$CIDRAM['ThisField']] = !empty($_POST[$CIDRAM['ThisField']]) ? $_POST[$CIDRAM['ThisField']] : '';
+        $CIDRAM['FE'][$CIDRAM['ThisField']] = $_POST[$CIDRAM['ThisField']] ?? '';
     }
     unset($CIDRAM['ThisField']);
 
@@ -4177,10 +4177,10 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'aux-edit' && $CIDRAM['FE']['Per
             if (isset($_POST['statusCode'], $_POST['statusCode'][$CIDRAM['Iterant']]) && !empty($_POST['statusCode'][$CIDRAM['Iterant']])) {
                 $CIDRAM['NewAuxArr'][$_POST['ruleName'][$CIDRAM['Iterant']]]['Status Code'] = $_POST['statusCode'][$CIDRAM['Iterant']];
             }
-            $CIDRAM['NewAuxArr'][$_POST['ruleName'][$CIDRAM['Iterant']]]['Action'] = isset($_POST['act'], $_POST['act'][$CIDRAM['Iterant']]) ? $_POST['act'][$CIDRAM['Iterant']] : '';
-            $CIDRAM['NewAuxArr'][$_POST['ruleName'][$CIDRAM['Iterant']]]['SourceType'] = isset($_POST['conSourceType'], $_POST['conSourceType'][$CIDRAM['Iterant']]) ? $_POST['conSourceType'][$CIDRAM['Iterant']] : '';
-            $CIDRAM['NewAuxArr'][$_POST['ruleName'][$CIDRAM['Iterant']]]['IfOrNot'] = isset($_POST['conIfOrNot'], $_POST['conIfOrNot'][$CIDRAM['Iterant']]) ? $_POST['conIfOrNot'][$CIDRAM['Iterant']] : '';
-            $CIDRAM['NewAuxArr'][$_POST['ruleName'][$CIDRAM['Iterant']]]['SourceValue'] = isset($_POST['conSourceValue'], $_POST['conSourceValue'][$CIDRAM['Iterant']]) ? $_POST['conSourceValue'][$CIDRAM['Iterant']] : '';
+            $CIDRAM['NewAuxArr'][$_POST['ruleName'][$CIDRAM['Iterant']]]['Action'] = $_POST['act'][$CIDRAM['Iterant']] ?? '';
+            $CIDRAM['NewAuxArr'][$_POST['ruleName'][$CIDRAM['Iterant']]]['SourceType'] = $_POST['conSourceType'][$CIDRAM['Iterant']] ?? '';
+            $CIDRAM['NewAuxArr'][$_POST['ruleName'][$CIDRAM['Iterant']]]['IfOrNot'] = $_POST['conIfOrNot'][$CIDRAM['Iterant']] ?? '';
+            $CIDRAM['NewAuxArr'][$_POST['ruleName'][$CIDRAM['Iterant']]]['SourceValue'] = $_POST['conSourceValue'][$CIDRAM['Iterant']] ?? '';
             if (isset($_POST['recaptchaEnabledTrue'], $_POST['recaptchaEnabledTrue'][$CIDRAM['Iterant']]) && !empty($_POST['recaptchaEnabledTrue'][$CIDRAM['Iterant']])) {
                 $CIDRAM['NewAuxArr'][$_POST['ruleName'][$CIDRAM['Iterant']]]['Mark for use with reCAPTCHA'] = true;
             }

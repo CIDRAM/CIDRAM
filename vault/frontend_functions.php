@@ -3198,7 +3198,7 @@ $CIDRAM['AuxGenerateFEData'] = function (bool $Mode = false) use (&$CIDRAM): str
                 '%1$s<div class="%2$s"><dl><dt class="s">%4$s</dt><dd><input type="text" name="ruleName[%5$s]" class="f400" value="%3$s" /></dd></dl>',
                 "\n      ",
                 $StyleClass,
-                empty($Name) ? '' : $Name,
+                $Name ?? '',
                 $CIDRAM['L10N']->getString('field_new_name'),
                 $Current
             );

@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6.dat
 
-# Version: 2021.40.594
-# Last modified: 2021.02.10
+# Version: 2021.50.147
+# Last modified: 2021.02.21
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage, i.e., with ignore.dat, with reCAPTCHA, with "extended rules" (default bypasses): « [x]Low [ ]Medium [ ]High »
@@ -2838,14 +2838,13 @@ Tag: AS45538
 
 
 # ASN 45102 ("Alibaba (China) Technology Co., Ltd").
-# Stop Forum Spam (SFS) listings: 23,476.
-# Updated: 2020.02.12 / Checked: 2020.09.29
+# Stop Forum Spam (SFS) listings: 22,175.
+# Updated: 2021.02.11
 
 2400:b200:4100::/46 Deny Cloud
-2401:b180:4100::/48 Deny Cloud
 2408:4009:500::/48 Deny Cloud
 Origin: CN
-240b:4000::/31 Deny Cloud
+240b:4000::/22 Deny Cloud
 Origin: SG
 Tag: Alibaba
 
@@ -2906,7 +2905,8 @@ Tag: DataWeb Global
 
 # ASN 44112 ("SpaceWeb Ltd").
 # Port scans and brute-force attempts detected originating from this network.
-# Updated: 2016.04.29 / Checked: 2020.07.05
+# Stop Forum Spam (SFS) listings: 17.
+# Updated: 2016.04.29 / Checked: 2021.02.21
 
 2a02:408:7722::/48 Deny Cloud
 Origin: RU
@@ -2995,28 +2995,27 @@ Tag: HighSpeed Office Ltd
 
 
 # ASN 47447 ("23Media GmbH").
-# Stop Forum Spam (SFS) listings: 2,368.
-# Updated: 2020.02.12 / Checked: 2020.07.05
+# Stop Forum Spam (SFS) listings: 1,626.
+# Updated: 2021.02.21
 
 2a03:f80:49::/48 Deny Cloud
 Origin: AT
-2a05:3c80::/29 Deny Cloud
-Origin: CZ
 2a00:f48::/32 Deny Cloud
 2a05:cc00::/29 Deny Cloud
-2a06:8781::/48 Deny Cloud
+2a06:8781::/40 Deny Cloud
 2a09:4ec0::/48 Deny Cloud
 2a0c:2040::/29 Deny Cloud
 2a0d:6940::/29 Deny Cloud
 2a0e:fe80::/29 Deny Cloud
+2a10:fc80::/29 Deny Cloud
 Origin: DE
-2a02:2da0::/32 Deny Cloud
 2a07:a347::/32 Deny Cloud
 Origin: GB
 2a07:3b80:1::/48 Deny Cloud
 Origin: GI
-2a0a:6c0::/29 Deny Cloud
-Origin: RU
+2a02:2da0::/32 Deny Cloud
+2a05:3c80::/29 Deny Cloud
+Origin: US
 Tag: 23Media GmbH
 
 
@@ -4043,26 +4042,29 @@ Origin: RU
 Tag: Global Layer B.V
 
 
-# ASN 50113, 200740, 204154, 205125 ("MediaServicePlus LLC").
-# Stop Forum Spam (SFS) listings: 4,702 (AS50113), 26 (AS200740), 5 (AS204154).
-# Updated: 2020.11.17
+# ASNs 8849, 12608, 50113, 200740, 204154, 204997, 205090, 205125 ("NTX Technologies s.r.o").
+# Server farm, dedicated webhosting provider and cloud provider. Caught
+# spamming, hammering honeypots, and performing webapp attacks.
+# Stop Forum Spam (SFS) listings: 3,401 (AS50113), 14 (AS200740), 10 (AS204154), 526 (AS204997), 1 (AS205090).
+# Updated: 2021.02.20
 
-2a0d:8340::/32 Deny Cloud
-Origin: CZ
 2a03:e2c0::/32 Deny Cloud
 2a04:5200::/32 Deny Cloud
 2a04:5201:1::/48 Deny Cloud
 2a04:5201:2::/48 Deny Cloud
 2a04:5202::/31 Deny Cloud
 2a04:5204::/30 Deny Cloud
+2a09:5302::/31 Deny Cloud
+2a0b:9800::/29 Deny Cloud
+2a0d:8340::/32 Deny Cloud
+Origin: CZ
 2a07:57c0::/32 Deny Cloud
 2a07:9b83::/32 Deny Cloud
-2a09:5303::/32 Deny Cloud
 2a0a:981::/32 Deny Cloud
 2a0e:d602::/32 Deny Cloud
 2a0e:e5c0::/29 Deny Cloud
 Origin: RU
-Tag: MediaServicePlus LLC
+Tag: NTX Technologies s.r.o
 
 
 # ASN 200161 ('"DATAPRO" Limited Liability Company').
@@ -4924,12 +4926,12 @@ Tag: Master Internet
 
 
 # ASN 200651 ("Flokinet Ltd").
-# Stop Forum Spam (SFS) listings: 16,612.
-# Updated: 2018.06.25 / Checked: 2020.07.05
+# Stop Forum Spam (SFS) listings: 17,640.
+# Updated: 2021.02.21
 
 2a06:1700::/47 Deny Cloud
 2a06:1700:2::/48 Deny Cloud
-Origin: RO
+Origin: SC
 Tag: Flokinet Ltd
 
 
@@ -7594,6 +7596,53 @@ Origin: RU
 2a07:ca07::/32 Deny Cloud
 Origin: VG
 Tag: Biterika Group LLC
+
+
+# ASNs 15497, 206110 ("7HEAVEN LLC").
+# Ukrainian server farm caught spamming.
+# %Listed, abuseat.org (CBL-Listed): 3.53%.
+# Stop Forum Spam (SFS) listings: 7,206 (AS15497).
+# Updated: 2021.02.13
+
+2a03:6300::/32 Deny Cloud
+Origin: UA
+Tag: 7HEAVEN LLC
+
+
+# ASNs 262287, 396356 ("Maxihost LTDA").
+# Dedicated data center caught spamming, port scanning, and scraping.
+# Stop Forum Spam (SFS) listings: 224 (AS262287), 1,089 (AS396356).
+# Updated: 2021.02.20
+
+2804:391c::/32 Deny Cloud
+Origin: BR
+2603:f100::/29 Deny Cloud
+2603:f200::/29 Deny Cloud
+2603:f300::/29 Deny Cloud
+2603:f400::/29 Deny Cloud
+2603:f500::/29 Deny Cloud
+2605:6440:1003::/48 Deny Cloud
+2605:6440:1004::/47 Deny Cloud
+2605:6440:1006::/48 Deny Cloud
+2605:6440:2002::/47 Deny Cloud
+2605:6440:3002::/47 Deny Cloud
+2605:6440:3004::/48 Deny Cloud
+2605:6440:4000::/36 Deny Cloud
+2605:6440:5003::/48 Deny Cloud
+2605:6440:6002::/48 Deny Cloud
+2605:6440:6005::/48 Deny Cloud
+Origin: US
+Tag: Maxihost LTDA
+
+
+# ASN 35213 ("TOV Kompjuternie Merezhi").
+# Server farm caught performing brute-force and webapp attacks.
+# Stop Forum Spam (SFS) listings: 23,692.
+# Updated: 2021.02.20
+
+2001:678:31c::/48 Deny Cloud
+Origin: UA
+Tag: TOV Kompjuternie Merezhi
 
 
 # ---

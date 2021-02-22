@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2021.02.18).
+ * This file: Front-end functions file (last modified: 2021.02.22).
  */
 
 /**
@@ -1576,6 +1576,7 @@ $CIDRAM['UpdatesHandler-Update'] = function ($ID) use (&$CIDRAM) {
         $BytesAdded = 0;
         $BytesRemoved = 0;
         $TimeRequired = microtime(true);
+        $Reactivate = false;
         if (
             $CIDRAM['IsActivable']($CIDRAM['Components']['Meta'][$ThisTarget]) &&
             ($Reactivate = $CIDRAM['IsInUse']($CIDRAM['Components']['Meta'][$ThisTarget]))
@@ -1827,7 +1828,7 @@ $CIDRAM['UpdatesHandler-Update'] = function ($ID) use (&$CIDRAM) {
             $BytesRemoved,
             $CIDRAM['NumberFormatter']->format(microtime(true) - $TimeRequired, 3)
         );
-        if (!empty($Reactivate)) {
+        if ($Reactivate === true) {
             $CIDRAM['UpdatesHandler-Activate']($ThisTarget);
         }
     }
@@ -2040,6 +2041,7 @@ $CIDRAM['UpdatesHandler-Repair'] = function ($ID) use (&$CIDRAM) {
         $BytesRemoved = 0;
         $TimeRequired = microtime(true);
         $RepairFailed = false;
+        $Reactivate = false;
         if ($Reactivate = $CIDRAM['IsInUse']($CIDRAM['Components']['Meta'][$ThisTarget])) {
             $CIDRAM['UpdatesHandler-Deactivate']($ThisTarget);
         }

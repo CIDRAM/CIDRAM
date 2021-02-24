@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6.dat
 
-# Version: 2021.50.147
-# Last modified: 2021.02.21
+# Version: 2021.54.302
+# Last modified: 2021.02.24
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage, i.e., with ignore.dat, with reCAPTCHA, with "extended rules" (default bypasses): « [x]Low [ ]Medium [ ]High »
@@ -1929,6 +1929,15 @@ Origin: US
 Tag: CariNet, Inc
 
 
+# ASN 263237 ("POWER HOST E.I.R.L").
+# Stop Forum Spam (SFS) listings: 34.
+# Updated: 2021.02.23
+
+2803:8180::/32 Deny Cloud
+Origin: CL
+Tag: POWER HOST E.I.R.L
+
+
 # ASN 29141 ("Bradler & Krantz GmbH & Co. KG").
 # Dedicated data center. Brute-force attempts occasionally detected from this network.
 # Stop Forum Spam (SFS) listings: 1.
@@ -2828,8 +2837,8 @@ Tag: SYNERGY WHOLESALE
 
 
 # ASN 45538 ("Online data services").
-# Stop Forum Spam (SFS) listings: 39.
-# Updated: 2020.03.10 / Checked: 2020.08.17
+# Stop Forum Spam (SFS) listings: 11.
+# Updated: 2020.03.10 / Checked: 2021.02.24
 
 2405:7bc0::/48 Deny Cloud
 2405:9d80::/32 Deny Cloud
@@ -3564,8 +3573,8 @@ Tag: DataClub S.A
 
 
 # ASN 30962 ("comtrance GmbH").
-# Stop Forum Spam (SFS) listings: 2.
-# Updated: 2020.08.17
+# Stop Forum Spam (SFS) listings: 20.
+# Updated: 2020.08.17 / Checked: 2021.02.24
 
 2001:678:94c::/48 Deny Cloud
 2001:67c:208::/48 Deny Cloud
@@ -3794,38 +3803,41 @@ Origin: CA
 Tag: B2 Net Solutions
 
 
-# ASNs 24669, 34202, 62240, 202792, 206136, 206144, 206986, 207158 ("Clouvider Limited").
-# Updated: 2020.08.17
+# ASNs 24669, 34202, 62240, 206136, 206144, 206986 ("Clouvider Limited").
+# Updated: 2021.02.24
 
-2a02:e00:ffe9::/48 Deny Cloud
-2a0f:9440::/29 Deny Cloud
-Origin: DE
 2a06:8ec0::/48 Deny Cloud
-Origin: EU
+Origin: AT
+2a02:e00:ffe9::/48 Deny Cloud
+Origin: DE
 2a04:6400::/29 Deny Cloud
 2a04:92c0::/29 Deny Cloud
-2a05:dfc7:6::/48 Deny Cloud
 2a06:bdc0::/29 Deny Cloud
-2a07:7ec2::/31 Deny Cloud
 2a0a:54c0::/29 Deny Cloud
 2a0a:7107:1af4::/48 Deny Cloud
-2a0b:1c00::/29 Deny Cloud
+2a0b:1c00:1919::/48 Deny Cloud
 2a0b:f300::/31 Deny Cloud
 2a0d:5080::/29 Deny Cloud
+2a0f:93c0::/29 Deny Cloud
+2a0f:9440::/29 Deny Cloud
+2a10:4dc0::/32 Deny Cloud
 Origin: GB
 2a07:3b80:2::/48 Deny Cloud
 Origin: GI
 2405:3580:1919::/48 Deny Cloud
 Origin: IN
-2a06:a006:c2::/48 Deny Cloud
-Origin: IS
-2a0b:b82::/64 Deny Cloud
-2a0b:b87:ffd4::/48 Deny Cloud
-2a0b:b87:fff0::/44 Deny Cloud
-2a0f:93c0::/29 Deny Cloud
-Origin: NL
+2a09:4a40::/29 Deny Cloud
+2a10:240::/29 Deny Cloud
+Origin: LT
+2a0e:eec5::/32 Deny Cloud
+Origin: RU
 2404:b980::/35 Deny Cloud
 Origin: SG
+2a05:dfc7:6::/48 Deny Cloud
+2a06:a006:c2::/48 Deny Cloud
+2a0b:b87:ffd4::/48 Deny Cloud
+2a0b:b87:fff0::/44 Deny Cloud
+Origin: US
 Tag: CloudSRV Limited
 
 
@@ -4108,18 +4120,6 @@ Origin: CZ
 Tag: Gransy s.r.o.
 
 
-# ASN 35236 ("2 connect a.s.").
-# *Some* limited port scanning detected from this network. Aside from that, no
-# recent reports or bad activity detected. Possible candidate for future removal.
-# Updated: 2020.08.17
-
-2a00:1238::/32 Deny Cloud
-2a0b:640::/30 Deny Cloud
-2a0e:25c0::/29 Deny Cloud
-Origin: CZ
-Tag: 2 connect a.s.
-
-
 # ASNs 42570, 200584, 201365, 207161 ("Nagravision SA", A.K.A. "Kudelski Group").
 # Caught hitting protected honeypot pages for unknown purposes. No problems otherwise. Provides digital cable and
 # satellite television; Not expected to carry standard HTTP traffic from human endpoints normally. May remove if
@@ -4166,8 +4166,8 @@ Tag: Lunavi, Inc
 # with uptime monitoring service "InternetSeer.com". Users of this service
 # should list this section in their ignore.dat file. I won't be mainlining a
 # bypass for them though due to abuse reports from some users.
-# Stop Forum Spam (SFS) listings: 3.
-# Updated: 2018.08.05 / Checked: 2020.07.22
+# Stop Forum Spam (SFS) listings: 1.
+# Updated: 2018.08.05 / Checked: 2021.02.23
 
 2600:1300::/32 Deny Cloud
 2600:1304::/32 Deny Cloud
@@ -7186,8 +7186,8 @@ Tag: Micron21 Datacentre
 
 
 # ASN 205081 ("EasyDataHost S.L").
-# Stop Forum Spam (SFS) listings: 841.
-# Updated: 2020.08.17
+# Stop Forum Spam (SFS) listings: 835.
+# Updated: 2020.08.17 / Checked: 2021.02.24
 
 2a0c:5500::/46 Deny Cloud
 2a0c:5500:4::/48 Deny Cloud
@@ -7643,6 +7643,18 @@ Tag: Maxihost LTDA
 2001:678:31c::/48 Deny Cloud
 Origin: UA
 Tag: TOV Kompjuternie Merezhi
+
+
+# ASN 35196 ("Ihor Hosting LLC").
+# Stop Forum Spam (SFS) listings: 568.
+# Updated: 2021.02.24
+
+2a0a:9301:1::/48 Deny Cloud
+2a0a:9302::/32 Deny Cloud
+Origin: CZ
+2a02:f680::/29 Deny Cloud
+Origin: RU
+Tag: Ihor Hosting LLC
 
 
 # ---

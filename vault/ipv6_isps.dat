@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_isps.dat
 
-# Version: 2021.50.147
-# Last modified: 2021.02.21
+# Version: 2021.54.302
+# Last modified: 2021.02.24
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage, i.e., with ignore.dat, with reCAPTCHA, with "extended rules" (default bypasses): « [ ]Low [x]Medium [ ]High »
@@ -11,13 +11,15 @@
 
 # ---
 # ASN 29182 ("ISPsystem").
-# Stop Forum Spam (SFS) listings: 3,502.
-# Updated: 2020.08.17
+# Stop Forum Spam (SFS) listings: 14,263.
+# Updated: 2021.02.23
 
 2a01:230::/46 Deny Generic
+2a01:230:4::/48 Deny Generic
+2a06:c3c0:2::/48 Deny Generic
 2a06:dc40::/29 Deny Generic
-2a09:6280:4::/48 Deny Generic
 2a09:f900::/48 Deny Generic
+2a0f:8443::/32 Deny Generic
 Origin: RU
 2a0c:680::/32 Deny Generic
 Origin: UA
@@ -43,7 +45,7 @@ Tag: IP Volume inc
 
 # ASN 48159 ("Telecommunication Infrastructure Company").
 # Significant source of I.P. thieves, email harvestors, and unauthorised scrapers.
-# Updated: 2019.07.03 / Checked: 2020.08.17
+# Updated: 2019.07.03 / Checked: 2021.02.24
 
 2a03:57c0::/32 Deny Generic
 Origin: IR
@@ -335,8 +337,8 @@ Tag: Websupport s.r.o
 
 
 # ASN 35804 ("PP SKS-LUGAN").
-# Stop Forum Spam (SFS) listings: 50.
-# Updated: 2016.03.30 / Checked: 2020.07.22
+# Stop Forum Spam (SFS) listings: 272.
+# Updated: 2016.03.30 / Checked: 2021.02.23
 
 2a00:ede0::/32 Deny Generic
 Origin: UA
@@ -572,17 +574,6 @@ Tag: AS13188-CDN-LTD
 2a05:8dc0::/29 Deny Spam
 Origin: UA
 Tag: Fregat
-
-
-# ASNs 35196, 48666 ("MAROSNET Telecommunication Company LLC").
-# Stop Forum Spam (SFS) listings: 254 (AS35196), 223 (AS48666).
-# Updated: 2020.08.22
-
-2a02:f680::/29 Deny Spam
-2a0a:9301:1::/48 Deny Spam
-2a0a:9302::/32 Deny Spam
-Origin: RU
-Tag: MAROSNET
 
 
 # ASNs 7552, 24086, 37620, 262210 ("Viettel Corporation").
@@ -1633,15 +1624,14 @@ recaptcha:
 
 
 # ASN 15774 ("Closed Joint Stock Company TransTeleCom").
-# Stop Forum Spam (SFS) listings: 1,131.
-# Updated: 2019.11.08 / Checked: 2020.08.17
+# Stop Forum Spam (SFS) listings: 829.
+# Updated: 2021.02.24
 
 2a02:618:6::/47 Deny Spam
 2a02:28d8::/36 Deny Spam
 2a03:600::/32 Deny Spam
 2a03:3700::/34 Deny Spam
 2a03:3700:4000::/35 Deny Spam
-2a03:3700:6000::/36 Deny Spam
 Origin: RU
 Tag: TransTeleCom
 ---
@@ -1736,6 +1726,16 @@ Tag: Dhivehi Raajjeyge
 ---
 recaptcha:
  enabled: true
+
+
+# ASN 196777 ("SKORUK ANDRIY OLEKSANDROVYCH").
+# Spambots hosted by this network caught by honeypots.
+# Stop Forum Spam (SFS) listings: 3,133.
+# Updated: 2021.02.23
+
+2a10:a380::/29 Deny Spam
+Origin: UA
+Tag: SKORUK ANDRIY OLEKSANDROVYCH
 
 
 # ASN 41435 ("UnderNet LLC").
@@ -1972,11 +1972,13 @@ recaptcha:
 
 
 # ASNs 9198, 50482 ("JSC Kazakhtelecom").
-# Legit ISP in Kazakhstan carrying human endpoints, but also a significant
-# source of spam, hacking, brute-force attempts, and other unwanted requests.
-# %Listed, abuseat.org (CBL-Listed): 0.60% (AS9198).
-# Stop Forum Spam (SFS) listings: 1,792 (AS9198), 127 (AS50482).
-# Updated: 2018.09.15 / Checked: 2020.07.22
+# Kazakhstan backbone provider and domestic ISP. Significant amount of spam,
+# hacking, and brute-force attempts detected over time (but with less
+# significance recently; could consider scaling back at next update if trend
+# continues).
+# %Listed, abuseat.org (CBL-Listed): 0.55% (AS9198).
+# Stop Forum Spam (SFS) listings: 1,800 (AS9198), 129 (AS50482).
+# Updated: 2018.09.15 / Checked: 2021.02.23
 
 2a00:12f8::/32 Deny Spam
 Origin: KZ

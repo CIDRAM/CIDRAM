@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2021.02.22).
+ * This file: Front-end functions file (last modified: 2021.02.25).
  */
 
 /**
@@ -210,7 +210,6 @@ $CIDRAM['FECacheAdd'] = function (&$Source, &$Rebuild, $Entry, $Data, $Expires) 
 $CIDRAM['FECacheGet'] = function (&$Source, $Entry) use (&$CIDRAM) {
     /** Override if using a different preferred caching mechanism. */
     if ($CIDRAM['Cache']->Using && $CIDRAM['Cache']->Using !== 'FF') {
-
         /** Check whether already fetched for this instance. */
         if (isset($CIDRAM['CacheEntry-' . $Entry])) {
             return $CIDRAM['CacheEntry-' . $Entry];
@@ -2193,7 +2192,7 @@ $CIDRAM['UpdatesHandler-Repair'] = function ($ID) use (&$CIDRAM) {
             $BytesRemoved,
             $CIDRAM['NumberFormatter']->format(microtime(true) - $TimeRequired, 3)
         );
-        if ($Reactivate) {
+        if ($Reactivate === true) {
             $CIDRAM['UpdatesHandler-Activate']($ThisTarget);
         }
     }
@@ -2319,8 +2318,7 @@ $CIDRAM['SectionsHandler'] = function (array $Files) use (&$CIDRAM) {
     $SectionsForIgnore = [];
     $SignaturesCount = [];
     $SectionMeta = [];
-    $BaseSectionMeta = ['Deny' => 0, 'Bogon' => 0, 'Cloud' => 0, 'Generic' => 0, 'Legal' => 0, 'Malware' => 0, 'Proxy' => 0, 'Spam' => 0, 'Run' => 0, 'Greylist' => 0, 'Whitelist' => 0];
-    $ThisSectionMeta = $BaseSectionMeta;
+    $ThisSectionMeta = [];
     foreach ($Files as $File) {
         $Data = $File && is_readable($CIDRAM['Vault'] . $File) ? $CIDRAM['ReadFile']($CIDRAM['Vault'] . $File) : '';
         if (!$Data) {
@@ -2351,29 +2349,34 @@ $CIDRAM['SectionsHandler'] = function (array $Files) use (&$CIDRAM) {
                 if (!isset($SectionsForIgnore[$Tag])) {
                     $SectionsForIgnore[$Tag] = empty($CIDRAM['Ignore'][$Tag]);
                 }
+                foreach ($ThisSectionMeta as $ThisOrigin => $ThisQuantity) {
+                    if (!isset($SectionsForIgnore[$Tag . ':' . $ThisOrigin])) {
+                        $SectionsForIgnore[$Tag . ':' . $ThisOrigin] = empty($CIDRAM['Ignore'][$Tag . ':' . $ThisOrigin]);
+                    }
+                }
                 if (!isset($SignaturesCount[$Tag])) {
                     $SignaturesCount[$Tag] = 0;
                 }
                 $SignaturesCount[$Tag] += $ThisCount;
                 $ThisCount = 0;
                 if (!isset($SectionMeta[$Tag])) {
-                    $SectionMeta[$Tag] = $BaseSectionMeta;
+                    $SectionMeta[$Tag] = [];
                 }
-                foreach ($ThisSectionMeta as $MetaKey => $MetaValue) {
-                    if (!isset($SectionMeta[$Tag][$MetaKey])) {
-                        $SectionMeta[$Tag][$MetaKey] = 0;
+                foreach ($ThisSectionMeta as $ThisOrigin => $ThisQuantity) {
+                    if (!isset($SectionMeta[$Tag][$ThisOrigin])) {
+                        $SectionMeta[$Tag][$ThisOrigin] = 0;
                     }
-                    $SectionMeta[$Tag][$MetaKey] += $MetaValue;
+                    $SectionMeta[$Tag][$ThisOrigin] += $ThisQuantity;
                 }
-                $ThisSectionMeta = $BaseSectionMeta;
+                $ThisSectionMeta = [];
                 continue;
             }
             if (substr($Line, 0, 8) === 'Origin: ') {
                 $Origin = substr($Line, 8);
-                if ($CIDRAM['FE']['Flags']) {
-                    $Origin = '<span class="flag ' . $Origin . '"></span>';
+                if (!isset($ThisSectionMeta[$Origin])) {
+                    $ThisSectionMeta[$Origin] = 0;
                 }
-                $ThisSectionMeta[$Origin] = $OriginCount;
+                $ThisSectionMeta[$Origin] += $OriginCount;
                 $OriginCount = 0;
                 continue;
             }
@@ -2383,64 +2386,58 @@ $CIDRAM['SectionsHandler'] = function (array $Files) use (&$CIDRAM) {
             $ThisCount++;
             $OriginCount++;
             $CIDRAM['FE']['SL_Signatures']++;
-            if (($XPos = strpos($Line, 'Deny ')) !== false && ($Speculate = substr($Line, $XPos + 5))) {
-                if (!preg_match('~^(?:Bogon|Cloud|Generic|Legal|Malware|Proxy|Spam)$~', $Speculate)) {
-                    $Speculate = 'Deny';
-                }
-                $ThisSectionMeta[$Speculate]++;
-            } elseif (($XPos = strpos($Line, 'Run ')) !== false && substr($Line, $XPos + 4)) {
-                $ThisSectionMeta['Run']++;
-            } elseif (strpos($Line, 'Greylist') !== false) {
-                $ThisSectionMeta['Greylist']++;
-            } elseif (strpos($Line, 'Whitelist') !== false) {
-                $ThisSectionMeta['Whitelist']++;
-            }
         }
     }
     $Class = 'ng2';
-    ksort($SectionsForIgnore);
-    $CIDRAM['FE']['SL_Unique'] = count($SectionsForIgnore);
-    foreach ($SectionsForIgnore as $Section => $State) {
+    ksort($SectionMeta);
+    $CIDRAM['FE']['SL_Unique'] = count($SectionMeta);
+    foreach ($SectionMeta as $Section => $Counts) {
         $ThisCount = $CIDRAM['NumberFormatter']->format(isset($SignaturesCount[$Section]) ? $SignaturesCount[$Section] : 0);
         $Class = (isset($Class) && $Class === 'ng2') ? 'ng1' : 'ng2';
         $SectionSafe = preg_replace('~[^\da-z]~i', '', $Section);
         $SectionLabel = $Section . ' (<span class="txtRd">' . $ThisCount . '</span>)';
-        $SectionBreakdown = '';
-        $Next = '';
-        $HasOrigin = false;
-        foreach ($SectionMeta[$Section] as $BreakdownItem => $Quantity) {
-            if ($Next === 'Origin') {
-                $SectionBreakdown .= sprintf(
-                    '<span class="%1$s">' . ($SectionBreakdown ? ' – ' : '') . '<a href="javascript:void()" onclick="javascript:hide(\'%1$s\');show(\'%2$s\')">%3$s</a></span><span class="%2$s" style="display:none">',
-                    'originLink' . $SectionSafe,
-                    'originContent' . $SectionSafe,
-                    $CIDRAM['L10N']->getString('label_show_by_origin')
-                );
-                $HasOrigin = true;
-            }
-            $Next = ($BreakdownItem === 'Whitelist') ? 'Origin' : '';
-            if ($Quantity) {
-                $Quantity = $CIDRAM['NumberFormatter']->format($Quantity);
-                $SectionBreakdown .= ($SectionBreakdown ? ' – ' : '') . $BreakdownItem . ': ' . $Quantity;
-            }
+        $OriginOut = '';
+        arsort($Counts);
+        foreach ($Counts as $Origin => $Quantity) {
+            $State = !empty($SectionsForIgnore[$Section . ':' . $Origin]);
+            $OriginSafe = $SectionSafe . preg_replace('~[^A-Z]~', '', $Origin);
+            $Quantity = $CIDRAM['NumberFormatter']->format($Quantity);
+            $OriginDisplay = '<code>' . $Origin . '</code>' . ($CIDRAM['FE']['Flags'] ? ' – <span class="flag ' . $Origin . '"></span>' : '');
+            $OriginOut .= sprintf(
+                '<div class="sectionControlNotIgnored%s">%s – %s – %s – <a href="javascript:void()" onclick="javascript:slx(\'%s:%s\',\'%s</a></div>',
+                $OriginSafe . '" style="transform:skew(-18deg)' . ($State ? '' : ';display:none'),
+                $OriginDisplay,
+                $Quantity,
+                '',
+                $Section,
+                $Origin,
+                'ignore\',\'sectionControlNotIgnored' . $OriginSafe . '\',\'sectionControlIgnored' . $OriginSafe . '\')">' . $CIDRAM['L10N']->getString('label_ignore')
+            ) . sprintf(
+                '<div class="sectionControlIgnored%s">%s – %s – %s – <a href="javascript:void()" onclick="javascript:slx(\'%s:%s\',\'%s</a></div>',
+                $OriginSafe . '" style="transform:skew(-18deg);filter:grayscale(75%) contrast(50%)' . ($State ? ';display:none' : ''),
+                $OriginDisplay,
+                $Quantity,
+                ' – ' . $CIDRAM['L10N']->getString('state_ignored'),
+                $Section,
+                $Origin,
+                'unignore\',\'sectionControlIgnored' . $OriginSafe . '\',\'sectionControlNotIgnored' . $OriginSafe . '\')">' . $CIDRAM['L10N']->getString('label_unignore')
+            );
         }
-        if ($HasOrigin) {
-            $SectionBreakdown .= "</span>";
-        }
+        $State = !empty($SectionsForIgnore[$Section]);
         $Out .= sprintf(
-            '<div class="%1$s sectionControlNotIgnored%2$s"><strong>%3$s%4$s</strong><br /><em>%5$s</em></div>',
+            '<div class="%s sectionControlNotIgnored%s"><strong>%s%s</strong><br />%s</div>',
             $Class,
             $State ? $SectionSafe : $SectionSafe . '" style="display:none',
             $SectionLabel,
             ' – <a href="javascript:void()" onclick="javascript:slx(\'' . $Section . '\',\'ignore\',\'sectionControlNotIgnored' . $SectionSafe . '\',\'sectionControlIgnored' . $SectionSafe . '\')">' . $CIDRAM['L10N']->getString('label_ignore') . '</a>',
-            $SectionBreakdown
+            $OriginOut
         ) . sprintf(
-            '<div class="%1$s sectionControlIgnored%2$s"><strong>%3$s%4$s</strong><br /><em>%5$s</em></div>',
+            '<div class="%s sectionControlIgnored%s"><strong>%s%s</strong><br />%s</div>',
             $Class,
             $SectionSafe . '" style="filter:grayscale(50%) contrast(50%)' . ($State ? ';display:none' : ''),
             $SectionLabel . ' – ' . $CIDRAM['L10N']->getString('state_ignored'),
             ' – <a href="javascript:void()" onclick="javascript:slx(\'' . $Section . '\',\'unignore\',\'sectionControlIgnored' . $SectionSafe . '\',\'sectionControlNotIgnored' . $SectionSafe . '\')">' . $CIDRAM['L10N']->getString('label_unignore') . '</a>',
-            $SectionBreakdown
+            $OriginOut
         );
     }
     return $Out;
@@ -3189,7 +3186,6 @@ $CIDRAM['AuxGenerateFEData'] = function ($Mode = false) use (&$CIDRAM) {
 
     /** Iterate through the auxiliary rules. */
     foreach ($CIDRAM['AuxData'] as $Name => $Data) {
-
         /** Rule row ID. */
         $RuleClass = preg_replace('~^0+~', '', bin2hex($Name));
 

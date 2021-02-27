@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_isps.dat
 
-# Version: 2021.54.302
-# Last modified: 2021.02.24
+# Version: 2021.57.134
+# Last modified: 2021.02.27
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage, i.e., with ignore.dat, with reCAPTCHA, with "extended rules" (default bypasses): « [ ]Low [x]Medium [ ]High »
@@ -628,8 +628,8 @@ Tag: PHOENIX NAP, LLC
 
 # ASNs 24955, 41704 ("Orenburgskaya Gorodskaya Set, ZAO").
 # Caught spamming while pretending to be Google.
-# Stop Forum Spam (SFS) listings: 65,612 (AS24955), 13,817 (AS41704).
-# Updated: 2019.11.08 / Checked: 2020.08.22
+# Stop Forum Spam (SFS) listings: 195,128 (AS24955), 10,024 (AS41704).
+# Updated: 2019.11.08 / Checked: 2021.02.27
 
 2a02:1c8::/47 Deny Spam
 2a02:1c8:7::/48 Deny Spam
@@ -1517,6 +1517,20 @@ recaptcha:
  enabled: true
 
 
+# ASN 9808 ("Guangdong Mobile Communication Co.Ltd").
+# Chinese mobile phone and data carrier. Spam and brute-force attempts detected
+# from here. Listing just the affected ranges/addresses only (since 2020.09).
+# Stop Forum Spam (SFS) listings: 79.
+# Updated: 2021.02.27
+
+2409:8a4d:c40:35c0::/64 Deny Malware
+Origin: CN
+Tag: Guangdong Mobile
+---
+recaptcha:
+ enabled: true
+
+
 # ASN 9387 ("AUGERE-Pakistan").
 # Listed due to spam incidence. Reduced reports this past year; maybe I could
 # eventually delist this section finally? We'll see how it goes.
@@ -2040,10 +2054,11 @@ recaptcha:
 
 # ASN 25513 ("PJSC Moscow city telephone network").
 # A Russian domestic ISP and a significant source of forum and blog spam.
-# Stop Forum Spam (SFS) listings: 13,772.
-# Updated: 2020.02.22 / Checked: 2020.07.23
+# Stop Forum Spam (SFS) listings: 20,619.
+# Updated: 2021.02.27
 
 2a00:1370::/32 Deny Spam
+2a03:6505:2000:6::/64 Deny Spam
 2a03:af60::/32 Deny Spam
 Origin: RU
 Tag: PJSC Moscow city
@@ -2132,16 +2147,17 @@ recaptcha:
  enabled: true
 
 
-# ASNs 10796, 20115 ("Charter Communications").
+# ASNs 10796, 11427, 20115 ("Charter Communications").
 # Domestic ISP from the United States with some limited amount of spamming
 # (marked as "Spam") + caught by security honeypots (marked as "Malware").
-# %Listed, abuseat.org (CBL-Listed): 0.72% (AS10796), 0.85% (AS20115).
-# Stop Forum Spam (SFS) listings: 752 (AS10796), 2,206 (AS20115).
-# Updated: 2021.02.08
+# %Listed, abuseat.org (CBL-Listed): 0.72% (AS10796), 1.11% (AS11427), 0.85% (AS20115).
+# Stop Forum Spam (SFS) listings: 752 (AS10796), 679 (AS11427), 2,206 (AS20115).
+# Updated: 2021.02.08 / Modified: 2021.02.26
 
 2600:6c47:a200:154b::/64 Deny Spam
 2603:6000:aa0e:9800::/64 Deny Spam
 2603:6011:8946:1c00::/64 Deny Spam
+2603:8080:c90c:a259::/64 Deny Spam
 Origin: US
 Tag: Charter Communications
 ---
@@ -2207,8 +2223,8 @@ recaptcha:
 
 # ASN 34700 ("MAXNET TELECOM, LTD").
 # A Ukrainian domestic ISP and a significant source of spam.
-# Stop Forum Spam (SFS) listings: 4,766.
-# Updated: 2020.02.17 / Checked: 2020.07.23
+# Stop Forum Spam (SFS) listings: 3,794.
+# Updated: 2020.02.17 / Checked: 2021.02.27
 
 2a00:1210::/32 Deny Spam
 Origin: UA
@@ -2267,20 +2283,31 @@ recaptcha:
  enabled: true
 
 
-# ASN 8151 ("Uninet S.A. de C.V").
-# Mexican domestic ISP and a source of spam. Just listing the specific spammy
-# IPs (not the entire network), plus US ranges (confirmed cloud hosters).
-# %Listed, abuseat.org (CBL-Listed): 0.33%.
-# Stop Forum Spam (SFS) listings: 1,825.
-# Updated: 2021.01.24
+# ASN 12849 ("Hot-Net internet services Ltd").
+# Israeli domestic ISP and a source of spam. Just listing the specific
+# spammy IPs (i.e., not the entire network).
+# Stop Forum Spam (SFS) listings: 1,285.
+# Updated: 2021.02.27
 
-2806:1016:b:181d::/64 Deny Spam
-2806:108e:15:1531::/64 Deny Spam
-2806:10a6:7:3f3f::/64 Deny Spam
-2806:10a6:e:1563::/64 Deny Spam
-2806:10a6:11:e84::/64 Deny Spam
-2806:10a6:11:104f::/64 Deny Spam
-2806:10a6:12:1f48::/64 Deny Spam
+2a00:a040:18a:70b6::/64 Deny Spam
+2a00:a040:18b:8b86::/64 Deny Spam
+2a00:a040:199:4202::/64 Deny Spam
+Origin: IL
+Tag: Hot-Net internet
+---
+recaptcha:
+ enabled: true
+
+
+# ASN 8151 ("Uninet S.A. de C.V").
+# Mexican domestic ISP. Spam and brute-force attacks detected from here.
+# Listing just the affected ranges/addresses, plus US ranges (cloud).
+# %Listed, abuseat.org (CBL-Listed): 0.37%.
+# Stop Forum Spam (SFS) listings: 2,205.
+# Updated: 2021.02.27
+
+2806:105e:14:d416::/64 Deny Malware
+2806:10a6:10:9649::/64 Deny Spam
 Origin: MX
 2600:141c:7::/48 Deny Cloud
 2600:141c:5000::/48 Deny Cloud
@@ -2732,6 +2759,26 @@ recaptcha:
 2a02:1812:1d2d:fa00::/64 Deny Spam
 Origin: BE
 Tag: Telenet BVBA
+---
+recaptcha:
+ enabled: true
+
+
+# ASN 3243 ("MEO - SERVICOS DE COMUNICACOES E MULTIMEDIA S.A").
+# Portuguese domestic ISP. Caught by honeypots.
+# Listing just the affected ranges/addresses only.
+# %Listed, abuseat.org (CBL-Listed): 1.67%.
+# Stop Forum Spam (SFS) listings: 1,058.
+# Updated: 2021.02.26
+
+2001:8a0:7dc3:8f00::/64 Deny Spam
+2001:8a0:e616:3f00::/64 Deny Spam
+2001:8a0:e622:2400::/64 Deny Spam
+2001:8a0:e625:a600::/64 Deny Spam
+2001:8a0:ebc1:e601::/64 Deny Spam
+2001:8a0:fbc6:9d01::/64 Deny Malware
+Origin: PT
+Tag: MEO
 ---
 recaptcha:
  enabled: true

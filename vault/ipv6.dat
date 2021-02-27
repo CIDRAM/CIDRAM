@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6.dat
 
-# Version: 2021.54.302
-# Last modified: 2021.02.24
+# Version: 2021.57.134
+# Last modified: 2021.02.27
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage, i.e., with ignore.dat, with reCAPTCHA, with "extended rules" (default bypasses): « [x]Low [ ]Medium [ ]High »
@@ -109,8 +109,8 @@ Tag: PEG TECH INC
 
 
 # ASN 26347 ("New Dream Network, LLC").
-# Stop Forum Spam (SFS) listings: 1,917.
-# Updated: 2020.12.15
+# Stop Forum Spam (SFS) listings: 2,362.
+# Updated: 2020.12.15 / Checked: 2021.02.24
 
 2607:f298:5::/48 Deny Cloud
 2607:f298:6::/48 Deny Cloud
@@ -2923,8 +2923,8 @@ Tag: SpaceWeb Ltd
 
 
 # ASN 43391 ("Netdirekt A.S").
-# Stop Forum Spam (SFS) listings: 8.
-# Updated: 2020.08.22
+# Stop Forum Spam (SFS) listings: 6.
+# Updated: 2020.08.22 / Checked: 2021.02.27
 
 2a01:aac0::/32 Deny Cloud
 2a0a:be80::/29 Deny Cloud
@@ -3240,10 +3240,10 @@ Tag: ScaleUp Technologies
 
 # ASN 15244 ("Lunar Pages").
 # Brute-force attempts detected from this network.
-# Updated: 2020.08.22
+# Dead at last check. Will remove at the next update if no change.
+# Updated: 2021.02.27
 
-2606:bd00::/48 Deny Cloud
-Origin: US
+#<redacted>
 Tag: Lunar Pages
 
 
@@ -4624,16 +4624,17 @@ Tag: SOFTplus
 
 # ASN 63199 ("Capitalonline Data Service Co.,LTD").
 # Source of forum spam and other unwanted traffic.
-# Stop Forum Spam (SFS) listings: 241.
-# Updated: 2020.08.22
+# Stop Forum Spam (SFS) listings: 129.
+# Updated: 2021.02.27
 
-2400:5280::/36 Deny Cloud
-2400:5280:1000::/37 Deny Cloud
-2400:5280:1800::/38 Deny Cloud
+2400:5280:400::/38 Deny Cloud
+2400:5280:800::/37 Deny Cloud
+2400:5280:1000::/38 Deny Cloud
+2400:5280:1800::/37 Deny Cloud
+2400:5280:2000::/38 Deny Cloud
+2400:5280:2800::/38 Deny Cloud
 2400:5280:fc00::/38 Deny Cloud
 Origin: CN
-2001:550:2801::/48 Deny Cloud
-Origin: US
 Tag: Capitalonline
 
 
@@ -5382,8 +5383,8 @@ Tag: LightEdge Solutions
 # ASN 1764 ("Next Layer Telekommunikationsdienstleistungs- und Beratungs GmbH").
 # Caught trying to hack WordPress sites + massive source of spam. No evidence
 # of human endpoints at this time, but recheck this whenever updating in case.
-# Stop Forum Spam (SFS) listings: 8,183.
-# Updated: 2020.08.22
+# Stop Forum Spam (SFS) listings: 82.
+# Updated: 2021.02.27
 
 2001:67c:22a0::/48 Deny Cloud
 2001:4b60:100::/48 Deny Cloud
@@ -5391,10 +5392,7 @@ Tag: LightEdge Solutions
 2a03:e600::/32 Deny Cloud
 2a04:9300::/29 Deny Cloud
 2a05:dd80::/29 Deny Cloud
-2a07:3740::/29 Deny Cloud
-2a07:4080::/29 Deny Cloud
 2a07:a980::/32 Deny Cloud
-2a0b:5a40::/29 Deny Cloud
 2a0c:4e40::/29 Deny Cloud
 2a0d:4d80::/29 Deny Cloud
 Origin: AT
@@ -5453,7 +5451,7 @@ Tag: ALMOUROLTEC
 # Some reports of weird access attempts. Cloud/infrastructure provider. Some
 # evidence of possible unwanted bot activity from this ASN; not confirmed. Not
 # many records available.
-# Updated: 2019.06.23 / Checked: 2020.07.30
+# Updated: 2019.06.23 / Checked: 2021.02.27
 
 2a03:4300::/29 Deny Cloud
 Origin: GB

@@ -89,6 +89,15 @@ Detailed version release guidelines for CIDRAM can be found at:
   via the front-end sections list page has been extended as to be able to now
   ignore just specific countries of origin from within specific sections.
 
+- [2020.02.27; Bug-fixes; Maikuolan]: When using the front-end auxiliary rules
+  page's edit mode, new rules would always be created, even when it wasn't
+  wanted; Fixed. The infractions field provided by the front-end auxiliary
+  rules page was being ignored by the back-end, rendering it useless; Fixed.
+  When using the front-end auxiliary rules page's edit mode to change the
+  action associated with a rule from 'run' to something else, conditions
+  wouldn't transfer across properly and would be lost; Fixed. Also refactored
+  various code associated with the auxiliary rules system.
+
 === Version/Release 2.4.4 ===
 PATCH RELEASE.
 

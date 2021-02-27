@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2021.02.18).
+ * This file: Functions file (last modified: 2021.02.27).
  */
 
 /** Autoloader for CIDRAM classes. */
@@ -156,7 +156,6 @@ $CIDRAM['ExpandIPv4'] = function (string $Addr, bool $ValidateOnly = false, int 
  * @return bool|array Refer to the description above.
  */
 $CIDRAM['ExpandIPv6'] = function (string $Addr, bool $ValidateOnly = false, int $FactorLimit = 128) {
-
     /**
      * The REGEX pattern used by this `preg_match` call was adapted from the
      * IPv6 REGEX pattern that can be found at
@@ -330,7 +329,7 @@ $CIDRAM['CheckFactors'] = function (array $Files, array $Factors) use (&$CIDRAM)
         if ($SigFormat === 'CSV') {
             $LN = ' ("' . $DefTag . '", L0:F' . $FileIndex . ')';
             for ($FactorIndex = 0; $FactorIndex < $Counts['Factors']; $FactorIndex++) {
-                if ($Infractions = substr_count($Files[$FileIndex], ',' . $Factors[$FactorIndex] . ',')) {
+                if ($Occurs = substr_count($Files[$FileIndex], ',' . $Factors[$FactorIndex] . ',')) {
                     $CIDRAM['BlockInfo']['ReasonMessage'] = $CIDRAM['L10N']->getString('ReasonMessage_Generic');
                     if (!empty($CIDRAM['BlockInfo']['WhyReason'])) {
                         $CIDRAM['BlockInfo']['WhyReason'] .= ', ';
@@ -340,7 +339,7 @@ $CIDRAM['CheckFactors'] = function (array $Files, array $Factors) use (&$CIDRAM)
                         $CIDRAM['BlockInfo']['Signatures'] .= ', ';
                     }
                     $CIDRAM['BlockInfo']['Signatures'] .= $Factors[$FactorIndex];
-                    $CIDRAM['BlockInfo']['SignatureCount'] += $Infractions;
+                    $CIDRAM['BlockInfo']['SignatureCount'] += $Occurs;
                 }
             }
             continue;
@@ -718,7 +717,6 @@ $CIDRAM['Supplementary'] = function (string $Source) use (&$CIDRAM): array {
  * @return string The hostname on success, or the IP address on failure.
  */
 $CIDRAM['DNS-Reverse'] = function (string $Addr, string $DNS = '', int $Timeout = 5) use (&$CIDRAM): string {
-
     /** Shouldn't try to reverse localhost addresses; There'll be problems. */
     if ($Addr === '127.0.0.1' || $Addr === '::1') {
         return 'localhost';
@@ -913,7 +911,6 @@ $CIDRAM['DNS-Resolve'] = function (string $Host, int $Timeout = 5) use (&$CIDRAM
  *      false when a determination isn't able to be made.
  */
 $CIDRAM['DNS-Reverse-Forward'] = function ($Domains, string $Friendly, array $Options = []) use (&$CIDRAM): bool {
-
     /** Fetch the hostname. */
     if (empty($CIDRAM['Hostname'])) {
         $CIDRAM['Hostname'] = $CIDRAM['DNS-Reverse']($CIDRAM['BlockInfo']['IPAddr']);
@@ -941,10 +938,8 @@ $CIDRAM['DNS-Reverse-Forward'] = function ($Domains, string $Friendly, array $Op
 
     /** Successfully passed. */
     if ($Pass) {
-
         /** We're only reversing; Don't resolve. */
         if (!empty($Options['ReverseOnly'])) {
-
             /** Disable tracking. */
             if (!empty($Options['CanModTrackable'])) {
                 $CIDRAM['Trackable'] = false;
@@ -961,14 +956,12 @@ $CIDRAM['DNS-Reverse-Forward'] = function ($Domains, string $Friendly, array $Op
 
         /** Attempt to resolve. */
         if (!$Resolved = $CIDRAM['DNS-Resolve']($CIDRAM['Hostname'])) {
-
             /** Failed to resolve. Do nothing else and exit. */
             return false;
         }
 
         /** It's the real deal. */
         if ($Resolved === $CIDRAM['BlockInfo']['IPAddr']) {
-
             /** Disable tracking. */
             if (!empty($Options['CanModTrackable'])) {
                 $CIDRAM['Trackable'] = false;
@@ -1073,7 +1066,6 @@ $CIDRAM['UA-X-Match'] = function (string $Datapoint, $Expected, string $Friendly
 
     /** Compare the actual value from the request against the expected values. */
     if (in_array($CIDRAM['BlockInfo'][$Datapoint], $Expected)) {
-
         /** Disable tracking (if there are matches, and if relevant). */
         if (!empty($Options['CanModTrackable'])) {
             $CIDRAM['Trackable'] = false;
@@ -1605,7 +1597,6 @@ $CIDRAM['SocialMediaVerification'] = function () use (&$CIDRAM) {
  *      returns an empty string.
  */
 $CIDRAM['BuildPath'] = function (string $Path, bool $PointsToFile = true) use (&$CIDRAM): string {
-
     /** Guard. */
     if (!$Path) {
         return '';
@@ -1817,7 +1808,6 @@ $CIDRAM['GetStatusHTTP'] = function (int $Status): string {
  * @return bool Match succeeded (true) or failed (false).
  */
 $CIDRAM['AuxMatch'] = function ($Criteria, string $Actual, string $Method = '') use (&$CIDRAM): bool {
-
     /** Normalise criteria to an array. */
     if (!is_array($Criteria)) {
         $Criteria = [$Criteria];
@@ -1982,24 +1972,13 @@ $CIDRAM['Aux'] = function () use (&$CIDRAM) {
         $CIDRAM['Request_Method'] = $_SERVER['REQUEST_METHOD'] ?? '';
     }
 
-    /** Potential sources. */
-    static $Sources = [
-        'Hostname',
-        'Request_Method',
-        'BlockInfo' => [
-            'IPAddr',
-            'IPAddrResolved',
-            'Query',
-            'Referrer',
-            'UA',
-            'UALC',
-            'ReasonMessage',
-            'SignatureCount',
-            'Signatures',
-            'WhyReason',
-            'rURI'
-        ]
-    ];
+    /** Provide previous existing infractions count to the auxiliary rules. */
+    if (isset($CIDRAM['BlockInfo']) && !isset($CIDRAM['BlockInfo']['Infractions'])) {
+        $CIDRAM['BlockInfo']['Infractions'] = 0;
+        if (isset($CIDRAM['Tracking'][$CIDRAM['BlockInfo']['IPAddr']]['Count'])) {
+            $CIDRAM['BlockInfo']['Infractions'] += $CIDRAM['Tracking'][$CIDRAM['BlockInfo']['IPAddr']]['Count'];
+        }
+    }
 
     /** Potential modes. */
     static $Modes = ['Whitelist', 'Greylist', 'Block', 'Bypass', 'Don\'t log', 'Redirect', 'Run'];
@@ -2011,7 +1990,6 @@ $CIDRAM['Aux'] = function () use (&$CIDRAM) {
 
     /** Iterate through the auxiliary rules. */
     foreach ($CIDRAM['AuxData'] as $Name => $Data) {
-
         /** Safety. */
         if (!is_array($Data) || empty($Data)) {
             continue;
@@ -2048,7 +2026,6 @@ $CIDRAM['Aux'] = function () use (&$CIDRAM) {
 
         /** Iterate through modes. */
         foreach ($Modes as $Mode) {
-
             /** Skip mode if not used by this rule. */
             if (empty($Data[$Mode])) {
                 continue;
@@ -2059,22 +2036,20 @@ $CIDRAM['Aux'] = function () use (&$CIDRAM) {
 
             /** Match exceptions. */
             if (!empty($Data[$Mode]['But not if matches'])) {
-
                 /** Iterate through sources. */
-                foreach ($Sources as $SourceKey => $SourceArr) {
+                foreach ($CIDRAM['Config']['Provide']['Auxiliary Rules']['Sources'] as $SourceArrKey => $SourceArr) {
                     if (is_array($SourceArr)) {
-                        foreach ($SourceArr as $Source) {
+                        foreach ($SourceArr as $SourceKey => $Source) {
                             if (isset(
-                                $Data[$Mode]['But not if matches'][$Source],
-                                $CIDRAM[$SourceKey][$Source]
+                                $Data[$Mode]['But not if matches'][$SourceKey],
+                                $CIDRAM[$SourceArrKey][$SourceKey]
                             )) {
-                                if (!is_array($Data[$Mode]['But not if matches'][$Source])) {
-                                    $Data[$Mode]['But not if matches'][$Source] = [$Data[$Mode]['But not if matches'][$Source]];
+                                if (!is_array($Data[$Mode]['But not if matches'][$SourceKey])) {
+                                    $Data[$Mode]['But not if matches'][$SourceKey] = [$Data[$Mode]['But not if matches'][$SourceKey]];
                                 }
-                                foreach ($Data[$Mode]['But not if matches'][$Source] as $Value) {
-
+                                foreach ($Data[$Mode]['But not if matches'][$SourceKey] as $Value) {
                                     /** Perform match. */
-                                    if ($CIDRAM['AuxMatch']($Value, $CIDRAM[$SourceKey][$Source], $Method)) {
+                                    if ($CIDRAM['AuxMatch']($Value, $CIDRAM[$SourceArrKey][$SourceKey], $Method)) {
                                         continue 4;
                                     }
                                 }
@@ -2082,14 +2057,13 @@ $CIDRAM['Aux'] = function () use (&$CIDRAM) {
                         }
                         continue;
                     }
-                    if (isset($Data[$Mode]['But not if matches'][$SourceArr], $CIDRAM[$SourceArr])) {
-                        if (!is_array($Data[$Mode]['But not if matches'][$SourceArr])) {
-                            $Data[$Mode]['But not if matches'][$SourceArr] = [$Data[$Mode]['But not if matches'][$SourceArr]];
+                    if (isset($Data[$Mode]['But not if matches'][$SourceArrKey], $CIDRAM[$SourceArrKey])) {
+                        if (!is_array($Data[$Mode]['But not if matches'][$SourceArrKey])) {
+                            $Data[$Mode]['But not if matches'][$SourceArrKey] = [$Data[$Mode]['But not if matches'][$SourceArrKey]];
                         }
-                        foreach ($Data[$Mode]['But not if matches'][$SourceArr] as $Value) {
-
+                        foreach ($Data[$Mode]['But not if matches'][$SourceArrKey] as $Value) {
                             /** Perform match. */
-                            if ($CIDRAM['AuxMatch']($Value, $CIDRAM[$SourceArr], $Method)) {
+                            if ($CIDRAM['AuxMatch']($Value, $CIDRAM[$SourceArrKey], $Method)) {
                                 continue 3;
                             }
                         }
@@ -2099,22 +2073,20 @@ $CIDRAM['Aux'] = function () use (&$CIDRAM) {
 
             /** Matches. */
             if (!empty($Data[$Mode]['If matches'])) {
-
                 /** Iterate through sources. */
-                foreach ($Sources as $SourceKey => $SourceArr) {
+                foreach ($CIDRAM['Config']['Provide']['Auxiliary Rules']['Sources'] as $SourceArrKey => $SourceArr) {
                     if (is_array($SourceArr)) {
-                        foreach ($SourceArr as $Source) {
+                        foreach ($SourceArr as $SourceKey => $Source) {
                             if (isset(
-                                $Data[$Mode]['If matches'][$Source],
-                                $CIDRAM[$SourceKey][$Source]
+                                $Data[$Mode]['If matches'][$SourceKey],
+                                $CIDRAM[$SourceArrKey][$SourceKey]
                             )) {
-                                if (!is_array($Data[$Mode]['If matches'][$Source])) {
-                                    $Data[$Mode]['If matches'][$Source] = [$Data[$Mode]['If matches'][$Source]];
+                                if (!is_array($Data[$Mode]['If matches'][$SourceKey])) {
+                                    $Data[$Mode]['If matches'][$SourceKey] = [$Data[$Mode]['If matches'][$SourceKey]];
                                 }
-                                foreach ($Data[$Mode]['If matches'][$Source] as $Value) {
-
+                                foreach ($Data[$Mode]['If matches'][$SourceKey] as $Value) {
                                     /** Perform match. */
-                                    if ($CIDRAM['AuxMatch']($Value, $CIDRAM[$SourceKey][$Source], $Method)) {
+                                    if ($CIDRAM['AuxMatch']($Value, $CIDRAM[$SourceArrKey][$SourceKey], $Method)) {
                                         $Matched = true;
                                         if ($Logic === 'All') {
                                             continue;
@@ -2131,14 +2103,13 @@ $CIDRAM['Aux'] = function () use (&$CIDRAM) {
                         }
                         continue;
                     }
-                    if (isset($Data[$Mode]['If matches'][$SourceArr], $CIDRAM[$SourceArr])) {
-                        if (!is_array($Data[$Mode]['If matches'][$SourceArr])) {
-                            $Data[$Mode]['If matches'][$SourceArr] = [$Data[$Mode]['If matches'][$SourceArr]];
+                    if (isset($Data[$Mode]['If matches'][$SourceArrKey], $CIDRAM[$SourceArrKey])) {
+                        if (!is_array($Data[$Mode]['If matches'][$SourceArrKey])) {
+                            $Data[$Mode]['If matches'][$SourceArrKey] = [$Data[$Mode]['If matches'][$SourceArrKey]];
                         }
-                        foreach ($Data[$Mode]['If matches'][$SourceArr] as $Value) {
-
+                        foreach ($Data[$Mode]['If matches'][$SourceArrKey] as $Value) {
                             /** Perform match. */
-                            if ($CIDRAM['AuxMatch']($Value, $CIDRAM[$SourceArr], $Method)) {
+                            if ($CIDRAM['AuxMatch']($Value, $CIDRAM[$SourceArrKey], $Method)) {
                                 $Matched = true;
                                 if ($Logic === 'All') {
                                     continue;

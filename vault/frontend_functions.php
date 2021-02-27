@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2021.02.25).
+ * This file: Front-end functions file (last modified: 2021.02.27).
  */
 
 /**
@@ -342,7 +342,6 @@ $CIDRAM['AppendToString'] = function (string &$String, string $Delimit = '', str
  * @return bool True when passed; False when failed.
  */
 $CIDRAM['SanityCheck'] = function (string $FileName, string $FileData): bool {
-
     /** A very simple, rudimentary check for unwanted, possibly maliciously inserted HTML. */
     if ($FileData && preg_match('~<(?:html|body)~i', $FileData)) {
         return false;
@@ -2986,7 +2985,6 @@ $CIDRAM['FELogger'] = function (string $IPAddr, string $User, string $Message) u
  * @return bool Operation failed (false) or succeeded (true).
  */
 $CIDRAM['SendEmail'] = function (array $Recipients = [], string $Subject = '', string $Body = '', string $AltBody = '', array $Attachments = []) use (&$CIDRAM): bool {
-
     /** Prepare event logging. */
     $EventLogData = sprintf(
         '%s - %s - ',
@@ -3002,7 +3000,6 @@ $CIDRAM['SendEmail'] = function (array $Recipients = [], string $Subject = '', s
         $EventLogData .= $CIDRAM['L10N']->getString('state_failed_missing') . "\n";
     } else {
         try {
-
             /** Create a new PHPMailer instance. */
             $Mail = new \PHPMailer\PHPMailer\PHPMailer();
 
@@ -3104,7 +3101,6 @@ $CIDRAM['SendEmail'] = function (array $Recipients = [], string $Subject = '', s
                 $SuccessDetails
             ) : $CIDRAM['L10N']->getString('response_error') . ' - ' . $Mail->ErrorInfo) . "\n";
         } catch (\Exception $e) {
-
             /** An exeption occurred. Log the information. */
             $EventLogData .= $CIDRAM['L10N']->getString('response_error') . ' - ' . $e->getMessage() . "\n";
         }
@@ -3142,7 +3138,6 @@ $CIDRAM['2FA-Number'] = function (): int {
  * @return string The generated auxiliary rules data.
  */
 $CIDRAM['AuxGenerateFEData'] = function (bool $Mode = false) use (&$CIDRAM): string {
-
     /** Populate output here. */
     $Output = '';
 
@@ -3150,7 +3145,7 @@ $CIDRAM['AuxGenerateFEData'] = function (bool $Mode = false) use (&$CIDRAM): str
     $JSAppend = '';
 
     /** Potential sources. */
-    $Sources = preg_replace('~(?: | )?(?:：|:) ?$~', '', $CIDRAM['SourcesL10N']);
+    $Sources = $CIDRAM['GenerateLabels']($CIDRAM['Config']['Provide']['Auxiliary Rules']['Sources'], '~(?: | )?(?:：|:) ?$~');
 
     /** Attempt to parse the auxiliary rules file. */
     if (!isset($CIDRAM['AuxData'])) {
@@ -3160,9 +3155,9 @@ $CIDRAM['AuxGenerateFEData'] = function (bool $Mode = false) use (&$CIDRAM): str
     /** Count entries (needed for offering first and last move options). */
     $Count = count($CIDRAM['AuxData']);
 
-    /** Append empty rule if editing. */
     if ($Mode) {
-        $CIDRAM['AuxData'][] = [];
+        /** Append empty rule if editing. */
+        $CIDRAM['AuxData'][' '] = [];
         $Count++;
         $Current = 0;
     } else {
@@ -3196,7 +3191,7 @@ $CIDRAM['AuxGenerateFEData'] = function (bool $Mode = false) use (&$CIDRAM): str
                 '%1$s<div class="%2$s"><dl><dt class="s">%4$s</dt><dd><input type="text" name="ruleName[%5$s]" class="f400" value="%3$s" /></dd></dl>',
                 "\n      ",
                 $StyleClass,
-                $Name ?? '',
+                $Name === ' ' ? '' : $Name,
                 $CIDRAM['L10N']->getString('field_new_name'),
                 $Current
             );
@@ -3465,7 +3460,6 @@ $CIDRAM['AuxGenerateFEData'] = function (bool $Mode = false) use (&$CIDRAM): str
                 ['Redirect', 'optActRdr'],
                 ['Run', 'optActRun']
             ] as $Action) {
-
                 /** Skip action if the current rule doesn't use this action. */
                 if (empty($Data[$Action[0]])) {
                     continue;
@@ -3480,7 +3474,6 @@ $CIDRAM['AuxGenerateFEData'] = function (bool $Mode = false) use (&$CIDRAM): str
 
                 /** List all "not equals" conditions . */
                 if (!empty($Data[$Action[0]]['But not if matches'])) {
-
                     /** Iterate through sources. */
                     foreach ($Data[$Action[0]]['But not if matches'] as $Source => $Values) {
                         $ThisSource = isset($Sources[$Source]) ? $Sources[$Source] : $Source;
@@ -3496,7 +3489,6 @@ $CIDRAM['AuxGenerateFEData'] = function (bool $Mode = false) use (&$CIDRAM): str
 
                 /** List all "equals" conditions . */
                 if (!empty($Data[$Action[0]]['If matches'])) {
-
                     /** Iterate through sources. */
                     foreach ($Data[$Action[0]]['If matches'] as $Source => $Values) {
                         $ThisSource = isset($Sources[$Source]) ? $Sources[$Source] : $Source;
@@ -3555,16 +3547,44 @@ $CIDRAM['AuxGenerateFEData'] = function (bool $Mode = false) use (&$CIDRAM): str
  * Generate select options from an associative array.
  *
  * @param array $Options An associative array of the options to generate.
- * @param string $Trim An optional regex of data to remove from labels.
+ * @param string $Trim An optional regex of data to remove from the labels.
  * @return string The generated options.
  */
-$CIDRAM['GenerateOptions'] = function (array $Options, $Trim = '') {
+$CIDRAM['GenerateOptions'] = function (array $Options, string $Trim = '') use (&$CIDRAM): string {
     $Output = '';
     foreach ($Options as $Value => $Label) {
+        if (is_array($Label)) {
+            $Output .= $CIDRAM['GenerateOptions']($Label, $Trim);
+            continue;
+        }
+        $Label = $CIDRAM['L10N']->getString($Label) ?: $Label;
         if ($Trim) {
             $Label = preg_replace($Trim, '', $Label);
         }
         $Output .= '<option value="' . $Value . '">' . $Label . '</option>';
+    }
+    return $Output;
+};
+
+/**
+ * Generate labels from an associative array.
+ *
+ * @param array $Options An associative array of the labels to generate.
+ * @param string $Trim An optional regex of data to remove from the labels.
+ * @return array The generated labels.
+ */
+$CIDRAM['GenerateLabels'] = function (array $Options, string $Trim = '') use (&$CIDRAM): array {
+    $Output = [];
+    foreach ($Options as $Value => $Label) {
+        if (is_array($Label)) {
+            $Output = array_merge($Output, $CIDRAM['GenerateLabels']($Label, $Trim));
+            continue;
+        }
+        $Label = $CIDRAM['L10N']->getString($Label) ?: $Label;
+        if ($Trim) {
+            $Label = preg_replace($Trim, '', $Label);
+        }
+        $Output[$Value] = $Label;
     }
     return $Output;
 };
@@ -3683,7 +3703,6 @@ $CIDRAM['RGB'] = function (string $String = '', int $Mode = 0) {
  * @return string The string, modified if necessary.
  */
 $CIDRAM['LTRinRTF'] = function (string $String = '') use (&$CIDRAM): string {
-
     /** Get direction. */
     $Direction = (
         !isset($CIDRAM['L10N']) ||

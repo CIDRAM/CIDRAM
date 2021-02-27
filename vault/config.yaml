@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Configuration defaults file (last modified: 2021.02.20).
+# This file: Configuration defaults file (last modified: 2021.02.27).
 ##/
 
 Config Defaults:
@@ -585,3 +585,24 @@ Config Defaults:
    type: "string"
    default: ""
    autocomplete: "current-password"
+Provide:
+ Auxiliary Rules:
+  Sources:
+   BlockInfo:
+    IPAddr: "field_ipaddr"
+    IPAddrResolved: "field_ipaddr_resolved"
+    Query: "field_query"
+    Referrer: "field_referrer"
+    UA: "field_ua"
+    UALC: "field_ualc"
+    SignatureCount: "field_sigcount"
+    Signatures: "field_sigref"
+    WhyReason: "field_whyreason"
+    ReasonMessage: "field_reasonmessage"
+    rURI: "field_rURI"
+    Infractions: "field_infractions"
+    ASNLookup: "field_asnlookup"
+    CCLookup: "field_cclookup"
+    Verified: "field_verified"
+   Request_Method: "field_Request_Method"
+   Hostname: "field_hostname"

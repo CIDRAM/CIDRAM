@@ -128,3 +128,9 @@ var createNewRule = function() {
     document.getElementById('conditions').style.animation = ''
   }, 999)), e && z && document.getElementById('auxForm').submit()
 };
+
+function checkFlagsSelected() {
+  null !== window.auxFlags && window.auxFlags.forEach(function(e) {
+    document.getElementById(e).style.filter = document.getElementById(e).firstChild.checked ? 'grayscale(0)' : 'grayscale(.75)'
+  })
+}

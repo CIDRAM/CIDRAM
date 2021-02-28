@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: English language data for the front-end (last modified: 2021.02.16).
+# This file: English language data for the front-end (last modified: 2021.02.28).
 ##/
 
 Extended Description Bypasses: "The default signature bypass files normally included with the main package."
@@ -278,8 +278,11 @@ label_aux_name: "A name for the new rule:"
 label_aux_reason: "The reason given to the user when blocked:"
 label_aux_run: "The name of the file to run:"
 label_aux_special: "Other options and special flags:"
-label_aux_special_ip_tracking: "Forcibly disable IP tracking"
-label_aux_special_recaptcha: "Mark for use with reCAPTCHA"
+label_aux_special_default_state: "Leave it as is (don't set anything)"
+label_aux_special_ip_tracking_disable: "Forcibly disable IP tracking"
+label_aux_special_ip_tracking_enable: "Forcibly enable IP tracking"
+label_aux_special_recaptcha_disable: "Forcibly disable reCAPTCHA"
+label_aux_special_recaptcha_mark: "Mark for use with reCAPTCHA"
 label_aux_special_suppress: "Suppress output template"
 label_aux_target: "Where to redirect the request:"
 label_aux_webhooks: "Webhooks to apply when the rule requirements are met:"
@@ -332,7 +335,6 @@ label_sanity_check: "Sanity check: "
 label_sapi: "SAPI used:"
 label_see_also: "See also:"
 label_show: "Show"
-label_show_by_origin: "Show by origin"
 label_signature_type: "Signature type:"
 label_stable: "Latest stable:"
 label_sysinfo: "System information:"

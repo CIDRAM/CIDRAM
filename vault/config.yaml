@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Configuration defaults file (last modified: 2021.02.27).
+# This file: Configuration defaults file (last modified: 2021.02.28).
 ##/
 
 Config Defaults:
@@ -586,6 +586,16 @@ Config Defaults:
    default: ""
    autocomplete: "current-password"
 Provide:
+ Initialise SimulateBlockEvent:
+  Config:
+   recaptcha:
+    enabled: false
+  Suppress output template: false
+  Trackable: true
+  Flag Don't Log: false
+  Aux Redirect: ""
+  Aux Status Code: 200
+  Hostname: ""
  Auxiliary Rules:
   Sources:
    BlockInfo:
@@ -606,3 +616,38 @@ Provide:
     Verified: "field_verified"
    Request_Method: "field_Request_Method"
    Hostname: "field_hostname"
+  Flags:
+   reCAPTCHA:
+    Mark for use with reCAPTCHA:
+     Label: "label_aux_special_recaptcha_mark"
+     Decoration: "background-color:rgba(128,255,128,0.5);"
+     Sets:
+      Config:
+       recaptcha:
+        enabled: true
+    Forcibly disable reCAPTCHA:
+     Label: "label_aux_special_recaptcha_disable"
+     Decoration: "background-color:rgba(255,128,128,0.5);"
+     Sets:
+      Config:
+       recaptcha:
+        usemode: 0
+        enabled: false
+   Output template:
+    Empty: ""
+    Suppress output template:
+     Label: "label_aux_special_suppress"
+     Decoration: "background-color:rgba(255,128,128,0.5);"
+     Sets:
+      Suppress output template: true
+   IP Tracking:
+    Forcibly enable IP tracking:
+     Label: "label_aux_special_ip_tracking_enable"
+     Decoration: "background-color:rgba(128,255,128,0.5);"
+     Sets:
+      Trackable: true
+    Forcibly disable IP tracking:
+     Label: "label_aux_special_ip_tracking_disable"
+     Decoration: "background-color:rgba(255,128,128,0.5);"
+     Sets:
+      Trackable: false

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: French language data for the front-end (last modified: 2021.02.16).
+# This file: French language data for the front-end (last modified: 2021.02.28).
 ##/
 
 Extended Description Bypasses: "Les fichiers pour contourner les signatures standard qui sont normalement inclus dans le paquet principal."
@@ -278,8 +278,11 @@ label_aux_name: "Un nom pour la nouvelle règle :"
 label_aux_reason: "La raison donnée à l'utilisateur lorsqu'il est bloqué :"
 label_aux_run: "Le nom du fichier à exécuter :"
 label_aux_special: "Autres options et drapeaux spéciaux :"
-label_aux_special_ip_tracking: "Désactiver le surveillance d'IP par la force"
-label_aux_special_recaptcha: "Marquer pour une utilisation avec reCAPTCHA"
+label_aux_special_default_state: "Laissez-le tel quel (ne définissez rien)"
+label_aux_special_ip_tracking_disable: "Désactiver le surveillance d'IP par la force"
+label_aux_special_ip_tracking_enable: "Activer le surveillance d'IP par la force"
+label_aux_special_recaptcha_disable: "Désactiver reCAPTCHA par la force"
+label_aux_special_recaptcha_mark: "Marquer pour une utilisation avec reCAPTCHA"
 label_aux_special_suppress: "Supprimer le modèle de sortie"
 label_aux_target: "Où rediriger la requête :"
 label_aux_webhooks: "Webhooks à appliquer lorsque les exigences de la règle sont remplies :"
@@ -332,7 +335,6 @@ label_sanity_check: "Vérification de santé : "
 label_sapi: "SAPI utilisée :"
 label_see_also: "Voir également :"
 label_show: "Montrer"
-label_show_by_origin: "Montrer par origine"
 label_signature_type: "Type de signature :"
 label_stable: "Dernier stable :"
 label_sysinfo: "Informations sur le système :"

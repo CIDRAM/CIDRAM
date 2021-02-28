@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2021.02.27).
+ * This file: Front-end handler (last modified: 2021.02.28).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -3401,7 +3401,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-test' && $CIDRAM['FE']['Perm
                 $CIDRAM['ThisIP']['YesNo'] .= ' <span style="text-transform:capitalize">++' . $CIDRAM['L10N']->getString('label_aux_actLog') . '</span>';
             }
             if ($CIDRAM['Config']['recaptcha']['enabled']) {
-                $CIDRAM['ThisIP']['YesNo'] .= ' ++' . $CIDRAM['L10N']->getString('label_aux_special_recaptcha');
+                $CIDRAM['ThisIP']['YesNo'] .= ' ++' . $CIDRAM['L10N']->getString('label_aux_special_recaptcha_mark');
             }
             if ($CIDRAM['Suppress output template']) {
                 $CIDRAM['ThisIP']['YesNo'] .= ' ++' . $CIDRAM['L10N']->getString('label_aux_special_suppress');
@@ -3796,15 +3796,18 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'aux' && $CIDRAM['FE']['Permissi
         }
 
         /** Process other options and special flags. */
-        foreach ([
-            ['recaptchaEnabledTrue', 'Mark for use with reCAPTCHA'],
-            ['suppressOutputTemplate', 'Suppress output template'],
-            ['forciblyDisableIPTracking', 'Forcibly disable IP tracking']
-        ] as $CIDRAM['AuxSpecialFlag']) {
-            if (isset($_POST[$CIDRAM['AuxSpecialFlag'][0]]) && $_POST[$CIDRAM['AuxSpecialFlag'][0]] === 'on') {
-                $CIDRAM['AuxData'][$_POST['ruleName']][$CIDRAM['AuxSpecialFlag'][1]] = true;
+        foreach ($CIDRAM['Config']['Provide']['Auxiliary Rules']['Flags'] as $CIDRAM['FlagSetName'] => $CIDRAM['FlagSet']) {
+            $CIDRAM['FlagSetKey'] = preg_replace('~[^A-Za-z]~', '', $CIDRAM['FlagSetName']);
+            if (!isset($_POST[$CIDRAM['FlagSetKey']])) {
+                continue;
+            }
+            foreach ($CIDRAM['FlagSet'] as $CIDRAM['FlagName'] => $CIDRAM['FlagData']) {
+                if ($_POST[$CIDRAM['FlagSetKey']] === $CIDRAM['FlagName']) {
+                    $CIDRAM['AuxData'][$_POST['ruleName']][$CIDRAM['FlagName']] = true;
+                }
             }
         }
+        unset($CIDRAM['FlagData'], $CIDRAM['FlagName'], $CIDRAM['FlagSetKey'], $CIDRAM['FlagSet'], $CIDRAM['FlagSetName']);
 
         /** Possible actions (other than block). */
         $CIDRAM['Actions'] = [
@@ -3948,6 +3951,42 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'aux' && $CIDRAM['FE']['Permissi
             $CIDRAM['L10N']->getString('label_other')
         );
 
+        /** Provides the "other options and special flags" to the default view mode new rule creation. */
+        $CIDRAM['FE']['AuxFlagsProvides'] = '<div class="gridbox">';
+        $CIDRAM['GridID'] = 'AAA';
+        $CIDRAM['JSAuxAppend'] = '';
+        foreach ($CIDRAM['Config']['Provide']['Auxiliary Rules']['Flags'] as $CIDRAM['FlagSetName'] => $CIDRAM['FlagSet']) {
+            $CIDRAM['FlagKey'] = preg_replace('~[^A-Za-z]~', '', $CIDRAM['FlagSetName']);
+            foreach ($CIDRAM['FlagSet'] as $CIDRAM['FlagName'] => $CIDRAM['FlagData']) {
+                if (!is_array($CIDRAM['FlagData'])) {
+                    $CIDRAM['FE']['AuxFlagsProvides'] .= '<div class="gridboxitem"></div>';
+                    continue;
+                }
+                $CIDRAM['FE']['AuxFlagsProvides'] .= sprintf(
+                    '<label><div class="gridboxitem" style="%s" id="%s"><input type="radio" class="auto" name="%s" value="%s" onchange="javascript:checkFlagsSelected()" /> <strong>%s</strong></div></label>',
+                    ($CIDRAM['FlagData']['Decoration'] ?? '') . 'filter:grayscale(.75)',
+                    $CIDRAM['GridID'],
+                    $CIDRAM['FlagKey'],
+                    $CIDRAM['FlagName'],
+                    $CIDRAM['L10N']->getString($CIDRAM['FlagData']['Label']) ?: $CIDRAM['FlagData']['Label']
+                );
+                $CIDRAM['JSAuxAppend'] .= ($CIDRAM['JSAuxAppend'] ? ',' : '') . "'" . $CIDRAM['GridID'] . "'";
+                $CIDRAM['GridID']++;
+            }
+            $CIDRAM['FE']['AuxFlagsProvides'] .= sprintf(
+                '<label><div class="gridboxitem" style="%s" id="%s"><input type="radio" class="auto" name="%s" value="%s" onchange="javascript:checkFlagsSelected()" checked /> <strong>%s</strong></div></label>',
+                'background-color:rgba(128,128,255,0.5);filter:grayscale(0)',
+                $CIDRAM['GridID'],
+                $CIDRAM['FlagKey'],
+                'Default State',
+                $CIDRAM['L10N']->getString('label_aux_special_default_state')
+            );
+            $CIDRAM['JSAuxAppend'] .= ($CIDRAM['JSAuxAppend'] ? ',' : '') . "'" . $CIDRAM['GridID'] . "'";
+            $CIDRAM['GridID']++;
+        }
+        $CIDRAM['FE']['AuxFlagsProvides'] .= '</div><script type="text/javascript">window.auxFlags = ['. $CIDRAM['JSAuxAppend'] . ']</script>';
+        unset($CIDRAM['FlagData'], $CIDRAM['FlagName'], $CIDRAM['FlagKey'], $CIDRAM['FlagSet'], $CIDRAM['FlagSetName'], $CIDRAM['JSAuxAppend'], $CIDRAM['GridID']);
+
         /** Parse output. */
         $CIDRAM['FE']['FE_Content'] = $CIDRAM['ParseVars'](
             $CIDRAM['L10N']->Data + $CIDRAM['FE'],
@@ -4082,16 +4121,18 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'aux-edit' && $CIDRAM['FE']['Per
             $CIDRAM['NewAuxArr'][$_POST['ruleName'][$CIDRAM['Iterant']]]['SourceType'] = isset($_POST['conSourceType'][$CIDRAM['Iterant']]) ? $_POST['conSourceType'][$CIDRAM['Iterant']] : '';
             $CIDRAM['NewAuxArr'][$_POST['ruleName'][$CIDRAM['Iterant']]]['IfOrNot'] = isset($_POST['conIfOrNot'][$CIDRAM['Iterant']]) ? $_POST['conIfOrNot'][$CIDRAM['Iterant']] : '';
             $CIDRAM['NewAuxArr'][$_POST['ruleName'][$CIDRAM['Iterant']]]['SourceValue'] = isset($_POST['conSourceValue'][$CIDRAM['Iterant']]) ? $_POST['conSourceValue'][$CIDRAM['Iterant']] : '';
-            if (isset($_POST['recaptchaEnabledTrue'], $_POST['recaptchaEnabledTrue'][$CIDRAM['Iterant']]) && !empty($_POST['recaptchaEnabledTrue'][$CIDRAM['Iterant']])) {
-                $CIDRAM['NewAuxArr'][$_POST['ruleName'][$CIDRAM['Iterant']]]['Mark for use with reCAPTCHA'] = true;
-            }
-            if (isset($_POST['suppressOutputTemplate'], $_POST['suppressOutputTemplate'][$CIDRAM['Iterant']]) && !empty($_POST['suppressOutputTemplate'][$CIDRAM['Iterant']])) {
-                $CIDRAM['NewAuxArr'][$_POST['ruleName'][$CIDRAM['Iterant']]]['Suppress output template'] = true;
-            }
-            if (isset($_POST['forciblyDisableIPTracking'], $_POST['forciblyDisableIPTracking'][$CIDRAM['Iterant']]) && !empty($_POST['forciblyDisableIPTracking'][$CIDRAM['Iterant']])) {
-                $CIDRAM['NewAuxArr'][$_POST['ruleName'][$CIDRAM['Iterant']]]['Forcibly disable IP tracking'] = true;
+            foreach ($CIDRAM['Config']['Provide']['Auxiliary Rules']['Flags'] as $CIDRAM['FlagSetName'] => $CIDRAM['FlagSet']) {
+                $CIDRAM['FlagSetKey'] = preg_replace('~[^A-Za-z]~', '', $CIDRAM['FlagSetName']);
+                if (!empty($_POST[$CIDRAM['FlagSetKey']][$CIDRAM['Iterant']])) {
+                    foreach ($CIDRAM['FlagSet'] as $CIDRAM['FlagName'] => $CIDRAM['FlagData']) {
+                        if ($_POST[$CIDRAM['FlagSetKey']][$CIDRAM['Iterant']] === $CIDRAM['FlagName']) {
+                            $CIDRAM['NewAuxArr'][$_POST['ruleName'][$CIDRAM['Iterant']]][$CIDRAM['FlagName']] = true;
+                        }
+                    }
+                }
             }
         }
+        unset($CIDRAM['FlagData'], $CIDRAM['FlagName'], $CIDRAM['FlagSetKey'], $CIDRAM['FlagSetName'], $CIDRAM['FlagSet']);
         uasort($CIDRAM['NewAuxArr'], function ($A, $B) {
             if ($A['Priority'] === $B['Priority']) {
                 return 0;

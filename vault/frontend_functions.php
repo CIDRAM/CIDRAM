@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2021.02.27).
+ * This file: Front-end functions file (last modified: 2021.02.28).
  */
 
 /**
@@ -909,26 +909,17 @@ $CIDRAM['SimulateBlockEvent'] = function ($Addr, $Modules = false, $Aux = false,
     /** Reset bypass flags (needed to prevent falsing due to search engine verification). */
     $CIDRAM['ResetBypassFlags']();
 
-    /** Reset mark for use with reCAPTCHA flag. */
-    $CIDRAM['Config']['recaptcha']['enabled'] = false;
-
-    /** Reset suppress output template flag. */
-    $CIDRAM['Suppress output template'] = false;
+    /** Initialise SimulateBlockEvent. */
+    foreach ($CIDRAM['Config']['Provide']['Initialise SimulateBlockEvent'] as $InitialiseKey => $InitialiseValue) {
+        if (is_array($InitialiseValue)) {
+            $CIDRAM[$InitialiseKey] = array_replace_recursive($CIDRAM[$InitialiseKey], $InitialiseValue);
+            continue;
+        }
+        $CIDRAM[$InitialiseKey] = $InitialiseValue;
+    }
 
     /** To be populated by webhooks. */
     $CIDRAM['Webhooks'] = [];
-
-    /** Reset "don't log" flag. */
-    $CIDRAM['Flag Don\'t Log'] = false;
-
-    /** Reset "redirect" flag. */
-    $CIDRAM['Aux Redirect'] = '';
-
-    /** Reset "status code" flag. */
-    $CIDRAM['Aux Status Code'] = 200;
-
-    /** Reset hostname (needed to prevent falsing due to repeat module calls involving hostname lookups). */
-    $CIDRAM['Hostname'] = '';
 
     /** Populate BlockInfo. */
     $CIDRAM['BlockInfo'] = [
@@ -3181,6 +3172,12 @@ $CIDRAM['AuxGenerateFEData'] = function ($Mode = false) use (&$CIDRAM) {
         );
     };
 
+    /** Used to generate IDs for radio fields. */
+    $GridID = 'AAAA';
+
+    /** Used to link radio field IDs with checkFlagsSelected. */
+    $JSAuxAppend = '';
+
     /** Iterate through the auxiliary rules. */
     foreach ($CIDRAM['AuxData'] as $Name => $Data) {
         /** Rule row ID. */
@@ -3381,20 +3378,54 @@ $CIDRAM['AuxGenerateFEData'] = function ($Mode = false) use (&$CIDRAM) {
             );
 
             /** Other options and special flags. */
-            $Output .= sprintf(
-                '<dl><dt>%5$srecaptchaEnabledTrue[%1$s]"%6$s /> %2$s<br />%5$ssuppressOutputTemplate[%1$s]"%7$s /> %3$s<br />%5$sforciblyDisableIPTracking[%1$s]"%8$s /> %4$s</dt></dl>',
-                $Current,
-                $CIDRAM['L10N']->getString('label_aux_special_recaptcha'),
-                $CIDRAM['L10N']->getString('label_aux_special_suppress'),
-                $CIDRAM['L10N']->getString('label_aux_special_ip_tracking'),
-                '<input type="checkbox" class="auto" name="',
-                empty($Data['Mark for use with reCAPTCHA']) ? '' : ' checked',
-                empty($Data['Suppress output template']) ? '' : ' checked',
-                empty($Data['Forcibly disable IP tracking']) ? '' : ' checked'
-            );
+            $Output .= '<div class="gridbox">';
+            foreach ($CIDRAM['Config']['Provide']['Auxiliary Rules']['Flags'] as $FlagSetName => $FlagSet) {
+                $FlagKey = preg_replace('~[^A-Za-z]~', '', $FlagSetName);
+                $UseDefaultState = true;
+                foreach ($FlagSet as $FlagName => $FlagData) {
+                    if (!is_array($FlagData)) {
+                        $Output .= '<div class="gridboxitem"></div>';
+                        continue;
+                    }
+                    $Label = $CIDRAM['L10N']->getString($FlagData['Label']) ?: $FlagData['Label'];
+                    $Filter = isset($FlagData['Decoration']) ? $FlagData['Decoration'] : '';
+                    if (empty($Data[$FlagName])) {
+                        $Filter .= 'filter:grayscale(.75)';
+                        $ThisSelected = '';
+                    } else {
+                        $Filter .= 'filter:grayscale(0)';
+                        $ThisSelected = ' checked';
+                        $UseDefaultState = false;
+                    }
+                    $Output .= sprintf(
+                        '<label><div class="gridboxitem" style="%1$s" id="%6$s"><input type="radio" class="auto" name="%2$s[%3$d]" value="%4$s" onchange="javascript:checkFlagsSelected()"%7$s /> <strong>%5$s</strong></div></label>',
+                        $Filter,
+                        $FlagKey,
+                        $Current,
+                        $FlagName,
+                        $Label,
+                        $GridID,
+                        $ThisSelected
+                    );
+                    $JSAuxAppend .= ($JSAuxAppend ? ',' : '') . "'" . $GridID . "'";
+                    $GridID++;
+                }
+                $Output .= sprintf(
+                    '<label><div class="gridboxitem" style="%1$s" id="%6$s"><input type="radio" class="auto" name="%2$s[%3$d]" value="%4$s" onchange="javascript:checkFlagsSelected()"%7$s /> <strong>%5$s</strong></div></label>',
+                    'background-color:rgba(128,128,255,0.5);' . ($UseDefaultState ? 'filter:grayscale(0)' : 'filter:grayscale(.75)'),
+                    $FlagKey,
+                    $Current,
+                    'Default State',
+                    $CIDRAM['L10N']->getString('label_aux_special_default_state'),
+                    $GridID,
+                    $UseDefaultState ? ' checked' : ''
+                );
+                $JSAuxAppend .= ($JSAuxAppend ? ',' : '') . "'" . $GridID . "'";
+                $GridID++;
+            }
 
             /** Finish writing new rule. */
-            $Output .= '</dd></dl></div>';
+            $Output .= '</div></dd></dl></div>';
             $Current++;
         } else {
             /** Figure out which options are available for the rule. */
@@ -3437,21 +3468,6 @@ $CIDRAM['AuxGenerateFEData'] = function ($Mode = false) use (&$CIDRAM) {
             /** Display the status code to be applied. */
             if (!empty($Data['Status Code']) && $Data['Status Code'] > 200 && $StatusCode = $CIDRAM['GetStatusHTTP']($Data['Status Code'])) {
                 $Output .= "\n            <li><dl><dt class=\"s\">" . $CIDRAM['L10N']->getString('label_aux_http_status_code_override') . '</dt><dd>' . $Data['Status Code'] . ' ' . $StatusCode . '</dd></dl></li>';
-            }
-
-            /** Display other options and special flags. */
-            $Flags = [];
-            foreach ([
-                ['Mark for use with reCAPTCHA', 'label_aux_special_recaptcha'],
-                ['Suppress output template', 'label_aux_special_suppress'],
-                ['Forcibly disable IP tracking', 'label_aux_special_ip_tracking']
-            ] as $Flag) {
-                if (!empty($Data[$Flag[0]]) && $Label = $CIDRAM['L10N']->getString($Flag[1])) {
-                    $Flags[] = $Label;
-                }
-            }
-            if (count($Flags)) {
-                $Output .= "\n            <li><dl><dt class=\"s\">" . $CIDRAM['L10N']->getString('label_aux_special') . '</dt><dd>' . implode('<br />', $Flags) . '</dd></dl></li>';
             }
 
             /** Iterate through actions. */
@@ -3515,6 +3531,23 @@ $CIDRAM['AuxGenerateFEData'] = function ($Mode = false) use (&$CIDRAM) {
                 $Output .= "\n            <li><dl><dt class=\"s\">" . $Label . '</dt><dd>' . $Data['Run']['File'] . '</dd></dl></li>';
             }
 
+            /** Display other options and special flags. */
+            $Flags = [];
+            foreach ($CIDRAM['Config']['Provide']['Auxiliary Rules']['Flags'] as $FlagSetName => $FlagSet) {
+                foreach ($FlagSet as $FlagName => $FlagData) {
+                    if (!is_array($FlagData) || empty($FlagData['Label'])) {
+                        continue;
+                    }
+                    $Label = $CIDRAM['L10N']->getString($FlagData['Label']) ?: $FlagData['Label'];
+                    if (!empty($Data[$FlagName])) {
+                        $Flags[] = $Label;
+                    }
+                }
+            }
+            if (count($Flags)) {
+                $Output .= "\n            <li><dl><dt class=\"s\">" . $CIDRAM['L10N']->getString('label_aux_special') . '</dt><dd>' . implode('<br />', $Flags) . '</dd></dl></li>';
+            }
+
             /** Show the method to be used. */
             $Output .= "\n            <li><dl><dt><em>" . (isset($Data['Method']) ? (
                 $Data['Method'] === 'RegEx' ? $CIDRAM['FE']['optMtdReg'] : (
@@ -3544,7 +3577,7 @@ $CIDRAM['AuxGenerateFEData'] = function ($Mode = false) use (&$CIDRAM) {
     };
 
     /** Exit with generated output. */
-    return $Output . '<script type="text/javascript">' . $JSAppend . '</script>';
+    return $Output . '<script type="text/javascript">window.auxFlags = ['. $JSAuxAppend . '];' . $JSAppend . '</script>';
 };
 
 /**

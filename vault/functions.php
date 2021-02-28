@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2021.02.27).
+ * This file: Functions file (last modified: 2021.02.28).
  */
 
 /**
@@ -1907,19 +1907,20 @@ $CIDRAM['AuxAction'] = function ($Action, $Name, $Reason = '', $Target = '', $St
         $CIDRAM['Webhooks'] = isset($CIDRAM['Webhooks']) ? array_merge($CIDRAM['Webhooks'], $Webhooks) : $Webhooks;
     }
 
-    /** Apply mark for use with reCAPTCHA flag. */
-    if (!empty($Flags['Mark for use with reCAPTCHA'])) {
-        $CIDRAM['Config']['recaptcha']['enabled'] = true;
-    }
-
-    /** Apply suppress output template flag. */
-    if (!empty($Flags['Suppress output template'])) {
-        $CIDRAM['Suppress output template'] = true;
-    }
-
-    /** Forcibly disable IP tracking. */
-    if (!empty($Flags['Forcibly disable IP tracking']) && !empty($CIDRAM['Trackable'])) {
-        $CIDRAM['Trackable'] = false;
+    /** Process other options and special flags. */
+    foreach ($CIDRAM['Config']['Provide']['Auxiliary Rules']['Flags'] as $FlagSetName => $FlagSet) {
+        foreach ($FlagSet as $FlagName => $FlagData) {
+            if (empty($Flags[$FlagName]) || empty($FlagData['Sets']) || !is_array($FlagData['Sets'])) {
+                continue;
+            }
+            foreach ($FlagData['Sets'] as $SetKey => $SetData) {
+                if (is_array($SetData)) {
+                    $CIDRAM[$SetKey] = array_replace_recursive($CIDRAM[$SetKey], $SetData);
+                    continue;
+                }
+                $CIDRAM[$SetKey] = $SetData;
+            }
+        }
     }
 
     $RunExitCode = 0;

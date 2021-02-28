@@ -1,8 +1,8 @@
 # IPv4 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv4_isps.dat
 
-# Version: 2021.57.134
-# Last modified: 2021.02.27
+# Version: 2021.58.204
+# Last modified: 2021.02.28
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage, i.e., with ignore.dat, with reCAPTCHA, with "extended rules" (default bypasses): « [ ]Low [x]Medium [ ]High »
@@ -252,30 +252,33 @@ Tag: World4You
 
 
 # ASN 202425 ("IP Volume inc").
-# Stop Forum Spam (SFS) listings: 4,280.
-# Updated: 2020.12.20
+# Stop Forum Spam (SFS) listings: 3,941.
+# Updated: 2021.02.28
 
-45.129.33.0/24 Deny Generic
+185.236.11.0/24 Deny Spam
 Origin: DE
-80.82.64.0/22 Deny Generic
-80.82.68.0/23 Deny Generic
-80.82.70.0/24 Deny Generic
-80.82.76.0/22 Deny Generic
-89.248.160.0/21 Deny Generic
-89.248.168.0/22 Deny Generic
-89.248.172.0/23 Deny Generic
-89.248.174.0/24 Deny Generic
-93.174.88.0/21 Deny Generic
-94.102.48.0/20 Deny Generic
+80.82.64.0/22 Deny Spam
+80.82.68.0/23 Deny Spam
+80.82.70.0/24 Deny Spam
+80.82.76.0/22 Deny Spam
+89.248.160.0/21 Deny Spam
+89.248.168.0/22 Deny Spam
+89.248.172.0/23 Deny Spam
+89.248.174.0/24 Deny Spam
+93.174.88.0/21 Deny Spam
+94.102.48.0/20 Deny Spam
 Origin: GB
-194.156.207.0/24 Deny Generic
+194.147.140.0/24 Deny Spam
+Origin: IR
+194.156.207.0/24 Deny Spam
 Origin: RO
-5.8.18.0/24 Deny Generic
-145.249.104.0/22 Deny Generic
+5.8.18.0/24 Deny Spam
+45.134.13.0/24 Deny Spam
+145.249.104.0/22 Deny Spam
 Origin: RU
-196.16.0.0/14 Deny Generic
+196.16.0.0/14 Deny Spam
 Origin: SC
-41.216.186.0/24 Deny Generic
+41.216.186.0/24 Deny Spam
 Origin: ZA
 Tag: IP Volume inc
 
@@ -13273,47 +13276,47 @@ recaptcha:
 
 
 # ASN 6697 ("Republican Unitary Telecommunication Enterprise Beltelecom").
-# A Belarusian domestic ISP and a significant source of spam. Will attempt to
-# list only the worst affected ranges (i.e., not the entire network), to reduce
-# the risk of false positives. (Affected ranged are slowly edging towards the
-# entire network. Might stop being selective at the next update if it's still
-# getting worse at that point).
-# Stop Forum Spam (SFS) listings: 18,431.
-# Updated: 2020.08.27
+# Belarusian domestic ISP and a significant source of spam.
+# Stop Forum Spam (SFS) listings: 19,721.
+# Updated: 2021.02.28
 
-37.44.71.0/24 Deny Spam
-37.44.73.0/24 Deny Spam
+37.44.64.0/18 Deny Spam
 37.45.0.0/16 Deny Spam
-37.212.0.0/16 Deny Spam
-37.214.140.243/32 Deny Spam
-37.214.201.0/24 Deny Spam
-37.214.226.0/24 Deny Spam
-37.215.19.46/32 Deny Spam
-37.215.56.6/32 Deny Spam
-37.215.137.18/32 Deny Spam
-37.215.244.31/32 Deny Spam
-86.57.165.28/32 Deny Spam
-86.57.177.8/32 Deny Spam
-93.84.131.0/24 Deny Spam
-93.85.136.0/24 Deny Spam
-93.85.150.39/32 Deny Spam
-178.120.216.0/24 Deny Spam
-178.120.238.0/24 Deny Spam
-178.121.117.160/32 Deny Spam
-178.121.122.0/24 Deny Spam
-178.121.233.176/32 Deny Spam
-178.122.64.0/24 Deny Spam
-178.122.90.0/24 Deny Spam
-178.122.115.16/32 Deny Spam
-178.122.198.220/32 Deny Spam
-178.123.51.0/24 Deny Spam
-178.124.14.67/32 Deny Spam
-178.125.29.0/24 Deny Spam
-178.127.48.0/20 Deny Spam
-178.127.64.0/18 Deny Spam
-178.127.176.0/20 Deny Spam
-178.127.192.0/18 Deny Spam
+37.212.0.0/14 Deny Spam
+82.209.192.0/18 Deny Spam
+86.57.128.0/17 Deny Spam
+91.149.157.0/24 Deny Spam
+91.149.166.0/24 Deny Spam
+91.149.189.0/24 Deny Spam
+93.84.0.0/15 Deny Spam
+93.125.30.0/23 Deny Spam
+93.125.38.0/24 Deny Spam
+93.125.48.0/24 Deny Spam
+93.125.53.0/24 Deny Spam
+93.125.71.0/24 Deny Spam
+93.125.99.0/24 Deny Spam
+178.120.0.0/13 Deny Spam
+178.159.240.0/21 Deny Spam
+178.172.148.0/24 Deny Spam
+178.172.160.0/22 Deny Spam
+178.172.172.0/23 Deny Spam
+178.172.201.0/24 Deny Spam
+178.172.235.0/24 Deny Spam
+178.172.236.0/24 Deny Spam
+178.172.244.0/24 Deny Spam
+178.172.250.0/24 Deny Spam
+178.172.254.0/24 Deny Spam
+185.66.68.0/23 Deny Spam
+185.66.71.0/24 Deny Spam
+185.152.136.0/22 Deny Spam
+194.158.192.0/19 Deny Spam
+195.137.160.0/24 Deny Spam
+217.21.45.0/24 Deny Spam
 Origin: BY
+5.188.7.0/24 Deny Spam
+Origin: LU
+194.226.121.0/24 Deny Spam
+Origin: RU
 Tag: Beltelecom
 ---
 recaptcha:
@@ -15043,15 +15046,39 @@ Tag: Global Offshore Limited
 
 
 # ASN 5511 ("Orange S.A").
-# Spam originating from some specific, narrow ranges at this network. Just
-# blocking the currently affected ranges only ("ZSCALER, INC") and any residual
-# affected addresses.
-# Note: The network itself is French, but all the currently affected ranges are
-# based in the US, hence the US origin tag.
+# French domestic ISP. Listing just the affected ranges/addresses, plus all
+# US+NL ranges (cloud).
 # Stop Forum Spam (SFS) listings: 231.
-# Updated: 2020.08.27
+# Updated: 2021.02.28
 
-165.225.204.0/23 Deny Spam
+2.16.40.0/23 Deny Cloud
+2.22.160.0/19 Deny Cloud
+88.221.128.0/21 Deny Cloud
+95.101.32.0/22 Deny Cloud
+Origin: NL
+23.51.64.0/20 Deny Cloud
+23.55.48.0/21 Deny Cloud
+62.229.0.0/16 Deny Cloud
+66.96.32.0/19 Deny Cloud
+66.112.128.0/20 Deny Cloud
+104.73.174.0/23 Deny Cloud
+104.73.240.0/20 Deny Cloud
+104.76.144.0/20 Deny Cloud
+137.83.138.0/24 Deny Cloud
+165.225.204.0/23 Deny Cloud
+184.28.226.0/23 Deny Cloud
+184.29.12.0/23 Deny Cloud
+184.29.52.0/23 Deny Cloud
+184.29.192.0/20 Deny Cloud
+184.85.96.0/20 Deny Cloud
+184.85.224.0/22 Deny Cloud
+194.133.0.0/16 Deny Cloud
+196.27.0.0/18 Deny Cloud
+200.30.0.0/18 Deny Cloud
+204.59.0.0/16 Deny Cloud
+206.48.0.0/15 Deny Cloud
+209.88.0.0/16 Deny Cloud
+216.72.0.0/16 Deny Cloud
 Origin: US
 Tag: Orange S.A
 
@@ -16941,6 +16968,27 @@ recaptcha:
 222.232.81.85/32 Deny Spam
 Origin: KR
 Tag: SK Broadband Co Ltd
+---
+recaptcha:
+ enabled: true
+
+
+# ASN 51200 ("LLC Digital Dialogue-Nets").
+# Russian domestic ISP caught spamming.
+# Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 1,015.
+# Updated: 2021.02.28
+
+91.230.136.0/22 Deny Spam
+92.241.15.0/24 Deny Spam
+92.241.17.0/24 Deny Spam
+92.241.19.0/24 Deny Spam
+92.241.20.0/24 Deny Spam
+185.216.194.0/23 Deny Spam
+194.156.184.14/32 Deny Spam
+194.226.109.0/24 Deny Spam
+Origin: RU
+Tag: LLC Digital Dialogue-Nets
 ---
 recaptcha:
  enabled: true

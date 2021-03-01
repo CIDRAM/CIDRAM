@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2021.02.28).
+ * This file: Functions file (last modified: 2021.03.01).
  */
 
 /** Autoloader for CIDRAM classes. */
@@ -384,13 +384,18 @@ $CIDRAM['CheckFactors'] = function (array $Files, array $Factors) use (&$CIDRAM)
                     $CIDRAM['BlockInfo']['Ignored'] .= $CIDRAM['BlockInfo']['Ignored'] ? ', ' . $Tag : $Tag;
                     continue;
                 }
-                $Origin = $CIDRAM['Getter']($Files[$FileIndex], $PosA, 'Origin', '');
-                if ($Origin) {
+                if ($Origin = $CIDRAM['Getter']($Files[$FileIndex], $PosA, 'Origin', '')) {
                     if (!empty($CIDRAM['Ignore'][$Tag . ':' . $Origin])) {
                         $CIDRAM['BlockInfo']['Ignored'] .= $CIDRAM['BlockInfo']['Ignored'] ? ', ' . $Tag . ':' . $Origin : $Tag . ':' . $Origin;
                         continue;
                     }
                     $Origin = ', [' . $Origin . ']';
+                }
+                if ($Profile = $CIDRAM['Getter']($Files[$FileIndex], $PosA, 'Profile', '')) {
+                    if (!isset($CIDRAM['Profile'])) {
+                        $CIDRAM['Profile'] = [];
+                    }
+                    $CIDRAM['Profile'][] = $Profile;
                 }
                 if (
                     ($PosX = strpos($Files[$FileIndex], "\n---\n", $PosA)) &&
@@ -1915,9 +1920,6 @@ $CIDRAM['AuxAction'] = function (string $Action, string $Name, string $Reason = 
                 trigger_error($CIDRAM['L10N']->getString('Error_MissingRequire'), E_USER_WARNING);
             }
         }
-        if ($RunExitCode === 0) {
-            return true;
-        }
     }
 
     /** Whitelist. */
@@ -1957,6 +1959,14 @@ $CIDRAM['AuxAction'] = function (string $Action, string $Name, string $Reason = 
         }
     }
 
+    /** Profile the request. */
+    elseif ($Action === 'Profile') {
+        if (!isset($CIDRAM['Profile'])) {
+            $CIDRAM['Profile'] = [];
+        }
+        $CIDRAM['Profile'][] = $Name;
+    }
+
     /** Exit. */
     return false;
 };
@@ -1982,7 +1992,7 @@ $CIDRAM['Aux'] = function () use (&$CIDRAM) {
     }
 
     /** Potential modes. */
-    static $Modes = ['Whitelist', 'Greylist', 'Block', 'Bypass', 'Don\'t log', 'Redirect', 'Run'];
+    static $Modes = ['Whitelist', 'Greylist', 'Block', 'Bypass', 'Don\'t log', 'Redirect', 'Run', 'Profile'];
 
     /** Attempt to parse the auxiliary rules file. */
     if (!isset($CIDRAM['AuxData'])) {

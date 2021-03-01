@@ -919,6 +919,9 @@ $CIDRAM['SimulateBlockEvent'] = function (string $Addr, bool $Modules = false, b
     /** To be populated by webhooks. */
     $CIDRAM['Webhooks'] = [];
 
+    /** Reset request profiling. */
+    $CIDRAM['Profile'] = [];
+
     /** Populate BlockInfo. */
     $CIDRAM['BlockInfo'] = [
         'ID' => $CIDRAM['GenerateID'](),
@@ -3263,7 +3266,8 @@ $CIDRAM['AuxGenerateFEData'] = function (bool $Mode = false) use (&$CIDRAM): str
                 ['actByp', 'optActByp', 'Bypass'],
                 ['actLog', 'optActLog', 'Don\'t log'],
                 ['actRdr', 'optActRdr', 'Redirect'],
-                ['actRun', 'optActRun', 'Run']
+                ['actRun', 'optActRun', 'Run'],
+                ['actPro', 'optActPro', 'Profile']
             ] as $MenuOption) {
                 $Output .= sprintf(
                     '<option value="%1$s"%2$s>%3$s</option>',
@@ -3481,7 +3485,8 @@ $CIDRAM['AuxGenerateFEData'] = function (bool $Mode = false) use (&$CIDRAM): str
                 ['Bypass', 'optActByp'],
                 ['Don\'t log', 'optActLog'],
                 ['Redirect', 'optActRdr'],
-                ['Run', 'optActRun']
+                ['Run', 'optActRun'],
+                ['Profile', 'optActPro']
             ] as $Action) {
                 /** Skip action if the current rule doesn't use this action. */
                 if (empty($Data[$Action[0]])) {
@@ -3652,6 +3657,7 @@ $CIDRAM['PopulateMethodsActions'] = function () use (&$CIDRAM) {
     $CIDRAM['FE']['optActLog'] = sprintf($CIDRAM['L10N']->getString('label_aux_menu_action'), $CIDRAM['L10N']->getString('label_aux_actLog'));
     $CIDRAM['FE']['optActRdr'] = sprintf($CIDRAM['L10N']->getString('label_aux_menu_action'), $CIDRAM['L10N']->getString('label_aux_actRdr'));
     $CIDRAM['FE']['optActRun'] = sprintf($CIDRAM['L10N']->getString('label_aux_menu_action'), $CIDRAM['L10N']->getString('label_aux_actRun'));
+    $CIDRAM['FE']['optActPro'] = sprintf($CIDRAM['L10N']->getString('label_aux_menu_action'), $CIDRAM['L10N']->getString('label_aux_actPro'));
 
     /** Populate sources. */
     $CIDRAM['FE']['conSources'] = $CIDRAM['GenerateOptions']($CIDRAM['Config']['Provide']['Auxiliary Rules']['Sources'], '~(?: | )?(?:：|:) ?$~');

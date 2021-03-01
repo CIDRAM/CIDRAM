@@ -116,7 +116,7 @@ if ($CIDRAM['Protect'] && !$CIDRAM['Config']['general']['maintenance_mode']) {
 
     /** Run all IPv4/IPv6 tests. */
     try {
-        $CIDRAM['TestResults'] = $CIDRAM['RunTests']($CIDRAM['BlockInfo']['IPAddr'], $CIDRAM['RL_Active']);
+        $CIDRAM['TestResults'] = $CIDRAM['RunTests']($CIDRAM['BlockInfo']['IPAddr'], true);
     } catch (\Exception $e) {
         $CIDRAM['Events']->fireEvent('final');
         die($e->getMessage());
@@ -125,7 +125,7 @@ if ($CIDRAM['Protect'] && !$CIDRAM['Config']['general']['maintenance_mode']) {
     /** Run all IPv4/IPv6 tests for resolved IP address if necessary. */
     if ($CIDRAM['BlockInfo']['IPAddrResolved'] && $CIDRAM['TestResults'] && empty($CIDRAM['Whitelisted'])) {
         try {
-            $CIDRAM['TestResults'] = $CIDRAM['RunTests']($CIDRAM['BlockInfo']['IPAddrResolved'], $CIDRAM['RL_Active']);
+            $CIDRAM['TestResults'] = $CIDRAM['RunTests']($CIDRAM['BlockInfo']['IPAddrResolved'], true);
         } catch (\Exception $e) {
             $CIDRAM['Events']->fireEvent('final');
             die($e->getMessage());

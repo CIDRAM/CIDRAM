@@ -1830,11 +1830,26 @@ $CIDRAM['GetStatusHTTP'] = function ($Status) {
  * Used for matching auxiliary rule criteria.
  *
  * @param string|array $Criteria The criteria to accept for the match.
- * @param string $Actual The actual value we're trying to match.
+ * @param mixed $Actual The actual value we're trying to match.
  * @param string $Method The method for handling data when matching.
  * @return bool Match succeeded (true) or failed (false).
  */
 $CIDRAM['AuxMatch'] = function ($Criteria, $Actual, $Method = '') use (&$CIDRAM) {
+    /** Recurse through actual values if an array. */
+    if (is_array($Actual)) {
+        foreach ($Actual as $ThisActual) {
+            if ($CIDRAM['AuxMatch']($Criteria, $ThisActual, $Method)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /** Guard against non-scalar values. */
+    if (!is_scalar($Actual)) {
+        return false;
+    }
+
     /** Normalise criteria to an array. */
     if (!is_array($Criteria)) {
         $Criteria = [$Criteria];

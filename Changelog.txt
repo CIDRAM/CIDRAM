@@ -103,6 +103,15 @@ Detailed version release guidelines for CIDRAM can be found at:
   the already existing options available, improved its aesthetics, and
   refactored the relevant code to make it more efficient and more extensible.
 
+- [2021.03.01; NEW FEATURE; Maikuolan]: Added a request profiling mechanism to
+  the CIDRAM codebase. The profiling mechanism can be leveraged through
+  standard signature files, through modules, or through auxiliary rules. This
+  mechanism allows easier debugging of specific addresses or signatures when
+  testing an address via the front-test IP test page, and allows the
+  possibility of creating more complex auxiliary rules by way of seamlessly
+  chaining more simpler rules together to accomplish a task or creating rules
+  that utilise one or more flags without performing any other notable action.
+
 === Version/Release 1.17.4 ===
 PATCH RELEASE.
 

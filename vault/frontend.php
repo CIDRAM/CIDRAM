@@ -3409,6 +3409,11 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-test' && $CIDRAM['FE']['Perm
             if ($CIDRAM['Suppress output template']) {
                 $CIDRAM['ThisIP']['YesNo'] .= ' ++' . $CIDRAM['L10N']->getString('label_aux_special_suppress');
             }
+            if (isset($CIDRAM['Profile']) && is_array($CIDRAM['Profile']) && count($CIDRAM['Profile'])) {
+                foreach ($CIDRAM['Profile'] as $CIDRAM['ThisProfile']) {
+                    $CIDRAM['ThisIP']['YesNo'] .= ' ++&lt;' . $CIDRAM['ThisProfile'] . '&gt;';
+                }
+            }
             $CIDRAM['FE']['IPTestResults'] .= $CIDRAM['ParseVars'](
                 $CIDRAM['L10N']->Data + $CIDRAM['ThisIP'],
                 $CIDRAM['FE']['IPTestRow']
@@ -3820,6 +3825,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'aux' && $CIDRAM['FE']['Permissi
             'actLog' => 'Don\'t log',
             'actRdr' => 'Redirect',
             'actRun' => 'Run',
+            'actPro' => 'Profile'
         ];
 
         /** Determine appropriate action for new rule. */
@@ -3918,7 +3924,8 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'aux' && $CIDRAM['FE']['Permissi
             $CIDRAM['L10N']->getString('label_aux_actByp'),
             $CIDRAM['L10N']->getString('label_aux_actLog'),
             $CIDRAM['L10N']->getString('label_aux_actRdr'),
-            $CIDRAM['L10N']->getString('label_aux_actRun')
+            $CIDRAM['L10N']->getString('label_aux_actRun'),
+            $CIDRAM['L10N']->getString('label_aux_actPro')
         );
 
         /** Priority information about status codes. */
@@ -4130,6 +4137,8 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'aux-edit' && $CIDRAM['FE']['Per
                 $CIDRAM['Data']['Action'] = 'Redirect';
             } elseif ($CIDRAM['Data']['Action'] === 'actRun') {
                 $CIDRAM['Data']['Action'] = 'Run';
+            } elseif ($CIDRAM['Data']['Action'] === 'actPro') {
+                $CIDRAM['Data']['Action'] = 'Profile';
             }
             if (is_array($CIDRAM['Data']['SourceType'])) {
                 foreach ($CIDRAM['Data']['SourceType'] as $CIDRAM['IterantInner'] => $CIDRAM['DataInner']) {

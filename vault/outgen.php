@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Output generator (last modified: 2021.02.05).
+ * This file: Output generator (last modified: 2021.03.01).
  */
 
 /** Initialise cache. */
@@ -25,6 +25,9 @@ $CIDRAM['ResetBypassFlags']();
 
 /** To be populated by webhooks. */
 $CIDRAM['Webhooks'] = [];
+
+/** Reset request profiling. */
+$CIDRAM['Profile'] = [];
 
 /** Initialise statistics if necessary. */
 if ($CIDRAM['Config']['general']['statistics']) {

@@ -922,6 +922,9 @@ $CIDRAM['SimulateBlockEvent'] = function (string $Addr, bool $Modules = false, b
     /** Reset request profiling. */
     $CIDRAM['Profile'] = [];
 
+    /** Reset factors. */
+    $CIDRAM['Factors'] = [];
+
     /** Populate BlockInfo. */
     $CIDRAM['BlockInfo'] = [
         'ID' => $CIDRAM['GenerateID'](),
@@ -955,7 +958,7 @@ $CIDRAM['SimulateBlockEvent'] = function (string $Addr, bool $Modules = false, b
     /** Standard IP check. */
     try {
         $CIDRAM['Caught'] = false;
-        $CIDRAM['TestResults'] = $CIDRAM['RunTests']($Addr);
+        $CIDRAM['TestResults'] = $CIDRAM['RunTests']($Addr, true);
     } catch (\Exception $e) {
         $CIDRAM['Caught'] = true;
     }
@@ -966,7 +969,7 @@ $CIDRAM['SimulateBlockEvent'] = function (string $Addr, bool $Modules = false, b
             $CIDRAM['ThisIP']['IPAddress'] .= ' (' . $CIDRAM['BlockInfo']['IPAddrResolved'] . ')';
         }
         try {
-            $CIDRAM['TestResults'] = ($CIDRAM['RunTests']($CIDRAM['BlockInfo']['IPAddrResolved']) || $CIDRAM['TestResults']);
+            $CIDRAM['TestResults'] = ($CIDRAM['RunTests']($CIDRAM['BlockInfo']['IPAddrResolved'], true) || $CIDRAM['TestResults']);
         } catch (\Exception $e) {
             $CIDRAM['Caught'] = true;
         }

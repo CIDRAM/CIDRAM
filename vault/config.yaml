@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Configuration defaults file (last modified: 2021.02.28).
+# This file: Configuration defaults file (last modified: 2021.03.01).
 ##/
 
 Config Defaults:
@@ -620,7 +620,7 @@ Provide:
    reCAPTCHA:
     Mark for use with reCAPTCHA:
      Label: "label_aux_special_recaptcha_mark"
-     Decoration: "background-color:rgba(128,255,128,0.5);"
+     Decoration: "background:linear-gradient(90deg,rgba(0,64,0,0),rgba(128,255,128,0.5));"
      Sets:
       Config:
        recaptcha:
@@ -634,7 +634,8 @@ Provide:
         usemode: 0
         enabled: false
    Output template:
-    Empty: ""
+    Empty:
+     Decoration: "background:linear-gradient(90deg,rgba(64,0,0,0),rgba(255,128,128,0.5));"
     Suppress output template:
      Label: "label_aux_special_suppress"
      Decoration: "background-color:rgba(255,128,128,0.5);"
@@ -643,7 +644,7 @@ Provide:
    IP Tracking:
     Forcibly enable IP tracking:
      Label: "label_aux_special_ip_tracking_enable"
-     Decoration: "background-color:rgba(128,255,128,0.5);"
+     Decoration: "background:linear-gradient(90deg,rgba(0,64,0,0),rgba(128,255,128,0.5));"
      Sets:
       Trackable: true
     Forcibly disable IP tracking:

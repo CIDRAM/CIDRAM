@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2021.02.28).
+ * This file: Front-end handler (last modified: 2021.03.01).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -131,6 +131,9 @@ $CIDRAM['FE'] = [
 
     /** Will be populated by the page title. */
     'FE_Title' => '',
+
+    /** Background gradient for "leave it as it is" auxiliary rules option. */
+    'Empty' => 'background:linear-gradient(90deg,rgba(128,128,255,0.5),rgba(0,0,64,0));',
 
     /**
      * Defining some links here instead of in the template files or the L10N
@@ -3895,28 +3898,8 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'aux' && $CIDRAM['FE']['Permissi
         /** Page initial prepwork. */
         $CIDRAM['InitialPrepwork']($CIDRAM['L10N']->getString('link_aux'), $CIDRAM['L10N']->getString('tip_aux'));
 
-        /** Append JavaScript specific to the auxiliary rules page. */
-        $CIDRAM['FE']['JS'] .= $CIDRAM['ParseVars'](
-            ['tip_condition_placeholder' => $CIDRAM['L10N']->getString('tip_condition_placeholder')],
-            $CIDRAM['ReadFile']($CIDRAM['GetAssetPath']('auxiliary.js'))
-        );
-
-        /** Populate methods. */
-        $CIDRAM['FE']['optMtdStr'] = sprintf($CIDRAM['L10N']->getString('label_aux_menu_method'), $CIDRAM['L10N']->getString('label_aux_mtdStr'));
-        $CIDRAM['FE']['optMtdReg'] = sprintf($CIDRAM['L10N']->getString('label_aux_menu_method'), $CIDRAM['L10N']->getString('label_aux_mtdReg'));
-        $CIDRAM['FE']['optMtdWin'] = sprintf($CIDRAM['L10N']->getString('label_aux_menu_method'), $CIDRAM['L10N']->getString('label_aux_mtdWin'));
-
-        /** Populate actions. */
-        $CIDRAM['FE']['optActWhl'] = sprintf($CIDRAM['L10N']->getString('label_aux_menu_action'), $CIDRAM['L10N']->getString('label_aux_actWhl'));
-        $CIDRAM['FE']['optActGrl'] = sprintf($CIDRAM['L10N']->getString('label_aux_menu_action'), $CIDRAM['L10N']->getString('label_aux_actGrl'));
-        $CIDRAM['FE']['optActBlk'] = sprintf($CIDRAM['L10N']->getString('label_aux_menu_action'), $CIDRAM['L10N']->getString('label_aux_actBlk'));
-        $CIDRAM['FE']['optActByp'] = sprintf($CIDRAM['L10N']->getString('label_aux_menu_action'), $CIDRAM['L10N']->getString('label_aux_actByp'));
-        $CIDRAM['FE']['optActLog'] = sprintf($CIDRAM['L10N']->getString('label_aux_menu_action'), $CIDRAM['L10N']->getString('label_aux_actLog'));
-        $CIDRAM['FE']['optActRdr'] = sprintf($CIDRAM['L10N']->getString('label_aux_menu_action'), $CIDRAM['L10N']->getString('label_aux_actRdr'));
-        $CIDRAM['FE']['optActRun'] = sprintf($CIDRAM['L10N']->getString('label_aux_menu_action'), $CIDRAM['L10N']->getString('label_aux_actRun'));
-
-        /** Populate sources. */
-        $CIDRAM['FE']['conSources'] = $CIDRAM['GenerateOptions']($CIDRAM['Config']['Provide']['Auxiliary Rules']['Sources'], '~(?: | )?(?:：|:) ?$~');
+        /** Populate methods and actions. */
+        $CIDRAM['PopulateMethodsActions']();
 
         /** Process auxiliary rules. */
         $CIDRAM['FE']['Data'] = '      ' . (
@@ -3958,13 +3941,20 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'aux' && $CIDRAM['FE']['Permissi
         foreach ($CIDRAM['Config']['Provide']['Auxiliary Rules']['Flags'] as $CIDRAM['FlagSetName'] => $CIDRAM['FlagSet']) {
             $CIDRAM['FlagKey'] = preg_replace('~[^A-Za-z]~', '', $CIDRAM['FlagSetName']);
             foreach ($CIDRAM['FlagSet'] as $CIDRAM['FlagName'] => $CIDRAM['FlagData']) {
-                if (!is_array($CIDRAM['FlagData'])) {
+                if ($CIDRAM['FlagName'] === 'Empty' && isset($CIDRAM['FlagData']['Decoration'])) {
+                    $CIDRAM['FE']['AuxFlagsProvides'] .= sprintf(
+                        '<div class="gridboxitem" style="%s"></div>',
+                        $CIDRAM['FlagData']['Decoration'] . 'filter:grayscale(.75)'
+                    );
+                    continue;
+                }
+                if (!isset($CIDRAM['FlagData']['Label'])) {
                     $CIDRAM['FE']['AuxFlagsProvides'] .= '<div class="gridboxitem"></div>';
                     continue;
                 }
                 $CIDRAM['FE']['AuxFlagsProvides'] .= sprintf(
                     '<label><div class="gridboxitem" style="%s" id="%s"><input type="radio" class="auto" name="%s" value="%s" onchange="javascript:checkFlagsSelected()" /> <strong>%s</strong></div></label>',
-                    ($CIDRAM['FlagData']['Decoration'] ?? '') . 'filter:grayscale(.75)',
+                    (isset($CIDRAM['FlagData']['Decoration']) ? $CIDRAM['FlagData']['Decoration'] : '') . 'filter:grayscale(.75)',
                     $CIDRAM['GridID'],
                     $CIDRAM['FlagKey'],
                     $CIDRAM['FlagName'],
@@ -3975,7 +3965,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'aux' && $CIDRAM['FE']['Permissi
             }
             $CIDRAM['FE']['AuxFlagsProvides'] .= sprintf(
                 '<label><div class="gridboxitem" style="%s" id="%s"><input type="radio" class="auto" name="%s" value="%s" onchange="javascript:checkFlagsSelected()" checked /> <strong>%s</strong></div></label>',
-                'background-color:rgba(128,128,255,0.5);filter:grayscale(0)',
+                $CIDRAM['FE']['Empty'] . 'filter:grayscale(0)',
                 $CIDRAM['GridID'],
                 $CIDRAM['FlagKey'],
                 'Default State',
@@ -4057,28 +4047,8 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'aux-edit' && $CIDRAM['FE']['Per
     /** Page initial prepwork. */
     $CIDRAM['InitialPrepwork']($CIDRAM['L10N']->getString('link_aux'), $CIDRAM['L10N']->getString('tip_aux'));
 
-    /** Append JavaScript specific to the auxiliary rules page. */
-    $CIDRAM['FE']['JS'] .= $CIDRAM['ParseVars'](
-        ['tip_condition_placeholder' => $CIDRAM['L10N']->getString('tip_condition_placeholder')],
-        $CIDRAM['ReadFile']($CIDRAM['GetAssetPath']('auxiliary.js'))
-    );
-
-    /** Populate methods. */
-    $CIDRAM['FE']['optMtdStr'] = sprintf($CIDRAM['L10N']->getString('label_aux_menu_method'), $CIDRAM['L10N']->getString('label_aux_mtdStr'));
-    $CIDRAM['FE']['optMtdReg'] = sprintf($CIDRAM['L10N']->getString('label_aux_menu_method'), $CIDRAM['L10N']->getString('label_aux_mtdReg'));
-    $CIDRAM['FE']['optMtdWin'] = sprintf($CIDRAM['L10N']->getString('label_aux_menu_method'), $CIDRAM['L10N']->getString('label_aux_mtdWin'));
-
-    /** Populate actions. */
-    $CIDRAM['FE']['optActWhl'] = sprintf($CIDRAM['L10N']->getString('label_aux_menu_action'), $CIDRAM['L10N']->getString('label_aux_actWhl'));
-    $CIDRAM['FE']['optActGrl'] = sprintf($CIDRAM['L10N']->getString('label_aux_menu_action'), $CIDRAM['L10N']->getString('label_aux_actGrl'));
-    $CIDRAM['FE']['optActBlk'] = sprintf($CIDRAM['L10N']->getString('label_aux_menu_action'), $CIDRAM['L10N']->getString('label_aux_actBlk'));
-    $CIDRAM['FE']['optActByp'] = sprintf($CIDRAM['L10N']->getString('label_aux_menu_action'), $CIDRAM['L10N']->getString('label_aux_actByp'));
-    $CIDRAM['FE']['optActLog'] = sprintf($CIDRAM['L10N']->getString('label_aux_menu_action'), $CIDRAM['L10N']->getString('label_aux_actLog'));
-    $CIDRAM['FE']['optActRdr'] = sprintf($CIDRAM['L10N']->getString('label_aux_menu_action'), $CIDRAM['L10N']->getString('label_aux_actRdr'));
-    $CIDRAM['FE']['optActRun'] = sprintf($CIDRAM['L10N']->getString('label_aux_menu_action'), $CIDRAM['L10N']->getString('label_aux_actRun'));
-
-    /** Populate sources. */
-    $CIDRAM['FE']['conSources'] = $CIDRAM['GenerateOptions']($CIDRAM['Config']['Provide']['Auxiliary Rules']['Sources'], '~(?: | )?(?:：|:) ?$~');
+    /** Populate methods and actions. */
+    $CIDRAM['PopulateMethodsActions']();
 
     /** Update auxiliary rules. */
     if (isset($_POST, $_POST['rulePriority']) && is_array($_POST['rulePriority'])) {
@@ -4411,7 +4381,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'logs' && $CIDRAM['FE']['Permiss
         $CIDRAM['L10N']->getString('switch-descending-order-set-true'),
         $CIDRAM['FE']['Remember'] ? ' checked' : '',
         $CIDRAM['L10N']->getString('label_remember'),
-        $CIDRAM['QueryVars']['logfile'] ?? '',
+        isset($CIDRAM['QueryVars']['logfile']) ? $CIDRAM['QueryVars']['logfile'] : '',
         $CIDRAM['L10N']->getString('field_ok')
     );
 

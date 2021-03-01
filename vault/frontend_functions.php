@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2021.02.28).
+ * This file: Front-end functions file (last modified: 2021.03.01).
  */
 
 /**
@@ -3383,7 +3383,14 @@ $CIDRAM['AuxGenerateFEData'] = function ($Mode = false) use (&$CIDRAM) {
                 $FlagKey = preg_replace('~[^A-Za-z]~', '', $FlagSetName);
                 $UseDefaultState = true;
                 foreach ($FlagSet as $FlagName => $FlagData) {
-                    if (!is_array($FlagData)) {
+                    if ($FlagName === 'Empty' && isset($FlagData['Decoration'])) {
+                        $Output .= sprintf(
+                            '<div class="gridboxitem" style="%s"></div>',
+                            $FlagData['Decoration'] . 'filter:grayscale(.75)'
+                        );
+                        continue;
+                    }
+                    if (!isset($FlagData['Label'])) {
                         $Output .= '<div class="gridboxitem"></div>';
                         continue;
                     }
@@ -3412,7 +3419,7 @@ $CIDRAM['AuxGenerateFEData'] = function ($Mode = false) use (&$CIDRAM) {
                 }
                 $Output .= sprintf(
                     '<label><div class="gridboxitem" style="%1$s" id="%6$s"><input type="radio" class="auto" name="%2$s[%3$d]" value="%4$s" onchange="javascript:checkFlagsSelected()"%7$s /> <strong>%5$s</strong></div></label>',
-                    'background-color:rgba(128,128,255,0.5);' . ($UseDefaultState ? 'filter:grayscale(0)' : 'filter:grayscale(.75)'),
+                    $CIDRAM['FE']['Empty'] . ($UseDefaultState ? 'filter:grayscale(0)' : 'filter:grayscale(.75)'),
                     $FlagKey,
                     $Current,
                     'Default State',
@@ -3624,6 +3631,34 @@ $CIDRAM['GenerateLabels'] = function (array $Options, $Trim = '') use (&$CIDRAM)
         $Output[$Value] = $Label;
     }
     return $Output;
+};
+
+/**
+ * Procedure to populate methods, actions, and sources used by the auxiliary rules page.
+ */
+$CIDRAM['PopulateMethodsActions'] = function () use (&$CIDRAM) {
+    /** Append JavaScript specific to the auxiliary rules page. */
+    $CIDRAM['FE']['JS'] .= $CIDRAM['ParseVars'](
+        ['tip_condition_placeholder' => $CIDRAM['L10N']->getString('tip_condition_placeholder')],
+        $CIDRAM['ReadFile']($CIDRAM['GetAssetPath']('auxiliary.js'))
+    );
+
+    /** Populate methods. */
+    $CIDRAM['FE']['optMtdStr'] = sprintf($CIDRAM['L10N']->getString('label_aux_menu_method'), $CIDRAM['L10N']->getString('label_aux_mtdStr'));
+    $CIDRAM['FE']['optMtdReg'] = sprintf($CIDRAM['L10N']->getString('label_aux_menu_method'), $CIDRAM['L10N']->getString('label_aux_mtdReg'));
+    $CIDRAM['FE']['optMtdWin'] = sprintf($CIDRAM['L10N']->getString('label_aux_menu_method'), $CIDRAM['L10N']->getString('label_aux_mtdWin'));
+
+    /** Populate actions. */
+    $CIDRAM['FE']['optActWhl'] = sprintf($CIDRAM['L10N']->getString('label_aux_menu_action'), $CIDRAM['L10N']->getString('label_aux_actWhl'));
+    $CIDRAM['FE']['optActGrl'] = sprintf($CIDRAM['L10N']->getString('label_aux_menu_action'), $CIDRAM['L10N']->getString('label_aux_actGrl'));
+    $CIDRAM['FE']['optActBlk'] = sprintf($CIDRAM['L10N']->getString('label_aux_menu_action'), $CIDRAM['L10N']->getString('label_aux_actBlk'));
+    $CIDRAM['FE']['optActByp'] = sprintf($CIDRAM['L10N']->getString('label_aux_menu_action'), $CIDRAM['L10N']->getString('label_aux_actByp'));
+    $CIDRAM['FE']['optActLog'] = sprintf($CIDRAM['L10N']->getString('label_aux_menu_action'), $CIDRAM['L10N']->getString('label_aux_actLog'));
+    $CIDRAM['FE']['optActRdr'] = sprintf($CIDRAM['L10N']->getString('label_aux_menu_action'), $CIDRAM['L10N']->getString('label_aux_actRdr'));
+    $CIDRAM['FE']['optActRun'] = sprintf($CIDRAM['L10N']->getString('label_aux_menu_action'), $CIDRAM['L10N']->getString('label_aux_actRun'));
+
+    /** Populate sources. */
+    $CIDRAM['FE']['conSources'] = $CIDRAM['GenerateOptions']($CIDRAM['Config']['Provide']['Auxiliary Rules']['Sources'], '~(?: | )?(?:：|:) ?$~');
 };
 
 /**

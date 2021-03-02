@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2021.03.01).
+ * This file: Front-end functions file (last modified: 2021.03.02).
  */
 
 /**
@@ -3370,18 +3370,20 @@ $CIDRAM['AuxGenerateFEData'] = function ($Mode = false) use (&$CIDRAM) {
             );
 
             /** Match logic. */
-            if (empty($Data['Method'])) {
-                $LogicData = [' selected', '', ''];
-            } elseif ($Data['Method'] === 'RegEx') {
-                $LogicData = ['', ' selected', ''];
+            if (empty($Data['Logic']) || $Data['Logic'] === 'Any') {
+                $LogicData = [' selected', ''];
+            } elseif ($Data['Logic'] === 'All') {
+                $LogicData = ['', ' selected'];
             } else {
-                $MethodData = ['', '', ''];
+                $LogicData = ['', ''];
             }
             $Output .= sprintf(
-                '<dl><dt><select id="logic[%1$s]" name="logic[%1$s]" class="flong"><option value="Any">%2$s</option><option value="All">%3$s</option></select></dt></dl>',
+                '<dl><dt><select id="logic[%1$s]" name="logic[%1$s]" class="flong"><option value="Any"%4$s>%2$s</option><option value="All"%5$s>%3$s</option></select></dt></dl>',
                 $Current,
                 $CIDRAM['L10N']->getString('label_aux_logic_any'),
-                $CIDRAM['L10N']->getString('label_aux_logic_all')
+                $CIDRAM['L10N']->getString('label_aux_logic_all'),
+                $LogicData[0],
+                $LogicData[1]
             );
 
             /** Other options and special flags. */

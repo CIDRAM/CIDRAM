@@ -1,8 +1,8 @@
 # IPv6 signatures file (CIDRs for proxies, VPNs and other miscellaneous unwanted services).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_other.dat
 
-# Version: 2021.37.311
-# Last modified: 2021.02.07
+# Version: 2021.61.543
+# Last modified: 2021.03.03
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage, i.e., with ignore.dat, with reCAPTCHA, with "extended rules" (default bypasses): « [x]Low [ ]Medium [ ]High »
@@ -20,8 +20,8 @@
 # listing the ASN in entirety. Listings have also been split across different
 # signature files as to list at the signature files where best suited.
 
-# %Listed, abuseat.org (CBL-Listed): 2.47%.
-# Stop Forum Spam (SFS) listings: 10,645.
+# %Listed, abuseat.org (CBL-Listed): 0.05%.
+# Stop Forum Spam (SFS) listings: 11,429.
 
 # See:
 # - en.wikipedia.org/wiki/Cogent_Communications
@@ -29,20 +29,15 @@
 # - forums.spybot.info/showthread.php?23632-SPAM-frauds-fakes-and-other-MALWARE-deliveries/page37
 # - dyn.com/blog/mitm-internet-hijacking/
 
-# Cogent VPNs+Proxies "^.*(?:Prox|Windscribe|VPN).*$".
-# Exclude invalids to reduce the false positive risk.
-# Updated: 2020.12.18
+# Anything identified as a proxy, "^.*Prox.*$".
+# Updated: 2020.12.18 / Checked: 2021.03.02
 
 2001:978:1403::/48 Deny Proxy
 Origin: US
-Tag: Cogent VPNs+Proxies
-
-# Cogent bogons.
-# Updated: 2020.06.17 / Checked: 2020.12.18
-
-2605:d400::/32 Deny Bogon
-Origin: XR
-Tag: Cogent Bogons
+Tag: Cogent Proxies
+---
+recaptcha:
+ enabled: true
 
 
 # ASN 36351 ("SoftLayer Technologies").

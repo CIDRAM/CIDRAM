@@ -1,8 +1,8 @@
 # IPv4 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv4_isps.dat
 
-# Version: 2021.61.543
-# Last modified: 2021.03.03
+# Version: 2021.64.203
+# Last modified: 2021.03.06
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage, i.e., with ignore.dat, with reCAPTCHA, with "extended rules" (default bypasses): « [ ]Low [x]Medium [ ]High »
@@ -11065,53 +11065,44 @@ Tag: Varnion Technology
 
 
 # ASN 12714 ("Net By Net Holding LLC").
-# Source of forum spam and some email harvestors.
-# Stop Forum Spam (SFS) listings: 5,262.
-# Updated: 2020.09.22
+# Russian multiplay ISP. Spam, port scanning, and email harvestors detected from here.
+# Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 6,606.
+# Updated: 2021.03.06
 
-37.232.133.0/24 Deny Spam
-37.232.148.0/24 Deny Spam
-37.232.249.0/24 Deny Spam
-46.187.11.0/24 Deny Spam
-46.187.12.0/24 Deny Spam
-46.187.17.0/24 Deny Spam
-46.187.18.0/24 Deny Spam
-46.187.20.0/24 Deny Spam
-46.187.22.0/23 Deny Spam
-46.187.25.0/24 Deny Spam
-46.187.32.0/23 Deny Spam
-46.187.61.0/24 Deny Spam
-77.75.6.34/32 Deny Spam
-79.111.88.47/32 Deny Spam
-79.111.91.0/24 Deny Spam
-79.111.92.33/32 Deny Spam
-79.111.93.0/24 Deny Spam
-79.111.119.0/24 Deny Spam
+37.232.128.0/17 Deny Spam
+46.72.9.8/32 Deny Spam
+46.72.54.55/32 Deny Spam
+46.72.91.192/32 Deny Spam
+46.72.102.47/32 Deny Spam
+46.187.0.0/17 Deny Spam
+79.111.0.0/16 Deny Spam
+79.120.0.0/17 Deny Spam
+80.68.76.0/24 Deny Spam
 89.20.135.0/24 Deny Spam
-94.232.11.0/24 Deny Spam
-95.220.64.0/23 Deny Spam
-95.220.66.55/32 Deny Spam
-95.220.67.242/32 Deny Spam
-95.220.70.233/32 Deny Spam
-95.220.71.0/24 Deny Spam
-95.220.109.0/24 Deny Spam
-95.220.119.163/32 Deny Spam
-95.220.120.68/32 Deny Spam
-95.220.121.127/32 Deny Spam
-95.220.123.0/24 Deny Spam
-95.220.124.0/24 Deny Spam
-95.220.126.0/24 Deny Spam
+94.188.32.0/24 Deny Spam
+94.232.8.0/21 Deny Spam
 95.220.219.0/24 Deny Spam
-95.221.54.0/24 Deny Spam
-95.221.59.0/24 Deny Spam
-95.221.62.0/24 Deny Spam
-109.63.226.0/24 Deny Spam
+95.221.0.0/16 Deny Spam
+109.63.158.0/24 Deny Spam
+109.63.170.124/32 Deny Spam
+109.63.184.28/32 Deny Spam
+109.170.17.19/32 Deny Spam
 109.170.64.0/24 Deny Spam
-109.197.93.133/32 Deny Spam
+109.197.93.0/24 Deny Spam
+149.154.134.88/32 Deny Spam
 176.192.8.0/24 Deny Spam
+176.192.180.0/24 Deny Spam
+176.192.182.0/24 Deny Spam
+176.193.17.171/32 Deny Malware
+176.193.18.0/24 Deny Spam
+176.193.146.245/32 Deny Spam
+176.193.182.187/32 Deny Spam
+176.193.229.0/24 Deny Spam
 176.193.250.0/24 Deny Spam
-176.195.44.222/32 Deny Spam
-213.141.153.146/32 Deny Spam
+176.195.197.79/32 Deny Spam
+178.251.217.79/32 Deny Spam
+178.251.223.159/32 Deny Spam
 Origin: RU
 Tag: Net By Net Holding LLC
 ---
@@ -12011,8 +12002,8 @@ recaptcha:
 # Korean domestic ISP. Caught by honeypots spamming and probing for
 # vulnerabilities. Listing just the affected address/ranges, plus all non-KR
 # ranges (cloud).
-# Stop Forum Spam (SFS) listings: 1,180.
-# Updated: 2021.02.26 / Modified: 2021.03.01
+# Stop Forum Spam (SFS) listings: 1,156.
+# Updated: 2021.03.06
 
 103.86.84.0/24 Deny Cloud
 Origin: CN
@@ -12020,24 +12011,33 @@ Origin: CN
 103.43.69.0/24 Deny Cloud
 202.168.152.0/22 Deny Cloud
 Origin: HK
-14.39.56.205/32 Deny Malware
-14.39.56.227/32 Deny Malware
+14.39.56.0/24 Deny Malware
 14.41.38.147/32 Deny Malware
 27.96.141.0/24 Deny Spam
 39.7.231.141/32 Deny Spam
+49.254.89.138/32 Deny Spam
+61.97.174.38/32 Deny Spam
 101.101.236.188/32 Deny Spam
-110.70.26.110/32 Deny Spam
 118.32.187.143/32 Deny Spam
+118.34.24.134/32 Deny Spam
+118.37.226.214/32 Deny Malware
 118.47.71.0/24 Deny Malware
+118.67.165.28/32 Deny Spam
 121.101.200.0/24 Deny Spam
 121.138.119.52/32 Deny Malware
 121.176.75.29/32 Deny Malware
+160.202.160.3/32 Deny Spam
+175.192.50.104/32 Deny Spam
 210.217.18.76/32 Deny Spam
+210.222.5.249/32 Deny Spam
 210.222.37.24/32 Deny Spam
 211.188.124.20/32 Deny Spam
+220.71.18.212/32 Deny Spam
 220.71.52.0/24 Deny Spam
+222.96.85.95/32 Deny Spam
 222.96.237.0/24 Deny Spam
 222.121.59.89/32 Deny Malware
+223.130.221.0/24 Deny Spam
 Origin: KR
 23.248.160.0/23 Deny Cloud
 45.249.90.0/24 Deny Cloud
@@ -14458,7 +14458,7 @@ recaptcha:
 # hack attempts reportedly seen from this network. Listing just the affected
 # ranges/addresses for the moment (plus all confirmed cloud hosters).
 # Stop Forum Spam (SFS) listings: 23,692 (AS7713), 1,471 (AS17974).
-# Updated: 2021.02.20
+# Updated: 2021.02.20 / Modified: 2021.03.06
 
 195.42.144.0/23 Deny Cloud
 Origin: FR
@@ -14553,6 +14553,7 @@ Origin: HK
 180.251.0.177/32 Deny Spam
 180.251.249.69/32 Deny Spam
 180.253.117.188/32 Deny Spam
+180.253.118.0/24 Deny Malware
 180.253.167.0/24 Deny Malware
 203.130.215.0/24 Deny Spam
 222.124.11.0/24 Deny Spam
@@ -16970,3 +16971,123 @@ recaptcha:
 103.149.203.0/24 Deny Malware
 Origin: ID
 Tag: DINAS KOMUNIKASI
+
+
+# ASNs 13082, 21299, 35566, 42770, 206026 ("Kar-Tel LLC").
+# Kazakh multiplay ISP caught spamming.
+# Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 1,795 (AS21299), 69 (AS35566), 224 (AS206026).
+# Updated: 2021.03.06
+
+5.34.84.54/32 Deny Spam
+5.34.115.96/32 Deny Spam
+31.132.90.0/24 Deny Spam
+37.99.76.206/32 Deny Spam
+37.99.105.157/32 Deny Spam
+37.99.113.138/32 Deny Spam
+37.99.119.166/32 Deny Spam
+37.99.120.89/32 Deny Spam
+46.42.204.245/32 Deny Spam
+67.209.130.0/32 Deny Spam
+77.94.22.56/32 Deny Spam
+85.29.170.206/32 Deny Spam
+85.29.181.0/24 Deny Spam
+86.107.134.87/32 Deny Spam
+87.243.13.228/32 Deny Spam
+87.243.35.197/32 Deny Spam
+87.243.47.201/32 Deny Spam
+87.247.0.0/18 Deny Spam
+89.35.252.36/32 Deny Spam
+89.35.253.48/32 Deny Spam
+89.35.254.93/32 Deny Spam
+89.35.255.218/32 Deny Spam
+89.36.164.0/24 Deny Spam
+89.36.165.77/32 Deny Spam
+89.36.201.0/24 Deny Spam
+89.37.24.176/32 Deny Spam
+89.40.194.50/32 Deny Spam
+89.42.61.45/32 Deny Spam
+89.42.62.72/32 Deny Spam
+89.42.204.99/32 Deny Spam
+89.43.23.4/32 Deny Spam
+92.49.220.0/24 Deny Spam
+92.49.223.218/32 Deny Spam
+95.82.114.98/32 Deny Spam
+95.82.115.5/32 Deny Spam
+95.82.116.151/32 Deny Spam
+95.82.122.43/32 Deny Spam
+95.82.124.88/32 Deny Spam
+109.166.58.0/24 Deny Spam
+109.166.76.0/24 Deny Spam
+109.201.35.228/32 Deny Spam
+109.201.38.0/24 Deny Spam
+109.201.52.180/32 Deny Spam
+109.206.12.194/32 Deny Spam
+109.206.13.35/32 Deny Spam
+109.206.24.235/32 Deny Spam
+146.0.60.111/32 Deny Spam
+146.0.63.0/24 Deny Spam
+146.0.197.0/24 Deny Spam
+146.0.207.228/32 Deny Spam
+162.255.196.160/32 Deny Spam
+162.255.198.218/32 Deny Spam
+162.255.199.115/32 Deny Spam
+173.244.154.0/24 Deny Spam
+173.244.155.19/32 Deny Spam
+176.118.62.233/32 Deny Spam
+176.222.134.0/24 Deny Spam
+176.222.140.192/32 Deny Spam
+176.222.147.0/24 Deny Spam
+176.222.157.202/32 Deny Spam
+176.222.172.44/32 Deny Spam
+185.14.103.166/32 Deny Spam
+188.247.192.138/32 Deny Spam
+194.105.105.225/32 Deny Spam
+212.76.4.98/32 Deny Spam
+212.76.29.73/32 Deny Spam
+213.109.220.164/32 Deny Spam
+213.109.221.0/24 Deny Spam
+Origin: KZ
+145.249.177.4/32 Deny Spam
+145.249.234.93/32 Deny Spam
+Origin: RU
+Tag: Kar-Tel LLC
+---
+recaptcha:
+ enabled: true
+
+
+# ASN 22724 ("PUNTONET S.A").
+# Ecuadorian domestic ISP. Caught port scanning and spamming.
+# Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 567.
+# Updated: 2021.03.06
+
+179.49.10.100/32 Deny Spam
+179.49.27.50/32 Deny Spam
+179.49.32.107/32 Deny Spam
+179.49.44.219/32 Deny Spam
+179.49.63.42/32 Deny Spam
+190.12.0.0/18 Deny Spam
+190.57.128.0/18 Deny Malware
+200.105.247.201/32 Deny Spam
+Origin: EC
+Tag: PUNTONET S.A
+---
+recaptcha:
+ enabled: true
+
+
+# ASNs 5524, 21155, 28878, 31586, 35470, 49685 ("Signet B.V").
+# Dutch multiplay network. Some spam, XMLRPC, and brute-force attacks detected
+# from here. Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 2 (AS5524), 124 (AS35470), 37 (AS49685).
+# Updated: 2021.03.06
+
+81.30.43.233/32 Deny Spam
+83.96.213.0/24 Deny Malware
+Origin: NL
+Tag: Signet B.V
+---
+recaptcha:
+ enabled: true

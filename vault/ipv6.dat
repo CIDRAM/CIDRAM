@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6.dat
 
-# Version: 2021.61.543
-# Last modified: 2021.03.03
+# Version: 2021.64.203
+# Last modified: 2021.03.06
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage, i.e., with ignore.dat, with reCAPTCHA, with "extended rules" (default bypasses): « [x]Low [ ]Medium [ ]High »
@@ -1027,11 +1027,9 @@ Tag: IDEAL HOSTING
 
 # ASN 11051 ("Cyberverse, Inc").
 # Stop Forum Spam (SFS) listings: 1.
-# Updated: 2019.05.27 / Checked: 2020.09.01
+# Updated: 2021.03.06
 
-2602:fe6b:1000::/36 Deny Cloud
 2607:f820::/32 Deny Cloud
-2620:13e:500a::/48 Deny Cloud
 Origin: US
 Tag: Cyberverse, Inc
 
@@ -2986,20 +2984,6 @@ Origin: US
 Tag: eSited Solutions
 
 
-# ASNs 21155, 28878, 35470, 49685 ("ProServe B.V", "Signet B.V").
-# XMLRPC and brute-force attacks detected from this network. (At this time,
-# including everything from 21155, and just 83.96.*.* from the others).
-# Updated: 2020.03.23 / Checked: 2020.09.01
-
-2001:678:10c::/48 Deny Cloud
-2001:67c:2d0::/48 Deny Cloud
-2001:67c:2390::/48 Deny Cloud
-2001:67c:23c4::/48 Deny Cloud
-2001:828::/32 Deny Cloud
-Origin: NL
-Tag: ProServe B.V
-
-
 # ASN 39326 ("HighSpeed Office Limited").
 # Stop Forum Spam (SFS) listings: 259.
 # Updated: 2021.01.02
@@ -4149,8 +4133,8 @@ Tag: Nagravision SA
 
 
 # ASN 63956 ("Colocation Australia Pty Ltd").
-# Stop Forum Spam (SFS) listings: 151.
-# Updated: 2020.09.01
+# Stop Forum Spam (SFS) listings: 111.
+# Updated: 2020.09.01 / Checked: 2021.03.06
 
 2402:1b80::/32 Deny Cloud
 2402:2f80:4::/48 Deny Cloud
@@ -4552,30 +4536,25 @@ Origin: RU
 Tag: Fishnet
 
 
-# ASN 59504 ('LLC "CloudSol"').
-# Stop Forum Spam (SFS) listings: 224.
-# Updated: 2020.09.01
+# ASN 59504 ("VPSVILLE LLC").
+# Stop Forum Spam (SFS) listings: 362.
+# Updated: 2021.03.06
 
 2a05:fb41::/32 Deny Cloud
 2a05:fb42::/32 Deny Cloud
-2a05:fb44::/32 Deny Cloud
+2a05:fb44::/31 Deny Cloud
 2a07:14c0::/47 Deny Cloud
-2a07:14c0:1000::/36 Deny Cloud
 2a07:14c0:3000::/36 Deny Cloud
 2a07:14c0:5000::/36 Deny Cloud
-2a07:14c0:c000::/35 Deny Cloud
-2a07:14c0:e000::/36 Deny Cloud
 2a07:14c6::/32 Deny Cloud
 2a0c:5241::/32 Deny Cloud
 2a0c:5245::/32 Deny Cloud
 2a0c:5247:7000::/36 Deny Cloud
-2a0c:5247:a000::/35 Deny Cloud
-2a0c:5247:c000::/34 Deny Cloud
+2a0c:5247:c000::/35 Deny Cloud
+2a0c:5247:e000::/36 Deny Cloud
 2a0d:60c0::/32 Deny Cloud
 2a0d:60c3::/32 Deny Cloud
-2a0d:7740::/31 Deny Cloud
-2a0d:7747::/32 Deny Cloud
-2a0d:e4c1::/32 Deny Cloud
+2a0d:7740::/32 Deny Cloud
 Origin: RU
 Tag: CloudSol
 
@@ -5943,8 +5922,9 @@ Tag: HUAWEI CLOUDS
 # ASNs 4136, 11767, 17018, 20141, 26978, 29748, 40107, 40606, 40913, 46742,
 # 53907, 394968 ("Quality Technology Services, LLC").
 # Caught hitting honeypots. A regular source of brute-force and SSH attacks.
-# Updated: 2020.09.01
+# Updated: 2021.03.06
 
+2001:528::/32 Deny Cloud
 2001:4838::/32 Deny Cloud
 2602:ffa5::/39 Deny Cloud
 2605:7580::/32 Deny Cloud
@@ -7226,7 +7206,7 @@ Tag: HostRoyale LLC
 
 # ASN 15691 ("Leonet srl").
 # Regular flow of brute-force and SSH attacks seen from this network.
-# Updated: 2020.09.01
+# Updated: 2020.09.01 / Checked: 2021.03.06
 
 2a01:bf40::/32 Deny Cloud
 Origin: IT
@@ -7235,7 +7215,8 @@ Tag: Leonet srl
 
 # ASN 51468 ("One.com A/S").
 # Caught trying to hack into WordPress wp-admin and probing for backups.
-# Updated: 2020.09.01
+# Stop Forum Spam (SFS) listings: 6.
+# Updated: 2020.09.01 / Checked: 2021.03.06
 
 2001:67c:28cc::/48 Deny Cloud
 2a02:2350::/32 Deny Cloud
@@ -7710,6 +7691,31 @@ Tag: Inios Oy
 2a07:8e00::/29 Deny Cloud
 Origin: UA
 Tag: PE Freehost
+
+
+# ASN 197922 ("Techcrea Solutions SAS").
+# French webhosting company and a source of spam.
+# Stop Forum Spam (SFS) listings: 345.
+# Updated: 2021.03.06
+
+2a03:75c0::/32 Deny Cloud
+Origin: FR
+Tag: Techcrea Solutions SAS
+
+
+# ASN 398646 ("Spry Servers, LLC").
+# Stop Forum Spam (SFS) listings: 5.
+# Updated: 2021.03.06
+
+2a07:1c40:1023::/48 Deny Cloud
+Origin: AT
+2a0c:b642:1a0d::/48 Deny Cloud
+Origin: BE
+2a06:e881:620d::/48 Deny Cloud
+Origin: CH
+2602:fe6b:1000::/36 Deny Cloud
+Origin: US
+Tag: Spry Servers, LLC
 
 
 # ---

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2021.03.01).
+ * This file: Front-end handler (last modified: 2021.03.10).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -147,7 +147,7 @@ $CIDRAM['FE'] = [
 ];
 
 /** Regular expression used to separate signature sections and tags. */
-$CIDRAM['RegExTags'] = '~(?<=\n)(?:\n|Expires\: \d{4}\.\d\d\.\d\d|Origin\: [A-Z]{2}|(?:\#|Tag\: |Defers to\: )[^\n]+| *\/\*\*(?:\n *\*[^\n]*)*\/| *\/\*\*? [^\n*]+\*\/|---\n(?:[^\n:]+\:(?:\n +[^\n:]+\: [^\n]+)+)+)+\n~';
+$CIDRAM['RegExTags'] = '~(?<=\n)(?:\n|Expires\: \d{4}\.\d\d\.\d\d|Origin\: [A-Z]{2}|(?:\#|Tag\: |Profile\: |Defers to\: )[^\n]+| *\/\*\*(?:\n *\*[^\n]*)*\/| *\/\*\*? [^\n*]+\*\/|---\n(?:[^\n:]+\:(?:\n +[^\n:]+\: [^\n]+)+)+)+\n~';
 
 /** Populated by [Home | Log Out] by default; Replaced by [Log Out] for some specific pages (e.g., the homepage). */
 $CIDRAM['FE']['bNav'] = $CIDRAM['FE']['HomeButton'] . $CIDRAM['FE']['LogoutButton'];

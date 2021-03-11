@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Event handlers file (last modified: 2021.01.10).
+ * This file: Event handlers file (last modified: 2021.03.11).
  */
 
 /**
@@ -101,7 +101,7 @@ $CIDRAM['Events']->addHandler('writeToLog', function () use (&$CIDRAM): bool {
     unset($BlockInfo['EmailAddr'], $BlockInfo['UALC'], $BlockInfo['favicon']);
 
     /** Remove empty entries prior to serialising. */
-    $BlockInfo = array_filter($BlockInfo, function ($Value) {
+    $BlockInfo = array_filter($BlockInfo, function ($Value): bool {
         return !(is_string($Value) && empty($Value));
     });
 

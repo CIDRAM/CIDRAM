@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2021.03.10).
+ * This file: Front-end handler (last modified: 2021.03.11).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -1985,7 +1985,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && ($CIDRAM['FE']['Per
             !empty($CIDRAM['Components']['ThisComponent']['Files']['Checksum']) &&
             is_array($CIDRAM['Components']['ThisComponent']['Files']['Checksum'])
         ) {
-            array_walk($CIDRAM['Components']['ThisComponent']['Files']['Checksum'], function ($Checksum) use (&$CIDRAM) {
+            array_walk($CIDRAM['Components']['ThisComponent']['Files']['Checksum'], function ($Checksum) use (&$CIDRAM): void {
                 if (!empty($Checksum) && ($Delimiter = strpos($Checksum, ':')) !== false) {
                     $CIDRAM['Components']['ThisComponent']['VersionSize'] += (int)substr($Checksum, $Delimiter + 1);
                 }
@@ -2004,7 +2004,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && ($CIDRAM['FE']['Per
             !empty($CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['Files']['Checksum']) &&
             is_array($CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['Files']['Checksum'])
         ) {
-            array_walk($CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['Files']['Checksum'], function ($Checksum) use (&$CIDRAM) {
+            array_walk($CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['Files']['Checksum'], function ($Checksum) use (&$CIDRAM): void {
                 if (!empty($Checksum) && ($Delimiter = strpos($Checksum, ':')) !== false) {
                     $CIDRAM['Components']['ThisComponent']['LatestSize'] += (int)substr($Checksum, $Delimiter + 1);
                 }
@@ -2202,7 +2202,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && ($CIDRAM['FE']['Per
     unset($CIDRAM['Components']['ThisComponent']);
 
     /** Write annotations for newly found component metadata. */
-    array_walk($CIDRAM['Components']['Remotes'], function ($Remote, $Key) use (&$CIDRAM) {
+    array_walk($CIDRAM['Components']['Remotes'], function ($Remote, $Key) use (&$CIDRAM): void {
         if (!$CIDRAM['ExtractPage']($Remote)) {
             return;
         }
@@ -2395,7 +2395,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'fixer' && $CIDRAM['FE']['Permis
         $CIDRAM['Fixer']['StrObject'] = new \Maikuolan\Common\ComplexStringHandler(
             "\n" . $CIDRAM['FE']['FixerOutput'] . "\n",
             $CIDRAM['RegExTags'],
-            function ($Data) use (&$CIDRAM) {
+            function ($Data) use (&$CIDRAM): string {
                 if (!$Data = trim($Data)) {
                     return '';
                 }
@@ -2815,7 +2815,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'file-manager' && $CIDRAM['FE'][
     unset($CIDRAM['PieFile'], $CIDRAM['PiePath'], $CIDRAM['Components']);
 
     /** Process files data. */
-    array_walk($CIDRAM['FilesArray'], function ($ThisFile) use (&$CIDRAM) {
+    array_walk($CIDRAM['FilesArray'], function ($ThisFile) use (&$CIDRAM): void {
         $Base = '<option value="%s"%s>%s</option>';
         $ThisFile['ThisOptions'] = '';
         if (!$ThisFile['Directory'] || $CIDRAM['IsDirEmpty']($CIDRAM['Vault'] . $ThisFile['Filename'])) {
@@ -3183,7 +3183,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-aggregator' && $CIDRAM['FE']
             $CIDRAM['StrObject'] = new \Maikuolan\Common\ComplexStringHandler(
                 "\n" . $CIDRAM['FE']['input'] . "\n",
                 $CIDRAM['RegExTags'],
-                function ($Data) use (&$CIDRAM) {
+                function ($Data) use (&$CIDRAM): string {
                     if (!$Data = trim($Data)) {
                         return '';
                     }
@@ -3528,7 +3528,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-tracking' && $CIDRAM['FE']['
     );
 
     if (!$CIDRAM['FE']['ASYNC']) {
-        uasort($CIDRAM['Tracking'], function ($A, $B) {
+        uasort($CIDRAM['Tracking'], function ($A, $B): int {
             if (empty($A['Time']) || empty($B['Time']) || $A['Time'] === $B['Time']) {
                 return 0;
             }
@@ -3661,7 +3661,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'cidr-calc' && $CIDRAM['FE']['Pe
     /** Process CIDRs. */
     if (!empty($CIDRAM['CIDRs'])) {
         $CIDRAM['Factors'] = count($CIDRAM['CIDRs']);
-        array_walk($CIDRAM['CIDRs'], function ($CIDR, $Key) use (&$CIDRAM) {
+        array_walk($CIDRAM['CIDRs'], function ($CIDR, $Key) use (&$CIDRAM): void {
             $First = substr($CIDR, 0, strlen($CIDR) - strlen($Key + 1) - 1);
             if ($CIDRAM['Factors'] === 32) {
                 $Last = $CIDRAM['IPv4GetLast']($First, $Key + 1);
@@ -4127,7 +4127,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'aux-edit' && $CIDRAM['FE']['Per
             }
         }
         unset($CIDRAM['FlagData'], $CIDRAM['FlagName'], $CIDRAM['FlagSetKey'], $CIDRAM['FlagSetName'], $CIDRAM['FlagSet']);
-        uasort($CIDRAM['NewAuxArr'], function ($A, $B) {
+        uasort($CIDRAM['NewAuxArr'], function ($A, $B): int {
             if ($A['Priority'] === $B['Priority']) {
                 return 0;
             }

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2021.03.02).
+ * This file: Front-end functions file (last modified: 2021.03.11).
  */
 
 /**
@@ -554,7 +554,7 @@ $CIDRAM['FileManager-PathSecurityCheck'] = function (string $Path): bool {
     }
     $Path = preg_split('@/@', $Path, -1, PREG_SPLIT_NO_EMPTY);
     $Valid = true;
-    array_walk($Path, function ($Segment) use (&$Valid) {
+    array_walk($Path, function ($Segment) use (&$Valid): void {
         if (empty($Segment) || preg_match('/(?:[\x00-\x1f\x7f]+|^\.+$)/i', $Segment)) {
             $Valid = false;
         }
@@ -995,7 +995,7 @@ $CIDRAM['SimulateBlockEvent'] = function (string $Addr, bool $Modules = false, b
          * their own scope and that superfluous data isn't preserved).
          */
         $Modules = explode(',', $CIDRAM['Config']['signatures']['modules']);
-        array_walk($Modules, function ($Module) use (&$CIDRAM) {
+        array_walk($Modules, function ($Module) use (&$CIDRAM): void {
             if (
                 !empty($CIDRAM['Whitelisted']) ||
                 preg_match('~^(?:classes|fe_assets)[\x2f\x5c]|\.(css|gif|html?|jpe?g|js|png|ya?ml)$~i', $Module)
@@ -1059,7 +1059,7 @@ $CIDRAM['FilterLang'] = function (string $ChoiceKey) use (&$CIDRAM): bool {
  * @param string $ChoiceKey Hash algorithm.
  * @return bool Available/Unavailable.
  */
-$CIDRAM['FilterByDefined'] = function (string $ChoiceKey) {
+$CIDRAM['FilterByDefined'] = function (string $ChoiceKey): bool {
     return defined($ChoiceKey);
 };
 
@@ -2684,7 +2684,7 @@ $CIDRAM['RangeTablesIterateData'] = function (
             if ($MaxRange === 32) {
                 arsort($Arr[$IgnoreState][$SigType]['Total']);
             } elseif ($MaxRange === 128) {
-                uasort($Arr[$IgnoreState][$SigType]['Total'], function ($A, $B) {
+                uasort($Arr[$IgnoreState][$SigType]['Total'], function ($A, $B): int {
                     for ($i = 0; $i < 8; $i++) {
                         if ($A[$i] !== $B[$i]) {
                             return $A[$i] > $B[$i] ? -1 : 1;

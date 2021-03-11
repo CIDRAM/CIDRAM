@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Output generator (last modified: 2021.03.01).
+ * This file: Output generator (last modified: 2021.03.11).
  */
 
 /** Initialise cache. */
@@ -194,7 +194,7 @@ if ($CIDRAM['Protect'] && !$CIDRAM['Config']['general']['maintenance_mode'] && e
          * Doing this with array_walk instead of foreach to ensure that modules
          * have their own scope and that superfluous data isn't preserved.
          */
-        array_walk($CIDRAM['Modules'], function ($Module) use (&$CIDRAM) {
+        array_walk($CIDRAM['Modules'], function ($Module) use (&$CIDRAM): void {
             if (
                 !empty($CIDRAM['Whitelisted']) ||
                 preg_match('~^(?:classes|fe_assets)[\x2f\x5c]|\.(css|gif|html?|jpe?g|js|png|ya?ml)$~i', $Module)

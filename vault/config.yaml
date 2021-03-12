@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Configuration defaults file (last modified: 2021.03.01).
+# This file: Configuration defaults file (last modified: 2021.03.12).
 ##/
 
 Config Defaults:
@@ -600,6 +600,15 @@ Provide:
   Aux Status Code: 200
   Hostname: ""
  Auxiliary Rules:
+  Modes:
+   - "Whitelist"
+   - "Greylist"
+   - "Block"
+   - "Bypass"
+   - "Don't log"
+   - "Redirect"
+   - "Run"
+   - "Profile"
   Sources:
    BlockInfo:
     IPAddr: "field_ipaddr"

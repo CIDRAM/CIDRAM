@@ -2349,7 +2349,7 @@ $CIDRAM['RL_Clean'] = function () use (&$CIDRAM) {
  *
  * @return array The requesting entity's requests and bandwidth usage for this period.
  */
-$CIDRAM['RL_Get_Usage'] = function () use (&$CIDRAM): array {
+$CIDRAM['RL_Get_Usage'] = function () use (&$CIDRAM) {
     $Pos = 0;
     $Bytes = 0;
     $Requests = 0;

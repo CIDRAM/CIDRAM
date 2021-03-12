@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2021.03.01).
+ * This file: Functions file (last modified: 2021.03.12).
  */
 
 /** Autoloader for CIDRAM classes. */
@@ -38,17 +38,13 @@ $CIDRAM['ReadFile'] = function (string $File): string {
     if (!is_file($File) || !is_readable($File)) {
         return '';
     }
-
-    /** Default blocksize (128KB). */
-    static $Blocksize = 131072;
-
     $Data = '';
     $Handle = fopen($File, 'rb');
     if (!is_resource($Handle)) {
         return '';
     }
     while (!feof($Handle)) {
-        $Data .= fread($Handle, $Blocksize);
+        $Data .= fread($Handle, \CIDRAM\Core\Constants::FILE_BLOCKSIZE);
     }
     fclose($Handle);
     return $Data;
@@ -541,8 +537,9 @@ $CIDRAM['RunTests'] = function (string $Addr, bool $Retain = false) use (&$CIDRA
  * Zeros out blockinfo and optionally sets the whitelisted flag.
  *
  * @param bool $Whitelist Whether to set the whitelisted flag.
+ * @return void
  */
-$CIDRAM['ZeroOutBlockInfo'] = function (bool $Whitelist = false) use (&$CIDRAM) {
+$CIDRAM['ZeroOutBlockInfo'] = function (bool $Whitelist = false) use (&$CIDRAM): void {
     $CIDRAM['BlockInfo']['Signatures'] = '';
     $CIDRAM['BlockInfo']['ReasonMessage'] = '';
     $CIDRAM['BlockInfo']['WhyReason'] = '';
@@ -625,8 +622,9 @@ $CIDRAM['TimeFormat'] = function (int $Time, $In) use (&$CIDRAM) {
  *
  * @param mixed $Var The variable to fix (passed by reference).
  * @param string $Type The type (or pseudo-type) to cast the variable to.
+ * @return void
  */
-$CIDRAM['AutoType'] = function (&$Var, string $Type = '') use (&$CIDRAM) {
+$CIDRAM['AutoType'] = function (&$Var, string $Type = '') use (&$CIDRAM): void {
     if (in_array($Type, ['string', 'timezone', 'checkbox', 'url', 'email'], true)) {
         $Var = (string)$Var;
     } elseif ($Type === 'int') {
@@ -654,8 +652,9 @@ $CIDRAM['AutoType'] = function (&$Var, string $Type = '') use (&$CIDRAM) {
  *
  * @param array $Fallbacks Fallback source.
  * @param array $Config Configuration source.
+ * @return void
  */
-$CIDRAM['Fallback'] = function (array $Fallbacks, array &$Config) use (&$CIDRAM) {
+$CIDRAM['Fallback'] = function (array $Fallbacks, array &$Config) use (&$CIDRAM): void {
     foreach ($Fallbacks as $KeyCat => $DCat) {
         if (!isset($Config[$KeyCat])) {
             $Config[$KeyCat] = [];
@@ -871,7 +870,7 @@ $CIDRAM['DNS-Reverse-Fallback'] = function (string $Addr) use (&$CIDRAM): string
  * @param int $Timeout The timeout limit (optional; defaults to 5 seconds).
  * @return string The IP address on success, or an empty string on failure.
  */
-$CIDRAM['DNS-Resolve'] = function (string $Host, int $Timeout = 5) use (&$CIDRAM) {
+$CIDRAM['DNS-Resolve'] = function (string $Host, int $Timeout = 5) use (&$CIDRAM): string {
     if (isset($CIDRAM['DNS-Forwards'][$Host]['IPAddr'])) {
         return $CIDRAM['DNS-Forwards'][$Host]['IPAddr'];
     }
@@ -879,7 +878,6 @@ $CIDRAM['DNS-Resolve'] = function (string $Host, int $Timeout = 5) use (&$CIDRAM
     if (($HostLen = strlen($Host)) > 253) {
         return '';
     }
-    static $Valid = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz-._~';
 
     $CIDRAM['DNS-Forwards'][$Host] = ['IPAddr' => '', 'Time' => $CIDRAM['Now'] + 21600];
     $CIDRAM['DNS-Forwards-Modified'] = true;
@@ -891,7 +889,7 @@ $CIDRAM['DNS-Resolve'] = function (string $Host, int $Timeout = 5) use (&$CIDRAM
     }
     while ($PadLen > 0) {
         $PadLen--;
-        $URI .= str_shuffle($Valid)[0];
+        $URI .= str_shuffle(\CIDRAM\Core\Constants::PAD_FOR_DNS)[0];
     }
 
     if (!$Results = json_decode($CIDRAM['Request']($URI, [], $Timeout), true)) {
@@ -1010,10 +1008,35 @@ $CIDRAM['DNS-Reverse-Forward'] = function ($Domains, string $Friendly, array $Op
  * @param string|array $Expected Accepted/Expected IPs.
  * @param string $Friendly A friendly name to use in logfiles.
  * @param array $Options Various options that can be passed to the closure.
+ * @return void
  */
-$CIDRAM['UA-IP-Match'] = function ($Expected, string $Friendly, array $Options = []) use (&$CIDRAM) {
+$CIDRAM['UA-IP-Match'] = function ($Expected, string $Friendly, array $Options = []) use (&$CIDRAM): void {
+    /** Guard. */
+    if (empty($CIDRAM['BlockInfo']['IPAddr'])) {
+        return;
+    }
+
     /** Route to matching code. */
-    $CIDRAM['UA-X-Match']('IPAddr', $Expected, $Friendly, $Options);
+    $CIDRAM['UA-X-Match']($CIDRAM['BlockInfo']['IPAddr'], $Expected, $Friendly, $Options);
+};
+
+/**
+ * Checks whether a CIDR is expected. If so, tracking is disabled for the IP
+ * being checked, and if not, the request is blocked. Has no return value.
+ *
+ * @param string|array $Expected Accepted/Expected CIDRs.
+ * @param string $Friendly A friendly name to use in logfiles.
+ * @param array $Options Various options that can be passed to the closure.
+ * @return void
+ */
+$CIDRAM['UA-CIDR-Match'] = function ($Expected, string $Friendly, array $Options = []) use (&$CIDRAM): void {
+    /** Guard. */
+    if (empty($CIDRAM['Factors'])) {
+        return;
+    }
+
+    /** Route to matching code. */
+    $CIDRAM['UA-X-Match']($CIDRAM['Factors'], $Expected, $Friendly, $Options);
 };
 
 /**
@@ -1025,15 +1048,16 @@ $CIDRAM['UA-IP-Match'] = function ($Expected, string $Friendly, array $Options =
  * @param string|array $Origins Accepted originating ASNs.
  * @param string $Friendly A friendly name to use in logfiles.
  * @param array $Options Various options that can be passed to the closure.
+ * @return void
  */
-$CIDRAM['UA-ASN-Match'] = function ($Origins, string $Friendly, array $Options = []) use (&$CIDRAM) {
+$CIDRAM['UA-ASN-Match'] = function ($Origins, string $Friendly, array $Options = []) use (&$CIDRAM): void {
     /** Guard. */
     if (empty($CIDRAM['BlockInfo']['ASNLookup']) || $CIDRAM['BlockInfo']['ASNLookup'] < 1) {
         return;
     }
 
     /** Route to matching code. */
-    $CIDRAM['UA-X-Match']('ASNLookup', $Origins, $Friendly, $Options);
+    $CIDRAM['UA-X-Match']($CIDRAM['BlockInfo']['ASNLookup'], $Origins, $Friendly, $Options);
 };
 
 /**
@@ -1045,44 +1069,48 @@ $CIDRAM['UA-ASN-Match'] = function ($Origins, string $Friendly, array $Options =
  * @param string|array $CCs Accepted country codes.
  * @param string $Friendly A friendly name to use in logfiles.
  * @param array $Options Various options that can be passed to the closure.
+ * @return void
  */
-$CIDRAM['UA-CC-Match'] = function ($CCs, string $Friendly, array $Options = []) use (&$CIDRAM) {
+$CIDRAM['UA-CC-Match'] = function ($CCs, string $Friendly, array $Options = []) use (&$CIDRAM): void {
     /** Guard. */
     if (empty($CIDRAM['BlockInfo']['CCLookup']) || $CIDRAM['BlockInfo']['CCLookup'] === 'XX') {
         return;
     }
 
     /** Route to matching code. */
-    $CIDRAM['UA-X-Match']('CCLookup', $CCs, $Friendly, $Options);
+    $CIDRAM['UA-X-Match']($CIDRAM['BlockInfo']['CCLookup'], $CCs, $Friendly, $Options);
 };
 
 /**
  * Routes from UA-IP-Match, UA-ASN-Match, UA-CC-Match (implemented to reduce
  * potential code duplication). Has no return value.
  *
- * @param string $Datapoint The datapoint to be matched.
+ * @param mixed $Datapoints The datapoint to be matched.
  * @param string|array $Expected The expected values (per the call origin).
  * @param string $Friendly A friendly name to use in logfiles.
  * @param array $Options Various options that can be passed to the closure.
+ * @return void
  */
-$CIDRAM['UA-X-Match'] = function (string $Datapoint, $Expected, string $Friendly, array $Options = []) use (&$CIDRAM) {
-    /** Convert expected values to an array. */
+$CIDRAM['UA-X-Match'] = function ($Datapoints, $Expected, string $Friendly, array $Options = []) use (&$CIDRAM): void {
+    $CIDRAM['Arrayify']($Datapoints);
     $CIDRAM['Arrayify']($Expected);
 
     /** Compare the actual value from the request against the expected values. */
-    if (in_array($CIDRAM['BlockInfo'][$Datapoint], $Expected)) {
-        /** Disable tracking (if there are matches, and if relevant). */
-        if (!empty($Options['CanModTrackable'])) {
-            $CIDRAM['Trackable'] = false;
-        }
+    foreach ($Datapoints as $Datapoint) {
+        if (in_array($Datapoint, $Expected)) {
+            /** Disable tracking (if there are matches, and if relevant). */
+            if (!empty($Options['CanModTrackable'])) {
+                $CIDRAM['Trackable'] = false;
+            }
 
-        /** Populate "verified" field. */
-        if (isset($CIDRAM['BlockInfo'], $CIDRAM['BlockInfo']['Verified'])) {
-            $CIDRAM['BlockInfo']['Verified'] = $Friendly;
-        }
+            /** Populate "verified" field. */
+            if (isset($CIDRAM['BlockInfo'], $CIDRAM['BlockInfo']['Verified'])) {
+                $CIDRAM['BlockInfo']['Verified'] = $Friendly;
+            }
 
-        /** Successfully matched; Exit. */
-        return;
+            /** Successfully matched; Exit. */
+            return;
+        }
     }
 
     /** Nothing matched. Block it. */
@@ -1209,19 +1237,15 @@ $CIDRAM['Bypass'] = function (bool $Condition, string $ReasonShort, array $Defin
  * @return string Salt.
  */
 $CIDRAM['GenerateSalt'] = function (): string {
-    static $MinLen = 32;
-    static $MaxLen = 72;
-    static $MinChr = 1;
-    static $MaxChr = 255;
     $Salt = '';
     if (function_exists('random_int')) {
         try {
-            $Length = random_int($MinLen, $MaxLen);
+            $Length = random_int(\CIDRAM\Core\Constants::GENERATE_SALT_MIN_LEN, \CIDRAM\Core\Constants::GENERATE_SALT_MAX_LEN);
         } catch (\Exception $e) {
-            $Length = rand($MinLen, $MaxLen);
+            $Length = rand(\CIDRAM\Core\Constants::GENERATE_SALT_MIN_LEN, \CIDRAM\Core\Constants::GENERATE_SALT_MAX_LEN);
         }
     } else {
-        $Length = rand($MinLen, $MaxLen);
+        $Length = rand(\CIDRAM\Core\Constants::GENERATE_SALT_MIN_LEN, \CIDRAM\Core\Constants::GENERATE_SALT_MAX_LEN);
     }
     if (function_exists('random_bytes')) {
         try {
@@ -1234,17 +1258,17 @@ $CIDRAM['GenerateSalt'] = function (): string {
         if (function_exists('random_int')) {
             try {
                 for ($Index = 0; $Index < $Length; $Index++) {
-                    $Salt .= chr(random_int($MinChr, $MaxChr));
+                    $Salt .= chr(random_int(\CIDRAM\Core\Constants::GENERATE_SALT_MIN_CHR, \CIDRAM\Core\Constants::GENERATE_SALT_MAX_CHR));
                 }
             } catch (\Exception $e) {
                 $Salt = '';
                 for ($Index = 0; $Index < $Length; $Index++) {
-                    $Salt .= chr(rand($MinChr, $MaxChr));
+                    $Salt .= chr(rand(\CIDRAM\Core\Constants::GENERATE_SALT_MIN_CHR, \CIDRAM\Core\Constants::GENERATE_SALT_MAX_CHR));
                 }
             }
         } else {
             for ($Index = 0; $Index < $Length; $Index++) {
-                $Salt .= chr(rand($MinChr, $MaxChr));
+                $Salt .= chr(rand(\CIDRAM\Core\Constants::GENERATE_SALT_MIN_CHR, \CIDRAM\Core\Constants::GENERATE_SALT_MAX_CHR));
             }
         }
     }
@@ -1282,8 +1306,9 @@ $CIDRAM['Meld'] = function (string ...$Strings): string {
  *
  * @param string $List The list to clear from.
  * @param bool $Check A flag indicating when changes have occurred.
+ * @return void
  */
-$CIDRAM['ClearExpired'] = function (string &$List, bool &$Check) use (&$CIDRAM) {
+$CIDRAM['ClearExpired'] = function (string &$List, bool &$Check) use (&$CIDRAM): void {
     if (!$List) {
         return;
     }
@@ -1349,8 +1374,9 @@ $CIDRAM['ReadBytes'] = function (string $In, int $Mode = 0) {
  * @param string $FieldData Data for the field.
  * @param bool $Sanitise Whether the data needs to be sanitised against XSS
  *      attacks.
+ * @return void
  */
-$CIDRAM['AddField'] = function (string $FieldName, string $ClientFieldName, string $FieldData, bool $Sanitise = false) use (&$CIDRAM) {
+$CIDRAM['AddField'] = function (string $FieldName, string $ClientFieldName, string $FieldData, bool $Sanitise = false) use (&$CIDRAM): void {
     $Prepared = $Sanitise ? str_replace(
         ['<', '>', "\r", "\n"],
         ['&lt;', '&gt;', '&#13;', '&#10;'],
@@ -1417,8 +1443,10 @@ $CIDRAM['Resolve6to4'] = function (string $In): string {
 
 /**
  * Initialise the cache.
+ *
+ * @return void
  */
-$CIDRAM['InitialiseCache'] = function () use (&$CIDRAM) {
+$CIDRAM['InitialiseCache'] = function () use (&$CIDRAM): void {
     /** Create new cache object. */
     $CIDRAM['Cache'] = new \Maikuolan\Common\Cache();
     $CIDRAM['Cache']->EnableAPCu = $CIDRAM['Config']['supplementary_cache_options']['enable_apcu'];
@@ -1460,8 +1488,9 @@ $CIDRAM['InitialiseCache'] = function () use (&$CIDRAM) {
  * Initialise a cache section.
  *
  * @param string $SectionName The name of the cache section.
+ * @return void
  */
-$CIDRAM['InitialiseCacheSection'] = function (string $SectionName) use (&$CIDRAM) {
+$CIDRAM['InitialiseCacheSection'] = function (string $SectionName) use (&$CIDRAM): void {
     /** Guard. */
     if (empty($SectionName) || isset($CIDRAM[$SectionName], $CIDRAM[$SectionName . '-Modified'])) {
         return;
@@ -1487,8 +1516,12 @@ $CIDRAM['InitialiseCacheSection'] = function (string $SectionName) use (&$CIDRAM
     }
 };
 
-/** Destroy cache object and some related values. */
-$CIDRAM['DestroyCacheObject'] = function () use (&$CIDRAM) {
+/**
+ * Destroy cache object and some related values.
+ *
+ * @return void
+ */
+$CIDRAM['DestroyCacheObject'] = function () use (&$CIDRAM): void {
     foreach ($CIDRAM['AtCacheDestroyUnset'] as $DestroyThis) {
         if ($CIDRAM[$DestroyThis . '-Modified']) {
             $CIDRAM['Cache']->setEntry($DestroyThis, $CIDRAM[$DestroyThis], 0);
@@ -1499,14 +1532,18 @@ $CIDRAM['DestroyCacheObject'] = function () use (&$CIDRAM) {
 };
 
 /**
- * Block bots masquerading as popular search engines and disable tracking for
- * for verified requests.
+ * Master closure for search engine and social media verification.
+ *
+ * @param string $Config The configuration directive to check against.
+ * @param string $From Where we're seeking the verification data from.
+ * @param bool $BypassFlags Whether to check for bypass flags.
+ * @return void
  */
-$CIDRAM['SearchEngineVerification'] = function () use (&$CIDRAM) {
+$CIDRAM['XVerification'] = function (string $Config = '', string $From = '', bool $BypassFlags = false) use (&$CIDRAM): void {
     if (
         empty($CIDRAM['TestResults']) ||
         $CIDRAM['Config']['general']['maintenance_mode'] ||
-        !$CIDRAM['Config']['general']['search_engine_verification'] ||
+        empty($CIDRAM['Config']['general'][$Config]) ||
         !empty($CIDRAM['SkipVerification']) ||
         empty($CIDRAM['BlockInfo']['UALC'])
     ) {
@@ -1519,11 +1556,11 @@ $CIDRAM['SearchEngineVerification'] = function () use (&$CIDRAM) {
         }
         $CIDRAM['VerificationData'] = (new \Maikuolan\Common\YAML($Raw))->Data;
     }
-    if (empty($CIDRAM['VerificationData']['Search Engine Verification'])) {
+    if (empty($CIDRAM['VerificationData'][$From])) {
         return;
     }
-    foreach ($CIDRAM['VerificationData']['Search Engine Verification'] as $Name => $Values) {
-        if (!is_array($Values) || (!empty($Values['Bypass Flag']) && !empty($CIDRAM[$Values['Bypass Flag']]))) {
+    foreach ($CIDRAM['VerificationData'][$From] as $Name => $Values) {
+        if ($BypassFlags && (!is_array($Values) || (!empty($Values['Bypass Flag']) && !empty($CIDRAM[$Values['Bypass Flag']])))) {
             continue;
         }
         if (
@@ -1539,8 +1576,30 @@ $CIDRAM['SearchEngineVerification'] = function () use (&$CIDRAM) {
     }
 };
 
-/** Reset bypass flags. */
-$CIDRAM['ResetBypassFlags'] = function () use (&$CIDRAM) {
+/**
+ * Search engine verification.
+ *
+ * @return void
+ */
+$CIDRAM['SearchEngineVerification'] = function () use (&$CIDRAM): void {
+    $CIDRAM['XVerification']('search_engine_verification', 'Search Engine Verification', true);
+};
+
+/**
+ * Social media verification.
+ *
+ * @return void
+ */
+$CIDRAM['SocialMediaVerification'] = function () use (&$CIDRAM): void {
+    $CIDRAM['XVerification']('social_media_verification', 'Social Media Verification', false);
+};
+
+/**
+ * Reset bypass flags.
+ *
+ * @return void
+ */
+$CIDRAM['ResetBypassFlags'] = function () use (&$CIDRAM): void {
     /** Guard. */
     if (!isset($CIDRAM['VerificationData'], $CIDRAM['VerificationData']['Search Engine Verification'])) {
         return;
@@ -1549,43 +1608,6 @@ $CIDRAM['ResetBypassFlags'] = function () use (&$CIDRAM) {
     foreach ($CIDRAM['VerificationData']['Search Engine Verification'] as $Values) {
         if (!empty($Values['Bypass Flag'])) {
             $CIDRAM[$Values['Bypass Flag']] = false;
-        }
-    }
-};
-
-/**
- * Block bots masquerading as popular social media tools.
- */
-$CIDRAM['SocialMediaVerification'] = function () use (&$CIDRAM) {
-    if (
-        empty($CIDRAM['TestResults']) ||
-        $CIDRAM['Config']['general']['maintenance_mode'] ||
-        !$CIDRAM['Config']['general']['social_media_verification'] ||
-        !empty($CIDRAM['SkipVerification']) ||
-        empty($CIDRAM['BlockInfo']['UALC'])
-    ) {
-        return;
-    }
-    if (!isset($CIDRAM['VerificationData'])) {
-        if (!$Raw = $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'verification.yaml')) {
-            $CIDRAM['SkipVerification'] = true;
-            return;
-        }
-        $CIDRAM['VerificationData'] = (new \Maikuolan\Common\YAML($Raw))->Data;
-    }
-    if (empty($CIDRAM['VerificationData']['Social Media Verification'])) {
-        return;
-    }
-    foreach ($CIDRAM['VerificationData']['Social Media Verification'] as $Name => $Values) {
-        if (
-            (!empty($Values['User Agent']) && strpos($CIDRAM['BlockInfo']['UALC'], $Values['User Agent']) !== false) ||
-            (!empty($Values['User Agent Pattern']) && preg_match($Values['User Agent Pattern'], $CIDRAM['BlockInfo']['UALC']))
-        ) {
-            $Options = [
-                'ReverseOnly' => $Values['Reverse Only'] ?? false,
-                'CanModTrackable' => $Values['Can Modify Trackable'] ?? true
-            ];
-            $CIDRAM[$Values['Closure']]($Values['Valid Domains'], $Name, $Options);
         }
     }
 };
@@ -1659,8 +1681,9 @@ $CIDRAM['IsDirEmpty'] = function (string $Directory): bool {
  * Deletes empty directories (used by some front-end functions and log rotation).
  *
  * @param string $Dir The directory to delete.
+ * @return void
  */
-$CIDRAM['DeleteDirectory'] = function (string $Dir) use (&$CIDRAM) {
+$CIDRAM['DeleteDirectory'] = function (string $Dir) use (&$CIDRAM): void {
     while (strrpos($Dir, '/') !== false || strrpos($Dir, "\\") !== false) {
         $Separator = (strrpos($Dir, '/') !== false) ? '/' : "\\";
         $Dir = substr($Dir, 0, strrpos($Dir, $Separator));
@@ -1696,10 +1719,6 @@ $CIDRAM['GZCompressFile'] = function (string $File): bool {
     if (!is_file($File) || !is_readable($File)) {
         return false;
     }
-
-    /** Default blocksize (128KB). */
-    static $Blocksize = 131072;
-
     $Handle = fopen($File, 'rb');
     if (!is_resource($Handle)) {
         return false;
@@ -1709,7 +1728,7 @@ $CIDRAM['GZCompressFile'] = function (string $File): bool {
         return false;
     }
     while (!feof($Handle)) {
-        $Data = fread($Handle, $Blocksize);
+        $Data = fread($Handle, \CIDRAM\Core\Constants::FILE_BLOCKSIZE);
         gzwrite($HandleGZ, $Data);
     }
     gzclose($HandleGZ);
@@ -1986,8 +2005,12 @@ $CIDRAM['AuxAction'] = function (string $Action, string $Name, string $Reason = 
     return false;
 };
 
-/** Procedure for parsing and processing auxiliary rules. */
-$CIDRAM['Aux'] = function () use (&$CIDRAM) {
+/**
+ * Procedure for parsing and processing auxiliary rules.
+ *
+ * @return void
+ */
+$CIDRAM['Aux'] = function () use (&$CIDRAM): void {
     /** Exit procedure early if the rules don't exist. */
     if (!file_exists($CIDRAM['Vault'] . 'auxiliary.yaml')) {
         return;
@@ -2005,9 +2028,6 @@ $CIDRAM['Aux'] = function () use (&$CIDRAM) {
             $CIDRAM['BlockInfo']['Infractions'] += $CIDRAM['Tracking'][$CIDRAM['BlockInfo']['IPAddr']]['Count'];
         }
     }
-
-    /** Potential modes. */
-    static $Modes = ['Whitelist', 'Greylist', 'Block', 'Bypass', 'Don\'t log', 'Redirect', 'Run', 'Profile'];
 
     /** Attempt to parse the auxiliary rules file. */
     if (!isset($CIDRAM['AuxData'])) {
@@ -2044,14 +2064,15 @@ $CIDRAM['Aux'] = function () use (&$CIDRAM) {
         $CIDRAM['Arrayify']($Webhooks);
 
         /** Other options and special flags to apply (if any have been specified). */
-        $Flags = [
-            'Mark for use with reCAPTCHA' => !empty($Data['Mark for use with reCAPTCHA']),
-            'Suppress output template' => !empty($Data['Suppress output template']),
-            'Forcibly disable IP tracking' => !empty($Data['Forcibly disable IP tracking'])
-        ];
+        $Flags = [];
+        foreach ($CIDRAM['Config']['Provide']['Auxiliary Rules']['Flags'] as $FlagSet) {
+            foreach ($FlagSet as $FlagKey => $FlagData) {
+                $Flags[$FlagKey] = !empty($Data[$FlagKey]);
+            }
+        }
 
         /** Iterate through modes. */
-        foreach ($Modes as $Mode) {
+        foreach ($CIDRAM['Config']['Provide']['Auxiliary Rules']['Modes'] as $Mode) {
             /** Skip mode if not used by this rule. */
             if (empty($Data[$Mode])) {
                 continue;
@@ -2229,8 +2250,9 @@ $CIDRAM['AuxIntFromString'] = function (string $Value): int {
  *
  * @param string $RL_Capture What we've captured to identify the requesting entity.
  * @param int $RL_Size The size of the output served to the requesting entity.
+ * @return void
  */
-$CIDRAM['RL_WriteEvent'] = function (string $RL_Capture, int $RL_Size) use (&$CIDRAM) {
+$CIDRAM['RL_WriteEvent'] = function (string $RL_Capture, int $RL_Size) use (&$CIDRAM): void {
     $TimePacked = pack('l*', $CIDRAM['Now']);
     $SizePacked = pack('l*', $RL_Size);
     $Data = $TimePacked . $SizePacked . $RL_Capture;
@@ -2239,8 +2261,12 @@ $CIDRAM['RL_WriteEvent'] = function (string $RL_Capture, int $RL_Size) use (&$CI
     fclose($Handle);
 };
 
-/** Remove outdated access events from the rate limiting cache. */
-$CIDRAM['RL_Clean'] = function () use (&$CIDRAM) {
+/**
+ * Remove outdated access events from the rate limiting cache.
+ *
+ * @return void
+ */
+$CIDRAM['RL_Clean'] = function () use (&$CIDRAM): void {
     $Pos = 0;
     $EoS = strlen($CIDRAM['RL_Data']);
     while ($Pos < $EoS) {
@@ -2274,9 +2300,9 @@ $CIDRAM['RL_Clean'] = function () use (&$CIDRAM) {
 /**
  * Count the requesting entity's requests and bandwidth usage for this period.
  *
- * @return int The requesting entity's requests and bandwidth usage for this period.
+ * @return array The requesting entity's requests and bandwidth usage for this period.
  */
-$CIDRAM['RL_Get_Usage'] = function () use (&$CIDRAM) {
+$CIDRAM['RL_Get_Usage'] = function () use (&$CIDRAM): array {
     $Pos = 0;
     $Bytes = 0;
     $Requests = 0;
@@ -2298,8 +2324,10 @@ $CIDRAM['RL_Get_Usage'] = function () use (&$CIDRAM) {
 /**
  * Initialises an error handler to catch any errors generated by CIDRAM when
  * needed.
+ *
+ * @return void
  */
-$CIDRAM['InitialiseErrorHandler'] = function () use (&$CIDRAM) {
+$CIDRAM['InitialiseErrorHandler'] = function () use (&$CIDRAM): void {
     /** Stores any errors generated by the error handler. */
     $CIDRAM['Errors'] = [];
 
@@ -2333,8 +2361,10 @@ $CIDRAM['InitialiseErrorHandler'] = function () use (&$CIDRAM) {
 
 /**
  * Restores previous error handler after having initialised an error handler.
+ *
+ * @return void
  */
-$CIDRAM['RestoreErrorHandler'] = function () use (&$CIDRAM) {
+$CIDRAM['RestoreErrorHandler'] = function () use (&$CIDRAM): void {
     /** Reset errors array. */
     $CIDRAM['Errors'] = [];
 

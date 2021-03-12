@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2021.03.11).
+ * This file: Front-end functions file (last modified: 2021.03.12).
  */
 
 /**
@@ -123,8 +123,9 @@ $CIDRAM['ZeroMin'] = function (...$Values): int {
  * Format filesize information.
  *
  * @param int $Filesize
+ * @return void
  */
-$CIDRAM['FormatFilesize'] = function (int &$Filesize) use (&$CIDRAM) {
+$CIDRAM['FormatFilesize'] = function (int &$Filesize) use (&$CIDRAM): void {
     $Scale = ['field_size_bytes', 'field_size_KB', 'field_size_MB', 'field_size_GB', 'field_size_TB'];
     $Iterate = 0;
     while ($Filesize > 1024) {
@@ -143,8 +144,9 @@ $CIDRAM['FormatFilesize'] = function (int &$Filesize) use (&$CIDRAM) {
  * @param string $Source Variable containing cache file data.
  * @param bool $Rebuild Flag indicating to rebuild cache file.
  * @param string $Entry Name of the cache entry to be deleted.
+ * @return void
  */
-$CIDRAM['FECacheRemove'] = function (string &$Source, bool &$Rebuild, string $Entry) use (&$CIDRAM) {
+$CIDRAM['FECacheRemove'] = function (string &$Source, bool &$Rebuild, string $Entry) use (&$CIDRAM): void {
     /** Override if using a different preferred caching mechanism. */
     if ($CIDRAM['Cache']->Using && $CIDRAM['Cache']->Using !== 'FF') {
         if ($Entry === '__') {
@@ -182,8 +184,9 @@ $CIDRAM['FECacheRemove'] = function (string &$Source, bool &$Rebuild, string $En
  * @param string $Entry Name of the cache entry to be added.
  * @param string $Data Cache entry data (what should be cached).
  * @param int $Expires When should the cache entry expire (be deleted).
+ * @return void
  */
-$CIDRAM['FECacheAdd'] = function (string &$Source, bool &$Rebuild, string $Entry, string $Data, int $Expires) use (&$CIDRAM) {
+$CIDRAM['FECacheAdd'] = function (string &$Source, bool &$Rebuild, string $Entry, string $Data, int $Expires) use (&$CIDRAM): void {
     /** Override if using a different preferred caching mechanism. */
     if ($CIDRAM['Cache']->Using && $CIDRAM['Cache']->Using !== 'FF') {
         $CIDRAM['Cache']->setEntry($Entry, $Data, $Expires - $CIDRAM['Now']);
@@ -523,9 +526,10 @@ $CIDRAM['FileManager-RecursiveList'] = function (string $Base) use (&$CIDRAM): a
  *
  * @param string $Base The path to the working directory.
  * @param array $Arr The array to use for rendering components file YAML data.
+ * @return void
  */
-$CIDRAM['FetchComponentsLists'] = function (string $Base, array &$Arr) use (&$CIDRAM) {
-    $Files = new DirectoryIterator($Base);
+$CIDRAM['FetchComponentsLists'] = function (string $Base, array &$Arr) use (&$CIDRAM): void {
+    $Files = new \DirectoryIterator($Base);
     foreach ($Files as $ThisFile) {
         if (!empty($ThisFile) && preg_match('/\.(?:dat|inc|ya?ml)$/i', $ThisFile)) {
             $Data = $CIDRAM['ReadFile']($Base . $ThisFile);
@@ -699,8 +703,10 @@ $CIDRAM['IPv6GetLast'] = function (string $First, int $Factor): string {
 
 /**
  * Fetch remote data (front-end updates page).
+ *
+ * @return void
  */
-$CIDRAM['FetchRemote'] = function () use (&$CIDRAM) {
+$CIDRAM['FetchRemote'] = function () use (&$CIDRAM): void {
     $CIDRAM['Components']['ThisComponent']['RemoteData'] = '';
     $CIDRAM['FetchRemote-ContextFree'](
         $CIDRAM['Components']['ThisComponent']['RemoteData'],
@@ -713,8 +719,9 @@ $CIDRAM['FetchRemote'] = function () use (&$CIDRAM) {
  *
  * @param string $RemoteData Where to put the remote data.
  * @param string $Remote Where to get the remote data.
+ * @return void
  */
-$CIDRAM['FetchRemote-ContextFree'] = function (string &$RemoteData, string &$Remote) use (&$CIDRAM) {
+$CIDRAM['FetchRemote-ContextFree'] = function (string &$RemoteData, string &$Remote) use (&$CIDRAM): void {
     $RemoteData = $CIDRAM['FECacheGet']($CIDRAM['FE']['Cache'], $Remote);
     if ($RemoteData === false) {
         $RemoteData = $CIDRAM['Request']($Remote);
@@ -759,8 +766,9 @@ $CIDRAM['IsActivable'] = function (array &$Component) use (&$CIDRAM): bool {
  *
  * @param string $Type Value can be ipv4, ipv6, or modules.
  * @param string $ID The ID of the component to activate.
+ * @return void
  */
-$CIDRAM['ActivateComponent'] = function (string $Type, string $ID) use (&$CIDRAM) {
+$CIDRAM['ActivateComponent'] = function (string $Type, string $ID) use (&$CIDRAM): void {
     $CIDRAM['Activation'][$Type] = array_unique(array_filter(
         explode(',', $CIDRAM['Activation'][$Type]),
         function ($Component) use (&$CIDRAM) {
@@ -795,8 +803,9 @@ $CIDRAM['ActivateComponent'] = function (string $Type, string $ID) use (&$CIDRAM
  *
  * @param string $Type Value can be ipv4, ipv6, or modules.
  * @param string $ID The ID of the component to deactivate.
+ * @return void
  */
-$CIDRAM['DeactivateComponent'] = function (string $Type, string $ID) use (&$CIDRAM) {
+$CIDRAM['DeactivateComponent'] = function (string $Type, string $ID) use (&$CIDRAM): void {
     $CIDRAM['Deactivation'][$Type] = array_unique(array_filter(
         explode(',', $CIDRAM['Deactivation'][$Type]),
         function ($Component) use (&$CIDRAM) {
@@ -826,8 +835,9 @@ $CIDRAM['DeactivateComponent'] = function (string $Type, string $ID) use (&$CIDR
  *
  * @param array $Arr Metadata of the component to be prepared.
  * @param string $Key A key to use to help find L10N data for the component description.
+ * @return void
  */
-$CIDRAM['PrepareExtendedDescription'] = function (array &$Arr, string $Key = '') use (&$CIDRAM) {
+$CIDRAM['PrepareExtendedDescription'] = function (array &$Arr, string $Key = '') use (&$CIDRAM): void {
     $Key = 'Extended Description ' . $Key;
     if (isset($CIDRAM['L10N']->Data[$Key])) {
         $Arr['Extended Description'] = $CIDRAM['L10N']->getString($Key);
@@ -866,8 +876,9 @@ $CIDRAM['PrepareExtendedDescription'] = function (array &$Arr, string $Key = '')
  *
  * @param array $Arr Metadata of the component to be prepared.
  * @param string $Key A key to use to help find L10N data for the component name.
+ * @return void
  */
-$CIDRAM['PrepareName'] = function (array &$Arr, string $Key = '') use (&$CIDRAM) {
+$CIDRAM['PrepareName'] = function (array &$Arr, string $Key = '') use (&$CIDRAM): void {
     $Key = 'Name ' . $Key;
     if (isset($CIDRAM['L10N']->Data[$Key])) {
         $Arr['Name'] = $CIDRAM['L10N']->getString($Key);
@@ -902,8 +913,9 @@ $CIDRAM['ComponentFunctionUpdatePrep'] = function (string $Targets) use (&$CIDRA
  * @param bool $Modules Specifies whether to test against modules.
  * @param bool $Aux Specifies whether to test against auxiliary rules.
  * @param bool $Verification Specifies whether to test against search engine and social media verification.
+ * @return void
  */
-$CIDRAM['SimulateBlockEvent'] = function (string $Addr, bool $Modules = false, bool $Aux = false, bool $Verification = false) use (&$CIDRAM) {
+$CIDRAM['SimulateBlockEvent'] = function (string $Addr, bool $Modules = false, bool $Aux = false, bool $Verification = false) use (&$CIDRAM): void {
     /** Reset bypass flags (needed to prevent falsing due to search engine verification). */
     $CIDRAM['ResetBypassFlags']();
 
@@ -1086,9 +1098,9 @@ $CIDRAM['FilterTheme'] = function (string $ChoiceKey) use (&$CIDRAM): bool {
  * @param string $Current The current search query (if it exists). Used to avoid inserting unnecessary links.
  * @param string $FieldSeparator Used to distinguish between a field's name and its content.
  * @param bool $Flags Tells the formatter whether the flags CSS file is available.
+ * @return void
  */
-$CIDRAM['Formatter'] = function (string &$In, string $BlockLink = '', string $Current = '', string $FieldSeparator = ': ', bool $Flags = false) use (&$CIDRAM) {
-    static $MaxBlockSize = 65536;
+$CIDRAM['Formatter'] = function (string &$In, string $BlockLink = '', string $Current = '', string $FieldSeparator = ': ', bool $Flags = false) use (&$CIDRAM): void {
     if (strpos($In, "<br />\n") === false) {
         $In = '<div class="hB hFd s">' . $In . '</div>';
         return;
@@ -1102,11 +1114,11 @@ $CIDRAM['Formatter'] = function (string &$In, string $BlockLink = '', string $Cu
     $Demojibakefier = new \Maikuolan\Common\Demojibakefier();
     while ($Caret < $Len) {
         $Remainder = $Len - $Caret;
-        if ($Remainder < $MaxBlockSize && $Remainder < ini_get('pcre.backtrack_limit')) {
+        if ($Remainder < \CIDRAM\Core\Constants::MAX_BLOCKSIZE && $Remainder < ini_get('pcre.backtrack_limit')) {
             $Section = substr($In, $Caret) . $BlockSeparator;
             $Caret = $Len;
         } else {
-            $SectionLen = strrpos(substr($In, $Caret, $MaxBlockSize), $BlockSeparator);
+            $SectionLen = strrpos(substr($In, $Caret, \CIDRAM\Core\Constants::MAX_BLOCKSIZE), $BlockSeparator);
             $Section = substr($In, $Caret, $SectionLen) . $BlockSeparator;
             $Caret += $SectionLen;
         }
@@ -1332,8 +1344,9 @@ $CIDRAM['GetAssetPath'] = function (string $Asset, bool $CanFail = false) use (&
  *
  * @param string|array $Closures The list of closures or commands to execute.
  * @param bool $Queue Whether to queue the operation or perform immediately.
+ * @return void
  */
-$CIDRAM['FE_Executor'] = function ($Closures = false, bool $Queue = false) use (&$CIDRAM) {
+$CIDRAM['FE_Executor'] = function ($Closures = false, bool $Queue = false) use (&$CIDRAM): void {
     if ($Queue && $Closures !== false) {
         if (empty($CIDRAM['FE_Executor_Queue'])) {
             $CIDRAM['FE_Executor_Queue'] = [];
@@ -1365,8 +1378,10 @@ $CIDRAM['FE_Executor'] = function ($Closures = false, bool $Queue = false) use (
 /**
  * Updates plugin version cited in the WordPress plugins dashboard, if this
  * copy of CIDRAM is running as a WordPress plugin.
+ *
+ * @return void
  */
-$CIDRAM['WP-Ver'] = function () use (&$CIDRAM) {
+$CIDRAM['WP-Ver'] = function () use (&$CIDRAM): void {
     if (
         !empty($CIDRAM['Components']['RemoteMeta']['CIDRAM']['Version']) &&
         ($ThisData = $CIDRAM['Updater-IO']->readFile($CIDRAM['Vault'] . '../cidram.php'))
@@ -1421,8 +1436,9 @@ $CIDRAM['Number_L10N_JS'] = function () use (&$CIDRAM): string {
  * @param bool $StateModified Determines whether the filter state has been modified.
  * @param string $Redirect Reconstructed path to redirect to when the state changes.
  * @param string $Options Reconstructed filter controls.
+ * @return void
  */
-$CIDRAM['FilterSwitch'] = function (array $Switches, string $Selector, bool &$StateModified, string &$Redirect, string &$Options) use (&$CIDRAM) {
+$CIDRAM['FilterSwitch'] = function (array $Switches, string $Selector, bool &$StateModified, string &$Redirect, string &$Options) use (&$CIDRAM): void {
     foreach ($Switches as $Switch) {
         $State = (!empty($Selector) && $Selector === $Switch);
         $CIDRAM['FE'][$Switch] = empty($CIDRAM['QueryVars'][$Switch]) ? false : (
@@ -1555,8 +1571,9 @@ $CIDRAM['UpdatesHandler'] = function (string $Action, $ID = '') use (&$CIDRAM) {
  * Updates handler: Update a component.
  *
  * @param string|array $ID The ID (or array of IDs) of the component(/s) to update.
+ * @return void
  */
-$CIDRAM['UpdatesHandler-Update'] = function ($ID) use (&$CIDRAM) {
+$CIDRAM['UpdatesHandler-Update'] = function ($ID) use (&$CIDRAM): void {
     $CIDRAM['Arrayify']($ID);
     $Congruents = [];
     foreach ($ID as $ThisTarget) {
@@ -1839,8 +1856,9 @@ $CIDRAM['UpdatesHandler-Update'] = function ($ID) use (&$CIDRAM) {
  * Updates handler: Uninstall a component.
  *
  * @param string $ID The ID of the component to uninstall.
+ * @return void
  */
-$CIDRAM['UpdatesHandler-Uninstall'] = function (string $ID) use (&$CIDRAM) {
+$CIDRAM['UpdatesHandler-Uninstall'] = function (string $ID) use (&$CIDRAM): void {
     $InUse = $CIDRAM['ComponentFunctionUpdatePrep']($ID);
     $BytesRemoved = 0;
     $TimeRequired = microtime(true);
@@ -1898,8 +1916,9 @@ $CIDRAM['UpdatesHandler-Uninstall'] = function (string $ID) use (&$CIDRAM) {
  * Updates handler: Activate a component.
  *
  * @param string $ID The ID of the component to activate.
+ * @return void
  */
-$CIDRAM['UpdatesHandler-Activate'] = function (string $ID) use (&$CIDRAM) {
+$CIDRAM['UpdatesHandler-Activate'] = function (string $ID) use (&$CIDRAM): void {
     $CIDRAM['Activation'] = [
         'Config' => $CIDRAM['Updater-IO']->readFile($CIDRAM['Vault'] . $CIDRAM['FE']['ActiveConfigFile']),
         'ipv4' => $CIDRAM['Config']['signatures']['ipv4'],
@@ -1959,8 +1978,9 @@ $CIDRAM['UpdatesHandler-Activate'] = function (string $ID) use (&$CIDRAM) {
  * Updates handler: Deactivate a component.
  *
  * @param string $ID The ID of the component to deactivate.
+ * @return void
  */
-$CIDRAM['UpdatesHandler-Deactivate'] = function (string $ID) use (&$CIDRAM) {
+$CIDRAM['UpdatesHandler-Deactivate'] = function (string $ID) use (&$CIDRAM): void {
     $CIDRAM['Deactivation'] = [
         'Config' => $CIDRAM['Updater-IO']->readFile($CIDRAM['Vault'] . $CIDRAM['FE']['ActiveConfigFile']),
         'ipv4' => $CIDRAM['Config']['signatures']['ipv4'],
@@ -2017,8 +2037,9 @@ $CIDRAM['UpdatesHandler-Deactivate'] = function (string $ID) use (&$CIDRAM) {
  * Updates handler: Repair a component.
  *
  * @param string|array $ID The ID (or array of IDs) of the component(/s) to repair.
+ * @return void
  */
-$CIDRAM['UpdatesHandler-Repair'] = function ($ID) use (&$CIDRAM) {
+$CIDRAM['UpdatesHandler-Repair'] = function ($ID) use (&$CIDRAM): void {
     $CIDRAM['Arrayify']($ID);
     foreach ($ID as $ThisTarget) {
         if (!isset(
@@ -2194,8 +2215,9 @@ $CIDRAM['UpdatesHandler-Repair'] = function ($ID) use (&$CIDRAM) {
  * Updates handler: Verify a component.
  *
  * @param string|array $ID The ID (or array of IDs) of the component(/s) to verify.
+ * @return void
  */
-$CIDRAM['UpdatesHandler-Verify'] = function ($ID) use (&$CIDRAM) {
+$CIDRAM['UpdatesHandler-Verify'] = function ($ID) use (&$CIDRAM): void {
     $CIDRAM['Arrayify']($ID);
     foreach ($ID as $ThisID) {
         $Table = '<blockquote class="ng1 comSub">';
@@ -2458,8 +2480,8 @@ $CIDRAM['RangeTablesFinaliseIPv6'] = function (array $Arr): array {
         if (!empty($Arr[$Iter + 1])) {
             $Arr[$Iter] += (floor($Arr[$Iter + 1] / 655.36) / 100);
         }
-        while ($Arr[$Iter] >= 65536) {
-            $Arr[$Iter] -= 65536;
+        while ($Arr[$Iter] >= \CIDRAM\Core\Constants::MAX_BLOCKSIZE) {
+            $Arr[$Iter] -= \CIDRAM\Core\Constants::MAX_BLOCKSIZE;
             $Arr[$Iter - 1] += 1;
         }
     }
@@ -2535,8 +2557,9 @@ $CIDRAM['RangeTablesFetchLine'] = function (string &$Data, int &$Offset, string 
  * @param array $SigTypes The various types of signatures supported.
  * @param int $MaxRange (32 or 128).
  * @param string $IPType (IPv4 or IPv6).
+ * @return void
  */
-$CIDRAM['RangeTablesIterateFiles'] = function (array &$Arr, array $Files, array $SigTypes, int $MaxRange, string $IPType) use (&$CIDRAM) {
+$CIDRAM['RangeTablesIterateFiles'] = function (array &$Arr, array $Files, array $SigTypes, int $MaxRange, string $IPType) use (&$CIDRAM): void {
     if (!isset($CIDRAM['Ignore'])) {
         $CIDRAM['Ignore'] = $CIDRAM['FetchIgnores']();
     }
@@ -2559,45 +2582,43 @@ $CIDRAM['RangeTablesIterateFiles'] = function (array &$Arr, array $Files, array 
                 $Offset = 0;
                 $Needle = '/' . $Range . ' ' . $SigType;
                 while ($Offset !== false) {
-                    if ($Entry = $CIDRAM['RangeTablesFetchLine']($Data, $Offset, $Needle, $HasOrigin)) {
-                        if (!empty($Entry['Tag']) && !empty($CIDRAM['Ignore'][$Entry['Tag']])) {
-                            $Into = $IPType . '-Ignored';
-                        } else {
-                            $Into = $IPType;
+                    if (!$Entry = $CIDRAM['RangeTablesFetchLine']($Data, $Offset, $Needle, $HasOrigin)) {
+                        break;
+                    }
+                    $Into = (!empty($Entry['Tag']) && !empty($CIDRAM['Ignore'][$Entry['Tag']])) ? $IPType . '-Ignored' : $IPType;
+                    foreach ([$Into, $IPType . '-Total'] as $ThisInto) {
+                        if (empty($Arr[$ThisInto][$SigType][$Range][$Entry['Param']])) {
+                            $Arr[$ThisInto][$SigType][$Range][$Entry['Param']] = 0;
                         }
-                        foreach ([$Into, $IPType . '-Total'] as $ThisInto) {
-                            if (empty($Arr[$ThisInto][$SigType][$Range][$Entry['Param']])) {
-                                $Arr[$ThisInto][$SigType][$Range][$Entry['Param']] = 0;
+                        $Arr[$ThisInto][$SigType][$Range][$Entry['Param']]++;
+                        if ($MaxRange === 32) {
+                            if (empty($Arr[$ThisInto][$SigType]['Total'][$Entry['Param']])) {
+                                $Arr[$ThisInto][$SigType]['Total'][$Entry['Param']] = 0;
                             }
-                            $Arr[$ThisInto][$SigType][$Range][$Entry['Param']]++;
-                            if ($MaxRange === 32) {
-                                if (empty($Arr[$ThisInto][$SigType]['Total'][$Entry['Param']])) {
-                                    $Arr[$ThisInto][$SigType]['Total'][$Entry['Param']] = 0;
-                                }
-                                $Arr[$ThisInto][$SigType]['Total'][$Entry['Param']] += $Order;
-                            } elseif ($MaxRange === 128) {
-                                if (empty($Arr[$ThisInto][$SigType]['Total'][$Entry['Param']])) {
-                                    $Arr[$ThisInto][$SigType]['Total'][$Entry['Param']] = [0, 0, 0, 0, 0, 0, 0, 0];
-                                }
-                                $CIDRAM['RangeTablesTallyIPv6']($Arr[$ThisInto][$SigType]['Total'][$Entry['Param']], $Range);
+                            $Arr[$ThisInto][$SigType]['Total'][$Entry['Param']] += $Order;
+                        } elseif ($MaxRange === 128) {
+                            if (empty($Arr[$ThisInto][$SigType]['Total'][$Entry['Param']])) {
+                                $Arr[$ThisInto][$SigType]['Total'][$Entry['Param']] = [0, 0, 0, 0, 0, 0, 0, 0];
                             }
-                            if ($Entry['Origin']) {
-                                if (empty($Arr[$ThisInto . '-Origin'][$SigType][$Range][$Entry['Origin']])) {
-                                    $Arr[$ThisInto . '-Origin'][$SigType][$Range][$Entry['Origin']] = 0;
-                                }
-                                $Arr[$ThisInto . '-Origin'][$SigType][$Range][$Entry['Origin']]++;
-                                if ($MaxRange === 32) {
-                                    if (empty($Arr[$ThisInto . '-Origin'][$SigType]['Total'][$Entry['Origin']])) {
-                                        $Arr[$ThisInto . '-Origin'][$SigType]['Total'][$Entry['Origin']] = 0;
-                                    }
-                                    $Arr[$ThisInto . '-Origin'][$SigType]['Total'][$Entry['Origin']] += $Order;
-                                } elseif ($MaxRange === 128) {
-                                    if (empty($Arr[$ThisInto . '-Origin'][$SigType]['Total'][$Entry['Origin']])) {
-                                        $Arr[$ThisInto . '-Origin'][$SigType]['Total'][$Entry['Origin']] = [0, 0, 0, 0, 0, 0, 0, 0];
-                                    }
-                                    $CIDRAM['RangeTablesTallyIPv6']($Arr[$ThisInto . '-Origin'][$SigType]['Total'][$Entry['Origin']], $Range);
-                                }
+                            $CIDRAM['RangeTablesTallyIPv6']($Arr[$ThisInto][$SigType]['Total'][$Entry['Param']], $Range);
+                        }
+                        if (!$Entry['Origin']) {
+                            continue;
+                        }
+                        if (empty($Arr[$ThisInto . '-Origin'][$SigType][$Range][$Entry['Origin']])) {
+                            $Arr[$ThisInto . '-Origin'][$SigType][$Range][$Entry['Origin']] = 0;
+                        }
+                        $Arr[$ThisInto . '-Origin'][$SigType][$Range][$Entry['Origin']]++;
+                        if ($MaxRange === 32) {
+                            if (empty($Arr[$ThisInto . '-Origin'][$SigType]['Total'][$Entry['Origin']])) {
+                                $Arr[$ThisInto . '-Origin'][$SigType]['Total'][$Entry['Origin']] = 0;
                             }
+                            $Arr[$ThisInto . '-Origin'][$SigType]['Total'][$Entry['Origin']] += $Order;
+                        } elseif ($MaxRange === 128) {
+                            if (empty($Arr[$ThisInto . '-Origin'][$SigType]['Total'][$Entry['Origin']])) {
+                                $Arr[$ThisInto . '-Origin'][$SigType]['Total'][$Entry['Origin']] = [0, 0, 0, 0, 0, 0, 0, 0];
+                            }
+                            $CIDRAM['RangeTablesTallyIPv6']($Arr[$ThisInto . '-Origin'][$SigType]['Total'][$Entry['Origin']], $Range);
                         }
                     }
                 }
@@ -2848,8 +2869,9 @@ $CIDRAM['RangeTablesHandler'] = function (array $IPv4, array $IPv6) use (&$CIDRA
  * @param string $Title The page title.
  * @param string $Tips The page "tip" to include ("Hello username! Here you can...").
  * @param bool $JS Whether to include the standard front-end JavaScript boilerplate.
+ * @return void
  */
-$CIDRAM['InitialPrepwork'] = function (string $Title = '', string $Tips = '', bool $JS = true) use (&$CIDRAM) {
+$CIDRAM['InitialPrepwork'] = function (string $Title = '', string $Tips = '', bool $JS = true) use (&$CIDRAM): void {
     /** Set page title. */
     $CIDRAM['FE']['FE_Title'] = 'CIDRAM – ' . $Title;
 
@@ -2944,8 +2966,9 @@ $CIDRAM['GenerateConfirm'] = function (string $Action, string $Form) use (&$CIDR
  * @param string $IPAddr The IP address triggering the log event.
  * @param string $User The user triggering the log event.
  * @param string $Message The message to be logged.
+ * @return void
  */
-$CIDRAM['FELogger'] = function (string $IPAddr, string $User, string $Message) use (&$CIDRAM) {
+$CIDRAM['FELogger'] = function (string $IPAddr, string $User, string $Message) use (&$CIDRAM): void {
     /** Guard. */
     if (
         empty($CIDRAM['FE']['DateTime']) ||
@@ -3116,16 +3139,14 @@ $CIDRAM['SendEmail'] = function (array $Recipients = [], string $Subject = '', s
  * @return int An 8-digit number.
  */
 $CIDRAM['2FA-Number'] = function (): int {
-    static $MinInt = 10000000;
-    static $MaxInt = 99999999;
     if (function_exists('random_int')) {
         try {
-            $Key = random_int($MinInt, $MaxInt);
+            $Key = random_int(\CIDRAM\Core\Constants::TWO_FACTOR_MIN_INT, \CIDRAM\Core\Constants::TWO_FACTOR_MAX_INT);
         } catch (\Exception $e) {
-            $Key = rand($MinInt, $MaxInt);
+            $Key = rand(\CIDRAM\Core\Constants::TWO_FACTOR_MIN_INT, \CIDRAM\Core\Constants::TWO_FACTOR_MAX_INT);
         }
     }
-    return isset($Key) ? $Key : rand($MinInt, $MaxInt);
+    return $Key ?? rand(\CIDRAM\Core\Constants::TWO_FACTOR_MIN_INT, \CIDRAM\Core\Constants::TWO_FACTOR_MAX_INT);
 };
 
 /**
@@ -3641,8 +3662,10 @@ $CIDRAM['GenerateLabels'] = function (array $Options, string $Trim = '') use (&$
 
 /**
  * Procedure to populate methods, actions, and sources used by the auxiliary rules page.
+ *
+ * @return void
  */
-$CIDRAM['PopulateMethodsActions'] = function () use (&$CIDRAM) {
+$CIDRAM['PopulateMethodsActions'] = function () use (&$CIDRAM): void {
     /** Append JavaScript specific to the auxiliary rules page. */
     $CIDRAM['FE']['JS'] .= $CIDRAM['ParseVars'](
         ['tip_condition_placeholder' => $CIDRAM['L10N']->getString('tip_condition_placeholder')],
@@ -3735,8 +3758,9 @@ $CIDRAM['ArrayToClickableList'] = function (array $Arr = [], string $DeleteKey =
  * Append to the current state message.
  *
  * @param string $Message What to append.
+ * @return void
  */
-$CIDRAM['Message'] = function (string $Message) use (&$CIDRAM) {
+$CIDRAM['Message'] = function (string $Message) use (&$CIDRAM): void {
     if (isset($CIDRAM['FE']['state_msg'])) {
         $CIDRAM['FE']['state_msg'] .= $Message . '<br />';
     }
@@ -4013,8 +4037,9 @@ $CIDRAM['Matrix-Limit'] = function (&$Current) {
  * @param string $KeyNext The key of the next coordinate (expected, but not used by this callback).
  * @param string $Step Can be used to manipulate the vector trajectory (expected, but not used by this callback).
  * @param string $Offsets Contains offsets between the matrix coordinates to the image XY coordinates.
+ * @return void
  */
-$CIDRAM['Matrix-Draw'] = function (&$Current, $Key, &$Previous, $KeyPrevious, &$Next, $KeyNext, &$Step, $Offsets) use (&$CIDRAM) {
+$CIDRAM['Matrix-Draw'] = function (&$Current, $Key, &$Previous, $KeyPrevious, &$Next, $KeyNext, &$Step, $Offsets) use (&$CIDRAM): void {
     if (!is_array($Current) || !is_array($Offsets) || !isset($Current['R'], $Current['G'], $Current['B'], $CIDRAM['Matrix-Image'])) {
         return;
     }
@@ -4145,9 +4170,9 @@ $CIDRAM['Matrix-Create-Generator'] = function (string &$Source) use (&$CIDRAM): 
 *       with the CLI tool (has no effect when CLI is false and can be omitted).
  * @param bool $CLI Should be true when called via the CLI tool and should
  *      otherwise always be false.
- * @return string Raw PNG data (or no return value if CLI is true).
+ * @return string Raw PNG data (or an empty string if CLI is true).
  */
-$CIDRAM['Matrix-Create'] = function (string &$Source, string $Destination = '', bool $CLI = false) use (&$CIDRAM) {
+$CIDRAM['Matrix-Create'] = function (string &$Source, string $Destination = '', bool $CLI = false) use (&$CIDRAM): string {
     if ($CLI) {
         $Splits = ['Percentage' => 0, 'Skip' => 0];
         $Splits['Max'] = substr_count($Source, "\n");
@@ -4251,4 +4276,5 @@ $CIDRAM['Matrix-Create'] = function (string &$Source, string $Destination = '', 
         return $Out;
     }
     imagedestroy($CIDRAM['Matrix-Image']);
+    return '';
 };

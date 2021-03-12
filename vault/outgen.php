@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Output generator (last modified: 2021.03.11).
+ * This file: Output generator (last modified: 2021.03.12).
  */
 
 /** Initialise cache. */
@@ -96,7 +96,7 @@ $CIDRAM['BlockInfo']['rURI'] = (
     (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off')
 ) ? 'https://' : 'http://';
 $CIDRAM['BlockInfo']['rURI'] .= $CIDRAM['HTTP_HOST'] ?: 'Unknown.Host';
-$CIDRAM['BlockInfo']['rURI'] .= (!empty($_SERVER['REQUEST_URI'])) ? $_SERVER['REQUEST_URI'] : '/';
+$CIDRAM['BlockInfo']['rURI'] .= $_SERVER['REQUEST_URI'] ?? '/';
 
 /** Initialise page output and block event logfile fields. */
 $CIDRAM['FieldTemplates'] = ['Logs' => '', 'Output' => []];
@@ -173,7 +173,6 @@ if ($CIDRAM['Config']['general']['force_hostname_lookup']) {
 
 /** Executed only if maintenance mode is disabled. */
 if ($CIDRAM['Protect'] && !$CIDRAM['Config']['general']['maintenance_mode'] && empty($CIDRAM['Whitelisted'])) {
-
     /** Instantiate report orchestrator (used by some modules). */
     $CIDRAM['Reporter'] = new \CIDRAM\Core\Reporter();
 
@@ -249,12 +248,10 @@ if (!empty($CIDRAM['TestResults']) && $CIDRAM['BlockInfo']['SignatureCount'] && 
     $CIDRAM['Stage'] = 'Tracking';
 
     /** Set tracking expiry. */
-    $CIDRAM['TrackTime'] = $CIDRAM['Now'] + (
-        !empty($CIDRAM['Config']['Options']['TrackTime']) ? $CIDRAM['Config']['Options']['TrackTime'] : $CIDRAM['Config']['signatures']['default_tracktime']
-    );
+    $CIDRAM['TrackTime'] = $CIDRAM['Now'] + ($CIDRAM['Config']['Options']['TrackTime'] ?? $CIDRAM['Config']['signatures']['default_tracktime']);
 
     /** Number of infractions to append. */
-    $CIDRAM['TrackCount'] = !empty($CIDRAM['Config']['Options']['TrackCount']) ? $CIDRAM['Config']['Options']['TrackCount'] : 1;
+    $CIDRAM['TrackCount'] = $CIDRAM['Config']['Options']['TrackCount'] ?? 1;
     if (isset(
         $CIDRAM['Tracking'][$CIDRAM['BlockInfo']['IPAddr']]['Count'],
         $CIDRAM['Tracking'][$CIDRAM['BlockInfo']['IPAddr']]['Time']
@@ -571,7 +568,7 @@ if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
     if ((
         !empty($CIDRAM['Hostname']) && $CIDRAM['Hostname'] !== $CIDRAM['BlockInfo']['IPAddr']
     ) || $CIDRAM['Config']['general']['empty_fields'] === 'include') {
-        $CIDRAM['BlockInfo']['Hostname'] = empty($CIDRAM['Hostname']) ? '-' : $CIDRAM['Hostname'];
+        $CIDRAM['BlockInfo']['Hostname'] = $CIDRAM['Hostname'] ?? '-';
         $CIDRAM['AddField'](
             $CIDRAM['L10N']->getString('field_hostname'),
             $CIDRAM['Client-L10N']->getString('field_hostname'),
@@ -681,12 +678,14 @@ if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
             $CIDRAM['Client-L10N']->getString('MoreInfo')
         );
         $CIDRAM['Arrayify']($CIDRAM['Config']['More Info']);
+
         /** Process entries. */
         foreach ($CIDRAM['Config']['More Info'] as $CIDRAM['Info Name'] => $CIDRAM['Info Link']) {
             $CIDRAM['BlockInfo']['ReasonMessage'] .= !empty($CIDRAM['Info Name']) && is_string($CIDRAM['Info Name']) ? (
                 sprintf('<br /><a href="%1$s">%2$s</a>', $CIDRAM['Info Link'], $CIDRAM['Info Name'])
             ) : sprintf('<br /><a href="%1$s">%1$s</a>', $CIDRAM['Info Link']);
         }
+
         /** Cleanup. */
         unset($CIDRAM['Info Link'], $CIDRAM['Info Name'], $CIDRAM['Config']['More Info']);
     }
@@ -782,9 +781,7 @@ if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
             }
 
             /** Include privacy policy. */
-            $CIDRAM['Parsables']['pp'] = empty(
-                $CIDRAM['Config']['legal']['privacy_policy']
-            ) ? '' : sprintf(
+            $CIDRAM['Parsables']['pp'] = empty($CIDRAM['Config']['legal']['privacy_policy']) ? '' : sprintf(
                 '<br /><a href="%s"%s>%s</a>',
                 $CIDRAM['Config']['legal']['privacy_policy'],
                 $CIDRAM['L10N-Lang-Attache'],

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2021.03.11).
+ * This file: Front-end handler (last modified: 2021.03.12).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -4298,7 +4298,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'logs' && $CIDRAM['FE']['Permiss
             $CIDRAM['FE']['logfileData'] = '';
             if (is_resource($CIDRAM['GZLogHandler'])) {
                 while (!gzeof($CIDRAM['GZLogHandler'])) {
-                    $CIDRAM['FE']['logfileData'] .= gzread($CIDRAM['GZLogHandler'], 131072);
+                    $CIDRAM['FE']['logfileData'] .= gzread($CIDRAM['GZLogHandler'], \CIDRAM\Core\Constants::FILE_BLOCKSIZE);
                 }
                 gzclose($CIDRAM['GZLogHandler']);
             }

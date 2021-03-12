@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Report orchestrator (last modified: 2020.11.27).
+ * This file: Report orchestrator (last modified: 2021.03.12).
  */
 
 namespace CIDRAM\Core;
@@ -29,8 +29,9 @@ class Reporter
      * Adds a new report handler.
      *
      * @param callable $Handler The handler to add.
+     * @return void
      */
-    public function addHandler(callable $Handler)
+    public function addHandler(callable $Handler): void
     {
         $this->Handlers[] = $Handler;
     }
@@ -41,8 +42,9 @@ class Reporter
      * @param int|array $Categories An ID, or an array of IDs, for the current report.
      * @param string|array $Comments A comment, or an array of comments, for the current report.
      * @param string $IP The IP address associated with the current report.
+     * @return void
      */
-    public function report($Categories, $Comments, $IP)
+    public function report($Categories, $Comments, $IP): void
     {
         if (!isset($this->Reports[$IP])) {
             $this->Reports[$IP] = ['Categories' => [], 'Comments' => [], 'IP' => $IP];
@@ -71,8 +73,12 @@ class Reporter
         return count($this->Reports);
     }
 
-    /** Process all reports. */
-    public function process()
+    /**
+     * Process all reports.
+     *
+     * @return void
+     */
+    public function process(): void
     {
         /** Iterate through handlers. */
         foreach ($this->Handlers as $Handler) {

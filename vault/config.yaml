@@ -26,12 +26,13 @@ Config Defaults:
    default: ""
   error_log_stages:
    type: "checkbox"
-   default: "Tests,Modules,SearchEngineVerification,SocialMediaVerification,Aux,Reporting,Tracking,RL,reCAPTCHA,Statistics,Webhooks,Output"
+   default: "Tests,Modules,SearchEngineVerification,SocialMediaVerification,OtherVerification,Aux,Reporting,Tracking,RL,reCAPTCHA,Statistics,Webhooks,Output"
    choices:
     Tests: "Tests"
     Modules: "Modules"
     SearchEngineVerification: "SearchEngineVerification"
     SocialMediaVerification: "SocialMediaVerification"
+    OtherVerification: "OtherVerification"
     Aux: "Aux"
     Reporting: "Reporting"
     Tracking: "Tracking"
@@ -291,6 +292,9 @@ Config Defaults:
    type: "bool"
    default: true
   social_media_verification:
+   type: "bool"
+   default: true
+  other_verification:
    type: "bool"
    default: true
   protect_frontend:

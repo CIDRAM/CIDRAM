@@ -1040,6 +1040,11 @@ $CIDRAM['SimulateBlockEvent'] = function ($Addr, $Modules = false, $Aux = false,
         $CIDRAM['SocialMediaVerification']();
     }
 
+    /** Execute other verification. */
+    if ($Verification && empty($CIDRAM['Whitelisted'])) {
+        $CIDRAM['OtherVerification']();
+    }
+
     /** Process auxiliary rules, if any exist. */
     if ($Aux && empty($CIDRAM['Whitelisted'])) {
         $CIDRAM['InitialiseErrorHandler']();

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Portuguese language data for the front-end (last modified: 2021.03.01).
+# This file: Portuguese language data for the front-end (last modified: 2021.03.12).
 ##/
 
 Extended Description Bypasses: "Os arquivos para bypass das assinaturas padrão normalmente incluído com o pacote principal."
@@ -106,6 +106,7 @@ config_general_logfileSerialized: "Um arquivo serializado para registrar todas a
 config_general_maintenance_mode: "Ativar o modo de manutenção? True = Sim; False = Não [Padrão]. Desativa tudo além do front-end. Às vezes útil para quando atualiza seu CMS, frameworks, etc."
 config_general_max_login_attempts: "Número máximo de tentativas de login ao front-end. Padrão = 5."
 config_general_numbers: "Como você prefere que os números sejam exibidos? Selecione o exemplo que parece mais correto para você."
+config_general_other_verification: "Sempre que possível, tente verificar outros tipos de solicitações (por exemplo, AdSense, verificadores de SEO, etc)? Quando detectados, as solicitações falsas serão bloqueadas. True = Ativar [Padrão]; False = Desativar."
 config_general_protect_frontend: "Especifica se as proteções normalmente fornecidas pelo CIDRAM devem ser aplicadas ao front-end. True = Sim [Padrão]; False = Não."
 config_general_search_engine_verification: "Tentativa de verificar solicitações dos motores de busca? Verificando os motores de busca garante que eles não serão banidos como resultado de exceder o limite de infrações (proibindo motores de busca de seu site normalmente terá um efeito negativo sobre o seu motor de busca ranking, SEO, etc). Quando verificado, os motores de busca podem ser bloqueados como por normal, mas não serão banidos. Quando não verificado, é possível que eles serão banidos como resultado de ultrapassar o limite de infrações. Também, a verificação dos motores de busca fornece proteção contra falsos solicitações de motores de busca e contra entidades potencialmente mal-intencionadas mascarando como motores de busca (tais solicitações serão bloqueados quando a verificação dos motores de busca estiver ativada). True = Ativar a verificação dos motores de busca [Padrão]; False = Desativar a verificação dos motores de busca."
 config_general_silent_mode: "Deve CIDRAM silenciosamente redirecionar as tentativas de acesso bloqueadas em vez de exibir o "Acesso Negado" página? Se sim, especificar o local para redirecionar as tentativas de acesso bloqueadas para. Se não, deixe esta variável em branco."

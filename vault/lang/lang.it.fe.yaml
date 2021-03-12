@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Italian language data for the front-end (last modified: 2021.03.01).
+# This file: Italian language data for the front-end (last modified: 2021.03.12).
 ##/
 
 Extended Description Bypasses: "Un file per bypassare alcune delle firme predefinite normalmente inclusi nel pacchetto principale."
@@ -75,7 +75,7 @@ config_PHPMailer_setFromAddress: "L'indirizzo del mittente per citare quando si 
 config_PHPMailer_setFromName: "Il nome del mittente per citare quando si invia una posta elettronica tramite SMTP."
 config_experimental: "Instabile/Sperimentale!"
 config_general: "Configurazione generale (qualsiasi configurazione di base non appartenente ad altre categorie)."
-config_general_FrontEndLog: "File per la registrazione di l'accesso front-end tentativi di accesso. Specificare un nome di file, o lasciare vuoto per disabilitare."
+config_general_FrontEndLog: "File per la registrazione di tentativi di accesso al front-end. Specificare un nome di file, o lasciare vuoto per disabilitare."
 config_general_allow_gethostbyaddr_lookup: "Consenti ricerche gethostbyaddr quando UDP non è disponibile? True = Sì [Predefinito]; False = No."
 config_general_ban_override: "Sostituire "forbid_on_block" quando "infraction_limit" è superato? Quando si sostituisce: Richieste bloccate restituire una pagina vuota (file di modello non vengono utilizzati). 200 = Non sostituire [Predefinito]. Altri valori sono uguali ai valori disponibili per "forbid_on_block"."
 config_general_default_algo: "Definisce quale algoritmo da utilizzare per tutte le password e le sessioni in futuro. Opzioni: PASSWORD_DEFAULT (predefinito), PASSWORD_BCRYPT, PASSWORD_ARGON2I (richiede PHP &gt;= 7.2.0), PASSWORD_ARGON2ID (richiede PHP &gt;= 7.3.0)."
@@ -106,10 +106,11 @@ config_general_logfileSerialized: "Un file serializzato per la registrazione di 
 config_general_maintenance_mode: "Abilita la modalità di manutenzione? True = Sì; False = No [Predefinito]. Disattiva tutto tranne il front-end. A volte utile per l'aggiornamento del CMS, dei framework, ecc."
 config_general_max_login_attempts: "Numero massimo di tentativi di accesso al front-end. Predefinito = 5."
 config_general_numbers: "Come preferisci che i numeri siano visualizzati? Seleziona l'esempio che ti sembra più corretto."
+config_general_other_verification: "Ove possibile, tentare di verificare altri tipi di richieste (ad es., AdSense, controllori SEO, ecc)? Una volta rilevate, le richieste false verranno bloccate. True = Attiva [Predefinito]; False = Disattiva."
 config_general_protect_frontend: "Specifica se le protezioni normalmente fornite da CIDRAM devono essere applicati al front-end. True = Sì [Predefinito]; False = No."
-config_general_search_engine_verification: "Tentativo di verificare le richieste dai motori di ricerca? La verifica dei motori di ricerca assicura che non saranno vietate a seguito del superamento del limite infrazione (vieta dei motori di ricerca dal vostro sito web di solito hanno un effetto negativo sul vostro posizionamento sui motori di ricerca, SEO, ecc). Quando verificato, i motori di ricerca possono essere bloccati come al solito, ma non saranno vietate. Quando non verificato, è possibile per loro di essere vietate a seguito del superamento del limite infrazione. Inoltre, verifica dei motori di ricerca fornisce una protezione contro le richieste dei motori di ricerca falso e contro le entità potenzialmente dannosi mascherato da motori di ricerca (tali richieste verranno bloccate quando la verifica dei motori di ricerca è attivato). True = Attiva la verifica dei motori di ricerca [Predefinito]; False = Disattiva la verifica dei motori di ricerca."
+config_general_search_engine_verification: "Tentare di verificare le richieste dai motori di ricerca? La verifica dei motori di ricerca assicura che non saranno vietate a seguito del superamento del limite infrazione (vieta dei motori di ricerca dal vostro sito web di solito hanno un effetto negativo sul vostro posizionamento sui motori di ricerca, SEO, ecc). Quando verificato, i motori di ricerca possono essere bloccati come al solito, ma non saranno vietate. Quando non verificato, è possibile per loro di essere vietate a seguito del superamento del limite infrazione. Inoltre, verifica dei motori di ricerca fornisce una protezione contro le richieste dei motori di ricerca falso e contro le entità potenzialmente dannosi mascherato da motori di ricerca (tali richieste verranno bloccate quando la verifica dei motori di ricerca è attivato). True = Attiva la verifica dei motori di ricerca [Predefinito]; False = Disattiva la verifica dei motori di ricerca."
 config_general_silent_mode: "CIDRAM dovrebbe reindirizzare silenziosamente tutti i tentativi di accesso bloccati invece di visualizzare la pagina "Accesso Negato"? Se si, specificare la localizzazione di reindirizzare i tentativi di accesso bloccati. Se no, lasciare questo variabile vuoto."
-config_general_social_media_verification: "Tentativo di verificare le richieste dei social media? La verifica dei social media fornisce protezione contro le false richieste dei social media (tali richieste saranno bloccate). True = Attiva la verifica dei social media [Predefinito]; False = Disattiva la verifica dei social media."
+config_general_social_media_verification: "Tentare di verificare le richieste dei social media? La verifica dei social media fornisce protezione contro le false richieste dei social media (tali richieste saranno bloccate). True = Attiva la verifica dei social media [Predefinito]; False = Disattiva la verifica dei social media."
 config_general_statistics: "Monitorare le statistiche di utilizzo di CIDRAM? True = Sì; False = No [Predefinito]."
 config_general_timeFormat: "Il formato della data/ora di notazione usata da CIDRAM. Ulteriori opzioni possono essere aggiunti su richiesta."
 config_general_timeOffset: "Fuso orario offset in minuti."

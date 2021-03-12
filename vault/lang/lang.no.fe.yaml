@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Norwegian language data for the front-end (last modified: 2021.03.01).
+# This file: Norwegian language data for the front-end (last modified: 2021.03.12).
 ##/
 
 Extended Description Bypasses: "Standard-signatur-bypass-filene som normalt følger med hovedpakken."
@@ -106,6 +106,7 @@ config_general_logfileSerialized: "Serialisert fil å logge av alle blokkerte ti
 config_general_maintenance_mode: "Aktiver vedlikeholdsmodus? True = Ja; False = Nei [Standardverdi]. Deaktiverer alt annet enn frontenden. Noen ganger nyttig for når du oppdaterer CMS, rammeverker, osv."
 config_general_max_login_attempts: "Maksimum antall påloggingsforsøk i front-end. Standard = 5."
 config_general_numbers: "Hvordan foretrekker du at tall vises? Velg eksempelet som passer best for deg."
+config_general_other_verification: "Når det er mulig, prøv å verifisere andre typer forespørsler (f.eks. AdSense, SEO-brikker, osv)? Når oppdaget, vil falske forespørsler bli blokkert. True = Aktiver [Standardverdi]; False = Deaktiver."
 config_general_protect_frontend: "Angir om beskyttelsen som normalt leveres av CIDRAM, skal brukes på frontenden. True = Ja [Standardverdi]; False = Nei."
 config_general_search_engine_verification: "Forsøk å bekrefte forespørsler fra søkemotorer? Verifiserende søkemotorer sikrer at de ikke vil bli utestengt som et resultat av å overskride infraksjonsgrensen (utestenging mot søkemotorer fra nettstedet ditt vil vanligvis ha en negativ effekt på søkemotorrangeringen din, SEO, osv). Når verifisert, kan søkemotorer bli blokkert som normalt, men vil ikke bli utestengt. Når det ikke er verifisert, er det mulig for dem å bli utestengt som et resultat av å overskride infraksjonsgrensen. Dess, søkemotor verifisering gir beskyttelse mot falske søkemotor forespørsler og mot potensielt skadelige enheter som later til å være søkemotorer (slike forespørsler vil bli blokkert når søkemotor verifisering er aktivert). True = Aktiver søkemotor verifisering [Standardverdi]; False = Deaktiver søkemotor verifisering."
 config_general_silent_mode: "Bør CIDRAM stille omdirigere blokkerte tilgangsforsøk i stedet for å vise "Tilgang Nektet" siden? Hvis ja, spesifiser stedet for å omdirigere blokkerte tilgangsforsøk til. Hvis nei, la denne variablen være tom."

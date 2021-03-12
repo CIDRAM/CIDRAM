@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Japanese language data for the front-end (last modified: 2021.03.01).
+# This file: Japanese language data for the front-end (last modified: 2021.03.12).
 ##/
 
 Extended Description Bypasses: "メインパッケージに通常含まれているデフォルト・シグネチャ・バイパス。"
@@ -106,6 +106,7 @@ config_general_logfileSerialized: "アクセス試行阻止の記録、​シリ
 config_general_maintenance_mode: "メンテナンス・モードを有効にしますか？ True = はい。 False = いいえ（Default/デフォルルト）。​フロントエンド以外のすべてを無効にします。​ＣＭＳ、フレームワークなどを更新するときに便利です。"
 config_general_max_login_attempts: "ログイン試行の最大回数（フロントエンド）。​Default（デフォルト設定） = ５。"
 config_general_numbers: "どのように数字を表示するのが好きですか？​あなたに一番正しい例を選択してください。"
+config_general_other_verification: "可能な限り、他の種類のリクエストを確認するがありますか（例：AdSense、SEOチェッカー、など）？​検出されると、偽のリクエストはブロックされます。 True = 有効にする（Default/デフォルルト）。 False = 無効にする。"
 config_general_protect_frontend: "CIDRAMによって通常提供される保護をフロントエンドに適用するかどうかを指定します。 True = はい（Default/デフォルルト）。 False = いいえ。"
 config_general_search_engine_verification: "検索エンジンからのリクエストを確認する必要がありますか？​検索エンジンを確認することで、​違反の最大数を超えたために検索エンジンが禁止されないことが保証されます（検索エンジンを禁止することは、​通常、​検索エンジンランキング、​ＳＥＯなどに悪影響を及ぼします）。​確認されると、​検索エンジンがブロックされることがありますが、​しかしは禁止されません。​検証されていない場合は、​違反の最大を超えた結果、​禁止される可能性があります。​さらに、​検索エンジンの検証は、​詐称された検索エンジンから保護します（これらのリクエストはブロックされます）。 True = 検索エンジンの検証を有効にする（Default/デフォルルト）。 False = 検索エンジンの検証を無効にする。"
 config_general_silent_mode: "「アクセス拒否」ページを表示する代わりに、​CIDRAMはブロックされたアクセス試行を自動的にリダイレクトする必要がありますか？​はいの場合は、​リダイレクトの場所を指定します。​いいえの場合は、​この変数を空白のままにします。"

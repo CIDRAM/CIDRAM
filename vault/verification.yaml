@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Verification data for search engines and social media (last modified: 2020.12.15).
+# This file: Verification data for search engines and social media (last modified: 2021.03.12).
 ##/
 
 # Additional references: https://udger.com/resources/ua-list/crawlers
@@ -42,7 +42,6 @@ Search Engine Verification:
  DuckDuckBot:
   User Agent Pattern: "~duckduck(?:go-favicons-)?bot~"
   Closure: "UA-IP-Match"
-  Can Modify Trackable: false
   Valid Domains:
    - "23.21.227.69"
    - "40.88.21.235"
@@ -137,13 +136,6 @@ Social Media Verification:
   Valid Domains:
    - "32934"
 
- # https://www.grapeshot.com/crawler/
- GrapeshotCrawler:
-  User Agent: "grapeshot"
-  Closure: "DNS-Reverse-Forward"
-  Valid Domains:
-   - ".grapeshot.co.uk"
-
  # https://help.pinterest.com/en/articles/about-pinterest-crawler-0
  Pinterest:
   User Agent: "pinterest"
@@ -157,3 +149,36 @@ Social Media Verification:
   Closure: "DNS-Reverse-Forward"
   Valid Domains:
    - ".twttr.com"
+
+Other Verification:
+
+ # https://www.oracle.com/corporate/acquisitions/grapeshot/crawler.html
+ Oracle Data Cloud Crawler:
+  User Agent: "grapeshot"
+  Closure: "UA-CIDR-Match"
+  Valid Domains:
+   - "132.145.9.5/32"
+   - "132.145.11.125/32"
+   - "132.145.14.70/32"
+   - "132.145.15.209/32"
+   - "132.145.64.33/32"
+   - "132.145.66.116/32"
+   - "132.145.66.156/32"
+   - "132.145.67.248/32"
+   - "140.238.81.78/32"
+   - "140.238.83.181/32"
+   - "140.238.94.137/32"
+   - "140.238.95.47/32"
+   - "140.238.95.199/32"
+   - "148.64.56.64/28"
+   - "148.64.56.112/28"
+   - "152.67.128.219/32"
+   - "152.67.137.35/32"
+   - "152.67.138.180/32"
+
+ # https://developers.google.com/search/docs/advanced/crawling/overview-google-crawlers
+ AdSense:
+  User Agent: "mediapartners-google"
+  Closure: "DNS-Reverse-Forward"
+  Valid Domains:
+   - ".google.com"

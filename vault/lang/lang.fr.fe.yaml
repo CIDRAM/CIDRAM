@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: French language data for the front-end (last modified: 2021.03.01).
+# This file: French language data for the front-end (last modified: 2021.03.12).
 ##/
 
 Extended Description Bypasses: "Les fichiers pour contourner les signatures standard qui sont normalement inclus dans le paquet principal."
@@ -106,6 +106,7 @@ config_general_logfile_serialized: "Un fichier sérialisé pour enregistrement d
 config_general_maintenance_mode: "Activer le mode de maintenance ? True = Oui ; False = Non [Défaut]. Désactive tout autre que l'accès frontal. Parfois utile pour la mise à jour de votre CMS, des frameworks, etc."
 config_general_max_login_attempts: "Nombre maximal de tentatives de connexion (l'accès frontal). Défaut = 5."
 config_general_numbers: "Comment préférez-vous que les nombres soient affichés ? Sélectionnez l'exemple qui vous paraît le plus approprié."
+config_general_other_verification: "Dans la mesure du possible, essayez de vérifier d'autres types de requêtes (par exemple, AdSense, vérificateurs SEO, etc) ? Lorsqu'elles sont détectées, les fausses requêtes seront bloquées. True = Activer [Défaut] ; False = Désactiver."
 config_general_protect_frontend: "Spécifie si les protections normalement fournies par CIDRAM doivent être appliquées à l'accès frontal. True = Oui [Défaut] ; False = Non."
 config_general_search_engine_verification: "Essayez de vérifier les moteurs de recherche ? Vérification des moteurs de recherche assure qu'ils ne seront pas interdits en raison de dépassement de la limite d'infraction (l'interdiction des moteurs de recherche de votre site web aura généralement un effet négatif sur votre moteur de recherche classement, SEO, etc). Lorsqu'ils sont vérifiés, les moteurs de recherche peuvent être bloqués comme d'habitude, mais ne seront pas interdits. Lorsqu'ils ne sont pas vérifiés, il est possible qu'ils soient interdits en raison du dépassement de la limite d'infraction. Aussi, la vérification des moteurs de recherche offre une protection contre les fausses requêtes des moteurs de recherche et contre les entités potentiellement malveillantes masquer comme moteurs de recherche (ces requêtes seront bloquées lorsque la vérification des moteurs de recherche est activée). True = Activer la vérification du moteurs de recherche [Défaut] ; False = Désactiver la vérification du moteurs de recherche."
 config_general_silent_mode: "Devrait CIDRAM rediriger silencieusement les tentatives d'accès bloquées à la place de l'affichage de la page « Accès Refusé » ? Si oui, spécifiez l'emplacement pour rediriger les tentatives d'accès bloquées. Si non, laisser cette variable vide."

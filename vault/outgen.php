@@ -227,6 +227,12 @@ if ($CIDRAM['Protect'] && !$CIDRAM['Config']['general']['maintenance_mode'] && e
         $CIDRAM['SocialMediaVerification']();
     }
 
+    /** Execute other verification. */
+    if (empty($CIDRAM['Whitelisted'])) {
+        $CIDRAM['Stage'] = 'OtherVerification';
+        $CIDRAM['OtherVerification']();
+    }
+
     /** Process auxiliary rules, if any exist. */
     if (empty($CIDRAM['Whitelisted'])) {
         $CIDRAM['Stage'] = 'Aux';

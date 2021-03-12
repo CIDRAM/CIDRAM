@@ -20,7 +20,7 @@ error_log=''
 
 ; A list of the stages in the execution chain that should have any generated
 ; errors logged.
-error_log_stages='Tests,Modules,SearchEngineVerification,SocialMediaVerification,Aux,Reporting,Tracking,RL,reCAPTCHA,Statistics,Webhooks,Output'
+error_log_stages='Tests,Modules,SearchEngineVerification,SocialMediaVerification,OtherVerification,Aux,Reporting,Tracking,RL,reCAPTCHA,Statistics,Webhooks,Output'
 
 ; Truncate logfiles when they reach a certain size? Value is the maximum size
 ; in B/KB/MB/GB/TB that a logfile may grow to before being truncated. The
@@ -142,6 +142,11 @@ search_engine_verification=true
 ; blocked). True = Enable social media verification [Default]; False = Disable
 ; social media verification.
 social_media_verification=true
+
+; Wherever possible, attempt to verify other kinds of requests (e.g., AdSense,
+; SEO checkers, etc)? When detected, faked requests will be blocked. True =
+; Enable [Default]; False = Disable.
+other_verification=true
 
 ; Specifies whether the protections normally provided by CIDRAM should be
 ; applied to the front-end. True = Yes [Default]; False = No.

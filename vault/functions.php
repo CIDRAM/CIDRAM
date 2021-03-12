@@ -1595,6 +1595,15 @@ $CIDRAM['SocialMediaVerification'] = function () use (&$CIDRAM): void {
 };
 
 /**
+ * Other verification.
+ *
+ * @return void
+ */
+$CIDRAM['OtherVerification'] = function () use (&$CIDRAM): void {
+    $CIDRAM['XVerification']('other_verification', 'Other Verification', false);
+};
+
+/**
  * Reset bypass flags.
  *
  * @return void

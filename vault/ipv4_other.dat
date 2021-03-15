@@ -1,8 +1,8 @@
 # IPv4 signatures file (CIDRs for proxies, VPNs and other miscellaneous unwanted services).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv4_other.dat
 
-# Version: 2021.61.543
-# Last modified: 2021.03.03
+# Version: 2021.73.286
+# Last modified: 2021.03.15
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage, i.e., with ignore.dat, with reCAPTCHA, with "extended rules" (default bypasses): « [ ]Low [x]Medium [ ]High »
@@ -94,6 +94,7 @@ Tag: SoftLayer VPNs
 
 185.220.100.0/24 Deny Proxy
 Origin: DE
+Profile: Tor endpoint
 Tag: F3 Netze e.V
 
 
@@ -186,6 +187,7 @@ recaptcha:
 23.129.64.0/24 Deny Proxy
 103.232.206.0/23 Deny Proxy
 Origin: US
+Profile: Tor endpoint
 Tag: Emerald Onion
 
 
@@ -193,9 +195,9 @@ Tag: Emerald Onion
 # The DROP/EDROP text lists are copyrighted to Spamhaus.org; Spamhaus DROP/EDROP as plain text lists are free for
 # commercial and non-commercial usage. If you want to redistribute one of the plain text feeds please ensure that you
 # name Spamhaus as source of the data. (For example, include the copyright statement at the top of the list).
-# Updated: 2021.03.03
 # Refer spamhaus.org/drop/drop.txt
 # Refer spamhaus.org/drop/edrop.txt
+# Updated: 2021.03.03
 
 1.10.16.0/20 Deny Spam
 1.19.0.0/16 Deny Spam
@@ -1198,6 +1200,7 @@ Tag: Emerald Onion
 223.169.0.0/16 Deny Spam
 223.173.0.0/16 Deny Spam
 223.254.0.0/16 Deny Spam
+Profile: Third-party sourced
 Tag: Spamhaus DROP/EDROP
 
 
@@ -1209,6 +1212,7 @@ Tag: Spamhaus DROP/EDROP
 174.76.30.0/24 Deny Spam
 174.77.145.0/24 Deny Spam
 Origin: US
+Profile: Third-party sourced
 Tag: Beliefnet
 
 
@@ -1368,6 +1372,7 @@ Origin: EU
 Origin: US
 196.53.108.0/24 Deny Proxy
 Origin: ZA
+Profile: Domestic ISP;Infrastructure;Multiplay;Webhosting
 Tag: M247 Ltd
 ---
 recaptcha:

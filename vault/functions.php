@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2021.03.12).
+ * This file: Functions file (last modified: 2021.03.15).
  */
 
 /**
@@ -381,6 +381,14 @@ $CIDRAM['CheckFactors'] = function (array $Files, array $Factors) use (&$CIDRAM)
                         continue;
                     }
                 }
+                if ($Profile = $CIDRAM['Getter']($Files[$FileIndex], $PosA, 'Profile', '')) {
+                    if (!isset($CIDRAM['Profile'])) {
+                        $CIDRAM['Profile'] = [];
+                    }
+                    foreach (explode(';', $Profile) as $ThisProfile) {
+                        $CIDRAM['Profile'][] = $ThisProfile;
+                    }
+                }
                 $Tag = $CIDRAM['Getter']($Files[$FileIndex], $PosA, 'Tag', $DefTag);
                 if (
                     ($Expires = $CIDRAM['Getter']($Files[$FileIndex], $PosA, 'Expires', '')) &&
@@ -400,12 +408,6 @@ $CIDRAM['CheckFactors'] = function (array $Files, array $Factors) use (&$CIDRAM)
                         continue;
                     }
                     $Origin = ', [' . $Origin . ']';
-                }
-                if ($Profile = $CIDRAM['Getter']($Files[$FileIndex], $PosA, 'Profile', '')) {
-                    if (!isset($CIDRAM['Profile'])) {
-                        $CIDRAM['Profile'] = [];
-                    }
-                    $CIDRAM['Profile'][] = $Profile;
                 }
                 if (
                     ($PosX = strpos($Files[$FileIndex], "\n---\n", $PosA)) &&

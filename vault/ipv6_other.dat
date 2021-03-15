@@ -1,8 +1,8 @@
 # IPv6 signatures file (CIDRs for proxies, VPNs and other miscellaneous unwanted services).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_other.dat
 
-# Version: 2021.61.543
-# Last modified: 2021.03.03
+# Version: 2021.73.286
+# Last modified: 2021.03.15
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage, i.e., with ignore.dat, with reCAPTCHA, with "extended rules" (default bypasses): « [x]Low [ ]Medium [ ]High »
@@ -70,6 +70,7 @@ Tag: SoftLayer VPNs
 2a0b:f4c0:1b4::/48 Deny Proxy
 2a0b:f4c0:400::/48 Deny Proxy
 Origin: DE
+Profile: Tor endpoint
 Tag: F3 Netze e.V
 
 
@@ -99,6 +100,7 @@ recaptcha:
 
 2620:18c::/36 Deny Proxy
 Origin: US
+Profile: Tor endpoint
 Tag: Emerald Onion
 
 

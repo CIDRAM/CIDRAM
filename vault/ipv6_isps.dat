@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_isps.dat
 
-# Version: 2021.68.615
-# Last modified: 2021.03.10
+# Version: 2021.73.286
+# Last modified: 2021.03.15
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage, i.e., with ignore.dat, with reCAPTCHA, with "extended rules" (default bypasses): « [ ]Low [x]Medium [ ]High »
@@ -49,6 +49,7 @@ Tag: IP Volume inc
 
 2a03:57c0::/32 Deny Generic
 Origin: IR
+Profile: Infrastructure
 Tag: AS48159
 ---
 recaptcha:
@@ -70,7 +71,6 @@ recaptcha:
 
 
 # ASNs 24940, 37153 ("Hetzner Online GmbH").
-# Ranges change frequently / Should update often.
 # Stop Forum Spam (SFS) listings: 38,208 (AS24940), 153 (AS37153).
 # Updated: 2020.12.29
 
@@ -85,6 +85,7 @@ Origin: RU
 2c0f:f300::/48 Deny Generic
 2c0f:fce8::/33 Deny Generic
 Origin: ZA
+Profile: Frequent changes
 Tag: Hetzner Online GmbH
 
 
@@ -283,6 +284,7 @@ Origin: GB
 2a0b:d000::/29 Deny Generic
 2a0d:1ac3::/32 Deny Generic
 Origin: RU
+Profile: Domestic ISP
 Tag: PIN-AS
 
 
@@ -593,7 +595,6 @@ recaptcha:
 
 # ASNs 200019, 207636 ("ALEXHOST SRL").
 # A significant source of spam, hacking, and other nefarious activity.
-# Ranges change frequently / Should update often.
 # Stop Forum Spam (SFS) listings: 2,031 (AS200019).
 # Updated: 2020.12.28
 
@@ -602,6 +603,7 @@ recaptcha:
 2a09:7c46::/32 Deny Malware
 2a0f:5f40::/29 Deny Malware
 Origin: MD
+Profile: Frequent changes
 Tag: ALEXHOST SRL
 
 
@@ -622,6 +624,7 @@ Origin: NL
 2607:6003:2305::/48 Deny Generic
 2607:ff00:500::/40 Deny Generic
 Origin: US
+Profile: Domestic ISP;Multiplay
 Tag: PHOENIX NAP, LLC
 
 
@@ -798,6 +801,7 @@ Origin: US
 2c0f:f7a8:815f::/48 Deny Generic
 2c0f:f7a8:8210::/47 Deny Generic
 Origin: ZA
+Profile: Infrastructure
 Tag: China Backbone 4134
 ---
 recaptcha:
@@ -1085,6 +1089,7 @@ recaptcha:
 2408:8a26:c000::/35 Deny Generic
 2408:8a27:4000::/35 Deny Generic
 Origin: CN
+Profile: Infrastructure
 Tag: China Backbone 4837
 ---
 recaptcha:
@@ -1216,6 +1221,7 @@ Origin: US
 2405:f980::/48 Deny Generic
 2406:5f40::/48 Deny Generic
 Origin: VN
+Profile: Domestic ISP
 Tag: VNPT Corp
 ---
 recaptcha:
@@ -1540,6 +1546,7 @@ recaptcha:
 2404:3c00:503f:1700::/64 Deny Spam
 2404:3c00:a0af:ffb0::/64 Deny Spam
 Origin: PH
+Profile: Domestic ISP;Temporary
 Tag: SKYBROADBAND
 ---
 recaptcha:
@@ -1726,6 +1733,7 @@ recaptcha:
 2a03:1ac0:bcbb:d000::/53 Deny Spam
 2a03:1ac0:d90c:4000::/52 Deny Spam
 Origin: RU
+Profile: Domestic ISP
 Tag: ER-Telecom Holding
 ---
 recaptcha:
@@ -1938,6 +1946,7 @@ Origin: TR
 2a0d:5600:36::/48 Deny Spam
 2a0d:5600:a32::/48 Deny Spam
 Origin: US
+Profile: Domestic ISP;Infrastructure;Multiplay;Webhosting
 Tag: M247 Ltd
 ---
 recaptcha:
@@ -1953,6 +1962,7 @@ recaptcha:
 
 2a02:2f00::/28 Deny Spam
 Origin: RO
+Profile: Domestic ISP
 Tag: RCS & RDS SA
 ---
 recaptcha:
@@ -1972,6 +1982,7 @@ recaptcha:
 2403:ad80:10::/48 Deny Spam
 2403:ad80:20::/48 Deny Spam
 Origin: HK
+Profile: Domestic ISP;Multiplay
 Tag: SoftLayer Spam ISPs
 
 
@@ -1984,6 +1995,7 @@ Tag: SoftLayer Spam ISPs
 2001:bc8::/32 Deny Spam
 2a01:e00::/26 Deny Spam
 Origin: FR
+Profile: Domestic ISP;Multiplay
 Tag: ONLINE S.A.S
 ---
 recaptcha:
@@ -2010,6 +2022,7 @@ Tag: IT Systems LLC
 
 2a00:12f8::/32 Deny Spam
 Origin: KZ
+Profile: Domestic ISP;Infrastructure
 Tag: JSC Kazakhtelecom
 ---
 recaptcha:
@@ -2075,6 +2088,7 @@ recaptcha:
 2a03:6505:2000:6::/64 Deny Spam
 2a03:af60::/32 Deny Spam
 Origin: RU
+Profile: Domestic ISP
 Tag: PJSC Moscow city
 ---
 recaptcha:
@@ -2090,6 +2104,7 @@ recaptcha:
 
 2001:920:198c:83c::/64 Deny Spam
 Origin: GB
+Profile: Domestic ISP;Multiplay
 Tag: COLT Technology SGL
 
 
@@ -2104,6 +2119,7 @@ Tag: COLT Technology SGL
 2600:1417:3d::/64 Deny Cloud
 2600:1417:58:100::/56 Deny Cloud
 Origin: US
+Profile: Domestic ISP
 Tag: TM Net
 ---
 recaptcha:
@@ -2119,6 +2135,7 @@ recaptcha:
 
 2401:b000::/32 Deny Cloud
 Origin: MY
+Profile: Domestic ISP;Multiplay;Webhosting
 Tag: TM-VADS DC Hosting
 ---
 recaptcha:
@@ -2139,6 +2156,7 @@ recaptcha:
 2601:2c7:4480:2980::/64 Deny Spam
 2603:3005:6077:2000::19c8/125 Deny Malware
 Origin: US
+Profile: Domestic ISP
 Tag: Comcast Spam IPs
 ---
 recaptcha:
@@ -2173,6 +2191,7 @@ recaptcha:
 2603:6011:8946:1c00::/64 Deny Spam
 2603:8080:c90c:a259::/64 Deny Spam
 Origin: US
+Profile: Domestic ISP
 Tag: Charter Communications
 ---
 recaptcha:
@@ -2187,6 +2206,7 @@ recaptcha:
 
 2806:2f0:4021:46c8::/64 Deny Spam
 Origin: MX
+Profile: Domestic ISP
 Tag: TOTAL PLAY TELECOMUNICACIONES
 ---
 recaptcha:
@@ -2202,6 +2222,7 @@ recaptcha:
 
 2600:140f:c000::/48 Deny Cloud
 Origin: US
+Profile: Domestic ISP
 Tag: Atria Convergence
 ---
 recaptcha:
@@ -2216,6 +2237,7 @@ recaptcha:
 2a01:5800::/32 Deny Spam
 2a01:bf20::/32 Deny Spam
 Origin: UA
+Profile: Domestic ISP
 Tag: Lanet Network Ltd
 ---
 recaptcha:
@@ -2229,6 +2251,7 @@ recaptcha:
 
 2a03:d000:4000::/36 Deny Spam
 Origin: RU
+Profile: Domestic ISP
 Tag: PJSC MegaFon
 ---
 recaptcha:
@@ -2242,6 +2265,7 @@ recaptcha:
 
 2a00:1210::/32 Deny Spam
 Origin: UA
+Profile: Domestic ISP
 Tag: MAXNET TELECOM
 ---
 recaptcha:
@@ -2260,6 +2284,7 @@ recaptcha:
 2a02:587:4607:6000::/64 Deny Spam
 2a02:587:c43b:2c55::/64 Deny Spam
 Origin: GR
+Profile: Domestic ISP
 Tag: Ote SA
 ---
 recaptcha:
@@ -2276,6 +2301,7 @@ recaptcha:
 2804:14c:b0:960f::/64 Deny Spam
 2804:14d:90af:8ea1::/64 Deny Spam
 Origin: BR
+Profile: Domestic ISP
 Tag: CLARO S.A
 ---
 recaptcha:
@@ -2294,6 +2320,7 @@ recaptcha:
 Origin: BY
 2a10:641::/32 Deny Spam
 Origin: IL
+Profile: Domestic ISP
 Tag: Beltelecom
 ---
 recaptcha:
@@ -2309,6 +2336,7 @@ recaptcha:
 2001:4df4:357:9900::/64 Deny Spam
 2001:4df7:1:ad47::/64 Deny Spam
 Origin: IL
+Profile: Domestic ISP
 Tag: Cellcom Fixed
 ---
 recaptcha:
@@ -2325,6 +2353,7 @@ recaptcha:
 2a00:a040:18b:8b86::/64 Deny Spam
 2a00:a040:199:4202::/64 Deny Spam
 Origin: IL
+Profile: Domestic ISP
 Tag: Hot-Net internet
 ---
 recaptcha:
@@ -2344,6 +2373,7 @@ Origin: MX
 2600:141c:7::/48 Deny Cloud
 2600:141c:5000::/48 Deny Cloud
 Origin: US
+Profile: Domestic ISP
 Tag: Uninet
 ---
 recaptcha:
@@ -2362,6 +2392,7 @@ recaptcha:
 2001:4453:3fc:bf00::/64 Deny Spam
 2001:4455:42e:5d00::/64 Deny Spam
 Origin: PH
+Profile: Domestic ISP
 Tag: Philippine Long Distance
 ---
 recaptcha:
@@ -2392,6 +2423,7 @@ recaptcha:
 
 2406:30c0::/48 Deny Malware
 Origin: VN
+Profile: Domestic ISP;Infrastructure
 Tag: CMC Telecom
 ---
 recaptcha:
@@ -2447,6 +2479,7 @@ recaptcha:
 2001:8003:dc34:9200::/64 Deny Spam
 2001:8003:f111:9f00::/64 Deny Spam
 Origin: AU
+Profile: Domestic ISP
 Tag: Telstra Corporation
 ---
 recaptcha:
@@ -2464,6 +2497,7 @@ recaptcha:
 2a02:c7f:c233:a500::/64 Deny Spam
 2a02:c7f:cad9:1500::/64 Deny Spam
 Origin: GB
+Profile: Domestic ISP
 Tag: Sky UK Limited
 ---
 recaptcha:
@@ -2482,6 +2516,7 @@ recaptcha:
 2a00:23c4:e882:b100::/64 Deny Spam
 2a00:23c5:5586:c701::/64 Deny Spam
 Origin: GB
+Profile: Domestic ISP
 Tag: British Telecom PLC
 ---
 recaptcha:
@@ -2495,6 +2530,7 @@ recaptcha:
 
 2804:31fc::/32 Deny Malware
 Origin: BR
+Profile: Domestic ISP
 Tag: BROSEGHINI LTDA EPP
 ---
 recaptcha:
@@ -2517,6 +2553,7 @@ recaptcha:
 2600:1700:91d2:c100::/64 Deny Spam
 2600:1702:18b0:2620::/64 Deny Spam
 Origin: US
+Profile: Domestic ISP
 Tag: AT&T Services, Inc
 ---
 recaptcha:
@@ -2533,6 +2570,7 @@ recaptcha:
 2001:67c:714::/48 Deny Malware
 2001:700::/32 Deny Malware
 Origin: NO
+Profile: Infrastructure
 Tag: UNINETT AS
 ---
 recaptcha:
@@ -2558,15 +2596,15 @@ recaptcha:
  enabled: true
 
 
-# ASN 5617 ("Orange Polska Spolka Akcyjna).
+# ASN 5617 ("Orange Polska Spolka Akcyjna").
 # Major Polish domestic ISP; Also a *HUGE* source of forum+blog spam! Listing
 # the entire ASN, but also including it in ignore.dat by default.
-# %Listed, abuseat.org (CBL-Listed): 0.11%.
-# Stop Forum Spam (SFS) listings: 74,452.
-# Updated: 2020.06.23 / Checked: 2020.12.25
+# Stop Forum Spam (SFS) listings: 81,921.
+# Updated: 2020.06.23 / Checked: 2021.03.12
 
 2a01:1000::/21 Deny Spam
 Origin: PL
+Profile: Domestic ISP
 Tag: Orange Polska Spolka Akcyjna
 ---
 recaptcha:
@@ -2583,6 +2621,7 @@ recaptcha:
 
 2620:107:4008:12e::/64 Deny Cloud
 Origin: US
+Profile: Domestic ISP
 Tag: INDOSAT
 ---
 recaptcha:
@@ -2630,24 +2669,8 @@ Origin: PL
 2a01:62e0:f001:e7::/64 Deny Cloud
 2a01:62e0:f001:13f::/64 Deny Cloud
 Origin: US
+Profile: Domestic ISP
 Tag: PT Telekomunikasi Indonesia
----
-recaptcha:
- enabled: true
-
-
-# ASN 680 ("Verein zur Foerderung eines Deutschen Forschungsnetzes e.V").
-# Scientific research and education organisation. A very large number of
-# universities in Europe route through this ASN, with mostly human endpoints,
-# so this ASN should definitely never be blocked in entirety. However, it's
-# also a source of spam and various other unwanted traffic. As such, the
-# specific known currently affected ranges are listed here.
-# Stop Forum Spam (SFS) listings: 2,132.
-# Updated: 2020.09.11
-
-2a00:5ba0:10:2242::/64 Deny Malware
-Origin: DE
-Tag: DFN
 ---
 recaptcha:
  enabled: true
@@ -2668,6 +2691,7 @@ recaptcha:
 2a03:1b20:a::/48 Deny Spam
 2a0f:8980::/32 Deny Spam
 Origin: SE
+Profile: Infrastructure;Multiplay;Webhosting
 Tag: 31173 Services AB
 ---
 recaptcha:
@@ -2705,6 +2729,7 @@ Tag: LLC Renome-Service
 
 2a02:168:2000:61::/64 Deny Spam
 Origin: CH
+Profile: Domestic ISP;Multiplay;Webhosting
 Tag: Init7
 ---
 recaptcha:
@@ -2726,6 +2751,7 @@ Origin: FR
 Origin: HK
 2604:2dc0::/32 Run rules_specific.php
 Origin: US
+Profile: Domestic ISP;Multiplay
 Tag: OVH Systems
 ---
 recaptcha:
@@ -2741,6 +2767,7 @@ recaptcha:
 
 2405:9800::/32 Deny Spam
 Origin: TH
+Profile: Domestic ISP
 Tag: Phaholyothin Rd
 ---
 recaptcha:
@@ -2756,6 +2783,7 @@ recaptcha:
 2001:569:7a1f:a700::/64 Deny Spam
 2001:569:7bc2:c700::/64 Deny Spam
 Origin: CA
+Profile: Domestic ISP
 Tag: TELUS Communications Inc
 ---
 recaptcha:
@@ -2770,6 +2798,7 @@ recaptcha:
 
 2a00:bfc0::/35 Deny Malware
 Origin: RU
+Profile: Domestic ISP
 Tag: Sibirskie Seti Ltd
 ---
 recaptcha:
@@ -2790,6 +2819,7 @@ recaptcha:
 2a02:1812:1d09:cc00::/64 Deny Spam
 2a02:1812:1d2d:fa00::/64 Deny Spam
 Origin: BE
+Profile: Domestic ISP
 Tag: Telenet BVBA
 ---
 recaptcha:
@@ -2810,6 +2840,7 @@ recaptcha:
 2001:8a0:ebc1:e601::/64 Deny Spam
 2001:8a0:fbc6:9d01::/64 Deny Malware
 Origin: PT
+Profile: Domestic ISP
 Tag: MEO
 ---
 recaptcha:
@@ -2824,6 +2855,7 @@ recaptcha:
 
 2404:700::/32 Deny Malware
 Origin: KH
+Profile: Domestic ISP
 Tag: CAMBODIAN SINGMENG TELEMEDIA
 ---
 recaptcha:
@@ -2838,6 +2870,7 @@ recaptcha:
 
 2402:e280:2300:5e23::/64 Deny Malware
 Origin: IN
+Profile: Domestic ISP
 Tag: TATA SKY BROADBAND PRIVATE LIMITED
 ---
 recaptcha:

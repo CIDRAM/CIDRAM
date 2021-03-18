@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2021.03.15).
+ * This file: Functions file (last modified: 2021.03.18).
  */
 
 /**
@@ -382,12 +382,7 @@ $CIDRAM['CheckFactors'] = function (array $Files, array $Factors) use (&$CIDRAM)
                     }
                 }
                 if ($Profile = $CIDRAM['Getter']($Files[$FileIndex], $PosA, 'Profile', '')) {
-                    if (!isset($CIDRAM['Profile'])) {
-                        $CIDRAM['Profile'] = [];
-                    }
-                    foreach (explode(';', $Profile) as $ThisProfile) {
-                        $CIDRAM['Profile'][] = $ThisProfile;
-                    }
+                    $CIDRAM['AddProfileEntry']($Profile);
                 }
                 $Tag = $CIDRAM['Getter']($Files[$FileIndex], $PosA, 'Tag', $DefTag);
                 if (
@@ -2464,6 +2459,23 @@ $CIDRAM['GenerateID'] = function () {
         $Time .= $Pad;
     }
     return $Time;
+};
+
+/**
+ * Adds entries to the profiles list.
+ *
+ * @param string $Entries The entries to add.
+ * @return void
+ */
+$CIDRAM['AddProfileEntry'] = function ($Entries) use (&$CIDRAM) {
+    if (!isset($CIDRAM['Profile'])) {
+        $CIDRAM['Profile'] = [];
+    }
+    foreach (explode(';', $Entries) as $Profile) {
+        $CIDRAM['Profile'][] = $Profile;
+    }
+    sort($CIDRAM['Profile'], SORT_STRING);
+    $CIDRAM['Profile'] = array_unique($CIDRAM['Profile']);
 };
 
 /** Make sure the vault is defined so that tests don't break. */

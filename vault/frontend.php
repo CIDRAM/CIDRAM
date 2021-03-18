@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2021.03.10).
+ * This file: Front-end handler (last modified: 2021.03.18).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -3400,13 +3400,13 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-test' && $CIDRAM['FE']['Perm
                     '<code>' . $CIDRAM['Aux Redirect'] . '</code>'
                 ));
             }
-            if ($CIDRAM['Flag Don\'t Log']) {
+            if (!empty($CIDRAM['Flag Don\'t Log'])) {
                 $CIDRAM['ThisIP']['YesNo'] .= ' <span style="text-transform:capitalize">++' . $CIDRAM['L10N']->getString('label_aux_actLog') . '</span>';
             }
-            if ($CIDRAM['Config']['recaptcha']['enabled']) {
+            if (!empty($CIDRAM['Config']['recaptcha']['enabled'])) {
                 $CIDRAM['ThisIP']['YesNo'] .= ' ++' . $CIDRAM['L10N']->getString('label_aux_special_recaptcha_mark');
             }
-            if ($CIDRAM['Suppress output template']) {
+            if (!empty($CIDRAM['Suppress output template'])) {
                 $CIDRAM['ThisIP']['YesNo'] .= ' ++' . $CIDRAM['L10N']->getString('label_aux_special_suppress');
             }
             if (isset($CIDRAM['Profile']) && is_array($CIDRAM['Profile']) && count($CIDRAM['Profile'])) {

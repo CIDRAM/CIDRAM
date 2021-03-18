@@ -1,8 +1,8 @@
 # IPv4 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv4.dat
 
-# Version: 2021.73.286
-# Last modified: 2021.03.15
+# Version: 2021.76.320
+# Last modified: 2021.03.18
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage, i.e., with ignore.dat, with reCAPTCHA, with "extended rules" (default bypasses): « [x]Low [ ]Medium [ ]High »
@@ -2063,7 +2063,7 @@ Origin: US
 Origin: XF
 154.16.111.0/24 Deny Cloud
 Origin: ZA
-Profile: Dedicated;Frequent changes;Webhosting
+Profile: Dedicated;Frequent changes;Tor endpoints here;Webhosting
 Tag: Leaseweb
 
 
@@ -2596,7 +2596,7 @@ Tag: Avesta Networks LLC
 
 # ASN 42244 ("Hosting Operator eServer.ru Ltd").
 # Stop Forum Spam (SFS) listings: 37.
-# Updated: 2021.02.02
+# Updated: 2021.02.02 / Checked: 2021.03.18
 
 80.77.168.0/24 Deny Cloud
 88.218.251.0/24 Deny Cloud
@@ -2868,13 +2868,21 @@ Origin: DE
 Tag: Sedo Domain Parking
 
 
-# ASNs 57043, 395839 ("HOSTKEY B.V").
-# Stop Forum Spam (SFS) listings: 304 (AS57043), 64 (AS395839).
-# Updated: 2020.09.30
+# ASNs 50867, 57043, 395839 ("HOSTKEY B.V").
+# Server farm/rental/lease, and a source of spam and other unwanted traffic.
+# Stop Forum Spam (SFS) listings: 752 (AS50867), 220 (AS57043), 65 (AS395839).
+# Updated: 2021.03.18
 
+86.105.227.0/24 Deny Cloud
+86.106.102.0/24 Deny Cloud
+94.177.123.0/24 Deny Cloud
+Origin: BZ
+103.155.92.0/23 Deny Cloud
+Origin: MY
 5.39.216.0/21 Deny Cloud
 31.207.44.0/22 Deny Cloud
 46.17.96.0/21 Deny Cloud
+46.243.220.0/24 Deny Cloud
 46.249.38.0/24 Deny Cloud
 66.248.204.0/22 Deny Cloud
 146.0.72.0/21 Deny Cloud
@@ -2883,22 +2891,50 @@ Tag: Sedo Domain Parking
 193.109.68.0/23 Deny Cloud
 195.162.68.0/23 Deny Cloud
 Origin: NL
-141.98.81.0/24 Deny Cloud
-141.98.83.0/24 Deny Cloud
-Origin: PA
+5.180.172.0/22 Deny Cloud
+31.192.104.0/21 Deny Cloud
+62.76.255.0/24 Deny Cloud
+80.85.155.0/24 Deny Cloud
 87.251.76.0/23 Deny Cloud
+91.210.104.0/22 Deny Cloud
+91.218.112.0/22 Deny Cloud
+91.218.244.0/22 Deny Cloud
+91.237.249.0/24 Deny Cloud
+141.105.64.0/21 Deny Cloud
+158.255.0.0/21 Deny Cloud
+185.70.104.0/22 Deny Cloud
+185.130.212.0/22 Deny Cloud
+193.247.73.0/24 Deny Cloud
+193.247.77.0/24 Deny Cloud
+194.34.236.0/22 Deny Cloud
 Origin: RU
+168.80.1.0/24 Deny Cloud
+168.81.57.0/24 Deny Cloud
+168.81.59.0/24 Deny Cloud
+196.16.122.0/23 Deny Cloud
+196.16.229.0/24 Deny Cloud
+196.16.231.0/24 Deny Cloud
+Origin: SC
+2.56.228.0/22 Deny Cloud
+45.83.224.0/22 Deny Cloud
 80.209.240.0/22 Deny Cloud
 139.60.160.0/22 Deny Cloud
+172.102.128.0/22 Deny Cloud
+184.174.56.0/22 Deny Cloud
+206.123.139.0/24 Deny Cloud
 Origin: US
+Profile: Tor endpoints here;Webhosting
 Tag: HOSTKEY B.V
 
 
 # ASN 24961 ("myLoc managed IT AG").
 # Caught trying to DDoS SFS.
-# Stop Forum Spam (SFS) listings: 15,541.
-# Updated: 2020.09.20
+# Stop Forum Spam (SFS) listings: 11,937.
+# Updated: 2021.03.17
 
+194.87.138.0/23 Deny Cloud
+195.58.38.0/23 Deny Cloud
+Origin: CZ
 5.104.104.0/21 Deny Cloud
 5.199.128.0/20 Deny Cloud
 37.157.248.0/21 Deny Cloud
@@ -2922,10 +2958,10 @@ Tag: HOSTKEY B.V
 109.68.216.0/21 Deny Cloud
 146.0.32.0/20 Deny Cloud
 185.15.244.0/22 Deny Cloud
+185.117.0.0/24 Deny Cloud
 185.132.53.0/24 Deny Cloud
 185.144.236.0/22 Deny Cloud
 185.171.218.0/23 Deny Cloud
-185.199.60.0/22 Deny Cloud
 185.219.208.0/22 Deny Cloud
 193.22.251.0/24 Deny Cloud
 193.47.99.0/24 Deny Cloud
@@ -2934,26 +2970,25 @@ Tag: HOSTKEY B.V
 193.193.190.0/23 Deny Cloud
 194.9.182.0/23 Deny Cloud
 194.15.36.0/24 Deny Cloud
-194.107.128.0/24 Deny Cloud
 213.202.192.0/18 Deny Cloud
 217.79.176.0/20 Deny Cloud
 Origin: DE
-31.22.104.0/22 Deny Cloud
-147.78.220.0/24 Deny Cloud
-Origin: GB
 185.114.108.0/23 Deny Cloud
-Origin: IT
+Origin: ES
+185.199.60.0/22 Deny Cloud
+Origin: GB
+92.119.56.0/24 Deny Cloud
+Origin: IR
 185.231.220.0/24 Deny Cloud
 193.56.239.0/24 Deny Cloud
 Origin: NL
-45.66.118.0/24 Deny Cloud
 45.91.64.0/24 Deny Cloud
-194.87.138.0/23 Deny Cloud
-195.58.38.0/23 Deny Cloud
-195.133.22.0/24 Deny Cloud
+45.95.232.0/24 Deny Cloud
+185.244.49.0/24 Deny Cloud
 Origin: RU
 193.176.1.0/24 Deny Cloud
 Origin: UA
+Profile: Tor endpoints here;Webhosting
 Tag: myLoc
 
 
@@ -3143,7 +3178,7 @@ Origin: SE
 216.239.100.0/24 Deny Cloud
 216.239.105.0/24 Deny Cloud
 Origin: US
-Profile: Webhosting
+Profile: Tor endpoints here;Webhosting
 Tag: Rackspace Hosting
 
 
@@ -3471,7 +3506,7 @@ Origin: SG
 216.235.85.0/24 Run rules_as6939.php
 216.252.162.0/24 Run rules_as6939.php
 Origin: US
-Profile: Infrastructure;Multiplay
+Profile: Infrastructure;Multiplay;Tor endpoints here
 Tag: Hurricane Electric
 
 
@@ -3938,7 +3973,7 @@ Origin: SG
 208.68.36.0/22 Deny Cloud
 209.97.128.0/18 Deny Cloud
 Origin: US
-Profile: Frequent changes
+Profile: Frequent changes;Tor endpoints here
 Tag: Digital Ocean, Inc
 
 
@@ -4153,6 +4188,7 @@ Origin: NL
 209.95.32.0/19 Deny Cloud
 209.236.64.0/20 Deny Cloud
 Origin: US
+Profile: Tor endpoints here;Webhosting
 Tag: WestHost, Inc
 
 
@@ -4167,6 +4203,7 @@ Tag: WestHost, Inc
 208.67.0.0/21 Deny Cloud
 208.110.64.0/19 Deny Cloud
 Origin: US
+Profile: Webhosting
 Tag: WholeSale Internet
 
 
@@ -4199,6 +4236,7 @@ Origin: RU
 208.67.0.0/21 Deny Cloud
 208.110.87.0/24 Deny Cloud
 Origin: US
+Profile: Webhosting
 Tag: DataShack, LC
 
 
@@ -4214,6 +4252,7 @@ Tag: DataShack, LC
 172.93.4.0/23 Deny Cloud
 199.19.78.0/24 Deny Cloud
 Origin: US
+Profile: Webhosting
 Tag: Rack911
 
 
@@ -4242,6 +4281,7 @@ Origin: RU
 111.221.46.0/24 Deny Cloud
 119.161.100.0/24 Deny Cloud
 Origin: SG
+Profile: Webhosting
 Tag: Ready Server
 
 
@@ -4253,6 +4293,7 @@ Tag: Ready Server
 194.28.172.0/22 Deny Cloud
 195.248.234.0/23 Deny Cloud
 Origin: UA
+Profile: Webhosting
 Tag: ON-LINE Ltd
 
 
@@ -5678,27 +5719,25 @@ Tag: Pulsant
 
 
 # ASN 51852 ("Private Layer INC").
-# Stop Forum Spam (SFS) listings: 25,672.
-# Updated: 2021.01.02
+# Stop Forum Spam (SFS) listings: 34,382.
+# Updated: 2021.03.17
 
 46.102.152.0/24 Deny Cloud
 176.223.111.0/24 Deny Cloud
 176.223.112.0/23 Deny Cloud
 Origin: BZ
 31.7.56.0/21 Deny Cloud
-45.227.254.0/24 Deny Cloud
 46.19.136.0/21 Deny Cloud
 81.17.16.0/20 Deny Cloud
 141.255.160.0/21 Deny Cloud
 179.43.128.0/18 Deny Cloud
 185.12.44.0/22 Deny Cloud
-190.211.252.0/23 Deny Cloud
+190.211.253.0/24 Deny Cloud
 190.211.254.0/24 Deny Cloud
 Origin: PA
-45.133.235.0/24 Deny Cloud
-Origin: RU
 172.94.55.0/24 Deny Cloud
 Origin: US
+Profile: Tor endpoints here
 Tag: Private Layer INC
 
 
@@ -6069,7 +6108,7 @@ Origin: US
 196.55.3.0/24 Deny Cloud
 196.55.228.0/24 Deny Cloud
 Origin: ZA
-Profile: Frequent changes
+Profile: Frequent changes;Tor endpoints here;Webhosting
 Tag: Psychz Networks
 
 
@@ -7220,7 +7259,7 @@ Tag: FineTransit OU
 185.165.190.0/24 Deny Cloud
 195.144.21.0/24 Deny Cloud
 Origin: SC
-Profile: Webhosting
+Profile: Tor endpoints here;Webhosting
 Tag: BlackHOST Ltd
 
 # Anything under ZA (includes some prefixes without description).
@@ -7328,8 +7367,9 @@ Tag: HZ Hosting Ltd
 
 
 # ASN 35908 ("Krypt Technologies").
-# Stop Forum Spam (SFS) listings: 2,441.
-# Updated: 2020.11.29
+# Server farm. Spam, tor endpoints, and other unwanted traffic detected from here.
+# Stop Forum Spam (SFS) listings: 3,277.
+# Updated: 2020.11.29 / Checked: 2021.03.18
 
 110.34.128.0/17 Deny Cloud
 Origin: TH
@@ -7350,7 +7390,7 @@ Origin: TH
 184.164.192.0/19 Deny Cloud
 209.11.240.0/20 Deny Cloud
 Origin: US
-Profile: Webhosting
+Profile: Tor endpoints here;Webhosting
 Tag: Krypt Technologies
 
 
@@ -7451,7 +7491,7 @@ Origin: SY
 209.126.80.0/21 Deny Cloud
 209.145.48.0/20 Deny Cloud
 Origin: US
-Profile: Frequent changes
+Profile: Frequent changes;Tor endpoints here;Webhosting
 Tag: Contabo GmbH
 
 
@@ -8710,30 +8750,30 @@ Tag: Comvive Servidores
 
 
 # ASN 34971 ("Prometeus di Daniela Agro").
-# Stop Forum Spam (SFS) listings: 14.
-# Updated: 2020.03.23 / Checked: 2020.09.01
+# Stop Forum Spam (SFS) listings: 8.
+# Updated: 2021.03.18
 
 37.247.48.0/21 Deny Cloud
+95.157.75.0/24 Deny Cloud
 95.157.96.0/24 Deny Cloud
-185.34.136.0/24 Deny Cloud
+185.34.136.0/23 Deny Cloud
 188.164.128.0/21 Deny Cloud
 195.88.4.0/23 Deny Cloud
 Origin: IT
-185.136.176.0/23 Deny Cloud
-Origin: RO
 192.71.245.0/24 Deny Cloud
 192.165.67.0/24 Deny Cloud
 193.182.16.0/23 Deny Cloud
 193.183.98.0/23 Deny Cloud
 193.234.224.0/23 Deny Cloud
 194.14.179.0/24 Deny Cloud
-194.68.40.0/22 Deny Cloud
-194.71.9.0/24 Deny Cloud
-194.71.95.0/24 Deny Cloud
+194.68.40.0/24 Deny Cloud
+194.68.42.0/24 Deny Cloud
 194.71.224.0/23 Deny Cloud
 Origin: SE
 162.250.144.0/22 Deny Cloud
+185.136.176.0/23 Deny Cloud
 Origin: US
+Profile: Webhosting
 Tag: Daniela Agro
 
 
@@ -8979,6 +9019,7 @@ Tag: Media-Hosts Inc
 205.185.112.0/20 Deny Cloud
 209.141.32.0/19 Deny Cloud
 Origin: US
+Profile: Tor endpoints here;Webhosting
 Tag: FranTech Solutions
 
 
@@ -9079,7 +9120,7 @@ Origin: DE
 193.187.0.0/24 Deny Cloud
 193.221.121.0/24 Deny Cloud
 Origin: EU
-Profile: Tor endpoint
+Profile: Tor endpoints here
 Tag: GHOSTnet GmbH
 
 
@@ -14593,6 +14634,7 @@ Origin: SG
 209.123.162.0/24 Deny Cloud
 209.123.234.0/24 Deny Cloud
 Origin: US
+Profile: Tor endpoints here;Webhosting
 Tag: Linode, LLC
 
 
@@ -15396,7 +15438,7 @@ Origin: US
 196.60.8.0/22 Deny Cloud
 196.251.248.0/22 Deny Cloud
 Origin: ZA
-Profile: Dedicated;Webhosting
+Profile: Dedicated;Tor endpoints here;Webhosting
 Tag: D.E.Tech
 
 
@@ -15773,6 +15815,7 @@ Origin: IT
 185.146.252.0/22 Deny Cloud
 212.44.96.0/19 Deny Cloud
 Origin: SI
+Profile: Tor endpoints here;Webhosting
 Tag: Seeweb S.r.l
 
 
@@ -15836,7 +15879,7 @@ Origin: SA
 208.111.56.0/23 Deny Cloud
 208.111.58.0/24 Deny Cloud
 Origin: US
-Profile: Webhosting
+Profile: Tor endpoints here;Webhosting
 Tag: Cloud Sigma
 
 
@@ -18286,7 +18329,7 @@ Origin: US
 161.123.28.0/22 Deny Cloud
 161.123.254.0/23 Deny Cloud
 Origin: ZA
-Profile: Dedicated;Webhosting
+Profile: Dedicated;Tor endpoints here;Webhosting
 Tag: UK Dedicated Servers
 
 
@@ -22176,9 +22219,9 @@ Profile: Dedicated;Webhosting
 Tag: Namecheap, Inc
 
 
-# ASN 49349 ("Dotsi, Unipessoal Lda").
-# Stop Forum Spam (SFS) listings: 49.
-# Updated: 2020.09.25
+# ASNs 47674, 49349 ("Dotsi, Unipessoal Lda").
+# Stop Forum Spam (SFS) listings: 55 (AS47674), 14 (AS49349).
+# Updated: 2021.03.17
 
 185.11.145.0/24 Deny Cloud
 185.11.146.0/23 Deny Cloud
@@ -22187,18 +22230,15 @@ Tag: Namecheap, Inc
 188.209.49.0/24 Deny Cloud
 188.209.52.0/24 Deny Cloud
 Origin: NL
-5.206.224.0/22 Deny Cloud
-5.206.228.0/24 Deny Cloud
-5.206.230.0/23 Deny Cloud
-185.38.141.0/24 Deny Cloud
+5.206.224.0/21 Deny Cloud
+185.38.140.0/23 Deny Cloud
 185.236.229.0/24 Deny Cloud
 185.236.230.0/23 Deny Cloud
-188.93.232.0/24 Deny Cloud
-188.93.234.0/24 Deny Cloud
-188.93.238.0/23 Deny Cloud
+188.93.232.0/21 Deny Cloud
 Origin: PT
 185.61.136.0/22 Deny Cloud
 Origin: UA
+Profile: Tor endpoints here;Webhosting
 Tag: Dotsi
 
 
@@ -22496,7 +22536,7 @@ Origin: CA
 213.189.27.0/24 Deny Cloud
 213.189.29.0/24 Deny Cloud
 Origin: NL
-Profile: Frequent changes;Infrastructure;Tor endpoint;Webhosting
+Profile: Frequent changes;Infrastructure;Tor endpoints here;Webhosting
 Tag: Astralus B.V
 
 
@@ -23488,7 +23528,7 @@ Tag: GRUPO SYS4NET
 185.52.163.0/24 Deny Cloud
 185.98.240.0/22 Deny Cloud
 Origin: DE
-Profile: Tor endpoint;Webhosting
+Profile: Tor endpoints here;Webhosting
 Tag: PLUTEX GmbH
 
 
@@ -23646,18 +23686,19 @@ Tag: 3W Infra B.V
 
 
 # ASN 58073 ("YISP B.V").
-# Stop Forum Spam (SFS) listings: 2,565.
-# Updated: 2020.09.29
+# Server farm and a source of spam and tor endpoints.
+# Stop Forum Spam (SFS) listings: 1,957.
+# Updated: 2021.03.18
 
-5.253.18.0/23 Deny Cloud
 185.217.171.0/24 Deny Cloud
 Origin: DE
+5.253.18.0/23 Deny Cloud
+Origin: EE
 2.58.20.0/22 Deny Cloud
 37.220.32.0/21 Deny Cloud
 45.10.116.0/22 Deny Cloud
 45.82.44.0/22 Deny Cloud
 45.88.16.0/22 Deny Cloud
-45.92.156.0/24 Deny Cloud
 45.93.32.0/22 Deny Cloud
 45.129.176.0/22 Deny Cloud
 45.145.252.0/22 Deny Cloud
@@ -23675,6 +23716,9 @@ Origin: NL
 Origin: RU
 154.84.1.0/24 Deny Cloud
 Origin: SC
+45.92.156.0/24 Deny Cloud
+Origin: US
+Profile: Tor endpoints here;Webhosting
 Tag: YISP B.V
 
 
@@ -23720,47 +23764,6 @@ Origin: RU
 194.31.236.0/23 Deny Cloud
 Origin: UA
 Tag: TakeWYN
-
-
-# ASNs 34962, 206898 ("Anonymize, Inc", "Sibyl System LTD").
-# Malware detected on network; Future C&C risk.
-# (Mark "Anonymize, Inc" CIDRs as proxy; everything else as cloud).
-# Updated: 2020.10.30
-
-45.88.200.0/24 Deny Cloud
-45.88.202.0/24 Deny Cloud
-Origin: CH
-45.89.96.0/23 Deny Proxy
-45.89.99.0/24 Deny Proxy
-62.192.168.0/24 Deny Cloud
-185.255.112.0/24 Deny Cloud
-193.38.248.0/24 Deny Cloud
-Origin: DE
-194.32.117.0/24 Deny Cloud
-Origin: EE
-45.83.84.0/24 Deny Proxy
-Origin: GB
-45.9.13.0/24 Deny Proxy
-45.12.134.0/24 Deny Cloud
-45.15.140.0/24 Deny Proxy
-92.118.229.0/24 Deny Cloud
-171.22.117.0/24 Deny Cloud
-194.76.136.0/24 Deny Cloud
-Origin: LV
-45.88.176.0/23 Deny Proxy
-92.118.237.0/24 Deny Cloud
-171.22.139.0/24 Deny Cloud
-185.172.110.0/23 Deny Cloud
-Origin: NL
-91.149.192.0/22 Deny Proxy
-91.149.225.0/24 Deny Proxy
-91.149.226.0/23 Deny Proxy
-Origin: PL
-185.83.214.0/23 Deny Cloud
-Origin: PT
-196.55.0.0/24 Deny Cloud
-Origin: ZA
-Tag: Anonymize, Inc
 
 
 # ASN 19816 ("NCS DataCom, Inc").
@@ -23874,7 +23877,7 @@ Origin: FR
 Origin: GB
 185.244.128.0/24 Deny Cloud
 Origin: RO
-Profile: Webhosting
+Profile: Tor endpoints here;Webhosting
 Tag: BelCloud
 
 
@@ -23888,7 +23891,7 @@ Tag: BelCloud
 Origin: DE
 185.21.216.0/22 Deny Cloud
 Origin: GB
-Profile: Tor endpoint;Webhosting
+Profile: Tor endpoints here;Webhosting
 Tag: Zwiebelfreunde
 
 
@@ -24792,7 +24795,7 @@ Origin: SG
 216.52.108.0/22 Deny Cloud
 216.52.136.0/22 Deny Cloud
 Origin: US
-Profile: Dedicated;Webhosting
+Profile: Dedicated;Tor endpoints here;Webhosting
 Tag: DediPath
 
 
@@ -26065,9 +26068,9 @@ Tag: ServerAstra Kft
 
 
 # ASN 45382 ("EHOSTICT").
-# Caught attempting to hack WordPress sites.
-# Stop Forum Spam (SFS) listings: 56.
-# Updated: 2021.02.02
+# Webhosting provider. Caught attempting to hack WordPress sites.
+# Stop Forum Spam (SFS) listings: 71.
+# Updated: 2021.02.02 / Checked: 2021.03.18
 
 45.225.112.0/22 Deny Cloud
 Origin: CL
@@ -26119,6 +26122,7 @@ Origin: RU
 Origin: SC
 107.155.224.0/22 Deny Cloud
 Origin: US
+Profile: Tor endpoints here;Webhosting
 Tag: EHOSTICT
 
 
@@ -27489,23 +27493,22 @@ Tag: Fastly
 
 # ASN 42994 ("HQserv Communication Solutions").
 # Dedicated server farm/lease and a significant source of spam.
-# Stop Forum Spam (SFS) listings: 548.
-# Updated: 2020.11.25
+# Stop Forum Spam (SFS) listings: 140.
+# Updated: 2021.03.18
 
 185.219.127.0/24 Deny Cloud
-Origin: DE
+Origin: BG
 45.144.28.0/24 Deny Cloud
-Origin: GB
+Origin: CZ
 185.191.204.0/23 Deny Cloud
 Origin: IL
-45.66.48.0/24 Deny Cloud
+185.162.88.0/24 Deny Cloud
 Origin: NL
-91.194.11.0/24 Deny Cloud
 193.43.72.0/24 Deny Cloud
 Origin: RU
 161.123.114.0/23 Deny Cloud
 Origin: ZA
-Profile: Dedicated
+Profile: Dedicated;Webhosting
 Tag: HQServ
 
 
@@ -28456,8 +28459,8 @@ Tag: OOO Patent-Media
 
 # ASN 34989 ("ServeTheWorld AS").
 # Norwegian server farm. A huge source of spam.
-# Stop Forum Spam (SFS) listings: 4,923.
-# Updated: 2020.12.22
+# Stop Forum Spam (SFS) listings: 5,174.
+# Updated: 2020.12.22 / Checked: 2021.03.18
 
 93.113.131.0/24 Deny Cloud
 94.177.112.0/24 Deny Cloud
@@ -28473,6 +28476,7 @@ Origin: BZ
 Origin: NO
 172.94.70.0/24 Deny Cloud
 Origin: US
+Profile: Tor endpoints here;Webhosting
 Tag: ServeTheWorld AS
 
 
@@ -31769,6 +31773,335 @@ Tag: GLOBALTELEHOST Corp
 Origin: BR
 Profile: Webhosting
 Tag: PRIMEHOST DO BRASIL LTDA
+
+
+# ASN 60404 ("The Infrastructure Group B.V").
+# Server farm with significant tor endpoints and a significant source of spam.
+# Stop Forum Spam (SFS) listings: 24,576.
+# Updated: 2021.03.17
+
+185.236.9.0/24 Deny Cloud
+Origin: DE
+5.2.64.0/20 Deny Cloud
+5.255.96.0/19 Deny Cloud
+103.251.164.0/22 Deny Cloud
+150.129.8.0/22 Deny Cloud
+185.31.172.0/22 Deny Cloud
+192.76.150.0/24 Deny Cloud
+192.76.153.0/24 Deny Cloud
+192.76.160.0/24 Deny Cloud
+192.76.163.0/24 Deny Cloud
+Origin: NL
+37.139.48.0/24 Deny Cloud
+Origin: RU
+Profile: Infrastructure;Tor endpoints here;Webhosting
+Tag: The Infrastructure Group B.V
+
+
+# ASNs 199524, 202422 ("G-Core Labs S.A").
+# Server farm with significant tor endpoints and a significant source of spam.
+# Stop Forum Spam (SFS) listings: 13,137 (AS199524), 623 (AS202422).
+# Updated: 2021.03.17
+
+91.202.245.0/24 Deny Cloud
+91.202.246.0/23 Deny Cloud
+Origin: CY
+5.62.18.0/24 Deny Cloud
+Origin: GB
+5.8.24.0/22 Deny Cloud
+5.8.40.0/22 Deny Cloud
+5.8.68.0/22 Deny Cloud
+5.8.92.0/22 Deny Cloud
+5.101.216.0/22 Deny Cloud
+5.101.223.0/24 Deny Cloud
+5.188.0.0/21 Deny Cloud
+5.188.32.0/21 Deny Cloud
+5.188.70.0/23 Deny Cloud
+5.188.92.0/22 Deny Cloud
+5.188.108.0/22 Deny Cloud
+5.188.120.0/21 Deny Cloud
+5.188.132.0/22 Deny Cloud
+5.188.148.0/24 Deny Cloud
+5.188.151.0/24 Deny Cloud
+5.188.168.0/22 Deny Cloud
+5.188.212.0/22 Deny Cloud
+5.188.224.0/21 Deny Cloud
+5.188.238.0/23 Deny Cloud
+5.189.200.0/21 Deny Cloud
+5.189.220.0/22 Deny Cloud
+31.184.204.0/22 Deny Cloud
+37.9.32.0/22 Deny Cloud
+45.135.228.0/22 Deny Cloud
+45.147.160.0/22 Deny Cloud
+78.138.52.0/24 Deny Cloud
+79.133.108.0/22 Deny Cloud
+79.133.120.0/21 Deny Cloud
+80.240.96.0/23 Deny Cloud
+80.240.101.0/24 Deny Cloud
+80.240.112.0/22 Deny Cloud
+81.28.14.0/23 Deny Cloud
+82.97.203.0/24 Deny Cloud
+83.229.4.0/24 Deny Cloud
+83.229.6.0/24 Deny Cloud
+83.229.14.0/23 Deny Cloud
+83.229.25.0/24 Deny Cloud
+83.229.32.0/24 Deny Cloud
+91.243.80.0/21 Deny Cloud
+92.38.128.0/20 Deny Cloud
+92.38.145.0/24 Deny Cloud
+92.38.146.0/23 Deny Cloud
+92.38.148.0/22 Deny Cloud
+92.38.152.0/22 Deny Cloud
+92.38.156.0/23 Deny Cloud
+92.38.159.0/24 Deny Cloud
+92.38.160.0/19 Deny Cloud
+92.223.0.0/21 Deny Cloud
+92.223.8.0/24 Deny Cloud
+92.223.10.0/23 Deny Cloud
+92.223.12.0/23 Deny Cloud
+92.223.14.0/24 Deny Cloud
+92.223.16.0/20 Deny Cloud
+92.223.32.0/23 Deny Cloud
+92.223.34.0/24 Deny Cloud
+92.223.36.0/22 Deny Cloud
+92.223.40.0/22 Deny Cloud
+92.223.44.0/23 Deny Cloud
+92.223.48.0/21 Deny Cloud
+92.223.56.0/22 Deny Cloud
+92.223.60.0/23 Deny Cloud
+92.223.63.0/24 Deny Cloud
+92.223.64.0/22 Deny Cloud
+92.223.68.0/23 Deny Cloud
+92.223.71.0/24 Deny Cloud
+92.223.72.0/21 Deny Cloud
+92.223.80.0/20 Deny Cloud
+92.223.96.0/19 Deny Cloud
+95.85.65.0/24 Deny Cloud
+95.85.66.0/23 Deny Cloud
+95.85.68.0/22 Deny Cloud
+95.85.72.0/21 Deny Cloud
+95.85.89.0/24 Deny Cloud
+95.85.90.0/23 Deny Cloud
+95.85.92.0/23 Deny Cloud
+95.85.94.0/24 Deny Cloud
+141.101.148.0/24 Deny Cloud
+146.185.214.0/23 Deny Cloud
+146.185.216.0/22 Deny Cloud
+146.185.220.0/23 Deny Cloud
+146.185.236.0/23 Deny Cloud
+185.12.212.0/23 Deny Cloud
+185.12.214.0/24 Deny Cloud
+185.12.240.0/22 Deny Cloud
+185.14.44.0/24 Deny Cloud
+185.101.136.0/22 Deny Cloud
+185.105.0.0/22 Deny Cloud
+Origin: LU
+103.130.179.0/24 Deny Cloud
+Origin: PK
+162.213.60.0/22 Deny Cloud
+162.216.228.0/22 Deny Cloud
+172.111.178.0/24 Deny Cloud
+172.111.181.0/24 Deny Cloud
+172.111.195.0/24 Deny Cloud
+192.108.254.0/23 Deny Cloud
+193.148.95.0/24 Deny Cloud
+Origin: US
+Profile: Infrastructure;Tor endpoints here;Webhosting
+Tag: G-Core Labs S.A
+
+
+# ASN 57271 ("BitWeb LLC").
+# Fraudulent Russian ISP running predominantly VPNs, proxies, etc.
+# Refer scamalytics.com/ip/isp/bitweb-llc
+# Stop Forum Spam (SFS) listings: 203.
+# Updated: 2021.03.17
+
+193.109.217.0/24 Deny Cloud
+Origin: HK
+37.44.198.0/24 Deny Cloud
+45.90.46.0/24 Deny Cloud
+45.129.236.0/24 Deny Cloud
+45.132.50.0/24 Deny Cloud
+45.133.217.0/24 Deny Cloud
+45.133.235.0/24 Deny Cloud
+45.135.132.0/24 Deny Cloud
+45.137.189.0/24 Deny Cloud
+45.137.190.0/24 Deny Cloud
+45.140.16.0/24 Deny Cloud
+45.140.18.0/24 Deny Cloud
+45.141.198.0/23 Deny Cloud
+45.142.39.0/24 Deny Cloud
+45.142.255.0/24 Deny Cloud
+81.16.141.0/24 Deny Cloud
+85.117.233.0/24 Deny Cloud
+85.202.87.0/24 Deny Cloud
+85.235.82.0/24 Deny Cloud
+91.236.120.0/24 Deny Cloud
+176.53.132.0/24 Deny Cloud
+192.144.18.0/24 Deny Cloud
+193.32.191.0/24 Deny Cloud
+193.56.186.0/24 Deny Cloud
+193.143.1.0/24 Deny Cloud
+194.147.89.0/24 Deny Cloud
+Origin: RU
+Profile: Tor endpoints here
+Tag: BitWeb LLC
+
+
+# ASNs 34962, 58110, 202425, 206898 ("IP Volume inc").
+# Large-scale bandwidth/infrastructure provider. Spam, malware, and tor
+# endpoints detected here.
+# Stop Forum Spam (SFS) listings: 394 (AS34962), 790 (AS58110), 3,781 (AS202425).
+# Updated: 2021.03.18
+
+185.172.110.0/23 Deny Cloud
+Origin: AU
+194.76.136.0/24 Deny Cloud
+Origin: CY
+185.236.11.0/24 Deny Cloud
+Origin: DE
+45.83.141.0/24 Deny Cloud
+45.83.148.0/24 Deny Cloud
+45.92.162.0/24 Deny Cloud
+Origin: FR
+80.82.64.0/22 Deny Cloud
+80.82.68.0/23 Deny Cloud
+80.82.70.0/24 Deny Cloud
+80.82.76.0/22 Deny Cloud
+89.248.160.0/21 Deny Cloud
+89.248.168.0/22 Deny Cloud
+89.248.172.0/23 Deny Cloud
+89.248.174.0/24 Deny Cloud
+93.174.88.0/21 Deny Cloud
+94.102.48.0/20 Deny Cloud
+Origin: GB
+194.147.140.0/24 Deny Cloud
+Origin: IR
+45.9.13.0/24 Deny Cloud
+45.12.134.0/24 Deny Cloud
+45.15.140.0/24 Deny Cloud
+45.83.84.0/24 Deny Cloud
+45.83.128.0/24 Deny Cloud
+45.88.176.0/23 Deny Cloud
+45.89.96.0/23 Deny Cloud
+45.89.99.0/24 Deny Cloud
+92.118.229.0/24 Deny Cloud
+92.118.237.0/24 Deny Cloud
+171.22.119.0/24 Deny Cloud
+Origin: LV
+45.153.201.0/24 Deny Cloud
+Origin: NL
+91.149.192.0/22 Deny Cloud
+91.149.224.0/22 Deny Cloud
+Origin: PL
+185.83.214.0/23 Deny Cloud
+Origin: PT
+194.156.207.0/24 Deny Cloud
+Origin: RO
+5.8.18.0/24 Deny Cloud
+45.15.184.0/24 Deny Cloud
+45.134.13.0/24 Deny Cloud
+145.249.104.0/22 Deny Cloud
+Origin: RU
+196.16.0.0/14 Deny Cloud
+Origin: SC
+45.88.202.0/24 Deny Cloud
+Origin: US
+41.216.186.0/24 Deny Cloud
+Origin: ZA
+Profile: Infrastructure;Tor endpoints here;Webhosting
+Tag: IP Volume inc
+
+
+# ASN 203461 ("REGISTER S.P.A").
+# Webhosting company. Some odd traffic seen from here.
+# Stop Forum Spam (SFS) listings: 7.
+# Updated: 2021.03.18
+
+185.2.4.0/22 Deny Cloud
+195.110.108.0/22 Deny Cloud
+Origin: IT
+Profile: Webhosting
+Tag: REGISTER S.P.A
+
+
+# ASN 48287 ('JSC "RU-CENTER"').
+# Webhosting company. Brute-force attempts and some other weird traffic seen
+# from some specific ranges. For now, just listing the affected ranges only.
+# Stop Forum Spam (SFS) listings: 1.
+# Updated: 2021.03.18
+
+89.111.133.0/24 Deny Cloud
+195.24.67.0/24 Deny Cloud
+Origin: RU
+Profile: Webhosting
+Tag: RU-CENTER
+
+
+# ASN 20326 ("TeraSwitch Networks Inc").
+# Server farm. Some addresses here caught snooping for WordPress vulnerabilities.
+# Stop Forum Spam (SFS) listings: 3.
+# Updated: 2021.03.18
+
+176.103.83.0/24 Deny Cloud
+Origin: RU
+74.118.136.0/21 Deny Cloud
+157.52.132.0/24 Deny Cloud
+204.16.240.0/21 Deny Cloud
+205.196.166.0/23 Deny Cloud
+208.76.212.0/24 Deny Cloud
+208.76.215.0/24 Deny Cloud
+Origin: US
+Profile: Infrastructure;Webhosting
+Tag: TeraSwitch Networks Inc
+
+
+# ASN 58061 ("Scalaxy B.V").
+# High​ fraud risk ISP, and spam detected from here.
+# Refer scamalytics.com/ip/isp/scalaxy-b-v
+# Stop Forum Spam (SFS) listings: 2,348.
+# Updated: 2021.03.18
+
+45.141.216.0/22 Deny Cloud
+Origin: EE
+5.45.64.0/20 Deny Cloud
+5.45.84.0/22 Deny Cloud
+5.45.88.0/22 Deny Cloud
+5.61.48.0/21 Deny Cloud
+5.61.56.0/22 Deny Cloud
+37.1.200.0/21 Deny Cloud
+37.1.216.0/21 Deny Cloud
+37.252.3.0/24 Deny Cloud
+37.252.13.0/24 Deny Cloud
+37.252.14.0/23 Deny Cloud
+185.238.168.0/22 Deny Cloud
+Origin: GB
+5.255.83.0/24 Deny Cloud
+5.255.84.0/24 Deny Cloud
+Origin: NL
+45.140.176.0/22 Deny Cloud
+46.161.44.0/22 Deny Cloud
+77.83.184.0/22 Deny Cloud
+185.202.0.0/24 Deny Cloud
+Origin: RU
+91.238.101.0/24 Deny Cloud
+Origin: UA
+Profile: Tor endpoints here
+Tag: Scalaxy B.V
+
+
+# ASN 38955 ("World4You Internet Services").
+# Stop Forum Spam (SFS) listings: 1.
+# Updated: 2021.03.18
+
+81.19.144.0/20 Deny Cloud
+178.23.80.0/21 Deny Cloud
+185.16.191.0/24 Deny Cloud
+185.115.184.0/22 Deny Cloud
+185.164.4.0/22 Deny Cloud
+Origin: AT
+Profile: Dedicated;Webhosting
+Tag: World4You
 
 
 # ---

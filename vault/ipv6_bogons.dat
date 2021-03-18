@@ -1,8 +1,8 @@
 # IPv6 signatures file (bogon/martian CIDRs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_bogons.dat
 
-# Version: 2020.220.468
-# Last modified: 2020.08.08
+# Version: 2021.76.320
+# Last modified: 2021.03.18
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage, i.e., with ignore.dat, with reCAPTCHA, with "extended rules" (default bypasses): « [x]Low [ ]Medium [ ]High »
@@ -11,7 +11,7 @@
 
 # ---
 # IPv6 Bogons List.
-# Updated: 2019.09.18 / Checked: 2020.06.08
+# Updated: 2019.09.18 / Checked: 2021.03.18
 # Refer https://www.iana.org/assignments/ipv6-address-space/ipv6-address-space.xhtml
 
 100::/8 Deny Bogon
@@ -27,4 +27,5 @@ f000::/5 Deny Bogon
 f800::/6 Deny Bogon
 fe00::/9 Deny Bogon
 fec0::/10 Deny Bogon
+Profile: Bogon
 Tag: IPv6 Bogons

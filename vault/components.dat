@@ -47,7 +47,7 @@ CIDRAM Core:
    - bf079f77e01a8c00780ebd52e5475bb79f365cd3afaaba6e4285b01b81cf5bcf:7632
    - 22c6b09892d47a56ea37446f3c39baf5bca112c18e3e184588494b74872c8bc4:18576
    - f26c0e07816632240b81230873515c70b74da841fdfee319ed2567621125eb63:9645
-   - 9d671a4d40ded169a70eeba1b3f88b63d83d3b3bbe8dab7dae6c4ed24052c2fe:93914
+   - b30041ccecd3c02913b5e85cb4e1ff54f951948a0c50dd300945e56be2c8f723:94164
    - 4d89fe0f2b14c84b8fdad2579333d4d0f31366815d4cb60e040fbbf2c68aaa1d:5158
    - d7d497f934692315ae284582f675834bd4c05c5d295fccc5b1ac1cc7104bcf9d:36941
    - 781e63d7ad70cb8b29dce1e8615e4d201bea2b1a36405fc518202cbe8007170d:13505
@@ -206,7 +206,7 @@ CIDRAM Front-End:
    - 8627543d60036a14e2d1033e63cd703d64b83ebc539d05b40b2aeedbb5d2f2a7:765
    - ebfbd6a90a244ad3f638cbe044dd661fa435ff4094fb63312346f786336b2960:996
    - ae4ea89a27d92e278ee07dbeabdee3f375bf8e7fdc0242101d450d4f21e99da5:236753
-   - c4a081d80153f7c9c9960ab61284d1b2a252633574a013055a70c5701aca8baf:194731
+   - bd48c72eabfa4d4439f182d489907e703faf278f1dcc30984ff36a9df635d988:194769
  Reannotate: components.dat
 Common Classes Package:
  Name: Common Classes Package
@@ -251,7 +251,7 @@ Common Classes Package:
 IPv4:
  Extended Description: Default IPv4 signatures normally included with the main package. Blocks unwanted cloud services and non-human endpoints.
  False Positive Risk: Low
- Version: 2021.73.286
+ Version: 2021.76.320
  Minimum Required: 2.0.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v2/vault/components.dat
  Uninstallable: true
@@ -261,13 +261,13 @@ IPv4:
   To:
    - ipv4.dat
   Checksum:
-   - 88b20b1badb002416c4b29d51e207160e99cac97e6b06b057a50a71b02c42eb3:916018
+   - 3ed40e3f1acb2aae074859aab4474c5bce00f9090c6a88a394522573641f9f3f:925010
  Used with: ipv4
  Reannotate: components.dat
 IPv4-Bogons:
  Extended Description: Default IPv4 signatures normally included with the main package. Blocks bogon/martian CIDRs.
  False Positive Risk: Low
- Version: 2020.220.468
+ Version: 2021.76.320
  Minimum Required: 2.0.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v2/vault/components.dat
  Uninstallable: true
@@ -277,13 +277,13 @@ IPv4-Bogons:
   To:
    - ipv4_bogons.dat
   Checksum:
-   - 2f3739ba8289787fac47a732e9916d5ae614235308843af37552f2ab25e23632:760
+   - 1c3f8f4e5249815e867751e3b664d22c5a2ba35c37c1f338b73708f9b1582949:774
  Used with: ipv4
  Reannotate: components.dat
 IPv4-ISPs:
  Extended Description: Default IPv4 signatures normally included with the main package. Blocks dangerous and spammy ISPs.
  False Positive Risk: Medium
- Version: 2021.73.286
+ Version: 2021.76.320
  Minimum Required: 2.0.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v2/vault/components.dat
  Uninstallable: true
@@ -293,13 +293,13 @@ IPv4-ISPs:
   To:
    - ipv4_isps.dat
   Checksum:
-   - afa50363052b22465358e2f6ca2ecc0fbc06875dbee7bce990065958bfaa3afa:450501
+   - 6286e5416cef103de660397012731a95dc4bea30a7bbf0307849b9219c4581b5:450855
  Used with: ipv4
  Reannotate: components.dat
 IPv4-Other:
  Extended Description: Default IPv4 signatures normally included with the main package. Blocks CIDRs for proxies, VPNs, and other miscellaneous unwanted services.
  False Positive Risk: Medium
- Version: 2021.73.286
+ Version: 2021.76.320
  Minimum Required: 2.0.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v2/vault/components.dat
  Uninstallable: true
@@ -309,13 +309,13 @@ IPv4-Other:
   To:
    - ipv4_other.dat
   Checksum:
-   - f60c6d239829788fcb31685cf2eb968a4c68f7ff27a3368a6907f91087663da8:37098
+   - b2f96f9b7c7892d8f5bbdc771da5ca46ec16070e56081eed25c915aaa18709ee:37116
  Used with: ipv4
  Reannotate: components.dat
 IPv6:
  Extended Description: Default IPv6 signatures normally included with the main package. Blocks unwanted cloud services and non-human endpoints.
  False Positive Risk: Low
- Version: 2021.73.286
+ Version: 2021.76.320
  Minimum Required: 2.0.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v2/vault/components.dat
  Uninstallable: true
@@ -325,13 +325,13 @@ IPv6:
   To:
    - ipv6.dat
   Checksum:
-   - 4b91882d61e7682bb8f477eea690cac2c3db025dba2c6728f78c8dea20cd82d0:237890
+   - 7671adefb88b9fbd4c8d27d1ada02f84421a5f96e7428813dba972c661cb1f63:242270
  Used with: ipv6
  Reannotate: components.dat
 IPv6-Bogons:
  Extended Description: Default IPv6 signatures normally included with the main package. Blocks bogon/martian CIDRs.
  False Positive Risk: Low
- Version: 2020.220.468
+ Version: 2021.76.320
  Minimum Required: 2.0.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v2/vault/components.dat
  Uninstallable: true
@@ -341,13 +341,13 @@ IPv6-Bogons:
   To:
    - ipv6_bogons.dat
   Checksum:
-   - 6b73ce45f3d222596c72b514658f0109e8bb303e607081be21b942f45547cfe8:973
+   - 643148f511d1cf4679883dc040389ef45c41f6020bc65f5dab1da2b0e5127a85:987
  Used with: ipv6
  Reannotate: components.dat
 IPv6-ISPs:
  Extended Description: Default IPv6 signatures normally included with the main package. Blocks dangerous and spammy ISPs.
  False Positive Risk: Medium
- Version: 2021.73.286
+ Version: 2021.76.320
  Minimum Required: 2.0.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v2/vault/components.dat
  Uninstallable: true
@@ -357,13 +357,13 @@ IPv6-ISPs:
   To:
    - ipv6_isps.dat
   Checksum:
-   - f5d2feb8003c9eb70b34e153cbc08312960c9c84c864db2cac5f01dd6440fe9f:81586
+   - 18481f7d599d966aa5c7889cb4af2e47c621100547b8089cf1b7205c92126004:80438
  Used with: ipv6
  Reannotate: components.dat
 IPv6-Other:
  Extended Description: Default IPv6 signatures normally included with the main package. Blocks CIDRs for proxies, VPNs, and other miscellaneous unwanted services.
  False Positive Risk: Low
- Version: 2021.73.286
+ Version: 2021.76.320
  Minimum Required: 2.0.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v2/vault/components.dat
  Uninstallable: true
@@ -373,7 +373,7 @@ IPv6-Other:
   To:
    - ipv6_other.dat
   Checksum:
-   - 96aef97826d3bcc3fd87eeca161a036e7559093f931628fff902516982f67bda:5230
+   - 108667e23c2d192657e3fdba6e92e852a8b8cfad60c5b0b1bf4d48dd23f5d058:5248
  Used with: ipv6
  Reannotate: components.dat
 Bypasses:

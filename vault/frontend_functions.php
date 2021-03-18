@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2021.03.12).
+ * This file: Front-end functions file (last modified: 2021.03.18).
  */
 
 /**
@@ -894,7 +894,7 @@ $CIDRAM['PrepareName'] = function (array &$Arr, string $Key = '') use (&$CIDRAM)
  * Duplication avoidance (front-end updates page).
  *
  * @param string $Targets
- * @return bool Always false.
+ * @return bool True if the component is "in use"; False otherwise.
  */
 $CIDRAM['ComponentFunctionUpdatePrep'] = function (string $Targets) use (&$CIDRAM): bool {
     if (!empty($CIDRAM['Components']['Meta'][$Targets]['Files'])) {

@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_isps.dat
 
-# Version: 2021.73.286
-# Last modified: 2021.03.15
+# Version: 2021.76.320
+# Last modified: 2021.03.18
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage, i.e., with ignore.dat, with reCAPTCHA, with "extended rules" (default bypasses): « [ ]Low [x]Medium [ ]High »
@@ -24,23 +24,6 @@ Origin: RU
 2a0c:680::/32 Deny Generic
 Origin: UA
 Tag: ISPsystem
-
-
-# ASN 38955 ("World4You Internet Services").
-# Updated: 2016.01.18 / Checked: 2020.09.01
-
-2a00:1a68::/32 Deny Generic
-Origin: AT
-Tag: World4You
-
-
-# ASN 202425 ("IP Volume inc").
-# Stop Forum Spam (SFS) listings: 3,941.
-# Updated: 2020.12.20 / Modified: 2021.02.28
-
-2a02:6c8:8000::/33 Deny Spam
-Origin: GB
-Tag: IP Volume inc
 
 
 # ASN 48159 ("Telecommunication Infrastructure Company").
@@ -85,7 +68,7 @@ Origin: RU
 2c0f:f300::/48 Deny Generic
 2c0f:fce8::/33 Deny Generic
 Origin: ZA
-Profile: Frequent changes
+Profile: Frequent changes;Tor endpoints here
 Tag: Hetzner Online GmbH
 
 
@@ -196,23 +179,10 @@ Tag: INFOBOX
 
 # ASN 49335 ("Mir Telematiki Ltd").
 # An ongoing source of all kinds of spam.
-# Stop Forum Spam (SFS) listings: 1,855.
-# Updated: 2020.10.09
+# Dead at last check. Will remove at the next update if no change.
+# Updated: 2021.03.18
 
-2a0b:b86:fff0::/44 Deny Spam
-2a0b:b87:ffc0::/44 Deny Spam
-2a0b:7086:fff0::/44 Deny Spam
-2a0b:7087:fff0::/44 Deny Spam
-Origin: NL
-2a05:b80::/29 Deny Spam
-2a0a:b385::/32 Deny Spam
-2a0a:f9c4::/32 Deny Spam
-Origin: RU
-2a03:f3c0::/29 Deny Spam
-2a05:4f80::/29 Deny Spam
-2a0c:5c40::/29 Deny Spam
-2a0c:7a40::/29 Deny Spam
-Origin: TR
+#<redacted>
 Tag: Mir Telematiki Ltd
 
 
@@ -303,6 +273,7 @@ Origin: EU
 Origin: IL
 2620:11b:e0be::/48 Deny Cloud
 Origin: US
+Profile: Domestic ISP
 Tag: Bezeq International
 ---
 recaptcha:
@@ -320,6 +291,7 @@ recaptcha:
 
 2001:40a8::/32 Deny Spam
 Origin: IL
+Profile: Domestic ISP;Tor endpoints here
 Tag: 012 Smile
 ---
 recaptcha:
@@ -1130,6 +1102,7 @@ recaptcha:
 2406:300::/32 Deny Generic
 2407:4700::/32 Deny Generic
 Origin: TW
+Profile: Domestic ISP;Infrastructure;Multiplay;Tor endpoints here;Webhosting
 Tag: DCBG
 ---
 recaptcha:
@@ -1995,7 +1968,7 @@ Tag: SoftLayer Spam ISPs
 2001:bc8::/32 Deny Spam
 2a01:e00::/26 Deny Spam
 Origin: FR
-Profile: Domestic ISP;Multiplay
+Profile: Domestic ISP;Multiplay;Tor endpoints here
 Tag: ONLINE S.A.S
 ---
 recaptcha:
@@ -2293,13 +2266,12 @@ recaptcha:
 
 # ASN 28573 ("CLARO S.A"). A Brazilian domestic ISP caught spamming. Listing
 # just the affected ranges, plus all US ranges (interlaced cloud ranges).
-# %Listed, abuseat.org (CBL-Listed): 0.15%.
-# Stop Forum Spam (SFS) listings: 5,229.
-# Updated: 2021.01.24
+# %Listed, abuseat.org (CBL-Listed): 0.16%.
+# Stop Forum Spam (SFS) listings: 3,799.
+# Updated: 2021.03.18
 
-2804:14c:63:3039::/64 Deny Spam
-2804:14c:b0:960f::/64 Deny Spam
-2804:14d:90af:8ea1::/64 Deny Spam
+2804:14c:124:81fb::/64 Deny Spam
+2804:14d:78a2:85db::/64 Deny Spam
 Origin: BR
 Profile: Domestic ISP
 Tag: CLARO S.A
@@ -2380,36 +2352,16 @@ recaptcha:
  enabled: true
 
 
-# ASN 9299 ("Philippine Long Distance Telephone Company").
-# Philippines domestic ISP. XRumer, attempted hack attempts, brute-force and
-# SSH attacks detected from this network. Marked for use with reCAPTCHA.
-# Listing only the offending ranges/addresses (spam/malware) plus all
-# ranges/addresses from SC+US (cloud).
-# %Listed, abuseat.org (CBL-Listed): 0.89%.
-# Stop Forum Spam (SFS) listings: 6,321.
-# Updated: 2020.11.15
-
-2001:4453:3fc:bf00::/64 Deny Spam
-2001:4455:42e:5d00::/64 Deny Spam
-Origin: PH
-Profile: Domestic ISP
-Tag: Philippine Long Distance
----
-recaptcha:
- enabled: true
-
-
 # ASN 58055 ("Extratel Ltd").
 # Domestic Ukrainian ISP; IPs from this ASN caught attempting automated attacks
 # against honeypots and login pages, with some evidence of some IPs being used
-# as low-end C&Cs and for malware distribution. Marked for use with reCAPTCHA,
-# as it should allow human users to still have access, while blocking most of
-# the automated traffic.
-# Stop Forum Spam (SFS) listings: 97.
-# Updated: 2020.03.21 / Checked: 2020.09.01
+# as low-end C&Cs and for malware distribution.
+# Stop Forum Spam (SFS) listings: 64.
+# Updated: 2020.03.21 / Checked: 2021.03.18
 
 2a0f:1e40::/32 Deny Malware
 Origin: UA
+Profile: Domestic ISP
 Tag: Extratel Ltd
 ---
 recaptcha:
@@ -2751,7 +2703,7 @@ Origin: FR
 Origin: HK
 2604:2dc0::/32 Run rules_specific.php
 Origin: US
-Profile: Domestic ISP;Multiplay
+Profile: Domestic ISP;Multiplay;Tor endpoints here
 Tag: OVH Systems
 ---
 recaptcha:

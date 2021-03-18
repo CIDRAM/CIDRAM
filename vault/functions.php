@@ -2478,6 +2478,28 @@ $CIDRAM['AddProfileEntry'] = function ($Entries) use (&$CIDRAM) {
     $CIDRAM['Profile'] = array_unique($CIDRAM['Profile']);
 };
 
+/**
+ * Determine, based on current signature count and on whether any CAPTCHA
+ * solutions are enabled, whether to honour API lookups. Ensures compatibility
+ * with modules written with v3 code in mind.
+ *
+ * @return bool True to honour; False to not honour.
+ */
+$CIDRAM['HonourLookup'] = function () use (&$CIDRAM) {
+    if (!isset($CIDRAM['BlockInfo']['SignatureCount'])) {
+        return false;
+    }
+    if (isset($CIDRAM['Config']['recaptcha']) && (
+        $CIDRAM['Config']['recaptcha']['usemode'] === 1 || (
+            $CIDRAM['Config']['recaptcha']['usemode'] === 2 &&
+            !empty($CIDRAM['Config']['recaptcha']['enabled'])
+        )
+    )) {
+        return $CIDRAM['BlockInfo']['SignatureCount'] <= $CIDRAM['Config']['recaptcha']['signature_limit'];
+    }
+    return $CIDRAM['BlockInfo']['SignatureCount'] < 1;
+};
+
 /** Make sure the vault is defined so that tests don't break. */
 if (isset($CIDRAM['Vault'])) {
     /** Load all default event handlers. */

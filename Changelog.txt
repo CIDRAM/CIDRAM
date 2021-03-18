@@ -16,7 +16,10 @@ Detailed version release guidelines for CIDRAM can be found at:
   adding new functionality, I'm not marking this as a new feature).
 
 - [2021.03.18; Maikuolan]: Added closure for adding new profile entries, to
-  make adding profile entries via modules a little cleaner and easier.
+  make adding profile entries via modules a little cleaner and easier. Added
+  closure to determine, based on current signature count and on whether any
+  CAPTCHA solutions are enabled, whether to honour API lookups (ensures
+  compatibility with modules written with future v3 code in mind).
 
 === Version/Release 1.18.0 ===
 MINOR RELEASE.

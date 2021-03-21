@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Event handlers file (last modified: 2021.03.11).
+ * This file: Event handlers file (last modified: 2021.03.18).
  */
 
 /**
@@ -29,13 +29,13 @@ $CIDRAM['Events']->addHandler('writeToLog', function () use (&$CIDRAM): bool {
         $CIDRAM['Config']['general']['truncate'] > 0 &&
         filesize($Filename) >= $CIDRAM['ReadBytes']($CIDRAM['Config']['general']['truncate'])
     ) ? "\x3c\x3fphp die; \x3f\x3e\n\n" : '';
-    $WriteMode = !empty($Data) ? 'w' : 'a';
+    $WriteMode = !empty($Data) ? 'wb' : 'ab';
     $Data .= $CIDRAM['ParseVars']($CIDRAM['Parsables'], $CIDRAM['FieldTemplates']['Logs'] . "\n");
 
     $File = fopen($Filename, $WriteMode);
     fwrite($File, $Data);
     fclose($File);
-    if ($WriteMode === 'w') {
+    if ($WriteMode === 'wb') {
         $CIDRAM['LogRotation']($CIDRAM['Config']['general']['logfile']);
     }
     return true;
@@ -71,12 +71,12 @@ $CIDRAM['Events']->addHandler('writeToLog', function () use (&$CIDRAM): bool {
     $WriteMode = !file_exists($Filename) || (
         $CIDRAM['Config']['general']['truncate'] > 0 &&
         filesize($Filename) >= $CIDRAM['ReadBytes']($CIDRAM['Config']['general']['truncate'])
-    ) ? 'w' : 'a';
+    ) ? 'wb' : 'ab';
 
     $File = fopen($Filename, $WriteMode);
     fwrite($File, $Data);
     fclose($File);
-    if ($WriteMode === 'w') {
+    if ($WriteMode === 'wb') {
         $CIDRAM['LogRotation']($CIDRAM['Config']['general']['logfile_apache']);
     }
     return true;
@@ -108,12 +108,12 @@ $CIDRAM['Events']->addHandler('writeToLog', function () use (&$CIDRAM): bool {
     $WriteMode = !file_exists($Filename) || (
         $CIDRAM['Config']['general']['truncate'] > 0 &&
         filesize($Filename) >= $CIDRAM['ReadBytes']($CIDRAM['Config']['general']['truncate'])
-    ) ? 'w' : 'a';
+    ) ? 'wb' : 'ab';
 
     $File = fopen($Filename, $WriteMode);
     fwrite($File, serialize($BlockInfo) . "\n");
     fclose($File);
-    if ($WriteMode === 'w') {
+    if ($WriteMode === 'wb') {
         $CIDRAM['LogRotation']($CIDRAM['Config']['general']['logfile_serialized']);
     }
     return true;
@@ -138,7 +138,7 @@ $CIDRAM['Events']->addHandler('reCaptchaLog', function () use (&$CIDRAM): bool {
     $WriteMode = !file_exists($Filename) || (
         $CIDRAM['Config']['general']['truncate'] > 0 &&
         filesize($Filename) >= $CIDRAM['ReadBytes']($CIDRAM['Config']['general']['truncate'])
-    ) ? 'w' : 'a';
+    ) ? 'wb' : 'ab';
     $Data = sprintf(
         "%1\$s%2\$s - %3\$s%4\$s - %5\$s%6\$s\n",
         $CIDRAM['L10N']->getString('field_ipaddr'),
@@ -157,7 +157,7 @@ $CIDRAM['Events']->addHandler('reCaptchaLog', function () use (&$CIDRAM): bool {
     $File = fopen($Filename, $WriteMode);
     fwrite($File, $Data);
     fclose($File);
-    if ($WriteMode === 'w') {
+    if ($WriteMode === 'wb') {
         $CIDRAM['LogRotation']($CIDRAM['Config']['recaptcha']['logfile']);
     }
     return true;
@@ -231,17 +231,17 @@ $CIDRAM['Events']->addHandler('final', function () use (&$CIDRAM): bool {
         $CIDRAM['Config']['general']['truncate'] > 0 &&
         filesize($File) >= $CIDRAM['ReadBytes']($CIDRAM['Config']['general']['truncate'])
     )) {
-        $WriteMode = 'w';
+        $WriteMode = 'wb';
         $Data = $CIDRAM['L10N']->getString('error_log_header') . "\n=====\n" . $CIDRAM['Pending-Error-Log-Data'];
     } else {
-        $WriteMode = 'a';
+        $WriteMode = 'ab';
         $Data = $CIDRAM['Pending-Error-Log-Data'];
     }
 
     $Handle = fopen($File, $WriteMode);
     fwrite($Handle, $Data);
     fclose($Handle);
-    if ($WriteMode === 'w') {
+    if ($WriteMode === 'wb') {
         $CIDRAM['LogRotation']($CIDRAM['Config']['general']['error_log']);
     }
     return true;
@@ -265,12 +265,12 @@ $CIDRAM['Events']->addHandler('writeToPHPMailerEventLog', function (string $Data
     $WriteMode = (!file_exists($EventLog) || (
         $CIDRAM['Config']['general']['truncate'] > 0 &&
         filesize($EventLog) >= $CIDRAM['ReadBytes']($CIDRAM['Config']['general']['truncate'])
-    )) ? 'w' : 'a';
+    )) ? 'wb' : 'ab';
 
     $Handle = fopen($EventLog, $WriteMode);
     fwrite($Handle, $Data);
     fclose($Handle);
-    if ($WriteMode === 'w') {
+    if ($WriteMode === 'wb') {
         $CIDRAM['LogRotation']($CIDRAM['Config']['PHPMailer']['event_log']);
     }
     return true;

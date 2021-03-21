@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: reCAPTCHA module (last modified: 2021.03.12).
+ * This file: reCAPTCHA module (last modified: 2021.03.18).
  */
 
 /**
@@ -223,7 +223,7 @@ if ($CIDRAM['Config']['recaptcha']['lockuser']) {
 
     /** Update the hash list if any changes were made. */
     if ($CIDRAM['reCAPTCHA']['HashListMod']) {
-        $CIDRAM['Handle'] = fopen($CIDRAM['Vault'] . 'hashes.dat', 'w');
+        $CIDRAM['Handle'] = fopen($CIDRAM['Vault'] . 'hashes.dat', 'wb');
         fwrite($CIDRAM['Handle'], $CIDRAM['reCAPTCHA']['HashList']);
         fclose($CIDRAM['Handle']);
     }
@@ -288,7 +288,7 @@ if ($CIDRAM['Config']['recaptcha']['lockuser']) {
 
     /** Update the IP bypass list if any changes were made. */
     if ($CIDRAM['reCAPTCHA']['BypassListMod']) {
-        $CIDRAM['Handle'] = fopen($CIDRAM['Vault'] . 'ipbypass.dat', 'w');
+        $CIDRAM['Handle'] = fopen($CIDRAM['Vault'] . 'ipbypass.dat', 'wb');
         fwrite($CIDRAM['Handle'], $CIDRAM['reCAPTCHA']['BypassList']);
         fclose($CIDRAM['Handle']);
     }

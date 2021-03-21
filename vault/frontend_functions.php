@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2021.03.18).
+ * This file: Front-end functions file (last modified: 2021.03.21).
  */
 
 /**
@@ -1730,17 +1730,7 @@ $CIDRAM['UpdatesHandler-Update'] = function ($ID) use (&$CIDRAM): void {
                     $Rollback = true;
                     continue;
                 }
-                $ThisName = $ThisFileName;
-                $ThisPath = $CIDRAM['Vault'];
-                while (strpos($ThisName, '/') !== false || strpos($ThisName, "\\") !== false) {
-                    $Separator = (strpos($ThisName, '/') !== false) ? '/' : "\\";
-                    $CIDRAM['ThisDir'] = substr($ThisName, 0, strpos($ThisName, $Separator));
-                    $ThisPath .= $CIDRAM['ThisDir'] . '/';
-                    $ThisName = substr($ThisName, strlen($CIDRAM['ThisDir']) + 1);
-                    if (!is_dir($ThisPath)) {
-                        mkdir($ThisPath);
-                    }
-                }
+                $CIDRAM['BuildPath']($CIDRAM['Vault'] . $ThisFileName);
                 if (is_readable($CIDRAM['Vault'] . $ThisFileName)) {
                     $BytesRemoved += filesize($CIDRAM['Vault'] . $ThisFileName);
                     if (file_exists($CIDRAM['Vault'] . $ThisFileName . '.rollback')) {
@@ -2143,17 +2133,7 @@ $CIDRAM['UpdatesHandler-Repair'] = function ($ID) use (&$CIDRAM): void {
                     $RepairFailed = true;
                     continue;
                 }
-                $ThisName = $RemoteFileTo;
-                $ThisPath = $CIDRAM['Vault'];
-                while (strpos($ThisName, '/') !== false || strpos($ThisName, "\\") !== false) {
-                    $Separator = (strpos($ThisName, '/') !== false) ? '/' : "\\";
-                    $ThisDir = substr($ThisName, 0, strpos($ThisName, $Separator));
-                    $ThisPath .= $ThisDir . '/';
-                    $ThisName = substr($ThisName, strlen($ThisDir) + 1);
-                    if (!is_dir($ThisPath)) {
-                        mkdir($ThisPath);
-                    }
-                }
+                $CIDRAM['BuildPath']($CIDRAM['Vault'] . $RemoteFileTo);
                 if (file_exists($CIDRAM['Vault'] . $RemoteFileTo) && !is_writable($CIDRAM['Vault'] . $RemoteFileTo)) {
                     $RepairFailed = true;
                     continue;
@@ -2989,12 +2969,12 @@ $CIDRAM['FELogger'] = function (string $IPAddr, string $User, string $Message) u
     $WriteMode = (!file_exists($File) || (
         $CIDRAM['Config']['general']['truncate'] > 0 &&
         filesize($File) >= $CIDRAM['ReadBytes']($CIDRAM['Config']['general']['truncate'])
-    )) ? 'w' : 'a';
+    )) ? 'wb' : 'ab';
 
     $Handle = fopen($File, $WriteMode);
     fwrite($Handle, $Data);
     fclose($Handle);
-    if ($WriteMode === 'w') {
+    if ($WriteMode === 'wb') {
         $CIDRAM['LogRotation']($CIDRAM['Config']['general']['frontend_log']);
     }
 };

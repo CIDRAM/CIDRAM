@@ -2514,7 +2514,8 @@ $CIDRAM['IsSensitive'] = function ($URI) {
         ')|signup)|act(ion)?=(edit|reg)|(activate|confirm|login|newuser|reg(ist(' .
         'er|ration))?|sign(in|up))(\.php|=)|special:userlogin&|verifyemail|wp-co' .
         'mments-post~',
-    $URI);
+        $URI
+    );
 };
 
 /** Make sure the vault is defined so that tests don't break. */

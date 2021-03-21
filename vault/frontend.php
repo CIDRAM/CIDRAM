@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2021.03.18).
+ * This file: Front-end handler (last modified: 2021.03.21).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -1538,7 +1538,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
     /** Update the currently active configuration file if any changes were made. */
     if ($CIDRAM['ConfigModified']) {
         $CIDRAM['FE']['state_msg'] = $CIDRAM['L10N']->getString('response_configuration_updated');
-        $CIDRAM['Handle'] = fopen($CIDRAM['Vault'] . $CIDRAM['FE']['ActiveConfigFile'], 'w');
+        $CIDRAM['Handle'] = fopen($CIDRAM['Vault'] . $CIDRAM['FE']['ActiveConfigFile'], 'wb');
         fwrite($CIDRAM['Handle'], $CIDRAM['RegenerateConfig']);
         fclose($CIDRAM['Handle']);
         if (empty($CIDRAM['QueryVars']['updated'])) {
@@ -2628,19 +2628,8 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'file-manager' && $CIDRAM['FE'][
 
                 /** Rename the file. */
                 if ($CIDRAM['SafeToContinue']) {
-                    $CIDRAM['ThisName'] = $_POST['filename_new'];
-                    $CIDRAM['ThisPath'] = $CIDRAM['Vault'];
-
                     /** Add parent directories. */
-                    while (strpos($CIDRAM['ThisName'], '/') !== false || strpos($CIDRAM['ThisName'], "\\") !== false) {
-                        $Separator = (strpos($CIDRAM['ThisName'], '/') !== false) ? '/' : "\\";
-                        $CIDRAM['ThisDir'] = substr($CIDRAM['ThisName'], 0, strpos($CIDRAM['ThisName'], $Separator));
-                        $CIDRAM['ThisPath'] .= $CIDRAM['ThisDir'] . '/';
-                        $CIDRAM['ThisName'] = substr($CIDRAM['ThisName'], strlen($CIDRAM['ThisDir']) + 1);
-                        if (!is_dir($CIDRAM['ThisPath'])) {
-                            mkdir($CIDRAM['ThisPath']);
-                        }
-                    }
+                    $CIDRAM['BuildPath']($CIDRAM['Vault'] . $_POST['filename_new']);
 
                     if (rename($CIDRAM['Vault'] . $_POST['filename'], $CIDRAM['Vault'] . $_POST['filename_new'])) {
                         /** Remove empty directories. */
@@ -2679,7 +2668,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'file-manager' && $CIDRAM['FE'][
                     $_POST['content'] = str_replace("\n", "\r\n", $_POST['content']);
                 }
 
-                $CIDRAM['Handle'] = fopen($CIDRAM['Vault'] . $_POST['filename'], 'w');
+                $CIDRAM['Handle'] = fopen($CIDRAM['Vault'] . $_POST['filename'], 'wb');
                 fwrite($CIDRAM['Handle'], $_POST['content']);
                 fclose($CIDRAM['Handle']);
 
@@ -3916,7 +3905,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'aux' && $CIDRAM['FE']['Permissi
 
         /** Priority information about auxiliary rules. */
         $CIDRAM['FE']['Priority_Aux'] = sprintf(
-            '%2$s%1$s(%3$s🔄%4$s🔄%5$s🔄%6$s)%1$s%7$s',
+            '%2$s%1$s%8$s%1$s(%9$s🔄%3$s🔄%4$s🔄%5$s🔄%6$s)%1$s%7$s',
             $CIDRAM['L10N']->Data['Text Direction'] !== 'rtl' ? '➡' : '⬅',
             $CIDRAM['L10N']->getString('label_aux_actWhl'),
             $CIDRAM['L10N']->getString('label_aux_actGrl'),
@@ -3924,7 +3913,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'aux' && $CIDRAM['FE']['Permissi
             $CIDRAM['L10N']->getString('label_aux_actByp'),
             $CIDRAM['L10N']->getString('label_aux_actLog'),
             $CIDRAM['L10N']->getString('label_aux_actRdr'),
-            $CIDRAM['L10N']->getString('label_aux_actRun'),
+            $CIDRAM['L10N']->getString('label_aux_actRun') . '…',
             $CIDRAM['L10N']->getString('label_aux_actPro')
         );
 

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2021.03.18).
+ * This file: Functions file (last modified: 2021.03.21).
  */
 
 /**
@@ -1753,6 +1753,7 @@ $CIDRAM['BuildLogPattern'] = function ($Str, $GZ = false) {
  * @return bool True on success; False on failure.
  */
 $CIDRAM['GZCompressFile'] = function ($File) {
+    /** Guard. */
     if (!is_file($File) || !is_readable($File)) {
         return false;
     }
@@ -2498,6 +2499,22 @@ $CIDRAM['HonourLookup'] = function () use (&$CIDRAM) {
         return $CIDRAM['BlockInfo']['SignatureCount'] <= $CIDRAM['Config']['recaptcha']['signature_limit'];
     }
     return $CIDRAM['BlockInfo']['SignatureCount'] < 1;
+};
+
+/**
+ * Determine, based on the URI of the current request, whether the current
+ * request is sensitive.
+ *
+ * @param string $URI The URI.
+ * @return bool True is sensitive; False is not sensitive.
+ */
+$CIDRAM['IsSensitive'] = function ($URI) {
+    return preg_match(
+        '~/(comprofiler|user)/(login|register)|=(activate|login|regist(er|ration' .
+        ')|signup)|act(ion)?=(edit|reg)|(activate|confirm|login|newuser|reg(ist(' .
+        'er|ration))?|sign(in|up))(\.php|=)|special:userlogin&|verifyemail|wp-co' .
+        'mments-post~',
+    $URI);
 };
 
 /** Make sure the vault is defined so that tests don't break. */

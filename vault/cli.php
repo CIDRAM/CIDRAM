@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: CLI handler (last modified: 2020.07.04).
+ * This file: CLI handler (last modified: 2021.03.18).
  */
 
 /** Fallback for missing $_SERVER superglobal. */
@@ -416,7 +416,7 @@ if ($CIDRAM['argv'][1] === '-h') {
     }
     $FileToValidate = substr($FileToValidate, 1);
     if ($ModCheckBefore !== '[' . hash('md5', $FileToValidate) . ':' . strlen($FileToValidate) . ']') {
-        $Handle = fopen($CIDRAM['Vault'] . $CIDRAM['argv'][2] . '.fixed', 'w');
+        $Handle = fopen($CIDRAM['Vault'] . $CIDRAM['argv'][2] . '.fixed', 'wb');
         fwrite($Handle, $FileToValidate);
         fclose($Handle);
     }

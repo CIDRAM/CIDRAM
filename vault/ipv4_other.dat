@@ -1,8 +1,8 @@
 # IPv4 signatures file (CIDRs for proxies, VPNs and other miscellaneous unwanted services).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv4_other.dat
 
-# Version: 2021.76.320
-# Last modified: 2021.03.18
+# Version: 2021.79.107
+# Last modified: 2021.03.21
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage, i.e., with ignore.dat, with reCAPTCHA, with "extended rules" (default bypasses): « [ ]Low [x]Medium [ ]High »
@@ -180,9 +180,9 @@ recaptcha:
 
 
 # ASN 396507 ("Emerald Onion").
-# Anonymous Tor endpoints here; Significant source of spam.
-# Stop Forum Spam (SFS) listings: 21,557.
-# Updated: 2020.08.05 / Checked: 2020.12.29
+# Anonymous tor endpoints here; Significant source of spam.
+# Stop Forum Spam (SFS) listings: 17,878.
+# Updated: 2020.08.05 / Checked: 2021.03.21
 
 23.129.64.0/24 Deny Proxy
 103.232.206.0/23 Deny Proxy
@@ -1219,7 +1219,7 @@ Tag: Beliefnet
 # Octopusnet VPN (mostly from AS44724, but we'll update via announces instead,
 # because we don't need to block the entire ASN, and there could be stray CIDRs
 # too). Proxy service with a history of spam events.
-# Updated: 2020.12.29
+# Updated: 2021.03.21
 
 46.46.17.0/24 Deny Proxy
 46.46.24.0/21 Deny Proxy
@@ -1227,12 +1227,11 @@ Tag: Beliefnet
 46.46.48.0/20 Deny Proxy
 83.217.28.0/22 Deny Proxy
 95.154.64.0/19 Deny Proxy
-95.154.96.0/21 Deny Proxy
+95.154.96.0/20 Deny Proxy
 95.154.112.0/22 Deny Proxy
 95.154.116.0/23 Deny Proxy
 95.154.120.0/21 Deny Proxy
 185.57.28.0/22 Deny Proxy
-213.5.16.0/22 Deny Proxy
 Origin: RU
 Tag: Octopusnet VPN
 
@@ -1372,7 +1371,7 @@ Origin: EU
 Origin: US
 196.53.108.0/24 Deny Proxy
 Origin: ZA
-Profile: Domestic ISP;Infrastructure;Multiplay;Webhosting
+Profile: Domestic ISP;Infrastructure;Multiplay;Tor endpoints here;Webhosting
 Tag: M247 Ltd
 ---
 recaptcha:

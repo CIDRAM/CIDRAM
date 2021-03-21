@@ -1,8 +1,8 @@
 # IPv6 signatures file (CIDRs for proxies, VPNs and other miscellaneous unwanted services).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_other.dat
 
-# Version: 2021.76.320
-# Last modified: 2021.03.18
+# Version: 2021.79.107
+# Last modified: 2021.03.21
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage, i.e., with ignore.dat, with reCAPTCHA, with "extended rules" (default bypasses): « [x]Low [ ]Medium [ ]High »
@@ -94,9 +94,9 @@ recaptcha:
 
 
 # ASN 396507 ("Emerald Onion").
-# Anonymous Tor endpoints here; Significant source of spam.
-# Stop Forum Spam (SFS) listings: 21,557.
-# Updated: 2019.05.03 / Checked: 2020.12.29
+# Anonymous tor endpoints here; Significant source of spam.
+# Stop Forum Spam (SFS) listings: 17,878.
+# Updated: 2019.05.03 / Checked: 2021.03.21
 
 2620:18c::/36 Deny Proxy
 Origin: US
@@ -107,7 +107,7 @@ Tag: Emerald Onion
 # Octopusnet VPN (mostly from AS44724, but we'll update via announces instead,
 # because we don't need to block the entire ASN, and there could be stray CIDRs
 # too). Proxy service with a history of spam events.
-# Updated: 2019.12.14 / Checked: 2020.12.29
+# Updated: 2019.12.14 / Checked: 2021.03.21
 
 2a04:db80::/32 Deny Proxy
 Origin: RU

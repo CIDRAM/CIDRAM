@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_isps.dat
 
-# Version: 2021.79.107
-# Last modified: 2021.03.21
+# Version: 2021.83.275
+# Last modified: 2021.03.25
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage, i.e., with ignore.dat, with reCAPTCHA, with "extended rules" (default bypasses): « [ ]Low [x]Medium [ ]High »
@@ -388,22 +388,27 @@ recaptcha:
 # Significant source of forum/blog spam. Also a legit Indian ISP with human
 # endpoints. Websites based in, or targeted towards an Indian audience, should
 # keep it listed in their ignore.dat file. Marked for use with reCAPTCHA.
-# %Listed, abuseat.org (CBL-Listed): 32.59%.
-# Stop Forum Spam (SFS) listings: 1,020.
-# Updated: 2020.09.30
+# %Listed, abuseat.org (CBL-Listed): 14.82%.
+# Stop Forum Spam (SFS) listings: 1,981.
+# Updated: 2021.03.25
 
 2402:8100:b::/48 Deny Spam
+2402:8100:ca0::/44 Deny Spam
 2402:8100:2008::/45 Deny Spam
 2402:8100:2010::/44 Deny Spam
 2402:8100:2020::/43 Deny Spam
 2402:8100:2040::/42 Deny Spam
 2402:8100:2080::/42 Deny Spam
+2402:8100:20c0::/48 Deny Spam
 2402:8100:20c4::/47 Deny Spam
 2402:8100:20c7::/48 Deny Spam
+2402:8100:20cb::/48 Deny Spam
 2402:8100:20cd::/48 Deny Spam
 2402:8100:20ce::/47 Deny Spam
 2402:8100:20d0::/47 Deny Spam
+2402:8100:20d3::/48 Deny Spam
 2402:8100:20d4::/48 Deny Spam
+2402:8100:20d8::/47 Deny Spam
 2402:8100:2100::/45 Deny Spam
 2402:8100:2108::/46 Deny Spam
 2402:8100:210c::/47 Deny Spam
@@ -411,22 +416,7 @@ recaptcha:
 2402:8100:2118::/46 Deny Spam
 2402:8100:211c::/47 Deny Spam
 2402:8100:2140::/42 Deny Spam
-2402:8100:2180::/47 Deny Spam
-2402:8100:2183::/48 Deny Spam
-2402:8100:2184::/47 Deny Spam
-2402:8100:2187::/48 Deny Spam
-2402:8100:2188::/47 Deny Spam
-2402:8100:218b::/48 Deny Spam
-2402:8100:218c::/47 Deny Spam
-2402:8100:218f::/48 Deny Spam
-2402:8100:2190::/47 Deny Spam
-2402:8100:2193::/48 Deny Spam
-2402:8100:2194::/47 Deny Spam
-2402:8100:2197::/48 Deny Spam
-2402:8100:2198::/47 Deny Spam
-2402:8100:219b::/48 Deny Spam
-2402:8100:219c::/47 Deny Spam
-2402:8100:219f::/48 Deny Spam
+2402:8100:2180::/43 Deny Spam
 2402:8100:21c0::/45 Deny Spam
 2402:8100:21d0::/45 Deny Spam
 2402:8100:21e0::/43 Deny Spam
@@ -434,15 +424,16 @@ recaptcha:
 2402:8100:2240::/42 Deny Spam
 2402:8100:2280::/41 Deny Spam
 2402:8100:2300::/42 Deny Spam
-2402:8100:2380::/42 Deny Spam
-2402:8100:23c0::/43 Deny Spam
+2402:8100:2340::/43 Deny Spam
+2402:8100:2380::/41 Deny Spam
 2402:8100:2400::/43 Deny Spam
-2402:8100:24c0::/45 Deny Spam
-2402:8100:24d0::/44 Deny Spam
-2402:8100:24e0::/43 Deny Spam
+2402:8100:24c0::/42 Deny Spam
 2402:8100:2510::/44 Deny Spam
 2402:8100:2520::/43 Deny Spam
-2402:8100:2540::/45 Deny Spam
+2402:8100:2540::/44 Deny Spam
+2402:8100:2560::/44 Deny Spam
+2402:8100:2570::/45 Deny Spam
+2402:8100:2578::/47 Deny Spam
 2402:8100:2800::/41 Deny Spam
 2402:8100:2880::/44 Deny Spam
 2402:8100:2890::/45 Deny Spam
@@ -454,16 +445,15 @@ recaptcha:
 2402:8100:3038::/45 Deny Spam
 2402:8100:3040::/44 Deny Spam
 2402:8100:3050::/45 Deny Spam
-2402:8100:3080::/44 Deny Spam
-2402:8100:3090::/45 Deny Spam
-2402:8100:3098::/48 Deny Spam
-2402:8100:309d::/48 Deny Spam
-2402:8100:309e::/47 Deny Spam
-2402:8100:30a0::/45 Deny Spam
-2402:8100:30ac::/46 Deny Spam
+2402:8100:3080::/43 Deny Spam
+2402:8100:30a0::/44 Deny Spam
 2402:8100:30d0::/44 Deny Spam
 2402:8100:30f0::/44 Deny Spam
-2402:8100:3800::/41 Deny Spam
+2402:8100:3804::/46 Deny Spam
+2402:8100:3820::/44 Deny Spam
+2402:8100:3830::/45 Deny Spam
+2402:8100:383c::/46 Deny Spam
+2402:8100:3840::/42 Deny Spam
 2402:8100:38c0::/42 Deny Spam
 2402:8100:3900::/43 Deny Spam
 2402:8100:3920::/45 Deny Spam
@@ -1641,36 +1631,18 @@ recaptcha:
  enabled: true
 
 
-# "PJSC Rostelecom".
-# Known ASNs: 3239, 5573, 6828, 6863, 8382, 8443, 8557, 8568, 8570, 8594, 8675, 8828, 8997, 12332, 12380, 12389,
-#   12683, 12705, 12730, 12846, 13056, 13118, 15468, 15759, 16054, 16287, 16301, 20519, 21017, 21378, 21479, 21487,
-#   24665, 24699, 24783, 24789, 24810, 24810, 24873, 25436, 25490, 25515, 28719, 28860, 29456, 30749, 31094, 31185,
-#   31353, 31496, 33887, 33934, 34137, 34168, 34205, 34267, 34584, 34875, 34974, 35125, 35154, 35177, 35389, 35400,
-#   35516, 35531, 38951, 38985, 39054, 39229, 39407, 41134, 42091, 42362, 42548, 42610, 43053, 43132, 43574, 44237,
-#   44412, 44467, 47460, 56341, 56350, 196747.
-# Very large amount of spam originating from this provider, but it also happens
-# to be the #1 largest ISP in Russia, and blocking it entirely would
-# effectively be blocking a large portion of Russian users from protected
-# websites. Aggregating such a large number of different ASNs togeather also
-# adds some level of maintainability cost. As a compromise, though I'm
-# including this section here, I'm only listing the specific ASNs/CIDRs that
-# can be clearly identified as significant sources of spam, significantly
-# "toxic", problematic, etc. I'm also marking it for us with reCAPTCHA. If this
-# strategy fails, the section may eventually be upgraded to listing the entire
-# network, but it should be sufficient for now. Russian website owners should
-# keep the section marked in their ignore.dat file (it's also marked there by
-# default).
-
 # ASN 12389 ("PJSC Rostelecom").
-# %Listed, abuseat.org (CBL-Listed): 0.34%.
-# Stop Forum Spam (SFS) listings: 214,004.
-# Updated: 2019.03.17 / Checked: 2020.09.19
+# %Listed, abuseat.org (CBL-Listed): 0.25%.
+# Stop Forum Spam (SFS) listings: 107,973.
+# Updated: 2021.03.23
 
 2a00:1640::/32 Deny Spam
 2a00:1e88::/32 Deny Spam
 2a01:540::/32 Deny Spam
 2a01:620::/32 Deny Spam
+2a02:ad8::/32 Deny Spam
 Origin: RU
+Profile: Domestic ISP
 Tag: PJSC Rostelecom
 ---
 recaptcha:
@@ -1681,12 +1653,13 @@ recaptcha:
 # Similarly to with the Rostelecom CIDRs, blocking the entirety of all
 # "Vimpelcom" ASNs could be problematic. Instead, we'll try to limit
 # listings to those CIDRs known to be problematic.
-# Stop Forum Spam (SFS) listings: 16,992 (AS3216), 7,598 (AS8402).
-# Updated: 2020.09.19
+# Stop Forum Spam (SFS) listings: 10,987 (AS3216), 7,982 (AS8402).
+# Updated: 2020.09.19 / Checked: 2021.03.23
 
 2a00:1248::/32 Deny Spam
 2a00:18c0::/32 Deny Spam
 Origin: RU
+Profile: Domestic ISP
 Tag: PJSC Vimpelcom
 ---
 recaptcha:
@@ -1701,6 +1674,7 @@ recaptcha:
 
 2a00:7700::/32 Deny Generic
 Origin: RU
+Profile: Domestic ISP
 Tag: Novotelecom Ltd
 ---
 recaptcha:
@@ -2916,6 +2890,25 @@ recaptcha:
 Origin: IN
 Profile: Domestic ISP
 Tag: TATA SKY BROADBAND PRIVATE LIMITED
+---
+recaptcha:
+ enabled: true
+
+
+# ASNs 3209, 31334 ("Vodafone Deutschland GmbH").
+# German phone provider and domestic ISP. Significant levels of brute-force,
+# hack, webapp attacks, and spam detected from this network.
+# Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 837 (AS3209), 289 (AS31334).
+# Updated: 2021.03.25
+
+2a02:8108:45bf:ac8a::/64 Deny Spam
+2a02:8109:9c0:462c::/64 Deny Spam
+2a02:8109:9a80:1ec4::/64 Deny Spam
+2a02:8109:a440:7180::/64 Deny Spam
+Origin: DE
+Profile: Domestic ISP
+Tag: Vodafone Deutschland GmbH
 ---
 recaptcha:
  enabled: true

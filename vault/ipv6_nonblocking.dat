@@ -1,0 +1,35 @@
+# IPv6 non-blocking signatures file (useful for profiling, but doesn't block anything in its own right).
+# Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_nonblocking.dat
+
+# Version: 2021.89.434
+# Last modified: 2021.03.31
+
+
+# ---
+# Teredo. Updated: 2021.03.31
+
+2001::/16 X
+Profile: Teredo
+Tag: Teredo
+
+
+# 6to4. Updated: 2021.03.31
+
+2002::/16 X
+Profile: 6to4
+Tag: 6to4
+
+
+# ISATAP. Updated: 2021.03.31
+
+fe80:0:0:0:0:5efe::/96 X
+fe80:0:0:0:200:5efe::/96 X
+Profile: ISATAP
+Tag: ISATAP
+
+
+# Multicast. Updated: 2021.03.31
+
+ff00::/8 X
+Profile: Multicast
+Tag: Multicast

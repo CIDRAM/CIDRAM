@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2021.03.21).
+ * This file: Functions file (last modified: 2021.03.31).
  */
 
 /** Autoloader for CIDRAM classes. */
@@ -2030,7 +2030,7 @@ $CIDRAM['Aux'] = function () use (&$CIDRAM): void {
     }
 
     /** Provide previous existing infractions count to the auxiliary rules. */
-    if (isset($CIDRAM['BlockInfo']) && !isset($CIDRAM['BlockInfo']['Infractions'])) {
+    if (isset($CIDRAM['BlockInfo']) && !isset($CIDRAM['BlockInfo']['Infractions']) && !empty($CIDRAM['BlockInfo']['IPAddr'])) {
         $CIDRAM['BlockInfo']['Infractions'] = 0;
         if (isset($CIDRAM['Tracking'][$CIDRAM['BlockInfo']['IPAddr']]['Count'])) {
             $CIDRAM['BlockInfo']['Infractions'] += $CIDRAM['Tracking'][$CIDRAM['BlockInfo']['IPAddr']]['Count'];

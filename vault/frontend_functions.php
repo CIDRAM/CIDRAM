@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2021.03.21).
+ * This file: Front-end functions file (last modified: 2021.03.31).
  */
 
 /**
@@ -964,32 +964,34 @@ $CIDRAM['SimulateBlockEvent'] = function (string $Addr, bool $Modules = false, b
         $CIDRAM['BlockInfo']['rURI'] .= '?' . $CIDRAM['FE']['custom-query'];
     }
 
-    /** Catch run errors. */
-    $CIDRAM['InitialiseErrorHandler']();
+    if (strlen($Addr)) {
+        /** Catch run errors. */
+        $CIDRAM['InitialiseErrorHandler']();
 
-    /** Standard IP check. */
-    try {
-        $CIDRAM['Caught'] = false;
-        $CIDRAM['TestResults'] = $CIDRAM['RunTests']($Addr, true);
-    } catch (\Exception $e) {
-        $CIDRAM['Caught'] = true;
-    }
-
-    /** Resolved IP check. */
-    if ($CIDRAM['BlockInfo']['IPAddrResolved']) {
-        if (!empty($CIDRAM['ThisIP']['IPAddress'])) {
-            $CIDRAM['ThisIP']['IPAddress'] .= ' (' . $CIDRAM['BlockInfo']['IPAddrResolved'] . ')';
-        }
+        /** Standard IP check. */
         try {
-            $CIDRAM['TestResults'] = ($CIDRAM['RunTests']($CIDRAM['BlockInfo']['IPAddrResolved'], true) || $CIDRAM['TestResults']);
+            $CIDRAM['Caught'] = false;
+            $CIDRAM['TestResults'] = $CIDRAM['RunTests']($Addr, true);
         } catch (\Exception $e) {
             $CIDRAM['Caught'] = true;
         }
-    }
 
-    /** Prepare run errors. */
-    $CIDRAM['RunErrors'] = $CIDRAM['Errors'];
-    $CIDRAM['RestoreErrorHandler']();
+        /** Resolved IP check. */
+        if ($CIDRAM['BlockInfo']['IPAddrResolved']) {
+            if (!empty($CIDRAM['ThisIP']['IPAddress'])) {
+                $CIDRAM['ThisIP']['IPAddress'] .= ' (' . $CIDRAM['BlockInfo']['IPAddrResolved'] . ')';
+            }
+            try {
+                $CIDRAM['TestResults'] = ($CIDRAM['RunTests']($CIDRAM['BlockInfo']['IPAddrResolved'], true) || $CIDRAM['TestResults']);
+            } catch (\Exception $e) {
+                $CIDRAM['Caught'] = true;
+            }
+        }
+
+        /** Prepare run errors. */
+        $CIDRAM['RunErrors'] = $CIDRAM['Errors'];
+        $CIDRAM['RestoreErrorHandler']();
+    }
 
     /** Instantiate report orchestrator (used by some modules). */
     $CIDRAM['Reporter'] = new \CIDRAM\Core\Reporter();
@@ -3148,7 +3150,7 @@ $CIDRAM['AuxGenerateFEData'] = function (bool $Mode = false) use (&$CIDRAM): str
     $JSAppend = '';
 
     /** Potential sources. */
-    $Sources = $CIDRAM['GenerateLabels']($CIDRAM['Config']['Provide']['Auxiliary Rules']['Sources'], '~(?: | )?(?:：|:) ?$~');
+    $Sources = $CIDRAM['GenerateLabels']($CIDRAM['Config']['Provide']['Auxiliary Rules']['Sources'], $CIDRAM['RegExLabels']);
 
     /** Attempt to parse the auxiliary rules file. */
     if (!isset($CIDRAM['AuxData'])) {
@@ -3673,7 +3675,7 @@ $CIDRAM['PopulateMethodsActions'] = function () use (&$CIDRAM): void {
     $CIDRAM['FE']['optActPro'] = sprintf($CIDRAM['L10N']->getString('label_aux_menu_action'), $CIDRAM['L10N']->getString('label_aux_actPro'));
 
     /** Populate sources. */
-    $CIDRAM['FE']['conSources'] = $CIDRAM['GenerateOptions']($CIDRAM['Config']['Provide']['Auxiliary Rules']['Sources'], '~(?: | )?(?:：|:) ?$~');
+    $CIDRAM['FE']['conSources'] = $CIDRAM['GenerateOptions']($CIDRAM['Config']['Provide']['Auxiliary Rules']['Sources'], $CIDRAM['RegExLabels']);
 };
 
 /**

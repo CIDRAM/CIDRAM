@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2021.03.21).
+ * This file: Front-end handler (last modified: 2021.03.31).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -21,6 +21,7 @@ if (!file_exists($CIDRAM['Vault'] . 'frontend_functions.php')) {
     header('Content-Type: text/plain');
     die('[CIDRAM] Front-end functions file missing! Please reinstall CIDRAM.');
 }
+
 /** Load the front-end functions file. */
 require $CIDRAM['Vault'] . 'frontend_functions.php';
 
@@ -148,6 +149,9 @@ $CIDRAM['FE'] = [
 
 /** Regular expression used to separate signature sections and tags. */
 $CIDRAM['RegExTags'] = '~(?<=\n)(?:\n|Expires\: \d{4}\.\d\d\.\d\d|Origin\: [A-Z]{2}|(?:\#|Tag\: |Profile\: |Defers to\: )[^\n]+| *\/\*\*(?:\n *\*[^\n]*)*\/| *\/\*\*? [^\n*]+\*\/|---\n(?:[^\n:]+\:(?:\n +[^\n:]+\: [^\n]+)+)+)+\n~';
+
+/** Regular expression used to split labels. */
+$CIDRAM['RegExLabels'] = '~(?: | )?(?:：|:) ?$~';
 
 /** Populated by [Home | Log Out] by default; Replaced by [Log Out] for some specific pages (e.g., the homepage). */
 $CIDRAM['FE']['bNav'] = $CIDRAM['FE']['HomeButton'] . $CIDRAM['FE']['LogoutButton'];
@@ -3275,6 +3279,16 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-test' && $CIDRAM['FE']['Perm
     }
     unset($CIDRAM['ThisField']);
 
+    /** Set field label. */
+    if (!empty($_POST['ip-addr']) || empty($_POST['custom-ua'])) {
+        $CIDRAM['FE']['TestItemLabel'] = $CIDRAM['L10N']->getString('field_ipaddr');
+        $CIDRAM['FE']['TestMode'] = 1;
+    } else {
+        $CIDRAM['FE']['TestItemLabel'] = $CIDRAM['L10N']->getString('field_ua');
+        $CIDRAM['FE']['TestMode'] = 2;
+    }
+    $CIDRAM['FE']['TestItemLabel'] = preg_replace($CIDRAM['RegExLabels'], '', $CIDRAM['FE']['TestItemLabel']);
+
     /** IPs were submitted for testing. */
     if (isset($_POST['ip-addr'])) {
         $CIDRAM['FE']['ip-addr'] = $_POST['ip-addr'];
@@ -3284,14 +3298,18 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-test' && $CIDRAM['FE']['Perm
         natsort($_POST['ip-addr']);
         $CIDRAM['ThisIP'] = [];
         foreach ($_POST['ip-addr'] as $CIDRAM['ThisIP']['IPAddress']) {
-            if (!$CIDRAM['ThisIP']['IPAddress']) {
-                continue;
+            if ($CIDRAM['FE']['TestMode'] === 1) {
+                if (!strlen($CIDRAM['ThisIP']['IPAddress'])) {
+                    continue;
+                }
+                $CIDRAM['SimulateBlockEvent']($CIDRAM['ThisIP']['IPAddress'], $CIDRAM['ModuleSwitch'], $CIDRAM['AuxSwitch'], $CIDRAM['VerificationSwitch']);
+            } elseif ($CIDRAM['FE']['TestMode'] === 2) {
+                $CIDRAM['SimulateBlockEvent']('', $CIDRAM['ModuleSwitch'], $CIDRAM['AuxSwitch'], $CIDRAM['VerificationSwitch']);
+                $CIDRAM['ThisIP']['IPAddress'] = $CIDRAM['FE']['custom-ua'];
             }
-            $CIDRAM['SimulateBlockEvent']($CIDRAM['ThisIP']['IPAddress'], $CIDRAM['ModuleSwitch'], $CIDRAM['AuxSwitch'], $CIDRAM['VerificationSwitch']);
             if (
-                $CIDRAM['Caught'] ||
-                empty($CIDRAM['LastTestIP']) ||
-                empty($CIDRAM['TestResults']) ||
+                !empty($CIDRAM['Caught']) ||
+                ($CIDRAM['FE']['TestMode'] === 1 && (empty($CIDRAM['LastTestIP']) || empty($CIDRAM['TestResults']))) ||
                 !empty($CIDRAM['RunErrors']) ||
                 !empty($CIDRAM['ModuleErrors']) ||
                 !empty($CIDRAM['AuxErrors'])
@@ -3453,6 +3471,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-test' && $CIDRAM['FE']['Perm
 elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-tracking' && $CIDRAM['FE']['Permissions'] === 1) {
     $CIDRAM['FE']['TrackingFilter'] = 'cidram-page=ip-tracking';
     $CIDRAM['FE']['TrackingFilterControls'] = '';
+    $CIDRAM['FE']['TestItemLabel'] = preg_replace($CIDRAM['RegExLabels'], '', $CIDRAM['L10N']->getString('field_ipaddr'));
     $CIDRAM['StateModified'] = false;
     $CIDRAM['FilterSwitch'](
         ['tracking-blocked-already', 'tracking-aux', 'tracking-hide-banned-blocked'],
@@ -3557,6 +3576,8 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-tracking' && $CIDRAM['FE']['
                 $CIDRAM['ThisTracking']['IPID'] . '\')},function(e){w(\'stateMsg\',e)})}" value="' .
                 $CIDRAM['L10N']->getString('field_clear') . '" />'
             : '';
+
+            /** When the entry expires. */
             $CIDRAM['ThisTracking']['Expiry'] = $CIDRAM['TimeFormat'](
                 $CIDRAM['ThisTrackingArr']['Time'],
                 $CIDRAM['Config']['general']['time_format']

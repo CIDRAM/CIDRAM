@@ -7,19 +7,21 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Turkish language data for the front-end (last modified: 2021.03.12).
+# This file: Turkish language data for the front-end (last modified: 2021.03.31).
 ##/
 
 Extended Description Bypasses: "Varsayılan imza bypass'lar, normalde ana paketle birlikte verilir."
 Extended Description Chart.js: "Ön uçların pasta grafikler oluşturmasını sağlar.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a>, <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a> üzerinden kullanılabilir."
-Extended Description IPv4-Bogons: "Bogon/martian CIDR'leri engeller."
-Extended Description IPv4-ISPs: "Tehlikeli ve spam yapan ISS'leri engeller."
-Extended Description IPv4-Other: "Proxy, VPN ve diğer çeşitli istenmeyen hizmetler için CIDR'leri engeller."
-Extended Description IPv4: "İstenmeyen bulut servislerini ve insan olmayan uç noktaları engeller."
-Extended Description IPv6-Bogons: "Bogon/martian CIDR'leri engeller."
-Extended Description IPv6-ISPs: "Tehlikeli ve spam yapan ISS'leri engeller."
-Extended Description IPv6-Other: "Proxy, VPN ve diğer çeşitli istenmeyen hizmetler için CIDR'leri engeller."
-Extended Description IPv6: "İstenmeyen bulut servislerini ve insan olmayan uç noktaları engeller."
+Extended Description IPv4-Bogons: &ExtDesBogons "Bogon/martian CIDR'leri engeller."
+Extended Description IPv4-ISPs: &ExtDesISPs "Tehlikeli ve spam yapan ISS'leri engeller."
+Extended Description IPv4-Nonblocking: &ExtDesNonblocking "Profil oluşturma için kullanışlıdır, ancak kendi başına hiçbir şeyi engellemez."
+Extended Description IPv4-Other: &ExtDesOther "Proxy, VPN ve diğer çeşitli istenmeyen hizmetler için CIDR'leri engeller."
+Extended Description IPv4: &ExtDesCloud "İstenmeyen bulut servislerini ve insan olmayan uç noktaları engeller."
+Extended Description IPv6-Bogons: *ExtDesBogons
+Extended Description IPv6-ISPs: *ExtDesISPs
+Extended Description IPv6-Nonblocking: *ExtDesNonblocking
+Extended Description IPv6-Other: *ExtDesOther
+Extended Description IPv6: *ExtDesCloud
 Extended Description PHPMailer: "E-posta göndermeyi içeren herhangi bir işlev kullanmak için gereklidir.<br /><a href="https://github.com/PHPMailer/PHPMailer" hreflang="en" rel="noopener noreferrer external">PHPMailer</a>, <a href="https://github.com/PHPMailer/PHPMailer/blob/master/LICENSE" hreflang="en-US" rel="noopener external">LGPLv2.1 </a> lisansı üzerinden kullanılabilir."
 Extended Description flags.css: "Ön uç günlükleri sayfasına bayrak desteği ekler."
 Extended Description module_abuseipdb.php: "AbuseIPDB'de listelenen IP'lerden gelen istekleri engeller."
@@ -38,10 +40,12 @@ Name Bypasses: "Varsayılan imza bypass'lar."
 Name CN_cidram.inc: "Çin IPv4 engelleme listesi"
 Name IPv4-Bogons: "IPv4 (bogon'leri)."
 Name IPv4-ISPs: "IPv4 (spam gönderen ISS'ler)."
+Name IPv4-Nonblocking: "IPv4 engellemeyen imzalar."
 Name IPv4-Other: "IPv4 (proxy, VPN'ler, vb)."
 Name IPv4: "IPv4 (bulut ve barındırma servisleri)."
 Name IPv6-Bogons: "IPv6 (bogon'leri)."
 Name IPv6-ISPs: "IPv6 (spam gönderen ISS'ler)."
+Name IPv6-Nonblocking: "IPv6 engellemeyen imzalar."
 Name IPv6-Other: "IPv6 (proxy, VPN'ler, vb)."
 Name IPv6: "IPv6 (bulut ve barındırma servisleri)."
 Name KR_cidram.inc: "Güney Kore IPv4 engelleme listesi"
@@ -205,7 +209,6 @@ field_filetype_unknown: "Bilinmiyor"
 field_include: "Boş alanları dahil et"
 field_infractions: "İhlaller"
 field_install: "Yükle"
-field_ip_address: "İP Adresi"
 field_latest_version: "En son sürüm"
 field_log_in: "Oturum Aç"
 field_netmask: "Ağ maskeler olarak çıktı üretmek"

@@ -7,19 +7,21 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Japanese language data for the front-end (last modified: 2021.03.12).
+# This file: Japanese language data for the front-end (last modified: 2021.03.31).
 ##/
 
 Extended Description Bypasses: "メインパッケージに通常含まれているデフォルト・シグネチャ・バイパス。"
 Extended Description Chart.js: "フロントエンドが円グラフを生成できるようにします。<br />「<a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a>」は、「<a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>」を介して利用可能です。"
-Extended Description IPv4-Bogons: "ボゴンＣＩＤＲをブロックします。"
-Extended Description IPv4-ISPs: "スパマーを持つ危険なＩＳＰをブロックします。"
-Extended Description IPv4-Other: "プロキシ、​ＶＰＮ、​およびその他の不要なサービスのＣＩＤＲをブロックします。"
-Extended Description IPv4: "不要なクラウドサービスと非人のエンドポイントをブロックします。"
-Extended Description IPv6-Bogons: "ボゴンＣＩＤＲをブロックします。"
-Extended Description IPv6-ISPs: "スパマーを持つ危険なＩＳＰをブロックします。"
-Extended Description IPv6-Other: "プロキシ、​ＶＰＮ、​およびその他の不要なサービスのＣＩＤＲをブロックします。"
-Extended Description IPv6: "不要なクラウドサービスと非人のエンドポイントをブロックします。"
+Extended Description IPv4-Bogons: &ExtDesBogons "ボゴンＣＩＤＲをブロックします。"
+Extended Description IPv4-ISPs: &ExtDesISPs "スパマーを持つ危険なＩＳＰをブロックします。"
+Extended Description IPv4-Nonblocking: &ExtDesNonblocking "プロファイリングに役立ちますが、それ自体では何もブロックしません。"
+Extended Description IPv4-Other: &ExtDesOther "プロキシ、​ＶＰＮ、​およびその他の不要なサービスのＣＩＤＲをブロックします。"
+Extended Description IPv4: &ExtDesCloud "不要なクラウドサービスと非人のエンドポイントをブロックします。"
+Extended Description IPv6-Bogons: *ExtDesBogons
+Extended Description IPv6-ISPs: *ExtDesISPs
+Extended Description IPv6-Nonblocking: *ExtDesNonblocking
+Extended Description IPv6-Other: *ExtDesOther
+Extended Description IPv6: *ExtDesCloud
 Extended Description PHPMailer: "電子Ｅメールの送信を含む機能の使用に必要です。<br />「<a href="https://github.com/PHPMailer/PHPMailer" hreflang="en" rel="noopener noreferrer external">PHPMailer</a>」は、「<a href="https://github.com/PHPMailer/PHPMailer/blob/master/LICENSE" hreflang="en-US" rel="noopener external">LGPLv2.1</a>」ライセンスを介して利用可能です。"
 Extended Description flags.css: "フロントエンド・ログページにフラグ・サポートを追加します。"
 Extended Description module_abuseipdb.php: "AbuseIPDBにリストされているＩＰからの要求をブロックします。"
@@ -38,10 +40,12 @@ Name Bypasses: "デフォルト・シグネチャ・バイパス。"
 Name CN_cidram.inc: "中国ＩＰｖ４ブロックリスト"
 Name IPv4-Bogons: "ＩＰｖ４（ボゴン）。"
 Name IPv4-ISPs: "ＩＰｖ４（スパマーＩＳＰ）。"
+Name IPv4-Nonblocking: "ＩＰｖ４ノンブロッキング・シグネチャ。"
 Name IPv4-Other: "ＩＰｖ４（プロキシ、​ＶＰＮ、​およびその他の不要なサービス）。"
 Name IPv4: "ＩＰｖ４（クラウド・サービス、ホスティング・サービス）。"
 Name IPv6-Bogons: "ＩＰｖ６（ボゴン）。"
 Name IPv6-ISPs: "ＩＰｖ６（スパマーＩＳＰ）。"
+Name IPv6-Nonblocking: "ＩＰｖ６ノンブロッキング・シグネチャ。"
 Name IPv6-Other: "ＩＰｖ６（プロキシ、​ＶＰＮ、​およびその他の不要なサービス）。"
 Name IPv6: "ＩＰｖ６（クラウド・サービス、ホスティング・サービス）。"
 Name KR_cidram.inc: "韓国ＩＰｖ４ブロックリスト"
@@ -205,7 +209,6 @@ field_filetype_unknown: "不明です"
 field_include: "空のフィールドを含めます"
 field_infractions: "違反"
 field_install: "インストール"
-field_ip_address: "ＩＰアドレス"
 field_latest_version: "最新バージョン"
 field_log_in: "ログイン"
 field_netmask: "ネットマスクを使って出力を生成する"

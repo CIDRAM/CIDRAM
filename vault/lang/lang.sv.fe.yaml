@@ -7,19 +7,21 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Swedish language data for the front-end (last modified: 2021.03.12).
+# This file: Swedish language data for the front-end (last modified: 2021.03.31).
 ##/
 
 Extended Description Bypasses: "Standard bypass-filen som normalt ingår i huvudpaketet."
 Extended Description Chart.js: "Gör det möjligt för framsidan att generera cirkeldiagram.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> är tillgängligt via <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
-Extended Description IPv4-Bogons: "Blockerar bogon/martian CIDRer."
-Extended Description IPv4-ISPs: "Blockerar farliga och spammiga internetleverantörer."
-Extended Description IPv4-Other: "Blockerar CIDRer för proxytjänster, VPNer och andra diverse oönskade tjänster."
-Extended Description IPv4: "Blockerar oönskade molntjänster och icke-mänskliga ändpunkter."
-Extended Description IPv6-Bogons: "Blockerar bogon/martian CIDRer."
-Extended Description IPv6-ISPs: "Blockerar farliga och spammiga internetleverantörer."
-Extended Description IPv6-Other: "Blockerar CIDRer för proxytjänster, VPNer och andra diverse oönskade tjänster."
-Extended Description IPv6: "Blockerar oönskade molntjänster och icke-mänskliga ändpunkter."
+Extended Description IPv4-Bogons: &ExtDesBogons "Blockerar bogon/martian CIDRer."
+Extended Description IPv4-ISPs: &ExtDesISPs "Blockerar farliga och spammiga internetleverantörer."
+Extended Description IPv4-Nonblocking: &ExtDesNonblocking "Användbar för profilering, men blockerar inte något i sig."
+Extended Description IPv4-Other: &ExtDesOther "Blockerar CIDRer för proxytjänster, VPNer och andra diverse oönskade tjänster."
+Extended Description IPv4: &ExtDesCloud "Blockerar oönskade molntjänster och icke-mänskliga ändpunkter."
+Extended Description IPv6-Bogons: *ExtDesBogons
+Extended Description IPv6-ISPs: *ExtDesISPs
+Extended Description IPv6-Nonblocking: *ExtDesNonblocking
+Extended Description IPv6-Other: *ExtDesOther
+Extended Description IPv6: *ExtDesCloud
 Extended Description PHPMailer: "Krävs för att använda någon funktionalitet som involverar att skicka e-post.<br /><a href="https://github.com/PHPMailer/PHPMailer" hreflang="en" rel="noopener noreferrer external">PHPMailer</a> är tillgängligt via <a href="https://github.com/PHPMailer/PHPMailer/blob/master/LICENSE" hreflang="en-US" rel="noopener external">LGPLv2.1</a>-licensen."
 Extended Description flags.css: "Lägger flaggsupport till loggar sidan i frontenden."
 Extended Description module_abuseipdb.php: "Blockerar förfrågningar från IP-adresser som listas på AbuseIPDB."
@@ -38,10 +40,12 @@ Name Bypasses: "Standard signatur bypasses."
 Name CN_cidram.inc: "Kina IPv4-blocklista"
 Name IPv4-Bogons: "IPv4 (bogons)."
 Name IPv4-ISPs: "IPv4 (spammiga internetleverantörer)."
+Name IPv4-Nonblocking: "IPv4-icke-blockerande signaturer."
 Name IPv4-Other: "IPv4 (proxytjänster, VPNer, osv)."
 Name IPv4: "IPv4 (molntjänster och värdtjänster)."
 Name IPv6-Bogons: "IPv6 (bogons)."
 Name IPv6-ISPs: "IPv6 (spammiga internetleverantörer)."
+Name IPv6-Nonblocking: "IPv6-icke-blockerande signaturer."
 Name IPv6-Other: "IPv6 (proxytjänster, VPNer, osv)."
 Name IPv6: "IPv6 (molntjänster och värdtjänster)."
 Name KR_cidram.inc: "Sydkoreas IPv4-blocklista"
@@ -205,7 +209,6 @@ field_filetype_unknown: "Okänd"
 field_include: "Inkludera tomma fält"
 field_infractions: "Infraktions"
 field_install: "Installera"
-field_ip_address: "IP-Adress"
 field_latest_version: "Senaste versionen"
 field_log_in: "Logga in"
 field_netmask: "Generera utgång som nätmasker"

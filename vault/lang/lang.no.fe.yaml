@@ -7,19 +7,21 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Norwegian language data for the front-end (last modified: 2021.03.12).
+# This file: Norwegian language data for the front-end (last modified: 2021.03.31).
 ##/
 
 Extended Description Bypasses: "Standard-signatur-bypass-filene som normalt følger med hovedpakken."
 Extended Description Chart.js: "Gjør det mulig for frontendens å generere pajediagrammer.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> er tilgjengelig via <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
-Extended Description IPv4-Bogons: "Blokkerer bogon/martian CIDRer."
-Extended Description IPv4-ISPs: "Blokkerer farlige og spam-fylte ISPer."
-Extended Description IPv4-Other: "Blokkerer CIDRer for proxyer, VPN og andre uønskede tjenester."
-Extended Description IPv4: "Blokkerer uønskede sky-tjenester og ikke-menneskelige endepunkter."
-Extended Description IPv6-Bogons: "Blokkerer bogon/martian CIDRer."
-Extended Description IPv6-ISPs: "Blokkerer farlige og spam-fylte ISPer."
-Extended Description IPv6-Other: "Blokkerer CIDRer for proxyer, VPN og andre uønskede tjenester."
-Extended Description IPv6: "Blokkerer uønskede sky-tjenester og ikke-menneskelige endepunkter."
+Extended Description IPv4-Bogons: &ExtDesBogons "Blokkerer bogon/martian CIDRer."
+Extended Description IPv4-ISPs: &ExtDesISPs "Blokkerer farlige og spam-fylte ISPer."
+Extended Description IPv4-Nonblocking: &ExtDesNonblocking "Nyttig for profilering, men blokkerer ikke noe i seg selv."
+Extended Description IPv4-Other: &ExtDesOther "Blokkerer CIDRer for proxyer, VPN og andre uønskede tjenester."
+Extended Description IPv4: &ExtDesCloud "Blokkerer uønskede sky-tjenester og ikke-menneskelige endepunkter."
+Extended Description IPv6-Bogons: *ExtDesBogons
+Extended Description IPv6-ISPs: *ExtDesISPs
+Extended Description IPv6-Nonblocking: *ExtDesNonblocking
+Extended Description IPv6-Other: *ExtDesOther
+Extended Description IPv6: *ExtDesCloud
 Extended Description PHPMailer: "Kreves for bruk av funksjonalitet som innebærer sending av e-post.<br /><a href="https://github.com/PHPMailer/PHPMailer" hreflang="en" rel="noopener noreferrer external">PHPMailer</a> er tilgjengelig via <a href="https://github.com/PHPMailer/PHPMailer/blob/master/LICENSE" hreflang="en-US" rel="noopener external">LGPLv2.1</a>-lisensen."
 Extended Description flags.css: "Legger flaggsupport til frontendsloggesiden."
 Extended Description module_abuseipdb.php: "Blokkerer forespørsler fra IP-er oppført på AbuseIPDB."
@@ -38,10 +40,12 @@ Name Bypasses: "Standard signatur bypasses."
 Name CN_cidram.inc: "Kina IPv4-blokkliste"
 Name IPv4-Bogons: "IPv4 (bogoner)."
 Name IPv4-ISPs: "IPv4 (spam-fylte ISPer)."
+Name IPv4-Nonblocking: "IPv4 ikke-blokkerende signaturer."
 Name IPv4-Other: "IPv4 (proxyer, VPN, etc)."
 Name IPv4: "IPv4 (sky og hosting tjenester)."
 Name IPv6-Bogons: "IPv6 (bogoner)."
 Name IPv6-ISPs: "IPv6 (spam-fylte ISPer)."
+Name IPv6-Nonblocking: "IPv6 ikke-blokkerende signaturer."
 Name IPv6-Other: "IPv6 (proxyer, VPN, etc)."
 Name IPv6: "IPv6 (sky og hosting tjenester)."
 Name KR_cidram.inc: "Sør-Korea IPv4-blokkliste"
@@ -205,7 +209,6 @@ field_filetype_unknown: "Ukjent"
 field_include: "Inkluder tomme felt"
 field_infractions: "Infraksjoner"
 field_install: "Installer"
-field_ip_address: "IP-Adresse"
 field_latest_version: "Siste Versjon"
 field_log_in: "Logg Inn"
 field_netmask: "Generer utdata som nettmasker"

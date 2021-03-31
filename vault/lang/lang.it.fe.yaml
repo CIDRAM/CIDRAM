@@ -7,19 +7,21 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Italian language data for the front-end (last modified: 2021.03.12).
+# This file: Italian language data for the front-end (last modified: 2021.03.31).
 ##/
 
 Extended Description Bypasses: "Un file per bypassare alcune delle firme predefinite normalmente inclusi nel pacchetto principale."
 Extended Description Chart.js: "Consente al front-end di generare grafici a torta.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> è disponibile tramite la <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
-Extended Description IPv4-Bogons: "Blocca bogon/marziano CIDRs."
-Extended Description IPv4-ISPs: "Blocca ISP pericolosi e spam incline."
-Extended Description IPv4-Other: "Blocca CIDRs per i proxy, VPN e altri vari servizi indesiderati."
-Extended Description IPv4: "Blocca servizi cloud indesiderate e punti finali non umani."
-Extended Description IPv6-Bogons: "Blocca bogon/marziano CIDRs."
-Extended Description IPv6-ISPs: "Blocca ISP pericolosi e spam incline."
-Extended Description IPv6-Other: "Blocca CIDRs per i proxy, VPN e altri vari servizi indesiderati."
-Extended Description IPv6: "Blocca servizi cloud indesiderate e punti finali non umani."
+Extended Description IPv4-Bogons: &ExtDesBogons "Blocca bogon/marziano CIDRs."
+Extended Description IPv4-ISPs: &ExtDesISPs "Blocca ISP pericolosi e spam incline."
+Extended Description IPv4-Nonblocking: &ExtDesNonblocking "Utile per la profilazione, ma non blocca nulla di per sé."
+Extended Description IPv4-Other: &ExtDesOther "Blocca CIDRs per i proxy, VPN e altri vari servizi indesiderati."
+Extended Description IPv4: &ExtDesCloud "Blocca servizi cloud indesiderate e punti finali non umani."
+Extended Description IPv6-Bogons: *ExtDesBogons
+Extended Description IPv6-ISPs: *ExtDesISPs
+Extended Description IPv6-Nonblocking: *ExtDesNonblocking
+Extended Description IPv6-Other: *ExtDesOther
+Extended Description IPv6: *ExtDesCloud
 Extended Description PHPMailer: "Richiesto per l'utilizzo di qualsiasi funzionalità che implica l'invio di posta elettronica.<br /><a href="https://github.com/PHPMailer/PHPMailer" hreflang="en" rel="noopener noreferrer external">PHPMailer</a> è disponibile tramite la licenza <a href="https://github.com/PHPMailer/PHPMailer/blob/master/LICENSE" hreflang="en-US" rel="noopener external">LGPLv2.1</a>."
 Extended Description flags.css: "Aggiunge il supporto per i flag alla pagina dei registri front-end."
 Extended Description module_abuseipdb.php: "Blocca le richieste dagli IP elencati in AbuseIPDB."
@@ -38,10 +40,12 @@ Name Bypasses: "I firme predefinite bypass."
 Name CN_cidram.inc: "Lista di blocca IPv4 per la Cina"
 Name IPv4-Bogons: "IPv4 (bogon)."
 Name IPv4-ISPs: "IPv4 (ISP di spam)."
+Name IPv4-Nonblocking: "Firme non bloccanti IPv4."
 Name IPv4-Other: "IPv4 (proxy, VPN, ecc)."
 Name IPv4: "IPv4 (servizi cloud e hosting)."
 Name IPv6-Bogons: "IPv6 (bogon)."
 Name IPv6-ISPs: "IPv6 (ISP di spam)."
+Name IPv6-Nonblocking: "Firme non bloccanti IPv6."
 Name IPv6-Other: "IPv6 (proxy, VPN, ecc)."
 Name IPv6: "IPv6 (servizi cloud e hosting)."
 Name KR_cidram.inc: "Lista di blocca IPv4 per la Corea del Sud"
@@ -205,7 +209,6 @@ field_filetype_unknown: "Sconosciuto"
 field_include: "Includi campi vuoti"
 field_infractions: "Infrazioni"
 field_install: "Installarlo"
-field_ip_address: "Indirizzo IP"
 field_latest_version: "Ultima Versione"
 field_log_in: "Accedi"
 field_netmask: "Genera output utilizzando la notazione netmask"

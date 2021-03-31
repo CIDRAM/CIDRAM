@@ -7,19 +7,21 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Vietnamese language data for the front-end (last modified: 2021.03.12).
+# This file: Vietnamese language data for the front-end (last modified: 2021.03.31).
 ##/
 
 Extended Description Bypasses: "Các tập tin đường tránh chữ ký mặc định thường bao gồm với gói thầu chính."
 Extended Description Chart.js: "Cho phép front-end tạo biểu đồ hình tròn.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> có sẵn qua <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
-Extended Description IPv4-Bogons: "Chặn các CIDR bogon/martian."
-Extended Description IPv4-ISPs: "Chặn ISP nguy hiểm và gửi thư rác."
-Extended Description IPv4-Other: "Chặn các CIDR cho proxy, VPN, và các dịch vụ khác mà không mong muốn."
-Extended Description IPv4: "Chặn dịch vụ điện toán đám mây không mong muốn và thiết bị đầu cuối không phải con người."
-Extended Description IPv6-Bogons: "Chặn các CIDR bogon/martian."
-Extended Description IPv6-ISPs: "Chặn ISP nguy hiểm và gửi thư rác."
-Extended Description IPv6-Other: "Chặn các CIDR cho proxy, VPN, và các dịch vụ khác mà không mong muốn."
-Extended Description IPv6: "Chặn dịch vụ điện toán đám mây không mong muốn và thiết bị đầu cuối không phải con người."
+Extended Description IPv4-Bogons: &ExtDesBogons "Chặn các CIDR bogon/martian."
+Extended Description IPv4-ISPs: &ExtDesISPs "Chặn ISP nguy hiểm và gửi thư rác."
+Extended Description IPv4-Nonblocking: &ExtDesNonblocking "Hữu ích cho việc lập hồ sơ, nhưng không chặn bất cứ thứ gì theo đúng nghĩa của nó."
+Extended Description IPv4-Other: &ExtDesOther "Chặn các CIDR cho proxy, VPN, và các dịch vụ khác mà không mong muốn."
+Extended Description IPv4: &ExtDesCloud "Chặn dịch vụ điện toán đám mây không mong muốn và thiết bị đầu cuối không phải con người."
+Extended Description IPv6-Bogons: *ExtDesBogons
+Extended Description IPv6-ISPs: *ExtDesISPs
+Extended Description IPv6-Nonblocking: *ExtDesNonblocking
+Extended Description IPv6-Other: *ExtDesOther
+Extended Description IPv6: *ExtDesCloud
 Extended Description PHPMailer: "Cần thiết để sử dụng bất kỳ chức năng nào liên quan đến việc gửi email.<br /><a href="https://github.com/PHPMailer/PHPMailer" hreflang="en" rel="noopener noreferrer external">PHPMailer</a> có sẵn qua giấy phép <a href="https://github.com/PHPMailer/PHPMailer/blob/master/LICENSE" hreflang="en-US" rel="noopener external">LGPLv2.1</a>."
 Extended Description flags.css: "Thêm hỗ trợ cờ vào trang nhật ký front-end."
 Extended Description module_abuseipdb.php: "Chặn các yêu cầu từ IP được liệt kê tại AbuseIPDB."
@@ -38,10 +40,12 @@ Name Bypasses: "Các đường tránh chữ ký mặc định."
 Name CN_cidram.inc: "Danh sách chặn IPv4 của Trung Quốc"
 Name IPv4-Bogons: "IPv4 (bogon)."
 Name IPv4-ISPs: "IPv4 (ISP chứa người gửi thư rác)."
+Name IPv4-Nonblocking: "Chữ ký không chặn IPv4."
 Name IPv4-Other: "IPv4 (proxy, VPN, vv)."
 Name IPv4: "IPv4 (dịch vụ đám mây và lưu trữ)."
 Name IPv6-Bogons: "IPv6 (bogon)."
 Name IPv6-ISPs: "IPv6 (ISP chứa người gửi thư rác)."
+Name IPv6-Nonblocking: "Chữ ký không chặn IPv6."
 Name IPv6-Other: "IPv6 (proxy, VPN, vv)."
 Name IPv6: "IPv6 (dịch vụ đám mây và lưu trữ)."
 Name KR_cidram.inc: "Danh sách chặn IPv4 của Hàn Quốc"
@@ -205,7 +209,6 @@ field_filetype_unknown: "Không Xác Định"
 field_include: "Bao gồm các trường trống"
 field_infractions: "Vi phạm"
 field_install: "Cài đặt"
-field_ip_address: "Địa Chỉ IP"
 field_latest_version: "Phiên bản mới nhất"
 field_log_in: "Đăng Nhập"
 field_netmask: "Tạo đầu ra dưới dạng netmask"

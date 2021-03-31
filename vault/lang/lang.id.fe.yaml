@@ -7,20 +7,22 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Indonesian language data for the front-end (last modified: 2021.03.12).
+# This file: Indonesian language data for the front-end (last modified: 2021.03.31).
 ##/
 
 Extended Description Bypasses: "File untuk bypass tanda tangan standar yang biasanya disertakan dengan paket utama."
 Extended Description CIDRAM: "Paket utama (tanpa tanda tangan, dokumentasi, konfigurasi)."
 Extended Description Chart.js: "Memungkinkan bagian depan untuk menghasilkan bagan pai.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> tersedia melalui <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
-Extended Description IPv4-Bogons: "Memblokir CIDR bogon/martian."
-Extended Description IPv4-ISPs: "Memblokir ISP berbahaya dan spam rawan."
-Extended Description IPv4-Other: "Memblokir CIDR untuk proxy, VPN, dan layanan lain-lain tidak diinginkan."
-Extended Description IPv4: "Memblokir layanan cloud tidak diinginkan dan jalur akses non-manusia."
-Extended Description IPv6-Bogons: "Memblokir CIDR bogon/martian."
-Extended Description IPv6-ISPs: "Memblokir ISP berbahaya dan spam rawan."
-Extended Description IPv6-Other: "Memblokir CIDR untuk proxy, VPN, dan layanan lain-lain tidak diinginkan."
-Extended Description IPv6: "Memblokir layanan cloud tidak diinginkan dan jalur akses non-manusia."
+Extended Description IPv4-Bogons: &ExtDesBogons "Memblokir CIDR bogon/martian."
+Extended Description IPv4-ISPs: &ExtDesISPs "Memblokir ISP berbahaya dan spam rawan."
+Extended Description IPv4-Nonblocking: &ExtDesNonblocking "Berguna untuk membuat profil, tetapi tidak memblokir apapun dengan sendirinya."
+Extended Description IPv4-Other: &ExtDesOther "Memblokir CIDR untuk proxy, VPN, dan layanan lain-lain tidak diinginkan."
+Extended Description IPv4: &ExtDesCloud "Memblokir layanan cloud tidak diinginkan dan jalur akses non-manusia."
+Extended Description IPv6-Bogons: *ExtDesBogons
+Extended Description IPv6-ISPs: *ExtDesISPs
+Extended Description IPv6-Nonblocking: *ExtDesNonblocking
+Extended Description IPv6-Other: *ExtDesOther
+Extended Description IPv6: *ExtDesCloud
 Extended Description PHPMailer: "Diperlukan untuk menggunakan fungsionalitas apapun yang melibatkan pengiriman email.<br /><a href="https://github.com/PHPMailer/PHPMailer" hreflang="en" rel="noopener noreferrer external">PHPMailer</a> tersedia melalui lisensi <a href="https://github.com/PHPMailer/PHPMailer/blob/master/LICENSE" hreflang="en-US" rel="noopener external">LGPLv2.1</a>."
 Extended Description flags.css: "Menambahkan dukungan bendera ke halaman log bagian depan."
 Extended Description module_abuseipdb.php: "Memblokir permintaan dari IP yang terdaftar oleh AbuseIPDB."
@@ -38,10 +40,12 @@ Name Bypasses: "Bypass tanda tangan standar."
 Name CN_cidram.inc: "IPv4 pemblokir Cina"
 Name IPv4-Bogons: "IPv4 (bogon)."
 Name IPv4-ISPs: "IPv4 (ISP yang mengirim spam)."
+Name IPv4-Nonblocking: "Tanda tangan jangan pemblokiran IPv4."
 Name IPv4-Other: "IPv4 (proxy, VPN, dll)."
 Name IPv4: "IPv4 (layanan cloud dan hosting)."
 Name IPv6-Bogons: "IPv6 (bogon)."
 Name IPv6-ISPs: "IPv6 (ISP yang mengirim spam)."
+Name IPv6-Nonblocking: "Tanda tangan jangan pemblokiran IPv6."
 Name IPv6-Other: "IPv6 (proxy, VPN, dll)."
 Name IPv6: "IPv6 (layanan cloud dan hosting)."
 Name KR_cidram.inc: "IPv4 pemblokir Korea Selatan"
@@ -205,7 +209,6 @@ field_filetype_unknown: "Tidak Diketahui"
 field_include: "Sertakan bidang kosong"
 field_infractions: "Pelanggaran"
 field_install: "Instal"
-field_ip_address: "Alamat IP"
 field_latest_version: "Versi Terbaru"
 field_log_in: "Masuk"
 field_netmask: "Hasilkan keluaran menggunakan notasi netmask"

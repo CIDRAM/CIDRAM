@@ -7,20 +7,22 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Arabic language data for the front-end (last modified: 2021.03.12).
+# This file: Arabic language data for the front-end (last modified: 2021.03.31).
 ##/
 
 Extended Description Bypasses: "ملفات الالتفافية التوقيع القياسية المدرجة عادة مع الحزمة الرئيسية."
 Extended Description CIDRAM: "حزمة الابتدائية (ناقص التوقيعات، وثائق، والتكوين)."
 Extended Description Chart.js: "لتمكين الواجهة الأمامية لإنشاء مخططات دائري.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> متاح عبر الترخيص <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a>."
-Extended Description IPv4-Bogons: "بحجبه bogon/المريخ CIDRs."
-Extended Description IPv4-ISPs: "بحجبه مزودي خدمات الإنترنت خطيرة ومزعجة."
-Extended Description IPv4-Other: "بحجبه CIDRs الوكلاء، والشبكات الخاصة الإفتراضية، وغيرها من الخدمات غير المرغوب فيها المتنوعة."
-Extended Description IPv4: "بحجبه نقاط الوصول غير البشرية و الخدمات السحابية غير المرغوب فيها."
-Extended Description IPv6-Bogons: "بحجبه bogon/المريخ CIDRs."
-Extended Description IPv6-ISPs: "بحجبه مزودي خدمات الإنترنت خطيرة ومزعجة."
-Extended Description IPv6-Other: "بحجبه CIDRs الوكلاء، والشبكات الخاصة الإفتراضية، وغيرها من الخدمات غير المرغوب فيها المتنوعة."
-Extended Description IPv6: "بحجبه نقاط الوصول غير البشرية و الخدمات السحابية غير المرغوب فيها."
+Extended Description IPv4-Bogons: &ExtDesBogons "بحجبه bogon/المريخ CIDRs."
+Extended Description IPv4-ISPs: &ExtDesISPs "بحجبه مزودي خدمات الإنترنت خطيرة ومزعجة."
+Extended Description IPv4-Nonblocking: &ExtDesNonblocking "مفيد للتنميط، لكنه لا يمنع أي شيء بحد ذاته."
+Extended Description IPv4-Other: &ExtDesOther "بحجبه CIDRs الوكلاء، والشبكات الخاصة الإفتراضية، وغيرها من الخدمات غير المرغوب فيها المتنوعة."
+Extended Description IPv4: &ExtDesCloud "بحجبه نقاط الوصول غير البشرية و الخدمات السحابية غير المرغوب فيها."
+Extended Description IPv6-Bogons: *ExtDesBogons
+Extended Description IPv6-ISPs: *ExtDesISPs
+Extended Description IPv6-Nonblocking: *ExtDesNonblocking
+Extended Description IPv6-Other: *ExtDesOther
+Extended Description IPv6: *ExtDesCloud
 Extended Description PHPMailer: "مطلوب لاستخدام أي وظيفة تتضمن إرسال البريد الإلكتروني.<br /><a href="https://github.com/PHPMailer/PHPMailer" hreflang="en" rel="noopener noreferrer external">PHPMailer</a> متاح عبر الترخيص الرخصه <a dir="ltr" href="https://github.com/PHPMailer/PHPMailer/blob/master/LICENSE" hreflang="en-US" rel="noopener external">LGPLv2.1</a>."
 Extended Description flags.css: "لإضافة دعم العلم إلى صفحة سجلات الجهة الأمامية."
 Extended Description module_abuseipdb.php: "بحظر الطلبات من عناوين IP المدرجة في AbuseIPDB."
@@ -37,10 +39,12 @@ Extended Description module_sfs.php: "يحمي تسجيل صفحات ضد عنا
 Name Bypasses: "يتجاوز توقيع قياسي."
 Name IPv4-Bogons: "IPv4 (bogons)."
 Name IPv4-ISPs: "IPv4 (مزودي خدمات الإنترنت الذين يرسلون رسائل غير مرغوب فيها)."
+Name IPv4-Nonblocking: "توقيعات IPv4 غير المحظورة."
 Name IPv4-Other: "IPv4 (خدمات بروكسي، VPN، الخ)."
 Name IPv4: "IPv4 (السحابة واستضافة الخدمات)."
 Name IPv6-Bogons: "IPv6 (bogons)."
 Name IPv6-ISPs: "IPv6 (مزودي خدمات الإنترنت الذين يرسلون رسائل غير مرغوب فيها)."
+Name IPv6-Nonblocking: "توقيعات IPv6 غير المحظورة."
 Name IPv6-Other: "IPv6 (خدمات بروكسي، VPN، الخ)."
 Name IPv6: "IPv6 (السحابة واستضافة الخدمات)."
 Name compat_bunnycdn.php: "وحدة التوافق BunnyCDN"
@@ -203,7 +207,6 @@ field_filetype_unknown: "غير معروف"
 field_include: "تضمين حقول فارغة"
 field_infractions: "مخالفات"
 field_install: "تثبيت"
-field_ip_address: "عنوان IP"
 field_latest_version: "احدث اصدار"
 field_log_in: "تسجيل الدخول"
 field_netmask: "توليد الإخراج باستخدام تدوين قناع الشبكة"

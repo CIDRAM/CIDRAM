@@ -7,20 +7,22 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (simplified) language data for the front-end (last modified: 2021.03.12).
+# This file: Chinese (simplified) language data for the front-end (last modified: 2021.03.31).
 ##/
 
 Extended Description Bypasses: "标准签名旁路文件通常包括在主包。"
 Extended Description CIDRAM: "主包（没有签名文件，文档，和配置）。"
 Extended Description Chart.js: "使前端能够生成饼图。<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a>可通过<a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>获得。"
-Extended Description IPv4-Bogons: "阻止bogon/火星CIDR。"
-Extended Description IPv4-ISPs: "阻止危险和垃圾容易ISP。"
-Extended Description IPv4-Other: "阻止CIDR从代理，VPN和其他不需要服务。"
-Extended Description IPv4: "阻止不想要的云服务和非人终端。"
-Extended Description IPv6-Bogons: "阻止bogon/火星CIDR。"
-Extended Description IPv6-ISPs: "阻止危险和垃圾容易ISP。"
-Extended Description IPv6-Other: "阻止CIDR从代理，VPN和其他不需要服务。"
-Extended Description IPv6: "阻止不想要的云服务和非人终端。"
+Extended Description IPv4-Bogons: &ExtDesBogons "阻止bogon/火星CIDR。"
+Extended Description IPv4-ISPs: &ExtDesISPs "阻止危险和垃圾容易ISP。"
+Extended Description IPv4-Nonblocking: &ExtDesNonblocking "对分类有用，但不会自行阻止任何事物。"
+Extended Description IPv4-Other: &ExtDesOther "阻止CIDR从代理，VPN和其他不需要服务。"
+Extended Description IPv4: &ExtDesCloud "阻止不想要的云服务和非人终端。"
+Extended Description IPv6-Bogons: *ExtDesBogons
+Extended Description IPv6-ISPs: *ExtDesISPs
+Extended Description IPv6-Nonblocking: *ExtDesNonblocking
+Extended Description IPv6-Other: *ExtDesOther
+Extended Description IPv6: *ExtDesCloud
 Extended Description PHPMailer: "使用涉及发送电子邮件的任何功能时需要。<br /><a href="https://github.com/PHPMailer/PHPMailer" hreflang="en" rel="noopener noreferrer external">PHPMailer</a>可通过<a href="https://github.com/PHPMailer/PHPMailer/blob/master/LICENSE" hreflang="en-US" rel="noopener external">LGPLv2.1</a>许可证获得。"
 Extended Description flags.css: "向前端日志页面添加旗支持。"
 Extended Description module_abuseipdb.php: "阻止来自AbuseIPDB列出的IP的请求。"
@@ -38,10 +40,12 @@ Name Bypasses: "标准签名旁路。"
 Name CN_cidram.inc: "中国IPv4阻止清单"
 Name IPv4-Bogons: "IPv4（bogon）。"
 Name IPv4-ISPs: "IPv4（垃圾邮件ISP）。"
+Name IPv4-Nonblocking: "IPv4非阻止签名。"
 Name IPv4-Other: "IPv4（代理，VPN，等等）。"
 Name IPv4: "IPv4（云和托管服务）。"
 Name IPv6-Bogons: "IPv6（bogon）。"
 Name IPv6-ISPs: "IPv6（垃圾邮件ISP）。"
+Name IPv6-Nonblocking: "IPv6非阻止签名。"
 Name IPv6-Other: "IPv6（代理，VPN，等等）。"
 Name IPv6: "IPv6（云和托管服务）。"
 Name KR_cidram.inc: "南韩IPv4阻止清单"
@@ -205,7 +209,6 @@ field_filetype_unknown: "未知"
 field_include: "包括空字段"
 field_infractions: "违规"
 field_install: "安装"
-field_ip_address: "IP地址"
 field_latest_version: "最新版本"
 field_log_in: "登录"
 field_netmask: "以子网掩码的形式生成输出"

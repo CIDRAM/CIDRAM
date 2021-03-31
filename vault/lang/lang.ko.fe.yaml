@@ -7,20 +7,22 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Korean language data for the front-end (last modified: 2021.03.12).
+# This file: Korean language data for the front-end (last modified: 2021.03.31).
 ##/
 
 Extended Description Bypasses: "기본 서명 우회 일반적으로 기본 패키지에 포함되어 있습니다."
 Extended Description CIDRAM: "메인 패키지 (서명, 문서, 구성, 은 포함되지 않습니다)."
 Extended Description Chart.js: "프런트 엔드에서 원형 차트를 생성 할 수 있습니다.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a>는 <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>를 통해 사용 가능합니다."
-Extended Description IPv4-Bogons: "보곤 CIDR을 차단합니다."
-Extended Description IPv4-ISPs: "스패머을 가진 위험한 ISP를 차단합니다."
-Extended Description IPv4-Other: "프록시, VPN 및 기타 불필요한 서비스 CIDR을 차단합니다."
-Extended Description IPv4: "불필요한 클라우드 서비스와 非人의 끝점을 차단합니다."
-Extended Description IPv6-Bogons: "보곤 CIDR을 차단합니다."
-Extended Description IPv6-ISPs: "스패머을 가진 위험한 ISP를 차단합니다."
-Extended Description IPv6-Other: "프록시, VPN 및 기타 불필요한 서비스 CIDR을 차단합니다."
-Extended Description IPv6: "불필요한 클라우드 서비스와 非人의 끝점을 차단합니다."
+Extended Description IPv4-Bogons: &ExtDesBogons "보곤 CIDR을 차단합니다."
+Extended Description IPv4-ISPs: &ExtDesISPs "스패머을 가진 위험한 ISP를 차단합니다."
+Extended Description IPv4-Nonblocking: &ExtDesNonblocking "프로파일 링에 유용하지만 그 자체로 어떤 것도 차단하지 않습니다."
+Extended Description IPv4-Other: &ExtDesOther "프록시, VPN 및 기타 불필요한 서비스 CIDR을 차단합니다."
+Extended Description IPv4: &ExtDesCloud "불필요한 클라우드 서비스와 非人의 끝점을 차단합니다."
+Extended Description IPv6-Bogons: *ExtDesBogons
+Extended Description IPv6-ISPs: *ExtDesISPs
+Extended Description IPv6-Nonblocking: *ExtDesNonblocking
+Extended Description IPv6-Other: *ExtDesOther
+Extended Description IPv6: *ExtDesCloud
 Extended Description PHPMailer: "이메일 전송과 관련된 기능 사용에 필요합니다.<br /><a href="https://github.com/PHPMailer/PHPMailer" hreflang="en" rel="noopener noreferrer external">PHPMailer</a>는 <a href="https://github.com/PHPMailer/PHPMailer/blob/master/LICENSE" hreflang="en-US" rel="noopener external">LGPLv2.1</a> 라이센스를 통해 사용 가능합니다."
 Extended Description flags.css: "프론트 엔드 로그 페이지에 플래그 지원을 추가합니다."
 Extended Description module_abuseipdb.php: "AbuseIPDB에 나열된 IP의 요청을 차단합니다."
@@ -38,10 +40,12 @@ Name Bypasses: "기본 서명 우회."
 Name CN_cidram.inc: "중국 IPv4 차단 목록"
 Name IPv4-Bogons: "IPv4 (보곤)."
 Name IPv4-ISPs: "IPv4 (스패머을 가진 위험한 ISP)."
+Name IPv4-Nonblocking: "IPv4 비 차단 서명."
 Name IPv4-Other: "IPv4 (프록시, VPN, 등)."
 Name IPv4: "IPv4 (클라우드 및 호스팅 서비스)."
 Name IPv6-Bogons: "IPv6 (보곤)."
 Name IPv6-ISPs: "IPv6 (스패머을 가진 위험한 ISP)."
+Name IPv6-Nonblocking: "IPv6 비 차단 서명."
 Name IPv6-Other: "IPv6 (프록시, VPN, 등)."
 Name IPv6: "IPv6 (클라우드 및 호스팅 서비스)."
 Name KR_cidram.inc: "한국 IPv4 차단 목록"
@@ -205,7 +209,6 @@ field_filetype_unknown: "알 수없는"
 field_include: "빈 필드를 포함하십시오"
 field_infractions: "위반"
 field_install: "설치"
-field_ip_address: "IP 주소"
 field_latest_version: "최신 버전"
 field_log_in: "로그인"
 field_netmask: "넷 마스크 사용하여 출력 생성"

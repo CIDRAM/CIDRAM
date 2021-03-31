@@ -7,20 +7,22 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Urdu language data for the front-end (last modified: 2021.03.12).
+# This file: Urdu language data for the front-end (last modified: 2021.03.31).
 ##/
 
 Extended Description Bypasses: "پہلے سے طے شدہ دستخطی بائی پاس فائلوں کو عام طور پر بنیادی پیکیج کے ساتھ شامل تھے."
 Extended Description CIDRAM: "مرکزی پیکیج (بغیر دستخط، دستاویزات، اور ترتیب)."
 Extended Description Chart.js: "پائی چارٹ پیدا کرنے کے لئے سامنے کے آخر میں قابل بناتا ہے.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a> کے ذریعہ دستیاب ہے."
-Extended Description IPv4-Bogons: "بلاکس martian/bogon CIDR."
-Extended Description IPv4-ISPs: "خطرناک بلاکس اور سپام ISP."
-Extended Description IPv4-Other: "پراکسی جنگ لڑ، وپ، اور دیگر متفرق ناپسندیدہ خدمات کے لئے CIDR."
-Extended Description IPv4: "بلاکس ناپسندیدہ کلاؤڈ سروسز اور غیر انسانی رسائی پوائنٹس."
-Extended Description IPv6-Bogons: "بلاکس martian/bogon CIDR."
-Extended Description IPv6-ISPs: "خطرناک بلاکس اور سپام ISP."
-Extended Description IPv6-Other: "پراکسی جنگ لڑ، وپ، اور دیگر متفرق ناپسندیدہ خدمات کے لئے CIDR."
-Extended Description IPv6: "بلاکس ناپسندیدہ کلاؤڈ سروسز اور غیر انسانی رسائی پوائنٹس."
+Extended Description IPv4-Bogons: &ExtDesBogons "بلاکس martian/bogon CIDR."
+Extended Description IPv4-ISPs: &ExtDesISPs "خطرناک بلاکس اور سپام ISP."
+Extended Description IPv4-Nonblocking: &ExtDesNonblocking "پروفائلنگ کے لئے مفید ہے، لیکن کسی بھی چیز کو اپنے طور پر مسدود نہیں کرتا ہے."
+Extended Description IPv4-Other: &ExtDesOther "پراکسی جنگ لڑ، وپ، اور دیگر متفرق ناپسندیدہ خدمات کے لئے CIDR."
+Extended Description IPv4: &ExtDesCloud "بلاکس ناپسندیدہ کلاؤڈ سروسز اور غیر انسانی رسائی پوائنٹس."
+Extended Description IPv6-Bogons: *ExtDesBogons
+Extended Description IPv6-ISPs: *ExtDesISPs
+Extended Description IPv6-Nonblocking: *ExtDesNonblocking
+Extended Description IPv6-Other: *ExtDesOther
+Extended Description IPv6: *ExtDesCloud
 Extended Description PHPMailer: "یہ کسی بھی فعالیت کا استعمال کرنے کے لئے ضروری ہے جس میں ای میل بھیجنا شامل ہے.<br /><a href="https://github.com/PHPMailer/PHPMailer" hreflang="en" rel="noopener noreferrer external">PHPMailer</a> لائسنس <a href="https://github.com/PHPMailer/PHPMailer/blob/master/LICENSE" hreflang="en-US" rel="noopener external">LGPLv2.1</a> کے ذریعہ دستیاب ہے."
 Extended Description flags.css: "فرنٹ اینڈ لاگز پیج پر فلیگ سپورٹ شامل کرتا ہے."
 Extended Description module_abuseipdb.php: "AbuseIPDB میں درج IP کے بلاکس کی درخواستیں."
@@ -38,10 +40,12 @@ Name Bypasses: "پہلے سے طے شدہ دستخطی بائ پاس."
 Name CN_cidram.inc: "چین IPv4 بلاک لسٹ"
 Name IPv4-Bogons: "IPv4 (bogons)."
 Name IPv4-ISPs: "IPv4 (سروس فراہم کرنے والے سپیم بھیجنے کے لئے)."
+Name IPv4-Nonblocking: "IPv4 غیر مسدود دستخطیں."
 Name IPv4-Other: "IPv4 (پراکسی، وی پی این، وغیرہ)."
 Name IPv4: "IPv4 (کلاوڈ اور میزبان خدمات)."
 Name IPv6-Bogons: "IPv6 (bogons)."
 Name IPv6-ISPs: "IPv6 (سروس فراہم کرنے والے سپیم بھیجنے کے لئے)."
+Name IPv6-Nonblocking: "IPv6 غیر مسدود دستخطیں."
 Name IPv6-Other: "IPv6 (پراکسی، وی پی این، وغیرہ)."
 Name IPv6: "IPv6 (کلاوڈ اور میزبان خدمات)."
 Name KR_cidram.inc: "جنوبی کوریا IPv4 بلاک لسٹ"
@@ -205,7 +209,6 @@ field_filetype_unknown: "نامعلوم"
 field_include: "خالی شعبیں شامل کریں"
 field_infractions: "خلاف ورزی"
 field_install: "انسٹال کریں"
-field_ip_address: "IP پتہ"
 field_latest_version: "تازہ ترین ورژن"
 field_log_in: "لاگ ان"
 field_netmask: "نیٹ ورک ماسٹر کا استعمال کرتے ہوئے پیدا کریں"

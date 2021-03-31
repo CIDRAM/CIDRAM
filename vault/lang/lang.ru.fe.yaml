@@ -7,20 +7,22 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Russian language data for the front-end (last modified: 2021.03.12).
+# This file: Russian language data for the front-end (last modified: 2021.03.31).
 ##/
 
 Extended Description Bypasses: "Стандартная сигнатуры байпасы, обычно включены в основной пакет."
 Extended Description CIDRAM: "Основной пакет (минус сигнатуры, документация, и конфигурация)."
 Extended Description Chart.js: "Позволяет фронтенд создавать круговые диаграммы.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> доступен через <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
-Extended Description IPv4-Bogons: "Блокирует bogon/марсианин CIDRs."
-Extended Description IPv4-ISPs: "Блокирует опасно и спам-склонным интернет-провайдеры."
-Extended Description IPv4-Other: "Блокирует CIDRs для прокси-серверов, виртуальных частных сетей и различных других нежелательных услуг."
-Extended Description IPv4: "Блокирует нежелательные облачные сервисы и нечеловеческие конечные точки."
-Extended Description IPv6-Bogons: "Блокирует bogon/марсианин CIDRs."
-Extended Description IPv6-ISPs: "Блокирует опасно и спам-склонным интернет-провайдеры."
-Extended Description IPv6-Other: "Блокирует CIDRs для прокси-серверов, виртуальных частных сетей и различных других нежелательных услуг."
-Extended Description IPv6: "Блокирует нежелательные облачные сервисы и нечеловеческие конечные точки."
+Extended Description IPv4-Bogons: &ExtDesBogons "Блокирует bogon/марсианин CIDRs."
+Extended Description IPv4-ISPs: &ExtDesISPs "Блокирует опасно и спам-склонным интернет-провайдеры."
+Extended Description IPv4-Nonblocking: &ExtDesNonblocking "Полезно для профилирования, но сам по себе ничего не блокирует."
+Extended Description IPv4-Other: &ExtDesOther "Блокирует CIDRs для прокси-серверов, виртуальных частных сетей и различных других нежелательных услуг."
+Extended Description IPv4: &ExtDesCloud "Блокирует нежелательные облачные сервисы и нечеловеческие конечные точки."
+Extended Description IPv6-Bogons: *ExtDesBogons
+Extended Description IPv6-ISPs: *ExtDesISPs
+Extended Description IPv6-Nonblocking: *ExtDesNonblocking
+Extended Description IPv6-Other: *ExtDesOther
+Extended Description IPv6: *ExtDesCloud
 Extended Description PHPMailer: "Требуется для использования любых функций, связанных с отправкой электронной почты.<br /><a href="https://github.com/PHPMailer/PHPMailer" hreflang="en" rel="noopener noreferrer external">PHPMailer</a> доступен через лицензию <a href="https://github.com/PHPMailer/PHPMailer/blob/master/LICENSE" hreflang="en-US" rel="noopener external">LGPLv2.1</a>."
 Extended Description flags.css: "Добавляет поддержку флагов на страницу журналов фронтенда."
 Extended Description module_abuseipdb.php: "Блокирует запросы от IP-адресов, перечисленных в AbuseIPDB."
@@ -38,10 +40,12 @@ Name Bypasses: "Стандартная сигнатуры байпасы."
 Name CN_cidram.inc: "Китайский блоклист IPv4"
 Name IPv4-Bogons: "IPv4 (bogon)."
 Name IPv4-ISPs: "IPv4 (спам-толерантные интернет-провайдеры)."
+Name IPv4-Nonblocking: "Неблокирующие сигнатуры IPv4."
 Name IPv4-Other: "IPv4 (прокси, VPN, и т.д.)."
 Name IPv4: "IPv4 (облачные и хостинговые услуги)."
 Name IPv6-Bogons: "IPv6 (bogon)."
 Name IPv6-ISPs: "IPv6 (спам-толерантные интернет-провайдеры)."
+Name IPv6-Nonblocking: "Неблокирующие сигнатуры IPv6."
 Name IPv6-Other: "IPv6 (прокси, VPN, и т.д.)."
 Name IPv6: "IPv6 (облачные и хостинговые услуги)."
 Name KR_cidram.inc: "Южнокорейский блоклист IPv4"
@@ -205,7 +209,6 @@ field_filetype_unknown: "Неизвестный"
 field_include: "Включить пустые поля"
 field_infractions: "Нарушений"
 field_install: "Устанавливать"
-field_ip_address: "IP-Адрес"
 field_latest_version: "Последняя Версия"
 field_log_in: "Войдите"
 field_netmask: "Генерировать вывод в виде сетевых масок"

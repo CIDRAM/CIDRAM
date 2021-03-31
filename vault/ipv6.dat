@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6.dat
 
-# Version: 2021.83.275
-# Last modified: 2021.03.25
+# Version: 2021.89.139
+# Last modified: 2021.03.31
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage, i.e., with ignore.dat, with reCAPTCHA, with "extended rules" (default bypasses): « [x]Low [ ]Medium [ ]High »
@@ -1521,8 +1521,8 @@ Tag: K SERVERS LTD
 
 # ASN 18978 ("Enzu Inc").
 # Dedicated webhosting provider and a long-term source of spam for many years.
-# Stop Forum Spam (SFS) listings: 15,842.
-# Updated: 2020.04.27 / Checked: 2020.10.19
+# Stop Forum Spam (SFS) listings: 7,428.
+# Updated: 2020.04.27 / Checked: 2021.03.31
 
 2605:f700:10::/48 Deny Cloud
 2605:f700:40::/44 Deny Cloud
@@ -2353,8 +2353,8 @@ Tag: FASTVPS EESTI OU
 
 
 # ASN 43513 ("Sia Nano IT").
-# Stop Forum Spam (SFS) listings: 2,104.
-# Updated: 2019.10.02 / Checked: 2020.09.19
+# Stop Forum Spam (SFS) listings: 27,608.
+# Updated: 2019.10.02 / Checked: 2021.03.31
 
 2a00:c68::/32 Deny Cloud
 2a02:7aa0::/34 Deny Cloud
@@ -3677,8 +3677,8 @@ Tag: GMO-Z.com USA, INC
 
 
 # ASN 49282 ("Ficolo Oy").
-# Stop Forum Spam (SFS) listings: 346.
-# Updated: 2016.11.02 / Checked: 2020.09.20
+# Stop Forum Spam (SFS) listings: 929.
+# Updated: 2016.11.02 / Checked: 2021.03.31
 
 2a03:e580::/29 Deny Cloud
 Origin: FI
@@ -4680,8 +4680,8 @@ Tag: Trader soft LLC
 
 
 # ASN 51395 ("SOFTplus Entwicklungen GmbH").
-# Stop Forum Spam (SFS) listings: 17,311.
-# Updated: 2020.03.30 / Checked: 2020.09.20
+# Stop Forum Spam (SFS) listings: 35,945.
+# Updated: 2020.03.30 / Checked: 2021.03.31
 
 2001:67c:2f0::/48 Deny Cloud
 2a00:bd80::/32 Deny Cloud
@@ -8061,6 +8061,52 @@ Origin: SE
 Origin: US
 Profile: Dedicated;Webhosting
 Tag: EstNOC OY
+
+
+# ASN 207992 ("FEELB SARL").
+# Some kind of French startup firm. Huge numbers of brute-force and SSH hack
+# attempts detected and reported from here, but nothing else (e.g., no spam
+# events reported at all, etc).
+# Updated: 2021.03.31
+
+2a04:ecc0::/29 Deny Cloud
+Origin: FR
+Tag: FEELB SARL
+
+
+# ASN 137409 ("GSL Networks Pty LTD").
+# Australian data center and colo provider. Port scanning and other unwanted
+# traffic detected from here.
+# Updated: 2021.03.31
+
+2401:3cc0::/32 Deny Cloud
+Origin: HK
+2401:3bc0::/32 Deny Cloud
+Origin: NZ
+Profile: Infrastructure;Webhosting
+Tag: GSL Networks Pty LTD
+
+
+# ASNs 24549, 133024, 133380, 133905 ("Layerstack Limited").
+# Hong Kong infrastructure/webhosting/stack provider. WordPress hack attempts
+# and related hackbots detected from here. Multiple closely interlaced ASNs.
+# Stop Forum Spam (SFS) listings: 1 (AS24549), 57 (AS133380), 2 (AS133905).
+# Updated: 2021.03.31
+
+2401:1100::/32 Deny Cloud
+Origin: HK
+Profile: Infrastructure;Webhosting
+Tag: Layerstack Limited
+
+
+# ASN 53243 ("Brasil Site Informatica LTDA").
+# Brazilian commercial network. Regular WordPress hack attempts and brute-force
+# and SSH attacks detected from here.
+# Updated: 2021.03.31
+
+2804:11a4::/32 Deny Cloud
+Origin: BR
+Tag: Brasil Site Informatica LTDA
 
 
 # ---

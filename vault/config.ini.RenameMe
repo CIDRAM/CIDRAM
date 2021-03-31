@@ -222,11 +222,11 @@ default_timeout=12
 
 ; A list of the IPv4 signature files that CIDRAM should attempt to parse,
 ; delimited by commas.
-ipv4='ipv4.dat,ipv4_bogons.dat,ipv4_custom.dat,ipv4_isps.dat,ipv4_other.dat'
+ipv4='ipv4.dat,ipv4_bogons.dat,ipv4_custom.dat,ipv4_isps.dat,ipv4_nonblocking.dat,ipv4_other.dat'
 
 ; A list of the IPv6 signature files that CIDRAM should attempt to parse,
 ; delimited by commas.
-ipv6='ipv6.dat,ipv6_bogons.dat,ipv6_custom.dat,ipv6_isps.dat,ipv6_other.dat'
+ipv6='ipv6.dat,ipv6_bogons.dat,ipv6_custom.dat,ipv6_isps.dat,ipv6_nonblocking.dat,ipv6_other.dat'
 
 ; Block CIDRs identified as belonging to webhosting/cloud services? If you
 ; operate an API service from your website or if you expect other websites to

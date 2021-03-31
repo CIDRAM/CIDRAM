@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_isps.dat
 
-# Version: 2021.83.275
-# Last modified: 2021.03.25
+# Version: 2021.89.139
+# Last modified: 2021.03.31
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage, i.e., with ignore.dat, with reCAPTCHA, with "extended rules" (default bypasses): « [ ]Low [x]Medium [ ]High »
@@ -2912,3 +2912,24 @@ Tag: Vodafone Deutschland GmbH
 ---
 recaptcha:
  enabled: true
+
+
+# ASNs 3215, 5511 ("Orange S.A").
+# French domestic ISP. Listing just the affected ranges/addresses, plus all
+# NL+SG+US ranges (cloud).
+# Stop Forum Spam (SFS) listings: 1,117 (AS3215), 232 (AS5511).
+# Updated: 2021.03.31
+
+2a01:cb00:f35:fc00::/64 Deny Spam
+2a01:cb05:845d:c400::/64 Deny Spam
+2a01:cb08:8a:3500::/64 Deny Spam
+2a01:cb08:894b:ac00::/64 Deny Spam
+2a01:cb08:8ae5:ee00::/64 Deny Spam
+2a01:cb10:8573:4d00::/64 Deny Spam
+2a01:cb10:8863:5400::/64 Deny Spam
+2a01:cb11:ca:2c00::/64 Deny Spam
+2a01:cb14:e24:b600::/64 Deny Spam
+2a01:cb1d:41d:ea00::/64 Deny Spam
+Origin: FR
+Profile: Domestic ISP;Infrastructure;Multiplay
+Tag: Orange S.A

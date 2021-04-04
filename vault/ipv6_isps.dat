@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_isps.dat
 
-# Version: 2021.89.139
-# Last modified: 2021.03.31
+# Version: 2021.93.416
+# Last modified: 2021.04.04
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage, i.e., with ignore.dat, with reCAPTCHA, with "extended rules" (default bypasses): « [ ]Low [x]Medium [ ]High »
@@ -71,29 +71,6 @@ Origin: RU
 Origin: ZA
 Profile: Frequent changes;Tor endpoints here
 Tag: Hetzner Online GmbH
-
-
-# ASN 51559 ("Server Internet Bilisim ve Bilgisayar Hizmetleri").
-# (Mark any LV announces as "Cloud" when updating).
-# Stop Forum Spam (SFS) listings: 204.
-# Updated: 2020.05.29 / Checked: 2020.11.27
-
-2a03:2100::/44 Deny Generic
-2a03:2100:10::/48 Deny Generic
-2a05:9bc0::/44 Deny Generic
-2a06:41c0::/46 Deny Generic
-2a06:41c0:4::/48 Deny Generic
-2a06:41c0:6::/47 Deny Generic
-2a06:41c0:8::/45 Deny Generic
-2a06:c400::/44 Deny Generic
-2a09:9d00:1::/48 Deny Generic
-2a0a:db00::/44 Deny Generic
-2a0b:8100::/44 Deny Generic
-Origin: TR
-Tag: AS51559
----
-recaptcha:
- enabled: true
 
 
 # ASN 45727 ("Hutchison CP Telecommunications, PT").
@@ -265,15 +242,14 @@ Tag: PIN-AS
 # Domestic Israeli ISP with human endpoints, but has some bad actors (spambots,
 # scrapers, etc). Marked for use with reCAPTCHA and included in ignore.dat by
 # default to reduce the false positive risk. Non-IL ranges marked as cloud.
-# %Listed, abuseat.org (CBL-Listed): 0.27%.
-# Stop Forum Spam (SFS) listings: 822.
-# Updated: 2020.10.05
+# Stop Forum Spam (SFS) listings: 423.
+# Updated: 2021.04.04
 
-2a02:26f0:8000::/48 Deny Cloud
-Origin: EU
 2001:4cd0::/29 Deny Generic
 2a10:8000::/28 Deny Generic
 Origin: IL
+2a02:26f0:8000::/48 Deny Cloud
+Origin: NL
 2620:11b:e0be::/48 Deny Cloud
 Origin: US
 Profile: Domestic ISP
@@ -1642,7 +1618,7 @@ recaptcha:
 2a01:620::/32 Deny Spam
 2a02:ad8::/32 Deny Spam
 Origin: RU
-Profile: Domestic ISP
+Profile: Domestic ISP;Tor endpoints here
 Tag: PJSC Rostelecom
 ---
 recaptcha:
@@ -1776,10 +1752,12 @@ recaptcha:
 
 # ASN 137432 ("BKB Network").
 # Caught using automated hacktools to try hacking into honeypots.
-# Stop Forum Spam (SFS) listings: 59.
-# Updated: 2019.12.06 / Checked: 2020.10.05
+# Stop Forum Spam (SFS) listings: 17.
+# Updated: 2021.04.04
 
-2402:68c0::/32 Deny Generic
+2402:68c0:a000::/36 Deny Generic
+2402:68c0:c000::/36 Deny Generic
+2402:68c0:e000::/36 Deny Generic
 Origin: BD
 Tag: BKB Network
 ---
@@ -1888,105 +1866,6 @@ recaptcha:
  enabled: true
 
 
-# ASNs 9009, 16247 ("M247 Ltd").
-# Multiplay network providing broadband connectivity, server leasing, line rental, webhosting services and others.
-# "BraveWay", "Server", "Host", "Datacenter", "Virtual" as cloud ^(.*(?:BraveWay|Host|Virtual|Server|Data ?cent(?:er|re)).*)\x01$
-# "VPN", "Secure Internet LLC" as proxy/other ^(.*(?:VPN|Secure Internet LLC).*)\x01$
-# Everything else to go to the ISPs signatures. When updating, remove all subordinates of 38.0.0.0/8 from final
-# aggregate to avoid duplicity (already blocked elsewhere).
-# Stop Forum Spam (SFS) listings: 180,796 (AS9009), 831 (AS16247).
-# Updated: 2020.11.12
-
-2a03:f80:33::/48 Deny Spam
-2a03:f80:40::/48 Deny Spam
-2a03:f80:45::/48 Deny Spam
-2a03:f80:47::/48 Deny Spam
-2a03:f80:61::/48 Deny Spam
-2a03:f80:65::/48 Deny Spam
-2a03:f80:81::/48 Deny Spam
-2a03:f80:381::/48 Deny Spam
-2a03:f80:852::/48 Deny Spam
-2a03:f80:971::/48 Deny Spam
-2a07:de00::/29 Deny Spam
-Origin: AT
-2604:17c0::/41 Deny Spam
-2604:17c0:80::/42 Deny Spam
-Origin: CA
-2001:978:2305::/48 Deny Spam
-2001:978:3400::/48 Deny Spam
-2a0b:9040::/29 Deny Spam
-Origin: DE
-2a0c:36c2::/31 Deny Spam
-Origin: EE
-2a01:300::/29 Deny Spam
-Origin: EU
-2001:ac8::/32 Deny Spam
-2a00:b320::/48 Deny Spam
-2a02:40::/32 Deny Spam
-2a02:710:1000:700::/56 Deny Spam
-2a03:34c0::/32 Deny Spam
-2a07:a343:120::/44 Deny Spam
-2a07:a343:3c00::/44 Deny Spam
-2a07:a343:7870::/44 Deny Spam
-2a07:a343:94d0::/44 Deny Spam
-2a07:a343:aee0::/44 Deny Spam
-2a07:a343:bc70::/44 Deny Spam
-2a07:a343:cd10::/44 Deny Spam
-2a07:a343:ce30::/44 Deny Spam
-2a07:a343:e0f0::/44 Deny Spam
-2a07:a343:f210::/44 Deny Spam
-2a0a:b640:1::/48 Deny Spam
-2a0a:b640:2::/48 Deny Spam
-2a0a:c200:2::/48 Deny Spam
-2a0c:a940::/29 Deny Spam
-2a0e:7a80::/29 Deny Spam
-Origin: GB
-2a00:55a0:ea00::/40 Deny Spam
-2a00:55a0:f000::/40 Deny Spam
-2a00:55a0:f900::/40 Deny Spam
-2a00:55a0:ff00::/40 Deny Spam
-Origin: IL
-2a0d:db00::/32 Deny Spam
-Origin: LT
-2001:678:8b4::/48 Deny Spam
-2a04:9dc0::/29 Deny Spam
-2a07:9200::/47 Deny Spam
-2a07:9200:3::/48 Deny Spam
-2a07:9200:6::/48 Deny Spam
-2a0d:9980::/29 Deny Spam
-2a0e:1d80:2::/47 Deny Spam
-2a0e:1d80:4::/47 Deny Spam
-Origin: RO
-2a05:f680::/29 Deny Spam
-2a0d:87c0::/29 Deny Spam
-Origin: RU
-2a0d:ba40::/29 Deny Spam
-Origin: TR
-2001:550:1d05::/48 Deny Spam
-2605:3b80:cad::/48 Deny Spam
-2607:6980:e710::/44 Deny Spam
-2a09:9bc0:a::/48 Deny Spam
-2a0d:5600:1::/48 Deny Spam
-2a0d:5600:2::/47 Deny Spam
-2a0d:5600:4::/46 Deny Spam
-2a0d:5600:8::/45 Deny Spam
-2a0d:5600:11::/48 Deny Spam
-2a0d:5600:12::/47 Deny Spam
-2a0d:5600:14::/46 Deny Spam
-2a0d:5600:18::/48 Deny Spam
-2a0d:5600:20::/46 Deny Spam
-2a0d:5600:24::/47 Deny Spam
-2a0d:5600:34::/47 Deny Spam
-2a0d:5600:36::/48 Deny Spam
-2a0d:5600:a32::/48 Deny Spam
-Origin: US
-Profile: Domestic ISP;Infrastructure;Multiplay;Tor endpoints here;Webhosting
-Tag: M247 Ltd
----
-recaptcha:
- enabled: true
-
-
 # ASN 8708 ("RCS & RDS SA").
 # Romanian domestic ISP; Also a frequent source of spam, hack attempts, and
 # other unwanted traffic.
@@ -1996,7 +1875,7 @@ recaptcha:
 
 2a02:2f00::/28 Deny Spam
 Origin: RO
-Profile: Domestic ISP
+Profile: Domestic ISP;Tor endpoints here
 Tag: RCS & RDS SA
 ---
 recaptcha:
@@ -2209,6 +2088,26 @@ recaptcha:
 2600:8807:5680:8b0::/64 Deny Spam
 Origin: US
 Tag: Cox Spam IPs
+---
+recaptcha:
+ enabled: true
+
+
+# ASN 27699 ("TELEFNICA BRASIL S.A").
+# Brazilian domestic ISP. Spam and hack attempts detected from here.
+# Listing just the affected address/ranges only.
+# %Listed, abuseat.org (CBL-Listed): 0.21%.
+# Stop Forum Spam (SFS) listings: 3,398.
+# Updated: 2021.04.02
+
+2804:431:c7db:2ab7::/64 Deny Spam
+2804:431:cfc3:8cc5::/64 Deny Spam
+2804:431:cfcd:b566::/64 Deny Spam
+2804:431:d7ff:6de1::/64 Deny Spam
+2804:431:f701:796e::/64 Deny Spam
+Origin: BR
+Profile: Domestic ISP
+Tag: TELEFNICA BRASIL S.A
 ---
 recaptcha:
  enabled: true
@@ -2481,6 +2380,7 @@ Origin: DE
 2a02:a312:603f:8e00::/64 Deny Spam
 2a02:a317:8242:8300::/64 Deny Spam
 Origin: PL
+Profile: Tor endpoints here
 Tag: Liberty Global
 ---
 recaptcha:
@@ -2709,7 +2609,7 @@ recaptcha:
 2a03:1b20:a::/48 Deny Spam
 2a0f:8980::/32 Deny Spam
 Origin: SE
-Profile: Infrastructure;Multiplay;Webhosting
+Profile: Infrastructure;Multiplay;Tor endpoints here;Webhosting
 Tag: 31173 Services AB
 ---
 recaptcha:

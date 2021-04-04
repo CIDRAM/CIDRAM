@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2021.03.31).
+ * This file: Functions file (last modified: 2021.04.04).
  */
 
 /**
@@ -436,6 +436,10 @@ $CIDRAM['CheckFactors'] = function (array $Files, array $Factors) use (&$CIDRAM)
                             trigger_error($CIDRAM['L10N']->getString('Error_MissingRequire'), E_USER_WARNING);
                         }
                     }
+                }
+                if ($RunExitCode === 4) {
+                    $CIDRAM['ZeroOutBlockInfo']();
+                    break 3;
                 }
                 if ($Category === 'Whitelist' || $RunExitCode === 3) {
                     $CIDRAM['ZeroOutBlockInfo'](true);

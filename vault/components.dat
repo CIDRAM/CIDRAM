@@ -1,7 +1,7 @@
 ---
 CIDRAM Core:
  Name: CIDRAM Core
- Version: 2.5.1-DEV+21089292
+ Version: 2.5.1-DEV+21093416
  Minimum Required: 2.0.0
  Changelog: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v2/Changelog.txt
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v2/vault/components.dat
@@ -47,7 +47,7 @@ CIDRAM Core:
    - bf079f77e01a8c00780ebd52e5475bb79f365cd3afaaba6e4285b01b81cf5bcf:7632
    - 9ac04deec017718670d68df33fa7fe6bcf3706165d6b5164eb8f09c867245492:18618
    - a9fc60dac766f1d0eb9828421509ccc4065eff8048fba882a891621d18427b4d:9663
-   - 5b588fdafe513d5d97d0eca4e38efd2fbf82447b7fa5c31f2da5df8dff2b5e26:95644
+   - bca3cc566cf21e93133aeee4ec2b18a247cdc1a5e561645e53bc66fac5536ffa:95784
    - 4d89fe0f2b14c84b8fdad2579333d4d0f31366815d4cb60e040fbbf2c68aaa1d:5158
    - d7d497f934692315ae284582f675834bd4c05c5d295fccc5b1ac1cc7104bcf9d:36941
    - 446841ed48e3ff39806b3d630276ddb5df837ff71bad695b11a184c38e9f9484:13507
@@ -251,7 +251,7 @@ Common Classes Package:
 IPv4:
  Extended Description: Default IPv4 signatures normally included with the main package. Blocks unwanted cloud services and non-human endpoints.
  False Positive Risk: Low
- Version: 2021.89.139
+ Version: 2021.93.416
  Minimum Required: 2.0.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v2/vault/components.dat
  Uninstallable: true
@@ -261,7 +261,7 @@ IPv4:
   To:
    - ipv4.dat
   Checksum:
-   - fe418ff470268b72a7113d0d22644cae43414e51111f6379747a6766dfa187f2:931977
+   - 1d4936570205cef7bc71927db2e89687e4deb0b767a9da082abd2dd5927137f4:939511
  Used with: ipv4
  Reannotate: components.dat
 IPv4-Bogons:
@@ -283,7 +283,7 @@ IPv4-Bogons:
 IPv4-ISPs:
  Extended Description: Default IPv4 signatures normally included with the main package. Blocks dangerous and spammy ISPs.
  False Positive Risk: Medium
- Version: 2021.89.139
+ Version: 2021.93.416
  Minimum Required: 2.0.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v2/vault/components.dat
  Uninstallable: true
@@ -293,7 +293,7 @@ IPv4-ISPs:
   To:
    - ipv4_isps.dat
   Checksum:
-   - 4d1047c029c86e891532c2a8966a6f853fce0730d3234f520c54ad8bdfe4b20f:469461
+   - 4dd529f95a8d99e8a16f4de8874d01604e2e24feab8b6829c3193281f464a473:438512
  Used with: ipv4
  Reannotate: components.dat
 IPv4-Nonblocking:
@@ -330,7 +330,7 @@ IPv4-Other:
 IPv6:
  Extended Description: Default IPv6 signatures normally included with the main package. Blocks unwanted cloud services and non-human endpoints.
  False Positive Risk: Low
- Version: 2021.89.139
+ Version: 2021.93.416
  Minimum Required: 2.0.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v2/vault/components.dat
  Uninstallable: true
@@ -340,7 +340,7 @@ IPv6:
   To:
    - ipv6.dat
   Checksum:
-   - 4a7fb5c7d21e2c1301380f91f2eb647178858352a96b3387139bf16e3c880f0d:245449
+   - 814cb3dc4ca8f22dc58321a2cba22d5d04132df0e600aff77718d071db7a5fd1:249880
  Used with: ipv6
  Reannotate: components.dat
 IPv6-Bogons:
@@ -362,7 +362,7 @@ IPv6-Bogons:
 IPv6-ISPs:
  Extended Description: Default IPv6 signatures normally included with the main package. Blocks dangerous and spammy ISPs.
  False Positive Risk: Medium
- Version: 2021.89.139
+ Version: 2021.93.416
  Minimum Required: 2.0.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v2/vault/components.dat
  Uninstallable: true
@@ -372,7 +372,7 @@ IPv6-ISPs:
   To:
    - ipv6_isps.dat
   Checksum:
-   - a2c40ff497f3356ffb62123ac1ddc5815ab0a0ef0b2fcf2ed896ed641985c07a:82518
+   - 4a2120bb0235150aeeab5ef28fbd023207874ae017804419ce2e58675aac7e28:79725
  Used with: ipv6
  Reannotate: components.dat
 IPv6-Nonblocking:
@@ -408,7 +408,7 @@ IPv6-Other:
  Reannotate: components.dat
 Bypasses:
  False Positive Risk: Low
- Version: 2021.26.476
+ Version: 2021.93.416
  Minimum Required: 2.0.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v2/vault/components.dat
  Uninstallable: true
@@ -422,7 +422,7 @@ Bypasses:
    - rules_specific.php
   Checksum:
    - 589bc3f0f4af93ea39703f5bbf3406484ad2b40415881e4be28e794bdb96d265:2769
-   - e3d538b71001e02027de3cc6804b70048592bb65f2e1805bc0e137ec7011e6c2:5958
+   - 61d05f7a7bd024f08f8acde9481cf901123efbacd491cdbea8780451fbe86a8b:6426
  Reannotate: components.dat
 l10n/en:
  Name: L10N: English

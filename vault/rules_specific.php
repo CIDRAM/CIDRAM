@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Extended rules for some specific CIDRs (last modified: 2021.01.27).
+ * This file: Extended rules for some specific CIDRs (last modified: 2021.04.04).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -105,7 +105,7 @@ $CIDRAM['RunParamResCache']['rules_specific.php'] = function (array $Factors = [
 
         /** DuckDuckGo bypass. */
         if (preg_match('~duckduck(?:go-favicons-)?bot~', $CIDRAM['BlockInfo']['UALC'])) {
-            return;
+            return 4;
         }
 
         /** Pinterest bypass. */
@@ -119,10 +119,26 @@ $CIDRAM['RunParamResCache']['rules_specific.php'] = function (array $Factors = [
         }
     }
 
-    /** Bingbot bypasses. */
-    if ($Tag === 'Azure' && preg_match('~(?:msn|bing)bot|bingpreview~', $CIDRAM['BlockInfo']['UALC'])) {
-        $CIDRAM['Flag-Bypass-Bingbot-Check'] = true;
-        return 2;
+    /** Azure bypasses. */
+    if ($Tag === 'Azure') {
+        /** Bingbot bypass. */
+        if (preg_match('~(?:msn|bing)bot|bingpreview~', $CIDRAM['BlockInfo']['UALC'])) {
+            $CIDRAM['Flag-Bypass-Bingbot-Check'] = true;
+            return 4;
+        }
+
+        /** DuckDuckGo bypass. */
+        if (preg_match('~duckduck(?:go-favicons-)?bot~', $CIDRAM['BlockInfo']['UALC'])) {
+            return 4;
+        }
+    }
+
+    /** Oracle bypasses. */
+    if ($Tag === 'Oracle Corporation') {
+        /** Oracle Data Cloud Crawler (a.k.a., Grapeshot) bypass. */
+        if (strpos($CIDRAM['BlockInfo']['UALC'], 'grapeshot') !== false) {
+            return;
+        }
     }
 
     /** Automattic bypasses. */

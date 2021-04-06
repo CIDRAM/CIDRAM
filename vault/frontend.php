@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2021.03.31).
+ * This file: Front-end handler (last modified: 2021.04.06).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -1695,6 +1695,9 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && ($CIDRAM['FE']['Per
     /** Useful for avoiding excessive IO operations when dealing with components. */
     $CIDRAM['Updater-IO'] = new \Maikuolan\Common\DelayedIO();
 
+    /** Useful for checking dependency version constraints. */
+    $CIDRAM['Operation'] = new \Maikuolan\Common\Operation();
+
     /** Updates page form boilerplate. */
     $CIDRAM['CFBoilerplate'] =
         '<form action="?%s" method="POST" style="display:inline">' .
@@ -2057,7 +2060,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && ($CIDRAM['FE']['Per
                 $CIDRAM['Components']['ThisComponent']['SortKey'] = $CIDRAM['Components']['Key'];
             }
             $CIDRAM['FE']['Indexes'][$CIDRAM['Components']['ThisComponent']['SortKey']] = sprintf(
-                "<a href=\"#%s\">%s</a><br /><br />\n            ",
+                "<a href=\"#%s\">%s</a><br /><br />\n      ",
                 $CIDRAM['Components']['ThisComponent']['ID'],
                 $CIDRAM['Components']['ThisComponent']['Name']
             );
@@ -2191,7 +2194,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && ($CIDRAM['FE']['Per
                 $CIDRAM['Components']['ThisComponent']['SortKey'] = $CIDRAM['Components']['Key'];
             }
             $CIDRAM['FE']['Indexes'][$CIDRAM['Components']['ThisComponent']['SortKey']] = sprintf(
-                "<a href=\"#%s\">%s</a><br /><br />\n            ",
+                "<a href=\"#%s\">%s</a><br /><br />\n      ",
                 $CIDRAM['Components']['ThisComponent']['ID'],
                 $CIDRAM['Components']['ThisComponent']['Name']
             );
@@ -2273,21 +2276,17 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && ($CIDRAM['FE']['Per
     ) . $CIDRAM['MenuToggle'];
 
     /** Inject interdependent components to each other's update instructions. */
-    if (count($CIDRAM['Components']['Interdependent'])) {
-        array_unshift($CIDRAM['Components']['Interdependent'], 'CIDRAM Core');
-        array_unshift($CIDRAM['Components']['Interdependent'], 'CIDRAM Front-End');
-        array_unshift($CIDRAM['Components']['Interdependent'], 'Common Classes Package');
-        $CIDRAM['Components']['AllInter'] = '<input name="ID[]" type="hidden" value="' . implode(
-            '" /><input name="ID[]" type="hidden" value="',
-            $CIDRAM['Components']['Interdependent']
-        ) . '" />';
-        foreach ($CIDRAM['Components']['Interdependent'] as $CIDRAM['Components']['ThisInter']) {
-            $CIDRAM['FE']['FE_Content'] = str_replace(
-                '<input name="ID" type="hidden" value="' . $CIDRAM['Components']['ThisInter'] . '" />',
-                $CIDRAM['Components']['AllInter'],
-                $CIDRAM['FE']['FE_Content']
-            );
-        }
+    array_unshift($CIDRAM['Components']['Interdependent'], 'CIDRAM Core', 'CIDRAM Front-End', 'Common Classes Package');
+    $CIDRAM['Components']['AllInter'] = '<input name="ID[]" type="hidden" value="' . implode(
+        '" /><input name="ID[]" type="hidden" value="',
+        $CIDRAM['Components']['Interdependent']
+    ) . '" />';
+    foreach ($CIDRAM['Components']['Interdependent'] as $CIDRAM['Components']['ThisInter']) {
+        $CIDRAM['FE']['FE_Content'] = str_replace(
+            '<input name="ID" type="hidden" value="' . $CIDRAM['Components']['ThisInter'] . '" />',
+            $CIDRAM['Components']['AllInter'],
+            $CIDRAM['FE']['FE_Content']
+        );
     }
 
     /** Finalise IO operations all at once. */

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Output generator (last modified: 2021.03.12).
+ * This file: Output generator (last modified: 2021.04.04).
  */
 
 /** Initialise cache. */
@@ -500,7 +500,7 @@ if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
 
     /** Set status for reCAPTCHA block information. */
     if (empty($CIDRAM['BlockInfo']['reCAPTCHA'])) {
-        $CIDRAM['BlockInfo']['reCAPTCHA'] = $CIDRAM['L10N']->getString('recaptcha_disabled');
+        $CIDRAM['BlockInfo']['reCAPTCHA'] = $CIDRAM['L10N']->getString('state_disabled');
     }
 
     /** IP address pseudonymisation. */
@@ -629,11 +629,11 @@ if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
     );
     if ($CIDRAM['Config']['recaptcha']['usemode'] || $CIDRAM['Config']['general']['empty_fields'] === 'include') {
         if (empty($CIDRAM['BlockInfo']['reCAPTCHA'])) {
-            $CIDRAM['BlockInfo']['reCAPTCHA'] = $CIDRAM['L10N']->getString('recaptcha_disabled');
+            $CIDRAM['BlockInfo']['reCAPTCHA'] = $CIDRAM['L10N']->getString('state_disabled');
         }
         $CIDRAM['AddField'](
-            $CIDRAM['L10N']->getString('field_reCAPTCHA_state'),
-            $CIDRAM['Client-L10N']->getString('field_reCAPTCHA_state'),
+            $CIDRAM['L10N']->getString('field_captcha'),
+            $CIDRAM['Client-L10N']->getString('field_captcha'),
             $CIDRAM['BlockInfo']['reCAPTCHA']
         );
     }
@@ -712,7 +712,7 @@ if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
 
     /** Pull relevant client-specified L10N data first. */
     if (!empty($CIDRAM['L10N-Lang-Attache'])) {
-        foreach (['denied', 'recaptcha_message', 'recaptcha_message_invisible', 'recaptcha_submit'] as $CIDRAM['PullThis']) {
+        foreach (['denied', 'captcha_message', 'captcha_message_invisible', 'label_submit'] as $CIDRAM['PullThis']) {
             if (isset($CIDRAM['Client-L10N']->Data[$CIDRAM['PullThis']])) {
                 $CIDRAM['Parsables'][$CIDRAM['PullThis']] = $CIDRAM['Client-L10N']->Data[$CIDRAM['PullThis']];
             }

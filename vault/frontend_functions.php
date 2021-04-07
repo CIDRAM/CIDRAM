@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2021.03.31).
+ * This file: Front-end functions file (last modified: 2021.04.06).
  */
 
 /**
@@ -1614,10 +1614,6 @@ $CIDRAM['UpdatesHandler-Update'] = function ($ID) use (&$CIDRAM): void {
             !$CIDRAM['VersionCompare'](
                 $CIDRAM['ScriptVersion'],
                 $CIDRAM['Components']['RemoteMeta'][$ThisTarget]['Minimum Required']
-            ) &&
-            (
-                empty($CIDRAM['Components']['RemoteMeta'][$ThisTarget]['Minimum Required PHP']) ||
-                !$CIDRAM['VersionCompare'](PHP_VERSION, $CIDRAM['Components']['RemoteMeta'][$ThisTarget]['Minimum Required PHP'])
             ) &&
             !empty($CIDRAM['Components']['RemoteMeta'][$ThisTarget]['Files']['From']) &&
             !empty($CIDRAM['Components']['RemoteMeta'][$ThisTarget]['Files']['To']) &&
@@ -4264,4 +4260,65 @@ $CIDRAM['Matrix-Create'] = function (string &$Source, string $Destination = '', 
     }
     imagedestroy($CIDRAM['Matrix-Image']);
     return '';
+};
+
+/**
+ * Determine whether all dependency constraints have been met.
+ *
+ * @param array $ThisComponent Reference to the component being worked upon.
+ * @param bool $Source False for installed; True for available.
+ * @param string $Name If specified, if not installed, won't check constraints.
+ * @return void
+ */
+$CIDRAM['CheckConstraints'] = function (array &$ThisComponent, bool $Source = false, string $Name = '') use (&$CIDRAM): void {
+    $ThisComponent['All Constraints Met'] = true;
+    $ThisComponent['Dependency Status'] = '';
+    if (!isset($ThisComponent['Dependencies']) || !is_array($ThisComponent['Dependencies']) || (
+        $Name && !isset($CIDRAM['Components']['Installed Versions'][$Name])
+    )) {
+        return;
+    }
+    foreach ($ThisComponent['Dependencies'] as $Dependency => $Constraints) {
+        if ((
+            isset($CIDRAM['Components']['Installed Versions'][$Dependency]) &&
+            $CIDRAM['Operation']->singleCompare($CIDRAM['Components']['Installed Versions'][$Dependency], $Constraints)
+        ) || (
+            extension_loaded($Dependency) &&
+            ($CIDRAM['Components']['Installed Versions'][$Dependency] = (new \ReflectionExtension($Dependency))->getVersion()) &&
+            $CIDRAM['Operation']->singleCompare($CIDRAM['Components']['Installed Versions'][$Dependency], $Constraints)
+        )) {
+            $ThisComponent['Dependency Status'] .= sprintf(
+                '<span class="txtGn">%s: %s – %s</span><br />',
+                $Dependency,
+                $Constraints,
+                $CIDRAM['L10N']->getString('response_satisfied')
+            );
+        } elseif (
+            $Source &&
+            isset($CIDRAM['Components']['Available Versions'][$Dependency]) &&
+            $CIDRAM['Operation']->singleCompare($CIDRAM['Components']['Available Versions'][$Dependency], $Constraints)
+        ) {
+            $ThisComponent['Dependency Status'] .= sprintf(
+                '<span class="txtOe">%s: %s – %s</span><br />',
+                $Dependency,
+                $Constraints,
+                $CIDRAM['L10N']->getString('response_ready_to_install')
+            );
+        } else {
+            $ThisComponent['All Constraints Met'] = false;
+            $ThisComponent['Dependency Status'] .= sprintf(
+                '<span class="txtRd">%s: %s – %s</span><br />',
+                $Dependency,
+                $Constraints,
+                $CIDRAM['L10N']->getString('response_not_satisfied')
+            );
+        }
+    }
+    if ($ThisComponent['Dependency Status']) {
+        $ThisComponent['Dependency Status'] = sprintf(
+            '<hr /><small><span class="s">%s</span><br />%s</small>',
+            $CIDRAM['L10N']->getString('label_dependencies'),
+            $ThisComponent['Dependency Status']
+        );
+    }
 };

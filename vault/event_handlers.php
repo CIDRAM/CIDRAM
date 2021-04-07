@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Event handlers file (last modified: 2021.03.18).
+ * This file: Event handlers file (last modified: 2021.04.04).
  */
 
 /**
@@ -145,7 +145,7 @@ $CIDRAM['Events']->addHandler('reCaptchaLog', function () use (&$CIDRAM) {
         $CIDRAM['Config']['legal']['pseudonymise_ip_addresses'] ? $CIDRAM['Pseudonymise-IP']($_SERVER[$CIDRAM['IPAddr']]) : $_SERVER[$CIDRAM['IPAddr']],
         $CIDRAM['L10N']->getString('field_datetime'),
         $CIDRAM['BlockInfo']['DateTime'],
-        $CIDRAM['L10N']->getString('field_reCAPTCHA_state'),
+        $CIDRAM['L10N']->getString('field_captcha'),
         $CIDRAM['BlockInfo']['reCAPTCHA']
     );
 

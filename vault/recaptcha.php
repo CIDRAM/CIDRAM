@@ -8,12 +8,14 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: reCAPTCHA module (last modified: 2021.03.18).
+ * This file: reCAPTCHA module (last modified: 2021.04.04).
  */
 
 /**
  * Fetch results from the reCAPTCHA API.
  * @link https://developers.google.com/recaptcha/docs/verify
+ *
+ * @return void
  */
 $CIDRAM['reCAPTCHA']['DoResponse'] = function () use (&$CIDRAM) {
     $CIDRAM['reCAPTCHA']['Results'] = $CIDRAM['Request']('https://www.google.com/recaptcha/api/siteverify', [
@@ -41,17 +43,17 @@ $CIDRAM['reCAPTCHA']['GenerateTemplateData'] = function ($SiteKey, $API, $Cookie
             '<input id="rData" type="hidden" name="g-recaptcha-response" value="">%s' .
         "</form>\n" .
         "<script type=\"text/javascript\">function onSubmitCallback(token){document.getElementById('rData').value=token;document.getElementById('gF').submit()}</script>\n",
-        $ApiMessage ? '{recaptcha_message_invisible}' : '',
-        $CookieWarn ? '<br />{recaptcha_cookie_warning}' : '',
+        $ApiMessage ? '{captcha_message_invisible}' : '',
+        $CookieWarn ? '<br />{captcha_cookie_warning}' : '',
         $SiteKey,
         $HostnameInsert
     ) . $Script . "\n" : sprintf(
         "\n<hr />\n<p class=\"detected\">%s%s<br /></p>\n" .
         '<form method="POST" action="" class="gForm" onsubmit="javascript:grecaptcha.execute()">' .
-            '<div id="gForm"></div><div>%s<input type="submit" value="{recaptcha_submit}" /></div>' .
+            '<div id="gForm"></div><div>%s<input type="submit" value="{label_submit}" /></div>' .
         "</form>\n",
-        $ApiMessage ? '{recaptcha_message}' : '',
-        $CookieWarn ? '<br />{recaptcha_cookie_warning}' : '',
+        $ApiMessage ? '{captcha_message}' : '',
+        $CookieWarn ? '<br />{captcha_cookie_warning}' : '',
         $HostnameInsert
     ) . $Script;
 };
@@ -68,7 +70,7 @@ $CIDRAM['reCAPTCHA']['GenerateCallbackData'] = function ($SiteKey, $API) {
 /** Generate data for failed attempts. */
 $CIDRAM['reCAPTCHA']['GenerateFailed'] = function () use (&$CIDRAM) {
     /** Set status for reCAPTCHA block information. */
-    $CIDRAM['BlockInfo']['reCAPTCHA'] = $CIDRAM['L10N']->getString('recaptcha_failed');
+    $CIDRAM['BlockInfo']['reCAPTCHA'] = $CIDRAM['L10N']->getString('state_failed');
     /** Append to reCAPTCHA statistics if necessary. */
     if ($CIDRAM['Config']['general']['statistics']) {
         $CIDRAM['Statistics']['reCAPTCHA-Failed']++;
@@ -79,7 +81,7 @@ $CIDRAM['reCAPTCHA']['GenerateFailed'] = function () use (&$CIDRAM) {
 /** Generate data for passed attempts. */
 $CIDRAM['reCAPTCHA']['GeneratePassed'] = function () use (&$CIDRAM) {
     /** Set status for reCAPTCHA block information. */
-    $CIDRAM['BlockInfo']['reCAPTCHA'] = $CIDRAM['L10N']->getString('recaptcha_passed');
+    $CIDRAM['BlockInfo']['reCAPTCHA'] = $CIDRAM['L10N']->getString('state_passed');
     /** Append to reCAPTCHA statistics if necessary. */
     if ($CIDRAM['Config']['general']['statistics']) {
         $CIDRAM['Statistics']['reCAPTCHA-Passed']++;
@@ -158,7 +160,7 @@ if ($CIDRAM['Config']['recaptcha']['lockuser']) {
         }
     } else {
         /** Set status for reCAPTCHA block information. */
-        $CIDRAM['BlockInfo']['reCAPTCHA'] = $CIDRAM['L10N']->getString('recaptcha_enabled');
+        $CIDRAM['BlockInfo']['reCAPTCHA'] = $CIDRAM['L10N']->getString('state_enabled');
 
         /** We've received a response. */
         if (isset($_POST['g-recaptcha-response'])) {
@@ -210,7 +212,6 @@ if ($CIDRAM['Config']['recaptcha']['lockuser']) {
         fclose($CIDRAM['Handle']);
     }
 } else {
-
     /** Attempt to load the IP bypass list. */
     if (file_exists($CIDRAM['Vault'] . 'ipbypass.dat')) {
         $CIDRAM['reCAPTCHA']['BypassList'] = $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'ipbypass.dat');
@@ -238,7 +239,7 @@ if ($CIDRAM['Config']['recaptcha']['lockuser']) {
         }
     } else {
         /** Set status for reCAPTCHA block information. */
-        $CIDRAM['BlockInfo']['reCAPTCHA'] = $CIDRAM['L10N']->getString('recaptcha_enabled');
+        $CIDRAM['BlockInfo']['reCAPTCHA'] = $CIDRAM['L10N']->getString('state_enabled');
 
         /** We've received a response. */
         if (isset($_POST['g-recaptcha-response'])) {

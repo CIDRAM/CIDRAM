@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2021.04.06).
+ * This file: Front-end functions file (last modified: 2021.04.07).
  */
 
 /**
@@ -236,62 +236,6 @@ $CIDRAM['FECacheGet'] = function (&$Source, $Entry) use (&$CIDRAM) {
         }
     }
     return false;
-};
-
-/**
- * Compare two different versions of CIDRAM, or two different versions of a
- * component for CIDRAM, to see which is newer (mostly used by the updater).
- *
- * @param string $A The 1st version string.
- * @param string $B The 2nd version string.
- * @return bool True if the 2nd version is newer than the 1st version, and false
- *      otherwise (i.e., if they're the same, or if the 1st version is newer).
- */
-$CIDRAM['VersionCompare'] = function ($A, $B) {
-    $Normalise = function (&$Ver) {
-        $Ver =
-            preg_match('~^v?(\d+)$~i', $Ver, $Matches) ?:
-            preg_match('~^v?(\d+)\.(\d+)$~i', $Ver, $Matches) ?:
-            preg_match('~^v?(\d+)\.(\d+)\.(\d+)(alpha\d|RC\d{1,2}|-[.\d\w_+\\/]+)?$~i', $Ver, $Matches) ?:
-            preg_match('~^(\d{1,4})[.-](\d{1,2})[.-](\d{1,4})(RC\d{1,2}|[.+-][\d\w_+\\/]+)?$~i', $Ver, $Matches) ?:
-            preg_match('~^([\w]+)-([\d\w]+)-([\d\w]+)$~i', $Ver, $Matches);
-        $Ver = [
-            'Major' => isset($Matches[1]) ? $Matches[1] : 0,
-            'Minor' => isset($Matches[2]) ? $Matches[2] : 0,
-            'Patch' => isset($Matches[3]) ? $Matches[3] : 0,
-            'Build' => isset($Matches[4]) ? $Matches[4] : 0
-        ];
-        if ($Ver['Build'] && substr($Ver['Build'], 0, 1) === '-') {
-            $Ver['Build'] = substr($Ver['Build'], 1);
-        }
-        $Ver = array_map(function ($Var) {
-            $VarInt = (int)$Var;
-            $VarLen = strlen($Var);
-            if ($Var == $VarInt && strlen($VarInt) === $VarLen && $VarLen > 1) {
-                return $VarInt;
-            }
-            return strtolower($Var);
-        }, $Ver);
-    };
-    $Normalise($A);
-    $Normalise($B);
-    return (
-        $B['Major'] > $A['Major'] || (
-            $B['Major'] === $A['Major'] &&
-            $B['Minor'] > $A['Minor']
-        ) || (
-            $B['Major'] === $A['Major'] &&
-            $B['Minor'] === $A['Minor'] &&
-            $B['Patch'] > $A['Patch']
-        ) || (
-            $B['Major'] === $A['Major'] &&
-            $B['Minor'] === $A['Minor'] &&
-            $B['Patch'] === $A['Patch'] &&
-            !empty($A['Build']) && (
-                empty($B['Build']) || $B['Build'] > $A['Build']
-            )
-        )
-    );
 };
 
 /**
@@ -1521,8 +1465,9 @@ $CIDRAM['UpdatesSortFunc'] = function (array $Arr) use (&$CIDRAM) {
  *
  * @param string $Action The action to perform (update/install, verify,
  *      uninstall, activate, deactivate).
- * @return string|array The ID (or IDs) of the component (or components) to
- *      perform the specified action upon.
+ * @param string|array $ID The IDs of the components to perform the specified
+ *      action upon.
+ * @return void
  */
 $CIDRAM['UpdatesHandler'] = function ($Action, $ID = '') use (&$CIDRAM) {
     /** Support for executor calls. */
@@ -1532,13 +1477,13 @@ $CIDRAM['UpdatesHandler'] = function ($Action, $ID = '') use (&$CIDRAM) {
         $ID = (strpos($ID, ',') === false) ? trim($ID) : array_map('trim', explode(',', $ID));
     }
 
-    /** Update a component. */
+    /** Update (or install) a component. */
     if ($Action === 'update-component') {
         $CIDRAM['UpdatesHandler-Update']($ID);
     }
 
     /** Update (or install) and activate a component (one-step solution). */
-    if (!is_array($ID) && $Action === 'update-and-activate-component') {
+    if ($Action === 'update-and-activate-component') {
         $CIDRAM['UpdatesHandler-Update']($ID);
         $CIDRAM['UpdatesHandler-Activate']($ID);
     }
@@ -1554,22 +1499,22 @@ $CIDRAM['UpdatesHandler'] = function ($Action, $ID = '') use (&$CIDRAM) {
     }
 
     /** Uninstall a component. */
-    if (!is_array($ID) && $Action === 'uninstall-component') {
+    if ($Action === 'uninstall-component') {
         $CIDRAM['UpdatesHandler-Uninstall']($ID);
     }
 
     /** Activate a component. */
-    if (!is_array($ID) && $Action === 'activate-component') {
+    if ($Action === 'activate-component') {
         $CIDRAM['UpdatesHandler-Activate']($ID);
     }
 
     /** Deactivate a component. */
-    if (!is_array($ID) && $Action === 'deactivate-component') {
+    if ($Action === 'deactivate-component') {
         $CIDRAM['UpdatesHandler-Deactivate']($ID);
     }
 
     /** Deactivate and uninstall a component (one-step solution). */
-    if (!is_array($ID) && $Action === 'deactivate-and-uninstall-component') {
+    if ($Action === 'deactivate-and-uninstall-component') {
         $CIDRAM['UpdatesHandler-Deactivate']($ID);
         $CIDRAM['UpdatesHandler-Uninstall']($ID);
     }
@@ -1581,11 +1526,18 @@ $CIDRAM['UpdatesHandler'] = function ($Action, $ID = '') use (&$CIDRAM) {
 /**
  * Updates handler: Update a component.
  *
- * @param string|array $ID The ID (or array of IDs) of the component(/s) to update.
+ * @param string|array $ID The IDs of the components to update.
  * @return void
  */
 $CIDRAM['UpdatesHandler-Update'] = function ($ID) use (&$CIDRAM) {
     $CIDRAM['Arrayify']($ID);
+
+    /** Fetch dependency installation triggers. */
+    if (!empty($_POST['InstallTogether']) && is_array($_POST['InstallTogether'])) {
+        $ID = array_merge($ID, $_POST['InstallTogether']);
+    }
+
+    $ID = array_unique($ID);
     $Congruents = [];
     foreach ($ID as $ThisTarget) {
         if (!isset(
@@ -1614,11 +1566,6 @@ $CIDRAM['UpdatesHandler-Update'] = function ($ID) use (&$CIDRAM) {
         if (
             ($Meta = $CIDRAM['ExtractPage']($CIDRAM['Components']['Meta'][$ThisTarget]['RemoteData'])) &&
             $CIDRAM['YAML']->process($Meta, $CIDRAM['Components']['RemoteMeta']) &&
-            !empty($CIDRAM['Components']['RemoteMeta'][$ThisTarget]['Minimum Required']) &&
-            !$CIDRAM['VersionCompare'](
-                $CIDRAM['ScriptVersion'],
-                $CIDRAM['Components']['RemoteMeta'][$ThisTarget]['Minimum Required']
-            ) &&
             !empty($CIDRAM['Components']['RemoteMeta'][$ThisTarget]['Files']['From']) &&
             !empty($CIDRAM['Components']['RemoteMeta'][$ThisTarget]['Files']['To']) &&
             !empty($CIDRAM['Components']['RemoteMeta'][$ThisTarget]['Reannotate']) &&
@@ -1853,10 +1800,13 @@ $CIDRAM['UpdatesHandler-Update'] = function ($ID) use (&$CIDRAM) {
 /**
  * Updates handler: Uninstall a component.
  *
- * @param string $ID The ID of the component to uninstall.
+ * @param string|array $ID The ID of the component to uninstall.
  * @return void
  */
 $CIDRAM['UpdatesHandler-Uninstall'] = function ($ID) use (&$CIDRAM) {
+    if (is_array($ID)) {
+        $ID = current($ID);
+    }
     $InUse = $CIDRAM['ComponentFunctionUpdatePrep']($ID);
     $BytesRemoved = 0;
     $TimeRequired = microtime(true);
@@ -1913,10 +1863,13 @@ $CIDRAM['UpdatesHandler-Uninstall'] = function ($ID) use (&$CIDRAM) {
 /**
  * Updates handler: Activate a component.
  *
- * @param string $ID The ID of the component to activate.
+ * @param string|array $ID The ID of the component to activate.
  * @return void
  */
 $CIDRAM['UpdatesHandler-Activate'] = function ($ID) use (&$CIDRAM) {
+    if (is_array($ID)) {
+        $ID = current($ID);
+    }
     $CIDRAM['Activation'] = [
         'Config' => $CIDRAM['Updater-IO']->readFile($CIDRAM['Vault'] . $CIDRAM['FE']['ActiveConfigFile']),
         'ipv4' => $CIDRAM['Config']['signatures']['ipv4'],
@@ -1976,10 +1929,13 @@ $CIDRAM['UpdatesHandler-Activate'] = function ($ID) use (&$CIDRAM) {
 /**
  * Updates handler: Deactivate a component.
  *
- * @param string $ID The ID of the component to deactivate.
+ * @param string|array $ID The ID of the component to deactivate.
  * @return void
  */
 $CIDRAM['UpdatesHandler-Deactivate'] = function ($ID) use (&$CIDRAM) {
+    if (is_array($ID)) {
+        $ID = current($ID);
+    }
     $CIDRAM['Deactivation'] = [
         'Config' => $CIDRAM['Updater-IO']->readFile($CIDRAM['Vault'] . $CIDRAM['FE']['ActiveConfigFile']),
         'ipv4' => $CIDRAM['Config']['signatures']['ipv4'],
@@ -2035,11 +1991,12 @@ $CIDRAM['UpdatesHandler-Deactivate'] = function ($ID) use (&$CIDRAM) {
 /**
  * Updates handler: Repair a component.
  *
- * @param string|array $ID The ID (or array of IDs) of the component(/s) to repair.
+ * @param string|array $ID The IDs of the components to repair.
  * @return void
  */
 $CIDRAM['UpdatesHandler-Repair'] = function ($ID) use (&$CIDRAM) {
     $CIDRAM['Arrayify']($ID);
+    $ID = array_unique($ID);
     foreach ($ID as $ThisTarget) {
         if (!isset(
             $CIDRAM['Components']['Meta'][$ThisTarget]['Files'],
@@ -2203,11 +2160,12 @@ $CIDRAM['UpdatesHandler-Repair'] = function ($ID) use (&$CIDRAM) {
 /**
  * Updates handler: Verify a component.
  *
- * @param string|array $ID The ID (or array of IDs) of the component(/s) to verify.
+ * @param string|array $ID The IDs of the components to verify.
  * @return void
  */
 $CIDRAM['UpdatesHandler-Verify'] = function ($ID) use (&$CIDRAM) {
     $CIDRAM['Arrayify']($ID);
+    $ID = array_unique($ID);
     foreach ($ID as $ThisID) {
         $Table = '<blockquote class="ng1 comSub">';
         if (empty($CIDRAM['Components']['Meta'][$ThisID]['Files'])) {
@@ -3985,6 +3943,9 @@ $CIDRAM['ExtractPage'] = function ($Data = '') {
 $CIDRAM['CheckConstraints'] = function (array &$ThisComponent, $Source = false, $Name = '') use (&$CIDRAM) {
     $ThisComponent['All Constraints Met'] = true;
     $ThisComponent['Dependency Status'] = '';
+    if (!isset($ThisComponent['Dependencies']) && !empty($ThisComponent['Minimum Required'])) {
+        $ThisComponent['Dependencies'] = ['CIDRAM Core' => '>=' . $ThisComponent['Minimum Required']];
+    }
     if (!isset($ThisComponent['Dependencies']) || !is_array($ThisComponent['Dependencies']) || (
         $Name && !isset($CIDRAM['Components']['Installed Versions'][$Name])
     )) {
@@ -4000,9 +3961,9 @@ $CIDRAM['CheckConstraints'] = function (array &$ThisComponent, $Source = false, 
             $CIDRAM['Operation']->singleCompare($CIDRAM['Components']['Installed Versions'][$Dependency], $Constraints)
         )) {
             $ThisComponent['Dependency Status'] .= sprintf(
-                '<span class="txtGn">%s: %s – %s</span><br />',
+                '<span class="txtGn">%s%s – %s</span><br />',
                 $Dependency,
-                $Constraints,
+                $Constraints === '*' ? '' : ' (' . $Constraints . ')',
                 $CIDRAM['L10N']->getString('response_satisfied')
             );
         } elseif (
@@ -4011,17 +3972,21 @@ $CIDRAM['CheckConstraints'] = function (array &$ThisComponent, $Source = false, 
             $CIDRAM['Operation']->singleCompare($CIDRAM['Components']['Available Versions'][$Dependency], $Constraints)
         ) {
             $ThisComponent['Dependency Status'] .= sprintf(
-                '<span class="txtOe">%s: %s – %s</span><br />',
+                '<span class="txtOe">%s%s – %s</span><br />',
                 $Dependency,
-                $Constraints,
+                $Constraints === '*' ? '' : ' (' . $Constraints . ')',
                 $CIDRAM['L10N']->getString('response_ready_to_install')
             );
+            if (!isset($ThisComponent['Install Together'])) {
+                $ThisComponent['Install Together'] = [];
+            }
+            $ThisComponent['Install Together'][] = $Dependency;
         } else {
             $ThisComponent['All Constraints Met'] = false;
             $ThisComponent['Dependency Status'] .= sprintf(
-                '<span class="txtRd">%s: %s – %s</span><br />',
+                '<span class="txtRd">%s%s – %s</span><br />',
                 $Dependency,
-                $Constraints,
+                $Constraints === '*' ? '' : ' (' . $Constraints . ')',
                 $CIDRAM['L10N']->getString('response_not_satisfied')
             );
         }

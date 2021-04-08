@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2021.04.07).
+ * This file: Front-end functions file (last modified: 2021.04.08).
  */
 
 /**
@@ -1556,16 +1556,12 @@ $CIDRAM['UpdatesHandler-Update'] = function ($ID) use (&$CIDRAM) {
         ) {
             $CIDRAM['UpdatesHandler-Deactivate']($ThisTarget);
         }
-        $CIDRAM['Components']['RemoteMeta'] = [];
-        $CIDRAM['Components']['Meta'][$ThisTarget]['RemoteData'] = '';
-        $CIDRAM['FetchRemote-ContextFree'](
-            $CIDRAM['Components']['Meta'][$ThisTarget]['RemoteData'],
-            $CIDRAM['Components']['Meta'][$ThisTarget]['Remote']
-        );
+        $NewMeta = '';
+        $CIDRAM['FetchRemote-ContextFree']($NewMeta, $CIDRAM['Components']['Meta'][$ThisTarget]['Remote']);
+        $CIDRAM['CheckConstraints']($CIDRAM['Components']['RemoteMeta'][$ThisTarget], true);
         $UpdateFailed = false;
         if (
-            ($Meta = $CIDRAM['ExtractPage']($CIDRAM['Components']['Meta'][$ThisTarget]['RemoteData'])) &&
-            $CIDRAM['YAML']->process($Meta, $CIDRAM['Components']['RemoteMeta']) &&
+            $CIDRAM['Components']['RemoteMeta'][$ThisTarget]['All Constraints Met'] &&
             !empty($CIDRAM['Components']['RemoteMeta'][$ThisTarget]['Files']['From']) &&
             !empty($CIDRAM['Components']['RemoteMeta'][$ThisTarget]['Files']['To']) &&
             !empty($CIDRAM['Components']['RemoteMeta'][$ThisTarget]['Reannotate']) &&
@@ -1575,7 +1571,6 @@ $CIDRAM['UpdatesHandler-Update'] = function ($ID) use (&$CIDRAM) {
             ($OldMeta = $CIDRAM['Updater-IO']->readFile($CIDRAM['Vault'] . $ThisReannotate)) &&
             preg_match("~(\n" . preg_quote($ThisTarget) . ":?)(\n [^\n]*)*\n~i", $OldMeta, $OldMetaMatches) &&
             ($OldMetaMatches = $OldMetaMatches[0]) &&
-            ($NewMeta = $CIDRAM['Components']['Meta'][$ThisTarget]['RemoteData']) &&
             preg_match("~(\n" . preg_quote($ThisTarget) . ":?)(\n [^\n]*)*\n~i", $NewMeta, $NewMetaMatches) &&
             ($NewMetaMatches = $NewMetaMatches[0])
         ) {
@@ -1815,7 +1810,7 @@ $CIDRAM['UpdatesHandler-Uninstall'] = function ($ID) use (&$CIDRAM) {
         empty($InUse) &&
         !empty($CIDRAM['Components']['Meta'][$ID]['Files']['To']) &&
         !empty($CIDRAM['Components']['Meta'][$ID]['Reannotate']) &&
-        (!empty($CIDRAM['Components']['Meta'][$ID]['Uninstallable']) || !empty($CIDRAM['RestrictUninstallBypass'])) &&
+        !empty($CIDRAM['Components']['Meta'][$ID]['Uninstallable']) &&
         ($OldMeta = $CIDRAM['Updater-IO']->readFile($CIDRAM['Vault'] . $CIDRAM['Components']['Meta'][$ID]['Reannotate'])) &&
         preg_match("~(\n" . preg_quote($ID) . ":?)(\n [^\n]*)*\n~i", $OldMeta, $OldMetaMatches) &&
         ($OldMetaMatches = $OldMetaMatches[0])
@@ -2031,8 +2026,6 @@ $CIDRAM['UpdatesHandler-Repair'] = function ($ID) use (&$CIDRAM) {
             }
         }
         if (isset(
-            $CIDRAM['Components']['RemoteMeta'][$ThisTarget],
-            $CIDRAM['Components']['RemoteMeta'][$ThisTarget]['Files'],
             $CIDRAM['Components']['RemoteMeta'][$ThisTarget]['Files']['To'],
             $CIDRAM['Components']['RemoteMeta'][$ThisTarget]['Files']['From'],
             $CIDRAM['Components']['RemoteMeta'][$ThisTarget]['Files']['Checksum']
@@ -3952,7 +3945,27 @@ $CIDRAM['CheckConstraints'] = function (array &$ThisComponent, $Source = false, 
         return;
     }
     foreach ($ThisComponent['Dependencies'] as $Dependency => $Constraints) {
-        if ((
+        if (strpos($Dependency, '{theme}') !== false && $CIDRAM['Config']['template_data']['theme'] === 'default') {
+            continue;
+        }
+        $Dependency = str_replace(
+            ['{lang}', '{theme}'],
+            [$CIDRAM['Config']['general']['lang'], $CIDRAM['Config']['template_data']['theme']],
+            $Dependency
+        );
+        if ($Constraints === 'Latest') {
+            if (isset($CIDRAM['Components']['Available Versions'][$Dependency])) {
+                $Constraints = '>=' . $CIDRAM['Components']['Available Versions'][$Dependency];
+            }
+        }
+        if ($Constraints === 'Latest' || strlen($Constraints) < 1) {
+            $ThisComponent['All Constraints Met'] = false;
+            $ThisComponent['Dependency Status'] .= sprintf(
+                '<span class="txtRd">%s – %s</span><br />',
+                $Dependency,
+                $CIDRAM['L10N']->getString('response_not_satisfied')
+            );
+        } elseif ((
             isset($CIDRAM['Components']['Installed Versions'][$Dependency]) &&
             $CIDRAM['Operation']->singleCompare($CIDRAM['Components']['Installed Versions'][$Dependency], $Constraints)
         ) || (
@@ -3997,5 +4010,20 @@ $CIDRAM['CheckConstraints'] = function (array &$ThisComponent, $Source = false, 
             $CIDRAM['L10N']->getString('label_dependencies'),
             $ThisComponent['Dependency Status']
         );
+    }
+};
+
+/**
+ * Determine which components are currently installed or available.
+ *
+ * @param array $Source Components metadata source.
+ * @param array $To Where to set the information.
+ * @return void
+ */
+$CIDRAM['CheckVersions'] = function (array &$Source, array &$To) use (&$CIDRAM) {
+    foreach ($Source as $Key => &$Component) {
+        if (!empty($Component['Version']) && !empty($Component['Files']['To'])) {
+            $To[$Key] = $Component['Version'];
+        }
     }
 };

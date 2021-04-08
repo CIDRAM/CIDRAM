@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2021.04.07).
+ * This file: Front-end handler (last modified: 2021.04.08).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -1705,27 +1705,9 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && ($CIDRAM['FE']['Per
         '<input name="do" type="hidden" value="%s" />';
 
     /** Prepare components metadata working array. */
-    $CIDRAM['Components'] = ['Meta' => [], 'RemoteMeta' => []];
-
-    /** Fetch components lists. */
-    $CIDRAM['FetchComponentsLists']($CIDRAM['Vault'], $CIDRAM['Components']['Meta']);
-
-    $CIDRAM['FE']['Indexes'] = [];
-
-    /** A form has been submitted. */
-    if (empty($CIDRAM['Alternate']) && $CIDRAM['FE']['FormTarget'] === 'updates' && !empty($_POST['do']) && !empty($_POST['ID'])) {
-        /** Trigger updates handler. */
-        $CIDRAM['UpdatesHandler']($_POST['do'], $_POST['ID']);
-    }
-
-    /** Page initial prepwork. */
-    $CIDRAM['InitialPrepwork']($CIDRAM['L10N']->getString('link_updates'), $CIDRAM['L10N']->getString('tip_updates'));
-
-    $CIDRAM['FE']['UpdatesRow'] = $CIDRAM['ReadFile']($CIDRAM['GetAssetPath']('_updates_row.html'));
-
     $CIDRAM['Components'] = [
-        'Meta' => $CIDRAM['Components']['Meta'],
-        'RemoteMeta' => $CIDRAM['Components']['RemoteMeta'],
+        'Meta' => [],
+        'RemoteMeta' => [],
         'Remotes' => [],
         'Installed Versions' => ['PHP' => PHP_VERSION],
         'Available Versions' => [],
@@ -1737,19 +1719,69 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && ($CIDRAM['FE']['Per
         'Out' => []
     ];
 
-    /** Determine which components are currently installed, prior to processing any metadata. */
-    foreach ($CIDRAM['Components']['Meta'] as $CIDRAM['Components']['Key'] => &$CIDRAM['Components']['ThisComponent']) {
-        if (
-            !empty($CIDRAM['Components']['ThisComponent']['Version']) &&
-            !empty($CIDRAM['Components']['ThisComponent']['Files']['To'])
-        ) {
-            $CIDRAM['Components']['Installed Versions'][$CIDRAM['Components']['Key']] = $CIDRAM['Components']['ThisComponent']['Version'];
-        }
-    }
+    /** Fetch components lists. */
+    $CIDRAM['FetchComponentsLists']($CIDRAM['Vault'], $CIDRAM['Components']['Meta']);
+
+    /** Check versions beforehand (needed for dependency checks). */
+    $CIDRAM['CheckVersions']($CIDRAM['Components']['Meta'], $CIDRAM['Components']['Installed Versions']);
+
+    $CIDRAM['FE']['Indexes'] = [];
 
     /** Component aliases (needed to discern some dependencies). */
     $CIDRAM['Components']['Installed Versions']['CIDRAM Core'] = &$CIDRAM['Components']['Installed Versions']['CIDRAM'];
     $CIDRAM['Components']['Available Versions']['CIDRAM Core'] = &$CIDRAM['Components']['Available Versions']['CIDRAM'];
+
+    /** Fetch available versions beforehand (needed for dependency checks). */
+    foreach ($CIDRAM['Components']['Meta'] as $CIDRAM['Components']['Key'] => &$CIDRAM['Components']['ThisComponent']) {
+        if (empty($CIDRAM['Components']['ThisComponent']['Remote'])) {
+            continue;
+        }
+        if (!isset($CIDRAM['Components']['Remotes'][$CIDRAM['Components']['ThisComponent']['Remote']])) {
+            $CIDRAM['Components']['Remotes'][$CIDRAM['Components']['ThisComponent']['Remote']] = '';
+            $CIDRAM['FetchRemote-ContextFree'](
+                $CIDRAM['Components']['Remotes'][$CIDRAM['Components']['ThisComponent']['Remote']],
+                $CIDRAM['Components']['ThisComponent']['Remote']
+            );
+            if (($CIDRAM['Components']['Remotes'][$CIDRAM['Components']['ThisComponent']['Remote']] = $CIDRAM['ExtractPage'](
+                $CIDRAM['Components']['Remotes'][$CIDRAM['Components']['ThisComponent']['Remote']]
+            )) !== '') {
+                $CIDRAM['Components']['TempRemoteMeta'] = [];
+                $CIDRAM['YAML']->process(
+                    $CIDRAM['Components']['Remotes'][$CIDRAM['Components']['ThisComponent']['Remote']],
+                    $CIDRAM['Components']['TempRemoteMeta']
+                );
+                $CIDRAM['Components']['Remotes'][$CIDRAM['Components']['ThisComponent']['Remote']] = $CIDRAM['Components']['TempRemoteMeta'];
+                $CIDRAM['CheckVersions'](
+                    $CIDRAM['Components']['Remotes'][$CIDRAM['Components']['ThisComponent']['Remote']],
+                    $CIDRAM['Components']['Available Versions']
+                );
+            } else {
+                $CIDRAM['Components']['Remotes'][$CIDRAM['Components']['ThisComponent']['Remote']] = [];
+            }
+        }
+        if (isset($CIDRAM['Components']['Remotes'][$CIDRAM['Components']['ThisComponent']['Remote']][$CIDRAM['Components']['Key']])) {
+            $CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']] =
+                &$CIDRAM['Components']['Remotes'][$CIDRAM['Components']['ThisComponent']['Remote']][$CIDRAM['Components']['Key']];
+        } else {
+            $CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']] = [];
+        }
+    }
+    unset($CIDRAM['Components']['TempRemoteMeta']);
+    $CIDRAM['Components']['Remotes'] = [];
+
+    /** A form has been submitted. */
+    if (empty($CIDRAM['Alternate']) && $CIDRAM['FE']['FormTarget'] === 'updates' && !empty($_POST['do']) && !empty($_POST['ID'])) {
+        /** Trigger updates handler. */
+        $CIDRAM['UpdatesHandler']($_POST['do'], $_POST['ID']);
+
+        /** Check again, since the information might've been updated. */
+        $CIDRAM['CheckVersions']($CIDRAM['Components']['Meta'], $CIDRAM['Components']['Installed Versions']);
+    }
+
+    /** Page initial prepwork. */
+    $CIDRAM['InitialPrepwork']($CIDRAM['L10N']->getString('link_updates'), $CIDRAM['L10N']->getString('tip_updates'));
+
+    $CIDRAM['FE']['UpdatesRow'] = $CIDRAM['ReadFile']($CIDRAM['GetAssetPath']('_updates_row.html'));
 
     /** Prepare installed component metadata and options for display. */
     foreach ($CIDRAM['Components']['Meta'] as $CIDRAM['Components']['Key'] => &$CIDRAM['Components']['ThisComponent']) {
@@ -1792,175 +1824,143 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && ($CIDRAM['FE']['Per
                 $CIDRAM['Arrayify']($CIDRAM['Components']['ThisComponent']['Files']['Checksum']);
             }
         }
-        if (empty($CIDRAM['Components']['ThisComponent']['Remote'])) {
-            $CIDRAM['Components']['ThisComponent']['RemoteData'] = $CIDRAM['L10N']->getString('response_updates_unable_to_determine');
-            if (!$CIDRAM['Components']['ThisComponent']['StatClass']) {
-                $CIDRAM['Components']['ThisComponent']['StatClass'] = 's';
-            }
+        if (isset($CIDRAM['Components']['Available Versions'][$CIDRAM['Components']['Key']])) {
+            $CIDRAM['Components']['ThisComponent']['Latest'] = $CIDRAM['Components']['Available Versions'][$CIDRAM['Components']['Key']];
         } else {
-            $CIDRAM['FetchRemote']();
-            if ($CIDRAM['Components']['ThisComponent']['RemoteData'] = $CIDRAM['ExtractPage'](
-                $CIDRAM['Components']['ThisComponent']['RemoteData']
+            $CIDRAM['Components']['ThisComponent']['Latest'] = $CIDRAM['L10N']->getString('response_updates_unable_to_determine');
+            $CIDRAM['Components']['ThisComponent']['StatClass'] = 's';
+        }
+
+        /** Determine whether all dependency constraints have been met. */
+        if (!isset($CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['Dependency Status'])) {
+            $CIDRAM['CheckConstraints']($CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']], true);
+        }
+        $CIDRAM['Components']['ThisComponent']['Remote Dependency Status'] =
+            $CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['Dependency Status'];
+        $CIDRAM['Components']['ThisComponent']['Remote All Constraints Met'] =
+            $CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['All Constraints Met'];
+        if (isset($CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['Install Together'])) {
+            if (!isset($CIDRAM['Components']['Install Together'][$CIDRAM['Components']['Key']])) {
+                $CIDRAM['Components']['Install Together'][$CIDRAM['Components']['Key']] = [];
+            }
+            $CIDRAM['Components']['Install Together'][$CIDRAM['Components']['Key']] = array_merge(
+                $CIDRAM['Components']['Install Together'][$CIDRAM['Components']['Key']],
+                $CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['Install Together']
+            );
+        }
+
+        if (!empty($CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['Name'])) {
+            $CIDRAM['Components']['ThisComponent']['Name'] =
+                $CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['Name'];
+            $CIDRAM['PrepareName']($CIDRAM['Components']['ThisComponent'], $CIDRAM['Components']['Key']);
+        }
+        if (
+            empty($CIDRAM['Components']['ThisComponent']['False Positive Risk']) &&
+            !empty($CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['False Positive Risk'])
+        ) {
+            $CIDRAM['Components']['ThisComponent']['False Positive Risk'] =
+                $CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['False Positive Risk'];
+        }
+        if (
+            empty($CIDRAM['Components']['ThisComponent']['Used with']) &&
+            !empty($CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['Used with'])
+        ) {
+            $CIDRAM['Components']['ThisComponent']['Used with'] = $CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['Used with'];
+        }
+        if (!empty($CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['Extended Description'])) {
+            $CIDRAM['Components']['ThisComponent']['Extended Description'] =
+                $CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['Extended Description'];
+            $CIDRAM['PrepareExtendedDescription']($CIDRAM['Components']['ThisComponent'], $CIDRAM['Components']['Key']);
+        }
+        if (!$CIDRAM['Components']['ThisComponent']['StatClass']) {
+            if (!empty($CIDRAM['Components']['ThisComponent']['Latest']) && $CIDRAM['Operation']->singleCompare(
+                $CIDRAM['Components']['ThisComponent']['Version'],
+                '<' . $CIDRAM['Components']['ThisComponent']['Latest']
             )) {
-                /** Process remote components metadata. */
-                if (!isset($CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']])) {
-                    $CIDRAM['Components']['TempRemoteMeta'] = [];
-                    $CIDRAM['YAML']->process(
-                        $CIDRAM['Components']['ThisComponent']['RemoteData'],
-                        $CIDRAM['Components']['TempRemoteMeta']
-                    );
-                    foreach ($CIDRAM['Components']['TempRemoteMeta'] as $CIDRAM['Components']['TempKey'] => $CIDRAM['Components']['TempData']) {
-                        if (!isset($CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['TempKey']])) {
-                            $CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['TempKey']] = $CIDRAM['Components']['TempData'];
-                        }
-                    }
-                }
-
-                if (isset($CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['Version'])) {
-                    $CIDRAM['Components']['ThisComponent']['Latest'] =
-                        $CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['Version'];
-                    $CIDRAM['Components']['Available Versions'][$CIDRAM['Components']['Key']] =
-                        $CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['Version'];
-                } elseif (!$CIDRAM['Components']['ThisComponent']['StatClass']) {
-                    $CIDRAM['Components']['ThisComponent']['StatClass'] = 's';
-                }
-
-                /** Determine whether all dependency constraints have been met. */
-                $CIDRAM['CheckConstraints']($CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']], true);
-                $CIDRAM['Components']['ThisComponent']['Remote Dependency Status'] =
-                    $CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['Dependency Status'];
-                $CIDRAM['Components']['ThisComponent']['Remote All Constraints Met'] =
-                    $CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['All Constraints Met'];
-                if (isset($CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['Install Together'])) {
-                    if (!isset($CIDRAM['Components']['Install Together'][$CIDRAM['Components']['Key']])) {
-                        $CIDRAM['Components']['Install Together'][$CIDRAM['Components']['Key']] = [];
-                    }
-                    $CIDRAM['Components']['Install Together'][$CIDRAM['Components']['Key']] = array_merge(
-                        $CIDRAM['Components']['Install Together'][$CIDRAM['Components']['Key']],
-                        $CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['Install Together']
-                    );
-                }
-            } elseif (!$CIDRAM['Components']['ThisComponent']['StatClass']) {
-                $CIDRAM['Components']['ThisComponent']['StatClass'] = 's';
-            }
-            if (!empty($CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['Name'])) {
-                $CIDRAM['Components']['ThisComponent']['Name'] =
-                    $CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['Name'];
-                $CIDRAM['PrepareName']($CIDRAM['Components']['ThisComponent'], $CIDRAM['Components']['Key']);
-            }
-            if (
-                empty($CIDRAM['Components']['ThisComponent']['False Positive Risk']) &&
-                !empty($CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['False Positive Risk'])
-            ) {
-                $CIDRAM['Components']['ThisComponent']['False Positive Risk'] =
-                    $CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['False Positive Risk'];
-            }
-            if (
-                empty($CIDRAM['Components']['ThisComponent']['Used with']) &&
-                !empty($CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['Used with'])
-            ) {
-                $CIDRAM['Components']['ThisComponent']['Used with'] = $CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['Used with'];
-            }
-            if (!empty($CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['Extended Description'])) {
-                $CIDRAM['Components']['ThisComponent']['Extended Description'] =
-                    $CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['Extended Description'];
-                $CIDRAM['PrepareExtendedDescription']($CIDRAM['Components']['ThisComponent'], $CIDRAM['Components']['Key']);
-            }
-            if (!$CIDRAM['Components']['ThisComponent']['StatClass']) {
-                if (!empty($CIDRAM['Components']['ThisComponent']['Latest']) && $CIDRAM['Operation']->singleCompare(
-                    $CIDRAM['Components']['ThisComponent']['Version'],
-                    '<' . $CIDRAM['Components']['ThisComponent']['Latest']
+                $CIDRAM['Components']['ThisComponent']['Outdated'] = true;
+                $CIDRAM['Components']['Outdated'][] = $CIDRAM['Components']['Key'];
+                if ((
+                    !empty($CIDRAM['Components']['ThisComponent']['Used with']) &&
+                    substr($CIDRAM['Components']['ThisComponent']['Used with'], 0, 3) === 'ipv'
+                ) || (
+                    !empty($CIDRAM['Components']['ThisComponent']['Extended Description']) &&
+                    strpos($CIDRAM['Components']['ThisComponent']['Extended Description'], 'signatures-&gt;ipv') !== false
                 )) {
-                    $CIDRAM['Components']['ThisComponent']['Outdated'] = true;
-                    $CIDRAM['Components']['Outdated'][] = $CIDRAM['Components']['Key'];
-                    if ((
-                        !empty($CIDRAM['Components']['ThisComponent']['Used with']) &&
-                        substr($CIDRAM['Components']['ThisComponent']['Used with'], 0, 3) === 'ipv'
-                    ) || (
-                        !empty($CIDRAM['Components']['ThisComponent']['Extended Description']) &&
-                        strpos($CIDRAM['Components']['ThisComponent']['Extended Description'], 'signatures-&gt;ipv') !== false
-                    )) {
-                        $CIDRAM['Components']['OutdatedSignatureFiles'][] = $CIDRAM['Components']['Key'];
-                    }
-                    $CIDRAM['Components']['ThisComponent']['RowClass'] = 'r';
-                    $CIDRAM['Components']['ThisComponent']['StatClass'] = 'txtRd';
-                    $CIDRAM['Components']['ThisComponent']['StatusOptions'] = $CIDRAM['L10N']->getString('response_updates_outdated');
-                    if (!empty($CIDRAM['Components']['ThisComponent']['Remote All Constraints Met'])) {
-                        $CIDRAM['Components']['ThisComponent']['Options'] .=
-                            '<option value="update-component">' . $CIDRAM['L10N']->getString('field_update') . '</option>';
-                    }
-                } else {
-                    $CIDRAM['Components']['ThisComponent']['StatClass'] = 'txtGn';
-                    $CIDRAM['Components']['ThisComponent']['StatusOptions'] = $CIDRAM['L10N']->getString('response_updates_already_up_to_date');
-                    if (isset(
-                        $CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']],
-                        $CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['Files'],
-                        $CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['Files']['To'],
-                        $CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['Files']['From'],
-                        $CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['Files']['Checksum'],
-                        $CIDRAM['Components']['ThisComponent']['Files'],
-                        $CIDRAM['Components']['ThisComponent']['Files']['To'],
-                        $CIDRAM['Components']['ThisComponent']['Remote']
-                    ) && (
-                        $CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['Files']['To'] === $CIDRAM['Components']['ThisComponent']['Files']['To']
-                    )) {
-                        $CIDRAM['Components']['Repairable'][] = $CIDRAM['Components']['Key'];
-                        $CIDRAM['Components']['ThisComponent']['Options'] .= '<option value="repair-component">' . $CIDRAM['L10N']->getString('field_repair') . '</option>';
-                    }
+                    $CIDRAM['Components']['OutdatedSignatureFiles'][] = $CIDRAM['Components']['Key'];
                 }
-            }
-            if (!empty($CIDRAM['Components']['ThisComponent']['Files']['To'])) {
-                $CIDRAM['Activable'] = $CIDRAM['IsActivable']($CIDRAM['Components']['ThisComponent']);
-                if (preg_match('~^(?:theme/' . preg_quote(
-                    $CIDRAM['Config']['template_data']['theme']
-                ) . '|CIDRAM.*|Common Classes Package)$~i', $CIDRAM['Components']['Key']) || $CIDRAM['IsInUse'](
-                    $CIDRAM['Components']['ThisComponent']
+                $CIDRAM['Components']['ThisComponent']['RowClass'] = 'r';
+                $CIDRAM['Components']['ThisComponent']['StatClass'] = 'txtRd';
+                $CIDRAM['Components']['ThisComponent']['StatusOptions'] = $CIDRAM['L10N']->getString('response_updates_outdated');
+                if (!empty($CIDRAM['Components']['ThisComponent']['Remote All Constraints Met'])) {
+                    $CIDRAM['Components']['ThisComponent']['Options'] .=
+                        '<option value="update-component">' . $CIDRAM['L10N']->getString('field_update') . '</option>';
+                }
+            } else {
+                $CIDRAM['Components']['ThisComponent']['StatClass'] = 'txtGn';
+                $CIDRAM['Components']['ThisComponent']['StatusOptions'] = $CIDRAM['L10N']->getString('response_updates_already_up_to_date');
+                if (isset(
+                    $CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['Files']['To'],
+                    $CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['Files']['From'],
+                    $CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['Files']['Checksum'],
+                    $CIDRAM['Components']['ThisComponent']['Files']['To'],
+                    $CIDRAM['Components']['ThisComponent']['Remote']
+                ) && (
+                    $CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['Files']['To'] === $CIDRAM['Components']['ThisComponent']['Files']['To']
                 )) {
-                    $CIDRAM['AppendToString'](
-                        $CIDRAM['Components']['ThisComponent']['StatusOptions'],
-                        '<hr />',
-                        '<div class="txtGn">' . $CIDRAM['L10N']->getString('state_component_is_active') . '</div>'
-                    );
-                    if ($CIDRAM['Activable']) {
-                        $CIDRAM['Components']['ThisComponent']['Options'] .= '<option value="deactivate-component">' . $CIDRAM['L10N']->getString('field_deactivate') . '</option>';
-                        if (!empty($CIDRAM['Components']['ThisComponent']['Uninstallable'])) {
-                            $CIDRAM['Components']['ThisComponent']['Options'] .=
-                                '<option value="deactivate-and-uninstall-component">' .
-                                $CIDRAM['L10N']->getString('field_deactivate') . ' + ' . $CIDRAM['L10N']->getString('field_uninstall') .
-                                '</option>';
-                        }
-                    }
-                } else {
-                    if ($CIDRAM['Activable']) {
-                        $CIDRAM['Components']['ThisComponent']['Options'] .=
-                            '<option value="activate-component">' . $CIDRAM['L10N']->getString('field_activate') . '</option>';
-                    }
-                    if (!empty($CIDRAM['Components']['ThisComponent']['Uninstallable'])) {
-                        $CIDRAM['Components']['ThisComponent']['Options'] .=
-                            '<option value="uninstall-component">' . $CIDRAM['L10N']->getString('field_uninstall') . '</option>';
-                    }
-                    if (
-                        !empty($CIDRAM['Components']['ThisComponent']['Provisional']) ||
-                        ($CIDRAM['Config']['general']['lang_override'] && preg_match('~^L10N\:~', $CIDRAM['Components']['ThisComponent']['Name']))
-                    ) {
-                        $CIDRAM['AppendToString'](
-                            $CIDRAM['Components']['ThisComponent']['StatusOptions'],
-                            '<hr />',
-                            '<div class="txtOe">' . $CIDRAM['L10N']->getString('state_component_is_provisional') . '</div>'
-                        );
-                    } else {
-                        $CIDRAM['AppendToString'](
-                            $CIDRAM['Components']['ThisComponent']['StatusOptions'],
-                            '<hr />',
-                            '<div class="txtRd">' . $CIDRAM['L10N']->getString('state_component_is_inactive') . '</div>'
-                        );
-                    }
+                    $CIDRAM['Components']['Repairable'][] = $CIDRAM['Components']['Key'];
+                    $CIDRAM['Components']['ThisComponent']['Options'] .= '<option value="repair-component">' . $CIDRAM['L10N']->getString('field_repair') . '</option>';
                 }
             }
         }
-        if (empty($CIDRAM['Components']['ThisComponent']['Latest'])) {
-            $CIDRAM['Components']['ThisComponent']['Latest'] = $CIDRAM['L10N']->getString('response_updates_unable_to_determine');
-        } elseif (
+        if (!empty($CIDRAM['Components']['ThisComponent']['Files']['To'])) {
+            $CIDRAM['Activable'] = $CIDRAM['IsActivable']($CIDRAM['Components']['ThisComponent']);
+            if (preg_match('~^(?:theme/' . preg_quote(
+                $CIDRAM['Config']['template_data']['theme']
+            ) . '|CIDRAM.*|Common Classes Package)$~i', $CIDRAM['Components']['Key']) || $CIDRAM['IsInUse'](
+                $CIDRAM['Components']['ThisComponent']
+            )) {
+                $CIDRAM['AppendToString'](
+                    $CIDRAM['Components']['ThisComponent']['StatusOptions'],
+                    '<hr />',
+                    '<div class="txtGn">' . $CIDRAM['L10N']->getString('state_component_is_active') . '</div>'
+                );
+                if ($CIDRAM['Activable']) {
+                    $CIDRAM['Components']['ThisComponent']['Options'] .= '<option value="deactivate-component">' . $CIDRAM['L10N']->getString('field_deactivate') . '</option>';
+                    if (!empty($CIDRAM['Components']['ThisComponent']['Uninstallable'])) {
+                        $CIDRAM['Components']['ThisComponent']['Options'] .=
+                            '<option value="deactivate-and-uninstall-component">' .
+                            $CIDRAM['L10N']->getString('field_deactivate') . ' + ' . $CIDRAM['L10N']->getString('field_uninstall') .
+                            '</option>';
+                    }
+                }
+            } else {
+                if ($CIDRAM['Activable']) {
+                    $CIDRAM['Components']['ThisComponent']['Options'] .=
+                        '<option value="activate-component">' . $CIDRAM['L10N']->getString('field_activate') . '</option>';
+                }
+                if (!empty($CIDRAM['Components']['ThisComponent']['Uninstallable'])) {
+                    $CIDRAM['Components']['ThisComponent']['Options'] .=
+                        '<option value="uninstall-component">' . $CIDRAM['L10N']->getString('field_uninstall') . '</option>';
+                }
+                if (
+                    !empty($CIDRAM['Components']['ThisComponent']['Provisional']) ||
+                    ($CIDRAM['Config']['general']['lang_override'] && preg_match('~^L10N\:~', $CIDRAM['Components']['ThisComponent']['Name']))
+                ) {
+                    $CIDRAM['AppendToString'](
+                        $CIDRAM['Components']['ThisComponent']['StatusOptions'],
+                        '<hr />',
+                        '<div class="txtOe">' . $CIDRAM['L10N']->getString('state_component_is_provisional') . '</div>'
+                    );
+                } else {
+                    $CIDRAM['AppendToString'](
+                        $CIDRAM['Components']['ThisComponent']['StatusOptions'],
+                        '<hr />',
+                        '<div class="txtRd">' . $CIDRAM['L10N']->getString('state_component_is_inactive') . '</div>'
+                    );
+                }
+            }
+        }
+        if (
             empty($CIDRAM['Components']['ThisComponent']['Files']['To']) &&
             !empty($CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['Files']['To'])
         ) {
@@ -2082,6 +2082,9 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && ($CIDRAM['FE']['Per
 
         /** Trigger updates handler. */
         $CIDRAM['UpdatesHandler']('update-component', $CIDRAM['Components']['Outdated']);
+
+        /** Check again, since the information might've been updated. */
+        $CIDRAM['CheckVersions']($CIDRAM['Components']['Meta'], $CIDRAM['Components']['Installed Versions']);
     }
 
     /** Prepare newly found component metadata and options for display. */

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2021.04.08).
+ * This file: Front-end functions file (last modified: 2021.04.09).
  */
 
 /**
@@ -1314,12 +1314,14 @@ $CIDRAM['FE_Executor'] = function ($Closures = false, bool $Queue = false) use (
     }
     $CIDRAM['Arrayify']($Closures);
     foreach ($Closures as $Closure) {
+        $Closure = $CIDRAM['Operation']->ifCompare($CIDRAM, $Closure);
         if (isset($CIDRAM[$Closure]) && is_object($CIDRAM[$Closure])) {
             $CIDRAM[$Closure]();
         } elseif (($Pos = strpos($Closure, ' ')) !== false) {
             $Params = substr($Closure, $Pos + 1);
             $Closure = substr($Closure, 0, $Pos);
             if (isset($CIDRAM[$Closure]) && is_object($CIDRAM[$Closure])) {
+                $Params = $CIDRAM['Operation']->ifCompare($CIDRAM, $Params);
                 $CIDRAM[$Closure]($Params);
             }
         }

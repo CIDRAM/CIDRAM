@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Verification data for search engines and social media (last modified: 2021.03.23).
+# This file: Verification data for search engines and social media (last modified: 2021.04.10).
 ##/
 
 # Additional references: https://udger.com/resources/ua-list/crawlers
@@ -118,6 +118,14 @@ Search Engine Verification:
   Closure: "DNS-Reverse-Forward"
   Valid Domains:
    - ".crawler.youdao.com"
+
+ # https://aspiegel.com/petalbot
+ PetalBot:
+  Bypass Flag: "Flag-Bypass-PetalBot-Check"
+  User Agent: "petalbot"
+  Closure: "DNS-Reverse-Forward"
+  Valid Domains:
+   - ".aspiegel.com"
 
 Social Media Verification:
 

@@ -1,7 +1,7 @@
 ---
 CIDRAM Core:
  Name: CIDRAM Core
- Version: 2.5.1-DEV+21099046
+ Version: 2.5.1
  Minimum Required: 2.0.0
  Dependencies:
   PHP: >=7.2
@@ -49,7 +49,7 @@ CIDRAM Core:
    - e90b1aef809376591bd0f9738ee883ca654425afe527653ab07709785dd41b86:15250
    - 654cf394783825bf4196b51bb351246f3a783110f36f5220a18eea41a9989617:999
    - 1335bb0c07953d9fabb061ca00f06a14759a431109beda8a4d0fa32ba1acf62a:2922
-   - bf079f77e01a8c00780ebd52e5475bb79f365cd3afaaba6e4285b01b81cf5bcf:7632
+   - 3a169cbbbfabd9500c190192988d77da7541364ae01a753c70b5e49dc03f6493:7632
    - 9ac04deec017718670d68df33fa7fe6bcf3706165d6b5164eb8f09c867245492:18618
    - b3b4eb884e5f3141e8d918b0d18f18bc20507634d6ee3f04656d196f253b085c:9655
    - bca3cc566cf21e93133aeee4ec2b18a247cdc1a5e561645e53bc66fac5536ffa:95784
@@ -62,7 +62,7 @@ CIDRAM Core:
  Reannotate: components.dat
 CIDRAM Front-End:
  Name: CIDRAM Front-End
- Version: 2.5.1-DEV+21095583
+ Version: 2.5.1
  Minimum Required: 2.0.0
  Dependencies:
   PHP: >=7.2
@@ -216,7 +216,7 @@ CIDRAM Front-End:
    - 8627543d60036a14e2d1033e63cd703d64b83ebc539d05b40b2aeedbb5d2f2a7:765
    - ebfbd6a90a244ad3f638cbe044dd661fa435ff4094fb63312346f786336b2960:996
    - 4c206d6c04a90c1ae869c9f2043119b568da4fdc1f02f9cfc7be7ec133fcf91f:237778
-   - b0e314d69076a8d1178497ba365135313f7fa12d83ce08064525c9eec8e37b61:195886
+   - bc8fc2b7357c1ddeb610d6e478ecc857152ac00680babaa19d87da7b32345043:196936
  Reannotate: components.dat
 Common Classes Package:
  Name: Common Classes Package
@@ -266,10 +266,11 @@ Common Classes Package:
 IPv4:
  Extended Description: Default IPv4 signatures normally included with the main package. Blocks unwanted cloud services and non-human endpoints.
  False Positive Risk: Low
- Version: 2021.95.583
+ Version: 2021.100.350
  Minimum Required: 2.0.0
  Dependencies:
-  CIDRAM Core: "*"
+  CIDRAM Core: >=1
+  Bypasses: >=2021.95.583
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v2/vault/components.dat
  Uninstallable: true
  Files:
@@ -278,7 +279,7 @@ IPv4:
   To:
    - ipv4.dat
   Checksum:
-   - 1d4936570205cef7bc71927db2e89687e4deb0b767a9da082abd2dd5927137f4:939511
+   - c34384b7a9950ddf406aa093e2e0520641781ff37b24a8b157fa7337db4b741f:942689
  Used with: ipv4
  Reannotate: components.dat
 IPv4-Bogons:
@@ -287,7 +288,7 @@ IPv4-Bogons:
  Version: 2021.95.583
  Minimum Required: 2.0.0
  Dependencies:
-  CIDRAM Core: "*"
+  CIDRAM Core: >=1
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v2/vault/components.dat
  Uninstallable: true
  Files:
@@ -302,10 +303,11 @@ IPv4-Bogons:
 IPv4-ISPs:
  Extended Description: Default IPv4 signatures normally included with the main package. Blocks dangerous and spammy ISPs.
  False Positive Risk: Medium
- Version: 2021.95.583
+ Version: 2021.100.350
  Minimum Required: 2.0.0
  Dependencies:
-  CIDRAM Core: "*"
+  CIDRAM Core: >=1
+  Bypasses: >=2021.95.583
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v2/vault/components.dat
  Uninstallable: true
  Files:
@@ -314,7 +316,7 @@ IPv4-ISPs:
   To:
    - ipv4_isps.dat
   Checksum:
-   - 4dd529f95a8d99e8a16f4de8874d01604e2e24feab8b6829c3193281f464a473:438512
+   - 0316e0cba367ed6e2e3d2547c3b99cac18c50689f333da43be3617743ca98def:440477
  Used with: ipv4
  Reannotate: components.dat
 IPv4-Nonblocking:
@@ -322,7 +324,7 @@ IPv4-Nonblocking:
  Version: 2021.95.583
  Minimum Required: 1.0.0
  Dependencies:
-  CIDRAM Core: "*"
+  CIDRAM Core: >=1
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v2/vault/components.dat
  Uninstallable: true
  Files:
@@ -337,10 +339,10 @@ IPv4-Nonblocking:
 IPv4-Other:
  Extended Description: Default IPv4 signatures normally included with the main package. Blocks CIDRs for proxies, VPNs, and other miscellaneous unwanted services.
  False Positive Risk: Medium
- Version: 2021.95.583
+ Version: 2021.100.350
  Minimum Required: 2.0.0
  Dependencies:
-  CIDRAM Core: "*"
+  CIDRAM Core: >=1
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v2/vault/components.dat
  Uninstallable: true
  Files:
@@ -349,16 +351,17 @@ IPv4-Other:
   To:
    - ipv4_other.dat
   Checksum:
-   - 0a10b98dfd62085779013c59e5dc791430ea36310963029cf26ddfd3a3a2f4d5:37110
+   - d52f0df915d374c8faad8aef8e7946f3555fbced05717c581e9b9fe933097651:34881
  Used with: ipv4
  Reannotate: components.dat
 IPv6:
  Extended Description: Default IPv6 signatures normally included with the main package. Blocks unwanted cloud services and non-human endpoints.
  False Positive Risk: Low
- Version: 2021.95.583
+ Version: 2021.100.350
  Minimum Required: 2.0.0
  Dependencies:
-  CIDRAM Core: "*"
+  CIDRAM Core: >=1
+  Bypasses: >=2021.95.583
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v2/vault/components.dat
  Uninstallable: true
  Files:
@@ -367,7 +370,7 @@ IPv6:
   To:
    - ipv6.dat
   Checksum:
-   - 814cb3dc4ca8f22dc58321a2cba22d5d04132df0e600aff77718d071db7a5fd1:249880
+   - ebc66baad370945e10e9d4ca7588c3a59da0097dacce49e172234b15e08caf63:251702
  Used with: ipv6
  Reannotate: components.dat
 IPv6-Bogons:
@@ -376,7 +379,7 @@ IPv6-Bogons:
  Version: 2021.95.583
  Minimum Required: 2.0.0
  Dependencies:
-  CIDRAM Core: "*"
+  CIDRAM Core: >=1
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v2/vault/components.dat
  Uninstallable: true
  Files:
@@ -391,10 +394,11 @@ IPv6-Bogons:
 IPv6-ISPs:
  Extended Description: Default IPv6 signatures normally included with the main package. Blocks dangerous and spammy ISPs.
  False Positive Risk: Medium
- Version: 2021.95.583
+ Version: 2021.100.350
  Minimum Required: 2.0.0
  Dependencies:
-  CIDRAM Core: "*"
+  CIDRAM Core: >=1
+  Bypasses: >=2021.95.583
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v2/vault/components.dat
  Uninstallable: true
  Files:
@@ -403,7 +407,7 @@ IPv6-ISPs:
   To:
    - ipv6_isps.dat
   Checksum:
-   - 4a2120bb0235150aeeab5ef28fbd023207874ae017804419ce2e58675aac7e28:79725
+   - 3dd26e5bff9267b49729def638355548a243f1256899349da6d3ba568ac29344:79908
  Used with: ipv6
  Reannotate: components.dat
 IPv6-Nonblocking:
@@ -411,7 +415,7 @@ IPv6-Nonblocking:
  Version: 2021.95.583
  Minimum Required: 1.0.0
  Dependencies:
-  CIDRAM Core: "*"
+  CIDRAM Core: >=1
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v2/vault/components.dat
  Uninstallable: true
  Files:
@@ -426,10 +430,10 @@ IPv6-Nonblocking:
 IPv6-Other:
  Extended Description: Default IPv6 signatures normally included with the main package. Blocks CIDRs for proxies, VPNs, and other miscellaneous unwanted services.
  False Positive Risk: Low
- Version: 2021.95.583
+ Version: 2021.100.350
  Minimum Required: 2.0.0
  Dependencies:
-  CIDRAM Core: "*"
+  CIDRAM Core: >=1
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v2/vault/components.dat
  Uninstallable: true
  Files:
@@ -438,7 +442,7 @@ IPv6-Other:
   To:
    - ipv6_other.dat
   Checksum:
-   - ffd22b044bedf1e86e22154119042419c74e3b0f9fe98af41f0817f170f0bbe5:5248
+   - 21a83d305aee88058fa723303c865dd81f7ba6b6b7e75246dbd9ac7b05a23855:5277
  Used with: ipv6
  Reannotate: components.dat
 Bypasses:

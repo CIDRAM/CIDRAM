@@ -1,7 +1,7 @@
 ---
 CIDRAM:
  Name: CIDRAM
- Version: 1.18.1-DEV+21099218
+ Version: 1.18.1-DEV+21100327
  Minimum Required: 1.0.0
  Dependencies:
   PHP: >=5.4
@@ -221,7 +221,7 @@ CIDRAM:
    - 5635e13d7cecabf5e397c79932474442c11f116fabbd5b012248f957056a3158:776
    - 8627543d60036a14e2d1033e63cd703d64b83ebc539d05b40b2aeedbb5d2f2a7:765
    - ebfbd6a90a244ad3f638cbe044dd661fa435ff4094fb63312346f786336b2960:996
-   - 12f8e584a46c7dd3f0ffafd7ed47d01ec3f2cebec8ba9f71835e7843bc9798bc:238440
+   - d8f9cbffaffbe7863fe32859578a1d2df1860cbe909da0e5fad21627ae75c4f0:238956
    - 62582486c1325b5afa4d2393939480716f75fcbf552adbb5dffd3407dbc02b3e:180489
    - 71475c6987f8eac8060fbbfea154a2f47b5762a34a2b40d2266e6e5bb4621f6d:96235
    - 844ebdf1a741279bf41301091f7a3ddf582e60eb5fdb34db60f88a0c9f6ba4da:5852
@@ -238,7 +238,8 @@ IPv4:
  Version: 2021.95.583
  Minimum Required: 1.0.0
  Dependencies:
-  CIDRAM Core: "*"
+  CIDRAM Core: >=1
+  Bypasses: >=2021.95.583
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
  Uninstallable: true
  Files:
@@ -256,7 +257,7 @@ IPv4-Bogons:
  Version: 2021.95.583
  Minimum Required: 1.0.0
  Dependencies:
-  CIDRAM Core: "*"
+  CIDRAM Core: >=1
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
  Uninstallable: true
  Files:
@@ -274,7 +275,8 @@ IPv4-ISPs:
  Version: 2021.95.583
  Minimum Required: 1.0.0
  Dependencies:
-  CIDRAM Core: "*"
+  CIDRAM Core: >=1
+  Bypasses: >=2021.95.583
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
  Uninstallable: true
  Files:
@@ -291,7 +293,7 @@ IPv4-Nonblocking:
  Version: 2021.95.583
  Minimum Required: 1.0.0
  Dependencies:
-  CIDRAM Core: "*"
+  CIDRAM Core: >=1
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
  Uninstallable: true
  Files:
@@ -309,7 +311,7 @@ IPv4-Other:
  Version: 2021.95.583
  Minimum Required: 1.0.0
  Dependencies:
-  CIDRAM Core: "*"
+  CIDRAM Core: >=1
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
  Uninstallable: true
  Files:
@@ -327,7 +329,8 @@ IPv6:
  Version: 2021.95.583
  Minimum Required: 1.0.0
  Dependencies:
-  CIDRAM Core: "*"
+  CIDRAM Core: >=1
+  Bypasses: >=2021.95.583
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
  Uninstallable: true
  Files:
@@ -345,7 +348,7 @@ IPv6-Bogons:
  Version: 2021.95.583
  Minimum Required: 1.0.0
  Dependencies:
-  CIDRAM Core: "*"
+  CIDRAM Core: >=1
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
  Uninstallable: true
  Files:
@@ -363,7 +366,8 @@ IPv6-ISPs:
  Version: 2021.95.583
  Minimum Required: 1.0.0
  Dependencies:
-  CIDRAM Core: "*"
+  CIDRAM Core: >=1
+  Bypasses: >=2021.95.583
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
  Uninstallable: true
  Files:
@@ -380,7 +384,7 @@ IPv6-Nonblocking:
  Version: 2021.95.583
  Minimum Required: 1.0.0
  Dependencies:
-  CIDRAM Core: "*"
+  CIDRAM Core: >=1
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
  Uninstallable: true
  Files:
@@ -398,7 +402,7 @@ IPv6-Other:
  Version: 2021.95.583
  Minimum Required: 1.0.0
  Dependencies:
-  CIDRAM Core: "*"
+  CIDRAM Core: >=1
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
  Uninstallable: true
  Files:
@@ -439,7 +443,6 @@ l10n/en:
  Dependencies:
   CIDRAM Core: ^1.10
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
- Uninstallable: true
  Files:
   From:
    - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.en.cli.yaml

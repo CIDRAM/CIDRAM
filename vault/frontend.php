@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2021.04.08).
+ * This file: Front-end handler (last modified: 2021.04.11).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -1730,6 +1730,10 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && ($CIDRAM['FE']['Per
     /** Component aliases (needed to discern some dependencies). */
     $CIDRAM['Components']['Installed Versions']['CIDRAM Core'] = &$CIDRAM['Components']['Installed Versions']['CIDRAM'];
     $CIDRAM['Components']['Available Versions']['CIDRAM Core'] = &$CIDRAM['Components']['Available Versions']['CIDRAM'];
+    $CIDRAM['Components']['Installed Versions']['CIDRAM Front-End'] = &$CIDRAM['Components']['Installed Versions']['CIDRAM'];
+    $CIDRAM['Components']['Available Versions']['CIDRAM Front-End'] = &$CIDRAM['Components']['Available Versions']['CIDRAM'];
+    $CIDRAM['Components']['Installed Versions']['Common Classes Package'] = &$CIDRAM['Components']['Installed Versions']['CIDRAM'];
+    $CIDRAM['Components']['Available Versions']['Common Classes Package'] = &$CIDRAM['Components']['Available Versions']['CIDRAM'];
 
     /** Fetch available versions beforehand (needed for dependency checks). */
     foreach ($CIDRAM['Components']['Meta'] as $CIDRAM['Components']['Key'] => &$CIDRAM['Components']['ThisComponent']) {

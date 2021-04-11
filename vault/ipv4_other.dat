@@ -1,8 +1,8 @@
 # IPv4 signatures file (CIDRs for proxies, VPNs and other miscellaneous unwanted services).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv4_other.dat
 
-# Version: 2021.79.107
-# Last modified: 2021.03.21
+# Version: 2021.100.350
+# Last modified: 2021.04.11
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage, i.e., with ignore.dat, with reCAPTCHA, with "extended rules" (default bypasses): « [ ]Low [x]Medium [ ]High »
@@ -1245,6 +1245,7 @@ Tag: Octopusnet VPN
 
 109.70.100.0/24 Deny Proxy
 Origin: AT
+Profile: Tor endpoints here
 Tag: Applied Privacy
 
 
@@ -1303,79 +1304,6 @@ Origin: SE
 167.160.60.0/24 Deny Proxy
 Origin: US
 Tag: Web2Objects LLC
-
-
-# ASNs 9009, 16247 ("M247 Ltd").
-# Multiplay network providing broadband connectivity, server leasing, line rental, webhosting services and others.
-# "BraveWay", "Server", "Host", "Datacenter", "Virtual" as cloud ^(.*(?:BraveWay|Host|Virtual|Server|Data ?cent(?:er|re)).*)\x01$
-# "VPN", "Secure Internet LLC" as proxy/other ^(.*(?:VPN|Secure Internet LLC).*)\x01$
-# Everything else to go to the ISPs signatures. When updating, remove all subordinates of 38.0.0.0/8 from final
-# aggregate to avoid duplicity (already blocked elsewhere).
-# Stop Forum Spam (SFS) listings: 180,796 (AS9009), 831 (AS16247).
-# Updated: 2020.11.12
-
-37.139.70.0/24 Deny Proxy
-Origin: EU
-45.56.143.0/24 Deny Proxy
-45.74.16.0/24 Deny Proxy
-45.74.27.0/24 Deny Proxy
-45.74.29.0/24 Deny Proxy
-45.74.38.0/23 Deny Proxy
-45.74.45.0/24 Deny Proxy
-104.37.6.0/24 Deny Proxy
-104.243.240.0/24 Deny Proxy
-104.243.250.0/23 Deny Proxy
-104.243.252.0/24 Deny Proxy
-104.250.164.0/23 Deny Proxy
-104.250.169.0/24 Deny Proxy
-104.250.170.0/24 Deny Proxy
-104.250.174.0/24 Deny Proxy
-104.250.176.0/23 Deny Proxy
-104.250.180.0/24 Deny Proxy
-104.250.182.0/24 Deny Proxy
-104.250.185.0/24 Deny Proxy
-104.250.186.0/24 Deny Proxy
-162.246.184.0/23 Deny Proxy
-172.94.67.0/24 Deny Proxy
-172.94.71.0/24 Deny Proxy
-172.94.74.0/24 Deny Proxy
-172.94.90.0/24 Deny Proxy
-172.94.108.0/23 Deny Proxy
-172.94.110.0/24 Deny Proxy
-172.94.119.0/24 Deny Proxy
-172.94.120.0/24 Deny Proxy
-172.94.125.0/24 Deny Proxy
-172.111.147.0/24 Deny Proxy
-172.111.148.0/23 Deny Proxy
-172.111.151.0/24 Deny Proxy
-172.111.154.0/24 Deny Proxy
-172.111.171.0/24 Deny Proxy
-172.111.183.0/24 Deny Proxy
-172.111.186.0/24 Deny Proxy
-172.111.190.0/24 Deny Proxy
-172.111.197.0/24 Deny Proxy
-172.111.205.0/24 Deny Proxy
-172.111.210.0/23 Deny Proxy
-172.111.214.0/24 Deny Proxy
-172.111.216.0/23 Deny Proxy
-172.111.219.0/24 Deny Proxy
-172.111.220.0/24 Deny Proxy
-172.111.227.0/24 Deny Proxy
-172.111.230.0/24 Deny Proxy
-172.111.233.0/24 Deny Proxy
-172.111.242.0/24 Deny Proxy
-172.111.244.0/23 Deny Proxy
-172.111.246.0/24 Deny Proxy
-172.111.250.0/24 Deny Proxy
-172.111.253.0/24 Deny Proxy
-Origin: US
-196.53.108.0/24 Deny Proxy
-Origin: ZA
-Profile: Domestic ISP;Infrastructure;Multiplay;Tor endpoints here;Webhosting
-Tag: M247 Ltd
----
-recaptcha:
- enabled: true
 
 
 # ASN 197640 ("OverPlay.Net LP").

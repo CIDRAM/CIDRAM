@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_isps.dat
 
-# Version: 2021.93.416
-# Last modified: 2021.04.04
+# Version: 2021.100.350
+# Last modified: 2021.04.11
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage, i.e., with ignore.dat, with reCAPTCHA, with "extended rules" (default bypasses): « [ ]Low [x]Medium [ ]High »
@@ -183,13 +183,14 @@ recaptcha:
 
 
 # ASN 41011 ("CH-NET S.R.L").
-# Stop Forum Spam (SFS) listings: 68.
-# Updated: 2020.01.24 / Checked: 2020.12.13
+# Stop Forum Spam (SFS) listings: 85.
+# Updated: 2020.01.24 / Checked: 2021.04.11
 
 2001:67c:2100::/48 Deny Generic
 2a06:afc0::/48 Deny Generic
 2a06:afc0:2::/48 Deny Generic
 Origin: RO
+Profile: Tor endpoints here
 Tag: CH-NET S.R.L
 
 
@@ -470,6 +471,7 @@ recaptcha:
 
 2a02:2378::/32 Deny Spam
 Origin: UA
+Profile: Domestic ISP;Tor endpoints here
 Tag: Kyivstar
 
 
@@ -528,6 +530,7 @@ Tag: Fregat
 Origin: PE
 2402:800::/32 Deny Spam
 Origin: VN
+Profile: Domestic ISP;Infrastructure;Tor endpoints here
 Tag: Viettel Corporation
 ---
 recaptcha:
@@ -536,15 +539,14 @@ recaptcha:
 
 # ASNs 200019, 207636 ("ALEXHOST SRL").
 # A significant source of spam, hacking, and other nefarious activity.
-# Stop Forum Spam (SFS) listings: 2,031 (AS200019).
-# Updated: 2020.12.28
+# Stop Forum Spam (SFS) listings: 2,422 (AS200019).
+# Updated: 2021.04.11
 
 2001:678:6d4::/48 Deny Malware
-2a09:7c40::/30 Deny Malware
 2a09:7c46::/32 Deny Malware
 2a0f:5f40::/29 Deny Malware
 Origin: MD
-Profile: Frequent changes
+Profile: Frequent changes;Tor endpoints here
 Tag: ALEXHOST SRL
 
 
@@ -1248,7 +1250,7 @@ Origin: US
 2405:f980::/48 Deny Generic
 2406:5f40::/48 Deny Generic
 Origin: VN
-Profile: Domestic ISP
+Profile: Domestic ISP;Tor endpoints here
 Tag: VNPT Corp
 ---
 recaptcha:
@@ -1849,6 +1851,7 @@ recaptcha:
 2001:67c:16b0::/48 Deny Spam
 2001:67c:289c::/48 Deny Spam
 Origin: SE
+Profile: Tor endpoints here
 Tag: Foreningen
 
 
@@ -2199,7 +2202,7 @@ recaptcha:
 
 2a00:1210::/32 Deny Spam
 Origin: UA
-Profile: Domestic ISP
+Profile: Domestic ISP;Tor endpoints here
 Tag: MAXNET TELECOM
 ---
 recaptcha:

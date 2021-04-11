@@ -1,8 +1,8 @@
 # IPv6 signatures file (CIDRs for proxies, VPNs and other miscellaneous unwanted services).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_other.dat
 
-# Version: 2021.79.107
-# Last modified: 2021.03.21
+# Version: 2021.100.350
+# Last modified: 2021.04.11
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage, i.e., with ignore.dat, with reCAPTCHA, with "extended rules" (default bypasses): « [x]Low [ ]Medium [ ]High »
@@ -123,6 +123,7 @@ Tag: Octopusnet VPN
 
 2a03:e600:100::/48 Deny Proxy
 Origin: AT
+Profile: Tor endpoints here
 Tag: Applied Privacy
 
 

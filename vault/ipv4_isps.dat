@@ -1,8 +1,8 @@
 # IPv4 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv4_isps.dat
 
-# Version: 2021.93.416
-# Last modified: 2021.04.04
+# Version: 2021.100.350
+# Last modified: 2021.04.11
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage, i.e., with ignore.dat, with reCAPTCHA, with "extended rules" (default bypasses): « [ ]Low [x]Medium [ ]High »
@@ -958,24 +958,31 @@ recaptcha:
 
 
 # ASN 41011 ("CH-NET S.R.L").
-# Stop Forum Spam (SFS) listings: 68.
-# Updated: 2020.12.13
+# Stop Forum Spam (SFS) listings: 85.
+# Updated: 2021.04.11
 
+45.129.138.0/23 Deny Generic
+147.78.46.0/23 Deny Generic
+Origin: LB
 185.123.220.0/22 Deny Generic
 Origin: PL
 89.41.172.0/23 Deny Generic
 93.113.36.0/23 Deny Generic
 93.115.240.0/23 Deny Generic
 185.108.156.0/23 Deny Generic
-185.238.160.0/23 Deny Generic
+185.238.160.0/24 Deny Generic
 185.244.211.0/24 Deny Generic
-185.249.134.0/23 Deny Generic
+185.249.132.0/22 Deny Generic
 188.208.32.0/23 Deny Generic
 188.213.232.0/24 Deny Generic
 188.214.159.0/24 Deny Generic
 188.214.192.0/24 Deny Generic
-193.238.244.0/22 Deny Generic
+193.238.245.0/24 Deny Generic
+193.238.247.0/24 Deny Generic
 Origin: RO
+45.88.139.0/24 Deny Generic
+Origin: UA
+Profile: Tor endpoints here
 Tag: CH-NET S.R.L
 
 
@@ -1640,19 +1647,20 @@ Tag: DGN TEKNOLOJI
 # network consists of a number of different ASNs, but only this specific ASN is
 # included here, and listing only known affected ranges/addresses, at least for
 # the moment.
-# Stop Forum Spam (SFS) listings: 1,783.
-# Updated: 2020.12.28
+# Stop Forum Spam (SFS) listings: 3,936.
+# Updated: 2021.04.11
 
 45.117.160.41/32 Deny Spam
-125.212.251.75/32 Deny Spam
-171.244.1.0/24 Deny Spam
-171.244.19.0/24 Deny Spam
-171.244.28.225/32 Deny Spam
-171.244.33.0/24 Deny Spam
-171.244.34.38/32 Deny Spam
+171.244.0.0/19 Deny Spam
+171.244.32.0/20 Deny Malware
+171.244.48.0/21 Deny Spam
+171.244.56.0/22 Deny Spam
+171.244.128.0/20 Deny Spam
+171.244.192.0/22 Deny Spam
+171.244.200.0/21 Deny Spam
 210.211.122.217/32 Deny Spam
 Origin: VN
-Profile: Domestic ISP
+Profile: Domestic ISP;Tor endpoints here
 Tag: Vietel
 ---
 recaptcha:
@@ -2697,6 +2705,7 @@ recaptcha:
 212.82.192.0/19 Deny Spam
 212.109.32.0/19 Deny Spam
 Origin: UA
+Profile: Domestic ISP;Tor endpoints here
 Tag: Kyivstar
 
 
@@ -2784,6 +2793,7 @@ Origin: PE
 203.190.160.0/20 Deny Spam
 220.231.64.0/18 Deny Spam
 Origin: VN
+Profile: Domestic ISP;Infrastructure;Tor endpoints here
 Tag: Viettel Corporation
 ---
 recaptcha:
@@ -2792,28 +2802,35 @@ recaptcha:
 
 # ASNs 200019, 207636 ("ALEXHOST SRL").
 # A significant source of spam, hacking, and other nefarious activity.
-# Stop Forum Spam (SFS) listings: 2,031 (AS200019).
-# Updated: 2020.12.28
+# Stop Forum Spam (SFS) listings: 2,422 (AS200019).
+# Updated: 2021.04.11
 
-77.90.149.0/24 Deny Malware
-77.90.152.0/23 Deny Malware
-77.90.154.0/24 Deny Malware
-77.90.156.0/23 Deny Malware
-77.90.176.0/24 Deny Malware
-185.230.15.0/24 Deny Malware
-213.209.132.0/24 Deny Malware
-213.209.134.0/24 Deny Malware
-213.209.143.0/24 Deny Malware
+77.90.152.0/24 Deny Malware
+77.90.180.0/24 Deny Malware
+77.90.185.0/24 Deny Malware
+77.90.190.0/24 Deny Malware
+185.230.14.0/24 Deny Malware
 Origin: DE
-45.13.187.0/24 Deny Malware
-Origin: HK
+89.46.96.0/22 Deny Malware
+Origin: FR
+37.44.228.0/22 Deny Malware
+37.148.216.0/23 Deny Malware
+37.148.220.0/22 Deny Malware
+78.138.4.0/22 Deny Malware
+78.138.36.0/22 Deny Malware
+83.229.52.0/22 Deny Malware
+83.229.102.0/24 Deny Malware
+185.115.108.0/22 Deny Malware
+213.255.212.0/22 Deny Malware
+213.255.220.0/22 Deny Malware
+213.255.232.0/21 Deny Malware
+213.255.252.0/22 Deny Malware
+Origin: GB
 188.209.116.0/22 Deny Malware
 Origin: IR
-45.9.96.0/22 Deny Malware
-Origin: LT
 5.181.160.0/22 Deny Malware
-45.10.16.0/22 Deny Malware
 45.67.229.0/24 Deny Malware
+45.81.253.0/24 Deny Malware
 91.208.162.0/24 Deny Malware
 91.208.184.0/24 Deny Malware
 91.208.197.0/24 Deny Malware
@@ -2824,19 +2841,50 @@ Origin: LT
 Origin: MD
 45.150.67.0/24 Deny Malware
 Origin: ME
-193.164.199.0/24 Deny Malware
-Origin: RS
+147.136.92.0/22 Deny Malware
+Origin: NL
+85.158.56.0/22 Deny Malware
+Origin: PL
+2.58.69.0/24 Deny Malware
 5.182.39.0/24 Deny Malware
+37.221.64.0/22 Deny Malware
 45.84.0.0/24 Deny Malware
+45.89.25.0/24 Deny Malware
+45.89.26.0/23 Deny Malware
+45.130.11.0/24 Deny Malware
+45.131.43.0/24 Deny Malware
+45.138.163.0/24 Deny Malware
 45.140.146.0/24 Deny Malware
 45.142.212.0/24 Deny Malware
 45.142.214.0/24 Deny Malware
+45.143.201.0/24 Deny Malware
 45.145.0.0/24 Deny Malware
+46.3.0.0/16 Deny Malware
+46.232.0.0/17 Deny Malware
+80.243.128.0/20 Deny Malware
 91.239.190.0/24 Deny Malware
+91.240.242.0/23 Deny Malware
+92.63.202.0/24 Deny Malware
+149.126.192.0/18 Deny Malware
+185.193.89.0/24 Deny Malware
 193.135.12.0/24 Deny Malware
+193.151.168.0/22 Deny Malware
 213.226.100.0/24 Deny Malware
 Origin: RU
-Profile: Frequent changes
+188.227.196.0/22 Deny Malware
+Origin: SY
+87.251.16.0/22 Deny Malware
+Origin: TR
+108.165.196.0/23 Deny Malware
+108.165.228.0/22 Deny Malware
+144.168.0.0/22 Deny Malware
+166.1.8.0/21 Deny Malware
+206.162.244.0/22 Deny Malware
+206.162.252.0/22 Deny Malware
+216.24.212.0/22 Deny Malware
+216.24.216.0/22 Deny Malware
+Origin: US
+Profile: Frequent changes;Tor endpoints here
 Tag: ALEXHOST SRL
 
 
@@ -5305,7 +5353,7 @@ Origin: US
 221.132.48.0/21 Deny Generic
 222.252.0.0/14 Deny Generic
 Origin: VN
-Profile: Domestic ISP
+Profile: Domestic ISP;Tor endpoints here
 Tag: VNPT Corp
 ---
 recaptcha:
@@ -8074,6 +8122,7 @@ Tag: Children Telemedicin
 171.25.193.0/24 Deny Spam
 194.0.61.0/24 Deny Spam
 Origin: SE
+Profile: Tor endpoints here
 Tag: Foreningen
 
 
@@ -11883,7 +11932,7 @@ recaptcha:
 178.165.0.0/17 Deny Spam
 185.147.96.0/22 Deny Spam
 Origin: UA
-Profile: Domestic ISP
+Profile: Domestic ISP;Tor endpoints here
 Tag: MAXNET TELECOM
 ---
 recaptcha:
@@ -12972,7 +13021,7 @@ recaptcha:
 173.69.176.204/32 Deny Spam
 173.70.13.68/32 Deny Spam
 Origin: US
-Profile: Domestic ISP
+Profile: Domestic ISP;Tor endpoints here
 Tag: Verizon Business/UUnet
 ---
 recaptcha:
@@ -14116,6 +14165,7 @@ recaptcha:
 91.92.219.0/24 Deny Spam
 91.92.230.0/24 Deny Spam
 Origin: BG
+Profile: Tor endpoints here
 Tag: Neterra Ltd
 ---
 recaptcha:
@@ -14163,7 +14213,7 @@ recaptcha:
 193.175.119.11/32 Deny Spam
 195.37.209.0/24 Deny Malware
 Origin: DE
-Profile: Infrastructure
+Profile: Infrastructure;Tor endpoints here
 Tag: DFN
 ---
 recaptcha:
@@ -14651,10 +14701,9 @@ recaptcha:
 # ASN 197595 ("Obenetwork AB").
 # Swedish multiplay network (broadband and webhosting services) and also a
 # source of spam. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 926.
-# Updated: 2020.12.18
+# Stop Forum Spam (SFS) listings: 969.
+# Updated: 2021.04.11
 
-45.15.16.0/24 Deny Spam
 193.180.164.0/24 Deny Spam
 Origin: SE
 Profile: Domestic ISP;Multiplay;Webhosting
@@ -16739,6 +16788,26 @@ recaptcha:
 Origin: IN
 Profile: Domestic ISP
 Tag: U.P. COMMUNICATION SERVICES PVT LTD
+---
+recaptcha:
+ enabled: true
+
+
+# ASN 9381 ("HKBN Enterprise Solutions HK Limited").
+# Hong Kong multiplay business network. Tor endpoints and spam detected here.
+# Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 207.
+# Updated: 2021.04.11
+
+101.78.203.141/32 Deny Spam
+103.234.220.0/24 Deny Malware
+175.45.58.0/24 Deny Spam
+202.155.204.182/32 Deny Spam
+202.155.208.130/32 Deny Spam
+223.255.129.22/32 Deny Spam
+Origin: HK
+Profile: Tor endpoints here
+Tag: HKBN Enterprise Solutions
 ---
 recaptcha:
  enabled: true

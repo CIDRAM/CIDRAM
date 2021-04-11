@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2021.04.09).
+ * This file: Front-end functions file (last modified: 2021.04.11).
  */
 
 /**
@@ -1487,7 +1487,13 @@ $CIDRAM['UpdatesHandler'] = function ($Action, $ID = '') use (&$CIDRAM) {
     /** Update (or install) and activate a component (one-step solution). */
     if ($Action === 'update-and-activate-component') {
         $CIDRAM['UpdatesHandler-Update']($ID);
-        $CIDRAM['UpdatesHandler-Activate']($ID);
+        if (
+            isset($CIDRAM['Components']['Meta'][$ID]) &&
+            $CIDRAM['IsActivable']($ID) &&
+            !$CIDRAM['IsInUse']($CIDRAM['Components']['Meta'][$ID])
+        ) {
+            $CIDRAM['UpdatesHandler-Activate']($ID);
+        }
     }
 
     /** Repair a component. */
@@ -1517,7 +1523,13 @@ $CIDRAM['UpdatesHandler'] = function ($Action, $ID = '') use (&$CIDRAM) {
 
     /** Deactivate and uninstall a component (one-step solution). */
     if ($Action === 'deactivate-and-uninstall-component') {
-        $CIDRAM['UpdatesHandler-Deactivate']($ID);
+        if (
+            isset($CIDRAM['Components']['Meta'][$ID]) &&
+            $CIDRAM['IsActivable']($ID) &&
+            $CIDRAM['IsInUse']($CIDRAM['Components']['Meta'][$ID])
+        ) {
+            $CIDRAM['UpdatesHandler-Deactivate']($ID);
+        }
         $CIDRAM['UpdatesHandler-Uninstall']($ID);
     }
 
@@ -1876,11 +1888,10 @@ $CIDRAM['UpdatesHandler-Activate'] = function ($ID) use (&$CIDRAM) {
     ];
     $InUse = $CIDRAM['ComponentFunctionUpdatePrep']($ID);
     $CIDRAM['FE']['state_msg'] .= '<code>' . $ID . '</code> – ';
-    if (
-        empty($InUse) &&
-        !empty($CIDRAM['Components']['Meta'][$ID]['Files']['To']) && (
-            !empty($CIDRAM['Components']['Meta'][$ID]['Used with']) || !empty($CIDRAM['Components']['Meta'][$ID]['Extended Description'])
-        )) {
+    if (empty($InUse) && !empty($CIDRAM['Components']['Meta'][$ID]['Files']['To']) && (
+        !empty($CIDRAM['Components']['Meta'][$ID]['Used with']) ||
+        !empty($CIDRAM['Components']['Meta'][$ID]['Extended Description'])
+    )) {
         $UsedWith = empty($CIDRAM['Components']['Meta'][$ID]['Used with']) ? '' : $CIDRAM['Components']['Meta'][$ID]['Used with'];
         $Description = empty($CIDRAM['Components']['Meta'][$ID]['Extended Description']) ? '' : $CIDRAM['Components']['Meta'][$ID]['Extended Description'];
         if ($UsedWith === 'ipv4' || strpos($Description, 'signatures-&gt;ipv4') !== false) {
@@ -1917,10 +1928,30 @@ $CIDRAM['UpdatesHandler-Activate'] = function ($ID) use (&$CIDRAM) {
         if (!empty($CIDRAM['Components']['Meta'][$ID]['When Activation Succeeds'])) {
             $CIDRAM['FE_Executor']($CIDRAM['Components']['Meta'][$ID]['When Activation Succeeds'], true);
         }
+        $Success = true;
     }
 
     /** Cleanup. */
     unset($CIDRAM['Activation']);
+
+    /** Deal with dependency activation. */
+    if (
+        !empty($Success) &&
+        !empty($CIDRAM['Components']['Meta'][$ID]['Dependencies']) &&
+        is_array($CIDRAM['Components']['Meta'][$ID]['Dependencies'])
+    ) {
+        foreach ($CIDRAM['Components']['Meta'][$ID]['Dependencies'] as $Dependency => $Constraints) {
+            if (
+                !isset($CIDRAM['Components']['Meta'][$Dependency]) ||
+                empty($CIDRAM['Components']['Installed Versions'][$Dependency]) ||
+                !$CIDRAM['IsActivable']($CIDRAM['Components']['Meta'][$Dependency]) ||
+                $CIDRAM['IsInUse']($CIDRAM['Components']['Meta'][$ThisTarget])
+            ) {
+                continue;
+            }
+            $CIDRAM['UpdatesHandler-Activate']($Dependency);
+        }
+    }
 };
 
 /**

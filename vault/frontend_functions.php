@@ -3201,7 +3201,7 @@ $CIDRAM['AuxGenerateFEData'] = function (bool $Mode = false) use (&$CIDRAM): str
             /** Rule reason. */
             $Output .= sprintf(
                 '<dl><dt class="s" id="%4$sruleReasonDt">%2$s</dt><dd id="%4$sruleReasonDd"><input type="text" name="ruleReason[%3$s]" class="f400" value="%1$s" /></dd></dl>',
-                isset($Data['Reason']) ? $Data['Reason'] : '',
+                $Data['Reason'] ?? '',
                 $CIDRAM['L10N']->getString('label_aux_reason'),
                 $Current,
                 $RuleClass
@@ -3210,7 +3210,7 @@ $CIDRAM['AuxGenerateFEData'] = function (bool $Mode = false) use (&$CIDRAM): str
             /** Redirect target. */
             $Output .= sprintf(
                 '<dl><dt class="s" id="%4$sruleTargetDt">%2$s</dt><dd id="%4$sruleTargetDd"><input type="text" name="ruleTarget[%3$s]" class="f400" value="%1$s" /></dd></dl>',
-                isset($Data['Target']) ? $Data['Target'] : '',
+                $Data['Target'] ?? '',
                 $CIDRAM['L10N']->getString('label_aux_target'),
                 $Current,
                 $RuleClass
@@ -3219,7 +3219,7 @@ $CIDRAM['AuxGenerateFEData'] = function (bool $Mode = false) use (&$CIDRAM): str
             /** Run target. */
             $Output .= sprintf(
                 '<dl><dt class="s" id="%4$sruleRunDt">%2$s</dt><dd id="%4$sruleRunDd"><input type="text" name="ruleRun[%3$s]" class="f400" value="%1$s" /></dd></dl>',
-                isset($Data['Run']['File']) ? $Data['Run']['File'] : '',
+                $Data['Run']['File'] ?? '',
                 $CIDRAM['L10N']->getString('label_aux_run'),
                 $Current,
                 $RuleClass
@@ -3500,7 +3500,7 @@ $CIDRAM['AuxGenerateFEData'] = function (bool $Mode = false) use (&$CIDRAM): str
                 if (!empty($Data[$Action[0]]['But not if matches'])) {
                     /** Iterate through sources. */
                     foreach ($Data[$Action[0]]['But not if matches'] as $Source => $Values) {
-                        $ThisSource = isset($Sources[$Source]) ? $Sources[$Source] : $Source;
+                        $ThisSource = $Sources[$Source] ?? $Source;
                         if (!is_array($Values)) {
                             $Values = [$Values];
                         }
@@ -4356,11 +4356,11 @@ $CIDRAM['CheckVersions'] = function (array &$Source, array &$To) use (&$CIDRAM):
  * Recursively replace strings by reference.
  *
  * @param string|array $In The data to be worked with.
- * @param string $What What to replace.
- * @param string $With What to replace it with.
+ * @param string|array $What What to replace.
+ * @param string|array $With What to replace it with.
  * @return void
  */
-$CIDRAM['RecursiveReplace'] = function (&$In, string $What, string $With) use (&$CIDRAM): void {
+$CIDRAM['RecursiveReplace'] = function (&$In, $What, $With) use (&$CIDRAM): void {
     if (is_string($In)) {
         $In = str_replace($What, $With, $In);
     }

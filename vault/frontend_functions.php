@@ -4068,8 +4068,8 @@ $CIDRAM['CheckVersions'] = function (array &$Source, array &$To) use (&$CIDRAM) 
  * Recursively replace strings by reference.
  *
  * @param string|array $In The data to be worked with.
- * @param string $What What to replace.
- * @param string $With What to replace it with.
+ * @param string|array $What What to replace.
+ * @param string|array $With What to replace it with.
  * @return void
  */
 $CIDRAM['RecursiveReplace'] = function (&$In, $What, $With) use (&$CIDRAM) {

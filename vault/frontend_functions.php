@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2021.04.11).
+ * This file: Front-end functions file (last modified: 2021.04.12).
  */
 
 /**
@@ -3140,6 +3140,9 @@ $CIDRAM['AuxGenerateFEData'] = function (bool $Mode = false) use (&$CIDRAM): str
     /** Count entries (needed for offering first and last move options). */
     $Count = count($CIDRAM['AuxData']);
 
+    /** Make entries safe for display at the front-end. */
+    $CIDRAM['RecursiveReplace']($CIDRAM['AuxData'], ['<', '>', '"'], ['&lt;', '&gt;', '&quot;']);
+
     if ($Mode) {
         /** Append empty rule if editing. */
         $CIDRAM['AuxData'][' '] = [];
@@ -4345,6 +4348,25 @@ $CIDRAM['CheckVersions'] = function (array &$Source, array &$To) use (&$CIDRAM):
     foreach ($Source as $Key => &$Component) {
         if (!empty($Component['Version']) && !empty($Component['Files']['To'])) {
             $To[$Key] = $Component['Version'];
+        }
+    }
+};
+
+/**
+ * Recursively replace strings by reference.
+ *
+ * @param string|array $In The data to be worked with.
+ * @param string $What What to replace.
+ * @param string $With What to replace it with.
+ * @return void
+ */
+$CIDRAM['RecursiveReplace'] = function (&$In, string $What, string $With) use (&$CIDRAM): void {
+    if (is_string($In)) {
+        $In = str_replace($What, $With, $In);
+    }
+    if (is_array($In)) {
+        foreach ($In as &$Item) {
+            $CIDRAM['RecursiveReplace']($Item, $What, $With);
         }
     }
 };

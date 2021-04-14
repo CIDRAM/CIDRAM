@@ -1,14 +1,13 @@
 ---
 CIDRAM Core:
  Name: CIDRAM Core
- Version: 2.5.1
+ Version: 2.5.2-DEV+21103596
  Minimum Required: 2.0.0
  Dependencies:
   PHP: >=7.2
   Common Classes Package: ^2.6.0.1
   CIDRAM Front-End: Latest
-  l10n/{lang}: Latest
-  theme/{theme}: Latest
+  l10n/{lang}: >=2021.95.583
  Changelog: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v2/Changelog.txt
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v2/vault/components.dat
  When Update Succeeds:
@@ -62,14 +61,13 @@ CIDRAM Core:
  Reannotate: components.dat
 CIDRAM Front-End:
  Name: CIDRAM Front-End
- Version: 2.5.2-DEV+21101520
+ Version: 2.5.2-DEV+21103596
  Minimum Required: 2.0.0
  Dependencies:
   PHP: >=7.2
   Common Classes Package: ^2.6.0.1
   CIDRAM Core: Latest
-  l10n/{lang}: Latest
-  theme/{theme}: Latest
+  l10n/{lang}: >=2021.95.583
  Changelog: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v2/Changelog.txt
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v2/vault/components.dat
  Files:
@@ -216,7 +214,7 @@ CIDRAM Front-End:
    - 8627543d60036a14e2d1033e63cd703d64b83ebc539d05b40b2aeedbb5d2f2a7:765
    - ebfbd6a90a244ad3f638cbe044dd661fa435ff4094fb63312346f786336b2960:996
    - 4c206d6c04a90c1ae869c9f2043119b568da4fdc1f02f9cfc7be7ec133fcf91f:237778
-   - 35a8f10a48b78d1441a9e2b519b84936e49d6d5f0835433ed8de98f291c7c06a:197520
+   - 6837cc60d8a698f26e66a8d2a4ffc6c53c06f35ba439ff3343ee9cb8869f05b0:197265
  Reannotate: components.dat
 Common Classes Package:
  Name: Common Classes Package

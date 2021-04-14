@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2021.04.12).
+ * This file: Front-end functions file (last modified: 2021.04.14).
  */
 
 /**
@@ -3981,14 +3981,7 @@ $CIDRAM['CheckConstraints'] = function (array &$ThisComponent, $Source = false, 
         return;
     }
     foreach ($ThisComponent['Dependencies'] as $Dependency => $Constraints) {
-        if (strpos($Dependency, '{theme}') !== false && $CIDRAM['Config']['template_data']['theme'] === 'default') {
-            continue;
-        }
-        $Dependency = str_replace(
-            ['{lang}', '{theme}'],
-            [$CIDRAM['Config']['general']['lang'], $CIDRAM['Config']['template_data']['theme']],
-            $Dependency
-        );
+        $Dependency = str_replace('{lang}', $CIDRAM['Config']['general']['lang'], $Dependency);
         if ($Constraints === 'Latest') {
             if (isset($CIDRAM['Components']['Available Versions'][$Dependency])) {
                 $Constraints = '>=' . $CIDRAM['Components']['Available Versions'][$Dependency];

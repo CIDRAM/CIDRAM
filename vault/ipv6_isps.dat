@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_isps.dat
 
-# Version: 2021.100.350
-# Last modified: 2021.04.11
+# Version: 2021.105.157
+# Last modified: 2021.04.16
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage, i.e., with ignore.dat, with reCAPTCHA, with "extended rules" (default bypasses): « [ ]Low [x]Medium [ ]High »
@@ -2299,12 +2299,14 @@ recaptcha:
 # ASN 8151 ("Uninet S.A. de C.V").
 # Mexican domestic ISP. Spam and brute-force attacks detected from here.
 # Listing just the affected ranges/addresses, plus US ranges (cloud).
-# %Listed, abuseat.org (CBL-Listed): 0.37%.
-# Stop Forum Spam (SFS) listings: 2,205.
-# Updated: 2021.02.27
+# %Listed, abuseat.org (CBL-Listed): 0.29%.
+# Stop Forum Spam (SFS) listings: 2,829.
+# Updated: 2021.04.16
 
+2806:104e:9:c599::/64 Deny Spam
 2806:105e:14:d416::/64 Deny Malware
-2806:10a6:10:9649::/64 Deny Spam
+2806:107e:f:4530::/64 Deny Spam
+2806:10ae:10:2b67::/64 Deny Malware
 Origin: MX
 2600:141c:7::/48 Deny Cloud
 2600:141c:5000::/48 Deny Cloud
@@ -2747,19 +2749,22 @@ recaptcha:
  enabled: true
 
 
-# ASN 3243 ("MEO - SERVICOS DE COMUNICACOES E MULTIMEDIA S.A").
-# Portuguese domestic ISP. Caught by honeypots.
-# Listing just the affected ranges/addresses only.
-# %Listed, abuseat.org (CBL-Listed): 1.67%.
-# Stop Forum Spam (SFS) listings: 1,058.
-# Updated: 2021.02.26
+# ASNs 3243, 42863 ("MEO - SERVICOS DE COMUNICACOES E MULTIMEDIA S.A").
+# Portuguese domestic ISP. Caught by honeypots. Port scans and hack attempts
+# detected from here. Listing just the affected ranges/addresses only.
+# %Listed, abuseat.org (CBL-Listed): 0.98% (AS3243).
+# Stop Forum Spam (SFS) listings: 1,159 (AS3243), 53 (AS42863).
+# Updated: 2021.04.12
 
-2001:8a0:7dc3:8f00::/64 Deny Spam
-2001:8a0:e616:3f00::/64 Deny Spam
-2001:8a0:e622:2400::/64 Deny Spam
-2001:8a0:e625:a600::/64 Deny Spam
-2001:8a0:ebc1:e601::/64 Deny Spam
+2001:8a0:6020:a301::/64 Deny Spam
+2001:8a0:6072:500::/64 Deny Spam
+2001:8a0:e601:b600::/64 Deny Spam
+2001:8a0:e602:bb00::/64 Deny Spam
+2001:8a0:e604:5e00::/64 Deny Spam
+2001:8a0:e605:2600::/64 Deny Spam
+2001:8a0:ece2:cb01::/64 Deny Spam
 2001:8a0:fbc6:9d01::/64 Deny Malware
+2001:8a0:fe37:e300::/64 Deny Spam
 Origin: PT
 Profile: Domestic ISP
 Tag: MEO
@@ -2836,3 +2841,18 @@ recaptcha:
 Origin: FR
 Profile: Domestic ISP;Infrastructure;Multiplay
 Tag: Orange S.A
+
+
+# ASN 3265 ("Xs4all Internet BV").
+# Dutch domestic ISP. Spam, SSH hack attempts, various unwanted traffic and tor
+# endpoints detected here. Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 862.
+# Updated: 2021.04.14
+
+2001:985:6ca9:f1::/64 Deny Spam
+Origin: NL
+Profile: Domestic ISP;Tor endpoints here
+Tag: Xs4all Internet BV
+---
+recaptcha:
+ enabled: true

@@ -1,8 +1,8 @@
 # IPv4 signatures file (CIDRs for proxies, VPNs and other miscellaneous unwanted services).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv4_other.dat
 
-# Version: 2021.100.350
-# Last modified: 2021.04.11
+# Version: 2021.105.157
+# Last modified: 2021.04.16
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage, i.e., with ignore.dat, with reCAPTCHA, with "extended rules" (default bypasses): « [ ]Low [x]Medium [ ]High »
@@ -1314,6 +1314,36 @@ Tag: Web2Objects LLC
 185.147.213.0/24 Deny Proxy
 Origin: US
 Tag: OverPlay.Net LP
+---
+recaptcha:
+ enabled: true
+
+
+# ASN 209854 ("Surfshark Ltd").
+# A paid VPN provider. Brute-force and SSH attacks detected from here.
+# Stop Forum Spam (SFS) listings: 55.
+# Updated: 2021.04.16
+
+31.169.120.0/22 Deny Proxy
+45.129.32.0/24 Deny Proxy
+45.134.224.0/24 Deny Proxy
+83.97.112.0/22 Deny Proxy
+176.227.240.0/23 Deny Proxy
+Origin: DE
+194.41.112.0/23 Deny Proxy
+194.41.114.0/24 Deny Proxy
+Origin: LT
+45.130.137.0/24 Deny Proxy
+45.130.139.0/24 Deny Proxy
+45.149.3.0/24 Deny Proxy
+91.190.100.0/22 Deny Proxy
+91.206.168.0/24 Deny Proxy
+185.244.139.0/24 Deny Proxy
+193.218.35.0/24 Deny Proxy
+Origin: NL
+92.249.36.0/22 Deny Proxy
+Origin: VG
+Tag: Surfshark Ltd
 ---
 recaptcha:
  enabled: true

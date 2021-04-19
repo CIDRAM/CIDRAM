@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2021.04.04).
+ * This file: Functions file (last modified: 2021.04.19).
  */
 
 /**
@@ -1665,13 +1665,16 @@ $CIDRAM['ResetBypassFlags'] = function () use (&$CIDRAM) {
  *      returns an empty string.
  */
 $CIDRAM['BuildPath'] = function ($Path, $PointsToFile = true) use (&$CIDRAM) {
-    /** Guard. */
-    if (!is_string($Path) || empty($Path)) {
+    /** Input guard. */
+    if (!is_string($Path) || !strlen($Path)) {
         return '';
     }
 
     /** Applies time/date replacements. */
     $Path = $CIDRAM['TimeFormat']($CIDRAM['Now'], $Path);
+
+    /** We'll skip is_dir/mkdir calls if open_basedir is populated (to avoid PHP bug #69240). */
+    $Restrictions = strlen(ini_get('open_basedir')) > 0;
 
     /** Split path into steps. */
     $Steps = preg_split('~[\\\/]~', $Path, -1, PREG_SPLIT_NO_EMPTY);
@@ -1689,9 +1692,14 @@ $CIDRAM['BuildPath'] = function ($Path, $PointsToFile = true) use (&$CIDRAM) {
         if (preg_match('~^\.+$~', $Step)) {
             continue;
         }
-        if (!is_dir($Rebuilt) && !mkdir($Rebuilt)) {
+        if (!$Restrictions && !is_dir($Rebuilt) && !mkdir($Rebuilt)) {
             return '';
         }
+    }
+
+    /** Ensure rebuilt is defined. */
+    if (!isset($Rebuilt)) {
+        $Rebuilt = '';
     }
 
     /** Return an empty string if the final rebuilt path isn't writable. */

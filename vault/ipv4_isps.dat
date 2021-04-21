@@ -1,8 +1,8 @@
 # IPv4 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv4_isps.dat
 
-# Version: 2021.105.157
-# Last modified: 2021.04.16
+# Version: 2021.110.593
+# Last modified: 2021.04.21
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage, i.e., with ignore.dat, with reCAPTCHA, with "extended rules" (default bypasses): « [ ]Low [x]Medium [ ]High »
@@ -2435,14 +2435,14 @@ recaptcha:
 
 # ASN 23888 ("National Telecommunication Corporation HQ").
 # A domestic ISP from Pakistan caught spamming, hacking, port scanning,
-# brute-forcing, etc; currently only listing 175.107.* addresses, as the
+# brute-forcing, etc. Currently only listing 175.107.* addresses, as the
 # unwanted activity seems limited to those ranges at this time.
-# Stop Forum Spam (SFS) listings: 272.
-# Updated: 2020.10.05
+# Stop Forum Spam (SFS) listings: 124.
+# Updated: 2021.04.21
 
 175.107.0.0/19 Deny Spam
 175.107.32.0/24 Deny Spam
-175.107.34.0/23 Deny Spam
+175.107.35.0/24 Deny Spam
 175.107.36.0/22 Deny Spam
 175.107.40.0/21 Deny Spam
 175.107.48.0/21 Deny Spam
@@ -2461,8 +2461,8 @@ recaptcha:
 # hack attempts. Websites targeted towards an Indian audience should keep it
 # listed in their ignore.dat file. Marked for use with reCAPTCHA. Only listing
 # IPv4 for now, since IPv6 addresses at their network seem clean at the moment.
-# Stop Forum Spam (SFS) listings: 237.
-# Updated: 2020.10.05
+# Stop Forum Spam (SFS) listings: 102.
+# Updated: 2021.04.21
 
 43.239.80.0/22 Deny Spam
 43.251.168.0/21 Deny Spam
@@ -2473,28 +2473,28 @@ recaptcha:
 45.248.56.0/22 Deny Spam
 45.251.60.0/22 Deny Spam
 103.10.208.0/22 Deny Spam
-103.27.2.0/24 Deny Spam
 103.27.140.0/22 Deny Spam
 103.56.236.0/22 Deny Spam
-103.66.54.0/24 Deny Spam
+103.59.88.0/24 Deny Spam
+103.60.219.0/24 Deny Spam
 103.76.80.0/22 Deny Spam
 103.80.172.0/22 Deny Spam
 103.86.20.0/22 Deny Spam
 103.93.100.0/22 Deny Spam
-103.130.110.0/24 Deny Spam
 103.132.170.0/24 Deny Spam
 103.192.60.0/22 Deny Spam
 103.193.88.0/22 Deny Spam
 103.199.97.0/24 Deny Spam
+103.205.163.0/24 Deny Spam
 103.216.204.0/22 Deny Spam
-103.228.250.0/23 Deny Spam
+103.234.93.0/24 Deny Spam
 103.244.240.0/22 Deny Spam
 103.245.2.0/24 Deny Spam
 103.251.80.0/22 Deny Spam
 114.29.224.0/22 Deny Spam
+139.5.140.0/22 Deny Spam
 150.129.108.0/22 Deny Spam
 150.129.132.0/22 Deny Spam
-180.188.241.0/24 Deny Spam
 203.115.87.0/24 Deny Spam
 203.147.88.0/22 Deny Spam
 223.29.192.0/20 Deny Spam
@@ -10079,19 +10079,29 @@ Tag: Redes y Telecomunicaciones
 
 
 # ASN 11888 ("Television Internacional, S.A. de C.V.").
-# Multiplay network. Difficult to get proper, reliable information about them,
-# because they block access to their website for traffic originating from
-# outside of Mexico. Listed are due to detected/reported spam incidents. To
-# avoid false positives, listing only the affected ranges (i.e., not the entire
-# network). Hope to eventually delist entirely.
-# Stop Forum Spam (SFS) listings: 84.
-# Updated: 2020.10.05
+# Mexican multiplay network. Difficult to get proper, reliable information
+# about them, due to blocking access for traffic originating from outside of
+# Mexico. Listing just the affected ranges/addresses only. US ranges as cloud.
+# Stop Forum Spam (SFS) listings: 111.
+# Updated: 2021.04.21
 
-187.160.10.49/32 Deny Spam
-187.161.106.113/32 Deny Spam
+187.160.8.116/32 Deny Spam
+187.161.8.0/24 Deny Malware
+187.161.18.129/32 Deny Spam
+187.161.53.193/32 Deny Spam
+187.161.92.165/32 Deny Spam
+187.161.146.241/32 Deny Spam
+187.161.242.89/32 Deny Spam
+189.218.31.163/32 Deny Spam
 200.188.154.9/32 Deny Spam
+201.172.137.31/32 Deny Spam
+201.172.232.65/32 Deny Spam
+201.172.235.103/32 Deny Spam
+201.175.96.139/32 Deny Spam
 207.248.62.98/32 Deny Malware
 Origin: MX
+38.96.244.0/24 Deny Cloud
+Origin: US
 Profile: Domestic ISP;Multiplay
 Tag: TV Internacional
 
@@ -12600,12 +12610,13 @@ recaptcha:
 # ASN 51155 ("TB Telecom Sp. z o. o").
 # Polish domestic ISP. Also a source of spam and brute-force attacks.
 # For now, listing just the affected ranges/addresses; not the entire network.
-# Stop Forum Spam (SFS) listings: 172.
-# Updated: 2020.10.05
+# Stop Forum Spam (SFS) listings: 168.
+# Updated: 2021.04.21
 
+46.227.36.117/32 Deny Spam
+46.227.36.147/32 Deny Spam
 46.227.39.0/24 Deny Malware
-178.19.179.241/32 Deny Malware
-178.19.187.84/32 Deny Malware
+178.19.179.0/24 Deny Malware
 Origin: PL
 Profile: Domestic ISP
 Tag: TB Telecom
@@ -14371,10 +14382,13 @@ recaptcha:
 # Webhosting and colocation provider, and also a source of spam and other
 # unwanted traffic. Placed into the ISPs file and marked with reCAPTCHA due to
 # the risk of false positives (some companies and networks in Stockholm may use
-# this network).
-# Stop Forum Spam (SFS) listings: 3,966.
-# Updated: 2020.11.09
+# this network). NL ranges as proxy.
+# Stop Forum Spam (SFS) listings: 6,096.
+# Updated: 2021.04.21
 
+193.19.108.0/24 Deny Proxy
+194.242.2.0/24 Deny Proxy
+Origin: NL
 45.83.220.0/24 Deny Spam
 45.129.56.0/24 Deny Spam
 45.159.212.0/22 Deny Spam
@@ -16192,11 +16206,11 @@ Tag: DINAS KOMUNIKASI
 95.82.124.88/32 Deny Spam
 109.166.58.0/24 Deny Spam
 109.166.76.0/24 Deny Spam
-109.206.1.23/32 Deny Spam
-109.206.1.129/32 Deny Spam
 109.201.35.228/32 Deny Spam
 109.201.38.0/24 Deny Spam
 109.201.52.180/32 Deny Spam
+109.206.1.23/32 Deny Spam
+109.206.1.129/32 Deny Spam
 109.206.12.194/32 Deny Spam
 109.206.13.35/32 Deny Spam
 109.206.24.235/32 Deny Spam
@@ -16929,6 +16943,30 @@ recaptcha:
 Origin: RU
 Profile: Domestic ISP;Infrastructure;Multiplay;Webhosting
 Tag: Netorn LLC
+---
+recaptcha:
+ enabled: true
+
+
+# ASN 38277 ("CommuniLink Internet").
+# Hong Kong domestic ISP. Occasional SQL injection and brute-force attempts
+# detected from this network. Listing just the affected ranges/addresses only.
+# Updated: 2021.04.21
+
+58.82.192.231/32 Deny Malware
+58.82.195.147/32 Deny Malware
+103.28.44.0/23 Deny Malware
+103.28.46.173/32 Deny Malware
+103.28.47.0/24 Deny Malware
+203.124.10.0/24 Deny Malware
+203.124.11.155/32 Deny Malware
+203.124.12.192/32 Deny Malware
+203.124.13.186/32 Deny Malware
+203.124.14.0/24 Deny Malware
+203.124.15.197/32 Deny Malware
+Origin: HK
+Profile: Domestic ISP;Infrastructure
+Tag: CommuniLink Internet
 ---
 recaptcha:
  enabled: true

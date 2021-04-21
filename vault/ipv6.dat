@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6.dat
 
-# Version: 2021.105.157
-# Last modified: 2021.04.16
+# Version: 2021.110.593
+# Last modified: 2021.04.21
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage, i.e., with ignore.dat, with reCAPTCHA, with "extended rules" (default bypasses): « [x]Low [ ]Medium [ ]High »
@@ -69,8 +69,8 @@ Tag: ShangHai AnchNet Tec
 
 
 # ASN 7497 ("Computer Network Information Center").
-# Stop Forum Spam (SFS) listings: 6.
-# Updated: 2020.09.30
+# Stop Forum Spam (SFS) listings: 13.
+# Updated: 2020.09.30 / Checked: 2021.04.21
 
 2400:dd00::/28 Deny Cloud
 2401:de00::/32 Deny Cloud
@@ -79,19 +79,17 @@ Tag: CST-NET
 
 
 # ASN 46573 ("Global Frag Networks").
-# Stop Forum Spam (SFS) listings: 590.
-# Updated: 2020.10.05
+# Stop Forum Spam (SFS) listings: 402.
+# Updated: 2021.04.21
 
 2602:fdd3::/36 Deny Cloud
 Origin: CA
-2a0f:100::/29 Deny Cloud
-Origin: IE
+2a07:f240::/29 Deny Cloud
+Origin: LT
 2604:d180::/32 Deny Cloud
-2605:5fc1::/32 Deny Cloud
-2605:5fc2::/32 Deny Cloud
 2605:5fc8::/32 Deny Cloud
-2605:5fcd::/32 Deny Cloud
 Origin: US
+Profile: Infrastructure;Webhosting
 Tag: Global Frag Networks
 
 
@@ -3809,14 +3807,16 @@ Tag: Node4 Limited
 
 
 # ASNs 29757, 263179, 394474 ("Webline Services Inc", "Webline Services, S.A", "WhiteLabelColo").
-# Stop Forum Spam (SFS) listings: 3,084 (AS263179), 2,108 (AS394474).
-# Updated: 2020.09.30
+# Refer scamalytics.com/ip/isp/whitelabelcolo
+# Stop Forum Spam (SFS) listings: 7,483 (AS263179), 8,223 (AS394474).
+# Updated: 2020.09.30 / Checked: 2021.04.21
 
 2803:c880::/32 Deny Cloud
 Origin: HN
 2604:d680::/48 Deny Cloud
 2604:d680:5::/48 Deny Cloud
 Origin: US
+Profile: Webhosting
 Tag: Webline/WhiteLabel
 
 
@@ -5810,13 +5810,11 @@ Tag: Kazi Sazzad Hossain
 
 # ASNs 39535, 62217 ("VooServers Ltd").
 # Cloud provider; Source of spam and other unwanted traffic.
-# Stop Forum Spam (SFS) listings: 6 (AS62217).
-# Updated: 2020.09.30
+# Stop Forum Spam (SFS) listings: 75 (AS62217).
+# Updated: 2021.04.21
 
-2a06:1287:2600::/44 Deny Cloud
-Origin: BY
 2a0b:4040::/29 Deny Cloud
-Origin: DE
+Origin: CA
 2001:67c:2e68::/47 Deny Cloud
 Origin: FR
 2a01:6c60::/30 Deny Cloud
@@ -5829,9 +5827,11 @@ Origin: GB
 Origin: NL
 2605:45c0::/35 Deny Cloud
 2607:6980::/43 Deny Cloud
+2a06:1287:2600::/44 Deny Cloud
 Origin: US
 2c0f:f7e8::/47 Deny Cloud
 Origin: ZA
+Profile: Infrastructure;Webhosting
 Tag: VooServers Ltd
 
 
@@ -6098,21 +6098,31 @@ Tag: IT-GRAD NL B.V
 
 # ASN 136907 ("HUAWEI CLOUDS").
 # A source of forum spam and caught hitting honeypots.
-# Stop Forum Spam (SFS) listings: 1,533.
-# Updated: 2020.10.05
+# Stop Forum Spam (SFS) listings: 451.
+# Updated: 2021.04.21
 
 2405:f080::/39 Deny Cloud
 2405:f080:200::/48 Deny Cloud
 2405:f080:400::/39 Deny Cloud
 2405:f080:600::/48 Deny Cloud
+2405:f080:810::/44 Deny Cloud
 2405:f080:e00::/47 Deny Cloud
 2405:f080:e08::/47 Deny Cloud
 2405:f080:1000::/38 Deny Cloud
-2405:f080:1e02::/47 Deny Cloud
-2405:f080:2000::/39 Deny Cloud
+2405:f080:1400::/47 Deny Cloud
+2405:f080:1600::/48 Deny Cloud
+2405:f080:1602::/48 Deny Cloud
+2405:f080:1e00::/46 Deny Cloud
+2405:f080:1e0a::/47 Deny Cloud
+2405:f080:1e0e::/47 Deny Cloud
+2405:f080:1e10::/45 Deny Cloud
+2405:f080:1e18::/46 Deny Cloud
+2405:f080:1e1c::/47 Deny Cloud
+2405:f080:2000::/38 Deny Cloud
 2405:f080:2400::/39 Deny Cloud
 2405:f080:2e00::/47 Deny Cloud
 Origin: SG
+Profile: Infrastructure;Webhosting
 Tag: HUAWEI CLOUDS
 
 
@@ -7017,11 +7027,12 @@ Tag: Aixit GmbH
 
 # ASNs 25697, 202053 ("UpCloud USA Inc", "UpCloud Ltd").
 # Dedicated cloud provider and a source of spam.
-# Stop Forum Spam (SFS) listings: 484 (AS25697), 837 (AS202053).
-# Updated: 2020.04.10 / Checked: 2020.10.05
+# Stop Forum Spam (SFS) listings: 88 (AS25697), 192 (AS202053).
+# Updated: 2021.04.21
 
 2a04:3540::/30 Deny Cloud
 2a04:3544::/31 Deny Cloud
+2a04:3546::/32 Deny Cloud
 Origin: FI
 2a03:3b00:1::/48 Deny Cloud
 2a03:3b00:2::/48 Deny Cloud
@@ -7030,7 +7041,7 @@ Origin: NL
 2604:ed40::/32 Deny Cloud
 2605:7380::/32 Deny Cloud
 Origin: US
-Profile: Dedicated
+Profile: Dedicated;Webhosting
 Tag: UpCloud
 
 

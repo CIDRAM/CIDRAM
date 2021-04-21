@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_isps.dat
 
-# Version: 2021.105.157
-# Last modified: 2021.04.16
+# Version: 2021.110.593
+# Last modified: 2021.04.21
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage, i.e., with ignore.dat, with reCAPTCHA, with "extended rules" (default bypasses): « [ ]Low [x]Medium [ ]High »
@@ -2070,8 +2070,8 @@ recaptcha:
 2601:204:d401:8ad0::/64 Deny Spam
 2601:205:c200:6480::/64 Deny Spam
 2601:2c7:4480:2980::/64 Deny Spam
-2603:3005:6077:2000::19c8/125 Deny Malware
 2601:441:8780:8f20:2811:2cec::/95 Deny Malware
+2603:3005:6077:2000::19c8/125 Deny Malware
 Origin: US
 Profile: Domestic ISP
 Tag: Comcast Spam IPs
@@ -2603,10 +2603,12 @@ recaptcha:
 # Webhosting and colocation provider, and also a source of spam and other
 # unwanted traffic. Placed into the ISPs file and marked with reCAPTCHA due to
 # the risk of false positives (some companies and networks in Stockholm may use
-# this network).
-# Stop Forum Spam (SFS) listings: 3,966.
-# Updated: 2020.11.09
+# this network). NL ranges as proxy.
+# Stop Forum Spam (SFS) listings: 6,096.
+# Updated: 2021.04.21
 
+2a07:e340::/32 Deny Proxy
+Origin: NL
 2a03:1b20:1::/48 Deny Spam
 2a03:1b20:2::/47 Deny Spam
 2a03:1b20:4::/46 Deny Spam

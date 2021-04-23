@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2021.04.14).
+ * This file: Front-end functions file (last modified: 2021.04.23).
  */
 
 /**
@@ -1473,10 +1473,22 @@ $CIDRAM['UpdatesSortFunc'] = function (array $Arr) use (&$CIDRAM) {
  */
 $CIDRAM['UpdatesHandler'] = function ($Action, $ID = '') use (&$CIDRAM) {
     /** Support for executor calls. */
-    if (empty($ID) && ($Pos = strpos($Action, ' ')) !== false) {
+    if ($ID === '' && ($Pos = strpos($Action, ' ')) !== false) {
         $ID = substr($Action, $Pos + 1);
         $Action = trim(substr($Action, 0, $Pos));
         $ID = (strpos($ID, ',') === false) ? trim($ID) : array_map('trim', explode(',', $ID));
+    }
+
+    /** Strip empty IDs. */
+    if (is_array($ID)) {
+        $ID = array_filter($ID, function($Value) {
+            return $Value !== '';
+        });
+    }
+
+    /** Guard. */
+    if (empty($ID)) {
+        return;
     }
 
     /** Update (or install) a component. */
@@ -1486,13 +1498,16 @@ $CIDRAM['UpdatesHandler'] = function ($Action, $ID = '') use (&$CIDRAM) {
 
     /** Update (or install) and activate a component (one-step solution). */
     if ($Action === 'update-and-activate-component') {
-        $CIDRAM['UpdatesHandler-Update']($ID);
-        if (
-            isset($CIDRAM['Components']['Meta'][$ID]) &&
-            $CIDRAM['IsActivable']($ID) &&
-            !$CIDRAM['IsInUse']($CIDRAM['Components']['Meta'][$ID])
-        ) {
-            $CIDRAM['UpdatesHandler-Activate']($ID);
+        $CIDRAM['Arrayify']($ID);
+        foreach ($ID as $ThisID) {
+            $CIDRAM['UpdatesHandler-Update']([$ThisID]);
+            if (
+                isset($CIDRAM['Components']['Meta'][$ThisID]) &&
+                $CIDRAM['IsActivable']($CIDRAM['Components']['Meta'][$ThisID]) &&
+                !$CIDRAM['IsInUse']($CIDRAM['Components']['Meta'][$ThisID])
+            ) {
+                $CIDRAM['UpdatesHandler-Activate']([$ThisID]);
+            }
         }
     }
 
@@ -1523,14 +1538,17 @@ $CIDRAM['UpdatesHandler'] = function ($Action, $ID = '') use (&$CIDRAM) {
 
     /** Deactivate and uninstall a component (one-step solution). */
     if ($Action === 'deactivate-and-uninstall-component') {
-        if (
-            isset($CIDRAM['Components']['Meta'][$ID]) &&
-            $CIDRAM['IsActivable']($ID) &&
-            $CIDRAM['IsInUse']($CIDRAM['Components']['Meta'][$ID])
-        ) {
-            $CIDRAM['UpdatesHandler-Deactivate']($ID);
+        $CIDRAM['Arrayify']($ID);
+        foreach ($ID as $ThisID) {
+            if (
+                isset($CIDRAM['Components']['Meta'][$ThisID]) &&
+                $CIDRAM['IsActivable']($CIDRAM['Components']['Meta'][$ThisID]) &&
+                $CIDRAM['IsInUse']($CIDRAM['Components']['Meta'][$ThisID])
+            ) {
+                $CIDRAM['UpdatesHandler-Deactivate']([$ThisID]);
+            }
+            $CIDRAM['UpdatesHandler-Uninstall']([$ThisID]);
         }
-        $CIDRAM['UpdatesHandler-Uninstall']($ID);
     }
 
     /** Process and empty executor queue. */

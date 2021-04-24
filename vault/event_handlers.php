@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Event handlers file (last modified: 2021.04.04).
+ * This file: Event handlers file (last modified: 2021.04.24).
  */
 
 /**
@@ -115,50 +115,6 @@ $CIDRAM['Events']->addHandler('writeToLog', function () use (&$CIDRAM): bool {
     fclose($File);
     if ($WriteMode === 'wb') {
         $CIDRAM['LogRotation']($CIDRAM['Config']['general']['logfile_serialized']);
-    }
-    return true;
-});
-
-/**
- * Writing to the reCAPTCHA logfile (if this has been enabled).
- *
- * @return bool True on success; False on failure.
- */
-$CIDRAM['Events']->addHandler('reCaptchaLog', function () use (&$CIDRAM): bool {
-    /** Guard. */
-    if (
-        !$CIDRAM['reCAPTCHA']['Loggable'] ||
-        empty($CIDRAM['BlockInfo']) ||
-        !$CIDRAM['Config']['recaptcha']['logfile'] ||
-        !($Filename = $CIDRAM['BuildPath']($CIDRAM['Vault'] . $CIDRAM['Config']['recaptcha']['logfile']))
-    ) {
-        return false;
-    }
-
-    $WriteMode = !file_exists($Filename) || (
-        $CIDRAM['Config']['general']['truncate'] > 0 &&
-        filesize($Filename) >= $CIDRAM['ReadBytes']($CIDRAM['Config']['general']['truncate'])
-    ) ? 'wb' : 'ab';
-    $Data = sprintf(
-        "%1\$s%2\$s - %3\$s%4\$s - %5\$s%6\$s\n",
-        $CIDRAM['L10N']->getString('field_ipaddr'),
-        $CIDRAM['Config']['legal']['pseudonymise_ip_addresses'] ? $CIDRAM['Pseudonymise-IP']($_SERVER[$CIDRAM['IPAddr']]) : $_SERVER[$CIDRAM['IPAddr']],
-        $CIDRAM['L10N']->getString('field_datetime'),
-        $CIDRAM['BlockInfo']['DateTime'],
-        $CIDRAM['L10N']->getString('field_captcha'),
-        $CIDRAM['BlockInfo']['reCAPTCHA']
-    );
-
-    /** Adds a second newline to match the standard block events logfile in case of combining the logfiles. */
-    if ($CIDRAM['Config']['recaptcha']['logfile'] === $CIDRAM['Config']['general']['logfile']) {
-        $Data .= "\n";
-    }
-
-    $File = fopen($Filename, $WriteMode);
-    fwrite($File, $Data);
-    fclose($File);
-    if ($WriteMode === 'wb') {
-        $CIDRAM['LogRotation']($CIDRAM['Config']['recaptcha']['logfile']);
     }
     return true;
 });

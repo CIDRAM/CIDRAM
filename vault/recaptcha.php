@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: reCAPTCHA module (last modified: 2021.04.04).
+ * This file: reCAPTCHA module (last modified: 2021.04.24).
  */
 
 /**
@@ -78,7 +78,7 @@ $CIDRAM['reCAPTCHA']['GenerateFailed'] = function () use (&$CIDRAM): void {
     $CIDRAM['BlockInfo']['reCAPTCHA'] = $CIDRAM['L10N']->getString('state_failed');
     /** Append to reCAPTCHA statistics if necessary. */
     if ($CIDRAM['Config']['general']['statistics']) {
-        $CIDRAM['Statistics']['reCAPTCHA-Failed']++;
+        $CIDRAM['Statistics']['CAPTCHAs-Failed']++;
         $CIDRAM['Statistics-Modified'] = true;
     }
 };
@@ -94,7 +94,7 @@ $CIDRAM['reCAPTCHA']['GeneratePassed'] = function () use (&$CIDRAM): void {
 
     /** Append to reCAPTCHA statistics if necessary. */
     if ($CIDRAM['Config']['general']['statistics']) {
-        $CIDRAM['Statistics']['reCAPTCHA-Passed']++;
+        $CIDRAM['Statistics']['CAPTCHAs-Passed']++;
         $CIDRAM['Statistics-Modified'] = true;
     }
 };
@@ -106,11 +106,11 @@ $CIDRAM['reCAPTCHA']['GeneratePassed'] = function () use (&$CIDRAM): void {
  */
 $CIDRAM['reCAPTCHA']['GenerateContainer'] = function (bool $CookieWarn = false, bool $ApiMessage = false) use (&$CIDRAM): void {
     if (!$CIDRAM['reCAPTCHA']['Bypass']) {
-        $CIDRAM['Config']['template_data']['recaptcha_api_include'] = $CIDRAM['reCAPTCHA']['GenerateCallbackData'](
+        $CIDRAM['Config']['template_data']['captcha_api_include'] = $CIDRAM['reCAPTCHA']['GenerateCallbackData'](
             $CIDRAM['Config']['recaptcha']['sitekey'],
             $CIDRAM['Config']['recaptcha']['api']
         );
-        $CIDRAM['Config']['template_data']['recaptcha_div_include'] = $CIDRAM['reCAPTCHA']['GenerateTemplateData'](
+        $CIDRAM['Config']['template_data']['captcha_div_include'] = $CIDRAM['reCAPTCHA']['GenerateTemplateData'](
             $CIDRAM['Config']['recaptcha']['sitekey'],
             $CIDRAM['Config']['recaptcha']['api'],
             $CookieWarn,

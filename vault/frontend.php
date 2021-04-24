@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2021.04.11).
+ * This file: Front-end handler (last modified: 2021.04.24).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -3739,8 +3739,8 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'statistics' && $CIDRAM['FE']['P
         ['Blocked-Other', 'Blocked-Total'],
         ['Banned-IPv4', 'Banned-Total'],
         ['Banned-IPv6', 'Banned-Total'],
-        ['reCAPTCHA-Failed', 'reCAPTCHA-Total'],
-        ['reCAPTCHA-Passed', 'reCAPTCHA-Total']
+        ['CAPTCHAs-Failed', 'CAPTCHAs-Total'],
+        ['CAPTCHAs-Passed', 'CAPTCHAs-Total']
     ] as $CIDRAM['TheseStats']) {
         $CIDRAM['FE'][$CIDRAM['TheseStats'][0]] = $CIDRAM['NumberFormatter']->format(
             empty($CIDRAM['Statistics'][$CIDRAM['TheseStats'][0]]) ? 0 : $CIDRAM['Statistics'][$CIDRAM['TheseStats'][0]]
@@ -3754,7 +3754,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'statistics' && $CIDRAM['FE']['P
     }
 
     /** Fetch and process totals. */
-    foreach (['Blocked-Total', 'Banned-Total', 'reCAPTCHA-Total'] as $CIDRAM['TheseStats']) {
+    foreach (['Blocked-Total', 'Banned-Total', 'CAPTCHAs-Total'] as $CIDRAM['TheseStats']) {
         $CIDRAM['FE'][$CIDRAM['TheseStats']] = $CIDRAM['NumberFormatter']->format(
             $CIDRAM['FE'][$CIDRAM['TheseStats']]
         );

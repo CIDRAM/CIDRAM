@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Output generator (last modified: 2021.04.04).
+ * This file: Output generator (last modified: 2021.04.24).
  */
 
 /** Initialise cache. */
@@ -40,8 +40,8 @@ if ($CIDRAM['Config']['general']['statistics']) {
             'Blocked-Other' => 0,
             'Banned-IPv4' => 0,
             'Banned-IPv6' => 0,
-            'reCAPTCHA-Failed' => 0,
-            'reCAPTCHA-Passed' => 0
+            'CAPTCHAs-Failed' => 0,
+            'CAPTCHAs-Passed' => 0
         ];
         $CIDRAM['Statistics-Modified'] = true;
     }
@@ -378,11 +378,11 @@ if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
         require $CIDRAM['Vault'] . 'recaptcha.php';
     }
 
-    if (empty($CIDRAM['Config']['template_data']['recaptcha_api_include'])) {
-        $CIDRAM['Config']['template_data']['recaptcha_api_include'] = '';
+    if (empty($CIDRAM['Config']['template_data']['captcha_api_include'])) {
+        $CIDRAM['Config']['template_data']['captcha_api_include'] = '';
     }
-    if (empty($CIDRAM['Config']['template_data']['recaptcha_div_include'])) {
-        $CIDRAM['Config']['template_data']['recaptcha_div_include'] = '';
+    if (empty($CIDRAM['Config']['template_data']['captcha_div_include'])) {
+        $CIDRAM['Config']['template_data']['captcha_div_include'] = '';
     }
 
     /** Unset our reCAPTCHA working data cleanly. */

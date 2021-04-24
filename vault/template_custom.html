@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="{css_url}/theme.min.css" />
   <link rel="stylesheet" href="{css_url}/theme.colors.css" />
   <link rel="shortcut icon" type="image/gif" href="data:image/gif;base64,{favicon}" />
-  <title>CIDRAM</title>{recaptcha_api_include}
+  <title>CIDRAM</title>{captcha_api_include}
 </head>
 
 <body>
@@ -18,7 +18,7 @@
         <div id="denied"{L10N-Lang-Attache}>{denied}</div>
       </div>
       <div id="detected">{ReasonMessage}</div>
-      <div id="mailsupport"{L10N-Lang-Attache}>{EmailAddr}</div>{recaptcha_div_include}
+      <div id="mailsupport"{L10N-Lang-Attache}>{EmailAddr}</div>{captcha_div_include}
       <hr />
       <div id="textBlock">
         {Output}

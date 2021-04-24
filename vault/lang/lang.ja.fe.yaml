@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Japanese language data for the front-end (last modified: 2021.04.07).
+# This file: Japanese language data for the front-end (last modified: 2021.04.24).
 ##/
 
 Extended Description Bypasses: "メインパッケージに通常含まれているデフォルト・シグネチャ・バイパス。"
@@ -94,7 +94,7 @@ config_general_emailaddr_display_style: "ユーザーに電子Ｅメール・ア
 config_general_empty_fields: "ブロック・イベント情報をロギングと表示場合、CIDRAMは空のフィールドをどのように処理すべきですか？ "include" = 空のフィールドを含めます。 "omit" = 空のフィールドを非表示にします（Default/デフォルルト）。"
 config_general_error_log: "検出された致命的でないエラーを記録するためのファイル。​ファイル名指定するか、​無効にしたい場合は空白のままにして下さい。"
 config_general_error_log_stages: "生成されたエラーをログに記録する必要がある実行チェーン内のステージのリスト。"
-config_general_forbid_on_block: "- リクエストをブロックするときに、CIDRAMが送信するＨＴＴＰステータス・メッセージはどれですか？​（詳細については、ドキュメントを参照してください）。"
+config_general_forbid_on_block: "リクエストをブロックするときに、CIDRAMが送信するＨＴＴＰステータス・メッセージはどれですか？​（詳細については、ドキュメントを参照してください）。"
 config_general_force_hostname_lookup: "ホスト名検索を強制しますか？ True = はい。 False = いいえ（Default/デフォルルト）。​ホスト名検索は、通常、「必要に応じて」実行されますが、すべてのリクエストに対して強制することができます。​これは、より詳細な情報をログ・ファイルに提供する手段として有用ですが、パフォーマンスに多少の悪影響を及ぼすこともあります。"
 config_general_hide_version: "ログとページ出力からバージョン情報を隠すか？ True = はい。 False = いいえ（Default/デフォルルト）。"
 config_general_ipaddr: "接続リクエストのＩＰアドレスをどこで見つけるべきかについて（Cloudflareのようなサービスに対して有効）。​Default（デフォルト設定） = REMOTE_ADDR。​注意：あなたが何をしているのか、​分からない限り、​これを変更しないでください。"
@@ -197,8 +197,8 @@ field_deactivate: "非アクティブにする"
 field_delete: "削除"
 field_delete_account: "アカウントを削除する"
 field_download_file: "ダウンロード"
-field_execution_order: "実行順序："
 field_edit_file: "編集"
+field_execution_order: "実行順序："
 field_expiry: "満了"
 field_false: "False （偽）"
 field_file: "ファイル"
@@ -294,6 +294,7 @@ label_backup_location: "リポジトリ・バックアップの場所（緊急�
 label_banned: "禁止されたリクエスト"
 label_blocked: "ブロックされたリクエスト"
 label_branch: "ブランチ最新安定："
+label_captcha: "CAPTCHAの試み"
 label_check_aux: "補助ルールに対してもテストします。"
 label_check_modules: "モジュールに対してもテストします。"
 label_check_verification: "検索エンジンの検証とソーシャル・メディアの検証に対してもテストします。"
@@ -329,7 +330,6 @@ label_other-Since: "開始日"
 label_other: "その他"
 label_php: "使用されたPHPバージョン："
 label_preferred_source: "優先ソース："
-label_reCAPTCHA: "reCAPTCHAの試み"
 label_remember: "覚えて"
 label_results: "結果 （%s が入力された – %s が拒否された – %s が受け入れられた – %s が合併した – %s 出力された）："
 label_sanity_check: "サニティ・チェック："

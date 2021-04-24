@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" /><!-- WebFont Begin -->
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans|Space+Mono" /><!-- WebFont End -->
   <link rel="shortcut icon" type="image/gif" href="data:image/gif;base64,{favicon}" />
-  <title>CIDRAM</title>{recaptcha_api_include}
+  <title>CIDRAM</title>{captcha_api_include}
   <style>
 #wrapper{border-style:solid;border-color:#999;width:98%;margin:auto;padding:2px;border-top-right-radius:24px}
 body,#wrapper{text-align:center}
@@ -40,7 +40,7 @@ button,input[type=button],input[type=submit]{border-radius:18px}
         <div id="denied"{L10N-Lang-Attache}>{denied}</div>
       </div>
       <div id="detected">{ReasonMessage}</div>
-      <div id="mailsupport"{L10N-Lang-Attache}>{EmailAddr}</div>{recaptcha_div_include}
+      <div id="mailsupport"{L10N-Lang-Attache}>{EmailAddr}</div>{captcha_div_include}
       <hr />
       <div id="textBlock">
         {Output}

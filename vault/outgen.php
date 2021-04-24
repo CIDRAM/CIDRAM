@@ -342,17 +342,14 @@ if ($CIDRAM['RL_Active'] && isset($CIDRAM['Factors']) && (!$CIDRAM['Config']['ra
 
 /** This code block only executed if signatures were triggered. */
 if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
-    $CIDRAM['Stage'] = 'reCAPTCHA';
+    $CIDRAM['Stage'] = 'CAPTCHA';
 
-    /** Define reCAPTCHA working data. */
-    $CIDRAM['reCAPTCHA'] = ['Bypass' => false, 'Loggable' => false, 'Expiry' => ($CIDRAM['Config']['recaptcha']['expiry'] * 3600)];
-
-    /** Handling reCAPTCHA here. */
+    /** Checker whether to execute the ReCaptcha class. */
     if (
         !empty($CIDRAM['Config']['recaptcha']['sitekey']) &&
         !empty($CIDRAM['Config']['recaptcha']['secret']) &&
         empty($CIDRAM['Banned']) &&
-        file_exists($CIDRAM['Vault'] . 'recaptcha.php') &&
+        class_exists('\CIDRAM\Core\ReCaptcha') &&
         $CIDRAM['BlockInfo']['SignatureCount'] <= $CIDRAM['Config']['recaptcha']['signature_limit'] && (
             $CIDRAM['Config']['recaptcha']['usemode'] === 1 || (
                 $CIDRAM['Config']['recaptcha']['usemode'] === 2 &&
@@ -360,22 +357,8 @@ if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
             )
         )
     ) {
-        /**
-         * Check whether the salt file exists; If it doesn't, generate a new salt
-         * and create the file. If it does, fetch it and extract its content for
-         * the script to use.
-         */
-        if (!file_exists($CIDRAM['Vault'] . 'salt.dat')) {
-            $CIDRAM['Salt'] = $CIDRAM['GenerateSalt']();
-            $CIDRAM['Handle'] = fopen($CIDRAM['Vault'] . 'salt.dat', 'wb');
-            fwrite($CIDRAM['Handle'], $CIDRAM['Salt']);
-            fclose($CIDRAM['Handle']);
-        } else {
-            $CIDRAM['Salt'] = $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'salt.dat');
-        }
-
-        /** Load the reCAPTCHA module. */
-        require $CIDRAM['Vault'] . 'recaptcha.php';
+        /** Execute the ReCaptcha class. */
+        new \CIDRAM\Core\ReCaptcha($CIDRAM);
     }
 
     if (empty($CIDRAM['Config']['template_data']['captcha_api_include'])) {
@@ -384,9 +367,6 @@ if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
     if (empty($CIDRAM['Config']['template_data']['captcha_div_include'])) {
         $CIDRAM['Config']['template_data']['captcha_div_include'] = '';
     }
-
-    /** Unset our reCAPTCHA working data cleanly. */
-    unset($CIDRAM['reCAPTCHA']);
 }
 
 /** Update statistics if necessary. */
@@ -502,9 +482,9 @@ if (!empty($CIDRAM['Webhooks']) || !empty($CIDRAM['Config']['Webhook']['URL'])) 
 if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
     $CIDRAM['Stage'] = 'Output';
 
-    /** Set status for reCAPTCHA block information. */
-    if (empty($CIDRAM['BlockInfo']['reCAPTCHA'])) {
-        $CIDRAM['BlockInfo']['reCAPTCHA'] = $CIDRAM['L10N']->getString('state_disabled');
+    /** Set CAPTCHA status. */
+    if (empty($CIDRAM['BlockInfo']['CAPTCHA'])) {
+        $CIDRAM['BlockInfo']['CAPTCHA'] = $CIDRAM['L10N']->getString('state_disabled');
     }
 
     /** IP address pseudonymisation. */
@@ -632,13 +612,13 @@ if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
         true
     );
     if ($CIDRAM['Config']['recaptcha']['usemode'] || $CIDRAM['Config']['general']['empty_fields'] === 'include') {
-        if (empty($CIDRAM['BlockInfo']['reCAPTCHA'])) {
-            $CIDRAM['BlockInfo']['reCAPTCHA'] = $CIDRAM['L10N']->getString('state_disabled');
+        if (empty($CIDRAM['BlockInfo']['CAPTCHA'])) {
+            $CIDRAM['BlockInfo']['CAPTCHA'] = $CIDRAM['L10N']->getString('state_disabled');
         }
         $CIDRAM['AddField'](
             $CIDRAM['L10N']->getString('field_captcha'),
             $CIDRAM['Client-L10N']->getString('field_captcha'),
-            $CIDRAM['BlockInfo']['reCAPTCHA']
+            $CIDRAM['BlockInfo']['CAPTCHA']
         );
     }
 

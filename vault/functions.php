@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2021.04.19).
+ * This file: Functions file (last modified: 2021.04.24).
  */
 
 /**
@@ -1304,33 +1304,6 @@ $CIDRAM['GenerateSalt'] = function () {
         }
     }
     return $Salt;
-};
-
-/**
- * Meld together two or more strings by padding to equal length and
- * bitshifting each by each other.
- *
- * @return string The melded string.
- */
-$CIDRAM['Meld'] = function () {
-    $Strings = func_get_args();
-    $StrLens = array_map('strlen', $Strings);
-    $WalkLen = max($StrLens);
-    $Count = count($Strings);
-    for ($Index = 0; $Index < $Count; $Index++) {
-        if ($StrLens[$Index] < $WalkLen) {
-            $Strings[$Index] = str_pad($Strings[$Index], $WalkLen, "\xff");
-        }
-    }
-    for ($Lt = $Strings[0], $Index = 1, $Meld = ''; $Index < $Count; $Index++, $Meld = '') {
-        $Rt = $Strings[$Index];
-        for ($Caret = 0; $Caret < $WalkLen; $Caret++) {
-            $Meld .= $Lt[$Caret] ^ $Rt[$Caret];
-        }
-        $Lt = $Meld;
-    }
-    $Meld = $Lt;
-    return $Meld;
 };
 
 /**

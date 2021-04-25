@@ -120,6 +120,18 @@ config_general_time_format: "Das Datumsformat verwendet von CIDRAM. Zusätzliche
 config_general_time_offset: "Zeitzonenversatz in Minuten."
 config_general_timezone: "Gibt welche Zeitzone verwendet werden soll an (z.B., Africa/Cairo, America/New_York, Asia/Tokyo, Australia/Perth, Europe/Berlin, Pacific/Guam, u.s.w.). Damit PHP dies automatisch für Sie erledigt, geben Sie "SYSTEM" an."
 config_general_truncate: "Protokolldateien kürzen wenn diese eine bestimmte Größe erreichen? Wert ist die maximale Größe in B/KB/MB/GB/TB, die eine Protokolldatei erreichen kann, bevor sie gekürtzt wird. Der Standardwert von 0KB deaktiviert die Kürzung (Protokolldateien können unbegrenzt wachsen). Beachten: Gilt für einzelne Protokolldateien! Die Größe der Protokolldateien gilt nicht in der Summe aller Protokolldateien."
+config_hcaptcha: "Konfiguration für HCaptcha (bietet eine Möglichkeit für Menschen den Zugang wiederherzustellen, wenn sie blockiert sind)."
+config_hcaptcha_api: &CaptchaAPI "Welche API soll verwendet werden?"
+config_hcaptcha_expiry: &CaptchaExpiry "Anzahl der Stunden an die sich Captcha-Instanzen erinnern sollten."
+config_hcaptcha_lockip: &CaptchaLockIP "Sperren Sie Captcha auf IPs?"
+config_hcaptcha_lockuser: &CaptchaLockUser "Sperren Sie Captcha auf Benutzer?"
+config_hcaptcha_logfile: &CaptchaLogfile "Protokollieren Sie alle Captcha versucht? Geben Sie einen Dateinamen an oder lassen Sie die Option zum Deaktivieren leer."
+config_hcaptcha_secret: &CaptchaDashboard "Dieser Wert befindet sich im Dashboard für Ihren Captcha-Dienst."
+config_hcaptcha_show_api_message: &ShowAPIMessage "API-Nachricht anzeigen? True = Ja [Standardeinstellung]; False = Nein."
+config_hcaptcha_show_cookie_warning: &ShowCookieWarning "Cookie-Warnung anzeigen? True = Ja [Standardeinstellung]; False = Nein."
+config_hcaptcha_signature_limit: &CaptchaSignatureLimit "Maximal zulässige Anzahl von Signaturen, bevor das Captcha-Angebot zurückgezogen wird. Standardeinstellung = 1."
+config_hcaptcha_sitekey: *CaptchaDashboard
+config_hcaptcha_usemode: &CaptchaUseMode "Wann sollte das Captcha angeboten werden?"
 config_legal: "Konfiguration für gesetzliche Anforderungen."
 config_legal_omit_hostname: "Hostnamen aus Protokollen auslassen? True = Ja; False = Nein [Standardeinstellung]."
 config_legal_omit_ip: "IP-Adressen aus Protokollen auslassen? True = Ja; False = Nein [Standardeinstellung]. Hinweis: "pseudonymise_ip_addresses" wird überflüssig, wenn "omit_ip" "true" ist."
@@ -133,18 +145,18 @@ config_rate_limiting_max_bandwidth: "Die maximal zulässige Bandbreite innerhalb
 config_rate_limiting_max_requests: "Die maximale Anzahl von Anforderungen, die innerhalb der Zulassungsperiode zulässig sind, bevor die Ratenbegrenzung für zukünftige Anforderungen aktiviert wird. Ein Wert von 0 deaktiviert diese Art der Ratenbegrenzung. Standardeinstellung = 0."
 config_rate_limiting_precision_ipv4: "Die Präzision für das Monitoring der IPv4-Nutzung. Der Wert spiegelt die CIDR-Blockgröße. Für beste Präzision auf 32 einstellen. Standardeinstellung = 32."
 config_rate_limiting_precision_ipv6: "Die Präzision für das Monitoring der IPv6-Nutzung. Der Wert spiegelt die CIDR-Blockgröße. Für beste Präzision auf 128 einstellen. Standardeinstellung = 128."
-config_recaptcha: "Konfiguration für reCAPTCHA (bietet eine Möglichkeit für Menschen den Zugang wiederherzustellen, wenn sie blockiert sind)."
-config_recaptcha_api: "Welche API soll verwendet werden? V2 oder Invisible?"
-config_recaptcha_expiry: "Anzahl der Stunden an die sich reCAPTCHA-Instanzen erinnern sollten."
-config_recaptcha_lockip: "Sperren Sie reCAPTCHA auf IPs?"
-config_recaptcha_lockuser: "Sperren Sie reCAPTCHA auf Benutzer?"
-config_recaptcha_logfile: "Protokollieren Sie alle reCAPTCHA versucht? Geben Sie einen Dateinamen an oder lassen Sie die Option zum Deaktivieren leer."
-config_recaptcha_secret: "Dieser Wert sollte dem "secret key" für Ihre reCAPTCHA entsprechen, der sich innerhalb des reCAPTCHA Dashboard befindet."
-config_recaptcha_show_api_message: "API-Nachricht anzeigen? True = Ja [Standardeinstellung]; False = Nein."
-config_recaptcha_show_cookie_warning: "Cookie-Warnung anzeigen? True = Ja [Standardeinstellung]; False = Nein."
-config_recaptcha_signature_limit: "Maximale Anzahl von Signaturen, die ausgelöst werden dürfen, wenn eine reCAPTCHA-Instanz angeboten werden soll. Standardeinstellung = 1. Wenn diese Anzahl für eine bestimmte Anfrage überschritten wird, wird keine reCAPTCHA-Instanz angeboten."
-config_recaptcha_sitekey: "Dieser Wert sollte dem "site key" für Ihre reCAPTCHA entsprechen, sich innerhalb des reCAPTCHA Dashboard befindet."
-config_recaptcha_usemode: "Dies definiert wie CIDRAM sollte reCAPTCHA benutzen (siehe Dokumentation)."
+config_recaptcha: "Konfiguration für ReCaptcha (bietet eine Möglichkeit für Menschen den Zugang wiederherzustellen, wenn sie blockiert sind)."
+config_recaptcha_api: *CaptchaAPI
+config_recaptcha_expiry: *CaptchaExpiry
+config_recaptcha_lockip: *CaptchaLockIP
+config_recaptcha_lockuser: *CaptchaLockUser
+config_recaptcha_logfile: *CaptchaLogfile
+config_recaptcha_secret: *CaptchaDashboard
+config_recaptcha_show_api_message: *ShowAPIMessage
+config_recaptcha_show_cookie_warning: *ShowCookieWarning
+config_recaptcha_signature_limit: *CaptchaSignatureLimit
+config_recaptcha_sitekey: *CaptchaDashboard
+config_recaptcha_usemode: *CaptchaUseMode
 config_signatures: "Konfiguration für Signaturen, Signaturdateien, Module, u.s.w."
 config_signatures_block_bogons: "Blockieren Sie Bogon/Martian CIDRs? Wenn Sie Verbindungen zu Ihrer Website von localhost, von Ihrem LAN, oder von innerhalb Ihres lokalen Netzwerks erwarten, diese Richtlinie auf false sollte gesetzt werden. Wenn Sie diese Verbindungen nicht erwarten, dies auf true sollte gesetzt werden."
 config_signatures_block_cloud: "CIDRs blockieren, welche zu Web-/Server- Hostern gehören. Wenn Sie eine API betreiben oder erwarten, dass Sie oft Aufrufe von solchen Servern bekommen sollten Sie diese Option auf false (nicht blockieren) setzen. Wenn Sie solche Anfragen blockieren möchten, setzen Sie diese Option auf true [Standarteinstellung]."
@@ -285,6 +297,8 @@ label_aux_reason: "Der Grund, der dem Benutzer beim Blockiert gegeben wird:"
 label_aux_run: "Der Name der auszuführenden Datei:"
 label_aux_special: "Weitere Optionen und spezielle Flaggen:"
 label_aux_special_default_state: "Lass es wie es ist (nichts einstellen)"
+label_aux_special_hcaptcha_disable: "Deaktivieren HCaptcha gewaltsam"
+label_aux_special_hcaptcha_mark: "Zur Verwendung mit HCaptcha markieren"
 label_aux_special_ip_tracking_disable: "Deaktivieren IP-Tracking gewaltsam"
 label_aux_special_ip_tracking_enable: "Aktivieren IP-Tracking gewaltsam"
 label_aux_special_recaptcha_disable: "Deaktivieren reCAPTCHA gewaltsam"

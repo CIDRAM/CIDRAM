@@ -120,6 +120,18 @@ config_general_time_format: "Format notasi tanggal/waktu yang digunakan oleh CID
 config_general_time_offset: "Offset zona waktu dalam hitungan menit."
 config_general_timezone: "Ini digunakan untuk menentukan zona waktu yang akan digunakan (misalnya, Africa/Cairo, America/New_York, Asia/Tokyo, Australia/Perth, Europe/Berlin, Pacific/Guam, dll). Menentukan "SYSTEM" untuk membiarkan PHP menangani ini untuk Anda secara otomatis."
 config_general_truncate: "Memotong file log ketika mereka mencapai ukuran tertentu? Nilai adalah ukuran maksimum dalam B/KB/MB/GB/TB yang bisa ditambahkan untuk file log sebelum dipotong. Nilai default 0KB menonaktifkan pemotongan (file log dapat tumbuh tanpa batas waktu). Catat: Berlaku untuk file log individu! Ukuran file log tidak dianggap secara kolektif."
+config_hcaptcha: "Konfigurasi untuk HCaptcha (menyediakan cara bagi manusia untuk mendapatkan kembali akses ketika diblokir)."
+config_hcaptcha_api: &CaptchaAPI "API mana yang akan digunakan?"
+config_hcaptcha_expiry: &CaptchaExpiry "Jumlah jam untuk mengingat instansi captcha."
+config_hcaptcha_lockip: &CaptchaLockIP "Kunci captcha ke IP?"
+config_hcaptcha_lockuser: &CaptchaLockUser "Kunci captcha ke pengguna?"
+config_hcaptcha_logfile: &CaptchaLogfile "Mencatat hasil semua instansi captcha? Jika ya, tentukan nama untuk menggunakan untuk file catatan. Jika tidak, variabel ini harus kosong."
+config_hcaptcha_secret: &CaptchaDashboard "Nilai ini dapat ditemukan di dashboard untuk layanan captcha Anda."
+config_hcaptcha_show_api_message: &ShowAPIMessage "Tampilkan pesan API? True = Ya [Default]; False = Tidak."
+config_hcaptcha_show_cookie_warning: &ShowCookieWarning "Tampilkan peringatan cookie? True = Ya [Default]; False = Tidak."
+config_hcaptcha_signature_limit: &CaptchaSignatureLimit "Jumlah maksimum tanda tangan yang diperbolehkan sebelum penawaran captcha ditarik. Default = 1."
+config_hcaptcha_sitekey: *CaptchaDashboard
+config_hcaptcha_usemode: &CaptchaUseMode "Kapan captcha harus ditawarkan?"
 config_legal: "Konfigurasi untuk persyaratan hukum."
 config_legal_omit_hostname: "Jangan memasukkan nama host di log? True = Ya; False = Tidak [Default]."
 config_legal_omit_ip: "Jangan memasukkan alamat IP di log? True = Ya; False = Tidak [Default]. Catat: "pseudonymise_ip_addresses" menjadi tidak perlu ketika "omit_ip" adalah "true"."
@@ -128,23 +140,23 @@ config_legal_privacy_policy: "Alamat dari kebijakan privasi yang relevan untuk d
 config_legal_pseudonymise_ip_addresses: "Pseudonymise alamat IP saat menulis file log? True = Ya [Default]; False = Tidak."
 config_rate_limiting: "Konfigurasi untuk pembatasan laju (tidak direkomendasikan untuk penggunaan umum)."
 config_rate_limiting_allowance_period: "Jumlah jam untuk memonitor penggunaan. Default = 0."
+config_rate_limiting_exceptions: "Pengecualian (yaitu, permintaan yang seharusnya tidak dibatasi). Hanya relevan ketika pembatasan laju diaktifkan."
 config_rate_limiting_max_bandwidth: "Jumlah maksimum bandwidth yang diizinkan dalam periode tunjangan sebelum mengaktifkan pembatasan laju untuk permintaan di masa mendatang. Nilai 0 menonaktifkan jenis pembatasan laju ini. Default = 0KB."
 config_rate_limiting_max_requests: "Jumlah maksimum permintaan yang diizinkan dalam periode tunjangan sebelum mengaktifkan pembatasan laju untuk permintaan di masa mendatang. Nilai 0 menonaktifkan jenis pembatasan laju ini. Default = 0."
 config_rate_limiting_precision_ipv4: "Presisi yang akan digunakan saat memonitor penggunaan IPv4. Nilai mencerminkan ukuran blok CIDR. Atur ke 32 untuk presisi terbaik. Default = 32."
 config_rate_limiting_precision_ipv6: "Presisi yang akan digunakan saat memonitor penggunaan IPv6. Nilai mencerminkan ukuran blok CIDR. Atur ke 128 untuk presisi terbaik. Default = 128."
-config_rate_limiting_exceptions: "Pengecualian (yaitu, permintaan yang seharusnya tidak dibatasi). Hanya relevan ketika pembatasan laju diaktifkan."
-config_recaptcha: "Konfigurasi untuk reCAPTCHA (menyediakan cara bagi manusia untuk mendapatkan kembali akses ketika diblokir)."
-config_recaptcha_api: "API mana yang akan digunakan? V2 atau Invisible?"
-config_recaptcha_expiry: "Jumlah jam untuk mengingat instansi reCAPTCHA."
-config_recaptcha_lockip: "Kunci reCAPTCHA ke IP?"
-config_recaptcha_lockuser: "Kunci reCAPTCHA ke pengguna?"
-config_recaptcha_logfile: "Mencatat hasil semua instansi reCAPTCHA? Jika ya, tentukan nama untuk menggunakan untuk file catatan. Jika tidak, variabel ini harus kosong."
-config_recaptcha_secret: "Nilai ini harus sesuai dengan "secret key" untuk reCAPTCHA Anda, yang dapat ditemukan dalam dashboard reCAPTCHA."
-config_recaptcha_show_api_message: "Tampilkan pesan API? True = Ya [Default]; False = Tidak."
-config_recaptcha_show_cookie_warning: "Tampilkan peringatan cookie? True = Ya [Default]; False = Tidak."
-config_recaptcha_signature_limit: "Jumlah maksimum tanda tangan diizinkan untuk dipicu saat instansi reCAPTCHA harus ditawarkan. Default = 1. Jika nomor ini terlampaui untuk permintaan tertentu, instansi reCAPTCHA tidak akan ditawarkan."
-config_recaptcha_sitekey: "Nilai ini harus sesuai dengan "site key" untuk reCAPTCHA Anda, yang dapat ditemukan dalam dashboard reCAPTCHA."
-config_recaptcha_usemode: "Mendefinisikan bagaimana CIDRAM harus menggunakan reCAPTCHA."
+config_recaptcha: "Konfigurasi untuk ReCaptcha (menyediakan cara bagi manusia untuk mendapatkan kembali akses ketika diblokir)."
+config_recaptcha_api: *CaptchaAPI
+config_recaptcha_expiry: *CaptchaExpiry
+config_recaptcha_lockip: *CaptchaLockIP
+config_recaptcha_lockuser: *CaptchaLockUser
+config_recaptcha_logfile: *CaptchaLogfile
+config_recaptcha_secret: *CaptchaDashboard
+config_recaptcha_show_api_message: *ShowAPIMessage
+config_recaptcha_show_cookie_warning: *ShowCookieWarning
+config_recaptcha_signature_limit: *CaptchaSignatureLimit
+config_recaptcha_sitekey: *CaptchaDashboard
+config_recaptcha_usemode: *CaptchaUseMode
 config_signatures: "Konfigurasi untuk tanda tangan, file tanda tangan, modul, dll."
 config_signatures_block_bogons: "Memblokir CIDR bogon/martian? Jika Anda mengharapkan koneksi ke website Anda dari dalam jaringan lokal Anda, dari localhost, atau dari LAN Anda, direktif ini harus didefinisikan untuk false/palsu. Jika Anda tidak mengharapkan ini, direktif ini harus didefinisikan untuk true/benar."
 config_signatures_block_cloud: "Memblokir CIDR yang diidentifikasi sebagai milik webhosting dan/atau layanan cloud? Jika Anda mengoperasikan layanan API dari website Anda atau jika Anda mengharapkan website lain untuk menghubungkan ke website Anda, direktif ini harus didefinisikan untuk false/palsu. Jika Anda tidak, maka, direktif ini harus didefinisikan untuk true/benar."
@@ -283,6 +295,8 @@ label_aux_reason: "Alasan diberikan kepada pengguna saat diblokir:"
 label_aux_run: "Nama file yang akan dieksekusi:"
 label_aux_special: "Opsi lain dan bendera khusus:"
 label_aux_special_default_state: "Biarkan apa adanya (jangan atur apapun)"
+label_aux_special_hcaptcha_disable: "Nonaktifkan HCaptcha secara paksa"
+label_aux_special_hcaptcha_mark: "Tandai untuk digunakan dengan HCaptcha"
 label_aux_special_ip_tracking_disable: "Nonaktifkan pelacakan IP secara paksa"
 label_aux_special_ip_tracking_enable: "Aktifkan pelacakan IP secara paksa"
 label_aux_special_recaptcha_disable: "Nonaktifkan reCAPTCHA secara paksa"

@@ -406,9 +406,56 @@ Config Defaults:
   sitekey:
    type: "string"
    default: ""
+   See also:
+    ReCaptcha Dashboard: &ReCaptchaDashboard "https://developers.google.com/recaptcha"
   secret:
    type: "string"
    default: ""
+   See also:
+    ReCaptcha Dashboard: *ReCaptchaDashboard
+  expiry:
+   type: "float"
+   step: "any"
+   default: 720
+   preview: "hours"
+  logfile:
+   type: "string"
+   default: ""
+  signature_limit:
+   type: "int"
+   default: 1
+  api:
+   type: "string"
+   default: "V2"
+   choices:
+    V2: "V2"
+    Invisible: "Invisible"
+  show_cookie_warning:
+   type: "bool"
+   default: true
+  show_api_message:
+   type: "bool"
+   default: true
+ hcaptcha:
+  usemode:
+   type: "int"
+   default: 0
+  lockip:
+   type: "bool"
+   default: false
+  lockuser:
+   type: "bool"
+   default: true
+  sitekey:
+   type: "string"
+   default: ""
+   See also:
+    HCaptcha Dashboard: &HCaptchaDashboard "https://dashboard.hcaptcha.com/overview"
+  secret:
+   type: "string"
+   default: ""
+   See also:
+    HCaptcha Dashboard: *HCaptchaDashboard
   expiry:
    type: "float"
    step: "any"
@@ -466,6 +513,16 @@ Config Defaults:
     rbi: "Red-Blue Inverted"
     slate: "Slate"
    choice_filter: "FilterTheme"
+   lightdark:
+    default: "light"
+    bluemetal: "dark"
+    fullmoon: "dark"
+    moss: "light"
+    obscured: "light"
+    primer: "light"
+    primerdark: "dark"
+    rbi: "light"
+    slate: "dark"
   magnification:
    type: "float"
    step: "any"
@@ -594,6 +651,8 @@ Provide:
   Config:
    recaptcha:
     enabled: false
+   hcaptcha:
+    enabled: false
   Suppress output template: false
   Trackable: true
   Flag Don't Log: false
@@ -635,17 +694,33 @@ Provide:
    reCAPTCHA:
     Mark for use with reCAPTCHA:
      Label: "label_aux_special_recaptcha_mark"
-     Decoration: "background:linear-gradient(90deg,rgba(0,64,0,0),rgba(128,255,128,0.5));"
+     Decoration: &GreenLeft "background:linear-gradient(90deg,rgba(0,64,0,0),rgba(128,255,128,0.5));"
      Sets:
       Config:
        recaptcha:
         enabled: true
     Forcibly disable reCAPTCHA:
      Label: "label_aux_special_recaptcha_disable"
-     Decoration: "background-color:rgba(255,128,128,0.5);"
+     Decoration: &RedMiddle "background-color:rgba(255,128,128,0.5);"
      Sets:
       Config:
        recaptcha:
+        usemode: 0
+        enabled: false
+   HCaptcha:
+    Mark for use with HCaptcha:
+     Label: "label_aux_special_hcaptcha_mark"
+     Decoration: *GreenLeft
+     Sets:
+      Config:
+       hcaptcha:
+        enabled: true
+    Forcibly disable HCaptcha:
+     Label: "label_aux_special_hcaptcha_disable"
+     Decoration: *RedMiddle
+     Sets:
+      Config:
+       hcaptcha:
         usemode: 0
         enabled: false
    Output template:
@@ -653,17 +728,17 @@ Provide:
      Decoration: "background:linear-gradient(90deg,rgba(64,0,0,0),rgba(255,128,128,0.5));"
     Suppress output template:
      Label: "label_aux_special_suppress"
-     Decoration: "background-color:rgba(255,128,128,0.5);"
+     Decoration: *RedMiddle
      Sets:
       Suppress output template: true
    IP Tracking:
     Forcibly enable IP tracking:
      Label: "label_aux_special_ip_tracking_enable"
-     Decoration: "background:linear-gradient(90deg,rgba(0,64,0,0),rgba(128,255,128,0.5));"
+     Decoration: *GreenLeft
      Sets:
       Trackable: true
     Forcibly disable IP tracking:
      Label: "label_aux_special_ip_tracking_disable"
-     Decoration: "background-color:rgba(255,128,128,0.5);"
+     Decoration: *RedMiddle
      Sets:
       Trackable: false

@@ -120,6 +120,18 @@ config_general_time_format: "CIDRAMで使用される日付表記形式。​追
 config_general_time_offset: "タイムゾーン・オフセット（分）。"
 config_general_timezone: "使用するタイムゾーンを指定します​（例えば、「Africa/Cairo」、「America/New_York」、「Asia/Tokyo」、「Australia/Perth」、「Europe/Berlin」、「Pacific/Guam」、等等）。​「SYSTEM」を指定すると、ＰＨＰがこれを自動的に処理します。"
 config_general_truncate: "ログ・ファイルが一定のサイズに達したら切り詰めますか？​値は、​ログ・ファイルが切り捨てられる前に大きくなる可能性があるＢ/ＫＢ/ＭＢ/ＧＢ/ＴＢ単位の最大サイズです。​デフォルト値の０ＫＢは切り捨てを無効にします （ログ・ファイルは無期限に拡張できます）。​注：個々のログ・ファイルに適用されます。​ログ・ファイルのサイズは一括して考慮されません。"
+config_hcaptcha: "HCaptchaの設定（ブロックされたときに人間がアクセスを取り戻す方法を提供します）。"
+config_hcaptcha_api: &CaptchaAPI "どのＡＰＩを使用するのですか？"
+config_hcaptcha_expiry: &CaptchaExpiry "キャプチャ・インスタンスを覚えておく時間数。"
+config_hcaptcha_lockip: &CaptchaLockIP "キャプチャをＩＰにロックしますか？"
+config_hcaptcha_lockuser: &CaptchaLockUser "キャプチャをユーザーにロックしますか？"
+config_hcaptcha_logfile: &CaptchaLogfile "キャプチャ試行の記録。​ファイル名指定するか、​無効にしたい場合は空白のままにして下さい。"
+config_hcaptcha_secret: &CaptchaDashboard "この値は、キャプチャ・サービスのダッシュボードに表示されます。"
+config_hcaptcha_show_api_message: &ShowAPIMessage "ＡＰＩメッセージを表示しますか？ True = はい（Default/デフォルルト）。 False = いいえ。"
+config_hcaptcha_show_cookie_warning: &ShowCookieWarning "Cookie（クッキー）の警告を表示しますか？ True = はい（Default/デフォルルト）。 False = いいえ。"
+config_hcaptcha_signature_limit: &CaptchaSignatureLimit "キャプチャが取り消される前に許可されるシグネチャの最大数。​Default/デフォルルト = １。"
+config_hcaptcha_sitekey: *CaptchaDashboard
+config_hcaptcha_usemode: &CaptchaUseMode "キャプチャはいつ提供する必要がありますか？"
 config_legal: "法的要件の設定。"
 config_legal_omit_hostname: "ログからホスト名を省略しますか？ True = はい。 False = いいえ（Default/デフォルルト）。"
 config_legal_omit_ip: "ログからＩＰアドレスを省略しますか？ True = はい。 False = いいえ（Default/デフォルルト）。​注：「omit_ip」が「true」の場合、「pseudonymise_ip_addresses」は冗長になります。"
@@ -133,18 +145,18 @@ config_rate_limiting_max_bandwidth: "将来の要求に対してレート制限�
 config_rate_limiting_max_requests: "将来の要求に対してレート制限を有効にする前に、許容期間内に許可される要求の最大数。​０の値は、このタイプのレート制限を無効にします。​Default/デフォルルト = 0。"
 config_rate_limiting_precision_ipv4: "ＩＰｖ４の使用状況を監視する際の精度。​値はＣＩＤＲブロック・サイズを反映します。​最高の精度を得るには３２に設定します。​Default/デフォルルト = 32。"
 config_rate_limiting_precision_ipv6: "ＩＰｖ６の使用状況を監視する際の精度。​値はＣＩＤＲブロック・サイズを反映します。​最高の精度を得るには１２８に設定します。​Default/デフォルルト = 128。"
-config_recaptcha: "reCAPTCHAの設定（ブロックされたときに人間がアクセスを取り戻す方法を提供します）。"
-config_recaptcha_api: "どのＡＰＩを使用するのですか？​「V2」または「invisible」？"
-config_recaptcha_expiry: "reCAPTCHAインスタンスを覚えておく時間数。"
-config_recaptcha_lockip: "reCAPTCHAをＩＰにロックしますか？"
-config_recaptcha_lockuser: "reCAPTCHAをユーザーにロックしますか？"
-config_recaptcha_logfile: "reCAPTCHA試行の記録。​ファイル名指定するか、​無効にしたい場合は空白のままにして下さい。"
-config_recaptcha_secret: "この値は、​あなたのreCAPTCHAのための「secret key」に対応している必要があり；​これは、​reCAPTCHAのダッシュボードの中に見つけることができます。"
-config_recaptcha_show_api_message: "ＡＰＩメッセージを表示しますか？ True = はい（Default/デフォルルト）。 False = いいえ。"
-config_recaptcha_show_cookie_warning: "Cookie（クッキー）の警告を表示しますか？ True = はい（Default/デフォルルト）。 False = いいえ。"
-config_recaptcha_signature_limit: "reCAPTCHAインスタンスが提供されるときにトリガされることができるシグネチャの最大数。​Default/デフォルルト = １。​特定のリクエストに対してこの数を超えると、reCAPTCHAインスタンスは提供されません。"
-config_recaptcha_sitekey: "この値は、​あなたのreCAPTCHAのための「site key」に対応している必要があり；​これは、​reCAPTCHAのダッシュボードの中に見つけることができます。"
-config_recaptcha_usemode: "reCAPTCHAをCIDRAMで使用する方法（ドキュメントを参照してください）。"
+config_recaptcha: "ReCaptchaの設定（ブロックされたときに人間がアクセスを取り戻す方法を提供します）。"
+config_recaptcha_api: *CaptchaAPI
+config_recaptcha_expiry: *CaptchaExpiry
+config_recaptcha_lockip: *CaptchaLockIP
+config_recaptcha_lockuser: *CaptchaLockUser
+config_recaptcha_logfile: *CaptchaLogfile
+config_recaptcha_secret: *CaptchaDashboard
+config_recaptcha_show_api_message: *ShowAPIMessage
+config_recaptcha_show_cookie_warning: *ShowCookieWarning
+config_recaptcha_signature_limit: *CaptchaSignatureLimit
+config_recaptcha_sitekey: *CaptchaDashboard
+config_recaptcha_usemode: *CaptchaUseMode
 config_signatures: "シグネチャ、シグネチャ・ファイル、モジュール、などの設定。"
 config_signatures_block_bogons: "ボゴン・アドレスからのＣＩＤＲをブロックする必要がありますか？​あなたがローカルホストから、​またはお使いのＬＡＮから、​ローカルネットワーク内からの接続を受信した場合、​これはfalseに設定する必要があります。​ない場合は、​これをtrueに設定する必要があります。"
 config_signatures_block_cloud: "クラウドサービスからのＣＩＤＲをブロックする必要がありますか？​あなたのウェブサイトからのＡＰＩサービスを操作する場合、​または、​あなたがウェブサイトツーサイト接続が予想される場合、​これはfalseに設定する必要があります。​ない場合は、​これをtrueに設定する必要があります。"
@@ -283,6 +295,8 @@ label_aux_reason: "ユーザーがブロックされたときの理由："
 label_aux_run: "実行するファイルの名前："
 label_aux_special: "その他のオプションと特別なフラグ："
 label_aux_special_default_state: "そのままにしておきます（何も設定しないでください）"
+label_aux_special_hcaptcha_disable: "HCaptchaを強制的に無効にして"
+label_aux_special_hcaptcha_mark: "HCaptchaで使用するためのマーク"
 label_aux_special_ip_tracking_disable: "ＩＰトラッキングを強制的に無効にして"
 label_aux_special_ip_tracking_enable: "ＩＰトラッキングを強制的に有効にして"
 label_aux_special_recaptcha_disable: "reCAPTCHAを強制的に無効にして"

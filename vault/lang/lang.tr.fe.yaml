@@ -120,6 +120,18 @@ config_general_time_format: "CIDRAM tarafından kullanılan tarih/saat gösterim
 config_general_time_offset: "Dakika cinsinden zaman dilimi farkı."
 config_general_timezone: "Kullanılacak saat dilimini belirtir (örneğin, Africa/Cairo, America/New_York, Asia/Tokyo, Australia/Perth, Europe/Berlin, Pacific/Guam, vb). PHP'nin bunu sizin için otomatik olarak yapmasına izin vermek için "SYSTEM" i belirtin."
 config_general_truncate: "Belirli bir boyuta ulaştığında günlük dosyalarını kesin? Değer, bir günlük dosyasının kesilmeden önce büyüyebileceği B/KB/MB/GB/TB cinsinden maksimum boyuttur. Varsayılan 0KB değeri, kesmeyi devre dışı bırakır (günlük dosyaları sınırsız büyüyebilir). Not: Tek tek kayıt dosyaları için geçerlidir! Günlük dosyalarının boyutu toplam olarak alınmaz."
+config_hcaptcha: "HCaptcha için yapılandırma (engellendiğinde insanlara erişimi yeniden kazanmaları için bir yol sağlar)."
+config_hcaptcha_api: &CaptchaAPI "Hangi API'yı kullanacaksınız?"
+config_hcaptcha_expiry: &CaptchaExpiry "Captcha örneklerini hatırlamak için saat sayısı."
+config_hcaptcha_lockip: &CaptchaLockIP "Captcha'yı IP'lere kilitle?"
+config_hcaptcha_lockuser: &CaptchaLockUser "Captcha kullanıcılara kilitle?"
+config_hcaptcha_logfile: &CaptchaLogfile "Tüm captcha denemelerini günlüğe yaz? Yanıt evet ise, günlük dosyası için kullanılacak adı belirtin. Yanıt hayır ise, bu değişkeni boş bırakın."
+config_hcaptcha_secret: &CaptchaDashboard "Bu değer, captcha hizmetinizin kontrol panelinde bulunabilir."
+config_hcaptcha_show_api_message: &ShowAPIMessage "API mesajı göster? Doğru/True = Evet [Varsayılan]; Yanlış/False = Hayır."
+config_hcaptcha_show_cookie_warning: &ShowCookieWarning "Çerez uyarısını göster? Doğru/True = Evet [Varsayılan]; Yanlış/False = Hayır."
+config_hcaptcha_signature_limit: &CaptchaSignatureLimit "Captcha teklifi geri çekilmeden önce izin verilen maksimum imza sayısı. Varsayılan = 1."
+config_hcaptcha_sitekey: *CaptchaDashboard
+config_hcaptcha_usemode: &CaptchaUseMode "Captcha ne zaman sunulmalı?"
 config_legal: "Yasal gereklilikler için yapılandırma."
 config_legal_omit_hostname: "Ana bilgisayar adlarını günlük dosyalardan hariç tutuluyor mu? Doğru/True = Evet; Yanlış/False = Hayır [Varsayılan]."
 config_legal_omit_ip: "IP adreslerini günlük dosyalardan hariç tutuluyor mu? Doğru/True = Evet; Yanlış/False = Hayır [Varsayılan]. Not: "omit_ip" "true" olduğunda "pseudonymise_ip_addresses" gereksiz hale gelir."
@@ -133,18 +145,18 @@ config_rate_limiting_max_bandwidth: "Gelecekteki talepleri sınırlayan orandan 
 config_rate_limiting_max_requests: "Gelecekteki istekleri sınırlayan orandan önce izin süresi içinde izin verilen maksimum istek sayısı. 0 değeri bu oran sınırlamasını devre dışı bırakır. Varsayılan = 0."
 config_rate_limiting_precision_ipv4: "IPv4 kullanımını izlemek için hassaslık. Değer, CIDR blok boyutunu yansıtır. En iyi hassasiyet için 32'ye ayarlayın. Varsayılan = 32."
 config_rate_limiting_precision_ipv6: "IPv6 kullanımını izlemek için hassaslık. Değer, CIDR blok boyutunu yansıtır. En iyi hassasiyet için 128'e ayarlayın. Varsayılan = 128."
-config_recaptcha: "reCAPTCHA için yapılandırma (engellendiğinde insanlara erişimi yeniden kazanmaları için bir yol sağlar)."
-config_recaptcha_api: "Hangi API'yı kullanacaksınız? V2 veya Invisible?"
-config_recaptcha_expiry: "reCAPTCHA örneklerini hatırlamak için saat sayısı."
-config_recaptcha_lockip: "reCAPTCHA'yı IP'lere kilitle?"
-config_recaptcha_lockuser: "reCAPTCHA kullanıcılara kilitle?"
-config_recaptcha_logfile: "Tüm reCAPTCHA denemelerini günlüğe yaz? Yanıt evet ise, günlük dosyası için kullanılacak adı belirtin. Yanıt hayır ise, bu değişkeni boş bırakın."
-config_recaptcha_secret: "Bu değer, reCAPTCHA gösterge tablosunda bulunabilen reCAPTCHA'nızın "secret key"na karşılık gelmelidir."
-config_recaptcha_show_api_message: "API mesajı göster? Doğru/True = Evet [Varsayılan]; Yanlış/False = Hayır."
-config_recaptcha_show_cookie_warning: "Çerez uyarısını göster? Doğru/True = Evet [Varsayılan]; Yanlış/False = Hayır."
-config_recaptcha_signature_limit: "reCAPTCHA örneği sunulduğunda tetiklenmesine izin verilen maksimum imza sayısı. Varsayılan = 1. Herhangi bir talep için bu sayı aşılırsa, reCAPTCHA örneği sunulmaz."
-config_recaptcha_sitekey: "Bu değer, reCAPTCHA gösterge tablosunda bulunabilen reCAPTCHA'nızın "site key"na karşılık gelmelidir."
-config_recaptcha_usemode: "CIDRAM'ın reCAPTCHA'yi nasıl kullanması gerektiğini tanımlar (belgelere bakın)."
+config_recaptcha: "ReCaptcha için yapılandırma (engellendiğinde insanlara erişimi yeniden kazanmaları için bir yol sağlar)."
+config_recaptcha_api: *CaptchaAPI
+config_recaptcha_expiry: *CaptchaExpiry
+config_recaptcha_lockip: *CaptchaLockIP
+config_recaptcha_lockuser: *CaptchaLockUser
+config_recaptcha_logfile: *CaptchaLogfile
+config_recaptcha_secret: *CaptchaDashboard
+config_recaptcha_show_api_message: *ShowAPIMessage
+config_recaptcha_show_cookie_warning: *ShowCookieWarning
+config_recaptcha_signature_limit: *CaptchaSignatureLimit
+config_recaptcha_sitekey: *CaptchaDashboard
+config_recaptcha_usemode: *CaptchaUseMode
 config_signatures: "İmzalar, imza dosyaları, modüller, vb. için yapılandırma."
 config_signatures_block_bogons: "Bogon/martian CIDR'leri engelleyin? Sitenize yerel ağınızdan, yerel hizmet bilgisayarından veya yerel ağınızdan bağlantılar bekliyorsanız, bu yönerge yanlış (false) değerine ayarlanmalıdır. Bu tür bağlantıları beklemiyorsanız, bu yönerge doğru (true) olmalıdır."
 config_signatures_block_cloud: "Webhosting/bulut hizmetlerine ait olarak tanımlanan CIDR'leri engelle? Sitenizden bir API hizmeti işletiyorsanız veya diğer web sitelerinin web sitenize bağlanmasını bekliyorsanız, bu yanlışa (false) ayarlanmalıdır. Aksi takdirde, bu yönergenin doğruya (true) ayarlanması gerekir."
@@ -283,6 +295,8 @@ label_aux_reason: "Engellendiğinde kullanıcıya verilen sebep:"
 label_aux_run: "Yürütülecek dosyanın adı:"
 label_aux_special: "Diğer seçenekler ve özel bayraklar:"
 label_aux_special_default_state: "Olduğu gibi bırakın (hiçbir şey ayarlamayın)"
+label_aux_special_hcaptcha_disable: "HCaptcha'yı zorla devre dışı bırakın"
+label_aux_special_hcaptcha_mark: "HCaptcha ile kullanım için işaretle"
 label_aux_special_ip_tracking_disable: "IP izlemeyi zorla devre dışı bırakın"
 label_aux_special_ip_tracking_enable: "IP izlemeyi zorla etkinleştirin"
 label_aux_special_recaptcha_disable: "reCAPTCHA'yı zorla devre dışı bırakın"

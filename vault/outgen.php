@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Output generator (last modified: 2021.04.24).
+ * This file: Output generator (last modified: 2021.04.25).
  */
 
 /** Initialise cache. */
@@ -322,6 +322,8 @@ if ($CIDRAM['RL_Active'] && isset($CIDRAM['Factors']) && (!$CIDRAM['Config']['ra
             ), $CIDRAM['L10N']->getString('Short_RL'))) {
                 $CIDRAM['Config']['recaptcha']['usemode'] = 0;
                 $CIDRAM['Config']['recaptcha']['enabled'] = false;
+                $CIDRAM['Config']['hcaptcha']['usemode'] = 0;
+                $CIDRAM['Config']['hcaptcha']['enabled'] = false;
                 $CIDRAM['RL_Status'] = $CIDRAM['GetStatusHTTP'](429);
             }
             unset($CIDRAM['RL_Usage'], $CIDRAM['RL_Oldest'], $CIDRAM['RL_Expired']);
@@ -342,21 +344,44 @@ if ($CIDRAM['RL_Active'] && isset($CIDRAM['Factors']) && (!$CIDRAM['Config']['ra
 if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
     $CIDRAM['Stage'] = 'CAPTCHA';
 
-    /** Checker whether to execute the ReCaptcha class. */
     if (
         !empty($CIDRAM['Config']['recaptcha']['sitekey']) &&
         !empty($CIDRAM['Config']['recaptcha']['secret']) &&
         empty($CIDRAM['Banned']) &&
         class_exists('\CIDRAM\Core\ReCaptcha') &&
-        $CIDRAM['BlockInfo']['SignatureCount'] <= $CIDRAM['Config']['recaptcha']['signature_limit'] && (
-            $CIDRAM['Config']['recaptcha']['usemode'] === 1 || (
-                $CIDRAM['Config']['recaptcha']['usemode'] === 2 &&
-                !empty($CIDRAM['Config']['recaptcha']['enabled'])
+        $CIDRAM['BlockInfo']['SignatureCount'] <= $CIDRAM['Config']['recaptcha']['signature_limit'] &&
+        (
+            $CIDRAM['Config']['recaptcha']['usemode'] === 1 ||
+            $CIDRAM['Config']['recaptcha']['usemode'] === 3 ||
+            (
+                (
+                    $CIDRAM['Config']['recaptcha']['usemode'] === 2 ||
+                    $CIDRAM['Config']['recaptcha']['usemode'] === 5
+                ) && !empty($CIDRAM['Config']['recaptcha']['enabled'])
             )
         )
     ) {
         /** Execute the ReCaptcha class. */
         new \CIDRAM\Core\ReCaptcha($CIDRAM);
+    } elseif (
+        !empty($CIDRAM['Config']['hcaptcha']['sitekey']) &&
+        !empty($CIDRAM['Config']['hcaptcha']['secret']) &&
+        empty($CIDRAM['Banned']) &&
+        class_exists('\CIDRAM\Core\HCaptcha') &&
+        $CIDRAM['BlockInfo']['SignatureCount'] <= $CIDRAM['Config']['hcaptcha']['signature_limit'] &&
+        (
+            $CIDRAM['Config']['hcaptcha']['usemode'] === 1 ||
+            $CIDRAM['Config']['hcaptcha']['usemode'] === 3 ||
+            (
+                (
+                    $CIDRAM['Config']['hcaptcha']['usemode'] === 2 ||
+                    $CIDRAM['Config']['hcaptcha']['usemode'] === 5
+                ) && !empty($CIDRAM['Config']['hcaptcha']['enabled'])
+            )
+        )
+    ) {
+        /** Execute the HCaptcha class. */
+        new \CIDRAM\Core\HCaptcha($CIDRAM);
     }
 
     if (empty($CIDRAM['Config']['template_data']['captcha_api_include'])) {
@@ -607,7 +632,11 @@ if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
         $CIDRAM['BlockInfo']['rURI'],
         true
     );
-    if ($CIDRAM['Config']['recaptcha']['usemode'] || $CIDRAM['Config']['general']['empty_fields'] === 'include') {
+    if (
+        $CIDRAM['Config']['recaptcha']['usemode'] > 0 ||
+        $CIDRAM['Config']['hcaptcha']['usemode'] > 0 ||
+        $CIDRAM['Config']['general']['empty_fields'] === 'include'
+    ) {
         if (empty($CIDRAM['BlockInfo']['CAPTCHA'])) {
             $CIDRAM['BlockInfo']['CAPTCHA'] = $CIDRAM['L10N']->getString('state_disabled');
         }

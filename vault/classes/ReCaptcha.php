@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: ReCaptcha class (last modified: 2021.04.24).
+ * This file: ReCaptcha class (last modified: 2021.04.25).
  */
 
 namespace CIDRAM\Core;
@@ -119,19 +119,7 @@ class ReCaptcha extends Captcha
     public function __construct(&$CIDRAM)
     {
         $this->CIDRAM = &$CIDRAM;
-
-        /**
-         * Check whether the salt file exists. If it doesn't, generate it. If
-         * it does, fetch it and extract its content for the script to use.
-         */
-        if (!file_exists($this->CIDRAM['Vault'] . 'salt.dat')) {
-            $Salt = $this->CIDRAM['GenerateSalt']();
-            $Handle = fopen($this->CIDRAM['Vault'] . 'salt.dat', 'wb');
-            fwrite($Handle, $Salt);
-            fclose($Handle);
-        } else {
-            $Salt = $this->CIDRAM['ReadFile']($this->CIDRAM['Vault'] . 'salt.dat');
-        }
+        $Salt = $this->generateSalt();
 
         /** Refer to the documentation regarding the behaviour of "lockuser". */
         if ($this->CIDRAM['Config']['recaptcha']['lockuser']) {

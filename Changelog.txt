@@ -27,6 +27,14 @@ Detailed version release guidelines for CIDRAM can be found at:
 - [2021.04.24; Maikuolan]: Migrated most of the code responsible for handling
   reCAPTCHAs over to its own class.
 
+- [2021.04.24-25; NEW FEATURE; Maikuolan]: Added HCaptcha support (thus
+  providing an optional alternative to reCAPTCHA). The available configuration
+  directives for HCaptcha support mirrors that available for reCAPTCHA.
+  Dropdown menu options have been added to the front-end configuration page for
+  the reCAPTCHA and HCaptcha usemode directives. All code, L10N data,
+  configuration, and other peripherals relating to captcha support has been
+  slightly refactored.
+
 === Version/Release 2.5.1 ===
 PATCH RELEASE.
 

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Captcha class (last modified: 2021.04.24).
+ * This file: Captcha class (last modified: 2021.04.25).
  */
 
 namespace CIDRAM\Core;
@@ -18,22 +18,22 @@ class Captcha
     /**
      * @var string Verification results.
      */
-    private $Results = '';
+    public $Results = '';
 
     /**
      * @var string Appended to template data.
      */
-    private $TemplateInsert = '<input type="hidden" id="hostnameoverride" name="hostname" value="">';
+    public $TemplateInsert = '<input type="hidden" id="hostnameoverride" name="hostname" value="">';
 
     /**
      * @var bool Whether to bypass the request.
      */
-    private $Bypass = false;
+    public $Bypass = false;
 
     /**
      * @var array The main CIDRAM array passed by reference.
      */
-    private $CIDRAM;
+    public $CIDRAM;
 
     /**
      * Meld together two or more strings by padding to equal length and
@@ -41,7 +41,7 @@ class Captcha
      *
      * @return string The melded string.
      */
-    private function meld(string ...$Strings): string
+    public function meld(string ...$Strings): string
     {
         $StrLens = array_map('strlen', $Strings);
         $WalkLen = max($StrLens);
@@ -67,15 +67,15 @@ class Captcha
      *
      * @return string The theme to use (light or dark).
      */
-    private function determineTheme(): string
+    public function determineTheme(): string
     {
         if (!isset(
             $this->CIDRAM['Config']['template_data']['theme'],
-            $this->CIDRAM['Config']['Config Defaults']['template_data']['theme']['lightdark'][$CIDRAM['Config']['template_data']['theme']]
-        ) {
+            $this->CIDRAM['Config']['Config Defaults']['template_data']['theme']['lightdark'][$this->CIDRAM['Config']['template_data']['theme']]
+        )) {
             return 'light';
         }
-        return $this->CIDRAM['Config']['Config Defaults']['template_data']['theme']['lightdark'][$CIDRAM['Config']['template_data']['theme']];
+        return $this->CIDRAM['Config']['Config Defaults']['template_data']['theme']['lightdark'][$this->CIDRAM['Config']['template_data']['theme']];
     }
 
     /**
@@ -83,7 +83,7 @@ class Captcha
      *
      * @return void
      */
-    private function generateFailed(): void
+    public function generateFailed(): void
     {
         /** Set CAPTCHA status. */
         $this->CIDRAM['BlockInfo']['CAPTCHA'] = $this->CIDRAM['L10N']->getString('state_failed');
@@ -100,7 +100,7 @@ class Captcha
      *
      * @return void
      */
-    private function generatePassed(): void
+    public function generatePassed(): void
     {
         /** Set CAPTCHA status. */
         $this->CIDRAM['BlockInfo']['CAPTCHA'] = $this->CIDRAM['L10N']->getString('state_passed');
@@ -110,5 +110,22 @@ class Captcha
             $this->CIDRAM['Statistics']['CAPTCHAs-Passed']++;
             $this->CIDRAM['Statistics-Modified'] = true;
         }
+    }
+
+    /**
+     * Fetch the salt file or generate it if it doesn't exist.
+     *
+     * @return string The salt.
+     */
+    public function generateSalt(): string
+    {
+        if (!file_exists($this->CIDRAM['Vault'] . 'salt.dat')) {
+            $Salt = $this->CIDRAM['GenerateSalt']();
+            $Handle = fopen($this->CIDRAM['Vault'] . 'salt.dat', 'wb');
+            fwrite($Handle, $Salt);
+            fclose($Handle);
+            return $Salt;
+        }
+        return $this->CIDRAM['ReadFile']($this->CIDRAM['Vault'] . 'salt.dat');
     }
 }

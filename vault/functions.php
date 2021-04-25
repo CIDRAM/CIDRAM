@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2021.04.24).
+ * This file: Functions file (last modified: 2021.04.25).
  */
 
 /** Autoloader for CIDRAM classes. */
@@ -2439,18 +2439,26 @@ $CIDRAM['HonourLookup'] = function () use (&$CIDRAM): bool {
     if (!isset($CIDRAM['BlockInfo']['SignatureCount'])) {
         return false;
     }
-    if (isset($CIDRAM['Config']['recaptcha']) && (
-        $CIDRAM['Config']['recaptcha']['usemode'] === 1 || (
-            $CIDRAM['Config']['recaptcha']['usemode'] === 2 &&
-            !empty($CIDRAM['Config']['recaptcha']['enabled'])
+    if (isset($CIDRAM['Config']['recaptcha']['usemode']) && (
+        $CIDRAM['Config']['recaptcha']['usemode'] === 1 ||
+        $CIDRAM['Config']['recaptcha']['usemode'] === 3 ||
+        (
+            (
+                $CIDRAM['Config']['recaptcha']['usemode'] === 2 ||
+                $CIDRAM['Config']['recaptcha']['usemode'] === 5
+            ) && !empty($CIDRAM['Config']['recaptcha']['enabled'])
         )
     )) {
         return $CIDRAM['BlockInfo']['SignatureCount'] <= $CIDRAM['Config']['recaptcha']['signature_limit'];
     }
-    if (isset($CIDRAM['Config']['hcaptcha']) && (
-        $CIDRAM['Config']['hcaptcha']['usemode'] === 1 || (
-            $CIDRAM['Config']['hcaptcha']['usemode'] === 2 &&
-            !empty($CIDRAM['Config']['hcaptcha']['enabled'])
+    if (isset($CIDRAM['Config']['hcaptcha']['usemode']) && (
+        $CIDRAM['Config']['hcaptcha']['usemode'] === 1 ||
+        $CIDRAM['Config']['hcaptcha']['usemode'] === 3 ||
+        (
+            (
+                $CIDRAM['Config']['hcaptcha']['usemode'] === 2 ||
+                $CIDRAM['Config']['hcaptcha']['usemode'] === 5
+            ) && !empty($CIDRAM['Config']['hcaptcha']['enabled'])
         )
     )) {
         return $CIDRAM['BlockInfo']['SignatureCount'] <= $CIDRAM['Config']['hcaptcha']['signature_limit'];

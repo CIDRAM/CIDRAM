@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Tamil language data for the front-end (last modified: 2021.04.24).
+# This file: Tamil language data for the front-end (last modified: 2021.04.25).
 ##/
 
 Extended Description Bypasses: "இயல்புநிலை கையொப்பம் பைபாஸ் கோப்புகள் பொதுவாக பிரதான தொகுப்புடன் சேர்க்கப்படும்."
@@ -134,7 +134,7 @@ config_hcaptcha_sitekey: *CaptchaDashboard
 config_hcaptcha_usemode: &CaptchaUseMode "கேப்ட்சாவை எப்போது வழங்க வேண்டும்?"
 config_legal: "சட்ட தேவைகளுக்கான உள்ளமைவு."
 config_legal_omit_hostname: "பதிவுகளிலிருந்து ஹோஸ்ட்பெயர்களை அகற்றவா? True (உண்மை) = ஆம்; False (தவறான) = இல்லை [இயல்புநிலை]."
-config_legal_omit_ip: "பதிவுகளிலிருந்து ஐபி முகவரிகளை அகற்றவா? True (உண்மை) = ஆம்; False (தவறான) = இல்லை [இயல்புநிலை]. குறிப்பு: "omit_ip", "true" ஆக இருக்கும்போது "pseudonymise_ip_addresses" எதுவும் செய்யாது.
+config_legal_omit_ip: "பதிவுகளிலிருந்து ஐபி முகவரிகளை அகற்றவா? True (உண்மை) = ஆம்; False (தவறான) = இல்லை [இயல்புநிலை]. குறிப்பு: "omit_ip", "true" ஆக இருக்கும் போது "pseudonymise_ip_addresses" எதுவும் செய்யாது.
 config_legal_omit_ua: "பதிவுகளிலிருந்து பயனர் முகவர்களை அகற்றவா? True (உண்மை) = ஆம்; False (தவறான) = இல்லை [இயல்புநிலை]."
 config_legal_privacy_policy: "உருவாக்கப்பட்ட பக்கங்களின் அடிக்குறிப்பில் காண்பிக்கப்படும் பொருத்தமான தனியுரிமைக் கொள்கையின் முகவரி. ஒரு URL ஐக் குறிப்பிடவும் அல்லது முடக்க காலியாக விடவும்."
 config_legal_pseudonymise_ip_addresses: "ஐபி முகவரிகளைப் பதிவுசெய்யும்போது அவற்றை மாற்றவா? True (உண்மை) = ஆம் [இயல்புநிலை]; False (தவறான) = இல்லை."
@@ -314,6 +314,7 @@ label_captcha: "CAPTCHA முயற்சிகள்"
 label_check_aux: "துணை விதிகளுக்கு எதிராக சோதிக்கவும்."
 label_check_modules: "தொகுதிகளுக்கு எதிராக சோதிக்கவும்."
 label_check_verification: "தேடுபொறி மற்றும் சமூக ஊடக சரிபார்ப்புக்கு எதிராகவும் சோதிக்கவும்."
+label_checkbox: "தேர்வுப்பெட்டி"
 label_cidram: "பயன்படுத்தப்படும் CIDRAM பதிப்பு:"
 label_clientinfo: "வாடிக்கையாளர் தகவல்:"
 label_dependencies: "சார்புநிலைகள்:"
@@ -341,6 +342,7 @@ label_ignore: "அதை புறக்கணிக்கும்"
 label_installed_available: "நிறுவப்பட்ட/கிடைக்கும்"
 label_integrity_check: "ஒருமைப்பாடு சோதனை: "
 label_intersect: "குறுக்குவெட்டு"
+label_invisible: "கண்ணுக்கு தெரியாத"
 label_never: "ஒருபோதும்"
 label_os: "பயன்படுத்தப்படும் இயக்க முறைமை:"
 label_other-ActiveIPv4: "செயலில் உள்ள IPv4 கையொப்பக் கோப்புகள்"
@@ -365,6 +367,11 @@ label_textmode_simple: "எளிய"
 label_textmode_tally: "டேலி"
 label_timeout_limit: "இந்த தொகுதி வெளிப்புற கோரிக்கைகளை செய்கிறது. அந்த கோரிக்கைகளுக்கான காலக்கெடு வரம்பை இங்கே குறிப்பிடலாம் (நொடிகளில்)."
 label_total: "மொத்தம்"
+label_usemode_any: "கையொப்பங்கள் எல்லைக்குள் இருக்கும் போது, மற்றும் தடை செய்யப்படாதபோது (தடுக்கப்பட்டது அல்லது இல்லை, எந்த வித்தியாசமும் இல்லை)."
+label_usemode_blkd: "தடுக்கப்படும் போது, கையொப்பங்கள் எல்லைக்குள் இருக்கும் போது, மற்றும் தடை செய்யப்படாதபோது."
+label_usemode_blkd_mrkd: "தடுக்கப்படும் போது, பயன்பாட்டிற்கு குறிக்கப்பட்ட போது, கையொப்பங்கள் எல்லைக்குள் இருக்கும் போது, மற்றும் தடை செய்யப்படாதபோது."
+label_usemode_not_blkd: "தடுக்கப்படாத போது."
+label_usemode_not_blkd_mrkd: "தடுக்கப்படாத போது, அல்லது பயன்பாட்டிற்கு குறிக்கப்பட்ட போது, கையொப்பங்கள் எல்லைக்குள் இருக்கும் போது, மற்றும் தடை செய்யப்படாதபோது."
 label_unignore: "அதை புறக்கணிக்காதீர்கள்"
 label_unstable: "சமீபத்திய நிலையற்றது:"
 label_used_with: "இதனுடன் பயன்படுத்தப்பட்டது: "

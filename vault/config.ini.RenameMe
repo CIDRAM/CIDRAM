@@ -278,40 +278,77 @@ track_mode=false
 
 
 [recaptcha]
-; Configuration for reCAPTCHA (provides a way for humans to regain access when
+; Configuration for ReCaptcha (provides a way for humans to regain access when
 ; blocked).
 
-; Defines how CIDRAM should use reCAPTCHA (see documentation).
+; When should the captcha be offered?
 usemode=0
 
-; Lock reCAPTCHA to IPs?
+; Lock captcha to IPs?
 lockip=false
 
-; Lock reCAPTCHA to users?
+; Lock captcha to users?
 lockuser=true
 
-; This value should correspond to the "site key" for your reCAPTCHA, which can
-; be found within the reCAPTCHA dashboard.
+; This value can be found in the dashboard for your captcha service.
 sitekey=''
 
-; This value should correspond to the "secret key" for your reCAPTCHA, which
-; can be found within the reCAPTCHA dashboard.
+; This value can be found in the dashboard for your captcha service.
 secret=''
 
-; Number of hours to remember reCAPTCHA instances.
+; Number of hours to remember captcha instances.
 expiry=720
 
-; Log all reCAPTCHA attempts? If yes, specify the name to use for the logfile.
-; If no, leave this variable blank.
+; Log all captcha attempts? If yes, specify the name to use for the logfile. If
+; no, leave this variable blank.
 logfile=''
 
-; Maximum number of signatures allowed to be triggered when a reCAPTCHA
-; instance is to be offered. Default = 1. If this number is exceeded for any
-; particular request, a reCAPTCHA instance won't be offered.
+; Maximum number of signatures allowed before the captcha offer is withdrawn.
+; Default = 1.
 signature_limit=1
 
-; Which API to use? V2 or Invisible?
+; Which API to use?
 api='V2'
+
+; Show cookie warning? True = Yes [Default]; False = No.
+show_cookie_warning=true
+
+; Show API message? True = Yes [Default]; False = No.
+show_api_message=true
+
+
+[hcaptcha]
+; Configuration for HCaptcha (provides a way for humans to regain access when
+; blocked).
+
+; When should the captcha be offered?
+usemode=0
+
+; Lock captcha to IPs?
+lockip=false
+
+; Lock captcha to users?
+lockuser=true
+
+; This value can be found in the dashboard for your captcha service.
+sitekey=''
+
+; This value can be found in the dashboard for your captcha service.
+secret=''
+
+; Number of hours to remember captcha instances.
+expiry=720
+
+; Log all captcha attempts? If yes, specify the name to use for the logfile. If
+; no, leave this variable blank.
+logfile=''
+
+; Maximum number of signatures allowed before the captcha offer is withdrawn.
+; Default = 1.
+signature_limit=1
+
+; Which API to use?
+api='V1'
 
 ; Show cookie warning? True = Yes [Default]; False = No.
 show_cookie_warning=true

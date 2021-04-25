@@ -118,6 +118,18 @@ config_general_timeFormat: "شكل التواريخ المستخدم من قبل
 config_general_timeOffset: "المنطقة الزمنية تعويض في غضون دقائق."
 config_general_timezone: "يتم استخدام هذا لتحديد المنطقة الزمنية للاستخدام (على سبيل المثال، Africa/Cairo، America/New_York، Asia/Tokyo، Australia/Perth، Europe/Berlin، Pacific/Guam، إلخ). حدد "SYSTEM" للسماح لـ PHP بمعالجة هذا الأمر تلقائيًا."
 config_general_truncate: "اقتطاع ملفات السجل عندما تصل إلى حجم معين؟ القيمة هي الحجم الأقصى في بايت/كيلوبايت/ميغابايت/غيغابايت/تيرابايت الذي قد ينمو ملفات السجل إلى قبل اقتطاعه. القيمة الافتراضية 0KB تعطيل اقتطاع (ملفات السجل يمكن أن تنمو إلى أجل غير مسمى). ملاحظة: ينطبق على ملفات السجل الفردية! ولا يعتبر حجمها جماعيا."
+config_hcaptcha: "التكوين ل HCaptcha (يوفر وسيلة للبشر لاستعادة الوصول عند حجبه)."
+config_hcaptcha_api: &CaptchaAPI "أي API لاستخدام؟"
+config_hcaptcha_expiry: &CaptchaExpiry "عدد الساعات لنتذكر حالات اختبار captcha."
+config_hcaptcha_lockip: &CaptchaLockIP "القفل captcha إلى IP؟"
+config_hcaptcha_lockuser: &CaptchaLockUser "القفل captcha إلى المستخدمين؟"
+config_hcaptcha_logfile: &CaptchaLogfile "تسجيل جميع محاولات اختبار captcha؟ إذا كانت الإجابة بنعم، حدد اسم لاستخدامه في ملف السجل. ان لم، ترك هذا الحقل فارغا."
+config_hcaptcha_secret: &CaptchaDashboard "يمكن العثور على هذه القيمة في لوحة التحكم الخاصة بخدمة captcha."
+config_hcaptcha_show_api_message: &ShowAPIMessage "إظهار رسالة API؟ صحيح/True = نعم [افتراضي]؛ زائفة/False = لا."
+config_hcaptcha_show_cookie_warning: &ShowCookieWarning "إظهار تحذير ملف تعريف الارتباط؟ صحيح/True = نعم [افتراضي]؛ زائفة/False = لا."
+config_hcaptcha_signature_limit: &CaptchaSignatureLimit "الحد الأقصى لعدد التوقيعات المسموح بها قبل سحب عرض captcha. افتراضي = 1."
+config_hcaptcha_sitekey: *CaptchaDashboard
+config_hcaptcha_usemode: &CaptchaUseMode "متى يجب تقديم الcaptcha؟"
 config_legal: "التكوين للمتطلبات القانونية."
 config_legal_omit_hostname: "حذف أسماء المضيف من السجلات؟ صحيح/True = نعم؛ زائفة/False = لا [افتراضي]."
 config_legal_omit_ip: "حذف عناوين IP من السجلات؟ صحيح/True = نعم؛ زائفة/False = لا [افتراضي]. ملاحظة: يصبح "pseudonymise_ip_addresses" مكررًا عندما يكون "omit_ip" هو "true"."
@@ -131,18 +143,18 @@ config_rate_limiting_max_bandwidth: "أقصى قدر من عرض النطاق ا
 config_rate_limiting_max_requests: "الحد الأقصى لعدد الطلبات المسموح بها خلال فترة السماح. عندما يتم تجاوزت، يتم تمكين حدود السعر للطلبات المستقبلية. تعمل القيمة 0 على تعطيل هذا النوع من تحديد السرعة. افتراضي = 0."
 config_rate_limiting_precision_ipv4: "الدقة المستخدمة عند مراقبة استخدام IPv4. قيمة تعكس حجم كتلة CIDR. تعيين إلى 32 للحصول على أفضل دقة. افتراضي = 32."
 config_rate_limiting_precision_ipv6: "الدقة المستخدمة عند مراقبة استخدام IPv6. قيمة تعكس حجم كتلة CIDR. تعيين إلى 128 للحصول على أفضل دقة. افتراضي = 128."
-config_recaptcha: "التكوين ل reCAPTCHA (يوفر وسيلة للبشر لاستعادة الوصول عند حجبه)."
-config_recaptcha_api: "أي API لاستخدام؟ V2 أو Invisible؟"
-config_recaptcha_expiry: "عدد الساعات لنتذكر حالات اختبار reCAPTCHA."
-config_recaptcha_lockip: "القفل reCAPTCHA إلى IP؟"
-config_recaptcha_lockuser: "القفل reCAPTCHA إلى المستخدمين؟"
-config_recaptcha_logfile: "تسجيل جميع محاولات اختبار reCAPTCHA؟ إذا كانت الإجابة بنعم، حدد اسم لاستخدامه في ملف السجل. ان لم، ترك هذا الحقل فارغا."
-config_recaptcha_secret: "يجب أن تتطابق هذه القيمة إلى "secret key" لاختبار reCAPTCHA الخاص بك، التي يمكن العثور عليها داخل لوحة التحكم اختبار reCAPTCHA."
-config_recaptcha_show_api_message: "إظهار رسالة API؟ صحيح/True = نعم [افتراضي]؛ زائفة/False = لا."
-config_recaptcha_show_cookie_warning: "إظهار تحذير ملف تعريف الارتباط؟ صحيح/True = نعم [افتراضي]؛ زائفة/False = لا."
-config_recaptcha_signature_limit: "الحد الأقصى لعدد التوقيعات المسموح بتشغيلها عند تقديم مثال reCAPTCHA. افتراضي = 1. إذا تم تجاوز هذا الرقم لأي طلب معين، لن يتم عرض مثال reCAPTCHA."
-config_recaptcha_sitekey: "يجب أن تتطابق هذه القيمة إلى "site key" لاختبار reCAPTCHA الخاص بك، التي يمكن العثور عليها داخل لوحة التحكم اختبار reCAPTCHA."
-config_recaptcha_usemode: "هذا ويعرف كيفية CIDRAM يجب استخدام اختبار reCAPTCHA (راجع وثائق)."
+config_recaptcha: "التكوين ل ReCaptcha (يوفر وسيلة للبشر لاستعادة الوصول عند حجبه)."
+config_recaptcha_api: *CaptchaAPI
+config_recaptcha_expiry: *CaptchaExpiry
+config_recaptcha_lockip: *CaptchaLockIP
+config_recaptcha_lockuser: *CaptchaLockUser
+config_recaptcha_logfile: *CaptchaLogfile
+config_recaptcha_secret: *CaptchaDashboard
+config_recaptcha_show_api_message: *ShowAPIMessage
+config_recaptcha_show_cookie_warning: *ShowCookieWarning
+config_recaptcha_signature_limit: *CaptchaSignatureLimit
+config_recaptcha_sitekey: *CaptchaDashboard
+config_recaptcha_usemode: *CaptchaUseMode
 config_signatures: "التكوين للتوقيعات، ملفات التوقيع، الوحدات النمطية، إلخ."
 config_signatures_block_bogons: "منع CIDRs المريخ/bogon؟ إذا كنت تتوقع اتصالات إلى موقع الويب الخاص بك من خلال الشبكة المحلية، هذا يجب أن يتم تعيين إلى false. ان لم، هذا يجب أن يتم تعيين إلى true."
 config_signatures_block_cloud: "منع CIDRs التي تم تحديدها على أنها تنتمي إلى خدمات سحابية/الاستضافة؟ إذا كنت تعمل على خدمة API من موقع الويب الخاص بك، أو إذا كنت تتوقع مواقع أخرى للاتصال موقع الويب الخاص بك، هذا يجب أن يتم تعيين إلى false. إذا لم تقم بذلك، ثم، فإنه يجب تعيين إلى true."
@@ -281,6 +293,8 @@ label_aux_reason: "السبب المعطى للمستخدم عند حظره:"
 label_aux_run: "اسم الملف المراد تنفيذه:"
 label_aux_special: "خيارات أخرى وأعلام خاصة:"
 label_aux_special_default_state: "اتركه كما هو (لا تضع أي شيء)"
+label_aux_special_hcaptcha_disable: "قم بتعطيل HCaptcha بالقوة"
+label_aux_special_hcaptcha_mark: "ضع علامة للاستخدام مع HCaptcha"
 label_aux_special_ip_tracking_disable: "قم بتعطيل تتبع IP بالقوة"
 label_aux_special_ip_tracking_enable: "قم بتمكين تتبع IP بالقوة"
 label_aux_special_recaptcha_disable: "قم بتعطيل reCAPTCHA بالقوة"

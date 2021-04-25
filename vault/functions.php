@@ -2483,6 +2483,14 @@ $CIDRAM['HonourLookup'] = function () use (&$CIDRAM) {
     )) {
         return $CIDRAM['BlockInfo']['SignatureCount'] <= $CIDRAM['Config']['recaptcha']['signature_limit'];
     }
+    if (isset($CIDRAM['Config']['hcaptcha']) && (
+        $CIDRAM['Config']['hcaptcha']['usemode'] === 1 || (
+            $CIDRAM['Config']['hcaptcha']['usemode'] === 2 &&
+            !empty($CIDRAM['Config']['hcaptcha']['enabled'])
+        )
+    )) {
+        return $CIDRAM['BlockInfo']['SignatureCount'] <= $CIDRAM['Config']['hcaptcha']['signature_limit'];
+    }
     return $CIDRAM['BlockInfo']['SignatureCount'] < 1;
 };
 

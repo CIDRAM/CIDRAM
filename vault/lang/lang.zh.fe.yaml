@@ -120,6 +120,18 @@ config_general_timeFormat: "CIDRAM使用的日期符号格式。​可根据要�
 config_general_timeOffset: "时区偏移量（分钟）。"
 config_general_timezone: "这用于指定要使用的时区​（例如，Africa/Cairo，America/New_York，Asia/Tokyo，Australia/Perth，Europe/Berlin，Pacific/Guam，等等）。​指定“SYSTEM”使PHP自动为您处理。"
 config_general_truncate: "截断日志文件当他们达到一定的大小吗？​值是在B/KB/MB/GB/TB，​是日志文件允许的最大大小直到它被截断。​默认值为“0KB”将禁用截断（日志文件可以无限成长）。​注意：适用于单个日志文件！​日志文件大小不被算集体的。"
+config_hcaptcha: "HCaptcha的配置（为人们提供了一种在受阻时重新获得访问权限的方法）。"
+config_hcaptcha_api: &CaptchaAPI "使用哪个API？"
+config_hcaptcha_expiry: &CaptchaExpiry "记得captcha多少小时？"
+config_hcaptcha_lockip: &CaptchaLockIP "应该captcha锁定到IP？"
+config_hcaptcha_lockuser: &CaptchaLockUser "应该captcha锁定到用户？"
+config_hcaptcha_logfile: &CaptchaLogfile "记录所有的captcha的尝试？​要做到这一点，​指定一个文件名到使用。​如果不，​离开这个变量为空白。"
+config_hcaptcha_secret: &CaptchaDashboard "可以在您的captcha服务的仪表板中找到该值。"
+config_hcaptcha_show_api_message: &ShowAPIMessage "显示API讯息吗？​True（真）=显示【标准】；False（假）=不显示。"
+config_hcaptcha_show_cookie_warning: &ShowCookieWarning "显示cookie警告吗？​True（真）=显示【标准】；False（假）=不显示。"
+config_hcaptcha_signature_limit: &CaptchaSignatureLimit "撤销captcha之前允许的最大签名数。标准 = 1。"
+config_hcaptcha_sitekey: *CaptchaDashboard
+config_hcaptcha_usemode: &CaptchaUseMode "何时应提供captcha吗？"
 config_legal: "法律要求的配置。"
 config_legal_omit_hostname: "从日志文件中排除主机名？​True（真）=排除；False（假）=不排除【标准】。"
 config_legal_omit_ip: "从日志文件中排除IP地址？​True（真）=排除；False（假）=不排除【标准】。​注意：“omit_ip”为“true”时，“pseudonymise_ip_addresses”变得不必要。"
@@ -133,18 +145,18 @@ config_rate_limiting_max_bandwidth: "在为将来的请求启用速率限制之�
 config_rate_limiting_max_requests: "在为将来的请求启用速率限制之前允许的最大请求数。​值为0将禁用此类速率限制。​标准=0。"
 config_rate_limiting_precision_ipv4: "监视IPv4使用时的精度。​值镜像CIDR块大小。​设置为32以获得最佳精度。​标准=32。"
 config_rate_limiting_precision_ipv6: "监视IPv6使用时的精度。​值镜像CIDR块大小。​设置为128以获得最佳精度。​标准=128。"
-config_recaptcha: "reCAPTCHA的配置（为人们提供了一种在受阻时重新获得访问权限的方法）。"
-config_recaptcha_api: "使用哪个API？V2或Invisible？"
-config_recaptcha_expiry: "记得reCAPTCHA多少小时？"
-config_recaptcha_lockip: "应该reCAPTCHA锁定到IP？"
-config_recaptcha_lockuser: "应该reCAPTCHA锁定到用户？"
-config_recaptcha_logfile: "记录所有的reCAPTCHA的尝试？​要做到这一点，​指定一个文件名到使用。​如果不，​离开这个变量为空白。"
-config_recaptcha_secret: "该值应该对应于“secret key”为您的reCAPTCHA，​该可以发现在reCAPTCHA的仪表板。"
-config_recaptcha_show_api_message: "显示API讯息吗？​True（真）=显示【标准】；False（假）=不显示。"
-config_recaptcha_show_cookie_warning: "显示cookie警告吗？​True（真）=显示【标准】；False（假）=不显示。"
-config_recaptcha_signature_limit: "当提供reCAPTCHA实例时，允许触发最大签名数量。​标准 = 1。​如果这个数字超过了任何特定的请求，一个reCAPTCHA实例将不会被提供。"
-config_recaptcha_sitekey: "该值应该对应于“site key”为您的reCAPTCHA，​该可以发现在reCAPTCHA的仪表板。"
-config_recaptcha_usemode: "它定义了如何CIDRAM应该使用reCAPTCHA（请参阅文档）。"
+config_recaptcha: "ReCaptcha的配置（为人们提供了一种在受阻时重新获得访问权限的方法）。"
+config_recaptcha_api: *CaptchaAPI
+config_recaptcha_expiry: *CaptchaExpiry
+config_recaptcha_lockip: *CaptchaLockIP
+config_recaptcha_lockuser: *CaptchaLockUser
+config_recaptcha_logfile: *CaptchaLogfile
+config_recaptcha_secret: *CaptchaDashboard
+config_recaptcha_show_api_message: *ShowAPIMessage
+config_recaptcha_show_cookie_warning: *ShowCookieWarning
+config_recaptcha_signature_limit: *CaptchaSignatureLimit
+config_recaptcha_sitekey: *CaptchaDashboard
+config_recaptcha_usemode: *CaptchaUseMode
 config_signatures: "签名，签名文件，模块，等的配置。"
 config_signatures_block_bogons: "阻止bogon(“ㄅㄡㄍㄛㄋ”)/martian（“火星”）CIDR吗？​如果您希望连接到您的网站从您的本地网络/本地主机/localhost/LAN/等等，​这应该被设置为“false”（假）。​如果不，​这应该被设置为“true”（真）。"
 config_signatures_block_cloud: "阻止CIDR认定为属于虚拟主机或云服务吗？​如果您操作一个API服务从您的网站或如果您预计其他网站连接到您的网站，​这应该被设置为“false”（假）。​如果不，​这应该被设置为“true”（真）。"
@@ -283,6 +295,8 @@ label_aux_reason: "显示给用户的阻止原因："
 label_aux_run: "要运行的文件名："
 label_aux_special: "其他选项和特殊标志："
 label_aux_special_default_state: "保持原样（不设置任何内容）"
+label_aux_special_hcaptcha_disable: "强制禁用HCaptcha"
+label_aux_special_hcaptcha_mark: "标记为与HCaptcha一起使用"
 label_aux_special_ip_tracking_disable: "强制禁用IP跟踪"
 label_aux_special_ip_tracking_enable: "强制启用IP跟踪"
 label_aux_special_recaptcha_disable: "强制禁用reCAPTCHA"

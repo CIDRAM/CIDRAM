@@ -120,6 +120,18 @@ config_general_timeFormat: "The date/time notation format used by CIDRAM. Additi
 config_general_timeOffset: "Timezone offset in minutes."
 config_general_timezone: "This is used to specify the timezone to use (e.g., Africa/Cairo, America/New_York, Asia/Tokyo, Australia/Perth, Europe/Berlin, Pacific/Guam, etc). Specify "SYSTEM" to let PHP handle this for you automatically."
 config_general_truncate: "Truncate logfiles when they reach a certain size? Value is the maximum size in B/KB/MB/GB/TB that a logfile may grow to before being truncated. The default value of 0KB disables truncation (logfiles can grow indefinitely). Note: Applies to individual logfiles! The size of logfiles is not considered collectively."
+config_hcaptcha: "Configuration for HCaptcha (provides a way for humans to regain access when blocked)."
+config_hcaptcha_api: &CaptchaAPI "Which API to use?"
+config_hcaptcha_expiry: &CaptchaExpiry "Number of hours to remember captcha instances."
+config_hcaptcha_lockip: &CaptchaLockIP "Lock captcha to IPs?"
+config_hcaptcha_lockuser: &CaptchaLockUser "Lock captcha to users?"
+config_hcaptcha_logfile: &CaptchaLogfile "Log all captcha attempts? If yes, specify the name to use for the logfile. If no, leave this variable blank."
+config_hcaptcha_secret: &CaptchaDashboard "This value can be found in the dashboard for your captcha service."
+config_hcaptcha_show_api_message: &ShowAPIMessage "Show API message? True = Yes [Default]; False = No."
+config_hcaptcha_show_cookie_warning: &ShowCookieWarning "Show cookie warning? True = Yes [Default]; False = No."
+config_hcaptcha_signature_limit: &CaptchaSignatureLimit "Maximum number of signatures allowed before the captcha offer is withdrawn. Default = 1."
+config_hcaptcha_sitekey: *CaptchaDashboard
+config_hcaptcha_usemode: &CaptchaUseMode "When should the captcha be offered?"
 config_legal: "Configuration for legal requirements."
 config_legal_omit_hostname: "Omit hostnames from logs? True = Yes; False = No [Default]."
 config_legal_omit_ip: "Omit IP addresses from logs? True = Yes; False = No [Default]. Note: "pseudonymise_ip_addresses" becomes redundant when "omit_ip" is "true"."
@@ -133,18 +145,18 @@ config_rate_limiting_max_bandwidth: "The maximum amount of bandwidth allowed wit
 config_rate_limiting_max_requests: "The maximum number of requests allowed within the allowance period before rate limiting future requests. A value of 0 disables this type of rate limiting. Default = 0."
 config_rate_limiting_precision_ipv4: "The precision to use for tracking IPv4 usage. Value mirrors CIDR block size. Set to 32 for best precision. Default = 32."
 config_rate_limiting_precision_ipv6: "The precision to use for tracking IPv6 usage. Value mirrors CIDR block size. Set to 128 for best precision. Default = 128."
-config_recaptcha: "Configuration for reCAPTCHA (provides a way for humans to regain access when blocked)."
-config_recaptcha_api: "Which API to use? V2 or Invisible?"
-config_recaptcha_expiry: "Number of hours to remember reCAPTCHA instances."
-config_recaptcha_lockip: "Lock reCAPTCHA to IPs?"
-config_recaptcha_lockuser: "Lock reCAPTCHA to users?"
-config_recaptcha_logfile: "Log all reCAPTCHA attempts? If yes, specify the name to use for the logfile. If no, leave this variable blank."
-config_recaptcha_secret: "This value should correspond to the "secret key" for your reCAPTCHA, which can be found within the reCAPTCHA dashboard."
-config_recaptcha_show_api_message: "Show API message? True = Yes [Default]; False = No."
-config_recaptcha_show_cookie_warning: "Show cookie warning? True = Yes [Default]; False = No."
-config_recaptcha_signature_limit: "Maximum number of signatures allowed to be triggered when a reCAPTCHA instance is to be offered. Default = 1. If this number is exceeded for any particular request, a reCAPTCHA instance won't be offered."
-config_recaptcha_sitekey: "This value should correspond to the "site key" for your reCAPTCHA, which can be found within the reCAPTCHA dashboard."
-config_recaptcha_usemode: "Defines how CIDRAM should use reCAPTCHA (see documentation)."
+config_recaptcha: "Configuration for ReCaptcha (provides a way for humans to regain access when blocked)."
+config_recaptcha_api: *CaptchaAPI
+config_recaptcha_expiry: *CaptchaExpiry
+config_recaptcha_lockip: *CaptchaLockIP
+config_recaptcha_lockuser: *CaptchaLockUser
+config_recaptcha_logfile: *CaptchaLogfile
+config_recaptcha_secret: *CaptchaDashboard
+config_recaptcha_show_api_message: *ShowAPIMessage
+config_recaptcha_show_cookie_warning: *ShowCookieWarning
+config_recaptcha_signature_limit: *CaptchaSignatureLimit
+config_recaptcha_sitekey: *CaptchaDashboard
+config_recaptcha_usemode: *CaptchaUseMode
 config_signatures: "Configuration for signatures, signature files, modules, etc."
 config_signatures_block_bogons: "Block bogon/martian CIDRs? If you expect connections to your website from within your local network, from localhost, or from your LAN, this directive should be set to false. If you don't expect these such connections, this directive should be set to true."
 config_signatures_block_cloud: "Block CIDRs identified as belonging to webhosting/cloud services? If you operate an API service from your website or if you expect other websites to connect to your website, this should be set to false. If you don't, then, this directive should be set to true."
@@ -285,6 +297,8 @@ label_aux_reason: "The reason given to the user when blocked:"
 label_aux_run: "The name of the file to run:"
 label_aux_special: "Other options and special flags:"
 label_aux_special_default_state: "Leave it as is (don't set anything)"
+label_aux_special_hcaptcha_disable: "Forcibly disable HCaptcha"
+label_aux_special_hcaptcha_mark: "Mark for use with HCaptcha"
 label_aux_special_ip_tracking_disable: "Forcibly disable IP tracking"
 label_aux_special_ip_tracking_enable: "Forcibly enable IP tracking"
 label_aux_special_recaptcha_disable: "Forcibly disable reCAPTCHA"

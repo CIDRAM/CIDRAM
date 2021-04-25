@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2021.04.23).
+ * This file: Front-end functions file (last modified: 2021.04.24).
  */
 
 /**
@@ -2917,6 +2917,10 @@ $CIDRAM['FileManager-IsLogFile'] = function ($File) use (&$CIDRAM) {
     if (!$Pattern_reCAPTCHA_logfile && $CIDRAM['Config']['recaptcha']['logfile']) {
         $Pattern_reCAPTCHA_logfile = $CIDRAM['BuildLogPattern']($CIDRAM['Config']['recaptcha']['logfile'], true);
     }
+    static $Pattern_HCaptcha_logfile = false;
+    if (!$Pattern_HCaptcha_logfile && $CIDRAM['Config']['hcaptcha']['logfile']) {
+        $Pattern_HCaptcha_logfile = $CIDRAM['BuildLogPattern']($CIDRAM['Config']['hcaptcha']['logfile'], true);
+    }
     static $Pattern_PHPMailer_EventLog = false;
     if (!$Pattern_PHPMailer_EventLog && $CIDRAM['Config']['PHPMailer']['EventLog']) {
         $Pattern_PHPMailer_EventLog = $CIDRAM['BuildLogPattern']($CIDRAM['Config']['PHPMailer']['EventLog'], true);
@@ -2931,6 +2935,8 @@ $CIDRAM['FileManager-IsLogFile'] = function ($File) use (&$CIDRAM) {
         $CIDRAM['Config']['general']['FrontEndLog'] && preg_match($Pattern_FrontEndLog, $File)
     ) || (
         $CIDRAM['Config']['recaptcha']['logfile'] && preg_match($Pattern_reCAPTCHA_logfile, $File)
+    ) || (
+        $CIDRAM['Config']['hcaptcha']['logfile'] && preg_match($Pattern_HCaptcha_logfile, $File)
     ) || (
         $CIDRAM['Config']['PHPMailer']['EventLog'] && preg_match($Pattern_PHPMailer_EventLog, $File)
     );

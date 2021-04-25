@@ -120,6 +120,18 @@ config_general_timeFormat: "Dato/tid notasjonsformat som brukes av CIDRAM. Ytter
 config_general_timeOffset: "Tidssone forskjøvet i minutter."
 config_general_timezone: "Dette brukes til å spesifisere tidssonen som skal brukes (f.eks, Africa/Cairo, America/New_York, Asia/Tokyo, Australia/Perth, Europe/Berlin, Pacific/Guam, etc). Spesifiser "SYSTEM" for å la PHP håndtere dette for deg automatisk."
 config_general_truncate: "Skjær loggfiler når de kommer til en viss størrelse? Verdi er den maksimale størrelsen i B/KB/MB/GB/TB som en loggfil kan vokse til før den blir avkortet. Standardverdi på 0KB deaktiverer avkorting (loggfilene kan vokse på ubestemt tid). Merk: Gjelder for individuelle loggfiler! Størrelsen på loggfiler anses ikke kollektivt."
+config_hcaptcha: "Konfigurasjon for HCaptcha (gir en måte for mennesker å gjenvinne tilgang når de blokkeres)."
+config_hcaptcha_api: &CaptchaAPI "Hvilken API skal du bruke?"
+config_hcaptcha_expiry: &CaptchaExpiry "Antall timer for å huske captcha-forekomster."
+config_hcaptcha_lockip: &CaptchaLockIP "Lås captcha til IP-adresser?"
+config_hcaptcha_lockuser: &CaptchaLockUser "Lås captcha til brukere?"
+config_hcaptcha_logfile: &CaptchaLogfile "Logg på alle captcha-forsøk? Hvis ja, spesifiser navnet som skal brukes til loggfilen. Hvis nei, la denne variablen være tom."
+config_hcaptcha_secret: &CaptchaDashboard "Denne verdien finner du i dashbordet for captcha-tjenesten din."
+config_hcaptcha_show_api_message: &ShowAPIMessage "Inkludere API-melding? True = Ja [Standardverdi]; False = Nei."
+config_hcaptcha_show_cookie_warning: &ShowCookieWarning "Inkludere informasjonskapsel advarsel? True = Ja [Standardverdi]; False = Nei."
+config_hcaptcha_signature_limit: &CaptchaSignatureLimit "Maksimalt antall signaturer tillatt før du trekker tilbake et captcha-tilbud. Standardverdi = 1."
+config_hcaptcha_sitekey: *CaptchaDashboard
+config_hcaptcha_usemode: &CaptchaUseMode "Når skal captcha tilbys?"
 config_legal: "Konfigurasjon for juridiske krav."
 config_legal_omit_hostname: "Utelat vertsnavn fra logger? True = Ja; False = Nei [Standardverdi]."
 config_legal_omit_ip: "Utelat IP-adresser fra logger? True = Ja; False = Nei [Standardverdi]. Merk: "pseudonymise_ip_addresses" blir overflødig når "omit_ip" er "true"."
@@ -133,18 +145,18 @@ config_rate_limiting_max_bandwidth: "Maksimal båndbredde tillatt innenfor tilla
 config_rate_limiting_max_requests: "Maksimalt antall forespørsler tillatt innen tillatelsesperioden før hastighetsbegrensende fremtidige forespørsler. En verdi på 0 deaktiverer denne typen hastighetsbegrensende. Standardverdi = 0."
 config_rate_limiting_precision_ipv4: "Presisjonen som skal brukes til å spore IPv4-bruk. Verdi speiler CIDR-blokkstørrelse. Sett til 32 for best presisjon. Standardverdi = 32."
 config_rate_limiting_precision_ipv6: "Presisjonen som skal brukes til å spore IPv6-bruk. Verdi speiler CIDR-blokkstørrelse. Sett til 128 for best presisjon. Standardverdi = 128."
-config_recaptcha: "Konfigurasjon for reCAPTCHA (gir en måte for mennesker å gjenvinne tilgang når de blokkeres)."
-config_recaptcha_api: "Hvilken API skal du bruke? V2 eller invisible?"
-config_recaptcha_expiry: "Antall timer for å huske reCAPTCHA-forekomster."
-config_recaptcha_lockip: "Lås reCAPTCHA til IP-adresser?"
-config_recaptcha_lockuser: "Lås reCAPTCHA til brukere?"
-config_recaptcha_logfile: "Logg på alle reCAPTCHA-forsøk? Hvis ja, spesifiser navnet som skal brukes til loggfilen. Hvis nei, la denne variablen være tom."
-config_recaptcha_secret: "Denne verdien bør samsvare med den "secret key" for reCAPTCHA, som du finner i reCAPTCHA-dashbordet."
-config_recaptcha_show_api_message: "Inkludere API-melding? True = Ja [Standardverdi]; False = Nei."
-config_recaptcha_show_cookie_warning: "Inkludere informasjonskapsel advarsel? True = Ja [Standardverdi]; False = Nei."
-config_recaptcha_signature_limit: "Maksimalt antall signaturer som kan utløses når en reCAPTCHA-forekomst skal tilbys. Standardverdi = 1. Hvis dette nummeret overskrides for en bestemt forespørsel, vil ikke en reCAPTCHA-forekomst bli tilbudt."
-config_recaptcha_sitekey: "Denne verdien bør samsvare med den "site key" for reCAPTCHA, som du finner i reCAPTCHA-dashbordet."
-config_recaptcha_usemode: "Definerer hvordan CIDRAM skal bruke reCAPTCHA (se dokumentasjon)."
+config_recaptcha: "Konfigurasjon for ReCaptcha (gir en måte for mennesker å gjenvinne tilgang når de blokkeres)."
+config_recaptcha_api: *CaptchaAPI
+config_recaptcha_expiry: *CaptchaExpiry
+config_recaptcha_lockip: *CaptchaLockIP
+config_recaptcha_lockuser: *CaptchaLockUser
+config_recaptcha_logfile: *CaptchaLogfile
+config_recaptcha_secret: *CaptchaDashboard
+config_recaptcha_show_api_message: *ShowAPIMessage
+config_recaptcha_show_cookie_warning: *ShowCookieWarning
+config_recaptcha_signature_limit: *CaptchaSignatureLimit
+config_recaptcha_sitekey: *CaptchaDashboard
+config_recaptcha_usemode: *CaptchaUseMode
 config_signatures: "Konfigurasjon for signaturer, signaturfiler, moduler, etc."
 config_signatures_block_bogons: "Blokker bogon/martian CIDRer? Hvis du forventer tilkoblinger til nettstedet ditt fra ditt lokale nettverk, fra localhost eller fra ditt LAN, bør dette direktivet settes til false. Hvis du ikke forventer slike tilkoblinger, bør dette direktivet settes til true."
 config_signatures_block_cloud: "Blokker CIDRer identifisert som tilhørende web-verter og sky-tjenester? Hvis du driver en API-tjeneste fra nettstedet ditt eller hvis du forventer at andre nettsteder skal koble til nettstedet ditt, bør dette settes til false. Hvis du ikke gjør det, da bør dette direktivet settes til true."
@@ -283,6 +295,8 @@ label_aux_reason: "Årsaken til brukeren når den er blokkert:"
 label_aux_run: "Navnet på filen som skal utføres:"
 label_aux_special: "Andre opsjoner og spesielle flagg:"
 label_aux_special_default_state: "La det være som det er (ikke sett noe)"
+label_aux_special_hcaptcha_disable: "Deaktiver HCaptcha med makt"
+label_aux_special_hcaptcha_mark: "Merk for bruk med HCaptcha"
 label_aux_special_ip_tracking_disable: "Deaktiver IP-sporing med makt"
 label_aux_special_ip_tracking_enable: "Aktiver IP-sporing med makt"
 label_aux_special_recaptcha_disable: "Deaktiver reCAPTCHA med makt"

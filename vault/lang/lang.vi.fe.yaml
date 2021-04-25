@@ -120,6 +120,18 @@ config_general_timeFormat: "Định dạng ngày tháng sử dụng bởi CIDRAM
 config_general_timeOffset: "Múi giờ bù đắp trong phút."
 config_general_timezone: "Điều này được sử dụng để chỉ định múi giờ sử dụng (ví dụ, Africa/Cairo, America/New_York, Asia/Tokyo, Australia/Perth, Europe/Berlin, Pacific/Guam, vv). Chỉ định "SYSTEM" để cho phép PHP tự động xử lý việc này cho bạn."
 config_general_truncate: "Dọn dẹp các bản ghi khi họ được một kích thước nhất định? Giá trị là kích thước tối đa bằng B/KB/MB/GB/TB mà một tập tin bản ghi có thể tăng lên trước khi bị dọn dẹp. Giá trị mặc định 0KB sẽ vô hiệu hoá dọn dẹp (các bản ghi có thể tăng lên vô hạn). Lưu ý: Áp dụng cho tập tin riêng biệt! Kích thước tập tin bản ghi không được coi là tập thể."
+config_hcaptcha: "Cấu hình cho HCaptcha (cung cấp một cách để con người lấy lại quyền truy cập khi bị chặn)."
+config_hcaptcha_api: &CaptchaAPI "API nào để sử dụng?"
+config_hcaptcha_expiry: &CaptchaExpiry "Số giờ để nhớ captcha."
+config_hcaptcha_lockip: &CaptchaLockIP "Khóa captcha để IP?"
+config_hcaptcha_lockuser: &CaptchaLockUser "Khóa captcha để người dùng?"
+config_hcaptcha_logfile: &CaptchaLogfile "Đăng nhập tất cả các nỗ lực cho captcha? Nếu có, ghi rõ tên để sử dụng cho các tập tin đăng nhập. Nếu không, đốn biến này."
+config_hcaptcha_secret: &CaptchaDashboard "Giá trị này có thể được tìm thấy trong bảng điều khiển cho dịch vụ captcha của bạn."
+config_hcaptcha_show_api_message: &ShowAPIMessage "Hiển thị thông báo API? True = Vâng [Mặc định]; False = Không."
+config_hcaptcha_show_cookie_warning: &ShowCookieWarning "Hiển thị cảnh báo cookie? True = Vâng [Mặc định]; False = Không."
+config_hcaptcha_signature_limit: &CaptchaSignatureLimit "Số lượng chữ ký tối đa được phép trước khi đề nghị captcha bị rút lại. Mặc định = 1."
+config_hcaptcha_sitekey: *CaptchaDashboard
+config_hcaptcha_usemode: &CaptchaUseMode "Khi nào nên cung cấp captcha?"
 config_legal: "Cấu hình cho các yêu cầu pháp lý."
 config_legal_omit_hostname: "Bỏ qua tên máy chủ từ nhật ký? True = Vâng; False = Không [Mặc định]."
 config_legal_omit_ip: "Bỏ qua địa chỉ IP từ nhật ký? True = Vâng; False = Không [Mặc định]. Lưu ý: "pseudonymise_ip_addresses" trở nên dư thừa khi "omit_ip" là "true"."
@@ -133,18 +145,18 @@ config_rate_limiting_max_bandwidth: "Số lượng băng thông tối đa đư�
 config_rate_limiting_max_requests: "Số lượng yêu cầu tối đa được phép trong khoảng thời gian cho phép trước khi cho phép giới hạn tốc độ cho các yêu cầu trong tương lai. Giá trị 0 sẽ vô hiệu hóa loại giới hạn tốc độ này. Mặc định = 0."
 config_rate_limiting_precision_ipv4: "Độ chính xác để sử dụng khi theo dõi việc sử dụng IPv4. Giá trị phản ánh kích thước khối CIDR. Đặt thành 32 để có độ chính xác cao nhất. Mặc định = 32."
 config_rate_limiting_precision_ipv6: "Độ chính xác để sử dụng khi theo dõi việc sử dụng IPv6. Giá trị phản ánh kích thước khối CIDR. Đặt thành 128 để có độ chính xác cao nhất. Mặc định = 128."
-config_recaptcha: "Cấu hình cho reCAPTCHA (cung cấp một cách để con người lấy lại quyền truy cập khi bị chặn)."
-config_recaptcha_api: "API nào để sử dụng? V2 hoặc Invisible?"
-config_recaptcha_expiry: "Số giờ để nhớ reCAPTCHA."
-config_recaptcha_lockip: "Khóa reCAPTCHA để IP?"
-config_recaptcha_lockuser: "Khóa reCAPTCHA để người dùng?"
-config_recaptcha_logfile: "Đăng nhập tất cả các nỗ lực cho reCAPTCHA? Nếu có, ghi rõ tên để sử dụng cho các tập tin đăng nhập. Nếu không, đốn biến này."
-config_recaptcha_secret: "Giá trị này nên tương ứng với "secret key" cho reCAPTCHA của bạn, tìm thấy trong bảng điều khiển của reCAPTCHA."
-config_recaptcha_show_api_message: "Hiển thị thông báo API? True = Vâng [Mặc định]; False = Không."
-config_recaptcha_show_cookie_warning: "Hiển thị cảnh báo cookie? True = Vâng [Mặc định]; False = Không."
-config_recaptcha_signature_limit: "Số chữ ký tối đa cho phép được kích hoạt khi một cá thể reCAPTCHA được cung cấp. Mặc định = 1. Nếu số này vượt quá cho bất kỳ yêu cầu cụ thể nào, một cá thể reCAPTCHA sẽ không được cung cấp."
-config_recaptcha_sitekey: "Giá trị này nên tương ứng với "site key" cho reCAPTCHA của bạn, tìm thấy trong bảng điều khiển của reCAPTCHA."
-config_recaptcha_usemode: "Định nghĩa thế nào CIDRAM nên sử dụng reCAPTCHA (xem tài liệu)."
+config_recaptcha: "Cấu hình cho ReCaptcha (cung cấp một cách để con người lấy lại quyền truy cập khi bị chặn)."
+config_recaptcha_api: *CaptchaAPI
+config_recaptcha_expiry: *CaptchaExpiry
+config_recaptcha_lockip: *CaptchaLockIP
+config_recaptcha_lockuser: *CaptchaLockUser
+config_recaptcha_logfile: *CaptchaLogfile
+config_recaptcha_secret: *CaptchaDashboard
+config_recaptcha_show_api_message: *ShowAPIMessage
+config_recaptcha_show_cookie_warning: *ShowCookieWarning
+config_recaptcha_signature_limit: *CaptchaSignatureLimit
+config_recaptcha_sitekey: *CaptchaDashboard
+config_recaptcha_usemode: *CaptchaUseMode
 config_signatures: "Cấu hình cho chữ ký, tập tin chữ ký, mô-đun, vv."
 config_signatures_block_bogons: "Chặn CIDR bogon/martian? Nếu bạn mong đợi các kết nối đến trang mạng của bạn từ bên trong mạng nội bộ của bạn, từ localhost, hay từ LAN của bạn, tùy chọn này cần được thiết lập để false. Nếu bạn không mong đợi những kết nối như vậy, tùy chọn này cần được thiết lập để true."
 config_signatures_block_cloud: "Chặn CIDR xác định là thuộc về các dịch vụ lưu trữ mạng hay dịch vụ điện toán đám mây? Nếu bạn điều hành một dịch vụ API từ trang mạng của bạn hay nếu bạn mong đợi các trang mạng khác để kết nối với trang mạng của bạn, điều này cần được thiết lập để false. Nếu bạn không, sau đó, tùy chọn này cần được thiết lập để true."
@@ -283,6 +295,8 @@ label_aux_reason: "Lý do được đưa ra cho người dùng khi bị chặn:"
 label_aux_run: "Tên của tập tin để chạy:"
 label_aux_special: "Các tùy chọn khác và cờ đặc biệt:"
 label_aux_special_default_state: "Để nguyên như vậy (không đặt bất cứ thứ gì)"
+label_aux_special_hcaptcha_disable: "Vô hiệu hóa HCaptcha bằng cưỡng bức"
+label_aux_special_hcaptcha_mark: "Đánh dấu để sử dụng với HCaptcha"
 label_aux_special_ip_tracking_disable: "Vô hiệu hóa giám sát IP bằng cưỡng bức"
 label_aux_special_ip_tracking_enable: "Kích hoạt giám sát IP bằng cưỡng bức"
 label_aux_special_recaptcha_disable: "Vô hiệu hóa reCAPTCHA bằng cưỡng bức"

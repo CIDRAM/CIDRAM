@@ -120,6 +120,18 @@ config_general_timeFormat: "Datum/tid notationsformat som används av CIDRAM. Yt
 config_general_timeOffset: "Tidszonen kompenseras i minuter."
 config_general_timezone: "Detta används för att specificera den tidszon som ska användas (t.ex., Africa/Cairo, America/New_York, Asia/Tokyo, Australia/Perth, Europe/Berlin, Pacific/Guam, osv). Ange "SYSTEM" för att låta PHP hantera detta åt dig automatiskt."
 config_general_truncate: "Avkorta loggfiler när de når en viss storlek? Värdet är den maximala storleken i B/KB/MB/GB/TB som en loggfil kan växa till innan den trunkeras. Standardvärdet på 0KB inaktiverar avkortning (loggfiler kan växa i obestämd tid). Notera: Gäller enskilda loggfiler! Loggfiler storlek anses inte kollektivt."
+config_hcaptcha: "Konfiguration för HCaptcha (ger ett sätt för människor att återfå åtkomst när de blockeras)."
+config_hcaptcha_api: &CaptchaAPI "Vilket API ska användas?"
+config_hcaptcha_expiry: &CaptchaExpiry "Antal timmar för att komma ihåg captcha-instanser."
+config_hcaptcha_lockip: &CaptchaLockIP "Låsa captcha till IP-adresser?"
+config_hcaptcha_lockuser: &CaptchaLockUser "Låsa captcha till användare?"
+config_hcaptcha_logfile: &CaptchaLogfile "Logga in alla captcha-försök? Om ja, ange det namn som ska användas för loggfilen. Om nej, lämna denna variabel tom."
+config_hcaptcha_secret: &CaptchaDashboard "Det här värdet finns i instrumentpanelen för din captcha-tjänst."
+config_hcaptcha_show_api_message: &ShowAPIMessage "Inkludera API-meddelande? True = Ja [Standard]; False = Nej."
+config_hcaptcha_show_cookie_warning: &ShowCookieWarning "Inkludera cookievarning? True = Ja [Standard]; False = Nej."
+config_hcaptcha_signature_limit: &CaptchaSignatureLimit "Maximalt antal signaturer tillåtna innan captcha-erbjudandet dras tillbaka. Standard = 1."
+config_hcaptcha_sitekey: *CaptchaDashboard
+config_hcaptcha_usemode: &CaptchaUseMode "När ska captcha erbjudas?"
 config_legal: "Konfiguration för lagkrav."
 config_legal_omit_hostname: "Utelämna värdnamn från loggar? True = Ja; False = Nej [Standard]."
 config_legal_omit_ip: "Utelämna IP-adresser från loggar? True = Ja; False = Nej [Standard]. Obs: "pseudonymise_ip_addresses" blir överflödigt när "omit_ip" är "true"."
@@ -133,18 +145,18 @@ config_rate_limiting_max_bandwidth: "Den maximala bandbreddsmängden som tillåt
 config_rate_limiting_max_requests: "Det maximala antalet förfrågningar som tillåts inom tillåten-perioden före hastighetsbegränsar framtida förfrågningar. Ett värde av 0 avaktiverar denna typ av hastighetsbegränsande. Standard = 0."
 config_rate_limiting_precision_ipv4: "Den precision som ska användas för att spåra IPv4-användning. Värdet speglar CIDR-blockstorleken. Ställ in till 32 för bästa precision. Standard = 32."
 config_rate_limiting_precision_ipv6: "Den precision som ska användas för att spåra IPv6-användning. Värdet speglar CIDR-blockstorleken. Ställ in till 128 för bästa precision. Standard = 128."
-config_recaptcha: "Konfiguration för reCAPTCHA (ger ett sätt för människor att återfå åtkomst när de blockeras)."
-config_recaptcha_api: "Vilket API ska användas? V2 eller Invisible?"
-config_recaptcha_expiry: "Antal timmar för att komma ihåg reCAPTCHA-instanser."
-config_recaptcha_lockip: "Låsa reCAPTCHA till IP-adresser?"
-config_recaptcha_lockuser: "Låsa reCAPTCHA till användare?"
-config_recaptcha_logfile: "Logga in alla reCAPTCHA-försök? Om ja, ange det namn som ska användas för loggfilen. Om nej, lämna denna variabel tom."
-config_recaptcha_secret: "Detta värde bör motsvara den "secret key" för din reCAPTCHA, som finns i reCAPTCHA-instrumentpanelen."
-config_recaptcha_show_api_message: "Inkludera API-meddelande? True = Ja [Standard]; False = Nej."
-config_recaptcha_show_cookie_warning: "Inkludera cookievarning? True = Ja [Standard]; False = Nej."
-config_recaptcha_signature_limit: "Maximalt antal signaturer får utlösas när en reCAPTCHA-instans ska erbjudas. Standard = 1. Om detta nummer överskrids för en viss begäran, kommer inte en reCAPTCHA-instans att erbjudas."
-config_recaptcha_sitekey: "Detta värde bör motsvara den "site key" för din reCAPTCHA, som finns i reCAPTCHA-instrumentpanelen."
-config_recaptcha_usemode: "Definierar hur CIDRAM ska använda reCAPTCHA (se dokumentation)."
+config_recaptcha: "Konfiguration för ReCaptcha (ger ett sätt för människor att återfå åtkomst när de blockeras)."
+config_recaptcha_api: *CaptchaAPI
+config_recaptcha_expiry: *CaptchaExpiry
+config_recaptcha_lockip: *CaptchaLockIP
+config_recaptcha_lockuser: *CaptchaLockUser
+config_recaptcha_logfile: *CaptchaLogfile
+config_recaptcha_secret: *CaptchaDashboard
+config_recaptcha_show_api_message: *ShowAPIMessage
+config_recaptcha_show_cookie_warning: *ShowCookieWarning
+config_recaptcha_signature_limit: *CaptchaSignatureLimit
+config_recaptcha_sitekey: *CaptchaDashboard
+config_recaptcha_usemode: *CaptchaUseMode
 config_signatures: "Konfiguration för signaturer, signaturfiler, moduler, osv."
 config_signatures_block_bogons: "Blockera bogon/martian CIDRer? Om du förväntar dig anslutningar till din webbplats från ditt lokala nätverk, från localhost eller från ditt LAN, detta direktiv borde vara false. Om du inte förväntar dig sådana anslutningar, detta direktiv borde vara true."
 config_signatures_block_cloud: "Blockera CIDRer identifierade som tillhör webbhotell/molntjänster? Om du använder en API-tjänst från din webbplats eller om du förväntar dig att andra webbplatser ska ansluta till din webbplats, detta direktiv borde vara false. Annars, detta direktiv borde vara true."
@@ -283,6 +295,8 @@ label_aux_reason: "Anledningen till användaren när den blockeras:"
 label_aux_run: "Namnet på filen som ska köras:"
 label_aux_special: "Andra alternativ och specialflaggor:"
 label_aux_special_default_state: "Lämna det som det är (ställ inte in något)"
+label_aux_special_hcaptcha_disable: "Inaktivera HCaptcha med våld"
+label_aux_special_hcaptcha_mark: "Markera för användning med HCaptcha"
 label_aux_special_ip_tracking_disable: "Inaktivera IP-spårning med våld"
 label_aux_special_ip_tracking_enable: "Aktivera IP-spårning med våld"
 label_aux_special_recaptcha_disable: "Inaktivera reCAPTCHA med våld"

@@ -120,6 +120,18 @@ config_general_timeFormat: "O formato de notação de data/tempo utilizado pelo 
 config_general_timeOffset: "Deslocamento do fuso horário em minutos."
 config_general_timezone: "Isso é usado para especificar o fuso horário a ser usado (por exemplo, Africa/Cairo, America/New_York, Asia/Tokyo, Australia/Perth, Europe/Berlin, Pacific/Guam, etc). Especifique "SYSTEM" para permitir que o PHP lide com isso automaticamente."
 config_general_truncate: "Truncar arquivos de log quando atingem um determinado tamanho? Valor é o tamanho máximo em B/KB/MB/GB/TB que um arquivo de log pode crescer antes de ser truncado. O valor padrão de 0KB desativa o truncamento (arquivos de log podem crescer indefinidamente). Nota: Aplica-se a arquivos de log individuais! O tamanho dos arquivos de log não é considerado coletivamente."
+config_hcaptcha: "Configuração para HCaptcha (fornece uma maneira para os humanos recuperarem o acesso quando bloqueados)."
+config_hcaptcha_api: &CaptchaAPI "Qual API usar?"
+config_hcaptcha_expiry: &CaptchaExpiry "Número de horas para lembrar instâncias captcha."
+config_hcaptcha_lockip: &CaptchaLockIP "Ligar captcha para IPs?"
+config_hcaptcha_lockuser: &CaptchaLockUser "Ligar captcha para os usuários?"
+config_hcaptcha_logfile: &CaptchaLogfile "Registrar todas as tentativas de captcha? Se sim, especificar o nome a ser usado para o arquivo de registro. Se não, deixe esta variável em branco."
+config_hcaptcha_secret: &CaptchaDashboard "Esse valor pode ser encontrado no painel de seu serviço de captcha."
+config_hcaptcha_show_api_message: &ShowAPIMessage "Mostrar mensagem API? True = Sim [Padrão]; False = Não."
+config_hcaptcha_show_cookie_warning: &ShowCookieWarning "Mostrar aviso de cookie? True = Sim [Padrão]; False = Não."
+config_hcaptcha_signature_limit: &CaptchaSignatureLimit "O número máximo de assinaturas permitidas antes que o captcha seja retirado. Padrão = 1."
+config_hcaptcha_sitekey: *CaptchaDashboard
+config_hcaptcha_usemode: &CaptchaUseMode "Quando o captcha deve ser oferecido?"
 config_legal: "Configuração para requisitos legais."
 config_legal_omit_hostname: "Omitir nomes de host de logs? True = Sim; False = Não [Padrão]."
 config_legal_omit_ip: "Omitir endereços IP de logs? True = Sim; False = Não [Padrão]. Nota: "pseudonymise_ip_addresses" se torna redundante quando "omit_ip" é "true"."
@@ -133,18 +145,18 @@ config_rate_limiting_max_bandwidth: "A quantidade máxima de largura de banda pe
 config_rate_limiting_max_requests: "O número máximo de solicitações permitido dentro do período de tolerância antes de ativar a limitação de taxa para solicitações futuras. Um valor de 0 desativa esse tipo de limitação de taxa. Padrão = 0."
 config_rate_limiting_precision_ipv4: "A precisão a ser usada ao monitorar o uso do IPv4. Valor espelha o tamanho do bloco CIDR. Defina para 32 para melhor precisão. Padrão = 32."
 config_rate_limiting_precision_ipv6: "A precisão a ser usada ao monitorar o uso do IPv6. Valor espelha o tamanho do bloco CIDR. Defina para 128 para melhor precisão. Padrão = 128."
-config_recaptcha: "Configuração para reCAPTCHA (fornece uma maneira para os humanos recuperarem o acesso quando bloqueados)."
-config_recaptcha_api: "Qual API usar? V2 ou Invisible?"
-config_recaptcha_expiry: "Número de horas para lembrar instâncias reCAPTCHA."
-config_recaptcha_lockip: "Ligar reCAPTCHA para IPs?"
-config_recaptcha_lockuser: "Ligar reCAPTCHA para os usuários?"
-config_recaptcha_logfile: "Registrar todas as tentativas de reCAPTCHA? Se sim, especificar o nome a ser usado para o arquivo de registro. Se não, deixe esta variável em branco."
-config_recaptcha_secret: "Este valor deve corresponder ao "secret key" para o seu reCAPTCHA, que pode ser encontrado dentro do painel de reCAPTCHA."
-config_recaptcha_show_api_message: "Mostrar mensagem API? True = Sim [Padrão]; False = Não."
-config_recaptcha_show_cookie_warning: "Mostrar aviso de cookie? True = Sim [Padrão]; False = Não."
-config_recaptcha_signature_limit: "O número máximo de assinaturas que podem ser desencadeado quando uma instância de reCAPTCHA deve ser oferecida. Padrão = 1. Se este número for excedido para qualquer solicitação específica, uma instância de reCAPTCHA não será oferecida."
-config_recaptcha_sitekey: "Este valor deve corresponder ao "site key" para o seu reCAPTCHA, que pode ser encontrado dentro do painel de reCAPTCHA."
-config_recaptcha_usemode: "Define como CIDRAM deve usar reCAPTCHA (ver documentação)."
+config_recaptcha: "Configuração para ReCaptcha (fornece uma maneira para os humanos recuperarem o acesso quando bloqueados)."
+config_recaptcha_api: *CaptchaAPI
+config_recaptcha_expiry: *CaptchaExpiry
+config_recaptcha_lockip: *CaptchaLockIP
+config_recaptcha_lockuser: *CaptchaLockUser
+config_recaptcha_logfile: *CaptchaLogfile
+config_recaptcha_secret: *CaptchaDashboard
+config_recaptcha_show_api_message: *ShowAPIMessage
+config_recaptcha_show_cookie_warning: *ShowCookieWarning
+config_recaptcha_signature_limit: *CaptchaSignatureLimit
+config_recaptcha_sitekey: *CaptchaDashboard
+config_recaptcha_usemode: *CaptchaUseMode
 config_signatures: "Configuração para assinaturas, arquivos de assinatura, módulos, etc."
 config_signatures_block_bogons: "Bloquear bogon/martian CIDRs? Se você espera conexões para o seu site de dentro de sua rede local, de localhost, ou de seu LAN, esta directiva deve ser definido como false. Se você não esperar que esses tais conexões, esta directiva deve ser definido como true."
 config_signatures_block_cloud: "Bloquear CIDRs identificado como pertencente a webhosting e/ou serviços em nuvem? Se você operar um serviço de API a partir do seu site ou se você espera outros sites para se conectar para o seu site, este deve ser definido como false. Se não, este deve ser definido como true."
@@ -285,6 +297,8 @@ label_aux_reason: "O motivo dado ao usuário quando bloqueado:"
 label_aux_run: "O nome do arquivo a ser executado:"
 label_aux_special: "Outras opções e bandeiras especiais:"
 label_aux_special_default_state: "Deixe como está (não defina nada)"
+label_aux_special_hcaptcha_disable: "Desative forçosamente o HCaptcha"
+label_aux_special_hcaptcha_mark: "Marcar para uso com HCaptcha"
 label_aux_special_ip_tracking_disable: "Desative forçosamente o monitoração de IP"
 label_aux_special_ip_tracking_enable: "Ative forçosamente o monitoração de IP"
 label_aux_special_recaptcha_disable: "Desative forçosamente o reCAPTCHA"

@@ -62,4 +62,54 @@ class Captcha
         $Meld = $Lt;
         return $Meld;
     }
+
+    /**
+     * Determine the theme to use.
+     *
+     * @return string The theme to use (light or dark).
+     */
+    private function determineTheme()
+    {
+        if (!isset(
+            $this->CIDRAM['Config']['template_data']['theme'],
+            $this->CIDRAM['Config']['Config Defaults']['template_data']['theme']['lightdark'][$CIDRAM['Config']['template_data']['theme']]
+        ) {
+            return 'light';
+        }
+        return $this->CIDRAM['Config']['Config Defaults']['template_data']['theme']['lightdark'][$CIDRAM['Config']['template_data']['theme']];
+    }
+
+    /**
+     * Generate data for failed attempts.
+     *
+     * @return void
+     */
+    private function generateFailed()
+    {
+        /** Set CAPTCHA status. */
+        $this->CIDRAM['BlockInfo']['CAPTCHA'] = $this->CIDRAM['L10N']->getString('state_failed');
+
+        /** Append to reCAPTCHA statistics if necessary. */
+        if ($this->CIDRAM['Config']['general']['statistics']) {
+            $this->CIDRAM['Statistics']['CAPTCHAs-Failed']++;
+            $this->CIDRAM['Statistics-Modified'] = true;
+        }
+    }
+
+    /**
+     * Generate data for passed attempts.
+     *
+     * @return void
+     */
+    private function generatePassed()
+    {
+        /** Set CAPTCHA status. */
+        $this->CIDRAM['BlockInfo']['CAPTCHA'] = $this->CIDRAM['L10N']->getString('state_passed');
+
+        /** Append to reCAPTCHA statistics if necessary. */
+        if ($this->CIDRAM['Config']['general']['statistics']) {
+            $this->CIDRAM['Statistics']['CAPTCHAs-Passed']++;
+            $this->CIDRAM['Statistics-Modified'] = true;
+        }
+    }
 }

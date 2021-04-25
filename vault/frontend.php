@@ -3433,6 +3433,9 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-test' && $CIDRAM['FE']['Perm
             if (!empty($CIDRAM['Config']['recaptcha']['enabled'])) {
                 $CIDRAM['ThisIP']['YesNo'] .= ' ++' . $CIDRAM['L10N']->getString('label_aux_special_recaptcha_mark');
             }
+            if (!empty($CIDRAM['Config']['hcaptcha']['enabled'])) {
+                $CIDRAM['ThisIP']['YesNo'] .= ' ++' . $CIDRAM['L10N']->getString('label_aux_special_hcaptcha_mark');
+            }
             if (!empty($CIDRAM['Suppress output template'])) {
                 $CIDRAM['ThisIP']['YesNo'] .= ' ++' . $CIDRAM['L10N']->getString('label_aux_special_suppress');
             }

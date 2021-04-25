@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Configuration defaults file (last modified: 2021.04.24).
+# This file: Configuration defaults file (last modified: 2021.04.25).
 ##/
 
 Config Defaults:
@@ -400,6 +400,13 @@ Config Defaults:
   usemode:
    type: "int"
    default: 0
+   choices:
+    0: "{label_never} !!!"
+    1: "{label_usemode_blkd}"
+    2: "{label_usemode_blkd_mrkd}"
+    3: "{label_usemode_any}"
+    4: "{label_usemode_not_blkd}"
+    5: "{label_usemode_not_blkd_mrkd}"
   lockip:
    type: "bool"
    default: false
@@ -410,12 +417,16 @@ Config Defaults:
    type: "string"
    default: ""
    See also:
-    ReCaptcha Dashboard: &ReCaptchaDashboard "https://developers.google.com/recaptcha"
+    Invisible reCAPTCHA: &ReCaptchaInvisible "https://developers.google.com/recaptcha/docs/invisible"
+    reCAPTCHA v2: &ReCaptchaV2 "https://developers.google.com/recaptcha/docs/display"
+    reCAPTCHA v3: &ReCaptchaV3 "https://developers.google.com/recaptcha/docs/v3"
   secret:
    type: "string"
    default: ""
    See also:
-    ReCaptcha Dashboard: *ReCaptchaDashboard
+    Invisible reCAPTCHA: *ReCaptchaInvisible
+    reCAPTCHA v2: *ReCaptchaV2
+    reCAPTCHA v3: *ReCaptchaV3
   expiry:
    type: "float"
    step: "any"
@@ -431,8 +442,8 @@ Config Defaults:
    type: "string"
    default: "V2"
    choices:
-    V2: "V2"
-    Invisible: "Invisible"
+    V2: "V2 ({label_checkbox})"
+    Invisible: "V2 ({label_invisible})"
   show_cookie_warning:
    type: "bool"
    default: true
@@ -443,6 +454,13 @@ Config Defaults:
   usemode:
    type: "int"
    default: 0
+   choices:
+    0: "{label_never} !!!"
+    1: "{label_usemode_blkd}"
+    2: "{label_usemode_blkd_mrkd}"
+    3: "{label_usemode_any}"
+    4: "{label_usemode_not_blkd}"
+    5: "{label_usemode_not_blkd_mrkd}"
   lockip:
    type: "bool"
    default: false
@@ -472,10 +490,10 @@ Config Defaults:
    default: 1
   api:
    type: "string"
-   default: "V2"
+   default: "V1"
    choices:
-    V2: "V2"
-    Invisible: "Invisible"
+    V1: "V1"
+    Invisible: "V1 ({label_invisible})"
   show_cookie_warning:
    type: "bool"
    default: true

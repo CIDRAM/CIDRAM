@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6.dat
 
-# Version: 2021.110.593
-# Last modified: 2021.04.21
+# Version: 2021.115.483
+# Last modified: 2021.04.26
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage, i.e., with ignore.dat, with reCAPTCHA, with "extended rules" (default bypasses): « [x]Low [ ]Medium [ ]High »
@@ -162,8 +162,8 @@ Tag: home.pl
 
 
 # ASN 25532 ("Masterhost").
-# Stop Forum Spam (SFS) listings: 4.
-# Updated: 2016.04.18 / Checked: 2020.09.20
+# Stop Forum Spam (SFS) listings: 11.
+# Updated: 2016.04.18 / Checked: 2021.04.26
 
 2a00:15f8::/32 Deny Cloud
 Origin: RU
@@ -949,10 +949,10 @@ Tag: DataShack, LC
 # ASN 62710 ("Rack911").
 # Significant listings at AbuseIPDB for hack attempts, probing, port scanning,
 # etc. E.g., refer abuseipdb.com/check/172.93.4.78
-# Updated: 2020.04.08 / Checked: 2020.09.29
+# Dead at last check. Will remove at the next update if no change.
+# Updated: 2021.04.26
 
-2602:ffdb:100::/41 Deny Cloud
-Origin: US
+#<redacted>
 Profile: Webhosting
 Tag: Rack911
 
@@ -2168,11 +2168,10 @@ Tag: Media-Hosts Inc
 
 
 # ASN 53667 ("FranTech Solutions").
-# Stop Forum Spam (SFS) listings: 51,143.
-# Updated: 2020.10.09
+# All kinds of rubbish from these guys without any end in sight.
+# Stop Forum Spam (SFS) listings: 80,839.
+# Updated: 2021.04.26
 
-2a0f:9400:7a01::/48 Deny Cloud
-Origin: GB
 2604:4d40:2000::/36 Deny Cloud
 2605:6400:1::/48 Deny Cloud
 2605:6400:2::/47 Deny Cloud
@@ -2181,9 +2180,11 @@ Origin: GB
 2605:6400:30::/48 Deny Cloud
 2605:6400:100::/48 Deny Cloud
 2605:6400:300::/48 Deny Cloud
-2605:6400:9001::/48 Deny Cloud
-2605:6400:9002::/47 Deny Cloud
-2620:8b:a000::/48 Deny Cloud
+2605:6400:2460:1::/64 Deny Cloud
+2605:6400:4000::/34 Deny Cloud
+2605:6400:8000::/33 Deny Cloud
+fdde:c9a7:14f8:84::/64 Deny Cloud
+fdeb:fc8d:4786:60b7::/64 Deny Cloud
 Origin: US
 Profile: Tor endpoints here;Webhosting
 Tag: FranTech Solutions
@@ -4501,7 +4502,7 @@ Tag: Deninet KFT
 
 # ASN 32767 ("SAPIOTERRA, LLC").
 # Brute-force and SSH attacks + and WordPress hack attempts.
-# Updated: 2017.11.06 / Checked: 2020.09.20
+# Updated: 2017.11.06 / Checked: 2021.04.26
 
 2607:c080::/32 Deny Cloud
 Origin: US
@@ -5223,8 +5224,8 @@ Tag: Zwiebelfreunde
 
 # ASN 34867 ("Cosmonova LLC").
 # Caught spamming while pretending to be Google.
-# Stop Forum Spam (SFS) listings: 245.
-# Updated: 2019.02.07 / Checked: 2020.09.20
+# Stop Forum Spam (SFS) listings: 1,061.
+# Updated: 2019.02.07 / Checked: 2021.04.26
 
 2a00:17a0::/32 Deny Cloud
 Origin: UA
@@ -5646,12 +5647,13 @@ Tag: AS61272
 
 
 # ASN 43160 ("Mdc Datacenter S.L").
-# Source of forum spam.
-# Stop Forum Spam (SFS) listings: 20.
-# Updated: 2019.07.02 / Checked: 2020.09.29
+# Source of forum spam. Mostly clean at last check. Redacting for now; At next
+# check, will either reinstate all ranges or remove the section entirely,
+# pending how it looks at that time.
+# Stop Forum Spam (SFS) listings: 11.
+# Updated: 2021.04.26
 
-2a01:b5c0::/32 Deny Cloud
-Origin: ES
+#<redacted>
 Tag: Mdc Datacenter S.L
 
 
@@ -5837,14 +5839,15 @@ Tag: VooServers Ltd
 
 # ASNs 12406, 134204 ("Business Network Ltd").
 # Cloud provider; Source of spam and other unwanted traffic.
-# Stop Forum Spam (SFS) listings: 1,746 (AS12406), 74 (AS134204).
-# Updated: 2019.07.24 / Checked: 2020.09.30
+# Stop Forum Spam (SFS) listings: 50 (AS12406), 50 (AS134204).
+# Updated: 2021.04.26
 
 2400:4d40::/32 Deny Cloud
 Origin: BD
 2a00:6440::/32 Deny Cloud
-2a06:1287:40::/48 Deny Cloud
 Origin: BY
+2a06:1287:40::/48 Deny Cloud
+Origin: US
 Tag: Business Network Ltd
 
 
@@ -8310,6 +8313,28 @@ Tag: Optitrust GmbH
 Origin: AT
 Profile: Webhosting
 Tag: IPAX OG
+
+
+# ASN 33151 ("Trustwave Holdings, Inc").
+# Caught probing/testing website defences without permission.
+# Updated: 2021.04.26
+
+2620:bb:c000::/48 Deny Cloud
+Origin: US
+Tag: Trustwave Holdings, Inc
+
+
+# ASN 28855 ("Octopuce s.a.r.l").
+# Webhosting provider caught spamming.
+# Stop Forum Spam (SFS) listings: 1,355.
+# Updated: 2021.04.26
+
+2001:67c:288::/48 Deny Cloud
+2001:1b78::/32 Deny Cloud
+2a00:99a0::/33 Deny Cloud
+Origin: FR
+Profile: Webhosting
+Tag: Octopuce s.a.r.l
 
 
 # ---

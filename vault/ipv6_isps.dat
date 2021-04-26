@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_isps.dat
 
-# Version: 2021.110.593
-# Last modified: 2021.04.21
+# Version: 2021.115.483
+# Last modified: 2021.04.26
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage, i.e., with ignore.dat, with reCAPTCHA, with "extended rules" (default bypasses): « [ ]Low [x]Medium [ ]High »
@@ -1667,6 +1667,7 @@ recaptcha:
 
 2a00:fc00::/32 Deny Spam
 Origin: UA
+Profile: Domestic ISP;Government
 Tag: UARNet
 ---
 recaptcha:

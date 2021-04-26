@@ -1,8 +1,8 @@
 # IPv4 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv4.dat
 
-# Version: 2021.110.593
-# Last modified: 2021.04.21
+# Version: 2021.115.483
+# Last modified: 2021.04.26
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage, i.e., with ignore.dat, with reCAPTCHA, with "extended rules" (default bypasses): « [x]Low [ ]Medium [ ]High »
@@ -939,11 +939,10 @@ Tag: home.pl
 
 
 # ASN 25532 ("Masterhost").
-# Stop Forum Spam (SFS) listings: 4.
-# Updated: 2016.04.18 / Checked: 2020.09.20
+# Stop Forum Spam (SFS) listings: 11.
+# Updated: 2021.04.26
 
 83.222.0.0/19 Deny Cloud
-84.252.128.0/18 Deny Cloud
 87.242.64.0/18 Deny Cloud
 90.156.128.0/17 Deny Cloud
 217.16.16.0/20 Deny Cloud
@@ -4163,15 +4162,10 @@ Tag: DataShack, LC
 # ASN 62710 ("Rack911").
 # Significant listings at AbuseIPDB for hack attempts, probing, port scanning,
 # etc. E.g., refer abuseipdb.com/check/172.93.4.78
-# Updated: 2020.04.08 / Checked: 2020.09.29
+# Dead at last check. Will remove at the next update if no change.
+# Updated: 2021.04.26
 
-104.128.78.0/23 Deny Cloud
-162.220.112.0/22 Deny Cloud
-162.247.48.0/23 Deny Cloud
-162.247.51.0/24 Deny Cloud
-172.93.4.0/23 Deny Cloud
-199.19.78.0/24 Deny Cloud
-Origin: US
+#<redacted>
 Profile: Webhosting
 Tag: Rack911
 
@@ -8906,8 +8900,9 @@ Tag: Media-Hosts Inc
 
 
 # ASN 53667 ("FranTech Solutions").
-# Stop Forum Spam (SFS) listings: 51,143.
-# Updated: 2020.10.09
+# All kinds of rubbish from these guys without any end in sight.
+# Stop Forum Spam (SFS) listings: 80,839.
+# Updated: 2021.04.26
 
 45.61.176.0/21 Deny Cloud
 69.7.76.0/24 Deny Cloud
@@ -8917,6 +8912,7 @@ Tag: Media-Hosts Inc
 104.194.152.0/22 Deny Cloud
 104.244.72.0/21 Deny Cloud
 107.189.0.0/19 Deny Cloud
+144.172.64.0/24 Deny Cloud
 144.172.80.0/23 Deny Cloud
 144.172.82.0/24 Deny Cloud
 144.172.85.0/24 Deny Cloud
@@ -20582,7 +20578,7 @@ Tag: Deninet KFT
 
 # ASN 32767 ("SAPIOTERRA, LLC").
 # Brute-force and SSH attacks + and WordPress hack attempts.
-# Updated: 2017.11.06 / Checked: 2020.09.20
+# Updated: 2017.11.06 / Checked: 2021.04.26
 
 162.253.124.0/22 Deny Cloud
 192.70.246.0/23 Deny Cloud
@@ -23955,8 +23951,8 @@ Tag: TORAT Private Enterprise
 
 # ASN 34867 ("Cosmonova LLC").
 # Caught spamming while pretending to be Google.
-# Stop Forum Spam (SFS) listings: 245.
-# Updated: 2019.02.07 / Checked: 2020.09.20
+# Stop Forum Spam (SFS) listings: 1,061.
+# Updated: 2019.02.07 / Checked: 2021.04.26
 
 95.67.0.0/17 Deny Cloud
 185.48.196.0/22 Deny Cloud
@@ -25457,86 +25453,14 @@ Tag: AS61272
 
 
 # ASN 43160 ("Mdc Datacenter S.L").
-# Source of forum spam.
-# Stop Forum Spam (SFS) listings: 20.
-# Updated: 2020.08.17 / Checked: 2020.09.29
+# Source of forum spam. Mostly clean at last check. Redacting for now; At next
+# check, will either reinstate all ranges or remove the section entirely,
+# pending how it looks at that time.
+# Stop Forum Spam (SFS) listings: 11.
+# Updated: 2021.04.26
 
-5.40.32.0/23 Deny Cloud
-5.40.86.0/24 Deny Cloud
-5.40.128.0/24 Deny Cloud
-5.40.191.0/24 Deny Cloud
-5.40.252.0/24 Deny Cloud
-5.158.80.0/23 Deny Cloud
-5.158.82.0/24 Deny Cloud
-5.158.86.0/24 Deny Cloud
-37.235.32.0/21 Deny Cloud
-45.92.72.0/22 Deny Cloud
-62.82.84.0/24 Deny Cloud
-62.82.238.0/24 Deny Cloud
-62.175.202.0/24 Deny Cloud
-84.124.116.0/24 Deny Cloud
-85.217.135.0/24 Deny Cloud
-85.217.136.0/22 Deny Cloud
-85.217.141.0/24 Deny Cloud
-85.217.142.0/23 Deny Cloud
-85.217.146.0/24 Deny Cloud
-85.217.150.0/23 Deny Cloud
-85.217.152.0/22 Deny Cloud
-85.217.157.0/24 Deny Cloud
-85.217.158.0/23 Deny Cloud
-88.98.96.0/20 Deny Cloud
-89.140.40.0/23 Deny Cloud
-89.140.112.0/24 Deny Cloud
-89.140.120.0/24 Deny Cloud
-89.140.122.0/24 Deny Cloud
-89.140.197.0/24 Deny Cloud
-149.62.176.0/21 Deny Cloud
-176.32.48.0/23 Deny Cloud
-176.32.52.0/23 Deny Cloud
-185.28.51.0/24 Deny Cloud
-185.44.232.0/22 Deny Cloud
-185.94.48.0/22 Deny Cloud
-185.130.24.0/22 Deny Cloud
-185.143.0.0/22 Deny Cloud
-185.162.172.0/23 Deny Cloud
-185.174.212.0/24 Deny Cloud
-185.196.202.0/23 Deny Cloud
-185.202.164.0/22 Deny Cloud
-185.232.172.0/22 Deny Cloud
-185.240.88.0/23 Deny Cloud
-185.240.90.0/24 Deny Cloud
-185.240.164.0/24 Deny Cloud
-185.244.230.0/23 Deny Cloud
-185.246.13.0/24 Deny Cloud
-185.246.15.0/24 Deny Cloud
-195.82.104.0/23 Deny Cloud
-195.82.106.0/24 Deny Cloud
-212.63.116.0/22 Deny Cloud
-212.63.120.0/24 Deny Cloud
-212.63.122.0/23 Deny Cloud
-Origin: ES
-149.71.168.0/21 Deny Cloud
-149.100.24.0/21 Deny Cloud
-Origin: US
+#<redacted>
 Tag: Mdc Datacenter S.L
----
-recaptcha:
- enabled: true
-
-
-# Announcing as: "DME Hosting LLC". A cloud provider caught spamming.
-# Various ASNs; Sourced from HE.
-# Updated: 2020.04.08 / Checked: 2020.09.29
-
-74.221.210.0/23 Deny Cloud
-74.221.217.0/24 Deny Cloud
-74.221.218.0/23 Deny Cloud
-74.221.220.0/24 Deny Cloud
-104.37.56.0/23 Deny Cloud
-104.37.58.0/24 Deny Cloud
-Origin: US
-Profile: Webhosting
-Tag: DME Hosting LLC
 
 
 # ASN 64236 ("Accuserv Inc").
@@ -25894,11 +25818,10 @@ Tag: VooServers Ltd
 
 # ASNs 12406, 134204 ("Business Network Ltd").
 # Cloud provider; Source of spam and other unwanted traffic.
-# Stop Forum Spam (SFS) listings: 1,746 (AS12406), 74 (AS134204).
-# Updated: 2020.04.08 / Checked: 2020.09.30
+# Stop Forum Spam (SFS) listings: 50 (AS12406), 50 (AS134204).
+# Updated: 2021.04.26
 
 103.58.72.0/22 Deny Cloud
-103.126.214.0/24 Deny Cloud
 203.76.220.0/22 Deny Cloud
 Origin: BD
 31.24.88.0/21 Deny Cloud
@@ -25906,7 +25829,6 @@ Origin: BD
 80.249.80.0/20 Deny Cloud
 91.149.164.0/24 Deny Cloud
 178.172.136.0/22 Deny Cloud
-178.172.254.0/24 Deny Cloud
 185.66.70.0/24 Deny Cloud
 185.158.216.0/22 Deny Cloud
 185.179.82.0/23 Deny Cloud
@@ -28087,12 +28009,11 @@ Tag: NETMINDERS
 # Webhosting provider caught trying to hack into WordPress and Drupal
 # installations, scanning for vulnerabilities, performing brute-force attacks
 # plus performing other unwanted activities.
-# Stop Forum Spam (SFS) listings: 3.
-# Updated: 2020.03.30 / Checked: 2020.09.20
+# Stop Forum Spam (SFS) listings: 23.
+# Updated: 2021.04.26
 
 91.234.104.0/22 Deny Cloud
 185.81.156.0/22 Deny Cloud
-194.36.166.0/24 Deny Cloud
 Origin: FR
 Profile: Webhosting
 Tag: INULOGIC SARL
@@ -32829,6 +32750,32 @@ Tag: Optitrust GmbH
 Origin: AT
 Profile: Webhosting
 Tag: IPAX OG
+
+
+# ASN 33151 ("Trustwave Holdings, Inc").
+# Caught probing/testing website defences without permission.
+# Updated: 2021.04.26
+
+38.106.143.0/24 Deny Cloud
+204.13.200.0/23 Deny Cloud
+208.90.238.0/23 Deny Cloud
+Origin: US
+Tag: Trustwave Holdings, Inc
+
+
+# ASN 28855 ("Octopuce s.a.r.l").
+# Webhosting provider caught spamming.
+# Stop Forum Spam (SFS) listings: 1,355.
+# Updated: 2021.04.26
+
+91.194.60.0/23 Deny Cloud
+185.34.32.0/22 Deny Cloud
+193.56.58.0/24 Deny Cloud
+194.36.166.0/24 Deny Cloud
+217.24.80.0/20 Deny Cloud
+Origin: FR
+Profile: Webhosting
+Tag: Octopuce s.a.r.l
 
 
 # ---

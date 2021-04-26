@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Japanese language data for the front-end (last modified: 2021.04.25).
+# This file: Japanese language data for the front-end (last modified: 2021.04.26).
 ##/
 
 Extended Description Bypasses: "メインパッケージに通常含まれているデフォルト・シグネチャ・バイパス。"
@@ -131,7 +131,7 @@ config_hcaptcha_show_api_message: &ShowAPIMessage "ＡＰＩメッセージを�
 config_hcaptcha_show_cookie_warning: &ShowCookieWarning "Cookie（クッキー）の警告を表示しますか？ True = はい（Default/デフォルルト）。 False = いいえ。"
 config_hcaptcha_signature_limit: &CaptchaSignatureLimit "キャプチャが取り消される前に許可されるシグネチャの最大数。​Default/デフォルルト = １。"
 config_hcaptcha_sitekey: *CaptchaDashboard
-config_hcaptcha_usemode: &CaptchaUseMode "キャプチャはいつ提供する必要がありますか？"
+config_hcaptcha_usemode: &CaptchaUseMode "キャプチャはいつ提供する必要がありますか？​注：ホワイト・リストされまたは検証済みでブロックされていないリクエストは、CAPTCHAを完了する必要はありません。"
 config_legal: "法的要件の設定。"
 config_legal_omit_hostname: "ログからホスト名を省略しますか？ True = はい。 False = いいえ（Default/デフォルルト）。"
 config_legal_omit_ip: "ログからＩＰアドレスを省略しますか？ True = はい。 False = いいえ（Default/デフォルルト）。​注：「omit_ip」が「true」の場合、「pseudonymise_ip_addresses」は冗長になります。"

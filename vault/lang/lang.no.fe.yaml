@@ -131,7 +131,7 @@ config_hcaptcha_show_api_message: &ShowAPIMessage "Inkludere API-melding? True =
 config_hcaptcha_show_cookie_warning: &ShowCookieWarning "Inkludere informasjonskapsel advarsel? True = Ja [Standardverdi]; False = Nei."
 config_hcaptcha_signature_limit: &CaptchaSignatureLimit "Maksimalt antall signaturer tillatt før du trekker tilbake et CAPTCHA-tilbud. Standardverdi = 1."
 config_hcaptcha_sitekey: *CaptchaDashboard
-config_hcaptcha_usemode: &CaptchaUseMode "Når skal CAPTCHA tilbys?"
+config_hcaptcha_usemode: &CaptchaUseMode "Når skal CAPTCHA tilbys? Merk: Hvitlistet eller verifiserte og ikke-blokkerte forespørsler trenger aldri å fullføre en CAPTCHA."
 config_legal: "Konfigurasjon for juridiske krav."
 config_legal_omit_hostname: "Utelat vertsnavn fra logger? True = Ja; False = Nei [Standardverdi]."
 config_legal_omit_ip: "Utelat IP-adresser fra logger? True = Ja; False = Nei [Standardverdi]. Merk: "pseudonymise_ip_addresses" blir overflødig når "omit_ip" er "true"."

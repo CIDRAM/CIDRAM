@@ -287,29 +287,30 @@ track_mode=false
 ; Configuration for ReCaptcha (provides a way for humans to regain access when
 ; blocked).
 
-; When should the captcha be offered?
+; When should the CAPTCHA be offered? Note: Whitelisted or verified and
+; non-blocked requests never need to complete a CAPTCHA.
 usemode=0
 
-; Lock captcha to IPs?
+; Lock CAPTCHA to IPs?
 lockip=false
 
-; Lock captcha to users?
+; Lock CAPTCHA to users?
 lockuser=true
 
-; This value can be found in the dashboard for your captcha service.
+; This value can be found in the dashboard for your CAPTCHA service.
 sitekey=''
 
-; This value can be found in the dashboard for your captcha service.
+; This value can be found in the dashboard for your CAPTCHA service.
 secret=''
 
-; Number of hours to remember captcha instances.
+; Number of hours to remember CAPTCHA instances.
 expiry=720
 
-; Log all captcha attempts? If yes, specify the name to use for the logfile. If
+; Log all CAPTCHA attempts? If yes, specify the name to use for the logfile. If
 ; no, leave this variable blank.
 logfile=''
 
-; Maximum number of signatures allowed before the captcha offer is withdrawn.
+; Maximum number of signatures allowed before the CAPTCHA offer is withdrawn.
 ; Default = 1.
 signature_limit=1
 
@@ -327,29 +328,30 @@ show_api_message=true
 ; Configuration for HCaptcha (provides a way for humans to regain access when
 ; blocked).
 
-; When should the captcha be offered?
+; When should the CAPTCHA be offered? Note: Whitelisted or verified and
+; non-blocked requests never need to complete a CAPTCHA.
 usemode=0
 
-; Lock captcha to IPs?
+; Lock CAPTCHA to IPs?
 lockip=false
 
-; Lock captcha to users?
+; Lock CAPTCHA to users?
 lockuser=true
 
-; This value can be found in the dashboard for your captcha service.
+; This value can be found in the dashboard for your CAPTCHA service.
 sitekey=''
 
-; This value can be found in the dashboard for your captcha service.
+; This value can be found in the dashboard for your CAPTCHA service.
 secret=''
 
-; Number of hours to remember captcha instances.
+; Number of hours to remember CAPTCHA instances.
 expiry=720
 
-; Log all captcha attempts? If yes, specify the name to use for the logfile. If
+; Log all CAPTCHA attempts? If yes, specify the name to use for the logfile. If
 ; no, leave this variable blank.
 logfile=''
 
-; Maximum number of signatures allowed before the captcha offer is withdrawn.
+; Maximum number of signatures allowed before the CAPTCHA offer is withdrawn.
 ; Default = 1.
 signature_limit=1
 

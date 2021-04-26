@@ -131,7 +131,7 @@ config_hcaptcha_show_api_message: &ShowAPIMessage "Hiển thị thông báo API?
 config_hcaptcha_show_cookie_warning: &ShowCookieWarning "Hiển thị cảnh báo cookie? True = Vâng [Mặc định]; False = Không."
 config_hcaptcha_signature_limit: &CaptchaSignatureLimit "Số lượng chữ ký tối đa được phép trước khi đề nghị CAPTCHA bị rút lại. Mặc định = 1."
 config_hcaptcha_sitekey: *CaptchaDashboard
-config_hcaptcha_usemode: &CaptchaUseMode "Khi nào nên cung cấp CAPTCHA?"
+config_hcaptcha_usemode: &CaptchaUseMode "Khi nào nên cung cấp CAPTCHA? Lưu ý: Các yêu cầu trong danh sách trắng hay đã xác minh và không bị chặn không cần phải hoàn thành CAPTCHA."
 config_legal: "Cấu hình cho các yêu cầu pháp lý."
 config_legal_omit_hostname: "Bỏ qua tên máy chủ từ nhật ký? True = Vâng; False = Không [Mặc định]."
 config_legal_omit_ip: "Bỏ qua địa chỉ IP từ nhật ký? True = Vâng; False = Không [Mặc định]. Lưu ý: "pseudonymise_ip_addresses" trở nên dư thừa khi "omit_ip" là "true"."

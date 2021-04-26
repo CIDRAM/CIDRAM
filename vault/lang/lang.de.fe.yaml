@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: German language data for the front-end (last modified: 2021.04.25).
+# This file: German language data for the front-end (last modified: 2021.04.26).
 ##/
 
 Extended Description Bypasses: "Die Standard-Signatur-Bypass-Dateien, die normalerweise im Hauptpaket enthalten sind."
@@ -122,16 +122,16 @@ config_general_timezone: "Gibt welche Zeitzone verwendet werden soll an (z.B., A
 config_general_truncate: "Protokolldateien kürzen wenn diese eine bestimmte Größe erreichen? Wert ist die maximale Größe in B/KB/MB/GB/TB, die eine Protokolldatei erreichen kann, bevor sie gekürtzt wird. Der Standardwert von 0KB deaktiviert die Kürzung (Protokolldateien können unbegrenzt wachsen). Beachten: Gilt für einzelne Protokolldateien! Die Größe der Protokolldateien gilt nicht in der Summe aller Protokolldateien."
 config_hcaptcha: "Konfiguration für HCaptcha (bietet eine Möglichkeit für Menschen den Zugang wiederherzustellen, wenn sie blockiert sind)."
 config_hcaptcha_api: &CaptchaAPI "Welche API soll verwendet werden?"
-config_hcaptcha_expiry: &CaptchaExpiry "Anzahl der Stunden an die sich Captcha-Instanzen erinnern sollten."
-config_hcaptcha_lockip: &CaptchaLockIP "Sperren Sie Captcha auf IPs?"
-config_hcaptcha_lockuser: &CaptchaLockUser "Sperren Sie Captcha auf Benutzer?"
-config_hcaptcha_logfile: &CaptchaLogfile "Protokollieren Sie alle Captcha versucht? Geben Sie einen Dateinamen an oder lassen Sie die Option zum Deaktivieren leer."
-config_hcaptcha_secret: &CaptchaDashboard "Dieser Wert befindet sich im Dashboard für Ihren Captcha-Dienst."
+config_hcaptcha_expiry: &CaptchaExpiry "Anzahl der Stunden an die sich CAPTCHA-Instanzen erinnern sollten."
+config_hcaptcha_lockip: &CaptchaLockIP "Sperren Sie CAPTCHA auf IPs?"
+config_hcaptcha_lockuser: &CaptchaLockUser "Sperren Sie CAPTCHA auf Benutzer?"
+config_hcaptcha_logfile: &CaptchaLogfile "Protokollieren Sie alle CAPTCHA versucht? Geben Sie einen Dateinamen an oder lassen Sie die Option zum Deaktivieren leer."
+config_hcaptcha_secret: &CaptchaDashboard "Dieser Wert befindet sich im Dashboard für Ihren CAPTCHA-Dienst."
 config_hcaptcha_show_api_message: &ShowAPIMessage "API-Nachricht anzeigen? True = Ja [Standardeinstellung]; False = Nein."
 config_hcaptcha_show_cookie_warning: &ShowCookieWarning "Cookie-Warnung anzeigen? True = Ja [Standardeinstellung]; False = Nein."
-config_hcaptcha_signature_limit: &CaptchaSignatureLimit "Maximal zulässige Anzahl von Signaturen, bevor das Captcha-Angebot zurückgezogen wird. Standardeinstellung = 1."
+config_hcaptcha_signature_limit: &CaptchaSignatureLimit "Maximal zulässige Anzahl von Signaturen, bevor das CAPTCHA-Angebot zurückgezogen wird. Standardeinstellung = 1."
 config_hcaptcha_sitekey: *CaptchaDashboard
-config_hcaptcha_usemode: &CaptchaUseMode "Wann sollte das Captcha angeboten werden?"
+config_hcaptcha_usemode: &CaptchaUseMode "Wann sollte das CAPTCHA angeboten werden? Hinweis: Whitelist markierte oder verifizierte und nicht blockierte Anfragen müssen niemals ein CAPTCHA abschließen."
 config_legal: "Konfiguration für gesetzliche Anforderungen."
 config_legal_omit_hostname: "Hostnamen aus Protokollen auslassen? True = Ja; False = Nein [Standardeinstellung]."
 config_legal_omit_ip: "IP-Adressen aus Protokollen auslassen? True = Ja; False = Nein [Standardeinstellung]. Hinweis: "pseudonymise_ip_addresses" wird überflüssig, wenn "omit_ip" "true" ist."

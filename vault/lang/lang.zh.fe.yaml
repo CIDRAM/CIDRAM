@@ -131,7 +131,7 @@ config_hcaptcha_show_api_message: &ShowAPIMessage "显示API讯息吗？​True�
 config_hcaptcha_show_cookie_warning: &ShowCookieWarning "显示cookie警告吗？​True（真）=显示【标准】；False（假）=不显示。"
 config_hcaptcha_signature_limit: &CaptchaSignatureLimit "撤销CAPTCHA之前允许的最大签名数。标准 = 1。"
 config_hcaptcha_sitekey: *CaptchaDashboard
-config_hcaptcha_usemode: &CaptchaUseMode "何时应提供CAPTCHA吗？"
+config_hcaptcha_usemode: &CaptchaUseMode "何时应提供CAPTCHA吗？​注意：列入白名单或已验证且未阻止的请求永远不需要完成CAPTCHA。"
 config_legal: "法律要求的配置。"
 config_legal_omit_hostname: "从日志文件中排除主机名？​True（真）=排除；False（假）=不排除【标准】。"
 config_legal_omit_ip: "从日志文件中排除IP地址？​True（真）=排除；False（假）=不排除【标准】。​注意：“omit_ip”为“true”时，“pseudonymise_ip_addresses”变得不必要。"

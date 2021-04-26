@@ -131,7 +131,7 @@ config_hcaptcha_show_api_message: &ShowAPIMessage "Tampilkan pesan API? True = Y
 config_hcaptcha_show_cookie_warning: &ShowCookieWarning "Tampilkan peringatan cookie? True = Ya [Default]; False = Tidak."
 config_hcaptcha_signature_limit: &CaptchaSignatureLimit "Jumlah maksimum tanda tangan yang diperbolehkan sebelum penawaran CAPTCHA ditarik. Default = 1."
 config_hcaptcha_sitekey: *CaptchaDashboard
-config_hcaptcha_usemode: &CaptchaUseMode "Kapan CAPTCHA harus ditawarkan?"
+config_hcaptcha_usemode: &CaptchaUseMode "Kapan CAPTCHA harus ditawarkan? Catat: Permintaan yang masuk daftar putih atau diverifikasi dan tidak diblokir tidak perlu menyelesaikan CAPTCHA."
 config_legal: "Konfigurasi untuk persyaratan hukum."
 config_legal_omit_hostname: "Jangan memasukkan nama host di log? True = Ya; False = Tidak [Default]."
 config_legal_omit_ip: "Jangan memasukkan alamat IP di log? True = Ya; False = Tidak [Default]. Catat: "pseudonymise_ip_addresses" menjadi tidak perlu ketika "omit_ip" adalah "true"."

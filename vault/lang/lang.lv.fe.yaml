@@ -131,7 +131,7 @@ config_hcaptcha_show_api_message: &ShowAPIMessage "Rādīt API ziņojumu? True (
 config_hcaptcha_show_cookie_warning: &ShowCookieWarning "Rādīt brīdinājumu par sīkfailu? True (Patiess) = Jā [Noklusējuma]; False (Nepatiess) = Nē."
 config_hcaptcha_signature_limit: &CaptchaSignatureLimit "Maksimālais atļautais parakstu skaits pirms CAPTCHA piedāvājuma atsaukšanas. Noklusējuma = 1."
 config_hcaptcha_sitekey: *CaptchaDashboard
-config_hcaptcha_usemode: &CaptchaUseMode "Kad vajadzētu piedāvāt CAPTCHA?"
+config_hcaptcha_usemode: &CaptchaUseMode "Kad vajadzētu piedāvāt CAPTCHA? Piezīme: Baltā sarakstā iekļautajiem vai pārbaudītajiem un nebloķētajiem pieprasījumiem nekad nav jāaizpilda CAPTCHA."
 config_legal: "Juridisko prasību konfigurācija."
 config_legal_omit_hostname: "Izlaist resursdatori no logfailiem? True (Patiess) = Jā; False (Nepatiess) = Nē [Noklusējuma]."
 config_legal_omit_ip: "Izlaist IP adreses no logfailiem? True (Patiess) = Jā; False (Nepatiess) = Nē [Noklusējuma]. Piezīme: "pseudonymise_ip_addresses" kļūst lieks, kad "omit_ip" ir "true"."

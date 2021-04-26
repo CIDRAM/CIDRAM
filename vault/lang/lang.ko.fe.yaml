@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Korean language data for the front-end (last modified: 2021.04.25).
+# This file: Korean language data for the front-end (last modified: 2021.04.26).
 ##/
 
 Extended Description Bypasses: "기본 서명 우회 일반적으로 기본 패키지에 포함되어 있습니다."
@@ -131,7 +131,7 @@ config_hcaptcha_show_api_message: &ShowAPIMessage "API 메시지를 표시 하�
 config_hcaptcha_show_cookie_warning: &ShowCookieWarning "쿠키 경고 표시 하시겠습니까? True = 예 (Default / 기본 설정); False = 아니오."
 config_hcaptcha_signature_limit: &CaptchaSignatureLimit "보안 문자 제안이 철회되기 전에 허용되는 최대 서명 수입니다. Default (기본 설정) = 1."
 config_hcaptcha_sitekey: *CaptchaDashboard
-config_hcaptcha_usemode: &CaptchaUseMode "보안 문자는 언제 제공해야 합니까?"
+config_hcaptcha_usemode: &CaptchaUseMode "보안 문자는 언제 제공해야 합니까? 참고 : 허용 목록에 있거나 확인되고 차단되지 않은 요청은 보안 문자를 작성할 필요가 없습니다."
 config_legal: "법적 요구 사항 설정."
 config_legal_omit_hostname: "로그에서 호스트 이름을 생략 하시겠습니까? True = 예; False = 아니오 (Default / 기본 설정)."
 config_legal_omit_ip: "로그에서 IP 주소를 생략 하시겠습니까? True = 예; False = 아니오 (Default / 기본 설정). 참고 : "pseudonymise_ip_addresses"는 "omit_ip"가 "true"일 때 중복됩니다."

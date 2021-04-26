@@ -131,7 +131,7 @@ config_hcaptcha_show_api_message: &ShowAPIMessage "Afficher le message de l'API�
 config_hcaptcha_show_cookie_warning: &ShowCookieWarning "Afficher l'avertissement concernant les cookies ? True = Oui [Défaut] ; False = Non."
 config_hcaptcha_signature_limit: &CaptchaSignatureLimit "Nombre maximum de signatures autorisé avant le retrait de l'offre de CAPTCHA. Défaut = 1."
 config_hcaptcha_sitekey: *CaptchaDashboard
-config_hcaptcha_usemode: &CaptchaUseMode "Quand faut-il offrir le CAPTCHA ?"
+config_hcaptcha_usemode: &CaptchaUseMode "Quand faut-il offrir le CAPTCHA ? Remarque : Les requêtes sur liste blanche ou vérifiées et non bloquées n'ont jamais besoin de compléter un CAPTCHA."
 config_legal: "Configuration pour les exigences légales."
 config_legal_omit_hostname: "Omettre les noms d'hôtes de la journalisation ? True = Oui ; False = Non [Défaut]."
 config_legal_omit_ip: "Omettre les adresses IP de la journalisation ? True = Oui ; False = Non [Défaut]. Remarque : « pseudonymise_ip_addresses » devient redondant lorsque « omit_ip » est « true »."

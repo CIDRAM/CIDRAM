@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Hindi language data for the front-end (last modified: 2021.04.25).
+# This file: Hindi language data for the front-end (last modified: 2021.04.26).
 ##/
 
 Extended Description Bypasses: "डिफ़ॉल्ट हस्ताक्षर बाईपास फ़ाइलों को सामान्यतः मुख्य पैकेज के साथ शामिल किया गया था।"
@@ -131,7 +131,7 @@ config_hcaptcha_show_api_message: &ShowAPIMessage "API संदेश दिख
 config_hcaptcha_show_cookie_warning: &ShowCookieWarning "कुकी चेतावनी दिखाएं? True(सच्चे) = हाँ [डिफ़ॉल्ट]; False(झूठी) = नहीं।"
 config_hcaptcha_signature_limit: &CaptchaSignatureLimit "कैप्चा ऑफर को वापस लेने से पहले अधिकतम संख्या में हस्ताक्षर की अनुमति है। डिफ़ॉल्ट = 1।"
 config_hcaptcha_sitekey: *CaptchaDashboard
-config_hcaptcha_usemode: &CaptchaUseMode "कैप्चा कब पेश किया जाना चाहिए?"
+config_hcaptcha_usemode: &CaptchaUseMode "कैप्चा कब पेश किया जाना चाहिए? नोट: श्वेतसूची वाले या सत्यापित और गैर-अवरुद्ध अनुरोधों को कैप्चा को पूरा करने की आवश्यकता नहीं है।"
 config_legal: "कानूनी आवश्यकताओं के लिए कॉन्फ़िगरेशन।"
 config_legal_omit_hostname: "लॉग से होस्टनाम छोड़ दें? True(सच्चे) = हाँ; False(झूठी) = नहीं [डिफ़ॉल्ट]।"
 config_legal_omit_ip: "लॉग से IP पते छोड़ दें? True(सच्चे) = हाँ; False(झूठी) = नहीं [डिफ़ॉल्ट]। नोट: "omit_ip" "true" होने पर "pseudonymise_ip_addresses" अनावश्यक हो जाता है।"

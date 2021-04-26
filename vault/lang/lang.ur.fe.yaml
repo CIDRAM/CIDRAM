@@ -129,9 +129,9 @@ config_hcaptcha_logfile: &CaptchaLogfile "تمام CAPTCHA کے کوششوں ل�
 config_hcaptcha_secret: &CaptchaDashboard "یہ قدر آپ کے CAPTCHA خدمت کے لئے ڈیش بورڈ میں مل سکتی ہے."
 config_hcaptcha_show_api_message: &ShowAPIMessage "API کا پیغام دکھائیں؟ True (سچے) = جی ہاں [پہلے سے طے شدہ]؛ False (جھوٹی) = نہیں."
 config_hcaptcha_show_cookie_warning: &ShowCookieWarning "کوکی انتباہ دکھائیں؟ True (سچے) = جی ہاں [پہلے سے طے شدہ]؛ False (جھوٹی) = نہیں."
-config_hcaptcha_signature_limit: &CaptchaSignatureLimit "Captcha پیش کش واپس لینے سے پہلے دستخطوں کی زیادہ سے زیادہ تعداد کی اجازت. پہلے سے طے شدہ = 1."
+config_hcaptcha_signature_limit: &CaptchaSignatureLimit "CAPTCHA پیش کش واپس لینے سے پہلے دستخطوں کی زیادہ سے زیادہ تعداد کی اجازت. پہلے سے طے شدہ = 1."
 config_hcaptcha_sitekey: *CaptchaDashboard
-config_hcaptcha_usemode: &CaptchaUseMode "Captcha کب پیش کیا جائے؟"
+config_hcaptcha_usemode: &CaptchaUseMode "CAPTCHA کب پیش کیا جائے؟ نوٹ: وائٹ لسٹڈ یا توثیق شدہ اور غیر مسدود درخواستوں کو کبھی بھی CAPTCHA کو مکمل کرنے کی ضرورت نہیں ہے."
 config_legal: "قانونی تقاضوں کے لئے ترتیبات."
 config_legal_omit_hostname: "لاگ فائلوں سے میزبانوں کو خارج کردیں؟ True (سچے) = جی ہاں؛ False (جھوٹی) = نہیں [پہلے سے طے شدہ]."
 config_legal_omit_ip: "لاگ فائلوں سے IP پتے کو خارج کردیں؟ True (سچے) = جی ہاں؛ False (جھوٹی) = نہیں [پہلے سے طے شدہ]. نوٹ: "pseudonymise_ip_addresses" بے شمار ہو جاتا ہے جب "omit_ip" "true" ہے."

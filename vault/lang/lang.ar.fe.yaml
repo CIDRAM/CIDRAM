@@ -129,7 +129,7 @@ config_hcaptcha_show_api_message: &ShowAPIMessage "إظهار رسالة API؟ �
 config_hcaptcha_show_cookie_warning: &ShowCookieWarning "إظهار تحذير ملف تعريف الارتباط؟ صحيح/True = نعم [افتراضي]؛ زائفة/False = لا."
 config_hcaptcha_signature_limit: &CaptchaSignatureLimit "الحد الأقصى لعدد التوقيعات المسموح بها قبل سحب عرض CAPTCHA. افتراضي = 1."
 config_hcaptcha_sitekey: *CaptchaDashboard
-config_hcaptcha_usemode: &CaptchaUseMode "متى يجب تقديم الCAPTCHA؟"
+config_hcaptcha_usemode: &CaptchaUseMode "متى يجب تقديم الCAPTCHA؟ ملاحظة: لا تحتاج الطلبات المدرجة في القائمة البيضاء أو التي تم التحقق منها والتي لم يتم حظرها إلى إكمال اختبار CAPTCHA."
 config_legal: "التكوين للمتطلبات القانونية."
 config_legal_omit_hostname: "حذف أسماء المضيف من السجلات؟ صحيح/True = نعم؛ زائفة/False = لا [افتراضي]."
 config_legal_omit_ip: "حذف عناوين IP من السجلات؟ صحيح/True = نعم؛ زائفة/False = لا [افتراضي]. ملاحظة: يصبح "pseudonymise_ip_addresses" مكررًا عندما يكون "omit_ip" هو "true"."

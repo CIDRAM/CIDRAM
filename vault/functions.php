@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2021.04.25).
+ * This file: Functions file (last modified: 2021.04.26).
  */
 
 /** Autoloader for CIDRAM classes. */
@@ -950,7 +950,7 @@ $CIDRAM['DNS-Reverse-Forward'] = function ($Domains, string $Friendly, array $Op
             }
 
             /** Populate "verified" field. */
-            if (isset($CIDRAM['BlockInfo'], $CIDRAM['BlockInfo']['Verified'])) {
+            if (isset($CIDRAM['BlockInfo']['Verified'])) {
                 $CIDRAM['BlockInfo']['Verified'] = $Friendly;
             }
 
@@ -972,7 +972,7 @@ $CIDRAM['DNS-Reverse-Forward'] = function ($Domains, string $Friendly, array $Op
             }
 
             /** Populate "verified" field. */
-            if (isset($CIDRAM['BlockInfo'], $CIDRAM['BlockInfo']['Verified'])) {
+            if (isset($CIDRAM['BlockInfo']['Verified'])) {
                 $CIDRAM['BlockInfo']['Verified'] = $Friendly;
             }
 
@@ -1105,7 +1105,7 @@ $CIDRAM['UA-X-Match'] = function ($Datapoints, $Expected, string $Friendly, arra
             }
 
             /** Populate "verified" field. */
-            if (isset($CIDRAM['BlockInfo'], $CIDRAM['BlockInfo']['Verified'])) {
+            if (isset($CIDRAM['BlockInfo']['Verified'])) {
                 $CIDRAM['BlockInfo']['Verified'] = $Friendly;
             }
 

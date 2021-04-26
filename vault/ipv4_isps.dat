@@ -1,8 +1,8 @@
 # IPv4 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv4_isps.dat
 
-# Version: 2021.110.593
-# Last modified: 2021.04.21
+# Version: 2021.115.483
+# Last modified: 2021.04.26
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage, i.e., with ignore.dat, with reCAPTCHA, with "extended rules" (default bypasses): « [ ]Low [x]Medium [ ]High »
@@ -7514,6 +7514,7 @@ Origin: RU
 213.174.30.0/23 Deny Spam
 217.65.248.0/21 Deny Spam
 Origin: UA
+Profile: Domestic ISP;Government
 Tag: UARNet
 ---
 recaptcha:
@@ -12259,14 +12260,13 @@ recaptcha:
 
 
 # ASN 47610 ("RWTH Aachen University").
-# Temporary listing due to port scans and other suspicious traffic originating
-# from the specific listed ranges. (At last check: Still looks really bad. Might
-# make permanent and upgrade to the entire network at next check if it persists).
-# Updated: 2020.03.11 / Checked: 2020.12.20
+# Port scans and hack attempts detected from some specific ranges/addresses
+# here. Listing just the affected ranges/addresses only.
+# Updated: 2020.03.11 / Checked: 2021.04.26
 
 137.226.113.0/24 Deny Malware
 Origin: DE
-Profile: Temporary
+Profile: University
 Tag: RWTH Aachen University
 ---
 recaptcha:
@@ -13304,6 +13304,7 @@ recaptcha:
 
 103.94.135.0/24 Deny Malware
 Origin: BD
+Profile: University
 Tag: Bangladesh University AS136618
 ---
 recaptcha:
@@ -14284,8 +14285,8 @@ recaptcha:
 
 # ASN 138606 ("Suga Pte. Ltd").
 # A small umbrella for range of different ventures. Also a source of spam.
-# Stop Forum Spam (SFS) listings: 329.
-# Updated: 2020.10.09
+# Stop Forum Spam (SFS) listings: 842.
+# Updated: 2020.10.09 / Checked: 2021.04.26
 
 103.134.92.0/22 Deny Spam
 Origin: SG
@@ -16967,6 +16968,89 @@ recaptcha:
 Origin: HK
 Profile: Domestic ISP;Infrastructure
 Tag: CommuniLink Internet
+---
+recaptcha:
+ enabled: true
+
+
+# ASN 18809 ("Cable Onda").
+# Panama cable ISP. Port scans and hack attempts detected from here.
+# Listing just the affected ranges/addresses, plus all US ranges (cloud).
+# Stop Forum Spam (SFS) listings: 221.
+# Updated: 2021.04.25
+
+181.197.1.182/32 Deny Spam
+181.197.25.214/32 Deny Spam
+181.197.54.142/32 Deny Spam
+181.197.103.131/32 Deny Spam
+181.197.118.0/24 Deny Malware
+181.197.124.201/32 Deny Spam
+186.188.165.232/32 Deny Spam
+186.188.180.84/32 Deny Spam
+190.140.97.225/32 Deny Spam
+190.140.236.223/32 Deny Spam
+190.140.246.220/32 Deny Spam
+190.141.20.175/32 Deny Spam
+190.141.61.238/32 Deny Spam
+190.141.83.88/32 Deny Spam
+190.141.237.236/32 Deny Spam
+190.218.115.35/32 Deny Spam
+190.218.178.27/32 Deny Spam
+190.219.103.246/32 Deny Spam
+190.219.127.160/32 Deny Spam
+201.218.101.14/32 Deny Spam
+201.218.108.98/32 Deny Spam
+201.218.125.0/24 Deny Malware
+Origin: PA
+23.223.152.0/22 Deny Cloud
+64.213.56.0/21 Deny Cloud
+Origin: US
+Profile: Domestic ISP
+Tag: Cable Onda
+---
+recaptcha:
+ enabled: true
+
+
+# ASN 17465 ("Cable ISP in India").
+# Indian domestic ISP. Port scans and hack attempts detected from here.
+# Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 293.
+# Updated: 2021.04.25
+
+111.92.29.78/32 Deny Spam
+111.92.56.235/32 Deny Spam
+111.92.59.206/32 Deny Spam
+111.92.80.12/32 Deny Spam
+111.92.81.51/32 Deny Spam
+116.68.75.91/32 Deny Spam
+116.68.77.123/32 Deny Spam
+116.68.110.0/24 Deny Malware
+202.83.56.99/32 Deny Spam
+202.83.59.106/32 Deny Spam
+202.164.131.31/32 Deny Spam
+202.164.133.53/32 Deny Spam
+202.164.136.42/32 Deny Spam
+202.164.138.126/32 Deny Spam
+202.164.139.182/32 Deny Spam
+202.164.152.0/24 Deny Malware
+Origin: IN
+Profile: Domestic ISP
+Tag: Cable ISP in India
+---
+recaptcha:
+ enabled: true
+
+
+# ASN 9 ("Carnegie Mellon University").
+# XMLRPC attacks and spam events detected from some specific
+# ranges/addresses here. Listing just the affected ranges/addresses only.
+# Updated: 2021.04.26
+
+204.194.29.0/24 Deny Malware
+Origin: US
+Profile: Tor endpoints here;University
+Tag: Carnegie Mellon University
 ---
 recaptcha:
  enabled: true

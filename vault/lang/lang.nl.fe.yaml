@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Dutch language data for the front-end (last modified: 2021.04.25).
+# This file: Dutch language data for the front-end (last modified: 2021.04.26).
 ##/
 
 Extended Description Bypasses: "De standaard signature rondwegen normaal opgenomen met de primaire pakket."
@@ -122,16 +122,16 @@ config_general_timezone: "Dit wordt gebruikt om de te gebruiken tijdzone op te g
 config_general_truncate: "Trunceren logbestanden wanneer ze een bepaalde grootte bereiken? Waarde is de maximale grootte in B/KB/MB/GB/TB dat een logbestand kan groeien tot voordat het wordt getrunceerd. De standaardwaarde van 0KB schakelt truncatie uit (logbestanden kunnen onbepaald groeien). Notitie: Van toepassing op individuele logbestanden! De grootte van de logbestanden wordt niet collectief beschouwd."
 config_hcaptcha: "Configuratie voor HCaptcha (biedt een manier voor mensen om toegang te krijgen wanneer ze worden geblokkeerd)."
 config_hcaptcha_api: &CaptchaAPI "Welke API gebruiken?"
-config_hcaptcha_expiry: &CaptchaExpiry "Aantal uren om captcha instanties herinneren."
-config_hcaptcha_lockip: &CaptchaLockIP "Binden captcha om IP's?"
-config_hcaptcha_lockuser: &CaptchaLockUser "Binden captcha om gebruikers?"
-config_hcaptcha_logfile: &CaptchaLogfile "Log alle captcha pogingen? Zo ja, geef de naam te gebruiken voor het logbestand. Zo nee, laat u deze variabele leeg."
-config_hcaptcha_secret: &CaptchaDashboard "Deze waarde is te vinden in het dashboard voor uw captcha-service."
+config_hcaptcha_expiry: &CaptchaExpiry "Aantal uren om CAPTCHA instanties herinneren."
+config_hcaptcha_lockip: &CaptchaLockIP "Binden CAPTCHA om IP's?"
+config_hcaptcha_lockuser: &CaptchaLockUser "Binden CAPTCHA om gebruikers?"
+config_hcaptcha_logfile: &CaptchaLogfile "Log alle CAPTCHA pogingen? Zo ja, geef de naam te gebruiken voor het logbestand. Zo nee, laat u deze variabele leeg."
+config_hcaptcha_secret: &CaptchaDashboard "Deze waarde is te vinden in het dashboard voor uw CAPTCHA-service."
 config_hcaptcha_show_api_message: &ShowAPIMessage "API-bericht weergeven? True = Ja [Standaard]; False = Nee."
 config_hcaptcha_show_cookie_warning: &ShowCookieWarning "Cookiewaarschuwing weergeven? True = Ja [Standaard]; False = Nee."
-config_hcaptcha_signature_limit: &CaptchaSignatureLimit "Maximaal aantal toegestane signatures voordat een captcha-aanbieding wordt ingetrokken. Standaard = 1."
+config_hcaptcha_signature_limit: &CaptchaSignatureLimit "Maximaal aantal toegestane signatures voordat een CAPTCHA-aanbieding wordt ingetrokken. Standaard = 1."
 config_hcaptcha_sitekey: *CaptchaDashboard
-config_hcaptcha_usemode: &CaptchaUseMode "Wanneer moet de captcha worden aangeboden?"
+config_hcaptcha_usemode: &CaptchaUseMode "Wanneer moet de CAPTCHA worden aangeboden?"
 config_legal: "Configuratie voor wettelijke vereisten."
 config_legal_omit_hostname: "Hostnamen uit logbestanden weglaten? True = Ja; False = Nee [Standaard]."
 config_legal_omit_ip: "IP-adressen uit logbestanden weglaten? True = Ja; False = Nee [Standaard]. Opmerking: "pseudonymise_ip_addresses" wordt overbodig zijn wanneer "omit_ip" "true" is."

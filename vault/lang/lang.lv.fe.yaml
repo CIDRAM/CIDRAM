@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Latvian language data for the front-end (last modified: 2021.04.25).
+# This file: Latvian language data for the front-end (last modified: 2021.04.26).
 ##/
 
 Extended Description Bypasses: "Noklusējuma paraksta apiešana faili, kas parasti ir iekļauti galvenajā paketē."
@@ -122,16 +122,16 @@ config_general_timezone: "To izmanto, lai norādītu izmantojamo laika joslu (pi
 config_general_truncate: "Saīsināt logfailus, kad tie sasniedz noteiktu lielumu? Vērtība ir maksimālais lielums B/KB/MB/GB/TB, līdz logfailam var izaugt pirms saīsināšanas. Noklusējuma vērtība 0KB atspējo saīsināšanu (logfaili var pieaugt bezgalīgi). Piezīme: Attiecas uz indivīdiem logfailiem! Logfailu lielums netiek skaitīts kolektīvi."
 config_hcaptcha: "HCaptcha konfigurācija (nodrošina veidu, kā cilvēki var atgūt piekļuvi, kad tā ir bloķēta)."
 config_hcaptcha_api: &CaptchaAPI "Kuru API izmantot?"
-config_hcaptcha_expiry: &CaptchaExpiry "Stundu skaits, lai atcerētos captcha instances."
-config_hcaptcha_lockip: &CaptchaLockIP "Vai saistīt captcha uz IPs?"
-config_hcaptcha_lockuser: &CaptchaLockUser "Vai saistīt captcha uz lietotājiem?"
-config_hcaptcha_logfile: &CaptchaLogfile "Vai reģistrēt visus captcha mēģinājumus? Ja tā, norādiet vārdu, kuru izmantosit logfailam. Ja nē, atstājiet šo mainīgo tukšu."
-config_hcaptcha_secret: &CaptchaDashboard "Šī vērtība ir atrodama jūsu captcha pakalpojuma informācijas panelī."
+config_hcaptcha_expiry: &CaptchaExpiry "Stundu skaits, lai atcerētos CAPTCHA instances."
+config_hcaptcha_lockip: &CaptchaLockIP "Vai saistīt CAPTCHA uz IPs?"
+config_hcaptcha_lockuser: &CaptchaLockUser "Vai saistīt CAPTCHA uz lietotājiem?"
+config_hcaptcha_logfile: &CaptchaLogfile "Vai reģistrēt visus CAPTCHA mēģinājumus? Ja tā, norādiet vārdu, kuru izmantosit logfailam. Ja nē, atstājiet šo mainīgo tukšu."
+config_hcaptcha_secret: &CaptchaDashboard "Šī vērtība ir atrodama jūsu CAPTCHA pakalpojuma informācijas panelī."
 config_hcaptcha_show_api_message: &ShowAPIMessage "Rādīt API ziņojumu? True (Patiess) = Jā [Noklusējuma]; False (Nepatiess) = Nē."
 config_hcaptcha_show_cookie_warning: &ShowCookieWarning "Rādīt brīdinājumu par sīkfailu? True (Patiess) = Jā [Noklusējuma]; False (Nepatiess) = Nē."
-config_hcaptcha_signature_limit: &CaptchaSignatureLimit "Maksimālais atļautais parakstu skaits pirms captcha piedāvājuma atsaukšanas. Noklusējuma = 1."
+config_hcaptcha_signature_limit: &CaptchaSignatureLimit "Maksimālais atļautais parakstu skaits pirms CAPTCHA piedāvājuma atsaukšanas. Noklusējuma = 1."
 config_hcaptcha_sitekey: *CaptchaDashboard
-config_hcaptcha_usemode: &CaptchaUseMode "Kad vajadzētu piedāvāt captcha?"
+config_hcaptcha_usemode: &CaptchaUseMode "Kad vajadzētu piedāvāt CAPTCHA?"
 config_legal: "Juridisko prasību konfigurācija."
 config_legal_omit_hostname: "Izlaist resursdatori no logfailiem? True (Patiess) = Jā; False (Nepatiess) = Nē [Noklusējuma]."
 config_legal_omit_ip: "Izlaist IP adreses no logfailiem? True (Patiess) = Jā; False (Nepatiess) = Nē [Noklusējuma]. Piezīme: "pseudonymise_ip_addresses" kļūst lieks, kad "omit_ip" ir "true"."

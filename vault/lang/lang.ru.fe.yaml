@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Russian language data for the front-end (last modified: 2021.04.25).
+# This file: Russian language data for the front-end (last modified: 2021.04.26).
 ##/
 
 Extended Description Bypasses: "Стандартная сигнатуры байпасы, обычно включены в основной пакет."
@@ -122,16 +122,16 @@ config_general_timezone: "Это используется, чтобы указа
 config_general_truncate: "Усекать лог-файлы, когда они достигают определенного размера? Значение это максимальный размер в Б/КБ/МБ/ГБ/ТБ, до которого файл журнала может увеличиться до усечения. Стандартное значение 0КБ отключает усечение (лог-файлы может расти неограниченно). Примечание: относится к отдельным лог-файлы! Размер файлов журнала не учитывается совместно."
 config_hcaptcha: "Конфигурация для HCaptcha (предоставляет людям возможность восстановить доступ при блокировании)."
 config_hcaptcha_api: &CaptchaAPI "Какой API использовать?"
-config_hcaptcha_expiry: &CaptchaExpiry "Количество часов, чтобы вспомнить инстанция captcha."
-config_hcaptcha_lockip: &CaptchaLockIP "Свяжите captcha к IP-адреса?"
-config_hcaptcha_lockuser: &CaptchaLockUser "Свяжите captcha к пользователи?"
-config_hcaptcha_logfile: &CaptchaLogfile "Записывать все попытки captcha? Если да, указать имя использовать для файла журнала. Если нет, оставьте эту переменную пустым."
-config_hcaptcha_secret: &CaptchaDashboard "Это значение можно найти на панели управления вашей службы captcha."
+config_hcaptcha_expiry: &CaptchaExpiry "Количество часов, чтобы вспомнить инстанция CAPTCHA."
+config_hcaptcha_lockip: &CaptchaLockIP "Свяжите CAPTCHA к IP-адреса?"
+config_hcaptcha_lockuser: &CaptchaLockUser "Свяжите CAPTCHA к пользователи?"
+config_hcaptcha_logfile: &CaptchaLogfile "Записывать все попытки CAPTCHA? Если да, указать имя использовать для файла журнала. Если нет, оставьте эту переменную пустым."
+config_hcaptcha_secret: &CaptchaDashboard "Это значение можно найти на панели управления вашей службы CAPTCHA."
 config_hcaptcha_show_api_message: &ShowAPIMessage "Показать сообщение API? True = Да [Стандарт]; False = Нет."
 config_hcaptcha_show_cookie_warning: &ShowCookieWarning "Показать предупреждение о файлах куки? True = Да [Стандарт]; False = Нет."
-config_hcaptcha_signature_limit: &CaptchaSignatureLimit "Максимально допустимое количество сигнатурей перед снятием captcha. Стандарт = 1."
+config_hcaptcha_signature_limit: &CaptchaSignatureLimit "Максимально допустимое количество сигнатурей перед снятием CAPTCHA. Стандарт = 1."
 config_hcaptcha_sitekey: *CaptchaDashboard
-config_hcaptcha_usemode: &CaptchaUseMode "Когда следует предлагать captcha?"
+config_hcaptcha_usemode: &CaptchaUseMode "Когда следует предлагать CAPTCHA?"
 config_legal: "Конфигурация для юридических требований."
 config_legal_omit_hostname: "Опустить имена хостов из журналов? True = Да; False = Нет [Стандарт]."
 config_legal_omit_ip: "Опустить IP-адреса из журналов? True = Да; False = Нет [Стандарт]. Примечание: «pseudonymise_ip_addresses» становится излишним, когда «omit_ip» является «true»."

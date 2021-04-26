@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (traditional) language data for the front-end (last modified: 2021.04.25).
+# This file: Chinese (traditional) language data for the front-end (last modified: 2021.04.26).
 ##/
 
 Extended Description Bypasses: "標準簽名旁路文件通常包括在主包。"
@@ -122,16 +122,16 @@ config_general_timezone: "這用於指定要使用的時區​（例如，Africa
 config_general_truncate: "截斷日誌文件當他們達到一定的大小嗎？​值是在B/KB/MB/GB/TB，​是日誌文件允許的最大大小直到它被截斷。​默認值為『0KB』將禁用截斷（日誌文件可以無限成長）。​注意：適用於單個日誌文件！​日誌文件大小不被算集體的。"
 config_hcaptcha: "HCaptcha的配置（為人們提供了一種在受阻時重新獲得訪問權限的方法）。"
 config_hcaptcha_api: &CaptchaAPI "使用哪個API？"
-config_hcaptcha_expiry: &CaptchaExpiry "記得captcha多少小時？"
-config_hcaptcha_lockip: &CaptchaLockIP "應該captcha鎖定到IP？"
-config_hcaptcha_lockuser: &CaptchaLockUser "應該captcha鎖定到用戶？"
-config_hcaptcha_logfile: &CaptchaLogfile "記錄所有的captcha的嘗試？​要做到這一點，​指定一個文件名到使用。​如果不，​離開這個變量為空白。"
-config_hcaptcha_secret: &CaptchaDashboard "可以在您的captcha服務的儀表板中找到該值。"
+config_hcaptcha_expiry: &CaptchaExpiry "記得CAPTCHA多少小時？"
+config_hcaptcha_lockip: &CaptchaLockIP "應該CAPTCHA鎖定到IP？"
+config_hcaptcha_lockuser: &CaptchaLockUser "應該CAPTCHA鎖定到用戶？"
+config_hcaptcha_logfile: &CaptchaLogfile "記錄所有的CAPTCHA的嘗試？​要做到這一點，​指定一個文件名到使用。​如果不，​離開這個變量為空白。"
+config_hcaptcha_secret: &CaptchaDashboard "可以在您的CAPTCHA服務的儀表板中找到該值。"
 config_hcaptcha_show_api_message: &ShowAPIMessage "顯示API訊息嗎？​True（真）=顯示【標準】；False（假）=不顯示。"
 config_hcaptcha_show_cookie_warning: &ShowCookieWarning "顯示cookie警告嗎？​True（真）=顯示【標準】；False（假）=不顯示。"
-config_hcaptcha_signature_limit: &CaptchaSignatureLimit "撤銷captcha之前允許的最大簽名數。標準 = 1。"
+config_hcaptcha_signature_limit: &CaptchaSignatureLimit "撤銷CAPTCHA之前允許的最大簽名數。標準 = 1。"
 config_hcaptcha_sitekey: *CaptchaDashboard
-config_hcaptcha_usemode: &CaptchaUseMode "何時應提供captcha嗎？"
+config_hcaptcha_usemode: &CaptchaUseMode "何時應提供CAPTCHA嗎？"
 config_legal: "法律要求的配置。"
 config_legal_omit_hostname: "從日誌文件中排除主機名？​True（真）=排除；False（假）=不排除【標準】。"
 config_legal_omit_ip: "從日誌文件中排除IP地址？​True（真）=排除；False（假）=不排除【標準】。​注意：『omit_ip』為『true』時，『pseudonymise_ip_addresses』變得不必要。"

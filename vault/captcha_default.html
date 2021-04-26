@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="{xmlLang}" xml:lang="{xmlLang}" dir="{Text Direction}">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="robots" content="noindex,nofollow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="shortcut icon" type="image/gif" href="data:image/gif;base64,{favicon}" />
+  <title>CIDRAM</title>{captcha_api_include}
+  <style>
+body,#wrapper{text-align:center;font-weight:700}
+body{font-family:sans-serif,'Lucida Grande',Tahoma,Verdana,Arial,MingLiU;font-size:calc(12px * {Magnification});letter-spacing:1px;text-decoration:none;border-style:none;white-space:normal;background-color:#ccc;color:#033}
+button,input[type=button],input[type=submit]{border-radius:18px}
+hr,#wrapper{border-width:1px}
+hr{border-style:solid none none;margin:5px 2px 0;padding:2px;color:#900}
+input,#wrapper{background-color:#fff}
+input{font-size:calc(12pt * {Magnification});border:1px solid red}
+#ScriptIdent,input{color:red}
+#footer_inner,input{font-family:sans-serif,Verdana,Arial,Helvetica}
+#footer_inner{font-size:calc(12px * {Magnification});letter-spacing:0px;white-space:nowrap;text-align:right}
+#generated_by,#ScriptIdent{display:inline}
+#generated_by{color:#000}
+#wrapper_inner{width:96%;margin:auto;padding:2px}
+#wrapper{border-style:solid;border-color:#999;width:98%;margin:auto;padding:2px;border-top-right-radius:24px}
+.gForm{margin-left:auto;margin-right:auto;width:300px}
+  </style>
+</head>
+
+<body>
+  <div id="wrapper">
+    <div id="wrapper_inner">
+      <hr />
+      {captcha_message_automated_traffic}{captcha_div_include}
+      <hr />
+      <div id="footer">
+        <div id="footer_inner">
+          <div id="generated_by"{L10N-Lang-Attache}>{GeneratedBy}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="pp"{L10N-Lang-Attache}>{pp}</div>
+</body>
+
+</html>

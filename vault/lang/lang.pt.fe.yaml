@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Portuguese language data for the front-end (last modified: 2021.04.25).
+# This file: Portuguese language data for the front-end (last modified: 2021.04.26).
 ##/
 
 Extended Description Bypasses: "Os arquivos para bypass das assinaturas padrão normalmente incluído com o pacote principal."
@@ -122,16 +122,16 @@ config_general_timezone: "Isso é usado para especificar o fuso horário a ser u
 config_general_truncate: "Truncar arquivos de log quando atingem um determinado tamanho? Valor é o tamanho máximo em B/KB/MB/GB/TB que um arquivo de log pode crescer antes de ser truncado. O valor padrão de 0KB desativa o truncamento (arquivos de log podem crescer indefinidamente). Nota: Aplica-se a arquivos de log individuais! O tamanho dos arquivos de log não é considerado coletivamente."
 config_hcaptcha: "Configuração para HCaptcha (fornece uma maneira para os humanos recuperarem o acesso quando bloqueados)."
 config_hcaptcha_api: &CaptchaAPI "Qual API usar?"
-config_hcaptcha_expiry: &CaptchaExpiry "Número de horas para lembrar instâncias captcha."
-config_hcaptcha_lockip: &CaptchaLockIP "Ligar captcha para IPs?"
-config_hcaptcha_lockuser: &CaptchaLockUser "Ligar captcha para os usuários?"
-config_hcaptcha_logfile: &CaptchaLogfile "Registrar todas as tentativas de captcha? Se sim, especificar o nome a ser usado para o arquivo de registro. Se não, deixe esta variável em branco."
-config_hcaptcha_secret: &CaptchaDashboard "Esse valor pode ser encontrado no painel de seu serviço de captcha."
+config_hcaptcha_expiry: &CaptchaExpiry "Número de horas para lembrar instâncias CAPTCHA."
+config_hcaptcha_lockip: &CaptchaLockIP "Ligar CAPTCHA para IPs?"
+config_hcaptcha_lockuser: &CaptchaLockUser "Ligar CAPTCHA para os usuários?"
+config_hcaptcha_logfile: &CaptchaLogfile "Registrar todas as tentativas de CAPTCHA? Se sim, especificar o nome a ser usado para o arquivo de registro. Se não, deixe esta variável em branco."
+config_hcaptcha_secret: &CaptchaDashboard "Esse valor pode ser encontrado no painel de seu serviço de CAPTCHA."
 config_hcaptcha_show_api_message: &ShowAPIMessage "Mostrar mensagem API? True = Sim [Padrão]; False = Não."
 config_hcaptcha_show_cookie_warning: &ShowCookieWarning "Mostrar aviso de cookie? True = Sim [Padrão]; False = Não."
-config_hcaptcha_signature_limit: &CaptchaSignatureLimit "O número máximo de assinaturas permitidas antes que o captcha seja retirado. Padrão = 1."
+config_hcaptcha_signature_limit: &CaptchaSignatureLimit "O número máximo de assinaturas permitidas antes que o CAPTCHA seja retirado. Padrão = 1."
 config_hcaptcha_sitekey: *CaptchaDashboard
-config_hcaptcha_usemode: &CaptchaUseMode "Quando o captcha deve ser oferecido?"
+config_hcaptcha_usemode: &CaptchaUseMode "Quando o CAPTCHA deve ser oferecido?"
 config_legal: "Configuração para requisitos legais."
 config_legal_omit_hostname: "Omitir nomes de host de logs? True = Sim; False = Não [Padrão]."
 config_legal_omit_ip: "Omitir endereços IP de logs? True = Sim; False = Não [Padrão]. Nota: "pseudonymise_ip_addresses" se torna redundante quando "omit_ip" é "true"."

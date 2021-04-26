@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Thai language data for the front-end (last modified: 2021.04.25).
+# This file: Thai language data for the front-end (last modified: 2021.04.26).
 ##/
 
 Extended Description Bypasses: "ไฟล์บายพาสลายเซ็นเริ่มต้นที่รวมอยู่ในแพคเกจหลัก."
@@ -122,16 +122,16 @@ config_general_timezone: "ใช้เพื่อระบุเขตเวล
 config_general_truncate: "ตัดทอนแฟ้มบันทึกเมื่อถึงขนาดที่กำหนดหรือไม่? ค่ามีขนาดสูงสุดในรูปแบบ B/KB/MB/GB/TB ที่แฟ้มบันทึกอาจโตขึ้นก่อนที่จะถูกตัดทอน. ค่าเริ่มต้นของ 0KB ปิดการตัดทอน (แฟ้มบันทึกสามารถเติบโตไปเรื่อย). หมายเหตุ: ถูกใช้ด้วยกับล็อกไฟล์แต่ละไฟล์! ขนาดของไฟล์บันทึกไม่ถือเป็นการรวมกัน."
 config_hcaptcha: "การกำหนดค่าสำหรับ HCaptcha (เป็นวิธีสำหรับมนุษย์ในการเข้าถึงเมื่อถูกบล็อก)."
 config_hcaptcha_api: &CaptchaAPI "API ใดที่จะใช้?"
-config_hcaptcha_expiry: &CaptchaExpiry "จำนวนชั่วโมงที่ต้องจำอินสแตนซ์ captcha."
-config_hcaptcha_lockip: &CaptchaLockIP "ล็อค captcha ด้วย IP หรือไม่?"
-config_hcaptcha_lockuser: &CaptchaLockUser "ล็อค captcha ด้วยผู้ใช้หรือไม่?"
-config_hcaptcha_logfile: &CaptchaLogfile "บันทึกความพยายาม captcha ทั้งหมดหรือไม่? ถ้าใช่ ระบุชื่อที่จะใช้สำหรับไฟล์บันทึก. ถ้าไม่ ปล่อยให้ตัวแปรนี้ว่างเปล่า."
-config_hcaptcha_secret: &CaptchaDashboard "ค่านี้สามารถพบได้ในแดชบอร์ดสำหรับบริการ captcha ของคุณ."
+config_hcaptcha_expiry: &CaptchaExpiry "จำนวนชั่วโมงที่ต้องจำอินสแตนซ์ CAPTCHA."
+config_hcaptcha_lockip: &CaptchaLockIP "ล็อค CAPTCHA ด้วย IP หรือไม่?"
+config_hcaptcha_lockuser: &CaptchaLockUser "ล็อค CAPTCHA ด้วยผู้ใช้หรือไม่?"
+config_hcaptcha_logfile: &CaptchaLogfile "บันทึกความพยายาม CAPTCHA ทั้งหมดหรือไม่? ถ้าใช่ ระบุชื่อที่จะใช้สำหรับไฟล์บันทึก. ถ้าไม่ ปล่อยให้ตัวแปรนี้ว่างเปล่า."
+config_hcaptcha_secret: &CaptchaDashboard "ค่านี้สามารถพบได้ในแดชบอร์ดสำหรับบริการ CAPTCHA ของคุณ."
 config_hcaptcha_show_api_message: &ShowAPIMessage "แสดงข้อความ API ไหม? True = ทำ [ค่าเริ่มต้น]; False = ไม่ทำ."
 config_hcaptcha_show_cookie_warning: &ShowCookieWarning "แสดงคำเตือนเกี่ยวกับคุกกี้หรือไม่? True = ทำ [ค่าเริ่มต้น]; False = ไม่ทำ."
-config_hcaptcha_signature_limit: &CaptchaSignatureLimit "จำนวนลายเซ็นสูงสุดที่อนุญาตก่อนที่ข้อเสนอ captcha จะถูกเพิกถอน. ค่าเริ่มต้น = 1."
+config_hcaptcha_signature_limit: &CaptchaSignatureLimit "จำนวนลายเซ็นสูงสุดที่อนุญาตก่อนที่ข้อเสนอ CAPTCHA จะถูกเพิกถอน. ค่าเริ่มต้น = 1."
 config_hcaptcha_sitekey: *CaptchaDashboard
-config_hcaptcha_usemode: &CaptchaUseMode "ควรเสนอ captcha เมื่อใด?"
+config_hcaptcha_usemode: &CaptchaUseMode "ควรเสนอ CAPTCHA เมื่อใด?"
 config_legal: "การกำหนดค่าสำหรับข้อกำหนดทางกฎหมาย."
 config_legal_omit_hostname: "ไม่รวมชื่อโฮสต์ในล็อกไฟล์? True = ทำ; False = ไม่ทำ [ค่าเริ่มต้น]."
 config_legal_omit_ip: "ไม่รวมที่อยู่ IP ในล็อกไฟล์? True = ทำ; False = ไม่ทำ [ค่าเริ่มต้น]. หมายเหตุ: "pseudonymise_ip_addresses" กลายเป็นซ้ำซ้อนเมื่อ "omit_ip" เป็น "true"."

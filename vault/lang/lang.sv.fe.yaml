@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Swedish language data for the front-end (last modified: 2021.04.25).
+# This file: Swedish language data for the front-end (last modified: 2021.04.26).
 ##/
 
 Extended Description Bypasses: "Standard bypass-filen som normalt ingår i huvudpaketet."
@@ -122,16 +122,16 @@ config_general_timezone: "Detta används för att specificera den tidszon som sk
 config_general_truncate: "Avkorta loggfiler när de når en viss storlek? Värdet är den maximala storleken i B/KB/MB/GB/TB som en loggfil kan växa till innan den trunkeras. Standardvärdet på 0KB inaktiverar avkortning (loggfiler kan växa i obestämd tid). Notera: Gäller enskilda loggfiler! Loggfiler storlek anses inte kollektivt."
 config_hcaptcha: "Konfiguration för HCaptcha (ger ett sätt för människor att återfå åtkomst när de blockeras)."
 config_hcaptcha_api: &CaptchaAPI "Vilket API ska användas?"
-config_hcaptcha_expiry: &CaptchaExpiry "Antal timmar för att komma ihåg captcha-instanser."
-config_hcaptcha_lockip: &CaptchaLockIP "Låsa captcha till IP-adresser?"
-config_hcaptcha_lockuser: &CaptchaLockUser "Låsa captcha till användare?"
-config_hcaptcha_logfile: &CaptchaLogfile "Logga in alla captcha-försök? Om ja, ange det namn som ska användas för loggfilen. Om nej, lämna denna variabel tom."
-config_hcaptcha_secret: &CaptchaDashboard "Det här värdet finns i instrumentpanelen för din captcha-tjänst."
+config_hcaptcha_expiry: &CaptchaExpiry "Antal timmar för att komma ihåg CAPTCHA-instanser."
+config_hcaptcha_lockip: &CaptchaLockIP "Låsa CAPTCHA till IP-adresser?"
+config_hcaptcha_lockuser: &CaptchaLockUser "Låsa CAPTCHA till användare?"
+config_hcaptcha_logfile: &CaptchaLogfile "Logga in alla CAPTCHA-försök? Om ja, ange det namn som ska användas för loggfilen. Om nej, lämna denna variabel tom."
+config_hcaptcha_secret: &CaptchaDashboard "Det här värdet finns i instrumentpanelen för din CAPTCHA-tjänst."
 config_hcaptcha_show_api_message: &ShowAPIMessage "Inkludera API-meddelande? True = Ja [Standard]; False = Nej."
 config_hcaptcha_show_cookie_warning: &ShowCookieWarning "Inkludera cookievarning? True = Ja [Standard]; False = Nej."
-config_hcaptcha_signature_limit: &CaptchaSignatureLimit "Maximalt antal signaturer tillåtna innan captcha-erbjudandet dras tillbaka. Standard = 1."
+config_hcaptcha_signature_limit: &CaptchaSignatureLimit "Maximalt antal signaturer tillåtna innan CAPTCHA-erbjudandet dras tillbaka. Standard = 1."
 config_hcaptcha_sitekey: *CaptchaDashboard
-config_hcaptcha_usemode: &CaptchaUseMode "När ska captcha erbjudas?"
+config_hcaptcha_usemode: &CaptchaUseMode "När ska CAPTCHA erbjudas?"
 config_legal: "Konfiguration för lagkrav."
 config_legal_omit_hostname: "Utelämna värdnamn från loggar? True = Ja; False = Nej [Standard]."
 config_legal_omit_ip: "Utelämna IP-adresser från loggar? True = Ja; False = Nej [Standard]. Obs: "pseudonymise_ip_addresses" blir överflödigt när "omit_ip" är "true"."

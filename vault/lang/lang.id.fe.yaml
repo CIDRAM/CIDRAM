@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Indonesian language data for the front-end (last modified: 2021.04.25).
+# This file: Indonesian language data for the front-end (last modified: 2021.04.26).
 ##/
 
 Extended Description Bypasses: "File untuk bypass tanda tangan standar yang biasanya disertakan dengan paket utama."
@@ -122,16 +122,16 @@ config_general_timezone: "Ini digunakan untuk menentukan zona waktu yang akan di
 config_general_truncate: "Memotong file log ketika mereka mencapai ukuran tertentu? Nilai adalah ukuran maksimum dalam B/KB/MB/GB/TB yang bisa ditambahkan untuk file log sebelum dipotong. Nilai default 0KB menonaktifkan pemotongan (file log dapat tumbuh tanpa batas waktu). Catat: Berlaku untuk file log individu! Ukuran file log tidak dianggap secara kolektif."
 config_hcaptcha: "Konfigurasi untuk HCaptcha (menyediakan cara bagi manusia untuk mendapatkan kembali akses ketika diblokir)."
 config_hcaptcha_api: &CaptchaAPI "API mana yang akan digunakan?"
-config_hcaptcha_expiry: &CaptchaExpiry "Jumlah jam untuk mengingat instansi captcha."
-config_hcaptcha_lockip: &CaptchaLockIP "Kunci captcha ke IP?"
-config_hcaptcha_lockuser: &CaptchaLockUser "Kunci captcha ke pengguna?"
-config_hcaptcha_logfile: &CaptchaLogfile "Mencatat hasil semua instansi captcha? Jika ya, tentukan nama untuk menggunakan untuk file catatan. Jika tidak, variabel ini harus kosong."
-config_hcaptcha_secret: &CaptchaDashboard "Nilai ini dapat ditemukan di dashboard untuk layanan captcha Anda."
+config_hcaptcha_expiry: &CaptchaExpiry "Jumlah jam untuk mengingat instansi CAPTCHA."
+config_hcaptcha_lockip: &CaptchaLockIP "Kunci CAPTCHA ke IP?"
+config_hcaptcha_lockuser: &CaptchaLockUser "Kunci CAPTCHA ke pengguna?"
+config_hcaptcha_logfile: &CaptchaLogfile "Mencatat hasil semua instansi CAPTCHA? Jika ya, tentukan nama untuk menggunakan untuk file catatan. Jika tidak, variabel ini harus kosong."
+config_hcaptcha_secret: &CaptchaDashboard "Nilai ini dapat ditemukan di dashboard untuk layanan CAPTCHA Anda."
 config_hcaptcha_show_api_message: &ShowAPIMessage "Tampilkan pesan API? True = Ya [Default]; False = Tidak."
 config_hcaptcha_show_cookie_warning: &ShowCookieWarning "Tampilkan peringatan cookie? True = Ya [Default]; False = Tidak."
-config_hcaptcha_signature_limit: &CaptchaSignatureLimit "Jumlah maksimum tanda tangan yang diperbolehkan sebelum penawaran captcha ditarik. Default = 1."
+config_hcaptcha_signature_limit: &CaptchaSignatureLimit "Jumlah maksimum tanda tangan yang diperbolehkan sebelum penawaran CAPTCHA ditarik. Default = 1."
 config_hcaptcha_sitekey: *CaptchaDashboard
-config_hcaptcha_usemode: &CaptchaUseMode "Kapan captcha harus ditawarkan?"
+config_hcaptcha_usemode: &CaptchaUseMode "Kapan CAPTCHA harus ditawarkan?"
 config_legal: "Konfigurasi untuk persyaratan hukum."
 config_legal_omit_hostname: "Jangan memasukkan nama host di log? True = Ya; False = Tidak [Default]."
 config_legal_omit_ip: "Jangan memasukkan alamat IP di log? True = Ya; False = Tidak [Default]. Catat: "pseudonymise_ip_addresses" menjadi tidak perlu ketika "omit_ip" adalah "true"."

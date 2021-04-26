@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Vietnamese language data for the front-end (last modified: 2021.04.25).
+# This file: Vietnamese language data for the front-end (last modified: 2021.04.26).
 ##/
 
 Extended Description Bypasses: "Các tập tin đường tránh chữ ký mặc định thường bao gồm với gói thầu chính."
@@ -122,16 +122,16 @@ config_general_timezone: "Điều này được sử dụng để chỉ định 
 config_general_truncate: "Dọn dẹp các bản ghi khi họ được một kích thước nhất định? Giá trị là kích thước tối đa bằng B/KB/MB/GB/TB mà một tập tin bản ghi có thể tăng lên trước khi bị dọn dẹp. Giá trị mặc định 0KB sẽ vô hiệu hoá dọn dẹp (các bản ghi có thể tăng lên vô hạn). Lưu ý: Áp dụng cho tập tin riêng biệt! Kích thước tập tin bản ghi không được coi là tập thể."
 config_hcaptcha: "Cấu hình cho HCaptcha (cung cấp một cách để con người lấy lại quyền truy cập khi bị chặn)."
 config_hcaptcha_api: &CaptchaAPI "API nào để sử dụng?"
-config_hcaptcha_expiry: &CaptchaExpiry "Số giờ để nhớ captcha."
-config_hcaptcha_lockip: &CaptchaLockIP "Khóa captcha để IP?"
-config_hcaptcha_lockuser: &CaptchaLockUser "Khóa captcha để người dùng?"
-config_hcaptcha_logfile: &CaptchaLogfile "Đăng nhập tất cả các nỗ lực cho captcha? Nếu có, ghi rõ tên để sử dụng cho các tập tin đăng nhập. Nếu không, đốn biến này."
-config_hcaptcha_secret: &CaptchaDashboard "Giá trị này có thể được tìm thấy trong bảng điều khiển cho dịch vụ captcha của bạn."
+config_hcaptcha_expiry: &CaptchaExpiry "Số giờ để nhớ CAPTCHA."
+config_hcaptcha_lockip: &CaptchaLockIP "Khóa CAPTCHA để IP?"
+config_hcaptcha_lockuser: &CaptchaLockUser "Khóa CAPTCHA để người dùng?"
+config_hcaptcha_logfile: &CaptchaLogfile "Đăng nhập tất cả các nỗ lực cho CAPTCHA? Nếu có, ghi rõ tên để sử dụng cho các tập tin đăng nhập. Nếu không, đốn biến này."
+config_hcaptcha_secret: &CaptchaDashboard "Giá trị này có thể được tìm thấy trong bảng điều khiển cho dịch vụ CAPTCHA của bạn."
 config_hcaptcha_show_api_message: &ShowAPIMessage "Hiển thị thông báo API? True = Vâng [Mặc định]; False = Không."
 config_hcaptcha_show_cookie_warning: &ShowCookieWarning "Hiển thị cảnh báo cookie? True = Vâng [Mặc định]; False = Không."
-config_hcaptcha_signature_limit: &CaptchaSignatureLimit "Số lượng chữ ký tối đa được phép trước khi đề nghị captcha bị rút lại. Mặc định = 1."
+config_hcaptcha_signature_limit: &CaptchaSignatureLimit "Số lượng chữ ký tối đa được phép trước khi đề nghị CAPTCHA bị rút lại. Mặc định = 1."
 config_hcaptcha_sitekey: *CaptchaDashboard
-config_hcaptcha_usemode: &CaptchaUseMode "Khi nào nên cung cấp captcha?"
+config_hcaptcha_usemode: &CaptchaUseMode "Khi nào nên cung cấp CAPTCHA?"
 config_legal: "Cấu hình cho các yêu cầu pháp lý."
 config_legal_omit_hostname: "Bỏ qua tên máy chủ từ nhật ký? True = Vâng; False = Không [Mặc định]."
 config_legal_omit_ip: "Bỏ qua địa chỉ IP từ nhật ký? True = Vâng; False = Không [Mặc định]. Lưu ý: "pseudonymise_ip_addresses" trở nên dư thừa khi "omit_ip" là "true"."

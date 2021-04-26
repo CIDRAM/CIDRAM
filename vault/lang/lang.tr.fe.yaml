@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Turkish language data for the front-end (last modified: 2021.04.25).
+# This file: Turkish language data for the front-end (last modified: 2021.04.26).
 ##/
 
 Extended Description Bypasses: "Varsayılan imza bypass'lar, normalde ana paketle birlikte verilir."
@@ -125,8 +125,8 @@ config_hcaptcha_api: &CaptchaAPI "Hangi API'yı kullanacaksınız?"
 config_hcaptcha_expiry: &CaptchaExpiry "Captcha örneklerini hatırlamak için saat sayısı."
 config_hcaptcha_lockip: &CaptchaLockIP "Captcha'yı IP'lere kilitle?"
 config_hcaptcha_lockuser: &CaptchaLockUser "Captcha kullanıcılara kilitle?"
-config_hcaptcha_logfile: &CaptchaLogfile "Tüm captcha denemelerini günlüğe yaz? Yanıt evet ise, günlük dosyası için kullanılacak adı belirtin. Yanıt hayır ise, bu değişkeni boş bırakın."
-config_hcaptcha_secret: &CaptchaDashboard "Bu değer, captcha hizmetinizin kontrol panelinde bulunabilir."
+config_hcaptcha_logfile: &CaptchaLogfile "Tüm CAPTCHA denemelerini günlüğe yaz? Yanıt evet ise, günlük dosyası için kullanılacak adı belirtin. Yanıt hayır ise, bu değişkeni boş bırakın."
+config_hcaptcha_secret: &CaptchaDashboard "Bu değer, CAPTCHA hizmetinizin kontrol panelinde bulunabilir."
 config_hcaptcha_show_api_message: &ShowAPIMessage "API mesajı göster? Doğru/True = Evet [Varsayılan]; Yanlış/False = Hayır."
 config_hcaptcha_show_cookie_warning: &ShowCookieWarning "Çerez uyarısını göster? Doğru/True = Evet [Varsayılan]; Yanlış/False = Hayır."
 config_hcaptcha_signature_limit: &CaptchaSignatureLimit "Captcha teklifi geri çekilmeden önce izin verilen maksimum imza sayısı. Varsayılan = 1."

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Output generator (last modified: 2021.04.25).
+ * This file: Output generator (last modified: 2021.04.26).
  */
 
 /** Initialise cache. */
@@ -364,7 +364,7 @@ if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
         )
     ) {
         /** Execute the ReCaptcha class. */
-        new \CIDRAM\Core\ReCaptcha($CIDRAM);
+        $CIDRAM['CaptchaDone'] = new \CIDRAM\Core\ReCaptcha($CIDRAM);
     } elseif (
         !empty($CIDRAM['Config']['hcaptcha']['sitekey']) &&
         !empty($CIDRAM['Config']['hcaptcha']['secret']) &&
@@ -383,7 +383,7 @@ if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
         )
     ) {
         /** Execute the HCaptcha class. */
-        new \CIDRAM\Core\HCaptcha($CIDRAM);
+        $CIDRAM['CaptchaDone'] = new \CIDRAM\Core\HCaptcha($CIDRAM);
     }
 
     if (empty($CIDRAM['Config']['template_data']['captcha_api_include'])) {
@@ -501,6 +501,16 @@ if (!empty($CIDRAM['Webhooks']) || !empty($CIDRAM['Config']['Webhook']['URL'])) 
         $CIDRAM['Webhooks'],
         $CIDRAM['Config']['Webhook']
     );
+}
+
+/** A fix for correctly displaying LTR/RTL text. */
+if ($CIDRAM['L10N']->getString('Text Direction') !== 'rtl') {
+    $CIDRAM['L10N']->Data['Text Direction'] = 'ltr';
+    $CIDRAM['Config']['template_data']['textBlockAlign'] = 'text-align:left;';
+    $CIDRAM['Config']['template_data']['textBlockFloat'] = '';
+} else {
+    $CIDRAM['Config']['template_data']['textBlockAlign'] = 'text-align:right;';
+    $CIDRAM['Config']['template_data']['textBlockFloat'] = 'float:right;';
 }
 
 /** If any signatures were triggered, log it, generate output, then die. */
@@ -670,16 +680,6 @@ if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
         $CIDRAM['template_file'] = 'template_default.html';
     }
 
-    /** A fix for correctly displaying LTR/RTL text. */
-    if ($CIDRAM['L10N']->getString('Text Direction') !== 'rtl') {
-        $CIDRAM['L10N']->Data['Text Direction'] = 'ltr';
-        $CIDRAM['Config']['template_data']['textBlockAlign'] = 'text-align:left;';
-        $CIDRAM['Config']['template_data']['textBlockFloat'] = '';
-    } else {
-        $CIDRAM['Config']['template_data']['textBlockAlign'] = 'text-align:right;';
-        $CIDRAM['Config']['template_data']['textBlockFloat'] = 'float:right;';
-    }
-
     /** Prepare to process "more info" entries, if any exist. */
     if (!empty($CIDRAM['Config']['More Info']) && !empty($CIDRAM['BlockInfo']['ReasonMessage'])) {
         $CIDRAM['BlockInfo']['ReasonMessage'] .= sprintf(
@@ -700,7 +700,7 @@ if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
         unset($CIDRAM['Info Link'], $CIDRAM['Info Name'], $CIDRAM['Config']['More Info']);
     }
 
-    /** Parsed to the template file upon generating HTML output. */
+    /** Parsed to the template file. */
     $CIDRAM['Parsables'] = array_merge(
         $CIDRAM['FieldTemplates'],
         $CIDRAM['Config']['template_data'],
@@ -716,7 +716,7 @@ if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
 
     /** Pull relevant client-specified L10N data first. */
     if (!empty($CIDRAM['L10N-Lang-Attache'])) {
-        foreach (['denied', 'captcha_message', 'captcha_message_invisible', 'label_submit'] as $CIDRAM['PullThis']) {
+        foreach (['denied', 'captcha_cookie_warning', 'captcha_message', 'captcha_message_invisible', 'label_submit'] as $CIDRAM['PullThis']) {
             if (isset($CIDRAM['Client-L10N']->Data[$CIDRAM['PullThis']])) {
                 $CIDRAM['Parsables'][$CIDRAM['PullThis']] = $CIDRAM['Client-L10N']->Data[$CIDRAM['PullThis']];
             }
@@ -841,7 +841,6 @@ if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
     if (empty($CIDRAM['Flag Don\'t Log']) && (
         $CIDRAM['Config']['general']['log_banned_ips'] || empty($CIDRAM['Banned'])
     )) {
-
         /** Write to logs. */
         $CIDRAM['Events']->fireEvent('writeToLog');
     }
@@ -862,6 +861,86 @@ if (!empty($CIDRAM['Aux Redirect']) && !empty($CIDRAM['Aux Status Code']) && $CI
     header('Status: ' . $CIDRAM['Aux Status Code'] . ' ' . $CIDRAM['Status']);
     header('Location: ' . $CIDRAM['Aux Redirect']);
     die;
+}
+
+/** This code block executed only for non-blocked captcha configurations. */
+if (empty($CIDRAM['CaptchaDone']) && empty($CIDRAM['Whitelisted']) && empty($CIDRAM['BlockInfo']['Verified'])) {
+    if (
+        !empty($CIDRAM['Config']['recaptcha']['sitekey']) &&
+        !empty($CIDRAM['Config']['recaptcha']['secret']) &&
+        class_exists('\CIDRAM\Core\ReCaptcha') &&
+        ($CIDRAM['Config']['recaptcha']['usemode'] >= 3 && $CIDRAM['Config']['recaptcha']['usemode'] <= 5)
+    ) {
+        /** Execute the ReCaptcha class. */
+        $CIDRAM['CaptchaDone'] = new \CIDRAM\Core\ReCaptcha($CIDRAM);
+    } elseif (
+        !empty($CIDRAM['Config']['hcaptcha']['sitekey']) &&
+        !empty($CIDRAM['Config']['hcaptcha']['secret']) &&
+        class_exists('\CIDRAM\Core\HCaptcha') &&
+        ($CIDRAM['Config']['hcaptcha']['usemode'] >= 3 && $CIDRAM['Config']['hcaptcha']['usemode'] <= 5)
+    ) {
+        /** Execute the HCaptcha class. */
+        $CIDRAM['CaptchaDone'] = new \CIDRAM\Core\HCaptcha($CIDRAM);
+    }
+
+    if (
+        !empty($CIDRAM['CaptchaDone']) &&
+        is_object($CIDRAM['CaptchaDone']) &&
+        isset($CIDRAM['CaptchaDone']->Bypass) &&
+        $CIDRAM['CaptchaDone']->Bypass === false
+    ) {
+        /** Parsed to the captcha's HTML file. */
+        $CIDRAM['Parsables'] = array_merge($CIDRAM['FieldTemplates'], $CIDRAM['Config']['template_data'], $CIDRAM['BlockInfo']);
+        $CIDRAM['Parsables']['L10N-Lang-Attache'] = $CIDRAM['L10N-Lang-Attache'];
+        $CIDRAM['Parsables']['GeneratedBy'] = sprintf(
+            $CIDRAM['Client-L10N']->getString('generated_by'),
+            '<div id="ScriptIdent" dir="ltr">' . $CIDRAM['ScriptIdent'] . '</div>'
+        );
+
+        /** Pull relevant client-specified L10N data first. */
+        if (!empty($CIDRAM['L10N-Lang-Attache'])) {
+            foreach (['captcha_cookie_warning', 'captcha_message_automated_traffic', 'captcha_message', 'captcha_message_invisible', 'label_submit'] as $CIDRAM['PullThis']) {
+                if (isset($CIDRAM['Client-L10N']->Data[$CIDRAM['PullThis']])) {
+                    $CIDRAM['Parsables'][$CIDRAM['PullThis']] = $CIDRAM['Client-L10N']->Data[$CIDRAM['PullThis']];
+                }
+            }
+            unset($CIDRAM['PullThis']);
+        }
+
+        /** Append default L10N data. */
+        $CIDRAM['Parsables'] += $CIDRAM['L10N']->Data;
+
+        /** The captcha template file to use. */
+        $CIDRAM['CaptchaTemplateFile'] = 'captcha_' . $CIDRAM['Config']['template_data']['theme'] . '.html';
+
+        /** Fallback for themes without captcha template files. */
+        if (
+            $CIDRAM['Config']['template_data']['theme'] !== 'default' &&
+            !file_exists($CIDRAM['Vault'] . $CIDRAM['CaptchaTemplateFile'])
+        ) {
+            $CIDRAM['CaptchaTemplateFile'] = 'captcha_default.html';
+        }
+
+        /** Include privacy policy. */
+        $CIDRAM['Parsables']['pp'] = empty($CIDRAM['Config']['legal']['privacy_policy']) ? '' : sprintf(
+            '<br /><a href="%s"%s>%s</a>',
+            $CIDRAM['Config']['legal']['privacy_policy'],
+            $CIDRAM['L10N-Lang-Attache'],
+            $CIDRAM['Client-L10N']->getString('PrivacyPolicy')
+        );
+
+        /** Generate HTML output. */
+        $CIDRAM['HTML'] = $CIDRAM['ParseVars'](
+            $CIDRAM['Parsables'],
+            $CIDRAM['ReadFile']($CIDRAM['Vault'] . $CIDRAM['CaptchaTemplateFile'])
+        );
+
+        /** Final event before we exit. */
+        $CIDRAM['Events']->fireEvent('final');
+
+        /** All necessary processing has completed; Now we send HTML output and die. */
+        die($CIDRAM['HTML']);
+    }
 }
 
 /** Final event before we exit. */

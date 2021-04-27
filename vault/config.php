@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Configuration handler (last modified: 2021.04.26).
+ * This file: Configuration handler (last modified: 2021.04.27).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -35,12 +35,6 @@ $CIDRAM['HTTP_HOST'] = empty($_SERVER['HTTP_HOST']) ? '' : (
 
 /** Allow post override of HTTP_HOST (assists with proxied front-end pages). */
 $CIDRAM['HostnameOverride'] = empty($_POST['hostname']) ? '' : $_POST['hostname'];
-
-/** CIDRAM favicon. */
-$CIDRAM['favicon'] =
-    'R0lGODlhEAAQAMIBAAAAAGYAAJkAAMz//2YAAGYAAGYAAGYAACH5BAEKAAQALAAAAAAQABA' .
-    'AAANBCLrcKjBK+eKQN76RIb+g0oGewAmiZZbZRppnC0y0BgR4rutK8OWfn2jgI3KKxeHvyB' .
-    'wMkc0kIEp13nZYnGPLSAAAOw==';
 
 /** Checks whether the CIDRAM configuration file is readable. */
 if (!isset($GLOBALS['CIDRAM_Config']) && !is_readable($CIDRAM['Vault'] . 'config.ini')) {
@@ -192,3 +186,18 @@ if (!isset($CIDRAM['Request']->Channels['Triggers'])) {
 $CIDRAM['Request']->Disabled = $CIDRAM['Config']['general']['disabled_channels'];
 $CIDRAM['Request']->UserAgent = $CIDRAM['ScriptUA'];
 $CIDRAM['Request']->SendToOut = (defined('DEV_DEBUG_MODE') && DEV_DEBUG_MODE === true);
+
+/** CIDRAM favicon. */
+foreach (['ico', 'png', 'jpg', 'gif'] as $CIDRAM['favicon_extension']) {
+    if (!is_readable($CIDRAM['Vault'] . 'favicon_' . $CIDRAM['Config']['template_data']['theme'] . '.' . $CIDRAM['favicon_extension'])) {
+        continue;
+    }
+    $CIDRAM['favicon'] = base64_encode($CIDRAM['ReadFile'](
+        $CIDRAM['Vault'] . 'favicon_' . $CIDRAM['Config']['template_data']['theme'] . '.' . $CIDRAM['favicon_extension']
+    ));
+}
+if (empty($CIDRAM['favicon'])) {
+    $CIDRAM['favicon'] =
+        'R0lGODlhEAAQAMIBAAAAAGYAAJkAAMz//2YAAGYAAGYAAGYAACH5BAEKAAQALAAAAAAQABAAAANBCLrcKjBK+eKQ' .
+        'N76RIb+g0oGewAmiZZbZRppnC0y0BgR4rutK8OWfn2jgI3KKxeHvyBwMkc0kIEp13nZYnGPLSAAAOw==';
+}

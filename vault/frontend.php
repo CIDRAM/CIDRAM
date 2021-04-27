@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2021.04.24).
+ * This file: Front-end handler (last modified: 2021.04.27).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -40,6 +40,9 @@ $CIDRAM['FE'] = [
 
     /** Main front-end HTML template file. */
     'Template' => $CIDRAM['ReadFile']($CIDRAM['GetAssetPath']('frontend.html')),
+
+    /** Needed for custom favicons. */
+    'favicon_extension' => $CIDRAM['favicon_extension'],
 
     /** Populated by front-end JavaScript data as per needed. */
     'JS' => '',
@@ -199,23 +202,6 @@ if (!empty($CIDRAM['Pips_Path']) && is_readable($CIDRAM['Pips_Path'])) {
     require $CIDRAM['Pips_Path'];
 }
 
-/** Handle webfonts. */
-if (empty($CIDRAM['Config']['general']['disable_webfonts'])) {
-    $CIDRAM['FE']['Template'] = str_replace(['<!-- WebFont Begin -->', '<!-- WebFont End -->'], '', $CIDRAM['FE']['Template']);
-} else {
-    $CIDRAM['WebFontPos'] = [
-        'Begin' => strpos($CIDRAM['FE']['Template'], '<!-- WebFont Begin -->'),
-        'End' => strpos($CIDRAM['FE']['Template'], '<!-- WebFont End -->')
-    ];
-    if ($CIDRAM['WebFontPos']['Begin'] !== false && $CIDRAM['WebFontPos']['End'] !== false) {
-        $CIDRAM['FE']['Template'] = (
-            substr($CIDRAM['FE']['Template'], 0, $CIDRAM['WebFontPos']['Begin']) .
-            substr($CIDRAM['FE']['Template'], $CIDRAM['WebFontPos']['End'] + 20)
-        );
-    }
-    unset($CIDRAM['WebFontPos']);
-}
-
 /** A fix for correctly displaying LTR/RTL text. */
 if (empty($CIDRAM['L10N']->Data['Text Direction']) || $CIDRAM['L10N']->Data['Text Direction'] !== 'rtl') {
     $CIDRAM['L10N']->Data['Text Direction'] = 'ltr';
@@ -296,7 +282,7 @@ if ($CIDRAM['QueryVars']['cidram-page'] === 'css') {
 
 /** A simple passthru for the favicon. */
 if ($CIDRAM['QueryVars']['cidram-page'] === 'favicon') {
-    header('Content-Type: image/gif');
+    header('Content-Type: image/' . $CIDRAM['favicon_extension']);
     echo base64_decode($CIDRAM['favicon']);
     die;
 }
@@ -658,7 +644,10 @@ if (($CIDRAM['FE']['UserState'] === 1 || $CIDRAM['FE']['UserState'] === 2) && !$
             $CIDRAM['ReadFile']($CIDRAM['GetAssetPath']('_nav_logs_access_only.html'))
         );
     }
+}
 
+/** Only execute this code block for already logged in users. */
+if ($CIDRAM['FE']['UserState'] === 1) {
     /** Where to find remote version information? */
     $CIDRAM['RemoteVerPath'] = 'https://raw.githubusercontent.com/Maikuolan/Compatibility-Charts/gh-pages/';
 
@@ -781,7 +770,7 @@ if (($CIDRAM['FE']['UserState'] === 1 || $CIDRAM['FE']['UserState'] === 2) && !$
 /** The user hasn't logged in, or hasn't authenticated yet. */
 if ($CIDRAM['FE']['UserState'] !== 1 && !$CIDRAM['FE']['CronMode']) {
     /** Page initial prepwork. */
-    $CIDRAM['InitialPrepwork']($CIDRAM['L10N']->getString('title_login'), $CIDRAM['L10N']->getString('tip_login'), false);
+    $CIDRAM['InitialPrepwork']($CIDRAM['L10N']->getString('title_login'), '', false);
 
     if ($CIDRAM['FE']['UserState'] === 2) {
         /** Provide the option to log out (omit home link). */

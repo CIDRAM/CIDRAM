@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2021.04.24).
+ * This file: Front-end functions file (last modified: 2021.04.27).
  */
 
 /**
@@ -2884,7 +2884,32 @@ $CIDRAM['SendOutput'] = function () use (&$CIDRAM): string {
     if ($CIDRAM['FE']['JS']) {
         $CIDRAM['FE']['JS'] = "\n<script type=\"text/javascript\">" . $CIDRAM['FE']['JS'] . '</script>';
     }
-    return $CIDRAM['ParseVars']($CIDRAM['L10N']->Data + $CIDRAM['FE'], $CIDRAM['FE']['Template']);
+    $Template = $CIDRAM['FE']['Template'];
+    $Labels = [];
+    $Segments = [];
+    if (empty($CIDRAM['Config']['general']['disable_webfonts'])) {
+        $Labels[] = 'WebFont';
+    } else {
+        $Segments[] = 'WebFont';
+    }
+    if (isset($CIDRAM['FE']['UserState']) && $CIDRAM['FE']['UserState'] === 1) {
+        $Labels[] = 'Logged In';
+        $Segments[] = 'Logged Out';
+    } else {
+        $Labels[] = 'Logged Out';
+        $Segments[] = 'Logged In';
+    }
+    foreach ($Labels as $Label) {
+        $Template = str_replace(['<!-- ' . $Label . ' Begin -->', '<!-- ' . $Label . ' End -->'], '', $Template);
+    }
+    foreach ($Segments as $Segment) {
+        $BPos = strpos($Template, '<!-- ' . $Segment . ' Begin -->');
+        $EPos = strpos($Template, '<!-- ' . $Segment . ' End -->');
+        if ($BPos !== false && $EPos !== false) {
+            $Template = substr($Template, 0, $BPos) . substr($Template, $EPos + strlen($Segment) + 13);
+        }
+    }
+    return $CIDRAM['ParseVars'](array_merge($CIDRAM['L10N']->Data, $CIDRAM['FE']), $Template);
 };
 
 /**

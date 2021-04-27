@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Output generator (last modified: 2021.04.26).
+ * This file: Output generator (last modified: 2021.04.27).
  */
 
 /** Initialise cache. */
@@ -75,6 +75,7 @@ $CIDRAM['BlockInfo'] = [
     'IPAddrResolved' => $CIDRAM['Resolve6to4']($_SERVER[$CIDRAM['IPAddr']]),
     'ScriptIdent' => $CIDRAM['ScriptIdent'],
     'favicon' => $CIDRAM['favicon'],
+    'favicon_extension' => $CIDRAM['favicon_extension'],
     'Query' => $CIDRAM['Query'],
     'Referrer' => empty($_SERVER['HTTP_REFERER']) ? '' : $_SERVER['HTTP_REFERER'],
     'UA' => empty($_SERVER['HTTP_USER_AGENT']) ? '' : $_SERVER['HTTP_USER_AGENT'],
@@ -466,7 +467,7 @@ if (!empty($CIDRAM['Webhooks']) || !empty($CIDRAM['Config']['Webhook']['URL'])) 
     $CIDRAM['WebhookParams'] = array_merge($CIDRAM['BlockInfo'], $CIDRAM['WebhookParams']);
 
     /** Remove useless parameters. */
-    unset($CIDRAM['WebhookParams']['favicon']);
+    unset($CIDRAM['WebhookParams']['favicon'], $CIDRAM['WebhookParams']['favicon_extension']);
 
     /** Iterate through each webhook. */
     foreach ($CIDRAM['Webhooks'] as $CIDRAM['Webhook']) {

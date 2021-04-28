@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6.dat
 
-# Version: 2021.115.483
-# Last modified: 2021.04.26
+# Version: 2021.117.548
+# Last modified: 2021.04.28
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage, i.e., with ignore.dat, with reCAPTCHA, with "extended rules" (default bypasses): « [x]Low [ ]Medium [ ]High »
@@ -4351,20 +4351,10 @@ Tag: 24 SHELLS
 
 # ASNs 11588, 12989, 20446, 33438, 199156 ("Highwinds Network Group, Inc").
 # IP transit, CDN, and colo provider; also a source of spam.
-# Updated: 2020.10.05
+# Updated: 2021.04.28
 
 2804:266c::/32 Deny Cloud
 Origin: BR
-2a03:efc0:200::/40 Deny Cloud
-2a03:efc0:700::/40 Deny Cloud
-2a03:efc0:900::/40 Deny Cloud
-2a03:efc0:1100::/40 Deny Cloud
-2a03:efc0:1300::/40 Deny Cloud
-2a03:efc0:1500::/40 Deny Cloud
-2a03:efc0:1700::/40 Deny Cloud
-2a03:efc0:1800::/39 Deny Cloud
-2a03:efc0:ba5e::/48 Deny Cloud
-Origin: GB
 2403:f880:6000::/39 Deny Cloud
 2403:f880:6300::/40 Deny Cloud
 2404:5d80:6000::/39 Deny Cloud
@@ -4373,12 +4363,10 @@ Origin: GB
 2404:5d80:6800::/40 Deny Cloud
 2404:5d80:7000::/40 Deny Cloud
 Origin: JP
-2001:4de0:101::/48 Deny Cloud
 2001:4de0:200::/40 Deny Cloud
 2001:4de0:400::/38 Deny Cloud
 2001:4de0:1000::/48 Deny Cloud
 2001:4de0:2000::/38 Deny Cloud
-2001:4de0:2400::/40 Deny Cloud
 2001:4de0:3000::/39 Deny Cloud
 2001:4de0:4000::/38 Deny Cloud
 2001:4de0:5010::/48 Deny Cloud
@@ -4389,6 +4377,43 @@ Origin: JP
 2001:4de0:7002::/47 Deny Cloud
 2001:4de0:ac10::/46 Deny Cloud
 2001:4de0:ac18::/47 Deny Cloud
+Origin: NL
+2001:57a:200::/39 Deny Cloud
+2001:57a:400::/40 Deny Cloud
+2001:1938::/32 Deny Cloud
+2407:1580:1100::/40 Deny Cloud
+2407:1580:1200::/40 Deny Cloud
+2407:1580:1500::/40 Deny Cloud
+2407:1580:1600::/39 Deny Cloud
+2407:1580:1800::/40 Deny Cloud
+2604:6840:1200::/39 Deny Cloud
+2604:6840:1400::/38 Deny Cloud
+2604:6840:1800::/38 Deny Cloud
+2604:6840:1c00::/40 Deny Cloud
+2604:6840:1e00::/40 Deny Cloud
+2604:6840:ac10::/48 Deny Cloud
+2604:6840:ac19::/48 Deny Cloud
+2604:6840:ac20::/48 Deny Cloud
+2604:6840:f800::/38 Deny Cloud
+2604:6840:fc00::/40 Deny Cloud
+2604:c980::/32 Deny Cloud
+2604:ea80::/32 Deny Cloud
+2604:fc80::/32 Deny Cloud
+2606:b300::/33 Deny Cloud
+2606:ce80:6100::/40 Deny Cloud
+2606:ce80:6200::/39 Deny Cloud
+2606:ce80:6400::/38 Deny Cloud
+2606:ce80:6900::/40 Deny Cloud
+2a03:efc0:200::/40 Deny Cloud
+2a03:efc0:700::/40 Deny Cloud
+2a03:efc0:900::/40 Deny Cloud
+2a03:efc0:1100::/40 Deny Cloud
+2a03:efc0:1300::/40 Deny Cloud
+2a03:efc0:1500::/40 Deny Cloud
+2a03:efc0:1700::/40 Deny Cloud
+2a03:efc0:1800::/39 Deny Cloud
+2a03:efc0:ba5e::/48 Deny Cloud
+2a04:a8c0::/29 Deny Cloud
 2a0a:e200:1100::/40 Deny Cloud
 2a0a:e200:1300::/40 Deny Cloud
 2a0a:e200:1400::/38 Deny Cloud
@@ -4400,26 +4425,8 @@ Origin: JP
 2a0a:e202:8013::/48 Deny Cloud
 2a0a:e202:8014::/48 Deny Cloud
 2a10:1140::/29 Deny Cloud
-Origin: NL
-2001:1938::/32 Deny Cloud
-2407:1580:1100::/40 Deny Cloud
-2407:1580:1200::/40 Deny Cloud
-2407:1580:1400::/38 Deny Cloud
-2407:1580:1800::/40 Deny Cloud
-2604:6840:1200::/39 Deny Cloud
-2604:6840:1400::/38 Deny Cloud
-2604:6840:1800::/38 Deny Cloud
-2604:6840:1c00::/40 Deny Cloud
-2604:6840:1e00::/40 Deny Cloud
-2604:c980::/32 Deny Cloud
-2604:ea80::/32 Deny Cloud
-2604:fc80::/32 Deny Cloud
-2606:b300::/33 Deny Cloud
-2606:ce80:6100::/40 Deny Cloud
-2606:ce80:6200::/39 Deny Cloud
-2606:ce80:6400::/38 Deny Cloud
-2606:ce80:6900::/40 Deny Cloud
 Origin: US
+Profile: Infrastructure;Webhosting
 Tag: Highwinds
 
 
@@ -8307,6 +8314,7 @@ Tag: Optitrust GmbH
 
 # ASN 44133 ("IPAX OG").
 # Austrian webhosting provider. Hacking and brute-force attacks detected here.
+# Stop Forum Spam (SFS) listings: 6.
 # Updated: 2021.04.16
 
 2a00:63c0::/29 Deny Cloud
@@ -8335,6 +8343,43 @@ Tag: Trustwave Holdings, Inc
 Origin: FR
 Profile: Webhosting
 Tag: Octopuce s.a.r.l
+
+
+# ASNs 48730, 197155, 200088 ("Artnet Sp. z o.o").
+# Webhosting provider caught spamming, performing webapp, DDoS, brute-force,
+# and SQL injection attacks.
+# Stop Forum Spam (SFS) listings: 15 (AS48730), 1,794 (AS197155), 32 (AS200088).
+# Updated: 2021.04.28
+
+2a02:d100::/29 Deny Cloud
+Origin: PL
+2a03:6f00:8::/48 Deny Cloud
+Origin: RU
+Profile: Dedicated;Webhosting
+Tag: Artnet Sp. z o.o
+
+
+# ASN 63023 ("GTHost").
+# Webhosting provider. Spam, port scans, and hack attempts detected from here.
+# Stop Forum Spam (SFS) listings: 727.
+# Updated: 2021.04.28
+
+2a09:57c0::/29 Deny Cloud
+2a09:59c0::/29 Deny Cloud
+2a09:5bc0::/29 Deny Cloud
+2a0e:b00::/29 Deny Cloud
+2a0e:2800::/29 Deny Cloud
+2a0e:2c00::/29 Deny Cloud
+2a0e:6c00::/29 Deny Cloud
+2a0e:8400::/29 Deny Cloud
+2a0e:f180::/29 Deny Cloud
+Origin: LT
+2604:86c0::/33 Deny Cloud
+2604:86c0:8000::/35 Deny Cloud
+2604:86c0:f300::/40 Deny Cloud
+Origin: US
+Profile: Webhosting
+Tag: GTHost
 
 
 # ---

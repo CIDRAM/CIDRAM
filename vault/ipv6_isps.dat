@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_isps.dat
 
-# Version: 2021.115.483
-# Last modified: 2021.04.26
+# Version: 2021.117.548
+# Last modified: 2021.04.28
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage, i.e., with ignore.dat, with reCAPTCHA, with "extended rules" (default bypasses): « [ ]Low [x]Medium [ ]High »
@@ -2154,10 +2154,12 @@ recaptcha:
 # ASN 24309 ("Atria Convergence Technologies Pvt. Ltd. Broadband Internet
 # Service Provider INDIA"). An Indian domestic ISP caught spamming. Listing
 # just the affected ranges, plus all US ranges (interlaced cloud ranges).
-# %Listed, abuseat.org (CBL-Listed): 9.39%.
-# Stop Forum Spam (SFS) listings: 1,327.
-# Updated: 2020.08.27 / Checked: 2021.02.20
+# %Listed, abuseat.org (CBL-Listed): 7.53%.
+# Stop Forum Spam (SFS) listings: 1,552.
+# Updated: 2021.04.28
 
+2406:7400:71:6d39::/64 Deny Spam
+Origin: IN
 2600:140f:c000::/48 Deny Cloud
 Origin: US
 Profile: Domestic ISP
@@ -2856,6 +2858,22 @@ Tag: Orange S.A
 Origin: NL
 Profile: Domestic ISP;Tor endpoints here
 Tag: Xs4all Internet BV
+---
+recaptcha:
+ enabled: true
+
+
+# ASN 5410 ("Bouygues Telecom SA").
+# French domestic ISP and mobile provider. Spam and hack attempts detected from
+# here. Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 489.
+# Updated: 2021.04.28
+
+2001:861:5580:f7d0::/64 Deny Spam
+2a04:cec0:10dc:42b9::/64 Deny Spam
+Origin: FR
+Profile: Domestic ISP
+Tag: Bouygues Telecom SA
 ---
 recaptcha:
  enabled: true

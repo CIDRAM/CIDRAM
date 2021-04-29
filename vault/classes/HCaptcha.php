@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: HCaptcha class (last modified: 2021.04.25).
+ * This file: HCaptcha class (last modified: 2021.04.29).
  */
 
 namespace CIDRAM\Core;
@@ -296,7 +296,7 @@ class HCaptcha extends Captcha
 
         /** Guard. */
         if (
-            !$Loggable ||
+            empty($Loggable) ||
             empty($this->CIDRAM['BlockInfo']) ||
             strlen($this->CIDRAM['Config']['hcaptcha']['logfile']) === 0 ||
             !($Filename = $this->CIDRAM['BuildPath']($this->CIDRAM['Vault'] . $this->CIDRAM['Config']['hcaptcha']['logfile']))

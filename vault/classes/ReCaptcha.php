@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: ReCaptcha class (last modified: 2021.04.25).
+ * This file: ReCaptcha class (last modified: 2021.04.29).
  */
 
 namespace CIDRAM\Core;
@@ -296,7 +296,7 @@ class ReCaptcha extends Captcha
 
         /** Guard. */
         if (
-            !$Loggable ||
+            empty($Loggable) ||
             empty($this->CIDRAM['BlockInfo']) ||
             strlen($this->CIDRAM['Config']['recaptcha']['logfile']) === 0 ||
             !($Filename = $this->CIDRAM['BuildPath']($this->CIDRAM['Vault'] . $this->CIDRAM['Config']['recaptcha']['logfile']))

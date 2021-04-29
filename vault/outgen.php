@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Output generator (last modified: 2021.04.27).
+ * This file: Output generator (last modified: 2021.04.29).
  */
 
 /** Initialise cache. */
@@ -866,6 +866,7 @@ if (!empty($CIDRAM['Aux Redirect']) && !empty($CIDRAM['Aux Status Code']) && $CI
 
 /** This code block executed only for non-blocked captcha configurations. */
 if (empty($CIDRAM['CaptchaDone']) && empty($CIDRAM['Whitelisted']) && empty($CIDRAM['BlockInfo']['Verified'])) {
+    $CIDRAM['Stage'] = 'NonBlockedCAPTCHA';
     if (
         !empty($CIDRAM['Config']['recaptcha']['sitekey']) &&
         !empty($CIDRAM['Config']['recaptcha']['secret']) &&

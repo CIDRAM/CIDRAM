@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: ReCaptcha class (last modified: 2021.04.29).
+ * This file: ReCaptcha class (last modified: 2021.05.01).
  */
 
 namespace CIDRAM\Core;
@@ -304,10 +304,8 @@ class ReCaptcha extends Captcha
             return;
         }
 
-        $WriteMode = !file_exists($Filename) || (
-            $this->CIDRAM['Config']['general']['truncate'] > 0 &&
-            filesize($Filename) >= $this->CIDRAM['ReadBytes']($this->CIDRAM['Config']['general']['truncate'])
-        ) ? 'wb' : 'ab';
+        $Truncate = $CIDRAM['ReadBytes']($CIDRAM['Config']['general']['truncate']);
+        $WriteMode = (!file_exists($Filename) || $Truncate > 0 && filesize($Filename) >= $Truncate) ? 'wb' : 'ab';
         $Data = sprintf(
             "%1\$s%2\$s - %3\$s%4\$s - %5\$s%6\$s\n",
             $this->CIDRAM['L10N']->getString('field_ipaddr'),

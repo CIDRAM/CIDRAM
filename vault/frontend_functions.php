@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2021.04.27).
+ * This file: Front-end functions file (last modified: 2021.05.01).
  */
 
 /**
@@ -2997,11 +2997,8 @@ $CIDRAM['FELogger'] = function (string $IPAddr, string $User, string $Message) u
     $Data = $CIDRAM['Config']['legal']['pseudonymise_ip_addresses'] ? $CIDRAM['Pseudonymise-IP']($IPAddr) : $IPAddr;
     $Data .= ' - ' . $CIDRAM['FE']['DateTime'] . ' - "' . $User . '" - ' . $Message . "\n";
 
-    $WriteMode = (!file_exists($File) || (
-        $CIDRAM['Config']['general']['truncate'] > 0 &&
-        filesize($File) >= $CIDRAM['ReadBytes']($CIDRAM['Config']['general']['truncate'])
-    )) ? 'wb' : 'ab';
-
+    $Truncate = $CIDRAM['ReadBytes']($CIDRAM['Config']['general']['truncate']);
+    $WriteMode = (!file_exists($File) || $Truncate > 0 && filesize($File) >= $Truncate) ? 'wb' : 'ab';
     $Handle = fopen($File, $WriteMode);
     fwrite($Handle, $Data);
     fclose($Handle);

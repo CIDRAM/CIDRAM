@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2021.04.26).
+ * This file: Functions file (last modified: 2021.05.01).
  */
 
 /** Autoloader for CIDRAM classes. */
@@ -1337,7 +1337,10 @@ $CIDRAM['ReadBytes'] = function (string $In, int $Mode = 0) {
         return $Unit === 'B' || $Unit === 'o' ? $In . 'B' : $In . $Unit . 'B';
     }
     $Multiply = ['K' => 1024, 'M' => 1048576, 'G' => 1073741824, 'T' => 1099511627776];
-    return (int)floor($In * (isset($Multiply[$Unit]) ? $Multiply[$Unit] : 1));
+    if (isset($Multiply[$Unit])) {
+        $In *= $Multiply[$Unit];
+    }
+    return (int)floor($In);
 };
 
 /**

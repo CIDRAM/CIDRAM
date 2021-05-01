@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Event handlers file (last modified: 2021.04.24).
+ * This file: Event handlers file (last modified: 2021.05.01).
  */
 
 /**
@@ -25,10 +25,8 @@ $CIDRAM['Events']->addHandler('writeToLog', function () use (&$CIDRAM): bool {
         return false;
     }
 
-    $Data = !file_exists($Filename) || (
-        $CIDRAM['Config']['general']['truncate'] > 0 &&
-        filesize($Filename) >= $CIDRAM['ReadBytes']($CIDRAM['Config']['general']['truncate'])
-    ) ? "\x3c\x3fphp die; \x3f\x3e\n\n" : '';
+    $Truncate = $CIDRAM['ReadBytes']($CIDRAM['Config']['general']['truncate']);
+    $Data = !file_exists($Filename) || $Truncate > 0 && filesize($Filename) >= $Truncate ? "\x3c\x3fphp die; \x3f\x3e\n\n" : '';
     $WriteMode = !empty($Data) ? 'wb' : 'ab';
     $Data .= $CIDRAM['ParseVars']($CIDRAM['Parsables'], $CIDRAM['FieldTemplates']['Logs'] . "\n");
 
@@ -68,10 +66,8 @@ $CIDRAM['Events']->addHandler('writeToLog', function () use (&$CIDRAM): bool {
         $CIDRAM['BlockInfo']['Referrer'] ?? '-',
         $CIDRAM['BlockInfo']['UA'] ?? '-'
     );
-    $WriteMode = !file_exists($Filename) || (
-        $CIDRAM['Config']['general']['truncate'] > 0 &&
-        filesize($Filename) >= $CIDRAM['ReadBytes']($CIDRAM['Config']['general']['truncate'])
-    ) ? 'wb' : 'ab';
+    $Truncate = $CIDRAM['ReadBytes']($CIDRAM['Config']['general']['truncate']);
+    $WriteMode = !file_exists($Filename) || $Truncate > 0 && filesize($Filename) >= $Truncate ? 'wb' : 'ab';
 
     $File = fopen($Filename, $WriteMode);
     fwrite($File, $Data);
@@ -105,10 +101,8 @@ $CIDRAM['Events']->addHandler('writeToLog', function () use (&$CIDRAM): bool {
         return !(is_string($Value) && empty($Value));
     });
 
-    $WriteMode = !file_exists($Filename) || (
-        $CIDRAM['Config']['general']['truncate'] > 0 &&
-        filesize($Filename) >= $CIDRAM['ReadBytes']($CIDRAM['Config']['general']['truncate'])
-    ) ? 'wb' : 'ab';
+    $Truncate = $CIDRAM['ReadBytes']($CIDRAM['Config']['general']['truncate']);
+    $WriteMode = !file_exists($Filename) || $Truncate > 0 && filesize($Filename) >= $Truncate ? 'wb' : 'ab';
 
     $File = fopen($Filename, $WriteMode);
     fwrite($File, serialize($BlockInfo) . "\n");
@@ -183,10 +177,8 @@ $CIDRAM['Events']->addHandler('final', function () use (&$CIDRAM): bool {
         return false;
     }
 
-    if (!file_exists($File) || !filesize($File) || (
-        $CIDRAM['Config']['general']['truncate'] > 0 &&
-        filesize($File) >= $CIDRAM['ReadBytes']($CIDRAM['Config']['general']['truncate'])
-    )) {
+    $Truncate = $CIDRAM['ReadBytes']($CIDRAM['Config']['general']['truncate']);
+    if (!file_exists($File) || !filesize($File) || $Truncate > 0 && filesize($File) >= $Truncate) {
         $WriteMode = 'wb';
         $Data = $CIDRAM['L10N']->getString('error_log_header') . "\n=====\n" . $CIDRAM['Pending-Error-Log-Data'];
     } else {
@@ -218,11 +210,8 @@ $CIDRAM['Events']->addHandler('writeToPHPMailerEventLog', function (string $Data
         return false;
     }
 
-    $WriteMode = (!file_exists($EventLog) || (
-        $CIDRAM['Config']['general']['truncate'] > 0 &&
-        filesize($EventLog) >= $CIDRAM['ReadBytes']($CIDRAM['Config']['general']['truncate'])
-    )) ? 'wb' : 'ab';
-
+    $Truncate = $CIDRAM['ReadBytes']($CIDRAM['Config']['general']['truncate']);
+    $WriteMode = (!file_exists($EventLog) || $Truncate > 0 && filesize($EventLog) >= $Truncate) ? 'wb' : 'ab';
     $Handle = fopen($EventLog, $WriteMode);
     fwrite($Handle, $Data);
     fclose($Handle);

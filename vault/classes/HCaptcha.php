@@ -38,8 +38,8 @@ class HCaptcha extends Captcha
             '<div class="gForm">' .
                 '<div id="hcform" class="h-captcha" data-sitekey="%s" data-theme="%s" data-callback="onSubmitCallback" data-size="invisible"></div>' .
             "</div>\n" .
-            '<form id="gF" method="POST" action="" class="gForm" onsubmit="javascript:{hcaptcha.execute()}">' .
-                '<input id="rData" type="hidden" name="h-captcha-response" value="" />%s' .
+            '<form id="gF" method="POST" action="" class="gForm" onsubmit="javascript:hcaptcha.execute()">' .
+                '<input id="rData" type="hidden" name="hc-response" value="" />%s' .
             "</form>\n" .
             "<script type=\"text/javascript\">function onSubmitCallback(token){document.getElementById('rData').value=hcaptcha.getResponse(window.document.hcwidget);document.getElementById('gF').submit()}</script>\n",
             $ApiMessage ? '{captcha_message_invisible}' : '',

@@ -64,9 +64,9 @@ class ReCaptcha extends Captcha
     private function generateCallbackData(string $SiteKey, string $API): string
     {
         return sprintf(
-            "\n  <script type=\"text/javascript\">var onloadCallback=function(){grecaptcha.render(%s);%s}</script>",
+            "\n  <script type=\"text/javascript\">var onloadCallback=function(){grecaptcha.render(%s)%s}</script>",
             "'gForm',{'sitekey':'" . $SiteKey . "'" . ($API === 'Invisible' ? ",'size':'invisible'" : '') . '}',
-            ($API === 'Invisible') ? 'grecaptcha.execute();' : ''
+            ($API === 'Invisible') ? ';grecaptcha.execute()' : ''
         );
     }
 
@@ -83,8 +83,7 @@ class ReCaptcha extends Captcha
             'response' => $_POST['g-recaptcha-response'],
             'remoteip' => $_SERVER[$this->CIDRAM['IPAddr']]
         ]);
-        $Offset = strpos($this->Results, '"success": ');
-        $this->Bypass = ($Offset !== false && substr($this->Results, $Offset + 11, 4) === 'true');
+        $this->Bypass = (strpos($this->Results, '"success": true,') !== false);
     }
 
     /**

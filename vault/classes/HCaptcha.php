@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: HCaptcha class (last modified: 2021.04.29).
+ * This file: HCaptcha class (last modified: 2021.05.01).
  */
 
 namespace CIDRAM\Core;
@@ -26,17 +26,22 @@ class HCaptcha extends Captcha
      */
     private function generateTemplateData(string $SiteKey, string $API, bool $CookieWarn = false, bool $ApiMessage = false): string
     {
+        header(sprintf(
+            "Content-Security-Policy: default-src 'none';\nconnect-src %2\$s;\nframe-src %2\$s;\nscript-src %1\$s %2\$s;",
+            'https://assets.hcaptcha.com',
+            'https://hcaptcha.com'
+        ));
         $Script = '<script src="https://hcaptcha.com/1/api.js?onload=onloadCallback&render=explicit" async defer></script>';
         $Script .= '<script type="text/javascript">document.getElementById(\'hostnameoverride\').value=window.location.hostname;</script>';
         return $API === 'Invisible' ? sprintf(
             "\n<hr />\n<p class=\"detected\">%s%s<br /></p>\n" .
             '<div class="gForm">' .
-                '<div id="gForm" class="h-captcha" data-sitekey="%s" data-theme="%s" data-callback="onSubmitCallback" data-size="invisible"></div>' .
+                '<div id="hcform" class="h-captcha" data-sitekey="%s" data-theme="%s" data-callback="onSubmitCallback" data-size="invisible"></div>' .
             "</div>\n" .
-            '<form id="gF" method="POST" action="" class="gForm">' .
+            '<form id="gF" method="POST" action="" class="gForm" onsubmit="javascript:{hcaptcha.execute()}">' .
                 '<input id="rData" type="hidden" name="h-captcha-response" value="" />%s' .
             "</form>\n" .
-            "<script type=\"text/javascript\">function onSubmitCallback(token){document.getElementById('rData').value=token;document.getElementById('gF').submit()}</script>\n",
+            "<script type=\"text/javascript\">function onSubmitCallback(token){document.getElementById('rData').value=hcaptcha.getResponse(window.document.hcwidget);document.getElementById('gF').submit()}</script>\n",
             $ApiMessage ? '{captcha_message_invisible}' : '',
             $CookieWarn ? '<br />{captcha_cookie_warning}' : '',
             $SiteKey,
@@ -44,9 +49,12 @@ class HCaptcha extends Captcha
             $this->TemplateInsert
         ) . $Script . "\n" : sprintf(
             "\n<hr />\n<p class=\"detected\">%s%s<br /></p>\n" .
-            '<form method="POST" action="" class="gForm" onsubmit="javascript:grecaptcha.execute()">' .
-                '<div id="gForm" data-theme="%s"></div><div>%s<input type="submit" value="{label_submit}" /></div>' .
-            "</form>\n",
+            '<form method="POST" action="" class="gForm">' .
+                '<input id="rData" type="hidden" name="hc-response" value="" />' .
+                '<div id="hcform" data-theme="%s" data-callback="onSubmitCallback"></div>' .
+                '<div>%s<input type="submit" value="{label_submit}" /></div>' .
+            "</form>\n" .
+            "<script type=\"text/javascript\">function onSubmitCallback(token){document.getElementById('rData').value=hcaptcha.getResponse(window.document.hcwidget)}</script>\n",
             $ApiMessage ? '{captcha_message}' : '',
             $CookieWarn ? '<br />{captcha_cookie_warning}' : '',
             $this->determineTheme(),
@@ -64,9 +72,9 @@ class HCaptcha extends Captcha
     private function generateCallbackData(string $SiteKey, string $API): string
     {
         return sprintf(
-            "\n  <script type=\"text/javascript\">var onloadCallback=function(){grecaptcha.render(%s);%s}</script>",
-            "'gForm',{'sitekey':'" . $SiteKey . "'" . ($API === 'Invisible' ? ",'size':'invisible'" : '') . '}',
-            ($API === 'Invisible') ? 'grecaptcha.execute();' : ''
+            "\n  <script type=\"text/javascript\">var onloadCallback=function(){window.document.hcwidget=hcaptcha.render(%s)%s}</script>",
+            "'hcform',{sitekey:'" . $SiteKey . "', theme:'" . $this->determineTheme() . "'}",
+            ($API === 'Invisible') ? ';hcaptcha.execute()' : ''
         );
     }
 
@@ -80,11 +88,10 @@ class HCaptcha extends Captcha
     {
         $this->Results = $this->CIDRAM['Request']('https://hcaptcha.com/siteverify', [
             'secret' => $this->CIDRAM['Config']['hcaptcha']['secret'],
-            'response' => $_POST['h-captcha-response'],
+            'response' => $_POST['hc-response'],
             'remoteip' => $_SERVER[$this->CIDRAM['IPAddr']]
         ]);
-        $Offset = strpos($this->Results, '"success": ');
-        $this->Bypass = ($Offset !== false && substr($this->Results, $Offset + 11, 4) === 'true');
+        $this->Bypass = (strpos($this->Results, '"success":true,') !== false);
     }
 
     /**
@@ -173,7 +180,7 @@ class HCaptcha extends Captcha
                 $this->CIDRAM['BlockInfo']['CAPTCHA'] = $this->CIDRAM['L10N']->getString('state_enabled');
 
                 /** We've received a response. */
-                if (isset($_POST['h-captcha-response'])) {
+                if (isset($_POST['hc-response'])) {
                     $Loggable = true;
                     $this->doResponse();
                     if ($this->Bypass) {
@@ -260,7 +267,7 @@ class HCaptcha extends Captcha
                 $this->CIDRAM['BlockInfo']['CAPTCHA'] = $this->CIDRAM['L10N']->getString('state_enabled');
 
                 /** We've received a response. */
-                if (isset($_POST['h-captcha-response'])) {
+                if (isset($_POST['hc-response'])) {
                     $Loggable = true;
                     $this->doResponse();
                     if ($this->Bypass) {
@@ -304,10 +311,8 @@ class HCaptcha extends Captcha
             return;
         }
 
-        $WriteMode = !file_exists($Filename) || (
-            $this->CIDRAM['Config']['general']['truncate'] > 0 &&
-            filesize($Filename) >= $this->CIDRAM['ReadBytes']($this->CIDRAM['Config']['general']['truncate'])
-        ) ? 'wb' : 'ab';
+        $Truncate = $CIDRAM['ReadBytes']($CIDRAM['Config']['general']['truncate']);
+        $WriteMode = (!file_exists($Filename) || $Truncate > 0 && filesize($Filename) >= $Truncate) ? 'wb' : 'ab';
         $Data = sprintf(
             "%1\$s%2\$s - %3\$s%4\$s - %5\$s%6\$s\n",
             $this->CIDRAM['L10N']->getString('field_ipaddr'),

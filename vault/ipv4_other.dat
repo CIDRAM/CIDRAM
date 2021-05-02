@@ -1,11 +1,11 @@
 # IPv4 signatures file (CIDRs for proxies, VPNs and other miscellaneous unwanted services).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv4_other.dat
 
-# Version: 2021.105.157
-# Last modified: 2021.04.16
+# Version: 2021.120.618
+# Last modified: 2021.05.02
 
 # False positive risk (an approximate, rough estimate only):
-# Standard usage, i.e., with ignore.dat, with reCAPTCHA, with "extended rules" (default bypasses): « [ ]Low [x]Medium [ ]High »
+# Standard usage, i.e., with ignore.dat, with CAPTCHA, with "extended rules" (default bypasses): « [ ]Low [x]Medium [ ]High »
 #    Exported usage, i.e., w/o ignore.dat, w/o reCAPTCHA, w/o "extended rules" (default bypasses): « [ ]Low [x]Medium [ ]High »
 
 
@@ -39,6 +39,8 @@ Origin: US
 Tag: Cogent Proxies
 ---
 recaptcha:
+ enabled: true
+hcaptcha:
  enabled: true
 
 
@@ -149,34 +151,6 @@ Tag: F3 Netze e.V
 195.189.132.0/23 Deny Proxy
 Origin: US
 Tag: Packet Flip
-
-
-# ASNs 42708, 43948 ("GleSYS AB"; formerly "Portlane AB").
-# Exclude (carries human endpoints and seems clean *at the moment*):
-# - "^.*Internetbolaget.*$\n"
-# Mark as proxy:
-# - "^(.*(?:Tunnel|Anonine|Edelino).*)$"
-# Mark as cloud:
-# - "^(.*(?:Host|HZ|Netelia|Sveaab|GleSYS|Servinga|Webbplatsen|InfoGuard).*)$"
-# Everything else mark as spam.
-# Stop Forum Spam (SFS) listings: 8,852 (AS42708), 631 (AS43948).
-# Updated: 2020.06.11 / Checked: 2020.12.15
-
-5.249.160.0/21 Deny Proxy
-5.254.133.0/24 Deny Proxy
-5.254.134.0/23 Deny Proxy
-5.254.139.0/24 Deny Proxy
-5.254.140.0/22 Deny Proxy
-5.254.144.0/23 Deny Proxy
-5.254.146.0/24 Deny Proxy
-5.254.148.0/22 Deny Proxy
-5.254.152.0/21 Deny Proxy
-185.5.44.0/24 Deny Proxy
-Origin: SE
-Tag: Portlane Networks AB
----
-recaptcha:
- enabled: true
 
 
 # ASN 396507 ("Emerald Onion").
@@ -1317,6 +1291,8 @@ Tag: OverPlay.Net LP
 ---
 recaptcha:
  enabled: true
+hcaptcha:
+ enabled: true
 
 
 # ASN 209854 ("Surfshark Ltd").
@@ -1346,4 +1322,6 @@ Origin: VG
 Tag: Surfshark Ltd
 ---
 recaptcha:
+ enabled: true
+hcaptcha:
  enabled: true

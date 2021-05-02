@@ -1,11 +1,11 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_isps.dat
 
-# Version: 2021.117.548
-# Last modified: 2021.04.28
+# Version: 2021.120.618
+# Last modified: 2021.05.02
 
 # False positive risk (an approximate, rough estimate only):
-# Standard usage, i.e., with ignore.dat, with reCAPTCHA, with "extended rules" (default bypasses): « [ ]Low [x]Medium [ ]High »
+# Standard usage, i.e., with ignore.dat, with CAPTCHA, with "extended rules" (default bypasses): « [ ]Low [x]Medium [ ]High »
 #    Exported usage, i.e., w/o ignore.dat, w/o reCAPTCHA, w/o "extended rules" (default bypasses): « [ ]Low [ ]Medium [x]High »
 
 
@@ -38,6 +38,8 @@ Tag: AS48159
 ---
 recaptcha:
  enabled: true
+hcaptcha:
+ enabled: true
 
 
 # ASN 12880 ("Information Technology Company (ITC)").
@@ -51,6 +53,8 @@ Origin: IR
 Tag: AS12880
 ---
 recaptcha:
+ enabled: true
+hcaptcha:
  enabled: true
 
 
@@ -113,6 +117,8 @@ Tag: PT Hutchison
 ---
 recaptcha:
  enabled: true
+hcaptcha:
+ enabled: true
 
 
 # ASN 24203 ("PT Excelcomindo Pratama").
@@ -128,6 +134,8 @@ Origin: US
 Tag: PT Excelcomindo
 ---
 recaptcha:
+ enabled: true
+hcaptcha:
  enabled: true
 
 
@@ -166,22 +174,6 @@ Tag: INFOBOX
 Tag: Mir Telematiki Ltd
 
 
-# ASN 45595 ("Pakistan Telecom").
-# *Extreme*, unrepentant, unending source of spam over the course of many,
-# many years. XRumer plus others operating on their network. Highly unlikely to
-# ever delist.
-# %Listed, abuseat.org (CBL-Listed): 1.05%.
-# Stop Forum Spam (SFS) listings: 20,566.
-# Updated: 2017.03.22 / Checked: 2020.10.10
-
-2404:7000::/32 Deny Spam
-Origin: PK
-Tag: Pakistan Telecom
----
-recaptcha:
- enabled: true
-
-
 # ASN 41011 ("CH-NET S.R.L").
 # Stop Forum Spam (SFS) listings: 85.
 # Updated: 2020.01.24 / Checked: 2021.04.11
@@ -203,22 +195,21 @@ Origin: US
 Tag: JPMorgan Chase & Co
 
 
-# ASNs 42708, 43948 ("GleSYS AB"; formerly "Portlane AB").
-# Exclude (carries human endpoints and seems clean *at the moment*):
-# - "^.*Internetbolaget.*$\n"
-# Mark as proxy:
-# - "^(.*(?:Tunnel|Anonine|Edelino).*)$"
-# Mark as cloud:
-# - "^(.*(?:Host|HZ|Netelia|Sveaab|GleSYS|Servinga|Webbplatsen|InfoGuard).*)$"
-# Everything else mark as spam.
-# Stop Forum Spam (SFS) listings: 8,852 (AS42708), 631 (AS43948).
-# Updated: 2020.06.11 / Modified: 2020.12.15
+# ASNs 42708, 43948 ("GleSYS AB").
+# Scandinavian multiplay network (domestic ISP, webhosting, cloud lease, etc).
+# Regular SSH and brute-force attacks, spam, flooding/hammering, etc from here.
+# Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 33,314 (AS42708), 657 (AS43948).
+# Updated: 2021.04.30
 
-2a02:750:8::/48 Deny Spam
+2a02:750:7::/64 Deny Spam
 Origin: SE
-Tag: Portlane Networks AB
+Profile: Domestic ISP;Infrastructure;Multiplay;Tor endpoints here;Webhosting
+Tag: GleSYS AB
 ---
 recaptcha:
+ enabled: true
+hcaptcha:
  enabled: true
 
 
@@ -258,6 +249,8 @@ Tag: Bezeq International
 ---
 recaptcha:
  enabled: true
+hcaptcha:
+ enabled: true
 
 
 # ASNs 5486, 9116 ("012 Smile Communications LTD").
@@ -275,6 +268,8 @@ Profile: Domestic ISP;Tor endpoints here
 Tag: 012 Smile
 ---
 recaptcha:
+ enabled: true
+hcaptcha:
  enabled: true
 
 
@@ -358,6 +353,8 @@ Origin: IN
 Tag: SITI NETWORKS LTD
 ---
 recaptcha:
+ enabled: true
+hcaptcha:
  enabled: true
 
 
@@ -460,6 +457,8 @@ Tag: Idea Cellular
 ---
 recaptcha:
  enabled: true
+hcaptcha:
+ enabled: true
 
 
 # ASNs 12530, 15895, 35081 ('"Kyivstar" PJSC').
@@ -535,6 +534,8 @@ Tag: Viettel Corporation
 ---
 recaptcha:
  enabled: true
+hcaptcha:
+ enabled: true
 
 
 # ASNs 200019, 207636 ("ALEXHOST SRL").
@@ -586,6 +587,8 @@ Origin: RU
 Tag: Ufanet
 ---
 recaptcha:
+ enabled: true
+hcaptcha:
  enabled: true
 
 
@@ -696,6 +699,8 @@ Tag: BSNL
 ---
 recaptcha:
  enabled: true
+hcaptcha:
+ enabled: true
 
 
 # ASN 4134 ("China Telecom Backbone").
@@ -748,6 +753,8 @@ Profile: Infrastructure
 Tag: China Telecom Backbone
 ---
 recaptcha:
+ enabled: true
+hcaptcha:
  enabled: true
 
 
@@ -808,6 +815,8 @@ Profile: Domestic ISP;Infrastructure;Multiplay
 Tag: China Telecom 4812
 ---
 recaptcha:
+ enabled: true
+hcaptcha:
  enabled: true
 
 
@@ -1038,6 +1047,8 @@ Tag: China Unicom Backbone
 ---
 recaptcha:
  enabled: true
+hcaptcha:
+ enabled: true
 
 
 # ASN 3462 ("Data Communication Business Group").
@@ -1078,6 +1089,8 @@ Profile: Domestic ISP;Infrastructure;Multiplay;Tor endpoints here;Webhosting
 Tag: DCBG
 ---
 recaptcha:
+ enabled: true
+hcaptcha:
  enabled: true
 
 
@@ -1213,6 +1226,8 @@ Tag: China Unicom Beijing
 ---
 recaptcha:
  enabled: true
+hcaptcha:
+ enabled: true
 
 
 # ASNs 7643, 45899, 135905 ("VietNam Post and Telecom Corporation").
@@ -1255,6 +1270,8 @@ Tag: VNPT Corp
 ---
 recaptcha:
  enabled: true
+hcaptcha:
+ enabled: true
 
 
 # ASN 18403 ("The Corporation for Financing & Promoting Technology").
@@ -1279,15 +1296,18 @@ Tag: CFPT
 ---
 recaptcha:
  enabled: true
+hcaptcha:
+ enabled: true
 
 
 # ASNs 9498, 9730, 24560, 37140, 45609, 132045 ("Bharti Airtel").
-# Interlaces with numerous providers and contains a significant number of human
-# endpoints in India, but is also a significant source of spam. Marked for use
-# with reCAPTCHA to reduce the risk of false positives. CIDRAM users that
-# expect traffic from India should list this section in their ignore.dat file.
-# - When updating, remove anything from AU, IE, Facebook; ^(AU\t|IE\t|.*Facebook).*$\n
-# Updated: 2020.10.10
+# Major Indian domestic ISP also serving other parts of Asia and Africa.
+# Also a massive source of spam, brute-force and SSH attacks, malware campaigns
+# and more. For now, listing just the affected ranges/addresses, plus all US
+# ranges (as cloud).
+# %Listed, abuseat.org (CBL-Listed): 1.41% (AS24560), 8.08% (AS45609).
+# Stop Forum Spam (SFS) listings: 1,911 (AS9498), 1 (AS9730), 53,457 (AS24560), 5 (AS37140), 20,628 (AS45609), 37 (AS132045).
+# Updated: 2021.05.02
 
 2401:4900:50::/48 Deny Spam
 2401:4900:808::/45 Deny Spam
@@ -1327,12 +1347,22 @@ recaptcha:
 2401:4900:1b20::/43 Deny Spam
 2401:4900:1b60::/44 Deny Spam
 2401:4900:1b80::/43 Deny Spam
+2401:4900:1bb0::/48 Deny Spam
 2401:4900:1bc0::/44 Deny Spam
 2401:4900:1c00::/46 Deny Spam
-2401:4900:1c0a::/47 Deny Spam
+2401:4900:1c08::/46 Deny Spam
+2401:4900:1c0e::/47 Deny Spam
+2401:4900:1c16::/47 Deny Spam
+2401:4900:1c18::/47 Deny Spam
+2401:4900:1c26::/47 Deny Spam
+2401:4900:1c2a::/47 Deny Spam
+2401:4900:1c2c::/47 Deny Spam
+2401:4900:1c30::/47 Deny Spam
+2401:4900:1c32::/48 Deny Spam
 2401:4900:1d00::/41 Deny Spam
 2401:4900:1f20::/47 Deny Spam
-2401:4900:1f2e::/47 Deny Spam
+2401:4900:1f24::/46 Deny Spam
+2401:4900:1f28::/45 Deny Spam
 2401:4900:1f30::/44 Deny Spam
 2401:4900:1f80::/44 Deny Spam
 2401:4900:1fe0::/43 Deny Spam
@@ -1401,7 +1431,13 @@ recaptcha:
 2401:4900:3af0::/48 Deny Spam
 2401:4900:3b00::/42 Deny Spam
 2401:4900:3b70::/44 Deny Spam
-2401:4900:3bc0::/44 Deny Spam
+2401:4900:3bc0::/42 Deny Spam
+2401:4900:3c70::/44 Deny Spam
+2401:4900:3c80::/42 Deny Spam
+2401:4900:3cc0::/43 Deny Spam
+2401:4900:3d30::/44 Deny Spam
+2401:4900:3d40::/44 Deny Spam
+2401:4900:3da0::/44 Deny Spam
 2401:4900:4020::/44 Deny Spam
 2401:4900:4040::/44 Deny Spam
 2401:4900:40a0::/43 Deny Spam
@@ -1429,8 +1465,7 @@ recaptcha:
 2401:4900:4680::/44 Deny Spam
 2401:4900:46a0::/44 Deny Spam
 2401:4900:46c0::/43 Deny Spam
-2401:4900:4700::/43 Deny Spam
-2401:4900:4720::/44 Deny Spam
+2401:4900:4700::/42 Deny Spam
 2401:4900:4790::/44 Deny Spam
 2401:4900:47a0::/44 Deny Spam
 2401:4900:47d0::/44 Deny Spam
@@ -1441,15 +1476,17 @@ recaptcha:
 2401:4900:4940::/44 Deny Spam
 2401:4900:4990::/44 Deny Spam
 2401:4900:49a0::/44 Deny Spam
-2401:4900:4a60::/46 Deny Spam
-2401:4900:4a64::/48 Deny Spam
+2401:4900:4a60::/45 Deny Spam
+2401:4900:4a68::/48 Deny Spam
+2401:4900:4a6a::/47 Deny Spam
+2401:4900:4a6c::/46 Deny Spam
 2401:4900:4a90::/44 Deny Spam
 2401:4900:4aa0::/45 Deny Spam
-2401:4900:4aa8::/47 Deny Spam
-2401:4900:4aaa::/48 Deny Spam
-2401:4900:4ac0::/44 Deny Spam
-2401:4900:4ad0::/46 Deny Spam
-2401:4900:4ad4::/48 Deny Spam
+2401:4900:4aa8::/46 Deny Spam
+2401:4900:4aac::/47 Deny Spam
+2401:4900:4abb::/48 Deny Spam
+2401:4900:4ac0::/45 Deny Spam
+2401:4900:4ac8::/48 Deny Spam
 2401:4900:4b30::/44 Deny Spam
 2401:4900:4b50::/44 Deny Spam
 2401:4900:4bb0::/44 Deny Spam
@@ -1462,21 +1499,32 @@ recaptcha:
 2401:4900:4d00::/44 Deny Spam
 2401:4900:4d20::/44 Deny Spam
 2401:4900:4d40::/44 Deny Spam
-2401:4900:4e40::/44 Deny Spam
+2401:4900:4dd0::/44 Deny Spam
+2401:4900:4de0::/43 Deny Spam
+2401:4900:4e00::/43 Deny Spam
+2401:4900:4e20::/44 Deny Spam
+2401:4900:4e40::/42 Deny Spam
+2401:4900:4f00::/45 Deny Spam
+2401:4900:4f10::/44 Deny Spam
+2401:4900:4f52::/47 Deny Spam
+2401:4900:4f54::/47 Deny Spam
+2401:4900:4f61::/48 Deny Spam
+2401:4900:4f80::/44 Deny Spam
+2401:4900:4fe0::/43 Deny Spam
 2401:4900:5000::/44 Deny Spam
-2401:4900:5020::/45 Deny Spam
-2401:4900:5028::/48 Deny Spam
-2401:4900:5030::/47 Deny Spam
+2401:4900:5020::/43 Deny Spam
 2401:4900:5040::/43 Deny Spam
 2401:4900:5070::/44 Deny Spam
 2401:4900:5080::/45 Deny Spam
 2401:4900:5090::/44 Deny Spam
-2401:4900:50a0::/48 Deny Spam
+2401:4900:50a0::/45 Deny Spam
+2401:4900:50a8::/48 Deny Spam
 2401:4900:5110::/44 Deny Spam
 2401:4900:5130::/44 Deny Spam
 2401:4900:5170::/44 Deny Spam
 2401:4900:5190::/45 Deny Spam
-2401:4900:5198::/46 Deny Spam
+2401:4900:5198::/47 Deny Spam
+2401:4900:519a::/48 Deny Spam
 2401:4900:519c::/47 Deny Spam
 2401:4900:519e::/48 Deny Spam
 2401:4900:51c0::/42 Deny Spam
@@ -1484,7 +1532,19 @@ recaptcha:
 2401:4900:5240::/44 Deny Spam
 2401:4900:5270::/44 Deny Spam
 2401:4900:5290::/44 Deny Spam
-2401:4900:52b0::/44 Deny Spam
+2401:4900:52b0::/45 Deny Spam
+2401:4900:52b8::/47 Deny Spam
+2401:4900:52f0::/44 Deny Spam
+2401:4900:5300::/43 Deny Spam
+2401:4900:5360::/43 Deny Spam
+2401:4900:5388::/45 Deny Spam
+2401:4900:5390::/44 Deny Spam
+2401:4900:53d0::/44 Deny Spam
+2401:4900:53e0::/43 Deny Spam
+2401:4900:5440::/42 Deny Spam
+2401:4900:54b1::/48 Deny Spam
+2401:4900:54c0::/42 Deny Spam
+2401:4900:5500::/44 Deny Spam
 2401:4900:5810::/44 Deny Spam
 2401:4900:5820::/44 Deny Spam
 2401:4900:5850::/44 Deny Spam
@@ -1492,77 +1552,90 @@ recaptcha:
 2401:4900:58a0::/43 Deny Spam
 2401:4900:58c0::/44 Deny Spam
 2401:4900:5910::/44 Deny Spam
-2403:c00:3::/48 Deny Spam
-2404:1f00:ffa0::/47 Deny Spam
-2404:a800::/32 Deny Spam
-2405:a700:14::/47 Deny Spam
-2405:a700:1b::/48 Deny Spam
-2405:a700:1c::/48 Deny Spam
-2407:7400::/48 Deny Spam
+2401:4900:5930::/44 Deny Spam
+2401:4900:5940::/42 Deny Spam
+2401:4900:5980::/43 Deny Spam
+2401:4900:5a30::/44 Deny Spam
+2401:4900:5a40::/43 Deny Spam
+2401:4900:5aa0::/43 Deny Spam
+2401:4900:5ac0::/42 Deny Spam
+2401:4900:5b00::/44 Deny Spam
+2401:4900:5b80::/43 Deny Spam
+2401:4900:5ba0::/44 Deny Spam
+2401:4900:5c20::/43 Deny Spam
+2401:4900:5c40::/43 Deny Spam
+2401:4900:5c70::/44 Deny Spam
+2401:4900:5c90::/44 Deny Spam
+2401:4900:6050::/44 Deny Spam
+2401:4900:6060::/43 Deny Spam
+2401:4900:6080::/44 Deny Spam
+2404:a800:1a00::/64 Deny Spam
 Origin: IN
-2400:ff00::/32 Deny Spam
-2600:140f:b::/48 Deny Spam
-2600:140f:d::/48 Deny Spam
-2600:140f:e::/48 Deny Spam
-2600:140f:200::/48 Deny Spam
-2600:140f:800::/48 Deny Spam
-2600:140f:a00::/48 Deny Spam
-2600:140f:e00::/48 Deny Spam
-2600:140f:1200::/48 Deny Spam
-2600:140f:1600::/48 Deny Spam
-2600:140f:1800::/48 Deny Spam
-2600:140f:1a00::/48 Deny Spam
-2600:140f:2400::/48 Deny Spam
-2600:140f:2800::/48 Deny Spam
-2600:140f:2a00::/48 Deny Spam
-2600:140f:2c00::/48 Deny Spam
-2600:140f:3600::/48 Deny Spam
-2600:140f:3a00::/48 Deny Spam
-2600:140f:3c00::/48 Deny Spam
-2600:140f:3e00::/48 Deny Spam
-2600:140f:4200::/48 Deny Spam
-2600:140f:4600::/48 Deny Spam
-2600:140f:4a00::/48 Deny Spam
-2600:140f:4c00::/48 Deny Spam
-2600:140f:5000::/48 Deny Spam
-2600:140f:5400::/48 Deny Spam
-2600:140f:5800::/48 Deny Spam
-2600:140f:5c00::/48 Deny Spam
-2600:140f:6800::/48 Deny Spam
-2600:140f:7000::/48 Deny Spam
-2600:140f:7400::/48 Deny Spam
-2600:140f:7800::/48 Deny Spam
-2600:140f:9000::/48 Deny Spam
-2600:140f:9800::/48 Deny Spam
-2600:140f:9c00::/48 Deny Spam
-2600:140f:a400::/48 Deny Spam
-2600:140f:a800::/48 Deny Spam
-2600:140f:b000::/48 Deny Spam
-2600:140f:b800::/48 Deny Spam
-2600:140f:bc00::/48 Deny Spam
-2600:140f:c400::/48 Deny Spam
-2600:140f:cc00::/48 Deny Spam
-2600:140f:d000::/48 Deny Spam
-2600:140f:e400::/48 Deny Spam
-2600:140f:ec00::/48 Deny Spam
-2600:140f:f000::/48 Deny Spam
-2600:140f:f400::/48 Deny Spam
-2600:140f:fc00::/48 Deny Spam
-2600:1417:1e::/48 Deny Spam
-2600:1417:20::/48 Deny Spam
-2600:1417:2c::/48 Deny Spam
-2600:1417:53::/48 Deny Spam
-2600:1417:55::/48 Deny Spam
-2600:1417:56::/48 Deny Spam
-2600:1417:6a::/47 Deny Spam
-2600:1417:6d::/48 Deny Spam
-2600:1417:6e::/48 Deny Spam
-2600:1417:70::/48 Deny Spam
-2600:1417:78::/48 Deny Spam
+2600:140f:b::/48 Deny Cloud
+2600:140f:d::/48 Deny Cloud
+2600:140f:e::/48 Deny Cloud
+2600:140f:200::/48 Deny Cloud
+2600:140f:800::/48 Deny Cloud
+2600:140f:a00::/48 Deny Cloud
+2600:140f:e00::/48 Deny Cloud
+2600:140f:1200::/48 Deny Cloud
+2600:140f:1600::/48 Deny Cloud
+2600:140f:1800::/48 Deny Cloud
+2600:140f:1a00::/48 Deny Cloud
+2600:140f:2400::/48 Deny Cloud
+2600:140f:2800::/48 Deny Cloud
+2600:140f:2a00::/48 Deny Cloud
+2600:140f:2c00::/48 Deny Cloud
+2600:140f:3600::/48 Deny Cloud
+2600:140f:3a00::/48 Deny Cloud
+2600:140f:3c00::/48 Deny Cloud
+2600:140f:3e00::/48 Deny Cloud
+2600:140f:4200::/48 Deny Cloud
+2600:140f:4600::/48 Deny Cloud
+2600:140f:4a00::/48 Deny Cloud
+2600:140f:4c00::/48 Deny Cloud
+2600:140f:5000::/48 Deny Cloud
+2600:140f:5400::/48 Deny Cloud
+2600:140f:5800::/48 Deny Cloud
+2600:140f:5c00::/48 Deny Cloud
+2600:140f:6800::/48 Deny Cloud
+2600:140f:7000::/48 Deny Cloud
+2600:140f:7400::/48 Deny Cloud
+2600:140f:7800::/48 Deny Cloud
+2600:140f:9000::/48 Deny Cloud
+2600:140f:9800::/48 Deny Cloud
+2600:140f:9c00::/48 Deny Cloud
+2600:140f:a400::/48 Deny Cloud
+2600:140f:a800::/48 Deny Cloud
+2600:140f:b000::/48 Deny Cloud
+2600:140f:b800::/48 Deny Cloud
+2600:140f:bc00::/48 Deny Cloud
+2600:140f:c400::/48 Deny Cloud
+2600:140f:cc00::/48 Deny Cloud
+2600:140f:d000::/48 Deny Cloud
+2600:140f:e400::/48 Deny Cloud
+2600:140f:ec00::/48 Deny Cloud
+2600:140f:f000::/48 Deny Cloud
+2600:140f:f400::/48 Deny Cloud
+2600:140f:fc00::/48 Deny Cloud
+2600:1417:1e::/48 Deny Cloud
+2600:1417:20::/48 Deny Cloud
+2600:1417:2c::/48 Deny Cloud
+2600:1417:53::/48 Deny Cloud
+2600:1417:55::/48 Deny Cloud
+2600:1417:56::/48 Deny Cloud
+2600:1417:6a::/47 Deny Cloud
+2600:1417:6d::/48 Deny Cloud
+2600:1417:6e::/48 Deny Cloud
+2600:1417:70::/48 Deny Cloud
+2600:1417:78::/48 Deny Cloud
 Origin: US
+Profile: Domestic ISP;Frequent changes;Infrastructure
 Tag: Bharti Airtel
 ---
 recaptcha:
+ enabled: true
+hcaptcha:
  enabled: true
 
 
@@ -1580,6 +1653,8 @@ Tag: SKYBROADBAND
 ---
 recaptcha:
  enabled: true
+hcaptcha:
+ enabled: true
 
 
 # ASN 9808 ("Guangdong Mobile Communication Co.Ltd").
@@ -1594,6 +1669,8 @@ Tag: Guangdong Mobile
 ---
 recaptcha:
  enabled: true
+hcaptcha:
+ enabled: true
 
 
 # ASN 9387 ("AUGERE-Pakistan").
@@ -1606,6 +1683,8 @@ Origin: PK
 Tag: AUGERE-Pakistan
 ---
 recaptcha:
+ enabled: true
+hcaptcha:
  enabled: true
 
 
@@ -1625,6 +1704,8 @@ Tag: PJSC Rostelecom
 ---
 recaptcha:
  enabled: true
+hcaptcha:
+ enabled: true
 
 
 # ASNs 3216, 8402 ("PJSC Vimpelcom", "OJSC Vimpelcom").
@@ -1642,6 +1723,8 @@ Tag: PJSC Vimpelcom
 ---
 recaptcha:
  enabled: true
+hcaptcha:
+ enabled: true
 
 
 # ASN 31200 ("Novotelecom Ltd").
@@ -1656,6 +1739,8 @@ Profile: Domestic ISP
 Tag: Novotelecom Ltd
 ---
 recaptcha:
+ enabled: true
+hcaptcha:
  enabled: true
 
 
@@ -1672,6 +1757,8 @@ Tag: UARNet
 ---
 recaptcha:
  enabled: true
+hcaptcha:
+ enabled: true
 
 
 # ASN 44493 ("Chelyabinsk-Signal").
@@ -1683,6 +1770,8 @@ Origin: RU
 Tag: Chelyabinsk-Signal
 ---
 recaptcha:
+ enabled: true
+hcaptcha:
  enabled: true
 
 
@@ -1699,6 +1788,8 @@ Origin: RU
 Tag: TransTeleCom
 ---
 recaptcha:
+ enabled: true
+hcaptcha:
  enabled: true
 
 
@@ -1751,6 +1842,8 @@ Tag: ER-Telecom Holding
 ---
 recaptcha:
  enabled: true
+hcaptcha:
+ enabled: true
 
 
 # ASN 137432 ("BKB Network").
@@ -1766,6 +1859,8 @@ Tag: BKB Network
 ---
 recaptcha:
  enabled: true
+hcaptcha:
+ enabled: true
 
 
 # ASN 16010 ("Magticom Ltd").
@@ -1779,6 +1874,8 @@ Tag: Magticom Ltd
 ---
 recaptcha:
  enabled: true
+hcaptcha:
+ enabled: true
 
 
 # ASN 7642 ("Dhivehi Raajjeyge Gulhun Plc (Dhiraagu)").
@@ -1791,6 +1888,8 @@ Origin: MV
 Tag: Dhivehi Raajjeyge
 ---
 recaptcha:
+ enabled: true
+hcaptcha:
  enabled: true
 
 
@@ -1814,19 +1913,6 @@ Origin: UA
 Tag: UnderNet LLC
 
 
-# ASNs 8369, 198675, 199619 ("Intersvyaz-2 JSC").
-# Caught trying to hack into WordPress sites. Caught pretending to be Google.
-# Stop Forum Spam (SFS) listings: 3,391 (AS8369).
-# Updated: 2018.03.27 / Checked: 2020.10.15
-
-2a02:22a8::/32 Deny Generic
-Origin: RU
-Tag: is74.ru
----
-recaptcha:
- enabled: true
-
-
 # ASN 54133 ("UnmeteredInternet.com").
 # North American ISP and also a source of spam.
 # Subtract 44.0.0.0/9, 44.128.0.0/10 (clean).
@@ -1841,6 +1927,8 @@ Origin: US
 Tag: UnmeteredInternet.com
 ---
 recaptcha:
+ enabled: true
+hcaptcha:
  enabled: true
 
 
@@ -1868,6 +1956,8 @@ Tag: Freenet Ltd
 ---
 recaptcha:
  enabled: true
+hcaptcha:
+ enabled: true
 
 
 # ASN 8708 ("RCS & RDS SA").
@@ -1883,6 +1973,8 @@ Profile: Domestic ISP;Tor endpoints here
 Tag: RCS & RDS SA
 ---
 recaptcha:
+ enabled: true
+hcaptcha:
  enabled: true
 
 
@@ -1917,6 +2009,8 @@ Tag: ONLINE S.A.S
 ---
 recaptcha:
  enabled: true
+hcaptcha:
+ enabled: true
 
 
 # ASN 13249 ("IT Systems LLC").
@@ -1944,6 +2038,8 @@ Tag: JSC Kazakhtelecom
 ---
 recaptcha:
  enabled: true
+hcaptcha:
+ enabled: true
 
 
 # ASN 8359 ("MTS PJSC").
@@ -1963,6 +2059,8 @@ Tag: MTS PJSC
 ---
 recaptcha:
  enabled: true
+hcaptcha:
+ enabled: true
 
 
 # ASNs 15640, 21365, 25086, 28884, 29190, 29497, 30881, 30922, 31286,
@@ -1981,6 +2079,8 @@ Tag: MTS PJSC Supplemental
 ---
 recaptcha:
  enabled: true
+hcaptcha:
+ enabled: true
 
 
 # ASN 263500 ("Star Telecom S/A").
@@ -1993,6 +2093,8 @@ Origin: BR
 Tag: Star Telecom S/A
 ---
 recaptcha:
+ enabled: true
+hcaptcha:
  enabled: true
 
 
@@ -2009,6 +2111,8 @@ Profile: Domestic ISP
 Tag: PJSC Moscow city
 ---
 recaptcha:
+ enabled: true
+hcaptcha:
  enabled: true
 
 
@@ -2041,6 +2145,8 @@ Tag: TM Net
 ---
 recaptcha:
  enabled: true
+hcaptcha:
+ enabled: true
 
 
 # ASN 17971 ("TM-VADS DC Hosting").
@@ -2056,6 +2162,8 @@ Profile: Domestic ISP;Multiplay;Webhosting
 Tag: TM-VADS DC Hosting
 ---
 recaptcha:
+ enabled: true
+hcaptcha:
  enabled: true
 
 
@@ -2079,6 +2187,8 @@ Tag: Comcast Spam IPs
 ---
 recaptcha:
  enabled: true
+hcaptcha:
+ enabled: true
 
 
 # ASN 22773 ("Cox Communications Inc").
@@ -2094,6 +2204,8 @@ Origin: US
 Tag: Cox Spam IPs
 ---
 recaptcha:
+ enabled: true
+hcaptcha:
  enabled: true
 
 
@@ -2115,6 +2227,8 @@ Tag: TELEFNICA BRASIL S.A
 ---
 recaptcha:
  enabled: true
+hcaptcha:
+ enabled: true
 
 
 # ASNs 10796, 11427, 20115 ("Charter Communications").
@@ -2134,6 +2248,8 @@ Tag: Charter Communications
 ---
 recaptcha:
  enabled: true
+hcaptcha:
+ enabled: true
 
 
 # ASNs 17072, 22884 ("TOTAL PLAY TELECOMUNICACIONES SA DE CV").
@@ -2148,6 +2264,8 @@ Profile: Domestic ISP
 Tag: TOTAL PLAY TELECOMUNICACIONES
 ---
 recaptcha:
+ enabled: true
+hcaptcha:
  enabled: true
 
 
@@ -2167,6 +2285,8 @@ Tag: Atria Convergence
 ---
 recaptcha:
  enabled: true
+hcaptcha:
+ enabled: true
 
 
 # ASN 39608 ("Lanet Network Ltd").
@@ -2182,6 +2302,8 @@ Tag: Lanet Network Ltd
 ---
 recaptcha:
  enabled: true
+hcaptcha:
+ enabled: true
 
 
 # ASN 25159 ("PJSC MegaFon").
@@ -2196,6 +2318,8 @@ Tag: PJSC MegaFon
 ---
 recaptcha:
  enabled: true
+hcaptcha:
+ enabled: true
 
 
 # ASN 34700 ("MAXNET TELECOM, LTD").
@@ -2209,6 +2333,8 @@ Profile: Domestic ISP;Tor endpoints here
 Tag: MAXNET TELECOM
 ---
 recaptcha:
+ enabled: true
+hcaptcha:
  enabled: true
 
 
@@ -2229,6 +2355,8 @@ Tag: Ote SA
 ---
 recaptcha:
  enabled: true
+hcaptcha:
+ enabled: true
 
 
 # ASN 28573 ("CLARO S.A"). A Brazilian domestic ISP caught spamming. Listing
@@ -2244,6 +2372,8 @@ Profile: Domestic ISP
 Tag: CLARO S.A
 ---
 recaptcha:
+ enabled: true
+hcaptcha:
  enabled: true
 
 
@@ -2264,6 +2394,8 @@ Tag: Beltelecom
 ---
 recaptcha:
  enabled: true
+hcaptcha:
+ enabled: true
 
 
 # ASN 1680 ("Cellcom Fixed Line Communication L.P").
@@ -2279,6 +2411,8 @@ Profile: Domestic ISP
 Tag: Cellcom Fixed
 ---
 recaptcha:
+ enabled: true
+hcaptcha:
  enabled: true
 
 
@@ -2296,6 +2430,8 @@ Profile: Domestic ISP
 Tag: Hot-Net internet
 ---
 recaptcha:
+ enabled: true
+hcaptcha:
  enabled: true
 
 
@@ -2319,6 +2455,8 @@ Tag: Uninet
 ---
 recaptcha:
  enabled: true
+hcaptcha:
+ enabled: true
 
 
 # ASN 58055 ("Extratel Ltd").
@@ -2335,6 +2473,8 @@ Tag: Extratel Ltd
 ---
 recaptcha:
  enabled: true
+hcaptcha:
+ enabled: true
 
 
 # ASN 38732 ("CMC Telecom Infrastructure Company").
@@ -2348,6 +2488,8 @@ Profile: Domestic ISP;Infrastructure
 Tag: CMC Telecom
 ---
 recaptcha:
+ enabled: true
+hcaptcha:
  enabled: true
 
 
@@ -2374,6 +2516,8 @@ Tag: EPM Telecomunicaciones
 ---
 recaptcha:
  enabled: true
+hcaptcha:
+ enabled: true
 
 
 # ASN 6830 ("Liberty Global B.V").
@@ -2393,22 +2537,33 @@ Tag: Liberty Global
 ---
 recaptcha:
  enabled: true
+hcaptcha:
+ enabled: true
 
 
 # ASN 1221 ("Telstra Corporation Ltd").
 # Australia's largest domestic ISP. Mostly benign, but malware and spambots
 # detected at some specific addresses in the network. Listing just those IPs.
-# Stop Forum Spam (SFS) listings: 346.
-# Updated: 2020.10.15
+# Stop Forum Spam (SFS) listings: 661.
+# Updated: 2021.05.02
 
-2001:8003:5c1b:ad00::/64 Deny Spam
-2001:8003:dc34:9200::/64 Deny Spam
-2001:8003:f111:9f00::/64 Deny Spam
+2001:8003:24ff:5f00::/64 Deny Spam
+2001:8003:3715:300::/64 Deny Spam
+2001:8003:58f6:ab01::/64 Deny Spam
+2001:8003:d891:c901::/64 Deny Spam
+2001:8003:e011:8001::/64 Deny Spam
+2001:8004:c03:cd14::/64 Deny Spam
+2001:8004:1381:837a::/64 Deny Spam
+2001:8004:15a0:943::/64 Deny Spam
+2001:8004:2751:cd::/64 Deny Spam
+2001:8004:2790:909b::/64 Deny Spam
 Origin: AU
 Profile: Domestic ISP
 Tag: Telstra Corporation
 ---
 recaptcha:
+ enabled: true
+hcaptcha:
  enabled: true
 
 
@@ -2427,6 +2582,8 @@ Profile: Domestic ISP
 Tag: Sky UK Limited
 ---
 recaptcha:
+ enabled: true
+hcaptcha:
  enabled: true
 
 
@@ -2447,6 +2604,8 @@ Tag: British Telecom PLC
 ---
 recaptcha:
  enabled: true
+hcaptcha:
+ enabled: true
 
 
 # ASN 53022 ("BROSEGHINI LTDA EPP").
@@ -2460,6 +2619,8 @@ Profile: Domestic ISP
 Tag: BROSEGHINI LTDA EPP
 ---
 recaptcha:
+ enabled: true
+hcaptcha:
  enabled: true
 
 
@@ -2484,6 +2645,8 @@ Tag: AT&T Services, Inc
 ---
 recaptcha:
  enabled: true
+hcaptcha:
+ enabled: true
 
 
 # ASN 224 ("UNINETT AS").
@@ -2500,6 +2663,8 @@ Profile: Infrastructure
 Tag: UNINETT AS
 ---
 recaptcha:
+ enabled: true
+hcaptcha:
  enabled: true
 
 
@@ -2520,6 +2685,8 @@ Tag: T-Mobile USA, Inc
 ---
 recaptcha:
  enabled: true
+hcaptcha:
+ enabled: true
 
 
 # ASN 5617 ("Orange Polska Spolka Akcyjna").
@@ -2534,6 +2701,8 @@ Profile: Domestic ISP
 Tag: Orange Polska Spolka Akcyjna
 ---
 recaptcha:
+ enabled: true
+hcaptcha:
  enabled: true
 
 
@@ -2551,6 +2720,8 @@ Profile: Domestic ISP
 Tag: INDOSAT
 ---
 recaptcha:
+ enabled: true
+hcaptcha:
  enabled: true
 
 
@@ -2600,6 +2771,8 @@ Tag: PT Telekomunikasi Indonesia
 ---
 recaptcha:
  enabled: true
+hcaptcha:
+ enabled: true
 
 
 # ASN 39351 ("31173 Services AB").
@@ -2624,6 +2797,8 @@ Tag: 31173 Services AB
 ---
 recaptcha:
  enabled: true
+hcaptcha:
+ enabled: true
 
 
 # ASN 30779 ("TRK Cable TV LLC").
@@ -2636,6 +2811,8 @@ Origin: UA
 Tag: TRK Cable TV LLC
 ---
 recaptcha:
+ enabled: true
+hcaptcha:
  enabled: true
 
 
@@ -2662,6 +2839,8 @@ Tag: Init7
 ---
 recaptcha:
  enabled: true
+hcaptcha:
+ enabled: true
 
 
 # ASNs 16276, 35540 ("OVH Systems").
@@ -2684,6 +2863,8 @@ Tag: OVH Systems
 ---
 recaptcha:
  enabled: true
+hcaptcha:
+ enabled: true
 
 
 # ASNs 45430, 133481 ("SBN-IIG/AWN-IIG transit provider", "AIS Fibre").
@@ -2699,6 +2880,8 @@ Profile: Domestic ISP
 Tag: Phaholyothin Rd
 ---
 recaptcha:
+ enabled: true
+hcaptcha:
  enabled: true
 
 
@@ -2716,6 +2899,8 @@ Tag: TELUS Communications Inc
 ---
 recaptcha:
  enabled: true
+hcaptcha:
+ enabled: true
 
 
 # ASN 34757 ("Sibirskie Seti Ltd").
@@ -2730,6 +2915,8 @@ Profile: Domestic ISP
 Tag: Sibirskie Seti Ltd
 ---
 recaptcha:
+ enabled: true
+hcaptcha:
  enabled: true
 
 
@@ -2751,6 +2938,8 @@ Profile: Domestic ISP
 Tag: Telenet BVBA
 ---
 recaptcha:
+ enabled: true
+hcaptcha:
  enabled: true
 
 
@@ -2776,6 +2965,8 @@ Tag: MEO
 ---
 recaptcha:
  enabled: true
+hcaptcha:
+ enabled: true
 
 
 # ASN 45429 ("CAMBODIAN SINGMENG TELEMEDIA CO., LTD").
@@ -2791,6 +2982,8 @@ Tag: CAMBODIAN SINGMENG TELEMEDIA
 ---
 recaptcha:
  enabled: true
+hcaptcha:
+ enabled: true
 
 
 # ASN 134674 ("TATA SKY BROADBAND PRIVATE LIMITED").
@@ -2805,6 +2998,8 @@ Profile: Domestic ISP
 Tag: TATA SKY BROADBAND PRIVATE LIMITED
 ---
 recaptcha:
+ enabled: true
+hcaptcha:
  enabled: true
 
 
@@ -2824,6 +3019,8 @@ Profile: Domestic ISP
 Tag: Vodafone Deutschland GmbH
 ---
 recaptcha:
+ enabled: true
+hcaptcha:
  enabled: true
 
 
@@ -2861,6 +3058,8 @@ Tag: Xs4all Internet BV
 ---
 recaptcha:
  enabled: true
+hcaptcha:
+ enabled: true
 
 
 # ASN 5410 ("Bouygues Telecom SA").
@@ -2876,4 +3075,24 @@ Profile: Domestic ISP
 Tag: Bouygues Telecom SA
 ---
 recaptcha:
+ enabled: true
+hcaptcha:
+ enabled: true
+
+
+# ASNs 12552, 39369 ("Availo Networks AB").
+# Scandinavian multiplay network (domestic ISP, webhosting, cloud lease, etc).
+# Regular brute-force attacks and flooding/hammering encountered from this
+# network. Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 21 (AS12552), 5 (AS39369).
+# Updated: 2021.04.30
+
+2a06:9900:99:c002::/64 Deny Spam
+Origin: NO
+Profile: Domestic ISP;Multiplay;Webhosting
+Tag: Availo Networks AB
+---
+recaptcha:
+ enabled: true
+hcaptcha:
  enabled: true

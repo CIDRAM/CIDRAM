@@ -1,11 +1,11 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6.dat
 
-# Version: 2021.117.548
-# Last modified: 2021.04.28
+# Version: 2021.120.618
+# Last modified: 2021.05.02
 
 # False positive risk (an approximate, rough estimate only):
-# Standard usage, i.e., with ignore.dat, with reCAPTCHA, with "extended rules" (default bypasses): « [x]Low [ ]Medium [ ]High »
+# Standard usage, i.e., with ignore.dat, with CAPTCHA, with "extended rules" (default bypasses): « [x]Low [ ]Medium [ ]High »
 #    Exported usage, i.e., w/o ignore.dat, w/o reCAPTCHA, w/o "extended rules" (default bypasses): « [ ]Low [x]Medium [ ]High »
 
 
@@ -909,14 +909,15 @@ Tag: InfoRelay Online
 
 
 # ASN 29854 ("WestHost, Inc").
-# Stop Forum Spam (SFS) listings: 365.
-# Updated: 2018.05.04 / Checked: 2020.10.09
+# Stop Forum Spam (SFS) listings: 437.
+# Updated: 2021.04.30
 
+2a05:3b00::/31 Deny Cloud
+Origin: CY
 2a0c:4180::/29 Deny Cloud
 Origin: RU
 2606:2e00::/33 Deny Cloud
 2607:fc98::/32 Deny Cloud
-2a05:3b00::/31 Deny Cloud
 Origin: US
 Profile: Tor endpoints here;Webhosting
 Tag: WestHost, Inc
@@ -1868,8 +1869,8 @@ Tag: Akamai Technologies
 
 
 # ASN 5693 ("Latisys-Irvine, LLC").
-# Stop Forum Spam (SFS) listings: 8.
-# Updated: 2016.04.03 / Checked: 2020.10.15
+# Stop Forum Spam (SFS) listings: 1.
+# Updated: 2016.04.03 / Checked: 2021.05.02
 
 2001:1990::/32 Deny Cloud
 Origin: US
@@ -1976,13 +1977,14 @@ Tag: HIVELOCITY VENTURES
 
 
 # ASN 13739 ("Datacenter IP, LLC").
-# Stop Forum Spam (SFS) listings: 19.
-# Updated: 2018.08.05 / Checked: 2020.10.09
+# Stop Forum Spam (SFS) listings: 2.
+# Updated: 2021.04.30
 
 2a0c:acc0::/29 Deny Cloud
-Origin: AT
+Origin: TR
 2604:6080::/32 Deny Cloud
 Origin: US
+Profile: Dedicated;Webhosting
 Tag: Datacenter IP, LLC
 
 
@@ -3001,10 +3003,12 @@ Tag: Shenzhen Tencent
 
 
 # ASN 24413 ("ShenZhen Sunrise Technology Co.,Ltd").
-# Updated: 2018.08.05 / Checked: 2020.10.15
+# Chinese data center. Brute-force and SSH attacks detected from here.
+# Updated: 2018.08.05 / Checked: 2021.05.02
 
 2402:33c0::/32 Deny Cloud
 Origin: CN
+Profile: Infrastructure;Webhosting
 Tag: ShenZhen Sunrise
 
 
@@ -3047,15 +3051,6 @@ Tag: Netdirekt A.S
 Origin: DE
 Profile: Tor endpoints here
 Tag: EVANZO GmbH
-
-
-# ASN 34233 ("Superior B.V").
-# Updated: 2016.12.10 / Checked: 2020.10.09
-
-2a00:a0c0::/32 Deny Cloud
-2a06:f700::/29 Deny Cloud
-Origin: NL
-Tag: Superior B.V
 
 
 # ASN 27715 ("Locaweb Servios de Internet S/A").
@@ -3315,7 +3310,8 @@ Tag: MnogoByte LLC
 
 
 # ASN 29014 ("ScaleUp Technologies GmbH & Co. KG").
-# Updated: 2020.10.14
+# Stop Forum Spam (SFS) listings: 1.
+# Updated: 2020.10.14 / Checked: 2021.05.02
 
 2a0e:37c0::/32 Deny Cloud
 Origin: AT
@@ -3326,6 +3322,7 @@ Origin: AT
 2a0b:2a40::/29 Deny Cloud
 2a0e:7b80::/32 Deny Cloud
 Origin: DE
+Profile: Dedicated;Webhosting
 Tag: ScaleUp Technologies
 
 
@@ -4468,11 +4465,12 @@ Tag: WEBSITEWELCOME.COM
 
 # ASN 18229 ("CtrlS Datacenters Ltd").
 # Some IPs on this ASN caught probing for database dumps.
-# Stop Forum Spam (SFS) listings: 294.
-# Updated: 2020.10.15
+# Stop Forum Spam (SFS) listings: 200.
+# Updated: 2021.05.02
 
 2001:df0:fc00::/48 Deny Cloud
 2001:df4:5100::/48 Deny Cloud
+2001:df5:af80::/48 Deny Cloud
 2001:df6:6900::/48 Deny Cloud
 2400:3b00::/47 Deny Cloud
 2400:3b00:2::/48 Deny Cloud
@@ -4483,6 +4481,7 @@ Tag: WEBSITEWELCOME.COM
 2400:3b00:50::/48 Deny Cloud
 2406:56c0::/32 Deny Cloud
 Origin: IN
+Profile: Infrastructure;Webhosting
 Tag: CtrlS Datacenters
 
 
@@ -4644,12 +4643,12 @@ Tag: Server Plus Ltd
 
 # ASN 198605 ("AVAST Software s.r.o.").
 # Caught attempting to access sensitive parts of WP sites for unknown reasons.
-# Stop Forum Spam (SFS) listings: 9,166.
-# Updated: 2020.04.13 / Checked: 2020.10.09
+# Stop Forum Spam (SFS) listings: 8,835.
+# Updated: 2021.04.30
 
 2001:67c:284::/48 Deny Cloud
 2a0b:e181::/40 Deny Cloud
-2a0b:e181:500::/40 Deny Cloud
+2a0b:e181:400::/39 Deny Cloud
 2a0b:e181:600::/40 Deny Cloud
 2a0b:e182:100::/40 Deny Cloud
 2a0b:e182:200::/45 Deny Cloud
@@ -4944,6 +4943,8 @@ Origin: US
 Tag: Packet Exchange Limited
 ---
 recaptcha:
+ enabled: true
+hcaptcha:
  enabled: true
 
 
@@ -5400,32 +5401,25 @@ Profile: Dedicated;Tor endpoints here;Webhosting
 Tag: DediPath
 
 
-# ASNs 36444, 52924, 202521 ("NEXCESS.NET L.L.C").
-# Stop Forum Spam (SFS) listings: 8 (AS36444), 1 (AS52924).
-# Updated: 2019.03.19 / Checked: 2020.10.14
-
-2a07:45c4::/40 Deny Cloud
-Origin: GB
-2607:f7c0::/32 Deny Cloud
-Origin: US
-Tag: NEXCESS.NET
-
-
 # ASN 13830 ("Nexril").
 # Stop Forum Spam (SFS) listings: 8.
-# Updated: 2020.10.14
+# Updated: 2021.05.02
 
 2a07:1c40:1020::/48 Deny Cloud
 Origin: AT
 2a0c:b642:1a02::/48 Deny Cloud
 Origin: BE
 2a06:e881:620f::/48 Deny Cloud
+2a0c:9a40:8084::/48 Deny Cloud
 Origin: CH
+2a0f:5707:ab2d::/48 Deny Cloud
+Origin: DE
 2001:506:30::/48 Deny Cloud
-2602:fece::/36 Deny Cloud
+2604:4d40:8000::/36 Deny Cloud
 2604:fbc0::/36 Deny Cloud
 2620:87:a000::/48 Deny Cloud
 Origin: US
+Profile: Infrastructure
 Tag: Nexril
 
 
@@ -5463,26 +5457,6 @@ Origin: HK
 Origin: US
 Profile: Webhosting
 Tag: KLAYER LLC
-
-
-# ASNs 42708, 43948 ("GleSYS AB"; formerly "Portlane AB").
-# Exclude (carries human endpoints and seems clean *at the moment*):
-# - "^.*Internetbolaget.*$\n"
-# Mark as proxy:
-# - "^(.*(?:Tunnel|Anonine|Edelino).*)$"
-# Mark as cloud:
-# - "^(.*(?:Host|HZ|Netelia|Sveaab|GleSYS|Servinga|Webbplatsen|InfoGuard).*)$"
-# Everything else mark as spam.
-# Stop Forum Spam (SFS) listings: 8,852 (AS42708), 631 (AS43948).
-# Updated: 2020.06.11 / Checked: 2020.12.15
-
-2a01:8640:6::/48 Deny Cloud
-2a01:8640:9::/48 Deny Cloud
-Origin: GB
-2a00:1a28::/32 Deny Cloud
-2a02:750::/29 Deny Cloud
-Origin: SE
-Tag: Portlane Networks AB
 
 
 # ASN 25780 ("HugeServer Networks, LLC").
@@ -5533,6 +5507,8 @@ Profile: Infrastructure;Multiplay;Tor endpoints here;Webhosting
 Tag: M247 Ltd
 ---
 recaptcha:
+ enabled: true
+hcaptcha:
  enabled: true
 
 
@@ -5593,6 +5569,8 @@ Tag: Mazeda Networks
 ---
 recaptcha:
  enabled: true
+hcaptcha:
+ enabled: true
 
 
 # ASN 29889 ("Fast Serv Networks, LLC").
@@ -5631,6 +5609,8 @@ Profile: Infrastructure
 Tag: Next Connex Ltd
 ---
 recaptcha:
+ enabled: true
+hcaptcha:
  enabled: true
 
 
@@ -5986,6 +5966,8 @@ Tag: Alestra
 ---
 recaptcha:
  enabled: true
+hcaptcha:
+ enabled: true
 
 
 # ASN 48524 ("INTERRA telecommunications group, Ltd").
@@ -6160,13 +6142,13 @@ Tag: QTS LLC
 
 
 # ASN 35758 ("Rachamim Aviel Twito trading as A.B INTERNET SOLUTIONS").
-# A small, international multiplay network; Caught spamming forums and blogs.
-# Stop Forum Spam (SFS) listings: 128.
-# Updated: 2020.04.13 / Checked: 2020.10.09
+# Dedicated server lease company. Caught spamming forums and blogs.
+# Stop Forum Spam (SFS) listings: 74.
+# Updated: 2020.04.13 / Checked: 2021.04.30
 
 2a0a:1dc4::/30 Deny Cloud
 Origin: IL
-Profile: Multiplay
+Profile: Dedicated;Webhosting
 Tag: Rachamim Aviel Twito
 
 
@@ -6205,11 +6187,11 @@ Tag: ReliableSite.Net LLC
 
 # ASN 39782 ("Rack Sphere Hosting S.A").
 # Webhosting company caught spamming and attacking WordPress sites.
-# When updating: Check against AbuseIPDB records and remove invalids.
-# Updated: 2019.12.08 / Checked: 2020.10.14
+# Stop Forum Spam (SFS) listings: 3.
+# Updated: 2021.05.02
 
 2a0c:b200::/29 Deny Cloud
-Origin: CH
+Origin: PA
 Profile: Webhosting
 Tag: Rack Sphere Hosting
 
@@ -6227,11 +6209,12 @@ Tag: Root Level Technology
 
 # ASN 48282 ("Hosting technology LTD").
 # Dedicated webhosting provider and a significant source of spam.
-# Stop Forum Spam (SFS) listings: 12,832.
-# Updated: 2020.04.19 / Checked: 2020.10.14
+# Stop Forum Spam (SFS) listings: 13,134.
+# Updated: 2021.05.02
 
 2a06:7740::/48 Deny Cloud
 2a0d:8480::/46 Deny Cloud
+2a10:9200::/47 Deny Cloud
 Origin: RU
 Profile: Dedicated;Webhosting
 Tag: Hosting technology LTD
@@ -6976,6 +6959,8 @@ Tag: Internet Vikings
 ---
 recaptcha:
  enabled: true
+hcaptcha:
+ enabled: true
 
 
 # ASN 12816 ("Leibniz-Rechenzentrum").
@@ -7264,10 +7249,10 @@ Origin: US
 Tag: UKFAST.NET LIMITED
 
 
-# ASNs 6188, 32244, 36444, 40819, 53824, 201682 ("Liquid Web, L.L.C").
+# ASNs 6188, 32244, 36444, 40819, 52924, 53824, 201682, 202521 ("Liquid Web, L.L.C").
 # WordPress/XMLRPC and brute-force attacks detected from this network.
-# Stop Forum Spam (SFS) listings: 155 (AS32244), 12 (AS36444), 4 (AS53824).
-# Updated: 2020.10.19 / Checked: 2021.04.01
+# Stop Forum Spam (SFS) listings: 457 (AS32244), 4 (AS36444), 2 (AS53824).
+# Updated: 2021.05.02
 
 2607:fcc0:6000::/35 Deny Cloud
 Origin: CA
@@ -7282,6 +7267,7 @@ Origin: NL
 2607:fad0:4000::/36 Deny Cloud
 2607:fd60:c938::/48 Deny Cloud
 2620:139:5002::/48 Deny Cloud
+2a07:45c4::/40 Deny Cloud
 Origin: US
 Profile: Dedicated;Tor endpoints here;Webhosting
 Tag: Liquid Web
@@ -7642,49 +7628,6 @@ Origin: PL
 Origin: RU
 Profile: Dedicated;Webhosting
 Tag: Artnet Sp. z o.o
-
-
-# ASNs 12552, 39369 ("Availo Networks AB").
-# Webhosting and cloud lease network. Regular brute-force attacks and
-# flooding/hammering encountered from this network.
-# Exclude "Utsikt Bredband AB" ranges (not cloud; human endpoints).
-# Updated: 2021.01.02
-
-2001:67c:1180::/48 Deny Cloud
-Origin: DE
-2a06:ecc0::/29 Deny Cloud
-Origin: FI
-2001:67c:2764::/48 Deny Cloud
-2001:1ad8::/32 Deny Cloud
-2a00:1b60::/32 Deny Cloud
-2a06:9900::/29 Deny Cloud
-Origin: NO
-2001:678:55c::/48 Deny Cloud
-2001:67c:23c::/48 Deny Cloud
-2001:67c:43c::/48 Deny Cloud
-2001:67c:1174::/48 Deny Cloud
-2001:67c:135c::/48 Deny Cloud
-2001:67c:1890::/48 Deny Cloud
-2001:67c:19dc::/48 Deny Cloud
-2001:67c:240c::/48 Deny Cloud
-2001:67c:2cf8::/48 Deny Cloud
-2001:16d8:27::/48 Deny Cloud
-2001:16d8:57::/48 Deny Cloud
-2001:16d8:60::/48 Deny Cloud
-2001:16d8:beef::/48 Deny Cloud
-2001:16d8:c016::/47 Deny Cloud
-2a00:c6e0::/32 Deny Cloud
-2a01:2b0::/29 Deny Cloud
-2a01:6d0::/32 Deny Cloud
-2a02:5340::/48 Deny Cloud
-2a02:dd80::/29 Deny Cloud
-2a03:f440::/32 Deny Cloud
-2a0a:6380::/29 Deny Cloud
-2a0a:a040::/29 Deny Cloud
-2a0b:6800::/48 Deny Cloud
-Origin: SE
-Profile: Webhosting
-Tag: Availo Networks AB
 
 
 # ASNs 47869, 213035 ("Des Capital B.V").
@@ -8388,7 +8331,7 @@ Tag: GTHost
 # Refer microsoft.com/en-us/download/details.aspx?id=57062
 # Refer microsoft.com/en-us/download/details.aspx?id=57063
 # Refer microsoft.com/en-us/download/details.aspx?id=57064
-# Updated: 2021.04.04
+# Updated: 2021.05.02
 
 2404:7940::/47 Run rules_specific.php
 2404:7940:100::/47 Run rules_specific.php
@@ -8408,17 +8351,26 @@ Tag: GTHost
 2406:e500:2402::100/121 Run rules_specific.php
 2406:e500:2602::/121 Run rules_specific.php
 2406:e500:2602::100/121 Run rules_specific.php
+2406:e500:4400::/40 Run rules_specific.php
 2406:e500:4800::/63 Run rules_specific.php
 2406:e500:4801::/63 Run rules_specific.php
 2406:e500:4804::/63 Run rules_specific.php
 2406:e500:4805::/63 Run rules_specific.php
 2406:e500:5500::/48 Run rules_specific.php
+2406:e500:c020::/44 Run rules_specific.php
+2406:e500:c120::/44 Run rules_specific.php
 Origin: CN
 2a01:4180:2000::/40 Run rules_specific.php
 2a01:4180:2400::/40 Run rules_specific.php
+2a01:4180:4050:400::/64 Run rules_specific.php
+2a01:4180:4050:800::/64 Run rules_specific.php
+2a01:4180:4051:400::/64 Run rules_specific.php
+2a01:4180:4051:800::/64 Run rules_specific.php
 2a01:4180:c001:8::/61 Run rules_specific.php
 2a01:4180:c003:8::/61 Run rules_specific.php
 Origin: DE
+2001:489a:2202::/60 Run rules_specific.php
+2001:489a:2202:2000::/63 Run rules_specific.php
 2001:489a:2206::/63 Run rules_specific.php
 2001:489a:2206:10::/63 Run rules_specific.php
 2001:489a:2206:20::/63 Run rules_specific.php
@@ -8630,8 +8582,8 @@ Origin: DE
 2603:1030:9::/56 Run rules_specific.php
 2603:1030:9:100::/59 Run rules_specific.php
 2603:1030:9:120::/60 Run rules_specific.php
-2603:1030:9:130::/62 Run rules_specific.php
-2603:1030:9:134::/63 Run rules_specific.php
+2603:1030:9:130::/61 Run rules_specific.php
+2603:1030:9:138::/62 Run rules_specific.php
 2603:1030:a::/47 Run rules_specific.php
 2603:1030:d::/48 Run rules_specific.php
 2603:1030:e::/47 Run rules_specific.php
@@ -8640,11 +8592,16 @@ Origin: DE
 2603:1030:104::80/122 Run rules_specific.php
 2603:1030:104::100/120 Run rules_specific.php
 2603:1030:104::300/122 Run rules_specific.php
-2603:1030:104::340/125 Run rules_specific.php
+2603:1030:104::340/124 Run rules_specific.php
 2603:1030:104::360/123 Run rules_specific.php
 2603:1030:104::380/121 Run rules_specific.php
 2603:1030:104::500/121 Run rules_specific.php
 2603:1030:104::600/121 Run rules_specific.php
+2603:1030:104::680/123 Run rules_specific.php
+2603:1030:104::6c8/125 Run rules_specific.php
+2603:1030:104::700/121 Run rules_specific.php
+2603:1030:104::780/124 Run rules_specific.php
+2603:1030:104::7b0/124 Run rules_specific.php
 2603:1030:104:1::/121 Run rules_specific.php
 2603:1030:104:1::140/122 Run rules_specific.php
 2603:1030:104:1::180/121 Run rules_specific.php
@@ -8657,12 +8614,13 @@ Origin: DE
 2603:1030:104:1::5a0/123 Run rules_specific.php
 2603:1030:104:1::5c0/122 Run rules_specific.php
 2603:1030:104:1::600/119 Run rules_specific.php
+2603:1030:104:2::/122 Run rules_specific.php
+2603:1030:104:2::60/123 Run rules_specific.php
+2603:1030:104:2::100/120 Run rules_specific.php
 2603:1030:104:400::/123 Run rules_specific.php
 2603:1030:104:401::/123 Run rules_specific.php
 2603:1030:104:402::80/121 Run rules_specific.php
-2603:1030:104:402::100/122 Run rules_specific.php
-2603:1030:104:402::140/123 Run rules_specific.php
-2603:1030:104:402::170/124 Run rules_specific.php
+2603:1030:104:402::100/121 Run rules_specific.php
 2603:1030:104:402::180/122 Run rules_specific.php
 2603:1030:104:402::1c0/123 Run rules_specific.php
 2603:1030:104:402::200/121 Run rules_specific.php
@@ -8673,9 +8631,21 @@ Origin: DE
 2603:1030:104:402::300/121 Run rules_specific.php
 2603:1030:104:402::380/122 Run rules_specific.php
 2603:1030:104:402::3c0/124 Run rules_specific.php
+2603:1030:104:402::3d8/125 Run rules_specific.php
 2603:1030:104:402::3e0/123 Run rules_specific.php
-2603:1030:104:402::500/121 Run rules_specific.php
-2603:1030:104:402::580/122 Run rules_specific.php
+2603:1030:104:402::500/120 Run rules_specific.php
+2603:1030:104:402::600/120 Run rules_specific.php
+2603:1030:104:402::700/125 Run rules_specific.php
+2603:1030:104:402::710/124 Run rules_specific.php
+2603:1030:104:402::720/123 Run rules_specific.php
+2603:1030:104:402::740/122 Run rules_specific.php
+2603:1030:104:402::780/121 Run rules_specific.php
+2603:1030:104:802::/120 Run rules_specific.php
+2603:1030:104:802::100/121 Run rules_specific.php
+2603:1030:104:802::180/123 Run rules_specific.php
+2603:1030:104:802::1a0/125 Run rules_specific.php
+2603:1030:104:802::1c0/122 Run rules_specific.php
+2603:1030:104:802::200/121 Run rules_specific.php
 2603:1030:107::/121 Run rules_specific.php
 2603:1030:107::140/122 Run rules_specific.php
 2603:1030:107::180/121 Run rules_specific.php
@@ -8711,6 +8681,7 @@ Origin: DE
 2603:1030:20c::/47 Run rules_specific.php
 2603:1030:20e::/48 Run rules_specific.php
 2603:1030:210::/47 Run rules_specific.php
+2603:1030:212::/56 Run rules_specific.php
 2603:1030:302:402::80/123 Run rules_specific.php
 2603:1030:302:402::c0/122 Run rules_specific.php
 2603:1030:302:402::100/121 Run rules_specific.php
@@ -8718,6 +8689,8 @@ Origin: DE
 2603:1030:401::/56 Run rules_specific.php
 2603:1030:401:100::/57 Run rules_specific.php
 2603:1030:401:180::/59 Run rules_specific.php
+2603:1030:401:1a0::/62 Run rules_specific.php
+2603:1030:401:1a4::/63 Run rules_specific.php
 2603:1030:402::/47 Run rules_specific.php
 2603:1030:405::/48 Run rules_specific.php
 2603:1030:406::/47 Run rules_specific.php
@@ -8816,6 +8789,8 @@ Origin: DE
 2603:1030:804:e0::/59 Run rules_specific.php
 2603:1030:804:100::/60 Run rules_specific.php
 2603:1030:804:110::/61 Run rules_specific.php
+2603:1030:804:118::/62 Run rules_specific.php
+2603:1030:804:11c::/63 Run rules_specific.php
 2603:1030:805::/48 Run rules_specific.php
 2603:1030:806::/47 Run rules_specific.php
 2603:1030:a00::/46 Run rules_specific.php
@@ -9053,57 +9028,19 @@ Origin: DE
 2a01:111:f100:a000::/63 Run rules_specific.php
 2a01:111:f100:a002::/64 Run rules_specific.php
 2a01:111:f100:a004::/64 Run rules_specific.php
-2a01:111:f403:c000::/64 Run rules_specific.php
-2a01:111:f403:c004::/62 Run rules_specific.php
-2a01:111:f403:c100::/64 Run rules_specific.php
-2a01:111:f403:c10c::/62 Run rules_specific.php
-2a01:111:f403:c110::/62 Run rules_specific.php
-2a01:111:f403:c114::/64 Run rules_specific.php
-2a01:111:f403:c200::/63 Run rules_specific.php
-2a01:111:f403:c400::/63 Run rules_specific.php
-2a01:111:f403:c800::/64 Run rules_specific.php
-2a01:111:f403:c804::/62 Run rules_specific.php
-2a01:111:f403:c900::/64 Run rules_specific.php
-2a01:111:f403:c904::/62 Run rules_specific.php
-2a01:111:f403:c908::/61 Run rules_specific.php
-2a01:111:f403:c910::/60 Run rules_specific.php
-2a01:111:f403:c920::/59 Run rules_specific.php
-2a01:111:f403:c940::/64 Run rules_specific.php
-2a01:111:f403:ca00::/61 Run rules_specific.php
-2a01:111:f403:ca08::/63 Run rules_specific.php
-2a01:111:f403:cc00::/61 Run rules_specific.php
-2a01:111:f403:cc08::/63 Run rules_specific.php
-2a01:111:f403:d000::/64 Run rules_specific.php
-2a01:111:f403:d004::/62 Run rules_specific.php
-2a01:111:f403:d100::/64 Run rules_specific.php
-2a01:111:f403:d104::/62 Run rules_specific.php
-2a01:111:f403:d108::/61 Run rules_specific.php
-2a01:111:f403:d120::/62 Run rules_specific.php
-2a01:111:f403:d124::/63 Run rules_specific.php
-2a01:111:f403:d200::/63 Run rules_specific.php
-2a01:111:f403:d401::/64 Run rules_specific.php
-2a01:111:f403:d402::/64 Run rules_specific.php
-2a01:111:f403:d800::/64 Run rules_specific.php
-2a01:111:f403:d804::/62 Run rules_specific.php
-2a01:111:f403:d900::/64 Run rules_specific.php
-2a01:111:f403:d904::/62 Run rules_specific.php
-2a01:111:f403:d908::/61 Run rules_specific.php
-2a01:111:f403:d910::/62 Run rules_specific.php
-2a01:111:f403:d914::/63 Run rules_specific.php
-2a01:111:f403:da00::/63 Run rules_specific.php
-2a01:111:f403:dc00::/63 Run rules_specific.php
-2a01:111:f403:e000::/64 Run rules_specific.php
-2a01:111:f403:e003::/64 Run rules_specific.php
-2a01:111:f403:e004::/62 Run rules_specific.php
-2a01:111:f403:e008::/61 Run rules_specific.php
-2a01:111:f403:e010::/62 Run rules_specific.php
-2a01:111:f403:e014::/64 Run rules_specific.php
-2a01:111:f403:e200::/63 Run rules_specific.php
-2a01:111:f403:e400::/63 Run rules_specific.php
-2a01:111:f403:f000::/64 Run rules_specific.php
-2a01:111:f403:f800::/61 Run rules_specific.php
-2a01:111:f403:f900::/60 Run rules_specific.php
-2a01:111:f403:f910::/62 Run rules_specific.php
+2a01:111:f307:1790::f001:7a1/128 Run rules_specific.php
+2a01:111:f307:1790::f001:7a5/128 Run rules_specific.php
+2a01:111:f307:1793::a61/128 Run rules_specific.php
+2a01:111:f307:1794::a01/128 Run rules_specific.php
+2a01:111:f307:1794::a21/128 Run rules_specific.php
+2a01:111:f330:1790::a01/128 Run rules_specific.php
+2a01:111:f330:1790::a41/128 Run rules_specific.php
+2a01:111:f330:1793::a21/128 Run rules_specific.php
+2a01:111:f335:1792::a01/128 Run rules_specific.php
+2a01:111:f335:1792::a61/128 Run rules_specific.php
+2a01:111:f335:1792::f001:7a1/128 Run rules_specific.php
+2a01:111:f335:1792::f001:7a5/128 Run rules_specific.php
+2a01:111:f403::/48 Run rules_specific.php
 Origin: US
 Profile: Infrastructure;Multiplay;Third-party sourced;Tor endpoints here;Webhosting
 Tag: Azure

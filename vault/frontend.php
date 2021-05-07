@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2021.04.27).
+ * This file: Front-end handler (last modified: 2021.05.07).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -2580,8 +2580,14 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'file-manager' && $CIDRAM['FE'][
 
         /** Move the newly uploaded file to the designated location. */
         if ($CIDRAM['SafeToContinue']) {
-            rename($_FILES['upload-file']['tmp_name'], $CIDRAM['Vault'] . $_FILES['upload-file']['name']);
-            $CIDRAM['FE']['state_msg'] = $CIDRAM['L10N']->getString('response_file_uploaded');
+            if (rename($_FILES['upload-file']['tmp_name'], $CIDRAM['Vault'] . $_FILES['upload-file']['name'])) {
+                $CIDRAM['FE']['state_msg'] = $CIDRAM['L10N']->getString('response_file_uploaded');
+                header('HTTP/1.0 201 Created');
+                header('HTTP/1.1 201 Created');
+                header('Status: 201 Created');
+            } else {
+                $CIDRAM['FE']['state_msg'] = $CIDRAM['L10N']->getString('response_upload_error');
+            }
         } else {
             $CIDRAM['FE']['state_msg'] = $CIDRAM['L10N']->getString('response_upload_error');
         }

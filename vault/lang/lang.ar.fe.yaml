@@ -124,6 +124,7 @@ config_hcaptcha_expiry: &CaptchaExpiry "عدد الساعات لنتذكر حا�
 config_hcaptcha_lockip: &CaptchaLockIP "القفل CAPTCHA إلى IP؟"
 config_hcaptcha_lockuser: &CaptchaLockUser "القفل CAPTCHA إلى المستخدمين؟"
 config_hcaptcha_logfile: &CaptchaLogfile "تسجيل جميع محاولات اختبار CAPTCHA؟ إذا كانت الإجابة بنعم، حدد اسم لاستخدامه في ملف السجل. ان لم، ترك هذا الحقل فارغا."
+config_hcaptcha_nonblocked_status_code: &CaptchaNonblockedStatusCode "ما هو رمز الحالة الذي يجب استخدامه عند عرض CAPTCHA للطلبات غير المحظورة؟"
 config_hcaptcha_secret: &CaptchaDashboard "يمكن العثور على هذه القيمة في لوحة التحكم الخاصة بخدمة CAPTCHA."
 config_hcaptcha_show_api_message: &ShowAPIMessage "إظهار رسالة API؟ صحيح/True = نعم [افتراضي]؛ زائفة/False = لا."
 config_hcaptcha_show_cookie_warning: &ShowCookieWarning "إظهار تحذير ملف تعريف الارتباط؟ صحيح/True = نعم [افتراضي]؛ زائفة/False = لا."
@@ -149,6 +150,7 @@ config_recaptcha_expiry: *CaptchaExpiry
 config_recaptcha_lockip: *CaptchaLockIP
 config_recaptcha_lockuser: *CaptchaLockUser
 config_recaptcha_logfile: *CaptchaLogfile
+config_recaptcha_nonblocked_status_code: *CaptchaNonblockedStatusCode
 config_recaptcha_secret: *CaptchaDashboard
 config_recaptcha_show_api_message: *ShowAPIMessage
 config_recaptcha_show_cookie_warning: *ShowCookieWarning

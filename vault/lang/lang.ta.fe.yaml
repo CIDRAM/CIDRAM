@@ -126,6 +126,7 @@ config_hcaptcha_expiry: &CaptchaExpiry "கேப்ட்சா நிகழ்
 config_hcaptcha_lockip: &CaptchaLockIP "கேப்ட்சா ஐ ஐபி முகவரிகளுடன் பிணைக்க வேண்டுமா?"
 config_hcaptcha_lockuser: &CaptchaLockUser "பயனர்களுக்கு கேப்ட்சா ஐ பிணைக்க வேண்டுமா?"
 config_hcaptcha_logfile: &CaptchaLogfile "எல்லா கேப்ட்சா முயற்சிகளையும் பதிவு செய்யவா? ஆம் எனில், பதிவு செய்ய பயன்படுத்த வேண்டிய கோப்பின் பெயரைக் குறிப்பிடவும். இல்லை என்றால், இந்த மாறியை காலியாக விடவும்."
+config_hcaptcha_nonblocked_status_code: &CaptchaNonblockedStatusCode "தடுக்கப்படாத கோரிக்கைகளுக்கு CAPTCHA களைக் காண்பிக்கும் போது எந்த நிலைக் குறியீட்டைப் பயன்படுத்த வேண்டும்?"
 config_hcaptcha_secret: &CaptchaDashboard "உங்கள் கேப்ட்சா சேவைக்கான டாஷ்போர்டில் இந்த மதிப்பைக் காணலாம்."
 config_hcaptcha_show_api_message: &ShowAPIMessage "API செய்தியைக் காண்பிக்கவா? True (உண்மை) = ஆம் [இயல்புநிலை]; False (தவறான) = இல்லை."
 config_hcaptcha_show_cookie_warning: &ShowCookieWarning "குக்கீ எச்சரிக்கையைக் காட்டவா? True (உண்மை) = ஆம் [இயல்புநிலை]; False (தவறான) = இல்லை."
@@ -151,6 +152,7 @@ config_recaptcha_expiry: *CaptchaExpiry
 config_recaptcha_lockip: *CaptchaLockIP
 config_recaptcha_lockuser: *CaptchaLockUser
 config_recaptcha_logfile: *CaptchaLogfile
+config_recaptcha_nonblocked_status_code: *CaptchaNonblockedStatusCode
 config_recaptcha_secret: *CaptchaDashboard
 config_recaptcha_show_api_message: *ShowAPIMessage
 config_recaptcha_show_cookie_warning: *ShowCookieWarning

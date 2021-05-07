@@ -126,6 +126,7 @@ config_hcaptcha_expiry: &CaptchaExpiry "Jumlah jam untuk mengingat instansi CAPT
 config_hcaptcha_lockip: &CaptchaLockIP "Kunci CAPTCHA ke IP?"
 config_hcaptcha_lockuser: &CaptchaLockUser "Kunci CAPTCHA ke pengguna?"
 config_hcaptcha_logfile: &CaptchaLogfile "Mencatat hasil semua instansi CAPTCHA? Jika ya, tentukan nama untuk menggunakan untuk file catatan. Jika tidak, variabel ini harus kosong."
+config_hcaptcha_nonblocked_status_code: &CaptchaNonblockedStatusCode "Kode status mana yang harus digunakan saat menampilkan CAPTCHA ke permintaan yang tidak diblokir?"
 config_hcaptcha_secret: &CaptchaDashboard "Nilai ini dapat ditemukan di dashboard untuk layanan CAPTCHA Anda."
 config_hcaptcha_show_api_message: &ShowAPIMessage "Tampilkan pesan API? True = Ya [Default]; False = Tidak."
 config_hcaptcha_show_cookie_warning: &ShowCookieWarning "Tampilkan peringatan cookie? True = Ya [Default]; False = Tidak."
@@ -151,6 +152,7 @@ config_recaptcha_expiry: *CaptchaExpiry
 config_recaptcha_lockip: *CaptchaLockIP
 config_recaptcha_lockuser: *CaptchaLockUser
 config_recaptcha_logfile: *CaptchaLogfile
+config_recaptcha_nonblocked_status_code: *CaptchaNonblockedStatusCode
 config_recaptcha_secret: *CaptchaDashboard
 config_recaptcha_show_api_message: *ShowAPIMessage
 config_recaptcha_show_cookie_warning: *ShowCookieWarning

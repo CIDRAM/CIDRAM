@@ -126,6 +126,7 @@ config_hcaptcha_expiry: &CaptchaExpiry "گھنٹوں کی تعداد CAPTCHA ک�
 config_hcaptcha_lockip: &CaptchaLockIP "ئی پی ایس کے لئے ہیتی لاک؟"
 config_hcaptcha_lockuser: &CaptchaLockUser "صارفین کے لئے ہیتی لاک؟"
 config_hcaptcha_logfile: &CaptchaLogfile "تمام CAPTCHA کے کوششوں لاگ؟ اگر ہاں، logfile پر کے لئے استعمال کرنے کا نام کی وضاحت. کوئی تو اس متغیر خالی چھوڑ دیں."
+config_hcaptcha_nonblocked_status_code: &CaptchaNonblockedStatusCode "غیر مسدود درخواستوں پر CAPTCHA کی نمائش کرتے وقت کون سا اسٹیٹس کوڈ استعمال کرنا چاہئے؟"
 config_hcaptcha_secret: &CaptchaDashboard "یہ قدر آپ کے CAPTCHA خدمت کے لئے ڈیش بورڈ میں مل سکتی ہے."
 config_hcaptcha_show_api_message: &ShowAPIMessage "API کا پیغام دکھائیں؟ True (سچے) = جی ہاں [پہلے سے طے شدہ]؛ False (جھوٹی) = نہیں."
 config_hcaptcha_show_cookie_warning: &ShowCookieWarning "کوکی انتباہ دکھائیں؟ True (سچے) = جی ہاں [پہلے سے طے شدہ]؛ False (جھوٹی) = نہیں."
@@ -151,6 +152,7 @@ config_recaptcha_expiry: *CaptchaExpiry
 config_recaptcha_lockip: *CaptchaLockIP
 config_recaptcha_lockuser: *CaptchaLockUser
 config_recaptcha_logfile: *CaptchaLogfile
+config_recaptcha_nonblocked_status_code: *CaptchaNonblockedStatusCode
 config_recaptcha_secret: *CaptchaDashboard
 config_recaptcha_show_api_message: *ShowAPIMessage
 config_recaptcha_show_cookie_warning: *ShowCookieWarning

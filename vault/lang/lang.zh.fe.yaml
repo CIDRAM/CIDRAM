@@ -126,6 +126,7 @@ config_hcaptcha_expiry: &CaptchaExpiry "记得CAPTCHA多少小时？ 标准 = 72
 config_hcaptcha_lockip: &CaptchaLockIP "应该CAPTCHA锁定到IP？"
 config_hcaptcha_lockuser: &CaptchaLockUser "应该CAPTCHA锁定到用户？"
 config_hcaptcha_logfile: &CaptchaLogfile "记录所有的CAPTCHA的尝试？​要做到这一点，​指定一个文件名到使用。​如果不，​离开这个变量为空白。"
+config_hcaptcha_nonblocked_status_code: &CaptchaNonblockedStatusCode "向未阻止的请求显示CAPTCHA时应使用哪个状态代码？"
 config_hcaptcha_secret: &CaptchaDashboard "可以在您的CAPTCHA服务的仪表板中找到该值。"
 config_hcaptcha_show_api_message: &ShowAPIMessage "显示API讯息吗？​True（真）=显示【标准】；False（假）=不显示。"
 config_hcaptcha_show_cookie_warning: &ShowCookieWarning "显示cookie警告吗？​True（真）=显示【标准】；False（假）=不显示。"
@@ -151,6 +152,7 @@ config_recaptcha_expiry: *CaptchaExpiry
 config_recaptcha_lockip: *CaptchaLockIP
 config_recaptcha_lockuser: *CaptchaLockUser
 config_recaptcha_logfile: *CaptchaLogfile
+config_recaptcha_nonblocked_status_code: *CaptchaNonblockedStatusCode
 config_recaptcha_secret: *CaptchaDashboard
 config_recaptcha_show_api_message: *ShowAPIMessage
 config_recaptcha_show_cookie_warning: *ShowCookieWarning

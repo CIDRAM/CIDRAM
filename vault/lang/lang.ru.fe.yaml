@@ -126,6 +126,7 @@ config_hcaptcha_expiry: &CaptchaExpiry "Количество часов, что�
 config_hcaptcha_lockip: &CaptchaLockIP "Свяжите CAPTCHA к IP-адреса?"
 config_hcaptcha_lockuser: &CaptchaLockUser "Свяжите CAPTCHA к пользователи?"
 config_hcaptcha_logfile: &CaptchaLogfile "Записывать все попытки CAPTCHA? Если да, указать имя использовать для файла журнала. Если нет, оставьте эту переменную пустым."
+config_hcaptcha_nonblocked_status_code: &CaptchaNonblockedStatusCode "Какой код состояния следует использовать при отображении CAPTCHA для неблокированных запросов?"
 config_hcaptcha_secret: &CaptchaDashboard "Это значение можно найти на панели управления вашей службы CAPTCHA."
 config_hcaptcha_show_api_message: &ShowAPIMessage "Показать сообщение API? True = Да [Стандарт]; False = Нет."
 config_hcaptcha_show_cookie_warning: &ShowCookieWarning "Показать предупреждение о файлах куки? True = Да [Стандарт]; False = Нет."
@@ -151,6 +152,7 @@ config_recaptcha_expiry: *CaptchaExpiry
 config_recaptcha_lockip: *CaptchaLockIP
 config_recaptcha_lockuser: *CaptchaLockUser
 config_recaptcha_logfile: *CaptchaLogfile
+config_recaptcha_nonblocked_status_code: *CaptchaNonblockedStatusCode
 config_recaptcha_secret: *CaptchaDashboard
 config_recaptcha_show_api_message: *ShowAPIMessage
 config_recaptcha_show_cookie_warning: *ShowCookieWarning

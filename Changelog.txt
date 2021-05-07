@@ -51,6 +51,9 @@ Detailed version release guidelines for CIDRAM can be found at:
 
 - [2021.05.07; Maikuolan]: Very slightly reworked/improved the front-end CSS.
   File manager update: Successfully uploaded files now return a 201 status.
+  Non-blocked CAPTCHA support update: Added a new configuration directive,
+  nonblocked_status_code, allowing users to specify the status code to return
+  for non-blocked CAPTCHAs (similar idea to forbid_on_block).
 
 === Version/Release 2.5.1 ===
 PATCH RELEASE.

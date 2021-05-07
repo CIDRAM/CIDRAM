@@ -126,6 +126,7 @@ config_hcaptcha_expiry: &CaptchaExpiry "보안 문자 인스턴스를 기억 시
 config_hcaptcha_lockip: &CaptchaLockIP "보안 문자를 IP로 잠금 하시겠습니까?"
 config_hcaptcha_lockuser: &CaptchaLockUser "보안 문자를 사용자에 잠금 하시겠습니까?"
 config_hcaptcha_logfile: &CaptchaLogfile "보안 문자 시도 기록. 파일 이름을 지정하십시오. 비활성화하려면 비워 둡니다."
+config_hcaptcha_nonblocked_status_code: &CaptchaNonblockedStatusCode "차단되지 않은 요청에 CAPTCHA를 표시 할 때 어떤 상태 코드를 사용해야합니까?"
 config_hcaptcha_secret: &CaptchaDashboard "이 값은 보안 문자 서비스의 대시 보드에서 찾을 수 있습니다."
 config_hcaptcha_show_api_message: &ShowAPIMessage "API 메시지를 표시 하시겠습니까? True = 예 (Default / 기본 설정); False = 아니오."
 config_hcaptcha_show_cookie_warning: &ShowCookieWarning "쿠키 경고 표시 하시겠습니까? True = 예 (Default / 기본 설정); False = 아니오."
@@ -151,6 +152,7 @@ config_recaptcha_expiry: *CaptchaExpiry
 config_recaptcha_lockip: *CaptchaLockIP
 config_recaptcha_lockuser: *CaptchaLockUser
 config_recaptcha_logfile: *CaptchaLogfile
+config_recaptcha_nonblocked_status_code: *CaptchaNonblockedStatusCode
 config_recaptcha_secret: *CaptchaDashboard
 config_recaptcha_show_api_message: *ShowAPIMessage
 config_recaptcha_show_cookie_warning: *ShowCookieWarning

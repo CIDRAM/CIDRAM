@@ -448,6 +448,15 @@ Config Defaults:
   show_api_message:
    type: "bool"
    default: true
+  nonblocked_status_code:
+   type: "int"
+   default: 200
+   choices:
+    200: *200
+    403: *403
+    418: *418
+    429: &429 "429 Too Many Requests"
+    451: *451
  hcaptcha:
   usemode:
    type: "int"
@@ -498,6 +507,15 @@ Config Defaults:
   show_api_message:
    type: "bool"
    default: true
+  nonblocked_status_code:
+   type: "int"
+   default: 200
+   choices:
+    200: *200
+    403: *403
+    418: *418
+    429: *429
+    451: *451
  legal:
   pseudonymise_ip_addresses:
    type: "bool"

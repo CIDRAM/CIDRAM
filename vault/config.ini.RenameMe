@@ -297,7 +297,7 @@ sitekey=''
 ; This value can be found in the dashboard for your CAPTCHA service.
 secret=''
 
-; Number of hours to remember CAPTCHA instances.
+; Number of hours to remember CAPTCHA instances. Default = 720 (1 month).
 expiry=720
 
 ; Log all CAPTCHA attempts? If yes, specify the name to use for the logfile. If
@@ -316,6 +316,10 @@ show_cookie_warning=true
 
 ; Show API message? True = Yes [Default]; False = No.
 show_api_message=true
+
+; Which status code should be used when displaying CAPTCHAs to non-blocked
+; requests?
+nonblocked_status_code=200
 
 
 [hcaptcha]
@@ -338,7 +342,7 @@ sitekey=''
 ; This value can be found in the dashboard for your CAPTCHA service.
 secret=''
 
-; Number of hours to remember CAPTCHA instances.
+; Number of hours to remember CAPTCHA instances. Default = 720 (1 month).
 expiry=720
 
 ; Log all CAPTCHA attempts? If yes, specify the name to use for the logfile. If
@@ -357,6 +361,10 @@ show_cookie_warning=true
 
 ; Show API message? True = Yes [Default]; False = No.
 show_api_message=true
+
+; Which status code should be used when displaying CAPTCHAs to non-blocked
+; requests?
+nonblocked_status_code=200
 
 
 [legal]

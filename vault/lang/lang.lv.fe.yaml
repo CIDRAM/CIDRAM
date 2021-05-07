@@ -126,6 +126,7 @@ config_hcaptcha_expiry: &CaptchaExpiry "Stundu skaits, lai atcerētos CAPTCHA in
 config_hcaptcha_lockip: &CaptchaLockIP "Vai saistīt CAPTCHA uz IPs?"
 config_hcaptcha_lockuser: &CaptchaLockUser "Vai saistīt CAPTCHA uz lietotājiem?"
 config_hcaptcha_logfile: &CaptchaLogfile "Vai reģistrēt visus CAPTCHA mēģinājumus? Ja tā, norādiet vārdu, kuru izmantosit logfailam. Ja nē, atstājiet šo mainīgo tukšu."
+config_hcaptcha_nonblocked_status_code: &CaptchaNonblockedStatusCode "Kurš statusa kods ir jāizmanto, parādot CAPTCHA bloķētiem pieprasījumiem?"
 config_hcaptcha_secret: &CaptchaDashboard "Šī vērtība ir atrodama jūsu CAPTCHA pakalpojuma informācijas panelī."
 config_hcaptcha_show_api_message: &ShowAPIMessage "Rādīt API ziņojumu? True (Patiess) = Jā [Noklusējuma]; False (Nepatiess) = Nē."
 config_hcaptcha_show_cookie_warning: &ShowCookieWarning "Rādīt brīdinājumu par sīkfailu? True (Patiess) = Jā [Noklusējuma]; False (Nepatiess) = Nē."
@@ -151,6 +152,7 @@ config_recaptcha_expiry: *CaptchaExpiry
 config_recaptcha_lockip: *CaptchaLockIP
 config_recaptcha_lockuser: *CaptchaLockUser
 config_recaptcha_logfile: *CaptchaLogfile
+config_recaptcha_nonblocked_status_code: *CaptchaNonblockedStatusCode
 config_recaptcha_secret: *CaptchaDashboard
 config_recaptcha_show_api_message: *ShowAPIMessage
 config_recaptcha_show_cookie_warning: *ShowCookieWarning

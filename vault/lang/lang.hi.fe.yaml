@@ -126,6 +126,7 @@ config_hcaptcha_expiry: &CaptchaExpiry "घंटों की संख्य�
 config_hcaptcha_lockip: &CaptchaLockIP "कोई पी एस के लिए हीती लॉक?"
 config_hcaptcha_lockuser: &CaptchaLockUser "उपभोक्ताओं के लिए हीती लॉक?"
 config_hcaptcha_logfile: &CaptchaLogfile "सभी कैप्चा के प्रयासों प्रवेश? यदि हाँ, लॉग फाइल पर के लिए उपयोग करने के लिए नाम निर्दिष्ट। कोई तो चर खाली छोड़ दें।"
+config_hcaptcha_nonblocked_status_code: &CaptchaNonblockedStatusCode "गैर-अवरुद्ध अनुरोधों के लिए कैप्चा प्रदर्शित करते समय किस स्थिति कोड का उपयोग किया जाना चाहिए?"
 config_hcaptcha_secret: &CaptchaDashboard "यह मान आपकी कैप्चा सेवा के लिए डैशबोर्ड में पाया जा सकता है।"
 config_hcaptcha_show_api_message: &ShowAPIMessage "API संदेश दिखाएं? True(सच्चे) = हाँ [डिफ़ॉल्ट]; False(झूठी) = नहीं।"
 config_hcaptcha_show_cookie_warning: &ShowCookieWarning "कुकी चेतावनी दिखाएं? True(सच्चे) = हाँ [डिफ़ॉल्ट]; False(झूठी) = नहीं।"
@@ -151,6 +152,7 @@ config_recaptcha_expiry: *CaptchaExpiry
 config_recaptcha_lockip: *CaptchaLockIP
 config_recaptcha_lockuser: *CaptchaLockUser
 config_recaptcha_logfile: *CaptchaLogfile
+config_recaptcha_nonblocked_status_code: *CaptchaNonblockedStatusCode
 config_recaptcha_secret: *CaptchaDashboard
 config_recaptcha_show_api_message: *ShowAPIMessage
 config_recaptcha_show_cookie_warning: *ShowCookieWarning

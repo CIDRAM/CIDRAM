@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Turkish language data for the front-end (last modified: 2021.04.27).
+# This file: Turkish language data for the front-end (last modified: 2021.05.07).
 ##/
 
 Extended Description Bypasses: "Varsayılan imza bypass'lar, normalde ana paketle birlikte verilir."
@@ -122,7 +122,7 @@ config_general_timezone: "Kullanılacak saat dilimini belirtir (örneğin, Afric
 config_general_truncate: "Belirli bir boyuta ulaştığında günlük dosyalarını kesin? Değer, bir günlük dosyasının kesilmeden önce büyüyebileceği B/KB/MB/GB/TB cinsinden maksimum boyuttur. Varsayılan 0KB değeri, kesmeyi devre dışı bırakır (günlük dosyaları sınırsız büyüyebilir). Not: Tek tek kayıt dosyaları için geçerlidir! Günlük dosyalarının boyutu toplam olarak alınmaz."
 config_hcaptcha: "HCaptcha için yapılandırma (engellendiğinde insanlara erişimi yeniden kazanmaları için bir yol sağlar)."
 config_hcaptcha_api: &CaptchaAPI "Hangi API'yı kullanacaksınız?"
-config_hcaptcha_expiry: &CaptchaExpiry "CAPTCHA örneklerini hatırlamak için saat sayısı."
+config_hcaptcha_expiry: &CaptchaExpiry "CAPTCHA örneklerini hatırlamak için saat sayısı. Varsayılan = 720 (1 ay)."
 config_hcaptcha_lockip: &CaptchaLockIP "CAPTCHA'yı IP'lere kilitle?"
 config_hcaptcha_lockuser: &CaptchaLockUser "CAPTCHA kullanıcılara kilitle?"
 config_hcaptcha_logfile: &CaptchaLogfile "Tüm CAPTCHA denemelerini günlüğe yaz? Yanıt evet ise, günlük dosyası için kullanılacak adı belirtin. Yanıt hayır ise, bu değişkeni boş bırakın."
@@ -315,6 +315,7 @@ label_check_verification: "Ayrıca arama motoru ve sosyal medya doğrulama karş
 label_checkbox: "Onay kutusu"
 label_cidram: "Kullanılan CIDRAM sürümü:"
 label_clientinfo: "Kullanıcı bilgisi:"
+label_default: "Varsayılan"
 label_dependencies: "Gereksinimler:"
 label_difference: "Fark"
 label_displaying:

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Swedish language data for the front-end (last modified: 2021.04.27).
+# This file: Swedish language data for the front-end (last modified: 2021.05.07).
 ##/
 
 Extended Description Bypasses: "Standard bypass-filen som normalt ingår i huvudpaketet."
@@ -122,7 +122,7 @@ config_general_timezone: "Detta används för att specificera den tidszon som sk
 config_general_truncate: "Avkorta loggfiler när de når en viss storlek? Värdet är den maximala storleken i B/KB/MB/GB/TB som en loggfil kan växa till innan den trunkeras. Standardvärdet på 0KB inaktiverar avkortning (loggfiler kan växa i obestämd tid). Notera: Gäller enskilda loggfiler! Loggfiler storlek anses inte kollektivt."
 config_hcaptcha: "Konfiguration för HCaptcha (ger ett sätt för människor att återfå åtkomst när de blockeras)."
 config_hcaptcha_api: &CaptchaAPI "Vilket API ska användas?"
-config_hcaptcha_expiry: &CaptchaExpiry "Antal timmar för att komma ihåg CAPTCHA-instanser."
+config_hcaptcha_expiry: &CaptchaExpiry "Antal timmar för att komma ihåg CAPTCHA-instanser. Standard = 720 (1 månad)."
 config_hcaptcha_lockip: &CaptchaLockIP "Låsa CAPTCHA till IP-adresser?"
 config_hcaptcha_lockuser: &CaptchaLockUser "Låsa CAPTCHA till användare?"
 config_hcaptcha_logfile: &CaptchaLogfile "Logga in alla CAPTCHA-försök? Om ja, ange det namn som ska användas för loggfilen. Om nej, lämna denna variabel tom."
@@ -315,6 +315,7 @@ label_check_verification: "Test även mot sökmotor och social media verifiering
 label_checkbox: "Kryssruta"
 label_cidram: "CIDRAM-version som används:"
 label_clientinfo: "Klientinformation:"
+label_default: "Standard"
 label_dependencies: "Programvarukrav:"
 label_difference: "Differensen"
 label_displaying:

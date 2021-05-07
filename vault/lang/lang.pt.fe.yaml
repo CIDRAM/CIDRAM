@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Portuguese language data for the front-end (last modified: 2021.04.27).
+# This file: Portuguese language data for the front-end (last modified: 2021.05.07).
 ##/
 
 Extended Description Bypasses: "Os arquivos para bypass das assinaturas padrão normalmente incluído com o pacote principal."
@@ -122,7 +122,7 @@ config_general_timezone: "Isso é usado para especificar o fuso horário a ser u
 config_general_truncate: "Truncar arquivos de log quando atingem um determinado tamanho? Valor é o tamanho máximo em B/KB/MB/GB/TB que um arquivo de log pode crescer antes de ser truncado. O valor padrão de 0KB desativa o truncamento (arquivos de log podem crescer indefinidamente). Nota: Aplica-se a arquivos de log individuais! O tamanho dos arquivos de log não é considerado coletivamente."
 config_hcaptcha: "Configuração para HCaptcha (fornece uma maneira para os humanos recuperarem o acesso quando bloqueados)."
 config_hcaptcha_api: &CaptchaAPI "Qual API usar?"
-config_hcaptcha_expiry: &CaptchaExpiry "Número de horas para lembrar instâncias CAPTCHA."
+config_hcaptcha_expiry: &CaptchaExpiry "Número de horas para lembrar instâncias CAPTCHA. Padrão = 720 (1 mês)."
 config_hcaptcha_lockip: &CaptchaLockIP "Ligar CAPTCHA para IPs?"
 config_hcaptcha_lockuser: &CaptchaLockUser "Ligar CAPTCHA para os usuários?"
 config_hcaptcha_logfile: &CaptchaLogfile "Registrar todas as tentativas de CAPTCHA? Se sim, especificar o nome a ser usado para o arquivo de registro. Se não, deixe esta variável em branco."
@@ -317,6 +317,7 @@ label_check_verification: "Teste também contra a verificação de motores de bu
 label_checkbox: "Caixa de seleção"
 label_cidram: "Versão do CIDRAM usada:"
 label_clientinfo: "Informação ao cliente:"
+label_default: "Padrão"
 label_dependencies: "Dependências:"
 label_difference: "Diferença"
 label_displaying:

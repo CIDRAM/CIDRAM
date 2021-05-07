@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Arabic language data for the front-end (last modified: 2021.04.27).
+# This file: Arabic language data for the front-end (last modified: 2021.05.07).
 ##/
 
 Extended Description Bypasses: "ملفات الالتفافية التوقيع القياسية المدرجة عادة مع الحزمة الرئيسية."
@@ -120,7 +120,7 @@ config_general_timezone: "يتم استخدام هذا لتحديد المنطق
 config_general_truncate: "اقتطاع ملفات السجل عندما تصل إلى حجم معين؟ القيمة هي الحجم الأقصى في بايت/كيلوبايت/ميغابايت/غيغابايت/تيرابايت الذي قد ينمو ملفات السجل إلى قبل اقتطاعه. القيمة الافتراضية 0KB تعطيل اقتطاع (ملفات السجل يمكن أن تنمو إلى أجل غير مسمى). ملاحظة: ينطبق على ملفات السجل الفردية! ولا يعتبر حجمها جماعيا."
 config_hcaptcha: "التكوين ل HCaptcha (يوفر وسيلة للبشر لاستعادة الوصول عند حجبه)."
 config_hcaptcha_api: &CaptchaAPI "أي API لاستخدام؟"
-config_hcaptcha_expiry: &CaptchaExpiry "عدد الساعات لنتذكر حالات اختبار CAPTCHA."
+config_hcaptcha_expiry: &CaptchaExpiry "عدد الساعات لنتذكر حالات اختبار CAPTCHA. الافتراضي = 720 (١ شهر)."
 config_hcaptcha_lockip: &CaptchaLockIP "القفل CAPTCHA إلى IP؟"
 config_hcaptcha_lockuser: &CaptchaLockUser "القفل CAPTCHA إلى المستخدمين؟"
 config_hcaptcha_logfile: &CaptchaLogfile "تسجيل جميع محاولات اختبار CAPTCHA؟ إذا كانت الإجابة بنعم، حدد اسم لاستخدامه في ملف السجل. ان لم، ترك هذا الحقل فارغا."
@@ -313,6 +313,7 @@ label_check_verification: "أيضا اختبار ضد التحقق من محرك
 label_checkbox: "خانة اختيار"
 label_cidram: "النسخة CIDRAM المستخدمة:"
 label_clientinfo: "معلومات المستخدممعلومات المستخدم:"
+label_default: "الافتراضي"
 label_dependencies: "التبعيات:"
 label_difference: "فرق"
 label_displaying: "عرض <span class="txtRd">%s</span> إدخالات."

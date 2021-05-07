@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Urdu language data for the front-end (last modified: 2021.04.27).
+# This file: Urdu language data for the front-end (last modified: 2021.05.07).
 ##/
 
 Extended Description Bypasses: "پہلے سے طے شدہ دستخطی بائی پاس فائلوں کو عام طور پر بنیادی پیکیج کے ساتھ شامل تھے."
@@ -122,7 +122,7 @@ config_general_timezone: "استعمال کرنے کے لئے ٹائم زون ک
 config_general_truncate: "وہ ایک خاص سائز تک پہنچنے میں جب صاف لاگ مسلیں؟ ویلیو میں B/KB/MB/GB/TB زیادہ سے زیادہ سائز ہے. جب 0KB، وہ غیر معینہ مدت تک ترقی کر سکتا ہے (پہلے سے طے). نوٹ: واحد فائلوں پر لاگو ہوتا ہے! فائلیں اجتماعی غور نہیں کر رہے ہیں."
 config_hcaptcha: "HCaptcha کی ترتیبات (بلاک ہونے پر انسانوں کو دوبارہ رسائی حاصل کرنے کا ایک راستہ فراہم کرتا ہے)."
 config_hcaptcha_api: &CaptchaAPI "کون سا API استعمال کرنے کے لئے؟"
-config_hcaptcha_expiry: &CaptchaExpiry "گھنٹوں کی تعداد CAPTCHA کے واقعات کو یاد کرنے."
+config_hcaptcha_expiry: &CaptchaExpiry "گھنٹوں کی تعداد CAPTCHA کے واقعات کو یاد کرنے. پہلے سے طے شدہ = 720 (1 ماہ)."
 config_hcaptcha_lockip: &CaptchaLockIP "ئی پی ایس کے لئے ہیتی لاک؟"
 config_hcaptcha_lockuser: &CaptchaLockUser "صارفین کے لئے ہیتی لاک؟"
 config_hcaptcha_logfile: &CaptchaLogfile "تمام CAPTCHA کے کوششوں لاگ؟ اگر ہاں، logfile پر کے لئے استعمال کرنے کا نام کی وضاحت. کوئی تو اس متغیر خالی چھوڑ دیں."
@@ -315,6 +315,7 @@ label_check_verification: "سرچ انجن اور سوشل میڈیا کی تو�
 label_checkbox: "چیک باکس"
 label_cidram: "CIDRAM ورژن استعمال کیا:"
 label_clientinfo: "کلائنٹ کی معلومات:"
+label_default: "پہلے سے طے شدہ"
 label_dependencies: "انحصار:"
 label_difference: "دو سیٹ کے درمیان فرق"
 label_displaying:

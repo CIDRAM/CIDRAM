@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: English language data for the front-end (last modified: 2021.04.27).
+# This file: English language data for the front-end (last modified: 2021.05.07).
 ##/
 
 Extended Description Bypasses: "The default signature bypass files normally included with the main package."
@@ -122,7 +122,7 @@ config_general_timezone: "This is used to specify the timezone to use (e.g., Afr
 config_general_truncate: "Truncate logfiles when they reach a certain size? Value is the maximum size in B/KB/MB/GB/TB that a logfile may grow to before being truncated. The default value of 0KB disables truncation (logfiles can grow indefinitely). Note: Applies to individual logfiles! The size of logfiles is not considered collectively."
 config_hcaptcha: "Configuration for HCaptcha (provides a way for humans to regain access when blocked)."
 config_hcaptcha_api: &CaptchaAPI "Which API to use?"
-config_hcaptcha_expiry: &CaptchaExpiry "Number of hours to remember CAPTCHA instances."
+config_hcaptcha_expiry: &CaptchaExpiry "Number of hours to remember CAPTCHA instances. Default = 720 (1 month)."
 config_hcaptcha_lockip: &CaptchaLockIP "Lock CAPTCHA to IPs?"
 config_hcaptcha_lockuser: &CaptchaLockUser "Lock CAPTCHA to users?"
 config_hcaptcha_logfile: &CaptchaLogfile "Log all CAPTCHA attempts? If yes, specify the name to use for the logfile. If no, leave this variable blank."
@@ -317,6 +317,7 @@ label_check_verification: "Also test against search engine and social media veri
 label_checkbox: "Checkbox"
 label_cidram: "CIDRAM version used:"
 label_clientinfo: "Client information:"
+label_default: "Default"
 label_dependencies: "Dependencies:"
 label_difference: "Difference"
 label_displaying:

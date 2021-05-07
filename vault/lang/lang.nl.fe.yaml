@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Dutch language data for the front-end (last modified: 2021.04.27).
+# This file: Dutch language data for the front-end (last modified: 2021.05.07).
 ##/
 
 Extended Description Bypasses: "De standaard signature rondwegen normaal opgenomen met de primaire pakket."
@@ -122,7 +122,7 @@ config_general_timezone: "Dit wordt gebruikt om de te gebruiken tijdzone op te g
 config_general_truncate: "Trunceren logbestanden wanneer ze een bepaalde grootte bereiken? Waarde is de maximale grootte in B/KB/MB/GB/TB dat een logbestand kan groeien tot voordat het wordt getrunceerd. De standaardwaarde van 0KB schakelt truncatie uit (logbestanden kunnen onbepaald groeien). Notitie: Van toepassing op individuele logbestanden! De grootte van de logbestanden wordt niet collectief beschouwd."
 config_hcaptcha: "Configuratie voor HCaptcha (biedt een manier voor mensen om toegang te krijgen wanneer ze worden geblokkeerd)."
 config_hcaptcha_api: &CaptchaAPI "Welke API gebruiken?"
-config_hcaptcha_expiry: &CaptchaExpiry "Aantal uren om CAPTCHA instanties herinneren."
+config_hcaptcha_expiry: &CaptchaExpiry "Aantal uren om CAPTCHA instanties herinneren. Standaard = 720 (1 maand)."
 config_hcaptcha_lockip: &CaptchaLockIP "Binden CAPTCHA om IP's?"
 config_hcaptcha_lockuser: &CaptchaLockUser "Binden CAPTCHA om gebruikers?"
 config_hcaptcha_logfile: &CaptchaLogfile "Log alle CAPTCHA pogingen? Zo ja, geef de naam te gebruiken voor het logbestand. Zo nee, laat u deze variabele leeg."
@@ -317,6 +317,7 @@ label_check_verification: "Test ook tegen verificatie van zoekmachines en social
 label_checkbox: "Selectievakje"
 label_cidram: "CIDRAM versie gebruikt:"
 label_clientinfo: "Gebruikers informatie:"
+label_default: "Standaard"
 label_dependencies: "Afhankelijkheden:"
 label_difference: "Verschil"
 label_displaying:

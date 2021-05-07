@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Korean language data for the front-end (last modified: 2021.04.27).
+# This file: Korean language data for the front-end (last modified: 2021.05.07).
 ##/
 
 Extended Description Bypasses: "기본 서명 우회 일반적으로 기본 패키지에 포함되어 있습니다."
@@ -122,7 +122,7 @@ config_general_timezone: "사용할 시간대를 지정합니다 (예 : Africa/
 config_general_truncate: "로그 파일이 특정 크기에 도달하면 잘 있습니까? 값은 로그 파일이 잘 리기 전에 커질 가능성이있는 B/KB/MB/GB/TB 단위의 최대 크기입니다. 기본값 "0KB"은 절단을 해제합니다 (로그 파일은 무한정 확장 할 수 있습니다). 참고 : 개별 로그 파일에 적용됩니다! 로그 파일의 크기는 일괄 적으로 고려되지 않습니다."
 config_hcaptcha: "HCaptcha 설정 (차단될 때 사람이 다시 액세스할 수 있는 방법을 제공합니다)."
 config_hcaptcha_api: &CaptchaAPI "어떤 API를 사용할 수 있습니까?"
-config_hcaptcha_expiry: &CaptchaExpiry "보안 문자 인스턴스를 기억 시간."
+config_hcaptcha_expiry: &CaptchaExpiry "보안 문자 인스턴스를 기억 시간. Default (기본 설정) = 720 (1 개월)."
 config_hcaptcha_lockip: &CaptchaLockIP "보안 문자를 IP로 잠금 하시겠습니까?"
 config_hcaptcha_lockuser: &CaptchaLockUser "보안 문자를 사용자에 잠금 하시겠습니까?"
 config_hcaptcha_logfile: &CaptchaLogfile "보안 문자 시도 기록. 파일 이름을 지정하십시오. 비활성화하려면 비워 둡니다."
@@ -315,6 +315,7 @@ label_check_verification: "검색 엔진 및 소셜 미디어 검증 테스트�
 label_checkbox: "체크 박스"
 label_cidram: "사용 된 CIDRAM 버전 :"
 label_clientinfo: "사용자 정보 :"
+label_default: "기본값"
 label_dependencies: "종속성 :"
 label_difference: "차이"
 label_displaying: "<span class="txtRd">%s</span> 항목이 표시됩니다."

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Norwegian language data for the front-end (last modified: 2021.04.27).
+# This file: Norwegian language data for the front-end (last modified: 2021.05.07).
 ##/
 
 Extended Description Bypasses: "Standard-signatur-bypass-filene som normalt følger med hovedpakken."
@@ -122,7 +122,7 @@ config_general_timezone: "Dette brukes til å spesifisere tidssonen som skal bru
 config_general_truncate: "Skjær loggfiler når de kommer til en viss størrelse? Verdi er den maksimale størrelsen i B/KB/MB/GB/TB som en loggfil kan vokse til før den blir avkortet. Standardverdi på 0KB deaktiverer avkorting (loggfilene kan vokse på ubestemt tid). Merk: Gjelder for individuelle loggfiler! Størrelsen på loggfiler anses ikke kollektivt."
 config_hcaptcha: "Konfigurasjon for HCaptcha (gir en måte for mennesker å gjenvinne tilgang når de blokkeres)."
 config_hcaptcha_api: &CaptchaAPI "Hvilken API skal du bruke?"
-config_hcaptcha_expiry: &CaptchaExpiry "Antall timer for å huske CAPTCHA-forekomster."
+config_hcaptcha_expiry: &CaptchaExpiry "Antall timer for å huske CAPTCHA-forekomster. Standardverdi = 720 (1 måned)."
 config_hcaptcha_lockip: &CaptchaLockIP "Lås CAPTCHA til IP-adresser?"
 config_hcaptcha_lockuser: &CaptchaLockUser "Lås CAPTCHA til brukere?"
 config_hcaptcha_logfile: &CaptchaLogfile "Logg på alle CAPTCHA-forsøk? Hvis ja, spesifiser navnet som skal brukes til loggfilen. Hvis nei, la denne variablen være tom."
@@ -315,6 +315,7 @@ label_check_verification: "Test også mot søkemotor og sosial media verifiserin
 label_checkbox: "Avkrysningsrute"
 label_cidram: "CIDRAM versjon brukt:"
 label_clientinfo: "Klientinformasjon:"
+label_default: "Standardverdi"
 label_dependencies: "Avhengigheter:"
 label_difference: "Forskjellen"
 label_displaying:

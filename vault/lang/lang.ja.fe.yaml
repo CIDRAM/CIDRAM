@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Japanese language data for the front-end (last modified: 2021.04.27).
+# This file: Japanese language data for the front-end (last modified: 2021.05.07).
 ##/
 
 Extended Description Bypasses: "メインパッケージに通常含まれているデフォルト・シグネチャ・バイパス。"
@@ -122,7 +122,7 @@ config_general_timezone: "使用するタイムゾーンを指定します​（
 config_general_truncate: "ログ・ファイルが一定のサイズに達したら切り詰めますか？​値は、​ログ・ファイルが切り捨てられる前に大きくなる可能性があるＢ/ＫＢ/ＭＢ/ＧＢ/ＴＢ単位の最大サイズです。​デフォルト値の０ＫＢは切り捨てを無効にします （ログ・ファイルは無期限に拡張できます）。​注：個々のログ・ファイルに適用されます。​ログ・ファイルのサイズは一括して考慮されません。"
 config_hcaptcha: "HCaptchaの設定（ブロックされたときに人間がアクセスを取り戻す方法を提供します）。"
 config_hcaptcha_api: &CaptchaAPI "どのＡＰＩを使用するのですか？"
-config_hcaptcha_expiry: &CaptchaExpiry "キャプチャ・インスタンスを覚えておく時間数。"
+config_hcaptcha_expiry: &CaptchaExpiry "キャプチャ・インスタンスを覚えておく時間数。 Default（デフォルルト） = ７２０（１ヶ月）。"
 config_hcaptcha_lockip: &CaptchaLockIP "キャプチャをＩＰにロックしますか？"
 config_hcaptcha_lockuser: &CaptchaLockUser "キャプチャをユーザーにロックしますか？"
 config_hcaptcha_logfile: &CaptchaLogfile "キャプチャ試行の記録。​ファイル名指定するか、​無効にしたい場合は空白のままにして下さい。"
@@ -315,6 +315,7 @@ label_check_verification: "検索エンジンの検証とソーシャル・メ�
 label_checkbox: "チェック・ボックス"
 label_cidram: "使用されたCIDRAMバージョン："
 label_clientinfo: "クライアント情報："
+label_default: "デフォルト"
 label_dependencies: "依存関係："
 label_difference: "違い"
 label_displaying: "<span class="txtRd">%s</span>エントリが表示されます。"

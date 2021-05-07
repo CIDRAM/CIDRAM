@@ -126,6 +126,7 @@ config_hcaptcha_expiry: &CaptchaExpiry "Số giờ để nhớ CAPTCHA. Mặc đ
 config_hcaptcha_lockip: &CaptchaLockIP "Khóa CAPTCHA để IP?"
 config_hcaptcha_lockuser: &CaptchaLockUser "Khóa CAPTCHA để người dùng?"
 config_hcaptcha_logfile: &CaptchaLogfile "Đăng nhập tất cả các nỗ lực cho CAPTCHA? Nếu có, ghi rõ tên để sử dụng cho các tập tin đăng nhập. Nếu không, đốn biến này."
+config_hcaptcha_nonblocked_status_code: &CaptchaNonblockedStatusCode "Mã trạng thái nào nên được sử dụng khi hiển thị CAPTCHA cho các yêu cầu không bị chặn?"
 config_hcaptcha_secret: &CaptchaDashboard "Giá trị này có thể được tìm thấy trong bảng điều khiển cho dịch vụ CAPTCHA của bạn."
 config_hcaptcha_show_api_message: &ShowAPIMessage "Hiển thị thông báo API? True = Vâng [Mặc định]; False = Không."
 config_hcaptcha_show_cookie_warning: &ShowCookieWarning "Hiển thị cảnh báo cookie? True = Vâng [Mặc định]; False = Không."
@@ -151,6 +152,7 @@ config_recaptcha_expiry: *CaptchaExpiry
 config_recaptcha_lockip: *CaptchaLockIP
 config_recaptcha_lockuser: *CaptchaLockUser
 config_recaptcha_logfile: *CaptchaLogfile
+config_recaptcha_nonblocked_status_code: *CaptchaNonblockedStatusCode
 config_recaptcha_secret: *CaptchaDashboard
 config_recaptcha_show_api_message: *ShowAPIMessage
 config_recaptcha_show_cookie_warning: *ShowCookieWarning

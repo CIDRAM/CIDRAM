@@ -126,6 +126,7 @@ config_hcaptcha_expiry: &CaptchaExpiry "Anzahl der Stunden an die sich CAPTCHA-I
 config_hcaptcha_lockip: &CaptchaLockIP "Sperren Sie CAPTCHA auf IPs?"
 config_hcaptcha_lockuser: &CaptchaLockUser "Sperren Sie CAPTCHA auf Benutzer?"
 config_hcaptcha_logfile: &CaptchaLogfile "Protokollieren Sie alle CAPTCHA versucht? Geben Sie einen Dateinamen an oder lassen Sie die Option zum Deaktivieren leer."
+config_hcaptcha_nonblocked_status_code: &CaptchaNonblockedStatusCode "Welcher Statuscode sollte verwendet werden, wenn nicht-blockierte CAPTCHAs Anforderungen angezeigt werden?"
 config_hcaptcha_secret: &CaptchaDashboard "Dieser Wert befindet sich im Dashboard für Ihren CAPTCHA-Dienst."
 config_hcaptcha_show_api_message: &ShowAPIMessage "API-Nachricht anzeigen? True = Ja [Standardeinstellung]; False = Nein."
 config_hcaptcha_show_cookie_warning: &ShowCookieWarning "Cookie-Warnung anzeigen? True = Ja [Standardeinstellung]; False = Nein."
@@ -151,6 +152,7 @@ config_recaptcha_expiry: *CaptchaExpiry
 config_recaptcha_lockip: *CaptchaLockIP
 config_recaptcha_lockuser: *CaptchaLockUser
 config_recaptcha_logfile: *CaptchaLogfile
+config_recaptcha_nonblocked_status_code: *CaptchaNonblockedStatusCode
 config_recaptcha_secret: *CaptchaDashboard
 config_recaptcha_show_api_message: *ShowAPIMessage
 config_recaptcha_show_cookie_warning: *ShowCookieWarning

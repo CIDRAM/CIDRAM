@@ -126,6 +126,7 @@ config_hcaptcha_expiry: &CaptchaExpiry "Antal timmar för att komma ihåg CAPTCH
 config_hcaptcha_lockip: &CaptchaLockIP "Låsa CAPTCHA till IP-adresser?"
 config_hcaptcha_lockuser: &CaptchaLockUser "Låsa CAPTCHA till användare?"
 config_hcaptcha_logfile: &CaptchaLogfile "Logga in alla CAPTCHA-försök? Om ja, ange det namn som ska användas för loggfilen. Om nej, lämna denna variabel tom."
+config_hcaptcha_nonblocked_status_code: &CaptchaNonblockedStatusCode "Vilken statuskod ska användas när CAPTCHAs visas för icke-blockerade förfrågningar?"
 config_hcaptcha_secret: &CaptchaDashboard "Det här värdet finns i instrumentpanelen för din CAPTCHA-tjänst."
 config_hcaptcha_show_api_message: &ShowAPIMessage "Inkludera API-meddelande? True = Ja [Standard]; False = Nej."
 config_hcaptcha_show_cookie_warning: &ShowCookieWarning "Inkludera cookievarning? True = Ja [Standard]; False = Nej."
@@ -151,6 +152,7 @@ config_recaptcha_expiry: *CaptchaExpiry
 config_recaptcha_lockip: *CaptchaLockIP
 config_recaptcha_lockuser: *CaptchaLockUser
 config_recaptcha_logfile: *CaptchaLogfile
+config_recaptcha_nonblocked_status_code: *CaptchaNonblockedStatusCode
 config_recaptcha_secret: *CaptchaDashboard
 config_recaptcha_show_api_message: *ShowAPIMessage
 config_recaptcha_show_cookie_warning: *ShowCookieWarning

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Output generator (last modified: 2021.04.29).
+ * This file: Output generator (last modified: 2021.05.07).
  */
 
 /** Initialise cache. */
@@ -475,7 +475,6 @@ if (!empty($CIDRAM['Webhooks']) || !empty($CIDRAM['Config']['Webhook']['URL'])) 
 
     /** Iterate through each webhook. */
     foreach ($CIDRAM['Webhooks'] as $CIDRAM['Webhook']) {
-
         /** Safety. */
         if (!is_string($CIDRAM['Webhook'])) {
             continue;
@@ -743,7 +742,6 @@ if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
         header('Retry-After: ' . floor($CIDRAM['Config']['rate_limiting']['allowance_period'] * 3600));
         $CIDRAM['HTML'] = '';
     } elseif (!$CIDRAM['Config']['general']['silent_mode']) {
-
         /** Fetch appropriate status code based on either "forbid_on_block" or "Aux Status Code". */
         if ((
             !empty($CIDRAM['Aux Status Code']) &&
@@ -864,7 +862,7 @@ if (!empty($CIDRAM['Aux Redirect']) && !empty($CIDRAM['Aux Status Code']) && $CI
     die;
 }
 
-/** This code block executed only for non-blocked captcha configurations. */
+/** This code block executed only for non-blocked CAPTCHA configurations. */
 if (empty($CIDRAM['CaptchaDone']) && empty($CIDRAM['Whitelisted']) && empty($CIDRAM['BlockInfo']['Verified'])) {
     $CIDRAM['Stage'] = 'NonBlockedCAPTCHA';
     if (
@@ -875,6 +873,8 @@ if (empty($CIDRAM['CaptchaDone']) && empty($CIDRAM['Whitelisted']) && empty($CID
     ) {
         /** Execute the ReCaptcha class. */
         $CIDRAM['CaptchaDone'] = new \CIDRAM\Core\ReCaptcha($CIDRAM);
+
+        $CIDRAM['StatusCodeForNonBlocked'] = $CIDRAM['Config']['recaptcha']['nonblocked_status_code'];
     } elseif (
         !empty($CIDRAM['Config']['hcaptcha']['sitekey']) &&
         !empty($CIDRAM['Config']['hcaptcha']['secret']) &&
@@ -883,6 +883,8 @@ if (empty($CIDRAM['CaptchaDone']) && empty($CIDRAM['Whitelisted']) && empty($CID
     ) {
         /** Execute the HCaptcha class. */
         $CIDRAM['CaptchaDone'] = new \CIDRAM\Core\HCaptcha($CIDRAM);
+
+        $CIDRAM['StatusCodeForNonBlocked'] = $CIDRAM['Config']['hcaptcha']['nonblocked_status_code'];
     }
 
     if (
@@ -891,7 +893,7 @@ if (empty($CIDRAM['CaptchaDone']) && empty($CIDRAM['Whitelisted']) && empty($CID
         isset($CIDRAM['CaptchaDone']->Bypass) &&
         $CIDRAM['CaptchaDone']->Bypass === false
     ) {
-        /** Parsed to the captcha's HTML file. */
+        /** Parsed to the CAPTCHA's HTML file. */
         $CIDRAM['Parsables'] = array_merge($CIDRAM['FieldTemplates'], $CIDRAM['Config']['template_data'], $CIDRAM['BlockInfo']);
         $CIDRAM['Parsables']['L10N-Lang-Attache'] = $CIDRAM['L10N-Lang-Attache'];
         $CIDRAM['Parsables']['GeneratedBy'] = sprintf(
@@ -912,10 +914,10 @@ if (empty($CIDRAM['CaptchaDone']) && empty($CIDRAM['Whitelisted']) && empty($CID
         /** Append default L10N data. */
         $CIDRAM['Parsables'] += $CIDRAM['L10N']->Data;
 
-        /** The captcha template file to use. */
+        /** The CAPTCHA template file to use. */
         $CIDRAM['CaptchaTemplateFile'] = 'captcha_' . $CIDRAM['Config']['template_data']['theme'] . '.html';
 
-        /** Fallback for themes without captcha template files. */
+        /** Fallback for themes without CAPTCHA template files. */
         if (
             $CIDRAM['Config']['template_data']['theme'] !== 'default' &&
             !file_exists($CIDRAM['Vault'] . $CIDRAM['CaptchaTemplateFile'])
@@ -930,6 +932,16 @@ if (empty($CIDRAM['CaptchaDone']) && empty($CIDRAM['Whitelisted']) && empty($CID
             $CIDRAM['L10N-Lang-Attache'],
             $CIDRAM['Client-L10N']->getString('PrivacyPolicy')
         );
+
+        /** Process non-blocked status code. */
+        if (
+            $CIDRAM['StatusCodeForNonBlocked'] > 400 &&
+            $CIDRAM['ThisStatusHTTP'] = $CIDRAM['GetStatusHTTP']($CIDRAM['StatusCodeForNonBlocked'])
+        ) {
+            header('HTTP/1.0 ' . $CIDRAM['StatusCodeForNonBlocked'] . ' ' . $CIDRAM['ThisStatusHTTP']);
+            header('HTTP/1.1 ' . $CIDRAM['StatusCodeForNonBlocked'] . ' ' . $CIDRAM['ThisStatusHTTP']);
+            header('Status: ' . $CIDRAM['StatusCodeForNonBlocked'] . ' ' . $CIDRAM['ThisStatusHTTP']);
+        }
 
         /** Generate HTML output. */
         $CIDRAM['HTML'] = $CIDRAM['ParseVars'](

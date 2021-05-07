@@ -124,6 +124,7 @@ config_hcaptcha_expiry: &CaptchaExpiry "ক্যাপচা দৃষ্টা
 config_hcaptcha_lockip: &CaptchaLockIP "ক্যাপচা IP অ্যাড্রেসগুলি লক করুন?"
 config_hcaptcha_lockuser: &CaptchaLockUser "ক্যাপচা ব্যবহারকারীদের লক করুন?"
 config_hcaptcha_logfile: &CaptchaLogfile "সব ক্যাপচা প্রচেষ্টা লগ ইন করুন? যদি তাই, লগ ফাইলে ব্যবহারের জন্য নামটি উল্লেখ করুন। যদি না, এই পরিবর্তনশীল খালি রাখুন।"
+config_hcaptcha_nonblocked_status_code: &CaptchaNonblockedStatusCode "অবরুদ্ধ নয় অনুরোধগুলিতে ক্যাপচা প্রদর্শন করার সময় কোন স্থিতি কোড ব্যবহার করা উচিত?"
 config_hcaptcha_secret: &CaptchaDashboard "আপনার ক্যাপচা পরিষেবাটির জন্য এই মানটি ড্যাশবোর্ডে পাওয়া যাবে।"
 config_hcaptcha_show_api_message: &ShowAPIMessage "API বার্তা প্রদর্শন করবেন? True = হাঁ [ডিফল্ট]; False = না।"
 config_hcaptcha_show_cookie_warning: &ShowCookieWarning "কুকি সতর্কতা দেখান? True = হাঁ [ডিফল্ট]; False = না।"
@@ -149,6 +150,7 @@ config_recaptcha_expiry: *CaptchaExpiry
 config_recaptcha_lockip: *CaptchaLockIP
 config_recaptcha_lockuser: *CaptchaLockUser
 config_recaptcha_logfile: *CaptchaLogfile
+config_recaptcha_nonblocked_status_code: *CaptchaNonblockedStatusCode
 config_recaptcha_secret: *CaptchaDashboard
 config_recaptcha_show_api_message: *ShowAPIMessage
 config_recaptcha_show_cookie_warning: *ShowCookieWarning

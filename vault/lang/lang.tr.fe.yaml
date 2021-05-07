@@ -126,6 +126,7 @@ config_hcaptcha_expiry: &CaptchaExpiry "CAPTCHA örneklerini hatırlamak için s
 config_hcaptcha_lockip: &CaptchaLockIP "CAPTCHA'yı IP'lere kilitle?"
 config_hcaptcha_lockuser: &CaptchaLockUser "CAPTCHA kullanıcılara kilitle?"
 config_hcaptcha_logfile: &CaptchaLogfile "Tüm CAPTCHA denemelerini günlüğe yaz? Yanıt evet ise, günlük dosyası için kullanılacak adı belirtin. Yanıt hayır ise, bu değişkeni boş bırakın."
+config_hcaptcha_nonblocked_status_code: &CaptchaNonblockedStatusCode "Engellenmemiş isteklere CAPTCHA'lar görüntülenirken hangi durum kodu kullanılmalıdır?"
 config_hcaptcha_secret: &CaptchaDashboard "Bu değer, CAPTCHA hizmetinizin kontrol panelinde bulunabilir."
 config_hcaptcha_show_api_message: &ShowAPIMessage "API mesajı göster? Doğru/True = Evet [Varsayılan]; Yanlış/False = Hayır."
 config_hcaptcha_show_cookie_warning: &ShowCookieWarning "Çerez uyarısını göster? Doğru/True = Evet [Varsayılan]; Yanlış/False = Hayır."
@@ -151,6 +152,7 @@ config_recaptcha_expiry: *CaptchaExpiry
 config_recaptcha_lockip: *CaptchaLockIP
 config_recaptcha_lockuser: *CaptchaLockUser
 config_recaptcha_logfile: *CaptchaLogfile
+config_recaptcha_nonblocked_status_code: *CaptchaNonblockedStatusCode
 config_recaptcha_secret: *CaptchaDashboard
 config_recaptcha_show_api_message: *ShowAPIMessage
 config_recaptcha_show_cookie_warning: *ShowCookieWarning

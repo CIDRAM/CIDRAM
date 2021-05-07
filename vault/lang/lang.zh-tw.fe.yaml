@@ -126,6 +126,7 @@ config_hcaptcha_expiry: &CaptchaExpiry "記得CAPTCHA多少小時？ 標準 = 72
 config_hcaptcha_lockip: &CaptchaLockIP "應該CAPTCHA鎖定到IP？"
 config_hcaptcha_lockuser: &CaptchaLockUser "應該CAPTCHA鎖定到用戶？"
 config_hcaptcha_logfile: &CaptchaLogfile "記錄所有的CAPTCHA的嘗試？​要做到這一點，​指定一個文件名到使用。​如果不，​離開這個變量為空白。"
+config_hcaptcha_nonblocked_status_code: &CaptchaNonblockedStatusCode "向未阻止的請求顯示CAPTCHA時應使用哪個狀態代碼？"
 config_hcaptcha_secret: &CaptchaDashboard "可以在您的CAPTCHA服務的儀表板中找到該值。"
 config_hcaptcha_show_api_message: &ShowAPIMessage "顯示API訊息嗎？​True（真）=顯示【標準】；False（假）=不顯示。"
 config_hcaptcha_show_cookie_warning: &ShowCookieWarning "顯示cookie警告嗎？​True（真）=顯示【標準】；False（假）=不顯示。"
@@ -151,6 +152,7 @@ config_recaptcha_expiry: *CaptchaExpiry
 config_recaptcha_lockip: *CaptchaLockIP
 config_recaptcha_lockuser: *CaptchaLockUser
 config_recaptcha_logfile: *CaptchaLogfile
+config_recaptcha_nonblocked_status_code: *CaptchaNonblockedStatusCode
 config_recaptcha_secret: *CaptchaDashboard
 config_recaptcha_show_api_message: *ShowAPIMessage
 config_recaptcha_show_cookie_warning: *ShowCookieWarning

@@ -126,6 +126,7 @@ config_hcaptcha_expiry: &CaptchaExpiry "จำนวนชั่วโมงท�
 config_hcaptcha_lockip: &CaptchaLockIP "ล็อค CAPTCHA ด้วย IP หรือไม่?"
 config_hcaptcha_lockuser: &CaptchaLockUser "ล็อค CAPTCHA ด้วยผู้ใช้หรือไม่?"
 config_hcaptcha_logfile: &CaptchaLogfile "บันทึกความพยายาม CAPTCHA ทั้งหมดหรือไม่? ถ้าใช่ ระบุชื่อที่จะใช้สำหรับไฟล์บันทึก. ถ้าไม่ ปล่อยให้ตัวแปรนี้ว่างเปล่า."
+config_hcaptcha_nonblocked_status_code: &CaptchaNonblockedStatusCode "ควรใช้รหัสสถานะใดเมื่อแสดง CAPTCHA สำหรับคำขอที่ไม่ถูกบล็อก?"
 config_hcaptcha_secret: &CaptchaDashboard "ค่านี้สามารถพบได้ในแดชบอร์ดสำหรับบริการ CAPTCHA ของคุณ."
 config_hcaptcha_show_api_message: &ShowAPIMessage "แสดงข้อความ API ไหม? True = ทำ [ค่าเริ่มต้น]; False = ไม่ทำ."
 config_hcaptcha_show_cookie_warning: &ShowCookieWarning "แสดงคำเตือนเกี่ยวกับคุกกี้หรือไม่? True = ทำ [ค่าเริ่มต้น]; False = ไม่ทำ."
@@ -151,6 +152,7 @@ config_recaptcha_expiry: *CaptchaExpiry
 config_recaptcha_lockip: *CaptchaLockIP
 config_recaptcha_lockuser: *CaptchaLockUser
 config_recaptcha_logfile: *CaptchaLogfile
+config_recaptcha_nonblocked_status_code: *CaptchaNonblockedStatusCode
 config_recaptcha_secret: *CaptchaDashboard
 config_recaptcha_show_api_message: *ShowAPIMessage
 config_recaptcha_show_cookie_warning: *ShowCookieWarning

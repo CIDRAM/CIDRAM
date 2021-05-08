@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6.dat
 
-# Version: 2021.120.618
-# Last modified: 2021.05.02
+# Version: 2021.127.421
+# Last modified: 2021.05.08
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage, i.e., with ignore.dat, with CAPTCHA, with "extended rules" (default bypasses): « [x]Low [ ]Medium [ ]High »
@@ -487,22 +487,27 @@ Tag: GorillaServers, Inc
 
 
 # ASN 31798 ("KW Datacenter").
-# Stop Forum Spam (SFS) listings: 59.
-# Updated: 2020.10.19
+# Canadian multiplay network. Primarily a server farm/leaser, but also provides
+# domestic internet connectivity. Care needed when updating. Listing all cloud,
+# but of the rest, listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 1,148.
+# Updated: 2021.05.08
 
 2607:8880::/32 Deny Cloud
 Origin: CA
-2a06:e881:3200::/44 Deny Cloud
-Origin: CH
-2a0e:b107:2a0::/44 Deny Cloud
-Origin: DE
+Profile: Domestic ISP;Infrastructure;Multiplay;Webhosting
 Tag: KW Datacenter
+---
+recaptcha:
+ enabled: true
+hcaptcha:
+ enabled: true
 
 
 # ASN 17439 ("Netmagic Datacenter Mumbai").
 # A source of SSH and brute-force attacks.
-# Stop Forum Spam (SFS) listings: 102.
-# Updated: 2020.10.19
+# Stop Forum Spam (SFS) listings: 128.
+# Updated: 2021.05.08
 
 2001:df0:411::/48 Deny Cloud
 2001:df0:3a00::/48 Deny Cloud
@@ -520,7 +525,10 @@ Tag: KW Datacenter
 2401:8800:a00::/40 Deny Cloud
 2401:8800:c00::/40 Deny Cloud
 2401:8800:e00::/40 Deny Cloud
+2406:69c0:1000::/36 Deny Cloud
+2406:69c0:2000::/36 Deny Cloud
 Origin: IN
+Profile: Infrastructure;Webhosting
 Tag: Netmagic Datacenter Mumbai
 
 
@@ -528,23 +536,24 @@ Tag: Netmagic Datacenter Mumbai
 # A source of SSH, SQLi, and brute-force attacks. A possible staging point for
 # social engineering and extortion campaigns, according to some reports found
 # via AbuseIPDB (unverified/unconfirmed).
-# Updated: 2020.10.19
+# Updated: 2020.10.19 / Checked: 2021.05.08
 
 2404:7e80:1000::/36 Deny Cloud
 2404:7e80:2000::/36 Deny Cloud
 2404:7e80:3000::/48 Deny Cloud
 2404:7e80:4000::/36 Deny Cloud
 Origin: IN
+Profile: Webhosting
 Tag: NxtGen Datacenter
 
 
 # ASN 197765 ("Autonomous public institution High technology park IT-park").
 # A source of brute-force and SSH attacks.
-# Stop Forum Spam (SFS) listings: 1.
-# Updated: 2020.10.19
+# Updated: 2020.10.19 / Checked: 2021.05.06
 
 2a00:dac0::/32 Deny Cloud
 Origin: RU
+Profile: Infrastructure;Webhosting
 Tag: IT Park
 
 
@@ -561,26 +570,37 @@ Tag: IMAQLIQ
 
 # ASN 41722 ("Miran Ltd").
 # A source of brute-force and SSH attacks.
-# Stop Forum Spam (SFS) listings: 5.
-# Updated: 2020.10.19
+# Stop Forum Spam (SFS) listings: 8.
+# Updated: 2020.10.19 / Checked: 2021.05.06
 
 2a03:21c0::/32 Deny Cloud
 Origin: RU
+Profile: Dedicated;Infrastructure;Webhosting
 Tag: Miran Ltd
+
+
+# ASN 44922 ("MEDYABIM INTERNET HIZMETLERI").
+# XMLRPC attacks detected from this network.
+# Updated: 2021.05.08
+
+2a03:400::/32 Deny Cloud
+Origin: TR
+Profile: Infrastructure
+Tag: MEDYABIM INTERNET HIZMETLERI
 
 
 # ASN 19969 ("Joe's Datacenter, LLC").
 # Dedicated data center. A *huge* source of spam and unwanted traffic!
 # Subtract 44.0.0.0/9, 44.128.0.0/10 (clean).
-# Stop Forum Spam (SFS) listings: 4,555.
-# Updated: 2020.10.19
+# Stop Forum Spam (SFS) listings: 8,368.
+# Updated: 2021.05.06
 
-2a0f:9bc0::/30 Deny Cloud
-Origin: GB
 2a00:55a0:7::/48 Deny Cloud
 2a00:55a0:9::/48 Deny Cloud
 2a00:55a0:11::/48 Deny Cloud
 Origin: IL
+2a0f:9bc0::/30 Deny Cloud
+Origin: LT
 2001:470:32::/48 Deny Cloud
 2602:fed3:1::/48 Deny Cloud
 2602:fed3:2::/47 Deny Cloud
@@ -588,9 +608,8 @@ Origin: IL
 2602:fed3:8::/48 Deny Cloud
 2602:ffc5:10a::/48 Deny Cloud
 2604:5800::/32 Deny Cloud
-2620:128:7002::/48 Deny Cloud
 Origin: US
-Profile: Dedicated
+Profile: Dedicated;Infrastructure
 Tag: Joe's Datacenter, LLC
 
 
@@ -3264,8 +3283,8 @@ Tag: Huawei Cloud Service
 
 # ASN 38001 ("NewMedia Express Pte Ltd. Singapore Web Hosting Service Provider").
 # Caught trying to DDoS SFS.
-# Stop Forum Spam (SFS) listings: 240.
-# Updated: 2020.04.27 / Checked: 2020.10.19
+# Stop Forum Spam (SFS) listings: 190.
+# Updated: 2021.05.08
 
 2402:2f80:1::/48 Deny Cloud
 2402:2f80:8::/48 Deny Cloud
@@ -3274,7 +3293,14 @@ Origin: AU
 Origin: GI
 2403:fa40:1::/48 Deny Cloud
 Origin: NL
-2406:f400::/32 Deny Cloud
+2406:f400::/44 Deny Cloud
+2406:f400:20::/44 Deny Cloud
+2406:f400:40::/44 Deny Cloud
+2406:f400:80::/44 Deny Cloud
+2406:f400:b0::/44 Deny Cloud
+2406:f400:100::/44 Deny Cloud
+2406:f400:130::/44 Deny Cloud
+2406:f400:161::/48 Deny Cloud
 2407:2f00:103::/48 Deny Cloud
 Origin: SG
 Profile: Webhosting
@@ -3421,16 +3447,18 @@ Tag: Cyber Wurx LLC
 
 
 # ASN 60117 ("Host Sailor Ltd").
-# Stop Forum Spam (SFS) listings: 234.
-# Updated: 2020.04.27 / Checked: 2020.10.19
+# Webhosting provider. DE ranges as proxy; The rest as cloud.
+# Stop Forum Spam (SFS) listings: 336.
+# Updated: 2021.05.08
 
-2a04:dd00::/31 Deny Cloud
-Origin: AE
 2a03:660::/32 Deny Cloud
+2a04:dd00::/31 Deny Cloud
+2a04:dd02::/32 Deny Cloud
 2a05:9340::/31 Deny Cloud
 2a05:9342::/32 Deny Cloud
 2a06:3d80::/29 Deny Cloud
-Origin: NL
+Origin: AE
+Profile: Webhosting
 Tag: Host Sailor Ltd
 
 
@@ -4204,15 +4232,17 @@ Profile: Webhosting
 Tag: Oy Creanova Hosting
 
 
-# ASNs 49505, 50340, 60084, 61976 ("Selectel Ltd").
+# ASNs 43647, 49505, 50340, 61976 ("Selectel Ltd").
 # Data center + server farm; SSH and brute-force attacks; A source of spam.
-# Stop Forum Spam (SFS) listings: 10,636 (AS49505), 3,349 (AS50340).
-# Updated: 2020.06.08 / Checked: 2020.10.30
+# Stop Forum Spam (SFS) listings: 33,921 (AS49505), 2,026 (AS50340).
+# Updated: 2021.05.06
 
 2a00:ab00::/32 Deny Cloud
 2a0d:3c44::/32 Deny Cloud
 Origin: RU
-Profile: Webhosting
+2a0d:1642:1::/48 Deny Cloud
+Origin: SC
+Profile: Dedicated;Webhosting
 Tag: Selectel Ltd
 
 
@@ -4554,8 +4584,10 @@ Tag: Aruba S.p.A
 
 
 # ASN 45671 ("Wholesale Services Provider").
-# Stop Forum Spam (SFS) listings: 629.
-# Updated: 2021.02.10
+# Australian server farm/leaser. Spam, brute-force, webapp and hack attacks
+# detected from here.
+# Stop Forum Spam (SFS) listings: 792.
+# Updated: 2021.05.06
 
 2001:df1:6800::/48 Deny Cloud
 2001:df5:1680::/48 Deny Cloud
@@ -4572,6 +4604,7 @@ Tag: Aruba S.p.A
 2400:d400:1008::/48 Deny Cloud
 2400:d400:1337::/48 Deny Cloud
 2400:d400:1487::/48 Deny Cloud
+2400:d400:5648::/48 Deny Cloud
 2400:d400:9897::/48 Deny Cloud
 2400:d400:9898::/48 Deny Cloud
 2400:d400:b00b::/48 Deny Cloud
@@ -4586,7 +4619,8 @@ Origin: AU
 Origin: NL
 2400:7180::/32 Deny Cloud
 Origin: NZ
-Tag: Servers Australia
+Profile: Frequent changes;Infrastructure;Webhosting
+Tag: Wholesale Services Provider
 
 
 # ASN 49981 ("WorldStream").

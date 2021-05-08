@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_isps.dat
 
-# Version: 2021.120.618
-# Last modified: 2021.05.02
+# Version: 2021.127.421
+# Last modified: 2021.05.08
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage, i.e., with ignore.dat, with CAPTCHA, with "extended rules" (default bypasses): « [ ]Low [x]Medium [ ]High »
@@ -762,17 +762,17 @@ hcaptcha:
 # Interlaces with numerous providers and contains a large portion of Chinese
 # human access endpoints. Can't easily ignore the unwanted traffic coming from
 # this ASN (spam events, hack attempts, brute-force attempts, probing, etc),
-# nor its listing at a number of BLs. Marked for use with reCAPTCHA to reduce
+# nor its listing at a number of BLs. Marked for use with CAPTCHAs to reduce
 # the false positive risk. Websites intended for a Chinese audience should keep
 # this section listed in their ignore.dat file.
-# Stop Forum Spam (SFS) listings: 4,378.
-# Updated: 2020.10.19
+# Stop Forum Spam (SFS) listings: 3,517.
+# Updated: 2021.05.06
 
-2401:1d40:2000::/48 Deny Generic
-2401:1d40:2100::/48 Deny Generic
+2400:9600:8800::/48 Deny Generic
 2401:1d40:2f00::/48 Deny Generic
 2402:6f40:1::/48 Deny Generic
 2403:1ec0:1610::/48 Deny Generic
+2403:a200:a1ff::/48 Deny Generic
 2405:7040:6000::/48 Deny Generic
 240e:18::/31 Deny Generic
 240e:2e::/33 Deny Generic
@@ -786,10 +786,6 @@ hcaptcha:
 240e:e5:8000::/33 Deny Generic
 240e:e6::/32 Deny Generic
 240e:106:c000::/34 Deny Generic
-240e:108:21::/48 Deny Generic
-240e:108:41::/48 Deny Generic
-240e:108:4a::/48 Deny Generic
-240e:108:83::/48 Deny Generic
 240e:108:11a1::/48 Deny Generic
 240e:108:11a2::/48 Deny Generic
 240e:109:8021::/48 Deny Generic
@@ -804,10 +800,6 @@ hcaptcha:
 240e:698:2100::/40 Deny Generic
 240e:788::/29 Deny Generic
 240e:96c::/30 Deny Generic
-240e:980:2100::/40 Deny Generic
-240e:980:4100::/40 Deny Generic
-240e:980:4a00::/40 Deny Generic
-240e:980:8300::/40 Deny Generic
 240e:982:a100::/40 Deny Generic
 240e:982:a200::/40 Deny Generic
 Origin: CN
@@ -2568,15 +2560,34 @@ hcaptcha:
 
 
 # ASN 5607 ("Sky UK Limited").
-# A domestic ISP from the UK, but forum spam incidents detected from some
-# specific addresses, plus Mirai detected at some specific addresses. Listing
-# just the specific offending addresses here (not the whole network).
-# %Listed, abuseat.org (CBL-Listed): 0.11%.
-# Stop Forum Spam (SFS) listings: 986.
-# Updated: 2020.10.23
+# UK domestic ISP / broadband provider. Spam and Mirai detected here.
+# Listing just the affected ranges/addresses only.
+# %Listed, abuseat.org (CBL-Listed): 0.37%.
+# Stop Forum Spam (SFS) listings: 1,412.
+# Updated: 2021.05.08
 
-2a02:c7f:c233:a500::/64 Deny Spam
-2a02:c7f:cad9:1500::/64 Deny Spam
+2a02:c7d:51b7:d000::/64 Deny Spam
+2a02:c7d:7b0e:e00::/64 Deny Spam
+2a02:c7d:7e30:6400::/64 Deny Spam
+2a02:c7d:ca48:1900::/64 Deny Spam
+2a02:c7d:ccb6:1300::/64 Deny Spam
+2a02:c7f:c99:100::/64 Deny Spam
+2a02:c7f:1829:3800::/64 Deny Spam
+2a02:c7f:360a:3c00::/64 Deny Spam
+2a02:c7f:4454:c200::/64 Deny Spam
+2a02:c7f:48c8:9200::/64 Deny Spam
+2a02:c7f:584c:d700::/64 Deny Spam
+2a02:c7f:64b6:c00::/64 Deny Spam
+2a02:c7f:7c38:1100::/64 Deny Spam
+2a02:c7f:8e97:9900::/64 Deny Spam
+2a02:c7f:9910:7e00::/64 Deny Spam
+2a02:c7f:a446:a100::/64 Deny Spam
+2a02:c7f:a902:7b00::/64 Deny Spam
+2a02:c7f:c822:b300::/64 Deny Spam
+2a02:c7f:d341:600::/64 Deny Spam
+2a02:c7f:ea2c:2f00::/64 Deny Spam
+2a02:c7f:ecc3:b700::/64 Deny Spam
+2a02:c7f:fb01:9b00::/64 Deny Spam
 Origin: GB
 Profile: Domestic ISP
 Tag: Sky UK Limited

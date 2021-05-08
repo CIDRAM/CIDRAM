@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2021.05.01).
+ * This file: Functions file (last modified: 2021.05.08).
  */
 
 /** Autoloader for CIDRAM classes. */
@@ -1740,9 +1740,9 @@ $CIDRAM['GZCompressFile'] = function (string $File): bool {
  * @return bool False when log rotation is disabled or errors occur; True otherwise.
  */
 $CIDRAM['LogRotation'] = function (string $Pattern) use (&$CIDRAM): bool {
-    $Action = empty($CIDRAM['Config']['general']['log_rotation_action']) ? '' : $CIDRAM['Config']['general']['log_rotation_action'];
-    $Limit = empty($CIDRAM['Config']['general']['log_rotation_limit']) ? 0 : $CIDRAM['Config']['general']['log_rotation_limit'];
-    if (!$Limit || ($Action !== 'Delete' && $Action !== 'Archive')) {
+    $Limit = $CIDRAM['Config']['general']['log_rotation_limit'] ?? 0;
+    $Action = $CIDRAM['Config']['general']['log_rotation_action'] ?? '';
+    if ($Limit < 1 || ($Action !== 'Delete' && $Action !== 'Archive')) {
         return false;
     }
     $Pattern = $CIDRAM['BuildLogPattern']($Pattern);
@@ -1760,6 +1760,8 @@ $CIDRAM['LogRotation'] = function (string $Pattern) use (&$CIDRAM): bool {
     $Err = 0;
     if ($Count > $Limit) {
         asort($Arr, SORT_NUMERIC);
+        $StageRestore = $CIDRAM['Stage'] ?? '';
+        $CIDRAM['Stage'] = '';
         foreach ($Arr as $Item => $Modified) {
             if ($Action === 'Archive') {
                 $Err += !$CIDRAM['GZCompressFile']($CIDRAM['Vault'] . $Item);
@@ -1773,6 +1775,7 @@ $CIDRAM['LogRotation'] = function (string $Pattern) use (&$CIDRAM): bool {
                 break;
             }
         }
+        $CIDRAM['Stage'] = $StageRestore;
     }
     return $Err === 0;
 };

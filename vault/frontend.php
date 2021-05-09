@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2021.05.07).
+ * This file: Front-end handler (last modified: 2021.05.09).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -4181,7 +4181,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'aux-edit' && $CIDRAM['FE']['Per
                     if (!isset(
                         $CIDRAM['Data']['IfOrNot'][$CIDRAM['IterantInner']],
                         $CIDRAM['Data']['SourceValue'][$CIDRAM['IterantInner']]
-                    )) {
+                    ) || $CIDRAM['Data']['SourceValue'][$CIDRAM['IterantInner']] === '') {
                         continue;
                     }
                     if (!isset($CIDRAM['Data'][$CIDRAM['Data']['Action']])) {

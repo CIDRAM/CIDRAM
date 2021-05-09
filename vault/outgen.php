@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Output generator (last modified: 2021.05.07).
+ * This file: Output generator (last modified: 2021.05.09).
  */
 
 /** Initialise cache. */
@@ -862,6 +862,7 @@ if (!empty($CIDRAM['Aux Redirect']) && !empty($CIDRAM['Aux Status Code']) && $CI
     header('HTTP/1.1 ' . $CIDRAM['Aux Status Code'] . ' ' . $CIDRAM['Status']);
     header('Status: ' . $CIDRAM['Aux Status Code'] . ' ' . $CIDRAM['Status']);
     header('Location: ' . $CIDRAM['Aux Redirect']);
+    $CIDRAM['Events']->fireEvent('final');
     die;
 }
 

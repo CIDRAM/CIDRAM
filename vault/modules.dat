@@ -2,8 +2,9 @@
 module_cookies.php:
  Name: Optional cookie scanner module
  False Positive Risk: Low
- Minimum Required: 1.13.1-DEV+19205785
- Minimum Required PHP: 5.4.0
+ Dependencies:
+  PHP: >=5.4
+  CIDRAM Core: >=1.13.1
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM-Extras/master/modules/modules.dat
  Uninstallable: true
  Used with: modules
@@ -11,8 +12,9 @@ module_cookies.php:
 module_extras.php:
  Name: Optional security extras module
  False Positive Risk: Medium
- Minimum Required: 1.13.1-DEV+19205785
- Minimum Required PHP: 5.4.0
+ Dependencies:
+  PHP: >=5.4
+  CIDRAM Core: >=1.13.1
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM-Extras/master/modules/modules.dat
  Uninstallable: true
  Used with: modules

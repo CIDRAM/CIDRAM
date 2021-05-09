@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2021.05.08).
+ * This file: Functions file (last modified: 2021.05.09).
  */
 
 /** Autoloader for CIDRAM classes. */
@@ -2079,7 +2079,7 @@ $CIDRAM['Aux'] = function () use (&$CIDRAM): void {
             }
 
             /** Flag for successful matches. */
-            $Matched = false;
+            $Matched = ($Logic === 'All' && !empty($Data[$Mode]['But not if matches']) && empty($Data[$Mode]['If matches']));
 
             /** Match exceptions. */
             if (!empty($Data[$Mode]['But not if matches'])) {

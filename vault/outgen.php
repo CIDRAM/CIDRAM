@@ -261,6 +261,18 @@ if (!empty($CIDRAM['TestResults']) && $CIDRAM['BlockInfo']['SignatureCount'] && 
 
     /** Number of infractions to append. */
     $CIDRAM['TrackCount'] = !empty($CIDRAM['Config']['Options']['TrackCount']) ? $CIDRAM['Config']['Options']['TrackCount'] : 1;
+
+    /** Tracking options override. */
+    if (!empty($CIDRAM['Tracking options override'])) {
+        if ($CIDRAM['Tracking options override'] === 'extended') {
+            $CIDRAM['TrackTime'] = $CIDRAM['Now'] + floor($CIDRAM['Config']['signatures']['default_tracktime'] * 52.1428571428571);
+            $CIDRAM['TrackCount'] = 1000;
+        } elseif ($CIDRAM['Tracking options override'] === 'default') {
+            $CIDRAM['TrackTime'] = $CIDRAM['Now'] + $CIDRAM['Config']['signatures']['default_tracktime'];
+            $CIDRAM['TrackCount'] = 1;
+        }
+    }
+
     if (isset(
         $CIDRAM['Tracking'][$CIDRAM['BlockInfo']['IPAddr']]['Count'],
         $CIDRAM['Tracking'][$CIDRAM['BlockInfo']['IPAddr']]['Time']

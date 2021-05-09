@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Configuration defaults file (last modified: 2021.05.07).
+# This file: Configuration defaults file (last modified: 2021.05.09).
 ##/
 
 Config Defaults:
@@ -693,6 +693,7 @@ Provide:
     enabled: false
    hcaptcha:
     enabled: false
+  Tracking options override: false
   Suppress output template: false
   Trackable: true
   Flag Don't Log: false
@@ -782,3 +783,14 @@ Provide:
      Decoration: *RedMiddle
      Sets:
       Trackable: false
+   Values for IP Tracking:
+    Enforce extended IP tracking options:
+     Label: "label_aux_special_tracking_extended"
+     Decoration: &RedLeft "background:linear-gradient(90deg,rgba(64,0,0,0),rgba(255,128,128,0.5));"
+     Sets:
+      Tracking options override: "extended"
+    Enforce default IP tracking options:
+     Label: "label_aux_special_tracking_default"
+     Decoration: &OrangeMiddle "background-color:rgba(255,153,0,0.5);"
+     Sets:
+      Tracking options override: "default"

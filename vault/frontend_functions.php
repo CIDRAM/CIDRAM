@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2021.05.01).
+ * This file: Front-end functions file (last modified: 2021.05.09).
  */
 
 /**
@@ -3551,6 +3551,9 @@ $CIDRAM['AuxGenerateFEData'] = function (bool $Mode = false) use (&$CIDRAM): str
                             $Values = [$Values];
                         }
                         foreach ($Values as $Value) {
+                            if ($Value === '') {
+                                $Value = '&nbsp;';
+                            }
                             $Operator = $CIDRAM['OperatorFromAuxValue']($Value, true);
                             $Output .= "\n              <dd><span style=\"float:" . $CIDRAM['FE']['FE_Align'] . '">' . $ThisSource . '&nbsp;' . $Operator . '&nbsp;</span><code>' . $Value . '</code></dd>';
                         }
@@ -3566,6 +3569,9 @@ $CIDRAM['AuxGenerateFEData'] = function (bool $Mode = false) use (&$CIDRAM): str
                             $Values = [$Values];
                         }
                         foreach ($Values as $Value) {
+                            if ($Value === '') {
+                                $Value = '&nbsp;';
+                            }
                             $Operator = $CIDRAM['OperatorFromAuxValue']($Value);
                             $Output .= "\n              <dd><span style=\"float:" . $CIDRAM['FE']['FE_Align'] . '">' . $ThisSource . '&nbsp;' . $Operator . '&nbsp;</span><code>' . $Value . '</code></dd>';
                         }

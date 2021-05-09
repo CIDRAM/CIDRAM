@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Configuration handler (last modified: 2021.04.27).
+ * This file: Configuration handler (last modified: 2021.05.09).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -49,11 +49,9 @@ if (!is_readable($CIDRAM['Vault'] . 'config.yaml')) {
 }
 
 if (isset($GLOBALS['CIDRAM_Config'])) {
-
     /** Provides a means of running tests with configuration values specific to those tests. */
     $CIDRAM['Config'] = $GLOBALS['CIDRAM_Config'];
 } else {
-
     /** Attempts to parse the standard CIDRAM configuration file. */
     $CIDRAM['Config'] = parse_ini_file($CIDRAM['Vault'] . 'config.ini', true);
 }
@@ -71,7 +69,6 @@ if (
     !preg_match('/[^.\da-z-]/', $CIDRAM['Domain']) &&
     is_readable($CIDRAM['Vault'] . $CIDRAM['Domain'] . '.config.ini')
 ) {
-
     /** Attempts to parse the overrides file found (this is configuration specific to the requested domain). */
     if ($CIDRAM['Overrides'] = parse_ini_file($CIDRAM['Vault'] . $CIDRAM['Domain'] . '.config.ini', true)) {
         array_walk($CIDRAM['Overrides'], function ($Keys, $Category) use (&$CIDRAM) {

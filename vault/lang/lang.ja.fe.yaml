@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Japanese language data for the front-end (last modified: 2021.05.09).
+# This file: Japanese language data for the front-end (last modified: 2021.05.10).
 ##/
 
 Extended Description Bypasses: "メインパッケージに通常含まれているデフォルト・シグネチャ・バイパス。"
@@ -129,7 +129,7 @@ config_hcaptcha_logfile: &CaptchaLogfile "キャプチャ試行の記録。​�
 config_hcaptcha_nonblocked_status_code: &CaptchaNonblockedStatusCode "ブロックされていないリクエストにキャプチャを表示する場合、どのステータス・コードを使用する必要がありますか？"
 config_hcaptcha_secret: &CaptchaDashboard "この値は、キャプチャ・サービスのダッシュボードに表示されます。"
 config_hcaptcha_show_api_message: &ShowAPIMessage "ＡＰＩメッセージを表示しますか？ True = はい（Default/デフォルルト）。 False = いいえ。"
-config_hcaptcha_show_cookie_warning: &ShowCookieWarning "Cookie（クッキー）の警告を表示しますか？ True = はい（Default/デフォルルト）。 False = いいえ。"
+config_hcaptcha_show_cookie_warning: &ShowCookieWarning "クッキーの警告を表示しますか？ True = はい（Default/デフォルルト）。 False = いいえ。"
 config_hcaptcha_signature_limit: &CaptchaSignatureLimit "キャプチャが取り消される前に許可されるシグネチャの最大数。​Default/デフォルルト = １。"
 config_hcaptcha_sitekey: *CaptchaDashboard
 config_hcaptcha_usemode: &CaptchaUseMode "キャプチャはいつ提供する必要がありますか？​注：ホワイト・リストされまたは検証済みでブロックされていないリクエストは、CAPTCHAを完了する必要はありません。"

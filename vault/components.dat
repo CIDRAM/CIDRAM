@@ -1,7 +1,7 @@
 ---
 CIDRAM:
  Name: CIDRAM
- Version: 1.19.0-DEV+21129708
+ Version: 1.19.0-DEV+21132695
  Minimum Required: 1.0.0
  Dependencies:
   PHP: >=5.4
@@ -238,12 +238,12 @@ CIDRAM:
    - ee98b16e3880618a5fbf6b7e70f89eb1dbd36ea4d83a91f0b0060f8830d461bc:1661
    - 97df7b28ced1689bf3c8ae0a715605a2db1d25f4449fface23a517d81a56f517:1203
    - 8611a269bd1a4b328ea03c12e0e547fc4f533d8e8d84da3cc6f2e39ef9f501c4:2568
-   - 2dade70a5b21a2c78fd6b3ff9a6ef45c4ff5fcde28de2853cab40703f17d507a:4857
+   - f3c27c966cee9ba37d0fd95f47afd80150568d86a9532edd2b439bc813d2aa4e:4893
  Reannotate: components.dat
 IPv4:
  Extended Description: Default IPv4 signatures normally included with the main package. Blocks unwanted cloud services and non-human endpoints.
  False Positive Risk: Low
- Version: 2021.127.421
+ Version: 2021.132.634
  Minimum Required: 1.0.0
  Dependencies:
   CIDRAM Core: >=1
@@ -256,7 +256,7 @@ IPv4:
   To:
    - ipv4.dat
   Checksum:
-   - 3c459c37b73c44a77aec065a0bc716723f8fa65d702a4c1c096c1fc3272d4065:948728
+   - cddd3df29bdccb7e9667c1d99cd89d6740aa69873196bec137e512d56630fdcf:950772
  Used with: ipv4
  Reannotate: components.dat
 IPv4-Bogons:
@@ -280,7 +280,7 @@ IPv4-Bogons:
 IPv4-ISPs:
  Extended Description: Default IPv4 signatures normally included with the main package. Blocks dangerous and spammy ISPs.
  False Positive Risk: Medium
- Version: 2021.127.421
+ Version: 2021.132.634
  Minimum Required: 1.0.0
  Dependencies:
   CIDRAM Core: >=1
@@ -293,7 +293,7 @@ IPv4-ISPs:
   To:
    - ipv4_isps.dat
   Checksum:
-   - d3eaabdf02bbbb8009dd48f102558b1c65420b09c994255856b676a6cb8cb7b6:452525
+   - f406084d0f59d45e80781dc92822fcbc2916a3f309f0fc01b58cd2ce6968f433:459219
  Used with: ipv4
  Reannotate: components.dat
 IPv4-Nonblocking:
@@ -334,7 +334,7 @@ IPv4-Other:
 IPv6:
  Extended Description: Default IPv6 signatures normally included with the main package. Blocks unwanted cloud services and non-human endpoints.
  False Positive Risk: Low
- Version: 2021.127.421
+ Version: 2021.132.634
  Minimum Required: 1.0.0
  Dependencies:
   CIDRAM Core: >=1
@@ -347,7 +347,7 @@ IPv6:
   To:
    - ipv6.dat
   Checksum:
-   - 84c6df020b998275481da434bc2dde385de205d125fc22346d0e1b6b4dfa80f7:254446
+   - 15cdc6c1e2752ebf4b80f0cc484040c9337d15d55ab1d0c182c4f515858b6eb5:255316
  Used with: ipv6
  Reannotate: components.dat
 IPv6-Bogons:
@@ -371,7 +371,7 @@ IPv6-Bogons:
 IPv6-ISPs:
  Extended Description: Default IPv6 signatures normally included with the main package. Blocks dangerous and spammy ISPs.
  False Positive Risk: Medium
- Version: 2021.127.421
+ Version: 2021.132.634
  Minimum Required: 1.0.0
  Dependencies:
   CIDRAM Core: >=1
@@ -384,7 +384,7 @@ IPv6-ISPs:
   To:
    - ipv6_isps.dat
   Checksum:
-   - bf49389bc048e76304636ef6bd53778c0c1c62ab042bf09abb902987c9f9027c:85213
+   - 1626e0d1d237b0144f4f89037e0b4cac0a0a1e00dd6778ef06160dbf36721e05:83954
  Used with: ipv6
  Reannotate: components.dat
 IPv6-Nonblocking:
@@ -652,7 +652,7 @@ l10n/it:
 l10n/ja:
  Name: L10N: 日本語
  Extended Description: 日本語言語データ
- Version: 2021.128.578
+ Version: 2021.133.577
  Minimum Required: 1.10.0
  Dependencies:
   CIDRAM Core: ^1.10
@@ -669,7 +669,7 @@ l10n/ja:
    - lang/lang.ja.yaml
   Checksum:
    - 000d9859ca17c0daa637cdaff12090a8b3bb638289b5d1fd035e43c6369f362b:4760
-   - af6fcafa220325d3ebc3ca4a2c110abbcf6d828fd60b283075b4a886eb6c610c:67068
+   - aada384417d42e2274b93ec2a9b4cef0c7b41eaea67d7e9727bfc8ebcb6167a9:67056
    - ac2c8ab3dfd7a8cf497f84b326091dccc06d9db78de3d8f293f35adfe3da8cab:5307
  Reannotate: components.dat
 l10n/ko:

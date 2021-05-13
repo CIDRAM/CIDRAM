@@ -1,8 +1,8 @@
 # IPv4 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv4.dat
 
-# Version: 2021.127.421
-# Last modified: 2021.05.08
+# Version: 2021.132.634
+# Last modified: 2021.05.13
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage, i.e., with ignore.dat, with CAPTCHA, with "extended rules" (default bypasses): « [x]Low [ ]Medium [ ]High »
@@ -9872,7 +9872,7 @@ Tag: OJSC RTComm.RU
 188.225.39.168/32 Deny Spam
 217.25.94.180/32 Deny Spam
 Origin: RU
-Profile: Domestic ISP;Infrastructure;Multiplay;Webhosting
+Profile: Domestic ISP;Infrastructure;Multiplay;Tor endpoints here;Webhosting
 Tag: OOO TimeWeb
 
 
@@ -30366,11 +30366,14 @@ Tag: NETH LLC
 
 
 # ASN 200107 ("Kaspersky Lab AO").
-# Some specific ranges caught port scanning. Just listing those only for now.
-# Updated: 2020.11.23
+# Port scans, hacking, and webapp attacks detected from some ranges/addresses
+# here. Listing just the affected ranges/addresses only.
+# Updated: 2021.05.13
 
-77.74.177.0/24 Deny Cloud
+77.74.177.0/24 Deny Malware
+93.159.230.0/24 Deny Malware
 Origin: RU
+Profile: Infrastructure
 Tag: Kaspersky Lab AO
 
 
@@ -30428,7 +30431,7 @@ Origin: PL
 88.218.48.0/22 Deny Cloud
 185.104.112.0/24 Deny Cloud
 Origin: RU
-Profile: Dedicated;Webhosting
+Profile: Dedicated;Tor endpoints here;Webhosting
 Tag: Artnet Sp. z o.o
 
 
@@ -32451,7 +32454,7 @@ Tag: Trustwave Holdings, Inc
 194.36.166.0/24 Deny Cloud
 217.24.80.0/20 Deny Cloud
 Origin: FR
-Profile: Webhosting
+Profile: Tor endpoints here;Webhosting
 Tag: Octopuce s.a.r.l
 
 
@@ -32580,7 +32583,7 @@ Tag: Intergrid Group Pty Ltd
 
 185.10.16.0/23 Deny Malware
 Origin: FR
-Profile: Infrastructure
+Profile: Infrastructure;Tor endpoints here
 Tag: VIRTUA SYSTEMS SAS
 
 
@@ -32684,6 +32687,84 @@ Tag: Talha Bogaz
 Origin: RU
 Profile: Infrastructure
 Tag: Logitel Ltd
+
+
+# ASNs 209132, 209272 ("Alviva Holding Limited").
+# Commercial network. Port scans, hacking, brute-force, and webapp attacks
+# detected from here.
+# Updated: 2021.05.11
+
+88.214.26.0/23 Deny Malware
+Origin: DE
+45.129.137.0/24 Deny Malware
+Origin: LB
+45.227.252.0/24 Deny Malware
+Origin: PA
+92.118.36.0/24 Deny Malware
+Origin: RO
+46.161.40.0/24 Deny Malware
+Origin: RU
+Profile: Infrastructure
+Tag: Alviva Holding Limited
+
+
+# ASN 45045 ("FOP Kazakov Oleksandr Oleksandrovich").
+# Hacking, brute-force, and webapp attacks detected from here.
+# Updated: 2021.05.11
+
+91.203.144.0/22 Deny Malware
+Origin: UA
+Profile: Tor endpoints here;Webhosting
+Tag: Oleksandrovich
+
+
+# ASN 47981 ("Romanenko Stanislav Sergeevich").
+# Hacking, brute-force, and webapp attacks detected from here.
+# Stop Forum Spam (SFS) listings: 6.
+# Updated: 2021.05.11
+
+45.143.203.0/24 Deny Malware
+92.63.196.0/24 Deny Malware
+185.156.72.0/24 Deny Malware
+Origin: RU
+Profile: Webhosting
+Tag: Sergeevich
+
+
+# ASN 197492 ("INEONET SAS").
+# DDoS, SSH, and brute-force attacks, hacking, and port scans detected from
+# here.
+# Stop Forum Spam (SFS) listings: 2.
+# Updated: 2021.05.13
+
+31.169.40.0/21 Deny Cloud
+91.220.248.0/24 Deny Cloud
+185.49.20.0/22 Deny Cloud
+185.217.152.0/22 Deny Cloud
+Origin: FR
+Profile: Webhosting
+Tag: INEONET SAS
+
+
+# ASN 48715 ("Sefroyek Pardaz Engineering Co. LTD").
+# Iranian colo provider and server farm. Brute-force and webapp attacks
+# detected from here.
+# Stop Forum Spam (SFS) listings: 28.
+# Updated: 2021.05.13
+
+185.215.245.0/24 Deny Cloud
+Origin: AU
+88.135.36.0/22 Deny Cloud
+185.18.212.0/22 Deny Cloud
+185.51.200.0/22 Deny Cloud
+185.128.136.0/22 Deny Cloud
+185.141.104.0/22 Deny Cloud
+185.141.132.0/22 Deny Cloud
+193.111.235.0/24 Deny Cloud
+195.211.44.0/22 Deny Cloud
+Origin: IR
+Profile: Infrastructure;Multiplay;Webhosting
+Tag: Sefroyek Pardaz Engineering
 
 
 # ---

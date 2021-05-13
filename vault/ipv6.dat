@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6.dat
 
-# Version: 2021.127.421
-# Last modified: 2021.05.08
+# Version: 2021.132.634
+# Last modified: 2021.05.13
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage, i.e., with ignore.dat, with CAPTCHA, with "extended rules" (default bypasses): « [x]Low [ ]Medium [ ]High »
@@ -7660,7 +7660,7 @@ Tag: Castle Global Inc
 Origin: PL
 2a03:6f00:8::/48 Deny Cloud
 Origin: RU
-Profile: Dedicated;Webhosting
+Profile: Dedicated;Tor endpoints here;Webhosting
 Tag: Artnet Sp. z o.o
 
 
@@ -8318,7 +8318,7 @@ Tag: Trustwave Holdings, Inc
 2001:1b78::/32 Deny Cloud
 2a00:99a0::/33 Deny Cloud
 Origin: FR
-Profile: Webhosting
+Profile: Tor endpoints here;Webhosting
 Tag: Octopuce s.a.r.l
 
 
@@ -8357,6 +8357,39 @@ Origin: LT
 Origin: US
 Profile: Webhosting
 Tag: GTHost
+
+
+# ASNs 209132, 209272 ("Alviva Holding Limited").
+# Commercial network. Port scans, hacking, brute-force, and webapp attacks
+# detected from here.
+# Updated: 2021.05.11
+
+2a09:1d40::/48 Deny Malware
+Origin: LB
+Profile: Infrastructure
+Tag: Alviva Holding Limited
+
+
+# ASN 45045 ("FOP Kazakov Oleksandr Oleksandrovich").
+# Hacking, brute-force, and webapp attacks detected from here.
+# Updated: 2021.05.11
+
+2001:67c:25f4::/48 Deny Malware
+Origin: UA
+Profile: Tor endpoints here;Webhosting
+Tag: Oleksandrovich
+
+
+# ASN 48715 ("Sefroyek Pardaz Engineering Co. LTD").
+# Iranian colo provider and server farm. Brute-force and webapp attacks
+# detected from here.
+# Stop Forum Spam (SFS) listings: 28.
+# Updated: 2021.05.13
+
+2a0a:5e80::/48 Deny Cloud
+Origin: IR
+Profile: Infrastructure;Multiplay;Webhosting
+Tag: Sefroyek Pardaz Engineering
 
 
 # ---

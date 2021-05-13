@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_isps.dat
 
-# Version: 2021.127.421
-# Last modified: 2021.05.08
+# Version: 2021.132.634
+# Last modified: 2021.05.13
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage, i.e., with ignore.dat, with CAPTCHA, with "extended rules" (default bypasses): « [ ]Low [x]Medium [ ]High »
@@ -1785,59 +1785,6 @@ hcaptcha:
  enabled: true
 
 
-# ASNs 9049, 12768, 12772, 16179, 20807, 21311, 21335, 21353, 21442, 24588,
-# 25408, 25446, 30868, 31363, 31483, 31484, 31494, 31585, 31692, 34145, 34150,
-# 34533, 34590, 34925, 39028, 39435, 41002, 41403, 41661, 41668, 41682, 41727,
-# 41754, 41786, 41843, 41854, 42113, 42116, 42145, 42368, 42631, 42682, 42683,
-# 43478, 44727, 45051, 47111, 47398, 47659, 47911, 48201, 48532, 49048, 49874,
-# 50498, 50512, 50542, 50543, 50544, 51035, 51570, 51604, 51645, 51819, 52207,
-# 56330, 56377, 56420, 56969, 56981, 57026, 57041, 57044, 57079, 57378, 58189,
-# 59713, 62287, 197585, 198295, 201495 ('JSC "ER-Telecom Holding"').
-# ER-Telecom is a legit, major domestic ISP in Russia, but also a significant
-# source of spam. Websites intended for a Russian audience should keep this
-# section listed in their ignore.dat file. Section also marked for use with
-# reCAPTCHA by default. Currently listing only the most severely offending
-# ranges in the network (i.e., not the entire network). Also contains some
-# "malware" marked ranges.
-# Updated: 2020.11.23
-
-2a02:2698:6000::/38 Deny Spam
-2a02:2698:6800::/38 Deny Spam
-2a03:1ac0:503:e800::/53 Deny Spam
-2a03:1ac0:5a4:8000::/50 Deny Spam
-2a03:1ac0:5a5:2000::/51 Deny Spam
-2a03:1ac0:5a5:b000::/53 Deny Spam
-2a03:1ac0:5a5:f000::/52 Deny Spam
-2a03:1ac0:5a6:e800::/53 Deny Spam
-2a03:1ac0:5a7:3000::/53 Deny Spam
-2a03:1ac0:5a7:7000::/52 Deny Spam
-2a03:1ac0:2570:2000::/53 Deny Spam
-2a03:1ac0:2570:e000::/52 Deny Spam
-2a03:1ac0:2e00::/48 Deny Spam
-2a03:1ac0:2e93:6000::/51 Deny Spam
-2a03:1ac0:2e93:d000::/52 Deny Spam
-2a03:1ac0:2e93:f000::/53 Deny Spam
-2a03:1ac0:5571:2000::/51 Deny Spam
-2a03:1ac0:5eb4:3800::/53 Deny Spam
-2a03:1ac0:6dc3:e000::/52 Deny Spam
-2a03:1ac0:b0d4:2000::/52 Deny Spam
-2a03:1ac0:b0d4:3800::/53 Deny Spam
-2a03:1ac0:b0d5:2000::/53 Deny Spam
-2a03:1ac0:b0d5:8800::/53 Deny Spam
-2a03:1ac0:b0d6:b000::/53 Deny Spam
-2a03:1ac0:b0d7:4000::/53 Deny Spam
-2a03:1ac0:bcbb:d000::/53 Deny Spam
-2a03:1ac0:d90c:4000::/52 Deny Spam
-Origin: RU
-Profile: Domestic ISP
-Tag: ER-Telecom Holding
----
-recaptcha:
- enabled: true
-hcaptcha:
- enabled: true
-
-
 # ASN 137432 ("BKB Network").
 # Caught using automated hacktools to try hacking into honeypots.
 # Stop Forum Spam (SFS) listings: 17.
@@ -3102,6 +3049,40 @@ hcaptcha:
 Origin: NO
 Profile: Domestic ISP;Multiplay;Webhosting
 Tag: Availo Networks AB
+---
+recaptcha:
+ enabled: true
+hcaptcha:
+ enabled: true
+
+
+# ASNs 60339, 206067 ("Hutchison 3G UK Limited").
+# UK mobile provider. Spam, DNS poisoning, and brute-force attacks detected
+# from here. Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 237 (AS60339), 260 (AS206067).
+# Updated: 2021.05.11
+
+2a04:4a43:4a7f:59d0::/64 Deny Spam
+Origin: GB
+Profile: Domestic ISP
+Tag: Hutchison 3G UK Limited
+---
+recaptcha:
+ enabled: true
+hcaptcha:
+ enabled: true
+
+
+# ASN 15557 ("SFR SA").
+# French fibre network. Spam, hacking, webapp, DDoS, and brute-force attacks
+# detected from here. Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 498.
+# Updated: 2021.05.13
+
+2a02:8440:4611:ffd0::/64 Deny Spam
+Origin: FR
+Profile: Domestic ISP;Infrastructure;Multiplay
+Tag: SFR SA
 ---
 recaptcha:
  enabled: true

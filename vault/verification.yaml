@@ -18,32 +18,33 @@ Search Engine Verification:
  Applebot:
   User Agent: "applebot"
   Closure: "DNS-Reverse-Forward"
-  Valid Domains:
+  Valid domains:
    - ".applebot.apple.com"
 
  # https://help.baidu.com/question?prod_en=master&class=Baiduspider
  # https://help.baidu.com/question?prod_id=99&class=476&id=3001
  Baiduspider/百度:
-  Bypass Flag: "Flag-Bypass-Baidu-Check"
+  Bypass flag: "Flag-Bypass-Baidu-Check"
   User Agent: "baiduspider"
   Closure: "DNS-Reverse-Forward"
-  Valid Domains:
+  Valid domains:
    - ".baidu.com"
    - ".baidu.jp"
 
  # https://blogs.bing.com/webmaster/2012/08/31/how-to-verify-that-bingbot-is-bingbot
  Bingbot:
-  Bypass Flag: "Flag-Bypass-Bingbot-Check"
+  Bypass flag: "Flag-Bypass-Bingbot-Check"
   User Agent Pattern: "~(?:msn|bing)bot|bingpreview~"
   Closure: "DNS-Reverse-Forward"
-  Valid Domains:
+  Valid domains:
    - ".search.msn.com"
+  Single hit bypass: true
 
  # https://duckduckgo.com/duckduckbot
  DuckDuckBot:
   User Agent Pattern: "~duckduck(?:go-favicons-)?bot~"
   Closure: "UA-IP-Match"
-  Valid Domains:
+  Valid domains:
    - "20.191.45.212"
    - "23.21.227.69"
    - "40.88.21.235"
@@ -57,13 +58,14 @@ Search Engine Verification:
    - "54.208.100.253"
    - "54.208.102.37"
    - "107.21.1.8"
+  Single hit bypass: true
 
  # https://support.google.com/webmasters/answer/80553?hl=en
  Googlebot:
-  Bypass Flag: "Flag-Bypass-Googlebot-Check"
+  Bypass flag: "Flag-Bypass-Googlebot-Check"
   User Agent: "googlebot"
   Closure: "DNS-Reverse-Forward"
-  Valid Domains:
+  Valid domains:
    - ".googlebot.com"
    - ".google.com"
 
@@ -71,44 +73,44 @@ Search Engine Verification:
  MojeekBot:
   User Agent: "mojeekbot"
   Closure: "DNS-Reverse-Forward"
-  Valid Domains:
+  Valid domains:
    - ".mojeek.com"
 
  # https://help.qwant.com/bot/
  Qwantify/Bleriot:
   User Agent: "qwantify/bleriot"
   Closure: "DNS-Reverse-Forward"
-  Valid Domains:
+  Valid domains:
    - "search.qwant.com"
 
  # https://napoveda.seznam.cz/en/full-text-search/seznambot-crawler/
  SeznamBot:
   User Agent: "seznambot"
   Closure: "DNS-Reverse-Forward"
-  Valid Domains:
+  Valid domains:
    - ".seznam.cz"
 
  # https://www.sogou.com/docs/help/webmasters.htm#07
  Sogou/搜狗:
   User Agent: "sogou"
   Closure: "DNS-Reverse-Forward"
-  Valid Domains:
+  Valid domains:
    - ".sogou.com"
 
  # https://help.yahoo.com/help/us/ysearch/slurp
  Yahoo/Slurp:
   User Agent: "slurp"
   Closure: "DNS-Reverse-Forward"
-  Valid Domains:
+  Valid domains:
    - ".crawl.yahoo.net"
    - ".yse.yahoo.net"
 
  # https://yandex.com/support/webmaster/robot-workings/check-yandex-robots.xml
  Yandex/Яндекс:
-  Bypass Flag: "Flag-Bypass-Yandex-Check"
+  Bypass flag: "Flag-Bypass-Yandex-Check"
   User Agent: "yandex"
   Closure: "DNS-Reverse-Forward"
-  Valid Domains:
+  Valid domains:
    - ".yandex.com"
    - ".yandex.net"
    - ".yandex.ru"
@@ -117,15 +119,15 @@ Search Engine Verification:
  YoudaoBot:
   User Agent: "youdaobot"
   Closure: "DNS-Reverse-Forward"
-  Valid Domains:
+  Valid domains:
    - ".crawler.youdao.com"
 
  # https://aspiegel.com/petalbot
  PetalBot:
-  Bypass Flag: "Flag-Bypass-PetalBot-Check"
+  Bypass flag: "Flag-Bypass-PetalBot-Check"
   User Agent: "petalbot"
   Closure: "DNS-Reverse-Forward"
-  Valid Domains:
+  Valid domains:
    - ".aspiegel.com"
 
 Social Media Verification:
@@ -134,30 +136,30 @@ Social Media Verification:
  Embedly:
   User Agent: "embedly"
   Closure: "DNS-Reverse-Forward"
-  Reverse Only: true
-  Can Modify Trackable: false
-  Valid Domains:
+  Reverse only: true
+  Can modify trackable: false
+  Valid domains:
    - "embed.ly"
 
  # https://developers.facebook.com/docs/sharing/webmasters/crawler/
  Facebook external hit:
   User Agent: "facebookexternalhit/"
   Closure: "UA-ASN-Match"
-  Valid Domains:
+  Valid domains:
    - "32934"
 
  # https://help.pinterest.com/en/articles/about-pinterest-crawler-0
  Pinterest:
   User Agent: "pinterest"
   Closure: "DNS-Reverse-Forward"
-  Valid Domains:
+  Valid domains:
    - ".pinterest.com"
 
  # https://udger.com/resources/ua-list/bot-detail?bot=Twitterbot#id6168
  Twitterbot:
   User Agent: "twitterbot"
   Closure: "DNS-Reverse-Forward"
-  Valid Domains:
+  Valid domains:
    - ".twttr.com"
 
 Other Verification:
@@ -166,7 +168,7 @@ Other Verification:
  Oracle Data Cloud Crawler:
   User Agent: "grapeshot"
   Closure: "UA-CIDR-Match"
-  Valid Domains:
+  Valid domains:
    - "132.145.9.5/32"
    - "132.145.11.125/32"
    - "132.145.14.70/32"
@@ -190,5 +192,5 @@ Other Verification:
  AdSense:
   User Agent: "mediapartners-google"
   Closure: "DNS-Reverse-Forward"
-  Valid Domains:
+  Valid domains:
    - ".google.com"

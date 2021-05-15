@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2021.05.09).
+ * This file: Functions file (last modified: 2021.05.15).
  */
 
 /** Autoloader for CIDRAM classes. */
@@ -943,9 +943,9 @@ $CIDRAM['DNS-Reverse-Forward'] = function ($Domains, string $Friendly, array $Op
     /** Successfully passed. */
     if ($Pass) {
         /** We're only reversing; Don't resolve. */
-        if (!empty($Options['ReverseOnly'])) {
+        if (!empty($Options['Reverse only'])) {
             /** Disable tracking. */
-            if (!empty($Options['CanModTrackable'])) {
+            if (!empty($Options['Can modify trackable'])) {
                 $CIDRAM['Trackable'] = false;
             }
 
@@ -953,6 +953,14 @@ $CIDRAM['DNS-Reverse-Forward'] = function ($Domains, string $Friendly, array $Op
             if (isset($CIDRAM['BlockInfo']['Verified'])) {
                 $CIDRAM['BlockInfo']['Verified'] = $Friendly;
             }
+
+            /** Single hit bypass. */
+            $CIDRAM['Bypass']((
+                !empty($Options['Single hit bypass']) &&
+                isset($CIDRAM['BlockInfo']['SignatureCount'], $CIDRAM['BlockInfo']['WhyReason']) &&
+                $CIDRAM['BlockInfo']['SignatureCount'] === 1 &&
+                strpos($CIDRAM['BlockInfo']['WhyReason'], '-IPv4') !== false
+            ), 'Single hit bypass (verified request)');
 
             /** Exit. */
             return true;
@@ -967,7 +975,7 @@ $CIDRAM['DNS-Reverse-Forward'] = function ($Domains, string $Friendly, array $Op
         /** It's the real deal. */
         if ($Resolved === $CIDRAM['BlockInfo']['IPAddr']) {
             /** Disable tracking. */
-            if (!empty($Options['CanModTrackable'])) {
+            if (!empty($Options['Can modify trackable'])) {
                 $CIDRAM['Trackable'] = false;
             }
 
@@ -975,6 +983,14 @@ $CIDRAM['DNS-Reverse-Forward'] = function ($Domains, string $Friendly, array $Op
             if (isset($CIDRAM['BlockInfo']['Verified'])) {
                 $CIDRAM['BlockInfo']['Verified'] = $Friendly;
             }
+
+            /** Single hit bypass. */
+            $CIDRAM['Bypass']((
+                !empty($Options['Single hit bypass']) &&
+                isset($CIDRAM['BlockInfo']['SignatureCount'], $CIDRAM['BlockInfo']['WhyReason']) &&
+                $CIDRAM['BlockInfo']['SignatureCount'] === 1 &&
+                strpos($CIDRAM['BlockInfo']['WhyReason'], '-IPv4') !== false
+            ), 'Single hit bypass (verified request)');
 
             /** Exit. */
             return true;
@@ -1100,7 +1116,7 @@ $CIDRAM['UA-X-Match'] = function ($Datapoints, $Expected, string $Friendly, arra
     foreach ($Datapoints as $Datapoint) {
         if (in_array($Datapoint, $Expected)) {
             /** Disable tracking (if there are matches, and if relevant). */
-            if (!empty($Options['CanModTrackable'])) {
+            if (!empty($Options['Can modify trackable'])) {
                 $CIDRAM['Trackable'] = false;
             }
 
@@ -1108,6 +1124,14 @@ $CIDRAM['UA-X-Match'] = function ($Datapoints, $Expected, string $Friendly, arra
             if (isset($CIDRAM['BlockInfo']['Verified'])) {
                 $CIDRAM['BlockInfo']['Verified'] = $Friendly;
             }
+
+            /** Single hit bypass. */
+            $CIDRAM['Bypass']((
+                !empty($Options['Single hit bypass']) &&
+                isset($CIDRAM['BlockInfo']['SignatureCount'], $CIDRAM['BlockInfo']['WhyReason']) &&
+                $CIDRAM['BlockInfo']['SignatureCount'] === 1 &&
+                strpos($CIDRAM['BlockInfo']['WhyReason'], '-IPv4') !== false
+            ), 'Single hit bypass (verified request)');
 
             /** Successfully matched; Exit. */
             return;
@@ -1538,7 +1562,7 @@ $CIDRAM['XVerification'] = function (string $Config = '', string $From = '', boo
         return;
     }
     foreach ($CIDRAM['VerificationData'][$From] as $Name => $Values) {
-        if ($BypassFlags && (!is_array($Values) || (!empty($Values['Bypass Flag']) && !empty($CIDRAM[$Values['Bypass Flag']])))) {
+        if ($BypassFlags && (!is_array($Values) || (!empty($Values['Bypass flag']) && !empty($CIDRAM[$Values['Bypass flag']])))) {
             continue;
         }
         if (
@@ -1546,10 +1570,11 @@ $CIDRAM['XVerification'] = function (string $Config = '', string $From = '', boo
             (!empty($Values['User Agent Pattern']) && preg_match($Values['User Agent Pattern'], $CIDRAM['BlockInfo']['UALC']))
         ) {
             $Options = [
-                'ReverseOnly' => $Values['Reverse Only'] ?? false,
-                'CanModTrackable' => $Values['Can Modify Trackable'] ?? true
+                'Single hit bypass' => $Values['Single hit bypass'] ?? false,
+                'Reverse only' => $Values['Reverse only'] ?? false,
+                'Can modify trackable' => $Values['Can modify trackable'] ?? true
             ];
-            $CIDRAM[$Values['Closure']]($Values['Valid Domains'], $Name, $Options);
+            $CIDRAM[$Values['Closure']]($Values['Valid domains'], $Name, $Options);
         }
     }
 };
@@ -1593,8 +1618,8 @@ $CIDRAM['ResetBypassFlags'] = function () use (&$CIDRAM): void {
     }
 
     foreach ($CIDRAM['VerificationData']['Search Engine Verification'] as $Values) {
-        if (!empty($Values['Bypass Flag'])) {
-            $CIDRAM[$Values['Bypass Flag']] = false;
+        if (!empty($Values['Bypass flag'])) {
+            $CIDRAM[$Values['Bypass flag']] = false;
         }
     }
 };

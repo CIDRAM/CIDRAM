@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Output generator (last modified: 2021.05.09).
+ * This file: Output generator (last modified: 2021.05.15).
  */
 
 /** Initialise cache. */

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Verification data for search engines and social media (last modified: 2021.05.14).
+# This file: Verification data for search engines and social media (last modified: 2021.05.15).
 ##/
 
 # Additional references: https://udger.com/resources/ua-list/crawlers
@@ -22,9 +22,10 @@ Search Engine Verification:
    - ".applebot.apple.com"
 
  # https://help.baidu.com/question?prod_en=master&class=Baiduspider
+ # https://help.baidu.com/question?prod_id=99&class=476&id=3001
  Baiduspider/百度:
   Bypass Flag: "Flag-Bypass-Baidu-Check"
-  User Agent Pattern: "~baiduspider|baidu(?!\.sogo\.uc)~"
+  User Agent: "baiduspider"
   Closure: "DNS-Reverse-Forward"
   Valid Domains:
    - ".baidu.com"

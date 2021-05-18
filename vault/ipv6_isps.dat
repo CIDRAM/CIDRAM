@@ -1,12 +1,12 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_isps.dat
 
-# Version: 2021.132.634
-# Last modified: 2021.05.13
+# Version: 2021.137.403
+# Last modified: 2021.05.18
 
 # False positive risk (an approximate, rough estimate only):
-# Standard usage, i.e., with ignore.dat, with CAPTCHA, with "extended rules" (default bypasses): « [ ]Low [x]Medium [ ]High »
-#    Exported usage, i.e., w/o ignore.dat, w/o reCAPTCHA, w/o "extended rules" (default bypasses): « [ ]Low [ ]Medium [x]High »
+# Standard usage, i.e. WITH ignore.dat, CAPTCHA, "extended rules" (default bypasses): « [ ]Low [x]Medium [ ]High »
+#  Exported usage, i.e. W/O ignore.dat, CAPTCHA, "extended rules" (default bypasses): « [ ]Low [ ]Medium [x]High »
 
 
 # ---
@@ -33,7 +33,7 @@ Tag: ISPsystem
 
 2a03:57c0::/32 Deny Generic
 Origin: IR
-Profile: Infrastructure
+Profile: Infrastructure/Transit
 Tag: AS48159
 ---
 recaptcha:
@@ -204,7 +204,7 @@ Tag: JPMorgan Chase & Co
 
 2a02:750:7::/64 Deny Spam
 Origin: SE
-Profile: Domestic ISP;Infrastructure;Multiplay;Tor endpoints here;Webhosting
+Profile: Domestic ISP;Infrastructure/Transit;Multiplay;Tor endpoints here;Webhosting
 Tag: GleSYS AB
 ---
 recaptcha:
@@ -529,7 +529,7 @@ Tag: Fregat
 Origin: PE
 2402:800::/32 Deny Spam
 Origin: VN
-Profile: Domestic ISP;Infrastructure;Tor endpoints here
+Profile: Domestic ISP;Infrastructure/Transit;Tor endpoints here
 Tag: Viettel Corporation
 ---
 recaptcha:
@@ -749,7 +749,7 @@ Origin: US
 2c0f:f7a8:815f::/48 Deny Generic
 2c0f:f7a8:8210::/47 Deny Generic
 Origin: ZA
-Profile: Infrastructure
+Profile: Infrastructure/Transit
 Tag: China Telecom Backbone
 ---
 recaptcha:
@@ -803,7 +803,7 @@ hcaptcha:
 240e:982:a100::/40 Deny Generic
 240e:982:a200::/40 Deny Generic
 Origin: CN
-Profile: Domestic ISP;Infrastructure;Multiplay
+Profile: Domestic ISP;Infrastructure/Transit;Multiplay
 Tag: China Telecom 4812
 ---
 recaptcha:
@@ -1034,7 +1034,7 @@ hcaptcha:
 2408:8a26:c000::/35 Deny Generic
 2408:8a27:4000::/35 Deny Generic
 Origin: CN
-Profile: Domestic ISP;Infrastructure;Multiplay
+Profile: Domestic ISP;Infrastructure/Transit;Multiplay
 Tag: China Unicom Backbone
 ---
 recaptcha:
@@ -1077,7 +1077,7 @@ hcaptcha:
 2406:300::/32 Deny Generic
 2407:4700::/32 Deny Generic
 Origin: TW
-Profile: Domestic ISP;Infrastructure;Multiplay;Tor endpoints here;Webhosting
+Profile: Domestic ISP;Commercial;Multiplay;Tor endpoints here;Webhosting
 Tag: DCBG
 ---
 recaptcha:
@@ -1213,7 +1213,7 @@ hcaptcha:
 240e:980:8000::/40 Deny Spam
 240e:981:200::/40 Deny Spam
 Origin: CN
-Profile: Domestic ISP;Infrastructure;Multiplay
+Profile: Domestic ISP;Infrastructure/Transit;Multiplay
 Tag: China Unicom Beijing
 ---
 recaptcha:
@@ -1622,7 +1622,7 @@ Origin: IN
 2600:1417:70::/48 Deny Cloud
 2600:1417:78::/48 Deny Cloud
 Origin: US
-Profile: Domestic ISP;Frequent changes;Infrastructure
+Profile: Domestic ISP;Frequent changes;Infrastructure/Transit
 Tag: Bharti Airtel
 ---
 recaptcha:
@@ -1972,7 +1972,7 @@ Tag: IT Systems LLC
 
 2a00:12f8::/32 Deny Spam
 Origin: KZ
-Profile: Domestic ISP;Infrastructure
+Profile: Domestic ISP;Infrastructure/Transit
 Tag: JSC Kazakhtelecom
 ---
 recaptcha:
@@ -2106,19 +2106,29 @@ hcaptcha:
  enabled: true
 
 
-# ASNs 7725, 7922, 33668 ("Comcast Cable Communications, LLC").
+# ASNs 7725, 7922, 33661, 33668 ("Comcast Cable Communications, LLC").
 # Major domestic ISP in the United States; Should NEVER be blocked in entirety.
 # Listed here are some specific CIDRs/IPs on their network that pose a major
 # spam risk and/or are known sources of spam and/or other undesirable traffic.
-# %Listed, abuseat.org (CBL-Listed): 0.03% (AS7922).
-# Stop Forum Spam (SFS) listings: 6,183 (AS7922).
-# Updated: 2020.11.23 / Modified: 2021.03.19
+# %Listed, abuseat.org (CBL-Listed): 0.01% (AS7922).
+# Stop Forum Spam (SFS) listings: 1 (AS7725), 6,442 (AS7922).
+# Updated: 2021.05.17
 
+2601:c0:8:f874::/64 Deny Spam
+2601:c0:c780:8d80::/64 Deny Spam
+2601:ca:4301:c570::/64 Deny Spam
+2601:101:c100:eda0::/64 Deny Spam
+2601:146:4102:30a0::/64 Deny Spam
 2601:14c:4200:bb10::/64 Deny Spam
-2601:204:d401:8ad0::/64 Deny Spam
-2601:205:c200:6480::/64 Deny Spam
-2601:2c7:4480:2980::/64 Deny Spam
+2601:19a:4500:3f70::/64 Deny Spam
+2601:201:1:c8d0::/64 Deny Spam
+2601:204:dc81:18e0::/64 Deny Spam
+2601:204:dc81:4310::/64 Deny Spam
+2601:205:c200:67c0::/64 Deny Spam
+2601:240:c500:f390::/64 Deny Spam
+2601:2c3:c97f:a7b0::/64 Deny Spam
 2601:441:8780:8f20:2811:2cec::/95 Deny Malware
+2601:589:4380:4b20::/64 Deny Spam
 2603:3005:6077:2000::19c8/125 Deny Malware
 Origin: US
 Profile: Domestic ISP
@@ -2423,7 +2433,7 @@ hcaptcha:
 
 2406:30c0::/48 Deny Malware
 Origin: VN
-Profile: Domestic ISP;Infrastructure
+Profile: Domestic ISP;Infrastructure/Transit
 Tag: CMC Telecom
 ---
 recaptcha:
@@ -2607,25 +2617,6 @@ hcaptcha:
  enabled: true
 
 
-# ASN 224 ("UNINETT AS").
-# Norwegian educational infrastructure provider. Marked for use with reCAPTCHA
-# due to moderate risk of human endpoints being present. Hack, SSH, and
-# brute-force attempts detected originating from this network.
-# Stop Forum Spam (SFS) listings: 7.
-# Updated: 2020.06.22 / Checked: 2020.12.25
-
-2001:67c:714::/48 Deny Malware
-2001:700::/32 Deny Malware
-Origin: NO
-Profile: Infrastructure
-Tag: UNINETT AS
----
-recaptcha:
- enabled: true
-hcaptcha:
- enabled: true
-
-
 # ASN 21928 ("T-Mobile USA, Inc").
 # U.S. mobile provider; SSH and brute-force attacks detected originating from
 # parts of this network (and gradually getting worse). Currently just listing
@@ -2687,8 +2678,8 @@ hcaptcha:
 # Indonesian domestic ISP; Also a source of spam. Also SSH, brute-force, and
 # hack attempts reportedly seen from this network. Listing just the affected
 # ranges/addresses for the moment (plus all confirmed cloud hosters).
-# Stop Forum Spam (SFS) listings: 23,692 (AS7713), 1,471 (AS17974).
-# Updated: 2021.02.20
+# Stop Forum Spam (SFS) listings: 24,732 (AS7713), 1,038 (AS17974).
+# Updated: 2021.05.18
 
 2001:7f8:43::/64 Deny Cloud
 2001:7f8:54::/64 Deny Cloud
@@ -2705,6 +2696,8 @@ Origin: HK
 Origin: JP
 2001:478:132::/64 Deny Cloud
 Origin: KN
+2001:7f8:13::/64 Deny Cloud
+Origin: NL
 2001:7f8:42::/64 Deny Cloud
 Origin: PL
 2001:504:0:2::/63 Deny Cloud
@@ -2724,7 +2717,7 @@ Origin: PL
 2a01:62e0:f001:e7::/64 Deny Cloud
 2a01:62e0:f001:13f::/64 Deny Cloud
 Origin: US
-Profile: Domestic ISP
+Profile: Domestic ISP;Infrastructure/Transit;Multiplay
 Tag: PT Telekomunikasi Indonesia
 ---
 recaptcha:
@@ -2750,7 +2743,7 @@ Origin: NL
 2a03:1b20:a::/48 Deny Spam
 2a0f:8980::/32 Deny Spam
 Origin: SE
-Profile: Infrastructure;Multiplay;Tor endpoints here;Webhosting
+Profile: Infrastructure/Transit;Multiplay;Tor endpoints here;Webhosting
 Tag: 31173 Services AB
 ---
 recaptcha:
@@ -2999,7 +2992,7 @@ hcaptcha:
 2a01:cb14:e24:b600::/64 Deny Spam
 2a01:cb1d:41d:ea00::/64 Deny Spam
 Origin: FR
-Profile: Domestic ISP;Infrastructure;Multiplay
+Profile: Domestic ISP;Infrastructure/Transit;Multiplay
 Tag: Orange S.A
 
 
@@ -3081,7 +3074,7 @@ hcaptcha:
 
 2a02:8440:4611:ffd0::/64 Deny Spam
 Origin: FR
-Profile: Domestic ISP;Infrastructure;Multiplay
+Profile: Domestic ISP;Infrastructure/Transit;Multiplay
 Tag: SFR SA
 ---
 recaptcha:

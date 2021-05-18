@@ -1,12 +1,12 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6.dat
 
-# Version: 2021.132.634
-# Last modified: 2021.05.13
+# Version: 2021.137.403
+# Last modified: 2021.05.18
 
 # False positive risk (an approximate, rough estimate only):
-# Standard usage, i.e., with ignore.dat, with CAPTCHA, with "extended rules" (default bypasses): « [x]Low [ ]Medium [ ]High »
-#    Exported usage, i.e., w/o ignore.dat, w/o reCAPTCHA, w/o "extended rules" (default bypasses): « [ ]Low [x]Medium [ ]High »
+# Standard usage, i.e. WITH ignore.dat, CAPTCHA, "extended rules" (default bypasses): « [x]Low [ ]Medium [ ]High »
+#  Exported usage, i.e. W/O ignore.dat, CAPTCHA, "extended rules" (default bypasses): « [ ]Low [x]Medium [ ]High »
 
 
 # ---
@@ -89,7 +89,7 @@ Origin: LT
 2604:d180::/32 Deny Cloud
 2605:5fc8::/32 Deny Cloud
 Origin: US
-Profile: Infrastructure;Webhosting
+Profile: Infrastructure/Transit;Webhosting
 Tag: Global Frag Networks
 
 
@@ -495,7 +495,7 @@ Tag: GorillaServers, Inc
 
 2607:8880::/32 Deny Cloud
 Origin: CA
-Profile: Domestic ISP;Infrastructure;Multiplay;Webhosting
+Profile: Domestic ISP;Infrastructure/Transit;Multiplay;Webhosting
 Tag: KW Datacenter
 ---
 recaptcha:
@@ -528,7 +528,7 @@ hcaptcha:
 2406:69c0:1000::/36 Deny Cloud
 2406:69c0:2000::/36 Deny Cloud
 Origin: IN
-Profile: Infrastructure;Webhosting
+Profile: Infrastructure/Transit;Webhosting
 Tag: Netmagic Datacenter Mumbai
 
 
@@ -553,7 +553,7 @@ Tag: NxtGen Datacenter
 
 2a00:dac0::/32 Deny Cloud
 Origin: RU
-Profile: Infrastructure;Webhosting
+Profile: Infrastructure/Transit;Webhosting
 Tag: IT Park
 
 
@@ -575,7 +575,7 @@ Tag: IMAQLIQ
 
 2a03:21c0::/32 Deny Cloud
 Origin: RU
-Profile: Dedicated;Infrastructure;Webhosting
+Profile: Dedicated;Infrastructure/Transit;Webhosting
 Tag: Miran Ltd
 
 
@@ -585,7 +585,7 @@ Tag: Miran Ltd
 
 2a03:400::/32 Deny Cloud
 Origin: TR
-Profile: Infrastructure
+Profile: Infrastructure/Transit
 Tag: MEDYABIM INTERNET HIZMETLERI
 
 
@@ -609,7 +609,7 @@ Origin: LT
 2602:ffc5:10a::/48 Deny Cloud
 2604:5800::/32 Deny Cloud
 Origin: US
-Profile: Dedicated;Infrastructure
+Profile: Dedicated;Infrastructure/Transit
 Tag: Joe's Datacenter, LLC
 
 
@@ -749,7 +749,7 @@ Origin: NL
 2620:64:6000::/48 Run rules_as6939.php
 2620:138:c001::/48 Run rules_as6939.php
 Origin: US
-Profile: Infrastructure;Multiplay;Tor endpoints here
+Profile: Infrastructure/Transit;Multiplay;Tor endpoints here
 Tag: Hurricane Electric
 
 
@@ -813,7 +813,7 @@ Origin: GB
 Origin: SG
 2a04:ac0:1::/48 Deny Cloud
 Origin: US
-Profile: Infrastructure;Tor endpoints here
+Profile: Infrastructure/Transit;Tor endpoints here
 Tag: IOMart
 
 
@@ -875,13 +875,14 @@ Tag: Tzulo Inc
 
 
 # ASN 17139 ("Corporate Colocation Inc").
-# Stop Forum Spam (SFS) listings: 11.
-# Updated: 2018.05.04 / Checked: 2020.10.23
+# Stop Forum Spam (SFS) listings: 34.
+# Updated: 2018.05.04 / Checked: 2021.05.17
 
 2401:f500:1::/48 Deny Cloud
 Origin: NZ
 2607:fca8::/32 Deny Cloud
 Origin: US
+Profile: Commercial;Infrastructure/Transit
 Tag: Corporate Colocation
 
 
@@ -923,7 +924,7 @@ Origin: CZ
 2607:fd50:10::/48 Deny Cloud
 2607:fd50:19::/48 Deny Cloud
 Origin: US
-Profile: Infrastructure;Multiplay;Webhosting
+Profile: Infrastructure/Transit;Multiplay;Webhosting
 Tag: InfoRelay Online
 
 
@@ -1146,7 +1147,7 @@ Origin: UA
 2607:ff48::/32 Deny Cloud
 2620:134:8004::/47 Deny Cloud
 Origin: US
-Profile: Dedicated;Frequent changes;Infrastructure;Webhosting
+Profile: Dedicated;Frequent changes;Infrastructure/Transit;Webhosting
 Tag: QuadraNet, Inc
 
 
@@ -1171,17 +1172,19 @@ Origin: CR
 2001:9d8::/32 Deny Cloud
 2a0d:5e00::/29 Deny Cloud
 Origin: GB
-Profile: Infrastructure;Multiplay;Webhosting
+Profile: Infrastructure/Transit;Multiplay;Webhosting
 Tag: Connexions4London
 
 
 # ASN 32475 ("SingleHop, Inc").
-# Stop Forum Spam (SFS) listings: 152.
-# Updated: 2019.08.11 / Checked: 2020.10.23
+# Colo provider, data center, hosting/cloud/infrastructure provider.
+# Stop Forum Spam (SFS) listings: 111.
+# Updated: 2019.08.11 / Checked: 2021.05.17
 
 2607:f978:5::/48 Deny Cloud
 2607:f978:7::/48 Deny Cloud
 Origin: US
+Profile: Infrastructure/Transit;Multiplay;Webhosting
 Tag: SingleHop, Inc
 
 
@@ -1214,7 +1217,7 @@ Tag: eUKhost LTD
 2a04:4300::/48 Deny Cloud
 2a0b:a380::/48 Deny Cloud
 Origin: GB
-Profile: Infrastructure;Webhosting
+Profile: Infrastructure/Transit;Webhosting
 Tag: Pulsant
 
 
@@ -1466,7 +1469,7 @@ Tag: Choopa, LLC
 2804:49c:4210::/48 Deny Cloud
 2804:49c:c0f1::/48 Deny Cloud
 Origin: BR
-Profile: Infrastructure;Tor endpoints here
+Profile: Infrastructure/Transit;Tor endpoints here
 Tag: UOL DIVEO S.A
 
 
@@ -1493,7 +1496,7 @@ Tag: UOL DIVEO S.A
 2607:f7a0:1c::/48 Deny Cloud
 2a0c:3ac0::/48 Deny Cloud
 Origin: US
-Profile: Infrastructure;Tor endpoints here;Webhosting
+Profile: Infrastructure/Transit;Tor endpoints here;Webhosting
 Tag: Performive LLC
 
 
@@ -2008,8 +2011,9 @@ Tag: Datacenter IP, LLC
 
 
 # ASN 43578 ("MBA DATACENTERS S.L").
-# Stop Forum Spam (SFS) listings: 4.
-# Updated: 2019.03.30 / Checked: 2020.10.21
+# Colo provider and server farm.
+# Stop Forum Spam (SFS) listings: 49.
+# Updated: 2019.03.30 / Checked: 2021.05.17
 
 2a04:b880::/48 Deny Cloud
 2a04:b880:5::/48 Deny Cloud
@@ -2017,6 +2021,7 @@ Tag: Datacenter IP, LLC
 2a05:4700:50::/48 Deny Cloud
 2a05:4700:100::/47 Deny Cloud
 Origin: ES
+Profile: Commercial;Infrastructure/Transit;Webhosting
 Tag: MBA DATACENTERS S.L
 
 
@@ -2176,7 +2181,7 @@ Tag: Trabia-Network
 2a02:418::/29 Deny Cloud
 2a05:9a80::/29 Deny Cloud
 Origin: CH
-Profile: Infrastructure;Tor endpoints here
+Profile: Infrastructure/Transit;Tor endpoints here
 Tag: Nine Internet
 
 
@@ -2906,7 +2911,7 @@ Origin: TW
 2a01:578::/32 Run rules_specific.php
 Origin: US
 Defers to: aws_cidram_ipv6.inc
-Profile: Infrastructure;Multiplay;Webhosting
+Profile: Infrastructure/Transit;Multiplay;Webhosting
 Tag: Amazon.com, Inc
 
 
@@ -3027,7 +3032,7 @@ Tag: Shenzhen Tencent
 
 2402:33c0::/32 Deny Cloud
 Origin: CN
-Profile: Infrastructure;Webhosting
+Profile: Infrastructure/Transit;Webhosting
 Tag: ShenZhen Sunrise
 
 
@@ -3139,34 +3144,40 @@ Tag: 23Media GmbH
 
 
 # ASN 49544 ("i3d B.V").
-# Stop Forum Spam (SFS) listings: 6,736.
-# Updated: 2020.10.21
+# Huge infrastructure provider focused on low-latency (e.g., for gaming). Also
+# a significant source of spam.
+# Stop Forum Spam (SFS) listings: 10,447.
+# Updated: 2021.05.17
 
+2a06:7a00::/48 Deny Cloud
+Origin: AT
 2403:1480:9000::/36 Deny Cloud
 Origin: AU
 2a05:2605::/32 Deny Cloud
 2a05:2606::/32 Deny Cloud
+2a0f:efc0::/32 Deny Cloud
 Origin: BE
-2a06:7a00::/48 Deny Cloud
-Origin: EU
+2406:d140:8000::/34 Deny Cloud
+Origin: CN
 2a00:1630::/29 Deny Cloud
 2a00:1708::/32 Deny Cloud
 2a00:1d20::/30 Deny Cloud
-2a00:1d24::/32 Deny Cloud
+2a00:1d24::/31 Deny Cloud
+2a00:1d26:8000::/34 Deny Cloud
 2a00:1d27::/32 Deny Cloud
 2a03:3a60::/32 Deny Cloud
 2a04:c600::/29 Deny Cloud
 2a05:6440::/29 Deny Cloud
-2a09:4f80:1::/48 Deny Cloud
 2a0a:5980::/29 Deny Cloud
 2a0b:1b00::/29 Deny Cloud
 2a0b:d9c0:164::/47 Deny Cloud
+2a0b:d9c0:166::/48 Deny Cloud
 2a0b:f380::/48 Deny Cloud
 2a0b:f380:3e8::/48 Deny Cloud
-2a0f:efc0::/31 Deny Cloud
 Origin: NL
 2402:b180:9000::/36 Deny Cloud
 Origin: SG
+Profile: Dedicated;Infrastructure/Transit
 Tag: i3d B.V
 
 
@@ -3202,7 +3213,7 @@ Origin: RU
 Origin: UA
 2a0a:3f40::/32 Deny Cloud
 Origin: US
-Profile: Frequent changes;Infrastructure;Tor endpoints here
+Profile: Frequent changes;Infrastructure/Transit;Tor endpoints here
 Tag: Serverius Holding
 
 
@@ -3828,7 +3839,7 @@ Tag: Cloudie Limited
 2a00:f9c0::/32 Deny Cloud
 2a07:7800::/29 Deny Cloud
 Origin: GB
-Profile: Infrastructure;Webhosting
+Profile: Infrastructure/Transit;Webhosting
 Tag: Node4 Limited
 
 
@@ -4453,7 +4464,7 @@ Origin: NL
 2a0a:e202:8014::/48 Deny Cloud
 2a10:1140::/29 Deny Cloud
 Origin: US
-Profile: Infrastructure;Webhosting
+Profile: Infrastructure/Transit;Webhosting
 Tag: Highwinds
 
 
@@ -4511,7 +4522,7 @@ Tag: WEBSITEWELCOME.COM
 2400:3b00:50::/48 Deny Cloud
 2406:56c0::/32 Deny Cloud
 Origin: IN
-Profile: Infrastructure;Webhosting
+Profile: Infrastructure/Transit;Webhosting
 Tag: CtrlS Datacenters
 
 
@@ -4619,7 +4630,7 @@ Origin: AU
 Origin: NL
 2400:7180::/32 Deny Cloud
 Origin: NZ
-Profile: Frequent changes;Infrastructure;Webhosting
+Profile: Frequent changes;Infrastructure/Transit;Webhosting
 Tag: Wholesale Services Provider
 
 
@@ -4656,7 +4667,7 @@ Origin: RU
 Origin: US
 2a07:ca04::/32 Deny Cloud
 Origin: VG
-Profile: Dedicated;Infrastructure;Tor endpoints here
+Profile: Dedicated;Infrastructure/Transit;Tor endpoints here
 Tag: WorldStream
 
 
@@ -4691,13 +4702,15 @@ Tag: AVAST Software
 
 
 # ASN 43317 ('OOO "Fishnet Communications"').
+# Hosting provider and server farm.
 # Caught spamming while pretending to be Google.
-# Stop Forum Spam (SFS) listings: 3,752.
-# Updated: 2019.03.10 / Checked: 2020.10.21
+# Stop Forum Spam (SFS) listings: 2,427.
+# Updated: 2019.03.10 / Checked: 2021.05.17
 
 2a00:1838::/32 Deny Cloud
 2a0a:4784::/32 Deny Cloud
 Origin: RU
+Profile: Infrastructure/Transit;Webhosting
 Tag: Fishnet
 
 
@@ -4760,7 +4773,7 @@ Tag: Brandwatch
 2605:9f80:a000::/35 Deny Cloud
 2605:9f80:c000::/34 Deny Cloud
 Origin: US
-Profile: Dedicated;Infrastructure;Tor endpoints here
+Profile: Dedicated;Infrastructure/Transit;Tor endpoints here
 Tag: US Dedicated
 
 
@@ -4844,7 +4857,7 @@ Origin: IE
 Origin: US
 2001:43f8:bf0::/48 Run rules_specific.php
 Origin: ZA
-Profile: Infrastructure
+Profile: Infrastructure/Transit
 Tag: Automattic
 
 
@@ -4896,7 +4909,7 @@ Origin: NL
 2604:84c0::/32 Deny Cloud
 2605:f480::/31 Deny Cloud
 Origin: US
-Profile: Dedicated;Infrastructure
+Profile: Dedicated;Infrastructure/Transit
 Tag: Servers.com
 
 
@@ -4934,7 +4947,7 @@ Tag: Servers.com
 2a0c:84c0::/29 Deny Cloud
 2a0d:7980:100::/40 Deny Cloud
 Origin: NL
-Profile: Frequent changes;Infrastructure;Tor endpoints here;Webhosting
+Profile: Frequent changes;Infrastructure/Transit;Tor endpoints here;Webhosting
 Tag: Astralus B.V
 
 
@@ -5180,7 +5193,7 @@ Origin: LV
 2a02:5060::/32 Deny Cloud
 2a07:f9c0::/29 Deny Cloud
 Origin: NL
-Profile: Dedicated;Infrastructure;Webhosting;Tor endpoints here
+Profile: Dedicated;Infrastructure/Transit;Webhosting;Tor endpoints here
 Tag: 3W Infra B.V
 
 
@@ -5453,16 +5466,17 @@ Origin: DE
 2604:fbc0::/36 Deny Cloud
 2620:87:a000::/48 Deny Cloud
 Origin: US
-Profile: Infrastructure
+Profile: Infrastructure/Transit
 Tag: Nexril
 
 
-# ASNs 212370, 213371 ("VITOX TELECOM", "ESTRO WEB SERVICES PRIVATE LIMITED", "SQUITTER NETWORKS").
+# ASNs 208673, 212370, 213371 ("ESTOXY OU", "PEENQ.NL", "ABC Consultancy").
 # Dedicated hosting provider and server leasing. SQLi, spam attempts, and
 # constant, repeated honeypot attacks detected from these networks (refer to
 # AbuseIPDB records). There also seems to be a bunch of different ranges
 # announced as "XEMU" across different ASNs, so presumably they're all related.
-# Updated: 2020.11.23
+# Stop Forum Spam (SFS) listings: 259 (AS208673), 23 (AS213371).
+# Updated: 2020.11.23 / Checked: 2021.05.18
 
 2a0d:a740::/47 Deny Cloud
 2a0d:a740:2::/48 Deny Cloud
@@ -5537,7 +5551,7 @@ Origin: RU
 2605:3b80:1::/48 Deny Cloud
 2605:3b80:cad::/48 Deny Cloud
 Origin: US
-Profile: Infrastructure;Multiplay;Tor endpoints here;Webhosting
+Profile: Infrastructure/Transit;Multiplay;Tor endpoints here;Webhosting
 Tag: M247 Ltd
 ---
 recaptcha:
@@ -5639,7 +5653,7 @@ Tag: ALMOUROLTEC
 
 2a03:4300::/29 Deny Cloud
 Origin: GB
-Profile: Infrastructure
+Profile: Infrastructure/Transit
 Tag: Next Connex Ltd
 ---
 recaptcha:
@@ -5854,7 +5868,7 @@ Origin: NL
 Origin: US
 2c0f:f7e8::/47 Deny Cloud
 Origin: ZA
-Profile: Infrastructure;Webhosting
+Profile: Infrastructure/Transit;Webhosting
 Tag: VooServers Ltd
 
 
@@ -6148,7 +6162,7 @@ Tag: IT-GRAD NL B.V
 2405:f080:2400::/39 Deny Cloud
 2405:f080:2e00::/47 Deny Cloud
 Origin: SG
-Profile: Infrastructure;Webhosting
+Profile: Infrastructure/Transit;Webhosting
 Tag: HUAWEI CLOUDS
 
 
@@ -6964,7 +6978,7 @@ Origin: BZ
 2a02:6ea0:dc00::/40 Deny Cloud
 2a02:6ea0:e200::/40 Deny Cloud
 Origin: GB
-Profile: Infrastructure
+Profile: Infrastructure/Transit
 Tag: CDN77
 
 
@@ -7251,7 +7265,7 @@ Tag: ITL-Bulgaria Ltd
 2a05:4540::/29 Deny Cloud
 2a06:1000::/29 Deny Cloud
 Origin: SE
-Profile: Infrastructure
+Profile: Infrastructure/Transit
 Tag: Binero AB
 
 
@@ -7377,7 +7391,7 @@ Tag: SAKURA Internet Inc
 2001:67c:2394::/48 Deny Cloud
 2a00:19e0::/29 Deny Cloud
 Origin: DE
-Profile: Infrastructure;Webhosting
+Profile: Infrastructure/Transit;Webhosting
 Tag: Vautron Rech. AG
 
 
@@ -7439,12 +7453,10 @@ Tag: One.com A/S
 
 # ASN 64425 ("SKB Enterprise B.V").
 # Dedicated webhosting provider caught port scanning.
-# Updated: 2020.10.23
+# Stop Forum Spam (SFS) listings: 11.
+# Updated: 2021.05.17
 
 2a0d:2406:200::/39 Deny Cloud
-2a0d:2406:600::/39 Deny Cloud
-2a0f:5e01::/32 Deny Cloud
-2a0f:5e02::/32 Deny Cloud
 Origin: NL
 Profile: Dedicated;Webhosting
 Tag: SKB Enterprise B.V
@@ -7763,7 +7775,7 @@ Tag: Hyonix LLC
 
 2a03:cfc0::/32 Deny Cloud
 Origin: PL
-Profile: Infrastructure
+Profile: Infrastructure/Transit
 Tag: Meverywhere
 
 
@@ -7775,7 +7787,7 @@ Tag: Meverywhere
 
 2a10:5fc0::/29 Deny Cloud
 Origin: SC
-Profile: Infrastructure
+Profile: Infrastructure/Transit
 Tag: IP Connect Inc
 
 
@@ -7995,7 +8007,7 @@ Origin: DE
 2a0b:b600:1000::/38 Deny Cloud
 2a0f:6bc0::/29 Deny Cloud
 Origin: NL
-Profile: Infrastructure;Tor endpoints here;Webhosting
+Profile: Infrastructure/Transit;Tor endpoints here;Webhosting
 Tag: The Infrastructure Group B.V
 
 
@@ -8032,7 +8044,7 @@ Tag: The Infrastructure Group B.V
 2a03:90c0:9998::/46 Deny Cloud
 2a03:90c0:999f::/48 Deny Cloud
 Origin: LU
-Profile: Infrastructure;Tor endpoints here;Webhosting
+Profile: Infrastructure/Transit;Tor endpoints here;Webhosting
 Tag: G-Core Labs S.A
 
 
@@ -8061,7 +8073,7 @@ Origin: GB
 Origin: PT
 2001:470:138::/48 Deny Cloud
 Origin: US
-Profile: Infrastructure;Tor endpoints here;Webhosting
+Profile: Infrastructure/Transit;Tor endpoints here;Webhosting
 Tag: IP Volume inc
 
 
@@ -8084,7 +8096,7 @@ Tag: REGISTER S.P.A
 2607:fdc0::/32 Deny Cloud
 2620:13d:2000::/40 Deny Cloud
 Origin: US
-Profile: Infrastructure;Webhosting
+Profile: Infrastructure/Transit;Webhosting
 Tag: TeraSwitch Networks Inc
 
 
@@ -8128,7 +8140,7 @@ Tag: World4You
 2001:df3:9500::/48 Deny Cloud
 2404:82c0::/42 Deny Cloud
 Origin: HK
-Profile: Infrastructure;Multiplay;Webhosting
+Profile: Infrastructure/Transit;Multiplay;Webhosting
 Tag: UCLOUD
 
 
@@ -8170,7 +8182,7 @@ Tag: FEELB SARL
 Origin: HK
 2401:3bc0::/32 Deny Cloud
 Origin: NZ
-Profile: Infrastructure;Webhosting
+Profile: Infrastructure/Transit;Webhosting
 Tag: GSL Networks Pty LTD
 
 
@@ -8182,7 +8194,7 @@ Tag: GSL Networks Pty LTD
 
 2401:1100::/32 Deny Cloud
 Origin: HK
-Profile: Infrastructure;Webhosting
+Profile: Infrastructure/Transit;Webhosting
 Tag: Layerstack Limited
 
 
@@ -8193,6 +8205,7 @@ Tag: Layerstack Limited
 
 2804:11a4::/32 Deny Cloud
 Origin: BR
+Profile: Commercial
 Tag: Brasil Site Informatica LTDA
 
 
@@ -8366,7 +8379,7 @@ Tag: GTHost
 
 2a09:1d40::/48 Deny Malware
 Origin: LB
-Profile: Infrastructure
+Profile: Commercial
 Tag: Alviva Holding Limited
 
 
@@ -8388,8 +8401,25 @@ Tag: Oleksandrovich
 
 2a0a:5e80::/48 Deny Cloud
 Origin: IR
-Profile: Infrastructure;Multiplay;Webhosting
+Profile: Infrastructure/Transit;Multiplay;Webhosting
 Tag: Sefroyek Pardaz Engineering
+
+
+# ASN 16262 ("Datacheap Ltd").
+# Russian webhoster and commercial network. Brute-force and SSH attacks,
+# hacking, and port scans detected from here.
+# Stop Forum Spam (SFS) listings: 7.
+# Updated: 2021.05.17
+
+2a03:e140:3a::/48 Deny Cloud
+2a06:1305::/32 Deny Cloud
+2a0e:c147::/32 Deny Cloud
+2a0f:6fc6::/32 Deny Cloud
+2a0f:8444::/32 Deny Cloud
+2a0f:c082::/32 Deny Cloud
+Origin: RU
+Profile: Commercial;Infrastructure/Transit;Webhosting
+Tag: Datacheap Ltd
 
 
 # ---
@@ -9109,5 +9139,5 @@ Origin: DE
 2a01:111:f335:1792::f001:7a5/128 Run rules_specific.php
 2a01:111:f403::/48 Run rules_specific.php
 Origin: US
-Profile: Infrastructure;Multiplay;Third-party sourced;Tor endpoints here;Webhosting
+Profile: Infrastructure/Transit;Multiplay;Third-party sourced;Tor endpoints here;Webhosting
 Tag: Azure

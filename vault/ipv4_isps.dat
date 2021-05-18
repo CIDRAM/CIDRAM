@@ -1,12 +1,12 @@
 # IPv4 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv4_isps.dat
 
-# Version: 2021.132.634
-# Last modified: 2021.05.13
+# Version: 2021.137.403
+# Last modified: 2021.05.18
 
 # False positive risk (an approximate, rough estimate only):
-# Standard usage, i.e., with ignore.dat, with CAPTCHA, with "extended rules" (default bypasses): « [ ]Low [x]Medium [ ]High »
-#    Exported usage, i.e., w/o ignore.dat, w/o reCAPTCHA, w/o "extended rules" (default bypasses): « [ ]Low [ ]Medium [x]High »
+# Standard usage, i.e. WITH ignore.dat, CAPTCHA, "extended rules" (default bypasses): « [ ]Low [x]Medium [ ]High »
+#  Exported usage, i.e. W/O ignore.dat, CAPTCHA, "extended rules" (default bypasses): « [ ]Low [ ]Medium [x]High »
 
 
 # ---
@@ -125,7 +125,7 @@ Origin: HK
 146.148.179.152/32 Deny Spam
 216.12.174.126/32 Deny Spam
 Origin: US
-Profile: Domestic ISP;Infrastructure;Multiplay;Webhosting
+Profile: Commercial;Multiplay;Webhosting
 Tag: HT
 ---
 recaptcha:
@@ -201,7 +201,7 @@ Tag: ISPsystem
 185.11.88.0/23 Deny Generic
 185.11.90.0/24 Deny Generic
 Origin: IR
-Profile: Infrastructure
+Profile: Infrastructure/Transit
 Tag: AS48159
 ---
 recaptcha:
@@ -1051,7 +1051,7 @@ Origin: DE
 192.71.23.211/32 Deny Malware
 195.246.120.0/24 Deny Malware
 Origin: SE
-Profile: Domestic ISP;Infrastructure;Multiplay;Tor endpoints here;Webhosting
+Profile: Domestic ISP;Infrastructure/Transit;Multiplay;Tor endpoints here;Webhosting
 Tag: GleSYS AB
 ---
 recaptcha:
@@ -1383,7 +1383,7 @@ Tag: Websupport s.r.o
 91.232.96.0/23 Deny Malware
 185.108.216.0/24 Deny Malware
 Origin: DE
-Profile: Domestic ISP;Infrastructure;Multiplay;Webhosting
+Profile: Domestic ISP;Infrastructure/Transit;Multiplay;Webhosting
 Tag: Xirra GmbH
 
 
@@ -2806,7 +2806,7 @@ Origin: PE
 203.190.160.0/20 Deny Spam
 220.231.64.0/18 Deny Spam
 Origin: VN
-Profile: Domestic ISP;Infrastructure;Tor endpoints here
+Profile: Domestic ISP;Infrastructure/Transit;Tor endpoints here
 Tag: Viettel Corporation
 ---
 recaptcha:
@@ -3568,7 +3568,7 @@ Origin: HK
 Origin: US
 154.72.44.0/24 Deny Generic
 Origin: ZA
-Profile: Infrastructure
+Profile: Infrastructure/Transit
 Tag: China Telecom Backbone
 ---
 recaptcha:
@@ -3758,7 +3758,7 @@ Origin: HK
 198.208.17.0/24 Deny Generic
 198.208.19.0/24 Deny Generic
 Origin: US
-Profile: Domestic ISP;Infrastructure;Multiplay
+Profile: Domestic ISP;Infrastructure/Transit;Multiplay
 Tag: China Telecom 4812
 ---
 recaptcha:
@@ -4388,7 +4388,7 @@ hcaptcha:
 222.136.0.0/13 Deny Generic
 222.160.0.0/14 Deny Generic
 Origin: CN
-Profile: Domestic ISP;Infrastructure;Multiplay
+Profile: Domestic ISP;Infrastructure/Transit;Multiplay
 Tag: China Unicom Backbone
 ---
 recaptcha:
@@ -4494,7 +4494,7 @@ Origin: TW
 184.86.232.0/22 Deny Cloud
 192.254.86.0/24 Deny Cloud
 Origin: US
-Profile: Domestic ISP;Infrastructure;Multiplay;Tor endpoints here;Webhosting
+Profile: Domestic ISP;Commercial;Multiplay;Tor endpoints here;Webhosting
 Tag: DCBG
 ---
 recaptcha:
@@ -5196,7 +5196,7 @@ Origin: TW
 Origin: US
 202.94.1.0/24 Deny Spam
 Origin: XP
-Profile: Domestic ISP;Infrastructure;Multiplay
+Profile: Domestic ISP;Infrastructure/Transit;Multiplay
 Tag: China Unicom Beijing
 ---
 recaptcha:
@@ -5218,7 +5218,7 @@ hcaptcha:
 220.198.117.0/32 Deny Spam
 220.198.122.127/32 Deny Spam
 Origin: CN
-Profile: Domestic ISP;Infrastructure;Multiplay
+Profile: Domestic ISP;Infrastructure/Transit;Multiplay
 Tag: China Unicom Shenzen/Guangdong
 ---
 recaptcha:
@@ -5661,7 +5661,7 @@ Origin: IN
 184.85.232.0/23 Deny Cloud
 192.6.125.0/24 Deny Cloud
 Origin: US
-Profile: Domestic ISP;Frequent changes;Infrastructure
+Profile: Domestic ISP;Frequent changes;Infrastructure/Transit
 Tag: Bharti Airtel
 ---
 recaptcha:
@@ -8124,7 +8124,7 @@ Origin: RU
 185.253.120.0/23 Deny Spam
 195.206.108.0/23 Deny Spam
 Origin: US
-Profile: Domestic ISP;Infrastructure;Multiplay;Tor endpoints here
+Profile: Domestic ISP;Infrastructure/Transit;Multiplay;Tor endpoints here
 Tag: M247 Ltd
 ---
 recaptcha:
@@ -8430,7 +8430,7 @@ hcaptcha:
 212.154.128.0/17 Deny Spam
 213.211.64.0/18 Deny Spam
 Origin: KZ
-Profile: Domestic ISP;Infrastructure
+Profile: Domestic ISP;Infrastructure/Transit
 Tag: JSC Kazakhtelecom
 ---
 recaptcha:
@@ -8954,7 +8954,7 @@ Origin: SG
 184.51.6.0/24 Deny Cloud
 199.63.140.0/24 Deny Cloud
 Origin: US
-Profile: Domestic ISP;Infrastructure
+Profile: Domestic ISP;Infrastructure/Transit
 Tag: Reliance Communications
 ---
 recaptcha:
@@ -9991,7 +9991,7 @@ hcaptcha:
 123.63.191.69/32 Deny Spam
 180.149.241.150/32 Deny Spam
 Origin: IN
-Profile: Domestic ISP;Infrastructure
+Profile: Domestic ISP
 Tag: Vodafone India
 
 
@@ -10303,72 +10303,75 @@ Profile: Domestic ISP;Multiplay;Webhosting
 Tag: WNet Internet y Hosting
 
 
-# ASNs 7725, 7922, 33668 ("Comcast Cable Communications, LLC").
+# ASNs 7725, 7922, 33661, 33668 ("Comcast Cable Communications, LLC").
 # Major domestic ISP in the United States; Should NEVER be blocked in entirety.
 # Listed here are some specific CIDRs/IPs on their network that pose a major
 # spam risk and/or are known sources of spam and/or other undesirable traffic.
-# %Listed, abuseat.org (CBL-Listed): 0.03% (AS7922).
-# Stop Forum Spam (SFS) listings: 6,183 (AS7922).
-# Updated: 2020.11.29
+# %Listed, abuseat.org (CBL-Listed): 0.01% (AS7922).
+# Stop Forum Spam (SFS) listings: 1 (AS7725), 6,442 (AS7922).
+# Updated: 2021.05.17
 
-24.9.66.117/32 Deny Spam
-24.22.12.6/32 Deny Spam
-24.61.86.23/32 Deny Spam
-24.125.118.156/32 Deny Malware
-24.218.158.55/32 Deny Spam
-50.192.49.0/24 Deny Spam
+24.2.198.40/32 Deny Spam
+24.3.111.215/32 Deny Spam
+24.34.99.71/32 Deny Spam
+24.125.11.118/32 Deny Spam
+50.192.49.0/24 Deny Malware
 50.192.195.0/24 Deny Spam
-50.195.7.180/32 Deny Spam
+50.195.7.0/24 Deny Spam
 50.196.148.0/24 Deny Spam
 50.197.162.0/24 Deny Spam
-50.197.210.0/24 Deny Spam
 50.199.46.0/24 Deny Spam
-50.199.195.0/24 Deny Spam
 50.248.37.212/32 Deny Malware
 64.139.79.0/24 Deny Spam
-67.163.185.161/32 Deny Spam
-67.164.222.76/32 Deny Spam
-67.164.249.173/32 Deny Spam
-67.165.85.128/32 Deny Spam
-67.166.228.200/32 Deny Spam
-67.177.10.199/32 Deny Spam
-68.34.243.88/32 Deny Spam
-68.44.38.49/32 Deny Malware
+67.163.129.15/32 Deny Spam
+67.189.107.82/32 Deny Spam
+68.36.159.219/32 Deny Spam
+68.37.63.5/32 Deny Spam
+68.48.156.195/32 Deny Spam
 68.48.240.245/32 Deny Malware
-68.56.238.35/32 Deny Spam
-69.136.135.173/32 Deny Spam
+68.50.58.53/32 Deny Spam
+68.62.56.235/32 Deny Spam
 69.252.50.0/24 Deny Spam
-71.202.74.213/32 Deny Spam
-71.205.82.189/32 Deny Spam
-73.2.7.72/32 Deny Spam
-73.12.87.0/24 Deny Spam
+71.56.228.36/32 Deny Spam
+71.196.47.0/24 Deny Spam
+71.224.121.127/32 Deny Spam
+71.224.246.110/32 Deny Spam
+73.15.50.238/32 Deny Spam
 73.15.91.251/32 Deny Malware
-73.18.200.200/32 Deny Spam
-73.38.252.16/32 Deny Spam
+73.23.202.145/32 Deny Malware
+73.54.81.24/32 Deny Spam
+73.56.32.251/32 Deny Spam
+73.64.156.188/32 Deny Spam
+73.112.143.195/32 Deny Spam
+73.126.127.219/32 Deny Spam
+73.153.62.7/32 Deny Spam
+73.194.66.78/32 Deny Spam
+73.225.77.144/32 Deny Spam
+73.253.137.20/32 Deny Spam
+73.254.214.25/32 Deny Spam
+73.254.255.64/32 Deny Spam
+74.94.194.0/24 Deny Spam
+74.95.1.0/24 Deny Spam
+75.72.45.52/32 Deny Spam
 75.72.211.0/24 Deny Spam
 75.74.122.105/32 Deny Malware
 75.151.213.0/24 Deny Spam
-76.107.230.75/32 Deny Spam
-76.111.57.241/32 Deny Spam
-76.126.91.89/32 Deny Spam
+76.127.85.244/32 Deny Spam
 96.66.15.0/24 Deny Spam
-96.69.88.83/32 Deny Spam
-96.77.77.0/24 Deny Spam
+96.77.104.165/32 Deny Spam
 96.82.74.0/24 Deny Spam
-96.87.184.0/24 Deny Spam
 96.87.188.0/24 Deny Spam
-96.96.33.0/24 Deny Spam
+96.90.58.17/32 Deny Spam
+96.113.165.0/24 Deny Spam
+98.41.34.203/32 Deny Spam
+98.42.234.54/32 Deny Spam
+98.195.105.225/32 Deny Spam
 98.198.66.0/24 Deny Spam
-98.212.63.108/32 Deny Spam
-98.215.206.171/32 Deny Spam
-98.223.246.0/24 Deny Spam
-98.228.24.34/32 Deny Spam
-98.232.177.0/24 Deny Spam
-98.249.73.216/32 Deny Spam
-98.254.117.0/24 Deny Spam
-98.255.110.127/32 Deny Spam
-162.17.134.125/32 Deny Spam
-174.62.110.126/32 Deny Spam
+98.207.104.44/32 Deny Spam
+98.215.141.162/32 Deny Spam
+98.224.9.62/32 Deny Spam
+98.252.238.37/32 Deny Spam
+162.17.134.0/24 Deny Spam
 Origin: US
 Profile: Domestic ISP
 Tag: Comcast Spam IPs
@@ -11193,7 +11196,7 @@ hcaptcha:
 204.199.66.162/32 Deny Spam
 204.199.72.162/32 Deny Spam
 Origin: US
-Profile: Infrastructure
+Profile: Infrastructure/Transit
 Tag: Level 3
 ---
 recaptcha:
@@ -12525,7 +12528,7 @@ hcaptcha:
 124.158.0.0/21 Deny Malware
 183.91.14.0/24 Deny Malware
 Origin: VN
-Profile: Domestic ISP;Infrastructure
+Profile: Domestic ISP;Infrastructure/Transit
 Tag: CMC Telecom
 ---
 recaptcha:
@@ -12662,7 +12665,7 @@ hcaptcha:
 194.103.141.0/24 Deny Spam
 194.103.222.0/24 Deny Spam
 Origin: SE
-Profile: Infrastructure;Multiplay;Webhosting
+Profile: Infrastructure/Transit;Multiplay;Webhosting
 Tag: Internet Vikings
 ---
 recaptcha:
@@ -12865,7 +12868,7 @@ hcaptcha:
 36.110.44.0/24 Deny Malware
 219.234.88.34/32 Deny Malware
 Origin: CN
-Profile: Domestic ISP;Infrastructure
+Profile: Domestic ISP;Infrastructure/Transit
 Tag: China Networks
 ---
 recaptcha:
@@ -13141,27 +13144,18 @@ hcaptcha:
 
 
 # ASN 224 ("UNINETT AS").
-# Norwegian educational infrastructure provider. Marked for use with reCAPTCHA
-# due to moderate risk of human endpoints being present. Hack, SSH, and
-# brute-force attempts detected originating from this network.
-# Stop Forum Spam (SFS) listings: 7.
-# Updated: 2020.12.25
+# Norwegian educational infrastructure provider. Hacking, brute-force and SSH
+# attacks detected from here. Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 13.
+# Updated: 2021.05.17
 
-78.91.0.0/16 Deny Malware
-128.39.0.0/16 Deny Malware
-129.177.0.0/16 Deny Malware
-129.240.0.0/15 Deny Malware
-129.242.0.0/16 Deny Malware
-144.164.0.0/16 Deny Malware
-151.157.0.0/16 Deny Malware
-152.94.0.0/16 Deny Malware
-157.249.0.0/16 Deny Malware
-158.36.0.0/14 Deny Malware
-185.76.84.0/22 Deny Malware
-192.146.238.0/23 Deny Malware
-193.156.0.0/15 Deny Malware
+129.177.96.38/32 Deny Spam
+129.241.30.49/32 Deny Malware
+129.241.64.161/32 Deny Spam
+158.39.48.0/24 Deny Malware
+158.39.77.144/32 Deny Spam
 Origin: NO
-Profile: Infrastructure
+Profile: Infrastructure/Transit;University
 Tag: UNINETT AS
 ---
 recaptcha:
@@ -13305,7 +13299,7 @@ hcaptcha:
 198.108.66.0/24 Deny Malware
 204.38.55.3/32 Deny Spam
 Origin: US
-Profile: Infrastructure
+Profile: Infrastructure/Transit;University
 Tag: Merit Network Inc
 ---
 recaptcha:
@@ -13448,8 +13442,8 @@ hcaptcha:
 # Indonesian domestic ISP; Also a source of spam. Also SSH, brute-force, and
 # hack attempts reportedly seen from this network. Listing just the affected
 # ranges/addresses for the moment (plus all confirmed cloud hosters).
-# Stop Forum Spam (SFS) listings: 23,692 (AS7713), 1,471 (AS17974).
-# Updated: 2021.02.20 / Modified: 2021.03.06
+# Stop Forum Spam (SFS) listings: 24,732 (AS7713), 1,038 (AS17974).
+# Updated: 2021.05.18
 
 195.42.144.0/23 Deny Cloud
 Origin: FR
@@ -13458,97 +13452,95 @@ Origin: HK
 36.65.0.0/16 Deny Malware
 36.68.0.0/16 Deny Malware
 36.71.232.0/24 Deny Malware
-36.71.233.111/32 Deny Spam
-36.71.233.133/32 Deny Spam
-36.71.234.31/32 Deny Spam
-36.72.107.234/32 Deny Spam
 36.74.0.0/16 Deny Malware
-36.75.80.195/32 Deny Spam
-36.75.188.27/32 Deny Spam
-36.75.210.20/32 Deny Spam
-36.75.211.10/32 Deny Spam
-36.77.47.190/32 Deny Spam
-36.77.93.39/32 Deny Spam
-36.78.184.209/32 Deny Spam
 36.78.215.0/24 Deny Malware
-36.79.61.237/32 Deny Spam
 36.81.0.0/16 Deny Malware
 36.84.100.0/24 Deny Malware
-36.85.117.186/32 Deny Spam
-36.89.62.129/32 Deny Spam
-36.89.187.0/24 Deny Spam
+36.89.187.0/24 Deny Malware
 36.89.188.0/24 Deny Malware
-36.89.230.85/32 Deny Spam
 36.89.233.0/24 Deny Malware
-36.90.3.150/32 Deny Spam
 36.90.43.0/24 Deny Malware
 36.90.45.0/24 Deny Malware
 36.90.46.0/24 Deny Malware
-36.90.58.111/32 Deny Spam
-36.90.58.115/32 Deny Spam
 36.90.219.0/24 Deny Malware
 36.91.36.0/24 Deny Malware
 36.91.45.0/24 Deny Malware
+36.91.54.25/32 Deny Spam
 36.91.91.0/24 Deny Malware
-36.91.92.179/32 Deny Spam
-36.91.97.66/32 Deny Spam
 36.91.140.0/24 Deny Malware
 36.91.147.241/32 Deny Spam
 36.91.177.0/24 Deny Malware
 36.91.181.0/24 Deny Malware
 36.91.185.0/24 Deny Malware
-36.91.192.114/32 Deny Spam
-36.91.194.25/32 Deny Spam
+36.91.187.250/32 Deny Spam
 36.92.1.0/24 Deny Malware
-36.92.114.106/32 Deny Spam
 36.92.219.91/32 Deny Malware
 36.94.0.0/16 Deny Malware
-110.137.0.0/16 Deny Spam
+36.95.16.77/32 Deny Spam
+36.95.24.0/24 Deny Spam
+36.95.59.183/32 Deny Spam
+61.5.77.134/32 Deny Spam
+61.5.102.172/32 Deny Spam
+110.136.102.154/32 Deny Spam
+110.137.74.209/32 Deny Spam
+110.137.75.213/32 Deny Spam
+110.137.102.5/32 Deny Spam
+110.137.194.108/32 Deny Spam
+110.137.195.122/32 Deny Spam
+110.138.193.0/24 Deny Spam
+110.138.205.160/32 Deny Spam
+110.138.241.79/32 Deny Spam
+110.139.50.164/32 Deny Spam
+110.139.151.140/32 Deny Spam
 118.96.18.224/32 Deny Spam
-118.96.133.178/32 Deny Spam
-118.96.149.0/24 Deny Spam
-118.96.155.203/32 Deny Spam
-118.96.164.254/32 Deny Spam
-118.96.172.154/32 Deny Spam
-118.96.215.97/32 Deny Spam
-118.96.227.252/32 Deny Spam
-118.96.248.109/32 Deny Spam
-118.97.16.0/24 Deny Spam
+118.96.70.222/32 Deny Spam
+118.96.234.45/32 Deny Spam
+118.96.245.31/32 Deny Spam
+118.97.29.210/32 Deny Spam
+118.97.30.42/32 Deny Spam
+125.160.53.206/32 Deny Spam
+125.160.54.0/24 Deny Malware
 125.160.64.0/24 Deny Malware
 125.160.112.0/24 Deny Malware
-125.161.16.53/32 Deny Spam
-125.164.20.188/32 Deny Spam
+125.162.210.95/32 Deny Spam
+125.162.211.12/32 Deny Spam
+125.163.36.135/32 Deny Spam
+125.163.46.51/32 Deny Spam
+125.163.112.112/32 Deny Spam
+125.163.125.207/32 Deny Spam
 125.164.27.160/32 Deny Spam
-125.164.45.237/32 Deny Spam
-125.164.97.244/32 Deny Spam
-125.164.99.196/32 Deny Spam
-125.164.104.71/32 Deny Spam
-125.164.104.134/32 Deny Spam
-125.164.105.0/24 Deny Spam
-125.164.107.157/32 Deny Spam
-125.164.121.243/32 Deny Spam
-125.164.138.45/32 Deny Spam
-125.164.188.0/24 Deny Spam
-125.166.117.38/32 Deny Spam
-125.166.117.249/32 Deny Spam
-125.166.225.27/32 Deny Spam
+125.164.47.157/32 Deny Spam
+125.164.97.0/24 Deny Spam
+125.164.99.23/32 Deny Spam
+125.164.102.135/32 Deny Spam
+125.164.103.108/32 Deny Spam
+125.164.104.227/32 Deny Spam
+125.164.105.35/32 Deny Spam
+125.164.108.169/32 Deny Spam
+125.164.156.60/32 Deny Spam
+125.164.165.142/32 Deny Spam
+125.164.181.145/32 Deny Spam
+125.164.236.153/32 Deny Spam
+125.164.247.52/32 Deny Spam
+125.165.41.5/32 Deny Spam
+125.165.100.38/32 Deny Spam
+125.165.179.254/32 Deny Spam
+125.166.52.126/32 Deny Spam
+125.166.174.251/32 Deny Spam
+125.166.179.124/32 Deny Spam
+125.166.226.43/32 Deny Spam
 125.167.32.0/24 Deny Spam
-125.167.56.21/32 Deny Spam
-180.241.46.231/32 Deny Spam
-180.243.52.129/32 Deny Spam
-180.243.54.180/32 Deny Spam
-180.246.185.217/32 Deny Spam
+125.167.52.0/24 Deny Malware
+125.167.59.121/32 Deny Spam
+125.167.75.179/32 Deny Spam
+125.167.189.153/32 Deny Spam
 180.246.205.0/24 Deny Spam
-180.248.0.97/32 Deny Spam
 180.248.123.0/24 Deny Malware
-180.250.0.0/16 Deny Spam
-180.251.0.177/32 Deny Spam
-180.251.249.69/32 Deny Spam
-180.253.117.188/32 Deny Spam
+180.250.12.0/24 Deny Spam
 180.253.118.0/24 Deny Malware
 180.253.167.0/24 Deny Malware
-203.130.215.0/24 Deny Spam
-222.124.11.0/24 Deny Spam
+203.130.215.147/32 Deny Spam
+222.124.11.139/32 Deny Spam
 Origin: ID
 103.203.158.0/23 Deny Cloud
 210.173.176.0/24 Deny Cloud
@@ -13559,8 +13551,6 @@ Origin: PL
 154.195.4.0/23 Deny Cloud
 156.233.24.0/23 Deny Cloud
 Origin: SC
-27.111.228.0/22 Deny Cloud
-Origin: SG
 23.2.15.0/24 Deny Cloud
 23.195.104.0/24 Deny Cloud
 23.195.240.0/22 Deny Cloud
@@ -13578,17 +13568,11 @@ Origin: SG
 104.99.184.0/22 Deny Cloud
 104.111.0.0/19 Deny Cloud
 184.26.108.0/22 Deny Cloud
-192.145.251.0/24 Deny Cloud
-198.32.132.0/24 Deny Cloud
-198.32.160.0/23 Deny Cloud
-198.32.176.0/24 Deny Cloud
-206.72.210.0/23 Deny Cloud
 206.126.236.0/22 Deny Cloud
-206.197.187.0/24 Deny Cloud
 206.223.118.0/24 Deny Cloud
 206.223.123.0/24 Deny Cloud
 Origin: US
-Profile: Domestic ISP
+Profile: Domestic ISP;Infrastructure/Transit;Multiplay
 Tag: PT Telekomunikasi Indonesia
 ---
 recaptcha:
@@ -13698,7 +13682,7 @@ hcaptcha:
 92.118.12.53/32 Deny Spam
 185.89.36.0/24 Deny Spam
 Origin: DE
-Profile: Infrastructure
+Profile: Infrastructure/Transit
 Tag: Netzbetrieb GmbH
 ---
 recaptcha:
@@ -13725,40 +13709,57 @@ hcaptcha:
 
 
 # ASNs 12400 ("Partner Communications Ltd").
-# Israeli multiplay network with indirect connections to Bezeq. Also a source
-# of spam and network probes. Marked for use with reCAPTCHA as a precaution.
-# Including entirely some confirmed cloud ranges there.
-# E.g., CLOUDWEBMANAGE|Akamai
-# Outside of that, listing only the specific confirmed affected
-# ranges/addresses.
-# Stop Forum Spam (SFS) listings: 82.
-# Updated: 2020.10.23
+# Israeli multiplay network with indirect connections to Bezeq. Listing just
+# the affected ranges/addresses, plus confirmed cloud ranges.
+# Stop Forum Spam (SFS) listings: 5,040.
+# Updated: 2021.05.17
 
-2.22.233.0/24 Deny Cloud
-Origin: EU
-87.239.255.103/32 Deny Spam
-87.239.255.105/32 Deny Spam
-Origin: GB
-2.55.112.210/32 Deny Spam
+2.53.47.49/32 Deny Spam
 2.55.125.0/24 Deny Malware
-5.100.248.0/21 Deny Cloud
-31.154.73.148/32 Deny Malware
-46.121.27.202/32 Deny Spam
-82.102.148.93/32 Deny Spam
-109.207.79.0/24 Deny Cloud
-185.241.6.0/24 Deny Cloud
-194.36.90.0/23 Deny Cloud
-195.28.180.0/23 Deny Cloud
-212.80.204.0/24 Deny Cloud
+31.154.27.34/32 Deny Spam
+31.154.39.0/24 Deny Spam
+31.154.62.67/32 Deny Spam
+77.124.66.0/24 Deny Spam
+77.124.72.73/32 Deny Spam
+77.124.79.0/24 Deny Spam
+77.124.85.0/24 Deny Spam
+77.124.99.105/32 Deny Spam
+77.124.100.0/24 Deny Spam
+77.124.177.0/24 Deny Spam
+77.124.181.130/32 Deny Spam
+77.124.200.0/24 Deny Spam
+77.124.210.105/32 Deny Spam
+77.125.3.226/32 Deny Spam
+77.125.14.0/24 Deny Spam
+77.125.45.0/24 Deny Spam
+77.125.100.0/24 Deny Spam
+77.125.180.0/24 Deny Spam
+77.125.182.0/24 Deny Spam
+77.126.29.0/24 Deny Spam
+77.126.39.0/24 Deny Spam
+77.126.68.0/24 Deny Spam
+77.126.177.178/32 Deny Spam
+77.126.179.0/24 Deny Spam
+77.126.180.0/24 Deny Spam
+77.126.184.0/24 Deny Spam
+77.126.190.0/24 Deny Spam
+77.126.192.0/24 Deny Spam
+77.127.5.0/24 Deny Spam
+77.127.9.0/24 Deny Spam
+77.127.48.0/23 Deny Spam
+77.127.62.0/24 Deny Spam
+77.127.67.0/24 Deny Spam
+77.127.90.0/24 Deny Spam
+77.127.96.0/24 Deny Spam
+87.68.224.197/32 Deny Spam
+213.8.166.188/32 Deny Spam
 Origin: IL
-23.45.120.0/24 Deny Cloud
-23.221.26.0/23 Deny Cloud
-23.221.28.0/22 Deny Cloud
-23.221.128.0/19 Deny Cloud
-104.76.183.0/24 Deny Cloud
-184.26.88.0/24 Deny Cloud
-Origin: US
-Profile: Domestic ISP;Multiplay
+87.239.255.0/24 Deny Cloud
+185.147.140.0/22 Deny Cloud
+Origin: IN
+2.22.233.0/24 Deny Cloud
+Origin: NL
+Profile: Domestic ISP;Multiplay;Webhosting
 Tag: Partner Communications Ltd
 ---
 recaptcha:
@@ -14094,7 +14095,7 @@ Origin: SG
 209.88.0.0/16 Deny Cloud
 216.72.0.0/16 Deny Cloud
 Origin: US
-Profile: Domestic ISP;Infrastructure;Multiplay
+Profile: Domestic ISP;Infrastructure/Transit;Multiplay
 Tag: Orange S.A
 
 
@@ -14220,7 +14221,7 @@ hcaptcha:
 193.175.119.11/32 Deny Spam
 195.37.209.0/24 Deny Malware
 Origin: DE
-Profile: Infrastructure;Tor endpoints here
+Profile: Infrastructure/Transit;Tor endpoints here;University
 Tag: DFN
 ---
 recaptcha:
@@ -14403,7 +14404,7 @@ Origin: NL
 193.32.248.0/23 Deny Spam
 193.138.216.0/22 Deny Spam
 Origin: SE
-Profile: Infrastructure;Multiplay;Tor endpoints here;Webhosting
+Profile: Infrastructure/Transit;Multiplay;Tor endpoints here;Webhosting
 Tag: 31173 Services AB
 ---
 recaptcha:
@@ -14790,12 +14791,12 @@ hcaptcha:
 
 
 # ASNs 16135, 34984 ("TURKCELL ILETISIM HIZMETLERI A.S").
-# Turkish mobile data provider. Numerous spam events, as well as some
-# brute-force and SSH attack attempts detected from this network.
+# Turkish multiplay network, ISP, TV, and mobile data provider. Spam,
+# brute-force, and SSH attacks detected from here.
 # Listing just the affected ranges/addresses, plus all non-TR ranges.
-# %Listed, abuseat.org (CBL-Listed): 1.20% (AS16135).
-# Stop Forum Spam (SFS) listings: 967 (AS16135), 4,891 (AS34984).
-# Updated: 2021.02.08
+# %Listed, abuseat.org (CBL-Listed): 0.14% (AS34984).
+# Stop Forum Spam (SFS) listings: 989 (AS16135), 4,491 (AS34984).
+# Updated: 2021.05.18
 
 185.214.191.0/24 Deny Cloud
 Origin: AT
@@ -14805,72 +14806,84 @@ Origin: BG
 Origin: DE
 85.153.11.0/24 Deny Cloud
 Origin: EE
-5.11.129.236/32 Deny Spam
-5.24.110.162/32 Deny Spam
-5.25.149.36/32 Deny Spam
-5.25.160.117/32 Deny Spam
-5.25.180.116/32 Deny Spam
-31.140.179.88/32 Deny Spam
-31.142.53.70/32 Deny Spam
+5.11.183.35/32 Deny Spam
+5.25.142.23/32 Deny Spam
+5.25.162.35/32 Deny Spam
+5.25.165.129/32 Deny Spam
+5.25.166.208/32 Deny Spam
+5.27.236.103/32 Deny Spam
+31.140.229.224/32 Deny Spam
+31.142.102.126/32 Deny Spam
+31.142.122.9/32 Deny Spam
+82.222.236.28/32 Deny Spam
 84.51.48.186/32 Deny Spam
 84.51.56.0/24 Deny Spam
-89.200.219.134/32 Deny Spam
-91.93.43.161/32 Deny Spam
-91.93.68.81/32 Deny Spam
+91.93.58.175/32 Deny Spam
+91.93.65.59/32 Deny Spam
 91.93.69.211/32 Deny Spam
-91.93.73.148/32 Deny Spam
-92.45.19.0/24 Deny Spam
-141.196.148.15/32 Deny Spam
-151.250.116.252/32 Deny Spam
-176.33.68.170/32 Deny Spam
-176.33.246.45/32 Deny Spam
-176.40.230.252/32 Deny Spam
+91.93.195.115/32 Deny Spam
+92.45.19.0/24 Deny Malware
+176.33.241.56/32 Deny Spam
+176.40.14.163/32 Deny Spam
+176.40.38.196/32 Deny Spam
+176.40.189.186/32 Deny Spam
 176.41.178.0/24 Deny Spam
-176.42.14.42/32 Deny Spam
-176.42.26.41/32 Deny Malware
+176.42.26.0/24 Deny Malware
 176.42.108.143/32 Deny Spam
-176.88.21.44/32 Deny Spam
-176.88.47.94/32 Deny Spam
-176.88.92.234/32 Deny Spam
-176.232.62.241/32 Deny Spam
-176.232.181.75/32 Deny Spam
-176.233.179.182/32 Deny Spam
-176.234.230.154/32 Deny Spam
-176.235.87.0/24 Deny Spam
+176.88.86.247/32 Deny Spam
+176.227.13.125/32 Deny Spam
+176.227.61.58/32 Deny Spam
+176.232.28.29/32 Deny Spam
+176.232.53.225/32 Deny Spam
+176.232.57.0/24 Deny Malware
+176.233.70.53/32 Deny Spam
+176.234.100.154/32 Deny Spam
+176.234.129.104/32 Deny Spam
+176.234.171.207/32 Deny Spam
+176.234.225.199/32 Deny Spam
+176.234.226.24/32 Deny Spam
+176.234.229.70/32 Deny Spam
+176.234.230.249/32 Deny Spam
 176.235.94.0/24 Deny Spam
 176.235.99.0/24 Deny Spam
 176.235.164.0/24 Deny Spam
-176.235.170.175/32 Deny Spam
 176.235.178.0/24 Deny Spam
 176.235.182.0/24 Deny Spam
+176.235.216.155/32 Deny Malware
 176.236.14.0/24 Deny Spam
 176.236.37.0/24 Deny Spam
-176.236.42.148/32 Deny Spam
-176.236.143.249/32 Deny Spam
-176.236.199.181/32 Deny Spam
-176.237.225.86/32 Deny Spam
-176.237.231.149/32 Deny Spam
-178.241.88.179/32 Deny Spam
+176.236.99.218/32 Deny Spam
+176.236.218.1/32 Deny Spam
+176.236.222.3/32 Deny Spam
+176.236.226.0/24 Deny Malware
+176.237.225.129/32 Deny Spam
+176.238.29.176/32 Deny Spam
+176.239.15.233/32 Deny Spam
 178.242.41.0/24 Deny Malware
-178.242.72.134/32 Deny Spam
 178.242.114.0/24 Deny Malware
-178.242.119.6/32 Deny Spam
-178.245.38.188/32 Deny Spam
-178.246.59.107/32 Deny Spam
-178.246.86.225/32 Deny Spam
-178.246.204.218/32 Deny Spam
-185.237.80.0/24 Deny Spam
+178.244.108.13/32 Deny Spam
+178.244.120.198/32 Deny Spam
+178.245.47.29/32 Deny Spam
+178.245.59.46/32 Deny Spam
+178.246.2.90/32 Deny Spam
 188.57.24.193/32 Deny Spam
-188.57.42.86/32 Deny Spam
-188.57.133.102/32 Deny Spam
-188.57.168.20/32 Deny Spam
+188.58.64.183/32 Deny Spam
+188.59.88.234/32 Deny Spam
 188.59.186.0/24 Deny Malware
-195.33.240.222/32 Deny Spam
+195.33.240.0/24 Deny Spam
+195.142.70.25/32 Deny Spam
+195.155.169.146/32 Deny Spam
 212.252.63.0/24 Deny Spam
-212.252.134.0/24 Deny Spam
-212.253.95.89/32 Deny Spam
+212.252.119.207/32 Deny Spam
+212.252.134.107/32 Deny Spam
+212.252.137.25/32 Deny Spam
+212.253.223.121/32 Deny Spam
 213.14.19.182/32 Deny Spam
 213.14.31.0/24 Deny Spam
+213.43.119.120/32 Deny Spam
+213.74.84.21/32 Deny Spam
+213.74.85.143/32 Deny Spam
+217.131.81.160/32 Deny Spam
 Origin: TR
 23.221.160.0/19 Deny Cloud
 23.221.192.0/22 Deny Cloud
@@ -14882,6 +14895,7 @@ Origin: TR
 172.33.100.0/24 Deny Cloud
 172.38.154.0/24 Deny Cloud
 Origin: US
+Profile: Domestic ISP;Infrastructure/Transit;Multiplay
 Tag: TURKCELL ILETISIM HIZMETLERI
 ---
 recaptcha:
@@ -15266,7 +15280,7 @@ hcaptcha:
 43.252.183.0/24 Deny Spam
 223.27.237.6/32 Deny Malware
 Origin: TH
-Profile: Domestic ISP;Infrastructure
+Profile: Domestic ISP;Infrastructure/Transit
 Tag: UIH
 ---
 recaptcha:
@@ -16264,6 +16278,7 @@ hcaptcha:
 
 103.149.203.0/24 Deny Malware
 Origin: ID
+Profile: Commercial
 Tag: DINAS KOMUNIKASI
 
 
@@ -16271,7 +16286,7 @@ Tag: DINAS KOMUNIKASI
 # Kazakh multiplay ISP caught spamming and other unwanted traffic.
 # Listing just the affected ranges/addresses only.
 # Stop Forum Spam (SFS) listings: 1,795 (AS21299), 69 (AS35566), 224 (AS206026).
-# Updated: 2021.03.19 / Modified: 2021.05.11
+# Updated: 2021.03.19 / Modified: 2021.05.17
 
 5.34.8.165/32 Deny Malware
 5.34.8.177/32 Deny Spam
@@ -16285,6 +16300,7 @@ Tag: DINAS KOMUNIKASI
 37.99.119.166/32 Deny Spam
 37.99.120.89/32 Deny Spam
 46.42.204.245/32 Deny Spam
+46.42.205.0/24 Deny Malware
 67.209.130.0/32 Deny Spam
 67.209.153.117/32 Deny Malware
 77.94.22.56/32 Deny Spam
@@ -16952,7 +16968,7 @@ hcaptcha:
 
 193.105.73.0/24 Deny Malware
 Origin: BE
-Profile: Domestic ISP;Infrastructure;Multiplay;Webhosting
+Profile: Domestic ISP;Infrastructure/Transit;Multiplay;Webhosting
 Tag: VERIXI SA
 ---
 recaptcha:
@@ -17057,7 +17073,7 @@ hcaptcha:
 80.67.169.12/32 Deny Malware
 80.67.172.162/32 Deny Malware
 Origin: FR
-Profile: Infrastructure;Tor endpoints here
+Profile: Infrastructure/Transit;Tor endpoints here
 Tag: Gitoyen
 ---
 recaptcha:
@@ -17114,7 +17130,7 @@ hcaptcha:
 178.219.154.117/32 Deny Spam
 188.35.131.0/24 Deny Malware
 Origin: RU
-Profile: Domestic ISP;Infrastructure;Multiplay;Webhosting
+Profile: Domestic ISP;Infrastructure/Transit;Multiplay;Webhosting
 Tag: Netorn LLC
 ---
 recaptcha:
@@ -17140,7 +17156,7 @@ hcaptcha:
 203.124.14.0/24 Deny Malware
 203.124.15.197/32 Deny Malware
 Origin: HK
-Profile: Domestic ISP;Infrastructure
+Profile: Domestic ISP;Infrastructure/Transit
 Tag: CommuniLink Internet
 ---
 recaptcha:
@@ -17270,7 +17286,7 @@ hcaptcha:
 41.170.4.42/32 Deny Spam
 41.170.12.0/24 Deny Spam
 Origin: MU
-Profile: Domestic ISP;Infrastructure;Multiplay;Webhosting
+Profile: Domestic ISP;Infrastructure/Transit;Multiplay;Webhosting
 Tag: Liquid Telecommunications
 ---
 recaptcha:
@@ -17399,7 +17415,7 @@ hcaptcha:
 202.43.186.94/32 Deny Spam
 203.176.180.0/24 Deny Spam
 Origin: ID
-Profile: Domestic ISP;Infrastructure
+Profile: Domestic ISP;Infrastructure/Transit
 Tag: PT Mora Telematika Indonesia
 ---
 recaptcha:
@@ -17566,7 +17582,7 @@ hcaptcha:
 88.119.195.95/32 Deny Spam
 88.119.204.62/32 Deny Malware
 Origin: LT
-Profile: Domestic ISP;Infrastructure;Multiplay
+Profile: Domestic ISP;Infrastructure/Transit;Multiplay
 Tag: Telia Lietuva, AB
 ---
 recaptcha:
@@ -17616,7 +17632,7 @@ Tag: Tallahatchie Valley
 46.148.206.0/24 Deny Malware
 176.74.11.0/24 Deny Spam
 Origin: RU
-Profile: Domestic ISP;Infrastructure;Multiplay;Webhosting
+Profile: Domestic ISP;Infrastructure/Transit;Multiplay;Webhosting
 Tag: Wiland Ltd
 ---
 recaptcha:
@@ -17665,7 +17681,7 @@ hcaptcha:
 103.163.45.0/24 Deny Malware
 103.252.116.138/32 Deny Spam
 Origin: IN
-Profile: Infrastructure
+Profile: Commercial
 Tag: INFONET COMM ENTERPRISES
 ---
 recaptcha:
@@ -17718,7 +17734,7 @@ hcaptcha:
 109.31.103.113/32 Deny Spam
 195.132.56.112/32 Deny Spam
 Origin: FR
-Profile: Domestic ISP;Infrastructure;Multiplay
+Profile: Domestic ISP;Infrastructure/Transit;Multiplay
 Tag: SFR SA
 ---
 recaptcha:
@@ -17805,6 +17821,182 @@ Origin: AU
 Origin: US
 Profile: Domestic ISP
 Tag: TPG Telecom Limited
+---
+recaptcha:
+ enabled: true
+hcaptcha:
+ enabled: true
+
+
+# ASN 16347 ("ADISTA SAS").
+# French multiplay network, hosting/cloud/infrastructure provider, and
+# ISPs/endpoints also found here. WordPress hack attempts, brute-force and SSH
+# attacks detected from here. Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 23.
+# Updated: 2021.05.17
+
+31.207.39.0/24 Deny Malware
+194.0.153.241/32 Deny Spam
+195.110.35.122/32 Deny Spam
+Origin: FR
+Profile: Domestic ISP;Infrastructure/Transit;Multiplay;Webhosting
+Tag: ADISTA SAS
+---
+recaptcha:
+ enabled: true
+hcaptcha:
+ enabled: true
+
+
+# ASNs 3175, 29076 ("Filanco LLC").
+# Russian multiplay network (domestic ISP, webhosting, colo, etc). Brute-force
+# and SSH attacks, hacking, and port scans detected from here.
+# Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 104 (AS3175), 180 (AS29076).
+# Updated: 2021.05.17
+
+31.28.6.0/24 Deny Malware
+31.28.10.0/24 Deny Malware
+31.28.20.0/24 Deny Spam
+62.152.55.0/24 Deny Malware
+Origin: RU
+Profile: Domestic ISP;Infrastructure/Transit;Multiplay;Webhosting
+Tag: Filanco LLC
+---
+recaptcha:
+ enabled: true
+hcaptcha:
+ enabled: true
+
+
+# ASN 57049 ("Small Private Enterprise Kvant-II").
+# Ukrainian domestic ISP. HUGE levels of brute-force attacks, SSH attacks,
+# spam, hacking, and other nefarious activity seen from here!
+# Stop Forum Spam (SFS) listings: 4,786.
+# Updated: 2021.05.17
+
+91.230.25.0/24 Deny Malware
+92.118.76.0/23 Deny Malware
+92.118.78.0/24 Deny Malware
+188.191.148.0/22 Deny Malware
+Origin: UA
+Profile: Domestic ISP
+Tag: Kvant-II
+---
+recaptcha:
+ enabled: true
+hcaptcha:
+ enabled: true
+
+
+# ASN 9381 ("HKBN Enterprise Solutions HK Limited").
+# Hong Kong commercial multiplay network (domestic connectivity, cloud
+# infrastructure, etc). Brute-force, SSH, and webapp attacks, plus spam and
+# some other unusual traffic detected from here. Listing just the affected
+# ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 287.
+# Updated: 2021.05.18
+
+103.234.220.0/24 Deny Malware
+103.247.141.30/32 Deny Generic
+116.92.235.2/32 Deny Spam
+175.45.58.0/24 Deny Spam
+202.155.204.0/24 Deny Spam
+202.155.208.130/32 Deny Spam
+210.17.202.33/32 Deny Spam
+218.255.130.82/32 Deny Spam
+Origin: HK
+Profile: Commercial;Domestic ISP;Infrastructure/Transit;Multiplay;Tor endpoints here;Webhosting
+Tag: HKBN Enterprise Solutions
+---
+recaptcha:
+ enabled: true
+hcaptcha:
+ enabled: true
+
+
+# ASN 18049 ("Taiwan Infrastructure Network Technologie").
+# Taiwan infrastructure provider which hosts both cloud services as well as
+# several domestic ISPs with numerous human endpoints. Brute-force, SSH, and
+# webapp attacks, port scans, and spam detected from here. A number of
+# compromised domestic routers with exposed/open ports detected here also.
+# Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 4.
+# Updated: 2021.05.18
+
+106.105.94.0/24 Deny Malware
+106.107.129.0/24 Deny Malware
+106.107.130.131/32 Deny Malware
+106.107.131.0/24 Deny Malware
+106.107.132.0/23 Deny Malware
+106.107.135.139/32 Deny Malware
+106.107.136.0/23 Deny Malware
+106.107.138.0/24 Deny Malware
+106.107.140.0/24 Deny Malware
+106.107.142.0/24 Deny Malware
+106.107.143.76/32 Deny Malware
+106.107.243.0/24 Deny Malware
+112.105.13.0/24 Deny Malware
+Origin: TW
+Profile: Domestic ISP;Infrastructure/Transit;Multiplay
+Tag: Taiwan Infrastructure Network
+---
+recaptcha:
+ enabled: true
+hcaptcha:
+ enabled: true
+
+
+# ASN 56030 ("Voyager Internet Ltd").
+# New Zealand business multiplay network and broadband provider. Spam,
+# brute-force, and webapp attacks detected from here. Listing just the affected
+# ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 596.
+# Updated: 2021.05.18
+
+144.168.213.0/24 Deny Malware
+Origin: CA
+111.65.227.32/32 Deny Malware
+Origin: NZ
+Profile: Commercial;Domestic ISP;Multiplay
+Tag: Voyager Internet Ltd
+---
+recaptcha:
+ enabled: true
+hcaptcha:
+ enabled: true
+
+
+# ASN 55684 ("Universitas Sebelas Maret").
+# Indonesian university network. Hacking, brute-force, and SSH attacks detected
+# from some ranges here. Listing just the affected ranges/addresses only.
+# Updated: 2021.05.18
+
+103.23.224.0/24 Deny Malware
+203.6.149.0/24 Deny Malware
+Origin: ID
+Profile: University
+Tag: Universitas Sebelas Maret
+---
+recaptcha:
+ enabled: true
+hcaptcha:
+ enabled: true
+
+
+# ASN 9908 ("HK Cable TV Ltd").
+# Hong Kong cable TV provider and domestic ISP. Spam, port scans, brute-force,
+# and webapp attacks detected from here. Listing just the affected
+# ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 119.
+# Updated: 2021.05.18
+
+125.59.109.103/32 Deny Malware
+218.253.5.0/24 Deny Malware
+218.253.39.60/32 Deny Malware
+Origin: HK
+Profile: Commercial;Domestic ISP;Multiplay
+Tag: HK Cable TV Ltd
 ---
 recaptcha:
  enabled: true

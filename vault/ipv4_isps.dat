@@ -1,8 +1,8 @@
 # IPv4 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv4_isps.dat
 
-# Version: 2021.137.403
-# Last modified: 2021.05.18
+# Version: 2021.139.663
+# Last modified: 2021.05.20
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage, i.e. WITH ignore.dat, CAPTCHA, "extended rules" (default bypasses): « [ ]Low [x]Medium [ ]High »
@@ -7727,10 +7727,17 @@ hcaptcha:
 
 # Other recently detected malware endpoints (excluding that already listed elsewhere).
 
-# Updated: 2021.03.02
+# Updated: 2021.05.20
+181.215.176.0/24 Deny Malware
+191.96.106.0/24 Deny Malware
+191.101.31.0/24 Deny Malware
+191.101.217.0/24 Deny Malware
+Origin: CL
 38.18.35.0/24 Deny Malware
 82.129.6.0/24 Deny Malware
 Origin: US
+154.16.184.0/22 Deny Malware
+Origin: ZA
 Tag: Cogent Malware
 ---
 recaptcha:
@@ -14206,19 +14213,17 @@ hcaptcha:
 
 
 # ASN 680 ("Verein zur Foerderung eines Deutschen Forschungsnetzes e.V").
-# Scientific research and education organisation. A very large number of
-# universities in Europe route through this ASN, with mostly human endpoints,
-# so this ASN should definitely never be blocked in entirety. However, it's
-# also a source of spam and various other unwanted traffic. As such, the
-# specific known currently affected ranges are listed here.
-# Stop Forum Spam (SFS) listings: 1,803.
-# Updated: 2021.03.15
+# German National Research and Education Network (DFN). A very large number of
+# universities in Europe route through this ASN, with mostly human endpoints.
+# Spam, port scans, hack attempts, brute-force, and SSH attacks detected from
+# here. Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 2,217.
+# Updated: 2021.05.20
 
 130.149.80.0/24 Deny Malware
 131.220.6.0/24 Deny Malware
 134.169.32.0/24 Deny Malware
-139.18.244.185/32 Deny Spam
-193.175.119.11/32 Deny Spam
+141.35.40.69/32 Deny Spam
 195.37.209.0/24 Deny Malware
 Origin: DE
 Profile: Infrastructure/Transit;Tor endpoints here;University
@@ -15761,7 +15766,7 @@ Origin: SG
 104.123.52.0/22 Deny Cloud
 184.85.234.0/23 Deny Cloud
 Origin: US
-Profile: Domestic ISP;Multiplay
+Profile: Commercial;Multiplay
 Tag: LG DACOM Corporation
 ---
 recaptcha:
@@ -16286,7 +16291,7 @@ Tag: DINAS KOMUNIKASI
 # Kazakh multiplay ISP caught spamming and other unwanted traffic.
 # Listing just the affected ranges/addresses only.
 # Stop Forum Spam (SFS) listings: 1,795 (AS21299), 69 (AS35566), 224 (AS206026).
-# Updated: 2021.03.19 / Modified: 2021.05.17
+# Updated: 2021.03.19 / Modified: 2021.05.20
 
 5.34.8.165/32 Deny Malware
 5.34.8.177/32 Deny Spam
@@ -16327,7 +16332,7 @@ Tag: DINAS KOMUNIKASI
 92.49.220.0/24 Deny Spam
 92.49.221.0/24 Deny Malware
 92.49.223.218/32 Deny Spam
-92.55.169.98/32 Deny Spam
+92.55.169.0/24 Deny Malware
 95.82.114.98/32 Deny Spam
 95.82.115.5/32 Deny Spam
 95.82.116.151/32 Deny Spam
@@ -16358,6 +16363,7 @@ Tag: DINAS KOMUNIKASI
 176.222.147.0/24 Deny Spam
 176.222.157.202/32 Deny Spam
 176.222.172.44/32 Deny Spam
+176.222.175.0/24 Deny Malware
 185.14.103.0/24 Deny Malware
 188.247.192.138/32 Deny Spam
 194.105.105.225/32 Deny Spam
@@ -17997,6 +18003,129 @@ hcaptcha:
 Origin: HK
 Profile: Commercial;Domestic ISP;Multiplay
 Tag: HK Cable TV Ltd
+---
+recaptcha:
+ enabled: true
+hcaptcha:
+ enabled: true
+
+
+# ASNs 99241 33841 ("kbro CO. Ltd").
+# Taiwanese domestic ISP and mobile provider. Spam, port scans, brute-force,
+# and webapp attacks detected from here. Listing just the affected
+# ranges/addresses, plus all non-TW ranges.
+# Stop Forum Spam (SFS) listings: 58 (AS9924).
+# Updated: 2021.05.20
+
+43.249.212.0/24 Deny Cloud
+Origin: SG
+103.224.195.41/32 Deny Spam
+123.193.152.22/32 Deny Malware
+219.87.144.229/32 Deny Spam
+Origin: TW
+23.11.64.0/20 Deny Cloud
+23.11.160.0/20 Deny Cloud
+23.65.80.0/20 Deny Cloud
+23.202.122.0/23 Deny Cloud
+23.202.124.0/22 Deny Cloud
+23.212.60.0/24 Deny Cloud
+104.66.128.0/19 Deny Cloud
+104.77.93.0/24 Deny Cloud
+184.51.152.0/24 Deny Cloud
+Origin: US
+Profile: Domestic ISP;Multiplay
+Tag: kbro CO. Ltd
+---
+recaptcha:
+ enabled: true
+hcaptcha:
+ enabled: true
+
+
+# ASN 57712 ("NPF SOFTVIDEO Ltd").
+# Russian domestic ISP. Relative to the size of the network, a *HUGE* amount of
+# spam has been detected from here. Port scans, and webapp, brute-force, and
+# SSH attacks also detected from here.
+# Stop Forum Spam (SFS) listings: 5,351.
+# Updated: 2021.05.20
+
+91.184.253.0/24 Deny Spam
+176.106.240.0/20 Deny Spam
+Origin: RU
+Profile: Domestic ISP
+Tag: NPF SOFTVIDEO Ltd
+---
+recaptcha:
+ enabled: true
+hcaptcha:
+ enabled: true
+
+
+# ASN 31272 ("WildPark Co").
+# Ukrainian domestic ISP. Caught trying to hack into phpMyAdmin pages. Spam,
+# port scans, and webapp, brute-force, and SSH attacks also detected from here.
+# ranges/addresses only. Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 5,351.
+# Updated: 2021.05.20
+
+46.33.226.78/32 Deny Spam
+46.33.253.29/32 Deny Spam
+77.247.21.159/32 Deny Spam
+109.104.164.105/32 Deny Spam
+109.104.177.42/32 Deny Spam
+141.101.7.201/32 Deny Spam
+141.101.21.154/32 Deny Spam
+141.101.29.170/32 Deny Spam
+185.159.162.0/23 Deny Malware
+212.92.240.31/32 Deny Spam
+212.92.249.97/32 Deny Spam
+217.77.215.100/32 Deny Spam
+Origin: UA
+Profile: Domestic ISP
+Tag: WildPark Co
+---
+recaptcha:
+ enabled: true
+hcaptcha:
+ enabled: true
+
+
+# ASN 9770 ("LG HelloVision Corp").
+# Korean commercial network. Caught credential stuffing. Open ports detected
+# from some addresses here. Listing just the affected addresses/ranges only.
+# Stop Forum Spam (SFS) listings: 1.
+# Updated: 2021.05.20
+
+113.130.182.239/32 Deny Malware
+117.55.186.116/32 Deny Malware
+118.127.200.111/32 Deny Malware
+120.136.91.14/32 Deny Malware
+180.189.116.241/32 Deny Malware
+Origin: KR
+Profile: Commercial;Multiplay
+Tag: LG HelloVision Corp
+---
+recaptcha:
+ enabled: true
+hcaptcha:
+ enabled: true
+
+
+# ASNs 286, 3257 ("GTT Communications Inc").
+# Commercial multiplay network. Port scans, spam, brute-force, and webapp
+# attacks detected from here. Listing just the affected addresses/ranges only.
+# Stop Forum Spam (SFS) listings: 240 (AS3257).
+# Updated: 2021.05.20
+
+199.204.208.0/24 Deny Malware
+Origin: CA
+181.214.206.0/24 Deny Malware
+191.101.209.0/24 Deny Malware
+Origin: CL
+195.81.35.186/32 Deny Spam
+Origin: US
+Profile: Commercial;Multiplay
+Tag: GTT Communications Inc
 ---
 recaptcha:
  enabled: true

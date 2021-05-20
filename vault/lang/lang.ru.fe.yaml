@@ -7,13 +7,13 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Russian language data for the front-end (last modified: 2021.05.09).
+# This file: Russian language data for the front-end (last modified: 2021.05.20).
 ##/
 
 Extended Description Bypasses: "Стандартная сигнатуры байпасы, обычно включены в основной пакет."
 Extended Description Chart.js: "Позволяет фронтенд создавать круговые диаграммы.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> доступен через <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
 Extended Description IPv4-Bogons: &ExtDesBogons "Блокирует bogon/марсианин CIDRs."
-Extended Description IPv4-ISPs: &ExtDesISPs "Блокирует опасно и спам-склонным интернет-провайдеры."
+Extended Description IPv4-ISPs: &ExtDesISPs "Блокирует опасно и спам-склонным интернет-провайдеры (включает multiplay сети, которые могут содержать человеческие и нечеловеческие конечные точки)."
 Extended Description IPv4-Nonblocking: &ExtDesNonblocking "Полезно для профилирования, но сам по себе ничего не блокирует."
 Extended Description IPv4-Other: &ExtDesOther "Блокирует CIDRs для прокси-серверов, виртуальных частных сетей и различных других нежелательных услуг."
 Extended Description IPv4: &ExtDesCloud "Блокирует нежелательные облачные сервисы и нечеловеческие конечные точки."
@@ -228,6 +228,7 @@ field_log_in: "Войдите"
 field_netmask: "Генерировать вывод в виде сетевых масок"
 field_new_name: "Новое имя:"
 field_nonclickable_text: "Текст не кликабельны"
+field_not_tracking: "Без отслеживания."
 field_ok: "ОК"
 field_omit: "Опустить пустые поля"
 field_options: "Опции"

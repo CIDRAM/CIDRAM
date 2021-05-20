@@ -7,13 +7,13 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Japanese language data for the front-end (last modified: 2021.05.10).
+# This file: Japanese language data for the front-end (last modified: 2021.05.20).
 ##/
 
 Extended Description Bypasses: "メインパッケージに通常含まれているデフォルト・シグネチャ・バイパス。"
 Extended Description Chart.js: "フロントエンドが円グラフを生成できるようにします。<br />「<a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a>」は、「<a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>」を介して利用可能です。"
 Extended Description IPv4-Bogons: &ExtDesBogons "ボゴンＣＩＤＲをブロックします。"
-Extended Description IPv4-ISPs: &ExtDesISPs "スパマーを持つ危険なＩＳＰをブロックします。"
+Extended Description IPv4-ISPs: &ExtDesISPs "スパマーを持つ危険なＩＳＰをブロックします（マルチプレイ・ネットワークが含まれています。人間と人間以外のエンドポイントの両方が含まれる場合があります）。"
 Extended Description IPv4-Nonblocking: &ExtDesNonblocking "プロファイリングに役立ちますが、それ自体では何もブロックしません。"
 Extended Description IPv4-Other: &ExtDesOther "プロキシ、​ＶＰＮ、​およびその他の不要なサービスのＣＩＤＲをブロックします。"
 Extended Description IPv4: &ExtDesCloud "不要なクラウドサービスと非人のエンドポイントをブロックします。"
@@ -228,6 +228,7 @@ field_log_in: "ログイン"
 field_netmask: "ネットマスクを使って出力を生成する"
 field_new_name: "新しい名前："
 field_nonclickable_text: "クリックできないテキスト"
+field_not_tracking: "追跡していません。"
 field_ok: "ＯＫ"
 field_omit: "空のフィールドを非表示にします"
 field_options: "オプション"

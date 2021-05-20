@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2021.05.15).
+ * This file: Functions file (last modified: 2021.05.19).
  */
 
 /** Autoloader for CIDRAM classes. */
@@ -960,7 +960,7 @@ $CIDRAM['DNS-Reverse-Forward'] = function ($Domains, string $Friendly, array $Op
                 isset($CIDRAM['BlockInfo']['SignatureCount'], $CIDRAM['BlockInfo']['WhyReason']) &&
                 $CIDRAM['BlockInfo']['SignatureCount'] === 1 &&
                 strpos($CIDRAM['BlockInfo']['WhyReason'], '-IPv4') !== false
-            ), 'Single hit bypass (verified request)');
+            ), $CIDRAM['L10N']->getString('why_single_hit_bypass'));
 
             /** Exit. */
             return true;
@@ -990,7 +990,7 @@ $CIDRAM['DNS-Reverse-Forward'] = function ($Domains, string $Friendly, array $Op
                 isset($CIDRAM['BlockInfo']['SignatureCount'], $CIDRAM['BlockInfo']['WhyReason']) &&
                 $CIDRAM['BlockInfo']['SignatureCount'] === 1 &&
                 strpos($CIDRAM['BlockInfo']['WhyReason'], '-IPv4') !== false
-            ), 'Single hit bypass (verified request)');
+            ), $CIDRAM['L10N']->getString('why_single_hit_bypass'));
 
             /** Exit. */
             return true;
@@ -1131,7 +1131,7 @@ $CIDRAM['UA-X-Match'] = function ($Datapoints, $Expected, string $Friendly, arra
                 isset($CIDRAM['BlockInfo']['SignatureCount'], $CIDRAM['BlockInfo']['WhyReason']) &&
                 $CIDRAM['BlockInfo']['SignatureCount'] === 1 &&
                 strpos($CIDRAM['BlockInfo']['WhyReason'], '-IPv4') !== false
-            ), 'Single hit bypass (verified request)');
+            ), $CIDRAM['L10N']->getString('why_single_hit_bypass'));
 
             /** Successfully matched; Exit. */
             return;

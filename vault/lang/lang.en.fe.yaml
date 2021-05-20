@@ -7,13 +7,13 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: English language data for the front-end (last modified: 2021.05.09).
+# This file: English language data for the front-end (last modified: 2021.05.20).
 ##/
 
 Extended Description Bypasses: "The default signature bypass files normally included with the main package."
 Extended Description Chart.js: "Enables the front-end to generate pie charts.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> is available via the <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
 Extended Description IPv4-Bogons: &ExtDesBogons "Blocks bogon/martian CIDRs."
-Extended Description IPv4-ISPs: &ExtDesISPs "Blocks dangerous and spammy ISPs."
+Extended Description IPv4-ISPs: &ExtDesISPs "Blocks dangerous and spammy ISPs (includes multiplay networks, which may contain both human and non-human endpoints)."
 Extended Description IPv4-Nonblocking: &ExtDesNonblocking "Useful for profiling, but doesn't block anything in its own right."
 Extended Description IPv4-Other: &ExtDesOther "Blocks CIDRs for proxies, VPNs, and other miscellaneous unwanted services."
 Extended Description IPv4: &ExtDesCloud "Blocks unwanted cloud services and non-human endpoints."
@@ -228,6 +228,7 @@ field_log_in: "Log In"
 field_netmask: "Generate output as netmasks"
 field_new_name: "New name:"
 field_nonclickable_text: "Non-clickable text"
+field_not_tracking: "Not tracking."
 field_ok: "OK"
 field_omit: "Omit empty fields"
 field_options: "Options"

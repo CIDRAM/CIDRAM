@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2021.05.09).
+ * This file: Front-end functions file (last modified: 2021.05.20).
  */
 
 /**
@@ -3481,8 +3481,16 @@ $CIDRAM['AuxGenerateFEData'] = function ($Mode = false) use (&$CIDRAM) {
                 $GridID++;
             }
 
+            /** Rule notes. */
+            $Output .= sprintf(
+                '</div></dd></dl><dl><dt class="s">%1$s</dt><dd><textarea id="Notes[%2$s]" name="Notes[%2$s]" class="half">%3$s</textarea></dd></dl>',
+                $CIDRAM['L10N']->getString('label_aux_notes'),
+                $Current,
+                isset($Data['Notes']) ? $Data['Notes'] : ''
+            );
+
             /** Finish writing new rule. */
-            $Output .= '</div></dd></dl></div>';
+            $Output .= '</div>';
             $Current++;
         } else {
             /** Figure out which options are available for the rule. */
@@ -3501,11 +3509,12 @@ $CIDRAM['AuxGenerateFEData'] = function ($Mode = false) use (&$CIDRAM) {
 
             /** Begin generating rule output. */
             $Output .= sprintf(
-                '%1$s<li class="%2$s"><span class="comCat" style="cursor:pointer"><span class="s">%3$s</span></span>%4$s%1$s<br /><br /><ul class="comSub">',
+                '%1$s<li class="%2$s"><span class="comCat" style="cursor:pointer"><span class="s">%3$s</span></span>%4$s%1$s%5$s<br /><br /><ul class="comSub">',
                 "\n        ",
                 $RuleClass,
                 $Name,
-                $Options
+                $Options,
+                isset($Data['Notes']) ? '<br /><em>' . str_replace(['<', '>', "\n"], ['&lt;', '&gt;', "<br />\n"], $Data['Notes']) . '</em>' : ''
             );
 
             /** Additional details about the rule to print to the page (e.g., detailed block reason). */

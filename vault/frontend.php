@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2021.05.17).
+ * This file: Front-end handler (last modified: 2021.05.20).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -3812,6 +3812,11 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'aux' && $CIDRAM['FE']['Permissi
             $CIDRAM['AuxData'][$_POST['ruleName']]['Method'] = 'WinEx';
         }
 
+        /** Construct new rule notes. */
+        if (isset($_POST['Notes']) && strlen($_POST['Notes'])) {
+            $CIDRAM['AuxData'][$_POST['ruleName']]['Notes'] = $_POST['Notes'];
+        }
+
         /** Construct other basic rule fields (e.g., match logic, block reason, etc). */
         foreach ([
             ['Logic', 'logic'],
@@ -4109,6 +4114,9 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'aux-edit' && $CIDRAM['FE']['Per
                 } elseif ($_POST['mtd'][$CIDRAM['Iterant']] === 'mtdWin') {
                     $CIDRAM['NewAuxArr'][$_POST['ruleName'][$CIDRAM['Iterant']]]['Method'] = 'WinEx';
                 }
+            }
+            if (!empty($_POST['Notes'][$CIDRAM['Iterant']])) {
+                $CIDRAM['NewAuxArr'][$_POST['ruleName'][$CIDRAM['Iterant']]]['Notes'] = $_POST['Notes'][$CIDRAM['Iterant']];
             }
             if (!empty($_POST['logic'][$CIDRAM['Iterant']])) {
                 $CIDRAM['NewAuxArr'][$_POST['ruleName'][$CIDRAM['Iterant']]]['Logic'] = $_POST['logic'][$CIDRAM['Iterant']];

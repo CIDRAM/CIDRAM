@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6.dat
 
-# Version: 2021.137.403
-# Last modified: 2021.05.18
+# Version: 2021.139.663
+# Last modified: 2021.05.20
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage, i.e. WITH ignore.dat, CAPTCHA, "extended rules" (default bypasses): « [x]Low [ ]Medium [ ]High »
@@ -3418,14 +3418,16 @@ Tag: OPTICAL TECHNOLOGIES
 
 
 # ASNs 29302, 32780 ("Hosting Services Inc").
-# Stop Forum Spam (SFS) listings: 65 (AS29302), 2,441 (AS32780).
-# Updated: 2020.10.26
+# Stop Forum Spam (SFS) listings: 24 (AS29302), 1,356 (AS32780).
+# Updated: 2021.05.20
 
 2602:ffb0:27::/48 Deny Cloud
 2602:ffb0:ffd::/48 Deny Cloud
 2606:2e00:8000::/48 Deny Cloud
-2606:2e00:8003::/48 Deny Cloud
+2606:2e00:8002::/47 Deny Cloud
 2606:2e00:8007::/48 Deny Cloud
+2a07:23c0::/48 Deny Cloud
+2a07:23c0:8::/47 Deny Cloud
 Origin: US
 Profile: Webhosting
 Tag: Hosting Services Inc
@@ -3476,20 +3478,27 @@ Tag: Host Sailor Ltd
 # ASNs 37692, 61102, 61317, 200660 ("NetStack Ltd", "Digital Energy
 # Technologies", "Interhost LLP"). Dedicated webhosting providers, server
 # farms, cloud services, server leasing, etc; all listed here listed due to a
-# range of various different reasons. Possibility of *some* human endpoints,
-# like 154.16.63.0/24, 182.54.239.0/24, etc (just double-check when updating).
-# Stop Forum Spam (SFS) listings: 25 (AS61102), 81,349 (AS61317).
-# Updated: 2021.01.02
+# range of various kinds of unwanted traffic seen from there.
+# Stop Forum Spam (SFS) listings: 44 (AS61102), 92,636 (AS61317).
+# Updated: 2021.05.20
 
 2a03:f80:972::/48 Deny Cloud
 Origin: AT
 2a01:8640:c::/48 Deny Cloud
 Origin: BG
+2801:80:3ac0::/42 Deny Cloud
+Origin: BR
 2803:7f20::/32 Deny Cloud
 Origin: BZ
 2803:80::/32 Deny Cloud
 2a0a:7a00::/29 Deny Cloud
 Origin: CL
+2001:67c:1591::/48 Deny Cloud
+2001:67c:15a2::/48 Deny Cloud
+Origin: CZ
+2001:7f8::/64 Deny Cloud
+2001:7f8:9e::/64 Deny Cloud
+Origin: DE
 2405:9240::/32 Deny Cloud
 2a00:d1a0::/32 Deny Cloud
 2a06:2b80::/29 Deny Cloud
@@ -3520,7 +3529,7 @@ Origin: US
 2c0f:ee78::/32 Deny Cloud
 2c0f:f738:2000::/35 Deny Cloud
 Origin: ZA
-Profile: Dedicated;Tor endpoints here;Webhosting
+Profile: Commercial;Frequent changes;Infrastructure/Transit;Multiplay;Tor endpoints here;Webhosting
 Tag: D.E.Tech
 
 
@@ -5211,10 +5220,12 @@ Tag: YISP B.V
 
 # ASN 39790 ("Web4U s.r.o").
 # Caught trying to hack WordPress sites.
-# Updated: 2018.09.17 / Checked: 2020.10.09
+# Clean at last check. Possible candidate for future removal.
+# Updated: 2018.09.17 / Checked: 2021.05.20
 
 2001:1568::/32 Deny Cloud
 Origin: CZ
+Profile: Dedicated;Webhosting
 Tag: Web4U s.r.o
 
 

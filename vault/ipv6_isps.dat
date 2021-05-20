@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_isps.dat
 
-# Version: 2021.137.403
-# Last modified: 2021.05.18
+# Version: 2021.139.663
+# Last modified: 2021.05.20
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage, i.e. WITH ignore.dat, CAPTCHA, "extended rules" (default bypasses): « [ ]Low [x]Medium [ ]High »
@@ -2996,6 +2996,25 @@ Profile: Domestic ISP;Infrastructure/Transit;Multiplay
 Tag: Orange S.A
 
 
+# ASN 680 ("Verein zur Foerderung eines Deutschen Forschungsnetzes e.V").
+# German National Research and Education Network (DFN). A very large number of
+# universities in Europe route through this ASN, with mostly human endpoints.
+# Spam, port scans, hack attempts, brute-force, and SSH attacks detected from
+# here. Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 2,217.
+# Updated: 2021.05.20
+
+2a00:5ba0:10:2242::/64 Deny Malware
+Origin: DE
+Profile: Infrastructure/Transit;Tor endpoints here;University
+Tag: DFN
+---
+recaptcha:
+ enabled: true
+hcaptcha:
+ enabled: true
+
+
 # ASN 3265 ("Xs4all Internet BV").
 # Dutch domestic ISP. Spam, SSH hack attempts, various unwanted traffic and tor
 # endpoints detected here. Listing just the affected ranges/addresses only.
@@ -3076,6 +3095,41 @@ hcaptcha:
 Origin: FR
 Profile: Domestic ISP;Infrastructure/Transit;Multiplay
 Tag: SFR SA
+---
+recaptcha:
+ enabled: true
+hcaptcha:
+ enabled: true
+
+
+# ASN 57712 ("NPF SOFTVIDEO Ltd").
+# Russian domestic ISP. Relative to the size of the network, a *HUGE* amount of
+# spam has been detected from here. Port scans, and webapp, brute-force, and
+# SSH attacks also detected from here.
+# Stop Forum Spam (SFS) listings: 5,351.
+# Updated: 2021.05.20
+
+2a00:f440:c::/48 Deny Spam
+Origin: RU
+Tag: NPF SOFTVIDEO Ltd
+---
+recaptcha:
+ enabled: true
+hcaptcha:
+ enabled: true
+
+
+# ASN 31272 ("WildPark Co").
+# Ukrainian domestic ISP. Caught trying to hack into phpMyAdmin pages. Spam,
+# port scans, and webapp, brute-force, and SSH attacks also detected from here.
+# ranges/addresses only. Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 5,351.
+# Updated: 2021.05.20
+
+2a00:bc00:8800:df85::/64 Deny Spam
+Origin: UA
+Profile: Domestic ISP
+Tag: WildPark Co
 ---
 recaptcha:
  enabled: true

@@ -7,14 +7,14 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: French language data for the front-end (last modified: 2021.05.09).
+# This file: French language data for the front-end (last modified: 2021.05.20).
 ##/
 
 Extended Description Bypasses: "Les fichiers pour contourner les signatures standard qui sont normalement inclus dans le paquet principal."
 Extended Description CIDRAM: "Le paquet principal (moins les signatures, la documentation et la configuration)."
 Extended Description Chart.js: "Permet à l'interface frontale de générer des diagrammes à secteurs.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> est disponible via le <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
 Extended Description IPv4-Bogons: &ExtDesBogons "Bloque bogon/martien CIDRs."
-Extended Description IPv4-ISPs: &ExtDesISPs "Bloque les FAI dangereux et sujets au spam."
+Extended Description IPv4-ISPs: &ExtDesISPs "Bloque les FAI dangereux et sujets au spam (comprend des réseaux multijoueurs, qui peuvent contenir des points de terminaison humains et aussi non humains)."
 Extended Description IPv4-Nonblocking: &ExtDesNonblocking "Utile pour le profilage, mais ne bloque rien en soi."
 Extended Description IPv4-Other: &ExtDesOther "Bloque CIDRs pour les proxies, VPN et autres services indésirables."
 Extended Description IPv4: &ExtDesCloud "Bloque les services cloud indésirables et les noeuds finaux non humains."
@@ -228,6 +228,7 @@ field_log_in: "Connecter"
 field_netmask: "Générer une sortie sous forme de masques de réseau"
 field_new_name: "Nouveau nom :"
 field_nonclickable_text: "Texte non-cliquable"
+field_not_tracking: "Pas de suivi."
 field_ok: "D'accord"
 field_omit: "Omettre les champs vides"
 field_options: "Options"

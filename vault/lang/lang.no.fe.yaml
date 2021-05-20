@@ -7,14 +7,14 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Norwegian language data for the front-end (last modified: 2021.05.09).
+# This file: Norwegian language data for the front-end (last modified: 2021.05.20).
 ##/
 
 Extended Description Bypasses: "Standard-signatur-bypass-filene som normalt følger med hovedpakken."
 Extended Description CIDRAM: "Hovedpakken (minus signaturene, dokumentasjonen og konfigurasjonen)."
 Extended Description Chart.js: "Gjør det mulig for frontendens å generere pajediagrammer.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> er tilgjengelig via <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
 Extended Description IPv4-Bogons: &ExtDesBogons "Blokkerer bogon/martian CIDRer."
-Extended Description IPv4-ISPs: &ExtDesISPs "Blokkerer farlige og spam-fylte ISPer."
+Extended Description IPv4-ISPs: &ExtDesISPs "Blokkerer farlige og spam-fylte ISPer (inkluderer flerspillnettverk, som kan inneholde både menneskelige og ikke-menneskelige endepunkter)."
 Extended Description IPv4-Nonblocking: &ExtDesNonblocking "Nyttig for profilering, men blokkerer ikke noe i seg selv."
 Extended Description IPv4-Other: &ExtDesOther "Blokkerer CIDRer for proxyer, VPNer og andre uønskede tjenester."
 Extended Description IPv4: &ExtDesCloud "Blokkerer uønskede sky-tjenester og ikke-menneskelige endepunkter."
@@ -228,6 +228,7 @@ field_log_in: "Logg Inn"
 field_netmask: "Generer utdata som nettmasker"
 field_new_name: "Nytt navn:"
 field_nonclickable_text: "Ikke-klikkbar tekst"
+field_not_tracking: "Sporer ikke."
 field_ok: "OK"
 field_omit: "Utelater tomme felt"
 field_options: "Alternativer"

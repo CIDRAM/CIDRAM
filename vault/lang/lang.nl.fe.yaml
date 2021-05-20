@@ -7,14 +7,14 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Dutch language data for the front-end (last modified: 2021.05.09).
+# This file: Dutch language data for the front-end (last modified: 2021.05.20).
 ##/
 
 Extended Description Bypasses: "De standaard signature rondwegen normaal opgenomen met de primaire pakket."
 Extended Description CIDRAM: "De primaire pakket (zonder de signatures, documentatie en configuratie)."
 Extended Description Chart.js: "Hiermee kan de frontend taartdiagrammen genereren.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> is beschikbaar via de <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
 Extended Description IPv4-Bogons: &ExtDesBogons "Blokkeert bogon/martian CIDR's."
-Extended Description IPv4-ISPs: &ExtDesISPs "Blokkeert gevaarlijk en spammy ISP's."
+Extended Description IPv4-ISPs: &ExtDesISPs "Blokkeert gevaarlijk en spammy ISP's (omvat multiplay-netwerken, die zowel menselijke als niet-menselijke eindpunten kunnen bevatten)."
 Extended Description IPv4-Nonblocking: &ExtDesNonblocking "Handig voor profilering, maar blokkeert niets op zich."
 Extended Description IPv4-Other: &ExtDesOther "Blokkeert CIDR's voor proxies, VPN's, en diverse andere ongewenste diensten."
 Extended Description IPv4: &ExtDesCloud "Blokkeert ongewenste cloud-diensten en niet-menselijke eindpunten."
@@ -228,6 +228,7 @@ field_log_in: "Inloggen"
 field_netmask: "Genereer uitvoer als netmaskers"
 field_new_name: "Nieuwe naam:"
 field_nonclickable_text: "Niet-klikbare tekst"
+field_not_tracking: "Dit wordt niet gelogd."
 field_ok: "OK"
 field_omit: "Sluit lege velden uit"
 field_options: "Opties"

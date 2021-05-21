@@ -2053,10 +2053,7 @@ $CIDRAM['AuxAction'] = function ($Action, $Name, $Reason = '', $Target = '', $St
 
     /** Profile the request. */
     elseif ($Action === 'Profile') {
-        if (!isset($CIDRAM['Profile'])) {
-            $CIDRAM['Profile'] = [];
-        }
-        $CIDRAM['Profile'][] = $Name;
+        $CIDRAM['AddProfileEntry']($Name);
     }
 
     /** Exit. */

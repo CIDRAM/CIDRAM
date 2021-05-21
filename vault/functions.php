@@ -2020,10 +2020,7 @@ $CIDRAM['AuxAction'] = function (string $Action, string $Name, string $Reason = 
 
     /** Profile the request. */
     elseif ($Action === 'Profile') {
-        if (!isset($CIDRAM['Profile'])) {
-            $CIDRAM['Profile'] = [];
-        }
-        $CIDRAM['Profile'][] = $Name;
+        $CIDRAM['AddProfileEntry']($Name);
     }
 
     /** Exit. */

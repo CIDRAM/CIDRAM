@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2021.05.19).
+ * This file: Functions file (last modified: 2021.05.21).
  */
 
 /**
@@ -1595,10 +1595,10 @@ $CIDRAM['XVerification'] = function ($Config = '', $From = '', $BypassFlags = fa
         if ($BypassFlags && (!is_array($Values) || (!empty($Values['Bypass flag']) && !empty($CIDRAM[$Values['Bypass flag']])))) {
             continue;
         }
-        if (
+        if (is_array($Values) && isset($Values['Closure'], $Values['Valid domains']) && (
             (!empty($Values['User Agent']) && strpos($CIDRAM['BlockInfo']['UALC'], $Values['User Agent']) !== false) ||
             (!empty($Values['User Agent Pattern']) && preg_match($Values['User Agent Pattern'], $CIDRAM['BlockInfo']['UALC']))
-        ) {
+        )) {
             $Options = [
                 'Single hit bypass' => isset($Values['Single hit bypass']) ? $Values['Single hit bypass'] : false,
                 'Reverse only' => isset($Values['Reverse only']) ? $Values['Reverse only'] : false,

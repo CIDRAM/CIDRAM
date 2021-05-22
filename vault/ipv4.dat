@@ -1,8 +1,8 @@
 # IPv4 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv4.dat
 
-# Version: 2021.139.663
-# Last modified: 2021.05.20
+# Version: 2021.141.689
+# Last modified: 2021.05.22
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage, i.e. WITH ignore.dat, CAPTCHA, "extended rules" (default bypasses): « [x]Low [ ]Medium [ ]High »
@@ -25103,131 +25103,6 @@ Origin: ES
 Tag: Cubenode System SL
 
 
-# ASNs 9009, 16247 ("M247 Ltd").
-# Multiplay network providing broadband connectivity, server leasing, line
-# rental, webhosting services, etc. Mark as cloud: Anything under AE, AT;
-# "EDIS", "BraveWay", "Dedicated", "Host Wagon", "Server", "Datacenter"
-# ^(AE\t.*|AT\t.*|.*(?:EDIS|BraveWay|Dedicated|Host Wagon|Server|Data ?cent(?:er|re)).*)\x01$
-# For everything else, listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 249,439 (AS9009), 3,950 (AS16247).
-# Updated: 2021.04.01
-
-2.56.16.0/22 Deny Cloud
-2.59.0.0/23 Deny Cloud
-5.182.124.0/22 Deny Cloud
-45.13.248.0/23 Deny Cloud
-45.67.60.0/22 Deny Cloud
-45.81.24.0/22 Deny Cloud
-45.82.40.0/22 Deny Cloud
-45.130.64.0/22 Deny Cloud
-45.139.0.0/23 Deny Cloud
-45.139.3.0/24 Deny Cloud
-45.144.24.0/22 Deny Cloud
-45.150.20.0/22 Deny Cloud
-80.76.52.0/22 Deny Cloud
-83.150.220.0/22 Deny Cloud
-91.209.162.0/23 Deny Cloud
-91.209.230.0/23 Deny Cloud
-94.154.140.0/22 Deny Cloud
-171.22.32.0/22 Deny Cloud
-176.113.64.0/22 Deny Cloud
-185.101.144.0/22 Deny Cloud
-185.198.36.0/22 Deny Cloud
-185.201.128.0/22 Deny Cloud
-194.32.224.0/22 Deny Cloud
-213.184.92.0/22 Deny Cloud
-Origin: AE
-37.235.48.0/24 Deny Cloud
-45.85.13.0/24 Deny Cloud
-103.57.248.0/24 Deny Cloud
-103.57.251.0/24 Deny Cloud
-149.154.158.0/24 Deny Cloud
-151.236.16.0/24 Deny Cloud
-151.236.20.0/23 Deny Cloud
-151.236.22.0/24 Deny Cloud
-151.236.25.0/24 Deny Cloud
-158.255.208.0/24 Deny Cloud
-158.255.213.0/24 Deny Cloud
-158.255.215.0/24 Deny Cloud
-185.26.239.0/24 Deny Cloud
-185.119.253.0/24 Deny Cloud
-185.177.81.0/24 Deny Cloud
-185.182.50.0/24 Deny Cloud
-185.236.82.0/24 Deny Cloud
-193.203.0.0/23 Deny Cloud
-Origin: AT
-2.58.36.0/22 Deny Cloud
-194.59.252.0/22 Deny Cloud
-Origin: DE
-83.143.245.0/24 Deny Cloud
-84.39.119.0/24 Deny Cloud
-185.255.100.0/24 Deny Cloud
-185.255.103.0/24 Deny Cloud
-194.187.251.0/24 Deny Cloud
-195.242.212.0/22 Deny Cloud
-Origin: GB
-185.100.58.0/24 Deny Cloud
-Origin: NL
-5.253.205.0/24 Deny Cloud
-185.212.170.0/24 Deny Cloud
-185.230.125.0/24 Deny Cloud
-194.36.109.0/24 Deny Cloud
-195.206.105.0/24 Deny Cloud
-Origin: RO
-185.241.70.0/23 Deny Cloud
-Origin: RU
-192.71.227.0/24 Deny Cloud
-194.14.208.0/24 Deny Cloud
-194.14.217.0/24 Deny Cloud
-194.68.26.0/23 Deny Cloud
-194.68.32.0/24 Deny Cloud
-194.68.44.0/24 Deny Cloud
-194.71.126.0/24 Deny Cloud
-Origin: SE
-2.57.28.0/22 Deny Cloud
-5.182.103.0/24 Deny Cloud
-45.11.236.0/22 Deny Cloud
-45.33.150.0/24 Deny Cloud
-45.33.152.0/24 Deny Cloud
-45.33.158.0/24 Deny Cloud
-63.246.153.0/24 Deny Cloud
-74.91.61.0/24 Deny Cloud
-86.62.60.0/22 Deny Cloud
-103.129.116.0/24 Deny Cloud
-103.129.118.0/23 Deny Cloud
-104.218.193.0/24 Deny Cloud
-104.218.194.0/24 Deny Cloud
-104.224.92.0/24 Deny Cloud
-104.251.93.0/24 Deny Cloud
-104.251.94.0/24 Deny Cloud
-139.28.226.0/23 Deny Cloud
-141.193.203.0/24 Deny Cloud
-162.252.172.0/22 Deny Cloud
-176.105.248.0/22 Deny Cloud
-193.149.20.0/22 Deny Cloud
-193.168.220.0/22 Deny Cloud
-194.5.0.0/22 Deny Cloud
-194.38.24.0/22 Deny Cloud
-194.93.32.0/23 Deny Cloud
-194.124.52.0/22 Deny Cloud
-206.127.192.0/22 Deny Cloud
-206.127.200.0/21 Deny Cloud
-206.127.212.0/22 Deny Cloud
-206.127.216.0/22 Deny Cloud
-207.230.113.0/24 Deny Cloud
-207.230.124.0/24 Deny Cloud
-212.80.200.0/22 Deny Cloud
-217.9.16.0/22 Deny Cloud
-Origin: US
-Profile: Infrastructure/Transit;Multiplay;Tor endpoints here;Webhosting
-Tag: M247 Ltd
----
-recaptcha:
- enabled: true
-hcaptcha:
- enabled: true
-
-
 # ASNs 3728, 11320 ("LightEdge Solutions").
 # Caught trying to hack WordPress sites and caught brute-forcing.
 # Updated: 2020.12.29
@@ -32972,6 +32847,17 @@ Tag: Datacheap Ltd
 Origin: RO
 Profile: Dedicated;Webhosting
 Tag: UNMANAGED LTD
+
+
+# ASN 327986 ("GUTTI GLOBAL NETWORKS").
+# Webhosting company. Spam, brute-force, and SSH attacks detected from here.
+# Stop Forum Spam (SFS) listings: 99.
+# Updated: 2021.05.21
+
+169.239.236.0/22 Deny Cloud
+Origin: NG
+Profile: Webhosting
+Tag: GUTTI GLOBAL NETWORKS
 
 
 # ---

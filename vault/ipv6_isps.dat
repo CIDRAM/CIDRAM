@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_isps.dat
 
-# Version: 2021.139.663
-# Last modified: 2021.05.20
+# Version: 2021.141.689
+# Last modified: 2021.05.22
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage, i.e. WITH ignore.dat, CAPTCHA, "extended rules" (default bypasses): « [ ]Low [x]Medium [ ]High »
@@ -1899,6 +1899,51 @@ hcaptcha:
  enabled: true
 
 
+# ASNs 9009, 16247 ("M247 Ltd").
+# Multiplay network providing broadband connectivity, server leasing, line
+# rental, webhosting services, etc.
+# Mark AE~EE(IPv4), NL~PL(IPv4), AT/DE/EE/NL/RU(IPv6) ranges as cloud.
+# Mark CA(IPv6) ranges as proxy.
+# For everything else, listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 265,498 (AS9009), 4,447 (AS16247).
+# Updated: 2021.05.22
+
+2a03:f80:33::/48 Deny Cloud
+2a03:f80:40::/48 Deny Cloud
+2a03:f80:45::/48 Deny Cloud
+2a03:f80:47::/48 Deny Cloud
+2a03:f80:48::/47 Deny Cloud
+2a03:f80:61::/48 Deny Cloud
+2a03:f80:65::/48 Deny Cloud
+2a03:f80:81::/48 Deny Cloud
+2a03:f80:381::/48 Deny Cloud
+2a03:f80:852::/48 Deny Cloud
+2a03:f80:971::/48 Deny Cloud
+Origin: AT
+2604:17c0::/41 Deny Proxy
+2604:17c0:80::/42 Deny Proxy
+Origin: CA
+2a0b:9040::/29 Deny Cloud
+Origin: DE
+2a0c:36c2::/31 Deny Cloud
+Origin: EE
+2001:678:8b4::/48 Deny Cloud
+2a07:e340::/32 Deny Cloud
+Origin: NL
+2a07:de00::/29 Deny Cloud
+2a0d:87c0::/29 Deny Cloud
+2a0d:9983::/32 Deny Cloud
+2a0d:ba40::/29 Deny Cloud
+Origin: RU
+Profile: Commercial;Dedicated;Domestic ISP;Infrastructure/Transit;Multiplay;Tor endpoints here;Webhosting
+Tag: M247 Ltd
+---
+recaptcha:
+ enabled: true
+hcaptcha:
+ enabled: true
+
+
 # ASN 8708 ("RCS & RDS SA").
 # Romanian domestic ISP; Also a frequent source of spam, hack attempts, and
 # other unwanted traffic.
@@ -2798,8 +2843,8 @@ hcaptcha:
 # Multiplay network; predominantly a cloud provider, server leaser, etc; Also
 # some ADSL connectivity provided by their network (some risk of human endpoints).
 # A significant source of spam; Caught attempting to hack honeypots.
-# Stop Forum Spam (SFS) listings: 683,832 (AS16276), 5 (AS35540).
-# Updated: 2021.01.27
+# Stop Forum Spam (SFS) listings: 442,055 (AS16276), 5 (AS35540).
+# Updated: 2021.01.27 / Checked: 2021.05.22
 
 2607:5300::/32 Run rules_specific.php
 Origin: CA

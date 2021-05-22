@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6.dat
 
-# Version: 2021.139.663
-# Last modified: 2021.05.20
+# Version: 2021.141.689
+# Last modified: 2021.05.22
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage, i.e. WITH ignore.dat, CAPTCHA, "extended rules" (default bypasses): « [x]Low [ ]Medium [ ]High »
@@ -5532,43 +5532,6 @@ Origin: NL
 2605:8681::/32 Deny Cloud
 Origin: US
 Tag: HugeServer Networks
-
-
-# ASNs 9009, 16247 ("M247 Ltd").
-# Multiplay network providing broadband connectivity, server leasing, line
-# rental, webhosting services, etc. Mark as cloud: Anything under AE, AT;
-# "EDIS", "BraveWay", "Dedicated", "Host Wagon", "Server", "Datacenter"
-# ^(AE\t.*|AT\t.*|.*(?:EDIS|BraveWay|Dedicated|Host Wagon|Server|Data ?cent(?:er|re)).*)\x01$
-# For everything else, listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 249,439 (AS9009), 3,950 (AS16247).
-# Updated: 2021.04.01
-
-2a03:f80:33::/48 Deny Cloud
-2a03:f80:40::/48 Deny Cloud
-2a03:f80:45::/48 Deny Cloud
-2a03:f80:47::/48 Deny Cloud
-2a03:f80:48::/48 Deny Cloud
-2a03:f80:61::/48 Deny Cloud
-2a03:f80:65::/48 Deny Cloud
-2a03:f80:81::/48 Deny Cloud
-2a03:f80:381::/48 Deny Cloud
-2a03:f80:852::/48 Deny Cloud
-2a03:f80:971::/48 Deny Cloud
-Origin: AT
-2001:ac8:44::/48 Deny Cloud
-Origin: GB
-2a07:de00::/29 Deny Cloud
-Origin: RU
-2605:3b80:1::/48 Deny Cloud
-2605:3b80:cad::/48 Deny Cloud
-Origin: US
-Profile: Infrastructure/Transit;Multiplay;Tor endpoints here;Webhosting
-Tag: M247 Ltd
----
-recaptcha:
- enabled: true
-hcaptcha:
- enabled: true
 
 
 # ASNs 3728, 11320 ("LightEdge Solutions").

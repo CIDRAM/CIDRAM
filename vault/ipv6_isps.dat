@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_isps.dat
 
-# Version: 2021.141.689
-# Last modified: 2021.05.22
+# Version: 2021.147.186
+# Last modified: 2021.05.28
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage, i.e. WITH ignore.dat, CAPTCHA, "extended rules" (default bypasses): « [ ]Low [x]Medium [ ]High »
@@ -78,41 +78,41 @@ Tag: Hetzner Online GmbH
 
 
 # ASN 45727 ("Hutchison CP Telecommunications, PT").
-# Major domestic Indonesian ISP, but also a source of spam. Listed in the
-# ignore.dat file default, and is marked for use with reCAPTCHA, so the false
-# positive risk shouldn't be too high. Hope to eventually scale down the listed
-# ranges here, but current incident reports are quite scattered across the ASN.
-# (Mark US ranges as cloud; ID as spam).
-# Stop Forum Spam (SFS) listings: 503.
-# Updated: 2020.11.09
+# Major domestic Indonesian ISP. Spam, port scans, and brute-force, SSH, XSS,
+# FTP, and webapp attacks detected from here. (ID as malware; US as cloud).
+# Stop Forum Spam (SFS) listings: 699.
+# Updated: 2021.05.28
 
-2400:8b00:100::/42 Deny Spam
-2400:8b00:200::/42 Deny Spam
-2400:8b00:300::/42 Deny Spam
-2400:8b00:500::/43 Deny Spam
-2400:8b00:530::/44 Deny Spam
-2400:8b00:600::/42 Deny Spam
-2400:8b00:700::/42 Deny Spam
-2400:8b00:800::/42 Deny Spam
-2400:8b00:980::/42 Deny Spam
-2400:8b00:a00::/42 Deny Spam
-2400:8b00:a80::/42 Deny Spam
-2400:8b00:b00::/42 Deny Spam
-2400:8b00:b80::/42 Deny Spam
-2400:8b00:c00::/42 Deny Spam
-2400:8b00:c80::/42 Deny Spam
-2400:8b00:d00::/42 Deny Spam
-2400:8b00:d80::/42 Deny Spam
-2400:8b00:e00::/42 Deny Spam
-2400:8b00:e80::/42 Deny Spam
-2400:8b00:f00::/42 Deny Spam
-2400:8b00:f80::/42 Deny Spam
-2400:8b00:1000::/44 Deny Spam
-2400:8b00:1600::/42 Deny Spam
-2400:8b00:1800::/42 Deny Spam
-2400:8b00:2000::/42 Deny Spam
-2400:8b00:2100::/42 Deny Spam
+2400:8b00:100::/42 Deny Malware
+2400:8b00:200::/42 Deny Malware
+2400:8b00:300::/42 Deny Malware
+2400:8b00:500::/43 Deny Malware
+2400:8b00:530::/44 Deny Malware
+2400:8b00:600::/42 Deny Malware
+2400:8b00:700::/42 Deny Malware
+2400:8b00:800::/42 Deny Malware
+2400:8b00:980::/42 Deny Malware
+2400:8b00:a00::/42 Deny Malware
+2400:8b00:a80::/42 Deny Malware
+2400:8b00:b00::/42 Deny Malware
+2400:8b00:b80::/42 Deny Malware
+2400:8b00:c00::/42 Deny Malware
+2400:8b00:c80::/42 Deny Malware
+2400:8b00:d00::/42 Deny Malware
+2400:8b00:d80::/42 Deny Malware
+2400:8b00:e00::/42 Deny Malware
+2400:8b00:e80::/42 Deny Malware
+2400:8b00:f00::/42 Deny Malware
+2400:8b00:f80::/42 Deny Malware
+2400:8b00:1000::/44 Deny Malware
+2400:8b00:1600::/42 Deny Malware
+2400:8b00:1800::/42 Deny Malware
+2400:8b00:2000::/42 Deny Malware
+2400:8b00:2100::/42 Deny Malware
+2400:8b00:2180::/42 Deny Malware
+2400:8b00:2280::/42 Deny Malware
 Origin: ID
+Profile: Domestic ISP
 Tag: PT Hutchison
 ---
 recaptcha:
@@ -154,15 +154,6 @@ Origin: RO
 Origin: US
 Profile: Domestic ISP;Frequent changes;Multiplay;Tor endpoints here;Webhosting
 Tag: Voxility LLC
-
-
-# ASN 30968 ("INFOBOX").
-# Stop Forum Spam (SFS) listings: 22.
-# Updated: 2016.01.18 / Checked: 2020.10.10
-
-2a02:440::/32 Deny Generic
-Origin: RU
-Tag: INFOBOX
 
 
 # ASN 49335 ("Mir Telematiki Ltd").
@@ -253,14 +244,12 @@ hcaptcha:
  enabled: true
 
 
-# ASNs 5486, 9116 ("012 Smile Communications LTD").
-# Subsidiary of Bezeq International. Domestic Israeli ISP with human endpoints,
-# but also a source of forum/blog spam. Marked for use with reCAPTCHA to reduce
-# the false positive risk, and I would encourage any CIDRAM users from Israel,
-# or targeting traffic from Israel, to list this section in their ignore.dat
-# file to reduce the false positive risk.
-# Stop Forum Spam (SFS) listings: 15,767 (AS9116).
-# Updated: 2016.12.10 / Checked: 2020.11.09
+# ASN 9116 ("012 Smile Communications LTD").
+# Subsidiary of Bezeq International. Israeli domestic ISP. Also a source of
+# forum/blog spam. Websites intended for Israeli users are encouraged to list
+# this section in their ignore.dat file to reduce the false positive risk.
+# Stop Forum Spam (SFS) listings: 11,857.
+# Updated: 2016.12.10 / Checked: 2021.05.28
 
 2001:40a8::/32 Deny Spam
 Origin: IL
@@ -517,25 +506,6 @@ Tag: AS13188-CDN-LTD
 2a05:8dc0::/29 Deny Spam
 Origin: UA
 Tag: Fregat
-
-
-# ASNs 7552, 24086, 37620, 262210 ("Viettel Corporation").
-# A HUGE source of forum spam, but also a legit ISP with human endpoints.
-# Serves mostly Vietnam, but also several African countries. Including only the
-# specific affected ASNs (several clean ASNs have been intentionally omitted).
-# Updated: 2018.10.25 / Checked: 2020.10.30
-
-2800:cc0::/32 Deny Spam
-Origin: PE
-2402:800::/32 Deny Spam
-Origin: VN
-Profile: Domestic ISP;Infrastructure/Transit;Tor endpoints here
-Tag: Viettel Corporation
----
-recaptcha:
- enabled: true
-hcaptcha:
- enabled: true
 
 
 # ASNs 200019, 207636 ("ALEXHOST SRL").
@@ -1804,8 +1774,8 @@ hcaptcha:
 
 # ASN 16010 ("Magticom Ltd").
 # Spam events originating from this network slowly becoming worse over time.
-# Stop Forum Spam (SFS) listings: 3,933.
-# Updated: 2019.08.18 / Checked: 2020.10.15
+# Stop Forum Spam (SFS) listings: 3,935.
+# Updated: 2019.08.18 / Checked: 2021.05.26
 
 2a0b:6200::/29 Deny Spam
 Origin: GE
@@ -1873,8 +1843,8 @@ hcaptcha:
 
 # ASN 198093 ("Foreningen for digitala fri- och rattigheter").
 # Dead homepage and high levels of automated spam from this ASN.
-# Stop Forum Spam (SFS) listings: 8,111.
-# Updated: 2017.12.11 / Checked: 2020.10.10
+# Stop Forum Spam (SFS) listings: 7,268.
+# Updated: 2017.12.11 / Checked: 2021.05.26
 
 2001:67c:16b0::/48 Deny Spam
 2001:67c:289c::/48 Deny Spam
@@ -2069,8 +2039,8 @@ hcaptcha:
 
 # ASN 263500 ("Star Telecom S/A").
 # Source of forum spam and some email harvestors.
-# Stop Forum Spam (SFS) listings: 424.
-# Updated: 2019.10.24 / Checked: 2020.10.10
+# Stop Forum Spam (SFS) listings: 406.
+# Updated: 2019.10.24 / Checked: 2021.05.26
 
 2804:12d8::/32 Deny Spam
 Origin: BR
@@ -2601,16 +2571,29 @@ hcaptcha:
 
 
 # ASN 2856 ("British Telecommunications PLC").
-# A domestic ISP from the UK, but forum spam incidents detected from some
-# specific addresses, plus Mirai detected at some specific addresses. Listing
-# just the specific offending addresses here (not the whole network).
-# %Listed, abuseat.org (CBL-Listed): 0.54%.
-# Stop Forum Spam (SFS) listings: 847.
-# Updated: 2020.10.30
+# UK domestic ISP. Spam detected from here. Mirai detected from here.
+# Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 1,488.
+# Updated: 2021.05.25
 
-2a00:23a8:8a3:1200::/64 Deny Spam
-2a00:23c4:e882:b100::/64 Deny Spam
-2a00:23c5:5586:c701::/64 Deny Spam
+2a00:23a8:84a:1c00::/64 Deny Spam
+2a00:23a8:984:3400::/64 Deny Spam
+2a00:23c4:401:b800::/64 Deny Spam
+2a00:23c4:2d0f:7501::/64 Deny Spam
+2a00:23c4:9109:1201::/64 Deny Spam
+2a00:23c4:e48e:8b01::/64 Deny Spam
+2a00:23c5:7c02:2f01::/64 Deny Spam
+2a00:23c5:e790:1600::/64 Deny Spam
+2a00:23c5:f309:e01::/64 Deny Spam
+2a00:23c6:6a91:7000::/64 Deny Spam
+2a00:23c6:b11b:1f01::/64 Deny Spam
+2a00:23c7:1f00:ba01::/64 Deny Spam
+2a00:23c7:740c:ce01::/64 Deny Spam
+2a00:23c7:cb06:d000::/64 Deny Spam
+2a00:23c7:dd12:6701::/64 Deny Spam
+2a00:23c7:de95:3800::/64 Deny Spam
+2a00:23c8:4b06:9b01::/64 Deny Spam
+2a00:23c8:5501:de00::/64 Deny Spam
 Origin: GB
 Profile: Domestic ISP
 Tag: British Telecom PLC

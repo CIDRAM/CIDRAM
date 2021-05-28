@@ -5,8 +5,8 @@
 # Last modified: 2021.05.28
 
 # False positive risk (an approximate, rough estimate only):
-# Standard usage, i.e. WITH ignore.dat, CAPTCHA, "extended rules" (default bypasses): « [x]Low [ ]Medium [ ]High »
-#  Exported usage, i.e. W/O ignore.dat, CAPTCHA, "extended rules" (default bypasses): « [ ]Low [x]Medium [ ]High »
+# Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
+#  Exported usage (i.e., used W/O standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
 
 
 # ---
@@ -16326,11 +16326,6 @@ Tag: GorillaServers, Inc
 Origin: CA
 Profile: Domestic ISP;Infrastructure/Transit;Multiplay;Webhosting
 Tag: KW Datacenter
----
-recaptcha:
- enabled: true
-hcaptcha:
- enabled: true
 
 
 # ASN 17439 ("Netmagic Datacenter Mumbai").
@@ -22962,11 +22957,6 @@ Origin: SC
 192.40.94.0/24 Deny Cloud
 Origin: US
 Tag: Packet Exchange Limited
----
-recaptcha:
- enabled: true
-hcaptcha:
- enabled: true
 
 
 # ASN 198357 ("Padidar Technology Co").
@@ -25126,11 +25116,6 @@ Tag: Quintex
 Origin: BD
 Profile: Multiplay;Webhosting
 Tag: Mazeda Networks
----
-recaptcha:
- enabled: true
-hcaptcha:
- enabled: true
 
 
 # ASN 29889 ("Fast Serv Networks, LLC").
@@ -25217,11 +25202,6 @@ Origin: GB
 Origin: US
 Profile: Infrastructure/Transit
 Tag: Next Connex Ltd
----
-recaptcha:
- enabled: true
-hcaptcha:
- enabled: true
 
 
 # ASN 61272 ("Informacines sistemos ir technologijos, UAB").
@@ -25762,11 +25742,6 @@ Origin: MX
 Origin: US
 Profile: Multiplay
 Tag: Alestra
----
-recaptcha:
- enabled: true
-hcaptcha:
- enabled: true
 
 
 # ASN 56322 ("ServerAstra Kft").
@@ -27684,11 +27659,6 @@ Origin: SE
 Origin: TW
 Profile: Webhosting
 Tag: Internet Vikings
----
-recaptcha:
- enabled: true
-hcaptcha:
- enabled: true
 
 
 # ASN 12816 ("Leibniz-Rechenzentrum").

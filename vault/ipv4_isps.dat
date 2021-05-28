@@ -12221,7 +12221,7 @@ Tag: PRYMAS INWESTYCJE
 194.103.141.0/24 Deny Spam
 194.103.222.0/24 Deny Spam
 Origin: SE
-Profile: Infrastructure/Transit;Multiplay;Webhosting
+Profile: Commercial;Domestic ISP;Infrastructure/Transit;Multiplay;Webhosting
 Tag: Internet Vikings
 
 
@@ -16946,3 +16946,218 @@ Tag: Quadrant Televentures Limited
 Origin: KR
 Profile: Commercial;Dedicated;Domestic ISP;Multiplay;Webhosting
 Tag: flexnetworks
+
+
+# ASN 4694 ("IDC Frontier Inc").
+# Cloud provider. Possibly multiplay (not confirmed). Listing just the affected
+# ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 24.
+# Updated: 2021.05.28
+
+210.236.228.173/32 Deny Spam
+Origin: JP
+Profile: Multiplay
+Tag: IDC Frontier Inc
+
+
+# ASN 63996 ("Mazeda Networks Limited").
+# Caught XRumer operating on this network. Bangladesh multiplay network.
+# Primarily a webhost and server leaser, but also offers corporate internet
+# connectivity.
+# Stop Forum Spam (SFS) listings: 77.
+# Updated: 2020.09.22 / Checked: 2021.04.16
+
+45.120.112.0/22 Deny Cloud
+103.60.172.0/22 Deny Cloud
+103.129.239.0/24 Deny Cloud
+103.205.68.0/22 Deny Cloud
+202.125.108.0/24 Deny Cloud
+203.17.65.0/24 Deny Cloud
+203.95.220.0/22 Deny Cloud
+Origin: BD
+Profile: Commercial;Multiplay;Webhosting
+Tag: Mazeda Networks
+
+
+# ASN 9123 ("OOO TimeWeb").
+# Russian multiplay network. For now, listing the cloud ranges, and the
+# affected ranges/addresses only.
+# ^(.*(?:shared|hosting|servers|datacenter).*)\x01$
+# Stop Forum Spam (SFS) listings: 144.
+# Updated: 2021.05.08
+
+37.77.105.134/32 Deny Spam
+78.40.217.0/24 Deny Malware
+92.53.96.0/22 Deny Cloud
+92.53.105.113/32 Deny Spam
+92.53.112.0/21 Deny Cloud
+92.53.120.0/23 Deny Cloud
+92.53.124.0/22 Deny Cloud
+176.57.210.0/23 Deny Cloud
+176.57.212.0/23 Deny Cloud
+176.57.215.0/24 Deny Cloud
+176.57.222.0/23 Deny Cloud
+188.225.16.0/20 Deny Cloud
+188.225.39.168/32 Deny Spam
+217.25.94.180/32 Deny Spam
+Origin: RU
+Profile: Domestic ISP;Infrastructure/Transit;Multiplay;Tor endpoints here;Webhosting
+Tag: OOO TimeWeb
+
+
+# ASN 37053 ("RSAWEB (PTY) LTD").
+# South African multiplay network. Attacks against honeypots detected from the
+# data centers hosted at this network. Just listing all the data centers from
+# this network, plus the few odd address/ranges outside of that which were also
+# caught (omitting the rest).
+# Stop Forum Spam (SFS) listings: 87.
+# Updated: 2021.05.08
+
+41.71.9.0/24 Deny Malware
+41.71.77.0/24 Deny Cloud
+41.71.80.0/23 Deny Cloud
+41.71.83.0/24 Deny Cloud
+41.71.84.0/23 Deny Cloud
+41.71.89.0/24 Deny Cloud
+41.71.97.0/24 Deny Cloud
+41.71.107.0/24 Deny Cloud
+41.71.111.0/24 Deny Cloud
+41.71.116.0/23 Deny Cloud
+41.71.118.58/32 Deny Malware
+41.74.186.0/24 Deny Cloud
+41.79.159.0/24 Deny Cloud
+41.215.232.0/24 Deny Cloud
+41.215.236.0/24 Deny Cloud
+165.0.9.0/24 Deny Spam
+Origin: ZA
+Profile: Infrastructure/Transit;Domestic ISP;Multiplay;Webhosting
+Tag: RSAWEB (PTY) LTD
+
+
+# ASNs 3302, 5396, 5602 ("KPNQWest Italia S.p.a").
+# Primarily a server farm + data center, but also provides FTTC-FTTH and
+# related services (so, a multiplay network). When updating, to reduce the
+# false positive risk, remove "^.*(invalid|xdsl|voip|infracom|fibra).*$\n".
+# Stop Forum Spam (SFS) listings: 37 (AS3302), 50 (AS5396), 91 (AS5602).
+# Updated: 2020.11.09
+
+5.150.128.0/20 Deny Cloud
+5.178.120.0/21 Deny Cloud
+31.10.48.0/21 Deny Cloud
+37.220.40.0/21 Deny Cloud
+46.228.240.0/20 Deny Cloud
+52.144.64.0/19 Deny Cloud
+62.100.75.0/24 Deny Cloud
+62.173.160.0/19 Deny Cloud
+62.196.0.0/16 Deny Cloud
+77.43.0.0/17 Deny Cloud
+77.93.224.0/19 Deny Cloud
+77.94.68.0/22 Deny Cloud
+77.94.72.0/21 Deny Cloud
+77.94.80.0/20 Deny Cloud
+77.246.0.0/20 Deny Cloud
+80.74.176.0/20 Deny Cloud
+81.27.176.0/20 Deny Cloud
+82.193.0.0/19 Deny Cloud
+84.253.128.0/18 Deny Cloud
+88.86.160.0/19 Deny Cloud
+89.186.64.0/19 Deny Cloud
+91.209.97.0/24 Deny Cloud
+91.213.197.0/24 Deny Cloud
+92.42.96.0/21 Deny Cloud
+92.60.64.0/20 Deny Cloud
+94.138.32.0/19 Deny Cloud
+94.141.0.0/19 Deny Cloud
+109.168.0.0/17 Deny Cloud
+109.233.128.0/21 Deny Cloud
+109.238.112.0/21 Deny Cloud
+109.238.120.0/22 Deny Cloud
+128.65.112.0/20 Deny Cloud
+185.1.114.0/24 Deny Cloud
+185.53.0.0/22 Deny Cloud
+185.54.32.0/22 Deny Cloud
+185.58.44.0/22 Deny Cloud
+185.87.76.0/23 Deny Cloud
+185.97.156.0/22 Deny Cloud
+185.112.84.0/22 Deny Cloud
+185.142.88.0/22 Deny Cloud
+185.148.108.0/22 Deny Cloud
+185.169.176.0/22 Deny Cloud
+185.183.5.0/24 Deny Cloud
+185.197.228.0/22 Deny Cloud
+185.235.20.0/22 Deny Cloud
+193.189.112.0/23 Deny Cloud
+193.227.104.0/24 Deny Cloud
+194.1.208.0/24 Deny Cloud
+194.20.0.0/15 Deny Cloud
+194.28.116.0/22 Deny Cloud
+194.242.192.0/19 Deny Cloud
+194.244.0.0/16 Deny Cloud
+195.43.160.0/19 Deny Cloud
+195.78.192.0/19 Deny Cloud
+195.110.128.0/19 Deny Cloud
+195.130.195.0/24 Deny Cloud
+195.130.220.0/24 Deny Cloud
+195.190.21.0/24 Deny Cloud
+212.97.32.0/19 Deny Cloud
+213.21.128.0/18 Deny Cloud
+213.203.128.0/18 Deny Cloud
+217.11.80.0/20 Deny Cloud
+217.12.176.0/20 Deny Cloud
+217.26.80.0/20 Deny Cloud
+Origin: IT
+Profile: Commercial;Domestic ISP;Infrastructure/Transit;Multiplay;Webhosting
+Tag: KPNQWest Italia
+
+
+# ASN 42927 ("S-NET Sp. z o.o").
+# Polish multiplay network (predominantly server leasing) with some spam events
+# and unwanted traffic detected from some specific addresses. Just listing the
+# affected addresses.
+# Stop Forum Spam (SFS) listings: 15.
+# Updated: 2021.05.02
+
+80.82.18.210/32 Deny Cloud
+Origin: PL
+Profile: Multiplay;Webhosting
+Tag: S-NET Sp
+
+
+# ASN 63997 ("Tsukaeru.net, Web Hosting Company, Japan").
+# Primarily a webhosting provider, with some limited amount of multiplay. Some
+# limited amount of spam detected from here. For now, only listing ranges
+# 119-121, plus other specific affected addresses.
+# Stop Forum Spam (SFS) listings: 6.
+# Updated: 2021.01.14
+
+45.124.136.83/32 Deny Cloud
+119.82.24.0/21 Deny Cloud
+121.50.40.0/21 Deny Cloud
+Origin: JP
+Profile: Multiplay;Webhosting
+Tag: Tsukaeru.net
+
+
+# ASN 31798 ("KW Datacenter").
+# Canadian multiplay network. Primarily a server farm/leaser, but also provides
+# domestic internet connectivity. Care needed when updating. Listing all cloud,
+# but of the rest, listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 1,148.
+# Updated: 2021.05.08
+
+45.62.192.0/18 Deny Cloud
+139.64.244.0/22 Deny Cloud
+142.47.96.0/24 Deny Malware
+142.47.103.0/24 Deny Malware
+162.244.24.0/21 Deny Cloud
+162.248.8.0/22 Deny Cloud
+162.248.140.0/22 Deny Cloud
+162.248.160.0/21 Deny Cloud
+162.252.240.0/22 Deny Cloud
+167.88.32.0/20 Deny Cloud
+168.235.144.0/20 Deny Cloud
+198.246.44.0/22 Deny Cloud
+199.47.240.0/22 Deny Cloud
+Origin: CA
+Profile: Domestic ISP;Infrastructure/Transit;Multiplay;Webhosting
+Tag: KW Datacenter

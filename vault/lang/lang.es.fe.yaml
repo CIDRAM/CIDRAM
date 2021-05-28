@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Spanish language data for the front-end (last modified: 2021.05.20).
+# This file: Spanish language data for the front-end (last modified: 2021.05.28).
 ##/
 
 Extended Description Bypasses: "Los archivos para bypass de firmas estándar normalmente se incluyen con el paquete principal."
@@ -113,6 +113,7 @@ config_general_numbers: "¿Cómo prefieres los números que se muestran? Selecci
 config_general_other_verification: "¿Siempre que sea posible, intente verificar otros tipos de solicitudes (por ejemplo, AdSense, verificadores de SEO, etc)? Cuando se detectan, las solicitudes falsas se bloquearán. True = Activar [Predefinido]; False = Desactivar."
 config_general_protect_frontend: "Especifica si las protecciones normalmente proporcionadas por CIDRAM deben aplicarse al front-end. True = Sí [Predefinido]; False = No."
 config_general_search_engine_verification: "¿Intentar verificar las solicitudes de los motores de búsqueda? La verificación de los motores de búsqueda asegura que no serán prohibidos como resultado de exceder el número máximo de infracciones (la prohibición de los motores de búsqueda de su sitio web por lo general tendrán un efecto negativo sobre su ranking de motores de búsqueda, SEO, etc). Cuando se verifica, los motores de búsqueda se pueden bloquear como de costumbre, pero no se prohibirá. Cuando no se verifica, es posible que se les prohíba como resultado de exceder el número máximo de infracciones. Adicionalmente, la verificación de motores de búsqueda proporciona protección contra las solicitudes de motor de búsqueda falsas y contra entidades potencialmente maliciosas disfrazadas de motores de búsqueda (tales solicitudes serán bloqueadas cuando la verificación del motor de búsqueda esté habilitada). True = Activar la verificación del motores de búsqueda [Predefinido]; False = Desactivar la verificación del motores de búsqueda."
+config_general_signatures_update_event_log: "Un archivo para registrar cuando las firmas se actualizan a través del front-end. Especificar el nombre del archivo, o dejar en blanco para desactivar."
 config_general_silent_mode: "Debería CIDRAM silencio redirigir los intentos de acceso bloqueados en lugar de mostrar la página "Acceso Denegado"? En caso afirmativo, especifique la ubicación para redirigir los intentos de acceso bloqueados. Si no, dejar esta variable en blanco."
 config_general_social_media_verification: "¿Intentar verificar las solicitudes de las redes sociales? La verificación de las redes sociales brinda protección contra solicitudes falsas de redes sociales (tales solicitudes serán bloqueadas). True = Activar la verificación de redes sociales [Predefinido]; False = Desactivar la verificación de redes sociales."
 config_general_statistics: "¿Seguir las estadísticas de uso de CIDRAM? True = Sí; False = No [Predefinido]."
@@ -465,6 +466,7 @@ response_repair_process_completed: "Proceso de reparación completado."
 response_repair_process_failed: "Proceso de reparación fallido."
 response_sanity_1: "¡El archivo contiene contenido inesperado! Archivo rechazado!"
 response_satisfied: "Satisfecha."
+response_signatures_updated: "Se actualizaron los archivos de firmas (%s)."
 response_skipped: "Omitido"
 response_statistics_cleared: "Estadística anulado."
 response_tracking_cleared: "Seguimiento anulado."

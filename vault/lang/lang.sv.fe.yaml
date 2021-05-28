@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Swedish language data for the front-end (last modified: 2021.05.20).
+# This file: Swedish language data for the front-end (last modified: 2021.05.28).
 ##/
 
 Extended Description Bypasses: "Standard bypass-filen som normalt ingår i huvudpaketet."
@@ -113,6 +113,7 @@ config_general_numbers: "Hur föredrar du nummer som ska visas? Välj det exempe
 config_general_other_verification: "Om det är möjligt, försök att verifiera andra typer av förfrågningar (t.ex. AdSense, SEO-kontroller, osv)? Falska förfrågningar blockeras när de upptäcks. True = Aktivera [Standard]; False = Inaktivera."
 config_general_protect_frontend: "Anger om de skydd som normalt tillhandahålls av CIDRAM ska tillämpas på front-end. True = Ja [Standard]; False = Nej."
 config_general_search_engine_verification: "Försök att verifiera förfrågningar från sökmotorer? Verifierande sökmotorer ser till att de inte kommer att förbjudas till följd av att infraktionsgräns överskrids (förbjuda sökmotorer från din webbplats kommer vanligtvis att ha en negativ effekt på din sökmotor ranking, SEO, osv). När verifieras kan sökmotorer blockeras som normalt, men kommer inte att förbjudas. När det inte är verifierat, är det möjligt för dem att bli förbjudna till följd av att infraktionsgräns överskrids. Dessutom, sökmotorverifiering ger skydd mot falska sökmotorförfrågningar och mot potentiellt skadliga enheter som maskerar som sökmotorer (sådana förfrågningar kommer att blockeras när sökmotorverifiering är aktiverad). True = Aktivera sökmotorverifiering [Standard]; False = Inaktivera sökmotorverifiering."
+config_general_signatures_update_event_log: "En fil för loggning när signaturer uppdateras via frontend. Ange ett filnamn, eller lämna tomt för att inaktivera."
 config_general_silent_mode: "Ska CIDRAM utföra tyst omdirigering av blockerade åtkomstförsök istället för att visa sidan "Nekat Tillgång"? Om ja, ange platsen för omdirigering av blockerade åtkomstförsök. Om nej, lämna denna variabel tom."
 config_general_social_media_verification: "Försök att verifiera sociala medier begäranden? Social media verifiering ger skydd mot falska sociala medier begäranden (sådana förfrågningar kommer att blockeras). True = Aktivera social media verifiering [Standard]; False = Inaktivera social media verifiering."
 config_general_statistics: "Spåra statistik för CIDRAM? True = Ja; False = Nej [Standard]."
@@ -463,6 +464,7 @@ response_repair_process_completed: "Reparationsprocessen lyckades."
 response_repair_process_failed: "Reparationsprocessen misslyckades."
 response_sanity_1: "Filen innehåller oväntat innehåll! Filen avvisas!"
 response_satisfied: "Nöjda."
+response_signatures_updated: "Signaturfiler har uppdaterats (%s)."
 response_skipped: "Ignoreras"
 response_statistics_cleared: "Statistik rensas."
 response_tracking_cleared: "Spårning rensas."

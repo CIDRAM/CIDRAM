@@ -115,6 +115,10 @@ max_login_attempts=5
 ; to disable.
 FrontEndLog=''
 
+; A file for logging when signatures are updated via the front-end. Specify a
+; filename, or leave blank to disable.
+signatures_update_event_log=''
+
 ; Override "forbid_on_block" when "infraction_limit" is exceeded? When
 ; overriding: Blocked requests return a blank page (template files aren't
 ; used). 200 = Don't override [Default]. Other values are the same as the

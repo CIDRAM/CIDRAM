@@ -5,8 +5,8 @@
 # Last modified: 2021.05.28
 
 # False positive risk (an approximate, rough estimate only):
-# Standard usage, i.e. WITH ignore.dat, CAPTCHA, "extended rules" (default bypasses): « [ ]Low [x]Medium [ ]High »
-#  Exported usage, i.e. W/O ignore.dat, CAPTCHA, "extended rules" (default bypasses): « [ ]Low [ ]Medium [x]High »
+# Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
+#  Exported usage (i.e., used W/O standard CIDRAM features, default bypasses, etc): « [ ]Low [ ]Medium [x]High »
 
 
 # ---
@@ -35,11 +35,6 @@ Tag: ISPsystem
 Origin: IR
 Profile: Infrastructure/Transit
 Tag: AS48159
----
-recaptcha:
- enabled: true
-hcaptcha:
- enabled: true
 
 
 # ASN 12880 ("Information Technology Company (ITC)").
@@ -51,11 +46,6 @@ hcaptcha:
 2001:4188::/48 Deny Generic
 Origin: IR
 Tag: AS12880
----
-recaptcha:
- enabled: true
-hcaptcha:
- enabled: true
 
 
 # ASNs 24940, 37153 ("Hetzner Online GmbH").
@@ -114,11 +104,6 @@ Tag: Hetzner Online GmbH
 Origin: ID
 Profile: Domestic ISP
 Tag: PT Hutchison
----
-recaptcha:
- enabled: true
-hcaptcha:
- enabled: true
 
 
 # ASN 24203 ("PT Excelcomindo Pratama").
@@ -132,11 +117,6 @@ Origin: ID
 2600:1417:3000::/48 Deny Cloud
 Origin: US
 Tag: PT Excelcomindo
----
-recaptcha:
- enabled: true
-hcaptcha:
- enabled: true
 
 
 # ASN 3223 ("Voxility LLC").
@@ -197,11 +177,6 @@ Tag: JPMorgan Chase & Co
 Origin: SE
 Profile: Domestic ISP;Infrastructure/Transit;Multiplay;Tor endpoints here;Webhosting
 Tag: GleSYS AB
----
-recaptcha:
- enabled: true
-hcaptcha:
- enabled: true
 
 
 # ASNs 34665, 44050 ("Petersburg Internet Network ltd").
@@ -223,8 +198,8 @@ Tag: PIN-AS
 
 # ASN 8551 ("Bezeq International-Ltd").
 # Domestic Israeli ISP with human endpoints, but has some bad actors (spambots,
-# scrapers, etc). Marked for use with reCAPTCHA and included in ignore.dat by
-# default to reduce the false positive risk. Non-IL ranges marked as cloud.
+# scrapers, etc). Included in ignore.dat by default to reduce the false
+# positive risk. Non-IL ranges marked as cloud.
 # Stop Forum Spam (SFS) listings: 423.
 # Updated: 2021.04.04
 
@@ -237,11 +212,6 @@ Origin: NL
 Origin: US
 Profile: Domestic ISP
 Tag: Bezeq International
----
-recaptcha:
- enabled: true
-hcaptcha:
- enabled: true
 
 
 # ASN 9116 ("012 Smile Communications LTD").
@@ -255,11 +225,6 @@ hcaptcha:
 Origin: IL
 Profile: Domestic ISP;Tor endpoints here
 Tag: 012 Smile
----
-recaptcha:
- enabled: true
-hcaptcha:
- enabled: true
 
 
 # ASN 51013 ("Websupport s.r.o").
@@ -340,17 +305,12 @@ Tag: STARNET S.R.L
 2406:3c80:5::/48 Deny Spam
 Origin: IN
 Tag: SITI NETWORKS LTD
----
-recaptcha:
- enabled: true
-hcaptcha:
- enabled: true
 
 
 # ASN 45271 ("Idea Cellular Limited").
 # Significant source of forum/blog spam. Also a legit Indian ISP with human
 # endpoints. Websites based in, or targeted towards an Indian audience, should
-# keep it listed in their ignore.dat file. Marked for use with reCAPTCHA.
+# keep it listed in their ignore.dat file.
 # %Listed, abuseat.org (CBL-Listed): 14.82%.
 # Stop Forum Spam (SFS) listings: 1,981.
 # Updated: 2021.03.25
@@ -443,11 +403,6 @@ hcaptcha:
 2402:8100:3a4e::/48 Deny Spam
 Origin: IN
 Tag: Idea Cellular
----
-recaptcha:
- enabled: true
-hcaptcha:
- enabled: true
 
 
 # ASNs 12530, 15895, 35081 ('"Kyivstar" PJSC').
@@ -555,20 +510,13 @@ Tag: PHOENIX NAP, LLC
 2a02:1c8:700::/40 Deny Spam
 Origin: RU
 Tag: Ufanet
----
-recaptcha:
- enabled: true
-hcaptcha:
- enabled: true
 
 
 # ASN 9829 ("BSNL (Bharat Sanchar Nigam Ltd)").
 # A large network with significant human endpoints, but the infection rate
-# listed at CBL is very high, there are numerous spam events, etc. Marked for
-# use with reCAPTCHA to reduce the false positive risk. Websites intended for
-# an Indian audience should keep it listed in their ignore.dat file. Possibly
-# may remove this section in the future if the network ever cleans up its act.
-# (US ranges marked as cloud).
+# listed at CBL is very high, there are numerous spam events, etc. Websites
+# intended for an Indian audience should keep it listed in their ignore.dat
+# file. (US ranges marked as cloud).
 # %Listed, abuseat.org (CBL-Listed): 1.00%.
 # Stop Forum Spam (SFS) listings: 6,055.
 # Updated: 2021.03.03
@@ -666,20 +614,14 @@ Origin: IN
 2600:1417:71::/48 Deny Cloud
 Origin: US
 Tag: BSNL
----
-recaptcha:
- enabled: true
-hcaptcha:
- enabled: true
 
 
 # ASN 4134 ("China Telecom Backbone").
 # Interlaces with numerous providers and contains a large portion of Chinese
 # human access endpoints. Can't easily ignore the unwanted traffic coming from
 # this ASN (spam events, hack attempts, brute-force attempts, probing, etc),
-# nor its listing at a number of BLs. Marked for use with reCAPTCHA to reduce
-# the false positive risk. Websites intended for a Chinese audience should keep
-# this section listed in their ignore.dat file.
+# nor its listing at a number of BLs. Websites intended for a Chinese audience
+# should keep this section listed in their ignore.dat file.
 # %Listed, abuseat.org (CBL-Listed): 0.70%.
 # Stop Forum Spam (SFS) listings: 8,919.
 # Updated: 2020.10.10 / Checked: 2021.02.05
@@ -721,11 +663,6 @@ Origin: US
 Origin: ZA
 Profile: Infrastructure/Transit
 Tag: China Telecom Backbone
----
-recaptcha:
- enabled: true
-hcaptcha:
- enabled: true
 
 
 # ASN 4812 ("China Telecom (Group)").
@@ -775,20 +712,14 @@ hcaptcha:
 Origin: CN
 Profile: Domestic ISP;Infrastructure/Transit;Multiplay
 Tag: China Telecom 4812
----
-recaptcha:
- enabled: true
-hcaptcha:
- enabled: true
 
 
 # ASN 4837 ("China Unicom Backbone").
 # Interlaces with numerous providers and contains a large portion of Chinese
 # human access endpoints. Can't easily ignore the unwanted traffic coming from
 # this ASN (spam events, hack attempts, brute-force attempts, probing, etc),
-# nor its listing at a number of BLs. Marked for use with reCAPTCHA to reduce
-# the false positive risk. Websites intended for a Chinese audience should keep
-# this section listed in their ignore.dat file.
+# nor its listing at a number of BLs. Websites intended for a Chinese audience
+# should keep this section listed in their ignore.dat file.
 # Stop Forum Spam (SFS) listings: 17,480.
 # Updated: 2021.03.03
 
@@ -1006,20 +937,14 @@ hcaptcha:
 Origin: CN
 Profile: Domestic ISP;Infrastructure/Transit;Multiplay
 Tag: China Unicom Backbone
----
-recaptcha:
- enabled: true
-hcaptcha:
- enabled: true
 
 
 # ASN 3462 ("Data Communication Business Group").
 # Would prefer to not include this ASN in this file due to the high risk of
 # false positives, but the amount of spam events seen from this ASN isn't
-# ignorable at this time. Marked for use with reCAPTCHA to reduce the false
-# positive risk, and I would encourage any CIDRAM users from Taiwan, or
-# targeting traffic from Taiwan, to list this section in their ignore.dat file
-# to reduce the false positive risk. Non-TW ranges as cloud.
+# ignorable at this time. Websites intended for Taiwanese users should list
+# this section in their ignore.dat file to reduce the false positive risk.
+# Non-TW ranges as cloud.
 # %Listed, abuseat.org (CBL-Listed): 0.48%.
 # Stop Forum Spam (SFS) listings: 16,312.
 # Updated: 2020.12.03
@@ -1049,11 +974,6 @@ hcaptcha:
 Origin: TW
 Profile: Domestic ISP;Commercial;Multiplay;Tor endpoints here;Webhosting
 Tag: DCBG
----
-recaptcha:
- enabled: true
-hcaptcha:
- enabled: true
 
 
 # ASNs 4808, 23724 ("China Unicom Beijing Province Network").
@@ -1185,20 +1105,12 @@ hcaptcha:
 Origin: CN
 Profile: Domestic ISP;Infrastructure/Transit;Multiplay
 Tag: China Unicom Beijing
----
-recaptcha:
- enabled: true
-hcaptcha:
- enabled: true
 
 
 # ASNs 7643, 45899, 135905 ("VietNam Post and Telecom Corporation").
 # A *major* Vietnamese domestic ISP, but also a significant source of spam,
-# hack attempts, probing, etc. Marked for use with reCAPTCHA and also listed
-# in the ignore.dat file by default to reduce the false positive risk. I would
-# encourage any CIDRAM users from Vietnam, or targeting traffic from Vietnam,
-# to keep it listed in their ignore.dat file (others may want unignore it at
-# their own discretion).
+# hack attempts, probing, etc. Listed in the ignore.dat file by default to
+# reduce the false positive risk.
 # %Listed, abuseat.org (CBL-Listed): 0.74% (AS45899).
 # Stop Forum Spam (SFS) listings: 91 (AS7643), 28,974 (AS45899), 261 (AS135905).
 # Updated: 2020.11.17
@@ -1229,11 +1141,6 @@ Origin: US
 Origin: VN
 Profile: Domestic ISP;Tor endpoints here
 Tag: VNPT Corp
----
-recaptcha:
- enabled: true
-hcaptcha:
- enabled: true
 
 
 # ASN 18403 ("The Corporation for Financing & Promoting Technology").
@@ -1255,11 +1162,6 @@ hcaptcha:
 2406:cbc0::/48 Deny Generic
 Origin: VN
 Tag: CFPT
----
-recaptcha:
- enabled: true
-hcaptcha:
- enabled: true
 
 
 # ASNs 9498, 9730, 24560, 37140, 45609, 132045 ("Bharti Airtel").
@@ -1594,11 +1496,6 @@ Origin: IN
 Origin: US
 Profile: Domestic ISP;Frequent changes;Infrastructure/Transit
 Tag: Bharti Airtel
----
-recaptcha:
- enabled: true
-hcaptcha:
- enabled: true
 
 
 # ASN 23944 ("SKYBroadband SKYCable Corporation").
@@ -1612,11 +1509,6 @@ hcaptcha:
 Origin: PH
 Profile: Domestic ISP;Temporary
 Tag: SKYBROADBAND
----
-recaptcha:
- enabled: true
-hcaptcha:
- enabled: true
 
 
 # ASN 9808 ("Guangdong Mobile Communication Co.Ltd").
@@ -1628,11 +1520,6 @@ hcaptcha:
 2409:8a4d:c40:35c0::/64 Deny Malware
 Origin: CN
 Tag: Guangdong Mobile
----
-recaptcha:
- enabled: true
-hcaptcha:
- enabled: true
 
 
 # ASN 9387 ("AUGERE-Pakistan").
@@ -1643,11 +1530,6 @@ hcaptcha:
 2401:4100::/32 Deny Malware
 Origin: PK
 Tag: AUGERE-Pakistan
----
-recaptcha:
- enabled: true
-hcaptcha:
- enabled: true
 
 
 # ASN 12389 ("PJSC Rostelecom").
@@ -1663,11 +1545,6 @@ hcaptcha:
 Origin: RU
 Profile: Domestic ISP;Tor endpoints here
 Tag: PJSC Rostelecom
----
-recaptcha:
- enabled: true
-hcaptcha:
- enabled: true
 
 
 # ASNs 3216, 8402 ("PJSC Vimpelcom", "OJSC Vimpelcom").
@@ -1682,11 +1559,6 @@ hcaptcha:
 Origin: RU
 Profile: Domestic ISP
 Tag: PJSC Vimpelcom
----
-recaptcha:
- enabled: true
-hcaptcha:
- enabled: true
 
 
 # ASN 31200 ("Novotelecom Ltd").
@@ -1699,11 +1571,6 @@ hcaptcha:
 Origin: RU
 Profile: Domestic ISP
 Tag: Novotelecom Ltd
----
-recaptcha:
- enabled: true
-hcaptcha:
- enabled: true
 
 
 # ASN 3255 (State Enterprise Scientific and Telecommunication Centre "Ukrainian
@@ -1716,11 +1583,6 @@ hcaptcha:
 Origin: UA
 Profile: Domestic ISP;Government
 Tag: UARNet
----
-recaptcha:
- enabled: true
-hcaptcha:
- enabled: true
 
 
 # ASN 44493 ("Chelyabinsk-Signal").
@@ -1730,11 +1592,6 @@ hcaptcha:
 2a03:a0e0::/32 Deny Spam
 Origin: RU
 Tag: Chelyabinsk-Signal
----
-recaptcha:
- enabled: true
-hcaptcha:
- enabled: true
 
 
 # ASN 15774 ("Closed Joint Stock Company TransTeleCom").
@@ -1748,11 +1605,6 @@ hcaptcha:
 2a03:3700:4000::/35 Deny Spam
 Origin: RU
 Tag: TransTeleCom
----
-recaptcha:
- enabled: true
-hcaptcha:
- enabled: true
 
 
 # ASN 137432 ("BKB Network").
@@ -1765,11 +1617,6 @@ hcaptcha:
 2402:68c0:e000::/36 Deny Generic
 Origin: BD
 Tag: BKB Network
----
-recaptcha:
- enabled: true
-hcaptcha:
- enabled: true
 
 
 # ASN 16010 ("Magticom Ltd").
@@ -1780,11 +1627,6 @@ hcaptcha:
 2a0b:6200::/29 Deny Spam
 Origin: GE
 Tag: Magticom Ltd
----
-recaptcha:
- enabled: true
-hcaptcha:
- enabled: true
 
 
 # ASN 7642 ("Dhivehi Raajjeyge Gulhun Plc (Dhiraagu)").
@@ -1795,11 +1637,6 @@ hcaptcha:
 2406:e400::/32 Deny Spam
 Origin: MV
 Tag: Dhivehi Raajjeyge
----
-recaptcha:
- enabled: true
-hcaptcha:
- enabled: true
 
 
 # ASN 196777 ("SKORUK ANDRIY OLEKSANDROVYCH").
@@ -1834,11 +1671,6 @@ Origin: CA
 2602:fd60:10::/44 Deny Spam
 Origin: US
 Tag: UnmeteredInternet.com
----
-recaptcha:
- enabled: true
-hcaptcha:
- enabled: true
 
 
 # ASN 198093 ("Foreningen for digitala fri- och rattigheter").
@@ -1862,11 +1694,6 @@ Tag: Foreningen
 2a00:1228::/32 Deny Generic
 Origin: UA
 Tag: Freenet Ltd
----
-recaptcha:
- enabled: true
-hcaptcha:
- enabled: true
 
 
 # ASNs 9009, 16247 ("M247 Ltd").
@@ -1907,11 +1734,6 @@ Origin: NL
 Origin: RU
 Profile: Commercial;Dedicated;Domestic ISP;Infrastructure/Transit;Multiplay;Tor endpoints here;Webhosting
 Tag: M247 Ltd
----
-recaptcha:
- enabled: true
-hcaptcha:
- enabled: true
 
 
 # ASN 8708 ("RCS & RDS SA").
@@ -1925,11 +1747,6 @@ hcaptcha:
 Origin: RO
 Profile: Domestic ISP;Tor endpoints here
 Tag: RCS & RDS SA
----
-recaptcha:
- enabled: true
-hcaptcha:
- enabled: true
 
 
 # ASN 36351 ("SoftLayer Technologies").
@@ -1960,11 +1777,6 @@ Tag: SoftLayer Spam ISPs
 Origin: FR
 Profile: Domestic ISP;Multiplay;Tor endpoints here
 Tag: ONLINE S.A.S
----
-recaptcha:
- enabled: true
-hcaptcha:
- enabled: true
 
 
 # ASN 13249 ("IT Systems LLC").
@@ -1989,11 +1801,6 @@ Tag: IT Systems LLC
 Origin: KZ
 Profile: Domestic ISP;Infrastructure/Transit
 Tag: JSC Kazakhtelecom
----
-recaptcha:
- enabled: true
-hcaptcha:
- enabled: true
 
 
 # ASN 8359 ("MTS PJSC").
@@ -2010,11 +1817,6 @@ Origin: RU
 2a01:7c0::/32 Deny Spam
 Origin: UA
 Tag: MTS PJSC
----
-recaptcha:
- enabled: true
-hcaptcha:
- enabled: true
 
 
 # ASNs 15640, 21365, 25086, 28884, 29190, 29497, 30881, 30922, 31286,
@@ -2030,11 +1832,6 @@ hcaptcha:
 2a00:1fa1::/33 Deny Spam
 Origin: RU
 Tag: MTS PJSC Supplemental
----
-recaptcha:
- enabled: true
-hcaptcha:
- enabled: true
 
 
 # ASN 263500 ("Star Telecom S/A").
@@ -2045,11 +1842,6 @@ hcaptcha:
 2804:12d8::/32 Deny Spam
 Origin: BR
 Tag: Star Telecom S/A
----
-recaptcha:
- enabled: true
-hcaptcha:
- enabled: true
 
 
 # ASN 25513 ("PJSC Moscow city telephone network").
@@ -2063,11 +1855,6 @@ hcaptcha:
 Origin: RU
 Profile: Domestic ISP
 Tag: PJSC Moscow city
----
-recaptcha:
- enabled: true
-hcaptcha:
- enabled: true
 
 
 # ASN 8220 ("COLT Technology Services Group Limited").
@@ -2096,11 +1883,6 @@ Tag: COLT Technology SGL
 Origin: US
 Profile: Domestic ISP
 Tag: TM Net
----
-recaptcha:
- enabled: true
-hcaptcha:
- enabled: true
 
 
 # ASN 17971 ("TM-VADS DC Hosting").
@@ -2114,11 +1896,6 @@ hcaptcha:
 Origin: MY
 Profile: Domestic ISP;Multiplay;Webhosting
 Tag: TM-VADS DC Hosting
----
-recaptcha:
- enabled: true
-hcaptcha:
- enabled: true
 
 
 # ASNs 7725, 7922, 33661, 33668 ("Comcast Cable Communications, LLC").
@@ -2148,11 +1925,6 @@ hcaptcha:
 Origin: US
 Profile: Domestic ISP
 Tag: Comcast Spam IPs
----
-recaptcha:
- enabled: true
-hcaptcha:
- enabled: true
 
 
 # ASN 22773 ("Cox Communications Inc").
@@ -2166,11 +1938,6 @@ hcaptcha:
 2600:8807:5680:8b0::/64 Deny Spam
 Origin: US
 Tag: Cox Spam IPs
----
-recaptcha:
- enabled: true
-hcaptcha:
- enabled: true
 
 
 # ASN 27699 ("TELEFNICA BRASIL S.A").
@@ -2188,11 +1955,6 @@ hcaptcha:
 Origin: BR
 Profile: Domestic ISP
 Tag: TELEFNICA BRASIL S.A
----
-recaptcha:
- enabled: true
-hcaptcha:
- enabled: true
 
 
 # ASNs 10796, 11427, 20115 ("Charter Communications").
@@ -2209,11 +1971,6 @@ hcaptcha:
 Origin: US
 Profile: Domestic ISP
 Tag: Charter Communications
----
-recaptcha:
- enabled: true
-hcaptcha:
- enabled: true
 
 
 # ASNs 17072, 22884 ("TOTAL PLAY TELECOMUNICACIONES SA DE CV").
@@ -2226,11 +1983,6 @@ hcaptcha:
 Origin: MX
 Profile: Domestic ISP
 Tag: TOTAL PLAY TELECOMUNICACIONES
----
-recaptcha:
- enabled: true
-hcaptcha:
- enabled: true
 
 
 # ASN 24309 ("Atria Convergence Technologies Pvt. Ltd. Broadband Internet
@@ -2246,11 +1998,6 @@ Origin: IN
 Origin: US
 Profile: Domestic ISP
 Tag: Atria Convergence
----
-recaptcha:
- enabled: true
-hcaptcha:
- enabled: true
 
 
 # ASN 39608 ("Lanet Network Ltd").
@@ -2263,11 +2010,6 @@ hcaptcha:
 Origin: UA
 Profile: Domestic ISP
 Tag: Lanet Network Ltd
----
-recaptcha:
- enabled: true
-hcaptcha:
- enabled: true
 
 
 # ASN 25159 ("PJSC MegaFon").
@@ -2279,11 +2021,6 @@ hcaptcha:
 Origin: RU
 Profile: Domestic ISP
 Tag: PJSC MegaFon
----
-recaptcha:
- enabled: true
-hcaptcha:
- enabled: true
 
 
 # ASN 34700 ("MAXNET TELECOM, LTD").
@@ -2295,11 +2032,6 @@ hcaptcha:
 Origin: UA
 Profile: Domestic ISP;Tor endpoints here
 Tag: MAXNET TELECOM
----
-recaptcha:
- enabled: true
-hcaptcha:
- enabled: true
 
 
 # ASN 6799 ("Ote SA (Hellenic Telecommunications Organisation)").
@@ -2316,11 +2048,6 @@ hcaptcha:
 Origin: GR
 Profile: Domestic ISP
 Tag: Ote SA
----
-recaptcha:
- enabled: true
-hcaptcha:
- enabled: true
 
 
 # ASN 28573 ("CLARO S.A"). A Brazilian domestic ISP caught spamming. Listing
@@ -2334,11 +2061,6 @@ hcaptcha:
 Origin: BR
 Profile: Domestic ISP
 Tag: CLARO S.A
----
-recaptcha:
- enabled: true
-hcaptcha:
- enabled: true
 
 
 # ASN 6697 ("Republican Unitary Telecommunication Enterprise Beltelecom").
@@ -2355,11 +2077,6 @@ Origin: BY
 Origin: IL
 Profile: Domestic ISP
 Tag: Beltelecom
----
-recaptcha:
- enabled: true
-hcaptcha:
- enabled: true
 
 
 # ASN 1680 ("Cellcom Fixed Line Communication L.P").
@@ -2373,11 +2090,6 @@ hcaptcha:
 Origin: IL
 Profile: Domestic ISP
 Tag: Cellcom Fixed
----
-recaptcha:
- enabled: true
-hcaptcha:
- enabled: true
 
 
 # ASN 12849 ("Hot-Net internet services Ltd").
@@ -2392,11 +2104,6 @@ hcaptcha:
 Origin: IL
 Profile: Domestic ISP
 Tag: Hot-Net internet
----
-recaptcha:
- enabled: true
-hcaptcha:
- enabled: true
 
 
 # ASN 8151 ("Uninet S.A. de C.V").
@@ -2416,11 +2123,6 @@ Origin: MX
 Origin: US
 Profile: Domestic ISP
 Tag: Uninet
----
-recaptcha:
- enabled: true
-hcaptcha:
- enabled: true
 
 
 # ASN 58055 ("Extratel Ltd").
@@ -2434,11 +2136,6 @@ hcaptcha:
 Origin: UA
 Profile: Domestic ISP
 Tag: Extratel Ltd
----
-recaptcha:
- enabled: true
-hcaptcha:
- enabled: true
 
 
 # ASN 38732 ("CMC Telecom Infrastructure Company").
@@ -2450,11 +2147,6 @@ hcaptcha:
 Origin: VN
 Profile: Domestic ISP;Infrastructure/Transit
 Tag: CMC Telecom
----
-recaptcha:
- enabled: true
-hcaptcha:
- enabled: true
 
 
 # ASN 13489 ("EPM Telecomunicaciones S.A. E.S.P").
@@ -2477,11 +2169,6 @@ hcaptcha:
 2803:87a0::/32 Deny Spam
 Origin: CO
 Tag: EPM Telecomunicaciones
----
-recaptcha:
- enabled: true
-hcaptcha:
- enabled: true
 
 
 # ASN 6830 ("Liberty Global B.V").
@@ -2498,11 +2185,6 @@ Origin: DE
 Origin: PL
 Profile: Tor endpoints here
 Tag: Liberty Global
----
-recaptcha:
- enabled: true
-hcaptcha:
- enabled: true
 
 
 # ASN 1221 ("Telstra Corporation Ltd").
@@ -2524,11 +2206,6 @@ hcaptcha:
 Origin: AU
 Profile: Domestic ISP
 Tag: Telstra Corporation
----
-recaptcha:
- enabled: true
-hcaptcha:
- enabled: true
 
 
 # ASN 5607 ("Sky UK Limited").
@@ -2563,11 +2240,6 @@ hcaptcha:
 Origin: GB
 Profile: Domestic ISP
 Tag: Sky UK Limited
----
-recaptcha:
- enabled: true
-hcaptcha:
- enabled: true
 
 
 # ASN 2856 ("British Telecommunications PLC").
@@ -2597,11 +2269,6 @@ hcaptcha:
 Origin: GB
 Profile: Domestic ISP
 Tag: British Telecom PLC
----
-recaptcha:
- enabled: true
-hcaptcha:
- enabled: true
 
 
 # ASN 53022 ("BROSEGHINI LTDA EPP").
@@ -2613,11 +2280,6 @@ hcaptcha:
 Origin: BR
 Profile: Domestic ISP
 Tag: BROSEGHINI LTDA EPP
----
-recaptcha:
- enabled: true
-hcaptcha:
- enabled: true
 
 
 # ASN 7018 ("AT&T Services, Inc").
@@ -2638,11 +2300,6 @@ hcaptcha:
 Origin: US
 Profile: Domestic ISP;Tor endpoints here
 Tag: AT&T Services, Inc
----
-recaptcha:
- enabled: true
-hcaptcha:
- enabled: true
 
 
 # ASN 21928 ("T-Mobile USA, Inc").
@@ -2659,11 +2316,6 @@ hcaptcha:
 2607:fb90:99d1:4ffd::/64 Deny Spam
 Origin: US
 Tag: T-Mobile USA, Inc
----
-recaptcha:
- enabled: true
-hcaptcha:
- enabled: true
 
 
 # ASN 5617 ("Orange Polska Spolka Akcyjna").
@@ -2676,11 +2328,6 @@ hcaptcha:
 Origin: PL
 Profile: Domestic ISP
 Tag: Orange Polska Spolka Akcyjna
----
-recaptcha:
- enabled: true
-hcaptcha:
- enabled: true
 
 
 # ASN 4761 ("INDOSAT Internet Network Provider).
@@ -2695,11 +2342,6 @@ hcaptcha:
 Origin: US
 Profile: Domestic ISP
 Tag: INDOSAT
----
-recaptcha:
- enabled: true
-hcaptcha:
- enabled: true
 
 
 # ASNs 7713, 17974 ("PT Telekomunikasi Indonesia).
@@ -2747,18 +2389,13 @@ Origin: PL
 Origin: US
 Profile: Domestic ISP;Infrastructure/Transit;Multiplay
 Tag: PT Telekomunikasi Indonesia
----
-recaptcha:
- enabled: true
-hcaptcha:
- enabled: true
 
 
 # ASN 39351 ("31173 Services AB").
 # Webhosting and colocation provider, and also a source of spam and other
-# unwanted traffic. Placed into the ISPs file and marked with reCAPTCHA due to
-# the risk of false positives (some companies and networks in Stockholm may use
-# this network). NL ranges as proxy.
+# unwanted traffic. Placed into the ISPs file due to the risk of false
+# positives (some companies and networks in Stockholm may use this network).
+# NL ranges as proxy.
 # Stop Forum Spam (SFS) listings: 6,096.
 # Updated: 2021.04.21
 
@@ -2773,11 +2410,6 @@ Origin: NL
 Origin: SE
 Profile: Infrastructure/Transit;Multiplay;Tor endpoints here;Webhosting
 Tag: 31173 Services AB
----
-recaptcha:
- enabled: true
-hcaptcha:
- enabled: true
 
 
 # ASN 30779 ("TRK Cable TV LLC").
@@ -2788,11 +2420,6 @@ hcaptcha:
 2001:67c:203c::/48 Deny Spam
 Origin: UA
 Tag: TRK Cable TV LLC
----
-recaptcha:
- enabled: true
-hcaptcha:
- enabled: true
 
 
 # ASNs 31593, 34187 ("LLC Renome-Service").
@@ -2815,11 +2442,6 @@ Tag: LLC Renome-Service
 Origin: CH
 Profile: Domestic ISP;Multiplay;Tor endpoints here;Webhosting
 Tag: Init7
----
-recaptcha:
- enabled: true
-hcaptcha:
- enabled: true
 
 
 # ASNs 16276, 35540 ("OVH Systems").
@@ -2839,11 +2461,6 @@ Origin: HK
 Origin: US
 Profile: Domestic ISP;Multiplay;Tor endpoints here
 Tag: OVH Systems
----
-recaptcha:
- enabled: true
-hcaptcha:
- enabled: true
 
 
 # ASNs 45430, 133481 ("SBN-IIG/AWN-IIG transit provider", "AIS Fibre").
@@ -2857,11 +2474,6 @@ hcaptcha:
 Origin: TH
 Profile: Domestic ISP
 Tag: Phaholyothin Rd
----
-recaptcha:
- enabled: true
-hcaptcha:
- enabled: true
 
 
 # ASN 852 ("TELUS Communications Inc").
@@ -2875,11 +2487,6 @@ hcaptcha:
 Origin: CA
 Profile: Domestic ISP
 Tag: TELUS Communications Inc
----
-recaptcha:
- enabled: true
-hcaptcha:
- enabled: true
 
 
 # ASN 34757 ("Sibirskie Seti Ltd").
@@ -2892,11 +2499,6 @@ hcaptcha:
 Origin: RU
 Profile: Domestic ISP
 Tag: Sibirskie Seti Ltd
----
-recaptcha:
- enabled: true
-hcaptcha:
- enabled: true
 
 
 # ASN 6848 ("Telenet BVBA").
@@ -2915,11 +2517,6 @@ hcaptcha:
 Origin: BE
 Profile: Domestic ISP
 Tag: Telenet BVBA
----
-recaptcha:
- enabled: true
-hcaptcha:
- enabled: true
 
 
 # ASNs 3243, 42863 ("MEO - SERVICOS DE COMUNICACOES E MULTIMEDIA S.A").
@@ -2941,11 +2538,6 @@ hcaptcha:
 Origin: PT
 Profile: Domestic ISP
 Tag: MEO
----
-recaptcha:
- enabled: true
-hcaptcha:
- enabled: true
 
 
 # ASN 45429 ("CAMBODIAN SINGMENG TELEMEDIA CO., LTD").
@@ -2958,11 +2550,6 @@ hcaptcha:
 Origin: KH
 Profile: Domestic ISP
 Tag: CAMBODIAN SINGMENG TELEMEDIA
----
-recaptcha:
- enabled: true
-hcaptcha:
- enabled: true
 
 
 # ASN 134674 ("TATA SKY BROADBAND PRIVATE LIMITED").
@@ -2975,11 +2562,6 @@ hcaptcha:
 Origin: IN
 Profile: Domestic ISP
 Tag: TATA SKY BROADBAND PRIVATE LIMITED
----
-recaptcha:
- enabled: true
-hcaptcha:
- enabled: true
 
 
 # ASNs 3209, 31334 ("Vodafone Deutschland GmbH").
@@ -2996,11 +2578,6 @@ hcaptcha:
 Origin: DE
 Profile: Domestic ISP
 Tag: Vodafone Deutschland GmbH
----
-recaptcha:
- enabled: true
-hcaptcha:
- enabled: true
 
 
 # ASNs 3215, 5511 ("Orange S.A").
@@ -3036,11 +2613,6 @@ Tag: Orange S.A
 Origin: DE
 Profile: Infrastructure/Transit;Tor endpoints here;University
 Tag: DFN
----
-recaptcha:
- enabled: true
-hcaptcha:
- enabled: true
 
 
 # ASN 3265 ("Xs4all Internet BV").
@@ -3053,11 +2625,6 @@ hcaptcha:
 Origin: NL
 Profile: Domestic ISP;Tor endpoints here
 Tag: Xs4all Internet BV
----
-recaptcha:
- enabled: true
-hcaptcha:
- enabled: true
 
 
 # ASN 5410 ("Bouygues Telecom SA").
@@ -3071,11 +2638,6 @@ hcaptcha:
 Origin: FR
 Profile: Domestic ISP
 Tag: Bouygues Telecom SA
----
-recaptcha:
- enabled: true
-hcaptcha:
- enabled: true
 
 
 # ASNs 12552, 39369 ("Availo Networks AB").
@@ -3089,11 +2651,6 @@ hcaptcha:
 Origin: NO
 Profile: Domestic ISP;Multiplay;Webhosting
 Tag: Availo Networks AB
----
-recaptcha:
- enabled: true
-hcaptcha:
- enabled: true
 
 
 # ASNs 60339, 206067 ("Hutchison 3G UK Limited").
@@ -3106,11 +2663,6 @@ hcaptcha:
 Origin: GB
 Profile: Domestic ISP
 Tag: Hutchison 3G UK Limited
----
-recaptcha:
- enabled: true
-hcaptcha:
- enabled: true
 
 
 # ASN 15557 ("SFR SA").
@@ -3123,11 +2675,6 @@ hcaptcha:
 Origin: FR
 Profile: Domestic ISP;Infrastructure/Transit;Multiplay
 Tag: SFR SA
----
-recaptcha:
- enabled: true
-hcaptcha:
- enabled: true
 
 
 # ASN 57712 ("NPF SOFTVIDEO Ltd").
@@ -3140,11 +2687,6 @@ hcaptcha:
 2a00:f440:c::/48 Deny Spam
 Origin: RU
 Tag: NPF SOFTVIDEO Ltd
----
-recaptcha:
- enabled: true
-hcaptcha:
- enabled: true
 
 
 # ASN 31272 ("WildPark Co").
@@ -3158,8 +2700,3 @@ hcaptcha:
 Origin: UA
 Profile: Domestic ISP
 Tag: WildPark Co
----
-recaptcha:
- enabled: true
-hcaptcha:
- enabled: true

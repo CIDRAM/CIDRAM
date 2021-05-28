@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Turkish language data for the front-end (last modified: 2021.05.20).
+# This file: Turkish language data for the front-end (last modified: 2021.05.28).
 ##/
 
 Extended Description Bypasses: "Varsayılan imza bypass'lar, normalde ana paketle birlikte verilir."
@@ -113,6 +113,7 @@ config_general_numbers: "Numaraların görüntülenmesini nasıl tercih edersini
 config_general_other_verification: "Mümkün olan her yerde, diğer istek türlerini doğrulamaya çalışın (ör., AdSense, SEO denetleyicileri, vb)? Tespit edildiğinde, sahte istekler engellenecektir. Doğru/True = Etkinleştir [Varsayılan]; Yanlış/False = devre dışı bırakın."
 config_general_protect_frontend: "Normal olarak CIDRAM tarafından sağlanan korumaların ön uça uygulanıp uygulanmayacağını belirtir. Doğru/True = Evet [Varsayılan]; Yanlış/False = Hayır."
 config_general_search_engine_verification: "Arama motorlarından gelen istekleri doğrulamaya çalışın? Arama motorlarını doğrulamak, ihlal sınırını aşmanın bir sonucu olarak yasaklanmamasını sağlar (sitenizdeki arama motorlarını yasaklamak genellikle arama motoru sıralaması, SEO, vb. üzerinde olumsuz bir etki yapar). Doğrulandığı zaman, arama motorları normal olarak engellenebilir, ancak yasaklanmaz. Doğrulanmadığı zaman ise, ihlal sınırının aşılmasının bir sonucu olarak yasaklanmaları mümkündür. Buna ek olarak, arama motoru doğrulaması, sahte arama motoru isteklerine ve arama motorları kılığına bürünen potansiyel olarak kötü amaçlı varlıklara karşı koruma sağlar (arama motoru doğrulama etkinleştirildiğinde bu tür istekler engellenir). Doğru/True = Arama motoru doğrulamasını etkinleştir [Varsayılan]; Yanlış/False = Arama motoru doğrulamasını devre dışı bırakın."
+config_general_signatures_update_event_log: "Ön uç aracılığıyla imzalar güncellendiğinde günlüğe kaydedilecek bir dosya. Dosya adı belirtin veya devre dışı bırakmak için boş bırakın."
 config_general_silent_mode: "CIDRAM, "Erişim Reddedildi" sayfasını göstermek yerine, engellenen erişim girişimlerini sessizce yönlendirmeli mi? Yanıt evet ise, engellenen erişim girişimleri için yeniden yönlendirilecek konumu belirtin. Yanıt hayır ise, bu değişkeni boş bırakın."
 config_general_social_media_verification: "Sosyal medya isteklerini doğrulamayı denemek mi istiyorsunuz? Sosyal medya doğrulama, sahte sosyal medya isteklerine karşı koruma sağlar (bu gibi istekler engellenir). True = Sosyal medya doğrulamasını etkinleştir [Varsayılan]; False = Sosyal medya doğrulamasını devre dışı bırak."
 config_general_statistics: "CIDRAM kullanım istatistiklerini takip et? Doğru/True = Evet; Yanlış/False = Hayır [Varsayılan]."
@@ -463,6 +464,7 @@ response_repair_process_completed: "Onarım işlemi tamamlandı."
 response_repair_process_failed: "Onarım işlemi başarısız oldu."
 response_sanity_1: "Dosya beklenmedik içerik barındırıyor! Dosya reddedildi!"
 response_satisfied: "Karşılandı."
+response_signatures_updated: "İmza dosyaları güncellendi (%s)."
 response_skipped: "Atlandı"
 response_statistics_cleared: "İstatistikler temizlendi."
 response_tracking_cleared: "İzleme temizlendi."

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Event handlers file (last modified: 2021.05.01).
+ * This file: Event handlers file (last modified: 2021.05.28).
  */
 
 /**
@@ -19,7 +19,7 @@
 $CIDRAM['Events']->addHandler('writeToLog', function () use (&$CIDRAM): bool {
     /** Guard. */
     if (
-        !$CIDRAM['Config']['general']['logfile'] ||
+        $CIDRAM['Config']['general']['logfile'] === '' ||
         !($Filename = $CIDRAM['BuildPath']($CIDRAM['Vault'] . $CIDRAM['Config']['general']['logfile']))
     ) {
         return false;
@@ -48,7 +48,7 @@ $CIDRAM['Events']->addHandler('writeToLog', function () use (&$CIDRAM): bool {
     /** Guard. */
     if (
         empty($CIDRAM['BlockInfo']) ||
-        !$CIDRAM['Config']['general']['logfile_apache'] ||
+        $CIDRAM['Config']['general']['logfile_apache'] === '' ||
         !($Filename = $CIDRAM['BuildPath']($CIDRAM['Vault'] . $CIDRAM['Config']['general']['logfile_apache']))
     ) {
         return false;
@@ -87,7 +87,7 @@ $CIDRAM['Events']->addHandler('writeToLog', function () use (&$CIDRAM): bool {
     /** Guard. */
     if (
         empty($CIDRAM['BlockInfo']) ||
-        !$CIDRAM['Config']['general']['logfile_serialized'] ||
+        $CIDRAM['Config']['general']['logfile_serialized'] === '' ||
         !($Filename = $CIDRAM['BuildPath']($CIDRAM['Vault'] . $CIDRAM['Config']['general']['logfile_serialized']))
     ) {
         return false;
@@ -121,7 +121,7 @@ $CIDRAM['Events']->addHandler('writeToLog', function () use (&$CIDRAM): bool {
 $CIDRAM['Events']->addHandler('error', function (string $Data) use (&$CIDRAM): bool {
     /** Guard. */
     if (
-        !$CIDRAM['Config']['general']['error_log'] ||
+        $CIDRAM['Config']['general']['error_log'] === '' ||
         empty($CIDRAM['Stage']) ||
         !$CIDRAM['Request']->inCsv($CIDRAM['Stage'], $CIDRAM['Config']['general']['error_log_stages'])
     ) {
@@ -171,7 +171,7 @@ $CIDRAM['Events']->addHandler('final', function () use (&$CIDRAM): bool {
     /** Guard. */
     if (
         !isset($CIDRAM['Pending-Error-Log-Data']) ||
-        !$CIDRAM['Config']['general']['error_log'] ||
+        $CIDRAM['Config']['general']['error_log'] === '' ||
         !($File = $CIDRAM['BuildPath']($CIDRAM['Vault'] . $CIDRAM['Config']['general']['error_log']))
     ) {
         return false;
@@ -204,7 +204,7 @@ $CIDRAM['Events']->addHandler('final', function () use (&$CIDRAM): bool {
 $CIDRAM['Events']->addHandler('writeToPHPMailerEventLog', function (string $Data) use (&$CIDRAM): bool {
     /** Guard. */
     if (
-        !$CIDRAM['Config']['PHPMailer']['event_log'] ||
+        $CIDRAM['Config']['PHPMailer']['event_log'] === '' ||
         !($EventLog = $CIDRAM['BuildPath']($CIDRAM['Vault'] . $CIDRAM['Config']['PHPMailer']['event_log']))
     ) {
         return false;
@@ -217,6 +217,39 @@ $CIDRAM['Events']->addHandler('writeToPHPMailerEventLog', function (string $Data
     fclose($Handle);
     if ($WriteMode === 'wb') {
         $CIDRAM['LogRotation']($CIDRAM['Config']['PHPMailer']['event_log']);
+    }
+    return true;
+});
+
+/**
+ * Writes to the signatures update event log.
+ *
+ * @param string $Data What to write.
+ * @return bool True on success; False on failure.
+ */
+$CIDRAM['Events']->addHandler('writeToSignaturesUpdateEventLog', function (string $Data) use (&$CIDRAM): bool {
+    /** Guard. */
+    if (
+        $CIDRAM['Config']['general']['signatures_update_event_log'] === '' ||
+        !($UpdatesLog = $CIDRAM['BuildPath']($CIDRAM['Vault'] . $CIDRAM['Config']['general']['signatures_update_event_log']))
+    ) {
+        return false;
+    }
+
+    /** Add lines based on whether the path is shared with other logs. */
+    if ($CIDRAM['Config']['general']['signatures_update_event_log'] === $CIDRAM['Config']['general']['logfile']) {
+        $Data .= "\n\n";
+    } else {
+        $Data .= "\n";
+    }
+
+    $Truncate = $CIDRAM['ReadBytes']($CIDRAM['Config']['general']['truncate']);
+    $WriteMode = (!file_exists($UpdatesLog) || $Truncate > 0 && filesize($UpdatesLog) >= $Truncate) ? 'wb' : 'ab';
+    $Handle = fopen($UpdatesLog, $WriteMode);
+    fwrite($Handle, $Data);
+    fclose($Handle);
+    if ($WriteMode === 'wb') {
+        $CIDRAM['LogRotation']($CIDRAM['Config']['general']['signatures_update_event_log']);
     }
     return true;
 });

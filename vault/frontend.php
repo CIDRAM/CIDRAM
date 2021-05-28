@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2021.05.20).
+ * This file: Front-end handler (last modified: 2021.05.28).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -1758,6 +1758,18 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && ($CIDRAM['FE']['Per
         /** Trigger updates handler. */
         $CIDRAM['UpdatesHandler']($_POST['do'], $_POST['ID']);
 
+        /** Trigger signatures update log event. */
+        if (!empty($CIDRAM['SignaturesUpdateEvent'])) {
+            $CIDRAM['SignaturesUpdateEvent'] = sprintf(
+                $CIDRAM['L10N']->getString('response_signatures_updated'),
+                $CIDRAM['TimeFormat'](
+                    $CIDRAM['SignaturesUpdateEvent'],
+                    $CIDRAM['Config']['general']['time_format']
+                )
+            );
+            $CIDRAM['Events']->fireEvent('writeToSignaturesUpdateEventLog', $CIDRAM['SignaturesUpdateEvent']);
+        }
+
         /** Check again, since the information might've been updated. */
         $CIDRAM['CheckVersions']($CIDRAM['Components']['Meta'], $CIDRAM['Components']['Installed Versions']);
     }
@@ -2066,6 +2078,18 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && ($CIDRAM['FE']['Per
 
         /** Trigger updates handler. */
         $CIDRAM['UpdatesHandler']('update-component', $CIDRAM['Components']['Outdated']);
+
+        /** Trigger signatures update log event. */
+        if (!empty($CIDRAM['SignaturesUpdateEvent'])) {
+            $CIDRAM['SignaturesUpdateEvent'] = sprintf(
+                $CIDRAM['L10N']->getString('response_signatures_updated'),
+                $CIDRAM['TimeFormat'](
+                    $CIDRAM['SignaturesUpdateEvent'],
+                    $CIDRAM['Config']['general']['time_format']
+                )
+            );
+            $CIDRAM['Events']->fireEvent('writeToSignaturesUpdateEventLog', $CIDRAM['SignaturesUpdateEvent']);
+        }
 
         /** Check again, since the information might've been updated. */
         $CIDRAM['CheckVersions']($CIDRAM['Components']['Meta'], $CIDRAM['Components']['Installed Versions']);

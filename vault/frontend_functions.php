@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2021.05.20).
+ * This file: Front-end functions file (last modified: 2021.05.28).
  */
 
 /**
@@ -1775,6 +1775,11 @@ $CIDRAM['UpdatesHandler-Update'] = function ($ID) use (&$CIDRAM): void {
 
                 /** Replace downstream meta with upstream meta. */
                 $CIDRAM['Components']['Meta'][$ThisTarget] = $CIDRAM['Components']['RemoteMeta'][$ThisTarget];
+
+                /** Set trigger for signatures update event. */
+                if (!empty($CIDRAM['Components']['Meta'][$ThisTarget]['Used with'])) {
+                    $CIDRAM['SignaturesUpdateEvent'] = $CIDRAM['Now'];
+                }
             }
         } else {
             $UpdateFailed = true;

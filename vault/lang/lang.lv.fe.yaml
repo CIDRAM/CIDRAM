@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Latvian language data for the front-end (last modified: 2021.05.20).
+# This file: Latvian language data for the front-end (last modified: 2021.05.28).
 ##/
 
 Extended Description Bypasses: "Noklusējuma paraksta apiešana faili, kas parasti ir iekļauti galvenajā paketē."
@@ -113,6 +113,7 @@ config_general_numbers: "Kā jūs izvēlaties skaitļu parādīšanu? Atlasiet p
 config_general_other_verification: "Cik vien iespējams, mēģiniet pārbaudīt cita veida pieprasījumus (piemēram, AdSense, SEO pārbaudītājus, utt)? Atklājot, viltoti pieprasījumi tiks bloķēti. True (Patiess) = Iespējot [Noklusējuma]; False (Nepatiess) = Atspējot."
 config_general_protect_frontend: "Norāda, vai aizsargi, kurus parasti nodrošina CIDRAM, ir jāpiemēro šai administratīvajai saskarnei. True (Patiess) = Jā [Noklusējuma]; False (Nepatiess) = Nē."
 config_general_search_engine_verification: "Vai mēģināt verificēt meklētājprogrammu pieprasījumus? Meklētājprogrammu verifikācija nodrošina, ka tās netiks aizliegtas, pārkāpjot pārkāpuma robežu (meklētājprogrammu aizliegšana no jūsu vietnes parasti negatīvi ietekmē jūsu meklētājprogrammu ranžēšanu, SEO, utt). Pēc verifikācijas meklētājprogrammas var tikt bloķētas kā parasti, bet tās netiks aizliegtas. Ja tas nav verificēts, pārkāpjot pārkāpuma robežu var tos aizliedz. Turklāt meklētājprogrammu verifikācija nodrošina aizsardzību pret viltotiem meklētājprogrammu pieprasījumiem un pret tās, kas tiek maskētas kā meklētājprogrammas (šādi pieprasījumi tiks bloķēti, kad būs iespējota meklētājprogrammu verifikācija). True (Patiess) = Iespējot meklētājprogrammas verifikācija [Noklusējuma]; False (Nepatiess) = Atspējot meklētājprogrammas verifikācija"
+config_general_signatures_update_event_log: "Fails reģistrēšanai, kad paraksti tiek atjaunināti, izmantojot atjauninājumu lapu. Norādiet faila nosaukumu, vai atstājiet tukšu, lai to atspējotu."
 config_general_silent_mode: "Vai CIDRAM vajadzētu klusībā novirzīt bloķētus piekļuves mēģinājumus, nevis parādīt lapu "Pieeja Noliegta"? Ja tā, norādiet vietu, uz kuru novirzīt bloķētus piekļuves mēģinājumus. Ja nē, atstājiet šo mainīgo tukšu."
 config_general_social_media_verification: "Vai mēģināt verificēt sociālo mediju pieprasījumus? Sociālo mediju verifikāciju nodrošina aizsardzību pret viltus sociālo mediju pieprasījumiem (šādi pieprasījumi tiks bloķēti). True (Patiess) = Iespējot sociālo mediju verifikācija [Noklusējuma]; False (Nepatiess) = Atspējot sociālo mediju verifikācija."
 config_general_statistics: "Vai izsekot CIDRAM lietošanas statistiku? True (Patiess) = Jā; False (Nepatiess) = Nē [Noklusējuma]."
@@ -468,6 +469,7 @@ response_repair_process_completed: "Remonta process pabeigts."
 response_repair_process_failed: "Remonta process neizdevās."
 response_sanity_1: "Failā ir neparedzēts saturs! Fails noraidīts!"
 response_satisfied: "Apmierināts."
+response_signatures_updated: "Parakstu faili ir atjaunināti (%s)."
 response_skipped: "Izlaists"
 response_statistics_cleared: "Statistika ir notīrīta."
 response_tracking_cleared: "Izsekošana ir notīrīta."

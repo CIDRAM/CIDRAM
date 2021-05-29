@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2021.05.28).
+ * This file: Front-end functions file (last modified: 2021.05.29).
  */
 
 /**
@@ -1777,7 +1777,10 @@ $CIDRAM['UpdatesHandler-Update'] = function ($ID) use (&$CIDRAM): void {
                 $CIDRAM['Components']['Meta'][$ThisTarget] = $CIDRAM['Components']['RemoteMeta'][$ThisTarget];
 
                 /** Set trigger for signatures update event. */
-                if (!empty($CIDRAM['Components']['Meta'][$ThisTarget]['Used with'])) {
+                if (
+                    !empty($CIDRAM['Components']['Meta'][$ThisTarget]['Used with']) &&
+                    $CIDRAM['Has']($CIDRAM['Components']['Meta'][$ThisTarget]['Used with'], ['ipv4', 'ipv6'])
+                ) {
                     $CIDRAM['SignaturesUpdateEvent'] = $CIDRAM['Now'];
                 }
             }
@@ -4428,4 +4431,31 @@ $CIDRAM['RecursiveReplace'] = function (&$In, $What, $With) use (&$CIDRAM): void
             $CIDRAM['RecursiveReplace']($Item, $What, $With);
         }
     }
+};
+
+/**
+ * Check whether a variable has a value.
+ *
+ * @param mixed $Haystack What we're looking in (may be an array, or may be scalar).
+ * @param mixed $Needle What we're looking for (may be an array, or may be scalar).
+ * @return bool True if it does; False if it doesn't.
+ */
+$CIDRAM['Has'] = function ($Haystack, $Needle) use (&$CIDRAM): bool {
+    if (is_array($Haystack)) {
+        foreach ($Haystack as $ThisHaystack) {
+            if ($CIDRAM['Has']($ThisHaystack, $Needle)) {
+                return true;
+            }
+        }
+        return false;
+    }
+    if (is_array($Needle)) {
+        foreach ($Needle as $ThisNeedle) {
+            if ($ThisNeedle === $Haystack) {
+                return true;
+            }
+        }
+        return false;
+    }
+    return $Needle === $Haystack;
 };

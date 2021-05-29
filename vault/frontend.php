@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2021.05.28).
+ * This file: Front-end handler (last modified: 2021.05.29).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -3730,7 +3730,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'statistics' && $CIDRAM['FE']['P
     $CIDRAM['InitialPrepwork']($CIDRAM['L10N']->getString('link_statistics'), $CIDRAM['L10N']->getString('tip_statistics'), false);
 
     /** Display how to enable statistics if currently disabled. */
-    if (!$CIDRAM['Config']['general']['statistics']) {
+    if ($CIDRAM['Config']['general']['statistics'] === false) {
         $CIDRAM['FE']['state_msg'] .= '<span class="txtRd">' . $CIDRAM['L10N']->getString('tip_statistics_disabled') . '</span><br />';
     }
 
@@ -3754,30 +3754,46 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'statistics' && $CIDRAM['FE']['P
 
     /** Fetch and process various statistics. */
     foreach ([
-        ['Blocked-IPv4', 'Blocked-Total'],
-        ['Blocked-IPv6', 'Blocked-Total'],
-        ['Blocked-Other', 'Blocked-Total'],
-        ['Banned-IPv4', 'Banned-Total'],
-        ['Banned-IPv6', 'Banned-Total'],
-        ['CAPTCHAs-Failed', 'CAPTCHAs-Total'],
-        ['CAPTCHAs-Passed', 'CAPTCHAs-Total']
+        ['Blocked-IPv4', 'Blocked-Total', true],
+        ['Blocked-IPv6', 'Blocked-Total', true],
+        ['Blocked-Other', 'Blocked-Total', true],
+        ['Banned-IPv4', 'Banned-Total', true],
+        ['Banned-IPv6', 'Banned-Total', true],
+        ['Passed-IPv4', 'Passed-Total', false],
+        ['Passed-IPv6', 'Passed-Total', false],
+        ['Passed-Other', 'Passed-Total', false],
+        ['CAPTCHAs-Failed', 'CAPTCHAs-Total', true],
+        ['CAPTCHAs-Passed', 'CAPTCHAs-Total', true]
     ] as $CIDRAM['TheseStats']) {
-        $CIDRAM['FE'][$CIDRAM['TheseStats'][0]] = $CIDRAM['NumberFormatter']->format(
-            empty($CIDRAM['Statistics'][$CIDRAM['TheseStats'][0]]) ? 0 : $CIDRAM['Statistics'][$CIDRAM['TheseStats'][0]]
-        );
+        if ($CIDRAM['TheseStats'][2] === false) {
+            $CIDRAM['FE'][$CIDRAM['TheseStats'][0]] = $CIDRAM['L10N']->getString('field_not_tracking');
+            $CIDRAM['FE'][$CIDRAM['TheseStats'][1]] = $CIDRAM['FE'][$CIDRAM['TheseStats'][0]];
+            continue;
+        }
         if (!isset($CIDRAM['FE'][$CIDRAM['TheseStats'][1]])) {
             $CIDRAM['FE'][$CIDRAM['TheseStats'][1]] = 0;
         }
-        $CIDRAM['FE'][$CIDRAM['TheseStats'][1]] += empty(
-            $CIDRAM['Statistics'][$CIDRAM['TheseStats'][0]]
-        ) ? 0 : $CIDRAM['Statistics'][$CIDRAM['TheseStats'][0]];
+        if (empty($CIDRAM['Statistics'][$CIDRAM['TheseStats'][0]])) {
+            if ($CIDRAM['Config']['general']['statistics'] === false) {
+                $CIDRAM['FE'][$CIDRAM['TheseStats'][0]] = $CIDRAM['L10N']->getString('field_not_tracking');
+                continue;
+            }
+            $CIDRAM['FE'][$CIDRAM['TheseStats'][0]] = $CIDRAM['NumberFormatter']->format(0);
+        } else {
+            $CIDRAM['FE'][$CIDRAM['TheseStats'][1]] += $CIDRAM['Statistics'][$CIDRAM['TheseStats'][0]];
+            $CIDRAM['FE'][$CIDRAM['TheseStats'][0]] = $CIDRAM['NumberFormatter']->format($CIDRAM['Statistics'][$CIDRAM['TheseStats'][0]]);
+        }
     }
 
     /** Fetch and process totals. */
-    foreach (['Blocked-Total', 'Banned-Total', 'CAPTCHAs-Total'] as $CIDRAM['TheseStats']) {
-        $CIDRAM['FE'][$CIDRAM['TheseStats']] = $CIDRAM['NumberFormatter']->format(
-            $CIDRAM['FE'][$CIDRAM['TheseStats']]
-        );
+    foreach (['Blocked-Total', 'Banned-Total', 'Passed-Total', 'CAPTCHAs-Total'] as $CIDRAM['TheseStats']) {
+        if (!isset($CIDRAM['FE'][$CIDRAM['TheseStats']]) || !is_int($CIDRAM['FE'][$CIDRAM['TheseStats']]) || (
+            $CIDRAM['FE'][$CIDRAM['TheseStats']] === 0 && $CIDRAM['Config']['general']['statistics'] === false
+        )) {
+            $CIDRAM['FE'][$CIDRAM['TheseStats']] = $CIDRAM['L10N']->getString('field_not_tracking');
+        } else {
+            $CIDRAM['FE'][$CIDRAM['TheseStats']] = $CIDRAM['NumberFormatter']->format($CIDRAM['FE'][$CIDRAM['TheseStats']]);
+        }
     }
 
     /** Active signature files. */

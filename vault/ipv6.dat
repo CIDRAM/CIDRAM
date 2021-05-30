@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6.dat
 
-# Version: 2021.147.186
-# Last modified: 2021.05.28
+# Version: 2021.149.172
+# Last modified: 2021.05.30
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -29,11 +29,12 @@ Tag: Sharktech
 
 
 # ASN 35916 ("MULTACOM CORPORATION").
-# Stop Forum Spam (SFS) listings: 244.
-# Updated: 2020.11.04
+# Dedicated server farm/leaser and hybrid cloud provider.
+# Stop Forum Spam (SFS) listings: 333.
+# Updated: 2021.05.30
 
 2a09:dc04::/30 Deny Cloud
-Origin: NL
+Origin: CA
 2a0f:6d80::/32 Deny Cloud
 2a0f:6d83::/32 Deny Cloud
 2a0f:6d85::/32 Deny Cloud
@@ -48,24 +49,26 @@ Origin: RO
 2a0d:9480::/29 Deny Cloud
 2a0d:d480::/29 Deny Cloud
 Origin: RU
-2a07:dec0::/30 Deny Cloud
-Origin: TR
 2607:9a00::/32 Deny Cloud
 2607:f130::/32 Deny Cloud
 Origin: US
+Profile: Commercial;Dedicated;Infrastructure/Transit
 Tag: Multacom Corp
 
 
-# ASN 58879 ("ShangHai AnchNet Tec").
-# Stop Forum Spam (SFS) listings: 141.
-# Updated: 2020.11.04
+# ASNs 55994, 58879, 137443 ("ShangHai AnchNet Tec", "Shanghai Anchang Network
+# Security Technology Co.,Ltd", "Anchnet Asia Limited").
+# "Hybrid cloud integration" provider. Spam, port scans, hacking, and
+# brute-force, webapp, DDoS, and SSH attacks, hacking, and sniffing for
+# vulnerabilities detected from here.
+# Stop Forum Spam (SFS) listings: 20 (AS58879), 367 (AS137443).
+# Updated: 2021.05.30
 
-2001:df2:6680::/48 Deny Cloud
-Origin: CN
 2404:de80::/39 Deny Cloud
 2404:de80:400::/40 Deny Cloud
 Origin: HK
-Tag: ShangHai AnchNet Tec
+Profile: Commercial;Dedicated;Infrastructure/Transit;Multiplay
+Tag: 51idc
 
 
 # ASN 7497 ("Computer Network Information Center").
@@ -675,11 +678,11 @@ Tag: HOSTKEY B.V
 
 
 # "Rackspace Hosting".
-# Known ASNs: 10532, 12200, 15395, 19994, 22720, 27357, 33070, 36248, 39921,
+# Known ASNs: 10532, 12200, 15395, 19994, 27357, 33070, 33439, 36248, 39921,
 #   44716, 45187, 54636, 58683.
 # Subtract when updating:
 # - 162.13.83.46/32 (used by "googlealert.com", "gigaalert.com", "copyscape.com").
-# Updated: 2020.05.08 / Checked: 2020.11.04
+# Updated: 2020.05.08 / Checked: 2021.05.30
 
 2a0b:440::/32 Deny Cloud
 Origin: DE
@@ -692,7 +695,7 @@ Origin: HK
 2620:103::/47 Deny Cloud
 2620:103:2::/48 Deny Cloud
 Origin: US
-Profile: Tor endpoints here;Webhosting
+Profile: Commercial;Dedicated;Infrastructure/Transit;Tor endpoints here;Webhosting
 Tag: Rackspace Hosting
 
 

@@ -1,8 +1,8 @@
 # IPv4 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv4_isps.dat
 
-# Version: 2021.147.186
-# Last modified: 2021.05.28
+# Version: 2021.149.172
+# Last modified: 2021.05.30
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -12404,8 +12404,9 @@ Tag: Veon-Armenia
 # Listed here are some specific CIDRs/IPs where spam and/or other undesirable
 # traffic has been detected (spam/malware).
 # Stop Forum Spam (SFS) listings: 2,574.
-# Updated: 2021.05.22
+# Updated: 2021.05.22 / Modified: 2021.05.30
 
+63.117.14.0/24 Deny Malware
 70.23.37.139/32 Deny Spam
 71.163.7.0/24 Deny Spam
 71.163.34.193/32 Deny Spam
@@ -12626,39 +12627,53 @@ Tag: UNINETT AS
 
 
 # ASN 21928 ("T-Mobile USA, Inc").
-# U.S. mobile provider; SSH and brute-force attacks detected originating from
-# parts of this network (and gradually getting worse). Currently just listing
-# the offending ranges/addresses.
-# Stop Forum Spam (SFS) listings: 304.
-# Updated: 2020.12.22
+# US mobile provider. Spam, brute-force, and SSH attacks detected from here.
+# Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 1,236.
+# Updated: 2021.05.30
 
-162.191.53.112/32 Deny Spam
-172.56.10.228/32 Deny Spam
-172.56.12.178/32 Deny Spam
-172.56.26.198/32 Deny Spam
+162.191.11.126/32 Deny Spam
+172.56.3.0/24 Deny Spam
+172.56.4.136/32 Deny Spam
+172.56.5.195/32 Deny Spam
+172.56.15.191/32 Deny Spam
+172.56.23.86/32 Deny Spam
+172.56.26.189/32 Deny Spam
+172.58.3.34/32 Deny Spam
 172.58.14.0/24 Deny Malware
 172.58.19.0/24 Deny Malware
+172.58.20.95/32 Deny Spam
+172.58.22.185/32 Deny Spam
 172.58.23.0/24 Deny Malware
-172.58.29.249/32 Deny Spam
 172.58.35.0/24 Deny Malware
-172.58.59.111/32 Deny Spam
-172.58.78.176/32 Deny Spam
-172.58.84.6/32 Deny Spam
-172.58.96.219/32 Deny Spam
+172.58.46.174/32 Deny Spam
+172.58.62.203/32 Deny Spam
+172.58.67.206/32 Deny Spam
+172.58.83.0/24 Deny Malware
+172.58.84.0/24 Deny Malware
+172.58.91.205/32 Deny Spam
+172.58.96.144/32 Deny Spam
 172.58.102.0/24 Deny Malware
-172.58.103.166/32 Deny Spam
 172.58.107.0/24 Deny Malware
-172.58.109.59/32 Deny Spam
-172.58.111.204/32 Deny Spam
-172.58.140.231/32 Deny Spam
+172.58.108.252/32 Deny Spam
+172.58.109.156/32 Deny Spam
+172.58.110.165/32 Deny Spam
+172.58.121.251/32 Deny Spam
+172.58.145.76/32 Deny Spam
 172.58.157.0/24 Deny Malware
+172.58.168.116/32 Deny Spam
+172.58.169.135/32 Deny Spam
+172.58.171.125/32 Deny Spam
 172.58.172.0/24 Deny Malware
-172.58.185.44/32 Deny Spam
+172.58.175.13/32 Deny Spam
 172.58.188.0/24 Deny Malware
-172.58.191.0/24 Deny Malware
+172.58.190.0/23 Deny Malware
+172.58.200.19/32 Deny Spam
 172.58.203.0/24 Deny Malware
-172.58.204.194/32 Deny Spam
+172.58.221.187/32 Deny Malware
+172.58.227.236/32 Deny Spam
 172.58.230.0/24 Deny Malware
+172.58.239.76/32 Deny Spam
 Origin: US
 Tag: T-Mobile USA, Inc
 
@@ -16311,7 +16326,7 @@ Tag: LIMANET Ltd
 # Regular brute-force attacks and flooding/hammering encountered from this
 # network. Listing just the affected ranges/addresses only.
 # Stop Forum Spam (SFS) listings: 21 (AS12552), 5 (AS39369).
-# Updated: 2021.04.30
+# Updated: 2021.04.30 / Modified: 2021.05.29
 
 185.166.205.0/24 Deny Malware
 Origin: NO
@@ -16321,6 +16336,7 @@ Origin: NO
 82.96.56.0/24 Deny Malware
 82.99.40.210/32 Deny Spam
 93.158.66.0/24 Deny Malware
+93.158.90.0/24 Deny Malware
 185.165.81.229/32 Deny Spam
 185.183.146.0/24 Deny Malware
 185.205.225.0/24 Deny Malware
@@ -17034,80 +17050,22 @@ Profile: Infrastructure/Transit;Domestic ISP;Multiplay;Webhosting
 Tag: RSAWEB (PTY) LTD
 
 
-# ASNs 3302, 5396, 5602 ("KPNQWest Italia S.p.a").
-# Primarily a server farm + data center, but also provides FTTC-FTTH and
-# related services (so, a multiplay network). When updating, to reduce the
-# false positive risk, remove "^.*(invalid|xdsl|voip|infracom|fibra).*$\n".
-# Stop Forum Spam (SFS) listings: 37 (AS3302), 50 (AS5396), 91 (AS5602).
-# Updated: 2020.11.09
+# ASNs 3302, 5396, 5602 ("IRIDEOS S.P.A").
+# Italian multiplay network serving primarily as a server farm/leaser, but also
+# providing FTTC-FTTH and services.
+# Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 69 (AS3302), 5 (AS5396), 128 (AS5602).
+# Updated: 2021.05.30
 
-5.150.128.0/20 Deny Cloud
-5.178.120.0/21 Deny Cloud
-31.10.48.0/21 Deny Cloud
-37.220.40.0/21 Deny Cloud
-46.228.240.0/20 Deny Cloud
-52.144.64.0/19 Deny Cloud
-62.100.75.0/24 Deny Cloud
-62.173.160.0/19 Deny Cloud
-62.196.0.0/16 Deny Cloud
-77.43.0.0/17 Deny Cloud
-77.93.224.0/19 Deny Cloud
-77.94.68.0/22 Deny Cloud
-77.94.72.0/21 Deny Cloud
-77.94.80.0/20 Deny Cloud
-77.246.0.0/20 Deny Cloud
-80.74.176.0/20 Deny Cloud
-81.27.176.0/20 Deny Cloud
-82.193.0.0/19 Deny Cloud
-84.253.128.0/18 Deny Cloud
-88.86.160.0/19 Deny Cloud
-89.186.64.0/19 Deny Cloud
-91.209.97.0/24 Deny Cloud
-91.213.197.0/24 Deny Cloud
-92.42.96.0/21 Deny Cloud
-92.60.64.0/20 Deny Cloud
-94.138.32.0/19 Deny Cloud
-94.141.0.0/19 Deny Cloud
-109.168.0.0/17 Deny Cloud
-109.233.128.0/21 Deny Cloud
-109.238.112.0/21 Deny Cloud
-109.238.120.0/22 Deny Cloud
-128.65.112.0/20 Deny Cloud
-185.1.114.0/24 Deny Cloud
-185.53.0.0/22 Deny Cloud
-185.54.32.0/22 Deny Cloud
-185.58.44.0/22 Deny Cloud
-185.87.76.0/23 Deny Cloud
-185.97.156.0/22 Deny Cloud
-185.112.84.0/22 Deny Cloud
-185.142.88.0/22 Deny Cloud
-185.148.108.0/22 Deny Cloud
-185.169.176.0/22 Deny Cloud
-185.183.5.0/24 Deny Cloud
-185.197.228.0/22 Deny Cloud
-185.235.20.0/22 Deny Cloud
-193.189.112.0/23 Deny Cloud
-193.227.104.0/24 Deny Cloud
-194.1.208.0/24 Deny Cloud
-194.20.0.0/15 Deny Cloud
-194.28.116.0/22 Deny Cloud
-194.242.192.0/19 Deny Cloud
-194.244.0.0/16 Deny Cloud
-195.43.160.0/19 Deny Cloud
-195.78.192.0/19 Deny Cloud
-195.110.128.0/19 Deny Cloud
-195.130.195.0/24 Deny Cloud
-195.130.220.0/24 Deny Cloud
-195.190.21.0/24 Deny Cloud
-212.97.32.0/19 Deny Cloud
-213.21.128.0/18 Deny Cloud
-213.203.128.0/18 Deny Cloud
-217.11.80.0/20 Deny Cloud
-217.12.176.0/20 Deny Cloud
-217.26.80.0/20 Deny Cloud
+52.144.86.0/24 Deny Spam
+62.173.166.68/32 Deny Spam
+77.43.65.44/32 Deny Spam
+77.93.235.34/32 Deny Spam
+194.244.16.0/24 Deny Spam
+195.43.174.0/24 Deny Spam
 Origin: IT
 Profile: Commercial;Domestic ISP;Infrastructure/Transit;Multiplay;Webhosting
-Tag: KPNQWest Italia
+Tag: IRIDEOS S.P.A
 
 
 # ASN 42927 ("S-NET Sp. z o.o").
@@ -17161,3 +17119,177 @@ Tag: Tsukaeru.net
 Origin: CA
 Profile: Domestic ISP;Infrastructure/Transit;Multiplay;Webhosting
 Tag: KW Datacenter
+
+
+# ASN 35047 ("Abissnet sh.a").
+# Albanian domestic ISP. Spam, port scans, CGI hacks, brute-force, and SSH
+# attacks detected from here. Huge listings across entire ASN.
+# Stop Forum Spam (SFS) listings: 544.
+# Updated: 2021.05.29
+
+31.44.64.0/20 Deny Malware
+77.242.16.0/20 Deny Malware
+80.91.112.0/20 Deny Malware
+92.60.16.0/20 Deny Malware
+109.236.32.0/20 Deny Malware
+185.55.148.0/22 Deny Malware
+Origin: AL
+154.60.128.0/24 Deny Malware
+Origin: US
+Profile: Commercial;Domestic ISP
+Tag: Abissnet
+
+
+# ASN 24441 ("CityLink Corporation, LTD").
+# Cambodian multiplay network (domestic ISP, webhosting, colo, etc). Spam, port
+# scans, and brute-force attacks detected from here. Listing just the affected
+# ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 7.
+# Updated: 2021.05.29
+
+103.28.242.0/24 Deny Malware
+Origin: KH
+Profile: Domestic ISP;Infrastructure/Transit;Multiplay;Webhosting
+Tag: CityLink Corporation
+
+
+# ASN 7418 ("TELEFÃ?NICA CHILE S.A").
+# Chilean domestic ISP. Caught spamming and probing for WordPress logins.
+# Listing just the affected ranges/addresses only.
+# %Listed, abuseat.org (CBL-Listed): 0.23%.
+# Stop Forum Spam (SFS) listings: 229.
+# Updated: 2021.05.29
+
+179.9.171.206/32 Deny Spam
+181.160.187.4/32 Deny Spam
+181.160.220.5/32 Deny Spam
+181.162.249.85/32 Deny Spam
+181.202.77.0/32 Deny Spam
+186.104.189.127/32 Deny Malware
+186.105.141.227/32 Deny Spam
+186.106.67.202/32 Deny Spam
+190.22.59.250/32 Deny Spam
+191.115.7.238/32 Deny Spam
+191.126.57.40/32 Deny Spam
+191.126.137.164/32 Deny Spam
+201.189.167.167/32 Deny Spam
+201.246.98.100/32 Deny Spam
+Origin: CL
+Profile: Commercial;Domestic ISP
+Tag: Movistar
+
+
+# ASN 34779 ("T-2, d.o.o").
+# Slovenian subscription digital TV provider and domestic ISP. Brute-force,
+# webapp attacks, and spam detected from here. Listing just the affected
+# ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 381.
+# Updated: 2021.05.29
+
+84.255.203.0/24 Deny Spam
+84.255.230.11/32 Deny Spam
+89.212.44.15/32 Deny Malware
+89.212.73.182/32 Deny Spam
+89.212.90.0/24 Deny Malware
+89.212.166.0/24 Deny Spam
+89.212.248.44/32 Deny Spam
+93.103.89.0/24 Deny Spam
+188.230.203.196/32 Deny Spam
+Origin: SI
+Profile: Domestic ISP;Infrastructure/Transit;Multiplay
+Tag: T-2, d.o.o
+
+
+# ASN 4618 ("Internet Thailand Company Limited").
+# Thai domestic ISP. Spam, port scans, brute-force, SSH, and webapp attacks
+# detected from here. Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 298.
+# Updated: 2021.05.29
+
+202.44.192.0/18 Deny Malware
+203.150.107.0/24 Deny Malware
+203.154.71.139/32 Deny Spam
+Origin: TH
+Profile: Domestic ISP;Infrastructure/Transit;Multiplay
+Tag: Internet Thailand Company
+
+
+# ASN 5089 ("Virgin Media Limited").
+# British mobile provider. Spam and bot mass-registration attempts detected
+# from here. Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 2,490.
+# Updated: 2021.05.30
+
+62.31.97.181/32 Deny Spam
+62.252.169.132/32 Deny Malware
+77.96.228.236/32 Deny Spam
+77.100.190.156/32 Deny Spam
+77.101.252.223/32 Deny Spam
+80.0.198.0/24 Deny Spam
+80.2.57.31/32 Deny Spam
+80.7.6.151/32 Deny Spam
+80.7.113.137/32 Deny Spam
+80.195.26.158/32 Deny Spam
+81.98.8.78/32 Deny Spam
+81.99.198.241/32 Deny Spam
+81.100.156.8/32 Deny Spam
+81.104.164.175/32 Deny Spam
+81.104.248.239/32 Deny Spam
+81.108.116.51/32 Deny Spam
+81.110.56.211/32 Deny Spam
+82.0.61.69/32 Deny Spam
+82.0.137.233/32 Deny Spam
+82.6.219.210/32 Deny Spam
+82.10.96.15/32 Deny Spam
+82.10.146.187/32 Deny Spam
+82.13.3.200/32 Deny Spam
+82.16.58.0/24 Deny Spam
+82.17.212.248/32 Deny Spam
+82.20.129.6/32 Deny Spam
+82.22.109.70/32 Deny Spam
+82.27.120.210/32 Deny Spam
+82.27.232.56/32 Deny Spam
+82.38.12.92/32 Deny Spam
+82.39.198.32/32 Deny Spam
+82.40.63.153/32 Deny Spam
+82.43.185.131/32 Deny Spam
+82.44.92.20/32 Deny Spam
+82.46.68.123/32 Deny Spam
+86.1.231.198/32 Deny Spam
+86.2.116.171/32 Deny Spam
+86.4.79.212/32 Deny Spam
+86.15.224.89/32 Deny Spam
+86.18.211.115/32 Deny Spam
+86.18.217.142/32 Deny Spam
+86.21.9.40/32 Deny Spam
+86.21.255.171/32 Deny Spam
+86.26.184.80/32 Deny Spam
+86.27.12.254/32 Deny Spam
+86.28.76.188/31 Deny Spam
+86.28.113.161/32 Deny Spam
+86.30.158.195/32 Deny Spam
+92.232.147.49/32 Deny Spam
+92.234.1.102/32 Deny Spam
+92.234.243.0/32 Deny Spam
+92.237.102.49/32 Deny Spam
+94.174.88.116/32 Deny Spam
+94.175.102.113/32 Deny Spam
+195.188.228.164/32 Deny Spam
+212.250.52.12/32 Deny Spam
+213.105.29.10/32 Deny Spam
+Origin: GB
+Profile: Domestic ISP
+Tag: Virgin Media Limited
+
+
+# ASN 15305 ("Syringa Networks, LLC").
+# Commercial infrastructure provider. SQL injection and DDoS attempts,
+# brute-force and SSH attacks detected from here. Listing just the affected
+# ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 7.
+# Updated: 2021.05.30
+
+209.141.121.0/24 Deny Malware
+Origin: US
+Profile: Commercial;Infrastructure/Transit
+Tag: Syringa Networks, LLC

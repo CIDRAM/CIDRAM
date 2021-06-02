@@ -1,8 +1,8 @@
 # IPv4 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv4_isps.dat
 
-# Version: 2021.149.172
-# Last modified: 2021.05.30
+# Version: 2021.152.126
+# Last modified: 2021.06.02
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -17293,3 +17293,67 @@ Tag: Virgin Media Limited
 Origin: US
 Profile: Commercial;Infrastructure/Transit
 Tag: Syringa Networks, LLC
+
+
+# ASN 29256 ("Syrian Telecom").
+# Syrian domestic ISP. Spam, hack attempts, port scans, brute-force, and SSH
+# attacks detected from here. Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 1,221.
+# Updated: 2021.06.02
+
+92.253.226.223/32 Deny Spam
+Origin: CZ
+145.249.61.220/32 Deny Spam
+Origin: RU
+5.0.222.0/24 Deny Malware
+31.9.95.31/32 Deny Malware
+31.193.79.2/32 Deny Spam
+46.40.166.4/32 Deny Spam
+78.155.85.67/32 Deny Spam
+82.100.132.205/32 Deny Spam
+82.137.193.37/32 Deny Spam
+82.137.224.0/24 Deny Malware
+82.137.244.0/23 Deny Malware
+82.137.250.0/24 Deny Malware
+91.144.20.0/24 Deny Malware
+91.144.21.126/32 Deny Spam
+91.144.54.247/32 Deny Spam
+94.47.146.134/32 Deny Spam
+178.253.110.0/24 Deny Malware
+185.194.124.0/24 Deny Malware
+188.133.55.123/32 Deny Malware
+188.133.106.0/24 Deny Malware
+Origin: SY
+Profile: Domestic ISP
+Tag: Syrian Telecom
+
+
+# ASN 8881 ("1&1 Versatel Deutschland GmbH").
+# German fibre network. Spam detected from here.
+# Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 488.
+# Updated: 2021.06.02
+
+82.119.170.0/24 Deny Spam
+82.207.238.245/32 Deny Spam
+82.207.239.3/32 Deny Spam
+83.135.65.222/32 Deny Spam
+87.122.158.152/32 Deny Spam
+87.123.144.59/32 Deny Spam
+88.130.48.96/32 Deny Spam
+88.130.57.136/32 Deny Spam
+88.130.153.17/32 Deny Spam
+88.130.216.129/32 Deny Spam
+88.130.218.165/32 Deny Spam
+89.245.81.154/32 Deny Spam
+89.245.85.251/32 Deny Spam
+89.247.4.13/32 Deny Spam
+89.247.126.217/32 Deny Spam
+89.247.254.207/32 Deny Spam
+92.116.151.155/32 Deny Spam
+92.117.100.78/32 Deny Spam
+134.101.4.75/32 Deny Spam
+213.182.138.224/32 Deny Spam
+Origin: DE
+Profile: Domestic ISP;Infrastructure/Transit
+Tag: Versatel Deutschland

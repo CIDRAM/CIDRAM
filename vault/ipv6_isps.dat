@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_isps.dat
 
-# Version: 2021.152.126
-# Last modified: 2021.06.02
+# Version: 2021.155.632
+# Last modified: 2021.06.05
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -1928,15 +1928,29 @@ Tag: Comcast Spam IPs
 
 
 # ASN 22773 ("Cox Communications Inc").
-# Peering exchange provider in the United States; Should NEVER be blocked in
-# entirety. Listed here are some specific CIDRs/IPs on their network that pose
-# a risk for spamming and/or other undesirable traffic.
-# %Listed, abuseat.org (CBL-Listed): 0.02%.
-# Stop Forum Spam (SFS) listings: 2,133.
-# Updated: 2021.02.10
+# Peering exchange provider in the United States. Spamming, scraping,
+# brute-force and SSH attacks, hack attempts, and other unwanted traffic
+# detected from here. Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 2,451.
+# Updated: 2021.06.05
 
-2600:8807:5680:8b0::/64 Deny Spam
+2600:8800:1260:8700::/64 Deny Spam
+2600:8800:1680:ff4d::/64 Deny Spam
+2600:8800:9d00:220::/64 Deny Spam
+2600:8801:b0e:8100::/64 Deny Spam
+2600:8801:1088:e400::/64 Deny Spam
+2600:8801:1d04:7a00::/64 Deny Spam
+2600:8801:280c:7f00::/64 Deny Spam
+2600:8801:3100:1b20::/64 Deny Spam
+2600:8801:310a:3d00::/64 Deny Spam
+2600:8801:9704:c500::/64 Deny Spam
+2600:8802:690d:a000::/64 Deny Spam
+2600:8805:5b01:5100::/64 Deny Spam
+2600:8806:8308:3200::/64 Deny Spam
+2600:8807:5055:c200::/64 Deny Spam
+2600:8807:8105:c500::/64 Deny Spam
 Origin: US
+Profile: Commercial;Domestic ISP;Infrastructure/Transit;Multiplay;Tor endpoints here;University;Webhosting
 Tag: Cox Spam IPs
 
 
@@ -2420,12 +2434,13 @@ Tag: 31173 Services AB
 
 
 # ASN 30779 ("TRK Cable TV LLC").
-# Ukrainian cable TV provider and a source of forum and blog spam.
-# Stop Forum Spam (SFS) listings: 4,328.
-# Updated: 2020.11.15
+# Ukrainian domestic ISP and cable TV provider. Spam detected from here.
+# Stop Forum Spam (SFS) listings: 4,836.
+# Updated: 2020.11.15 / Checked: 2021.06.05
 
 2001:67c:203c::/48 Deny Spam
 Origin: UA
+Profile: Domestic ISP
 Tag: TRK Cable TV LLC
 
 

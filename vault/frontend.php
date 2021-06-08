@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2021.06.06).
+ * This file: Front-end handler (last modified: 2021.06.08).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -1529,9 +1529,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
                 }
             } elseif ($CIDRAM['DirValue']['type'] === 'bool') {
                 $CIDRAM['ThisDir']['FieldOut'] = sprintf(
-                        '<select class="auto" name="%1$s" id="%1$s_field"%2$s>' .
-                        '<option value="true"%5$s>%3$s</option><option value="false"%6$s>%4$s</option>' .
-                        '</select>',
+                    '<select class="auto" name="%1$s" id="%1$s_field"%2$s><option value="true"%5$s>%3$s</option><option value="false"%6$s>%4$s</option></select>',
                     $CIDRAM['ThisDir']['DirLangKey'],
                     $CIDRAM['ThisDir']['Trigger'],
                     $CIDRAM['L10N']->getString('field_true'),
@@ -1588,7 +1586,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
             isset($CIDRAM['Config']['L10N']['config_' . $CIDRAM['CatKey'] . '_label']) ? $CIDRAM['Config']['L10N']['config_' . $CIDRAM['CatKey'] . '_label'] : ''
         ) ?: $CIDRAM['CatKey'];
         $CIDRAM['FE']['Indexes'] .= sprintf(
-            '<li><span class="comCat" style="cursor:pointer">%1$s</span><ul class="comSub">%2$s</ul></li>',
+            '<li><span class="comCat"><span style="cursor:pointer">%1$s</span></span><ul class="comSub">%2$s</ul></li>',
             $CIDRAM['CatKeyFriendly'],
             $CIDRAM['CatData']
         );
@@ -4128,7 +4126,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'aux' && $CIDRAM['FE']['Permissi
             $CIDRAM['JSAuxAppend'] .= ($CIDRAM['JSAuxAppend'] ? ',' : '') . "'" . $CIDRAM['GridID'] . "'";
             $CIDRAM['GridID']++;
         }
-        $CIDRAM['FE']['AuxFlagsProvides'] .= '</div><script type="text/javascript">window.auxFlags = ['. $CIDRAM['JSAuxAppend'] . ']</script>';
+        $CIDRAM['FE']['AuxFlagsProvides'] .= '</div><script type="text/javascript">window.auxFlags=['. $CIDRAM['JSAuxAppend'] . ']</script>';
         unset($CIDRAM['FlagData'], $CIDRAM['FlagName'], $CIDRAM['FlagKey'], $CIDRAM['FlagSet'], $CIDRAM['FlagSetName'], $CIDRAM['JSAuxAppend'], $CIDRAM['GridID']);
 
         /** Parse output. */

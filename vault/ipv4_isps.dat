@@ -1,8 +1,8 @@
 # IPv4 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv4_isps.dat
 
-# Version: 2021.155.632
-# Last modified: 2021.06.05
+# Version: 2021.158.514
+# Last modified: 2021.06.08
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -10220,35 +10220,66 @@ Tag: Cox Spam IPs
 # ASN 23693 ("PT. Telekomunikasi Selular").
 # Indonesian domestic ISP and a source of spam. Just listing the specific
 # spammy IPs (not the entire network), plus all US ranges/addresses.
-# %Listed, abuseat.org (CBL-Listed): 0.82%.
-# Stop Forum Spam (SFS) listings: 1,378.
-# Updated: 2020.11.15
+# %Listed, abuseat.org (CBL-Listed): 0.89%.
+# Stop Forum Spam (SFS) listings: 2,638.
+# Updated: 2021.06.08
 
-114.122.11.161/32 Deny Spam
-114.122.68.0/23 Deny Spam
-114.122.71.0/24 Deny Spam
-114.122.72.194/32 Deny Spam
-114.122.74.156/32 Deny Spam
-114.122.101.63/32 Deny Spam
-114.122.102.208/32 Deny Spam
-114.122.103.0/24 Deny Spam
-114.122.104.0/22 Deny Spam
-114.122.197.139/32 Deny Spam
-114.122.198.139/32 Deny Spam
-114.124.130.0/24 Deny Spam
-114.124.137.116/32 Deny Spam
-114.125.125.96/32 Deny Spam
-114.125.223.149/32 Deny Spam
-114.125.251.0/24 Deny Spam
-182.0.141.108/32 Deny Spam
-182.0.144.83/32 Deny Spam
-182.0.150.75/32 Deny Spam
-182.1.18.187/32 Deny Spam
-182.1.81.165/32 Deny Spam
+114.121.248.251/32 Deny Spam
+114.122.7.211/32 Deny Spam
+114.122.22.34/32 Deny Spam
+114.122.38.241/32 Deny Spam
+114.122.39.59/32 Deny Spam
+114.122.41.19/32 Deny Spam
+114.122.68.0/23 Deny Malware
+114.122.71.0/24 Deny Malware
+114.122.72.0/23 Deny Malware
+114.122.74.0/24 Deny Malware
+114.122.101.49/32 Deny Spam
+114.122.102.0/23 Deny Malware
+114.122.104.0/22 Deny Malware
+114.122.132.251/32 Deny Spam
+114.122.164.47/32 Deny Spam
+114.122.229.9/32 Deny Spam
+114.122.230.218/32 Deny Spam
+114.124.130.0/24 Deny Malware
+114.124.164.162/32 Deny Spam
+114.124.202.60/32 Deny Spam
+114.124.207.234/32 Deny Spam
+114.124.236.35/32 Deny Spam
+114.124.238.119/32 Deny Spam
+114.125.72.208/32 Deny Spam
+114.125.102.0/24 Deny Malware
+114.125.125.231/32 Deny Spam
+114.125.251.0/24 Deny Malware
+182.0.167.44/32 Deny Spam
+182.0.178.92/32 Deny Spam
+182.0.245.185/32 Deny Spam
+182.1.29.190/32 Deny Spam
+182.1.37.81/32 Deny Spam
+182.1.39.10/32 Deny Spam
 182.1.84.105/32 Deny Spam
-182.1.94.65/32 Deny Spam
-182.1.174.197/32 Deny Spam
-182.2.41.86/32 Deny Spam
+182.1.119.183/32 Deny Spam
+182.1.124.28/32 Deny Spam
+182.1.170.209/32 Deny Spam
+182.1.190.244/32 Deny Spam
+182.1.193.199/32 Deny Spam
+182.1.195.15/32 Deny Spam
+182.1.233.149/32 Deny Spam
+182.1.237.35/32 Deny Spam
+182.2.6.138/32 Deny Spam
+182.2.36.236/32 Deny Spam
+182.2.37.44/32 Deny Spam
+182.2.40.19/32 Deny Spam
+182.2.70.17/32 Deny Spam
+182.2.103.166/32 Deny Spam
+182.2.136.158/32 Deny Spam
+182.2.165.177/32 Deny Spam
+182.2.169.38/32 Deny Spam
+182.3.6.56/32 Deny Spam
+182.3.7.222/32 Deny Spam
+182.3.69.2/32 Deny Spam
+182.3.73.239/32 Deny Spam
+182.3.104.122/32 Deny Spam
 Origin: ID
 23.43.248.0/24 Deny Cloud
 23.195.48.0/21 Deny Cloud
@@ -10488,7 +10519,7 @@ Tag: TTNet A.S
 # address/ranges, plus all non-KR ranges (cloud).
 # %Listed, abuseat.org (CBL-Listed): 0.07%.
 # Stop Forum Spam (SFS) listings: 894.
-# Updated: 2021.04.16 / Modified: 2021.05.02
+# Updated: 2021.04.16 / Modified: 2021.06.06
 
 103.86.84.0/24 Deny Cloud
 Origin: CN
@@ -10510,6 +10541,7 @@ Origin: HK
 121.101.200.0/24 Deny Spam
 121.126.99.97/32 Deny Spam
 121.126.113.22/32 Deny Spam
+121.130.121.1/32 Deny Malware
 121.138.119.52/32 Deny Malware
 121.176.75.29/32 Deny Malware
 160.202.160.104/32 Deny Spam
@@ -10628,7 +10660,7 @@ Tag: CANTV Servicios
 # Listing just the affected ranges/addresses, plus US ranges (cloud).
 # %Listed, abuseat.org (CBL-Listed): 0.29%.
 # Stop Forum Spam (SFS) listings: 2,829.
-# Updated: 2021.04.16
+# Updated: 2021.04.16 / Modified: 2021.06.08
 
 148.217.94.0/24 Deny Spam
 187.130.75.0/24 Deny Spam
@@ -10653,6 +10685,7 @@ Tag: CANTV Servicios
 187.210.136.88/32 Deny Spam
 187.211.192.60/32 Deny Spam
 187.221.163.245/32 Deny Spam
+187.223.137.0/24 Deny Malware
 187.233.223.172/32 Deny Spam
 187.236.174.2/32 Deny Spam
 187.237.103.0/24 Deny Spam
@@ -13047,67 +13080,78 @@ Tag: INKO-Telecom, LLC
 
 
 # ASN 3352 ("TELEFONICA DE ESPANA).
-# Spanish domestic ISP and phone provider; Spam campaigns and probing detected
-# originating from this network. Listing just the affected ranges/addresses for
-# the moment.
-# %Listed, abuseat.org (CBL-Listed): 0.32%.
-# Stop Forum Spam (SFS) listings: 7,389.
-# Updated: 2021.03.10
+# Spanish domestic ISP and phone provider. Spam and probing detected from here.
+# Listing just the affected ranges/addresses only.
+# %Listed, abuseat.org (CBL-Listed): 0.14%.
+# Stop Forum Spam (SFS) listings: 5,517.
+# Updated: 2021.06.06
 
 2.136.126.17/32 Deny Malware
-2.138.0.27/32 Deny Spam
 2.138.122.95/32 Deny Spam
-2.139.0.0/16 Deny Spam
-2.141.140.201/32 Deny Spam
-79.144.120.216/32 Deny Spam
-79.144.127.231/32 Deny Spam
-79.146.84.159/32 Deny Spam
-79.146.108.30/32 Deny Spam
-79.148.44.0/24 Deny Spam
-79.153.5.113/32 Deny Spam
+2.139.131.182/32 Deny Spam
+2.139.162.0/24 Deny Malware
+2.139.252.0/24 Deny Spam
+37.10.166.28/32 Deny Spam
+79.144.124.160/32 Deny Spam
+79.147.213.128/32 Deny Spam
+79.148.44.0/24 Deny Malware
+79.148.163.77/32 Deny Spam
+79.150.145.179/32 Deny Spam
+79.150.195.72/32 Deny Spam
+79.151.47.252/32 Deny Spam
 79.153.213.0/24 Deny Spam
-79.155.40.171/32 Deny Spam
-79.156.3.236/32 Deny Spam
-79.156.147.102/32 Deny Spam
+79.154.161.1/32 Deny Spam
+79.158.34.125/32 Deny Spam
+79.158.182.63/32 Deny Spam
 80.24.119.0/24 Deny Spam
-80.25.0.0/16 Deny Spam
-80.30.154.190/32 Deny Spam
-80.31.48.94/32 Deny Spam
-80.39.179.200/32 Deny Spam
+80.25.87.0/24 Deny Malware
+80.29.183.96/32 Deny Spam
+80.30.29.44/32 Deny Spam
+80.39.227.165/32 Deny Spam
 81.32.35.60/32 Deny Spam
-81.33.0.0/16 Deny Spam
+81.33.4.0/24 Deny Malware
+81.33.129.143/32 Deny Spam
 81.36.240.0/24 Deny Spam
-81.39.199.248/32 Deny Spam
-81.44.113.80/32 Deny Spam
-83.35.124.228/32 Deny Spam
-83.35.209.207/32 Deny Spam
-83.38.50.5/32 Deny Spam
-83.38.223.222/32 Deny Spam
+81.37.58.51/32 Deny Spam
+81.37.224.4/32 Deny Spam
+81.38.216.113/32 Deny Spam
+81.39.38.239/32 Deny Spam
+81.39.198.175/32 Deny Spam
+81.42.210.95/32 Deny Spam
+81.42.240.236/32 Deny Spam
+81.44.204.163/32 Deny Spam
 83.44.10.115/32 Deny Spam
-83.50.198.10/32 Deny Spam
-83.51.50.247/32 Deny Spam
-83.54.46.222/32 Deny Spam
+83.50.97.185/32 Deny Spam
+83.51.27.95/32 Deny Spam
+83.54.124.211/32 Deny Spam
 83.54.133.0/24 Deny Spam
-83.54.187.21/32 Deny Spam
-83.55.217.31/32 Deny Spam
-83.58.40.247/32 Deny Spam
-83.63.0.0/16 Deny Spam
-88.0.196.196/32 Deny Spam
-88.2.0.0/16 Deny Spam
-88.4.247.99/32 Deny Spam
-88.7.89.17/32 Deny Spam
-88.9.190.84/32 Deny Spam
-88.12.14.233/32 Deny Spam
+83.55.105.43/32 Deny Spam
+83.55.196.92/32 Deny Spam
+83.60.44.253/32 Deny Spam
+83.61.96.83/32 Deny Spam
+83.61.214.119/32 Deny Spam
+83.63.222.0/24 Deny Malware
+88.0.38.159/32 Deny Spam
+88.0.42.186/32 Deny Malware
+88.2.24.0/24 Deny Spam
+88.5.233.250/32 Deny Spam
+88.7.110.171/32 Deny Spam
+88.8.97.81/32 Deny Spam
+88.12.2.192/32 Deny Spam
 88.12.19.0/24 Deny Spam
+88.12.238.241/32 Deny Spam
+88.24.29.217/32 Deny Spam
 88.26.255.0/24 Deny Spam
-95.122.6.192/32 Deny Spam
-95.122.52.166/32 Deny Spam
-193.152.148.241/32 Deny Spam
-212.170.0.0/16 Deny Spam
-213.96.0.0/16 Deny Spam
+88.28.58.140/32 Deny Spam
+176.83.54.181/32 Deny Spam
+176.83.80.80/32 Deny Spam
+212.170.18.0/24 Deny Spam
+213.96.16.193/32 Deny Spam
+213.96.31.0/24 Deny Spam
+213.96.240.0/24 Deny Spam
 213.97.98.0/24 Deny Spam
-213.98.67.0/24 Deny Spam
-213.98.255.155/32 Deny Spam
+213.98.67.0/24 Deny Malware
+213.98.232.167/32 Deny Spam
 Origin: ES
 Profile: Domestic ISP
 Tag: TELEFONICA DE ESPANA
@@ -17509,3 +17553,105 @@ Tag: Sepanta
 Origin: RU
 Profile: Domestic ISP
 Tag: Teleos-1
+
+
+# ASN 25274 ("Naracom Kft").
+# Hungarian domestic ISP. Port scans and hacking detected from here.
+# Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 2.
+# Updated: 2021.06.06
+
+109.105.1.154/32 Deny Malware
+Origin: HU
+Profile: Domestic ISP
+Tag: Naracom Kft
+
+
+# ASNs 56040, 58466, 58844, 135391, 136958 ("China Mobile communications
+# corporation", "CHINANET Guangdong province network", "Guangdong Aofei Data
+# Technology Co., Ltd", "AOFEI DATA INTERNATIONAL COMPANY LIMITED", "China
+# Unicom Guangdong IP network").
+# Chinese backbone/infrastructure/BGP provider operating thousands of data
+# centers, interconnected with both numerous cloud services, webhosting, and
+# numerous domestic ISPs, business networks, etc.
+# Port scans, hacking, spam, and brute-force attacks detected from here.
+# Listing just the offending ranges/addresses, plus all SC ranges (cloud).
+# %Listed, abuseat.org (CBL-Listed): 0.24% (AS56040).
+# Stop Forum Spam (SFS) listings: 385 (AS56040), 1,299 (AS58466), 44 (AS135391).
+# Updated: 2021.06.06
+
+106.75.135.0/24 Deny Malware
+106.75.140.0/24 Deny Spam
+120.196.112.0/24 Deny Spam
+120.196.228.99/32 Deny Spam
+120.197.62.18/32 Deny Spam
+120.198.20.9/32 Deny Spam
+120.198.76.0/24 Deny Malware
+120.229.18.189/32 Deny Spam
+120.230.133.51/32 Deny Spam
+120.231.39.75/32 Deny Spam
+120.232.150.0/24 Deny Malware
+120.235.8.156/32 Deny Spam
+120.235.141.106/32 Deny Spam
+120.236.130.132/32 Deny Spam
+120.237.44.57/32 Deny Spam
+121.46.25.0/24 Deny Malware
+183.61.118.169/32 Deny Spam
+183.233.130.102/32 Deny Spam
+183.233.183.70/32 Deny Spam
+183.234.36.42/32 Deny Spam
+183.234.41.76/32 Deny Spam
+183.234.219.200/32 Deny Spam
+183.238.173.226/32 Deny Spam
+183.239.125.174/32 Deny Spam
+183.239.203.40/32 Deny Spam
+183.239.232.85/32 Deny Spam
+219.136.245.0/24 Deny Spam
+223.73.124.108/32 Deny Spam
+223.73.225.199/32 Deny Spam
+Origin: CN
+43.230.90.0/24 Deny Malware
+Origin: HK
+45.200.128.0/22 Deny Cloud
+45.201.232.0/21 Deny Cloud
+156.240.96.0/22 Deny Cloud
+Origin: SC
+Profile: Commercial;Dedicated;Domestic ISP;Infrastructure/Transit;Multiplay;Webhosting
+Tag: Aofei Data Technology
+
+
+# ASN 17858 ("LG POWERCOMM").
+# South Korean domestic ISP. Port scans, hacking, and spam detected from here.
+# Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 1,068.
+# Updated: 2021.06.08
+
+14.4.237.213/32 Deny Spam
+14.7.183.127/32 Deny Spam
+49.173.205.238/32 Deny Spam
+112.145.159.0/24 Deny Malware
+112.148.213.93/32 Deny Spam
+112.152.178.0/24 Deny Spam
+116.36.114.220/32 Deny Spam
+122.35.44.0/24 Deny Malware
+122.36.203.233/32 Deny Spam
+122.40.2.7/32 Deny Malware
+124.60.223.128/32 Deny Spam
+125.187.28.0/24 Deny Spam
+180.226.47.0/24 Deny Spam
+182.208.124.0/24 Deny Spam
+Origin: KR
+Profile: Domestic ISP
+Tag: LG POWERCOMM
+
+
+# ASN 7258 ("GEMNET LLC").
+# Mongolian ASN, homepage says "under construction". For now, listing just the
+# affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 42.
+# Updated: 2021.06.08
+
+180.149.125.0/24 Deny Malware
+Origin: MN
+Profile: Restricted/Unidentifiable
+Tag: GEMNET LLC

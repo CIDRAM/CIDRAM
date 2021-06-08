@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2021.05.29).
+ * This file: Front-end functions file (last modified: 2021.06.08).
  */
 
 /**
@@ -3236,7 +3236,7 @@ $CIDRAM['AuxGenerateFEData'] = function (bool $Mode = false) use (&$CIDRAM): str
 
             /** Rule begin and rule name. */
             $Output .= sprintf(
-                '%1$s<div class="%2$s"><dl><dt class="s">%4$s</dt><dd><input type="text" name="ruleName[%5$s]" class="f400" value="%3$s" /></dd></dl>',
+                '%1$s<div class="%2$s"><div class="iCntr">%1$s  <div class="iLabl s">%4$s</div><div class="iCntn"><input type="text" name="ruleName[%5$s]" class="f400" value="%3$s" /></div></div>',
                 "\n      ",
                 $StyleClass,
                 $Name === ' ' ? '' : $Name,
@@ -3246,7 +3246,7 @@ $CIDRAM['AuxGenerateFEData'] = function (bool $Mode = false) use (&$CIDRAM): str
 
             /** Set rule priority (rearranges the rules). */
             $Output .= sprintf(
-                '%1$s<dl><dt class="s">%3$s</dt><dd><input type="text" name="rulePriority[%2$s]" class="f400" value="%2$s" /></dd></dl>',
+                '%1$s<div class="iCntr"><div class="iLabl s">%3$s</div>%1$s  <div class="iCntn"><input type="text" name="rulePriority[%2$s]" class="f400" value="%2$s" /></div></div>',
                 "\n      ",
                 $Current,
                 $CIDRAM['L10N']->getString('field_execution_order')
@@ -3254,7 +3254,7 @@ $CIDRAM['AuxGenerateFEData'] = function (bool $Mode = false) use (&$CIDRAM): str
 
             /** Rule reason. */
             $Output .= sprintf(
-                '<dl><dt class="s" id="%4$sruleReasonDt">%2$s</dt><dd id="%4$sruleReasonDd"><input type="text" name="ruleReason[%3$s]" class="f400" value="%1$s" /></dd></dl>',
+                '<div class="iCntr"><div class="iLabl s" id="%4$sruleReasonDt">%2$s</div><div class="iCntn" id="%4$sruleReasonDd"><input type="text" name="ruleReason[%3$s]" class="f400" value="%1$s" /></div></div>',
                 $Data['Reason'] ?? '',
                 $CIDRAM['L10N']->getString('label_aux_reason'),
                 $Current,
@@ -3263,7 +3263,7 @@ $CIDRAM['AuxGenerateFEData'] = function (bool $Mode = false) use (&$CIDRAM): str
 
             /** Redirect target. */
             $Output .= sprintf(
-                '<dl><dt class="s" id="%4$sruleTargetDt">%2$s</dt><dd id="%4$sruleTargetDd"><input type="text" name="ruleTarget[%3$s]" class="f400" value="%1$s" /></dd></dl>',
+                '<div class="iCntr"><div class="iLabl s" id="%4$sruleTargetDt">%2$s</div><div class="iCntn" id="%4$sruleTargetDd"><input type="text" name="ruleTarget[%3$s]" class="f400" value="%1$s" /></div></div>',
                 $Data['Target'] ?? '',
                 $CIDRAM['L10N']->getString('label_aux_target'),
                 $Current,
@@ -3272,7 +3272,7 @@ $CIDRAM['AuxGenerateFEData'] = function (bool $Mode = false) use (&$CIDRAM): str
 
             /** Run target. */
             $Output .= sprintf(
-                '<dl><dt class="s" id="%4$sruleRunDt">%2$s</dt><dd id="%4$sruleRunDd"><input type="text" name="ruleRun[%3$s]" class="f400" value="%1$s" /></dd></dl>',
+                '<div class="iCntr"><div class="iLabl s" id="%4$sruleRunDt">%2$s</div><div class="iCntn" id="%4$sruleRunDd"><input type="text" name="ruleRun[%3$s]" class="f400" value="%1$s" /></div></div>',
                 $Data['Run']['File'] ?? '',
                 $CIDRAM['L10N']->getString('label_aux_run'),
                 $Current,
@@ -3280,7 +3280,7 @@ $CIDRAM['AuxGenerateFEData'] = function (bool $Mode = false) use (&$CIDRAM): str
             );
 
             /** Status code override. */
-            $Output .= sprintf('<dl><dt class="s">%1$s</dt><dd>', $CIDRAM['L10N']->getString('label_aux_http_status_code_override'));
+            $Output .= sprintf('<div class="iCntr"><div class="iLabl s">%1$s</div><div class="iCntn">', $CIDRAM['L10N']->getString('label_aux_http_status_code_override'));
             $Output .= sprintf(
                 '<span id="%1$sstatGroupX"><input type="radio" class="auto" id="%1$sstatusCodeX" name="statusCode[%3$s]" value="0" %2$s/> 🗙</span>',
                 $RuleClass,
@@ -3300,13 +3300,13 @@ $CIDRAM['AuxGenerateFEData'] = function (bool $Mode = false) use (&$CIDRAM): str
                 }
                 $Output .= '</span>';
             }
-            $Output .= '</dd></dl>';
+            $Output .= '</div></div>';
 
             /** Where to get conditions from. */
             $ConditionsFrom = '';
 
             /** Action menu. */
-            $Output .= sprintf('<dl><dt><select id="act%1$s" name="act[%1$s]" class="auto" onchange="javascript:onAuxActionChange(this.value,\'%2$s\',\'%1$s\')">', $Current, $RuleClass);
+            $Output .= sprintf('<div class="iCntr"><div class="iLabl"><select id="act%1$s" name="act[%1$s]" class="auto" onchange="javascript:onAuxActionChange(this.value,\'%2$s\',\'%1$s\')">', $Current, $RuleClass);
             foreach ([
                 ['actWhl', 'optActWhl', 'Whitelist'],
                 ['actGrl', 'optActGrl', 'Greylist'],
@@ -3329,11 +3329,11 @@ $CIDRAM['AuxGenerateFEData'] = function (bool $Mode = false) use (&$CIDRAM): str
                 }
             }
             $Output .= sprintf(
-                '</select><input type="button" onclick="javascript:addCondition(\'%2$s\')" value="%1$s" class="auto" /></dt>',
+                '</select><input type="button" onclick="javascript:addCondition(\'%2$s\')" value="%1$s" class="auto" /></div>',
                 $CIDRAM['L10N']->getString('field_add_more_conditions'),
                 $Current
             );
-            $Output .= sprintf('<dd id="%1$sconditions">', $Current);
+            $Output .= sprintf('<div class="iCntn" id="%1$sconditions">', $Current);
 
             /** Populate conditions. */
             if ($ConditionsFrom && is_array($Data[$ConditionsFrom])) {
@@ -3364,11 +3364,11 @@ $CIDRAM['AuxGenerateFEData'] = function (bool $Mode = false) use (&$CIDRAM): str
                     }
                 }
             }
-            $Output .= '</dd></dl>';
+            $Output .= '</div></div>';
 
             /** Webhook button. */
             $Output .= sprintf(
-                '<dl><dt><input type="button" onclick="javascript:addWebhook(\'%1$s\')" value="%2$s" class="auto" /></dt><dd id="%1$swebhooks">',
+                '<div class="iCntr"><div class="iLabl"><input type="button" onclick="javascript:addWebhook(\'%1$s\')" value="%2$s" class="auto" /></div><div class="iCntn" id="%1$swebhooks">',
                 $Current,
                 $CIDRAM['L10N']->getString('field_add_webhook')
             );
@@ -3387,7 +3387,7 @@ $CIDRAM['AuxGenerateFEData'] = function (bool $Mode = false) use (&$CIDRAM): str
                     $Iteration++;
                 }
             }
-            $Output .= '</dd></dl>';
+            $Output .= '</div></div>';
 
             /** Match method. */
             if (empty($Data['Method'])) {
@@ -3400,7 +3400,7 @@ $CIDRAM['AuxGenerateFEData'] = function (bool $Mode = false) use (&$CIDRAM): str
                 $MethodData = ['', '', ''];
             }
             $Output .= sprintf(
-                '<dl><dt><select name="mtd[%1$s]" class="auto"><option value="mtdStr"%5$s>%2$s</option><option value="mtdReg"%6$s>%3$s</option><option value="mtdWin"%7$s>%4$s</option></select></dt></dl>',
+                '<div class="iCntr"><div class="iLabl"><select name="mtd[%1$s]" class="auto"><option value="mtdStr"%5$s>%2$s</option><option value="mtdReg"%6$s>%3$s</option><option value="mtdWin"%7$s>%4$s</option></select></div></div>',
                 $Current,
                 $CIDRAM['FE']['optMtdStr'],
                 $CIDRAM['FE']['optMtdReg'],
@@ -3419,7 +3419,7 @@ $CIDRAM['AuxGenerateFEData'] = function (bool $Mode = false) use (&$CIDRAM): str
                 $LogicData = ['', ''];
             }
             $Output .= sprintf(
-                '<dl><dt><select id="logic[%1$s]" name="logic[%1$s]" class="flong"><option value="Any"%4$s>%2$s</option><option value="All"%5$s>%3$s</option></select></dt></dl>',
+                '<div class="iCntr"><div class="iLabl"><select id="logic[%1$s]" name="logic[%1$s]" class="flong"><option value="Any"%4$s>%2$s</option><option value="All"%5$s>%3$s</option></select></div></div>',
                 $Current,
                 $CIDRAM['L10N']->getString('label_aux_logic_any'),
                 $CIDRAM['L10N']->getString('label_aux_logic_all'),
@@ -3483,7 +3483,7 @@ $CIDRAM['AuxGenerateFEData'] = function (bool $Mode = false) use (&$CIDRAM): str
 
             /** Rule notes. */
             $Output .= sprintf(
-                '</div></dd></dl><dl><dt class="s">%1$s</dt><dd><textarea id="Notes[%2$s]" name="Notes[%2$s]" class="half">%3$s</textarea></dd></dl>',
+                '</div><div class="iCntr"><div class="iLabl s">%1$s</div><div class="iCntn"><textarea id="Notes[%2$s]" name="Notes[%2$s]" class="half">%3$s</textarea></div></div>',
                 $CIDRAM['L10N']->getString('label_aux_notes'),
                 $Current,
                 $Data['Notes'] ?? ''
@@ -3509,12 +3509,12 @@ $CIDRAM['AuxGenerateFEData'] = function (bool $Mode = false) use (&$CIDRAM): str
 
             /** Begin generating rule output. */
             $Output .= sprintf(
-                '%1$s<li class="%2$s"><span class="comCat" style="cursor:pointer"><span class="s">%3$s</span></span>%4$s%1$s%5$s<br /><br /><ul class="comSub">',
-                "\n        ",
+                '%1$s<li class="%2$s"><span class="comCat"><span class="s" style="cursor:pointer">%3$s</span>%4$s%5$s</span>%1$s  <ul class="comSub">',
+                "\n      ",
                 $RuleClass,
                 $Name,
                 $Options,
-                isset($Data['Notes']) ? '<br /><em>' . str_replace(['<', '>', "\n"], ['&lt;', '&gt;', "<br />\n"], $Data['Notes']) . '</em>' : ''
+                isset($Data['Notes']) ? '<div class="iCntn"><em>' . str_replace(['<', '>', "\n"], ['&lt;', '&gt;', "<br />\n"], $Data['Notes']) . '</em></div>' : ''
             );
 
             /** Additional details about the rule to print to the page (e.g., detailed block reason). */
@@ -3525,15 +3525,15 @@ $CIDRAM['AuxGenerateFEData'] = function (bool $Mode = false) use (&$CIDRAM): str
             ] as $Details) {
                 if (!empty($Data[$Details[0]]) && $Label = $CIDRAM['L10N']->getString($Details[1])) {
                     if (is_array($Data[$Details[0]])) {
-                        $Data[$Details[0]] = implode('</dd><dd>', $Data[$Details[0]]);
+                        $Data[$Details[0]] = implode('</div><div class="iCntn">', $Data[$Details[0]]);
                     }
-                    $Output .= "\n            <li><dl><dt class=\"s\">" . $Label . '</dt><dd>' . $Data[$Details[0]] . '</dd></dl></li>';
+                    $Output .= "\n          <li><div class=\"iCntr\"><div class=\"iLabl s\">" . $Label . '</div><div class="iCntn">' . $Data[$Details[0]] . '</div></div></li>';
                 }
             }
 
             /** Display the status code to be applied. */
             if (!empty($Data['Status Code']) && $Data['Status Code'] > 200 && $StatusCode = $CIDRAM['GetStatusHTTP']($Data['Status Code'])) {
-                $Output .= "\n            <li><dl><dt class=\"s\">" . $CIDRAM['L10N']->getString('label_aux_http_status_code_override') . '</dt><dd>' . $Data['Status Code'] . ' ' . $StatusCode . '</dd></dl></li>';
+                $Output .= "\n          <li><div class=\"iCntr\"><div class=\"iLabl s\">" . $CIDRAM['L10N']->getString('label_aux_http_status_code_override') . '</div><div class="iCntn">' . $Data['Status Code'] . ' ' . $StatusCode . '</div></div></li>';
             }
 
             /** Iterate through actions. */
@@ -3554,8 +3554,8 @@ $CIDRAM['AuxGenerateFEData'] = function (bool $Mode = false) use (&$CIDRAM): str
 
                 /** Show the appropriate label for this action. */
                 $Output .= sprintf(
-                    '%1$s<li>%1$s  <dl><dt class="s">%2$s</dt>',
-                    "\n            ",
+                    '%1$s<li>%1$s  <div class="iCntr">%1$s    <div class="iLabl s">%2$s</div>',
+                    "\n          ",
                     $CIDRAM['FE'][$Action[1]]
                 );
 
@@ -3572,7 +3572,7 @@ $CIDRAM['AuxGenerateFEData'] = function (bool $Mode = false) use (&$CIDRAM): str
                                 $Value = '&nbsp;';
                             }
                             $Operator = $CIDRAM['OperatorFromAuxValue']($Value, true);
-                            $Output .= "\n              <dd><span style=\"float:" . $CIDRAM['FE']['FE_Align'] . '">' . $ThisSource . '&nbsp;' . $Operator . '&nbsp;</span><code>' . $Value . '</code></dd>';
+                            $Output .= "\n              <div class=\"iCntn\"><span style=\"float:" . $CIDRAM['FE']['FE_Align'] . '">' . $ThisSource . '&nbsp;' . $Operator . '&nbsp;</span><code>' . $Value . '</code></div>';
                         }
                     }
                 }
@@ -3590,18 +3590,18 @@ $CIDRAM['AuxGenerateFEData'] = function (bool $Mode = false) use (&$CIDRAM): str
                                 $Value = '&nbsp;';
                             }
                             $Operator = $CIDRAM['OperatorFromAuxValue']($Value);
-                            $Output .= "\n              <dd><span style=\"float:" . $CIDRAM['FE']['FE_Align'] . '">' . $ThisSource . '&nbsp;' . $Operator . '&nbsp;</span><code>' . $Value . '</code></dd>';
+                            $Output .= "\n              <div class=\"iCntn\"><span style=\"float:" . $CIDRAM['FE']['FE_Align'] . '">' . $ThisSource . '&nbsp;' . $Operator . '&nbsp;</span><code>' . $Value . '</code></div>';
                         }
                     }
                 }
 
                 /** Finish writing conditions list. */
-                $Output .= "\n            </dl></li>";
+                $Output .= "\n            </div>\n          </li>";
             }
 
             /** Cite the file to run. */
             if (!empty($Data['Run']['File']) && $Label = $CIDRAM['L10N']->getString('label_aux_run')) {
-                $Output .= "\n            <li><dl><dt class=\"s\">" . $Label . '</dt><dd>' . $Data['Run']['File'] . '</dd></dl></li>';
+                $Output .= "\n            <li><div class=\"iCntr\"><div class=\"iLabl s\">" . $Label . '</div><div class="iCntn">' . $Data['Run']['File'] . '</div></div></li>';
             }
 
             /** Display other options and special flags. */
@@ -3618,23 +3618,23 @@ $CIDRAM['AuxGenerateFEData'] = function (bool $Mode = false) use (&$CIDRAM): str
                 }
             }
             if (count($Flags)) {
-                $Output .= "\n            <li><dl><dt class=\"s\">" . $CIDRAM['L10N']->getString('label_aux_special') . '</dt><dd>' . implode('<br />', $Flags) . '</dd></dl></li>';
+                $Output .= "\n            <li><div class=\"iCntr\"><div class=\"iLabl s\">" . $CIDRAM['L10N']->getString('label_aux_special') . '</div><div class="iCntn">' . implode('<br />', $Flags) . '</div></div></li>';
             }
 
             /** Show the method to be used. */
-            $Output .= "\n            <li><dl><dt><em>" . (isset($Data['Method']) ? (
+            $Output .= "\n          <li><div class=\"iCntr\"><div class=\"iLabl\"><em>" . (isset($Data['Method']) ? (
                 $Data['Method'] === 'RegEx' ? $CIDRAM['FE']['optMtdReg'] : (
                     $Data['Method'] === 'WinEx' ? $CIDRAM['FE']['optMtdWin'] : $CIDRAM['FE']['optMtdStr']
                 )
-            ) : $CIDRAM['FE']['optMtdStr']) . '</em></dt></dl></li>';
+            ) : $CIDRAM['FE']['optMtdStr']) . '</em></div></div></li>';
 
             /** Describe matching logic used. */
-            $Output .= "\n            <li><dl><dt><em>" . $CIDRAM['L10N']->getString(
+            $Output .= "\n          <li><div class=\"iCntr\"><div class=\"iLabl\"><em>" . $CIDRAM['L10N']->getString(
                 (!empty($Data['Logic']) && $Data['Logic'] !== 'Any') ? 'label_aux_logic_all' : 'label_aux_logic_any'
-            ) . '</em></dt></dl></li>';
+            ) . '</em></div></div></li>';
 
             /** Finish writing new rule. */
-            $Output .= "\n          </ul>\n        </li>";
+            $Output .= "\n        </ul>\n      </li>";
             $Current++;
         }
     }
@@ -3650,7 +3650,7 @@ $CIDRAM['AuxGenerateFEData'] = function (bool $Mode = false) use (&$CIDRAM): str
     };
 
     /** Exit with generated output. */
-    return $Output . '<script type="text/javascript">window.auxFlags = ['. $JSAuxAppend . '];' . $JSAppend . '</script>';
+    return $Output . '<script type="text/javascript">window.auxFlags=['. $JSAuxAppend . '];' . $JSAppend . '</script>';
 };
 
 /**

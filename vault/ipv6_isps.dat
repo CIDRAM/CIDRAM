@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
-# Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_isps.dat
+# Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6_isps.dat
 
-# Version: 2021.155.632
-# Last modified: 2021.06.05
+# Version: 2021.166.298
+# Last modified: 2021.06.16
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -46,25 +46,6 @@ Tag: AS48159
 2001:4188::/48 Deny Generic
 Origin: IR
 Tag: AS12880
-
-
-# ASNs 24940, 37153 ("Hetzner Online GmbH").
-# Stop Forum Spam (SFS) listings: 38,208 (AS24940), 153 (AS37153).
-# Updated: 2020.12.29
-
-2001:67c:1164::/48 Deny Generic
-2a01:4f8::/29 Deny Generic
-2a01:b140::/29 Deny Generic
-2a06:be80::/29 Deny Generic
-2a0e:2c80::/29 Deny Generic
-Origin: DE
-2a06:1301:4050::/48 Deny Generic
-Origin: RU
-2c0f:f300::/48 Deny Generic
-2c0f:fce8::/33 Deny Generic
-Origin: ZA
-Profile: Frequent changes;Tor endpoints here
-Tag: Hetzner Online GmbH
 
 
 # ASN 45727 ("Hutchison CP Telecommunications, PT").
@@ -225,18 +206,6 @@ Tag: Bezeq International
 Origin: IL
 Profile: Domestic ISP;Tor endpoints here
 Tag: 012 Smile
-
-
-# ASN 51013 ("Websupport s.r.o").
-# Stop Forum Spam (SFS) listings: 46.
-# Updated: 2020.12.03
-
-2a02:250:2::/48 Deny Generic
-Origin: SE
-2a00:4b40::/32 Deny Generic
-2a0e:bb40::/48 Deny Generic
-Origin: SK
-Tag: Websupport s.r.o
 
 
 # ASN 35804 ("PP SKS-LUGAN").
@@ -497,10 +466,12 @@ Profile: Domestic ISP;Multiplay
 Tag: PHOENIX NAP, LLC
 
 
-# ASNs 24955, 41704 ("Orenburgskaya Gorodskaya Set, ZAO").
-# Caught spamming while pretending to be Google.
-# Stop Forum Spam (SFS) listings: 195,128 (AS24955), 10,024 (AS41704).
-# Updated: 2019.11.08 / Checked: 2021.02.27
+# ASNs 24955, 41704, 60095 ("Orenburgskaya Gorodskaya Set, ZAO").
+# Caught spamming while pretending to be Google. Repeated hack attempts, port
+# scans, probing for hardware vulnerabilities, brute-force and SSH attacks,
+# spam, IoT attacks, and more regularly encountered from here.
+# Stop Forum Spam (SFS) listings: 270,912 (AS24955), 8,165 (AS41704), 774 (AS60095).
+# Updated: 2019.11.08 / Checked: 2021.06.16
 
 2a02:1c8::/47 Deny Spam
 2a02:1c8:7::/48 Deny Spam
@@ -509,6 +480,7 @@ Tag: PHOENIX NAP, LLC
 2a02:1c8:100::/40 Deny Spam
 2a02:1c8:700::/40 Deny Spam
 Origin: RU
+Profile: Domestic ISP
 Tag: Ufanet
 
 
@@ -940,37 +912,14 @@ Tag: China Unicom Backbone
 
 
 # ASN 3462 ("Data Communication Business Group").
-# Would prefer to not include this ASN in this file due to the high risk of
-# false positives, but the amount of spam events seen from this ASN isn't
-# ignorable at this time. Websites intended for Taiwanese users should list
-# this section in their ignore.dat file to reduce the false positive risk.
-# Non-TW ranges as cloud.
-# %Listed, abuseat.org (CBL-Listed): 0.48%.
-# Stop Forum Spam (SFS) listings: 16,312.
-# Updated: 2020.12.03
+# Taiwanese domestic ISP and business network. DDoS, FTP brute-force, and
+# webapp attacks, hacking, spam, and port scans detected from here. Listing
+# just the affected ranges/addresses only.
+# %Listed, abuseat.org (CBL-Listed): 0.25%.
+# Stop Forum Spam (SFS) listings: 11,951.
+# Updated: 2021.06.16
 
-2001:b000:100::/40 Deny Generic
-2001:b000:200::/39 Deny Generic
-2001:b000:400::/38 Deny Generic
-2001:b000:800::/37 Deny Generic
-2001:b000:1000::/36 Deny Generic
-2001:b000:2000::/35 Deny Generic
-2001:b000:4000::/34 Deny Generic
-2001:b000:8000::/33 Deny Generic
-2001:b001::/32 Deny Generic
-2001:b002::/31 Deny Generic
-2001:b004::/30 Deny Generic
-2001:b008::/29 Deny Generic
-2001:b010::/28 Deny Generic
-2001:b020::/27 Deny Generic
-2001:b040::/26 Deny Generic
-2001:b080::/25 Deny Generic
-2001:b100::/24 Deny Generic
-2001:b200::/23 Deny Generic
-2001:b400::/22 Deny Generic
-2405:6100::/32 Deny Generic
-2406:300::/32 Deny Generic
-2407:4700::/32 Deny Generic
+2001:b011:7c03:4395::/64 Deny Malware
 Origin: TW
 Profile: Domestic ISP;Commercial;Multiplay;Tor endpoints here;Webhosting
 Tag: DCBG
@@ -1109,59 +1058,18 @@ Tag: China Unicom Beijing
 
 # ASNs 7643, 45899, 135905 ("VietNam Post and Telecom Corporation").
 # A *major* Vietnamese domestic ISP, but also a significant source of spam,
-# hack attempts, probing, etc. Listed in the ignore.dat file by default to
-# reduce the false positive risk.
-# %Listed, abuseat.org (CBL-Listed): 0.74% (AS45899).
-# Stop Forum Spam (SFS) listings: 91 (AS7643), 28,974 (AS45899), 261 (AS135905).
-# Updated: 2020.11.17
+# hack attempts, probing, etc. Listing just the affected ranges/addresses only.
+# %Listed, abuseat.org (CBL-Listed): 1.48% (AS45899).
+# Stop Forum Spam (SFS) listings: 66 (AS7643), 20,126 (AS45899), 308 (AS135905).
+# Updated: 2021.06.16
 
-2602:ffe4:c34::/48 Deny Generic
-Origin: US
-2001:df2:ca00::/48 Deny Generic
-2001:df2:ce00::/48 Deny Generic
-2001:df3:900::/48 Deny Generic
-2001:df3:5c00::/48 Deny Generic
-2001:df4:2d00::/48 Deny Generic
-2001:df4:d500::/48 Deny Generic
-2001:df7:c600::/48 Deny Generic
-2001:df7:cc00::/48 Deny Generic
-2001:df7:ce00::/48 Deny Generic
-2001:ee0::/32 Deny Generic
-2400:6540::/48 Deny Generic
-2401:c440::/48 Deny Generic
-2402:6440:1::/48 Deny Generic
-2402:6440:2::/48 Deny Generic
-2403:6a40:1::/48 Deny Generic
-2403:b3c0::/48 Deny Generic
-2404:c6c0::/48 Deny Generic
-2405:1040::/48 Deny Generic
-2405:10c0::/48 Deny Generic
-2405:f980::/48 Deny Generic
-2406:5f40::/48 Deny Generic
+2001:ee0:4dba:b510::/64 Deny Spam
+2001:ee0:4f89:5600::/64 Deny Spam
+2001:ee0:4f8b:3f60::/64 Deny Spam
+2001:ee0:53e8:fb10::/64 Deny Spam
 Origin: VN
-Profile: Domestic ISP;Tor endpoints here
+Profile: Domestic ISP;Infrastructure/Transit;Tor endpoints here
 Tag: VNPT Corp
-
-
-# ASN 18403 ("The Corporation for Financing & Promoting Technology").
-# Interlaces with human endpoints in Vietnam, but also a significant source of
-# spam, hacks, brute-forcing, probing, etc.
-# %Listed, abuseat.org (CBL-Listed): 2.60%.
-# Stop Forum Spam (SFS) listings: 10,059.
-# Updated: 2020.12.28
-
-2001:df2:d900::/48 Deny Generic
-2001:df6:1e00::/48 Deny Generic
-2404:b740::/48 Deny Generic
-2404:dac0::/48 Deny Generic
-2404:ef80::/48 Deny Generic
-2405:19c0::/48 Deny Generic
-2405:1ac0::/48 Deny Generic
-2405:4800::/30 Deny Generic
-2406:a6c0::/48 Deny Generic
-2406:cbc0::/48 Deny Generic
-Origin: VN
-Tag: CFPT
 
 
 # ASNs 9498, 9730, 24560, 37140, 45609, 132045 ("Bharti Airtel").
@@ -1857,19 +1765,6 @@ Profile: Domestic ISP
 Tag: PJSC Moscow city
 
 
-# ASN 8220 ("COLT Technology Services Group Limited").
-# Major multiplay network with multiple ASNs. Spam, malware, and other unwanted
-# traffic seen from this network. Listing only the specific known affected
-# ranges/addresses from this specific ASN for the moment.
-# Stop Forum Spam (SFS) listings: 2,318.
-# Updated: 2020.12.20
-
-2001:920:198c:83c::/64 Deny Spam
-Origin: GB
-Profile: Domestic ISP;Multiplay
-Tag: COLT Technology SGL
-
-
 # ASN 4788 ("TM Net, Internet Service Provider").
 # A major Malaysian domestic ISP, but also a notable source of spam and webapp
 # attacks (spam/malware). Listing all AU+SG+US ranges, plus any affected MY
@@ -1990,8 +1885,9 @@ Tag: Charter Communications
 # ASNs 17072, 22884 ("TOTAL PLAY TELECOMUNICACIONES SA DE CV").
 # Mexican domestic ISP; also a notable source of forum and blog spam. Listing
 # just the currently affected ranges (not the entire network).
-# Stop Forum Spam (SFS) listings: 228 (AS17072), 856 (AS22884).
-# Updated: 2020.12.25
+# %Listed, abuseat.org (CBL-Listed): 1.99% (AS17072).
+# Stop Forum Spam (SFS) listings: 545 (AS17072), 672 (AS22884).
+# Updated: 2020.12.25 / Checked: 2021.06.16
 
 2806:2f0:4021:46c8::/64 Deny Spam
 Origin: MX
@@ -2154,8 +2050,8 @@ Tag: Extratel Ltd
 
 # ASN 38732 ("CMC Telecom Infrastructure Company").
 # Vietnamese domestic ISP; Huge source of spam, malware, attacks, etc.
-# Stop Forum Spam (SFS) listings: 150.
-# Updated: 2020.11.21
+# Stop Forum Spam (SFS) listings: 65.
+# Updated: 2020.11.21 / Checked: 2021.06.16
 
 2406:30c0::/48 Deny Malware
 Origin: VN
@@ -2446,11 +2342,12 @@ Tag: TRK Cable TV LLC
 
 # ASNs 31593, 34187 ("LLC Renome-Service").
 # Ukrainian TV cable provider and a significant source of spam.
-# Stop Forum Spam (SFS) listings: 6,406 (AS31593), 558 (AS34187).
-# Updated: 2020.11.21
+# Stop Forum Spam (SFS) listings: 12,972 (AS31593), 267 (AS34187).
+# Updated: 2020.11.21 / Checked: 2021.06.16
 
 2a03:1240::/48 Deny Spam
 Origin: UA
+Profile: Domestic ISP;Multiplay
 Tag: LLC Renome-Service
 
 

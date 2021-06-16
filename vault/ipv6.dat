@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
-# Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6.dat
+# Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6.dat
 
-# Version: 2021.158.514
-# Last modified: 2021.06.08
+# Version: 2021.166.298
+# Last modified: 2021.06.16
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -2523,33 +2523,54 @@ Tag: Sia Nano IT
 
 
 # ASN 8987 ("Amazon Data Services"), ASNs 14618, 16509 ("Amazon.com, Inc").
-# When updating, remove all invalids and anything citing "Tech Telecom" to
-# reduce the risk of false positives.
-# Stop Forum Spam (SFS) listings: 8,787 (AS14618), 38,989 (AS16509).
-# Updated: 2020.11.29
+# Stop Forum Spam (SFS) listings: 8,961 (AS14618), 86,569 (AS16509).
+# Updated: 2021.06.16
 
 2001:dcd:22::/47 Run rules_specific.php
+2001:df3:a280::/48 Run rules_specific.php
 2401:1d80:3000::/47 Run rules_specific.php
+2401:8100::/32 Run rules_specific.php
 2403:b300::/32 Run rules_specific.php
 Origin: AU
+2a0b:8780::/48 Run rules_specific.php
+2a0c:b641:16a::/48 Run rules_specific.php
+Origin: BE
 2804:800::/32 Run rules_specific.php
 Origin: BR
+2a07:e02:41::/48 Run rules_specific.php
+Origin: BZ
 2602:808:a000::/47 Run rules_specific.php
 2602:808:a003::/48 Run rules_specific.php
 2602:808:a004::/48 Run rules_specific.php
 Origin: CA
+2a00:4bc0:2101::/48 Run rules_specific.php
+2a00:4bc0:2102::/47 Run rules_specific.php
+2a00:4bc0:2104::/46 Run rules_specific.php
+2a00:4bc0:2108::/47 Run rules_specific.php
+Origin: CH
+2001:678:f64::/48 Run rules_specific.php
+2a01:bb22::/31 Run rules_specific.php
 2a04:2f81::/47 Run rules_specific.php
 2a04:2f81:4::/47 Run rules_specific.php
 2a04:5b80:100::/48 Run rules_specific.php
+2a09:ea00::/48 Run rules_specific.php
+2a0a:4540:1000::/48 Run rules_specific.php
+2a0b:4080::/48 Run rules_specific.php
 2a0b:6c81::/32 Run rules_specific.php
 2a0f:340::/29 Run rules_specific.php
 2a10:2307:ffff::/48 Run rules_specific.php
+2a10:a100::/32 Run rules_specific.php
 Origin: DE
 2a10:a200::/48 Run rules_specific.php
 Origin: DK
+2001:678:2cc::/48 Run rules_specific.php
 2001:67c:b4::/48 Run rules_specific.php
+2001:67c:788::/48 Run rules_specific.php
+2a00:e20:143::/48 Run rules_specific.php
+2a00:de61:100::/40 Run rules_specific.php
+2a00:de61:200::/39 Run rules_specific.php
+2a0a:144:400::/48 Run rules_specific.php
 Origin: GB
-2a02:ef80::/48 Run rules_specific.php
 2a05:d000:2000::/40 Run rules_specific.php
 2a05:d000:6000::/40 Run rules_specific.php
 2a05:d000:a000::/40 Run rules_specific.php
@@ -2596,10 +2617,15 @@ Origin: GB
 2a05:d050:e080::/44 Run rules_specific.php
 2a05:d050:e0c0::/44 Run rules_specific.php
 Origin: IE
+2001:df6:6880::/48 Run rules_specific.php
+Origin: IN
 2a0c:b280::/48 Run rules_specific.php
 Origin: IT
 2400:6700::/32 Run rules_specific.php
 Origin: JP
+2001:678:264::/48 Run rules_specific.php
+2001:7fc::/47 Run rules_specific.php
+2a02:ef80::/48 Run rules_specific.php
 2a03:5640:f000::/42 Run rules_specific.php
 2a03:5640:f040::/48 Run rules_specific.php
 2a03:5640:f100::/42 Run rules_specific.php
@@ -2611,12 +2637,11 @@ Origin: JP
 2a03:5640:f530::/47 Run rules_specific.php
 2a03:5640:f532::/48 Run rules_specific.php
 2a03:5640:f560::/48 Run rules_specific.php
-Origin: LU
 2a04:b902::/32 Run rules_specific.php
-2a0b:b87:ffb0::/48 Run rules_specific.php
 Origin: NL
+2403:e040:8000::/33 Run rules_specific.php
+Origin: NZ
 2001:678:87c::/48 Run rules_specific.php
-2a07:e02:41::/48 Run rules_specific.php
 2a10:ba00:bee5::/48 Run rules_specific.php
 Origin: SE
 2001:df3:5580::/48 Run rules_specific.php
@@ -2667,6 +2692,9 @@ Origin: TW
 2406:daa0:8080::/44 Run rules_specific.php
 2406:daa0:80a0::/44 Run rules_specific.php
 2406:daa0:80c0::/44 Run rules_specific.php
+2406:daa0:9040::/44 Run rules_specific.php
+2406:daa0:9080::/44 Run rules_specific.php
+2406:daa0:90c0::/44 Run rules_specific.php
 2406:daa0:a040::/44 Run rules_specific.php
 2406:daa0:a080::/44 Run rules_specific.php
 2406:daa0:a0c0::/44 Run rules_specific.php
@@ -2679,6 +2707,9 @@ Origin: TW
 2406:daa0:e040::/44 Run rules_specific.php
 2406:daa0:e080::/44 Run rules_specific.php
 2406:daa0:e0c0::/44 Run rules_specific.php
+2406:daf9:9043:e000::/64 Run rules_specific.php
+2406:daf9:9083:e000::/64 Run rules_specific.php
+2406:daf9:90c3:e000::/64 Run rules_specific.php
 2600:1f00:1000::/40 Run rules_specific.php
 2600:1f00:5000::/40 Run rules_specific.php
 2600:1f00:6000::/40 Run rules_specific.php
@@ -2727,10 +2758,11 @@ Origin: TW
 2600:1fa0:2040::/44 Run rules_specific.php
 2600:1fa0:2080::/44 Run rules_specific.php
 2600:1fa0:20c0::/44 Run rules_specific.php
+2600:1fa0:4010::/44 Run rules_specific.php
 2600:1fa0:4020::/44 Run rules_specific.php
-2600:1fa0:4040::/44 Run rules_specific.php
+2600:1fa0:4040::/43 Run rules_specific.php
 2600:1fa0:4060::/44 Run rules_specific.php
-2600:1fa0:4080::/44 Run rules_specific.php
+2600:1fa0:4080::/43 Run rules_specific.php
 2600:1fa0:40a0::/44 Run rules_specific.php
 2600:1fa0:40c0::/44 Run rules_specific.php
 2600:1fa0:40e0::/44 Run rules_specific.php
@@ -2742,11 +2774,8 @@ Origin: TW
 2600:1fa0:60c0::/44 Run rules_specific.php
 2600:1fa0:8010::/44 Run rules_specific.php
 2600:1fa0:8020::/43 Run rules_specific.php
-2600:1fa0:8040::/43 Run rules_specific.php
-2600:1fa0:8060::/44 Run rules_specific.php
-2600:1fa0:8080::/42 Run rules_specific.php
-2600:1fa0:80c0::/43 Run rules_specific.php
-2600:1fa0:80e0::/44 Run rules_specific.php
+2600:1fa0:8040::/42 Run rules_specific.php
+2600:1fa0:8080::/41 Run rules_specific.php
 2600:1fa0:c020::/44 Run rules_specific.php
 2600:1fa0:c040::/44 Run rules_specific.php
 2600:1fa0:c0c0::/44 Run rules_specific.php
@@ -2754,36 +2783,23 @@ Origin: TW
 2600:1fa0:e040::/44 Run rules_specific.php
 2600:1fa0:e080::/44 Run rules_specific.php
 2600:1fa0:e0c0::/44 Run rules_specific.php
-2600:9000:1001::/48 Run rules_specific.php
-2600:9000:1002::/47 Run rules_specific.php
-2600:9000:100c::/47 Run rules_specific.php
-2600:9000:101b::/48 Run rules_specific.php
-2600:9000:1020::/47 Run rules_specific.php
+2600:9000:1000::/47 Run rules_specific.php
+2600:9000:1003::/48 Run rules_specific.php
+2600:9000:1020::/48 Run rules_specific.php
 2600:9000:1022::/48 Run rules_specific.php
-2600:9000:1024::/47 Run rules_specific.php
+2600:9000:1025::/48 Run rules_specific.php
 2600:9000:1027::/48 Run rules_specific.php
 2600:9000:1028::/48 Run rules_specific.php
 2600:9000:1030::/48 Run rules_specific.php
-2600:9000:1035::/48 Run rules_specific.php
-2600:9000:1036::/47 Run rules_specific.php
-2600:9000:1039::/48 Run rules_specific.php
+2600:9000:1036::/48 Run rules_specific.php
 2600:9000:103b::/48 Run rules_specific.php
-2600:9000:103d::/48 Run rules_specific.php
 2600:9000:103e::/48 Run rules_specific.php
-2600:9000:1040::/48 Run rules_specific.php
-2600:9000:1043::/48 Run rules_specific.php
-2600:9000:1048::/48 Run rules_specific.php
-2600:9000:104a::/48 Run rules_specific.php
-2600:9000:104c::/47 Run rules_specific.php
-2600:9000:104e::/48 Run rules_specific.php
-2600:9000:1079::/48 Run rules_specific.php
+2600:9000:104d::/48 Run rules_specific.php
 2600:9000:107a::/48 Run rules_specific.php
 2600:9000:107f::/48 Run rules_specific.php
 2600:9000:1080::/47 Run rules_specific.php
 2600:9000:1083::/48 Run rules_specific.php
 2600:9000:1084::/48 Run rules_specific.php
-2600:9000:1089::/48 Run rules_specific.php
-2600:9000:108a::/48 Run rules_specific.php
 2600:9000:108c::/48 Run rules_specific.php
 2600:9000:108e::/47 Run rules_specific.php
 2600:9000:1090::/48 Run rules_specific.php
@@ -2847,12 +2863,14 @@ Origin: TW
 2600:9000:1170::/46 Run rules_specific.php
 2600:9000:1175::/48 Run rules_specific.php
 2600:9000:1176::/47 Run rules_specific.php
+2600:9000:1179::/48 Run rules_specific.php
 2600:9000:117a::/48 Run rules_specific.php
 2600:9000:117c::/48 Run rules_specific.php
+2600:9000:117e::/48 Run rules_specific.php
+2600:9000:1180::/48 Run rules_specific.php
 2600:9000:1182::/47 Run rules_specific.php
 2600:9000:1184::/48 Run rules_specific.php
-2600:9000:1188::/47 Run rules_specific.php
-2600:9000:118a::/48 Run rules_specific.php
+2600:9000:1188::/46 Run rules_specific.php
 2600:9000:118e::/47 Run rules_specific.php
 2600:9000:1190::/46 Run rules_specific.php
 2600:9000:1194::/48 Run rules_specific.php
@@ -2864,19 +2882,20 @@ Origin: TW
 2600:9000:11a2::/48 Run rules_specific.php
 2600:9000:11a5::/48 Run rules_specific.php
 2600:9000:11a6::/47 Run rules_specific.php
-2600:9000:11a8::/46 Run rules_specific.php
-2600:9000:11ae::/47 Run rules_specific.php
-2600:9000:11b0::/48 Run rules_specific.php
-2600:9000:11ba::/48 Run rules_specific.php
-2600:9000:2000::/46 Run rules_specific.php
-2600:9000:2004::/48 Run rules_specific.php
-2600:9000:2006::/47 Run rules_specific.php
+2600:9000:11a8::/45 Run rules_specific.php
+2600:9000:11b0::/46 Run rules_specific.php
+2600:9000:11b6::/47 Run rules_specific.php
+2600:9000:11ba::/47 Run rules_specific.php
+2600:9000:11bd::/48 Run rules_specific.php
+2600:9000:11bf::/48 Run rules_specific.php
+2600:9000:11c1::/48 Run rules_specific.php
+2600:9000:11c2::/48 Run rules_specific.php
+2600:9000:2000::/45 Run rules_specific.php
 2600:9000:2008::/46 Run rules_specific.php
 2600:9000:200c::/47 Run rules_specific.php
 2600:9000:200f::/48 Run rules_specific.php
 2600:9000:2010::/44 Run rules_specific.php
-2600:9000:2020::/46 Run rules_specific.php
-2600:9000:2026::/47 Run rules_specific.php
+2600:9000:2020::/45 Run rules_specific.php
 2600:9000:2029::/48 Run rules_specific.php
 2600:9000:202a::/47 Run rules_specific.php
 2600:9000:202c::/47 Run rules_specific.php
@@ -2886,23 +2905,13 @@ Origin: TW
 2600:9000:2035::/48 Run rules_specific.php
 2600:9000:2036::/48 Run rules_specific.php
 2600:9000:2038::/45 Run rules_specific.php
-2600:9000:2040::/46 Run rules_specific.php
-2600:9000:2045::/48 Run rules_specific.php
-2600:9000:2046::/48 Run rules_specific.php
-2600:9000:2048::/45 Run rules_specific.php
-2600:9000:2050::/44 Run rules_specific.php
+2600:9000:2040::/43 Run rules_specific.php
 2600:9000:2061::/48 Run rules_specific.php
 2600:9000:2062::/47 Run rules_specific.php
-2600:9000:2066::/47 Run rules_specific.php
+2600:9000:2064::/46 Run rules_specific.php
 2600:9000:2068::/45 Run rules_specific.php
-2600:9000:2070::/46 Run rules_specific.php
-2600:9000:2075::/48 Run rules_specific.php
-2600:9000:2076::/48 Run rules_specific.php
-2600:9000:2078::/45 Run rules_specific.php
-2600:9000:2080::/47 Run rules_specific.php
-2600:9000:2083::/48 Run rules_specific.php
-2600:9000:2084::/46 Run rules_specific.php
-2600:9000:2088::/45 Run rules_specific.php
+2600:9000:2070::/44 Run rules_specific.php
+2600:9000:2080::/44 Run rules_specific.php
 2600:9000:2091::/48 Run rules_specific.php
 2600:9000:2092::/47 Run rules_specific.php
 2600:9000:2094::/46 Run rules_specific.php
@@ -2914,103 +2923,88 @@ Origin: TW
 2600:9000:20a4::/46 Run rules_specific.php
 2600:9000:20a8::/47 Run rules_specific.php
 2600:9000:20aa::/48 Run rules_specific.php
-2600:9000:20ac::/48 Run rules_specific.php
-2600:9000:20ae::/47 Run rules_specific.php
+2600:9000:20ac::/46 Run rules_specific.php
 2600:9000:20b0::/47 Run rules_specific.php
 2600:9000:20b2::/48 Run rules_specific.php
 2600:9000:20b5::/48 Run rules_specific.php
 2600:9000:20b6::/47 Run rules_specific.php
-2600:9000:20b8::/48 Run rules_specific.php
-2600:9000:20ba::/47 Run rules_specific.php
-2600:9000:20bc::/46 Run rules_specific.php
-2600:9000:20c0::/44 Run rules_specific.php
-2600:9000:20d0::/45 Run rules_specific.php
-2600:9000:20d8::/48 Run rules_specific.php
-2600:9000:20da::/47 Run rules_specific.php
-2600:9000:20dc::/46 Run rules_specific.php
-2600:9000:20e0::/47 Run rules_specific.php
-2600:9000:20e2::/48 Run rules_specific.php
-2600:9000:20e4::/46 Run rules_specific.php
-2600:9000:20e8::/45 Run rules_specific.php
-2600:9000:20f0::/45 Run rules_specific.php
-2600:9000:20f8::/48 Run rules_specific.php
-2600:9000:20fa::/47 Run rules_specific.php
-2600:9000:20fc::/48 Run rules_specific.php
-2600:9000:20ff::/48 Run rules_specific.php
+2600:9000:20b8::/45 Run rules_specific.php
+2600:9000:20c0::/42 Run rules_specific.php
 2600:9000:2100::/45 Run rules_specific.php
-2600:9000:2108::/47 Run rules_specific.php
-2600:9000:210b::/48 Run rules_specific.php
+2600:9000:2108::/46 Run rules_specific.php
 2600:9000:210d::/48 Run rules_specific.php
 2600:9000:210e::/47 Run rules_specific.php
-2600:9000:2110::/46 Run rules_specific.php
-2600:9000:2115::/48 Run rules_specific.php
-2600:9000:2116::/47 Run rules_specific.php
-2600:9000:2118::/45 Run rules_specific.php
+2600:9000:2110::/44 Run rules_specific.php
 2600:9000:2120::/43 Run rules_specific.php
-2600:9000:2140::/45 Run rules_specific.php
-2600:9000:2148::/46 Run rules_specific.php
-2600:9000:214d::/48 Run rules_specific.php
-2600:9000:214e::/47 Run rules_specific.php
+2600:9000:2140::/44 Run rules_specific.php
 2600:9000:2150::/45 Run rules_specific.php
 2600:9000:2159::/48 Run rules_specific.php
 2600:9000:215a::/47 Run rules_specific.php
-2600:9000:215c::/47 Run rules_specific.php
-2600:9000:215e::/48 Run rules_specific.php
-2600:9000:2162::/47 Run rules_specific.php
-2600:9000:2164::/48 Run rules_specific.php
-2600:9000:2166::/48 Run rules_specific.php
-2600:9000:2168::/45 Run rules_specific.php
-2600:9000:2171::/48 Run rules_specific.php
-2600:9000:2172::/48 Run rules_specific.php
-2600:9000:2175::/48 Run rules_specific.php
-2600:9000:2176::/47 Run rules_specific.php
-2600:9000:2178::/45 Run rules_specific.php
-2600:9000:2180::/48 Run rules_specific.php
-2600:9000:2182::/48 Run rules_specific.php
-2600:9000:2184::/46 Run rules_specific.php
-2600:9000:2188::/48 Run rules_specific.php
-2600:9000:218b::/48 Run rules_specific.php
-2600:9000:218c::/47 Run rules_specific.php
-2600:9000:2190::/44 Run rules_specific.php
-2600:9000:21a0::/43 Run rules_specific.php
-2600:9000:21c0::/42 Run rules_specific.php
-2600:9000:2200::/46 Run rules_specific.php
-2600:9000:2204::/48 Run rules_specific.php
-2600:9000:2206::/48 Run rules_specific.php
+2600:9000:215c::/46 Run rules_specific.php
+2600:9000:2160::/43 Run rules_specific.php
+2600:9000:2180::/41 Run rules_specific.php
+2600:9000:2200::/45 Run rules_specific.php
+2600:9000:2208::/47 Run rules_specific.php
 2600:9000:220b::/48 Run rules_specific.php
 2600:9000:220c::/46 Run rules_specific.php
+2600:9000:2210::/47 Run rules_specific.php
+2600:9000:2213::/48 Run rules_specific.php
 2600:9000:5300::/45 Run rules_specific.php
 2600:9000:a100::/46 Run rules_specific.php
 2600:9000:a200::/47 Run rules_specific.php
+2600:9000:a210::/47 Run rules_specific.php
+2600:9000:a300::/47 Run rules_specific.php
+2600:9000:a310::/47 Run rules_specific.php
 2600:9000:f110::/48 Run rules_specific.php
 2600:9000:f140::/48 Run rules_specific.php
 2600:9000:f150::/48 Run rules_specific.php
-2600:9000:f211::/48 Run rules_specific.php
-2600:9000:f213::/48 Run rules_specific.php
+2600:9000:f530::/47 Run rules_specific.php
 2602:806:7008::/46 Run rules_specific.php
 2602:806:700c::/47 Run rules_specific.php
 2602:806:700e::/48 Run rules_specific.php
 2602:808:4001::/48 Run rules_specific.php
 2602:808:4002::/48 Run rules_specific.php
 2602:808:7000::/44 Run rules_specific.php
+2602:80a:2001::/48 Run rules_specific.php
+2602:80a:2002::/48 Run rules_specific.php
+2602:fcbc::/48 Run rules_specific.php
+2602:fcd8::/48 Run rules_specific.php
+2602:fcd8:7::/48 Run rules_specific.php
 2602:fd12::/48 Run rules_specific.php
 2602:fd40:ca1::/48 Run rules_specific.php
 2604:bc40:6000::/48 Run rules_specific.php
 2604:bc40:6110::/48 Run rules_specific.php
 2605:9cc0:302::/48 Run rules_specific.php
 2605:9cc0:378::/48 Run rules_specific.php
+2605:dd40:8880::/44 Run rules_specific.php
+2605:dd40:8990::/44 Run rules_specific.php
+2605:dd40:8f00::/44 Run rules_specific.php
+2605:dd40:8f80::/44 Run rules_specific.php
+2605:dd40:8ff0::/44 Run rules_specific.php
 2605:e240:b::/48 Run rules_specific.php
 2606:2c0:2::/47 Run rules_specific.php
 2606:2c0:4::/48 Run rules_specific.php
 2607:fb90:c150::/48 Run rules_specific.php
+2620:df:4000::/48 Run rules_specific.php
+2620:df:4002::/47 Run rules_specific.php
+2620:df:4004::/46 Run rules_specific.php
+2620:df:4008::/46 Run rules_specific.php
+2620:df:400c::/47 Run rules_specific.php
+2620:104:2004::/48 Run rules_specific.php
+2620:104:2040::/48 Run rules_specific.php
+2620:104:6003::/48 Run rules_specific.php
+2620:107:3001::/48 Run rules_specific.php
 2620:107:300f::/48 Run rules_specific.php
 2620:108:7000::/44 Run rules_specific.php
 2620:108:d000::/44 Run rules_specific.php
 2620:116:800a::/47 Run rules_specific.php
-2620:116:800d::/48 Run rules_specific.php
+2620:116:800c::/47 Run rules_specific.php
 2620:116:800e::/48 Run rules_specific.php
+2620:121:5070::/47 Run rules_specific.php
+2620:121:5080::/46 Run rules_specific.php
 2620:131:1065::/48 Run rules_specific.php
 2a01:578::/32 Run rules_specific.php
+2a0b:b87:ffb0::/48 Run rules_specific.php
 Origin: US
 Defers to: aws_cidram_ipv6.inc
 Profile: Commercial;Infrastructure/Transit;Webhosting
@@ -4444,11 +4438,12 @@ Tag: HostMySite
 
 
 # ASN 40034 ("Confluence Networks Inc").
-# Updated: 2020.05.21 / Checked: 2020.11.21
+# Updated: 2020.05.21 / Checked: 2021.06.16
 
 2604:10c0::/47 Deny Cloud
 2604:10c0:ffff::/48 Deny Cloud
 Origin: VG
+Profile: Commercial
 Tag: Confluence
 
 
@@ -6916,19 +6911,6 @@ Origin: VN
 Tag: Long Van
 
 
-# ASN 51747 ("Internet Vikings International AB").
-# Cloud/Gaming/Webhosting provider and a significant source of forum spam and
-# website hammering/flooding/other abuse.
-# List in ISPs file: "^.*Internetbolaget.*$\n"; Everything else in the clouds.
-# Stop Forum Spam (SFS) listings: 1,476.
-# Updated: 2020.03.05 / Modified: 2020.05.21 / Checked: 2020.11.21
-
-2001:df2:5480::/48 Deny Cloud
-Origin: TW
-Profile: Webhosting
-Tag: Internet Vikings
-
-
 # ASN 12816 ("Leibniz-Rechenzentrum").
 # Data center and server farm. Caught trying to brute-force website login
 # pages, to hack into CCTV feeds, to hack into SSH endpoints, caught port
@@ -7566,11 +7548,12 @@ Tag: DXTL Tseung Kwan O Service
 
 # ASN 132372 ("GB Network Solutions Sdn. Bhd").
 # Webhosting provider and an occasional source of spam.
-# Stop Forum Spam (SFS) listings: 102.
-# Updated: 2020.11.21
+# Stop Forum Spam (SFS) listings: 71.
+# Updated: 2021.06.16
 
 2403:4ac0::/32 Deny Cloud
 2403:fd40:1001::/48 Deny Cloud
+2403:fd40:1002::/48 Deny Cloud
 Origin: MY
 Profile: Webhosting
 Tag: GB Network Solutions
@@ -8393,13 +8376,46 @@ Profile: Dedicated;Webhosting
 Tag: BIT BV
 
 
+# ASN 51013 ("Websupport s.r.o").
+# Stop Forum Spam (SFS) listings: 31.
+# Updated: 2021.06.16
+
+2a02:250:2::/48 Deny Cloud
+Origin: SE
+2a00:4b40::/32 Deny Cloud
+2a0e:bb40::/48 Deny Cloud
+Origin: SK
+Profile: Webhosting
+Tag: Websupport s.r.o
+
+
+# ASNs 24940, 37153 ("Hetzner Online GmbH").
+# Stop Forum Spam (SFS) listings: 38,937 (AS24940), 76 (AS37153).
+# Updated: 2021.06.16
+
+2001:67c:1164::/48 Deny Cloud
+2a01:4f8::/31 Deny Cloud
+2a01:4ff:ff01::/48 Deny Cloud
+2a01:b140::/29 Deny Cloud
+2a06:be80::/29 Deny Cloud
+2a0e:2c80::/29 Deny Cloud
+Origin: DE
+2a06:1301:4050::/48 Deny Cloud
+Origin: RU
+2c0f:f300::/48 Deny Cloud
+2c0f:fce8::/33 Deny Cloud
+Origin: ZA
+Profile: Dedicated;Frequent changes;Infrastructure/Transit;Tor endpoints here;Webhosting
+Tag: Hetzner Online GmbH
+
+
 # ---
 # Microsoft Azure IPv6 CIDRs.
 # Refer microsoft.com/en-us/download/details.aspx?id=56519
 # Refer microsoft.com/en-us/download/details.aspx?id=57062
 # Refer microsoft.com/en-us/download/details.aspx?id=57063
 # Refer microsoft.com/en-us/download/details.aspx?id=57064
-# Updated: 2021.05.02
+# Updated: 2021.06.16
 
 2404:7940::/47 Run rules_specific.php
 2404:7940:100::/47 Run rules_specific.php
@@ -8416,9 +8432,71 @@ Tag: BIT BV
 2406:e500:2200::/46 Run rules_specific.php
 2406:e500:2300::/46 Run rules_specific.php
 2406:e500:2402::/121 Run rules_specific.php
-2406:e500:2402::100/121 Run rules_specific.php
+2406:e500:2402::100/120 Run rules_specific.php
+2406:e500:2402::200/120 Run rules_specific.php
+2406:e500:2402::480/121 Run rules_specific.php
+2406:e500:2402::500/122 Run rules_specific.php
+2406:e500:2402::540/123 Run rules_specific.php
+2406:e500:2402::580/121 Run rules_specific.php
+2406:e500:2402::600/121 Run rules_specific.php
+2406:e500:2402::780/123 Run rules_specific.php
+2406:e500:2402::7c0/125 Run rules_specific.php
+2406:e500:2402:1::100/121 Run rules_specific.php
+2406:e500:2402:1::180/124 Run rules_specific.php
+2406:e500:2402:1::1a0/124 Run rules_specific.php
+2406:e500:2402:1::200/119 Run rules_specific.php
+2406:e500:2402:1::400/121 Run rules_specific.php
+2406:e500:2402:1::4c0/122 Run rules_specific.php
+2406:e500:2402:1::500/120 Run rules_specific.php
+2406:e500:2402:1::600/121 Run rules_specific.php
+2406:e500:2402:1::680/122 Run rules_specific.php
+2406:e500:2402:1::6e0/123 Run rules_specific.php
+2406:e500:2402:1::700/120 Run rules_specific.php
+2406:e500:2402:2::100/120 Run rules_specific.php
+2406:e500:2402:2::200/121 Run rules_specific.php
+2406:e500:2402:2::280/123 Run rules_specific.php
+2406:e500:2402:2::300/121 Run rules_specific.php
+2406:e500:2402:400::/119 Run rules_specific.php
+2406:e500:2402:400::280/122 Run rules_specific.php
+2406:e500:2402:400::2c0/124 Run rules_specific.php
+2406:e500:2402:400::2d8/125 Run rules_specific.php
+2406:e500:2402:400::2e0/123 Run rules_specific.php
+2406:e500:2402:400::300/121 Run rules_specific.php
+2406:e500:2402:400::3a0/123 Run rules_specific.php
 2406:e500:2602::/121 Run rules_specific.php
-2406:e500:2602::100/121 Run rules_specific.php
+2406:e500:2602::100/120 Run rules_specific.php
+2406:e500:2602::200/120 Run rules_specific.php
+2406:e500:2602::480/121 Run rules_specific.php
+2406:e500:2602::500/122 Run rules_specific.php
+2406:e500:2602::540/123 Run rules_specific.php
+2406:e500:2602::580/121 Run rules_specific.php
+2406:e500:2602::600/121 Run rules_specific.php
+2406:e500:2602::780/123 Run rules_specific.php
+2406:e500:2602::7c0/125 Run rules_specific.php
+2406:e500:2602:1::100/121 Run rules_specific.php
+2406:e500:2602:1::180/124 Run rules_specific.php
+2406:e500:2602:1::1a0/124 Run rules_specific.php
+2406:e500:2602:1::200/119 Run rules_specific.php
+2406:e500:2602:1::400/121 Run rules_specific.php
+2406:e500:2602:1::4c0/122 Run rules_specific.php
+2406:e500:2602:1::500/120 Run rules_specific.php
+2406:e500:2602:1::600/121 Run rules_specific.php
+2406:e500:2602:1::680/122 Run rules_specific.php
+2406:e500:2602:1::6e0/123 Run rules_specific.php
+2406:e500:2602:1::700/120 Run rules_specific.php
+2406:e500:2602:2::100/120 Run rules_specific.php
+2406:e500:2602:2::200/121 Run rules_specific.php
+2406:e500:2602:2::280/123 Run rules_specific.php
+2406:e500:2602:2::300/121 Run rules_specific.php
+2406:e500:2602:400::/119 Run rules_specific.php
+2406:e500:2602:400::280/122 Run rules_specific.php
+2406:e500:2602:400::2c0/124 Run rules_specific.php
+2406:e500:2602:400::2d8/125 Run rules_specific.php
+2406:e500:2602:400::2e0/123 Run rules_specific.php
+2406:e500:2602:400::300/121 Run rules_specific.php
+2406:e500:2602:400::3a0/123 Run rules_specific.php
+2406:e500:2602:800::/119 Run rules_specific.php
+2406:e500:2602:800::280/122 Run rules_specific.php
 2406:e500:4400::/40 Run rules_specific.php
 2406:e500:4800::/63 Run rules_specific.php
 2406:e500:4801::/63 Run rules_specific.php
@@ -8455,7 +8533,7 @@ Origin: DE
 2001:489a:3400::/46 Run rules_specific.php
 2001:489a:3404::/48 Run rules_specific.php
 2001:489a:3500::/50 Run rules_specific.php
-2001:489a:3601::/48 Run rules_specific.php
+2001:489a:3600::/47 Run rules_specific.php
 2001:489a:3602::/48 Run rules_specific.php
 2001:489a:3604::/47 Run rules_specific.php
 2603:1000::/47 Run rules_specific.php
@@ -8555,10 +8633,14 @@ Origin: DE
 2603:1020:1004:1::300/120 Run rules_specific.php
 2603:1020:1004:1::400/119 Run rules_specific.php
 2603:1020:1004:1::700/124 Run rules_specific.php
+2603:1020:1004:1::720/123 Run rules_specific.php
 2603:1020:1004:1::740/122 Run rules_specific.php
 2603:1020:1004:1::780/121 Run rules_specific.php
 2603:1020:1004:2::/121 Run rules_specific.php
 2603:1020:1004:2::100/120 Run rules_specific.php
+2603:1020:1004:2::300/120 Run rules_specific.php
+2603:1020:1004:2::400/119 Run rules_specific.php
+2603:1020:1004:2::600/120 Run rules_specific.php
 2603:1020:1004:400::80/121 Run rules_specific.php
 2603:1020:1004:400::100/121 Run rules_specific.php
 2603:1020:1004:400::180/122 Run rules_specific.php
@@ -8575,16 +8657,19 @@ Origin: DE
 2603:1020:1004:800::240/123 Run rules_specific.php
 2603:1020:1004:800::280/121 Run rules_specific.php
 2603:1020:1004:800::300/120 Run rules_specific.php
+2603:1020:1004:800::400/122 Run rules_specific.php
+2603:1020:1004:800::440/123 Run rules_specific.php
+2603:1020:1004:800::480/121 Run rules_specific.php
 2603:1020:1004:802::/123 Run rules_specific.php
 2603:1020:1004:803::/123 Run rules_specific.php
 2603:1020:1004:c02::80/122 Run rules_specific.php
 2603:1020:1004:c02::c0/123 Run rules_specific.php
-2603:1020:1004:c02::100/121 Run rules_specific.php
-2603:1020:1004:c02::180/123 Run rules_specific.php
-2603:1020:1004:c02::1a0/125 Run rules_specific.php
+2603:1020:1004:c02::100/120 Run rules_specific.php
 2603:1020:1004:c02::200/120 Run rules_specific.php
 2603:1020:1004:c02::300/121 Run rules_specific.php
-2603:1020:1004:c02::380/124 Run rules_specific.php
+2603:1020:1004:c02::380/123 Run rules_specific.php
+2603:1020:1004:c02::3a0/125 Run rules_specific.php
+2603:1020:1004:c02::3c0/122 Run rules_specific.php
 2603:1020:1004:c03::/123 Run rules_specific.php
 2603:1020:1004:c04::/123 Run rules_specific.php
 2603:1020:1104::/121 Run rules_specific.php
@@ -8602,11 +8687,13 @@ Origin: DE
 2603:1020:1104:1::300/121 Run rules_specific.php
 2603:1020:1104:1::380/122 Run rules_specific.php
 2603:1020:1104:1::3c0/124 Run rules_specific.php
+2603:1020:1104:1::3e0/123 Run rules_specific.php
 2603:1020:1104:1::400/121 Run rules_specific.php
 2603:1020:1104:1::480/122 Run rules_specific.php
 2603:1020:1104:1::4c0/123 Run rules_specific.php
 2603:1020:1104:1::500/121 Run rules_specific.php
 2603:1020:1104:1::600/120 Run rules_specific.php
+2603:1020:1104:2::/120 Run rules_specific.php
 2603:1020:1104:400::80/121 Run rules_specific.php
 2603:1020:1104:400::100/122 Run rules_specific.php
 2603:1020:1104:400::140/123 Run rules_specific.php
@@ -8648,10 +8735,13 @@ Origin: DE
 2603:1030::/45 Run rules_specific.php
 2603:1030:8::/48 Run rules_specific.php
 2603:1030:9::/56 Run rules_specific.php
-2603:1030:9:100::/59 Run rules_specific.php
-2603:1030:9:120::/60 Run rules_specific.php
-2603:1030:9:130::/61 Run rules_specific.php
-2603:1030:9:138::/62 Run rules_specific.php
+2603:1030:9:100::/58 Run rules_specific.php
+2603:1030:9:140::/59 Run rules_specific.php
+2603:1030:9:160::/60 Run rules_specific.php
+2603:1030:9:170::/61 Run rules_specific.php
+2603:1030:9:178::/62 Run rules_specific.php
+2603:1030:9:17c::/63 Run rules_specific.php
+2603:1030:9:17e::/64 Run rules_specific.php
 2603:1030:a::/47 Run rules_specific.php
 2603:1030:d::/48 Run rules_specific.php
 2603:1030:e::/47 Run rules_specific.php
@@ -8669,7 +8759,7 @@ Origin: DE
 2603:1030:104::6c8/125 Run rules_specific.php
 2603:1030:104::700/121 Run rules_specific.php
 2603:1030:104::780/124 Run rules_specific.php
-2603:1030:104::7b0/124 Run rules_specific.php
+2603:1030:104::7a0/123 Run rules_specific.php
 2603:1030:104:1::/121 Run rules_specific.php
 2603:1030:104:1::140/122 Run rules_specific.php
 2603:1030:104:1::180/121 Run rules_specific.php
@@ -8685,6 +8775,8 @@ Origin: DE
 2603:1030:104:2::/122 Run rules_specific.php
 2603:1030:104:2::60/123 Run rules_specific.php
 2603:1030:104:2::100/120 Run rules_specific.php
+2603:1030:104:2::200/119 Run rules_specific.php
+2603:1030:104:2::400/120 Run rules_specific.php
 2603:1030:104:400::/123 Run rules_specific.php
 2603:1030:104:401::/123 Run rules_specific.php
 2603:1030:104:402::80/121 Run rules_specific.php
@@ -8730,6 +8822,10 @@ Origin: DE
 2603:1030:107:1::280/121 Run rules_specific.php
 2603:1030:107:1::300/121 Run rules_specific.php
 2603:1030:107:1::380/123 Run rules_specific.php
+2603:1030:107:1::400/119 Run rules_specific.php
+2603:1030:107:1::600/120 Run rules_specific.php
+2603:1030:107:2::/120 Run rules_specific.php
+2603:1030:107:2::100/121 Run rules_specific.php
 2603:1030:107:400::/120 Run rules_specific.php
 2603:1030:107:400::100/122 Run rules_specific.php
 2603:1030:107:400::140/123 Run rules_specific.php
@@ -8750,15 +8846,15 @@ Origin: DE
 2603:1030:20e::/48 Run rules_specific.php
 2603:1030:210::/47 Run rules_specific.php
 2603:1030:212::/56 Run rules_specific.php
+2603:1030:302::100/120 Run rules_specific.php
+2603:1030:302::200/119 Run rules_specific.php
 2603:1030:302:402::80/123 Run rules_specific.php
 2603:1030:302:402::c0/122 Run rules_specific.php
 2603:1030:302:402::100/121 Run rules_specific.php
 2603:1030:400::/48 Run rules_specific.php
-2603:1030:401::/56 Run rules_specific.php
-2603:1030:401:100::/57 Run rules_specific.php
-2603:1030:401:180::/59 Run rules_specific.php
-2603:1030:401:1a0::/62 Run rules_specific.php
-2603:1030:401:1a4::/63 Run rules_specific.php
+2603:1030:401::/55 Run rules_specific.php
+2603:1030:401:200::/60 Run rules_specific.php
+2603:1030:401:210::/63 Run rules_specific.php
 2603:1030:402::/47 Run rules_specific.php
 2603:1030:405::/48 Run rules_specific.php
 2603:1030:406::/47 Run rules_specific.php
@@ -8768,61 +8864,12 @@ Origin: DE
 2603:1030:40b::/48 Run rules_specific.php
 2603:1030:40c::/48 Run rules_specific.php
 2603:1030:40d::/60 Run rules_specific.php
+2603:1030:40d:4000::/50 Run rules_specific.php
 2603:1030:40d:8000::/49 Run rules_specific.php
-2603:1030:40e::/56 Run rules_specific.php
-2603:1030:504::/121 Run rules_specific.php
-2603:1030:504::80/122 Run rules_specific.php
-2603:1030:504::100/121 Run rules_specific.php
-2603:1030:504::1a0/125 Run rules_specific.php
-2603:1030:504::1e0/123 Run rules_specific.php
-2603:1030:504::300/120 Run rules_specific.php
-2603:1030:504::400/119 Run rules_specific.php
-2603:1030:504::700/121 Run rules_specific.php
-2603:1030:504:1::/121 Run rules_specific.php
-2603:1030:504:1::140/122 Run rules_specific.php
-2603:1030:504:1::180/121 Run rules_specific.php
-2603:1030:504:1::200/120 Run rules_specific.php
-2603:1030:504:1::300/123 Run rules_specific.php
-2603:1030:504:1::340/122 Run rules_specific.php
-2603:1030:504:1::380/121 Run rules_specific.php
-2603:1030:504:1::480/121 Run rules_specific.php
-2603:1030:504:1::500/122 Run rules_specific.php
-2603:1030:504:1::5a0/123 Run rules_specific.php
-2603:1030:504:1::5c0/122 Run rules_specific.php
-2603:1030:504:1::600/119 Run rules_specific.php
-2603:1030:504:2::/121 Run rules_specific.php
-2603:1030:504:2::80/124 Run rules_specific.php
-2603:1030:504:2::100/120 Run rules_specific.php
-2603:1030:504:2::200/122 Run rules_specific.php
-2603:1030:504:400::/123 Run rules_specific.php
-2603:1030:504:401::/123 Run rules_specific.php
-2603:1030:504:402::80/121 Run rules_specific.php
-2603:1030:504:402::100/121 Run rules_specific.php
-2603:1030:504:402::180/122 Run rules_specific.php
-2603:1030:504:402::1c0/124 Run rules_specific.php
-2603:1030:504:402::1d0/125 Run rules_specific.php
-2603:1030:504:402::1e0/123 Run rules_specific.php
-2603:1030:504:402::200/119 Run rules_specific.php
-2603:1030:504:402::400/122 Run rules_specific.php
-2603:1030:504:402::440/124 Run rules_specific.php
-2603:1030:504:800::/123 Run rules_specific.php
-2603:1030:504:801::/123 Run rules_specific.php
-2603:1030:504:802::80/121 Run rules_specific.php
-2603:1030:504:802::100/120 Run rules_specific.php
-2603:1030:504:802::200/119 Run rules_specific.php
-2603:1030:504:c00::/123 Run rules_specific.php
-2603:1030:504:c01::/123 Run rules_specific.php
-2603:1030:504:c02::80/122 Run rules_specific.php
-2603:1030:504:c02::c0/123 Run rules_specific.php
-2603:1030:504:c02::100/123 Run rules_specific.php
-2603:1030:504:c02::140/122 Run rules_specific.php
-2603:1030:504:c02::180/121 Run rules_specific.php
-2603:1030:504:c02::200/120 Run rules_specific.php
-2603:1030:504:c02::300/121 Run rules_specific.php
-2603:1030:504:c02::380/124 Run rules_specific.php
-2603:1030:504:c02::390/125 Run rules_specific.php
-2603:1030:504:c02::3a0/123 Run rules_specific.php
-2603:1030:504:c02::3c0/122 Run rules_specific.php
+2603:1030:40e::/55 Run rules_specific.php
+2603:1030:500::/47 Run rules_specific.php
+2603:1030:503::/48 Run rules_specific.php
+2603:1030:504::/48 Run rules_specific.php
 2603:1030:600::/46 Run rules_specific.php
 2603:1030:604::/47 Run rules_specific.php
 2603:1030:607::/48 Run rules_specific.php
@@ -8855,12 +8902,14 @@ Origin: DE
 2603:1030:804:d4::/62 Run rules_specific.php
 2603:1030:804:d8::/61 Run rules_specific.php
 2603:1030:804:e0::/59 Run rules_specific.php
-2603:1030:804:100::/60 Run rules_specific.php
-2603:1030:804:110::/61 Run rules_specific.php
-2603:1030:804:118::/62 Run rules_specific.php
-2603:1030:804:11c::/63 Run rules_specific.php
+2603:1030:804:100::/59 Run rules_specific.php
+2603:1030:804:120::/60 Run rules_specific.php
+2603:1030:804:130::/62 Run rules_specific.php
+2603:1030:804:134::/63 Run rules_specific.php
 2603:1030:805::/48 Run rules_specific.php
 2603:1030:806::/47 Run rules_specific.php
+2603:1030:809::/48 Run rules_specific.php
+2603:1030:80a::/56 Run rules_specific.php
 2603:1030:a00::/46 Run rules_specific.php
 2603:1030:a04::/48 Run rules_specific.php
 2603:1030:a06::/47 Run rules_specific.php
@@ -8888,19 +8937,21 @@ Origin: DE
 2603:1036:2400::/45 Run rules_specific.php
 2603:1036:2408::/47 Run rules_specific.php
 2603:1036:240a::/48 Run rules_specific.php
-2603:1036:240d::/48 Run rules_specific.php
+2603:1036:240c::/47 Run rules_specific.php
 2603:1036:240f::/48 Run rules_specific.php
 2603:1036:2500::/64 Run rules_specific.php
 2603:1036:2500:4::/64 Run rules_specific.php
 2603:1036:2500:8::/64 Run rules_specific.php
 2603:1036:2500:10::/64 Run rules_specific.php
 2603:1036:2500:14::/64 Run rules_specific.php
+2603:1036:2500:18::/63 Run rules_specific.php
 2603:1036:2500:1c::/64 Run rules_specific.php
 2603:1036:2500:20::/64 Run rules_specific.php
 2603:1036:2500:24::/64 Run rules_specific.php
 2603:1036:2500:2c::/64 Run rules_specific.php
 2603:1036:2500:30::/64 Run rules_specific.php
 2603:1036:2500:34::/64 Run rules_specific.php
+2603:1036:2500:38::/64 Run rules_specific.php
 2603:1036:3000::/48 Run rules_specific.php
 2603:1037:1::/48 Run rules_specific.php
 2603:1039:205::/48 Run rules_specific.php
@@ -8931,110 +8982,64 @@ Origin: DE
 2603:1040:c00::/46 Run rules_specific.php
 2603:1040:c05::/48 Run rules_specific.php
 2603:1040:c06::/48 Run rules_specific.php
-2603:1040:d04::/121 Run rules_specific.php
-2603:1040:d04::140/122 Run rules_specific.php
-2603:1040:d04::180/121 Run rules_specific.php
-2603:1040:d04::200/120 Run rules_specific.php
-2603:1040:d04::300/123 Run rules_specific.php
-2603:1040:d04::340/122 Run rules_specific.php
-2603:1040:d04::380/121 Run rules_specific.php
-2603:1040:d04::480/121 Run rules_specific.php
-2603:1040:d04::500/122 Run rules_specific.php
-2603:1040:d04::5a0/123 Run rules_specific.php
-2603:1040:d04::5c0/122 Run rules_specific.php
-2603:1040:d04::600/119 Run rules_specific.php
-2603:1040:d04:1::/121 Run rules_specific.php
-2603:1040:d04:1::80/122 Run rules_specific.php
-2603:1040:d04:1::100/121 Run rules_specific.php
-2603:1040:d04:1::1a0/125 Run rules_specific.php
-2603:1040:d04:1::1e0/123 Run rules_specific.php
-2603:1040:d04:1::300/120 Run rules_specific.php
-2603:1040:d04:1::400/119 Run rules_specific.php
-2603:1040:d04:1::700/124 Run rules_specific.php
-2603:1040:d04:1::740/122 Run rules_specific.php
-2603:1040:d04:1::780/121 Run rules_specific.php
-2603:1040:d04:2::/123 Run rules_specific.php
-2603:1040:d04:2::80/121 Run rules_specific.php
-2603:1040:d04:2::100/120 Run rules_specific.php
-2603:1040:d04:2::280/121 Run rules_specific.php
-2603:1040:d04:400::80/121 Run rules_specific.php
-2603:1040:d04:400::100/121 Run rules_specific.php
-2603:1040:d04:400::180/122 Run rules_specific.php
-2603:1040:d04:400::1c0/124 Run rules_specific.php
-2603:1040:d04:400::1d0/125 Run rules_specific.php
-2603:1040:d04:400::1e0/123 Run rules_specific.php
-2603:1040:d04:400::200/119 Run rules_specific.php
-2603:1040:d04:400::400/121 Run rules_specific.php
-2603:1040:d04:400::480/123 Run rules_specific.php
-2603:1040:d04:400::4c0/122 Run rules_specific.php
-2603:1040:d04:400::500/120 Run rules_specific.php
-2603:1040:d04:402::/123 Run rules_specific.php
-2603:1040:d04:403::/123 Run rules_specific.php
-2603:1040:d04:800::80/121 Run rules_specific.php
-2603:1040:d04:800::100/120 Run rules_specific.php
-2603:1040:d04:800::200/122 Run rules_specific.php
-2603:1040:d04:800::240/123 Run rules_specific.php
-2603:1040:d04:800::280/121 Run rules_specific.php
-2603:1040:d04:800::300/121 Run rules_specific.php
-2603:1040:d04:800::380/122 Run rules_specific.php
-2603:1040:d04:800::3c0/125 Run rules_specific.php
-2603:1040:d04:800::3d0/124 Run rules_specific.php
-2603:1040:d04:800::3e0/123 Run rules_specific.php
-2603:1040:d04:802::/123 Run rules_specific.php
-2603:1040:d04:803::/123 Run rules_specific.php
-2603:1040:d04:c02::80/122 Run rules_specific.php
-2603:1040:d04:c02::c0/123 Run rules_specific.php
-2603:1040:d04:c02::200/120 Run rules_specific.php
-2603:1040:d04:c02::300/121 Run rules_specific.php
-2603:1040:d04:c02::380/124 Run rules_specific.php
-2603:1040:d04:c03::/123 Run rules_specific.php
-2603:1040:d04:c04::/123 Run rules_specific.php
+2603:1040:d01::/48 Run rules_specific.php
+2603:1040:d03::/48 Run rules_specific.php
+2603:1040:d04::/48 Run rules_specific.php
 2603:1040:e00::/47 Run rules_specific.php
 2603:1040:e02::/48 Run rules_specific.php
 2603:1040:e04::/47 Run rules_specific.php
 2603:1040:f00::/47 Run rules_specific.php
 2603:1040:f02::/48 Run rules_specific.php
 2603:1040:f04::/47 Run rules_specific.php
-2603:1040:1104::/121 Run rules_specific.php
-2603:1040:1104::140/122 Run rules_specific.php
-2603:1040:1104::180/121 Run rules_specific.php
-2603:1040:1104::200/123 Run rules_specific.php
-2603:1040:1104::240/122 Run rules_specific.php
-2603:1040:1104::280/121 Run rules_specific.php
-2603:1040:1104::300/122 Run rules_specific.php
-2603:1040:1104::500/122 Run rules_specific.php
-2603:1040:1104::5a0/125 Run rules_specific.php
-2603:1040:1104::5e0/123 Run rules_specific.php
-2603:1040:1104::600/119 Run rules_specific.php
-2603:1040:1104:1::/119 Run rules_specific.php
-2603:1040:1104:1::300/120 Run rules_specific.php
-2603:1040:1104:1::400/124 Run rules_specific.php
-2603:1040:1104:1::480/121 Run rules_specific.php
-2603:1040:1104:1::500/122 Run rules_specific.php
-2603:1040:1104:1::580/121 Run rules_specific.php
-2603:1040:1104:1::680/121 Run rules_specific.php
-2603:1040:1104:400::80/121 Run rules_specific.php
-2603:1040:1104:400::100/122 Run rules_specific.php
-2603:1040:1104:400::140/123 Run rules_specific.php
-2603:1040:1104:400::170/124 Run rules_specific.php
-2603:1040:1104:400::180/122 Run rules_specific.php
-2603:1040:1104:400::1c0/123 Run rules_specific.php
-2603:1040:1104:400::200/121 Run rules_specific.php
-2603:1040:1104:400::280/122 Run rules_specific.php
-2603:1040:1104:400::2c0/124 Run rules_specific.php
-2603:1040:1104:400::2d0/125 Run rules_specific.php
-2603:1040:1104:400::2e0/123 Run rules_specific.php
-2603:1040:1104:400::300/120 Run rules_specific.php
-2603:1040:1104:400::440/122 Run rules_specific.php
-2603:1040:1104:400::480/122 Run rules_specific.php
-2603:1040:1104:400::500/122 Run rules_specific.php
-2603:1040:1104:402::/123 Run rules_specific.php
+2603:1040:1002::40/122 Run rules_specific.php
+2603:1040:1002::80/121 Run rules_specific.php
+2603:1040:1002::100/120 Run rules_specific.php
+2603:1040:1002::380/121 Run rules_specific.php
+2603:1040:1002::400/123 Run rules_specific.php
+2603:1040:1002::440/122 Run rules_specific.php
+2603:1040:1002::480/121 Run rules_specific.php
+2603:1040:1002::500/122 Run rules_specific.php
+2603:1040:1002::740/123 Run rules_specific.php
+2603:1040:1002::780/125 Run rules_specific.php
+2603:1040:1002::7c0/123 Run rules_specific.php
+2603:1040:1002::7e0/124 Run rules_specific.php
+2603:1040:1002:1::/121 Run rules_specific.php
+2603:1040:1002:1::80/124 Run rules_specific.php
+2603:1040:1002:1::100/121 Run rules_specific.php
+2603:1040:1002:1::180/123 Run rules_specific.php
+2603:1040:1002:1::1c0/122 Run rules_specific.php
+2603:1040:1002:1::200/119 Run rules_specific.php
+2603:1040:1002:1::400/119 Run rules_specific.php
+2603:1040:1002:1::600/120 Run rules_specific.php
+2603:1040:1002:2::20/123 Run rules_specific.php
+2603:1040:1002:2::40/122 Run rules_specific.php
+2603:1040:1002:2::80/122 Run rules_specific.php
+2603:1040:1002:2::c0/123 Run rules_specific.php
+2603:1040:1002:2::100/120 Run rules_specific.php
+2603:1040:1002:2::200/120 Run rules_specific.php
+2603:1040:1002:400::/122 Run rules_specific.php
+2603:1040:1002:400::40/124 Run rules_specific.php
+2603:1040:1002:400::58/125 Run rules_specific.php
+2603:1040:1002:400::80/121 Run rules_specific.php
+2603:1040:1002:400::100/120 Run rules_specific.php
+2603:1040:1002:400::200/123 Run rules_specific.php
+2603:1040:1002:400::230/124 Run rules_specific.php
+2603:1040:1002:400::240/123 Run rules_specific.php
+2603:1040:1002:400::280/121 Run rules_specific.php
+2603:1040:1002:400::380/122 Run rules_specific.php
+2603:1040:1002:400::3c0/124 Run rules_specific.php
+2603:1040:1002:400::3e0/123 Run rules_specific.php
+2603:1040:1101::/48 Run rules_specific.php
+2603:1040:1103::/48 Run rules_specific.php
+2603:1040:1104::/48 Run rules_specific.php
 2603:1046:1400::/45 Run rules_specific.php
 2603:1046:1408::/48 Run rules_specific.php
 2603:1046:140a::/47 Run rules_specific.php
 2603:1046:1500::/64 Run rules_specific.php
 2603:1046:1500:4::/64 Run rules_specific.php
 2603:1046:1500:8::/64 Run rules_specific.php
+2603:1046:1500:c::/64 Run rules_specific.php
+2603:1046:1500:10::/64 Run rules_specific.php
 2603:1046:1500:14::/64 Run rules_specific.php
 2603:1046:1500:18::/64 Run rules_specific.php
 2603:1046:1500:1c::/64 Run rules_specific.php
@@ -9050,16 +9055,17 @@ Origin: DE
 2603:1050:5::/48 Run rules_specific.php
 2603:1050:6::/48 Run rules_specific.php
 2603:1050:100::/40 Run rules_specific.php
-2603:1050:211::/48 Run rules_specific.php
-2603:1050:300::/40 Run rules_specific.php
 2603:1050:400::/48 Run rules_specific.php
 2603:1050:402::/47 Run rules_specific.php
-2603:1056:1400::/46 Run rules_specific.php
+2603:1056:1400::/48 Run rules_specific.php
+2603:1056:1402::/47 Run rules_specific.php
 2603:1056:1500::/64 Run rules_specific.php
 2603:1056:1500:4::/64 Run rules_specific.php
 2603:1056:2000::/48 Run rules_specific.php
 2603:1057:2::/48 Run rules_specific.php
+2603:1061:1000::/47 Run rules_specific.php
 2603:1061:1002::/48 Run rules_specific.php
+2603:1062:2::/57 Run rules_specific.php
 2620:1ec:4::/46 Run rules_specific.php
 2620:1ec:a::/47 Run rules_specific.php
 2620:1ec:c::/47 Run rules_specific.php
@@ -9073,7 +9079,7 @@ Origin: DE
 2620:1ec:39::/48 Run rules_specific.php
 2620:1ec:3e::/47 Run rules_specific.php
 2620:1ec:40::/45 Run rules_specific.php
-2620:1ec:48::/47 Run rules_specific.php
+2620:1ec:48::/46 Run rules_specific.php
 2620:1ec:8f0::/44 Run rules_specific.php
 2620:1ec:900::/44 Run rules_specific.php
 2620:1ec:a92::/48 Run rules_specific.php
@@ -9089,6 +9095,7 @@ Origin: DE
 2a01:111:f100:5000::/52 Run rules_specific.php
 2a01:111:f100:6000::/64 Run rules_specific.php
 2a01:111:f100:7000::6fdd:5343/128 Run rules_specific.php
+2a01:111:f100:7000::6fdd:5431/128 Run rules_specific.php
 2a01:111:f100:9001::1761:91e4/128 Run rules_specific.php
 2a01:111:f100:9001::1761:9323/128 Run rules_specific.php
 2a01:111:f100:9001::1761:958a/128 Run rules_specific.php

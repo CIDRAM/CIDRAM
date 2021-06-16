@@ -1,8 +1,8 @@
 # IPv4 signatures file (CIDRs for proxies, VPNs and other miscellaneous unwanted services).
-# Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv4_other.dat
+# Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv4_other.dat
 
-# Version: 2021.152.126
-# Last modified: 2021.06.02
+# Version: 2021.166.298
+# Last modified: 2021.06.16
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -1261,8 +1261,8 @@ Tag: Applied Privacy
 # Primarily provides anonymous proxy services. Under investigation for fraud.
 # Spam, hacking attempts, vulnerability probes, and other kinds of nefarious
 # and unwanted activity originating from their network. Regarded as high risk.
-# Stop Forum Spam (SFS) listings: 60 (AS50495), 91 (AS62874).
-# Updated: 2020.12.25
+# Stop Forum Spam (SFS) listings: 8 (AS22400), 5 (AS62874).
+# Updated: 2021.06.16
 
 77.83.232.0/22 Deny Proxy
 83.136.221.0/24 Deny Proxy
@@ -1274,8 +1274,6 @@ Tag: Applied Privacy
 194.39.32.0/22 Deny Proxy
 195.234.99.0/24 Deny Proxy
 Origin: DE
-212.102.124.0/24 Deny Proxy
-Origin: GB
 204.225.218.0/24 Deny Proxy
 Origin: LT
 194.14.219.0/24 Deny Proxy
@@ -1302,7 +1300,7 @@ Origin: SE
 104.200.76.0/22 Deny Proxy
 104.232.196.0/22 Deny Proxy
 104.232.208.0/21 Deny Proxy
-104.238.32.0/21 Deny Proxy
+104.238.33.0/24 Deny Proxy
 104.238.40.0/24 Deny Proxy
 104.238.52.0/22 Deny Proxy
 142.147.128.0/17 Deny Proxy
@@ -1311,6 +1309,7 @@ Origin: SE
 167.160.48.0/21 Deny Proxy
 167.160.60.0/24 Deny Proxy
 Origin: US
+Profile: Commercial;Tor endpoints here
 Tag: Web2Objects LLC
 
 

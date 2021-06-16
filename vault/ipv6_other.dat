@@ -1,8 +1,8 @@
 # IPv6 signatures file (CIDRs for proxies, VPNs and other miscellaneous unwanted services).
-# Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_other.dat
+# Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6_other.dat
 
-# Version: 2021.147.186
-# Last modified: 2021.05.28
+# Version: 2021.166.298
+# Last modified: 2021.06.16
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -109,13 +109,14 @@ Tag: Applied Privacy
 # Primarily provides anonymous proxy services. Under investigation for fraud.
 # Spam, hacking attempts, vulnerability probes, and other kinds of nefarious
 # and unwanted activity originating from their network. Regarded as high risk.
-# Stop Forum Spam (SFS) listings: 60 (AS50495), 91 (AS62874).
-# Updated: 2020.12.25
+# Stop Forum Spam (SFS) listings: 8 (AS22400), 5 (AS62874).
+# Updated: 2021.06.16
 
 2001:678:e70::/48 Deny Proxy
 2a00:f826:11::/48 Deny Proxy
 2a06:ef40::/32 Deny Proxy
-2a0c:4440::/29 Deny Proxy
+2a0c:4444::/48 Deny Proxy
+2a0c:4445::/48 Deny Proxy
 2a0d:2080::/29 Deny Proxy
 Origin: DE
 2a07:3400::/32 Deny Proxy
@@ -129,6 +130,7 @@ Origin: IN
 2602:ffd9:400::/40 Deny Proxy
 2a00:dd80:fb81::/48 Deny Proxy
 Origin: US
+Profile: Commercial;Tor endpoints here
 Tag: Web2Objects LLC
 
 

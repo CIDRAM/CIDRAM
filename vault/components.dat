@@ -243,7 +243,7 @@ CIDRAM:
 IPv4:
  Extended Description: Default IPv4 signatures normally included with the main package. Blocks unwanted cloud services and non-human endpoints.
  False Positive Risk: Low
- Version: 2021.158.514
+ Version: 2021.166.298
  Minimum Required: 1.0.0
  Dependencies:
   CIDRAM Core: >=1
@@ -256,13 +256,13 @@ IPv4:
   To:
    - ipv4.dat
   Checksum:
-   - 0f399e4154d843813cc111c40446d5bda1ad817fea5b99c0aeca9ab68e7e32e0:955404
+   - eaf994ad24936ed1feb9e0544b99fc9dae8901c3327ffc04c564887cbcc1e04c:965481
  Used with: ipv4
  Reannotate: components.dat
 IPv4-Bogons:
  Extended Description: Default IPv4 signatures normally included with the main package. Blocks bogon/martian CIDRs.
  False Positive Risk: Low
- Version: 2021.147.186
+ Version: 2021.166.298
  Minimum Required: 1.0.0
  Dependencies:
   CIDRAM Core: >=1
@@ -274,13 +274,13 @@ IPv4-Bogons:
   To:
    - ipv4_bogons.dat
   Checksum:
-   - 6b3ecfb6728fafc2b7253dde83b45ea2544f4de302c67085851627d62fc8481b:745
+   - 571b6bc1a2d626fd7c3af56faf0514bf2a594f6717167a98b98e8540f3ed79a1:741
  Used with: ipv4
  Reannotate: components.dat
 IPv4-ISPs:
  Extended Description: Default IPv4 signatures normally included with the main package. Blocks dangerous and spammy ISPs.
  False Positive Risk: Medium
- Version: 2021.158.514
+ Version: 2021.166.298
  Minimum Required: 1.0.0
  Dependencies:
   CIDRAM Core: >=1
@@ -293,12 +293,12 @@ IPv4-ISPs:
   To:
    - ipv4_isps.dat
   Checksum:
-   - b57228f872a50c3a682492d0c97b28f321614eaf7b28a6d91d10342e64c41997:481766
+   - 5e629a7760b1488271c9eaa108ac849826fd74ef419541979830d09b2fa12446:477466
  Used with: ipv4
  Reannotate: components.dat
 IPv4-Nonblocking:
  Extended Description: Default IPv4 non-blocking signatures file.
- Version: 2021.95.583
+ Version: 2021.166.298
  Minimum Required: 1.0.0
  Dependencies:
   CIDRAM Core: >=1
@@ -310,13 +310,13 @@ IPv4-Nonblocking:
   To:
    - ipv4_nonblocking.dat
   Checksum:
-   - ef3b4782b6d3a85c84cbd13cc867008051e51cacdcbdf2c1756d7cf9e87a0d3f:644
+   - ed7590e4def93d9de293410f8827613a832f1efbb3f623350de995a8c858e0ff:641
  Used with: ipv4
  Reannotate: components.dat
 IPv4-Other:
  Extended Description: Default IPv4 signatures normally included with the main package. Blocks CIDRs for proxies, VPNs, and other miscellaneous unwanted services.
  False Positive Risk: Medium
- Version: 2021.152.126
+ Version: 2021.166.298
  Minimum Required: 1.0.0
  Dependencies:
   CIDRAM Core: >=1
@@ -328,13 +328,13 @@ IPv4-Other:
   To:
    - ipv4_other.dat
   Checksum:
-   - 9a84a6e1a9640abbfdc282f5a45ad086910109b112686b9f876a267aa7d83a05:35671
+   - 34ba96a1b5cfe38a92d9a1d54f46f7b011dc03d47dc24786d986eeabfa88c459:35665
  Used with: ipv4
  Reannotate: components.dat
 IPv6:
  Extended Description: Default IPv6 signatures normally included with the main package. Blocks unwanted cloud services and non-human endpoints.
  False Positive Risk: Low
- Version: 2021.158.514
+ Version: 2021.166.298
  Minimum Required: 1.0.0
  Dependencies:
   CIDRAM Core: >=1
@@ -347,13 +347,13 @@ IPv6:
   To:
    - ipv6.dat
   Checksum:
-   - 2f22dcad947e49332c2298099bfa79185d116a21680a33195cec61455c2d3db5:256416
+   - 2d02bc5ca65497ba3d46a46b010e1aa953e77514fe08fcee4bc8dde1db0fdef1:255825
  Used with: ipv6
  Reannotate: components.dat
 IPv6-Bogons:
  Extended Description: Default IPv6 signatures normally included with the main package. Blocks bogon/martian CIDRs.
  False Positive Risk: Low
- Version: 2021.147.186
+ Version: 2021.166.298
  Minimum Required: 1.0.0
  Dependencies:
   CIDRAM Core: >=1
@@ -365,13 +365,13 @@ IPv6-Bogons:
   To:
    - ipv6_bogons.dat
   Checksum:
-   - f462aaf3673be5eb87eaeea21305347f5967b155c0ecbdb3395050dbd8876879:958
+   - d032ee14e20c4217721b277b07d6f3bceb29be4332396b2615804977f3c55fdd:954
  Used with: ipv6
  Reannotate: components.dat
 IPv6-ISPs:
  Extended Description: Default IPv6 signatures normally included with the main package. Blocks dangerous and spammy ISPs.
  False Positive Risk: Medium
- Version: 2021.155.632
+ Version: 2021.166.298
  Minimum Required: 1.0.0
  Dependencies:
   CIDRAM Core: >=1
@@ -384,12 +384,12 @@ IPv6-ISPs:
   To:
    - ipv6_isps.dat
   Checksum:
-   - 877263ceee28e193f474b9b5f956ee7fcbf311a328c269cd45818469e97a663a:83017
+   - 5ace07ea1107cd150df3e2d3e92251c4eb9fa0cf572417531d2b6b5a92e33cc1:80342
  Used with: ipv6
  Reannotate: components.dat
 IPv6-Nonblocking:
  Extended Description: Default IPv6 non-blocking signatures file.
- Version: 2021.95.583
+ Version: 2021.166.298
  Minimum Required: 1.0.0
  Dependencies:
   CIDRAM Core: >=1
@@ -401,13 +401,13 @@ IPv6-Nonblocking:
   To:
    - ipv6_nonblocking.dat
   Checksum:
-   - 12ba967d8c8fe9a60e8dadc4f2f18ccf43a1513a5f6ede647f8bf0a30a865927:622
+   - 2cf0afbe9d80a38e273657841f4185034c7b2044a94533e6a2ee9b1e1a4e3b36:619
  Used with: ipv6
  Reannotate: components.dat
 IPv6-Other:
  Extended Description: Default IPv6 signatures normally included with the main package. Blocks CIDRs for proxies, VPNs, and other miscellaneous unwanted services.
  False Positive Risk: Low
- Version: 2021.147.186
+ Version: 2021.166.298
  Minimum Required: 1.0.0
  Dependencies:
   CIDRAM Core: >=1
@@ -419,7 +419,7 @@ IPv6-Other:
   To:
    - ipv6_other.dat
   Checksum:
-   - 4a9668815f4abb6a1204e6c0fdff88e53830a27ddae7a43dba88ec06f617d931:4859
+   - a8c14fab0e38948ce46b7a81b71277db9d60cd5ffdcadd9ad2f2d10bf3cb8f44:4918
  Used with: ipv6
  Reannotate: components.dat
 Bypasses:

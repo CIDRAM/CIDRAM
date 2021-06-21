@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6_isps.dat
 
-# Version: 2021.166.298
-# Last modified: 2021.06.16
+# Version: 2021.170.700
+# Last modified: 2021.06.20
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -266,13 +266,18 @@ Tag: STARNET S.R.L
 
 
 # ASN 17747 ("SITI NETWORKS LIMITED").
-# Stop Forum Spam (SFS) listings: 4,755.
-# Updated: 2020.05.26 / Checked: 2020.11.25
+# Indian broadband provider. Spam, brute-force attacks, hacking, port scans,
+# malware, and other unwanted traffic detected from here. Homepage unavailable
+# for any further information.
+# %Listed, abuseat.org (CBL-Listed): 10.06%.
+# Stop Forum Spam (SFS) listings: 4,025.
+# Updated: 2020.05.26 / Checked: 2021.06.20
 
 2402:ea80::/48 Deny Spam
 2406:3c80::/46 Deny Spam
 2406:3c80:5::/48 Deny Spam
 Origin: IN
+Profile: Domestic ISP
 Tag: SITI NETWORKS LTD
 
 
@@ -389,12 +394,15 @@ Tag: Kyivstar
 
 # ASN 13188 ("CONTENT DELIVERY NETWORK LTD", A.K.A. "TRIOLAN, UA").
 # Significant source of spam, hack attempts, scraping, etc.
-# Stop Forum Spam (SFS) listings: 21,655.
-# Updated: 2019.11.10 / Checked: 2020.11.23
+# Stop Forum Spam (SFS) listings: 30,919.
+# Updated: 2021.06.18
 
-2a03:7380::/38 Deny Spam
+2a03:7380::/39 Deny Spam
+2a03:7380:200::/42 Deny Spam
+2a03:7380:280::/42 Deny Spam
+2a03:7380:300::/40 Deny Spam
 2a03:7380:400::/39 Deny Spam
-2a03:7380:600::/41 Deny Spam
+2a03:7380:640::/42 Deny Spam
 2a03:7380:680::/42 Deny Spam
 2a03:7380:1e00::/42 Deny Spam
 2a03:7380:1e80::/42 Deny Spam
@@ -404,7 +412,9 @@ Tag: Kyivstar
 2a03:7380:2400::/40 Deny Spam
 2a03:7380:2500::/42 Deny Spam
 2a03:7380:2fc0::/42 Deny Spam
-2a03:7380:3000::/39 Deny Spam
+2a03:7380:3000::/40 Deny Spam
+2a03:7380:3140::/42 Deny Spam
+2a03:7380:3180::/41 Deny Spam
 2a03:7380:3200::/42 Deny Spam
 2a03:7380:3800::/42 Deny Spam
 2a03:7380:4000::/41 Deny Spam
@@ -418,6 +428,7 @@ Tag: Kyivstar
 2a03:7380:6400::/42 Deny Spam
 2a03:7380:7380::/42 Deny Spam
 Origin: UA
+Profile: Infrastructure/Transit
 Tag: AS13188-CDN-LTD
 
 
@@ -1407,15 +1418,16 @@ Tag: Bharti Airtel
 
 
 # ASN 23944 ("SKYBroadband SKYCable Corporation").
-# ( CIDRs that we haven't yet seen any problems from have been omitted. I hope to eventually remove this section entirely. )
-# Stop Forum Spam (SFS) listings: 209.
-# Updated: 2020.05.26 / Checked: 2020.11.25
+# Phillipines domestic ISP. Spam, phishing, port scans, hacking, and
+# brute-force attacks detected from here. Listing just the affected
+# ranges/addresses only.
+# %Listed, abuseat.org (CBL-Listed): 1.59%.
+# Stop Forum Spam (SFS) listings: 163.
+# Updated: 2021.06.20
 
-2404:3c00:482f:fcd0::/64 Deny Spam
-2404:3c00:503f:1700::/64 Deny Spam
-2404:3c00:a0af:ffb0::/64 Deny Spam
+2404:3c00:483f:b910::/64 Deny Spam
 Origin: PH
-Profile: Domestic ISP;Temporary
+Profile: Domestic ISP
 Tag: SKYBROADBAND
 
 
@@ -2349,6 +2361,22 @@ Tag: TRK Cable TV LLC
 Origin: UA
 Profile: Domestic ISP;Multiplay
 Tag: LLC Renome-Service
+
+
+# ASN 26599 ("Telefonica Brasil").
+# Brazilian domestic ISP and an occasional source of spam, SSH and brute-force
+# attacks. Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 337.
+# Updated: 2021.06.18
+
+2804:18:875:4adf::/64 Deny Spam
+2804:18:1815:b94a::/64 Deny Spam
+2804:18:4801:e9b::/64 Deny Spam
+2804:18:4848:6e9f::/64 Deny Spam
+2804:18:5026:d58d::/64 Deny Spam
+Origin: BR
+Profile: Domestic ISP
+Tag: Telefonica Brasil
 
 
 # ASN 13030 ("Init7"). Swiss multiplay network (domestic ISP, webhosting, etc).

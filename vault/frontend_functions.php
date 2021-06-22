@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2021.06.08).
+ * This file: Front-end functions file (last modified: 2021.06.22).
  */
 
 /**
@@ -1190,12 +1190,13 @@ $CIDRAM['Tally'] = function ($In, $BlockLink, array $Exclusions = []) use (&$CID
     if (empty($In)) {
         return '';
     }
+    $Doubles = strpos($In, "\n\n") !== false;
     $Data = [];
-    $PosA = $PosB = 0;
+    $PosA = 0;
     while (($PosB = strpos($In, "\n", $PosA)) !== false) {
         $Line = substr($In, $PosA, $PosB - $PosA);
         $PosA = $PosB + 1;
-        if (empty($Line)) {
+        if (strlen($Line) === 0) {
             continue;
         }
         foreach ($Exclusions as $Exclusion) {
@@ -1205,18 +1206,26 @@ $CIDRAM['Tally'] = function ($In, $BlockLink, array $Exclusions = []) use (&$CID
             }
         }
         $Separator = (strpos($Line, '：') !== false) ? '：' : ': ';
-        if (($SeparatorPos = strpos($Line, $Separator)) === false) {
-            continue;
+        $FieldsCount = substr_count($Line, ' - ') + 1;
+        if ($Doubles === false && substr_count($Line, $Separator) === $FieldsCount && $FieldsCount > 1) {
+            $Fields = explode(' - ', $Line);
+        } else {
+            $Fields = [$Line];
         }
-        $Field = trim(substr($Line, 0, $SeparatorPos));
-        $Entry = trim(substr($Line, $SeparatorPos + strlen($Separator)));
-        if (!isset($Data[$Field])) {
-            $Data[$Field] = [];
+        foreach ($Fields as $FieldRaw) {
+            if (($SeparatorPos = strpos($FieldRaw, $Separator)) === false) {
+                continue;
+            }
+            $Field = trim(substr($FieldRaw, 0, $SeparatorPos));
+            $Entry = trim(substr($FieldRaw, $SeparatorPos + strlen($Separator)));
+            if (!isset($Data[$Field])) {
+                $Data[$Field] = [];
+            }
+            if (!isset($Data[$Field][$Entry])) {
+                $Data[$Field][$Entry] = 0;
+            }
+            $Data[$Field][$Entry]++;
         }
-        if (!isset($Data[$Field][$Entry])) {
-            $Data[$Field][$Entry] = 0;
-        }
-        $Data[$Field][$Entry]++;
     }
     $Data['Origin'] = [];
     for ($A = 65; $A < 91; $A++) {

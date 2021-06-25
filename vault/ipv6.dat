@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6.dat
 
-# Version: 2021.170.700
-# Last modified: 2021.06.21
+# Version: 2021.175.509
+# Last modified: 2021.06.25
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -1180,11 +1180,12 @@ Tag: SingleHop, Inc
 
 
 # ASN 29550 ("eUKhost LTD").
-# Stop Forum Spam (SFS) listings: 54.
-# Updated: 2017.03.19 / Checked: 2020.10.23
+# Stop Forum Spam (SFS) listings: 22.
+# Updated: 2017.03.19 / Checked: 2021.06.25
 
 2a02:af8::/32 Deny Cloud
 Origin: GB
+Profile: Infrastructure/Transit
 Tag: eUKhost LTD
 
 
@@ -3041,8 +3042,8 @@ Tag: InMotion Hosting, Inc
 
 
 # ASN 53755 ("Input Output Flood LLC").
-# Stop Forum Spam (SFS) listings: 671.
-# Updated: 2020.08.11 / Checked: 2020.10.21
+# Stop Forum Spam (SFS) listings: 1,657.
+# Updated: 2020.08.11 / Checked: 2021.06.25
 
 2a0d:da07::/32 Deny Cloud
 Origin: GB
@@ -4621,10 +4622,11 @@ Tag: CyrusOne LLC
 
 # Announcing as: "WEBSITEWELCOME".
 # Various ASNs; Sourced from HE.
-# Updated: 2017.09.25 / Checked: 2020.10.21
+# Updated: 2017.09.25 / Checked: 2021.06.25
 
 2605:f300:ffff::/48 Deny Cloud
 Origin: US
+Profile: Webhosting
 Tag: WEBSITEWELCOME.COM
 
 
@@ -8446,6 +8448,25 @@ Origin: DE
 Origin: US
 Profile: Commercial;Tor endpoints here;Webhosting
 Tag: combahton GmbH
+
+
+# ASNs 11572, 39239, 50389, 57872, 60558, 207134, 210266 ("PHOENIX NAP, LLC").
+# Dedicated server/VPN/VPS provider. Also serves proxies.
+# Updated: 2021.06.24
+
+2a01:b960:2307::/48 Deny Cloud
+2a01:b960:230b::/48 Deny Cloud
+Origin: NL
+2607:6003:2305::/48 Deny Cloud
+2607:ff00:500::/40 Deny Cloud
+2a00:8860:100::/40 Deny Cloud
+2a00:8860:300::/48 Deny Cloud
+2a00:8860:500::/40 Deny Cloud
+2a00:8860:700::/40 Deny Cloud
+2a00:8860:b00::/40 Deny Cloud
+Origin: US
+Profile: Commercial;Dedicated;Infrastructure/Transit;Webhosting
+Tag: PHOENIX NAP, LLC
 
 
 # ---

@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6_isps.dat
 
-# Version: 2021.170.700
-# Last modified: 2021.06.20
+# Version: 2021.175.509
+# Last modified: 2021.06.25
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -454,27 +454,6 @@ Tag: Fregat
 Origin: MD
 Profile: Frequent changes;Tor endpoints here
 Tag: ALEXHOST SRL
-
-
-# ASNs 11572, 29656, 39239, 50389, 57872, 60558, 207134, 210266 ("PHOENIX NAP, LLC").
-# VPN/VPS/Proxy services + dedicated servers/cloud provider; Multiplay; A
-# number of human endpoints, but not an actual domestic ISP; requests likely
-# not immediately traceable to any specific individuals. A long history of
-# unwanted traffic from their network.
-# Updated: 2020.12.13
-
-2a00:8860:100::/40 Deny Generic
-2a00:8860:700::/40 Deny Generic
-2a00:8860:b00::/40 Deny Generic
-Origin: EU
-2a01:b960:2307::/48 Deny Generic
-2a01:b960:230b::/48 Deny Generic
-Origin: NL
-2607:6003:2305::/48 Deny Generic
-2607:ff00:500::/40 Deny Generic
-Origin: US
-Profile: Domestic ISP;Multiplay
-Tag: PHOENIX NAP, LLC
 
 
 # ASNs 24955, 41704, 60095 ("Orenburgskaya Gorodskaya Set, ZAO").
@@ -1550,12 +1529,14 @@ Tag: Magticom Ltd
 
 
 # ASN 7642 ("Dhivehi Raajjeyge Gulhun Plc (Dhiraagu)").
-# ISP from the Maldives with human endpoints, but also a source of spam.
-# Stop Forum Spam (SFS) listings: 103.
-# Updated: 2019.09.03 / Checked: 2020.10.30
+# Maldives domestic ISP. Spam, DDoS, brute-force, SSH, and webapp attacks
+# detected from here.
+# Stop Forum Spam (SFS) listings: 78.
+# Updated: 2019.09.03 / Modified: 2021.06.25
 
-2406:e400::/32 Deny Spam
+2406:e400::/32 Deny Malware
 Origin: MV
+Profile: Domestic ISP
 Tag: Dhivehi Raajjeyge
 
 
@@ -2528,23 +2509,13 @@ Tag: Vodafone Deutschland GmbH
 
 
 # ASNs 3215, 5511 ("Orange S.A").
-# French domestic ISP. Listing just the affected ranges/addresses, plus all
-# NL+SG+US ranges (cloud).
-# Stop Forum Spam (SFS) listings: 1,117 (AS3215), 232 (AS5511).
-# Updated: 2021.03.31
+# French domestic ISP. Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 1,868 (AS3215), 239 (AS5511).
+# Updated: 2021.06.25
 
-2a01:cb00:f35:fc00::/64 Deny Spam
-2a01:cb05:845d:c400::/64 Deny Spam
-2a01:cb08:8a:3500::/64 Deny Spam
-2a01:cb08:894b:ac00::/64 Deny Spam
 2a01:cb08:8ae5:ee00::/64 Deny Spam
-2a01:cb10:8573:4d00::/64 Deny Spam
-2a01:cb10:8863:5400::/64 Deny Spam
-2a01:cb11:ca:2c00::/64 Deny Spam
-2a01:cb14:e24:b600::/64 Deny Spam
-2a01:cb1d:41d:ea00::/64 Deny Spam
 Origin: FR
-Profile: Domestic ISP;Infrastructure/Transit;Multiplay
+Profile: Domestic ISP;Infrastructure/Transit
 Tag: Orange S.A
 
 

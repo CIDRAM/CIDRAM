@@ -1,8 +1,8 @@
 # IPv4 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv4.dat
 
-# Version: 2021.170.700
-# Last modified: 2021.06.21
+# Version: 2021.175.509
+# Last modified: 2021.06.25
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -5726,8 +5726,8 @@ Tag: SingleHop, Inc
 
 
 # ASN 29550 ("eUKhost LTD").
-# Stop Forum Spam (SFS) listings: 54.
-# Updated: 2020.04.27 / Checked: 2020.10.23
+# Stop Forum Spam (SFS) listings: 22.
+# Updated: 2021.06.25
 
 31.193.128.0/20 Deny Cloud
 85.234.128.0/19 Deny Cloud
@@ -5746,11 +5746,13 @@ Tag: SingleHop, Inc
 109.203.122.0/24 Deny Cloud
 151.236.32.0/19 Deny Cloud
 158.255.42.0/23 Deny Cloud
-185.17.252.0/22 Deny Cloud
 213.175.192.0/19 Deny Cloud
 213.229.64.0/18 Deny Cloud
 217.112.80.0/20 Deny Cloud
 Origin: GB
+185.17.252.0/22 Deny Cloud
+Origin: NZ
+Profile: Infrastructure/Transit
 Tag: eUKhost LTD
 
 
@@ -12903,9 +12905,11 @@ Tag: InMotion Hosting, Inc
 
 
 # ASN 53755 ("Input Output Flood LLC").
-# Stop Forum Spam (SFS) listings: 671.
-# Updated: 2020.08.11 / Checked: 2020.10.21
+# Stop Forum Spam (SFS) listings: 1,657.
+# Updated: 2021.06.25
 
+193.109.221.0/24 Deny Cloud
+Origin: HK
 45.93.83.0/24 Deny Cloud
 91.198.230.0/24 Deny Cloud
 91.199.3.0/24 Deny Cloud
@@ -12916,7 +12920,6 @@ Tag: InMotion Hosting, Inc
 188.119.114.0/23 Deny Cloud
 193.33.66.0/24 Deny Cloud
 193.37.133.0/24 Deny Cloud
-193.109.221.0/24 Deny Cloud
 193.135.13.0/24 Deny Cloud
 193.176.237.0/24 Deny Cloud
 193.193.164.0/24 Deny Cloud
@@ -20860,7 +20863,7 @@ Tag: CyrusOne LLC
 
 # Announcing as: "WEBSITEWELCOME".
 # Various ASNs; Sourced from HE.
-# Updated: 2017.09.25 / Checked: 2020.10.21
+# Updated: 2017.09.25 / Checked: 2021.06.25
 
 50.116.64.0/18 Deny Cloud
 96.125.160.0/20 Deny Cloud
@@ -20878,6 +20881,7 @@ Tag: CyrusOne LLC
 198.154.192.0/18 Deny Cloud
 216.172.160.0/19 Deny Cloud
 Origin: US
+Profile: Webhosting
 Tag: WEBSITEWELCOME.COM
 
 
@@ -33492,6 +33496,64 @@ Tag: combahton GmbH
 Origin: HK
 Profile: Commercial;Dedicated;Infrastructure/Transit;Webhosting
 Tag: Simcentric Solutions
+
+
+# ASNs 11572, 39239, 50389, 57872, 60558, 207134, 210266 ("PHOENIX NAP, LLC").
+# Dedicated server/VPN/VPS provider. Also serves proxies.
+# Updated: 2021.06.24
+
+45.85.108.0/22 Deny Cloud
+185.198.36.0/23 Deny Cloud
+Origin: AE
+194.15.38.0/24 Deny Cloud
+Origin: DE
+46.37.115.0/24 Deny Cloud
+Origin: GB
+185.56.136.0/22 Deny Cloud
+185.62.36.0/22 Deny Cloud
+Origin: MT
+185.52.52.0/22 Deny Cloud
+Origin: NL
+23.235.232.0/21 Deny Cloud
+31.207.0.0/23 Deny Cloud
+37.140.232.0/21 Deny Cloud
+45.59.24.0/24 Deny Cloud
+45.62.35.0/24 Deny Cloud
+63.214.166.0/23 Deny Cloud
+64.38.249.0/24 Deny Cloud
+64.38.250.0/24 Deny Cloud
+66.133.72.0/23 Deny Cloud
+104.193.181.0/24 Deny Cloud
+104.222.216.0/22 Deny Cloud
+104.244.52.0/24 Deny Cloud
+131.153.16.0/20 Deny Cloud
+131.153.40.0/23 Deny Cloud
+131.153.65.0/24 Deny Cloud
+131.153.66.0/23 Deny Cloud
+131.153.73.0/24 Deny Cloud
+131.153.82.0/24 Deny Cloud
+131.153.86.0/24 Deny Cloud
+131.153.88.0/23 Deny Cloud
+131.153.90.0/24 Deny Cloud
+131.153.96.0/23 Deny Cloud
+131.153.98.0/24 Deny Cloud
+131.153.105.0/24 Deny Cloud
+131.153.109.0/24 Deny Cloud
+131.153.132.0/22 Deny Cloud
+131.153.152.0/23 Deny Cloud
+131.153.158.0/24 Deny Cloud
+158.115.252.0/22 Deny Cloud
+172.98.169.0/24 Deny Cloud
+172.98.179.0/24 Deny Cloud
+172.102.141.0/24 Deny Cloud
+185.28.188.0/22 Deny Cloud
+185.219.161.0/24 Deny Cloud
+192.171.243.0/24 Deny Cloud
+193.46.200.0/24 Deny Cloud
+206.223.252.0/24 Deny Cloud
+Origin: US
+Profile: Commercial;Dedicated;Infrastructure/Transit;Webhosting
+Tag: PHOENIX NAP, LLC
 
 
 # ---

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2021.06.22).
+ * This file: Front-end functions file (last modified: 2021.06.25).
  */
 
 /**
@@ -2339,6 +2339,7 @@ $CIDRAM['SectionsHandler'] = function (array $Files) use (&$CIDRAM) {
     $Out = '';
     $SectionsForIgnore = [];
     $SignaturesCount = [];
+    $FilesCount = [];
     $SectionMeta = [];
     $ThisSectionMeta = [];
     foreach ($Files as $File) {
@@ -2381,6 +2382,12 @@ $CIDRAM['SectionsHandler'] = function (array $Files) use (&$CIDRAM) {
                 }
                 $SignaturesCount[$Tag] += $ThisCount;
                 $ThisCount = 0;
+                if (!isset($FilesCount[$Tag])) {
+                    $FilesCount[$Tag] = [];
+                }
+                if (!isset($FilesCount[$Tag][$File])) {
+                    $FilesCount[$Tag][$File] = true;
+                }
                 if (!isset($SectionMeta[$Tag])) {
                     $SectionMeta[$Tag] = [];
                 }
@@ -2414,10 +2421,19 @@ $CIDRAM['SectionsHandler'] = function (array $Files) use (&$CIDRAM) {
     ksort($SectionMeta);
     $CIDRAM['FE']['SL_Unique'] = count($SectionMeta);
     foreach ($SectionMeta as $Section => $Counts) {
-        $ThisCount = $CIDRAM['NumberFormatter']->format(isset($SignaturesCount[$Section]) ? $SignaturesCount[$Section] : 0);
+        $ThisCount = isset($SignaturesCount[$Section]) ? $SignaturesCount[$Section] : 0;
+        $ThisFiles = isset($FilesCount[$Section]) ? count($FilesCount[$Section]) : 0;
+        $ThisCount = sprintf(
+            $CIDRAM['L10N']->getPlural($ThisFiles, 'label_sections_across_x_files'),
+            sprintf(
+                $CIDRAM['L10N']->getPlural($ThisCount, 'label_sections_x_signatures'),
+                '<span class="txtRd">' . $CIDRAM['NumberFormatter']->format($ThisCount) . '</span>'
+            ),
+            '<span class="txtRd">' . $CIDRAM['NumberFormatter']->format($ThisFiles) . '</span>'
+        );
         $Class = (isset($Class) && $Class === 'ng2') ? 'ng1' : 'ng2';
         $SectionSafe = preg_replace('~[^\da-z]~i', '', $Section);
-        $SectionLabel = $Section . ' (<span class="txtRd">' . $ThisCount . '</span>)';
+        $SectionLabel = $Section . ' (' . $ThisCount . ')';
         $OriginOut = '';
         arsort($Counts);
         foreach ($Counts as $Origin => $Quantity) {

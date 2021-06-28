@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Output generator (last modified: 2021.05.15).
+ * This file: Output generator (last modified: 2021.06.28).
  */
 
 /** Initialise cache. */
@@ -189,6 +189,9 @@ if ($CIDRAM['Protect'] && !$CIDRAM['Config']['general']['maintenance_mode'] && e
             $CIDRAM['ModuleResCache'] = [];
         }
         $CIDRAM['Modules'] = explode(',', $CIDRAM['Config']['signatures']['modules']);
+        if (!$CIDRAM['Config']['signatures']['tracking_override']) {
+            $CIDRAM['Restore tracking options override'] = $CIDRAM['Tracking options override'] ?? '';
+        }
 
         /**
          * Doing this with array_walk instead of foreach to ensure that modules
@@ -213,6 +216,14 @@ if ($CIDRAM['Protect'] && !$CIDRAM['Config']['general']['maintenance_mode'] && e
             $CIDRAM['Trackable'] = $CIDRAM['Trackable'] ?: ($CIDRAM['BlockInfo']['SignatureCount'] - $Infractions) > 0;
         });
 
+        if (
+            !$CIDRAM['Config']['signatures']['tracking_override'] &&
+            !empty($CIDRAM['Tracking options override']) &&
+            isset($CIDRAM['Restore tracking options override'])
+        ) {
+            $CIDRAM['Tracking options override'] = $CIDRAM['Restore tracking options override'];
+            unset($CIDRAM['Restore tracking options override']);
+        }
         unset($CIDRAM['Modules']);
     }
 

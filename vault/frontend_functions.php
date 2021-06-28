@@ -946,13 +946,15 @@ $CIDRAM['SimulateBlockEvent'] = function (string $Addr, bool $Modules = false, b
             $CIDRAM['ModuleResCache'] = [];
         }
         $CIDRAM['InitialiseErrorHandler']();
+        $Modules = explode(',', $CIDRAM['Config']['signatures']['modules']);
+        if (!$CIDRAM['Config']['signatures']['tracking_override']) {
+            $RestoreTrackingOptionsOverride = $CIDRAM['Tracking options override'] ?? '';
+        }
 
         /**
-         * Explode module list and cycle through all modules (doing this
-         * with array_walk instead of foreach to ensure that modules have
-         * their own scope and that superfluous data isn't preserved).
+         * Doing this with array_walk instead of foreach to ensure that modules
+         * have their own scope and that superfluous data isn't preserved.
          */
-        $Modules = explode(',', $CIDRAM['Config']['signatures']['modules']);
         array_walk($Modules, function ($Module) use (&$CIDRAM): void {
             if (
                 !empty($CIDRAM['Whitelisted']) ||
@@ -968,6 +970,14 @@ $CIDRAM['SimulateBlockEvent'] = function (string $Addr, bool $Modules = false, b
                 require $CIDRAM['Vault'] . $Module;
             }
         });
+
+        if (
+            !$CIDRAM['Config']['signatures']['tracking_override'] &&
+            !empty($CIDRAM['Tracking options override']) &&
+            isset($RestoreTrackingOptionsOverride)
+        ) {
+            $CIDRAM['Tracking options override'] = $RestoreTrackingOptionsOverride;
+        }
 
         $CIDRAM['ModuleErrors'] = $CIDRAM['Errors'];
         $CIDRAM['RestoreErrorHandler']();

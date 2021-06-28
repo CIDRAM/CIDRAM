@@ -951,7 +951,7 @@ $CIDRAM['SimulateBlockEvent'] = function ($Addr, $Modules = false, $Aux = false,
         $CIDRAM['InitialiseErrorHandler']();
         $Modules = explode(',', $CIDRAM['Config']['signatures']['modules']);
         if (!$CIDRAM['Config']['signatures']['tracking_override']) {
-            $RestoreTrackingOptionsOverride = $CIDRAM['Tracking options override'] ?? '';
+            $RestoreTrackingOptionsOverride = isset($CIDRAM['Tracking options override']) ? $CIDRAM['Tracking options override'] : '';
         }
 
         /**

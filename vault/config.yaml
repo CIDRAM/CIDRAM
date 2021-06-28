@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Configuration defaults file (last modified: 2021.05.28).
+# This file: Configuration defaults file (last modified: 2021.06.28).
 ##/
 
 Config Defaults:
@@ -400,6 +400,9 @@ Config Defaults:
   track_mode:
    type: "bool"
    default: false
+  tracking_override:
+   type: "bool"
+   default: true
  recaptcha:
   usemode:
    type: "int"

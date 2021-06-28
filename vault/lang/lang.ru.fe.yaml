@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Russian language data for the front-end (last modified: 2021.06.25).
+# This file: Russian language data for the front-end (last modified: 2021.06.28).
 ##/
 
 Extended Description Bypasses: "Стандартная сигнатуры байпасы, обычно включены в основной пакет."
@@ -174,6 +174,7 @@ config_signatures_ipv4: "Список сигнатур IPv4 файлы, кото
 config_signatures_ipv6: "Список сигнатур IPv6 файлы, которые CIDRAM должен попытаться обработать, разделенных запятыми."
 config_signatures_modules: "Список модуль файлы для загрузки после обработки сигнатуры IPv4/IPv6, разделенных запятыми."
 config_signatures_track_mode: "Когда следует учитывать нарушения? False = Когда IP-адреса блокируются из модулями. True = Когда IP-адреса блокируются по какой-либо причине. Стандарт = False."
+config_signatures_tracking_override: "Разрешить модулям переопределять параметры отслеживания? True = Да [Стандарт]; False = Нет."
 config_supplementary_cache_options: "Дополнительные параметры кэша."
 config_supplementary_cache_options_enable_apcu: "Указывает, использовать ли APCu для кэширования. Стандарт = False."
 config_supplementary_cache_options_enable_memcached: "Указывает, использовать ли Memcached для кэширования. Стандарт = False."

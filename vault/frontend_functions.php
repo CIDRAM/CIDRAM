@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2021.06.25).
+ * This file: Front-end functions file (last modified: 2021.06.26).
  */
 
 /**
@@ -1080,79 +1080,88 @@ $CIDRAM['Formatter'] = function (string &$In, string $BlockLink = '', string $Cu
             }
             $Section = str_replace($ThisPart, '<code>' . $ThisPart . '</code>', $Section);
         }
-        if (strpos($Section, "<br />\n<br />\n") !== false) {
-            preg_match_all('~\n((?!：)[^\n:]+)' . $FieldSeparator . '((?:(?!<br />)[^\n])+)~i', $Section, $Parts);
-            if (count($Parts[1])) {
-                $Parts[1] = array_unique($Parts[1]);
-                foreach ($Parts[1] as $ThisPart) {
-                    $Section = str_replace(
-                        "\n" . $ThisPart . $FieldSeparator,
-                        "\n<span class=\"textLabel\">" . $ThisPart . '</span>' . $FieldSeparator,
-                        $Section
-                    );
-                }
+        preg_match_all('~\n((?!：)[^\n:]+)' . $FieldSeparator . '((?:(?!<br />)[^\n])+)~i', $Section, $Parts);
+        if (count($Parts[1])) {
+            $Parts[1] = array_unique($Parts[1]);
+            foreach ($Parts[1] as $ThisPart) {
+                $Section = str_replace(
+                    "\n" . $ThisPart . $FieldSeparator,
+                    "\n<span class=\"textLabel\">" . $ThisPart . '</span>' . $FieldSeparator,
+                    $Section
+                );
             }
-            if (count($Parts[2]) && $BlockSeparatorLen === 14) {
-                $Parts[2] = array_unique($Parts[2]);
-                foreach ($Parts[2] as $ThisPart) {
-                    $ThisPartUnsafe = str_replace(['&gt;', '&lt;'], ['>', '<'], $ThisPart);
-                    $TestString = $Demojibakefier->guard($ThisPartUnsafe);
-                    $Alternate = (
-                        $TestString !== $ThisPartUnsafe && $Demojibakefier->Last
-                    ) ? '<code dir="ltr">🔁' . $Demojibakefier->Last . '➡️UTF-8' . $FieldSeparator . '</code>' . str_replace(['<', '>'], ['&lt;', '&gt;'], $TestString) . "<br />\n" : '';
-                    if (!$ThisPart || $ThisPart === $Current) {
-                        $Section = str_replace(
-                            $FieldSeparator . $ThisPart . "<br />\n",
-                            $FieldSeparator . $ThisPart . "<br />\n" . $Alternate,
-                            $Section
-                        );
-                        continue;
-                    }
-                    $Enc = str_replace('=', '_', base64_encode($ThisPart));
+        }
+        if (count($Parts[2]) && $BlockSeparatorLen === 14) {
+            $Parts[2] = array_unique($Parts[2]);
+            foreach ($Parts[2] as $ThisPart) {
+                $ThisPartUnsafe = str_replace(['&gt;', '&lt;'], ['>', '<'], $ThisPart);
+                $TestString = $Demojibakefier->guard($ThisPartUnsafe);
+                $Alternate = (
+                    $TestString !== $ThisPartUnsafe && $Demojibakefier->Last
+                ) ? '<code dir="ltr">🔁' . $Demojibakefier->Last . '➡️UTF-8' . $FieldSeparator . '</code>' . str_replace(['<', '>'], ['&lt;', '&gt;'], $TestString) . "<br />\n" : '';
+                if (!$ThisPart || $ThisPart === $Current) {
                     $Section = str_replace(
                         $FieldSeparator . $ThisPart . "<br />\n",
-                        $FieldSeparator . $ThisPart . ' <a href="' . $BlockLink . '&search=' . $Enc . '">»</a>' . "<br />\n" . $Alternate,
+                        $FieldSeparator . $ThisPart . "<br />\n" . $Alternate,
                         $Section
                     );
+                    continue;
                 }
+                $Enc = str_replace('=', '_', base64_encode($ThisPart));
+                $Section = str_replace(
+                    $FieldSeparator . $ThisPart . "<br />\n",
+                    $FieldSeparator . $ThisPart . ' <a href="' . $BlockLink . '&search=' . $Enc . '">»</a>' . "<br />\n" . $Alternate,
+                    $Section
+                );
             }
-            preg_match_all('~\n((?:(?!：)[^\n:]+)' . $FieldSeparator . '(?:(?!<br />)[^\n])+)~i', $Section, $Parts);
-            if (count($Parts[1])) {
-                foreach ($Parts[1] as $ThisPart) {
-                    $Section = str_replace("\n" . $ThisPart . "<br />\n", "\n<span class=\"s\">" . $ThisPart . "</span><br />\n", $Section);
-                }
+        }
+        preg_match_all('~ - ((?!：)[^\n:-]+)' . $FieldSeparator . '(?!<br />)[^<> \n-]+~i', $Section, $Parts);
+        if (count($Parts[1])) {
+            $Parts[1] = array_unique($Parts[1]);
+            foreach ($Parts[1] as $ThisPart) {
+                $Section = str_replace(
+                    ' - ' . $ThisPart . $FieldSeparator,
+                    ' - <span class="textLabel">' . $ThisPart . '</span>' . $FieldSeparator,
+                    $Section
+                );
             }
-            preg_match_all('~\("([^()"]+)", L~', $Section, $Parts);
-            if (count($Parts[1])) {
-                $Parts[1] = array_unique($Parts[1]);
-                foreach ($Parts[1] as $ThisPart) {
-                    $Section = str_replace(
-                        '("' . $ThisPart . '", L',
-                        '("<a href="' . $BlockLink . '&search=' . str_replace('=', '_', base64_encode($ThisPart)) . '">' . $ThisPart . '</a>", L',
-                        $Section
-                    );
-                }
+        }
+        preg_match_all('~\n((?:(?!：)[^\n:]+)' . $FieldSeparator . '(?:(?!<br />)[^\n])+)~i', $Section, $Parts);
+        if (count($Parts[1])) {
+            foreach ($Parts[1] as $ThisPart) {
+                $Section = str_replace("\n" . $ThisPart . "<br />\n", "\n<span class=\"s\">" . $ThisPart . "</span><br />\n", $Section);
             }
-            preg_match_all('~\[([A-Z]{2})\]~', $Section, $Parts);
-            if (count($Parts[1])) {
-                if ($Flags) {
-                    $OuterOpen = '';
-                    $OuterClose = '';
-                    $InnerOpen = '<span class="flag ';
-                    $InnerClose = '"><span></span></span>';
-                } else {
-                    $OuterOpen = '[';
-                    $OuterClose = ']';
-                    $InnerOpen = '';
-                    $InnerClose = '';
-                }
-                foreach ($Parts[1] as $ThisPart) {
-                    $Section = str_replace(
-                        '[' . $ThisPart . ']',
-                        $OuterOpen . '<a href="' . $BlockLink . '&search=' . str_replace('=', '_', base64_encode($ThisPart)) . '">' . $InnerOpen . $ThisPart . $InnerClose . '</a>' . $OuterClose,
-                        $Section
-                    );
-                }
+        }
+        preg_match_all('~\("([^()"]+)", L~', $Section, $Parts);
+        if (count($Parts[1])) {
+            $Parts[1] = array_unique($Parts[1]);
+            foreach ($Parts[1] as $ThisPart) {
+                $Section = str_replace(
+                    '("' . $ThisPart . '", L',
+                    '("<a href="' . $BlockLink . '&search=' . str_replace('=', '_', base64_encode($ThisPart)) . '">' . $ThisPart . '</a>", L',
+                    $Section
+                );
+            }
+        }
+        preg_match_all('~\[([A-Z]{2})\]~', $Section, $Parts);
+        if (count($Parts[1])) {
+            if ($Flags) {
+                $OuterOpen = '';
+                $OuterClose = '';
+                $InnerOpen = '<span class="flag ';
+                $InnerClose = '"><span></span></span>';
+            } else {
+                $OuterOpen = '[';
+                $OuterClose = ']';
+                $InnerOpen = '';
+                $InnerClose = '';
+            }
+            foreach ($Parts[1] as $ThisPart) {
+                $Section = str_replace(
+                    '[' . $ThisPart . ']',
+                    $OuterOpen . '<a href="' . $BlockLink . '&search=' . str_replace('=', '_', base64_encode($ThisPart)) . '">' . $InnerOpen . $ThisPart . $InnerClose . '</a>' . $OuterClose,
+                    $Section
+                );
             }
         }
         $Out .= substr($Section, 0, $BlockSeparatorLen * -1);

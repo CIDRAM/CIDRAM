@@ -1,8 +1,8 @@
 # IPv4 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv4_isps.dat
 
-# Version: 2021.175.509
-# Last modified: 2021.06.25
+# Version: 2021.178.318
+# Last modified: 2021.06.28
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -1410,41 +1410,47 @@ Origin: MD
 Tag: SICRES SRL
 
 
-# ASN 6876 ("TeNeT Scientific Production Enterprise LLC").
-# Source of forum spam and other unwanted traffic.
-# Stop Forum Spam (SFS) listings: 1,870.
-# Updated: 2019.11.02 / Checked: 2020.12.03
+# ASNs 6876, 41544, 48239 ("TeNeT Scientific Production Enterprise LLC",
+# "Scientific-Production Enterprise Information Technologies Ltd").
+# Brute-force, SSH, and webapp attacks, port scans, and spam detected here.
+# Stop Forum Spam (SFS) listings: 3,709 (AS6876), 5 (AS41544), 218 (AS48239).
+# Updated: 2021.06.28
 
-95.46.107.0/24 Deny Generic
+95.46.107.0/24 Deny Malware
 Origin: CZ
-31.31.96.0/19 Deny Generic
-37.203.0.0/19 Deny Generic
-45.130.0.0/22 Deny Generic
-45.140.120.0/22 Deny Generic
-45.156.36.0/22 Deny Generic
-62.16.0.0/19 Deny Generic
-79.140.0.0/20 Deny Generic
-85.238.96.0/19 Deny Generic
-88.214.8.0/22 Deny Generic
-91.194.78.0/23 Deny Generic
-95.214.40.0/22 Deny Generic
-130.0.32.0/19 Deny Generic
-176.119.64.0/18 Deny Generic
-185.23.104.0/22 Deny Generic
-185.145.104.0/22 Deny Generic
-185.166.220.0/22 Deny Generic
-185.177.240.0/22 Deny Generic
-185.184.168.0/22 Deny Generic
-185.206.36.0/22 Deny Generic
-185.226.112.0/22 Deny Generic
-185.228.104.0/22 Deny Generic
-185.247.20.0/22 Deny Generic
-188.115.128.0/18 Deny Generic
-193.178.48.0/22 Deny Generic
-195.138.64.0/19 Deny Generic
-212.90.124.0/22 Deny Generic
-212.178.0.0/19 Deny Generic
+31.31.96.0/19 Deny Malware
+37.203.0.0/19 Deny Malware
+45.130.0.0/22 Deny Malware
+45.140.120.0/22 Deny Malware
+45.156.36.0/22 Deny Malware
+62.16.0.0/19 Deny Malware
+79.140.0.0/20 Deny Malware
+85.238.96.0/19 Deny Malware
+88.214.8.0/22 Deny Malware
+91.194.78.0/23 Deny Malware
+91.209.51.0/24 Deny Malware
+95.214.40.0/22 Deny Malware
+130.0.32.0/19 Deny Malware
+176.119.64.0/18 Deny Malware
+185.23.104.0/22 Deny Malware
+185.145.104.0/22 Deny Malware
+185.166.220.0/22 Deny Malware
+185.177.240.0/22 Deny Malware
+185.184.168.0/22 Deny Malware
+185.191.176.0/22 Deny Malware
+185.206.36.0/22 Deny Malware
+185.226.112.0/22 Deny Malware
+185.228.104.0/22 Deny Malware
+185.247.20.0/22 Deny Malware
+188.115.128.0/18 Deny Malware
+193.178.48.0/22 Deny Malware
+195.78.92.0/23 Deny Malware
+195.138.64.0/19 Deny Malware
+212.90.32.0/19 Deny Malware
+212.90.124.0/22 Deny Malware
+212.178.0.0/19 Deny Malware
 Origin: UA
+Profile: Domestic ISP;Infrastructure/Transit;Multiplay
 Tag: TeNeT
 
 
@@ -8410,26 +8416,30 @@ Tag: SKORUK ANDRIY OLEKSANDROVYCH
 
 
 # ASN 12578 ("SIA Tet").
-# Caught XRumer operating on this network. A Latvian mobile operator with human
-# endpoints. Listing only those ranges where the worst activity has been
-# detected, omitting the rest.
-# Stop Forum Spam (SFS) listings: 208.
-# Updated: 2020.12.22
+# Latvian mobile provider. XRumer, spam, and port scanning detected here.
+# Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 242.
+# Updated: 2021.06.28
 
-46.109.6.224/32 Deny Spam
-46.109.140.198/32 Deny Spam
-62.85.45.26/32 Deny Spam
-78.84.12.172/32 Deny Spam
+46.109.90.7/32 Deny Spam
+46.109.169.88/32 Deny Spam
+46.109.174.63/32 Deny Spam
+46.109.181.67/32 Deny Spam
+46.109.233.73/32 Deny Spam
 78.84.41.0/24 Deny Malware
-78.84.234.126/32 Deny Spam
-78.84.243.157/32 Deny Spam
+78.84.117.110/32 Deny Spam
+81.198.22.77/32 Deny Spam
+81.198.45.117/32 Deny Spam
 81.198.71.144/32 Deny Spam
-87.110.36.9/32 Deny Spam
-87.110.100.67/32 Deny Spam
-91.105.54.221/32 Deny Spam
-91.105.95.202/32 Deny Spam
-95.68.114.194/32 Deny Spam
+84.237.151.210/32 Deny Spam
+87.110.1.148/32 Deny Spam
+87.110.59.162/32 Deny Spam
+91.105.52.0/24 Deny Malware
+95.68.66.171/32 Deny Spam
+95.68.92.208/32 Deny Spam
+195.13.198.146/32 Deny Spam
 Origin: LV
+Profile: Domestic ISP
 Tag: SIA Tet
 
 
@@ -8449,6 +8459,7 @@ Tag: SIA Tet
 202.137.141.0/24 Deny Malware
 202.137.154.0/23 Deny Malware
 Origin: LA
+Profile: Domestic ISP
 Tag: Lao Telecom
 
 
@@ -8613,6 +8624,7 @@ Tag: Reliance Communications
 
 177.223.48.0/20 Deny Spam
 Origin: BR
+Profile: Domestic ISP
 Tag: Star Telecom S/A
 
 
@@ -15032,7 +15044,7 @@ Tag: ServiHosting Networks S.L
 # Listing just the affected ranges/addresses only.
 # %Listed, abuseat.org (CBL-Listed): 0.03%.
 # Stop Forum Spam (SFS) listings: 284.
-# Updated: 2021.06.16
+# Updated: 2021.06.16 / Modified: 2021.06.28
 
 110.11.53.165/32 Deny Spam
 114.206.219.130/32 Deny Malware
@@ -15042,6 +15054,7 @@ Tag: ServiHosting Networks S.L
 211.58.107.142/32 Deny Spam
 211.108.232.4/32 Deny Spam
 211.186.132.162/32 Deny Spam
+211.243.86.210/32 Deny Malware
 219.248.225.46/32 Deny Spam
 219.254.62.30/32 Deny Spam
 221.138.38.85/32 Deny Spam
@@ -17429,3 +17442,47 @@ Tag: Consolidated Communications, Inc
 Origin: CO
 Profile: Domestic ISP;Infrastructure/Transit
 Tag: TV AZTECA
+
+
+# ASN 133676 ("Precious netcom pvt ltd").
+# Indian commercial network offering internet connectivity. Brute-force, SSH,
+# and webapp attacks, spam, and port scans detected from here. Some addresses
+# caught probing for semalt resources here. Listing just the affected
+# ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 1,468.
+# Updated: 2021.06.28
+
+43.225.73.0/24 Deny Malware
+43.225.74.0/23 Deny Malware
+43.230.196.0/24 Deny Malware
+103.42.88.0/24 Deny Malware
+103.44.53.0/24 Deny Malware
+103.44.55.0/24 Deny Malware
+103.47.57.0/24 Deny Malware
+103.47.58.0/24 Deny Malware
+103.49.233.0/24 Deny Malware
+103.49.234.0/24 Deny Malware
+103.99.196.0/24 Deny Malware
+103.99.198.0/24 Deny Malware
+103.101.118.0/24 Deny Malware
+103.204.169.0/24 Deny Malware
+103.204.170.0/24 Deny Malware
+139.5.16.0/24 Deny Malware
+Origin: IN
+Profile: Commercial;Domestic ISP;Infrastructure/Transit
+Tag: Precious netcom pvt ltd
+
+
+# ASN 132298 ("Antaranga Dot Com Ltd").
+# Bangladesh multiplay domestic ISP. Spam and port scans detected from here.
+# Some addresses caught probing for semalt resources here. Listing just the
+# affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 604.
+# Updated: 2021.06.28
+
+103.133.200.0/23 Deny Malware
+103.135.253.0/24 Deny Malware
+103.237.36.0/23 Deny Malware
+Origin: BD
+Profile: Domestic ISP;Multiplay;Webhosting
+Tag: Antaranga Dot Com Ltd

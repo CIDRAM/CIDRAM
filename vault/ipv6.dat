@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6.dat
 
-# Version: 2021.175.509
-# Last modified: 2021.06.25
+# Version: 2021.178.318
+# Last modified: 2021.06.28
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -815,10 +815,13 @@ Origin: GB
 Tag: Bytemark Limited
 
 
-# ASNs 14061, 46652, 205301, 209396 ("DigitalOcean, LLC", "ServerStack, Inc", "Digital Ocean SRL").
-# %Listed, abuseat.org (CBL-Listed): 0.48% (AS14061).
-# Stop Forum Spam (SFS) listings: 75,606 (AS14061).
-# Updated: 2021.02.10
+# ASNs 14061, 46652, 209396 ("DigitalOcean, LLC", "ServerStack, Inc", "Digital
+# Ocean SRL"). Unwanted traffic regularly encountered from here, including
+# brute-force, SSH, and webapp attacks, spam, and port scans. Also flagged by
+# honeypots.
+# %Listed, abuseat.org (CBL-Listed): 0.25% (AS14061).
+# Stop Forum Spam (SFS) listings: 79,630 (AS14061).
+# Updated: 2021.02.10 / Checked: 2021.06.28
 
 2400:6180::/48 Deny Cloud
 2400:6180:100::/40 Deny Cloud
@@ -832,7 +835,7 @@ Origin: SG
 2604:a880:cad::/48 Deny Cloud
 2a03:b0c0::/46 Deny Cloud
 Origin: US
-Profile: Frequent changes;Tor endpoints here
+Profile: Commercial;Frequent changes;Infrastructure/Transit;Tor endpoints here
 Tag: Digital Ocean, Inc
 
 
@@ -1845,9 +1848,10 @@ Tag: Continuum
 
 
 # ASNs 40021, 51167 ("Contabo GmbH").
-# Caught spamming while pretending to be Google.
-# Stop Forum Spam (SFS) listings: 755 (AS40021), 26,195 (AS51167).
-# Updated: 2021.03.13
+# Caught spamming while pretending to be Google. Port scans, brute-force, and
+# webapp attacks also detected from here.
+# Stop Forum Spam (SFS) listings: 469 (AS40021), 22,471 (AS51167).
+# Updated: 2021.03.13 / Checked: 2021.06.28
 
 2a02:c200::/32 Deny Cloud
 2a02:c205::/32 Deny Cloud
@@ -1855,7 +1859,7 @@ Tag: Continuum
 Origin: DE
 2605:a140::/32 Deny Cloud
 Origin: US
-Profile: Frequent changes;Tor endpoints here;Webhosting
+Profile: Dedicated;Frequent changes;Infrastructure/Transit;Tor endpoints here;Webhosting
 Tag: Contabo GmbH
 
 
@@ -2298,7 +2302,9 @@ Tag: Media-Hosts Inc
 
 
 # ASN 53667 ("FranTech Solutions").
-# All kinds of rubbish from these guys without any end in sight.
+# All kinds of rubbish from these guys without any end in sight. Brute-force,
+# FTP brute-force, SSH, webapp attacks, and attacks against honeypots, spam,
+# port scans, and more, encountered consistently from here.
 # Stop Forum Spam (SFS) listings: 80,839.
 # Updated: 2021.04.26
 
@@ -7997,10 +8003,11 @@ Tag: BitWeb LLC
 
 
 # ASNs 34962, 58110, 202425, 206898 ("IP Volume inc").
-# Large-scale bandwidth/infrastructure provider. Spam, malware, and tor
-# endpoints detected here.
-# Stop Forum Spam (SFS) listings: 394 (AS34962), 790 (AS58110), 3,781 (AS202425).
-# Updated: 2021.03.18
+# Large-scale bandwidth/infrastructure provider. Brute-force, SSH, and webapp
+# attacks, spam, malware, and tor endpoints detected from here. Also flagged by
+# honeypots.
+# Stop Forum Spam (SFS) listings: 1,991 (AS34962), 4,431 (AS58110), 1,061 (AS202425).
+# Updated: 2021.03.18 / Checked: 2021.06.28
 
 2a02:6c8:8000::/33 Deny Cloud
 Origin: GB
@@ -8467,6 +8474,53 @@ Origin: NL
 Origin: US
 Profile: Commercial;Dedicated;Infrastructure/Transit;Webhosting
 Tag: PHOENIX NAP, LLC
+
+
+# ASN 17090 ("Database by Design, LLC").
+# Webhosting provider. DDoS, SQLi, brute-force, SSH, and webapp attacks, spam,
+# port scans, and sniffing for vulnerabilities detected from here.
+# (Skip 192.100.*; Fixed line ISP, and clean).
+# %Listed, abuseat.org (CBL-Listed): 3.53%.
+# Stop Forum Spam (SFS) listings: 90.
+# Updated: 2021.06.28
+
+2607:2200::/32 Deny Cloud
+Origin: US
+Profile: Tor endpoints here;Webhosting
+Tag: Database by Design, LLC
+
+
+# ASN 40156 ("The Optimal Link Corporation").
+# Webhosting provider with DNS poisoning. Spam, port scans, brute-force, DDoS,
+# and hack attempts detected from here. Also caught trying to hack home
+# routers. See also scamalytics.com/ip/isp/the-optimal-link-corporation
+# Stop Forum Spam (SFS) listings: 72.
+# Updated: 2021.06.28
+
+2604:e880::/32 Deny Cloud
+Origin: US
+Profile: Webhosting
+Tag: The Optimal Link Corporation
+
+
+# ASN 397423 ("Tier.Net Technologies LLC").
+# Dedicated VPS, colo provider, hosting reseller. Brute-force, hack, and webapp
+# attacks, spam, port scans, and home router hack attempts detected from here.
+# Stop Forum Spam (SFS) listings: 166.
+# Updated: 2021.06.28
+
+2a10:3980::/29 Deny Cloud
+Origin: LT
+2604:f440::/46 Deny Cloud
+2604:f440:4::/48 Deny Cloud
+2604:f440:7::/48 Deny Cloud
+2605:6c80:6::/48 Deny Cloud
+2605:6c80:9::/48 Deny Cloud
+2605:6c80:a::/48 Deny Cloud
+2605:6c80:d::/48 Deny Cloud
+Origin: US
+Profile: Dedicated;Infrastructure/Transit;Multiplay;Webhosting
+Tag: Tier.Net Technologies LLC
 
 
 # ---

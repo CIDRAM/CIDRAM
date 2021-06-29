@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2021.06.08).
+ * This file: Front-end handler (last modified: 2021.06.29).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -2830,7 +2830,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'file-manager' && $CIDRAM['FE'][
         $CIDRAM['FE']['PieChartColours'] = [];
 
         /** Initialise pie chart legend. */
-        $CIDRAM['FE']['PieChartHTML'] = '<ul class="pieul">' . $CIDRAM['L10N']->getString('tip_pie_html');
+        $CIDRAM['FE']['PieChartHTML'] = $CIDRAM['L10N']->getString('tip_pie_html') . '<br /><ul class="pieul">';
 
         /** Building pie chart values. */
         foreach ($CIDRAM['Components']['Components'] as $CIDRAM['Components']['ThisName'] => $CIDRAM['Components']['ThisData']) {
@@ -2843,11 +2843,11 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'file-manager' && $CIDRAM['FE'][
             if (!empty($CIDRAM['Components']['ComponentFiles'][$CIDRAM['Components']['ThisName']])) {
                 $CIDRAM['Components']['ThisComponentFiles'] = &$CIDRAM['Components']['ComponentFiles'][$CIDRAM['Components']['ThisName']];
                 arsort($CIDRAM['Components']['ThisComponentFiles']);
-                $CIDRAM['Components']['ThisListed'] .= '<ul class="comSub txtBl">';
+                $CIDRAM['Components']['ThisListed'] .= '<ul class="comSub">';
                 foreach ($CIDRAM['Components']['ThisComponentFiles'] as $CIDRAM['Components']['ThisFile'] => $CIDRAM['Components']['ThisFileSize']) {
                     $CIDRAM['FormatFilesize']($CIDRAM['Components']['ThisFileSize']);
                     $CIDRAM['Components']['ThisListed'] .= sprintf(
-                        '<li style="font-size:0.9em">%1$s – %2$s</li>',
+                        '<li><span class="txtBl" style="font-size:0.9em">%1$s – %2$s</span></li>',
                         $CIDRAM['Components']['ThisFile'],
                         $CIDRAM['Components']['ThisFileSize']
                     );

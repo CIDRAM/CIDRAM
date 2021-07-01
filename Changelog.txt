@@ -107,6 +107,13 @@ Detailed version release guidelines for CIDRAM can be found at:
 - [2021.06.29; Bug-fix; Maikuolan]: The front-end file manager's pie chart's
   components accordion was broken; Fixed.
 
+- [2021.07.01; NEW FEATURE; Maikuolan]: Added support for a new type of
+  component: Configuration imports. This will be helpful for allowing
+  third-parties to add their own custom 'provides' data to CIDRAM for use
+  with auxiliary rules, or their own configuration for their own custom modules
+  and signature files, distinct from those components. 'Used with' can now also
+  be an array, to allow components of mixed type.
+
 === Version/Release 2.5.1 ===
 PATCH RELEASE.
 

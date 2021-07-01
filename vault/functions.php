@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2021.05.21).
+ * This file: Functions file (last modified: 2021.07.01).
  */
 
 /** Autoloader for CIDRAM classes. */
@@ -700,12 +700,15 @@ $CIDRAM['Supplementary'] = function (string $Source) use (&$CIDRAM): array {
         if (($DecPos = strpos($File, '.')) === false) {
             continue;
         }
-        $File = substr($File, 0, $DecPos) . '.yaml';
-        if (file_exists($CIDRAM['Vault'] . $File)) {
-            $Out[] = $File;
+        $File = substr($File, 0, $DecPos) . '.';
+        foreach (['yaml', 'yml'] as $Type) {
+            if (file_exists($CIDRAM['Vault'] . $File . $Type)) {
+                $Out[] = $File . $Type;
+                break;
+            }
         }
     }
-    return $Out;
+    return array_unique($Out);
 };
 
 /**

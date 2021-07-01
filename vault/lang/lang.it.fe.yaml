@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Italian language data for the front-end (last modified: 2021.06.28).
+# This file: Italian language data for the front-end (last modified: 2021.07.01).
 ##/
 
 Extended Description Bypasses: "Un file per bypassare alcune delle firme predefinite normalmente inclusi nel pacchetto principale."
@@ -82,6 +82,7 @@ config_experimental: "Instabile/Sperimentale!"
 config_general: "Configurazione generale (qualsiasi configurazione di base non appartenente ad altre categorie)."
 config_general_allow_gethostbyaddr_lookup: "Consenti ricerche gethostbyaddr quando UDP non è disponibile? True = Sì [Predefinito]; False = No."
 config_general_ban_override: "Sostituire "forbid_on_block" quando "infraction_limit" è superato? Quando si sostituisce: Richieste bloccate restituire una pagina vuota (file di modello non vengono utilizzati). 200 = Non sostituire [Predefinito]. Altri valori sono uguali ai valori disponibili per "forbid_on_block"."
+config_general_config_imports: "Un elenco delimitato con virgole di file da importare nella configurazione predefinita di CIDRAM. Tipicamente popolato dalla pagina degli aggiornamenti quando si attivano i componenti che ne hanno bisogno quando necessario. Vuoto per impostazione predefinita. Nella maggior parte dei casi, può ignorarlo."
 config_general_default_algo: "Definisce quale algoritmo da utilizzare per tutte le password e le sessioni in futuro. Opzioni: PASSWORD_DEFAULT (predefinito), PASSWORD_BCRYPT, PASSWORD_ARGON2I (richiede PHP &gt;= 7.2.0), PASSWORD_ARGON2ID (richiede PHP &gt;= 7.3.0)."
 config_general_default_dns: "Un elenco delimitato con virgole di server DNS da utilizzare per le ricerche dei nomi di host. Predefinito = "8.8.8.8,8.8.4.4" (Google DNS). AVVISO: Non modificare questa se non sai quello che stai facendo!"
 config_general_default_timeout: "Il tempo scaduto predefinito da utilizzare per le richieste esterne? Predefinito = 12 secondi."

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Arabic language data for the front-end (last modified: 2021.06.28).
+# This file: Arabic language data for the front-end (last modified: 2021.07.01).
 ##/
 
 Extended Description Bypasses: "ملفات الالتفافية التوقيع القياسية المدرجة عادة مع الحزمة الرئيسية."
@@ -80,6 +80,7 @@ config_experimental: "غير مستقر / التجريبي!"
 config_general: "التكوين العام (أي التكوين الأساسي لا ينتمي إلى فئات أخرى)."
 config_general_allow_gethostbyaddr_lookup: "السماح بعمليات البحث gethostbyaddr عندما يكون UDP غير متوفر؟ صحيح/True = نعم [افتراضي]؛ زائفة/False = لا."
 config_general_ban_override: "تجاوز "forbid_on_block" متى "infraction_limit" تجاوزت؟ عندما تجاوز: الطلبات الممنوعة بإرجاع صفحة فارغة (لا يتم استخدام ملفات قالب). 200 = لا تجاوز [الافتراضي]. القيم الأخرى هي نفس القيم المتاحة لـ "forbid_on_block"."
+config_general_config_imports: "قائمة ملفات محددة بفواصل لاستيرادها إلى التكوين الافتراضي لـ CIDRAM. يتم ملؤها عادةً بصفحة التحديثات عند تنشيط المكونات التي تحتاج إليها عند الضرورة. فارغ بشكل افتراضي. في معظم الحالات، يمكن تجاهله."
 config_general_default_algo: "يحدد الخوارزمية التي سيتم استخدامها لكل كلمات المرور والجلسات المستقبلية. خيارات: PASSWORD_DEFAULT (افتراضي)، PASSWORD_BCRYPT، PASSWORD_ARGON2I (يتطلب PHP &gt;= 7.2.0)، PASSWORD_ARGON2ID (يتطلب PHP &gt;= 7.3.0)."
 config_general_default_dns: "قائمة بفواصل من خوادم DNS لاستخدامها في عمليات البحث عن اسم المضيف. الافتراضي = "8.8.8.8,8.8.4.4" (Google DNS). تحذير: لا تغير هذا إلا إذا كنت تعرف ما تفعلونه!"
 config_general_default_timeout: "المهلة الافتراضية لاستخدامها للطلبات الخارجية؟ الافتراضي = 12 ثانية."

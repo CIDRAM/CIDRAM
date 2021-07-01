@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: French language data for the front-end (last modified: 2021.06.28).
+# This file: French language data for the front-end (last modified: 2021.07.01).
 ##/
 
 Extended Description Bypasses: "Les fichiers pour contourner les signatures standard qui sont normalement inclus dans le paquet principal."
@@ -82,6 +82,7 @@ config_experimental: "Instable/Expérimental !"
 config_general: "Configuration générale (toute configuration de base n'appartenant pas à d'autres catégories)."
 config_general_allow_gethostbyaddr_lookup: "Autoriser les recherches par gethostbyaddr lorsque UDP est indisponible ? True = Oui [Défaut] ; False = Non."
 config_general_ban_override: "Remplacer « forbid_on_block » lorsque « infraction_limit » est dépassé ? En cas de remplacement : Les requêtes bloquées renvoient une page blanche (les fichiers modèles ne sont pas utilisés). 200 = Ne pas remplacer [Défaut]. Les autres valeurs sont les mêmes que les valeurs disponibles pour « forbid_on_block »."
+config_general_config_imports: "Une liste délimitée par des virgules de fichiers à importer dans la configuration par défaut du CIDRAM. Généralement renseigné par la page des mises à jour lors de l'activation des composants qui en ont besoin si nécessaire. Vide par défaut. Dans la plupart des cas, peut l'ignorer."
 config_general_default_algo: "Définit quel algorithme utiliser pour tous les mots de passe et les sessions à l'avenir. Options : PASSWORD_DEFAULT (défaut), PASSWORD_BCRYPT, PASSWORD_ARGON2I (nécessite PHP &gt;= 7.2.0), PASSWORD_ARGON2ID (nécessite PHP &gt;= 7.3.0)."
 config_general_default_dns: "Une liste délimitée par des virgules de serveurs DNS à utiliser pour les recherches de noms d'hôtes. Par Défaut = « 8.8.8.8,8.8.4.4 » (Google DNS). AVERTISSEMENT : Ne pas changer si vous ne sais pas ce que vous faites !"
 config_general_default_timeout: "Délai d'attente par défaut à utiliser pour les requêtes externes ? Défaut = 12 secondes."

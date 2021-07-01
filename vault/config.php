@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Configuration handler (last modified: 2021.05.09).
+ * This file: Configuration handler (last modified: 2021.07.01).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -95,25 +95,14 @@ if (empty($CIDRAM['Config']['Config Defaults'])) {
     die('[CIDRAM] Configuration defaults file is corrupt! Please reinstall CIDRAM.');
 }
 
-/** Check for supplementary configuration relating to IPv4 signature files. */
-if (!empty($CIDRAM['Config']['signatures']['ipv4'])) {
-    foreach ($CIDRAM['Supplementary']($CIDRAM['Config']['signatures']['ipv4']) as $CIDRAM['Supplement']) {
-        $CIDRAM['YAML']->process($CIDRAM['ReadFile']($CIDRAM['Vault'] . $CIDRAM['Supplement']), $CIDRAM['Config']);
-    }
-}
-
-/** Check for supplementary configuration relating to IPv6 signature files. */
-if (!empty($CIDRAM['Config']['signatures']['ipv6'])) {
-    foreach ($CIDRAM['Supplementary']($CIDRAM['Config']['signatures']['ipv6']) as $CIDRAM['Supplement']) {
-        $CIDRAM['YAML']->process($CIDRAM['ReadFile']($CIDRAM['Vault'] . $CIDRAM['Supplement']), $CIDRAM['Config']);
-    }
-}
-
-/** Check for supplementary configuration relating to modules. */
-if (!empty($CIDRAM['Config']['signatures']['modules'])) {
-    foreach ($CIDRAM['Supplementary']($CIDRAM['Config']['signatures']['modules']) as $CIDRAM['Supplement']) {
-        $CIDRAM['YAML']->process($CIDRAM['ReadFile']($CIDRAM['Vault'] . $CIDRAM['Supplement']), $CIDRAM['Config']);
-    }
+/** Check for supplementary configuration. */
+foreach ($CIDRAM['Supplementary'](
+    ($CIDRAM['Config']['general']['config_imports'] ?? '') . ',' .
+    ($CIDRAM['Config']['signatures']['ipv4'] ?? '') . ',' .
+    ($CIDRAM['Config']['signatures']['ipv6'] ?? '') . ',' .
+    ($CIDRAM['Config']['signatures']['modules'] ?? '')
+) as $CIDRAM['Supplement']) {
+    $CIDRAM['YAML']->process($CIDRAM['ReadFile']($CIDRAM['Vault'] . $CIDRAM['Supplement']), $CIDRAM['Config']);
 }
 
 /** Cleanup. */

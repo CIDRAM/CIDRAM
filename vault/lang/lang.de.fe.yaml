@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: German language data for the front-end (last modified: 2021.06.28).
+# This file: German language data for the front-end (last modified: 2021.07.01).
 ##/
 
 Extended Description Bypasses: "Die Standard-Signatur-Bypass-Dateien, die normalerweise im Hauptpaket enthalten sind."
@@ -82,6 +82,7 @@ config_experimental: "Instabil/Experimentell!"
 config_general: "Allgemeine Konfiguration (jede Kernkonfiguration, die nicht zu anderen Kategorien gehört)."
 config_general_allow_gethostbyaddr_lookup: "gethostbyaddr-Suche erlauben, wenn UDP nicht verfügbar ist? True = Ja [Standardeinstellung]; False = Nein."
 config_general_ban_override: "Überschreiben "forbid_on_block" Wenn "infraction_limit" überschritten wird? Beim überschreiben: Blockierte Anfragen geben eine leere Seite zurück (Template-Dateien werden nicht verwendet). 200 = Nicht überschreiben [Standardeinstellung]. Andere Werte entsprechen den verfügbaren Werten für "forbid_on_block"."
+config_general_config_imports: "Eine durch Kommata getrennte Liste von Dateien, die in die CIDRAM-Standardkonfiguration importiert werden sollen. Wird normalerweise von der Aktualisierungsseite nach Bedarf ausgefüllt wenn Komponenten aktiviert werden. Leer als Standardeinstellung. In den meisten Fällen kann es ignorieren."
 config_general_default_algo: "Definiert den Algorithmus für alle zukünftigen Passwörter und Sitzungen. Optionen: PASSWORD_DEFAULT (Standardeinstellung), PASSWORD_BCRYPT, PASSWORD_ARGON2I (erfordert PHP &gt;= 7.2.0), PASSWORD_ARGON2ID (erfordert PHP &gt;= 7.3.0)."
 config_general_default_dns: "Eine durch Kommata getrennte Liste von DNS-Servern, die für Hostnamen-Lookups verwendet werden sollen. Standardeinstellung = "8.8.8.8,8.8.4.4" (Google DNS). ACHTUNG: Ändern Sie diesen Wert nur, wenn Sie wissen, was Sie tun!"
 config_general_default_timeout: "Standardzeitlimit für externe Anforderungen? Standardeinstellung = 12 Sekunden."

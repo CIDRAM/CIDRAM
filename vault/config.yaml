@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Configuration defaults file (last modified: 2021.06.28).
+# This file: Configuration defaults file (last modified: 2021.06.30).
 ##/
 
 Config Defaults:
@@ -355,6 +355,11 @@ Config Defaults:
    type: "int"
    default: 12
    preview: "seconds"
+  config_imports:
+   type: "string"
+   default: ""
+   value_preg_filter:
+    "~\s~": ""
  signatures:
   ipv4:
    type: "string"
@@ -390,6 +395,8 @@ Config Defaults:
   modules:
    type: "string"
    default: ""
+   value_preg_filter:
+    "~\s~": ""
   default_tracktime:
    type: "int"
    default: 604800

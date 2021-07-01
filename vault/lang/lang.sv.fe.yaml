@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Swedish language data for the front-end (last modified: 2021.06.28).
+# This file: Swedish language data for the front-end (last modified: 2021.07.01).
 ##/
 
 Extended Description Bypasses: "Standard bypass-filen som normalt ingår i huvudpaketet."
@@ -82,6 +82,7 @@ config_general: "Allmän konfiguration (alla kärnkonfigurationer som inte tillh
 config_general_FrontEndLog: "Fil för att logga in alla försök till inloggningar på front-end. Ange ett filnamn, eller lämna tomt för att inaktivera."
 config_general_allow_gethostbyaddr_lookup: "Tillåt gethostbyaddr-uppslag när UDP är otillgänglig? True = Ja [Standard]; False = Nej."
 config_general_ban_override: "Åsidosätta "forbid_on_block" när "infraction_limit" överskrids? När det åsidosätter: Blockerade förfrågningar returnerar en tom sida (mallfiler används inte). 200 = Åsidosätta inte [Standard]. Andra värden är desamma som tillgängliga värden för "forbid_on_block"."
+config_general_config_imports: "En kommaavgränsad lista över filer som ska importeras till CIDRAM-standardkonfigurationen. Befolkas vanligtvis av uppdateringssidan när du aktiverar komponenter som behöver det vid behov. Töm som standard. I de flesta fall kan ignorera det."
 config_general_default_algo: "Definierar vilken algoritm som ska användas för alla framtida lösenord och sessioner. Alternativ: PASSWORD_DEFAULT (standard), PASSWORD_BCRYPT, PASSWORD_ARGON2I (kräver PHP &gt;= 7.2.0), PASSWORD_ARGON2ID (kräver PHP &gt;= 7.3.0)."
 config_general_default_dns: "En komma-avgränsad lista över DNS-servrar som ska användas för värdnamnssökningar. Standard = "8.8.8.8,8.8.4.4" (Google DNS). VARNING: Ändra inte detta om du inte vet vad du gör!"
 config_general_default_timeout: "Standard timeout att använda för externa förfrågningar? Standard = 12 sekunder."

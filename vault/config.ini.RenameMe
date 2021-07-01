@@ -220,6 +220,12 @@ disabled_channels=''
 ; Default timeout to use for external requests? Default = 12 seconds.
 default_timeout=12
 
+; A comma delimited list of files to import into the CIDRAM default
+; configuration. Typically populated by the updates page when activating
+; components which need it when necessary. Empty by default. In most cases, can
+; ignore it.
+config_imports=''
+
 
 [signatures]
 ; Configuration for signatures, signature files, modules, etc.

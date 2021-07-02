@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Russian language data for the front-end (last modified: 2021.07.01).
+# This file: Russian language data for the front-end (last modified: 2021.07.02).
 ##/
 
 Extended Description Bypasses: "Стандартная сигнатуры байпасы, обычно включены в основной пакет."
@@ -36,6 +36,7 @@ Extended Description module_httpver.php: "Дает возможность бло
 Extended Description module_projecthoneypot.php: "Блокирует запросы от IP-адресов, перечисленных в Project Honeypot."
 Extended Description module_refspam.php: "Блокировка, основанная на реферальный спам, как правило, не дает сколько-нибудь значимого преимущества безопасности, но в некоторых случаях может быть полезным для некоторых пользователей, для сбора дополнительной информации о запросах и для возможности сообщить об этом.<br />Установка этого модуля также устанавливает полифилы Symfony для <a href="https://github.com/symfony/polyfill-intl-idn" hreflang="en" rel="noopener noreferrer external">Intl/Idn</a> и <a href="https://github.com/symfony/polyfill-mbstring" hreflang="en" rel="noopener noreferrer external">Mbstring</a> (потому что этот модуль требует функциональности Idn, которую не все установки PHP предоставляют по умолчанию), оба из которых доступно через лицензию <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a>."
 Extended Description module_sfs.php: "Защищает страницы регистрации и входа в систему от IP-адресов, перечисленных в SFS."
+Extended Description Search engines blocker module: "Предоставляет возможность блокировать поисковые системы, что может быть проблематичным для некоторых веб-сайтов (например, Baidu, Sogou, Яндекс, и т.д.)."
 Name Bypasses: "Стандартная сигнатуры байпасы."
 Name CN_cidram.inc: "Китайский блоклист IPv4"
 Name IPv4-Bogons: "IPv4 (bogon)."
@@ -54,7 +55,6 @@ Name module_abuseipdb.php: "Модуль AbuseIPDB"
 Name module_badhosts.php: "Модуль блокатор для плохие хосты"
 Name module_badhosts_isps.php: "Модуль блокатор для плохие хосты (интернет-провайдеры)"
 Name module_badtlds.php: "Модуль блокатор для плохие ДВУ"
-Name module_baidublocker.php: "Модуль блокатор Baidu"
 Name module_botua.php: "Модуль дополнительных пользовательских агентов"
 Name module_cookies.php: "Куки сканер модуль необязательный"
 Name module_extras.php: "Модуль необязательный дополнительные безопасности"
@@ -62,7 +62,7 @@ Name module_httpver.php: "Модуль проверки версии HTTP"
 Name module_projecthoneypot.php: "Модуль Project Honeypot"
 Name module_refspam.php: "Реферальный спам модуль"
 Name module_sfs.php: "Модуль Stop Forum Spam"
-Name module_yandexblocker.php: "Модуль блокатор Яндекс"
+Name Search engines blocker module: "Модуль блокатор поисковых систем"
 config_PHPMailer: "Конфигурация для PHPMailer (используется для двухфакторной аутентификации)."
 config_PHPMailer_Enable2FA: "Эта директива включает/отключает использование 2FA для фронтенд счетов."
 config_PHPMailer_EventLog: "Файл для регистрации всех событий в отношении PHPMailer. Задайте имя файлу, или оставьте пустым чтобы деактивировать опцию."
@@ -474,6 +474,7 @@ response_login_wrong_endpoint: "Неправильная конечная точ
 response_no: "Нет"
 response_not_satisfied: "Не удовлетворены."
 response_passed: "Удалось"
+response_please_check_config: "Пожалуйста, проверьте свою конфигурацию, чтобы убедиться, что вновь установленный модуль будет вести себя должным образом."
 response_ready_to_install: "Готовы к установке."
 response_rename_error: "Не удалось переименовать!"
 response_repair_process_completed: "Процесс ремонта завершен."
@@ -498,6 +499,7 @@ state_cache_is_empty: "Кэш пуст."
 state_complete_access: "Полный доступ"
 state_component_is_active: "Компонент активен."
 state_component_is_inactive: "Компонент неактивен."
+state_component_is_partially_active: "Компонент частично активен."
 state_component_is_provisional: "Компонент иногда активен."
 state_default_password: "Предупреждение: Использует стандартный пароль!"
 state_email_sent: "Электронная почта успешно отправлена на «%s»."

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Arabic language data for the front-end (last modified: 2021.07.01).
+# This file: Arabic language data for the front-end (last modified: 2021.07.02).
 ##/
 
 Extended Description Bypasses: "ملفات الالتفافية التوقيع القياسية المدرجة عادة مع الحزمة الرئيسية."
@@ -34,8 +34,9 @@ Extended Description module_cookies.php: "يوفر بعض الحماية الم�
 Extended Description module_extras.php: "يوفر بعض الحماية محدودة ضد مختلف ناقلات هجوم تستخدم عادة في طلبات."
 Extended Description module_httpver.php: "يجعل من الممكن حظر بروتوكولات معينة وإصدارات HTTP من خلال تكوين CIDRAM."
 Extended Description module_projecthoneypot.php: "بحظر الطلبات من عناوين IP المدرجة في Project Honeypot."
-Extended Description module_refspam.php: "لا يوفر الحظر بناءً على الإحالة غير المرغوب فيها عمومًا أي فائدة أمنية ذات مغزى، ولكن في بعض الحالات، قد يكون مفيدًا لبعض المستخدمين، ولجمع مزيد من المعلومات حول الطلبات، وللتمكن من الإبلاغ عنها.<br />يؤدي تثبيت هذه الوحدة النمطية أيضًا إلى تثبيت polyfill لـ Symfony لـ <a dir="ltr" href="https://github.com/symfony/polyfill-intl-idn" hreflang="en" rel="noopener noreferrer external">Intl/Idn</a> و <a dir="ltr" href="https://github.com/symfony/polyfill-mbstring" hreflang="en" rel="noopener noreferrer external">Mbstring</a> (لأن هذه الوحدة تتطلب وظيفة Idn، والتي لا توفرها جميع عمليات تثبيت PHP بشكل افتراضي)، كلاهما متاح عبر ترخيص <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a>."
+Extended Description module_refspam.php: "لا يوفر الحظر بناءً على الإحالة غير المرغوب فيها عمومًا أي فائدة أمنية ذات مغزى، ولكن في بعض الحالات، قد يكون مفيدًا لبعض المستخدمين، ولجمع مزيد من المعلومات حول الطلبات، وللتمكن من الإبلاغ عنها.<br />يؤدي تثبيت هذه المكون النمطية أيضًا إلى تثبيت polyfill لـ Symfony لـ <a dir="ltr" href="https://github.com/symfony/polyfill-intl-idn" hreflang="en" rel="noopener noreferrer external">Intl/Idn</a> و <a dir="ltr" href="https://github.com/symfony/polyfill-mbstring" hreflang="en" rel="noopener noreferrer external">Mbstring</a> (لأن هذه المكون تتطلب وظيفة Idn، والتي لا توفرها جميع عمليات تثبيت PHP بشكل افتراضي)، كلاهما متاح عبر ترخيص <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a>."
 Extended Description module_sfs.php: "يحمي تسجيل صفحات ضد عناوين IP المدرجة من قبل SFS."
+Extended Description Search engines blocker module: "يوفر القدرة على حظر محركات البحث التي قد تكون مشكلة لبعض مواقع الويب (على سبيل المثال، Baidu، Sogou، Yandex، إلخ)."
 Name Bypasses: "يتجاوز توقيع قياسي."
 Name IPv4-Bogons: "IPv4 (bogons)."
 Name IPv4-ISPs: "IPv4 (مزودي خدمات الإنترنت الذين يرسلون رسائل غير مرغوب فيها)."
@@ -47,20 +48,19 @@ Name IPv6-ISPs: "IPv6 (مزودي خدمات الإنترنت الذين يرس�
 Name IPv6-Nonblocking: "توقيعات IPv6 غير المحظورة."
 Name IPv6-Other: "IPv6 (خدمات بروكسي، VPN، الخ)."
 Name IPv6: "IPv6 (السحابة واستضافة الخدمات)."
-Name compat_bunnycdn.php: "وحدة التوافق BunnyCDN"
-Name module_abuseipdb.php: "AbuseIPDB وحدة"
-Name module_badhosts.php: "سيئة المضيفين وحدة مانع"
-Name module_badhosts_isps.php: "سيئة المضيفين وحدة مانع (ISP)"
-Name module_badtlds.php: "وحدة حجب TLD سيئة"
-Name module_baidublocker.php: "بايدو وحدة مانع"
-Name module_botua.php: "وحدة وكلاء المستخدم الاختيارية"
+Name compat_bunnycdn.php: "المكون التوافق BunnyCDN"
+Name module_abuseipdb.php: "AbuseIPDB المكون"
+Name module_badhosts.php: "سيئة المضيفين المكون مانع"
+Name module_badhosts_isps.php: "سيئة المضيفين المكون مانع (ISP)"
+Name module_badtlds.php: "المكون حجب TLD سيئة"
+Name module_botua.php: "المكون وكلاء المستخدم الاختيارية"
 Name module_cookies.php: "كوكي الماسح الضوئي"
-Name module_extras.php: "وحدة اشياء الأمن اختياري"
-Name module_httpver.php: "وحدة مدقق إصدار HTTP"
-Name module_projecthoneypot.php: "Project Honeypot وحدة"
-Name module_refspam.php: "وحدة للإحالة البريد المزعج"
-Name module_sfs.php: "Stop Forum Spam وحدة"
-Name module_yandexblocker.php: "بايدو وحدة مانع"
+Name module_extras.php: "المكون اشياء الأمن اختياري"
+Name module_httpver.php: "المكون مدقق إصدار HTTP"
+Name module_projecthoneypot.php: "Project Honeypot المكون"
+Name module_refspam.php: "المكون للإحالة البريد المزعج"
+Name module_sfs.php: "Stop Forum Spam المكون"
+Name Search engines blocker module: "وحدة مانع محركات البحث"
 config_PHPMailer: "التكوين ل PHPMailer (تستخدم لمصادقة ثنائية العامل)."
 config_PHPMailer_Enable2FA: "يحدد هذا التوجيه ما إذا كان سيتم استخدام 2FA للحسابات front-end أم لا."
 config_PHPMailer_EventLog: "ملف لتسجيل جميع الأحداث المتعلقة ب PHPMailer. تحديد اسم الملف، أو اتركه فارغا لتعطيل."
@@ -171,7 +171,7 @@ config_signatures_default_tracktime: "كم ثانية لتعقب IP حظرت م�
 config_signatures_infraction_limit: "يسمح الحد الأقصى لعدد المخالفات IP يمكن أن تتكبد قبل أن يتم حظره من قبل تتبع IP. افتراضي = 10."
 config_signatures_ipv4: "وهناك قائمة من الملفات توقيع عناوين IPv4 التي CIDRAM يجب أن تحاول معالجة، مفصولة بفواصل."
 config_signatures_ipv6: "وهناك قائمة من الملفات توقيع عناوين IPv6 التي CIDRAM يجب أن تحاول معالجة، مفصولة بفواصل."
-config_signatures_modules: "قائمة الملفات وحدة لتحميل بعد التحقق من التوقيعات IPv4/IPv6، مفصولة بفواصل."
+config_signatures_modules: "قائمة الملفات المكون لتحميل بعد التحقق من التوقيعات IPv4/IPv6، مفصولة بفواصل."
 config_signatures_track_mode: "متى يجب أن تحسب المخالفات؟ زائفة/False = عندما IP تم حظره من قبل وحدات. صحيح/True = عندما IP يتم حظر لأي سبب من الأسباب. افتراضي = زائفة/False."
 config_signatures_tracking_override: "هل تسمح للوحدات النمطية بتجاوز خيارات التتبع؟ صحيح/True = نعم [افتراضي]؛ زائفة/False = لا."
 config_supplementary_cache_options: "خيارات ذاكرة التخزين المؤقت التكميلية."
@@ -205,7 +205,7 @@ field_cidr: "توليد الإخراج باستخدام تدوين CIDR"
 field_clear: "إلغاء"
 field_clear_all: "امسح الكل"
 field_clickable_link: "رابط قابل للنقر"
-field_component: "وحدة"
+field_component: "المكون"
 field_confirm: "تؤكد"
 field_create_new_account: "إنشاء حساب جديد"
 field_deactivate: "جعلها غير نشطة"
@@ -374,7 +374,7 @@ label_textmode: "تنسيق النص:"
 label_textmode_fancy: "تهيئتها"
 label_textmode_simple: "بسيط"
 label_textmode_tally: "عد"
-label_timeout_limit: "تقوم هذه الوحدة بتنفيذ الطلبات الخارجية. هنا يمكنك تحديد مهلة هذه الطلبات (بالثواني)."
+label_timeout_limit: "تقوم هذه المكون بتنفيذ الطلبات الخارجية. هنا يمكنك تحديد مهلة هذه الطلبات (بالثواني)."
 label_total: "مجموع"
 label_usemode_any: "فقط عندما ضمن حدود التواقيع، وليس محظور (بغض النظر عما إذا كان مسدود)."
 label_usemode_blkd: "فقط عندما يتم مسدود، ضمن حدود التواقيع، وليس محظور."
@@ -435,10 +435,10 @@ response_aux_rule_created_successfully: "تم إنشاء قاعدة مساعدة
 response_aux_rule_deleted_successfully: "تم حذف القاعدة المساعدة "%s" بنجاح."
 response_aux_updated: "تم تحديث القواعد المساعدة بنجاح."
 response_checksum_error: "خطأ أختباري! تم رفض الملف!"
-response_component_successfully_installed: "تم تثبيت الوحدة بنجاح"
-response_component_successfully_uninstalled: "تم الغاء تثبيت الوحدة بنجاح"
-response_component_successfully_updated: "تم تحديث الوحدة بنجاح"
-response_component_uninstall_error: "حدث خطأ أثناء محاولة إلغاء تثبيت الوحدة."
+response_component_successfully_installed: "تم تثبيت المكون بنجاح"
+response_component_successfully_uninstalled: "تم الغاء تثبيت المكون بنجاح"
+response_component_successfully_updated: "تم تحديث المكون بنجاح"
+response_component_uninstall_error: "حدث خطأ أثناء محاولة إلغاء تثبيت المكون."
 response_configuration_updated: "تم تحديث التكوين بنجاح"
 response_deactivated: "نجحت في جعل غير نشطة"
 response_deactivation_failed: "فشلت في جعله غير نشطة!"
@@ -461,6 +461,7 @@ response_login_wrong_endpoint: "نقطة نهاية خاطئة!"
 response_no: "لا"
 response_not_satisfied: "غير راضية."
 response_passed: "إجتاز"
+response_please_check_config: "يرجى التحقق من التكوين الخاص بك للتأكد من أن الوحدة المثبتة حديثًا سوف تعمل بالشكل الذي تريده."
 response_ready_to_install: "جاهز للتركيب."
 response_rename_error: "فشل في إعادة تسمية!"
 response_repair_process_completed: "اكتملت عملية الإصلاح."
@@ -472,7 +473,7 @@ response_skipped: "تخطي"
 response_statistics_cleared: "تم مسح الإحصاءات."
 response_tracking_cleared: "التتبع ألغيت."
 response_updates_already_up_to_date: "تحديث غير مطلوب."
-response_updates_not_installed: "وحدة غير مثبت!"
+response_updates_not_installed: "المكون غير مثبت!"
 response_updates_outdated: "عفا عليها الزمن!"
 response_updates_unable_to_determine: "غير قادر على تحديد."
 response_upload_error: "فشل لتحميل!"
@@ -483,9 +484,10 @@ security_warning: "حدثت مشكلة غير متوقعة أثناء معالج
 state_async_deny: "أذونات غير كافية لأداء طلبات غير متزامنة. حاول تسجيل الدخول مرة أخرى."
 state_cache_is_empty: "ذاكرة التخزين المؤقت فارغة."
 state_complete_access: "الوصول كامل"
-state_component_is_active: "وحدة نشطة."
-state_component_is_inactive: "وحدة غير نشطة."
-state_component_is_provisional: "وحدة نشطة جزئيا."
+state_component_is_active: "المكون نشط."
+state_component_is_inactive: "المكون غير نشط."
+state_component_is_partially_active: "المكون نشط جزئيا."
+state_component_is_provisional: "المكون مؤقت."
 state_default_password: "تحذير: يستخدم الافتراضي كلمه السر!"
 state_email_sent: "تم إرسال البريد الإلكتروني بنجاح إلى "%s"."
 state_failed_missing: "فشلت المهمة لأن المكون الضروري غير متوفر."

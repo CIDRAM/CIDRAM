@@ -4542,3 +4542,13 @@ $CIDRAM['Has'] = function ($Haystack, $Needle) use (&$CIDRAM): bool {
     }
     return $Needle === $Haystack;
 };
+
+/**
+ * Fetch L10N from module configuration L10N.
+ *
+ * @param string $Entry The L10N entry we're trying to fetch.
+ * @return string The L10N entry, or an empty string on failure.
+ */
+$CIDRAM['FromModuleConfigL10N'] = function ($Entry) use (&$CIDRAM) {
+    return $CIDRAM['Config']['L10N'][$CIDRAM['Config']['general']['lang']][$Entry] ?? $CIDRAM['Config']['L10N'][$Entry] ?? '';
+};

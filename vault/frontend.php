@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2021.07.01).
+ * This file: Front-end handler (last modified: 2021.07.02).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -1188,13 +1188,15 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
     );
     $CIDRAM['RegenerateConfig'] = '';
     $CIDRAM['ConfigModified'] = (!empty($CIDRAM['QueryVars']['updated']) && $CIDRAM['QueryVars']['updated'] === 'true');
+
+    /** Iterate through configuration defaults. */
     foreach ($CIDRAM['Config']['Config Defaults'] as $CIDRAM['CatKey'] => $CIDRAM['CatValue']) {
         if (!is_array($CIDRAM['CatValue'])) {
             continue;
         }
         $CIDRAM['RegenerateConfig'] .= '[' . $CIDRAM['CatKey'] . ']';
         if ($CIDRAM['CatInfo'] = $CIDRAM['L10N']->getString('config_' . $CIDRAM['CatKey']) ?: (
-            isset($CIDRAM['Config']['L10N']['config_' . $CIDRAM['CatKey']]) ? $CIDRAM['Config']['L10N']['config_' . $CIDRAM['CatKey']] : ''
+            $CIDRAM['FromModuleConfigL10N']('config_' . $CIDRAM['CatKey'])
         )) {
             $CIDRAM['CatInfo'] = '<br /><em>' . $CIDRAM['CatInfo'] . '</em>';
             $CIDRAM['RegenerateConfig'] .= "\r\n; " . wordwrap(str_replace(
@@ -1223,7 +1225,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
             $CIDRAM['ThisDir']['DirLangKeyOther'] = $CIDRAM['ThisDir']['DirLangKey'] . '_other';
             $CIDRAM['ThisDir']['DirName'] = $CIDRAM['LTRinRTF']($CIDRAM['CatKey'] . '➡' . $CIDRAM['DirKey']);
             $CIDRAM['ThisDir']['Friendly'] = $CIDRAM['L10N']->getString($CIDRAM['ThisDir']['DirLangKey'] . '_label') ?: (
-                isset($CIDRAM['Config']['L10N'][$CIDRAM['ThisDir']['DirLangKey'] . '_label']) ? $CIDRAM['Config']['L10N'][$CIDRAM['ThisDir']['DirLangKey'] . '_label'] : ''
+                $CIDRAM['FromModuleConfigL10N']($CIDRAM['ThisDir']['DirLangKey'] . '_label')
             ) ?: $CIDRAM['DirKey'];
             $CIDRAM['CatData'] .= sprintf(
                 '<li><a onclick="javascript:showid(\'%1$s-hidelink\');hideid(\'%1$s-showlink\');show(\'%1$s-row\')" href="#%2$s">%3$s</a></li>',
@@ -1235,8 +1237,8 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
                 $CIDRAM['L10N']->getString($CIDRAM['ThisDir']['DirLangKey']) ?:
                 $CIDRAM['L10N']->getString('label_' . $CIDRAM['DirKey']) ?:
                 $CIDRAM['L10N']->getString('config_' . $CIDRAM['CatKey']) ?:
-                (isset($CIDRAM['Config']['L10N'][$CIDRAM['ThisDir']['DirLangKey']]) ? $CIDRAM['Config']['L10N'][$CIDRAM['ThisDir']['DirLangKey']] : '') ?:
-                (isset($CIDRAM['Config']['L10N']['config_' . $CIDRAM['CatKey']]) ? $CIDRAM['Config']['L10N']['config_' . $CIDRAM['CatKey']] : '') ?:
+                $CIDRAM['FromModuleConfigL10N']($CIDRAM['ThisDir']['DirLangKey']) ?:
+                $CIDRAM['FromModuleConfigL10N']('config_' . $CIDRAM['CatKey']) ?:
                 $CIDRAM['L10N']->getString('response_error');
             if (!empty($CIDRAM['DirValue']['experimental'])) {
                 $CIDRAM['ThisDir']['DirLang'] = '<code class="exp">' . $CIDRAM['L10N']->getString('config_experimental') . '</code> ' . $CIDRAM['ThisDir']['DirLang'];
@@ -1583,7 +1585,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
             );
         }
         $CIDRAM['CatKeyFriendly'] = $CIDRAM['L10N']->getString('config_' . $CIDRAM['CatKey'] . '_label') ?: (
-            isset($CIDRAM['Config']['L10N']['config_' . $CIDRAM['CatKey'] . '_label']) ? $CIDRAM['Config']['L10N']['config_' . $CIDRAM['CatKey'] . '_label'] : ''
+            $CIDRAM['FromModuleConfigL10N']('config_' . $CIDRAM['CatKey'] . '_label')
         ) ?: $CIDRAM['CatKey'];
         $CIDRAM['FE']['Indexes'] .= sprintf(
             '<li><span class="comCat"><span style="cursor:pointer">%1$s</span></span><ul class="comSub">%2$s</ul></li>',

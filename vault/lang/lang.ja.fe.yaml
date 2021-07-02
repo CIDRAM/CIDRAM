@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Japanese language data for the front-end (last modified: 2021.07.01).
+# This file: Japanese language data for the front-end (last modified: 2021.07.02).
 ##/
 
 Extended Description Bypasses: "メインパッケージに通常含まれているデフォルト・シグネチャ・バイパス。"
@@ -36,6 +36,7 @@ Extended Description module_httpver.php: "CIDRAMコンフィグレーション�
 Extended Description module_projecthoneypot.php: "Project HoneypotにリストされているＩＰからの要求をブロックします。"
 Extended Description module_refspam.php: "リファラー・スパムに基づくブロックは、通常、有意義なセキュリティ上の利点を提供しません、ただし、場合によっては、リクエストに関する詳細情報の収集、およびレポートの作成に役立つ可能性があります。<br />このモジュールをインストールすると、<a href="https://github.com/symfony/polyfill-intl-idn" hreflang="en" rel="noopener noreferrer external">Intl/Idn</a>と<a href="https://github.com/symfony/polyfill-mbstring" hreflang="en" rel="noopener noreferrer external">Mbstring</a>のSymfonyポリフィルもインストールされます（このモジュールは「Idn」機能を必要とするためが、すべてのPHPインストールがデフォルトで提供するわけではありません）。​どちらも、<a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a>ライセンスを通じて入手できます。"
 Extended Description module_sfs.php: "ＳＦＳによってリストされたＩＰに対して登録ページとログインページを保護します。"
+Extended Description Search engines blocker module: "一部のウェブサイトで問題となる可能性のある検索エンジンを（例：Baidu、Sogou、Yandexなど）ブロックする機能を提供します。"
 Name Bypasses: "デフォルト・シグネチャ・バイパス。"
 Name CN_cidram.inc: "中国ＩＰｖ４ブロックリスト"
 Name IPv4-Bogons: "ＩＰｖ４（ボゴン）。"
@@ -51,10 +52,9 @@ Name IPv6: "ＩＰｖ６（クラウド・サービス、ホスティング・�
 Name KR_cidram.inc: "韓国ＩＰｖ４ブロックリスト"
 Name compat_bunnycdn.php: "BunnyCDN互換モジュール"
 Name module_abuseipdb.php: "AbuseIPDB モジュール"
-Name module_badhosts.php: "危険なホスト・ブロッカーモジュール"
-Name module_badhosts_isps.php: "危険なホスト・ブロッカーモジュール（ＩＳＰ）"
-Name module_badtlds.php: "危険なホストＴＬＤブロッカーモジュール"
-Name module_baidublocker.php: "Ｂａｉｄｕブロッカーモジュール"
+Name module_badhosts.php: "危険なホスト・ブロッカー・モジュール"
+Name module_badhosts_isps.php: "危険なホスト・ブロッカー・モジュール（ＩＳＰ）"
+Name module_badtlds.php: "危険なホストＴＬＤブロッカー・モジュール"
 Name module_bgpview.php: "BGPView モジュール"
 Name module_botua.php: "オプショナル・ユーザー・エージェント・モジュール"
 Name module_cookies.php: "オプショナル・クッキー・スキャナ・モジュール"
@@ -63,7 +63,7 @@ Name module_httpver.php: "ＨＴＴＰバージョン・チェッカー・モジ
 Name module_projecthoneypot.php: "Project Honeypot モジュール"
 Name module_refspam.php: "リファラー・スパム・モジュール"
 Name module_sfs.php: "Stop Forum Spam モジュール"
-Name module_yandexblocker.php: "Ｙａｎｄｅｘブロッカーモジュール"
+Name Search engines blocker module: "検索エンジン・ブロッカー・モジュール"
 config_PHPMailer: "PHPMailerの設定（二要素認証に使用されます）。"
 config_PHPMailer_add_reply_to_address: "ＳＭＴＰ経由で電子Ｅメールを送信するときに引用する返信アドレス。"
 config_PHPMailer_add_reply_to_name: "ＳＭＴＰ経由で電子Ｅメールを送信するときに引用する返信名。"
@@ -459,6 +459,7 @@ response_login_wrong_endpoint: "間違ったエンドポイント！"
 response_no: "いいえ"
 response_not_satisfied: "満たされていません。"
 response_passed: "合格しました"
+response_please_check_config: "新しくインストールされたモジュールが意図したとおりに動作することを確認するために、コンフィグレーションを確認してください。"
 response_ready_to_install: "インストールの準備ができました。"
 response_rename_error: "名前を変更できませんでした！"
 response_repair_process_completed: "修復プロセスが完了しました。"
@@ -483,6 +484,7 @@ state_cache_is_empty: "キャッシュは空です。"
 state_complete_access: "完全なアクセス"
 state_component_is_active: "コンポーネントがアクティブです。"
 state_component_is_inactive: "コンポーネントが非アクティブです。"
+state_component_is_partially_active: "コンポーネントが部分的にアクティブです。"
 state_component_is_provisional: "コンポーネントが暫定的です。"
 state_default_password: "警告：デフォルトのパスワードを使用して！"
 state_email_sent: "Ｅメールは「%s」に送信されました。"

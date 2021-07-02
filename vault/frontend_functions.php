@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2021.07.01).
+ * This file: Front-end functions file (last modified: 2021.07.02).
  */
 
 /**
@@ -3881,6 +3881,9 @@ $CIDRAM['ArrayToClickableList'] = function (array $Arr = [], string $DeleteKey =
  */
 $CIDRAM['Message'] = function (string $Message) use (&$CIDRAM): void {
     if (isset($CIDRAM['FE']['state_msg'])) {
+        if ($Try = $CIDRAM['L10N']->getString($Message)) {
+            $Message = $Try;
+        }
         $CIDRAM['FE']['state_msg'] .= $Message . '<br />';
     }
 };

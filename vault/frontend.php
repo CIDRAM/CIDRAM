@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2021.06.29).
+ * This file: Front-end handler (last modified: 2021.07.01).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -1976,16 +1976,24 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && ($CIDRAM['FE']['Per
         }
         if (!empty($CIDRAM['Components']['ThisComponent']['Files']['To'])) {
             $CIDRAM['Activable'] = $CIDRAM['IsActivable']($CIDRAM['Components']['ThisComponent']);
-            if (preg_match('~^(?:theme/' . preg_quote(
-                $CIDRAM['Config']['template_data']['theme']
-            ) . '|CIDRAM.*|Common Classes Package)$~i', $CIDRAM['Components']['Key']) || $CIDRAM['IsInUse'](
-                $CIDRAM['Components']['ThisComponent']
-            )) {
-                $CIDRAM['AppendToString'](
-                    $CIDRAM['Components']['ThisComponent']['StatusOptions'],
-                    '<hr />',
-                    '<div class="txtGn">' . $CIDRAM['L10N']->getString('state_component_is_active') . '</div>'
-                );
+            $CIDRAM['Components']['ThisIsInUse'] = $CIDRAM['IsInUse']($CIDRAM['Components']['ThisComponent']);
+            if (preg_match(
+                '~^(?:theme/' . preg_quote($CIDRAM['Config']['template_data']['theme']) . '|CIDRAM.*|Common Classes Package)$~i',
+                $CIDRAM['Components']['Key']
+            ) || $CIDRAM['Components']['ThisIsInUse'] !== 0) {
+                if ($CIDRAM['Components']['ThisIsInUse'] === -1) {
+                    $CIDRAM['AppendToString'](
+                        $CIDRAM['Components']['ThisComponent']['StatusOptions'],
+                        '<hr />',
+                        '<div class="txtOe">' . $CIDRAM['L10N']->getString('state_component_is_partially_active') . '</div>'
+                    );
+                } else {
+                    $CIDRAM['AppendToString'](
+                        $CIDRAM['Components']['ThisComponent']['StatusOptions'],
+                        '<hr />',
+                        '<div class="txtGn">' . $CIDRAM['L10N']->getString('state_component_is_active') . '</div>'
+                    );
+                }
                 if ($CIDRAM['Activable']) {
                     $CIDRAM['Components']['ThisComponent']['Options'] .= '<option value="deactivate-component">' . $CIDRAM['L10N']->getString('field_deactivate') . '</option>';
                     if (!empty($CIDRAM['Components']['ThisComponent']['Uninstallable'])) {

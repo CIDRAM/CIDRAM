@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Norwegian language data for the front-end (last modified: 2021.07.01).
+# This file: Norwegian language data for the front-end (last modified: 2021.07.02).
 ##/
 
 Extended Description Bypasses: "Standard-signatur-bypass-filene som normalt følger med hovedpakken."
@@ -36,6 +36,7 @@ Extended Description module_httpver.php: "Gjør det mulig å blokkere spesifikke
 Extended Description module_projecthoneypot.php: "Blokkerer forespørsler fra IP-er oppført på Project Honeypot."
 Extended Description module_refspam.php: "Blokkering basert på referansesøppel vil vanligvis ikke gi noen meningsfull sikkerhetsgevinst, men i noen tilfeller kan det være nyttig for noen brukere, for å samle mer informasjon om forespørsler og for å kunne rapportere det.<br />Ved å installere denne modulen installeres også Symfony-polyfyllene for <a href="https://github.com/symfony/polyfill-intl-idn" hreflang="en" rel="noopener noreferrer external">Intl/Idn</a> og <a href="https://github.com/symfony/polyfill-mbstring" hreflang="en" rel="noopener noreferrer external">Mbstring</a> (fordi denne modulen krever Idn-funksjonalitet, som ikke alle PHP-installasjoner leverer som standard), begge som er tilgjengelige via <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a> lisensen."
 Extended Description module_sfs.php: "Beskytter registrerings og innloggingssider mot IP-adresser oppført av SFS."
+Extended Description Search engines blocker module: "Gir muligheten til å blokkere søkemotorer som kan være problematiske for noen nettsteder (f.eks., Baidu, Sogou, Yandex, osv)."
 Name Bypasses: "Standard signatur bypasses."
 Name CN_cidram.inc: "Kina IPv4-blokkliste"
 Name IPv4-Bogons: "IPv4 (bogoner)."
@@ -54,7 +55,6 @@ Name module_abuseipdb.php: "AbuseIPDB modul"
 Name module_badhosts.php: "Dårlig vertene blokkeringsmodul"
 Name module_badhosts_isps.php: "Dårlig vertene blokkeringsmodul (ISPs)"
 Name module_badtlds.php: "Dårlig TLDs blokkeringsmodul"
-Name module_baidublocker.php: "Baidu blokkeringsmodul"
 Name module_bgpview.php: "BGPView modul"
 Name module_botua.php: "Valgfri brukeragentmodul"
 Name module_cookies.php: "Valgfrie informasjonskapselskannermodul"
@@ -63,7 +63,7 @@ Name module_httpver.php: "HTTP-versjonskontrollmodul"
 Name module_projecthoneypot.php: "Project Honeypot modul"
 Name module_refspam.php: "Henvisende spam modul"
 Name module_sfs.php: "Stop Forum Spam modul"
-Name module_yandexblocker.php: "Yandex blokkeringsmodul"
+Name Search engines blocker module: "Søkemotorer blokkeringsmodul"
 config_PHPMailer: "Konfigurasjon for PHPMailer (brukes til tofaktorautentisering)."
 config_PHPMailer_add_reply_to_address: "Svaradressen for å sitere når du sender e-post via SMTP."
 config_PHPMailer_add_reply_to_name: "Svarnavnet til å sitere når du sender e-post via SMTP."
@@ -467,6 +467,7 @@ response_login_wrong_endpoint: "Feil sluttpunkt!"
 response_no: "Nei"
 response_not_satisfied: "Ikke fornøyd."
 response_passed: "Bestått"
+response_please_check_config: "Kontroller konfigurasjonen for å sikre at den nylig installerte modulen vil oppføre seg slik du har tenkt deg."
 response_ready_to_install: "Klar til installasjon."
 response_rename_error: "Omdøpe mislyktes!"
 response_repair_process_completed: "Reparasjonsprosessen er fullført."
@@ -489,8 +490,9 @@ security_warning: "Et uventet problem oppstod under behandlingen av forespørsel
 state_async_deny: "Tillatelser ikke tilstrekkelig til å utføre asynkrone forespørsler. Prøv å logge inn igjen."
 state_cache_is_empty: "Cachen er tom."
 state_complete_access: "Komplett tilgang"
-state_component_is_active: "Komponent er aktiv."
-state_component_is_inactive: "Komponent er inaktiv."
+state_component_is_active: "Komponenten er aktiv."
+state_component_is_inactive: "Komponenten er inaktiv."
+state_component_is_partially_active: "Komponenten er delvis aktiv."
 state_component_is_provisional: "Komponent er foreløpig."
 state_default_password: "Advarsel: Bruker standard passordet"
 state_email_sent: "E-post ble sendt til "%s" vellykket."

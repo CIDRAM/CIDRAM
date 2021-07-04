@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2021.07.02).
+ * This file: Front-end functions file (last modified: 2021.07.04).
  */
 
 /**
@@ -1316,22 +1316,38 @@ $CIDRAM['GetAssetPath'] = function ($Asset, $CanFail = false) use (&$CIDRAM) {
  */
 $CIDRAM['FE_Executor'] = function ($Closures = false, $Queue = false) use (&$CIDRAM) {
     if ($Queue && $Closures !== false) {
-        if (empty($CIDRAM['FE_Executor_Queue'])) {
+        /** Guard. */
+        if (empty($CIDRAM['FE_Executor_Queue']) || !is_array($CIDRAM['FE_Executor_Queue'])) {
             $CIDRAM['FE_Executor_Queue'] = [];
         }
+
+        /** Add to the executor queue. */
         $CIDRAM['FE_Executor_Queue'][] = $Closures;
         return;
     }
-    if ($Closures === false && !empty($CIDRAM['FE_Executor_Queue'])) {
-        foreach ($CIDRAM['FE_Executor_Queue'] as $QueueItem) {
+
+    if ($Closures === false && !empty($CIDRAM['FE_Executor_Queue']) && is_array($CIDRAM['FE_Executor_Queue'])) {
+        /** We'll iterate an array from the local scope to guard against infinite loops. */
+        $Items = $CIDRAM['FE_Executor_Queue'];
+
+        /** Purge the queue before iterating. */
+        $CIDRAM['FE_Executor_Queue'] = [];
+
+        /** Recursively iterate through the executor queue. */
+        foreach ($Items as $QueueItem) {
             $CIDRAM['FE_Executor']($QueueItem);
         }
-        $CIDRAM['FE_Executor_Queue'] = [];
         return;
     }
+
+    /** Guard. */
     $CIDRAM['Arrayify']($Closures);
+
+    /** Recursively execute all closures in the current queue item. */
     foreach ($Closures as $Closure) {
+        /** All logic, data traversal, dot notation, etc handled here. */
         $Closure = $CIDRAM['Operation']->ifCompare($CIDRAM, $Closure);
+
         if (isset($CIDRAM[$Closure]) && is_object($CIDRAM[$Closure])) {
             $CIDRAM[$Closure]();
         } elseif (($Pos = strpos($Closure, ' ')) !== false) {

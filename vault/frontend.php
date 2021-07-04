@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2021.07.02).
+ * This file: Front-end handler (last modified: 2021.07.04).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -1901,6 +1901,11 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && ($CIDRAM['FE']['Per
         } else {
             $CIDRAM['Components']['ThisComponent']['Latest'] = $CIDRAM['L10N']->getString('response_updates_unable_to_determine');
             $CIDRAM['Components']['ThisComponent']['StatClass'] = 's';
+        }
+
+        /** Guard against component metadata missing at the upstream. */
+        if (!isset($CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']])) {
+            $CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']] = [];
         }
 
         /** Determine whether all dependency constraints have been met. */

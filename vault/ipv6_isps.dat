@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6_isps.dat
 
-# Version: 2021.178.318
-# Last modified: 2021.06.28
+# Version: 2021.185.669
+# Last modified: 2021.07.05
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -2362,11 +2362,12 @@ Profile: Domestic ISP
 Tag: Telefonica Brasil
 
 
-# ASN 13030 ("Init7"). Swiss multiplay network (domestic ISP, webhosting, etc).
-# Listed due to hacking and brute-force attempts detected. Listing only
-# the specific addresses known to be recently/currently affected.
-# Stop Forum Spam (SFS) listings: 1,183.
-# Updated: 2021.01.11
+# ASN 13030 ("Init7").
+# Swiss multiplay network (domestic ISP, webhosting, etc). Hacking and
+# brute-force attacks detected from here.
+# Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 4,512.
+# Updated: 2021.01.11 / Checked: 2021.07.05
 
 2a02:168:2000:61::/64 Deny Spam
 Origin: CH

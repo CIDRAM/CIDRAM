@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6.dat
 
-# Version: 2021.178.318
-# Last modified: 2021.06.28
+# Version: 2021.185.669
+# Last modified: 2021.07.05
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -701,42 +701,13 @@ Tag: Rackspace Hosting
 
 
 # ASN 6939 ("Hurricane Electric, Inc").
-# Stop Forum Spam (SFS) listings: 580.
-# Updated: 2020.11.23
+# *MAJOR* internet infrastructure/backbone provider! Never block in entirety!
+# SSH, DDoS, brute-force, and webapp attacks, spam, port scans, and hacking
+# detected from here. Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 1,078.
+# Updated: 2021.07.04
 
-# Note when updating: There are some CIDRs in BGP that shouldn't be included here as signatures.
-# - Anything marked as "invalid".
-# - "2001::/32" (provides "Teredo" tunneling).
-# - "2002::/16" (provides "6to4" bridging connectivity).
-# - "124.252.248.0/21" (suspected human endpoints).
-# - "BLOOMINGDALE HOME TELEPHONE COMPANY, INC" (human endpoints).
-# - "Internet Assigned Numbers Authority" (bogons and unassigned or pending assignment).
-# - Anything labeled as "Broadband" (can reasonably assume as human endpoints).
-# I.e., "^200(?:1\:\:\/32|2\:\:\/16).*$|^.*(?:124\.252\.248\.0|Broadband|invalid|Telephone).*$|^.*Authority$"
-# Also subtract from final aggregate:
-# - 65.49.67.0/24 (access provider / human endpoints).
-
-2a10:7d40::/29 Run rules_as6939.php
-Origin: DE
-2001:df2:7900::/48 Run rules_as6939.php
-2400:7a00::/32 Run rules_as6939.php
-Origin: HK
-2a09:3c00::/29 Run rules_as6939.php
-Origin: NL
-2001:470::/32 Run rules_as6939.php
-2001:49e8::/32 Run rules_as6939.php
-2600:7000::/24 Run rules_as6939.php
-2602:fd3f::/47 Run rules_as6939.php
-2602:fd3f:f00::/48 Run rules_as6939.php
-2602:fd9b::/36 Run rules_as6939.php
-2602:feca::/36 Run rules_as6939.php
-2602:ff06:725::/48 Run rules_as6939.php
-2604:a100:100::/48 Run rules_as6939.php
-2604:a100:200::/48 Run rules_as6939.php
-2604:c800:ffff::/48 Run rules_as6939.php
-2620:0:50c0::/48 Run rules_as6939.php
-2620:64:6000::/48 Run rules_as6939.php
-2620:138:c001::/48 Run rules_as6939.php
+2001:470:1d:3b0::/64 Deny Malware
 Origin: US
 Profile: Commercial;Infrastructure/Transit;Tor endpoints here
 Tag: Hurricane Electric
@@ -979,8 +950,8 @@ Tag: Rack911
 
 
 # ASN 63930 ("READY SERVER PTE LTD").
-# Stop Forum Spam (SFS) listings: 96.
-# Updated: 2019.08.04 / Checked: 2021.04.01
+# Stop Forum Spam (SFS) listings: 104.
+# Updated: 2019.08.04 / Checked: 2021.07.04
 
 2400:fb80::/32 Deny Cloud
 2401:e780::/32 Deny Cloud
@@ -1655,8 +1626,8 @@ Tag: Host Europe GmbH
 
 # ASN 14576 ("K SERVERS LTD").
 # Caught trying to hack WordPress sites.
-# Stop Forum Spam (SFS) listings: 3,873.
-# Updated: 2019.10.01 / Checked: 2020.11.29
+# Stop Forum Spam (SFS) listings: 6,506.
+# Updated: 2019.10.01 / Checked: 2021.07.05
 
 2a07:4dc0::/29 Deny Cloud
 2a07:b400::/29 Deny Cloud
@@ -1664,6 +1635,7 @@ Origin: NL
 2606:5e00::/35 Deny Cloud
 2606:5e00:f000::/36 Deny Cloud
 Origin: US
+Profile: Infrastructure/Transit;Webhosting
 Tag: K SERVERS LTD
 
 
@@ -2136,10 +2108,11 @@ Tag: MBA DATACENTERS S.L
 # ASN 10439 ("CariNet, Inc").
 # Caught attempting to hack honeypots.
 # Stop Forum Spam (SFS) listings: 1.
-# Updated: 2016.04.08 / Checked: 2020.11.21
+# Updated: 2016.04.08 / Checked: 2021.07.05
 
 2607:ff10::/32 Deny Cloud
 Origin: US
+Profile: Infrastructure/Transit;Webhosting
 Tag: CariNet, Inc
 
 
@@ -3400,10 +3373,10 @@ Profile: Commercial;Infrastructure/Transit
 Tag: Huawei Cloud Service
 
 
-# ASN 38001 ("NewMedia Express Pte Ltd. Singapore Web Hosting Service Provider").
+# ASN 38001 ("NewMedia Express Pte Ltd").
 # Caught trying to DDoS SFS.
-# Stop Forum Spam (SFS) listings: 190.
-# Updated: 2021.05.08
+# Stop Forum Spam (SFS) listings: 262.
+# Updated: 2021.05.08 / Checked: 2021.07.04
 
 2402:2f80:1::/48 Deny Cloud
 2402:2f80:8::/48 Deny Cloud
@@ -3735,8 +3708,7 @@ Tag: Netelligent Hosting
 
 # ASN 9925 ("Powerbase DataCenter Services (HK) Ltd").
 # Some records of attempted DoS'ing exist at AbuseIPDB from this network.
-# Should reassess at each subsequent check.
-# Updated: 2016.08.19 / Checked: 2020.11.15
+# Updated: 2016.08.19 / Checked: 2021.07.05
 
 2401:9f00::/32 Deny Cloud
 Origin: HK
@@ -6385,8 +6357,7 @@ Tag: CJ2 Hosting B.V
 
 # ASN 36791 ("Portland Internet Hosting LLC").
 # Dedicated webhosting provider caught hammering website contact forms.
-# Stop Forum Spam (SFS) listings: 4.
-# Updated: 2020.01.01 / Checked: 2020.11.15
+# Updated: 2020.01.01 / Checked: 2021.07.03
 
 2001:470:50::/48 Deny Cloud
 Origin: US

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2021.07.04).
+ * This file: Front-end handler (last modified: 2021.07.05).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -1950,7 +1950,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && ($CIDRAM['FE']['Per
                 $CIDRAM['Components']['Outdated'][] = $CIDRAM['Components']['Key'];
                 if ((
                     !empty($CIDRAM['Components']['ThisComponent']['Used with']) &&
-                    substr($CIDRAM['Components']['ThisComponent']['Used with'], 0, 3) === 'ipv'
+                    $CIDRAM['Has']($CIDRAM['Components']['ThisComponent']['Used with'], ['ipv4', 'ipv6'])
                 ) || (
                     !empty($CIDRAM['Components']['ThisComponent']['Extended Description']) &&
                     strpos($CIDRAM['Components']['ThisComponent']['Extended Description'], 'signatures-&gt;ipv') !== false

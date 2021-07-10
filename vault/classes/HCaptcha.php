@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: HCaptcha class (last modified: 2021.05.01).
+ * This file: HCaptcha class (last modified: 2021.07.10).
  */
 
 namespace CIDRAM\Core;
@@ -121,7 +121,10 @@ class HCaptcha extends Captcha
     }
 
     /**
+     * Constructor.
+     *
      * @param array $CIDRAM The main CIDRAM array passed by reference.
+     * @return void
      */
     public function __construct(&$CIDRAM)
     {

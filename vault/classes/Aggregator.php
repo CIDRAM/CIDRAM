@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: IP aggregator (last modified: 2020.06.11).
+ * This file: IP aggregator (last modified: 2021.07.10).
  */
 
 namespace CIDRAM\Aggregator;
@@ -55,6 +55,11 @@ class Aggregator
      */
     public $callbacks = [];
 
+    /**
+     * Constructor.
+     *
+     * @return void
+     */
     public function __construct(array &$CIDRAM, $Mode = 0)
     {
         $this->constructTables();

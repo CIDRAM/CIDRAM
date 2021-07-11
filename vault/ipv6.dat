@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6.dat
 
-# Version: 2021.185.669
-# Last modified: 2021.07.05
+# Version: 2021.191.686
+# Last modified: 2021.07.11
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -2342,19 +2342,12 @@ Tag: SECURED SERVERS LLC
 
 
 # ASN 21859 ("Zenlayer Inc").
-# Stop Forum Spam (SFS) listings: 3,689.
-# Updated: 2020.12.06
+# Stop Forum Spam (SFS) listings: 2,175.
+# Updated: 2021.07.11
 
 2400:ba41:1::/48 Deny Cloud
 2404:e5c0::/32 Deny Cloud
-2407:6a80::/32 Deny Cloud
 Origin: CN
-2a0b:21c0:1000::/36 Deny Cloud
-2a0b:21c0:2000::/35 Deny Cloud
-2a0b:21c0:4000::/34 Deny Cloud
-2a0b:21c0:8000::/34 Deny Cloud
-2a0b:21c0:c000::/35 Deny Cloud
-Origin: DE
 2602:ffe4::/37 Deny Cloud
 2602:ffe4:800::/38 Deny Cloud
 2602:ffe4:c00::/46 Deny Cloud
@@ -2362,25 +2355,40 @@ Origin: DE
 2602:ffe4:c06::/48 Deny Cloud
 2602:ffe4:c09::/48 Deny Cloud
 2602:ffe4:c0a::/47 Deny Cloud
+2602:ffe4:c0d::/48 Deny Cloud
 2602:ffe4:c11::/48 Deny Cloud
 2602:ffe4:c12::/47 Deny Cloud
 2602:ffe4:c14::/46 Deny Cloud
 2602:ffe4:c18::/47 Deny Cloud
 2602:ffe4:c1a::/48 Deny Cloud
-2602:ffe4:c20::/47 Deny Cloud
-2602:ffe4:c23::/48 Deny Cloud
+2602:ffe4:c1f::/48 Deny Cloud
+2602:ffe4:c20::/46 Deny Cloud
 2602:ffe4:c25::/48 Deny Cloud
 2602:ffe4:c26::/47 Deny Cloud
 2602:ffe4:c32::/48 Deny Cloud
-2602:ffe4:c35::/48 Deny Cloud
-2602:ffe4:c38::/48 Deny Cloud
+2602:ffe4:c3b::/48 Deny Cloud
+2602:ffe4:c3c::/48 Deny Cloud
+2602:ffe4:c3e::/47 Deny Cloud
+2602:ffe4:c40::/47 Deny Cloud
+2602:ffe4:c42::/48 Deny Cloud
+2602:ffe4:c4b::/48 Deny Cloud
 2604:980:1000::/36 Deny Cloud
 2604:980:2000::/35 Deny Cloud
 2604:980:4000::/35 Deny Cloud
 2604:980:7000::/36 Deny Cloud
 2604:980:8000::/34 Deny Cloud
+2604:980:d000::/36 Deny Cloud
+2604:980:e000::/48 Deny Cloud
 2607:a400::/32 Deny Cloud
+2a0b:21c0:1000::/36 Deny Cloud
+2a0b:21c0:2000::/35 Deny Cloud
+2a0b:21c0:4000::/34 Deny Cloud
+2a0b:21c0:8000::/34 Deny Cloud
+2a0b:21c0:c000::/35 Deny Cloud
+2a0b:21c0:f000::/36 Deny Cloud
+2a0b:21c1::/35 Deny Cloud
 Origin: US
+Profile: Dedicated;Infrastructure/Transit;Webhosting
 Tag: Zenlayer Inc
 
 
@@ -2504,8 +2512,8 @@ Tag: Sia Nano IT
 
 
 # ASN 8987 ("Amazon Data Services"), ASNs 14618, 16509 ("Amazon.com, Inc").
-# Stop Forum Spam (SFS) listings: 8,961 (AS14618), 86,569 (AS16509).
-# Updated: 2021.06.16
+# Stop Forum Spam (SFS) listings: 8,844 (AS14618), 86,602 (AS16509).
+# Updated: 2021.07.08
 
 2001:dcd:22::/47 Run rules_specific.php
 2001:df3:a280::/48 Run rules_specific.php
@@ -2551,6 +2559,7 @@ Origin: DK
 2a00:de61:100::/40 Run rules_specific.php
 2a00:de61:200::/39 Run rules_specific.php
 2a0a:144:400::/48 Run rules_specific.php
+2a0e:a780::/36 Run rules_specific.php
 Origin: GB
 2a05:d000:2000::/40 Run rules_specific.php
 2a05:d000:6000::/40 Run rules_specific.php
@@ -2622,7 +2631,6 @@ Origin: JP
 Origin: NL
 2403:e040:8000::/33 Run rules_specific.php
 Origin: NZ
-2001:678:87c::/48 Run rules_specific.php
 2a10:ba00:bee5::/48 Run rules_specific.php
 Origin: SE
 2001:df3:5580::/48 Run rules_specific.php
@@ -2764,18 +2772,16 @@ Origin: TW
 2600:1fa0:e040::/44 Run rules_specific.php
 2600:1fa0:e080::/44 Run rules_specific.php
 2600:1fa0:e0c0::/44 Run rules_specific.php
-2600:9000:1000::/47 Run rules_specific.php
+2600:9000:1000::/48 Run rules_specific.php
 2600:9000:1003::/48 Run rules_specific.php
 2600:9000:1020::/48 Run rules_specific.php
 2600:9000:1022::/48 Run rules_specific.php
 2600:9000:1025::/48 Run rules_specific.php
-2600:9000:1027::/48 Run rules_specific.php
 2600:9000:1028::/48 Run rules_specific.php
 2600:9000:1030::/48 Run rules_specific.php
 2600:9000:1036::/48 Run rules_specific.php
 2600:9000:103b::/48 Run rules_specific.php
 2600:9000:103e::/48 Run rules_specific.php
-2600:9000:104d::/48 Run rules_specific.php
 2600:9000:107a::/48 Run rules_specific.php
 2600:9000:107f::/48 Run rules_specific.php
 2600:9000:1080::/47 Run rules_specific.php
@@ -2870,7 +2876,11 @@ Origin: TW
 2600:9000:11bd::/48 Run rules_specific.php
 2600:9000:11bf::/48 Run rules_specific.php
 2600:9000:11c1::/48 Run rules_specific.php
-2600:9000:11c2::/48 Run rules_specific.php
+2600:9000:11c2::/47 Run rules_specific.php
+2600:9000:11c6::/47 Run rules_specific.php
+2600:9000:11d1::/48 Run rules_specific.php
+2600:9000:1e05::/48 Run rules_specific.php
+2600:9000:1e16::/48 Run rules_specific.php
 2600:9000:2000::/45 Run rules_specific.php
 2600:9000:2008::/46 Run rules_specific.php
 2600:9000:200c::/47 Run rules_specific.php
@@ -2879,13 +2889,15 @@ Origin: TW
 2600:9000:2020::/45 Run rules_specific.php
 2600:9000:2029::/48 Run rules_specific.php
 2600:9000:202a::/47 Run rules_specific.php
-2600:9000:202c::/47 Run rules_specific.php
+2600:9000:202c::/48 Run rules_specific.php
 2600:9000:202f::/48 Run rules_specific.php
 2600:9000:2031::/48 Run rules_specific.php
 2600:9000:2032::/48 Run rules_specific.php
 2600:9000:2035::/48 Run rules_specific.php
 2600:9000:2036::/48 Run rules_specific.php
-2600:9000:2038::/45 Run rules_specific.php
+2600:9000:2038::/48 Run rules_specific.php
+2600:9000:203a::/47 Run rules_specific.php
+2600:9000:203c::/46 Run rules_specific.php
 2600:9000:2040::/43 Run rules_specific.php
 2600:9000:2061::/48 Run rules_specific.php
 2600:9000:2062::/47 Run rules_specific.php
@@ -3696,12 +3708,14 @@ Tag: Keyweb AG
 
 
 # ASN 10929 ("Netelligent Hosting Services Inc").
-# Stop Forum Spam (SFS) listings: 124.
-# Updated: 2016.08.19 / Checked: 2020.12.06
+# Stop Forum Spam (SFS) listings: 148.
+# Updated: 2021.07.11
 
 2605:6f00:9000::/36 Deny Cloud
 2605:9000::/32 Deny Cloud
 Origin: CA
+2a02:c6c1:1::/48 Deny Cloud
+Origin: GB
 Profile: Webhosting
 Tag: Netelligent Hosting
 
@@ -3892,13 +3906,15 @@ Tag: Nexeon Technologies
 
 
 # ASN 48096 ("OOO IT-Grad").
-# Stop Forum Spam (SFS) listings: 26.
-# Updated: 2019.09.15 / Checked: 2020.12.06
+# Stop Forum Spam (SFS) listings: 3.
+# Updated: 2021.07.11
 
 2a04:c900:1000::/36 Deny Cloud
 2a04:c900:3000::/36 Deny Cloud
 2a06:b800:1000::/36 Deny Cloud
+2a0c:b980:1000::/36 Deny Cloud
 Origin: RU
+Profile: Webhosting
 Tag: OOO IT-Grad
 
 
@@ -3981,9 +3997,11 @@ Tag: meerfarbig
 
 # ASNs 38719, 135132 ("Dreamscape Networks Pty Ltd").
 # Dedicated webhosting provider and an occasional source of spam.
-# Stop Forum Spam (SFS) listings: 49 (AS38719), 7 (AS135132).
-# Updated: 2020.12.07
+# Stop Forum Spam (SFS) listings: 65 (AS38719), 1 (AS135132).
+# Updated: 2021.07.11
 
+2a00:fd80::/32 Deny Cloud
+Origin: AE
 2402:af00::/32 Deny Cloud
 2402:cb40::/32 Deny Cloud
 2404:8280::/32 Deny Cloud
@@ -3991,8 +4009,8 @@ Tag: meerfarbig
 2407:2200::/32 Deny Cloud
 2407:4c00::/32 Deny Cloud
 Origin: AU
-2a00:fd80::/32 Deny Cloud
-Origin: GB
+2404:3800:f::/48 Deny Cloud
+Origin: NZ
 2405:df80::/32 Deny Cloud
 Origin: PH
 2400:8240::/32 Deny Cloud
@@ -4182,15 +4200,6 @@ Origin: SC
 2a06:1280::/32 Deny Cloud
 Origin: US
 Tag: Zappie Host LLC
-
-
-# ASN 58923 ("InterCloud ltd").
-# Stop Forum Spam (SFS) listings: 323.
-# Updated: 2018.11.19 / Checked: 2020.12.06
-
-2406:f100::/32 Deny Cloud
-Origin: BD
-Tag: InterCloud ltd
 
 
 # ASN 197540 ("netcup GmbH").
@@ -5126,12 +5135,11 @@ Profile: Dedicated;Infrastructure/Transit;Webhosting
 Tag: First Colo GmbH
 
 
-# ASNs 43146, 49352, 197695 ("Domain names registrar REG.RU").
+# ASNs 49352, 197695 ("Domain names registrar REG.RU").
 # Malware detected on network; Future C&C risk. Also a frequent source of spam.
-# Stop Forum Spam (SFS) listings: 1,046 (AS43146), 13 (AS49352), 377 (AS197695).
-# Updated: 2020.12.06
+# Stop Forum Spam (SFS) listings: 9 (AS49352), 1,156 (AS197695).
+# Updated: 2021.07.11
 
-2a00:1b48::/32 Deny Cloud
 2a00:f940:1::/48 Deny Cloud
 2a00:f940:2::/47 Deny Cloud
 2a00:f940:4::/46 Deny Cloud
@@ -5143,9 +5151,9 @@ Tag: First Colo GmbH
 2a03:4900:6::/48 Deny Cloud
 2a03:4900:a0::/47 Deny Cloud
 2a03:4900:fffb::/48 Deny Cloud
-2a03:4900:fffc::/47 Deny Cloud
-2a03:4900:ffff::/48 Deny Cloud
+2a03:4900:fffc::/46 Deny Cloud
 Origin: RU
+Profile: Dedicated;Webhosting
 Tag: REG.RU
 
 
@@ -5592,17 +5600,17 @@ Tag: KLAYER LLC
 
 # ASN 25780 ("HugeServer Networks, LLC").
 # Caught trying to hack WordPress sites.
-# Stop Forum Spam (SFS) listings: 95.
-# Updated: 2020.12.06
+# Stop Forum Spam (SFS) listings: 241.
+# Updated: 2021.07.11
 
-2a03:a3a0::/32 Deny Cloud
-Origin: NL
 2604:34c0::/32 Deny Cloud
 2605:8680::/48 Deny Cloud
 2605:8680:12::/47 Deny Cloud
 2605:8680:fffe::/47 Deny Cloud
 2605:8681::/32 Deny Cloud
+2a03:a3a0::/32 Deny Cloud
 Origin: US
+Profile: Dedicated;Webhosting
 Tag: HugeServer Networks
 
 
@@ -6310,8 +6318,8 @@ Tag: Meric Hosting
 
 # ASNs 50896, 200557, 202759, 206485 ("UGB Hosting OU").
 # Dedicated webhosting provider and a significant source of spam.
-# Stop Forum Spam (SFS) listings: 2,587 (AS50896), 13,559 (AS200557), 220 (AS202759), 7,076 (AS206485).
-# Updated: 2019.12.27 / Checked: 2020.12.06
+# Stop Forum Spam (SFS) listings: 1 (AS50896), 4,066 (AS200557), 445 (AS202759), 3,720 (AS206485).
+# Updated: 2019.12.27 / Checked: 2021.07.11
 
 2a07:9280::/29 Deny Cloud
 2a0b:ac40::/29 Deny Cloud
@@ -6945,6 +6953,17 @@ Profile: Webhosting
 Tag: NetConnex/Coreix
 
 
+# ASN 7040 ("NETMINDERS DATA SOLUTION").
+# Dedicated data center and a *HUGE* source of spam!
+# Stop Forum Spam (SFS) listings: 498,632.
+# Updated: 2021.07.11
+
+2604:6880::/32 Deny Cloud
+Origin: CA
+Profile: Dedicated;Infrastructure/Transit;Webhosting
+Tag: NETMINDERS
+
+
 # ASN 29551 ("Aixit GmbH").
 # Caught probing and port scanning.
 # Stop Forum Spam (SFS) listings: 3.
@@ -7315,12 +7334,25 @@ Tag: EasyDataHost S.L
 # ASNs 46516, 203020, 204287, 396931 ("HostRoyale LLC").
 # Dedicated webhosting provider. A significant source of spam, network abuse,
 # and various other kinds of unwanted traffic.
-# Stop Forum Spam (SFS) listings: 16,798 (AS203020), 8,404 (AS204287).
-# Updated: 2020.12.06
+# Stop Forum Spam (SFS) listings: 1 (AS46516), 30,297 (AS203020), 3,066 (AS204287).
+# Updated: 2021.07.11
 
+2a01:4740::/32 Deny Cloud
+2a05:28c0::/29 Deny Cloud
+2a05:6700::/29 Deny Cloud
+2a05:f4c0::/29 Deny Cloud
+2a06:2700::/29 Deny Cloud
+2a06:3040::/29 Deny Cloud
+2a06:46c0::/29 Deny Cloud
+2a06:4a00::/29 Deny Cloud
+2a06:5000::/29 Deny Cloud
+2a06:5700::/29 Deny Cloud
+2a06:5740::/29 Deny Cloud
 2a07:3403::/32 Deny Cloud
 2a07:3404::/32 Deny Cloud
-Origin: DE
+Origin: IN
+2600:2900::/28 Deny Cloud
+Origin: US
 Profile: Dedicated;Webhosting
 Tag: HostRoyale LLC
 
@@ -8500,7 +8532,7 @@ Tag: Tier.Net Technologies LLC
 # Refer microsoft.com/en-us/download/details.aspx?id=57062
 # Refer microsoft.com/en-us/download/details.aspx?id=57063
 # Refer microsoft.com/en-us/download/details.aspx?id=57064
-# Updated: 2021.06.16
+# Updated: 2021.07.08
 
 2404:7940::/47 Run rules_specific.php
 2404:7940:100::/47 Run rules_specific.php
@@ -8582,6 +8614,8 @@ Tag: Tier.Net Technologies LLC
 2406:e500:2602:400::3a0/123 Run rules_specific.php
 2406:e500:2602:800::/119 Run rules_specific.php
 2406:e500:2602:800::280/122 Run rules_specific.php
+2406:e500:2602:c00::/119 Run rules_specific.php
+2406:e500:2602:c00::280/122 Run rules_specific.php
 2406:e500:4400::/40 Run rules_specific.php
 2406:e500:4800::/63 Run rules_specific.php
 2406:e500:4801::/63 Run rules_specific.php
@@ -8820,13 +8854,8 @@ Origin: DE
 2603:1030::/45 Run rules_specific.php
 2603:1030:8::/48 Run rules_specific.php
 2603:1030:9::/56 Run rules_specific.php
-2603:1030:9:100::/58 Run rules_specific.php
-2603:1030:9:140::/59 Run rules_specific.php
-2603:1030:9:160::/60 Run rules_specific.php
-2603:1030:9:170::/61 Run rules_specific.php
-2603:1030:9:178::/62 Run rules_specific.php
-2603:1030:9:17c::/63 Run rules_specific.php
-2603:1030:9:17e::/64 Run rules_specific.php
+2603:1030:9:100::/57 Run rules_specific.php
+2603:1030:9:180::/61 Run rules_specific.php
 2603:1030:a::/47 Run rules_specific.php
 2603:1030:d::/48 Run rules_specific.php
 2603:1030:e::/47 Run rules_specific.php
@@ -8931,15 +8960,14 @@ Origin: DE
 2603:1030:20e::/48 Run rules_specific.php
 2603:1030:210::/47 Run rules_specific.php
 2603:1030:212::/56 Run rules_specific.php
-2603:1030:302::100/120 Run rules_specific.php
-2603:1030:302::200/119 Run rules_specific.php
-2603:1030:302:402::80/123 Run rules_specific.php
-2603:1030:302:402::c0/122 Run rules_specific.php
-2603:1030:302:402::100/121 Run rules_specific.php
+2603:1030:301::/48 Run rules_specific.php
+2603:1030:302::/47 Run rules_specific.php
 2603:1030:400::/48 Run rules_specific.php
 2603:1030:401::/55 Run rules_specific.php
 2603:1030:401:200::/60 Run rules_specific.php
-2603:1030:401:210::/63 Run rules_specific.php
+2603:1030:401:210::/61 Run rules_specific.php
+2603:1030:401:218::/62 Run rules_specific.php
+2603:1030:401:21c::/63 Run rules_specific.php
 2603:1030:402::/47 Run rules_specific.php
 2603:1030:405::/48 Run rules_specific.php
 2603:1030:406::/47 Run rules_specific.php
@@ -8961,36 +8989,11 @@ Origin: DE
 2603:1030:608::/48 Run rules_specific.php
 2603:1030:800::/48 Run rules_specific.php
 2603:1030:802::/47 Run rules_specific.php
-2603:1030:804::/58 Run rules_specific.php
-2603:1030:804:40::/60 Run rules_specific.php
-2603:1030:804:53::/64 Run rules_specific.php
-2603:1030:804:54::/64 Run rules_specific.php
-2603:1030:804:5b::/64 Run rules_specific.php
-2603:1030:804:5c::/62 Run rules_specific.php
-2603:1030:804:60::/62 Run rules_specific.php
-2603:1030:804:67::/64 Run rules_specific.php
-2603:1030:804:68::/61 Run rules_specific.php
-2603:1030:804:70::/60 Run rules_specific.php
-2603:1030:804:80::/59 Run rules_specific.php
-2603:1030:804:a0::/62 Run rules_specific.php
-2603:1030:804:a4::/64 Run rules_specific.php
-2603:1030:804:a6::/63 Run rules_specific.php
-2603:1030:804:a8::/61 Run rules_specific.php
-2603:1030:804:b0::/62 Run rules_specific.php
-2603:1030:804:b4::/64 Run rules_specific.php
-2603:1030:804:b6::/63 Run rules_specific.php
-2603:1030:804:b8::/61 Run rules_specific.php
-2603:1030:804:c0::/61 Run rules_specific.php
-2603:1030:804:c8::/62 Run rules_specific.php
-2603:1030:804:cc::/63 Run rules_specific.php
-2603:1030:804:d2::/63 Run rules_specific.php
-2603:1030:804:d4::/62 Run rules_specific.php
-2603:1030:804:d8::/61 Run rules_specific.php
-2603:1030:804:e0::/59 Run rules_specific.php
+2603:1030:804::/56 Run rules_specific.php
 2603:1030:804:100::/59 Run rules_specific.php
 2603:1030:804:120::/60 Run rules_specific.php
-2603:1030:804:130::/62 Run rules_specific.php
-2603:1030:804:134::/63 Run rules_specific.php
+2603:1030:804:130::/61 Run rules_specific.php
+2603:1030:804:138::/64 Run rules_specific.php
 2603:1030:805::/48 Run rules_specific.php
 2603:1030:806::/47 Run rules_specific.php
 2603:1030:809::/48 Run rules_specific.php
@@ -8999,6 +9002,7 @@ Origin: DE
 2603:1030:a04::/48 Run rules_specific.php
 2603:1030:a06::/47 Run rules_specific.php
 2603:1030:a08::/48 Run rules_specific.php
+2603:1030:a09::/56 Run rules_specific.php
 2603:1030:b00::/47 Run rules_specific.php
 2603:1030:b03::/48 Run rules_specific.php
 2603:1030:b04::/47 Run rules_specific.php
@@ -9022,8 +9026,7 @@ Origin: DE
 2603:1036:2400::/45 Run rules_specific.php
 2603:1036:2408::/47 Run rules_specific.php
 2603:1036:240a::/48 Run rules_specific.php
-2603:1036:240c::/47 Run rules_specific.php
-2603:1036:240f::/48 Run rules_specific.php
+2603:1036:240c::/46 Run rules_specific.php
 2603:1036:2500::/64 Run rules_specific.php
 2603:1036:2500:4::/64 Run rules_specific.php
 2603:1036:2500:8::/64 Run rules_specific.php
@@ -9033,6 +9036,7 @@ Origin: DE
 2603:1036:2500:1c::/64 Run rules_specific.php
 2603:1036:2500:20::/64 Run rules_specific.php
 2603:1036:2500:24::/64 Run rules_specific.php
+2603:1036:2500:28::/64 Run rules_specific.php
 2603:1036:2500:2c::/64 Run rules_specific.php
 2603:1036:2500:30::/64 Run rules_specific.php
 2603:1036:2500:34::/64 Run rules_specific.php
@@ -9202,5 +9206,6 @@ Origin: DE
 2a01:111:f335:1792::f001:7a5/128 Run rules_specific.php
 2a01:111:f403::/48 Run rules_specific.php
 Origin: US
+Defers to: msaz_cidram_ipv6.inc
 Profile: Commercial;Infrastructure/Transit;Third-party sourced;Tor endpoints here;Webhosting
 Tag: Azure

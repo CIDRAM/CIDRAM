@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6_isps.dat
 
-# Version: 2021.185.669
-# Last modified: 2021.07.05
+# Version: 2021.191.686
+# Last modified: 2021.07.11
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -88,15 +88,17 @@ Tag: PT Hutchison
 
 
 # ASN 24203 ("PT Excelcomindo Pratama").
-# (Mark US as cloud).
-# %Listed, abuseat.org (CBL-Listed): 24.85%.
-# Stop Forum Spam (SFS) listings: 342.
-# Updated: 2017.12.08 / Checked: 2020.12.07
+# Indonesian fibre provider / domestic ISP. Spam and other unwanted traffic
+# detected from here. Mark US as cloud.
+# %Listed, abuseat.org (CBL-Listed): 16.75%.
+# Stop Forum Spam (SFS) listings: 937.
+# Updated: 2017.12.08 / Checked: 2021.07.08
 
 2400:9800::/32 Deny Spam
 Origin: ID
 2600:1417:3000::/48 Deny Cloud
 Origin: US
+Profile: Domestic ISP
 Tag: PT Excelcomindo
 
 
@@ -164,14 +166,14 @@ Tag: GleSYS AB
 # Major domestic ISP from Russia, but also a significant, long-term source of
 # spam, hack attempts, scraping, probing for vulnerabilities, and other kinds
 # of unwanted traffic.
-# Stop Forum Spam (SFS) listings: 1,504,028 (AS34665), 62,593 (AS44050).
-# Updated: 2020.03.21 / Checked: 2020.12.06
+# Stop Forum Spam (SFS) listings: 532,548 (AS34665), 2,663 (AS44050).
+# Updated: 2021.07.08
 
-2a02:c6c1::/48 Deny Generic
+2a02:c6c1::/48 Deny Spam
 Origin: GB
-2a00:1d78::/32 Deny Generic
-2a0b:d000::/29 Deny Generic
-2a0d:1ac3::/32 Deny Generic
+2a00:1d78::/32 Deny Spam
+2a0b:d000::/29 Deny Spam
+2a0d:1ac3::/32 Deny Spam
 Origin: RU
 Profile: Domestic ISP
 Tag: PIN-AS
@@ -257,13 +259,15 @@ Tag: TeNeT
 
 
 # ASN 31252 ("Starnet Servicii SRL").
-# Stop Forum Spam (SFS) listings: 12,601.
-# Updated: 2017.03.11 / Modified: 2019.11.02 / Checked: 2020.12.15
+# Moldovan multiplay business ISP. Spam, malware, hacking, etc detected here.
+# Stop Forum Spam (SFS) listings: 10,254.
+# Updated: 2017.03.11 / Modified: 2019.11.02 / Checked: 2021.07.08
 
 2a00:9900::/29 Deny Spam
 2a01:320::/29 Deny Spam
 2a0b:dd00::/29 Deny Spam
 Origin: MD
+Profile: Commercial;Domestic ISP;Multiplay
 Tag: STARNET S.R.L
 
 

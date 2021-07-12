@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Turkish language data for the front-end (last modified: 2021.07.02).
+# This file: Turkish language data for the front-end (last modified: 2021.07.12).
 ##/
 
 Extended Description Bypasses: "Varsayılan imza bypass'lar, normalde ana paketle birlikte verilir."
@@ -78,11 +78,13 @@ config_PHPMailer_skip_auth_process: "<code>true</code> olduğunda, PHPMailer nor
 config_PHPMailer_smtp_auth: "Bu yönerge SMTP oturumlarının doğrulanıp onaylanmayacağını belirler (genellikle bunu yalnız bırakmalısın)."
 config_PHPMailer_smtp_secure: "SMTP ile e-posta gönderirken kullanılacak protokol (TLS veya SSL)."
 config_PHPMailer_username: "SMTP ile e-posta gönderirken kullanılacak kullanıcı adı."
+config_bypasses: "Varsayılan imza bypass için yapılandırma."
+config_bypasses_used: "Hangi bypasslar kullanılmalıdır?"
 config_experimental: "Kararsız/Deneysel!"
 config_general: "Genel yapılandırma (diğer kategorilere ait olmayan herhangi bir çekirdek yapılandırma)."
 config_general_allow_gethostbyaddr_lookup: "UDP kullanılamadığında gethostbyaddr aramalarına izin verilsin mi? Doğru/True = Evet [Varsayılan]; Yanlış/False = Hayır."
 config_general_ban_override: ""infraction_limit" aşıldığında "forbid_on_block"u geçersiz kıl? Geçersiz kılarken: Engellenen istekler boş bir sayfa verir (şablon dosyaları kullanılmaz). 200 = [Varsayılan] değerini geçersiz kılmayın. Diğer değerler "forbid_on_block" için mevcut değerler ile aynıdır."
-config_general_config_imports: "CIDRAM varsayılan yapılandırmasına aktarılacak virgülle ayrılmış dosya listesi. Bileşenleri etkinleştirirken genellikle gerektiğinde güncellemeler sayfası tarafından doldurulur. Varsayılan olarak boş. Çoğu durumda, görmezden gelebilir."
+config_general_config_imports: "CIDRAM varsayılan yapılandırmasına aktarılacak virgülle ayrılmış dosya listesi. Bileşenleri etkinleştirirken genellikle gerektiğinde güncellemeler sayfası tarafından doldurulur. Çoğu durumda, görmezden gelebilir."
 config_general_default_algo: "Gelecekteki tüm şifreler ve oturumlar için hangi algoritmayı kullanacağını tanımlar. Options: PASSWORD_DEFAULT (varsayılan), PASSWORD_BCRYPT, PASSWORD_ARGON2I (PHP &gt;= 7.2.0 gerektirir), PASSWORD_ARGON2ID (PHP &gt;= 7.3.0 gerektirir)."
 config_general_default_dns: "Ana makine adı aramalarda kullanılacak virgülle ayrılmış DNS sunucuları listesi. Varsayılan = "8.8.8.8,8.8.4.4" (Google DNS). UYARI: Ne yaptığınızı bilmiyorsanız bunu değiştirmeyin!"
 config_general_default_timeout: "Harici istekler için kullanılacak varsayılan zaman aşımı? Varsayılan = 12 saniye."

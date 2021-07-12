@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Latvian language data for the front-end (last modified: 2021.07.02).
+# This file: Latvian language data for the front-end (last modified: 2021.07.12).
 ##/
 
 Extended Description Bypasses: "Noklusējuma paraksta apiešana faili, kas parasti ir iekļauti galvenajā paketē."
@@ -78,11 +78,13 @@ config_PHPMailer_skip_auth_process: "Šīs direktīvas iestatīšana uz <code>tr
 config_PHPMailer_smtp_auth: "Šī direktīva nosaka, vai autentificēt SMTP sesijas (vairumā gadījumu vislabāk atstāt vienatnē)."
 config_PHPMailer_smtp_secure: "Protokols, kas jāizmanto, nosūtot e-pastu izmantojot SMTP (TLS vai SSL)."
 config_PHPMailer_username: "Lietotājvārds, kas jāizmanto, nosūtot e-pastu izmantojot SMTP."
+config_bypasses: "Noklusējuma parakstu apvedceļu konfigurācija."
+config_bypasses_used: "Kuri apvedceļi jāizmanto?"
 config_experimental: "Nestabils/Eksperimentāls!"
 config_general: "Vispārējā konfigurācija (jebkura pamata konfigurācija, kas nepieder citām kategorijām)."
 config_general_allow_gethostbyaddr_lookup: "Vai atļaut meklēt ar gethostbyaddr, kad UDP nav pieejams? True (Patiess) = Jā [Noklusējuma]; False (Nepatiess) = Nē."
 config_general_ban_override: "Vai ignorēt "forbid_on_block", ja tiek pārsniegts "infraction_limit"? Ja tā, bloķētie pieprasījumi atdod tukšu lapu (veidņu faili netiek izmantoti). 200 = Neignorējiet [Noklusējuma]. Citas vērtības ir tādas pašas kā pieejamās vērtības "forbid_on_block"."
-config_general_config_imports: "Ar komatu atdalīts failu saraksts, kas jāimportē CIDRAM noklusējuma konfigurācijā. Parasti aizpilda atjauninājumu lapa, kad tiek aktivizēti komponenti, kuriem tas nepieciešams, kad nepieciešams. Pēc noklusējuma tukšs. Vairumā gadījumu var to ignorēt."
+config_general_config_imports: "Ar komatu atdalīts failu saraksts, kas jāimportē CIDRAM noklusējuma konfigurācijā. Parasti aizpilda atjauninājumu lapa, kad tiek aktivizēti komponenti, kuriem tas nepieciešams, kad nepieciešams. Vairumā gadījumu var to ignorēt."
 config_general_default_algo: "Definē, kuru algoritmu izmantot visām turpmākajām parolēm un sesijām. Iespējas: PASSWORD_DEFAULT (noklusējuma), PASSWORD_BCRYPT, PASSWORD_ARGON2I (nepieciešama &gt;= 7.2.0), PASSWORD_ARGON2ID (nepieciešama &gt;= 7.3.0)."
 config_general_default_dns: "Ar komatu atdalīts DNS serveru saraksts, ko izmantot saimniekdatora nosaukuma meklēšanā. Noklusējuma = "8.8.8.8,8.8.4.4" (Google DNS). BRĪDINĀJUMS: Nemainiet to, ja vien nezināt, ko darāt!"
 config_general_default_timeout: "Kādu noklusējuma taimautu izmantot ārējiem pieprasījumiem? Noklusējuma = 12 sekundes."

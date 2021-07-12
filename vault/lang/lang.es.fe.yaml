@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Spanish language data for the front-end (last modified: 2021.07.02).
+# This file: Spanish language data for the front-end (last modified: 2021.07.12).
 ##/
 
 Extended Description Bypasses: "Los archivos para bypass de firmas estándar normalmente se incluyen con el paquete principal."
@@ -78,11 +78,13 @@ config_PHPMailer_skip_auth_process: "Establecer esta directiva en <code>true</co
 config_PHPMailer_smtp_auth: "Esta directiva determina si autenticar sesiones SMTP (generalmente debería dejarse solo)."
 config_PHPMailer_smtp_secure: "El protocolo a usar cuando se envía un correo electrónico a través de SMTP (TLS o SSL)."
 config_PHPMailer_username: "El nombre de usuario a usar cuando se envía un correo electrónico a través de SMTP."
+config_bypasses: "La configuración de las bypasses de firmas estándar."
+config_bypasses_used: "¿Qué bypasses se deben utilizar?"
 config_experimental: "¡Inestable/Experimental!"
 config_general: "Configuración general (cualquier configuración que no pertenezca a otras categorías)."
 config_general_allow_gethostbyaddr_lookup: "¿Permitir búsquedas gethostbyaddr cuando UDP no está disponible? True = Sí [Predefinido]; False = No."
 config_general_ban_override: "Anular "forbid_on_block" cuando "infraction_limit" es excedido? Cuando se anula: Las solicitudes bloqueadas devuelven una página en blanco (los archivos templates no se utilizan). 200 = No anular [Predefinido]. Otros valores son los mismos que los valores disponibles para "forbid_on_block"."
-config_general_config_imports: "Una lista delimitada por comas de archivos para importar a la configuración predeterminada de CIDRAM. Normalmente se llena con la página de actualizaciones al activar componentes que lo necesitan cuando sea necesario. Vacío por predefinido. En la mayoría de los casos, puede ignorarlo."
+config_general_config_imports: "Una lista delimitada por comas de archivos para importar a la configuración predeterminada de CIDRAM. Normalmente se llena con la página de actualizaciones al activar componentes que lo necesitan cuando sea necesario. En la mayoría de los casos, puede ignorarlo."
 config_general_default_algo: "Define qué algoritmo utilizar para todas las contraseñas y sesiones en el futuro. Opciones: PASSWORD_DEFAULT (predefinido), PASSWORD_BCRYPT, PASSWORD_ARGON2I (requiere PHP &gt;= 7.2.0), PASSWORD_ARGON2ID (requiere PHP &gt;= 7.3.0)."
 config_general_default_dns: "Una lista delimitada por comas de los servidores DNS que se utilizarán para las búsquedas de nombres del host. Predefinido = "8.8.8.8,8.8.4.4" (Google DNS). ¡AVISO: No cambie esto a menos que sepas lo que estás haciendo!"
 config_general_default_timeout: "¿Tiempo de espera predeterminado para usar en solicitudes externas? Predeterminado = 12 segundos."

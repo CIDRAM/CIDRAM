@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Dutch language data for the front-end (last modified: 2021.07.02).
+# This file: Dutch language data for the front-end (last modified: 2021.07.12).
 ##/
 
 Extended Description Bypasses: "De standaard signature rondwegen normaal opgenomen met de primaire pakket."
@@ -78,11 +78,13 @@ config_PHPMailer_skip_auth_process: "Wanneer <code>true</code>, geeft PHPMailer 
 config_PHPMailer_smtp_auth: "Deze richtlijn bepaalt of SMTP-sessies moeten worden geverifieerd (moet meestal alleen worden gelaten)."
 config_PHPMailer_smtp_secure: "Het protocol voor het verzenden van e-mail via SMTP (TLS of SSL)."
 config_PHPMailer_username: "De gebruikersnaam voor het verzenden van e-mail via SMTP."
+config_bypasses: "Configuratie voor de standaard bypasses voor signatures."
+config_bypasses_used: "Welke bypasses moeten worden gebruikt?"
 config_experimental: "Instabiel/Experimenteel!"
 config_general: "Algemene configuratie (elke kernconfiguratie die niet tot andere categorieën behoort)."
 config_general_allow_gethostbyaddr_lookup: "Zoeken op gethostbyaddr toestaan als UDP niet beschikbaar is? True = Ja [Standaard]; False = Nee."
 config_general_ban_override: "Overrijden "forbid_on_block" wanneer "infraction_limit" wordt overschreden? Wanneer het overrijdt: Geblokkeerde verzoeken retourneert een lege pagina (template bestanden worden niet gebruikt). 200 = Niet overrijden [Standaard]. Andere waarden zijn hetzelfde als de beschikbare waarden voor "forbid_on_block"."
-config_general_config_imports: "Een door komma's gescheiden lijst met bestanden die moeten worden geïmporteerd in de standaardconfiguratie van CIDRAM. Wordt doorgaans naar behoefte ingevuld door de pagina met updates bij het activeren van componenten. Het is leeg als standard. In de meeste gevallen kunt u het negeren."
+config_general_config_imports: "Een door komma's gescheiden lijst met bestanden die moeten worden geïmporteerd in de standaardconfiguratie van CIDRAM. Wordt doorgaans naar behoefte ingevuld door de pagina met updates bij het activeren van componenten. In de meeste gevallen kunt u het negeren."
 config_general_default_algo: "Definieert welk algoritme u wilt gebruiken voor alle toekomstige wachtwoorden en sessies. Opties: PASSWORD_DEFAULT (standaard), PASSWORD_BCRYPT, PASSWORD_ARGON2I (vereist PHP &gt;= 7.2.0), PASSWORD_ARGON2ID (vereist PHP &gt;= 7.3.0)."
 config_general_default_dns: "Een door komma's gescheiden lijst met DNS-servers te gebruiken voor de hostnaam lookups. Standaard = "8.8.8.8,8.8.4.4" (Google DNS). WAARSCHUWING: Verander dit niet tenzij u weet wat u doet!"
 config_general_default_timeout: "Standaard time-out om te gebruiken voor externe verzoeken? Standaard = 12 seconden."

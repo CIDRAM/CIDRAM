@@ -222,9 +222,8 @@ default_timeout=12
 
 ; A comma delimited list of files to import into the CIDRAM default
 ; configuration. Typically populated by the updates page when activating
-; components which need it when necessary. Empty by default. In most cases, can
-; ignore it.
-config_imports=''
+; components which need it when necessary. In most cases, can ignore it.
+config_imports='bypasses.yml'
 
 
 [signatures]
@@ -536,5 +535,12 @@ pdo_username=''
 
 ; PDO password.
 pdo_password=''
+
+
+[bypasses]
+; Default signature bypasses configuration.
+
+; Which bypasses should be used?
+used='Bingbot,Disqus,DuckDuckBot,Embedly,Feedbot,Feedspot,Grapeshot,Jetpack,Pinterest'
 
 

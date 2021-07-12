@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Norwegian language data for the front-end (last modified: 2021.07.02).
+# This file: Norwegian language data for the front-end (last modified: 2021.07.12).
 ##/
 
 Extended Description Bypasses: "Standard-signatur-bypass-filene som normalt følger med hovedpakken."
@@ -77,12 +77,14 @@ config_PHPMailer_addReplyToAddress: "Svaradressen for å sitere når du sender e
 config_PHPMailer_addReplyToName: "Svarnavnet til å sitere når du sender e-post via SMTP."
 config_PHPMailer_setFromAddress: "Avsenderadressen for å sitere når du sender e-post via SMTP."
 config_PHPMailer_setFromName: "Avsendernavnet for å sitere når du sender e-post via SMTP."
+config_bypasses: "Konfigurasjon for standarden omkjøringsveier av signaturer."
+config_bypasses_used: "Hvilke omkjøringsveier skal brukes?"
 config_experimental: "Ustabil/Eksperimentell!"
 config_general: "Generell konfigurasjon (enhver kjernekonfigurasjon som ikke tilhører andre kategorier)."
 config_general_FrontEndLog: "Fil for å logge innloggingsforsøk på frontenden. Angi et filnavn, eller la det være tomt for å deaktivere."
 config_general_allow_gethostbyaddr_lookup: "Tillat gethostbyaddr oppslag når UDP er utilgjengelig? True = Ja [Standardverdi]; False = Nei."
 config_general_ban_override: "Overstyr "forbid_on_block" når "infraction_limit" overskrides? Når overstyrende: Blokkerte forespørsler returnerer en tom side (malfiler blir ikke brukt). 200 = Ikke overstyre [Standardverdi]. Andre verdier er de samme som tilgjengelige verdier for "forbid_on_block"."
-config_general_config_imports: "En kommaavgrenset liste over filer som skal importeres til CIDRAM-standardkonfigurasjonen. Vanligvis befolket av oppdateringssiden når du aktiverer komponenter som trenger det når det er nødvendig. Tom som standard. I de fleste tilfeller kan ignorere det."
+config_general_config_imports: "En kommaavgrenset liste over filer som skal importeres til CIDRAM-standardkonfigurasjonen. Vanligvis befolket av oppdateringssiden når du aktiverer komponenter som trenger det når det er nødvendig. I de fleste tilfeller kan ignorere det."
 config_general_default_algo: "Definerer hvilken algoritme som skal brukes for alle fremtidige passord og økter. Alternativer: PASSWORD_DEFAULT (standardverdi), PASSWORD_BCRYPT, PASSWORD_ARGON2I (krever PHP &gt;= 7.2.0), PASSWORD_ARGON2ID (krever PHP &gt;= 7.3.0)."
 config_general_default_dns: "En kommaseparert liste over DNS-servere som skal brukes til vertsnavn-oppslag. Standardverdi = "8.8.8.8,8.8.4.4" (Google DNS). ADVARSEL: Ikke endre dette med mindre du vet hva du gjør!"
 config_general_default_timeout: "Standard tidsavbrudd for eksterne forespørsler? Standardverdi = 12 sekunder."

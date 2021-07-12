@@ -1,0 +1,31 @@
+##\
+# This file is a part of the CIDRAM package.
+# Homepage: https://cidram.github.io/
+#
+# CIDRAM COPYRIGHT 2016 and beyond by Caleb Mazalevskis (Maikuolan).
+#
+# License: GNU/GPLv2
+# @see LICENSE.txt
+#
+# This file: Default signature bypasses configuration (last modified: 2021.07.12).
+##/
+
+Config Defaults:
+ bypasses:
+  used:
+   type: "checkbox"
+   default: "AbuseIPDB,Bingbot,Disqus,DuckDuckBot,Embedly,Feedbot,Feedspot,Grapeshot,Jetpack,Pinterest"
+   choices:
+    Bingbot: "AbuseIPDB"
+    Bingbot: "Bingbot"
+    Disqus: "Disqus"
+    DuckDuckBot: "DuckDuckBot"
+    Embedly: "Embedly"
+    Feedbot: "Feedbot"
+    Feedspot: "Feedspot"
+    Grapeshot: "Grapeshot"
+    Jetpack: "Jetpack"
+    Pinterest: "Pinterest"
+    Redditbot: "Redditbot"
+   value_preg_filter:
+    "~\s~": ""

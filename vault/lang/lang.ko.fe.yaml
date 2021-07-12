@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Korean language data for the front-end (last modified: 2021.07.02).
+# This file: Korean language data for the front-end (last modified: 2021.07.12).
 ##/
 
 Extended Description Bypasses: "기본 서명 우회 일반적으로 기본 패키지에 포함되어 있습니다."
@@ -77,12 +77,14 @@ config_PHPMailer_addReplyToAddress: "SMTP를 통해 전자 메일을 보낼 때 
 config_PHPMailer_addReplyToName: "SMTP를 통해 이메일을 보낼 때 인용 할 회신 이름입니다."
 config_PHPMailer_setFromAddress: "SMTP를 통해 전자 메일을 보낼 때 인용 할 보낸 사람 주소입니다."
 config_PHPMailer_setFromName: "SMTP를 통해 전자 메일을 보낼 때 인용 할 보낸 사람 이름입니다."
+config_bypasses: "기본 서명 우회 구성."
+config_bypasses_used: "어떤 바이 패스를 사용해야 합니까?"
 config_experimental: "불안정/실험적!"
 config_general: "일반 설정 (다른 카테고리에 속하지 않는 설정)."
 config_general_FrontEndLog: "프론트 엔드 로그인 시도를 기록하는 파일. 파일 이름을 지정하십시오. 비활성화하려면 비워 둡니다."
 config_general_allow_gethostbyaddr_lookup: "UDP를 사용할 수 없을 때 gethostbyaddr 검색을 허용 하시겠습니까? True = 예 (Default / 기본 설정); False = 아니오."
 config_general_ban_override: ""infraction_limit"를 초과하면 "forbid_on_block"를 덮어 쓰시겠습니까? 덮어 쓸 때 : 차단 된 요청은 빈 페이지를 반환합니다 (템플릿 파일은 사용되지 않습니다). 200 = 덮어 쓰지 (Default / 기본값). 다른 값은 "forbid_on_block"에 사용할 수있는 값과 같습니다."
-config_general_config_imports: "CIDRAM 기본 구성으로 가져올 쉼표로 구분된 파일 목록입니다. 일반적으로 구성 요소를 활성화할 때 업데이트 페이지에서 필요에 따라 채워집니다. 기본적으로 비어 있습니다. 대부분의 경우 무시할 수 있습니다."
+config_general_config_imports: "CIDRAM 기본 구성으로 가져올 쉼표로 구분된 파일 목록입니다. 일반적으로 구성 요소를 활성화할 때 업데이트 페이지에서 필요에 따라 채워집니다. 대부분의 경우 무시할 수 있습니다."
 config_general_default_algo: "향후 모든 암호와 세션에 사용할 알고리즘을 정의합니다. 옵션 : PASSWORD_DEFAULT (default / 기본 설정), PASSWORD_BCRYPT, PASSWORD_ARGON2I (PHP &gt;= 7.2.0 가 필요합니다), PASSWORD_ARGON2ID (PHP &gt;= 7.3.0 가 필요합니다)."
 config_general_default_dns: "호스트 이름 검색에 사용하는 DNS (도메인 이름 시스템) 서버의 쉼표로 구분 된 목록입니다. Default (기본 설정) = "8.8.8.8,8.8.4.4" (Google DNS). 주의 : 당신이 무엇을하고 있는지 모르는 한이를 변경하지 마십시오."
 config_general_default_timeout: "외부 요청에 사용할 기본 제한 시간? Default (기본 설정) = 12 초."

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (traditional) language data for the front-end (last modified: 2021.07.02).
+# This file: Chinese (traditional) language data for the front-end (last modified: 2021.07.12).
 ##/
 
 Extended Description Bypasses: "標準簽名旁路文件通常包括在主包。"
@@ -77,12 +77,14 @@ config_PHPMailer_addReplyToAddress: "通過SMTP發送電子郵件時引用的回
 config_PHPMailer_addReplyToName: "通過SMTP發送電子郵件時引用的回複姓名。"
 config_PHPMailer_setFromAddress: "通過SMTP發送電子郵件時引用的發件人地址。"
 config_PHPMailer_setFromName: "通過SMTP發送電子郵件時引用的發件人姓名。"
+config_bypasses: "默認簽名繞過配置。"
+config_bypasses_used: "應該使用哪些繞過？"
 config_experimental: "不穩定/實驗！"
 config_general: "基本配置（任何不屬於其他類別的核心配置）。"
 config_general_FrontEndLog: "前端登錄嘗試的錄音文件。​指定一個文件名，​或留空以禁用。"
 config_general_allow_gethostbyaddr_lookup: "當UDP不可用時允許gethostbyaddr查找？​True（真）=允許【標準】；False（假）=不允許。"
 config_general_ban_override: "覆蓋『forbid_on_block』當『infraction_limit』已被超過？​當覆蓋：已阻止的請求返回一個空白頁（不使用模板文件）。​200 = 不要覆蓋【標準】。​其他值與『forbid_on_block』的可用值相同。"
-config_general_config_imports: "要導入CIDRAM默認配置的以逗號分隔的文件列表。​通常在啟用組件時由更新頁面按需填充。​默認為空。​大多數情況下，可以忽略它。"
+config_general_config_imports: "要導入CIDRAM默認配置的以逗號分隔的文件列表。​通常在啟用組件時由更新頁面按需填充。​大多數情況下，可以忽略它。"
 config_general_default_algo: "定義要用於所有未來密碼和會話的算法。​選項：​PASSWORD_DEFAULT（標準），​PASSWORD_BCRYPT，​PASSWORD_ARGON2I（需要PHP &gt;= 7.2.0），​PASSWORD_ARGON2ID（需要PHP &gt;= 7.3.0）。"
 config_general_default_dns: "以逗號分隔的DNS服務器列表，​用於主機名查找。​標準 = 『8.8.8.8,8.8.4.4』 (Google DNS)。​警告：不要修改此除非您知道什麼您做著！"
 config_general_default_timeout: "用於外部請求的默認超時？ 標準 = 12秒。"

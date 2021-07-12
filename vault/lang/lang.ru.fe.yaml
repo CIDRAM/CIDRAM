@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Russian language data for the front-end (last modified: 2021.07.02).
+# This file: Russian language data for the front-end (last modified: 2021.07.12).
 ##/
 
 Extended Description Bypasses: "Стандартная сигнатуры байпасы, обычно включены в основной пакет."
@@ -77,12 +77,14 @@ config_PHPMailer_addReplyToAddress: "Адрес ответа для отправ
 config_PHPMailer_addReplyToName: "Имя ответа для отправки электронной почты через SMTP."
 config_PHPMailer_setFromAddress: "Адрес отправителя для отправки электронной почты через SMTP."
 config_PHPMailer_setFromName: "Имя отправителя для отправки электронной почты через SMTP."
+config_bypasses: "Стандартная конфигурация байпаса сигнатуры."
+config_bypasses_used: "Какие байпасы следует использовать?"
 config_experimental: "Нестабильный/Экспериментальный!"
 config_general: "Общая конфигурация (любая конфигурация ядра, не относящаяся к другим категориям)."
 config_general_FrontEndLog: "Файл для запись всех попыток входа в фронтенд. Задайте имя файлу, или оставьте пустым чтобы деактивировать опцию."
 config_general_allow_gethostbyaddr_lookup: "Разрешить поиск gethostbyaddr, когда UDP недоступен? True = Да [Стандарт]; False = Нет."
 config_general_ban_override: "Переопределить «forbid_on_block» когда «infraction_limit» превысило? Когда переопределении: Блокированные запросы возвращают пустую страницу (файлы шаблонов не используются). 200 = Не переопределить [Стандарт]. Другие значения совпадают с доступными значениями для «forbid_on_block»."
-config_general_config_imports: "Список файлов, разделенных запятыми, для импорта в стандартную конфигурацию CIDRAM. Обычно заполняется по мере необходимости на странице обновлений при активации компонентов. По стандарту пустой. В большинстве случаев можно игнорировать это."
+config_general_config_imports: "Список файлов, разделенных запятыми, для импорта в стандартную конфигурацию CIDRAM. Обычно заполняется по мере необходимости на странице обновлений при активации компонентов. В большинстве случаев можно игнорировать это."
 config_general_default_algo: "Определяет, какой алгоритм использовать для всех будущих паролей и сеансов. Опции: PASSWORD_DEFAULT (стандарт), PASSWORD_BCRYPT, PASSWORD_ARGON2I (требует PHP &gt;= 7.2.0), PASSWORD_ARGON2ID (требует PHP &gt;= 7.3.0)."
 config_general_default_dns: "Разделенный запятыми список DNS-серверов, чтобы использовать для имен хостов поиска. Стандарт = «8.8.8.8,8.8.4.4» (Google DNS). ВНИМАНИЕ: Изменяйте это значение только в том случае, если Вы уверены в своих действиях!"
 config_general_default_timeout: "Тайм-аут по умолчанию для внешних запросов? Стандарт = 12 секунд."

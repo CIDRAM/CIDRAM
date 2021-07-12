@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2021.07.04).
+ * This file: Front-end functions file (last modified: 2021.07.12).
  */
 
 /**
@@ -1973,7 +1973,10 @@ $CIDRAM['UpdatesHandler-Activate'] = function ($ID) use (&$CIDRAM): void {
                 continue;
             }
             if ($ThisUsedWith === '') {
-                foreach (['imports', 'ipv4', 'ipv6', 'modules'] as $Type) {
+                if (strpos($Description, 'general-&gt;imports' . $Type) !== false) {
+                    $Activation['imports'][] = $File;
+                }
+                foreach (['ipv4', 'ipv6', 'modules'] as $Type) {
                     if (strpos($Description, 'signatures-&gt;' . $Type) !== false) {
                         $Activation[$Type][] = $File;
                     }

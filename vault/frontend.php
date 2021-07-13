@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2021.07.05).
+ * This file: Front-end handler (last modified: 2021.07.13).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -122,7 +122,7 @@ $CIDRAM['FE'] = [
     ),
 
     /** State reflecting whether the current request is cronable. */
-    'CronMode' => !empty($_POST['CronMode']),
+    'CronMode' => $_POST['CronMode'] ?? '',
 
     /** The user agent of the current request. */
     'UA' => empty($_SERVER['HTTP_USER_AGENT']) ? '' : $_SERVER['HTTP_USER_AGENT'],
@@ -2441,7 +2441,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'fixer' && $CIDRAM['FE']['Permis
     /** Whether to show or hide preferred source sections. */
     $CIDRAM['FE']['styleList'] = $CIDRAM['PreferredSource'] === 'List' ? '' : ' style="display:none"';
     $CIDRAM['FE']['styleInput'] = $CIDRAM['PreferredSource'] === 'Input' ? '' : ' style="display:none"';
-    $CIDRAM['FE']['submitButtonVisibility'] = !empty($CIDRAM['PreferredSource']) ? '' : ' style="display:none"';
+    $CIDRAM['FE']['submitButtonVisibility'] = empty($CIDRAM['PreferredSource']) ? ' style="display:none"' : '';
 
     /** Generate a list of currently active signature files. */
     $CIDRAM['FE']['ActiveSignatureFiles'] = [];

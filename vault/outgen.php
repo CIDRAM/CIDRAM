@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Output generator (last modified: 2021.06.28).
+ * This file: Output generator (last modified: 2021.07.13).
  */
 
 /** Initialise cache. */
@@ -271,7 +271,7 @@ if (!empty($CIDRAM['TestResults']) && $CIDRAM['BlockInfo']['SignatureCount'] && 
     );
 
     /** Number of infractions to append. */
-    $CIDRAM['TrackCount'] = !empty($CIDRAM['Config']['Options']['TrackCount']) ? $CIDRAM['Config']['Options']['TrackCount'] : 1;
+    $CIDRAM['TrackCount'] = empty($CIDRAM['Config']['Options']['TrackCount']) ? 1 : $CIDRAM['Config']['Options']['TrackCount'];
 
     /** Tracking options override. */
     if (!empty($CIDRAM['Tracking options override'])) {

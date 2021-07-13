@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2021.07.05).
+ * This file: Front-end handler (last modified: 2021.07.13).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -122,7 +122,7 @@ $CIDRAM['FE'] = [
     ),
 
     /** State reflecting whether the current request is cronable. */
-    'CronMode' => !empty($_POST['CronMode']),
+    'CronMode' => empty($_POST['CronMode']) ? '' : $_POST['CronMode'],
 
     /** The user agent of the current request. */
     'UA' => empty($_SERVER['HTTP_USER_AGENT']) ? '' : $_SERVER['HTTP_USER_AGENT'],
@@ -2429,10 +2429,10 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'fixer' && $CIDRAM['FE']['Permis
     $CIDRAM['InitialPrepwork']($CIDRAM['L10N']->getString('link_fixer'), $CIDRAM['L10N']->getString('tip_fixer'));
 
     /** Preferred source. */
-    $CIDRAM['PreferredSource'] = !empty($_POST['preferredSource']) ? $_POST['preferredSource'] : '';
+    $CIDRAM['PreferredSource'] = empty($_POST['preferredSource']) ? '' : $_POST['preferredSource'];
 
     /** Direct input. */
-    $CIDRAM['FE']['DirectInput'] = !empty($_POST['DirectInput']) ? $_POST['DirectInput'] : '';
+    $CIDRAM['FE']['DirectInput'] = empty($_POST['DirectInput']) ? '' : $_POST['DirectInput'];
 
     /** Preferred source menu. */
     $CIDRAM['FE']['PreferredSource'] = sprintf(
@@ -2449,7 +2449,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'fixer' && $CIDRAM['FE']['Permis
     /** Whether to show or hide preferred source sections. */
     $CIDRAM['FE']['styleList'] = $CIDRAM['PreferredSource'] === 'List' ? '' : ' style="display:none"';
     $CIDRAM['FE']['styleInput'] = $CIDRAM['PreferredSource'] === 'Input' ? '' : ' style="display:none"';
-    $CIDRAM['FE']['submitButtonVisibility'] = !empty($CIDRAM['PreferredSource']) ? '' : ' style="display:none"';
+    $CIDRAM['FE']['submitButtonVisibility'] = empty($CIDRAM['PreferredSource']) ? ' style="display:none"' : '';
 
     /** Generate a list of currently active signature files. */
     $CIDRAM['FE']['ActiveSignatureFiles'] = [];
@@ -3371,7 +3371,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-test' && $CIDRAM['FE']['Perm
 
     /** Fetch custom fields if specified. */
     foreach (['custom-query', 'custom-referrer', 'custom-ua'] as $CIDRAM['ThisField']) {
-        $CIDRAM['FE'][$CIDRAM['ThisField']] = !empty($_POST[$CIDRAM['ThisField']]) ? $_POST[$CIDRAM['ThisField']] : '';
+        $CIDRAM['FE'][$CIDRAM['ThisField']] = empty($_POST[$CIDRAM['ThisField']]) ? '' : $_POST[$CIDRAM['ThisField']];
     }
     unset($CIDRAM['ThisField']);
 

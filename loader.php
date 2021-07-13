@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The loader (last modified: 2020.11.29).
+ * This file: The loader (last modified: 2021.07.13).
  */
 
 /**
@@ -83,7 +83,6 @@ if (!defined('CIDRAM')) {
 
     /** This code block only executed if we're NOT in CLI mode (or if we're running via Cronable). */
     if (!$CIDRAM['CIDRAM_sapi'] || $CIDRAM['Alternate']) {
-
         /**
          * Check whether the output generator exists; Kill the script if it
          * doesn't; Load it if it does. Skip this check if we're in CLI-mode.

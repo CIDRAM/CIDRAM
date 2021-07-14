@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6_isps.dat
 
-# Version: 2021.191.686
-# Last modified: 2021.07.11
+# Version: 2021.194.289
+# Last modified: 2021.07.14
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -141,11 +141,12 @@ Tag: CH-NET S.R.L
 
 
 # ASN 7743 ("JPMorgan Chase & Co").
-# Updated: 2019.06.02 / Checked: 2020.12.26
+# Updated: 2019.06.02 / Checked: 2021.07.14
 
 2620:11::/45 Deny Generic
 2620:11:8::/47 Deny Generic
 Origin: US
+Profile: Commercial
 Tag: JPMorgan Chase & Co
 
 
@@ -1592,17 +1593,6 @@ Profile: Tor endpoints here
 Tag: Foreningen
 
 
-# ASN 31148 ("Freenet Ltd").
-# Ukrainian ISP with human endpoints, but also a frequent source of spam and
-# hack attempts (refer to AbuseIPDB reports).
-# Stop Forum Spam (SFS) listings: 1,230.
-# Updated: 2018.02.20 / Checked: 2020.12.26
-
-2a00:1228::/32 Deny Generic
-Origin: UA
-Tag: Freenet Ltd
-
-
 # ASNs 9009, 16247 ("M247 Ltd").
 # Multiplay network providing broadband connectivity, server leasing, line
 # rental, webhosting services, etc.
@@ -1646,9 +1636,9 @@ Tag: M247 Ltd
 # ASN 8708 ("RCS & RDS SA").
 # Romanian domestic ISP; Also a frequent source of spam, hack attempts, and
 # other unwanted traffic.
-# %Listed, abuseat.org (CBL-Listed): 0.35%.
-# Stop Forum Spam (SFS) listings: 3,706.
-# Updated: 2018.06.24 / Modified: 2020.12.29
+# %Listed, abuseat.org (CBL-Listed): 0.44%.
+# Stop Forum Spam (SFS) listings: 6,002.
+# Updated: 2018.06.24 / Modified: 2020.12.29 / Checked: 2021.07.14
 
 2a02:2f00::/28 Deny Spam
 Origin: RO
@@ -2183,7 +2173,7 @@ Tag: British Telecom PLC
 # ASN 53022 ("BROSEGHINI LTDA EPP").
 # Brazilian domestic ISP. DDoS, SSH and brute-force attacks detected
 # originating from this network.
-# Updated: 2020.06.11 / Checked: 2020.12.13
+# Updated: 2020.06.11 / Checked: 2021.07.14
 
 2804:31fc::/32 Deny Malware
 Origin: BR
@@ -2244,20 +2234,6 @@ Tag: T-Mobile USA, Inc
 Origin: PL
 Profile: Domestic ISP
 Tag: Orange Polska Spolka Akcyjna
-
-
-# ASN 4761 ("INDOSAT Internet Network Provider).
-# Indonesian domestic ISP; Also a source of spam. Also SSH, brute-force, and
-# hack attempts reportedly seen from this network. Listing just the affected
-# ranges/addresses for the moment (plus all US ranges, which are cloud).
-# %Listed, abuseat.org (CBL-Listed): 0.85%.
-# Stop Forum Spam (SFS) listings: 1,298.
-# Updated: 2020.06.27 / Checked: 2020.12.25
-
-2620:107:4008:12e::/64 Deny Cloud
-Origin: US
-Profile: Domestic ISP
-Tag: INDOSAT
 
 
 # ASNs 7713, 17974 ("PT Telekomunikasi Indonesia).
@@ -2386,13 +2362,13 @@ Tag: Init7
 # Stop Forum Spam (SFS) listings: 442,055 (AS16276), 5 (AS35540).
 # Updated: 2021.01.27 / Checked: 2021.05.22
 
-2607:5300::/32 Run rules_specific.php
+2607:5300::/32 Run bypasses.php
 Origin: CA
-2001:41d0::/32 Run rules_specific.php
+2001:41d0::/32 Run bypasses.php
 Origin: FR
-2402:1f00::/32 Run rules_specific.php
+2402:1f00::/32 Run bypasses.php
 Origin: HK
-2604:2dc0::/32 Run rules_specific.php
+2604:2dc0::/32 Run bypasses.php
 Origin: US
 Profile: Domestic ISP;Multiplay;Tor endpoints here
 Tag: OVH Systems

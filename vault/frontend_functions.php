@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2021.07.12).
+ * This file: Front-end functions file (last modified: 2021.07.14).
  */
 
 /**
@@ -1839,7 +1839,7 @@ $CIDRAM['UpdatesHandler-Update'] = function ($ID) use (&$CIDRAM) {
         $CIDRAM['FormatFilesize']($BytesAdded);
         $CIDRAM['FormatFilesize']($BytesRemoved);
         $CIDRAM['FE']['state_msg'] .= sprintf(
-            $CIDRAM['FE']['CronMode'] ? " « +%s | -%s | %s »\n" : ' <code><span class="txtGn">+%s</span> | <span class="txtRd">-%s</span> | <span class="txtOe">%s</span></code><br />',
+            $CIDRAM['FE']['CronMode'] !== '' ? " « +%s | -%s | %s »\n" : ' <code><span class="txtGn">+%s</span> | <span class="txtRd">-%s</span> | <span class="txtOe">%s</span></code><br />',
             $BytesAdded,
             $BytesRemoved,
             $CIDRAM['NumberFormatter']->format(microtime(true) - $TimeRequired, 3)
@@ -1916,7 +1916,7 @@ $CIDRAM['UpdatesHandler-Uninstall'] = function ($ID) use (&$CIDRAM) {
     }
     $CIDRAM['FormatFilesize']($BytesRemoved);
     $CIDRAM['FE']['state_msg'] .= sprintf(
-        $CIDRAM['FE']['CronMode'] ? " « -%s | %s »\n" : ' <code><span class="txtRd">-%s</span> | <span class="txtOe">%s</span></code><br />',
+        $CIDRAM['FE']['CronMode'] !== '' ? " « -%s | %s »\n" : ' <code><span class="txtRd">-%s</span> | <span class="txtOe">%s</span></code><br />',
         $BytesRemoved,
         $CIDRAM['NumberFormatter']->format(microtime(true) - $TimeRequired, 3)
     );
@@ -2282,7 +2282,7 @@ $CIDRAM['UpdatesHandler-Repair'] = function ($ID) use (&$CIDRAM) {
         $CIDRAM['FormatFilesize']($BytesAdded);
         $CIDRAM['FormatFilesize']($BytesRemoved);
         $CIDRAM['FE']['state_msg'] .= sprintf(
-            $CIDRAM['FE']['CronMode'] ? " « +%s | -%s | %s »\n" : ' <code><span class="txtGn">+%s</span> | <span class="txtRd">-%s</span> | <span class="txtOe">%s</span></code><br />',
+            $CIDRAM['FE']['CronMode'] !== '' ? " « +%s | -%s | %s »\n" : ' <code><span class="txtGn">+%s</span> | <span class="txtRd">-%s</span> | <span class="txtOe">%s</span></code><br />',
             $BytesAdded,
             $BytesRemoved,
             $CIDRAM['NumberFormatter']->format(microtime(true) - $TimeRequired, 3)

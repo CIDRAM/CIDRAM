@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2021.07.13).
+ * This file: Front-end handler (last modified: 2021.07.14).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -149,6 +149,24 @@ $CIDRAM['FE'] = [
     'URL-Documentation' => 'https://cidram.github.io/#documentation',
     'URL-Website' => 'https://cidram.github.io/'
 ];
+
+/** Trace to determine the type of cron operation. */
+if ($CIDRAM['FE']['CronMode'] !== '') {
+    $CIDRAM['FE']['CronType'] = 'update';
+    $CIDRAM['CronDebug'] = debug_backtrace(DEBUG_BACKTRACE_PROVIDE_OBJECT | DEBUG_BACKTRACE_IGNORE_ARGS, 4);
+    foreach ($CIDRAM['CronDebug'] as $CIDRAM['ThisCronDebug']) {
+        if (
+            isset($CIDRAM['ThisCronDebug']['function'], $CIDRAM['ThisCronDebug']['class']) &&
+            $CIDRAM['ThisCronDebug']['function'] === 'localUpdate' &&
+            $CIDRAM['ThisCronDebug']['class'] === 'Maikuolan\Cronable\Cronable'
+        ) {
+            $CIDRAM['FE']['CronType'] = 'localUpdate';
+        }
+    }
+    unset($CIDRAM['CronDebug'], $CIDRAM['ThisCronDebug']);
+} else {
+    $CIDRAM['FE']['CronType'] = '';
+}
 
 /** Regular expression used to separate signature sections and tags. */
 $CIDRAM['RegExTags'] = '~(?<=\n)(?:\n|Expires\: \d{4}\.\d\d\.\d\d|Origin\: [A-Z]{2}|(?:\#|Tag\: |Profile\: |Defers to\: )[^\n]+| *\/\*\*(?:\n *\*[^\n]*)*\/| *\/\*\*? [^\n*]+\*\/|---\n(?:[^\n:]+\:(?:\n +[^\n:]+\: [^\n]+)+)+)+\n~';
@@ -366,7 +384,7 @@ if (($CIDRAM['Failed2FA'] = (int)$CIDRAM['FECacheGet'](
 }
 
 /** Attempt to log in the user. */
-if ($CIDRAM['FE']['FormTarget'] === 'login' || $CIDRAM['FE']['CronMode']) {
+if ($CIDRAM['FE']['FormTarget'] === 'login' || $CIDRAM['FE']['CronMode'] !== '') {
     if (!empty($_POST['username']) && empty($_POST['password'])) {
         $CIDRAM['FE']['UserState'] = -1;
         $CIDRAM['FE']['state_msg'] = $CIDRAM['L10N']->getString('response_login_password_field_empty');
@@ -395,12 +413,12 @@ if ($CIDRAM['FE']['FormTarget'] === 'login' || $CIDRAM['FE']['CronMode']) {
                     'LoginAttempts' . $_SERVER[$CIDRAM['IPAddr']]
                 );
                 if (($CIDRAM['FE']['Permissions'] === 3 && (
-                    !$CIDRAM['FE']['CronMode'] || substr($CIDRAM['FE']['UA'], 0, 10) !== 'Cronable v'
+                    $CIDRAM['FE']['CronMode'] === '' || substr($CIDRAM['FE']['UA'], 0, 10) !== 'Cronable v'
                 )) || !($CIDRAM['FE']['Permissions'] > 0 && $CIDRAM['FE']['Permissions'] <= 3)) {
                     $CIDRAM['FE']['Permissions'] = 0;
                     $CIDRAM['FE']['state_msg'] = $CIDRAM['L10N']->getString('response_login_wrong_endpoint');
                 } else {
-                    if (!$CIDRAM['FE']['CronMode']) {
+                    if ($CIDRAM['FE']['CronMode'] === '') {
                         $CIDRAM['FE']['SessionKey'] = hash('md5', $CIDRAM['GenerateSalt']());
                         $CIDRAM['FE']['Cookie'] = $_POST['username'] . $CIDRAM['FE']['SessionKey'];
                         setcookie('CIDRAM-ADMIN', $CIDRAM['FE']['Cookie'], $CIDRAM['Now'] + 604800, '/', $CIDRAM['HostnameOverride'] ?: $CIDRAM['HTTP_HOST'], false, true);
@@ -474,7 +492,7 @@ if ($CIDRAM['FE']['FormTarget'] === 'login' || $CIDRAM['FE']['CronMode']) {
         if ($CIDRAM['Config']['general']['frontend_log']) {
             $CIDRAM['LoggerMessage'] = $CIDRAM['FE']['state_msg'];
         }
-        if (!$CIDRAM['FE']['CronMode']) {
+        if ($CIDRAM['FE']['CronMode'] === '') {
             $CIDRAM['FE']['state_msg'] = '<div class="txtRd">' . $CIDRAM['FE']['state_msg'] . '<br /><br /></div>';
         }
     } elseif ($CIDRAM['Config']['general']['frontend_log']) {
@@ -620,7 +638,7 @@ if ($CIDRAM['FE']['UserState'] !== 1 && $CIDRAM['FE']['ASYNC']) {
 $CIDRAM['MajorVersionNotice'] = '';
 
 /** Only execute this code block for users that are logged in or awaiting two-factor authentication. */
-if (($CIDRAM['FE']['UserState'] === 1 || $CIDRAM['FE']['UserState'] === 2) && !$CIDRAM['FE']['CronMode']) {
+if (($CIDRAM['FE']['UserState'] === 1 || $CIDRAM['FE']['UserState'] === 2) && $CIDRAM['FE']['CronMode'] === '') {
     /** Log out the user. */
     if ($CIDRAM['QueryVars']['cidram-page'] === 'logout') {
         $CIDRAM['FE']['SessionList'] = str_ireplace($CIDRAM['FE']['ThisSession'], '', $CIDRAM['FE']['SessionList']);
@@ -770,7 +788,7 @@ if ($CIDRAM['FE']['UserState'] === 1) {
 }
 
 /** The user hasn't logged in, or hasn't authenticated yet. */
-if ($CIDRAM['FE']['UserState'] !== 1 && !$CIDRAM['FE']['CronMode']) {
+if ($CIDRAM['FE']['UserState'] !== 1 && $CIDRAM['FE']['CronMode'] === '') {
     /** Page initial prepwork. */
     $CIDRAM['InitialPrepwork']($CIDRAM['L10N']->getString('title_login'), '', false);
 
@@ -805,7 +823,7 @@ if ($CIDRAM['FE']['UserState'] !== 1 && !$CIDRAM['FE']['CronMode']) {
  * The user has logged in, but hasn't selected anything to view. Show them the
  * front-end home page.
  */
-elseif ($CIDRAM['QueryVars']['cidram-page'] === '' && !$CIDRAM['FE']['CronMode']) {
+elseif ($CIDRAM['QueryVars']['cidram-page'] === '' && $CIDRAM['FE']['CronMode'] === '') {
     /** Page initial prepwork. */
     $CIDRAM['InitialPrepwork']($CIDRAM['L10N']->getString('link_home'), $CIDRAM['L10N']->getString('tip_home'), false);
 
@@ -1727,7 +1745,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'cache-data' && $CIDRAM['FE']['P
 }
 
 /** Updates. */
-elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && ($CIDRAM['FE']['Permissions'] === 1 || ($CIDRAM['FE']['Permissions'] === 3 && $CIDRAM['FE']['CronMode']))) {
+elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && ($CIDRAM['FE']['Permissions'] === 1 || ($CIDRAM['FE']['Permissions'] === 3 && $CIDRAM['FE']['CronMode'] !== ''))) {
     /** Include major version notice (if relevant). */
     if ($CIDRAM['MajorVersionNotice']) {
         $CIDRAM['FE']['state_msg'] .= $CIDRAM['MajorVersionNotice'] . '<hr />';
@@ -2144,10 +2162,21 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && ($CIDRAM['FE']['Per
     }
 
     /** Update request via Cronable. */
-    if (!empty($CIDRAM['Alternate']) && !empty($UpdateAll) && !empty($CIDRAM['Components']['Outdated'])) {
+    if (!empty($CIDRAM['Alternate']) && (
+        (
+            $CIDRAM['FE']['CronMode'] === 'Signatures' &&
+            !empty($CIDRAM['Components']['OutdatedSignatureFiles']) &&
+            ($CIDRAM['FE']['BuildUse'] = 'OutdatedSignatureFiles')
+        ) || (
+            $CIDRAM['FE']['CronMode'] !== '' &&
+            $CIDRAM['FE']['CronMode'] !== 'Signatures' &&
+            !empty($CIDRAM['Components']['Outdated']) &&
+            ($CIDRAM['FE']['BuildUse'] = 'Outdated')
+        )
+    )) {
         /** Fetch dependency installation triggers. */
-        $CIDRAM['Components']['Build'] = $CIDRAM['Components']['Outdated'];
-        foreach ($CIDRAM['Components']['Outdated'] as $CIDRAM['Components']['Key']) {
+        $CIDRAM['Components']['Build'] = $CIDRAM['Components'][$CIDRAM['FE']['BuildUse']];
+        foreach ($CIDRAM['Components'][$CIDRAM['FE']['BuildUse']] as $CIDRAM['Components']['Key']) {
             if (isset($CIDRAM['Components']['Install Together'][$CIDRAM['Components']['Key']])) {
                 $CIDRAM['Components']['Build'] = array_merge(
                     $CIDRAM['Components']['Build'],
@@ -2155,10 +2184,10 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && ($CIDRAM['FE']['Per
                 );
             }
         }
-        $CIDRAM['Components']['Outdated'] = array_unique($CIDRAM['Components']['Build']);
+        $CIDRAM['Components'][$CIDRAM['FE']['BuildUse']] = array_unique($CIDRAM['Components']['Build']);
 
         /** Trigger updates handler. */
-        $CIDRAM['UpdatesHandler']('update-component', $CIDRAM['Components']['Outdated']);
+        $CIDRAM['UpdatesHandler']('update-component', $CIDRAM['Components'][$CIDRAM['FE']['BuildUse']]);
 
         /** Trigger signatures update log event. */
         if (!empty($CIDRAM['SignaturesUpdateEvent'])) {
@@ -2392,22 +2421,36 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && ($CIDRAM['FE']['Per
     unset($CIDRAM['Updater-IO']);
 
     /** Send output. */
-    if (!$CIDRAM['FE']['CronMode']) {
+    if ($CIDRAM['FE']['CronMode'] === '') {
         /** Normal page output. */
         echo $CIDRAM['SendOutput']();
-    } elseif (!empty($UpdateAll)) {
-        /** Returned state message for Cronable (locally updating). */
-        $Results = ['state_msg' => str_ireplace(['<code>', '</code>', '<br />'], ['[', ']', "\n"], $CIDRAM['FE']['state_msg'])];
+    } elseif ($CIDRAM['FE']['CronType'] === 'localUpdate') {
+        /** Returned state message for Cronable (updating locally). */
+        $Results = ['state_msg' => str_ireplace(
+            ['<code>', '</code>', '<br />', '<hr />'],
+            ['[', ']', "\n", "\n---\n"],
+            $CIDRAM['FE']['state_msg']
+        )];
     } elseif (!empty($CIDRAM['FE']['state_msg'])) {
         /** Returned state message for Cronable. */
-        echo json_encode([
-            'state_msg' => str_ireplace(['<code>', '</code>', '<br />'], ['[', ']', "\n"], $CIDRAM['FE']['state_msg'])
-        ]);
-    } elseif (!empty($_POST['do']) && $_POST['do'] === 'get-list' && count($CIDRAM['Components']['Outdated'])) {
+        echo json_encode(['state_msg' => str_ireplace(
+            ['<code>', '</code>', '<br />', '<hr />'],
+            ['[', ']', "\n", "\n---\n"],
+            $CIDRAM['FE']['state_msg']
+        )]);
+    } elseif (!empty($_POST['do']) && $_POST['do'] === 'get-list' && (
+        $CIDRAM['Components']['CountOutdated'] > 0 ||
+        $CIDRAM['Components']['CountOutdatedSignatureFiles'] > 0
+    )) {
         /** Returned list of outdated components for Cronable. */
         echo json_encode([
-            'state_msg' => str_ireplace(['<code>', '</code>', '<br />'], ['[', ']', "\n"], $CIDRAM['FE']['state_msg']),
-            'outdated' => $CIDRAM['Components']['Outdated']
+            'state_msg' => str_ireplace(
+                ['<code>', '</code>', '<br />', '<hr />'],
+                ['[', ']', "\n", "\n---\n"],
+                $CIDRAM['FE']['state_msg']
+            ),
+            'outdated' => $CIDRAM['Components']['CountOutdated'] > 0 ? $CIDRAM['Components']['Outdated'] : [],
+            'outdated_signature_files' => $CIDRAM['Components']['CountOutdatedSignatureFiles'] > 0 ? $CIDRAM['Components']['OutdatedSignatureFiles'] : []
         ]);
     }
 
@@ -4624,15 +4667,15 @@ if ($CIDRAM['FE']['Rebuild']) {
 $CIDRAM['DestroyCacheObject']();
 
 /** Print Cronable failure state messages here. */
-if ($CIDRAM['FE']['CronMode'] && $CIDRAM['FE']['state_msg'] && $CIDRAM['FE']['UserState'] !== 1) {
-    if (empty($UpdateAll)) {
-        echo json_encode(['state_msg' => $CIDRAM['FE']['state_msg']]);
-    } else {
+if ($CIDRAM['FE']['CronMode'] !== '' && $CIDRAM['FE']['state_msg'] !== '' && $CIDRAM['FE']['UserState'] !== 1) {
+    if ($CIDRAM['FE']['CronType'] === 'localUpdate') {
         $Results = ['state_msg' => $CIDRAM['FE']['state_msg']];
+    } else {
+        echo json_encode(['state_msg' => $CIDRAM['FE']['state_msg']]);
     }
 }
 
 /** Exit front-end. */
-if (empty($CIDRAM['Alternate']) && empty($UpdateAll)) {
+if (empty($CIDRAM['Alternate']) && $CIDRAM['FE']['CronType'] !== 'localUpdate') {
     die;
 }

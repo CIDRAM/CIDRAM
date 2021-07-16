@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2021.07.14).
+ * This file: Front-end functions file (last modified: 2021.07.16).
  */
 
 /**
@@ -2050,7 +2050,7 @@ $CIDRAM['UpdatesHandler-Activate'] = function ($ID) use (&$CIDRAM) {
                 !isset($CIDRAM['Components']['Meta'][$Dependency]) ||
                 empty($CIDRAM['Components']['Installed Versions'][$Dependency]) ||
                 !$CIDRAM['IsActivable']($CIDRAM['Components']['Meta'][$Dependency]) ||
-                $CIDRAM['IsInUse']($CIDRAM['Components']['Meta'][$ThisTarget]) === 1
+                $CIDRAM['IsInUse']($CIDRAM['Components']['Meta'][$Dependency]) === 1
             ) {
                 continue;
             }

@@ -552,6 +552,12 @@ $CIDRAM['IsInUse'] = function (array $Component) use (&$CIDRAM): int {
         $CIDRAM['IsolateL10N']($Description, $CIDRAM['Config']['general']['lang']);
     }
     foreach ($Files as $File) {
+        if (
+            preg_match('~^$|\.(?:css|gif|html?|jpe?g|js|png)$|^(?:classes|fe_assets)[\x2f\x5c]~i', $File) ||
+            !file_exists($CIDRAM['Vault'] . $File)
+        ) {
+            continue;
+        }
         $FileSafe = preg_quote($File);
         if (is_array($UsedWith)) {
             $ThisUsedWith = (string)array_shift($UsedWith);

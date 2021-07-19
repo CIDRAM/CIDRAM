@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6_isps.dat
 
-# Version: 2021.194.289
-# Last modified: 2021.07.14
+# Version: 2021.199.245
+# Last modified: 2021.07.19
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -2356,9 +2356,10 @@ Tag: Init7
 
 
 # ASNs 16276, 35540 ("OVH Systems").
-# Multiplay network; predominantly a cloud provider, server leaser, etc; Also
-# some ADSL connectivity provided by their network (some risk of human endpoints).
-# A significant source of spam; Caught attempting to hack honeypots.
+# French multiplay network. Mostly a cloud provider, server leaser, etc. Some
+# limited ADSL connectivity also provided. A significant source of spam here,
+# caught trying to hack honeypots, brute-force, SSH, and webapp attacks, and
+# unauthorised WordPress vulnerability scanners detected from here.
 # Stop Forum Spam (SFS) listings: 442,055 (AS16276), 5 (AS35540).
 # Updated: 2021.01.27 / Checked: 2021.05.22
 
@@ -2659,3 +2660,37 @@ Tag: Abissnet
 Origin: DE
 Profile: Domestic ISP;Infrastructure/Transit
 Tag: Versatel Deutschland
+
+
+# ASNs 7470, 17552 ("True Internet Co.,Ltd").
+# Major Thai domestic ISP. Spam, port scans, brute-force attacks, and email
+# harvestors detected here. Semalt spammers also detected here. Listing just
+# the affected ranges/addresses only.
+# %Listed, abuseat.org (CBL-Listed): 0.17% (AS7470), 1.44% (AS17552).
+# Stop Forum Spam (SFS) listings: 439 (AS7470), 3,873 (AS17552).
+# Updated: 2021.07.19
+
+2001:fb1:2:90d4::/64 Deny Spam
+2001:fb1:103:a012::/64 Deny Spam
+2001:fb1:13e:bb6d::/64 Deny Spam
+2001:fb1:13f:2719::/64 Deny Spam
+2001:fb1:14c:102f::/64 Deny Malware
+Origin: TH
+Profile: Domestic ISP
+Tag: True Internet Co
+
+
+# ASN 1136 ("KPN B.V").
+# Dutch domestic ISP and phone provider. Brute-force, SSH, webapp, DDoS, and
+# XMLRPC attacks, hacking, port scans, and spam detected from here. Listing
+# just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 585.
+# Updated: 2021.07.19
+
+2a02:a443:48d9:1::/64 Deny Spam
+2a02:a447:7549:1::/64 Deny Spam
+2a02:a44a:ca8:1::/64 Deny Spam
+2a02:a44c:bee:1::/64 Deny Spam
+Origin: NL
+Profile: Commercial;Multiplay;Domestic ISP
+Tag: KPN B.V

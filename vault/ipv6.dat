@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6.dat
 
-# Version: 2021.194.289
-# Last modified: 2021.07.14
+# Version: 2021.199.245
+# Last modified: 2021.07.19
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -750,40 +750,34 @@ Origin: NL
 Tag: A2B IP B.V
 
 
-# ASNs 20860, 25108 ("IOMart").
-# Stop Forum Spam (SFS) listings: 2,866 (AS20860), 42 (AS25108).
-# Updated: 2021.04.11
+# ASNs 20860, 21130, 25108, 29164, 35425, 43082, 199542 ("IOMart").
+# Stop Forum Spam (SFS) listings: 2,195 (AS20860), 128 (AS21130), 75 (AS25108).
+# Updated: 2021.07.19
 
 2001:1b40::/32 Deny Cloud
+2001:41c8::/29 Deny Cloud
 2a00:42a0::/32 Deny Cloud
 2a00:5d80::/32 Deny Cloud
 2a00:e120::/32 Deny Cloud
 2a01:61c0::/40 Deny Cloud
 2a02:8c8::/32 Deny Cloud
+2a02:1310:353::/48 Deny Cloud
+2a02:17e0::/32 Deny Cloud
 2a02:2658::/32 Deny Cloud
 2a02:7f40::/32 Deny Cloud
 2a03:b200::/29 Deny Cloud
 2a03:ca80::/31 Deny Cloud
+2a04:ac0:1::/48 Deny Cloud
 2a04:de40::/42 Deny Cloud
 2a0b:4580::/32 Deny Cloud
 2a0c:4380::/40 Deny Cloud
 2a0d:9780::/32 Deny Cloud
+2a0f:23c7::/32 Deny Cloud
 Origin: GB
 2403:cc00:3000::/36 Deny Cloud
 Origin: SG
-2a04:ac0:1::/48 Deny Cloud
-Origin: US
-Profile: Infrastructure/Transit;Tor endpoints here
+Profile: Commercial;Dedicated;Infrastructure/Transit;Tor endpoints here;Webhosting
 Tag: IOMart
-
-
-# ASN 35425 ("Bytemark Limited").
-# Updated: 2020.01.24 / Checked: 2020.12.13
-
-2001:41c8::/29 Deny Cloud
-2a0f:23c7::/32 Deny Cloud
-Origin: GB
-Tag: Bytemark Limited
 
 
 # ASNs 14061, 46652, 209396 ("DigitalOcean, LLC", "ServerStack, Inc", "Digital
@@ -3666,11 +3660,13 @@ Tag: EQUINIX BRASIL SP
 
 
 # ASN 6364 ("Atlantic.net, Inc").
-# Stop Forum Spam (SFS) listings: 16.
-# Updated: 2016.07.02 / Checked: 2020.12.13
+# Webhosting and cloud provider.
+# Stop Forum Spam (SFS) listings: 109.
+# Updated: 2016.07.02 / Checked: 2021.07.19
 
 2607:f170::/32 Deny Cloud
 Origin: US
+Profile: Dedicated;Infrastructure/Transit;Webhosting
 Tag: Atlantic.net, Inc
 
 
@@ -3729,18 +3725,6 @@ Tag: Netelligent Hosting
 Origin: HK
 Profile: Webhosting
 Tag: Powerbase DataCenter
-
-
-# ASNs 135511, 136565, 136566 ("CyberWorld Data Center").
-# Updated: 2019.05.10 / Checked: 2020.12.06
-
-2405:2500:5::/48 Deny Cloud
-2405:2500:11::/48 Deny Cloud
-2405:2500:25::/48 Deny Cloud
-2405:2500:26::/48 Deny Cloud
-2405:2500:65::/48 Deny Cloud
-Origin: TH
-Tag: CyberWorld
 
 
 # ASN 12637 ("Seeweb S.r.l").
@@ -4619,9 +4603,10 @@ Tag: WEBSITEWELCOME.COM
 
 
 # ASN 18229 ("CtrlS Datacenters Ltd").
-# Some IPs on this ASN caught probing for database dumps.
-# Stop Forum Spam (SFS) listings: 200.
-# Updated: 2021.05.02
+# Dedicated data centers and server farms. Caught probing for database dumps.
+# Webapp attacks, spam, and port scans also detected from here.
+# Stop Forum Spam (SFS) listings: 298.
+# Updated: 2021.05.02 / Checked: 2021.07.19
 
 2001:df0:fc00::/48 Deny Cloud
 2001:df4:5100::/48 Deny Cloud
@@ -4636,7 +4621,7 @@ Tag: WEBSITEWELCOME.COM
 2400:3b00:50::/48 Deny Cloud
 2406:56c0::/32 Deny Cloud
 Origin: IN
-Profile: Infrastructure/Transit;Webhosting
+Profile: Dedicated;Infrastructure/Transit;Webhosting
 Tag: CtrlS Datacenters
 
 
@@ -6098,12 +6083,12 @@ Tag: GigeNET
 
 
 # ASN 8683 ("Nominet UK").
-# Caught trying to brute-force website login pages.
-# Updated: 2019.11.09 / Checked: 2020.12.06
+# Webhosting provider. Caught trying to brute-force website login pages.
+# Updated: 2021.07.19
 
-2a01:618::/38 Deny Cloud
 2a01:618:8000::/33 Deny Cloud
 Origin: GB
+Profile: Webhosting
 Tag: Nominet UK
 
 
@@ -7068,7 +7053,8 @@ Tag: acens Technologies
 # ASN 41075 ("ATW Internet Kft").
 # Hungarian webhosting provider. DDoS and brute-force attacks detected from
 # this network.
-# Updated: 2020.06.11 / Checked: 2020.12.13
+# Stop Forum Spam (SFS) listings: 4.
+# Updated: 2020.06.11 / Checked: 2021.07.19
 
 2a01:270::/32 Deny Cloud
 2a01:47c1::/32 Deny Cloud
@@ -7770,28 +7756,45 @@ Tag: 7HEAVEN LLC
 
 # ASNs 262287, 396356 ("Maxihost LTDA").
 # Dedicated data center caught spamming, port scanning, and scraping.
-# Stop Forum Spam (SFS) listings: 224 (AS262287), 1,089 (AS396356).
-# Updated: 2021.02.20
+# Stop Forum Spam (SFS) listings: 1,331 (AS262287), 9,219 (AS396356).
+# Updated: 2021.07.19
 
 2804:391c::/32 Deny Cloud
 Origin: BR
+2603:f070::/29 Deny Cloud
 2603:f100::/29 Deny Cloud
 2603:f200::/29 Deny Cloud
+2603:f248::/29 Deny Cloud
+2603:f2e8::/29 Deny Cloud
 2603:f300::/29 Deny Cloud
+2603:f3a0::/29 Deny Cloud
+2603:f3e0::/29 Deny Cloud
+2603:f3f8::/29 Deny Cloud
 2603:f400::/29 Deny Cloud
+2603:f448::/29 Deny Cloud
 2603:f500::/29 Deny Cloud
+2603:f590::/29 Deny Cloud
+2603:f760::/29 Deny Cloud
+2603:f7b0::/29 Deny Cloud
+2603:f958::/29 Deny Cloud
+2603:fa30::/29 Deny Cloud
+2603:fbd8::/29 Deny Cloud
+2603:fc38::/29 Deny Cloud
+2603:fea8::/29 Deny Cloud
 2605:6440:1003::/48 Deny Cloud
-2605:6440:1004::/47 Deny Cloud
-2605:6440:1006::/48 Deny Cloud
+2605:6440:1004::/46 Deny Cloud
+2605:6440:1008::/47 Deny Cloud
 2605:6440:2002::/47 Deny Cloud
-2605:6440:3002::/47 Deny Cloud
-2605:6440:3004::/48 Deny Cloud
+2605:6440:3000::/36 Deny Cloud
 2605:6440:4000::/36 Deny Cloud
 2605:6440:5003::/48 Deny Cloud
+2605:6440:5005::/48 Deny Cloud
+2605:6440:5006::/48 Deny Cloud
 2605:6440:6002::/48 Deny Cloud
 2605:6440:6005::/48 Deny Cloud
+2605:6440:8000::/35 Deny Cloud
 Origin: US
-Profile: Dedicated
+Profile: Dedicated;Infrastructure/Transit;Webhosting
 Tag: Maxihost LTDA
 
 
@@ -8226,10 +8229,10 @@ Tag: 1 GRID
 
 
 # ASN 60721 ("Bursabil Teknoloji A.S").
-# Turkish Webhosting provider. Port scans, brute-force, webapp attacks
-# detected from here.
-# Stop Forum Spam (SFS) listings: 81.
-# Updated: 2021.04.15
+# Turkish webhosting provider. Brute-force and webapp attacks, spam, and port
+# scans detected from here.
+# Stop Forum Spam (SFS) listings: 36.
+# Updated: 2021.04.15 / Checked: 2021.07.19
 
 2a04:3880::/30 Deny Cloud
 2a06:c380::/29 Deny Cloud
@@ -8528,6 +8531,19 @@ Origin: LT
 Origin: US
 Profile: Dedicated;Infrastructure/Transit;Multiplay;Webhosting
 Tag: Tier.Net Technologies LLC
+
+
+# ASN 33083 ("AxcelX Technologies LLC").
+# Boston cloud provider / server farm. Brute-force, DDoS, and webapp attacks,
+# port scans, and spam detected from here (substract 44.0.0.0/8 when updating).
+# Stop Forum Spam (SFS) listings: 774.
+# Updated: 2021.07.19
+
+2001:4830:c400::/40 Deny Cloud
+2602:ff65::/36 Deny Cloud
+Origin: US
+Profile: Commercial;Infrastructure/Transit
+Tag: AxcelX Technologies LLC
 
 
 # ---

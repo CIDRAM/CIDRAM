@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Default signature bypasses (last modified: 2021.07.12).
+ * This file: Default signature bypasses (last modified: 2021.07.29).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -147,12 +147,17 @@ $CIDRAM['RunParamResCache']['bypasses.php'] = function (array $Factors = [], int
     /** Azure bypasses. */
     if ($Tag === 'Azure') {
         /** Bingbot bypass. */
-        if (
-            $CIDRAM['Request']->inCsv('Bingbot', $CIDRAM['Config']['bypasses']['used']) &&
-            preg_match('~(?:msn|bing)bot|bingpreview~', $CIDRAM['BlockInfo']['UALC'])
-        ) {
-            $CIDRAM['Flag-Bypass-Bingbot-Check'] = true;
-            return 4;
+        if ($CIDRAM['Request']->inCsv('Bingbot', $CIDRAM['Config']['bypasses']['used'])) {
+            if (empty($CIDRAM['Hostname'])) {
+                $CIDRAM['Hostname'] = $CIDRAM['DNS-Reverse']($CIDRAM['BlockInfo']['IPAddr']);
+            }
+            if (
+                preg_match('~^msnbot-\d+-\d+-\d+-\d+\.search\.msn\.com$~i', $CIDRAM['Hostname']) ||
+                preg_match('~(?:msn|bing)bot|bingpreview~', $CIDRAM['BlockInfo']['UALC'])
+            ) {
+                $CIDRAM['Flag-Bypass-Bingbot-Check'] = true;
+                return 4;
+            }
         }
 
         /** DuckDuckGo bypass. */

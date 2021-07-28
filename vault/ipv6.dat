@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6.dat
 
-# Version: 2021.199.245
-# Last modified: 2021.07.19
+# Version: 2021.207.752
+# Last modified: 2021.07.28
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -3451,15 +3451,6 @@ Profile: Dedicated;Webhosting
 Tag: ScaleUp Technologies
 
 
-# ASN 15244 ("Lunar Pages").
-# Brute-force attempts detected from this network.
-# Dead at last check. Will remove at the next update if no change.
-# Updated: 2021.02.27
-
-#<redacted>
-Tag: Lunar Pages
-
-
 # ASN 13213 ("UK-2 Limited").
 # Stop Forum Spam (SFS) listings: 18,572.
 # Updated: 2018.01.08 / Checked: 2021.04.16
@@ -3571,15 +3562,13 @@ Tag: Host Sailor Ltd
 # Technologies", "Interhost LLP"). Dedicated webhosting providers, server
 # farms, cloud services, server leasing, etc; all listed here listed due to a
 # range of various kinds of unwanted traffic seen from there.
-# Stop Forum Spam (SFS) listings: 44 (AS61102), 92,636 (AS61317).
-# Updated: 2021.05.20
+# Stop Forum Spam (SFS) listings: 82 (AS61102), 89,377 (AS61317).
+# Updated: 2021.07.28
 
 2a03:f80:972::/48 Deny Cloud
 Origin: AT
 2a01:8640:c::/48 Deny Cloud
 Origin: BG
-2801:80:3ac0::/42 Deny Cloud
-Origin: BR
 2803:7f20::/32 Deny Cloud
 Origin: BZ
 2803:80::/32 Deny Cloud
@@ -3588,15 +3577,14 @@ Origin: CL
 2001:67c:1591::/48 Deny Cloud
 2001:67c:15a2::/48 Deny Cloud
 Origin: CZ
-2001:7f8::/64 Deny Cloud
-2001:7f8:9e::/64 Deny Cloud
-Origin: DE
 2405:9240::/32 Deny Cloud
 2a00:d1a0::/32 Deny Cloud
+2a03:fbc0::/29 Deny Cloud
 2a06:2b80::/29 Deny Cloud
 2a09:4b40::/29 Deny Cloud
+2a0a:7e00::/29 Deny Cloud
 2a0a:9200::/29 Deny Cloud
-2a0a:9a00::/29 Deny Cloud
+2a0a:9a04::/48 Deny Cloud
 2a0a:9e00::/29 Deny Cloud
 2a0a:a600::/29 Deny Cloud
 2a0a:b600::/29 Deny Cloud
@@ -3609,13 +3597,16 @@ Origin: DE
 2a0d:4c40::/29 Deny Cloud
 Origin: GB
 2a03:ff40::/32 Deny Cloud
+2a0f:bc00::/29 Deny Cloud
 Origin: IL
-2a03:fbc0::/29 Deny Cloud
-2a0a:7e00::/29 Deny Cloud
 2a0a:8600::/29 Deny Cloud
 2a0e:1c00::/29 Deny Cloud
 Origin: LT
+2a11:2800:3::/48 Deny Cloud
+Origin: NL
 2602:ff62::/36 Deny Cloud
+2606:18c0:3::/48 Deny Cloud
+2606:18c0:c::/47 Deny Cloud
 2a03:a960::/32 Deny Cloud
 Origin: US
 2c0f:ee78::/32 Deny Cloud
@@ -8544,6 +8535,54 @@ Tag: Tier.Net Technologies LLC
 Origin: US
 Profile: Commercial;Infrastructure/Transit
 Tag: AxcelX Technologies LLC
+
+
+# ASN 44477 ("IP Oleinichenko Denis").
+# Webhosting provider and server farm. Caught repeatedly trying to hack into
+# RDP. Caught trying to hack into honeypots.
+# Updated: 2021.07.22
+
+2a0c:6900::/32 Deny Cloud
+Origin: RU
+Profile: Infrastructure/Transit;Webhosting
+Tag: IP Oleinichenko Denis
+
+
+# ASN 213186 ("Yanoor Islam Khan").
+# FTP brute-force, brute-force, webapp, and XMLRPC attacks, hacking, port
+# scans, bot spoofing, and spam detected from here.
+# Stop Forum Spam (SFS) listings: 39.
+# Updated: 2021.07.28
+
+2a0b:b87:ffd2::/48 Deny Malware
+Origin: US
+Profile: Restricted/Unidentifiable
+Tag: Yanoor Islam Khan
+
+
+# ASN 63730 ("VNSO TECHNOLOGY COMPANY").
+# Caught hacking WordPress websites, brute-force, SSH, SMB, RDP, XMLRPC, and
+# webapp attacks, hacking, port scans, and spam detected from here.
+# Stop Forum Spam (SFS) listings: 6.
+# Updated: 2021.07.28
+
+2405:e0c0::/48 Deny Cloud
+Origin: VN
+Profile: Webhosting
+Tag: VNSO TECHNOLOGY COMPANY
+
+
+# ASN 56694 ("LLC Smart Ape").
+# Russian server farm. Brute-force, XMLRPC, and webapp attacks, hacking, port
+# scans, and spam detected from here.
+# Stop Forum Spam (SFS) listings: 2,802.
+# Updated: 2021.07.28
+
+2a06:dd00::/29 Deny Cloud
+2a0f:3104::/32 Deny Cloud
+Origin: RU
+Profile: Infrastructure/Transit;Webhosting
+Tag: LLC Smart Ape
 
 
 # ---

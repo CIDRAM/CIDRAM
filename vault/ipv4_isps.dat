@@ -1,8 +1,8 @@
 # IPv4 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv4_isps.dat
 
-# Version: 2021.199.245
-# Last modified: 2021.07.19
+# Version: 2021.207.752
+# Last modified: 2021.07.28
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -4142,7 +4142,7 @@ Tag: China Unicom Backbone
 # just the affected ranges/addresses only.
 # %Listed, abuseat.org (CBL-Listed): 0.25%.
 # Stop Forum Spam (SFS) listings: 11,951.
-# Updated: 2021.06.16 / Modified: 2021.07.03
+# Updated: 2021.06.16 / Modified: 2021.07.22
 
 1.164.6.155/32 Deny Spam
 1.164.14.63/32 Deny Spam
@@ -4200,6 +4200,7 @@ Tag: China Unicom Backbone
 220.132.86.0/24 Deny Malware
 220.132.204.45/32 Deny Spam
 220.135.2.0/24 Deny Malware
+220.135.241.0/24 Deny Malware
 220.143.2.0/24 Deny Malware
 Origin: TW
 Profile: Domestic ISP;Commercial;Multiplay;Tor endpoints here;Webhosting
@@ -10646,50 +10647,59 @@ Profile: Domestic ISP
 Tag: OPTAGE Inc
 
 
-# ASN 36947 ("Telecom Algeria"). A major Algerian domestic ISP, but also most
-# recently a notable source of forum spam.
-# Stop Forum Spam (SFS) listings: 1,027.
-# Updated: 2021.03.25
+# ASN 36947 ("Telecom Algeria").
+# Algerian domestic ISP. Brute-force, SSH, XMLRPC, and webapp attacks, port
+# scans, hacking, and spam detected from here. Listing just the affected
+# ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 1,529.
+# Updated: 2021.07.28
 
-41.100.2.73/32 Deny Spam
-41.100.86.138/32 Deny Spam
-41.100.125.227/32 Deny Spam
-41.101.115.105/32 Deny Spam
-41.101.220.12/32 Deny Spam
-41.102.49.58/32 Deny Spam
-41.102.145.103/32 Deny Spam
-41.102.247.86/32 Deny Spam
-41.105.96.184/32 Deny Spam
-41.105.193.18/32 Deny Spam
-41.107.80.30/32 Deny Spam
-41.107.230.168/32 Deny Spam
-41.108.76.139/32 Deny Spam
-41.111.118.192/32 Deny Spam
-105.96.52.40/32 Deny Spam
-105.98.8.207/32 Deny Spam
-105.98.211.229/32 Deny Spam
-105.98.218.211/32 Deny Spam
-105.98.239.115/32 Deny Spam
-105.98.241.228/32 Deny Spam
-105.100.23.14/32 Deny Spam
-105.102.255.41/32 Deny Spam
-105.104.33.43/32 Deny Spam
-105.104.42.206/32 Deny Spam
-105.104.162.83/32 Deny Spam
-105.106.95.138/32 Deny Spam
-105.107.115.116/32 Deny Spam
-105.107.153.203/32 Deny Spam
-105.108.142.239/32 Deny Spam
-105.110.227.57/32 Deny Spam
+41.96.154.32/32 Deny Spam
+41.100.144.226/32 Deny Spam
+41.100.227.238/32 Deny Spam
+41.101.217.23/32 Deny Spam
+41.102.37.104/32 Deny Spam
+41.102.145.0/24 Deny Malware
+41.103.45.137/32 Deny Spam
+41.103.171.29/32 Deny Spam
+41.103.179.44/32 Deny Spam
+41.104.212.75/32 Deny Spam
+41.107.172.105/32 Deny Spam
+41.107.180.138/32 Deny Spam
+41.109.252.95/32 Deny Spam
+41.111.146.0/24 Deny Malware
+41.200.99.116/32 Deny Spam
+41.200.222.65/32 Deny Spam
+105.96.14.248/32 Deny Spam
+105.97.9.61/32 Deny Spam
+105.100.103.90/32 Deny Spam
+105.101.23.250/32 Deny Spam
+105.102.147.228/32 Deny Spam
+105.103.103.175/32 Deny Spam
+105.103.156.110/32 Deny Spam
+105.104.0.234/32 Deny Spam
+105.104.118.27/32 Deny Spam
+105.104.155.228/32 Deny Spam
+105.104.186.235/32 Deny Spam
+105.104.224.254/32 Deny Spam
+105.108.50.224/32 Deny Spam
+105.108.113.210/32 Deny Spam
+105.108.147.33/32 Deny Spam
+105.108.204.125/32 Deny Spam
+105.110.51.83/32 Deny Spam
+105.110.96.30/32 Deny Spam
 105.111.24.49/32 Deny Spam
-196.20.64.171/32 Deny Spam
-197.116.8.7/32 Deny Spam
-197.117.24.89/32 Deny Spam
-197.205.7.223/32 Deny Spam
-197.206.188.165/32 Deny Spam
-197.206.193.228/32 Deny Spam
-197.206.201.192/32 Deny Spam
+154.242.1.124/32 Deny Spam
+197.200.47.77/32 Deny Spam
+197.202.86.0/32 Deny Spam
+197.203.27.174/32 Deny Spam
+197.207.50.199/32 Deny Spam
+197.207.130.137/32 Deny Spam
 Origin: DZ
+213.140.56.92/32 Deny Malware
+Origin: ES
+193.251.169.165/32 Deny Malware
+Origin: FR
 Profile: Domestic ISP
 Tag: Telecom Algeria
 
@@ -11981,22 +11991,24 @@ Tag: VODAFONE ESPANA
 
 
 # ASN 35612 ("EOLO S.p.A").
-# Italian domestic ISP. Some IPs here caught spamming by honeypots.
-# Stop Forum Spam (SFS) listings: 284.
-# Updated: 2021.07.11
+# Italian domestic ISP. Port scans, hack attempts, and spam detected from here.
+# Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 279.
+# Updated: 2021.07.22
 
-5.157.97.255/32 Deny Spam
-49.236.11.0/24 Deny Spam
+5.157.97.0/24 Deny Malware
+49.236.11.178/32 Deny Spam
 49.236.47.201/32 Deny Spam
 78.134.90.115/32 Deny Spam
 81.174.25.185/32 Deny Spam
-88.147.56.157/32 Deny Spam
 88.149.223.65/32 Deny Spam
+128.116.228.168/32 Deny Malware
 146.241.0.255/32 Deny Spam
 146.241.113.190/32 Deny Spam
 146.241.212.122/32 Deny Spam
+212.124.186.169/32 Deny Spam
 Origin: IT
-Profile: Domestic ISP
+Profile: Domestic ISP;Frequent changes
 Tag: EOLO
 
 
@@ -16067,22 +16079,20 @@ Tag: LIMANET Ltd
 # Scandinavian multiplay network (domestic ISP, webhosting, cloud lease, etc).
 # Regular brute-force attacks and flooding/hammering encountered from this
 # network. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 21 (AS12552), 5 (AS39369).
-# Updated: 2021.04.30 / Modified: 2021.05.29
+# Stop Forum Spam (SFS) listings: 24 (AS12552), 6 (AS39369).
+# Updated: 2021.07.28
 
 185.166.205.0/24 Deny Malware
 Origin: NO
-65.99.154.121/32 Deny Spam
-65.99.173.4/32 Deny Spam
 82.96.39.0/24 Deny Malware
 82.96.56.0/24 Deny Malware
 82.99.40.210/32 Deny Spam
+91.233.50.10/32 Deny Spam
 93.158.66.0/24 Deny Malware
-93.158.90.0/24 Deny Malware
-185.165.81.229/32 Deny Spam
+93.158.90.0/23 Deny Malware
 185.183.146.0/24 Deny Malware
 185.205.225.0/24 Deny Malware
-212.37.28.30/32 Deny Spam
+212.16.172.159/32 Deny Spam
 Origin: SE
 Profile: Domestic ISP;Multiplay;Webhosting
 Tag: Availo Networks AB
@@ -17693,3 +17703,103 @@ Tag: KPN B.V
 Origin: RU
 Profile: Domestic ISP
 Tag: JSC AIST
+
+
+# ASN 10226 ("ETL Company Limited").
+# Laotian domestic ISP. Brute-force, SSH, XMLRPC, and webapp attacks, port
+# scans, hacking, and spam detected from here. Listing just the affected
+# ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 469.
+# Updated: 2021.07.28
+
+103.13.90.0/24 Deny Malware
+202.62.99.0/24 Deny Malware
+202.62.102.0/24 Deny Malware
+Origin: LA
+Profile: Domestic ISP
+Tag: ETL Company Limited
+
+
+# ASN 43684 ("OTK LLC").
+# Russian domestic ISP. Brute-force, IoT, porn referrer spam, and webapp
+# attacks, phishing, port scans, hacking, and spam detected from here.
+# Stop Forum Spam (SFS) listings: 122.
+# Updated: 2021.07.28
+
+185.85.160.0/22 Deny Malware
+Origin: RU
+Profile: Domestic ISP
+Tag: OTK LLC
+
+
+# ASN 3214 ("xTom GmbH").
+# German IaaS provider. Caught probing for vulnerabilities. Brute-force,
+# XMLRPC, SQLi, and webapp attacks, spoofing, port scans, hacking, and spam
+# detected from here. Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 78.
+# Updated: 2021.07.28
+
+62.133.35.0/24 Deny Malware
+78.142.193.0/24 Deny Malware
+185.213.148.195/32 Deny Spam
+185.254.75.0/24 Deny Malware
+Origin: DE
+185.222.220.35/32 Deny Malware
+Origin: EE
+91.193.75.0/24 Deny Malware
+Origin: RS
+194.127.164.246/32 Deny Malware
+Origin: VU
+Profile: Infrastructure/Transit
+Tag: xTom GmbH
+
+
+# ASN 264261 ("Agencia Brasileira de Desenvolvimento Industrial").
+# Brazilian government agency. Brute-force, XMLRPC, and webapp attacks, port
+# scans, and hack attempts detected from here. Listing just the affected
+# ranges/addresses only.
+# Updated: 2021.07.28
+
+200.0.135.1/32 Deny Malware
+Origin: BR
+Profile: Government
+Tag: ABDI
+
+
+# ASN 37018 ("Galaxy Backbone PLC").
+# Nigerian backbone provider. Brute-force, webapp attacks, and spam detected
+# from here. Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 30.
+# Updated: 2021.07.28
+
+41.222.209.14/32 Deny Malware
+197.159.70.0/24 Deny Malware
+Origin: NG
+Profile: Infrastructure/Transit
+Tag: Galaxy Backbone PLC
+
+
+# ASN 8193 ('"Uzbektelekom" Joint Stock Company').
+# Uzbek domestic ISP. Brute-force attacks, port scans, hacking, and spam
+# detected from here. Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 1,173.
+# Updated: 2021.07.28
+
+84.54.76.0/22 Deny Malware
+84.54.93.0/24 Deny Malware
+84.54.94.0/23 Deny Malware
+195.158.3.0/24 Deny Malware
+195.158.7.0/24 Deny Malware
+213.230.69.0/24 Deny Malware
+213.230.72.0/21 Deny Malware
+213.230.94.0/23 Deny Malware
+213.230.96.0/23 Deny Malware
+213.230.100.0/22 Deny Malware
+213.230.107.0/24 Deny Malware
+213.230.110.0/24 Deny Malware
+213.230.112.0/23 Deny Malware
+213.230.115.0/24 Deny Malware
+213.230.116.0/22 Deny Malware
+Origin: UZ
+Profile: Domestic ISP
+Tag: Uzbektelekom

@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6_isps.dat
 
-# Version: 2021.199.245
-# Last modified: 2021.07.19
+# Version: 2021.207.752
+# Last modified: 2021.07.28
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -2540,19 +2540,6 @@ Tag: Xs4all Internet BV
 Origin: FR
 Profile: Domestic ISP
 Tag: Bouygues Telecom SA
-
-
-# ASNs 12552, 39369 ("Availo Networks AB").
-# Scandinavian multiplay network (domestic ISP, webhosting, cloud lease, etc).
-# Regular brute-force attacks and flooding/hammering encountered from this
-# network. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 21 (AS12552), 5 (AS39369).
-# Updated: 2021.04.30
-
-2a06:9900:99:c002::/64 Deny Spam
-Origin: NO
-Profile: Domestic ISP;Multiplay;Webhosting
-Tag: Availo Networks AB
 
 
 # ASNs 60339, 206067 ("Hutchison 3G UK Limited").

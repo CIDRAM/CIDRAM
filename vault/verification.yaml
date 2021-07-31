@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Verification data for search engines and social media (last modified: 2021.07.02).
+# This file: Verification data for search engines and social media (last modified: 2021.07.31).
 ##/
 
 # Additional references: https://udger.com/resources/ua-list/crawlers
@@ -66,8 +66,8 @@ Search Engine Verification:
   User Agent: "googlebot"
   Closure: "DNS-Reverse-Forward"
   Valid domains:
-   - ".googlebot.com"
    - ".google.com"
+   - ".googlebot.com"
 
  # https://www.mojeek.com/bot.html
  MojeekBot:
@@ -150,11 +150,13 @@ Social Media Verification:
    - "32934"
 
  # https://help.pinterest.com/en/articles/about-pinterest-crawler-0
+ # https://github.com/CIDRAM/CIDRAM/issues/253
  Pinterest:
   User Agent: "pinterest"
   Closure: "DNS-Reverse-Forward"
   Valid domains:
    - ".pinterest.com"
+   - ".pinterestcrawler.com"
 
  # https://udger.com/resources/ua-list/bot-detail?bot=Twitterbot#id6168
  Twitterbot:
@@ -194,5 +196,5 @@ Other Verification:
   User Agent: "mediapartners-google"
   Closure: "DNS-Reverse-Forward"
   Valid domains:
-   - ".googlebot.com"
    - ".google.com"
+   - ".googlebot.com"

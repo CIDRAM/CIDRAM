@@ -7,18 +7,17 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Default signature bypasses configuration (last modified: 2021.07.12).
+# This file: Default signature bypasses configuration (last modified: 2021.08.01).
 ##/
 
 Config Defaults:
  bypasses:
   used:
    type: "checkbox"
-   default: "AbuseIPDB,Bingbot,Disqus,DuckDuckBot,Embedly,Feedbot,Feedspot,Grapeshot,Jetpack,Pinterest"
+   default: "AbuseIPDB,Bingbot,DuckDuckBot,Embedly,Feedbot,Feedspot,Grapeshot,Jetpack,Pinterest"
    choices:
-    Bingbot: "AbuseIPDB"
+    AbuseIPDB: "AbuseIPDB"
     Bingbot: "Bingbot"
-    Disqus: "Disqus"
     DuckDuckBot: "DuckDuckBot"
     Embedly: "Embedly"
     Feedbot: "Feedbot"

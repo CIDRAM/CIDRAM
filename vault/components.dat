@@ -243,7 +243,7 @@ CIDRAM:
 IPv4:
  Extended Description: Default IPv4 signatures normally included with the main package. Blocks unwanted cloud services and non-human endpoints.
  False Positive Risk: Low
- Version: 2021.207.752
+ Version: 2021.212.157
  Minimum Required: 1.0.0
  Dependencies:
   CIDRAM Core: >=1
@@ -256,7 +256,7 @@ IPv4:
   To:
    - ipv4.dat
   Checksum:
-   - 91c80f3495fbc06bac96b0216e7dc53d104c673084211270fbed51a19aaab7a9:953154
+   - 5f55d14a78839308542fdbaaffb40682d16d911090b711e6cebb326853aba826:926400
  Used with: ipv4
  Reannotate: components.dat
 IPv4-Bogons:
@@ -280,7 +280,7 @@ IPv4-Bogons:
 IPv4-ISPs:
  Extended Description: Default IPv4 signatures normally included with the main package. Blocks dangerous and spammy ISPs.
  False Positive Risk: Medium
- Version: 2021.207.752
+ Version: 2021.212.157
  Minimum Required: 1.0.0
  Dependencies:
   CIDRAM Core: >=1
@@ -293,7 +293,7 @@ IPv4-ISPs:
   To:
    - ipv4_isps.dat
   Checksum:
-   - 1674f8687734fb763d55c7386a532cafdfa906b7c338e5efeed355f134a84323:486990
+   - 300e22ba59c941e9e23381b5d13e02f08fd985cfa64b88ec88108ce77a657801:485663
  Used with: ipv4
  Reannotate: components.dat
 IPv4-Nonblocking:
@@ -316,7 +316,7 @@ IPv4-Nonblocking:
 IPv4-Other:
  Extended Description: Default IPv4 signatures normally included with the main package. Blocks CIDRs for proxies, VPNs, and other miscellaneous unwanted services.
  False Positive Risk: Medium
- Version: 2021.166.298
+ Version: 2021.212.157
  Minimum Required: 1.0.0
  Dependencies:
   CIDRAM Core: >=1
@@ -328,13 +328,13 @@ IPv4-Other:
   To:
    - ipv4_other.dat
   Checksum:
-   - 34ba96a1b5cfe38a92d9a1d54f46f7b011dc03d47dc24786d986eeabfa88c459:35665
+   - 643fd07dc4922eb6053d8e146909361966b3eb71b80f8affd045875ba7952c79:34615
  Used with: ipv4
  Reannotate: components.dat
 IPv6:
  Extended Description: Default IPv6 signatures normally included with the main package. Blocks unwanted cloud services and non-human endpoints.
  False Positive Risk: Low
- Version: 2021.207.752
+ Version: 2021.212.157
  Minimum Required: 1.0.0
  Dependencies:
   CIDRAM Core: >=1
@@ -347,7 +347,7 @@ IPv6:
   To:
    - ipv6.dat
   Checksum:
-   - c6bdb9ce4202721de0442390fd8902a8f9ecee3bbb67bb5da017af0a0c1b35eb:253040
+   - 03158520f6c0ab662b67f7f7fb922fee7d88c85e3dc2c59d22a3fe184d74d8ef:239838
  Used with: ipv6
  Reannotate: components.dat
 IPv6-Bogons:
@@ -371,7 +371,7 @@ IPv6-Bogons:
 IPv6-ISPs:
  Extended Description: Default IPv6 signatures normally included with the main package. Blocks dangerous and spammy ISPs.
  False Positive Risk: Medium
- Version: 2021.207.752
+ Version: 2021.212.157
  Minimum Required: 1.0.0
  Dependencies:
   CIDRAM Core: >=1
@@ -384,7 +384,7 @@ IPv6-ISPs:
   To:
    - ipv6_isps.dat
   Checksum:
-   - e6b952b7a96852269573f34605ba8a5242fbe2685bed7e943894b9f93be8abcb:80534
+   - e2b7374929310cb40c0f88afbda23fb6b68a7cffe31a684d2249d618260ebdd3:78562
  Used with: ipv6
  Reannotate: components.dat
 IPv6-Nonblocking:
@@ -407,7 +407,7 @@ IPv6-Nonblocking:
 IPv6-Other:
  Extended Description: Default IPv6 signatures normally included with the main package. Blocks CIDRs for proxies, VPNs, and other miscellaneous unwanted services.
  False Positive Risk: Low
- Version: 2021.166.298
+ Version: 2021.212.157
  Minimum Required: 1.0.0
  Dependencies:
   CIDRAM Core: >=1
@@ -419,11 +419,11 @@ IPv6-Other:
   To:
    - ipv6_other.dat
   Checksum:
-   - a8c14fab0e38948ce46b7a81b71277db9d60cd5ffdcadd9ad2f2d10bf3cb8f44:4918
+   - e36e57b0128f444b07f05eb22afa768eb8079aa5f703dd1dc5fd18007aa9376b:4268
  Used with: ipv6
  Reannotate: components.dat
 Bypasses:
- Version: 2021.209.003
+ Version: 2021.212.157
  Dependencies:
   PHP: >=5.4
   CIDRAM Core: ^1.19.1-DEV
@@ -437,8 +437,8 @@ Bypasses:
    - bypasses.php
    - bypasses.yml
   Checksum:
-   - f41b9105df2e6b54eeab309080af6a2aa88e53bcf304604abf120dbf779da3e9:8567
-   - 6a85ed5d78f2e968964d984c3194728801f5c3e4bd2c512c4542f5055c8b164d:774
+   - 9a3ac4ef867335375cd20a2f1c51810beb9a040440c6bcc7140d681a3bc40833:8888
+   - f1643a0fc1b46eceb0fa4565e27d26a39a5355fb56dcbb0fe7b22d006da8fdc6:748
  Used with:
   - n/a
   - imports

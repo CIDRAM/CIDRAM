@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Default signature bypasses (last modified: 2021.07.29).
+ * This file: Default signature bypasses (last modified: 2021.08.01).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -108,7 +108,10 @@ $CIDRAM['RunParamResCache']['bypasses.php'] = function (array $Factors = [], int
             return 4;
         }
 
-        /** Embedly bypass. */
+        /**
+         * Embedly bypass.
+         * @link https://github.com/CIDRAM/CIDRAM/issues/80
+         */
         if (
             $CIDRAM['Request']->inCsv('Embedly', $CIDRAM['Config']['bypasses']['used']) &&
             strpos($CIDRAM['BlockInfo']['UALC'], 'embedly') !== false
@@ -118,7 +121,7 @@ $CIDRAM['RunParamResCache']['bypasses.php'] = function (array $Factors = [], int
 
         /**
          * Feedspot bypass.
-         * See: https://udger.com/resources/ua-list/bot-detail?bot=Feedspotbot
+         * @link https://udger.com/resources/ua-list/bot-detail?bot=Feedspotbot
          */
         if (
             $CIDRAM['Request']->inCsv('Feedspot', $CIDRAM['Config']['bypasses']['used']) &&
@@ -127,7 +130,10 @@ $CIDRAM['RunParamResCache']['bypasses.php'] = function (array $Factors = [], int
             return;
         }
 
-        /** Pinterest bypass. */
+        /**
+         * Pinterest bypass.
+         * @link https://github.com/CIDRAM/CIDRAM/issues/253
+         */
         if (
             $CIDRAM['Request']->inCsv('Pinterest', $CIDRAM['Config']['bypasses']['used']) &&
             strpos($CIDRAM['BlockInfo']['UALC'], 'pinterest') !== false
@@ -135,7 +141,10 @@ $CIDRAM['RunParamResCache']['bypasses.php'] = function (array $Factors = [], int
             return;
         }
 
-        /** Redditbot bypass. */
+        /**
+         * Redditbot bypass.
+         * @link https://github.com/CIDRAM/CIDRAM/issues/243
+         */
         if (
             $CIDRAM['Request']->inCsv('Redditbot', $CIDRAM['Config']['bypasses']['used']) &&
             strpos($CIDRAM['BlockInfo']['UALC'], 'redditbot/') !== false
@@ -146,7 +155,10 @@ $CIDRAM['RunParamResCache']['bypasses.php'] = function (array $Factors = [], int
 
     /** Azure bypasses. */
     if ($Tag === 'Azure') {
-        /** Bingbot bypass. */
+        /**
+         * Bingbot bypass.
+         * @link https://github.com/CIDRAM/CIDRAM/issues/242
+         */
         if ($CIDRAM['Request']->inCsv('Bingbot', $CIDRAM['Config']['bypasses']['used'])) {
             if (empty($CIDRAM['Hostname'])) {
                 $CIDRAM['Hostname'] = $CIDRAM['DNS-Reverse']($CIDRAM['BlockInfo']['IPAddr']);
@@ -160,7 +172,10 @@ $CIDRAM['RunParamResCache']['bypasses.php'] = function (array $Factors = [], int
             }
         }
 
-        /** DuckDuckGo bypass. */
+        /**
+         * DuckDuckGo bypass.
+         * @link https://duckduckgo.com/duckduckbot
+         */
         if (
             $CIDRAM['Request']->inCsv('DuckDuckBot', $CIDRAM['Config']['bypasses']['used']) &&
             preg_match('~duckduck(?:go-favicons-)?bot~', $CIDRAM['BlockInfo']['UALC'])
@@ -171,7 +186,10 @@ $CIDRAM['RunParamResCache']['bypasses.php'] = function (array $Factors = [], int
 
     /** Oracle bypasses. */
     if ($Tag === 'Oracle Corporation') {
-        /** Oracle Data Cloud Crawler (a.k.a., Grapeshot) bypass. */
+        /**
+         * Oracle Data Cloud Crawler (a.k.a., Grapeshot) bypass.
+         * @link https://www.oracle.com/corporate/acquisitions/grapeshot/crawler.html
+         */
         if (
             $CIDRAM['Request']->inCsv('Grapeshot', $CIDRAM['Config']['bypasses']['used']) &&
             strpos($CIDRAM['BlockInfo']['UALC'], 'grapeshot') !== false
@@ -180,7 +198,10 @@ $CIDRAM['RunParamResCache']['bypasses.php'] = function (array $Factors = [], int
         }
     }
 
-    /** Automattic bypasses. */
+    /**
+     * Automattic bypasses.
+     * @link https://github.com/CIDRAM/CIDRAM/issues/65
+     */
     if ($Tag === 'Automattic') {
         /** Feedbot bypass. */
         if (
@@ -197,15 +218,6 @@ $CIDRAM['RunParamResCache']['bypasses.php'] = function (array $Factors = [], int
         ) {
             return;
         }
-    }
-
-    /** Disqus bypass. */
-    if (
-        $Tag === 'SoftLayer' &&
-        $CIDRAM['Request']->inCsv('Disqus', $CIDRAM['Config']['bypasses']['used']) &&
-        strpos($CIDRAM['BlockInfo']['UALC'], 'disqus') !== false
-    ) {
-        return;
     }
 
     /** AbuseIPDB webmaster verification bot bypass. */

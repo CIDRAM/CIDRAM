@@ -1,8 +1,8 @@
 # IPv6 signatures file (CIDRs for proxies, VPNs and other miscellaneous unwanted services).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6_other.dat
 
-# Version: 2021.166.298
-# Last modified: 2021.06.16
+# Version: 2021.212.157
+# Last modified: 2021.08.01
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -20,7 +20,6 @@
 # listing the ASN in entirety. Listings have also been split across different
 # signature files as to list at the signature files where best suited.
 
-# %Listed, abuseat.org (CBL-Listed): 0.05%.
 # Stop Forum Spam (SFS) listings: 11,429.
 
 # See:
@@ -35,25 +34,6 @@
 2001:978:1403::/48 Deny Proxy
 Origin: US
 Tag: Cogent Proxies
-
-
-# ASN 36351 ("SoftLayer Technologies").
-# Careful when updating; Signatures reflect varying block reasons, split across multiple files.
-# Stop Forum Spam (SFS) listings: 6,594.
-
-# SoftLayer VPNs and proxies.
-# Includes: Anything citing "TEFINCOM", "Packet Flip", "VPN", "proxy", "Secure Internet".
-# ^(.*(TEFINCOM|Packet Flip|VPN|Proxy|Secure Internet).*)$
-# Excludes: Everything else.
-# Updated: 2019.12.14 / Checked: 2021.02.04
-
-2602:ff84:1::/48 Deny Proxy
-2602:ff84:c::/47 Deny Proxy
-2602:ff84:f::/48 Deny Proxy
-2602:ff84:10::/47 Deny Proxy
-2602:ff84:12::/48 Deny Proxy
-Origin: US
-Tag: SoftLayer VPNs
 
 
 # ASN 205100 ("F3 Netze e.V").

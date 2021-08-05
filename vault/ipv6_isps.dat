@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6_isps.dat
 
-# Version: 2021.212.157
-# Last modified: 2021.08.01
+# Version: 2021.216.564
+# Last modified: 2021.08.05
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -905,9 +905,10 @@ Tag: China Unicom Backbone
 # Taiwanese domestic ISP and business network. DDoS, FTP brute-force, and
 # webapp attacks, hacking, spam, and port scans detected from here. Listing
 # just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 11,951.
-# Updated: 2021.06.16
+# Stop Forum Spam (SFS) listings: 12,116.
+# Updated: 2021.08.05
 
+2001:b011:5c01:5827::/64 Deny Malware
 2001:b011:7c03:4395::/64 Deny Malware
 Origin: TW
 Profile: Domestic ISP;Commercial;Multiplay;Tor endpoints here;Webhosting
@@ -1965,15 +1966,12 @@ Tag: Hot-Net internet
 
 
 # ASN 8151 ("Uninet S.A. de C.V").
-# Mexican domestic ISP. Spam and brute-force attacks detected from here.
-# Listing just the affected ranges/addresses, plus US ranges (cloud).
-# Stop Forum Spam (SFS) listings: 2,829.
-# Updated: 2021.04.16
+# Mexican domestic ISP. Brute-force attacks, port scans, and spam detected from
+# here. Listing just the affected ranges/addresses, plus US ranges (cloud).
+# Stop Forum Spam (SFS) listings: 3,864.
+# Updated: 2021.08.05
 
-2806:104e:9:c599::/64 Deny Spam
 2806:105e:14:d416::/64 Deny Malware
-2806:107e:f:4530::/64 Deny Spam
-2806:10ae:10:2b67::/64 Deny Malware
 Origin: MX
 2600:141c:7::/48 Deny Cloud
 2600:141c:5000::/48 Deny Cloud

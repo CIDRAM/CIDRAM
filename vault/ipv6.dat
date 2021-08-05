@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6.dat
 
-# Version: 2021.212.157
-# Last modified: 2021.08.01
+# Version: 2021.216.564
+# Last modified: 2021.08.05
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -403,11 +403,12 @@ Tag: DataCorpore Servios
 
 
 # ASN 53850 ("GorillaServers, Inc").
-# Stop Forum Spam (SFS) listings: 83.
-# Updated: 2016.09.15 / Checked: 2020.12.18
+# Stop Forum Spam (SFS) listings: 88.
+# Updated: 2016.09.15 / Checked: 2021.08.05
 
 2606:c700::/32 Deny Cloud
 Origin: US
+Profile: Dedicated;Infrastructure/Transit
 Tag: GorillaServers, Inc
 
 
@@ -632,13 +633,14 @@ Tag: Hurricane Electric
 
 
 # ASNs 30693, 49532, 62904 ("Eonix Corporation").
-# Stop Forum Spam (SFS) listings: 20,174 (AS49532), 25,584 (AS62904).
-# Updated: 2020.12.18
+# Stop Forum Spam (SFS) listings: 21,993 (AS49532), 29,399 (AS62904).
+# Updated: 2021.08.05
 
-2602:ffc5:10e::/48 Deny Cloud
 2607:ff28::/32 Deny Cloud
 2a07:440::/31 Deny Cloud
+2a07:442::/36 Deny Cloud
 Origin: US
+Profile: Commercial;Dedicated;Infrastructure/Transit;Webhosting
 Tag: Eonix Corporation
 
 
@@ -2242,12 +2244,13 @@ Tag: GHOSTnet GmbH
 
 
 # ASNs 19437, 20454, 32164 ("SECURED SERVERS LLC").
-# Stop Forum Spam (SFS) listings: 458 (AS19437), 460 (AS20454).
-# Updated: 2020.12.18
+# Stop Forum Spam (SFS) listings: 3,310 (AS19437), 388 (AS20454).
+# Updated: 2020.12.18 / Checked: 2021.08.05
 
 2607:ff00:100::/40 Deny Cloud
 2607:ff00:300::/40 Deny Cloud
 Origin: US
+Profile: Dedicated;Infrastructure/Transit;Webhosting
 Tag: SECURED SERVERS LLC
 
 
@@ -2348,12 +2351,13 @@ Tag: VegasNAP, LLC
 
 
 # ASNs 34702, 34729 ("Aktsiaselts WaveCom").
-# Stop Forum Spam (SFS) listings: 7,761 (AS34702).
-# Updated: 2018.12.19 / Checked: 2020.12.18
+# Stop Forum Spam (SFS) listings: 803 (AS34702).
+# Updated: 2018.12.19 / Checked: 2021.08.05
 
 2a01:97a0::/32 Deny Cloud
 2a0c:36c7::/32 Deny Cloud
 Origin: EE
+Profile: Infrastructure/Transit;Webhosting
 Tag: Aktsiaselts
 
 
@@ -2388,13 +2392,14 @@ Tag: Nazwa.pl
 
 
 # ASN 18450 ("WebNX, Inc").
-# Contains proxy entries (careful when updating).
-# Stop Forum Spam (SFS) listings: 329.
-# Updated: 2020.12.18
+# HUGE amounts of spam, port scans, hack attempts, and other unwanted traffic!
+# Stop Forum Spam (SFS) listings: 10,835.
+# Updated: 2020.12.18 / Checked: 2021.08.05
 
 2604:4d40:4000::/36 Deny Cloud
 2607:f2d8::/32 Deny Cloud
 Origin: US
+Profile: Dedicated;Infrastructure/Transit;Webhosting
 Tag: WebNX, Inc
 
 

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2021.07.16).
+ * This file: Front-end functions file (last modified: 2021.08.07).
  */
 
 /**
@@ -129,9 +129,9 @@ $CIDRAM['FormatFilesize'] = function (int &$Filesize) use (&$CIDRAM): void {
     $Scale = ['field_size_bytes', 'field_size_KB', 'field_size_MB', 'field_size_GB', 'field_size_TB'];
     $Iterate = 0;
     while ($Filesize > 1024) {
-        $Filesize = $Filesize / 1024;
+        $Filesize /= 1024;
         $Iterate++;
-        if ($Iterate > 4) {
+        if ($Iterate > 3) {
             break;
         }
     }
@@ -1971,9 +1971,8 @@ $CIDRAM['UpdatesHandler-Activate'] = function ($ID) use (&$CIDRAM): void {
                 }
             }
             if (
-                $File === '' ||
+                preg_match('~^$|\.(?:css|gif|html?|jpe?g|js|png)$|^(?:classes|fe_assets)[\x2f\x5c]~i', $File) ||
                 !file_exists($CIDRAM['Vault'] . $File) ||
-                preg_match('~^$|\.(?:css|gif|html?|jpe?g|js|png)$|^(?:classes|fe_assets)[\x2f\x5c]~i', $FileSafe) ||
                 !$CIDRAM['Traverse']($File)
             ) {
                 continue;
@@ -3387,16 +3386,16 @@ $CIDRAM['AuxGenerateFEData'] = function (bool $Mode = false) use (&$CIDRAM): str
             /** Status code override. */
             $Output .= sprintf('<div class="iCntr"><div class="iLabl s">%1$s</div><div class="iCntn">', $CIDRAM['L10N']->getString('label_aux_http_status_code_override'));
             $Output .= sprintf(
-                '<span id="%1$sstatGroupX"><input type="radio" class="auto" id="%1$sstatusCodeX" name="statusCode[%3$s]" value="0" %2$s/> 🗙</span>',
+                '<span id="%1$sstatGroupX" class="statGroup"><input type="radio" class="auto" id="%1$sstatusCodeX" name="statusCode[%3$s]" value="0" %2$s/><label for="%1$sstatusCodeX">🗙</label></span>',
                 $RuleClass,
                 empty($Data['Status Code']) ? 'checked="true" ' : '',
                 $Current
             );
             foreach ([['3', ['301', '307', '308']], ['45', ['403', '410', '418', '451', '503']]] as $StatGroup) {
-                $Output .= sprintf('<span id="%1$sstatGroup%2$s">', $RuleClass, $StatGroup[0]);
+                $Output .= sprintf('<span id="%1$sstatGroup%2$s" class="statGroup">', $RuleClass, $StatGroup[0]);
                 foreach ($StatGroup[1] as $StatusCode) {
                     $Output .= sprintf(
-                        '<input type="radio" class="auto" id="%1$sstatusCode%2$s" name="statusCode[%4$s]" value="%2$s" %3$s/> %2$s',
+                        '<input type="radio" class="auto" id="%1$sstatusCode%2$s" name="statusCode[%4$s]" value="%2$s" %3$s/><label for="%1$sstatusCode%2$s">%2$s</label>',
                         $RuleClass,
                         $StatusCode,
                         isset($Data['Status Code']) && $Data['Status Code'] === $StatusCode ? ' checked="true"' : '',

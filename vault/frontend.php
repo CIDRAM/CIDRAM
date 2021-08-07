@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2021.07.14).
+ * This file: Front-end handler (last modified: 2021.08.07).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -1509,7 +1509,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
                             $CIDRAM['ThisDir']['FieldOut'] .= sprintf('<div class="gridboxitem"><span class="s">%s</span></div>', $CIDRAM['ChoiceValue']);
                         } else {
                             $CIDRAM['ThisDir']['FieldOut'] .= sprintf(
-                                '<div class="gridboxitem" style="text-align:center;vertical-align:middle"><input%4$s type="checkbox" class="auto" name="%1$s" id="%1$s"%2$s /></div><div class="gridboxitem"><label for="%1$s" class="s" style="cursor:pointer">%3$s</label></div>',
+                                '<div class="gridboxitem" style="text-align:center;vertical-align:middle"><input%4$s type="checkbox" class="auto" name="%1$s" id="%1$s"%2$s /></div><div class="gridboxitem"><label for="%1$s" class="s">%3$s</label></div>',
                                 $CIDRAM['ThisDir']['DirLangKey'] . '_' . $CIDRAM['ChoiceKey'],
                                 $CIDRAM['Request']->inCsv(
                                     $CIDRAM['ChoiceKey'],
@@ -4459,12 +4459,20 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'logs' && $CIDRAM['FE']['Permiss
     /** Remember display preferences? */
     $CIDRAM['FE']['Remember'] = isset($CIDRAM['QueryVars']['remember']) && $CIDRAM['QueryVars']['remember'] === 'on';
 
+    /** Paginate entries? */
+    $CIDRAM['FE']['Paginate'] = isset($CIDRAM['QueryVars']['paginate']) && $CIDRAM['QueryVars']['paginate'] === 'on';
+
+    /** Entries per page. */
+    $CIDRAM['FE']['PerPage'] = ($CIDRAM['FE']['Paginate'] && isset($CIDRAM['QueryVars']['perpage'])) ? (int)$CIDRAM['QueryVars']['perpage'] : 20;
+
     /** Define query for search filters. */
     $CIDRAM['FE']['BlockLink'] = sprintf(
-        '?cidram-page=logs&textMode=%s&sortOrder=%s%s%s',
+        '?cidram-page=logs&textMode=%s&sortOrder=%s%s%s%s%s',
         $CIDRAM['FE']['TextModeLinks'],
         $CIDRAM['FE']['SortOrder'],
         $CIDRAM['FE']['Remember'] ? '&remember=on' : '',
+        $CIDRAM['FE']['Paginate'] ? '&paginate=on' : '',
+        $CIDRAM['FE']['PerPage'] > 0 && $CIDRAM['FE']['PerPage'] !== 20 ? '&perpage=' . $CIDRAM['FE']['PerPage'] : '',
         empty($CIDRAM['QueryVars']['logfile']) ? '' : '&logfile=' . $CIDRAM['QueryVars']['logfile']
     );
 
@@ -4580,15 +4588,18 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'logs' && $CIDRAM['FE']['Permiss
 
     /** Logs control form. */
     $CIDRAM['FE']['TextModeSwitchLink'] = sprintf(
-        '<td class="h2"><span class="s">%1$s<br /><select name="textMode" class="auto">' .
+        '<td class="h4"><span class="s">%1$s<br /><select name="textMode" class="auto">' .
         '<option value="simple"%2$s>%3$s</option>' .
         '<option value="fancy"%4$s>%5$s</option>' .
         '<option value="tally"%6$s>%7$s</option>' .
-        '</select></span></td><td class="h2"><span class="s">' .
+        '</select></span></td><td class="h4f"><span class="s">' .
         '<input type="radio" class="auto" name="sortOrder" value="ascending" id="sOa"%8$s /><label for="sOa">%9$s</label><br />' .
         '<input type="radio" class="auto" name="sortOrder" value="descending" id="sOd"%10$s /><label for="sOd">%11$s</label>' .
+        '</span></td></tr><tr><td class="h4"><span class="s">' .
+        '<input type="checkbox" name="paginate" class="auto" id="paginate"%16$s /><label for="paginate">%17$s</label><br />' .
+        '<label for="perpage">%18$s</label><br /><input type="number" name="perpage" class="auto" id="perpage" value="%19$d" />' .
         '</span></td><td class="h4f"><span class="s">' .
-        '<input type="checkbox" name="remember" class="auto" id="remember"%12$s /> <label for="remember">%13$s</label><br />' .
+        '<input type="checkbox" name="remember" class="auto" id="remember"%12$s /><label for="remember">%13$s</label><br />' .
         '<input type="hidden" name="logfile" value="%14$s" /><input type="submit" value="%15$s" />' .
         '</span></td>',
         $CIDRAM['L10N']->getString('label_textmode'),
@@ -4605,7 +4616,11 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'logs' && $CIDRAM['FE']['Permiss
         $CIDRAM['FE']['Remember'] ? ' checked' : '',
         $CIDRAM['L10N']->getString('label_remember'),
         $CIDRAM['QueryVars']['logfile'] ?? '',
-        $CIDRAM['L10N']->getString('field_ok')
+        $CIDRAM['L10N']->getString('field_ok'),
+        $CIDRAM['FE']['Paginate'] ? ' checked' : '',
+        $CIDRAM['L10N']->getString('label_paginate'),
+        $CIDRAM['L10N']->getString('label_entries_per_page'),
+        $CIDRAM['FE']['PerPage']
     );
 
     /** Prepare log data formatting. */

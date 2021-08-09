@@ -19,6 +19,10 @@ select:focus,textarea:focus,input:focus,select:hover,textarea:hover:not([readonl
 table,.spanner{width:100%}
 textarea{height:150px}
 textarea.half{height:75px}
+input.txtf{width:calc(100% - 4px)}
+textarea{width:calc(100% - 10px)}
+.iCntr>.iCntn>textarea{width:calc(100% - 52px)}
+li>.iCntr>.iCntn>textarea{width:calc(100% - 92px)}
 a:link,a:visited{color:#238}
 a:hover{color:#46f}
 a:active,a:focus{color:red}
@@ -26,7 +30,7 @@ a:active,a:focus{color:red}
 .bNav,.gen,.spanner{text-align:{FE_Align_Reverse}}
 .bNav{height:64px}
 .ci,.co,.gen,.center{margin:auto}
-.ci,.co,.ng1,.ng2,textarea,.txtf{width:98%}
+.ci,.co,.ng1,.ng2{width:98%}
 .ci{background-color:#fff;border-style:solid;border-width:1px;border-color:#aaa;text-align:{FE_Align};padding:12px;border-top-right-radius:24px}
 .co,body,.center{text-align:center}
 .co{padding:12}

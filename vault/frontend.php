@@ -4457,14 +4457,21 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'logs' && $CIDRAM['FE']['Permiss
     /** Entries per page. */
     $CIDRAM['FE']['PerPage'] = ($CIDRAM['FE']['Paginate'] && isset($CIDRAM['QueryVars']['perpage'])) ? (int)$CIDRAM['QueryVars']['perpage'] : 20;
 
+    /** Which entry to start from. */
+    $CIDRAM['FE']['From'] = ($CIDRAM['FE']['Paginate'] && isset($CIDRAM['QueryVars']['from'])) ? $CIDRAM['QueryVars']['from'] : '';
+
+    /** The first entry for the next pagination page. */
+    $CIDRAM['FE']['Next'] = '';
+
     /** Define query for search filters. */
     $CIDRAM['FE']['BlockLink'] = sprintf(
-        '?cidram-page=logs&textMode=%s&sortOrder=%s%s%s%s%s',
+        '?cidram-page=logs&textMode=%s&sortOrder=%s%s%s%s%s%s',
         $CIDRAM['FE']['TextModeLinks'],
         $CIDRAM['FE']['SortOrder'],
         $CIDRAM['FE']['Remember'] ? '&remember=on' : '',
         $CIDRAM['FE']['Paginate'] ? '&paginate=on' : '',
         $CIDRAM['FE']['PerPage'] > 0 && $CIDRAM['FE']['PerPage'] !== 20 ? '&perpage=' . $CIDRAM['FE']['PerPage'] : '',
+        $CIDRAM['FE']['From'] ? '&from=' . $CIDRAM['FE']['From'] : '',
         empty($CIDRAM['QueryVars']['logfile']) ? '' : '&logfile=' . $CIDRAM['QueryVars']['logfile']
     );
 
@@ -4507,6 +4514,14 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'logs' && $CIDRAM['FE']['Permiss
             $CIDRAM['FE']['FieldSeparator'] = '：';
         }
 
+        /** Handle pagination lower boundary. */
+        if ($CIDRAM['FE']['From']) {
+            $CIDRAM['FE']['logfileData'] = $CIDRAM['TrimBeforeLine']($CIDRAM['FE']['logfileData'], $CIDRAM['FE']['From']);
+        }
+
+        /** Pagination counter. */
+        $CIDRAM['FE']['Paginated'] = substr($CIDRAM['FE']['logfileData'], 0, 2) === '<?' ? 0 : 1;
+
         /** Handle block filtering. */
         if (!empty($CIDRAM['FE']['logfileData']) && !empty($CIDRAM['QueryVars']['search'])) {
             $CIDRAM['FE']['NewLogFileData'] = '';
@@ -4516,6 +4531,8 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'logs' && $CIDRAM['FE']['Permiss
             $CIDRAM['FE']['BlockSeparator'] = (
                 strpos($CIDRAM['FE']['logfileData'], "\n\n") !== false
             ) ? "\n\n" : "\n";
+            $CIDRAM['FE']['EntryCount'] = 0;
+            $CIDRAM['FE']['EntryCountPaginated'] = 0;
             while (($CIDRAM['FE']['Needle'] = strpos(
                 $CIDRAM['FE']['logfileData'],
                 ($CIDRAM['FE']['BlockSeparator'] === "\n\n" ? $CIDRAM['FE']['FieldSeparator'] . $CIDRAM['FE']['SearchQuery'] . "\n" : $CIDRAM['FE']['SearchQuery']),
@@ -4529,36 +4546,174 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'logs' && $CIDRAM['FE']['Permiss
                 '[' . $CIDRAM['FE']['SearchQuery'] . ']',
                 $CIDRAM['FE']['BlockEnd']
             )) !== false)) {
+                $CIDRAM['FE']['EntryCount']++;
                 $CIDRAM['FE']['BlockStart'] = strrpos(substr($CIDRAM['FE']['logfileData'], 0, $CIDRAM['FE']['Needle']), $CIDRAM['FE']['BlockSeparator'], $CIDRAM['FE']['BlockEnd']);
                 $CIDRAM['FE']['BlockEnd'] = strpos($CIDRAM['FE']['logfileData'], $CIDRAM['FE']['BlockSeparator'], $CIDRAM['FE']['Needle']);
-                $CIDRAM['FE']['NewLogFileData'] .= substr($CIDRAM['FE']['logfileData'], $CIDRAM['FE']['BlockStart'], $CIDRAM['FE']['BlockEnd'] - $CIDRAM['FE']['BlockStart']);
+                if ($CIDRAM['FE']['Paginate']) {
+                    if (!$CIDRAM['FE']['From']) {
+                        $CIDRAM['FE']['From'] = $CIDRAM['IsolateFirstFieldEntry'](
+                            substr($CIDRAM['FE']['logfileData'], $CIDRAM['FE']['BlockStart'], $CIDRAM['FE']['BlockEnd'] - $CIDRAM['FE']['BlockStart']),
+                            $CIDRAM['FE']['FieldSeparator']
+                        );
+                    }
+                    $CIDRAM['FE']['Paginated']++;
+                    if ($CIDRAM['FE']['Paginated'] > ($CIDRAM['FE']['PerPage'] + 1)) {
+                        if (!$CIDRAM['FE']['Next']) {
+                            $CIDRAM['FE']['Next'] = $CIDRAM['IsolateFirstFieldEntry'](
+                                substr($CIDRAM['FE']['logfileData'], $CIDRAM['FE']['BlockStart'], $CIDRAM['FE']['BlockEnd'] - $CIDRAM['FE']['BlockStart']),
+                                $CIDRAM['FE']['FieldSeparator']
+                            );
+                        }
+                        continue;
+                    }
+                    $CIDRAM['FE']['EntryCountPaginated']++;
+                    $CIDRAM['FE']['NewLogFileData'] .= substr($CIDRAM['FE']['logfileData'], $CIDRAM['FE']['BlockStart'], $CIDRAM['FE']['BlockEnd'] - $CIDRAM['FE']['BlockStart']);
+                } else {
+                    $CIDRAM['FE']['NewLogFileData'] .= substr($CIDRAM['FE']['logfileData'], $CIDRAM['FE']['BlockStart'], $CIDRAM['FE']['BlockEnd'] - $CIDRAM['FE']['BlockStart']);
+                }
             }
-            if ($CIDRAM['FE']['BlockSeparator'] === "\n\n") {
-                $CIDRAM['FE']['logfileData'] = substr($CIDRAM['FE']['NewLogFileData'], strlen($CIDRAM['FE']['BlockSeparator'])) . $CIDRAM['FE']['BlockSeparator'];
-            }
-            $CIDRAM['FE']['EntryCount'] = !str_replace("\n", '', $CIDRAM['FE']['logfileData']) ? 0 : (
-                substr_count($CIDRAM['FE']['logfileData'], $CIDRAM['FE']['BlockSeparator'])
-            );
+            $CIDRAM['FE']['logfileData'] = substr($CIDRAM['FE']['NewLogFileData'], strlen($CIDRAM['FE']['BlockSeparator'])) . $CIDRAM['FE']['BlockSeparator'];
             unset($CIDRAM['FE']['Needle'], $CIDRAM['FE']['BlockSeparator'], $CIDRAM['FE']['BlockEnd'], $CIDRAM['FE']['BlockStart'], $CIDRAM['FE']['NewLogFileData']);
             $CIDRAM['FE']['SearchInfoRender'] = (
                 $CIDRAM['FE']['Flags'] && preg_match('~^[A-Z]{2}$~', $CIDRAM['FE']['SearchQuery'])
             ) ? '<span class="flag ' . $CIDRAM['FE']['SearchQuery'] . '"><span></span></span>' : '<code>' . $CIDRAM['FE']['SearchQuery'] . '</code>';
-            $CIDRAM['FE']['SearchInfo'] = '<br />' . sprintf(
-                $CIDRAM['L10N']->getPlural($CIDRAM['FE']['EntryCount'], 'label_displaying_that_cite'),
-                $CIDRAM['NumberFormatter']->format($CIDRAM['FE']['EntryCount']),
-                $CIDRAM['FE']['SearchInfoRender']
-            );
+            if ($CIDRAM['FE']['Paginate']) {
+                $CIDRAM['FE']['SearchInfo'] = '<br />' . sprintf(
+                    $CIDRAM['L10N']->getPlural($CIDRAM['FE']['EntryCountBefore'], 'label_displaying_that_cite'),
+                    '<span class="txtRd">' . $CIDRAM['NumberFormatter']->format($CIDRAM['FE']['EntryCountPaginated']) . '</span>' .
+                    '<span class="txtBl">/</span>' .
+                    '<span class="txtRd">' . $CIDRAM['NumberFormatter']->format($CIDRAM['FE']['EntryCount']) . '</span>',
+                    $CIDRAM['FE']['SearchInfoRender']
+                );
+                if ($CIDRAM['FE']['From']) {
+                    $CIDRAM['FE']['SearchInfo'] .= '<br />' . sprintf(
+                        $CIDRAM['L10N']->getString('label_starting_from'),
+                        '<span class="txtRd">' . $CIDRAM['FE']['From'] . '</span>'
+                    );
+                    if ($CIDRAM['FE']['Next']) {
+                        if (strpos($CIDRAM['FE']['BlockLink'], '&from=' . $CIDRAM['FE']['From']) !== false) {
+                            $CIDRAM['FE']['NextLink'] = str_replace(
+                                '&from=' . $CIDRAM['FE']['From'],
+                                '&from=' . $CIDRAM['FE']['Next'],
+                                $CIDRAM['FE']['BlockLink']
+                            );
+                        } else {
+                            $CIDRAM['FE']['NextLink'] = $CIDRAM['FE']['BlockLink'] . '&from=' . $CIDRAM['FE']['Next'];
+                        }
+                        $CIDRAM['FE']['SearchInfo'] .= sprintf(
+                            ' %s <a href="%s">%s</a>',
+                            $CIDRAM['L10N']->getString('label_next'),
+                            $CIDRAM['FE']['NextLink'],
+                            $CIDRAM['FE']['Next']
+                        );
+                        unset($CIDRAM['FE']['NextLink']);
+                    }
+                }
+            } else {
+                $CIDRAM['FE']['SearchInfo'] = '<br />' . sprintf(
+                    $CIDRAM['L10N']->getPlural($CIDRAM['FE']['EntryCount'], 'label_displaying_that_cite'),
+                    '<span class="txtRd">' . $CIDRAM['NumberFormatter']->format($CIDRAM['FE']['EntryCount']) . '</span>',
+                    $CIDRAM['FE']['SearchInfoRender']
+                );
+            }
         } else {
+            if ($CIDRAM['FE']['Paginate']) {
+                $CIDRAM['FE']['EntryCountBefore'] = !str_replace("\n", '', $CIDRAM['FE']['logfileData']) ? 0 : (
+                    substr_count($CIDRAM['FE']['logfileData'], "\n\n") ?: substr_count($CIDRAM['FE']['logfileData'], "\n")
+                );
+                if (substr($CIDRAM['FE']['logfileData'], 0, 2) === '<?') {
+                    $CIDRAM['FE']['EntryCountBefore']--;
+                }
+                $CIDRAM['FE']['NewLogFileData'] = '';
+                $CIDRAM['FE']['OriginalLogDataLen'] = strlen($CIDRAM['FE']['logfileData']);
+                $CIDRAM['FE']['BlockStart'] = 0;
+                $CIDRAM['FE']['BlockEnd'] = 0;
+                $CIDRAM['FE']['BlockSeparator'] = (
+                    strpos($CIDRAM['FE']['logfileData'], "\n\n") !== false
+                ) ? "\n\n" : "\n";
+                $CIDRAM['FE']['BlockSepLen'] = strlen($CIDRAM['FE']['BlockSeparator']);
+                if (!$CIDRAM['FE']['From']) {
+                    $CIDRAM['FE']['From'] = $CIDRAM['IsolateFirstFieldEntry'](
+                        $CIDRAM['FE']['logfileData'],
+                        $CIDRAM['FE']['FieldSeparator']
+                    );
+                }
+                while (true) {
+                    $CIDRAM['FE']['BlockOffset'] = $CIDRAM['FE']['BlockStart'] + $CIDRAM['FE']['BlockSepLen'];
+                    if ($CIDRAM['FE']['BlockOffset'] >= $CIDRAM['FE']['OriginalLogDataLen']) {
+                        break;
+                    }
+                    $CIDRAM['FE']['BlockEnd'] = strpos($CIDRAM['FE']['logfileData'], $CIDRAM['FE']['BlockSeparator'], $CIDRAM['FE']['BlockStart']);
+                    if ($CIDRAM['FE']['BlockEnd'] === false) {
+                        break;
+                    }
+                    $CIDRAM['FE']['NewLogFileData'] .= substr($CIDRAM['FE']['logfileData'], $CIDRAM['FE']['BlockStart'], ($CIDRAM['FE']['BlockEnd'] - $CIDRAM['FE']['BlockStart']) + $CIDRAM['FE']['BlockSepLen']);
+                    $CIDRAM['FE']['Paginated']++;
+                    if ($CIDRAM['FE']['Paginated'] > $CIDRAM['FE']['PerPage']) {
+                        if (!$CIDRAM['FE']['Next']) {
+                            $CIDRAM['FE']['Next'] = $CIDRAM['IsolateFirstFieldEntry'](
+                                substr($CIDRAM['FE']['logfileData'], $CIDRAM['FE']['BlockEnd'] + $CIDRAM['FE']['BlockSepLen']),
+                                $CIDRAM['FE']['FieldSeparator']
+                            );
+                        }
+                        break;
+                    }
+                    $CIDRAM['FE']['BlockStart'] = $CIDRAM['FE']['BlockEnd'] + $CIDRAM['FE']['BlockSepLen'];
+                }
+                $CIDRAM['FE']['logfileData'] = $CIDRAM['FE']['NewLogFileData'];
+                unset(
+                    $CIDRAM['FE']['BlockOffset'],
+                    $CIDRAM['FE']['BlockSepLen'],
+                    $CIDRAM['FE']['BlockSeparator'],
+                    $CIDRAM['FE']['BlockEnd'],
+                    $CIDRAM['FE']['BlockStart'],
+                    $CIDRAM['FE']['OriginalLogDataLen'],
+                    $CIDRAM['FE']['NewLogFileData']
+                );
+            }
             $CIDRAM['FE']['EntryCount'] = !str_replace("\n", '', $CIDRAM['FE']['logfileData']) ? 0 : (
                 substr_count($CIDRAM['FE']['logfileData'], "\n\n") ?: substr_count($CIDRAM['FE']['logfileData'], "\n")
             );
             if (substr($CIDRAM['FE']['logfileData'], 0, 2) === '<?') {
                 $CIDRAM['FE']['EntryCount']--;
             }
-            $CIDRAM['FE']['SearchInfo'] = '<br />' . sprintf(
-                $CIDRAM['L10N']->getPlural($CIDRAM['FE']['EntryCount'], 'label_displaying'),
-                $CIDRAM['NumberFormatter']->format($CIDRAM['FE']['EntryCount'])
-            );
+            if ($CIDRAM['FE']['Paginate']) {
+                $CIDRAM['FE']['SearchInfo'] = '<br />' . sprintf(
+                    $CIDRAM['L10N']->getPlural($CIDRAM['FE']['EntryCountBefore'], 'label_displaying'),
+                    '<span class="txtRd">' . $CIDRAM['NumberFormatter']->format($CIDRAM['FE']['EntryCount']) . '</span>' .
+                    '<span class="txtBl">/</span>' .
+                    '<span class="txtRd">' . $CIDRAM['NumberFormatter']->format($CIDRAM['FE']['EntryCountBefore']) . '</span>'
+                );
+                if ($CIDRAM['FE']['From']) {
+                    $CIDRAM['FE']['SearchInfo'] .= '<br />' . sprintf(
+                        $CIDRAM['L10N']->getString('label_starting_from'),
+                        '<span class="txtRd">' . $CIDRAM['FE']['From'] . '</span>'
+                    );
+                    if ($CIDRAM['FE']['Next']) {
+                        if (strpos($CIDRAM['FE']['BlockLink'], '&from=' . $CIDRAM['FE']['From']) !== false) {
+                            $CIDRAM['FE']['NextLink'] = str_replace(
+                                '&from=' . $CIDRAM['FE']['From'],
+                                '&from=' . $CIDRAM['FE']['Next'],
+                                $CIDRAM['FE']['BlockLink']
+                            );
+                        } else {
+                            $CIDRAM['FE']['NextLink'] = $CIDRAM['FE']['BlockLink'] . '&from=' . $CIDRAM['FE']['Next'];
+                        }
+                        $CIDRAM['FE']['SearchInfo'] .= sprintf(
+                            ' %s <a href="%s">%s</a>',
+                            $CIDRAM['L10N']->getString('label_next'),
+                            $CIDRAM['FE']['NextLink'],
+                            $CIDRAM['FE']['Next']
+                        );
+                        unset($CIDRAM['FE']['NextLink']);
+                    }
+                }
+            } else {
+                $CIDRAM['FE']['SearchInfo'] = '<br />' . sprintf(
+                    $CIDRAM['L10N']->getPlural($CIDRAM['FE']['EntryCount'], 'label_displaying'),
+                    '<span class="txtRd">' . $CIDRAM['NumberFormatter']->format($CIDRAM['FE']['EntryCount']) . '</span>'
+                );
+            }
         }
 
         $CIDRAM['FE']['logfileData'] = $CIDRAM['FE']['TextModeLinks'] === 'fancy' ? str_replace(

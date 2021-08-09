@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2021.08.07).
+ * This file: Front-end functions file (last modified: 2021.08.09).
  */
 
 /**
@@ -4294,4 +4294,46 @@ $CIDRAM['FromModuleConfigL10N'] = function ($Entry) use (&$CIDRAM) {
         return $CIDRAM['Config']['L10N'][$Entry];
     }
     return '';
+};
+
+/**
+ * Trim before line using the specified boundary.
+ *
+ * @param string $Data The data to trim.
+ * @param string $Boundary The boundary to trim before.
+ * @return string The trimmed data.
+ */
+$CIDRAM['TrimBeforeLine'] = function ($Data, $Boundary) {
+    $Len = strlen($Data);
+    if ($Len < 1) {
+        return '';
+    }
+    $BPos = strpos($Data, $Boundary);
+    if ($BPos === false || $BPos < 1) {
+        return $Data;
+    }
+    $Offset = ($Len - $BPos) * -1;
+    $LPos = strrpos($Data, "\n", $Offset);
+    if ($LPos === false) {
+        return $Data;
+    }
+    return substr($Data, $LPos + 1);
+};
+
+/**
+ * Isolate the entry of the first field in a block.
+ *
+ * @param string $Block The block to isolate from.
+ * @param string $Boundary The field separator.
+ * @return string The isolated entry.
+ */
+$CIDRAM['IsolateFirstFieldEntry'] = function ($Block, $Separator) {
+    $Segment = '';
+    if (($Position = strpos($Block, $Separator)) !== false) {
+        $Segment = substr($Block, $Position + strlen($Separator));
+        if (($FieldEndPos = strpos($Segment, "\n")) !== false) {
+            $Segment = substr($Segment, 0, $FieldEndPos);
+        }
+    }
+    return $Segment ?: '';
 };

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2021.08.07).
+ * This file: Front-end handler (last modified: 2021.08.09).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -2485,7 +2485,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'fixer' && $CIDRAM['FE']['Permis
         $CIDRAM['L10N']->getString('field_preferred_list'),
         $CIDRAM['PreferredSource'] === 'Input' ? ' checked' : '',
         $CIDRAM['L10N']->getString('field_preferred_direct_input'),
-        ' /><label for="',
+        ' /><label class="s" for="',
         'onchange="javascript:{hideid(\'preferredSourceListDiv\');hideid(\'preferredSourceInputDiv\');showid(this.id+\'Div\');showid(\'submitButton\');}"'
     );
 
@@ -3136,7 +3136,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'range-intersector' && $CIDRAM['
         $CIDRAM['L10N']->getString('field_cidr'),
         $CIDRAM['OutputFormat'] === 1 ? ' checked' : '',
         $CIDRAM['L10N']->getString('field_netmask'),
-        ' /><label for="'
+        ' /><label class="s" for="'
     );
 
     /** Default values for inputs. */
@@ -3216,7 +3216,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'range-subtractor' && $CIDRAM['F
         $CIDRAM['L10N']->getString('field_cidr'),
         $CIDRAM['OutputFormat'] === 1 ? ' checked' : '',
         $CIDRAM['L10N']->getString('field_netmask'),
-        ' /><label for="'
+        ' /><label class="s" for="'
     );
 
     /** Default values for inputs. */
@@ -3301,7 +3301,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-aggregator' && $CIDRAM['FE']
         $CIDRAM['L10N']->getString('field_cidr'),
         $CIDRAM['OutputFormat'] === 1 ? ' checked' : '',
         $CIDRAM['L10N']->getString('field_netmask'),
-        ' /><label for="',
+        ' /><label class="s" for="',
         $CIDRAM['Preserve'] === 1 ? ' checked' : '',
         $CIDRAM['L10N']->getString('field_preserve')
     );

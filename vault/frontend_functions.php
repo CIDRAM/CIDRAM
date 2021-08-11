@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2021.08.09).
+ * This file: Front-end functions file (last modified: 2021.08.11).
  */
 
 /**
@@ -561,7 +561,13 @@ $CIDRAM['IsInUse'] = function (array $Component) use (&$CIDRAM): int {
         $FileSafe = preg_quote($File);
         if (is_array($UsedWith)) {
             $ThisUsedWith = (string)array_shift($UsedWith);
-            if ($ThisUsedWith !== 'imports' && $ThisUsedWith !== 'ipv4' && $ThisUsedWith !== 'ipv6' && $ThisUsedWith !== 'modules') {
+            if (
+                $ThisUsedWith !== 'imports' &&
+                $ThisUsedWith !== 'events' &&
+                $ThisUsedWith !== 'ipv4' &&
+                $ThisUsedWith !== 'ipv6' &&
+                $ThisUsedWith !== 'modules'
+            ) {
                 continue;
             }
         } else {
@@ -570,9 +576,12 @@ $CIDRAM['IsInUse'] = function (array $Component) use (&$CIDRAM): int {
                 continue;
             }
         }
-        if ((($ThisUsedWith === 'imports' || strpos($Description, 'signatures-&gt;imports') !== false) && preg_match(
+        if (($ThisUsedWith === 'imports' && preg_match(
             '~,(?:[\w\d]+:)?' . $FileSafe . ',~',
             ',' . $CIDRAM['Config']['general']['config_imports'] . ','
+        )) || ($ThisUsedWith === 'events' && preg_match(
+            '~,(?:[\w\d]+:)?' . $FileSafe . ',~',
+            ',' . $CIDRAM['Config']['general']['events'] . ','
         )) || (($ThisUsedWith === 'ipv4' || strpos($Description, 'signatures-&gt;ipv4') !== false) && preg_match(
             '~,(?:[\w\d]+:)?' . $FileSafe . ',~',
             ',' . $CIDRAM['Config']['signatures']['ipv4'] . ','
@@ -707,7 +716,7 @@ $CIDRAM['FetchRemote-ContextFree'] = function (string &$RemoteData, string &$Rem
  * @return bool True for when activable; False for when not activable.
  */
 $CIDRAM['IsActivable'] = function (array &$Component) use (&$CIDRAM): bool {
-    if (!empty($Component['Used with']) && $CIDRAM['Has']($Component['Used with'], ['imports', 'ipv4', 'ipv6', 'modules'])) {
+    if (!empty($Component['Used with']) && $CIDRAM['Has']($Component['Used with'], ['imports', 'events', 'ipv4', 'ipv6', 'modules'])) {
         return true;
     }
     if (!isset($Component['Extended Description'])) {
@@ -749,6 +758,12 @@ $CIDRAM['DeactivateComponent'] = function (string $Type, string $ID) use (&$CIDR
     $CIDRAM['Deactivation'][$Type] = substr($CIDRAM['Deactivation'][$Type], 1, -1);
     if ($Type === 'imports') {
         if ($CIDRAM['Deactivation']['imports'] !== $CIDRAM['Config']['general']['config_imports']) {
+            $CIDRAM['Deactivation']['Modified'] = true;
+        }
+        return;
+    }
+    if ($Type === 'events') {
+        if ($CIDRAM['Deactivation']['events'] !== $CIDRAM['Config']['general']['events']) {
             $CIDRAM['Deactivation']['Modified'] = true;
         }
         return;
@@ -1935,12 +1950,13 @@ $CIDRAM['UpdatesHandler-Activate'] = function ($ID) use (&$CIDRAM): void {
     $Activation = [
         'Config' => $CIDRAM['Updater-IO']->readFile($CIDRAM['Vault'] . $CIDRAM['FE']['ActiveConfigFile']),
         'imports' => $CIDRAM['Config']['general']['config_imports'],
+        'events' => $CIDRAM['Config']['general']['events'],
         'ipv4' => $CIDRAM['Config']['signatures']['ipv4'],
         'ipv6' => $CIDRAM['Config']['signatures']['ipv6'],
         'modules' => $CIDRAM['Config']['signatures']['modules'],
         'Modified' => false
     ];
-    foreach (['imports', 'ipv4', 'ipv6', 'modules'] as $Type) {
+    foreach (['imports', 'events', 'ipv4', 'ipv6', 'modules'] as $Type) {
         $Activation[$Type] = array_unique(array_filter(
             explode(',', $Activation[$Type]),
             function ($Component) use (&$CIDRAM) {
@@ -1978,9 +1994,6 @@ $CIDRAM['UpdatesHandler-Activate'] = function ($ID) use (&$CIDRAM): void {
                 continue;
             }
             if ($ThisUsedWith === '') {
-                if (strpos($Description, 'general-&gt;imports' . $Type) !== false) {
-                    $Activation['imports'][] = $File;
-                }
                 foreach (['ipv4', 'ipv6', 'modules'] as $Type) {
                     if (strpos($Description, 'signatures-&gt;' . $Type) !== false) {
                         $Activation[$Type][] = $File;
@@ -1988,19 +2001,28 @@ $CIDRAM['UpdatesHandler-Activate'] = function ($ID) use (&$CIDRAM): void {
                 }
                 continue;
             }
-            if ($ThisUsedWith !== 'imports' && $ThisUsedWith !== 'ipv4' && $ThisUsedWith !== 'ipv6' && $ThisUsedWith !== 'modules') {
+            if (
+                $ThisUsedWith !== 'imports' &&
+                $ThisUsedWith !== 'events' &&
+                $ThisUsedWith !== 'ipv4' &&
+                $ThisUsedWith !== 'ipv6' &&
+                $ThisUsedWith !== 'modules'
+            ) {
                 continue;
             }
             $Activation[$ThisUsedWith][] = $File;
         }
     }
-    foreach (['imports', 'ipv4', 'ipv6', 'modules'] as $Type) {
+    foreach (['imports', 'events', 'ipv4', 'ipv6', 'modules'] as $Type) {
         if (count($Activation[$Type])) {
             sort($Activation[$Type]);
         }
         $Activation[$Type] = implode(',', $Activation[$Type]);
     }
     if ($Activation['imports'] !== $CIDRAM['Config']['general']['config_imports']) {
+        $Activation['Modified'] = true;
+    }
+    if ($Activation['events'] !== $CIDRAM['Config']['general']['events']) {
         $Activation['Modified'] = true;
     }
     foreach (['ipv4', 'ipv6', 'modules'] as $Type) {
@@ -2017,16 +2039,19 @@ $CIDRAM['UpdatesHandler-Activate'] = function ($ID) use (&$CIDRAM): void {
         $EOL = (strpos($Activation['Config'], "\r\n") !== false) ? "\r\n" : "\n";
         $Activation['Config'] = str_replace([
             $EOL . "config_imports='" . $CIDRAM['Config']['general']['config_imports'] . "'" . $EOL,
+            $EOL . "events='" . $CIDRAM['Config']['general']['events'] . "'" . $EOL,
             $EOL . "ipv4='" . $CIDRAM['Config']['signatures']['ipv4'] . "'" . $EOL,
             $EOL . "ipv6='" . $CIDRAM['Config']['signatures']['ipv6'] . "'" . $EOL,
             $EOL . "modules='" . $CIDRAM['Config']['signatures']['modules'] . "'" . $EOL
         ], [
             $EOL . "config_imports='" . $Activation['imports'] . "'" . $EOL,
+            $EOL . "events='" . $Activation['events'] . "'" . $EOL,
             $EOL . "ipv4='" . $Activation['ipv4'] . "'" . $EOL,
             $EOL . "ipv6='" . $Activation['ipv6'] . "'" . $EOL,
             $EOL . "modules='" . $Activation['modules'] . "'" . $EOL
         ], $Activation['Config']);
         $CIDRAM['Config']['general']['config_imports'] = $Activation['imports'];
+        $CIDRAM['Config']['general']['events'] = $Activation['events'];
         $CIDRAM['Config']['signatures']['ipv4'] = $Activation['ipv4'];
         $CIDRAM['Config']['signatures']['ipv6'] = $Activation['ipv6'];
         $CIDRAM['Config']['signatures']['modules'] = $Activation['modules'];
@@ -2071,6 +2096,7 @@ $CIDRAM['UpdatesHandler-Deactivate'] = function ($ID) use (&$CIDRAM): void {
     $CIDRAM['Deactivation'] = [
         'Config' => $CIDRAM['Updater-IO']->readFile($CIDRAM['Vault'] . $CIDRAM['FE']['ActiveConfigFile']),
         'imports' => $CIDRAM['Config']['general']['config_imports'],
+        'events' => $CIDRAM['Config']['general']['events'],
         'ipv4' => $CIDRAM['Config']['signatures']['ipv4'],
         'ipv6' => $CIDRAM['Config']['signatures']['ipv6'],
         'modules' => $CIDRAM['Config']['signatures']['modules'],
@@ -2087,7 +2113,7 @@ $CIDRAM['UpdatesHandler-Deactivate'] = function ($ID) use (&$CIDRAM): void {
         unset($ThisComponent);
     }
     if ($InUse !== 0 && !empty($CIDRAM['Components']['Meta'][$ID]['Files']['To'])) {
-        foreach (['imports', 'ipv4', 'ipv6', 'modules'] as $Type) {
+        foreach (['imports', 'events', 'ipv4', 'ipv6', 'modules'] as $Type) {
             $CIDRAM['DeactivateComponent']($Type, $ID);
         }
     }
@@ -2100,16 +2126,19 @@ $CIDRAM['UpdatesHandler-Deactivate'] = function ($ID) use (&$CIDRAM): void {
         $EOL = (strpos($CIDRAM['Deactivation']['Config'], "\r\n") !== false) ? "\r\n" : "\n";
         $CIDRAM['Deactivation']['Config'] = str_replace([
             $EOL . "config_imports='" . $CIDRAM['Config']['general']['config_imports'] . "'" . $EOL,
+            $EOL . "events='" . $CIDRAM['Config']['general']['events'] . "'" . $EOL,
             $EOL . "ipv4='" . $CIDRAM['Config']['signatures']['ipv4'] . "'" . $EOL,
             $EOL . "ipv6='" . $CIDRAM['Config']['signatures']['ipv6'] . "'" . $EOL,
             $EOL . "modules='" . $CIDRAM['Config']['signatures']['modules'] . "'" . $EOL
         ], [
             $EOL . "config_imports='" . $CIDRAM['Deactivation']['imports'] . "'" . $EOL,
+            $EOL . "events='" . $CIDRAM['Deactivation']['events'] . "'" . $EOL,
             $EOL . "ipv4='" . $CIDRAM['Deactivation']['ipv4'] . "'" . $EOL,
             $EOL . "ipv6='" . $CIDRAM['Deactivation']['ipv6'] . "'" . $EOL,
             $EOL . "modules='" . $CIDRAM['Deactivation']['modules'] . "'" . $EOL
         ], $CIDRAM['Deactivation']['Config']);
         $CIDRAM['Config']['general']['config_imports'] = $CIDRAM['Deactivation']['imports'];
+        $CIDRAM['Config']['general']['events'] = $CIDRAM['Deactivation']['events'];
         $CIDRAM['Config']['signatures']['ipv4'] = $CIDRAM['Deactivation']['ipv4'];
         $CIDRAM['Config']['signatures']['ipv6'] = $CIDRAM['Deactivation']['ipv6'];
         $CIDRAM['Config']['signatures']['modules'] = $CIDRAM['Deactivation']['modules'];

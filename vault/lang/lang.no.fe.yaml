@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Norwegian language data for the front-end (last modified: 2021.08.10).
+# This file: Norwegian language data for the front-end (last modified: 2021.08.11).
 ##/
 
 Extended Description Bypasses: "Standard-signatur-bypass-filene som normalt følger med hovedpakken."
@@ -96,6 +96,7 @@ config_general_emailaddr_display_style: "Hvordan foretrekker du e-postadressen s
 config_general_empty_fields: "Hvordan skal CIDRAM håndtere tomme felter når du logger og viser blokkhendelseinformasjon? "include" = Inkluder tomme felt. "omit" = Utelater tomme felt [standardverdi]."
 config_general_error_log: "En fil for logging av eventuelle ikke-fatale feil som er oppdaget. Angi et filnavn, eller la det være tomt for å deaktivere."
 config_general_error_log_stages: "En liste over stadiene i utførelseskjeden som skal ha loggført eventuelle genererte feil."
+config_general_events: "Filene som er oppført her, lastes inn rett etter hendelsesbehandlerfilen. Vanligvis befolket av oppdateringssiden når du aktiverer komponenter som trenger det når det er nødvendig. I de fleste tilfeller kan ignorere det."
 config_general_forbid_on_block: "Hvilken HTTP-statusmelding skal CIDRAM sende når blokkerer forespørsler? (Se dokumentasjonen for mer informasjon)."
 config_general_force_hostname_lookup: "Håndheve vertsnavn-oppslag? True = Ja; False = Nei [Standardverdi]. Vertsnavn-oppslag utføres normalt på en "etter behov" basis, men kan håndheves for alle forespørsler. Å gjøre det kan være nyttig som et middel til å gi mer detaljert informasjon i loggfilene, men kan også ha en litt negativ effekt på ytelsen."
 config_general_frontend_log: "Fil for å logge innloggingsforsøk på frontenden. Angi et filnavn, eller la det være tomt for å deaktivere."

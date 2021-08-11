@@ -1,7 +1,7 @@
 ---
 CIDRAM Core:
  Name: CIDRAM Core
- Version: 2.6.1-DEV+21211138
+ Version: 2.7.0-DEV+21211138
  Minimum Required: 2.0.0
  Dependencies:
   PHP: >=7.2
@@ -59,9 +59,9 @@ CIDRAM Core:
    - 3af431dc6e125bc3cdf56e8c4c155e827c0f0a66a4cbfb27fa02e6c95c640e9f:14925
    - 1335bb0c07953d9fabb061ca00f06a14759a431109beda8a4d0fa32ba1acf62a:2922
    - cc8abadd493add8260dbe3f043626a362bd589c8fd59ab26d0be1edf6f029a10:7470
-   - dc92d824eedd8291ce117b4668773c87ca9dc620c3c7c28ffd990e6c900b2a79:21863
+   - 4c5e0369c2fc97a86201ef6d5fe57d029ac827148e7dff1286d592064e18f146:21943
    - 1fde7d2d1df4b9bf014bb3bb4a9f589087182fc14661da2e31d1a2792328d1e3:9109
-   - 59af8091f625d8090bc74f6d6bb53d24bdffdeb037fe8eb7c96b83d06af4b828:97537
+   - 2cb6b4c634f5481513b2ed5ed6a2db34eab871e451d7103fd122f8ab2d20334f:98192
    - 4d89fe0f2b14c84b8fdad2579333d4d0f31366815d4cb60e040fbbf2c68aaa1d:5158
    - 3c73b1b2bb2cf90e8cfbfe0c06f6aa0c1bca6e5ebde0a4852b62142266aa9a49:42836
    - 97df7b28ced1689bf3c8ae0a715605a2db1d25f4449fface23a517d81a56f517:1203
@@ -70,7 +70,7 @@ CIDRAM Core:
  Reannotate: components.dat
 CIDRAM Front-End:
  Name: CIDRAM Front-End
- Version: 2.6.1-DEV+21220731
+ Version: 2.7.0-DEV+21220731
  Minimum Required: 2.0.0
  Dependencies:
   PHP: >=7.2
@@ -222,8 +222,8 @@ CIDRAM Front-End:
    - 3bc42724fbf0651e7225d54e1761948c1d624c1d853549aa0809721abf700a07:722
    - 8627543d60036a14e2d1033e63cd703d64b83ebc539d05b40b2aeedbb5d2f2a7:765
    - ebfbd6a90a244ad3f638cbe044dd661fa435ff4094fb63312346f786336b2960:996
-   - 168a3c55d174532e707b9a2d5233e241a8d89a178c323fbe5fbf3832f69b1c2b:258514
-   - 0666f6b41f398ec90492a89bf2f61a950ad17127744f9348966d25c20079531d:207642
+   - e614649a4234fd82a6d93df91a4fa11c25c5d8fb56ef2702930d8f9923b44684:258887
+   - e474c2f76cbe1b041fd354dd1702883f0e90d2e1f754a552dd2591aa79cee0a3:208807
  Reannotate: components.dat
 Common Classes Package:
  Name: Common Classes Package
@@ -489,7 +489,7 @@ l10n/en:
    - lang/lang.en.fe.yaml
    - lang/lang.en.yaml
   Checksum:
-   - 5748780964a464869929d07a0b0a8db44b9be845b02dc60219f3e10b02162ea0:50004
+   - 3ea71d6181f9c9265bcc1f1fbca56b8ae8aef1795235c7c377cbfdc6cf96f746:50009
    - 68aa9765dff3f22277b31b10d3924f90d51c2319e12d77442fed74032d1b5cdb:4408
  Reannotate: components.dat
 l10n/ar:
@@ -509,7 +509,7 @@ l10n/ar:
    - lang/lang.ar.fe.yaml
    - lang/lang.ar.yaml
   Checksum:
-   - 85d211d2a039a20d5a858a017a6b36566fa9a4c55e5cc1accf6a117fad0ec504:67305
+   - 1ba5870cb3baa7332bf390b25d01b7e6de3fd597dcccebdafe1e2377de8255ed:67429
    - 00c587b64402fdcd332126ea7698ef3620c35c73188fd9ae8ce71e8efd7c9c9c:4748
  Reannotate: components.dat
 l10n/bn:
@@ -529,7 +529,7 @@ l10n/bn:
    - lang/lang.bn.fe.yaml
    - lang/lang.bn.yaml
   Checksum:
-   - 1363ffb98df2b9fde3a6e7849e6b3830824f43b725242cb02c74af5990a97643:98466
+   - 3385e3779a86d9ec7007d1e09efd32354d8d1d3b0222f6d07d1448cd18c388ae:98871
    - e16c78f350bab2df715ed0c69d2dd559eca956105eeafdc0ec05e30ec0782805:9535
  Reannotate: components.dat
 l10n/de:
@@ -549,7 +549,7 @@ l10n/de:
    - lang/lang.de.fe.yaml
    - lang/lang.de.yaml
   Checksum:
-   - c047c45700a0603c1a406be63b1705cb96600c18957d2186aa4ba29f61c9b7a3:56766
+   - c5b76dcdbf63ece773adf51a561337d7344a992759b0113b172b63dd232c0466:56804
    - fb23d0cb955a7648ee84e707933cbdd9cec31bf14193bf62f9f46b648fa0a033:4952
  Reannotate: components.dat
 l10n/es:
@@ -569,7 +569,7 @@ l10n/es:
    - lang/lang.es.fe.yaml
    - lang/lang.es.yaml
   Checksum:
-   - 296389ae83a9ad197f09aece03f007cdf42ce4e4c0a7d4f9aa94099dfba522e7:57096
+   - 6f85edee9e984960304fbd4fa4a93daa867ed300bcbf7b5dddd4ffc7e744d7bb:57173
    - 3ea817a5f2d85440c114820637d1da981e221bf9243a918c5d1079cf76115868:4803
  Reannotate: components.dat
 l10n/fr:
@@ -589,7 +589,7 @@ l10n/fr:
    - lang/lang.fr.fe.yaml
    - lang/lang.fr.yaml
   Checksum:
-   - 9c11b6781690951073fbc8a2d65445e79903582b4fb755f76d6e06b188d3f20a:58350
+   - 68a55bcf2e2bc5a5b6105500333f3dca331b5ee3b32b7e05012fa6b6e5824707:58381
    - 5ec5ef9521300a8147686b67478ec6282a18e98af5aee586fd200cca5a57ac44:5076
  Reannotate: components.dat
 l10n/hi:
@@ -609,7 +609,7 @@ l10n/hi:
    - lang/lang.hi.fe.yaml
    - lang/lang.hi.yaml
   Checksum:
-   - 96521ef132022b561139c325ee507348031d0d109fe18bf82b090e9ce0ae95dd:98909
+   - fa84232cad2311ab9dde74b4c4a75593affdb50e83b0e1213ba8401d1b5de099:99351
    - 7fd791b2a904d21d40a1eb27b7b557318ac9cb512620ed8ec52bd58d896a555d:8681
  Reannotate: components.dat
 l10n/id:
@@ -629,7 +629,7 @@ l10n/id:
    - lang/lang.id.fe.yaml
    - lang/lang.id.yaml
   Checksum:
-   - 6996888ed044f73521a2ce0c9ccd11b7059e2d6d517ddf03591ed37a1a08b7bf:52968
+   - dc75eb713779a8a63cc48d3c651f148aec1af58074d5ce36f99face79bf18ca4:53025
    - cc56e7a593f52b2a384cb60b52efc4c0fba224838538cbcc02e611675d41da84:4672
  Reannotate: components.dat
 l10n/it:
@@ -649,7 +649,7 @@ l10n/it:
    - lang/lang.it.fe.yaml
    - lang/lang.it.yaml
   Checksum:
-   - 5b4920ff42beb73116db05b18e767c29fa1b14c7c1e77d06dce72bd0bed7b40f:55629
+   - 541cc939d533bdeb0e5318cc50b6d6f8a284bc832edecd716d614578ece21c0c:55696
    - 477cfa7959da7d191d881350664ca83871968fb86c07b9fbdd75c016c19573ad:4903
  Reannotate: components.dat
 l10n/ja:
@@ -669,7 +669,7 @@ l10n/ja:
    - lang/lang.ja.fe.yaml
    - lang/lang.ja.yaml
   Checksum:
-   - 4494cdaa40909030d34d5ff2548fa4e12dffe1d860306f5ecfd90c9cc8385d5e:69118
+   - 9c8e37632875eb33aa631fc1f592ad4e4fa6784fe2d1983ef64409cff9bb0e15:69312
    - 259a94a552f258bdbdc4affa216bdd11f70c3235a5e6e7a77f90f8e4c05a4504:5538
  Reannotate: components.dat
 l10n/ko:
@@ -689,7 +689,7 @@ l10n/ko:
    - lang/lang.ko.fe.yaml
    - lang/lang.ko.yaml
   Checksum:
-   - 00e6f80f79825bc2c4da55968f389acf23973ab4b5b95fc73997da9cc4fb7931:57371
+   - 71f6a001962643f097f6756a5df7b3a309aae83386c22b8145501cfeb34fdb35:57459
    - 16d486d71855a271b1418e1b4cdc862a2ea6f53e128d60e608860bb411a5ba38:4596
  Reannotate: components.dat
 l10n/lv:
@@ -709,7 +709,7 @@ l10n/lv:
    - lang/lang.lv.fe.yaml
    - lang/lang.lv.yaml
   Checksum:
-   - 048f13c4d6e7e10ca777b589d37df2284ccfd83208a8fbefaf490916133d2183:55050
+   - 7ab493b0fb1a5b919711a848c22cd6a9e0203c805db1af6270abf447e41fbed0:55070
    - 1c8ef575138be4704b00f0d5c353df976cf01afe37244bb59f3fdaf0505696f5:4807
  Reannotate: components.dat
 l10n/nl:
@@ -729,7 +729,7 @@ l10n/nl:
    - lang/lang.nl.fe.yaml
    - lang/lang.nl.yaml
   Checksum:
-   - 44172dc50e7ee2408649e7865097cab8a99a17d8bc99356614792d26d078ff74:54477
+   - ec842fafbc63856590d968f44c7c7a9ba4fa84fd27d8cc23f994042a50237ef5:54512
    - 5ee8c18554d445ee6b76752b9d321dc622cd5efd8fa8e0901ca2a1497c3cf0ed:4725
  Reannotate: components.dat
 l10n/no:
@@ -749,7 +749,7 @@ l10n/no:
    - lang/lang.no.fe.yaml
    - lang/lang.no.yaml
   Checksum:
-   - 1bcd2bb206222c7f0ebb10f038780d852a7bd45e86f1fdcccade0861aa5622c3:51797
+   - cf5bccbc9d9e62e62e727c536ea6395c0e90c3eb1556bf03a3424127194824d9:51831
    - c07815c12ffedfe06ed7e5ede21ea4f860d8ee6ead1c05b05bf0e42341029f4e:4619
  Reannotate: components.dat
 l10n/pl:
@@ -769,7 +769,7 @@ l10n/pl:
    - lang/lang.pl.fe.yaml
    - lang/lang.pl.yaml
   Checksum:
-   - 04438b0f57751307c40c8bf2fe8307203cb0c68c351613d2e8111b3c5be3e09f:55969
+   - d7f2c8c6b488fd9341cb14a35b07a03be60547e5b1b0468958132afb6c58fd0b:56006
    - d3d712aee2c513b6ef095c0e19d538d3610704cc2b4e8da524fc4e023096f71a:4976
  Reannotate: components.dat
 l10n/pt:
@@ -789,7 +789,7 @@ l10n/pt:
    - lang/lang.pt.fe.yaml
    - lang/lang.pt.yaml
   Checksum:
-   - d8a9ac9ff13d39caf86858f8a33b796a98932d390c4b9b857c002ea1e797f7e4:55342
+   - 3692ea135d30adaa1fc2cf42df6346b8a0140ef803c19a3b956e9ae14de2e864:55403
    - 9c290f3ccb7d53b6ffa8fa2c291e1b90ab38e93c163503508d1fd90b786fd313:4722
  Reannotate: components.dat
 l10n/ru:
@@ -809,7 +809,7 @@ l10n/ru:
    - lang/lang.ru.fe.yaml
    - lang/lang.ru.yaml
   Checksum:
-   - e88da9020b877d9529c6195f8d8811cdc3c3a44511ae472c0088654c0fa341cd:80521
+   - c0042c33c80bbd5e0cbfe065a304d868f11d01ca43ff32225c707cbf256b0bd7:80704
    - 498a31d2c9b46a5744c4b1f0834775a82817ada0244745dec1fe74a8c0e87368:7279
  Reannotate: components.dat
 l10n/sv:
@@ -829,7 +829,7 @@ l10n/sv:
    - lang/lang.sv.fe.yaml
    - lang/lang.sv.yaml
   Checksum:
-   - 2fdcd0ca3d2a2e0ea7b1fb5276ef1cfeaa85cae8148a68c07de63fdc95124735:52954
+   - acdf853d0a7f23b2889c4306dd85625351dfe74e649e67540c170aebd3875e9b:52965
    - 371fea192052ce6fe8285f822d013413eb9f3702892ddfc1ac1a5169ccf325ec:4690
  Reannotate: components.dat
 l10n/ta:
@@ -849,7 +849,7 @@ l10n/ta:
    - lang/lang.ta.fe.yaml
    - lang/lang.ta.yaml
   Checksum:
-   - bb15c2dea25292ccc79fdbf7522a538cdc8736eb5dc52c6ca9767ee8b9cb9ed6:114869
+   - 29a14fa9b20ef4cd2b341414a0208358efa68b4810ce9276590b700f22b4b630:115361
    - 4847de689be9a666774409606b20e71d31d7dcc7901055a0c7cc9db14019930c:10321
  Reannotate: components.dat
 l10n/th:
@@ -869,7 +869,7 @@ l10n/th:
    - lang/lang.th.fe.yaml
    - lang/lang.th.yaml
   Checksum:
-   - 94d63da1c748ddae3e996dc2459477660e0e6212150d9b6f11c69704be42feb6:91951
+   - 976625bd36d8af7a101bbabb45ac8e9762128a6116dc7f722e6b1e22a7371ac9:92297
    - 566a24f6643d70617fe2ed424fee97f483004b9509413e88b818e71a0d3d7f21:8279
  Reannotate: components.dat
 l10n/tr:
@@ -889,7 +889,7 @@ l10n/tr:
    - lang/lang.tr.fe.yaml
    - lang/lang.tr.yaml
   Checksum:
-   - cb14fe5dff9a515e377c66e5c32b39a2e7aa47f737abbeb8e379ef4f9076bef3:55448
+   - c7329640639b769b49231505dc1446ff725c21d097e510090325653aa9dbbad6:55509
    - 9bef06e343a05a9792be3574bb21fcbc6eee77cfe821da717dcb4b10dc06645f:4874
  Reannotate: components.dat
 l10n/ur:
@@ -909,7 +909,7 @@ l10n/ur:
    - lang/lang.ur.fe.yaml
    - lang/lang.ur.yaml
   Checksum:
-   - 89b1ba32c63f144682788c58700aa07f3eb569254adc9354cc1ed646ef6bceed:72990
+   - ab46cee23ba5cf79035863a9e0e0476f488b55aa6fba51f063a267994d325ecf:73099
    - f60211ea614ff51716eb04613c721e45eabc8c3f71bd771854a2aac9ae7981db:6736
  Reannotate: components.dat
 l10n/vi:
@@ -929,7 +929,7 @@ l10n/vi:
    - lang/lang.vi.fe.yaml
    - lang/lang.vi.yaml
   Checksum:
-   - 64aea53eb4b5e28da54d54660dce58af35a26dcd6bf7827b994d1a9d91950135:62166
+   - 70f81193e458c37b1fb921290e5f861e31820fb87010578583808398a1418b99:62298
    - 3d0a9c1a9cbc72769661a7545f79beb71fa10e656aef524c6d69de92fff5c972:5828
  Reannotate: components.dat
 l10n/zh-TW:
@@ -949,7 +949,7 @@ l10n/zh-TW:
    - lang/lang.zh-tw.fe.yaml
    - lang/lang.zh-tw.yaml
   Checksum:
-   - 3921de444d2f807e0337f00289843550ca16f4c55b3868136765d37c6d230ed5:48412
+   - 1bdd928accd74329c1bbb234eb405a3acdb567da3ce7abbf59da88bf5912ca73:48417
    - 1b9425095404845458146788b84d59155188102b60155ac8b25fa520631d0b18:4118
  Reannotate: components.dat
 l10n/zh:
@@ -969,7 +969,7 @@ l10n/zh:
    - lang/lang.zh.fe.yaml
    - lang/lang.zh.yaml
   Checksum:
-   - 1a1c474cf7f3e24dd67dc0baec9a8b7b8bfc9c358b3526665f8e1721247d9386:48402
+   - 5101eef0d7dd7c905e3ce8ed873cce9071312ad2519563806e48df3c568524cd:48407
    - 4c87ef24d9b9257a2e12275871b5bbce5c3eff5273410c007e90b3859e5055cc:4114
  Reannotate: components.dat
 

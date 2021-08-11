@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Italian language data for the front-end (last modified: 2021.08.10).
+# This file: Italian language data for the front-end (last modified: 2021.08.11).
 ##/
 
 Extended Description Bypasses: "Un file per bypassare alcune delle firme predefinite normalmente inclusi nel pacchetto principale."
@@ -96,6 +96,7 @@ config_general_emailaddr_display_style: "Come preferisci che l'indirizzo di post
 config_general_empty_fields: "Come dovrebbe CIDRAM gestire i campi vuoti durante la registrazione e la visualizzazione delle informazioni sugli eventi di blocco? "include" = Includi campi vuoti. "omit" = Ometti campi vuoti [predefiniti]."
 config_general_error_log: "Un file per la registrazione di eventuali errori non fatali rilevati. Specificare un nome di file, o lasciare vuoto per disabilitare."
 config_general_error_log_stages: "Un elenco delle fasi nella catena di esecuzione in cui dovrebbero essere registrati eventuali errori generati."
+config_general_events: "I file elencati qui vengono caricati direttamente dopo il file dei gestori di eventi. Tipicamente popolato dalla pagina degli aggiornamenti quando si attivano i componenti che ne hanno bisogno quando necessario. Nella maggior parte dei casi, può ignorarlo."
 config_general_forbid_on_block: "Quale messaggio di stato HTTP dovrebbe inviare CIDRAM durante il blocco delle richieste? (Fare riferimento alla documentazione per ulteriori informazioni)."
 config_general_force_hostname_lookup: "Forzare la ricerca degli nome di host? True = Sì; False = No [Predefinito]. Le ricerche di nome di host vengono normalmente eseguite su base della necessità, ma può essere forzato a tutte le richieste. Ciò può essere utile come mezzo per fornire informazioni più dettagliate nei file di log, ma può anche avere un effetto leggermente negativo sulle prestazioni."
 config_general_frontend_log: "File per la registrazione di tentativi di accesso al front-end. Specificare un nome di file, o lasciare vuoto per disabilitare."

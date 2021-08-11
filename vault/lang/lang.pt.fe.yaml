@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Portuguese language data for the front-end (last modified: 2021.08.10).
+# This file: Portuguese language data for the front-end (last modified: 2021.08.11).
 ##/
 
 Extended Description Bypasses: "Os arquivos para bypass das assinaturas padrão normalmente incluído com o pacote principal."
@@ -96,6 +96,7 @@ config_general_emailaddr_display_style: "Como você prefere que o endereço de e
 config_general_empty_fields: "Como o CIDRAM deve manipular campos vazios ao registrar e exibir informações de eventos de bloco? "include" = Incluir campos vazios. "omit" = Omitir campos vazios [padrão]."
 config_general_error_log: "Um arquivo para registrar erros detectados que não são fatais. Especifique o nome de um arquivo, ou deixe em branco para desabilitar."
 config_general_error_log_stages: "Uma lista dos estágios na cadeia de execução que devem ter quaisquer erros gerados registrados."
+config_general_events: "Os arquivos listados aqui são carregados diretamente após o arquivo do manipuladores de eventos. Normalmente preenchido pela página de atualizações ao ativar componentes que precisam dela quando necessário. Na maioria dos casos, pode ignorá-lo."
 config_general_forbid_on_block: "Qual mensagem de status HTTP deve enviar o CIDRAM ao bloquear solicitações? (Consulte a documentação para mais informações)."
 config_general_force_hostname_lookup: "Forçar pesquisas de nome de anfitrião? True = Sim; False = Não [Padrão]. As pesquisas de nome de anfitrião normalmente são realizadas com base na necessidade, mas pode ser forçado para todos os solicitações. Isso pode ser útil como forma de fornecer informações mais detalhadas nos arquivos de log, mas também pode ter um efeito ligeiramente negativo sobre o desempenho."
 config_general_frontend_log: "Arquivo para registrar tentativas de login ao front-end. Especifique o nome de um arquivo, ou deixe em branco para desabilitar."

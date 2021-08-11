@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Configuration defaults file (last modified: 2021.06.30).
+# This file: Configuration defaults file (last modified: 2021.08.11).
 ##/
 
 Config Defaults:
@@ -353,6 +353,11 @@ Config Defaults:
    default: 12
    preview: "seconds"
   config_imports:
+   type: "string"
+   default: ""
+   value_preg_filter:
+    "~\s~": ""
+  events:
    type: "string"
    default: ""
    value_preg_filter:

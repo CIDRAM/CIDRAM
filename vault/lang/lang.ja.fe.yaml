@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Japanese language data for the front-end (last modified: 2021.08.10).
+# This file: Japanese language data for the front-end (last modified: 2021.08.11).
 ##/
 
 Extended Description Bypasses: "メインパッケージに通常含まれているデフォルト・シグネチャ・バイパス。"
@@ -96,6 +96,7 @@ config_general_emailaddr_display_style: "ユーザーに電子Ｅメール・ア
 config_general_empty_fields: "ブロック・イベント情報をロギングと表示場合、CIDRAMは空のフィールドをどのように処理すべきですか？ "include" = 空のフィールドを含めます。 "omit" = 空のフィールドを非表示にします（Default/デフォルルト）。"
 config_general_error_log: "検出された致命的でないエラーを記録するためのファイル。​ファイル名指定するか、​無効にしたい場合は空白のままにして下さい。"
 config_general_error_log_stages: "生成されたエラーをログに記録する必要がある実行チェーン内のステージのリスト。"
+config_general_events: "ここにリストされているファイルは、イベント・ハンドラー・ファイルの直後にロードされます。​通常、コンポーネントをアクティブ化するときに、アップデート・ページによって必要に応じて入力されます。​ほとんどの場合、それを無視することができます。"
 config_general_forbid_on_block: "リクエストをブロックするときに、CIDRAMが送信するＨＴＴＰステータス・メッセージはどれですか？​（詳細については、ドキュメントを参照してください）。"
 config_general_force_hostname_lookup: "ホスト名検索を強制しますか？ True = はい。 False = いいえ（Default/デフォルルト）。​ホスト名検索は、通常、「必要に応じて」実行されますが、すべてのリクエストに対して強制することができます。​これは、より詳細な情報をログ・ファイルに提供する手段として有用ですが、パフォーマンスに多少の悪影響を及ぼすこともあります。"
 config_general_frontend_log: "フロントエンド・ログインの試みを記録するためのファイル。​ファイル名指定するか、​無効にしたい場合は空白のままにして下さい。"

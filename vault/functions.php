@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2021.07.01).
+ * This file: Functions file (last modified: 2021.08.11).
  */
 
 /** Autoloader for CIDRAM classes. */
@@ -2518,4 +2518,19 @@ $CIDRAM['IsSensitive'] = function (string $URI): bool {
 if (isset($CIDRAM['Vault'])) {
     /** Load all default event handlers. */
     require $CIDRAM['Vault'] . 'event_handlers.php';
+
+    /** If there are any componentised events, load those, too. */
+    if (!empty($CIDRAM['Config']['general']['events'])) {
+        $CIDRAM['LoadThese'] = array_unique(explode(',', $CIDRAM['Config']['general']['events']));
+        foreach ($CIDRAM['LoadThese'] as $CIDRAM['LoadThis']) {
+            if (
+                strlen($CIDRAM['LoadThis']) > 0 &&
+                substr($CIDRAM['LoadThis'], -4) === '.php' &&
+                is_readable($CIDRAM['Vault'] . $CIDRAM['LoadThis'])
+            ) {
+                require $CIDRAM['Vault'] . $CIDRAM['LoadThis'];
+            }
+        }
+        unset($CIDRAM['LoadThis'], $CIDRAM['LoadThese']);
+    }
 }

@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6_isps.dat
 
-# Version: 2021.216.564
-# Last modified: 2021.08.05
+# Version: 2021.222.714
+# Last modified: 2021.08.11
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -1896,15 +1896,13 @@ Tag: MAXNET TELECOM
 
 
 # ASN 6799 ("Ote SA (Hellenic Telecommunications Organisation)").
-# A Greek domestic ISP and a source of spam. Listing just the affected
-# ranges/addresses only (plus all US ranges).
-# Stop Forum Spam (SFS) listings: 3,287.
-# Updated: 2021.02.02
+# Greek domestic ISP. Spam, brute-force, and webapp attacks detected from here.
+# Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 8,048.
+# Updated: 2021.08.11
 
-2a02:587:2933:1e00::/64 Deny Spam
-2a02:587:3d1f:b000::/64 Deny Spam
-2a02:587:4607:6000::/64 Deny Spam
-2a02:587:c43b:2c55::/64 Deny Spam
+2a02:587:2960:be00::/64 Deny Spam
+2a02:587:9814:ed70::/64 Deny Spam
 Origin: GR
 Profile: Domestic ISP
 Tag: Ote SA
@@ -2633,3 +2631,16 @@ Tag: True Internet Co
 Origin: NL
 Profile: Commercial;Multiplay;Domestic ISP
 Tag: KPN B.V
+
+
+# ASNs 15480, 33915 ("Vodafone Libertel B.V").
+# Dutch domestic ISP and phone provider. Brute-force, SSH attacks, port scans,
+# hacking, and spam detected from here. Listing just the affected
+# ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 11 (AS15480), 837 (AS33915).
+# Updated: 2021.08.07
+
+2001:1c03:6700:8400::/64 Deny Spam
+Origin: NL
+Profile: Domestic ISP
+Tag: Vodafone Libertel

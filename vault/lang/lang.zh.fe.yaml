@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (simplified) language data for the front-end (last modified: 2021.08.10).
+# This file: Chinese (simplified) language data for the front-end (last modified: 2021.08.11).
 ##/
 
 Extended Description Bypasses: "标准签名旁路文件通常包括在主包。"
@@ -97,6 +97,7 @@ config_general_emailaddr_display_style: "您希望如何将电子邮件地址呈
 config_general_empty_fields: "在记录和显示阻止事件信息时，CIDRAM如何处理空字段？ “include” = 包括空字段。 “omit” = 省略空字段【标准】。"
 config_general_error_log: "用于记录检测到的任何非致命错误的文件。​指定一个文件名，​或留空以禁用。"
 config_general_error_log_stages: "执行链中应该记录错误的阶段列表。"
+config_general_events: "此处列出的文件在事件处理程序文件之后直接加载。​通常在启用组件时由更新页面按需填充。​大多数情况下，可以忽略它。"
 config_general_forbid_on_block: "阻止请求时，CIDRAM应发送哪个HTTP状态消息？ （请参阅文档以获取更多信息）。"
 config_general_force_hostname_lookup: "强制主机名查找？​True（真）=跟踪；False（假）=不跟踪【标准】。​主机名查询通常在“根据需要”的基础上执行，但可以在所有请求上强制。​这可能会有助于提供日志文件中更详细的信息，但也可能会对性能产生轻微的负面影响。"
 config_general_hide_version: "从日志和页面输出中隐藏版本信息吗？​True（真）=关闭；False（假）=不关闭【标准】。"

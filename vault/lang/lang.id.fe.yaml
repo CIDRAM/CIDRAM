@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Indonesian language data for the front-end (last modified: 2021.08.10).
+# This file: Indonesian language data for the front-end (last modified: 2021.08.11).
 ##/
 
 Extended Description Bypasses: "File untuk bypass tanda tangan standar yang biasanya disertakan dengan paket utama."
@@ -97,6 +97,7 @@ config_general_emailaddr_display_style: "Bagaimana Anda lebih suka alamat email 
 config_general_empty_fields: "Bagaimana seharusnya CIDRAM menangani bidang kosong saat membuat log dan menampilkan informasi kejadian blokir? "include" = Sertakan bidang kosong. "omit" = Hilangkan bidang kosong [default]."
 config_general_error_log: "File untuk mencatat kesalahan tidak fatal yang terdeteksi. Spesifikasikan nama file, atau biarkan kosong untuk menonaktifkan."
 config_general_error_log_stages: "Daftar tahapan dalam rantai eksekusi yang seharusnya memiliki kesalahan yang dihasilkan dicatat."
+config_general_events: "File yang terdaftar disini dimuat langsung setelah file pengendali acara. Biasanya diisi oleh halaman pembaruan saat mengaktifkan komponen yang membutuhkannya saat diperlukan. Dalam kebanyakan kasus, bisa mengabaikannya."
 config_general_forbid_on_block: "Pesan status HTTP mana yang harus dikirim oleh CIDRAM ketika memblokir permintaan? (Lihat dokumentasi untuk informasi lebih lanjut)."
 config_general_force_hostname_lookup: "Memaksa periksa untuk nama host? True = Ya; False = Tidak [Default]. Periksa untuk nama host biasanya dilakukan pada dasar "sesuai kebutuhan", tapi bisa dipaksakan untuk semua permintaan. Melakukan hal tersebut mungkin berguna sebagai sarana untuk memberikan informasi lebih rinci di log, tapi mungkin juga memiliki sedikit efek negatif pada kinerja."
 config_general_hide_version: "Sembunyikan informasi versi dari log dan output halaman? True = Ya; False = Tidak [Default]."

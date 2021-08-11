@@ -225,6 +225,11 @@ default_timeout=12
 ; components which need it when necessary. In most cases, can ignore it.
 config_imports='bypasses.yml'
 
+; Files listed here are loaded directly after the event handlers file.
+; Typically populated by the updates page when activating components which need
+; it when necessary. In most cases, can ignore it.
+events=''
+
 
 [signatures]
 ; Configuration for signatures, signature files, modules, etc.

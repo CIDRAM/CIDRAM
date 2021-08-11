@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: French language data for the front-end (last modified: 2021.08.10).
+# This file: French language data for the front-end (last modified: 2021.08.11).
 ##/
 
 Extended Description Bypasses: "Les fichiers pour contourner les signatures standard qui sont normalement inclus dans le paquet principal."
@@ -97,6 +97,7 @@ config_general_emailaddr_display_style: "Comment préférez-vous que l'adresse �
 config_general_empty_fields: "Comment CIDRAM doit-il gérer les champs vides lors de l'enregistrement et de l'affichage des informations sur les événements de blocage ? « include » = Inclure les champs vides. « omit » = Omettre les champs vides [défaut]."
 config_general_error_log: "Un fichier pour l'enregistrement des erreurs non fatales détectées. Spécifier un fichier, ou laisser vide à désactiver."
 config_general_error_log_stages: "Liste des étapes de la chaîne d'exécution dans lesquelles les erreurs générées doivent être enregistrées."
+config_general_events: "Les fichiers répertoriés ici sont chargés directement après le fichier des gestionnaires d'événements. Généralement renseigné par la page des mises à jour lors de l'activation des composants qui en ont besoin si nécessaire. Dans la plupart des cas, peut l'ignorer."
 config_general_forbid_on_block: "Quel message d'état HTTP devrait être envoyé par CIDRAM lors du blocage des requêtes ? (Référez-vous à la documentation pour plus d'informations)."
 config_general_force_hostname_lookup: "Forcer les recherches de nom d'hôte ? True = Oui ; False = Non [Défaut]. Les recherches de nom d'hôte sont normalement effectuées « au besoin », mais peuvent être forcées pour toutes les requêtes. Cela peut être utile pour fournir des informations plus détaillées dans les fichiers journaux, mais peut également avoir un effet légèrement négatif sur les performances."
 config_general_hide_version: "Masquer les informations de version à partir des journaux et de la sortie de la page ? True = Oui ; False = Non [Défaut]."

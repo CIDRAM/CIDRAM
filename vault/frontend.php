@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2021.08.10).
+ * This file: Front-end handler (last modified: 2021.08.11).
  */
 
 /** Prevents execution from outside of CIDRAM. */

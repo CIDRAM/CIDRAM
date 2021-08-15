@@ -243,11 +243,11 @@ CIDRAM:
 IPv4:
  Extended Description: Default IPv4 signatures normally included with the main package. Blocks unwanted cloud services and non-human endpoints.
  False Positive Risk: Low
- Version: 2021.222.714
+ Version: 2021.226.275
  Minimum Required: 1.0.0
  Dependencies:
   CIDRAM Core: >=1
-  Bypasses: >=2021.192.550
+  Bypasses: >=2021.226.275
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
  Uninstallable: true
  Files:
@@ -256,7 +256,7 @@ IPv4:
   To:
    - ipv4.dat
   Checksum:
-   - 0ed4119bcc0ae2d66a35f70a3980973be18b5c4c873f772260b88251850cc787:933548
+   - 02991852343dcd5327f621c9b15a93e7b97eace0b3946b75fb71540ef7d6d839:934395
  Used with: ipv4
  Reannotate: components.dat
 IPv4-Bogons:
@@ -334,11 +334,11 @@ IPv4-Other:
 IPv6:
  Extended Description: Default IPv6 signatures normally included with the main package. Blocks unwanted cloud services and non-human endpoints.
  False Positive Risk: Low
- Version: 2021.222.714
+ Version: 2021.226.275
  Minimum Required: 1.0.0
  Dependencies:
   CIDRAM Core: >=1
-  Bypasses: >=2021.192.550
+  Bypasses: >=2021.226.275
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
  Uninstallable: true
  Files:
@@ -347,7 +347,7 @@ IPv6:
   To:
    - ipv6.dat
   Checksum:
-   - f4e564139729bef57257a67cb9b884faff7bb4e38d4671159df483c4f8b3fcb9:247430
+   - e4b7d33feb3197f7056c800627923562b7b71ff2131030f9c9b841c36e5167b9:247672
  Used with: ipv6
  Reannotate: components.dat
 IPv6-Bogons:
@@ -423,7 +423,7 @@ IPv6-Other:
  Used with: ipv6
  Reannotate: components.dat
 Bypasses:
- Version: 2021.212.157
+ Version: 2021.226.275
  Dependencies:
   PHP: >=5.4
   CIDRAM Core: ^1.19.1-DEV
@@ -437,8 +437,8 @@ Bypasses:
    - bypasses.php
    - bypasses.yml
   Checksum:
-   - 9a3ac4ef867335375cd20a2f1c51810beb9a040440c6bcc7140d681a3bc40833:8888
-   - f1643a0fc1b46eceb0fa4565e27d26a39a5355fb56dcbb0fe7b22d006da8fdc6:748
+   - 7d05eb9b1a2139135bafd59dc913957cbc040725a9e8666036535bb5f835fd68:9383
+   - fbb7da70801525375c48eff787d56f725df7c985a734b4b96afff942a2a099c0:812
  Used with:
   - n/a
   - imports

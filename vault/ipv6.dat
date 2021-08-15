@@ -1056,13 +1056,14 @@ Tag: Connexions4London
 
 # ASN 32475 ("SingleHop, Inc").
 # Colo provider, data center, hosting/cloud/infrastructure provider.
-# Stop Forum Spam (SFS) listings: 111.
-# Updated: 2019.08.11 / Checked: 2021.05.17
+# WordPress.org's hosting provider.
+# Stop Forum Spam (SFS) listings: 115.
+# Updated: 2021.08.15
 
-2607:f978:5::/48 Deny Cloud
-2607:f978:7::/48 Deny Cloud
+2607:f978:5::/48 Run bypasses.php
+2607:f978:7::/48 Run bypasses.php
 Origin: US
-Profile: Commercial;Infrastructure/Transit;Webhosting
+Profile: Commercial;Has WordPress Bypasses;Infrastructure/Transit;Webhosting
 Tag: SingleHop, Inc
 
 
@@ -5084,9 +5085,10 @@ Tag: Cyberdyne S.A
 
 # ASN 2635 ("Automattic, Inc").
 # Some anonymous reports of malware received from some users, and an occasional
-# source of spam.
+# source of spam (inclusion here somewhat doubtful, but we'll implement lots of
+# bypasses to ensure a safe balance, ensure WordPress isn't blocked, etc).
 # Stop Forum Spam (SFS) listings: 30.
-# Updated: 2021.03.15
+# Updated: 2021.03.15 / Checked: 2021.08.15
 
 2403:6b80::/45 Run bypasses.php
 2403:6b80:8::/47 Run bypasses.php
@@ -5110,7 +5112,7 @@ Origin: IE
 Origin: US
 2001:43f8:bf0::/48 Run bypasses.php
 Origin: ZA
-Profile: Infrastructure/Transit
+Profile: Commercial;Has WordPress Bypasses;Infrastructure/Transit
 Tag: Automattic
 
 

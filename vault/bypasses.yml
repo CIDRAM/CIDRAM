@@ -28,4 +28,5 @@ Config Defaults:
     Redditbot: "Redditbot"
     WordPress REST API: "WordPress REST API"
    value_preg_filter:
-    "~\s~": ""
+    "~^\s*|\s*$~": ""
+    "~\s*,\s*~": ","

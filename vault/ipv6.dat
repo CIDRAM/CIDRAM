@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6.dat
 
-# Version: 2021.222.714
-# Last modified: 2021.08.11
+# Version: 2021.226.275
+# Last modified: 2021.08.15
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -3682,11 +3682,12 @@ Tag: Linode, LLC
 
 # ASN 22653 ("Cyber Wurx LLC").
 # XMLRPC attacks detected originating from this network.
-# Updated: 2020.12.28
+# Updated: 2020.12.28 / Checked: 2021.08.15
 
 2602:ff75:1000::/36 Deny Cloud
 2607:1a00::/32 Deny Cloud
 Origin: US
+Profile: Dedicated;Infrastructure/Transit;Webhosting
 Tag: Cyber Wurx LLC
 
 
@@ -4574,8 +4575,8 @@ Tag: Confluence
 
 # ASN 25369 ("Hydra Communications Ltd").
 # Subtract 44.0.0.0/9, 44.128.0.0/10 (clean).
-# Stop Forum Spam (SFS) listings: 26,365.
-# Updated: 2020.12.28
+# Stop Forum Spam (SFS) listings: 26,206.
+# Updated: 2020.12.28 / Checked: 2021.08.15
 
 2a06:8dc7::/48 Deny Cloud
 Origin: AT
@@ -4591,6 +4592,7 @@ Origin: RU
 Origin: SE
 2a0f:2c80:1::/48 Deny Cloud
 Origin: US
+Profile: Infrastructure/Transit
 Tag: Hydra Communications
 
 
@@ -6055,8 +6057,8 @@ Tag: Greenhost BV
 # Network caught spamming, brute-forcing, attempting SSH attacks plus other
 # unwanted traffic. Network might be dedicated cloud, or might be multiplay,
 # but unable to confirm (homepage unavailable + information is scarce).
-# Stop Forum Spam (SFS) listings: 64.
-# Updated: 2020.12.28
+# Stop Forum Spam (SFS) listings: 157.
+# Updated: 2021.08.15
 
 2001:1248:1::/48 Deny Cloud
 2001:1248:2::/47 Deny Cloud
@@ -6065,10 +6067,9 @@ Tag: Greenhost BV
 2001:1248:5500::/40 Deny Cloud
 2001:1248:5600::/39 Deny Cloud
 2001:1248:5900::/40 Deny Cloud
-2001:1248:5a00::/40 Deny Cloud
-2001:1248:5b00::/42 Deny Cloud
-2001:1248:7000::/41 Deny Cloud
-2001:1248:70c0::/42 Deny Cloud
+2001:1248:5a00::/39 Deny Cloud
+2001:1248:5f00::/42 Deny Cloud
+2001:1248:7000::/40 Deny Cloud
 2001:1248:8000::/40 Deny Cloud
 2001:1248:8200::/39 Deny Cloud
 2001:1248:8400::/40 Deny Cloud
@@ -6076,8 +6077,9 @@ Tag: Greenhost BV
 2001:1248:8700::/41 Deny Cloud
 2001:1248:87b0::/44 Deny Cloud
 2001:1248:87c0::/42 Deny Cloud
-2001:1248:8800::/42 Deny Cloud
+2001:1248:8800::/41 Deny Cloud
 2001:1248:88b0::/44 Deny Cloud
+2001:1248:88c0::/42 Deny Cloud
 2001:1248:8900::/40 Deny Cloud
 2001:1248:9500::/41 Deny Cloud
 2001:1248:95b0::/44 Deny Cloud
@@ -6092,9 +6094,14 @@ Tag: Greenhost BV
 2001:1248:9803::/48 Deny Cloud
 2001:1248:9804::/46 Deny Cloud
 2001:1248:9808::/45 Deny Cloud
-2001:1248:9810::/44 Deny Cloud
-2001:1248:9820::/45 Deny Cloud
-2001:1248:9828::/47 Deny Cloud
+2001:1248:9810::/46 Deny Cloud
+2001:1248:9814::/47 Deny Cloud
+2001:1248:9816::/48 Deny Cloud
+2001:1248:9818::/45 Deny Cloud
+2001:1248:9820::/48 Deny Cloud
+2001:1248:9822::/47 Deny Cloud
+2001:1248:9824::/46 Deny Cloud
+2001:1248:9828::/48 Deny Cloud
 2001:1248:982a::/48 Deny Cloud
 2001:1248:982c::/46 Deny Cloud
 2001:1248:9830::/45 Deny Cloud
@@ -6106,15 +6113,21 @@ Tag: Greenhost BV
 2001:1248:9882::/48 Deny Cloud
 2001:1248:9885::/48 Deny Cloud
 2001:1248:9886::/47 Deny Cloud
-2001:1248:9888::/45 Deny Cloud
+2001:1248:9889::/48 Deny Cloud
+2001:1248:988a::/47 Deny Cloud
+2001:1248:988c::/46 Deny Cloud
 2001:1248:9890::/45 Deny Cloud
-2001:1248:9898::/47 Deny Cloud
+2001:1248:9899::/48 Deny Cloud
 2001:1248:989c::/46 Deny Cloud
 2001:1248:98a0::/46 Deny Cloud
 2001:1248:98a5::/48 Deny Cloud
 2001:1248:98a7::/48 Deny Cloud
-2001:1248:98a8::/45 Deny Cloud
-2001:1248:98b0::/45 Deny Cloud
+2001:1248:98a8::/46 Deny Cloud
+2001:1248:98ad::/48 Deny Cloud
+2001:1248:98ae::/47 Deny Cloud
+2001:1248:98b0::/47 Deny Cloud
+2001:1248:98b4::/48 Deny Cloud
+2001:1248:98b6::/48 Deny Cloud
 2001:1248:98b8::/46 Deny Cloud
 2001:1248:98bc::/47 Deny Cloud
 2001:1248:98be::/48 Deny Cloud
@@ -6125,27 +6138,30 @@ Tag: Greenhost BV
 2001:1248:98d0::/45 Deny Cloud
 2001:1248:98d8::/48 Deny Cloud
 2001:1248:98dc::/46 Deny Cloud
-2001:1248:98e0::/47 Deny Cloud
+2001:1248:98e1::/48 Deny Cloud
 2001:1248:98e3::/48 Deny Cloud
 2001:1248:98e5::/48 Deny Cloud
 2001:1248:98e6::/47 Deny Cloud
 2001:1248:98e8::/45 Deny Cloud
-2001:1248:98f0::/45 Deny Cloud
+2001:1248:98f0::/46 Deny Cloud
+2001:1248:98f4::/48 Deny Cloud
+2001:1248:98f6::/47 Deny Cloud
 2001:1248:98f8::/47 Deny Cloud
 2001:1248:98fb::/48 Deny Cloud
 2001:1248:98fc::/47 Deny Cloud
 2001:1248:98fe::/48 Deny Cloud
 2001:1248:9900::/40 Deny Cloud
-2001:1248:9a00::/41 Deny Cloud
-2001:1248:9a80::/42 Deny Cloud
-2001:1248:a000::/47 Deny Cloud
+2001:1248:9a00::/40 Deny Cloud
+2001:1248:9b00::/42 Deny Cloud
+2001:1248:9c00::/41 Deny Cloud
+2001:1248:9c80::/42 Deny Cloud
+2001:1248:a000::/48 Deny Cloud
 2001:1248:a002::/48 Deny Cloud
 2001:1248:a006::/47 Deny Cloud
 2001:1248:a008::/48 Deny Cloud
 2001:1248:a00c::/47 Deny Cloud
 2001:1248:a00e::/48 Deny Cloud
-2001:1248:a015::/48 Deny Cloud
-2001:1248:a016::/47 Deny Cloud
+2001:1248:a016::/48 Deny Cloud
 2001:1248:a019::/48 Deny Cloud
 2001:1248:a01a::/47 Deny Cloud
 2001:1248:a01c::/46 Deny Cloud
@@ -6159,9 +6175,10 @@ Tag: Greenhost BV
 2001:1248:a4b0::/44 Deny Cloud
 2001:1248:a4c0::/42 Deny Cloud
 2001:1248:a500::/41 Deny Cloud
-2001:1248:a600::/40 Deny Cloud
-2001:1248:a700::/41 Deny Cloud
+2001:1248:a600::/39 Deny Cloud
+2001:1248:a900::/42 Deny Cloud
 2001:1248:c201::/48 Deny Cloud
+2001:1248:c233::/48 Deny Cloud
 Origin: MX
 Profile: Restricted/Unidentifiable
 Tag: Alestra
@@ -7735,8 +7752,8 @@ Tag: Castle Global Inc
 
 # ASN 200088 ("Artnet Sp. z o.o").
 # Dedicated hosting provider and a source of spam.
-# Stop Forum Spam (SFS) listings: 6.
-# Updated: 2020.12.28
+# Stop Forum Spam (SFS) listings: 170.
+# Updated: 2020.12.28 / Checked: 2021.08.15
 
 2a02:d107:e000::/47 Deny Cloud
 2a02:d107:f001::/48 Deny Cloud

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Default signature bypasses (last modified: 2021.08.01).
+ * This file: Default signature bypasses (last modified: 2021.08.15).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -199,10 +199,21 @@ $CIDRAM['RunParamResCache']['bypasses.php'] = function (array $Factors = [], int
     }
 
     /**
-     * Automattic bypasses.
+     * Automattic and SingleHop bypasses.
      * @link https://github.com/CIDRAM/CIDRAM/issues/65
      */
-    if ($Tag === 'Automattic') {
+    if ($Tag === 'Automattic' || $Tag === 'SingleHop, Inc') {
+        /**
+         * WordPress general bypass (e.g., for REST API calls).
+         * @link https://wordpress.org/support/topic/site-health-issues-4/
+         */
+        if (
+            $CIDRAM['Request']->inCsv('WordPress REST API', $CIDRAM['Config']['bypasses']['used']) &&
+            (defined('ABSPATH') || strtolower(str_replace("\\", '/', substr(__DIR__, -31))) === 'wp-content/plugins/cidram/vault')
+        ) {
+            return;
+        }
+
         /** Feedbot bypass. */
         if (
             $CIDRAM['Request']->inCsv('Feedbot', $CIDRAM['Config']['bypasses']['used']) &&

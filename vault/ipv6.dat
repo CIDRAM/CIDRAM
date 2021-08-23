@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6.dat
 
-# Version: 2021.226.275
-# Last modified: 2021.08.15
+# Version: 2021.234.583
+# Last modified: 2021.08.23
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -3765,12 +3765,34 @@ Profile: Commercial;Frequent changes;Infrastructure/Transit;Tor endpoints here;W
 Tag: D.E.Tech
 
 
-# ASN 29873 ("The Endurance International Group, Inc").
-# Updated: 2016.06.17 / Checked: 2021.01.02
+# ASNs 29873, 30380, 49392, 51659, 62729, 263093, 394695, 398343 ("The
+# Endurance International Group, Inc").
+# See also: onlinetoolsexpert.com/full-list-of-eig-web-hosting-companies/
+# Updated: 2021.08.21
 
+2a00:b700::/46 Deny Cloud
+2a00:b700:4::/47 Deny Cloud
+2a00:b700:f::/48 Deny Cloud
+2a00:b701::/32 Deny Cloud
+2a00:b702::/31 Deny Cloud
+2a00:b704::/30 Deny Cloud
+2a06:1307::/32 Deny Cloud
+2a0d:3c43::/32 Deny Cloud
+2a0d:3c45::/32 Deny Cloud
+2a0d:43c0::/29 Deny Cloud
+2a0e:8c40::/29 Deny Cloud
+2a0e:bc80::/29 Deny Cloud
+2a0e:eec4::/32 Deny Cloud
+2a0e:eec6::/32 Deny Cloud
+2a0e:fb44::/32 Deny Cloud
+2a0f:3106::/32 Deny Cloud
+2a0f:8445::/32 Deny Cloud
+2a0f:d080::/29 Deny Cloud
+Origin: RU
 2605:f300:ffff::/48 Deny Cloud
 Origin: US
-Tag: Endurance Int
+Profile: Tor endpoints here;Webhosting
+Tag: EIG
 
 
 # ASN 17819 ("Equinix Asia Pacific").
@@ -3811,12 +3833,12 @@ Tag: Atlantic.net, Inc
 
 
 # ASN 52284 ("Panamaserver.com").
-# Stop Forum Spam (SFS) listings: 1.
-# Recently caught faking as Googlebot.
-# Updated: 2016.07.10 / Checked: 2020.12.28
+# Caught faking as Googlebot.
+# Updated: 2016.07.10 / Checked: 2021.08.23
 
 2803:200::/32 Deny Cloud
 Origin: PA
+Profile: Dedicated;Infrastructure/Transit;Webhosting
 Tag: Panamaserver.com
 
 
@@ -3916,8 +3938,8 @@ Tag: Affinity Internet, Inc
 
 
 # ASNs 52048, 60567, 202920, 203557 ("DataClub S.A").
-# Stop Forum Spam (SFS) listings: 861 (AS52048), 133 (AS60567).
-# Updated: 2021.02.10
+# Stop Forum Spam (SFS) listings: 4,411 (AS52048), 21 (AS60567), 15 (AS203557).
+# Updated: 2021.02.10 / Checked: 2021.08.21
 
 2a02:4840::/47 Deny Cloud
 2a02:4840:2::/48 Deny Cloud
@@ -3927,6 +3949,7 @@ Tag: Affinity Internet, Inc
 Origin: BZ
 2a06:c3c0::/48 Deny Cloud
 Origin: RU
+Profile: Dedicated;Infrastructure/Transit;Webhosting
 Tag: DataClub S.A
 
 
@@ -4153,15 +4176,15 @@ Tag: NetSource
 
 
 # ASN 197226 ('"SPRINT" S.A.').
-# Stop Forum Spam (SFS) listings: 3,177.
-# Updated: 2020.12.29
+# Stop Forum Spam (SFS) listings: 2,681.
+# Updated: 2020.12.29 / Checked: 2021.08.23
 
 2a03:7940::/32 Deny Cloud
 2a0c:5840::/32 Deny Cloud
 Origin: PL
 2a0d:c740:3c::/48 Deny Cloud
 Origin: US
-Profile: Frequent changes
+Profile: Dedicated;Frequent changes;Infrastructure/Transit;Webhosting
 Tag: SPRINT
 
 
@@ -4235,12 +4258,12 @@ Tag: UK Dedicated Servers
 
 
 # ASN 30900 ("Sternforth Ltd").
-# Stop Forum Spam (SFS) listings: 2,513.
-# Updated: 2019.10.02 / Checked: 2020.12.29
+# Stop Forum Spam (SFS) listings: 2,628.
+# Updated: 2019.10.02 / Checked: 2021.08.23
 
 2a01:6280::/32 Deny Cloud
 Origin: IE
-Profile: Dedicated
+Profile: Dedicated;Infrastructure/Transit;Webhosting
 Tag: Sternforth Ltd
 
 
@@ -5462,8 +5485,8 @@ Tag: ProfitBricks
 
 
 # ASN 44901 ("BelCloud Hosting Corporation").
-# Stop Forum Spam (SFS) listings: 632.
-# Updated: 2020.01.31 / Checked: 2020.12.28
+# Stop Forum Spam (SFS) listings: 157.
+# Updated: 2020.01.31 / Checked: 2021.08.23
 
 2a07:5740::/31 Deny Cloud
 2a09:be80::/32 Deny Cloud
@@ -5740,13 +5763,15 @@ Profile: Dedicated;Webhosting
 Tag: HugeServer Networks
 
 
-# ASNs 3728, 11320 ("LightEdge Solutions").
+# ASN 11320 ("LightEdge Solutions").
 # Caught trying to hack WordPress sites and caught brute-forcing.
-# Updated: 2020.12.29
+# Stop Forum Spam (SFS) listings: 20.
+# Updated: 2020.12.29 / Checked: 2021.08.23
 
 2604:a400::/32 Deny Cloud
 2607:f190::/32 Deny Cloud
 Origin: US
+Profile: Dedicated;Infrastructure/Transit;Webhosting
 Tag: LightEdge Solutions
 
 
@@ -7239,8 +7264,8 @@ Tag: Arbor Networks, Inc
 
 # ASN 42473 ("ANEXIA Internetdienstleistungs GmbH").
 # Dedicated server farm and a source of spam.
-# Stop Forum Spam (SFS) listings: 2,929.
-# Updated: 2020.12.29
+# Stop Forum Spam (SFS) listings: 1,659.
+# Updated: 2021.08.23
 
 2001:67c:240::/48 Deny Cloud
 2a00:11c0::/45 Deny Cloud
@@ -7279,6 +7304,9 @@ Tag: Arbor Networks, Inc
 2a01:aea0::/32 Deny Cloud
 2a07:1b80::/40 Deny Cloud
 Origin: AT
+2606:1a40:200e::/47 Deny Cloud
+2606:1a40:2012::/47 Deny Cloud
+Origin: CA
 2803:ad80::/48 Deny Cloud
 2803:ad80:16::/48 Deny Cloud
 2803:ad80:69::/48 Deny Cloud
@@ -7291,7 +7319,7 @@ Origin: PA
 2605:380:54::/46 Deny Cloud
 2605:380:58::/48 Deny Cloud
 Origin: US
-Profile: Dedicated
+Profile: Dedicated;Infrastructure/Transit;Webhosting
 Tag: ANEXIA
 
 
@@ -8513,6 +8541,18 @@ Profile: Tor endpoints here;Webhosting
 Tag: Oleksandrovich
 
 
+# ASNs 35530, 48031, 61432, 211736 ("Proline TM Ltd", "PE Ivanov Vitaliy
+# Sergeevich", "TOV VAIZ PARTNER", "FOP Dmytro Nedilskyi").
+# Brute-force, SSH, and webapp attacks, hacking, and spam detected from here.
+# Stop Forum Spam (SFS) listings: 3,826 (AS35530), 6,412 (AS48031).
+# Updated: 2021.08.23
+
+2001:678:334::/48 Deny Cloud
+Origin: UA
+Profile: Webhosting
+Tag: Sergeevich/Nedilskyi
+
+
 # ASN 48715 ("Sefroyek Pardaz Engineering Co. LTD").
 # Iranian colo provider and server farm. Brute-force and webapp attacks
 # detected from here.
@@ -8795,6 +8835,17 @@ Tag: Harmony Solutions GmbH
 Origin: HR
 Profile: Webhosting
 Tag: MAXKO j.d.o.o
+
+
+# ASNs 52393, 263829 ("HOST PARA TU VIDA S.A").
+# Brute-force, SSH, and webapp attacks, port scans, and spam detected here.
+# Stop Forum Spam (SFS) listings: 11,688 (AS52393), 71 (AS263829).
+# Updated: 2021.08.23
+
+2803:8f80::/32 Deny Cloud
+Origin: HN
+Profile: Webhosting
+Tag: HOST PARA TU VIDA
 
 
 # ---

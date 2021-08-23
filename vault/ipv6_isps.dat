@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6_isps.dat
 
-# Version: 2021.222.714
-# Last modified: 2021.08.11
+# Version: 2021.234.583
+# Last modified: 2021.08.23
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -1555,6 +1555,73 @@ Origin: UA
 Tag: UnderNet LLC
 
 
+# ASNs 18101, 55836 ("Reliance Communications Ltd").
+# Indian domestic ISP. Brute-force, SSH, and webapp attacks, WordPress hack
+# attempts, port scans, and spam detected from here. Listing just the affected
+# ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 5,989 (AS18101), 58,119 (AS55836).
+# Updated: 2021.08.21
+
+2405:201:4:3d0b::/64 Deny Spam
+2405:201:2015:8028::/64 Deny Spam
+2405:201:2015:881b::/64 Deny Spam
+2405:201:4021:a0f7::/64 Deny Spam
+2405:201:4022:3029::/128 Deny Spam
+2405:201:5507:d073::/64 Deny Spam
+2405:201:5c03:2::/64 Deny Spam
+2405:201:e001:703c::/64 Deny Spam
+2405:204:1005:ac9::/64 Deny Spam
+2405:204:1025:2106::/128 Deny Spam
+2405:204:1386:b3f9::/128 Deny Spam
+2405:204:138f:d8ab::/64 Deny Spam
+2405:204:1486:5bd4::/64 Deny Spam
+2405:204:1489:3073::/64 Deny Spam
+2405:204:3101:bfe5::/128 Deny Spam
+2405:204:311c:4ffd::/64 Deny Spam
+2405:204:322c:c976::/64 Deny Spam
+2405:204:322d:e403::/64 Deny Spam
+2405:204:3281:bf41::/64 Deny Spam
+2405:204:329d:7410::/64 Deny Spam
+2405:204:32a7:e60c::/64 Deny Spam
+2405:204:32ac:8158::/64 Deny Spam
+2405:204:331d:fe27::/128 Deny Spam
+2405:204:340d:b850::/64 Deny Spam
+2405:204:3487:dc02::/64 Deny Spam
+2409:4043:19b:4c6b::/128 Deny Spam
+2409:4043:515:6535::/64 Deny Spam
+2409:4043:803:d52a::/64 Deny Spam
+2409:4043:218b:670c::/64 Deny Spam
+2409:4043:2b88:f8b6::/64 Deny Spam
+2409:4043:2c9a:d845::/128 Deny Spam
+2409:4043:2c9f:7494::/64 Deny Spam
+2409:4043:4e95:2f17::/64 Deny Spam
+2409:4050:d96:4391::/64 Deny Spam
+2409:4050:e19:975d::/64 Deny Spam
+2409:4050:e34:f5bd::/64 Deny Spam
+2409:4050:e94:9881::/64 Deny Spam
+2409:4050:e9c:2d39::/128 Deny Spam
+2409:4050:2d80:95de::/64 Deny Spam
+2409:4050:2d99:c16d::/64 Deny Spam
+2409:4050:2db0:c229::/64 Deny Spam
+2409:4050:2db2:f8::/64 Deny Spam
+2409:4050:2dc2:24ab::/64 Deny Spam
+2409:4050:2e03:7714::/128 Deny Spam
+2409:4050:2ec9:90c6::/64 Deny Spam
+2409:4052:240f:1934::/128 Deny Spam
+2409:4052:4e18:a162::/64 Deny Spam
+2409:4053:109:9fd3::/128 Deny Spam
+2409:4053:2e0a:2bae::/64 Deny Spam
+2409:4055:305:184f::/64 Deny Spam
+2409:4060:29e:1d8::/128 Deny Spam
+2409:4061:2c1e:ec02::/128 Deny Spam
+2409:4064:20f:df61::/128 Deny Spam
+2409:4072:6d17:bc80::/64 Deny Spam
+2409:4072:8e95:ee29::/128 Deny Spam
+Origin: IN
+Profile: Domestic ISP;Infrastructure/Transit
+Tag: Reliance Communications
+
+
 # ASN 54133 ("UnmeteredInternet.com").
 # North American ISP and also a source of spam.
 # Subtract 44.0.0.0/9, 44.128.0.0/10 (clean).
@@ -1908,13 +1975,19 @@ Profile: Domestic ISP
 Tag: Ote SA
 
 
-# ASN 28573 ("CLARO S.A"). A Brazilian domestic ISP caught spamming. Listing
-# just the affected ranges, plus all US ranges (interlaced cloud ranges).
-# Stop Forum Spam (SFS) listings: 3,799.
-# Updated: 2021.03.18
+# ASNs 11664, 19037, 28573 ("Techtel LMDS Comunicaciones Interactivas S.A",
+# "AMX Argentina S.A", "CLARO S.A").
+# A South American ISP caught performing brute-force and webapp attacks, port
+# scans, and spamming. Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 373 (AS11664), 190 (AS19037), 3,874 (AS28573).
+# Updated: 2021.08.23
 
-2804:14c:124:81fb::/64 Deny Spam
-2804:14d:78a2:85db::/64 Deny Spam
+2803:9800:9400:bf06::/64 Deny Spam
+Origin: AR
+2804:14c:bf34:958b::/64 Deny Spam
+2804:14d:3287:6491::/64 Deny Spam
+2804:14d:4cd8:123b::/64 Deny Spam
+2804:14d:90af:8ea1::/64 Deny Spam
 Origin: BR
 Profile: Domestic ISP
 Tag: CLARO S.A
@@ -2515,6 +2588,18 @@ Tag: Hutchison 3G UK Limited
 Origin: FR
 Profile: Domestic ISP;Infrastructure/Transit;Multiplay
 Tag: SFR SA
+
+
+# ASN 7545 ("TPG Telecom Limited").
+# Australian domestic ISP. Hack attempts, port scans, and spam detected from
+# here. Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 793.
+# Updated: 2021.08.23
+
+2001:4479:1a00:1e00::/64 Deny Spam
+Origin: AU
+Profile: Domestic ISP
+Tag: TPG Telecom Limited
 
 
 # ASN 57712 ("NPF SOFTVIDEO Ltd").

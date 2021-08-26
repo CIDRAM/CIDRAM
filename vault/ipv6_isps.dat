@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6_isps.dat
 
-# Version: 2021.234.583
-# Last modified: 2021.08.23
+# Version: 2021.237.453
+# Last modified: 2021.08.26
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -1453,18 +1453,6 @@ Tag: PJSC Rostelecom
 Origin: RU
 Profile: Domestic ISP
 Tag: PJSC Vimpelcom
-
-
-# ASN 31200 ("Novotelecom Ltd").
-# When updating ASNs, only block the problematic ASNs (those with known cases
-# of hacking events, spamming, etc); don't block the entire network.
-# Stop Forum Spam (SFS) listings: 632.
-# Updated: 2017.09.30 / Checked: 2021.01.02
-
-2a00:7700::/32 Deny Generic
-Origin: RU
-Profile: Domestic ISP
-Tag: Novotelecom Ltd
 
 
 # ASN 3255 (State Enterprise Scientific and Telecommunication Centre "Ukrainian

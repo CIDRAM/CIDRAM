@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6.dat
 
-# Version: 2021.234.583
-# Last modified: 2021.08.23
+# Version: 2021.237.453
+# Last modified: 2021.08.26
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -704,8 +704,8 @@ Tag: IOMart
 # Ocean SRL"). Unwanted traffic regularly encountered from here, including
 # brute-force, SSH, and webapp attacks, spam, and port scans. Also flagged by
 # honeypots.
-# Stop Forum Spam (SFS) listings: 79,630 (AS14061).
-# Updated: 2021.02.10 / Checked: 2021.06.28
+# Stop Forum Spam (SFS) listings: 89,900 (AS14061).
+# Updated: 2021.02.10 / Checked: 2021.08.26
 
 2400:6180::/48 Deny Cloud
 2400:6180:100::/40 Deny Cloud
@@ -3483,8 +3483,8 @@ Tag: HostSlim BV
 
 
 # ASN 43350 ("NForce Entertainment B.V").
-# Stop Forum Spam (SFS) listings: 60,127.
-# Updated: 2021.01.02
+# Stop Forum Spam (SFS) listings: 45,084.
+# Updated: 2021.08.26
 
 2a05:840::/48 Deny Cloud
 Origin: BZ
@@ -3492,7 +3492,7 @@ Origin: BZ
 Origin: DE
 2a04:b040::/47 Deny Cloud
 2a04:b040:2::/48 Deny Cloud
-2a0b:8400::/47 Deny Cloud
+2a0b:8400:1::/48 Deny Cloud
 Origin: EE
 2a02:2ca0::/32 Deny Cloud
 2a07:9942:39d8::/47 Deny Cloud
@@ -3502,6 +3502,7 @@ Origin: IL
 2a00:1768::/34 Deny Cloud
 2a00:1768:4000::/35 Deny Cloud
 2a00:1768:6000::/36 Deny Cloud
+2a0b:b600:110::/44 Deny Cloud
 2a0b:b600:3c04::/48 Deny Cloud
 Origin: NL
 2a0d:8cc0::/29 Deny Cloud
@@ -3511,7 +3512,7 @@ Origin: RU
 Origin: SC
 2a07:bd80::/29 Deny Cloud
 Origin: US
-Profile: Frequent changes;Tor endpoints here
+Profile: Frequent changes;Infrastructure/Transit;Multiplay;Tor endpoints here;Webhosting
 Tag: NForce Entertainment
 
 
@@ -8846,6 +8847,41 @@ Tag: MAXKO j.d.o.o
 Origin: HN
 Profile: Webhosting
 Tag: HOST PARA TU VIDA
+
+
+# ASN 205500 ("Mega Tec LLC").
+# Spam and brute-force attempts detected from here.
+# Stop Forum Spam (SFS) listings: 1.
+# Updated: 2021.08.26
+
+2a0f:5000::/29 Deny Cloud
+Origin: RU
+Profile: Commercial;Infrastructure/Transit
+Tag: Mega Tec LLC
+
+
+# ASN 48716 ("PS Internet Company LLC").
+# Brute-force, SSH, and webapp attacks, hacking, port scans, and spam detected
+# from here.
+# Stop Forum Spam (SFS) listings: 15.
+# Updated: 2021.08.26
+
+185.46.120.0/22 Deny Malware
+Origin: US
+Profile: Dedicated;Infrastructure/Transit;Webhosting
+Tag: PS Internet Company LLC
+
+
+# ASN 48716 ("PS Internet Company LLC").
+# Brute-force, SSH, and webapp attacks, hacking, port scans, and spam detected
+# from here.
+# Stop Forum Spam (SFS) listings: 15.
+# Updated: 2021.08.26
+
+2a00:5da0::/32 Deny Cloud
+Origin: KZ
+Profile: Dedicated;Infrastructure/Transit;Webhosting
+Tag: PS Internet Company LLC
 
 
 # ---

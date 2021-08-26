@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2021.08.11).
+ * This file: Front-end functions file (last modified: 2021.08.25).
  */
 
 /**
@@ -797,11 +797,13 @@ $CIDRAM['PrepareExtendedDescription'] = function (array &$Arr, $Key = '') use (&
     if (
         !empty($Arr['Used with']) &&
         !is_array($Arr['Used with']) &&
-        strpos($Arr['Extended Description'], 'signatures-&gt;') === false
+        strpos($Arr['Extended Description'], '-&gt;') === false
     ) {
-        $Arr['Extended Description'] .=
-            '<br /><em>' . $CIDRAM['L10N']->getString('label_used_with') .
-            '<code>signatures-&gt;' . $Arr['Used with'] . '</code></em>';
+        $Arr['Extended Description'] .= sprintf(
+            '<br /><em>%s <code>signatures-&gt;%s</code></em>',
+            $CIDRAM['L10N']->getString('label_used_with'),
+            $Arr['Used with']
+        );
     }
     if (!empty($Arr['False Positive Risk'])) {
         if ($Arr['False Positive Risk'] === 'Low') {
@@ -816,9 +818,12 @@ $CIDRAM['PrepareExtendedDescription'] = function (array &$Arr, $Key = '') use (&
         } else {
             return;
         }
-        $Arr['Extended Description'] .=
-            '<br /><em>' . $CIDRAM['L10N']->getString('label_false_positive_risk') .
-            '<span class="' . $Class . '">' . $State . '</span></em>';
+        $Arr['Extended Description'] .= sprintf(
+            '<br /><em>%s <span class="%s">%s</span></em>',
+            $CIDRAM['L10N']->getString('label_false_positive_risk'),
+            $Class,
+            $State
+        );
     }
 };
 
@@ -2396,7 +2401,7 @@ $CIDRAM['UpdatesHandler-Verify'] = function ($ID) use (&$CIDRAM) {
 
             /** Append results. */
             $Table .= sprintf(
-                '<code>%1$s</code> – %7$s%8$s – %9$s%10$s<br />%2$s – <code class="%6$s">%3$s</code><br />%4$s – <code class="%6$s">%5$s</code><hr />',
+                '<code>%1$s</code> – %7$s %8$s – %9$s %10$s<br />%2$s – <code class="%6$s">%3$s</code><br />%4$s – <code class="%6$s">%5$s</code><hr />',
                 $ThisFile,
                 $CIDRAM['L10N']->getString('label_actual'),
                 $Actual ?: '?',
@@ -3927,7 +3932,7 @@ $CIDRAM['ArrayToClickableList'] = function (array $Arr = [], $DeleteKey = '', $D
                 $Value = $CIDRAM['TimeFormat']($Value, $CIDRAM['Config']['general']['timeFormat']);
             }
             $Class = ($Key === $CIDRAM['L10N']->getString('field_size') || $Key === $CIDRAM['L10N']->getString('label_expires')) ? 'txtRd' : 's';
-            $Text = ($Count === 1 && $Key === 0) ? $Value : $Key . ($Class === 's' ? ' => ' : '') . $Value;
+            $Text = ($Count === 1 && $Key === 0) ? $Value : $Key . ($Class === 's' ? ' => ' : ' ') . $Value;
             $Output .= '<code class="' . $Class . '" style="word-wrap:break-word;word-break:break-all">' . str_replace(['<', '>'], ['&lt;', '&gt;'], $Text) . '</code>' . $Delete;
         }
         $Output .= '</li>' . ($Depth === 0 ? '<br /></span>' : '');

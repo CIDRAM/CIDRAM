@@ -7,12 +7,12 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Dutch language data for the front-end (last modified: 2021.08.11).
+# This file: Dutch language data for the front-end (last modified: 2021.08.26).
 ##/
 
 Extended Description Bypasses: "De standaard signature rondwegen normaal opgenomen met de primaire pakket."
 Extended Description CIDRAM: "De primaire pakket (zonder de signatures, documentatie en configuratie)."
-Extended Description Chart.js: "Hiermee kan de frontend taartdiagrammen genereren.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> is beschikbaar via de <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
+Extended Description Chart.js: "Hiermee kan de frontend taartdiagrammen genereren.<br />{{Links.Chart.js}} is beschikbaar via de <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
 Extended Description IPv4-Bogons: &ExtDesBogons "Blokkeert bogon/martian CIDR's."
 Extended Description IPv4-ISPs: &ExtDesISPs "Blokkeert gevaarlijk en spammy ISP's (omvat multiplay-netwerken, die zowel menselijke als niet-menselijke eindpunten kunnen bevatten)."
 Extended Description IPv4-Nonblocking: &ExtDesNonblocking "Handig voor profilering, maar blokkeert niets op zich."
@@ -23,7 +23,7 @@ Extended Description IPv6-ISPs: *ExtDesISPs
 Extended Description IPv6-Nonblocking: *ExtDesNonblocking
 Extended Description IPv6-Other: *ExtDesOther
 Extended Description IPv6: *ExtDesCloud
-Extended Description PHPMailer: "Vereist voor het gebruik van functionaliteit die het verzenden van e-mail vereisen.<br /><a href="https://github.com/PHPMailer/PHPMailer" hreflang="en" rel="noopener noreferrer external">PHPMailer</a> is beschikbaar via de <a href="https://github.com/PHPMailer/PHPMailer/blob/master/LICENSE" hreflang="en-US" rel="noopener external">LGPLv2.1</a>-licentie."
+Extended Description PHPMailer: "Vereist voor het gebruik van functionaliteit die het verzenden van e-mail vereisen.<br />{{Links.PHPMailer.PHPMailer}} is beschikbaar via de {{Links.PHPMailer.License}}-licentie."
 Extended Description flags.css: "Voegt vlagondersteuning toe aan de front-end logboekpagina."
 Extended Description module_abuseipdb.php: "Blokkeert aanvragen van IP's die worden vermeld op AbuseIPDB."
 Extended Description module_badhosts.php: "Blokkeert hosts die vaak worden gebruikt door spammers, hackers en andere kwaadwillige entiteiten."
@@ -222,7 +222,7 @@ field_execution_order: "De volgorde van uitvoering:"
 field_expiry: "Vervaltijd"
 field_false: "False (Vals)"
 field_file: "Bestand"
-field_filename: "Bestandsnaam: "
+field_filename: "Bestandsnaam:"
 field_filetype_directory: "Bestandsmap"
 field_filetype_info: "{EXT}-Bestand"
 field_filetype_unknown: "Onbekend"
@@ -251,7 +251,7 @@ field_repair: "Repareren"
 field_repair_all: "Repareren alles"
 field_reset: "Resetten"
 field_set_new_password: "Stel Nieuw Wachtwoord"
-field_size: "Totale Grootte: "
+field_size: "Totale Grootte:"
 field_size_GB: "GB"
 field_size_KB: "KB"
 field_size_MB: "MB"
@@ -277,7 +277,7 @@ field_verify_all: "Verifiëren alles"
 field_whitelisted_requests: "Verzoeken gemarkeerd als op de witte lijst"
 field_your_version: "Uw Versie"
 header_login: "Inloggen om verder te gaan."
-label_active_config_file: "Actief configuratiebestand: "
+label_active_config_file: "Actief configuratiebestand:"
 label_actual: "Actueel"
 label_aux_actBlk: "blokkeer"
 label_aux_actByp: "omzeil"
@@ -340,21 +340,21 @@ label_displaying_that_cite:
  - "%s items weergeven dat "%s" citeren."
 label_entries_per_page: "Inzendingen per pagina:"
 label_expected: "Verwacht"
-label_expires: "Verloopt: "
+label_expires: "Verloopt:"
 label_extension: "Extensie"
-label_false_positive_risk: "Vals positieve risico: "
+label_false_positive_risk: "Vals positieve risico:"
 label_fmgr_cache_data: "Cache data en tijdelijke bestanden"
-label_fmgr_disk_usage: "CIDRAM-schijfgebruik: "
-label_fmgr_free_space: "Vrije schijfruimte: "
+label_fmgr_disk_usage: "CIDRAM-schijfgebruik:"
+label_fmgr_free_space: "Vrije schijfruimte:"
 label_fmgr_other_sig: "Andere regels, signatuurbestanden, enz"
 label_fmgr_safety: "Veiligheidsmechanismen"
-label_fmgr_total_disk_usage: "Totaal schijfgebruik: "
-label_fmgr_total_space: "Totale schijfruimte: "
+label_fmgr_total_disk_usage: "Totaal schijfgebruik:"
+label_fmgr_total_space: "Totale schijfruimte:"
 label_fmgr_updates_metadata: "Component updates metadata"
 label_hide: "Verbergen"
 label_ignore: "Negeer dit"
 label_installed_available: "Geïnstalleerd/Beschikbaar"
-label_integrity_check: "Integriteitscontrole: "
+label_integrity_check: "Integriteitscontrole:"
 label_intersect: "Intersect"
 label_invisible: "Onzichtbaar"
 label_never: "Nooit"
@@ -369,9 +369,10 @@ label_paginate: "Pagineren"
 label_passed: "Verzoeken toegestaan"
 label_php: "PHP versie gebruikt:"
 label_preferred_source: "Voorkeursbron:"
+label_previous: "Vorig:"
 label_remember: "Onthouden"
 label_results: "Resultaten (%s in – %s verworpen – %s aanvaard – %s samengevoegd – %s uit):"
-label_sanity_check: "Gezondheidscontrole: "
+label_sanity_check: "Gezondheidscontrole:"
 label_sapi: "SAPI gebruikt:"
 label_sections_across_x_files:
  - "%s over %s bestand"
@@ -398,7 +399,7 @@ label_usemode_not_blkd: "Alleen wanneer niet geblokkeerd."
 label_usemode_not_blkd_mrkd: "Alleen wanneer niet geblokkeerd, of wanneer speciaal gemarkeerd voor gebruik, binnen de signatures limiet, en niet verbannen."
 label_unignore: "Niet negeer dit"
 label_unstable: "Laatste onstabiele:"
-label_used_with: "Gebruikt met: "
+label_used_with: "Gebruikt met:"
 label_your_ip: "Je IP:"
 label_your_ua: "Je UA:"
 link_accounts: "Accounts"
@@ -583,32 +584,32 @@ info_some_useful_links: |
      <ul class="pieul">
        <li><span class="comCat" style="cursor:pointer">Tools, bronnen, enz. voor CIDRAM.</span>
          <ul class="comSub">
-           <li><a href="https://github.com/CIDRAM/CIDRAM/issues" hreflang="en" rel="noopener noreferrer external">CIDRAM/CIDRAM/issues</a> – Kwesties pagina voor CIDRAM (steun, hulp, enz).</li>
-           <li><a href="https://wordpress.org/plugins/cidram/" rel="noopener noreferrer external">CIDRAM@WordPress.org</a> – WordPress plugin voor CIDRAM.</li>
-           <li><a href="https://git.macmathan.info/blocklists/" hreflang="en" rel="noopener noreferrer external">macmathan.info/blocklists</a> – Bevat optionele blokkeerlijsten en modules voor CIDRAM, zoals voor het blokkeren van gevaarlijke bots, ongewenste landen, verouderde browsers, enz.</li>
-           <li><a href="https://github.com/CIDRAM/CIDRAM-Extras" hreflang="en" rel="noopener noreferrer external">CIDRAM/CIDRAM-Extras</a> – Diverse extra's.</li>
+           <li>{{Links.CIDRAM.Issues}} – Kwesties pagina voor CIDRAM (steun, hulp, enz).</li>
+           <li>{{Links.CIDRAM.WordPress}} – WordPress plugin voor CIDRAM.</li>
+           <li>{{Links.MacMathan.Blocklists}} – Bevat optionele blokkeerlijsten en modules voor CIDRAM, zoals voor het blokkeren van gevaarlijke bots, ongewenste landen, verouderde browsers, enz.</li>
+           <li>{{Links.CIDRAM.Extras}} – Diverse extra's.</li>
          </ul>
        </li>
        <li><span class="comCat" style="cursor:pointer">Groepen, forums, communities, enz.</span>
          <ul class="comSub">
-           <li><a href="https://www.facebook.com/groups/2204685680/" rel="noopener noreferrer external">PHP.earth@Facebook</a> – PHP leermiddelen en discussie.</li>
+           <li>{{Links.PHP.Earth.Facebook}} – PHP leermiddelen en discussie.</li>
            <li><a href="https://www.stopforumspam.com/forum/" rel="noopener noreferrer external">Forum@Stop Forum Spam</a> – Nuttig discussieforum over het stoppen forum spam.</li>
          </ul>
        </li>
        <li><span class="comCat" style="cursor:pointer">Andere handige tools, bronnen, diensten, enz.</span>
          <ul class="comSub">
-           <li><a href="https://www.stopforumspam.com/" rel="noopener noreferrer external">Stop Forum Spam</a> – Beheert een database van bekende forumspammers. Handig voor het beschermen van websites en forums tegen spammers.</li>
+           <li>{{Links.Resources.SFS}} – Beheert een database van bekende forumspammers. Handig voor het beschermen van websites en forums tegen spammers.</li>
            <li><a href="https://bgp.he.net/" hreflang="en" rel="noopener noreferrer external">Hurricane Electric BGP Toolkit</a> – Krijg CIDR's van ASN, bepalen ASN relaties, ontdek ASN's op basis van netwerknamen, enz.</li>
-           <li><a href="https://bgpview.io/" hreflang="en" rel="noopener noreferrer external">BGPView</a> – Krijg CIDR's van ASN, bepalen ASN relaties, ontdek ASN's op basis van netwerknamen, enz.</li>
+           <li>{{Links.Resources.BGPView}} – Krijg CIDR's van ASN, bepalen ASN relaties, ontdek ASN's op basis van netwerknamen, enz.</li>
            <li><a href="https://radar.qrator.net/" hreflang="en" rel="noopener noreferrer external">Radar van Qrator</a> – Handig hulpmiddel voor het controleren van de connectiviteit van ASN's en ook voor diverse andere informatie over ASN's.</li>
            <li><a href="https://www.spamhaus.org/statistics/botnet-asn/" rel="noopener noreferrer external">Het Spamhaus Project</a> – Geeft rapporten over botnet infectie tarieven voor ASN.</li>
            <li><a href="https://www.abuseat.org/public/asn.html" hreflang="en" rel="noopener noreferrer external">Composite Blocking List@Abuseat.org</a> – Geeft rapporten over botnet infectie tarieven voor ASN.</li>
-           <li><a href="https://abuseipdb.com/" hreflang="en" rel="noopener noreferrer external">AbuseIPDB</a> – Onderhoudt een database van bekende beledigend IP's; Biedt een API voor het controleren en rapporteren van IP's.</li>
+           <li>{{Links.Resources.AbuseIPDB}} – Onderhoudt een database van bekende beledigend IP's; Biedt een API voor het controleren en rapporteren van IP's.</li>
          </ul>
        </li>
        <li><span class="comCat" style="cursor:pointer">Informatie en leermiddelen.</span>
          <ul class="comSub">
-           <li><a href="https://php.earth/" hreflang="en" rel="noopener noreferrer external">PHP.earth</a> – PHP leermiddelen en discussie.</li>
+           <li>{{Links.PHP.Earth.Website}} – PHP leermiddelen en discussie.</li>
            <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Kwetsbaarheidstabellen</a> – Hiermee worden veilige/onveilige versies van verschillende pakketten weergegeven (HHVM, PHP, phpMyAdmin, Python, enz).</li>
            <li><a href="https://maikuolan.github.io/Compatibility-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Compatibiliteitstabellen</a> – Hiermee worden informatie over compatibiliteit voor verschillende pakketten weergegeven (CIDRAM, phpMussel, enz).</li>
          </ul>

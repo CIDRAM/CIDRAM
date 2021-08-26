@@ -7,12 +7,12 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Portuguese language data for the front-end (last modified: 2021.08.11).
+# This file: Portuguese language data for the front-end (last modified: 2021.08.26).
 ##/
 
 Extended Description Bypasses: "Os arquivos para bypass das assinaturas padrão normalmente incluído com o pacote principal."
 Extended Description CIDRAM: "O pacote principal (menos as assinaturas, documentação e configuração)."
-Extended Description Chart.js: "Permite que o front-end gere gráficos de pizza.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> está disponível através do <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
+Extended Description Chart.js: "Permite que o front-end gere gráficos de pizza.<br />{{Links.Chart.js}} está disponível através do <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
 Extended Description IPv4-Bogons: &ExtDesBogons "Bloqueia bogon/marciano CIDRs."
 Extended Description IPv4-ISPs: &ExtDesISPs "Bloqueia ISPs perigosos e propensos a spam (inclui redes multijogos, que podem conter endpoints humanos e não humanos)."
 Extended Description IPv4-Nonblocking: &ExtDesNonblocking "Útil para criação de perfil, mas não bloqueia nada por si só."
@@ -23,7 +23,7 @@ Extended Description IPv6-ISPs: *ExtDesISPs
 Extended Description IPv6-Nonblocking: *ExtDesNonblocking
 Extended Description IPv6-Other: *ExtDesOther
 Extended Description IPv6: *ExtDesCloud
-Extended Description PHPMailer: "Necessário para usar qualquer funcionalidade que envolva o envio de email.<br /><a href="https://github.com/PHPMailer/PHPMailer" hreflang="en" rel="noopener noreferrer external">PHPMailer</a> está disponível através do licença <a href="https://github.com/PHPMailer/PHPMailer/blob/master/LICENSE" hreflang="en-US" rel="noopener external">LGPLv2.1</a>."
+Extended Description PHPMailer: "Necessário para usar qualquer funcionalidade que envolva o envio de email.<br />{{Links.PHPMailer.PHPMailer}} está disponível através do licença {{Links.PHPMailer.License}}."
 Extended Description flags.css: "Adiciona suporte de bandeiras à página de arquivos de registro do front-end."
 Extended Description module_abuseipdb.php: "Bloqueia solicitações de IPs listados no AbuseIPDB."
 Extended Description module_badhosts.php: "Bloqueia hosts frequentemente usados por spammers, hackers e outras entidades nefastas."
@@ -222,7 +222,7 @@ field_execution_order: "Ordem de execução:"
 field_expiry: "Expiração"
 field_false: "False (Falso)"
 field_file: "Arquivo"
-field_filename: "Nome do arquivo: "
+field_filename: "Nome do arquivo:"
 field_filetype_directory: "Diretório"
 field_filetype_info: "{EXT} Arquivo"
 field_filetype_unknown: "Desconhecido"
@@ -251,7 +251,7 @@ field_repair: "Reparar isso"
 field_repair_all: "Reparar tudo"
 field_reset: "Reiniciar"
 field_set_new_password: "Definir Nova Senha"
-field_size: "Tamanho Total: "
+field_size: "Tamanho Total:"
 field_size_GB: "GB"
 field_size_KB: "KB"
 field_size_MB: "MB"
@@ -277,7 +277,7 @@ field_verify_all: "Verifique tudo"
 field_whitelisted_requests: "Solicitações marcadas como na lista branca"
 field_your_version: "Sua Versão"
 header_login: "Por favor faça o login para continuar."
-label_active_config_file: "Arquivo de configuração ativo: "
+label_active_config_file: "Arquivo de configuração ativo:"
 label_actual: "Atual"
 label_aux_actBlk: "bloquear"
 label_aux_actByp: "contornar"
@@ -340,21 +340,21 @@ label_displaying_that_cite:
  - "Exibindo %s entradas que citam "%s"."
 label_entries_per_page: "Itens por página:"
 label_expected: "Esperado"
-label_expires: "Expirará: "
+label_expires: "Expirará:"
 label_extension: "Extensão"
-label_false_positive_risk: "Risco de falsos positivos: "
+label_false_positive_risk: "Risco de falsos positivos:"
 label_fmgr_cache_data: "Dados de cache e arquivos temporários"
-label_fmgr_disk_usage: "Uso do disco pelo CIDRAM: "
-label_fmgr_free_space: "Espaço livre no disco: "
+label_fmgr_disk_usage: "Uso do disco pelo CIDRAM:"
+label_fmgr_free_space: "Espaço livre no disco:"
 label_fmgr_other_sig: "Outras regras, arquivos de assinatura, etc"
 label_fmgr_safety: "Mecanismos de segurança"
-label_fmgr_total_disk_usage: "Uso total do disco: "
-label_fmgr_total_space: "Espaço total no disco: "
+label_fmgr_total_disk_usage: "Uso total do disco:"
+label_fmgr_total_space: "Espaço total no disco:"
 label_fmgr_updates_metadata: "Metadados para atualização de componentes"
 label_hide: "Ocultar"
 label_ignore: "Ignore isso"
 label_installed_available: "Instalado/Disponível"
-label_integrity_check: "Verificação de integridade: "
+label_integrity_check: "Verificação de integridade:"
 label_intersect: "A interseção dos dois conjuntos"
 label_invisible: "Invisível"
 label_never: "Nunca"
@@ -369,9 +369,10 @@ label_paginate: "Paginar"
 label_passed: "Solicitações aprovadas"
 label_php: "Versão do PHP usada:"
 label_preferred_source: "Fonte preferida:"
+label_previous: "Anterior:"
 label_remember: "Lembrar"
 label_results: "Resultados (%s entrada – %s rejeitado – %s aceito – %s mesclado – %s saída):"
-label_sanity_check: "Verificação de sanidade: "
+label_sanity_check: "Verificação de sanidade:"
 label_sapi: "SAPI usada:"
 label_sections_across_x_files:
  - "%s em %s arquivo"
@@ -398,7 +399,7 @@ label_usemode_not_blkd: "Somente quando não está bloqueado."
 label_usemode_not_blkd_mrkd: "Somente quando não está bloqueado, ou quando especialmente marcado para uso, dentro do limite de assinaturas, e não banido."
 label_unignore: "Não ignore isso"
 label_unstable: "Mais novo de instável:"
-label_used_with: "Usado com: "
+label_used_with: "Usado com:"
 label_your_ip: "Seu IP:"
 label_your_ua: "Seu UA:"
 link_accounts: "Contas"
@@ -583,32 +584,32 @@ info_some_useful_links: |
      <ul class="pieul">
        <li><span class="comCat" style="cursor:pointer">Ferramentas, recursos, etc para o CIDRAM.</span>
          <ul class="comSub">
-           <li><a href="https://github.com/CIDRAM/CIDRAM/issues" hreflang="en" rel="noopener noreferrer external">CIDRAM/CIDRAM/issues</a> – Página de problemas para CIDRAM (apoio, assistência, etc).</li>
-           <li><a href="https://wordpress.org/plugins/cidram/" rel="noopener noreferrer external">CIDRAM@WordPress.org</a> – WordPress plugin para CIDRAM.</li>
-           <li><a href="https://git.macmathan.info/blocklists/" hreflang="en" rel="noopener noreferrer external">macmathan.info/blocklists</a> – Contém listas de bloqueio e módulos opcionais para o CIDRAM, como para bloquear bots perigosos, países indesejados, navegadores desatualizados, etc.</li>
-           <li><a href="https://github.com/CIDRAM/CIDRAM-Extras" hreflang="en" rel="noopener noreferrer external">CIDRAM/CIDRAM-Extras</a> – Vários extras.</li>
+           <li>{{Links.CIDRAM.Issues}} – Página de problemas para CIDRAM (apoio, assistência, etc).</li>
+           <li>{{Links.CIDRAM.WordPress}} – WordPress plugin para CIDRAM.</li>
+           <li>{{Links.MacMathan.Blocklists}} – Contém listas de bloqueio e módulos opcionais para o CIDRAM, como para bloquear bots perigosos, países indesejados, navegadores desatualizados, etc.</li>
+           <li>{{Links.CIDRAM.Extras}} – Vários extras.</li>
          </ul>
        </li>
        <li><span class="comCat" style="cursor:pointer">Grupos, fóruns, comunidades, etc.</span>
          <ul class="comSub">
-           <li><a href="https://www.facebook.com/groups/2204685680/" rel="noopener noreferrer external">PHP.earth@Facebook</a> – PHP recursos de aprendizagem e discussão.</li>
+           <li>{{Links.PHP.Earth.Facebook}} – PHP recursos de aprendizagem e discussão.</li>
            <li><a href="https://www.stopforumspam.com/forum/" rel="noopener noreferrer external">Fórum@Stop Forum Spam</a> – Fórum de discussão útil sobre como parar o spam do fórum.</li>
          </ul>
        </li>
        <li><span class="comCat" style="cursor:pointer">Outras ferramentas, recursos, serviços, etc que são úteis.</span>
          <ul class="comSub">
-           <li><a href="https://www.stopforumspam.com/" rel="noopener noreferrer external">Stop Forum Spam</a> – Mantém um banco de dados de spammers de fórum conhecidos. Útil para proteger sites e fóruns contra spammers.</li>
+           <li>{{Links.Resources.SFS}} – Mantém um banco de dados de spammers de fórum conhecidos. Útil para proteger sites e fóruns contra spammers.</li>
            <li><a href="https://bgp.he.net/" hreflang="en" rel="noopener noreferrer external">Hurricane Electric BGP Toolkit</a> – Obter CIDRs de ASNs, Determinar relações de ASNs, descobrir ASNs com base em nomes de rede, etc.</li>
-           <li><a href="https://bgpview.io/" hreflang="en" rel="noopener noreferrer external">BGPView</a> – Obter CIDRs de ASNs, Determinar relações de ASNs, descobrir ASNs com base em nomes de rede, etc.</li>
+           <li>{{Links.Resources.BGPView}} – Obter CIDRs de ASNs, Determinar relações de ASNs, descobrir ASNs com base em nomes de rede, etc.</li>
            <li><a href="https://radar.qrator.net/" hreflang="en" rel="noopener noreferrer external">Radar por Qrator</a> – Ferramenta útil para verificar a conectividade de ASNs bem como para várias outras informações sobre ASNs.</li>
            <li><a href="https://www.spamhaus.org/statistics/botnet-asn/" rel="noopener noreferrer external">O Projeto Spamhaus</a> – Exibe relatórios sobre taxas de infecção por botnets para ASNs.</li>
            <li><a href="https://www.abuseat.org/public/asn.html" hreflang="en" rel="noopener noreferrer external">Lista de Bloqueio Composto@Abuseat.org</a> – Exibe relatórios sobre taxas de infecção por botnets para ASNs.</li>
-           <li><a href="https://abuseipdb.com/" hreflang="en" rel="noopener noreferrer external">AbuseIPDB</a> – Mantém um banco de dados de IPs abusivos conhecidos; Fornece uma API para verificar e reportar IPs.</li>
+           <li>{{Links.Resources.AbuseIPDB}} – Mantém um banco de dados de IPs abusivos conhecidos; Fornece uma API para verificar e reportar IPs.</li>
          </ul>
        </li>
        <li><span class="comCat" style="cursor:pointer">Recursos informativos e de aprendizagem.</span>
          <ul class="comSub">
-           <li><a href="https://php.earth/" hreflang="en" rel="noopener noreferrer external">PHP.earth</a> – PHP recursos de aprendizagem e discussão.</li>
+           <li>{{Links.PHP.Earth.Website}} – PHP recursos de aprendizagem e discussão.</li>
            <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Mapas de Vulnerabilidade</a> – Lista as versões seguras/inseguras de vários pacotes (HHVM, PHP, phpMyAdmin, Python, etc).</li>
            <li><a href="https://maikuolan.github.io/Compatibility-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Mapas de Compatibilidade</a> – Lista informações de compatibilidade para vários pacotes (CIDRAM, phpMussel, etc).</li>
          </ul>

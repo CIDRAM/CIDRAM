@@ -7,12 +7,12 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Korean language data for the front-end (last modified: 2021.08.11).
+# This file: Korean language data for the front-end (last modified: 2021.08.26).
 ##/
 
 Extended Description Bypasses: "기본 서명 우회 일반적으로 기본 패키지에 포함되어 있습니다."
 Extended Description CIDRAM: "메인 패키지 (서명, 문서, 구성, 은 포함되지 않습니다)."
-Extended Description Chart.js: "프런트 엔드에서 원형 차트를 생성 할 수 있습니다.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a>는 <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>를 통해 사용 가능합니다."
+Extended Description Chart.js: "프런트 엔드에서 원형 차트를 생성 할 수 있습니다.<br />{{Links.Chart.js}}는 <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>를 통해 사용 가능합니다."
 Extended Description IPv4-Bogons: &ExtDesBogons "보곤 CIDR을 차단합니다."
 Extended Description IPv4-ISPs: &ExtDesISPs "스팸 발송자를 가진 위험한 ISP를 차단합니다 (멀티 플레이 네트워크가 포함됩니다. 사람과 사람이 아닌 끝점을 모두 포함 할 수 있습니다)."
 Extended Description IPv4-Nonblocking: &ExtDesNonblocking "프로파일 링에 유용하지만 그 자체로 어떤 것도 차단하지 않습니다."
@@ -23,7 +23,7 @@ Extended Description IPv6-ISPs: *ExtDesISPs
 Extended Description IPv6-Nonblocking: *ExtDesNonblocking
 Extended Description IPv6-Other: *ExtDesOther
 Extended Description IPv6: *ExtDesCloud
-Extended Description PHPMailer: "이메일 전송과 관련된 기능 사용에 필요합니다.<br /><a href="https://github.com/PHPMailer/PHPMailer" hreflang="en" rel="noopener noreferrer external">PHPMailer</a>는 <a href="https://github.com/PHPMailer/PHPMailer/blob/master/LICENSE" hreflang="en-US" rel="noopener external">LGPLv2.1</a> 라이센스를 통해 사용 가능합니다."
+Extended Description PHPMailer: "이메일 전송과 관련된 기능 사용에 필요합니다.<br />{{Links.PHPMailer.PHPMailer}}는 {{Links.PHPMailer.License}} 라이센스를 통해 사용 가능합니다."
 Extended Description flags.css: "프론트 엔드 로그 페이지에 플래그 지원을 추가합니다."
 Extended Description module_abuseipdb.php: "AbuseIPDB에 나열된 IP의 요청을 차단합니다."
 Extended Description module_badhosts.php: "스패머, 해커 및 기타 사기꾼이 자주 사용하는 호스트를 차단합니다."
@@ -222,7 +222,7 @@ field_execution_order: "실행 순서 :"
 field_expiry: "만료"
 field_false: "False (거짓)"
 field_file: "파일"
-field_filename: "파일 이름 : "
+field_filename: "파일 이름 :"
 field_filetype_directory: "디렉토리"
 field_filetype_info: "{EXT} 파일"
 field_filetype_unknown: "알 수없는"
@@ -251,7 +251,7 @@ field_repair: "수리"
 field_repair_all: "모두 수리"
 field_reset: "재설정"
 field_set_new_password: "새 암호를 설정합니다"
-field_size: "전체 크기 : "
+field_size: "전체 크기 :"
 field_size_GB: "GB"
 field_size_KB: "KB"
 field_size_MB: "MB"
@@ -275,7 +275,7 @@ field_verify_all: "모두 검증"
 field_whitelisted_requests: "화이트리스트 된 것으로 표시된 요청"
 field_your_version: "사용 버전"
 header_login: "계속하려면 로그인하십시오."
-label_active_config_file: "활성 구성 파일 : "
+label_active_config_file: "활성 구성 파일 :"
 label_actual: "현재"
 label_aux_actBlk: "차단하"
 label_aux_actByp: "우회하"
@@ -334,21 +334,21 @@ label_displaying: "%s 항목이 표시됩니다."
 label_displaying_that_cite: ""%2$s"라고 표시된 %1$s 개의 항목이 표시됩니다."
 label_entries_per_page: "페이지당 항목 수 :"
 label_expected: "예상 된"
-label_expires: "만료일 : "
+label_expires: "만료일 :"
 label_extension: "확장"
-label_false_positive_risk: "거짓 양성 위험 : "
+label_false_positive_risk: "거짓 양성 위험 :"
 label_fmgr_cache_data: "캐시 데이터 및 임시 파일 "
-label_fmgr_disk_usage: "CIDRAM 디스크 사용 : "
-label_fmgr_free_space: "사용 가능한 디스크 공간 : "
+label_fmgr_disk_usage: "CIDRAM 디스크 사용 :"
+label_fmgr_free_space: "사용 가능한 디스크 공간 :"
 label_fmgr_other_sig: "기타 규칙, 서명 파일, 등"
 label_fmgr_safety: "안전 장치"
-label_fmgr_total_disk_usage: "총 디스크 사용 : "
-label_fmgr_total_space: "총 디스크 공간 : "
+label_fmgr_total_disk_usage: "총 디스크 사용 :"
+label_fmgr_total_space: "총 디스크 공간 :"
 label_fmgr_updates_metadata: "구성 요소 업데이트 메타 데이터"
 label_hide: "숨기다"
 label_ignore: "이것을 무시하십시오"
 label_installed_available: "설치되어있다 / 이용 가능"
-label_integrity_check: "무결성 검사 : "
+label_integrity_check: "무결성 검사 :"
 label_intersect: "교차"
 label_invisible: "보이지 않음"
 label_never: "못"
@@ -363,9 +363,10 @@ label_paginate: "페이지 매김"
 label_passed: "허용된 요청"
 label_php: "사용된 PHP 버전 :"
 label_preferred_source: "선호하는 출처 :"
+label_previous: "이전 :"
 label_remember: "기억하다"
 label_results: "결과 (%s 입력된 – %s 거부된 – %s 받아 들인 – %s 합병된 – %s 출력된) :"
-label_sanity_check: "건강 검사 : "
+label_sanity_check: "건강 검사 :"
 label_sapi: "사용된 SAPI :"
 label_sections_across_x_files: "%2$s 개 파일에 %1$s"
 label_sections_x_signatures: "%s 개의 서명"
@@ -388,7 +389,7 @@ label_usemode_not_blkd: "차단되지 때만."
 label_usemode_not_blkd_mrkd: "차단되지 않은 경우, 또는 특별히 사용 표시, 서명 한도 내고 금지되지 않으면 때만."
 label_unignore: "이것을 무시하지 마라"
 label_unstable: "최신 불안정 :"
-label_used_with: "용법 : "
+label_used_with: "용법 :"
 label_your_ip: "당신의 IP :"
 label_your_ua: "당신의 UA :"
 link_accounts: "계정"
@@ -569,32 +570,32 @@ info_some_useful_links: |
      <ul class="pieul">
        <li><span class="comCat" style="cursor:pointer">CIDRAM을위한 도구, 리소스, 등.</span>
          <ul class="comSub">
-           <li><a href="https://github.com/CIDRAM/CIDRAM/issues" hreflang="en" rel="noopener noreferrer external">CIDRAM/CIDRAM/issues</a> – CIDRAM 문제 페이지 (지원, 원조 등).</li>
-           <li><a href="https://wordpress.org/plugins/cidram/" rel="noopener noreferrer external">CIDRAM@WordPress.org</a> – CIDRAM 자료 WordPress 플러그인.</li>
-           <li><a href="https://git.macmathan.info/blocklists/" hreflang="en" rel="noopener noreferrer external">macmathan.info/blocklists</a> – 위험한 봇, 원치 않는 국가, 오래된 브라우저 등을 차단하기위한 CIDRAM 용 선택적 블록리스트 및 모듈을 포함합니다.</li>
-           <li><a href="https://github.com/CIDRAM/CIDRAM-Extras" hreflang="en" rel="noopener noreferrer external">CIDRAM/CIDRAM-Extras</a> – 다양한 부가 기능.</li>
+           <li>{{Links.CIDRAM.Issues}} – CIDRAM 문제 페이지 (지원, 원조 등).</li>
+           <li>{{Links.CIDRAM.WordPress}} – CIDRAM 자료 WordPress 플러그인.</li>
+           <li>{{Links.MacMathan.Blocklists}} – 위험한 봇, 원치 않는 국가, 오래된 브라우저 등을 차단하기위한 CIDRAM 용 선택적 블록리스트 및 모듈을 포함합니다.</li>
+           <li>{{Links.CIDRAM.Extras}} – 다양한 부가 기능.</li>
          </ul>
        </li>
        <li><span class="comCat" style="cursor:pointer">그룹, 포럼, 커뮤니티, 등.</span>
          <ul class="comSub">
-           <li><a href="https://www.facebook.com/groups/2204685680/" rel="noopener noreferrer external">PHP.earth@Facebook</a> – PHP 학습 자원과 토론.</li>
+           <li>{{Links.PHP.Earth.Facebook}} – PHP 학습 자원과 토론.</li>
            <li><a href="https://www.stopforumspam.com/forum/" rel="noopener noreferrer external">메세지 보드@Stop Forum Spam</a> – 포럼 스팸 정지에 관한 유용한 토론 포럼.</li>
          </ul>
        </li>
        <li><span class="comCat" style="cursor:pointer">기타 유용한 도구, 자원, 서비스, 등.</span>
          <ul class="comSub">
-           <li><a href="https://www.stopforumspam.com/" rel="noopener noreferrer external">Stop Forum Spam</a> – 알려진 포럼 스패머 데이터베이스를 유지 관리합니다. 스패머에 대한 보호 웹 사이트 및 포럼 보호에 유용합니다.</li>
+           <li>{{Links.Resources.SFS}} – 알려진 포럼 스패머 데이터베이스를 유지 관리합니다. 스패머에 대한 보호 웹 사이트 및 포럼 보호에 유용합니다.</li>
            <li><a href="https://bgp.he.net/" hreflang="en" rel="noopener noreferrer external">Hurricane Electric BGP Toolkit</a> – ASN에서 CIDR을 취득하는 ASN 관계를 결정하는 네트워크 이름에 따라 ASN을 감지, 등등.</li>
-           <li><a href="https://bgpview.io/" hreflang="en" rel="noopener noreferrer external">BGPView</a> – ASN에서 CIDR을 취득하는 ASN 관계를 결정하는 네트워크 이름에 따라 ASN을 감지, 등등.</li>
+           <li>{{Links.Resources.BGPView}} – ASN에서 CIDR을 취득하는 ASN 관계를 결정하는 네트워크 이름에 따라 ASN을 감지, 등등.</li>
            <li><a href="https://radar.qrator.net/" hreflang="en" rel="noopener noreferrer external">Qrator의 Radar</a> – ASN의 연결을 확인하는 데 유용한 도구; ASN에 관한 기타 다양한 정보.</li>
            <li><a href="https://www.spamhaus.org/statistics/botnet-asn/" rel="noopener noreferrer external">Spamhaus 프로젝트</a> – ASN의 봇넷 감염 속도에 대한 보고서를 표시합니다.</li>
            <li><a href="https://www.abuseat.org/public/asn.html" hreflang="en" rel="noopener noreferrer external">Abuseat.org의 복합 차단 목록</a> – ASN의 봇넷 감염 속도에 대한 보고서를 표시합니다.</li>
-           <li><a href="https://abuseipdb.com/" hreflang="en" rel="noopener noreferrer external">AbuseIPDB</a> – 알려진 위험한 IP 주소의 데이터베이스를 유지합니다; IP 주소를 확인하고보고하기위한 API를 제공합니다.</li>
+           <li>{{Links.Resources.AbuseIPDB}} – 알려진 위험한 IP 주소의 데이터베이스를 유지합니다; IP 주소를 확인하고보고하기위한 API를 제공합니다.</li>
          </ul>
        </li>
        <li><span class="comCat" style="cursor:pointer">정보 및 학습 리소스.</span>
          <ul class="comSub">
-           <li><a href="https://php.earth/" hreflang="en" rel="noopener noreferrer external">PHP.earth</a> – PHP 학습 자원과 토론.</li>
+           <li>{{Links.PHP.Earth.Website}} – PHP 학습 자원과 토론.</li>
            <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">취약점 차트</a> – 다양한 패키지의 안전하고 안전하지 않은 버전을 나열합니다 (HHVM, PHP, phpMyAdmin, Python, 기타).</li>
            <li><a href="https://maikuolan.github.io/Compatibility-Charts/" hreflang="en-AU" rel="noopener noreferrer external">호환성 차트</a> – 다양한 패키지에 대한 호환성 정보를 나열합니다 (CIDRAM, phpMussel, 기타).</li>
          </ul>

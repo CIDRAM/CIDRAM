@@ -7,12 +7,12 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Swedish language data for the front-end (last modified: 2021.08.11).
+# This file: Swedish language data for the front-end (last modified: 2021.08.26).
 ##/
 
 Extended Description Bypasses: "Standard bypass-filen som normalt ingår i huvudpaketet."
 Extended Description CIDRAM: "Huvudpaketet (minus signaturerna, dokumentationen och konfigurationen)."
-Extended Description Chart.js: "Gör det möjligt för framsidan att generera cirkeldiagram.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> är tillgängligt via <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
+Extended Description Chart.js: "Gör det möjligt för framsidan att generera cirkeldiagram.<br />{{Links.Chart.js}} är tillgängligt via <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
 Extended Description IPv4-Bogons: &ExtDesBogons "Blockerar bogon/martian CIDRer."
 Extended Description IPv4-ISPs: &ExtDesISPs "Blockerar farliga och spammiga internetleverantörer (inkluderar multiplay-nätverk, som kan innehålla både mänskliga och icke-mänskliga slutpunkter)."
 Extended Description IPv4-Nonblocking: &ExtDesNonblocking "Användbar för profilering, men blockerar inte något i sig."
@@ -23,7 +23,7 @@ Extended Description IPv6-ISPs: *ExtDesISPs
 Extended Description IPv6-Nonblocking: *ExtDesNonblocking
 Extended Description IPv6-Other: *ExtDesOther
 Extended Description IPv6: *ExtDesCloud
-Extended Description PHPMailer: "Krävs för att använda någon funktionalitet som involverar att skicka e-post.<br /><a href="https://github.com/PHPMailer/PHPMailer" hreflang="en" rel="noopener noreferrer external">PHPMailer</a> är tillgängligt via <a href="https://github.com/PHPMailer/PHPMailer/blob/master/LICENSE" hreflang="en-US" rel="noopener external">LGPLv2.1</a>-licensen."
+Extended Description PHPMailer: "Krävs för att använda någon funktionalitet som involverar att skicka e-post.<br />{{Links.PHPMailer.PHPMailer}} är tillgängligt via {{Links.PHPMailer.License}}-licensen."
 Extended Description flags.css: "Lägger flaggsupport till loggar sidan i frontenden."
 Extended Description module_abuseipdb.php: "Blockerar förfrågningar från IP-adresser som listas på AbuseIPDB."
 Extended Description module_badhosts.php: "Blockar värdar som ofta används av spammare, hackare och andra skändlig enheter."
@@ -222,7 +222,7 @@ field_execution_order: "Körningsorder:"
 field_expiry: "Upphörande"
 field_false: "False (Falsk)"
 field_file: "Fil"
-field_filename: "Filnamn: "
+field_filename: "Filnamn:"
 field_filetype_directory: "Katalog"
 field_filetype_info: "{EXT}-Fil"
 field_filetype_unknown: "Okänd"
@@ -251,7 +251,7 @@ field_repair: "Reparera"
 field_repair_all: "Reparera allt"
 field_reset: "Återställa"
 field_set_new_password: "Ange nytt lösenord"
-field_size: "Total storlek: "
+field_size: "Total storlek:"
 field_size_GB: "GB"
 field_size_KB: "KB"
 field_size_MB: "MB"
@@ -275,7 +275,7 @@ field_verify_all: "Verifiera allt"
 field_whitelisted_requests: "Vitlistade förfrågningar"
 field_your_version: "Din version"
 header_login: "Snälla logga in för att fortsätta."
-label_active_config_file: "Aktiv konfigurationsfil: "
+label_active_config_file: "Aktiv konfigurationsfil:"
 label_actual: "Aktuell"
 label_aux_actBlk: "blockera"
 label_aux_actByp: "kringgå"
@@ -338,21 +338,21 @@ label_displaying_that_cite:
  - "%s föremålen visas som citerar "%s"."
 label_entries_per_page: "Inlägg per sida:"
 label_expected: "Förväntad"
-label_expires: "Utgår: "
+label_expires: "Utgår:"
 label_extension: "Förlängning"
-label_false_positive_risk: "Falsk positiv risk: "
+label_false_positive_risk: "Falsk positiv risk:"
 label_fmgr_cache_data: "Cacherdata och tillfälliga filer"
-label_fmgr_disk_usage: "CIDRAM-diskanvändning: "
-label_fmgr_free_space: "Gratis diskutrymme: "
+label_fmgr_disk_usage: "CIDRAM-diskanvändning:"
+label_fmgr_free_space: "Gratis diskutrymme:"
 label_fmgr_other_sig: "Andra regler, signaturfiler, osv"
 label_fmgr_safety: "Säkerhetsmekanismer"
-label_fmgr_total_disk_usage: "Totalt diskanvändning: "
-label_fmgr_total_space: "Totalt diskutrymme: "
+label_fmgr_total_disk_usage: "Totalt diskanvändning:"
+label_fmgr_total_space: "Totalt diskutrymme:"
 label_fmgr_updates_metadata: "Komponentuppdateringsmetadata"
 label_hide: "Dölja"
 label_ignore: "Ignorera detta"
 label_installed_available: "Installerad/Tillgängliga"
-label_integrity_check: "Integritetskontroll: "
+label_integrity_check: "Integritetskontroll:"
 label_intersect: "Skärningspunkten"
 label_invisible: "Osynlig"
 label_never: "Aldrig"
@@ -367,9 +367,10 @@ label_paginate: "Paginera"
 label_passed: "Förfrågningar godkända"
 label_php: "PHP-version som används:"
 label_preferred_source: "Föredragen källa:"
+label_previous: "Tidigare:"
 label_remember: "Ihåg"
 label_results: "Resultat (%s i – %s avvisade – %s accepterad – %s kombinerad – %s ut):"
-label_sanity_check: "Säkerhetskontroll: "
+label_sanity_check: "Säkerhetskontroll:"
 label_sapi: "SAPI som används:"
 label_sections_across_x_files:
  - "%s över %s fil"
@@ -396,7 +397,7 @@ label_usemode_not_blkd: "Endast när det inte blockerat."
 label_usemode_not_blkd_mrkd: "Endast när det inte blockerat, eller när det speciellt markerad för användning, inom signaturgränsen, och inte förbjudet."
 label_unignore: "Inte ignorera detta"
 label_unstable: "Senaste instabil:"
-label_used_with: "Används med: "
+label_used_with: "Används med:"
 label_your_ip: "Din IP:"
 label_your_ua: "Din UA:"
 link_accounts: "Konton"
@@ -581,32 +582,32 @@ info_some_useful_links: |
      <ul class="pieul">
        <li><span class="comCat" style="cursor:pointer">Verktyg, resurser, osv för CIDRAM.</span>
          <ul class="comSub">
-           <li><a href="https://github.com/CIDRAM/CIDRAM/issues" hreflang="en" rel="noopener noreferrer external">CIDRAM/CIDRAM/issues</a> – Issues sida för CIDRAM (stöd, hjälp, osv).</li>
-           <li><a href="https://wordpress.org/plugins/cidram/" rel="noopener noreferrer external">CIDRAM@WordPress.org</a> – WordPress plugin för CIDRAM.</li>
-           <li><a href="https://git.macmathan.info/blocklists/" hreflang="en" rel="noopener noreferrer external">macmathan.info/blocklists</a> – Innehåller valfria blocklistor och moduler för CIDRAM, t.ex. för blockering av farliga robotar, oönskade länder, föråldrade webbläsare, osv.</li>
-           <li><a href="https://github.com/CIDRAM/CIDRAM-Extras" hreflang="en" rel="noopener noreferrer external">CIDRAM/CIDRAM-Extras</a> – Olika extras.</li>
+           <li>{{Links.CIDRAM.Issues}} – Issues sida för CIDRAM (stöd, hjälp, osv).</li>
+           <li>{{Links.CIDRAM.WordPress}} – WordPress plugin för CIDRAM.</li>
+           <li>{{Links.MacMathan.Blocklists}} – Innehåller valfria blocklistor och moduler för CIDRAM, t.ex. för blockering av farliga robotar, oönskade länder, föråldrade webbläsare, osv.</li>
+           <li>{{Links.CIDRAM.Extras}} – Olika extras.</li>
          </ul>
        </li>
        <li><span class="comCat" style="cursor:pointer">Grupper, forum, samhällen, osv.</span>
          <ul class="comSub">
-           <li><a href="https://www.facebook.com/groups/2204685680/" rel="noopener noreferrer external">PHP.earth@Facebook</a> – PHP lärande resurser och diskussion.</li>
+           <li>{{Links.PHP.Earth.Facebook}} – PHP lärande resurser och diskussion.</li>
            <li><a href="https://www.stopforumspam.com/forum/" rel="noopener noreferrer external">Forum@Stop Forum Spam</a> – Användbart diskussionsforum om att stoppa forums spam.</li>
          </ul>
        </li>
        <li><span class="comCat" style="cursor:pointer">Andra användbara verktyg, resurser, tjänster, osv.</span>
          <ul class="comSub">
-           <li><a href="https://www.stopforumspam.com/" rel="noopener noreferrer external">Stop Forum Spam</a> – Hanterar en databas med kända forumspammare. Användbar för att skydda webbplatser och forum mot spammare.</li>
+           <li>{{Links.Resources.SFS}} – Hanterar en databas med kända forumspammare. Användbar för att skydda webbplatser och forum mot spammare.</li>
            <li><a href="https://bgp.he.net/" hreflang="en" rel="noopener noreferrer external">Hurricane Electric BGP Toolkit</a> – Få CIDRer från ASNer, bestäm ASN-relationer, upptäck ASNer baserat på nätverksnamn, osv.</li>
-           <li><a href="https://bgpview.io/" hreflang="en" rel="noopener noreferrer external">BGPView</a> – Få CIDRer från ASNer, bestäm ASN-relationer, upptäck ASNer baserat på nätverksnamn, osv.</li>
+           <li>{{Links.Resources.BGPView}} – Få CIDRer från ASNer, bestäm ASN-relationer, upptäck ASNer baserat på nätverksnamn, osv.</li>
            <li><a href="https://radar.qrator.net/" hreflang="en" rel="noopener noreferrer external">Radar av Qrator</a> – Användbart verktyg för att kontrollera ASN-anslutningar samt för annan information om ASNer.</li>
            <li><a href="https://www.spamhaus.org/statistics/botnet-asn/" rel="noopener noreferrer external">Spamhausprojektet</a> – Visar rapporter om botnätinfektionshastigheter för ASNer.</li>
            <li><a href="https://www.abuseat.org/public/asn.html" hreflang="en" rel="noopener noreferrer external">Abuseat.orgs Sammansatta Blockeringslista</a> – Visar rapporter om botnätinfektionshastigheter för ASNer.</li>
-           <li><a href="https://abuseipdb.com/" hreflang="en" rel="noopener noreferrer external">AbuseIPDB</a> – Upprätthåller en databas med kända kränkande IP-adresser; Ger ett API för kontroll och rapportering av IP-adresser.</li>
+           <li>{{Links.Resources.AbuseIPDB}} – Upprätthåller en databas med kända kränkande IP-adresser; Ger ett API för kontroll och rapportering av IP-adresser.</li>
          </ul>
        </li>
        <li><span class="comCat" style="cursor:pointer">Informations och lärande resurser.</span>
          <ul class="comSub">
-           <li><a href="https://php.earth/" hreflang="en" rel="noopener noreferrer external">PHP.earth</a> – PHP lärande resurser och diskussion.</li>
+           <li>{{Links.PHP.Earth.Website}} – PHP lärande resurser och diskussion.</li>
            <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Sårbarhetstabeller</a> – Listar säkra/osäkra versioner av olika paket (HHVM, PHP, phpMyAdmin, Python, osv).</li>
            <li><a href="https://maikuolan.github.io/Compatibility-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Kompatibilitetstabeller</a> – Visar kompatibilitetsinformation för olika paket (CIDRAM, phpMussel, osv).</li>
          </ul>

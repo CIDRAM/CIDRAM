@@ -7,12 +7,12 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Turkish language data for the front-end (last modified: 2021.08.11).
+# This file: Turkish language data for the front-end (last modified: 2021.08.26).
 ##/
 
 Extended Description Bypasses: "Varsayılan imza bypass'lar, normalde ana paketle birlikte verilir."
 Extended Description CIDRAM: "Ana paket (hariç imzalar, belgeler, ve yapılandırma)."
-Extended Description Chart.js: "Ön uçların pasta grafikler oluşturmasını sağlar.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a>, <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a> üzerinden kullanılabilir."
+Extended Description Chart.js: "Ön uçların pasta grafikler oluşturmasını sağlar.<br />{{Links.Chart.js}}, <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a> üzerinden kullanılabilir."
 Extended Description IPv4-Bogons: &ExtDesBogons "Bogon/martian CIDR'leri engeller."
 Extended Description IPv4-ISPs: &ExtDesISPs "Tehlikeli ve spam yapan ISS'leri engeller (çoklu hizmet ağları içerir; bunlar insan ve ayrıca insan dışı uç noktaları içerebilir)."
 Extended Description IPv4-Nonblocking: &ExtDesNonblocking "Profil oluşturma için kullanışlıdır, ancak kendi başına hiçbir şeyi engellemez."
@@ -23,7 +23,7 @@ Extended Description IPv6-ISPs: *ExtDesISPs
 Extended Description IPv6-Nonblocking: *ExtDesNonblocking
 Extended Description IPv6-Other: *ExtDesOther
 Extended Description IPv6: *ExtDesCloud
-Extended Description PHPMailer: "E-posta göndermeyi içeren herhangi bir işlev kullanmak için gereklidir.<br /><a href="https://github.com/PHPMailer/PHPMailer" hreflang="en" rel="noopener noreferrer external">PHPMailer</a>, <a href="https://github.com/PHPMailer/PHPMailer/blob/master/LICENSE" hreflang="en-US" rel="noopener external">LGPLv2.1 </a> lisansı üzerinden kullanılabilir."
+Extended Description PHPMailer: "E-posta göndermeyi içeren herhangi bir işlev kullanmak için gereklidir.<br />{{Links.PHPMailer.PHPMailer}}, {{Links.PHPMailer.License}} lisansı üzerinden kullanılabilir."
 Extended Description flags.css: "Ön uç günlükleri sayfasına bayrak desteği ekler."
 Extended Description module_abuseipdb.php: "AbuseIPDB'de listelenen IP'lerden gelen istekleri engeller."
 Extended Description module_badhosts.php: "Spam gönderenler, bilgisayar korsanları ve diğer haince varlıklar tarafından sıkça kullanılan ana bilgisayarları engeller."
@@ -222,7 +222,7 @@ field_execution_order: "Yürütme sırası:"
 field_expiry: "Bitim süresi"
 field_false: "False (Yanlış)"
 field_file: "Dosya"
-field_filename: "Dosya adı: "
+field_filename: "Dosya adı:"
 field_filetype_directory: "Rehber"
 field_filetype_info: "{EXT} Dosya"
 field_filetype_unknown: "Bilinmiyor"
@@ -251,7 +251,7 @@ field_repair: "Tamir"
 field_repair_all: "Tümünü tamir"
 field_reset: "Sıfırla"
 field_set_new_password: "Yeni Şifre Oluştur"
-field_size: "Toplam Boyut: "
+field_size: "Toplam Boyut:"
 field_size_GB: "GB"
 field_size_KB: "KB"
 field_size_MB: "MB"
@@ -275,7 +275,7 @@ field_verify_all: "Tümünü doğrula"
 field_whitelisted_requests: "Beyaz listeye eklenen istekler"
 field_your_version: "Sürümünüz"
 header_login: "Devam etmek için lütfen giriş yapınız."
-label_active_config_file: "Etkin yapılandırma dosyası: "
+label_active_config_file: "Etkin yapılandırma dosyası:"
 label_actual: "Şimdiki"
 label_aux_actBlk: "engelleyin"
 label_aux_actByp: "atlayın"
@@ -338,21 +338,21 @@ label_displaying_that_cite:
  - ""%2$s" ibaresi verilen %1$s öğe görüntüleniyor."
 label_entries_per_page: "Sayfa başına girişler:"
 label_expected: "Beklenen"
-label_expires: "Son Geçerlilik Tarihi: "
+label_expires: "Son Geçerlilik Tarihi:"
 label_extension: "Uzantısı"
-label_false_positive_risk: "Yalancı pozitif risk: "
+label_false_positive_risk: "Yalancı pozitif risk:"
 label_fmgr_cache_data: "Önbellek verileri ve geçici dosyalar"
-label_fmgr_disk_usage: "CIDRAM disk kullanımı: "
-label_fmgr_free_space: "Boş disk alanı: "
+label_fmgr_disk_usage: "CIDRAM disk kullanımı:"
+label_fmgr_free_space: "Boş disk alanı:"
 label_fmgr_other_sig: "Diğer kurallar, imza dosyaları, vb"
 label_fmgr_safety: "Güvenlik mekanizmaları"
-label_fmgr_total_disk_usage: "Toplam disk kullanımı: "
-label_fmgr_total_space: "Toplam disk alanı: "
+label_fmgr_total_disk_usage: "Toplam disk kullanımı:"
+label_fmgr_total_space: "Toplam disk alanı:"
 label_fmgr_updates_metadata: "Bileşen güncellemeleri meta verileri"
 label_hide: "Saklamak"
 label_ignore: "Bunu görmezden gel"
 label_installed_available: "Yüklü/Mevcut"
-label_integrity_check: "Bütünlük denetimi: "
+label_integrity_check: "Bütünlük denetimi:"
 label_intersect: "Kesişim"
 label_invisible: "Görünmez"
 label_never: "Asla"
@@ -367,9 +367,10 @@ label_paginate: "Sayfalandır"
 label_passed: "İzin verilen istekler"
 label_php: "Kullanılan PHP sürümü:"
 label_preferred_source: "Tercih edilen kaynak:"
+label_previous: "Önceki:"
 label_remember: "Hatırlamak"
 label_results: "Sonuçlar (%s giriş – %s reddedildi – %s kabul edildi – %s birleşti – %s çıktı):"
-label_sanity_check: "Güvenlik denetimi: "
+label_sanity_check: "Güvenlik denetimi:"
 label_sapi: "Kullanılan SAPI:"
 label_sections_across_x_files: "%sda %s imza"
 label_sections_x_signatures: "%s dosya"
@@ -392,7 +393,7 @@ label_usemode_not_blkd: "Yalnızca engellenmediğinde."
 label_usemode_not_blkd_mrkd: "Yalnızca engellenmediğinde, veya kullanım için özel olarak işaretlendiğinde, imza sınırı dahilindeyken, ve yasaklanmadığında."
 label_unignore: "Bunu görmezden gelme"
 label_unstable: "En yeni kararsız:"
-label_used_with: "İle kullanılan: "
+label_used_with: "İle kullanılan:"
 label_your_ip: "Senin IP:"
 label_your_ua: "Senin UA:"
 link_accounts: "Hesaplar"
@@ -573,32 +574,32 @@ info_some_useful_links: |
      <ul class="pieul">
        <li><span class="comCat" style="cursor:pointer">CIDRAM için araçlar, kaynaklar, vb.</span>
          <ul class="comSub">
-           <li><a href="https://github.com/CIDRAM/CIDRAM/issues" hreflang="en" rel="noopener noreferrer external">CIDRAM/CIDRAM/issues</a> – CIDRAM için sorunlar sayfası (destek, yardım, vb).</li>
-           <li><a href="https://wordpress.org/plugins/cidram/" rel="noopener noreferrer external">CIDRAM@WordPress.org</a> – CIDRAM için WordPress eklentisi.</li>
-           <li><a href="https://git.macmathan.info/blocklists/" hreflang="en" rel="noopener noreferrer external">macmathan.info/blocklists</a> – Tehlikeli botları, istenmeyen ülkeleri, güncel olmayan tarayıcıları, vb engellemek için, CIDRAM için isteğe bağlı blok listeleri ve modüller içerir.</li>
-           <li><a href="https://github.com/CIDRAM/CIDRAM-Extras" hreflang="en" rel="noopener noreferrer external">CIDRAM/CIDRAM-Extras</a> – Çeşitli ekstralar.</li>
+           <li>{{Links.CIDRAM.Issues}} – CIDRAM için sorunlar sayfası (destek, yardım, vb).</li>
+           <li>{{Links.CIDRAM.WordPress}} – CIDRAM için WordPress eklentisi.</li>
+           <li>{{Links.MacMathan.Blocklists}} – Tehlikeli botları, istenmeyen ülkeleri, güncel olmayan tarayıcıları, vb engellemek için, CIDRAM için isteğe bağlı blok listeleri ve modüller içerir.</li>
+           <li>{{Links.CIDRAM.Extras}} – Çeşitli ekstralar.</li>
          </ul>
        </li>
        <li><span class="comCat" style="cursor:pointer">Gruplar, forumlar, topluluklar, vb.</span>
          <ul class="comSub">
-           <li><a href="https://www.facebook.com/groups/2204685680/" rel="noopener noreferrer external">PHP.earth@Facebook</a> – PHP öğrenme kaynakları ve tartışmalar.</li>
+           <li>{{Links.PHP.Earth.Facebook}} – PHP öğrenme kaynakları ve tartışmalar.</li>
            <li><a href="https://www.stopforumspam.com/forum/" rel="noopener noreferrer external">Forum@Stop Forum Spam</a> – Forum spamını durdurmayla ilgili faydalı forum.</li>
          </ul>
        </li>
        <li><span class="comCat" style="cursor:pointer">Diğer faydalı araçlar, kaynaklar, hizmetler, vb.</span>
          <ul class="comSub">
-           <li><a href="https://www.stopforumspam.com/" rel="noopener noreferrer external">Stop Forum Spam</a> – Bilinen forum spam göndericileri veritabanını yönetir. Web sitelerini ve forumları spam göndericilere karşı korumak için kullanışlıdır.</li>
+           <li>{{Links.Resources.SFS}} – Bilinen forum spam göndericileri veritabanını yönetir. Web sitelerini ve forumları spam göndericilere karşı korumak için kullanışlıdır.</li>
            <li><a href="https://bgp.he.net/" hreflang="en" rel="noopener noreferrer external">Hurricane Electric BGP Toolkit</a> – ASN'lerden CIDR'ler alın, ASN ilişkilerini belirleyin, ağ adlarına dayalı ASN'leri keşfedin.</li>
-           <li><a href="https://bgpview.io/" hreflang="en" rel="noopener noreferrer external">BGPView</a> – ASN'lerden CIDR'ler alın, ASN ilişkilerini belirleyin, ağ adlarına dayalı ASN'leri keşfedin.</li>
+           <li>{{Links.Resources.BGPView}} – ASN'lerden CIDR'ler alın, ASN ilişkilerini belirleyin, ağ adlarına dayalı ASN'leri keşfedin.</li>
            <li><a href="https://radar.qrator.net/" hreflang="en" rel="noopener noreferrer external">Radar by Qrator</a> – ASN'lerin bağlantısını kontrol etmek için yararlı araç ve ASN'ler hakkında çeşitli diğer bilgiler.</li>
            <li><a href="https://www.spamhaus.org/statistics/botnet-asn/" rel="noopener noreferrer external">Spamhaus Projesi</a> – ASN'ler için botnet enfeksiyon oranları ile ilgili raporları görüntüler.</li>
            <li><a href="https://www.abuseat.org/public/asn.html" hreflang="en" rel="noopener noreferrer external">Abuseat.org'un Kompozit Engelleme Listesi</a> – ASN'ler için botnet enfeksiyon oranları ile ilgili raporları görüntüler.</li>
-           <li><a href="https://abuseipdb.com/" hreflang="en" rel="noopener noreferrer external">AbuseIPDB</a> – Bilinen kötü amaçlı IP'lerin veritabanını korur; IP'leri denetlemek ve raporlamak için bir API sağlar.</li>
+           <li>{{Links.Resources.AbuseIPDB}} – Bilinen kötü amaçlı IP'lerin veritabanını korur; IP'leri denetlemek ve raporlamak için bir API sağlar.</li>
          </ul>
        </li>
        <li><span class="comCat" style="cursor:pointer">Bilgi ve öğrenme kaynakları.</span>
          <ul class="comSub">
-           <li><a href="https://php.earth/" hreflang="en" rel="noopener noreferrer external">PHP.earth</a> – PHP öğrenme kaynakları ve tartışmalar.</li>
+           <li>{{Links.PHP.Earth.Website}} – PHP öğrenme kaynakları ve tartışmalar.</li>
            <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Güvenlik Açığı Tabloları</a> – Çeşitli paketler (HHVM, PHP, phpMyAdmin, Python, vb) güvenli/güvensiz sürümlerini listeler.</li>
            <li><a href="https://maikuolan.github.io/Compatibility-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Uyumluluk Tabloları</a> – Çeşitli paketler (CIDRAM, phpMussel, vb) için uyumluluk bilgilerini listeler.</li>
          </ul>

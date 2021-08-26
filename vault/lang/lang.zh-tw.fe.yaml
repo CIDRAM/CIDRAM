@@ -7,12 +7,12 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (traditional) language data for the front-end (last modified: 2021.08.11).
+# This file: Chinese (traditional) language data for the front-end (last modified: 2021.08.26).
 ##/
 
 Extended Description Bypasses: "標準簽名旁路文件通常包括在主包。"
 Extended Description CIDRAM: "主包（沒有簽名文件，文檔，和配置）。"
-Extended Description Chart.js: "使前端能夠生成餅圖。<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a>可通過<a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>獲得。"
+Extended Description Chart.js: "使前端能夠生成餅圖。<br />{{Links.Chart.js}}可通過<a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>獲得。"
 Extended Description IPv4-Bogons: &ExtDesBogons "阻止bogon/火星CIDR。"
 Extended Description IPv4-ISPs: &ExtDesISPs "阻止危險和垃圾容易ISP（包括多重播放網絡，可能包含人類和非人類端點）。"
 Extended Description IPv4-Nonblocking: &ExtDesNonblocking "對分類有用，但不會自行阻止任何事物。"
@@ -23,7 +23,7 @@ Extended Description IPv6-ISPs: *ExtDesISPs
 Extended Description IPv6-Nonblocking: *ExtDesNonblocking
 Extended Description IPv6-Other: *ExtDesOther
 Extended Description IPv6: *ExtDesCloud
-Extended Description PHPMailer: "使用涉及發送電子郵件的任何功能時需要。<br /><a href="https://github.com/PHPMailer/PHPMailer" hreflang="en" rel="noopener noreferrer external">PHPMailer</a>可通過<a href="https://github.com/PHPMailer/PHPMailer/blob/master/LICENSE" hreflang="en-US" rel="noopener external">LGPLv2.1</a>許可證獲得。"
+Extended Description PHPMailer: "使用涉及發送電子郵件的任何功能時需要。<br />{{Links.PHPMailer.PHPMailer}}可通過{{Links.PHPMailer.License}}許可證獲得。"
 Extended Description flags.css: "向前端日誌頁面添加旗支持。"
 Extended Description module_abuseipdb.php: "阻止來自AbuseIPDB列出的IP的請求。"
 Extended Description module_badhosts.php: "阻止垃圾郵件發送者，黑客，和其他惡意實體經常使用的主機。"
@@ -334,16 +334,16 @@ label_displaying: "顯示%s個項目。"
 label_displaying_that_cite: "顯示%s個包含『%s』的項目。"
 label_entries_per_page: "每頁項目數："
 label_expected: "預期"
-label_expires: "過期： "
+label_expires: "過期："
 label_extension: "擴展"
 label_false_positive_risk: "假陽性風險："
 label_fmgr_cache_data: "緩存數據和臨時文件"
-label_fmgr_disk_usage: "CIDRAM使用的磁盤空間： "
-label_fmgr_free_space: "可用磁盤空間： "
+label_fmgr_disk_usage: "CIDRAM使用的磁盤空間："
+label_fmgr_free_space: "可用磁盤空間："
 label_fmgr_other_sig: "其他規則，簽名文件，等等"
 label_fmgr_safety: "安全機制"
-label_fmgr_total_disk_usage: "總共使用的磁盤空間： "
-label_fmgr_total_space: "總磁盤空間： "
+label_fmgr_total_disk_usage: "總共使用的磁盤空間："
+label_fmgr_total_space: "總磁盤空間："
 label_fmgr_updates_metadata: "組件更新元數據"
 label_hide: "隱藏"
 label_ignore: "忽略這個"
@@ -363,6 +363,7 @@ label_paginate: "分頁"
 label_passed: "允許的請求"
 label_php: "目前使用PHP版本："
 label_preferred_source: "首選來源："
+label_previous: "以前的："
 label_remember: "記得"
 label_results: "結果 （%s 輸入 – %s 拒絕 – %s 公認 – %s 合併 – %s 產量）："
 label_sanity_check: "安全檢查："
@@ -569,33 +570,33 @@ info_some_useful_links: |
      <ul class="pieul">
        <li><span class="comCat" style="cursor:pointer">CIDRAM的工具，資源，等等。</span>
          <ul class="comSub">
-           <li><a href="https://github.com/CIDRAM/CIDRAM/issues" hreflang="en" rel="noopener noreferrer external">CIDRAM/CIDRAM/issues</a> – CIDRAM問題頁面（支持，​協助，​等等）。</li>
-           <li><a href="https://wordpress.org/plugins/cidram/" rel="noopener noreferrer external">CIDRAM＠WordPress.org</a> – CIDRAM WordPress插件。</li>
+           <li>{{Links.CIDRAM.Issues}} – CIDRAM問題頁面（支持，​協助，​等等）。</li>
+           <li>{{Links.CIDRAM.WordPress}} – CIDRAM WordPress插件。</li>
            <li><a href="https://www.oschina.net/p/CIDRAM" hreflang="zh-CN" rel="noopener noreferrer external">CIDRAM＠開源中國社區</a> – CIDRAM頁面託管在開源中國社區。</li>
-           <li><a href="https://git.macmathan.info/blocklists/" hreflang="en" rel="noopener noreferrer external">macmathan.info/blocklists</a> – 包含用於CIDRAM的可選阻止列表和模塊，用於（例如）阻止危險機器人，不需要的國家，過時的瀏覽器等等目的。</li>
-           <li><a href="https://github.com/CIDRAM/CIDRAM-Extras" hreflang="en" rel="noopener noreferrer external">CIDRAM/CIDRAM-Extras</a> – 各種附加功能。</li>
+           <li>{{Links.MacMathan.Blocklists}} – 包含用於CIDRAM的可選阻止列表和模塊，用於（例如）阻止危險機器人，不需要的國家，過時的瀏覽器等等目的。</li>
+           <li>{{Links.CIDRAM.Extras}} – 各種附加功能。</li>
          </ul>
        </li>
        <li><span class="comCat" style="cursor:pointer">團體，論壇，社區，等等。</span>
          <ul class="comSub">
-           <li><a href="https://www.facebook.com/groups/2204685680/" rel="noopener noreferrer external">PHP.earth ＠ Facebook</a> – PHP學習資源和討論。</li>
+           <li>{{Links.PHP.Earth.Facebook}} – PHP學習資源和討論。</li>
            <li><a href="https://www.stopforumspam.com/forum/" rel="noopener noreferrer external">論壇 ＠ Stop Forum Spam</a> – 有用的討論論壇關於停止論壇垃圾郵件。</li>
          </ul>
        </li>
        <li><span class="comCat" style="cursor:pointer">其他有用的工具，資源，服務，等等</span>
          <ul class="comSub">
-           <li><a href="https://www.stopforumspam.com/" rel="noopener noreferrer external">Stop Forum Spam</a> – 維護已知論壇垃圾郵件發送者的數據庫。有用的保護網站和論壇免受垃圾郵件發送者的攻。</li>
+           <li>{{Links.Resources.SFS}} – 維護已知論壇垃圾郵件發送者的數據庫。有用的保護網站和論壇免受垃圾郵件發送者的攻。</li>
            <li><a href="https://bgp.he.net/" hreflang="en" rel="noopener noreferrer external">Hurricane Electric BGP Toolkit</a> – 從ASN獲取CIDR，​確定ASN關係，​基於網絡名稱發現ASN，​等等。</li>
-           <li><a href="https://bgpview.io/" hreflang="en" rel="noopener noreferrer external">BGPView</a> – 從ASN獲取CIDR，​確定ASN關係，​基於網絡名稱發現ASN，​等等。</li>
+           <li>{{Links.Resources.BGPView}} – 從ASN獲取CIDR，​確定ASN關係，​基於網絡名稱發現ASN，​等等。</li>
            <li><a href="https://radar.qrator.net/" hreflang="en" rel="noopener noreferrer external">Qrator的Radar</a> – 檢查ASN連接的有用工具，​以及關於ASN的各種其他信息。</li>
            <li><a href="https://www.spamhaus.org/statistics/botnet-asn/" rel="noopener noreferrer external">Spamhaus項目</a> – 顯示有​關ASN殭屍網絡感染率的報告。</li>
            <li><a href="https://www.abuseat.org/public/asn.html" hreflang="en" rel="noopener noreferrer external">Abuseat.org的複合阻止列表</a> – 顯示有​關ASN殭屍網絡感染率的報告。</li>
-           <li><a href="https://abuseipdb.com/" hreflang="en" rel="noopener noreferrer external">AbuseIPDB</a> – 維護已知的濫用IP數據庫。它為IP檢查和報告提供了一個API。</li>
+           <li>{{Links.Resources.AbuseIPDB}} – 維護已知的濫用IP數據庫。它為IP檢查和報告提供了一個API。</li>
          </ul>
        </li>
        <li><span class="comCat" style="cursor:pointer">信息和學習資源。</span>
          <ul class="comSub">
-           <li><a href="https://php.earth/" hreflang="en" rel="noopener noreferrer external">PHP.earth</a> – PHP學習資源和討論。</li>
+           <li>{{Links.PHP.Earth.Website}} – PHP學習資源和討論。</li>
            <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">脆弱性圖表</a> – 列出各種軟件包的安全/不安全版本（HHVM，PHP，phpMyAdmin，Python等等）。</li>
            <li><a href="https://maikuolan.github.io/Compatibility-Charts/" hreflang="en-AU" rel="noopener noreferrer external">兼容性圖表</a> – 列出各種軟件包的兼容性信息（CIDRAM，phpMussel，等等）。</li>
          </ul>

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2021.08.11).
+ * This file: Front-end handler (last modified: 2021.08.25).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -2098,9 +2098,11 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && ($CIDRAM['FE']['Per
         }
         if ($CIDRAM['Components']['ThisComponent']['VersionSize'] > 0) {
             $CIDRAM['FormatFilesize']($CIDRAM['Components']['ThisComponent']['VersionSize']);
-            $CIDRAM['Components']['ThisComponent']['VersionSize'] =
-                '<br />' . $CIDRAM['L10N']->getString('field_size') .
-                $CIDRAM['Components']['ThisComponent']['VersionSize'];
+            $CIDRAM['Components']['ThisComponent']['VersionSize'] = sprintf(
+                '<br />%s %s',
+                $CIDRAM['L10N']->getString('field_size'),
+                $CIDRAM['Components']['ThisComponent']['VersionSize']
+            );
         } else {
             $CIDRAM['Components']['ThisComponent']['VersionSize'] = '';
         }
@@ -2117,9 +2119,11 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && ($CIDRAM['FE']['Per
         }
         if ($CIDRAM['Components']['ThisComponent']['LatestSize'] > 0) {
             $CIDRAM['FormatFilesize']($CIDRAM['Components']['ThisComponent']['LatestSize']);
-            $CIDRAM['Components']['ThisComponent']['LatestSize'] =
-                '<br />' . $CIDRAM['L10N']->getString('field_size') .
-                $CIDRAM['Components']['ThisComponent']['LatestSize'];
+            $CIDRAM['Components']['ThisComponent']['LatestSize'] = sprintf(
+                '<br />%s %s',
+                $CIDRAM['L10N']->getString('field_size'),
+                $CIDRAM['Components']['ThisComponent']['LatestSize']
+            );
         } else {
             $CIDRAM['Components']['ThisComponent']['LatestSize'] = '';
         }
@@ -2142,7 +2146,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && ($CIDRAM['FE']['Per
         $CIDRAM['Components']['ThisComponent']['Filename'] = (
             empty($CIDRAM['Components']['ThisComponent']['Files']['To']) ||
             count($CIDRAM['Components']['ThisComponent']['Files']['To']) !== 1
-        ) ? '' : '<br />' . $CIDRAM['L10N']->getString('field_filename') . $CIDRAM['Components']['ThisComponent']['Files']['To'][0];
+        ) ? '' : '<br />' . $CIDRAM['L10N']->getString('field_filename') . ' ' . $CIDRAM['Components']['ThisComponent']['Files']['To'][0];
 
         /** Finalise entry. */
         if (
@@ -2305,9 +2309,11 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && ($CIDRAM['FE']['Per
             }
             if ($CIDRAM['Components']['ThisComponent']['LatestSize'] > 0) {
                 $CIDRAM['FormatFilesize']($CIDRAM['Components']['ThisComponent']['LatestSize']);
-                $CIDRAM['Components']['ThisComponent']['LatestSize'] =
-                    '<br />' . $CIDRAM['L10N']->getString('field_size') .
-                    $CIDRAM['Components']['ThisComponent']['LatestSize'];
+                $CIDRAM['Components']['ThisComponent']['LatestSize'] = sprintf(
+                    '<br />%s %s',
+                    $CIDRAM['L10N']->getString('field_size'),
+                    $CIDRAM['Components']['ThisComponent']['LatestSize']
+                );
             } else {
                 $CIDRAM['Components']['ThisComponent']['LatestSize'] = '';
             }

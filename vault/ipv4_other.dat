@@ -1,8 +1,8 @@
 # IPv4 signatures file (CIDRs for proxies, VPNs and other miscellaneous unwanted services).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv4_other.dat
 
-# Version: 2021.212.157
-# Last modified: 2021.08.01
+# Version: 2021.237.453
+# Last modified: 2021.08.26
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -39,9 +39,10 @@ Tag: Cogent Proxies
 
 
 # ASN 205100 ("F3 Netze e.V").
-# Provides TOR exit nodes. A significant source of spam.
-# Stop Forum Spam (SFS) listings: 96,683.
-# Updated: 2018.04.23 / Checked: 2021.02.02
+# Provides tor exit nodes. A significant source of spam.
+# Caught masquerading as Baidu while sniffing for vulnerabilities.
+# Stop Forum Spam (SFS) listings: 156,555.
+# Updated: 2018.04.23 / Checked: 2021.08.26
 
 185.220.100.0/24 Deny Proxy
 Origin: DE
@@ -104,8 +105,9 @@ Tag: Packet Flip
 
 # ASN 396507 ("Emerald Onion").
 # Anonymous tor endpoints here; Significant source of spam.
-# Stop Forum Spam (SFS) listings: 17,878.
-# Updated: 2020.08.05 / Checked: 2021.03.21
+# Caught masquerading as Baidu while sniffing for vulnerabilities.
+# Stop Forum Spam (SFS) listings: 26,971.
+# Updated: 2020.08.05 / Checked: 2021.08.26
 
 23.129.64.0/24 Deny Proxy
 103.232.206.0/23 Deny Proxy

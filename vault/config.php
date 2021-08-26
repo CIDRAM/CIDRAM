@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Configuration handler (last modified: 2021.07.01).
+ * This file: Configuration handler (last modified: 2021.08.25).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -17,7 +17,7 @@ if (!defined('CIDRAM')) {
 }
 
 /** CIDRAM version number (SemVer). */
-$CIDRAM['ScriptVersion'] = '2.6.0';
+$CIDRAM['ScriptVersion'] = '2.7.0';
 
 /** CIDRAM version identifier (complete notation). */
 $CIDRAM['ScriptIdent'] = 'CIDRAM v' . $CIDRAM['ScriptVersion'];
@@ -87,7 +87,7 @@ if (isset($CIDRAM['Overrides']) && $CIDRAM['Overrides'] === false) {
 }
 
 /** Attempts to parse the CIDRAM configuration defaults file. */
-$CIDRAM['YAML']->process($CIDRAM['ReadFile']($CIDRAM['Vault'] . 'config.yaml'), $CIDRAM['Config']);
+$CIDRAM['YAML']->process($CIDRAM['ReadFile']($CIDRAM['Vault'] . 'config.yaml'), $CIDRAM['Config'], 0, true);
 
 /** Kills the script if parsing the configuration defaults file fails. */
 if (empty($CIDRAM['Config']['Config Defaults'])) {
@@ -154,9 +154,10 @@ if (!empty($CIDRAM['Config']['general']['hide_version'])) {
 /** Instantiate the request class. */
 $CIDRAM['Request'] = new \Maikuolan\Common\Request();
 $CIDRAM['Request']->DefaultTimeout = $CIDRAM['Config']['general']['default_timeout'];
-$CIDRAM['Request']->Channels = (
-    $Channels = $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'channels.yaml')
-) ? (new \Maikuolan\Common\YAML($Channels))->Data : [];
+$CIDRAM['ChannelsDataArray'] = [];
+$CIDRAM['YAML']->process($CIDRAM['ReadFile']($CIDRAM['Vault'] . 'channels.yaml'), $CIDRAM['ChannelsDataArray']);
+$CIDRAM['Request']->Channels = $CIDRAM['ChannelsDataArray'] ?: [];
+unset($CIDRAM['ChannelsDataArray']);
 if (!isset($CIDRAM['Request']->Channels['Triggers'])) {
     $CIDRAM['Request']->Channels['Triggers'] = [];
 }

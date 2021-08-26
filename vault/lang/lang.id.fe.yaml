@@ -7,11 +7,11 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Indonesian language data for the front-end (last modified: 2021.08.11).
+# This file: Indonesian language data for the front-end (last modified: 2021.08.26).
 ##/
 
 Extended Description Bypasses: "File untuk bypass tanda tangan standar yang biasanya disertakan dengan paket utama."
-Extended Description Chart.js: "Memungkinkan bagian depan untuk menghasilkan bagan pai.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> tersedia melalui <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
+Extended Description Chart.js: "Memungkinkan bagian depan untuk menghasilkan bagan pai.<br />{{Links.Chart.js}} tersedia melalui <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
 Extended Description IPv4-Bogons: &ExtDesBogons "Memblokir CIDR bogon/martian."
 Extended Description IPv4-ISPs: &ExtDesISPs "Memblokir ISP berbahaya dan spam rawan (termasuk jaringan multi-permainan, yang mungkin berisi titik akhir manusia dan non-manusia)."
 Extended Description IPv4-Nonblocking: &ExtDesNonblocking "Berguna untuk membuat profil, tetapi tidak memblokir apapun dengan sendirinya."
@@ -22,7 +22,7 @@ Extended Description IPv6-ISPs: *ExtDesISPs
 Extended Description IPv6-Nonblocking: *ExtDesNonblocking
 Extended Description IPv6-Other: *ExtDesOther
 Extended Description IPv6: *ExtDesCloud
-Extended Description PHPMailer: "Diperlukan untuk menggunakan fungsionalitas apapun yang melibatkan pengiriman email.<br /><a href="https://github.com/PHPMailer/PHPMailer" hreflang="en" rel="noopener noreferrer external">PHPMailer</a> tersedia melalui lisensi <a href="https://github.com/PHPMailer/PHPMailer/blob/master/LICENSE" hreflang="en-US" rel="noopener external">LGPLv2.1</a>."
+Extended Description PHPMailer: "Diperlukan untuk menggunakan fungsionalitas apapun yang melibatkan pengiriman email.<br />{{Links.PHPMailer.PHPMailer}} tersedia melalui lisensi {{Links.PHPMailer.License}}."
 Extended Description flags.css: "Menambahkan dukungan bendera ke halaman log bagian depan."
 Extended Description module_abuseipdb.php: "Memblokir permintaan dari IP yang terdaftar oleh AbuseIPDB."
 Extended Description module_badhosts.php: "Memblokir host yang sering digunakan oleh spammer, peretas, dan entitas jahat lainnya."
@@ -222,7 +222,7 @@ field_execution_order: "Urutan eksekusi:"
 field_expiry: "Kadaluarsa"
 field_false: "False (Palsu)"
 field_file: "File"
-field_filename: "Nama file: "
+field_filename: "Nama file:"
 field_filetype_directory: "Direktori"
 field_filetype_info: "File {EXT}"
 field_filetype_unknown: "Tidak Diketahui"
@@ -251,7 +251,7 @@ field_repair: "Memperbaiki"
 field_repair_all: "Memperbaiki semua"
 field_reset: "Mengatur Kembali"
 field_set_new_password: "Buat Baru Kata Sandi"
-field_size: "Ukuran Total: "
+field_size: "Ukuran Total:"
 field_size_GB: "GB"
 field_size_KB: "KB"
 field_size_MB: "MB"
@@ -275,7 +275,7 @@ field_verify: "Memverifikasi"
 field_verify_all: "Memverifikasi semua"
 field_your_version: "Versi Anda"
 header_login: "Silahkan masuk untuk melanjutkan."
-label_active_config_file: "File konfigurasi aktif: "
+label_active_config_file: "File konfigurasi aktif:"
 label_actual: "Sebenarnya"
 label_aux_actBlk: "memblokir"
 label_aux_actByp: "melewati"
@@ -334,21 +334,21 @@ label_displaying: "Menampilkan %s entri."
 label_displaying_that_cite: "Menampilkan %s entri yang berisi "%s"."
 label_entries_per_page: "Entri per halaman:"
 label_expected: "Diharapkan"
-label_expires: "Kedaluwarsa: "
+label_expires: "Kedaluwarsa:"
 label_extension: "Ekstensi"
-label_false_positive_risk: "Risiko positif palsu: "
+label_false_positive_risk: "Risiko positif palsu:"
 label_fmgr_cache_data: "Data cache dan file sementara"
-label_fmgr_disk_usage: "Penggunaan disk CIDRAM: "
-label_fmgr_free_space: "Ruang disk kosong: "
+label_fmgr_disk_usage: "Penggunaan disk CIDRAM:"
+label_fmgr_free_space: "Ruang disk kosong:"
 label_fmgr_other_sig: "Aturan dan file tanda tangan lain, dll"
 label_fmgr_safety: "Mekanisme keamanan"
-label_fmgr_total_disk_usage: "Penggunaan disk total: "
-label_fmgr_total_space: "Ruang disk total: "
+label_fmgr_total_disk_usage: "Penggunaan disk total:"
+label_fmgr_total_space: "Ruang disk total:"
 label_fmgr_updates_metadata: "Komponen memperbarui metadata"
 label_hide: "Menyembunyikan"
 label_ignore: "Abaikan ini"
 label_installed_available: "Diinstal/Tersedia"
-label_integrity_check: "Pemeriksaan integritas: "
+label_integrity_check: "Pemeriksaan integritas:"
 label_intersect: "Intersekt"
 label_invisible: "Tak terlihat"
 label_never: "Tak pernah"
@@ -363,9 +363,10 @@ label_paginate: "Mempaginasi"
 label_passed: "Permintaan berlalu"
 label_php: "Versi PHP digunakan:"
 label_preferred_source: "Sumber yang disukai:"
+label_previous: "Sebelumnya:"
 label_remember: "Ingat"
 label_results: "Hasil (%s dimasukkan – %s ditolak – %s diterima – %s digabungkan – %s keluaran):"
-label_sanity_check: "Pemeriksaan kewarasan: "
+label_sanity_check: "Pemeriksaan kewarasan:"
 label_sapi: "SAPI digunakan:"
 label_sections_across_x_files: "%s di %s file"
 label_sections_x_signatures: "%s tanda tangan"
@@ -388,7 +389,7 @@ label_usemode_not_blkd: "Hanya jika tidak diblokir."
 label_usemode_not_blkd_mrkd: "Hanya jika tidak diblokir, atau jika ditandai khusus untuk digunakan, dalam batas tanda tangan, dan tidak dilarang."
 label_unignore: "Jangan abaikan ini"
 label_unstable: "Terbaru tidak stabil:"
-label_used_with: "Digunakan dengan: "
+label_used_with: "Digunakan dengan:"
 label_your_ip: "IP Anda:"
 label_your_ua: "UA Anda:"
 link_accounts: "Akun"
@@ -569,32 +570,32 @@ info_some_useful_links: |
      <ul class="pieul">
        <li><span class="comCat" style="cursor:pointer">Alat, sumber daya, dll untuk CIDRAM.</span>
          <ul class="comSub">
-           <li><a href="https://github.com/CIDRAM/CIDRAM/issues" hreflang="en" rel="noopener noreferrer external">CIDRAM/CIDRAM/issues</a> – Halaman masalah untuk CIDRAM (dukungan, bantuan, dll).</li>
-           <li><a href="https://wordpress.org/plugins/cidram/" rel="noopener noreferrer external">CIDRAM@WordPress.org</a> – Plugin WordPress untuk CIDRAM.</li>
-           <li><a href="https://git.macmathan.info/blocklists/" hreflang="en" rel="noopener noreferrer external">macmathan.info/blocklists</a> – Berisi daftar blok opsional dan modul untuk CIDRAM seperti untuk memblokir bot berbahaya, negara yang tidak diinginkan, peramban yang ketinggalan jaman, dll.</li>
-           <li><a href="https://github.com/CIDRAM/CIDRAM-Extras" hreflang="en" rel="noopener noreferrer external">CIDRAM/CIDRAM-Extras</a> – Berbagai tambahan.</li>
+           <li>{{Links.CIDRAM.Issues}} – Halaman masalah untuk CIDRAM (dukungan, bantuan, dll).</li>
+           <li>{{Links.CIDRAM.WordPress}} – Plugin WordPress untuk CIDRAM.</li>
+           <li>{{Links.MacMathan.Blocklists}} – Berisi daftar blok opsional dan modul untuk CIDRAM seperti untuk memblokir bot berbahaya, negara yang tidak diinginkan, peramban yang ketinggalan jaman, dll.</li>
+           <li>{{Links.CIDRAM.Extras}} – Berbagai tambahan.</li>
          </ul>
        </li>
        <li><span class="comCat" style="cursor:pointer">Grup, forum, komunitas, dll.</span>
          <ul class="comSub">
-           <li><a href="https://www.facebook.com/groups/2204685680/" rel="noopener noreferrer external">PHP.earth@Facebook</a> – Sumber belajar dan diskusi PHP.</li>
+           <li>{{Links.PHP.Earth.Facebook}} – Sumber belajar dan diskusi PHP.</li>
            <li><a href="https://www.stopforumspam.com/forum/" rel="noopener noreferrer external">Forum@Stop Forum Spam</a> – Forum diskusi yang berguna tentang menghentikan spam forum.</li>
          </ul>
        </li>
        <li><span class="comCat" style="cursor:pointer">Alat, sumber daya, layanan, dll bermanfaat lainnya.</span>
          <ul class="comSub">
-           <li><a href="https://www.stopforumspam.com/" rel="noopener noreferrer external">Stop Forum Spam</a> – Mempertahankan basis data spammer forum yang dikenal. Berguna untuk melindungi situs web dan forum terhadap spammer.</li>
+           <li>{{Links.Resources.SFS}} – Mempertahankan basis data spammer forum yang dikenal. Berguna untuk melindungi situs web dan forum terhadap spammer.</li>
            <li><a href="https://bgp.he.net/" hreflang="en" rel="noopener noreferrer external">Hurricane Electric BGP Toolkit</a> – Dapatkan CIDRs dari ASN, menentukan hubungan ASN, menemukan ASN berdasarkan nama jaringan, dll.</li>
-           <li><a href="https://bgpview.io/" hreflang="en" rel="noopener noreferrer external">BGPView</a> – Dapatkan CIDRs dari ASN, menentukan hubungan ASN, menemukan ASN berdasarkan nama jaringan, dll.</li>
+           <li>{{Links.Resources.BGPView}} – Dapatkan CIDRs dari ASN, menentukan hubungan ASN, menemukan ASN berdasarkan nama jaringan, dll.</li>
            <li><a href="https://radar.qrator.net/" hreflang="en" rel="noopener noreferrer external">Radar oleh Qrator</a> – Alat yang berguna untuk memeriksa konektivitas ASN serta berbagai informasi lainnya tentang ASN.</li>
            <li><a href="https://www.spamhaus.org/statistics/botnet-asn/" rel="noopener noreferrer external">Proyek Spamhaus</a> – Menampilkan laporan tentang tingkat infeksi botnet untuk ASN.</li>
            <li><a href="https://www.abuseat.org/public/asn.html" hreflang="en" rel="noopener noreferrer external">Daftar Pemblokiran Komposit dari Abuseat.org</a> – Menampilkan laporan tentang tingkat infeksi botnet untuk ASN.</li>
-           <li><a href="https://abuseipdb.com/" hreflang="en" rel="noopener noreferrer external">AbuseIPDB</a> – Mempertahankan database IP berbahaya dikenal; Menyediakan API untuk memeriksa dan melaporkan IP.</li>
+           <li>{{Links.Resources.AbuseIPDB}} – Mempertahankan database IP berbahaya dikenal; Menyediakan API untuk memeriksa dan melaporkan IP.</li>
          </ul>
        </li>
        <li><span class="comCat" style="cursor:pointer">Sumber daya informasi dan pembelajaran.</span>
          <ul class="comSub">
-           <li><a href="https://php.earth/" hreflang="en" rel="noopener noreferrer external">PHP.earth</a> – Sumber belajar dan diskusi PHP.</li>
+           <li>{{Links.PHP.Earth.Website}} – Sumber belajar dan diskusi PHP.</li>
            <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Tabel Kerentanan</a> – Mencantumkan berbagai versi dari paket-paket yang aman dan tidak aman (HHVM, PHP, phpMyAdmin, Python, dll).</li>
            <li><a href="https://maikuolan.github.io/Compatibility-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Tabel Kompatibilitas</a> – Mencantumkan informasi kompatibilitas untuk berbagai paket (CIDRAM, phpMussel, dll).</li>
          </ul>

@@ -7,11 +7,11 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Japanese language data for the front-end (last modified: 2021.08.11).
+# This file: Japanese language data for the front-end (last modified: 2021.08.26).
 ##/
 
 Extended Description Bypasses: "メインパッケージに通常含まれているデフォルト・シグネチャ・バイパス。"
-Extended Description Chart.js: "フロントエンドが円グラフを生成できるようにします。<br />「<a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a>」は、「<a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>」を介して利用可能です。"
+Extended Description Chart.js: "フロントエンドが円グラフを生成できるようにします。<br />「{{Links.Chart.js}}」は、「<a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>」を介して利用可能です。"
 Extended Description IPv4-Bogons: &ExtDesBogons "ボゴンＣＩＤＲをブロックします。"
 Extended Description IPv4-ISPs: &ExtDesISPs "スパマーを持つ危険なＩＳＰをブロックします（マルチプレイ・ネットワークが含まれています。人間と人間以外のエンドポイントの両方が含まれる場合があります）。"
 Extended Description IPv4-Nonblocking: &ExtDesNonblocking "プロファイリングに役立ちますが、それ自体では何もブロックしません。"
@@ -22,7 +22,7 @@ Extended Description IPv6-ISPs: *ExtDesISPs
 Extended Description IPv6-Nonblocking: *ExtDesNonblocking
 Extended Description IPv6-Other: *ExtDesOther
 Extended Description IPv6: *ExtDesCloud
-Extended Description PHPMailer: "電子Ｅメールの送信を含む機能の使用に必要です。<br />「<a href="https://github.com/PHPMailer/PHPMailer" hreflang="en" rel="noopener noreferrer external">PHPMailer</a>」は、「<a href="https://github.com/PHPMailer/PHPMailer/blob/master/LICENSE" hreflang="en-US" rel="noopener external">LGPLv2.1</a>」ライセンスを介して利用可能です。"
+Extended Description PHPMailer: "電子Ｅメールの送信を含む機能の使用に必要です。<br />「{{Links.PHPMailer.PHPMailer}}」は、「{{Links.PHPMailer.License}}」ライセンスを介して利用可能です。"
 Extended Description flags.css: "フロントエンド・ログページにフラグ・サポートを追加します。"
 Extended Description module_abuseipdb.php: "AbuseIPDBにリストされているＩＰからの要求をブロックします。"
 Extended Description module_badhosts.php: "スパマー、ハッカー、およびその他の悪意のあるエンティティによって頻繁に使用されるホストをブロックします。"
@@ -334,16 +334,16 @@ label_displaying: "%sエントリが表示されます。"
 label_displaying_that_cite: "「%2$s」を含む%1$sつのエントリが表示されます。"
 label_entries_per_page: "ページあたりのエントリ数："
 label_expected: "予想される"
-label_expires: "有効期限： "
+label_expires: "有効期限："
 label_extension: "エクステンション"
-label_false_positive_risk: "オプション： "
+label_false_positive_risk: "オプション："
 label_fmgr_cache_data: "キャッシュ・データとテンポラリ・ファイル"
-label_fmgr_disk_usage: "CIDRAMディスク使用量： "
+label_fmgr_disk_usage: "CIDRAMディスク使用量："
 label_fmgr_free_space: "空きディスク容量："
 label_fmgr_other_sig: "その他の規則、シグネチャ・ファイル、など"
 label_fmgr_safety: "安全メカニズム"
-label_fmgr_total_disk_usage: "ディスク使用量の合計： "
-label_fmgr_total_space: "ディスク容量の合計： "
+label_fmgr_total_disk_usage: "ディスク使用量の合計："
+label_fmgr_total_space: "ディスク容量の合計："
 label_fmgr_updates_metadata: "コンポーネント・アップデート・メタデータ"
 label_hide: "隠す"
 label_ignore: "これを無視する"
@@ -363,6 +363,7 @@ label_paginate: "ページ付けして"
 label_passed: "許可されたリクエスト"
 label_php: "使用されたPHPバージョン："
 label_preferred_source: "優先ソース："
+label_previous: "前："
 label_remember: "覚えて"
 label_results: "結果 （%s が入力された – %s が拒否された – %s が受け入れられた – %s が合併した – %s 出力された）："
 label_sanity_check: "サニティ・チェック："
@@ -569,32 +570,32 @@ info_some_useful_links: |
      <ul class="pieul">
        <li><span class="comCat" style="cursor:pointer">CIDRAM用のツール、リソース、など。</span>
          <ul class="comSub">
-           <li><a href="https://github.com/CIDRAM/CIDRAM/issues" hreflang="en" rel="noopener noreferrer external">CIDRAM/CIDRAM/issues</a> – CIDRAMの問題ページ（サポート、​援助、​など）。</li>
-           <li><a href="https://wordpress.org/plugins/cidram/" rel="noopener noreferrer external">CIDRAM ＠ WordPress.org</a> – CIDRAMのWordPressプラグイン。</li>
-           <li><a href="https://git.macmathan.info/blocklists/" hreflang="en" rel="noopener noreferrer external">macmathan.info/blocklists</a> – 危険なボット、不要な国、旧式のブラウザなどをブロックするためのCIDRAM用のオプションのブロックリストとモジュールが含まれています。</li>
-           <li><a href="https://github.com/CIDRAM/CIDRAM-Extras" hreflang="en" rel="noopener noreferrer external">CIDRAM/CIDRAM-Extras</a> – その他エキストラ。</li>
+           <li>{{Links.CIDRAM.Issues}} – CIDRAMの問題ページ（サポート、​援助、​など）。</li>
+           <li>{{Links.CIDRAM.WordPress}} – CIDRAMのWordPressプラグイン。</li>
+           <li>{{Links.MacMathan.Blocklists}} – 危険なボット、不要な国、旧式のブラウザなどをブロックするためのCIDRAM用のオプションのブロックリストとモジュールが含まれています。</li>
+           <li>{{Links.CIDRAM.Extras}} – その他エキストラ。</li>
          </ul>
        </li>
        <li><span class="comCat" style="cursor:pointer">グループ、フォーラム、コミュニティ、など。</span>
          <ul class="comSub">
-           <li><a href="https://www.facebook.com/groups/2204685680/" rel="noopener noreferrer external">PHP.earth ＠ Facebook</a> – ＰＨＰ学習リソースとディスカッション。</li>
+           <li>{{Links.PHP.Earth.Facebook}} – ＰＨＰ学習リソースとディスカッション。</li>
            <li><a href="https://www.stopforumspam.com/forum/" rel="noopener noreferrer external">フォーラム の Stop Forum Spam</a> – フォーラムスパムの停止に関する便利なディスカッションフォーラム。</li>
          </ul>
        </li>
        <li><span class="comCat" style="cursor:pointer">その他の便利なツール、リソース、サービス、など。</span>
          <ul class="comSub">
-           <li><a href="https://www.stopforumspam.com/" rel="noopener noreferrer external">Stop Forum Spam</a> – 既知のフォーラム・スパマーのデータベースを維持します。​ウェブサイトやフォーラムをスパマーから保護するのに役立ちます。</li>
+           <li>{{Links.Resources.SFS}} – 既知のフォーラム・スパマーのデータベースを維持します。​ウェブサイトやフォーラムをスパマーから保護するのに役立ちます。</li>
            <li><a href="https://bgp.he.net/" hreflang="en" rel="noopener noreferrer external">Hurricane Electric BGP Toolkit</a> – ＡＳＮからＣＩＤＲを取得する、​ＡＳＮ関係を決定する、​ネットワーク名に基づいてＡＳＮを検出する、​等。</li>
-           <li><a href="https://bgpview.io/" hreflang="en" rel="noopener noreferrer external">BGPView</a> – ＡＳＮからＣＩＤＲを取得する、​ＡＳＮ関係を決定する、​ネットワーク名に基づいてＡＳＮを検出する、​等。</li>
+           <li>{{Links.Resources.BGPView}} – ＡＳＮからＣＩＤＲを取得する、​ＡＳＮ関係を決定する、​ネットワーク名に基づいてＡＳＮを検出する、​等。</li>
            <li><a href="https://radar.qrator.net/" hreflang="en" rel="noopener noreferrer external">QratorのRadar</a> – ＡＳＮの接続性をチェックするのに便利なツール；​ＡＳＮに関するその他の様々な情報。</li>
            <li><a href="https://www.spamhaus.org/statistics/botnet-asn/" rel="noopener noreferrer external">Spamhausプロジェクト</a> – ＡＳＮのボットネット感染率に関するレポートを表示します。</li>
            <li><a href="https://www.abuseat.org/public/asn.html" hreflang="en" rel="noopener noreferrer external">Abuseat.orgの複合・ブロック・リスト</a> – ＡＳＮのボットネット感染率に関するレポートを表示します。</li>
-           <li><a href="https://abuseipdb.com/" hreflang="en" rel="noopener noreferrer external">AbuseIPDB</a> – 既知危険なＩＰアドレスのデータベースを維持します；​ＩＰアドレスを確認と報告するためのＡＰＩを提供します。</li>
+           <li>{{Links.Resources.AbuseIPDB}} – 既知危険なＩＰアドレスのデータベースを維持します；​ＩＰアドレスを確認と報告するためのＡＰＩを提供します。</li>
          </ul>
        </li>
        <li><span class="comCat" style="cursor:pointer">情報および学習用リソース。</span>
          <ul class="comSub">
-           <li><a href="https://php.earth/" hreflang="en" rel="noopener noreferrer external">PHP.earth</a> – ＰＨＰ学習リソースとディスカッション。</li>
+           <li>{{Links.PHP.Earth.Website}} – ＰＨＰ学習リソースとディスカッション。</li>
            <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">脆弱性チャート</a> – さまざまなパッケージの安全で安全でないバージョンを一覧表示する（HHVM、PHP、phpMyAdmin、Python等）。</li>
            <li><a href="https://maikuolan.github.io/Compatibility-Charts/" hreflang="en-AU" rel="noopener noreferrer external">互換性チャート</a> – さまざまなパッケージの互換性情報を一覧表示します（CIDRAM、phpMussel、等）。</li>
          </ul>

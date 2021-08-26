@@ -7,11 +7,11 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Latvian language data for the front-end (last modified: 2021.08.11).
+# This file: Latvian language data for the front-end (last modified: 2021.08.26).
 ##/
 
 Extended Description Bypasses: "Noklusējuma paraksta apiešana faili, kas parasti ir iekļauti galvenajā paketē."
-Extended Description Chart.js: "Ļauj sektoru diagrammas izmantot administratīvai piekļuvei.<br /><a href="https://github.com/chartjs/Chart.js" hreflang="en" rel="noopener noreferrer external">Chart.js</a> ir pieejams caur <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT licenci</a>."
+Extended Description Chart.js: "Ļauj sektoru diagrammas izmantot administratīvai piekļuvei.<br />{{Links.Chart.js}} ir pieejams caur <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT licenci</a>."
 Extended Description IPv4-Bogons: &ExtDesBogons "Bloķē bogona CIDRs."
 Extended Description IPv4-ISPs: &ExtDesISPs "Bloķē bīstamus un surogātpastu ISPs (ietver daudzspēļu tīklus, kas var saturēt cilvēks galapunktus un nēcilvēks galapunktus)."
 Extended Description IPv4-Nonblocking: &ExtDesNonblocking "Noderīga profilēšanai, bet pati par sevi neko bloķē."
@@ -22,7 +22,7 @@ Extended Description IPv6-ISPs: *ExtDesISPs
 Extended Description IPv6-Nonblocking: *ExtDesNonblocking
 Extended Description IPv6-Other: *ExtDesOther
 Extended Description IPv6: *ExtDesCloud
-Extended Description PHPMailer: "Nepieciešams jebkuras funkcijas izmantošanai, kas saistīta ar e-pasta sūtīšanu.<br /><a href="https://github.com/PHPMailer/PHPMailer" hreflang="en" rel="noopener noreferrer external">PHPMailer</a> ir pieejams caur <a href="https://github.com/PHPMailer/PHPMailer/blob/master/LICENSE" hreflang="en-US" rel="noopener external">LGPLv2.1</a> licenci."
+Extended Description PHPMailer: "Nepieciešams jebkuras funkcijas izmantošanai, kas saistīta ar e-pasta sūtīšanu.<br />{{Links.PHPMailer.PHPMailer}} ir pieejams caur {{Links.PHPMailer.License}} licenci."
 Extended Description flags.css: "Logfailu lapai pievieno karodziņa atbalstu."
 Extended Description module_abuseipdb.php: "Bloķē pieprasījumus no IP, kas uzskaitīti vietnē AbuseIPDB."
 Extended Description module_badhosts.php: "Bloķē resursdatorus, kurus bieži izmanto surogātpasta izplatītāji, hakeri, un citas nekonkrētas vienības."
@@ -222,7 +222,7 @@ field_execution_order: "Izpildes secība:"
 field_expiry: "Derīguma termiņš"
 field_false: "False (Nepatiess)"
 field_file: "Fails"
-field_filename: "Faila nosaukums: "
+field_filename: "Faila nosaukums:"
 field_filetype_directory: "Direktorijs"
 field_filetype_info: "{EXT} Fails"
 field_filetype_unknown: "Nezināms"
@@ -251,7 +251,7 @@ field_repair: "Remontēt"
 field_repair_all: "Remontēt visus"
 field_reset: "Atiestatīt"
 field_set_new_password: "Iestatiet jauno paroli"
-field_size: "Kopējais Lielums: "
+field_size: "Kopējais Lielums:"
 field_size_GB: "GB"
 field_size_KB: "KB"
 field_size_MB: "MB"
@@ -278,7 +278,7 @@ field_verify_all: "Verificēt visus"
 field_whitelisted_requests: "Baltajā sarakstā iekļautie pieprasījumi"
 field_your_version: "Jūsu Versija"
 header_login: "Lūdzu, ielogoties, lai turpinātu."
-label_active_config_file: "Aktīvs konfigurācijas fails: "
+label_active_config_file: "Aktīvs konfigurācijas fails:"
 label_actual: "Faktiskā"
 label_aux_actBlk: "tiks bloķēts"
 label_aux_actByp: "tiks apiets"
@@ -343,21 +343,21 @@ label_displaying_that_cite:
  - "Parādīti %s ieraksti, kas citē "%s"."
 label_entries_per_page: "Ierakstu skaits lapā:"
 label_expected: "Paredzams"
-label_expires: "Derīguma termiņš: "
+label_expires: "Derīguma termiņš:"
 label_extension: "Paplašinājums"
-label_false_positive_risk: "Nepatiesi pozitīvs risks: "
+label_false_positive_risk: "Nepatiesi pozitīvs risks:"
 label_fmgr_cache_data: "Kešatmiņas dati un pagaidu faili"
-label_fmgr_disk_usage: "CIDRAM diska lietojums: "
-label_fmgr_free_space: "Brīva vieta diskā: "
+label_fmgr_disk_usage: "CIDRAM diska lietojums:"
+label_fmgr_free_space: "Brīva vieta diskā:"
 label_fmgr_other_sig: "Citi noteikumi, parakstu faili, utt"
 label_fmgr_safety: "Drošības mehānismi"
-label_fmgr_total_disk_usage: "Kopējais diska lietojums: "
-label_fmgr_total_space: "Kopējā diska vieta: "
+label_fmgr_total_disk_usage: "Kopējais diska lietojums:"
+label_fmgr_total_space: "Kopējā diska vieta:"
 label_fmgr_updates_metadata: "Metadati komponentu atjauninājumiem"
 label_hide: "Slēpt"
 label_ignore: "Ignorēt šo"
 label_installed_available: "Instalēts/Pieejams"
-label_integrity_check: "Integritātes pārbaude: "
+label_integrity_check: "Integritātes pārbaude:"
 label_intersect: "Krustojas"
 label_invisible: "Neredzams"
 label_never: "Nekad"
@@ -372,9 +372,10 @@ label_paginate: "Pagināts"
 label_passed: "Atļautie pieprasījumu skaits"
 label_php: "Izmantotā PHP versija:"
 label_preferred_source: "Vēlamais avots:"
+label_previous: "Iepriekšējais:"
 label_remember: "Atcerieties"
 label_results: "Rezultāti (%s ievadīti – %s noraidīti – %s pieņemti – %s apvienoti – %s atdoti):"
-label_sanity_check: "Saprāta pārbaude: "
+label_sanity_check: "Saprāta pārbaude:"
 label_sapi: "Izmantotā SAPI:"
 label_sections_across_x_files:
  - "%s %s failā"
@@ -403,7 +404,7 @@ label_usemode_not_blkd: "Tikai tad, ja tas nav bloķēts."
 label_usemode_not_blkd_mrkd: "Tikai tad, ja tas nav bloķēts, vai kad īpaši marķēts lietošanai, parakstu ierobežojumu robežās, un nav aizliegts."
 label_unignore: "Atignorēt šo"
 label_unstable: "Jaunākā nestabilā:"
-label_used_with: "Lieto kopā ar: "
+label_used_with: "Lieto kopā ar:"
 label_your_ip: "Jūsu IP:"
 label_your_ua: "Jūsu lietotāja aģents:"
 link_accounts: "Konti"
@@ -590,32 +591,32 @@ info_some_useful_links: |
      <ul class="pieul">
        <li><span class="comCat" style="cursor:pointer">CIDRAM rīki, resursi, utt.</span>
          <ul class="comSub">
-           <li><a href="https://github.com/CIDRAM/CIDRAM/issues" hreflang="en" rel="noopener noreferrer external">CIDRAM/CIDRAM/issues</a> – CIDRAM issues lapa (atbalsts, palīdzība, utt).</li>
-           <li><a href="https://wordpress.org/plugins/cidram/" rel="noopener noreferrer external">CIDRAM@WordPress.org</a> – WordPress spraudnis CIDRAM.</li>
-           <li><a href="https://git.macmathan.info/blocklists/" hreflang="en" rel="noopener noreferrer external">macmathan.info/blocklists</a> – Satur neobligāts bloķēšanas saraksti un moduļus CIDRAM, piemēram, lai bloķētu bīstamas robotprogrammatūras, nevēlamas valstis, novecojušas pārlūkprogrammas, utt.</li>
-           <li><a href="https://github.com/CIDRAM/CIDRAM-Extras" hreflang="en" rel="noopener noreferrer external">CIDRAM/CIDRAM-Extras</a> – Dažādas ekstras.</li>
+           <li>{{Links.CIDRAM.Issues}} – CIDRAM issues lapa (atbalsts, palīdzība, utt).</li>
+           <li>{{Links.CIDRAM.WordPress}} – WordPress spraudnis CIDRAM.</li>
+           <li>{{Links.MacMathan.Blocklists}} – Satur neobligāts bloķēšanas saraksti un moduļus CIDRAM, piemēram, lai bloķētu bīstamas robotprogrammatūras, nevēlamas valstis, novecojušas pārlūkprogrammas, utt.</li>
+           <li>{{Links.CIDRAM.Extras}} – Dažādas ekstras.</li>
          </ul>
        </li>
        <li><span class="comCat" style="cursor:pointer">Grupas, forumi, kopienas, utt.</span>
          <ul class="comSub">
-           <li><a href="https://www.facebook.com/groups/2204685680/" rel="noopener noreferrer external">PHP.earth@Facebook</a> – PHP mācību resursi un diskusija.</li>
+           <li>{{Links.PHP.Earth.Facebook}} – PHP mācību resursi un diskusija.</li>
            <li><a href="https://www.stopforumspam.com/forum/" rel="noopener noreferrer external">Forum@Stop Forum Spam</a> – Noderīgs diskusiju forums par foruma mēstuļu apturēšanu.</li>
          </ul>
        </li>
        <li><span class="comCat" style="cursor:pointer">Citi noderīgi rīki, resursi, pakalpojumi, utt.</span>
          <ul class="comSub">
-           <li><a href="https://www.stopforumspam.com/" rel="noopener noreferrer external">Stop Forum Spam</a> – Uztur zināmu forumu surogātpasta izplatītāju datu bāzi. Noderīga vietņu un forumu aizsardzībai pret surogātpastu izplatītājiem.</li>
+           <li>{{Links.Resources.SFS}} – Uztur zināmu forumu surogātpasta izplatītāju datu bāzi. Noderīga vietņu un forumu aizsardzībai pret surogātpastu izplatītājiem.</li>
            <li><a href="https://bgp.he.net/" hreflang="en" rel="noopener noreferrer external">Hurricane Electric BGP Toolkit</a> – Saņemiet CIDR no ASN, nosakiet ASN attiecības, atklājiet ASN pamatojoties uz tīkla nosaukumiem, utt.</li>
-           <li><a href="https://bgpview.io/" hreflang="en" rel="noopener noreferrer external">BGPView</a> – Saņemiet CIDR no ASN, nosakiet ASN attiecības, atklājiet ASN pamatojoties uz tīkla nosaukumiem, utt.</li>
+           <li>{{Links.Resources.BGPView}} – Saņemiet CIDR no ASN, nosakiet ASN attiecības, atklājiet ASN pamatojoties uz tīkla nosaukumiem, utt.</li>
            <li><a href="https://radar.qrator.net/" hreflang="en" rel="noopener noreferrer external">Radar by Qrator</a> – Noderīgs rīks, lai pārbaudītu informāciju par ASN, pārbaudītu ASN savienojumu, utt.</li>
            <li><a href="https://www.spamhaus.org/statistics/botnet-asn/" rel="noopener noreferrer external">The Spamhaus Project</a> – Parāda ziņojumus par robottīkla inficēšanās biežumu ASN.</li>
            <li><a href="https://www.abuseat.org/public/asn.html" hreflang="en" rel="noopener noreferrer external">Abuseat.org's Kompozītu Bloķēšanas Saraksts</a> – Parāda ziņojumus par robottīkla inficēšanās biežumu ASN.</li>
-           <li><a href="https://abuseipdb.com/" hreflang="en" rel="noopener noreferrer external">AbuseIPDB</a> – Uztur zināmu ļaunprātīgu IP datu bāzi; Viņu API var izmantot, lai pārbaudītu un ziņotu par IP.</li>
+           <li>{{Links.Resources.AbuseIPDB}} – Uztur zināmu ļaunprātīgu IP datu bāzi; Viņu API var izmantot, lai pārbaudītu un ziņotu par IP.</li>
          </ul>
        </li>
        <li><span class="comCat" style="cursor:pointer">Informācijas un mācību resursi.</span>
          <ul class="comSub">
-           <li><a href="https://php.earth/" hreflang="en" rel="noopener noreferrer external">PHP.earth</a> – PHP mācību resursi un diskusija.</li>
+           <li>{{Links.PHP.Earth.Website}} – PHP mācību resursi un diskusija.</li>
            <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Ievainojamības Diagrammas</a> – Saraksta dažādu programmatūras pakotņu drošas/nedrošas versijas (HHVM, PHP, phpMyAdmin, Python, utt).</li>
            <li><a href="https://maikuolan.github.io/Compatibility-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Saderības Diagrammas</a> – Saraksta informācija par saderību par dažādām programmatūras pakotnēm (CIDRAM, phpMussel, utt).</li>
          </ul>

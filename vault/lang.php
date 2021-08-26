@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Language handler (last modified: 2020.11.27).
+ * This file: Language handler (last modified: 2021.08.25).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -22,7 +22,14 @@ if (empty($CIDRAM['Config']['general']['lang'])) {
 }
 
 /** L10N data. */
-$CIDRAM['L10N'] = ['Configured' => [], 'ConfiguredData' => '', 'Fallbacks' => [], 'FallbackData' => ''];
+$CIDRAM['L10N'] = [
+    'Configured' => [],
+    'ConfiguredData' => '',
+    'ConfiguredDataArray' => [],
+    'Fallbacks' => [],
+    'FallbackData' => '',
+    'FallbackDataArray' => []
+];
 
 /**
  * If the language directive is set to English, don't bother about fallbacks.
@@ -62,7 +69,7 @@ foreach ($CIDRAM['L10N']['Configured'] as $CIDRAM['L10N']['ThisConfigured']) {
 }
 
 /** Parse the L10N data. */
-$CIDRAM['L10N']['ConfiguredData'] = (new \Maikuolan\Common\YAML($CIDRAM['L10N']['ConfiguredData']))->Data;
+$CIDRAM['YAML']->process($CIDRAM['L10N']['ConfiguredData'], $CIDRAM['L10N']['ConfiguredDataArray']);
 
 /** Load the L10N fallback data. */
 foreach ($CIDRAM['L10N']['Fallbacks'] as $CIDRAM['L10N']['ThisFallback']) {
@@ -70,10 +77,10 @@ foreach ($CIDRAM['L10N']['Fallbacks'] as $CIDRAM['L10N']['ThisFallback']) {
 }
 
 /** Parse the L10N fallback data. */
-$CIDRAM['L10N']['FallbackData'] = (new \Maikuolan\Common\YAML($CIDRAM['L10N']['FallbackData']))->Data;
+$CIDRAM['YAML']->process($CIDRAM['L10N']['FallbackData'], $CIDRAM['L10N']['FallbackDataArray']);
 
 /** Build final L10N object. */
-$CIDRAM['L10N'] = new \Maikuolan\Common\L10N($CIDRAM['L10N']['ConfiguredData'], $CIDRAM['L10N']['FallbackData']);
+$CIDRAM['L10N'] = new \Maikuolan\Common\L10N($CIDRAM['L10N']['ConfiguredDataArray'], $CIDRAM['L10N']['FallbackDataArray']);
 
 /** Load client-specified L10N data if it's possible to do so. */
 if (!$CIDRAM['Config']['general']['lang_override'] || empty($_SERVER['HTTP_ACCEPT_LANGUAGE'])) {
@@ -104,13 +111,14 @@ if (!$CIDRAM['Config']['general']['lang_override'] || empty($_SERVER['HTTP_ACCEP
         $CIDRAM['L10N-Lang-Attache'] = '';
         $CIDRAM['Client-L10N'] = [];
     } else {
-        $CIDRAM['Client-L10N']['Data'] = (new \Maikuolan\Common\YAML($CIDRAM['Client-L10N']['Data']))->Data ?: [];
+        $CIDRAM['Client-L10N']['DataArray'] = [];
+        $CIDRAM['YAML']->process($CIDRAM['Client-L10N']['Data'], $CIDRAM['Client-L10N']['DataArray']);
         $CIDRAM['L10N-Lang-Attache'] = ($CIDRAM['Config']['general']['lang'] === $CIDRAM['Client-L10N']['Accepted']) ? '' : sprintf(
             ' lang="%s" dir="%s"',
             $CIDRAM['Client-L10N']['Accepted'],
-            $CIDRAM['Client-L10N']['Data']['Text Direction'] ?? 'ltr'
+            $CIDRAM['Client-L10N']['DataArray']['Text Direction'] ?? 'ltr'
         );
-        $CIDRAM['Client-L10N'] = $CIDRAM['Client-L10N']['Data'];
+        $CIDRAM['Client-L10N'] = $CIDRAM['Client-L10N']['DataArray'];
     }
 
     /** Build final client-specific L10N object. */

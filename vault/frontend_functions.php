@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2021.08.25).
+ * This file: Front-end functions file (last modified: 2021.08.27).
  */
 
 /**
@@ -1301,7 +1301,15 @@ $CIDRAM['Tally'] = function ($In, $BlockLink, array $Exclusions = []) use (&$CID
                     ), $Entry);
                 }
             }
-            $Percent = $CIDRAM['FE']['EntryCount'] ? ($Count / $CIDRAM['FE']['EntryCount']) * 100 : 0;
+            if (!empty($CIDRAM['FE']['EntryCountPaginated'])) {
+                $Percent = $CIDRAM['FE']['EntryCountPaginated'] ? ($Count / $CIDRAM['FE']['EntryCountPaginated']) * 100 : 0;
+            } elseif (!empty($CIDRAM['FE']['EntryCount'])) {
+                $Percent = $CIDRAM['FE']['EntryCount'] ? ($Count / $CIDRAM['FE']['EntryCount']) * 100 : 0;
+            } elseif (!empty($CIDRAM['FE']['EntryCountBefore'])) {
+                $Percent = $CIDRAM['FE']['EntryCountBefore'] ? ($Count / $CIDRAM['FE']['EntryCountBefore']) * 100 : 0;
+            } else {
+                $Percent = 0;
+            }
             $Out .= '<tr><td class="h1 fW">' . $Entry . '</td><td class="h1f"><div class="s">' . $CIDRAM['NumberFormatter']->format($Count) . ' (' . $CIDRAM['NumberFormatter']->format($Percent, 2) . "%)</div></td></tr>\n";
         }
     }
@@ -4331,27 +4339,27 @@ $CIDRAM['FromModuleConfigL10N'] = function ($Entry) use (&$CIDRAM) {
 };
 
 /**
- * Trim before line using the specified boundary.
+ * Split before the line at the specified boundary.
  *
- * @param string $Data The data to trim.
- * @param string $Boundary The boundary to trim before.
- * @return string The trimmed data.
+ * @param string $Data The data to split.
+ * @param string $Boundary Where to apply the split.
+ * @return array The split data.
  */
-$CIDRAM['TrimBeforeLine'] = function ($Data, $Boundary) {
+$CIDRAM['SplitBeforeLine'] = function ($Data, $Boundary) {
     $Len = strlen($Data);
     if ($Len < 1) {
-        return '';
+        return ['', ''];
     }
     $BPos = strpos($Data, $Boundary);
     if ($BPos === false || $BPos < 1) {
-        return $Data;
+        return ['', $Data];
     }
     $Offset = ($Len - $BPos) * -1;
     $LPos = strrpos($Data, "\n", $Offset);
     if ($LPos === false) {
-        return $Data;
+        return ['', $Data];
     }
-    return substr($Data, $LPos + 1);
+    return [substr($Data, 0, $LPos + 1), substr($Data, $LPos + 1)];
 };
 
 /**
@@ -4370,4 +4378,62 @@ $CIDRAM['IsolateFirstFieldEntry'] = function ($Block, $Separator) {
         }
     }
     return $Segment ?: '';
+};
+
+/**
+ * Step through blocks.
+ *
+ * @param string $Data The data to step through.
+ * @param int|false $Needle The needle position.
+ * @param int|false $End The end position.
+ * @param string $SearchQuery The search query (optional).
+ * @param string $Direction Which direction to step through.
+ * @return bool Whether successfully stepped or not.
+ */
+$CIDRAM['StepBlock'] = function ($Data, &$Needle, $End, $SearchQuery = '', $Direction = '>') use (&$CIDRAM) {
+    /** Guard. */
+    if (!is_int($End) || !strlen($Data) || ($Direction !== '<' && $Direction !== '>')) {
+        return false;
+    }
+
+    /** Directionality. */
+    if ($Direction === '>') {
+        $StrFunction = 'strpos';
+    } else {
+        $StrFunction = 'strrpos';
+        $End = ((strlen($Data) - $Needle) * -1) - strlen($CIDRAM['FE']['BlockSeparator']);
+    }
+
+    /** Step with search query. */
+    if (strlen($SearchQuery)) {
+        return (
+            ($Needle = $StrFunction($Data, (
+                $CIDRAM['FE']['BlockSeparator'] === "\n\n" ? $CIDRAM['FE']['FieldSeparator'] . $SearchQuery . "\n" : $SearchQuery
+            ), $End)) !== false ||
+            ($Needle = $StrFunction($Data, '("' . $SearchQuery . '", L', $End)) !== false ||
+            (strlen($SearchQuery) === 2 && ($Needle = $StrFunction($Data, '[' . $SearchQuery . ']', $End)) !== false)
+        );
+    }
+
+    /** Step without search query. */
+    return (($Needle = $StrFunction($Data, $CIDRAM['FE']['BlockSeparator'], $End)) !== false);
+};
+
+/**
+ * Builds a "from" link for pagination navigation.
+ *
+ * @param string $Label The label for the link.
+ * @param string $Needle The needle to be used for the link.
+ * @return void
+ */
+$CIDRAM['PaginationFromLink'] = function ($Label, $Needle) use (&$CIDRAM) {
+    if (strpos($CIDRAM['FE']['BlockLink'], '&from=' . $CIDRAM['FE']['From']) !== false) {
+        $Link = str_replace('&from=' . $CIDRAM['FE']['From'], '&from=' . $Needle, $CIDRAM['FE']['BlockLink']);
+    } else {
+        $Link = $CIDRAM['FE']['BlockLink'] . '&from=' . $Needle;
+    }
+    if (!empty($CIDRAM['QueryVars']['search'])) {
+        $Link .= '&search=' . $CIDRAM['QueryVars']['search'];
+    }
+    $CIDRAM['FE']['SearchInfo'] .= sprintf(' %s <a href="%s">%s</a>', $CIDRAM['L10N']->getString($Label), $Link, $Needle);
 };

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2021.08.27).
+ * This file: Front-end handler (last modified: 2021.08.28).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -4549,10 +4549,17 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'logs' && $CIDRAM['FE']['Permiss
         }
 
         /** Handle pagination lower boundary. */
-        if ($CIDRAM['FE']['From']) {
+        if ($CIDRAM['FE']['Paginate']) {
             $CIDRAM['FE']['logfileData'] = $CIDRAM['SplitBeforeLine']($CIDRAM['FE']['logfileData'], $CIDRAM['FE']['From']);
+            $CIDRAM['FE']['EstAft'] = substr_count($CIDRAM['FE']['logfileData'][0], $CIDRAM['FE']['BlockSeparator']);
+            $CIDRAM['FE']['EstFore'] = substr_count($CIDRAM['FE']['logfileData'][1], $CIDRAM['FE']['BlockSeparator']);
             $CIDRAM['FE']['Needle'] = strlen($CIDRAM['FE']['logfileData'][0]);
-            $CIDRAM['Iterations'] = substr($CIDRAM['FE']['logfileData'][0], 0, 2) === '<?' ? 0 : 1;
+            if (substr($CIDRAM['FE']['logfileData'][0], 0, 2) === '<?') {
+                $CIDRAM['Iterations'] = 0;
+                $CIDRAM['FE']['EstAft']--;
+            } else {
+                $CIDRAM['Iterations'] = 1;
+            }
             while ($CIDRAM['StepBlock']($CIDRAM['FE']['logfileData'][0], $CIDRAM['FE']['Needle'], 0, $CIDRAM['FE']['SearchQuery'], '<')) {
                 if (strlen($CIDRAM['FE']['SearchQuery'])) {
                     $CIDRAM['StepBlock']($CIDRAM['FE']['logfileData'][0], $CIDRAM['FE']['Needle'], 0, '', '<');
@@ -4571,6 +4578,12 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'logs' && $CIDRAM['FE']['Permiss
             if (!$CIDRAM['FE']['Previous']) {
                 $CIDRAM['FE']['Previous'] = $CIDRAM['IsolateFirstFieldEntry'](
                     $CIDRAM['FE']['logfileData'][0],
+                    $CIDRAM['FE']['FieldSeparator']
+                );
+            }
+            if (!$CIDRAM['FE']['From']) {
+                $CIDRAM['FE']['From'] = $CIDRAM['IsolateFirstFieldEntry'](
+                    $CIDRAM['FE']['logfileData'][1],
                     $CIDRAM['FE']['FieldSeparator']
                 );
             }
@@ -4650,6 +4663,21 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'logs' && $CIDRAM['FE']['Permiss
                     if ($CIDRAM['FE']['Next']) {
                         $CIDRAM['PaginationFromLink']('label_next', $CIDRAM['FE']['Next']);
                     }
+                    if (isset($CIDRAM['FE']['EstAft'])) {
+                        $CIDRAM['FE']['EstAft'] = floor(($CIDRAM['FE']['EstAft'] / (($CIDRAM['FE']['EstAft'] + $CIDRAM['FE']['EstFore']) ?: 1)) * 100);
+                        if ($CIDRAM['FE']['EstFore'] <= $CIDRAM['FE']['PerPage']) {
+                            $CIDRAM['FE']['EstWidth'] = 100 - $CIDRAM['FE']['EstAft'];
+                        } else {
+                            $CIDRAM['FE']['EstWidth'] = floor(($CIDRAM['FE']['EntryCountPaginated'] / ($CIDRAM['FE']['EntryCountBefore'] ?: $CIDRAM['FE']['EntryCount'])) * 100);
+                        }
+                        $CIDRAM['FE']['SearchInfo'] .= sprintf(
+                            '<br /><div style="width:100%%;height:2px;overflow:visible;background-color:rgba(0,192,0,.4);margin:1px 0 1px 0">' .
+                            '<div style="position:relative;%s:%d%%;top:-1px;width:%d%%;height:4px;overflow:visible;background-color:rgba(192,0,0,.5);margin:0"></div></div>',
+                            $CIDRAM['FE']['FE_Align'],
+                            $CIDRAM['FE']['EstAft'],
+                            $CIDRAM['FE']['EstWidth']
+                        );
+                    }
                 }
             } else {
                 $CIDRAM['FE']['SearchInfo'] = '<br />' . sprintf(
@@ -4726,6 +4754,21 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'logs' && $CIDRAM['FE']['Permiss
                     }
                     if ($CIDRAM['FE']['Next']) {
                         $CIDRAM['PaginationFromLink']('label_next', $CIDRAM['FE']['Next']);
+                    }
+                    if (isset($CIDRAM['FE']['EstAft'])) {
+                        $CIDRAM['FE']['EstAft'] = floor(($CIDRAM['FE']['EstAft'] / (($CIDRAM['FE']['EstAft'] + $CIDRAM['FE']['EstFore']) ?: 1)) * 100);
+                        if ($CIDRAM['FE']['EstFore'] <= $CIDRAM['FE']['PerPage']) {
+                            $CIDRAM['FE']['EstWidth'] = 100 - $CIDRAM['FE']['EstAft'];
+                        } else {
+                            $CIDRAM['FE']['EstWidth'] = floor(($CIDRAM['FE']['EntryCount'] / ($CIDRAM['FE']['EntryCountBefore'] ?: $CIDRAM['FE']['EntryCount'])) * 100);
+                        }
+                        $CIDRAM['FE']['SearchInfo'] .= sprintf(
+                            '<br /><div style="width:100%%;height:2px;overflow:visible;background-color:rgba(0,192,0,.4);margin:1px 0 1px 0">' .
+                            '<div style="position:relative;%s:%d%%;top:-1px;width:%d%%;height:4px;overflow:visible;background-color:rgba(192,0,0,.5);margin:0"></div></div>',
+                            $CIDRAM['FE']['FE_Align'],
+                            $CIDRAM['FE']['EstAft'],
+                            $CIDRAM['FE']['EstWidth']
+                        );
                     }
                 }
             } else {

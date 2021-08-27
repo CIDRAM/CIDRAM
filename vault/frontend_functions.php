@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2021.08.27).
+ * This file: Front-end functions file (last modified: 2021.08.28).
  */
 
 /**
@@ -4349,6 +4349,9 @@ $CIDRAM['SplitBeforeLine'] = function ($Data, $Boundary) {
     $Len = strlen($Data);
     if ($Len < 1) {
         return ['', ''];
+    }
+    if (!strlen($Boundary)) {
+        return ['', $Data];
     }
     $BPos = strpos($Data, $Boundary);
     if ($BPos === false || $BPos < 1) {

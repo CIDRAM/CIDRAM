@@ -4545,21 +4545,9 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'logs' && $CIDRAM['FE']['Permiss
             $CIDRAM['FE']['logfileData'] = $CIDRAM['SplitBeforeLine']($CIDRAM['FE']['logfileData'], $CIDRAM['FE']['From']);
             $CIDRAM['FE']['Needle'] = strlen($CIDRAM['FE']['logfileData'][0]);
             $CIDRAM['Iterations'] = substr($CIDRAM['FE']['logfileData'][0], 0, 2) === '<?' ? 0 : 1;
-            while ($CIDRAM['StepBlock'](
-                $CIDRAM['FE']['logfileData'][0],
-                $CIDRAM['FE']['Needle'],
-                0,
-                $CIDRAM['FE']['SearchQuery'],
-                '<'
-            )) {
+            while ($CIDRAM['StepBlock']($CIDRAM['FE']['logfileData'][0], $CIDRAM['FE']['Needle'], 0, $CIDRAM['FE']['SearchQuery'], '<')) {
                 if (strlen($CIDRAM['FE']['SearchQuery'])) {
-                    $CIDRAM['StepBlock'](
-                        $CIDRAM['FE']['logfileData'][0],
-                        $CIDRAM['FE']['Needle'],
-                        0,
-                        '',
-                        '<'
-                    );
+                    $CIDRAM['StepBlock']($CIDRAM['FE']['logfileData'][0], $CIDRAM['FE']['Needle'], 0, '', '<');
                 }
                 $CIDRAM['Iterations']++;
                 if (!empty($CIDRAM['QueryVars']['search'])) {

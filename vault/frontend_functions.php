@@ -1264,7 +1264,7 @@ $CIDRAM['Tally'] = function (string $In, string $BlockLink, array $Exclusions = 
     $Out = '<table>';
     foreach ($Data as $Field => $Entries) {
         $Out .= '<tr><td class="h2f" colspan="2"><div class="s">' . $Field . "</div></td></tr>\n";
-        if ($CIDRAM['FE']['SortOrder'] === 'descending' && !$CIDRAM['FE']['Paginate']) {
+        if ($CIDRAM['FE']['SortOrder'] === 'descending') {
             arsort($Entries, SORT_NUMERIC);
         } else {
             asort($Entries, SORT_NUMERIC);

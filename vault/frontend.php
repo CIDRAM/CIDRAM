@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2021.08.28).
+ * This file: Front-end handler (last modified: 2021.08.30).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -4534,15 +4534,26 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'logs' && $CIDRAM['FE']['Permiss
         $CIDRAM['FE']['BlockSeparator'] = (strpos($CIDRAM['FE']['logfileData'], "\n\n") !== false) ? "\n\n" : "\n";
         $CIDRAM['FE']['BlockSepLen'] = strlen($CIDRAM['FE']['BlockSeparator']);
 
+        /** Strip PHP header. */
+        if (substr($CIDRAM['FE']['logfileData'], 0, 15) === "\x3c\x3fphp die; \x3f\x3e\n\n") {
+            $CIDRAM['FE']['logfileData'] = substr($CIDRAM['FE']['logfileData'], 15);
+        }
+
+        /** Reverse entries order for viewing descending entries. */
+        if ($CIDRAM['FE']['SortOrder'] === 'descending') {
+            $CIDRAM['FE']['logfileData'] = explode($CIDRAM['FE']['BlockSeparator'], $CIDRAM['FE']['logfileData']);
+            $CIDRAM['FE']['logfileData'] = implode($CIDRAM['FE']['BlockSeparator'], array_reverse($CIDRAM['FE']['logfileData']));
+            if (substr($CIDRAM['FE']['logfileData'], 0, $CIDRAM['FE']['BlockSepLen']) === $CIDRAM['FE']['BlockSeparator']) {
+                $CIDRAM['FE']['logfileData'] = substr($CIDRAM['FE']['logfileData'], $CIDRAM['FE']['BlockSepLen']) . $CIDRAM['FE']['BlockSeparator'];
+            }
+        }
+
         /** Determine entries count before and search query. */
         if (empty($CIDRAM['QueryVars']['search'])) {
             $CIDRAM['FE']['SearchQuery'] = '';
             $CIDRAM['FE']['EntryCountBefore'] = !str_replace("\n", '', $CIDRAM['FE']['logfileData']) ? 0 : (
                 substr_count($CIDRAM['FE']['logfileData'], "\n\n") ?: substr_count($CIDRAM['FE']['logfileData'], "\n")
             );
-            if (substr($CIDRAM['FE']['logfileData'], 0, 2) === '<?') {
-                $CIDRAM['FE']['EntryCountBefore']--;
-            }
         } else {
             $CIDRAM['FE']['SearchQuery'] = base64_decode(str_replace('_', '=', $CIDRAM['QueryVars']['search']));
             $CIDRAM['FE']['EntryCountBefore'] = 0;
@@ -4554,12 +4565,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'logs' && $CIDRAM['FE']['Permiss
             $CIDRAM['FE']['EstAft'] = substr_count($CIDRAM['FE']['logfileData'][0], $CIDRAM['FE']['BlockSeparator']);
             $CIDRAM['FE']['EstFore'] = substr_count($CIDRAM['FE']['logfileData'][1], $CIDRAM['FE']['BlockSeparator']);
             $CIDRAM['FE']['Needle'] = strlen($CIDRAM['FE']['logfileData'][0]);
-            if (substr($CIDRAM['FE']['logfileData'][0], 0, 2) === '<?') {
-                $CIDRAM['Iterations'] = 0;
-                $CIDRAM['FE']['EstAft']--;
-            } else {
-                $CIDRAM['Iterations'] = 1;
-            }
+            $CIDRAM['Iterations'] = 0;
             while ($CIDRAM['StepBlock']($CIDRAM['FE']['logfileData'][0], $CIDRAM['FE']['Needle'], 0, $CIDRAM['FE']['SearchQuery'], '<')) {
                 if (strlen($CIDRAM['FE']['SearchQuery'])) {
                     $CIDRAM['StepBlock']($CIDRAM['FE']['logfileData'][0], $CIDRAM['FE']['Needle'], 0, '', '<');
@@ -4595,11 +4601,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'logs' && $CIDRAM['FE']['Permiss
         }
 
         /** Pagination counter. */
-        if (empty($CIDRAM['QueryVars']['search'])) {
-            $CIDRAM['FE']['Paginated'] = substr($CIDRAM['FE']['logfileData'], 0, 2) === '<?' ? 0 : 1;
-        } else {
-            $CIDRAM['FE']['Paginated'] = 1;
-        }
+        $CIDRAM['FE']['Paginated'] = 1;
 
         /** Handle block filtering. */
         if (!empty($CIDRAM['FE']['logfileData']) && !empty($CIDRAM['QueryVars']['search'])) {
@@ -4734,9 +4736,6 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'logs' && $CIDRAM['FE']['Permiss
             $CIDRAM['FE']['EntryCount'] = !str_replace("\n", '', $CIDRAM['FE']['logfileData']) ? 0 : (
                 substr_count($CIDRAM['FE']['logfileData'], "\n\n") ?: substr_count($CIDRAM['FE']['logfileData'], "\n")
             );
-            if (substr($CIDRAM['FE']['logfileData'], 0, 2) === '<?') {
-                $CIDRAM['FE']['EntryCount']--;
-            }
             if ($CIDRAM['FE']['Paginate']) {
                 $CIDRAM['FE']['SearchInfo'] = '<br />' . sprintf(
                     $CIDRAM['L10N']->getPlural($CIDRAM['FE']['EntryCountBefore'], 'label_displaying'),
@@ -4843,11 +4842,6 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'logs' && $CIDRAM['FE']['Permiss
             [$CIDRAM['L10N']->getString('field_id'), $CIDRAM['L10N']->getString('field_datetime')]
         );
     } else {
-        if ($CIDRAM['FE']['SortOrder'] === 'descending') {
-            $CIDRAM['FE']['BlockSeparator'] = strpos($CIDRAM['FE']['logfileData'], "\n\n") !== false ? "\n\n" : "\n";
-            $CIDRAM['FE']['logfileData'] = explode($CIDRAM['FE']['BlockSeparator'], $CIDRAM['FE']['logfileData']);
-            $CIDRAM['FE']['logfileData'] = implode($CIDRAM['FE']['BlockSeparator'], array_reverse($CIDRAM['FE']['logfileData']));
-        }
         $CIDRAM['FE']['logfileData'] = '<textarea readonly>' . trim($CIDRAM['FE']['logfileData']) . '</textarea>';
     }
 

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2021.08.28).
+ * This file: Front-end functions file (last modified: 2021.08.30).
  */
 
 /**
@@ -1202,9 +1202,6 @@ $CIDRAM['Formatter'] = function (&$In, $BlockLink = '', $Current = '', $FieldSep
         $In[] = $Style . substr($Out, $BlockStart, $BlockEnd - $BlockStart + $BlockSeparatorLen) . '</div>';
         $BlockStart = $BlockEnd + $BlockSeparatorLen;
     }
-    if ($CIDRAM['FE']['SortOrder'] === 'descending') {
-        $In = array_reverse($In);
-    }
     $In = str_replace("<br />\n</div>", "<br /></div>\n", implode('', $In));
 };
 
@@ -1272,7 +1269,7 @@ $CIDRAM['Tally'] = function ($In, $BlockLink, array $Exclusions = []) use (&$CID
     $Out = '<table>';
     foreach ($Data as $Field => $Entries) {
         $Out .= '<tr><td class="h2f" colspan="2"><div class="s">' . $Field . "</div></td></tr>\n";
-        if ($CIDRAM['FE']['SortOrder'] === 'descending') {
+        if ($CIDRAM['FE']['SortOrder'] === 'descending' && !$CIDRAM['FE']['Paginate']) {
             arsort($Entries, SORT_NUMERIC);
         } else {
             asort($Entries, SORT_NUMERIC);

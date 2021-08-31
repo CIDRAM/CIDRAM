@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Default signature bypasses (last modified: 2021.08.15).
+ * This file: Default signature bypasses (last modified: 2021.08.31).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -185,6 +185,26 @@ $CIDRAM['RunParamResCache']['bypasses.php'] = function (array $Factors = [], $Fa
             preg_match('~duckduck(?:go-favicons-)?bot~', $CIDRAM['BlockInfo']['UALC'])
         ) {
             return 4;
+        }
+    }
+
+    /** Huawei Cloud bypasses. */
+    if ($Tag === 'Huawei Cloud Service') {
+        /**
+         * PetalBot bypass.
+         * @link https://github.com/CIDRAM/CIDRAM/issues/254
+         */
+        if ($CIDRAM['Request']->inCsv('PetalBot', $CIDRAM['Config']['bypasses']['used'])) {
+            if (empty($CIDRAM['Hostname'])) {
+                $CIDRAM['Hostname'] = $CIDRAM['DNS-Reverse']($CIDRAM['BlockInfo']['IPAddr']);
+            }
+            if (
+                preg_match('~\.(?:aspiegel|petalsearch)\.com$~i', $CIDRAM['Hostname']) ||
+                strpos($CIDRAM['BlockInfo']['UALC'], 'petalbot') !== false
+            ) {
+                $CIDRAM['Flag-Bypass-PetalBot-Check'] = true;
+                return 4;
+            }
         }
     }
 

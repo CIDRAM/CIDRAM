@@ -3520,15 +3520,40 @@ Profile: Frequent changes;Infrastructure/Transit;Multiplay;Tor endpoints here;We
 Tag: NForce Entertainment
 
 
-# ASN 55990 ("Huawei Cloud Service data center").
-# Stop Forum Spam (SFS) listings: 352.
-# Updated: 2020.11.27 / Checked: 2021.06.20
+# ASNs 55990, 63655, 131444, 136907, 140723, 141180, 200756, 206204, 206798
+# ("Huawei Cloud Service data center", "Huawei Technologies Co., Ltd", "HUAWEI
+# CLOUDS").
+# Stop Forum Spam (SFS) listings: 369 (AS55990), 1 (AS131444), 432 (AS136907).
+# Updated: 2021.08.31
 
-2407:c080::/36 Deny Cloud
-2407:c080:1000::/37 Deny Cloud
-2407:c080:7000::/47 Deny Cloud
+2407:c080::/36 Run bypasses.php
+2407:c080:1000::/37 Run bypasses.php
+2407:c080:7000::/47 Run bypasses.php
 Origin: CN
-Profile: Commercial;Infrastructure/Transit
+2405:f080::/39 Run bypasses.php
+2405:f080:200::/48 Run bypasses.php
+2405:f080:400::/39 Run bypasses.php
+2405:f080:600::/48 Run bypasses.php
+2405:f080:810::/44 Run bypasses.php
+2405:f080:9ff::/48 Run bypasses.php
+2405:f080:e00::/46 Run bypasses.php
+2405:f080:e06::/47 Run bypasses.php
+2405:f080:e08::/46 Run bypasses.php
+2405:f080:1000::/38 Run bypasses.php
+2405:f080:1400::/47 Run bypasses.php
+2405:f080:1600::/48 Run bypasses.php
+2405:f080:1602::/48 Run bypasses.php
+2405:f080:1e00::/46 Run bypasses.php
+2405:f080:1e0a::/47 Run bypasses.php
+2405:f080:1e0e::/47 Run bypasses.php
+2405:f080:1e10::/44 Run bypasses.php
+2405:f080:2000::/38 Run bypasses.php
+2405:f080:2400::/39 Run bypasses.php
+2405:f080:2800::/48 Run bypasses.php
+2405:f080:2a00::/48 Run bypasses.php
+2405:f080:2e00::/47 Run bypasses.php
+Origin: SG
+Profile: Commercial;Infrastructure/Transit;Webhosting
 Tag: Huawei Cloud Service
 
 
@@ -6324,36 +6349,6 @@ Tag: HostUS
 Origin: NL
 Profile: Tor endpoints here
 Tag: IT-GRAD NL B.V
-
-
-# ASN 136907 ("HUAWEI CLOUDS").
-# A source of forum spam and caught hitting honeypots.
-# Stop Forum Spam (SFS) listings: 451.
-# Updated: 2021.04.21
-
-2405:f080::/39 Deny Cloud
-2405:f080:200::/48 Deny Cloud
-2405:f080:400::/39 Deny Cloud
-2405:f080:600::/48 Deny Cloud
-2405:f080:810::/44 Deny Cloud
-2405:f080:e00::/47 Deny Cloud
-2405:f080:e08::/47 Deny Cloud
-2405:f080:1000::/38 Deny Cloud
-2405:f080:1400::/47 Deny Cloud
-2405:f080:1600::/48 Deny Cloud
-2405:f080:1602::/48 Deny Cloud
-2405:f080:1e00::/46 Deny Cloud
-2405:f080:1e0a::/47 Deny Cloud
-2405:f080:1e0e::/47 Deny Cloud
-2405:f080:1e10::/45 Deny Cloud
-2405:f080:1e18::/46 Deny Cloud
-2405:f080:1e1c::/47 Deny Cloud
-2405:f080:2000::/38 Deny Cloud
-2405:f080:2400::/39 Deny Cloud
-2405:f080:2e00::/47 Deny Cloud
-Origin: SG
-Profile: Infrastructure/Transit;Webhosting
-Tag: HUAWEI CLOUDS
 
 
 # ASNs 4136, 11767, 17018, 20141, 26978, 29748, 40107, 40606, 40913, 46742,

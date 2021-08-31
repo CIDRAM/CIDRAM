@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6_isps.dat
 
-# Version: 2021.237.453
-# Last modified: 2021.08.26
+# Version: 2021.242.462
+# Last modified: 2021.08.31
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -1928,17 +1928,6 @@ Profile: Domestic ISP
 Tag: Lanet Network Ltd
 
 
-# ASN 25159 ("PJSC MegaFon").
-# A Russian domestic ISP and a significant source of spam.
-# Stop Forum Spam (SFS) listings: 1,847.
-# Updated: 2020.02.14 / Checked: 2021.01.03
-
-2a03:d000:4000::/36 Deny Spam
-Origin: RU
-Profile: Domestic ISP
-Tag: PJSC MegaFon
-
-
 # ASN 34700 ("MAXNET TELECOM, LTD").
 # A Ukrainian domestic ISP and a significant source of spam.
 # Stop Forum Spam (SFS) listings: 3,794.
@@ -2011,14 +2000,15 @@ Tag: Cellcom Fixed
 
 
 # ASN 12849 ("Hot-Net internet services Ltd").
-# Israeli domestic ISP and a source of spam. Just listing the specific
-# spammy IPs (i.e., not the entire network).
-# Stop Forum Spam (SFS) listings: 1,285.
-# Updated: 2021.02.27
+# Israeli domestic ISP. Port scans, hack attempts, and spam detected from here.
+# Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 1,115.
+# Updated: 2021.08.31
 
-2a00:a040:18a:70b6::/64 Deny Spam
-2a00:a040:18b:8b86::/64 Deny Spam
-2a00:a040:199:4202::/64 Deny Spam
+2a00:a040:188:6fcd::/64 Deny Spam
+2a00:a040:197:b0ba::/64 Deny Spam
+2a00:a040:199:640d::/64 Deny Spam
+2a00:a040:1a0:f050::/64 Deny Spam
 Origin: IL
 Profile: Domestic ISP
 Tag: Hot-Net internet

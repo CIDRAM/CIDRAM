@@ -1,8 +1,8 @@
 # IPv4 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv4_isps.dat
 
-# Version: 2021.237.453
-# Last modified: 2021.08.26
+# Version: 2021.242.462
+# Last modified: 2021.08.31
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -10963,17 +10963,16 @@ Profile: Domestic ISP;Multiplay
 Tag: TELEKOM ROMANIA
 
 
-# ASN 8585 ("Crnogorski Telekom a.d.Podgorica"). A Montenegrin domestic ISP
-# caught spamming. Listing just the affected ranges (not the whole network).
-# Stop Forum Spam (SFS) listings: 593.
-# Updated: 2021.01.03
+# ASN 8585 ("Crnogorski Telekom a.d.Podgorica").
+# Montenegrin domestic ISP. SSH attacks, port scans, and spam detected from
+# here. Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 320.
+# Updated: 2021.08.31
 
-46.161.119.94/32 Deny Spam
-78.155.47.142/32 Deny Spam
+46.161.81.135/32 Deny Spam
+46.161.119.0/24 Deny Malware
 85.94.100.153/32 Deny Spam
-85.94.101.205/32 Deny Spam
-85.94.106.217/32 Deny Spam
-95.155.44.9/32 Deny Spam
+95.155.44.0/24 Deny Malware
 Origin: ME
 Profile: Domestic ISP
 Tag: Crnogorski Telekom
@@ -11029,33 +11028,23 @@ Origin: UA
 Tag: Ewropol
 
 
-# ASN 5610 ("O2 Czech Republic, a.s"). A Czech domestic ISP caught spamming.
-# Listing just the affected ranges (not the whole network).
-# Stop Forum Spam (SFS) listings: 648.
-# Updated: 2021.01.03
+# ASN 5610 ("O2 Czech Republic, a.s").
+# Czech domestic ISP. Brute-force and SSH attacks, port scans, hacking, and
+# spam detected from here. Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 459.
+# Updated: 2021.08.31
 
-80.188.204.250/32 Deny Spam
-80.188.239.106/32 Deny Spam
-85.71.87.115/32 Deny Spam
-85.160.10.20/32 Deny Spam
-85.160.11.166/32 Deny Spam
-85.160.13.183/32 Deny Spam
-85.160.68.0/24 Deny Spam
-88.100.162.0/24 Deny Spam
-90.177.213.190/32 Deny Spam
-90.178.53.32/32 Deny Spam
-90.178.98.173/32 Deny Spam
+80.188.125.20/32 Deny Spam
+88.100.41.162/32 Deny Spam
+88.103.227.17/32 Deny Spam
+90.179.16.91/32 Deny Spam
 90.181.150.210/32 Deny Spam
-90.183.101.0/24 Deny Spam
-90.183.152.178/32 Deny Spam
-90.183.158.0/24 Deny Spam
-109.80.35.175/32 Deny Spam
-109.80.153.250/32 Deny Spam
-109.81.209.55/32 Deny Spam
-109.81.215.194/32 Deny Spam
-194.228.84.0/24 Deny Spam
-194.228.129.0/24 Deny Spam
-Origin: CZ
+90.183.101.0/24 Deny Malware
+90.183.158.0/24 Deny Malware
+109.80.194.185/32 Deny Spam
+109.81.214.191/32 Deny Spam
+194.228.84.0/24 Deny Malware
+194.228.129.0/24 Deny Malware
 Profile: Domestic ISP
 Tag: O2 Czech Republic
 
@@ -11077,119 +11066,116 @@ Profile: Domestic ISP
 Tag: Lanet Network Ltd
 
 
-# ASN 8374 ("Polkomtel Sp. z o.o"). A Polish domestic ISP caught spamming.
-# Listing just the affected ranges (not the whole network).
-# Stop Forum Spam (SFS) listings: 350.
-# Updated: 2021.01.03
+# ASN 8374 ("Polkomtel Sp. z o.o").
+# Polish domestic ISP. Webapp attacks and spam detected from here.
+# Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 441.
+# Updated: 2021.08.31
 
-5.172.232.227/32 Deny Spam
-31.0.1.3/32 Deny Spam
-31.0.87.34/32 Deny Spam
-31.0.176.5/32 Deny Spam
-31.0.177.0/24 Deny Spam
+5.172.255.196/32 Deny Spam
+31.0.32.123/32 Deny Spam
+31.0.37.59/32 Deny Spam
+31.0.43.242/32 Deny Spam
+31.0.48.27/32 Deny Spam
+31.0.49.174/32 Deny Spam
+31.0.53.217/32 Deny Spam
+31.0.68.0/24 Deny Malware
+31.0.90.209/32 Deny Spam
+31.0.99.168/32 Deny Spam
+31.0.101.227/32 Deny Spam
+31.0.123.31/32 Deny Spam
+31.0.124.245/32 Deny Spam
+31.0.176.86/32 Deny Spam
+31.0.177.0/24 Deny Malware
+31.0.216.180/32 Deny Spam
+31.0.237.213/32 Deny Spam
 31.0.238.6/32 Deny Spam
-31.1.74.120/32 Deny Spam
-37.7.53.227/32 Deny Spam
-37.7.255.157/32 Deny Spam
+31.1.226.221/32 Deny Spam
+37.247.212.5/32 Deny Spam
 37.247.231.90/32 Deny Spam
-46.169.147.36/32 Deny Spam
-77.115.70.39/32 Deny Spam
-87.251.228.114/32 Deny Spam
+46.215.40.67/32 Deny Spam
+77.113.103.181/32 Deny Spam
+95.40.92.0/24 Deny Spam
 Origin: PL
 Profile: Domestic ISP
 Tag: Polkomtel
 
 
-# ASN 20845 ("DIGI Tavkozlesi es Szolgaltato Kft"). A Hungarian domestic ISP
-# caught spamming. Listing just the affected ranges (not the whole network).
-# Stop Forum Spam (SFS) listings: 2,114.
-# Updated: 2021.01.03
+# ASN 20845 ("DIGI Tavkozlesi es Szolgaltato Kft").
+# Hungarian domestic ISP. Brute-force attacks, hacking, port scans, and spam
+# detected from here. Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 2,483.
+# Updated: 2021.08.31
 
-62.165.251.180/32 Deny Spam
-78.131.70.0/24 Deny Spam
-78.131.113.0/24 Deny Spam
-79.120.175.103/32 Deny Spam
-82.131.156.40/32 Deny Spam
-84.236.1.0/24 Deny Spam
-84.236.10.188/32 Deny Spam
-84.236.35.185/32 Deny Spam
-84.236.36.47/32 Deny Spam
-84.236.122.160/32 Deny Spam
-85.66.116.215/32 Deny Spam
-85.66.163.182/32 Deny Spam
-85.66.215.194/32 Deny Spam
-85.67.241.0/24 Deny Spam
-87.97.53.0/24 Deny Spam
-87.97.83.124/32 Deny Spam
-89.186.126.28/32 Deny Spam
-91.82.178.0/24 Deny Spam
-91.82.179.37/32 Deny Spam
-91.82.183.0/24 Deny Spam
-92.249.134.7/32 Deny Spam
-92.249.219.0/24 Deny Spam
-94.21.5.139/32 Deny Spam
-94.21.5.176/32 Deny Spam
-94.21.53.10/32 Deny Spam
-94.21.53.200/32 Deny Spam
+62.165.213.219/32 Deny Spam
+78.131.11.73/32 Deny Spam
+78.131.55.38/32 Deny Spam
+78.131.58.78/32 Deny Spam
+78.131.70.0/24 Deny Malware
+78.131.72.113/32 Deny Spam
+78.131.113.0/24 Deny Malware
+79.120.248.74/32 Deny Spam
+80.95.64.131/32 Deny Spam
+82.131.230.131/32 Deny Spam
+84.236.0.0/23 Deny Malware
+84.236.35.0/24 Deny Malware
+84.236.65.198/32 Deny Spam
+84.236.115.0/24 Deny Malware
+85.66.241.26/32 Deny Spam
+85.67.241.0/24 Deny Malware
+87.97.4.189/32 Deny Spam
+87.97.53.0/24 Deny Malware
+87.97.60.141/32 Deny Spam
+91.82.61.143/32 Deny Spam
+91.82.178.0/23 Deny Malware
+91.82.182.151/32 Deny Spam
+91.82.183.0/24 Deny Malware
+91.82.189.9/32 Deny Spam
+92.52.233.97/32 Deny Spam
+92.249.134.24/32 Deny Spam
+92.249.136.0/24 Deny Malware
+92.249.143.230/32 Deny Spam
+92.249.219.0/24 Deny Malware
+92.249.229.119/32 Deny Spam
+94.21.113.209/32 Deny Spam
 94.21.118.0/24 Deny Spam
-94.21.147.56/32 Deny Spam
-94.21.176.222/32 Deny Spam
-94.21.177.228/31 Deny Spam
-178.164.226.0/24 Deny Spam
-188.143.39.217/32 Deny Spam
-193.226.214.119/32 Deny Spam
-193.226.245.0/24 Deny Spam
-212.40.78.0/24 Deny Spam
-212.40.85.0/24 Deny Spam
+94.21.120.0/24 Deny Malware
+94.21.233.0/24 Deny Malware
+94.21.254.66/32 Deny Spam
+176.241.63.0/24 Deny Malware
+178.164.138.187/32 Deny Spam
+178.164.214.0/24 Deny Malware
+178.164.226.0/24 Deny Malware
+188.143.40.11/32 Deny Spam
+193.226.213.0/24 Deny Malware
+193.226.214.111/32 Deny Spam
+193.226.214.113/32 Deny Spam
+193.226.245.0/24 Deny Malware
+212.40.76.241/32 Deny Spam
+212.40.78.0/24 Deny Malware
+212.40.85.0/24 Deny Malware
+217.197.183.17/32 Deny Spam
 Origin: HU
 Profile: Domestic ISP
 Tag: DIGI Tavkozlesi
 
 
 # ASN 25159 ("PJSC MegaFon").
-# A Russian domestic ISP and a significant source of spam.
-# Stop Forum Spam (SFS) listings: 1,847.
-# Updated: 2021.01.03
+# Russian domestic ISP. Brute-force, SSH, IoT, and webapp attacks, port scans,
+# hacking, and spam detected from here.
+# Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 2,088.
+# Updated: 2021.08.31
 
-31.173.0.0/18 Deny Spam
-31.173.64.0/19 Deny Spam
-37.28.176.0/21 Deny Spam
-37.29.32.0/21 Deny Spam
-46.229.128.0/22 Deny Spam
-62.64.0.0/20 Deny Spam
-78.25.112.0/21 Deny Spam
-83.222.212.0/22 Deny Spam
-83.222.216.0/21 Deny Spam
-83.229.185.0/24 Deny Spam
-83.229.211.0/24 Deny Spam
-83.229.254.0/24 Deny Spam
-85.26.144.0/20 Deny Spam
-91.205.168.0/24 Deny Spam
-94.25.144.0/20 Deny Spam
-94.25.160.0/19 Deny Spam
-109.188.64.0/19 Deny Spam
-109.188.96.0/21 Deny Spam
-109.188.112.0/23 Deny Spam
-109.188.114.0/24 Deny Spam
-128.204.76.0/22 Deny Spam
-178.176.0.0/19 Deny Spam
-178.176.32.0/20 Deny Spam
-178.176.72.0/21 Deny Spam
-178.177.0.0/18 Deny Spam
-188.170.0.0/19 Deny Spam
-188.170.32.0/20 Deny Spam
-193.201.228.0/22 Deny Spam
-195.16.96.0/19 Deny Spam
-195.230.70.0/23 Deny Spam
-195.230.91.0/24 Deny Spam
-195.230.92.0/24 Deny Spam
-212.69.106.0/24 Deny Spam
-212.69.111.0/24 Deny Spam
-212.69.113.0/24 Deny Spam
-212.69.114.0/24 Deny Spam
-212.69.125.0/24 Deny Spam
-213.243.109.0/24 Deny Spam
-213.243.116.0/24 Deny Spam
+37.29.35.0/24 Deny Malware
+83.229.211.0/24 Deny Malware
+91.205.168.0/24 Deny Malware
+94.25.168.0/22 Deny Malware
+94.25.172.0/23 Deny Malware
+94.25.174.0/24 Deny Malware
+109.188.69.0/24 Deny Malware
+109.188.79.0/24 Deny Malware
+178.176.72.0/21 Deny Malware
 Origin: RU
 Profile: Domestic ISP
 Tag: PJSC MegaFon
@@ -11548,23 +11534,32 @@ Tag: Cellcom Fixed
 
 
 # ASN 12849 ("Hot-Net internet services Ltd").
-# Israeli domestic ISP and a source of spam. Just listing the specific
-# spammy IPs (i.e., not the entire network).
-# Stop Forum Spam (SFS) listings: 1,285.
-# Updated: 2021.02.27
+# Israeli domestic ISP. Port scans, hack attempts, and spam detected from here.
+# Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 1,115.
+# Updated: 2021.08.31
 
+77.137.80.213/32 Deny Spam
 77.137.89.106/32 Deny Spam
-77.137.113.171/32 Deny Spam
-77.137.117.0/24 Deny Spam
+77.137.95.61/32 Deny Spam
+77.137.115.198/32 Deny Spam
+77.137.117.0/24 Deny Malware
 77.137.119.139/32 Deny Spam
-77.138.42.196/32 Deny Spam
-77.139.145.151/32 Deny Spam
-89.237.74.0/23 Deny Spam
+77.138.83.60/32 Deny Spam
+77.139.137.165/32 Deny Spam
+89.237.74.0/23 Deny Malware
 Origin: FR
-5.29.66.53/32 Deny Spam
-37.142.0.0/16 Deny Spam
-213.57.32.0/24 Deny Spam
-213.57.209.177/32 Deny Malware
+5.29.15.0/24 Deny Malware
+5.29.19.0/24 Deny Malware
+5.29.33.214/32 Deny Spam
+5.29.35.0/24 Deny Malware
+5.29.40.111/32 Deny Spam
+37.142.0.0/24 Deny Malware
+37.142.2.0/23 Deny Malware
+37.142.8.196/32 Deny Spam
+37.142.10.0/24 Deny Malware
+213.57.79.36/32 Deny Malware
+213.57.154.48/32 Deny Spam
 Origin: IL
 Profile: Domestic ISP
 Tag: Hot-Net internet

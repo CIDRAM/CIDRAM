@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6.dat
 
-# Version: 2021.237.453
-# Last modified: 2021.08.26
+# Version: 2021.242.462
+# Last modified: 2021.08.31
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -545,20 +545,22 @@ Tag: H88 S.A
 
 
 # ASN 47846 ("Sedo Domain Parking").
-# Updated: 2021.01.02
+# Updated: 2021.01.02 / Checked: 2021.08.31
 
 2001:67c:64c::/48 Deny Cloud
 Origin: DE
+Profile: Webhosting
 Tag: Sedo Domain Parking
 
 
 # ASN 46475 ("Limestone Networks, Inc").
-# Stop Forum Spam (SFS) listings: 150.
-# Updated: 2019.03.19 / Checked: 2021.01.02
+# Stop Forum Spam (SFS) listings: 120.
+# Updated: 2019.03.19 / Checked: 2021.08.31
 
 2602:fe6b::/36 Deny Cloud
 2607:ff68::/32 Deny Cloud
 Origin: US
+Profile: Dedicated;Infrastructure/Transit;Webhosting
 Tag: Limestone Networks
 
 
@@ -655,18 +657,19 @@ Tag: Steadfast Networks
 
 # ASN 51088 ("A2B IP B.V").
 # Port scans and brute-force attempts detected originating from this network.
-# Updated: 2021.01.02
+# Updated: 2021.08.31
 
 2001:67c:1064::/48 Deny Cloud
+2001:7f8:b7::/64 Deny Cloud
 2001:1be8:3f03:713::/64 Deny Cloud
 2a01:77e0::/32 Deny Cloud
 2a02:1668::/32 Deny Cloud
 2a02:166b::/32 Deny Cloud
 2a02:2738::/32 Deny Cloud
-2a02:7840::/32 Deny Cloud
 2a06:2602::/32 Deny Cloud
 2a0b:1c0::/29 Deny Cloud
 Origin: NL
+Profile: Commercial;Infrastructure/Transit;Webhosting
 Tag: A2B IP B.V
 
 
@@ -3339,8 +3342,8 @@ Tag: eSited Solutions
 
 
 # ASN 39326 ("HighSpeed Office Limited").
-# Stop Forum Spam (SFS) listings: 259.
-# Updated: 2021.01.02
+# Stop Forum Spam (SFS) listings: 22.
+# Updated: 2021.01.02 / Checked: 2021.08.31
 
 2a03:f80:44::/48 Deny Cloud
 Origin: AT
@@ -3348,6 +3351,7 @@ Origin: AT
 2a01:348::/32 Deny Cloud
 2a03:94c0::/40 Deny Cloud
 Origin: GB
+Profile: Commercial;Infrastructure/Transit;Webhosting
 Tag: HighSpeed Office Ltd
 
 
@@ -3891,24 +3895,23 @@ Tag: Powerbase DataCenter
 
 
 # ASN 12637 ("Seeweb S.r.l").
-# Stop Forum Spam (SFS) listings: 1.
-# Updated: 2021.01.03
+# Stop Forum Spam (SFS) listings: 8.
+# Updated: 2021.08.31
 
-2a09:dd80::/31 Deny Cloud
+2a09:dd81::/32 Deny Cloud
 2a09:dd82::/32 Deny Cloud
-2a0b:ee40::/32 Deny Cloud
 Origin: HR
 2001:4b78::/29 Deny Cloud
 2a04:2700::/29 Deny Cloud
-2a05:b6c0::/31 Deny Cloud
+2a05:b6c1::/32 Deny Cloud
 2a05:be80::/29 Deny Cloud
 2a0b:fd40::/29 Deny Cloud
 2a0d:b000::/29 Deny Cloud
 Origin: IT
 2a02:e9::/32 Deny Cloud
-2a02:ea::/31 Deny Cloud
+2a02:ea::/32 Deny Cloud
 Origin: SI
-Profile: Tor endpoints here;Webhosting
+Profile: Infrastructure/Transit;Tor endpoints here;Webhosting
 Tag: Seeweb S.r.l
 
 
@@ -4067,29 +4070,23 @@ Profile: Webhosting
 Tag: OOO IT-Grad
 
 
-# ASNs 55933, 133731, 134176, 134196, 138643 ("Cloudie Limited", "Xinyuan
+# ASNs 55933, 133731, 134176, 134196 ("Cloudie Limited", "Xinyuan
 # Interconnect (HK) Limited", "Rainbow network limited").
 # This section combines several different networks due to heavy interlacing
 # between those networks (keeping distinct sections for those networks could
 # result in an amount of signature duplication). In all cases, a significant
 # source of various kinds of unwanted traffic (e.g., spamming, hack attempts,
 # probing for vulnerabilities, etc).
-# Stop Forum Spam (SFS) listings: 90 (AS55933), 3 (AS133731), 4 (AS134176), 72 (AS134196).
-# Updated: 2021.01.02
+# Stop Forum Spam (SFS) listings: 206 (AS55933), 3 (AS133731), 4 (AS134176), 47 (AS134196).
+# Updated: 2021.08.31
 
-2403:3a40::/32 Deny Cloud
-2403:3b40::/32 Deny Cloud
-2403:3bc0::/32 Deny Cloud
-2404:3bc0::/32 Deny Cloud
-2404:3c40::/32 Deny Cloud
-Origin: CN
+2a06:5040:3::/48 Deny Cloud
+Origin: GB
 2404:8c80::/32 Deny Cloud
 Origin: HK
-2404:b8c0::/32 Deny Cloud
-Origin: JP
 2a0b:4340:80::/46 Deny Cloud
 Origin: US
-Profile: Frequent changes
+Profile: Commercial;Frequent changes;Infrastructure/Transit;Webhosting
 Tag: Cloudie Limited
 
 
@@ -6222,11 +6219,12 @@ Tag: INTERRA
 
 # ASN 204490 ("Kontel LLC").
 # Caught trying to hack WordPress sites.
-# Stop Forum Spam (SFS) listings: 2,278.
-# Updated: 2019.10.05 / Checked: 2021.01.02
+# Stop Forum Spam (SFS) listings: 2,428.
+# Updated: 2019.10.05 / Checked: 2021.08.31
 
 2a0d:c580::/29 Deny Cloud
 Origin: RU
+Profile: Commercial
 Tag: Kontel LLC
 
 
@@ -6999,8 +6997,8 @@ Tag: LLC Cloud Networks
 
 # ASN 197706 ("Keminet SHPK").
 # Caught spamming honeypots and probing for vulnerabilities.
-# Stop Forum Spam (SFS) listings: 1,487.
-# Updated: 2021.01.03
+# Stop Forum Spam (SFS) listings: 1,310.
+# Updated: 2021.01.03 / Checked: 2021.08.31
 
 2a04:27c0::/29 Deny Cloud
 2a09:6ec0::/29 Deny Cloud
@@ -7014,6 +7012,7 @@ Tag: LLC Cloud Networks
 2a0e:d4c0::/29 Deny Cloud
 2a0f:4780::/29 Deny Cloud
 Origin: AL
+Profile: Webhosting
 Tag: Keminet SHPK
 
 

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Vietnamese language data for the front-end (last modified: 2021.08.26).
+# This file: Vietnamese language data for the front-end (last modified: 2021.09.06).
 ##/
 
 Extended Description Bypasses: "Các tập tin đường tránh chữ ký mặc định thường bao gồm với gói thầu chính."
@@ -28,13 +28,13 @@ Extended Description module_abuseipdb.php: "Chặn các yêu cầu từ IP đư�
 Extended Description module_badhosts.php: "Chặn các máy chủ web mà thường được sử dụng bởi các chương trình thư rác, hacker và thực thể bất chính khác."
 Extended Description module_badhosts_isps.php: "Chặn các máy chủ web của các ISP mà thường được sử dụng bởi các chương trình thư rác, hacker và thực thể bất chính khác."
 Extended Description module_badtlds.php: "Chặn các máy chủ web của các TLD mà thường được sử dụng bởi các chương trình thư rác, hacker và thực thể bất chính khác."
-Extended Description module_bgpview.php: "Tận dụng API <a href="https://bgpview.io/" hreflang="en" rel="noopener noreferrer external">bgpview.io</a> để cung cấp phương tiện tra cứu mã quốc gia và ASN cho CIDRAM, cho phép các ASN và quốc gia bị chặn hay đưa vào danh sách trắng thông qua cấu hình CIDRAM, và cung cấp một phương tiện để xác minh mạng xã hội để xác minh các yêu cầu của Facebook."
+Extended Description module_bgpview.php: "Tận dụng API {{Links.BGPView}} để cung cấp phương tiện tra cứu mã quốc gia và ASN cho CIDRAM, cho phép các ASN và quốc gia bị chặn hay đưa vào danh sách trắng thông qua cấu hình CIDRAM, và cung cấp một phương tiện để xác minh mạng xã hội để xác minh các yêu cầu của Facebook."
 Extended Description module_botua.php: "Chặn các đại lý người dùng liên quan đến các chương trình không mong muốn và hoạt động bất chính."
 Extended Description module_cookies.php: "Cung cấp một số bảo vệ hạn chế đối với cookie nguy hiểm."
 Extended Description module_extras.php: "Cung cấp một số bảo vệ hạn chế chống vectơ tấn công khác nhau thường được sử dụng trong các yêu cầu."
 Extended Description module_httpver.php: "Bạn có thể chặn các giao thức và phiên bản HTTP cụ thể thông qua cấu hình CIDRAM."
 Extended Description module_projecthoneypot.php: "Chặn các yêu cầu từ IP được liệt kê tại Project Honeypot."
-Extended Description module_refspam.php: "Chặn dựa trên spam giới thiệu thường không cung cấp bất kỳ lợi ích bảo mật có ý nghĩa nào, nhưng trong một số trường hợp, có thể hữu ích cho một số người dùng, để thu thập thêm thông tin về các yêu cầu và để có thể báo cáo nó.<br />Bằng cách cài đặt mô-đun này, các polyfill Symfony cho <a href="https://github.com/symfony/polyfill-intl-idn" hreflang="en" rel="noopener noreferrer external">Intl/Idn</a> và <a href="https://github.com/symfony/polyfill-mbstring" hreflang="en" rel="noopener noreferrer external">Mbstring</a> cũng sẽ được cài đặt (bởi vì mô-đun này yêu cầu chức năng "Idn", và không phải tất cả các cài đặt PHP cung cấp nó theo mặc định). Cả hai đều có sẵn thông qua giấy phép <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a>."
+Extended Description module_refspam.php: "Chặn dựa trên spam giới thiệu thường không cung cấp bất kỳ lợi ích bảo mật có ý nghĩa nào, nhưng trong một số trường hợp, có thể hữu ích cho một số người dùng, để thu thập thêm thông tin về các yêu cầu và để có thể báo cáo nó.<br />Bằng cách cài đặt mô-đun này, các polyfill Symfony cho {{Links.Symfony.Intl/Idn}} và {{Links.Symfony.Mbstring}} cũng sẽ được cài đặt (bởi vì mô-đun này yêu cầu chức năng "Idn", và không phải tất cả các cài đặt PHP cung cấp nó theo mặc định). Cả hai đều có sẵn thông qua giấy phép <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a>."
 Extended Description module_sfs.php: "Bảo vệ các trang đăng ký và đăng nhập đối với các địa chỉ IP do SFS liệt kê."
 Extended Description Search engines blocker module: "Cung cấp khả năng chặn các máy tìm kiếm có thể có vấn đề đối với một số trang web (ví dụ, Baidu, Sogou, Yandex, vv)."
 Name Bypasses: "Các đường tránh chữ ký mặc định."
@@ -584,13 +584,13 @@ info_some_useful_links: |
        </li>
        <li><span class="comCat" style="cursor:pointer">Công cụ, tài nguyên, dịch vụ, vv hữu ích khác.</span>
          <ul class="comSub">
-           <li>{{Links.Resources.SFS}} – Duy trì một cơ sở dữ liệu của những kẻ gửi thư rác được biết đến. Hữu ích để bảo vệ các trang web và diễn đàn chống lại kẻ gửi thư rác.</li>
+           <li>{{Links.SFS}} – Duy trì một cơ sở dữ liệu của những kẻ gửi thư rác được biết đến. Hữu ích để bảo vệ các trang web và diễn đàn chống lại kẻ gửi thư rác.</li>
            <li><a href="https://bgp.he.net/" hreflang="en" rel="noopener noreferrer external">Hurricane Electric BGP Toolkit</a> – Nhận các CIDR từ các ASN, xác định các mối quan hệ các ASN, khám phá vùng các ASN dựa trên các tên mạng, vv.</li>
-           <li>{{Links.Resources.BGPView}} – Nhận các CIDR từ các ASN, xác định các mối quan hệ các ASN, khám phá vùng các ASN dựa trên các tên mạng, vv.</li>
+           <li>{{Links.BGPView}} – Nhận các CIDR từ các ASN, xác định các mối quan hệ các ASN, khám phá vùng các ASN dựa trên các tên mạng, vv.</li>
            <li><a href="https://radar.qrator.net/" hreflang="en" rel="noopener noreferrer external">Radar bởi Qrator</a> – Công cụ hữu ích để kiểm tra kết nối ASN cũng như cho nhiều thông tin khác về ASN.</li>
            <li><a href="https://www.spamhaus.org/statistics/botnet-asn/" rel="noopener noreferrer external">Dự án Spamhaus</a> – Hiển thị báo cáo về tỷ lệ lây nhiễm chương trình thư rác cho các ASN.</li>
            <li><a href="https://www.abuseat.org/public/asn.html" hreflang="en" rel="noopener noreferrer external">Danh sách chặn hỗn hợp@Abuseat.org</a> – Hiển thị báo cáo về tỷ lệ lây nhiễm chương trình thư rác cho các ASN.</li>
-           <li>{{Links.Resources.AbuseIPDB}} – Duy trì một cơ sở dữ liệu của các IP mà lạm dụng và biết; Cung cấp một API để kiểm tra và báo cáo các IP.</li>
+           <li>{{Links.AbuseIPDB}} – Duy trì một cơ sở dữ liệu của các IP mà lạm dụng và biết; Cung cấp một API để kiểm tra và báo cáo các IP.</li>
          </ul>
        </li>
        <li><span class="comCat" style="cursor:pointer">Tài nguyên thông tin và học tập.</span>

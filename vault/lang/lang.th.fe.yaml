@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Thai language data for the front-end (last modified: 2021.08.26).
+# This file: Thai language data for the front-end (last modified: 2021.09.06).
 ##/
 
 Extended Description Bypasses: "ไฟล์บายพาสลายเซ็นเริ่มต้นที่รวมอยู่ในแพคเกจหลัก."
@@ -28,13 +28,13 @@ Extended Description module_abuseipdb.php: "บล็อกคำขอจาก
 Extended Description module_badhosts.php: "บล็อกโฮสต์ที่มักใช้โดยผู้ส่งสแปม แฮ็กเกอร์ และบุคคลอื่น ๆ ที่ไม่เป็นไปตามหลักเกณฑ์."
 Extended Description module_badhosts_isps.php: "บล็อกโฮสต์ของ ISP ที่มักใช้โดยผู้ส่งสแปม แฮ็กเกอร์ และบุคคลอื่น ๆ ที่ไม่เป็นไปตามหลักเกณฑ์."
 Extended Description module_badtlds.php: "บล็อกโฮสต์ของ TLD ที่มักใช้โดยผู้ส่งสแปม แฮ็กเกอร์ และบุคคลอื่น ๆ ที่ไม่เป็นไปตามหลักเกณฑ์."
-Extended Description module_bgpview.php: "ใช้ <a href="https://bgpview.io/" hreflang="en" rel="noopener noreferrer external">bgpview.io</a> เพื่อจัดเตรียมความสามารถในการค้นหา ASN และรหัสประเทศสำหรับ CIDRAM การเปิดใช้งาน ASN และประเทศต่างๆให้ถูกบล็อกหรืออนุญาตผ่านการกำหนดค่า CIDRAM และจัดหาวิธีสำหรับการตรวจสอบเครือข่ายสังคมออนไลน์เพื่อยืนยันคำขอ Facebook."
+Extended Description module_bgpview.php: "ใช้ {{Links.BGPView}} เพื่อจัดเตรียมความสามารถในการค้นหา ASN และรหัสประเทศสำหรับ CIDRAM การเปิดใช้งาน ASN และประเทศต่างๆให้ถูกบล็อกหรืออนุญาตผ่านการกำหนดค่า CIDRAM และจัดหาวิธีสำหรับการตรวจสอบเครือข่ายสังคมออนไลน์เพื่อยืนยันคำขอ Facebook."
 Extended Description module_botua.php: "บล็อกตัวแทนผู้ใช้ที่เกี่ยวข้องกับบอทและกิจกรรมที่ไม่เป็นที่ต้องการ."
 Extended Description module_cookies.php: "ให้การป้องกันที่ จำกัด สำหรับคุกกี้ที่เป็นอันตราย."
 Extended Description module_extras.php: "ให้การป้องกันที่ จำกัด กับเวกเตอร์การโจมตีต่างๆที่ใช้ทั่วไปในคำขอ."
 Extended Description module_httpver.php: "ทำให้สามารถบล็อกโปรโตคอลและเวอร์ชัน HTTP เฉพาะผ่านการกำหนดค่า CIDRAM."
 Extended Description module_projecthoneypot.php: "บล็อกคำขอจาก IP ที่แสดงรายการไว้ที่ Project Honeypot."
-Extended Description module_refspam.php: "การปิดกั้นโดยอ้างอิงจากสแปมอ้างอิงจะไม่ให้ประโยชน์ด้านความปลอดภัยที่มีความหมาย แต่ในบางกรณีอาจมีประโยชน์สำหรับผู้ใช้บางคน เพื่อรวบรวมข้อมูลเพิ่มเติมเกี่ยวกับคำขอและเพื่อให้สามารถรายงานได้.<br />การติดตั้งโมดูลนี้ยังติดตั้ง Symfony polyfills สำหรับ <a href="https://github.com/symfony/polyfill-intl-idn" hreflang="en" rel="noopener noreferrer external">Intl/Idn</a> และ <a href="https://github.com/symfony/polyfill-mbstring" hreflang="en" rel="noopener noreferrer external">Mbstring</a> (เพราะโมดูลนี้ต้องการฟังก์ชั่น Idn ซึ่งการติดตั้ง PHP ทั้งหมดไม่ได้มีให้ตามค่าเริ่มต้น) ทั้งสองอย่างนี้มีให้ใช้ผ่านทางใบอนุญาต <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a>."
+Extended Description module_refspam.php: "การปิดกั้นโดยอ้างอิงจากสแปมอ้างอิงจะไม่ให้ประโยชน์ด้านความปลอดภัยที่มีความหมาย แต่ในบางกรณีอาจมีประโยชน์สำหรับผู้ใช้บางคน เพื่อรวบรวมข้อมูลเพิ่มเติมเกี่ยวกับคำขอและเพื่อให้สามารถรายงานได้.<br />การติดตั้งโมดูลนี้ยังติดตั้ง Symfony polyfills สำหรับ {{Links.Symfony.Intl/Idn}} และ {{Links.Symfony.Mbstring}} (เพราะโมดูลนี้ต้องการฟังก์ชั่น Idn ซึ่งการติดตั้ง PHP ทั้งหมดไม่ได้มีให้ตามค่าเริ่มต้น) ทั้งสองอย่างนี้มีให้ใช้ผ่านทางใบอนุญาต <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a>."
 Extended Description module_sfs.php: "ปกป้องหน้าการลงทะเบียนและเข้าสู่ระบบต่อต้าน IP ที่ระบุโดย SFS."
 Extended Description Search engines blocker module: "ให้ความสามารถในการบล็อกเครื่องมือค้นหาที่อาจมีปัญหาสำหรับบางเว็บไซต์ (เช่น., Baidu, Sogou, Yandex, ฯลฯ)."
 Name Bypasses: "บายพาลายเซ็นที่เป็นค่าเริ่มต้น."
@@ -584,13 +584,13 @@ info_some_useful_links: |
        </li>
        <li><span class="comCat" style="cursor:pointer">เครื่องมือ ทรัพยากร บริการ ฯลฯ ที่มีประโยชน์อื่น ๆ.</span>
          <ul class="comSub">
-           <li>{{Links.Resources.SFS}} – รักษาฐานข้อมูลของผู้ส่งอีเมลขยะที่เป็นที่รู้จัก. มีประโยชน์สำหรับการปกป้องเว็บไซต์และฟอรัมจากสแปมเมอร์.</li>
+           <li>{{Links.SFS}} – รักษาฐานข้อมูลของผู้ส่งอีเมลขยะที่เป็นที่รู้จัก. มีประโยชน์สำหรับการปกป้องเว็บไซต์และฟอรัมจากสแปมเมอร์.</li>
            <li><a href="https://bgp.he.net/" hreflang="en" rel="noopener noreferrer external">Hurricane Electric BGP Toolkit</a> – รับ CIDR จาก ASN ยืนยันความสัมพันธ์ ASN ค้นพบ ASN ตามชื่อเครือข่าย ฯลฯ.</li>
-           <li>{{Links.Resources.BGPView}} – รับ CIDR จาก ASN ยืนยันความสัมพันธ์ ASN ค้นพบ ASN ตามชื่อเครือข่าย ฯลฯ.</li>
+           <li>{{Links.BGPView}} – รับ CIDR จาก ASN ยืนยันความสัมพันธ์ ASN ค้นพบ ASN ตามชื่อเครือข่าย ฯลฯ.</li>
            <li><a href="https://radar.qrator.net/" hreflang="en" rel="noopener noreferrer external">Radar โดย Qrator</a> – เครื่องมือมีประโยชน์สำหรับตรวจสอบการเชื่อมต่อ ASN รวมทั้งข้อมูลอื่น ๆ เกี่ยวกับ ASN.</li>
            <li><a href="https://www.spamhaus.org/statistics/botnet-asn/" rel="noopener noreferrer external">โครงการ Spamhaus</a> – แสดงรายงานเกี่ยวกับอัตราการติดเชื้อของ botnet ใน ASN.</li>
            <li><a href="https://www.abuseat.org/public/asn.html" hreflang="en" rel="noopener noreferrer external">รายการการปิดกั้นแบบคอมโพสิต@Abuseat.org</a> – แสดงรายงานเกี่ยวกับอัตราการติดเชื้อของ botnet ใน ASN.</li>
-           <li>{{Links.Resources.AbuseIPDB}} – รักษาฐานข้อมูล IP เป็นอันตราย; จัดเตรียม API สำหรับตรวจสอบและรายงาน IP.</li>
+           <li>{{Links.AbuseIPDB}} – รักษาฐานข้อมูล IP เป็นอันตราย; จัดเตรียม API สำหรับตรวจสอบและรายงาน IP.</li>
          </ul>
        </li>
        <li><span class="comCat" style="cursor:pointer">แหล่งข้อมูลและการเรียนรู้.</span>

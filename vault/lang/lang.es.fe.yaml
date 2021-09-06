@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Spanish language data for the front-end (last modified: 2021.08.26).
+# This file: Spanish language data for the front-end (last modified: 2021.09.06).
 ##/
 
 Extended Description Bypasses: "Los archivos para bypass de firmas estándar normalmente se incluyen con el paquete principal."
@@ -28,13 +28,13 @@ Extended Description module_abuseipdb.php: "Bloquea las solicitudes de los IP li
 Extended Description module_badhosts.php: "Bloquea los hosts utilizados con frecuencia por spammers, hackers y otras entidades nefastas."
 Extended Description module_badhosts_isps.php: "Bloquea los hosts que pertenecen a los ISP utilizados con frecuencia por los spammers, los hackers y otras entidades nefastas."
 Extended Description module_badtlds.php: "Bloquea los hosts que pertenecen a los TLD utilizados con frecuencia por los spammers, los hackers y otras entidades nefastas."
-Extended Description module_bgpview.php: "Aprovecha la <a href="https://bgpview.io/" hreflang="en" rel="noopener noreferrer external">bgpview.io</a> API para proporcionar un servicio para buscar códigos de país y ASN para CIDRAM, permitiendo que los ASN y los países se bloqueen o incluyan en la lista blanca a través de la configuración CIDRAM, y proporcionando un medio para la verificación de redes sociales para verificar las solicitudes de Facebook."
+Extended Description module_bgpview.php: "Aprovecha la {{Links.BGPView}} API para proporcionar un servicio para buscar códigos de país y ASN para CIDRAM, permitiendo que los ASN y los países se bloqueen o incluyan en la lista blanca a través de la configuración CIDRAM, y proporcionando un medio para la verificación de redes sociales para verificar las solicitudes de Facebook."
 Extended Description module_botua.php: "Bloquea los agentes de usuario asociados con bots no deseados y actividad infame."
 Extended Description module_cookies.php: "Proporciona algunas protecciones limitadas contra cookies peligrosas."
 Extended Description module_extras.php: "Proporciona algunas protecciones limitadas contra varios vectores de ataque comúnmente utilizado en las solicitudes."
 Extended Description module_httpver.php: "Lo hace posible bloquear protocolos específicos y versiones HTTP a través de la configuración de CIDRAM."
 Extended Description module_projecthoneypot.php: "Bloquea las solicitudes de los IP listados en Project Honeypot."
-Extended Description module_refspam.php: "El bloqueo basado en spam de referencia generalmente no proporcionará ningún beneficio de seguridad significativo, pero en algunos casos, podría ser útil para algunos usuarios, para recopilar más información sobre solicitudes y para poder reporta los.<br />La instalación de este módulo también instala los polyfills de Symfony para <a href="https://github.com/symfony/polyfill-intl-idn" hreflang="en" rel="noopener noreferrer external">Intl/Idn</a> y <a href="https://github.com/symfony/polyfill-mbstring" hreflang="en" rel="noopener noreferrer external">Mbstring</a> (porque este módulo requiere la funcionalidad Idn, que no todas las instalaciones de PHP proporcionan de manera predeterminada), ambos que están disponibles a través de la licencia <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a>."
+Extended Description module_refspam.php: "El bloqueo basado en spam de referencia generalmente no proporcionará ningún beneficio de seguridad significativo, pero en algunos casos, podría ser útil para algunos usuarios, para recopilar más información sobre solicitudes y para poder reporta los.<br />La instalación de este módulo también instala los polyfills de Symfony para {{Links.Symfony.Intl/Idn}} y {{Links.Symfony.Mbstring}} (porque este módulo requiere la funcionalidad Idn, que no todas las instalaciones de PHP proporcionan de manera predeterminada), ambos que están disponibles a través de la licencia <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a>."
 Extended Description module_sfs.php: "Protege las páginas de registro y de inicio de sesión de las IP listadas por SFS."
 Extended Description Search engines blocker module: "Proporciona la capacidad de bloquear motores de búsqueda que pueden ser problemáticos para algunos sitios web (por ejemplo, Baidu, Sogou, Yandex, etc)."
 Name Bypasses: "Bypasses de firmas estándar."
@@ -598,13 +598,13 @@ info_some_useful_links: |
        </li>
        <li><span class="comCat" style="cursor:pointer">Otras herramientas, recursos, servicios, etc que son útiles.</span>
          <ul class="comSub">
-           <li>{{Links.Resources.SFS}} – Mantiene una base de datos de spammers de foros conocidos. Útil para proteger sitios web y foros contra spammers.</li>
+           <li>{{Links.SFS}} – Mantiene una base de datos de spammers de foros conocidos. Útil para proteger sitios web y foros contra spammers.</li>
            <li><a href="https://bgp.he.net/" hreflang="en" rel="noopener noreferrer external">Hurricane Electric BGP Toolkit</a> – Obtener CIDRs de ASNs, Determinar las relaciones de las ASNs, Descubre los ASNs basados en nombres de redes, etc.</li>
-           <li>{{Links.Resources.BGPView}} – Obtener CIDRs de ASNs, Determinar las relaciones de las ASNs, Descubre los ASNs basados en nombres de redes, etc.</li>
+           <li>{{Links.BGPView}} – Obtener CIDRs de ASNs, Determinar las relaciones de las ASNs, Descubre los ASNs basados en nombres de redes, etc.</li>
            <li><a href="https://radar.qrator.net/" hreflang="en" rel="noopener noreferrer external">Radar por Qrator</a> – Útil herramienta para comprobar la conectividad de los ASNs así como para otras informaciones sobre los ASNs.</li>
            <li><a href="https://www.spamhaus.org/statistics/botnet-asn/" rel="noopener noreferrer external">El Proyecto Spamhaus</a> – Muestra informes sobre las tasas de infección por botnets para los ASNs.</li>
            <li><a href="https://www.abuseat.org/public/asn.html" hreflang="en" rel="noopener noreferrer external">Lista de bloqueo compuesto@Abuseat.org</a> – Muestra informes sobre las tasas de infección por botnets para los ASNs.</li>
-           <li>{{Links.Resources.AbuseIPDB}} – Mantiene una base de datos de IPs abusivos conocidos; Proporciona una API para comprobar e informar IPs.</li>
+           <li>{{Links.AbuseIPDB}} – Mantiene una base de datos de IPs abusivos conocidos; Proporciona una API para comprobar e informar IPs.</li>
          </ul>
        </li>
        <li><span class="comCat" style="cursor:pointer">Recursos informativos y de aprendizaje.</span>

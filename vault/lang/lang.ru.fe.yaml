@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Russian language data for the front-end (last modified: 2021.08.26).
+# This file: Russian language data for the front-end (last modified: 2021.09.06).
 ##/
 
 Extended Description Bypasses: "Стандартная сигнатуры байпасы, обычно включены в основной пакет."
@@ -28,13 +28,13 @@ Extended Description module_abuseipdb.php: "Блокирует запросы о
 Extended Description module_badhosts.php: "Блокирует хосты, часто используемые спамерами, хакерами и другими гнусными объектами."
 Extended Description module_badhosts_isps.php: "Блокирует хосты, принадлежащие интернет-провайдерам, часто используемые спамерами, хакерами и другими гнусными объектами."
 Extended Description module_badtlds.php: "Блокирует хосты, принадлежащие ДВУ, часто используемые спамерами, хакерами и другими гнусными объектами."
-Extended Description module_bgpview.php: "Использует API <a href="https://bgpview.io/" hreflang="en" rel="noopener noreferrer external">bgpview.io</a> для предоставления средства поиска для ASN и коды страны для CIDRAM, таким образом, позволяя блокировать или вносить белый список ASN и стран через конфигурацию CIDRAM, и предоставление средств для проверки в социальных сетях для проверки запросов Facebook."
+Extended Description module_bgpview.php: "Использует API {{Links.BGPView}} для предоставления средства поиска для ASN и коды страны для CIDRAM, таким образом, позволяя блокировать или вносить белый список ASN и стран через конфигурацию CIDRAM, и предоставление средств для проверки в социальных сетях для проверки запросов Facebook."
 Extended Description module_botua.php: "Блокирует пользовательские агенты, связанные с нежелательными ботами и нечестной деятельностью."
 Extended Description module_cookies.php: "Обеспечивает некоторые ограниченные средства защиты против опасных куки."
 Extended Description module_extras.php: "Обеспечивает некоторые ограниченные средства защиты против различных векторов атак обычно используются в запросах."
 Extended Description module_httpver.php: "Дает возможность блокировать определенные протоколы и версии HTTP через конфигурацию CIDRAM."
 Extended Description module_projecthoneypot.php: "Блокирует запросы от IP-адресов, перечисленных в Project Honeypot."
-Extended Description module_refspam.php: "Блокировка, основанная на реферальный спам, как правило, не дает сколько-нибудь значимого преимущества безопасности, но в некоторых случаях может быть полезным для некоторых пользователей, для сбора дополнительной информации о запросах и для возможности сообщить об этом.<br />Установка этого модуля также устанавливает полифилы Symfony для <a href="https://github.com/symfony/polyfill-intl-idn" hreflang="en" rel="noopener noreferrer external">Intl/Idn</a> и <a href="https://github.com/symfony/polyfill-mbstring" hreflang="en" rel="noopener noreferrer external">Mbstring</a> (потому что этот модуль требует функциональности Idn, которую не все установки PHP предоставляют по умолчанию), оба из которых доступно через лицензию <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a>."
+Extended Description module_refspam.php: "Блокировка, основанная на реферальный спам, как правило, не дает сколько-нибудь значимого преимущества безопасности, но в некоторых случаях может быть полезным для некоторых пользователей, для сбора дополнительной информации о запросах и для возможности сообщить об этом.<br />Установка этого модуля также устанавливает полифилы Symfony для {{Links.Symfony.Intl/Idn}} и {{Links.Symfony.Mbstring}} (потому что этот модуль требует функциональности Idn, которую не все установки PHP предоставляют по умолчанию), оба из которых доступно через лицензию <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a>."
 Extended Description module_sfs.php: "Защищает страницы регистрации и входа в систему от IP-адресов, перечисленных в SFS."
 Extended Description Search engines blocker module: "Предоставляет возможность блокировать поисковые системы, что может быть проблематичным для некоторых веб-сайтов (например, Baidu, Sogou, Яндекс, и т.д.)."
 Name Bypasses: "Стандартная сигнатуры байпасы."
@@ -605,13 +605,13 @@ info_some_useful_links: |
        </li>
        <li><span class="comCat" style="cursor:pointer">Другие полезные инструменты, ресурсы, услуги и т.д.</span>
          <ul class="comSub">
-           <li>{{Links.Resources.SFS}} – Поддерживает базу данных известных спамеров форума. Полезно для защиты сайтов и форумов от спамеров.</li>
+           <li>{{Links.SFS}} – Поддерживает базу данных известных спамеров форума. Полезно для защиты сайтов и форумов от спамеров.</li>
            <li><a href="https://bgp.he.net/" hreflang="en" rel="noopener noreferrer external">Hurricane Electric BGP Toolkit</a> – Получить CIDRs от ASNs, определить ASN отношения, обнаружить ASNs основанный на сетевых имен, и т.д.</li>
-           <li>{{Links.Resources.BGPView}} – Получить CIDRs от ASNs, определить ASN отношения, обнаружить ASNs основанный на сетевых имен, и т.д.</li>
+           <li>{{Links.BGPView}} – Получить CIDRs от ASNs, определить ASN отношения, обнаружить ASNs основанный на сетевых имен, и т.д.</li>
            <li><a href="https://radar.qrator.net/" hreflang="en" rel="noopener noreferrer external">Radar от Qrator</a> – Полезный инструмент для проверки связности ASNs а также для различных других сведений о ASNs.</li>
            <li><a href="https://www.spamhaus.org/statistics/botnet-asn/" rel="noopener noreferrer external">Проект Spamhaus</a> – Отображает отчеты о ботнет ставок инфекции для ASNs.</li>
            <li><a href="https://www.abuseat.org/public/asn.html" hreflang="en" rel="noopener noreferrer external">Список составных блокировок@Abuseat.org</a> – Отображает отчеты о ботнет ставок инфекции для ASNs.</li>
-           <li>{{Links.Resources.AbuseIPDB}} – Ведение базы данных известных оскорбительных IP-адресов; Предоставляет API для проверки и отчетности IP-адресов.</li>
+           <li>{{Links.AbuseIPDB}} – Ведение базы данных известных оскорбительных IP-адресов; Предоставляет API для проверки и отчетности IP-адресов.</li>
          </ul>
        </li>
        <li><span class="comCat" style="cursor:pointer">Информационные и учебные ресурсы.</span>

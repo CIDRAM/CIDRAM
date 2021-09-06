@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (simplified) language data for the front-end (last modified: 2021.08.26).
+# This file: Chinese (simplified) language data for the front-end (last modified: 2021.09.06).
 ##/
 
 Extended Description Bypasses: "标准签名旁路文件通常包括在主包。"
@@ -34,7 +34,7 @@ Extended Description module_cookies.php: "提供一些针对危险cookie的有�
 Extended Description module_extras.php: "提供一些有限的保护针对各种攻击向量常用于请求。"
 Extended Description module_httpver.php: "通过CIDRAM配置可以阻止特定的协议和HTTP版本。"
 Extended Description module_projecthoneypot.php: "阻止来自Project Honeypot列出的IP的请求。"
-Extended Description module_refspam.php: "基于引荐来源垃圾邮件阻止通常不会提供任何有意义的安全利益，但在某些情况下，对某些用户可能有用，用于收集有关请求的更多信息，以及能够报告它。<br />通过安装此模块，还将安装用于<a href="https://github.com/symfony/polyfill-intl-idn" hreflang="en" rel="noopener noreferrer external">Intl/Idn</a>和<a href="https://github.com/symfony/polyfill-mbstring" hreflang="en" rel="noopener noreferrer external">Mbstring</a>的Symfony polyfills（因为此模块需要Idn功能性，但并非所有PHP安装都默认提供该功能性）。​这两个都可以通过<a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a>许可获得。"
+Extended Description module_refspam.php: "基于引荐来源垃圾邮件阻止通常不会提供任何有意义的安全利益，但在某些情况下，对某些用户可能有用，用于收集有关请求的更多信息，以及能够报告它。<br />通过安装此模块，还将安装用于{{Links.Symfony.Intl/Idn}}和{{Links.Symfony.Mbstring}}的Symfony polyfills（因为此模块需要Idn功能性，但并非所有PHP安装都默认提供该功能性）。​这两个都可以通过<a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a>许可获得。"
 Extended Description module_sfs.php: "防止通过SFS列出的IP地址访问注册和登录页面。"
 Extended Description Search engines blocker module: "搜索引擎（例如，百度、搜狗、Yandex 、等等）可能会导致某些网站出现问题。​这个模块可以阻止那些搜索引擎。"
 Name Bypasses: "标准签名旁路。"
@@ -585,13 +585,13 @@ info_some_useful_links: |
        </li>
        <li><span class="comCat" style="cursor:pointer">其他有用的工具，资源，服务，等等</span>
          <ul class="comSub">
-           <li>{{Links.Resources.SFS}} – 维护已知论坛垃圾邮件发送者的数据库。有用的保护网站和论坛免受垃圾邮件发送者的攻。</li>
+           <li>{{Links.SFS}} – 维护已知论坛垃圾邮件发送者的数据库。有用的保护网站和论坛免受垃圾邮件发送者的攻。</li>
            <li><a href="https://bgp.he.net/" hreflang="en" rel="noopener noreferrer external">Hurricane Electric BGP Toolkit</a> – 从ASN获取CIDR，​确定ASN关系，​基于网络名称发现ASN，​等等。</li>
-           <li>{{Links.Resources.BGPView}} – 从ASN获取CIDR，​确定ASN关系，​基于网络名称发现ASN，​等等。</li>
+           <li>{{Links.BGPView}} – 从ASN获取CIDR，​确定ASN关系，​基于网络名称发现ASN，​等等。</li>
            <li><a href="https://radar.qrator.net/" hreflang="en" rel="noopener noreferrer external">Qrator的Radar</a> – 检查ASN连接的有用工具，​以及关于ASN的各种其他信息。</li>
            <li><a href="https://www.spamhaus.org/statistics/botnet-asn/" rel="noopener noreferrer external">Spamhaus项目</a> – 显示有关ASN僵尸网络感染率的报告。</li>
            <li><a href="https://www.abuseat.org/public/asn.html" hreflang="en" rel="noopener noreferrer external">Abuseat.org的复合阻止列表</a> – 显示有关ASN僵尸网络感染率的报告。</li>
-           <li>{{Links.Resources.AbuseIPDB}} – 维护已知的滥用IP数据库。它为IP检查和报告提供了一个API。</li>
+           <li>{{Links.AbuseIPDB}} – 维护已知的滥用IP数据库。它为IP检查和报告提供了一个API。</li>
          </ul>
        </li>
        <li><span class="comCat" style="cursor:pointer">信息和学习资源。</span>

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: French language data for the front-end (last modified: 2021.08.26).
+# This file: French language data for the front-end (last modified: 2021.09.06).
 ##/
 
 Extended Description Bypasses: "Les fichiers pour contourner les signatures standard qui sont normalement inclus dans le paquet principal."
@@ -34,7 +34,7 @@ Extended Description module_cookies.php: "Fournit quelques protections limitées
 Extended Description module_extras.php: "Fournit quelques protections limitées contre divers vecteurs d'attaque communément utilisé dans les requêtes."
 Extended Description module_httpver.php: "Permet de bloquer des protocoles spécifiques et des versions HTTP via la configuration CIDRAM."
 Extended Description module_projecthoneypot.php: "Bloque les requêtes des adresses IP répertoriées dans Project Honeypot."
-Extended Description module_refspam.php: "Le blocage basé sur le spam référent ne procure généralement aucun avantage de sécurité significatif, mais dans certains cas, cela pourrait être utile à certains utilisateurs pour rassembler plus d'informations sur les requêtes et pour pouvoir les signaler.<br />L'installation de ce module installe également les polyfills Symfony pour <a href="https://github.com/symfony/polyfill-intl-idn" hreflang="en" rel="noopener noreferrer external">Intl/Idn</a> et <a href="https://github.com/symfony/polyfill-mbstring" hreflang="en" rel="noopener noreferrer external">Mbstring</a> (car ce module nécessite la fonctionnalité Idn, que ne toutes pas les installations PHP fournissent par défaut), les deux qui sont disponibles via la licence <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a>."
+Extended Description module_refspam.php: "Le blocage basé sur le spam référent ne procure généralement aucun avantage de sécurité significatif, mais dans certains cas, cela pourrait être utile à certains utilisateurs pour rassembler plus d'informations sur les requêtes et pour pouvoir les signaler.<br />L'installation de ce module installe également les polyfills Symfony pour {{Links.Symfony.Intl/Idn}} et {{Links.Symfony.Mbstring}} (car ce module nécessite la fonctionnalité Idn, que ne toutes pas les installations PHP fournissent par défaut), les deux qui sont disponibles via la licence <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a>."
 Extended Description module_sfs.php: "Protège l'enregistrement et les pages de connexion contre les adresses IP répertoriées par SFS."
 Extended Description Search engines blocker module: "Offre la possibilité de bloquer les moteurs de recherche qui peuvent être problématiques pour certains sites Web (par exemple, Baidu, Sogou, Yandex, etc)."
 Name Bypasses: "Contournements pour signatures standard."
@@ -602,13 +602,13 @@ info_some_useful_links: |
        </li>
        <li><span class="comCat" style="cursor:pointer">Autres outils, ressources, services, etc. utiles.</span>
          <ul class="comSub">
-           <li>{{Links.Resources.SFS}} – Maintient une base de données des spammeurs connus sur les forums. Utile pour protéger les sites Web et les forums contre les spammeurs.</li>
+           <li>{{Links.SFS}} – Maintient une base de données des spammeurs connus sur les forums. Utile pour protéger les sites Web et les forums contre les spammeurs.</li>
            <li><a href="https://bgp.he.net/" hreflang="en" rel="noopener noreferrer external">Hurricane Electric BGP Toolkit</a> – Obtenir les CIDR des ASNs, Déterminer les relations entre ASNs, découvrez les ASN basés sur les noms de réseaux, etc.</li>
-           <li>{{Links.Resources.BGPView}} – Obtenir les CIDR des ASNs, Déterminer les relations entre ASNs, découvrez les ASN basés sur les noms de réseaux, etc.</li>
+           <li>{{Links.BGPView}} – Obtenir les CIDR des ASNs, Déterminer les relations entre ASNs, découvrez les ASN basés sur les noms de réseaux, etc.</li>
            <li><a href="https://radar.qrator.net/" hreflang="en" rel="noopener noreferrer external">Radar par Qrator</a> – Outil utile pour vérifier la connectivité des ASN ainsi pour diverses autres informations sur les ASNs.</li>
            <li><a href="https://www.spamhaus.org/statistics/botnet-asn/" rel="noopener noreferrer external">Le projet Spamhaus</a> – Affiche les rapports concernant les taux d'infection par botnet pour les ASN.</li>
            <li><a href="https://www.abuseat.org/public/asn.html" hreflang="en" rel="noopener noreferrer external">Liste de blocage composite@Abuseat.org</a> – Affiche les rapports concernant les taux d'infection par botnet pour les ASN.</li>
-           <li>{{Links.Resources.AbuseIPDB}} – Maintient une base de données des IPs abusives connues ; Fournit une API pour vérifier et signaler les IPs.</li>
+           <li>{{Links.AbuseIPDB}} – Maintient une base de données des IPs abusives connues ; Fournit une API pour vérifier et signaler les IPs.</li>
          </ul>
        </li>
        <li><span class="comCat" style="cursor:pointer">Ressources d'information et d'apprentissage.</span>

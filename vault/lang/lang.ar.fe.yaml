@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Arabic language data for the front-end (last modified: 2021.08.26).
+# This file: Arabic language data for the front-end (last modified: 2021.09.06).
 ##/
 
 Extended Description Bypasses: "ملفات الالتفافية التوقيع القياسية المدرجة عادة مع الحزمة الرئيسية."
@@ -34,7 +34,7 @@ Extended Description module_cookies.php: "يوفر بعض الحماية الم�
 Extended Description module_extras.php: "يوفر بعض الحماية محدودة ضد مختلف ناقلات هجوم تستخدم عادة في طلبات."
 Extended Description module_httpver.php: "يجعل من الممكن حظر بروتوكولات معينة وإصدارات HTTP من خلال تكوين CIDRAM."
 Extended Description module_projecthoneypot.php: "بحظر الطلبات من عناوين IP المدرجة في Project Honeypot."
-Extended Description module_refspam.php: "لا يوفر الحظر بناءً على الإحالة غير المرغوب فيها عمومًا أي فائدة أمنية ذات مغزى، ولكن في بعض الحالات، قد يكون مفيدًا لبعض المستخدمين، ولجمع مزيد من المعلومات حول الطلبات، وللتمكن من الإبلاغ عنها.<br />يؤدي تثبيت هذه المكون النمطية أيضًا إلى تثبيت polyfill لـ Symfony لـ <a dir="ltr" href="https://github.com/symfony/polyfill-intl-idn" hreflang="en" rel="noopener noreferrer external">Intl/Idn</a> و <a dir="ltr" href="https://github.com/symfony/polyfill-mbstring" hreflang="en" rel="noopener noreferrer external">Mbstring</a> (لأن هذه المكون تتطلب وظيفة Idn، والتي لا توفرها جميع عمليات تثبيت PHP بشكل افتراضي)، كلاهما متاح عبر ترخيص <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a>."
+Extended Description module_refspam.php: "لا يوفر الحظر بناءً على الإحالة غير المرغوب فيها عمومًا أي فائدة أمنية ذات مغزى، ولكن في بعض الحالات، قد يكون مفيدًا لبعض المستخدمين، ولجمع مزيد من المعلومات حول الطلبات، وللتمكن من الإبلاغ عنها.<br />يؤدي تثبيت هذه المكون النمطية أيضًا إلى تثبيت polyfill لـ Symfony لـ {{Links.Symfony.Intl/Idn}} و {{Links.Symfony.Mbstring}} (لأن هذه المكون تتطلب وظيفة Idn، والتي لا توفرها جميع عمليات تثبيت PHP بشكل افتراضي)، كلاهما متاح عبر ترخيص <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a>."
 Extended Description module_sfs.php: "يحمي تسجيل صفحات ضد عناوين IP المدرجة من قبل SFS."
 Extended Description Search engines blocker module: "يوفر القدرة على حظر محركات البحث التي قد تكون مشكلة لبعض مواقع الويب (على سبيل المثال، Baidu، Sogou، Yandex، إلخ)."
 Name Bypasses: "يتجاوز توقيع قياسي."
@@ -588,13 +588,13 @@ info_some_useful_links: |
        </li>
        <li><span class="comCat" style="cursor:pointer">الأدوات، الموارد، الخدمات، إلخ مفيدة أخرى.</span>
          <ul class="comSub">
-           <li>{{Links.Resources.SFS}} – يحافظ على قاعدة بيانات لمنتدى المزعج المنتدى المعروفين. مفيدة لحماية مواقع الويب والمنتديات من الرسائل غير المرغوب فيها.</li>
+           <li>{{Links.SFS}} – يحافظ على قاعدة بيانات لمنتدى المزعج المنتدى المعروفين. مفيدة لحماية مواقع الويب والمنتديات من الرسائل غير المرغوب فيها.</li>
            <li><a dir="ltr" href="https://bgp.he.net/" hreflang="en" rel="noopener noreferrer external">Hurricane Electric BGP Toolkit</a> – الحصول على CIDRs من ل ASNs، تحديد العلاقات ASN، اكتشف ل ASNs استنادا إلى أسماء الشبكات، إلخ.</li>
-           <li>{{Links.Resources.BGPView}} – الحصول على CIDRs من ل ASNs، تحديد العلاقات ASN، اكتشف ل ASNs استنادا إلى أسماء الشبكات، إلخ.</li>
+           <li>{{Links.BGPView}} – الحصول على CIDRs من ل ASNs، تحديد العلاقات ASN، اكتشف ل ASNs استنادا إلى أسماء الشبكات، إلخ.</li>
            <li><a dir="ltr" href="https://radar.qrator.net/" hreflang="en" rel="noopener noreferrer external">Radar by Qrator</a> – أداة مفيدة للتحقق من الاتصال من ل ASNs فضلا عن العديد من المعلومات الأخرى حول ل ASNs.</li>
            <li><a dir="ltr" href="https://www.spamhaus.org/statistics/botnet-asn/" rel="noopener noreferrer external">The Spamhaus Project</a> – تقارير يعرض بخصوص معدلات الإصابة الروبوتات أجل ASNs.</li>
            <li><a dir="ltr" href="https://www.abuseat.org/public/asn.html" hreflang="en" rel="noopener noreferrer external">Abuseat.org's Composite Blocking List</a> – تقارير يعرض بخصوص معدلات الإصابة الروبوتات أجل ASNs.</li>
-           <li>{{Links.Resources.AbuseIPDB}} – تحتفظ بقاعدة بيانات من عناوين IP المسيئة المعروفة؛ يوفر API لفحص والإبلاغ عناوين IP.</li>
+           <li>{{Links.AbuseIPDB}} – تحتفظ بقاعدة بيانات من عناوين IP المسيئة المعروفة؛ يوفر API لفحص والإبلاغ عناوين IP.</li>
          </ul>
        </li>
        <li><span class="comCat" style="cursor:pointer">موارد المعلومات والتعلم.</span>

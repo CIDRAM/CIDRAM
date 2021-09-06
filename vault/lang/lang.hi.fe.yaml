@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Hindi language data for the front-end (last modified: 2021.08.26).
+# This file: Hindi language data for the front-end (last modified: 2021.09.06).
 ##/
 
 Extended Description Bypasses: "डिफ़ॉल्ट हस्ताक्षर बाईपास फ़ाइलों को सामान्यतः मुख्य पैकेज के साथ शामिल किया गया था।"
@@ -34,7 +34,7 @@ Extended Description module_cookies.php: "खतरनाक कुकीज़ 
 Extended Description module_extras.php: "आम तौर पर अनुरोधों में उपयोग किए गए विभिन्न हमले वाले वैक्टर के खिलाफ कुछ सीमित सुरक्षा प्रदान करता है।"
 Extended Description module_httpver.php: "CIDRAM कॉन्फ़िगरेशन के माध्यम से विशिष्ट प्रोटोकॉल और HTTP संस्करणों को ब्लॉक करना संभव बनाता है।"
 Extended Description module_projecthoneypot.php: "Project Honeypot पर सूचीबद्ध IP से अनुरोध ब्लॉक करता है।"
-Extended Description module_refspam.php: "रेफरल स्पैम पर आधारित ब्लॉकिंग आम तौर पर कोई सार्थक सुरक्षा लाभ प्रदान नहीं करेगा, लेकिन कुछ मामलों में, कुछ उपयोगकर्ताओं के लिए उपयोगी हो सकता है, अनुरोधों के बारे में अधिक जानकारी इकट्ठा करने के लिए, और इसे रिपोर्ट करने में सक्षम होने के लिए।<br />इस मॉड्यूल को स्थापित करने से <a href="https://github.com/symfony/polyfill-intl-idn" hreflang="en" rel="noopener noreferrer external">Intl/Idn</a> और <a href="https://github.com/symfony/polyfill-mbstring" hreflang="en" rel="noopener noreferrer external">Mbstring</a> के लिए Symfony Polyfill स्थापित होते हैं (क्योंकि इस मॉड्यूल में Idn कार्यक्षमता की आवश्यकता होती है, जो डिफ़ॉल्ट रूप से सभी PHP संस्थापन प्रदान नहीं करते हैं), दोनों जो <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a> लाइसेंस के माध्यम से उपलब्ध हैं।"
+Extended Description module_refspam.php: "रेफरल स्पैम पर आधारित ब्लॉकिंग आम तौर पर कोई सार्थक सुरक्षा लाभ प्रदान नहीं करेगा, लेकिन कुछ मामलों में, कुछ उपयोगकर्ताओं के लिए उपयोगी हो सकता है, अनुरोधों के बारे में अधिक जानकारी इकट्ठा करने के लिए, और इसे रिपोर्ट करने में सक्षम होने के लिए।<br />इस मॉड्यूल को स्थापित करने से {{Links.Symfony.Intl/Idn}} और {{Links.Symfony.Mbstring}} के लिए Symfony Polyfill स्थापित होते हैं (क्योंकि इस मॉड्यूल में Idn कार्यक्षमता की आवश्यकता होती है, जो डिफ़ॉल्ट रूप से सभी PHP संस्थापन प्रदान नहीं करते हैं), दोनों जो <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a> लाइसेंस के माध्यम से उपलब्ध हैं।"
 Extended Description module_sfs.php: "एसएफएस द्वारा सूचीबद्ध IP पते से पंजीकरण और लॉगिन पृष्ठ की सुरक्षा करता है।"
 Extended Description Search engines blocker module: "खोज इंजन को ब्लॉक करने की क्षमता प्रदान करता है जो कुछ वेबसाइटों के लिए समस्याग्रस्त हो सकता है (जैसे, Baidu, Sogou, Yandex, आदि)।"
 Name Bypasses: "डिफ़ॉल्ट हस्ताक्षर बायपास।"
@@ -596,13 +596,13 @@ info_some_useful_links: |
        </li>
        <li><span class="comCat" style="cursor:pointer">अन्य उपयोगी उपकरण, संसाधन, सेवाएं, आदि।</span>
          <ul class="comSub">
-           <li>{{Links.Resources.SFS}} – ज्ञात फ़ोरम स्पैमर का एक डेटाबेस बनाए रखता है। स्पैमर्स के खिलाफ वेबसाइटों और फ़ोरमों की सुरक्षा के लिए उपयोगी है।</li>
+           <li>{{Links.SFS}} – ज्ञात फ़ोरम स्पैमर का एक डेटाबेस बनाए रखता है। स्पैमर्स के खिलाफ वेबसाइटों और फ़ोरमों की सुरक्षा के लिए उपयोगी है।</li>
            <li><a href="https://bgp.he.net/" hreflang="en" rel="noopener noreferrer external">Hurricane Electric BGP टूलकिट</a> – ASN से CIDR प्राप्त करें, ASN संबंधों को निर्धारित करें, नेटवर्क नामों पर आधारित ASN की खोज करें, आदि।</li>
-           <li>{{Links.Resources.BGPView}} – ASN से CIDR प्राप्त करें, ASN संबंधों को निर्धारित करें, नेटवर्क नामों पर आधारित ASN की खोज करें, आदि।</li>
+           <li>{{Links.BGPView}} – ASN से CIDR प्राप्त करें, ASN संबंधों को निर्धारित करें, नेटवर्क नामों पर आधारित ASN की खोज करें, आदि।</li>
            <li><a href="https://radar.qrator.net/" hreflang="en" rel="noopener noreferrer external">Radar द्वारा Qrator</a> – ASN कनेक्टिविटी की जांच के लिए उपयोगी उपकरण, साथ ही साथ ASN के बारे में विभिन्न अन्य सूचनाओं के लिए।</li>
            <li><a href="https://www.spamhaus.org/statistics/botnet-asn/" rel="noopener noreferrer external">Spamhaus प्रोजेक्ट</a> – ASN बोटनेट संक्रमण दरों के बारे में रिपोर्ट प्रदर्शित करता है।</li>
            <li><a href="https://www.abuseat.org/public/asn.html" hreflang="en" rel="noopener noreferrer external">Abuseat.org की समग्र ब्लॉकिंग सूची</a> – ASN बोटनेट संक्रमण दरों के बारे में रिपोर्ट प्रदर्शित करता है।</li>
-           <li>{{Links.Resources.AbuseIPDB}} – ज्ञात अपमानजनक IP के डेटाबेस बनाए रखता है; IP जांच और रिपोर्ट करने के लिए API प्रदान करता है।</li>
+           <li>{{Links.AbuseIPDB}} – ज्ञात अपमानजनक IP के डेटाबेस बनाए रखता है; IP जांच और रिपोर्ट करने के लिए API प्रदान करता है।</li>
          </ul>
        </li>
        <li><span class="comCat" style="cursor:pointer">सूचनात्मक और सीखने के संसाधन।</span>

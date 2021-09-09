@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6_isps.dat
 
-# Version: 2021.242.462
-# Last modified: 2021.08.31
+# Version: 2021.251.487
+# Last modified: 2021.09.09
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -1534,12 +1534,13 @@ Tag: SKORUK ANDRIY OLEKSANDROVYCH
 
 
 # ASN 41435 ("UnderNet LLC").
-# Caught attempting to hack WordPress sites.
-# Stop Forum Spam (SFS) listings: 1,225.
-# Updated: 2020.01.15 / Checked: 2021.01.11
+# Ukrainian domestic ISP. Caught attempting to hack WordPress sites.
+# Stop Forum Spam (SFS) listings: 329.
+# Updated: 2021.09.09
 
-2a0d:9880::/32 Deny Generic
+2a0d:9880::/29 Deny Generic
 Origin: UA
+Profile: Domestic ISP
 Tag: UnderNet LLC
 
 
@@ -1875,16 +1876,29 @@ Profile: Domestic ISP
 Tag: TELEFNICA BRASIL S.A
 
 
-# ASNs 10796, 11427, 20115 ("Charter Communications").
-# Domestic ISP from the United States with some limited amount of spamming
-# (marked as "Spam") + caught by security honeypots (marked as "Malware").
-# Stop Forum Spam (SFS) listings: 752 (AS10796), 679 (AS11427), 2,206 (AS20115).
-# Updated: 2021.02.08 / Modified: 2021.02.26
+# ASNs 10796, 11426, 11427, 20115 ("Charter Communications").
+# United States domestic ISP. Caught probing honeypots. Port scans and spam
+# also detected from here. Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 1,050 (AS10796), 1,172 (AS11426), 1,172 (AS11427), 2,623 (AS20115).
+# Updated: 2021.09.09
 
-2600:6c47:a200:154b::/64 Deny Spam
-2603:6000:aa0e:9800::/64 Deny Spam
-2603:6011:8946:1c00::/64 Deny Spam
-2603:8080:c90c:a259::/64 Deny Spam
+2600:6c4a:4c7f:a071::/64 Deny Spam
+2600:6c55:4c7f:f8b7::/64 Deny Spam
+2600:6c5a:6e7f:f429::/64 Deny Spam
+2600:6c5d:4200:69a1::/64 Deny Spam
+2603:6010:1105:91e4::/64 Deny Spam
+2603:6010:3501:fa00::/64 Deny Spam
+2603:6010:7004:ca8b::/64 Deny Spam
+2603:6011:390a:d46b::/64 Deny Spam
+2603:6080:4913:f918::/64 Deny Spam
+2603:6080:5f06:f1d0::/64 Deny Spam
+2603:6080:d600:fd19::/64 Deny Spam
+2603:6081:4205:eb2d::/64 Deny Spam
+2603:6081:7a00:4c::/64 Deny Spam
+2603:8080:3303:78a0::/64 Deny Spam
+2603:8080:6a03:53a4::/64 Deny Spam
+2603:8080:bc01:f6f4::/64 Deny Spam
+2603:8081:6506:e6c::/64 Deny Spam
 Origin: US
 Profile: Domestic ISP
 Tag: Charter Communications
@@ -2707,3 +2721,16 @@ Tag: KPN B.V
 Origin: NL
 Profile: Domestic ISP
 Tag: Vodafone Libertel
+
+
+# ASN 701 ("Verizon Business/UUnet").
+# Major domestic ISP in the United States; Should NEVER be blocked in entirety.
+# Spam, port scans, honeypot probes, tor endpoints, and malware detected from
+# here. Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 2,854.
+# Updated: 2021.09.09
+
+2600:4040:1183:ec00::/64 Deny Spam
+Origin: US
+Profile: Commercial;Domestic ISP;Tor endpoints here
+Tag: Verizon Business/UUnet

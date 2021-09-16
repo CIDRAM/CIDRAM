@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6_isps.dat
 
-# Version: 2021.251.487
-# Last modified: 2021.09.09
+# Version: 2021.258.596
+# Last modified: 2021.09.16
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -1728,31 +1728,18 @@ Tag: JSC Kazakhtelecom
 # ASN 8359 ("MTS PJSC").
 # Caught trying to hack WordPress sites, a significant amount of other
 # unsavoury behaviour detected, and a significant source of spam.
-# Stop Forum Spam (SFS) listings: 4,802.
-# Updated: 2018.09.23 / Modified: 2020.02.14 / Checked: 2021.01.11
+# Stop Forum Spam (SFS) listings: 13,154.
+# Updated: 2021.09.14
 
 2a00:f00::/32 Deny Spam
 2a00:1fa0::/29 Deny Spam
 2a02:28::/29 Deny Spam
+2a02:5f81::/32 Deny Spam
 Origin: RU
 2a01:7c0::/32 Deny Spam
 Origin: UA
+Profile: Commercial
 Tag: MTS PJSC
-
-
-# ASNs 15640, 21365, 25086, 28884, 29190, 29497, 30881, 30922, 31286,
-# 31558, 39001, 39858, 41209, 41771, 41822, 42087, 43038, 43318, 44677, 44895,
-# 48000, 48212, 48612, 49350, 60496, 197023, 197070 ("MTS PJSC").
-# Additional ASNs owned by the same network as the ASN covered by the previous
-# signature section (MTS PJSC). These particular IPs/ranges included as they've
-# been caught spamming. Listing just these, rather than the entire ASNs, as to
-# reduce the risk of false positives. Note that this network consists of a VERY
-# large number of different ASNs.
-# Updated: 2021.01.14
-
-2a00:1fa1::/33 Deny Spam
-Origin: RU
-Tag: MTS PJSC Supplemental
 
 
 # ASN 263500 ("Star Telecom S/A").
@@ -2370,6 +2357,19 @@ Tag: Telefonica Brasil
 Origin: CH
 Profile: Domestic ISP;Multiplay;Tor endpoints here;Webhosting
 Tag: Init7
+
+
+# ASN 577 ("Bell Canada").
+# Canadian domestic ISP. Phishing, webapp attacks, spam, and probing for
+# vulnerabilities detected from here. Listing just the affected
+# ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 814.
+# Updated: 2021.09.14
+
+2605:b100:e001:eb3e::/64 Deny Spam
+Origin: CA
+Profile: Domestic ISP
+Tag: Bell Canada
 
 
 # ASNs 16276, 35540 ("OVH Systems").

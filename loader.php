@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The loader (last modified: 2021.07.13).
+ * This file: The loader (last modified: 2021.09.17).
  */
 
 /**
@@ -50,9 +50,7 @@ if (!defined('CIDRAM')) {
     };
 
     /** Checks whether we're calling CIDRAM through an alternative pathway (e.g., Cronable). */
-    $CIDRAM['Alternate'] = (
-        class_exists('\Maikuolan\Cronable\Cronable')
-    );
+    $CIDRAM['Alternate'] = class_exists('\Maikuolan\Cronable\Cronable');
 
     /** Kill the script if the functions file doesn't exist. */
     if (!file_exists($CIDRAM['Vault'] . 'functions.php')) {

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Report orchestrator (last modified: 2021.03.12).
+ * This file: Report orchestrator (last modified: 2021.09.17).
  */
 
 namespace CIDRAM\Core;
@@ -82,10 +82,8 @@ class Reporter
     {
         /** Iterate through handlers. */
         foreach ($this->Handlers as $Handler) {
-
             /** Iterate through queued reports. */
             foreach ($this->Reports as $Report) {
-
                 /** Guard. */
                 if (empty($Report['Categories']) || empty($Report['Comments']) || empty($Report['IP'])) {
                     continue;

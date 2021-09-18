@@ -7,12 +7,11 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Verification data for search engines and social media (last modified: 2021.08.18).
+# This file: Verification data for search engines and social media (last modified: 2021.09.18).
 ##/
 
 # Additional references: https://udger.com/resources/ua-list/crawlers
 Search Engine Verification:
-
  # https://discussions.apple.com/thread/7090135
  # https://support.apple.com/en-gb/HT204683
  Applebot:
@@ -134,7 +133,6 @@ Search Engine Verification:
    - ".petalsearch.com"
 
 Social Media Verification:
-
  # https://udger.com/resources/ua-list/bot-detail?bot=Embedly#id22674
  Embedly:
   User Agent: "embedly"
@@ -168,7 +166,6 @@ Social Media Verification:
    - ".twttr.com"
 
 Other Verification:
-
  # https://www.oracle.com/corporate/acquisitions/grapeshot/crawler.html
  Oracle Data Cloud Crawler:
   User Agent: "grapeshot"
@@ -200,3 +197,12 @@ Other Verification:
   Valid domains:
    - ".google.com"
    - ".googlebot.com"
+
+ # https://adbot.amazon.com/index.html
+ AmazonAdBot:
+  Bypass flag: "Flag-Bypass-AmazonAdBot-Check"
+  User Agent Pattern: "~amazonadbot|adbot\.amazon\.com~"
+  Closure: "DNS-Reverse-Forward"
+  Valid domains:
+   - ".amazonadbot.com"
+  Single hit bypass: true

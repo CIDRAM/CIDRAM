@@ -1,7 +1,7 @@
 ---
 CIDRAM Core:
  Name: CIDRAM Core
- Version: 2.7.0-DEV+21259245
+ Version: 2.7.0-DEV+21260503
  Minimum Required: 2.0.0
  Dependencies:
   PHP: >=7.2
@@ -66,7 +66,7 @@ CIDRAM Core:
    - 3c73b1b2bb2cf90e8cfbfe0c06f6aa0c1bca6e5ebde0a4852b62142266aa9a49:42836
    - 97df7b28ced1689bf3c8ae0a715605a2db1d25f4449fface23a517d81a56f517:1203
    - 75f1f493bd4e56fd5ad3835001a080811b2365cffc73b240eb1289cd905ad180:2622
-   - dc7d9e167448026b1bdd21637b6b701b06b6fb04eb0d4dc4ff26222c12a7fdff:5193
+   - d2df26d6633b30ab52826482064a4070fbc51d9a2e928626bd15e96d5d56e31e:5448
  Reannotate: components.dat
 CIDRAM Front-End:
  Name: CIDRAM Front-End
@@ -273,11 +273,11 @@ Common Classes Package:
 IPv4:
  Extended Description: Default IPv4 signatures normally included with the main package. Blocks unwanted cloud services and non-human endpoints.
  False Positive Risk: Low
- Version: 2021.258.596
+ Version: 2021.260.503
  Minimum Required: 2.0.0
  Dependencies:
   CIDRAM Core: >=1
-  Bypasses: >=2021.242.462
+  Bypasses: >=2021.260.503
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v2/vault/components.dat
  Uninstallable: true
  Files:
@@ -286,7 +286,7 @@ IPv4:
   To:
    - ipv4.dat
   Checksum:
-   - 7a302292513d3105c765ca01396733c7ebf3ea17df57c21ec351220cd2c19cbc:946478
+   - 5b2e4c16f6ca8570820d0c70c77ebe62b6d889540c17f2a00abf7593e22617f2:951396
  Used with: ipv4
  Reannotate: components.dat
 IPv4-Bogons:
@@ -364,11 +364,11 @@ IPv4-Other:
 IPv6:
  Extended Description: Default IPv6 signatures normally included with the main package. Blocks unwanted cloud services and non-human endpoints.
  False Positive Risk: Low
- Version: 2021.258.596
+ Version: 2021.260.503
  Minimum Required: 2.0.0
  Dependencies:
   CIDRAM Core: >=1
-  Bypasses: >=2021.242.462
+  Bypasses: >=2021.260.503
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v2/vault/components.dat
  Uninstallable: true
  Files:
@@ -377,7 +377,7 @@ IPv6:
   To:
    - ipv6.dat
   Checksum:
-   - 602aa818b585489c7f11f0527f654c04ad0eab4bd36238774748920682634770:252900
+   - c2233b78136266e8d69006bc362a4de1c72970d2288f01522136cce1ce1e8bd0:255787
  Used with: ipv6
  Reannotate: components.dat
 IPv6-Bogons:
@@ -453,7 +453,7 @@ IPv6-Other:
  Used with: ipv6
  Reannotate: components.dat
 Bypasses:
- Version: 2021.242.462
+ Version: 2021.260.503
  Dependencies:
   PHP: >=7.2
   CIDRAM Core: ^2.6.1-DEV
@@ -467,8 +467,8 @@ Bypasses:
    - bypasses.php
    - bypasses.yml
   Checksum:
-   - 5a1419ea3347e240406366800bad47783089ad539c93b2325068e6dabecf8315:9893
-   - f39952938ed7ae439eb83cd59b5c738a886092f73217954e6f8cdca07b0debc7:874
+   - 6bd8ec2f8a7a717cd2f28ed40479cf5efda9c6ec0faed2519052c66b34eb9484:10235
+   - 2a64230b87bc71c0901c7d306ea06035be0ffc290d36d94048f5fe300004710d:917
  Used with:
   - n/a
   - imports

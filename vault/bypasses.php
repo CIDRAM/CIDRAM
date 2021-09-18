@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Default signature bypasses (last modified: 2021.08.31).
+ * This file: Default signature bypasses (last modified: 2021.09.18).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -104,6 +104,17 @@ $CIDRAM['RunParamResCache']['bypasses.php'] = function (array $Factors = [], $Fa
 
     /** Amazon AWS bypasses. */
     if ($Tag === 'Amazon.com, Inc') {
+        /**
+         * AmazonAdBot bypass.
+         * @link https://github.com/CIDRAM/CIDRAM/issues/260
+         */
+        if (
+            $CIDRAM['Request']->inCsv('AmazonAdBot', $CIDRAM['Config']['bypasses']['used']) &&
+            strpos($CIDRAM['BlockInfo']['UALC'], 'amazonadbot/') !== false
+        ) {
+            return;
+        }
+
         /** DuckDuckGo bypass. */
         if (
             $CIDRAM['Request']->inCsv('DuckDuckBot', $CIDRAM['Config']['bypasses']['used']) &&

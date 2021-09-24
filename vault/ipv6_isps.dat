@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6_isps.dat
 
-# Version: 2021.258.596
-# Last modified: 2021.09.16
+# Version: 2021.266.200
+# Last modified: 2021.09.24
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -1467,15 +1467,6 @@ Profile: Domestic ISP;Government
 Tag: UARNet
 
 
-# ASN 44493 ("Chelyabinsk-Signal").
-# Stop Forum Spam (SFS) listings: 163.
-# Updated: 2017.07.08 / Checked: 2021.01.02
-
-2a03:a0e0::/32 Deny Spam
-Origin: RU
-Tag: Chelyabinsk-Signal
-
-
 # ASN 15774 ("Closed Joint Stock Company TransTeleCom").
 # Stop Forum Spam (SFS) listings: 829.
 # Updated: 2021.02.24
@@ -1487,6 +1478,24 @@ Tag: Chelyabinsk-Signal
 2a03:3700:4000::/35 Deny Spam
 Origin: RU
 Tag: TransTeleCom
+
+
+# ASNs 9049, 12768, 12772, 16179, 20807, 21311, 21335, 21353, 21442, 24588,
+# 25408, 25446, 30868, 31363, 31483, 31484, 31494, 31585, 31692, 34145, 34150,
+# 34533, 34590, 34925, 39028, 39435, 41002, 41403, 41661, 41668, 41682, 41727,
+# 41754, 41786, 41843, 41854, 42113, 42116, 42145, 42368, 42631, 42682, 42683,
+# 43478, 44727, 45051, 47111, 47398, 47659, 47911, 48201, 48532, 49048, 49874,
+# 50498, 50512, 50542, 50543, 50544, 51035, 51570, 51604, 51645, 51819, 52207,
+# 56330, 56377, 56420, 56969, 56981, 57026, 57041, 57044, 57079, 57378, 58189,
+# 59713, 62287, 197585, 198295, 201495 ('JSC "ER-Telecom Holding"').
+# Major Russian domestic ISP in Russia. Currently listing only the most
+# severely offending ranges in the network.
+# Updated: 2021.09.21
+
+2a02:2698:5024:1b81::/64 Deny Spam
+Origin: RU
+Profile: Domestic ISP
+Tag: ER-Telecom Holding
 
 
 # ASN 137432 ("BKB Network").
@@ -1702,15 +1711,6 @@ Profile: Domestic ISP;Multiplay;Tor endpoints here
 Tag: ONLINE S.A.S
 
 
-# ASN 13249 ("IT Systems LLC").
-# Caught trying to hack into WordPress sites.
-# Updated: 2018.07.28 / Checked: 2021.01.02
-
-2a00:1d88::/32 Deny Generic
-Origin: UA
-Tag: IT Systems LLC
-
-
 # ASNs 9198, 50482 ("JSC Kazakhtelecom").
 # Kazakhstan backbone provider and domestic ISP. Significant amount of spam,
 # hacking, and brute-force attempts detected over time (but with less
@@ -1765,26 +1765,11 @@ Profile: Domestic ISP
 Tag: PJSC Moscow city
 
 
-# ASN 4788 ("TM Net, Internet Service Provider").
-# A major Malaysian domestic ISP, but also a notable source of spam and webapp
-# attacks (spam/malware). Listing all AU+SG+US ranges, plus any affected MY
-# ranges/addresses from the remainder (exclude unaffected).
-# Stop Forum Spam (SFS) listings: 29,881.
-# Updated: 2021.02.07
-
-2600:1417:3d::/64 Deny Cloud
-2600:1417:58:100::/56 Deny Cloud
-Origin: US
-Profile: Domestic ISP
-Tag: TM Net
-
-
 # ASN 17971 ("TM-VADS DC Hosting").
 # A Malaysian multiplay network (offers primarily webhosting), but also a
 # source of brute-force and SSH attacks. Listing just the affected
 # ranges/addresses for now, plus confirmed hoster/cloud ranges.
-# Stop Forum Spam (SFS) listings: 2.
-# Updated: 2021.02.07
+# Updated: 2021.02.07 / Checked: 2021.09.24
 
 2401:b000::/32 Deny Cloud
 Origin: MY
@@ -1919,8 +1904,8 @@ Tag: Atria Convergence
 
 # ASN 39608 ("Lanet Network Ltd").
 # A Ukrainian domestic ISP and a significant source of spam.
-# Stop Forum Spam (SFS) listings: 4,898.
-# Updated: 2020.02.14 / Checked: 2021.01.03
+# Stop Forum Spam (SFS) listings: 1,316.
+# Updated: 2020.02.14 / Checked: 2021.09.21
 
 2a01:5800::/32 Deny Spam
 2a01:bf20::/32 Deny Spam
@@ -2734,3 +2719,29 @@ Tag: Vodafone Libertel
 Origin: US
 Profile: Commercial;Domestic ISP;Tor endpoints here
 Tag: Verizon Business/UUnet
+
+
+# ASN 12302 ("Vodafone Romania S.A").
+# Romanian mobile provider. Forum spam and other strange traffic sometimes seen
+# from here. Listing just the affected addresses/ranges only.
+# Stop Forum Spam (SFS) listings: 549.
+# Updated: 2021.09.22
+
+2a04:241b:8104:6600::/64 Deny Spam
+Origin: RO
+Profile: Domestic ISP
+Tag: Vodafone Romania
+
+
+# ASN 1239 ("Sprint").
+# Huge multiplay network providing mobile and domestic ISP connectivity,
+# interlacing with numerous webhosting providers, infrastructure, etc.
+# Listing just the affected ranges/addresses only (includes also LogicWeb
+# ranges).
+# Stop Forum Spam (SFS) listings: 152.
+# Updated: 2021.09.22
+
+2600:1:9283:76be::/64 Deny Spam
+Origin: US
+Profile: Domestic ISP;Infrastructure/Transit;Multiplay;Webhosting
+Tag: Sprint

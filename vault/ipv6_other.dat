@@ -1,8 +1,8 @@
 # IPv6 signatures file (CIDRs for proxies, VPNs and other miscellaneous unwanted services).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6_other.dat
 
-# Version: 2021.237.453
-# Last modified: 2021.08.26
+# Version: 2021.266.200
+# Last modified: 2021.09.24
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -119,11 +119,12 @@ Tag: Web2Objects LLC
 
 # ASN 197640 ("OverPlay.Net LP").
 # A paid VPN provider and a source of spam.
-# Stop Forum Spam (SFS) listings: 1,174.
-# Updated: 2021.02.07
+# Stop Forum Spam (SFS) listings: 3,405.
+# Updated: 2021.02.07 / Checked: 2021.09.24
 
 2a03:efc0:500::/40 Deny Proxy
 Origin: US
+Profile: Infrastructure/Transit
 Tag: OverPlay.Net LP
 
 

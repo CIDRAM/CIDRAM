@@ -1,8 +1,8 @@
 # IPv4 signatures file (CIDRs for proxies, VPNs and other miscellaneous unwanted services).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv4_other.dat
 
-# Version: 2021.237.453
-# Last modified: 2021.08.26
+# Version: 2021.266.200
+# Last modified: 2021.09.24
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -52,7 +52,7 @@ Tag: F3 Netze e.V
 
 # ASN 209519 ("Packet Flip, LLC").
 # Proxy service sometimes used by spammmers and other nefarious entities.
-# Updated: 2021.02.02
+# Updated: 2021.02.02 / Checked: 2021.09.22
 
 31.207.8.0/21 Deny Proxy
 31.207.16.0/20 Deny Proxy
@@ -100,6 +100,7 @@ Tag: F3 Netze e.V
 195.189.36.0/22 Deny Proxy
 195.189.132.0/23 Deny Proxy
 Origin: US
+Profile: Infrastructure/Transit
 Tag: Packet Flip
 
 
@@ -1280,11 +1281,12 @@ Tag: Web2Objects LLC
 
 # ASN 197640 ("OverPlay.Net LP").
 # A paid VPN provider and a source of spam.
-# Stop Forum Spam (SFS) listings: 1,174.
-# Updated: 2021.02.07
+# Stop Forum Spam (SFS) listings: 3,405.
+# Updated: 2021.02.07 / Checked: 2021.09.24
 
 185.147.213.0/24 Deny Proxy
 Origin: US
+Profile: Infrastructure/Transit
 Tag: OverPlay.Net LP
 
 

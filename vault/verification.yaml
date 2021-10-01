@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Verification data for search engines and social media (last modified: 2021.09.18).
+# This file: Verification data for search engines and social media (last modified: 2021.10.01).
 ##/
 
 # Additional references: https://udger.com/resources/ua-list/crawlers
@@ -31,6 +31,7 @@ Search Engine Verification:
    - ".baidu.jp"
 
  # https://blogs.bing.com/webmaster/2012/08/31/how-to-verify-that-bingbot-is-bingbot
+ # https://github.com/CIDRAM/CIDRAM/issues/242
  Bingbot:
   Bypass flag: "Flag-Bypass-Bingbot-Check"
   User Agent Pattern: "~(?:msn|bing)bot|bingpreview~"
@@ -74,6 +75,17 @@ Search Engine Verification:
   Closure: "DNS-Reverse-Forward"
   Valid domains:
    - ".mojeek.com"
+
+ # https://aspiegel.com/petalbot
+ # https://github.com/CIDRAM/CIDRAM/issues/254
+ # https://webmaster.petalsearch.com/site/petalbot
+ PetalBot:
+  Bypass flag: "Flag-Bypass-PetalBot-Check"
+  User Agent: "petalbot"
+  Closure: "DNS-Reverse-Forward"
+  Valid domains:
+   - ".aspiegel.com"
+   - ".petalsearch.com"
 
  # https://help.qwant.com/bot/
  Qwantify/Bleriot:
@@ -122,16 +134,6 @@ Search Engine Verification:
   Valid domains:
    - ".crawler.youdao.com"
 
- # https://aspiegel.com/petalbot
- # https://webmaster.petalsearch.com/site/petalbot
- PetalBot:
-  Bypass flag: "Flag-Bypass-PetalBot-Check"
-  User Agent: "petalbot"
-  Closure: "DNS-Reverse-Forward"
-  Valid domains:
-   - ".aspiegel.com"
-   - ".petalsearch.com"
-
 Social Media Verification:
  # https://udger.com/resources/ua-list/bot-detail?bot=Embedly#id22674
  Embedly:
@@ -143,14 +145,15 @@ Social Media Verification:
    - "embed.ly"
 
  # https://developers.facebook.com/docs/sharing/webmasters/crawler/
+ # https://github.com/CIDRAM/CIDRAM/issues/170
  Facebook external hit:
   User Agent: "facebookexternalhit/"
   Closure: "UA-ASN-Match"
   Valid domains:
    - "32934"
 
- # https://help.pinterest.com/en/articles/about-pinterest-crawler-0
  # https://github.com/CIDRAM/CIDRAM/issues/253
+ # https://help.pinterest.com/en/articles/about-pinterest-crawler-0
  Pinterest:
   User Agent: "pinterest"
   Closure: "DNS-Reverse-Forward"
@@ -166,6 +169,25 @@ Social Media Verification:
    - ".twttr.com"
 
 Other Verification:
+ # https://developers.google.com/search/docs/advanced/crawling/overview-google-crawlers
+ # https://github.com/CIDRAM/CIDRAM/issues/233
+ AdSense:
+  User Agent: "mediapartners-google"
+  Closure: "DNS-Reverse-Forward"
+  Valid domains:
+   - ".google.com"
+   - ".googlebot.com"
+
+ # https://adbot.amazon.com/index.html
+ # https://github.com/CIDRAM/CIDRAM/issues/260
+ AmazonAdBot:
+  Bypass flag: "Flag-Bypass-AmazonAdBot-Check"
+  User Agent Pattern: "~amazonadbot|adbot\.amazon\.com~"
+  Closure: "DNS-Reverse-Forward"
+  Valid domains:
+   - ".amazonadbot.com"
+  Single hit bypass: true
+
  # https://www.oracle.com/corporate/acquisitions/grapeshot/crawler.html
  Oracle Data Cloud Crawler:
   User Agent: "grapeshot"
@@ -189,20 +211,3 @@ Other Verification:
    - "152.67.128.219/32"
    - "152.67.137.35/32"
    - "152.67.138.180/32"
-
- # https://developers.google.com/search/docs/advanced/crawling/overview-google-crawlers
- AdSense:
-  User Agent: "mediapartners-google"
-  Closure: "DNS-Reverse-Forward"
-  Valid domains:
-   - ".google.com"
-   - ".googlebot.com"
-
- # https://adbot.amazon.com/index.html
- AmazonAdBot:
-  Bypass flag: "Flag-Bypass-AmazonAdBot-Check"
-  User Agent Pattern: "~amazonadbot|adbot\.amazon\.com~"
-  Closure: "DNS-Reverse-Forward"
-  Valid domains:
-   - ".amazonadbot.com"
-  Single hit bypass: true

@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6_isps.dat
 
-# Version: 2021.266.200
-# Last modified: 2021.09.24
+# Version: 2021.273.475
+# Last modified: 2021.10.01
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -432,17 +432,6 @@ Tag: Kyivstar
 Origin: UA
 Profile: Infrastructure/Transit
 Tag: AS13188-CDN-LTD
-
-
-# ASN 15377 ('ISP "Fregat" Ltd.').
-# Stop Forum Spam (SFS) listings: 1,841.
-# Updated: 2019.08.29 / Checked: 2021.01.11
-
-2a00:4f00::/32 Deny Spam
-2a05:2580::/29 Deny Spam
-2a05:8dc0::/29 Deny Spam
-Origin: UA
-Tag: Fregat
 
 
 # ASNs 200019, 207636 ("ALEXHOST SRL").
@@ -1620,20 +1609,6 @@ Profile: Domestic ISP;Infrastructure/Transit
 Tag: Reliance Communications
 
 
-# ASN 54133 ("UnmeteredInternet.com").
-# North American ISP and also a source of spam.
-# Subtract 44.0.0.0/9, 44.128.0.0/10 (clean).
-# Stop Forum Spam (SFS) listings: 131.
-# Updated: 2020.12.18 / Checked: 2021.03.02
-
-2602:fed2:7109::/48 Deny Spam
-2602:ffb1::/36 Deny Spam
-Origin: CA
-2602:fd60:10::/44 Deny Spam
-Origin: US
-Tag: UnmeteredInternet.com
-
-
 # ASN 198093 ("Foreningen for digitala fri- och rattigheter").
 # Dead homepage and high levels of automated spam from this ASN.
 # Stop Forum Spam (SFS) listings: 7,268.
@@ -1942,14 +1917,15 @@ Tag: Ote SA
 # "AMX Argentina S.A", "CLARO S.A").
 # A South American ISP caught performing brute-force and webapp attacks, port
 # scans, and spamming. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 373 (AS11664), 190 (AS19037), 3,874 (AS28573).
-# Updated: 2021.08.23
+# Stop Forum Spam (SFS) listings: 410 (AS11664), 187 (AS19037), 3,826 (AS28573).
+# Updated: 2021.09.30
 
-2803:9800:9400:bf06::/64 Deny Spam
+2803:9800:9885:b328::/64 Deny Spam
+2803:9800:a093:8e2c::/64 Deny Spam
+2803:9800:b4c0:806d::/64 Deny Spam
+2803:9800:b881:80b3::/64 Deny Spam
 Origin: AR
-2804:14c:bf34:958b::/64 Deny Spam
-2804:14d:3287:6491::/64 Deny Spam
-2804:14d:4cd8:123b::/64 Deny Spam
+2804:14c:150:2137::/64 Deny Spam
 2804:14d:90af:8ea1::/64 Deny Spam
 Origin: BR
 Profile: Domestic ISP
@@ -2223,53 +2199,6 @@ Tag: T-Mobile USA, Inc
 Origin: PL
 Profile: Domestic ISP
 Tag: Orange Polska Spolka Akcyjna
-
-
-# ASNs 7713, 17974 ("PT Telekomunikasi Indonesia).
-# Indonesian domestic ISP; Also a source of spam. Also SSH, brute-force, and
-# hack attempts reportedly seen from this network. Listing just the affected
-# ranges/addresses for the moment (plus all confirmed cloud hosters).
-# Stop Forum Spam (SFS) listings: 24,732 (AS7713), 1,038 (AS17974).
-# Updated: 2021.05.18
-
-2001:7f8:43::/64 Deny Cloud
-2001:7f8:54::/64 Deny Cloud
-Origin: FR
-2001:7fa:0:1::/64 Deny Cloud
-Origin: HK
-2001:7fa:7:1::/64 Deny Cloud
-2001:de8:4::/64 Deny Cloud
-2001:de8:7::/64 Deny Cloud
-2001:de8:c::/64 Deny Cloud
-2402:6800:0:3013::/64 Deny Cloud
-2402:6800:0:301b::/64 Deny Cloud
-2403:c780:b800:bb00::/64 Deny Cloud
-Origin: JP
-2001:478:132::/64 Deny Cloud
-Origin: KN
-2001:7f8:13::/64 Deny Cloud
-Origin: NL
-2001:7f8:42::/64 Deny Cloud
-Origin: PL
-2001:504:0:2::/63 Deny Cloud
-2001:504:0:5::/64 Deny Cloud
-2001:504:13::/64 Deny Cloud
-2001:504:30::/64 Deny Cloud
-2620:107:4008:365::/64 Deny Cloud
-2620:107:4008:4df::/64 Deny Cloud
-2620:107:4008:7c3::/64 Deny Cloud
-2620:107:4008:7f8::/64 Deny Cloud
-2620:107:4008:86d::/64 Deny Cloud
-2620:107:4008:9b6::/64 Deny Cloud
-2620:107:4008:9ca::/64 Deny Cloud
-2620:107:4008:b35::/64 Deny Cloud
-2a01:62e0:f001:db::/64 Deny Cloud
-2a01:62e0:f001:dc::/64 Deny Cloud
-2a01:62e0:f001:e7::/64 Deny Cloud
-2a01:62e0:f001:13f::/64 Deny Cloud
-Origin: US
-Profile: Domestic ISP;Infrastructure/Transit;Multiplay
-Tag: PT Telekomunikasi Indonesia
 
 
 # ASN 39351 ("31173 Services AB").

@@ -7,7 +7,17 @@
       <tr>
         <form action="?cidram-page=cidr-calc" method="POST">
           <td class="h3">
-            <div class="center"><input type="text" name="cidr" value="{cidr}" placeholder="{tip_enter_ip_here}" /></div>
+            <div class="center">
+              <small>
+                <input type="text" name="cidr" value="{cidr}" placeholder="{tip_enter_ip_here}" id="cidrInput" autocomplete="off" pattern="^([01]?\d{1,2}|2[0-4]\d|25[0-5])\.([01]?\d{1,2}|2[0-4]\d|25[0-5])\.([01]?\d{1,2}|2[0-4]\d|25[0-5])\.([01]?\d{1,2}|2[0-4]\d|25[0-5])$|^((([\dA-Fa-f]{1,4}:){7}[\dA-Fa-f]{1,4})|(([\dA-Fa-f]{1,4}:){6}:[\dA-Fa-f]{1,4})|(([\dA-Fa-f]{1,4}:){5}:([\dA-Fa-f]{1,4}:)?[\dA-Fa-f]{1,4})|(([\dA-Fa-f]{1,4}:){4}:([\dA-Fa-f]{1,4}:){0,2}[\dA-Fa-f]{1,4})|(([\dA-Fa-f]{1,4}:){3}:([\dA-Fa-f]{1,4}:){0,3}[\dA-Fa-f]{1,4})|(([\dA-Fa-f]{1,4}:){2}:([\dA-Fa-f]{1,4}:){0,4}[\dA-Fa-f]{1,4})|(([\dA-Fa-f]{1,4}:){6}((\b((25[0-5])|(1\d{2})|(2[0-4]\d)|(\d{1,2}))\b).){3}(\b((25[0-5])|(1\d{2})|(2[0-4]\d)|(\d{1,2}))\b))|(([\dA-Fa-f]{1,4}:){0,5}:((\b((25[0-5])|(1\d{2})|(2[0-4]\d)|(\d{1,2}))\b).){3}(\b((25[0-5])|(1\d{2})|(2[0-4]\d)|(\d{1,2}))\b))|(::([\dA-Fa-f]{1,4}:){0,5}((\b((25[0-5])|(1\d{2})|(2[0-4]\d)|(\d{1,2}))\b).){3}(\b((25[0-5])|(1\d{2})|(2[0-4]\d)|(\d{1,2}))\b))|([\dA-Fa-f]{1,4}::([\dA-Fa-f]{1,4}:){0,5}[\dA-Fa-f]{1,4})|(::([\dA-Fa-f]{1,4}:){0,6}[\dA-Fa-f]{1,4})|(([\dA-Fa-f]{1,4}:){1,7}:))$" /><br />
+                <span id="cidrInputResultInvalid" style="margin-top:-2px;letter-spacing:3px" class="txtRd">❌ {Short_BadIP}</span>
+                <span id="cidrInputResultValid" style="margin-top:-2px;letter-spacing:3px" class="txtGn">✔️ {field_ok}</span>
+                <style>
+                  #cidrInput:valid:not(#cidrInput:placeholder-shown)~#cidrInputResultInvalid,#cidrInput:invalid~#cidrInputResultValid,#cidrInput:placeholder-shown~#cidrInputResultValid{display:none}
+                  #cidrInput:valid:not(#cidrInput:placeholder-shown)~#cidrInputResultValid,#cidrInput:invalid~#cidrInputResultInvalid,#cidrInput:placeholder-shown~#cidrInputResultInvalid{display:inline-block}
+                </style>
+              </small>
+            </div>
           </td>
           <td class="h3f"><div class="center"><input type="submit" value="{field_ok}" /></div></td>
         </form>

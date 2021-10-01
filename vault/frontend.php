@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2021.08.30).
+ * This file: Front-end handler (last modified: 2021.10.01).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -3659,6 +3659,11 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-tracking' && $CIDRAM['FE']['
         /** Page initial prepwork. */
         $CIDRAM['InitialPrepwork']($CIDRAM['L10N']->getString('link_ip_tracking'), $CIDRAM['L10N']->getString('tip_ip_tracking'));
 
+        /** Add flags CSS. */
+        if ($CIDRAM['FE']['Flags'] = file_exists($CIDRAM['Vault'] . 'fe_assets/flags.css')) {
+            $CIDRAM['FE']['OtherHead'] .= "\n  <link rel=\"stylesheet\" type=\"text/css\" href=\"?cidram-page=flags\" />";
+        }
+
         /** Template for result rows. */
         $CIDRAM['FE']['TrackingRow'] = $CIDRAM['ReadFile']($CIDRAM['GetAssetPath']('_ip_tracking_row.html'));
     }
@@ -3765,6 +3770,26 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-tracking' && $CIDRAM['FE']['
                     str_replace('=', '_', base64_encode($CIDRAM['ThisTracking']['IPAddr'])),
                     $CIDRAM['ThisTracking']['IPAddr']
                 );
+            }
+            if (
+                isset($CIDRAM['BlockInfo']['SignatureCount'], $CIDRAM['BlockInfo']['WhyReason']) &&
+                strlen($CIDRAM['BlockInfo']['WhyReason'])
+            ) {
+                $CIDRAM['ThisTracking']['Status'] .= '<hr /><em>' . $CIDRAM['BlockInfo']['WhyReason'] . '</em>';
+                if (
+                    $CIDRAM['FE']['Flags'] &&
+                    preg_match_all('~\[([A-Z]{2})\]~', $CIDRAM['ThisTracking']['Status'], $CIDRAM['ThisTracking']['Matches']) &&
+                    !empty($CIDRAM['ThisTracking']['Matches'][1])
+                ) {
+                    foreach ($CIDRAM['ThisTracking']['Matches'][1] as $CIDRAM['ThisTracking']['ThisMatch']) {
+                        $CIDRAM['ThisTracking']['Status'] = str_replace(
+                            '[' . $CIDRAM['ThisTracking']['ThisMatch'] . ']',
+                            '<span class="flag ' . $CIDRAM['ThisTracking']['ThisMatch'] . '"><span></span></span>',
+                            $CIDRAM['ThisTracking']['Status']
+                        );
+                    }
+                }
+                unset($CIDRAM['ThisTracking']['Matches'], $CIDRAM['ThisTracking']['ThisMatch']);
             }
             $CIDRAM['FE']['TrackingData'] .= $CIDRAM['ParseVars'](
                 $CIDRAM['L10N']->Data + $CIDRAM['ThisTracking'],

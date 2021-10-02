@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2021.09.05).
+ * This file: Functions file (last modified: 2021.10.02).
  */
 
 /**
@@ -128,7 +128,7 @@ $CIDRAM['FetchIgnores'] = function () use (&$CIDRAM) {
  */
 $CIDRAM['ExpandIPv4'] = function ($Addr, $ValidateOnly = false, $FactorLimit = 32) {
     if (!preg_match(
-        '/^([01]?\d{1,2}|2[0-4]\d|25[0-5])\.([01]?\d{1,2}|2[0-4]\d|25[0-5])\.([01]?\d{1,2}|2[0-4]\d|25[0-5])\.([01]?\d{1,2}|2[0-4]\d|25[0-5])$/i',
+        '/^([01]?\d{1,2}|2[0-4]\d|25[0-5])\.([01]?\d{1,2}|2[0-4]\d|25[0-5])\.([01]?\d{1,2}|2[0-4]\d|25[0-5])\.([01]?\d{1,2}|2[0-4]\d|25[0-5])$/',
         $Addr,
         $Octets
     )) {
@@ -165,23 +165,23 @@ $CIDRAM['ExpandIPv4'] = function ($Addr, $ValidateOnly = false, $FactorLimit = 3
  */
 $CIDRAM['ExpandIPv6'] = function ($Addr, $ValidateOnly = false, $FactorLimit = 128) {
     /**
-     * The REGEX pattern used by this `preg_match` call was adapted from the
-     * IPv6 REGEX pattern that can be found at
-     * https://sroze.io/regex-ip-v4-et-ipv6-6cc005cabe8c
+     * The pattern used by this `preg_match` call was adapted from the IPv6
+     * pattern that can be found at
+     * @link https://sroze.io/regex-ip-v4-et-ipv6-6cc005cabe8c
      */
     if (!preg_match(
-        '/^((([\da-f]{1,4}\:){7}[\da-f]{1,4})|(([\da-f]{1,4}\:){6}\:[\da-f]{1,4})' .
-        '|(([\da-f]{1,4}\:){5}\:([\da-f]{1,4}\:)?[\da-f]{1,4})|(([\da-f]{1,4}\:){' .
-        '4}\:([\da-f]{1,4}\:){0,2}[\da-f]{1,4})|(([\da-f]{1,4}\:){3}\:([\da-f]{1,' .
-        '4}\:){0,3}[\da-f]{1,4})|(([\da-f]{1,4}\:){2}\:([\da-f]{1,4}\:){0,4}[\da-' .
-        'f]{1,4})|(([\da-f]{1,4}\:){6}((\b((25[0-5])|(1\d{2})|(2[0-4]\d)|(\d{1,2}' .
-        '))\b).){3}(\b((25[0-5])|(1\d{2})|(2[0-4]\d)|(\d{1,2}))\b))|(([\da-f]{1,4' .
-        '}\:){0,5}\:((\b((25[0-5])|(1\d{2})|(2[0-4]\d)|(\d{1,2}))\b).){3}(\b((25[' .
-        '0-5])|(1\d{2})|(2[0-4]\d)|(\d{1,2}))\b))|(\:\:([\da-f]{1,4}\:){0,5}((\b(' .
-        '(25[0-5])|(1\d{2})|(2[0-4]\d)|(\d{1,2}))\b).){3}(\b((25[0-5])|(1\d{2})|(' .
-        '2[0-4]\d)|(\d{1,2}))\b))|([\da-f]{1,4}\:\:([\da-f]{1,4}\:){0,5}[\da-f]{1' .
-        ',4})|(\:\:([\da-f]{1,4}\:){0,6}[\da-f]{1,4})|(([\da-f]{1,4}\:){1,7}\:))$' .
-        '/i',
+        '/^((([\da-f]{1,4}:){7}[\da-f]{1,4})|(([\da-f]{1,4}:){6}:[\da-f]{1,4})' .
+        '|(([\da-f]{1,4}:){5}:([\da-f]{1,4}:)?[\da-f]{1,4})|(([\da-f]{1,4}:){4' .
+        '}:([\da-f]{1,4}:){0,2}[\da-f]{1,4})|(([\da-f]{1,4}:){3}:([\da-f]{1,4}' .
+        ':){0,3}[\da-f]{1,4})|(([\da-f]{1,4}:){2}:([\da-f]{1,4}:){0,4}[\da-f]{' .
+        '1,4})|(([\da-f]{1,4}:){6}((\b((25[0-5])|(1\d{2})|(2[0-4]\d)|(\d{1,2})' .
+        ')\b).){3}(\b((25[0-5])|(1\d{2})|(2[0-4]\d)|(\d{1,2}))\b))|(([\da-f]{1' .
+        ',4}:){0,5}:((\b((25[0-5])|(1\d{2})|(2[0-4]\d)|(\d{1,2}))\b).){3}(\b((' .
+        '25[0-5])|(1\d{2})|(2[0-4]\d)|(\d{1,2}))\b))|(::([\da-f]{1,4}:){0,5}((' .
+        '\b((25[0-5])|(1\d{2})|(2[0-4]\d)|(\d{1,2}))\b).){3}(\b((25[0-5])|(1\d' .
+        '{2})|(2[0-4]\d)|(\d{1,2}))\b))|([\da-f]{1,4}::([\da-f]{1,4}:){0,5}[\d' .
+        'a-f]{1,4})|(::([\da-f]{1,4}:){0,6}[\da-f]{1,4})|(([\da-f]{1,4}:){1,7}' .
+        ':))$/i',
         $Addr
     )) {
         return false;
@@ -453,6 +453,7 @@ $CIDRAM['CheckFactors'] = function (array $Files, array $Factors) use (&$CIDRAM)
                     $DenyMatched = false;
                     if (!$CIDRAM['CIDRAM_sapi']) {
                         foreach ([
+                            ['Type' => 'Attacks', 'Config' => 'block_attacks', 'ReasonLong' => 'ReasonMessage_Attacks', 'ReasonShort' => 'Short_Attacks'],
                             ['Type' => 'Bogon', 'Config' => 'block_bogons', 'ReasonLong' => 'ReasonMessage_Bogon', 'ReasonShort' => 'Short_Bogon'],
                             ['Type' => 'Cloud', 'Config' => 'block_cloud', 'ReasonLong' => 'ReasonMessage_Cloud', 'ReasonShort' => 'Short_Cloud'],
                             ['Type' => 'Generic', 'Config' => 'block_generic', 'ReasonLong' => 'ReasonMessage_Generic', 'ReasonShort' => 'Short_Generic'],
@@ -503,14 +504,20 @@ $CIDRAM['CheckFactors'] = function (array $Files, array $Factors) use (&$CIDRAM)
  * @return bool Returns false if all tests fail, or true otherwise.
  */
 $CIDRAM['RunTests'] = function ($Addr, $Retain = false) use (&$CIDRAM) {
+    /** Guard. */
     if (!isset($CIDRAM['BlockInfo'])) {
         return false;
     }
+
+    /** Fetch ignore.dat data. */
     if (!isset($CIDRAM['Ignore'])) {
         $CIDRAM['Ignore'] = $CIDRAM['FetchIgnores']();
     }
+
     $CIDRAM['Whitelisted'] = false;
     $CIDRAM['LastTestIP'] = 0;
+
+    /** Test an IPv4 address. */
     if ($IPv4Factors = $CIDRAM['ExpandIPv4']($Addr)) {
         $IPv4Files = empty(
             $CIDRAM['Config']['signatures']['ipv4']
@@ -529,6 +536,8 @@ $CIDRAM['RunTests'] = function ($Addr, $Retain = false) use (&$CIDRAM) {
     } else {
         $IPv4Test = false;
     }
+
+    /** Test an IPv6 address. */
     if ($IPv6Factors = $CIDRAM['ExpandIPv6']($Addr)) {
         $IPv6Files = empty(
             $CIDRAM['Config']['signatures']['ipv6']
@@ -547,6 +556,8 @@ $CIDRAM['RunTests'] = function ($Addr, $Retain = false) use (&$CIDRAM) {
     } else {
         $IPv6Test = false;
     }
+
+    /** True when an IPv4 or IPv6 address has been successfully tested. False otherwise. */
     return ($IPv4Test || $IPv6Test);
 };
 
@@ -768,7 +779,7 @@ $CIDRAM['DNS-Reverse'] = function ($Addr, $DNS = '', $Timeout = 5) use (&$CIDRAM
     /** The IP address is IPv4. */
     if (strpos($Addr, '.') !== false && strpos($Addr, ':') === false && preg_match(
         '/^([01]?\d{1,2}|2[0-4]\d|25[0-5])\.([01]?\d{1,2}|2[0-4]\d|25[0-5])' .
-        '\.([01]?\d{1,2}|2[0-4]\d|25[0-5])\.([01]?\d{1,2}|2[0-4]\d|25[0-5])$/i',
+        '\.([01]?\d{1,2}|2[0-4]\d|25[0-5])\.([01]?\d{1,2}|2[0-4]\d|25[0-5])$/',
         $Addr,
         $Octets
     )) {
@@ -1860,7 +1871,7 @@ $CIDRAM['Pseudonymise-IP'] = function ($IP) {
         return str_replace(':::', '::', $Parts);
     }
     return preg_replace(
-        '/^([01]?\d{1,2}|2[0-4]\d|25[0-5])\.([01]?\d{1,2}|2[0-4]\d|25[0-5])\.([01]?\d{1,2}|2[0-4]\d|25[0-5])\.([01]?\d{1,2}|2[0-4]\d|25[0-5])$/i',
+        '/^([01]?\d{1,2}|2[0-4]\d|25[0-5])\.([01]?\d{1,2}|2[0-4]\d|25[0-5])\.([01]?\d{1,2}|2[0-4]\d|25[0-5])\.([01]?\d{1,2}|2[0-4]\d|25[0-5])$/',
         '\1.\2.\3.x',
         $IP
     );

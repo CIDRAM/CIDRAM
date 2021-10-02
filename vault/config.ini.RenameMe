@@ -242,6 +242,11 @@ ipv4='ipv4.dat,ipv4_bogons.dat,ipv4_custom.dat,ipv4_isps.dat,ipv4_nonblocking.da
 ; delimited by commas.
 ipv6='ipv6.dat,ipv6_bogons.dat,ipv6_custom.dat,ipv6_isps.dat,ipv6_nonblocking.dat,ipv6_other.dat'
 
+; Block CIDRs associated with attacks and other abnormal traffic? E.g., port
+; scans, hacking, probing for vulnerabilities, etc. Unless you experience
+; problems when doing so, generally, this should always be set to true.
+block_attacks=true
+
 ; Block CIDRs identified as belonging to webhosting/cloud services? If you
 ; operate an API service from your website or if you expect other websites to
 ; connect to your website, this should be set to false. If you don't, then,
@@ -266,7 +271,7 @@ block_generic=true
 ; might exist for legal reasons.
 block_legal=true
 
-; Block IPs associated with malware? This includes C&C servers, infected
+; Block CIDRs associated with malware? This includes C&C servers, infected
 ; machines, machines involved in malware distribution, etc.
 block_malware=true
 

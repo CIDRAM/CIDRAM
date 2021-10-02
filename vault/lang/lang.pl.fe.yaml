@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Polish language data for the front-end (last modified: 2021.09.06).
+# This file: Polish language data for the front-end (last modified: 2021.10.02).
 ##/
 
 Extended Description Bypasses: "Domyślne pliki pomijania podpisów zwykle zawarte w pakiecie głównym."
@@ -165,13 +165,14 @@ config_recaptcha_signature_limit: *CaptchaSignatureLimit
 config_recaptcha_sitekey: *CaptchaDashboard
 config_recaptcha_usemode: *CaptchaUseMode
 config_signatures: "Konfiguracja podpisów, plików podpisów, modułów, itp."
-config_signatures_block_bogons: "Zablokować CIDR bogon? Jeśli spodziewasz się połączeń z twoją witryną z sieci lokalnej, localhost lub sieci LAN, w tej dyrektywie należy ustawić wartość false. Jeśli nie oczekujesz takich połączeń, tę dyrektywę należy ustawić na wartość true."
-config_signatures_block_cloud: "Zablokować CIDR zidentyfikowane jako należące do usług hostingowych lub usług w chmurze? Jeśli korzystasz z usługi API ze swojej witryny lub jeśli oczekujesz, że inne witryny połączą się z twoją witryną, należy ustawić na false. Jeśli nie, to tę dyrektywę należy ustawić na true."
-config_signatures_block_generic: "Zablokować CIDR ogólnie zalecane na czarnej liście? Obejmuje to wszelkie podpisy, które nie są oznaczone jako należące do żadnej z bardziej szczegółowych kategorii podpisów."
-config_signatures_block_legal: "Zablokować CIDR w odpowiedzi na zobowiązania prawne? Dyrektywa ta zwykle nie powinna mieć żadnego skutku, ponieważ CIDRAM domyślnie nie wiąże żadnych CIDR z „zobowiązaniami prawnymi”, istnieje jednak jako dodatkowy środek kontroli na korzyść niestandardowych plików lub modułów podpisu, które mogą istnieć z przyczyn prawnych."
-config_signatures_block_malware: "Zablokować adresy IP związane ze złośliwym oprogramowaniem? Obejmuje to serwery kontroli, zainfekowane maszyny, maszyny biorące udział w dystrybucji złośliwego oprogramowania, itp."
-config_signatures_block_proxies: "Zablokować CIDR zidentyfikowane jako należące do usług proxy lub VPN? Jeśli potrzebujesz, aby użytkownicy mogli uzyskać dostęp do twojej witryny z usług proxy i VPN, niniejsza dyrektywa powinna mieć wartość false. W przeciwnym razie, jeśli nie potrzebujesz dostępu z usług proxy lub VPN, niniejsza dyrektywa powinna być true jako środek poprawy bezpieczeństwa."
-config_signatures_block_spam: "Zablokować CIDR zidentyfikowane jako wysokie ryzyko spamu? Zazwyczaj powinno to zawsze mieć wartość true, ale w razie problemów może być konieczne ustawienie wartości false."
+config_signatures_block_attacks: "Zablokować CIDRy związane z atakami i innym nietypowym ruchem? Np. skanowanie portów, hakowanie, sondowanie podatności, itp. Zazwyczaj powinno to zawsze mieć wartość true, ale w razie problemów może być konieczne ustawienie wartości false."
+config_signatures_block_bogons: "Zablokować CIDRy bogon? Jeśli spodziewasz się połączeń z twoją witryną z sieci lokalnej, localhost lub sieci LAN, w tej dyrektywie należy ustawić wartość false. Jeśli nie oczekujesz takich połączeń, tę dyrektywę należy ustawić na wartość true."
+config_signatures_block_cloud: "Zablokować CIDRy zidentyfikowane jako należące do usług hostingowych lub usług w chmurze? Jeśli korzystasz z usługi API ze swojej witryny lub jeśli oczekujesz, że inne witryny połączą się z twoją witryną, należy ustawić na false. Jeśli nie, to tę dyrektywę należy ustawić na true."
+config_signatures_block_generic: "Zablokować CIDRy ogólnie zalecane na czarnej liście? Obejmuje to wszelkie podpisy, które nie są oznaczone jako należące do żadnej z bardziej szczegółowych kategorii podpisów."
+config_signatures_block_legal: "Zablokować CIDRy w odpowiedzi na zobowiązania prawne? Dyrektywa ta zwykle nie powinna mieć żadnego skutku, ponieważ CIDRAM domyślnie nie wiąże żadnych CIDR z „zobowiązaniami prawnymi”, istnieje jednak jako dodatkowy środek kontroli na korzyść niestandardowych plików lub modułów podpisu, które mogą istnieć z przyczyn prawnych."
+config_signatures_block_malware: "Zablokować CIDRy związane ze złośliwym oprogramowaniem? Obejmuje to serwery kontroli, zainfekowane maszyny, maszyny biorące udział w dystrybucji złośliwego oprogramowania, itp."
+config_signatures_block_proxies: "Zablokować CIDRy zidentyfikowane jako należące do usług proxy lub VPN? Jeśli potrzebujesz, aby użytkownicy mogli uzyskać dostęp do twojej witryny z usług proxy i VPN, niniejsza dyrektywa powinna mieć wartość false. W przeciwnym razie, jeśli nie potrzebujesz dostępu z usług proxy lub VPN, niniejsza dyrektywa powinna być true jako środek poprawy bezpieczeństwa."
+config_signatures_block_spam: "Zablokować CIDRy zidentyfikowane jako wysokie ryzyko spamu? Zazwyczaj powinno to zawsze mieć wartość true, ale w razie problemów może być konieczne ustawienie wartości false."
 config_signatures_default_tracktime: "Ile sekund na śledzenie adresów IP zablokowanych przez moduły. Domyślna = 604800 (1 tydzień)."
 config_signatures_infraction_limit: "Maksymalna liczba wykroczeń, które może ponieść IP, zanim zostanie zablokowane przez śledzenie IP. Domyślna = 10."
 config_signatures_ipv4: "Lista plików podpis IPv4, które CIDRAM powinien przetwarzać, oddzielonych przecinkami."

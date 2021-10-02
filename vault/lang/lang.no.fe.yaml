@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Norwegian language data for the front-end (last modified: 2021.09.06).
+# This file: Norwegian language data for the front-end (last modified: 2021.10.02).
 ##/
 
 Extended Description Bypasses: "Standard-signatur-bypass-filene som normalt følger med hovedpakken."
@@ -165,11 +165,12 @@ config_recaptcha_signature_limit: *CaptchaSignatureLimit
 config_recaptcha_sitekey: *CaptchaDashboard
 config_recaptcha_usemode: *CaptchaUseMode
 config_signatures: "Konfigurasjon for signaturer, signaturfiler, moduler, etc."
+config_signatures_block_attacks: "Blokker CIDRer assosiert med angrep og annen unormal trafikk? F.eks., portskanninger, hacking, undersøkelse av sårbarheter, etc. Med mindre du opplever problemer når du gjør det, bør dette vanligvis alltid settes til true."
 config_signatures_block_bogons: "Blokker bogon/martian CIDRer? Hvis du forventer tilkoblinger til nettstedet ditt fra ditt lokale nettverk, fra localhost eller fra ditt LAN, bør dette direktivet settes til false. Hvis du ikke forventer slike tilkoblinger, bør dette direktivet settes til true."
 config_signatures_block_cloud: "Blokker CIDRer identifisert som tilhørende web-verter og sky-tjenester? Hvis du driver en API-tjeneste fra nettstedet ditt eller hvis du forventer at andre nettsteder skal koble til nettstedet ditt, bør dette settes til false. Hvis du ikke gjør det, da bør dette direktivet settes til true."
 config_signatures_block_generic: "Blokker CIDRer anbefales vanligvis for svarteliste? Dette dekker alle signaturer som ikke er merket som en del av noen av de andre mer spesifikke signaturkategoriene."
 config_signatures_block_legal: "Blokker CIDRer som svar på juridiske forpliktelser? Dette direktivet bør normalt ikke ha noen effekt, fordi CIDRAM ikke som standard forbinder noen CIDRer med "juridiske forpliktelser" som standard, men det eksisterer likevel som et ekstra kontrollmål til fordel for eventuelle tilpassede signaturfiler eller moduler som kan eksistere av juridiske årsaker."
-config_signatures_block_malware: "Blokker IP-adresser knyttet til skadelig programvare? Dette inkluderer C&C-servere, infiserte maskiner, maskiner involvert i distribusjon av skadelig programvare, etc."
+config_signatures_block_malware: "Blokker CIDRer knyttet til skadelig programvare? Dette inkluderer C&C-servere, infiserte maskiner, maskiner involvert i distribusjon av skadelig programvare, osv."
 config_signatures_block_proxies: "Blokker CIDRer som er identifisert som tilhørende proxy-tjenester eller VPNer? Hvis du trenger at brukerne skal kunne få tilgang til nettstedet ditt fra proxy-tjenester og VPNer, bør dette settes til false. Ellers, hvis du ikke trenger proxy-tjenester eller VPNer, bør dette direktivet settes til true som et middel til å forbedre sikkerheten."
 config_signatures_block_spam: "Blokker CIDRer som er utsatt for høy risiko for spam? Med mindre du opplever problemer når du gjør det, bør dette vanligvis alltid settes til true."
 config_signatures_default_tracktime: "Hvor mange sekunder å spore IPer som er utestengt av moduler. Standardverdi = 604800 (1 uke)."

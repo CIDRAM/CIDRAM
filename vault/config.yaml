@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Configuration defaults file (last modified: 2021.09.06).
+# This file: Configuration defaults file (last modified: 2021.10.02).
 ##/
 
 Config Defaults:
@@ -373,6 +373,9 @@ Config Defaults:
    default: "ipv6.dat,ipv6_bogons.dat,ipv6_custom.dat,ipv6_isps.dat,ipv6_nonblocking.dat,ipv6_other.dat"
    value_preg_filter:
     "~\s~": ""
+  block_attacks:
+   type: "bool"
+   default: true
   block_cloud:
    type: "bool"
    default: true

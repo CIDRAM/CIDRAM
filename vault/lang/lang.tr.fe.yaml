@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Turkish language data for the front-end (last modified: 2021.09.06).
+# This file: Turkish language data for the front-end (last modified: 2021.10.02).
 ##/
 
 Extended Description Bypasses: "Varsayılan imza bypass'lar, normalde ana paketle birlikte verilir."
@@ -165,11 +165,12 @@ config_recaptcha_signature_limit: *CaptchaSignatureLimit
 config_recaptcha_sitekey: *CaptchaDashboard
 config_recaptcha_usemode: *CaptchaUseMode
 config_signatures: "İmzalar, imza dosyaları, modüller, vb. için yapılandırma."
+config_signatures_block_attacks: "Saldırılar ve diğer anormal trafikle ilişkili CIDR'leri engelle? Örneğin, bağlantı noktası taramaları, bilgisayar korsanlığı, güvenlik açıklarını araştırma, vb. Bunu yaparken sorun yaşamıyorsanız, genelde bu daima doğruya (true) ayarlanmalıdır."
 config_signatures_block_bogons: "Bogon/martian CIDR'leri engelleyin? Sitenize yerel ağınızdan, yerel hizmet bilgisayarından veya yerel ağınızdan bağlantılar bekliyorsanız, bu yönerge yanlış (false) değerine ayarlanmalıdır. Bu tür bağlantıları beklemiyorsanız, bu yönerge doğru (true) olmalıdır."
 config_signatures_block_cloud: "Webhosting/bulut hizmetlerine ait olarak tanımlanan CIDR'leri engelle? Sitenizden bir API hizmeti işletiyorsanız veya diğer web sitelerinin web sitenize bağlanmasını bekliyorsanız, bu yanlışa (false) ayarlanmalıdır. Aksi takdirde, bu yönergenin doğruya (true) ayarlanması gerekir."
 config_signatures_block_generic: "Çoğu zaman kara liste için tavsiye edilen CIDR'ler engelle? Bu, diğer daha belirgin imza kategorilerinin herhangi birinin parçası olarak işaretlenmeyen tüm imzaları kapsar."
 config_signatures_block_legal: "Yasal yükümlülüklere yanıt olarak CIDR'leri engelleyin? Bu yönerge normalde herhangi bir etkiye sahip olmamalıdır CIDRAM, herhangi bir CIDR'yi varsayılan olarak "yasal yükümlülükler" ile ilişkilendirmediğinden. Ancak, yasal nedenlerden dolayı mevcut olabilecek herhangi bir özel imza dosyasının veya modülünün faydası için ek bir kontrol önlemi olarak mevcuttur."
-config_signatures_block_malware: "Kötü amaçlı yazılımlarla ilişkili IP'leri engelle? Buna, C&C sunucuları, virüs bulaşmış makineler, kötü amaçlı yazılım dağıtımında yer alan makineler vb. dahildir."
+config_signatures_block_malware: "Kötü amaçlı yazılımlarla ilişkili CIDR'leri engelle? Buna, C&C sunucuları, virüs bulaşmış makineler, kötü amaçlı yazılım dağıtımında yer alan makineler vb. dahildir."
 config_signatures_block_proxies: "Vekil servisler veya VPN'ler ait olduğu saptanan CIDR'leri engelle? Kullanıcıların, sitenize vekil servislerinden ve VPN'lerinden erişebilmelerini istiyorsanız, bu, yanlışa (false) ayarlanmalıdır. Aksi takdirde, vekil servisler veya VPN'ler gereksinim duymuyorsanız, bu yönergenin güvenliği artırmak için doğruya (true) ayarlanması gerekir."
 config_signatures_block_spam: "Yüksek riskli çöp posta olarak sahtanan CIDR'leri enğelle? Bunu yaparken sorun yaşamıyorsanız, genelde bu daima doğruya (true) ayarlanmalıdır."
 config_signatures_default_tracktime: "Modüller tarafından yasaklanan IP'leri izlemek için kaç saniye. Varsayılan = 604800 (1 hafta)."

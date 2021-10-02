@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: German language data for the front-end (last modified: 2021.09.06).
+# This file: German language data for the front-end (last modified: 2021.10.02).
 ##/
 
 Extended Description Bypasses: "Die Standard-Signatur-Bypässe, die normalerweise im Hauptpaket enthalten sind."
@@ -165,11 +165,12 @@ config_recaptcha_signature_limit: *CaptchaSignatureLimit
 config_recaptcha_sitekey: *CaptchaDashboard
 config_recaptcha_usemode: *CaptchaUseMode
 config_signatures: "Konfiguration für Signaturen, Signaturdateien, Module, u.s.w."
+config_signatures_block_attacks: "Blockieren Sie CIDRs, die mit Angriffen und anderem abnormalem Datenverkehr verbunden sind? z.B., Port-Scans, Hacking, Sondieren nach Schwachstellen, u.s.w. Solange Sie keine Probleme haben während Sie dies tun, allgemein, dies immer auf true sollte gesetzt sein."
 config_signatures_block_bogons: "Blockieren Sie Bogon/Martian CIDRs? Wenn Sie Verbindungen zu Ihrer Website von localhost, von Ihrem LAN, oder von innerhalb Ihres lokalen Netzwerks erwarten, diese Richtlinie auf false sollte gesetzt werden. Wenn Sie diese Verbindungen nicht erwarten, dies auf true sollte gesetzt werden."
 config_signatures_block_cloud: "CIDRs blockieren, welche zu Web-/Server- Hostern gehören. Wenn Sie eine API betreiben oder erwarten, dass Sie oft Aufrufe von solchen Servern bekommen sollten Sie diese Option auf false (nicht blockieren) setzen. Wenn Sie solche Anfragen blockieren möchten, setzen Sie diese Option auf true [Standarteinstellung]."
 config_signatures_block_generic: "Blockieren Sie CIDRs allgemein empfohlen für eine schwarze Liste? Dies gilt für alle Signaturen, die nicht als Teil einer der anderen spezifischen Signaturkategorien markiert sind."
 config_signatures_block_legal: "Blockieren Sie CIDRs als Antwort auf gesetzliche Verpflichtungen? Diese Richtlinie sollte normalerweise keine Wirkung haben, da CIDRAM standardmäßig keine CIDRs mit "gesetzliche Verpflichtungen" assoziiert, aber es existiert dennoch als zusätzliche Kontrollmaßnahme für den Vorteil von benutzerdefinierten Signaturdateien oder Modulen, die aus gesetzlichen Gründen existieren könnten."
-config_signatures_block_malware: "Blockieren Sie IP-Adressen in Verbindung mit Malware? Dazu gehören C&C-Server, infizierte Computer, Malware-Verteilung beteiligte Computer, u.s.w."
+config_signatures_block_malware: "Blockieren Sie CIDRs in Verbindung mit Malware? Dazu gehören C&C-Server, infizierte Computer, Malware-Verteilung beteiligte Computer, u.s.w."
 config_signatures_block_proxies: "Blockieren Sie CIDRs identifiziert als zu Proxy-Dienste oder VPNs gehören? Wenn Sie benötigen dass Benutzer auf Ihre Website von Proxy-Dienste und VPNs zugreifen können, diese Richtlinie auf false sollte gesetzt werden. Andernfalls, Wenn Sie Proxy-Dienste oder VPNs nicht benötigen, diese Richtlinie auf true sollte gesetzt werden, als Mittel zur Verbesserung der Sicherheit."
 config_signatures_block_spam: "Blockieren Sie CIDRs identifiziert als ein hohem Risiko für Spam? Solange Sie keine Probleme haben während Sie dies tun, allgemein, dies immer auf true sollte gesetzt sein."
 config_signatures_default_tracktime: "Wie viele Sekunden sollen durch Module blockierte IPs getrackt werden? Standardeinstellung = 604800 (1 Woche)."

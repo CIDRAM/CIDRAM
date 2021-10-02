@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Latvian language data for the front-end (last modified: 2021.09.06).
+# This file: Latvian language data for the front-end (last modified: 2021.10.02).
 ##/
 
 Extended Description Bypasses: "Noklusējuma paraksta apiešana faili, kas parasti ir iekļauti galvenajā paketē."
@@ -165,11 +165,12 @@ config_recaptcha_signature_limit: *CaptchaSignatureLimit
 config_recaptcha_sitekey: *CaptchaDashboard
 config_recaptcha_usemode: *CaptchaUseMode
 config_signatures: "Parakstu, parakstu failu, moduļu, utt konfigurācija."
+config_signatures_block_attacks: "Bloķēt CIDR, kas saistīti ar uzbrukumiem un citu neparastu datplūsmu? Piemēram, ostu skenēšana, uzlaušana, ievainojamību meklēšana, utt. Ja, to darot, jums nav problēmu, parasti tam vienmēr būtu jādefinē kā true/patiesam."
 config_signatures_block_bogons: "Bloķēt bogona/marsa CIDR? Ja paredzat, ka savienojumi ar jūsu vietni notiek no jūsu vietējā tīkla, no localhost, vai no jūsu LAN, šai direktīvai vajadzētu būt false/nepatiesu. Ja jūs neparedzat šos savienojumus, šai direktīvai vajadzētu būt true/patiesai."
 config_signatures_block_cloud: "Bloķēt CIDR, kas identificēti kā tīmekļa mitināšanas un mākoņa pakalpojumi? Ja savā vietnē izmantojat API pakalpojumu vai ja paredzat, ka citas vietnes izveidos savienojumu ar jūsu vietni, tas jāiestata kā false/nepatiess. Pretējā gadījumā, šai direktīvai vajadzētu būt true/patiesai."
 config_signatures_block_generic: "Bloķēt CIDR, ko parasti ieteicams iekļaut melnajā sarakstā? Tas attiecas uz visiem parakstiem, kas nav atzīmēti kā daļa no kādas citas specifiskākas parakstu kategorijas."
 config_signatures_block_legal: "Bloķēt CIDR, atbildot uz juridiskām saistībām? Šai direktīvai parasti nevajadzētu būt nekādas ietekmes, jo CIDRAM pēc noklusējuma nevienu CIDR nesaista ar "juridiskām saistībām", bet tas tomēr pastāv kā papildu kontroles pasākums visu pielāgoto paraksta failu vai moduļu labā, kas varētu pastāvēt juridisku iemeslu dēļ."
-config_signatures_block_malware: "Bloķēt IPs, kas saistīti ar ļaunprātīgu programmatūru? Tas ietver C&C serverus, inficētas mašīnas, ļaunprātīgas programmatūras izplatīšanā iesaistītas mašīnas, utt."
+config_signatures_block_malware: "Bloķēt CIDR, kas saistīti ar ļaunprātīgu programmatūru? Tas ietver C&C serverus, inficētas mašīnas, ļaunprātīgas programmatūras izplatīšanā iesaistītas mašīnas, utt."
 config_signatures_block_proxies: "Bloķēt CIDR, kas identificēti kā starpniekserveri vai VPN pakalpojumi? Ja jums ir nepieciešams, lai lietotāji varētu piekļūt jūsu vietnei no starpniekservera pakalpojumiem un VPN, šai direktīvai vajadzētu būt false/nepatiesu. Pretējā gadījumā, ja jums nav nepieciešami starpniekservera pakalpojumi vai VPN, šī direktīva ir jāiestata kā true/patiess kā drošības uzlabošanas līdzeklis."
 config_signatures_block_spam: "Bloķēt CIDR, kas atzīti par paaugstinātu surogātpasta risku? Ja, to darot, jums nav problēmu, parasti tam vienmēr būtu jādefinē kā true/patiesam."
 config_signatures_default_tracktime: "Cik sekundes izsekot IP, kurus aizliegts moduļi. Noklusējuma = 604800 (1 nedēļa)."

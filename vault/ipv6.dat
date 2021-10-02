@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6.dat
 
-# Version: 2021.273.475
-# Last modified: 2021.10.01
+# Version: 2021.274.480
+# Last modified: 2021.10.02
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -653,7 +653,7 @@ Tag: Rackspace Hosting
 # Stop Forum Spam (SFS) listings: 1,078.
 # Updated: 2021.07.04
 
-2001:470:1d:3b0::/64 Deny Malware
+2001:470:1d:3b0::/64 Deny Attacks
 Origin: US
 Profile: Commercial;Infrastructure/Transit;Tor endpoints here
 Tag: Hurricane Electric
@@ -5764,9 +5764,12 @@ Tag: HostHatch LLC
 
 # ASN 35913 ("DediPath").
 # Dedicated cloud service and webhosting provider and a source of spam.
-# Stop Forum Spam (SFS) listings: 28,944.
-# Updated: 2021.03.09
+# Stop Forum Spam (SFS) listings: 29,034.
+# Updated: 2021.10.02
 
+2a09:da00::/32 Deny Cloud
+2a09:fb86::/32 Deny Cloud
+2a0d:e841::/32 Deny Cloud
 2a0e:2d47::/32 Deny Cloud
 Origin: RU
 2402:d0c0::/46 Deny Cloud
@@ -5778,10 +5781,11 @@ Origin: SG
 2602:fe90:602::/47 Deny Cloud
 2602:fe90:604::/48 Deny Cloud
 2602:fe90:700::/48 Deny Cloud
-2602:fe90:800::/47 Deny Cloud
+2602:fe90:800::/46 Deny Cloud
+2602:fe90:805::/48 Deny Cloud
 2602:ff96:17::/48 Deny Cloud
 Origin: US
-Profile: Dedicated;Tor endpoints here;Webhosting
+Profile: Dedicated;Infrastructure/Transit;Tor endpoints here;Webhosting
 Tag: DediPath
 
 
@@ -8580,9 +8584,9 @@ Tag: GTHost
 # Stop Forum Spam (SFS) listings: 385.
 # Updated: 2021.08.01
 
-2a03:5840::/32 Deny Malware
-2a07:8dc0::/31 Deny Malware
-2a0d:e680::/32 Deny Malware
+2a03:5840::/32 Deny Attacks
+2a07:8dc0::/31 Deny Attacks
+2a0d:e680::/32 Deny Attacks
 Origin: FR
 Profile: Infrastructure/Transit;Tor endpoints here
 Tag: VIRTUA SYSTEMS SAS
@@ -8593,7 +8597,7 @@ Tag: VIRTUA SYSTEMS SAS
 # detected from here.
 # Updated: 2021.05.11 / Checked: 2021.08.07
 
-2a09:1d40::/48 Deny Malware
+2a09:1d40::/48 Deny Attacks
 Origin: LB
 Profile: Commercial
 Tag: Alviva Holding Limited
@@ -8603,7 +8607,7 @@ Tag: Alviva Holding Limited
 # Hacking, brute-force, and webapp attacks detected from here.
 # Updated: 2021.05.11
 
-2001:67c:25f4::/48 Deny Malware
+2001:67c:25f4::/48 Deny Attacks
 Origin: UA
 Profile: Tor endpoints here;Webhosting
 Tag: Oleksandrovich
@@ -8838,7 +8842,7 @@ Tag: IP Oleinichenko Denis
 # Stop Forum Spam (SFS) listings: 39.
 # Updated: 2021.07.28
 
-2a0b:b87:ffd2::/48 Deny Malware
+2a0b:b87:ffd2::/48 Deny Attacks
 Origin: US
 Profile: Restricted/Unidentifiable
 Tag: Yanoor Islam Khan
@@ -8886,8 +8890,8 @@ Tag: SolidSpace LLC
 # from here.
 # Updated: 2021.08.01
 
-2a0c:4ac0:1100::/40 Deny Malware
-2a0c:4ac0:1200::/40 Deny Malware
+2a0c:4ac0:1100::/40 Deny Attacks
+2a0c:4ac0:1200::/40 Deny Attacks
 Origin: DE
 Profile: Restricted/Unidentifiable
 Tag: Harmony Solutions GmbH
@@ -8899,7 +8903,7 @@ Tag: Harmony Solutions GmbH
 # Listing just the HR ranges only.
 # Updated: 2021.08.07
 
-2a0e:bfc0::/29 Deny Malware
+2a0e:bfc0::/29 Deny Attacks
 Origin: HR
 Profile: Webhosting
 Tag: MAXKO j.d.o.o

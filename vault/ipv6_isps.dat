@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6_isps.dat
 
-# Version: 2021.273.475
-# Last modified: 2021.10.01
+# Version: 2021.274.480
+# Last modified: 2021.10.02
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -49,38 +49,38 @@ Tag: AS12880
 
 # ASN 45727 ("Hutchison CP Telecommunications, PT").
 # Major domestic Indonesian ISP. Spam, port scans, and brute-force, SSH, XSS,
-# FTP, and webapp attacks detected from here. (ID as malware; US as cloud).
+# FTP, and webapp attacks detected from here.
 # Stop Forum Spam (SFS) listings: 699.
 # Updated: 2021.05.28
 
-2400:8b00:100::/42 Deny Malware
-2400:8b00:200::/42 Deny Malware
-2400:8b00:300::/42 Deny Malware
-2400:8b00:500::/43 Deny Malware
-2400:8b00:530::/44 Deny Malware
-2400:8b00:600::/42 Deny Malware
-2400:8b00:700::/42 Deny Malware
-2400:8b00:800::/42 Deny Malware
-2400:8b00:980::/42 Deny Malware
-2400:8b00:a00::/42 Deny Malware
-2400:8b00:a80::/42 Deny Malware
-2400:8b00:b00::/42 Deny Malware
-2400:8b00:b80::/42 Deny Malware
-2400:8b00:c00::/42 Deny Malware
-2400:8b00:c80::/42 Deny Malware
-2400:8b00:d00::/42 Deny Malware
-2400:8b00:d80::/42 Deny Malware
-2400:8b00:e00::/42 Deny Malware
-2400:8b00:e80::/42 Deny Malware
-2400:8b00:f00::/42 Deny Malware
-2400:8b00:f80::/42 Deny Malware
-2400:8b00:1000::/44 Deny Malware
-2400:8b00:1600::/42 Deny Malware
-2400:8b00:1800::/42 Deny Malware
-2400:8b00:2000::/42 Deny Malware
-2400:8b00:2100::/42 Deny Malware
-2400:8b00:2180::/42 Deny Malware
-2400:8b00:2280::/42 Deny Malware
+2400:8b00:100::/42 Deny Attacks
+2400:8b00:200::/42 Deny Attacks
+2400:8b00:300::/42 Deny Attacks
+2400:8b00:500::/43 Deny Attacks
+2400:8b00:530::/44 Deny Attacks
+2400:8b00:600::/42 Deny Attacks
+2400:8b00:700::/42 Deny Attacks
+2400:8b00:800::/42 Deny Attacks
+2400:8b00:980::/42 Deny Attacks
+2400:8b00:a00::/42 Deny Attacks
+2400:8b00:a80::/42 Deny Attacks
+2400:8b00:b00::/42 Deny Attacks
+2400:8b00:b80::/42 Deny Attacks
+2400:8b00:c00::/42 Deny Attacks
+2400:8b00:c80::/42 Deny Attacks
+2400:8b00:d00::/42 Deny Attacks
+2400:8b00:d80::/42 Deny Attacks
+2400:8b00:e00::/42 Deny Attacks
+2400:8b00:e80::/42 Deny Attacks
+2400:8b00:f00::/42 Deny Attacks
+2400:8b00:f80::/42 Deny Attacks
+2400:8b00:1000::/44 Deny Attacks
+2400:8b00:1600::/42 Deny Attacks
+2400:8b00:1800::/42 Deny Attacks
+2400:8b00:2000::/42 Deny Attacks
+2400:8b00:2100::/42 Deny Attacks
+2400:8b00:2180::/42 Deny Attacks
+2400:8b00:2280::/42 Deny Attacks
 Origin: ID
 Profile: Domestic ISP
 Tag: PT Hutchison
@@ -251,7 +251,7 @@ Tag: DGN TEKNOLOJI
 # Stop Forum Spam (SFS) listings: 3,709 (AS6876), 5 (AS41544), 218 (AS48239).
 # Updated: 2016.07.20 / Modified: 2021.06.28
 
-2a04:2c00::/29 Deny Malware
+2a04:2c00::/29 Deny Attacks
 Origin: UA
 Profile: Domestic ISP;Infrastructure/Transit;Multiplay
 Tag: TeNeT
@@ -439,9 +439,9 @@ Tag: AS13188-CDN-LTD
 # Stop Forum Spam (SFS) listings: 2,422 (AS200019).
 # Updated: 2021.04.11
 
-2001:678:6d4::/48 Deny Malware
-2a09:7c46::/32 Deny Malware
-2a0f:5f40::/29 Deny Malware
+2001:678:6d4::/48 Deny Attacks
+2a09:7c46::/32 Deny Attacks
+2a0f:5f40::/29 Deny Attacks
 Origin: MD
 Profile: Frequent changes;Tor endpoints here
 Tag: ALEXHOST SRL
@@ -897,8 +897,8 @@ Tag: China Unicom Backbone
 # Stop Forum Spam (SFS) listings: 12,116.
 # Updated: 2021.08.05
 
-2001:b011:5c01:5827::/64 Deny Malware
-2001:b011:7c03:4395::/64 Deny Malware
+2001:b011:5c01:5827::/64 Deny Attacks
+2001:b011:7c03:4395::/64 Deny Attacks
 Origin: TW
 Profile: Domestic ISP;Commercial;Multiplay;Tor endpoints here;Webhosting
 Tag: DCBG
@@ -1401,7 +1401,7 @@ Tag: SKYBROADBAND
 # Stop Forum Spam (SFS) listings: 79.
 # Updated: 2021.02.27
 
-2409:8a4d:c40:35c0::/64 Deny Malware
+2409:8a4d:c40:35c0::/64 Deny Attacks
 Origin: CN
 Tag: Guangdong Mobile
 
@@ -1411,7 +1411,7 @@ Tag: Guangdong Mobile
 # Stop Forum Spam (SFS) listings: 6.
 # Updated: 2017.03.22 / Modified: 2021.03.19
 
-2401:4100::/32 Deny Malware
+2401:4100::/32 Deny Attacks
 Origin: PK
 Tag: AUGERE-Pakistan
 
@@ -1515,7 +1515,7 @@ Tag: Magticom Ltd
 # Stop Forum Spam (SFS) listings: 78.
 # Updated: 2019.09.03 / Modified: 2021.06.25
 
-2406:e400::/32 Deny Malware
+2406:e400::/32 Deny Attacks
 Origin: MV
 Profile: Domestic ISP
 Tag: Dhivehi Raajjeyge
@@ -1772,9 +1772,9 @@ Tag: TM-VADS DC Hosting
 2601:205:c200:67c0::/64 Deny Spam
 2601:240:c500:f390::/64 Deny Spam
 2601:2c3:c97f:a7b0::/64 Deny Spam
-2601:441:8780:8f20:2811:2cec::/95 Deny Malware
+2601:441:8780:8f20:2811:2cec::/95 Deny Attacks
 2601:589:4380:4b20::/64 Deny Spam
-2603:3005:6077:2000::19c8/125 Deny Malware
+2603:3005:6077:2000::19c8/125 Deny Attacks
 Origin: US
 Profile: Domestic ISP
 Tag: Comcast Spam IPs
@@ -1982,7 +1982,7 @@ Tag: Hot-Net internet
 # Stop Forum Spam (SFS) listings: 3,864.
 # Updated: 2021.08.05
 
-2806:105e:14:d416::/64 Deny Malware
+2806:105e:14:d416::/64 Deny Attacks
 Origin: MX
 2600:141c:7::/48 Deny Cloud
 2600:141c:5000::/48 Deny Cloud
@@ -1998,7 +1998,7 @@ Tag: Uninet
 # Stop Forum Spam (SFS) listings: 64.
 # Updated: 2020.03.21 / Checked: 2021.03.18
 
-2a0f:1e40::/32 Deny Malware
+2a0f:1e40::/32 Deny Attacks
 Origin: UA
 Profile: Domestic ISP
 Tag: Extratel Ltd
@@ -2009,7 +2009,7 @@ Tag: Extratel Ltd
 # Stop Forum Spam (SFS) listings: 65.
 # Updated: 2020.11.21 / Checked: 2021.06.16
 
-2406:30c0::/48 Deny Malware
+2406:30c0::/48 Deny Attacks
 Origin: VN
 Profile: Domestic ISP;Infrastructure/Transit
 Tag: CMC Telecom
@@ -2140,7 +2140,7 @@ Tag: British Telecom PLC
 # originating from this network.
 # Updated: 2020.06.11 / Checked: 2021.07.14
 
-2804:31fc::/32 Deny Malware
+2804:31fc::/32 Deny Attacks
 Origin: BR
 Profile: Domestic ISP
 Tag: BROSEGHINI LTDA EPP
@@ -2338,7 +2338,7 @@ Tag: TELUS Communications Inc
 # Stop Forum Spam (SFS) listings: 1,825.
 # Updated: 2021.02.20
 
-2a00:bfc0::/35 Deny Malware
+2a00:bfc0::/35 Deny Attacks
 Origin: RU
 Profile: Domestic ISP
 Tag: Sibirskie Seti Ltd
@@ -2375,7 +2375,7 @@ Tag: Telenet BVBA
 2001:8a0:e604:5e00::/64 Deny Spam
 2001:8a0:e605:2600::/64 Deny Spam
 2001:8a0:ece2:cb01::/64 Deny Spam
-2001:8a0:fbc6:9d01::/64 Deny Malware
+2001:8a0:fbc6:9d01::/64 Deny Attacks
 2001:8a0:fe37:e300::/64 Deny Spam
 Origin: PT
 Profile: Domestic ISP
@@ -2388,7 +2388,7 @@ Tag: MEO
 # Stop Forum Spam (SFS) listings: 560.
 # Updated: 2021.03.03
 
-2404:700::/32 Deny Malware
+2404:700::/32 Deny Attacks
 Origin: KH
 Profile: Domestic ISP
 Tag: CAMBODIAN SINGMENG TELEMEDIA
@@ -2400,7 +2400,7 @@ Tag: CAMBODIAN SINGMENG TELEMEDIA
 # Stop Forum Spam (SFS) listings: 1,988.
 # Updated: 2021.03.03
 
-2402:e280:2300:5e23::/64 Deny Malware
+2402:e280:2300:5e23::/64 Deny Attacks
 Origin: IN
 Profile: Domestic ISP
 Tag: TATA SKY BROADBAND PRIVATE LIMITED
@@ -2441,7 +2441,7 @@ Tag: Orange S.A
 # Stop Forum Spam (SFS) listings: 2,217.
 # Updated: 2021.05.20
 
-2a00:5ba0:10:2242::/64 Deny Malware
+2a00:5ba0:10:2242::/64 Deny Attacks
 Origin: DE
 Profile: Infrastructure/Transit;Tor endpoints here;University
 Tag: DFN
@@ -2565,7 +2565,7 @@ Tag: KW Datacenter
 # Stop Forum Spam (SFS) listings: 544.
 # Updated: 2021.05.29
 
-2a01:4f00::/32 Deny Malware
+2a01:4f00::/32 Deny Attacks
 Origin: AL
 Profile: Commercial;Domestic ISP
 Tag: Abissnet
@@ -2602,7 +2602,7 @@ Tag: Versatel Deutschland
 2001:fb1:103:a012::/64 Deny Spam
 2001:fb1:13e:bb6d::/64 Deny Spam
 2001:fb1:13f:2719::/64 Deny Spam
-2001:fb1:14c:102f::/64 Deny Malware
+2001:fb1:14c:102f::/64 Deny Attacks
 Origin: TH
 Profile: Domestic ISP
 Tag: True Internet Co

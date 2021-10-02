@@ -13,6 +13,7 @@
                 <span id="cidrInputResultInvalid" style="margin-top:-2px;letter-spacing:3px" class="txtRd">❌ {Short_BadIP}</span>
                 <span id="cidrInputResultValid" style="margin-top:-2px;letter-spacing:3px" class="txtGn">✔️ {field_ok}</span>
                 <style>
+                  #cidrInputResultValid,#cidrInputResultInvalid{display:none}
                   #cidrInput:valid:not(#cidrInput:placeholder-shown)~#cidrInputResultInvalid,#cidrInput:invalid~#cidrInputResultValid,#cidrInput:placeholder-shown~#cidrInputResultValid{display:none}
                   #cidrInput:valid:not(#cidrInput:placeholder-shown)~#cidrInputResultValid,#cidrInput:invalid~#cidrInputResultInvalid,#cidrInput:placeholder-shown~#cidrInputResultInvalid{display:inline-block}
                 </style>

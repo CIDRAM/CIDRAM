@@ -1,8 +1,8 @@
 # IPv4 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv4_isps.dat
 
-# Version: 2021.274.480
-# Last modified: 2021.10.02
+# Version: 2021.277.695
+# Last modified: 2021.10.05
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -2814,8 +2814,8 @@ Tag: BSNL
 # this ASN (spam events, hack attempts, brute-force attempts, probing, etc),
 # nor its listing at a number of BLs. Websites intended for a Chinese audience
 # should keep this section listed in their ignore.dat file.
-# Stop Forum Spam (SFS) listings: 8,919.
-# Updated: 2021.02.05
+# Stop Forum Spam (SFS) listings: 7,208.
+# Updated: 2021.10.05
 
 147.78.134.0/23 Deny Generic
 Origin: AE
@@ -2823,7 +2823,6 @@ Origin: AE
 1.50.0.0/16 Deny Generic
 1.68.0.0/14 Deny Generic
 1.80.0.0/13 Deny Generic
-1.92.0.0/20 Deny Generic
 1.180.0.0/14 Deny Generic
 1.192.0.0/13 Deny Generic
 1.204.0.0/14 Deny Generic
@@ -2864,14 +2863,12 @@ Origin: AE
 58.32.0.0/11 Deny Generic
 58.66.0.0/15 Deny Generic
 58.99.128.0/17 Deny Generic
-58.100.0.0/15 Deny Generic
 58.208.0.0/12 Deny Generic
 59.32.0.0/13 Deny Generic
 59.40.0.0/15 Deny Generic
 59.42.0.0/16 Deny Generic
 59.44.0.0/14 Deny Generic
 59.48.0.0/12 Deny Generic
-59.82.64.0/18 Deny Generic
 59.107.0.0/17 Deny Generic
 59.172.0.0/14 Deny Generic
 60.55.0.0/16 Deny Generic
@@ -2963,7 +2960,6 @@ Origin: AE
 113.128.0.0/15 Deny Generic
 113.132.0.0/14 Deny Generic
 113.136.0.0/13 Deny Generic
-113.214.0.0/15 Deny Generic
 113.218.0.0/15 Deny Generic
 113.220.0.0/14 Deny Generic
 113.240.0.0/13 Deny Generic
@@ -3000,22 +2996,17 @@ Origin: AE
 117.57.0.0/16 Deny Generic
 117.60.0.0/14 Deny Generic
 117.64.0.0/13 Deny Generic
-117.79.80.0/20 Deny Generic
 117.80.0.0/12 Deny Generic
 118.84.0.0/15 Deny Generic
 118.112.0.0/13 Deny Generic
 118.120.0.0/14 Deny Generic
 118.124.0.0/15 Deny Generic
 118.180.0.0/14 Deny Generic
-118.184.152.0/21 Deny Generic
-118.186.0.0/15 Deny Generic
-118.192.0.0/16 Deny Generic
 118.213.0.0/16 Deny Generic
 118.215.192.0/19 Deny Generic
 118.239.0.0/16 Deny Generic
 118.248.0.0/13 Deny Generic
 119.0.0.0/15 Deny Generic
-119.20.0.0/15 Deny Generic
 119.37.192.0/21 Deny Generic
 119.41.0.0/16 Deny Generic
 119.60.0.0/16 Deny Generic
@@ -3027,7 +3018,6 @@ Origin: AE
 120.31.66.0/23 Deny Generic
 120.31.68.0/22 Deny Generic
 120.31.128.0/20 Deny Generic
-120.31.144.0/24 Deny Generic
 120.32.0.0/13 Deny Generic
 120.40.0.0/14 Deny Generic
 120.68.0.0/14 Deny Generic
@@ -3037,6 +3027,7 @@ Origin: AE
 121.56.0.0/15 Deny Generic
 121.58.0.0/17 Deny Generic
 121.59.0.0/23 Deny Generic
+121.59.168.0/24 Deny Generic
 121.60.0.0/14 Deny Generic
 121.201.0.0/17 Deny Generic
 121.204.0.0/14 Deny Generic
@@ -3055,7 +3046,6 @@ Origin: AE
 123.178.0.0/15 Deny Generic
 123.180.0.0/14 Deny Generic
 123.184.0.0/14 Deny Generic
-123.197.0.0/17 Deny Generic
 123.244.0.0/14 Deny Generic
 124.29.0.0/17 Deny Generic
 124.31.0.0/16 Deny Generic
@@ -3067,7 +3057,6 @@ Origin: AE
 125.104.0.0/13 Deny Generic
 125.112.0.0/12 Deny Generic
 125.171.0.0/16 Deny Generic
-125.210.0.0/16 Deny Generic
 139.189.0.0/16 Deny Generic
 139.200.0.0/13 Deny Generic
 140.75.0.0/16 Deny Generic
@@ -3140,10 +3129,12 @@ Origin: AE
 202.130.248.0/21 Deny Generic
 202.141.160.0/20 Deny Generic
 202.173.224.0/19 Deny Generic
-202.180.128.0/19 Deny Generic
 203.0.104.0/21 Deny Generic
 203.2.64.0/21 Deny Generic
 203.25.208.0/20 Deny Generic
+203.33.145.0/24 Deny Generic
+203.33.156.0/24 Deny Generic
+203.33.174.0/24 Deny Generic
 203.34.4.0/24 Deny Generic
 203.34.21.0/24 Deny Generic
 203.34.27.0/24 Deny Generic
@@ -3173,6 +3164,7 @@ Origin: AE
 203.110.232.0/23 Deny Generic
 203.119.114.0/23 Deny Generic
 203.148.86.0/23 Deny Generic
+203.160.129.0/24 Deny Generic
 203.161.192.0/19 Deny Generic
 203.170.58.0/23 Deny Generic
 203.175.192.0/18 Deny Generic
@@ -3197,14 +3189,11 @@ Origin: AE
 211.148.128.0/19 Deny Generic
 211.152.64.0/19 Deny Generic
 211.152.160.0/19 Deny Generic
+211.154.128.0/19 Deny Generic
 211.155.16.0/20 Deny Generic
 211.155.224.0/21 Deny Generic
-211.156.112.0/20 Deny Generic
 211.156.176.0/20 Deny Generic
-211.156.240.0/20 Deny Generic
 211.159.64.0/20 Deny Generic
-211.167.0.0/20 Deny Generic
-211.167.16.0/22 Deny Generic
 218.0.0.0/16 Deny Generic
 218.2.0.0/15 Deny Generic
 218.4.0.0/15 Deny Generic
@@ -3226,10 +3215,6 @@ Origin: AE
 218.76.0.0/15 Deny Generic
 218.84.0.0/14 Deny Generic
 218.88.0.0/13 Deny Generic
-218.97.0.0/23 Deny Generic
-218.108.0.0/15 Deny Generic
-218.240.0.0/18 Deny Generic
-219.82.0.0/16 Deny Generic
 219.128.0.0/13 Deny Generic
 219.136.0.0/14 Deny Generic
 219.140.0.0/16 Deny Generic
@@ -3272,12 +3257,15 @@ Origin: CN
 81.173.16.0/21 Deny Generic
 Origin: GB
 63.140.0.0/24 Deny Generic
-118.103.244.0/22 Deny Generic
 122.10.0.0/17 Deny Generic
-157.119.72.0/24 Deny Generic
 183.91.40.0/21 Deny Generic
 183.91.56.0/24 Deny Generic
 Origin: HK
+120.96.0.0/19 Deny Generic
+120.96.240.0/21 Deny Generic
+120.96.248.0/22 Deny Generic
+140.112.0.0/16 Deny Generic
+Origin: TW
 66.102.240.0/21 Deny Generic
 66.102.248.0/22 Deny Generic
 66.102.255.0/24 Deny Generic
@@ -3298,13 +3286,14 @@ Tag: China Telecom Backbone
 # this ASN (spam events, hack attempts, brute-force attempts, probing, etc),
 # nor its listing at a number of BLs. Marked for use with CAPTCHAs to reduce
 # the false positive risk. Websites intended for a Chinese audience should keep
-# this section listed in their ignore.dat file.
-# Stop Forum Spam (SFS) listings: 3,517.
-# Updated: 2021.05.06
+# this section listed in their ignore.dat file. (I'm not really happy with this
+# section. Aiming to rework it at some point in the future).
+# Stop Forum Spam (SFS) listings: 3,158.
+# Updated: 2021.10.05
 
 36.111.0.0/20 Deny Generic
-43.228.148.0/22 Deny Generic
 43.240.124.0/24 Deny Generic
+43.242.96.0/23 Deny Generic
 43.247.100.0/22 Deny Generic
 43.254.44.0/22 Deny Generic
 43.254.106.0/24 Deny Generic
@@ -3337,12 +3326,9 @@ Tag: China Telecom Backbone
 103.24.116.0/24 Deny Generic
 103.24.118.0/23 Deny Generic
 103.25.64.0/23 Deny Generic
-103.28.212.0/22 Deny Generic
 103.36.132.0/22 Deny Generic
-103.47.136.0/22 Deny Generic
 103.55.172.0/22 Deny Generic
 103.65.8.0/22 Deny Generic
-103.76.92.0/22 Deny Generic
 103.98.220.0/22 Deny Generic
 103.108.160.0/24 Deny Generic
 103.108.244.0/24 Deny Generic
@@ -3355,7 +3341,8 @@ Tag: China Telecom Backbone
 103.192.252.0/22 Deny Generic
 103.198.124.0/22 Deny Generic
 103.222.40.0/22 Deny Generic
-103.228.228.0/22 Deny Generic
+103.228.228.0/24 Deny Generic
+103.228.231.0/24 Deny Generic
 103.234.128.0/22 Deny Generic
 103.242.168.0/23 Deny Generic
 103.242.170.0/24 Deny Generic
@@ -3387,37 +3374,24 @@ Tag: China Telecom Backbone
 119.15.136.0/21 Deny Generic
 120.132.136.0/22 Deny Generic
 120.132.192.0/23 Deny Generic
-120.133.216.0/21 Deny Generic
-120.133.224.0/21 Deny Generic
-120.133.236.0/22 Deny Generic
 120.136.156.0/22 Deny Generic
 120.136.160.0/21 Deny Generic
-121.46.224.0/21 Deny Generic
+121.46.224.0/22 Deny Generic
 122.9.176.0/20 Deny Generic
 124.74.0.0/15 Deny Generic
 124.76.0.0/14 Deny Generic
 125.215.44.0/23 Deny Generic
 139.159.32.0/22 Deny Generic
-139.159.96.0/21 Deny Generic
-139.159.104.0/22 Deny Generic
 146.196.56.0/22 Deny Generic
-150.129.192.0/22 Deny Generic
 150.242.238.0/23 Deny Generic
-163.47.4.0/22 Deny Generic
-163.53.88.0/21 Deny Generic
 167.139.0.0/16 Deny Generic
-175.102.0.0/20 Deny Generic
+175.102.11.0/24 Deny Generic
 180.152.0.0/13 Deny Generic
 180.160.0.0/12 Deny Generic
 180.235.64.0/21 Deny Generic
-182.175.242.0/23 Deny Generic
 202.38.132.0/23 Deny Generic
 202.38.134.0/24 Deny Generic
-202.72.112.0/20 Deny Generic
-202.73.240.0/20 Deny Generic
-202.81.176.0/20 Deny Generic
 202.89.96.0/24 Deny Generic
-202.90.96.0/20 Deny Generic
 202.96.192.0/18 Deny Generic
 202.101.0.0/18 Deny Generic
 202.109.0.0/17 Deny Generic
@@ -14364,78 +14338,65 @@ Tag: Azimut-R Ltd
 # ASN 13285 ("TalkTalk Communications Limited").
 # British domestic ISP; Also a source of spam and unwanted traffic.
 # Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 1,170.
-# Updated: 2021.02.11
+# Stop Forum Spam (SFS) listings: 1,404.
+# Updated: 2021.10.05
 
-2.99.98.22/32 Deny Spam
-2.99.120.248/32 Deny Spam
-78.144.42.172/32 Deny Spam
-78.146.102.88/32 Deny Spam
-78.147.86.195/32 Deny Spam
-78.147.213.42/32 Deny Spam
-78.149.232.110/32 Deny Spam
-78.151.186.100/32 Deny Spam
-84.13.21.178/32 Deny Spam
-84.13.89.116/32 Deny Spam
-89.240.202.15/32 Deny Spam
-89.243.135.65/32 Deny Attacks
-92.0.45.21/32 Deny Spam
-92.2.54.232/32 Deny Spam
-92.7.69.98/32 Deny Spam
-92.7.125.91/32 Deny Spam
-92.14.125.59/32 Deny Spam
-92.19.56.239/32 Deny Spam
-92.20.170.105/32 Deny Spam
-92.21.51.42/32 Deny Spam
-92.21.194.115/32 Deny Spam
-92.22.60.74/32 Deny Spam
-92.23.76.173/32 Deny Spam
+2.96.35.55/32 Deny Spam
+78.145.9.251/32 Deny Spam
+78.150.124.2/32 Deny Spam
+78.150.135.108/32 Deny Spam
+89.241.114.1/32 Deny Spam
+89.242.215.13/32 Deny Spam
+92.0.200.105/32 Deny Spam
+92.1.155.42/32 Deny Spam
+92.5.84.85/32 Deny Spam
+92.7.164.27/32 Deny Spam
+92.8.26.60/32 Deny Spam
+92.9.42.1/32 Deny Spam
+92.9.65.197/32 Deny Spam
+92.9.70.145/32 Deny Spam
+92.10.249.1/32 Deny Spam
+92.11.107.229/32 Deny Spam
+92.12.191.243/32 Deny Spam
+92.14.8.79/32 Deny Spam
+92.14.98.117/32 Deny Spam
+92.14.241.121/32 Deny Spam
+92.14.245.198/32 Deny Spam
+92.22.218.199/32 Deny Spam
+92.22.239.72/32 Deny Spam
+92.23.225.189/32 Deny Spam
+92.24.56.99/32 Deny Spam
 92.24.97.72/32 Deny Spam
-92.26.149.215/32 Deny Spam
-92.28.27.215/32 Deny Spam
-92.28.214.225/32 Deny Spam
-92.29.144.197/32 Deny Spam
-92.30.100.46/32 Deny Spam
+92.27.71.12/32 Deny Spam
+92.27.126.110/32 Deny Spam
+92.27.253.76/32 Deny Spam
+92.28.214.0/24 Deny Spam
 Origin: GB
 Profile: Domestic ISP
 Tag: TalkTalk
 
 
-# ASN 268768 ("PAULO HENRIQUE BATISTA GIMENES - ME").
-# Brazilian domestic ISP. WordPress attacks detected from here.
-# Updated: 2021.02.12
-
-45.172.100.42/32 Deny Attacks
-45.172.100.49/32 Deny Attacks
-Origin: BR
-Profile: Domestic ISP
-Tag: AS268768
-
-
-# ASN 268768 ("PAULO HENRIQUE BATISTA GIMENES - ME").
-# Brazilian domestic ISP. WordPress attacks detected from here.
-# Updated: 2021.02.12
-
-45.172.100.42/32 Deny Attacks
-45.172.100.49/32 Deny Attacks
-Origin: BR
-Profile: Domestic ISP
-Tag: AS268768
-
-
 # ASN 43205 ("Bulsatcom EAD").
 # Bulgarian domestic ISP. WordPress attacks and spam detected from here.
-# Stop Forum Spam (SFS) listings: 511.
-# Updated: 2021.02.12
+# Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 744.
+# Updated: 2021.10.05
 
-46.237.99.53/32 Deny Spam
-91.139.202.0/24 Deny Spam
+37.143.206.82/32 Deny Spam
+78.128.25.28/32 Deny Spam
+78.128.85.192/32 Deny Spam
+78.128.106.181/32 Deny Spam
+91.148.183.36/32 Deny Spam
+109.121.201.96/32 Deny Spam
 158.58.197.0/24 Deny Attacks
-188.254.159.0/24 Deny Attacks
-188.254.163.174/32 Deny Spam
-188.254.180.236/32 Deny Spam
-188.254.181.236/32 Deny Spam
-212.75.22.200/32 Deny Spam
+158.58.230.0/24 Deny Spam
+178.169.134.71/32 Deny Spam
+188.254.159.122/32 Deny Spam
+188.254.159.164/32 Deny Spam
+188.254.175.176/32 Deny Spam
+212.43.60.146/32 Deny Spam
+212.43.61.92/32 Deny Spam
+213.214.82.156/32 Deny Spam
 Origin: BG
 Profile: Domestic ISP
 Tag: Bulsatcom EAD
@@ -14534,51 +14495,25 @@ Tag: Phaholyothin Rd
 
 # ASN 852 ("TELUS Communications Inc").
 # Major Canadian domestic ISP. Spam and brute-force attacks detected from here.
-# Listing just the affected ranges/addresses + all non-CA ranges.
-# Stop Forum Spam (SFS) listings: 362.
-# Updated: 2021.02.12
+# Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 566.
+# Updated: 2021.10.05
 
-23.16.21.28/32 Deny Spam
-50.92.232.233/32 Deny Spam
-50.99.88.115/32 Deny Spam
-64.180.204.163/32 Deny Spam
-75.157.11.167/32 Deny Spam
-75.158.49.156/32 Deny Spam
+23.16.150.19/32 Deny Spam
+23.17.255.9/32 Deny Spam
+50.99.66.123/32 Deny Spam
+66.183.100.156/32 Deny Spam
+66.183.237.176/32 Deny Spam
 75.158.124.236/32 Deny Spam
-75.159.12.211/32 Deny Spam
-99.199.46.3/32 Deny Spam
-99.199.123.156/32 Deny Spam
-104.157.113.155/32 Deny Spam
-142.59.62.202/32 Deny Spam
-142.169.145.97/32 Deny Spam
-154.5.34.229/32 Deny Spam
-162.157.69.162/32 Deny Spam
-162.157.107.240/32 Deny Spam
-173.180.121.242/32 Deny Spam
+172.218.40.65/32 Deny Spam
+172.218.220.246/32 Deny Spam
+172.219.230.18/32 Deny Spam
 173.182.166.74/32 Deny Spam
-207.6.148.123/32 Deny Spam
-207.81.31.205/32 Deny Spam
-207.102.138.19/32 Deny Attacks
-207.167.211.11/32 Deny Spam
-209.121.142.201/32 Deny Spam
+198.166.189.42/32 Deny Spam
+204.174.212.14/32 Deny Spam
+207.102.138.0/24 Deny Attacks
+209.29.101.170/32 Deny Spam
 Origin: CA
-2.22.72.0/22 Deny Cloud
-Origin: NL
-23.6.48.0/20 Deny Cloud
-23.72.228.0/23 Deny Cloud
-23.73.20.0/22 Deny Cloud
-23.73.32.0/19 Deny Cloud
-23.220.92.0/22 Deny Cloud
-170.136.120.0/24 Deny Cloud
-198.80.52.0/22 Deny Cloud
-199.175.124.0/22 Deny Cloud
-204.92.44.0/22 Deny Cloud
-206.235.86.0/23 Deny Cloud
-206.235.248.0/21 Deny Cloud
-207.83.16.0/20 Deny Cloud
-Origin: US
-199.85.9.0/24 Deny Cloud
-Origin: XR
 Profile: Domestic ISP
 Tag: TELUS Communications Inc
 
@@ -18234,3 +18169,19 @@ Tag: Windscribe
 Origin: RO
 Profile: Restricted/Unidentifiable
 Tag: Welt-Net/EANCENTER
+
+
+# ASN 57768 ("Micronet LTD").
+# Georgian domestic ISP. Caught trying to hack into cPanel. WordPress/XMLRPC,
+# brute-force, XSS, SQLi, and webapp attacks, port scans, and spam detected
+# from here. Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 152.
+# Updated: 2021.10.05
+
+5.187.9.2/32 Deny Malware
+37.75.129.186/32 Deny Malware
+37.75.131.172/32 Deny Malware
+37.75.135.161/32 Deny Malware
+Origin: GE
+Profile: Domestic ISP;Multiplay
+Tag: Micronet LTD

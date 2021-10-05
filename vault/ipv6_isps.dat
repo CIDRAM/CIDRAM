@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6_isps.dat
 
-# Version: 2021.274.480
-# Last modified: 2021.10.02
+# Version: 2021.277.695
+# Last modified: 2021.10.05
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -574,8 +574,8 @@ Tag: BSNL
 # this ASN (spam events, hack attempts, brute-force attempts, probing, etc),
 # nor its listing at a number of BLs. Websites intended for a Chinese audience
 # should keep this section listed in their ignore.dat file.
-# Stop Forum Spam (SFS) listings: 8,919.
-# Updated: 2020.10.10 / Checked: 2021.02.05
+# Stop Forum Spam (SFS) listings: 7,208.
+# Updated: 2021.10.05
 
 2406:8500::/32 Deny Generic
 240e::/20 Deny Generic
@@ -605,12 +605,12 @@ Origin: HK
 2605:9d80:8041::/48 Deny Generic
 2605:9d80:8081::/48 Deny Generic
 Origin: US
-2c0f:f7a8:8010::/47 Deny Generic
+2c0f:f7a8:8011::/48 Deny Generic
 2c0f:f7a8:8050::/48 Deny Generic
 2c0f:f7a8:805f::/48 Deny Generic
 2c0f:f7a8:8150::/48 Deny Generic
 2c0f:f7a8:815f::/48 Deny Generic
-2c0f:f7a8:8210::/47 Deny Generic
+2c0f:f7a8:8211::/48 Deny Generic
 Origin: ZA
 Profile: Infrastructure/Transit
 Tag: China Telecom Backbone
@@ -622,12 +622,12 @@ Tag: China Telecom Backbone
 # this ASN (spam events, hack attempts, brute-force attempts, probing, etc),
 # nor its listing at a number of BLs. Marked for use with CAPTCHAs to reduce
 # the false positive risk. Websites intended for a Chinese audience should keep
-# this section listed in their ignore.dat file.
-# Stop Forum Spam (SFS) listings: 3,517.
-# Updated: 2021.05.06
+# this section listed in their ignore.dat file. (I'm not really happy with this
+# section. Aiming to rework it at some point in the future).
+# Stop Forum Spam (SFS) listings: 3,158.
+# Updated: 2021.10.05
 
 2400:9600:8800::/48 Deny Generic
-2401:1d40:2f00::/48 Deny Generic
 2402:6f40:1::/48 Deny Generic
 2403:1ec0:1610::/48 Deny Generic
 2403:a200:a1ff::/48 Deny Generic
@@ -646,7 +646,6 @@ Tag: China Telecom Backbone
 240e:106:c000::/34 Deny Generic
 240e:108:11a1::/48 Deny Generic
 240e:108:11a2::/48 Deny Generic
-240e:109:8021::/48 Deny Generic
 240e:146:c000::/34 Deny Generic
 240e:186:c000::/34 Deny Generic
 240e:1c6:c000::/34 Deny Generic
@@ -655,7 +654,6 @@ Tag: China Telecom Backbone
 240e:46c::/30 Deny Generic
 240e:56c::/30 Deny Generic
 240e:688::/29 Deny Generic
-240e:698:2100::/40 Deny Generic
 240e:788::/29 Deny Generic
 240e:96c::/30 Deny Generic
 240e:982:a100::/40 Deny Generic
@@ -2321,12 +2319,15 @@ Tag: Phaholyothin Rd
 
 # ASN 852 ("TELUS Communications Inc").
 # Major Canadian domestic ISP. Spam and brute-force attacks detected from here.
-# Listing just the affected ranges/addresses + all non-CA ranges.
-# Stop Forum Spam (SFS) listings: 362.
-# Updated: 2021.02.12
+# Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 566.
+# Updated: 2021.10.05
 
-2001:569:7a1f:a700::/64 Deny Spam
-2001:569:7bc2:c700::/64 Deny Spam
+2001:569:5036:5900::/64 Deny Spam
+2001:569:be95:5e00::/64 Deny Spam
+2001:569:fa1e:3200::/64 Deny Spam
+2001:56b:dc05:6a00::/64 Deny Spam
+2001:56b:dcbc:300::/64 Deny Spam
 Origin: CA
 Profile: Domestic ISP
 Tag: TELUS Communications Inc

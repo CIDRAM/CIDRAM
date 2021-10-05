@@ -1,8 +1,8 @@
 # IPv4 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv4.dat
 
-# Version: 2021.274.480
-# Last modified: 2021.10.02
+# Version: 2021.277.695
+# Last modified: 2021.10.05
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -222,97 +222,10 @@ Tag: Multacom Corp
 
 
 # ASN 62468 ("VpsQuan L.L.C").
-# Stop Forum Spam (SFS) listings: 6.
-# Updated: 2021.02.14
+# Dead at last check. Will remove at the next update if no change.
+# Updated: 2021.10.05
 
-45.145.81.0/24 Deny Cloud
-45.145.82.0/24 Deny Cloud
-128.0.116.0/24 Deny Cloud
-185.223.164.0/23 Deny Cloud
-194.113.164.0/24 Deny Cloud
-194.113.169.0/24 Deny Cloud
-194.113.170.0/24 Deny Cloud
-Origin: AT
-45.134.81.0/24 Deny Cloud
-Origin: CA
-43.225.140.0/22 Deny Cloud
-43.249.8.0/22 Deny Cloud
-43.250.172.0/23 Deny Cloud
-43.250.175.0/24 Deny Cloud
-43.251.116.0/22 Deny Cloud
-45.120.220.0/22 Deny Cloud
-45.251.136.0/24 Deny Cloud
-103.40.100.0/24 Deny Cloud
-103.40.102.0/23 Deny Cloud
-103.42.28.0/22 Deny Cloud
-103.42.180.0/22 Deny Cloud
-103.68.192.0/22 Deny Cloud
-103.122.177.0/24 Deny Cloud
-103.149.190.0/23 Deny Cloud
-103.225.84.0/24 Deny Cloud
-103.228.128.0/22 Deny Cloud
-103.240.156.0/22 Deny Cloud
-121.54.188.0/22 Deny Cloud
-Origin: CN
-43.225.57.0/24 Deny Cloud
-43.225.58.0/23 Deny Cloud
-43.255.104.0/22 Deny Cloud
-45.119.92.0/22 Deny Cloud
-45.119.127.0/24 Deny Cloud
-45.145.124.0/22 Deny Cloud
-103.229.28.0/22 Deny Cloud
-103.230.120.0/22 Deny Cloud
-103.239.72.0/22 Deny Cloud
-103.252.16.0/22 Deny Cloud
-103.255.60.0/24 Deny Cloud
-103.255.62.0/23 Deny Cloud
-203.167.20.0/24 Deny Cloud
-203.167.22.0/23 Deny Cloud
-220.158.192.0/22 Deny Cloud
-Origin: HK
-45.195.112.0/20 Deny Cloud
-154.91.48.0/20 Deny Cloud
-154.91.176.0/20 Deny Cloud
-154.210.16.0/20 Deny Cloud
-154.212.130.0/23 Deny Cloud
-154.212.132.0/22 Deny Cloud
-154.212.136.0/23 Deny Cloud
-154.213.64.0/20 Deny Cloud
-154.215.2.0/23 Deny Cloud
-154.215.4.0/22 Deny Cloud
-154.215.8.0/22 Deny Cloud
-154.218.128.0/18 Deny Cloud
-154.221.2.0/23 Deny Cloud
-154.221.4.0/22 Deny Cloud
-154.221.8.0/21 Deny Cloud
-154.222.224.0/20 Deny Cloud
-156.224.16.0/20 Deny Cloud
-156.224.32.0/19 Deny Cloud
-156.235.96.0/20 Deny Cloud
-Origin: SC
-23.251.32.0/24 Deny Cloud
-23.251.34.0/23 Deny Cloud
-23.251.36.0/22 Deny Cloud
-23.251.40.0/24 Deny Cloud
-23.251.42.0/23 Deny Cloud
-23.251.44.0/22 Deny Cloud
-23.251.48.0/20 Deny Cloud
-45.128.145.0/24 Deny Cloud
-45.131.177.0/24 Deny Cloud
-45.132.237.0/24 Deny Cloud
-45.133.237.0/24 Deny Cloud
-45.137.9.0/24 Deny Cloud
-69.165.64.0/20 Deny Cloud
-107.151.192.0/18 Deny Cloud
-198.44.160.0/23 Deny Cloud
-198.44.162.0/24 Deny Cloud
-198.44.164.0/22 Deny Cloud
-198.44.168.0/21 Deny Cloud
-198.44.176.0/22 Deny Cloud
-198.44.180.0/23 Deny Cloud
-198.44.183.0/24 Deny Cloud
-198.44.184.0/21 Deny Cloud
-Origin: US
+#<redacted>
 Tag: VpsQuan LLC
 
 
@@ -12770,8 +12683,8 @@ Tag: AS45538
 
 
 # ASN 45102 ("Alibaba (China) Technology Co., Ltd").
-# Stop Forum Spam (SFS) listings: 22,175.
-# Updated: 2021.02.11
+# Stop Forum Spam (SFS) listings: 14,269.
+# Updated: 2021.10.05
 
 5.181.224.0/23 Deny Cloud
 Origin: CA
@@ -12805,6 +12718,10 @@ Origin: NL
 156.240.76.0/23 Deny Cloud
 Origin: SC
 8.208.0.0/14 Deny Cloud
+8.212.0.0/17 Deny Cloud
+8.212.128.0/18 Deny Cloud
+8.214.0.0/15 Deny Cloud
+8.216.0.0/17 Deny Cloud
 149.129.0.0/20 Deny Cloud
 149.129.16.0/23 Deny Cloud
 149.129.24.0/21 Deny Cloud
@@ -12848,9 +12765,9 @@ Origin: SG
 47.246.128.0/20 Deny Cloud
 47.246.144.0/21 Deny Cloud
 47.246.152.0/23 Deny Cloud
+47.246.156.0/22 Deny Cloud
 47.246.160.0/20 Deny Cloud
-47.250.0.0/17 Deny Cloud
-47.251.0.0/16 Deny Cloud
+47.250.0.0/15 Deny Cloud
 47.252.0.0/15 Deny Cloud
 47.254.0.0/16 Deny Cloud
 139.95.0.0/20 Deny Cloud
@@ -12860,6 +12777,7 @@ Origin: SG
 198.44.244.0/22 Deny Cloud
 205.204.96.0/19 Deny Cloud
 Origin: US
+Profile: Commercial
 Tag: Alibaba
 
 
@@ -31570,31 +31488,21 @@ Tag: RegionInfocom Ltd
 
 # ASNs 15497, 206110 ("7HEAVEN LLC").
 # Ukrainian server farm caught spamming.
-# Stop Forum Spam (SFS) listings: 7,206 (AS15497).
-# Updated: 2021.02.13
+# Stop Forum Spam (SFS) listings: 23,064 (AS15497).
+# Updated: 2021.10.05
 
 31.24.208.0/21 Deny Cloud
 31.28.160.0/20 Deny Cloud
 31.28.176.0/21 Deny Cloud
 31.28.184.0/22 Deny Cloud
+31.28.188.0/24 Deny Cloud
 31.28.191.0/24 Deny Cloud
 62.149.0.0/19 Deny Cloud
 185.196.68.0/22 Deny Cloud
 193.41.239.0/24 Deny Cloud
 Origin: UA
+Profile: Dedicated;Infrastructure/Transit
 Tag: 7HEAVEN LLC
-
-
-# ASN 57768 ("Micronet LTD").
-# Strange Georgian network caught trying to hack into cPanel.
-# Stop Forum Spam (SFS) listings: 156.
-# Updated: 2021.02.13
-
-5.187.8.0/21 Deny Cloud
-37.75.128.0/21 Deny Cloud
-185.46.176.0/22 Deny Cloud
-Origin: GE
-Tag: Micronet LTD
 
 
 # ASNs 262287, 396356 ("Maxihost LTDA").

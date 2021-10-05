@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6.dat
 
-# Version: 2021.274.480
-# Last modified: 2021.10.02
+# Version: 2021.277.695
+# Last modified: 2021.10.05
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -3297,14 +3297,29 @@ Tag: AS45538
 
 
 # ASN 45102 ("Alibaba (China) Technology Co., Ltd").
-# Stop Forum Spam (SFS) listings: 22,175.
-# Updated: 2021.02.11
+# Stop Forum Spam (SFS) listings: 14,269.
+# Updated: 2021.10.05
 
 2400:b200:4100::/46 Deny Cloud
+2401:b180:4100::/48 Deny Cloud
+2408:4000:1000::/48 Deny Cloud
 2408:4009:500::/48 Deny Cloud
 Origin: CN
-240b:4000::/22 Deny Cloud
+240b:4000::/31 Deny Cloud
+240b:4002::/32 Deny Cloud
+240b:4003::/48 Deny Cloud
+240b:4003:12b::/48 Deny Cloud
+240b:4003:12c::/48 Deny Cloud
+240b:4003:1bf::/48 Deny Cloud
+240b:4003:3e8::/48 Deny Cloud
+240b:4003:fc00::/48 Deny Cloud
+240b:4003:fc6a::/48 Deny Cloud
+240b:4003:fd95::/48 Deny Cloud
+240b:4003:fd96::/48 Deny Cloud
+240b:4003:fee3::/48 Deny Cloud
+240b:4005::/32 Deny Cloud
 Origin: SG
+Profile: Commercial
 Tag: Alibaba
 
 
@@ -8000,11 +8015,12 @@ Tag: Biterika Group LLC
 
 # ASNs 15497, 206110 ("7HEAVEN LLC").
 # Ukrainian server farm caught spamming.
-# Stop Forum Spam (SFS) listings: 7,206 (AS15497).
-# Updated: 2021.02.13
+# Stop Forum Spam (SFS) listings: 23,064 (AS15497).
+# Updated: 2021.02.13 / Checked: 2021.10.05
 
 2a03:6300::/32 Deny Cloud
 Origin: UA
+Profile: Dedicated;Infrastructure/Transit
 Tag: 7HEAVEN LLC
 
 

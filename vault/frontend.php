@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2021.10.01).
+ * This file: Front-end handler (last modified: 2021.10.10).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -2656,26 +2656,28 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'file-manager' && $CIDRAM['FE'][
     /** Page initial prepwork. */
     $CIDRAM['InitialPrepwork']($CIDRAM['L10N']->getString('link_file_manager'), $CIDRAM['L10N']->getString('tip_file_manager'), false);
 
-    /** Load pie chart template file upon request. */
+    /** Load doughnut template file upon request. */
     if (empty($CIDRAM['QueryVars']['show'])) {
-        $CIDRAM['FE']['ChartJSPath'] = $CIDRAM['PieFile'] = $CIDRAM['PiePath'] = '';
+        $CIDRAM['FE']['ChartJSPath'] = '';
+        $CIDRAM['DoughnutFile'] = '';
+        $CIDRAM['DoughnutPath'] = '';
     } else {
-        if ($CIDRAM['PiePath'] = $CIDRAM['GetAssetPath']('_chartjs.html', true)) {
-            $CIDRAM['PieFile'] = $CIDRAM['ReadFile']($CIDRAM['PiePath']);
+        if ($CIDRAM['DoughnutPath'] = $CIDRAM['GetAssetPath']('_chartjs.html', true)) {
+            $CIDRAM['DoughnutFile'] = $CIDRAM['ReadFile']($CIDRAM['DoughnutPath']);
         } else {
-            $CIDRAM['PieFile'] = '<tr><td class="h4f" colspan="2"><div class="s">{PieChartHTML}</div></td></tr>';
+            $CIDRAM['DoughnutFile'] = '<tr><td class="h4f" colspan="2"><div class="s">{DoughnutHTML}</div></td></tr>';
         }
-        $CIDRAM['FE']['ChartJSPath'] = $CIDRAM['GetAssetPath']('Chart.min.js', true) ? '?cidram-asset=Chart.min.js&theme=default' : '';
+        $CIDRAM['FE']['ChartJSPath'] = $CIDRAM['GetAssetPath']('chart.min.js', true) ? '?cidram-asset=chart.min.js&theme=default' : '';
     }
 
-    /** Set vault path for pie chart display. */
+    /** Set vault path for doughnut display. */
     $CIDRAM['FE']['VaultPath'] = str_replace("\\", '/', $CIDRAM['Vault']) . '*';
 
     /** Prepare components metadata working array. */
     $CIDRAM['Components'] = ['Files' => [], 'Components' => [], 'ComponentFiles' => [], 'Names' => []];
 
-    /** Show/hide pie charts link and etc. */
-    if (!$CIDRAM['PieFile']) {
+    /** Show/hide doughnuts link and etc. */
+    if (!$CIDRAM['DoughnutFile']) {
         $CIDRAM['FE']['FMgrFormTarget'] = 'cidram-page=file-manager';
         $CIDRAM['FE']['ShowHideLink'] = '<a href="?cidram-page=file-manager&show=true">' . $CIDRAM['L10N']->getString('label_show') . '</a>';
     } else {
@@ -2886,25 +2888,25 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'file-manager' && $CIDRAM['FE'][
     /** Fetch files data. */
     $CIDRAM['FilesArray'] = $CIDRAM['FileManager-RecursiveList']($CIDRAM['Vault']);
 
-    if (!$CIDRAM['PieFile']) {
-        $CIDRAM['FE']['PieChart'] = '';
+    if (!$CIDRAM['DoughnutFile']) {
+        $CIDRAM['FE']['Doughnut'] = '';
     } else {
-        /** Sort pie chart values. */
+        /** Sort doughnut values. */
         arsort($CIDRAM['Components']['Components']);
 
-        /** Initialise pie chart values. */
-        $CIDRAM['FE']['PieChartValues'] = [];
+        /** Initialise doughnut values. */
+        $CIDRAM['FE']['DoughnutValues'] = [];
 
-        /** Initialise pie chart labels. */
-        $CIDRAM['FE']['PieChartLabels'] = [];
+        /** Initialise doughnut labels. */
+        $CIDRAM['FE']['DoughnutLabels'] = [];
 
-        /** Initialise pie chart colours. */
-        $CIDRAM['FE']['PieChartColours'] = [];
+        /** Initialise doughnut colours. */
+        $CIDRAM['FE']['DoughnutColours'] = [];
 
-        /** Initialise pie chart legend. */
-        $CIDRAM['FE']['PieChartHTML'] = $CIDRAM['L10N']->getString('tip_pie_html') . '<br /><ul class="pieul">';
+        /** Initialise doughnut legend. */
+        $CIDRAM['FE']['DoughnutHTML'] = $CIDRAM['L10N']->getString('tip_click_the_component') . '<br /><ul class="pieul">';
 
-        /** Building pie chart values. */
+        /** Building doughnut values. */
         foreach ($CIDRAM['Components']['Components'] as $CIDRAM['Components']['ThisName'] => $CIDRAM['Components']['ThisData']) {
             if (empty($CIDRAM['Components']['ThisData'])) {
                 continue;
@@ -2927,13 +2929,13 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'file-manager' && $CIDRAM['FE'][
                 $CIDRAM['Components']['ThisListed'] .= '</ul>';
             }
             $CIDRAM['Components']['ThisName'] .= ' – ' . $CIDRAM['Components']['ThisSize'];
-            $CIDRAM['FE']['PieChartValues'][] = $CIDRAM['Components']['ThisData'];
-            $CIDRAM['FE']['PieChartLabels'][] = $CIDRAM['Components']['ThisName'];
-            if ($CIDRAM['PiePath']) {
+            $CIDRAM['FE']['DoughnutValues'][] = $CIDRAM['Components']['ThisData'];
+            $CIDRAM['FE']['DoughnutLabels'][] = $CIDRAM['Components']['ThisName'];
+            if ($CIDRAM['DoughnutPath']) {
                 $CIDRAM['Components']['ThisColour'] = $CIDRAM['RGB']($CIDRAM['Components']['ThisName']);
                 $CIDRAM['Components']['RGB'] = implode(',', $CIDRAM['Components']['ThisColour']['Values']);
-                $CIDRAM['FE']['PieChartColours'][] = '#' . $CIDRAM['Components']['ThisColour']['Hash'];
-                $CIDRAM['FE']['PieChartHTML'] .= sprintf(
+                $CIDRAM['FE']['DoughnutColours'][] = '#' . $CIDRAM['Components']['ThisColour']['Hash'];
+                $CIDRAM['FE']['DoughnutHTML'] .= sprintf(
                     '<li style="background:linear-gradient(90deg,rgba(%1$s,0.3),rgba(%1$s,0));color:#%2$s"><span class="comCat" style="cursor:pointer"><span class="txtBl">%3$s</span></span>%4$s</li>',
                     $CIDRAM['Components']['RGB'],
                     $CIDRAM['Components']['ThisColour']['Hash'],
@@ -2941,7 +2943,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'file-manager' && $CIDRAM['FE'][
                     $CIDRAM['Components']['ThisListed']
                 ) . "\n";
             } else {
-                $CIDRAM['FE']['PieChartHTML'] .= sprintf(
+                $CIDRAM['FE']['DoughnutHTML'] .= sprintf(
                     '<li><span class="comCat" style="cursor:pointer">%1$s</span>%2$s</li>',
                     $CIDRAM['Components']['ThisName'],
                     $CIDRAM['Components']['ThisListed']
@@ -2949,24 +2951,24 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'file-manager' && $CIDRAM['FE'][
             }
         }
 
-        /** Close pie chart legend and append necessary JavaScript for pie chart menu toggle. */
-        $CIDRAM['FE']['PieChartHTML'] .= '</ul>' . $CIDRAM['MenuToggle'];
+        /** Close doughnut legend and append necessary JavaScript for doughnut menu toggle. */
+        $CIDRAM['FE']['DoughnutHTML'] .= '</ul>' . $CIDRAM['MenuToggle'];
 
-        /** Finalise pie chart values. */
-        $CIDRAM['FE']['PieChartValues'] = '[' . implode(', ', $CIDRAM['FE']['PieChartValues']) . ']';
+        /** Finalise doughnut values. */
+        $CIDRAM['FE']['DoughnutValues'] = '[' . implode(', ', $CIDRAM['FE']['DoughnutValues']) . ']';
 
-        /** Finalise pie chart labels. */
-        $CIDRAM['FE']['PieChartLabels'] = '["' . implode('", "', $CIDRAM['FE']['PieChartLabels']) . '"]';
+        /** Finalise doughnut labels. */
+        $CIDRAM['FE']['DoughnutLabels'] = '["' . implode('", "', $CIDRAM['FE']['DoughnutLabels']) . '"]';
 
-        /** Finalise pie chart colours. */
-        $CIDRAM['FE']['PieChartColours'] = '["' . implode('", "', $CIDRAM['FE']['PieChartColours']) . '"]';
+        /** Finalise doughnut colours. */
+        $CIDRAM['FE']['DoughnutColours'] = '["' . implode('", "', $CIDRAM['FE']['DoughnutColours']) . '"]';
 
-        /** Finalise pie chart. */
-        $CIDRAM['FE']['PieChart'] = $CIDRAM['ParseVars']($CIDRAM['L10N']->Data + $CIDRAM['FE'], $CIDRAM['PieFile']);
+        /** Finalise doughnut. */
+        $CIDRAM['FE']['Doughnut'] = $CIDRAM['ParseVars']($CIDRAM['L10N']->Data + $CIDRAM['FE'], $CIDRAM['DoughnutFile']);
     }
 
     /** Cleanup. */
-    unset($CIDRAM['PieFile'], $CIDRAM['PiePath'], $CIDRAM['Components']);
+    unset($CIDRAM['DoughnutFile'], $CIDRAM['DoughnutPath'], $CIDRAM['Components']);
 
     /** Process files data. */
     array_walk($CIDRAM['FilesArray'], function ($ThisFile) use (&$CIDRAM) {

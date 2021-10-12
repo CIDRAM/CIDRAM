@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6.dat
 
-# Version: 2021.277.695
-# Last modified: 2021.10.05
+# Version: 2021.284.243
+# Last modified: 2021.10.12
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -3386,11 +3386,12 @@ Tag: DataWeb Global
 
 # ASN 44112 ("SpaceWeb Ltd").
 # Port scans and brute-force attempts detected originating from this network.
-# Stop Forum Spam (SFS) listings: 17.
-# Updated: 2016.04.29 / Checked: 2021.02.21
+# Stop Forum Spam (SFS) listings: 36.
+# Updated: 2016.04.29 / Checked: 2021.10.12
 
 2a02:408:7722::/48 Deny Cloud
 Origin: RU
+Profile: Webhosting
 Tag: SpaceWeb Ltd
 
 
@@ -3458,28 +3459,28 @@ Tag: HighSpeed Office Ltd
 
 
 # ASN 47447 ("23Media GmbH").
-# Stop Forum Spam (SFS) listings: 1,626.
-# Updated: 2021.02.21
+# Stop Forum Spam (SFS) listings: 1,345.
+# Updated: 2021.10.12
 
-2a03:f80:49::/48 Deny Cloud
-Origin: AT
 2a00:f48::/32 Deny Cloud
 2a05:cc00::/29 Deny Cloud
 2a06:8781::/40 Deny Cloud
 2a09:4ec0::/48 Deny Cloud
 2a0c:2040::/29 Deny Cloud
 2a0d:6940::/29 Deny Cloud
-2a0e:fe80::/29 Deny Cloud
+2a0e:fe80::/48 Deny Cloud
 2a10:fc80::/29 Deny Cloud
 Origin: DE
 2a07:a347::/32 Deny Cloud
 Origin: GB
 2a07:3b80:1::/48 Deny Cloud
 Origin: GI
+2a0a:6c0::/29 Deny Cloud
+Origin: RU
 2a02:2da0::/32 Deny Cloud
 2a05:3c80::/29 Deny Cloud
 Origin: US
-Profile: Tor endpoints here
+Profile: Dedicated;Infrastructure/Transit;Tor endpoints here;Webhosting
 Tag: 23Media GmbH
 
 
@@ -4580,25 +4581,35 @@ Tag: Global Layer B.V
 # ASNs 8849, 12608, 50113, 200740, 204154, 204997, 205090, 205125 ("NTX Technologies s.r.o").
 # Server farm, dedicated webhosting provider and cloud provider. Caught
 # spamming, hammering honeypots, and performing webapp attacks.
-# Stop Forum Spam (SFS) listings: 3,401 (AS50113), 14 (AS200740), 10 (AS204154), 526 (AS204997), 1 (AS205090).
-# Updated: 2021.02.20
+# Stop Forum Spam (SFS) listings: 12 (AS8849), 1,027 (AS50113), 19 (AS200740),
+# 8 (AS204154), 738 (AS204997), 131 (AS205090), 3 (AS205125).
+# Updated: 2021.10.12
 
+2a0f:4680::/32 Deny Cloud
+2a0f:c780::/29 Deny Cloud
+Origin: CZ
+2407:d140::/36 Deny Cloud
+2a06:f901:4000::/36 Deny Cloud
+Origin: LT
+2a07:57c0::/32 Deny Cloud
+2a07:9b83::/32 Deny Cloud
+2a0a:981::/32 Deny Cloud
+2a0c:6980::/29 Deny Cloud
+Origin: RU
 2a03:e2c0::/32 Deny Cloud
 2a04:5200::/32 Deny Cloud
 2a04:5201:1::/48 Deny Cloud
 2a04:5201:2::/48 Deny Cloud
+2a04:5201:4::/48 Deny Cloud
+2a04:5201:6::/47 Deny Cloud
+2a04:5201:8018::/48 Deny Cloud
 2a04:5202::/31 Deny Cloud
 2a04:5204::/30 Deny Cloud
 2a09:5302::/31 Deny Cloud
-2a0b:9800::/29 Deny Cloud
 2a0d:8340::/32 Deny Cloud
-Origin: CZ
-2a07:57c0::/32 Deny Cloud
-2a07:9b83::/32 Deny Cloud
-2a0a:981::/32 Deny Cloud
 2a0e:d602::/32 Deny Cloud
-2a0e:e5c0::/29 Deny Cloud
-Origin: RU
+2a0f:7300::/32 Deny Cloud
+Origin: SC
 Profile: Dedicated;Webhosting
 Tag: NTX Technologies s.r.o
 
@@ -5460,8 +5471,8 @@ Tag: Master Internet
 
 
 # ASN 200651 ("Flokinet Ltd").
-# Stop Forum Spam (SFS) listings: 17,640.
-# Updated: 2021.02.21
+# Stop Forum Spam (SFS) listings: 47,145.
+# Updated: 2021.02.21 / Checked: 2021.10.12
 
 2a06:1700::/47 Deny Cloud
 2a06:1700:2::/48 Deny Cloud
@@ -8070,12 +8081,26 @@ Tag: Maxihost LTDA
 
 # ASN 35213 ("TOV Kompjuternie Merezhi").
 # Server farm caught performing brute-force and webapp attacks.
-# Stop Forum Spam (SFS) listings: 23,692.
-# Updated: 2021.02.20
+# Stop Forum Spam (SFS) listings: 694.
+# Updated: 2021.02.20 / Checked: 2021.10.12
 
 2001:678:31c::/48 Deny Cloud
 Origin: UA
+Profile: Restricted/Unidentifiable
 Tag: TOV Kompjuternie Merezhi
+
+
+# ASN 141039 ("Packethub s.a").
+# Server farm caught port scanning and spamming.
+# Stop Forum Spam (SFS) listings: 641.
+# Updated: 2021.10.12
+
+2400:bb40:2000::/46 Deny Cloud
+2400:bb40:2004::/47 Deny Cloud
+2400:bb40:2006::/48 Deny Cloud
+Origin: PA
+Profile: Infrastructure/Transit
+Tag: Packethub s.a
 
 
 # ASN 35196 ("Ihor Hosting LLC").
@@ -9021,6 +9046,27 @@ Tag: Chelyabinsk-Signal
 Origin: SC
 Profile: Webhosting
 Tag: HOSTGLOBAL.PLUS LTD
+
+
+# ASN 29182 ("ISPsystem").
+# IP infrastructure, virtualisation, equipment lease, etc.
+# Spam, attacks, and other kinds of unwanted traffic detected from here.
+# Stop Forum Spam (SFS) listings: 8,925.
+# Updated: 2021.10.12
+
+2a01:230::/46 Deny Cloud
+2a01:230:4::/48 Deny Cloud
+2a06:c3c0:2::/48 Deny Cloud
+2a06:dc40::/29 Deny Cloud
+2a09:f900::/48 Deny Cloud
+2a0e:fb47::/32 Deny Cloud
+2a0f:3103::/32 Deny Cloud
+2a0f:8443::/32 Deny Cloud
+Origin: RU
+2a0c:680::/32 Deny Cloud
+Origin: UA
+Profile: Infrastructure/Transit;Multiplay;Tor endpoints here;Webhosting
+Tag: ISPsystem
 
 
 # ---

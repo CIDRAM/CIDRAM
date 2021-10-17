@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6_isps.dat
 
-# Version: 2021.284.243
-# Last modified: 2021.10.12
+# Version: 2021.289.264
+# Last modified: 2021.10.17
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -11,10 +11,11 @@
 
 # ---
 # ASN 48159 ("Telecommunication Infrastructure Company").
-# Significant source of I.P. thieves, email harvestors, and unauthorised scrapers.
-# Updated: 2019.07.03 / Checked: 2021.02.24
+# Iranian transit provider. Port scans, IP theft, email harvesters, and scaping
+# detected originating from here.
+# Updated: 2021.10.15
 
-2a03:57c0::/32 Deny Generic
+2a03:57c0::/32 Deny Attacks
 Origin: IR
 Profile: Infrastructure/Transit
 Tag: AS48159
@@ -1658,20 +1659,6 @@ Profile: Domestic ISP;Multiplay;Tor endpoints here
 Tag: ONLINE S.A.S
 
 
-# ASNs 9198, 50482 ("JSC Kazakhtelecom").
-# Kazakhstan backbone provider and domestic ISP. Significant amount of spam,
-# hacking, and brute-force attempts detected over time (but with less
-# significance recently; could consider scaling back at next update if trend
-# continues).
-# Stop Forum Spam (SFS) listings: 1,800 (AS9198), 129 (AS50482).
-# Updated: 2018.09.15 / Checked: 2021.02.23
-
-2a00:12f8::/32 Deny Spam
-Origin: KZ
-Profile: Domestic ISP;Infrastructure/Transit
-Tag: JSC Kazakhtelecom
-
-
 # ASN 8359 ("MTS PJSC").
 # Caught trying to hack WordPress sites, a significant amount of other
 # unsavoury behaviour detected, and a significant source of spam.
@@ -1700,9 +1687,9 @@ Tag: Star Telecom S/A
 
 
 # ASN 25513 ("PJSC Moscow city telephone network").
-# A Russian domestic ISP and a significant source of forum and blog spam.
-# Stop Forum Spam (SFS) listings: 20,619.
-# Updated: 2021.02.27
+# Russian domestic ISP and a significant source of forum and blog spam.
+# Stop Forum Spam (SFS) listings: 11,626.
+# Updated: 2021.02.27 / Checked: 2021.10.15
 
 2a00:1370::/32 Deny Spam
 2a03:6505:2000:6::/64 Deny Spam
@@ -1906,8 +1893,8 @@ Tag: CLARO S.A
 
 # ASN 6697 ("Republican Unitary Telecommunication Enterprise Beltelecom").
 # Belarusian domestic ISP and a significant source of spam.
-# Stop Forum Spam (SFS) listings: 19,721.
-# Updated: 2021.02.28
+# Stop Forum Spam (SFS) listings: 28,530.
+# Updated: 2021.02.28 / Checked: 2021.10.16
 
 2a02:2208::/29 Deny Spam
 2a04:2e80:7::/48 Deny Spam
@@ -2663,3 +2650,16 @@ Tag: Vodafone Romania
 Origin: US
 Profile: Domestic ISP;Infrastructure/Transit;Multiplay;Webhosting
 Tag: Sprint
+
+
+# ASN 29119 ("ServiHosting Networks S.L").
+# Spanish multiplay network (mostly OTT and webhosting, but also some ISPs,
+# colo, etc). Brute-force attacks, port scanning, and spam detected from here.
+# Listing just the affected addresses/ranges, plus all non-ES ranges (cloud).
+# Stop Forum Spam (SFS) listings: 1,083.
+# Updated: 2021.10.17
+
+2a00:de40::/32 Deny Cloud
+Origin: NL
+Profile: Domestic ISP;Infrastructure/Transit;Multiplay;Webhosting
+Tag: ServiHosting Networks S.L

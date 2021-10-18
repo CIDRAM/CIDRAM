@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2021.10.02).
+ * This file: Functions file (last modified: 2021.10.18).
  */
 
 /** Autoloader for CIDRAM classes. */
@@ -1573,7 +1573,8 @@ $CIDRAM['XVerification'] = function (string $Config = '', string $From = '', boo
             $CIDRAM['SkipVerification'] = true;
             return;
         }
-        $CIDRAM['VerificationData'] = (new \Maikuolan\Common\YAML($Raw))->Data;
+        $CIDRAM['VerificationData'] = [];
+        $CIDRAM['YAML']->process($Raw, $CIDRAM['VerificationData']);
     }
     if (empty($CIDRAM['VerificationData'][$From])) {
         return;
@@ -2070,7 +2071,8 @@ $CIDRAM['Aux'] = function () use (&$CIDRAM): void {
 
     /** Attempt to parse the auxiliary rules file. */
     if (!isset($CIDRAM['AuxData'])) {
-        $CIDRAM['AuxData'] = (new \Maikuolan\Common\YAML($CIDRAM['ReadFile']($CIDRAM['Vault'] . 'auxiliary.yaml')))->Data;
+        $CIDRAM['AuxData'] = [];
+        $CIDRAM['YAML']->process($CIDRAM['ReadFile']($CIDRAM['Vault'] . 'auxiliary.yaml'), $CIDRAM['AuxData']);
     }
 
     /** Iterate through the auxiliary rules. */

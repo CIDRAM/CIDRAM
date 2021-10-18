@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2021.10.10).
+ * This file: Front-end handler (last modified: 2021.10.18).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -688,7 +688,8 @@ if ($CIDRAM['FE']['UserState'] === 1) {
         /** CIDRAM branch latest stable. */
         $CIDRAM['FE']['info_cidram_branch'] = $CIDRAM['L10N']->getString('response_error');
     } else {
-        $CIDRAM['Remote-YAML-CIDRAM-Array'] = (new \Maikuolan\Common\YAML($CIDRAM['Remote-YAML-CIDRAM']))->Data;
+        $CIDRAM['Remote-YAML-CIDRAM-Array'] = [];
+        $CIDRAM['YAML']->process($CIDRAM['Remote-YAML-CIDRAM'], $CIDRAM['Remote-YAML-CIDRAM-Array']);
 
         /** CIDRAM latest stable. */
         if (empty($CIDRAM['Remote-YAML-CIDRAM-Array']['Stable'])) {
@@ -756,7 +757,8 @@ if ($CIDRAM['FE']['UserState'] === 1) {
         /** PHP branch latest stable. */
         $CIDRAM['FE']['info_php_branch'] = $CIDRAM['L10N']->getString('response_error');
     } else {
-        $CIDRAM['Remote-YAML-PHP-Array'] = (new \Maikuolan\Common\YAML($CIDRAM['Remote-YAML-PHP']))->Data;
+        $CIDRAM['Remote-YAML-PHP-Array'] = [];
+        $CIDRAM['YAML']->process($CIDRAM['Remote-YAML-PHP'], $CIDRAM['Remote-YAML-PHP-Array']);
 
         /** PHP latest stable. */
         $CIDRAM['FE']['info_php_stable'] = empty($CIDRAM['Remote-YAML-PHP-Array']['Stable']) ?
@@ -4002,7 +4004,8 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'statistics' && $CIDRAM['FE']['P
 elseif ($CIDRAM['QueryVars']['cidram-page'] === 'aux' && $CIDRAM['FE']['Permissions'] === 1) {
     /** Attempt to parse the auxiliary rules file. */
     if (!isset($CIDRAM['AuxData'])) {
-        $CIDRAM['AuxData'] = (new \Maikuolan\Common\YAML($CIDRAM['ReadFile']($CIDRAM['Vault'] . 'auxiliary.yaml')))->Data;
+        $CIDRAM['AuxData'] = [];
+        $CIDRAM['YAML']->process($CIDRAM['ReadFile']($CIDRAM['Vault'] . 'auxiliary.yaml'), $CIDRAM['AuxData']);
     }
 
     /** Create new auxiliary rule. */

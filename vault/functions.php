@@ -2231,6 +2231,15 @@ $CIDRAM['Aux'] = function () use (&$CIDRAM): void {
  */
 $CIDRAM['OperatorFromAuxValue'] = function (string &$Value, bool $Negate = false): string {
     $Stub = substr($Value, 0, 1);
+    if ($Stub === '&') {
+        if (substr($Value, 0, 4) === '&lt;') {
+            $Stub = '<';
+            $Value = substr($Value, 3);
+        } elseif (substr($Value, 0, 4) === '&gt;') {
+            $Stub = '>';
+            $Value = substr($Value, 3);
+        }
+    }
     if ($Stub === '>') {
         $Value = substr($Value, 1);
         $Stub = substr($Value, 0, 1);

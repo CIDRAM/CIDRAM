@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6_isps.dat
 
-# Version: 2021.289.264
-# Last modified: 2021.10.17
+# Version: 2021.294.294
+# Last modified: 2021.10.22
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -203,29 +203,35 @@ Tag: PP SKS-LUGAN
 
 
 # ASN 43260 ("DGN TEKNOLOJI BILISIM YAYINCILIK SANAYI VE LIMITED SIRKETI").
-# Caught trying to DDoS SFS.
-# Stop Forum Spam (SFS) listings: 68.
-# Updated: 2021.03.03
+# Turkish multiplay network (webhosting provider, domestic ISP, data center,
+# plus others). Caught trying to DDoS SFS. Brute-force, DDoS, phishing attacks,
+# port scans, and spam detected from here.
+# Stop Forum Spam (SFS) listings: 405.
+# Updated: 2021.10.22
 
-2a04:4280:10::/48 Deny Generic
-2a04:4280:20::/48 Deny Generic
-2a04:4280:30::/48 Deny Generic
-2a04:4280:100::/48 Deny Generic
-2a04:4280:200::/48 Deny Generic
-2a04:8340::/29 Deny Generic
-2a05:abc0::/29 Deny Generic
-2a05:bf00::/29 Deny Generic
-2a05:f7c0::/29 Deny Generic
-2a07:21c0::/29 Deny Generic
-2a07:cd00::/48 Deny Generic
-2a07:e700::/29 Deny Generic
-2a0b:2780::/29 Deny Generic
-2a0c:1340::/29 Deny Generic
-2a0c:89c0::/29 Deny Generic
-2a0c:acc0::/29 Deny Generic
-2a0d:2bc0::/48 Deny Generic
-2a0d:49c0::/29 Deny Generic
+2a04:4280:10::/48 Deny Attacks
+2a04:4280:20::/48 Deny Attacks
+2a04:4280:30::/48 Deny Attacks
+2a04:4280:100::/48 Deny Attacks
+2a04:4280:200::/48 Deny Attacks
+2a04:8340::/29 Deny Attacks
+2a05:abc0::/29 Deny Attacks
+2a05:bf00::/29 Deny Attacks
+2a05:f7c0::/29 Deny Attacks
+2a07:21c0::/29 Deny Attacks
+2a07:5dc0::/29 Deny Attacks
+2a07:cd00::/48 Deny Attacks
+2a07:e700::/29 Deny Attacks
+2a09:2340::/29 Deny Attacks
+2a0b:2780::/29 Deny Attacks
+2a0c:1340::/29 Deny Attacks
+2a0c:89c0::/29 Deny Attacks
+2a0c:8dc7::/32 Deny Attacks
+2a0c:acc0::/29 Deny Attacks
+2a0d:2bc0::/48 Deny Attacks
+2a0d:49c0::/29 Deny Attacks
 Origin: TR
+Profile: Commercial;Dedicated;Domestic ISP;Infrastructure/Transit;Multiplay;Webhosting
 Tag: DGN TEKNOLOJI
 
 
@@ -369,8 +375,8 @@ Tag: Idea Cellular
 # ASNs 12530, 15895, 35081 ('"Kyivstar" PJSC').
 # Absolutely **INSANE** levels of spam coming from this network!! Shouldn't
 # ever, ever let them through, if at all possible.
-# Stop Forum Spam (SFS) listings: 7,100 (AS12530), 118,153 (AS15895).
-# Updated: 2021.03.09
+# Stop Forum Spam (SFS) listings: 11,025 (AS12530), 77,191 (AS15895).
+# Updated: 2021.03.09 / Checked: 2021.10.22
 
 2a02:2378::/32 Deny Spam
 Origin: UA
@@ -2359,10 +2365,9 @@ Tag: MEO
 
 
 # ASN 45429 ("CAMBODIAN SINGMENG TELEMEDIA CO., LTD").
-# Cambodian domestic ISP. Spam, brute-force attacks, and SSH attacks detected
-# from throughout this network.
-# Stop Forum Spam (SFS) listings: 560.
-# Updated: 2021.03.03
+# Cambodian domestic ISP. Brute-force, SSH attacks, and spam detected here.
+# Stop Forum Spam (SFS) listings: 325.
+# Updated: 2021.03.03 / Checked: 2021.10.22
 
 2404:700::/32 Deny Attacks
 Origin: KH
@@ -2371,12 +2376,18 @@ Tag: CAMBODIAN SINGMENG TELEMEDIA
 
 
 # ASN 134674 ("TATA SKY BROADBAND PRIVATE LIMITED").
-# Indian domestic ISP. Caught spamming and trying to hack into WordPress
-# websites. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 1,988.
-# Updated: 2021.03.03
+# Indian domestic ISP. WordPress attacks, hacking, port scans, and spam
+# detected from here. Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 2,801.
+# Updated: 2021.10.20
 
-2402:e280:2300:5e23::/64 Deny Attacks
+2402:e280:212b:3ae::/64 Deny Spam
+2402:e280:2205:18::/64 Deny Spam
+2402:e280:2300:2c8b::/64 Deny Spam
+2402:e280:2308:8e::/64 Deny Spam
+2402:e280:2310:17::/64 Deny Spam
+2402:e280:2314:5c::/64 Deny Spam
+2402:e280:3d6e:105a::/64 Deny Spam
 Origin: IN
 Profile: Domestic ISP
 Tag: TATA SKY BROADBAND PRIVATE LIMITED
@@ -2636,20 +2647,6 @@ Tag: Verizon Business/UUnet
 Origin: RO
 Profile: Domestic ISP
 Tag: Vodafone Romania
-
-
-# ASN 1239 ("Sprint").
-# Huge multiplay network providing mobile and domestic ISP connectivity,
-# interlacing with numerous webhosting providers, infrastructure, etc.
-# Listing just the affected ranges/addresses only (includes also LogicWeb
-# ranges).
-# Stop Forum Spam (SFS) listings: 152.
-# Updated: 2021.09.22
-
-2600:1:9283:76be::/64 Deny Spam
-Origin: US
-Profile: Domestic ISP;Infrastructure/Transit;Multiplay;Webhosting
-Tag: Sprint
 
 
 # ASN 29119 ("ServiHosting Networks S.L").

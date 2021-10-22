@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6.dat
 
-# Version: 2021.289.264
-# Last modified: 2021.10.17
+# Version: 2021.294.294
+# Last modified: 2021.10.22
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -1009,11 +1009,11 @@ Profile: Dedicated;Infrastructure/Transit;Webhosting
 Tag: Wowrack.com
 
 
-# ASNs 29262, 201064 ("IDEAL HOSTING SUNUCUNINTERNET HIZ. TIC. LTDSTI").
-# Dedicated webhosting provider and an ongoing source of spam and other
-# unwanted activity.
-# Stop Forum Spam (SFS) listings: 2,660 (AS29262).
-# Updated: 2021.06.03
+# ASNs 29262, 201064, 210228 ("MRS Bilisim ve Telekomunikasyon Hiz. Ltd. Sti").
+# Dedicated webhosting provider. Hacking, port scans, synfloods, and spam
+# detected from here.
+# Stop Forum Spam (SFS) listings: 1,836 (AS29262).
+# Updated: 2021.06.03 / Checked: 2021.10.20
 
 2a0d:7c0::/29 Deny Cloud
 Origin: TR
@@ -1022,12 +1022,13 @@ Tag: IDEAL HOSTING
 
 
 # ASN 11051 ("Cyberverse, Inc").
-# Stop Forum Spam (SFS) listings: 1.
-# Updated: 2021.03.06
+# Port scans and spam *sometimes* detected from here. Not much at last check
+# though. Possible candidate for future removal.
+# Updated: 2021.03.06 / Checked: 2021.10.22
 
 2607:f820::/32 Deny Cloud
 Origin: US
-Profile: Webhosting
+Profile: Infrastructure/Transit;Webhosting
 Tag: Cyberverse, Inc
 
 
@@ -1153,8 +1154,8 @@ Tag: Pulsant
 
 
 # ASN 40676 ("Psychz Networks").
-# Stop Forum Spam (SFS) listings: 3,277.
-# Updated: 2021.09.16 / Checked: 2021.09.23
+# Stop Forum Spam (SFS) listings: 3,762.
+# Updated: 2021.10.22
 
 2405:84c0:9710::/44 Deny Cloud
 Origin: CN
@@ -1201,7 +1202,6 @@ Origin: LT
 2603:ffb0::/29 Deny Cloud
 2604:980:1::/48 Deny Cloud
 2604:6600::/32 Deny Cloud
-2605:6c80:7::/48 Deny Cloud
 2605:6c80:8000::/33 Deny Cloud
 2606:cc0:10::/47 Deny Cloud
 2606:1780::/32 Deny Cloud
@@ -2137,7 +2137,7 @@ Origin: TW
 2620:0:b60::/48 Deny Cloud
 2620:104:a000::/44 Deny Cloud
 Origin: US
-Profile: Infrastructure/Transit
+Profile: Frequent changes;Infrastructure/Transit
 Tag: Akamai Technologies
 
 
@@ -5165,25 +5165,31 @@ Tag: Fishnet
 
 
 # ASN 59504 ("VPSVILLE LLC").
-# Stop Forum Spam (SFS) listings: 362.
-# Updated: 2021.03.06
+# Russian virtual server provider.
+# Stop Forum Spam (SFS) listings: 399.
+# Updated: 2021.10.22
 
 2a05:fb41::/32 Deny Cloud
 2a05:fb42::/32 Deny Cloud
-2a05:fb44::/31 Deny Cloud
+2a05:fb44::/32 Deny Cloud
+2a05:fb46::/32 Deny Cloud
 2a07:14c0::/47 Deny Cloud
 2a07:14c0:3000::/36 Deny Cloud
 2a07:14c0:5000::/36 Deny Cloud
+2a07:14c0:7000::/36 Deny Cloud
 2a07:14c6::/32 Deny Cloud
+2a0a:4785::/32 Deny Cloud
+2a0a:4787::/32 Deny Cloud
 2a0c:5241::/32 Deny Cloud
-2a0c:5245::/32 Deny Cloud
+2a0c:5247:3000::/36 Deny Cloud
 2a0c:5247:7000::/36 Deny Cloud
-2a0c:5247:c000::/35 Deny Cloud
+2a0c:5247:9000::/36 Deny Cloud
+2a0c:5247:c000::/36 Deny Cloud
 2a0c:5247:e000::/36 Deny Cloud
 2a0d:60c0::/32 Deny Cloud
 2a0d:60c3::/32 Deny Cloud
-2a0d:7740::/32 Deny Cloud
 Origin: RU
+Profile: Infrastructure/Transit
 Tag: CloudSol
 
 
@@ -5488,8 +5494,8 @@ Tag: Exa Bytes Network
 
 # ASN 45731 ("ARDH GLOBAL INDONESIA, PT").
 # Malware detected on network; Future C&C risk.
-# Stop Forum Spam (SFS) listings: 10.
-# Updated: 2018.06.19 / Checked: 2021.08.01
+# Stop Forum Spam (SFS) listings: 11.
+# Updated: 2018.06.19 / Checked: 2021.10.22
 
 2001:df0:bc::/48 Deny Cloud
 Origin: ID
@@ -6520,7 +6526,7 @@ Tag: IT-GRAD NL B.V
 # ASNs 4136, 11767, 17018, 20141, 26978, 29748, 40107, 40606, 40913, 46742,
 # 53907, 394968 ("Quality Technology Services, LLC").
 # Caught hitting honeypots. A regular source of brute-force and SSH attacks.
-# Updated: 2021.03.06
+# Updated: 2021.03.06 / Checked: 2021.10.22
 
 2001:528::/32 Deny Cloud
 2001:4838::/32 Deny Cloud
@@ -6537,6 +6543,7 @@ Tag: IT-GRAD NL B.V
 2607:f998::/32 Deny Cloud
 2610:60::/32 Deny Cloud
 Origin: US
+Profile: Infrastructure/Transit
 Tag: QTS LLC
 
 
@@ -8206,18 +8213,19 @@ Tag: Tele Asia Limited
 
 # ASN 209378 ("Inios Oy").
 # Data center caught performing brute-force attacks.
-# Stop Forum Spam (SFS) listings: 38.
-# Updated: 2021.03.02
+# Stop Forum Spam (SFS) listings: 23.
+# Updated: 2021.03.02 / Checked: 2021.10.18
 
 2a09:7f40::/29 Deny Cloud
 Origin: FI
+Profile: Webhosting
 Tag: Inios Oy
 
 
 # ASN 42331 ("PE Freehost").
 # Webhosting provider caught hacking and performing webapp attacks.
-# Stop Forum Spam (SFS) listings: 2,073.
-# Updated: 2021.03.02
+# Stop Forum Spam (SFS) listings: 519.
+# Updated: 2021.03.02 / Checked: 2021.10.18
 
 2a01:8140::/32 Deny Cloud
 2a04:1740::/29 Deny Cloud
@@ -8227,10 +8235,22 @@ Profile: Webhosting
 Tag: PE Freehost
 
 
+# ASN 207459 ("Taner Temel").
+# Webhosting provider. Webapp attacks detected from here.
+# Stop Forum Spam (SFS) listings: 146.
+# Updated: 2021.10.22
+
+2a10:3300::/29 Deny Cloud
+2a10:9f80::/31 Deny Cloud
+Origin: TR
+Profile: Webhosting
+Tag: Taner Temel
+
+
 # ASN 197922 ("Techcrea Solutions SAS").
 # French webhosting company and a source of spam.
-# Stop Forum Spam (SFS) listings: 345.
-# Updated: 2021.03.06
+# Stop Forum Spam (SFS) listings: 18.
+# Updated: 2021.03.06 / Checked: 2021.10.22
 
 2a03:75c0::/32 Deny Cloud
 Origin: FR
@@ -8239,15 +8259,15 @@ Tag: Techcrea Solutions SAS
 
 
 # ASN 398646 ("Spry Servers, LLC").
-# Stop Forum Spam (SFS) listings: 5.
-# Updated: 2021.03.06
+# Stop Forum Spam (SFS) listings: 17.
+# Updated: 2021.10.22
 
-2a07:1c40:1023::/48 Deny Cloud
-Origin: AT
-2a0c:b642:1a0d::/48 Deny Cloud
-Origin: BE
-2a06:e881:620d::/48 Deny Cloud
+2a0c:9a40:808b::/48 Deny Cloud
 Origin: CH
+2a0f:5707:ab29::/48 Deny Cloud
+Origin: DE
+2a0e:fd45:40f7::/48 Deny Cloud
+Origin: NL
 2602:fe6b:1000::/36 Deny Cloud
 Origin: US
 Profile: Dedicated;Webhosting
@@ -9158,6 +9178,18 @@ Origin: AT
 Origin: DE
 Profile: Dedicated;Infrastructure/Transit;Webhosting
 Tag: SYNLINQ
+
+
+# ASN 44679 ("INVITE Systems SRL").
+# Romanian marketing firm. Brute-force, SQLi, XMLRPC, and webapp attacks,
+# hacking, credential stuffing, port scans, and spam detected from here.
+# Stop Forum Spam (SFS) listings: 235.
+# Updated: 2021.10.20
+
+2a02:2160:8000::/36 Deny Attacks
+Origin: RO
+Profile: Advertiser
+Tag: INVITE Systems SRL
 
 
 # ---

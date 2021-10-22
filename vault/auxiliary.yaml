@@ -1,0 +1,39 @@
+Non-strict:
+ Notes: >
+  Triggers when other signatures, where we may want the response to be less strict than usual (e.g., when blocking
+  domestic ISPs), have already been triggered. Profiles the request as "non-strict".
+ Logic: "Any"
+ Profile:
+  If matches:
+   Profile:
+    - "Amateur Radio"
+    - "Domestic ISP"
+    - "Fixed Line ISP"
+    - "Frequent changes"
+    - "Government"
+    - "Multiplay"
+    - "Temporary"
+    - "Tor endpoints here"
+    - "University"
+  But not if matches:
+   Profile:
+    - "Blacklisted"
+    - "Redlisted"
+Mark non-strict for use with CAPTCHA:
+ Notes: >
+  Triggers when the request has been profiled as "non-strict", when one or less signatures have been triggered, and the
+  request's IP address has incurred less than a thousand infractions. Marks the request for use with reCAPTCHA and
+  HCaptcha. In order for the rule to have any noticeable effect, CIDRAM must be configured accordingly (e.g., the
+  "usemode" configuration directive).
+ Logic: "All"
+ Mark for use with reCAPTCHA: true
+ Mark for use with HCaptcha: true
+ Profile:
+  If matches:
+   Profile:
+    - "Non-strict"
+   SignatureCount:
+    - "<=1"
+   Infractions:
+    - "<1000"
+

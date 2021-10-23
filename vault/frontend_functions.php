@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2021.10.18).
+ * This file: Front-end functions file (last modified: 2021.10.23).
  */
 
 /**
@@ -662,9 +662,9 @@ $CIDRAM['IPv6GetLast'] = function (string $First, int $Factor): string {
     }
     $Last = implode(':', $Octets);
     if (strpos($Last . '/', ':0:0/') !== false) {
-        $Last = preg_replace('/(\:0){2,}$/i', '::', $Last, 1);
+        $Last = preg_replace('/(:0){2,}$/i', '::', $Last, 1);
     } elseif (strpos($Last, ':0:0:') !== false) {
-        $Last = preg_replace('/(?:(\:0)+\:(0\:)+|\:\:0$)/i', '::', $Last, 1);
+        $Last = preg_replace('/(?:(:0)+:(0:)+|::0$)/i', '::', $Last, 1);
     }
     return $Last;
 };

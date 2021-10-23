@@ -339,7 +339,9 @@ class Aggregator
                 if (!$CIDRs = $this->CIDRAM['ExpandIPv4']($CIDR, false, $Size - 1)) {
                     $CIDRs = $this->CIDRAM['ExpandIPv6']($CIDR, false, $Size - 1);
                 }
-                if (
+                if ($Line === $PrevLine) {
+                    $Out = str_replace("\n" . $PrevLine . "\n" . $Line . "\n", "\n" . $Line . "\n", $Out);
+                } elseif (
                     !empty($CIDRs[$Size - 1]) &&
                     !empty($PrevCIDRs[$PrevSize - 1]) &&
                     !empty($CIDRs[$Size - 2]) &&

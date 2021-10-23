@@ -70,6 +70,10 @@ Detailed version release guidelines for CIDRAM can be found at:
 - [2021.10.22; Maikuolan]: Added some default auxiliary rules.
   Refer github.com/CIDRAM/CIDRAM/issues/229
 
+- [2021.10.23; Bug-fix; Maikuolan]: Aggregating a single IP address with its
+  own CIDR equivalent (i.e., a range containing just one IP address) produced
+  output with a wider than expected range; Fixed.
+
 === Version/Release 1.19.0 ===
 MINOR RELEASE.
 

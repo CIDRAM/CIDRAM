@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: IP aggregator (last modified: 2021.07.10).
+ * This file: IP aggregator (last modified: 2021.10.23).
  */
 
 namespace CIDRAM\Aggregator;
@@ -46,7 +46,9 @@ class Aggregator
     private $TableIPv6Netmask = [];
 
     /**
-     * @var int Specifies the format to use for Aggregator output. 0 = CIDR notation [default]. 1 = Netmask notation.
+     * @var int Specifies the format to use for Aggregator output.
+     *      0 = CIDR notation [default].
+     *      1 = Netmask notation.
      */
     private $Mode = 0;
 
@@ -67,7 +69,11 @@ class Aggregator
         $this->Mode = $Mode;
     }
 
-    /** Construct netmask<->CIDR conversion tables. */
+    /**
+     * Construct netmask<->CIDR conversion tables.
+     *
+     * @return void
+     */
     private function constructTables()
     {
         $CIDR = 32;
@@ -116,6 +122,7 @@ class Aggregator
      * Strips invalid characters from lines and sorts entries.
      *
      * @param string|array
+     * @return void
      */
     private function stripInvalidCharactersAndSort(&$In)
     {
@@ -209,6 +216,7 @@ class Aggregator
      * Strips invalid ranges and subordinates.
      *
      * @param string
+     * @return void
      */
     private function stripInvalidRangesAndSubs(&$In)
     {
@@ -221,13 +229,13 @@ class Aggregator
         foreach ([
             [4, '(?:[01]?\d{1,2}|2[0-4]\d|25[0-5])\.(?:[01]?\d{1,2}|2[0-4]\d|25[0-5])\.(?:[01]?\d{1,2}|2[0-4]\d|25[0-5])\.(?:[01]?\d{1,2}|2[0-4]\d|25[0-5])', 33],
             [6,
-                '(?:(?:(?:[\da-f]{1,4}\:){7}[\da-f]{1,4})|(?:(?:[\da-f]{1,4}\:){6}\:[\da-f]{1,4})|(?:(?:[\da-f]{1,4}\:){5}\:(?:[\da-f]{1,4}\:)?[\da-f]{1,4}' .
-                ')|(?:(?:[\da-f]{1,4}\:){4}\:(?:[\da-f]{1,4}\:){0,2}[\da-f]{1,4})|(?:(?:[\da-f]{1,4}\:){3}\:(?:[\da-f]{1,4}\:){0,3}[\da-f]{1,4})|(?:(?:[\da' .
-                '-f]{1,4}\:){2}\:(?:[\da-f]{1,4}\:){0,4}[\da-f]{1,4})|(?:(?:[\da-f]{1,4}\:){6}(?:(?:\b(?:(?:25[0-5])|(?:1\d{2})|(?:2[0-4]\d)|(?:\d{1,2}))\b' .
-                ').){3}(?:\b(?:(?:25[0-5])|(?:1\d{2})|(?:2[0-4]\d)|(?:\d{1,2}))\b))|(?:(?:[\da-f]{1,4}\:){0,5}\:(?:(?:\b(?:(?:25[0-5])|(?:1\d{2})|(?:2[0-4]' .
-                '\d)|(?:\d{1,2}))\b).){3}(?:\b(?:(?:25[0-5])|(?:1\d{2})|(?:2[0-4]\d)|(?:\d{1,2}))\b))|(?:\:\:(?:[\da-f]{1,4}\:){0,5}(?:(?:\b(?:(?:25[0-5])|' .
-                '(?:1\d{2})|(?:2[0-4]\d)|(?:\d{1,2}))\b).){3}(?:\b(?:(?:25[0-5])|(?:1\d{2})|(?:2[0-4]\d)|(?:\d{1,2}))\b))|(?:[\da-f]{1,4}\:\:(?:[\da-f]{1,4' .
-                '}\:){0,5}[\da-f]{1,4})|(?:\:\:(?:[\da-f]{1,4}\:){0,6}[\da-f]{1,4})|(?:(?:[\da-f]{1,4}\:){1,7}\:))',
+                '(?:(?:(?:[\da-f]{1,4}:){7}[\da-f]{1,4})|(?:(?:[\da-f]{1,4}:){6}:[\da-f]{1,4})|(?:(?:[\da-f]{1,4}:){5}:(?:[\da-f]{1,4}:)?[\da-f]{1,4}' .
+                ')|(?:(?:[\da-f]{1,4}:){4}:(?:[\da-f]{1,4}:){0,2}[\da-f]{1,4})|(?:(?:[\da-f]{1,4}:){3}:(?:[\da-f]{1,4}:){0,3}[\da-f]{1,4})|(?:(?:[\da' .
+                '-f]{1,4}:){2}:(?:[\da-f]{1,4}:){0,4}[\da-f]{1,4})|(?:(?:[\da-f]{1,4}:){6}(?:(?:\b(?:(?:25[0-5])|(?:1\d{2})|(?:2[0-4]\d)|(?:\d{1,2}))\b' .
+                ').){3}(?:\b(?:(?:25[0-5])|(?:1\d{2})|(?:2[0-4]\d)|(?:\d{1,2}))\b))|(?:(?:[\da-f]{1,4}:){0,5}:(?:(?:\b(?:(?:25[0-5])|(?:1\d{2})|(?:2[0-4]' .
+                '\d)|(?:\d{1,2}))\b).){3}(?:\b(?:(?:25[0-5])|(?:1\d{2})|(?:2[0-4]\d)|(?:\d{1,2}))\b))|(?:::(?:[\da-f]{1,4}:){0,5}(?:(?:\b(?:(?:25[0-5])|' .
+                '(?:1\d{2})|(?:2[0-4]\d)|(?:\d{1,2}))\b).){3}(?:\b(?:(?:25[0-5])|(?:1\d{2})|(?:2[0-4]\d)|(?:\d{1,2}))\b))|(?:[\da-f]{1,4}::(?:[\da-f]{1,4' .
+                '}:){0,5}[\da-f]{1,4})|(?:::(?:[\da-f]{1,4}:){0,6}[\da-f]{1,4})|(?:(?:[\da-f]{1,4}:){1,7}:))',
             129],
         ] as $Lows) {
             for ($Iterant = 1; $Iterant < $Lows[2]; $Iterant++) {
@@ -303,6 +311,7 @@ class Aggregator
      * Merges ranges.
      *
      * @param string
+     * @return void
      */
     private function mergeRanges(&$In)
     {
@@ -357,6 +366,7 @@ class Aggregator
      * Optionally converts output to netmask notation.
      *
      * @param string
+     * @return void
      */
     private function convertToNetmasks(&$In)
     {

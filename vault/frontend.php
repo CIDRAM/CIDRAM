@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2021.10.18).
+ * This file: Front-end handler (last modified: 2021.10.23).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -169,7 +169,7 @@ if ($CIDRAM['FE']['CronMode'] !== '') {
 }
 
 /** Regular expression used to separate signature sections and tags. */
-$CIDRAM['RegExTags'] = '~(?<=\n)(?:\n|Expires\: \d{4}\.\d\d\.\d\d|Origin\: [A-Z]{2}|(?:\#|Tag\: |Profile\: |Defers to\: )[^\n]+| *\/\*\*(?:\n *\*[^\n]*)*\/| *\/\*\*? [^\n*]+\*\/|---\n(?:[^\n:]+\:(?:\n +[^\n:]+\: [^\n]+)+)+)+\n~';
+$CIDRAM['RegExTags'] = '~(?<=\n)(?:\n|Expires: \d{4}\.\d\d\.\d\d|Origin: [A-Z]{2}|(?:\#|Tag: |Profile: |Defers to: )[^\n]+| *\/\*\*(?:\n *\*[^\n]*)*\/| *\/\*\*? [^\n*]+\*\/|---\n(?:[^\n:]+:(?:\n +[^\n:]+: [^\n]+)+)+)+\n~';
 
 /** Regular expression used to split labels. */
 $CIDRAM['RegExLabels'] = '~(?: | )?(?:：|:) ?$~';
@@ -2049,7 +2049,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && ($CIDRAM['FE']['Per
                 }
                 if (
                     !empty($CIDRAM['Components']['ThisComponent']['Provisional']) ||
-                    ($CIDRAM['Config']['general']['lang_override'] && preg_match('~^L10N\:~', $CIDRAM['Components']['ThisComponent']['Name']))
+                    ($CIDRAM['Config']['general']['lang_override'] && preg_match('~^L10N:~', $CIDRAM['Components']['ThisComponent']['Name']))
                 ) {
                     $CIDRAM['AppendToString'](
                         $CIDRAM['Components']['ThisComponent']['StatusOptions'],

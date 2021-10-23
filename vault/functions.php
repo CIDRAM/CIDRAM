@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2021.10.18).
+ * This file: Functions file (last modified: 2021.10.23).
  */
 
 /**
@@ -227,16 +227,16 @@ $CIDRAM['ExpandIPv6'] = function ($Addr, $ValidateOnly = false, $FactorLimit = 1
     }
     foreach ($CIDRs as &$CIDR) {
         if (strpos($CIDR, '::') !== false) {
-            $CIDR = preg_replace('~(?:\:0)*\:\:(?:0\:)*~i', '::', $CIDR, 1);
+            $CIDR = preg_replace('~(?::0)*::(?:0:)*~i', '::', $CIDR, 1);
             $CIDR = str_replace('::0/', '::/', $CIDR);
             continue;
         }
         if (strpos($CIDR, ':0:0/') !== false) {
-            $CIDR = preg_replace('~(\:0){2,}\/~i', '::/', $CIDR, 1);
+            $CIDR = preg_replace('~(:0){2,}\/~i', '::/', $CIDR, 1);
             continue;
         }
         if (strpos($CIDR, ':0:0:') !== false) {
-            $CIDR = preg_replace('~(\:0)+\:(0\:)+~i', '::', $CIDR, 1);
+            $CIDR = preg_replace('~(:0)+:(0:)+~i', '::', $CIDR, 1);
             $CIDR = str_replace('::0/', '::/', $CIDR);
             continue;
         }

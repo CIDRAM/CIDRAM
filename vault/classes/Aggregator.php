@@ -26,6 +26,11 @@ class Aggregator
     public $CIDRAM = [];
 
     /**
+     * @var array Optional callbacks.
+     */
+    public $callbacks = [];
+
+    /**
      * @var array Conversion tables for netmasks to IPv4.
      */
     private $TableNetmaskIPv4 = [];
@@ -53,11 +58,6 @@ class Aggregator
     private $Mode = 0;
 
     /**
-     * @var array Optional callbacks.
-     */
-    public $callbacks = [];
-
-    /**
      * Constructor.
      *
      * @return void
@@ -67,6 +67,26 @@ class Aggregator
         $this->constructTables();
         $this->CIDRAM = &$CIDRAM;
         $this->Mode = $Mode;
+    }
+
+    /**
+     * Aggregate it!
+     *
+     * @param string|array $In The IPs/CIDRs/netmasks to be aggregated. Should
+     *          either be a string, with entries separated by lines, or an
+     *          array with an entry to each element.
+     * @return string The aggregated data.
+     */
+    public function aggregate($In)
+    {
+        $this->Output = $In;
+        $this->stripInvalidCharactersAndSort($this->Output);
+        $this->stripInvalidRangesAndSubs($this->Output);
+        $this->mergeRanges($this->Output);
+        if ($this->Mode === 1) {
+            $this->convertToNetmasks($this->Output);
+        }
+        return $this->Output;
     }
 
     /**
@@ -96,26 +116,6 @@ class Aggregator
                 $this->TableIPv6Netmask[$Netmask] = $CIDR;
             }
         }
-    }
-
-    /**
-     * Aggregate it!
-     *
-     * @param string|array $In The IPs/CIDRs/netmasks to be aggregated. Should
-     *          either be a string, with entries separated by lines, or an
-     *          array with an entry to each element.
-     * @return string The aggregated data.
-     */
-    public function aggregate($In)
-    {
-        $this->Output = $In;
-        $this->stripInvalidCharactersAndSort($this->Output);
-        $this->stripInvalidRangesAndSubs($this->Output);
-        $this->mergeRanges($this->Output);
-        if ($this->Mode === 1) {
-            $this->convertToNetmasks($this->Output);
-        }
-        return $this->Output;
     }
 
     /**

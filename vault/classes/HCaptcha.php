@@ -8,118 +8,13 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: HCaptcha class (last modified: 2021.07.10).
+ * This file: HCaptcha class (last modified: 2021.10.30).
  */
 
 namespace CIDRAM\Core;
 
 class HCaptcha extends Captcha
 {
-    /**
-     * Generate HCaptcha form template data.
-     *
-     * @param string $SiteKey The sitekey to use.
-     * @param string $API The API to use.
-     * @param bool $CookieWarn Whether to display a cookie warning.
-     * @param bool $ApiMessage Whether to display messages about the API used.
-     * @return string The template form data.
-     */
-    private function generateTemplateData($SiteKey, $API, $CookieWarn = false, $ApiMessage = false)
-    {
-        header(sprintf(
-            "Content-Security-Policy: default-src 'none';\nconnect-src %2\$s;\nframe-src %2\$s;\nscript-src %1\$s %2\$s;",
-            'https://assets.hcaptcha.com',
-            'https://hcaptcha.com'
-        ));
-        $Script = '<script src="https://hcaptcha.com/1/api.js?onload=onloadCallback&render=explicit" async defer></script>';
-        $Script .= '<script type="text/javascript">document.getElementById(\'hostnameoverride\').value=window.location.hostname;</script>';
-        return $API === 'Invisible' ? sprintf(
-            "\n<hr />\n<p class=\"detected\">%s%s<br /></p>\n" .
-            '<div class="gForm">' .
-                '<div id="hcform" class="h-captcha" data-sitekey="%s" data-theme="%s" data-callback="onSubmitCallback" data-size="invisible"></div>' .
-            "</div>\n" .
-            '<form id="gF" method="POST" action="" class="gForm" onsubmit="javascript:hcaptcha.execute()">' .
-                '<input id="rData" type="hidden" name="hc-response" value="" />%s' .
-            "</form>\n" .
-            "<script type=\"text/javascript\">function onSubmitCallback(token){document.getElementById('rData').value=hcaptcha.getResponse(window.document.hcwidget);document.getElementById('gF').submit()}</script>\n",
-            $ApiMessage ? '{captcha_message_invisible}' : '',
-            $CookieWarn ? '<br />{captcha_cookie_warning}' : '',
-            $SiteKey,
-            $this->determineTheme(),
-            $this->TemplateInsert
-        ) . $Script . "\n" : sprintf(
-            "\n<hr />\n<p class=\"detected\">%s%s<br /></p>\n" .
-            '<form method="POST" action="" class="gForm">' .
-                '<input id="rData" type="hidden" name="hc-response" value="" />' .
-                '<div id="hcform" data-theme="%s" data-callback="onSubmitCallback"></div>' .
-                '<div>%s<input type="submit" value="{label_submit}" /></div>' .
-            "</form>\n" .
-            "<script type=\"text/javascript\">function onSubmitCallback(token){document.getElementById('rData').value=hcaptcha.getResponse(window.document.hcwidget)}</script>\n",
-            $ApiMessage ? '{captcha_message}' : '',
-            $CookieWarn ? '<br />{captcha_cookie_warning}' : '',
-            $this->determineTheme(),
-            $this->TemplateInsert
-        ) . $Script;
-    }
-
-    /**
-     * Generate HCaptcha callback data.
-     *
-     * @param string $SiteKey The sitekey to use.
-     * @param string $API The API to use.
-     * @return string The callback data.
-     */
-    private function generateCallbackData($SiteKey, $API)
-    {
-        return sprintf(
-            "\n  <script type=\"text/javascript\">var onloadCallback=function(){window.document.hcwidget=hcaptcha.render(%s)%s}</script>",
-            "'hcform',{sitekey:'" . $SiteKey . "', theme:'" . $this->determineTheme() . "'}",
-            ($API === 'Invisible') ? ';hcaptcha.execute()' : ''
-        );
-    }
-
-    /**
-     * Fetch results from the HCaptcha API.
-     * @link https://docs.hcaptcha.com/switch
-     *
-     * @return void
-     */
-    private function doResponse()
-    {
-        $this->Results = $this->CIDRAM['Request']('https://hcaptcha.com/siteverify', [
-            'secret' => $this->CIDRAM['Config']['hcaptcha']['secret'],
-            'response' => $_POST['hc-response'],
-            'remoteip' => $_SERVER[$this->CIDRAM['IPAddr']]
-        ]);
-        $this->Bypass = (strpos($this->Results, '"success":true,') !== false);
-    }
-
-    /**
-     * Data generation container.
-     *
-     * @param bool $CookieWarn Whether to display a cookie warning.
-     * @param bool $ApiMessage Whether to display messages about the API used.
-     * @return void
-     */
-    private function generateContainer($CookieWarn = false, $ApiMessage = false)
-    {
-        /** Guard. */
-        if ($this->Bypass) {
-            return;
-        }
-
-        $this->CIDRAM['Config']['template_data']['captcha_api_include'] = $this->generateCallbackData(
-            $this->CIDRAM['Config']['hcaptcha']['sitekey'],
-            $this->CIDRAM['Config']['hcaptcha']['api']
-        );
-        $this->CIDRAM['Config']['template_data']['captcha_div_include'] = $this->generateTemplateData(
-            $this->CIDRAM['Config']['hcaptcha']['sitekey'],
-            $this->CIDRAM['Config']['hcaptcha']['api'],
-            $CookieWarn,
-            $ApiMessage
-        );
-    }
-
     /**
      * Constructor.
      *
@@ -337,5 +232,110 @@ class HCaptcha extends Captcha
         if ($WriteMode === 'wb') {
             $this->CIDRAM['LogRotation']($this->CIDRAM['Config']['hcaptcha']['logfile']);
         }
+    }
+
+    /**
+     * Generate HCaptcha form template data.
+     *
+     * @param string $SiteKey The sitekey to use.
+     * @param string $API The API to use.
+     * @param bool $CookieWarn Whether to display a cookie warning.
+     * @param bool $ApiMessage Whether to display messages about the API used.
+     * @return string The template form data.
+     */
+    private function generateTemplateData($SiteKey, $API, $CookieWarn = false, $ApiMessage = false)
+    {
+        header(sprintf(
+            "Content-Security-Policy: default-src 'none';\nconnect-src %2\$s;\nframe-src %2\$s;\nscript-src %1\$s %2\$s;",
+            'https://assets.hcaptcha.com',
+            'https://hcaptcha.com'
+        ));
+        $Script = '<script src="https://hcaptcha.com/1/api.js?onload=onloadCallback&render=explicit" async defer></script>';
+        $Script .= '<script type="text/javascript">document.getElementById(\'hostnameoverride\').value=window.location.hostname;</script>';
+        return $API === 'Invisible' ? sprintf(
+            "\n<hr />\n<p class=\"detected\">%s%s<br /></p>\n" .
+            '<div class="gForm">' .
+                '<div id="hcform" class="h-captcha" data-sitekey="%s" data-theme="%s" data-callback="onSubmitCallback" data-size="invisible"></div>' .
+            "</div>\n" .
+            '<form id="gF" method="POST" action="" class="gForm" onsubmit="javascript:hcaptcha.execute()">' .
+                '<input id="rData" type="hidden" name="hc-response" value="" />%s' .
+            "</form>\n" .
+            "<script type=\"text/javascript\">function onSubmitCallback(token){document.getElementById('rData').value=hcaptcha.getResponse(window.document.hcwidget);document.getElementById('gF').submit()}</script>\n",
+            $ApiMessage ? '{captcha_message_invisible}' : '',
+            $CookieWarn ? '<br />{captcha_cookie_warning}' : '',
+            $SiteKey,
+            $this->determineTheme(),
+            $this->TemplateInsert
+        ) . $Script . "\n" : sprintf(
+            "\n<hr />\n<p class=\"detected\">%s%s<br /></p>\n" .
+            '<form method="POST" action="" class="gForm">' .
+                '<input id="rData" type="hidden" name="hc-response" value="" />' .
+                '<div id="hcform" data-theme="%s" data-callback="onSubmitCallback"></div>' .
+                '<div>%s<input type="submit" value="{label_submit}" /></div>' .
+            "</form>\n" .
+            "<script type=\"text/javascript\">function onSubmitCallback(token){document.getElementById('rData').value=hcaptcha.getResponse(window.document.hcwidget)}</script>\n",
+            $ApiMessage ? '{captcha_message}' : '',
+            $CookieWarn ? '<br />{captcha_cookie_warning}' : '',
+            $this->determineTheme(),
+            $this->TemplateInsert
+        ) . $Script;
+    }
+
+    /**
+     * Generate HCaptcha callback data.
+     *
+     * @param string $SiteKey The sitekey to use.
+     * @param string $API The API to use.
+     * @return string The callback data.
+     */
+    private function generateCallbackData($SiteKey, $API)
+    {
+        return sprintf(
+            "\n  <script type=\"text/javascript\">var onloadCallback=function(){window.document.hcwidget=hcaptcha.render(%s)%s}</script>",
+            "'hcform',{sitekey:'" . $SiteKey . "', theme:'" . $this->determineTheme() . "'}",
+            ($API === 'Invisible') ? ';hcaptcha.execute()' : ''
+        );
+    }
+
+    /**
+     * Fetch results from the HCaptcha API.
+     * @link https://docs.hcaptcha.com/switch
+     *
+     * @return void
+     */
+    private function doResponse()
+    {
+        $this->Results = $this->CIDRAM['Request']('https://hcaptcha.com/siteverify', [
+            'secret' => $this->CIDRAM['Config']['hcaptcha']['secret'],
+            'response' => $_POST['hc-response'],
+            'remoteip' => $_SERVER[$this->CIDRAM['IPAddr']]
+        ]);
+        $this->Bypass = (strpos($this->Results, '"success":true,') !== false);
+    }
+
+    /**
+     * Data generation container.
+     *
+     * @param bool $CookieWarn Whether to display a cookie warning.
+     * @param bool $ApiMessage Whether to display messages about the API used.
+     * @return void
+     */
+    private function generateContainer($CookieWarn = false, $ApiMessage = false)
+    {
+        /** Guard. */
+        if ($this->Bypass) {
+            return;
+        }
+
+        $this->CIDRAM['Config']['template_data']['captcha_api_include'] = $this->generateCallbackData(
+            $this->CIDRAM['Config']['hcaptcha']['sitekey'],
+            $this->CIDRAM['Config']['hcaptcha']['api']
+        );
+        $this->CIDRAM['Config']['template_data']['captcha_div_include'] = $this->generateTemplateData(
+            $this->CIDRAM['Config']['hcaptcha']['sitekey'],
+            $this->CIDRAM['Config']['hcaptcha']['api'],
+            $CookieWarn,
+            $ApiMessage
+        );
     }
 }

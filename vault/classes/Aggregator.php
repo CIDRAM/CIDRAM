@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: IP aggregator (last modified: 2021.10.23).
+ * This file: IP aggregator (last modified: 2021.10.30).
  */
 
 namespace CIDRAM\Aggregator;
@@ -16,7 +16,7 @@ namespace CIDRAM\Aggregator;
 class Aggregator
 {
     /**
-     * @var string Output.
+     * @var string|array Output.
      */
     public $Output = '';
 

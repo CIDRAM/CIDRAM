@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Configuration defaults file (last modified: 2021.10.02).
+# This file: Configuration defaults file (last modified: 2021.10.30).
 ##/
 
 Config Defaults:
@@ -665,6 +665,9 @@ Config Defaults:
     Whitelisted: "{field_whitelisted_requests}"
     Verified: "{field_verified_requests}"
  supplementary_cache_options:
+  prefix:
+   type: "string"
+   default: ""
   enable_apcu:
    type: "bool"
    default: false

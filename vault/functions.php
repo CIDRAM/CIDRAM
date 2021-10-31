@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2021.10.23).
+ * This file: Functions file (last modified: 2021.10.30).
  */
 
 /** Autoloader for CIDRAM classes. */
@@ -1468,6 +1468,7 @@ $CIDRAM['Resolve6to4'] = function (string $In): string {
 $CIDRAM['InitialiseCache'] = function () use (&$CIDRAM): void {
     /** Create new cache object. */
     $CIDRAM['Cache'] = new \Maikuolan\Common\Cache();
+    $CIDRAM['Cache']->Prefix = $CIDRAM['Config']['supplementary_cache_options']['prefix'];
     $CIDRAM['Cache']->EnableAPCu = $CIDRAM['Config']['supplementary_cache_options']['enable_apcu'];
     $CIDRAM['Cache']->EnableMemcached = $CIDRAM['Config']['supplementary_cache_options']['enable_memcached'];
     $CIDRAM['Cache']->EnableRedis = $CIDRAM['Config']['supplementary_cache_options']['enable_redis'];

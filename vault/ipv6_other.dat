@@ -1,8 +1,8 @@
 # IPv6 signatures file (CIDRs for proxies, VPNs and other miscellaneous unwanted services).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6_other.dat
 
-# Version: 2021.266.200
-# Last modified: 2021.09.24
+# Version: 2021.306.628
+# Last modified: 2021.11.03
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -130,9 +130,10 @@ Tag: OverPlay.Net LP
 
 # ASN 209854 ("Surfshark Ltd").
 # A paid VPN provider. Brute-force and SSH attacks detected from here.
-# Stop Forum Spam (SFS) listings: 55.
-# Updated: 2021.04.16
+# Stop Forum Spam (SFS) listings: 343.
+# Updated: 2021.04.16 / Checked: 2021.11.03
 
 2a09:a700::/29 Deny Proxy
 Origin: VG
+Profile: Infrastructure/Transit
 Tag: Surfshark Ltd

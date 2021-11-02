@@ -1,8 +1,8 @@
 # IPv4 signatures file (CIDRs for proxies, VPNs and other miscellaneous unwanted services).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv4_other.dat
 
-# Version: 2021.266.200
-# Last modified: 2021.09.24
+# Version: 2021.306.628
+# Last modified: 2021.11.03
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -1193,20 +1193,24 @@ Tag: Beliefnet
 # Octopusnet VPN (mostly from AS44724, but we'll update via announces instead,
 # because we don't need to block the entire ASN, and there could be stray CIDRs
 # too). Proxy service with a history of spam events.
-# Updated: 2021.03.21
+# Updated: 2021.11.03
 
+46.46.0.0/20 Deny Proxy
 46.46.17.0/24 Deny Proxy
 46.46.24.0/21 Deny Proxy
-46.46.40.0/21 Deny Proxy
-46.46.48.0/20 Deny Proxy
+46.46.32.0/19 Deny Proxy
 83.217.28.0/22 Deny Proxy
 95.154.64.0/19 Deny Proxy
 95.154.96.0/20 Deny Proxy
 95.154.112.0/22 Deny Proxy
 95.154.116.0/23 Deny Proxy
+95.154.119.0/24 Deny Proxy
 95.154.120.0/21 Deny Proxy
 185.57.28.0/22 Deny Proxy
+213.5.16.0/22 Deny Proxy
+2a04:db80::/32 Deny Proxy
 Origin: RU
+Profile: Infrastructure/Transit
 Tag: Octopusnet VPN
 
 
@@ -1292,8 +1296,8 @@ Tag: OverPlay.Net LP
 
 # ASN 209854 ("Surfshark Ltd").
 # A paid VPN provider. Brute-force and SSH attacks detected from here.
-# Stop Forum Spam (SFS) listings: 55.
-# Updated: 2021.04.16
+# Stop Forum Spam (SFS) listings: 343.
+# Updated: 2021.11.03
 
 31.169.120.0/22 Deny Proxy
 45.129.32.0/24 Deny Proxy
@@ -1304,14 +1308,23 @@ Origin: DE
 194.41.112.0/23 Deny Proxy
 194.41.114.0/24 Deny Proxy
 Origin: LT
+45.95.242.0/24 Deny Proxy
 45.130.137.0/24 Deny Proxy
 45.130.139.0/24 Deny Proxy
 45.149.3.0/24 Deny Proxy
-91.190.100.0/22 Deny Proxy
+62.197.144.0/20 Deny Proxy
+91.190.100.0/24 Deny Proxy
+91.190.102.0/23 Deny Proxy
 91.206.168.0/24 Deny Proxy
+92.62.120.0/22 Deny Proxy
+94.154.124.0/24 Deny Proxy
 185.244.139.0/24 Deny Proxy
 193.218.35.0/24 Deny Proxy
+194.26.131.0/24 Deny Proxy
+194.169.168.0/22 Deny Proxy
+212.119.32.0/22 Deny Proxy
 Origin: NL
 92.249.36.0/22 Deny Proxy
 Origin: VG
+Profile: Infrastructure/Transit
 Tag: Surfshark Ltd

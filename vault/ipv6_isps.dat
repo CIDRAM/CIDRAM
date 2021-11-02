@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6_isps.dat
 
-# Version: 2021.294.294
-# Last modified: 2021.10.22
+# Version: 2021.306.628
+# Last modified: 2021.11.03
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -22,12 +22,14 @@ Tag: AS48159
 
 
 # ASN 12880 ("Information Technology Company (ITC)").
-# Significant source of email harvesters and unauthorised scrapers.
-# Stop Forum Spam (SFS) listings: 354.
-# Updated: 2020.03.06 / Checked: 2021.03.09
+# Email harvesters, scrapers, brute-force attacks, port scans, hacking, and
+# spam detected from here.
+# Stop Forum Spam (SFS) listings: 238.
+# Updated: 2020.03.06 / Checked: 2021.11.02
 
-2001:4188::/48 Deny Generic
+2001:4188::/48 Deny Attacks
 Origin: IR
+Profile: Commercial;Government;Infrastructure/Transit;University
 Tag: AS12880
 
 
@@ -1882,16 +1884,15 @@ Tag: Ote SA
 # "AMX Argentina S.A", "CLARO S.A").
 # A South American ISP caught performing brute-force and webapp attacks, port
 # scans, and spamming. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 410 (AS11664), 187 (AS19037), 3,826 (AS28573).
-# Updated: 2021.09.30
+# Stop Forum Spam (SFS) listings: 466 (AS11664), 186 (AS19037), 4,069 (AS28573).
+# Updated: 2021.10.31
 
-2803:9800:9885:b328::/64 Deny Spam
-2803:9800:a093:8e2c::/64 Deny Spam
-2803:9800:b4c0:806d::/64 Deny Spam
-2803:9800:b881:80b3::/64 Deny Spam
+2803:9800:b014:823d::/64 Deny Spam
 Origin: AR
-2804:14c:150:2137::/64 Deny Spam
-2804:14d:90af:8ea1::/64 Deny Spam
+2804:14c:5b30:8542::/64 Deny Spam
+2804:14d:32d1:8b9d::/64 Deny Spam
+2804:14d:4c85:1579::/64 Deny Spam
+2804:14d:72b3:a1b0::/64 Deny Spam
 Origin: BR
 Profile: Domestic ISP
 Tag: CLARO S.A
@@ -2449,11 +2450,13 @@ Tag: Xs4all Internet BV
 # ASN 5410 ("Bouygues Telecom SA").
 # French domestic ISP and mobile provider. Spam and hack attempts detected from
 # here. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 489.
-# Updated: 2021.04.28
+# Stop Forum Spam (SFS) listings: 844.
+# Updated: 2021.11.03
 
+2001:861:3784:2320::/64 Deny Spam
+2001:861:5382:ddb0::/64 Deny Spam
 2001:861:5580:f7d0::/64 Deny Spam
-2a04:cec0:10dc:42b9::/64 Deny Spam
+2a04:cec0:10f5:7569::/64 Deny Spam
 Origin: FR
 Profile: Domestic ISP
 Tag: Bouygues Telecom SA
@@ -2660,3 +2663,29 @@ Tag: Vodafone Romania
 Origin: NL
 Profile: Domestic ISP;Infrastructure/Transit;Multiplay;Webhosting
 Tag: ServiHosting Networks S.L
+
+
+# ASN 58972 ("RadioLAN spol. s r.o").
+# Slovakian multiplay ISP. Brute-force, DDoS, and SSH attacks, port scans,
+# hacking, and spam detected from here. Listing just the affected
+# ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 252.
+# Updated: 2021.10.31
+
+2a0b:f100:48:66::/64 Deny Spam
+Origin: SK
+Profile: Domestic ISP;Multiplay
+Tag: RadioLAN
+
+
+# ASN 133480 ("Intergrid Group Pty Ltd").
+# Australian multiplay network. Brute-force and webapp attacks, port scans,
+# hacking, and spam detected from here.
+# Listing just the offending ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 870.
+# Updated: 2021.11.03
+
+2407:a080:5000:2::/64 Deny Attacks
+Origin: AU
+Profile: Domestic ISP;Multiplay
+Tag: Intergrid Group Pty Ltd

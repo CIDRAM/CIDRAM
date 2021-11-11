@@ -1,8 +1,8 @@
 # IPv6 signatures file (CIDRs for proxies, VPNs and other miscellaneous unwanted services).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6_other.dat
 
-# Version: 2021.306.628
-# Last modified: 2021.11.03
+# Version: 2021.314.500
+# Last modified: 2021.11.11
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -10,32 +10,6 @@
 
 
 # ---
-# ASN 174 ("Cogent Communications").
-
-# We've experienced a significant amount of unwanted traffic from their ASN in
-# the past (hack attempts, spamming, scraping, etc), and this type of traffic
-# should generally be blocked, but their ASN unfortunately encompasses and
-# interlaces with a significant number of benign human endpoints, ISPs,
-# backbone architecture, etc that we don't want to block, so I'm not outright
-# listing the ASN in entirety. Listings have also been split across different
-# signature files as to list at the signature files where best suited.
-
-# Stop Forum Spam (SFS) listings: 11,429.
-
-# See:
-# - en.wikipedia.org/wiki/Cogent_Communications
-# - bgpmon.net/large-scale-bgp-hijack-out-of-india/
-# - forums.spybot.info/showthread.php?23632-SPAM-frauds-fakes-and-other-MALWARE-deliveries/page37
-# - dyn.com/blog/mitm-internet-hijacking/
-
-# Anything identified as a proxy, "^.*Prox.*$".
-# Updated: 2020.12.18 / Checked: 2021.03.02
-
-2001:978:1403::/48 Deny Proxy
-Origin: US
-Tag: Cogent Proxies
-
-
 # ASN 205100 ("F3 Netze e.V").
 # Provides tor exit nodes. A significant source of spam.
 # Caught masquerading as Baidu while sniffing for vulnerabilities.
@@ -68,7 +42,7 @@ Tag: Emerald Onion
 # Octopusnet VPN (mostly from AS44724, but we'll update via announces instead,
 # because we don't need to block the entire ASN, and there could be stray CIDRs
 # too). Proxy service with a history of spam events.
-# Updated: 2019.12.14 / Checked: 2021.03.21
+# Updated: 2019.12.14 / Checked: 2021.11.11
 
 2a04:db80::/32 Deny Proxy
 Origin: RU
@@ -76,15 +50,12 @@ Tag: Octopusnet VPN
 
 
 # ASN 208323 ("Foundation for Applied Privacy").
-# A *huge* source of spam! Went from zero reports at SFS to 38,300+ reports in
-# the course of less than three months; Should be cautious about removal, even
-# if the reports subside in the future.
-# Stop Forum Spam (SFS) listings: 90,810.
-# Updated: 2019.10.02 / Checked: 2021.02.02
+# Stop Forum Spam (SFS) listings: 105,829.
+# Updated: 2019.10.02 / Checked: 2021.11.11
 
 2a03:e600:100::/48 Deny Proxy
 Origin: AT
-Profile: Tor endpoints here
+Profile: Infrastructure/Transit;Tor endpoints here
 Tag: Applied Privacy
 
 

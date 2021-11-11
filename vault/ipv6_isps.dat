@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6_isps.dat
 
-# Version: 2021.306.628
-# Last modified: 2021.11.03
+# Version: 2021.314.500
+# Last modified: 2021.11.11
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -112,28 +112,6 @@ Tag: Voxility LLC
 Tag: Mir Telematiki Ltd
 
 
-# ASN 41011 ("CH-NET S.R.L").
-# Stop Forum Spam (SFS) listings: 85.
-# Updated: 2020.01.24 / Checked: 2021.04.11
-
-2001:67c:2100::/48 Deny Generic
-2a06:afc0::/48 Deny Generic
-2a06:afc0:2::/48 Deny Generic
-Origin: RO
-Profile: Tor endpoints here
-Tag: CH-NET S.R.L
-
-
-# ASN 7743 ("JPMorgan Chase & Co").
-# Updated: 2019.06.02 / Checked: 2021.07.14
-
-2620:11::/45 Deny Generic
-2620:11:8::/47 Deny Generic
-Origin: US
-Profile: Commercial
-Tag: JPMorgan Chase & Co
-
-
 # ASNs 42708, 43948 ("GleSYS AB").
 # Scandinavian multiplay network (domestic ISP, webhosting, cloud lease, etc).
 # Regular SSH and brute-force attacks, spam, flooding/hammering, etc from here.
@@ -196,11 +174,13 @@ Tag: 012 Smile
 
 
 # ASN 35804 ("PP SKS-LUGAN").
-# Stop Forum Spam (SFS) listings: 272.
-# Updated: 2016.03.30 / Checked: 2021.02.23
+# Ukrainian domestic ISP. Port scans, hacking, and spam detected from here.
+# Stop Forum Spam (SFS) listings: 264.
+# Updated: 2016.03.30 / Modified: 2021.11.06
 
-2a00:ede0::/32 Deny Generic
+2a00:ede0::/32 Deny Attacks
 Origin: UA
+Profile: Domestic ISP
 Tag: PP SKS-LUGAN
 
 
@@ -457,429 +437,6 @@ Profile: Domestic ISP
 Tag: Ufanet
 
 
-# ASN 9829 ("BSNL (Bharat Sanchar Nigam Ltd)").
-# A large network with significant human endpoints, but the infection rate
-# listed at CBL is very high, there are numerous spam events, etc. Websites
-# intended for an Indian audience should keep it listed in their ignore.dat
-# file. (US ranges marked as cloud).
-# Stop Forum Spam (SFS) listings: 6,055.
-# Updated: 2021.03.03
-
-2001:4490::/43 Deny Spam
-2001:4490:3fc::/46 Deny Spam
-2001:4490:400::/43 Deny Spam
-2001:4490:7f8::/45 Deny Spam
-2001:4490:810::/46 Deny Spam
-2001:4490:bfc::/46 Deny Spam
-2001:4490:c00::/43 Deny Spam
-2001:4490:ffc::/46 Deny Spam
-2001:4490:3000::/42 Deny Spam
-2001:4490:3200::/42 Deny Spam
-2001:4490:33fc::/46 Deny Spam
-2001:4490:3400::/42 Deny Spam
-2001:4490:3600::/42 Deny Spam
-2001:4490:37fc::/46 Deny Spam
-2001:4490:3800::/42 Deny Spam
-2001:4490:3a00::/42 Deny Spam
-2001:4490:3bfc::/46 Deny Spam
-2001:4490:3c00::/42 Deny Spam
-2001:4490:3d00::/42 Deny Spam
-2001:4490:3dfc::/46 Deny Spam
-2001:4490:3e00::/42 Deny Spam
-2001:4490:3f00::/42 Deny Spam
-2001:4490:3fbc::/46 Deny Spam
-2001:4490:3ffc::/46 Deny Spam
-2001:4490:4000::/41 Deny Spam
-2001:4490:4080::/44 Deny Spam
-2001:4490:4090::/45 Deny Spam
-2001:4490:4098::/46 Deny Spam
-2001:4490:4400::/41 Deny Spam
-2001:4490:4480::/42 Deny Spam
-2001:4490:44c0::/45 Deny Spam
-2001:4490:44c8::/46 Deny Spam
-2001:4490:4800::/41 Deny Spam
-2001:4490:4880::/42 Deny Spam
-2001:4490:48c0::/43 Deny Spam
-2001:4490:48e0::/45 Deny Spam
-2001:4490:4c00::/44 Deny Spam
-2001:4490:4c10::/45 Deny Spam
-2001:4490:4c18::/46 Deny Spam
-2001:4490:4c20::/43 Deny Spam
-2001:4490:4c40::/42 Deny Spam
-2001:4490:4c80::/43 Deny Spam
-2001:4490:4ca0::/44 Deny Spam
-2001:4490:4e00::/41 Deny Spam
-2001:4490:4e80::/42 Deny Spam
-2001:4490:4ec0::/45 Deny Spam
-2001:4490:4ec8::/46 Deny Spam
-2001:4490:7000::/46 Deny Spam
-2001:4490:7800::/46 Deny Spam
-2001:4490:d000::/46 Deny Spam
-2001:4490:d040::/46 Deny Spam
-2001:4490:d080::/46 Deny Spam
-2001:4490:d0c0::/46 Deny Spam
-2001:4490:d100::/46 Deny Spam
-2001:4490:d180::/46 Deny Spam
-2001:4490:d340::/46 Deny Spam
-2001:4490:d4c0::/46 Deny Spam
-2001:4490:d500::/46 Deny Spam
-2001:4490:d664::/46 Deny Spam
-2001:4490:d700::/46 Deny Spam
-2001:4490:d780::/46 Deny Spam
-2001:4490:d7a0::/46 Deny Spam
-2001:4490:d800::/46 Deny Spam
-2001:4490:d820::/46 Deny Spam
-2001:4490:d8c0::/46 Deny Spam
-2001:4490:d930::/46 Deny Spam
-2001:4490:d970::/46 Deny Spam
-2001:4490:d980::/46 Deny Spam
-2001:4490:d9a0::/46 Deny Spam
-2001:4490:da00::/46 Deny Spam
-2001:4490:da70::/46 Deny Spam
-2001:4490:dad0::/46 Deny Spam
-2001:4490:db40::/46 Deny Spam
-2001:4490:dbf0::/46 Deny Spam
-2001:4490:dc4c::/46 Deny Spam
-2001:4490:dd18::/46 Deny Spam
-2001:4490:dda8::/45 Deny Spam
-2001:4490:ddb0::/46 Deny Spam
-2001:4490:de18::/46 Deny Spam
-2001:4490:de24::/46 Deny Spam
-2001:4490:dfa8::/46 Deny Spam
-2001:4490:efe4::/46 Deny Spam
-2001:4490:efe8::/45 Deny Spam
-2001:4490:eff0::/44 Deny Spam
-2001:4490:f020::/46 Deny Spam
-2001:4490:fffc::/46 Deny Spam
-Origin: IN
-2600:140f:2200::/48 Deny Cloud
-2600:140f:2600::/48 Deny Cloud
-2600:1417:50::/47 Deny Cloud
-2600:1417:71::/48 Deny Cloud
-Origin: US
-Tag: BSNL
-
-
-# ASN 4134 ("China Telecom Backbone").
-# Interlaces with numerous providers and contains a large portion of Chinese
-# human access endpoints. Can't easily ignore the unwanted traffic coming from
-# this ASN (spam events, hack attempts, brute-force attempts, probing, etc),
-# nor its listing at a number of BLs. Websites intended for a Chinese audience
-# should keep this section listed in their ignore.dat file.
-# Stop Forum Spam (SFS) listings: 7,208.
-# Updated: 2021.10.05
-
-2406:8500::/32 Deny Generic
-240e::/20 Deny Generic
-Origin: CN
-2a04:f580:8000::/48 Deny Generic
-2a04:f580:8010::/47 Deny Generic
-2a04:f580:8090::/48 Deny Generic
-2a04:f580:80a0::/48 Deny Generic
-2a04:f580:8200::/48 Deny Generic
-2a04:f580:8210::/47 Deny Generic
-2a04:f580:8290::/48 Deny Generic
-Origin: GB
-2400:9380:8001::/48 Deny Generic
-2400:9380:8003::/48 Deny Generic
-2400:9380:8020::/47 Deny Generic
-2400:9380:8030::/48 Deny Generic
-2400:9380:8040::/48 Deny Generic
-2400:9380:8140::/48 Deny Generic
-2400:9380:8201::/48 Deny Generic
-2400:9380:8221::/48 Deny Generic
-2400:9380:8301::/48 Deny Generic
-Origin: HK
-2605:9d80:8001::/48 Deny Generic
-2605:9d80:8011::/48 Deny Generic
-2605:9d80:8021::/48 Deny Generic
-2605:9d80:8031::/48 Deny Generic
-2605:9d80:8041::/48 Deny Generic
-2605:9d80:8081::/48 Deny Generic
-Origin: US
-2c0f:f7a8:8011::/48 Deny Generic
-2c0f:f7a8:8050::/48 Deny Generic
-2c0f:f7a8:805f::/48 Deny Generic
-2c0f:f7a8:8150::/48 Deny Generic
-2c0f:f7a8:815f::/48 Deny Generic
-2c0f:f7a8:8211::/48 Deny Generic
-Origin: ZA
-Profile: Infrastructure/Transit
-Tag: China Telecom Backbone
-
-
-# ASN 4812 ("China Telecom (Group)").
-# Interlaces with numerous providers and contains a large portion of Chinese
-# human access endpoints. Can't easily ignore the unwanted traffic coming from
-# this ASN (spam events, hack attempts, brute-force attempts, probing, etc),
-# nor its listing at a number of BLs. Marked for use with CAPTCHAs to reduce
-# the false positive risk. Websites intended for a Chinese audience should keep
-# this section listed in their ignore.dat file. (I'm not really happy with this
-# section. Aiming to rework it at some point in the future).
-# Stop Forum Spam (SFS) listings: 3,158.
-# Updated: 2021.10.05
-
-2400:9600:8800::/48 Deny Generic
-2402:6f40:1::/48 Deny Generic
-2403:1ec0:1610::/48 Deny Generic
-2403:a200:a1ff::/48 Deny Generic
-2405:7040:6000::/48 Deny Generic
-240e:18::/31 Deny Generic
-240e:2e::/33 Deny Generic
-240e:58::/32 Deny Generic
-240e:59::/33 Deny Generic
-240e:e0::/32 Deny Generic
-240e:e1::/36 Deny Generic
-240e:e1:8000::/33 Deny Generic
-240e:e2::/35 Deny Generic
-240e:e3:8000::/33 Deny Generic
-240e:e5:8000::/33 Deny Generic
-240e:e6::/32 Deny Generic
-240e:106:c000::/34 Deny Generic
-240e:108:11a1::/48 Deny Generic
-240e:108:11a2::/48 Deny Generic
-240e:146:c000::/34 Deny Generic
-240e:186:c000::/34 Deny Generic
-240e:1c6:c000::/34 Deny Generic
-240e:26c::/30 Deny Generic
-240e:388::/29 Deny Generic
-240e:46c::/30 Deny Generic
-240e:56c::/30 Deny Generic
-240e:688::/29 Deny Generic
-240e:788::/29 Deny Generic
-240e:96c::/30 Deny Generic
-240e:982:a100::/40 Deny Generic
-240e:982:a200::/40 Deny Generic
-Origin: CN
-Profile: Domestic ISP;Infrastructure/Transit;Multiplay
-Tag: China Telecom 4812
-
-
-# ASN 4837 ("China Unicom Backbone").
-# Interlaces with numerous providers and contains a large portion of Chinese
-# human access endpoints. Can't easily ignore the unwanted traffic coming from
-# this ASN (spam events, hack attempts, brute-force attempts, probing, etc),
-# nor its listing at a number of BLs. Websites intended for a Chinese audience
-# should keep this section listed in their ignore.dat file.
-# Stop Forum Spam (SFS) listings: 17,480.
-# Updated: 2021.03.03
-
-2403:1ec0:1600::/48 Deny Generic
-2406:1e40:f012::/47 Deny Generic
-2408:8000::/48 Deny Generic
-2408:8000:2::/47 Deny Generic
-2408:8000:2000::/35 Deny Generic
-2408:8000:4000::/34 Deny Generic
-2408:8000:8000::/36 Deny Generic
-2408:8000:a000::/35 Deny Generic
-2408:8000:c000::/34 Deny Generic
-2408:8001::/35 Deny Generic
-2408:8001:2000::/36 Deny Generic
-2408:8001:4000::/34 Deny Generic
-2408:8001:8000::/33 Deny Generic
-2408:802a:8000::/33 Deny Generic
-2408:802c::/32 Deny Generic
-2408:8033:8000::/33 Deny Generic
-2408:8034::/32 Deny Generic
-2408:803e::/32 Deny Generic
-2408:8056::/32 Deny Generic
-2408:8077::/33 Deny Generic
-2408:80c2::/33 Deny Generic
-2408:80c5::/33 Deny Generic
-2408:80e2::/33 Deny Generic
-2408:80e3:8000::/33 Deny Generic
-2408:80e7::/34 Deny Generic
-2408:80e9:4000::/34 Deny Generic
-2408:80f5:4000::/34 Deny Generic
-2408:80f9:4000::/34 Deny Generic
-2408:815f:e000::/35 Deny Generic
-2408:8210::/30 Deny Generic
-2408:8214::/31 Deny Generic
-2408:821a::/31 Deny Generic
-2408:8220::/31 Deny Generic
-2408:8226::/32 Deny Generic
-2408:822a::/32 Deny Generic
-2408:822e::/31 Deny Generic
-2408:8230::/29 Deny Generic
-2408:8238::/31 Deny Generic
-2408:823c::/31 Deny Generic
-2408:8240::/32 Deny Generic
-2408:8244::/30 Deny Generic
-2408:8248::/30 Deny Generic
-2408:824c::/32 Deny Generic
-2408:824e::/31 Deny Generic
-2408:8250::/30 Deny Generic
-2408:8254::/31 Deny Generic
-2408:825c::/31 Deny Generic
-2408:8260::/32 Deny Generic
-2408:8262::/31 Deny Generic
-2408:8264::/31 Deny Generic
-2408:8266::/32 Deny Generic
-2408:826a::/32 Deny Generic
-2408:826c::/30 Deny Generic
-2408:8270::/32 Deny Generic
-2408:8274::/30 Deny Generic
-2408:8278::/31 Deny Generic
-2408:827a::/32 Deny Generic
-2408:8310::/30 Deny Generic
-2408:832e::/31 Deny Generic
-2408:8330::/30 Deny Generic
-2408:8340::/32 Deny Generic
-2408:8344::/30 Deny Generic
-2408:8348::/30 Deny Generic
-2408:834e::/31 Deny Generic
-2408:8350::/30 Deny Generic
-2408:8354::/31 Deny Generic
-2408:8360::/30 Deny Generic
-2408:8364::/31 Deny Generic
-2408:836c::/30 Deny Generic
-2408:8374::/30 Deny Generic
-2408:8378::/31 Deny Generic
-2408:837a::/32 Deny Generic
-2408:8410::/30 Deny Generic
-2408:8414::/31 Deny Generic
-2408:8417::/32 Deny Generic
-2408:8418::/32 Deny Generic
-2408:841a::/31 Deny Generic
-2408:841c::/31 Deny Generic
-2408:841e::/32 Deny Generic
-2408:8420::/31 Deny Generic
-2408:8426::/31 Deny Generic
-2408:842a::/31 Deny Generic
-2408:842c::/32 Deny Generic
-2408:842e::/32 Deny Generic
-2408:8431::/32 Deny Generic
-2408:8434::/30 Deny Generic
-2408:8438::/31 Deny Generic
-2408:843d::/32 Deny Generic
-2408:843e::/32 Deny Generic
-2408:8440::/32 Deny Generic
-2408:8444::/30 Deny Generic
-2408:8448::/32 Deny Generic
-2408:844b::/32 Deny Generic
-2408:844c::/30 Deny Generic
-2408:8452::/31 Deny Generic
-2408:8460::/30 Deny Generic
-2408:8464::/31 Deny Generic
-2408:8466::/32 Deny Generic
-2408:8469::/32 Deny Generic
-2408:846a::/31 Deny Generic
-2408:846c::/30 Deny Generic
-2408:8470::/31 Deny Generic
-2408:8474::/30 Deny Generic
-2408:8478::/31 Deny Generic
-2408:84e3::/32 Deny Generic
-2408:84e4::/30 Deny Generic
-2408:84e9::/32 Deny Generic
-2408:84eb::/32 Deny Generic
-2408:84ec::/30 Deny Generic
-2408:84f0::/31 Deny Generic
-2408:84f2::/32 Deny Generic
-2408:84f4::/30 Deny Generic
-2408:84f8::/29 Deny Generic
-2408:856c::/31 Deny Generic
-2408:8610::/30 Deny Generic
-2408:8614::/31 Deny Generic
-2408:861a::/31 Deny Generic
-2408:8620::/31 Deny Generic
-2408:8624::/31 Deny Generic
-2408:8626::/32 Deny Generic
-2408:862a::/32 Deny Generic
-2408:862e::/31 Deny Generic
-2408:8630::/29 Deny Generic
-2408:8638::/31 Deny Generic
-2408:863c::/31 Deny Generic
-2408:8640::/32 Deny Generic
-2408:8642::/32 Deny Generic
-2408:8644::/30 Deny Generic
-2408:8648::/31 Deny Generic
-2408:864c::/32 Deny Generic
-2408:864e::/31 Deny Generic
-2408:8650::/30 Deny Generic
-2408:865c::/31 Deny Generic
-2408:8660::/32 Deny Generic
-2408:8662::/31 Deny Generic
-2408:8664::/31 Deny Generic
-2408:8666::/32 Deny Generic
-2408:866a::/32 Deny Generic
-2408:866c::/30 Deny Generic
-2408:8670::/32 Deny Generic
-2408:8674::/31 Deny Generic
-2408:8676::/32 Deny Generic
-2408:8678::/31 Deny Generic
-2408:867a::/32 Deny Generic
-2408:8710::/30 Deny Generic
-2408:8719::/32 Deny Generic
-2408:871a::/32 Deny Generic
-2408:8720::/30 Deny Generic
-2408:8726::/32 Deny Generic
-2408:872b::/32 Deny Generic
-2408:872f::/32 Deny Generic
-2408:8730::/30 Deny Generic
-2408:8734::/31 Deny Generic
-2408:8736::/32 Deny Generic
-2408:8738::/32 Deny Generic
-2408:873c::/31 Deny Generic
-2408:8740::/32 Deny Generic
-2408:8742::/32 Deny Generic
-2408:8744::/30 Deny Generic
-2408:8748::/29 Deny Generic
-2408:8752::/32 Deny Generic
-2408:875c::/32 Deny Generic
-2408:8760::/32 Deny Generic
-2408:8762::/31 Deny Generic
-2408:8764::/31 Deny Generic
-2408:8766::/32 Deny Generic
-2408:8768::/32 Deny Generic
-2408:876a::/32 Deny Generic
-2408:876c::/30 Deny Generic
-2408:8770::/32 Deny Generic
-2408:8772::/31 Deny Generic
-2408:8774::/32 Deny Generic
-2408:8776::/31 Deny Generic
-2408:8778::/31 Deny Generic
-2408:877a::/32 Deny Generic
-2408:8812::/31 Deny Generic
-2408:8814::/30 Deny Generic
-2408:8818::/31 Deny Generic
-2408:882c::/32 Deny Generic
-2408:883a::/32 Deny Generic
-2408:8862::/31 Deny Generic
-2408:8864::/31 Deny Generic
-2408:8866::/32 Deny Generic
-2408:886e::/31 Deny Generic
-2408:8872::/32 Deny Generic
-2408:8878::/31 Deny Generic
-2408:887e::/32 Deny Generic
-2408:8912::/31 Deny Generic
-2408:8914::/31 Deny Generic
-2408:8916::/32 Deny Generic
-2408:891c::/32 Deny Generic
-2408:8920::/32 Deny Generic
-2408:8924::/32 Deny Generic
-2408:892c::/32 Deny Generic
-2408:8936::/32 Deny Generic
-2408:893a::/32 Deny Generic
-2408:8948::/32 Deny Generic
-2408:894c::/32 Deny Generic
-2408:894e::/32 Deny Generic
-2408:8962::/31 Deny Generic
-2408:8964::/31 Deny Generic
-2408:8966::/32 Deny Generic
-2408:896c::/32 Deny Generic
-2408:896e::/31 Deny Generic
-2408:8978::/30 Deny Generic
-2408:897e::/32 Deny Generic
-2408:8a21:4000::/35 Deny Generic
-2408:8a23:4000::/34 Deny Generic
-2408:8a24:4000::/34 Deny Generic
-2408:8a26:c000::/35 Deny Generic
-2408:8a27:4000::/35 Deny Generic
-Origin: CN
-Profile: Domestic ISP;Infrastructure/Transit;Multiplay
-Tag: China Unicom Backbone
-
-
 # ASN 3462 ("Data Communication Business Group").
 # Taiwanese domestic ISP and business network. DDoS, FTP brute-force, and
 # webapp attacks, hacking, spam, and port scans detected from here. Listing
@@ -892,136 +449,6 @@ Tag: China Unicom Backbone
 Origin: TW
 Profile: Domestic ISP;Commercial;Multiplay;Tor endpoints here;Webhosting
 Tag: DCBG
-
-
-# ASNs 4808, 23724 ("China Unicom Beijing Province Network").
-# Major Chinese domestic ISP, but also a major source of spam and other
-# unwanted traffic. (AU as bogon; the rest as spam).
-# Stop Forum Spam (SFS) listings: 4,907 (AS4808), 9,471 (AS23724).
-# Updated: 2021.03.19
-
-2400:5280:f800::/38 Deny Spam
-2400:89c0:1010::/44 Deny Spam
-2400:89c0:1020::/43 Deny Spam
-2400:89c0:1050::/46 Deny Spam
-2400:89c0:1091::/48 Deny Spam
-2400:89c0:6000::/48 Deny Spam
-2401:1d40::/48 Deny Spam
-2401:1d40:f8::/45 Deny Spam
-2401:1d40:100::/48 Deny Spam
-2401:1d40:f21::/48 Deny Spam
-2401:1d40:f22::/47 Deny Spam
-2401:1d40:f24::/48 Deny Spam
-2401:3480::/36 Deny Spam
-2401:be00::/48 Deny Spam
-2402:5ec0::/32 Deny Spam
-2402:dfc0::/44 Deny Spam
-2402:dfc0:50::/44 Deny Spam
-2402:ef40::/32 Deny Spam
-2403:1ec0:1200::/48 Deny Spam
-2403:4280::/48 Deny Spam
-2403:5280::/32 Deny Spam
-2403:5c80::/48 Deny Spam
-2403:a140:10::/48 Deny Spam
-2405:1480:2000::/48 Deny Spam
-2406:cf00::/48 Deny Spam
-2406:cf00:1000::/43 Deny Spam
-2407:c080:7800::/44 Deny Spam
-2408:8000:1000::/36 Deny Spam
-2408:8020::/30 Deny Spam
-2408:8024::/33 Deny Spam
-2408:80e0:4000::/34 Deny Spam
-2408:80e0:8000::/33 Deny Spam
-2408:80f0:4000::/34 Deny Spam
-2408:80f0:8000::/33 Deny Spam
-2408:8140:2000::/48 Deny Spam
-2408:8206::/31 Deny Spam
-2408:8208::/30 Deny Spam
-2408:8306::/31 Deny Spam
-2408:8308::/30 Deny Spam
-2408:8406::/40 Deny Spam
-2408:8406:100::/41 Deny Spam
-2408:8406:c00::/40 Deny Spam
-2408:8406:d00::/41 Deny Spam
-2408:8406:1800::/40 Deny Spam
-2408:8406:1900::/41 Deny Spam
-2408:8406:2400::/40 Deny Spam
-2408:8406:2500::/41 Deny Spam
-2408:8406:3000::/40 Deny Spam
-2408:8406:3100::/41 Deny Spam
-2408:8406:3c00::/40 Deny Spam
-2408:8406:3d00::/41 Deny Spam
-2408:8406:4800::/40 Deny Spam
-2408:8406:4900::/41 Deny Spam
-2408:8406:5400::/40 Deny Spam
-2408:8406:5500::/41 Deny Spam
-2408:8406:6000::/40 Deny Spam
-2408:8406:6100::/41 Deny Spam
-2408:8406:6c00::/40 Deny Spam
-2408:8406:6d00::/41 Deny Spam
-2408:8406:7800::/40 Deny Spam
-2408:8406:7900::/41 Deny Spam
-2408:8406:8400::/40 Deny Spam
-2408:8406:8500::/41 Deny Spam
-2408:8406:9000::/40 Deny Spam
-2408:8406:9100::/41 Deny Spam
-2408:8406:9c00::/40 Deny Spam
-2408:8406:9d00::/41 Deny Spam
-2408:8406:a800::/40 Deny Spam
-2408:8406:a900::/41 Deny Spam
-2408:8406:b400::/40 Deny Spam
-2408:8406:b500::/41 Deny Spam
-2408:8409::/41 Deny Spam
-2408:8409:80::/42 Deny Spam
-2408:8409:c00::/41 Deny Spam
-2408:8409:c80::/42 Deny Spam
-2408:8409:1800::/41 Deny Spam
-2408:8409:1880::/42 Deny Spam
-2408:8409:2400::/41 Deny Spam
-2408:8409:2480::/42 Deny Spam
-2408:8409:3000::/41 Deny Spam
-2408:8409:3080::/42 Deny Spam
-2408:8409:3c00::/41 Deny Spam
-2408:8409:3c80::/42 Deny Spam
-2408:8409:4800::/41 Deny Spam
-2408:8409:4880::/42 Deny Spam
-2408:8409:5400::/41 Deny Spam
-2408:8409:5480::/42 Deny Spam
-2408:8409:6000::/41 Deny Spam
-2408:8409:6080::/42 Deny Spam
-2408:8409:6c00::/41 Deny Spam
-2408:8409:6c80::/42 Deny Spam
-2408:8409:7800::/41 Deny Spam
-2408:8409:7880::/42 Deny Spam
-2408:8409:8400::/41 Deny Spam
-2408:8409:8480::/42 Deny Spam
-2408:8409:9000::/41 Deny Spam
-2408:8409:9080::/42 Deny Spam
-2408:8409:9c00::/41 Deny Spam
-2408:8409:9c80::/42 Deny Spam
-2408:8409:a800::/41 Deny Spam
-2408:8409:a880::/42 Deny Spam
-2408:8409:b400::/41 Deny Spam
-2408:8409:b480::/42 Deny Spam
-2408:84e1::/32 Deny Spam
-2408:8606::/31 Deny Spam
-2408:8608::/30 Deny Spam
-2408:8706::/31 Deny Spam
-2408:8708::/30 Deny Spam
-2408:8806::/42 Deny Spam
-240e:0:9000::/36 Deny Spam
-240e:83::/37 Deny Spam
-240e:83:ff00::/40 Deny Spam
-240e:108:49::/48 Deny Spam
-240e:108:80::/48 Deny Spam
-240e:108:1002::/48 Deny Spam
-240e:904::/30 Deny Spam
-240e:980:4900::/40 Deny Spam
-240e:980:8000::/40 Deny Spam
-240e:981:200::/40 Deny Spam
-Origin: CN
-Profile: Domestic ISP;Infrastructure/Transit;Multiplay
-Tag: China Unicom Beijing
 
 
 # ASNs 7643, 45899, 135905 ("VietNam Post and Telecom Corporation").
@@ -1397,16 +824,6 @@ Profile: Domestic ISP
 Tag: Guangdong Mobile
 
 
-# ASN 9387 ("AUGERE-Pakistan").
-# Brute-force and SSH hack attempts detected from here (see AbuseIPDB records).
-# Stop Forum Spam (SFS) listings: 6.
-# Updated: 2017.03.22 / Modified: 2021.03.19
-
-2401:4100::/32 Deny Attacks
-Origin: PK
-Tag: AUGERE-Pakistan
-
-
 # ASN 12389 ("PJSC Rostelecom").
 # Stop Forum Spam (SFS) listings: 107,973.
 # Updated: 2021.03.23
@@ -1467,13 +884,13 @@ Tag: ER-Telecom Holding
 
 # ASN 137432 ("BKB Network").
 # Caught using automated hacktools to try hacking into honeypots.
-# Stop Forum Spam (SFS) listings: 17.
-# Updated: 2021.04.04
+# Stop Forum Spam (SFS) listings: 2.
+# Updated: 2021.11.04
 
-2402:68c0:a000::/36 Deny Generic
-2402:68c0:c000::/36 Deny Generic
-2402:68c0:e000::/36 Deny Generic
+2402:68c0:a000::/36 Deny Attacks
+2402:68c0:c000::/36 Deny Attacks
 Origin: BD
+Profile: Domestic ISP;Multiplay;Infrastructure/Transit
 Tag: BKB Network
 
 
@@ -1514,10 +931,10 @@ Tag: SKORUK ANDRIY OLEKSANDROVYCH
 
 # ASN 41435 ("UnderNet LLC").
 # Ukrainian domestic ISP. Caught attempting to hack WordPress sites.
-# Stop Forum Spam (SFS) listings: 329.
-# Updated: 2021.09.09
+# Stop Forum Spam (SFS) listings: 339.
+# Updated: 2021.09.09 / Modified: 2021.11.04
 
-2a0d:9880::/29 Deny Generic
+2a0d:9880::/29 Deny Attacks
 Origin: UA
 Profile: Domestic ISP
 Tag: UnderNet LLC
@@ -1588,6 +1005,29 @@ Tag: UnderNet LLC
 Origin: IN
 Profile: Domestic ISP;Infrastructure/Transit
 Tag: Reliance Communications
+
+
+# ASN 174 ("Cogent Communications").
+# Brute-force, SSH, and webapp attacks, spam, scraping, etc detected from here.
+# Encompasses and interlaces with a human endpoints, ISPs backbone
+# architecture, etc, as well as various hosting/cloud services.
+# Listing just the affected ranges/addresses only.
+# See:
+# - en.wikipedia.org/wiki/Cogent_Communications
+# - bgpmon.net/large-scale-bgp-hijack-out-of-india/
+# - forums.spybot.info/showthread.php?23632-SPAM-frauds-fakes-and-other-MALWARE-deliveries/page37
+# - dyn.com/blog/mitm-internet-hijacking/
+# Stop Forum Spam (SFS) listings: 43,744.
+# Updated: 2021.11.04
+
+2a07:85c0::/48 Deny Attacks
+2a07:85c1::/48 Deny Attacks
+2a07:85c2::/48 Deny Attacks
+2a07:85c3::/48 Deny Attacks
+2a07:85c5::/48 Deny Attacks
+Origin: SC
+Profile: Infrastructure/Transit;Tor endpoints here;Webhosting
+Tag: Cogent
 
 
 # ASN 198093 ("Foreningen for digitala fri- och rattigheter").
@@ -2293,11 +1733,11 @@ Tag: OVH Systems
 # Stop Forum Spam (SFS) listings: 766 (AS45430), 1,205 (AS133481).
 # Updated: 2021.10.12
 
-2405:9800:b620:57e3::/64
-2405:9800:b920:b384::/64
-2405:9800:b930:48cd::/64
-2405:9800:b930:7443::/64
-2405:9800:ba11:d4c2::/64
+2405:9800:b620:57e3::/64 Deny Spam
+2405:9800:b920:b384::/64 Deny Spam
+2405:9800:b930:48cd::/64 Deny Spam
+2405:9800:b930:7443::/64 Deny Spam
+2405:9800:ba11:d4c2::/64 Deny Spam
 Origin: TH
 Profile: Domestic ISP
 Tag: Phaholyothin Rd

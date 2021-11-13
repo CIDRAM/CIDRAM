@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2021.10.23).
+ * This file: Front-end functions file (last modified: 2021.11.13).
  */
 
 /**
@@ -2551,10 +2551,13 @@ $CIDRAM['SectionsHandler'] = function (array $Files) use (&$CIDRAM): string {
         foreach ($Counts as $Origin => $Quantity) {
             $State = !empty($SectionsForIgnore[$Section . ':' . $Origin]);
             $OriginSafe = $SectionSafe . preg_replace('~[^A-Z]~', '', $Origin);
-            $Quantity = $CIDRAM['NumberFormatter']->format($Quantity);
+            $Quantity = sprintf(
+                $CIDRAM['L10N']->getPlural($Quantity, 'label_sections_x_signatures'),
+                $CIDRAM['NumberFormatter']->format($Quantity)
+            );
             $OriginDisplay = '<code>' . $Origin . '</code>' . ($CIDRAM['FE']['Flags'] ? ' – <span class="flag ' . $Origin . '"></span>' : '');
-            $OriginOut .= sprintf(
-                '<div class="sectionControlNotIgnored%s">%s – %s – %s – <a href="javascript:void()" onclick="javascript:slx(\'%s:%s\',\'%s</a></div>',
+            $OriginOut .= "\n" . sprintf(
+                '<div class="sectionControlNotIgnored%s">%s – %s – %s<a href="javascript:void()" onclick="javascript:slx(\'%s:%s\',\'%s</a></div>',
                 $OriginSafe . '" style="transform:skew(-18deg)' . ($State ? '' : ';display:none'),
                 $OriginDisplay,
                 $Quantity,
@@ -2563,18 +2566,18 @@ $CIDRAM['SectionsHandler'] = function (array $Files) use (&$CIDRAM): string {
                 $Origin,
                 'ignore\',\'sectionControlNotIgnored' . $OriginSafe . '\',\'sectionControlIgnored' . $OriginSafe . '\')">' . $CIDRAM['L10N']->getString('label_ignore')
             ) . sprintf(
-                '<div class="sectionControlIgnored%s">%s – %s – %s – <a href="javascript:void()" onclick="javascript:slx(\'%s:%s\',\'%s</a></div>',
+                '<div class="sectionControlIgnored%s">%s – %s – %s<a href="javascript:void()" onclick="javascript:slx(\'%s:%s\',\'%s</a></div>',
                 $OriginSafe . '" style="transform:skew(-18deg);filter:grayscale(75%) contrast(50%)' . ($State ? ';display:none' : ''),
                 $OriginDisplay,
                 $Quantity,
-                ' – ' . $CIDRAM['L10N']->getString('state_ignored'),
+                $CIDRAM['L10N']->getString('state_ignored') . ' – ',
                 $Section,
                 $Origin,
                 'unignore\',\'sectionControlIgnored' . $OriginSafe . '\',\'sectionControlNotIgnored' . $OriginSafe . '\')">' . $CIDRAM['L10N']->getString('label_unignore')
             );
         }
         $State = !empty($SectionsForIgnore[$Section]);
-        $Out .= sprintf(
+        $Out .= "\n" . sprintf(
             '<div class="%s sectionControlNotIgnored%s"><strong>%s%s</strong><br />%s</div>',
             $Class,
             $State ? $SectionSafe : $SectionSafe . '" style="display:none',

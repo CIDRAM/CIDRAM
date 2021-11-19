@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2021.11.13).
+ * This file: Front-end functions file (last modified: 2021.11.19).
  */
 
 /**
@@ -3665,7 +3665,7 @@ $CIDRAM['AuxGenerateFEData'] = function ($Mode = false) use (&$CIDRAM) {
 
             /** Begin generating rule output. */
             $Output .= sprintf(
-                '%1$s<li class="%2$s"><span class="comCat"><span class="s" style="cursor:pointer">%3$s</span>%4$s%5$s</span>%1$s  <ul class="comSub">',
+                '%1$s<li class="%2$s"><span class="comCat"><span class="s" style="cursor:pointer">%3$s</span></span>%4$s%5$s%1$s  <ul class="comSub">',
                 "\n      ",
                 $RuleClass,
                 $Name,

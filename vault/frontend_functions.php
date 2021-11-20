@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2021.11.19).
+ * This file: Front-end functions file (last modified: 2021.11.20).
  */
 
 /**
@@ -3665,7 +3665,7 @@ $CIDRAM['AuxGenerateFEData'] = function ($Mode = false) use (&$CIDRAM) {
 
             /** Begin generating rule output. */
             $Output .= sprintf(
-                '%1$s<li class="%2$s"><span class="comCat"><span class="s" style="cursor:pointer">%3$s</span></span>%4$s%5$s%1$s  <ul class="comSub">',
+                '%1$s<li class="%2$s"><span class="comCat s">%3$s</span>%4$s%5$s%1$s  <ul class="comSub">',
                 "\n      ",
                 $RuleClass,
                 $Name,
@@ -3814,20 +3814,25 @@ $CIDRAM['AuxGenerateFEData'] = function ($Mode = false) use (&$CIDRAM) {
  *
  * @param array $Options An associative array of the options to generate.
  * @param string $Trim An optional regex of data to remove from the labels.
+ * @param bool $JS Whether generating for JavaScript.
  * @return string The generated options.
  */
-$CIDRAM['GenerateOptions'] = function (array $Options, $Trim = '') use (&$CIDRAM) {
+$CIDRAM['GenerateOptions'] = function (array $Options, $Trim = '', $JS = false) use (&$CIDRAM) {
     $Output = '';
     foreach ($Options as $Value => $Label) {
         if (is_array($Label)) {
-            $Output .= $CIDRAM['GenerateOptions']($Label, $Trim);
+            $Output .= $CIDRAM['GenerateOptions']($Label, $Trim, $JS);
             continue;
         }
         $Label = $CIDRAM['L10N']->getString($Label) ?: $Label;
         if ($Trim) {
             $Label = preg_replace($Trim, '', $Label);
         }
-        $Output .= '<option value="' . $Value . '">' . $Label . '</option>';
+        if ($JS) {
+            $Output .= "\n  x = document.createElement('option'),\n  x.setAttribute('value', '" . $Value . "'),\n  x.innerHTML = '" . $Label . "',\n  t.appendChild(x),";
+        } else {
+            $Output .= '<option value="' . $Value . '">' . $Label . '</option>';
+        }
     }
     return $Output;
 };
@@ -3884,6 +3889,9 @@ $CIDRAM['PopulateMethodsActions'] = function () use (&$CIDRAM) {
 
     /** Populate sources. */
     $CIDRAM['FE']['conSources'] = $CIDRAM['GenerateOptions']($CIDRAM['Config']['Provide']['Auxiliary Rules']['Sources'], $CIDRAM['RegExLabels']);
+
+    /** Populate sources for JavaScript. */
+    $CIDRAM['FE']['conSourcesJS'] = $CIDRAM['GenerateOptions']($CIDRAM['Config']['Provide']['Auxiliary Rules']['Sources'], $CIDRAM['RegExLabels'], true);
 };
 
 /**
@@ -3932,7 +3940,7 @@ $CIDRAM['ArrayToClickableList'] = function (array $Arr = [], $DeleteKey = '', $D
                     $Value[$SizeField] = $Size;
                 }
             }
-            $Output .= '<span class="comCat" style="cursor:pointer"><code class="s">' . str_replace(['<', '>'], ['&lt;', '&gt;'], $Key) . '</code></span>' . $Delete . '<ul class="comSub">';
+            $Output .= '<span class="comCat"><code class="s">' . str_replace(['<', '>'], ['&lt;', '&gt;'], $Key) . '</code></span>' . $Delete . '<ul class="comSub">';
             $Output .= $CIDRAM['ArrayToClickableList']($Value, $DeleteKey, $Depth + 1, $Key);
             $Output .= '</ul>';
         } else {

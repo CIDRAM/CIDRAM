@@ -83,48 +83,67 @@ function onAuxActionChange(e, p, i) {
 
 var conIn = 1;
 var addCondition = function(p) {
-  if (p.length > 0) {
-    var conAdd = '<select name="conSourceType['+p+'][]" class="auto">{conSources}</select><select name="conIfOrNot['+p+'][]" class="auto"><option value="If">=</option><option value="Not">≠</option></select><input type="text" name="conSourceValue['+p+'][]" placeholder="{tip_condition_placeholder}" class="f400" />';
-  } else {
-    var conAdd = '<select name="conSourceType[]" class="auto">{conSources}</select><select name="conIfOrNot[]" class="auto"><option value="If">=</option><option value="Not">≠</option></select><input type="text" name="conSourceValue[]" placeholder="{tip_condition_placeholder}" class="f400" />';
-  }
-  var conId = 'condition' + conIn, t = document.createElement('div');
+  var namePart = p.length > 0 ? '['+p+'][]' : '[]',
+  conId = 'condition'+conIn,
+  t = document.createElement('div');
   t.setAttribute('id', conId),
-  t.setAttribute('style', 'opacity:0.0;animation:xAux 2.0s ease 0s 1 normal'),
+  t.setAttribute('style', 'opacity:0;animation:xAux 2s ease 0s 1 normal'),
   document.getElementById(p+'conditions').appendChild(t),
-  document.getElementById(conId).innerHTML = conAdd, setTimeout(function() {
-    document.getElementById(conId).style.opacity = '1.0'
+  (t = document.createElement('select')).setAttribute('name', 'conSourceType'+namePart),
+  t.setAttribute('class', 'auto'),{conSourcesJS}
+  document.getElementById(conId).appendChild(t),
+  (t = document.createElement('select')).setAttribute('name', 'conIfOrNot'+namePart),
+  t.setAttribute('class', 'auto'),
+  x = document.createElement('option'),
+  x.setAttribute('value', 'If'),
+  x.innerHTML = '=',
+  t.appendChild(x),
+  x = document.createElement('option'),
+  x.setAttribute('value', 'Not'),
+  x.innerHTML = '≠',
+  t.appendChild(x),
+  document.getElementById(conId).appendChild(t),
+  (t = document.createElement('input')).setAttribute('name', 'conSourceValue'+namePart),
+  t.setAttribute('placeholder', '{tip_condition_placeholder}'),
+  t.setAttribute('class', 'f400'),
+  t.setAttribute('type', 'text'),
+  document.getElementById(conId).appendChild(t),
+  setTimeout(function() {
+    document.getElementById(conId).style.opacity = '1'
   }, 1999),
   conIn++
 };
 
 var whIn = 1;
 var addWebhook = function(p) {
-  if (p.length > 0) {
-    var whAdd = '<input type="text" name="webhooks['+p+'][]" placeholder="{tip_condition_placeholder}" class="f500" />';
-  } else {
-    var whAdd = '<input type="text" name="webhooks[]" placeholder="{tip_condition_placeholder}" class="f500" />';
-  }
-  var whId = 'webhook' + whIn, t = document.createElement('div');
+  var namePart = p.length > 0 ? '['+p+'][]' : '[]',
+  whId = 'webhook'+whIn,
+  t = document.createElement('div');
   t.setAttribute('id', whId),
-  t.setAttribute('style', 'opacity:0.0;animation:xAux 2.0s ease 0s 1 normal'),
-  document.getElementById(p+'webhooks').appendChild(t), document.getElementById(whId).innerHTML = whAdd, setTimeout(function() {
-    document.getElementById(whId).style.opacity = '1.0'
+  t.setAttribute('style', 'opacity:0;animation:xAux 2s ease 0s 1 normal'),
+  document.getElementById(p+'webhooks').appendChild(t),
+  (t = document.createElement('input')).setAttribute('name', 'webhooks'+namePart),
+  t.setAttribute('placeholder', '{tip_condition_placeholder}'),
+  t.setAttribute('class', 'f500'),
+  t.setAttribute('type', 'text'),
+  document.getElementById(whId).appendChild(t),
+  setTimeout(function() {
+    document.getElementById(whId).style.opacity = '1'
   }, 1999),
   whIn++
 };
 
 var createNewRule = function() {
   var e = true, z = !1;
-  document.getElementById('ruleName').value || (e = !1, document.getElementById('ruleNameDd').style.animation = 'rAux 1.0s ease 0s 1 normal', setTimeout(function() {
+  document.getElementById('ruleName').value || (e = !1, document.getElementById('ruleNameDd').style.animation = 'rAux 1s ease 0s 1 normal', setTimeout(function() {
     document.getElementById('ruleNameDd').style.animation = ''
-  }, 999)), document.getElementById('ruleReason').value || 'actBlk' != document.getElementById('act').value || (e = !1, document.getElementById('ruleReasonDd').style.animation = 'rAux 1.0s ease 0s 1 normal', setTimeout(function() {
+  }, 999)), document.getElementById('ruleReason').value || 'actBlk' != document.getElementById('act').value || (e = !1, document.getElementById('ruleReasonDd').style.animation = 'rAux 1s ease 0s 1 normal', setTimeout(function() {
     document.getElementById('ruleReasonDd').style.animation = ''
-  }, 999)), document.getElementById('ruleTarget').value || 'actRdr' != document.getElementById('act').value || (e = !1, document.getElementById('ruleTargetDd').style.animation = 'rAux 1.0s ease 0s 1 normal', setTimeout(function() {
+  }, 999)), document.getElementById('ruleTarget').value || 'actRdr' != document.getElementById('act').value || (e = !1, document.getElementById('ruleTargetDd').style.animation = 'rAux 1s ease 0s 1 normal', setTimeout(function() {
     document.getElementById('ruleTargetDd').style.animation = ''
   }, 999)), document.getElementsByName('conSourceValue[]').forEach(function(n) {
     null !== n.value && '' !== n.value && (z = true)
-  }), z || (document.getElementById('conditions').style.animation = 'rAux 1.0s ease 0s 1 normal', setTimeout(function() {
+  }), z || (document.getElementById('conditions').style.animation = 'rAux 1s ease 0s 1 normal', setTimeout(function() {
     document.getElementById('conditions').style.animation = ''
   }, 999)), e && z && document.getElementById('auxForm').submit()
 };

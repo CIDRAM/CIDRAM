@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2021.10.23).
+ * This file: Front-end handler (last modified: 2021.11.20).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -884,7 +884,9 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === '' && $CIDRAM['FE']['CronMode'] 
         )) . '</small></li>';
     }
     $CIDRAM['FE']['Extensions'] = implode("\n", $CIDRAM['FE']['Extensions']);
-    $CIDRAM['FE']['ExtensionIsAvailable'] = $CIDRAM['LTRinRTF']($CIDRAM['L10N']->getString('label_extension') . '➡' . $CIDRAM['L10N']->getString('label_installed_available'));
+    $CIDRAM['FE']['ExtensionIsAvailable'] = $CIDRAM['LTRinRTF'](
+        $CIDRAM['L10N']->getString('label_extension') . '➡' . $CIDRAM['L10N']->getString('label_installed_available')
+    );
     unset($CIDRAM['ExtVer'], $CIDRAM['ThisResponse'], $CIDRAM['ThisExtension']);
 
     /** Build clipboard data. */
@@ -1243,7 +1245,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
             }
             $CIDRAM['ThisDir']['DirLangKey'] = 'config_' . $CIDRAM['CatKey'] . '_' . $CIDRAM['DirKey'];
             $CIDRAM['ThisDir']['DirLangKeyOther'] = $CIDRAM['ThisDir']['DirLangKey'] . '_other';
-            $CIDRAM['ThisDir']['DirName'] = $CIDRAM['LTRinRTF']($CIDRAM['CatKey'] . '➡' . $CIDRAM['DirKey']);
+            $CIDRAM['ThisDir']['DirName'] = '<span class="normalHeight">' . $CIDRAM['LTRinRTF']($CIDRAM['CatKey'] . '➡' . $CIDRAM['DirKey']) . '</span>';
             $CIDRAM['ThisDir']['Friendly'] = $CIDRAM['L10N']->getString($CIDRAM['ThisDir']['DirLangKey'] . '_label') ?: (
                 $CIDRAM['FromModuleConfigL10N']($CIDRAM['ThisDir']['DirLangKey'] . '_label')
             ) ?: $CIDRAM['DirKey'];
@@ -1608,7 +1610,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
             $CIDRAM['FromModuleConfigL10N']('config_' . $CIDRAM['CatKey'] . '_label')
         ) ?: $CIDRAM['CatKey'];
         $CIDRAM['FE']['Indexes'] .= sprintf(
-            '<li><span class="comCat"><span style="cursor:pointer">%1$s</span></span><ul class="comSub">%2$s</ul></li>',
+            '<li><span class="comCat">%1$s</span><ul class="comSub">%2$s</ul></li>',
             $CIDRAM['CatKeyFriendly'],
             $CIDRAM['CatData']
         );
@@ -2938,7 +2940,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'file-manager' && $CIDRAM['FE'][
                 $CIDRAM['Components']['RGB'] = implode(',', $CIDRAM['Components']['ThisColour']['Values']);
                 $CIDRAM['FE']['DoughnutColours'][] = '#' . $CIDRAM['Components']['ThisColour']['Hash'];
                 $CIDRAM['FE']['DoughnutHTML'] .= sprintf(
-                    '<li style="background:linear-gradient(90deg,rgba(%1$s,0.3),rgba(%1$s,0));color:#%2$s"><span class="comCat" style="cursor:pointer"><span class="txtBl">%3$s</span></span>%4$s</li>',
+                    '<li style="background:linear-gradient(90deg,rgba(%1$s,.3),rgba(%1$s,0));color:#%2$s"><span class="comCat"><span class="txtBl">%3$s</span></span>%4$s</li>',
                     $CIDRAM['Components']['RGB'],
                     $CIDRAM['Components']['ThisColour']['Hash'],
                     $CIDRAM['Components']['ThisName'],
@@ -2946,7 +2948,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'file-manager' && $CIDRAM['FE'][
                 ) . "\n";
             } else {
                 $CIDRAM['FE']['DoughnutHTML'] .= sprintf(
-                    '<li><span class="comCat" style="cursor:pointer">%1$s</span>%2$s</li>',
+                    '<li><span class="comCat">%1$s</span>%2$s</li>',
                     $CIDRAM['Components']['ThisName'],
                     $CIDRAM['Components']['ThisListed']
                 ) . "\n";

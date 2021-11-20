@@ -3,9 +3,10 @@
   <td class="nav big">
 {nav}  </td>
   <td class="right extend">
-    <div class="gen">(<a href="?cidram-page=aux">{label_aux_mode_view}</a> – <a href="?cidram-page=aux-edit">{label_aux_mode_edit}</a>)</div>
     <div class="s" id="stateMsg">{state_msg}</div>
-    <form id="auxForm" action="?cidram-page=aux-edit" method="POST">{Data}
+    <form id="auxForm" action="?cidram-page=aux-edit" method="POST">
+    <div class="ng1 center"><a href="?cidram-page=aux">{label_aux_mode_view}</a> – <a href="?cidram-page=aux-edit">{label_aux_mode_edit}</a></div>
+    {Data}
     </form>
   </td>
 </tr>

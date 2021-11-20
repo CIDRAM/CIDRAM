@@ -3654,9 +3654,15 @@ $CIDRAM['AuxGenerateFEData'] = function ($Mode = false) use (&$CIDRAM) {
             $Options['delRule'] = sprintf($Options[0], 'delRule', $Name, $RuleClass, $CIDRAM['L10N']->getString('field_delete'));
             if ($Count > 1) {
                 if ($Current !== 1) {
+                    if ($Current !== 2) {
+                        $Options['moveUp'] = sprintf($Options[0], 'moveUp', $Name, $RuleClass, $CIDRAM['L10N']->getString('label_aux_move_up'));
+                    }
                     $Options['moveToTop'] = sprintf($Options[0], 'moveToTop', $Name, $RuleClass, $CIDRAM['L10N']->getString('label_aux_move_top'));
                 }
                 if ($Current !== $Count) {
+                    if ($Current !== ($Count - 1)) {
+                        $Options['moveDown'] = sprintf($Options[0], 'moveDown', $Name, $RuleClass, $CIDRAM['L10N']->getString('label_aux_move_down'));
+                    }
                     $Options['moveToBottom'] = sprintf($Options[0], 'moveToBottom', $Name, $RuleClass, $CIDRAM['L10N']->getString('label_aux_move_bottom'));
                 }
             }
@@ -4448,4 +4454,86 @@ $CIDRAM['PaginationFromLink'] = function ($Label, $Needle) use (&$CIDRAM) {
         $Link .= '&search=' . $CIDRAM['QueryVars']['search'];
     }
     $CIDRAM['FE']['SearchInfo'] .= sprintf(' %s <a href="%s">%s</a>', $CIDRAM['L10N']->getString($Label), $Link, $Needle);
+};
+
+/**
+ * Swaps an element in an array to the top or the bottom.
+ *
+ * @param array $Arr The array to be worked.
+ * @param string $Target The key of the element to be swapped.
+ * @param bool $Direction False for top, true for bottom.
+ * @return array The worked array.
+ */
+$CIDRAM['SwapAssocArrayElementTopBottom'] = function (array $Arr, $Target, $Direction) {
+    if (!isset($Arr[$Target])) {
+        return $Arr;
+    }
+    $Split = [$Target => $Arr[$Target]];
+    unset($Arr[$Target]);
+    $Arr = $Direction ? array_merge($Arr, $Split) : array_merge($Split, $Arr);
+    return $Arr;
+};
+
+/**
+ * Swaps the position of an element in an associative array up or down by one.
+ *
+ * @param array $Arr The associative array to be worked.
+ * @param string $Target The key of the element to be swapped.
+ * @param bool $Direction False for up, true for down.
+ * @return array The worked array.
+ */
+$CIDRAM['SwapAssocArrayElementUpDown'] = function (array $Arr, $Target, $Direction) {
+    if (!isset($Arr[$Target])) {
+        return $Arr;
+    }
+    $Keys = [];
+    $Values = [];
+    $Index = 0;
+    foreach ($Arr as $Key => $Value) {
+        $Keys[$Index] = $Key;
+        $Values[$Index] = $Value;
+        if ($Key === $Target) {
+            $TargetIndex = $Index;
+        }
+        $Index++;
+    }
+    if (!isset($TargetIndex, $Keys[$TargetIndex], $Values[$TargetIndex])) {
+        return $Arr;
+    }
+    $Split = [$Keys[$TargetIndex], $Values[$TargetIndex]];
+    if ($Direction) {
+        if (!isset($Keys[$TargetIndex + 1], $Values[$TargetIndex + 1])) {
+            return $Arr;
+        }
+        $Keys[$TargetIndex] = $Keys[$TargetIndex + 1];
+        $Values[$TargetIndex] = $Values[$TargetIndex + 1];
+        $Keys[$TargetIndex + 1] = $Split[0];
+        $Values[$TargetIndex + 1] = $Split[1];
+    } else {
+        if (!isset($Keys[$TargetIndex - 1], $Values[$TargetIndex - 1])) {
+            return $Arr;
+        }
+        $Keys[$TargetIndex] = $Keys[$TargetIndex - 1];
+        $Values[$TargetIndex] = $Values[$TargetIndex - 1];
+        $Keys[$TargetIndex - 1] = $Split[0];
+        $Values[$TargetIndex - 1] = $Split[1];
+    }
+    return array_combine($Keys, $Values);
+};
+
+/**
+ * Reconstructs and updates the auxiliary rules data.
+ *
+ * @return bool True when succeeded.
+ */
+$CIDRAM['ReconstructUpdateAuxData'] = function () use (&$CIDRAM) {
+    if (($NewAuxData = $CIDRAM['YAML']->reconstruct($CIDRAM['AuxData'])) && strlen($NewAuxData) > 2) {
+        $Handle = fopen($CIDRAM['Vault'] . 'auxiliary.yaml', 'wb');
+        if ($Handle !== false) {
+            fwrite($Handle, $NewAuxData);
+            fclose($Handle);
+            return true;
+        }
+    }
+    return false;
 };

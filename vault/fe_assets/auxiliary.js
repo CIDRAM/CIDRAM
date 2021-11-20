@@ -17,6 +17,18 @@ function moveToBottom(a, i) {
   })
 }
 
+function moveUp(a, i) {
+  window.auxMU = a, $('POST', '', ['auxMU'], null, function(a) {
+    window.location.reload()
+  })
+}
+
+function moveDown(a, i) {
+  window.auxMD = a, $('POST', '', ['auxMD'], null, function(a) {
+    window.location.reload()
+  })
+}
+
 function onAuxActionChange(e, p, i) {
   if (i.length > 0) {
     var statusCode = document.querySelector('input[name="statusCode['+i+']"]:checked').value || 200;

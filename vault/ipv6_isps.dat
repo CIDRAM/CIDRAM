@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6_isps.dat
 
-# Version: 2021.314.500
-# Last modified: 2021.11.11
+# Version: 2021.324.194
+# Last modified: 2021.11.21
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -87,29 +87,18 @@ Tag: PT Excelcomindo
 
 
 # ASN 3223 ("Voxility LLC").
-# Server farm, internet access provider, webhosting, multiplay provider.
-# Stop Forum Spam (SFS) listings: 1,796.
-# Updated: 2021.03.20
+# Infrastructure provider. Various server farms, ISPs, webhosts, etc route
+# through here. Spam and other unwanted traffic detected from here.
+# Stop Forum Spam (SFS) listings: 1,241.
+# Updated: 2021.11.21
 
-2a03:5180::/47 Deny Generic
-2a03:5180:3::/48 Deny Generic
-2a03:5180:4::/46 Deny Generic
-2a03:5180:8::/45 Deny Generic
-2a03:5180:10::/47 Deny Generic
+2a03:5180::/44 Deny Spam
+2a03:5180:10::/47 Deny Spam
 Origin: RO
-2602:ff84:8::/48 Deny Generic
+2602:ff84:8::/48 Deny Spam
 Origin: US
-Profile: Domestic ISP;Frequent changes;Multiplay;Tor endpoints here;Webhosting
+Profile: Frequent changes;Infrastructure/Transit;Tor endpoints here
 Tag: Voxility LLC
-
-
-# ASN 49335 ("Mir Telematiki Ltd").
-# An ongoing source of all kinds of spam.
-# Dead at last check. Will remove at the next update if no change.
-# Updated: 2021.03.18
-
-#<redacted>
-Tag: Mir Telematiki Ltd
 
 
 # ASNs 42708, 43948 ("GleSYS AB").
@@ -144,33 +133,15 @@ Tag: PIN-AS
 
 # ASN 8551 ("Bezeq International-Ltd").
 # Domestic Israeli ISP with human endpoints, but has some bad actors (spambots,
-# scrapers, etc). Included in ignore.dat by default to reduce the false
-# positive risk. Non-IL ranges marked as cloud.
-# Stop Forum Spam (SFS) listings: 423.
-# Updated: 2021.04.04
+# scrapers, etc). Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 518.
+# Updated: 2021.11.21
 
-2001:4cd0::/29 Deny Generic
-2a10:8000::/28 Deny Generic
+2a10:8004:9817::/48 Deny Spam
+2a10:800c:46a6::/48 Deny Spam
 Origin: IL
-2a02:26f0:8000::/48 Deny Cloud
-Origin: NL
-2620:11b:e0be::/48 Deny Cloud
-Origin: US
 Profile: Domestic ISP
 Tag: Bezeq International
-
-
-# ASN 9116 ("012 Smile Communications LTD").
-# Subsidiary of Bezeq International. Israeli domestic ISP. Also a source of
-# forum/blog spam. Websites intended for Israeli users are encouraged to list
-# this section in their ignore.dat file to reduce the false positive risk.
-# Stop Forum Spam (SFS) listings: 11,857.
-# Updated: 2016.12.10 / Checked: 2021.05.28
-
-2001:40a8::/32 Deny Spam
-Origin: IL
-Profile: Domestic ISP;Tor endpoints here
-Tag: 012 Smile
 
 
 # ASN 35804 ("PP SKS-LUGAN").
@@ -1442,18 +1413,22 @@ Tag: EPM Telecomunicaciones
 
 
 # ASN 6830 ("Liberty Global B.V").
-# Source of forum spam and some email harvestors.
-# Stripped back to just the specific offending addresses/ranges (2020.09) to
-# reduce the risk of false positives.
-# Stop Forum Spam (SFS) listings: 13,491.
-# Updated: 2021.03.19
+# European international 5G and fibre provider. Brute-force, WordPress, and
+# webapp attacks, port scans, email harvestors, and spam detected from here.
+# Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 8,269.
+# Updated: 2021.11.21
 
-2a02:908:1014:7880::/64 Deny Spam
-Origin: DE
-2a02:a312:603f:8e00::/64 Deny Spam
-2a02:a317:8242:8300::/64 Deny Spam
+2a02:8084:2165:7780::/64 Deny Spam
+2a02:8084:5140:1a00::/64 Deny Spam
+2a02:8085:81be:b380::/64 Deny Spam
+Origin: IE
+2a02:a311:a23e:c180::/64 Deny Spam
+2a02:a31d:820f:6d00::/64 Deny Spam
 Origin: PL
-Profile: Tor endpoints here
+2a02:ab04:2b44::/48 Deny Spam
+Origin: SK
+Profile: Domestic ISP;Infrastructure/Transit;Multiplay;Tor endpoints here
 Tag: Liberty Global
 
 

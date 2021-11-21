@@ -1,6 +1,6 @@
 [![Join the chat at https://gitter.im/CIDRAM/Lobby](https://badges.gitter.im/CIDRAM/Lobby.svg)](https://gitter.im/CIDRAM/Lobby)
-[![v1: PHP >= 5.4.0](https://img.shields.io/badge/v1-PHP%20%3E%3D%205.4.0-8892bf.svg)](https://maikuolan.github.io/Compatibility-Charts/)
-[![v2: PHP >= 7.2.0](https://img.shields.io/badge/v2-PHP%20%3E%3D%207.2.0-8892bf.svg)](https://maikuolan.github.io/Compatibility-Charts/)
+[![v1: PHP >= 5.4](https://img.shields.io/badge/v1-PHP%20%3E%3D%205.4-8892bf.svg)](https://maikuolan.github.io/Compatibility-Charts/)
+[![v2~v3: PHP >= 7.2](https://img.shields.io/badge/v2%7Ev3-PHP%20%3E%3D%207.2-8892bf.svg)](https://maikuolan.github.io/Compatibility-Charts/)
 [![License: GPL v2](https://img.shields.io/badge/License-GPL%20v2-blue.svg)](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html)
 [![PRs Welcome](https://img.shields.io/badge/PRs-Welcome-brightgreen.svg)](http://makeapullrequest.com)
 
@@ -47,19 +47,4 @@ CIDRAM (Classless Inter-Domain Routing Access Manager) is a PHP script designed 
 ---
 
 
-### Current major version development status:
-
-⬇Stage reached⬇ ➡Major version➡ | v0 | v1-v2 | v3
-:--|:-:|:-:|:-:
-Pre-Alpha<em><br />- Exploring early concepts/ideas. No code written/available yet.</em> | ✔ | ✔ | ✔
-Alpha<em><br />- Branched, but unstable. Not production-ready (high risk if used).</em> | ✔ | ✔
-Beta<em><br />- Branched, but unstable. Not production-ready (low risk if used).</em> | ✔ | ✔
-Stable<em><br />- First production-ready version has been tagged/released.</em> | ✔ | ✔
-Mature<em><br />- Multiple stable versions/releases exist.</em> | ✔ | ✔
-Locked<em><br />- Still maintained, but new features won't be implemented anymore.</em> | ✔
-EoL/Dead<em><br />- Not maintained anymore. If possible, stop using, and update ASAP.</em> | ✔
-
----
-
-
-Last Updated: 10 June 2020 (2020.06.10).
+Last Updated: 21 November 2021 (2021.11.21).

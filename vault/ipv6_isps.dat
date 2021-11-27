@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6_isps.dat
 
-# Version: 2021.324.194
-# Last modified: 2021.11.21
+# Version: 2021.330.376
+# Last modified: 2021.11.27
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -1391,27 +1391,6 @@ Profile: Domestic ISP;Infrastructure/Transit
 Tag: CMC Telecom
 
 
-# ASN 13489 ("EPM Telecomunicaciones S.A. E.S.P").
-# Source of forum spam and some email harvestors.
-# (Mark NL/US CIDRs as cloud; the rest as spam).
-# Stop Forum Spam (SFS) listings: 7,504.
-# Updated: 2021.03.21
-
-2800:e0::/28 Deny Spam
-2801:13:2800::/48 Deny Spam
-2801:17:2800::/48 Deny Spam
-2801:1a:6800::/48 Deny Spam
-2801:1d:4800::/48 Deny Spam
-2801:11c:c0::/44 Deny Spam
-2801:156::/48 Deny Spam
-2801:162::/48 Deny Spam
-2801:1d6::/40 Deny Spam
-2803:d80::/29 Deny Spam
-2803:87a0::/32 Deny Spam
-Origin: CO
-Tag: EPM Telecomunicaciones
-
-
 # ASN 6830 ("Liberty Global B.V").
 # European international 5G and fibre provider. Brute-force, WordPress, and
 # webapp attacks, port scans, email harvestors, and spam detected from here.
@@ -2104,3 +2083,15 @@ Tag: RadioLAN
 Origin: AU
 Profile: Domestic ISP;Multiplay
 Tag: Intergrid Group Pty Ltd
+
+
+# ASN 23243 ("COMCEL GUATEMALA S.A").
+# Guatemalan domestic ISP. Webapp attacks, hacking, and spam detected from
+# here. Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 131.
+# Updated: 2021.11.27
+
+2803:c800:40ba:3b6b::/64 Deny Spam
+Origin: GT
+Profile: Domestic ISP
+Tag: COMCEL GUATEMALA S.A

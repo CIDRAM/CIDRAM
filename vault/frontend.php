@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2021.11.20).
+ * This file: Front-end handler (last modified: 2021.11.27).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -1211,6 +1211,9 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
     $CIDRAM['RegenerateConfig'] = '';
     $CIDRAM['ConfigModified'] = (!empty($CIDRAM['QueryVars']['updated']) && $CIDRAM['QueryVars']['updated'] === 'true');
 
+    /** For required extensions, classes, etc. */
+    $CIDRAM['ReqsLookupCache'] = [];
+
     /** Iterate through configuration defaults. */
     foreach ($CIDRAM['Config']['Config Defaults'] as $CIDRAM['CatKey'] => $CIDRAM['CatValue']) {
         if (!is_array($CIDRAM['CatValue'])) {
@@ -1590,6 +1593,38 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
                 );
             }
             $CIDRAM['ThisDir']['FieldOut'] .= $CIDRAM['ThisDir']['Preview'];
+
+            /** Check extension and class requirements. */
+            if (!empty($CIDRAM['DirValue']['required'])) {
+                $CIDRAM['ThisDir']['FieldOut'] .= '<small>';
+                foreach ($CIDRAM['DirValue']['required'] as $CIDRAM['DirValue']['Requirement'] => $CIDRAM['DirValue']['Friendly']) {
+                    if (isset($CIDRAM['ReqsLookupCache'][$CIDRAM['DirValue']['Requirement']])) {
+                        $CIDRAM['ThisDir']['FieldOut'] .= $CIDRAM['ReqsLookupCache'][$CIDRAM['DirValue']['Requirement']];
+                        continue;
+                    }
+                    if (substr($CIDRAM['DirValue']['Requirement'], 0, 1) === "\\") {
+                        $CIDRAM['ReqsLookupCache'][$CIDRAM['DirValue']['Requirement']] = '<br /><span class="txtGn">✔️ ' . sprintf(
+                            $CIDRAM['L10N']->getString('label_is_available_class'),
+                            $CIDRAM['DirValue']['Friendly']
+                        ) . '</span>';
+                    } elseif (extension_loaded($CIDRAM['DirValue']['Requirement'])) {
+                        $CIDRAM['DirValue']['ReqVersion'] = (new \ReflectionExtension($CIDRAM['DirValue']['Requirement']))->getVersion();
+                        $CIDRAM['ReqsLookupCache'][$CIDRAM['DirValue']['Requirement']] = '<br /><span class="txtGn">✔️ ' . sprintf(
+                            $CIDRAM['L10N']->getString('label_is_available'),
+                            $CIDRAM['DirValue']['Friendly'],
+                            $CIDRAM['DirValue']['ReqVersion']
+                        ) . '</span>';
+                    } else {
+                        $CIDRAM['ReqsLookupCache'][$CIDRAM['DirValue']['Requirement']] = '<br /><span class="txtRd">❌ ' . sprintf(
+                            $CIDRAM['L10N']->getString('label_is_not_available'),
+                            $CIDRAM['DirValue']['Friendly']
+                        ) . '</span>';
+                    }
+                    $CIDRAM['ThisDir']['FieldOut'] .= $CIDRAM['ReqsLookupCache'][$CIDRAM['DirValue']['Requirement']];
+                }
+                $CIDRAM['ThisDir']['FieldOut'] .= '</small>';
+            }
+
             if (!empty($CIDRAM['DirValue']['See also']) && is_array($CIDRAM['DirValue']['See also'])) {
                 $CIDRAM['ThisDir']['FieldOut'] .= sprintf("\n<br /><br />%s<ul>\n", $CIDRAM['L10N']->getString('label_see_also'));
                 foreach ($CIDRAM['DirValue']['See also'] as $CIDRAM['DirValue']['Ref key'] => $CIDRAM['DirValue']['Ref link']) {
@@ -1617,6 +1652,9 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
         $CIDRAM['FE']['ConfigFields'] .= "</table></span>\n";
         $CIDRAM['RegenerateConfig'] .= "\r\n";
     }
+
+    /** Cleanup. */
+    unset($CIDRAM['ReqsLookupCache']);
 
     /** Update the currently active configuration file if any changes were made. */
     if ($CIDRAM['ConfigModified']) {

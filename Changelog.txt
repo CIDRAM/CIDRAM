@@ -13,7 +13,12 @@ Detailed version release guidelines for CIDRAM can be found at:
 - [2021.11.27; Maikuolan]: At the front-end configuration page,
   configuration directives relying on specific extensions (specifically, at
   this time, the supplementary cache options) will now include a notice as
-  to whether the extension relied upon is available.
+  to whether the extensions relied upon are available.
+
+- [2021.11.29; Maikuolan]: Rate limiting now leverages the supplementary cache
+  options, making it possible to store rate limiting data with APCu, Memcached,
+  Redis, etc, instead of the standard rl.dat file.
+  Refer github.com/CIDRAM/CIDRAM/issues/251
 
 === Version/Release 2.7.0 ===
 MINOR RELEASE.

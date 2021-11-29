@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2021.11.20).
+ * This file: Front-end functions file (last modified: 2021.11.29).
  */
 
 /**
@@ -1082,7 +1082,6 @@ $CIDRAM['Formatter'] = function (string &$In, string $BlockLink = '', string $Cu
     $Caret = 0;
     $BlockSeparator = (strpos($In, "<br />\n<br />\n") !== false) ? "<br />\n<br />\n" : "<br />\n";
     $BlockSeparatorLen = strlen($BlockSeparator);
-    $Demojibakefier = new \Maikuolan\Common\Demojibakefier();
     while ($Caret < $Len) {
         $Remainder = $Len - $Caret;
         if ($Remainder < \CIDRAM\Core\Constants::MAX_BLOCKSIZE && $Remainder < ini_get('pcre.backtrack_limit')) {
@@ -1115,10 +1114,10 @@ $CIDRAM['Formatter'] = function (string &$In, string $BlockLink = '', string $Cu
             $Parts[2] = array_unique($Parts[2]);
             foreach ($Parts[2] as $ThisPart) {
                 $ThisPartUnsafe = str_replace(['&gt;', '&lt;'], ['>', '<'], $ThisPart);
-                $TestString = $Demojibakefier->guard($ThisPartUnsafe);
+                $TestString = $CIDRAM['Demojibakefier']->guard($ThisPartUnsafe);
                 $Alternate = (
-                    $TestString !== $ThisPartUnsafe && $Demojibakefier->Last
-                ) ? '<code dir="ltr">🔁' . $Demojibakefier->Last . '➡️UTF-8' . $FieldSeparator . '</code>' . str_replace(['<', '>'], ['&lt;', '&gt;'], $TestString) . "<br />\n" : '';
+                    $TestString !== $ThisPartUnsafe && $CIDRAM['Demojibakefier']->Last
+                ) ? '<code dir="ltr">🔁' . $CIDRAM['Demojibakefier']->Last . '➡️UTF-8' . $FieldSeparator . '</code>' . str_replace(['<', '>'], ['&lt;', '&gt;'], $TestString) . "<br />\n" : '';
                 if (!$ThisPart || $ThisPart === $Current) {
                     $Section = str_replace(
                         $FieldSeparator . $ThisPart . "<br />\n",
@@ -1411,6 +1410,9 @@ $CIDRAM['WP-Ver'] = function () use (&$CIDRAM): void {
 
 /** Used to format numbers according to the specified configuration. */
 $CIDRAM['NumberFormatter'] = new \Maikuolan\Common\NumberFormatter($CIDRAM['Config']['general']['numbers']);
+
+/** Used to ensure correct encoding, hide bad data, etc. */
+$CIDRAM['Demojibakefier'] = new \Maikuolan\Common\Demojibakefier();
 
 /**
  * Generates JavaScript code for localising numbers locally.
@@ -3905,6 +3907,9 @@ $CIDRAM['ArrayToClickableList'] = function (array $Arr = [], string $DeleteKey =
     $Count = count($Arr);
     $Prefix = substr($DeleteKey, 0, 2) === 'fe' ? 'FE' : '';
     foreach ($Arr as $Key => $Value) {
+        if (is_string($Value) && !$CIDRAM['Demojibakefier']->checkConformity($Value)) {
+            continue;
+        }
         $Delete = ($Depth === 0) ? ' – (<span style="cursor:pointer" onclick="javascript:' . $DeleteKey . '(\'' . addslashes($Key) . '\')"><code class="s">' . $CIDRAM['L10N']->getString('field_delete') . '</code></span>)' : '';
         $Output .= ($Depth === 0 ? '<span id="' . $Key . $Prefix . 'Container">' : '') . '<li>';
         if (!is_array($Value)) {

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Output generator (last modified: 2021.07.13).
+ * This file: Output generator (last modified: 2021.11.29).
  */
 
 /** Initialise cache. */
@@ -334,7 +334,7 @@ if ($CIDRAM['RL_Active'] && isset($CIDRAM['Factors']) && (!$CIDRAM['Config']['ra
     }
     if (!empty($CIDRAM['RL_Capture'])) {
         $CIDRAM['RL_Capture'] = pack('l*', strlen($CIDRAM['RL_Capture'])) . $CIDRAM['RL_Capture'];
-        $CIDRAM['RL_Data'] = $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'rl.dat');
+        $CIDRAM['RL_Fetch']();
         if (strlen($CIDRAM['RL_Data']) > 4) {
             $CIDRAM['RL_Expired'] = $CIDRAM['Now'] - ($CIDRAM['Config']['rate_limiting']['allowance_period'] * 3600);
             $CIDRAM['RL_Oldest'] = unpack('l*', substr($CIDRAM['RL_Data'], 0, 4));
@@ -361,6 +361,7 @@ if ($CIDRAM['RL_Active'] && isset($CIDRAM['Factors']) && (!$CIDRAM['Config']['ra
         }, 1);
         register_shutdown_function(function () use (&$CIDRAM) {
             $CIDRAM['RL_WriteEvent']($CIDRAM['RL_Capture'], $CIDRAM['RL_Size']);
+            $CIDRAM['DestroyCacheObject']();
             ob_end_flush();
         });
     }
@@ -446,7 +447,9 @@ if ($CIDRAM['Config']['general']['statistics'] && $CIDRAM['BlockInfo']['Signatur
 }
 
 /** Destroy cache object and some related values. */
-$CIDRAM['DestroyCacheObject']();
+if (empty($CIDRAM['RL_Capture'])) {
+    $CIDRAM['DestroyCacheObject']();
+}
 
 /** Process webhooks. */
 if (!empty($CIDRAM['Webhooks']) || !empty($CIDRAM['Config']['Webhook']['URL'])) {

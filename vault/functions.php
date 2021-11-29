@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2021.10.30).
+ * This file: Functions file (last modified: 2021.11.29).
  */
 
 /**
@@ -2330,6 +2330,22 @@ $CIDRAM['AuxIntFromString'] = function ($Value) {
 };
 
 /**
+ * Fetch rate limiting data.
+ *
+ * @return void
+ */
+$CIDRAM['RL_Fetch'] = function () use (&$CIDRAM) {
+    /** Override if using a different preferred caching mechanism. */
+    if ($CIDRAM['Cache']->Using && $CIDRAM['Cache']->Using !== 'FF') {
+        $CIDRAM['RL_Data'] = $CIDRAM['Cache']->getEntry('rl');
+        return;
+    }
+
+    /** Default process. */
+    $CIDRAM['RL_Data'] = $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'rl.dat');
+};
+
+/**
  * Write an access event to the rate limiting cache.
  *
  * @param string $RL_Capture What we've captured to identify the requesting entity.
@@ -2340,6 +2356,14 @@ $CIDRAM['RL_WriteEvent'] = function ($RL_Capture, $RL_Size) use (&$CIDRAM) {
     $TimePacked = pack('l*', $CIDRAM['Now']);
     $SizePacked = pack('l*', $RL_Size);
     $Data = $TimePacked . $SizePacked . $RL_Capture;
+
+    /** Override if using a different preferred caching mechanism. */
+    if ($CIDRAM['Cache']->Using && $CIDRAM['Cache']->Using !== 'FF') {
+        $CIDRAM['Cache']->setEntry('rl', $CIDRAM['RL_Data'] . $Data, $CIDRAM['Config']['rate_limiting']['allowance_period'] * 3600);
+        return;
+    }
+
+    /** Default process. */
     $Handle = fopen($CIDRAM['Vault'] . 'rl.dat', 'ab');
     fwrite($Handle, $Data);
     fclose($Handle);
@@ -2375,6 +2399,14 @@ $CIDRAM['RL_Clean'] = function () use (&$CIDRAM) {
         if ($CIDRAM['RL_Data']) {
             $CIDRAM['RL_Data'] = substr($CIDRAM['RL_Data'], $Pos);
         }
+
+        /** Override if using a different preferred caching mechanism. */
+        if ($CIDRAM['Cache']->Using && $CIDRAM['Cache']->Using !== 'FF') {
+            $CIDRAM['Cache']->setEntry('rl', $CIDRAM['RL_Data'], $CIDRAM['Config']['rate_limiting']['allowance_period'] * 3600);
+            return;
+        }
+
+        /** Default process. */
         $Handle = fopen($CIDRAM['Vault'] . 'rl.dat', 'wb');
         fwrite($Handle, $CIDRAM['RL_Data']);
         fclose($Handle);

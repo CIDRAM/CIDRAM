@@ -7,12 +7,11 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Alternative channels data for failed curl requests (last modified: 2020.07.27).
+# This file: Alternative channels data for failed curl requests (last modified: 2020.11.30).
 ##/
 
 Triggers:
  GitHub: "https://raw.githubusercontent.com/"
- macmathan.info: "https://git.macmathan.info/"
  BitBucket: "https://bitbucket.org/"
  GoogleDNS: "https://dns.google.com/resolve"
 GitHub:
@@ -31,17 +30,6 @@ GitHub:
  Charts:
   GitHub: "https://raw.githubusercontent.com/Maikuolan/Compatibility-Charts/"
   BitBucket: "https://bitbucket.org/Maikuolan/compatibility-charts/raw/"
-macmathan.info:
- Macmathan's blocklists:
-  macmathan.info: "https://git.macmathan.info/blocklists/raw/downloads"
-  NotABug: "https://notabug.org/macmathan/blocklists/raw/downloads"
-BitBucket:
- Fix broken link (Macmathan's blocklists):
-  BitBucket: "https://bitbucket.org/macmathan/blocklists/raw/downloads"
-  macmathan.info: "https://git.macmathan.info/blocklists/raw/downloads"
- Fix master to downloads (Macmathan's blocklists):
-  BitBucket: "https://bitbucket.org/macmathan/blocklists/raw/master"
-  macmathan.info: "https://git.macmathan.info/blocklists/raw/downloads"
 GoogleDNS:
  Used to forcibly disable Gooogle DNS (no alternative channels):
   GoogleDNS: "https://dns.google.com/resolve"

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2021.11.27).
+ * This file: Front-end handler (last modified: 2021.11.30).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -227,6 +227,8 @@ if (empty($CIDRAM['L10N']->Data['Text Direction']) || $CIDRAM['L10N']->Data['Tex
     $CIDRAM['FE']['FE_Align_Reverse'] = 'right';
     $CIDRAM['FE']['FE_Align_Mode'] = 'lr';
     $CIDRAM['FE']['PIP_Input'] = $CIDRAM['FE']['PIP_Right'];
+    $CIDRAM['FE']['PIP_Input_Valid'] = $CIDRAM['FE']['PIP_Right_Valid'];
+    $CIDRAM['FE']['PIP_Input_Invalid'] = $CIDRAM['FE']['PIP_Right_Invalid'];
     $CIDRAM['FE']['Gradient_Degree'] = 90;
     $CIDRAM['FE']['Half_Border'] = 'solid solid none none';
     $CIDRAM['FE']['45deg'] = '45deg';
@@ -235,6 +237,8 @@ if (empty($CIDRAM['L10N']->Data['Text Direction']) || $CIDRAM['L10N']->Data['Tex
     $CIDRAM['FE']['FE_Align_Reverse'] = 'left';
     $CIDRAM['FE']['FE_Align_Mode'] = 'rl';
     $CIDRAM['FE']['PIP_Input'] = $CIDRAM['FE']['PIP_Left'];
+    $CIDRAM['FE']['PIP_Input_Valid'] = $CIDRAM['FE']['PIP_Left_Valid'];
+    $CIDRAM['FE']['PIP_Input_Invalid'] = $CIDRAM['FE']['PIP_Left_Invalid'];
     $CIDRAM['FE']['Gradient_Degree'] = 270;
     $CIDRAM['FE']['Half_Border'] = 'solid none none solid';
     $CIDRAM['FE']['45deg'] = '-45deg';

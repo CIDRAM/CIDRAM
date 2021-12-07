@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6_isps.dat
 
-# Version: 2021.330.376
-# Last modified: 2021.11.27
+# Version: 2021.339.0
+# Last modified: 2021.12.07
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -229,99 +229,49 @@ Tag: SITI NETWORKS LTD
 
 
 # ASN 45271 ("Idea Cellular Limited").
-# Significant source of forum/blog spam. Also a legit Indian ISP with human
-# endpoints. Websites based in, or targeted towards an Indian audience, should
-# keep it listed in their ignore.dat file.
-# Stop Forum Spam (SFS) listings: 1,981.
-# Updated: 2021.03.25
+# Indian mobile and internet provider. Brute-force, SSH, and webapp attacks,
+# port scans, hacking, and spam detected from here.
+# Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 3,343.
+# Updated: 2021.12.07
 
-2402:8100:b::/48 Deny Spam
-2402:8100:ca0::/44 Deny Spam
-2402:8100:2008::/45 Deny Spam
-2402:8100:2010::/44 Deny Spam
-2402:8100:2020::/43 Deny Spam
-2402:8100:2040::/42 Deny Spam
-2402:8100:2080::/42 Deny Spam
-2402:8100:20c0::/48 Deny Spam
-2402:8100:20c4::/47 Deny Spam
-2402:8100:20c7::/48 Deny Spam
-2402:8100:20cb::/48 Deny Spam
-2402:8100:20cd::/48 Deny Spam
-2402:8100:20ce::/47 Deny Spam
-2402:8100:20d0::/47 Deny Spam
-2402:8100:20d3::/48 Deny Spam
-2402:8100:20d4::/48 Deny Spam
-2402:8100:20d8::/47 Deny Spam
-2402:8100:2100::/45 Deny Spam
-2402:8100:2108::/46 Deny Spam
-2402:8100:210c::/47 Deny Spam
-2402:8100:2110::/45 Deny Spam
-2402:8100:2118::/46 Deny Spam
-2402:8100:211c::/47 Deny Spam
-2402:8100:2140::/42 Deny Spam
-2402:8100:2180::/43 Deny Spam
-2402:8100:21c0::/45 Deny Spam
-2402:8100:21d0::/45 Deny Spam
-2402:8100:21e0::/43 Deny Spam
-2402:8100:2200::/43 Deny Spam
-2402:8100:2240::/42 Deny Spam
-2402:8100:2280::/41 Deny Spam
-2402:8100:2300::/42 Deny Spam
-2402:8100:2340::/43 Deny Spam
-2402:8100:2380::/41 Deny Spam
-2402:8100:2400::/43 Deny Spam
-2402:8100:24c0::/42 Deny Spam
-2402:8100:2510::/44 Deny Spam
-2402:8100:2520::/43 Deny Spam
-2402:8100:2540::/44 Deny Spam
-2402:8100:2560::/44 Deny Spam
-2402:8100:2570::/45 Deny Spam
-2402:8100:2578::/47 Deny Spam
-2402:8100:2800::/41 Deny Spam
-2402:8100:2880::/44 Deny Spam
-2402:8100:2890::/45 Deny Spam
-2402:8100:2898::/46 Deny Spam
-2402:8100:289c::/47 Deny Spam
-2402:8100:3000::/43 Deny Spam
-2402:8100:3020::/44 Deny Spam
-2402:8100:3030::/48 Deny Spam
-2402:8100:3038::/45 Deny Spam
-2402:8100:3040::/44 Deny Spam
-2402:8100:3050::/45 Deny Spam
-2402:8100:3080::/43 Deny Spam
-2402:8100:30a0::/44 Deny Spam
-2402:8100:30d0::/44 Deny Spam
-2402:8100:30f0::/44 Deny Spam
-2402:8100:3804::/46 Deny Spam
-2402:8100:3820::/44 Deny Spam
-2402:8100:3830::/45 Deny Spam
-2402:8100:383c::/46 Deny Spam
-2402:8100:3840::/42 Deny Spam
-2402:8100:38c0::/42 Deny Spam
-2402:8100:3900::/43 Deny Spam
-2402:8100:3920::/45 Deny Spam
-2402:8100:3928::/48 Deny Spam
-2402:8100:3940::/42 Deny Spam
-2402:8100:3980::/44 Deny Spam
-2402:8100:3990::/45 Deny Spam
-2402:8100:3998::/46 Deny Spam
-2402:8100:399c::/47 Deny Spam
-2402:8100:399e::/48 Deny Spam
-2402:8100:39a0::/44 Deny Spam
-2402:8100:39c0::/45 Deny Spam
-2402:8100:39c8::/46 Deny Spam
-2402:8100:39cc::/48 Deny Spam
-2402:8100:39d0::/44 Deny Spam
-2402:8100:39e0::/45 Deny Spam
-2402:8100:39e8::/46 Deny Spam
-2402:8100:39ec::/48 Deny Spam
-2402:8100:39f0::/44 Deny Spam
-2402:8100:3a00::/42 Deny Spam
-2402:8100:3a40::/45 Deny Spam
-2402:8100:3a48::/46 Deny Spam
-2402:8100:3a4c::/47 Deny Spam
-2402:8100:3a4e::/48 Deny Spam
+2402:8100:200e:ea87::/64 Deny Spam
+2402:8100:2028:fad2::/64 Deny Spam
+2402:8100:2029:91ca::/64 Deny Spam
+2402:8100:202a:bd22::/64 Deny Spam
+2402:8100:2039:f8d4::/64 Deny Spam
+2402:8100:203a:55c3::/64 Deny Spam
+2402:8100:203a:d186::/64 Deny Spam
+2402:8100:203b:5b5b::/64 Deny Spam
+2402:8100:2045:d17e::/64 Deny Spam
+2402:8100:2045:df56::/64 Deny Spam
+2402:8100:2046:3ad3::/64 Deny Spam
+2402:8100:2046:54a9::/64 Deny Spam
+2402:8100:2080:f6d::/64 Deny Spam
+2402:8100:2080:835e::/64 Deny Spam
+2402:8100:2080:872b::/64 Deny Spam
+2402:8100:2082:673::/64 Deny Spam
+2402:8100:2082:9257::/64 Deny Spam
+2402:8100:2083:1368::/64 Deny Spam
+2402:8100:2085:150c::/64 Deny Spam
+2402:8100:2085:25b9::/64 Deny Spam
+2402:8100:2085:2b6d::/64 Deny Spam
+2402:8100:2085:7d68::/64 Deny Spam
+2402:8100:2085:944d::/64 Deny Spam
+2402:8100:2085:e82d::/64 Deny Spam
+2402:8100:2086:cf73::/64 Deny Spam
+2402:8100:2095:dd21::/64 Deny Spam
+2402:8100:2181:bfac::/64 Deny Spam
+2402:8100:2283:13ff::/64 Deny Spam
+2402:8100:22db:4e39::/64 Deny Spam
+2402:8100:2390:4f29::/64 Deny Spam
+2402:8100:2862:fd62::/64 Deny Spam
+2402:8100:3859:7500::/64 Deny Spam
+2402:8100:3865:3004::/64 Deny Spam
+2402:8100:3920:15a9::/64 Deny Spam
+2402:8100:3a34:db09::/64 Deny Spam
 Origin: IN
+Profile: Domestic ISP;Multiplay
 Tag: Idea Cellular
 
 
@@ -796,8 +746,10 @@ Tag: Guangdong Mobile
 
 
 # ASN 12389 ("PJSC Rostelecom").
-# Stop Forum Spam (SFS) listings: 107,973.
-# Updated: 2021.03.23
+# Russian domestic ISP. Continuation of previous signatures section.
+# Listing this particular ASN in its entirety.
+# Stop Forum Spam (SFS) listings: 65,792.
+# Updated: 2021.03.23 / Checked: 2021.11.29
 
 2a00:1640::/32 Deny Spam
 2a00:1e88::/32 Deny Spam
@@ -1188,14 +1140,10 @@ Tag: Cox Spam IPs
 # ASN 27699 ("TELEFNICA BRASIL S.A").
 # Brazilian domestic ISP. Spam and hack attempts detected from here.
 # Listing just the affected address/ranges only.
-# Stop Forum Spam (SFS) listings: 3,398.
-# Updated: 2021.04.02
+# Stop Forum Spam (SFS) listings: 2,211.
+# Updated: 2021.11.30
 
-2804:431:c7db:2ab7::/64 Deny Spam
-2804:431:cfc3:8cc5::/64 Deny Spam
-2804:431:cfcd:b566::/64 Deny Spam
-2804:431:d7ff:6de1::/64 Deny Spam
-2804:431:f701:796e::/64 Deny Spam
+2804:431:cff0:b97e::/64 Deny Spam
 Origin: BR
 Profile: Domestic ISP
 Tag: TELEFNICA BRASIL S.A
@@ -1365,6 +1313,67 @@ Origin: MX
 Origin: US
 Profile: Domestic ISP
 Tag: Uninet
+
+
+# ASNs 10796, 11426, 11427, 20001, 20115 ("Charter Communications").
+# United States domestic ISP. Caught probing honeypots. Port scans and spam
+# also detected from here. Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 1,132 (AS10796), 1,152 (AS11426), 1,263 (AS11427), 1,799 (AS20001), 2,331 (AS20115).
+# Updated: 2021.12.02
+
+2600:6c40:5b00:252::/64 Deny Spam
+2600:6c50:57f:cd12::/64 Deny Spam
+2600:6c51:657f:a393::/64 Deny Spam
+2600:6c52:6000:59f::/64 Deny Spam
+2600:6c56:6200:451e::/64 Deny Spam
+2600:6c56:7100:2e8f::/64 Deny Spam
+2600:6c58:c00:3b40::/64 Deny Spam
+2600:6c5e:5e7f:ffb8::/64 Deny Spam
+2600:6c64:6d7f:951a::/64 Deny Spam
+2603:6010:2040:9c9c::/64 Deny Spam
+2603:6010:3900:67a::/64 Deny Spam
+2603:6010:4e01:7600::/64 Deny Spam
+2603:6010:6401:8630::/64 Deny Spam
+2603:6010:6e00:36f9::/64 Deny Spam
+2603:6010:7a06:21bc::/64 Deny Spam
+2603:6010:960d:62e9::/64 Deny Spam
+2603:6010:c000:3d35::/64 Deny Spam
+2603:6011:853f:ca00::/64 Deny Spam
+2603:6011:ce03:78bf::/64 Deny Spam
+2603:6011:e13f:ff81::/64 Deny Spam
+2603:6011:f900:2d59::/64 Deny Spam
+2603:6080:3a03:51b2::/64 Deny Spam
+2603:6080:5f06:f1d0::/64 Deny Spam
+2603:6080:9200:50::/64 Deny Spam
+2603:6080:a504:1142::/64 Deny Spam
+2603:6080:ab00:cab3::/64 Deny Spam
+2603:6081:5806:59e4::/64 Deny Spam
+2603:6081:7407:d690::/64 Deny Spam
+2603:6081:7f03:e708::/64 Deny Spam
+2603:6081:8006:7ce::/64 Deny Spam
+2603:6081:8a01:1eee::/64 Deny Spam
+2603:8000:f3b:80d8::/64 Deny Spam
+2603:8000:5f00:7ec::/64 Deny Spam
+2603:8000:6b41:375b::/64 Deny Spam
+2603:8000:8101:920c::/64 Deny Spam
+2603:8000:9701:9076::/64 Deny Spam
+2603:8000:ed03:d19::/64 Deny Spam
+2603:8000:f800:4a10::/64 Deny Spam
+2603:8001:f00:18cf::/64 Deny Spam
+2603:8001:3b02:5109::/64 Deny Spam
+2603:8001:4001:8b03::/64 Deny Spam
+2603:8080:1e02:700::/64 Deny Spam
+2603:8080:8a02:3f4d::/64 Deny Spam
+2603:8080:e902:4800::/64 Deny Spam
+2603:8080:fa00:dda::/64 Deny Spam
+2603:8081:5806:a000::/64 Deny Spam
+2603:8081:6f02:7852::/64 Deny Spam
+2603:8081:7101:1a00::/64 Deny Spam
+2603:8081:7340:2c84::/64 Deny Spam
+2603:8081:7f00:10ad::/64 Deny Spam
+Origin: US
+Profile: Domestic ISP
+Tag: Charter Communications
 
 
 # ASN 58055 ("Extratel Ltd").
@@ -1789,18 +1798,24 @@ Tag: TATA SKY BROADBAND PRIVATE LIMITED
 
 
 # ASNs 3209, 31334 ("Vodafone Deutschland GmbH").
-# German phone provider and domestic ISP. Significant levels of brute-force,
-# hack, webapp attacks, and spam detected from this network.
-# Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 837 (AS3209), 289 (AS31334).
-# Updated: 2021.03.25
+# German multiplay network. Brute-force and webapp attacks, hacking, and spam
+# detected from here. Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 1,693 (AS3209).
+# Updated: 2021.11.29
 
-2a02:8108:45bf:ac8a::/64 Deny Spam
+2a02:908:161:af20::/64 Deny Spam
+2a02:908:194:e600::/64 Deny Spam
+2a02:908:237:db00::/64 Deny Spam
+2a02:908:5a4:ff60::/64 Deny Spam
+2a02:908:8b0:9bc0::/64 Deny Spam
+2a02:908:1085:e480::/64 Deny Spam
+2a02:8070:da9:8300::/64 Deny Spam
+2a02:8108:780:fa70::/64 Deny Spam
+2a02:8108:1300:4a8::/64 Deny Spam
+2a02:8108:28bf:d7b8::/64 Deny Spam
 2a02:8109:9c0:462c::/64 Deny Spam
-2a02:8109:9a80:1ec4::/64 Deny Spam
-2a02:8109:a440:7180::/64 Deny Spam
 Origin: DE
-Profile: Domestic ISP
+Profile: Domestic ISP;Multiplay
 Tag: Vodafone Deutschland GmbH
 
 
@@ -2095,3 +2110,18 @@ Tag: Intergrid Group Pty Ltd
 Origin: GT
 Profile: Domestic ISP
 Tag: COMCEL GUATEMALA S.A
+
+
+# ASN 14080 ("Telmex Colombia S.A").
+# Colombian domestic ISP. Port scans and spam detected from here.
+# Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 1,980.
+# Updated: 2021.11.29
+
+2800:484:1088:e100::/64 Deny Spam
+2800:484:4074:ae00::/64 Deny Spam
+2800:484:4984:1800::/64 Deny Spam
+2800:484:4f8a:746c::/64 Deny Spam
+Origin: CO
+Profile: Domestic ISP
+Tag: Telmex Colombia S.A

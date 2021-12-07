@@ -10,82 +10,6 @@
 
 
 # ---
-# ASN 48159 ("Telecommunication Infrastructure Company").
-# Iranian transit provider. Port scans, IP theft, email harvesters, and scaping
-# detected originating from here.
-# Updated: 2021.10.15
-
-2a03:57c0::/32 Deny Attacks
-Origin: IR
-Profile: Infrastructure/Transit
-Tag: AS48159
-
-
-# ASN 12880 ("Information Technology Company (ITC)").
-# Email harvesters, scrapers, brute-force attacks, port scans, hacking, and
-# spam detected from here.
-# Stop Forum Spam (SFS) listings: 238.
-# Updated: 2020.03.06 / Checked: 2021.11.02
-
-2001:4188::/48 Deny Attacks
-Origin: IR
-Profile: Commercial;Government;Infrastructure/Transit;University
-Tag: AS12880
-
-
-# ASN 45727 ("Hutchison CP Telecommunications, PT").
-# Major domestic Indonesian ISP. Spam, port scans, and brute-force, SSH, XSS,
-# FTP, and webapp attacks detected from here.
-# Stop Forum Spam (SFS) listings: 699.
-# Updated: 2021.05.28
-
-2400:8b00:100::/42 Deny Attacks
-2400:8b00:200::/42 Deny Attacks
-2400:8b00:300::/42 Deny Attacks
-2400:8b00:500::/43 Deny Attacks
-2400:8b00:530::/44 Deny Attacks
-2400:8b00:600::/42 Deny Attacks
-2400:8b00:700::/42 Deny Attacks
-2400:8b00:800::/42 Deny Attacks
-2400:8b00:980::/42 Deny Attacks
-2400:8b00:a00::/42 Deny Attacks
-2400:8b00:a80::/42 Deny Attacks
-2400:8b00:b00::/42 Deny Attacks
-2400:8b00:b80::/42 Deny Attacks
-2400:8b00:c00::/42 Deny Attacks
-2400:8b00:c80::/42 Deny Attacks
-2400:8b00:d00::/42 Deny Attacks
-2400:8b00:d80::/42 Deny Attacks
-2400:8b00:e00::/42 Deny Attacks
-2400:8b00:e80::/42 Deny Attacks
-2400:8b00:f00::/42 Deny Attacks
-2400:8b00:f80::/42 Deny Attacks
-2400:8b00:1000::/44 Deny Attacks
-2400:8b00:1600::/42 Deny Attacks
-2400:8b00:1800::/42 Deny Attacks
-2400:8b00:2000::/42 Deny Attacks
-2400:8b00:2100::/42 Deny Attacks
-2400:8b00:2180::/42 Deny Attacks
-2400:8b00:2280::/42 Deny Attacks
-Origin: ID
-Profile: Domestic ISP
-Tag: PT Hutchison
-
-
-# ASN 24203 ("PT Excelcomindo Pratama").
-# Indonesian fibre provider / domestic ISP. Spam and other unwanted traffic
-# detected from here. Mark US as cloud.
-# Stop Forum Spam (SFS) listings: 937.
-# Updated: 2017.12.08 / Checked: 2021.07.08
-
-2400:9800::/32 Deny Spam
-Origin: ID
-2600:1417:3000::/48 Deny Cloud
-Origin: US
-Profile: Domestic ISP
-Tag: PT Excelcomindo
-
-
 # ASN 3223 ("Voxility LLC").
 # Infrastructure provider. Various server farms, ISPs, webhosts, etc route
 # through here. Spam and other unwanted traffic detected from here.
@@ -211,21 +135,6 @@ Tag: TeNeT
 Origin: MD
 Profile: Commercial;Domestic ISP;Multiplay
 Tag: STARNET S.R.L
-
-
-# ASN 17747 ("SITI NETWORKS LIMITED").
-# Indian broadband provider. Spam, brute-force attacks, hacking, port scans,
-# malware, and other unwanted traffic detected from here. Homepage unavailable
-# for any further information.
-# Stop Forum Spam (SFS) listings: 4,025.
-# Updated: 2020.05.26 / Checked: 2021.06.20
-
-2402:ea80::/48 Deny Spam
-2406:3c80::/46 Deny Spam
-2406:3c80:5::/48 Deny Spam
-Origin: IN
-Profile: Domestic ISP
-Tag: SITI NETWORKS LTD
 
 
 # ASN 45271 ("Idea Cellular Limited").
@@ -724,10 +633,13 @@ Tag: Bharti Airtel
 # Phillipines domestic ISP. Spam, phishing, port scans, hacking, and
 # brute-force attacks detected from here. Listing just the affected
 # ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 163.
-# Updated: 2021.06.20
+# Stop Forum Spam (SFS) listings: 342.
+# Updated: 2021.12.07
 
-2404:3c00:483f:b910::/64 Deny Spam
+2404:3c00:502e:6cf0::/64 Deny Spam
+2404:3c00:502e:fb20::/64 Deny Spam
+2404:3c00:502f:34b0::/64 Deny Spam
+2404:3c00:c02f:f900::/64 Deny Spam
 Origin: PH
 Profile: Domestic ISP
 Tag: SKYBROADBAND
@@ -825,18 +737,6 @@ Tag: BKB Network
 2a0b:6200::/29 Deny Spam
 Origin: GE
 Tag: Magticom Ltd
-
-
-# ASN 7642 ("Dhivehi Raajjeyge Gulhun Plc (Dhiraagu)").
-# Maldives domestic ISP. Spam, DDoS, brute-force, SSH, and webapp attacks
-# detected from here.
-# Stop Forum Spam (SFS) listings: 78.
-# Updated: 2019.09.03 / Modified: 2021.06.25
-
-2406:e400::/32 Deny Attacks
-Origin: MV
-Profile: Domestic ISP
-Tag: Dhivehi Raajjeyge
 
 
 # ASN 196777 ("SKORUK ANDRIY OLEKSANDROVYCH").
@@ -1178,12 +1078,16 @@ Tag: Charter Communications
 
 
 # ASNs 17072, 22884 ("TOTAL PLAY TELECOMUNICACIONES SA DE CV").
-# Mexican domestic ISP; also a notable source of forum and blog spam. Listing
-# just the currently affected ranges (not the entire network).
+# Mexican domestic ISP. Brute-force, SSH attacks, and spam detected from here.
+# Listing just the affected ranges/addresses only.
 # Stop Forum Spam (SFS) listings: 545 (AS17072), 672 (AS22884).
-# Updated: 2020.12.25 / Checked: 2021.06.16
+# Updated: 2021.12.07
 
 2806:2f0:4021:46c8::/64 Deny Spam
+2806:2f0:8020:7866::/64 Deny Spam
+2806:2f0:81a0:1405::/64 Deny Spam
+2806:2f0:9020:4b8a::/64 Deny Spam
+2806:2f0:9180:fc24::/64 Deny Spam
 Origin: MX
 Profile: Domestic ISP
 Tag: TOTAL PLAY TELECOMUNICACIONES
@@ -1387,17 +1291,6 @@ Tag: Charter Communications
 Origin: UA
 Profile: Domestic ISP
 Tag: Extratel Ltd
-
-
-# ASN 38732 ("CMC Telecom Infrastructure Company").
-# Vietnamese domestic ISP; Huge source of spam, malware, attacks, etc.
-# Stop Forum Spam (SFS) listings: 65.
-# Updated: 2020.11.21 / Checked: 2021.06.16
-
-2406:30c0::/48 Deny Attacks
-Origin: VN
-Profile: Domestic ISP;Infrastructure/Transit
-Tag: CMC Telecom
 
 
 # ASN 6830 ("Liberty Global B.V").

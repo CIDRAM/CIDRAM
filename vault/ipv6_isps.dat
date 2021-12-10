@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6_isps.dat
 
-# Version: 2021.339.0
-# Last modified: 2021.12.07
+# Version: 2021.342.0
+# Last modified: 2021.12.09
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -234,19 +234,6 @@ Tag: Kyivstar
 Origin: UA
 Profile: Infrastructure/Transit
 Tag: AS13188-CDN-LTD
-
-
-# ASNs 200019, 207636 ("ALEXHOST SRL").
-# A significant source of spam, hacking, and other nefarious activity.
-# Stop Forum Spam (SFS) listings: 2,422 (AS200019).
-# Updated: 2021.04.11
-
-2001:678:6d4::/48 Deny Attacks
-2a09:7c46::/32 Deny Attacks
-2a0f:5f40::/29 Deny Attacks
-Origin: MD
-Profile: Frequent changes;Tor endpoints here
-Tag: ALEXHOST SRL
 
 
 # ASNs 24955, 41704, 60095 ("Orenburgskaya Gorodskaya Set, ZAO").
@@ -660,8 +647,8 @@ Tag: Guangdong Mobile
 # ASN 12389 ("PJSC Rostelecom").
 # Russian domestic ISP. Continuation of previous signatures section.
 # Listing this particular ASN in its entirety.
-# Stop Forum Spam (SFS) listings: 65,792.
-# Updated: 2021.03.23 / Checked: 2021.11.29
+# Stop Forum Spam (SFS) listings: 64,885.
+# Updated: 2021.03.23 / Checked: 2021.12.09
 
 2a00:1640::/32 Deny Spam
 2a00:1e88::/32 Deny Spam
@@ -671,20 +658,6 @@ Tag: Guangdong Mobile
 Origin: RU
 Profile: Domestic ISP;Tor endpoints here
 Tag: PJSC Rostelecom
-
-
-# ASNs 3216, 8402 ("PJSC Vimpelcom", "OJSC Vimpelcom").
-# Similarly to with the Rostelecom CIDRs, blocking the entirety of all
-# "Vimpelcom" ASNs could be problematic. Instead, we'll try to limit
-# listings to those CIDRs known to be problematic.
-# Stop Forum Spam (SFS) listings: 10,987 (AS3216), 7,982 (AS8402).
-# Updated: 2020.09.19 / Checked: 2021.03.23
-
-2a00:1248::/32 Deny Spam
-2a00:18c0::/32 Deny Spam
-Origin: RU
-Profile: Domestic ISP
-Tag: PJSC Vimpelcom
 
 
 # ASN 3255 (State Enterprise Scientific and Telecommunication Centre "Ukrainian
@@ -1337,31 +1310,51 @@ Tag: Telstra Corporation
 # ASN 5607 ("Sky UK Limited").
 # UK domestic ISP / broadband provider. Spam and Mirai detected here.
 # Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 1,412.
-# Updated: 2021.05.08
+# Stop Forum Spam (SFS) listings: 3,478.
+# Updated: 2021.12.10
 
-2a02:c7d:51b7:d000::/64 Deny Spam
-2a02:c7d:7b0e:e00::/64 Deny Spam
-2a02:c7d:7e30:6400::/64 Deny Spam
-2a02:c7d:ca48:1900::/64 Deny Spam
-2a02:c7d:ccb6:1300::/64 Deny Spam
-2a02:c7f:c99:100::/64 Deny Spam
-2a02:c7f:1829:3800::/64 Deny Spam
-2a02:c7f:360a:3c00::/64 Deny Spam
-2a02:c7f:4454:c200::/64 Deny Spam
-2a02:c7f:48c8:9200::/64 Deny Spam
-2a02:c7f:584c:d700::/64 Deny Spam
-2a02:c7f:64b6:c00::/64 Deny Spam
-2a02:c7f:7c38:1100::/64 Deny Spam
-2a02:c7f:8e97:9900::/64 Deny Spam
-2a02:c7f:9910:7e00::/64 Deny Spam
-2a02:c7f:a446:a100::/64 Deny Spam
-2a02:c7f:a902:7b00::/64 Deny Spam
-2a02:c7f:c822:b300::/64 Deny Spam
-2a02:c7f:d341:600::/64 Deny Spam
-2a02:c7f:ea2c:2f00::/64 Deny Spam
-2a02:c7f:ecc3:b700::/64 Deny Spam
-2a02:c7f:fb01:9b00::/64 Deny Spam
+2a02:c7c:21d:e400::/64 Deny Spam
+2a02:c7c:1033:f100::/64 Deny Spam
+2a02:c7c:1a28:4300::/64 Deny Spam
+2a02:c7d:4e9f:300::/64 Deny Spam
+2a02:c7d:5216:5a00::/64 Deny Spam
+2a02:c7d:b49e:6400::/64 Deny Spam
+2a02:c7d:b5fd:9600::/64 Deny Spam
+2a02:c7d:c5d8:e600::/64 Deny Spam
+2a02:c7d:f23e:1900::/64 Deny Spam
+2a02:c7e:796:df00::/64 Deny Spam
+2a02:c7e:a8f:1300::/64 Deny Spam
+2a02:c7e:e4a:8100::/64 Deny Spam
+2a02:c7e:1259:d00::/64 Deny Spam
+2a02:c7e:12f6:7900::/64 Deny Spam
+2a02:c7e:1a78:9400::/64 Deny Spam
+2a02:c7e:1ba0:cb00::/64 Deny Spam
+2a02:c7e:38ea:2e00::/64 Deny Spam
+2a02:c7e:3a46:1800::/64 Deny Spam
+2a02:c7e:3ac4:5d00::/64 Deny Spam
+2a02:c7f:c77:4100::/64 Deny Spam
+2a02:c7f:193b:ed00::/64 Deny Spam
+2a02:c7f:1e34:e600::/64 Deny Spam
+2a02:c7f:262b:ae00::/64 Deny Spam
+2a02:c7f:3ae3:700::/64 Deny Spam
+2a02:c7f:7698:5d00::/64 Deny Spam
+2a02:c7f:7731:1f00::/64 Deny Spam
+2a02:c7f:8a97:9600::/64 Deny Spam
+2a02:c7f:9041:ad00::/64 Deny Spam
+2a02:c7f:9b1a:e200::/64 Deny Spam
+2a02:c7f:9c6a:9b00::/64 Deny Spam
+2a02:c7f:9d79:2c00::/64 Deny Spam
+2a02:c7f:a099:3b00::/64 Deny Spam
+2a02:c7f:ae17:6c00::/64 Deny Spam
+2a02:c7f:ae2b:f700::/64 Deny Spam
+2a02:c7f:b42d:8f00::/64 Deny Spam
+2a02:c7f:bb31:a100::/64 Deny Spam
+2a02:c7f:d28d:8e00::/64 Deny Spam
+2a02:c7f:e579:dc00::/64 Deny Spam
+2a02:c7f:e5cc:6500::/64 Deny Spam
+2a02:c7f:e5e9::/64 Deny Spam
+2a02:c7f:ecbd:300::/64 Deny Spam
+2a02:c7f:ee94:5b00::/64 Deny Spam
 Origin: GB
 Profile: Domestic ISP
 Tag: Sky UK Limited
@@ -1644,18 +1637,12 @@ Tag: Telenet BVBA
 # ASNs 3243, 42863 ("MEO - SERVICOS DE COMUNICACOES E MULTIMEDIA S.A").
 # Portuguese domestic ISP. Caught by honeypots. Port scans and hack attempts
 # detected from here. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 1,159 (AS3243), 53 (AS42863).
-# Updated: 2021.04.12
+# Stop Forum Spam (SFS) listings: 975 (AS3243), 61 (AS42863).
+# Updated: 2021.12.09
 
-2001:8a0:6020:a301::/64 Deny Spam
-2001:8a0:6072:500::/64 Deny Spam
-2001:8a0:e601:b600::/64 Deny Spam
-2001:8a0:e602:bb00::/64 Deny Spam
-2001:8a0:e604:5e00::/64 Deny Spam
-2001:8a0:e605:2600::/64 Deny Spam
-2001:8a0:ece2:cb01::/64 Deny Spam
-2001:8a0:fbc6:9d01::/64 Deny Attacks
-2001:8a0:fe37:e300::/64 Deny Spam
+2001:8a0:6c09:5701::/64 Deny Spam
+2001:8a0:e110:d801::/64 Deny Spam
+2001:8a0:ff80:d600::/64 Deny Spam
 Origin: PT
 Profile: Domestic ISP
 Tag: MEO
@@ -1693,20 +1680,16 @@ Tag: TATA SKY BROADBAND PRIVATE LIMITED
 # ASNs 3209, 31334 ("Vodafone Deutschland GmbH").
 # German multiplay network. Brute-force and webapp attacks, hacking, and spam
 # detected from here. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 1,693 (AS3209).
-# Updated: 2021.11.29
+# Stop Forum Spam (SFS) listings: 1,759 (AS3209).
+# Updated: 2021.12.10
 
-2a02:908:161:af20::/64 Deny Spam
 2a02:908:194:e600::/64 Deny Spam
 2a02:908:237:db00::/64 Deny Spam
 2a02:908:5a4:ff60::/64 Deny Spam
-2a02:908:8b0:9bc0::/64 Deny Spam
-2a02:908:1085:e480::/64 Deny Spam
 2a02:8070:da9:8300::/64 Deny Spam
-2a02:8108:780:fa70::/64 Deny Spam
-2a02:8108:1300:4a8::/64 Deny Spam
-2a02:8108:28bf:d7b8::/64 Deny Spam
 2a02:8109:9c0:462c::/64 Deny Spam
+2a02:8109:8c80:3edd::/64 Deny Spam
+2a02:810c:8c0:2a4c::/64 Deny Spam
 Origin: DE
 Profile: Domestic ISP;Multiplay
 Tag: Vodafone Deutschland GmbH

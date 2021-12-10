@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6.dat
 
-# Version: 2021.339.0
-# Last modified: 2021.12.07
+# Version: 2021.342.0
+# Last modified: 2021.12.10
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -1062,11 +1062,9 @@ Tag: Black Lotus
 
 
 # ASNs 8100, 29761 ("QuadraNet, Inc").
-# Stop Forum Spam (SFS) listings: 36,424 (AS8100).
-# Updated: 2021.04.11
+# Stop Forum Spam (SFS) listings: 65,981 (AS8100).
+# Updated: 2021.12.10
 
-2a07:1c44:1820::/48 Deny Cloud
-Origin: AT
 2400:30c0:1::/48 Deny Cloud
 2a05:b0c6:300::/40 Deny Cloud
 2a07:9944:1a::/48 Deny Cloud
@@ -1078,6 +1076,7 @@ Origin: UA
 2602:ff96:4::/48 Deny Cloud
 2602:ff96:11::/48 Deny Cloud
 2602:ff96:14::/48 Deny Cloud
+2602:ffc5:60::/64 Deny Cloud
 2602:fff6:1::/48 Deny Cloud
 2602:fff6:2::/47 Deny Cloud
 2602:fff6:6::/48 Deny Cloud
@@ -1258,8 +1257,8 @@ Tag: Psychz Networks
 
 # ASN 27176 ("DataWagon LLC").
 # A source of forum spam.
-# Stop Forum Spam (SFS) listings: 192.
-# Updated: 2021.04.11
+# Stop Forum Spam (SFS) listings: 434.
+# Updated: 2021.04.11 / Checked: 2021.12.10
 
 2a07:6c80::/29 Deny Cloud
 Origin: LT
@@ -1268,7 +1267,7 @@ Origin: LT
 Origin: RU
 2605:aa80::/32 Deny Cloud
 Origin: US
-Profile: Tor endpoints here
+Profile: Tor endpoints here;Webhosting
 Tag: DataWagon LLC
 
 
@@ -2354,8 +2353,8 @@ Tag: Trabia-Network
 
 
 # ASN 29691 ("Nine Internet Solutions AG").
-# Stop Forum Spam (SFS) listings: 4,103.
-# Updated: 2020.05.30 / Checked: 2021.04.11
+# Stop Forum Spam (SFS) listings: 6,604.
+# Updated: 2020.05.30 / Checked: 2021.12.10
 
 2001:67c:2f98::/48 Deny Cloud
 2a02:418::/29 Deny Cloud
@@ -2374,27 +2373,29 @@ Tag: Media-Hosts Inc
 
 
 # ASN 53667 ("FranTech Solutions").
-# All kinds of rubbish from these guys without any end in sight. Brute-force,
-# FTP brute-force, SSH, webapp attacks, and attacks against honeypots, spam,
-# port scans, and more, encountered consistently from here.
-# Stop Forum Spam (SFS) listings: 80,839.
-# Updated: 2021.04.26
+# Brute-force, FTP brute-force, SSH, and webapp attacks, port scans, and spam
+# detected from here. Consistent, almost daily attacks detected against my
+# honeypots from this network since several years back now.
+# Stop Forum Spam (SFS) listings: 161,311.
+# Updated: 2021.12.10
 
+2602:fc0c:300::/40 Deny Cloud
+2602:fc41:100::/40 Deny Cloud
 2604:4d40:2000::/36 Deny Cloud
 2605:6400:1::/48 Deny Cloud
 2605:6400:2::/47 Deny Cloud
 2605:6400:10::/48 Deny Cloud
 2605:6400:20::/48 Deny Cloud
 2605:6400:30::/48 Deny Cloud
+2605:6400:40::/48 Deny Cloud
 2605:6400:100::/48 Deny Cloud
 2605:6400:300::/48 Deny Cloud
-2605:6400:2460:1::/64 Deny Cloud
 2605:6400:4000::/34 Deny Cloud
 2605:6400:8000::/33 Deny Cloud
-fdde:c9a7:14f8:84::/64 Deny Cloud
-fdeb:fc8d:4786:60b7::/64 Deny Cloud
+2605:6404::/32 Deny Cloud
+2605:640f:18fc::/48 Deny Cloud
 Origin: US
-Profile: Tor endpoints here;Webhosting
+Profile: Frequent changes;Tor endpoints here;Webhosting
 Tag: FranTech Solutions
 
 
@@ -5148,8 +5149,8 @@ Tag: POWER LINE (HK) CO
 
 
 # ASN 55720 ("Gigabit Hosting Sdn Bhd").
-# Stop Forum Spam (SFS) listings: 221.
-# Updated: 2020.11.09 / Checked: 2021.04.11
+# Stop Forum Spam (SFS) listings: 234.
+# Updated: 2020.11.09 / Checked: 2021.12.10
 
 2402:90c0::/32 Deny Cloud
 Origin: HK
@@ -5366,18 +5367,16 @@ Tag: PCextreme B.V
 
 
 # ASN 42926 ("Radore Veri Merkezi Hizmetleri A.S").
-# Stop Forum Spam (SFS) listings: 243.
-# Updated: 2021.04.11
+# Data center and related services.
+# Stop Forum Spam (SFS) listings: 446.
+# Updated: 2021.12.09
 
-2a0e:1b40::/29 Deny Cloud
-Origin: LT
 2a01:790::/32 Deny Cloud
 2a05:a740::/29 Deny Cloud
-2a09:cfc0::/29 Deny Cloud
 2a0b:5ec0::/29 Deny Cloud
 2a0f:e80::/29 Deny Cloud
 Origin: TR
-Profile: Tor endpoints here
+Profile: Infrastructure/Transit;Tor endpoints here
 Tag: Radore Veri Merkezi
 
 
@@ -5969,8 +5968,8 @@ Tag: Next Connex Ltd
 
 # ASN 61272 ("Informacines sistemos ir technologijos, UAB").
 # Caught trying to flood/spam honeypots.
-# Stop Forum Spam (SFS) listings: 5,799.
-# Updated: 2021.04.11
+# Stop Forum Spam (SFS) listings: 25,411.
+# Updated: 2021.12.09
 
 2a0a:1f40::/32 Deny Cloud
 Origin: CA
@@ -5978,9 +5977,7 @@ Origin: CA
 Origin: DE
 2a04:2180::/32 Deny Cloud
 2a04:2181:c010::/47 Deny Cloud
-2a04:2181:c012::/48 Deny Cloud
-2a0d:e0c0::/29 Deny Cloud
-2a0e:be00::/29 Deny Cloud
+2a10:9c0::/29 Deny Cloud
 Origin: LT
 Profile: Tor endpoints here;Webhosting
 Tag: AS61272
@@ -7391,19 +7388,20 @@ Tag: ANEXIA
 
 # ASN 204957 ("ITL-Bulgaria Ltd").
 # Dedicated server farm and a source of spam.
-# Stop Forum Spam (SFS) listings: 4,998.
-# Updated: 2020.06.26 / Checked: 2021.04.11
+# Stop Forum Spam (SFS) listings: 915.
+# Updated: 2021.12.10
 
 2a05:9400::/30 Deny Cloud
 2a05:9404::/31 Deny Cloud
 2a05:9406::/32 Deny Cloud
 2a0a:8c41::/32 Deny Cloud
 2a0a:8c42::/31 Deny Cloud
-2a0a:8c44::/32 Deny Cloud
+2a0a:8c44::/31 Deny Cloud
 Origin: BG
 2a0e:40c0:3::/48 Deny Cloud
+2a11:6800:1::/48 Deny Cloud
 Origin: UA
-Profile: Dedicated;Tor endpoints here
+Profile: Dedicated;Infrastructure/Transit;Tor endpoints here
 Tag: ITL-Bulgaria Ltd
 
 
@@ -8553,11 +8551,15 @@ Tag: AS51559
 # ASN 42675 ("Obehosting AB").
 # Webhosting provider. Spam and tor endpoints detected from here.
 # (Closely connected with AS197595 "Obenetwork AB").
-# Stop Forum Spam (SFS) listings: 231.
-# Updated: 2021.04.11
+# Stop Forum Spam (SFS) listings: 1,148.
+# Updated: 2021.12.09
 
+2a07:a880:3101::/48 Deny Cloud
+2a07:a880:4601::/48 Deny Cloud
+2a07:a880:4602::/48 Deny Cloud
 2a0c:dd40::/29 Deny Cloud
 2a0e:1c80:1::/48 Deny Cloud
+2a12:7800::/32 Deny Cloud
 Origin: SE
 Profile: Tor endpoints here;Webhosting
 Tag: Obehosting AB
@@ -8565,12 +8567,12 @@ Tag: Obehosting AB
 
 # ASNs 45839, 201133 ("Shinjiru Technology Sdn Bhd", "Verdina Ltd").
 # Webhosting provider. Spam and tor endpoints detected here.
-# Stop Forum Spam (SFS) listings: 53 (AS45839), 112 (AS201133).
-# Updated: 2021.04.11
+# Stop Forum Spam (SFS) listings: 232 (AS45839), 307 (AS201133).
+# Updated: 2021.04.11 / Checked: 2021.12.09
 
 2407:6c00:18::/48 Deny Cloud
 Origin: MY
-Profile: Tor endpoints here
+Profile: Tor endpoints here;Webhosting
 Tag: Shinjiru/Verdina
 
 
@@ -9251,6 +9253,21 @@ Origin: BE
 Origin: FR
 Profile: Infrastructure/Transit;Webhosting
 Tag: Sapinet
+
+
+# ASNs 200019, 207636 ("ALEXHOST SRL").
+# A significant source of spam, hacking, and other nefarious activity.
+# Stop Forum Spam (SFS) listings: 1,904 (AS200019), 191 (AS207636).
+# Updated: 2021.12.09
+
+2001:678:6d4::/48 Deny Cloud
+2a09:7c46::/32 Deny Cloud
+2a0f:5f40::/29 Deny Cloud
+Origin: MD
+2a0a:8d80:1::/48 Deny Cloud
+Origin: RU
+Profile: Frequent changes;Tor endpoints here;Webhosting
+Tag: ALEXHOST SRL
 
 
 # ---

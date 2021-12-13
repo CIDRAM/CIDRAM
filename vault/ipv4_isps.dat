@@ -1,8 +1,8 @@
 # IPv4 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv4_isps.dat
 
-# Version: 2021.342.0
-# Last modified: 2021.12.10
+# Version: 2021.346.0
+# Last modified: 2021.12.13
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -4596,15 +4596,6 @@ Profile: Commercial
 Tag: BRAC
 
 
-# ASN 41109 ("Center of Children Telemedicin and new information technologis").
-# DDoS and XSS attacks detected from here.
-# Updated: 2017.10.23 / Checked: 2021.03.23
-
-81.200.80.0/20 Deny Attacks
-Origin: RU
-Tag: Children Telemedicin
-
-
 # ASN 198093 ("Foreningen for digitala fri- och rattigheter").
 # Dead homepage and high levels of automated spam from this ASN.
 # Stop Forum Spam (SFS) listings: 7,268.
@@ -6164,13 +6155,18 @@ Profile: Domestic ISP
 Tag: ICC Communication
 
 
-# ASN 58889 ("Zx Online Ltd").
-# Source of forum spam and some email harvestors.
-# Stop Forum Spam (SFS) listings: 33.
-# Updated: 2020.09.25 / Checked: 2021.03.31
+# ASNs 58889, 135092 ("Zx Online Ltd").
+# Bangladesh domestic ISP. Brute-force, SSH, and webapp attacks, port scans,
+# hacking, email harvestors, and spam detected from here.
+# Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 18 (AS135092).
+# Updated: 2021.12.13
 
-103.19.252.199/32 Deny Spam
+45.64.138.0/24 Deny Attacks
+103.19.252.0/24 Deny Attacks
+103.19.254.0/23 Deny Attacks
 Origin: BD
+Profile: Domestic ISP
 Tag: Zx Online Ltd
 
 
@@ -10602,13 +10598,22 @@ Tag: VEE TIME CORP
 # Mongolian tripleplay network. Spam, port scans, brute-force attacks and other
 # unwanted traffic detected from here.
 # Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 4,080.
-# Updated: 2021.05.06
+# Stop Forum Spam (SFS) listings: 3,817.
+# Updated: 2021.12.13
 
 43.228.131.0/24 Deny Attacks
+43.242.242.0/24 Deny Attacks
+64.119.29.0/24 Deny Attacks
+64.119.30.0/23 Deny Attacks
+66.181.160.0/23 Deny Attacks
+66.181.164.0/22 Deny Attacks
+103.80.210.0/24 Deny Attacks
 103.229.120.0/22 Deny Attacks
+192.82.92.0/24 Deny Attacks
 202.70.34.0/24 Deny Attacks
+203.98.76.0/24 Deny Attacks
 Origin: MN
+Profile: Domestic ISP;Multiplay
 Tag: Unitel LLC
 
 
@@ -16037,3 +16042,47 @@ Tag: Sat-Trakt D.O.O
 Origin: RU
 Profile: Domestic ISP
 Tag: E-Light-Telecom Ltd
+
+
+# ASNs 28271, 52550 ("DataCorpore Servios e Representaes").
+# Brazilian multiplay provider. Port scans and spam detected from here.
+# Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 51 (AS28271).
+# Updated: 2021.12.12
+
+189.84.21.44/32 Deny Attacks
+Origin: BR
+Profile: Domestic ISP;Infrastructure/Transit;Multiplay;Tor endpoints here;Webhosting
+Tag: DataCorpore Servios
+
+
+# ASN 134204 ("Business Network").
+# Bangladesh game server, redundancy, and internet access provider. Brute-force
+# attacks, hacking, port scans, and spam detected from here.
+# Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 73.
+# Updated: 2021.12.12
+
+103.58.74.0/23 Deny Attacks
+203.76.222.0/24 Deny Attacks
+Origin: BD
+Profile: Domestic ISP;Infrastructure/Transit;Multiplay
+Tag: bnet-bd
+
+
+# ASN 48366 ("Inforoom Ltd").
+# Russian internet and digital TV provider.
+# Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 127.
+# Updated: 2021.12.13
+
+91.219.4.151/32 Deny Attacks
+91.219.5.30/32 Deny Attacks
+91.219.5.88/32 Deny Attacks
+91.219.6.0/24 Deny Attacks
+91.219.7.134/32 Deny Attacks
+91.229.177.0/24 Deny Attacks
+91.235.88.0/24 Deny Attacks
+Origin: RU
+Profile: Commercial;Domestic ISP;Multiplay
+Tag: Inforoom Ltd

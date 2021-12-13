@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6.dat
 
-# Version: 2021.342.0
-# Last modified: 2021.12.10
+# Version: 2021.346.0
+# Last modified: 2021.12.13
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -71,12 +71,13 @@ Tag: 51idc
 
 
 # ASN 7497 ("Computer Network Information Center").
-# Stop Forum Spam (SFS) listings: 13.
-# Updated: 2020.09.30 / Checked: 2021.04.21
+# Stop Forum Spam (SFS) listings: 135.
+# Updated: 2020.09.30 / Checked: 2021.12.12
 
 2400:dd00::/28 Deny Cloud
 2401:de00::/32 Deny Cloud
 Origin: CN
+Profile: Commercial;Infrastructure/Transit;University
 Tag: CST-NET
 
 
@@ -216,11 +217,12 @@ Tag: 1&1 Internet SE
 
 
 # ASN 27823 ("Dattatec.com").
-# Stop Forum Spam (SFS) listings: 31.
-# Updated: 2016.04.18 / Checked: 2021.03.21
+# Stop Forum Spam (SFS) listings: 8.
+# Updated: 2016.04.18 / Checked: 2021.12.12
 
 2800:6c0::/32 Deny Cloud
 Origin: AR
+Profile: Webhosting
 Tag: Dattatec.com
 
 
@@ -436,17 +438,6 @@ Origin: CY
 Origin: NL
 Profile: Dedicated;Infrastructure/Transit;Webhosting
 Tag: Webzilla B.V
-
-
-# ASNs 28271, 52550 ("DataCorpore Servios e Representaes").
-# Stop Forum Spam (SFS) listings: 104 (AS28271).
-# Updated: 2018.09.16 / Checked: 2021.01.10
-
-2804:4c4::/32 Deny Cloud
-2804:cc0::/32 Deny Cloud
-Origin: BR
-Profile: Tor endpoints here
-Tag: DataCorpore Servios
 
 
 # ASN 53850 ("GorillaServers, Inc").
@@ -1045,19 +1036,21 @@ Tag: Cyberverse, Inc
 
 # ASN 54489 ("CoreSpace, Inc").
 # Subtract 44.0.0.0/9, 44.128.0.0/10 (clean).
-# Updated: 2016.01.22 / Checked: 2021.01.10
+# Stop Forum Spam (SFS) listings: 869.
+# Updated: 2016.01.22 / Checked: 2021.12.12
 
 2604:7780::/32 Deny Cloud
 Origin: US
-Profile: Tor endpoints here
+Profile: Infrastructure/Transit;Tor endpoints here
 Tag: CoreSpace, Inc
 
 
 # ASN 32421 ("Black Lotus Communications").
-# Updated: 2018.04.30 / Checked: 2021.01.10
+# Updated: 2018.04.30 / Checked: 2021.12.12
 
 2001:67c:2f08::/48 Deny Cloud
 Origin: GB
+Profile: Commercial
 Tag: Black Lotus
 
 
@@ -2600,13 +2593,13 @@ Profile: Dedicated;Infrastructure/Transit;Webhosting
 Tag: WebNX, Inc
 
 
-# ASN 198068 ("FASTVPS EESTI OU").
-# Stop Forum Spam (SFS) listings: 3.
-# Updated: 2020.01.30 / Checked: 2021.02.07
+# ASN 198068 ("P.A.G.M. OU").
+# Updated: 2020.01.30 / Checked: 2021.12.12
 
 2a03:f480:1::/48 Deny Cloud
 2a03:f480:2::/47 Deny Cloud
 Origin: EE
+Profile: Webhosting
 Tag: FASTVPS EESTI OU
 
 
@@ -4074,14 +4067,16 @@ Tag: DataClub S.A
 
 
 # ASN 30962 ("comtrance GmbH").
-# Stop Forum Spam (SFS) listings: 20.
-# Updated: 2020.08.17 / Checked: 2021.02.24
+# Stop Forum Spam (SFS) listings: 3.
+# Updated: 2021.12.13
 
 2001:678:94c::/48 Deny Cloud
 2001:67c:208::/48 Deny Cloud
 2a00:f70::/32 Deny Cloud
+2a03:f200::/32 Deny Cloud
 2a0b:2300::/32 Deny Cloud
 Origin: DE
+Profile: Infrastructure/Transit;Webhosting
 Tag: comtrance GmbH
 
 
@@ -4129,11 +4124,12 @@ Tag: GMO-Z.com USA, INC
 
 
 # ASN 49282 ("Ficolo Oy").
-# Stop Forum Spam (SFS) listings: 929.
-# Updated: 2016.11.02 / Checked: 2021.03.31
+# Stop Forum Spam (SFS) listings: 85.
+# Updated: 2016.11.02 / Checked: 2021.12.12
 
 2a03:e580::/29 Deny Cloud
 Origin: FI
+Profile: Infrastructure/Transit
 Tag: Ficolo Oy
 
 
@@ -4274,10 +4270,11 @@ Tag: Dreamscape Networks
 
 
 # ASN 22458 ("NetSource Communications, Inc").
-# Updated: 2019.10.26 / Checked: 2021.02.05
+# Updated: 2019.10.26 / Checked: 2021.12.13
 
 2604:f80::/32 Deny Cloud
 Origin: US
+Profile: Commercial;Infrastructure/Transit
 Tag: NetSource
 
 
@@ -4603,10 +4600,11 @@ Tag: NTX Technologies s.r.o
 
 
 # ASN 200161 ('"DATAPRO" Limited Liability Company').
-# Updated: 2018.02.25 / Checked: 2021.03.23
+# Updated: 2018.02.25 / Checked: 2021.12.12
 
 2a00:a960::/32 Deny Cloud
 Origin: RU
+Profile: Commercial
 Tag: DATAPRO
 
 
@@ -5736,14 +5734,15 @@ Tag: Host Universal Pty Ltd
 
 
 # ASN 15083 ("Infolink Global Corporation").
-# Updated: 2021.04.16
+# Stop Forum Spam (SFS) listings: 4.
+# Updated: 2021.12.13
 
 2a0c:9480::/30 Deny Cloud
 Origin: RU
-2607:1680::/32 Deny Cloud
 2607:feb8::/32 Deny Cloud
 2a06:8e40::/29 Deny Cloud
 Origin: US
+Profile: Dedicated;Webhosting
 Tag: Infolink Global Corporation
 
 
@@ -6190,17 +6189,17 @@ Profile: Infrastructure/Transit;Webhosting
 Tag: VooServers Ltd
 
 
-# ASNs 12406, 134204 ("Business Network Ltd").
-# Cloud provider; Source of spam and other unwanted traffic.
-# Stop Forum Spam (SFS) listings: 50 (AS12406), 50 (AS134204).
-# Updated: 2021.04.26
+# ASN 12406 ("Business Network Ltd").
+# Belarus network, unknown purpose. Some spam and other unwanted traffic
+# detected from here.
+# Stop Forum Spam (SFS) listings: 79.
+# Updated: 2021.12.12
 
-2400:4d40::/32 Deny Cloud
-Origin: BD
 2a00:6440::/32 Deny Cloud
 Origin: BY
 2a06:1287:40::/48 Deny Cloud
 Origin: US
+Profile: Restricted/Unidentifiable
 Tag: Business Network Ltd
 
 
@@ -6353,11 +6352,12 @@ Tag: Alestra
 
 # ASN 48524 ("INTERRA telecommunications group, Ltd").
 # Caught attempting to hack WordPress sites.
-# Stop Forum Spam (SFS) listings: 1,664.
-# Updated: 2019.10.02 / Checked: 2021.03.15
+# Stop Forum Spam (SFS) listings: 1,152.
+# Updated: 2019.10.02 / Checked: 2021.12.12
 
 2a03:dec0::/32 Deny Cloud
 Origin: RU
+Profile: Commercial
 Tag: INTERRA
 
 
@@ -7544,12 +7544,13 @@ Tag: Micron21 Datacentre
 
 
 # ASN 205081 ("EasyDataHost S.L").
-# Stop Forum Spam (SFS) listings: 835.
-# Updated: 2020.08.17 / Checked: 2021.02.24
+# Stop Forum Spam (SFS) listings: 610.
+# Updated: 2020.08.17 / Checked: 2021.12.12
 
 2a0c:5500::/46 Deny Cloud
 2a0c:5500:4::/48 Deny Cloud
 Origin: ES
+Profile: Dedicated;Infrastructure/Transit;Webhosting
 Tag: EasyDataHost S.L
 
 
@@ -7827,12 +7828,13 @@ Tag: GB Network Solutions
 
 # ASN 38365 ("Beijing Baidu Netcom Science and Technology Co., Ltd").
 # *MASSIVE* source of SSH and brute-force attacks unending !!
-# Stop Forum Spam (SFS) listings: 15.
-# Updated: 2020.11.23 / Checked: 2021.06.18
+# Stop Forum Spam (SFS) listings: 790.
+# Updated: 2020.11.23 / Checked: 2021.12.12
 
 2400:da00::/32 Deny Cloud
 240c:4000::/22 Deny Cloud
 Origin: CN
+Profile: Commercial
 Tag: Beijing Baidu Netcom
 
 

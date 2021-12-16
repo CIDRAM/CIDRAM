@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6_isps.dat
 
-# Version: 2021.346.0
-# Last modified: 2021.12.13
+# Version: 2021.349.0
+# Last modified: 2021.12.16
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -1471,21 +1471,13 @@ Tag: Orange Polska Spolka Akcyjna
 
 
 # ASN 39351 ("31173 Services AB").
-# Webhosting and colocation provider, and also a source of spam and other
-# unwanted traffic. Placed into the ISPs file due to the risk of false
-# positives (some companies and networks in Stockholm may use this network).
-# NL ranges as proxy.
-# Stop Forum Spam (SFS) listings: 6,096.
-# Updated: 2021.04.21
+# Webhosting, colo, and broadband provider from Sweden. Brute-force, SSH, and
+# webapp attacks, port scans, hacking, spam, and tor endpoints detected from
+# here. Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 9,037.
+# Updated: 2021.12.16
 
-2a07:e340::/32 Deny Proxy
-Origin: NL
-2a03:1b20:1::/48 Deny Spam
-2a03:1b20:2::/47 Deny Spam
-2a03:1b20:4::/46 Deny Spam
-2a03:1b20:8::/47 Deny Spam
-2a03:1b20:a::/48 Deny Spam
-2a0f:8980::/32 Deny Spam
+2a03:1b20:1:f410::/64 Deny Spam
 Origin: SE
 Profile: Infrastructure/Transit;Multiplay;Tor endpoints here;Webhosting
 Tag: 31173 Services AB
@@ -1723,10 +1715,10 @@ Tag: DFN
 # ASN 3265 ("Xs4all Internet BV").
 # Dutch domestic ISP. Spam, SSH hack attempts, various unwanted traffic and tor
 # endpoints detected here. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 862.
-# Updated: 2021.04.14
+# Stop Forum Spam (SFS) listings: 219.
+# Updated: 2021.12.14
 
-2001:985:6ca9:f1::/64 Deny Spam
+2001:981:9971:1::/64 Deny Spam
 Origin: NL
 Profile: Domestic ISP;Tor endpoints here
 Tag: Xs4all Internet BV

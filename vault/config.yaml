@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Configuration defaults file (last modified: 2021.11.30).
+# This file: Configuration defaults file (last modified: 2021.12.21).
 ##/
 
 Config Defaults:
@@ -796,12 +796,24 @@ Provide:
         enabled: false
    Output template:
     Empty:
-     Decoration: "background:linear-gradient(90deg,rgba(64,0,0,0),rgba(255,128,128,0.5));"
+     Decoration: &RedLeft "background:linear-gradient(90deg,rgba(64,0,0,0),rgba(255,128,128,0.5));"
     Suppress output template:
      Label: "label_aux_special_suppress"
      Decoration: *RedMiddle
      Sets:
       Suppress output template: true
+   Logging:
+    Empty:
+     Decoration: *RedLeft
+    Suppress logging:
+     Label: "label_aux_special_suppress_logging"
+     Decoration: *RedMiddle
+     Sets:
+      Config:
+       general:
+        logfile: ""
+        logfileApache: ""
+        logfileSerialized: ""
    IP Tracking:
     Forcibly enable IP tracking:
      Label: "label_aux_special_ip_tracking_enable"
@@ -816,7 +828,7 @@ Provide:
    Values for IP Tracking:
     Enforce extended IP tracking options:
      Label: "label_aux_special_tracking_extended"
-     Decoration: &RedLeft "background:linear-gradient(90deg,rgba(64,0,0,0),rgba(255,128,128,0.5));"
+     Decoration: *RedLeft
      Sets:
       Tracking options override: "extended"
     Enforce default IP tracking options:

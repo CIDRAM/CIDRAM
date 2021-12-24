@@ -1,8 +1,8 @@
 # IPv6 signatures file (CIDRs for proxies, VPNs and other miscellaneous unwanted services).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6_other.dat
 
-# Version: 2021.314.500
-# Last modified: 2021.11.11
+# Version: 2021.356.0
+# Last modified: 2021.12.23
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -42,10 +42,11 @@ Tag: Emerald Onion
 # Octopusnet VPN (mostly from AS44724, but we'll update via announces instead,
 # because we don't need to block the entire ASN, and there could be stray CIDRs
 # too). Proxy service with a history of spam events.
-# Updated: 2019.12.14 / Checked: 2021.11.11
+# Updated: 2019.12.14 / Checked: 2021.12.23
 
 2a04:db80::/32 Deny Proxy
 Origin: RU
+Profile: Infrastructure/Transit
 Tag: Octopusnet VPN
 
 

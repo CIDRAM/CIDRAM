@@ -1,8 +1,8 @@
 # IPv4 signatures file (CIDRs for proxies, VPNs and other miscellaneous unwanted services).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv4_other.dat
 
-# Version: 2021.314.500
-# Last modified: 2021.11.11
+# Version: 2021.356.0
+# Last modified: 2021.12.23
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -1184,22 +1184,16 @@ Tag: Beliefnet
 # Octopusnet VPN (mostly from AS44724, but we'll update via announces instead,
 # because we don't need to block the entire ASN, and there could be stray CIDRs
 # too). Proxy service with a history of spam events.
-# Updated: 2021.11.03
+# Updated: 2021.12.23
 
 46.46.0.0/20 Deny Proxy
 46.46.17.0/24 Deny Proxy
 46.46.24.0/21 Deny Proxy
 46.46.32.0/19 Deny Proxy
 83.217.28.0/22 Deny Proxy
-95.154.64.0/19 Deny Proxy
-95.154.96.0/20 Deny Proxy
-95.154.112.0/22 Deny Proxy
-95.154.116.0/23 Deny Proxy
-95.154.119.0/24 Deny Proxy
-95.154.120.0/21 Deny Proxy
+95.154.64.0/18 Deny Proxy
 185.57.28.0/22 Deny Proxy
 213.5.16.0/22 Deny Proxy
-2a04:db80::/32 Deny Proxy
 Origin: RU
 Profile: Infrastructure/Transit
 Tag: Octopusnet VPN

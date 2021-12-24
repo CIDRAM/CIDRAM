@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6.dat
 
-# Version: 2021.349.0
-# Last modified: 2021.12.16
+# Version: 2021.356.0
+# Last modified: 2021.12.23
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -112,14 +112,15 @@ Tag: PEG TECH INC
 
 
 # ASN 26347 ("New Dream Network, LLC").
-# Stop Forum Spam (SFS) listings: 2,362.
-# Updated: 2020.12.15 / Checked: 2021.02.24
+# Stop Forum Spam (SFS) listings: 1,950.
+# Updated: 2020.12.15 / Checked: 2021.12.23
 
 2607:f298:5::/48 Deny Cloud
 2607:f298:6::/48 Deny Cloud
 2607:f298:b::/48 Deny Cloud
 2607:f298:6050::/44 Deny Cloud
 Origin: US
+Profile: Webhosting
 Tag: New Dream Network
 
 
@@ -704,12 +705,14 @@ Profile: Commercial;Dedicated;Frequent changes;Infrastructure/Transit;Webhosting
 Tag: Eonix Corporation
 
 
-# ASNs 32748, 46440 ("Steadfast Networks").
-# Stop Forum Spam (SFS) listings: 306 (AS32748).
-# Updated: 2021.01.21 / Checked: 2021.09.16
+# ASNs 10661, 32748, 46440 ("Steadfast Networks").
+# Stop Forum Spam (SFS) listings: 374 (AS32748).
+# Updated: 2021.12.23
 
+2602:fc5c:3::/48 Deny Cloud
 2607:f128::/32 Deny Cloud
 Origin: US
+Profile: Dedicated;Infrastructure/Transit;Webhosting
 Tag: Steadfast Networks
 
 
@@ -911,17 +914,6 @@ Profile: Commercial;Dedicated;Infrastructure/Transit;Webhosting
 Tag: Nocix
 
 
-# ASN 62710 ("Rack911").
-# Significant listings at AbuseIPDB for hack attempts, probing, port scanning,
-# etc. E.g., refer abuseipdb.com/check/172.93.4.78
-# Dead at last check. Will remove at the next update if no change.
-# Updated: 2021.04.26
-
-#<redacted>
-Profile: Webhosting
-Tag: Rack911
-
-
 # ASN 63930 ("READY SERVER PTE LTD").
 # Stop Forum Spam (SFS) listings: 104.
 # Updated: 2019.08.04 / Checked: 2021.07.04
@@ -1074,11 +1066,13 @@ Tag: QuadraNet, Inc
 
 
 # ASN 11282 ("SERVERYOU INC").
-# Updated: 2020.09.19 / Checked: 2021.03.19
+# No recent reports or bad activity detected. Possible candidate for future removal.
+# Updated: 2020.09.19 / Checked: 2021.12.23
 
 2001:470:e3::/48 Deny Cloud
 2605:b0c0::/32 Deny Cloud
 Origin: US
+Profile: Webhosting
 Tag: SERVERYOU INC
 
 
@@ -2065,6 +2059,7 @@ Tag: CDM
 
 2001:1990::/32 Deny Cloud
 Origin: US
+Profile: Webhosting
 Tag: Latisys-Irvine, LLC
 
 
@@ -2353,10 +2348,11 @@ Tag: Nine Internet
 
 
 # ASN 14442 ("Media-Hosts Inc").
-# Updated: 2016.04.10 / Checked: 2021.03.23
+# Updated: 2016.04.10 / Checked: 2021.12.23
 
 2605:2100::/36 Deny Cloud
 Origin: CA
+Profile: Dedicated;Webhosting
 Tag: Media-Hosts Inc
 
 
@@ -4425,10 +4421,11 @@ Tag: INTERNET CZ, a.s
 
 # ASN 51859 ("Mainstream doo").
 # Caught repeatedly hitting honeypots and attempting to brute-force logins.
-# Updated: 2019.05.02 / Checked: 2021.02.02
+# Updated: 2019.05.02 / Checked: 2021.12.23
 
 2a04:2e40::/29 Deny Cloud
 Origin: RS
+Profile: Dedicated;Infrastructure/Transit;Webhosting
 Tag: Mainstream doo
 
 
@@ -4950,10 +4947,11 @@ Tag: Deninet KFT
 
 # ASN 32767 ("SAPIOTERRA, LLC").
 # Brute-force and SSH attacks + and WordPress hack attempts.
-# Updated: 2017.11.06 / Checked: 2021.04.26
+# Updated: 2017.11.06 / Checked: 2021.12.23
 
 2607:c080::/32 Deny Cloud
 Origin: US
+Profile: Restricted/Unidentifiable
 Tag: SAPIOTERRA, LLC
 
 
@@ -5149,12 +5147,13 @@ Profile: Infrastructure/Transit
 Tag: CloudSol
 
 
-# ASN 132839 ("POWER LINE (HK) CO., LIMITED").
-# Stop Forum Spam (SFS) listings: 60.
-# Updated: 2021.05.27
+# ASN 132839 ("POWER LINE DATACENTER").
+# Stop Forum Spam (SFS) listings: 56.
+# Updated: 2021.05.27 / Checked: 2021.12.23
 
 2401:f940::/32 Deny Cloud
 Origin: HK
+Profile: Infrastructure/Transit;Webhosting
 Tag: POWER LINE (HK) CO
 
 
@@ -5998,17 +5997,6 @@ Origin: DE
 Origin: LT
 Profile: Tor endpoints here;Webhosting
 Tag: AS61272
-
-
-# ASN 43160 ("Mdc Datacenter S.L").
-# Source of forum spam. Mostly clean at last check. Redacting for now; At next
-# check, will either reinstate all ranges or remove the section entirely,
-# pending how it looks at that time.
-# Stop Forum Spam (SFS) listings: 11.
-# Updated: 2021.04.26
-
-#<redacted>
-Tag: Mdc Datacenter S.L
 
 
 # ASN 64236 ("Accuserv Inc").
@@ -6982,10 +6970,11 @@ Tag: HQServ
 # An IT firm offering various services (not an ISP); Vulnerability scanning,
 # automated attacks against WordPress websites and DDoS attacks originating
 # from this network detected by firewalls.
-# Updated: 2020.01.11 / Checked: 2021.02.02
+# Updated: 2020.01.11 / Checked: 2021.12.23
 
 2607:e680::/32 Deny Cloud
 Origin: US
+Profile: Commercial
 Tag: Sundance International
 
 
@@ -7600,21 +7589,23 @@ Tag: HostRoyale LLC
 
 # ASN 15691 ("Leonet srl").
 # Regular flow of brute-force and SSH attacks seen from this network.
-# Updated: 2020.09.01 / Checked: 2021.03.06
+# Updated: 2020.09.01 / Checked: 2021.12.23
 
 2a01:bf40::/32 Deny Cloud
 Origin: IT
+Profile: Commercial
 Tag: Leonet srl
 
 
 # ASN 51468 ("One.com A/S").
 # Caught trying to hack into WordPress wp-admin and probing for backups.
-# Stop Forum Spam (SFS) listings: 6.
-# Updated: 2020.09.01 / Checked: 2021.03.06
+# Stop Forum Spam (SFS) listings: 2.
+# Updated: 2020.09.01 / Checked: 2021.12.23
 
 2001:67c:28cc::/48 Deny Cloud
 2a02:2350::/32 Deny Cloud
 Origin: DK
+Profile: Webhosting
 Tag: One.com A/S
 
 
@@ -8658,10 +8649,11 @@ Tag: IPAX OG
 
 # ASN 33151 ("Trustwave Holdings, Inc").
 # Caught probing/testing website defences without permission.
-# Updated: 2021.04.26
+# Updated: 2021.04.26 / Checked: 2021.12.23
 
 2620:bb:c000::/48 Deny Cloud
 Origin: US
+Profile: Commercial
 Tag: Trustwave Holdings, Inc
 
 

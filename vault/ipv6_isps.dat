@@ -784,16 +784,17 @@ Profile: Domestic ISP
 Tag: TOTAL PLAY TELECOMUNICACIONES
 
 
-# ASN 24309 ("Atria Convergence Technologies Pvt. Ltd. Broadband Internet
-# Service Provider INDIA"). An Indian domestic ISP caught spamming. Listing
-# just the affected ranges, plus all US ranges (interlaced cloud ranges).
-# Stop Forum Spam (SFS) listings: 1,552.
-# Updated: 2021.04.28
+# ASNs 24309, 131269 ("Atria Convergence Technologies Pvt. Ltd. Broadband
+# Internet Service Provider INDIA", "ACTFIBERNET Pvt Ltd").
+# Indian domestic ISP. Brute-force, SSH, FTP, SQLi, and webapp attacks, port
+# scans, hacking, and spam detected from here.
+# Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 2,362 (AS24309), 346 (AS131269).
+# Updated: 2021.12.24
 
 2406:7400:71:6d39::/64 Deny Spam
+2406:7400:73:46c0::/64 Deny Spam
 Origin: IN
-2600:140f:c000::/48 Deny Cloud
-Origin: US
 Profile: Domestic ISP
 Tag: Atria Convergence
 

@@ -1101,12 +1101,19 @@ Tag: home.pl
 
 
 # ASN 25532 ("Masterhost").
-# Stop Forum Spam (SFS) listings: 11.
-# Updated: 2021.04.26
+# Stop Forum Spam (SFS) listings: 7.
+# Updated: 2021.12.24
 
-83.222.0.0/19 Deny Cloud
+83.222.0.0/22 Deny Cloud
+83.222.4.0/23 Deny Cloud
+83.222.8.0/21 Deny Cloud
+83.222.16.0/20 Deny Cloud
 87.242.64.0/18 Deny Cloud
-90.156.128.0/17 Deny Cloud
+90.156.128.0/19 Deny Cloud
+90.156.168.0/21 Deny Cloud
+90.156.200.0/21 Deny Cloud
+90.156.208.0/20 Deny Cloud
+90.156.224.0/19 Deny Cloud
 217.16.16.0/20 Deny Cloud
 Origin: RU
 Profile: Dedicated;Webhosting
@@ -1172,8 +1179,8 @@ Tag: GoDaddy.com, LLC
 
 
 # ASN 8560 ("1&1 IONOS SE").
-# Stop Forum Spam (SFS) listings: 2,863.
-# Updated: 2020.01.19 / Checked: 2021.02.02
+# Stop Forum Spam (SFS) listings: 5,934.
+# Updated: 2021.12.24
 
 82.165.0.0/16 Deny Cloud
 87.106.0.0/16 Deny Cloud
@@ -1198,10 +1205,9 @@ Origin: ES
 185.132.36.0/22 Deny Cloud
 185.132.40.0/22 Deny Cloud
 213.171.192.0/19 Deny Cloud
+217.73.68.0/24 Deny Cloud
 217.174.240.0/20 Deny Cloud
 Origin: GB
-46.242.149.0/24 Deny Cloud
-Origin: PL
 50.21.176.0/20 Deny Cloud
 66.175.232.0/21 Deny Cloud
 70.35.192.0/20 Deny Cloud
@@ -1217,7 +1223,7 @@ Origin: PL
 198.251.64.0/20 Deny Cloud
 216.250.112.0/20 Deny Cloud
 Origin: US
-Profile: Tor endpoints here
+Profile: Infrastructure/Transit;Tor endpoints here;Webhosting
 Tag: 1&1 Internet SE
 
 
@@ -2060,8 +2066,8 @@ Tag: Avesta Networks LLC
 
 
 # ASN 42244 ("Hosting Operator eServer.ru Ltd").
-# Stop Forum Spam (SFS) listings: 37.
-# Updated: 2021.02.02 / Checked: 2021.03.18
+# Stop Forum Spam (SFS) listings: 2.
+# Updated: 2021.12.24
 
 80.77.168.0/24 Deny Cloud
 88.218.251.0/24 Deny Cloud
@@ -2076,6 +2082,8 @@ Tag: Avesta Networks LLC
 185.115.142.0/24 Deny Cloud
 185.191.196.0/22 Deny Cloud
 Origin: RU
+23.170.248.0/24 Deny Cloud
+Origin: US
 Profile: Webhosting
 Tag: eServer.ru
 
@@ -3855,8 +3863,8 @@ Tag: Ready Server
 
 
 # ASN 42655 ("ON-LINE Ltd").
-# Stop Forum Spam (SFS) listings: 5.
-# Updated: 2016.01.21 / Checked: 2021.02.02
+# Stop Forum Spam (SFS) listings: 11.
+# Updated: 2016.01.21 / Checked: 2021.12.24
 
 31.41.216.0/21 Deny Cloud
 194.28.172.0/22 Deny Cloud
@@ -22709,11 +22717,11 @@ Tag: Gigabit Hosting
 # Trademark protection organisation; Scans websites looking for potential
 # infringements in order to send legal notices on behalf of clients. Serves no
 # benefit to the websites being scanned.
-# Updated: 2018.02.25 / Checked: 2021.02.02
+# Updated: 2018.02.25 / Checked: 2021.12.24
 
 185.25.32.0/22 Deny Cloud
 Origin: GB
-Profile: Webhosting
+Profile: Commercial
 Tag: Brandwatch
 
 
@@ -24081,8 +24089,8 @@ Tag: Gyron Internet Ltd
 
 
 # ASN 55229 ("White Sands Hosting").
-# Stop Forum Spam (SFS) listings: 11.
-# Updated: 2018.09.01 / Checked: 2021.02.02
+# Stop Forum Spam (SFS) listings: 8.
+# Updated: 2018.09.01 / Checked: 2021.12.24
 
 66.11.127.0/24 Deny Cloud
 199.193.14.0/23 Deny Cloud
@@ -27079,11 +27087,17 @@ Tag: Vivid Hosting
 
 # ASN 394844 ("Root Level Technology, LLC").
 # Dedicated server farm/lease and an occasional source of spam.
-# Updated: 2019.12.26 / Checked: 2021.01.14
+# Updated: 2021.12.24
 
 45.248.54.0/24 Deny Cloud
 Origin: AU
-103.115.187.0/24 Deny Cloud
+102.38.224.0/24 Deny Cloud
+102.38.226.0/24 Deny Cloud
+102.38.228.0/24 Deny Cloud
+102.38.231.0/24 Deny Cloud
+Origin: NG
+103.115.186.0/23 Deny Cloud
+103.210.12.0/24 Deny Cloud
 Origin: PK
 38.64.98.0/24 Deny Cloud
 38.83.143.0/24 Deny Cloud
@@ -27097,21 +27111,12 @@ Origin: PK
 38.143.14.0/24 Deny Cloud
 45.56.201.0/24 Deny Cloud
 45.56.202.0/24 Deny Cloud
-64.52.4.0/24 Deny Cloud
-64.190.122.0/24 Deny Cloud
-64.190.145.0/24 Deny Cloud
-64.190.146.0/24 Deny Cloud
-64.190.148.0/24 Deny Cloud
+94.154.180.0/23 Deny Cloud
+155.193.4.0/22 Deny Cloud
 209.148.80.0/21 Deny Cloud
 209.148.88.0/22 Deny Cloud
 209.148.92.0/24 Deny Cloud
 209.148.94.0/23 Deny Cloud
-216.198.88.0/24 Deny Cloud
-216.198.91.0/24 Deny Cloud
-216.230.65.0/24 Deny Cloud
-216.230.87.0/24 Deny Cloud
-216.230.92.0/24 Deny Cloud
-216.246.195.0/24 Deny Cloud
 Origin: US
 Profile: Dedicated;Webhosting
 Tag: Root Level Technology
@@ -27259,8 +27264,8 @@ Tag: Reprise Hosting
 
 # ASN 49834 ("Best Hosting Company, LLC").
 # Dedicated webhosting provider and an occasional source of spam.
-# Stop Forum Spam (SFS) listings: 3.
-# Updated: 2019.12.26 / Checked: 2021.01.14
+# Stop Forum Spam (SFS) listings: 1.
+# Updated: 2019.12.26 / Checked: 2021.12.24
 
 213.108.248.0/21 Deny Cloud
 Origin: RU
@@ -27394,8 +27399,8 @@ Tag: INTEL WEB HOSTING SRL
 
 # ASN 31240 ('ZAO "Hosting Telesystems"').
 # Dedicated webhosting provider and an occasional source of spam.
-# Stop Forum Spam (SFS) listings: 36.
-# Updated: 2019.12.27 / Checked: 2021.01.16
+# Stop Forum Spam (SFS) listings: 10.
+# Updated: 2019.12.27 / Checked: 2021.12.24
 
 78.110.48.0/20 Deny Cloud
 188.92.176.0/21 Deny Cloud
@@ -28484,10 +28489,9 @@ Tag: NETMINDERS
 # Webhosting provider caught trying to hack into WordPress and Drupal
 # installations, scanning for vulnerabilities, performing brute-force attacks
 # plus performing other unwanted activities.
-# Stop Forum Spam (SFS) listings: 23.
-# Updated: 2021.04.26
+# Stop Forum Spam (SFS) listings: 14.
+# Updated: 2021.12.24
 
-91.234.104.0/22 Deny Cloud
 185.81.156.0/22 Deny Cloud
 Origin: FR
 Profile: Webhosting
@@ -29693,12 +29697,14 @@ Tag: Patron Technology Persia Ltd
 # ASN 48896 ("dhosting.pl Sp. z o.o").
 # Dedicated webhosting provider. Drive-by WordPress attacks detected
 # originating from this network.
-# Updated: 2020.07.27 / Checked: 2021.02.02
+# Updated: 2021.12.24
 
 109.95.152.0/21 Deny Cloud
 195.88.50.0/23 Deny Cloud
 195.191.232.0/23 Deny Cloud
 Origin: PL
+195.85.85.0/24 Deny Cloud
+Origin: US
 Profile: Dedicated;Webhosting
 Tag: dhosting.pl
 
@@ -29706,8 +29712,8 @@ Tag: dhosting.pl
 # ASN 7684 ("SAKURA Internet Inc").
 # Dedicated webhosting provider. Drive-by WordPress attacks detected
 # originating from this network.
-# Stop Forum Spam (SFS) listings: 40.
-# Updated: 2020.07.27 / Checked: 2021.02.02
+# Stop Forum Spam (SFS) listings: 44.
+# Updated: 2021.12.24
 
 49.212.65.0/24 Deny Cloud
 49.212.66.0/24 Deny Cloud
@@ -29736,6 +29742,12 @@ Tag: dhosting.pl
 153.127.0.0/17 Deny Cloud
 153.127.128.0/18 Deny Cloud
 153.127.192.0/19 Deny Cloud
+157.17.32.0/19 Deny Cloud
+157.17.64.0/20 Deny Cloud
+157.17.82.0/23 Deny Cloud
+157.17.84.0/22 Deny Cloud
+157.17.88.0/21 Deny Cloud
+157.17.112.0/20 Deny Cloud
 182.48.1.0/24 Deny Cloud
 182.48.2.0/24 Deny Cloud
 182.48.9.0/24 Deny Cloud
@@ -33357,8 +33369,8 @@ Tag: Trustwave Holdings, Inc
 
 # ASN 28855 ("Octopuce s.a.r.l").
 # Webhosting provider caught spamming.
-# Stop Forum Spam (SFS) listings: 1,355.
-# Updated: 2021.04.26
+# Stop Forum Spam (SFS) listings: 1,580.
+# Updated: 2021.04.26 / Checked: 2021.12.24
 
 91.194.60.0/23 Deny Cloud
 185.34.32.0/22 Deny Cloud
@@ -35563,6 +35575,48 @@ Tag: CommuniLink Internet
 Origin: SG
 Profile: Commercial
 Tag: Suga Pte. Ltd
+
+
+# ASN 26658 ("HT").
+# Hong Kong commercial network. Spam and other unwanted traffic detected from
+# here. Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 6,380.
+# Updated: 2021.12.24
+
+27.0.158.0/24 Deny Attacks
+103.197.168.0/22 Deny Attacks
+103.204.109.0/24 Deny Attacks
+103.204.110.0/23 Deny Attacks
+103.207.117.0/24 Deny Attacks
+103.219.82.0/24 Deny Attacks
+202.9.63.0/24 Deny Attacks
+202.14.4.0/22 Deny Attacks
+220.158.226.0/24 Deny Attacks
+Origin: HK
+45.33.252.0/24 Deny Attacks
+104.128.114.6/32 Deny Spam
+107.178.144.0/23 Deny Attacks
+107.178.186.0/24 Deny Attacks
+146.148.176.0/24 Deny Attacks
+146.148.177.175/32 Deny Attacks
+146.148.178.0/24 Deny Attacks
+Origin: US
+Profile: Commercial;Webhosting
+Tag: HT
+
+
+# ASN 200780 ("APPLIWAVE SAS").
+# French webhosting, mail, and VPS provider. Brute-force, DDoS, SQLi, SSH, and
+# webapp attacks, port scans, hacking, and spam detected from here.
+# Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 65.
+# Updated: 2021.12.24
+
+45.155.231.53/32 Deny Attacks
+95.178.108.0/24 Deny Attacks
+Origin: FR
+Profile: Infrastructure/Transit;Webhosting
+Tag: APPLIWAVE SAS
 
 
 # ---

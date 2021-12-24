@@ -77,45 +77,6 @@ Profile: Domestic ISP;Multiplay;Webhosting
 Tag: Sun Network HK
 
 
-# ASN 26658 ("HT").
-# Hong Kong commercial network. Spam and other unwanted traffic detected from
-# here. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 2,271.
-# Updated: 2020.08.05 / Checked: 2021.02.05
-
-43.239.160.134/32 Deny Spam
-43.239.161.9/32 Deny Spam
-45.250.174.148/32 Deny Spam
-59.153.147.0/24 Deny Spam
-103.4.24.250/31 Deny Spam
-103.12.50.251/32 Deny Spam
-103.12.51.0/24 Deny Spam
-103.69.120.181/32 Deny Spam
-103.69.122.0/24 Deny Spam
-103.195.116.0/24 Deny Spam
-103.197.168.0/23 Deny Attacks
-103.197.170.39/32 Deny Spam
-103.197.171.14/32 Deny Spam
-103.198.190.0/23 Deny Spam
-103.199.244.52/32 Deny Spam
-103.204.108.186/32 Deny Spam
-103.204.109.0/24 Deny Attacks
-103.204.110.0/23 Deny Attacks
-175.158.101.238/32 Deny Spam
-202.14.4.0/23 Deny Attacks
-202.14.6.0/24 Deny Attacks
-220.158.226.0/24 Deny Attacks
-Origin: HK
-146.148.176.159/32 Deny Spam
-146.148.177.184/32 Deny Spam
-146.148.178.172/32 Deny Spam
-146.148.179.152/32 Deny Spam
-216.12.174.126/32 Deny Spam
-Origin: US
-Profile: Commercial;Multiplay;Webhosting
-Tag: HT
-
-
 # ASN 48159 ("Telecommunication Infrastructure Company").
 # Iranian transit provider. Port scans, IP theft, email harvesters, and scaping
 # detected from here. Listing just the affected ranges/addresses only.
@@ -1381,20 +1342,21 @@ Tag: WISH NET
 
 
 # ASN 23888 ("National Telecommunication Corporation HQ").
-# A domestic ISP from Pakistan caught spamming, hacking, port scanning,
-# brute-forcing, etc. Currently only listing 175.107.* addresses, as the
-# unwanted activity seems limited to those ranges at this time.
-# Stop Forum Spam (SFS) listings: 124.
-# Updated: 2021.04.21
+# Pakistan domestic ISP. Brute-force attacks, hacking, port scans, and spam
+# detected from here. Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 46.
+# Updated: 2021.12.24
 
-175.107.0.0/19 Deny Spam
-175.107.32.0/24 Deny Spam
-175.107.35.0/24 Deny Spam
-175.107.36.0/22 Deny Spam
-175.107.40.0/21 Deny Spam
-175.107.48.0/21 Deny Spam
-175.107.56.0/24 Deny Spam
-175.107.60.0/22 Deny Spam
+43.250.87.0/24 Deny Attacks
+113.197.55.0/24 Deny Attacks
+175.107.0.0/20 Deny Attacks
+175.107.16.0/22 Deny Attacks
+175.107.21.0/24 Deny Attacks
+175.107.30.0/23 Deny Attacks
+175.107.32.0/24 Deny Attacks
+175.107.55.0/24 Deny Attacks
+202.83.170.0/23 Deny Attacks
+202.83.172.0/22 Deny Attacks
 Origin: PK
 Profile: Domestic ISP
 Tag: AS23888
@@ -7977,64 +7939,56 @@ Profile: Domestic ISP
 Tag: GAYATRI COMMUNICATIONS
 
 
-# ASN 24309 ("Atria Convergence Technologies Pvt. Ltd. Broadband Internet
-# Service Provider INDIA"). An Indian domestic ISP caught spamming. Listing
-# just the affected ranges, plus all US ranges (interlaced cloud ranges).
-# Stop Forum Spam (SFS) listings: 1,552.
-# Updated: 2021.04.28
+# ASNs 24309, 131269 ("Atria Convergence Technologies Pvt. Ltd. Broadband
+# Internet Service Provider INDIA", "ACTFIBERNET Pvt Ltd").
+# Indian domestic ISP. Brute-force, SSH, FTP, SQLi, and webapp attacks, port
+# scans, hacking, and spam detected from here.
+# Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 2,362 (AS24309), 346 (AS131269).
+# Updated: 2021.12.24
 
 49.204.77.190/32 Deny Spam
 49.204.92.82/32 Deny Spam
-49.204.224.0/24 Deny Attacks
-49.204.226.0/24 Deny Attacks
-49.204.228.86/32 Deny Spam
-49.204.229.0/24 Deny Attacks
-49.204.230.0/23 Deny Attacks
-49.205.78.115/32 Deny Spam
+49.204.113.162/32 Deny Spam
+49.204.128.0/20 Deny Attacks
+49.204.224.0/21 Deny Attacks
+49.204.232.0/22 Deny Attacks
 49.205.79.0/24 Deny Attacks
+49.205.80.233/32 Deny Spam
 49.205.85.0/24 Deny Attacks
-49.206.3.127/32 Deny Spam
+49.205.146.0/24 Deny Attacks
+49.205.150.77/32 Deny Spam
+49.205.193.28/32 Deny Spam
 49.206.7.0/24 Deny Attacks
+49.206.8.122/32 Deny Spam
 49.206.15.161/32 Deny Spam
-49.206.127.68/32 Deny Spam
+49.206.30.227/32 Deny Spam
+49.206.228.30/32 Deny Spam
 49.206.234.214/32 Deny Spam
+49.206.255.0/24 Deny Attacks
 49.207.128.0/24 Deny Attacks
-49.207.133.31/32 Deny Spam
 49.207.134.0/24 Deny Attacks
-49.207.137.107/32 Deny Spam
-49.207.138.127/32 Deny Spam
-49.207.139.66/32 Deny Spam
-49.207.141.93/32 Deny Spam
-49.207.196.158/32 Deny Spam
+49.207.183.170/32 Deny Spam
 49.207.198.0/24 Deny Attacks
-49.207.203.233/32 Deny Spam
-49.207.206.217/32 Deny Spam
-49.207.208.125/32 Deny Spam
+49.207.200.159/32 Deny Spam
+49.207.203.77/32 Deny Spam
+49.207.209.92/32 Deny Spam
 49.207.210.203/32 Deny Spam
-49.207.211.111/32 Deny Spam
-49.207.213.242/32 Deny Spam
-49.207.215.69/32 Deny Spam
 49.207.218.0/24 Deny Attacks
-103.227.98.7/32 Deny Spam
+49.207.223.0/24 Deny Attacks
+106.51.0.150/32 Deny Spam
 106.51.2.0/24 Deny Attacks
-106.51.26.170/32 Deny Spam
-106.51.27.126/32 Deny Spam
+106.51.72.222/32 Deny Spam
 106.51.86.0/24 Deny Attacks
+106.51.90.65/32 Deny Spam
 106.51.105.0/24 Deny Attacks
-106.51.127.36/32 Deny Spam
-106.51.143.253/32 Deny Spam
 106.51.153.0/24 Deny Attacks
 106.51.234.0/24 Deny Attacks
-106.51.235.69/32 Deny Spam
-124.123.83.90/32 Deny Spam
-183.82.205.53/32 Deny Spam
-183.83.153.189/32 Deny Spam
+183.82.205.55/32 Deny Spam
+183.82.206.220/32 Deny Spam
+183.83.185.178/32 Deny Spam
+183.83.254.0/23 Deny Attacks
 Origin: IN
-23.2.0.0/24 Deny Cloud
-23.59.180.0/23 Deny Cloud
-23.62.12.0/23 Deny Cloud
-23.62.48.0/23 Deny Cloud
-Origin: US
 Profile: Domestic ISP
 Tag: Atria Convergence
 
@@ -12663,36 +12617,14 @@ Tag: Netorn LLC
 
 # ASN 18809 ("Cable Onda").
 # Panama cable ISP. Port scans and hack attempts detected from here.
-# Listing just the affected ranges/addresses, plus all US ranges (cloud).
-# Stop Forum Spam (SFS) listings: 221.
-# Updated: 2021.04.25
+# Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 325.
+# Updated: 2021.12.24
 
-181.197.1.182/32 Deny Spam
-181.197.25.214/32 Deny Spam
-181.197.54.142/32 Deny Spam
-181.197.103.131/32 Deny Spam
 181.197.118.0/24 Deny Attacks
-181.197.124.201/32 Deny Spam
-186.188.165.232/32 Deny Spam
-186.188.180.84/32 Deny Spam
-190.140.97.225/32 Deny Spam
-190.140.236.223/32 Deny Spam
-190.140.246.220/32 Deny Spam
-190.141.20.175/32 Deny Spam
-190.141.61.238/32 Deny Spam
-190.141.83.88/32 Deny Spam
-190.141.237.236/32 Deny Spam
-190.218.115.35/32 Deny Spam
-190.218.178.27/32 Deny Spam
-190.219.103.246/32 Deny Spam
-190.219.127.160/32 Deny Spam
-201.218.101.14/32 Deny Spam
-201.218.108.98/32 Deny Spam
+201.218.108.0/24 Deny Attacks
 201.218.125.0/24 Deny Attacks
 Origin: PA
-23.223.152.0/22 Deny Cloud
-64.213.56.0/21 Deny Cloud
-Origin: US
 Profile: Domestic ISP
 Tag: Cable Onda
 
@@ -12700,24 +12632,15 @@ Tag: Cable Onda
 # ASN 17465 ("Cable ISP in India").
 # Indian domestic ISP. Port scans and hack attempts detected from here.
 # Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 293.
-# Updated: 2021.04.25
+# Stop Forum Spam (SFS) listings: 394.
+# Updated: 2021.12.24
 
-111.92.29.78/32 Deny Spam
-111.92.56.235/32 Deny Spam
-111.92.59.206/32 Deny Spam
-111.92.80.12/32 Deny Spam
-111.92.81.51/32 Deny Spam
-116.68.75.91/32 Deny Spam
-116.68.77.123/32 Deny Spam
+111.92.72.0/24 Deny Attacks
+111.92.77.0/24 Deny Attacks
+116.68.72.0/24 Deny Attacks
 116.68.110.0/24 Deny Attacks
-202.83.56.99/32 Deny Spam
-202.83.59.106/32 Deny Spam
-202.164.131.31/32 Deny Spam
-202.164.133.53/32 Deny Spam
-202.164.136.42/32 Deny Spam
-202.164.138.126/32 Deny Spam
-202.164.139.182/32 Deny Spam
+202.83.57.0/24 Deny Attacks
+202.164.139.0/24 Deny Attacks
 202.164.152.0/24 Deny Attacks
 Origin: IN
 Profile: Domestic ISP
@@ -12725,12 +12648,12 @@ Tag: Cable ISP in India
 
 
 # ASN 9 ("Carnegie Mellon University").
-# XMLRPC attacks and spam events detected from some specific
-# ranges/addresses here. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 231.
-# Updated: 2021.04.26
+# Brute-force, XMLRPC, and webapp attacks, hacking, port scans, and spam
+# detected from here. Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 337.
+# Updated: 2021.12.24
 
-204.194.29.0/24 Deny Attacks
+204.194.29.4/32 Deny Attacks
 Origin: US
 Profile: Tor endpoints here;University
 Tag: Carnegie Mellon University
@@ -12739,34 +12662,24 @@ Tag: Carnegie Mellon University
 # ASN 36937 ("Liquid Telecommunications South Africa (Pty) Ltd").
 # South African multiplay network. Spam, brute-force, and SSH attacks detected
 # from here. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 1,229.
-# Updated: 2021.04.28
+# Stop Forum Spam (SFS) listings: 854.
+# Updated: 2021.12.24
 
-41.160.6.0/24 Deny Spam
-41.160.38.120/32 Deny Spam
-41.160.48.0/24 Deny Spam
-41.160.102.218/32 Deny Spam
-41.160.225.174/32 Deny Spam
-41.161.72.108/32 Deny Spam
-41.161.80.66/32 Deny Spam
-41.161.92.92/32 Deny Spam
-41.162.94.0/24 Deny Spam
-41.162.107.0/24 Deny Spam
-41.162.125.226/32 Deny Spam
-41.162.154.82/32 Deny Spam
-41.162.162.34/32 Deny Spam
+41.160.6.186/32 Deny Attacks
+41.160.48.202/32 Deny Spam
+41.162.94.52/32 Deny Spam
+41.162.107.130/32 Deny Attacks
 41.162.186.0/24 Deny Attacks
-41.164.24.0/24 Deny Spam
+41.164.24.243/32 Deny Attacks
 41.164.82.3/32 Deny Spam
 41.164.243.0/24 Deny Attacks
-41.169.70.0/24 Deny Attacks
-41.169.79.166/32 Deny Spam
+41.169.70.219/32 Deny Attacks
 41.169.139.2/32 Deny Spam
-41.169.151.90/32 Deny Spam
-41.169.152.0/24 Deny Spam
-41.170.4.42/32 Deny Spam
-41.170.12.0/24 Deny Spam
+41.169.152.154/32 Deny Spam
+41.170.12.92/32 Deny Attacks
 Origin: MU
+41.57.190.5/32 Deny Spam
+Origin: ZA
 Profile: Domestic ISP;Infrastructure/Transit;Multiplay;Webhosting
 Tag: Liquid Telecommunications
 
@@ -12809,18 +12722,17 @@ Profile: Domestic ISP
 Tag: Bouygues Telecom SA
 
 
-# ASN 1257 (No name announced for this ASN).
+# ASN 1257 ("Tele2 Sverige AB").
 # Swedish mobile and broadband provider. Spam, fraud/phish attempts, webapp,
 # SSH, DDoS, and brute-force attacks detected from here. Listing just the
 # affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 6,731.
-# Updated: 2021.04.28
+# Stop Forum Spam (SFS) listings: 7,706.
+# Updated: 2021.12.24
 
-83.179.37.121/32 Deny Attacks
-90.128.48.21/32 Deny Spam
+90.135.150.0/24 Deny Attacks
 95.153.31.0/24 Deny Attacks
 95.153.32.0/24 Deny Attacks
-213.100.139.168/32 Deny Spam
+193.217.8.145/32 Deny Attacks
 Origin: SE
 Profile: Domestic ISP
 Tag: AS1257
@@ -12829,12 +12741,11 @@ Tag: AS1257
 # ASN 42981 ("Pawel Kosiorowski trading as RES.PL Kosiorowski, Wisniowski sp.j").
 # Polish domestic ISP. Spam and webapp hack attempts detected from here.
 # Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 85.
-# Updated: 2021.04.28
+# Stop Forum Spam (SFS) listings: 156.
+# Updated: 2021.12.24
 
 91.196.8.182/32 Deny Attacks
 91.196.10.0/24 Deny Attacks
-91.196.11.181/32 Deny Attacks
 Origin: PL
 Profile: Domestic ISP
 Tag: Pawel Kosiorowski
@@ -12843,65 +12754,88 @@ Tag: Pawel Kosiorowski
 # ASN 131111 ("PT Mora Telematika Indonesia").
 # Indonesian backbone and broadband provider. Spam, port scans, and hack
 # attempts detected from here. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 1,428.
-# Updated: 2021.04.28
+# Stop Forum Spam (SFS) listings: 1,434.
+# Updated: 2021.12.24
 
-27.50.18.0/24 Deny Spam
-45.121.216.218/32 Deny Spam
-103.66.196.18/32 Deny Spam
-103.76.15.138/32 Deny Spam
-103.76.18.0/24 Deny Spam
-103.76.20.0/24 Deny Spam
-103.76.22.62/32 Deny Spam
-103.76.23.0/24 Deny Spam
-103.78.27.62/32 Deny Spam
-103.78.81.0/24 Deny Spam
+27.50.18.42/32 Deny Spam
+27.50.23.202/32 Deny Spam
+103.66.196.218/32 Deny Spam
+103.66.198.50/32 Deny Spam
+103.76.15.0/24 Deny Attacks
+103.76.20.0/24 Deny Attacks
+103.76.24.29/32 Deny Spam
+103.76.27.34/32 Deny Spam
+103.78.25.0/24 Deny Attacks
+103.78.39.138/32 Deny Spam
 103.78.82.154/32 Deny Spam
-103.78.96.186/32 Deny Spam
+103.78.114.46/32 Deny Spam
 103.78.214.0/24 Deny Attacks
-103.79.154.222/32 Deny Spam
-103.82.14.0/24 Deny Spam
-103.82.15.177/32 Deny Spam
-103.83.93.192/32 Deny Spam
-103.85.67.94/32 Deny Spam
-103.122.104.0/24 Deny Spam
-103.122.105.242/32 Deny Spam
-103.123.65.0/24 Deny Spam
-103.123.231.10/32 Deny Spam
-103.206.246.110/32 Deny Spam
-103.233.158.34/32 Deny Spam
-122.50.5.0/24 Deny Spam
-122.50.6.0/24 Deny Spam
-202.43.186.94/32 Deny Spam
-203.176.180.0/24 Deny Spam
+103.78.215.58/31 Deny Spam
+103.82.13.89/32 Deny Spam
+103.82.14.61/32 Deny Spam
+103.122.34.214/32 Deny Spam
+103.122.35.0/24 Deny Attacks
+103.122.98.242/32 Deny Spam
+103.122.105.0/24 Deny Attacks
+103.122.108.44/32 Deny Spam
+103.123.65.0/24 Deny Attacks
+103.123.250.0/24 Deny Attacks
+103.131.99.189/32 Deny Spam
+103.131.117.0/24 Deny Attacks
+122.50.5.126/32 Deny Spam
+122.50.5.148/32 Deny Spam
+122.50.6.0/24 Deny Attacks
+202.43.182.3/32 Deny Spam
+202.43.190.10/32 Deny Spam
+202.43.191.10/32 Deny Spam
+203.176.180.0/24 Deny Attacks
 Origin: ID
 Profile: Domestic ISP;Infrastructure/Transit
 Tag: PT Mora Telematika Indonesia
 
 
-# ASN 4800 ("Network Access Provider and Internet Service Provider").
+# ASN 4800 ("PT Aplikanusa Lintasarta").
 # Indonesian domestic ISP. Spam, brute-force, and webapp attacks detected from
 # here. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 1,237.
-# Updated: 2021.04.28
+# Stop Forum Spam (SFS) listings: 1,521.
+# Updated: 2021.12.24
 
-36.37.104.98/32 Deny Spam
+36.37.71.0/24 Deny Attacks
+36.37.94.0/24 Deny Attacks
+36.37.104.98/32 Deny Attacks
+36.37.107.210/32 Deny Spam
 36.37.113.4/32 Deny Spam
 36.37.124.100/32 Deny Spam
 61.8.66.178/32 Deny Spam
+61.8.71.0/24 Deny Attacks
 61.8.75.186/32 Deny Spam
-61.8.79.68/32 Deny Spam
-123.231.230.58/32 Deny Spam
-125.213.136.174/32 Deny Spam
-125.213.150.219/32 Deny Spam
-182.23.12.194/32 Deny Spam
+103.168.123.90/32 Deny Spam
+103.169.24.118/32 Deny Spam
+123.231.133.242/32 Deny Spam
+123.231.141.0/24 Deny Attacks
+123.231.143.106/32 Deny Spam
+123.231.153.218/32 Deny Spam
+123.231.175.19/32 Deny Spam
+123.231.185.162/32 Deny Spam
+123.231.191.171/32 Deny Spam
+123.231.230.0/24 Deny Attacks
+182.23.5.70/32 Deny Spam
+182.23.36.82/32 Deny Spam
+182.23.49.147/32 Deny Spam
 182.23.51.0/24 Deny Attacks
-182.23.54.146/32 Deny Spam
-182.23.79.162/32 Deny Spam
-183.91.68.148/32 Deny Spam
-183.91.86.174/32 Deny Spam
-202.152.39.222/32 Deny Spam
+182.23.59.242/32 Deny Spam
+182.23.79.0/24 Deny Attacks
+182.23.81.219/32 Deny Spam
+182.23.100.18/32 Deny Spam
+182.23.105.190/32 Deny Spam
+182.23.107.211/32 Deny Spam
+183.91.76.242/32 Deny Spam
+183.91.85.210/32 Deny Spam
+183.91.86.94/32 Deny Attacks
+183.91.86.174/32 Deny Attacks
 Origin: ID
+209.146.44.194/32 Deny Spam
+Origin: US
 Profile: Domestic ISP
 Tag: AS4800
 
@@ -12909,10 +12843,10 @@ Tag: AS4800
 # ASN 41421 ("StarNet Telecom Sp. z o.o").
 # Polish domestic ISP. Spam and hack attempts detected from here. Listing just
 # the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 111.
-# Updated: 2021.04.28
+# Stop Forum Spam (SFS) listings: 348.
+# Updated: 2021.12.24
 
-188.65.41.0/24 Deny Attacks
+188.65.41.57/32 Deny Attacks
 Origin: PL
 Profile: Domestic ISP
 Tag: StarNet Telecom Sp. z o.o
@@ -12921,12 +12855,10 @@ Tag: StarNet Telecom Sp. z o.o
 # ASN 42905 ("LIMANET Ltd").
 # Ukrainian domestic ISP. Spam, port scans, brute-force, SSH, and hack attacks
 # detected from here. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 299.
-# Updated: 2021.04.28
+# Stop Forum Spam (SFS) listings: 159.
+# Updated: 2021.12.24
 
 141.105.132.0/24 Deny Attacks
-141.105.133.2/32 Deny Spam
-Origin: EE
 193.200.151.0/24 Deny Attacks
 Origin: UA
 Profile: Domestic ISP

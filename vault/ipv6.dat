@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6.dat
 
-# Version: 2021.356.0
-# Last modified: 2021.12.23
+# Version: 2021.357.0
+# Last modified: 2021.12.24
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -171,8 +171,8 @@ Tag: home.pl
 
 
 # ASN 25532 ("Masterhost").
-# Stop Forum Spam (SFS) listings: 11.
-# Updated: 2016.04.18 / Checked: 2021.04.26
+# Stop Forum Spam (SFS) listings: 7.
+# Updated: 2016.04.18 / Checked: 2021.12.24
 
 2a00:15f8::/32 Deny Cloud
 Origin: RU
@@ -202,8 +202,8 @@ Tag: GoDaddy.com, LLC
 
 
 # ASN 8560 ("1&1 IONOS SE").
-# Stop Forum Spam (SFS) listings: 2,863.
-# Updated: 2018.04.10 / Checked: 2021.02.02
+# Stop Forum Spam (SFS) listings: 5,934.
+# Updated: 2018.04.10 / Checked: 2021.12.24
 
 2001:8d8::/32 Deny Cloud
 2a0d:7f00::/29 Deny Cloud
@@ -214,7 +214,7 @@ Origin: ES
 Origin: GB
 2607:f1c0::/32 Deny Cloud
 Origin: US
-Profile: Tor endpoints here
+Profile: Infrastructure/Transit;Tor endpoints here;Webhosting
 Tag: 1&1 Internet SE
 
 
@@ -401,8 +401,8 @@ Tag: eServer.ru
 
 
 # ASN 42244 ("Hosting Operator eServer.ru Ltd").
-# Stop Forum Spam (SFS) listings: 37.
-# Updated: 2019.03.19 / Checked: 2021.02.02
+# Stop Forum Spam (SFS) listings: 2.
+# Updated: 2019.03.19 / Checked: 2021.12.24
 
 2a0a:2540::/29 Deny Cloud
 Origin: RU
@@ -926,8 +926,8 @@ Tag: Ready Server
 
 
 # ASN 42655 ("ON-LINE Ltd").
-# Stop Forum Spam (SFS) listings: 5.
-# Updated: 2016.01.21 / Checked: 2021.02.02
+# Stop Forum Spam (SFS) listings: 11.
+# Updated: 2016.01.21 / Checked: 2021.12.24
 
 2001:67c:2224::/48 Deny Cloud
 Origin: UA
@@ -5176,11 +5176,11 @@ Tag: Gigabit Hosting
 # Trademark protection organisation; Scans websites looking for potential
 # infringements in order to send legal notices on behalf of clients. Serves no
 # benefit to the websites being scanned.
-# Updated: 2018.02.25 / Checked: 2021.02.02
+# Updated: 2018.02.25 / Checked: 2021.12.24
 
 2a00:77e0::/32 Deny Cloud
 Origin: GB
-Profile: Webhosting
+Profile: Commercial
 Tag: Brandwatch
 
 
@@ -5528,8 +5528,8 @@ Tag: Gyron Internet Ltd
 
 
 # ASN 55229 ("White Sands Hosting").
-# Stop Forum Spam (SFS) listings: 11.
-# Updated: 2018.09.01 / Checked: 2021.02.02
+# Stop Forum Spam (SFS) listings: 8.
+# Updated: 2018.09.01 / Checked: 2021.12.24
 
 2606:3980::/48 Deny Cloud
 Origin: US
@@ -6565,7 +6565,7 @@ Tag: Rack Sphere Hosting
 
 # ASN 394844 ("Root Level Technology, LLC").
 # Dedicated server farm/lease and an occasional source of spam.
-# Updated: 2019.12.26 / Checked: 2021.01.14
+# Updated: 2019.12.26 / Checked: 2021.12.24
 
 2605:2080:8000::/34 Deny Cloud
 2607:d100::/32 Deny Cloud
@@ -7505,7 +7505,7 @@ Tag: Digital Pacific AU
 # ASN 48896 ("dhosting.pl Sp. z o.o").
 # Dedicated webhosting provider. Drive-by WordPress attacks detected
 # originating from this network.
-# Updated: 2020.07.27 / Checked: 2021.02.02
+# Updated: 2020.07.27 / Checked: 2021.12.24
 
 2001:67c:1c8::/48 Deny Cloud
 Origin: PL
@@ -7516,8 +7516,8 @@ Tag: dhosting.pl
 # ASN 7684 ("SAKURA Internet Inc").
 # Dedicated webhosting provider. Drive-by WordPress attacks detected
 # originating from this network.
-# Stop Forum Spam (SFS) listings: 40.
-# Updated: 2020.07.27 / Checked: 2021.02.02
+# Stop Forum Spam (SFS) listings: 44.
+# Updated: 2020.07.27 / Checked: 2021.12.24
 
 2401:2500::/32 Deny Cloud
 Origin: JP
@@ -8659,8 +8659,8 @@ Tag: Trustwave Holdings, Inc
 
 # ASN 28855 ("Octopuce s.a.r.l").
 # Webhosting provider caught spamming.
-# Stop Forum Spam (SFS) listings: 1,355.
-# Updated: 2021.04.26
+# Stop Forum Spam (SFS) listings: 1,580.
+# Updated: 2021.04.26 / Checked: 2021.12.24
 
 2001:67c:288::/48 Deny Cloud
 2001:1b78::/32 Deny Cloud

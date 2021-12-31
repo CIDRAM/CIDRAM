@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6_isps.dat
 
-# Version: 2021.357.0
-# Last modified: 2021.12.24
+# Version: 2021.364.0
+# Last modified: 2021.12.31
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -25,19 +25,6 @@ Profile: Frequent changes;Infrastructure/Transit;Tor endpoints here
 Tag: Voxility LLC
 
 
-# ASNs 42708, 43948 ("GleSYS AB").
-# Scandinavian multiplay network (domestic ISP, webhosting, cloud lease, etc).
-# Regular SSH and brute-force attacks, spam, flooding/hammering, etc from here.
-# Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 33,314 (AS42708), 657 (AS43948).
-# Updated: 2021.04.30
-
-2a02:750:7::/64 Deny Spam
-Origin: SE
-Profile: Domestic ISP;Infrastructure/Transit;Multiplay;Tor endpoints here;Webhosting
-Tag: GleSYS AB
-
-
 # ASNs 34665, 44050 ("Petersburg Internet Network ltd").
 # Major domestic ISP from Russia, but also a significant, long-term source of
 # spam, hack attempts, scraping, probing for vulnerabilities, and other kinds
@@ -53,19 +40,6 @@ Origin: GB
 Origin: RU
 Profile: Domestic ISP
 Tag: PIN-AS
-
-
-# ASN 8551 ("Bezeq International-Ltd").
-# Domestic Israeli ISP with human endpoints, but has some bad actors (spambots,
-# scrapers, etc). Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 518.
-# Updated: 2021.11.21
-
-2a10:8004:9817::/48 Deny Spam
-2a10:800c:46a6::/48 Deny Spam
-Origin: IL
-Profile: Domestic ISP
-Tag: Bezeq International
 
 
 # ASN 35804 ("PP SKS-LUGAN").
@@ -410,8 +384,8 @@ Tag: ER-Telecom Holding
 
 # ASN 137432 ("BKB Network").
 # Caught using automated hacktools to try hacking into honeypots.
-# Stop Forum Spam (SFS) listings: 2.
-# Updated: 2021.11.04
+# Stop Forum Spam (SFS) listings: 4.
+# Updated: 2021.11.04 / Checked: 2021.12.31
 
 2402:68c0:a000::/36 Deny Attacks
 2402:68c0:c000::/36 Deny Attacks
@@ -435,8 +409,8 @@ Tag: SKORUK ANDRIY OLEKSANDROVYCH
 
 # ASN 41435 ("UnderNet LLC").
 # Ukrainian domestic ISP. Caught attempting to hack WordPress sites.
-# Stop Forum Spam (SFS) listings: 339.
-# Updated: 2021.09.09 / Modified: 2021.11.04
+# Stop Forum Spam (SFS) listings: 280.
+# Updated: 2021.09.09 / Modified: 2021.11.04 / Checked: 2021.12.31
 
 2a0d:9880::/29 Deny Attacks
 Origin: UA
@@ -813,8 +787,8 @@ Tag: Lanet Network Ltd
 
 # ASN 34700 ("MAXNET TELECOM, LTD").
 # A Ukrainian domestic ISP and a significant source of spam.
-# Stop Forum Spam (SFS) listings: 3,794.
-# Updated: 2020.02.17 / Checked: 2021.02.27
+# Stop Forum Spam (SFS) listings: 3,494.
+# Updated: 2020.02.17 / Checked: 2021.12.30
 
 2a00:1210::/32 Deny Spam
 Origin: UA
@@ -1006,21 +980,16 @@ Tag: Liberty Global
 
 
 # ASN 1221 ("Telstra Corporation Ltd").
-# Australia's largest domestic ISP. Mostly benign, but malware and spambots
-# detected at some specific addresses in the network. Listing just those IPs.
-# Stop Forum Spam (SFS) listings: 661.
-# Updated: 2021.05.02
+# Australia's largest domestic ISP. Some brute-force attacks and spam detected
+# from here. Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 790.
+# Updated: 2021.12.31
 
-2001:8003:24ff:5f00::/64 Deny Spam
-2001:8003:3715:300::/64 Deny Spam
-2001:8003:58f6:ab01::/64 Deny Spam
-2001:8003:d891:c901::/64 Deny Spam
-2001:8003:e011:8001::/64 Deny Spam
-2001:8004:c03:cd14::/64 Deny Spam
-2001:8004:1381:837a::/64 Deny Spam
-2001:8004:15a0:943::/64 Deny Spam
-2001:8004:2751:cd::/64 Deny Spam
-2001:8004:2790:909b::/64 Deny Spam
+2001:8003:7c0c:6000::/64 Deny Spam
+2001:8003:907b:4800::/64 Deny Spam
+2001:8003:9150:da00::/64 Deny Spam
+2001:8003:e86c:ac01::/64 Deny Spam
+2001:8004:1300:ed53::/64 Deny Spam
 Origin: AU
 Profile: Domestic ISP
 Tag: Telstra Corporation

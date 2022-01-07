@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2021.11.29).
+ * This file: Functions file (last modified: 2022.01.08).
  */
 
 /** Autoloader for CIDRAM classes. */
@@ -2081,6 +2081,19 @@ $CIDRAM['Aux'] = function () use (&$CIDRAM): void {
         /** Safety. */
         if (!is_array($Data) || empty($Data)) {
             continue;
+        }
+
+        /** Skip expired rules. */
+        if (
+            isset($Data['Expiry']) &&
+            is_string($Data['Expiry']) &&
+            preg_match('~^(\d{4})-(\d\d)-(\d\d)$~', $Data['Expiry'], $Expiry) &&
+            isset($Expiry[1], $Expiry[2], $Expiry[3])
+        ) {
+            $Expiry = mktime(0, 0, 0, (int)$Expiry[2], (int)$Expiry[3], (int)$Expiry[1]);
+            if ($CIDRAM['Now'] > $Expiry) {
+                continue;
+            }
         }
 
         /** Matching logic. */

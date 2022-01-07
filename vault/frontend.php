@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2021.11.30).
+ * This file: Front-end handler (last modified: 2022.01.08).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -138,6 +138,9 @@ $CIDRAM['FE'] = [
 
     /** Background gradient for "leave it as it is" auxiliary rules option. */
     'Empty' => 'background:linear-gradient(90deg,rgba(128,128,255,0.5),rgba(0,0,64,0));',
+
+    /** Used by the auxiliary rules expiry field. */
+    'Y-m-d' => date('Y-m-d', $CIDRAM['Now']),
 
     /**
      * Defining some links here instead of in the template files or the L10N
@@ -4066,6 +4069,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'aux' && $CIDRAM['FE']['Permissi
             ['Logic', 'logic'],
             ['Reason', 'ruleReason'],
             ['Target', 'ruleTarget'],
+            ['Expiry', 'expiry'],
             ['Status Code', 'statusCode'],
             ['Webhooks', 'webhooks']
         ] as $CIDRAM['AuxTmp']) {
@@ -4350,6 +4354,9 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'aux-edit' && $CIDRAM['FE']['Per
             }
             if (!empty($_POST['ruleRun'][$CIDRAM['Iterant']])) {
                 $CIDRAM['NewAuxArr'][$_POST['ruleName'][$CIDRAM['Iterant']]]['Run'] = ['File' => $_POST['ruleRun'][$CIDRAM['Iterant']]];
+            }
+            if (!empty($_POST['expiry'][$CIDRAM['Iterant']])) {
+                $CIDRAM['NewAuxArr'][$_POST['ruleName'][$CIDRAM['Iterant']]]['Expiry'] = $_POST['expiry'][$CIDRAM['Iterant']];
             }
             if (!empty($_POST['statusCode'][$CIDRAM['Iterant']])) {
                 $CIDRAM['NewAuxArr'][$_POST['ruleName'][$CIDRAM['Iterant']]]['Status Code'] = $_POST['statusCode'][$CIDRAM['Iterant']];

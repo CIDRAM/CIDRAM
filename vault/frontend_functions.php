@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2021.11.29).
+ * This file: Front-end functions file (last modified: 2022.01.08).
  */
 
 /**
@@ -3388,6 +3388,7 @@ $CIDRAM['AuxGenerateFEData'] = function ($Mode = false) use (&$CIDRAM) {
         /** Rule row ID. */
         $RuleClass = preg_replace('~^0+~', '', bin2hex($Name));
 
+        /** Edit mode. */
         if ($Mode) {
             /** Update cell style. */
             $StyleClass = $StyleClass === 'ng1' ? 'ng2' : 'ng1';
@@ -3435,6 +3436,16 @@ $CIDRAM['AuxGenerateFEData'] = function ($Mode = false) use (&$CIDRAM) {
                 $CIDRAM['L10N']->getString('label_aux_run'),
                 $Current,
                 $RuleClass
+            );
+
+            /** Expiry. */
+            $Output .= sprintf(
+                '<div class="iCntr"><div class="iLabl s" id="%4$sexpiryDt">%2$s</div><div class="iCntn" id="%4$sexpiryDd"><input type="date" name="expiry[%3$s]" class="f400" value="%1$s" min="%5$s" /></div></div>',
+                isset($Data['Expiry']) ? $Data['Expiry'] : '',
+                $CIDRAM['L10N']->getString('label_aux_expiry'),
+                $Current,
+                $RuleClass,
+                $CIDRAM['FE']['Y-m-d']
             );
 
             /** Status code override. */
@@ -3685,7 +3696,8 @@ $CIDRAM['AuxGenerateFEData'] = function ($Mode = false) use (&$CIDRAM) {
             foreach ([
                 ['Reason', 'label_aux_reason'],
                 ['Target', 'label_aux_target'],
-                ['Webhooks', 'label_aux_webhooks']
+                ['Webhooks', 'label_aux_webhooks'],
+                ['Expiry', 'label_aux_expiry']
             ] as $Details) {
                 if (!empty($Data[$Details[0]]) && $Label = $CIDRAM['L10N']->getString($Details[1])) {
                     if (is_array($Data[$Details[0]])) {

@@ -1,8 +1,8 @@
 # IPv6 signatures file (CIDRs for proxies, VPNs and other miscellaneous unwanted services).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6_other.dat
 
-# Version: 2021.356.0
-# Last modified: 2021.12.23
+# Version: 2022.6.0
+# Last modified: 2022.01.07
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -60,14 +60,12 @@ Profile: Infrastructure/Transit;Tor endpoints here
 Tag: Applied Privacy
 
 
-# ASNs 22400, 50495, 62874, 199438, 204646 ("Web2Objects LLC").
-# Primarily provides anonymous proxy services. Under investigation for fraud.
-# Spam, hacking attempts, vulnerability probes, and other kinds of nefarious
-# and unwanted activity originating from their network. Regarded as high risk.
-# Stop Forum Spam (SFS) listings: 8 (AS22400), 5 (AS62874).
-# Updated: 2021.06.16
+# ASNs 50495, 62874, 199438, 204646 ("Web2Objects LLC").
+# Provides anonymous proxy services. Spam, hacking, probing for
+# vulnerabilities, and other kinds of unwanted traffic detected from here.
+# Stop Forum Spam (SFS) listings: 5 (AS62874).
+# Updated: 2022.01.07
 
-2001:678:e70::/48 Deny Proxy
 2a00:f826:11::/48 Deny Proxy
 2a06:ef40::/32 Deny Proxy
 2a0c:4444::/48 Deny Proxy

@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6_isps.dat
 
-# Version: 2021.364.0
-# Last modified: 2021.12.31
+# Version: 2022.6.0
+# Last modified: 2022.01.07
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -1423,12 +1423,14 @@ Tag: Bouygues Telecom SA
 
 
 # ASNs 60339, 206067 ("Hutchison 3G UK Limited").
-# UK mobile provider. Spam, DNS poisoning, and brute-force attacks detected
-# from here. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 237 (AS60339), 260 (AS206067).
-# Updated: 2021.05.11
+# UK mobile provider. Brute-force, SSH attacks, spam, and DNS poisoning
+# detected from here. Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 55 (AS60339), 577 (AS206067).
+# Updated: 2022.01.07
 
-2a04:4a43:4a7f:59d0::/64 Deny Spam
+2a04:4a43:44df:c969::/64 Deny Spam
+2a04:4a43:463f:f40b::/64 Deny Spam
+2a04:4a43:497f:e291::/64 Deny Spam
 Origin: GB
 Profile: Domestic ISP
 Tag: Hutchison 3G UK Limited
@@ -1437,25 +1439,15 @@ Tag: Hutchison 3G UK Limited
 # ASN 15557 ("SFR SA").
 # French fibre network. Spam, hacking, webapp, DDoS, and brute-force attacks
 # detected from here. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 498.
-# Updated: 2021.05.13
+# Stop Forum Spam (SFS) listings: 1,156.
+# Updated: 2022.01.07
 
-2a02:8440:4611:ffd0::/64 Deny Spam
+2a02:842b:80fb:ce01::/64 Deny Spam
+2a02:8440:4609:c91a::/64 Deny Spam
+2a02:8440:511b:9667::/64 Deny Spam
 Origin: FR
 Profile: Domestic ISP;Infrastructure/Transit;Multiplay
 Tag: SFR SA
-
-
-# ASN 7545 ("TPG Telecom Limited").
-# Australian domestic ISP. Hack attempts, port scans, and spam detected from
-# here. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 793.
-# Updated: 2021.08.23
-
-2001:4479:1a00:1e00::/64 Deny Spam
-Origin: AU
-Profile: Domestic ISP
-Tag: TPG Telecom Limited
 
 
 # ASN 57712 ("NPF SOFTVIDEO Ltd").

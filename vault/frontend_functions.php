@@ -2690,7 +2690,10 @@ $CIDRAM['RangeTablesFetchLine'] = function (&$Data, &$Offset, &$Needle, &$HasOri
                 $Tag = substr($Data, $TPos + 6, $TEPos - $TPos - 6);
             }
         }
-        $Param = trim($Param) ?: '';
+        $Param = preg_replace([
+            '~ until (2\d{3})[.-](\d\d)[.-](\d\d)$~i',
+            '~ from (2\d{3})[.-](\d\d)[.-](\d\d)$~i'
+        ], '', trim($Param));
         return ['Param' => $Param, 'Origin' => $Origin, 'Tag' => $Tag];
     }
     $Offset = false;

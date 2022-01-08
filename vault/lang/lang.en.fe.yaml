@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: English language data for the front-end (last modified: 2022.01.06).
+# This file: English language data for the front-end (last modified: 2022.01.08).
 ##/
 
 Extended Description Bypasses: "The default signature bypass files normally included with the main package."
@@ -291,6 +291,7 @@ label_aux_actRun: "run a file to handle"
 label_aux_actWhl: "whitelist"
 label_aux_create_new_rule: "Create new rule"
 label_aux_expiry: "When the rule should expire (optional):"
+label_aux_from: "When the rule should begin (optional):"
 label_aux_http_status_code_override: "HTTP status code override:"
 label_aux_logic_all: "In order to trigger the rule, all conditions must be met."
 label_aux_logic_any: "Any "equals" (=) conditions may trigger the rule, as long as all "not equals" (≠) conditions are also met."
@@ -551,6 +552,42 @@ switch-tracking-blocked-already-set-false: "Don't check against signature files"
 switch-tracking-blocked-already-set-true: "Check against signature files"
 switch-tracking-hide-banned-blocked-set-false: "Don't hide banned/blocked IPs"
 switch-tracking-hide-banned-blocked-set-true: "Hide banned/blocked IPs"
+time_days_ago:
+ - "%s day ago"
+ - "%s days ago"
+time_days_from_now:
+ - "%s day from now"
+ - "%s days from now"
+time_hours_ago:
+ - "%s hour ago"
+ - "%s hours ago"
+time_hours_from_now:
+ - "%s hour from now"
+ - "%s hours from now"
+time_minutes_ago:
+ - "%s minute ago"
+ - "%s minutes ago"
+time_minutes_from_now:
+ - "%s minute from now"
+ - "%s minutes from now"
+time_months_ago:
+ - "%s month ago"
+ - "%s months ago"
+time_months_from_now:
+ - "%s month from now"
+ - "%s months from now"
+time_seconds_ago:
+ - "%s second ago"
+ - "%s seconds ago"
+time_seconds_from_now:
+ - "%s second from now"
+ - "%s seconds from now"
+time_years_ago:
+ - "%s year ago"
+ - "%s years ago"
+time_years_from_now:
+ - "%s year from now"
+ - "%s years from now"
 tip_2fa_sent: "An email containing a two-factor authentication code has been sent to your email address. Please confirm this code below to gain access to the front-end. If you didn't receive this email, try logging out, waiting for 10 minutes, and logging in again to receive a new email containing a new code."
 tip_accounts: "Hello, {username}.<br />The accounts page allows you to control who can access the CIDRAM front-end."
 tip_aux: "Hello, {username}.<br />You can use this page to create, delete, and modify auxiliary rules for CIDRAM."

@@ -410,19 +410,19 @@ $CIDRAM['CheckFactors'] = function (array $Files, array $Factors) use (&$CIDRAM)
                 } else {
                     $PosS = strpos($Signature, ' ');
                     $Signature = substr($Signature, $PosS + 1);
-                    if (preg_match('~ until (2\d{3})[.-](\d\d)[.-](\d\d)$~i', $Signature, $EndParts)) {
+                    if (preg_match('~ until (\d{4})[.-](\d\d)[.-](\d\d)$~i', $Signature, $EndParts)) {
                         $Until = mktime(0, 0, 0, (int)$EndParts[2], (int)$EndParts[3], (int)$EndParts[1]);
                         if ($CIDRAM['Now'] > $Until) {
                             continue;
                         }
-                        $Signature = preg_replace('~ until (2\d{3})[.-](\d\d)[.-](\d\d)$~i', '', $Signature);
+                        $Signature = preg_replace('~ until (\d{4})[.-](\d\d)[.-](\d\d)$~i', '', $Signature);
                     }
-                    if (preg_match('~ from (2\d{3})[.-](\d\d)[.-](\d\d)$~i', $Signature, $EndParts)) {
+                    if (preg_match('~ from (\d{4})[.-](\d\d)[.-](\d\d)$~i', $Signature, $EndParts)) {
                         $From = mktime(0, 0, 0, (int)$EndParts[2], (int)$EndParts[3], (int)$EndParts[1]);
                         if ($CIDRAM['Now'] < $From) {
                             continue;
                         }
-                        $Signature = preg_replace('~ from (2\d{3})[.-](\d\d)[.-](\d\d)$~i', '', $Signature);
+                        $Signature = preg_replace('~ from (\d{4})[.-](\d\d)[.-](\d\d)$~i', '', $Signature);
                     }
                 }
                 $RunExitCode = 0;
@@ -2101,12 +2101,23 @@ $CIDRAM['Aux'] = function () use (&$CIDRAM): void {
             continue;
         }
 
+        /** Skip not yet started rules. */
+        if (
+            isset($Data['From']) &&
+            is_string($Data['From']) &&
+            preg_match('~^(\d{4})[.-](\d\d)[.-](\d\d)$~', $Data['From'], $From)
+        ) {
+            $From = mktime(0, 0, 0, (int)$From[2], (int)$From[3], (int)$From[1]);
+            if ($CIDRAM['Now'] < $From) {
+                continue;
+            }
+        }
+
         /** Skip expired rules. */
         if (
             isset($Data['Expiry']) &&
             is_string($Data['Expiry']) &&
-            preg_match('~^(\d{4})-(\d\d)-(\d\d)$~', $Data['Expiry'], $Expiry) &&
-            isset($Expiry[1], $Expiry[2], $Expiry[3])
+            preg_match('~^(\d{4})[.-](\d\d)[.-](\d\d)$~', $Data['Expiry'], $Expiry)
         ) {
             $Expiry = mktime(0, 0, 0, (int)$Expiry[2], (int)$Expiry[3], (int)$Expiry[1]);
             if ($CIDRAM['Now'] > $Expiry) {

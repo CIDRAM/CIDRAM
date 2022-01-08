@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Norwegian language data for the front-end (last modified: 2022.01.06).
+# This file: Norwegian language data for the front-end (last modified: 2022.01.08).
 ##/
 
 Extended Description Bypasses: "Standard-signatur-bypass-filene som normalt følger med hovedpakken."
@@ -289,6 +289,7 @@ label_aux_actRun: "kjør en fil for å håndtere"
 label_aux_actWhl: "hvit liste"
 label_aux_create_new_rule: "Opprett ny regel"
 label_aux_expiry: "Når regelen skal utløpe (valgfri):"
+label_aux_from: "Når regelen skal begynne (valgfri):"
 label_aux_http_status_code_override: "HTTP-statuskode overstyrer:"
 label_aux_logic_all: "For å utløse regelen må alle betingelser være oppfylt."
 label_aux_logic_any: "Eventuelle "likeverdige" (=) betingelse kan utløse regelen, så lenge alle "ikke likeverdige" (≠) betingelser også er oppfylt."
@@ -549,6 +550,38 @@ switch-tracking-blocked-already-set-false: "Ikke sjekk mot signaturfiler"
 switch-tracking-blocked-already-set-true: "Sjekk mot signaturfiler"
 switch-tracking-hide-banned-blocked-set-false: "Ikke skjul utestengt/blokkert IP-adresser"
 switch-tracking-hide-banned-blocked-set-true: "Skjul utestengt/blokkert IP-adresser"
+time_days_ago:
+ - "%s dag siden"
+ - "%s dager siden"
+time_days_from_now:
+ - "%s dag fra nå"
+ - "%s dager fra nå"
+time_hours_ago:
+ - "%s time siden"
+ - "%s timer siden"
+time_hours_from_now:
+ - "%s time fra nå"
+ - "%s timer fra nå"
+time_minutes_ago:
+ - "%s minutt siden"
+ - "%s minutter siden"
+time_minutes_from_now:
+ - "%s minutt fra nå"
+ - "%s minutter fra nå"
+time_months_ago:
+ - "%s måned siden"
+ - "%s måneder siden"
+time_months_from_now:
+ - "%s måned fra nå"
+ - "%s måneder fra nå"
+time_seconds_ago:
+ - "%s sekund siden"
+ - "%s sekunder siden"
+time_seconds_from_now:
+ - "%s sekund fra nå"
+ - "%s sekunder fra nå"
+time_years_ago: "%s år siden"
+time_years_from_now: "%s år fra nå"
 tip_2fa_sent: "En e-post som inneholder en 2FA-kode, er sendt til e-postadressen din. Vennligst bekreft denne koden nedenfor for å få tilgang til frontenden. Hvis du ikke mottok denne e-posten, kan du prøve å logge ut, vente i 10 minutter og logge på igjen for å motta en ny e-post som inneholder en ny kode."
 tip_accounts: "Hallo, {username}.<br />Du kan kontrollere hvem som kan få tilgang til CIDRAM-frontenden ved hjelp av kontosiden."
 tip_aux: "Hallo, {username}.<br />Du kan bruke denne siden til å opprette, slette og endre tilleggsregler for CIDRAM."

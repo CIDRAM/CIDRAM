@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Polish language data for the front-end (last modified: 2022.01.06).
+# This file: Polish language data for the front-end (last modified: 2022.01.08).
 ##/
 
 Extended Description Bypasses: "Domyślne pliki pomijania podpisów zwykle zawarte w pakiecie głównym."
@@ -292,6 +292,7 @@ label_aux_actRun: "uruchom plik do obsługi"
 label_aux_actWhl: "dokonywać na białej liście"
 label_aux_create_new_rule: "Stwórz nową regułę"
 label_aux_expiry: "Kiedy reguła powinna wygasnąć (opcjonalny):"
+label_aux_from: "Kiedy reguła powinna się zacząć (opcjonalny):"
 label_aux_http_status_code_override: "Przesłonięcie kodu stanu HTTP:"
 label_aux_logic_all: "Aby uruchomić regułę, wszystkie warunki muszą być spełnione."
 label_aux_logic_any: "Wszelkie warunki „równe” (=) mogą uruchomić regułę, dopóki spełnione są wszystkie warunki „nie równe” (≠)."
@@ -558,6 +559,54 @@ switch-tracking-blocked-already-set-false: "Nie sprawdzaj plików podpis"
 switch-tracking-blocked-already-set-true: "Sprawdź pliki podpis"
 switch-tracking-hide-banned-blocked-set-false: "Nie ukrywaj zablokowanych/zbanowanych adresów IP"
 switch-tracking-hide-banned-blocked-set-true: "Ukryj zablokowane/zbanowane adresy IP"
+time_days_ago:
+ - "%s dzień temu"
+ - "%s dni temu"
+ - "%s dni temu"
+time_days_from_now:
+ - "%s dzień od teraz"
+ - "%s dni od teraz"
+ - "%s dni od teraz"
+time_hours_ago:
+ - "%s godzinę temu"
+ - "%s godziny temu"
+ - "%s godzin temu"
+time_hours_from_now:
+ - "%s godzinę od teraz"
+ - "%s godziny od teraz"
+ - "%s godzin od teraz"
+time_minutes_ago:
+ - "%s minuta temu"
+ - "%s minuty temu"
+ - "%s minut temu"
+time_minutes_from_now:
+ - "%s minuta od teraz"
+ - "%s minuty od teraz"
+ - "%s minut od teraz"
+time_months_ago:
+ - "%s miesiąc temu"
+ - "%s miesiące temu"
+ - "%s miesięcy temu"
+time_months_from_now:
+ - "%s miesiąc od teraz"
+ - "%s miesiące od teraz"
+ - "%s miesięcy od teraz"
+time_seconds_ago:
+ - "%s sekundę temu"
+ - "%s sekundy temu"
+ - "%s sekund temu"
+time_seconds_from_now:
+ - "%s sekundę od teraz"
+ - "%s sekundy od teraz"
+ - "%s sekund od teraz"
+time_years_ago:
+ - "%s rok temu"
+ - "%s lata temu"
+ - "%s lat temu"
+time_years_from_now:
+ - "%s rok od teraz"
+ - "%s lata od teraz"
+ - "%s lat od teraz"
 tip_2fa_sent: "Na twój adres e-mail została wysłana wiadomość e-mail zawierająca dwuskładnikowy kod uwierzytelniający. Potwierdź poniższy kod, aby uzyskać dostęp do interfejsu użytkownika. Jeśli nie otrzymałeś tego e-maila, spróbuj się wylogować, poczekać 10 minut i zalogować się ponownie, aby otrzymać nowy e-mail zawierający nowy kod."
 tip_accounts: "Witaj, {username}.<br />Strona kont pozwala kontrolować, kto może uzyskać dostęp do interfejsu użytkownika CIDRAM."
 tip_aux: "Witaj, {username}.<br />Za pomocą tej strony można tworzyć, usuwać i modyfikować reguły pomocnicze dla CIDRAM."

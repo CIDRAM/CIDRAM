@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Arabic language data for the front-end (last modified: 2022.01.06).
+# This file: Arabic language data for the front-end (last modified: 2022.01.08).
 ##/
 
 Extended Description Bypasses: "ملفات الالتفافية التوقيع القياسية المدرجة عادة مع الحزمة الرئيسية."
@@ -287,6 +287,7 @@ label_aux_actRun: "قم بتشغيل ملف للتعامل مع"
 label_aux_actWhl: "القائمة البيضاء"
 label_aux_create_new_rule: "قم بإنشاء قاعدة جديدة"
 label_aux_expiry: "متى يجب أن تنتهي صلاحية القاعدة (اختياري):"
+label_aux_from: "متى يجب أن تبدأ القاعدة (اختياري):"
 label_aux_http_status_code_override: "تجاوز رمز حالة HTTP:"
 label_aux_logic_all: "من أجل تحريك القاعدة، يجب استيفاء جميع الشروط."
 label_aux_logic_any: "قد تؤدي أي شروط "يساوي" (=) إلى تشغيل القاعدة، طالما تم استيفاء جميع الشروط "غير متساوية" (≠) أيضًا."
@@ -541,6 +542,42 @@ switch-tracking-blocked-already-set-false: "لا تحقق من ملفات الت
 switch-tracking-blocked-already-set-true: "تحقق من ملفات التوقيع"
 switch-tracking-hide-banned-blocked-set-false: "لا تخفي عناوين IP المحظورة"
 switch-tracking-hide-banned-blocked-set-true: "تخفي عناوين IP المحظورة"
+time_days_ago:
+ - "منذ %s يوم"
+ - "منذ %s أيام"
+time_days_from_now:
+ - "%s يوم من الآن"
+ - "%s أيام من الآن"
+time_hours_ago:
+ - "منذ %s ساعة"
+ - "منذ %s ساعات"
+time_hours_from_now:
+ - "%s ساعة من الآن"
+ - "%s ساعات من الآن"
+time_minutes_ago:
+ - "منذ %s دقيقة"
+ - "منذ %s دقائق"
+time_minutes_from_now:
+ - "%s دقيقة من الآن"
+ - "%s دقائق من الآن"
+time_months_ago:
+ - "منذ %s شهر"
+ - "منذ %s اشهر"
+time_months_from_now:
+ - "%s شهر من الآن"
+ - "%s اشهر من الآن"
+time_seconds_ago:
+ - "منذ %s ثانية"
+ - "منذ %s ثوان"
+time_seconds_from_now:
+ - "%s ثانية من الآن"
+ - "%s ثوان من الآن"
+time_years_ago:
+ - "منذ %s سنة"
+ - "منذ %s سنوات"
+time_years_from_now:
+ - "%s سنة من الآن"
+ - "%s سنوات من الآن"
 tip_2fa_sent: "تم إرسال بريد إلكتروني يحتوي على رمز 2FA إلى عنوان بريدك الإلكتروني. يرجى تأكيد هذا الرمز أدناه للوصول إلى الواجهة الأمامية. إذا لم تتلقَ رسالة البريد الإلكتروني هذه، فحاول تسجيل الخروج، والانتظار لمدة 10 دقائق، وتسجيل الدخول مرة أخرى لتلقي رسالة إلكترونية جديدة تحتوي على رمز جديد."
 tip_accounts: "مرحبا، {username}.<br />الصفحة حسابات يسمح لك للسيطرة على الذي يمكن الوصول ألfront-end CIDRAM."
 tip_aux: "مرحبا، {username}.<br />يمكنك استخدام هذه الصفحة لإنشاء قواعد إضافية لـ CIDRAM وحذفها وتعديلها."

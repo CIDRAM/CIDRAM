@@ -402,13 +402,31 @@ $CIDRAM['CheckFactors'] = function (array $Files, array $Factors) use (&$CIDRAM)
                 }
                 $LN = ' ("' . $Tag . '", L' . substr_count($Files[$FileIndex], "\n", 0, $PosA) . ':F' . $FileIndex . $Origin . ')';
                 $Signature = substr($Files[$FileIndex], $PosA, ($PosB - $PosA));
-                if (!$Category = substr($Signature, 0, strpos($Signature, ' '))) {
+                $PosS = strpos($Signature, ' ');
+                $Category = substr($Signature, 0, $PosS);
+                if (strlen($Category) === 0) {
                     $Category = $Signature;
+                    $Signature = '';
                 } else {
-                    $Signature = substr($Signature, strpos($Signature, ' ') + 1);
+                    $PosS = strpos($Signature, ' ');
+                    $Signature = substr($Signature, $PosS + 1);
+                    if (preg_match('~ until (2\d{3})[.-](\d\d)[.-](\d\d)$~i', $Signature, $EndParts)) {
+                        $Until = mktime(0, 0, 0, (int)$EndParts[2], (int)$EndParts[3], (int)$EndParts[1]);
+                        if ($CIDRAM['Now'] > $Until) {
+                            continue;
+                        }
+                        $Signature = preg_replace('~ until (2\d{3})[.-](\d\d)[.-](\d\d)$~i', '', $Signature);
+                    }
+                    if (preg_match('~ from (2\d{3})[.-](\d\d)[.-](\d\d)$~i', $Signature, $EndParts)) {
+                        $From = mktime(0, 0, 0, (int)$EndParts[2], (int)$EndParts[3], (int)$EndParts[1]);
+                        if ($CIDRAM['Now'] < $From) {
+                            continue;
+                        }
+                        $Signature = preg_replace('~ from (2\d{3})[.-](\d\d)[.-](\d\d)$~i', '', $Signature);
+                    }
                 }
                 $RunExitCode = 0;
-                if ($Category === 'Run') {
+                if ($Category === 'Run' && $Signature !== '') {
                     if (!isset($CIDRAM['RunParamResCache'])) {
                         $CIDRAM['RunParamResCache'] = [];
                     }
@@ -435,7 +453,7 @@ $CIDRAM['CheckFactors'] = function (array $Files, array $Factors) use (&$CIDRAM)
                     $CIDRAM['ZeroOutBlockInfo']();
                     break 2;
                 }
-                if ($Category === 'Deny') {
+                if ($Category === 'Deny' && $Signature !== '') {
                     $DenyMatched = false;
                     foreach ([
                         ['Type' => 'Attacks', 'Config' => 'block_attacks', 'ReasonLong' => 'ReasonMessage_Attacks', 'ReasonShort' => 'Short_Attacks'],

@@ -2691,8 +2691,8 @@ $CIDRAM['RangeTablesFetchLine'] = function (&$Data, &$Offset, &$Needle, &$HasOri
             }
         }
         $Param = preg_replace([
-            '~ until (2\d{3})[.-](\d\d)[.-](\d\d)$~i',
-            '~ from (2\d{3})[.-](\d\d)[.-](\d\d)$~i'
+            '~ until (\d{4})[.-](\d\d)[.-](\d\d)$~i',
+            '~ from (\d{4})[.-](\d\d)[.-](\d\d)$~i'
         ], '', trim($Param));
         return ['Param' => $Param, 'Origin' => $Origin, 'Tag' => $Tag];
     }
@@ -3441,10 +3441,20 @@ $CIDRAM['AuxGenerateFEData'] = function ($Mode = false) use (&$CIDRAM) {
                 $RuleClass
             );
 
+            /** From. */
+            $Output .= sprintf(
+                '<div class="iCntr"><div class="iLabl s" id="%4$sfromDt">%2$s</div><div class="iCntn" id="%4$sfromDd"><input type="date" name="from[%3$s]" class="f400" value="%1$s" min="%5$s" /></div></div>',
+                isset($Data['From']) ? str_replace('.', '-', $Data['From']) : '',
+                $CIDRAM['L10N']->getString('label_aux_from'),
+                $Current,
+                $RuleClass,
+                $CIDRAM['FE']['Y-m-d']
+            );
+
             /** Expiry. */
             $Output .= sprintf(
                 '<div class="iCntr"><div class="iLabl s" id="%4$sexpiryDt">%2$s</div><div class="iCntn" id="%4$sexpiryDd"><input type="date" name="expiry[%3$s]" class="f400" value="%1$s" min="%5$s" /></div></div>',
-                isset($Data['Expiry']) ? $Data['Expiry'] : '',
+                isset($Data['Expiry']) ? str_replace('.', '-', $Data['Expiry']) : '',
                 $CIDRAM['L10N']->getString('label_aux_expiry'),
                 $Current,
                 $RuleClass,
@@ -3699,12 +3709,26 @@ $CIDRAM['AuxGenerateFEData'] = function ($Mode = false) use (&$CIDRAM) {
             foreach ([
                 ['Reason', 'label_aux_reason'],
                 ['Target', 'label_aux_target'],
-                ['Webhooks', 'label_aux_webhooks'],
-                ['Expiry', 'label_aux_expiry']
+                ['Webhooks', 'label_aux_webhooks']
             ] as $Details) {
                 if (!empty($Data[$Details[0]]) && $Label = $CIDRAM['L10N']->getString($Details[1])) {
                     if (is_array($Data[$Details[0]])) {
                         $Data[$Details[0]] = implode('</div><div class="iCntn">', $Data[$Details[0]]);
+                    }
+                    $Output .= "\n          <li><div class=\"iCntr\"><div class=\"iLabl s\">" . $Label . '</div><div class="iCntn">' . $Data[$Details[0]] . '</div></div></li>';
+                }
+            }
+
+            /** Populate from and expiry. */
+            foreach ([
+                ['From', 'label_aux_from'],
+                ['Expiry', 'label_aux_expiry']
+            ] as $Details) {
+                if (!empty($Data[$Details[0]]) && $Label = $CIDRAM['L10N']->getString($Details[1])) {
+                    if (preg_match('~^(\d{4})[.-](\d\d)[.-](\d\d)$~', $Data[$Details[0]], $Details[2])) {
+                        $Data[$Details[0]] .= ' (' . $CIDRAM['RelativeTime'](
+                            mktime(0, 0, 0, (int)$Details[2][2], (int)$Details[2][3], (int)$Details[2][1])
+                        ) . ')';
                     }
                     $Output .= "\n          <li><div class=\"iCntr\"><div class=\"iLabl s\">" . $Label . '</div><div class="iCntn">' . $Data[$Details[0]] . '</div></div></li>';
                 }
@@ -4556,4 +4580,97 @@ $CIDRAM['ReconstructUpdateAuxData'] = function () use (&$CIDRAM) {
         }
     }
     return false;
+};
+
+/**
+ * Generates a message describing the relative difference between the specified
+ * time and the current time.
+ *
+ * @param int $Time The specified time (unix time).
+ * @return string The message.
+ */
+$CIDRAM['RelativeTime'] = function ($Time) use (&$CIDRAM) {
+    $Time -= $CIDRAM['Now'];
+    if ($Time < -31536000) {
+        $Time = (int)($Time / -31536000);
+        return sprintf(
+            $CIDRAM['L10N']->getPlural($Time, 'time_years_ago'),
+            $CIDRAM['NumberFormatter']->format($Time)
+        );
+    }
+    if ($Time < -2629800) {
+        $Time = (int)($Time / -2629800);
+        return sprintf(
+            $CIDRAM['L10N']->getPlural($Time, 'time_months_ago'),
+            $CIDRAM['NumberFormatter']->format($Time)
+        );
+    }
+    if ($Time < -86400) {
+        $Time = (int)($Time / -86400);
+        return sprintf(
+            $CIDRAM['L10N']->getPlural($Time, 'time_days_ago'),
+            $CIDRAM['NumberFormatter']->format($Time)
+        );
+    }
+    if ($Time < -3600) {
+        $Time = (int)($Time / -3600);
+        return sprintf(
+            $CIDRAM['L10N']->getPlural($Time, 'time_hours_ago'),
+            $CIDRAM['NumberFormatter']->format($Time)
+        );
+    }
+    if ($Time < -60) {
+        $Time = (int)($Time / -60);
+        return sprintf(
+            $CIDRAM['L10N']->getPlural($Time, 'time_minutes_ago'),
+            $CIDRAM['NumberFormatter']->format($Time)
+        );
+    }
+    if ($Time < 0) {
+        $Time = (int)($Time * -1);
+        return sprintf(
+            $CIDRAM['L10N']->getPlural($Time, 'time_seconds_ago'),
+            $CIDRAM['NumberFormatter']->format($Time)
+        );
+    }
+    if ($Time > 31536000) {
+        $Time = (int)($Time / 31536000);
+        return sprintf(
+            $CIDRAM['L10N']->getPlural($Time, 'time_years_from_now'),
+            $CIDRAM['NumberFormatter']->format($Time)
+        );
+    }
+    if ($Time > 2629800) {
+        $Time = (int)($Time / 2629800);
+        return sprintf(
+            $CIDRAM['L10N']->getPlural($Time, 'time_months_from_now'),
+            $CIDRAM['NumberFormatter']->format($Time)
+        );
+    }
+    if ($Time > 86400) {
+        $Time = (int)($Time / 86400);
+        return sprintf(
+            $CIDRAM['L10N']->getPlural($Time, 'time_days_from_now'),
+            $CIDRAM['NumberFormatter']->format($Time)
+        );
+    }
+    if ($Time > 3600) {
+        $Time = (int)($Time / 3600);
+        return sprintf(
+            $CIDRAM['L10N']->getPlural($Time, 'time_hours_from_now'),
+            $CIDRAM['NumberFormatter']->format($Time)
+        );
+    }
+    if ($Time > 60) {
+        $Time = (int)($Time / 60);
+        return sprintf(
+            $CIDRAM['L10N']->getPlural($Time, 'time_minutes_from_now'),
+            $CIDRAM['NumberFormatter']->format($Time)
+        );
+    }
+    $Time = (int)$Time;
+    return sprintf(
+        $CIDRAM['L10N']->getPlural($Time, 'time_seconds_from_now'),
+        $CIDRAM['NumberFormatter']->format($Time)
+    );
 };

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Spanish language data for the front-end (last modified: 2022.01.06).
+# This file: Spanish language data for the front-end (last modified: 2022.01.08).
 ##/
 
 Extended Description Bypasses: "Los archivos para bypass de firmas estándar normalmente se incluyen con el paquete principal."
@@ -290,7 +290,8 @@ label_aux_actRdr: "redireccionar (sin bloquear)"
 label_aux_actRun: "ejecutar un archivo para manejar"
 label_aux_actWhl: "lista blanca"
 label_aux_create_new_rule: "Crear nueva regla"
-label_aux_expiry: "Cuándo debe expirar la regla (opcional):"
+label_aux_expiry: "Cuándo la regla debe expirar (opcional):"
+label_aux_from: "Cuando la regla debe comenzar (opcional):"
 label_aux_http_status_code_override: "Reemplazo del código de estado HTTP:"
 label_aux_logic_all: "Para desencadenar la regla, se deben cumplir todas las condiciones."
 label_aux_logic_any: "Cualquier condición "igual" (=) puede desencadenar la regla, siempre y cuando también se cumplan todas las condiciones "no iguales" (≠)."
@@ -551,6 +552,42 @@ switch-tracking-blocked-already-set-false: "No comparar con los archivos de firm
 switch-tracking-blocked-already-set-true: "Comparar con los archivos de firmas"
 switch-tracking-hide-banned-blocked-set-false: "No ocultar IPs prohibidos/bloqueados"
 switch-tracking-hide-banned-blocked-set-true: "Ocultar IPs prohibidos/bloqueados"
+time_days_ago:
+ - "%s día antes"
+ - "%s días antes"
+time_days_from_now:
+ - "%s día a partir de ahora"
+ - "%s días a partir de ahora"
+time_hours_ago:
+ - "%s hora antes"
+ - "%s horas antes"
+time_hours_from_now:
+ - "%s hora a partir de ahora"
+ - "%s horas a partir de ahora"
+time_minutes_ago:
+ - "%s minuto antes"
+ - "%s minutos antes"
+time_minutes_from_now:
+ - "%s minuto a partir de ahora"
+ - "%s minutos a partir de ahora"
+time_months_ago:
+ - "%s mes antes"
+ - "%s meses antes"
+time_months_from_now:
+ - "%s mes a partir de ahora"
+ - "%s meses a partir de ahora"
+time_seconds_ago:
+ - "%s segundo antes"
+ - "%s segundos antes"
+time_seconds_from_now:
+ - "%s segundo a partir de ahora"
+ - "%s segundos a partir de ahora"
+time_years_ago:
+ - "%s año antes"
+ - "%s años antes"
+time_years_from_now:
+ - "%s año a partir de ahora"
+ - "%s años a partir de ahora"
 tip_2fa_sent: "Se ha enviado un correo electrónico con un código de autenticación de dos factores a su dirección de correo electrónico. Confirme este código a continuación para obtener acceso al front-end. Si no recibió este correo electrónico, intente cerrar la sesión, espere 10 minutos, y vuelva a iniciar sesión para recibir un nuevo correo electrónico que contenga un nuevo código."
 tip_accounts: "Hola, {username}.<br />La página de cuentas permite controlar controlar quién puede acceder al CIDRAM front-end."
 tip_aux: "Hola, {username}.<br />Puede usar esta página para crear, borrar y modificar reglas auxiliares para CIDRAM."

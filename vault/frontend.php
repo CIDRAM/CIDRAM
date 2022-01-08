@@ -139,7 +139,7 @@ $CIDRAM['FE'] = [
     /** Background gradient for "leave it as it is" auxiliary rules option. */
     'Empty' => 'background:linear-gradient(90deg,rgba(128,128,255,0.5),rgba(0,0,64,0));',
 
-    /** Used by the auxiliary rules expiry field. */
+    /** Used by the auxiliary rules from and expiry fields. */
     'Y-m-d' => date('Y-m-d', $CIDRAM['Now']),
 
     /**
@@ -4069,6 +4069,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'aux' && $CIDRAM['FE']['Permissi
             ['Logic', 'logic'],
             ['Reason', 'ruleReason'],
             ['Target', 'ruleTarget'],
+            ['From', 'from'],
             ['Expiry', 'expiry'],
             ['Status Code', 'statusCode'],
             ['Webhooks', 'webhooks']
@@ -4354,6 +4355,9 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'aux-edit' && $CIDRAM['FE']['Per
             }
             if (!empty($_POST['ruleRun'][$CIDRAM['Iterant']])) {
                 $CIDRAM['NewAuxArr'][$_POST['ruleName'][$CIDRAM['Iterant']]]['Run'] = ['File' => $_POST['ruleRun'][$CIDRAM['Iterant']]];
+            }
+            if (!empty($_POST['from'][$CIDRAM['Iterant']])) {
+                $CIDRAM['NewAuxArr'][$_POST['ruleName'][$CIDRAM['Iterant']]]['From'] = $_POST['from'][$CIDRAM['Iterant']];
             }
             if (!empty($_POST['expiry'][$CIDRAM['Iterant']])) {
                 $CIDRAM['NewAuxArr'][$_POST['ruleName'][$CIDRAM['Iterant']]]['Expiry'] = $_POST['expiry'][$CIDRAM['Iterant']];

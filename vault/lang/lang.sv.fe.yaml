@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Swedish language data for the front-end (last modified: 2022.01.06).
+# This file: Swedish language data for the front-end (last modified: 2022.01.08).
 ##/
 
 Extended Description Bypasses: "Standard bypass-filen som normalt ingår i huvudpaketet."
@@ -288,7 +288,8 @@ label_aux_actRdr: "omdirigera (utan att blockera)"
 label_aux_actRun: "kör en fil för att hantera"
 label_aux_actWhl: "vitlista"
 label_aux_create_new_rule: "Skapa ny regel"
-label_aux_expiry: "När regeln ska upphöra att gälla (det är valfritt):"
+label_aux_expiry: "När regeln ska upphöra (det är valfritt):"
+label_aux_from: "När regeln ska börja (det är valfritt):"
 label_aux_http_status_code_override: "HTTP-statuskod åsidosätter:"
 label_aux_logic_all: "För att kunna utlösa regeln måste alla villkor vara uppfyllda."
 label_aux_logic_any: "Eventuella "lika" (=) villkor kan utlösa regeln, så länge som alla "inte lika" (≠) villkor också uppfylls."
@@ -549,6 +550,38 @@ switch-tracking-blocked-already-set-false: "Kontrollera inte signaturfiler"
 switch-tracking-blocked-already-set-true: "Kontrollera signaturfiler"
 switch-tracking-hide-banned-blocked-set-false: "Göm inte förbjudna/blockerade IP-adresser"
 switch-tracking-hide-banned-blocked-set-true: "Göm förbjudna/blockerade IP-adresser"
+time_days_ago:
+ - "%s dag sedan"
+ - "%s dagar sedan"
+time_days_from_now:
+ - "%s dag från nu"
+ - "%s dagar från nu"
+time_hours_ago:
+ - "%s timme sedan"
+ - "%s timmar sedan"
+time_hours_from_now:
+ - "%s timme från nu"
+ - "%s timmar från nu"
+time_minutes_ago:
+ - "%s minut sedan"
+ - "%s minuter sedan"
+time_minutes_from_now:
+ - "%s minut från nu"
+ - "%s minuter från nu"
+time_months_ago:
+ - "%s månad sedan"
+ - "%s månader sedan"
+time_months_from_now:
+ - "%s månad från nu"
+ - "%s månader från nu"
+time_seconds_ago:
+ - "%s sekund sedan"
+ - "%s sekunder sedan"
+time_seconds_from_now:
+ - "%s sekund från nu"
+ - "%s sekunder från nu"
+time_years_ago: "%s år sedan"
+time_years_from_now: "%s år från nu"
 tip_2fa_sent: "Ett email som innehåller en 2FA-kod har skickats till din e-postadress. Vänligen bekräfta den här koden nedan för att få tillgång till front-end. Om du inte fick det här e-postmeddelandet, försöker du logga ut, vänta i 10 minuter, och logga in igen för att få ett nytt e-postmeddelande med en ny kod."
 tip_accounts: "Hallå, {username}.<br />Du kan styra vem som har tillgång till CIDRAM front-end på kontosidan."
 tip_aux: "Hallå, {username}.<br />Du kan använda den här sidan för att skapa, ta bort och ändra hjälpregler för CIDRAM."

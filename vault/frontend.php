@@ -3796,7 +3796,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-tracking' && $CIDRAM['FE']['
             $CIDRAM['ThisTracking']['Expiry'] = $CIDRAM['TimeFormat'](
                 $CIDRAM['ThisTrackingArr']['Time'],
                 $CIDRAM['Config']['general']['time_format']
-            );
+            ) . '<br />(' . $CIDRAM['RelativeTime']($CIDRAM['ThisTrackingArr']['Time']) . ')';
 
             if ($CIDRAM['ThisTrackingArr']['Count'] >= $CIDRAM['Config']['signatures']['infraction_limit']) {
                 $CIDRAM['ThisTracking']['StatClass'] = 'txtRd';

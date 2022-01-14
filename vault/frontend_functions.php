@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2022.01.08).
+ * This file: Front-end functions file (last modified: 2022.01.14).
  */
 
 /**
@@ -3676,20 +3676,20 @@ $CIDRAM['AuxGenerateFEData'] = function ($Mode = false) use (&$CIDRAM) {
             $Current++;
         } else {
             /** Figure out which options are available for the rule. */
-            $Options = ['(<span style="cursor:pointer" onclick="javascript:%1$s(\'%2$s\',\'%3$s\')"><code class="s">%4$s</code></span>)'];
-            $Options['delRule'] = sprintf($Options[0], 'delRule', $Name, $RuleClass, $CIDRAM['L10N']->getString('field_delete'));
+            $Options = ['(<span style="cursor:pointer" onclick="javascript:%s(\'' . addslashes($Name) . '\',\'' . $RuleClass . '\')"><code class="s">%s</code></span>)'];
+            $Options['delRule'] = sprintf($Options[0], 'delRule', $CIDRAM['L10N']->getString('field_delete'));
             if ($Count > 1) {
                 if ($Current !== 1) {
                     if ($Current !== 2) {
-                        $Options['moveUp'] = sprintf($Options[0], 'moveUp', $Name, $RuleClass, $CIDRAM['L10N']->getString('label_aux_move_up'));
+                        $Options['moveUp'] = sprintf($Options[0], 'moveUp', $CIDRAM['L10N']->getString('label_aux_move_up'));
                     }
-                    $Options['moveToTop'] = sprintf($Options[0], 'moveToTop', $Name, $RuleClass, $CIDRAM['L10N']->getString('label_aux_move_top'));
+                    $Options['moveToTop'] = sprintf($Options[0], 'moveToTop', $CIDRAM['L10N']->getString('label_aux_move_top'));
                 }
                 if ($Current !== $Count) {
                     if ($Current !== ($Count - 1)) {
-                        $Options['moveDown'] = sprintf($Options[0], 'moveDown', $Name, $RuleClass, $CIDRAM['L10N']->getString('label_aux_move_down'));
+                        $Options['moveDown'] = sprintf($Options[0], 'moveDown', $CIDRAM['L10N']->getString('label_aux_move_down'));
                     }
-                    $Options['moveToBottom'] = sprintf($Options[0], 'moveToBottom', $Name, $RuleClass, $CIDRAM['L10N']->getString('label_aux_move_bottom'));
+                    $Options['moveToBottom'] = sprintf($Options[0], 'moveToBottom', $CIDRAM['L10N']->getString('label_aux_move_bottom'));
                 }
             }
             unset($Options[0]);

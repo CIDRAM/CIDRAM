@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6_isps.dat
 
-# Version: 2022.6.0
-# Last modified: 2022.01.07
+# Version: 2022.14.0
+# Last modified: 2022.01.15
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -232,8 +232,8 @@ Tag: Ufanet
 # Taiwanese domestic ISP and business network. DDoS, FTP brute-force, and
 # webapp attacks, hacking, spam, and port scans detected from here. Listing
 # just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 12,018.
-# Updated: 2021.08.05 / Checked: 2021.10.12
+# Stop Forum Spam (SFS) listings: 17,450.
+# Updated: 2021.08.05 / Checked: 2022.01.15
 
 2001:b011:5c01:5827::/64 Deny Attacks
 2001:b011:7c03:4395::/64 Deny Attacks
@@ -324,18 +324,6 @@ Profile: Domestic ISP
 Tag: SKYBROADBAND
 
 
-# ASNs 9808, 56048 ("Guangdong Mobile Communication Co.Ltd").
-# Chinese mobile carrier. Brute-force and webapp attacks, port scans, and spam
-# detected here. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 80 (AS9808), 47 (AS56048).
-# Updated: 2021.10.12
-
-2409:8a5c:2a8:8140::/64 Deny Spam
-Origin: CN
-Profile: Domestic ISP
-Tag: Guangdong Mobile
-
-
 # ASN 12389 ("PJSC Rostelecom").
 # Russian domestic ISP. Continuation of previous signatures section.
 # Listing this particular ASN in its entirety.
@@ -355,8 +343,8 @@ Tag: PJSC Rostelecom
 # ASN 3255 (State Enterprise Scientific and Telecommunication Centre "Ukrainian
 # Academic and Research Network" of the Institute for Condensed Matter Physics
 # of the National Academy of Science of Ukraine / UARNet).
-# Stop Forum Spam (SFS) listings: 1,290.
-# Updated: 2017.07.08 / Checked: 2021.03.19
+# Stop Forum Spam (SFS) listings: 986.
+# Updated: 2017.07.08 / Checked: 2022.01.14
 
 2a00:fc00::/32 Deny Spam
 Origin: UA
@@ -714,7 +702,7 @@ Profile: Domestic ISP
 Tag: TELEFNICA BRASIL S.A
 
 
-# ASNs 10796, 11426, 11427, 20115 ("Charter Communications").
+# ASNs 10796, 11351, 11426, 11427, 20001, 20115 ("Charter Communications").
 # United States domestic ISP. Caught probing honeypots. Port scans and spam
 # also detected from here. Listing just the affected ranges/addresses only.
 # Stop Forum Spam (SFS) listings: 1,050 (AS10796), 1,172 (AS11426), 1,172 (AS11427), 2,623 (AS20115).
@@ -950,8 +938,8 @@ Tag: Charter Communications
 # Domestic Ukrainian ISP; IPs from this ASN caught attempting automated attacks
 # against honeypots and login pages, with some evidence of some IPs being used
 # as low-end C&Cs and for malware distribution.
-# Stop Forum Spam (SFS) listings: 64.
-# Updated: 2020.03.21 / Checked: 2021.03.18
+# Stop Forum Spam (SFS) listings: 28.
+# Updated: 2020.03.21 / Checked: 2022.01.14
 
 2a0f:1e40::/32 Deny Attacks
 Origin: UA
@@ -1139,18 +1127,6 @@ Tag: AT&T Services, Inc
 Origin: US
 Profile: Domestic ISP;Multiplay
 Tag: T-Mobile USA, Inc
-
-
-# ASN 5617 ("Orange Polska Spolka Akcyjna").
-# Major Polish domestic ISP; Also a *HUGE* source of forum+blog spam! Listing
-# the entire ASN, but also including it in ignore.dat by default.
-# Stop Forum Spam (SFS) listings: 81,921.
-# Updated: 2020.06.23 / Checked: 2021.03.12
-
-2a01:1000::/21 Deny Spam
-Origin: PL
-Profile: Domestic ISP
-Tag: Orange Polska Spolka Akcyjna
 
 
 # ASN 39351 ("31173 Services AB").
@@ -1603,19 +1579,6 @@ Tag: Verizon Business/UUnet
 Origin: RO
 Profile: Domestic ISP
 Tag: Vodafone Romania
-
-
-# ASN 29119 ("ServiHosting Networks S.L").
-# Spanish multiplay network (mostly OTT and webhosting, but also some ISPs,
-# colo, etc). Brute-force attacks, port scanning, and spam detected from here.
-# Listing just the affected addresses/ranges, plus all non-ES ranges (cloud).
-# Stop Forum Spam (SFS) listings: 1,083.
-# Updated: 2021.10.17
-
-2a00:de40::/32 Deny Cloud
-Origin: NL
-Profile: Domestic ISP;Infrastructure/Transit;Multiplay;Webhosting
-Tag: ServiHosting Networks S.L
 
 
 # ASN 58972 ("RadioLAN spol. s r.o").

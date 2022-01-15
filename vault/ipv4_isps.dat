@@ -1,8 +1,8 @@
 # IPv4 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv4_isps.dat
 
-# Version: 2022.6.0
-# Last modified: 2022.01.07
+# Version: 2022.14.0
+# Last modified: 2022.01.15
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -1720,43 +1720,55 @@ Tag: Ufanet
 # Indian domestic ISP, backbone, and multiplay provider. Brute-force, SSH,
 # samba, and webapp attacks, hacking, port scans, and spam detected from here.
 # Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 11,338.
-# Updated: 2021.11.11 / Modified: 2021.11.30
+# Stop Forum Spam (SFS) listings: 12,086.
+# Updated: 2022.01.15
 
-59.88.0.106/32 Deny Attacks
-59.88.16.74/32 Deny Attacks
 59.88.32.0/20 Deny Attacks
+59.91.209.0/24 Deny Attacks
 59.91.247.0/24 Deny Attacks
 59.93.18.0/24 Deny Attacks
 59.93.191.0/24 Deny Attacks
 59.94.43.0/24 Deny Attacks
+59.94.96.0/23 Deny Attacks
+59.94.133.0/24 Deny Attacks
 59.95.139.0/24 Deny Attacks
 59.97.69.0/24 Deny Attacks
 59.97.168.0/24 Deny Attacks
 59.97.175.0/24 Deny Attacks
+59.98.172.0/24 Deny Attacks
 59.99.0.0/16 Deny Attacks
 61.0.49.0/24 Deny Attacks
+61.0.76.0/22 Deny Attacks
+61.0.227.0/24 Deny Attacks
 61.1.48.0/24 Deny Attacks
 61.1.110.0/23 Deny Attacks
 61.2.215.0/24 Deny Attacks
 61.3.154.0/24 Deny Attacks
 117.192.8.0/24 Deny Attacks
 117.192.53.0/24 Deny Attacks
+117.192.80.0/24 Deny Attacks
 117.193.120.0/22 Deny Attacks
 117.193.124.0/24 Deny Attacks
 117.194.151.0/24 Deny Attacks
+117.195.80.0/20 Deny Attacks
+117.195.96.0/20 Deny Attacks
+117.195.112.0/21 Deny Attacks
 117.196.0.0/15 Deny Attacks
 117.198.97.0/24 Deny Attacks
 117.198.218.0/24 Deny Attacks
 117.201.195.0/24 Deny Attacks
 117.202.170.0/24 Deny Attacks
+117.204.101.0/24 Deny Attacks
 117.204.253.0/24 Deny Attacks
 117.205.81.0/24 Deny Attacks
 117.206.155.0/24 Deny Attacks
+117.206.160.0/24 Deny Attacks
 117.207.181.0/24 Deny Attacks
 117.208.22.0/24 Deny Attacks
+117.210.209.0/24 Deny Attacks
 117.212.0.0/16 Deny Attacks
 117.214.176.0/23 Deny Attacks
+117.215.201.0/24 Deny Attacks
 117.215.245.0/24 Deny Attacks
 117.215.254.0/24 Deny Attacks
 117.216.46.0/24 Deny Attacks
@@ -1764,6 +1776,7 @@ Tag: Ufanet
 117.221.166.0/24 Deny Attacks
 117.221.222.0/24 Deny Attacks
 117.222.0.0/16 Deny Attacks
+117.232.120.0/24 Deny Attacks
 117.241.0.0/16 Deny Attacks
 117.242.0.0/16 Deny Attacks
 117.247.0.0/16 Deny Attacks
@@ -1781,76 +1794,126 @@ Tag: BSNL
 # Interlaces with numerous providers and contains a large portion of Chinese
 # human access endpoints. Spam, hacking, brute-force attacks, port scans,
 # probing, etc detected from here. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 8,725.
-# Updated: 2021.11.29 / Modified: 2022.01.07
+# Stop Forum Spam (SFS) listings: 22,115.
+# Updated: 2022.01.15
 
 1.68.195.0/24 Deny Attacks
 1.80.154.0/24 Deny Attacks
 1.80.185.0/24 Deny Attacks
+1.180.156.226/32 Deny Spam
+1.182.90.72/32 Deny Spam
+14.23.124.0/24 Deny Attacks
+14.118.200.0/21 Deny Attacks
+14.118.208.0/21 Deny Attacks
+14.118.216.0/23 Deny Attacks
+14.118.218.0/24 Deny Attacks
+14.118.219.73/32 Deny Attacks
 27.19.30.0/24 Deny Attacks
+36.7.171.0/24 Deny Attacks
 36.24.7.0/24 Deny Attacks
 36.25.192.0/24 Deny Attacks
 36.57.77.0/24 Deny Attacks
 36.57.143.0/24 Deny Attacks
+42.248.122.0/24 Deny Attacks
 49.112.37.0/24 Deny Attacks
-58.32.17.0/24 Deny Attacks
-58.32.35.0/24 Deny Attacks
-58.32.42.0/24 Deny Attacks
-58.32.206.0/24 Deny Attacks
-58.33.179.0/24 Deny Attacks
-58.35.65.0/24 Deny Attacks
 58.208.140.12/32 Deny Attacks
+59.35.57.0/24 Deny Attacks
+59.42.89.138/32 Deny Spam
+59.42.91.109/32 Deny Spam
 59.172.168.0/24 Deny Attacks
-59.173.76.171/32 Deny Spam
-61.170.186.0/24 Deny Attacks
+106.5.133.121/32 Deny Spam
 106.8.0.0/16 Deny Attacks
 106.92.118.0/24 Deny Attacks
+106.113.7.86/32 Deny Spam
+106.113.8.0/24 Deny Attacks
 106.116.64.0/24 Deny Attacks
 106.116.80.0/24 Deny Attacks
+106.117.83.99/32 Deny Spam
 106.122.195.0/24 Deny Attacks
 106.122.222.0/24 Deny Attacks
 110.153.7.0/24 Deny Attacks
 111.74.75.0/24 Deny Attacks
 111.121.84.0/24 Deny Attacks
+111.121.103.77/32 Deny Spam
 111.122.128.0/24 Deny Attacks
+111.172.132.74/32 Deny Spam
+111.225.182.0/24 Deny Attacks
 112.67.171.0/24 Deny Attacks
 112.98.126.0/24 Deny Attacks
 112.112.18.0/24 Deny Attacks
+113.16.50.0/24 Deny Attacks
+113.16.52.0/24 Deny Attacks
+113.16.53.206/32 Deny Attacks
+113.16.54.133/32 Deny Attacks
+113.16.57.0/24 Deny Attacks
+113.16.58.0/23 Deny Attacks
+113.16.60.0/22 Deny Attacks
+113.16.64.0/21 Deny Attacks
+113.16.72.151/32 Deny Attacks
+113.65.8.0/24 Deny Attacks
+113.65.110.115/32 Deny Spam
+113.81.234.179/32 Deny Spam
+113.108.247.0/24 Deny Attacks
+113.110.150.165/32 Deny Spam
+113.120.32.0/24 Deny Attacks
+113.120.38.175/32 Deny Spam
+113.120.63.210/32 Deny Spam
+113.121.23.0/24 Deny Attacks
 113.246.51.0/24 Deny Attacks
 113.247.233.0/24 Deny Attacks
 115.151.171.248/32 Deny Attacks
 115.153.12.0/24 Deny Attacks
+115.195.46.100/32 Deny Spam
 115.197.103.0/24 Deny Attacks
 115.208.3.0/24 Deny Attacks
 115.210.178.0/24 Deny Attacks
+115.211.197.252/32 Deny Attacks
+115.211.198.0/24 Deny Attacks
 115.216.7.0/24 Deny Attacks
+115.216.97.142/32 Deny Spam
+116.18.22.76/32 Deny Spam
+116.26.10.0/24 Deny Attacks
+116.30.216.245/32 Deny Spam
+116.31.166.30/32 Deny Spam
+117.32.216.0/23 Deny Attacks
+117.32.218.0/24 Deny Attacks
 117.60.60.0/23 Deny Attacks
 117.60.78.0/23 Deny Attacks
 117.80.32.0/24 Deny Attacks
 118.181.226.0/24 Deny Attacks
+118.181.231.163/32 Deny Spam
 119.41.203.0/24 Deny Attacks
 119.96.223.0/24 Deny Attacks
 120.32.92.0/23 Deny Attacks
+121.13.251.112/32 Deny Spam
+121.224.77.0/24 Deny Attacks
 121.226.3.0/24 Deny Attacks
 122.4.29.0/24 Deny Attacks
-125.111.130.109/32 Deny Spam
 125.112.85.0/24 Deny Attacks
 125.112.168.0/24 Deny Attacks
 140.255.40.0/24 Deny Attacks
+171.211.244.186/32 Deny Spam
 182.34.18.0/24 Deny Attacks
 182.34.195.0/24 Deny Attacks
 182.34.196.0/24 Deny Attacks
 182.101.207.0/24 Deny Attacks
+183.3.149.0/24 Deny Attacks
+183.23.73.0/24 Deny Attacks
+183.23.75.0/24 Deny Attacks
+183.47.10.3/32 Deny Spam
 183.128.83.0/24 Deny Attacks
 183.128.131.0/24 Deny Attacks
 183.136.225.0/24 Deny Attacks
 218.23.216.0/24 Deny Attacks
 219.128.37.0/24 Deny Attacks
+219.135.169.37/32 Deny Spam
 222.74.73.0/24 Deny Attacks
 222.74.202.0/24 Deny Attacks
 222.241.154.0/24 Deny Attacks
 222.245.214.0/24 Deny Attacks
+223.151.51.27/32 Deny Spam
 223.199.18.0/24 Deny Attacks
+223.241.72.244/32 Deny Spam
 Origin: CN
 Profile: Domestic ISP;Infrastructure/Transit
 Tag: China Telecom Backbone
@@ -1861,18 +1924,30 @@ Tag: China Telecom Backbone
 # human access endpoints. Spam, hacking, brute-force attacks, port scans,
 # probing, etc detected from here.
 # Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 3,593.
-# Updated: 2021.11.05
+# Stop Forum Spam (SFS) listings: 4,472.
+# Updated: 2022.01.15
 
 45.124.125.93/32 Deny Attacks
+58.32.17.0/24 Deny Attacks
+58.32.42.8/32 Deny Attacks
+58.32.42.17/32 Deny Attacks
+58.32.42.209/32 Deny Attacks
+58.32.206.226/32 Deny Attacks
+58.32.206.234/32 Deny Attacks
 58.40.16.0/24 Deny Attacks
 58.40.124.0/24 Deny Attacks
 61.165.10.0/24 Deny Attacks
+61.170.168.0/24 Deny Attacks
+61.170.186.0/23 Deny Attacks
 101.83.33.0/24 Deny Attacks
+101.83.37.62/32 Deny Spam
 101.83.38.0/24 Deny Attacks
+101.87.187.202/32 Deny Spam
+101.91.207.0/24 Deny Attacks
 101.93.222.0/24 Deny Attacks
 101.95.106.0/24 Deny Attacks
 101.95.182.26/32 Deny Attacks
+101.224.138.0/24 Deny Attacks
 101.228.85.0/24 Deny Attacks
 101.229.60.0/24 Deny Attacks
 101.229.99.0/24 Deny Attacks
@@ -1882,59 +1957,83 @@ Tag: China Telecom Backbone
 114.85.110.0/24 Deny Attacks
 114.86.221.0/24 Deny Attacks
 114.88.132.0/24 Deny Attacks
+114.88.242.234/32 Deny Spam
 114.92.30.0/24 Deny Attacks
+114.92.241.179/32 Deny Spam
+114.93.184.242/32 Deny Spam
+114.93.187.138/32 Deny Spam
+114.95.227.0/24 Deny Attacks
 114.95.233.0/24 Deny Attacks
 114.95.235.0/24 Deny Attacks
 116.227.22.0/24 Deny Attacks
 116.227.80.0/24 Deny Attacks
+116.230.73.2/32 Deny Spam
 116.232.70.0/23 Deny Attacks
 116.232.113.103/32 Deny Attacks
-116.232.114.192/32 Deny Attacks
+116.232.113.117/32 Deny Attacks
 116.232.114.243/32 Deny Attacks
 116.232.115.0/24 Deny Attacks
 116.232.151.26/32 Deny Attacks
-116.232.151.219/32 Deny Spam
+116.233.16.42/32 Deny Spam
 116.233.20.0/24 Deny Attacks
-116.233.138.158/32 Deny Attacks
-116.233.138.168/32 Deny Spam
+116.233.138.0/24 Deny Attacks
+116.233.142.15/32 Deny Spam
 116.233.204.0/23 Deny Attacks
+116.234.203.30/32 Deny Spam
 116.235.54.0/24 Deny Attacks
+116.235.141.243/32 Deny Spam
 116.236.204.10/32 Deny Attacks
-116.236.204.90/32 Deny Spam
+116.236.204.90/32 Deny Attacks
+116.237.117.0/24 Deny Attacks
+116.237.130.82/32 Deny Spam
 116.237.143.0/24 Deny Attacks
 116.237.158.0/24 Deny Attacks
-116.238.181.100/32 Deny Spam
+116.237.252.113/32 Deny Spam
 116.238.181.129/32 Deny Attacks
-116.238.227.87/32 Deny Spam
-116.238.227.197/32 Deny Attacks
+116.238.227.0/24 Deny Attacks
+124.77.76.0/24 Deny Attacks
 124.77.94.0/24 Deny Attacks
 124.77.188.0/24 Deny Attacks
 124.79.17.0/24 Deny Attacks
 124.79.20.0/24 Deny Attacks
+124.79.90.0/24 Deny Attacks
+124.79.120.80/32 Deny Spam
 124.79.121.0/24 Deny Attacks
+124.79.127.71/32 Deny Spam
 124.79.157.0/24 Deny Attacks
 180.158.15.0/24 Deny Attacks
 180.158.52.0/24 Deny Attacks
 180.162.233.0/24 Deny Attacks
 180.163.220.0/24 Deny Attacks
+180.164.69.0/24 Deny Attacks
 180.164.110.0/24 Deny Attacks
+180.164.127.0/24 Deny Attacks
 180.164.161.0/24 Deny Attacks
+180.164.164.0/24 Deny Attacks
 180.167.101.0/24 Deny Attacks
 180.168.86.0/24 Deny Attacks
+180.168.152.206/32 Deny Spam
 180.171.150.0/24 Deny Attacks
+180.174.208.68/32 Deny Spam
 180.175.70.0/24 Deny Attacks
 180.175.76.0/24 Deny Attacks
 180.175.153.0/24 Deny Attacks
 211.152.33.0/24 Deny Attacks
 218.78.20.0/22 Deny Attacks
 218.78.24.0/22 Deny Attacks
+218.79.0.198/32 Deny Spam
 218.79.2.0/24 Deny Attacks
 218.79.182.0/24 Deny Attacks
 218.79.221.0/24 Deny Attacks
+218.80.98.245/32 Deny Spam
+218.80.123.67/32 Deny Spam
 218.81.4.0/24 Deny Attacks
 218.81.189.0/24 Deny Attacks
 222.64.94.0/24 Deny Attacks
 222.65.173.0/24 Deny Attacks
+222.67.188.68/32 Deny Spam
+222.67.189.61/32 Deny Spam
+222.72.95.0/24 Deny Attacks
 Origin: CN
 Profile: Domestic ISP;Infrastructure/Transit;Multiplay
 Tag: China Telecom 4812
@@ -1945,14 +2044,13 @@ Tag: China Telecom 4812
 # human access endpoints. Spam, hacking, brute-force attacks, port scans,
 # probing, etc detected from here.
 # Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 50,621.
-# Updated: 2022.01.05
+# Stop Forum Spam (SFS) listings: 52,198.
+# Updated: 2022.01.15
 
 1.189.209.0/24 Deny Attacks
 14.205.92.0/24 Deny Attacks
 27.50.175.0/24 Deny Attacks
 27.203.149.0/24 Deny Attacks
-27.203.221.186/32 Deny Spam
 27.203.221.194/32 Deny Attacks
 27.205.130.247/32 Deny Attacks
 27.208.44.0/24 Deny Attacks
@@ -1966,33 +2064,61 @@ Tag: China Telecom 4812
 42.236.10.0/24 Deny Attacks
 58.16.29.0/24 Deny Attacks
 58.17.6.9/32 Deny Attacks
+58.17.74.0/24 Deny Attacks
 58.240.110.0/24 Deny Attacks
 60.2.44.0/24 Deny Attacks
+60.10.10.171/32 Deny Spam
+60.10.37.0/24 Deny Attacks
 60.12.214.0/24 Deny Attacks
+60.15.130.249/32 Deny Spam
 60.26.12.0/24 Deny Attacks
 60.214.154.0/24 Deny Attacks
 60.217.64.0/24 Deny Attacks
 60.222.246.0/24 Deny Attacks
 60.223.86.0/24 Deny Attacks
 60.223.249.0/24 Deny Attacks
+61.137.131.202/32 Deny Spam
 61.161.144.252/32 Deny Attacks
 61.163.173.0/24 Deny Attacks
 61.163.174.0/23 Deny Attacks
 101.69.227.114/32 Deny Attacks
 101.71.154.0/24 Deny Attacks
 110.229.153.0/24 Deny Attacks
+111.160.7.148/32 Deny Spam
 111.160.114.0/24 Deny Attacks
 112.80.161.0/24 Deny Attacks
 112.80.163.0/24 Deny Attacks
 112.80.174.0/24 Deny Attacks
 112.80.189.0/24 Deny Attacks
+112.239.94.0/24 Deny Attacks
+112.239.96.0/21 Deny Attacks
+112.248.0.0/16 Deny Attacks
+112.255.250.5/32 Deny Attacks
 113.195.32.0/24 Deny Attacks
+113.195.36.196/32 Deny Spam
+113.195.128.7/32 Deny Attacks
+113.195.128.50/32 Deny Attacks
+113.200.202.122/32 Deny Spam
+113.224.224.80/32 Deny Spam
+113.225.61.139/32 Deny Attacks
+113.225.61.198/32 Deny Attacks
+113.229.0.62/32 Deny Spam
+113.229.4.19/32 Deny Spam
+113.229.5.0/24 Deny Attacks
 113.229.6.0/24 Deny Attacks
+113.237.0.0/21 Deny Attacks
+113.237.9.209/32 Deny Attacks
+113.237.9.233/32 Deny Attacks
+113.237.11.0/24 Deny Attacks
+115.50.0.0/17 Deny Attacks
+115.50.128.0/19 Deny Attacks
+115.50.160.0/20 Deny Attacks
 115.61.208.0/24 Deny Attacks
 115.63.101.0/24 Deny Attacks
 118.76.52.0/24 Deny Attacks
 118.212.37.0/24 Deny Attacks
 119.4.174.0/23 Deny Attacks
+119.36.157.142/32 Deny Spam
 119.112.215.0/24 Deny Attacks
 119.112.216.0/23 Deny Attacks
 119.166.203.0/24 Deny Attacks
@@ -2008,6 +2134,8 @@ Tag: China Telecom 4812
 123.13.120.0/24 Deny Attacks
 123.13.123.0/24 Deny Attacks
 123.138.35.0/24 Deny Attacks
+123.138.110.0/24 Deny Attacks
+123.157.219.110/32 Deny Spam
 123.188.212.0/24 Deny Attacks
 123.233.121.0/24 Deny Attacks
 124.93.96.0/24 Deny Attacks
@@ -2019,6 +2147,8 @@ Tag: China Telecom 4812
 175.44.4.0/24 Deny Attacks
 175.44.42.0/24 Deny Attacks
 175.146.208.0/23 Deny Attacks
+175.146.213.132/32 Deny Spam
+175.146.215.0/24 Deny Attacks
 182.116.221.0/24 Deny Attacks
 182.123.188.0/22 Deny Attacks
 182.123.192.0/21 Deny Attacks
@@ -2027,7 +2157,6 @@ Tag: China Telecom 4812
 182.123.204.0/22 Deny Attacks
 182.123.208.0/21 Deny Attacks
 183.93.99.0/24 Deny Attacks
-202.107.74.24/32 Deny Spam
 218.25.161.226/32 Deny Attacks
 218.59.193.0/24 Deny Attacks
 218.60.8.0/24 Deny Attacks
@@ -2035,9 +2164,9 @@ Tag: China Telecom 4812
 219.154.204.0/24 Deny Attacks
 220.248.188.0/24 Deny Attacks
 221.1.200.0/24 Deny Attacks
+221.2.91.230/32 Deny Spam
 221.2.155.0/24 Deny Attacks
 221.2.164.0/24 Deny Attacks
-221.3.188.110/32 Deny Spam
 221.15.37.0/24 Deny Attacks
 222.134.147.0/24 Deny Attacks
 Origin: CN
@@ -2049,68 +2178,83 @@ Tag: China Unicom Backbone
 # Taiwanese domestic ISP and business network. DDoS, FTP brute-force, and
 # webapp attacks, hacking, spam, and port scans detected from here. Listing
 # just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 12,018.
-# Updated: 2021.10.12 / Modified: 2022.01.07
+# Stop Forum Spam (SFS) listings: 17,450.
+# Updated: 2022.01.15
 
-1.34.61.196/32 Deny Spam
 1.34.93.0/24 Deny Attacks
 1.160.130.0/24 Deny Attacks
+1.164.227.0/24 Deny Attacks
+1.169.23.0/24 Deny Attacks
 1.169.63.0/24 Deny Attacks
-1.169.66.0/24 Deny Attacks
+1.169.66.0/23 Deny Attacks
 1.169.71.0/24 Deny Attacks
-1.169.79.114/32 Deny Spam
-1.169.86.104/32 Deny Spam
+1.169.73.0/24 Deny Attacks
+1.169.76.65/32 Deny Spam
 1.169.87.0/24 Deny Attacks
 1.169.89.0/24 Deny Attacks
-1.169.95.212/32 Deny Spam
+1.169.99.0/24 Deny Attacks
+1.169.103.0/24 Deny Attacks
 1.169.113.0/24 Deny Attacks
 1.169.119.0/24 Deny Attacks
-1.170.37.137/32 Deny Spam
-36.227.160.58/32 Deny Spam
-36.227.161.167/32 Deny Spam
-36.227.166.1/32 Deny Spam
-36.231.113.213/32 Deny Spam
-36.231.122.200/32 Deny Spam
-59.115.119.12/32 Deny Spam
+1.169.128.0/24 Deny Attacks
+1.169.133.0/24 Deny Attacks
 59.120.117.0/24 Deny Attacks
-59.124.224.180/32 Deny Spam
+59.125.98.0/24 Deny Attacks
+59.125.101.0/24 Deny Attacks
 59.126.107.0/24 Deny Attacks
-59.126.200.137/32 Deny Spam
-60.249.3.125/32 Deny Spam
+60.250.137.0/24 Deny Attacks
+60.250.153.0/24 Deny Attacks
+60.251.66.0/24 Deny Attacks
 61.216.166.0/24 Deny Attacks
-61.221.30.104/32 Deny Spam
 61.221.57.0/24 Deny Attacks
-61.223.81.194/32 Deny Spam
-61.224.64.68/32 Deny Spam
-61.224.74.94/32 Deny Spam
+61.221.155.11/32 Deny Spam
+61.222.202.194/32 Deny Spam
+61.223.80.0/24 Deny Attacks
+61.223.247.125/32 Deny Spam
+61.224.106.117/32 Deny Spam
+61.227.71.164/32 Deny Spam
+61.227.193.201/32 Deny Spam
+111.240.177.0/24 Deny Attacks
+111.240.181.0/24 Deny Attacks
 111.240.183.0/24 Deny Attacks
+111.240.201.0/24 Deny Attacks
 111.240.206.0/24 Deny Attacks
 111.240.209.0/24 Deny Attacks
+111.240.216.0/24 Deny Attacks
 111.240.218.0/24 Deny Attacks
 111.240.231.0/24 Deny Attacks
 111.241.3.0/24 Deny Attacks
 111.246.96.0/24 Deny Attacks
+111.246.201.128/32 Deny Spam
+111.246.218.10/32 Deny Spam
+111.246.222.241/32 Deny Spam
+111.249.130.0/24 Deny Attacks
+111.249.146.22/32 Deny Spam
+111.249.152.175/32 Deny Spam
 111.250.128.0/24 Deny Attacks
 111.250.132.0/24 Deny Attacks
 111.250.136.0/24 Deny Attacks
 111.250.139.0/24 Deny Attacks
 111.250.140.0/24 Deny Attacks
 111.250.142.0/23 Deny Attacks
-111.251.88.54/32 Deny Spam
-111.252.220.145/32 Deny Spam
-114.25.136.90/32 Deny Spam
-114.33.151.164/32 Deny Spam
+111.251.163.0/24 Deny Attacks
+114.24.19.0/24 Deny Attacks
 114.33.206.0/24 Deny Attacks
+114.34.184.0/24 Deny Attacks
 114.35.134.0/24 Deny Attacks
 114.35.176.0/24 Deny Attacks
-114.37.148.186/32 Deny Spam
+114.36.115.0/24 Deny Attacks
+114.37.144.0/24 Deny Attacks
 114.37.177.0/24 Deny Attacks
-114.38.85.40/32 Deny Spam
-114.41.83.225/32 Deny Spam
-114.41.150.90/32 Deny Spam
-114.45.144.43/32 Deny Spam
+114.38.14.0/23 Deny Attacks
+114.38.56.0/24 Deny Attacks
+114.43.113.224/32 Deny Spam
+114.43.135.0/24 Deny Attacks
+114.43.166.65/32 Deny Spam
+118.161.215.80/32 Deny Spam
 118.163.94.0/24 Deny Attacks
 118.163.120.0/24 Deny Attacks
+118.163.177.0/24 Deny Attacks
 118.163.193.0/24 Deny Attacks
 118.169.74.0/23 Deny Attacks
 118.169.76.0/24 Deny Attacks
@@ -2120,16 +2264,22 @@ Tag: China Unicom Backbone
 118.169.90.0/24 Deny Attacks
 118.169.92.0/24 Deny Attacks
 118.169.242.0/24 Deny Attacks
+122.117.91.0/24 Deny Attacks
 203.75.190.0/24 Deny Attacks
+210.59.240.217/32 Deny Spam
 210.61.216.0/24 Deny Attacks
+211.21.20.0/24 Deny Attacks
 211.21.200.0/24 Deny Attacks
-211.72.35.153/32 Deny Spam
+211.23.141.0/24 Deny Attacks
+220.130.18.216/32 Deny Spam
 220.130.167.0/24 Deny Attacks
+220.130.235.217/32 Deny Spam
 220.132.86.0/24 Deny Attacks
 220.132.111.0/24 Deny Attacks
 220.132.179.0/24 Deny Attacks
 220.132.228.0/24 Deny Attacks
-220.133.77.56/32 Deny Spam
+220.134.5.0/24 Deny Attacks
+220.134.51.0/24 Deny Attacks
 220.135.2.0/24 Deny Attacks
 220.135.61.0/24 Deny Attacks
 220.135.241.0/24 Deny Attacks
@@ -2210,7 +2360,7 @@ Tag: China Unicom Beijing
 # Chinese domestic ISP, but also a source of spam and other unwanted traffic.
 # Mozi botnets detected here. Listing just the affected ranges/addresses only.
 # Stop Forum Spam (SFS) listings: 63 (AS17622), 51 (AS17623), 115 (AS17816).
-# Updated: 2021.12.25
+# Updated: 2021.12.25 / Modified: 2022.01.15
 
 27.38.32.0/24 Deny Attacks
 27.38.210.0/24 Deny Attacks
@@ -2226,9 +2376,15 @@ Tag: China Unicom Beijing
 112.97.80.0/24 Deny Attacks
 119.34.0.52/32 Deny Spam
 119.34.40.0/24 Deny Attacks
-120.83.78.0/24 Deny Attacks
+120.83.78.0/23 Deny Attacks
+120.83.80.0/22 Deny Attacks
+120.83.84.0/23 Deny Attacks
 120.85.105.0/24 Deny Attacks
 120.85.171.0/24 Deny Attacks
+120.86.232.0/21 Deny Attacks
+120.86.240.34/32 Deny Attacks
+120.86.240.159/32 Deny Attacks
+120.86.252.0/24 Deny Attacks
 163.125.40.0/21 Deny Attacks
 163.125.74.0/24 Deny Attacks
 163.125.199.0/24 Deny Attacks
@@ -2643,22 +2799,25 @@ Tag: SKYBROADBAND
 # ASNs 9808, 56048 ("Guangdong Mobile Communication Co.Ltd").
 # Chinese mobile carrier. Brute-force and webapp attacks, port scans, and spam
 # detected here. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 80 (AS9808), 47 (AS56048).
-# Updated: 2021.10.12 / Modified: 2021.10.31
+# Stop Forum Spam (SFS) listings: 194 (AS9808), 92 (AS56048).
+# Updated: 2022.01.15
 
-39.130.5.57/32 Deny Spam
-39.155.166.34/32 Deny Spam
 39.155.177.0/24 Deny Attacks
-111.3.116.44/32 Deny Spam
-111.4.127.142/32 Deny Spam
-112.2.31.228/32 Deny Spam
-117.146.31.0/24 Deny Attacks
-183.192.103.107/32 Deny Spam
-183.193.61.220/32 Deny Spam
-183.193.124.164/32 Deny Spam
-223.67.213.135/32 Deny Spam
-223.72.36.57/32 Deny Spam
-223.72.123.17/32 Deny Spam
+111.2.196.130/32 Deny Attacks
+111.3.28.130/32 Deny Attacks
+111.3.28.137/32 Deny Attacks
+111.4.127.82/32 Deny Attacks
+111.4.127.142/32 Deny Attacks
+112.4.97.0/24 Deny Attacks
+112.4.155.0/24 Deny Attacks
+112.4.238.253/32 Deny Spam
+117.141.50.0/24 Deny Attacks
+117.146.31.57/32 Deny Attacks
+120.244.130.0/24 Deny Attacks
+183.242.23.0/24 Deny Attacks
+223.71.22.17/32 Deny Attacks
+223.72.37.0/24 Deny Attacks
+223.72.123.0/24 Deny Attacks
 Origin: CN
 Profile: Domestic ISP
 Tag: Guangdong Mobile
@@ -3814,16 +3973,17 @@ Tag: Novotelecom Ltd
 # ASN 3255 (State Enterprise Scientific and Telecommunication Centre "Ukrainian
 # Academic and Research Network" of the Institute for Condensed Matter Physics
 # of the National Academy of Science of Ukraine / UARNet).
-# Stop Forum Spam (SFS) listings: 1,290.
-# Updated: 2021.03.09 / Checked: 2021.03.19
+# Stop Forum Spam (SFS) listings: 986.
+# Updated: 2022.01.14
 
-193.232.65.0/24 Deny Spam
-Origin: RU
 37.221.128.0/19 Deny Spam
 45.151.236.0/22 Deny Spam
 45.152.72.0/22 Deny Spam
 45.158.244.0/22 Deny Spam
-91.237.240.0/23 Deny Spam
+46.174.120.0/23 Deny Spam
+46.174.122.0/24 Deny Spam
+91.214.208.0/22 Deny Spam
+91.237.241.0/24 Deny Spam
 91.237.242.0/24 Deny Spam
 176.120.96.0/23 Deny Spam
 176.125.32.0/19 Deny Spam
@@ -3852,7 +4012,9 @@ Origin: RU
 194.44.31.0/24 Deny Spam
 194.44.32.0/22 Deny Spam
 194.44.36.0/23 Deny Spam
-194.44.40.0/21 Deny Spam
+194.44.40.0/23 Deny Spam
+194.44.43.0/24 Deny Spam
+194.44.44.0/22 Deny Spam
 194.44.48.0/23 Deny Spam
 194.44.50.0/24 Deny Spam
 194.44.52.0/23 Deny Spam
@@ -3864,7 +4026,9 @@ Origin: RU
 194.44.67.0/24 Deny Spam
 194.44.69.0/24 Deny Spam
 194.44.70.0/23 Deny Spam
-194.44.72.0/21 Deny Spam
+194.44.72.0/22 Deny Spam
+194.44.77.0/24 Deny Spam
+194.44.78.0/23 Deny Spam
 194.44.80.0/21 Deny Spam
 194.44.89.0/24 Deny Spam
 194.44.91.0/24 Deny Spam
@@ -3899,14 +4063,10 @@ Origin: RU
 194.44.220.0/22 Deny Spam
 194.44.224.0/19 Deny Spam
 195.69.246.0/24 Deny Spam
-213.174.1.0/24 Deny Spam
-213.174.2.0/24 Deny Spam
-213.174.4.0/23 Deny Spam
-213.174.6.0/24 Deny Spam
-213.174.8.0/21 Deny Spam
-213.174.21.0/24 Deny Spam
+213.174.0.0/20 Deny Spam
 213.174.22.0/24 Deny Spam
-213.174.30.0/23 Deny Spam
+213.174.31.0/24 Deny Spam
+217.65.244.0/22 Deny Spam
 217.65.248.0/21 Deny Spam
 Origin: UA
 Profile: Domestic ISP;Government
@@ -6551,8 +6711,9 @@ Tag: Triple T
 # scans, and spam detected from here.
 # Listing just the affected ranges/addresses only.
 # Stop Forum Spam (SFS) listings: 63.
-# Updated: 2022.01.05
+# Updated: 2022.01.05 / Modified: 2022.01.11
 
+94.239.222.128/32 Deny Attacks
 118.185.38.153/32 Deny Attacks
 122.15.131.65/32 Deny Attacks
 123.63.191.69/32 Deny Attacks
@@ -6647,29 +6808,35 @@ Tag: Telstra Corporation
 
 
 # ASN 8866 ("Bulgarian Telecommunications Company Plc").
-# A Bulgarian domestic ISP. Mostly benign, but some ranges caught spamming.
-# Listing just the worst of those (not the whole network).
-# Stop Forum Spam (SFS) listings: 942.
-# Updated: 2021.05.02
+# Bulgarian domestic ISP. Brute-force attacks, port scans, and spam detected
+# from here. Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 934.
+# Updated: 2022.01.14
 
-46.10.199.0/24 Deny Spam
-46.10.218.194/32 Deny Spam
-62.73.126.0/24 Deny Spam
-77.76.45.22/32 Deny Spam
-77.85.57.3/32 Deny Spam
-77.85.148.57/32 Deny Spam
-77.85.169.149/32 Deny Spam
-79.100.92.36/32 Deny Spam
-79.100.131.182/32 Deny Spam
-90.154.139.181/32 Deny Spam
+46.10.183.0/24 Deny Attacks
+46.10.199.90/32 Deny Spam
+62.73.121.0/24 Deny Attacks
+62.73.126.70/32 Deny Attacks
+62.73.126.72/32 Deny Attacks
+79.100.104.146/32 Deny Spam
+79.100.200.234/32 Deny Spam
+82.137.71.43/32 Deny Spam
+84.238.141.136/32 Deny Spam
+85.187.28.61/32 Deny Spam
+87.126.64.193/32 Deny Spam
 94.236.153.194/32 Deny Spam
-94.236.252.0/24 Deny Spam
-95.42.72.230/32 Deny Spam
-95.42.232.247/32 Deny Spam
-95.43.5.0/24 Deny Spam
-95.43.42.0/24 Deny Attacks
+95.43.5.8/32 Deny Attacks
+95.43.5.202/32 Deny Spam
+95.43.15.142/32 Deny Spam
+95.43.42.100/32 Deny Attacks
+95.43.76.221/32 Deny Spam
+95.43.125.120/32 Deny Spam
 212.5.158.0/24 Deny Attacks
+212.5.159.2/32 Deny Spam
+213.91.128.99/32 Deny Spam
 Origin: BG
+77.77.166.117/32 Deny Spam
+Origin: US
 Profile: Domestic ISP
 Tag: Bulgarian Telecom
 
@@ -7247,7 +7414,7 @@ Tag: TTNet A.S
 # attacks, port scans, spamming, and probing for vulnerabilities detected from
 # here. Listing just the affected address/ranges only.
 # Stop Forum Spam (SFS) listings: 490.
-# Updated: 2021.10.22 / Modified: 2022.01.07
+# Updated: 2021.10.22 / Modified: 2022.01.15
 
 202.168.152.0/24 Deny Attacks
 202.168.153.238/32 Deny Attacks
@@ -7275,6 +7442,7 @@ Origin: HK
 121.154.73.112/32 Deny Attacks
 121.154.74.252/32 Deny Attacks
 121.154.75.0/24 Deny Attacks
+121.183.115.154/32 Deny Attacks
 124.198.100.27/32 Deny Spam
 124.198.114.248/32 Deny Spam
 210.217.18.70/32 Deny Spam
@@ -7566,11 +7734,11 @@ Profile: Domestic ISP;Tor endpoints here
 Tag: Telia Norge AS
 
 
-# ASNs 10796, 11426, 11427, 20001, 20115 ("Charter Communications").
+# ASNs 10796, 11351, 11426, 11427, 20001, 20115 ("Charter Communications").
 # United States domestic ISP. Caught probing honeypots. Port scans and spam
 # also detected from here. Listing just the affected ranges/addresses only.
 # Stop Forum Spam (SFS) listings: 1,132 (AS10796), 1,152 (AS11426), 1,263 (AS11427), 1,799 (AS20001), 2,331 (AS20115).
-# Updated: 2021.12.02
+# Updated: 2021.12.02 / Modified: 2022.01.11
 
 23.240.33.240/32 Deny Spam
 23.241.16.131/32 Deny Spam
@@ -7591,6 +7759,7 @@ Tag: Telia Norge AS
 24.217.12.136/32 Deny Spam
 24.241.212.44/32 Deny Spam
 35.132.139.121/32 Deny Spam
+45.46.131.74/32 Deny Attacks
 45.49.42.123/32 Deny Spam
 45.49.171.159/32 Deny Spam
 45.50.64.120/32 Deny Spam
@@ -8780,8 +8949,8 @@ Tag: CAT TELECOM
 # Domestic Ukrainian ISP; IPs from this ASN caught attempting automated attacks
 # against honeypots and login pages, with some evidence of some IPs being used
 # as low-end C&Cs and for malware distribution.
-# Stop Forum Spam (SFS) listings: 64.
-# Updated: 2020.03.21 / Checked: 2021.03.18
+# Stop Forum Spam (SFS) listings: 28.
+# Updated: 2020.03.21 / Checked: 2022.01.14
 
 176.113.208.0/20 Deny Attacks
 194.31.68.0/23 Deny Attacks
@@ -8809,49 +8978,26 @@ Tag: R Cable y Telecable
 
 # ASN 30722 ("Vodafone Italia S.p.A").
 # Italian domestic ISP and mobile provider and a source of spam.
-# Stop Forum Spam (SFS) listings: 1,071.
-# Updated: 2021.11.27
+# Stop Forum Spam (SFS) listings: 856.
+# Updated: 2022.01.11
 
-2.37.207.4/32 Deny Spam
 2.38.152.84/32 Deny Spam
-2.41.127.53/32 Deny Spam
-2.47.181.34/32 Deny Spam
-5.88.85.8/32 Deny Spam
-5.90.4.128/32 Deny Spam
-5.90.33.220/32 Deny Spam
-5.90.141.188/32 Deny Spam
-5.90.142.246/32 Deny Spam
-5.90.143.31/32 Deny Spam
-5.91.21.196/32 Deny Spam
-5.91.31.74/32 Deny Spam
-5.91.96.214/32 Deny Spam
-5.91.111.154/32 Deny Spam
-5.94.145.101/32 Deny Spam
-5.95.65.120/32 Deny Spam
+2.45.231.144/32 Deny Spam
+2.47.187.166/32 Deny Spam
+5.90.36.42/32 Deny Spam
 37.116.124.177/32 Deny Spam
-37.119.225.191/32 Deny Spam
-37.159.109.74/32 Deny Spam
-37.159.114.145/32 Deny Spam
+37.159.106.164/32 Deny Spam
 37.159.144.34/32 Deny Spam
-37.182.167.254/32 Deny Spam
-91.80.14.126/32 Deny Spam
 93.64.183.162/32 Deny Attacks
 93.65.88.131/32 Deny Spam
-93.67.196.91/32 Deny Spam
-93.145.17.218/32 Deny Spam
+93.145.17.218/32 Deny Attacks
 93.145.62.106/32 Deny Attacks
-93.145.62.142/32 Deny Spam
-93.146.71.22/32 Deny Spam
+93.145.189.14/32 Deny Spam
 93.146.143.119/32 Deny Spam
-93.146.185.139/32 Deny Spam
 93.146.244.26/32 Deny Spam
-93.147.37.239/32 Deny Spam
-93.150.44.250/32 Deny Spam
-109.112.128.76/32 Deny Spam
-109.118.86.231/32 Deny Spam
-109.118.122.32/32 Deny Spam
-130.25.204.198/32 Deny Spam
-130.25.206.226/32 Deny Spam
+93.148.31.206/32 Deny Spam
+109.116.192.0/24 Deny Attacks
+109.118.121.31/32 Deny Spam
 Origin: IT
 Profile: Domestic ISP
 Tag: Vodafone Italia
@@ -9470,7 +9616,7 @@ Tag: NOS COMUNICACOES
 # port scans, and spam detected from here. Listed just the affected
 # ranges/addresses only.
 # Stop Forum Spam (SFS) listings: 14,549.
-# Updated: 2021.10.12
+# Updated: 2021.10.12 / Modified: 2022.01.11
 
 91.149.203.0/24 Deny Attacks
 Origin: PL
@@ -9488,6 +9634,7 @@ Origin: PL
 71.150.147.71/32 Deny Attacks
 72.22.38.59/32 Deny Spam
 75.46.150.0/24 Deny Spam
+76.219.223.194/32 Deny Attacks
 76.233.226.0/24 Deny Attacks
 76.245.74.88/32 Deny Spam
 99.90.49.21/32 Deny Spam
@@ -9627,42 +9774,65 @@ Tag: Merit Network Inc
 
 
 # ASN 5617 ("Orange Polska Spolka Akcyjna").
-# Major Polish domestic ISP; Also a *HUGE* source of forum+blog spam! Listing
-# the entire ASN, but also including it in ignore.dat by default.
-# Stop Forum Spam (SFS) listings: 81,921.
-# Updated: 2020.06.23 / Checked: 2021.03.12
+# Polish multiplay network and domestic ISP, offering mobile and business
+# connectivity, domain registration, etc. A *HUGE* source of spam! Brute-force,
+# SSH, WordPress/XMLRPC, and webapp attacks also detected from here.
+# Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 66,070.
+# Updated: 2022.01.12
 
-5.184.0.0/15 Deny Spam
-31.60.0.0/14 Deny Spam
-37.47.0.0/16 Deny Spam
-37.108.0.0/16 Deny Spam
-37.225.0.0/16 Deny Spam
-37.228.0.0/18 Deny Spam
-46.134.0.0/16 Deny Spam
-46.170.0.0/15 Deny Spam
-79.162.0.0/15 Deny Spam
-79.184.0.0/13 Deny Spam
-80.48.0.0/13 Deny Spam
-83.0.0.0/11 Deny Spam
-87.96.0.0/17 Deny Spam
-91.94.0.0/16 Deny Spam
-95.48.0.0/14 Deny Spam
-178.42.0.0/15 Deny Spam
-178.56.0.0/16 Deny Spam
-188.47.0.0/16 Deny Spam
-193.110.120.0/22 Deny Spam
-194.127.136.0/24 Deny Spam
-194.204.128.0/18 Deny Spam
-195.116.0.0/15 Deny Spam
-195.205.0.0/16 Deny Spam
-212.160.0.0/16 Deny Spam
-212.244.0.0/16 Deny Spam
-213.25.0.0/16 Deny Spam
-213.76.0.0/15 Deny Spam
-217.96.0.0/14 Deny Spam
-217.116.100.0/22 Deny Spam
+5.184.246.231/32 Deny Spam
+5.185.113.27/32 Deny Spam
+31.60.9.141/32 Deny Spam
+31.61.163.44/32 Deny Spam
+31.61.229.49/32 Deny Spam
+37.47.162.0/24 Deny Attacks
+37.47.237.21/32 Deny Spam
+37.225.34.11/32 Deny Spam
+37.225.73.117/32 Deny Spam
+46.134.2.15/32 Deny Spam
+46.134.2.91/32 Deny Attacks
+46.134.10.88/32 Deny Spam
+46.134.32.95/32 Deny Attacks
+46.134.32.110/32 Deny Spam
+46.134.33.159/32 Deny Spam
+46.134.37.195/32 Deny Spam
+46.134.59.152/32 Deny Spam
+46.134.72.140/32 Deny Spam
+46.134.100.226/32 Deny Spam
+46.134.121.95/32 Deny Spam
+46.134.133.121/32 Deny Spam
+46.134.136.0/24 Deny Attacks
+46.134.144.31/32 Deny Spam
+46.134.148.193/32 Deny Spam
+46.134.149.89/32 Deny Spam
+46.134.153.149/32 Deny Spam
+46.134.170.56/32 Deny Spam
+46.134.174.150/32 Deny Spam
+46.171.28.162/32 Deny Spam
+46.171.202.117/32 Deny Attacks
+80.48.119.0/24 Deny Attacks
+83.11.55.0/24 Deny Attacks
+83.11.62.0/24 Deny Attacks
+83.11.64.176/32 Deny Spam
+83.11.73.227/32 Deny Spam
+83.11.82.0/24 Deny Attacks
+83.11.89.0/24 Deny Attacks
+83.11.95.66/32 Deny Spam
+83.22.54.109/32 Deny Spam
+83.22.87.208/32 Deny Spam
+95.48.22.68/32 Deny Spam
+95.48.193.246/32 Deny Attacks
+188.47.29.128/32 Deny Spam
+188.47.29.211/32 Deny Spam
+188.47.29.235/32 Deny Attacks
+188.47.112.138/32 Deny Spam
+195.205.33.237/32 Deny Spam
+195.205.226.146/32 Deny Spam
+212.244.88.51/32 Deny Attacks
+217.96.190.80/32 Deny Spam
 Origin: PL
-Profile: Domestic ISP
+Profile: Domestic ISP;Infrastructure/Transit;Multiplay;Webhosting
 Tag: Orange Polska Spolka Akcyjna
 
 
@@ -11826,77 +11996,42 @@ Tag: HGC Global Communications Limited
 # ASN 29119 ("ServiHosting Networks S.L").
 # Spanish multiplay network (mostly OTT and webhosting, but also some ISPs,
 # colo, etc). Brute-force attacks, port scanning, and spam detected from here.
-# Listing just the affected addresses/ranges, plus all non-ES ranges (cloud).
-# Stop Forum Spam (SFS) listings: 1,083.
-# Updated: 2021.10.17
+# Listing just the affected addresses/ranges only.
+# Stop Forum Spam (SFS) listings: 998.
+# Updated: 2022.01.11
 
-194.242.56.0/23 Deny Cloud
-Origin: DE
 5.83.93.0/24 Deny Attacks
+5.83.94.194/32 Deny Spam
 5.154.5.0/24 Deny Attacks
-5.182.73.41/32 Deny Spam
-91.202.188.237/32 Deny Spam
+85.31.57.12/32 Deny Spam
+109.167.40.0/24 Deny Attacks
 176.56.107.0/24 Deny Attacks
 178.156.67.0/24 Deny Attacks
 185.135.116.200/32 Deny Spam
 185.184.174.71/32 Deny Spam
-192.144.3.100/32 Deny Spam
 217.61.71.175/32 Deny Spam
 Origin: ES
-79.171.216.0/21 Deny Cloud
-141.11.244.0/23 Deny Cloud
-Origin: FR
-95.214.172.0/22 Deny Cloud
-Origin: IR
-45.66.149.0/24 Deny Cloud
-92.119.34.0/23 Deny Cloud
-185.182.65.0/24 Deny Cloud
-Origin: LT
-5.57.224.0/21 Deny Cloud
-146.255.16.0/22 Deny Cloud
-185.2.148.0/22 Deny Cloud
-185.47.12.0/22 Deny Cloud
-185.57.172.0/23 Deny Cloud
-185.75.244.0/23 Deny Cloud
-185.99.184.0/22 Deny Cloud
-185.103.36.0/22 Deny Cloud
-185.104.132.0/22 Deny Cloud
-185.105.220.0/22 Deny Cloud
-193.46.99.0/24 Deny Cloud
-194.1.204.0/24 Deny Cloud
-Origin: NL
-185.100.214.0/24 Deny Cloud
-Origin: PL
-45.153.89.0/24 Deny Cloud
-Origin: RO
-193.43.74.0/23 Deny Cloud
-193.43.98.0/24 Deny Cloud
-Origin: RU
-216.185.52.0/24 Deny Cloud
-Origin: US
+95.214.173.196/32 Deny Attacks
+95.214.174.0/24 Deny Attacks
+Origin: TR
 Profile: Domestic ISP;Infrastructure/Transit;Multiplay;Webhosting
 Tag: ServiHosting Networks S.L
 
 
-# ASN 9318 ("SK Broadband Co Ltd").
+# ASNs 9318, 23563 ("SK Broadband Co Ltd").
 # South Korean domestic ISP. Caught by honeypots.
 # Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 284.
-# Updated: 2021.06.16 / Modified: 2021.06.28
+# Stop Forum Spam (SFS) listings: 187 (AS9318), 2 (AS23563).
+# Updated: 2022.01.15
 
-110.11.53.165/32 Deny Spam
-114.206.219.130/32 Deny Attacks
-121.124.21.240/32 Deny Spam
-123.213.44.70/32 Deny Spam
-123.213.70.0/24 Deny Attacks
-211.58.107.142/32 Deny Spam
-211.108.232.4/32 Deny Spam
-211.186.132.162/32 Deny Spam
+39.117.248.22/32 Deny Attacks
+110.10.38.194/32 Deny Spam
+114.108.127.0/24 Deny Attacks
+116.120.58.74/32 Deny Spam
+118.219.251.203/32 Deny Attacks
+123.213.70.176/32 Deny Attacks
 211.243.86.210/32 Deny Attacks
-219.248.225.46/32 Deny Spam
-219.254.62.30/32 Deny Spam
-221.138.38.85/32 Deny Spam
-221.139.0.201/32 Deny Spam
+221.139.11.208/32 Deny Attacks
 Origin: KR
 Profile: Domestic ISP
 Tag: SK Broadband Co Ltd
@@ -15969,3 +16104,47 @@ Tag: Kansas Fiber Network, LLC
 Origin: CN
 Profile: Domestic ISP;Infrastructure/Transit
 Tag: Guangzhou navigation
+
+
+# ASN 8492 ('"OBIT" Ltd').
+# Russian multiplay network. Port scans, hacking, and spam detected from here.
+# Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 296.
+# Updated: 2022.01.11
+
+37.221.204.206/32 Deny Attacks
+46.34.149.0/24 Deny Attacks
+46.229.211.6/32 Deny Attacks
+80.79.66.82/32 Deny Attacks
+95.161.151.238/32 Deny Attacks
+95.161.229.62/32 Deny Spam
+185.102.11.0/24 Deny Attacks
+Origin: RU
+Profile: Domestic ISP;Multiplay
+Tag: OBIT
+
+
+# ASN 57221 ("LASNET Uslugi Komputerowe Robert Gulbinowicz").
+# Polish multiplay network. Port scans and hacking detected from here.
+# Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 1.
+# Updated: 2022.01.11
+
+81.163.8.0/24 Deny Attacks
+Origin: PL
+Profile: Domestic ISP;Multiplay
+Tag: LASNET
+
+
+# ASN 9845 ("LG HelloVision Corp").
+# Port scans, hacking, and spam detected from here.
+# Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 7.
+# Updated: 2022.01.15
+
+115.40.42.152/32 Deny Attacks
+115.40.214.42/32 Deny Attacks
+123.248.15.0/24 Deny Attacks
+Origin: KR
+Profile: Commercial;Multiplay
+Tag: LG HelloVision Corp

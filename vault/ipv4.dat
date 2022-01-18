@@ -36229,6 +36229,28 @@ Profile: Commercial;Infrastructure/Transit
 Tag: Cloud Computing Corporation
 
 
+# ASN 12876 ("ONLINE S.A.S").
+# Caught trying to DDoS SFS, and hacking honeypots. Spam and other unwanted
+# traffic detected here.
+# Stop Forum Spam (SFS) listings: 118,624.
+# Updated: 2022.01.18
+
+51.15.0.0/16 Deny Cloud
+51.158.0.0/15 Deny Cloud
+62.4.0.0/19 Deny Cloud
+62.210.0.0/16 Deny Cloud
+195.154.0.0/16 Deny Cloud
+212.47.224.0/19 Deny Cloud
+212.83.128.0/18 Deny Cloud
+212.129.0.0/18 Deny Cloud
+Origin: FR
+151.115.0.0/18 Deny Cloud
+163.172.0.0/16 Deny Cloud
+Origin: GB
+Profile: Infrastructure/Transit;Multiplay;Tor endpoints here;Webhosting
+Tag: ONLINE S.A.S
+
+
 # ---
 # Microsoft Azure IPv4 CIDRs.
 # Refer microsoft.com/en-us/download/details.aspx?id=56519

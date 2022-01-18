@@ -4542,12 +4542,12 @@ Tag: is74.ru
 
 # ASNs 49775, 59665 ("Ultra-Telecom LLC").
 # Port scans, hacking, brute-force attacks, and spam detected from here.
-# Malware C&Cs also detected from here.
-# Stop Forum Spam (SFS) listings: 105 (AS59665).
-# Updated: 2017.07.12 / Checked: 2021.10.02
+# Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 168 (AS59665).
+# Updated: 2022.01.18
 
 176.124.144.0/22 Deny Attacks
-195.160.164.0/23 Deny Attacks
+195.160.164.0/24 Deny Attacks
 Origin: RU
 Profile: Domestic ISP
 Tag: Ultra-Telecom LLC
@@ -5120,40 +5120,29 @@ Profile: Dedicated;Domestic ISP;Frequent changes;Infrastructure/Transit;Multipla
 Tag: SoftLayer Technologies Inc
 
 
-# ASNs 12322, 12876 ("ONLINE S.A.S").
-# A multiplay network (French domestic ISP, cloud provider, etc), caught trying
-# to DDoS SFS, caught attempting to hack honeypots, and a huge source of spam.
-# Stop Forum Spam (SFS) listings: 851 (12322), 81,127 (AS12876).
-# Updated: 2020.03.21 / Checked: 2021.03.19
+# ASN 12322 ("Free SAS").
+# French multiplay network and domestic ISP. Caught trying to DDoS SFS, and
+# hacking honeypots. Spam and other unwanted traffic detected here.
+# Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 1,569.
+# Updated: 2022.01.18
 
-51.15.0.0/16 Deny Spam
-51.158.0.0/15 Deny Spam
-62.4.0.0/19 Deny Spam
-62.147.0.0/16 Deny Spam
-62.210.0.0/16 Deny Spam
-78.192.0.0/10 Deny Spam
-81.56.0.0/15 Deny Spam
-82.64.0.0/14 Deny Spam
-82.142.0.0/18 Deny Spam
-82.224.0.0/11 Deny Spam
-83.152.0.0/13 Deny Spam
-83.214.0.0/16 Deny Spam
-88.120.0.0/13 Deny Spam
-88.160.0.0/11 Deny Spam
-91.160.0.0/12 Deny Spam
-195.154.0.0/16 Deny Spam
-212.27.32.0/19 Deny Spam
-212.47.224.0/19 Deny Spam
-212.83.128.0/18 Deny Spam
-212.129.0.0/18 Deny Spam
-213.36.0.0/16 Deny Spam
-213.228.0.0/18 Deny Spam
+78.192.104.95/32 Deny Spam
+78.197.133.32/32 Deny Spam
+78.201.53.50/32 Deny Spam
+82.64.183.22/32 Deny Spam
+82.64.222.14/32 Deny Spam
+82.64.238.0/24 Deny Attacks
+82.65.32.0/24 Deny Attacks
+82.66.103.223/32 Deny Spam
+91.160.94.74/32 Deny Spam
+91.167.222.77/32 Deny Spam
+91.168.44.125/32 Deny Spam
+91.169.72.209/32 Deny Spam
+91.175.155.119/32 Deny Spam
 Origin: FR
-151.115.0.0/18 Deny Spam
-163.172.0.0/16 Deny Spam
-Origin: GB
 Profile: Domestic ISP;Multiplay;Tor endpoints here
-Tag: ONLINE S.A.S
+Tag: Free SAS
 
 
 # ASN 13249 ("IT Systems LLC").
@@ -8690,48 +8679,51 @@ Tag: Rede Brasileira
 
 
 # ASN 6697 ("Republican Unitary Telecommunication Enterprise Beltelecom").
-# Belarusian domestic ISP and a significant source of spam.
-# Stop Forum Spam (SFS) listings: 28,530.
-# Updated: 2021.02.28 / Checked: 2021.10.16
+# Belarusian multiplay and domestic ISP. Webapp attacks Significant spam detected from here.
+# Stop Forum Spam (SFS) listings: 26,846.
+# Updated: 2022.01.18
 
-37.44.64.0/18 Deny Spam
-37.45.0.0/16 Deny Spam
-37.212.0.0/14 Deny Spam
-82.209.192.0/18 Deny Spam
-86.57.128.0/17 Deny Spam
-91.149.157.0/24 Deny Spam
-91.149.166.0/24 Deny Spam
-91.149.189.0/24 Deny Spam
-93.84.0.0/15 Deny Spam
-93.125.30.0/23 Deny Spam
-93.125.38.0/24 Deny Spam
-93.125.48.0/24 Deny Spam
-93.125.53.0/24 Deny Spam
-93.125.71.0/24 Deny Spam
-93.125.99.0/24 Deny Spam
-178.120.0.0/13 Deny Spam
-178.159.240.0/21 Deny Spam
-178.172.148.0/24 Deny Spam
-178.172.160.0/22 Deny Spam
-178.172.172.0/23 Deny Spam
-178.172.201.0/24 Deny Spam
-178.172.235.0/24 Deny Spam
-178.172.236.0/24 Deny Spam
-178.172.244.0/24 Deny Spam
-178.172.250.0/24 Deny Spam
-178.172.254.0/24 Deny Spam
-185.66.68.0/23 Deny Spam
-185.66.71.0/24 Deny Spam
-185.152.136.0/22 Deny Spam
-194.158.192.0/19 Deny Spam
-195.137.160.0/24 Deny Spam
-217.21.45.0/24 Deny Spam
+37.44.64.0/18 Deny Attacks
+37.45.0.0/16 Deny Attacks
+37.212.0.0/18 Deny Attacks
+37.212.64.0/22 Deny Attacks
+37.212.68.0/23 Deny Attacks
+37.212.71.0/24 Deny Attacks
+37.212.76.0/22 Deny Attacks
+37.212.87.0/24 Deny Attacks
+37.212.88.0/22 Deny Attacks
+37.212.92.0/24 Deny Attacks
+37.212.94.0/23 Deny Attacks
+37.214.12.0/22 Deny Attacks
+37.214.28.0/22 Deny Attacks
+93.84.10.0/24 Deny Attacks
+93.84.78.0/24 Deny Attacks
+93.84.191.0/24 Deny Attacks
+178.120.0.0/22 Deny Attacks
+178.120.16.0/22 Deny Attacks
+178.120.52.0/22 Deny Attacks
+178.121.0.0/22 Deny Attacks
+178.122.195.0/24 Deny Attacks
+178.122.209.0/24 Deny Attacks
+178.124.156.0/24 Deny Attacks
+178.125.80.0/22 Deny Attacks
+178.125.86.0/24 Deny Attacks
+178.125.88.101/32 Deny Attacks
+178.125.88.128/32 Deny Spam
+178.125.90.0/23 Deny Attacks
+178.125.92.0/22 Deny Attacks
+178.125.96.0/23 Deny Attacks
+178.127.0.0/20 Deny Attacks
+178.127.50.0/23 Deny Attacks
+178.127.52.0/23 Deny Attacks
+178.127.85.0/24 Deny Attacks
+178.127.86.0/23 Deny Attacks
+178.127.108.0/23 Deny Attacks
+178.127.110.0/24 Deny Attacks
+185.66.68.23/32 Deny Spam
+185.66.71.0/24 Deny Attacks
 Origin: BY
-5.188.7.0/24 Deny Spam
-Origin: LU
-194.226.121.0/24 Deny Spam
-Origin: RU
-Profile: Domestic ISP
+Profile: Domestic ISP;Multiplay
 Tag: Beltelecom
 
 

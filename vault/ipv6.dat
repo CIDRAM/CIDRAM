@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6.dat
 
-# Version: 2022.14.0
-# Last modified: 2022.01.15
+# Version: 2022.17.0
+# Last modified: 2022.01.18
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -454,8 +454,8 @@ Tag: GorillaServers, Inc
 
 # ASN 17439 ("Netmagic Datacenter Mumbai").
 # A source of SSH and brute-force attacks.
-# Stop Forum Spam (SFS) listings: 128.
-# Updated: 2021.05.08
+# Stop Forum Spam (SFS) listings: 147.
+# Updated: 2022.01.18
 
 2001:df0:411::/48 Deny Cloud
 2001:df0:3a00::/48 Deny Cloud
@@ -475,6 +475,7 @@ Tag: GorillaServers, Inc
 2401:8800:e00::/40 Deny Cloud
 2406:69c0:1000::/36 Deny Cloud
 2406:69c0:2000::/36 Deny Cloud
+2407:e9c0::/45 Deny Cloud
 Origin: IN
 Profile: Infrastructure/Transit;Webhosting
 Tag: Netmagic Datacenter Mumbai
@@ -484,10 +485,10 @@ Tag: Netmagic Datacenter Mumbai
 # A source of SSH, SQLi, and brute-force attacks. A possible staging point for
 # social engineering and extortion campaigns, according to some reports found
 # via AbuseIPDB (unverified/unconfirmed).
-# Updated: 2020.10.19 / Checked: 2021.05.08
+# Stop Forum Spam (SFS) listings: 2.
+# Updated: 2022.01.18
 
 2404:7e80:1000::/36 Deny Cloud
-2404:7e80:2000::/36 Deny Cloud
 2404:7e80:3000::/48 Deny Cloud
 2404:7e80:4000::/36 Deny Cloud
 Origin: IN
@@ -518,8 +519,8 @@ Tag: IMAQLIQ
 
 # ASN 41722 ("Miran Ltd").
 # A source of brute-force and SSH attacks.
-# Stop Forum Spam (SFS) listings: 8.
-# Updated: 2020.10.19 / Checked: 2021.05.06
+# Stop Forum Spam (SFS) listings: 1.
+# Updated: 2020.10.19 / Checked: 2022.01.16
 
 2a03:21c0::/32 Deny Cloud
 Origin: RU
@@ -529,7 +530,7 @@ Tag: Miran Ltd
 
 # ASN 44922 ("MEDYABIM INTERNET HIZMETLERI").
 # XMLRPC attacks detected from this network.
-# Updated: 2021.05.08
+# Updated: 2021.05.08 / Checked: 2022.01.18
 
 2a03:400::/32 Deny Cloud
 Origin: TR
@@ -540,15 +541,9 @@ Tag: MEDYABIM INTERNET HIZMETLERI
 # ASN 19969 ("Joe's Datacenter, LLC").
 # Dedicated data center. A *huge* source of spam and unwanted traffic!
 # Subtract 44.0.0.0/9, 44.128.0.0/10 (clean).
-# Stop Forum Spam (SFS) listings: 8,368.
-# Updated: 2021.05.06
+# Stop Forum Spam (SFS) listings: 10,824.
+# Updated: 2022.01.16
 
-2a00:55a0:7::/48 Deny Cloud
-2a00:55a0:9::/48 Deny Cloud
-2a00:55a0:11::/48 Deny Cloud
-Origin: IL
-2a0f:9bc0::/30 Deny Cloud
-Origin: LT
 2001:470:32::/48 Deny Cloud
 2602:fed3:1::/48 Deny Cloud
 2602:fed3:2::/47 Deny Cloud
@@ -3493,8 +3488,8 @@ Tag: 23Media GmbH
 # ASN 49544 ("i3d B.V").
 # Huge infrastructure provider focused on low-latency (e.g., for gaming). Also
 # a significant source of spam.
-# Stop Forum Spam (SFS) listings: 10,447.
-# Updated: 2021.05.17
+# Stop Forum Spam (SFS) listings: 10,677.
+# Updated: 2022.01.18
 
 2a06:7a00::/48 Deny Cloud
 Origin: AT
@@ -3506,15 +3501,16 @@ Origin: AU
 Origin: BE
 2406:d140:8000::/34 Deny Cloud
 Origin: CN
+2403:fa40:1::/48 Deny Cloud
 2a00:1630::/29 Deny Cloud
 2a00:1708::/32 Deny Cloud
-2a00:1d20::/30 Deny Cloud
-2a00:1d24::/31 Deny Cloud
-2a00:1d26:8000::/34 Deny Cloud
-2a00:1d27::/32 Deny Cloud
+2a00:1d20::/29 Deny Cloud
+2a01:9580::/33 Deny Cloud
+2a01:9580:8000::/34 Deny Cloud
 2a03:3a60::/32 Deny Cloud
 2a04:c600::/29 Deny Cloud
 2a05:6440::/29 Deny Cloud
+2a09:bfc7::/32 Deny Cloud
 2a0a:5980::/29 Deny Cloud
 2a0b:1b00::/29 Deny Cloud
 2a0b:d9c0:164::/47 Deny Cloud
@@ -3851,8 +3847,8 @@ Tag: Cyber Wurx LLC
 
 # ASN 60117 ("Host Sailor Ltd").
 # Webhosting provider. DE ranges as proxy; The rest as cloud.
-# Stop Forum Spam (SFS) listings: 336.
-# Updated: 2021.05.08
+# Stop Forum Spam (SFS) listings: 241.
+# Updated: 2021.05.08 / Checked: 2022.01.18
 
 2a03:660::/32 Deny Cloud
 2a04:dd00::/31 Deny Cloud
@@ -4664,15 +4660,14 @@ Tag: Oy Creanova Hosting
 
 # ASNs 43647, 49505, 50340, 61976 ("Selectel Ltd").
 # Data center + server farm; SSH and brute-force attacks; A source of spam.
-# Stop Forum Spam (SFS) listings: 33,921 (AS49505), 2,026 (AS50340).
-# Updated: 2021.05.06
+# Stop Forum Spam (SFS) listings: 77,669 (AS49505), 3,080 (AS50340), 8 (AS61976).
+# Updated: 2022.01.16
 
 2a00:ab00::/32 Deny Cloud
-2a0d:3c44::/32 Deny Cloud
 Origin: RU
 2a0d:1642:1::/48 Deny Cloud
 Origin: SC
-Profile: Dedicated;Webhosting
+Profile: Dedicated;Infrastructure/Transit;Webhosting
 Tag: Selectel Ltd
 
 
@@ -4760,8 +4755,8 @@ Tag: Confluence
 
 # ASN 25369 ("Hydra Communications Ltd").
 # Subtract 44.0.0.0/9, 44.128.0.0/10 (clean).
-# Stop Forum Spam (SFS) listings: 26,206.
-# Updated: 2020.12.28 / Checked: 2021.08.15
+# Stop Forum Spam (SFS) listings: 8,123.
+# Updated: 2020.12.28 / Checked: 2022.01.16
 
 2a06:8dc7::/48 Deny Cloud
 Origin: AT
@@ -8240,9 +8235,10 @@ Tag: PE Freehost
 
 
 # ASN 207459 ("Taner Temel").
-# Webhosting provider. Webapp attacks detected from here.
-# Stop Forum Spam (SFS) listings: 146.
-# Updated: 2021.10.22
+# Webhosting provider. Brute-force, WordPress/XMLRPC, SSH, DDoS, and webapp
+# attacks, port scans, and spam detected from here.
+# Stop Forum Spam (SFS) listings: 131.
+# Updated: 2021.10.22 / Checked: 2022.01.16
 
 2a10:3300::/29 Deny Cloud
 2a10:9f80::/31 Deny Cloud
@@ -8975,8 +8971,8 @@ Tag: The Optimal Link Corporation
 # ASN 397423 ("Tier.Net Technologies LLC").
 # Dedicated VPS, colo provider, hosting reseller. Brute-force, hack, and webapp
 # attacks, spam, port scans, and home router hack attempts detected from here.
-# Stop Forum Spam (SFS) listings: 166.
-# Updated: 2021.06.28
+# Stop Forum Spam (SFS) listings: 242.
+# Updated: 2022.01.16
 
 2a10:3980::/29 Deny Cloud
 Origin: LT
@@ -8984,9 +8980,6 @@ Origin: LT
 2604:f440:4::/48 Deny Cloud
 2604:f440:7::/48 Deny Cloud
 2605:6c80:6::/48 Deny Cloud
-2605:6c80:9::/48 Deny Cloud
-2605:6c80:a::/48 Deny Cloud
-2605:6c80:d::/48 Deny Cloud
 Origin: US
 Profile: Dedicated;Infrastructure/Transit;Webhosting
 Tag: Tier.Net Technologies LLC
@@ -9407,6 +9400,28 @@ Profile: Commercial
 Tag: Babbar SAS
 
 
+# ASN 212322 ("Cloud Computing Corporation").
+# Port scans, hacking, and spam detected from here.
+# Stop Forum Spam (SFS) listings: 1,187.
+# Updated: 2022.01.18
+
+2407:c080:1800::/37 Deny Cloud
+240e:40:8::/48 Deny Cloud
+240e:40:c::/48 Deny Cloud
+240e:108::/43 Deny Cloud
+240e:108:23::/48 Deny Cloud
+240e:108:4c::/48 Deny Cloud
+240e:109:8000::/43 Deny Cloud
+240e:698::/35 Deny Cloud
+240e:698:2300::/40 Deny Cloud
+240e:980::/35 Deny Cloud
+240e:980:2300::/40 Deny Cloud
+240e:980:4c00::/40 Deny Cloud
+Origin: CN
+Profile: Commercial;Infrastructure/Transit
+Tag: Cloud Computing Corporation
+
+
 # ---
 # Microsoft Azure IPv6 CIDRs.
 # Refer microsoft.com/en-us/download/details.aspx?id=56519
@@ -9415,15 +9430,6 @@ Tag: Babbar SAS
 # Refer microsoft.com/en-us/download/details.aspx?id=57064
 # Updated: 2022.01.15
 
-2a01:4180:2000::/40 Run bypasses.php
-2a01:4180:2400::/40 Run bypasses.php
-2a01:4180:4050:400::/64 Run bypasses.php
-2a01:4180:4050:800::/64 Run bypasses.php
-2a01:4180:4051:400::/64 Run bypasses.php
-2a01:4180:4051:800::/64 Run bypasses.php
-2a01:4180:c001:8::/61 Run bypasses.php
-2a01:4180:c003:8::/61 Run bypasses.php
-Origin: DE
 2404:7940::/47 Run bypasses.php
 2404:7940:3::/48 Run bypasses.php
 2404:7940:100::/47 Run bypasses.php
@@ -9459,6 +9465,15 @@ Origin: DE
 2406:e500:c020::/44 Run bypasses.php
 2406:e500:c120::/44 Run bypasses.php
 Origin: CN
+2a01:4180:2000::/40 Run bypasses.php
+2a01:4180:2400::/40 Run bypasses.php
+2a01:4180:4050:400::/64 Run bypasses.php
+2a01:4180:4050:800::/64 Run bypasses.php
+2a01:4180:4051:400::/64 Run bypasses.php
+2a01:4180:4051:800::/64 Run bypasses.php
+2a01:4180:c001:8::/61 Run bypasses.php
+2a01:4180:c003:8::/61 Run bypasses.php
+Origin: DE
 2001:489a:2202::/60 Run bypasses.php
 2001:489a:2202:2000::/63 Run bypasses.php
 2001:489a:2206::/63 Run bypasses.php

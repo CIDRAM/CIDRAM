@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6_isps.dat
 
-# Version: 2022.14.0
-# Last modified: 2022.01.15
+# Version: 2022.17.0
+# Last modified: 2022.01.18
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -639,25 +639,26 @@ Tag: TM-VADS DC Hosting
 # Major domestic ISP in the United States; Should NEVER be blocked in entirety.
 # Listed here are some specific CIDRs/IPs on their network that pose a major
 # spam risk and/or are known sources of spam and/or other undesirable traffic.
-# Stop Forum Spam (SFS) listings: 1 (AS7725), 6,442 (AS7922).
-# Updated: 2021.05.17
+# Mozi botnet detected from here.
+# Stop Forum Spam (SFS) listings: 12,178 (AS7922).
+# Updated: 2022.01.18
 
-2601:c0:8:f874::/64 Deny Spam
+2601:8b:8500:7e20::/64 Deny Spam
 2601:c0:c780:8d80::/64 Deny Spam
 2601:ca:4301:c570::/64 Deny Spam
-2601:101:c100:eda0::/64 Deny Spam
-2601:146:4102:30a0::/64 Deny Spam
-2601:14c:4200:bb10::/64 Deny Spam
-2601:19a:4500:3f70::/64 Deny Spam
-2601:201:1:c8d0::/64 Deny Spam
-2601:204:dc81:18e0::/64 Deny Spam
-2601:204:dc81:4310::/64 Deny Spam
-2601:205:c200:67c0::/64 Deny Spam
-2601:240:c500:f390::/64 Deny Spam
-2601:2c3:c97f:a7b0::/64 Deny Spam
-2601:441:8780:8f20:2811:2cec::/95 Deny Attacks
-2601:589:4380:4b20::/64 Deny Spam
-2603:3005:6077:2000::19c8/125 Deny Attacks
+2601:154:8100:a960::/64 Deny Spam
+2601:19a:4600:aec0::/64 Deny Spam
+2601:243:1801:3320::/64 Deny Spam
+2601:249:f00:db70::/64 Deny Spam
+2601:282:4400:90d0::/64 Deny Spam
+2601:285:c180:3520::/64 Deny Spam
+2601:2c5:4281:9e80::/64 Deny Spam
+2601:344:100:2d90::/64 Deny Spam
+2601:408:c409:17db::/64 Deny Spam
+2601:500:8501:2e40::/64 Deny Spam
+2601:58c:4202:6690::/64 Deny Spam
+2601:640:8306:6d0::/64 Deny Spam
+2601:803:c503:fdc0::/64 Deny Spam
 Origin: US
 Profile: Domestic ISP
 Tag: Comcast Spam IPs
@@ -667,24 +668,19 @@ Tag: Comcast Spam IPs
 # Peering exchange provider in the United States. Spamming, scraping,
 # brute-force and SSH attacks, hack attempts, and other unwanted traffic
 # detected from here. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 2,451.
-# Updated: 2021.06.05
+# Stop Forum Spam (SFS) listings: 14,691.
+# Updated: 2022.01.16
 
-2600:8800:1260:8700::/64 Deny Spam
-2600:8800:1680:ff4d::/64 Deny Spam
-2600:8800:9d00:220::/64 Deny Spam
-2600:8801:b0e:8100::/64 Deny Spam
-2600:8801:1088:e400::/64 Deny Spam
-2600:8801:1d04:7a00::/64 Deny Spam
-2600:8801:280c:7f00::/64 Deny Spam
-2600:8801:3100:1b20::/64 Deny Spam
-2600:8801:310a:3d00::/64 Deny Spam
-2600:8801:9704:c500::/64 Deny Spam
-2600:8802:690d:a000::/64 Deny Spam
-2600:8805:5b01:5100::/64 Deny Spam
+2600:8800:c87:b700::/64 Deny Spam
+2600:8800:1694:dc00::/64 Deny Spam
+2600:8800:2400:24a0::/64 Deny Spam
+2600:8800:4880:1810::/64 Deny Spam
+2600:8801:be00:80f0::/64 Deny Spam
+2600:8803:3409:d00::/64 Deny Spam
+2600:8804:4908:fd00::/64 Deny Spam
+2600:8805:5c16:cd00::/64 Deny Spam
 2600:8806:8308:3200::/64 Deny Spam
-2600:8807:5055:c200::/64 Deny Spam
-2600:8807:8105:c500::/64 Deny Spam
+2600:8807:2c00:3e00::/64 Deny Spam
 Origin: US
 Profile: Commercial;Domestic ISP;Infrastructure/Transit;Multiplay;Tor endpoints here;University;Webhosting
 Tag: Cox Spam IPs
@@ -1463,19 +1459,6 @@ Tag: WildPark Co
 Origin: BD
 Profile: Commercial;Multiplay;Webhosting
 Tag: Mazeda Networks
-
-
-# ASN 31798 ("KW Datacenter").
-# Canadian multiplay network. Primarily a server farm/leaser, but also provides
-# domestic internet connectivity. Care needed when updating. Listing all cloud,
-# but of the rest, listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 1,148.
-# Updated: 2021.05.08
-
-2607:8880::/32 Deny Cloud
-Origin: CA
-Profile: Domestic ISP;Infrastructure/Transit;Multiplay;Webhosting
-Tag: KW Datacenter
 
 
 # ASN 35047 ("Abissnet sh.a").

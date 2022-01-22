@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2022.01.08).
+ * This file: Functions file (last modified: 2022.01.22).
  */
 
 /**
@@ -489,6 +489,7 @@ $CIDRAM['CheckFactors'] = function (array $Files, array $Factors) use (&$CIDRAM)
                                     $CIDRAM['BlockInfo']['WhyReason'] .= ', ';
                                 }
                                 $CIDRAM['BlockInfo']['WhyReason'] .= $CIDRAM['L10N']->getString($Params['ReasonShort']) . $LN;
+                                $CIDRAM['AddProfileEntry']($Params['Type']);
                                 $DenyMatched = true;
                                 break;
                             }

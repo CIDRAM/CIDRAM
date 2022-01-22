@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Default signature bypasses (last modified: 2021.09.18).
+ * This file: Default signature bypasses (last modified: 2022.01.22).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -64,6 +64,7 @@ $CIDRAM['RunParamResCache']['bypasses.php'] = function (array $Factors = [], $Fa
                     $CIDRAM['BlockInfo']['WhyReason'] .= ', ';
                 }
                 $CIDRAM['BlockInfo']['WhyReason'] .= $CIDRAM['L10N']->getString('Short_Spam') . $LN;
+                $CIDRAM['AddProfileEntry']('Spam');
                 if (!empty($CIDRAM['BlockInfo']['Signatures'])) {
                     $CIDRAM['BlockInfo']['Signatures'] .= ', ';
                 }
@@ -86,6 +87,7 @@ $CIDRAM['RunParamResCache']['bypasses.php'] = function (array $Factors = [], $Fa
                 $CIDRAM['BlockInfo']['WhyReason'] .= ', ';
             }
             $CIDRAM['BlockInfo']['WhyReason'] .= $CIDRAM['L10N']->getString('Short_Cloud') . $LN;
+            $CIDRAM['AddProfileEntry']('Cloud');
             if (!empty($CIDRAM['BlockInfo']['Signatures'])) {
                 $CIDRAM['BlockInfo']['Signatures'] .= ', ';
             }
@@ -281,6 +283,7 @@ $CIDRAM['RunParamResCache']['bypasses.php'] = function (array $Factors = [], $Fa
             $CIDRAM['BlockInfo']['WhyReason'] .= ', ';
         }
         $CIDRAM['BlockInfo']['WhyReason'] .= $CIDRAM['L10N']->getString('Short_Cloud') . $LN;
+        $CIDRAM['AddProfileEntry']('Cloud');
         if (!empty($CIDRAM['BlockInfo']['Signatures'])) {
             $CIDRAM['BlockInfo']['Signatures'] .= ', ';
         }

@@ -144,8 +144,8 @@ $CIDRAM['FE'] = [
 
     /** Make some of the link references available to the main front-end array. */
     'Links.Discussions' => $CIDRAM['Config']['Links']['Discussions'],
-    'URL-Documentation' => 'https://cidram.github.io/#documentation',
-    'URL-Website' => 'https://cidram.github.io/'
+    'Links.Documentation' => $CIDRAM['Config']['Links']['Documentation'],
+    'Links.Website' => $CIDRAM['Config']['Links']['Website']
 ];
 
 /** Trace to determine the type of cron operation. */
@@ -174,9 +174,6 @@ $CIDRAM['RegExLabels'] = '~(?: | )?(?:：|:) ?$~';
 
 /** Populated by [Home | Log Out] by default; Replaced by [Log Out] for some specific pages (e.g., the homepage). */
 $CIDRAM['FE']['bNav'] = $CIDRAM['FE']['HomeButton'] . $CIDRAM['FE']['LogoutButton'];
-
-/** Assign website link text. */
-$CIDRAM['L10N']->Data['link_website'] = 'CIDRAM@GitHub';
 
 /** To be populated by warnings. */
 $CIDRAM['Warnings'] = [];

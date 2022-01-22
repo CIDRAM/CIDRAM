@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6_isps.dat
 
-# Version: 2022.17.0
-# Last modified: 2022.01.18
+# Version: 2022.21.0
+# Last modified: 2022.01.22
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -842,17 +842,15 @@ Profile: Domestic ISP
 Tag: Hot-Net internet
 
 
-# ASN 8151 ("Uninet S.A. de C.V").
+# ASNs 6332, 8151 ("Uninet S.A. de C.V").
 # Mexican domestic ISP. Brute-force attacks, port scans, and spam detected from
-# here. Listing just the affected ranges/addresses, plus US ranges (cloud).
-# Stop Forum Spam (SFS) listings: 3,864.
-# Updated: 2021.08.05
+# here. Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 98 (AS6332), 4,355 (AS8151).
+# Updated: 2022.01.20
 
-2806:105e:14:d416::/64 Deny Attacks
+2806:1016:a:57d0::/64 Deny Spam
+2806:108e:22:52f2::/64 Deny Spam
 Origin: MX
-2600:141c:7::/48 Deny Cloud
-2600:141c:5000::/48 Deny Cloud
-Origin: US
 Profile: Domestic ISP
 Tag: Uninet
 
@@ -1481,23 +1479,6 @@ Profile: Domestic ISP;Infrastructure/Transit
 Tag: Versatel Deutschland
 
 
-# ASNs 7470, 17552 ("True Internet Co.,Ltd").
-# Major Thai domestic ISP. Spam, port scans, brute-force attacks, and email
-# harvestors detected here. Semalt spammers also detected here. Listing just
-# the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 439 (AS7470), 3,873 (AS17552).
-# Updated: 2021.07.19
-
-2001:fb1:2:90d4::/64 Deny Spam
-2001:fb1:103:a012::/64 Deny Spam
-2001:fb1:13e:bb6d::/64 Deny Spam
-2001:fb1:13f:2719::/64 Deny Spam
-2001:fb1:14c:102f::/64 Deny Attacks
-Origin: TH
-Profile: Domestic ISP
-Tag: True Internet Co
-
-
 # ASN 1136 ("KPN B.V").
 # Dutch domestic ISP and phone provider. Brute-force, SSH, webapp, DDoS, and
 # XMLRPC attacks, hacking, port scans, and spam detected from here. Listing
@@ -1525,19 +1506,6 @@ Tag: KPN B.V
 Origin: NL
 Profile: Domestic ISP
 Tag: Vodafone Libertel
-
-
-# ASN 701 ("Verizon Business/UUnet").
-# Major domestic ISP in the United States; Should NEVER be blocked in entirety.
-# Spam, port scans, honeypot probes, tor endpoints, and malware detected from
-# here. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 2,854.
-# Updated: 2021.09.09
-
-2600:4040:1183:ec00::/64 Deny Spam
-Origin: US
-Profile: Commercial;Domestic ISP;Tor endpoints here
-Tag: Verizon Business/UUnet
 
 
 # ASN 12302 ("Vodafone Romania S.A").
@@ -1603,3 +1571,29 @@ Tag: COMCEL GUATEMALA S.A
 Origin: CO
 Profile: Domestic ISP
 Tag: Telmex Colombia S.A
+
+
+# ASN 27887 ("WIND Telecom S.A").
+# Dominican domestic ISP. Port scans, hacking, and spam detected from here.
+# Manually checked all ranges; All ranges affected.
+# Stop Forum Spam (SFS) listings: 40.
+# Updated: 2022.01.22
+
+2803:5ce0:700::/40 Deny Attacks
+Origin: AR
+2803:1400::/32 Deny Attacks
+Origin: DO
+Profile: Domestic ISP
+Tag: WIND Telecom S.A
+
+
+# ASN 264932 ("STAYNET SERVICOS DE INTERNET LTDA - ME").
+# Brazilian domestic ISP. Port scans, hacking, and spam detected from here.
+# Manually checked all ranges; All ranges affected.
+# Stop Forum Spam (SFS) listings: 46.
+# Updated: 2022.01.22
+
+2804:3024::/32 Deny Attacks
+Origin: BR
+Profile: Domestic ISP
+Tag: STAYNET

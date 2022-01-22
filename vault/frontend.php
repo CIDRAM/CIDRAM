@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2022.01.08).
+ * This file: Front-end handler (last modified: 2022.01.22).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -142,13 +142,8 @@ $CIDRAM['FE'] = [
     /** Used by the auxiliary rules from and expiry fields. */
     'Y-m-d' => date('Y-m-d', $CIDRAM['Now']),
 
-    /**
-     * Defining some links here instead of in the template files or the L10N
-     * data so that it'll be easier to change them in the future if and when
-     * needed due to less potential duplication across the codebase (this
-     * excludes links shown at the front-end homepage).
-     */
-    'URL-Chat' => 'https://gitter.im/CIDRAM/Lobby',
+    /** Make some of the link references available to the main front-end array. */
+    'Links.Discussions' => $CIDRAM['Config']['Links']['Discussions'],
     'URL-Documentation' => 'https://cidram.github.io/#documentation',
     'URL-Website' => 'https://cidram.github.io/'
 ];
@@ -179,13 +174,6 @@ $CIDRAM['RegExLabels'] = '~(?: | )?(?:：|:) ?$~';
 
 /** Populated by [Home | Log Out] by default; Replaced by [Log Out] for some specific pages (e.g., the homepage). */
 $CIDRAM['FE']['bNav'] = $CIDRAM['FE']['HomeButton'] . $CIDRAM['FE']['LogoutButton'];
-
-/** Append "@ Gitter" to the chat link text. */
-if (isset($CIDRAM['L10N']->Data['link_chat'])) {
-    $CIDRAM['L10N']->Data['link_chat'] .= '@Gitter';
-} else {
-    $CIDRAM['L10N']->Data['link_chat'] = '@Gitter';
-}
 
 /** Assign website link text. */
 $CIDRAM['L10N']->Data['link_website'] = 'CIDRAM@GitHub';

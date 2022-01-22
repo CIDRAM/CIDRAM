@@ -1,8 +1,8 @@
 # IPv4 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv4.dat
 
-# Version: 2022.17.0
-# Last modified: 2022.01.18
+# Version: 2022.21.0
+# Last modified: 2022.01.22
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -3611,11 +3611,10 @@ Tag: Tzulo Inc
 
 
 # ASN 17139 ("Corporate Colocation Inc").
-# Stop Forum Spam (SFS) listings: 34.
-# Updated: 2021.05.17
+# Stop Forum Spam (SFS) listings: 43.
+# Updated: 2022.01.22
 
-199.195.142.0/23 Deny Cloud
-Origin: NZ
+8.48.84.0/24 Deny Cloud
 38.17.48.0/21 Deny Cloud
 66.117.0.0/20 Deny Cloud
 66.234.144.0/24 Deny Cloud
@@ -3625,14 +3624,10 @@ Origin: NZ
 74.124.192.0/19 Deny Cloud
 172.86.120.0/22 Deny Cloud
 173.247.224.0/19 Deny Cloud
-199.83.102.0/24 Deny Cloud
 205.134.224.0/19 Deny Cloud
 208.51.60.0/22 Deny Cloud
 208.103.154.0/24 Deny Cloud
 216.179.168.0/21 Deny Cloud
-216.179.208.0/24 Deny Cloud
-216.179.212.0/24 Deny Cloud
-216.179.218.0/24 Deny Cloud
 216.193.197.0/24 Deny Cloud
 216.193.219.0/24 Deny Cloud
 216.193.251.0/24 Deny Cloud
@@ -8103,8 +8098,8 @@ Tag: Datacenter IP, LLC
 
 # ASN 43578 ("MBA DATACENTERS S.L").
 # Colo provider and server farm.
-# Stop Forum Spam (SFS) listings: 49.
-# Updated: 2021.05.17
+# Stop Forum Spam (SFS) listings: 230.
+# Updated: 2022.01.22
 
 5.226.168.0/24 Deny Cloud
 5.226.172.0/24 Deny Cloud
@@ -8117,11 +8112,8 @@ Tag: Datacenter IP, LLC
 185.74.80.0/23 Deny Cloud
 185.131.160.0/22 Deny Cloud
 Origin: ES
-45.13.124.0/22 Deny Cloud
-Origin: FR
 45.92.60.0/22 Deny Cloud
 Origin: GB
-185.188.61.0/24 Deny Cloud
 188.241.60.0/23 Deny Cloud
 Origin: IN
 Profile: Commercial;Infrastructure/Transit;Webhosting
@@ -22265,10 +22257,9 @@ Tag: PleskLogin Net
 
 
 # ASN 43317 ('OOO "Fishnet Communications"').
-# Hosting provider and server farm.
 # Caught spamming while pretending to be Google.
-# Stop Forum Spam (SFS) listings: 2,427.
-# Updated: 2021.05.17
+# Stop Forum Spam (SFS) listings: 1,992.
+# Updated: 2021.05.17 / Checked: 2022.01.22
 
 185.242.104.0/22 Deny Cloud
 Origin: LV
@@ -33822,17 +33813,6 @@ Profile: Commercial;Infrastructure/Transit;Webhosting
 Tag: Sefroyek Pardaz Engineering
 
 
-# ASN 49671 ("SAYDA LLC").
-# Russian webhosting provider. Constant SSH and brute-force attacks from here,
-# port scans, and more. HUGE number of reports at AbuseIPDB.
-# Updated: 2021.05.17
-
-176.111.174.0/24 Deny Attacks
-Origin: RU
-Profile: Webhosting
-Tag: SAYDA LLC
-
-
 # ASNs 16262, 211193 ("Datacheap Ltd", "ABDILAZIZ UULU ZHUSUP").
 # Russian webhoster and server farm. Brute-force, SSH attacks, hacking, and
 # port scans detected from here.
@@ -36249,6 +36229,78 @@ Origin: FR
 Origin: GB
 Profile: Infrastructure/Transit;Multiplay;Tor endpoints here;Webhosting
 Tag: ONLINE S.A.S
+
+
+# ASNs 21159, 24875 ("NovoServe B.V").
+# Brute-force attacks, hacking, port scans, and spam detected from here.
+# Stop Forum Spam (SFS) listings: 4 (AS21159), 6 (AS24875).
+# Updated: 2022.01.20
+
+92.119.34.0/24 Deny Cloud
+Origin: AE
+5.181.167.0/24 Deny Cloud
+Origin: CA
+181.215.178.0/24 Deny Cloud
+191.96.100.0/24 Deny Cloud
+Origin: CL
+91.228.144.0/24 Deny Cloud
+185.182.80.0/22 Deny Cloud
+188.95.70.0/24 Deny Cloud
+Origin: DE
+185.53.210.0/24 Deny Cloud
+195.238.121.0/24 Deny Cloud
+Origin: IL
+212.18.115.0/24 Deny Cloud
+Origin: LT
+80.89.224.0/20 Deny Cloud
+89.105.192.0/19 Deny Cloud
+185.80.232.0/22 Deny Cloud
+185.147.12.0/22 Deny Cloud
+Origin: NL
+91.149.201.0/24 Deny Cloud
+Origin: PL
+149.18.38.0/24 Deny Cloud
+204.63.64.0/22 Deny Cloud
+216.24.220.0/24 Deny Cloud
+Origin: US
+154.16.180.0/24 Deny Cloud
+Origin: ZA
+Profile: Dedicated;Infrastructure/Transit;Webhosting
+Tag: NovoServe B.V
+
+
+# ASN 15493 ('"Russian company" LLC').
+# Port scans, hacking, and spam detected from here.
+# Stop Forum Spam (SFS) listings: 379.
+# Updated: 2022.01.20
+
+5.1.48.0/21 Deny Cloud
+77.242.96.0/20 Deny Cloud
+80.91.16.0/20 Deny Cloud
+91.203.36.0/24 Deny Cloud
+91.203.39.0/24 Deny Cloud
+91.211.192.0/22 Deny Cloud
+171.25.244.0/22 Deny Cloud
+171.25.252.0/22 Deny Cloud
+178.236.208.0/20 Deny Cloud
+185.11.4.0/23 Deny Cloud
+185.11.6.0/24 Deny Cloud
+217.116.48.0/20 Deny Cloud
+Origin: RU
+Profile: Commercial
+Tag: AS15493
+
+
+# ASN 136315 ("Wizone Tech Solutions Pvt. Ltd").
+# Indian tech firm. Brute-force and webapp attacks, port scans, hacking, and
+# spam detected from here.
+# Stop Forum Spam (SFS) listings: 111.
+# Updated: 2022.01.21
+
+103.122.84.0/24 Deny Attacks
+Origin: IN
+Profile: Commercial
+Tag: Wizone Tech Solutions
 
 
 # ---

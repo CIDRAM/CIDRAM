@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Configuration handler (last modified: 2021.11.28).
+ * This file: Configuration handler (last modified: 2022.02.01).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -116,10 +116,14 @@ $CIDRAM['IPAddr'] = (
     $CIDRAM['Config']['general']['ipaddr'] !== 'REMOTE_ADDR' && empty($_SERVER[$CIDRAM['Config']['general']['ipaddr']])
 ) ? 'REMOTE_ADDR' : $CIDRAM['Config']['general']['ipaddr'];
 
-/** Ensure we have an IP address variable to work with. */
-if (!isset($_SERVER[$CIDRAM['IPAddr']])) {
-    $_SERVER[$CIDRAM['IPAddr']] = '';
+/** Ensure we have an IP address available to work with. */
+$CIDRAM['IPAddr'] = $_SERVER[$CIDRAM['IPAddr']] ?? '';
+
+/** Ensure the IP address we're working with is a string. */
+if (is_array($CIDRAM['IPAddr'])) {
+    $CIDRAM['IPAddr'] = array_shift($CIDRAM['IPAddr']);
 }
+$CIDRAM['IPAddr'] = (string)$CIDRAM['IPAddr'];
 
 /** Adjusted present time. */
 $CIDRAM['Now'] = time() + ($CIDRAM['Config']['general']['time_offset'] * 60);

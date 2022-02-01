@@ -123,7 +123,11 @@ $CIDRAM['IPAddr'] = $_SERVER[$CIDRAM['IPAddr']] ?? '';
 if (is_array($CIDRAM['IPAddr'])) {
     $CIDRAM['IPAddr'] = array_shift($CIDRAM['IPAddr']);
 }
+if (is_string($CIDRAM['IPAddr']) && ($CIDRAM['Pos'] = strpos($CIDRAM['IPAddr'], ', ')) !== false) {
+    $CIDRAM['IPAddr'] = substr($CIDRAM['IPAddr'], 0, $CIDRAM['Pos']);
+}
 $CIDRAM['IPAddr'] = (string)$CIDRAM['IPAddr'];
+unset($CIDRAM['Pos']);
 
 /** Adjusted present time. */
 $CIDRAM['Now'] = time() + ($CIDRAM['Config']['general']['time_offset'] * 60);

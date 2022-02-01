@@ -46,6 +46,11 @@ Detailed version release guidelines for CIDRAM can be found at:
   Discussions instead. Block reason shorthand messages now also append to
   profiles.
 
+- [2022.02.01; Bug-fix; Maikuolan]: Failed to correctly determine the client's
+  IP address under certain circumstances (e.g., multiple choices available via
+  HTTP_X_FORWARDED_FOR); Fixed.
+  Refer github.com/CIDRAM/CIDRAM/issues/286
+
 === Version/Release 1.20.0 ===
 MINOR RELEASE.
 

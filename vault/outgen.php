@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Output generator (last modified: 2021.11.29).
+ * This file: Output generator (last modified: 2022.02.01).
  */
 
 /** Initialise cache. */
@@ -47,16 +47,6 @@ if ($CIDRAM['Config']['general']['statistics']) {
     }
 }
 
-/** Fallback for missing $_SERVER superglobal. */
-if (!isset($_SERVER)) {
-    $_SERVER = [];
-}
-
-/** Ensure we have a variable available for the IP address of the request. */
-if (!isset($_SERVER[$CIDRAM['IPAddr']])) {
-    $_SERVER[$CIDRAM['IPAddr']] = '';
-}
-
 /**
  * Determine whether the front-end is being accessed, and whether the normal
  * blocking procedures should occur for this request.
@@ -71,8 +61,8 @@ $CIDRAM['Protect'] = (
 $CIDRAM['BlockInfo'] = [
     'DateTime' => $CIDRAM['TimeFormat']($CIDRAM['Now'], $CIDRAM['Config']['general']['timeFormat']),
     'ID' => $CIDRAM['GenerateID'](),
-    'IPAddr' => $_SERVER[$CIDRAM['IPAddr']],
-    'IPAddrResolved' => $CIDRAM['Resolve6to4']($_SERVER[$CIDRAM['IPAddr']]),
+    'IPAddr' => $CIDRAM['IPAddr'],
+    'IPAddrResolved' => $CIDRAM['Resolve6to4']($CIDRAM['IPAddr']),
     'ScriptIdent' => $CIDRAM['ScriptIdent'],
     'favicon' => $CIDRAM['favicon'],
     'favicon_extension' => $CIDRAM['favicon_extension'],
@@ -200,7 +190,7 @@ if ($CIDRAM['Protect'] && !$CIDRAM['Config']['general']['maintenance_mode'] && e
         array_walk($CIDRAM['Modules'], function ($Module) use (&$CIDRAM) {
             if (
                 !empty($CIDRAM['Whitelisted']) ||
-                preg_match('~^(?:classes|fe_assets)[\x2f\x5c]|\.(css|gif|html?|jpe?g|js|png|ya?ml)$~i', $Module)
+                preg_match('~^(?:classes|fe_assets)[\x2F\x5C]|\.(css|gif|html?|jpe?g|js|png|ya?ml)$~i', $Module)
             ) {
                 return;
             }

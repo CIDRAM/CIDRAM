@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2022.01.22).
+ * This file: Front-end handler (last modified: 2022.02.01).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -128,7 +128,7 @@ $CIDRAM['FE'] = [
     'UA' => empty($_SERVER['HTTP_USER_AGENT']) ? '' : $_SERVER['HTTP_USER_AGENT'],
 
     /** The IP address of the current request. */
-    'YourIP' => empty($_SERVER[$CIDRAM['IPAddr']]) ? '' : $_SERVER[$CIDRAM['IPAddr']],
+    'YourIP' => $CIDRAM['IPAddr'],
 
     /** Asynchronous mode. */
     'ASYNC' => !empty($_POST['ASYNC']),
@@ -360,7 +360,7 @@ $CIDRAM['InitialiseCache']();
 /** Brute-force security check. */
 if (($CIDRAM['LoginAttempts'] = (int)$CIDRAM['FECacheGet'](
     $CIDRAM['FE']['Cache'],
-    'LoginAttempts' . $_SERVER[$CIDRAM['IPAddr']]
+    'LoginAttempts' . $CIDRAM['IPAddr']
 )) && ($CIDRAM['LoginAttempts'] >= $CIDRAM['Config']['general']['max_login_attempts'])) {
     header('Content-Type: text/plain');
     die('[CIDRAM] ' . $CIDRAM['L10N']->getString('max_login_attempts_exceeded'));
@@ -369,7 +369,7 @@ if (($CIDRAM['LoginAttempts'] = (int)$CIDRAM['FECacheGet'](
 /** Brute-force security check (2FA). */
 if (($CIDRAM['Failed2FA'] = (int)$CIDRAM['FECacheGet'](
     $CIDRAM['FE']['Cache'],
-    'Failed2FA' . $_SERVER[$CIDRAM['IPAddr']]
+    'Failed2FA' . $CIDRAM['IPAddr']
 )) && ($CIDRAM['Failed2FA'] >= $CIDRAM['Config']['general']['max_login_attempts'])) {
     header('Content-Type: text/plain');
     die('[CIDRAM] ' . $CIDRAM['L10N']->getString('max_login_attempts_exceeded'));
@@ -402,7 +402,7 @@ if ($CIDRAM['FE']['FormTarget'] === 'login' || $CIDRAM['FE']['CronMode'] !== '')
                 $CIDRAM['FECacheRemove'](
                     $CIDRAM['FE']['Cache'],
                     $CIDRAM['FE']['Rebuild'],
-                    'LoginAttempts' . $_SERVER[$CIDRAM['IPAddr']]
+                    'LoginAttempts' . $CIDRAM['IPAddr']
                 );
                 if (($CIDRAM['FE']['Permissions'] === 3 && (
                     $CIDRAM['FE']['CronMode'] === '' || substr($CIDRAM['FE']['UA'], 0, 10) !== 'Cronable v'
@@ -477,7 +477,7 @@ if ($CIDRAM['FE']['FormTarget'] === 'login' || $CIDRAM['FE']['CronMode'] !== '')
         $CIDRAM['FECacheAdd'](
             $CIDRAM['FE']['Cache'],
             $CIDRAM['FE']['Rebuild'],
-            'LoginAttempts' . $_SERVER[$CIDRAM['IPAddr']],
+            'LoginAttempts' . $CIDRAM['IPAddr'],
             $CIDRAM['LoginAttempts'],
             $CIDRAM['Now'] + $CIDRAM['TimeToAdd']
         );
@@ -495,11 +495,11 @@ if ($CIDRAM['FE']['FormTarget'] === 'login' || $CIDRAM['FE']['CronMode'] !== '')
     }
 
     /** Safer for the front-end logger. */
-    $CIDRAM['NameToLog'] = preg_replace('~[\x00-\x1f]~', '', empty($_POST['username']) ? '' : $_POST['username']);
+    $CIDRAM['NameToLog'] = preg_replace('~[\x00-\x1F]~', '', empty($_POST['username']) ? '' : $_POST['username']);
 
     /** Handle front-end logging. */
     $CIDRAM['FELogger'](
-        $_SERVER[$CIDRAM['IPAddr']],
+        $CIDRAM['IPAddr'],
         $CIDRAM['NameToLog'],
         empty($CIDRAM['LoggerMessage']) ? '' : $CIDRAM['LoggerMessage']
     );
@@ -597,22 +597,22 @@ elseif (!empty($_COOKIE['CIDRAM-ADMIN'])) {
             $CIDRAM['FECacheAdd'](
                 $CIDRAM['FE']['Cache'],
                 $CIDRAM['FE']['Rebuild'],
-                'Failed2FA' . $_SERVER[$CIDRAM['IPAddr']],
+                'Failed2FA' . $CIDRAM['IPAddr'],
                 $CIDRAM['Failed2FA'],
                 $CIDRAM['Now'] + $CIDRAM['TimeToAdd']
             );
             if ($CIDRAM['Config']['general']['FrontEndLog']) {
-                $CIDRAM['FELogger']($_SERVER[$CIDRAM['IPAddr']], $CIDRAM['FE']['UserRaw'], $CIDRAM['L10N']->getString('response_2fa_invalid'));
+                $CIDRAM['FELogger']($CIDRAM['IPAddr'], $CIDRAM['FE']['UserRaw'], $CIDRAM['L10N']->getString('response_2fa_invalid'));
             }
             $CIDRAM['FE']['state_msg'] = '<div class="txtRd">' . $CIDRAM['L10N']->getString('response_2fa_invalid') . '<br /><br /></div>';
         } else {
             $CIDRAM['FECacheRemove'](
                 $CIDRAM['FE']['Cache'],
                 $CIDRAM['FE']['Rebuild'],
-                'Failed2FA' . $_SERVER[$CIDRAM['IPAddr']]
+                'Failed2FA' . $CIDRAM['IPAddr']
             );
             if ($CIDRAM['Config']['general']['FrontEndLog']) {
-                $CIDRAM['FELogger']($_SERVER[$CIDRAM['IPAddr']], $CIDRAM['FE']['UserRaw'], $CIDRAM['L10N']->getString('response_2fa_valid'));
+                $CIDRAM['FELogger']($CIDRAM['IPAddr'], $CIDRAM['FE']['UserRaw'], $CIDRAM['L10N']->getString('response_2fa_valid'));
             }
         }
     }
@@ -640,7 +640,7 @@ if (($CIDRAM['FE']['UserState'] === 1 || $CIDRAM['FE']['UserState'] === 2) && $C
         $CIDRAM['FE']['Permissions'] = 0;
         setcookie('CIDRAM-ADMIN', '', -1, '/', $CIDRAM['HostnameOverride'] ?: $CIDRAM['HTTP_HOST'], false, true);
         $CIDRAM['FECacheRemove']($CIDRAM['FE']['Cache'], $CIDRAM['FE']['Rebuild'], '2FA-State:' . $_COOKIE['CIDRAM-ADMIN']);
-        $CIDRAM['FELogger']($_SERVER[$CIDRAM['IPAddr']], $CIDRAM['FE']['UserRaw'], $CIDRAM['L10N']->getString('state_logged_out'));
+        $CIDRAM['FELogger']($CIDRAM['IPAddr'], $CIDRAM['FE']['UserRaw'], $CIDRAM['L10N']->getString('state_logged_out'));
     }
 
     if ($CIDRAM['FE']['Permissions'] === 1) {
@@ -1273,7 +1273,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
                 if (in_array($CIDRAM['DirValue']['type'], ['bool', 'float', 'int', 'kb', 'string', 'timezone', 'email', 'url'], true)) {
                     $CIDRAM['AutoType']($_POST[$CIDRAM['ThisDir']['DirLangKey']], $CIDRAM['DirValue']['type']);
                 }
-                if (!preg_match('/[^\x20-\xff"\']/', $_POST[$CIDRAM['ThisDir']['DirLangKey']]) && (
+                if (!preg_match('/[^\x20-\xFF"\']/', $_POST[$CIDRAM['ThisDir']['DirLangKey']]) && (
                     !isset($CIDRAM['DirValue']['choices']) ||
                     isset($CIDRAM['DirValue']['choices'][$_POST[$CIDRAM['ThisDir']['DirLangKey']]])
                 )) {
@@ -1283,7 +1283,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
                     !empty($CIDRAM['DirValue']['allow_other']) &&
                     $_POST[$CIDRAM['ThisDir']['DirLangKey']] === 'Other' &&
                     isset($_POST[$CIDRAM['ThisDir']['DirLangKeyOther']]) &&
-                    !preg_match('/[^\x20-\xff"\']/', $_POST[$CIDRAM['ThisDir']['DirLangKeyOther']])
+                    !preg_match('/[^\x20-\xFF"\']/', $_POST[$CIDRAM['ThisDir']['DirLangKeyOther']])
                 ) {
                     $CIDRAM['Config'][$CIDRAM['CatKey']][$CIDRAM['DirKey']] = $_POST[$CIDRAM['ThisDir']['DirLangKeyOther']];
                     $CIDRAM['ConfigModified'] = true;
@@ -4574,7 +4574,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'logs' && $CIDRAM['FE']['Permiss
         $CIDRAM['FE']['BlockSepLen'] = strlen($CIDRAM['FE']['BlockSeparator']);
 
         /** Strip PHP header. */
-        if (substr($CIDRAM['FE']['logfileData'], 0, 15) === "\x3c\x3fphp die; \x3f\x3e\n\n") {
+        if (substr($CIDRAM['FE']['logfileData'], 0, 15) === "\x3C\x3Fphp die; \x3F\x3E\n\n") {
             $CIDRAM['FE']['logfileData'] = substr($CIDRAM['FE']['logfileData'], 15);
         }
 

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2022.01.14).
+ * This file: Front-end functions file (last modified: 2022.02.01).
  */
 
 /**
@@ -507,7 +507,7 @@ $CIDRAM['FileManager-PathSecurityCheck'] = function ($Path) {
     $Path = preg_split('@/@', $Path, -1, PREG_SPLIT_NO_EMPTY);
     $Valid = true;
     array_walk($Path, function ($Segment) use (&$Valid) {
-        if (empty($Segment) || preg_match('/(?:[\x00-\x1f\x7f]+|^\.+$)/i', $Segment)) {
+        if (empty($Segment) || preg_match('/(?:[\x00-\x1F\x7F]+|^\.+$)/i', $Segment)) {
             $Valid = false;
         }
     });
@@ -557,7 +557,7 @@ $CIDRAM['IsInUse'] = function (array $Component) use (&$CIDRAM) {
     }
     foreach ($Files as $File) {
         if (
-            preg_match('~^$|\.(?:css|gif|html?|jpe?g|js|png)$|^(?:classes|fe_assets)[\x2f\x5c]~i', $File) ||
+            preg_match('~^$|\.(?:css|gif|html?|jpe?g|js|png)$|^(?:classes|fe_assets)[\x2F\x5C]~i', $File) ||
             !file_exists($CIDRAM['Vault'] . $File)
         ) {
             continue;
@@ -697,7 +697,7 @@ $CIDRAM['FetchRemote-ContextFree'] = function (&$RemoteData, &$Remote) use (&$CI
     $RemoteData = $CIDRAM['FECacheGet']($CIDRAM['FE']['Cache'], $Remote);
     if ($RemoteData === false) {
         $RemoteData = $CIDRAM['Request']($Remote);
-        if (strtolower(substr($Remote, -2)) === 'gz' && substr($RemoteData, 0, 2) === "\x1f\x8b") {
+        if (strtolower(substr($Remote, -2)) === 'gz' && substr($RemoteData, 0, 2) === "\x1F\x8B") {
             $RemoteData = gzdecode($RemoteData);
         }
         if (empty($RemoteData)) {
@@ -972,7 +972,7 @@ $CIDRAM['SimulateBlockEvent'] = function ($Addr, $Modules = false, $Aux = false,
         array_walk($Modules, function ($Module) use (&$CIDRAM) {
             if (
                 !empty($CIDRAM['Whitelisted']) ||
-                preg_match('~^(?:classes|fe_assets)[\x2f\x5c]|\.(css|gif|html?|jpe?g|js|png|ya?ml)$~i', $Module)
+                preg_match('~^(?:classes|fe_assets)[\x2F\x5C]|\.(css|gif|html?|jpe?g|js|png|ya?ml)$~i', $Module)
             ) {
                 return;
             }
@@ -1487,7 +1487,7 @@ $CIDRAM['FilterSwitch'] = function (array $Switches, $Selector, &$StateModified,
  */
 $CIDRAM['Traverse'] = function ($Path) {
     return !preg_match(
-        '~(?://|(?<![\da-z])\.\.(?![\da-z])|/\.(?![\da-z])|(?<![\da-z])\./|[\x01-\x1f\[-^`?*$])~i',
+        '~(?://|(?<![\da-z])\.\.(?![\da-z])|/\.(?![\da-z])|(?<![\da-z])\./|[\x01-\x1F\[-^`?*$])~i',
         str_replace("\\", '/', $Path)
     );
 };
@@ -1726,7 +1726,7 @@ $CIDRAM['UpdatesHandler-Update'] = function ($ID) use (&$CIDRAM) {
                         -2
                     )) === 'gz' &&
                     strtolower(substr($ThisFileName, -2)) !== 'gz' &&
-                    substr($ThisFile, 0, 2) === "\x1f\x8b"
+                    substr($ThisFile, 0, 2) === "\x1F\x8B"
                 ) {
                     $ThisFile = gzdecode($ThisFile);
                 }
@@ -2005,7 +2005,7 @@ $CIDRAM['UpdatesHandler-Activate'] = function ($ID) use (&$CIDRAM) {
                 }
             }
             if (
-                preg_match('~^$|\.(?:css|gif|html?|jpe?g|js|png)$|^(?:classes|fe_assets)[\x2f\x5c]~i', $File) ||
+                preg_match('~^$|\.(?:css|gif|html?|jpe?g|js|png)$|^(?:classes|fe_assets)[\x2F\x5C]~i', $File) ||
                 !file_exists($CIDRAM['Vault'] . $File) ||
                 !$CIDRAM['Traverse']($File)
             ) {
@@ -2259,7 +2259,7 @@ $CIDRAM['UpdatesHandler-Repair'] = function ($ID) use (&$CIDRAM) {
                 if (
                     strtolower(substr($RemoteFileFrom, -2)) === 'gz' &&
                     strtolower(substr($RemoteFileTo, -2)) !== 'gz' &&
-                    substr($RemoteFile, 0, 2) === "\x1f\x8b"
+                    substr($RemoteFile, 0, 2) === "\x1F\x8B"
                 ) {
                     $RemoteFile = gzdecode($RemoteFile);
                 }
@@ -3184,7 +3184,7 @@ $CIDRAM['SendEmail'] = function (array $Recipients = [], $Subject = '', $Body = 
     /** Prepare event logging. */
     $EventLogData = sprintf(
         '%s - %s - ',
-        $CIDRAM['Config']['legal']['pseudonymise_ip_addresses'] ? $CIDRAM['Pseudonymise-IP']($_SERVER[$CIDRAM['IPAddr']]) : $_SERVER[$CIDRAM['IPAddr']],
+        $CIDRAM['Config']['legal']['pseudonymise_ip_addresses'] ? $CIDRAM['Pseudonymise-IP']($CIDRAM['IPAddr']) : $CIDRAM['IPAddr'],
         isset($CIDRAM['FE']['DateTime']) ? $CIDRAM['FE']['DateTime'] : $CIDRAM['TimeFormat'](
             $CIDRAM['Now'],
             $CIDRAM['Config']['general']['timeFormat']

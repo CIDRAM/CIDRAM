@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Configuration handler (last modified: 2021.11.28).
+ * This file: Configuration handler (last modified: 2022.02.01).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -116,10 +116,14 @@ $CIDRAM['IPAddr'] = (
     $CIDRAM['Config']['general']['ipaddr'] !== 'REMOTE_ADDR' && empty($_SERVER[$CIDRAM['Config']['general']['ipaddr']])
 ) ? 'REMOTE_ADDR' : $CIDRAM['Config']['general']['ipaddr'];
 
-/** Ensure we have an IP address variable to work with. */
-if (!isset($_SERVER[$CIDRAM['IPAddr']])) {
-    $_SERVER[$CIDRAM['IPAddr']] = '';
+/** Ensure we have an IP address available to work with. */
+$CIDRAM['IPAddr'] = isset($_SERVER[$CIDRAM['IPAddr']]) ? $_SERVER[$CIDRAM['IPAddr']] : '';
+
+/** Ensure the IP address we're working with is a string. */
+if (is_array($CIDRAM['IPAddr'])) {
+    $CIDRAM['IPAddr'] = array_shift($CIDRAM['IPAddr']);
 }
+$CIDRAM['IPAddr'] = (string)$CIDRAM['IPAddr'];
 
 /** Adjusted present time. */
 $CIDRAM['Now'] = time() + ($CIDRAM['Config']['general']['timeOffset'] * 60);
@@ -131,7 +135,7 @@ if (!empty($CIDRAM['Config']['general']['timezone']) && $CIDRAM['Config']['gener
 
 /** Determine whether operating in CLI-mode (this check is specific for v1; it isn't needed for v2). */
 $CIDRAM['CIDRAM_sapi'] = empty($_SERVER['REQUEST_METHOD']) || substr(php_sapi_name(), 0, 3) === 'cli' || (
-    empty($_SERVER[$CIDRAM['IPAddr']]) &&
+    empty($CIDRAM['IPAddr']) &&
     empty($_SERVER['HTTP_USER_AGENT']) &&
     !empty($_SERVER['argc']) &&
     is_numeric($_SERVER['argc']) &&

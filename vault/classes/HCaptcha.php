@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: HCaptcha class (last modified: 2021.10.30).
+ * This file: HCaptcha class (last modified: 2022.02.07).
  */
 
 namespace CIDRAM\Core;
@@ -48,7 +48,7 @@ class HCaptcha extends Captcha
                 if (strpos($HastList, "\n" . $UserHash . ',') !== false) {
                     $UserSalt = base64_decode(substr($_COOKIE['CIDRAM'], $Split));
                     if ($this->CIDRAM['Config']['hcaptcha']['lockip']) {
-                        $UserMeld = $this->meld($Salt, $UserSalt, $_SERVER[$this->CIDRAM['IPAddr']]);
+                        $UserMeld = $this->meld($Salt, $UserSalt, $this->CIDRAM['IPAddr']);
                     } else {
                         $UserMeld = $this->meld($Salt, $UserSalt);
                     }
@@ -87,7 +87,7 @@ class HCaptcha extends Captcha
 
                         /** Generate authentication hash. */
                         if ($this->CIDRAM['Config']['hcaptcha']['lockip']) {
-                            $Cookie = $this->meld($Salt, $UserSalt, $_SERVER[$this->CIDRAM['IPAddr']]);
+                            $Cookie = $this->meld($Salt, $UserSalt, $this->CIDRAM['IPAddr']);
                         } else {
                             $Cookie = $this->meld($Salt, $UserSalt);
                         }
@@ -151,7 +151,7 @@ class HCaptcha extends Captcha
              * Verify whether a HCaptcha instance has already been completed before
              * for the current IP, populate relevant variables, and generate fields.
              */
-            if (strpos($BypassList, "\n" . $_SERVER[$this->CIDRAM['IPAddr']] . ',') !== false) {
+            if (strpos($BypassList, "\n" . $this->CIDRAM['IPAddr'] . ',') !== false) {
                 $this->Bypass = true;
                 $this->CIDRAM['BlockInfo']['SignatureCount'] = 0;
 
@@ -173,7 +173,7 @@ class HCaptcha extends Captcha
                         $this->CIDRAM['BlockInfo']['SignatureCount'] = 0;
 
                         /** Append to the IP bypass list. */
-                        $BypassList .= $_SERVER[$this->CIDRAM['IPAddr']] . ',' . (
+                        $BypassList .= $this->CIDRAM['IPAddr'] . ',' . (
                             $this->CIDRAM['Now'] + ($this->CIDRAM['Config']['hcaptcha']['expiry'] * 3600)
                         ) . "\n";
                         $BypassListModified = true;
@@ -214,7 +214,7 @@ class HCaptcha extends Captcha
         $Data = sprintf(
             "%1\$s%2\$s - %3\$s%4\$s - %5\$s%6\$s\n",
             $this->CIDRAM['L10N']->getString('field_ipaddr'),
-            $this->CIDRAM['Config']['legal']['pseudonymise_ip_addresses'] ? $this->CIDRAM['Pseudonymise-IP']($_SERVER[$this->CIDRAM['IPAddr']]) : $_SERVER[$this->CIDRAM['IPAddr']],
+            $this->CIDRAM['Config']['legal']['pseudonymise_ip_addresses'] ? $this->CIDRAM['Pseudonymise-IP']($this->CIDRAM['IPAddr']) : $this->CIDRAM['IPAddr'],
             $this->CIDRAM['L10N']->getString('field_datetime'),
             $this->CIDRAM['BlockInfo']['DateTime'],
             $this->CIDRAM['L10N']->getString('field_captcha'),
@@ -308,7 +308,7 @@ class HCaptcha extends Captcha
         $this->Results = $this->CIDRAM['Request']('https://hcaptcha.com/siteverify', [
             'secret' => $this->CIDRAM['Config']['hcaptcha']['secret'],
             'response' => $_POST['hc-response'],
-            'remoteip' => $_SERVER[$this->CIDRAM['IPAddr']]
+            'remoteip' => $this->CIDRAM['IPAddr']
         ]);
         $this->Bypass = (strpos($this->Results, '"success":true,') !== false);
     }

@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6_isps.dat
 
-# Version: 2022.21.0
-# Last modified: 2022.01.22
+# Version: 2022.37.0
+# Last modified: 2022.02.10
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -702,7 +702,7 @@ Profile: Domestic ISP
 Tag: TELEFNICA BRASIL S.A
 
 
-# ASNs 10796, 11351, 11426, 11427, 20001, 20115 ("Charter Communications").
+# ASNs 10796, 11351, 11426, 11427, 12271, 20001, 20115 ("Charter Communications").
 # United States domestic ISP. Caught probing honeypots. Port scans and spam
 # also detected from here. Listing just the affected ranges/addresses only.
 # Stop Forum Spam (SFS) listings: 1,050 (AS10796), 1,172 (AS11426), 1,172 (AS11427), 2,623 (AS20115).
@@ -1438,12 +1438,12 @@ Tag: WildPark Co
 # Caught XRumer operating on this network. Bangladesh multiplay network.
 # Primarily a webhost and server leaser, but also offers corporate internet
 # connectivity.
-# Stop Forum Spam (SFS) listings: 77.
-# Updated: 2019.05.28 / Checked: 2021.04.16
+# Stop Forum Spam (SFS) listings: 193.
+# Updated: 2019.05.28 / Checked: 2022.02.07
 
 2400:3240::/32 Deny Cloud
 Origin: BD
-Profile: Commercial;Multiplay;Webhosting
+Profile: Commercial;Infrastructure/Transit;Multiplay;Webhosting
 Tag: Mazeda Networks
 
 
@@ -1597,3 +1597,28 @@ Tag: WIND Telecom S.A
 Origin: BR
 Profile: Domestic ISP
 Tag: STAYNET
+
+
+# ASN 45582 ("IRONNET Ltd").
+# Russian domestic ISP. Port scans, hacking, and spam detected from here.
+# Manually checked all ranges; All ranges affected.
+# Stop Forum Spam (SFS) listings: 26.
+# Updated: 2022.02.10
+
+2001:678:62c::/48 Deny Attacks
+Origin: RU
+Profile: Domestic ISP
+Tag: IRONNET Ltd
+
+
+# ASN 16086 ("DNA Oyj").
+# Finnish commercial network. Port scans, hacking, and spam detected from here.
+# Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 157.
+# Updated: 2022.02.10
+
+2001:14bb:673:c888::/64 Deny Spam
+2001:14bb:6b6:bd78::/64 Deny Spam
+Origin: FI
+Profile: Commercial
+Tag: DNA Oyj

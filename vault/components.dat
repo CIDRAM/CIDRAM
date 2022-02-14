@@ -1,918 +1,917 @@
 ---
 CIDRAM:
- Name: CIDRAM
- Version: 1.21.0-DEV+22037488
+ Name: "CIDRAM"
+ Version: "1.21.0"
  Dependencies:
-  PHP: >=5.4
-  l10n/{lang}: >=2021.354.620
- Changelog: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/Changelog.txt
- Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
+  PHP: ">=5.4"
+  l10n/{lang}: ">=2021.354.620"
+ Changelog: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/Changelog.txt"
+ Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat"
  When Update Succeeds:
-  - WP-Ver
+  - "WP-Ver"
  Files:
   From:
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/captcha_default.html
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/channels.yaml
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/classes/Aggregator.php
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/classes/Captcha.php
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/classes/HCaptcha.php
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/classes/ReCaptcha.php
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/classes/Reporter.php
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/classes/Maikuolan/Cache.php
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/classes/Maikuolan/ComplexStringHandler.php
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/classes/Maikuolan/DelayedIO.php
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/classes/Maikuolan/Demojibakefier.php
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/classes/Maikuolan/Events.php
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/classes/Maikuolan/L10N.php
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/classes/Maikuolan/NumberFormatter.php
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/classes/Maikuolan/Operation.php
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/classes/Maikuolan/Request.php
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/classes/Maikuolan/YAML.php
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/cli.php
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/config.php
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/config.yaml
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/event_handlers.php
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/_2fa.html
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/_accounts.html
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/_accounts_row.html
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/_aux.html
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/_aux_edit.html
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/_cache.html
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/_cidr_calc.html
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/_cidr_calc_row.html
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/_config.html
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/_config_row.html
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/_files.html
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/_files_edit.html
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/_files_rename.html
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/_files_row.html
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/_fixer.html
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/_home.html
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/_ip_aggregator.html
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/_ip_test.html
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/_ip_test_row.html
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/_ip_tracking.html
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/_ip_tracking_row.html
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/_login.html
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/_logs.html
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/_nav_complete_access.html
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/_nav_logs_access_only.html
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/_range.html
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/_range_intersector.html
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/_range_row.html
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/_range_subtractor.html
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/_sections.html
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/_statistics.html
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/_updates.html
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/_updates_row.html
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/auxiliary.js
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/frontend.css
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/frontend.html
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/icons.php
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/lock_bl_c.png
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/lock_bl_o.png
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/lock_rd_c.png
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/lock_rd_o.png
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/lock_wt_c.png
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/lock_wt_o.png
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/pips.php
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/scripts.js
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/frontend.php
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/frontend_functions.php
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/functions.php
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang.php
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/outgen.php
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/php5.4.x.php
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/template_custom.html
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/template_default.html
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/verification.yaml
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/captcha_default.html"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/channels.yaml"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/classes/Aggregator.php"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/classes/Captcha.php"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/classes/HCaptcha.php"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/classes/ReCaptcha.php"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/classes/Reporter.php"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/classes/Maikuolan/Cache.php"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/classes/Maikuolan/ComplexStringHandler.php"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/classes/Maikuolan/DelayedIO.php"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/classes/Maikuolan/Demojibakefier.php"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/classes/Maikuolan/Events.php"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/classes/Maikuolan/L10N.php"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/classes/Maikuolan/NumberFormatter.php"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/classes/Maikuolan/Operation.php"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/classes/Maikuolan/Request.php"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/classes/Maikuolan/YAML.php"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/cli.php"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/config.php"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/config.yaml"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/event_handlers.php"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/_2fa.html"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/_accounts.html"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/_accounts_row.html"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/_aux.html"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/_aux_edit.html"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/_cache.html"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/_cidr_calc.html"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/_cidr_calc_row.html"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/_config.html"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/_config_row.html"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/_files.html"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/_files_edit.html"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/_files_rename.html"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/_files_row.html"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/_fixer.html"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/_home.html"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/_ip_aggregator.html"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/_ip_test.html"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/_ip_test_row.html"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/_ip_tracking.html"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/_ip_tracking_row.html"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/_login.html"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/_logs.html"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/_nav_complete_access.html"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/_nav_logs_access_only.html"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/_range.html"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/_range_intersector.html"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/_range_row.html"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/_range_subtractor.html"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/_sections.html"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/_statistics.html"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/_updates.html"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/_updates_row.html"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/auxiliary.js"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/frontend.css"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/frontend.html"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/icons.php"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/lock_bl_c.png"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/lock_bl_o.png"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/lock_rd_c.png"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/lock_rd_o.png"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/lock_wt_c.png"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/lock_wt_o.png"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/pips.php"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/fe_assets/scripts.js"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/frontend.php"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/frontend_functions.php"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/functions.php"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang.php"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/outgen.php"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/php5.4.x.php"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/template_custom.html"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/template_default.html"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/verification.yaml"
   To:
-   - captcha_default.html
-   - channels.yaml
-   - classes/Aggregator.php
-   - classes/Captcha.php
-   - classes/HCaptcha.php
-   - classes/ReCaptcha.php
-   - classes/Reporter.php
-   - classes/Maikuolan/Cache.php
-   - classes/Maikuolan/ComplexStringHandler.php
-   - classes/Maikuolan/DelayedIO.php
-   - classes/Maikuolan/Demojibakefier.php
-   - classes/Maikuolan/Events.php
-   - classes/Maikuolan/L10N.php
-   - classes/Maikuolan/NumberFormatter.php
-   - classes/Maikuolan/Operation.php
-   - classes/Maikuolan/Request.php
-   - classes/Maikuolan/YAML.php
-   - cli.php
-   - config.php
-   - config.yaml
-   - event_handlers.php
-   - fe_assets/_2fa.html
-   - fe_assets/_accounts.html
-   - fe_assets/_accounts_row.html
-   - fe_assets/_aux.html
-   - fe_assets/_aux_edit.html
-   - fe_assets/_cache.html
-   - fe_assets/_cidr_calc.html
-   - fe_assets/_cidr_calc_row.html
-   - fe_assets/_config.html
-   - fe_assets/_config_row.html
-   - fe_assets/_files.html
-   - fe_assets/_files_edit.html
-   - fe_assets/_files_rename.html
-   - fe_assets/_files_row.html
-   - fe_assets/_fixer.html
-   - fe_assets/_home.html
-   - fe_assets/_ip_aggregator.html
-   - fe_assets/_ip_test.html
-   - fe_assets/_ip_test_row.html
-   - fe_assets/_ip_tracking.html
-   - fe_assets/_ip_tracking_row.html
-   - fe_assets/_login.html
-   - fe_assets/_logs.html
-   - fe_assets/_nav_complete_access.html
-   - fe_assets/_nav_logs_access_only.html
-   - fe_assets/_range.html
-   - fe_assets/_range_intersector.html
-   - fe_assets/_range_row.html
-   - fe_assets/_range_subtractor.html
-   - fe_assets/_sections.html
-   - fe_assets/_statistics.html
-   - fe_assets/_updates.html
-   - fe_assets/_updates_row.html
-   - fe_assets/auxiliary.js
-   - fe_assets/frontend.css
-   - fe_assets/frontend.html
-   - fe_assets/icons.php
-   - fe_assets/lock_bl_c.png
-   - fe_assets/lock_bl_o.png
-   - fe_assets/lock_rd_c.png
-   - fe_assets/lock_rd_o.png
-   - fe_assets/lock_wt_c.png
-   - fe_assets/lock_wt_o.png
-   - fe_assets/pips.php
-   - fe_assets/scripts.js
-   - frontend.php
-   - frontend_functions.php
-   - functions.php
-   - lang.php
-   - outgen.php
-   - php5.4.x.php
-   - template_custom.html
-   - template_default.html
-   - verification.yaml
+   - "captcha_default.html"
+   - "channels.yaml"
+   - "classes/Aggregator.php"
+   - "classes/Captcha.php"
+   - "classes/HCaptcha.php"
+   - "classes/ReCaptcha.php"
+   - "classes/Reporter.php"
+   - "classes/Maikuolan/Cache.php"
+   - "classes/Maikuolan/ComplexStringHandler.php"
+   - "classes/Maikuolan/DelayedIO.php"
+   - "classes/Maikuolan/Demojibakefier.php"
+   - "classes/Maikuolan/Events.php"
+   - "classes/Maikuolan/L10N.php"
+   - "classes/Maikuolan/NumberFormatter.php"
+   - "classes/Maikuolan/Operation.php"
+   - "classes/Maikuolan/Request.php"
+   - "classes/Maikuolan/YAML.php"
+   - "cli.php"
+   - "config.php"
+   - "config.yaml"
+   - "event_handlers.php"
+   - "fe_assets/_2fa.html"
+   - "fe_assets/_accounts.html"
+   - "fe_assets/_accounts_row.html"
+   - "fe_assets/_aux.html"
+   - "fe_assets/_aux_edit.html"
+   - "fe_assets/_cache.html"
+   - "fe_assets/_cidr_calc.html"
+   - "fe_assets/_cidr_calc_row.html"
+   - "fe_assets/_config.html"
+   - "fe_assets/_config_row.html"
+   - "fe_assets/_files.html"
+   - "fe_assets/_files_edit.html"
+   - "fe_assets/_files_rename.html"
+   - "fe_assets/_files_row.html"
+   - "fe_assets/_fixer.html"
+   - "fe_assets/_home.html"
+   - "fe_assets/_ip_aggregator.html"
+   - "fe_assets/_ip_test.html"
+   - "fe_assets/_ip_test_row.html"
+   - "fe_assets/_ip_tracking.html"
+   - "fe_assets/_ip_tracking_row.html"
+   - "fe_assets/_login.html"
+   - "fe_assets/_logs.html"
+   - "fe_assets/_nav_complete_access.html"
+   - "fe_assets/_nav_logs_access_only.html"
+   - "fe_assets/_range.html"
+   - "fe_assets/_range_intersector.html"
+   - "fe_assets/_range_row.html"
+   - "fe_assets/_range_subtractor.html"
+   - "fe_assets/_sections.html"
+   - "fe_assets/_statistics.html"
+   - "fe_assets/_updates.html"
+   - "fe_assets/_updates_row.html"
+   - "fe_assets/auxiliary.js"
+   - "fe_assets/frontend.css"
+   - "fe_assets/frontend.html"
+   - "fe_assets/icons.php"
+   - "fe_assets/lock_bl_c.png"
+   - "fe_assets/lock_bl_o.png"
+   - "fe_assets/lock_rd_c.png"
+   - "fe_assets/lock_rd_o.png"
+   - "fe_assets/lock_wt_c.png"
+   - "fe_assets/lock_wt_o.png"
+   - "fe_assets/pips.php"
+   - "fe_assets/scripts.js"
+   - "frontend.php"
+   - "frontend_functions.php"
+   - "functions.php"
+   - "lang.php"
+   - "outgen.php"
+   - "php5.4.x.php"
+   - "template_custom.html"
+   - "template_default.html"
+   - "verification.yaml"
   Checksum:
-   - aefbe663bab9c255ef1baf47d391c3c823cf9aced66ba2fd07c06f413a0ca292:1946
-   - b62c0cf1deeb97c7ee15638f0a4102292a6bab6f0b6b1ee3a1dec7fa485c2e05:1352
-   - f9b75869bca98aa713b564952f7617dad0666c2695f9659f32ba1475e501e0ec:15527
-   - 68d3e829105f46d20afe38370cac3982bc4143f993037ecb70eb762ba11ab4af:3841
-   - 61bb66e10c28bd78475ef630c01fa24661d2a107b81ff901a299bb169fb47c05:15263
-   - d4fb24a551339912b17b7805f0e8f8fc7be63788b2b075aabbb030d0d504efb3:14779
-   - 8c1f27718d90826c0c3c23dd1435eea030a8bc91587f6e75994318db6e747153:2897
-   - ec632100be9f38ab6ce21e4f07fcd21128467f5c6041738046b55e98784e7937:28020
-   - 7d8f721d9deaa12b663742d165a62c6283fdfa5c7498c9a13f6a387368c321ae:4091
-   - 586ddabf197d46d26e65d55d2a6ac4ceebc67751c4d548075f6a0fac23054d17:4810
-   - 5bcc19dbd857637f6423ec7e33b7b594d5c8382c5bf54be0eb23fee125bc75dc:29778
-   - c210fbb01dd8664e3cc5dfb384da39dd2f712d22d3616059c336fd6c3eb04830:3726
-   - b489197a3e806ed6ec3fd08b9f48bb271a8e01a7c5d45d6cd1c7b4bd270a8bca:16236
-   - 9266074305dab8c38a121fcc92581555534a94f4ea0afb90a606a0e7ae973b84:37593
-   - 49e639d0e6ab50f65f34cd76a5670915f037b9aefac3258e9892d3a7051f5445:11918
-   - 71c6d35cc41cb6eec36618dc4c11e7aea56b440f43c32b63f08ddcaf706f0b87:8038
-   - a205fd15cd422120e4878a44fd847d7612df16d7b6666f29b6b30e760b337954:14867
-   - 4719ffc01eefcd09f3511a6f0df727a7ef8654f1adf47bffbb76c4b5d9d218d9:25094
-   - e57e8d373b572db097f9687fa47608066b28d08bd49834caaa86ffb0b5beb5ca:8587
-   - 2faf1f9499915595f497e82f14836d99196a715648c1edee43fa6585c0a783dd:24565
-   - e0569bc67e5c3c6424ef55141cf6a973d2404b13135b41e59b25ffcf1135ec1f:9222
-   - cdb91aefd05a3a7fb5d51a81888b4cffab18ce9bb9ede0bb49451f95c2be5e07:528
-   - dd925fa21d11fdd4eb99f52fde1293d459b79321fcb8ef298a6c58a07dcd7046:2061
-   - 0fe78bad5499f267b215accbf785c8f97e25414cc734c729cd09f3c979d5c4ac:1424
-   - 3e0b5f6d8efc134c060ffe20266a38746de6ce8031ce8490d9f54b256b5d05d1:8534
-   - f08d531b541651951329fa1a15fdef6edf473b26fb4092f645898a7deb2e6b60:392
-   - e9fab19b6d1eee218d78b453ef9cf19cbe8038901acfd462828b861f94188036:116
-   - fbbf350e7488c812ade80d79b15f0f7e28c47ddcff0df102cd70aa865e64d02a:2531
-   - 0b19bdc3af55b77b22b4d524e818c9449105321368c05115e1ba5b104f98c854:129
-   - 6a7c556411962b08da4fd2ed7f6ca4b9467c132407e1c43a5e6b3701424e74d8:891
-   - 248eec685e131d9a719ee8c0d0d10fcd2da681ed399dc57143803f047f5ca8aa:234
-   - 9689626f07a63fed2cbf4d303afb7499d2b915cb67ab4f4adc62d851408f5cd2:1185
-   - 9350b3f4081db72181a8fe6229de7f011b6caaaa471de800ea94aa826bee3968:752
-   - d24f5b81f21b72cc3980122652386bf2a636c88a86a5d7f0f714c77be77b0860:735
-   - 8fc5cb8d880b79b5e9bd504c69c3504d5ae354daf5f783c8c2900117b155290b:543
-   - 93991d72a486db774a8a9c85ae6954f7909b206ba8e293acbb358a8d812fc886:686
-   - bf566a3d2bd0be40a72911a605f67012b9a29e7a2208cedcbb3fd2ba4b89a23e:1678
-   - 664085e5192207248ed86a5bf0551cd71510fa849009e11bcb16ddee8c6052ef:1042
-   - d0b977ba9363adfc06fb60ded9052f42da65b8b958fb3fbe018358c48597d158:1684
-   - 21a503cc45966f7b8316e9ca2e436c147c717a7dbd0a94e576917501b72f7beb:144
-   - 10bc1b5a4e5274b748892e8413cc220b69bf86e7a43b0de29a858ed117531604:1060
-   - 6f8fd7ac800532abc8653223243117efbd1154a330e1828329c81904b1c217a2:269
-   - dbd7d029c0ea6d3cf7f8b780a7300b01a1b6ed9bb0e2fedb531da82056a7bc36:1321
-   - 38cc66a19fc6ba45e8421629335e086e398cc601798f1c5db383c9399f7c40bf:531
-   - 50e668255bd1e655dedc1528728c1edaec3b9ef634c7187e1a0d94f12c1dc880:1872
-   - 23af47afa2146686abdefdf1598a1bf333a6f5d1e2408b7c9cb1974aa27908c1:639
-   - 3724f29a5f8161bdd8069cb96775094e2520b2080528537d377da6552d002a04:745
-   - 7bdea2cc88e0375ca90e3dd205188ec73c8be3f14c370900736508e1f7b80aae:1226
-   - 2f71b7f651bbf58b4270a927a9692b1809f754b76c103800f82676e1b5fb51de:184
-   - 88b2c909b2203e45451c5ee3d0b32b787731845880f61f2e4c94a23697cdd72e:1244
-   - a7b5d72026bdc2fb67ac5fcee00b1a4e70fb1beb0bfe427c39e79d60f9f57219:107
-   - cb4ed1c938fc8de656f0758ca10bac67dc883b75927de88144d7c51a63f6ae8a:4503
-   - ee4abd6dd391047e2bfbd5ec96c61edd745592bb9215c09834ddcd0b80860f23:951
-   - efe8a97866d0682c38fa8e12d1c0e394c22520e2bcba0ebf07874e5dc3ad232c:640
-   - 21208a742f3b164bd6bf12ae096b37984f5412503078e089071a587d06d0808c:8275
-   - 1392da429ced496a4dc89db8b8b53e9b24b22920be82e82318f5e601105efa92:8205
-   - 3560fb6925f3771f858cc822abc94c190ac210ce64be7b1c9d7b4b2b98f97a20:1044
-   - 74d4b66b5e8a68267fd24a584817dd663243ab602ef914f483bd3848e2993a73:17508
-   - 9901ee26130157dbe3e70b5024773f0cde0bb8d59a451159cd6902c09640a1bd:705
-   - a716a0709baee48d538f08a06c41a2bd1364d3fabed2b5101e90b12b213ad036:743
-   - 33d283567d295c94cdd8d41625ceee37a58cdc960e56fc8aaf4b20ebe429c72e:721
-   - 171ce17c5f40234d3e92df6b76dcc3bd42833f19bbdb27b7569ff9d4c4e9c7d1:741
-   - 77fe7edb781698ebde7694b6c44b091e14f8d99b9d1063c4477715afbeb5227a:675
-   - 3bc42724fbf0651e7225d54e1761948c1d624c1d853549aa0809721abf700a07:722
-   - dcbb152e85200043cbc868ac602a14be11e6d128206634d3e35d18b192475272:1291
-   - ebfbd6a90a244ad3f638cbe044dd661fa435ff4094fb63312346f786336b2960:996
-   - 913c3821d07336892be17a1b0dc9a1fe368ef0890ebcb60c130a7003be3b3b1a:265976
-   - d278de124d32dac67cc251892a2b90c5837861de241d4f068220ce4d8612c955:205601
-   - 56f4645ce9db9656c34b021f65e140c30a87f385c519b6b1884b46d51c2fcd5a:102594
-   - 94a38fcdeb75ec20aff310039d19e802d9fc0a4d0c25bba9e8b7fbdba9083d7d:5985
-   - 5b4c41543735597f531745c01e5e308d6ad9a9c3be2d88ae3ba59cac89911658:42544
-   - ee98b16e3880618a5fbf6b7e70f89eb1dbd36ea4d83a91f0b0060f8830d461bc:1661
-   - 97df7b28ced1689bf3c8ae0a715605a2db1d25f4449fface23a517d81a56f517:1203
-   - 75f1f493bd4e56fd5ad3835001a080811b2365cffc73b240eb1289cd905ad180:2622
-   - 6ba11610d8263b9bfae716f6de642e1e126e8dfc601fa102970328b4c1acd298:5683
- Reannotate: components.dat
+   - "aefbe663bab9c255ef1baf47d391c3c823cf9aced66ba2fd07c06f413a0ca292:1946"
+   - "b62c0cf1deeb97c7ee15638f0a4102292a6bab6f0b6b1ee3a1dec7fa485c2e05:1352"
+   - "f9b75869bca98aa713b564952f7617dad0666c2695f9659f32ba1475e501e0ec:15527"
+   - "68d3e829105f46d20afe38370cac3982bc4143f993037ecb70eb762ba11ab4af:3841"
+   - "61bb66e10c28bd78475ef630c01fa24661d2a107b81ff901a299bb169fb47c05:15263"
+   - "d4fb24a551339912b17b7805f0e8f8fc7be63788b2b075aabbb030d0d504efb3:14779"
+   - "8c1f27718d90826c0c3c23dd1435eea030a8bc91587f6e75994318db6e747153:2897"
+   - "b33bbf61a6ee230d1609c1f0ff801e7a81ba629564e40dba07c3b1627c87edee:28018"
+   - "3df11863eb887a6fbd214ded92c9a91deaac36c06920405dfdd2cf73909ea1e3:4089"
+   - "1699bcf1169f33807ad14e6a42bcdb60c88892af4092fb908563f9522f3da393:4808"
+   - "f73e2869308876dda97af0a4c237fe38205f2a8a7a87fe29dcb236237cde966a:30643"
+   - "d14f10bd34f39496451af91a1e6671678e89222aaa57f1e1dab25c12b96a59f3:3724"
+   - "b5ce44518ce2f515f7ec580a8cd4e728a08106c544164c4c570a84f4ab0b5297:26289"
+   - "f9c9a44f50e7ec5a2406d96b1527aadb0384cbd08408e507133e5aa03c7b4e96:37933"
+   - "a61c06172ae53b09d57cbad1e580d8f990756fcf2540bfe6b0cab327da86c20a:11916"
+   - "abbcfc48ef2c4465a17b6343cb09c576dd439f26bdc112ddbd7aea410dfc3740:8036"
+   - "3d6415a3358aad31202cee4d016f06a2093961f485a096d64cd70b28a57fcdb9:48985"
+   - "4719ffc01eefcd09f3511a6f0df727a7ef8654f1adf47bffbb76c4b5d9d218d9:25094"
+   - "e57e8d373b572db097f9687fa47608066b28d08bd49834caaa86ffb0b5beb5ca:8587"
+   - "2faf1f9499915595f497e82f14836d99196a715648c1edee43fa6585c0a783dd:24565"
+   - "e0569bc67e5c3c6424ef55141cf6a973d2404b13135b41e59b25ffcf1135ec1f:9222"
+   - "cdb91aefd05a3a7fb5d51a81888b4cffab18ce9bb9ede0bb49451f95c2be5e07:528"
+   - "dd925fa21d11fdd4eb99f52fde1293d459b79321fcb8ef298a6c58a07dcd7046:2061"
+   - "0fe78bad5499f267b215accbf785c8f97e25414cc734c729cd09f3c979d5c4ac:1424"
+   - "3e0b5f6d8efc134c060ffe20266a38746de6ce8031ce8490d9f54b256b5d05d1:8534"
+   - "f08d531b541651951329fa1a15fdef6edf473b26fb4092f645898a7deb2e6b60:392"
+   - "e9fab19b6d1eee218d78b453ef9cf19cbe8038901acfd462828b861f94188036:116"
+   - "fbbf350e7488c812ade80d79b15f0f7e28c47ddcff0df102cd70aa865e64d02a:2531"
+   - "0b19bdc3af55b77b22b4d524e818c9449105321368c05115e1ba5b104f98c854:129"
+   - "6a7c556411962b08da4fd2ed7f6ca4b9467c132407e1c43a5e6b3701424e74d8:891"
+   - "248eec685e131d9a719ee8c0d0d10fcd2da681ed399dc57143803f047f5ca8aa:234"
+   - "9689626f07a63fed2cbf4d303afb7499d2b915cb67ab4f4adc62d851408f5cd2:1185"
+   - "9350b3f4081db72181a8fe6229de7f011b6caaaa471de800ea94aa826bee3968:752"
+   - "d24f5b81f21b72cc3980122652386bf2a636c88a86a5d7f0f714c77be77b0860:735"
+   - "8fc5cb8d880b79b5e9bd504c69c3504d5ae354daf5f783c8c2900117b155290b:543"
+   - "93991d72a486db774a8a9c85ae6954f7909b206ba8e293acbb358a8d812fc886:686"
+   - "bf566a3d2bd0be40a72911a605f67012b9a29e7a2208cedcbb3fd2ba4b89a23e:1678"
+   - "664085e5192207248ed86a5bf0551cd71510fa849009e11bcb16ddee8c6052ef:1042"
+   - "d0b977ba9363adfc06fb60ded9052f42da65b8b958fb3fbe018358c48597d158:1684"
+   - "21a503cc45966f7b8316e9ca2e436c147c717a7dbd0a94e576917501b72f7beb:144"
+   - "10bc1b5a4e5274b748892e8413cc220b69bf86e7a43b0de29a858ed117531604:1060"
+   - "6f8fd7ac800532abc8653223243117efbd1154a330e1828329c81904b1c217a2:269"
+   - "dbd7d029c0ea6d3cf7f8b780a7300b01a1b6ed9bb0e2fedb531da82056a7bc36:1321"
+   - "38cc66a19fc6ba45e8421629335e086e398cc601798f1c5db383c9399f7c40bf:531"
+   - "50e668255bd1e655dedc1528728c1edaec3b9ef634c7187e1a0d94f12c1dc880:1872"
+   - "23af47afa2146686abdefdf1598a1bf333a6f5d1e2408b7c9cb1974aa27908c1:639"
+   - "3724f29a5f8161bdd8069cb96775094e2520b2080528537d377da6552d002a04:745"
+   - "7bdea2cc88e0375ca90e3dd205188ec73c8be3f14c370900736508e1f7b80aae:1226"
+   - "2f71b7f651bbf58b4270a927a9692b1809f754b76c103800f82676e1b5fb51de:184"
+   - "88b2c909b2203e45451c5ee3d0b32b787731845880f61f2e4c94a23697cdd72e:1244"
+   - "a7b5d72026bdc2fb67ac5fcee00b1a4e70fb1beb0bfe427c39e79d60f9f57219:107"
+   - "cb4ed1c938fc8de656f0758ca10bac67dc883b75927de88144d7c51a63f6ae8a:4503"
+   - "ee4abd6dd391047e2bfbd5ec96c61edd745592bb9215c09834ddcd0b80860f23:951"
+   - "efe8a97866d0682c38fa8e12d1c0e394c22520e2bcba0ebf07874e5dc3ad232c:640"
+   - "21208a742f3b164bd6bf12ae096b37984f5412503078e089071a587d06d0808c:8275"
+   - "1392da429ced496a4dc89db8b8b53e9b24b22920be82e82318f5e601105efa92:8205"
+   - "3560fb6925f3771f858cc822abc94c190ac210ce64be7b1c9d7b4b2b98f97a20:1044"
+   - "74d4b66b5e8a68267fd24a584817dd663243ab602ef914f483bd3848e2993a73:17508"
+   - "9901ee26130157dbe3e70b5024773f0cde0bb8d59a451159cd6902c09640a1bd:705"
+   - "a716a0709baee48d538f08a06c41a2bd1364d3fabed2b5101e90b12b213ad036:743"
+   - "33d283567d295c94cdd8d41625ceee37a58cdc960e56fc8aaf4b20ebe429c72e:721"
+   - "171ce17c5f40234d3e92df6b76dcc3bd42833f19bbdb27b7569ff9d4c4e9c7d1:741"
+   - "77fe7edb781698ebde7694b6c44b091e14f8d99b9d1063c4477715afbeb5227a:675"
+   - "3bc42724fbf0651e7225d54e1761948c1d624c1d853549aa0809721abf700a07:722"
+   - "dcbb152e85200043cbc868ac602a14be11e6d128206634d3e35d18b192475272:1291"
+   - "ebfbd6a90a244ad3f638cbe044dd661fa435ff4094fb63312346f786336b2960:996"
+   - "913c3821d07336892be17a1b0dc9a1fe368ef0890ebcb60c130a7003be3b3b1a:265976"
+   - "d278de124d32dac67cc251892a2b90c5837861de241d4f068220ce4d8612c955:205601"
+   - "56f4645ce9db9656c34b021f65e140c30a87f385c519b6b1884b46d51c2fcd5a:102594"
+   - "96857bed2f4f6624becda34b2b68bbb9a7907f2a1179de9fa2b6a655b2c44f84:6340"
+   - "5b4c41543735597f531745c01e5e308d6ad9a9c3be2d88ae3ba59cac89911658:42544"
+   - "ee98b16e3880618a5fbf6b7e70f89eb1dbd36ea4d83a91f0b0060f8830d461bc:1661"
+   - "97df7b28ced1689bf3c8ae0a715605a2db1d25f4449fface23a517d81a56f517:1203"
+   - "75f1f493bd4e56fd5ad3835001a080811b2365cffc73b240eb1289cd905ad180:2622"
+   - "6ba11610d8263b9bfae716f6de642e1e126e8dfc601fa102970328b4c1acd298:5683"
+ Reannotate: "components.dat"
 IPv4:
- Extended Description: Default IPv4 signatures normally included with the main package. Blocks unwanted cloud services and non-human endpoints.
- False Positive Risk: Low
- Version: 2022.37.0
+ Extended Description: "Default IPv4 signatures normally included with the main package. Blocks unwanted cloud services and non-human endpoints."
+ False Positive Risk: "Low"
+ Version: "2022.44.0"
  Dependencies:
-  CIDRAM Core: >=1
-  Bypasses: >=2021.260.503
- Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
+  CIDRAM Core: ">=1"
+  Bypasses: ">=2021.260.503"
+ Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat"
  Uninstallable: true
  Files:
   From:
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/ipv4.dat
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/ipv4.dat"
   To:
-   - ipv4.dat
+   - "ipv4.dat"
   Checksum:
-   - 371d67bf056a1444d91383731a05e80a17678a31549d4a6215156f9d3e728a2b:1004550
- Used with: ipv4
- Reannotate: components.dat
+   - "e9971bb7e0bf6011dce338adca21f6bf6ca35dc3d1cce015eed5363a1ead52f3:1003832"
+ Used with: "ipv4"
+ Reannotate: "components.dat"
 IPv4-Bogons:
- Extended Description: Default IPv4 signatures normally included with the main package. Blocks bogon/martian CIDRs.
- False Positive Risk: Low
- Version: 2021.166.298
+ Extended Description: "Default IPv4 signatures normally included with the main package. Blocks bogon/martian CIDRs."
+ False Positive Risk: "Low"
+ Version: "2021.166.298"
  Dependencies:
-  CIDRAM Core: >=1
- Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
+  CIDRAM Core: ">=1"
+ Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat"
  Uninstallable: true
  Files:
   From:
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/ipv4_bogons.dat
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/ipv4_bogons.dat"
   To:
-   - ipv4_bogons.dat
+   - "ipv4_bogons.dat"
   Checksum:
-   - 571b6bc1a2d626fd7c3af56faf0514bf2a594f6717167a98b98e8540f3ed79a1:741
- Used with: ipv4
- Reannotate: components.dat
+   - "571b6bc1a2d626fd7c3af56faf0514bf2a594f6717167a98b98e8540f3ed79a1:741"
+ Used with: "ipv4"
+ Reannotate: "components.dat"
 IPv4-ISPs:
- Extended Description: Default IPv4 signatures normally included with the main package. Blocks dangerous and spammy ISPs.
- False Positive Risk: Medium
- Version: 2022.37.0
+ Extended Description: "Default IPv4 signatures normally included with the main package. Blocks dangerous and spammy ISPs."
+ False Positive Risk: "Medium"
+ Version: "2022.44.0"
  Dependencies:
-  CIDRAM Core: >=1
-  Bypasses: >=2021.192.550
- Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
+  CIDRAM Core: ">=1"
+  Bypasses: ">=2021.192.550"
+ Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat"
  Uninstallable: true
  Files:
   From:
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/ipv4_isps.dat
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/ipv4_isps.dat"
   To:
-   - ipv4_isps.dat
+   - "ipv4_isps.dat"
   Checksum:
-   - da7e5b103658430a0c3f8390e92658687ad26a714557a8de0132a84fa192cc78:473570
- Used with: ipv4
- Reannotate: components.dat
+   - "9c53ab0b356ce9ffbea1a4a7f9d1fca1ebe91918b70ea788db62aaebc2334032:473059"
+ Used with: "ipv4"
+ Reannotate: "components.dat"
 IPv4-Nonblocking:
- Extended Description: Default IPv4 non-blocking signatures file.
- Version: 2021.166.298
+ Extended Description: "Default IPv4 non-blocking signatures file."
+ Version: "2021.166.298"
  Dependencies:
-  CIDRAM Core: >=1
- Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
+  CIDRAM Core: ">=1"
+ Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat"
  Uninstallable: true
  Files:
   From:
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/ipv4_nonblocking.dat
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/ipv4_nonblocking.dat"
   To:
-   - ipv4_nonblocking.dat
+   - "ipv4_nonblocking.dat"
   Checksum:
-   - ed7590e4def93d9de293410f8827613a832f1efbb3f623350de995a8c858e0ff:641
- Used with: ipv4
- Reannotate: components.dat
+   - "ed7590e4def93d9de293410f8827613a832f1efbb3f623350de995a8c858e0ff:641"
+ Used with: "ipv4"
+ Reannotate: "components.dat"
 IPv4-Other:
- Extended Description: Default IPv4 signatures normally included with the main package. Blocks CIDRs for proxies, VPNs, and other miscellaneous unwanted services.
- False Positive Risk: Medium
- Version: 2022.6.0
+ Extended Description: "Default IPv4 signatures normally included with the main package. Blocks CIDRs for proxies, VPNs, and other miscellaneous unwanted services."
+ False Positive Risk: "Medium"
+ Version: "2022.6.0"
  Dependencies:
-  CIDRAM Core: >=1
- Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
+  CIDRAM Core: ">=1"
+ Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat"
  Uninstallable: true
  Files:
   From:
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/ipv4_other.dat
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/ipv4_other.dat"
   To:
-   - ipv4_other.dat
+   - "ipv4_other.dat"
   Checksum:
-   - a58e98078854ac3cd84ebb91bb3298158df3580e34ef05b90ffdce6901700aa3:34194
- Used with: ipv4
- Reannotate: components.dat
+   - "a58e98078854ac3cd84ebb91bb3298158df3580e34ef05b90ffdce6901700aa3:34194"
+ Used with: "ipv4"
+ Reannotate: "components.dat"
 IPv6:
- Extended Description: Default IPv6 signatures normally included with the main package. Blocks unwanted cloud services and non-human endpoints.
- False Positive Risk: Low
- Version: 2022.37.0
+ Extended Description: "Default IPv6 signatures normally included with the main package. Blocks unwanted cloud services and non-human endpoints."
+ False Positive Risk: "Low"
+ Version: "2022.44.0"
  Dependencies:
-  CIDRAM Core: >=1
-  Bypasses: >=2021.260.503
- Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
+  CIDRAM Core: ">=1"
+  Bypasses: ">=2021.260.503"
+ Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat"
  Uninstallable: true
  Files:
   From:
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/ipv6.dat
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/ipv6.dat"
   To:
-   - ipv6.dat
+   - "ipv6.dat"
   Checksum:
-   - ce6666742ccc428b6e8ec0e2d55ead1a949f6bbc9c9e61f2fc74692d77f67d46:283946
- Used with: ipv6
- Reannotate: components.dat
+   - "31892e58f332633d2b822d3f35018a842e82c357d7f9e997d028ade624cd9cb6:283657"
+ Used with: "ipv6"
+ Reannotate: "components.dat"
 IPv6-Bogons:
- Extended Description: Default IPv6 signatures normally included with the main package. Blocks bogon/martian CIDRs.
- False Positive Risk: Low
- Version: 2021.166.298
+ Extended Description: "Default IPv6 signatures normally included with the main package. Blocks bogon/martian CIDRs."
+ False Positive Risk: "Low"
+ Version: "2021.166.298"
  Dependencies:
-  CIDRAM Core: >=1
- Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
+  CIDRAM Core: ">=1"
+ Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat"
  Uninstallable: true
  Files:
   From:
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/ipv6_bogons.dat
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/ipv6_bogons.dat"
   To:
-   - ipv6_bogons.dat
+   - "ipv6_bogons.dat"
   Checksum:
-   - d032ee14e20c4217721b277b07d6f3bceb29be4332396b2615804977f3c55fdd:954
- Used with: ipv6
- Reannotate: components.dat
+   - "d032ee14e20c4217721b277b07d6f3bceb29be4332396b2615804977f3c55fdd:954"
+ Used with: "ipv6"
+ Reannotate: "components.dat"
 IPv6-ISPs:
- Extended Description: Default IPv6 signatures normally included with the main package. Blocks dangerous and spammy ISPs.
- False Positive Risk: Medium
- Version: 2022.37.0
+ Extended Description: "Default IPv6 signatures normally included with the main package. Blocks dangerous and spammy ISPs."
+ False Positive Risk: "Medium"
+ Version: "2022.44.0"
  Dependencies:
-  CIDRAM Core: >=1
-  Bypasses: >=2021.192.550
- Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
+  CIDRAM Core: ">=1"
+  Bypasses: ">=2021.192.550"
+ Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat"
  Uninstallable: true
  Files:
   From:
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/ipv6_isps.dat
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/ipv6_isps.dat"
   To:
-   - ipv6_isps.dat
+   - "ipv6_isps.dat"
   Checksum:
-   - a9d6b9842969dc8eb18cbd89774a629ecb1b8ce737a2c2fc9d6d7ce8a00956f7:50962
- Used with: ipv6
- Reannotate: components.dat
+   - "90a0b209bfcab9ff7fb159b389ed7864fb4e7201e59e204fe2ac9c7fdc6c686b:51366"
+ Used with: "ipv6"
+ Reannotate: "components.dat"
 IPv6-Nonblocking:
- Extended Description: Default IPv6 non-blocking signatures file.
- Version: 2021.166.298
+ Extended Description: "Default IPv6 non-blocking signatures file."
+ Version: "2021.166.298"
  Dependencies:
-  CIDRAM Core: >=1
- Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
+  CIDRAM Core: ">=1"
+ Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat"
  Uninstallable: true
  Files:
   From:
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/ipv6_nonblocking.dat
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/ipv6_nonblocking.dat"
   To:
-   - ipv6_nonblocking.dat
+   - "ipv6_nonblocking.dat"
   Checksum:
-   - 2cf0afbe9d80a38e273657841f4185034c7b2044a94533e6a2ee9b1e1a4e3b36:619
- Used with: ipv6
- Reannotate: components.dat
+   - "2cf0afbe9d80a38e273657841f4185034c7b2044a94533e6a2ee9b1e1a4e3b36:619"
+ Used with: "ipv6"
+ Reannotate: "components.dat"
 IPv6-Other:
- Extended Description: Default IPv6 signatures normally included with the main package. Blocks CIDRs for proxies, VPNs, and other miscellaneous unwanted services.
- False Positive Risk: Low
- Version: 2022.6.0
+ Extended Description: "Default IPv6 signatures normally included with the main package. Blocks CIDRs for proxies, VPNs, and other miscellaneous unwanted services."
+ False Positive Risk: "Low"
+ Version: "2022.6.0"
  Dependencies:
-  CIDRAM Core: >=1
- Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
+  CIDRAM Core: ">=1"
+ Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat"
  Uninstallable: true
  Files:
   From:
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/ipv6_other.dat
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/ipv6_other.dat"
   To:
-   - ipv6_other.dat
+   - "ipv6_other.dat"
   Checksum:
-   - 1d68543cc10a357cd8b94775bde257f281d5499b7c24d7c1c056cfdc21cf761a:3235
- Used with: ipv6
- Reannotate: components.dat
+   - "1d68543cc10a357cd8b94775bde257f281d5499b7c24d7c1c056cfdc21cf761a:3235"
+ Used with: "ipv6"
+ Reannotate: "components.dat"
 Bypasses:
- Version: 2022.21.500
+ Version: "2022.21.500"
  Dependencies:
-  PHP: >=5.4
-  CIDRAM Core: ^1.19.1-DEV
- Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
+  PHP: ">=5.4"
+  CIDRAM Core: "^1.19.1"
+ Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat"
  Uninstallable: true
  Files:
   From:
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/bypasses.php
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/bypasses.yml
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/bypasses.php"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/bypasses.yml"
   To:
-   - bypasses.php
-   - bypasses.yml
+   - "bypasses.php"
+   - "bypasses.yml"
   Checksum:
-   - 65572d136121f870cf66bbed1da41bda313fe0d6e4bd2df4c5fd6d504ee6b155:10624
-   - 2a64230b87bc71c0901c7d306ea06035be0ffc290d36d94048f5fe300004710d:917
+   - "65572d136121f870cf66bbed1da41bda313fe0d6e4bd2df4c5fd6d504ee6b155:10624"
+   - "2a64230b87bc71c0901c7d306ea06035be0ffc290d36d94048f5fe300004710d:917"
  Used with:
-  - n/a
-  - imports
- Reannotate: components.dat
+  - "n/a"
+  - "imports"
+ Reannotate: "components.dat"
 l10n/en:
- Name: L10N: English
- Extended Description: English language data
- Version: 2022.21.0
+ Name: "L10N: English"
+ Extended Description: "English language data"
+ Version: "2022.44.0"
  Dependencies:
-  CIDRAM Core: ^1.10
- Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
+  CIDRAM Core: "^1.10"
+ Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat"
  Files:
   From:
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.en.cli.yaml
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.en.fe.yaml
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.en.yaml
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.en.cli.yaml"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.en.fe.yaml"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.en.yaml"
   To:
-   - lang/lang.en.cli.yaml
-   - lang/lang.en.fe.yaml
-   - lang/lang.en.yaml
+   - "lang/lang.en.cli.yaml"
+   - "lang/lang.en.fe.yaml"
+   - "lang/lang.en.yaml"
   Checksum:
-   - b99e12d3b56893d61968ae0b83e58ea87ce97b0f4de799d25597fabfc4c30d5b:3490
-   - 7c61883dfd3be0d1fc76949f1a8936ea1198e37618a0160a369a168992467f98:49921
-   - 65f069d60fcf64379a708d7ae83dea7bc20e6c1671e671af8b525dbb4709362e:4571
- Reannotate: components.dat
+   - "b99e12d3b56893d61968ae0b83e58ea87ce97b0f4de799d25597fabfc4c30d5b:3490"
+   - "7c61883dfd3be0d1fc76949f1a8936ea1198e37618a0160a369a168992467f98:49921"
+   - "8f0c5aaf2889551a258675892041eff2739b129f7038098b61fa21bc583269fa:4481"
+ Reannotate: "components.dat"
 l10n/ar:
- Name: L10N: العربية
- Extended Description: ملفات اللغة العربية
- Version: 2022.21.0
+ Name: "L10N: العربية"
+ Extended Description: "ملفات اللغة العربية"
+ Version: "2022.44.0"
  Dependencies:
-  CIDRAM Core: ^1.10
- Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
+  CIDRAM Core: "^1.10"
+ Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat"
  Uninstallable: true
  Files:
   From:
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.ar.cli.yaml
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.ar.fe.yaml
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.ar.yaml
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.ar.cli.yaml"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.ar.fe.yaml"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.ar.yaml"
   To:
-   - lang/lang.ar.cli.yaml
-   - lang/lang.ar.fe.yaml
-   - lang/lang.ar.yaml
+   - "lang/lang.ar.cli.yaml"
+   - "lang/lang.ar.fe.yaml"
+   - "lang/lang.ar.yaml"
   Checksum:
-   - f862c0ba33a71c49e68e97000f05691683c8f73938f72f199b01a5313885366e:4224
-   - a340c8d04a80a9dbac910b5ee10747ed39a5fe35aba64c126e273eaddf6eeb23:67736
-   - 9db46a6061cb1ad3a41d0a059b578ebc64ebd02c8e5d0ce77ad1856fa9f10157:4905
- Reannotate: components.dat
+   - "f862c0ba33a71c49e68e97000f05691683c8f73938f72f199b01a5313885366e:4224"
+   - "a340c8d04a80a9dbac910b5ee10747ed39a5fe35aba64c126e273eaddf6eeb23:67736"
+   - "fea289c3b7607862a4e313158120c4c7951d831b582f95456288ddd90736e9d6:4808"
+ Reannotate: "components.dat"
 l10n/bn:
- Name: L10N: বাংলা
- Extended Description: বাংলা ভাষার তথ্য
- Version: 2022.21.0
+ Name: "L10N: বাংলা"
+ Extended Description: "বাংলা ভাষার তথ্য"
+ Version: "2022.44.0"
  Dependencies:
-  CIDRAM Core: ^1.10
- Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
+  CIDRAM Core: "^1.10"
+ Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat"
  Uninstallable: true
  Files:
   From:
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.bn.cli.yaml
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.bn.fe.yaml
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.bn.yaml
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.bn.cli.yaml"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.bn.fe.yaml"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.bn.yaml"
   To:
-   - lang/lang.bn.cli.yaml
-   - lang/lang.bn.fe.yaml
-   - lang/lang.bn.yaml
+   - "lang/lang.bn.cli.yaml"
+   - "lang/lang.bn.fe.yaml"
+   - "lang/lang.bn.yaml"
   Checksum:
-   - b915d2daf3429cdbe63bb2b99ccf3967a5732254adfca3967eea3c6fb5266ab3:6437
-   - d383a35fe18c2f3daa7170a9c68752ce5df33aa96a8f5114c63d1a2bb111aa56:99532
-   - b73b22520d8433e062f7fb67f84b249c7e47ed9e5e6a46d2b1de2097f449014e:9953
- Reannotate: components.dat
+   - "b915d2daf3429cdbe63bb2b99ccf3967a5732254adfca3967eea3c6fb5266ab3:6437"
+   - "d383a35fe18c2f3daa7170a9c68752ce5df33aa96a8f5114c63d1a2bb111aa56:99532"
+   - "5491f6ee1db661d2291a4fdf528bdd9722d8c697c2bc6a95d93a3cb05485f04b:9845"
+ Reannotate: "components.dat"
 l10n/de:
- Name: L10N: Deutsche
- Extended Description: Deutsche Sprachdateien
- Version: 2022.21.0
+ Name: "L10N: Deutsche"
+ Extended Description: "Deutsche Sprachdateien"
+ Version: "2022.44.0"
  Dependencies:
-  CIDRAM Core: ^1.10
- Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
+  CIDRAM Core: "^1.10"
+ Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat"
  Uninstallable: true
  Files:
   From:
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.de.cli.yaml
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.de.fe.yaml
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.de.yaml
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.de.cli.yaml"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.de.fe.yaml"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.de.yaml"
   To:
-   - lang/lang.de.cli.yaml
-   - lang/lang.de.fe.yaml
-   - lang/lang.de.yaml
+   - "lang/lang.de.cli.yaml"
+   - "lang/lang.de.fe.yaml"
+   - "lang/lang.de.yaml"
   Checksum:
-   - 56f1b54ba49adfc26d788c3f5e95d0aefb62e2c583c8f81bc258754f478be5da:3813
-   - 59f99b0540e7c6383862942232c8ca8f7252252bb77702ec7cb2580ace80a091:56799
-   - ca6663fe7787f85ec68d74d3930d78ba388cfc5846d61e45f497c7a69e409243:5149
- Reannotate: components.dat
+   - "56f1b54ba49adfc26d788c3f5e95d0aefb62e2c583c8f81bc258754f478be5da:3813"
+   - "59f99b0540e7c6383862942232c8ca8f7252252bb77702ec7cb2580ace80a091:56799"
+   - "c470432026889bebe979c5c21f3178610be41b44ec5af2030938c6356f4f7576:5059"
+ Reannotate: "components.dat"
 l10n/es:
- Name: L10N: Español
- Extended Description: Lingüísticos datos Español
- Version: 2022.21.0
+ Name: "L10N: Español"
+ Extended Description: "Lingüísticos datos Español"
+ Version: "2022.44.0"
  Dependencies:
-  CIDRAM Core: ^1.10
- Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
+  CIDRAM Core: "^1.10"
+ Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat"
  Uninstallable: true
  Files:
   From:
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.es.cli.yaml
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.es.fe.yaml
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.es.yaml
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.es.cli.yaml"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.es.fe.yaml"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.es.yaml"
   To:
-   - lang/lang.es.cli.yaml
-   - lang/lang.es.fe.yaml
-   - lang/lang.es.yaml
+   - "lang/lang.es.cli.yaml"
+   - "lang/lang.es.fe.yaml"
+   - "lang/lang.es.yaml"
   Checksum:
-   - abb4bd3d9bfe47ff7e2feeb7ccb0af5b524c259c5cbbbb942e6e7652d1d3a319:3756
-   - 87bdf550eed57d9704b6ac824f18dccd7521a24f73bfe8eb10508bf03996ad8a:57248
-   - 72c04fc16ce017ab2c1e2fbec14f8e1bf5cb0547f4dea0274f74446c86e6d844:4961
- Reannotate: components.dat
+   - "abb4bd3d9bfe47ff7e2feeb7ccb0af5b524c259c5cbbbb942e6e7652d1d3a319:3756"
+   - "87bdf550eed57d9704b6ac824f18dccd7521a24f73bfe8eb10508bf03996ad8a:57248"
+   - "70528e1e589a0e6041a57826d4f6e001517d1f662ed720d103473119ef684ce8:4870"
+ Reannotate: "components.dat"
 l10n/fr:
- Name: L10N: Français
- Extended Description: Linguistiques données en Français
- Version: 2022.21.0
+ Name: "L10N: Français"
+ Extended Description: "Linguistiques données en Français"
+ Version: "2022.44.0"
  Dependencies:
-  CIDRAM Core: ^1.10
- Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
+  CIDRAM Core: "^1.10"
+ Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat"
  Uninstallable: true
  Files:
   From:
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.fr.cli.yaml
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.fr.fe.yaml
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.fr.yaml
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.fr.cli.yaml"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.fr.fe.yaml"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.fr.yaml"
   To:
-   - lang/lang.fr.cli.yaml
-   - lang/lang.fr.fe.yaml
-   - lang/lang.fr.yaml
+   - "lang/lang.fr.cli.yaml"
+   - "lang/lang.fr.fe.yaml"
+   - "lang/lang.fr.yaml"
   Checksum:
-   - 6bbf33d23b764ccf1bceacacf3418782ee49bb70cf6b810a1e18751b62c54c56:3954
-   - 891150601447ff1654c94d9c26f4f83d3b31c35ed92190f53f3b10c9708b960e:58553
-   - a0b49b8ed36a75a149b3b1ed1fb244195a5120fe2ff61f0d50578e904b858431:5276
- Reannotate: components.dat
+   - "6bbf33d23b764ccf1bceacacf3418782ee49bb70cf6b810a1e18751b62c54c56:3954"
+   - "891150601447ff1654c94d9c26f4f83d3b31c35ed92190f53f3b10c9708b960e:58553"
+   - "aaae4e1c6c0de7e0a4ce808323bd2c15c1679d9d194b6621cc5cc61809d99ac5:5174"
+ Reannotate: "components.dat"
 l10n/hi:
- Name: L10N: हिंदी
- Extended Description: हिंदी भाषा डाटा
- Version: 2022.21.0
+ Name: "L10N: हिंदी"
+ Extended Description: "हिंदी भाषा डाटा"
+ Version: "2022.44.0"
  Dependencies:
-  CIDRAM Core: ^1.10
- Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
+  CIDRAM Core: "^1.10"
+ Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat"
  Uninstallable: true
  Files:
   From:
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.hi.cli.yaml
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.hi.fe.yaml
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.hi.yaml
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.hi.cli.yaml"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.hi.fe.yaml"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.hi.yaml"
   To:
-   - lang/lang.hi.cli.yaml
-   - lang/lang.hi.fe.yaml
-   - lang/lang.hi.yaml
+   - "lang/lang.hi.cli.yaml"
+   - "lang/lang.hi.fe.yaml"
+   - "lang/lang.hi.yaml"
   Checksum:
-   - 4c2e6854b94b898a44d6651f53d7d113c7249af5550f2bda4189e493f605a200:6883
-   - a98eb4fd4fff6afa6434825697d9673fc6d759c2bd485d3096d9a772e1eeac4d:99857
-   - 2f9db1ba2c9d4c75553af05d64830d4529091122016cb58571bc7d8b2f28a926:8993
- Reannotate: components.dat
+   - "4c2e6854b94b898a44d6651f53d7d113c7249af5550f2bda4189e493f605a200:6883"
+   - "a98eb4fd4fff6afa6434825697d9673fc6d759c2bd485d3096d9a772e1eeac4d:99857"
+   - "c12f7733c8e60148e288bead291aa0013ded6db130e72b175d38e08fb6ee306e:8885"
+ Reannotate: "components.dat"
 l10n/id:
- Name: L10N: Bahasa Indonesia
- Extended Description: File Bahasa Indonesia
- Version: 2022.21.0
+ Name: "L10N: Bahasa Indonesia"
+ Extended Description: "File Bahasa Indonesia"
+ Version: "2022.44.0"
  Dependencies:
-  CIDRAM Core: ^1.10
- Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
+  CIDRAM Core: "^1.10"
+ Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat"
  Uninstallable: true
  Files:
   From:
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.id.cli.yaml
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.id.fe.yaml
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.id.yaml
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.id.cli.yaml"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.id.fe.yaml"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.id.yaml"
   To:
-   - lang/lang.id.cli.yaml
-   - lang/lang.id.fe.yaml
-   - lang/lang.id.yaml
+   - "lang/lang.id.cli.yaml"
+   - "lang/lang.id.fe.yaml"
+   - "lang/lang.id.yaml"
   Checksum:
-   - 8a5d2a01ae56afa4d6ac12030e684478333d42e79efdb3769fb8000b69e07480:3620
-   - d5214b344231fe9d72a2d516aced98298fc1610e4c9b547e457f43ba356b6523:52708
-   - f550f1e233f1c1204d90720ce5b91226558b4735a4b6b05e74bdcb4537bf8cec:4839
- Reannotate: components.dat
+   - "8a5d2a01ae56afa4d6ac12030e684478333d42e79efdb3769fb8000b69e07480:3620"
+   - "d5214b344231fe9d72a2d516aced98298fc1610e4c9b547e457f43ba356b6523:52708"
+   - "a726d49aa61d80526edba0f5dc4594bad9d25740111dceb44a7b04bc043f7d5d:4745"
+ Reannotate: "components.dat"
 l10n/it:
- Name: L10N: Italiana
- Extended Description: Linguistici dati Italiana
- Version: 2022.21.0
+ Name: "L10N: Italiana"
+ Extended Description: "Linguistici dati Italiana"
+ Version: "2022.44.0"
  Dependencies:
-  CIDRAM Core: ^1.10
- Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
+  CIDRAM Core: "^1.10"
+ Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat"
  Uninstallable: true
  Files:
   From:
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.it.cli.yaml
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.it.fe.yaml
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.it.yaml
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.it.cli.yaml"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.it.fe.yaml"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.it.yaml"
   To:
-   - lang/lang.it.cli.yaml
-   - lang/lang.it.fe.yaml
-   - lang/lang.it.yaml
+   - "lang/lang.it.cli.yaml"
+   - "lang/lang.it.fe.yaml"
+   - "lang/lang.it.yaml"
   Checksum:
-   - 194fb2c526f08a93fe1214ab1ab48a50a81490088c602daece8fd870db9456ab:3666
-   - 170eb7fd7655622d46ad35cef983ba0d5262dedd950bee5af6cec44fe170ccbb:55716
-   - a704622d6e964bb4e072b25adcd25ca24b0451c2d6caab4bc7d100dd50aac630:5090
- Reannotate: components.dat
+   - "194fb2c526f08a93fe1214ab1ab48a50a81490088c602daece8fd870db9456ab:3666"
+   - "170eb7fd7655622d46ad35cef983ba0d5262dedd950bee5af6cec44fe170ccbb:55716"
+   - "70b672296e95eb3115cc81917a2522f28cf5968e49422b496c830b903e5de88f:4999"
+ Reannotate: "components.dat"
 l10n/ja:
- Name: L10N: 日本語
- Extended Description: 日本語言語データ
- Version: 2022.21.0
+ Name: "L10N: 日本語"
+ Extended Description: "日本語言語データ"
+ Version: "2022.44.0"
  Dependencies:
-  CIDRAM Core: ^1.10
- Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
+  CIDRAM Core: "^1.10"
+ Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat"
  Uninstallable: true
  Files:
   From:
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.ja.cli.yaml
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.ja.fe.yaml
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.ja.yaml
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.ja.cli.yaml"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.ja.fe.yaml"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.ja.yaml"
   To:
-   - lang/lang.ja.cli.yaml
-   - lang/lang.ja.fe.yaml
-   - lang/lang.ja.yaml
+   - "lang/lang.ja.cli.yaml"
+   - "lang/lang.ja.fe.yaml"
+   - "lang/lang.ja.yaml"
   Checksum:
-   - 000d9859ca17c0daa637cdaff12090a8b3bb638289b5d1fd035e43c6369f362b:4760
-   - c05065e119eef47cdf270e390f8c2959bb9d68dc875a45875b0b1f211b3533ba:69331
-   - 28fd9bc2ddf9dcab232669313e856d1e6652064ca1e3f9adffdd9151dc91e6e6:5780
- Reannotate: components.dat
+   - "000d9859ca17c0daa637cdaff12090a8b3bb638289b5d1fd035e43c6369f362b:4760"
+   - "c05065e119eef47cdf270e390f8c2959bb9d68dc875a45875b0b1f211b3533ba:69331"
+   - "268dd2778fa3d6aee353cd17eb510c5aa339dd9668d10efe1e6fc055cd11eefb:5693"
+ Reannotate: "components.dat"
 l10n/ko:
- Name: L10N: 한국어
- Extended Description: 한국어 언어 데이터
- Version: 2022.21.0
+ Name: "L10N: 한국어"
+ Extended Description: "한국어 언어 데이터"
+ Version: "2022.44.0"
  Dependencies:
-  CIDRAM Core: ^1.10
- Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
+  CIDRAM Core: "^1.10"
+ Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat"
  Uninstallable: true
  Files:
   From:
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.ko.cli.yaml
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.ko.fe.yaml
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.ko.yaml
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.ko.cli.yaml"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.ko.fe.yaml"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.ko.yaml"
   To:
-   - lang/lang.ko.cli.yaml
-   - lang/lang.ko.fe.yaml
-   - lang/lang.ko.yaml
+   - "lang/lang.ko.cli.yaml"
+   - "lang/lang.ko.fe.yaml"
+   - "lang/lang.ko.yaml"
   Checksum:
-   - 0f77e554013e62c1275707210e5912a5073581005966d1a67bd043701265c214:3972
-   - 0793e9dac84472f6d149858a5e76c5db09043cc906ecab2e12d629903378123c:57379
-   - 8102e73c48e880be22b29bbfa74e85381e5fb00bb9626fac46ed203a0af31934:4714
- Reannotate: components.dat
+   - "0f77e554013e62c1275707210e5912a5073581005966d1a67bd043701265c214:3972"
+   - "0793e9dac84472f6d149858a5e76c5db09043cc906ecab2e12d629903378123c:57379"
+   - "2283c19cf223b946a54962588d47a04b12cc9bf5c3746383d29388ea9c38610f:4627"
+ Reannotate: "components.dat"
 l10n/nl:
- Name: L10N: Nederlandse
- Extended Description: Nederlandse lokalisatie
- Version: 2022.21.0
+ Name: "L10N: Nederlandse"
+ Extended Description: "Nederlandse lokalisatie"
+ Version: "2022.44.0"
  Dependencies:
-  CIDRAM Core: ^1.10
- Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
+  CIDRAM Core: "^1.10"
+ Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat"
  Uninstallable: true
  Files:
   From:
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.nl.cli.yaml
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.nl.fe.yaml
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.nl.yaml
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.nl.cli.yaml"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.nl.fe.yaml"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.nl.yaml"
   To:
-   - lang/lang.nl.cli.yaml
-   - lang/lang.nl.fe.yaml
-   - lang/lang.nl.yaml
+   - "lang/lang.nl.cli.yaml"
+   - "lang/lang.nl.fe.yaml"
+   - "lang/lang.nl.yaml"
   Checksum:
-   - 51c291c8f50b3765a9764383a41c3a547e6a36bdb30a1e26c6b6d91a985aeec2:3663
-   - ccbfbac3782c247e3d7de6b0069ee26f3ef2625e607a67e3bc26340d01b0d317:54423
-   - 10328d39ea18ae61586c46d1ea400075e9d09fa0c905b55ff962f4386915425c:4897
- Reannotate: components.dat
+   - "51c291c8f50b3765a9764383a41c3a547e6a36bdb30a1e26c6b6d91a985aeec2:3663"
+   - "ccbfbac3782c247e3d7de6b0069ee26f3ef2625e607a67e3bc26340d01b0d317:54423"
+   - "c331788a1de5d3b6048b9a3f2cc4861083ecc428f412656cf98f1ee717a9a71c:4803"
+ Reannotate: "components.dat"
 l10n/no:
- Name: L10N: Norsk
- Extended Description: Norsk språkdata
- Version: 2022.21.0
+ Name: "L10N: Norsk"
+ Extended Description: "Norsk språkdata"
+ Version: "2022.44.0"
  Dependencies:
-  CIDRAM Core: ^1.10
- Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
+  CIDRAM Core: "^1.10"
+ Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat"
  Uninstallable: true
  Files:
   From:
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.no.cli.yaml
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.no.fe.yaml
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.no.yaml
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.no.cli.yaml"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.no.fe.yaml"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.no.yaml"
   To:
-   - lang/lang.no.cli.yaml
-   - lang/lang.no.fe.yaml
-   - lang/lang.no.yaml
+   - "lang/lang.no.cli.yaml"
+   - "lang/lang.no.fe.yaml"
+   - "lang/lang.no.yaml"
   Checksum:
-   - 8b2917bac741e15f80309948499543166f951f32c3f0b3d7c3cb6cc97ecc74f1:3573
-   - 0a9a55409bda1afe2c2f55f8e5c9e6feb51b31478cb9e8db900c180e2ae9d5cd:51754
-   - 0575044141e389982ceaa80e026bf008ad6f35be30c53361932fc87a9bf1ac76:4799
- Reannotate: components.dat
+   - "8b2917bac741e15f80309948499543166f951f32c3f0b3d7c3cb6cc97ecc74f1:3573"
+   - "0a9a55409bda1afe2c2f55f8e5c9e6feb51b31478cb9e8db900c180e2ae9d5cd:51754"
+   - "79ade91f2de6323042bcf35db38b70766d1eaae91ed1ab100651fad99218f4da:4711"
+ Reannotate: "components.dat"
 l10n/pt:
- Name: L10N: Português
- Extended Description: Linguagem dados Português
- Version: 2022.21.0
+ Name: "L10N: Português"
+ Extended Description: "Linguagem dados Português"
+ Version: "2022.44.0"
  Dependencies:
-  CIDRAM Core: ^1.10
- Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
+  CIDRAM Core: "^1.10"
+ Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat"
  Uninstallable: true
  Files:
   From:
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.pt.cli.yaml
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.pt.fe.yaml
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.pt.yaml
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.pt.cli.yaml"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.pt.fe.yaml"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.pt.yaml"
   To:
-   - lang/lang.pt.cli.yaml
-   - lang/lang.pt.fe.yaml
-   - lang/lang.pt.yaml
+   - "lang/lang.pt.cli.yaml"
+   - "lang/lang.pt.fe.yaml"
+   - "lang/lang.pt.yaml"
   Checksum:
-   - 133660fca72843da86cd90b5f4d88dddd56a188247f1bea5beacc275438ccda2:3730
-   - 14ad0308eb6557d1adfcc3cc81c656d4ee8700c0156d44296db7fa8166169d5d:55483
-   - d629da28a588b3f8b9330f4bafa67d426e98a0e2fcac914d42f0a532fe3ffc17:4890
- Reannotate: components.dat
+   - "133660fca72843da86cd90b5f4d88dddd56a188247f1bea5beacc275438ccda2:3730"
+   - "14ad0308eb6557d1adfcc3cc81c656d4ee8700c0156d44296db7fa8166169d5d:55483"
+   - "c5cb01888d612d1431986391305104430d717535e9db73d9e60aaa8376720d57:4797"
+ Reannotate: "components.dat"
 l10n/ru:
- Name: L10N: Русский
- Extended Description: Русском языковые файлы
- Version: 2022.21.0
+ Name: "L10N: Русский"
+ Extended Description: "Русском языковые файлы"
+ Version: "2022.44.0"
  Dependencies:
-  CIDRAM Core: ^1.10
- Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
+  CIDRAM Core: "^1.10"
+ Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat"
  Uninstallable: true
  Files:
   From:
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.ru.cli.yaml
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.ru.fe.yaml
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.ru.yaml
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.ru.cli.yaml"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.ru.fe.yaml"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.ru.yaml"
   To:
-   - lang/lang.ru.cli.yaml
-   - lang/lang.ru.fe.yaml
-   - lang/lang.ru.yaml
+   - "lang/lang.ru.cli.yaml"
+   - "lang/lang.ru.fe.yaml"
+   - "lang/lang.ru.yaml"
   Checksum:
-   - df46a464f50f749adb42072c6af955ba6f8fcc63e6b0e6082b1501f1368700f9:5273
-   - aacfd5385f615cbcd6575fecfe2580981649c5dae2674d5508063bc0ec67f5e5:81652
-   - 7743050c96becb61e63ec726189cd4147cc25be653d6759d1f39e2c844b768cb:7543
- Reannotate: components.dat
+   - "df46a464f50f749adb42072c6af955ba6f8fcc63e6b0e6082b1501f1368700f9:5273"
+   - "aacfd5385f615cbcd6575fecfe2580981649c5dae2674d5508063bc0ec67f5e5:81652"
+   - "f3e87df12c3ca93b7ace33ffaa71ea98bd828b0905c949cdf3e38b871407a591:7446"
+ Reannotate: "components.dat"
 l10n/sv:
- Name: L10N: Svenska
- Extended Description: Svenska språkdata
- Version: 2022.21.0
+ Name: "L10N: Svenska"
+ Extended Description: "Svenska språkdata"
+ Version: "2022.44.0"
  Dependencies:
-  CIDRAM Core: ^1.10
- Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
+  CIDRAM Core: "^1.10"
+ Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat"
  Uninstallable: true
  Files:
   From:
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.sv.cli.yaml
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.sv.fe.yaml
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.sv.yaml
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.sv.cli.yaml"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.sv.fe.yaml"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.sv.yaml"
   To:
-   - lang/lang.sv.cli.yaml
-   - lang/lang.sv.fe.yaml
-   - lang/lang.sv.yaml
+   - "lang/lang.sv.cli.yaml"
+   - "lang/lang.sv.fe.yaml"
+   - "lang/lang.sv.yaml"
   Checksum:
-   - a41a1cb77831120d969d084d927ffe748665083b44bb42f0917b66ddc5ff70f7:3595
-   - 08abe249d195762dac2f5384765504a50f843df786fcfa1f26f372b91bfcd1da:52836
-   - b915fb8e9ada68db7af1a2a1011f11f1586e2a9c1add0fbb132d0b48fd411bca:4872
- Reannotate: components.dat
+   - "a41a1cb77831120d969d084d927ffe748665083b44bb42f0917b66ddc5ff70f7:3595"
+   - "08abe249d195762dac2f5384765504a50f843df786fcfa1f26f372b91bfcd1da:52836"
+   - "a0a62931b46685685caa30656d70224aaf74b0ac9c556367aeb5e82b812acbf0:4782"
+ Reannotate: "components.dat"
 l10n/th:
- Name: L10N: ภาษาไทย
- Extended Description: ข้อมูลภาษาไทย
- Version: 2022.21.0
+ Name: "L10N: ภาษาไทย"
+ Extended Description: "ข้อมูลภาษาไทย"
+ Version: "2022.44.0"
  Dependencies:
-  CIDRAM Core: ^1.10
- Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
+  CIDRAM Core: "^1.10"
+ Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat"
  Uninstallable: true
  Files:
   From:
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.th.cli.yaml
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.th.fe.yaml
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.th.yaml
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.th.cli.yaml"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.th.fe.yaml"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.th.yaml"
   To:
-   - lang/lang.th.cli.yaml
-   - lang/lang.th.fe.yaml
-   - lang/lang.th.yaml
+   - "lang/lang.th.cli.yaml"
+   - "lang/lang.th.fe.yaml"
+   - "lang/lang.th.yaml"
   Checksum:
-   - e37521deed8771610e827f9aa7af27867d396fa2d06955cb083c47adf486dafb:6330
-   - f3cd864e95b99185a05ff31d517d42053ca8eb818abee31707edd32aec0c1f6b:92858
-   - 91eb9d5f31262256c9b52e8b015c04fc5a89a308ec333cd39a8858b140ddaee2:8676
- Reannotate: components.dat
+   - "e37521deed8771610e827f9aa7af27867d396fa2d06955cb083c47adf486dafb:6330"
+   - "f3cd864e95b99185a05ff31d517d42053ca8eb818abee31707edd32aec0c1f6b:92858"
+   - "54f833e7356cab043b2a95ef682b8405b1358b61c3af28c0a164fe60ec9066e7:8577"
+ Reannotate: "components.dat"
 l10n/tr:
- Name: L10N: Türkçe
- Extended Description: Türkçe dili verileri
- Version: 2022.21.0
+ Name: "L10N: Türkçe"
+ Extended Description: "Türkçe dili verileri"
+ Version: "2022.44.0"
  Dependencies:
-  CIDRAM Core: ^1.10
- Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
+  CIDRAM Core: "^1.10"
+ Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat"
  Uninstallable: true
  Files:
   From:
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.tr.cli.yaml
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.tr.fe.yaml
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.tr.yaml
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.tr.cli.yaml"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.tr.fe.yaml"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.tr.yaml"
   To:
-   - lang/lang.tr.cli.yaml
-   - lang/lang.tr.fe.yaml
-   - lang/lang.tr.yaml
+   - "lang/lang.tr.cli.yaml"
+   - "lang/lang.tr.fe.yaml"
+   - "lang/lang.tr.yaml"
   Checksum:
-   - 8cf05cb033077d1dbbc1f57c2981acc0c3b398435d0c447ecb04168669c904e0:3615
-   - 5cad2ad11b1bc0c2fcf6c5ff27a6f2f9986f4ed1cd262e188829b75867da686d:55141
-   - 1e0c4dd1cc01431c461d29230db80de2372594ae0f567b3d68ac889c17e79dfa:5048
- Reannotate: components.dat
+   - "8cf05cb033077d1dbbc1f57c2981acc0c3b398435d0c447ecb04168669c904e0:3615"
+   - "5cad2ad11b1bc0c2fcf6c5ff27a6f2f9986f4ed1cd262e188829b75867da686d:55141"
+   - "b545b7310f9010ec67d541478c9cd62468ce92eeefc08332e0518ab810757a24:4957"
+ Reannotate: "components.dat"
 l10n/ur:
- Name: L10N: ‏اردو‏
- Extended Description: ‏اردو‏ زبان فائلوں
- Version: 2022.21.0
+ Name: "L10N: ‏اردو‏"
+ Extended Description: "‏اردو‏ زبان فائلوں"
+ Version: "2022.44.0"
  Dependencies:
-  CIDRAM Core: ^1.10
- Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
+  CIDRAM Core: "^1.10"
+ Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat"
  Uninstallable: true
  Files:
   From:
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.ur.cli.yaml
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.ur.fe.yaml
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.ur.yaml
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.ur.cli.yaml"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.ur.fe.yaml"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.ur.yaml"
   To:
-   - lang/lang.ur.cli.yaml
-   - lang/lang.ur.fe.yaml
-   - lang/lang.ur.yaml
+   - "lang/lang.ur.cli.yaml"
+   - "lang/lang.ur.fe.yaml"
+   - "lang/lang.ur.yaml"
   Checksum:
-   - 4fe5e61b028f0631436c4602a8bf4b59ac2a4d7cb5492ceb96f49eff2b4deb9c:4929
-   - ceae520d3e5ad0279c9098862c749801b7214cf6275731f627c169487a83448a:73497
-   - 3b2dfac5cd3a794087a5dbfca4b8483c6296dc8e35235c46a00dd38eec3e783d:6952
- Reannotate: components.dat
+   - "4fe5e61b028f0631436c4602a8bf4b59ac2a4d7cb5492ceb96f49eff2b4deb9c:4929"
+   - "ceae520d3e5ad0279c9098862c749801b7214cf6275731f627c169487a83448a:73497"
+   - "742e9ad1734407623451bdc70daefeb3ab58f0aab656756a7288b17b065a6de1:6855"
+ Reannotate: "components.dat"
 l10n/vi:
- Name: L10N: Tiếng Việt
- Extended Description: Dữ liệu tiếng Việt
- Version: 2022.21.0
+ Name: "L10N: Tiếng Việt"
+ Extended Description: "Dữ liệu tiếng Việt"
+ Version: "2022.44.0"
  Dependencies:
-  CIDRAM Core: ^1.10
- Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
+  CIDRAM Core: "^1.10"
+ Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat"
  Uninstallable: true
  Files:
   From:
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.vi.cli.yaml
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.vi.fe.yaml
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.vi.yaml
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.vi.cli.yaml"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.vi.fe.yaml"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.vi.yaml"
   To:
-   - lang/lang.vi.cli.yaml
-   - lang/lang.vi.fe.yaml
-   - lang/lang.vi.yaml
+   - "lang/lang.vi.cli.yaml"
+   - "lang/lang.vi.fe.yaml"
+   - "lang/lang.vi.yaml"
   Checksum:
-   - ecbf8d25e4a24df30ffabefaa6af4a4a95216c261b1ee1875d7be32622760ef2:4358
-   - 46a9b8ec6ae74077f75ff89b2aef2202e0331e4c1f9f16b290e605a3eb3c7139:62286
-   - 9e2a8c01c795426e3bc6e49dd305c4e0bc07d24c0ffbfe724168c0273627cc3c:6072
- Reannotate: components.dat
+   - "ecbf8d25e4a24df30ffabefaa6af4a4a95216c261b1ee1875d7be32622760ef2:4358"
+   - "46a9b8ec6ae74077f75ff89b2aef2202e0331e4c1f9f16b290e605a3eb3c7139:62286"
+   - "7b17ab4a1e5e02145d3b68fb10108ef31aa8ac3c6c98ea1f123d563ce3088c47:5980"
+ Reannotate: "components.dat"
 l10n/zh-TW:
- Name: L10N: 中文（傳統）
- Extended Description: 中文（傳統）語言數據
- Version: 2022.21.0
+ Name: "L10N: 中文（傳統）"
+ Extended Description: "中文（傳統）語言數據"
+ Version: "2022.44.0"
  Dependencies:
-  CIDRAM Core: ^1.10
- Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
+  CIDRAM Core: "^1.10"
+ Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat"
  Uninstallable: true
  Files:
   From:
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.zh-tw.cli.yaml
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.zh-tw.fe.yaml
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.zh-tw.yaml
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.zh-tw.cli.yaml"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.zh-tw.fe.yaml"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.zh-tw.yaml"
   To:
-   - lang/lang.zh-tw.cli.yaml
-   - lang/lang.zh-tw.fe.yaml
-   - lang/lang.zh-tw.yaml
+   - "lang/lang.zh-tw.cli.yaml"
+   - "lang/lang.zh-tw.fe.yaml"
+   - "lang/lang.zh-tw.yaml"
   Checksum:
-   - c360c6e58653d4dba998874e960dae8eeb2963f4084f2623f0674f40e4425dfe:3367
-   - 7bb1f24e53ad81b6b6fcb94a310a05db5acc8fdee4cb925f1c4587ae0194f77f:47964
-   - ed05d022793e52224dfc1a0d7bfe68b40ed1bca29f2c588e40df064f76632b3e:4263
- Reannotate: components.dat
+   - "c360c6e58653d4dba998874e960dae8eeb2963f4084f2623f0674f40e4425dfe:3367"
+   - "7bb1f24e53ad81b6b6fcb94a310a05db5acc8fdee4cb925f1c4587ae0194f77f:47964"
+   - "fdbf95757cbec046a3ddfe2cc856c7d1f1d7415cf1ba8583cdfc56573e783d65:4167"
+ Reannotate: "components.dat"
 l10n/zh:
- Name: L10N: 中文（简体）
- Extended Description: 中文（简体）语言数据
- Version: 2022.21.0
+ Name: "L10N: 中文（简体）"
+ Extended Description: "中文（简体）语言数据"
+ Version: "2022.44.0"
  Dependencies:
-  CIDRAM Core: ^1.10
- Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat
+  CIDRAM Core: "^1.10"
+ Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat"
  Uninstallable: true
  Files:
   From:
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.zh.cli.yaml
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.zh.fe.yaml
-   - https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.zh.yaml
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.zh.cli.yaml"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.zh.fe.yaml"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/lang/lang.zh.yaml"
   To:
-   - lang/lang.zh.cli.yaml
-   - lang/lang.zh.fe.yaml
-   - lang/lang.zh.yaml
+   - "lang/lang.zh.cli.yaml"
+   - "lang/lang.zh.fe.yaml"
+   - "lang/lang.zh.yaml"
   Checksum:
-   - 85a885aa2d87579fe0a657d1b2569ac6575d5dcca947aae8895a9f7033275b2e:3366
-   - ebf64625730cf5dc6c1483e6b73a35df0081553fca887a3b85fe65bc7d159879:47957
-   - 135dff584093b69fb66fc7013c82f8cbc39f7c63295aaeef70bbec8354671405:4259
- Reannotate: components.dat
-
+   - "85a885aa2d87579fe0a657d1b2569ac6575d5dcca947aae8895a9f7033275b2e:3366"
+   - "ebf64625730cf5dc6c1483e6b73a35df0081553fca887a3b85fe65bc7d159879:47957"
+   - "72ed7be660a85f4d9d77c1891d43bdc18a2a79a6ecd5b3f6a3cf4b2ac99a5618:4163"
+ Reannotate: "components.dat"

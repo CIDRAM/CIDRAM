@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6_isps.dat
 
-# Version: 2022.37.0
-# Last modified: 2022.02.10
+# Version: 2022.44.0
+# Last modified: 2022.02.14
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -1344,8 +1344,8 @@ Tag: Orange S.A
 # universities in Europe route through this ASN, with mostly human endpoints.
 # Spam, port scans, hack attempts, brute-force, and SSH attacks detected from
 # here. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 2,217.
-# Updated: 2021.05.20
+# Stop Forum Spam (SFS) listings: 2,565.
+# Updated: 2021.05.20 / Checked: 2022.02.14
 
 2a00:5ba0:10:2242::/64 Deny Attacks
 Origin: DE
@@ -1422,13 +1422,13 @@ Tag: NPF SOFTVIDEO Ltd
 
 
 # ASN 31272 ("WildPark Co").
-# Ukrainian domestic ISP. Caught trying to hack into phpMyAdmin pages. Spam,
-# port scans, and webapp, brute-force, and SSH attacks also detected from here.
-# ranges/addresses only. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 5,351.
-# Updated: 2021.05.20
+# Ukrainian domestic ISP. Brute-force, phpMyAdmin-based, SSH, and various
+# webapp attacks, hacking, port scans, and spam detected from here.
+# Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 1,130.
+# Updated: 2022.02.14
 
-2a00:bc00:8800:df85::/64 Deny Spam
+2a00:bc00:8801:44bf::/64 Deny Spam
 Origin: UA
 Profile: Domestic ISP
 Tag: WildPark Co
@@ -1445,6 +1445,19 @@ Tag: WildPark Co
 Origin: BD
 Profile: Commercial;Infrastructure/Transit;Multiplay;Webhosting
 Tag: Mazeda Networks
+
+
+# ASN 9123 ("OOO TimeWeb").
+# Russian multiplay network. Brute-force, XMLRPC/WordPress, and webapp attacks,
+# hacking, port scans, and spam detected from here.
+# Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 221.
+# Updated: 2022.02.14
+
+2a03:6f00:6:1::/64 Deny Attacks
+Origin: RU
+Profile: Domestic ISP;Infrastructure/Transit;Multiplay;Tor endpoints here;Webhosting
+Tag: OOO TimeWeb
 
 
 # ASN 35047 ("Abissnet sh.a").

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Language handler (last modified: 2021.08.25).
+ * This file: Language handler (last modified: 2022.02.13).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -82,27 +82,37 @@ $CIDRAM['YAML']->process($CIDRAM['L10N']['FallbackData'], $CIDRAM['L10N']['Fallb
 /** Build final L10N object. */
 $CIDRAM['L10N'] = new \Maikuolan\Common\L10N($CIDRAM['L10N']['ConfiguredDataArray'], $CIDRAM['L10N']['FallbackDataArray']);
 
+/** Assign language rules. */
+if ($CIDRAM['Config']['general']['lang'] === 'en') {
+    $CIDRAM['L10N']->autoAssignRules('en');
+} else {
+    $CIDRAM['L10N']->autoAssignRules($CIDRAM['Config']['general']['lang'], 'en');
+}
+
 /** Load client-specified L10N data if it's possible to do so. */
 if (!$CIDRAM['Config']['general']['lang_override'] || empty($_SERVER['HTTP_ACCEPT_LANGUAGE'])) {
     $CIDRAM['Client-L10N'] = &$CIDRAM['L10N'];
     $CIDRAM['L10N-Lang-Attache'] = '';
 } else {
-    $CIDRAM['Client-L10N'] = [
-        'Accepted' => preg_replace(['~^([^,]*).*$~', '~[^-a-z]~'], ['\1', ''], strtolower($_SERVER['HTTP_ACCEPT_LANGUAGE']))
-    ];
+    $CIDRAM['Client-L10N'] = [];
+    $CIDRAM['Client-L10N-Accepted'] = preg_replace(
+        ['~^([^,]*).*$~', '~[^-a-z]~'],
+        ['\1', ''],
+        strtolower($_SERVER['HTTP_ACCEPT_LANGUAGE'])
+    );
     if (
-        $CIDRAM['Config']['general']['lang'] !== $CIDRAM['Client-L10N']['Accepted'] &&
-        file_exists($CIDRAM['Vault'] . 'lang/lang.' . $CIDRAM['Client-L10N']['Accepted'] . '.yaml')
+        $CIDRAM['Config']['general']['lang'] !== $CIDRAM['Client-L10N-Accepted'] &&
+        is_readable($CIDRAM['Vault'] . 'lang/lang.' . $CIDRAM['Client-L10N-Accepted'] . '.yaml')
     ) {
-        $CIDRAM['Client-L10N']['Data'] = $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'lang/lang.' . $CIDRAM['Client-L10N']['Accepted'] . '.yaml');
+        $CIDRAM['Client-L10N']['Data'] = $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'lang/lang.' . $CIDRAM['Client-L10N-Accepted'] . '.yaml');
     }
     if (empty($CIDRAM['Client-L10N']['Data'])) {
-        $CIDRAM['Client-L10N']['Accepted'] = preg_replace('~^([^-]*).*$~', '\1', $CIDRAM['Client-L10N']['Accepted']);
+        $CIDRAM['Client-L10N-Accepted'] = preg_replace('~^([^-]*).*$~', '\1', $CIDRAM['Client-L10N-Accepted']);
         if (
-            $CIDRAM['Config']['general']['lang'] !== $CIDRAM['Client-L10N']['Accepted'] &&
-            file_exists($CIDRAM['Vault'] . 'lang/lang.' . $CIDRAM['Client-L10N']['Accepted'] . '.yaml')
+            $CIDRAM['Config']['general']['lang'] !== $CIDRAM['Client-L10N-Accepted'] &&
+            is_readable($CIDRAM['Vault'] . 'lang/lang.' . $CIDRAM['Client-L10N-Accepted'] . '.yaml')
         ) {
-            $CIDRAM['Client-L10N']['Data'] = $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'lang/lang.' . $CIDRAM['Client-L10N']['Accepted'] . '.yaml');
+            $CIDRAM['Client-L10N']['Data'] = $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'lang/lang.' . $CIDRAM['Client-L10N-Accepted'] . '.yaml');
         }
     }
 
@@ -113,9 +123,9 @@ if (!$CIDRAM['Config']['general']['lang_override'] || empty($_SERVER['HTTP_ACCEP
     } else {
         $CIDRAM['Client-L10N']['DataArray'] = [];
         $CIDRAM['YAML']->process($CIDRAM['Client-L10N']['Data'], $CIDRAM['Client-L10N']['DataArray']);
-        $CIDRAM['L10N-Lang-Attache'] = ($CIDRAM['Config']['general']['lang'] === $CIDRAM['Client-L10N']['Accepted']) ? '' : sprintf(
+        $CIDRAM['L10N-Lang-Attache'] = ($CIDRAM['Config']['general']['lang'] === $CIDRAM['Client-L10N-Accepted']) ? '' : sprintf(
             ' lang="%s" dir="%s"',
-            $CIDRAM['Client-L10N']['Accepted'],
+            $CIDRAM['Client-L10N-Accepted'],
             $CIDRAM['Client-L10N']['DataArray']['Text Direction'] ?? 'ltr'
         );
         $CIDRAM['Client-L10N'] = $CIDRAM['Client-L10N']['DataArray'];
@@ -123,4 +133,6 @@ if (!$CIDRAM['Config']['general']['lang_override'] || empty($_SERVER['HTTP_ACCEP
 
     /** Build final client-specific L10N object. */
     $CIDRAM['Client-L10N'] = new \Maikuolan\Common\L10N($CIDRAM['Client-L10N'], $CIDRAM['L10N']);
+    $CIDRAM['Client-L10N']->autoAssignRules($CIDRAM['Client-L10N-Accepted']);
+    unset($CIDRAM['Client-L10N-Accepted']);
 }

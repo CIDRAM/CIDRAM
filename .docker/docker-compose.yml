@@ -1,8 +1,0 @@
-version: '3.7'
-services:
-  apache:
-    image: webdevops/php-apache:${PHP_VERSION:-7.2}-alpine
-    volumes:
-      - ../:/app/
-    ports:
-      - "${DOCKER_IP:-127.0.0.1}:8000:80"

@@ -6,9 +6,12 @@
  * CIDRAM COPYRIGHT 2016 and beyond by Caleb Mazalevskis (Maikuolan).
  */
 
-// Prevent running tests outside of Composer (if the package is deployed
-// somewhere live with this file still intact, useful to prevent hammering and
-// cycles being needlessly wasted).
+/**
+ * If this file remains intact after deploying the package to production,
+ * preventing it from running outside of Composer may be useful as a means of
+ * prevent potential attackers from hammering the file and needlessly wasting
+ * cycles at the server.
+ */
 if (!isset($_SERVER['COMPOSER_BINARY'])) {
     die;
 }
@@ -79,7 +82,7 @@ $Expected = [
     '127.0.0.0/31',
     '127.0.0.1/32'
 ];
-if ($Expected !== $CIDRAM['ExpandIPv4']('127.0.0.1')) {
+if (serialize($Expected) !== serialize($CIDRAM['ExpandIPv4']('127.0.0.1'))) {
     echo 'ExpandIPv4 failed.' . PHP_EOL;
     exit(4);
 }
@@ -215,7 +218,7 @@ $Expected = [
     '0::/127',
     '0::1/128'
 ];
-if ($Expected !== $CIDRAM['ExpandIPv6']('::1')) {
+if (serialize($Expected) !== serialize($CIDRAM['ExpandIPv6']('::1'))) {
     echo 'ExpandIPv6 failed.' . PHP_EOL;
     exit(5);
 }

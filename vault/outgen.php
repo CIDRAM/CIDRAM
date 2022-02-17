@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Output generator (last modified: 2022.02.01).
+ * This file: Output generator (last modified: 2022.02.17).
  */
 
 /** Initialise cache. */
@@ -824,23 +824,6 @@ if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
             ], $CIDRAM['ParseVars']($CIDRAM['Parsables'], $CIDRAM['ReadFile'](
                 $CIDRAM['Vault'] . $CIDRAM['template_file']
             )));
-
-            /** Handle webfonts. */
-            if (empty($CIDRAM['Config']['general']['disable_webfonts'])) {
-                $CIDRAM['HTML'] = str_replace(['<!-- WebFont Begin -->', '<!-- WebFont End -->'], '', $CIDRAM['HTML']);
-            } else {
-                $CIDRAM['WebFontPos'] = [
-                    'Begin' => strpos($CIDRAM['HTML'], '<!-- WebFont Begin -->'),
-                    'End' => strpos($CIDRAM['HTML'], '<!-- WebFont End -->')
-                ];
-                if ($CIDRAM['WebFontPos']['Begin'] !== false && $CIDRAM['WebFontPos']['End'] !== false) {
-                    $CIDRAM['HTML'] = (
-                        substr($CIDRAM['HTML'], 0, $CIDRAM['WebFontPos']['Begin']) .
-                        substr($CIDRAM['HTML'], $CIDRAM['WebFontPos']['End'] + 20)
-                    );
-                }
-                unset($CIDRAM['WebFontPos']);
-            }
         }
     } else {
         $CIDRAM['errCode'] = 301;

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Verification data for search engines and social media (last modified: 2021.10.01).
+# This file: Verification data for search engines and social media (last modified: 2022.02.17).
 ##/
 
 # Additional references: https://udger.com/resources/ua-list/crawlers
@@ -41,21 +41,23 @@ Search Engine Verification:
   Single hit bypass: true
 
  # https://duckduckgo.com/duckduckbot
+ # Updated: 2022.02.17
  DuckDuckBot:
   User Agent Pattern: "~duckduck(?:go-favicons-)?bot~"
   Closure: "UA-IP-Match"
   Valid domains:
+   - "20.185.79.15"
+   - "20.185.79.47"
    - "20.191.45.212"
-   - "23.21.227.69"
+   - "40.76.162.191"
+   - "40.76.162.208"
+   - "40.76.162.247"
+   - "40.76.163.7"
+   - "40.76.163.23"
+   - "40.76.173.151"
    - "40.88.21.235"
-   - "50.16.241.113"
-   - "50.16.241.114"
-   - "50.16.241.117"
-   - "50.16.247.234"
-   - "52.5.190.19"
-   - "52.204.97.54"
-   - "54.197.234.188"
-   - "54.208.100.253"
+   - "52.142.24.149"
+   - "52.142.26.175"
    - "54.208.102.37"
    - "107.21.1.8"
   Single hit bypass: true
@@ -189,6 +191,7 @@ Other Verification:
   Single hit bypass: true
 
  # https://www.oracle.com/corporate/acquisitions/grapeshot/crawler.html
+ # Updated: 2021.03.13 / Checked: 2022.02.17
  Oracle Data Cloud Crawler:
   User Agent: "grapeshot"
   Closure: "UA-CIDR-Match"

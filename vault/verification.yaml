@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Verification data for search engines and social media (last modified: 2022.02.17).
+# This file: Verification data for search engines and social media (last modified: 2022.02.18).
 ##/
 
 # Additional references: https://udger.com/resources/ua-list/crawlers
@@ -148,8 +148,10 @@ Social Media Verification:
 
  # https://developers.facebook.com/docs/sharing/webmasters/crawler/
  # https://github.com/CIDRAM/CIDRAM/issues/170
+ # https://github.com/CIDRAM/CIDRAM/issues/263
+ # Updated: 2022.02.18
  Facebook external hit:
-  User Agent: "facebookexternalhit/"
+  User Agent Pattern: "~facebook(?:catalog|externalhit)/(?!1\.1 facebot twitterbot/1\.0)~"
   Closure: "UA-ASN-Match"
   Valid domains:
    - "32934"
@@ -164,8 +166,10 @@ Social Media Verification:
    - ".pinterestcrawler.com"
 
  # https://udger.com/resources/ua-list/bot-detail?bot=Twitterbot#id6168
+ # https://github.com/CIDRAM/CIDRAM/issues/263
+ # Updated: 2022.02.18
  Twitterbot:
-  User Agent: "twitterbot"
+  User Agent Pattern: "~(?<!facebookexternalhit/1\.1 facebot )twitterbot~"
   Closure: "DNS-Reverse-Forward"
   Valid domains:
    - ".twttr.com"

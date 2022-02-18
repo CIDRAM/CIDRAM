@@ -14,6 +14,7 @@
 Search Engine Verification:
  # https://discussions.apple.com/thread/7090135
  # https://support.apple.com/en-gb/HT204683
+ # Updated: 2020.02.07 / Checked: 2022.02.18
  Applebot:
   User Agent: "applebot"
   Closure: "DNS-Reverse-Forward"
@@ -22,6 +23,7 @@ Search Engine Verification:
 
  # https://help.baidu.com/question?prod_en=master&class=Baiduspider
  # https://help.baidu.com/question?prod_id=99&class=476&id=3001
+ # Updated: 2020.02.07 / Checked: 2022.02.18
  Baiduspider/百度:
   Bypass flag: "Flag-Bypass-Baidu-Check"
   User Agent: "baiduspider"
@@ -32,6 +34,7 @@ Search Engine Verification:
 
  # https://blogs.bing.com/webmaster/2012/08/31/how-to-verify-that-bingbot-is-bingbot
  # https://github.com/CIDRAM/CIDRAM/issues/242
+ # Updated: 2020.02.07 / Checked: 2022.02.18
  Bingbot:
   Bypass flag: "Flag-Bypass-Bingbot-Check"
   User Agent Pattern: "~(?:msn|bing)bot|bingpreview~"
@@ -63,6 +66,7 @@ Search Engine Verification:
   Single hit bypass: true
 
  # https://support.google.com/webmasters/answer/80553?hl=en
+ # Updated: 2018.07.14 / Checked: 2022.02.18
  Googlebot:
   Bypass flag: "Flag-Bypass-Googlebot-Check"
   User Agent: "googlebot"
@@ -72,6 +76,7 @@ Search Engine Verification:
    - ".googlebot.com"
 
  # https://www.mojeek.com/bot.html
+ # Updated: 2020.02.07 / Checked: 2022.02.18
  MojeekBot:
   User Agent: "mojeekbot"
   Closure: "DNS-Reverse-Forward"
@@ -81,6 +86,7 @@ Search Engine Verification:
  # https://aspiegel.com/petalbot
  # https://github.com/CIDRAM/CIDRAM/issues/254
  # https://webmaster.petalsearch.com/site/petalbot
+ # Updated: 2021.10.01 / Checked: 2022.02.18
  PetalBot:
   Bypass flag: "Flag-Bypass-PetalBot-Check"
   User Agent: "petalbot"
@@ -90,6 +96,7 @@ Search Engine Verification:
    - ".petalsearch.com"
 
  # https://help.qwant.com/bot/
+ # Updated: 2020.02.07 / Checked: 2022.02.18
  Qwantify/Bleriot:
   User Agent: "qwantify/bleriot"
   Closure: "DNS-Reverse-Forward"
@@ -97,6 +104,7 @@ Search Engine Verification:
    - "search.qwant.com"
 
  # https://napoveda.seznam.cz/en/full-text-search/seznambot-crawler/
+ # Updated: 2020.02.07 / Checked: 2022.02.18
  SeznamBot:
   User Agent: "seznambot"
   Closure: "DNS-Reverse-Forward"
@@ -104,6 +112,7 @@ Search Engine Verification:
    - ".seznam.cz"
 
  # https://www.sogou.com/docs/help/webmasters.htm#07
+ # Updated: 2018.07.16 / Checked: 2022.02.18
  Sogou/搜狗:
   Bypass flag: "Flag-Bypass-Sogou-Check"
   User Agent: "sogou"
@@ -112,6 +121,7 @@ Search Engine Verification:
    - ".sogou.com"
 
  # https://help.yahoo.com/help/us/ysearch/slurp
+ # Updated: 2020.02.07 / Checked: 2022.02.18
  Yahoo/Slurp:
   User Agent: "slurp"
   Closure: "DNS-Reverse-Forward"
@@ -120,6 +130,7 @@ Search Engine Verification:
    - ".yse.yahoo.net"
 
  # https://yandex.com/support/webmaster/robot-workings/check-yandex-robots.xml
+ # Updated: 2018.07.14 / Checked: 2022.02.18
  Yandex/Яндекс:
   Bypass flag: "Flag-Bypass-Yandex-Check"
   User Agent: "yandex"
@@ -130,6 +141,7 @@ Search Engine Verification:
    - ".yandex.ru"
 
  # https://udger.com/resources/ua-list/bot-detail?bot=YoudaoBot#id1507
+ # Updated: 2020.02.07 / Checked: 2022.02.18
  YoudaoBot:
   User Agent: "youdaobot"
   Closure: "DNS-Reverse-Forward"
@@ -138,6 +150,7 @@ Search Engine Verification:
 
 Social Media Verification:
  # https://udger.com/resources/ua-list/bot-detail?bot=Embedly#id22674
+ # Updated: 2018.07.14 / Checked: 2022.02.18
  Embedly:
   User Agent: "embedly"
   Closure: "DNS-Reverse-Forward"
@@ -158,6 +171,7 @@ Social Media Verification:
 
  # https://github.com/CIDRAM/CIDRAM/issues/253
  # https://help.pinterest.com/en/articles/about-pinterest-crawler-0
+ # Updated: 2020.02.07 / Checked: 2022.02.18
  Pinterest:
   User Agent: "pinterest"
   Closure: "DNS-Reverse-Forward"
@@ -177,6 +191,7 @@ Social Media Verification:
 Other Verification:
  # https://developers.google.com/search/docs/advanced/crawling/overview-google-crawlers
  # https://github.com/CIDRAM/CIDRAM/issues/233
+ # Updated: 2021.10.01 / Checked: 2022.02.18
  AdSense:
   User Agent: "mediapartners-google"
   Closure: "DNS-Reverse-Forward"
@@ -186,6 +201,7 @@ Other Verification:
 
  # https://adbot.amazon.com/index.html
  # https://github.com/CIDRAM/CIDRAM/issues/260
+ # Updated: 2021.10.01 / Checked: 2022.02.18
  AmazonAdBot:
   Bypass flag: "Flag-Bypass-AmazonAdBot-Check"
   User Agent Pattern: "~amazonadbot|adbot\.amazon\.com~"

@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6.dat
 
-# Version: 2022.44.0
-# Last modified: 2022.02.14
+# Version: 2022.50.0
+# Last modified: 2022.02.20
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -4167,16 +4167,14 @@ Tag: OPTICAL TECHNOLOGIES
 
 
 # ASNs 29302, 32780 ("Hosting Services Inc").
-# Stop Forum Spam (SFS) listings: 24 (AS29302), 1,356 (AS32780).
-# Updated: 2021.05.20
+# Stop Forum Spam (SFS) listings: 54 (AS29302), 607 (AS32780).
+# Updated: 2022.02.20
 
 2602:ffb0:27::/48 Deny Cloud
 2602:ffb0:ffd::/48 Deny Cloud
 2606:2e00:8000::/48 Deny Cloud
 2606:2e00:8002::/47 Deny Cloud
 2606:2e00:8007::/48 Deny Cloud
-2a07:23c0::/48 Deny Cloud
-2a07:23c0:8::/47 Deny Cloud
 Origin: US
 Profile: Webhosting
 Tag: Hosting Services Inc
@@ -9845,6 +9843,46 @@ Tag: SURF B.V
 Origin: SE
 Profile: Webhosting
 Tag: Excellent Hosting Sweden AB
+
+
+# ASN 56630 ("Melbikomas UAB").
+# Dedicated servers and colo provider. SQLi and webapp attacks, hacking, port
+# scans, and spam detected from here.
+# Stop Forum Spam (SFS) listings: 1,083.
+# Updated: 2022.02.20
+
+2a03:f80:7::/48 Deny Cloud
+2a03:f80:70::/48 Deny Cloud
+2a03:f80:359::/48 Deny Cloud
+2a03:f80:370::/47 Deny Cloud
+2a03:f80:3991::/48 Deny Cloud
+Origin: AT
+2a06:f900::/36 Deny Cloud
+2a06:f900:4000::/36 Deny Cloud
+2a06:f901::/36 Deny Cloud
+2a06:f902::/36 Deny Cloud
+2a06:f903::/36 Deny Cloud
+2a06:f904::/36 Deny Cloud
+2a06:f905::/36 Deny Cloud
+2a06:f906::/36 Deny Cloud
+2a06:f907::/36 Deny Cloud
+2a06:f907:4000::/36 Deny Cloud
+2a0d:8400::/32 Deny Cloud
+Origin: LT
+Profile: Dedicated;Infrastructure/Transit;Webhosting
+Tag: Melbikomas UAB
+
+
+# ASN 141677 ("Nathosts Limited").
+# Hong Kong cloud reseller. Brute-force, SSH, honeypot, and webapp attacks,
+# hacking, port scans, and spam detected from here.
+# Stop Forum Spam (SFS) listings: 2,544.
+# Updated: 2022.02.20
+
+2406:840:fefe::/48 Deny Cloud
+Origin: CN
+Profile: Commercial
+Tag: Nathosts Limited
 
 
 # ---

@@ -319,11 +319,11 @@ class ReCaptcha extends Captcha
             return;
         }
 
-        $this->CIDRAM['TemplateData']['captcha_api_include'] = $this->generateCallbackData(
+        $this->CIDRAM['FieldTemplates']['captcha_api_include'] = $this->generateCallbackData(
             $this->CIDRAM['Config']['recaptcha']['sitekey'],
             $this->CIDRAM['Config']['recaptcha']['api']
         );
-        $this->CIDRAM['TemplateData']['captcha_div_include'] = $this->generateTemplateData(
+        $this->CIDRAM['FieldTemplates']['captcha_div_include'] = $this->generateTemplateData(
             $this->CIDRAM['Config']['recaptcha']['sitekey'],
             $this->CIDRAM['Config']['recaptcha']['api'],
             $CookieWarn,

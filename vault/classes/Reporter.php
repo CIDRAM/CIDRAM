@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Report orchestrator (last modified: 2021.09.17).
+ * This file: Report orchestrator (last modified: 2022.02.21).
  */
 
 namespace CIDRAM\Core;
@@ -44,7 +44,7 @@ class Reporter
      * @param string $IP The IP address associated with the current report.
      * @return void
      */
-    public function report($Categories, $Comments, $IP): void
+    public function report($Categories, $Comments, string $IP): void
     {
         if (!isset($this->Reports[$IP])) {
             $this->Reports[$IP] = ['Categories' => [], 'Comments' => [], 'IP' => $IP];

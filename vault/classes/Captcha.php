@@ -70,12 +70,12 @@ class Captcha
     public function determineTheme(): string
     {
         if (!isset(
-            $this->CIDRAM['TemplateData']['theme'],
-            $this->CIDRAM['Config']['Config Defaults']['template_data']['theme']['lightdark'][$this->CIDRAM['TemplateData']['theme']]
+            $this->CIDRAM['FieldTemplates']['theme'],
+            $this->CIDRAM['Config Defaults']['template_data']['theme']['lightdark'][$this->CIDRAM['FieldTemplates']['theme']]
         )) {
             return 'light';
         }
-        return $this->CIDRAM['Config']['Config Defaults']['template_data']['theme']['lightdark'][$this->CIDRAM['TemplateData']['theme']];
+        return $this->CIDRAM['Config Defaults']['template_data']['theme']['lightdark'][$this->CIDRAM['FieldTemplates']['theme']];
     }
 
     /**

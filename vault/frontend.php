@@ -1290,14 +1290,15 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
                                 $CIDRAM['DirValue']['Posts'][] = $CIDRAM['DirValue']['ThisChoiceKey'] . ':' . $CIDRAM['DirValue']['ThisLabelKey'];
                             }
                         }
-                    } else {
-                        if (!empty($_POST[$CIDRAM['ThisDir']['DirLangKey'] . '_' . $CIDRAM['DirValue']['ThisChoiceKey']])) {
-                            $CIDRAM['DirValue']['Posts'][] = $CIDRAM['DirValue']['ThisChoiceKey'];
-                        }
+                    } elseif (!empty($_POST[$CIDRAM['ThisDir']['DirLangKey'] . '_' . $CIDRAM['DirValue']['ThisChoiceKey']])) {
+                        $CIDRAM['DirValue']['Posts'][] = $CIDRAM['DirValue']['ThisChoiceKey'];
                     }
                 }
                 $CIDRAM['DirValue']['Posts'] = implode(',', $CIDRAM['DirValue']['Posts']) ?: '';
-                $CIDRAM['Config'][$CIDRAM['CatKey']][$CIDRAM['DirKey']] = $CIDRAM['DirValue']['Posts'];
+                if (!empty($_POST['updatingConfig']) && $CIDRAM['Config'][$CIDRAM['CatKey']][$CIDRAM['DirKey']] !== $CIDRAM['DirValue']['Posts']) {
+                    $CIDRAM['ConfigModified'] = true;
+                    $CIDRAM['Config'][$CIDRAM['CatKey']][$CIDRAM['DirKey']] = $CIDRAM['DirValue']['Posts'];
+                }
             }
             if (isset($CIDRAM['DirValue']['preview'])) {
                 $CIDRAM['ThisDir']['Preview'] = ($CIDRAM['DirValue']['preview'] === 'allow_other') ? '' : sprintf(

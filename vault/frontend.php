@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2022.02.01).
+ * This file: Front-end handler (last modified: 2022.02.21).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -60,7 +60,7 @@ $CIDRAM['FE'] = [
     'Magnification' => $CIDRAM['Config']['template_data']['magnification'],
 
     /** Define active configuration file. */
-    'ActiveConfigFile' => !empty($CIDRAM['Overrides']) ? $CIDRAM['Domain'] . '.config.ini' : 'config.ini',
+    'ActiveConfigFile' => !empty($CIDRAM['Overrides']) ? $CIDRAM['Domain'] . '.config.yml' : 'config.yml',
 
     /** Current time and date. */
     'DateTime' => $CIDRAM['TimeFormat']($CIDRAM['Now'], $CIDRAM['Config']['general']['time_format']),
@@ -143,9 +143,9 @@ $CIDRAM['FE'] = [
     'Y-m-d' => date('Y-m-d', $CIDRAM['Now']),
 
     /** Make some of the link references available to the main front-end array. */
-    'Links.Discussions' => $CIDRAM['Config']['Links']['Discussions'],
-    'Links.Documentation' => $CIDRAM['Config']['Links']['Documentation'],
-    'Links.Website' => $CIDRAM['Config']['Links']['Website']
+    'Links.Discussions' => $CIDRAM['Links']['Discussions'],
+    'Links.Documentation' => $CIDRAM['Links']['Documentation'],
+    'Links.Website' => $CIDRAM['Links']['Website']
 ];
 
 /** Trace to determine the type of cron operation. */
@@ -1192,6 +1192,9 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
     /** Directive template. */
     $CIDRAM['FE']['ConfigRow'] = $CIDRAM['ReadFile']($CIDRAM['GetAssetPath']('_config_row.html'));
 
+    /** Flag for modified configuration. */
+    $CIDRAM['ConfigModified'] = false;
+
     $CIDRAM['FE']['Indexes'] = '<ul class="pieul">';
 
     /** Generate entries for display and regenerate configuration if any changes were submitted. */
@@ -1200,29 +1203,20 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
         $CIDRAM['FE']['FE_Align_Reverse'],
         $CIDRAM['FE']['45deg']
     );
-    $CIDRAM['RegenerateConfig'] = '';
-    $CIDRAM['ConfigModified'] = (!empty($CIDRAM['QueryVars']['updated']) && $CIDRAM['QueryVars']['updated'] === 'true');
 
     /** For required extensions, classes, etc. */
     $CIDRAM['ReqsLookupCache'] = [];
 
     /** Iterate through configuration defaults. */
-    foreach ($CIDRAM['Config']['Config Defaults'] as $CIDRAM['CatKey'] => $CIDRAM['CatValue']) {
+    foreach ($CIDRAM['Config Defaults'] as $CIDRAM['CatKey'] => $CIDRAM['CatValue']) {
         if (!is_array($CIDRAM['CatValue'])) {
             continue;
         }
-        $CIDRAM['RegenerateConfig'] .= '[' . $CIDRAM['CatKey'] . ']';
         if ($CIDRAM['CatInfo'] = $CIDRAM['L10N']->getString('config_' . $CIDRAM['CatKey']) ?: (
             $CIDRAM['FromModuleConfigL10N']('config_' . $CIDRAM['CatKey'])
         )) {
             $CIDRAM['CatInfo'] = '<br /><em>' . $CIDRAM['CatInfo'] . '</em>';
-            $CIDRAM['RegenerateConfig'] .= "\r\n; " . wordwrap(str_replace(
-                ['&amp;', '&lt;', '&gt;'],
-                ['&', '<', '>'],
-                strip_tags($CIDRAM['CatInfo'])
-            ), 77, "\r\n; ");
         }
-        $CIDRAM['RegenerateConfig'] .= "\r\n\r\n";
         $CIDRAM['FE']['ConfigFields'] .= sprintf(
             '<table><tr><td class="ng2"><div id="%1$s-container" class="s">' .
                 '<a class="showlink" id="%1$s-showlink" href="#%1$s-container" onclick="javascript:showid(\'%1$s-hidelink\');hideid(\'%1$s-showlink\');show(\'%1$s-row\')">%1$s</a>' .
@@ -1264,11 +1258,6 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
                 ' autocomplete="%s"',
                 $CIDRAM['DirValue']['autocomplete']
             );
-            $CIDRAM['RegenerateConfig'] .= '; ' . wordwrap(str_replace(
-                ['&amp;', '&lt;', '&gt;'],
-                ['&', '<', '>'],
-                strip_tags($CIDRAM['ThisDir']['DirLang'])
-            ), 77, "\r\n; ") . "\r\n";
             if (isset($_POST[$CIDRAM['ThisDir']['DirLangKey']])) {
                 if (in_array($CIDRAM['DirValue']['type'], ['bool', 'float', 'int', 'kb', 'string', 'timezone', 'email', 'url'], true)) {
                     $CIDRAM['AutoType']($_POST[$CIDRAM['ThisDir']['DirLangKey']], $CIDRAM['DirValue']['type']);
@@ -1277,20 +1266,18 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
                     !isset($CIDRAM['DirValue']['choices']) ||
                     isset($CIDRAM['DirValue']['choices'][$_POST[$CIDRAM['ThisDir']['DirLangKey']]])
                 )) {
-                    $CIDRAM['Config'][$CIDRAM['CatKey']][$CIDRAM['DirKey']] = $_POST[$CIDRAM['ThisDir']['DirLangKey']];
                     $CIDRAM['ConfigModified'] = true;
+                    $CIDRAM['Config'][$CIDRAM['CatKey']][$CIDRAM['DirKey']] = $_POST[$CIDRAM['ThisDir']['DirLangKey']];
                 } elseif (
                     !empty($CIDRAM['DirValue']['allow_other']) &&
                     $_POST[$CIDRAM['ThisDir']['DirLangKey']] === 'Other' &&
                     isset($_POST[$CIDRAM['ThisDir']['DirLangKeyOther']]) &&
                     !preg_match('/[^\x20-\xFF"\']/', $_POST[$CIDRAM['ThisDir']['DirLangKeyOther']])
                 ) {
-                    $CIDRAM['Config'][$CIDRAM['CatKey']][$CIDRAM['DirKey']] = $_POST[$CIDRAM['ThisDir']['DirLangKeyOther']];
                     $CIDRAM['ConfigModified'] = true;
+                    $CIDRAM['Config'][$CIDRAM['CatKey']][$CIDRAM['DirKey']] = $_POST[$CIDRAM['ThisDir']['DirLangKeyOther']];
                 }
             } elseif (
-                empty($CIDRAM['QueryVars']['updated']) &&
-                $CIDRAM['ConfigModified'] &&
                 $CIDRAM['DirValue']['type'] === 'checkbox' &&
                 isset($CIDRAM['DirValue']['choices']) &&
                 is_array($CIDRAM['DirValue']['choices'])
@@ -1311,15 +1298,6 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
                 }
                 $CIDRAM['DirValue']['Posts'] = implode(',', $CIDRAM['DirValue']['Posts']) ?: '';
                 $CIDRAM['Config'][$CIDRAM['CatKey']][$CIDRAM['DirKey']] = $CIDRAM['DirValue']['Posts'];
-            }
-            if ($CIDRAM['Config'][$CIDRAM['CatKey']][$CIDRAM['DirKey']] === true) {
-                $CIDRAM['RegenerateConfig'] .= $CIDRAM['DirKey'] . "=true\r\n\r\n";
-            } elseif ($CIDRAM['Config'][$CIDRAM['CatKey']][$CIDRAM['DirKey']] === false) {
-                $CIDRAM['RegenerateConfig'] .= $CIDRAM['DirKey'] . "=false\r\n\r\n";
-            } elseif (in_array($CIDRAM['DirValue']['type'], ['float', 'int'], true)) {
-                $CIDRAM['RegenerateConfig'] .= $CIDRAM['DirKey'] . '=' . $CIDRAM['Config'][$CIDRAM['CatKey']][$CIDRAM['DirKey']] . "\r\n\r\n";
-            } else {
-                $CIDRAM['RegenerateConfig'] .= $CIDRAM['DirKey'] . '=\'' . $CIDRAM['Config'][$CIDRAM['CatKey']][$CIDRAM['DirKey']] . "'\r\n\r\n";
             }
             if (isset($CIDRAM['DirValue']['preview'])) {
                 $CIDRAM['ThisDir']['Preview'] = ($CIDRAM['DirValue']['preview'] === 'allow_other') ? '' : sprintf(
@@ -1642,7 +1620,6 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
             $CIDRAM['CatData']
         );
         $CIDRAM['FE']['ConfigFields'] .= "</table></span>\n";
-        $CIDRAM['RegenerateConfig'] .= "\r\n";
     }
 
     /** Cleanup. */
@@ -1650,13 +1627,10 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
 
     /** Update the currently active configuration file if any changes were made. */
     if ($CIDRAM['ConfigModified']) {
-        $CIDRAM['FE']['state_msg'] = $CIDRAM['L10N']->getString('response_configuration_updated');
-        $CIDRAM['Handle'] = fopen($CIDRAM['Vault'] . $CIDRAM['FE']['ActiveConfigFile'], 'wb');
-        fwrite($CIDRAM['Handle'], $CIDRAM['RegenerateConfig']);
-        fclose($CIDRAM['Handle']);
-        if (empty($CIDRAM['QueryVars']['updated'])) {
-            header('Location: ?cidram-page=config&updated=true');
-            die;
+        if ($CIDRAM['UpdateConfiguration']()) {
+            $CIDRAM['FE']['state_msg'] = $CIDRAM['L10N']->getString('response_configuration_updated');
+        } else {
+            $CIDRAM['FE']['state_msg'] = $CIDRAM['L10N']->getString('response_failed_to_update');
         }
     }
 
@@ -4085,7 +4059,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'aux' && $CIDRAM['FE']['Permissi
         }
 
         /** Process other options and special flags. */
-        foreach ($CIDRAM['Config']['Provide']['Auxiliary Rules']['Flags'] as $CIDRAM['FlagSetName'] => $CIDRAM['FlagSet']) {
+        foreach ($CIDRAM['Provide']['Auxiliary Rules']['Flags'] as $CIDRAM['FlagSetName'] => $CIDRAM['FlagSet']) {
             $CIDRAM['FlagSetKey'] = preg_replace('~[^A-Za-z]~', '', $CIDRAM['FlagSetName']);
             if (!isset($_POST[$CIDRAM['FlagSetKey']])) {
                 continue;
@@ -4226,7 +4200,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'aux' && $CIDRAM['FE']['Permissi
         $CIDRAM['FE']['AuxFlagsProvides'] = '<div class="gridbox">';
         $CIDRAM['GridID'] = 'AAA';
         $CIDRAM['JSAuxAppend'] = '';
-        foreach ($CIDRAM['Config']['Provide']['Auxiliary Rules']['Flags'] as $CIDRAM['FlagSetName'] => $CIDRAM['FlagSet']) {
+        foreach ($CIDRAM['Provide']['Auxiliary Rules']['Flags'] as $CIDRAM['FlagSetName'] => $CIDRAM['FlagSet']) {
             $CIDRAM['FlagKey'] = preg_replace('~[^A-Za-z]~', '', $CIDRAM['FlagSetName']);
             foreach ($CIDRAM['FlagSet'] as $CIDRAM['FlagName'] => $CIDRAM['FlagData']) {
                 if ($CIDRAM['FlagName'] === 'Empty' && isset($CIDRAM['FlagData']['Decoration'])) {
@@ -4365,7 +4339,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'aux-edit' && $CIDRAM['FE']['Per
             $CIDRAM['NewAuxArr'][$_POST['ruleName'][$CIDRAM['Iterant']]]['SourceType'] = $_POST['conSourceType'][$CIDRAM['Iterant']] ?? '';
             $CIDRAM['NewAuxArr'][$_POST['ruleName'][$CIDRAM['Iterant']]]['IfOrNot'] = $_POST['conIfOrNot'][$CIDRAM['Iterant']] ?? '';
             $CIDRAM['NewAuxArr'][$_POST['ruleName'][$CIDRAM['Iterant']]]['SourceValue'] = $_POST['conSourceValue'][$CIDRAM['Iterant']] ?? '';
-            foreach ($CIDRAM['Config']['Provide']['Auxiliary Rules']['Flags'] as $CIDRAM['FlagSetName'] => $CIDRAM['FlagSet']) {
+            foreach ($CIDRAM['Provide']['Auxiliary Rules']['Flags'] as $CIDRAM['FlagSetName'] => $CIDRAM['FlagSet']) {
                 $CIDRAM['FlagSetKey'] = preg_replace('~[^A-Za-z]~', '', $CIDRAM['FlagSetName']);
                 if (!empty($_POST[$CIDRAM['FlagSetKey']][$CIDRAM['Iterant']])) {
                     foreach ($CIDRAM['FlagSet'] as $CIDRAM['FlagName'] => $CIDRAM['FlagData']) {

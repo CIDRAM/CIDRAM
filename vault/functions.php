@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2022.01.22).
+ * This file: Functions file (last modified: 2022.02.21).
  */
 
 /** Autoloader for CIDRAM classes. */
@@ -1988,7 +1988,7 @@ $CIDRAM['AuxAction'] = function (string $Action, string $Name, string $Reason = 
     }
 
     /** Process other options and special flags. */
-    foreach ($CIDRAM['Config']['Provide']['Auxiliary Rules']['Flags'] as $FlagSetName => $FlagSet) {
+    foreach ($CIDRAM['Provide']['Auxiliary Rules']['Flags'] as $FlagSetName => $FlagSet) {
         foreach ($FlagSet as $FlagName => $FlagData) {
             if (empty($Flags[$FlagName]) || empty($FlagData['Sets']) || !is_array($FlagData['Sets'])) {
                 continue;
@@ -2150,14 +2150,14 @@ $CIDRAM['Aux'] = function () use (&$CIDRAM): void {
 
         /** Other options and special flags to apply (if any have been specified). */
         $Flags = [];
-        foreach ($CIDRAM['Config']['Provide']['Auxiliary Rules']['Flags'] as $FlagSet) {
+        foreach ($CIDRAM['Provide']['Auxiliary Rules']['Flags'] as $FlagSet) {
             foreach ($FlagSet as $FlagKey => $FlagData) {
                 $Flags[$FlagKey] = !empty($Data[$FlagKey]);
             }
         }
 
         /** Iterate through modes. */
-        foreach ($CIDRAM['Config']['Provide']['Auxiliary Rules']['Modes'] as $Mode) {
+        foreach ($CIDRAM['Provide']['Auxiliary Rules']['Modes'] as $Mode) {
             /** Skip mode if not used by this rule. */
             if (empty($Data[$Mode])) {
                 continue;
@@ -2169,7 +2169,7 @@ $CIDRAM['Aux'] = function () use (&$CIDRAM): void {
             /** Match exceptions. */
             if (!empty($Data[$Mode]['But not if matches'])) {
                 /** Iterate through sources. */
-                foreach ($CIDRAM['Config']['Provide']['Auxiliary Rules']['Sources'] as $SourceArrKey => $SourceArr) {
+                foreach ($CIDRAM['Provide']['Auxiliary Rules']['Sources'] as $SourceArrKey => $SourceArr) {
                     if (is_array($SourceArr)) {
                         foreach ($SourceArr as $SourceKey => $Source) {
                             if (isset(
@@ -2206,7 +2206,7 @@ $CIDRAM['Aux'] = function () use (&$CIDRAM): void {
             /** Matches. */
             if (!empty($Data[$Mode]['If matches'])) {
                 /** Iterate through sources. */
-                foreach ($CIDRAM['Config']['Provide']['Auxiliary Rules']['Sources'] as $SourceArrKey => $SourceArr) {
+                foreach ($CIDRAM['Provide']['Auxiliary Rules']['Sources'] as $SourceArrKey => $SourceArr) {
                     if (is_array($SourceArr)) {
                         foreach ($SourceArr as $SourceKey => $Source) {
                             if (isset(
@@ -2635,3 +2635,19 @@ if (isset($CIDRAM['Vault'])) {
         unset($CIDRAM['LoadThis'], $CIDRAM['LoadThese']);
     }
 }
+
+/**
+ * Update the configuration.
+ *
+ * @return bool Whether succeeded or failed.
+ */
+$CIDRAM['UpdateConfiguration'] = function () use (&$CIDRAM): bool {
+    $Reconstructed = $CIDRAM['YAML']->reconstruct($CIDRAM['Config']);
+    $Handle = fopen($CIDRAM['Vault'] . $CIDRAM['FE']['ActiveConfigFile'], 'wb');
+    if (!is_resource($Handle)) {
+        return false;
+    }
+    $Err = fwrite($Handle, $Reconstructed);
+    fclose($Handle);
+    return $Err !== false;
+};

@@ -10,6 +10,7 @@
 
 #### Backwards-incompatible changes.
 - Completely removed support for webfonts.
+- Completely dropped support for INI files in favour of using just YAML files instead.
 
 #### Other changes.
 - Improved IP address resolution strategy (#286).

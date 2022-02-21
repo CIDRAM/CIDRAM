@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Output generator (last modified: 2022.02.17).
+ * This file: Output generator (last modified: 2022.02.21).
  */
 
 /** Initialise cache. */
@@ -88,6 +88,9 @@ $CIDRAM['BlockInfo']['rURI'] = (
 ) ? 'https://' : 'http://';
 $CIDRAM['BlockInfo']['rURI'] .= $CIDRAM['HTTP_HOST'] ?: 'Unknown.Host';
 $CIDRAM['BlockInfo']['rURI'] .= $_SERVER['REQUEST_URI'] ?? '/';
+
+/** Duplicate template data here to avoid problems when regenerating configuration. */
+$CIDRAM['TemplateData'] = $CIDRAM['Config']['template_data'];
 
 /** Initialise page output and block event logfile fields. */
 $CIDRAM['FieldTemplates'] = ['Logs' => '', 'Output' => []];
@@ -399,11 +402,11 @@ if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
         $CIDRAM['CaptchaDone'] = new \CIDRAM\Core\HCaptcha($CIDRAM);
     }
 
-    if (empty($CIDRAM['Config']['template_data']['captcha_api_include'])) {
-        $CIDRAM['Config']['template_data']['captcha_api_include'] = '';
+    if (empty($CIDRAM['TemplateData']['captcha_api_include'])) {
+        $CIDRAM['TemplateData']['captcha_api_include'] = '';
     }
-    if (empty($CIDRAM['Config']['template_data']['captcha_div_include'])) {
-        $CIDRAM['Config']['template_data']['captcha_div_include'] = '';
+    if (empty($CIDRAM['TemplateData']['captcha_div_include'])) {
+        $CIDRAM['TemplateData']['captcha_div_include'] = '';
     }
 }
 
@@ -518,20 +521,20 @@ if (!empty($CIDRAM['Webhooks']) || !empty($CIDRAM['Config']['Webhook']['URL'])) 
 /** A fix for correctly displaying LTR/RTL text. */
 if ($CIDRAM['L10N']->getString('Text Direction') !== 'rtl') {
     $CIDRAM['L10N']->Data['Text Direction'] = 'ltr';
-    $CIDRAM['Config']['template_data']['textBlockAlign'] = 'text-align:left;';
-    $CIDRAM['Config']['template_data']['textBlockFloat'] = '';
+    $CIDRAM['TemplateData']['textBlockAlign'] = 'text-align:left;';
+    $CIDRAM['TemplateData']['textBlockFloat'] = '';
 } else {
-    $CIDRAM['Config']['template_data']['textBlockAlign'] = 'text-align:right;';
-    $CIDRAM['Config']['template_data']['textBlockFloat'] = 'float:right;';
+    $CIDRAM['TemplateData']['textBlockAlign'] = 'text-align:right;';
+    $CIDRAM['TemplateData']['textBlockFloat'] = 'float:right;';
 }
 
 /** Provided for v1-v2 template file backwards compatibility. */
 if (
-    isset($CIDRAM['Config']['template_data']['magnification']) &&
-    !isset($CIDRAM['Config']['template_data']['Magnification'])
+    isset($CIDRAM['TemplateData']['magnification']) &&
+    !isset($CIDRAM['TemplateData']['Magnification'])
 ) {
     unset($CIDRAM['FieldTemplates']['magnification']);
-    $CIDRAM['FieldTemplates']['Magnification'] = $CIDRAM['Config']['template_data']['magnification'];
+    $CIDRAM['FieldTemplates']['Magnification'] = $CIDRAM['TemplateData']['magnification'];
 }
 
 /** If any signatures were triggered, log it, generate output, then die. */
@@ -688,14 +691,14 @@ if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
     /** Determine which template file to use, if this hasn't already been determined. */
     if (!isset($CIDRAM['template_file'])) {
         $CIDRAM['template_file'] = (
-            !$CIDRAM['Config']['template_data']['css_url']
-        ) ? 'template_' . $CIDRAM['Config']['template_data']['theme'] . '.html' : 'template_custom.html';
+            !$CIDRAM['TemplateData']['css_url']
+        ) ? 'template_' . $CIDRAM['TemplateData']['theme'] . '.html' : 'template_custom.html';
     }
 
     /** Fallback for themes without default template files. */
     if (
-        $CIDRAM['Config']['template_data']['theme'] !== 'default' &&
-        !$CIDRAM['Config']['template_data']['css_url'] &&
+        $CIDRAM['TemplateData']['theme'] !== 'default' &&
+        !$CIDRAM['TemplateData']['css_url'] &&
         !file_exists($CIDRAM['Vault'] . $CIDRAM['template_file'])
     ) {
         $CIDRAM['template_file'] = 'template_default.html';
@@ -724,7 +727,7 @@ if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
     /** Parsed to the template file. */
     $CIDRAM['Parsables'] = array_merge(
         $CIDRAM['FieldTemplates'],
-        $CIDRAM['Config']['template_data'],
+        $CIDRAM['TemplateData'],
         $CIDRAM['BlockInfo'],
         [
             'L10N-Lang-Attache' => $CIDRAM['L10N-Lang-Attache'],
@@ -897,7 +900,7 @@ if (empty($CIDRAM['CaptchaDone']) && empty($CIDRAM['Whitelisted']) && empty($CID
         $CIDRAM['CaptchaDone']->Bypass === false
     ) {
         /** Parsed to the CAPTCHA's HTML file. */
-        $CIDRAM['Parsables'] = array_merge($CIDRAM['FieldTemplates'], $CIDRAM['Config']['template_data'], $CIDRAM['BlockInfo']);
+        $CIDRAM['Parsables'] = array_merge($CIDRAM['FieldTemplates'], $CIDRAM['TemplateData'], $CIDRAM['BlockInfo']);
         $CIDRAM['Parsables']['L10N-Lang-Attache'] = $CIDRAM['L10N-Lang-Attache'];
         $CIDRAM['Parsables']['GeneratedBy'] = sprintf(
             $CIDRAM['Client-L10N']->getString('generated_by'),
@@ -918,11 +921,11 @@ if (empty($CIDRAM['CaptchaDone']) && empty($CIDRAM['Whitelisted']) && empty($CID
         $CIDRAM['Parsables'] += $CIDRAM['L10N']->Data;
 
         /** The CAPTCHA template file to use. */
-        $CIDRAM['CaptchaTemplateFile'] = 'captcha_' . $CIDRAM['Config']['template_data']['theme'] . '.html';
+        $CIDRAM['CaptchaTemplateFile'] = 'captcha_' . $CIDRAM['TemplateData']['theme'] . '.html';
 
         /** Fallback for themes without CAPTCHA template files. */
         if (
-            $CIDRAM['Config']['template_data']['theme'] !== 'default' &&
+            $CIDRAM['TemplateData']['theme'] !== 'default' &&
             !file_exists($CIDRAM['Vault'] . $CIDRAM['CaptchaTemplateFile'])
         ) {
             $CIDRAM['CaptchaTemplateFile'] = 'captcha_default.html';

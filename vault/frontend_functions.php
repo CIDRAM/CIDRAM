@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2022.02.17).
+ * This file: Front-end functions file (last modified: 2022.02.21).
  */
 
 /**
@@ -361,7 +361,7 @@ $CIDRAM['FileManager-RecursiveList'] = function (string $Base) use (&$CIDRAM): a
                     }
                 } elseif (preg_match('~(?:[^|/]\.ht|\.safety$|^salt\.dat$)~i', $ThisNameFixed)) {
                     $Component = $CIDRAM['L10N']->getString('label_fmgr_safety');
-                } elseif (strtolower($ThisNameFixed) === 'config.ini') {
+                } elseif (preg_match('~config\.ini$~i', $ThisNameFixed)) {
                     $Component = $CIDRAM['L10N']->getString('link_config');
                 } elseif ($CIDRAM['FileManager-IsLogFile']($ThisNameFixed)) {
                     $Component = $CIDRAM['L10N']->getString('link_logs');
@@ -874,7 +874,7 @@ $CIDRAM['SimulateBlockEvent'] = function (string $Addr, bool $Modules = false, b
     $CIDRAM['ResetBypassFlags']();
 
     /** Initialise SimulateBlockEvent. */
-    foreach ($CIDRAM['Config']['Provide']['Initialise SimulateBlockEvent'] as $InitialiseKey => $InitialiseValue) {
+    foreach ($CIDRAM['Provide']['Initialise SimulateBlockEvent'] as $InitialiseKey => $InitialiseValue) {
         if (is_array($InitialiseValue)) {
             $CIDRAM[$InitialiseKey] = array_replace_recursive($CIDRAM[$InitialiseKey], $InitialiseValue);
             continue;
@@ -3330,7 +3330,7 @@ $CIDRAM['AuxGenerateFEData'] = function (bool $Mode = false) use (&$CIDRAM): str
     $JSAppend = '';
 
     /** Potential sources. */
-    $Sources = $CIDRAM['GenerateLabels']($CIDRAM['Config']['Provide']['Auxiliary Rules']['Sources'], $CIDRAM['RegExLabels']);
+    $Sources = $CIDRAM['GenerateLabels']($CIDRAM['Provide']['Auxiliary Rules']['Sources'], $CIDRAM['RegExLabels']);
 
     /** Attempt to parse the auxiliary rules file. */
     if (!isset($CIDRAM['AuxData'])) {
@@ -3597,7 +3597,7 @@ $CIDRAM['AuxGenerateFEData'] = function (bool $Mode = false) use (&$CIDRAM): str
 
             /** Other options and special flags. */
             $Output .= '<div class="gridbox">';
-            foreach ($CIDRAM['Config']['Provide']['Auxiliary Rules']['Flags'] as $FlagSetName => $FlagSet) {
+            foreach ($CIDRAM['Provide']['Auxiliary Rules']['Flags'] as $FlagSetName => $FlagSet) {
                 $FlagKey = preg_replace('~[^A-Za-z]~', '', $FlagSetName);
                 $UseDefaultState = true;
                 foreach ($FlagSet as $FlagName => $FlagData) {
@@ -3795,7 +3795,7 @@ $CIDRAM['AuxGenerateFEData'] = function (bool $Mode = false) use (&$CIDRAM): str
 
             /** Display other options and special flags. */
             $Flags = [];
-            foreach ($CIDRAM['Config']['Provide']['Auxiliary Rules']['Flags'] as $FlagSetName => $FlagSet) {
+            foreach ($CIDRAM['Provide']['Auxiliary Rules']['Flags'] as $FlagSetName => $FlagSet) {
                 foreach ($FlagSet as $FlagName => $FlagData) {
                     if (!is_array($FlagData) || empty($FlagData['Label'])) {
                         continue;
@@ -3921,10 +3921,10 @@ $CIDRAM['PopulateMethodsActions'] = function () use (&$CIDRAM): void {
     $CIDRAM['FE']['optActPro'] = sprintf($CIDRAM['L10N']->getString('label_aux_menu_action'), $CIDRAM['L10N']->getString('label_aux_actPro'));
 
     /** Populate sources. */
-    $CIDRAM['FE']['conSources'] = $CIDRAM['GenerateOptions']($CIDRAM['Config']['Provide']['Auxiliary Rules']['Sources'], $CIDRAM['RegExLabels']);
+    $CIDRAM['FE']['conSources'] = $CIDRAM['GenerateOptions']($CIDRAM['Provide']['Auxiliary Rules']['Sources'], $CIDRAM['RegExLabels']);
 
     /** Populate sources for JavaScript. */
-    $CIDRAM['FE']['conSourcesJS'] = $CIDRAM['GenerateOptions']($CIDRAM['Config']['Provide']['Auxiliary Rules']['Sources'], $CIDRAM['RegExLabels'], true);
+    $CIDRAM['FE']['conSourcesJS'] = $CIDRAM['GenerateOptions']($CIDRAM['Provide']['Auxiliary Rules']['Sources'], $CIDRAM['RegExLabels'], true);
 };
 
 /**

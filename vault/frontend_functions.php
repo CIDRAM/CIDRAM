@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2022.02.01).
+ * This file: Front-end functions file (last modified: 2022.02.21).
  */
 
 /**
@@ -365,7 +365,7 @@ $CIDRAM['FileManager-RecursiveList'] = function ($Base) use (&$CIDRAM) {
                     }
                 } elseif (preg_match('~(?:[^|/]\.ht|\.safety$|^salt\.dat$)~i', $ThisNameFixed)) {
                     $Component = $CIDRAM['L10N']->getString('label_fmgr_safety');
-                } elseif (strtolower($ThisNameFixed) === 'config.ini') {
+                } elseif (preg_match('~config\.ini$~i', $ThisNameFixed)) {
                     $Component = $CIDRAM['L10N']->getString('link_config');
                 } elseif ($CIDRAM['FileManager-IsLogFile']($ThisNameFixed)) {
                     $Component = $CIDRAM['L10N']->getString('link_logs');

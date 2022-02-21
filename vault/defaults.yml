@@ -664,10 +664,10 @@ Config Defaults:
  supplementary_cache_options:
   prefix:
    type: "string"
-   default: ""
+   default: "CIDRAM_"
   enable_apcu:
    type: "bool"
-   default: false
+   default: true
    required:
     apcu: "APCu"
   enable_memcached:

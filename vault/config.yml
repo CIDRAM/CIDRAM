@@ -115,8 +115,8 @@ rate_limiting:
  allowance_period: 0
  exceptions: ""
 supplementary_cache_options:
- prefix: ""
- enable_apcu: false
+ prefix: "CIDRAM_"
+ enable_apcu: true
  enable_memcached: false
  enable_redis: false
  enable_pdo: false

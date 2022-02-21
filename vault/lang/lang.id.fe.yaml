@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Indonesian language data for the front-end (last modified: 2022.02.17).
+# This file: Indonesian language data for the front-end (last modified: 2022.02.21).
 ##/
 
 Extended Description Bypasses: "File untuk bypass tanda tangan standar yang biasanya disertakan dengan paket utama."
@@ -180,7 +180,7 @@ config_signatures_modules: "Daftar file modul untuk memuat setelah memeriksa tan
 config_signatures_track_mode: "Kapan sebaiknya pelanggaran dihitung? False = Ketika IP adalah diblokir oleh modul. True = Ketika IP adalah diblokir untuk alasan apapun. Default = False."
 config_signatures_tracking_override: "Izinkan modul untuk mengganti opsi pelacakan? True = Ya [Default]; False = Tidak."
 config_supplementary_cache_options: "Opsi cache tambahan."
-config_supplementary_cache_options_enable_apcu: "Menentukan apakah akan mencoba menggunakan APCu untuk cache. Default = False."
+config_supplementary_cache_options_enable_apcu: "Menentukan apakah akan mencoba menggunakan APCu untuk cache. Default = True."
 config_supplementary_cache_options_enable_memcached: "Menentukan apakah akan mencoba menggunakan Memcached untuk cache. Default = False."
 config_supplementary_cache_options_enable_pdo: "Menentukan apakah akan mencoba menggunakan PDO untuk cache. Default = False."
 config_supplementary_cache_options_enable_redis: "Menentukan apakah akan mencoba menggunakan Redis untuk cache. Default = False."
@@ -189,7 +189,7 @@ config_supplementary_cache_options_memcached_port: "Nilai port Memcached. Defaul
 config_supplementary_cache_options_pdo_dsn: "Nilai DSN PDO. Default = "mysql:dbname=cidram;host=localhost;port=3306"."
 config_supplementary_cache_options_pdo_password: "Kata sandi PDO."
 config_supplementary_cache_options_pdo_username: "Nama pengguna PDO."
-config_supplementary_cache_options_prefix: "Nilai yang ditentukan disini akan ditambahkan ke awal kunci untuk semua entri di cache. Kosong secara default. Ketika beberapa instalasi ada di server, ini dapat berguna untuk menjaga cache mereka terpisah."
+config_supplementary_cache_options_prefix: "Nilai yang ditentukan disini akan ditambahkan ke awal kunci untuk semua entri di cache. Default = "CIDRAM_". Ketika beberapa instalasi ada di server, ini dapat berguna untuk menjaga cache mereka terpisah."
 config_supplementary_cache_options_redis_host: "Nilai host Redis. Default = "localhost"."
 config_supplementary_cache_options_redis_port: "Nilai port Redis. Default = "6379"."
 config_supplementary_cache_options_redis_timeout: "Nilai batas waktu Redis. Default = "2.5"."

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Spanish language data for the front-end (last modified: 2022.02.17).
+# This file: Spanish language data for the front-end (last modified: 2022.02.21).
 ##/
 
 Extended Description Bypasses: "Los archivos para bypass de firmas estándar normalmente se incluyen con el paquete principal."
@@ -172,15 +172,15 @@ config_signatures_block_legal: "¿Bloquear CIDRs en respuesta a obligaciones leg
 config_signatures_block_malware: "¿Bloquear CIDRs asociados con el malware? Esto incluye servidores de C&C, máquinas infectadas, máquinas involucradas en la distribución de malware, etc."
 config_signatures_block_proxies: "¿Bloquear CIDRs identificados como pertenecientes a los servicios de proxy o VPNs? Si requiere que los usuarios puedan acceder a su sitio web a partir de los servicios de proxy o VPNs, esta directiva debe ser establecido para false. Alternativamente, Si usted no requiere servicios de proxy o VPNs, esta directiva debe ser establecido para true como un medio para mejorar la seguridad."
 config_signatures_block_spam: "¿Bloquear CIDRs identificado como siendo de alto riesgo para el spam? A menos que experimentar problemas cuando hacerlo, en general, esto siempre debe establecerse para true."
-config_signatures_default_tracktime: "¿Cuántos segundos para realizar el seguimiento de las IP prohibidas por los módulos? Predefinida = 604800 (1 semana)."
-config_signatures_infraction_limit: "Número máximo de infracciones a las que un IP puede incurrir antes de ser prohibido por el rastreo IP. Predefinida = 10."
+config_signatures_default_tracktime: "¿Cuántos segundos para realizar el seguimiento de las IP prohibidas por los módulos? Predefinido = 604800 (1 semana)."
+config_signatures_infraction_limit: "Número máximo de infracciones a las que un IP puede incurrir antes de ser prohibido por el rastreo IP. Predefinido = 10."
 config_signatures_ipv4: "Una lista de los archivos de firmas IPv4 que CIDRAM debe tratar de utilizar, delimitado por comas."
 config_signatures_ipv6: "Una lista de los archivos de firmas IPv6 que CIDRAM debe tratar de utilizar, delimitado por comas."
 config_signatures_modules: "Una lista de archivos módulo a cargar después de comprobar las firmas IPv4/IPv6, delimitado por comas."
 config_signatures_track_mode: "¿Cuándo se deben contar las infracciones? False = Cuando los IPs están bloqueados por módulos. True = Cuando los IP están bloqueados por cualquier razón. Predefinido = False."
 config_signatures_tracking_override: "¿Permitir que los módulos reemplacen las opciones de seguimiento? True = Sí [Predefinido]; False = No."
 config_supplementary_cache_options: "Opciones de caché suplementarias."
-config_supplementary_cache_options_enable_apcu: "Especifica si se intenta utilizar APCu para el almacenamiento en caché. Predefinido = False."
+config_supplementary_cache_options_enable_apcu: "Especifica si se intenta utilizar APCu para el almacenamiento en caché. Predefinido = True."
 config_supplementary_cache_options_enable_memcached: "Especifica si se intenta utilizar Memcached para el almacenamiento en caché. Predefinido = False."
 config_supplementary_cache_options_enable_pdo: "Especifica si se intenta utilizar PDO para el almacenamiento en caché. Predefinido = False."
 config_supplementary_cache_options_enable_redis: "Especifica si se intenta utilizar Redis para el almacenamiento en caché. Predefinido = False."
@@ -189,7 +189,7 @@ config_supplementary_cache_options_memcached_port: "Valor del puerto de Memcache
 config_supplementary_cache_options_pdo_dsn: "Valor del DSN de PDO. Predefinido = "mysql:dbname=cidram;host=localhost;port=3306"."
 config_supplementary_cache_options_pdo_password: "Contraseña de PDO."
 config_supplementary_cache_options_pdo_username: "Nombre del usuario de PDO."
-config_supplementary_cache_options_prefix: "El valor especificado aquí se antepondrá a las claves de todas las entradas de la caché. Vacía por predefinida. Cuando existen varias instalaciones en el mismo servidor, esto puede ser útil para mantener sus cachés separados entre sí."
+config_supplementary_cache_options_prefix: "El valor especificado aquí se antepondrá a las claves de todas las entradas de la caché. Predefinido = "CIDRAM_". Cuando existen varias instalaciones en el mismo servidor, esto puede ser útil para mantener sus cachés separados entre sí."
 config_supplementary_cache_options_redis_host: "Valor del host de Redis. Predefinido = "localhost"."
 config_supplementary_cache_options_redis_port: "Valor del puerto de Redis. Predefinido = "6379"."
 config_supplementary_cache_options_redis_timeout: "Valor de tiempo de espera de Redis. Predefinido = "2.5"."

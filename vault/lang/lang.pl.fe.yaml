@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Polish language data for the front-end (last modified: 2022.02.17).
+# This file: Polish language data for the front-end (last modified: 2022.02.21).
 ##/
 
 Extended Description Bypasses: "Domyślne pliki pomijania podpisów zwykle zawarte w pakiecie głównym."
@@ -180,7 +180,7 @@ config_signatures_modules: "Lista plików modułu do załadowania po sprawdzeniu
 config_signatures_track_mode: "Kiedy należy liczyć wykroczenia? False (Fałszywy) = Gdy adresy IP są blokowane przez moduły. True (Prawdziwe) = Gdy adresy IP są blokowane z jakiegokolwiek powodu. Domyślna = False."
 config_signatures_tracking_override: "Zezwalać modułom na zastępowanie opcji śledzenia? True (Prawdziwe) = Tak [Domyślna]; False (Fałszywy) = Nie."
 config_supplementary_cache_options: "Dodatkowe opcje pamięci podręcznej."
-config_supplementary_cache_options_enable_apcu: "Określa, czy spróbować użyć APCu do pamięci podręcznej. Domyślna = False."
+config_supplementary_cache_options_enable_apcu: "Określa, czy spróbować użyć APCu do pamięci podręcznej. Domyślna = True."
 config_supplementary_cache_options_enable_memcached: "Określa, czy spróbować użyć Memcached do pamięci podręcznej. Domyślna = False."
 config_supplementary_cache_options_enable_pdo: "Określa, czy spróbować użyć PDO do pamięci podręcznej. Domyślna = False."
 config_supplementary_cache_options_enable_redis: "Określa, czy spróbować użyć Redis do pamięci podręcznej. Domyślna = False."
@@ -189,7 +189,7 @@ config_supplementary_cache_options_memcached_port: "Wartość portu Memcached. D
 config_supplementary_cache_options_pdo_dsn: "Wartość DSN PDO. Domyślna = „mysql:dbname=cidram;host=localhost;port=3306”."
 config_supplementary_cache_options_pdo_password: "Hasło PDO."
 config_supplementary_cache_options_pdo_username: "Nazwa użytkownika PDO."
-config_supplementary_cache_options_prefix: "Ta wartość zostanie dodana na początku kluczy dla wszystkich wpisów w pamięci podręcznej. Domyślnie puste. Gdy na tym samym serwerze istnieje wiele instalacji, to może być przydatne do przechowywania ich pamięci podręcznych oddzielnie od siebie."
+config_supplementary_cache_options_prefix: "Ta wartość zostanie dodana na początku kluczy dla wszystkich wpisów w pamięci podręcznej. Domyślna = „CIDRAM_”. Gdy na tym samym serwerze istnieje wiele instalacji, to może być przydatne do przechowywania ich pamięci podręcznych oddzielnie od siebie."
 config_supplementary_cache_options_redis_host: "Wartość hosta Redis. Domyślna = „localhost”."
 config_supplementary_cache_options_redis_port: "Wartość portu Redis. Domyślna = „6379”."
 config_supplementary_cache_options_redis_timeout: "Wartość limitu czasu Redis. Domyślna = „2.5”."

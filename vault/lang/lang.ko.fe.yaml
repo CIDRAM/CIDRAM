@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Korean language data for the front-end (last modified: 2022.02.17).
+# This file: Korean language data for the front-end (last modified: 2022.02.21).
 ##/
 
 Extended Description Bypasses: "기본 서명 우회 일반적으로 기본 패키지에 포함되어 있습니다."
@@ -180,7 +180,7 @@ config_signatures_modules: "IPv4/IPv6 서명을 체크 한 후로드 모듈 파�
 config_signatures_track_mode: "위반은 언제 계산해야합니까? False = IP가 모듈에 의해 차단되는 경우. True = 뭐든지 이유로 IP가 차단 된 경우. Default (기본값) = False."
 config_signatures_tracking_override: "모듈이 추적 옵션을 재정의하도록 허용하시겠습니까? True = 예 (Default / 기본 설정); False = 아니오."
 config_supplementary_cache_options: "보충 캐시 옵션."
-config_supplementary_cache_options_enable_apcu: "캐싱에 APCu를 사용할지 여부를 지정합니다. Default (기본값) = False."
+config_supplementary_cache_options_enable_apcu: "캐싱에 APCu를 사용할지 여부를 지정합니다. Default (기본값) = True."
 config_supplementary_cache_options_enable_memcached: "캐싱에 Memcached를 사용할지 여부를 지정합니다. Default (기본값) = False."
 config_supplementary_cache_options_enable_pdo: "캐싱에 PDO를 사용할지 여부를 지정합니다. Default (기본값) = False."
 config_supplementary_cache_options_enable_redis: "캐싱에 Redis를 사용할지 여부를 지정합니다. Default (기본값) = False."
@@ -189,7 +189,7 @@ config_supplementary_cache_options_memcached_port: "Memcached 포트 값. Defaul
 config_supplementary_cache_options_pdo_dsn: "PDO DSN 값. Default (기본값) = "mysql:dbname=cidram;host=localhost;port=3306"."
 config_supplementary_cache_options_pdo_password: "PDO 암호."
 config_supplementary_cache_options_pdo_username: "PDO 사용자 이름."
-config_supplementary_cache_options_prefix: "여기에 지정된 값은 모든 캐시 항목 키 앞에 추가됩니다. 기본적으로 비어 있습니다. 동일한 서버에 여러 설치가 있는 경우, 캐시를 서로 분리하여 유지하는 데 유용할 수 있습니다."
+config_supplementary_cache_options_prefix: "여기에 지정된 값은 모든 캐시 항목 키 앞에 추가됩니다. Default (기본값) = "CIDRAM_". 동일한 서버에 여러 설치가 있는 경우, 캐시를 서로 분리하여 유지하는 데 유용할 수 있습니다."
 config_supplementary_cache_options_redis_host: "Redis 호스트 값. Default (기본값) = "localhost"."
 config_supplementary_cache_options_redis_port: "Redis 포트 값. Default (기본값) = "6379"."
 config_supplementary_cache_options_redis_timeout: "Redis 시간 초과 값. Default (기본값) = "2.5"."

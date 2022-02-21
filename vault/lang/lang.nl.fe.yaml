@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Dutch language data for the front-end (last modified: 2022.02.17).
+# This file: Dutch language data for the front-end (last modified: 2022.02.21).
 ##/
 
 Extended Description Bypasses: "De standaard signature rondwegen normaal opgenomen met de primaire pakket."
@@ -180,7 +180,7 @@ config_signatures_modules: "Een lijst van module bestanden te laden na verwerkin
 config_signatures_track_mode: "Wanneer moet overtredingen worden gerekend? False = Wanneer IP's geblokkeerd door modules worden. True = Wanneer IP's om welke reden geblokkeerd worden. Standaard = False."
 config_signatures_tracking_override: "Moeten modules worden toegestaan om opties voor tracking te overschrijven? True = Ja [Standaard]; False = Nee."
 config_supplementary_cache_options: "Aanvullende cache-opties."
-config_supplementary_cache_options_enable_apcu: "Dit geeft aan of APCu moet worden gebruikt voor caching. Standaard = False."
+config_supplementary_cache_options_enable_apcu: "Dit geeft aan of APCu moet worden gebruikt voor caching. Standaard = True."
 config_supplementary_cache_options_enable_memcached: "Dit geeft aan of Memcached moet worden gebruikt voor caching. Standaard = False."
 config_supplementary_cache_options_enable_pdo: "Dit geeft aan of PDO moet worden gebruikt voor caching. Standaard = False."
 config_supplementary_cache_options_enable_redis: "Dit geeft aan of Redis moet worden gebruikt voor caching. Standaard = False."
@@ -189,7 +189,7 @@ config_supplementary_cache_options_memcached_port: "Memcached poortwaarde. Stand
 config_supplementary_cache_options_pdo_dsn: "PDO DSN-waarde. Standaard = "mysql:dbname=cidram;host=localhost;port=3306"."
 config_supplementary_cache_options_pdo_password: "PDO wachtwoord."
 config_supplementary_cache_options_pdo_username: "PDO gebruikersnaam."
-config_supplementary_cache_options_prefix: "De hier opgegeven waarde wordt toegevoegd aan alle cache-invoersleutels. Standaard leeg. Als er meerdere installaties op dezelfde server staan, dit kan handig zijn om hun caches gescheiden van elkaar te houden."
+config_supplementary_cache_options_prefix: "De hier opgegeven waarde wordt toegevoegd aan alle cache-invoersleutels. Standaard = "CIDRAM_". Als er meerdere installaties op dezelfde server staan, dit kan handig zijn om hun caches gescheiden van elkaar te houden."
 config_supplementary_cache_options_redis_host: "Redis hostwaarde. Standaard = "localhost"."
 config_supplementary_cache_options_redis_port: "Redis poortwaarde. Standaard = "6379"."
 config_supplementary_cache_options_redis_timeout: "Redis timeoutwaarde. Standaard = "2.5"."

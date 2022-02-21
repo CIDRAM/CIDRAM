@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (simplified) language data for the front-end (last modified: 2022.02.17).
+# This file: Chinese (simplified) language data for the front-end (last modified: 2022.02.21).
 ##/
 
 Extended Description Bypasses: "标准签名旁路文件通常包括在主包。"
@@ -180,7 +180,7 @@ config_signatures_modules: "模块文件要加载的列表以后检查签名IPv4
 config_signatures_track_mode: "何时应该记录违规？​False（假）=当IP被模块阻止时。​True（真）=当IP由于任何原因阻止时。​标准 = False。"
 config_signatures_tracking_override: "允许模块覆盖跟踪选项吗？​True（真）=允许【标准】；False（假）=不允许。"
 config_supplementary_cache_options: "补充缓存选项。"
-config_supplementary_cache_options_enable_apcu: "指定是否尝试使用APCu进行缓存。​标准 = False。"
+config_supplementary_cache_options_enable_apcu: "指定是否尝试使用APCu进行缓存。​标准 = True。"
 config_supplementary_cache_options_enable_memcached: "指定是否尝试使用Memcached进行缓存。​标准 = False。"
 config_supplementary_cache_options_enable_pdo: "指定是否尝试使用PDO进行缓存。​标准 = False。"
 config_supplementary_cache_options_enable_redis: "指定是否尝试使用Redis进行缓存。​标准 = False。"
@@ -189,7 +189,7 @@ config_supplementary_cache_options_memcached_port: "Memcached端口值。​标�
 config_supplementary_cache_options_pdo_dsn: "PDO DSN值。​标准 = “mysql:dbname=cidram;host=localhost;port=3306”。"
 config_supplementary_cache_options_pdo_password: "PDO密码。"
 config_supplementary_cache_options_pdo_username: "PDO用户名。"
-config_supplementary_cache_options_prefix: "该值将附加到所有缓存条目的键的开头。​默认值为空。​当同一服务器上存在多个安装时，这对于将它们的缓存彼此分开非常有用。"
+config_supplementary_cache_options_prefix: "该值将附加到所有缓存条目的键的开头。​标准 = “CIDRAM_”。​当同一服务器上存在多个安装时，这对于将它们的缓存彼此分开非常有用。"
 config_supplementary_cache_options_redis_host: "Redis主机值。​标准 = “localhost”。"
 config_supplementary_cache_options_redis_port: "Redis端口值。​标准 = “6379”。"
 config_supplementary_cache_options_redis_timeout: "Redis超时值。​标准 = “2.5”。"

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Latvian language data for the front-end (last modified: 2022.02.17).
+# This file: Latvian language data for the front-end (last modified: 2022.02.21).
 ##/
 
 Extended Description Bypasses: "Noklusējuma paraksta apiešana faili, kas parasti ir iekļauti galvenajā paketē."
@@ -180,7 +180,7 @@ config_signatures_modules: "Pēc IPv4/IPv6 parakstu pārbaudes ielādējamo modu
 config_signatures_track_mode: "Kad jāskaita pārkāpumi? False (Nepatiess) = Kad moduļi bloķē IPs. True (Patiess) = Kad IP jebkādu iemeslu dēļ tiek bloķēts. Noklusējuma = False."
 config_signatures_tracking_override: "Vai atļaut moduļiem aizstāt izsekošanas opcijas? True (Patiess) = Jā [Noklusējuma]; False (Nepatiess) = Nē."
 config_supplementary_cache_options: "Papildu kešatmiņas iespējas."
-config_supplementary_cache_options_enable_apcu: "Norāda, vai kešatmiņā mēģināt izmantot APCu. Noklusējuma = False."
+config_supplementary_cache_options_enable_apcu: "Norāda, vai kešatmiņā mēģināt izmantot APCu. Noklusējuma = True."
 config_supplementary_cache_options_enable_memcached: "Norāda, vai kešatmiņā mēģināt izmantot Memcached. Noklusējuma = False."
 config_supplementary_cache_options_enable_pdo: "Norāda, vai kešatmiņā mēģināt izmantot PDO. Noklusējuma = False."
 config_supplementary_cache_options_enable_redis: "Norāda, vai kešatmiņā mēģināt izmantot Redis. Noklusējuma = False."
@@ -189,7 +189,7 @@ config_supplementary_cache_options_memcached_port: "Memcached porta vērtību. N
 config_supplementary_cache_options_pdo_dsn: "PDO DSN vērtību. Noklusējuma = "mysql:dbname=cidram;host=localhost;port=3306"."
 config_supplementary_cache_options_pdo_password: "PDO parole."
 config_supplementary_cache_options_pdo_username: "PDO lietotājvārds."
-config_supplementary_cache_options_prefix: "Šeit norādītā vērtība tiks pievienota visām kešatmiņas ievades atslēgām. Pēc noklusējuma tukšs. Ja vienā serverī ir vairākas instalācijas, tas var būt noderīgi, lai saglabātu to kešatmiņas atsevišķi vienu no otras."
+config_supplementary_cache_options_prefix: "Šeit norādītā vērtība tiks pievienota visām kešatmiņas ievades atslēgām. Noklusējuma = "CIDRAM_". Ja vienā serverī ir vairākas instalācijas, tas var būt noderīgi, lai saglabātu to kešatmiņas atsevišķi vienu no otras."
 config_supplementary_cache_options_redis_host: "Redis resursdatora vērtību. Noklusējuma = "localhost"."
 config_supplementary_cache_options_redis_port: "Redis porta vērtību. Noklusējuma = "6379"."
 config_supplementary_cache_options_redis_timeout: "Redis taimauta vērtību. Noklusējuma = "2.5"."

@@ -14,3 +14,4 @@
 
 #### Other changes.
 - Improved IP address resolution strategy (#286).
+- Changed the `enable_apcu` default value to `true` and the `prefix` default value to `CIDRAM_`.

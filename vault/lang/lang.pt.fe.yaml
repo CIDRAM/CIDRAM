@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Portuguese language data for the front-end (last modified: 2022.02.17).
+# This file: Portuguese language data for the front-end (last modified: 2022.02.21).
 ##/
 
 Extended Description Bypasses: "Os arquivos para bypass das assinaturas padrão normalmente incluído com o pacote principal."
@@ -180,7 +180,7 @@ config_signatures_modules: "Uma lista de arquivos módulo a carregar depois de p
 config_signatures_track_mode: "Quando as infrações devem ser contadas? False = Quando os IPs são bloqueados por módulos. True = Quando os IPs são bloqueados por qualquer motivo. Padrão = False."
 config_signatures_tracking_override: "Permitir que os módulos substituem as opções de monitoração? True = Sim [Padrão]; False = Não."
 config_supplementary_cache_options: "Opções de cache suplementares."
-config_supplementary_cache_options_enable_apcu: "Especifica se deve tentar usar o APCu para armazenamento em cache. Padrão = False."
+config_supplementary_cache_options_enable_apcu: "Especifica se deve tentar usar o APCu para armazenamento em cache. Padrão = True."
 config_supplementary_cache_options_enable_memcached: "Especifica se deve tentar usar o Memcached para armazenamento em cache. Padrão = False."
 config_supplementary_cache_options_enable_pdo: "Especifica se deve tentar usar o PDO para armazenamento em cache. Padrão = False."
 config_supplementary_cache_options_enable_redis: "Especifica se deve tentar usar o Redis para armazenamento em cache. Padrão = False."
@@ -189,7 +189,7 @@ config_supplementary_cache_options_memcached_port: "Valor da porta do Memcached.
 config_supplementary_cache_options_pdo_dsn: "Valor DSN do PDO. Padrão = "mysql:dbname=cidram;host=localhost;port=3306"."
 config_supplementary_cache_options_pdo_password: "A senha do PDO."
 config_supplementary_cache_options_pdo_username: "O nome de usuário do PDO."
-config_supplementary_cache_options_prefix: "O valor especificado aqui será adicionado ao começo das chaves para todas as entradas de cache. Vazio por padrão. Quando existem várias instalações no mesmo servidor, isso pode ser útil para manter seus caches separados uns dos outros."
+config_supplementary_cache_options_prefix: "O valor especificado aqui será adicionado ao começo das chaves para todas as entradas de cache. Padrão = "CIDRAM_". Quando existem várias instalações no mesmo servidor, isso pode ser útil para manter seus caches separados uns dos outros."
 config_supplementary_cache_options_redis_host: "Valor da host do Redis. Padrão = "localhost"."
 config_supplementary_cache_options_redis_port: "Valor da porta do Redis. Padrão = "6379"."
 config_supplementary_cache_options_redis_timeout: "Valor de tempo limite do Redis. Padrão = "2.5"."

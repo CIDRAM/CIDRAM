@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: French language data for the front-end (last modified: 2022.02.17).
+# This file: French language data for the front-end (last modified: 2022.02.21).
 ##/
 
 Extended Description Bypasses: "Les fichiers pour contourner les signatures standard qui sont normalement inclus dans le paquet principal."
@@ -180,7 +180,7 @@ config_signatures_modules: "Une liste des fichiers modules à charger après ex�
 config_signatures_track_mode: "Quand faut-il compter les infractions ? False = Quand les adresses IP sont bloquées par des modules. True = Quand les adresses IP sont bloquées pour une raison quelconque. Défaut = False."
 config_signatures_tracking_override: "Autoriser les modules à remplacer les options de suivi ? True = Oui [Défaut] ; False = Non."
 config_supplementary_cache_options: "Options de cache supplémentaires."
-config_supplementary_cache_options_enable_apcu: "Spécifie s'il faut essayer d'utiliser APCu pour la mise en cache. Défaut = False."
+config_supplementary_cache_options_enable_apcu: "Spécifie s'il faut essayer d'utiliser APCu pour la mise en cache. Défaut = True."
 config_supplementary_cache_options_enable_memcached: "Spécifie s'il faut essayer d'utiliser Memcached pour la mise en cache. Défaut = False."
 config_supplementary_cache_options_enable_pdo: "Spécifie s'il faut essayer d'utiliser PDO pour la mise en cache. Défaut = False."
 config_supplementary_cache_options_enable_redis: "Spécifie s'il faut essayer d'utiliser Redis pour la mise en cache. Défaut = False."
@@ -189,7 +189,7 @@ config_supplementary_cache_options_memcached_port: "Valeur du port Memcached. D�
 config_supplementary_cache_options_pdo_dsn: "Valeur de DSN de PDO. Défaut = « mysql:dbname=cidram;host=localhost;port=3306 »."
 config_supplementary_cache_options_pdo_password: "Mot de passe PDO."
 config_supplementary_cache_options_pdo_username: "Nom d'utilisateur PDO."
-config_supplementary_cache_options_prefix: "La valeur spécifiée ici sera ajoutée à toutes les clés d'entrée du cache. Vide par défaut. Lorsque plusieurs installations existent sur le même serveur, cela peut être utile pour séparer leurs caches les uns des autres."
+config_supplementary_cache_options_prefix: "La valeur spécifiée ici sera ajoutée à toutes les clés d'entrée du cache. Défaut = « CIDRAM_ ». Lorsque plusieurs installations existent sur le même serveur, cela peut être utile pour séparer leurs caches les uns des autres."
 config_supplementary_cache_options_redis_host: "Valeur de l'hôte Redis. Défaut = « localhost »."
 config_supplementary_cache_options_redis_port: "Valeur du port Redis. Défaut = « 6379 »."
 config_supplementary_cache_options_redis_timeout: "Valeur du délai d'attente Redis. Défaut = « 2.5 »."

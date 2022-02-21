@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Swedish language data for the front-end (last modified: 2022.02.17).
+# This file: Swedish language data for the front-end (last modified: 2022.02.21).
 ##/
 
 Extended Description Bypasses: "Standard bypass-filen som normalt ingår i huvudpaketet."
@@ -180,7 +180,7 @@ config_signatures_modules: "En lista över modulfiler som ska laddas efter att h
 config_signatures_track_mode: "När ska infraktions räknas? False = När IP-adresser blockeras av moduler. True = När IP-adresser blockeras av någon anledning. Standard = False."
 config_signatures_tracking_override: "Tillåt att moduler åsidosätter spårningsalternativ? True = Ja [Standard]; False = Nej."
 config_supplementary_cache_options: "Kompletterande cache-alternativ."
-config_supplementary_cache_options_enable_apcu: "Detta anger om ska använda APCu för caching. Standard = False."
+config_supplementary_cache_options_enable_apcu: "Detta anger om ska använda APCu för caching. Standard = True."
 config_supplementary_cache_options_enable_memcached: "Detta anger om ska använda Memcached för caching. Standard = False."
 config_supplementary_cache_options_enable_pdo: "Detta anger om ska använda PDO för caching. Standard = False."
 config_supplementary_cache_options_enable_redis: "Detta anger om ska använda Redis för caching. Standard = False."
@@ -189,7 +189,7 @@ config_supplementary_cache_options_memcached_port: "Memcached portvärde. Standa
 config_supplementary_cache_options_pdo_dsn: "PDO DSN-värde. Standard = "mysql:dbname=cidram;host=localhost;port=3306"."
 config_supplementary_cache_options_pdo_password: "PDO lösenord."
 config_supplementary_cache_options_pdo_username: "PDO användarnamn."
-config_supplementary_cache_options_prefix: "Värdet som anges här kommer att läggas till i början av nycklarna för alla cacheposter. Tom som standard. När flera installationer finns på samma server, detta kan vara användbart för att hålla sina cachar åtskilda från varandra."
+config_supplementary_cache_options_prefix: "Värdet som anges här kommer att läggas till i början av nycklarna för alla cacheposter. Standard = "CIDRAM_". När flera installationer finns på samma server, detta kan vara användbart för att hålla sina cachar åtskilda från varandra."
 config_supplementary_cache_options_redis_host: "Redis värdvärde. Standard = "localhost"."
 config_supplementary_cache_options_redis_port: "Redis portvärde. Standard = "6379"."
 config_supplementary_cache_options_redis_timeout: "Redis timeout-värde. Standard = "2.5"."

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Arabic language data for the front-end (last modified: 2022.02.17).
+# This file: Arabic language data for the front-end (last modified: 2022.02.21).
 ##/
 
 Extended Description Bypasses: "ملفات الالتفافية التوقيع القياسية المدرجة عادة مع الحزمة الرئيسية."
@@ -178,7 +178,7 @@ config_signatures_modules: "قائمة الملفات المكون لتحميل 
 config_signatures_track_mode: "متى يجب أن تحسب المخالفات؟ زائفة/False = عندما IP تم حظره من قبل وحدات. صحيح/True = عندما IP يتم حظر لأي سبب من الأسباب. افتراضي = زائفة/False."
 config_signatures_tracking_override: "هل تسمح للوحدات النمطية بتجاوز خيارات التتبع؟ صحيح/True = نعم [افتراضي]؛ زائفة/False = لا."
 config_supplementary_cache_options: "خيارات ذاكرة التخزين المؤقت التكميلية."
-config_supplementary_cache_options_enable_apcu: "يحدد هذا ما إذا كنت تريد استخدام APCu للتخزين المؤقت. افتراضي = False (زائفة)."
+config_supplementary_cache_options_enable_apcu: "يحدد هذا ما إذا كنت تريد استخدام APCu للتخزين المؤقت. افتراضي = True (صحيح)."
 config_supplementary_cache_options_enable_memcached: "يحدد هذا ما إذا كنت تريد استخدام Memcached للتخزين المؤقت. افتراضي = False (زائفة)."
 config_supplementary_cache_options_enable_pdo: "يحدد هذا ما إذا كنت تريد استخدام PDO للتخزين المؤقت. افتراضي = False (زائفة)."
 config_supplementary_cache_options_enable_redis: "يحدد هذا ما إذا كنت تريد استخدام Redis للتخزين المؤقت. افتراضي = False (زائفة)."
@@ -187,7 +187,7 @@ config_supplementary_cache_options_memcached_port: "قيمة منفذ Memcached.
 config_supplementary_cache_options_pdo_dsn: "قيمة PDO DSN. افتراضي = "mysql:dbname=cidram;host=localhost;port=3306"."
 config_supplementary_cache_options_pdo_password: "PDO كلمه السر."
 config_supplementary_cache_options_pdo_username: "PDO اسم المستخدم."
-config_supplementary_cache_options_prefix: "سيتم إضافة القيمة المحددة هنا إلى جميع مفاتيح إدخال ذاكرة التخزين المؤقت. فارغ بشكل افتراضي. عند وجود عدة عمليات تثبيت على نفس الخادم، يمكن أن يكون ذلك مفيدًا للحفاظ على ذاكرة التخزين المؤقت منفصلة عن بعضها البعض."
+config_supplementary_cache_options_prefix: "سيتم إضافة القيمة المحددة هنا إلى جميع مفاتيح إدخال ذاكرة التخزين المؤقت. افتراضي = "CIDRAM_". عند وجود عدة عمليات تثبيت على نفس الخادم، يمكن أن يكون ذلك مفيدًا للحفاظ على ذاكرة التخزين المؤقت منفصلة عن بعضها البعض."
 config_supplementary_cache_options_redis_host: "قيمة المضيف Redis. افتراضي = "localhost"."
 config_supplementary_cache_options_redis_port: "قيمة منفذ Redis. افتراضي = "6379"."
 config_supplementary_cache_options_redis_timeout: "Redis قيمة المهلة. افتراضي = "2.5"."

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Norwegian language data for the front-end (last modified: 2022.02.17).
+# This file: Norwegian language data for the front-end (last modified: 2022.02.21).
 ##/
 
 Extended Description Bypasses: "Standard-signatur-bypass-filene som normalt følger med hovedpakken."
@@ -180,7 +180,7 @@ config_signatures_modules: "En liste over modulfiler som skal lastes etter at du
 config_signatures_track_mode: "Når skal infraksjoner regnes? False = Når IPer blokkert av moduler. True = Når IPer er blokkert av en eller annen grunn. Standardverdi = False."
 config_signatures_tracking_override: "Tillate moduler å overstyre sporingsalternativene? True = Ja [Standardverdi]; False = Nei."
 config_supplementary_cache_options: "Tilleggsvalg for cache."
-config_supplementary_cache_options_enable_apcu: "Dette angir om skal bruke APCu for caching. Standardverdi = False."
+config_supplementary_cache_options_enable_apcu: "Dette angir om skal bruke APCu for caching. Standardverdi = True."
 config_supplementary_cache_options_enable_memcached: "Dette angir om skal bruke Memcached for caching. Standardverdi = False."
 config_supplementary_cache_options_enable_pdo: "Dette angir om skal bruke PDO for caching. Standardverdi = False."
 config_supplementary_cache_options_enable_redis: "Dette angir om skal bruke Redis for caching. Standardverdi = False."
@@ -189,7 +189,7 @@ config_supplementary_cache_options_memcached_port: "Memcached portsverdi. Standa
 config_supplementary_cache_options_pdo_dsn: "PDO DSN-verdi. Standardverdi = "mysql:dbname=cidram;host=localhost;port=3306"."
 config_supplementary_cache_options_pdo_password: "PDO passord."
 config_supplementary_cache_options_pdo_username: "PDO brukernavn."
-config_supplementary_cache_options_prefix: "Verdien som er spesifisert her vil bli lagt foran alle cache-oppføringsnøkler. Tom som standard. Når flere installasjoner eksisterer på samme server, dette kan være nyttig for å holde cachen deres atskilt fra hverandre."
+config_supplementary_cache_options_prefix: "Verdien som er spesifisert her vil bli lagt foran alle cache-oppføringsnøkler. Standardverdi = "CIDRAM_". Når flere installasjoner eksisterer på samme server, dette kan være nyttig for å holde cachen deres atskilt fra hverandre."
 config_supplementary_cache_options_redis_host: "Redis vertsverdi. Standardverdi = "localhost"."
 config_supplementary_cache_options_redis_port: "Redis portsverdi. Standardverdi = "6379"."
 config_supplementary_cache_options_redis_timeout: "Redis timeout-verdi. Standardverdi = "2.5"."

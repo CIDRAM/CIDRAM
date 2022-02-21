@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Urdu language data for the front-end (last modified: 2022.02.17).
+# This file: Urdu language data for the front-end (last modified: 2022.02.21).
 ##/
 
 Extended Description Bypasses: "پہلے سے طے شدہ دستخطی بائی پاس فائلوں کو عام طور پر بنیادی پیکیج کے ساتھ شامل تھے."
@@ -180,7 +180,7 @@ config_signatures_modules: "ماڈیول فائلوں کی ایک فہرست ک�
 config_signatures_track_mode: "خلاف ورزی شمار کب کیا جانا چاہئے؟ False (جھوٹی) = IP ایس کے ماڈیول کی طرف سے بلاک کر رہے ہیں جب. True (سچے) = IP ایس کے کسی بھی وجہ سے بلاک کر رہے ہیں جب. پہلے سے طے شدہ = False (جھوٹی)."
 config_signatures_tracking_override: "ماڈیولوں کو ٹریکنگ کے اختیارات کو اوور رائڈ کرنے کی اجازت دیں؟ True (سچے) = جی ہاں [پہلے سے طے شدہ]؛ False (جھوٹی) = نہیں."
 config_supplementary_cache_options: "ضمنی کیشے کے اختیارات."
-config_supplementary_cache_options_enable_apcu: "اس کی وضاحت کرتا ہے کہ کیش کے لئے APCu استعمال کرنا چاہے. پہلے سے طے شدہ = False (جھوٹی)."
+config_supplementary_cache_options_enable_apcu: "اس کی وضاحت کرتا ہے کہ کیش کے لئے APCu استعمال کرنا چاہے. پہلے سے طے شدہ = True (سچ)."
 config_supplementary_cache_options_enable_memcached: "اس کی وضاحت کرتا ہے کہ کیش کے لئے Memcached استعمال کرنا چاہے. پہلے سے طے شدہ = False (جھوٹی)."
 config_supplementary_cache_options_enable_pdo: "اس کی وضاحت کرتا ہے کہ کیش کے لئے PDO استعمال کرنا چاہے. پہلے سے طے شدہ = False (جھوٹی)."
 config_supplementary_cache_options_enable_redis: "اس کی وضاحت کرتا ہے کہ کیش کے لئے Redis استعمال کرنا چاہے. پہلے سے طے شدہ = False (جھوٹی)."
@@ -189,7 +189,7 @@ config_supplementary_cache_options_memcached_port: "Memcached کے لئے بند
 config_supplementary_cache_options_pdo_dsn: "PDO کے لئے DSN. پہلے سے طے شدہ = "mysql:dbname=cidram;host=localhost;port=3306"."
 config_supplementary_cache_options_pdo_password: "PDO کیلئے پاس ورڈ."
 config_supplementary_cache_options_pdo_username: "PDO کے لئے صارف نام."
-config_supplementary_cache_options_prefix: "یہاں بیان کردہ قدر کو تمام کیش انٹری کیز کے ساتھ پہلے سے جوڑا جائے گا. بطور ڈیفالٹ خالی. جب ایک ہی سرور پر متعدد تنصیبات موجود ہوں، تو یہ ان کے کیچز کو ایک دوسرے سے الگ رکھنے کے لیے مفید ہو سکتا ہے."
+config_supplementary_cache_options_prefix: "یہاں بیان کردہ قدر کو تمام کیش انٹری کیز کے ساتھ پہلے سے جوڑا جائے گا. پہلے سے طے شدہ = "CIDRAM_". جب ایک ہی سرور پر متعدد تنصیبات موجود ہوں، تو یہ ان کے کیچز کو ایک دوسرے سے الگ رکھنے کے لیے مفید ہو سکتا ہے."
 config_supplementary_cache_options_redis_host: "Redis کے میزبان نام. پہلے سے طے شدہ = "localhost"."
 config_supplementary_cache_options_redis_port: "Redis کے لئے بندرگاہ. پہلے سے طے شدہ = "6379"."
 config_supplementary_cache_options_redis_timeout: "Redis کے لئے ٹائم آؤٹ. پہلے سے طے شدہ = "2.5"."

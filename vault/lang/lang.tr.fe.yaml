@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Turkish language data for the front-end (last modified: 2022.02.17).
+# This file: Turkish language data for the front-end (last modified: 2022.02.21).
 ##/
 
 Extended Description Bypasses: "Varsayılan imza bypass'lar, normalde ana paketle birlikte verilir."
@@ -180,7 +180,7 @@ config_signatures_modules: "Virgülle sınırlı, IPv4/IPv6 imzalarını kontrol
 config_signatures_track_mode: "İhlaller ne zaman sayılmalıdır? Yanlış/False = IP'ler modüller tarafından engellendiğinde. Doğru/True = Herhangi bir nedenle IP'ler engellendiğinde. Varsayılan = Yanlış/False."
 config_signatures_tracking_override: "Modüllerin izleme seçeneklerini geçersiz kılmasına izin verilsin mi? Doğru/True = Evet [Varsayılan]; Yanlış/False = Hayır."
 config_supplementary_cache_options: "Ek önbellek seçenekleri."
-config_supplementary_cache_options_enable_apcu: "Önbelleğe almak için APCu kullanmaya çalışılıp kullanılmayacağını belirtir. Varsayılan = False."
+config_supplementary_cache_options_enable_apcu: "Önbelleğe almak için APCu kullanmaya çalışılıp kullanılmayacağını belirtir. Varsayılan = True."
 config_supplementary_cache_options_enable_memcached: "Önbelleğe almak için Memcached kullanmaya çalışılıp kullanılmayacağını belirtir. Varsayılan = False."
 config_supplementary_cache_options_enable_pdo: "Önbelleğe almak için PDO kullanmaya çalışılıp kullanılmayacağını belirtir. Varsayılan = False."
 config_supplementary_cache_options_enable_redis: "Önbelleğe almak için Redis kullanmaya çalışılıp kullanılmayacağını belirtir. Varsayılan = False."
@@ -189,7 +189,7 @@ config_supplementary_cache_options_memcached_port: "Memcached port değeri. Vars
 config_supplementary_cache_options_pdo_dsn: "PDO DSN değeri. Varsayılan = "mysql:dbname=cidram;host=localhost;port=3306"."
 config_supplementary_cache_options_pdo_password: "PDO parola."
 config_supplementary_cache_options_pdo_username: "PDO kullanıcı adı."
-config_supplementary_cache_options_prefix: "Burada belirtilen değer, tüm önbellek giriş anahtarlarının önüne eklenecektir. Varsayılan olarak boş. Aynı sunucuda birden fazla kurulum olduğunda, bu onların önbelleklerini birbirinden ayrı tutmak için faydalı olabilir."
+config_supplementary_cache_options_prefix: "Burada belirtilen değer, tüm önbellek giriş anahtarlarının önüne eklenecektir. Varsayılan = "CIDRAM_". Aynı sunucuda birden fazla kurulum olduğunda, bu onların önbelleklerini birbirinden ayrı tutmak için faydalı olabilir."
 config_supplementary_cache_options_redis_host: "Redis ana bilgisayar değeri. Varsayılan = "localhost"."
 config_supplementary_cache_options_redis_port: "Redis port değeri. Varsayılan = "6379"."
 config_supplementary_cache_options_redis_timeout: "Redis zaman aşımı değeri. Varsayılan = "2.5"."

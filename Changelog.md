@@ -9,8 +9,9 @@
 *At the time of branching, CIDRAM's changelog was more than 2,300 lines long and was becoming difficult to read due to both its length and its format. To improve readability, I've decided to clear out the old changelogs from the v3 branch, and to switch from plain-text format to markdown format from v3 onward. The old changelogs will continue at previous branches and remain accessible from there.*
 
 #### Backwards-incompatible changes.
-- Completely removed support for webfonts.
-- Completely dropped support for INI files in favour of using just YAML files instead.
+- Removed support for webfonts.
+- Removed support for INI files in favour of using just YAML files instead.
+- Reorganised how CIDRAM handles L10N data.
 
 #### Other changes.
 - Improved IP address resolution strategy (#286).

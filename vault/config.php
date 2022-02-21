@@ -177,3 +177,11 @@ if (empty($CIDRAM['favicon'])) {
         'R0lGODlhEAAQAMIBAAAAAGYAAJkAAMz//2YAAGYAAGYAAGYAACH5BAEKAAQALAAAAAAQABAAAANBCLrcKjBK+eKQ' .
         'N76RIb+g0oGewAmiZZbZRppnC0y0BgR4rutK8OWfn2jgI3KKxeHvyBwMkc0kIEp13nZYnGPLSAAAOw==';
 }
+
+/** If the language directive is empty, default to English. */
+if (empty($CIDRAM['Config']['general']['lang'])) {
+    $CIDRAM['Config']['general']['lang'] = 'en';
+}
+
+/** Load CIDRAM core L10N data. */
+$CIDRAM['LoadL10N']($CIDRAM['Vault'] . 'l10n' . DIRECTORY_SEPARATOR . 'core' . DIRECTORY_SEPARATOR);

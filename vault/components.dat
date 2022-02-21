@@ -25,7 +25,6 @@ CIDRAM Core:
    - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/defaults.yml"
    - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/event_handlers.php"
    - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/functions.php"
-   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/lang.php"
    - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/outgen.php"
    - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/template_custom.html"
    - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/template_default.html"
@@ -43,7 +42,6 @@ CIDRAM Core:
    - "defaults.yml"
    - "event_handlers.php"
    - "functions.php"
-   - "lang.php"
    - "outgen.php"
    - "template_custom.html"
    - "template_default.html"
@@ -57,11 +55,10 @@ CIDRAM Core:
    - "0dcc1d4ca7220a6ab0c8b85a0d4111f54e37590e81e70b1678857de17863c396:15321"
    - "63e3c1237126b3a5b6ee45075fa0faaa53181db1e2d7a2c8d66c1eb8f4ceffb4:14837"
    - "a700fb40dba91aa85f16c67e5a3a3993cb84544f0eb7413c9f9a72cc67949b92:2927"
-   - "ce03b22502bc659ae085b696b8fcb5b6eb7ffcbafdf289fc0ce6ed8bd0203de5:7491"
+   - "2b9c06c473b18062574d33e344fa1ca8b5ccd9c51fb40d7877912c6152370374:7794"
    - "5092e8ca219a0bd4e2bb3115a5efd043884cff362cbf66a1f18d65eb6e40c7d2:24616"
    - "1fde7d2d1df4b9bf014bb3bb4a9f589087182fc14661da2e31d1a2792328d1e3:9109"
-   - "33b333035ffdcfb2765d0ba4208a2f77ab9ae79f3da23336cacc43913a06581d:102412"
-   - "8821191af5f524203f75ca81024cf0317c6629c3de6ac41634f665085361e319:5641"
+   - "bd06d97e515df0e6ed819d9c549f5d5b6cca1465605104dbed2246d3bb5d28a0:106632"
    - "72b47f5d5e7c33c9161e80f1405e1dea50e96591d51c7bbde72a7581be05f733:41345"
    - "97df7b28ced1689bf3c8ae0a715605a2db1d25f4449fface23a517d81a56f517:1203"
    - "3fca2457ad9dd611c1b2f693a0f26c80f62826837d40e6bfcb4db0f9a17132de:2468"
@@ -220,7 +217,7 @@ CIDRAM Front-End:
    - "3bc42724fbf0651e7225d54e1761948c1d624c1d853549aa0809721abf700a07:722"
    - "dcbb152e85200043cbc868ac602a14be11e6d128206634d3e35d18b192475272:1291"
    - "ebfbd6a90a244ad3f638cbe044dd661fa435ff4094fb63312346f786336b2960:996"
-   - "db60851e250cd9ae54e756054e921f27408bfd7c1d33f5b7070d1e836d23474f:263340"
+   - "7ab8a82770e19cdd5d82f44f3926a8831080b35eefa53d242d3bc34a58c69354:263486"
    - "15f8c82065734fe1f58ee4297b8a29ea6aab89e5d34647577d972c636c8dc5e0:220360"
  Reannotate: "components.dat"
 Common Classes Package:
@@ -472,11 +469,11 @@ l10n/en:
  Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/components.dat"
  Files:
   From:
-   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/lang/lang.en.fe.yaml"
-   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/lang/lang.en.yaml"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/en.yml"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/core/en.yml"
   To:
-   - "lang/lang.en.fe.yaml"
-   - "lang/lang.en.yaml"
+   - "l10n/frontend/en.yml"
+   - "l10n/core/en.yml"
   Checksum:
    - "11e6c27eb2e7ec5154dc060d44677501b616940120606a390906f1f519672923:49867"
    - "8f0c5aaf2889551a258675892041eff2739b129f7038098b61fa21bc583269fa:4481"
@@ -491,11 +488,11 @@ l10n/ar:
  Uninstallable: true
  Files:
   From:
-   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/lang/lang.ar.fe.yaml"
-   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/lang/lang.ar.yaml"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/ar.yml"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/core/ar.yml"
   To:
-   - "lang/lang.ar.fe.yaml"
-   - "lang/lang.ar.yaml"
+   - "l10n/frontend/ar.yml"
+   - "l10n/core/ar.yml"
   Checksum:
    - "7ee9590b0c96ff98a05bd635c14713ed7e7bb4978464ea7a06d9e751b3b1bd51:67575"
    - "fea289c3b7607862a4e313158120c4c7951d831b582f95456288ddd90736e9d6:4808"
@@ -510,11 +507,11 @@ l10n/bn:
  Uninstallable: true
  Files:
   From:
-   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/lang/lang.bn.fe.yaml"
-   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/lang/lang.bn.yaml"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/bn.yml"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/core/bn.yml"
   To:
-   - "lang/lang.bn.fe.yaml"
-   - "lang/lang.bn.yaml"
+   - "l10n/frontend/bn.yml"
+   - "l10n/core/bn.yml"
   Checksum:
    - "9b9d6e9ae5da76868dfec31227e343e0e1329770b2c0cb7362aeb66fb480db7d:99136"
    - "5491f6ee1db661d2291a4fdf528bdd9722d8c697c2bc6a95d93a3cb05485f04b:9845"
@@ -529,11 +526,11 @@ l10n/de:
  Uninstallable: true
  Files:
   From:
-   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/lang/lang.de.fe.yaml"
-   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/lang/lang.de.yaml"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/de.yml"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/core/de.yml"
   To:
-   - "lang/lang.de.fe.yaml"
-   - "lang/lang.de.yaml"
+   - "l10n/frontend/de.yml"
+   - "l10n/core/de.yml"
   Checksum:
    - "f51cf1549ac7cf4acbac7f7215a0282209ace9e590325ebc3ba7590d785094e7:56745"
    - "c470432026889bebe979c5c21f3178610be41b44ec5af2030938c6356f4f7576:5059"
@@ -548,11 +545,11 @@ l10n/es:
  Uninstallable: true
  Files:
   From:
-   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/lang/lang.es.fe.yaml"
-   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/lang/lang.es.yaml"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/es.yml"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/core/es.yml"
   To:
-   - "lang/lang.es.fe.yaml"
-   - "lang/lang.es.yaml"
+   - "l10n/frontend/es.yml"
+   - "l10n/core/es.yml"
   Checksum:
    - "f7de1bd25da72abed65d7195c3e32eae98e3374acb7a566a5c4891d78f56267e:57222"
    - "70528e1e589a0e6041a57826d4f6e001517d1f662ed720d103473119ef684ce8:4870"
@@ -567,11 +564,11 @@ l10n/fr:
  Uninstallable: true
  Files:
   From:
-   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/lang/lang.fr.fe.yaml"
-   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/lang/lang.fr.yaml"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/fr.yml"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/core/fr.yml"
   To:
-   - "lang/lang.fr.fe.yaml"
-   - "lang/lang.fr.yaml"
+   - "l10n/frontend/fr.yml"
+   - "l10n/core/fr.yml"
   Checksum:
    - "a78694a6883525cf95888583f17d5f5683c16fabf89ac09a74d3689451580331:58485"
    - "aaae4e1c6c0de7e0a4ce808323bd2c15c1679d9d194b6621cc5cc61809d99ac5:5174"
@@ -586,11 +583,11 @@ l10n/hi:
  Uninstallable: true
  Files:
   From:
-   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/lang/lang.hi.fe.yaml"
-   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/lang/lang.hi.yaml"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/hi.yml"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/core/hi.yml"
   To:
-   - "lang/lang.hi.fe.yaml"
-   - "lang/lang.hi.yaml"
+   - "l10n/frontend/hi.yml"
+   - "l10n/core/hi.yml"
   Checksum:
    - "8db23b67f1728f2c81b2d3d1971809aad4475fdceee8226941d17d4c150a7e16:99621"
    - "c12f7733c8e60148e288bead291aa0013ded6db130e72b175d38e08fb6ee306e:8885"
@@ -605,11 +602,11 @@ l10n/id:
  Uninstallable: true
  Files:
   From:
-   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/lang/lang.id.fe.yaml"
-   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/lang/lang.id.yaml"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/id.yml"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/core/id.yml"
   To:
-   - "lang/lang.id.fe.yaml"
-   - "lang/lang.id.yaml"
+   - "l10n/frontend/id.yml"
+   - "l10n/core/id.yml"
   Checksum:
    - "5f7fca447bddd63d86829d342763347fe129d96ed22d514ff1c576934c2fb632:52652"
    - "a726d49aa61d80526edba0f5dc4594bad9d25740111dceb44a7b04bc043f7d5d:4745"
@@ -624,11 +621,11 @@ l10n/it:
  Uninstallable: true
  Files:
   From:
-   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/lang/lang.it.fe.yaml"
-   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/lang/lang.it.yaml"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/it.yml"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/core/it.yml"
   To:
-   - "lang/lang.it.fe.yaml"
-   - "lang/lang.it.yaml"
+   - "l10n/frontend/it.yml"
+   - "l10n/core/it.yml"
   Checksum:
    - "0784e5e0daad49ab854abc104402d2d2db56577e248526574b8a74574c23b564:55642"
    - "70b672296e95eb3115cc81917a2522f28cf5968e49422b496c830b903e5de88f:4999"
@@ -643,11 +640,11 @@ l10n/ja:
  Uninstallable: true
  Files:
   From:
-   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/lang/lang.ja.fe.yaml"
-   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/lang/lang.ja.yaml"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/ja.yml"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/core/ja.yml"
   To:
-   - "lang/lang.ja.fe.yaml"
-   - "lang/lang.ja.yaml"
+   - "l10n/frontend/ja.yml"
+   - "l10n/core/ja.yml"
   Checksum:
    - "3f989505db2a0094d111ce979e3f74a98e5d9d0e97f0a7d33902884793e21515:69036"
    - "268dd2778fa3d6aee353cd17eb510c5aa339dd9668d10efe1e6fc055cd11eefb:5693"
@@ -662,11 +659,11 @@ l10n/ko:
  Uninstallable: true
  Files:
   From:
-   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/lang/lang.ko.fe.yaml"
-   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/lang/lang.ko.yaml"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/ko.yml"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/core/ko.yml"
   To:
-   - "lang/lang.ko.fe.yaml"
-   - "lang/lang.ko.yaml"
+   - "l10n/frontend/ko.yml"
+   - "l10n/core/ko.yml"
   Checksum:
    - "d4bb70c6634b9f872a511d185bcbd7242a68afaef2667b981065420044e4d451:57141"
    - "2283c19cf223b946a54962588d47a04b12cc9bf5c3746383d29388ea9c38610f:4627"
@@ -681,11 +678,11 @@ l10n/lv:
  Uninstallable: true
  Files:
   From:
-   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/lang/lang.lv.fe.yaml"
-   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/lang/lang.lv.yaml"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/lv.yml"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/core/lv.yml"
   To:
-   - "lang/lang.lv.fe.yaml"
-   - "lang/lang.lv.yaml"
+   - "l10n/frontend/lv.yml"
+   - "l10n/core/lv.yml"
   Checksum:
    - "fb77b0fbfdf8ac5f99e3aeb12aef8c49f63399dee55dae9cb639dfe33206f50b:55269"
    - "e8d232f46479265ad3a0cc36bd0ac24e567f1e15f8b0c3d0b029f0466bfe4276:4887"
@@ -700,11 +697,11 @@ l10n/nl:
  Uninstallable: true
  Files:
   From:
-   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/lang/lang.nl.fe.yaml"
-   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/lang/lang.nl.yaml"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/nl.yml"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/core/nl.yml"
   To:
-   - "lang/lang.nl.fe.yaml"
-   - "lang/lang.nl.yaml"
+   - "l10n/frontend/nl.yml"
+   - "l10n/core/nl.yml"
   Checksum:
    - "c7e671a83c56247baaee48e38f0a6bbc3ca731ea311b6d57dcf34d7ceddc9848:54375"
    - "c331788a1de5d3b6048b9a3f2cc4861083ecc428f412656cf98f1ee717a9a71c:4803"
@@ -719,11 +716,11 @@ l10n/no:
  Uninstallable: true
  Files:
   From:
-   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/lang/lang.no.fe.yaml"
-   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/lang/lang.no.yaml"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/no.yml"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/core/no.yml"
   To:
-   - "lang/lang.no.fe.yaml"
-   - "lang/lang.no.yaml"
+   - "l10n/frontend/no.yml"
+   - "l10n/core/no.yml"
   Checksum:
    - "0d0365eb9749224db53704dca6c594e81ef332dfc97c583946a1d322d0002e91:51687"
    - "79ade91f2de6323042bcf35db38b70766d1eaae91ed1ab100651fad99218f4da:4711"
@@ -738,11 +735,11 @@ l10n/pl:
  Uninstallable: true
  Files:
   From:
-   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/lang/lang.pl.fe.yaml"
-   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/lang/lang.pl.yaml"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/pl.yml"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/core/pl.yml"
   To:
-   - "lang/lang.pl.fe.yaml"
-   - "lang/lang.pl.yaml"
+   - "l10n/frontend/pl.yml"
+   - "l10n/core/pl.yml"
   Checksum:
    - "4811418e915437ca868295360b29774d8f331ccb5cd9fc79c568bae9ef19bbdc:56237"
    - "68b45ae902f3d831b099e538e80cd3913d13801505440aa8b2b3482a727059c2:5065"
@@ -757,11 +754,11 @@ l10n/pt:
  Uninstallable: true
  Files:
   From:
-   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/lang/lang.pt.fe.yaml"
-   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/lang/lang.pt.yaml"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/pt.yml"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/core/pt.yml"
   To:
-   - "lang/lang.pt.fe.yaml"
-   - "lang/lang.pt.yaml"
+   - "l10n/frontend/pt.yml"
+   - "l10n/core/pt.yml"
   Checksum:
    - "b4b8281761af1a53122b8421b4e429ae3970ebcb6f5427039a6c88ed94bef6fe:55458"
    - "c5cb01888d612d1431986391305104430d717535e9db73d9e60aaa8376720d57:4797"
@@ -776,11 +773,11 @@ l10n/ru:
  Uninstallable: true
  Files:
   From:
-   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/lang/lang.ru.fe.yaml"
-   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/lang/lang.ru.yaml"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/ru.yml"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/core/ru.yml"
   To:
-   - "lang/lang.ru.fe.yaml"
-   - "lang/lang.ru.yaml"
+   - "l10n/frontend/ru.yml"
+   - "l10n/core/ru.yml"
   Checksum:
    - "7df741c206eb187941b64586169e7cf682e296aef4143ac727ab6b6e910048aa:81488"
    - "f3e87df12c3ca93b7ace33ffaa71ea98bd828b0905c949cdf3e38b871407a591:7446"
@@ -795,11 +792,11 @@ l10n/sv:
  Uninstallable: true
  Files:
   From:
-   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/lang/lang.sv.fe.yaml"
-   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/lang/lang.sv.yaml"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/sv.yml"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/core/sv.yml"
   To:
-   - "lang/lang.sv.fe.yaml"
-   - "lang/lang.sv.yaml"
+   - "l10n/frontend/sv.yml"
+   - "l10n/core/sv.yml"
   Checksum:
    - "c121830f46d4ba3681f0bc256f229bef66c6ced1c9aab6b0cfcbdae6aca81829:52834"
    - "a0a62931b46685685caa30656d70224aaf74b0ac9c556367aeb5e82b812acbf0:4782"
@@ -814,11 +811,11 @@ l10n/ta:
  Uninstallable: true
  Files:
   From:
-   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/lang/lang.ta.fe.yaml"
-   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/lang/lang.ta.yaml"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/ta.yml"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/core/ta.yml"
   To:
-   - "lang/lang.ta.fe.yaml"
-   - "lang/lang.ta.yaml"
+   - "l10n/frontend/ta.yml"
+   - "l10n/core/ta.yml"
   Checksum:
    - "f97241d58e00e3f7a1b7db07c2e5fc69dbf064b380e7900b8d0b33c369e9b593:117027"
    - "a3ac2fce288349ea20adc293c17f93b501cf0552c5ab283126d81c2d2c3970f9:10704"
@@ -833,11 +830,11 @@ l10n/th:
  Uninstallable: true
  Files:
   From:
-   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/lang/lang.th.fe.yaml"
-   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/lang/lang.th.yaml"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/th.yml"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/core/th.yml"
   To:
-   - "lang/lang.th.fe.yaml"
-   - "lang/lang.th.yaml"
+   - "l10n/frontend/th.yml"
+   - "l10n/core/th.yml"
   Checksum:
    - "9cceba744544447347b004dde55c0185a17a9407f1ef3194c09321e532502b6e:92661"
    - "54f833e7356cab043b2a95ef682b8405b1358b61c3af28c0a164fe60ec9066e7:8577"
@@ -852,11 +849,11 @@ l10n/tr:
  Uninstallable: true
  Files:
   From:
-   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/lang/lang.tr.fe.yaml"
-   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/lang/lang.tr.yaml"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/tr.yml"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/core/tr.yml"
   To:
-   - "lang/lang.tr.fe.yaml"
-   - "lang/lang.tr.yaml"
+   - "l10n/frontend/tr.yml"
+   - "l10n/core/tr.yml"
   Checksum:
    - "2cf7f46b20f09cf8ddb2e4207a99de44aad733d71102178f5e91449b6d67e7a7:55096"
    - "b545b7310f9010ec67d541478c9cd62468ce92eeefc08332e0518ab810757a24:4957"
@@ -871,11 +868,11 @@ l10n/ur:
  Uninstallable: true
  Files:
   From:
-   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/lang/lang.ur.fe.yaml"
-   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/lang/lang.ur.yaml"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/ur.yml"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/core/ur.yml"
   To:
-   - "lang/lang.ur.fe.yaml"
-   - "lang/lang.ur.yaml"
+   - "l10n/frontend/ur.yml"
+   - "l10n/core/ur.yml"
   Checksum:
    - "9a389c13c69673c77795ae1300c68bc3449f1bc427daa6abd84b8b424d004def:73208"
    - "742e9ad1734407623451bdc70daefeb3ab58f0aab656756a7288b17b065a6de1:6855"
@@ -890,11 +887,11 @@ l10n/vi:
  Uninstallable: true
  Files:
   From:
-   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/lang/lang.vi.fe.yaml"
-   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/lang/lang.vi.yaml"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/vi.yml"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/core/vi.yml"
   To:
-   - "lang/lang.vi.fe.yaml"
-   - "lang/lang.vi.yaml"
+   - "l10n/frontend/vi.yml"
+   - "l10n/core/vi.yml"
   Checksum:
    - "acebbf954f2f8582fdc4140f5e9de629471a32217463995b1132583c24d4267e:62121"
    - "7b17ab4a1e5e02145d3b68fb10108ef31aa8ac3c6c98ea1f123d563ce3088c47:5980"
@@ -928,11 +925,11 @@ l10n/zh:
  Uninstallable: true
  Files:
   From:
-   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/lang/lang.zh.fe.yaml"
-   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/lang/lang.zh.yaml"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/zh.yml"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/core/zh.yml"
   To:
-   - "lang/lang.zh.fe.yaml"
-   - "lang/lang.zh.yaml"
+   - "l10n/frontend/zh.yml"
+   - "l10n/core/zh.yml"
   Checksum:
    - "f7a797e8e8ad695253945ce51b00ab535d60d1aa7d05c2afc3d07f775756b510:47863"
    - "72ed7be660a85f4d9d77c1891d43bdc18a2a79a6ecd5b3f6a3cf4b2ac99a5618:4163"

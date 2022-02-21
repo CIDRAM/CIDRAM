@@ -25,6 +25,9 @@ if (!file_exists($CIDRAM['Vault'] . 'frontend_functions.php')) {
 /** Load the front-end functions file. */
 require $CIDRAM['Vault'] . 'frontend_functions.php';
 
+/** Load CIDRAM front-end L10N data. */
+$CIDRAM['LoadL10N']($CIDRAM['Vault'] . 'l10n' . DIRECTORY_SEPARATOR . 'frontend' . DIRECTORY_SEPARATOR);
+
 /** Set page selector if not already set. */
 if (empty($CIDRAM['QueryVars']['cidram-page'])) {
     $CIDRAM['QueryVars']['cidram-page'] = '';

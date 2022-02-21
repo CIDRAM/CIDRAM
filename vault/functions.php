@@ -2611,6 +2611,122 @@ $CIDRAM['IsSensitive'] = function (string $URI): bool {
     );
 };
 
+/**
+ * Update the configuration.
+ *
+ * @return bool Whether succeeded or failed.
+ */
+$CIDRAM['UpdateConfiguration'] = function () use (&$CIDRAM): bool {
+    $Reconstructed = $CIDRAM['YAML']->reconstruct($CIDRAM['Config']);
+    $Handle = fopen($CIDRAM['Vault'] . $CIDRAM['FE']['ActiveConfigFile'], 'wb');
+    if (!is_resource($Handle)) {
+        return false;
+    }
+    $Err = fwrite($Handle, $Reconstructed);
+    fclose($Handle);
+    return $Err !== false;
+};
+
+/**
+ * Load L10N data.
+ *
+ * @param string $Path Where to find the L10N data to load.
+ * @return void
+ */
+$CIDRAM['LoadL10N'] = function (string $Path = '') use (&$CIDRAM): void {
+    if ($CIDRAM['Config']['general']['lang'] === 'en') {
+        $Primary = $CIDRAM['ReadFile']($Path . 'en.yml');
+        $Fallback = '';
+    } else {
+        $Primary = $CIDRAM['ReadFile']($Path . $CIDRAM['Config']['general']['lang'] . '.yml');
+        $Fallback = $CIDRAM['ReadFile']($Path . 'en.yml');
+    }
+    if (strlen($Primary)) {
+        $Arr = [];
+        $CIDRAM['YAML']->process($Primary, $Arr);
+        $Primary = $Arr;
+    } else {
+        $Primary = [];
+    }
+    if (strlen($Fallback)) {
+        $Arr = [];
+        $CIDRAM['YAML']->process($Fallback, $Arr);
+        $Fallback = $Arr;
+    } else {
+        $Fallback = [];
+    }
+
+    /** Instantiate the L10N object, or append to the instance if it already exists. */
+    if (isset($CIDRAM['L10N']) && $CIDRAM['L10N'] instanceof \Maikuolan\Common\L10N && is_array($CIDRAM['L10N']->Data)) {
+        if (!empty($Primary) && is_array($CIDRAM['L10N']->Data)) {
+            $CIDRAM['L10N']->Data = array_merge($CIDRAM['L10N']->Data, $Primary);
+        }
+        if (!empty($Fallback) && is_array($CIDRAM['L10N']->Fallback)) {
+            $CIDRAM['L10N']->Fallback = array_merge($CIDRAM['L10N']->Fallback, $Fallback);
+        }
+    } else {
+        $CIDRAM['L10N'] = new \Maikuolan\Common\L10N($Primary, $Fallback);
+        if ($CIDRAM['Config']['general']['lang'] === 'en') {
+            $CIDRAM['L10N']->autoAssignRules('en');
+        } else {
+            $CIDRAM['L10N']->autoAssignRules($CIDRAM['Config']['general']['lang'], 'en');
+        }
+    }
+
+    /** Load client-specified L10N data if possible. */
+    if (!$CIDRAM['Config']['general']['lang_override'] || empty($_SERVER['HTTP_ACCEPT_LANGUAGE'])) {
+        if (!isset($CIDRAM['Client-L10N']) || !($CIDRAM['Client-L10N'] instanceof \Maikuolan\Common\L10N)) {
+            $CIDRAM['Client-L10N'] = &$CIDRAM['L10N'];
+        }
+    } else {
+        $Accepted = preg_replace(['~^([^,]*).*$~', '~[^-A-Za-z]~'], ['\1', ''], $_SERVER['HTTP_ACCEPT_LANGUAGE']);
+        $Primary = '';
+        $IsSameAs = false;
+        if ($CIDRAM['Config']['general']['lang'] === $Accepted) {
+            $IsSameAs = true;
+        } elseif (is_readable($Path . $Accepted . '.yml')) {
+            $Primary = $CIDRAM['ReadFile']($Path . $Accepted . '.yml');
+        } else {
+            $Accepted = strtolower(preg_replace('~^([^-]*).*$~', '\1', $Accepted));
+            if ($CIDRAM['Config']['general']['lang'] === $Accepted) {
+                $IsSameAs = true;
+            } elseif (is_readable($Path . $Accepted . '.yml')) {
+                $Primary = $CIDRAM['ReadFile']($Path . $Accepted . '.yml');
+            }
+        }
+
+        /** Process client-specified L10N data. */
+        if ($IsSameAs) {
+            if (!isset($CIDRAM['Client-L10N']) || !($CIDRAM['Client-L10N'] instanceof \Maikuolan\Common\L10N)) {
+                $CIDRAM['Client-L10N'] = &$CIDRAM['L10N'];
+            }
+        } elseif ($Primary) {
+            $Arr = [];
+            if (!$CIDRAM['Client-L10N-Accepted']) {
+                $CIDRAM['Client-L10N-Accepted'] = $Accepted;
+            }
+            $CIDRAM['YAML']->process($Primary, $Arr);
+            if (
+                isset($CIDRAM['Client-L10N']) &&
+                $CIDRAM['Client-L10N'] instanceof \Maikuolan\Common\L10N &&
+                is_array($CIDRAM['Client-L10N']->Data)
+            ) {
+                $CIDRAM['Client-L10N']->Data = array_merge($CIDRAM['Client-L10N']->Data, $Arr);
+            } else {
+                $CIDRAM['Client-L10N'] = new \Maikuolan\Common\L10N($Arr, $CIDRAM['L10N']);
+                $CIDRAM['Client-L10N']->autoAssignRules($Accepted);
+            }
+        } elseif (!isset($CIDRAM['Client-L10N']) || !($CIDRAM['Client-L10N'] instanceof \Maikuolan\Common\L10N)) {
+            $CIDRAM['Client-L10N'] = new \Maikuolan\Common\L10N([], $CIDRAM['L10N']);
+        }
+    }
+
+    /** Fallback for missing accepted client L10N choice. */
+    if (empty($CIDRAM['Client-L10N-Accepted'])) {
+        $CIDRAM['Client-L10N-Accepted'] = $CIDRAM['Config']['general']['lang'];
+    }
+};
+
 /** Make sure the vault is defined so that tests don't break. */
 if (isset($CIDRAM['Vault'])) {
     /** Load all default event handlers. */
@@ -2631,19 +2747,3 @@ if (isset($CIDRAM['Vault'])) {
         unset($CIDRAM['LoadThis'], $CIDRAM['LoadThese']);
     }
 }
-
-/**
- * Update the configuration.
- *
- * @return bool Whether succeeded or failed.
- */
-$CIDRAM['UpdateConfiguration'] = function () use (&$CIDRAM): bool {
-    $Reconstructed = $CIDRAM['YAML']->reconstruct($CIDRAM['Config']);
-    $Handle = fopen($CIDRAM['Vault'] . $CIDRAM['FE']['ActiveConfigFile'], 'wb');
-    if (!is_resource($Handle)) {
-        return false;
-    }
-    $Err = fwrite($Handle, $Reconstructed);
-    fclose($Handle);
-    return $Err !== false;
-};

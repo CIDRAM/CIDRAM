@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2022.01.22).
+ * This file: Functions file (last modified: 2022.02.21).
  */
 
 /**
@@ -446,13 +446,11 @@ $CIDRAM['CheckFactors'] = function (array $Files, array $Factors) use (&$CIDRAM)
                     }
                     if (isset($CIDRAM['RunParamResCache'][$Signature]) && is_object($CIDRAM['RunParamResCache'][$Signature])) {
                         $RunExitCode = $CIDRAM['RunParamResCache'][$Signature]($Factors, $FactorIndex, $LN, $Tag);
+                    } elseif (file_exists($CIDRAM['Vault'] . $Signature)) {
+                        require_once $CIDRAM['Vault'] . $Signature;
                     } else {
-                        if (file_exists($CIDRAM['Vault'] . $Signature)) {
-                            require_once $CIDRAM['Vault'] . $Signature;
-                        } else {
-                            $CIDRAM['ExtraErrorInfo'] = $Signature;
-                            trigger_error($CIDRAM['L10N']->getString('Error_MissingRequire'), E_USER_WARNING);
-                        }
+                        $CIDRAM['ExtraErrorInfo'] = $Signature;
+                        trigger_error($CIDRAM['L10N']->getString('Error_MissingRequire'), E_USER_WARNING);
                     }
                 }
                 if ($RunExitCode === 4) {
@@ -2043,12 +2041,10 @@ $CIDRAM['AuxAction'] = function ($Action, $Name, $Reason = '', $Target = '', $St
         }
         if (isset($CIDRAM['AuxRunResCache'][$Run]) && is_object($CIDRAM['AuxRunResCache'][$Run])) {
             $RunExitCode = $CIDRAM['AuxRunResCache'][$Run]();
+        } elseif (file_exists($CIDRAM['Vault'] . $Run)) {
+            require_once $CIDRAM['Vault'] . $Run;
         } else {
-            if (file_exists($CIDRAM['Vault'] . $Run)) {
-                require_once $CIDRAM['Vault'] . $Run;
-            } else {
-                trigger_error($CIDRAM['L10N']->getString('Error_MissingRequire'), E_USER_WARNING);
-            }
+            trigger_error($CIDRAM['L10N']->getString('Error_MissingRequire'), E_USER_WARNING);
         }
     }
 

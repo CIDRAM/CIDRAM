@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: ReCaptcha class (last modified: 2022.02.07).
+ * This file: ReCaptcha class (last modified: 2022.02.21).
  */
 
 namespace CIDRAM\Core;
@@ -319,11 +319,11 @@ class ReCaptcha extends Captcha
             return;
         }
 
-        $this->CIDRAM['Config']['template_data']['captcha_api_include'] = $this->generateCallbackData(
+        $this->CIDRAM['FieldTemplates']['captcha_api_include'] = $this->generateCallbackData(
             $this->CIDRAM['Config']['recaptcha']['sitekey'],
             $this->CIDRAM['Config']['recaptcha']['api']
         );
-        $this->CIDRAM['Config']['template_data']['captcha_div_include'] = $this->generateTemplateData(
+        $this->CIDRAM['FieldTemplates']['captcha_div_include'] = $this->generateTemplateData(
             $this->CIDRAM['Config']['recaptcha']['sitekey'],
             $this->CIDRAM['Config']['recaptcha']['api'],
             $CookieWarn,

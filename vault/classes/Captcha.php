@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Captcha class (last modified: 2021.04.25).
+ * This file: Captcha class (last modified: 2022.02.21).
  */
 
 namespace CIDRAM\Core;
@@ -71,12 +71,12 @@ class Captcha
     public function determineTheme()
     {
         if (!isset(
-            $this->CIDRAM['Config']['template_data']['theme'],
-            $this->CIDRAM['Config']['Config Defaults']['template_data']['theme']['lightdark'][$this->CIDRAM['Config']['template_data']['theme']]
+            $this->CIDRAM['FieldTemplates']['theme'],
+            $this->CIDRAM['Config']['Config Defaults']['template_data']['theme']['lightdark'][$this->CIDRAM['FieldTemplates']['theme']]
         )) {
             return 'light';
         }
-        return $this->CIDRAM['Config']['Config Defaults']['template_data']['theme']['lightdark'][$this->CIDRAM['Config']['template_data']['theme']];
+        return $this->CIDRAM['Config']['Config Defaults']['template_data']['theme']['lightdark'][$this->CIDRAM['FieldTemplates']['theme']];
     }
 
     /**

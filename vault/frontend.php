@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2022.02.01).
+ * This file: Front-end handler (last modified: 2022.02.21).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -1303,14 +1303,15 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
                                 $CIDRAM['DirValue']['Posts'][] = $CIDRAM['DirValue']['ThisChoiceKey'] . ':' . $CIDRAM['DirValue']['ThisLabelKey'];
                             }
                         }
-                    } else {
-                        if (!empty($_POST[$CIDRAM['ThisDir']['DirLangKey'] . '_' . $CIDRAM['DirValue']['ThisChoiceKey']])) {
-                            $CIDRAM['DirValue']['Posts'][] = $CIDRAM['DirValue']['ThisChoiceKey'];
-                        }
+                    } elseif (!empty($_POST[$CIDRAM['ThisDir']['DirLangKey'] . '_' . $CIDRAM['DirValue']['ThisChoiceKey']])) {
+                        $CIDRAM['DirValue']['Posts'][] = $CIDRAM['DirValue']['ThisChoiceKey'];
                     }
                 }
                 $CIDRAM['DirValue']['Posts'] = implode(',', $CIDRAM['DirValue']['Posts']) ?: '';
-                $CIDRAM['Config'][$CIDRAM['CatKey']][$CIDRAM['DirKey']] = $CIDRAM['DirValue']['Posts'];
+                if (!empty($_POST['updatingConfig']) && $CIDRAM['Config'][$CIDRAM['CatKey']][$CIDRAM['DirKey']] !== $CIDRAM['DirValue']['Posts']) {
+                    $CIDRAM['ConfigModified'] = true;
+                    $CIDRAM['Config'][$CIDRAM['CatKey']][$CIDRAM['DirKey']] = $CIDRAM['DirValue']['Posts'];
+                }
             }
             if ($CIDRAM['Config'][$CIDRAM['CatKey']][$CIDRAM['DirKey']] === true) {
                 $CIDRAM['RegenerateConfig'] .= $CIDRAM['DirKey'] . "=true\r\n\r\n";

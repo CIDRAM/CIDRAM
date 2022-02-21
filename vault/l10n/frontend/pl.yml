@@ -179,7 +179,7 @@ config_signatures_ipv6: "Lista plików podpis IPv6, które CIDRAM powinien przet
 config_signatures_modules: "Lista plików modułu do załadowania po sprawdzeniu podpisów IPv4/IPv6, oddzielonych przecinkami."
 config_signatures_track_mode: "Kiedy należy liczyć wykroczenia? False (Fałszywy) = Gdy adresy IP są blokowane przez moduły. True (Prawdziwe) = Gdy adresy IP są blokowane z jakiegokolwiek powodu. Domyślna = False."
 config_signatures_tracking_override: "Zezwalać modułom na zastępowanie opcji śledzenia? True (Prawdziwe) = Tak [Domyślna]; False (Fałszywy) = Nie."
-config_supplementary_cache_options: "Dodatkowe opcje pamięci podręcznej."
+config_supplementary_cache_options: "Dodatkowe opcje pamięci podręcznej. Uwaga: Zmiana tych wartości może potencjalnie spowodować wylogowanie."
 config_supplementary_cache_options_enable_apcu: "Określa, czy spróbować użyć APCu do pamięci podręcznej. Domyślna = True."
 config_supplementary_cache_options_enable_memcached: "Określa, czy spróbować użyć Memcached do pamięci podręcznej. Domyślna = False."
 config_supplementary_cache_options_enable_pdo: "Określa, czy spróbować użyć PDO do pamięci podręcznej. Domyślna = False."

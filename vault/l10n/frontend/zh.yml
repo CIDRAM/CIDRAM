@@ -179,7 +179,7 @@ config_signatures_ipv6: "列表的IPv6签名文件，​CIDRAM应该尝试使用
 config_signatures_modules: "模块文件要加载的列表以后检查签名IPv4/IPv6，​用逗号分隔。"
 config_signatures_track_mode: "何时应该记录违规？​False（假）=当IP被模块阻止时。​True（真）=当IP由于任何原因阻止时。​标准 = False。"
 config_signatures_tracking_override: "允许模块覆盖跟踪选项吗？​True（真）=允许【标准】；False（假）=不允许。"
-config_supplementary_cache_options: "补充缓存选项。"
+config_supplementary_cache_options: "补充缓存选项。​注意：更改这些值可能会使您注销。"
 config_supplementary_cache_options_enable_apcu: "指定是否尝试使用APCu进行缓存。​标准 = True。"
 config_supplementary_cache_options_enable_memcached: "指定是否尝试使用Memcached进行缓存。​标准 = False。"
 config_supplementary_cache_options_enable_pdo: "指定是否尝试使用PDO进行缓存。​标准 = False。"

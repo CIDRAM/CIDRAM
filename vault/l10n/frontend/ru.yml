@@ -179,7 +179,7 @@ config_signatures_ipv6: "Список сигнатур IPv6 файлы, кото
 config_signatures_modules: "Список модуль файлы для загрузки после обработки сигнатуры IPv4/IPv6, разделенных запятыми."
 config_signatures_track_mode: "Когда следует учитывать нарушения? False = Когда IP-адреса блокируются из модулями. True = Когда IP-адреса блокируются по какой-либо причине. Стандарт = False."
 config_signatures_tracking_override: "Разрешить модулям переопределять параметры отслеживания? True = Да [Стандарт]; False = Нет."
-config_supplementary_cache_options: "Дополнительные параметры кэша."
+config_supplementary_cache_options: "Дополнительные параметры кэша. Примечание: Изменение этих значений потенциально может привести к выходу из системы."
 config_supplementary_cache_options_enable_apcu: "Указывает, использовать ли APCu для кэширования. Стандарт = True."
 config_supplementary_cache_options_enable_memcached: "Указывает, использовать ли Memcached для кэширования. Стандарт = False."
 config_supplementary_cache_options_enable_pdo: "Указывает, использовать ли PDO для кэширования. Стандарт = False."

@@ -179,7 +179,7 @@ config_signatures_ipv6: "列表的IPv6簽名文件，​CIDRAM應該嘗試使用
 config_signatures_modules: "模塊文件要加載的列表以後檢查簽名IPv4/IPv6，​用逗號分隔。"
 config_signatures_track_mode: "何時應該記錄違規？​False（假）=當IP被模塊阻止時。​True（真）=當IP由於任何原因阻止時。​默認 = False。"
 config_signatures_tracking_override: "允許模塊覆蓋跟踪選項嗎？​True（真）=允許【標準】；False（假）=不允許。"
-config_supplementary_cache_options: "補充緩存選項。"
+config_supplementary_cache_options: "補充緩存選項。​注意：更改這些值可能會使您註銷。"
 config_supplementary_cache_options_enable_apcu: "指定是否嘗試使用APCu進行緩存。​默認 = True。"
 config_supplementary_cache_options_enable_memcached: "指定是否嘗試使用Memcached進行緩存。​默認 = False。"
 config_supplementary_cache_options_enable_pdo: "指定是否嘗試使用PDO進行緩存。​默認 = False。"

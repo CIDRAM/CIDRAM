@@ -179,7 +179,7 @@ config_signatures_ipv6: "A list of the IPv6 signature files that CIDRAM should a
 config_signatures_modules: "A list of module files to load after checking the IPv4/IPv6 signatures, delimited by commas."
 config_signatures_track_mode: "When should infractions be counted? False = When IPs are blocked by modules. True = When IPs are blocked for any reason. Default = False."
 config_signatures_tracking_override: "Allow modules to override tracking options? True = Yes [Default]; False = No."
-config_supplementary_cache_options: "Supplementary cache options."
+config_supplementary_cache_options: "Supplementary cache options. Note: Changing these values may potentially log you out."
 config_supplementary_cache_options_enable_apcu: "Specifies whether to try using APCu for caching. Default = True."
 config_supplementary_cache_options_enable_memcached: "Specifies whether to try using Memcached for caching. Default = False."
 config_supplementary_cache_options_enable_pdo: "Specifies whether to try using PDO for caching. Default = False."

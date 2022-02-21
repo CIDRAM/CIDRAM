@@ -179,7 +179,7 @@ config_signatures_ipv6: "Uma lista dos arquivos de assinaturas IPv6 que CIDRAM d
 config_signatures_modules: "Uma lista de arquivos módulo a carregar depois de processamento as assinaturas IPv4/IPv6, delimitado por vírgulas."
 config_signatures_track_mode: "Quando as infrações devem ser contadas? False = Quando os IPs são bloqueados por módulos. True = Quando os IPs são bloqueados por qualquer motivo. Padrão = False."
 config_signatures_tracking_override: "Permitir que os módulos substituem as opções de monitoração? True = Sim [Padrão]; False = Não."
-config_supplementary_cache_options: "Opções de cache suplementares."
+config_supplementary_cache_options: "Opções de cache suplementares. Nota: Alterar estes valores podem potencialmente fazer você ser estar desconectado."
 config_supplementary_cache_options_enable_apcu: "Especifica se deve tentar usar o APCu para armazenamento em cache. Padrão = True."
 config_supplementary_cache_options_enable_memcached: "Especifica se deve tentar usar o Memcached para armazenamento em cache. Padrão = False."
 config_supplementary_cache_options_enable_pdo: "Especifica se deve tentar usar o PDO para armazenamento em cache. Padrão = False."

@@ -179,7 +179,7 @@ config_signatures_ipv6: "Daftar file tanda tangan IPv6 yang CIDRAM harus berusah
 config_signatures_modules: "Daftar file modul untuk memuat setelah memeriksa tanda tangan IPv4/IPv6, dipisahkan dengan koma."
 config_signatures_track_mode: "Kapan sebaiknya pelanggaran dihitung? False = Ketika IP adalah diblokir oleh modul. True = Ketika IP adalah diblokir untuk alasan apapun. Default = False."
 config_signatures_tracking_override: "Izinkan modul untuk mengganti opsi pelacakan? True = Ya [Default]; False = Tidak."
-config_supplementary_cache_options: "Opsi cache tambahan."
+config_supplementary_cache_options: "Opsi cache tambahan. Catatan: Mengubah nilai ini berpotensi membuat Anda keluar."
 config_supplementary_cache_options_enable_apcu: "Menentukan apakah akan mencoba menggunakan APCu untuk cache. Default = True."
 config_supplementary_cache_options_enable_memcached: "Menentukan apakah akan mencoba menggunakan Memcached untuk cache. Default = False."
 config_supplementary_cache_options_enable_pdo: "Menentukan apakah akan mencoba menggunakan PDO untuk cache. Default = False."

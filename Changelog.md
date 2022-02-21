@@ -10,3 +10,6 @@
 
 #### Backwards-incompatible changes.
 - Completely removed support for webfonts.
+
+#### Other changes.
+- Improved IP address resolution strategy (#286).

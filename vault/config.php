@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Configuration handler (last modified: 2022.02.01).
+ * This file: Configuration handler (last modified: 2022.02.20).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -111,23 +111,8 @@ unset($CIDRAM['Supplement']);
 /** Perform fallbacks and autotyping for missing configuration directives. */
 $CIDRAM['Fallback']($CIDRAM['Config']['Config Defaults'], $CIDRAM['Config']);
 
-/** Failsafe for weird ipaddr configuration. */
-$CIDRAM['IPAddr'] = (
-    $CIDRAM['Config']['general']['ipaddr'] !== 'REMOTE_ADDR' && empty($_SERVER[$CIDRAM['Config']['general']['ipaddr']])
-) ? 'REMOTE_ADDR' : $CIDRAM['Config']['general']['ipaddr'];
-
-/** Ensure we have an IP address available to work with. */
-$CIDRAM['IPAddr'] = $_SERVER[$CIDRAM['IPAddr']] ?? '';
-
-/** Ensure the IP address we're working with is a string. */
-if (is_array($CIDRAM['IPAddr'])) {
-    $CIDRAM['IPAddr'] = array_shift($CIDRAM['IPAddr']);
-}
-if (is_string($CIDRAM['IPAddr']) && ($CIDRAM['Pos'] = strpos($CIDRAM['IPAddr'], ', ')) !== false) {
-    $CIDRAM['IPAddr'] = substr($CIDRAM['IPAddr'], 0, $CIDRAM['Pos']);
-}
-$CIDRAM['IPAddr'] = (string)$CIDRAM['IPAddr'];
-unset($CIDRAM['Pos']);
+/** Fetch the IP address of the current request. */
+$CIDRAM['IPAddr'] = (new \Maikuolan\Common\IPHeader($CIDRAM['Config']['general']['ipaddr']))->Resolution;
 
 /** Adjusted present time. */
 $CIDRAM['Now'] = time() + ($CIDRAM['Config']['general']['time_offset'] * 60);

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Spanish language data for the front-end (last modified: 2022.01.22).
+# This file: Spanish language data for the front-end (last modified: 2022.02.21).
 ##/
 
 Extended Description Bypasses: "Los archivos para bypass de firmas estándar normalmente se incluyen con el paquete principal."
@@ -173,8 +173,8 @@ config_signatures_block_legal: "¿Bloquear CIDRs en respuesta a obligaciones leg
 config_signatures_block_malware: "¿Bloquear CIDRs asociados con el malware? Esto incluye servidores de C&C, máquinas infectadas, máquinas involucradas en la distribución de malware, etc."
 config_signatures_block_proxies: "¿Bloquear CIDRs identificados como pertenecientes a los servicios de proxy o VPNs? Si requiere que los usuarios puedan acceder a su sitio web a partir de los servicios de proxy o VPNs, esta directiva debe ser establecido para false. Alternativamente, Si usted no requiere servicios de proxy o VPNs, esta directiva debe ser establecido para true como un medio para mejorar la seguridad."
 config_signatures_block_spam: "¿Bloquear CIDRs identificado como siendo de alto riesgo para el spam? A menos que experimentar problemas cuando hacerlo, en general, esto siempre debe establecerse para true."
-config_signatures_default_tracktime: "¿Cuántos segundos para realizar el seguimiento de las IP prohibidas por los módulos? Predefinida = 604800 (1 semana)."
-config_signatures_infraction_limit: "Número máximo de infracciones a las que un IP puede incurrir antes de ser prohibido por el rastreo IP. Predefinida = 10."
+config_signatures_default_tracktime: "¿Cuántos segundos para realizar el seguimiento de las IP prohibidas por los módulos? Predefinido = 604800 (1 semana)."
+config_signatures_infraction_limit: "Número máximo de infracciones a las que un IP puede incurrir antes de ser prohibido por el rastreo IP. Predefinido = 10."
 config_signatures_ipv4: "Una lista de los archivos de firmas IPv4 que CIDRAM debe tratar de utilizar, delimitado por comas."
 config_signatures_ipv6: "Una lista de los archivos de firmas IPv6 que CIDRAM debe tratar de utilizar, delimitado por comas."
 config_signatures_modules: "Una lista de archivos módulo a cargar después de comprobar las firmas IPv4/IPv6, delimitado por comas."

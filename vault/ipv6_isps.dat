@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6_isps.dat
 
-# Version: 2022.50.0
-# Last modified: 2022.02.20
+# Version: 2022.52.0
+# Last modified: 2022.02.22
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -240,21 +240,6 @@ Tag: Ufanet
 Origin: TW
 Profile: Domestic ISP;Commercial;Multiplay;Tor endpoints here;Webhosting
 Tag: DCBG
-
-
-# ASNs 7643, 45899, 135905 ("VietNam Post and Telecom Corporation").
-# A *major* Vietnamese domestic ISP, but also a significant source of spam,
-# hack attempts, probing, etc. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 66 (AS7643), 20,126 (AS45899), 308 (AS135905).
-# Updated: 2021.06.16
-
-2001:ee0:4dba:b510::/64 Deny Spam
-2001:ee0:4f89:5600::/64 Deny Spam
-2001:ee0:4f8b:3f60::/64 Deny Spam
-2001:ee0:53e8:fb10::/64 Deny Spam
-Origin: VN
-Profile: Domestic ISP;Infrastructure/Transit;Tor endpoints here
-Tag: VNPT Corp
 
 
 # ASNs 9498, 9730, 24560, 37140, 45609, 132045 ("Bharti Airtel").

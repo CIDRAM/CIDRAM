@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6.dat
 
-# Version: 2022.50.0
-# Last modified: 2022.02.20
+# Version: 2022.52.0
+# Last modified: 2022.02.22
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -125,8 +125,8 @@ Tag: New Dream Network
 
 
 # ASN 33182 ("HostDime.com, Inc").
-# Stop Forum Spam (SFS) listings: 63.
-# Updated: 2021.05.27
+# Stop Forum Spam (SFS) listings: 1,887.
+# Updated: 2021.05.27 / Checked: 2022.02.22
 
 2804:9c4::/32 Deny Cloud
 Origin: BR
@@ -797,16 +797,14 @@ Tag: Root SA
 
 # ASN 11878 ("Tzulo Inc").
 # Dedicated cloud provider + source of forum and blog spam.
-# Stop Forum Spam (SFS) listings: 757.
-# Updated: 2021.05.28
+# Stop Forum Spam (SFS) listings: 2,041.
+# Updated: 2022.02.22
 
 2607:2780::/48 Deny Cloud
 2607:9000::/35 Deny Cloud
 2607:9000:2000::/36 Deny Cloud
 2607:9000:4000::/34 Deny Cloud
-2607:9000:8000::/36 Deny Cloud
-2607:9000:a000::/35 Deny Cloud
-2607:9000:c000::/34 Deny Cloud
+2607:9000:8000::/33 Deny Cloud
 Origin: US
 Profile: Dedicated;Infrastructure/Transit
 Tag: Tzulo Inc
@@ -5275,10 +5273,9 @@ Tag: HostPalace
 
 # ASN 62 ("CyrusOne LLC").
 # Commercial cloud network. Probing for database dumps, SSH and brute-force
-# attacks detected from here. (Just blocking this ASN; Not the others. Remove
-# invalids when updating).
+# attacks detected from here. (Just blocking this ASN; Not the others).
 # Stop Forum Spam (SFS) listings: 1.
-# Updated: 2021.05.28
+# Updated: 2021.05.28 / Checked: 2022.02.22
 
 2605:9600::/32 Deny Cloud
 2607:ff70::/32 Deny Cloud
@@ -5643,17 +5640,6 @@ Origin: CN
 Origin: US
 Profile: Infrastructure/Transit
 Tag: Capitalonline
-
-
-# ASN 37560 ("Cyberdyne S.A").
-# Significant source of forum and blog spam.
-# Stop Forum Spam (SFS) listings: 178.
-# Dead at last check. Will remove at the next update if no change.
-# Updated: 2021.05.28
-
-#<redacted>
-Profile: Webhosting
-Tag: Cyberdyne S.A
 
 
 # ASN 2635 ("Automattic, Inc").
@@ -9178,8 +9164,8 @@ Tag: Datacheap Ltd
 
 
 # ASN 30968 ("INFOBOX").
-# Stop Forum Spam (SFS) listings: 25.
-# Updated: 2021.05.26
+# Stop Forum Spam (SFS) listings: 226.
+# Updated: 2021.05.26 / Checked: 2022.02.22
 
 2a02:440::/32 Deny Cloud
 Origin: RU
@@ -9189,8 +9175,8 @@ Tag: INFOBOX
 
 # ASN 12859 ("BIT BV").
 # WordPress and brute-force attacks detected from here.
-# Stop Forum Spam (SFS) listings: 5.
-# Updated: 2021.05.28
+# Stop Forum Spam (SFS) listings: 13.
+# Updated: 2022.02.22
 
 2001:67c:2d7c::/48 Deny Cloud
 2001:7b8::/29 Deny Cloud
@@ -9199,14 +9185,15 @@ Tag: INFOBOX
 2a01:7860::/32 Deny Cloud
 2a02:968::/32 Deny Cloud
 2a03:7e0::/32 Deny Cloud
-2a03:3060:b::/48 Deny Cloud
+2a04:e1c0:1::/48 Deny Cloud
+2a05:1500:fe00::/40 Deny Cloud
 2a05:92c0::/29 Deny Cloud
 2a05:a640::/29 Deny Cloud
 2a05:b2c0::/31 Deny Cloud
-2a05:c4c0::/29 Deny Cloud
 2a0b:3100::/39 Deny Cloud
+2a0b:8f80:201::/48 Deny Cloud
+2a0b:8f80:301::/48 Deny Cloud
 2a0b:9cc0::/29 Deny Cloud
-2a0d:7980:1::/48 Deny Cloud
 Origin: NL
 Profile: Dedicated;Webhosting
 Tag: BIT BV

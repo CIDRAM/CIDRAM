@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6_isps.dat
 
-# Version: 2022.44.0
-# Last modified: 2022.02.14
+# Version: 2022.52.0
+# Last modified: 2022.02.22
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -240,21 +240,6 @@ Tag: Ufanet
 Origin: TW
 Profile: Domestic ISP;Commercial;Multiplay;Tor endpoints here;Webhosting
 Tag: DCBG
-
-
-# ASNs 7643, 45899, 135905 ("VietNam Post and Telecom Corporation").
-# A *major* Vietnamese domestic ISP, but also a significant source of spam,
-# hack attempts, probing, etc. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 66 (AS7643), 20,126 (AS45899), 308 (AS135905).
-# Updated: 2021.06.16
-
-2001:ee0:4dba:b510::/64 Deny Spam
-2001:ee0:4f89:5600::/64 Deny Spam
-2001:ee0:4f8b:3f60::/64 Deny Spam
-2001:ee0:53e8:fb10::/64 Deny Spam
-Origin: VN
-Profile: Domestic ISP;Infrastructure/Transit;Tor endpoints here
-Tag: VNPT Corp
 
 
 # ASNs 9498, 9730, 24560, 37140, 45609, 132045 ("Bharti Airtel").
@@ -1019,29 +1004,38 @@ Tag: Sky UK Limited
 
 
 # ASN 2856 ("British Telecommunications PLC").
-# UK domestic ISP. Spam detected from here. Mirai detected from here.
+# UK domestic ISP. Spam detected from here.
 # Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 1,488.
-# Updated: 2021.05.25
+# Stop Forum Spam (SFS) listings: 2,114.
+# Updated: 2022.02.17
 
-2a00:23a8:84a:1c00::/64 Deny Spam
-2a00:23a8:984:3400::/64 Deny Spam
-2a00:23c4:401:b800::/64 Deny Spam
-2a00:23c4:2d0f:7501::/64 Deny Spam
+2a00:23c4:2827:1e01::/64 Deny Spam
+2a00:23c4:3e02:8501::/64 Deny Spam
+2a00:23c4:6aa5:b701::/64 Deny Spam
 2a00:23c4:9109:1201::/64 Deny Spam
-2a00:23c4:e48e:8b01::/64 Deny Spam
-2a00:23c5:7c02:2f01::/64 Deny Spam
-2a00:23c5:e790:1600::/64 Deny Spam
+2a00:23c4:db2a:7401::/64 Deny Spam
+2a00:23c5:b825:3e01::/64 Deny Spam
+2a00:23c5:d18c:8a01::/64 Deny Spam
+2a00:23c5:dd9d:f801::/64 Deny Spam
 2a00:23c5:f309:e01::/64 Deny Spam
-2a00:23c6:6a91:7000::/64 Deny Spam
-2a00:23c6:b11b:1f01::/64 Deny Spam
-2a00:23c7:1f00:ba01::/64 Deny Spam
-2a00:23c7:740c:ce01::/64 Deny Spam
-2a00:23c7:cb06:d000::/64 Deny Spam
-2a00:23c7:dd12:6701::/64 Deny Spam
-2a00:23c7:de95:3800::/64 Deny Spam
-2a00:23c8:4b06:9b01::/64 Deny Spam
-2a00:23c8:5501:de00::/64 Deny Spam
+2a00:23c6:2899:1b01::/64 Deny Spam
+2a00:23c6:299d:8c01::/64 Deny Spam
+2a00:23c6:a901:9501::/64 Deny Spam
+2a00:23c6:b115:8d01::/64 Deny Spam
+2a00:23c6:d0e4:9b00::/64 Deny Spam
+2a00:23c7:2e0b:4300::/64 Deny Spam
+2a00:23c7:5195:ee01::/64 Deny Spam
+2a00:23c7:5b9c:ab01::/64 Deny Spam
+2a00:23c7:6c88:8600::/64 Deny Spam
+2a00:23c7:8081:1601::/64 Deny Spam
+2a00:23c7:8904:7101::/64 Deny Spam
+2a00:23c7:890b:b701::/64 Deny Spam
+2a00:23c7:c601:aa01::/64 Deny Spam
+2a00:23c7:e800:ff01::/64 Deny Spam
+2a00:23c7:f480:201::/64 Deny Spam
+2a00:23c8:8a2:b101::/64 Deny Spam
+2a00:23c8:4f1a:4f01::/64 Deny Spam
+2a00:23c8:9285:b500::/64 Deny Spam
 Origin: GB
 Profile: Domestic ISP
 Tag: British Telecom PLC
@@ -1096,16 +1090,25 @@ Tag: AT&T Services, Inc
 # ASN 21928 ("T-Mobile USA, Inc").
 # US mobile provider. Spam, brute-force, and SSH attacks detected from here.
 # Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 3,377.
-# Updated: 2021.05.30
+# Stop Forum Spam (SFS) listings: 3,840.
+# Updated: 2022.02.17
 
-2607:fb90:fd3:d071::/64 Deny Spam
-2607:fb90:1772:e8a4::/64 Deny Spam
-2607:fb90:1a0c:8382::/64 Deny Spam
-2607:fb90:46f6:95e4::/64 Deny Spam
-2607:fb90:6271:c83::/64 Deny Spam
-2607:fb90:6e35:9993::/64 Deny Spam
-2607:fb90:c847:ecbd::/64 Deny Spam
+2607:fb90:374:4783::/64 Deny Spam
+2607:fb90:2065:23e2::/64 Deny Spam
+2607:fb90:25a9:32a5::/64 Deny Spam
+2607:fb90:2b1b:ce75::/64 Deny Spam
+2607:fb90:2edd:6442::/64 Deny Spam
+2607:fb90:473a:3a48::/64 Deny Spam
+2607:fb90:5514:1aab::/64 Deny Spam
+2607:fb90:55ca:4773::/64 Deny Spam
+2607:fb90:5d88:4249::/64 Deny Spam
+2607:fb90:6824:56b5::/64 Deny Spam
+2607:fb90:a797:f42f::/64 Deny Spam
+2607:fb90:a907:1323::/64 Deny Spam
+2607:fb90:d902:4562::/64 Deny Spam
+2607:fb90:e1b1:6942::/64 Deny Spam
+2607:fb90:e329:62b2::/64 Deny Spam
+2607:fb91:bd07:4b66::/64 Deny Spam
 Origin: US
 Profile: Domestic ISP;Multiplay
 Tag: T-Mobile USA, Inc
@@ -1463,8 +1466,8 @@ Tag: OOO TimeWeb
 # ASN 35047 ("Abissnet sh.a").
 # Albanian domestic ISP. Spam, port scans, CGI hacks, brute-force, and SSH
 # attacks detected from here. Huge listings across entire ASN.
-# Stop Forum Spam (SFS) listings: 544.
-# Updated: 2021.05.29
+# Stop Forum Spam (SFS) listings: 651.
+# Updated: 2021.05.29 / Checked: 2022.02.17
 
 2a01:4f00::/32 Deny Attacks
 Origin: AL
@@ -1635,3 +1638,21 @@ Tag: IRONNET Ltd
 Origin: FI
 Profile: Commercial
 Tag: DNA Oyj
+
+
+# ASN 812 ("Rogers Communications Canada Inc").
+# Canadian domestic ISP. Brute-force, XMLRPC/WordPress, SQLi, manifest, and
+# webapp attacks, port scans, hacking, and spam detected from here.
+# Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 1,251.
+# Updated: 2022.02.20
+
+2605:8d80:606:9a09::/64 Deny Spam
+2607:9880:1150:55::/64 Deny Spam
+2607:fea8:55e:af00::/64 Deny Spam
+2607:fea8:562:fb00::/64 Deny Spam
+2607:fea8:5520:7e90::/64 Deny Spam
+2607:fea8:e3e2:ac00::/64 Deny Spam
+Origin: CA
+Profile: Domestic ISP
+Tag: Rogers

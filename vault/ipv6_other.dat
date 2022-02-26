@@ -1,8 +1,8 @@
 # IPv6 signatures file (CIDRs for proxies, VPNs and other miscellaneous unwanted services).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6_other.dat
 
-# Version: 2022.6.0
-# Last modified: 2022.01.07
+# Version: 2022.56.0
+# Last modified: 2022.02.26
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -13,8 +13,8 @@
 # ASN 205100 ("F3 Netze e.V").
 # Provides tor exit nodes. A significant source of spam.
 # Caught masquerading as Baidu while sniffing for vulnerabilities.
-# Stop Forum Spam (SFS) listings: 156,555.
-# Updated: 2021.08.26
+# Stop Forum Spam (SFS) listings: 143,634.
+# Updated: 2021.08.26 / Checked: 2022.02.26
 
 2a0b:f4c0::/40 Deny Proxy
 2a0b:f4c0:100::/48 Deny Proxy
@@ -30,8 +30,8 @@ Tag: F3 Netze e.V
 # ASN 396507 ("Emerald Onion").
 # Anonymous tor endpoints here; Significant source of spam.
 # Caught masquerading as Baidu while sniffing for vulnerabilities.
-# Stop Forum Spam (SFS) listings: 26,971.
-# Updated: 2019.05.03 / Checked: 2021.08.26
+# Stop Forum Spam (SFS) listings: 25,653.
+# Updated: 2019.05.03 / Checked: 2022.02.26
 
 2620:18c::/36 Deny Proxy
 Origin: US

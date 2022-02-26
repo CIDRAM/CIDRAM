@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6_isps.dat
 
-# Version: 2022.52.0
-# Last modified: 2022.02.22
+# Version: 2022.56.0
+# Last modified: 2022.02.26
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -482,55 +482,16 @@ Tag: Cogent
 
 
 # ASN 198093 ("Foreningen for digitala fri- och rattigheter").
-# Dead homepage and high levels of automated spam from this ASN.
-# Stop Forum Spam (SFS) listings: 7,268.
-# Updated: 2017.12.11 / Checked: 2021.05.26
+# Dangerous tor network with dead homepage. HUGE levels of brute-force and SSH
+# attacks, hacking, port scans, and spam detected from here!
+# Stop Forum Spam (SFS) listings: 9,153.
+# Updated: 2022.02.26
 
-2001:67c:16b0::/48 Deny Spam
-2001:67c:289c::/48 Deny Spam
+2001:67c:16b0::/48 Deny Attacks
+2001:67c:289c::/48 Deny Attacks
 Origin: SE
-Profile: Tor endpoints here
+Profile: Restricted/Unidentifiable;Tor endpoints here
 Tag: Foreningen
-
-
-# ASNs 9009, 16247 ("M247 Ltd").
-# Multiplay network providing broadband connectivity, server leasing, line
-# rental, webhosting services, etc.
-# Mark AE~EE(IPv4), NL~PL(IPv4), AT/DE/EE/NL/RU(IPv6) ranges as cloud.
-# Mark CA(IPv6) ranges as proxy.
-# For everything else, listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 265,498 (AS9009), 4,447 (AS16247).
-# Updated: 2021.05.22
-
-2a03:f80:33::/48 Deny Cloud
-2a03:f80:40::/48 Deny Cloud
-2a03:f80:45::/48 Deny Cloud
-2a03:f80:47::/48 Deny Cloud
-2a03:f80:48::/47 Deny Cloud
-2a03:f80:61::/48 Deny Cloud
-2a03:f80:65::/48 Deny Cloud
-2a03:f80:81::/48 Deny Cloud
-2a03:f80:381::/48 Deny Cloud
-2a03:f80:852::/48 Deny Cloud
-2a03:f80:971::/48 Deny Cloud
-Origin: AT
-2604:17c0::/41 Deny Proxy
-2604:17c0:80::/42 Deny Proxy
-Origin: CA
-2a0b:9040::/29 Deny Cloud
-Origin: DE
-2a0c:36c2::/31 Deny Cloud
-Origin: EE
-2001:678:8b4::/48 Deny Cloud
-2a07:e340::/32 Deny Cloud
-Origin: NL
-2a07:de00::/29 Deny Cloud
-2a0d:87c0::/29 Deny Cloud
-2a0d:9983::/32 Deny Cloud
-2a0d:ba40::/29 Deny Cloud
-Origin: RU
-Profile: Commercial;Dedicated;Domestic ISP;Infrastructure/Transit;Multiplay;Tor endpoints here;Webhosting
-Tag: M247 Ltd
 
 
 # ASN 8708 ("RCS & RDS SA").
@@ -1196,8 +1157,8 @@ Tag: Bell Canada
 # limited ADSL connectivity also provided. A significant source of spam here,
 # caught trying to hack honeypots, brute-force, SSH, and webapp attacks, and
 # unauthorised WordPress vulnerability scanners detected from here.
-# Stop Forum Spam (SFS) listings: 442,055 (AS16276), 5 (AS35540).
-# Updated: 2021.01.27 / Checked: 2021.05.22
+# Stop Forum Spam (SFS) listings: 297,577 (AS16276), 6 (AS35540).
+# Updated: 2021.01.27 / Checked: 2022.02.25
 
 2607:5300::/32 Run bypasses.php
 Origin: CA

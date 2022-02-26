@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2022.02.21).
+ * This file: Front-end handler (last modified: 2022.02.26).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -1446,29 +1446,26 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
             if (isset($CIDRAM['DirValue']['choices'])) {
                 if ($CIDRAM['DirValue']['type'] === 'checkbox') {
                     if (isset($CIDRAM['DirValue']['labels']) && is_array($CIDRAM['DirValue']['labels'])) {
+                        $CIDRAM['DirValue']['gridV'] = 'gridVB';
                         $CIDRAM['ThisDir']['FieldOut'] = sprintf(
-                            '<div style="display:grid;grid-template-columns:%s;text-align:%s">',
-                            str_repeat('18px ', count($CIDRAM['DirValue']['labels'])) . 'auto',
+                            '<div style="display:grid;margin:auto 38px;grid-template-columns:%s;text-align:%s">',
+                            str_repeat('auto ', count($CIDRAM['DirValue']['labels'])) . 'auto',
                             $CIDRAM['FE']['FE_Align']
                         );
                         $CIDRAM['DirValue']['HasLabels'] = true;
                         foreach ($CIDRAM['DirValue']['labels'] as $CIDRAM['DirValue']['ThisLabel']) {
-                            foreach (['response_', 'label_', 'field_'] as $CIDRAM['LabelPrefix']) {
-                                if (array_key_exists($CIDRAM['LabelPrefix'] . $CIDRAM['DirValue']['ThisLabel'], $CIDRAM['L10N']->Data)) {
-                                    $CIDRAM['DirValue']['ThisLabel'] = $CIDRAM['L10N']->getString($CIDRAM['LabelPrefix'] . $CIDRAM['DirValue']['ThisLabel']);
-                                    break;
-                                }
-                            }
+                            $CIDRAM['DirValue']['gridV'] = ($CIDRAM['DirValue']['gridV']) === 'gridVB' ? 'gridVA': 'gridVB';
+                            $CIDRAM['ReplaceLabelWithL10N']($CIDRAM['DirValue']['ThisLabel']);
                             $CIDRAM['ThisDir']['FieldOut'] .= sprintf(
-                                '<div class="gridboxitem" style="text-align:right;writing-mode:vertical-%s;height:auto;line-height:18px"><span class="s">%s</span></div>',
-                                $CIDRAM['FE']['FE_Align_Mode'],
+                                '<div class="gridboxitem configMatrixLabel %s">%s</div>',
+                                $CIDRAM['DirValue']['gridV'],
                                 $CIDRAM['DirValue']['ThisLabel']
                             );
                         }
                         $CIDRAM['ThisDir']['FieldOut'] .= '<div class="gridboxitem"></div>';
                     } else {
                         $CIDRAM['ThisDir']['FieldOut'] = sprintf(
-                            '<div style="display:grid;grid-template-columns:18px auto;text-align:%s">',
+                            '<div style="display:grid;margin:auto 38px;grid-template-columns:19px auto;text-align:%s">',
                             $CIDRAM['FE']['FE_Align']
                         );
                         $CIDRAM['DirValue']['HasLabels'] = false;
@@ -1480,6 +1477,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
                         $CIDRAM['ThisDir']['Trigger']
                     );
                 }
+                $CIDRAM['DirValue']['gridH'] = 'gridHB';
                 foreach ($CIDRAM['DirValue']['choices'] as $CIDRAM['ChoiceKey'] => $CIDRAM['ChoiceValue']) {
                     if (isset($CIDRAM['DirValue']['choice_filter'])) {
                         if (
@@ -1489,43 +1487,49 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
                             continue;
                         }
                     }
+                    $CIDRAM['DirValue']['gridV'] = 'gridVB';
+                    $CIDRAM['DirValue']['gridH'] = ($CIDRAM['DirValue']['gridH']) === 'gridHB' ? 'gridHA': 'gridHB';
                     $CIDRAM['ChoiceValue'] = $CIDRAM['TimeFormat']($CIDRAM['Now'], $CIDRAM['ChoiceValue']);
                     if (strpos($CIDRAM['ChoiceValue'], '{') !== false) {
                         $CIDRAM['ChoiceValue'] = $CIDRAM['ParseVars']($CIDRAM['L10N']->Data, $CIDRAM['ChoiceValue']);
                     }
+                    $CIDRAM['ReplaceLabelWithL10N']($CIDRAM['ChoiceValue']);
                     if ($CIDRAM['DirValue']['type'] === 'checkbox') {
                         if ($CIDRAM['DirValue']['HasLabels']) {
                             foreach ($CIDRAM['DirValue']['labels'] as $CIDRAM['DirValue']['ThisLabelKey'] => $CIDRAM['DirValue']['ThisLabel']) {
+                                $CIDRAM['DirValue']['gridV'] = ($CIDRAM['DirValue']['gridV']) === 'gridVB' ? 'gridVA': 'gridVB';
                                 $CIDRAM['ThisDir']['FieldOut'] .= sprintf(
-                                    '<div class="gridboxitem" style="text-align:center;vertical-align:middle"><input%3$s type="checkbox" class="auto" name="%1$s" id="%1$s"%2$s /></div>',
+                                    '<div class="gridboxcheckcell %4$s %5$s"><label class="gridlabel"><input%3$s type="checkbox" class="auto" name="%1$s" id="%1$s"%2$s /></label></div>',
                                     $CIDRAM['ThisDir']['DirLangKey'] . '_' . $CIDRAM['ChoiceKey'] . '_' . $CIDRAM['DirValue']['ThisLabelKey'],
                                     $CIDRAM['Request']->inCsv(
                                         $CIDRAM['ChoiceKey'] . ':' . $CIDRAM['DirValue']['ThisLabelKey'],
                                         $CIDRAM['Config'][$CIDRAM['CatKey']][$CIDRAM['DirKey']]
                                     ) ? ' checked' : '',
-                                    $CIDRAM['ThisDir']['Trigger']
+                                    $CIDRAM['ThisDir']['Trigger'],
+                                    $CIDRAM['DirValue']['gridV'],
+                                    $CIDRAM['DirValue']['gridH']
                                 );
                             }
-                            $CIDRAM['ThisDir']['FieldOut'] .= sprintf('<div class="gridboxitem"><span class="s">%s</span></div>', $CIDRAM['ChoiceValue']);
+                            $CIDRAM['ThisDir']['FieldOut'] .= sprintf(
+                                '<div class="gridboxitem %s %s">%s</div>',
+                                $CIDRAM['DirValue']['gridH'],
+                                (count($CIDRAM['DirValue']['labels']) % 2) === 0 ? 'vrte' : 'vrto',
+                                $CIDRAM['ChoiceValue']
+                            );
                         } else {
                             $CIDRAM['ThisDir']['FieldOut'] .= sprintf(
-                                '<div class="gridboxitem" style="text-align:center;vertical-align:middle"><input%4$s type="checkbox" class="auto" name="%1$s" id="%1$s"%2$s /></div><div class="gridboxitem"><label for="%1$s" class="s">%3$s</label></div>',
+                                '<div class="gridboxcheckcell gridVA %5$s"><label class="gridlabel"><input%4$s type="checkbox" class="auto" name="%1$s" id="%1$s"%2$s /></label></div><div class="gridboxitem %5$s"><label for="%1$s" class="s">%3$s</label></div>',
                                 $CIDRAM['ThisDir']['DirLangKey'] . '_' . $CIDRAM['ChoiceKey'],
                                 $CIDRAM['Request']->inCsv(
                                     $CIDRAM['ChoiceKey'],
                                     $CIDRAM['Config'][$CIDRAM['CatKey']][$CIDRAM['DirKey']]
                                 ) ? ' checked' : '',
                                 $CIDRAM['ChoiceValue'],
-                                $CIDRAM['ThisDir']['Trigger']
+                                $CIDRAM['ThisDir']['Trigger'],
+                                $CIDRAM['DirValue']['gridH']
                             );
                         }
                     } else {
-                        foreach (['response_', 'label_', 'field_'] as $CIDRAM['ChoicePrefix']) {
-                            if (array_key_exists($CIDRAM['ChoicePrefix'] . $CIDRAM['ChoiceValue'], $CIDRAM['L10N']->Data)) {
-                                $CIDRAM['ChoiceValue'] = $CIDRAM['L10N']->getString($CIDRAM['ChoicePrefix'] . $CIDRAM['ChoiceValue']);
-                                break;
-                            }
-                        }
                         $CIDRAM['ThisDir']['FieldOut'] .= sprintf(
                             '<option style="text-transform:capitalize" value="%1$s"%2$s>%3$s</option>',
                             $CIDRAM['ChoiceKey'],

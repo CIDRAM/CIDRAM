@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Configuration defaults file (last modified: 2022.02.20).
+# This file: Configuration defaults file (last modified: 2022.02.25).
 ##/
 
 Config Defaults:
@@ -259,8 +259,8 @@ Config Defaults:
    type: "string"
    default: "default"
    choices:
-    default: "{field_clickable_link}"
-    noclick: "{field_nonclickable_text}"
+    default: "field_clickable_link"
+    noclick: "field_nonclickable_text"
   disable_cli:
    type: "bool"
    default: false
@@ -337,8 +337,8 @@ Config Defaults:
    type: "string"
    default: "omit"
    choices:
-    omit: "{field_omit}"
-    include: "{field_include}"
+    omit: "field_omit"
+    include: "field_include"
   log_sanitisation:
    type: "bool"
    default: false
@@ -665,8 +665,8 @@ Config Defaults:
    type: "checkbox"
    default: ""
    choices:
-    Whitelisted: "{field_whitelisted_requests}"
-    Verified: "{field_verified_requests}"
+    Whitelisted: "field_whitelisted_requests"
+    Verified: "field_verified_requests"
  supplementary_cache_options:
   prefix:
    type: "string"

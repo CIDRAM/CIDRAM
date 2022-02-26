@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2022.02.21).
+ * This file: Front-end functions file (last modified: 2022.02.26).
  */
 
 /**
@@ -1031,8 +1031,9 @@ $CIDRAM['SimulateBlockEvent'] = function (string $Addr, bool $Modules = false, b
  * @return bool Valid/Invalid.
  */
 $CIDRAM['FilterLang'] = function (string $ChoiceKey) use (&$CIDRAM): bool {
-    $Path = $CIDRAM['Vault'] . 'lang/lang.' . $ChoiceKey;
-    return (file_exists($Path . '.yaml') && file_exists($Path . '.fe.yaml'));
+    $Core = $CIDRAM['Vault'] . 'l10n' . DIRECTORY_SEPARATOR . 'core' . DIRECTORY_SEPARATOR . $ChoiceKey;
+    $FrontEnd = $CIDRAM['Vault'] . 'l10n' . DIRECTORY_SEPARATOR . 'frontend' . DIRECTORY_SEPARATOR . $ChoiceKey;
+    return (file_exists($Core . '.yml') && file_exists($FrontEnd . '.yml'));
 };
 
 /**
@@ -4944,4 +4945,19 @@ $CIDRAM['RelativeTime'] = function (int $Time) use (&$CIDRAM): string {
         $CIDRAM['L10N']->getPlural($Time, 'time_seconds_from_now'),
         $CIDRAM['NumberFormatter']->format($Time)
     );
+};
+
+/**
+ * Replaces labels with corresponding L10N data (if there's any).
+ *
+ * @param string $Label The actual label.
+ * @return string The replaced label.
+ */
+$CIDRAM['ReplaceLabelWithL10N'] = function (string &$Label) use (&$CIDRAM): void {
+    foreach (['', 'response_', 'label_', 'field_'] as $Prefix) {
+        if (array_key_exists($Prefix . $Label, $CIDRAM['L10N']->Data)) {
+            $Label = preg_replace($CIDRAM['RegExLabels'], '', $CIDRAM['L10N']->getString($Prefix . $Label));
+            return;
+        }
+    }
 };

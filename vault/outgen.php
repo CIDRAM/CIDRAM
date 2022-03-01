@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Output generator (last modified: 2022.02.21).
+ * This file: Output generator (last modified: 2022.03.01).
  */
 
 /** Initialise cache. */
@@ -141,22 +141,26 @@ if ($CIDRAM['Protect'] && !$CIDRAM['Config']['general']['maintenance_mode']) {
      * Check whether we're tracking the IP due to previous instances of bad
      * behaviour.
      */
-    elseif (($CIDRAM['BlockInfo']['IPAddr'] && isset(
-        $CIDRAM['Tracking'][$CIDRAM['BlockInfo']['IPAddr']],
-        $CIDRAM['Tracking'][$CIDRAM['BlockInfo']['IPAddr']]['Count']
-    ) && (
-        $CIDRAM['Tracking'][$CIDRAM['BlockInfo']['IPAddr']]['Count'] >= $CIDRAM['Config']['signatures']['infraction_limit']
-    )) || ($CIDRAM['BlockInfo']['IPAddrResolved'] && isset(
-        $CIDRAM['Tracking'][$CIDRAM['BlockInfo']['IPAddrResolved']],
-        $CIDRAM['Tracking'][$CIDRAM['BlockInfo']['IPAddrResolved']]['Count']
-    ) && (
-        $CIDRAM['Tracking'][$CIDRAM['BlockInfo']['IPAddrResolved']]['Count'] >= $CIDRAM['Config']['signatures']['infraction_limit']
-    ))) {
-        $CIDRAM['Banned'] = true;
-        $CIDRAM['BlockInfo']['ReasonMessage'] = $CIDRAM['L10N']->getString('ReasonMessage_Banned');
-        $CIDRAM['BlockInfo']['WhyReason'] = $CIDRAM['L10N']->getString('Short_Banned');
-        $CIDRAM['BlockInfo']['SignatureCount']++;
+    else {
+        $CIDRAM['Stage'] = 'Tracking';
+        if (($CIDRAM['BlockInfo']['IPAddr'] && isset(
+            $CIDRAM['Tracking'][$CIDRAM['BlockInfo']['IPAddr']],
+            $CIDRAM['Tracking'][$CIDRAM['BlockInfo']['IPAddr']]['Count']
+        ) && (
+            $CIDRAM['Tracking'][$CIDRAM['BlockInfo']['IPAddr']]['Count'] >= $CIDRAM['Config']['signatures']['infraction_limit']
+        )) || ($CIDRAM['BlockInfo']['IPAddrResolved'] && isset(
+            $CIDRAM['Tracking'][$CIDRAM['BlockInfo']['IPAddrResolved']],
+            $CIDRAM['Tracking'][$CIDRAM['BlockInfo']['IPAddrResolved']]['Count']
+        ) && (
+            $CIDRAM['Tracking'][$CIDRAM['BlockInfo']['IPAddrResolved']]['Count'] >= $CIDRAM['Config']['signatures']['infraction_limit']
+        ))) {
+            $CIDRAM['Banned'] = true;
+            $CIDRAM['BlockInfo']['ReasonMessage'] = $CIDRAM['L10N']->getString('ReasonMessage_Banned');
+            $CIDRAM['BlockInfo']['WhyReason'] = $CIDRAM['L10N']->getString('Short_Banned');
+            $CIDRAM['BlockInfo']['SignatureCount']++;
+        }
     }
+    $CIDRAM['Stage'] = '';
 }
 
 /** Define whether to track the IP of the current request. */

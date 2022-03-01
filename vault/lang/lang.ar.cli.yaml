@@ -7,9 +7,12 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Arabic language data for CLI (last modified: 2019.02.04).
+# This file: Arabic language data for CLI (last modified: 2022.03.01).
 ##/
 
+CLI_Bad_IP: " عنوان IP، "{IP}"، ليس عنوانا صالحا IPv4 أو IPv6!"
+CLI_F_Finished: "مصحح التوقيع قد انتهي مع %s تغييرات تمت علي %s عمليات (%s)"
+CLI_F_Started: "لقد بدء مصحح التوقيع"
 CLI_H: |
  CIDRAM CLI-mode help.
  ---
@@ -31,9 +34,6 @@ CLI_H: |
  php.exe /cidram/loader.php -f signatures.dat
  php.exe /cidram/loader.php -v signatures.dat
  ---
-CLI_Bad_IP: " عنوان IP، "{IP}"، ليس عنوانا صالحا IPv4 أو IPv6!"
-CLI_F_Finished: "مصحح التوقيع قد انتهي مع %s تغييرات تمت علي %s عمليات (%s)"
-CLI_F_Started: "لقد بدء مصحح التوقيع"
 CLI_IP_Blocked: " هذا العنوان، "{IP}"، فد تم حظره بواسطه CIDRAM"
 CLI_IP_Not_Blocked: " هذا العنوان، "{IP}"، غير محظور بواسطة CIDRAM"
 CLI_VF_Empty: "ملف التوقيع فارغ أو غير موجود."

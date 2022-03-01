@@ -7,9 +7,12 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Turkish language data for CLI (last modified: 2019.02.04).
+# This file: Turkish language data for CLI (last modified: 2022.03.01).
 ##/
 
+CLI_Bad_IP: " Belirtilen IP adresi "{IP}", geçerli bir IPv4 veya IPv6 IP adresi değil!"
+CLI_F_Finished: "%2$s işlemleri üzerinden yapılan %1$s değişiklikler ile (%3$s), imza düzeltici tamamlandı."
+CLI_F_Started: "İmza düzeltici başlatıldı (%s)."
 CLI_H: |
  CIDRAM CLI mod yardımı.
  ---
@@ -32,9 +35,6 @@ CLI_H: |
  php.exe /cidram/loader.php -f signatures.dat
  php.exe /cidram/loader.php -v signatures.dat
  ---
-CLI_Bad_IP: " Belirtilen IP adresi "{IP}", geçerli bir IPv4 veya IPv6 IP adresi değil!"
-CLI_F_Finished: "%2$s işlemleri üzerinden yapılan %1$s değişiklikler ile (%3$s), imza düzeltici tamamlandı."
-CLI_F_Started: "İmza düzeltici başlatıldı (%s)."
 CLI_IP_Blocked: " Belirtilen IP adresi "{IP}", bir veya daha fazla CIDRAM imza dosyası tarafından *ENGELLENMİŞTİR*."
 CLI_IP_Not_Blocked: " Belirtilen IP adresi "{IP}", hiçbir CIDRAM imza dosyası tarafından *ENGELLENMEMİŞTİR*."
 CLI_VF_Empty: "Belirtilen imza dosyası boş veya mevcut değil."

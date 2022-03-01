@@ -7,9 +7,12 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Vietnamese language data for CLI (last modified: 2019.04.13).
+# This file: Vietnamese language data for CLI (last modified: 2022.03.01).
 ##/
 
+CLI_Bad_IP: " Các địa chỉ IP được chỉ định, "{IP}", không phải là một địa chỉ IPv4 hoặc IPv6 hợp lệ!"
+CLI_F_Finished: "Công cụ cho sửa chữa chữ ký đã hoàn thành xong, với %s thay đổi trong %s hoạt động (%s)."
+CLI_F_Started: "Công cụ cho sửa chữa chữ ký đã bắt đầu (%s)."
 CLI_H: |
  Trợ giúp cho chế độ CLI của CIDRAM.
  ---
@@ -30,9 +33,6 @@ CLI_H: |
  php.exe /cidram/loader.php -f signatures.dat
  php.exe /cidram/loader.php -v signatures.dat
  ---
-CLI_Bad_IP: " Các địa chỉ IP được chỉ định, "{IP}", không phải là một địa chỉ IPv4 hoặc IPv6 hợp lệ!"
-CLI_F_Finished: "Công cụ cho sửa chữa chữ ký đã hoàn thành xong, với %s thay đổi trong %s hoạt động (%s)."
-CLI_F_Started: "Công cụ cho sửa chữa chữ ký đã bắt đầu (%s)."
 CLI_IP_Blocked: " Các địa chỉ IP được chỉ định, "{IP}", *LÀ* bị chặn bởi một hay nhiều tập tin chữ ký của CIDRAM."
 CLI_IP_Not_Blocked: " Các địa chỉ IP được chỉ định, "{IP}", *KHÔNG* bị chặn bởi một hay nhiều tập tin chữ ký của CIDRAM."
 CLI_VF_Empty: "Tập tin chữ ký xác định là rỗng hoặc không tồn tại."

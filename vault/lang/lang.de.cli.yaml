@@ -7,9 +7,12 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: German language data for CLI (last modified: 2019.02.04).
+# This file: German language data for CLI (last modified: 2022.03.01).
 ##/
 
+CLI_Bad_IP: " Die angegebene IP-Adresse, "{IP}", ist keine gültige IPv4 oder IPv6 IP-Adresse!"
+CLI_F_Finished: "Signature Fixierer abgeschlossen ist, mit %s Änderungen über %s Operationen (%s)."
+CLI_F_Started: "Signature Fixierer hat begonnen (%s)."
 CLI_H: |
  CIDRAM CLI-Modus Hilfe.
  ---
@@ -30,9 +33,6 @@ CLI_H: |
  php.exe /cidram/loader.php -f signatures.dat
  php.exe /cidram/loader.php -v signatures.dat
  ---
-CLI_Bad_IP: " Die angegebene IP-Adresse, "{IP}", ist keine gültige IPv4 oder IPv6 IP-Adresse!"
-CLI_F_Finished: "Signature Fixierer abgeschlossen ist, mit %s Änderungen über %s Operationen (%s)."
-CLI_F_Started: "Signature Fixierer hat begonnen (%s)."
 CLI_IP_Blocked: " Die angegebene IP-Adresse, "{IP}", *IST* wird durch eine oder mehrere der CIDRAM Signaturdateien blockiert."
 CLI_IP_Not_Blocked: " Die angegebene IP-Adresse, "{IP}", *NICHT* ist wird durch eine oder mehrere der CIDRAM Signaturdateien blockiert."
 CLI_VF_Empty: "Die angegebene Signaturdatei leer ist oder nicht existiert."

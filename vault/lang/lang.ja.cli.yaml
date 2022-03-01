@@ -7,9 +7,12 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Japanese language data for CLI (last modified: 2019.02.04).
+# This file: Japanese language data for CLI (last modified: 2022.03.01).
 ##/
 
+CLI_Bad_IP: " 「{IP}」は、​有効なIPv4/IPv6アドレスではありません！"
+CLI_F_Finished: "シグネチャ・フィクサーが完了しました；変更：%s；オペレーション：%s（%s）。"
+CLI_F_Started: "シグネチャ・フィクサーが始まりました（%s）。"
 CLI_H: |
  CIDRAM CLIモードのヘルプ。
  ---
@@ -31,9 +34,6 @@ CLI_H: |
  php.exe /cidram/loader.php -f signatures.dat
  php.exe /cidram/loader.php -v signatures.dat
  ---
-CLI_Bad_IP: " 「{IP}」は、​有効なIPv4/IPv6アドレスではありません！"
-CLI_F_Finished: "シグネチャ・フィクサーが完了しました；変更：%s；オペレーション：%s（%s）。"
-CLI_F_Started: "シグネチャ・フィクサーが始まりました（%s）。"
 CLI_IP_Blocked: " 「{IP}」には、​シグネチャ・ファイルによってブロックされています。"
 CLI_IP_Not_Blocked: " 「{IP}」には、​シグネチャ・ファイルによってブロックされていません。"
 CLI_VF_Empty: "存在指定されたシグネチャ・ファイルが空であるか存在しません。"

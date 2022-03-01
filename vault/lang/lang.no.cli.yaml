@@ -7,9 +7,12 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Norwegian language data for CLI (last modified: 2019.02.04).
+# This file: Norwegian language data for CLI (last modified: 2022.03.01).
 ##/
 
+CLI_Bad_IP: " Den spesifisert IP-adressen, "{IP}", er ikke en gyldig IPv4 eller IPv6 IP-adresse!"
+CLI_F_Finished: "Signaturfikseren er ferdig, med %s endringer over %s operasjoner (%s)."
+CLI_F_Started: "Signaturfikseren har startet (%s)."
 CLI_H: |
  CIDRAM CLI-modus hjelp.
  ---
@@ -30,9 +33,6 @@ CLI_H: |
  php.exe /cidram/loader.php -f signatures.dat
  php.exe /cidram/loader.php -v signatures.dat
  ---
-CLI_Bad_IP: " Den spesifisert IP-adressen, "{IP}", er ikke en gyldig IPv4 eller IPv6 IP-adresse!"
-CLI_F_Finished: "Signaturfikseren er ferdig, med %s endringer over %s operasjoner (%s)."
-CLI_F_Started: "Signaturfikseren har startet (%s)."
 CLI_IP_Blocked: " Den spesifisert IP-adressen, "{IP}", *ER* blokkert av en eller flere av CIDRAM signaturfiler."
 CLI_IP_Not_Blocked: " Den spesifisert IP-adressen, "{IP}", er *IKKE* blokkert av noen av CIDRAM signaturfiler."
 CLI_VF_Empty: "Spesifisert signaturfil er tom eller eksisterer ikke."

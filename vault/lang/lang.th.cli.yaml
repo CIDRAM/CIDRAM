@@ -7,9 +7,12 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Thai language data for CLI (last modified: 2019.02.04).
+# This file: Thai language data for CLI (last modified: 2022.03.01).
 ##/
 
+CLI_Bad_IP: " ที่อยู่ IP ที่ระบุ, "{IP}", ไม่ใช่ที่อยู่ที่ IPv4 หรือ IPv6 ถูกต้อง!"
+CLI_F_Finished: "การแก้ไขลายเซ็นเสร็จแล้ว, และมีอยู่อยู่ %s เปลี่ยนแปลงทำด้วย %s การดำเนินงาน (%s)."
+CLI_F_Started: "การแก้ไขลายเซ็นได้เริ่มต้นแล้ว (%s)."
 CLI_H: |
  ช่วยสำหรับโหมด CLI ของ CIDRAM.
  ---
@@ -31,9 +34,6 @@ CLI_H: |
  php.exe /cidram/loader.php -f signatures.dat
  php.exe /cidram/loader.php -v signatures.dat
  ---
-CLI_Bad_IP: " ที่อยู่ IP ที่ระบุ, "{IP}", ไม่ใช่ที่อยู่ที่ IPv4 หรือ IPv6 ถูกต้อง!"
-CLI_F_Finished: "การแก้ไขลายเซ็นเสร็จแล้ว, และมีอยู่อยู่ %s เปลี่ยนแปลงทำด้วย %s การดำเนินงาน (%s)."
-CLI_F_Started: "การแก้ไขลายเซ็นได้เริ่มต้นแล้ว (%s)."
 CLI_IP_Blocked: " ที่อยู่ IP ที่ระบุ, "{IP}", ถูกบล็อกโดยหนึ่งหรือมากกว่าของไฟล์ลายเซ็นสำหรับ CIDRAM."
 CLI_IP_Not_Blocked: " ที่อยู่ IP ที่ระบุ, "{IP}", ไม่ถูกบล็อกโดยใดของไฟล์ลายเซ็นสำหรับ CIDRAM."
 CLI_VF_Empty: "ไฟล์ลายเซ็นที่ระบุว่างเปล่าหรือไม่มีอยู่."

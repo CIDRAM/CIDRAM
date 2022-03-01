@@ -7,9 +7,12 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Italian language data for CLI (last modified: 2019.02.04).
+# This file: Italian language data for CLI (last modified: 2022.03.01).
 ##/
 
+CLI_Bad_IP: " L'indirizzo IP specificato, "{IP}", non è un indirizzo IPv4 o IPv6 valido!"
+CLI_F_Finished: "Fissatore di firme è finita, con %s cambiamenti effettuate per %s operazioni (%s)."
+CLI_F_Started: "Fissatore di firme è iniziata (%s)."
 CLI_H: |
  CIDRAM CLI modalità aiuto.
  ---
@@ -30,9 +33,6 @@ CLI_H: |
  php.exe /cidram/loader.php -f signatures.dat
  php.exe /cidram/loader.php -v signatures.dat
  ---
-CLI_Bad_IP: " L'indirizzo IP specificato, "{IP}", non è un indirizzo IPv4 o IPv6 valido!"
-CLI_F_Finished: "Fissatore di firme è finita, con %s cambiamenti effettuate per %s operazioni (%s)."
-CLI_F_Started: "Fissatore di firme è iniziata (%s)."
 CLI_IP_Blocked: " L'indirizzo IP specificato, "{IP}", è bloccato da uno o più delle firme di CIDRAM."
 CLI_IP_Not_Blocked: " L'indirizzo IP specificato, "{IP}", *NON* è bloccato da una delle firme di CIDRAM."
 CLI_VF_Empty: "File di firme specificato è vuoto o non esiste."

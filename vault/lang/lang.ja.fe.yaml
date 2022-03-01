@@ -7,23 +7,24 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Japanese language data for the front-end (last modified: 2022.01.22).
+# This file: Japanese language data for the front-end (last modified: 2022.03.01).
 ##/
 
 Extended Description Bypasses: "メインパッケージに通常含まれているデフォルト・シグネチャ・バイパス。"
 Extended Description CIDRAM: "メインパッケージ​（シグネチャ、​ドキュメンテーション、​およびコンフィギュレーションは含まれていません）。"
 Extended Description Chart.js: "フロントエンドが円グラフを生成できるようにします。<br />「{{Links.Chart.js}}」は、「<a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>」を介して利用可能です。"
+Extended Description IPv4: &ExtDesCloud "不要なクラウドサービスと非人のエンドポイントをブロックします。"
 Extended Description IPv4-Bogons: &ExtDesBogons "ボゴンＣＩＤＲをブロックします。"
 Extended Description IPv4-ISPs: &ExtDesISPs "スパマーを持つ危険なＩＳＰをブロックします（マルチプレイ・ネットワークが含まれています。人間と人間以外のエンドポイントの両方が含まれる場合があります）。"
 Extended Description IPv4-Nonblocking: &ExtDesNonblocking "プロファイリングに役立ちますが、それ自体では何もブロックしません。"
 Extended Description IPv4-Other: &ExtDesOther "プロキシ、​ＶＰＮ、​およびその他の不要なサービスのＣＩＤＲをブロックします。"
-Extended Description IPv4: &ExtDesCloud "不要なクラウドサービスと非人のエンドポイントをブロックします。"
+Extended Description IPv6: *ExtDesCloud
 Extended Description IPv6-Bogons: *ExtDesBogons
 Extended Description IPv6-ISPs: *ExtDesISPs
 Extended Description IPv6-Nonblocking: *ExtDesNonblocking
 Extended Description IPv6-Other: *ExtDesOther
-Extended Description IPv6: *ExtDesCloud
 Extended Description PHPMailer: "電子Ｅメールの送信を含む機能の使用に必要です。<br />「{{Links.PHPMailer.PHPMailer}}」は、「{{Links.PHPMailer.License}}」ライセンスを介して利用可能です。"
+Extended Description Search engines blocker module: "一部のウェブサイトで問題となる可能性のある検索エンジンを（例：Baidu、Sogou、Yandexなど）ブロックする機能を提供します。"
 Extended Description flags.css: "フロントエンド・ログページにフラグ・サポートを追加します。"
 Extended Description module_abuseipdb.php: "AbuseIPDBにリストされているＩＰからの要求をブロックします。"
 Extended Description module_badhosts.php: "スパマー、ハッカー、およびその他の悪意のあるエンティティによって頻繁に使用されるホストをブロックします。"
@@ -36,20 +37,20 @@ Extended Description module_httpver.php: "CIDRAMコンフィグレーション�
 Extended Description module_projecthoneypot.php: "Project HoneypotにリストされているＩＰからの要求をブロックします。"
 Extended Description module_refspam.php: "リファラー・スパムに基づくブロックは、通常、有意義なセキュリティ上の利点を提供しません、ただし、場合によっては、リクエストに関する詳細情報の収集、およびレポートの作成に役立つ可能性があります。<br />このモジュールをインストールすると、{{Links.Symfony.Intl/Idn}}と{{Links.Symfony.Mbstring}}のSymfonyポリフィルもインストールされます（このモジュールは「Idn」機能を必要とするためが、すべてのPHPインストールがデフォルトで提供するわけではありません）。​どちらも、<a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a>ライセンスを通じて入手できます。"
 Extended Description module_sfs.php: "ＳＦＳによってリストされたＩＰに対して登録ページとログインページを保護します。"
-Extended Description Search engines blocker module: "一部のウェブサイトで問題となる可能性のある検索エンジンを（例：Baidu、Sogou、Yandexなど）ブロックする機能を提供します。"
 Name Bypasses: "デフォルト・シグネチャ・バイパス。"
 Name CN_cidram.inc: "中国ＩＰｖ４ブロックリスト"
+Name IPv4: "ＩＰｖ４（クラウド・サービス、ホスティング・サービス）。"
 Name IPv4-Bogons: "ＩＰｖ４（ボゴン）。"
 Name IPv4-ISPs: "ＩＰｖ４（スパマーＩＳＰ）。"
 Name IPv4-Nonblocking: "ＩＰｖ４ノンブロッキング・シグネチャ。"
 Name IPv4-Other: "ＩＰｖ４（プロキシ、​ＶＰＮ、​およびその他の不要なサービス）。"
-Name IPv4: "ＩＰｖ４（クラウド・サービス、ホスティング・サービス）。"
+Name IPv6: "ＩＰｖ６（クラウド・サービス、ホスティング・サービス）。"
 Name IPv6-Bogons: "ＩＰｖ６（ボゴン）。"
 Name IPv6-ISPs: "ＩＰｖ６（スパマーＩＳＰ）。"
 Name IPv6-Nonblocking: "ＩＰｖ６ノンブロッキング・シグネチャ。"
 Name IPv6-Other: "ＩＰｖ６（プロキシ、​ＶＰＮ、​およびその他の不要なサービス）。"
-Name IPv6: "ＩＰｖ６（クラウド・サービス、ホスティング・サービス）。"
 Name KR_cidram.inc: "韓国ＩＰｖ４ブロックリスト"
+Name Search engines blocker module: "検索エンジン・ブロッカー・モジュール"
 Name compat_bunnycdn.php: "BunnyCDN互換モジュール"
 Name module_abuseipdb.php: "AbuseIPDB モジュール"
 Name module_badhosts.php: "危険なホスト・ブロッカー・モジュール"
@@ -62,7 +63,6 @@ Name module_httpver.php: "ＨＴＴＰバージョン・チェッカー・モジ
 Name module_projecthoneypot.php: "Project Honeypot モジュール"
 Name module_refspam.php: "リファラー・スパム・モジュール"
 Name module_sfs.php: "Stop Forum Spam モジュール"
-Name Search engines blocker module: "検索エンジン・ブロッカー・モジュール"
 config_PHPMailer: "PHPMailerの設定（二要素認証に使用されます）。"
 config_PHPMailer_Enable2FA: "このディレクティブは、フロントエンド・アカウントに２ＦＡを使用するかどうかを決定します。"
 config_PHPMailer_EventLog: "PHPMailerに関連してすべてのイベントを記録するためのファイル。​ファイル名指定するか、​無効にしたい場合は空白のままにして下さい。"
@@ -277,6 +277,41 @@ field_verify_all: "すべてを検証する"
 field_whitelisted_requests: "ホワイトリストに登録されたリクエスト"
 field_your_version: "お使いのバージョン"
 header_login: "継続するには、​ログインしてください。"
+info_some_useful_links: |
+ 役に立つリンク：<br />
+     <ul class="pieul">
+       <li><span class="comCat">CIDRAM用のツール、リソース、など。</span>
+         <ul class="comSub">
+           <li>{{Links.CIDRAM.Issues}} – CIDRAMの問題ページ（サポート、​援助、​など）。</li>
+           <li>{{Links.CIDRAM.WordPress}} – CIDRAMのWordPressプラグイン。</li>
+           <li>{{Links.CIDRAM.Extras}} – その他エキストラ。</li>
+         </ul>
+       </li>
+       <li><span class="comCat">グループ、フォーラム、コミュニティ、など。</span>
+         <ul class="comSub">
+           <li>{{Links.PHP.Earth.Facebook}} – ＰＨＰ学習リソースとディスカッション。</li>
+           <li><a href="https://www.stopforumspam.com/forum/" rel="noopener noreferrer external">フォーラム の Stop Forum Spam</a> – フォーラムスパムの停止に関する便利なディスカッションフォーラム。</li>
+         </ul>
+       </li>
+       <li><span class="comCat">その他の便利なツール、リソース、サービス、など。</span>
+         <ul class="comSub">
+           <li>{{Links.SFS}} – 既知のフォーラム・スパマーのデータベースを維持します。​ウェブサイトやフォーラムをスパマーから保護するのに役立ちます。</li>
+           <li><a href="https://bgp.he.net/" hreflang="en" rel="noopener noreferrer external">Hurricane Electric BGP Toolkit</a> – ＡＳＮからＣＩＤＲを取得する、​ＡＳＮ関係を決定する、​ネットワーク名に基づいてＡＳＮを検出する、​等。</li>
+           <li>{{Links.BGPView}} – ＡＳＮからＣＩＤＲを取得する、​ＡＳＮ関係を決定する、​ネットワーク名に基づいてＡＳＮを検出する、​等。</li>
+           <li><a href="https://radar.qrator.net/" hreflang="en" rel="noopener noreferrer external">QratorのRadar</a> – ＡＳＮの接続性をチェックするのに便利なツール；​ＡＳＮに関するその他の様々な情報。</li>
+           <li><a href="https://www.spamhaus.org/statistics/botnet-asn/" rel="noopener noreferrer external">Spamhausプロジェクト</a> – ＡＳＮのボットネット感染率に関するレポートを表示します。</li>
+           <li>{{Links.AbuseIPDB}} – 既知危険なＩＰアドレスのデータベースを維持します；​ＩＰアドレスを確認と報告するためのＡＰＩを提供します。</li>
+         </ul>
+       </li>
+       <li><span class="comCat">情報および学習用リソース。</span>
+         <ul class="comSub">
+           <li>{{Links.PHP.Earth.Website}} – ＰＨＰ学習リソースとディスカッション。</li>
+           <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">脆弱性チャート</a> – さまざまなパッケージの安全で安全でないバージョンを一覧表示する（HHVM、PHP、phpMyAdmin、Python等）。</li>
+           <li><a href="https://maikuolan.github.io/Compatibility-Charts/" hreflang="en-AU" rel="noopener noreferrer external">互換性チャート</a> – さまざまなパッケージの互換性情報を一覧表示します（CIDRAM、phpMussel、等）。</li>
+         </ul>
+       </li>
+     </ul>
+
 label_active_config_file: "アクティブ・コンフィグレーション・ファイル："
 label_actual: "現在"
 label_aux_actBlk: "ブロック"
@@ -364,11 +399,11 @@ label_is_not_available: "%s は使用できません。"
 label_never: "決して"
 label_next: "次："
 label_os: "使用されたオペレーティングシステム："
+label_other: "その他"
 label_other-ActiveIPv4: "アクティブなＩＰｖ４シグネチャ・ファイル"
 label_other-ActiveIPv6: "アクティブなＩＰｖ６シグネチャ・ファイル"
 label_other-ActiveModules: "アクティブな・モジュール"
 label_other-Since: "開始日"
-label_other: "その他"
 label_paginate: "ページ付けして"
 label_passed: "許可されたリクエスト"
 label_php: "使用されたPHPバージョン："
@@ -392,14 +427,14 @@ label_textmode_simple: "シンプル"
 label_textmode_tally: "集計"
 label_timeout_limit: "このモジュールは外部リクエストを実行します。​ここで、これらのリクエストのタイムアウト制限を指定できます（秒単位で測定）。"
 label_total: "合計"
+label_unignore: "これを無視しないで"
+label_unstable: "最新不安定："
+label_used_with: "使用法："
 label_usemode_any: "シグネチャの制限内であり、禁止されていない場合のみ（ブロックされているかどうかに関係なく）。"
 label_usemode_blkd: "ブロックされ、シグネチャの制限内であり、禁止されていない場合のみ。"
 label_usemode_blkd_mrkd: "ブロックされ、シグネチャの制限内であり、使用するために特別にマークされている、禁止されていない場合のみ。"
 label_usemode_not_blkd: "ブロックされていない場合のみ。"
 label_usemode_not_blkd_mrkd: "ブロックされていない場合、またはシグネチャの制限内であり、使用するために特別にマークされている場合のみ。"
-label_unignore: "これを無視しないで"
-label_unstable: "最新不安定："
-label_used_with: "使用法："
 label_your_ip: "あなたのＩＰ："
 label_your_ua: "あなたのＵＡ："
 link_accounts: "アカウント"
@@ -428,6 +463,13 @@ logs_logfile_doesnt_exist: "選択したログは存在しません！"
 logs_no_logfile_selected: "ログが選択されていません。"
 logs_no_logfiles_available: "いいえログが利用可能。"
 max_login_attempts_exceeded: "ログイン試行の最大回数を超えました；アクセス拒否。"
+msg_subject_2fa: "２ＦＡ（二要素認証）"
+msg_template_2fa: |
+ <center><p>こんにちは、​%1$s。<br />
+ <br />
+ CIDRAMフロントエンドにログインするための２ＦＡコード：</p>
+ <h1>%2$s</h1>
+ <p>このコードの有効期限は１０分です。</p></center>
 notice_click_here: "詳細については、ここをクリックしてください。"
 notice_new_major_version: "通知：%sが利用可能になりました（あなたは%sを使用しています）。​あなたはこのバージョンの最小ＰＨＰ要件を満たされています。​ただし、更新するにはいくつかの手動手順が必要です。"
 previewer_days: "日"
@@ -558,6 +600,7 @@ tip_aux_priority: "優先（最高➡(等しい🔄同等)➡最低）："
 tip_aux_webhooks: "ルールがトリガーされると、CIDRAMは接続されているすべてのWebhookにイベントについて通知しようとします。"
 tip_cache_data: "こんにちは、​{username}。<br />ここでは、キャッシュの内容を確認できます。"
 tip_cidr_calc: "こんにちは、​{username}。​<br />ＣＩＤＲ計算機では、​ＩＰアドレスがどのＣＩＤＲに属しているかを計算できます。"
+tip_click_the_component: "詳細についてはコンポーネント名をクリックしてください。"
 tip_condition_placeholder: "値を指定するか、無視する場合は空白のままにします。"
 tip_config: "こんにちは、​{username}。​<br />コンフィグレーション・ページは、​フロントエンドからCIDRAMの設定を変更することができます。"
 tip_custom_query: "ここに、クエリーを入力してください​（オプションです）。"
@@ -575,7 +618,6 @@ tip_ip_test: "こんにちは、​{username}。​<br />ＩＰテスト・ペ�
 tip_ip_test_switches: "（選択されていない場合は、​シグネチャ・ファイルのみがテストされます）。"
 tip_ip_tracking: "こんにちは、​{username}。​<br />ＩＰトラッキング・ページでは、​ＩＰアドレスのトラッキングステータスを確認できます。​あなたは禁止されているものを確認することができ、​望むならばあなたはトラッキングをキャンセルことができます。"
 tip_logs: "こんにちは、​{username}。​<br />そのログの内容を表示するために、​次のリストからログを選択します。"
-tip_click_the_component: "詳細についてはコンポーネント名をクリックしてください。"
 tip_range: "こんにちは、​{username}。​<br />このページには、現在アクティブな・シグネチャ・ファイルが対象とするＩＰ範囲に関する基本的な統計情報が表示されます。"
 tip_range_intersector: "こんにちは、​{username}。<br />範囲インタセクターは、二セットの範囲から共通因子を決定するために使用できます。"
 tip_range_subtractor: "こんにちは、​{username}。<br />ある範囲のＩＰ/ＣＩＤＲを別の範囲から減算ために、範囲減算器を使用できます。"
@@ -586,46 +628,3 @@ tip_statistics_disabled: "注意：統計トラッキングは現在オフライ
 tip_updates: "こんにちは、​{username}。​<br />アップデート・ページは、​CIDRAMのさまざまなコンポーネントはインストール、​アンインストール、​更新が可能です（コアパッケージ、​シグネチャ、​Ｌ１０Ｎファイル、​等）。"
 title_login: "ログイン"
 warning_signatures_1: "警告：アクティブ・シグネチャ・ファイルはありません！"
-
-info_some_useful_links: |
- 役に立つリンク：<br />
-     <ul class="pieul">
-       <li><span class="comCat">CIDRAM用のツール、リソース、など。</span>
-         <ul class="comSub">
-           <li>{{Links.CIDRAM.Issues}} – CIDRAMの問題ページ（サポート、​援助、​など）。</li>
-           <li>{{Links.CIDRAM.WordPress}} – CIDRAMのWordPressプラグイン。</li>
-           <li>{{Links.CIDRAM.Extras}} – その他エキストラ。</li>
-         </ul>
-       </li>
-       <li><span class="comCat">グループ、フォーラム、コミュニティ、など。</span>
-         <ul class="comSub">
-           <li>{{Links.PHP.Earth.Facebook}} – ＰＨＰ学習リソースとディスカッション。</li>
-           <li><a href="https://www.stopforumspam.com/forum/" rel="noopener noreferrer external">フォーラム の Stop Forum Spam</a> – フォーラムスパムの停止に関する便利なディスカッションフォーラム。</li>
-         </ul>
-       </li>
-       <li><span class="comCat">その他の便利なツール、リソース、サービス、など。</span>
-         <ul class="comSub">
-           <li>{{Links.SFS}} – 既知のフォーラム・スパマーのデータベースを維持します。​ウェブサイトやフォーラムをスパマーから保護するのに役立ちます。</li>
-           <li><a href="https://bgp.he.net/" hreflang="en" rel="noopener noreferrer external">Hurricane Electric BGP Toolkit</a> – ＡＳＮからＣＩＤＲを取得する、​ＡＳＮ関係を決定する、​ネットワーク名に基づいてＡＳＮを検出する、​等。</li>
-           <li>{{Links.BGPView}} – ＡＳＮからＣＩＤＲを取得する、​ＡＳＮ関係を決定する、​ネットワーク名に基づいてＡＳＮを検出する、​等。</li>
-           <li><a href="https://radar.qrator.net/" hreflang="en" rel="noopener noreferrer external">QratorのRadar</a> – ＡＳＮの接続性をチェックするのに便利なツール；​ＡＳＮに関するその他の様々な情報。</li>
-           <li><a href="https://www.spamhaus.org/statistics/botnet-asn/" rel="noopener noreferrer external">Spamhausプロジェクト</a> – ＡＳＮのボットネット感染率に関するレポートを表示します。</li>
-           <li>{{Links.AbuseIPDB}} – 既知危険なＩＰアドレスのデータベースを維持します；​ＩＰアドレスを確認と報告するためのＡＰＩを提供します。</li>
-         </ul>
-       </li>
-       <li><span class="comCat">情報および学習用リソース。</span>
-         <ul class="comSub">
-           <li>{{Links.PHP.Earth.Website}} – ＰＨＰ学習リソースとディスカッション。</li>
-           <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">脆弱性チャート</a> – さまざまなパッケージの安全で安全でないバージョンを一覧表示する（HHVM、PHP、phpMyAdmin、Python等）。</li>
-           <li><a href="https://maikuolan.github.io/Compatibility-Charts/" hreflang="en-AU" rel="noopener noreferrer external">互換性チャート</a> – さまざまなパッケージの互換性情報を一覧表示します（CIDRAM、phpMussel、等）。</li>
-         </ul>
-       </li>
-     </ul>
-
-msg_template_2fa: |
- <center><p>こんにちは、​%1$s。<br />
- <br />
- CIDRAMフロントエンドにログインするための２ＦＡコード：</p>
- <h1>%2$s</h1>
- <p>このコードの有効期限は１０分です。</p></center>
-msg_subject_2fa: "２ＦＡ（二要素認証）"

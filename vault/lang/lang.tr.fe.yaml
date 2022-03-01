@@ -7,23 +7,24 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Turkish language data for the front-end (last modified: 2022.01.22).
+# This file: Turkish language data for the front-end (last modified: 2022.03.01).
 ##/
 
 Extended Description Bypasses: "Varsayılan imza bypass'lar, normalde ana paketle birlikte verilir."
 Extended Description CIDRAM: "Ana paket (hariç imzalar, belgeler, ve yapılandırma)."
 Extended Description Chart.js: "Ön uçların pasta grafikler oluşturmasını sağlar.<br />{{Links.Chart.js}}, <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a> üzerinden kullanılabilir."
+Extended Description IPv4: &ExtDesCloud "İstenmeyen bulut servislerini ve insan olmayan uç noktaları engeller."
 Extended Description IPv4-Bogons: &ExtDesBogons "Bogon/martian CIDR'leri engeller."
 Extended Description IPv4-ISPs: &ExtDesISPs "Tehlikeli ve spam yapan ISS'leri engeller (çoklu hizmet ağları içerir; bunlar insan ve ayrıca insan dışı uç noktaları içerebilir)."
 Extended Description IPv4-Nonblocking: &ExtDesNonblocking "Profil oluşturma için kullanışlıdır, ancak kendi başına hiçbir şeyi engellemez."
 Extended Description IPv4-Other: &ExtDesOther "Proxy, VPN ve diğer çeşitli istenmeyen hizmetler için CIDR'leri engeller."
-Extended Description IPv4: &ExtDesCloud "İstenmeyen bulut servislerini ve insan olmayan uç noktaları engeller."
+Extended Description IPv6: *ExtDesCloud
 Extended Description IPv6-Bogons: *ExtDesBogons
 Extended Description IPv6-ISPs: *ExtDesISPs
 Extended Description IPv6-Nonblocking: *ExtDesNonblocking
 Extended Description IPv6-Other: *ExtDesOther
-Extended Description IPv6: *ExtDesCloud
 Extended Description PHPMailer: "E-posta göndermeyi içeren herhangi bir işlev kullanmak için gereklidir.<br />{{Links.PHPMailer.PHPMailer}}, {{Links.PHPMailer.License}} lisansı üzerinden kullanılabilir."
+Extended Description Search engines blocker module: "Bazı web siteleri için sorunlu olabilecek arama motorlarını (örneğin, Baidu, Sogou, Yandex, vb) engelleme yeteneği sağlar."
 Extended Description flags.css: "Ön uç günlükleri sayfasına bayrak desteği ekler."
 Extended Description module_abuseipdb.php: "AbuseIPDB'de listelenen IP'lerden gelen istekleri engeller."
 Extended Description module_badhosts.php: "Spam gönderenler, bilgisayar korsanları ve diğer haince varlıklar tarafından sıkça kullanılan ana bilgisayarları engeller."
@@ -36,20 +37,20 @@ Extended Description module_httpver.php: "CIDRAM yapılandırması aracılığı
 Extended Description module_projecthoneypot.php: "Project Honeypot'de listelenen IP'lerden gelen istekleri engeller."
 Extended Description module_refspam.php: "Yönlendiren spam'e dayalı engelleme genellikle anlamlı bir güvenlik avantajı sağlamaz, ancak bazı durumlarda, bazı kullanıcılar için istekler hakkında daha fazla bilgi toplamak ve bunu rapor edebilmek için yararlı olabilir.<br />Bu modülün yüklenmesi, {{Links.Symfony.Intl/Idn}} ve {{Links.Symfony.Mbstring}} için Symfony çoklu dolgularını da yükler (çünkü bu modül, tüm PHP kurulumlarının varsayılan olarak sağlamadığı Idn işlevselliği gerektirir), her ikisi de <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a> lisansı ile kullanılabilir."
 Extended Description module_sfs.php: "SFS tarafından listelenen IP'lere karşı kayıt ve oturum açma sayfalarını korur."
-Extended Description Search engines blocker module: "Bazı web siteleri için sorunlu olabilecek arama motorlarını (örneğin, Baidu, Sogou, Yandex, vb) engelleme yeteneği sağlar."
 Name Bypasses: "Varsayılan imza bypass'lar."
 Name CN_cidram.inc: "Çin IPv4 engelleme listesi"
+Name IPv4: "IPv4 (bulut ve barındırma servisleri)."
 Name IPv4-Bogons: "IPv4 (bogon'leri)."
 Name IPv4-ISPs: "IPv4 (spam gönderen ISS'ler)."
 Name IPv4-Nonblocking: "IPv4 engellemeyen imzalar."
 Name IPv4-Other: "IPv4 (proxy, VPN'ler, vb)."
-Name IPv4: "IPv4 (bulut ve barındırma servisleri)."
+Name IPv6: "IPv6 (bulut ve barındırma servisleri)."
 Name IPv6-Bogons: "IPv6 (bogon'leri)."
 Name IPv6-ISPs: "IPv6 (spam gönderen ISS'ler)."
 Name IPv6-Nonblocking: "IPv6 engellemeyen imzalar."
 Name IPv6-Other: "IPv6 (proxy, VPN'ler, vb)."
-Name IPv6: "IPv6 (bulut ve barındırma servisleri)."
 Name KR_cidram.inc: "Güney Kore IPv4 engelleme listesi"
+Name Search engines blocker module: "Arama motorları engelleyici modülü"
 Name compat_bunnycdn.php: "BunnyCDN uyumluluk modülü"
 Name module_abuseipdb.php: "AbuseIPDB modülü"
 Name module_badhosts.php: "Kötü ana engelleyici modülü"
@@ -62,7 +63,6 @@ Name module_httpver.php: "HTTP sürüm kontrol modülü"
 Name module_projecthoneypot.php: "Project Honeypot modülü"
 Name module_refspam.php: "Yönlendiren spam modülü"
 Name module_sfs.php: "Stop Forum Spam modülü"
-Name Search engines blocker module: "Arama motorları engelleyici modülü"
 config_PHPMailer: "PHPMailer için yapılandırma (iki faktörlü kimlik doğrulama için kullanılır)."
 config_PHPMailer_Enable2FA: "Bu yönerge, ön uç hesapları için 2FA kullanılıp kullanılmayacağını belirler."
 config_PHPMailer_EventLog: "PHPMailer ile ilgili tüm olayları günlüğe kaydetmek için bir dosya. Dosya adı belirtin veya devre dışı bırakmak için boş bırakın."
@@ -277,6 +277,41 @@ field_verify_all: "Tümünü doğrula"
 field_whitelisted_requests: "Beyaz listeye eklenen istekler"
 field_your_version: "Sürümünüz"
 header_login: "Devam etmek için lütfen giriş yapınız."
+info_some_useful_links: |
+ Bazı kullanışlı bağlantılar:<br />
+     <ul class="pieul">
+       <li><span class="comCat">CIDRAM için araçlar, kaynaklar, vb.</span>
+         <ul class="comSub">
+           <li>{{Links.CIDRAM.Issues}} – CIDRAM için sorunlar sayfası (destek, yardım, vb).</li>
+           <li>{{Links.CIDRAM.WordPress}} – CIDRAM için WordPress eklentisi.</li>
+           <li>{{Links.CIDRAM.Extras}} – Çeşitli ekstralar.</li>
+         </ul>
+       </li>
+       <li><span class="comCat">Gruplar, forumlar, topluluklar, vb.</span>
+         <ul class="comSub">
+           <li>{{Links.PHP.Earth.Facebook}} – PHP öğrenme kaynakları ve tartışmalar.</li>
+           <li><a href="https://www.stopforumspam.com/forum/" rel="noopener noreferrer external">Forum@Stop Forum Spam</a> – Forum spamını durdurmayla ilgili faydalı forum.</li>
+         </ul>
+       </li>
+       <li><span class="comCat">Diğer faydalı araçlar, kaynaklar, hizmetler, vb.</span>
+         <ul class="comSub">
+           <li>{{Links.SFS}} – Bilinen forum spam göndericileri veritabanını yönetir. Web sitelerini ve forumları spam göndericilere karşı korumak için kullanışlıdır.</li>
+           <li><a href="https://bgp.he.net/" hreflang="en" rel="noopener noreferrer external">Hurricane Electric BGP Toolkit</a> – ASN'lerden CIDR'ler alın, ASN ilişkilerini belirleyin, ağ adlarına dayalı ASN'leri keşfedin.</li>
+           <li>{{Links.BGPView}} – ASN'lerden CIDR'ler alın, ASN ilişkilerini belirleyin, ağ adlarına dayalı ASN'leri keşfedin.</li>
+           <li><a href="https://radar.qrator.net/" hreflang="en" rel="noopener noreferrer external">Radar by Qrator</a> – ASN'lerin bağlantısını kontrol etmek için yararlı araç ve ASN'ler hakkında çeşitli diğer bilgiler.</li>
+           <li><a href="https://www.spamhaus.org/statistics/botnet-asn/" rel="noopener noreferrer external">Spamhaus Projesi</a> – ASN'ler için botnet enfeksiyon oranları ile ilgili raporları görüntüler.</li>
+           <li>{{Links.AbuseIPDB}} – Bilinen kötü amaçlı IP'lerin veritabanını korur; IP'leri denetlemek ve raporlamak için bir API sağlar.</li>
+         </ul>
+       </li>
+       <li><span class="comCat">Bilgi ve öğrenme kaynakları.</span>
+         <ul class="comSub">
+           <li>{{Links.PHP.Earth.Website}} – PHP öğrenme kaynakları ve tartışmalar.</li>
+           <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Güvenlik Açığı Tabloları</a> – Çeşitli paketler (HHVM, PHP, phpMyAdmin, Python, vb) güvenli/güvensiz sürümlerini listeler.</li>
+           <li><a href="https://maikuolan.github.io/Compatibility-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Uyumluluk Tabloları</a> – Çeşitli paketler (CIDRAM, phpMussel, vb) için uyumluluk bilgilerini listeler.</li>
+         </ul>
+       </li>
+     </ul>
+
 label_active_config_file: "Etkin yapılandırma dosyası:"
 label_actual: "Şimdiki"
 label_aux_actBlk: "engelleyin"
@@ -368,11 +403,11 @@ label_is_not_available: "%s mevcut değil."
 label_never: "Asla"
 label_next: "Sonraki:"
 label_os: "Kullanılan işletim sistemi:"
+label_other: "Diğer"
 label_other-ActiveIPv4: "Etkin IPv4 imza dosyaları"
 label_other-ActiveIPv6: "Etkin IPv6 imza dosyaları"
 label_other-ActiveModules: "Aktif modüller"
 label_other-Since: "Başlangıç tarihi"
-label_other: "Diğer"
 label_paginate: "Sayfalandır"
 label_passed: "İzin verilen istekler"
 label_php: "Kullanılan PHP sürümü:"
@@ -396,14 +431,14 @@ label_textmode_simple: "Basit"
 label_textmode_tally: "Taksir"
 label_timeout_limit: "Bu modül harici istekler gerçekleştirir. Burada bu istekler için zaman aşımı sınırını (saniye cinsinden) belirtebilirsiniz."
 label_total: "Toplam"
+label_unignore: "Bunu görmezden gelme"
+label_unstable: "En yeni kararsız:"
+label_used_with: "İle kullanılan:"
 label_usemode_any: "Yalnızca imza sınırı dahilindeyken, ve yasaklanmadığında (engellenip engellenmediğine bakılmaksızın)."
 label_usemode_blkd: "Yalnızca engellendiğinde, imza sınırı dahilindeyken, ve yasaklanmadığında."
 label_usemode_blkd_mrkd: "Yalnızca engellendiğinde, kullanım için özel olarak işaretlendiğinde, imza sınırı dahilindeyken, ve yasaklanmadığında."
 label_usemode_not_blkd: "Yalnızca engellenmediğinde."
 label_usemode_not_blkd_mrkd: "Yalnızca engellenmediğinde, veya kullanım için özel olarak işaretlendiğinde, imza sınırı dahilindeyken, ve yasaklanmadığında."
-label_unignore: "Bunu görmezden gelme"
-label_unstable: "En yeni kararsız:"
-label_used_with: "İle kullanılan:"
 label_your_ip: "Senin IP:"
 label_your_ua: "Senin UA:"
 link_accounts: "Hesaplar"
@@ -432,6 +467,13 @@ logs_logfile_doesnt_exist: "Seçilen günlük dosyası yok!"
 logs_no_logfile_selected: "Hiçbir günlük dosyası seçilmedi."
 logs_no_logfiles_available: "Günlük dosyası yok."
 max_login_attempts_exceeded: "Maksimum giriş denemesi aşıldı; Erişim reddedildi."
+msg_subject_2fa: "2FA (İki Faktörlü Kimlik Doğrulama)"
+msg_template_2fa: |
+ <center><p>Merhaba, %1$s.<br />
+ <br />
+ CIDRAM ön ucuna giriş yapmak için 2FA kodunuz:</p>
+ <h1>%2$s</h1>
+ <p>Bu kod 10 dakika içinde sona eriyor.</p></center>
 notice_click_here: "Daha fazla bilgi için buraya tıklayın."
 notice_new_major_version: "Bildirim: %s artık kullanılabilir (%s kullanıyorsunuz). Bu sürümün minimum PHP gereksinimini karşılıyorsunuz. Ancak, güncelleme için bazı manuel adımlar gereklidir."
 previewer_days: "Gün"
@@ -562,6 +604,7 @@ tip_aux_priority: "Öncelik (maksimum➡(eşit🔄eşdeğer)➡minimum):"
 tip_aux_webhooks: "Bir kural tetiklendiğinde, CIDRAM, olayla ilgili bağlı webhookları bildirmeye çalışır."
 tip_cache_data: "Merhaba, {username}.<br />Burada önbellek içeriğini inceleyebilirsiniz."
 tip_cidr_calc: "Merhaba, {username}.<br />CIDR hesaplayıcısı, bir IP adresinin faktörünün hangi CIDR'lerin olduğunu hesaplamanızı mümkün kılar."
+tip_click_the_component: "Daha fazla ayrıntı için bileşen adına tıklayın."
 tip_condition_placeholder: "Bir değer belirtin veya göz ardı etmek için boş bırakın."
 tip_config: "Merhaba, {username}.<br />Yapılandırma sayfası, CIDRAM için yapılandırmayı ön uçtan değiştirmenizi mümkün kılar."
 tip_custom_query: "Buraya sorguyu girin. (isteğe)."
@@ -579,7 +622,6 @@ tip_ip_test: "Merhaba, {username}.<br />IP test sayfası, şu anda yüklü olan 
 tip_ip_test_switches: "(Seçilmediğinde, yalnızca imza dosyaları test edilecektir)."
 tip_ip_tracking: "Merhaba, {username}.<br />IP izleme sayfası, IP adreslerinin izleme durumunu kontrol etmenizi, hangilerinin yasak olduğunu kontrol etmenizi ve isterseniz bunların yasaklanmasını/izlemensini kaldırmanızı kontrol etmenizi sağlar."
 tip_logs: "Merhaba, {username}.<br />Bu günlük dosyasının içeriğini görüntülemek için aşağıdaki listeden bir günlük dosyası seçin."
-tip_click_the_component: "Daha fazla ayrıntı için bileşen adına tıklayın."
 tip_range: "Merhaba, {username}.<br />Bu sayfa, şu anda aktif imza dosyalarının kapsadığı IP aralıkları hakkında bazı temel istatistiksel bilgileri göstermektedir."
 tip_range_intersector: "Merhaba, {username}.<br />Kesişen aracı, iki aralık kümesinden ortak faktörleri belirlemek için kullanılabilir."
 tip_range_subtractor: "Merhaba, {username}.<br />Çıkarıcı, bir IP/CIDR aralığını bir diğerinden çıkarmak için kullanılabilir."
@@ -590,46 +632,3 @@ tip_statistics_disabled: "Not: İstatistik izleme şu anda devre dışı, ancak 
 tip_updates: "Merhaba, {username}.<br />Güncellemeler sayfası, CIDRAM'ın çeşitli bileşenlerini (çekirdek paket, imzalar, L10N dosyaları vb) yüklemenizi, kaldırmanızı ve güncellemenizi sağlar."
 title_login: "Giriş"
 warning_signatures_1: "Uyarı: Hiçbir imza dosyası aktif değil!"
-
-info_some_useful_links: |
- Bazı kullanışlı bağlantılar:<br />
-     <ul class="pieul">
-       <li><span class="comCat">CIDRAM için araçlar, kaynaklar, vb.</span>
-         <ul class="comSub">
-           <li>{{Links.CIDRAM.Issues}} – CIDRAM için sorunlar sayfası (destek, yardım, vb).</li>
-           <li>{{Links.CIDRAM.WordPress}} – CIDRAM için WordPress eklentisi.</li>
-           <li>{{Links.CIDRAM.Extras}} – Çeşitli ekstralar.</li>
-         </ul>
-       </li>
-       <li><span class="comCat">Gruplar, forumlar, topluluklar, vb.</span>
-         <ul class="comSub">
-           <li>{{Links.PHP.Earth.Facebook}} – PHP öğrenme kaynakları ve tartışmalar.</li>
-           <li><a href="https://www.stopforumspam.com/forum/" rel="noopener noreferrer external">Forum@Stop Forum Spam</a> – Forum spamını durdurmayla ilgili faydalı forum.</li>
-         </ul>
-       </li>
-       <li><span class="comCat">Diğer faydalı araçlar, kaynaklar, hizmetler, vb.</span>
-         <ul class="comSub">
-           <li>{{Links.SFS}} – Bilinen forum spam göndericileri veritabanını yönetir. Web sitelerini ve forumları spam göndericilere karşı korumak için kullanışlıdır.</li>
-           <li><a href="https://bgp.he.net/" hreflang="en" rel="noopener noreferrer external">Hurricane Electric BGP Toolkit</a> – ASN'lerden CIDR'ler alın, ASN ilişkilerini belirleyin, ağ adlarına dayalı ASN'leri keşfedin.</li>
-           <li>{{Links.BGPView}} – ASN'lerden CIDR'ler alın, ASN ilişkilerini belirleyin, ağ adlarına dayalı ASN'leri keşfedin.</li>
-           <li><a href="https://radar.qrator.net/" hreflang="en" rel="noopener noreferrer external">Radar by Qrator</a> – ASN'lerin bağlantısını kontrol etmek için yararlı araç ve ASN'ler hakkında çeşitli diğer bilgiler.</li>
-           <li><a href="https://www.spamhaus.org/statistics/botnet-asn/" rel="noopener noreferrer external">Spamhaus Projesi</a> – ASN'ler için botnet enfeksiyon oranları ile ilgili raporları görüntüler.</li>
-           <li>{{Links.AbuseIPDB}} – Bilinen kötü amaçlı IP'lerin veritabanını korur; IP'leri denetlemek ve raporlamak için bir API sağlar.</li>
-         </ul>
-       </li>
-       <li><span class="comCat">Bilgi ve öğrenme kaynakları.</span>
-         <ul class="comSub">
-           <li>{{Links.PHP.Earth.Website}} – PHP öğrenme kaynakları ve tartışmalar.</li>
-           <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Güvenlik Açığı Tabloları</a> – Çeşitli paketler (HHVM, PHP, phpMyAdmin, Python, vb) güvenli/güvensiz sürümlerini listeler.</li>
-           <li><a href="https://maikuolan.github.io/Compatibility-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Uyumluluk Tabloları</a> – Çeşitli paketler (CIDRAM, phpMussel, vb) için uyumluluk bilgilerini listeler.</li>
-         </ul>
-       </li>
-     </ul>
-
-msg_template_2fa: |
- <center><p>Merhaba, %1$s.<br />
- <br />
- CIDRAM ön ucuna giriş yapmak için 2FA kodunuz:</p>
- <h1>%2$s</h1>
- <p>Bu kod 10 dakika içinde sona eriyor.</p></center>
-msg_subject_2fa: "2FA (İki Faktörlü Kimlik Doğrulama)"

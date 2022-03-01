@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Default signature bypasses (last modified: 2022.01.22).
+ * This file: Default signature bypasses (last modified: 2022.02.26).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -107,7 +107,7 @@ $CIDRAM['RunParamResCache']['bypasses.php'] = function (array $Factors = [], int
          * @link https://github.com/CIDRAM/CIDRAM/issues/260
          */
         if (
-            $CIDRAM['Request']->inCsv('AmazonAdBot', $CIDRAM['Config']['bypasses']['used']) &&
+            preg_match('~(?:^|\n)AmazonAdBot(?:\n|$)~', $CIDRAM['Config']['bypasses']['used']) &&
             strpos($CIDRAM['BlockInfo']['UALC'], 'amazonadbot/') !== false
         ) {
             return;
@@ -115,7 +115,7 @@ $CIDRAM['RunParamResCache']['bypasses.php'] = function (array $Factors = [], int
 
         /** DuckDuckGo bypass. */
         if (
-            $CIDRAM['Request']->inCsv('DuckDuckBot', $CIDRAM['Config']['bypasses']['used']) &&
+            preg_match('~(?:^|\n)DuckDuckBot(?:\n|$)~', $CIDRAM['Config']['bypasses']['used']) &&
             preg_match('~duckduck(?:go-favicons-)?bot~', $CIDRAM['BlockInfo']['UALC'])
         ) {
             return 4;
@@ -126,7 +126,7 @@ $CIDRAM['RunParamResCache']['bypasses.php'] = function (array $Factors = [], int
          * @link https://github.com/CIDRAM/CIDRAM/issues/80
          */
         if (
-            $CIDRAM['Request']->inCsv('Embedly', $CIDRAM['Config']['bypasses']['used']) &&
+            preg_match('~(?:^|\n)Embedly(?:\n|$)~', $CIDRAM['Config']['bypasses']['used']) &&
             strpos($CIDRAM['BlockInfo']['UALC'], 'embedly') !== false
         ) {
             return;
@@ -137,7 +137,7 @@ $CIDRAM['RunParamResCache']['bypasses.php'] = function (array $Factors = [], int
          * @link https://udger.com/resources/ua-list/bot-detail?bot=Feedspotbot
          */
         if (
-            $CIDRAM['Request']->inCsv('Feedspot', $CIDRAM['Config']['bypasses']['used']) &&
+            preg_match('~(?:^|\n)Feedspot(?:\n|$)~', $CIDRAM['Config']['bypasses']['used']) &&
             strpos($CIDRAM['BlockInfo']['UA'], '+https://www.feedspot.com/fs/fetcher') !== false
         ) {
             return;
@@ -148,7 +148,7 @@ $CIDRAM['RunParamResCache']['bypasses.php'] = function (array $Factors = [], int
          * @link https://github.com/CIDRAM/CIDRAM/issues/253
          */
         if (
-            $CIDRAM['Request']->inCsv('Pinterest', $CIDRAM['Config']['bypasses']['used']) &&
+            preg_match('~(?:^|\n)Pinterest(?:\n|$)~', $CIDRAM['Config']['bypasses']['used']) &&
             strpos($CIDRAM['BlockInfo']['UALC'], 'pinterest') !== false
         ) {
             return;
@@ -159,7 +159,7 @@ $CIDRAM['RunParamResCache']['bypasses.php'] = function (array $Factors = [], int
          * @link https://github.com/CIDRAM/CIDRAM/issues/243
          */
         if (
-            $CIDRAM['Request']->inCsv('Redditbot', $CIDRAM['Config']['bypasses']['used']) &&
+            preg_match('~(?:^|\n)Redditbot(?:\n|$)~', $CIDRAM['Config']['bypasses']['used']) &&
             strpos($CIDRAM['BlockInfo']['UALC'], 'redditbot/') !== false
         ) {
             return;
@@ -172,7 +172,7 @@ $CIDRAM['RunParamResCache']['bypasses.php'] = function (array $Factors = [], int
          * Bingbot bypass.
          * @link https://github.com/CIDRAM/CIDRAM/issues/242
          */
-        if ($CIDRAM['Request']->inCsv('Bingbot', $CIDRAM['Config']['bypasses']['used'])) {
+        if (preg_match('~(?:^|\n)Bingbot(?:\n|$)~', $CIDRAM['Config']['bypasses']['used'])) {
             if (empty($CIDRAM['Hostname'])) {
                 $CIDRAM['Hostname'] = $CIDRAM['DNS-Reverse']($CIDRAM['BlockInfo']['IPAddr']);
             }
@@ -190,7 +190,7 @@ $CIDRAM['RunParamResCache']['bypasses.php'] = function (array $Factors = [], int
          * @link https://duckduckgo.com/duckduckbot
          */
         if (
-            $CIDRAM['Request']->inCsv('DuckDuckBot', $CIDRAM['Config']['bypasses']['used']) &&
+            preg_match('~(?:^|\n)DuckDuckBot(?:\n|$)~', $CIDRAM['Config']['bypasses']['used']) &&
             preg_match('~duckduck(?:go-favicons-)?bot~', $CIDRAM['BlockInfo']['UALC'])
         ) {
             return 4;
@@ -203,7 +203,7 @@ $CIDRAM['RunParamResCache']['bypasses.php'] = function (array $Factors = [], int
          * PetalBot bypass.
          * @link https://github.com/CIDRAM/CIDRAM/issues/254
          */
-        if ($CIDRAM['Request']->inCsv('PetalBot', $CIDRAM['Config']['bypasses']['used'])) {
+        if (preg_match('~(?:^|\n)PetalBot(?:\n|$)~', $CIDRAM['Config']['bypasses']['used'])) {
             if (empty($CIDRAM['Hostname'])) {
                 $CIDRAM['Hostname'] = $CIDRAM['DNS-Reverse']($CIDRAM['BlockInfo']['IPAddr']);
             }
@@ -224,7 +224,7 @@ $CIDRAM['RunParamResCache']['bypasses.php'] = function (array $Factors = [], int
          * @link https://www.oracle.com/corporate/acquisitions/grapeshot/crawler.html
          */
         if (
-            $CIDRAM['Request']->inCsv('Grapeshot', $CIDRAM['Config']['bypasses']['used']) &&
+            preg_match('~(?:^|\n)Grapeshot(?:\n|$)~', $CIDRAM['Config']['bypasses']['used']) &&
             strpos($CIDRAM['BlockInfo']['UALC'], 'grapeshot') !== false
         ) {
             return;
@@ -241,7 +241,7 @@ $CIDRAM['RunParamResCache']['bypasses.php'] = function (array $Factors = [], int
          * @link https://wordpress.org/support/topic/site-health-issues-4/
          */
         if (
-            $CIDRAM['Request']->inCsv('WordPress REST API', $CIDRAM['Config']['bypasses']['used']) &&
+            preg_match('~(?:^|\n)WordPress REST API(?:\n|$)~', $CIDRAM['Config']['bypasses']['used']) &&
             (defined('ABSPATH') || strtolower(str_replace("\\", '/', substr(__DIR__, -31))) === 'wp-content/plugins/cidram/vault')
         ) {
             return;
@@ -249,7 +249,7 @@ $CIDRAM['RunParamResCache']['bypasses.php'] = function (array $Factors = [], int
 
         /** Feedbot bypass. */
         if (
-            $CIDRAM['Request']->inCsv('Feedbot', $CIDRAM['Config']['bypasses']['used']) &&
+            preg_match('~(?:^|\n)Feedbot(?:\n|$)~', $CIDRAM['Config']['bypasses']['used']) &&
             strpos($CIDRAM['BlockInfo']['UALC'], 'wp.com feedbot/1.0 (+https://wp.com)') !== false
         ) {
             return;
@@ -257,7 +257,7 @@ $CIDRAM['RunParamResCache']['bypasses.php'] = function (array $Factors = [], int
 
         /** Jetpack bypass. */
         if (
-            $CIDRAM['Request']->inCsv('Jetpack', $CIDRAM['Config']['bypasses']['used']) &&
+            preg_match('~(?:^|\n)Jetpack(?:\n|$)~', $CIDRAM['Config']['bypasses']['used']) &&
             strpos($CIDRAM['BlockInfo']['UALC'], 'jetpack') !== false
         ) {
             return;
@@ -267,7 +267,7 @@ $CIDRAM['RunParamResCache']['bypasses.php'] = function (array $Factors = [], int
     /** AbuseIPDB webmaster verification bot bypass. */
     if (
         $Tag === 'Digital Ocean, Inc' &&
-        $CIDRAM['Request']->inCsv('AbuseIPDB', $CIDRAM['Config']['bypasses']['used']) &&
+        preg_match('~(?:^|\n)AbuseIPDB(?:\n|$)~', $CIDRAM['Config']['bypasses']['used']) &&
         $CIDRAM['BlockInfo']['UA'] === 'AbuseIPDB_Bot/1.0'
     ) {
         return;

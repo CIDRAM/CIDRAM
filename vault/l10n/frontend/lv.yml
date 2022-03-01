@@ -7,22 +7,23 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Latvian language data for the front-end (last modified: 2022.02.21).
+# This file: Latvian language data for the front-end (last modified: 2022.03.01).
 ##/
 
 Extended Description Bypasses: "Noklusējuma paraksta apiešana faili, kas parasti ir iekļauti galvenajā paketē."
 Extended Description Chart.js: "Ļauj sektoru diagrammas izmantot administratīvai piekļuvei.<br />{{Links.Chart.js}} ir pieejams caur <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT licenci</a>."
+Extended Description IPv4: &ExtDesCloud "Bloķē nevēlamus mākoņa pakalpojumus un necilvēku galapunktus."
 Extended Description IPv4-Bogons: &ExtDesBogons "Bloķē bogona CIDRs."
 Extended Description IPv4-ISPs: &ExtDesISPs "Bloķē bīstamus un surogātpastu ISPs (ietver daudzspēļu tīklus, kas var saturēt cilvēks galapunktus un nēcilvēks galapunktus)."
 Extended Description IPv4-Nonblocking: &ExtDesNonblocking "Noderīga profilēšanai, bet pati par sevi neko bloķē."
 Extended Description IPv4-Other: &ExtDesOther "Bloķē starpniekserveru, VPN, un citu dažādu nevēlamu pakalpojumu CIDRs."
-Extended Description IPv4: &ExtDesCloud "Bloķē nevēlamus mākoņa pakalpojumus un necilvēku galapunktus."
+Extended Description IPv6: *ExtDesCloud
 Extended Description IPv6-Bogons: *ExtDesBogons
 Extended Description IPv6-ISPs: *ExtDesISPs
 Extended Description IPv6-Nonblocking: *ExtDesNonblocking
 Extended Description IPv6-Other: *ExtDesOther
-Extended Description IPv6: *ExtDesCloud
 Extended Description PHPMailer: "Nepieciešams jebkuras funkcijas izmantošanai, kas saistīta ar e-pasta sūtīšanu.<br />{{Links.PHPMailer.PHPMailer}} ir pieejams caur {{Links.PHPMailer.License}} licenci."
+Extended Description Search engines blocker module: "Nodrošina iespēju bloķēt meklētājprogrammas, kas var būt problemātiskas dažām vietnēm (piemēram, Baidu, Sogou, Yandex, utt)."
 Extended Description flags.css: "Logfailu lapai pievieno karodziņa atbalstu."
 Extended Description module_abuseipdb.php: "Bloķē pieprasījumus no IP, kas uzskaitīti vietnē AbuseIPDB."
 Extended Description module_badhosts.php: "Bloķē resursdatorus, kurus bieži izmanto surogātpasta izplatītāji, hakeri, un citas nekonkrētas vienības."
@@ -36,20 +37,18 @@ Extended Description module_httpver.php: "Ļauj bloķēt noteiktus protokolus un
 Extended Description module_projecthoneypot.php: "Bloķē pieprasījumus no IP, kas uzskaitīti vietnē Project Honeypot."
 Extended Description module_refspam.php: "Bloķēšana, pamatojoties uz novirzītāja surogātpastu, parasti nesniegs nozīmīgus drošības ieguvumus, taču dažos gadījumos tas varētu būt noderīgs dažiem lietotājiem, lai savāktu vairāk informācijas par pieprasījumiem un par iespēju par to ziņot.<br />Instalējot šo moduli, tiek instalēti arī Symfony polifilmi {{Links.Symfony.Intl/Idn}} un {{Links.Symfony.Mbstring}} (jo šim modulim ir nepieciešama Idn funkcionalitāte, ko ne visas PHP instalācijas nodrošina pēc noklusējuma), abi ir pieejami, izmantojot <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a> licenci."
 Extended Description module_sfs.php: "Aizsargā reģistrācijas un ielogošanās lapas pret SFS uzskaitītajiem IP."
-Extended Description Search engines blocker module: "Nodrošina iespēju bloķēt meklētājprogrammas, kas var būt problemātiskas dažām vietnēm (piemēram, Baidu, Sogou, Yandex, utt)."
 Name Bypasses: "Noklusējuma paraksta apiešana."
-Name CN_cidram.inc: "Ķīnas IPv4 bloķēšanas saraksts"
+Name IPv4: "IPv4 (mākonis un mitināšanas pakalpojumi)."
 Name IPv4-Bogons: "IPv4 (bogonu adreses)."
 Name IPv4-ISPs: "IPv4 (surogātpastu ISPs)."
 Name IPv4-Nonblocking: "IPv4 nebloķējošie paraksti."
 Name IPv4-Other: "IPv4 (starpniekserveri, VPN, utt)."
-Name IPv4: "IPv4 (mākonis un mitināšanas pakalpojumi)."
+Name IPv6: "IPv6 (mākonis un mitināšanas pakalpojumi)."
 Name IPv6-Bogons: "IPv6 (bogonu adreses)."
 Name IPv6-ISPs: "IPv6 (surogātpastu ISPs)."
 Name IPv6-Nonblocking: "IPv6 nebloķējošie paraksti."
 Name IPv6-Other: "IPv6 (starpniekserveri, VPN, utt)."
-Name IPv6: "IPv6 (mākonis un mitināšanas pakalpojumi)."
-Name KR_cidram.inc: "Dienvidkorejas IPv4 bloķēšanas saraksts"
+Name Search engines blocker module: "Meklētājprogrammu bloķētāja modulis"
 Name compat_bunnycdn.php: "BunnyCDN saderības modulis"
 Name module_abuseipdb.php: "AbuseIPDB modulis"
 Name module_badhosts.php: "Sliktu tīmekļa mitināšanas bloķētāja modulis"
@@ -63,7 +62,11 @@ Name module_httpver.php: "HTTP versiju pārbaudītāja modulis"
 Name module_projecthoneypot.php: "Project Honeypot modulis"
 Name module_refspam.php: "Novirzītāja surogātpastu modulis"
 Name module_sfs.php: "Stop Forum Spam modulis"
-Name Search engines blocker module: "Meklētājprogrammu bloķētāja modulis"
+checkbox_label_fields_logs: "Vai šim laukam vajadzētu parādīties žurnāla ierakstos?"
+checkbox_label_fields_omit: "Vai izlaist šo lauku, kad tas ir tukšs?"
+checkbox_label_fields_page_output: "Vai šim laukam vajadzētu parādīties lapā "piekļuve liegta"?"
+checkbox_label_stage_enable: "Vai iespējot šo posmu?"
+checkbox_label_stage_log_errors: "Vai reģistrēt visas šajā posmā radušās kļūdas?"
 config_PHPMailer: "PHPMailer konfigurācija (izmanto divu faktoru autentifikācijai)."
 config_PHPMailer_add_reply_to_address: "Respondenta adrese, ko citēt, nosūtot e-pastu izmantojot SMTP."
 config_PHPMailer_add_reply_to_name: "Respondenta vārds, ko citēt, nosūtot e-pastu izmantojot SMTP."
@@ -92,14 +95,12 @@ config_general_disable_frontend: "Vai atspējot administratīvo piekļuvi, kas i
 config_general_disabled_channels: "To var izmantot, lai neļautu CIDRAM izmantot noteiktus kanālus nosūtot pieprasījumus (piemēram, atjauninot, ienesot komponentu metadatus, utt)."
 config_general_emailaddr: "Ja vēlaties, šeit varat norādīt e-pasta adresi, kas lietotājiem tiks piešķirta, kad viņi tiks bloķēti, lai viņi tos izmantotu kā kontaktpunktu atbalsta un/vai palīdzības saņemšanai gadījumā, ja tie tiek bloķēti kļūdaini. BRĪDINĀJUMS: Neatkarīgi no tā, kādu e-pasta adresi jūs šeit norādāt, visticamāk, redzēs surogāt izplatītāji un skrāpji, tāpēc ir stingri ieteicams, lai jebkura šeit norādītā e-pasta adrese būtu vienreiz lietojama un/vai adrese, kuru jūs ļoti nemīlat (citiem vārdiem sakot, iespējams, jūs nevēlaties izmantot savas galvenās personiskās vai galvenā uzņēmuma e-pasta adreses)."
 config_general_emailaddr_display_style: "Kā jūs vēlētos, lai e-pasta adrese tiktu parādīta lietotājiem?"
-config_general_empty_fields: "Kā CIDRAM vajadzētu rīkoties ar tukšiem laukiem, reģistrējot un parādot bloķēšanas notikumu informāciju? "include" = Iekļaujiet tukšos laukus. "omit" = Izlaist tukšos laukus [Noklusējuma]."
 config_general_error_log: "Fails reģistrēšanai visas atklātās kļūdas, kas nav fatālas. Norādiet faila nosaukumu, vai atstājiet tukšu, lai to atspējotu."
-config_general_error_log_stages: "Izpildes ķēdes posmu saraksts, kurā vajadzētu reģistrēt ģenerētās kļūdas."
 config_general_events: "Šeit uzskaitītie faili tiek ielādēti tūlīt pēc notikumu apstrādātāja faila. Parasti aizpilda atjauninājumu lapa, kad tiek aktivizēti komponenti, kuriem tas nepieciešams, kad nepieciešams. Vairumā gadījumu var to ignorēt."
+config_general_fields: "Kontroles mehānisms laukiem bloka notikumu laikā (kad pieprasījums ir bloķēts)."
 config_general_forbid_on_block: "Kurš HTTP statusa ziņojums būtu jāsūta CIDRAM, bloķējot pieprasījumus? (Papildinformāciju skatiet dokumentācijā)."
 config_general_force_hostname_lookup: "Force hostname lookups? True (Patiess) = Jā; False (Nepatiess) = Nē [Noklusējuma]. Hostname lookups are normally performed on an "as needed" basis, but can be forced for all requests. Doing so may be useful as a means of providing more detailed information in the logfiles, but may also have a slightly negative effect on performance."
 config_general_frontend_log: "Fails ielogošanās mēģinājumu reģistrēšanai. Norādiet faila nosaukumu, vai atstājiet tukšu, lai to atspējotu."
-config_general_hide_version: "Vai paslēpt versiju informāciju no logs un lapas izvades? True (Patiess) = Jā; False (Nepatiess) = Nē [Noklusējuma]."
 config_general_ipaddr: "Kur atrast savienojošo pieprasījumu IP adresi? (Noderīga tādiem pakalpojumiem kā Cloudflare un tamlīdzīgi). Noklusējuma = REMOTE_ADDR. BRĪDINĀJUMS: Nemainiet to, ja vien nezināt, ko darāt!"
 config_general_lang: "Norādiet CIDRAM noklusējuma valodu."
 config_general_lang_override: "Ja iespējams, lokalizēt saskaņā ar HTTP_ACCEPT_LANGUAGE? True (Patiess) = Jā [Noklusējuma]; False (Nepatiess) = Nē."
@@ -117,9 +118,9 @@ config_general_other_verification: "Cik vien iespējams, mēģiniet pārbaudīt 
 config_general_protect_frontend: "Norāda, vai aizsargi, kurus parasti nodrošina CIDRAM, ir jāpiemēro šai administratīvajai saskarnei. True (Patiess) = Jā [Noklusējuma]; False (Nepatiess) = Nē."
 config_general_search_engine_verification: "Vai mēģināt verificēt meklētājprogrammu pieprasījumus? Meklētājprogrammu verifikācija nodrošina, ka tās netiks aizliegtas, pārkāpjot pārkāpuma robežu (meklētājprogrammu aizliegšana no jūsu vietnes parasti negatīvi ietekmē jūsu meklētājprogrammu ranžēšanu, SEO, utt). Pēc verifikācijas meklētājprogrammas var tikt bloķētas kā parasti, bet tās netiks aizliegtas. Ja tas nav verificēts, pārkāpjot pārkāpuma robežu var tos aizliedz. Turklāt meklētājprogrammu verifikācija nodrošina aizsardzību pret viltotiem meklētājprogrammu pieprasījumiem un pret tās, kas tiek maskētas kā meklētājprogrammas (šādi pieprasījumi tiks bloķēti, kad būs iespējota meklētājprogrammu verifikācija). True (Patiess) = Iespējot meklētājprogrammas verifikācija [Noklusējuma]; False (Nepatiess) = Atspējot meklētājprogrammas verifikācija"
 config_general_signatures_update_event_log: "Fails reģistrēšanai, kad paraksti tiek atjaunināti, izmantojot atjauninājumu lapu. Norādiet faila nosaukumu, vai atstājiet tukšu, lai to atspējotu."
-config_general_silent_mode: "Vai CIDRAM vajadzētu klusībā novirzīt bloķētus piekļuves mēģinājumus, nevis parādīt lapu "Pieeja Noliegta"? Ja tā, norādiet vietu, uz kuru novirzīt bloķētus piekļuves mēģinājumus. Ja nē, atstājiet šo mainīgo tukšu."
+config_general_silent_mode: "Vai CIDRAM vajadzētu klusībā novirzīt bloķētus piekļuves mēģinājumus, nevis parādīt lapu "piekļuve liegta"? Ja tā, norādiet vietu, uz kuru novirzīt bloķētus piekļuves mēģinājumus. Ja nē, atstājiet šo mainīgo tukšu."
 config_general_social_media_verification: "Vai mēģināt verificēt sociālo mediju pieprasījumus? Sociālo mediju verifikāciju nodrošina aizsardzību pret viltus sociālo mediju pieprasījumiem (šādi pieprasījumi tiks bloķēti). True (Patiess) = Iespējot sociālo mediju verifikācija [Noklusējuma]; False (Nepatiess) = Atspējot sociālo mediju verifikācija."
-config_general_statistics: "Vai izsekot CIDRAM lietošanas statistiku? True (Patiess) = Jā; False (Nepatiess) = Nē [Noklusējuma]."
+config_general_stages: "Kontroles mehānisms izpildes ķēdes posmiem (vai iespējots, vai tiek reģistrētas kļūdas, utt)."
 config_general_time_format: "CIDRAM izmantotais datuma/laika apzīmējuma formāts. Pēc pieprasījuma var tikt pievienotas papildu iespējas."
 config_general_time_offset: "Laika joslas nobīde minūtēs."
 config_general_timezone: "To izmanto, lai norādītu izmantojamo laika joslu (piemēram, Africa/Cairo, America/New_York, Asia/Tokyo, Australia/Perth, Europe/Berlin, Pacific/Guam, utt). Norādiet “SYSTEM”, lai PHP varētu rīkoties ar to automātiski."
@@ -138,9 +139,6 @@ config_hcaptcha_signature_limit: &CaptchaSignatureLimit "Maksimālais atļautais
 config_hcaptcha_sitekey: *CaptchaDashboard
 config_hcaptcha_usemode: &CaptchaUseMode "Kad vajadzētu piedāvāt CAPTCHA? Piezīme: Baltā sarakstā iekļautajiem vai pārbaudītajiem un nebloķētajiem pieprasījumiem nekad nav jāaizpilda CAPTCHA."
 config_legal: "Juridisko prasību konfigurācija."
-config_legal_omit_hostname: "Izlaist resursdatori no logfailiem? True (Patiess) = Jā; False (Nepatiess) = Nē [Noklusējuma]."
-config_legal_omit_ip: "Izlaist IP adreses no logfailiem? True (Patiess) = Jā; False (Nepatiess) = Nē [Noklusējuma]. Piezīme: "pseudonymise_ip_addresses" kļūst lieks, kad "omit_ip" ir "true"."
-config_legal_omit_ua: "Izlaist lietotāju aģentus no logfailiem? True (Patiess) = Jā; False (Nepatiess) = Nē [Noklusējuma]."
 config_legal_privacy_policy: "Attiecīgās privātuma politikas adrese, kas jāparāda visu ģenerēto lapu kājenē. Norādiet URL vai atstājiet tukšu lai to atspējotu."
 config_legal_pseudonymise_ip_addresses: "Pseidonimizēt IP adresi reģistrējoties? True (Patiess) = Jā [Noklusējuma]; False (Nepatiess) = Nē."
 config_rate_limiting: "Likmes ierobežojumu konfigurācija (nav ieteicams vispārējai lietošanai)."
@@ -227,7 +225,6 @@ field_filename: "Faila nosaukums:"
 field_filetype_directory: "Direktorijs"
 field_filetype_info: "{EXT} Fails"
 field_filetype_unknown: "Nezināms"
-field_include: "Iekļaujiet tukšos laukus"
 field_infractions: "Pārkāpumi"
 field_install: "Instalējiet"
 field_latest_version: "Jaunākā Versija"
@@ -237,7 +234,6 @@ field_new_name: "Jauns nosaukums:"
 field_nonclickable_text: "Teksts, kuru nevar klikšķināms"
 field_not_tracking: "Nav izsekošanas."
 field_ok: "Labi"
-field_omit: "Izlaist tukšos laukus"
 field_options: "Opcijas"
 field_password: "Parole"
 field_permissions: "Atļaujas"
@@ -279,6 +275,41 @@ field_verify_all: "Verificēt visus"
 field_whitelisted_requests: "Baltajā sarakstā iekļautie pieprasījumi"
 field_your_version: "Jūsu Versija"
 header_login: "Lūdzu, ielogoties, lai turpinātu."
+info_some_useful_links: |
+ Dažas noderīgas saites:<br />
+     <ul class="pieul">
+       <li><span class="comCat">CIDRAM rīki, resursi, utt.</span>
+         <ul class="comSub">
+           <li>{{Links.CIDRAM.Issues}} – CIDRAM issues lapa (atbalsts, palīdzība, utt).</li>
+           <li>{{Links.CIDRAM.WordPress}} – WordPress spraudnis CIDRAM.</li>
+           <li>{{Links.CIDRAM.Extras}} – Dažādas ekstras.</li>
+         </ul>
+       </li>
+       <li><span class="comCat">Grupas, forumi, kopienas, utt.</span>
+         <ul class="comSub">
+           <li>{{Links.PHP.Earth.Facebook}} – PHP mācību resursi un diskusija.</li>
+           <li><a href="https://www.stopforumspam.com/forum/" rel="noopener noreferrer external">Forum@Stop Forum Spam</a> – Noderīgs diskusiju forums par foruma mēstuļu apturēšanu.</li>
+         </ul>
+       </li>
+       <li><span class="comCat">Citi noderīgi rīki, resursi, pakalpojumi, utt.</span>
+         <ul class="comSub">
+           <li>{{Links.SFS}} – Uztur zināmu forumu surogātpasta izplatītāju datu bāzi. Noderīga vietņu un forumu aizsardzībai pret surogātpastu izplatītājiem.</li>
+           <li><a href="https://bgp.he.net/" hreflang="en" rel="noopener noreferrer external">Hurricane Electric BGP Toolkit</a> – Saņemiet CIDR no ASN, nosakiet ASN attiecības, atklājiet ASN pamatojoties uz tīkla nosaukumiem, utt.</li>
+           <li>{{Links.BGPView}} – Saņemiet CIDR no ASN, nosakiet ASN attiecības, atklājiet ASN pamatojoties uz tīkla nosaukumiem, utt.</li>
+           <li><a href="https://radar.qrator.net/" hreflang="en" rel="noopener noreferrer external">Radar by Qrator</a> – Noderīgs rīks, lai pārbaudītu informāciju par ASN, pārbaudītu ASN savienojumu, utt.</li>
+           <li><a href="https://www.spamhaus.org/statistics/botnet-asn/" rel="noopener noreferrer external">The Spamhaus Project</a> – Parāda ziņojumus par robottīkla inficēšanās biežumu ASN.</li>
+           <li>{{Links.AbuseIPDB}} – Uztur zināmu ļaunprātīgu IP datu bāzi; Viņu API var izmantot, lai pārbaudītu un ziņotu par IP.</li>
+         </ul>
+       </li>
+       <li><span class="comCat">Informācijas un mācību resursi.</span>
+         <ul class="comSub">
+           <li>{{Links.PHP.Earth.Website}} – PHP mācību resursi un diskusija.</li>
+           <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Ievainojamības Diagrammas</a> – Saraksta dažādu programmatūras pakotņu drošas/nedrošas versijas (HHVM, PHP, phpMyAdmin, Python, utt).</li>
+           <li><a href="https://maikuolan.github.io/Compatibility-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Saderības Diagrammas</a> – Saraksta informācija par saderību par dažādām programmatūras pakotnēm (CIDRAM, phpMussel, utt).</li>
+         </ul>
+       </li>
+     </ul>
+
 label_active_config_file: "Aktīvs konfigurācijas fails:"
 label_actual: "Faktiskā"
 label_aux_actBlk: "tiks bloķēts"
@@ -372,11 +403,11 @@ label_is_not_available: "%s nav pieejams."
 label_never: "Nekad"
 label_next: "Nākamais:"
 label_os: "Izmantotā operētājsistēmu:"
+label_other: "Cits"
 label_other-ActiveIPv4: "Aktīvie IPv4 paraksta faili"
 label_other-ActiveIPv6: "Aktīvie IPv6 paraksta faili"
 label_other-ActiveModules: "Aktīvie moduļi"
 label_other-Since: "Sākuma datums"
-label_other: "Cits"
 label_paginate: "Pagināts"
 label_passed: "Atļautie pieprasījumu skaits"
 label_php: "Izmantotā PHP versija:"
@@ -406,14 +437,14 @@ label_textmode_simple: "Vienkārši"
 label_textmode_tally: "Skaita"
 label_timeout_limit: "Šis modulis veic ārējos pieprasījumus. Šeit jūs varat norādīt šo pieprasījumu taimauta ierobežojumu (sekundēs)."
 label_total: "Kopā"
+label_unignore: "Atignorēt šo"
+label_unstable: "Jaunākā nestabilā:"
+label_used_with: "Lieto kopā ar:"
 label_usemode_any: "Tikai tad, kad parakstu ierobežojumu robežās, un nav aizliegts (neatkarīgi no tā, vai tas ir bloķēts)."
 label_usemode_blkd: "Tikai tad, kad bloķēts, parakstu ierobežojumu robežās, un nav aizliegts."
 label_usemode_blkd_mrkd: "Tikai tad, kad bloķēts, īpaši marķēts lietošanai, parakstu ierobežojumu robežās, un nav aizliegts."
 label_usemode_not_blkd: "Tikai tad, ja tas nav bloķēts."
 label_usemode_not_blkd_mrkd: "Tikai tad, ja tas nav bloķēts, vai kad īpaši marķēts lietošanai, parakstu ierobežojumu robežās, un nav aizliegts."
-label_unignore: "Atignorēt šo"
-label_unstable: "Jaunākā nestabilā:"
-label_used_with: "Lieto kopā ar:"
 label_your_ip: "Jūsu IP:"
 label_your_ua: "Jūsu lietotāja aģents:"
 link_accounts: "Konti"
@@ -441,7 +472,14 @@ link_updates: "Atjauninājumi"
 logs_logfile_doesnt_exist: "Atlasītais logfails neeksistē!"
 logs_no_logfile_selected: "Nav atlasīts logfails."
 logs_no_logfiles_available: "Neviens logfails nav pieejams."
-max_login_attempts_exceeded: "Pārsniegts maksimālais ielogošanās mēģinājumu skaits; Pieeja noliegta."
+max_login_attempts_exceeded: "Pārsniegts maksimālais ielogošanās mēģinājumu skaits; Piekļuve liegta."
+msg_subject_2fa: "Divu-Faktoru Autentifikācija"
+msg_template_2fa: |
+ <center><p>Sveiks, %1$s.<br />
+ <br />
+ Jūsu divu-faktoru autentifikācijas kods, lai ielogotos CIDRAM:</p>
+ <h1>%2$s</h1>
+ <p>Šis kods zaudē spēku 10 minūtēs.</p></center>
 notice_click_here: "Noklikšķiniet šeit, lai iegūtu papildinformāciju."
 notice_new_major_version: "Paziņojums: Tagad ir pieejama %s (jūs izmantojat %s). Jūs atbilstat šīs versijas minimālajām PHP prasībām. Tomēr ir jāveic dažas manuālās darbības, lai atjauninātu."
 previewer_days: "Dienas"
@@ -511,6 +549,24 @@ response_verification_failed: "Verifikācija neizdevās! Komponents var būt boj
 response_verification_success: "Verifikācija izdevās! Netika atrasta neviena problēma."
 response_yes: "Jā"
 security_warning: "Apstrādājot jūsu pieprasījumu, radās negaidīta problēma. Lūdzu mēģiniet vēlreiz. Ja problēmas joprojām pastāv, sazinieties ar atbalsta dienestu."
+stage_aux: "Izpildīt palīgnoteikumus"
+stage_auxredirect: "Pāradresēt saskaņā ar papildnoteikumiem"
+stage_captcha: "Izvietojiet CAPTCHA (bloķēti pieprasījumi)"
+stage_modules: "Izpildīt moduļus"
+stage_nonblockedcaptcha: "Izvietojiet CAPTCHA (nebloķēti pieprasījumi)"
+stage_output: "Ģenerēt izvadi (bloķēti pieprasījumi)"
+stage_ov: "Izpildīt citu verifikāciju"
+stage_preparefields: "Sagatavojiet laukus izvadei un žurnāliem"
+stage_reporting: "Izpildīt atskaites"
+stage_rl: "Izpildīt likmes ierobežošanu"
+stage_sev: "Izpildīt meklētājprogrammas verifikāciju"
+stage_smv: "Izpildīt sociālo mediju verifikāciju"
+stage_statistics: "Atjaunināt statistiku"
+stage_terminate: "Pārtrauciet pieprasījumu (bloķēti pieprasījumi)"
+stage_tests: "Izpildīt paraksta failu testus"
+stage_tracking: "Izpildīt IP izsekošanu"
+stage_webhooks: "Izpildīt tīmekļa āķis"
+stage_writelogs: "Rakstiet žurnālos (bloķēti pieprasījumi)"
 state_async_deny: "Atļaujas nav piemērotas asinhrono pieprasījumu izpildei. Mēģiniet ielogoties vēlreiz."
 state_cache_is_empty: "Kešatmiņa ir tukša."
 state_complete_access: "Pilnīga piekļuve"
@@ -614,6 +670,7 @@ tip_aux_priority: "Prioritāte (augstākais➡(vienāds🔄ekvivalents)➡zemāk
 tip_aux_webhooks: "Kad tiek iedarbināts papildnoteikums, CIDRAM mēģinās paziņot visiem saistītajiem tīmekļa āķiem par notikumu."
 tip_cache_data: "Šeit jūs varat pārskatīt kešatmiņas saturu."
 tip_cidr_calc: "CIDR kalkulators ļauj aprēķināt IP adreses CIDR."
+tip_click_the_component: "Noklikšķiniet uz komponenta nosaukuma, lai iegūtu sīkāku informāciju."
 tip_condition_placeholder: "Norādiet vērtību vai atstājiet tukšu lai neievērotu."
 tip_config: "Konfigurācijas lapa ļauj mainīt CIDRAM konfigurāciju."
 tip_custom_query: "Šeit ievadiet novirzītāju (nav obligāti)."
@@ -631,7 +688,6 @@ tip_ip_test: "IP testa lapa ļauj jums pārbaudīt, vai IP adreses bloķē pašl
 tip_ip_test_switches: "(Ja tas nav atlasīts, tiks pārbaudīti tikai paraksta faili)."
 tip_ip_tracking: "IP izsekošanas lapa ļauj jums pārbaudīt IP adrešu izsekošanas statusu, pārbaudīt kuras no tām ir aizliegtas, un ja vēlaties, pārtraukt to aizliegšanu un izsekošanu."
 tip_logs: "Zemāk redzamajā sarakstā atlasiet logfailu, lai skatītu šī faila saturu."
-tip_click_the_component: "Noklikšķiniet uz komponenta nosaukuma, lai iegūtu sīkāku informāciju."
 tip_range: "Šajā lapā parādīta pamata statistikas informācija par IP diapazoniem, uz kuriem attiecas pašlaik aktīvie paraksta faili."
 tip_range_intersector: "Diapazona krustotāju var izmantot, lai noteiktu kopējos faktorus no diviem diapazonu komplektiem."
 tip_range_subtractor: "Diapazona atdalītāju var izmantot, lai atņemtu vienu IP/CIDR diapazonu no cita."
@@ -642,46 +698,3 @@ tip_statistics_disabled: "Piezīme: Statistikas izsekošana pašlaik ir atspējo
 tip_updates: "Atjauninājumu lapa ļauj instalēt, atinstalēt un atjaunināt dažādus CIDRAM komponentus (pamata pakete, paraksti, L10N faili, utt)."
 title_login: "Ielogošanās"
 warning_signatures_1: "Brīdinājums: Neviens paraksta fails nav aktīvs!"
-
-info_some_useful_links: |
- Dažas noderīgas saites:<br />
-     <ul class="pieul">
-       <li><span class="comCat">CIDRAM rīki, resursi, utt.</span>
-         <ul class="comSub">
-           <li>{{Links.CIDRAM.Issues}} – CIDRAM issues lapa (atbalsts, palīdzība, utt).</li>
-           <li>{{Links.CIDRAM.WordPress}} – WordPress spraudnis CIDRAM.</li>
-           <li>{{Links.CIDRAM.Extras}} – Dažādas ekstras.</li>
-         </ul>
-       </li>
-       <li><span class="comCat">Grupas, forumi, kopienas, utt.</span>
-         <ul class="comSub">
-           <li>{{Links.PHP.Earth.Facebook}} – PHP mācību resursi un diskusija.</li>
-           <li><a href="https://www.stopforumspam.com/forum/" rel="noopener noreferrer external">Forum@Stop Forum Spam</a> – Noderīgs diskusiju forums par foruma mēstuļu apturēšanu.</li>
-         </ul>
-       </li>
-       <li><span class="comCat">Citi noderīgi rīki, resursi, pakalpojumi, utt.</span>
-         <ul class="comSub">
-           <li>{{Links.SFS}} – Uztur zināmu forumu surogātpasta izplatītāju datu bāzi. Noderīga vietņu un forumu aizsardzībai pret surogātpastu izplatītājiem.</li>
-           <li><a href="https://bgp.he.net/" hreflang="en" rel="noopener noreferrer external">Hurricane Electric BGP Toolkit</a> – Saņemiet CIDR no ASN, nosakiet ASN attiecības, atklājiet ASN pamatojoties uz tīkla nosaukumiem, utt.</li>
-           <li>{{Links.BGPView}} – Saņemiet CIDR no ASN, nosakiet ASN attiecības, atklājiet ASN pamatojoties uz tīkla nosaukumiem, utt.</li>
-           <li><a href="https://radar.qrator.net/" hreflang="en" rel="noopener noreferrer external">Radar by Qrator</a> – Noderīgs rīks, lai pārbaudītu informāciju par ASN, pārbaudītu ASN savienojumu, utt.</li>
-           <li><a href="https://www.spamhaus.org/statistics/botnet-asn/" rel="noopener noreferrer external">The Spamhaus Project</a> – Parāda ziņojumus par robottīkla inficēšanās biežumu ASN.</li>
-           <li>{{Links.AbuseIPDB}} – Uztur zināmu ļaunprātīgu IP datu bāzi; Viņu API var izmantot, lai pārbaudītu un ziņotu par IP.</li>
-         </ul>
-       </li>
-       <li><span class="comCat">Informācijas un mācību resursi.</span>
-         <ul class="comSub">
-           <li>{{Links.PHP.Earth.Website}} – PHP mācību resursi un diskusija.</li>
-           <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Ievainojamības Diagrammas</a> – Saraksta dažādu programmatūras pakotņu drošas/nedrošas versijas (HHVM, PHP, phpMyAdmin, Python, utt).</li>
-           <li><a href="https://maikuolan.github.io/Compatibility-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Saderības Diagrammas</a> – Saraksta informācija par saderību par dažādām programmatūras pakotnēm (CIDRAM, phpMussel, utt).</li>
-         </ul>
-       </li>
-     </ul>
-
-msg_template_2fa: |
- <center><p>Sveiks, %1$s.<br />
- <br />
- Jūsu divu-faktoru autentifikācijas kods, lai ielogotos CIDRAM:</p>
- <h1>%2$s</h1>
- <p>Šis kods zaudē spēku 10 minūtēs.</p></center>
-msg_subject_2fa: "Divu-Faktoru Autentifikācija"

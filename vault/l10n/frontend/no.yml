@@ -7,22 +7,23 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Norwegian language data for the front-end (last modified: 2022.02.21).
+# This file: Norwegian language data for the front-end (last modified: 2022.03.01).
 ##/
 
 Extended Description Bypasses: "Standard-signatur-bypass-filene som normalt følger med hovedpakken."
 Extended Description Chart.js: "Gjør det mulig for frontendens å generere pajediagrammer.<br />{{Links.Chart.js}} er tilgjengelig via <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
+Extended Description IPv4: &ExtDesCloud "Blokkerer uønskede sky-tjenester og ikke-menneskelige endepunkter."
 Extended Description IPv4-Bogons: &ExtDesBogons "Blokkerer bogon/martian CIDRer."
 Extended Description IPv4-ISPs: &ExtDesISPs "Blokkerer farlige og spam-fylte ISPer (inkluderer flerspillnettverk, som kan inneholde både menneskelige og ikke-menneskelige endepunkter)."
 Extended Description IPv4-Nonblocking: &ExtDesNonblocking "Nyttig for profilering, men blokkerer ikke noe i seg selv."
 Extended Description IPv4-Other: &ExtDesOther "Blokkerer CIDRer for proxyer, VPN og andre uønskede tjenester."
-Extended Description IPv4: &ExtDesCloud "Blokkerer uønskede sky-tjenester og ikke-menneskelige endepunkter."
+Extended Description IPv6: *ExtDesCloud
 Extended Description IPv6-Bogons: *ExtDesBogons
 Extended Description IPv6-ISPs: *ExtDesISPs
 Extended Description IPv6-Nonblocking: *ExtDesNonblocking
 Extended Description IPv6-Other: *ExtDesOther
-Extended Description IPv6: *ExtDesCloud
 Extended Description PHPMailer: "Kreves for bruk av funksjonalitet som innebærer sending av e-post.<br />{{Links.PHPMailer.PHPMailer}} er tilgjengelig via {{Links.PHPMailer.License}}-lisensen."
+Extended Description Search engines blocker module: "Gir muligheten til å blokkere søkemotorer som kan være problematiske for noen nettsteder (f.eks., Baidu, Sogou, Yandex, osv)."
 Extended Description flags.css: "Legger flaggsupport til frontendsloggesiden."
 Extended Description module_abuseipdb.php: "Blokkerer forespørsler fra IP-er oppført på AbuseIPDB."
 Extended Description module_badhosts.php: "Blokker vertene ofte brukt av spammere, hackere og andre farlige enheter."
@@ -36,20 +37,18 @@ Extended Description module_httpver.php: "Gjør det mulig å blokkere spesifikke
 Extended Description module_projecthoneypot.php: "Blokkerer forespørsler fra IP-er oppført på Project Honeypot."
 Extended Description module_refspam.php: "Blokkering basert på referansesøppel vil vanligvis ikke gi noen meningsfull sikkerhetsgevinst, men i noen tilfeller kan det være nyttig for noen brukere, for å samle mer informasjon om forespørsler og for å kunne rapportere det.<br />Ved å installere denne modulen installeres også Symfony-polyfyllene for {{Links.Symfony.Intl/Idn}} og {{Links.Symfony.Mbstring}} (fordi denne modulen krever Idn-funksjonalitet, som ikke alle PHP-installasjoner leverer som standard), begge som er tilgjengelige via <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a> lisensen."
 Extended Description module_sfs.php: "Beskytter registrerings og innloggingssider mot IP-adresser oppført av SFS."
-Extended Description Search engines blocker module: "Gir muligheten til å blokkere søkemotorer som kan være problematiske for noen nettsteder (f.eks., Baidu, Sogou, Yandex, osv)."
 Name Bypasses: "Standard signatur bypasses."
-Name CN_cidram.inc: "Kina IPv4-blokkliste"
+Name IPv4: "IPv4 (sky og hosting tjenester)."
 Name IPv4-Bogons: "IPv4 (bogoner)."
 Name IPv4-ISPs: "IPv4 (spam-fylte ISPer)."
 Name IPv4-Nonblocking: "IPv4 ikke-blokkerende signaturer."
 Name IPv4-Other: "IPv4 (proxyer, VPN, etc)."
-Name IPv4: "IPv4 (sky og hosting tjenester)."
+Name IPv6: "IPv6 (sky og hosting tjenester)."
 Name IPv6-Bogons: "IPv6 (bogoner)."
 Name IPv6-ISPs: "IPv6 (spam-fylte ISPer)."
 Name IPv6-Nonblocking: "IPv6 ikke-blokkerende signaturer."
 Name IPv6-Other: "IPv6 (proxyer, VPN, etc)."
-Name IPv6: "IPv6 (sky og hosting tjenester)."
-Name KR_cidram.inc: "Sør-Korea IPv4-blokkliste"
+Name Search engines blocker module: "Søkemotorer blokkeringsmodul"
 Name compat_bunnycdn.php: "BunnyCDN kompatibilitetsmodul"
 Name module_abuseipdb.php: "AbuseIPDB modul"
 Name module_badhosts.php: "Dårlig vertene blokkeringsmodul"
@@ -63,7 +62,11 @@ Name module_httpver.php: "HTTP-versjonskontrollmodul"
 Name module_projecthoneypot.php: "Project Honeypot modul"
 Name module_refspam.php: "Henvisende spam modul"
 Name module_sfs.php: "Stop Forum Spam modul"
-Name Search engines blocker module: "Søkemotorer blokkeringsmodul"
+checkbox_label_fields_logs: "Skal dette feltet vises i loggoppføringer?"
+checkbox_label_fields_omit: "Utelate dette feltet når det er tomt?"
+checkbox_label_fields_page_output: "Skal dette feltet vises på "tilgang nektet" siden?"
+checkbox_label_stage_enable: "Aktivere dette stadiet?"
+checkbox_label_stage_log_errors: "Logge noen feil generert i løpet av dette stadiet?"
 config_PHPMailer: "Konfigurasjon for PHPMailer (brukes til tofaktorautentisering)."
 config_PHPMailer_add_reply_to_address: "Svaradressen for å sitere når du sender e-post via SMTP."
 config_PHPMailer_add_reply_to_name: "Svarnavnet til å sitere når du sender e-post via SMTP."
@@ -92,14 +95,12 @@ config_general_disable_frontend: "Deaktiver tilgang til frontenden? Frontend til
 config_general_disabled_channels: "Dette kan brukes til å forhindre CIDRAM i å bruke bestemte kanaler når du sender forespørsler (f.eks, når du oppdaterer, når du henter komponentmetadata, osv)."
 config_general_emailaddr: "Hvis du vil, du kan levere en e-postadresse her for å bli gitt til brukerne når de er blokkert, for dem å bruke som et kontaktpunkt for støtte og/eller assistanse i tilfelle de blir blokkert feilaktig eller i feil. ADVARSEL: Uansett hvilken e-postadresse du leverer her, det vil helt sikkert bli ervervet av spamboter og skraper i løpet av bruken her, og så, det anbefales sterkt at hvis du velger å levere en e-postadresse her, at du sørger for at e-postadressen du oppgir her er en engangsadresse og/eller en adresse som du ikke bryr deg om å bli spammet (dvs., du vil sannsynligvis ikke bruke dine primære personlige eller primære virksomhets e-postadresser)."
 config_general_emailaddr_display_style: "Hvordan foretrekker du e-postadressen som skal presenteres for brukerne?"
-config_general_empty_fields: "Hvordan skal CIDRAM håndtere tomme felter når du logger og viser blokkhendelseinformasjon? "include" = Inkluder tomme felt. "omit" = Utelater tomme felt [standardverdi]."
 config_general_error_log: "En fil for logging av eventuelle ikke-fatale feil som er oppdaget. Angi et filnavn, eller la det være tomt for å deaktivere."
-config_general_error_log_stages: "En liste over stadiene i utførelseskjeden som skal ha loggført eventuelle genererte feil."
 config_general_events: "Filene som er oppført her, lastes inn rett etter hendelsesbehandlerfilen. Vanligvis befolket av oppdateringssiden når du aktiverer komponenter som trenger det når det er nødvendig. I de fleste tilfeller kan ignorere det."
+config_general_fields: "Kontroller for feltene under blokkeringshendelser (når en forespørsel er blokkert)."
 config_general_forbid_on_block: "Hvilken HTTP-statusmelding skal CIDRAM sende når blokkerer forespørsler? (Se dokumentasjonen for mer informasjon)."
 config_general_force_hostname_lookup: "Håndheve vertsnavn-oppslag? True = Ja; False = Nei [Standardverdi]. Vertsnavn-oppslag utføres normalt på en "etter behov" basis, men kan håndheves for alle forespørsler. Å gjøre det kan være nyttig som et middel til å gi mer detaljert informasjon i loggfilene, men kan også ha en litt negativ effekt på ytelsen."
 config_general_frontend_log: "Fil for å logge innloggingsforsøk på frontenden. Angi et filnavn, eller la det være tomt for å deaktivere."
-config_general_hide_version: "Skjul versjoninformasjon fra logger og sideutdata? True = Ja; False = Nei [Standardverdi]."
 config_general_ipaddr: "Hvor finner jeg IP-adressen til å koble til forespørsler? (Nyttig for tjenester som Cloudflare og så videre). Standardverdi = REMOTE_ADDR. ADVARSEL: Ikke endre dette med mindre du vet hva du gjør!"
 config_general_lang: "Angi standardspråket for CIDRAM."
 config_general_lang_override: "Lokaliser i henhold til HTTP_ACCEPT_LANGUAGE når det er mulig? True = Ja [Standardverdi]; False = Nei."
@@ -119,7 +120,7 @@ config_general_search_engine_verification: "Forsøk å bekrefte forespørsler fr
 config_general_signatures_update_event_log: "En fil for logging når signaturer oppdateres via frontend. Angi et filnavn, eller la det være tomt for å deaktivere."
 config_general_silent_mode: "Bør CIDRAM stille omdirigere blokkerte tilgangsforsøk i stedet for å vise "Tilgang Nektet" siden? Hvis ja, spesifiser stedet for å omdirigere blokkerte tilgangsforsøk til. Hvis nei, la denne variablen være tom."
 config_general_social_media_verification: "Forsøk å verifisere sosial media forespørsler? Sosial media verifisering gir beskyttelse mot falske sosiale medier forespørsler (slike forespørsler vil bli blokkert). True = Aktiver sosial media verifisering [Standardverdi]; False = Deaktiver sosial media verifisering."
-config_general_statistics: "Spor CIDRAM bruksstatistikk? True = Ja; False = Nei [Standardverdi]."
+config_general_stages: "Kontroller for stadiene i utførelseskjeden (om aktivert, om feil logges, osv)."
 config_general_time_format: "Dato/tid notasjonsformat som brukes av CIDRAM. Ytterligere alternativer kan legges på forespørsel."
 config_general_time_offset: "Tidssone forskjøvet i minutter."
 config_general_timezone: "Dette brukes til å spesifisere tidssonen som skal brukes (f.eks, Africa/Cairo, America/New_York, Asia/Tokyo, Australia/Perth, Europe/Berlin, Pacific/Guam, etc). Spesifiser "SYSTEM" for å la PHP håndtere dette for deg automatisk."
@@ -138,9 +139,6 @@ config_hcaptcha_signature_limit: &CaptchaSignatureLimit "Maksimalt antall signat
 config_hcaptcha_sitekey: *CaptchaDashboard
 config_hcaptcha_usemode: &CaptchaUseMode "Når skal CAPTCHA tilbys? Merk: Hvitlistet eller verifiserte og ikke-blokkerte forespørsler trenger aldri å fullføre en CAPTCHA."
 config_legal: "Konfigurasjon for juridiske krav."
-config_legal_omit_hostname: "Utelat vertsnavn fra logger? True = Ja; False = Nei [Standardverdi]."
-config_legal_omit_ip: "Utelat IP-adresser fra logger? True = Ja; False = Nei [Standardverdi]. Merk: "pseudonymise_ip_addresses" blir overflødig når "omit_ip" er "true"."
-config_legal_omit_ua: "Utelat brukeragenter fra logger? True = Ja; False = Nei [Standardverdi]."
 config_legal_privacy_policy: "Adressen til en relevant personvernpolicy som skal vises i bunnteksten til genererte sider. Angi en nettadresse, eller la det være tomt for å deaktivere."
 config_legal_pseudonymise_ip_addresses: "Pseudonymisere IP-adresser når du logger? True = Ja [Standardverdi]; False = Nei."
 config_rate_limiting: "Konfigurasjon for hastighetsbegrensning (anbefales ikke til generell bruk)."
@@ -227,7 +225,6 @@ field_filename: "Filnavn:"
 field_filetype_directory: "Filkatalog"
 field_filetype_info: "{EXT}-Fil"
 field_filetype_unknown: "Ukjent"
-field_include: "Inkluder tomme felt"
 field_infractions: "Infraksjoner"
 field_install: "Installer"
 field_latest_version: "Siste Versjon"
@@ -237,7 +234,6 @@ field_new_name: "Nytt navn:"
 field_nonclickable_text: "Ikke-klikkbar tekst"
 field_not_tracking: "Sporer ikke."
 field_ok: "OK"
-field_omit: "Utelater tomme felt"
 field_options: "Alternativer"
 field_password: "Passord"
 field_permissions: "Tillatelser"
@@ -276,6 +272,41 @@ field_verify_all: "Verifisere alt"
 field_whitelisted_requests: "Hvitlistede forespørsler"
 field_your_version: "Din Versjon"
 header_login: "Vennligst logg inn for å fortsette."
+info_some_useful_links: |
+ Noen nyttige lenker:<br />
+     <ul class="pieul">
+       <li><span class="comCat">Verktøy, ressurser, etc for CIDRAM.</span>
+         <ul class="comSub">
+           <li>{{Links.CIDRAM.Issues}} – Issues side for CIDRAM (støtte, assistanse, osv).</li>
+           <li>{{Links.CIDRAM.WordPress}} – WordPress plugin for CIDRAM.</li>
+           <li>{{Links.CIDRAM.Extras}} – Ulike ekstramateriale.</li>
+         </ul>
+       </li>
+       <li><span class="comCat">Grupper, fora, fellesskap, etc.</span>
+         <ul class="comSub">
+           <li>{{Links.PHP.Earth.Facebook}} – PHP læringsressurser og diskusjon.</li>
+           <li><a href="https://www.stopforumspam.com/forum/" rel="noopener noreferrer external">Forum@Stop Forum Spam</a> – Nyttig diskusjonsforum om å stoppe forum spam.</li>
+         </ul>
+       </li>
+       <li><span class="comCat">Andre nyttige verktøy, ressurser, tjenester, etc.</span>
+         <ul class="comSub">
+           <li>{{Links.SFS}} – Opprettholder en database med kjente forumspammere. Nyttig for å beskytte nettsteder og fora mot spammere.</li>
+           <li><a href="https://bgp.he.net/" hreflang="en" rel="noopener noreferrer external">Hurricane Electric BGP Toolkit</a> – Få CIDRer fra ASNer, fastslå ASN-relasjoner, oppdag ASN basert på nettverksnavn, osv.</li>
+           <li>{{Links.BGPView}} – Få CIDRer fra ASNer, fastslå ASN-relasjoner, oppdag ASN basert på nettverksnavn, osv.</li>
+           <li><a href="https://radar.qrator.net/" hreflang="en" rel="noopener noreferrer external">Radar by Qrator</a> – Nyttig verktøy for å sjekke ASN-tilkobling og annen informasjon relatert til ASNer.</li>
+           <li><a href="https://www.spamhaus.org/statistics/botnet-asn/" rel="noopener noreferrer external">The Spamhaus Project</a> – Viser rapporter om botnets infeksjonsrate for ASNer.</li>
+           <li>{{Links.AbuseIPDB}} – Opprettholder en database med kjente farlige IPer; Gir en API for å sjekke og rapportere IPer.</li>
+         </ul>
+       </li>
+       <li><span class="comCat">Informasjons og læringsressurser.</span>
+         <ul class="comSub">
+           <li>{{Links.PHP.Earth.Website}} – PHP læringsressurser og diskusjon.</li>
+           <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Sårbarhetskart</a> – Viser sikker/usikker versjon av ulike pakker (HHVM, PHP, phpMyAdmin, Python, osv).</li>
+           <li><a href="https://maikuolan.github.io/Compatibility-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Kompatibilitetskart</a> – Viser kompatibilitetsinformasjon for ulike pakker (CIDRAM, phpMussel, osv).</li>
+         </ul>
+       </li>
+     </ul>
+
 label_active_config_file: "Aktiv konfigurasjonsfil:"
 label_actual: "Faktiske"
 label_aux_actBlk: "blokkere"
@@ -367,11 +398,11 @@ label_is_not_available: "%s er ikke tilgjengelig."
 label_never: "Aldri"
 label_next: "Neste:"
 label_os: "Operativsystem brukt:"
+label_other: "Annen"
 label_other-ActiveIPv4: "Aktive IPv4 signaturfiler"
 label_other-ActiveIPv6: "Aktive IPv6 signaturfiler"
 label_other-ActiveModules: "Aktive moduler"
 label_other-Since: "Startdato"
-label_other: "Annen"
 label_paginate: "Paginere"
 label_passed: "Forespørsler bestått"
 label_php: "PHP versjon brukt:"
@@ -399,14 +430,14 @@ label_textmode_simple: "Enkel"
 label_textmode_tally: "Tally"
 label_timeout_limit: "Denne modulen utfører eksterne forespørsler. Her kan du spesifisere tidsgrensen for disse forespørslene (på sekunder)."
 label_total: "Total"
+label_unignore: "Ikke ignorere dette"
+label_unstable: "Siste ustabil:"
+label_used_with: "Brukes med:"
 label_usemode_any: "Bare når det er innenfor signaturgrensen, og ikke utestengt (uansett om det er blokkert)."
 label_usemode_blkd: "Bare når det er blokkert, innenfor signaturgrensen, og ikke utestengt."
 label_usemode_blkd_mrkd: "Bare når det er blokkert, spesielt merket for bruk, innenfor signaturgrensen, og ikke utestengt."
 label_usemode_not_blkd: "Bare når det ikke blokkert."
 label_usemode_not_blkd_mrkd: "Bare når det ikke blokkert, eller når det spesielt merket for bruk, innenfor signaturgrensen, og ikke utestengt."
-label_unignore: "Ikke ignorere dette"
-label_unstable: "Siste ustabil:"
-label_used_with: "Brukes med:"
 label_your_ip: "Din IP:"
 label_your_ua: "Din UA:"
 link_accounts: "Kontoer"
@@ -435,6 +466,13 @@ logs_logfile_doesnt_exist: "Utvalgte loggfilen finnes ikke!"
 logs_no_logfile_selected: "Ingen loggfil valgt."
 logs_no_logfiles_available: "Ingen loggfiler tilgjengelig."
 max_login_attempts_exceeded: "Maks antall påloggingsforsøk er overskredet; Tilgang nektet."
+msg_subject_2fa: "2FA (2-Faktorautentisering)"
+msg_template_2fa: |
+ <center><p>Hallo, %1$s.<br />
+ <br />
+ Din 2FA-kode for å logge inn i CIDRAM-fronten:</p>
+ <h1>%2$s</h1>
+ <p>Denne koden utløper om 10 minutter.</p></center>
 notice_click_here: "Klikk her for mer informasjon."
 notice_new_major_version: "Notis: %s er nå tilgjengelig (du bruker %s). Du oppfyller denne versjonens minimum PHP-krav. Noen manuelle trinn kreves imidlertid for å oppdatere."
 previewer_days: "Dager"
@@ -504,6 +542,24 @@ response_verification_failed: "Verifisering mislyktes! Komponent kan bli skadet.
 response_verification_success: "Verifisering suksess! Ingen problemer funnet."
 response_yes: "Ja"
 security_warning: "Et uventet problem oppstod under behandlingen av forespørselen din. Vær så snill, prøv på nytt. Hvis problemer oppstår, kontakt brukerstøtte."
+stage_aux: "Utfør tilleggsregler"
+stage_auxredirect: "Omdirigere i henhold til tilleggsregler"
+stage_captcha: "Vis CAPTCHA (blokkerte forespørsler)"
+stage_modules: "Utfør modulene"
+stage_nonblockedcaptcha: "Vis CAPTCHA (ikke-blokkerte forespørsler)"
+stage_output: "Generer utgang (blokkerte forespørsler)"
+stage_ov: "Utfør annen verifisering"
+stage_preparefields: "Klargjør felt for utgang og logger"
+stage_reporting: "Utfør rapportering"
+stage_rl: "Utfør hastighetsbegrensning"
+stage_sev: "Utfør søkemotorverifisering"
+stage_smv: "Utfør sosiale medier verifisering"
+stage_statistics: "Oppdater statistikk"
+stage_terminate: "Avslutt forespørselen (blokkerte forespørsler)"
+stage_tests: "Utfør signaturfiltestene"
+stage_tracking: "Utfør IP-sporing"
+stage_webhooks: "Utfør webhooks"
+stage_writelogs: "Skriv til logger (blokkerte forespørsler)"
 state_async_deny: "Tillatelser ikke tilstrekkelig til å utføre asynkrone forespørsler. Prøv å logge inn igjen."
 state_cache_is_empty: "Cachen er tom."
 state_complete_access: "Komplett tilgang"
@@ -589,6 +645,7 @@ tip_aux_priority: "Prioritet (høyeste➡(lik🔄tilsvarende)➡lavest):"
 tip_aux_webhooks: "Når en regel utløses, CIDRAM vil prøve å varsle eventuelle tilkoblede nettkroker om hendelsen."
 tip_cache_data: "Hallo, {username}.<br />Her kan du se innholdet i cachen."
 tip_cidr_calc: "Hallo, {username}.<br />CIDR-kalkulatoren lar deg beregne hvilke CIDRer en IP-adresse er en faktor av."
+tip_click_the_component: "Klikk på komponentnavnet for flere detaljer."
 tip_condition_placeholder: "Angi en verdi, eller legg blank for å se bort fra."
 tip_config: "Hallo, {username}.<br />Konfigurasjonssiden lar deg endre konfigurasjonen for CIDRAM fra frontenden."
 tip_custom_query: "Skriv inn spørringen her (valgfritt)."
@@ -606,7 +663,6 @@ tip_ip_test: "Hallo, {username}.<br />IP-testsiden lar deg teste om IP-adresser 
 tip_ip_test_switches: "(Når ikke valgt, blir bare signaturfiler testet mot)."
 tip_ip_tracking: "Hallo, {username}.<br />IP-sporing-siden lar deg sjekke sporingsstatus for IP-adresser, for å sjekke hvilken av dem som er blitt utestengt, og å oppheve utestengt status eller slutte å spore hvis du vil gjøre det."
 tip_logs: "Hallo, {username}.<br />Velg en loggfil fra listen nedenfor for å se innholdet i den loggfilen."
-tip_click_the_component: "Klikk på komponentnavnet for flere detaljer."
 tip_range: "Hallo, {username}.<br />Denne siden viser noen grunnleggende statistiske opplysninger om signaturene som dekkes av de aktive signaturfilene."
 tip_range_intersector: "Hallo, {username}.<br />Kryssverktøy kan brukes til å bestemme de vanlige faktorene fra to sett med områder."
 tip_range_subtractor: "Hallo, {username}.<br />Subtraktoren kan brukes til å trekke fra et område med IPer/CIDRer fra et annet."
@@ -617,46 +673,3 @@ tip_statistics_disabled: "Merk: Statistikksporing er for øyeblikket deaktivert,
 tip_updates: "Hallo, {username}.<br />Oppdateringssiden lar deg installere, avinstallere og oppdatere de forskjellige komponentene i CIDRAM (kjernepakken, signaturer, L10N filer, osv)."
 title_login: "Innloggingssiden"
 warning_signatures_1: "Advarsel: Ingen signaturfiler er aktive!"
-
-info_some_useful_links: |
- Noen nyttige lenker:<br />
-     <ul class="pieul">
-       <li><span class="comCat">Verktøy, ressurser, etc for CIDRAM.</span>
-         <ul class="comSub">
-           <li>{{Links.CIDRAM.Issues}} – Issues side for CIDRAM (støtte, assistanse, osv).</li>
-           <li>{{Links.CIDRAM.WordPress}} – WordPress plugin for CIDRAM.</li>
-           <li>{{Links.CIDRAM.Extras}} – Ulike ekstramateriale.</li>
-         </ul>
-       </li>
-       <li><span class="comCat">Grupper, fora, fellesskap, etc.</span>
-         <ul class="comSub">
-           <li>{{Links.PHP.Earth.Facebook}} – PHP læringsressurser og diskusjon.</li>
-           <li><a href="https://www.stopforumspam.com/forum/" rel="noopener noreferrer external">Forum@Stop Forum Spam</a> – Nyttig diskusjonsforum om å stoppe forum spam.</li>
-         </ul>
-       </li>
-       <li><span class="comCat">Andre nyttige verktøy, ressurser, tjenester, etc.</span>
-         <ul class="comSub">
-           <li>{{Links.SFS}} – Opprettholder en database med kjente forumspammere. Nyttig for å beskytte nettsteder og fora mot spammere.</li>
-           <li><a href="https://bgp.he.net/" hreflang="en" rel="noopener noreferrer external">Hurricane Electric BGP Toolkit</a> – Få CIDRer fra ASNer, fastslå ASN-relasjoner, oppdag ASN basert på nettverksnavn, osv.</li>
-           <li>{{Links.BGPView}} – Få CIDRer fra ASNer, fastslå ASN-relasjoner, oppdag ASN basert på nettverksnavn, osv.</li>
-           <li><a href="https://radar.qrator.net/" hreflang="en" rel="noopener noreferrer external">Radar by Qrator</a> – Nyttig verktøy for å sjekke ASN-tilkobling og annen informasjon relatert til ASNer.</li>
-           <li><a href="https://www.spamhaus.org/statistics/botnet-asn/" rel="noopener noreferrer external">The Spamhaus Project</a> – Viser rapporter om botnets infeksjonsrate for ASNer.</li>
-           <li>{{Links.AbuseIPDB}} – Opprettholder en database med kjente farlige IPer; Gir en API for å sjekke og rapportere IPer.</li>
-         </ul>
-       </li>
-       <li><span class="comCat">Informasjons og læringsressurser.</span>
-         <ul class="comSub">
-           <li>{{Links.PHP.Earth.Website}} – PHP læringsressurser og diskusjon.</li>
-           <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Sårbarhetskart</a> – Viser sikker/usikker versjon av ulike pakker (HHVM, PHP, phpMyAdmin, Python, osv).</li>
-           <li><a href="https://maikuolan.github.io/Compatibility-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Kompatibilitetskart</a> – Viser kompatibilitetsinformasjon for ulike pakker (CIDRAM, phpMussel, osv).</li>
-         </ul>
-       </li>
-     </ul>
-
-msg_template_2fa: |
- <center><p>Hallo, %1$s.<br />
- <br />
- Din 2FA-kode for å logge inn i CIDRAM-fronten:</p>
- <h1>%2$s</h1>
- <p>Denne koden utløper om 10 minutter.</p></center>
-msg_subject_2fa: "2FA (2-Faktorautentisering)"

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2022.02.21).
+ * This file: Functions file (last modified: 2022.02.26).
  */
 
 /** Autoloader for CIDRAM classes. */
@@ -2702,7 +2702,7 @@ $CIDRAM['LoadL10N'] = function (string $Path = '') use (&$CIDRAM): void {
             }
         } elseif ($Primary) {
             $Arr = [];
-            if (!$CIDRAM['Client-L10N-Accepted']) {
+            if (!isset($CIDRAM['Client-L10N-Accepted'])) {
                 $CIDRAM['Client-L10N-Accepted'] = $Accepted;
             }
             $CIDRAM['YAML']->process($Primary, $Arr);

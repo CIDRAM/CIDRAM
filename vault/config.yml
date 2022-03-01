@@ -3,7 +3,91 @@ general:
  logfile_apache: ""
  logfile_serialized: ""
  error_log: ""
- error_log_stages: ""
+ stages: |
+  Tests:Enable
+  Tests:LogErrors
+  Modules:Enable
+  Modules:LogErrors
+  SearchEngineVerification:Enable
+  SearchEngineVerification:LogErrors
+  SocialMediaVerification:Enable
+  SocialMediaVerification:LogErrors
+  OtherVerification:Enable
+  OtherVerification:LogErrors
+  Aux:Enable
+  Aux:LogErrors
+  Reporting:Enable
+  Reporting:LogErrors
+  Tracking:Enable
+  Tracking:LogErrors
+  RL:Enable
+  RL:LogErrors
+  CAPTCHA:Enable
+  CAPTCHA:LogErrors
+  Statistics:Enable
+  Statistics:LogErrors
+  Webhooks:Enable
+  Webhooks:LogErrors
+  PrepareFields:Enable
+  PrepareFields:LogErrors
+  Output:Enable
+  Output:LogErrors
+  WriteLogs:Enable
+  WriteLogs:LogErrors
+  Terminate:Enable
+  Terminate:LogErrors
+  AuxRedirect:Enable
+  AuxRedirect:LogErrors
+  NonBlockedCAPTCHA:Enable
+  NonBlockedCAPTCHA:LogErrors
+ fields: |
+  ID:ShowInLogs
+  ID:ShowInPageOutput
+  ScriptIdent:ShowInLogs
+  ScriptIdent:ShowInPageOutput
+  DateTime:ShowInLogs
+  DateTime:ShowInPageOutput
+  IPAddr:ShowInLogs
+  IPAddr:ShowInPageOutput
+  IPAddrResolved:ShowInLogs
+  IPAddrResolved:ShowInPageOutput
+  IPAddrResolved:OmitIfEmpty
+  Query:ShowInLogs
+  Query:ShowInPageOutput
+  Query:OmitIfEmpty
+  Referrer:ShowInLogs
+  Referrer:ShowInPageOutput
+  Referrer:OmitIfEmpty
+  UA:ShowInLogs
+  UA:ShowInPageOutput
+  UA:OmitIfEmpty
+  UALC:OmitIfEmpty
+  SignatureCount:ShowInLogs
+  SignatureCount:ShowInPageOutput
+  Signatures:ShowInLogs
+  Signatures:ShowInPageOutput
+  WhyReason:ShowInLogs
+  WhyReason:ShowInPageOutput
+  ReasonMessage:ShowInPageOutput
+  ReasonMessage:OmitIfEmpty
+  rURI:ShowInLogs
+  rURI:ShowInPageOutput
+  rURI:OmitIfEmpty
+  Infractions:ShowInLogs
+  Infractions:OmitIfEmpty
+  ASNLookup:ShowInLogs
+  ASNLookup:OmitIfEmpty
+  CCLookup:ShowInLogs
+  CCLookup:OmitIfEmpty
+  Verified:ShowInLogs
+  Verified:OmitIfEmpty
+  Request_Method:ShowInLogs
+  Request_Method:OmitIfEmpty
+  Hostname:ShowInLogs
+  Hostname:ShowInPageOutput
+  Hostname:OmitIfEmpty
+  CAPTCHA:ShowInLogs
+  CAPTCHA:OmitIfEmpty
  truncate: "0KB"
  log_rotation_limit: 0
  log_rotation_action: "Delete"
@@ -18,7 +102,7 @@ general:
  numbers: "Latin-1"
  emailaddr: ""
  emailaddr_display_style: "default"
- disable_frontend: false
+ disable_frontend: true
  max_login_attempts: 5
  frontend_log: ""
  signatures_update_event_log: ""
@@ -31,11 +115,8 @@ general:
  protect_frontend: true
  maintenance_mode: false
  default_algo: "PASSWORD_DEFAULT"
- statistics: false
  force_hostname_lookup: false
  allow_gethostbyaddr_lookup: true
- hide_version: false
- empty_fields: "omit"
  log_sanitisation: false
  disabled_channels: ""
  default_timeout: 12
@@ -85,9 +166,6 @@ hcaptcha:
  nonblocked_status_code: 200
 legal:
  pseudonymise_ip_addresses: true
- omit_ip: false
- omit_hostname: false
- omit_ua: false
  privacy_policy: ""
 template_data:
  theme: "default"

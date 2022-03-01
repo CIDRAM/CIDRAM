@@ -8,13 +8,8 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Configuration handler (last modified: 2022.02.21).
+ * This file: Configuration handler (last modified: 2022.02.23).
  */
-
-/** Prevents execution from outside of CIDRAM. */
-if (!defined('CIDRAM')) {
-    die('[CIDRAM] This should not be accessed directly.');
-}
 
 /** CIDRAM version number (SemVer). */
 $CIDRAM['ScriptVersion'] = '3.0.0';
@@ -51,27 +46,15 @@ if (empty($CIDRAM['Config Defaults'])) {
     die('[CIDRAM] Configuration defaults file is corrupt! Can\'t continue until this is resolved.');
 }
 
-/** Checks whether the CIDRAM configuration file is readable. */
-if (!isset($GLOBALS['CIDRAM_Config']) && !is_readable($CIDRAM['Vault'] . 'config.yml')) {
-    header('Content-Type: text/plain');
-    die('[CIDRAM] Can\'t read the configuration file! Can\'t continue until this is resolved.');
-}
-
 if (isset($GLOBALS['CIDRAM_Config'])) {
     /** Provides a means of running tests with configuration values specific to those tests. */
     $CIDRAM['Config'] = $GLOBALS['CIDRAM_Config'];
-} else {
+} elseif (is_readable($CIDRAM['Vault'] . 'config.yml')) {
     /** Configuration to be populated here. */
     $CIDRAM['Config'] = [];
 
     /** Attempts to parse the standard CIDRAM configuration file. */
     $CIDRAM['YAML']->process($CIDRAM['ReadFile']($CIDRAM['Vault'] . 'config.yml'), $CIDRAM['Config']);
-}
-
-/** Kills the script if it isn't able to load any configuration. */
-if (empty($CIDRAM['Config'])) {
-    header('Content-Type: text/plain');
-    die('[CIDRAM] Configuration file is corrupt! Can\'t continue until this is resolved.');
 }
 
 /** Checks for the existence of the HTTP_HOST "configuration overrides file". */
@@ -94,12 +77,6 @@ if (
     }
 }
 
-/** Kills the script if parsing the configuration overrides file fails. */
-if (isset($CIDRAM['Overrides']) && $CIDRAM['Overrides'] === false) {
-    header('Content-Type: text/plain');
-    die('[CIDRAM] Configuration overrides file is corrupt! Can\'t continue until this is resolved.');
-}
-
 /** Check for supplementary configuration. */
 foreach ($CIDRAM['Supplementary'](
     ($CIDRAM['Config']['general']['config_imports'] ?? '') . ',' .
@@ -107,7 +84,7 @@ foreach ($CIDRAM['Supplementary'](
     ($CIDRAM['Config']['signatures']['ipv6'] ?? '') . ',' .
     ($CIDRAM['Config']['signatures']['modules'] ?? '')
 ) as $CIDRAM['Supplement']) {
-    $CIDRAM['YAML']->process($CIDRAM['ReadFile']($CIDRAM['Vault'] . $CIDRAM['Supplement']), $CIDRAM['Config']);
+    $CIDRAM['YAML']->process($CIDRAM['ReadFile']($CIDRAM['Vault'] . $CIDRAM['Supplement']), $CIDRAM);
 }
 
 /** Cleanup. */

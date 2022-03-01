@@ -7,22 +7,23 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Vietnamese language data for the front-end (last modified: 2022.02.21).
+# This file: Vietnamese language data for the front-end (last modified: 2022.03.01).
 ##/
 
 Extended Description Bypasses: "Các tập tin đường tránh chữ ký mặc định thường bao gồm với gói thầu chính."
 Extended Description Chart.js: "Cho phép front-end tạo biểu đồ hình tròn.<br />{{Links.Chart.js}} có sẵn qua <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
+Extended Description IPv4: &ExtDesCloud "Chặn dịch vụ điện toán đám mây không mong muốn và thiết bị đầu cuối không phải con người."
 Extended Description IPv4-Bogons: &ExtDesBogons "Chặn các CIDR bogon/martian."
 Extended Description IPv4-ISPs: &ExtDesISPs "Chặn ISP nguy hiểm và gửi thư rác (bao gồm các mạng nhiều chơi, có thể chứa cả điểm cuối của con người và không con người)."
 Extended Description IPv4-Nonblocking: &ExtDesNonblocking "Hữu ích cho việc lập hồ sơ, nhưng không chặn bất cứ thứ gì theo đúng nghĩa của nó."
 Extended Description IPv4-Other: &ExtDesOther "Chặn các CIDR cho proxy, VPN, và các dịch vụ khác mà không mong muốn."
-Extended Description IPv4: &ExtDesCloud "Chặn dịch vụ điện toán đám mây không mong muốn và thiết bị đầu cuối không phải con người."
+Extended Description IPv6: *ExtDesCloud
 Extended Description IPv6-Bogons: *ExtDesBogons
 Extended Description IPv6-ISPs: *ExtDesISPs
 Extended Description IPv6-Nonblocking: *ExtDesNonblocking
 Extended Description IPv6-Other: *ExtDesOther
-Extended Description IPv6: *ExtDesCloud
 Extended Description PHPMailer: "Cần thiết để sử dụng bất kỳ chức năng nào liên quan đến việc gửi email.<br />{{Links.PHPMailer.PHPMailer}} có sẵn qua giấy phép {{Links.PHPMailer.License}}."
+Extended Description Search engines blocker module: "Cung cấp khả năng chặn các máy tìm kiếm có thể có vấn đề đối với một số trang web (ví dụ, Baidu, Sogou, Yandex, vv)."
 Extended Description flags.css: "Thêm hỗ trợ cờ vào trang nhật ký front-end."
 Extended Description module_abuseipdb.php: "Chặn các yêu cầu từ IP được liệt kê tại AbuseIPDB."
 Extended Description module_badhosts.php: "Chặn các máy chủ web mà thường được sử dụng bởi các chương trình thư rác, hacker và thực thể bất chính khác."
@@ -36,20 +37,18 @@ Extended Description module_httpver.php: "Bạn có thể chặn các giao thứ
 Extended Description module_projecthoneypot.php: "Chặn các yêu cầu từ IP được liệt kê tại Project Honeypot."
 Extended Description module_refspam.php: "Chặn dựa trên spam giới thiệu thường không cung cấp bất kỳ lợi ích bảo mật có ý nghĩa nào, nhưng trong một số trường hợp, có thể hữu ích cho một số người dùng, để thu thập thêm thông tin về các yêu cầu và để có thể báo cáo nó.<br />Bằng cách cài đặt mô-đun này, các polyfill Symfony cho {{Links.Symfony.Intl/Idn}} và {{Links.Symfony.Mbstring}} cũng sẽ được cài đặt (bởi vì mô-đun này yêu cầu chức năng "Idn", và không phải tất cả các cài đặt PHP cung cấp nó theo mặc định). Cả hai đều có sẵn thông qua giấy phép <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a>."
 Extended Description module_sfs.php: "Bảo vệ các trang đăng ký và đăng nhập đối với các địa chỉ IP do SFS liệt kê."
-Extended Description Search engines blocker module: "Cung cấp khả năng chặn các máy tìm kiếm có thể có vấn đề đối với một số trang web (ví dụ, Baidu, Sogou, Yandex, vv)."
 Name Bypasses: "Các đường tránh chữ ký mặc định."
-Name CN_cidram.inc: "Danh sách chặn IPv4 của Trung Quốc"
+Name IPv4: "IPv4 (dịch vụ đám mây và lưu trữ)."
 Name IPv4-Bogons: "IPv4 (bogon)."
 Name IPv4-ISPs: "IPv4 (ISP chứa người gửi thư rác)."
 Name IPv4-Nonblocking: "Chữ ký không chặn IPv4."
 Name IPv4-Other: "IPv4 (proxy, VPN, vv)."
-Name IPv4: "IPv4 (dịch vụ đám mây và lưu trữ)."
+Name IPv6: "IPv6 (dịch vụ đám mây và lưu trữ)."
 Name IPv6-Bogons: "IPv6 (bogon)."
 Name IPv6-ISPs: "IPv6 (ISP chứa người gửi thư rác)."
 Name IPv6-Nonblocking: "Chữ ký không chặn IPv6."
 Name IPv6-Other: "IPv6 (proxy, VPN, vv)."
-Name IPv6: "IPv6 (dịch vụ đám mây và lưu trữ)."
-Name KR_cidram.inc: "Danh sách chặn IPv4 của Hàn Quốc"
+Name Search engines blocker module: "Mô-đun cho chặn máy tìm kiếm"
 Name compat_bunnycdn.php: "Mô-đun tương thích BunnyCDN"
 Name module_abuseipdb.php: "Mô-đun AbuseIPDB"
 Name module_badhosts.php: "Mô-đun cho chặn các host xấu"
@@ -63,7 +62,11 @@ Name module_httpver.php: "Mô-đun kiểm tra phiên bản HTTP"
 Name module_projecthoneypot.php: "Mô-đun Project Honeypot"
 Name module_refspam.php: "Mô-đun spam giới thiệu"
 Name module_sfs.php: "Mô-đun Stop Forum Spam"
-Name Search engines blocker module: "Mô-đun cho chặn máy tìm kiếm"
+checkbox_label_fields_logs: "Trường này có nên xuất hiện trong các mục nhập nhật ký không?"
+checkbox_label_fields_omit: "Bỏ qua trường này khi nó trống?"
+checkbox_label_fields_page_output: "Trường này có nên xuất hiện trên trang "truy cập đã bị từ chối" không?"
+checkbox_label_stage_enable: "Bật giai đoạn này?"
+checkbox_label_stage_log_errors: "Ghi lại bất kỳ lỗi nào được tạo ra trong giai đoạn này?"
 config_PHPMailer: "Cấu hình cho PHPMailer (được sử dụng để xác thực hai yếu tố)."
 config_PHPMailer_add_reply_to_address: "Địa chỉ trả lời để trích dẫn khi gửi email qua SMTP."
 config_PHPMailer_add_reply_to_name: "Tên trả lời để trích dẫn khi gửi email qua SMTP."
@@ -92,14 +95,12 @@ config_general_disable_frontend: "Vô hiệu hóa truy cập front-end? Truy c�
 config_general_disabled_channels: "Điều này có thể được sử dụng để ngăn CIDRAM sử dụng các kênh cụ thể khi gửi yêu cầu (ví dụ, khi cập nhật, khi lấy siêu dữ liệu thành phần, vv)."
 config_general_emailaddr: "Nếu bạn muốn, bạn có thể cung cấp một địa chỉ email ở đây để được trao cho người dùng khi họ đang bị chặn, cho họ để sử dụng như một điểm tiếp xúc cho hỗ trợ hay giúp đở cho trong trường hợp họ bị chặn bởi nhầm hay lỗi. CẢNH BÁO: Bất kỳ địa chỉ email mà bạn cung cấp ở đây sẽ chắc chắn nhất được mua lại bởi chương trình thư rác và cái nạo trong quá trình con của nó được sử dụng ở đây, và như vậy, nó khuyên rằng nếu bạn chọn để cung cấp một địa chỉ email ở đây, mà bạn đảm bảo rằng địa chỉ email bạn cung cấp ở đây là một địa chỉ dùng một lần hay một địa chỉ mà bạn không nhớ được thư rác (nói cách khác, có thể bạn không muốn sử dụng một cá nhân chính hay kinh doanh chính địa chỉ email)."
 config_general_emailaddr_display_style: "Bạn muốn địa chỉ email được trình bày như thế nào với người dùng?"
-config_general_empty_fields: "CIDRAM nên xử lý các trường trống khi ghi và hiển thị thông tin sự kiện khối như thế nào? "include" = Bao gồm các trường trống. "omit" = Bỏ sót các trường trống [mặc định]."
 config_general_error_log: "Một tập tin để ghi lại bất kỳ lỗi không nghiêm trọng được phát hiện. Chỉ định một tên tập tin, hoặc để trống để vô hiệu hóa."
-config_general_error_log_stages: "Một danh sách các giai đoạn trong chuỗi thực thi, theo đó bất kỳ lỗi nào được tạo sẽ được ghi lại."
 config_general_events: "Các tập tin được liệt kê ở đây được tải trực tiếp sau tập tin trình xử lý sự kiện. Thường được nhập bởi trang cập nhật khi cần thiết khi các thành phần được kích hoạt. Trong hầu hết các trường hợp, có thể bỏ qua nó."
+config_general_fields: "Kiểm soát các trường trong các sự kiện khối (khi một yêu cầu bị chặn)."
 config_general_forbid_on_block: "Những gì thông báo trạng thái HTTP mà CIDRAM nên gửi khi yêu cầu bị chặn? (Tham khảo tài liệu để biết thêm thông tin)."
 config_general_force_hostname_lookup: "Thực hiện tìm kiếm tên máy chủ cho tất cả các yêu cầu? True = Vâng; False = Không [Mặc định]. Tìm kiếm tên máy chủ thường được thực hiện trên cơ sở cần thiết, nhưng có thể được thực hiện cho tất cả các yêu cầu. Điều này có thể hữu ích như một phương tiện cung cấp thông tin chi tiết hơn trong các tập tin đăng nhập, nhưng cũng có thể có tác động tiêu cực đến hiệu suất."
 config_general_frontend_log: "Tập tin cho ghi cố gắng đăng nhập front-end. Chỉ định một tên tập tin, hoặc để trống để vô hiệu hóa."
-config_general_hide_version: "Ẩn thông tin phiên bản từ nhật ký và đầu ra của trang? True = Vâng; False = Không [Mặc định]."
 config_general_ipaddr: "Nơi để tìm địa chỉ IP của các yêu cầu kết nối? (Hữu ích cho các dịch vụ như Cloudflare và vv). Mặc định = REMOTE_ADDR. CẢNH BÁO: Không thay đổi này, trừ khi bạn biết những gì bạn đang làm!"
 config_general_lang: "Xác định tiếng mặc định cho CIDRAM."
 config_general_lang_override: "Bản địa hóa theo HTTP_ACCEPT_LANGUAGE bất cứ khi nào có thể? True = Vâng [Mặc định]; False = Không."
@@ -119,7 +120,7 @@ config_general_search_engine_verification: "Cố gắng xác minh các yêu cầ
 config_general_signatures_update_event_log: "Một tập tin để ghi nhật ký khi chữ ký được cập nhật qua front-end. Chỉ định một tên tập tin, hoặc để trống để vô hiệu hóa."
 config_general_silent_mode: "CIDRAM nên âm thầm chuyển hướng cố gắng truy cập bị chặn thay vì hiển thị trang "Truy cập đã bị từ chối"? Nếu vâng, xác định vị trí để chuyển hướng cố gắng truy cập bị chặn để. Nếu không, để cho biến này được trống."
 config_general_social_media_verification: "Cố gắng xác minh yêu cầu truyền thông xã hội? Xác minh truyền thông xã hội cung cấp sự bảo vệ chống lại các yêu cầu truyền thông xã hội giả mạo (các yêu cầu như vậy sẽ bị chặn). True = Kích hoạt xác minh truyền thông xã hội [Mặc định]; False = Vô hiệu hóa xác minh truyền thông xã hội."
-config_general_statistics: "Giám sát thống kê sử dụng CIDRAM? True = Vâng; False = Không [Mặc định]."
+config_general_stages: "Kiểm soát các giai đoạn của chuỗi thực thi (có được bật hay không, có lỗi được ghi lại hay không, vv)."
 config_general_time_format: "Định dạng ngày tháng sử dụng bởi CIDRAM. Các tùy chọn bổ sung có thể được bổ sung theo yêu cầu."
 config_general_time_offset: "Múi giờ bù đắp trong phút."
 config_general_timezone: "Điều này được sử dụng để chỉ định múi giờ sử dụng (ví dụ, Africa/Cairo, America/New_York, Asia/Tokyo, Australia/Perth, Europe/Berlin, Pacific/Guam, vv). Chỉ định "SYSTEM" để cho phép PHP tự động xử lý việc này cho bạn."
@@ -138,9 +139,6 @@ config_hcaptcha_signature_limit: &CaptchaSignatureLimit "Số lượng chữ ký
 config_hcaptcha_sitekey: *CaptchaDashboard
 config_hcaptcha_usemode: &CaptchaUseMode "Khi nào nên cung cấp CAPTCHA? Lưu ý: Các yêu cầu trong danh sách trắng hay đã xác minh và không bị chặn không cần phải hoàn thành CAPTCHA."
 config_legal: "Cấu hình cho các yêu cầu pháp lý."
-config_legal_omit_hostname: "Bỏ qua tên máy chủ từ nhật ký? True = Vâng; False = Không [Mặc định]."
-config_legal_omit_ip: "Bỏ qua địa chỉ IP từ nhật ký? True = Vâng; False = Không [Mặc định]. Lưu ý: "pseudonymise_ip_addresses" trở nên dư thừa khi "omit_ip" là "true"."
-config_legal_omit_ua: "Bỏ qua đại lý người dùng từ nhật ký? True = Vâng; False = Không [Mặc định]."
 config_legal_privacy_policy: "Địa chỉ của chính sách bảo mật liên quan được hiển thị ở chân trang của bất kỳ trang nào được tạo. Chỉ định URL, hoặc để trống để vô hiệu hóa."
 config_legal_pseudonymise_ip_addresses: "Pseudonymise địa chỉ IP khi viết các tập tin nhật ký? True = Vâng [Mặc định]; False = Không."
 config_rate_limiting: "Cấu hình cho giới hạn tốc độ (không khuyến khích sử dụng chung)."
@@ -227,7 +225,6 @@ field_filename: "Tên tập tin:"
 field_filetype_directory: "Thư Mục"
 field_filetype_info: "Tập Tin {EXT}"
 field_filetype_unknown: "Không Xác Định"
-field_include: "Bao gồm các trường trống"
 field_infractions: "Vi phạm"
 field_install: "Cài đặt"
 field_latest_version: "Phiên bản mới nhất"
@@ -237,7 +234,6 @@ field_new_name: "Tên mới:"
 field_nonclickable_text: "Văn bản không thể nhấp"
 field_not_tracking: "Không giám sát."
 field_ok: "OK"
-field_omit: "Bỏ sót các trường trống"
 field_options: "Tùy Chọn"
 field_password: "Mật Khẩu"
 field_permissions: "Quyền"
@@ -276,6 +272,41 @@ field_verify_all: "Xác minh tất cả"
 field_whitelisted_requests: "Whitelisted requests"
 field_your_version: "Phiên bản của bạn"
 header_login: "Vui lòng đăng nhập để tiếp tục."
+info_some_useful_links: |
+ Một số liên kết hữu ích:<br />
+     <ul class="pieul">
+       <li><span class="comCat">Công cụ, tài nguyên, vv cho CIDRAM.</span>
+         <ul class="comSub">
+           <li>{{Links.CIDRAM.Issues}} – Trang các vấn đề cho CIDRAM (hỗ trợ, vv).</li>
+           <li>{{Links.CIDRAM.WordPress}} – Plugin WordPress cho CIDRAM.</li>
+           <li>{{Links.CIDRAM.Extras}} – Bổ sung khác nhau.</li>
+         </ul>
+       </li>
+       <li><span class="comCat">Nhóm, diễn đàn, cộng đồng, vv.</span>
+         <ul class="comSub">
+           <li>{{Links.PHP.Earth.Facebook}} – PHP tài nguyên học tập và thảo luận.</li>
+           <li><a href="https://www.stopforumspam.com/forum/" rel="noopener noreferrer external">Diễn đàn@Stop Forum Spam</a> – Diễn đàn thảo luận hữu ích về việc ngưng diễn đàn thư rác.</li>
+         </ul>
+       </li>
+       <li><span class="comCat">Công cụ, tài nguyên, dịch vụ, vv hữu ích khác.</span>
+         <ul class="comSub">
+           <li>{{Links.SFS}} – Duy trì một cơ sở dữ liệu của những kẻ gửi thư rác được biết đến. Hữu ích để bảo vệ các trang web và diễn đàn chống lại kẻ gửi thư rác.</li>
+           <li><a href="https://bgp.he.net/" hreflang="en" rel="noopener noreferrer external">Hurricane Electric BGP Toolkit</a> – Nhận các CIDR từ các ASN, xác định các mối quan hệ các ASN, khám phá vùng các ASN dựa trên các tên mạng, vv.</li>
+           <li>{{Links.BGPView}} – Nhận các CIDR từ các ASN, xác định các mối quan hệ các ASN, khám phá vùng các ASN dựa trên các tên mạng, vv.</li>
+           <li><a href="https://radar.qrator.net/" hreflang="en" rel="noopener noreferrer external">Radar bởi Qrator</a> – Công cụ hữu ích để kiểm tra kết nối ASN cũng như cho nhiều thông tin khác về ASN.</li>
+           <li><a href="https://www.spamhaus.org/statistics/botnet-asn/" rel="noopener noreferrer external">Dự án Spamhaus</a> – Hiển thị báo cáo về tỷ lệ lây nhiễm chương trình thư rác cho các ASN.</li>
+           <li>{{Links.AbuseIPDB}} – Duy trì một cơ sở dữ liệu của các IP mà lạm dụng và biết; Cung cấp một API để kiểm tra và báo cáo các IP.</li>
+         </ul>
+       </li>
+       <li><span class="comCat">Tài nguyên thông tin và học tập.</span>
+         <ul class="comSub">
+           <li>{{Links.PHP.Earth.Website}} – PHP tài nguyên học tập và thảo luận.</li>
+           <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Danh sách dễ bị tổn thương</a> – Liệt kê các phiên bản an toàn và không an toàn của các gói khác nhau (HHVM, PHP, phpMyAdmin, Python, vv).</li>
+           <li><a href="https://maikuolan.github.io/Compatibility-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Danh sách tương thích</a> – Liệt kê thông tin tương thích cho các gói khác nhau (CIDRAM, phpMussel, vv).</li>
+         </ul>
+       </li>
+     </ul>
+
 label_active_config_file: "Tập tin cấu hình kích hoạt:"
 label_actual: "Thực tế"
 label_aux_actBlk: "chặn"
@@ -363,11 +394,11 @@ label_is_not_available: "%s không có sẵn."
 label_never: "Không bao giờ"
 label_next: "Kế tiếp:"
 label_os: "Hệ điều hành đang được dùng:"
+label_other: "Khác"
 label_other-ActiveIPv4: "Tập tin chữ ký IPv4 kích hoạt"
 label_other-ActiveIPv6: "Tập tin chữ ký IPv6 kích hoạt"
 label_other-ActiveModules: "Mô-đun kích hoạt"
 label_other-Since: "Ngày bắt đầu"
-label_other: "Khác"
 label_paginate: "Chia theo trang"
 label_passed: "Yêu cầu được phép"
 label_php: "Phiên bản PHP đang được dùng:"
@@ -391,14 +422,14 @@ label_textmode_simple: "Đơn giản"
 label_textmode_tally: "Kiểm đếm"
 label_timeout_limit: "Mô-đun này thực hiện các yêu cầu bên ngoài. Tại đây, bạn có thể chỉ định giới hạn thời gian chờ cho những yêu cầu đó (trong vài giây)."
 label_total: "Toàn bộ"
+label_unignore: "Đừng bỏ qua điều này"
+label_unstable: "Không ổn định mới nhất:"
+label_used_with: "Được sử dụng với:"
 label_usemode_any: "Chỉ khi trong giới hạn chữ ký, và không bị cấm (bất kể có bị chặn hay không)."
 label_usemode_blkd: "Chỉ khi bị chặn, trong giới hạn chữ ký, và không bị cấm."
 label_usemode_blkd_mrkd: "Chỉ khi bị chặn, được đánh dấu đặc biệt để sử dụng, trong giới hạn chữ ký, và không bị cấm."
 label_usemode_not_blkd: "Chỉ khi không bị chặn."
 label_usemode_not_blkd_mrkd: "Chỉ khi không bị chặn, hoặc khi được đánh dấu đặc biệt để sử dụng, trong giới hạn chữ ký, và không bị cấm."
-label_unignore: "Đừng bỏ qua điều này"
-label_unstable: "Không ổn định mới nhất:"
-label_used_with: "Được sử dụng với:"
 label_your_ip: "IP của bạn:"
 label_your_ua: "UA của bạn:"
 link_accounts: "Tài khoản"
@@ -427,6 +458,13 @@ logs_logfile_doesnt_exist: "Bản ghi đã chọn không tồn tại!"
 logs_no_logfile_selected: "Không có bản ghi được chọn."
 logs_no_logfiles_available: "Không có bản ghi có sẵn."
 max_login_attempts_exceeded: "Số lượng tối đa cố gắng đăng nhập đã bị vượt quá; Truy cập đã bị từ chối."
+msg_subject_2fa: "2FA (Xác thực hai yếu tố)"
+msg_template_2fa: |
+ <center><p>Xin chào, %1$s.<br />
+ <br />
+ Mã 2FA của bạn để đăng nhập vào front-end của CIDRAM:</p>
+ <h1>%2$s</h1>
+ <p>Mã này hết hạn sau 10 phút.</p></center>
 notice_click_here: "Nhấp vào đây để có thêm thông tin."
 notice_new_major_version: "Ghi chú: %s hiện có sẵn (bạn đang sử dụng %s). Bạn đáp ứng yêu cầu PHP tối thiểu của phiên bản này. Tuy nhiên, một số bước thủ công được cần thiết để cập nhật."
 previewer_days: "Ngày"
@@ -496,6 +534,24 @@ response_verification_failed: "Xác minh không thành công! Thành phần có 
 response_verification_success: "Xác minh thành công! Không tìm thấy vấn đề."
 response_yes: "Vâng"
 security_warning: "Đã xảy ra sự cố khi xử lý yêu cầu của bạn. Vui lòng thử lại. Nếu sự cố vẫn tiếp diễn, hãy liên hệ với hỗ trợ."
+stage_aux: "Thực hiện quy tắc phụ trợ"
+stage_auxredirect: "Chuyển hướng theo các quy tắc phụ trợ"
+stage_captcha: "Triển khai CAPTCHA (yêu cầu bị chặn)"
+stage_modules: "Thực hiện mô-đun"
+stage_nonblockedcaptcha: "Triển khai CAPTCHA (yêu cầu không bị chặn)"
+stage_output: "Tạo đầu ra (yêu cầu bị chặn)"
+stage_ov: "Thực hiện xác minh khác"
+stage_preparefields: "Chuẩn bị các trường cho đầu ra và nhật ký"
+stage_reporting: "Thực hiện báo cáo"
+stage_rl: "Thực hiện giới hạn tốc độ"
+stage_sev: "Thực hiện xác minh của máy tìm kiếm"
+stage_smv: "Thực hiện xác minh của truyền thông xã hội"
+stage_statistics: "Cập nhật số liệu thống kê"
+stage_terminate: "Chấm dứt yêu cầu (yêu cầu bị chặn)"
+stage_tests: "Thực hiện kiểm tra tập tin chữ ký"
+stage_tracking: "Thực hiện giám sát IP"
+stage_webhooks: "Thực hiện webhook"
+stage_writelogs: "Ghi vào nhật ký (yêu cầu bị chặn)"
 state_async_deny: "Quyền không đủ để thực hiện các yêu cầu không đồng bộ. Hãy thử đăng nhập lại."
 state_cache_is_empty: "Bộ nhớ cache là trống."
 state_complete_access: "Truy cập đầy đủ"
@@ -557,6 +613,7 @@ tip_aux_priority: "Sự ưu tiên (cao nhất➡(công bằng🔄tương đươn
 tip_aux_webhooks: "Khi một quy tắc được đáp ứng, CIDRAM sẽ cố gắng thông báo cho bất kỳ webhooks nào được kết nối về sự kiện này."
 tip_cache_data: "Xin chào, {username}.<br />Ở đây bạn có thể xem lại nội dung của bộ nhớ cache."
 tip_cidr_calc: "Xin chào, {username}.<br />Máy tính CIDR cho phép bạn để tính toán mà các CIDR một địa chỉ IP thuộc về."
+tip_click_the_component: "Nhấp vào tên thành phần để biết thêm chi tiết."
 tip_condition_placeholder: "Chỉ định một giá trị, hoặc để trống để bỏ qua."
 tip_config: "Xin chào, {username}.<br />Trang cấu hình cho phép bạn chỉnh sửa các cấu hình CIDRAM từ các front-end."
 tip_custom_query: "Nhập truy vấn ở đây (tùy chọn)."
@@ -574,7 +631,6 @@ tip_ip_test: "Xin chào, {username}.<br />Trang kiểm tra IP cho phép bạn ki
 tip_ip_test_switches: "(Khi không được chọn, chỉ các tập tin chữ ký sẽ được kiểm tra chống lại)."
 tip_ip_tracking: "Xin chào, {username}.<br />Các trang cho giám sát IP cho phép bạn kiểm tra tình trạng giám sát các địa chỉ IP, để kiểm tra mà trong số họ đã bị cấm, và hủy bỏ giám sát họ nếu bạn muốn làm như vậy."
 tip_logs: "Xin chào, {username}.<br />Chọn một bản ghi từ danh sách dưới đây để xem nội dung của bản ghi này."
-tip_click_the_component: "Nhấp vào tên thành phần để biết thêm chi tiết."
 tip_range: "Xin chào, {username}.<br />Trang này hiển thị một số thông tin thống kê cơ bản về các phạm vi IP được bao phủ bởi các tập tin chữ ký đang hoạt động."
 tip_range_intersector: "Xin chào, {username}.<br />Công cụ giao lộ có thể được sử dụng để xác định các yếu tố chung từ hai tập hợp phạm vi."
 tip_range_subtractor: "Xin chào, {username}.<br />Phép trừ phạm vi có thể được sử dụng để trừ một phạm vi IP/CIDR từ một phạm vi khác."
@@ -585,46 +641,3 @@ tip_statistics_disabled: "Lưu ý: Giám sát thống kê hiện bị vô hiệu
 tip_updates: "Xin chào, {username}.<br />Trang cập nhật cho phép bạn cài đặt, gỡ bỏ cài đặt, và cập nhật các gói khác nhau cho CIDRAM (các gói cốt lõi, chữ ký, bổ sung, các tập tin L10N, vv)."
 title_login: "Đăng Nhập"
 warning_signatures_1: "Cảnh báo: Không có tập tin chữ ký nào đang hoạt động!"
-
-info_some_useful_links: |
- Một số liên kết hữu ích:<br />
-     <ul class="pieul">
-       <li><span class="comCat">Công cụ, tài nguyên, vv cho CIDRAM.</span>
-         <ul class="comSub">
-           <li>{{Links.CIDRAM.Issues}} – Trang các vấn đề cho CIDRAM (hỗ trợ, vv).</li>
-           <li>{{Links.CIDRAM.WordPress}} – Plugin WordPress cho CIDRAM.</li>
-           <li>{{Links.CIDRAM.Extras}} – Bổ sung khác nhau.</li>
-         </ul>
-       </li>
-       <li><span class="comCat">Nhóm, diễn đàn, cộng đồng, vv.</span>
-         <ul class="comSub">
-           <li>{{Links.PHP.Earth.Facebook}} – PHP tài nguyên học tập và thảo luận.</li>
-           <li><a href="https://www.stopforumspam.com/forum/" rel="noopener noreferrer external">Diễn đàn@Stop Forum Spam</a> – Diễn đàn thảo luận hữu ích về việc ngưng diễn đàn thư rác.</li>
-         </ul>
-       </li>
-       <li><span class="comCat">Công cụ, tài nguyên, dịch vụ, vv hữu ích khác.</span>
-         <ul class="comSub">
-           <li>{{Links.SFS}} – Duy trì một cơ sở dữ liệu của những kẻ gửi thư rác được biết đến. Hữu ích để bảo vệ các trang web và diễn đàn chống lại kẻ gửi thư rác.</li>
-           <li><a href="https://bgp.he.net/" hreflang="en" rel="noopener noreferrer external">Hurricane Electric BGP Toolkit</a> – Nhận các CIDR từ các ASN, xác định các mối quan hệ các ASN, khám phá vùng các ASN dựa trên các tên mạng, vv.</li>
-           <li>{{Links.BGPView}} – Nhận các CIDR từ các ASN, xác định các mối quan hệ các ASN, khám phá vùng các ASN dựa trên các tên mạng, vv.</li>
-           <li><a href="https://radar.qrator.net/" hreflang="en" rel="noopener noreferrer external">Radar bởi Qrator</a> – Công cụ hữu ích để kiểm tra kết nối ASN cũng như cho nhiều thông tin khác về ASN.</li>
-           <li><a href="https://www.spamhaus.org/statistics/botnet-asn/" rel="noopener noreferrer external">Dự án Spamhaus</a> – Hiển thị báo cáo về tỷ lệ lây nhiễm chương trình thư rác cho các ASN.</li>
-           <li>{{Links.AbuseIPDB}} – Duy trì một cơ sở dữ liệu của các IP mà lạm dụng và biết; Cung cấp một API để kiểm tra và báo cáo các IP.</li>
-         </ul>
-       </li>
-       <li><span class="comCat">Tài nguyên thông tin và học tập.</span>
-         <ul class="comSub">
-           <li>{{Links.PHP.Earth.Website}} – PHP tài nguyên học tập và thảo luận.</li>
-           <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Danh sách dễ bị tổn thương</a> – Liệt kê các phiên bản an toàn và không an toàn của các gói khác nhau (HHVM, PHP, phpMyAdmin, Python, vv).</li>
-           <li><a href="https://maikuolan.github.io/Compatibility-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Danh sách tương thích</a> – Liệt kê thông tin tương thích cho các gói khác nhau (CIDRAM, phpMussel, vv).</li>
-         </ul>
-       </li>
-     </ul>
-
-msg_template_2fa: |
- <center><p>Xin chào, %1$s.<br />
- <br />
- Mã 2FA của bạn để đăng nhập vào front-end của CIDRAM:</p>
- <h1>%2$s</h1>
- <p>Mã này hết hạn sau 10 phút.</p></center>
-msg_subject_2fa: "2FA (Xác thực hai yếu tố)"

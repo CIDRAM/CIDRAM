@@ -7,22 +7,23 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (simplified) language data for the front-end (last modified: 2022.02.21).
+# This file: Chinese (simplified) language data for the front-end (last modified: 2022.03.01).
 ##/
 
 Extended Description Bypasses: "标准签名旁路文件通常包括在主包。"
 Extended Description Chart.js: "使前端能够生成饼图。<br />{{Links.Chart.js}}可通过<a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>获得。"
+Extended Description IPv4: &ExtDesCloud "阻止不想要的云服务和非人终端。"
 Extended Description IPv4-Bogons: &ExtDesBogons "阻止bogon/火星CIDR。"
 Extended Description IPv4-ISPs: &ExtDesISPs "阻止危险和垃圾容易ISP（包括多重播放网络，可能包含人类和非人类端点）。"
 Extended Description IPv4-Nonblocking: &ExtDesNonblocking "对分类有用，但不会自行阻止任何事物。"
 Extended Description IPv4-Other: &ExtDesOther "阻止CIDR从代理，VPN和其他不需要服务。"
-Extended Description IPv4: &ExtDesCloud "阻止不想要的云服务和非人终端。"
+Extended Description IPv6: *ExtDesCloud
 Extended Description IPv6-Bogons: *ExtDesBogons
 Extended Description IPv6-ISPs: *ExtDesISPs
 Extended Description IPv6-Nonblocking: *ExtDesNonblocking
 Extended Description IPv6-Other: *ExtDesOther
-Extended Description IPv6: *ExtDesCloud
 Extended Description PHPMailer: "使用涉及发送电子邮件的任何功能时需要。<br />{{Links.PHPMailer.PHPMailer}}可通过{{Links.PHPMailer.License}}许可证获得。"
+Extended Description Search engines blocker module: "搜索引擎（例如，百度、搜狗、Yandex 、等等）可能会导致某些网站出现问题。​这个模块可以阻止那些搜索引擎。"
 Extended Description flags.css: "向前端日志页面添加旗支持。"
 Extended Description module_abuseipdb.php: "阻止来自AbuseIPDB列出的IP的请求。"
 Extended Description module_badhosts.php: "阻止垃圾邮件发送者，黑客，和其他恶意实体经常使用的主机。"
@@ -36,20 +37,18 @@ Extended Description module_httpver.php: "通过CIDRAM配置可以阻止特定�
 Extended Description module_projecthoneypot.php: "阻止来自Project Honeypot列出的IP的请求。"
 Extended Description module_refspam.php: "基于引荐来源垃圾邮件阻止通常不会提供任何有意义的安全利益，但在某些情况下，对某些用户可能有用，用于收集有关请求的更多信息，以及能够报告它。<br />通过安装此模块，还将安装用于{{Links.Symfony.Intl/Idn}}和{{Links.Symfony.Mbstring}}的Symfony polyfills（因为此模块需要Idn功能性，但并非所有PHP安装都默认提供该功能性）。​这两个都可以通过<a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a>许可获得。"
 Extended Description module_sfs.php: "防止通过SFS列出的IP地址访问注册和登录页面。"
-Extended Description Search engines blocker module: "搜索引擎（例如，百度、搜狗、Yandex 、等等）可能会导致某些网站出现问题。​这个模块可以阻止那些搜索引擎。"
 Name Bypasses: "标准签名旁路。"
-Name CN_cidram.inc: "中国IPv4阻止清单"
+Name IPv4: "IPv4（云和托管服务）。"
 Name IPv4-Bogons: "IPv4（bogon）。"
 Name IPv4-ISPs: "IPv4（垃圾邮件ISP）。"
 Name IPv4-Nonblocking: "IPv4非阻止签名。"
 Name IPv4-Other: "IPv4（代理，VPN，等等）。"
-Name IPv4: "IPv4（云和托管服务）。"
+Name IPv6: "IPv6（云和托管服务）。"
 Name IPv6-Bogons: "IPv6（bogon）。"
 Name IPv6-ISPs: "IPv6（垃圾邮件ISP）。"
 Name IPv6-Nonblocking: "IPv6非阻止签名。"
 Name IPv6-Other: "IPv6（代理，VPN，等等）。"
-Name IPv6: "IPv6（云和托管服务）。"
-Name KR_cidram.inc: "南韩IPv4阻止清单"
+Name Search engines blocker module: "搜索引擎阻塞模块"
 Name compat_bunnycdn.php: "BunnyCDN兼容模块"
 Name module_abuseipdb.php: "AbuseIPDB 模块"
 Name module_badhosts.php: "坏主机阻塞模块"
@@ -63,7 +62,11 @@ Name module_httpver.php: "HTTP版本检查器模块"
 Name module_projecthoneypot.php: "Project Honeypot 模块"
 Name module_refspam.php: "引荐来源垃圾邮件模块"
 Name module_sfs.php: "Stop Forum Spam 模块"
-Name Search engines blocker module: "搜索引擎阻塞模块"
+checkbox_label_fields_logs: "该字段是否应该出现在日志条目中？"
+checkbox_label_fields_omit: "为空时忽略此字段？"
+checkbox_label_fields_page_output: "该字段是否应该出现在“拒绝访问”页面上？"
+checkbox_label_stage_enable: "启用此阶段？"
+checkbox_label_stage_log_errors: "记录在此阶段产生的任何错误？"
 config_PHPMailer: "PHPMailer的配置（用于双因素身份验证）。"
 config_PHPMailer_add_reply_to_address: "通过SMTP发送电子邮件时引用的回复地址。"
 config_PHPMailer_add_reply_to_name: "通过SMTP发送电子邮件时引用的回复姓名。"
@@ -92,14 +95,12 @@ config_general_disable_frontend: "关闭前端访问吗？​前端访问可以�
 config_general_disabled_channels: "这可用于防止CIDRAM在发送请求时使用特定通道（例如，在更新时，在获取组件元数据时，等等）。"
 config_general_emailaddr: "如果您希望，​您可以提供电子邮件地址这里要给予用户当他们被阻止，​他们使用作为接触点为支持和/或帮助在的情况下他们错误地阻止。​警告:您提供的任何电子邮件地址，​它肯定会被获得通过垃圾邮件机器人和铲运机，​所以，​它强烈推荐如果选择提供一个电子邮件地址这里，​您保证它是一次性的和/或不是很重要（换一种说法，​您可能不希望使用您的主电子邮件地址或您的企业电子邮件地址）。"
 config_general_emailaddr_display_style: "您希望如何将电子邮件地址呈现给用户？"
-config_general_empty_fields: "在记录和显示阻止事件信息时，CIDRAM如何处理空字段？ “include” = 包括空字段。 “omit” = 省略空字段【标准】。"
 config_general_error_log: "用于记录检测到的任何非致命错误的文件。​指定一个文件名，​或留空以禁用。"
-config_general_error_log_stages: "执行链中应该记录错误的阶段列表。"
 config_general_events: "此处列出的文件在事件处理程序文件之后直接加载。​通常在启用组件时由更新页面按需填充。​大多数情况下，可以忽略它。"
+config_general_fields: "块事件期间的字段控件（当请求被阻止时）。"
 config_general_forbid_on_block: "阻止请求时，CIDRAM应发送哪个HTTP状态消息？ （请参阅文档以获取更多信息）。"
 config_general_force_hostname_lookup: "强制主机名查找？​True（真）=跟踪；False（假）=不跟踪【标准】。​主机名查询通常在“根据需要”的基础上执行，但可以在所有请求上强制。​这可能会有助于提供日志文件中更详细的信息，但也可能会对性能产生轻微的负面影响。"
 config_general_frontend_log: "前端登录尝试的录音文件。​指定一个文件名，​或留空以禁用。"
-config_general_hide_version: "从日志和页面输出中隐藏版本信息吗？​True（真）=关闭；False（假）=不关闭【标准】。"
 config_general_ipaddr: "在哪里可以找到连接请求IP地址？​（可以使用为服务例如Cloudflare和类似）。​标准 = REMOTE_ADDR。​警告：不要修改此除非您知道什么您做着！"
 config_general_lang: "指定标准CIDRAM语言。"
 config_general_lang_override: "尽可能根据HTTP_ACCEPT_LANGUAGE进行本地化？True（真）=进行本地化【标准】；False（假）=不要本地化。"
@@ -119,7 +120,7 @@ config_general_search_engine_verification: "尝试验证来自搜索引擎的请
 config_general_signatures_update_event_log: "通过前端更新签名时用于记录的文件。​指定一个文件名，​或留空以禁用。"
 config_general_silent_mode: "CIDRAM应该默默重定向被拦截的访问而不是显示该“拒绝访问”页吗？​指定位置至重定向被拦截的访问，​或让它空将其禁用。"
 config_general_social_media_verification: "尝试验证社交媒体请求？​社交媒体验证可以防止虚假社交媒体请求（此类请求将被阻止）。​True（真）=启用社交媒体验证【标准】；​False（假）=禁用社交媒体验证。"
-config_general_statistics: "跟踪CIDRAM使用情况统计？​True（真）=跟踪；False（假）=不跟踪【标准】。"
+config_general_stages: "控制执行链的各个阶段（是否启用，是否记录错误，等等）。"
 config_general_time_format: "CIDRAM使用的日期符号格式。​可根据要求增加附加选项。"
 config_general_time_offset: "时区偏移量（分钟）。"
 config_general_timezone: "这用于指定要使用的时区​（例如，Africa/Cairo，America/New_York，Asia/Tokyo，Australia/Perth，Europe/Berlin，Pacific/Guam，等等）。​指定“SYSTEM”使PHP自动为您处理。"
@@ -138,9 +139,6 @@ config_hcaptcha_signature_limit: &CaptchaSignatureLimit "撤销CAPTCHA之前允�
 config_hcaptcha_sitekey: *CaptchaDashboard
 config_hcaptcha_usemode: &CaptchaUseMode "何时应提供CAPTCHA吗？​注意：列入白名单或已验证且未阻止的请求永远不需要完成CAPTCHA。"
 config_legal: "法律要求的配置。"
-config_legal_omit_hostname: "从日志文件中排除主机名？​True（真）=排除；False（假）=不排除【标准】。"
-config_legal_omit_ip: "从日志文件中排除IP地址？​True（真）=排除；False（假）=不排除【标准】。​注意：“omit_ip”为“true”时，“pseudonymise_ip_addresses”变得不必要。"
-config_legal_omit_ua: "从日志文件中排除用户代理？​True（真）=排除；False（假）=不排除【标准】。"
 config_legal_privacy_policy: "要显示在任何生成的页面的页脚中的相关隐私政策的地址。​指定一个URL，或留空以禁用。"
 config_legal_pseudonymise_ip_addresses: "编写日志文件时使用假名的IP地址吗？​True（真）=使用假名【标准】；False（假）=不使用假名。"
 config_rate_limiting: "速率限制的配置（不建议一般使用）。"
@@ -227,7 +225,6 @@ field_filename: "文件名："
 field_filetype_directory: "文件夹"
 field_filetype_info: "{EXT}文件"
 field_filetype_unknown: "未知"
-field_include: "包括空字段"
 field_infractions: "违规"
 field_install: "安装"
 field_latest_version: "最新版本"
@@ -237,7 +234,6 @@ field_new_name: "新名称："
 field_nonclickable_text: "不可点击的文字"
 field_not_tracking: "没有跟踪。"
 field_ok: "OK"
-field_omit: "省略空字段"
 field_options: "选项"
 field_password: "密码"
 field_permissions: "权限"
@@ -276,6 +272,42 @@ field_verify_all: "验证全部"
 field_whitelisted_requests: "在白名单中的请求"
 field_your_version: "您的版本"
 header_login: "请登录以继续。"
+info_some_useful_links: |
+ 一些有用的链接：<br />
+     <ul class="pieul">
+       <li><span class="comCat">CIDRAM的工具，资源，等等。</span>
+         <ul class="comSub">
+           <li>{{Links.CIDRAM.Issues}} – CIDRAM问题页面（支持，​协助，​等等）。</li>
+           <li>{{Links.CIDRAM.WordPress}} – CIDRAM WordPress插件。</li>
+           <li><a href="https://www.oschina.net/p/CIDRAM" hreflang="zh-CN" rel="noopener noreferrer external">CIDRAM＠开源中国社区</a> – CIDRAM页面托管在开源中国社区。</li>
+           <li>{{Links.CIDRAM.Extras}} – 各种附加功能。</li>
+         </ul>
+       </li>
+       <li><span class="comCat">团体，论坛，社区，等等。</span>
+         <ul class="comSub">
+           <li>{{Links.PHP.Earth.Facebook}} – PHP学习资源和讨论。</li>
+           <li><a href="https://www.stopforumspam.com/forum/" rel="noopener noreferrer external">论坛 ＠ Stop Forum Spam</a> – 有用的讨论论坛关于停止论坛垃圾邮件。</li>
+         </ul>
+       </li>
+       <li><span class="comCat">其他有用的工具，资源，服务，等等</span>
+         <ul class="comSub">
+           <li>{{Links.SFS}} – 维护已知论坛垃圾邮件发送者的数据库。有用的保护网站和论坛免受垃圾邮件发送者的攻。</li>
+           <li><a href="https://bgp.he.net/" hreflang="en" rel="noopener noreferrer external">Hurricane Electric BGP Toolkit</a> – 从ASN获取CIDR，​确定ASN关系，​基于网络名称发现ASN，​等等。</li>
+           <li>{{Links.BGPView}} – 从ASN获取CIDR，​确定ASN关系，​基于网络名称发现ASN，​等等。</li>
+           <li><a href="https://radar.qrator.net/" hreflang="en" rel="noopener noreferrer external">Qrator的Radar</a> – 检查ASN连接的有用工具，​以及关于ASN的各种其他信息。</li>
+           <li><a href="https://www.spamhaus.org/statistics/botnet-asn/" rel="noopener noreferrer external">Spamhaus项目</a> – 显示有关ASN僵尸网络感染率的报告。</li>
+           <li>{{Links.AbuseIPDB}} – 维护已知的滥用IP数据库。它为IP检查和报告提供了一个API。</li>
+         </ul>
+       </li>
+       <li><span class="comCat">信息和学习资源。</span>
+         <ul class="comSub">
+           <li>{{Links.PHP.Earth.Website}} – PHP学习资源和讨论。</li>
+           <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">脆弱性图表</a> – 列出各种软件包的安全/不安全版本（HHVM，PHP，phpMyAdmin，Python等等）。</li>
+           <li><a href="https://maikuolan.github.io/Compatibility-Charts/" hreflang="en-AU" rel="noopener noreferrer external">兼容性图表</a> – 列出各种软件包的兼容性信息（CIDRAM，phpMussel，等等）。</li>
+         </ul>
+       </li>
+     </ul>
+
 label_active_config_file: "活动配置文件："
 label_actual: "目前"
 label_aux_actBlk: "阻止"
@@ -363,11 +395,11 @@ label_is_not_available: "%s不可用。"
 label_never: "决不"
 label_next: "下一个："
 label_os: "目前使用操作系统："
+label_other: "其他"
 label_other-ActiveIPv4: "活动IPv4签名文件"
 label_other-ActiveIPv6: "活动IPv6签名文件"
 label_other-ActiveModules: "活动模块"
 label_other-Since: "开始日期"
-label_other: "其他"
 label_paginate: "分页"
 label_passed: "允许的请求"
 label_php: "目前使用PHP版本："
@@ -391,14 +423,14 @@ label_textmode_simple: "简单"
 label_textmode_tally: "理货"
 label_timeout_limit: "该模块执行外部请求。​您可以在此处指定这些请求的超时限制（以秒为单位）。"
 label_total: "总"
+label_unignore: "不要忽略这个"
+label_unstable: "最新不稳定："
+label_used_with: "用于："
 label_usemode_any: "仅在签名限制之内，并且不被禁止（不管是否被阻止）。"
 label_usemode_blkd: "仅当被阻止时，在签名限制之内，并且不被禁止。"
 label_usemode_blkd_mrkd: "仅当被阻止时，专门标明使用时，在签名限制之内，并且不被禁止。"
 label_usemode_not_blkd: "仅在不被阻止时。"
 label_usemode_not_blkd_mrkd: "仅在不被阻止时，或专门标明使用时，在签名限制之内，并且不被禁止。"
-label_unignore: "不要忽略这个"
-label_unstable: "最新不稳定："
-label_used_with: "用于："
 label_your_ip: "您的IP："
 label_your_ua: "您的UA："
 link_accounts: "帐户"
@@ -427,6 +459,13 @@ logs_logfile_doesnt_exist: "选择的日志不存在！"
 logs_no_logfile_selected: "没有选择的日志。"
 logs_no_logfiles_available: "没有日志可用。"
 max_login_attempts_exceeded: "最大登录尝试次数已经超过；拒绝访问。"
+msg_subject_2fa: "2FA（双因素身份验证）"
+msg_template_2fa: |
+ <center><p>你好，%1$s。<br />
+ <br />
+ 用于登录CIDRAM前端的2FA代码：</p>
+ <h1>%2$s</h1>
+ <p>此代码将在10分钟后到期。</p></center>
 notice_click_here: "点击这里查看更多信息。"
 notice_new_major_version: "通知：%s现在可用（您正在使用%s）。​您满足此版本的最低PHP要求。​但是，需要一些手动步骤来更新。"
 previewer_days: "天"
@@ -496,6 +535,24 @@ response_verification_failed: "验证失败！组件可能已损坏。"
 response_verification_success: "验证成功！没有发现问题。"
 response_yes: "是"
 security_warning: "处理您的请求时出现意外问题。请再试一次。如果问题仍然存在，请联系技术支持。"
+stage_aux: "执行辅助规则"
+stage_auxredirect: "根据辅助规则重定向"
+stage_captcha: "部署验证码（被阻止的请求）"
+stage_modules: "执行模块"
+stage_nonblockedcaptcha: "部署验证码（非阻止的请求）"
+stage_output: "生成输出（被阻止的请求）"
+stage_ov: "执行其他验证"
+stage_preparefields: "为输出和日志准备字段"
+stage_reporting: "执行报告"
+stage_rl: "执行速率限制"
+stage_sev: "执行搜索引擎验证"
+stage_smv: "执行社交媒体验证"
+stage_statistics: "更新统计"
+stage_terminate: "终止请求（被阻止的请求）"
+stage_tests: "执行签名文件测试"
+stage_tracking: "执行IP跟踪"
+stage_webhooks: "执行webhook"
+stage_writelogs: "写入日志（被阻止的请求）"
 state_async_deny: "权限不足以执行异步请求。尝试再次登录。"
 state_cache_is_empty: "缓存是空的。"
 state_complete_access: "完全访问"
@@ -557,6 +614,7 @@ tip_aux_priority: "优先（最高➡(相同🔄当量)➡最低）："
 tip_aux_webhooks: "当触发规则时，CIDRAM将尝试该事件通知所有连接的webhooks。"
 tip_cache_data: "你好，​{username}。​<br />在这里您可以查看缓存的内容。"
 tip_cidr_calc: "你好，​{username}。​<br />CIDR计算器允许您计算IP地址属于哪个CIDR。"
+tip_click_the_component: "单击组件名称以获取更多详细信息。"
 tip_condition_placeholder: "指定一个值，或留空以忽略。"
 tip_config: "你好，​{username}。​<br />配置页面允许您修改CIDRAM配置从前端。"
 tip_custom_query: "在这里时输入网页查询（可选的）。"
@@ -574,7 +632,6 @@ tip_ip_test: "你好，​{username}。​<br />IP测试页面允许您测试是
 tip_ip_test_switches: "（如果未选中的，只有签名文件将被测试）。"
 tip_ip_tracking: "你好，​{username}。​<br />IP跟踪页面允许您检查IP地址跟踪状态，​检查哪些IP已被禁止，​而如果您想这样做，​对撤消他们的跟踪。"
 tip_logs: "你好，​{username}。​<br />选择一个日志从下面的列表以查看那个日志的内容。"
-tip_click_the_component: "单击组件名称以获取更多详细信息。"
 tip_range: "你好，​{username}。<br />本页面显示了有关当前活性签名文件覆盖的IP范围的一些基本统计信息。"
 tip_range_intersector: "你好，​{username}。<br />范围相交仪可用于从两组范围确定公共因子。"
 tip_range_subtractor: "你好，​{username}。<br />范围减法仪可用于从另一个范围中减去一个IP/CIDR范围。"
@@ -585,47 +642,3 @@ tip_statistics_disabled: "注意：统计跟踪目前已被禁用，但可以通
 tip_updates: "你好，​{username}。​<br />更新页面允许您安装，​卸载，​和更新CIDRAM的各种组件（核心包，​签名，​L10N文件，​等等）。"
 title_login: "登录"
 warning_signatures_1: "警告：没有签名文件是活动的！"
-
-info_some_useful_links: |
- 一些有用的链接：<br />
-     <ul class="pieul">
-       <li><span class="comCat">CIDRAM的工具，资源，等等。</span>
-         <ul class="comSub">
-           <li>{{Links.CIDRAM.Issues}} – CIDRAM问题页面（支持，​协助，​等等）。</li>
-           <li>{{Links.CIDRAM.WordPress}} – CIDRAM WordPress插件。</li>
-           <li><a href="https://www.oschina.net/p/CIDRAM" hreflang="zh-CN" rel="noopener noreferrer external">CIDRAM＠开源中国社区</a> – CIDRAM页面托管在开源中国社区。</li>
-           <li>{{Links.CIDRAM.Extras}} – 各种附加功能。</li>
-         </ul>
-       </li>
-       <li><span class="comCat">团体，论坛，社区，等等。</span>
-         <ul class="comSub">
-           <li>{{Links.PHP.Earth.Facebook}} – PHP学习资源和讨论。</li>
-           <li><a href="https://www.stopforumspam.com/forum/" rel="noopener noreferrer external">论坛 ＠ Stop Forum Spam</a> – 有用的讨论论坛关于停止论坛垃圾邮件。</li>
-         </ul>
-       </li>
-       <li><span class="comCat">其他有用的工具，资源，服务，等等</span>
-         <ul class="comSub">
-           <li>{{Links.SFS}} – 维护已知论坛垃圾邮件发送者的数据库。有用的保护网站和论坛免受垃圾邮件发送者的攻。</li>
-           <li><a href="https://bgp.he.net/" hreflang="en" rel="noopener noreferrer external">Hurricane Electric BGP Toolkit</a> – 从ASN获取CIDR，​确定ASN关系，​基于网络名称发现ASN，​等等。</li>
-           <li>{{Links.BGPView}} – 从ASN获取CIDR，​确定ASN关系，​基于网络名称发现ASN，​等等。</li>
-           <li><a href="https://radar.qrator.net/" hreflang="en" rel="noopener noreferrer external">Qrator的Radar</a> – 检查ASN连接的有用工具，​以及关于ASN的各种其他信息。</li>
-           <li><a href="https://www.spamhaus.org/statistics/botnet-asn/" rel="noopener noreferrer external">Spamhaus项目</a> – 显示有关ASN僵尸网络感染率的报告。</li>
-           <li>{{Links.AbuseIPDB}} – 维护已知的滥用IP数据库。它为IP检查和报告提供了一个API。</li>
-         </ul>
-       </li>
-       <li><span class="comCat">信息和学习资源。</span>
-         <ul class="comSub">
-           <li>{{Links.PHP.Earth.Website}} – PHP学习资源和讨论。</li>
-           <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">脆弱性图表</a> – 列出各种软件包的安全/不安全版本（HHVM，PHP，phpMyAdmin，Python等等）。</li>
-           <li><a href="https://maikuolan.github.io/Compatibility-Charts/" hreflang="en-AU" rel="noopener noreferrer external">兼容性图表</a> – 列出各种软件包的兼容性信息（CIDRAM，phpMussel，等等）。</li>
-         </ul>
-       </li>
-     </ul>
-
-msg_template_2fa: |
- <center><p>你好，%1$s。<br />
- <br />
- 用于登录CIDRAM前端的2FA代码：</p>
- <h1>%2$s</h1>
- <p>此代码将在10分钟后到期。</p></center>
-msg_subject_2fa: "2FA（双因素身份验证）"

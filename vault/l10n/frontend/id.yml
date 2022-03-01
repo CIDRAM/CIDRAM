@@ -7,22 +7,23 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Indonesian language data for the front-end (last modified: 2022.02.21).
+# This file: Indonesian language data for the front-end (last modified: 2022.03.01).
 ##/
 
 Extended Description Bypasses: "File untuk bypass tanda tangan standar yang biasanya disertakan dengan paket utama."
 Extended Description Chart.js: "Memungkinkan bagian depan untuk menghasilkan bagan pai.<br />{{Links.Chart.js}} tersedia melalui <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
+Extended Description IPv4: &ExtDesCloud "Memblokir layanan cloud tidak diinginkan dan jalur akses non-manusia."
 Extended Description IPv4-Bogons: &ExtDesBogons "Memblokir CIDR bogon/martian."
 Extended Description IPv4-ISPs: &ExtDesISPs "Memblokir ISP berbahaya dan spam rawan (termasuk jaringan multi-permainan, yang mungkin berisi titik akhir manusia dan non-manusia)."
 Extended Description IPv4-Nonblocking: &ExtDesNonblocking "Berguna untuk membuat profil, tetapi tidak memblokir apapun dengan sendirinya."
 Extended Description IPv4-Other: &ExtDesOther "Memblokir CIDR untuk proxy, VPN, dan layanan lain-lain tidak diinginkan."
-Extended Description IPv4: &ExtDesCloud "Memblokir layanan cloud tidak diinginkan dan jalur akses non-manusia."
+Extended Description IPv6: *ExtDesCloud
 Extended Description IPv6-Bogons: *ExtDesBogons
 Extended Description IPv6-ISPs: *ExtDesISPs
 Extended Description IPv6-Nonblocking: *ExtDesNonblocking
 Extended Description IPv6-Other: *ExtDesOther
-Extended Description IPv6: *ExtDesCloud
 Extended Description PHPMailer: "Diperlukan untuk menggunakan fungsionalitas apapun yang melibatkan pengiriman email.<br />{{Links.PHPMailer.PHPMailer}} tersedia melalui lisensi {{Links.PHPMailer.License}}."
+Extended Description Search engines blocker module: "Menyediakan kemampuan untuk memblokir mesin pencari yang mungkin bermasalah untuk beberapa situs web (mis., Baidu, Sogou, Yandex, dll)."
 Extended Description flags.css: "Menambahkan dukungan bendera ke halaman log bagian depan."
 Extended Description module_abuseipdb.php: "Memblokir permintaan dari IP yang terdaftar oleh AbuseIPDB."
 Extended Description module_badhosts.php: "Memblokir host yang sering digunakan oleh spammer, peretas, dan entitas jahat lainnya."
@@ -36,20 +37,18 @@ Extended Description module_httpver.php: "Memungkinkan untuk memblokir protokol 
 Extended Description module_projecthoneypot.php: "Memblokir permintaan dari IP yang terdaftar oleh Project Honeypot."
 Extended Description module_refspam.php: "Memblokir berdasarkan spam pengarah umumnya tidak akan memberikan manfaat keamanan yang berarti, tetapi dalam beberapa kasus, dapat bermanfaat bagi beberapa pengguna, untuk mengumpulkan lebih banyak informasi tentang permintaan, dan untuk dapat melaporkannya.<br />Menginstal modul ini juga menginstal polyfill Symfony untuk {{Links.Symfony.Intl/Idn}} dan {{Links.Symfony.Mbstring}} (karena modul ini memerlukan fungsionalitas Idn, yang tidak semua instalasi PHP menyediakan secara default), keduanya tersedia melalui lisensi <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a>."
 Extended Description module_sfs.php: "Melindungi halaman pendaftaran dan login terhadap IP yang terdaftar oleh SFS."
-Extended Description Search engines blocker module: "Menyediakan kemampuan untuk memblokir mesin pencari yang mungkin bermasalah untuk beberapa situs web (mis., Baidu, Sogou, Yandex, dll)."
 Name Bypasses: "Bypass tanda tangan standar."
-Name CN_cidram.inc: "IPv4 pemblokir Cina"
+Name IPv4: "IPv4 (layanan cloud dan hosting)."
 Name IPv4-Bogons: "IPv4 (bogon)."
 Name IPv4-ISPs: "IPv4 (ISP yang mengirim spam)."
 Name IPv4-Nonblocking: "Tanda tangan jangan pemblokiran IPv4."
 Name IPv4-Other: "IPv4 (proxy, VPN, dll)."
-Name IPv4: "IPv4 (layanan cloud dan hosting)."
+Name IPv6: "IPv6 (layanan cloud dan hosting)."
 Name IPv6-Bogons: "IPv6 (bogon)."
 Name IPv6-ISPs: "IPv6 (ISP yang mengirim spam)."
 Name IPv6-Nonblocking: "Tanda tangan jangan pemblokiran IPv6."
 Name IPv6-Other: "IPv6 (proxy, VPN, dll)."
-Name IPv6: "IPv6 (layanan cloud dan hosting)."
-Name KR_cidram.inc: "IPv4 pemblokir Korea Selatan"
+Name Search engines blocker module: "Modul pemblokir mesin pencari"
 Name compat_bunnycdn.php: "Modul kompatibilitas BunnyCDN"
 Name module_abuseipdb.php: "Modul AbuseIPDB"
 Name module_badhosts.php: "Modul pemblokir untuk host buruk"
@@ -63,7 +62,11 @@ Name module_httpver.php: "Modul pemeriksa versi HTTP"
 Name module_projecthoneypot.php: "Modul Project Honeypot"
 Name module_refspam.php: "Modul spam pengarah"
 Name module_sfs.php: "Modul Stop Forum Spam"
-Name Search engines blocker module: "Modul pemblokir mesin pencari"
+checkbox_label_fields_logs: "Sertakan bidang ini dalam entri log?"
+checkbox_label_fields_omit: "Abaikan bidang ini saat kosong?"
+checkbox_label_fields_page_output: "Sertakan bidang ini di halaman "akses ditolak"?"
+checkbox_label_stage_enable: "Aktifkan tahap ini?"
+checkbox_label_stage_log_errors: "Mencatat kesalahan yang dihasilkan selama tahap ini?"
 config_PHPMailer: "Konfigurasi untuk PHPMailer (digunakan untuk otentikasi dua-faktor)."
 config_PHPMailer_add_reply_to_address: "Alamat balasan yang dikutip saat mengirim email melalui SMTP."
 config_PHPMailer_add_reply_to_name: "Nama balasan yang dikutip saat mengirim email melalui SMTP."
@@ -92,14 +95,12 @@ config_general_disable_frontend: "Menonaktifkan akses bagian depan? Akses bagian
 config_general_disabled_channels: "Ini dapat digunakan untuk mencegah CIDRAM dari menggunakan saluran tertentu saat mengirim permintaan (misalnya, saat memperbarui, saat mengambil metadata komponen, dll)."
 config_general_emailaddr: "Jika Anda ingin, Anda dapat menyediakan alamat email sini untuk diberikan kepada pengguna ketika diblokir, bagi mereka untuk menggunakan sebagai metode kontak untuk dukungan dan/atau bantuan untuk dalam hal mereka menjadi diblokir keliru atau diblokir oleh kesalahan. PERINGATAN: Apapun alamat email Anda menyediakan sini akan pasti diperoleh oleh spambots dan pencakar/scrapers ketika digunakan disini, dan karena itu, jika Anda ingin memberikan alamat email disini, itu sangat direkomendasikan Anda memastikan bahwa alamat email yang Anda berikan disini adalah alamat yang dapat dibuang dan/atau adalah alamat Anda tidak keberatan menjadi di-spam (dengan kata lain, Anda mungkin tidak ingin untuk menggunakan Anda alamat email yang personal primer atau bisnis primer)."
 config_general_emailaddr_display_style: "Bagaimana Anda lebih suka alamat email yang akan disajikan kepada pengguna?"
-config_general_empty_fields: "Bagaimana seharusnya CIDRAM menangani bidang kosong saat membuat log dan menampilkan informasi kejadian blokir? "include" = Sertakan bidang kosong. "omit" = Hilangkan bidang kosong [default]."
 config_general_error_log: "File untuk mencatat kesalahan tidak fatal yang terdeteksi. Spesifikasikan nama file, atau biarkan kosong untuk menonaktifkan."
-config_general_error_log_stages: "Daftar tahapan dalam rantai eksekusi yang seharusnya memiliki kesalahan yang dihasilkan dicatat."
 config_general_events: "File yang terdaftar disini dimuat langsung setelah file pengendali acara. Biasanya diisi oleh halaman pembaruan saat mengaktifkan komponen yang membutuhkannya saat diperlukan. Dalam kebanyakan kasus, bisa mengabaikannya."
+config_general_fields: "Kontrol untuk bidang selama acara blok (ketika permintaan diblokir)."
 config_general_forbid_on_block: "Pesan status HTTP mana yang harus dikirim oleh CIDRAM ketika memblokir permintaan? (Lihat dokumentasi untuk informasi lebih lanjut)."
 config_general_force_hostname_lookup: "Memaksa periksa untuk nama host? True = Ya; False = Tidak [Default]. Periksa untuk nama host biasanya dilakukan pada dasar "sesuai kebutuhan", tapi bisa dipaksakan untuk semua permintaan. Melakukan hal tersebut mungkin berguna sebagai sarana untuk memberikan informasi lebih rinci di log, tapi mungkin juga memiliki sedikit efek negatif pada kinerja."
 config_general_frontend_log: "File untuk mencatat upaya masuk bagian depan. Spesifikasikan nama file, atau biarkan kosong untuk menonaktifkan."
-config_general_hide_version: "Sembunyikan informasi versi dari log dan output halaman? True = Ya; False = Tidak [Default]."
 config_general_ipaddr: "Dimana menemukan alamat IP dari permintaan alamat? (Bergunak untuk pelayanan-pelayanan seperti Cloudflare dan sejenisnya). Default = REMOTE_ADDR. PERINGATAN: Jangan ganti ini kecuali Anda tahu apa yang Anda lakukan!"
 config_general_lang: "Tentukan bahasa default untuk CIDRAM."
 config_general_lang_override: "Melokalisasikan sesuai dengan HTTP_ACCEPT_LANGUAGE jika memungkinkan? True = Ya [Default]; False = Tidak."
@@ -119,7 +120,7 @@ config_general_search_engine_verification: "Mencoba memverifikasi permintaan dar
 config_general_signatures_update_event_log: "File untuk mencatat ketika tanda tangan diperbarui melalui bagian depan. Spesifikasikan nama file, atau biarkan kosong untuk menonaktifkan."
 config_general_silent_mode: "Seharusnya CIDRAM diam-diam mengarahkan diblokir upaya akses bukannya menampilkan halaman "Akses Ditolak"? Jika ya, menentukan lokasi untuk mengarahkan diblokir upaya akses. Jika tidak, kosongkan variabel ini."
 config_general_social_media_verification: "Mencoba memverifikasi permintaan media sosial? Verifikasi media sosial memberikan perlindungan terhadap permintaan media sosial palsu (permintaan semacam ini akan diblokir). True = Mengaktifkan verifikasi media sosial [Default]; False = Mengaktifkan verifikasi media sosial."
-config_general_statistics: "Lacak statistik penggunaan CIDRAM? True = Ya; False = Tidak [Default]."
+config_general_stages: "Kontrol untuk tahapan rantai eksekusi (apakah diaktifkan, apakah kesalahan dicatat, dll)."
 config_general_time_format: "Format notasi tanggal/waktu yang digunakan oleh CIDRAM. Opsi tambahan dapat ditambahkan atas permintaan."
 config_general_time_offset: "Offset zona waktu dalam hitungan menit."
 config_general_timezone: "Ini digunakan untuk menentukan zona waktu yang akan digunakan (misalnya, Africa/Cairo, America/New_York, Asia/Tokyo, Australia/Perth, Europe/Berlin, Pacific/Guam, dll). Menentukan "SYSTEM" untuk membiarkan PHP menangani ini untuk Anda secara otomatis."
@@ -138,9 +139,6 @@ config_hcaptcha_signature_limit: &CaptchaSignatureLimit "Jumlah maksimum tanda t
 config_hcaptcha_sitekey: *CaptchaDashboard
 config_hcaptcha_usemode: &CaptchaUseMode "Kapan CAPTCHA harus ditawarkan? Catat: Permintaan yang masuk daftar putih atau diverifikasi dan tidak diblokir tidak perlu menyelesaikan CAPTCHA."
 config_legal: "Konfigurasi untuk persyaratan hukum."
-config_legal_omit_hostname: "Jangan memasukkan nama host di log? True = Ya; False = Tidak [Default]."
-config_legal_omit_ip: "Jangan memasukkan alamat IP di log? True = Ya; False = Tidak [Default]. Catat: "pseudonymise_ip_addresses" menjadi tidak perlu ketika "omit_ip" adalah "true"."
-config_legal_omit_ua: "Jangan memasukkan agen pengguna di log? True = Ya; False = Tidak [Default]."
 config_legal_privacy_policy: "Alamat dari kebijakan privasi yang relevan untuk ditampilkan di footer dari setiap halaman yang dihasilkan. Spesifikasikan URL, atau biarkan kosong untuk menonaktifkan."
 config_legal_pseudonymise_ip_addresses: "Pseudonymise alamat IP saat menulis file log? True = Ya [Default]; False = Tidak."
 config_rate_limiting: "Konfigurasi untuk pembatasan laju (tidak direkomendasikan untuk penggunaan umum)."
@@ -227,7 +225,6 @@ field_filename: "Nama file:"
 field_filetype_directory: "Direktori"
 field_filetype_info: "File {EXT}"
 field_filetype_unknown: "Tidak Diketahui"
-field_include: "Sertakan bidang kosong"
 field_infractions: "Pelanggaran"
 field_install: "Instal"
 field_latest_version: "Versi Terbaru"
@@ -237,7 +234,6 @@ field_new_name: "Nama baru:"
 field_nonclickable_text: "Teks yang tidak dapat diklik"
 field_not_tracking: "Tidak melacak."
 field_ok: "OK"
-field_omit: "Hilangkan bidang kosong"
 field_options: "Opsi"
 field_password: "Kata Sandi"
 field_permissions: "Izin"
@@ -270,12 +266,47 @@ field_update_signatures_files: "Memperbarui file tanda tangan"
 field_upload_file: "Mengupload file baru"
 field_username: "Nama Pengguna"
 field_verified: "Identitas terverifikasi"
-field_whitelisted_requests: "Whitelisted requests"
 field_verified_requests: "Verified search engine and social media requests"
 field_verify: "Memverifikasi"
 field_verify_all: "Memverifikasi semua"
+field_whitelisted_requests: "Whitelisted requests"
 field_your_version: "Versi Anda"
 header_login: "Silahkan masuk untuk melanjutkan."
+info_some_useful_links: |
+ Beberapa link yang berguna:<br />
+     <ul class="pieul">
+       <li><span class="comCat">Alat, sumber daya, dll untuk CIDRAM.</span>
+         <ul class="comSub">
+           <li>{{Links.CIDRAM.Issues}} – Halaman masalah untuk CIDRAM (dukungan, bantuan, dll).</li>
+           <li>{{Links.CIDRAM.WordPress}} – Plugin WordPress untuk CIDRAM.</li>
+           <li>{{Links.CIDRAM.Extras}} – Berbagai tambahan.</li>
+         </ul>
+       </li>
+       <li><span class="comCat">Grup, forum, komunitas, dll.</span>
+         <ul class="comSub">
+           <li>{{Links.PHP.Earth.Facebook}} – Sumber belajar dan diskusi PHP.</li>
+           <li><a href="https://www.stopforumspam.com/forum/" rel="noopener noreferrer external">Forum@Stop Forum Spam</a> – Forum diskusi yang berguna tentang menghentikan spam forum.</li>
+         </ul>
+       </li>
+       <li><span class="comCat">Alat, sumber daya, layanan, dll bermanfaat lainnya.</span>
+         <ul class="comSub">
+           <li>{{Links.SFS}} – Mempertahankan basis data spammer forum yang dikenal. Berguna untuk melindungi situs web dan forum terhadap spammer.</li>
+           <li><a href="https://bgp.he.net/" hreflang="en" rel="noopener noreferrer external">Hurricane Electric BGP Toolkit</a> – Dapatkan CIDRs dari ASN, menentukan hubungan ASN, menemukan ASN berdasarkan nama jaringan, dll.</li>
+           <li>{{Links.BGPView}} – Dapatkan CIDRs dari ASN, menentukan hubungan ASN, menemukan ASN berdasarkan nama jaringan, dll.</li>
+           <li><a href="https://radar.qrator.net/" hreflang="en" rel="noopener noreferrer external">Radar oleh Qrator</a> – Alat yang berguna untuk memeriksa konektivitas ASN serta berbagai informasi lainnya tentang ASN.</li>
+           <li><a href="https://www.spamhaus.org/statistics/botnet-asn/" rel="noopener noreferrer external">Proyek Spamhaus</a> – Menampilkan laporan tentang tingkat infeksi botnet untuk ASN.</li>
+           <li>{{Links.AbuseIPDB}} – Mempertahankan database IP berbahaya dikenal; Menyediakan API untuk memeriksa dan melaporkan IP.</li>
+         </ul>
+       </li>
+       <li><span class="comCat">Sumber daya informasi dan pembelajaran.</span>
+         <ul class="comSub">
+           <li>{{Links.PHP.Earth.Website}} – Sumber belajar dan diskusi PHP.</li>
+           <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Tabel Kerentanan</a> – Mencantumkan berbagai versi dari paket-paket yang aman dan tidak aman (HHVM, PHP, phpMyAdmin, Python, dll).</li>
+           <li><a href="https://maikuolan.github.io/Compatibility-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Tabel Kompatibilitas</a> – Mencantumkan informasi kompatibilitas untuk berbagai paket (CIDRAM, phpMussel, dll).</li>
+         </ul>
+       </li>
+     </ul>
+
 label_active_config_file: "File konfigurasi aktif:"
 label_actual: "Sebenarnya"
 label_aux_actBlk: "memblokir"
@@ -363,11 +394,11 @@ label_is_not_available: "%s tidak tersedia."
 label_never: "Tak pernah"
 label_next: "Berikutnya:"
 label_os: "Sistem operasi digunakan:"
+label_other: "Lain"
 label_other-ActiveIPv4: "File tanda tangan IPv4 aktif"
 label_other-ActiveIPv6: "File tanda tangan IPv6 aktif"
 label_other-ActiveModules: "Modul aktif"
 label_other-Since: "Mulai tanggal"
-label_other: "Lain"
 label_paginate: "Mempaginasi"
 label_passed: "Permintaan berlalu"
 label_php: "Versi PHP digunakan:"
@@ -391,14 +422,14 @@ label_textmode_simple: "Sederhana"
 label_textmode_tally: "Penghitungannya"
 label_timeout_limit: "Modul ini melakukan permintaan eksternal. Disini Anda dapat menentukan batas waktu untuk permintaan tersebut (dalam detik)."
 label_total: "Total"
+label_unignore: "Jangan abaikan ini"
+label_unstable: "Terbaru tidak stabil:"
+label_used_with: "Digunakan dengan:"
 label_usemode_any: "Hanya jika dalam batas tanda tangan, dan tidak dilarang (terlepas dari apakah diblokir)."
 label_usemode_blkd: "Hanya jika diblokir, dalam batas tanda tangan, dan tidak dilarang."
 label_usemode_blkd_mrkd: "Hanya jika diblokir, ditandai khusus untuk digunakan, dalam batas tanda tangan, dan tidak dilarang."
 label_usemode_not_blkd: "Hanya jika tidak diblokir."
 label_usemode_not_blkd_mrkd: "Hanya jika tidak diblokir, atau jika ditandai khusus untuk digunakan, dalam batas tanda tangan, dan tidak dilarang."
-label_unignore: "Jangan abaikan ini"
-label_unstable: "Terbaru tidak stabil:"
-label_used_with: "Digunakan dengan:"
 label_your_ip: "IP Anda:"
 label_your_ua: "UA Anda:"
 link_accounts: "Akun"
@@ -427,6 +458,13 @@ logs_logfile_doesnt_exist: "Log yang dipilih tidak ada!"
 logs_no_logfile_selected: "Tidak ada log dipilih."
 logs_no_logfiles_available: "Tidak ada log tersedia."
 max_login_attempts_exceeded: "Jumlah maksimum upaya untuk memasukkan tercapai; Akses ditolak."
+msg_subject_2fa: "Otentikasi Dua-Faktor"
+msg_template_2fa: |
+ <center><p>Salam, %1$s.<br />
+ <br />
+ Kode otentikasi dua-faktor Anda untuk masuk ke depan CIDRAM:</p>
+ <h1>%2$s</h1>
+ <p>Kode ini berakhir dalam 10 menit.</p></center>
 notice_click_here: "Klik disini untuk informasi lebih lanjut."
 notice_new_major_version: "Perhatian: %s sekarang tersedia (Anda menggunakan %s). Anda memenuhi persyaratan PHP minimum versi ini. Namun, beberapa langkah manual diperlukan untuk memperbarui."
 previewer_days: "Hari"
@@ -496,6 +534,24 @@ response_verification_failed: "Verifikasi gagal! Komponen mungkin rusak."
 response_verification_success: "Verifikasi sukses! Tidak ada masalah ditemukan."
 response_yes: "Ya"
 security_warning: "Masalah yang tidak diharapkan terjadi saat memproses permintaan Anda. Silahkan coba lagi. Jika masalah terus berlanjut, hubungi dukungan."
+stage_aux: "Jalankan aturan tambahan"
+stage_auxredirect: "Arahkan ulang sesuai dengan aturan tambahan"
+stage_captcha: "Terapkan CAPTCHA (permintaan yang diblokir)"
+stage_modules: "Jalankan modul"
+stage_nonblockedcaptcha: "Terapkan CAPTCHA (permintaan yang tidak diblokir)"
+stage_output: "Menghasilkan keluaran (permintaan yang diblokir)"
+stage_ov: "Jalankan verifikasi lainnya"
+stage_preparefields: "Siapkan bidang untuk keluaran dan log"
+stage_reporting: "Jalankan pelaporan"
+stage_rl: "Jalankan pembatasan laju"
+stage_sev: "Jalankan verifikasi mesin pencari"
+stage_smv: "Jalankan verifikasi media sosial"
+stage_statistics: "Memperbarui statistik"
+stage_terminate: "Hentikan permintaan (permintaan yang diblokir)"
+stage_tests: "Jalankan tes untuk file tanda tangan"
+stage_tracking: "Jalankan pelacakan IP"
+stage_webhooks: "Jalankan webhook"
+stage_writelogs: "Mencatat ke log (permintaan yang diblokir)"
 state_async_deny: "Izin tidak memadai untuk melakukan permintaan asinkron. Coba masuk lagi."
 state_cache_is_empty: "Cache kosong."
 state_complete_access: "Akses lengkap"
@@ -557,6 +613,7 @@ tip_aux_priority: "Prioritas (maksimum➡(sama🔄setara)➡terendah):"
 tip_aux_webhooks: "Saat aturan dipicu, CIDRAM akan berusaha memberi tahu webhook yang terhubung tentang acara tersebut."
 tip_cache_data: "Salam, {username}.<br />Disini Anda bisa meninjau isi cache."
 tip_cidr_calc: "Salam, {username}.<br />Kalkulator CIDR memungkinkan Anda untuk menghitung yang CIDR alamat IP adalah faktor."
+tip_click_the_component: "Klik nama komponen untuk detail lebih lanjut."
 tip_condition_placeholder: "Tentukan nilai, atau biarkan kosong untuk diabaikan."
 tip_config: "Salam, {username}.<br />Halaman konfigurasi memungkinkan Anda untuk memodifikasi konfigurasi untuk CIDRAM dari bagian depan."
 tip_custom_query: "Masukkan kueri disini (opsional)."
@@ -574,7 +631,6 @@ tip_ip_test: "Salam, {username}.<br />Halaman IP test memungkinkan Anda untuk me
 tip_ip_test_switches: "(Bila tidak dipilih, hanya file tanda tangan akan diuji)."
 tip_ip_tracking: "Salam, {username}.<br />Halaman pelacakan IP memungkinkan Anda untuk memeriksa status pelacakan alamat IP, untuk memeriksa yang mereka telah dilarang, dan mencabut pelacakan untuk mereka jika Anda ingin melakukan."
 tip_logs: "Salam, {username}.<br />Pilih log dari daftar dibawah untuk melihat isi log."
-tip_click_the_component: "Klik nama komponen untuk detail lebih lanjut."
 tip_range: "Salam, {username}.<br />Halaman ini menunjukkan beberapa informasi statistik dasar tentang rentang IP yang dicakup oleh file tanda tangan yang saat ini aktif."
 tip_range_intersector: "Salam, {username}.<br />Intersektor rentang dapat digunakan untuk menentukan faktor persekutuan dari dua kumpulan rentang."
 tip_range_subtractor: "Salam, {username}.<br />Pengurangan rentang dapat digunakan untuk mengurangi satu rentang IP/CIDR dari yang lain."
@@ -585,46 +641,3 @@ tip_statistics_disabled: "Catat: Pelacakan statistik saat ini dinonaktifkan, nam
 tip_updates: "Salam, {username}.<br />Halaman pembaruan memungkinkan Anda untuk menginstal, menguninstal, dan memperbarui berbagai komponen CIDRAM (paket inti, tanda tangan, file L10N, dll)."
 title_login: "Masuk"
 warning_signatures_1: "Peringatan: Tidak ada file tanda tangan yang aktif!"
-
-info_some_useful_links: |
- Beberapa link yang berguna:<br />
-     <ul class="pieul">
-       <li><span class="comCat">Alat, sumber daya, dll untuk CIDRAM.</span>
-         <ul class="comSub">
-           <li>{{Links.CIDRAM.Issues}} – Halaman masalah untuk CIDRAM (dukungan, bantuan, dll).</li>
-           <li>{{Links.CIDRAM.WordPress}} – Plugin WordPress untuk CIDRAM.</li>
-           <li>{{Links.CIDRAM.Extras}} – Berbagai tambahan.</li>
-         </ul>
-       </li>
-       <li><span class="comCat">Grup, forum, komunitas, dll.</span>
-         <ul class="comSub">
-           <li>{{Links.PHP.Earth.Facebook}} – Sumber belajar dan diskusi PHP.</li>
-           <li><a href="https://www.stopforumspam.com/forum/" rel="noopener noreferrer external">Forum@Stop Forum Spam</a> – Forum diskusi yang berguna tentang menghentikan spam forum.</li>
-         </ul>
-       </li>
-       <li><span class="comCat">Alat, sumber daya, layanan, dll bermanfaat lainnya.</span>
-         <ul class="comSub">
-           <li>{{Links.SFS}} – Mempertahankan basis data spammer forum yang dikenal. Berguna untuk melindungi situs web dan forum terhadap spammer.</li>
-           <li><a href="https://bgp.he.net/" hreflang="en" rel="noopener noreferrer external">Hurricane Electric BGP Toolkit</a> – Dapatkan CIDRs dari ASN, menentukan hubungan ASN, menemukan ASN berdasarkan nama jaringan, dll.</li>
-           <li>{{Links.BGPView}} – Dapatkan CIDRs dari ASN, menentukan hubungan ASN, menemukan ASN berdasarkan nama jaringan, dll.</li>
-           <li><a href="https://radar.qrator.net/" hreflang="en" rel="noopener noreferrer external">Radar oleh Qrator</a> – Alat yang berguna untuk memeriksa konektivitas ASN serta berbagai informasi lainnya tentang ASN.</li>
-           <li><a href="https://www.spamhaus.org/statistics/botnet-asn/" rel="noopener noreferrer external">Proyek Spamhaus</a> – Menampilkan laporan tentang tingkat infeksi botnet untuk ASN.</li>
-           <li>{{Links.AbuseIPDB}} – Mempertahankan database IP berbahaya dikenal; Menyediakan API untuk memeriksa dan melaporkan IP.</li>
-         </ul>
-       </li>
-       <li><span class="comCat">Sumber daya informasi dan pembelajaran.</span>
-         <ul class="comSub">
-           <li>{{Links.PHP.Earth.Website}} – Sumber belajar dan diskusi PHP.</li>
-           <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Tabel Kerentanan</a> – Mencantumkan berbagai versi dari paket-paket yang aman dan tidak aman (HHVM, PHP, phpMyAdmin, Python, dll).</li>
-           <li><a href="https://maikuolan.github.io/Compatibility-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Tabel Kompatibilitas</a> – Mencantumkan informasi kompatibilitas untuk berbagai paket (CIDRAM, phpMussel, dll).</li>
-         </ul>
-       </li>
-     </ul>
-
-msg_template_2fa: |
- <center><p>Salam, %1$s.<br />
- <br />
- Kode otentikasi dua-faktor Anda untuk masuk ke depan CIDRAM:</p>
- <h1>%2$s</h1>
- <p>Kode ini berakhir dalam 10 menit.</p></center>
-msg_subject_2fa: "Otentikasi Dua-Faktor"

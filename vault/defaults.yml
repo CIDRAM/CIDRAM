@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Defaults file (last modified: 2022.02.21).
+# This file: Defaults file (last modified: 2022.03.01).
 ##/
 
 Config Defaults:
@@ -24,26 +24,143 @@ Config Defaults:
   error_log:
    type: "string"
    default: ""
-  error_log_stages:
+  stages:
    type: "checkbox"
-   default: "Tests,Modules,SearchEngineVerification,SocialMediaVerification,OtherVerification,Aux,Reporting,Tracking,RL,CAPTCHA,Statistics,Webhooks,Output,NonBlockedCAPTCHA"
+   default: |
+    Tests:Enable
+    Tests:LogErrors
+    Modules:Enable
+    Modules:LogErrors
+    SearchEngineVerification:Enable
+    SearchEngineVerification:LogErrors
+    SocialMediaVerification:Enable
+    SocialMediaVerification:LogErrors
+    OtherVerification:Enable
+    OtherVerification:LogErrors
+    Aux:Enable
+    Aux:LogErrors
+    Reporting:Enable
+    Reporting:LogErrors
+    Tracking:Enable
+    Tracking:LogErrors
+    RL:Enable
+    RL:LogErrors
+    CAPTCHA:Enable
+    CAPTCHA:LogErrors
+    Statistics:Enable
+    Statistics:LogErrors
+    Webhooks:Enable
+    Webhooks:LogErrors
+    PrepareFields:Enable
+    PrepareFields:LogErrors
+    Output:Enable
+    Output:LogErrors
+    WriteLogs:Enable
+    WriteLogs:LogErrors
+    Terminate:Enable
+    Terminate:LogErrors
+    AuxRedirect:Enable
+    AuxRedirect:LogErrors
+    NonBlockedCAPTCHA:Enable
+    NonBlockedCAPTCHA:LogErrors
+   labels:
+    Enable: "checkbox_label_stage_enable"
+    LogErrors: "checkbox_label_stage_log_errors"
    choices:
-    Tests: "Tests"
-    Modules: "Modules"
-    SearchEngineVerification: "SearchEngineVerification"
-    SocialMediaVerification: "SocialMediaVerification"
-    OtherVerification: "OtherVerification"
-    Aux: "Aux"
-    Reporting: "Reporting"
-    Tracking: "Tracking"
-    RL: "RL"
-    CAPTCHA: "CAPTCHA"
-    Statistics: "Statistics"
-    Webhooks: "Webhooks"
-    Output: "Output"
-    NonBlockedCAPTCHA: "NonBlockedCAPTCHA"
-   value_preg_filter:
-    "~\s~": ""
+    Tests: "stage_tests"
+    Modules: "stage_modules"
+    SearchEngineVerification: "stage_sev"
+    SocialMediaVerification: "stage_smv"
+    OtherVerification: "stage_ov"
+    Aux: "stage_aux"
+    Reporting: "stage_reporting"
+    Tracking: "stage_tracking"
+    RL: "stage_rl"
+    CAPTCHA: "stage_captcha"
+    Statistics: "stage_statistics"
+    Webhooks: "stage_webhooks"
+    PrepareFields: "stage_preparefields"
+    Output: "stage_output"
+    WriteLogs: "stage_writelogs"
+    Terminate: "stage_terminate"
+    AuxRedirect: "stage_auxredirect"
+    NonBlockedCAPTCHA: "stage_nonblockedcaptcha"
+  fields:
+   type: "checkbox"
+   default: |
+    ID:ShowInLogs
+    ID:ShowInPageOutput
+    ScriptIdent:ShowInLogs
+    ScriptIdent:ShowInPageOutput
+    DateTime:ShowInLogs
+    DateTime:ShowInPageOutput
+    IPAddr:ShowInLogs
+    IPAddr:ShowInPageOutput
+    IPAddrResolved:ShowInLogs
+    IPAddrResolved:ShowInPageOutput
+    IPAddrResolved:OmitIfEmpty
+    Query:ShowInLogs
+    Query:ShowInPageOutput
+    Query:OmitIfEmpty
+    Referrer:ShowInLogs
+    Referrer:ShowInPageOutput
+    Referrer:OmitIfEmpty
+    UA:ShowInLogs
+    UA:ShowInPageOutput
+    UA:OmitIfEmpty
+    UALC:OmitIfEmpty
+    SignatureCount:ShowInLogs
+    SignatureCount:ShowInPageOutput
+    Signatures:ShowInLogs
+    Signatures:ShowInPageOutput
+    WhyReason:ShowInLogs
+    WhyReason:ShowInPageOutput
+    ReasonMessage:ShowInPageOutput
+    ReasonMessage:OmitIfEmpty
+    rURI:ShowInLogs
+    rURI:ShowInPageOutput
+    rURI:OmitIfEmpty
+    Infractions:ShowInLogs
+    Infractions:OmitIfEmpty
+    ASNLookup:ShowInLogs
+    ASNLookup:OmitIfEmpty
+    CCLookup:ShowInLogs
+    CCLookup:OmitIfEmpty
+    Verified:ShowInLogs
+    Verified:OmitIfEmpty
+    Request_Method:ShowInLogs
+    Request_Method:OmitIfEmpty
+    Hostname:ShowInLogs
+    Hostname:ShowInPageOutput
+    Hostname:OmitIfEmpty
+    CAPTCHA:ShowInLogs
+    CAPTCHA:OmitIfEmpty
+   labels:
+    ShowInLogs: "checkbox_label_fields_logs"
+    ShowInPageOutput: "checkbox_label_fields_page_output"
+    OmitIfEmpty: "checkbox_label_fields_omit"
+   choices:
+    ID: "field_id"
+    ScriptIdent: "field_scriptversion"
+    DateTime: "field_datetime"
+    IPAddr: "field_ipaddr"
+    IPAddrResolved: "field_ipaddr_resolved"
+    Query: "field_query"
+    Referrer: "field_referrer"
+    UA: "field_ua"
+    UALC: "field_ualc"
+    SignatureCount: "field_sigcount"
+    Signatures: "field_sigref"
+    WhyReason: "field_whyreason"
+    ReasonMessage: "field_reasonmessage"
+    rURI: "field_rURI"
+    Infractions: "field_infractions"
+    ASNLookup: "field_asnlookup"
+    CCLookup: "field_cclookup"
+    Verified: "field_verified"
+    Request_Method: "field_Request_Method"
+    Hostname: "field_hostname"
+    CAPTCHA: "field_captcha"
   truncate:
    type: "kb"
    default: "0KB"
@@ -259,8 +376,8 @@ Config Defaults:
    type: "string"
    default: "default"
    choices:
-    default: "{field_clickable_link}"
-    noclick: "{field_nonclickable_text}"
+    default: "field_clickable_link"
+    noclick: "field_nonclickable_text"
   disable_frontend:
    type: "bool"
    default: true
@@ -315,24 +432,12 @@ Config Defaults:
     PASSWORD_ARGON2I: "PASSWORD_ARGON2I (PHP >= 7.2.0)"
     PASSWORD_ARGON2ID: "PASSWORD_ARGON2ID (PHP >= 7.3.0)"
    choice_filter: "FilterByDefined"
-  statistics:
-   type: "bool"
-   default: false
   force_hostname_lookup:
    type: "bool"
    default: false
   allow_gethostbyaddr_lookup:
    type: "bool"
    default: true
-  hide_version:
-   type: "bool"
-   default: false
-  empty_fields:
-   type: "string"
-   default: "omit"
-   choices:
-    omit: "{field_omit}"
-    include: "{field_include}"
   log_sanitisation:
    type: "bool"
    default: false
@@ -538,15 +643,6 @@ Config Defaults:
   pseudonymise_ip_addresses:
    type: "bool"
    default: true
-  omit_ip:
-   type: "bool"
-   default: false
-  omit_hostname:
-   type: "bool"
-   default: false
-  omit_ua:
-   type: "bool"
-   default: false
   privacy_policy:
    type: "url"
    default: ""
@@ -659,8 +755,8 @@ Config Defaults:
    type: "checkbox"
    default: ""
    choices:
-    Whitelisted: "{field_whitelisted_requests}"
-    Verified: "{field_verified_requests}"
+    Whitelisted: "field_whitelisted_requests"
+    Verified: "field_verified_requests"
  supplementary_cache_options:
   prefix:
    type: "string"

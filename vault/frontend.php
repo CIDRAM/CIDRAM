@@ -183,16 +183,22 @@ $CIDRAM['Warnings'] = [];
 
 /** Warns if maintenance mode is enabled. */
 if ($CIDRAM['Config']['general']['maintenance_mode']) {
-    $CIDRAM['Warnings'][] = '<span class="txtRd"><u>' . $CIDRAM['L10N']->getString('state_maintenance_mode') . '</u></span>';
+    $CIDRAM['Warnings'][] = $CIDRAM['L10N']->getString('state_maintenance_mode');
 }
+
+/** Alpha state warning. */
+$CIDRAM['Warnings'][] = 'Warning: Currently running an unreleased alpha! Breakage is anticipated!';
 
 /** Warns if no signature files are active. */
 if (empty($CIDRAM['Config']['signatures']['ipv4']) && empty($CIDRAM['Config']['signatures']['ipv6'])) {
-    $CIDRAM['Warnings'][] = '<span class="txtRd"><u>' . $CIDRAM['L10N']->getString('warning_signatures_1') . '</u></span>';
+    $CIDRAM['Warnings'][] = $CIDRAM['L10N']->getString('warning_signatures_1');
 }
 
 /** Prepare warnings. */
-$CIDRAM['FE']['MaintenanceWarning'] = $CIDRAM['Warnings'] ? "\n<div class=\"center\">⚠️ " . implode(" ⚠️<br />\n⚠️ ", $CIDRAM['Warnings']) . ' ⚠️</div><hr />' : '';
+$CIDRAM['FE']['Warnings'] = count($CIDRAM['Warnings']) ? "\n<div class=\"center\"><span class=\"warning\">" . implode(
+    "</span><br />\n<span class=\"warning\">",
+    $CIDRAM['Warnings']
+) . '</span></div><hr />' : '';
 
 /** Cleanup. */
 unset($CIDRAM['Warnings']);

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Captcha class (last modified: 2022.02.21).
+ * This file: Captcha class (last modified: 2022.03.01).
  */
 
 namespace CIDRAM\Core;
@@ -89,7 +89,7 @@ class Captcha
         $this->CIDRAM['BlockInfo']['CAPTCHA'] = $this->CIDRAM['L10N']->getString('state_failed');
 
         /** Append to reCAPTCHA statistics if necessary. */
-        if ($this->CIDRAM['Config']['general']['statistics']) {
+        if (isset($this->CIDRAM['Stages']['Statistics:Enable'], $this->CIDRAM['StatisticsTracked']['CAPTCHAs-Failed'])) {
             $this->CIDRAM['Statistics']['CAPTCHAs-Failed']++;
             $this->CIDRAM['Statistics-Modified'] = true;
         }
@@ -106,7 +106,7 @@ class Captcha
         $this->CIDRAM['BlockInfo']['CAPTCHA'] = $this->CIDRAM['L10N']->getString('state_passed');
 
         /** Append to reCAPTCHA statistics if necessary. */
-        if ($this->CIDRAM['Config']['general']['statistics']) {
+        if (isset($this->CIDRAM['Stages']['Statistics:Enable'], $this->CIDRAM['StatisticsTracked']['CAPTCHAs-Passed'])) {
             $this->CIDRAM['Statistics']['CAPTCHAs-Passed']++;
             $this->CIDRAM['Statistics-Modified'] = true;
         }

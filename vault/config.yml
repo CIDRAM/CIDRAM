@@ -115,6 +115,14 @@ general:
  protect_frontend: true
  maintenance_mode: false
  default_algo: "PASSWORD_DEFAULT"
+ statistics: |
+  Blocked-IPv4
+  Blocked-IPv6
+  Blocked-Other
+  Banned-IPv4
+  Banned-IPv6
+  CAPTCHAs-Failed
+  CAPTCHAs-Passed
  force_hostname_lookup: false
  allow_gethostbyaddr_lookup: true
  log_sanitisation: false

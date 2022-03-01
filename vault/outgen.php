@@ -23,6 +23,9 @@ $CIDRAM['Stages'] = array_flip(explode("\n", $CIDRAM['Config']['general']['stage
 /** Usable by events to determine which part of the output generator we're at. */
 $CIDRAM['Stage'] = '';
 
+/** Initialise statistics tracked. */
+$CIDRAM['StatisticsTracked'] = array_flip(explode("\n", $CIDRAM['Config']['general']['statistics']));
+
 /** Reset bypass flags. */
 $CIDRAM['ResetBypassFlags']();
 
@@ -43,6 +46,9 @@ if (isset($CIDRAM['Stages']['Statistics:Enable'])) {
             'Blocked-Other' => 0,
             'Banned-IPv4' => 0,
             'Banned-IPv6' => 0,
+            'Passed-IPv4' => 0,
+            'Passed-IPv6' => 0,
+            'Passed-Other' => 0,
             'CAPTCHAs-Failed' => 0,
             'CAPTCHAs-Passed' => 0
         ];
@@ -416,28 +422,73 @@ if (isset($CIDRAM['Stages']['CAPTCHA:Enable']) && $CIDRAM['BlockInfo']['Signatur
 }
 
 /** Update statistics if necessary. */
-if (isset($CIDRAM['Stages']['Statistics:Enable']) && $CIDRAM['BlockInfo']['SignatureCount'] > 0) {
+if (isset($CIDRAM['Stages']['Statistics:Enable'])) {
     $CIDRAM['Stage'] = 'Statistics';
-    if (!empty($CIDRAM['Banned'])) {
-        if ($CIDRAM['BlockInfo']['IPAddrResolved']) {
-            $CIDRAM['Statistics']['Banned-IPv4']++;
-            $CIDRAM['Statistics']['Banned-IPv6']++;
+    if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
+        if (!empty($CIDRAM['Banned'])) {
+            if ($CIDRAM['BlockInfo']['IPAddrResolved']) {
+                if (isset($CIDRAM['StatisticsTracked']['Banned-IPv4'])) {
+                    $CIDRAM['Statistics']['Banned-IPv4']++;
+                    $CIDRAM['Statistics-Modified'] = true;
+                }
+                if (isset($CIDRAM['StatisticsTracked']['Banned-IPv6'])) {
+                    $CIDRAM['Statistics']['Banned-IPv6']++;
+                    $CIDRAM['Statistics-Modified'] = true;
+                }
+            } elseif ($CIDRAM['LastTestIP'] === 4) {
+                if (isset($CIDRAM['StatisticsTracked']['Banned-IPv4'])) {
+                    $CIDRAM['Statistics']['Banned-IPv4']++;
+                    $CIDRAM['Statistics-Modified'] = true;
+                }
+            } elseif ($CIDRAM['LastTestIP'] === 6) {
+                if (isset($CIDRAM['StatisticsTracked']['Banned-IPv6'])) {
+                    $CIDRAM['Statistics']['Banned-IPv6']++;
+                    $CIDRAM['Statistics-Modified'] = true;
+                }
+            }
+        } elseif ($CIDRAM['BlockInfo']['IPAddrResolved']) {
+            if (isset($CIDRAM['StatisticsTracked']['Blocked-IPv4'])) {
+                $CIDRAM['Statistics']['Blocked-IPv4']++;
+                $CIDRAM['Statistics-Modified'] = true;
+            }
+            if (isset($CIDRAM['StatisticsTracked']['Blocked-IPv6'])) {
+                $CIDRAM['Statistics']['Blocked-IPv6']++;
+                $CIDRAM['Statistics-Modified'] = true;
+            }
         } elseif ($CIDRAM['LastTestIP'] === 4) {
-            $CIDRAM['Statistics']['Banned-IPv4']++;
+            if (isset($CIDRAM['StatisticsTracked']['Blocked-IPv4'])) {
+                $CIDRAM['Statistics']['Blocked-IPv4']++;
+                $CIDRAM['Statistics-Modified'] = true;
+            }
         } elseif ($CIDRAM['LastTestIP'] === 6) {
-            $CIDRAM['Statistics']['Banned-IPv6']++;
+            if (isset($CIDRAM['StatisticsTracked']['Blocked-IPv6'])) {
+                $CIDRAM['Statistics']['Blocked-IPv6']++;
+                $CIDRAM['Statistics-Modified'] = true;
+            }
+        } else {
+            if (isset($CIDRAM['StatisticsTracked']['Blocked-Other'])) {
+                $CIDRAM['Statistics']['Blocked-Other']++;
+                $CIDRAM['Statistics-Modified'] = true;
+            }
         }
-    } elseif ($CIDRAM['BlockInfo']['IPAddrResolved']) {
-        $CIDRAM['Statistics']['Blocked-IPv4']++;
-        $CIDRAM['Statistics']['Blocked-IPv6']++;
-    } elseif ($CIDRAM['LastTestIP'] === 4) {
-        $CIDRAM['Statistics']['Blocked-IPv4']++;
-    } elseif ($CIDRAM['LastTestIP'] === 6) {
-        $CIDRAM['Statistics']['Blocked-IPv6']++;
     } else {
-        $CIDRAM['Statistics']['Blocked-Other']++;
+        if ($CIDRAM['LastTestIP'] === 4) {
+            if (isset($CIDRAM['StatisticsTracked']['Passed-IPv4'])) {
+                $CIDRAM['Statistics']['Passed-IPv4']++;
+                $CIDRAM['Statistics-Modified'] = true;
+            }
+        } elseif ($CIDRAM['LastTestIP'] === 6) {
+            if (isset($CIDRAM['StatisticsTracked']['Passed-IPv6'])) {
+                $CIDRAM['Statistics']['Passed-IPv6']++;
+                $CIDRAM['Statistics-Modified'] = true;
+            }
+        } else {
+            if (isset($CIDRAM['StatisticsTracked']['Passed-Other'])) {
+                $CIDRAM['Statistics']['Passed-Other']++;
+                $CIDRAM['Statistics-Modified'] = true;
+            }
+        }
     }
-    $CIDRAM['Statistics-Modified'] = true;
 }
 
 /** Destroy cache object and some related values. */

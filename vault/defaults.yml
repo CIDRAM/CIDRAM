@@ -432,6 +432,27 @@ Config Defaults:
     PASSWORD_ARGON2I: "PASSWORD_ARGON2I (PHP >= 7.2.0)"
     PASSWORD_ARGON2ID: "PASSWORD_ARGON2ID (PHP >= 7.3.0)"
    choice_filter: "FilterByDefined"
+  statistics:
+   type: "checkbox"
+   default: |
+    Blocked-IPv4
+    Blocked-IPv6
+    Blocked-Other
+    Banned-IPv4
+    Banned-IPv6
+    CAPTCHAs-Failed
+    CAPTCHAs-Passed
+   choices:
+    Blocked-IPv4: "{label_blocked} – IPv4"
+    Blocked-IPv6: "{label_blocked} – IPv6"
+    Blocked-Other: "{label_blocked} – {label_other}"
+    Banned-IPv4: "{label_banned} – IPv4"
+    Banned-IPv6: "{label_banned} – IPv6"
+    Passed-IPv4: "{label_passed} – IPv4"
+    Passed-IPv6: "{label_passed} – IPv6"
+    Passed-Other: "{label_passed} – {label_other}"
+    CAPTCHAs-Failed: "{label_captcha} – {state_failed}"
+    CAPTCHAs-Passed: "{label_captcha} – {state_passed}"
   force_hostname_lookup:
    type: "bool"
    default: false
@@ -448,8 +469,6 @@ Config Defaults:
     GitHub: "GitHub"
     BitBucket: "BitBucket"
     GoogleDNS: "GoogleDNS"
-   value_preg_filter:
-    "~\s~": ""
   default_timeout:
    type: "int"
    default: 12

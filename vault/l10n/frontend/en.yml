@@ -121,6 +121,7 @@ config_general_signatures_update_event_log: "A file for logging when signatures 
 config_general_silent_mode: "Should CIDRAM silently redirect blocked access attempts instead of displaying the "Access Denied" page? If yes, specify the location to redirect blocked access attempts to. If no, leave this variable blank."
 config_general_social_media_verification: "Attempt to verify social media requests? Social media verification provides protection against fake social media requests (such requests will be blocked). True = Enable social media verification [Default]; False = Disable social media verification."
 config_general_stages: "Controls for the stages of the execution chain (whether enabled, whether errors are logged, etc)."
+config_general_statistics: "Controls which statistical information to track."
 config_general_time_format: "The date/time notation format used by CIDRAM. Additional options may be added upon request."
 config_general_time_offset: "Timezone offset in minutes."
 config_general_timezone: "This is used to specify the timezone to use (e.g., Africa/Cairo, America/New_York, Asia/Tokyo, Australia/Perth, Europe/Berlin, Pacific/Guam, etc). Specify "SYSTEM" to let PHP handle this for you automatically."

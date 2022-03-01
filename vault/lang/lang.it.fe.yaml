@@ -7,22 +7,23 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Italian language data for the front-end (last modified: 2022.01.22).
+# This file: Italian language data for the front-end (last modified: 2022.03.01).
 ##/
 
 Extended Description Bypasses: "Un file per bypassare alcune delle firme predefinite normalmente inclusi nel pacchetto principale."
 Extended Description Chart.js: "Consente al front-end di generare grafici a torta.<br />{{Links.Chart.js}} è disponibile tramite la <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
+Extended Description IPv4: &ExtDesCloud "Blocca servizi cloud indesiderate e punti finali non umani."
 Extended Description IPv4-Bogons: &ExtDesBogons "Blocca bogon/marziano CIDRs."
 Extended Description IPv4-ISPs: &ExtDesISPs "Blocca ISP pericolosi e spam incline (include reti multiplay, che possono contenere endpoint sia umani che non umani)."
 Extended Description IPv4-Nonblocking: &ExtDesNonblocking "Utile per la profilazione, ma non blocca nulla di per sé."
 Extended Description IPv4-Other: &ExtDesOther "Blocca CIDRs per i proxy, VPN e altri vari servizi indesiderati."
-Extended Description IPv4: &ExtDesCloud "Blocca servizi cloud indesiderate e punti finali non umani."
+Extended Description IPv6: *ExtDesCloud
 Extended Description IPv6-Bogons: *ExtDesBogons
 Extended Description IPv6-ISPs: *ExtDesISPs
 Extended Description IPv6-Nonblocking: *ExtDesNonblocking
 Extended Description IPv6-Other: *ExtDesOther
-Extended Description IPv6: *ExtDesCloud
 Extended Description PHPMailer: "Richiesto per l'utilizzo di qualsiasi funzionalità che implica l'invio di posta elettronica.<br />{{Links.PHPMailer.PHPMailer}} è disponibile tramite la licenza {{Links.PHPMailer.License}}."
+Extended Description Search engines blocker module: "Fornisce la possibilità di bloccare i motori di ricerca che potrebbero essere problematici per alcuni siti Web (ad es., Baidu, Sogou, Yandex, ecc)."
 Extended Description flags.css: "Aggiunge il supporto per i flag alla pagina dei registri front-end."
 Extended Description module_abuseipdb.php: "Blocca le richieste dagli IP elencati in AbuseIPDB."
 Extended Description module_badhosts.php: "Blocca gli host utilizzati frequentemente da spammer, hacker e altre entità nefande."
@@ -36,20 +37,20 @@ Extended Description module_httpver.php: "Permette di bloccare protocolli specif
 Extended Description module_projecthoneypot.php: "Blocca le richieste dagli IP elencati in Project Honeypot."
 Extended Description module_refspam.php: "Il blocco basato sullo spam dei referrer in genere non offre alcun vantaggio significativo in termini di sicurezza, ma in alcuni casi potrebbe essere utile per alcuni utenti, per raccogliere maggiori informazioni sulle richieste e per poterle segnalare.<br />L'installazione di questo modulo installa anche i polyfill di Symfony per {{Links.Symfony.Intl/Idn}} e {{Links.Symfony.Mbstring}} (perché questo modulo richiede la funzionalità Idn, che non tutte le installazioni PHP forniscono per impostazione predefinita), entrambi che sono disponibili tramite la licenza <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a>."
 Extended Description module_sfs.php: "Protegge le pagine di registrazione e di accesso agli IP elencati da SFS."
-Extended Description Search engines blocker module: "Fornisce la possibilità di bloccare i motori di ricerca che potrebbero essere problematici per alcuni siti Web (ad es., Baidu, Sogou, Yandex, ecc)."
 Name Bypasses: "I firme predefinite bypass."
 Name CN_cidram.inc: "Lista di blocca IPv4 per la Cina"
+Name IPv4: "IPv4 (servizi cloud e hosting)."
 Name IPv4-Bogons: "IPv4 (bogon)."
 Name IPv4-ISPs: "IPv4 (ISP di spam)."
 Name IPv4-Nonblocking: "Firme non bloccanti IPv4."
 Name IPv4-Other: "IPv4 (proxy, VPN, ecc)."
-Name IPv4: "IPv4 (servizi cloud e hosting)."
+Name IPv6: "IPv6 (servizi cloud e hosting)."
 Name IPv6-Bogons: "IPv6 (bogon)."
 Name IPv6-ISPs: "IPv6 (ISP di spam)."
 Name IPv6-Nonblocking: "Firme non bloccanti IPv6."
 Name IPv6-Other: "IPv6 (proxy, VPN, ecc)."
-Name IPv6: "IPv6 (servizi cloud e hosting)."
 Name KR_cidram.inc: "Lista di blocca IPv4 per la Corea del Sud"
+Name Search engines blocker module: "Modulo bloccante dei motori di ricerca"
 Name compat_bunnycdn.php: "BunnyCDN modulo di compatibilità"
 Name module_abuseipdb.php: "Modulo AbuseIPDB"
 Name module_badhosts.php: "Modulo bloccante di cattivi host"
@@ -63,7 +64,6 @@ Name module_httpver.php: "Modulo di controllo della versione HTTP"
 Name module_projecthoneypot.php: "Modulo Project Honeypot"
 Name module_refspam.php: "Modulo spam referrer"
 Name module_sfs.php: "Modulo Stop Forum Spam"
-Name Search engines blocker module: "Modulo bloccante dei motori di ricerca"
 config_PHPMailer: "Configurazione per PHPMailer (utilizzato per l'autenticazione a due fattori)."
 config_PHPMailer_add_reply_to_address: "L'indirizzo di risposta per citare quando si invia una posta elettronica tramite SMTP."
 config_PHPMailer_add_reply_to_name: "Il nome per la risposta per citare quando si invia una posta elettronica tramite SMTP."
@@ -277,6 +277,41 @@ field_verify_all: "Verifica tutto"
 field_whitelisted_requests: "Richieste nella lista bianca"
 field_your_version: "La Vostra Versione"
 header_login: "Per favore accedi per continuare."
+info_some_useful_links: |
+ Alcuni link utili:<br />
+     <ul class="pieul">
+       <li><span class="comCat">Strumenti, risorse, ecc per CIDRAM.</span>
+         <ul class="comSub">
+           <li>{{Links.CIDRAM.Issues}} – Pagina dei problemi per CIDRAM (supporto, assistenza, ecc).</li>
+           <li>{{Links.CIDRAM.WordPress}} – Plugin per WordPress per CIDRAM.</li>
+           <li>{{Links.CIDRAM.Extras}} – Vari extra.</li>
+         </ul>
+       </li>
+       <li><span class="comCat">Gruppi, forum, comunità, ecc.</span>
+         <ul class="comSub">
+           <li>{{Links.PHP.Earth.Facebook}} – Risorse di apprendimento e discussione per PHP.</li>
+           <li><a href="https://www.stopforumspam.com/forum/" rel="noopener noreferrer external">Forum@Stop Forum Spam</a> – Forum di discussione utile circa l'arresto di forum spam.</li>
+         </ul>
+       </li>
+       <li><span class="comCat">Altri strumenti, risorse, servizi, ecc che sono utili.</span>
+         <ul class="comSub">
+           <li>{{Links.SFS}} – Mantiene un database di spammer di forum noti. Utile per proteggere siti Web e forum dagli spammer.</li>
+           <li><a href="https://bgp.he.net/" hreflang="en" rel="noopener noreferrer external">Hurricane Electric BGP Toolkit</a> – Ottenere CIDRs da ASNs, determinare le relazioni di ASNs, scopri ASNs basata su nomi di rete, ecc.</li>
+           <li>{{Links.BGPView}} – Ottenere CIDRs da ASNs, determinare le relazioni di ASNs, scopri ASNs basata su nomi di rete, ecc.</li>
+           <li><a href="https://radar.qrator.net/" hreflang="en" rel="noopener noreferrer external">Radar da Qrator</a> – Strumento utile per verificare la connettività di ASN nonché per varie altre informazioni utili riguardo ASNs.</li>
+           <li><a href="https://www.spamhaus.org/statistics/botnet-asn/" rel="noopener noreferrer external">Il progetto Spamhaus</a> – Visualizza i rapporti per quanto riguarda ai tassi di infezione di botnet per ASN.</li>
+           <li>{{Links.AbuseIPDB}} – Mantiene un database di conosciuti indirizzi IP abusivi; Fornisce una API per il controllo e la segnalazione di IP.</li>
+         </ul>
+       </li>
+       <li><span class="comCat">Risorse informative e di apprendimento.</span>
+         <ul class="comSub">
+           <li>{{Links.PHP.Earth.Website}} – Risorse di apprendimento e discussione per PHP.</li>
+           <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Mappe di Vulnerabilità</a> – Elenca le versioni sicure e non sicure di varie pacchetti (HHVM, PHP, phpMyAdmin, Python, ecc).</li>
+           <li><a href="https://maikuolan.github.io/Compatibility-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Mappe di Compatibilità</a> – Elenca le informazioni sulla compatibilità per vari pacchetti (CIDRAM, phpMussel, ecc).</li>
+         </ul>
+       </li>
+     </ul>
+
 label_active_config_file: "File di configurazione attivo:"
 label_actual: "Effettivo"
 label_aux_actBlk: "bloccare"
@@ -368,11 +403,11 @@ label_is_not_available: "%s non è disponibile."
 label_never: "Mai"
 label_next: "Prossima:"
 label_os: "Sistema operativo utilizzata:"
+label_other: "Altro"
 label_other-ActiveIPv4: "File di firme IPv4 attivi"
 label_other-ActiveIPv6: "File di firme IPv6 attivi"
 label_other-ActiveModules: "Moduli attivi"
 label_other-Since: "Data d'inizio"
-label_other: "Altro"
 label_paginate: "Impaginare"
 label_passed: "Richieste accettate"
 label_php: "Versione PHP utilizzata:"
@@ -398,14 +433,14 @@ label_textmode_simple: "Semplice"
 label_textmode_tally: "Conteggio"
 label_timeout_limit: "Questo modulo esegue richieste esterne. Qui puoi specificare il limite del tempo scaduto per quelle richieste (in secondi)."
 label_total: "Totale"
+label_unignore: "Non ignorarlo"
+label_unstable: "Più recente instabile:"
+label_used_with: "Usato con:"
 label_usemode_any: "Solo quando entro il limite di firme, e non vietato (indipendentemente dal fatto che sia bloccato)."
 label_usemode_blkd: "Solo quando bloccato, entro il limite di firme, e non vietato."
 label_usemode_blkd_mrkd: "Solo quando bloccato, appositamente contrassegnato per l'uso, entro il limite di firme, e non vietato."
 label_usemode_not_blkd: "Solo quando non è bloccato."
 label_usemode_not_blkd_mrkd: "Solo quando non è bloccato, o quando è appositamente contrassegnato per l'uso, entro il limite di firme, e non è vietato."
-label_unignore: "Non ignorarlo"
-label_unstable: "Più recente instabile:"
-label_used_with: "Usato con:"
 label_your_ip: "Il tuo IP:"
 label_your_ua: "Il tuo UA:"
 link_accounts: "Utenti"
@@ -434,6 +469,13 @@ logs_logfile_doesnt_exist: "Log selezionato non esiste!"
 logs_no_logfile_selected: "Nessun file di log selezionato."
 logs_no_logfiles_available: "Nessun file di log disponibili."
 max_login_attempts_exceeded: "Numero massimo di tentativi di accesso superato; Accesso negato."
+msg_subject_2fa: "Autenticazione a due fattori"
+msg_template_2fa: |
+ <center><p>Salve, %1$s.<br />
+ <br />
+ Il vostro codice di autenticazione a due fattori per l'accesso al front-end di CIDRAM:</p>
+ <h1>%2$s</h1>
+ <p>Questo codice scade tra 10 minuti.</p></center>
 notice_click_here: "Clicca qui per maggiori informazioni."
 notice_new_major_version: "Avviso: %s è ora disponibile (stai usando %s). Soddisfa i requisiti minimi PHP di questa versione. Tuttavia, sono necessari alcuni passaggi manuali per l'aggiornamento."
 previewer_days: "Giorni"
@@ -590,6 +632,7 @@ tip_aux_priority: "Priorità (massimo➡(pari🔄equivalente)➡minore):"
 tip_aux_webhooks: "Quando viene attivata una regola, CIDRAM tenterà di notificare eventuali webhook collegati all'evento."
 tip_cache_data: "Salve, {username}.<br />Qui puoi rivedere il contenuto della cache."
 tip_cidr_calc: "Salve, {username}.<br />La calcolatrice CIDR permette di calcolare che cosa CIDR un indirizzo IP appartiene."
+tip_click_the_component: "Fare clic sul nome del componente per ulteriori dettagli."
 tip_condition_placeholder: "Specificare un valore, o lasciare vuoto per ignorare."
 tip_config: "Salve, {username}.<br />La pagina di configurazione permette di modificare la configurazione per CIDRAM dal front-end."
 tip_custom_query: "Inserisci la query qui (facoltativo)."
@@ -607,7 +650,6 @@ tip_ip_test: "Salve, {username}.<br />La pagina di per il test di IP permette di
 tip_ip_test_switches: "(Quando non è selezionato, solo i file delle firme verranno testati)."
 tip_ip_tracking: "Salve, {username}.<br />La pagina di tracciamento IP consente di verificare lo stato del tracciamento degli indirizzi IP, per verificare quali di essi sono stati vietati, e di revocare il tracciamento loro se si vuole farlo."
 tip_logs: "Salve, {username}.<br />Selezionare un file di log dall'elenco sottostante per visualizzare il contenuto di tale file di log."
-tip_click_the_component: "Fare clic sul nome del componente per ulteriori dettagli."
 tip_range: "Salve, {username}.<br />Questa pagina mostra alcune informazioni statistiche sugli gamme IP coperti dai file delle firme attualmente attivi."
 tip_range_intersector: "Salve, {username}.<br />L'intersettore di gamma può essere utilizzato per determinare i fattori comuni da due serie di gamme."
 tip_range_subtractor: "Salve, {username}.<br />Il sottrattore di gamma può essere utilizzato per sottrarre un gamma di IP/CIDR da un altro."
@@ -618,46 +660,3 @@ tip_statistics_disabled: "Nota: Il monitoraggio delle statistiche è attualmente
 tip_updates: "Salve, {username}.<br />La pagina degli aggiornamenti permette di installare, disinstallare e aggiornare i vari componenti di CIDRAM (il pacchetto di base, le firme, file per L10N, ecc)."
 title_login: "Accedi"
 warning_signatures_1: "Attenzione: Non ci sono file di firme attivi!"
-
-info_some_useful_links: |
- Alcuni link utili:<br />
-     <ul class="pieul">
-       <li><span class="comCat">Strumenti, risorse, ecc per CIDRAM.</span>
-         <ul class="comSub">
-           <li>{{Links.CIDRAM.Issues}} – Pagina dei problemi per CIDRAM (supporto, assistenza, ecc).</li>
-           <li>{{Links.CIDRAM.WordPress}} – Plugin per WordPress per CIDRAM.</li>
-           <li>{{Links.CIDRAM.Extras}} – Vari extra.</li>
-         </ul>
-       </li>
-       <li><span class="comCat">Gruppi, forum, comunità, ecc.</span>
-         <ul class="comSub">
-           <li>{{Links.PHP.Earth.Facebook}} – Risorse di apprendimento e discussione per PHP.</li>
-           <li><a href="https://www.stopforumspam.com/forum/" rel="noopener noreferrer external">Forum@Stop Forum Spam</a> – Forum di discussione utile circa l'arresto di forum spam.</li>
-         </ul>
-       </li>
-       <li><span class="comCat">Altri strumenti, risorse, servizi, ecc che sono utili.</span>
-         <ul class="comSub">
-           <li>{{Links.SFS}} – Mantiene un database di spammer di forum noti. Utile per proteggere siti Web e forum dagli spammer.</li>
-           <li><a href="https://bgp.he.net/" hreflang="en" rel="noopener noreferrer external">Hurricane Electric BGP Toolkit</a> – Ottenere CIDRs da ASNs, determinare le relazioni di ASNs, scopri ASNs basata su nomi di rete, ecc.</li>
-           <li>{{Links.BGPView}} – Ottenere CIDRs da ASNs, determinare le relazioni di ASNs, scopri ASNs basata su nomi di rete, ecc.</li>
-           <li><a href="https://radar.qrator.net/" hreflang="en" rel="noopener noreferrer external">Radar da Qrator</a> – Strumento utile per verificare la connettività di ASN nonché per varie altre informazioni utili riguardo ASNs.</li>
-           <li><a href="https://www.spamhaus.org/statistics/botnet-asn/" rel="noopener noreferrer external">Il progetto Spamhaus</a> – Visualizza i rapporti per quanto riguarda ai tassi di infezione di botnet per ASN.</li>
-           <li>{{Links.AbuseIPDB}} – Mantiene un database di conosciuti indirizzi IP abusivi; Fornisce una API per il controllo e la segnalazione di IP.</li>
-         </ul>
-       </li>
-       <li><span class="comCat">Risorse informative e di apprendimento.</span>
-         <ul class="comSub">
-           <li>{{Links.PHP.Earth.Website}} – Risorse di apprendimento e discussione per PHP.</li>
-           <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Mappe di Vulnerabilità</a> – Elenca le versioni sicure e non sicure di varie pacchetti (HHVM, PHP, phpMyAdmin, Python, ecc).</li>
-           <li><a href="https://maikuolan.github.io/Compatibility-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Mappe di Compatibilità</a> – Elenca le informazioni sulla compatibilità per vari pacchetti (CIDRAM, phpMussel, ecc).</li>
-         </ul>
-       </li>
-     </ul>
-
-msg_template_2fa: |
- <center><p>Salve, %1$s.<br />
- <br />
- Il vostro codice di autenticazione a due fattori per l'accesso al front-end di CIDRAM:</p>
- <h1>%2$s</h1>
- <p>Questo codice scade tra 10 minuti.</p></center>
-msg_subject_2fa: "Autenticazione a due fattori"

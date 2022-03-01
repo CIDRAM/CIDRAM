@@ -7,22 +7,23 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Arabic language data for the front-end (last modified: 2022.01.22).
+# This file: Arabic language data for the front-end (last modified: 2022.03.01).
 ##/
 
 Extended Description Bypasses: "ملفات الالتفافية التوقيع القياسية المدرجة عادة مع الحزمة الرئيسية."
 Extended Description Chart.js: "لتمكين الواجهة الأمامية لإنشاء مخططات دائري.<br />{{Links.Chart.js}} متاح عبر الترخيص <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a>."
+Extended Description IPv4: &ExtDesCloud "بحجبه نقاط الوصول غير البشرية و الخدمات السحابية غير المرغوب فيها."
 Extended Description IPv4-Bogons: &ExtDesBogons "بحجبه bogon/المريخ CIDRs."
 Extended Description IPv4-ISPs: &ExtDesISPs "بحجبه مزودي خدمات الإنترنت خطيرة ومزعجة (يتضمن شبكات "multiplay"، والتي قد تحتوي على نقاط نهاية بشرية وغير بشرية)."
 Extended Description IPv4-Nonblocking: &ExtDesNonblocking "مفيد للتنميط، لكنه لا يمنع أي شيء بحد ذاته."
 Extended Description IPv4-Other: &ExtDesOther "بحجبه CIDRs الوكلاء، والشبكات الخاصة الإفتراضية، وغيرها من الخدمات غير المرغوب فيها المتنوعة."
-Extended Description IPv4: &ExtDesCloud "بحجبه نقاط الوصول غير البشرية و الخدمات السحابية غير المرغوب فيها."
+Extended Description IPv6: *ExtDesCloud
 Extended Description IPv6-Bogons: *ExtDesBogons
 Extended Description IPv6-ISPs: *ExtDesISPs
 Extended Description IPv6-Nonblocking: *ExtDesNonblocking
 Extended Description IPv6-Other: *ExtDesOther
-Extended Description IPv6: *ExtDesCloud
 Extended Description PHPMailer: "مطلوب لاستخدام أي وظيفة تتضمن إرسال البريد الإلكتروني.<br />{{Links.PHPMailer.PHPMailer}} متاح عبر الترخيص الرخصه {{Links.PHPMailer.License}}."
+Extended Description Search engines blocker module: "يوفر القدرة على حظر محركات البحث التي قد تكون مشكلة لبعض مواقع الويب (على سبيل المثال، Baidu، Sogou، Yandex، إلخ)."
 Extended Description flags.css: "لإضافة دعم العلم إلى صفحة سجلات الجهة الأمامية."
 Extended Description module_abuseipdb.php: "بحظر الطلبات من عناوين IP المدرجة في AbuseIPDB."
 Extended Description module_badhosts.php: "كتل المضيفات التي يتم استخدامها بشكل متكرر من قبل مرسلي المحتوى غير المرغوب فيه والمتسللين والكيانات الشائنة الأخرى."
@@ -36,18 +37,18 @@ Extended Description module_httpver.php: "يجعل من الممكن حظر بر
 Extended Description module_projecthoneypot.php: "بحظر الطلبات من عناوين IP المدرجة في Project Honeypot."
 Extended Description module_refspam.php: "لا يوفر الحظر بناءً على الإحالة غير المرغوب فيها عمومًا أي فائدة أمنية ذات مغزى، ولكن في بعض الحالات، قد يكون مفيدًا لبعض المستخدمين، ولجمع مزيد من المعلومات حول الطلبات، وللتمكن من الإبلاغ عنها.<br />يؤدي تثبيت هذه المكون النمطية أيضًا إلى تثبيت polyfill لـ Symfony لـ {{Links.Symfony.Intl/Idn}} و {{Links.Symfony.Mbstring}} (لأن هذه المكون تتطلب وظيفة Idn، والتي لا توفرها جميع عمليات تثبيت PHP بشكل افتراضي)، كلاهما متاح عبر ترخيص <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a>."
 Extended Description module_sfs.php: "يحمي تسجيل صفحات ضد عناوين IP المدرجة من قبل SFS."
-Extended Description Search engines blocker module: "يوفر القدرة على حظر محركات البحث التي قد تكون مشكلة لبعض مواقع الويب (على سبيل المثال، Baidu، Sogou، Yandex، إلخ)."
 Name Bypasses: "يتجاوز توقيع قياسي."
+Name IPv4: "IPv4 (السحابة واستضافة الخدمات)."
 Name IPv4-Bogons: "IPv4 (bogons)."
 Name IPv4-ISPs: "IPv4 (مزودي خدمات الإنترنت الذين يرسلون رسائل غير مرغوب فيها)."
 Name IPv4-Nonblocking: "توقيعات IPv4 غير المحظورة."
 Name IPv4-Other: "IPv4 (خدمات بروكسي، VPN، الخ)."
-Name IPv4: "IPv4 (السحابة واستضافة الخدمات)."
+Name IPv6: "IPv6 (السحابة واستضافة الخدمات)."
 Name IPv6-Bogons: "IPv6 (bogons)."
 Name IPv6-ISPs: "IPv6 (مزودي خدمات الإنترنت الذين يرسلون رسائل غير مرغوب فيها)."
 Name IPv6-Nonblocking: "توقيعات IPv6 غير المحظورة."
 Name IPv6-Other: "IPv6 (خدمات بروكسي، VPN، الخ)."
-Name IPv6: "IPv6 (السحابة واستضافة الخدمات)."
+Name Search engines blocker module: "وحدة مانع محركات البحث"
 Name compat_bunnycdn.php: "المكون التوافق BunnyCDN"
 Name module_abuseipdb.php: "AbuseIPDB المكون"
 Name module_badhosts.php: "سيئة المضيفين المكون مانع"
@@ -61,7 +62,6 @@ Name module_httpver.php: "المكون مدقق إصدار HTTP"
 Name module_projecthoneypot.php: "Project Honeypot المكون"
 Name module_refspam.php: "المكون للإحالة البريد المزعج"
 Name module_sfs.php: "Stop Forum Spam المكون"
-Name Search engines blocker module: "وحدة مانع محركات البحث"
 config_PHPMailer: "التكوين ل PHPMailer (تستخدم لمصادقة ثنائية العامل)."
 config_PHPMailer_add_reply_to_address: "عنوان الرد للاستشهاد عند إرسال البريد الإلكتروني عبر SMTP."
 config_PHPMailer_add_reply_to_name: "اسم الرد للاستشهاد عند إرسال البريد الإلكتروني عبر SMTP."
@@ -275,6 +275,41 @@ field_verify_all: "التحقق من الكل"
 field_whitelisted_requests: "طلبات القائمة البيضاء"
 field_your_version: "الإصدار الخاص بك"
 header_login: "الرجاء تسجيل الدخول للمتابعة."
+info_some_useful_links: |
+ بعض الروابط المفيدة:<br />
+     <ul class="pieul">
+       <li><span class="comCat">الأدوات، الموارد، إلخ لـ CIDRAM.</span>
+         <ul class="comSub">
+           <li>{{Links.CIDRAM.Issues}} – صفحة المشكلات لCIDRAM (الدعم والمساعدة، الخ).</li>
+           <li>{{Links.CIDRAM.WordPress}} – WordPress البرنامج المساعد ل CIDRAM.</li>
+           <li>{{Links.CIDRAM.Extras}} – إضافات مختلفة.</li>
+         </ul>
+       </li>
+       <li><span class="comCat">مجموعات، المنتديات، مجتمعات، إلخ.</span>
+         <ul class="comSub">
+           <li>{{Links.PHP.Earth.Facebook}} – PHP مصادر التعلم والمناقشة.</li>
+           <li><a dir="ltr" href="https://www.stopforumspam.com/forum/" rel="noopener noreferrer external"><span dir="rtl">المنتدى</span>@Stop Forum Spam</a> – منتدى للنقاش مفيد حول وقف منتدى المزعج.</li>
+         </ul>
+       </li>
+       <li><span class="comCat">الأدوات، الموارد، الخدمات، إلخ مفيدة أخرى.</span>
+         <ul class="comSub">
+           <li>{{Links.SFS}} – يحافظ على قاعدة بيانات لمنتدى المزعج المنتدى المعروفين. مفيدة لحماية مواقع الويب والمنتديات من الرسائل غير المرغوب فيها.</li>
+           <li><a dir="ltr" href="https://bgp.he.net/" hreflang="en" rel="noopener noreferrer external">Hurricane Electric BGP Toolkit</a> – الحصول على CIDRs من ل ASNs، تحديد العلاقات ASN، اكتشف ل ASNs استنادا إلى أسماء الشبكات، إلخ.</li>
+           <li>{{Links.BGPView}} – الحصول على CIDRs من ل ASNs، تحديد العلاقات ASN، اكتشف ل ASNs استنادا إلى أسماء الشبكات، إلخ.</li>
+           <li><a dir="ltr" href="https://radar.qrator.net/" hreflang="en" rel="noopener noreferrer external">Radar by Qrator</a> – أداة مفيدة للتحقق من الاتصال من ل ASNs فضلا عن العديد من المعلومات الأخرى حول ل ASNs.</li>
+           <li><a dir="ltr" href="https://www.spamhaus.org/statistics/botnet-asn/" rel="noopener noreferrer external">The Spamhaus Project</a> – تقارير يعرض بخصوص معدلات الإصابة الروبوتات أجل ASNs.</li>
+           <li>{{Links.AbuseIPDB}} – تحتفظ بقاعدة بيانات من عناوين IP المسيئة المعروفة؛ يوفر API لفحص والإبلاغ عناوين IP.</li>
+         </ul>
+       </li>
+       <li><span class="comCat">موارد المعلومات والتعلم.</span>
+         <ul class="comSub">
+           <li>{{Links.PHP.Earth.Website}} – PHP مصادر التعلم والمناقشة.</li>
+           <li><a dir="ltr" href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Vulnerability Charts</a> – يسرد نسخ آمنة وغير آمنة من مختلف الحزم (HHVM، PHP، phpMyAdmin، Python، إلخ).</li>
+           <li><a dir="ltr" href="https://maikuolan.github.io/Compatibility-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Compatibility Charts</a> – قوائم معلومات التوافق لمختلف الحزم (CIDRAM، phpMussel، إلخ).</li>
+         </ul>
+       </li>
+     </ul>
+
 label_active_config_file: "ملف التكوين النشط:"
 label_actual: "فعلي"
 label_aux_actBlk: "منع"
@@ -362,11 +397,11 @@ label_is_not_available: "%s غير متاح."
 label_never: "أبدا"
 label_next: "التالي:"
 label_os: "نظام التشغيل المستخدمة:"
+label_other: "آخر"
 label_other-ActiveIPv4: "ملفات التوقيع IPv4 النشطة"
 label_other-ActiveIPv6: "ملفات التوقيع IPv6 النشطة"
 label_other-ActiveModules: "وحدات نشطة"
 label_other-Since: "تاريخ البدء"
-label_other: "آخر"
 label_paginate: "فصل إلى صفحات"
 label_passed: "مرت الطلبات"
 label_php: "النسخة PHP المستخدمة:"
@@ -394,14 +429,14 @@ label_textmode_simple: "بسيط"
 label_textmode_tally: "عد"
 label_timeout_limit: "تقوم هذه المكون بتنفيذ الطلبات الخارجية. هنا يمكنك تحديد مهلة هذه الطلبات (بالثواني)."
 label_total: "مجموع"
+label_unignore: "لا تتجاهل هذا"
+label_unstable: "أحدث غير مستقرة:"
+label_used_with: "يستعمل مع:"
 label_usemode_any: "فقط عندما ضمن حدود التواقيع، وليس محظور (بغض النظر عما إذا كان مسدود)."
 label_usemode_blkd: "فقط عندما يتم مسدود، ضمن حدود التواقيع، وليس محظور."
 label_usemode_blkd_mrkd: "فقط عندما يتم مسدود، ويتم تمييزها خصيصًا للاستخدام، وضمن حدود التواقيع، وليس محظور."
 label_usemode_not_blkd: "فقط عندما لا يتم مسدود."
 label_usemode_not_blkd_mrkd: "فقط عندما لا يتم مسدود، أو عندما يتم تمييزها خصيصًا للاستخدام، وضمن حدود التواقيع، وليس محظور."
-label_unignore: "لا تتجاهل هذا"
-label_unstable: "أحدث غير مستقرة:"
-label_used_with: "يستعمل مع:"
 label_your_ip: "عنوان IP الخاص بك:"
 label_your_ua: "وكيل المستخدم الخاص بك:"
 link_accounts: "حسابات"
@@ -430,6 +465,13 @@ logs_logfile_doesnt_exist: "هذا سجل غير موجود!"
 logs_no_logfile_selected: "لا سجلات مختار."
 logs_no_logfiles_available: "لا سجلات متاح."
 max_login_attempts_exceeded: "تجاوز الحد الأقصى لعدد محاولات تسجيل الدخول؛ تم رفض الوصول."
+msg_subject_2fa: "2FA"
+msg_template_2fa: |
+ <center><p>مرحبا، %1$s.<br />
+ <br />
+ شفرة 2FA الخاصة بك لتسجيل الدخول إلى واجهة CIDRAM الأمامية:</p>
+ <h1>%2$s</h1>
+ <p>تنتهي صلاحية هذا الرمز خلال 10 دقائق.</p></center>
 notice_click_here: "انقر هنا للمزيد من المعلومات."
 notice_new_major_version: "تنويه: %s متاح الآن (كنت تستخدم %s). تستوفي الحد الأدنى لمتطلبات PHP لهذا الإصدار. ومع ذلك، بعض الخطوات اليدوية مطلوبة للتحديث."
 previewer_days: "أيام"
@@ -586,6 +628,7 @@ tip_aux_priority: "أفضلية (أعلى⬅(مساو🔄ما يعادل)⬅ال
 tip_aux_webhooks: "عندما يتم استيفاء القاعدة، سيحاول CIDRAM إبلاغ أي webhooks متصلة بالحدث."
 tip_cache_data: "مرحبا، {username}.<br />هنا يمكنك مراجعة محتويات ذاكرة التخزين المؤقت."
 tip_cidr_calc: "مرحبا، {username}.<br />آلة حاسبة CIDR يسمح لك لحساب CIDRs حيث عنوان IP هو عامل."
+tip_click_the_component: "انقر فوق اسم المكون لمزيد من التفاصيل."
 tip_condition_placeholder: "حدد قيمة، أو اتركها فارغة للتجاهل."
 tip_config: "مرحبا، {username}.<br />الصفحة التكوين يسمح لك لتعديل التكوين CIDRAM عن طريق ألfront-end."
 tip_custom_query: "أدخل الاستعلام هنا (انها اختيارية)."
@@ -603,7 +646,6 @@ tip_ip_test: "مرحبا، {username}.<br />الصفحة اختبار IP يسم�
 tip_ip_test_switches: "(عند عدم تحديده، سيتم اختبار ملفات التوقيع فقط)."
 tip_ip_tracking: "مرحبا، {username}.<br />التتبع IP يسمح لك للتحقق من حالة تتبع عناوين IP، تحقق محظورة، و إلغاء تتبع إذا كنت تريد أن تفعل ذلك."
 tip_logs: "مرحبا، {username}.<br />اختار سجلات من القائمة أدناه لعرضها."
-tip_click_the_component: "انقر فوق اسم المكون لمزيد من التفاصيل."
 tip_range: "مرحبا، {username}.<br />تعرض هذه الصفحة بعض المعلومات الإحصائية الأساسية حول نطاقات IP التي تغطيها ملفات التوقيع النشطة حاليًا."
 tip_range_intersector: "مرحبا، {username}.<br />يمكن استخدام أداة التقاطع للعناوين لتحديد العوامل المشتركة بين مجموعتين من النطاقات."
 tip_range_subtractor: "مرحبا، {username}.<br />يمكن استخدام أداة الطرح للعناوين النطاق لطرح مجموعة من عناوين IP/CIDR من مجموعة أخرى."
@@ -614,46 +656,3 @@ tip_statistics_disabled: "ملاحظة: يتم تعطيل تتبع الإحصا�
 tip_updates: "مرحبا، {username}.<br />الصفحة تحديثات يسمح لك لتثبيت، إلغاء، ولتحديث المكونات المختلفة CIDRAM (حزمة الأساسية، التوقيعات، الملفات L10N، إلخ)."
 title_login: "تسجيل الدخول"
 warning_signatures_1: "تحذير: لا ملفات التوقيع نشطة!"
-
-info_some_useful_links: |
- بعض الروابط المفيدة:<br />
-     <ul class="pieul">
-       <li><span class="comCat">الأدوات، الموارد، إلخ لـ CIDRAM.</span>
-         <ul class="comSub">
-           <li>{{Links.CIDRAM.Issues}} – صفحة المشكلات لCIDRAM (الدعم والمساعدة، الخ).</li>
-           <li>{{Links.CIDRAM.WordPress}} – WordPress البرنامج المساعد ل CIDRAM.</li>
-           <li>{{Links.CIDRAM.Extras}} – إضافات مختلفة.</li>
-         </ul>
-       </li>
-       <li><span class="comCat">مجموعات، المنتديات، مجتمعات، إلخ.</span>
-         <ul class="comSub">
-           <li>{{Links.PHP.Earth.Facebook}} – PHP مصادر التعلم والمناقشة.</li>
-           <li><a dir="ltr" href="https://www.stopforumspam.com/forum/" rel="noopener noreferrer external"><span dir="rtl">المنتدى</span>@Stop Forum Spam</a> – منتدى للنقاش مفيد حول وقف منتدى المزعج.</li>
-         </ul>
-       </li>
-       <li><span class="comCat">الأدوات، الموارد، الخدمات، إلخ مفيدة أخرى.</span>
-         <ul class="comSub">
-           <li>{{Links.SFS}} – يحافظ على قاعدة بيانات لمنتدى المزعج المنتدى المعروفين. مفيدة لحماية مواقع الويب والمنتديات من الرسائل غير المرغوب فيها.</li>
-           <li><a dir="ltr" href="https://bgp.he.net/" hreflang="en" rel="noopener noreferrer external">Hurricane Electric BGP Toolkit</a> – الحصول على CIDRs من ل ASNs، تحديد العلاقات ASN، اكتشف ل ASNs استنادا إلى أسماء الشبكات، إلخ.</li>
-           <li>{{Links.BGPView}} – الحصول على CIDRs من ل ASNs، تحديد العلاقات ASN، اكتشف ل ASNs استنادا إلى أسماء الشبكات، إلخ.</li>
-           <li><a dir="ltr" href="https://radar.qrator.net/" hreflang="en" rel="noopener noreferrer external">Radar by Qrator</a> – أداة مفيدة للتحقق من الاتصال من ل ASNs فضلا عن العديد من المعلومات الأخرى حول ل ASNs.</li>
-           <li><a dir="ltr" href="https://www.spamhaus.org/statistics/botnet-asn/" rel="noopener noreferrer external">The Spamhaus Project</a> – تقارير يعرض بخصوص معدلات الإصابة الروبوتات أجل ASNs.</li>
-           <li>{{Links.AbuseIPDB}} – تحتفظ بقاعدة بيانات من عناوين IP المسيئة المعروفة؛ يوفر API لفحص والإبلاغ عناوين IP.</li>
-         </ul>
-       </li>
-       <li><span class="comCat">موارد المعلومات والتعلم.</span>
-         <ul class="comSub">
-           <li>{{Links.PHP.Earth.Website}} – PHP مصادر التعلم والمناقشة.</li>
-           <li><a dir="ltr" href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Vulnerability Charts</a> – يسرد نسخ آمنة وغير آمنة من مختلف الحزم (HHVM، PHP، phpMyAdmin، Python، إلخ).</li>
-           <li><a dir="ltr" href="https://maikuolan.github.io/Compatibility-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Compatibility Charts</a> – قوائم معلومات التوافق لمختلف الحزم (CIDRAM، phpMussel، إلخ).</li>
-         </ul>
-       </li>
-     </ul>
-
-msg_template_2fa: |
- <center><p>مرحبا، %1$s.<br />
- <br />
- شفرة 2FA الخاصة بك لتسجيل الدخول إلى واجهة CIDRAM الأمامية:</p>
- <h1>%2$s</h1>
- <p>تنتهي صلاحية هذا الرمز خلال 10 دقائق.</p></center>
-msg_subject_2fa: "2FA"

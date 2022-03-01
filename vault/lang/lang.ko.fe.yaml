@@ -7,22 +7,23 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Korean language data for the front-end (last modified: 2022.01.22).
+# This file: Korean language data for the front-end (last modified: 2022.03.01).
 ##/
 
 Extended Description Bypasses: "기본 서명 우회 일반적으로 기본 패키지에 포함되어 있습니다."
 Extended Description Chart.js: "프런트 엔드에서 원형 차트를 생성 할 수 있습니다.<br />{{Links.Chart.js}}는 <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>를 통해 사용 가능합니다."
+Extended Description IPv4: &ExtDesCloud "불필요한 클라우드 서비스와 非人의 끝점을 차단합니다."
 Extended Description IPv4-Bogons: &ExtDesBogons "보곤 CIDR을 차단합니다."
 Extended Description IPv4-ISPs: &ExtDesISPs "스팸 발송자를 가진 위험한 ISP를 차단합니다 (멀티 플레이 네트워크가 포함됩니다. 사람과 사람이 아닌 끝점을 모두 포함 할 수 있습니다)."
 Extended Description IPv4-Nonblocking: &ExtDesNonblocking "프로파일 링에 유용하지만 그 자체로 어떤 것도 차단하지 않습니다."
 Extended Description IPv4-Other: &ExtDesOther "프록시, VPN 및 기타 불필요한 서비스 CIDR을 차단합니다."
-Extended Description IPv4: &ExtDesCloud "불필요한 클라우드 서비스와 非人의 끝점을 차단합니다."
+Extended Description IPv6: *ExtDesCloud
 Extended Description IPv6-Bogons: *ExtDesBogons
 Extended Description IPv6-ISPs: *ExtDesISPs
 Extended Description IPv6-Nonblocking: *ExtDesNonblocking
 Extended Description IPv6-Other: *ExtDesOther
-Extended Description IPv6: *ExtDesCloud
 Extended Description PHPMailer: "이메일 전송과 관련된 기능 사용에 필요합니다.<br />{{Links.PHPMailer.PHPMailer}}는 {{Links.PHPMailer.License}} 라이센스를 통해 사용 가능합니다."
+Extended Description Search engines blocker module: "일부 웹 사이트에서 문제가 될 수 있는 검색 엔진을 (예\_: Baidu, Sogou, Yandex, 등등), 차단하는 기능을 제공합니다."
 Extended Description flags.css: "프론트 엔드 로그 페이지에 플래그 지원을 추가합니다."
 Extended Description module_abuseipdb.php: "AbuseIPDB에 나열된 IP의 요청을 차단합니다."
 Extended Description module_badhosts.php: "스패머, 해커 및 기타 사기꾼이 자주 사용하는 호스트를 차단합니다."
@@ -36,20 +37,20 @@ Extended Description module_httpver.php: "CIDRAM 구성을 통해 특정 프로�
 Extended Description module_projecthoneypot.php: "Project Honeypot에 나열된 IP의 요청을 차단합니다."
 Extended Description module_refspam.php: "리퍼러 스팸에 기반한 차단은 일반적으로 의미 있는 보안 이점을 제공하지 않습니다, 그러나 어떤 경우에는, 요청에 대한 추가 정보를 수집하고 보고서를 생성하는 데 유용 할 수 있습니다.<br />이 모듈을 설치하면, {{Links.Symfony.Intl/Idn}}및 {{Links.Symfony.Mbstring}}에 대한 Symfony 폴리 필도 설치됩니다 (이 모듈에는 Idn 기능이 필요하기 때문에 및, 모든 PHP 설치에서 기본적으로 제공하는 것은 아닙니다). 둘 다 <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a>라이센스를 통해 사용 가능합니다."
 Extended Description module_sfs.php: "SFS가 나열한 IP에 대한 등록 및 로그인 페이지를 보호합니다."
-Extended Description Search engines blocker module: "일부 웹 사이트에서 문제가 될 수 있는 검색 엔진을 (예 : Baidu, Sogou, Yandex, 등등), 차단하는 기능을 제공합니다."
 Name Bypasses: "기본 서명 우회."
 Name CN_cidram.inc: "중국 IPv4 차단 목록"
+Name IPv4: "IPv4 (클라우드 및 호스팅 서비스)."
 Name IPv4-Bogons: "IPv4 (보곤)."
 Name IPv4-ISPs: "IPv4 (스패머을 가진 위험한 ISP)."
 Name IPv4-Nonblocking: "IPv4 비 차단 서명."
 Name IPv4-Other: "IPv4 (프록시, VPN, 등)."
-Name IPv4: "IPv4 (클라우드 및 호스팅 서비스)."
+Name IPv6: "IPv6 (클라우드 및 호스팅 서비스)."
 Name IPv6-Bogons: "IPv6 (보곤)."
 Name IPv6-ISPs: "IPv6 (스패머을 가진 위험한 ISP)."
 Name IPv6-Nonblocking: "IPv6 비 차단 서명."
 Name IPv6-Other: "IPv6 (프록시, VPN, 등)."
-Name IPv6: "IPv6 (클라우드 및 호스팅 서비스)."
 Name KR_cidram.inc: "한국 IPv4 차단 목록"
+Name Search engines blocker module: "검색 엔진 차단기 모듈"
 Name compat_bunnycdn.php: "BunnyCDN 호환성 모듈"
 Name module_abuseipdb.php: "AbuseIPDB 모듈"
 Name module_badhosts.php: "위험한 호스트 차단 모듈"
@@ -63,7 +64,6 @@ Name module_httpver.php: "HTTP 버전 검사기 모듈"
 Name module_projecthoneypot.php: "Project Honeypot 모듈"
 Name module_refspam.php: "리퍼러 스팸 모듈"
 Name module_sfs.php: "Stop Forum Spam 모듈"
-Name Search engines blocker module: "검색 엔진 차단기 모듈"
 config_PHPMailer: "PHPMailer 설정 (이중 인증에 사용)."
 config_PHPMailer_add_reply_to_address: "SMTP를 통해 전자 메일을 보낼 때 인용 할 회신 주소입니다."
 config_PHPMailer_add_reply_to_name: "SMTP를 통해 이메일을 보낼 때 인용 할 회신 이름입니다."
@@ -74,7 +74,7 @@ config_PHPMailer_password: "SMTP를 통해 이메일을 보낼 때 사용할 비
 config_PHPMailer_port: "아웃 바운드 이메일에 사용할 포트 번호입니다. Default (기본 설정) = 587."
 config_PHPMailer_set_from_address: "SMTP를 통해 전자 메일을 보낼 때 인용 할 보낸 사람 주소입니다."
 config_PHPMailer_set_from_name: "SMTP를 통해 전자 메일을 보낼 때 인용 할 보낸 사람 이름입니다."
-config_PHPMailer_skip_auth_process: "<code>true</code> 일 때, PHPMailer는 전자 메일 전송을위한 SMTP 인증 프로세스를 건너 뛰도록 지시합니다. 이 프로세스를 건너 뛰면 아웃 바운드 전자 메일이 MITM 공격에 노출 될 수 있으므로 피해야합니다. 특정 경우에 필요할 수 있음 (예 : PHPMailer가 SMTP 서버에 제대로 연결할 수없는 경우)."
+config_PHPMailer_skip_auth_process: "<code>true</code> 일 때, PHPMailer는 전자 메일 전송을위한 SMTP 인증 프로세스를 건너 뛰도록 지시합니다. 이 프로세스를 건너 뛰면 아웃 바운드 전자 메일이 MITM 공격에 노출 될 수 있으므로 피해야합니다. 특정 경우에 필요할 수 있음 (예\_: PHPMailer가 SMTP 서버에 제대로 연결할 수없는 경우)."
 config_PHPMailer_smtp_auth: "이 지시문은 SMTP 세션을 인증할지 여부를 결정합니다 (보통 이것을 무시해야합니다)."
 config_PHPMailer_smtp_secure: "SMTP를 통해 이메일을 보낼 때 사용할 프로토콜 (TLS 또는 SSL)."
 config_PHPMailer_username: "SMTP를 통해 이메일을 보낼 때 사용할 사용자 이름입니다."
@@ -83,15 +83,15 @@ config_bypasses_used: "어떤 바이 패스를 사용해야 합니까?"
 config_experimental: "불안정/실험적!"
 config_general: "일반 설정 (다른 카테고리에 속하지 않는 설정)."
 config_general_allow_gethostbyaddr_lookup: "UDP를 사용할 수 없을 때 gethostbyaddr 검색을 허용 하시겠습니까? True = 예 (Default / 기본 설정); False = 아니오."
-config_general_ban_override: ""infraction_limit"를 초과하면 "forbid_on_block"를 덮어 쓰시겠습니까? 덮어 쓸 때 : 차단 된 요청은 빈 페이지를 반환합니다 (템플릿 파일은 사용되지 않습니다). 200 = 덮어 쓰지 (Default / 기본값). 다른 값은 "forbid_on_block"에 사용할 수있는 값과 같습니다."
+config_general_ban_override: ""infraction_limit"를 초과하면 "forbid_on_block"를 덮어 쓰시겠습니까? 덮어 쓸 때\_: 차단 된 요청은 빈 페이지를 반환합니다 (템플릿 파일은 사용되지 않습니다). 200 = 덮어 쓰지 (Default / 기본값). 다른 값은 "forbid_on_block"에 사용할 수있는 값과 같습니다."
 config_general_config_imports: "CIDRAM 기본 구성으로 가져올 쉼표로 구분된 파일 목록입니다. 일반적으로 구성 요소를 활성화할 때 업데이트 페이지에서 필요에 따라 채워집니다. 대부분의 경우 무시할 수 있습니다."
-config_general_default_algo: "향후 모든 암호와 세션에 사용할 알고리즘을 정의합니다. 옵션 : PASSWORD_DEFAULT (default / 기본 설정), PASSWORD_BCRYPT, PASSWORD_ARGON2I (PHP &gt;= 7.2.0 가 필요합니다), PASSWORD_ARGON2ID (PHP &gt;= 7.3.0 가 필요합니다)."
-config_general_default_dns: "호스트 이름 검색에 사용하는 DNS (도메인 이름 시스템) 서버의 쉼표로 구분 된 목록입니다. Default (기본 설정) = "8.8.8.8,8.8.4.4" (Google DNS). 주의 : 당신이 무엇을하고 있는지 모르는 한이를 변경하지 마십시오."
+config_general_default_algo: "향후 모든 암호와 세션에 사용할 알고리즘을 정의합니다. 옵션\_: PASSWORD_DEFAULT (default / 기본 설정), PASSWORD_BCRYPT, PASSWORD_ARGON2I (PHP &gt;= 7.2.0 가 필요합니다), PASSWORD_ARGON2ID (PHP &gt;= 7.3.0 가 필요합니다)."
+config_general_default_dns: "호스트 이름 검색에 사용하는 DNS (도메인 이름 시스템) 서버의 쉼표로 구분 된 목록입니다. Default (기본 설정) = "8.8.8.8,8.8.4.4" (Google DNS). 주의\_: 당신이 무엇을하고 있는지 모르는 한이를 변경하지 마십시오."
 config_general_default_timeout: "외부 요청에 사용할 기본 제한 시간? Default (기본 설정) = 12 초."
 config_general_disable_frontend: "프론트 엔드에 대한 액세스를 비활성화하거나? 프론트 엔드에 대한 액세스는 CIDRAM을 더 쉽게 관리 할 수 있습니다. 상기 그것은 또한 잠재적 인 보안 위험이 될 수 있습니다. 백엔드를 통해 관리하는 것이 좋습니다,하지만 이것이 불가능한 경우 프론트 엔드에 대한 액세스를 제공. 당신이 그것을 필요로하지 않는 한 그것을 해제합니다. <code>false</code> = 프론트 엔드에 대한 액세스를 활성화합니다; <code>true</code> = 프론트 엔드에 대한 액세스를 비활성화합니다 (Default / 기본 설정)."
 config_general_disable_webfonts: "웹 글꼴을 사용하지 않도록 설정 하시겠습니까? True = 예 (Default / 기본 설정); False = 아니오."
 config_general_disabled_channels: "이것은 CIDRAM이 요청을 보낼 때 특정 채널을 사용하지 못하게하는 데 사용할 수 있습니다 (예를 들어, 업데이트 할 때, 구성 요소 메타 데이터를 가져올 때, 등등)."
-config_general_emailaddr: "여기에 이메일 주소를 입력하고 사용자가 차단 된 경우 사용자에게 보낼 수 있습니다. 이것은 지원과 지원에 사용할 수 있습니다 (실수로 차단 된 경우 등). 경고 : 여기에 입력 된 전자 이메일 주소는 아마 스팸 로봇에 의해 취득됩니다. 여기에서 제공되는 전자 이메일 주소는 모든 일회용하는 것이 좋습니다 (예를 들어, 기본 개인 주소 또는 비즈니스 주소를 사용하지 않는 등)."
+config_general_emailaddr: "여기에 이메일 주소를 입력하고 사용자가 차단 된 경우 사용자에게 보낼 수 있습니다. 이것은 지원과 지원에 사용할 수 있습니다 (실수로 차단 된 경우 등). 경고\_: 여기에 입력 된 전자 이메일 주소는 아마 스팸 로봇에 의해 취득됩니다. 여기에서 제공되는 전자 이메일 주소는 모든 일회용하는 것이 좋습니다 (예를 들어, 기본 개인 주소 또는 비즈니스 주소를 사용하지 않는 등)."
 config_general_emailaddr_display_style: "사용자에게 전자 메일 주소를 어떻게 표시 하시겠습니까?"
 config_general_empty_fields: "블록 이벤트 정보를 로깅하고 표시 할 때, CIDRAM이 빈 필드를 어떻게 처리해야합니까? "include" = 빈 필드를 포함하십시오. "omit" = 빈 필드는 생략하십시오 (Default / 기본 설정)."
 config_general_error_log: "치명적이지 않은 오류를 탐지하기위한 파일. 파일 이름을 지정하십시오. 비활성화하려면 비워 둡니다."
@@ -101,7 +101,7 @@ config_general_forbid_on_block: "요청을 차단할 때 CIDRAM이 전송해야�
 config_general_force_hostname_lookup: "호스트 이름 검색을 시행 하시겠습니까 (모든 요청)? True = 예; False = 아니오 (Default / 기본 설정). 호스트 이름 검색은 일반적으로 "필요에 따라"수행됩니다, 그러나 모든 요청에 대해 강제 될 수 있습니다. 이는 로그 파일에보다 자세한 정보를 제공하는 데 유용 할 수 있습니다, 그러나 또한 성능에 약간 부정적인 영향을 줄 수 있습니다."
 config_general_frontend_log: "프론트 엔드 로그인 시도를 기록하는 파일. 파일 이름을 지정하십시오. 비활성화하려면 비워 둡니다."
 config_general_hide_version: "로그 및 페이지 출력에서 버전 정보 숨기기? True = 예; False = 아니오 (Default / 기본 설정)."
-config_general_ipaddr: "연결 요청의 IP 주소를 어디에서 찾을 것인가에 대해 (Cloudflare 같은 서비스에 대해 유효). Default (기본 설정) = REMOTE_ADDR. 주의 : 당신이 무엇을하고 있는지 모르는 한이를 변경하지 마십시오."
+config_general_ipaddr: "연결 요청의 IP 주소를 어디에서 찾을 것인가에 대해 (Cloudflare 같은 서비스에 대해 유효). Default (기본 설정) = REMOTE_ADDR. 주의\_: 당신이 무엇을하고 있는지 모르는 한이를 변경하지 마십시오."
 config_general_lang: "CIDRAM의 기본 언어를 설정합니다."
 config_general_lang_override: "가능할 때마다 HTTP_ACCEPT_LANGUAGE에 따라 현지화 하시겠습니까? True = 예 (Default / 기본값); False = 아니오."
 config_general_log_banned_ips: "금지 된 IP에서 차단 된 요청을 로그 파일에 포함됩니까? True = 예 (Default / 기본값); False = 아니오."
@@ -114,7 +114,7 @@ config_general_logfile_serialized: "액세스 시도 저지를 기록 직렬화�
 config_general_maintenance_mode: "유지 관리 모드를 사용 하시겠습니까? True = 예; False = 아니오 (Default / 기본 설정). 프런트 엔드 이외의 모든 것을 비활성화합니다. CMS, 프레임 워크 등을 업데이트 할 때 유용합니다."
 config_general_max_login_attempts: "로그인 시도 최대 횟수입니다 (프론트 엔드). Default / 기본 설정 = 5."
 config_general_numbers: "어떻게 숫자를 표시하는 것을 선호합니까? 가장 정확한 것으로 보이는 예제를 선택하십시오."
-config_general_other_verification: "가능한 한, 다른 요청을 확인하려고 합니까 (예 : 애드 센스, SEO 검사기, 등등)? 감지되면, 가짜 요청이 차단됩니다. True = 활성화 (Default / 기본 설정); False = 비활성화."
+config_general_other_verification: "가능한 한, 다른 요청을 확인하려고 합니까 (예\_: 애드 센스, SEO 검사기, 등등)? 감지되면, 가짜 요청이 차단됩니다. True = 활성화 (Default / 기본 설정); False = 비활성화."
 config_general_protect_frontend: "CIDRAM 의해 보통 제공되는 보호를 프론트 엔드에 적용할지 여부를 지정합니다. True = 예 (Default / 기본값); False = 아니오."
 config_general_search_engine_verification: "검색 엔진의 요청을 확인해야합니까? 검색 엔진을 확인하여, 위반의 최대 수를 초과했기 때문에 검색 엔진이 금지되지 않는 것이 보증됩니다 (검색 엔진을 금지하는 것은 일반적으로 검색 엔진 순위의, SEO 등에 악영향을 미칩니다). 확인되면, 검색 엔진이 차단 될 수 있지만, 그러나 금지되지 않습니다. 검증되지 않은 경우는, 위반의 최대를 초과 한 결과, 금지 될 수 있습니다. 또한 검색 엔진의 검증은 사칭 된 검색 엔진으로부터 보호합니다 (이러한 요청은 차단됩니다). True = 검색 엔진의 검증을 활성화한다 (Default/기본 설정); False = 검색 엔진의 검증을 무효로한다."
 config_general_signatures_update_event_log: "프런트 엔드임를 통해 서명이 업데이트될 때 로깅을 위한 파일입니다. 파일 이름을 지정하십시오. 비활성화하려면 비워 둡니다."
@@ -123,8 +123,8 @@ config_general_social_media_verification: "소셜 미디어 요청을 확인하�
 config_general_statistics: "CIDRAM 사용 통계를 추적합니까? True = 예; False = 아니오 (Default / 기본 설정)."
 config_general_time_format: "CIDRAM에서 사용되는 날짜 형식. 추가 옵션이 요청에 따라 추가 될 수 있습니다."
 config_general_time_offset: "시간대 오프셋 (분)."
-config_general_timezone: "사용할 시간대를 지정합니다 (예 : Africa/Cairo, America/New_York, Asia/Tokyo, Australia/Perth, Europe/Berlin, Pacific/Guam, 등등). PHP가 자동으로 처리하도록하려면, "SYSTEM"을 지정하십시오."
-config_general_truncate: "로그 파일이 특정 크기에 도달하면 잘 있습니까? 값은 로그 파일이 잘 리기 전에 커질 가능성이있는 B/KB/MB/GB/TB 단위의 최대 크기입니다. 기본값 "0KB"은 절단을 해제합니다 (로그 파일은 무한정 확장 할 수 있습니다). 참고 : 개별 로그 파일에 적용됩니다! 로그 파일의 크기는 일괄 적으로 고려되지 않습니다."
+config_general_timezone: "사용할 시간대를 지정합니다 (예\_: Africa/Cairo, America/New_York, Asia/Tokyo, Australia/Perth, Europe/Berlin, Pacific/Guam, 등등). PHP가 자동으로 처리하도록하려면, "SYSTEM"을 지정하십시오."
+config_general_truncate: "로그 파일이 특정 크기에 도달하면 잘 있습니까? 값은 로그 파일이 잘 리기 전에 커질 가능성이있는 B/KB/MB/GB/TB 단위의 최대 크기입니다. 기본값 "0KB"은 절단을 해제합니다 (로그 파일은 무한정 확장 할 수 있습니다). 참고\_: 개별 로그 파일에 적용됩니다! 로그 파일의 크기는 일괄 적으로 고려되지 않습니다."
 config_hcaptcha: "HCaptcha 설정 (차단될 때 사람이 다시 액세스할 수 있는 방법을 제공합니다)."
 config_hcaptcha_api: &CaptchaAPI "어떤 API를 사용할 수 있습니까?"
 config_hcaptcha_expiry: &CaptchaExpiry "보안 문자 인스턴스를 기억 시간. Default (기본 설정) = 720 (1 개월)."
@@ -137,10 +137,10 @@ config_hcaptcha_show_api_message: &ShowAPIMessage "API 메시지를 표시 하�
 config_hcaptcha_show_cookie_warning: &ShowCookieWarning "쿠키 경고 표시 하시겠습니까? True = 예 (Default / 기본 설정); False = 아니오."
 config_hcaptcha_signature_limit: &CaptchaSignatureLimit "보안 문자 제안이 철회되기 전에 허용되는 최대 서명 수입니다. Default (기본 설정) = 1."
 config_hcaptcha_sitekey: *CaptchaDashboard
-config_hcaptcha_usemode: &CaptchaUseMode "보안 문자는 언제 제공해야 합니까? 참고 : 허용 목록에 있거나 확인되고 차단되지 않은 요청은 보안 문자를 작성할 필요가 없습니다."
+config_hcaptcha_usemode: "보안 문자는 언제 제공해야 합니까? 참고\_: 허용 목록에 있거나 확인되고 차단되지 않은 요청은 보안 문자를 작성할 필요가 없습니다."
 config_legal: "법적 요구 사항 설정."
 config_legal_omit_hostname: "로그에서 호스트 이름을 생략 하시겠습니까? True = 예; False = 아니오 (Default / 기본 설정)."
-config_legal_omit_ip: "로그에서 IP 주소를 생략 하시겠습니까? True = 예; False = 아니오 (Default / 기본 설정). 참고 : "pseudonymise_ip_addresses"는 "omit_ip"가 "true"일 때 중복됩니다."
+config_legal_omit_ip: "로그에서 IP 주소를 생략 하시겠습니까? True = 예; False = 아니오 (Default / 기본 설정). 참고\_: "pseudonymise_ip_addresses"는 "omit_ip"가 "true"일 때 중복됩니다."
 config_legal_omit_ua: "로그에서 사용자 에이전트를 생략 하시겠습니까? True = 예; False = 아니오 (Default / 기본 설정)."
 config_legal_privacy_policy: "생성 된 페이지의 꼬리말에 표시 할 관련 개인 정보 정책 방침의 주소입니다. URL 지정, 또는 사용하지 않으려면 비워 두십시오."
 config_legal_pseudonymise_ip_addresses: "로그 파일을 쓸 때 가명으로 하다 IP 주소? True = 예 (Default / 기본 설정); False = 아니오."
@@ -163,7 +163,7 @@ config_recaptcha_show_api_message: *ShowAPIMessage
 config_recaptcha_show_cookie_warning: *ShowCookieWarning
 config_recaptcha_signature_limit: *CaptchaSignatureLimit
 config_recaptcha_sitekey: *CaptchaDashboard
-config_recaptcha_usemode: *CaptchaUseMode
+config_recaptcha_usemode: "보안 문자는 언제 제공해야 합니까? 참고\_: 허용 목록에 있거나 확인되고 차단되지 않은 요청은 보안 문자를 작성할 필요가 없습니다."
 config_signatures: "서명, 서명 파일, 모듈, 등의 설정."
 config_signatures_block_attacks: "공격 및 기타 비정상적인 트래픽과 관련된 CIDR을 차단하시겠습니까? 예: 포트 스캔, 해킹, 취약점 조사, 등등. 문제가있는 경우를 제외하고 일반적으로이를 true로 설정해야합니다."
 config_signatures_block_bogons: "보곤 IP 주소의 CIDR을 차단해야합니까? 당신은 로컬 호스트에서 또는 귀하의 LAN에서 로컬 네트워크에서 연결을 수신 한 경우, 이것은 false로 설정해야합니다. 없는 경우에는이를 true로 설정해야합니다."
@@ -203,7 +203,7 @@ field_2fa: "2FA 코드"
 field_Request_Method: "요청 방법"
 field_activate: "활성화"
 field_add_more_conditions: "조건 추가"
-field_add_webhook: "웹 후크 추가"
+field_add_webhook: "웹훅 추가"
 field_asnlookup: "ASN 조회"
 field_banned: "금지 된"
 field_blocked: "차단 된셨습니까?"
@@ -220,11 +220,11 @@ field_delete: "삭제"
 field_delete_account: "계정 삭제"
 field_download_file: "다운로드"
 field_edit_file: "편집"
-field_execution_order: "실행 순서 :"
+field_execution_order: "실행 순서\_:"
 field_expiry: "만료"
 field_false: "False (거짓)"
 field_file: "파일"
-field_filename: "파일 이름 :"
+field_filename: "파일 이름\_:"
 field_filetype_directory: "디렉토리"
 field_filetype_info: "{EXT} 파일"
 field_filetype_unknown: "알 수없는"
@@ -234,7 +234,7 @@ field_install: "설치"
 field_latest_version: "최신 버전"
 field_log_in: "로그인"
 field_netmask: "넷 마스크 사용하여 출력 생성"
-field_new_name: "새 이름 :"
+field_new_name: "새 이름\_:"
 field_nonclickable_text: "클릭 할 수없는 텍스트"
 field_not_tracking: "추적하지 않습니다."
 field_ok: "확인"
@@ -253,7 +253,7 @@ field_repair: "수리"
 field_repair_all: "모두 수리"
 field_reset: "재설정"
 field_set_new_password: "새 암호를 설정합니다"
-field_size: "전체 크기 :"
+field_size: "전체 크기\_:"
 field_size_GB: "GB"
 field_size_KB: "KB"
 field_size_MB: "MB"
@@ -277,7 +277,42 @@ field_verify_all: "모두 검증"
 field_whitelisted_requests: "화이트리스트 된 것으로 표시된 요청"
 field_your_version: "사용 버전"
 header_login: "계속하려면 로그인하십시오."
-label_active_config_file: "활성 구성 파일 :"
+info_some_useful_links: |
+ 유용한 링크 :<br />
+     <ul class="pieul">
+       <li><span class="comCat">CIDRAM을위한 도구, 리소스, 등.</span>
+         <ul class="comSub">
+           <li>{{Links.CIDRAM.Issues}} – CIDRAM 문제 페이지 (지원, 원조 등).</li>
+           <li>{{Links.CIDRAM.WordPress}} – CIDRAM 자료 WordPress 플러그인.</li>
+           <li>{{Links.CIDRAM.Extras}} – 다양한 부가 기능.</li>
+         </ul>
+       </li>
+       <li><span class="comCat">그룹, 포럼, 커뮤니티, 등.</span>
+         <ul class="comSub">
+           <li>{{Links.PHP.Earth.Facebook}} – PHP 학습 자원과 토론.</li>
+           <li><a href="https://www.stopforumspam.com/forum/" rel="noopener noreferrer external">메세지 보드@Stop Forum Spam</a> – 포럼 스팸 정지에 관한 유용한 토론 포럼.</li>
+         </ul>
+       </li>
+       <li><span class="comCat">기타 유용한 도구, 자원, 서비스, 등.</span>
+         <ul class="comSub">
+           <li>{{Links.SFS}} – 알려진 포럼 스패머 데이터베이스를 유지 관리합니다. 스패머에 대한 보호 웹 사이트 및 포럼 보호에 유용합니다.</li>
+           <li><a href="https://bgp.he.net/" hreflang="en" rel="noopener noreferrer external">Hurricane Electric BGP Toolkit</a> – ASN에서 CIDR을 취득하는 ASN 관계를 결정하는 네트워크 이름에 따라 ASN을 감지, 등등.</li>
+           <li>{{Links.BGPView}} – ASN에서 CIDR을 취득하는 ASN 관계를 결정하는 네트워크 이름에 따라 ASN을 감지, 등등.</li>
+           <li><a href="https://radar.qrator.net/" hreflang="en" rel="noopener noreferrer external">Qrator의 Radar</a> – ASN의 연결을 확인하는 데 유용한 도구; ASN에 관한 기타 다양한 정보.</li>
+           <li><a href="https://www.spamhaus.org/statistics/botnet-asn/" rel="noopener noreferrer external">Spamhaus 프로젝트</a> – ASN의 봇넷 감염 속도에 대한 보고서를 표시합니다.</li>
+           <li>{{Links.AbuseIPDB}} – 알려진 위험한 IP 주소의 데이터베이스를 유지합니다; IP 주소를 확인하고보고하기위한 API를 제공합니다.</li>
+         </ul>
+       </li>
+       <li><span class="comCat">정보 및 학습 리소스.</span>
+         <ul class="comSub">
+           <li>{{Links.PHP.Earth.Website}} – PHP 학습 자원과 토론.</li>
+           <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">취약점 차트</a> – 다양한 패키지의 안전하고 안전하지 않은 버전을 나열합니다 (HHVM, PHP, phpMyAdmin, Python, 기타).</li>
+           <li><a href="https://maikuolan.github.io/Compatibility-Charts/" hreflang="en-AU" rel="noopener noreferrer external">호환성 차트</a> – 다양한 패키지에 대한 호환성 정보를 나열합니다 (CIDRAM, phpMussel, 기타).</li>
+         </ul>
+       </li>
+     </ul>
+
+label_active_config_file: "활성 구성 파일\_:"
 label_actual: "현재"
 label_aux_actBlk: "차단하"
 label_aux_actByp: "우회하"
@@ -288,9 +323,9 @@ label_aux_actRdr: "리디렉션 (차단하지 않고)"
 label_aux_actRun: "처리하기 위해 파일을 실행합니다"
 label_aux_actWhl: "화이트리스트"
 label_aux_create_new_rule: "새 규칙 만들기"
-label_aux_expiry: "규칙이 만료되어야 하는 시기 (선택 사항) :"
-label_aux_from: "규칙이 시작되어야 하는 시기 (선택 사항) :"
-label_aux_http_status_code_override: "HTTP 상태 코드 바꿔 놓음 :"
+label_aux_expiry: "규칙이 만료되어야 하는 시기 (선택 사항)\_:"
+label_aux_from: "규칙이 시작되어야 하는 시기 (선택 사항)\_:"
+label_aux_http_status_code_override: "HTTP 상태 코드 바꿔 놓음\_:"
 label_aux_logic_all: "규칙을 실행하려면 모든 조건이 충족되어야합니다."
 label_aux_logic_any: "모든 "같지 않음"(≠) 조건도 충족되면 모든 "같음"(=) 조건이 규칙을 트리거 할 수 있습니다."
 label_aux_menu_action: "다음 조건이 충족되면 요청을 %s십시오."
@@ -305,11 +340,11 @@ label_aux_move_up: "위로 가다"
 label_aux_mtdReg: "정규식"
 label_aux_mtdStr: "직접 문자열 비교"
 label_aux_mtdWin: "Windows 스타일 와일드 카드"
-label_aux_name: "새 규칙의 이름 :"
-label_aux_notes: "메모 (이 페이지에만 표시되며 규칙에 영향을주지 않습니다) :"
-label_aux_reason: "차단되었을 때 사용자에게 주어진 이유 :"
-label_aux_run: "실행할 파일의 이름 :"
-label_aux_special: "다른 옵션 및 특수 플래그 :"
+label_aux_name: "새 규칙의 이름\_:"
+label_aux_notes: "메모 (이 페이지에만 표시되며 규칙에 영향을주지 않습니다)\_:"
+label_aux_reason: "차단되었을 때 사용자에게 주어진 이유\_:"
+label_aux_run: "실행할 파일의 이름\_:"
+label_aux_special: "다른 옵션 및 특수 플래그\_:"
 label_aux_special_default_state: "그대로 두십시오 (아무것도 설정하지 마십시오)"
 label_aux_special_hcaptcha_disable: "HCaptcha를 강제로 비활성화"
 label_aux_special_hcaptcha_mark: "HCaptcha와 함께 사용하기위한 마크"
@@ -321,87 +356,87 @@ label_aux_special_suppress: "출력 템플릿 억제"
 label_aux_special_suppress_logging: "로깅 억제"
 label_aux_special_tracking_default: "기본 IP 추적 옵션 적용"
 label_aux_special_tracking_extended: "확장 된 IP 추적 옵션 적용"
-label_aux_target: "요청을 리디렉션 할 위치 :"
-label_aux_webhooks: "규칙 요구 사항이 충족 될 때 적용 할 웹 후크 :"
-label_backup_location: "저장소 백업 위치 (비상사태의 경우, 또는 다른 모든 것이 실패한 경우) :"
+label_aux_target: "요청을 리디렉션 할 위치\_:"
+label_aux_webhooks: "규칙 요구 사항이 충족될 때 적용 할 웹훅\_:"
+label_backup_location: "저장소 백업 위치 (비상사태의 경우, 또는 다른 모든 것이 실패한 경우)\_:"
 label_banned: "금지된 요청"
 label_blocked: "차단된 요청"
-label_branch: "분기 최신 안정 :"
+label_branch: "분기 최신 안정\_:"
 label_captcha: "CAPTCHA 완료 시도"
 label_check_aux: "또한 보조 규칙에 대해 테스트하십시오."
 label_check_modules: "모듈에 대해서도 테스트하십시오."
 label_check_verification: "검색 엔진 및 소셜 미디어 검증 테스트하십시오."
 label_checkbox: "체크 박스"
-label_cidram: "사용된 CIDRAM 버전 :"
-label_clientinfo: "사용자 정보 :"
+label_cidram: "사용된 CIDRAM 버전\_:"
+label_clientinfo: "사용자 정보\_:"
 label_default: "기본값"
-label_dependencies: "종속성 :"
+label_dependencies: "종속성\_:"
 label_difference: "차이"
 label_displaying: "%s 항목이 표시됩니다."
 label_displaying_that_cite: ""%2$s"라고 표시된 %1$s 개의 항목이 표시됩니다."
-label_entries_per_page: "페이지당 항목 수 :"
+label_entries_per_page: "페이지당 항목 수\_:"
 label_expected: "예상 된"
-label_expires: "만료일 :"
+label_expires: "만료일\_:"
 label_extension: "확장"
-label_false_positive_risk: "거짓 양성 위험 :"
+label_false_positive_risk: "거짓 양성 위험\_:"
 label_fmgr_cache_data: "캐시 데이터 및 임시 파일 "
-label_fmgr_disk_usage: "CIDRAM 디스크 사용 :"
-label_fmgr_free_space: "사용 가능한 디스크 공간 :"
+label_fmgr_disk_usage: "CIDRAM 디스크 사용\_:"
+label_fmgr_free_space: "사용 가능한 디스크 공간\_:"
 label_fmgr_other_sig: "기타 규칙, 서명 파일, 등"
 label_fmgr_safety: "안전 장치"
-label_fmgr_total_disk_usage: "총 디스크 사용 :"
-label_fmgr_total_space: "총 디스크 공간 :"
+label_fmgr_total_disk_usage: "총 디스크 사용\_:"
+label_fmgr_total_space: "총 디스크 공간\_:"
 label_fmgr_updates_metadata: "구성 요소 업데이트 메타 데이터"
 label_hide: "숨기다"
 label_ignore: "이것을 무시하십시오"
 label_installed_available: "설치되어있다 / 이용 가능"
-label_integrity_check: "무결성 검사 :"
+label_integrity_check: "무결성 검사\_:"
 label_intersect: "교차"
 label_invisible: "보이지 않음"
 label_is_available: "%s를 사용할 수 있습니다 (%s)."
 label_is_available_class: "%s를 사용할 수 있습니다."
 label_is_not_available: "%s는 사용할 수 없습니다."
 label_never: "못"
-label_next: "다음 :"
-label_os: "사용된 운영 체제 :"
+label_next: "다음\_:"
+label_os: "사용된 운영 체제\_:"
+label_other: "다른"
 label_other-ActiveIPv4: "활성 IPv4 서명 파일"
 label_other-ActiveIPv6: "활성 IPv6 서명 파일"
 label_other-ActiveModules: "활성 모듈"
 label_other-Since: "시작일"
-label_other: "다른"
 label_paginate: "페이지 매김"
 label_passed: "허용된 요청"
-label_php: "사용된 PHP 버전 :"
-label_preferred_source: "선호하는 출처 :"
-label_previous: "이전 :"
+label_php: "사용된 PHP 버전\_:"
+label_preferred_source: "선호하는 출처\_:"
+label_previous: "이전\_:"
 label_remember: "기억하다"
-label_results: "결과 (%s 입력된 – %s 거부된 – %s 받아 들인 – %s 합병된 – %s 출력된) :"
-label_sanity_check: "건강 검사 :"
-label_sapi: "사용된 SAPI :"
+label_results: "결과 (%s 입력된 – %s 거부된 – %s 받아 들인 – %s 합병된 – %s 출력된)\_:"
+label_sanity_check: "건강 검사\_:"
+label_sapi: "사용된 SAPI\_:"
 label_sections_across_x_files: "%2$s 개 파일에 %1$s"
 label_sections_x_signatures: "%s 개의 서명"
-label_see_also: "또한보십시오 :"
+label_see_also: "또한보십시오\_:"
 label_show: "보여"
-label_signature_type: "서명 유형 :"
-label_stable: "최신 안정 :"
+label_signature_type: "서명 유형\_:"
+label_stable: "최신 안정\_:"
 label_starting_from: ""%s"부터 시작합니다."
-label_sysinfo: "시스템 정보 :"
-label_textmode: "텍스트 서식 지정 :"
+label_sysinfo: "시스템 정보\_:"
+label_textmode: "텍스트 서식 지정\_:"
 label_textmode_fancy: "공상"
 label_textmode_simple: "단순한"
 label_textmode_tally: "집계"
 label_timeout_limit: "이 모듈은 외부 요청을 수행합니다. 여기에서 해당 요청에 대한 제한 시간 (초)을 지정할 수 있습니다."
 label_total: "합계"
+label_unignore: "이것을 무시하지 마라"
+label_unstable: "최신 불안정\_:"
+label_used_with: "용법\_:"
 label_usemode_any: "서명 한도 내고 금지되지 않으면 때만 (차단 여부와 관계없이)."
 label_usemode_blkd: "차단되었을, 서명 한도 내고 금지되지 않으면 때만."
 label_usemode_blkd_mrkd: "차단되었을, 특별히 사용 표시, 서명 한도 내고 금지되지 않으면 때만."
 label_usemode_not_blkd: "차단되지 때만."
 label_usemode_not_blkd_mrkd: "차단되지 않은 경우, 또는 특별히 사용 표시, 서명 한도 내고 금지되지 않으면 때만."
-label_unignore: "이것을 무시하지 마라"
-label_unstable: "최신 불안정 :"
-label_used_with: "용법 :"
-label_your_ip: "당신의 IP :"
-label_your_ua: "당신의 UA :"
+label_your_ip: "당신의 IP\_:"
+label_your_ua: "당신의 UA\_:"
 link_accounts: "계정"
 link_aux: "보조 규칙"
 link_cache_data: "데이터 캐쉬"
@@ -428,8 +463,15 @@ logs_logfile_doesnt_exist: "선택한 로그는 존재하지 않습니다!"
 logs_no_logfile_selected: "로그가 선택되어 있지 않습니다."
 logs_no_logfiles_available: "아니 로그를 사용할 수 있습니다."
 max_login_attempts_exceeded: "로그인 시도 횟수를 초과했습니다; 액세스 거부."
+msg_subject_2fa: "2FA (이중 인증)"
+msg_template_2fa: |
+ <center><p>안녕하세요, %1$s.<br />
+ <br />
+ CIDRAM 프런트 엔드에 로그인하기위한 2FA 코드 :</p>
+ <h1>%2$s</h1>
+ <p>이 코드는 10 분 후에 만료됩니다.</p></center>
 notice_click_here: "자세한 내용은 여기를 클릭하십시오."
-notice_new_major_version: "주의 : %s를 사용할 수 있습니다 (당신은 %s를 사용하고 있습니다). 당신은 이 버전의 최소 PHP 요구 사항을 충족합니다. 그러나, 업데이트하려면 일부 수동 단계가 필요합니다."
+notice_new_major_version: "주의\_: %s를 사용할 수 있습니다 (당신은 %s를 사용하고 있습니다). 당신은 이 버전의 최소 PHP 요구 사항을 충족합니다. 그러나, 업데이트하려면 일부 수동 단계가 필요합니다."
 previewer_days: "일"
 previewer_hours: "시간"
 previewer_minutes: "의사록"
@@ -504,7 +546,7 @@ state_component_is_active: "구성 요소가 활성화됩니다."
 state_component_is_inactive: "구성 요소가 비활성 상태입니다."
 state_component_is_partially_active: "구성 요소가 부분적으로 활성화되었습니다."
 state_component_is_provisional: "구성 요소가 잠정입니다."
-state_default_password: "경고 : 기본 암호를 사용하여!"
+state_default_password: "경고\_: 기본 암호를 사용하여!"
 state_email_sent: "이메일이 "%s"로 전송되었습니다."
 state_failed_missing: "필요한 구성 요소를 사용할 수 없어 작업이 실패했습니다."
 state_fixer: "%2$s %1$s."
@@ -517,12 +559,12 @@ state_logged_in: "로그인 했습니다."
 state_logged_in_2fa_pending: "로그인 했습니다 + 2FA를 기다리는 중."
 state_logged_out: "로그 아웃했습니다."
 state_logs_access_only: "로그에만 액세스"
-state_maintenance_mode: "경고 : 유지 관리 모드가 활성화되었습니다!"
-state_password_not_valid: "경고 : 이 계정은 올바른 암호를 사용하지 않습니다!"
+state_maintenance_mode: "경고\_: 유지 관리 모드가 활성화되었습니다!"
+state_password_not_valid: "경고\_: 이 계정은 올바른 암호를 사용하지 않습니다!"
 state_risk_high: "높은"
 state_risk_low: "낮은"
 state_risk_medium: "중간"
-state_sl_totals: "합계 (서명 : %s – 서명 섹션 : %s – 서명 파일 : %s – 고유 섹션 태그 : %s)."
+state_sl_totals: "합계 (서명\_: %s – 서명 섹션\_: %s – 서명 파일\_: %s – 고유 섹션 태그\_: %s)."
 state_tracking: "현재 %s 개의 IP를 추적 중입니다."
 switch-descending-order-set-false: "오름차순으로 정렬"
 switch-descending-order-set-true: "내림차순으로 정렬"
@@ -553,11 +595,12 @@ time_years_from_now: "지금부터 %s년"
 tip_2fa_sent: "2FA 코드가 포함 된 이메일이 귀하의 이메일 주소로 발송되었습니다. 프런트 엔드에 액세스하려면 아래 코드를 확인하십시오. 이 이메일을받지 못한 경우 로그 아웃을 시도하고 10 분을 기다린 후 다시 로그인하여 새 코드가 포함 된 새 이메일을 수신 할 수 있습니다."
 tip_accounts: "안녕하세요, {username}.<br />계정 페이지는 CIDRAM 프론트 엔드에 액세스 할 수있는 사용자를 제어 할 수 있습니다."
 tip_aux: "안녕하세요, {username}.<br />이 페이지를 사용하여 CIDRAM에 대한 보조 규칙을 작성, 삭제 및 수정할 수 있습니다."
-tip_aux_operators: "힌트 : 조건에 다른 연산자가 필요한 경우, 당신은 그것의 가치 시작 부분에 추가 할 수 있습니다 (직접 문자열 비교가 필요합니다)."
-tip_aux_priority: "우선 순위 (최고➡(같은🔄동등한)➡최저한의) :"
+tip_aux_operators: "힌트\_: 조건에 다른 연산자가 필요한 경우, 당신은 그것의 가치 시작 부분에 추가 할 수 있습니다 (직접 문자열 비교가 필요합니다)."
+tip_aux_priority: "우선 순위 (최고➡(같은🔄동등한)➡최저한의)\_:"
 tip_aux_webhooks: "규칙이 트리거 되면, CIDRAM은 연결된 웹 훅에 이벤트에 대해 알리려고 시도합니다."
 tip_cache_data: "안녕하세요, {username}.<br />여기서 캐시의 내용을 검토 할 수 있습니다."
 tip_cidr_calc: "안녕하세요, {username}.<br />CIDR 계산기는 IP 주소가 어떻게 CIDR에 속해 있는지를 계산할 수 있습니다."
+tip_click_the_component: "자세한 내용은 구성 요소 이름을 클릭하십시오."
 tip_condition_placeholder: "무시할 값을 지정하거나 공백으로 두십시오."
 tip_config: "안녕하세요, {username}.<br />구성 페이지는 프론트 엔드에서 CIDRAM의 설정을 변경할 수 있습니다."
 tip_custom_query: "여기에 쿼리를 입력하십시오 (선택 사항이다)."
@@ -566,7 +609,7 @@ tip_custom_ua: "여기에 사용자 에이전트를 입력하십시오 (선택 �
 tip_enter_input_here: "여기에 데이터를 입력하십시오."
 tip_enter_ip_here: "여기에 IP를 입력하십시오."
 tip_enter_ips_here: "여기에 IP를 입력하십시오."
-tip_fe_cookie_warning: "노트 : CIDRAM은 쿠키를 사용하여 로그인을 인증합니다. 로그인하면, 브라우저에서 쿠키를 만들고 저장하는 것에 동의하게됩니다."
+tip_fe_cookie_warning: "노트\_: CIDRAM은 쿠키를 사용하여 로그인을 인증합니다. 로그인하면, 브라우저에서 쿠키를 만들고 저장하는 것에 동의하게됩니다."
 tip_file_manager: "안녕하세요, {username}.<br />파일 관리자를 사용하여 파일을 삭제, 편집, 업로드, 다운로드 할 수 있습니다. 신중하게 사용하는 (이것을 사용하여 설치를 끊을 수 있습니다)."
 tip_fixer: "안녕하세요, {username}.<br />서명 파일 해결 프로그램은 서명 파일의 잠재적인 문제를 감지하고 수정하는 방법을 제공합니다."
 tip_home: "안녕하세요, {username}.<br />이것은 CIDRAM 프론트 엔드의 홈페이지입니다. 계속하려면 왼쪽 탐색 메뉴에서 링크를 선택합니다."
@@ -575,57 +618,13 @@ tip_ip_test: "안녕하세요, {username}.<br />IP 테스트 페이지는 IP 주
 tip_ip_test_switches: "(선택하지 않으면 서명 파일 만 테스트됩니다)."
 tip_ip_tracking: "안녕하세요, {username}.<br />IP 추적 페이지에서 IP 주소 추적 상태를 확인할 수 있습니다. 당신이 금지되어있는 것을 확인 할 수 있으며, 원한다면 당신은 추적을 취소 할 수 있습니다."
 tip_logs: "안녕하세요, {username}.<br />로그의 내용을 보려면 다음 목록에서 로그를 선택합니다."
-tip_click_the_component: "자세한 내용은 구성 요소 이름을 클릭하십시오."
 tip_range: "안녕하세요, {username}.<br />이 페이지는 현재 활성화 된 서명 파일에서 다루는 IP 범위에 대한 몇 가지 기본 통계 정보를 보여줍니다."
 tip_range_intersector: "안녕하세요, {username}.<br />범위 교차 섹터는 두 범위 세트에서 공통 인자를 결정하는 데 사용할 수 있습니다."
 tip_range_subtractor: "안녕하세요, {username}.<br />범위 감산기는 한 범위의 IP/CIDR을 다른 범위에서 빼는 데 사용할 수 있습니다."
 tip_sections_list: "안녕하세요, {username}.<br />이 페이지는 현재 활성화 된 서명 파일에 존재하는 섹션을 나열합니다."
 tip_see_the_documentation: "설정 지시어에 대한 자세한 내용은 <a href="https://github.com/CIDRAM/Docs/blob/master/readme.ko.md\#SECTION6" hreflang="ko" rel="noopener external">문서를</a> 참조하십시오."
 tip_statistics: "안녕하세요, {username}.<br />이 페이지는 CIDRAM 설치와 관련된 몇 가지 기본 사용 통계를 보여줍니다."
-tip_statistics_disabled: "노트 : 통계 추적은 현재 비활성화되어, 있지만 구성 페이지를 통해 활성화 할 수 있습니다."
+tip_statistics_disabled: "노트\_: 통계 추적은 현재 비활성화되어, 있지만 구성 페이지를 통해 활성화 할 수 있습니다."
 tip_updates: "안녕하세요, {username}.<br />업데이트 페이지는 CIDRAM의 다양한 구성 요소를 설치·제거·업데이트 할 수 있습니다 (코어 패키지·서명·L10N 파일 등)."
 title_login: "로그인"
-warning_signatures_1: "경고 : 서명 파일이 활성화되어 있지 않습니다!"
-
-info_some_useful_links: |
- 유용한 링크 :<br />
-     <ul class="pieul">
-       <li><span class="comCat">CIDRAM을위한 도구, 리소스, 등.</span>
-         <ul class="comSub">
-           <li>{{Links.CIDRAM.Issues}} – CIDRAM 문제 페이지 (지원, 원조 등).</li>
-           <li>{{Links.CIDRAM.WordPress}} – CIDRAM 자료 WordPress 플러그인.</li>
-           <li>{{Links.CIDRAM.Extras}} – 다양한 부가 기능.</li>
-         </ul>
-       </li>
-       <li><span class="comCat">그룹, 포럼, 커뮤니티, 등.</span>
-         <ul class="comSub">
-           <li>{{Links.PHP.Earth.Facebook}} – PHP 학습 자원과 토론.</li>
-           <li><a href="https://www.stopforumspam.com/forum/" rel="noopener noreferrer external">메세지 보드@Stop Forum Spam</a> – 포럼 스팸 정지에 관한 유용한 토론 포럼.</li>
-         </ul>
-       </li>
-       <li><span class="comCat">기타 유용한 도구, 자원, 서비스, 등.</span>
-         <ul class="comSub">
-           <li>{{Links.SFS}} – 알려진 포럼 스패머 데이터베이스를 유지 관리합니다. 스패머에 대한 보호 웹 사이트 및 포럼 보호에 유용합니다.</li>
-           <li><a href="https://bgp.he.net/" hreflang="en" rel="noopener noreferrer external">Hurricane Electric BGP Toolkit</a> – ASN에서 CIDR을 취득하는 ASN 관계를 결정하는 네트워크 이름에 따라 ASN을 감지, 등등.</li>
-           <li>{{Links.BGPView}} – ASN에서 CIDR을 취득하는 ASN 관계를 결정하는 네트워크 이름에 따라 ASN을 감지, 등등.</li>
-           <li><a href="https://radar.qrator.net/" hreflang="en" rel="noopener noreferrer external">Qrator의 Radar</a> – ASN의 연결을 확인하는 데 유용한 도구; ASN에 관한 기타 다양한 정보.</li>
-           <li><a href="https://www.spamhaus.org/statistics/botnet-asn/" rel="noopener noreferrer external">Spamhaus 프로젝트</a> – ASN의 봇넷 감염 속도에 대한 보고서를 표시합니다.</li>
-           <li>{{Links.AbuseIPDB}} – 알려진 위험한 IP 주소의 데이터베이스를 유지합니다; IP 주소를 확인하고보고하기위한 API를 제공합니다.</li>
-         </ul>
-       </li>
-       <li><span class="comCat">정보 및 학습 리소스.</span>
-         <ul class="comSub">
-           <li>{{Links.PHP.Earth.Website}} – PHP 학습 자원과 토론.</li>
-           <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">취약점 차트</a> – 다양한 패키지의 안전하고 안전하지 않은 버전을 나열합니다 (HHVM, PHP, phpMyAdmin, Python, 기타).</li>
-           <li><a href="https://maikuolan.github.io/Compatibility-Charts/" hreflang="en-AU" rel="noopener noreferrer external">호환성 차트</a> – 다양한 패키지에 대한 호환성 정보를 나열합니다 (CIDRAM, phpMussel, 기타).</li>
-         </ul>
-       </li>
-     </ul>
-
-msg_template_2fa: |
- <center><p>안녕하세요, %1$s.<br />
- <br />
- CIDRAM 프런트 엔드에 로그인하기위한 2FA 코드 :</p>
- <h1>%2$s</h1>
- <p>이 코드는 10 분 후에 만료됩니다.</p></center>
-msg_subject_2fa: "2FA (이중 인증)"
+warning_signatures_1: "경고\_: 서명 파일이 활성화되어 있지 않습니다!"

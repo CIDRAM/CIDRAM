@@ -7,22 +7,23 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Dutch language data for the front-end (last modified: 2022.01.22).
+# This file: Dutch language data for the front-end (last modified: 2022.03.01).
 ##/
 
 Extended Description Bypasses: "De standaard signature rondwegen normaal opgenomen met de primaire pakket."
 Extended Description Chart.js: "Hiermee kan de frontend taartdiagrammen genereren.<br />{{Links.Chart.js}} is beschikbaar via de <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
+Extended Description IPv4: &ExtDesCloud "Blokkeert ongewenste cloud-diensten en niet-menselijke eindpunten."
 Extended Description IPv4-Bogons: &ExtDesBogons "Blokkeert bogon/martian CIDR's."
 Extended Description IPv4-ISPs: &ExtDesISPs "Blokkeert gevaarlijk en spammy ISP's (omvat multiplay-netwerken, die zowel menselijke als niet-menselijke eindpunten kunnen bevatten)."
 Extended Description IPv4-Nonblocking: &ExtDesNonblocking "Handig voor profilering, maar blokkeert niets op zich."
 Extended Description IPv4-Other: &ExtDesOther "Blokkeert CIDR's voor proxies, VPN's, en diverse andere ongewenste diensten."
-Extended Description IPv4: &ExtDesCloud "Blokkeert ongewenste cloud-diensten en niet-menselijke eindpunten."
+Extended Description IPv6: *ExtDesCloud
 Extended Description IPv6-Bogons: *ExtDesBogons
 Extended Description IPv6-ISPs: *ExtDesISPs
 Extended Description IPv6-Nonblocking: *ExtDesNonblocking
 Extended Description IPv6-Other: *ExtDesOther
-Extended Description IPv6: *ExtDesCloud
 Extended Description PHPMailer: "Vereist voor het gebruik van functionaliteit die het verzenden van e-mail vereisen.<br />{{Links.PHPMailer.PHPMailer}} is beschikbaar via de {{Links.PHPMailer.License}}-licentie."
+Extended Description Search engines blocker module: "Biedt de mogelijkheid om zoekmachines te blokkeren, wat voor sommige websites problematisch kan zijn (b.v., Baidu, Sogou, Yandex, enz)."
 Extended Description flags.css: "Voegt vlagondersteuning toe aan de front-end logboekpagina."
 Extended Description module_abuseipdb.php: "Blokkeert aanvragen van IP's die worden vermeld op AbuseIPDB."
 Extended Description module_badhosts.php: "Blokkeert hosts die vaak worden gebruikt door spammers, hackers en andere kwaadwillige entiteiten."
@@ -36,20 +37,20 @@ Extended Description module_httpver.php: "Maakt het mogelijk om specifieke proto
 Extended Description module_projecthoneypot.php: "Blokkeert aanvragen van IP's die worden vermeld op Project Honeypot."
 Extended Description module_refspam.php: "Blokkering op basis van verwijzende spam levert over het algemeen geen betekenisvol beveiligingsvoordeel op, maar in sommige gevallen kan het nuttig zijn voor sommige gebruikers, voor het verzamelen van meer informatie over verzoeken en erover te rapporteren.<br />Door deze module te installeren, worden ook de Symfony-polyfills voor {{Links.Symfony.Intl/Idn}} en {{Links.Symfony.Mbstring}} geïnstalleerd (omdat deze module Idn-functionaliteit vereist, die niet alle PHP-installaties standaard bieden), beide die zijn beschikbaar via de <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a> licentie."
 Extended Description module_sfs.php: "Beschermt registratie en login tegen IP's die door SFS worden vermeld."
-Extended Description Search engines blocker module: "Biedt de mogelijkheid om zoekmachines te blokkeren, wat voor sommige websites problematisch kan zijn (b.v., Baidu, Sogou, Yandex, enz)."
 Name Bypasses: "Standaard signature rondwegen."
 Name CN_cidram.inc: "China IPv4-blokkeerlijst"
+Name IPv4: "IPv4 (cloud en hosting diensten)."
 Name IPv4-Bogons: "IPv4 (bogons)."
 Name IPv4-ISPs: "IPv4 (spammy ISP's)."
 Name IPv4-Nonblocking: "IPv4 niet-blokkerende signatures."
 Name IPv4-Other: "IPv4 (proxies, VPN's, enz)."
-Name IPv4: "IPv4 (cloud en hosting diensten)."
+Name IPv6: "IPv6 (cloud en hosting diensten)."
 Name IPv6-Bogons: "IPv6 (bogons)."
 Name IPv6-ISPs: "IPv6 (spammy ISP's)."
 Name IPv6-Nonblocking: "IPv6 niet-blokkerende signatures."
 Name IPv6-Other: "IPv6 (proxies, VPN's, enz)."
-Name IPv6: "IPv6 (cloud en hosting diensten)."
 Name KR_cidram.inc: "Zuid-Korea IPv4-blokkeerlijst"
+Name Search engines blocker module: "Blokkermodule voor zoekmachines"
 Name compat_bunnycdn.php: "BunnyCDN compatibiliteitsmodule"
 Name module_abuseipdb.php: "AbuseIPDB module"
 Name module_badhosts.php: "Slechte hosts blokkermodule"
@@ -63,7 +64,6 @@ Name module_httpver.php: "HTTP versie controle module"
 Name module_projecthoneypot.php: "Project Honeypot module"
 Name module_refspam.php: "Verwijzersspam module"
 Name module_sfs.php: "Stop Forum Spam module"
-Name Search engines blocker module: "Blokkermodule voor zoekmachines"
 config_PHPMailer: "Configuratie voor PHPMailer (gebruikt voor tweefactorauthenticatie)."
 config_PHPMailer_add_reply_to_address: "Het antwoordadres voor het verzenden van e-mail via SMTP."
 config_PHPMailer_add_reply_to_name: "De antwoordnaam voor het verzenden van e-mail via SMTP."
@@ -279,6 +279,41 @@ field_verify_all: "Verifiëren alles"
 field_whitelisted_requests: "Verzoeken gemarkeerd als op de witte lijst"
 field_your_version: "Uw Versie"
 header_login: "Inloggen om verder te gaan."
+info_some_useful_links: |
+ Enkele nuttige links:<br />
+     <ul class="pieul">
+       <li><span class="comCat">Tools, bronnen, enz. voor CIDRAM.</span>
+         <ul class="comSub">
+           <li>{{Links.CIDRAM.Issues}} – Kwesties pagina voor CIDRAM (steun, hulp, enz).</li>
+           <li>{{Links.CIDRAM.WordPress}} – WordPress plugin voor CIDRAM.</li>
+           <li>{{Links.CIDRAM.Extras}} – Diverse extra's.</li>
+         </ul>
+       </li>
+       <li><span class="comCat">Groepen, forums, communities, enz.</span>
+         <ul class="comSub">
+           <li>{{Links.PHP.Earth.Facebook}} – PHP leermiddelen en discussie.</li>
+           <li><a href="https://www.stopforumspam.com/forum/" rel="noopener noreferrer external">Forum@Stop Forum Spam</a> – Nuttig discussieforum over het stoppen forum spam.</li>
+         </ul>
+       </li>
+       <li><span class="comCat">Andere handige tools, bronnen, diensten, enz.</span>
+         <ul class="comSub">
+           <li>{{Links.SFS}} – Beheert een database van bekende forumspammers. Handig voor het beschermen van websites en forums tegen spammers.</li>
+           <li><a href="https://bgp.he.net/" hreflang="en" rel="noopener noreferrer external">Hurricane Electric BGP Toolkit</a> – Krijg CIDR's van ASN, bepalen ASN relaties, ontdek ASN's op basis van netwerknamen, enz.</li>
+           <li>{{Links.BGPView}} – Krijg CIDR's van ASN, bepalen ASN relaties, ontdek ASN's op basis van netwerknamen, enz.</li>
+           <li><a href="https://radar.qrator.net/" hreflang="en" rel="noopener noreferrer external">Radar van Qrator</a> – Handig hulpmiddel voor het controleren van de connectiviteit van ASN's en ook voor diverse andere informatie over ASN's.</li>
+           <li><a href="https://www.spamhaus.org/statistics/botnet-asn/" rel="noopener noreferrer external">Het Spamhaus Project</a> – Geeft rapporten over botnet infectie tarieven voor ASN.</li>
+           <li>{{Links.AbuseIPDB}} – Onderhoudt een database van bekende beledigend IP's; Biedt een API voor het controleren en rapporteren van IP's.</li>
+         </ul>
+       </li>
+       <li><span class="comCat">Informatie en leermiddelen.</span>
+         <ul class="comSub">
+           <li>{{Links.PHP.Earth.Website}} – PHP leermiddelen en discussie.</li>
+           <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Kwetsbaarheidstabellen</a> – Hiermee worden veilige/onveilige versies van verschillende pakketten weergegeven (HHVM, PHP, phpMyAdmin, Python, enz).</li>
+           <li><a href="https://maikuolan.github.io/Compatibility-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Compatibiliteitstabellen</a> – Hiermee worden informatie over compatibiliteit voor verschillende pakketten weergegeven (CIDRAM, phpMussel, enz).</li>
+         </ul>
+       </li>
+     </ul>
+
 label_active_config_file: "Actief configuratiebestand:"
 label_actual: "Actueel"
 label_aux_actBlk: "blokkeer"
@@ -370,11 +405,11 @@ label_is_not_available: "%s is niet beschikbaar."
 label_never: "Nooit"
 label_next: "Volgende:"
 label_os: "Besturingssysteem gebruikt:"
+label_other: "Anders"
 label_other-ActiveIPv4: "Actieve IPv4 signatuurbestanden"
 label_other-ActiveIPv6: "Actieve IPv6 signatuurbestanden"
 label_other-ActiveModules: "Actieve modules"
 label_other-Since: "Begin datum"
-label_other: "Anders"
 label_paginate: "Pagineren"
 label_passed: "Verzoeken toegestaan"
 label_php: "PHP versie gebruikt:"
@@ -402,14 +437,14 @@ label_textmode_simple: "Eenvoudig"
 label_textmode_tally: "Telling"
 label_timeout_limit: "Deze module voert externe verzoeken uit. Hier kunt u de timeoutlimiet voor die verzoeken specificeren (in seconden)."
 label_total: "Totaal"
+label_unignore: "Niet negeer dit"
+label_unstable: "Laatste onstabiele:"
+label_used_with: "Gebruikt met:"
 label_usemode_any: "Alleen binnen de signatures limiet en niet verbannen (ongeacht of deze is geblokkeerd)."
 label_usemode_blkd: "Alleen wanneer geblokkeerd, binnen de signatures limiet, en niet verbannen."
 label_usemode_blkd_mrkd: "Alleen wanneer geblokkeerd, speciaal gemarkeerd voor gebruik, binnen de signatures limiet, en niet verbannen."
 label_usemode_not_blkd: "Alleen wanneer niet geblokkeerd."
 label_usemode_not_blkd_mrkd: "Alleen wanneer niet geblokkeerd, of wanneer speciaal gemarkeerd voor gebruik, binnen de signatures limiet, en niet verbannen."
-label_unignore: "Niet negeer dit"
-label_unstable: "Laatste onstabiele:"
-label_used_with: "Gebruikt met:"
 label_your_ip: "Je IP:"
 label_your_ua: "Je UA:"
 link_accounts: "Accounts"
@@ -438,6 +473,13 @@ logs_logfile_doesnt_exist: "Geselecteerde logbestand bestaat niet!"
 logs_no_logfile_selected: "Geen logbestand geselecteerd."
 logs_no_logfiles_available: "Geen logbestanden beschikbaar."
 max_login_attempts_exceeded: "Maximum aantal inlogpogingen overschreden; Toegang geweigerd."
+msg_subject_2fa: "2FA (Twee-Factor Authenticatie)"
+msg_template_2fa: |
+ <center><p>Hallo, %1$s.<br />
+ <br />
+ Uw 2FA-code voor in te loggen bij de frontend van CIDRAM:</p>
+ <h1>%2$s</h1>
+ <p>Deze code verloopt over 10 minuten.</p></center>
 notice_click_here: "Klik hier voor meer informatie."
 notice_new_major_version: "Notitie: %s is nu beschikbaar (u gebruikt %s). U voldoet aan de minimale PHP-vereiste van deze versie. Er zijn echter enkele handmatige stappen vereist om bij te werken."
 previewer_days: "Dagen"
@@ -460,7 +502,7 @@ response_aux_none: "Er zijn momenteel geen aanvullende regels."
 response_aux_rule_created_successfully: "Nieuwe aanvullende regel, "%s", succesvol aangemaakt."
 response_aux_rule_deleted_successfully: "Aanvullende regel, "%s", succesvol verwijderd."
 response_aux_updated: "Hulpregels zijn succesvol gewijzigd."
-response_checksum_error: "Checksum error! Bestand afgewezen!"
+response_checksum_error: "Checksum fout! Bestand afgewezen!"
 response_component_successfully_installed: "Component succesvol geïnstalleerd."
 response_component_successfully_uninstalled: "Component succesvol verwijderd."
 response_component_successfully_updated: "Component succesvol gewijzigd."
@@ -588,6 +630,7 @@ tip_aux_priority: "Prioriteit (hoogste➡(gelijk🔄gelijkwaardig)➡laagste):"
 tip_aux_webhooks: "Wanneer een regel wordt geactiveerd, CIDRAM probeert alle aangesloten webhooks op de hoogte te stellen van het evenement."
 tip_cache_data: "Hallo, {username}.<br />Hier kunt u de inhoud van de cache bekijken."
 tip_cidr_calc: "Hallo, {username}.<br />De CIDR calculator stelt u in staat om te berekenen welke CIDR's een IP-adres is een factor."
+tip_click_the_component: "Klik op de componentnaam voor meer details."
 tip_condition_placeholder: "Geef een waarde op of laat blanco om te negeren."
 tip_config: "Hallo, {username}.<br />De configuratie pagina stelt u in staat om de configuratie voor CIDRAM te modificeren vanaf de frontend."
 tip_custom_query: "Voer hier query in (optioneel)."
@@ -605,7 +648,6 @@ tip_ip_test: "Hallo, {username}.<br />De IP test pagina stelt u in staat om te t
 tip_ip_test_switches: "(Wanneer niet geselecteerd, worden alleen de signatuurbestanden getest tegen)."
 tip_ip_tracking: "Hallo, {username}.<br />Met het IP-Tracking pagina, is het mogelijk om de tracking status van IP-adressen te controleren, en u kunt zien welke zijn verbannen, en om te annuleren de tracking van hen als u wilt doen."
 tip_logs: "Hallo, {username}.<br />Selecteer een logbestand uit de onderstaande lijst om de inhoud van de logbestand te bekijken."
-tip_click_the_component: "Klik op de componentnaam voor meer details."
 tip_range: "Hallo, {username}.<br />Deze pagina toont enige statistische basisinformatie over de IP-reeksen die worden bestreken door de actieve signatuurbestanden."
 tip_range_intersector: "Hallo, {username}.<br />De reeks intersector kan worden gebruikt om de gemeenschappelijke factoren uit twee sets bereiken te bepalen."
 tip_range_subtractor: "Hallo, {username}.<br />De reeks aftrekker kan worden gebruikt om het een bereik van IP's/CIDR's van het andere af te trekken."
@@ -616,46 +658,3 @@ tip_statistics_disabled: "Notitie: Statistische tracking is momenteel uitgeschak
 tip_updates: "Hallo, {username}.<br />De updates pagina stelt u in staat om de verschillende CIDRAM componenten te installeren, verwijderen, en actualiseren (de core pakket, signatures, L10N bestanden, enz)."
 title_login: "Inloggen"
 warning_signatures_1: "Waarschuwing: Geen signatuurbestanden zijn actief!"
-
-info_some_useful_links: |
- Enkele nuttige links:<br />
-     <ul class="pieul">
-       <li><span class="comCat">Tools, bronnen, enz. voor CIDRAM.</span>
-         <ul class="comSub">
-           <li>{{Links.CIDRAM.Issues}} – Kwesties pagina voor CIDRAM (steun, hulp, enz).</li>
-           <li>{{Links.CIDRAM.WordPress}} – WordPress plugin voor CIDRAM.</li>
-           <li>{{Links.CIDRAM.Extras}} – Diverse extra's.</li>
-         </ul>
-       </li>
-       <li><span class="comCat">Groepen, forums, communities, enz.</span>
-         <ul class="comSub">
-           <li>{{Links.PHP.Earth.Facebook}} – PHP leermiddelen en discussie.</li>
-           <li><a href="https://www.stopforumspam.com/forum/" rel="noopener noreferrer external">Forum@Stop Forum Spam</a> – Nuttig discussieforum over het stoppen forum spam.</li>
-         </ul>
-       </li>
-       <li><span class="comCat">Andere handige tools, bronnen, diensten, enz.</span>
-         <ul class="comSub">
-           <li>{{Links.SFS}} – Beheert een database van bekende forumspammers. Handig voor het beschermen van websites en forums tegen spammers.</li>
-           <li><a href="https://bgp.he.net/" hreflang="en" rel="noopener noreferrer external">Hurricane Electric BGP Toolkit</a> – Krijg CIDR's van ASN, bepalen ASN relaties, ontdek ASN's op basis van netwerknamen, enz.</li>
-           <li>{{Links.BGPView}} – Krijg CIDR's van ASN, bepalen ASN relaties, ontdek ASN's op basis van netwerknamen, enz.</li>
-           <li><a href="https://radar.qrator.net/" hreflang="en" rel="noopener noreferrer external">Radar van Qrator</a> – Handig hulpmiddel voor het controleren van de connectiviteit van ASN's en ook voor diverse andere informatie over ASN's.</li>
-           <li><a href="https://www.spamhaus.org/statistics/botnet-asn/" rel="noopener noreferrer external">Het Spamhaus Project</a> – Geeft rapporten over botnet infectie tarieven voor ASN.</li>
-           <li>{{Links.AbuseIPDB}} – Onderhoudt een database van bekende beledigend IP's; Biedt een API voor het controleren en rapporteren van IP's.</li>
-         </ul>
-       </li>
-       <li><span class="comCat">Informatie en leermiddelen.</span>
-         <ul class="comSub">
-           <li>{{Links.PHP.Earth.Website}} – PHP leermiddelen en discussie.</li>
-           <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Kwetsbaarheidstabellen</a> – Hiermee worden veilige/onveilige versies van verschillende pakketten weergegeven (HHVM, PHP, phpMyAdmin, Python, enz).</li>
-           <li><a href="https://maikuolan.github.io/Compatibility-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Compatibiliteitstabellen</a> – Hiermee worden informatie over compatibiliteit voor verschillende pakketten weergegeven (CIDRAM, phpMussel, enz).</li>
-         </ul>
-       </li>
-     </ul>
-
-msg_template_2fa: |
- <center><p>Hallo, %1$s.<br />
- <br />
- Uw 2FA-code voor in te loggen bij de frontend van CIDRAM:</p>
- <h1>%2$s</h1>
- <p>Deze code verloopt over 10 minuten.</p></center>
-msg_subject_2fa: "2FA (Twee-Factor Authenticatie)"

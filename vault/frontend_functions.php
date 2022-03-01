@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2022.02.25).
+ * This file: Front-end functions file (last modified: 2022.03.01).
  */
 
 /**
@@ -875,7 +875,7 @@ $CIDRAM['SimulateBlockEvent'] = function (string $Addr, bool $Modules = false, b
 
     /** Initialise SimulateBlockEvent. */
     foreach ($CIDRAM['Config']['Provide']['Initialise SimulateBlockEvent'] as $InitialiseKey => $InitialiseValue) {
-        if (is_array($InitialiseValue)) {
+        if (is_array($InitialiseValue) && isset($CIDRAM[$InitialiseKey]) && is_array($CIDRAM[$InitialiseKey])) {
             $CIDRAM[$InitialiseKey] = array_replace_recursive($CIDRAM[$InitialiseKey], $InitialiseValue);
             continue;
         }

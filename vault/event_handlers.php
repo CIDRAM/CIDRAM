@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Event handlers file (last modified: 2022.02.26).
+ * This file: Event handlers file (last modified: 2022.03.02).
  */
 
 /**
@@ -122,8 +122,7 @@ $CIDRAM['Events']->addHandler('error', function (string $Data) use (&$CIDRAM): b
     /** Guard. */
     if (
         $CIDRAM['Config']['general']['error_log'] === '' ||
-        empty($CIDRAM['Stage']) ||
-        !preg_match('~(?:^|\n)' . preg_quote($CIDRAM['Stage']) . '(?:\n|$)~', $CIDRAM['Config']['general']['error_log_stages'])
+        !isset($CIDRAM['Stage'], $CIDRAM['Stages'], $CIDRAM['Stages'][$CIDRAM['Stage'] . ':LogErrors'])
     ) {
         return false;
     }
@@ -131,7 +130,7 @@ $CIDRAM['Events']->addHandler('error', function (string $Data) use (&$CIDRAM): b
     if (!isset($CIDRAM['Pending-Error-Log-Data'])) {
         $CIDRAM['Pending-Error-Log-Data'] = '';
     }
-    $Data = unserialize($Data);
+    $Data = unserialize($Data) ?: [];
     $Message = sprintf(
         '[%s] Error at %s:L%d (error code %d)%s.',
         date('c', time()),

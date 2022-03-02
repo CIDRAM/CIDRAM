@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2022.03.01).
+ * This file: Front-end handler (last modified: 2022.03.02).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -3425,7 +3425,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-aggregator' && $CIDRAM['FE']
 /** IP Test. */
 elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-test' && $CIDRAM['FE']['Permissions'] === 1) {
     /** Page initial prepwork. */
-    $CIDRAM['InitialPrepwork']($CIDRAM['L10N']->getString('link_ip_test'), $CIDRAM['L10N']->getString('tip_ip_test'), false);
+    $CIDRAM['InitialPrepwork']($CIDRAM['L10N']->getString('link_ip_test'), $CIDRAM['L10N']->getString('tip_ip_test'));
 
     /** Add flags CSS. */
     if ($CIDRAM['FE']['Flags'] = file_exists($CIDRAM['Vault'] . 'fe_assets/flags.css')) {
@@ -3629,6 +3629,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-test' && $CIDRAM['FE']['Perm
                     $CIDRAM['ThisIP']['YesNo'] .= '<br />++&lt;' . $CIDRAM['ThisProfile'] . '&gt;';
                 }
             }
+            $CIDRAM['ThisIP']['ID'] = preg_replace('~[^\dA-Za-z]~', '_', $CIDRAM['ThisIP']['IPAddress']);
             $CIDRAM['FE']['IPTestResults'] .= $CIDRAM['ParseVars'](
                 $CIDRAM['L10N']->Data + $CIDRAM['ThisIP'],
                 $CIDRAM['FE']['IPTestRow']
@@ -3821,6 +3822,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-tracking' && $CIDRAM['FE']['
                 }
                 unset($CIDRAM['ThisTracking']['Matches'], $CIDRAM['ThisTracking']['ThisMatch']);
             }
+            $CIDRAM['ThisTracking']['ID'] = preg_replace('~[^\dA-Za-z]~', '_', $CIDRAM['ThisTracking']['IPAddr']);
             $CIDRAM['FE']['TrackingData'] .= $CIDRAM['ParseVars'](
                 $CIDRAM['L10N']->Data + $CIDRAM['ThisTracking'],
                 $CIDRAM['FE']['TrackingRow']

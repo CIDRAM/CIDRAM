@@ -21,3 +21,4 @@
 - Changed the `enable_apcu` default value to `true` and the `prefix` default value to `CIDRAM_`.
 - Checkbox configuration directives are now delimited in the configuration by newlines instead of commas.
 - The `Output` stage of the execution chain has been split into four distinct, separate stages for easier configurability and control.
+- Added a mechanism to the front-end IP test and IP tracking pages to enable the copying of IPs displayed there.

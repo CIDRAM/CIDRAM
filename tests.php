@@ -28,23 +28,13 @@ define('CIDRAM', true);
 // Global variable for all our closures, plus vault path declaration.
 $CIDRAM = ['Vault' => __DIR__ . DIRECTORY_SEPARATOR . 'vault' . DIRECTORY_SEPARATOR];
 
-// Fetch CIDRAM configuration.
-$CIDRAM_Config = parse_ini_file($CIDRAM['Vault'] . 'config.ini.RenameMe', true);
-$CIDRAM_Config['supplementary_cache_options']['enable_apcu'] = true;
-
 // Load each required file or exit immediately if any of them don't exist.
-foreach (['functions.php', 'config.php', 'lang.php', 'frontend_functions.php'] as $File) {
+foreach (['functions.php', 'config.php', 'frontend_functions.php'] as $File) {
     if (!is_readable($CIDRAM['Vault'] . $File)) {
         echo $File . '.php is not readable.' . PHP_EOL;
         exit(2);
     }
     require $CIDRAM['Vault'] . $File;
-}
-
-// Exit immediately if the loader of the configuration file doesn't exist.
-if (!is_readable(__DIR__ . DIRECTORY_SEPARATOR . 'loader.php') || !is_readable($CIDRAM['Vault'] . 'config.ini.RenameMe')) {
-    echo 'Loader or configuration is not readable.' . PHP_EOL;
-    exit(3);
 }
 
 // Test expand IPv4 factors.
@@ -84,7 +74,7 @@ $Expected = [
 ];
 if (serialize($Expected) !== serialize($CIDRAM['ExpandIPv4']('127.0.0.1'))) {
     echo 'ExpandIPv4 failed.' . PHP_EOL;
-    exit(4);
+    exit(3);
 }
 
 // Test expand IPv6 factors.
@@ -220,7 +210,7 @@ $Expected = [
 ];
 if (serialize($Expected) !== serialize($CIDRAM['ExpandIPv6']('::1'))) {
     echo 'ExpandIPv6 failed.' . PHP_EOL;
-    exit(5);
+    exit(4);
 }
 
 restore_error_handler();

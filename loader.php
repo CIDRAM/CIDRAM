@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The loader (last modified: 2019.04.30).
+ * This file: The loader (last modified: 2022.02.21).
  */
 
 /**
@@ -54,6 +54,7 @@ if (!defined('CIDRAM')) {
         header('Content-Type: text/plain');
         die('[CIDRAM] Functions file missing! Please reinstall CIDRAM.');
     }
+
     /** Load the functions file. */
     require $CIDRAM['Vault'] . 'functions.php';
 
@@ -62,19 +63,9 @@ if (!defined('CIDRAM')) {
         header('Content-Type: text/plain');
         die('[CIDRAM] Configuration handler missing! Please reinstall CIDRAM.');
     }
+
     /** Load the configuration handler. */
     require $CIDRAM['Vault'] . 'config.php';
-
-    /**
-     * Check whether the language handler exists; Kill the script if it
-     * doesn't.
-     */
-    if (!file_exists($CIDRAM['Vault'] . 'lang.php')) {
-        header('Content-Type: text/plain');
-        die('[CIDRAM] Language handler missing! Please reinstall CIDRAM.');
-    }
-    /** Load the language handler. */
-    require $CIDRAM['Vault'] . 'lang.php';
 
     /**
      * Check whether the output generator exists; Kill the script if it

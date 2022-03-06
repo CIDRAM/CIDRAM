@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6_isps.dat
 
-# Version: 2022.56.0
-# Last modified: 2022.02.26
+# Version: 2022.64.0
+# Last modified: 2022.03.06
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -1434,26 +1434,6 @@ Tag: OOO TimeWeb
 Origin: AL
 Profile: Commercial;Domestic ISP
 Tag: Abissnet
-
-
-# ASN 8881 ("1&1 Versatel Deutschland GmbH").
-# German fibre network. Spam detected from here.
-# Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 488.
-# Updated: 2021.06.02
-
-2001:16b8:26e:6700::/64 Deny Spam
-2001:16b8:647:ef00::/64 Deny Spam
-2001:16b8:fe4:d00::/64 Deny Spam
-2001:16b8:287b:2b00::/64 Deny Spam
-2001:16b8:2bcc:4800::/64 Deny Spam
-2001:16b8:3022:6c00::/64 Deny Spam
-2001:16b8:3070:6600::/64 Deny Spam
-2001:16b8:5009:a00::/64 Deny Spam
-2001:16b8:506d:7100::/64 Deny Spam
-Origin: DE
-Profile: Domestic ISP;Infrastructure/Transit
-Tag: Versatel Deutschland
 
 
 # ASN 1136 ("KPN B.V").

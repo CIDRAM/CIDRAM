@@ -1,8 +1,8 @@
 # IPv4 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv4_isps.dat
 
-# Version: 2022.56.0
-# Last modified: 2022.02.26
+# Version: 2022.64.0
+# Last modified: 2022.03.06
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -1865,13 +1865,13 @@ Profile: Domestic ISP;Infrastructure/Transit
 Tag: China Telecom Backbone
 
 
-# ASN 4812 ("China Telecom (Group)").
+# ASNs 4811, 4812 ("China Telecom (Group)").
 # Interlaces with numerous providers and contains a large portion of Chinese
 # human access endpoints. Spam, hacking, brute-force attacks, port scans,
 # probing, etc detected from here.
 # Listing just the affected ranges/addresses only.
 # Stop Forum Spam (SFS) listings: 4,472.
-# Updated: 2022.01.15
+# Updated: 2022.01.15 / Modified: 2022.03.02
 
 45.124.125.93/32 Deny Attacks
 58.32.17.0/24 Deny Attacks
@@ -1899,6 +1899,9 @@ Tag: China Telecom Backbone
 101.229.99.0/24 Deny Attacks
 101.229.100.0/24 Deny Attacks
 103.21.143.0/24 Deny Attacks
+106.75.221.2/32 Deny Attacks
+106.75.222.0/23 Deny Attacks
+106.75.224.0/22 Deny Attacks
 114.84.179.0/24 Deny Attacks
 114.85.110.0/24 Deny Attacks
 114.86.221.0/24 Deny Attacks
@@ -2399,11 +2402,11 @@ Profile: Domestic ISP;Infrastructure/Transit;Multiplay
 Tag: China Unicom Shenzen/Guangdong
 
 
-# ASNs 7643, 45899, 135905 ("VietNam Post and Telecom Corporation").
+# ASNs 7643, 45899, 135905, 135967 ("VietNam Post and Telecom Corporation").
 # A *major* Vietnamese domestic ISP, but also a significant source of spam,
 # hack attempts, probing, etc. Listing just the affected ranges/addresses only.
 # Stop Forum Spam (SFS) listings: 147 (AS7643), 23,482 (AS45899), 920 (AS135905).
-# Updated: 2022.02.22
+# Updated: 2022.02.22 / Modified: 2022.03.06
 
 14.160.23.0/24 Deny Attacks
 14.160.26.0/24 Deny Attacks
@@ -2454,10 +2457,11 @@ Tag: China Unicom Shenzen/Guangdong
 14.248.108.0/24 Deny Attacks
 14.249.131.0/24 Deny Attacks
 14.251.24.0/24 Deny Attacks
-45.124.85.0/24 Deny Attacks
+45.124.84.0/23 Deny Attacks
 103.68.251.0/24 Deny Attacks
 103.75.184.0/24 Deny Attacks
 103.90.224.0/22 Deny Attacks
+103.121.88.0/22 Deny Attacks
 103.133.104.0/24 Deny Attacks
 103.138.108.0/24 Deny Attacks
 103.151.125.0/24 Deny Attacks
@@ -7172,7 +7176,7 @@ Tag: TTNet A.S
 # attacks, port scans, spamming, and probing for vulnerabilities detected from
 # here. Listing just the affected address/ranges only.
 # Stop Forum Spam (SFS) listings: 490.
-# Updated: 2021.10.22 / Modified: 2022.02.24
+# Updated: 2021.10.22 / Modified: 2022.03.02
 
 202.168.152.0/24 Deny Attacks
 202.168.153.238/32 Deny Attacks
@@ -7186,6 +7190,7 @@ Origin: HK
 59.23.236.180/32 Deny Attacks
 61.80.82.132/32 Deny Attacks
 112.160.253.45/32 Deny Spam
+112.168.83.0/24 Deny Attacks
 118.32.213.0/24 Deny Attacks
 118.33.239.181/32 Deny Attacks
 118.37.226.0/24 Deny Attacks
@@ -7221,6 +7226,7 @@ Origin: HK
 220.71.14.244/32 Deny Attacks
 220.93.153.142/32 Deny Attacks
 220.94.156.87/32 Deny Attacks
+220.124.172.201/32 Deny Attacks
 221.150.116.43/32 Deny Attacks
 221.157.162.0/24 Deny Attacks
 222.96.237.0/24 Deny Attacks
@@ -9055,17 +9061,17 @@ Tag: China Networks
 # ASN 12297 ("Telecom Armenia CJSC").
 # Armenian domestic ISP. Brute-force attacks, port scans, hacking, and spam
 # detected from here. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 177.
-# Updated: 2021.08.07
+# Stop Forum Spam (SFS) listings: 194.
+# Updated: 2022.03.06
 
 46.70.32.0/24 Deny Attacks
 46.70.94.0/24 Deny Attacks
 46.70.137.0/24 Deny Attacks
-46.70.158.0/24 Deny Attacks
-46.70.159.154/32 Deny Spam
-46.70.159.189/32 Deny Attacks
+46.70.158.0/23 Deny Attacks
 46.70.210.0/24 Deny Attacks
-87.241.136.0/24 Deny Attacks
+87.241.136.56/32 Deny Attacks
+87.241.166.21/32 Deny Attacks
+87.241.166.168/32 Deny Attacks
 Origin: AM
 Profile: Domestic ISP
 Tag: Telecom Armenia CJSC
@@ -13628,62 +13634,43 @@ Tag: Syringa Networks, LLC
 # ASN 29256 ("Syrian Telecom").
 # Syrian domestic ISP. Spam, hack attempts, port scans, brute-force, and SSH
 # attacks detected from here. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 1,221.
-# Updated: 2021.06.02
+# Stop Forum Spam (SFS) listings: 632.
+# Updated: 2022.03.06
 
-92.253.226.223/32 Deny Spam
-Origin: CZ
-145.249.61.220/32 Deny Spam
-Origin: RU
-5.0.222.0/24 Deny Attacks
-31.9.95.31/32 Deny Attacks
-31.193.79.2/32 Deny Spam
-46.40.166.4/32 Deny Spam
+31.9.95.219/32 Deny Attacks
+31.193.79.11/32 Deny Spam
 78.155.85.67/32 Deny Spam
-82.100.132.205/32 Deny Spam
-82.137.193.37/32 Deny Spam
+82.137.193.38/32 Deny Spam
+82.137.217.0/24 Deny Attacks
+82.137.223.26/32 Deny Spam
 82.137.224.0/24 Deny Attacks
 82.137.244.0/23 Deny Attacks
 82.137.250.0/24 Deny Attacks
+82.137.255.0/24 Deny Attacks
 91.144.20.0/24 Deny Attacks
-91.144.21.126/32 Deny Spam
-91.144.54.247/32 Deny Spam
-94.47.146.134/32 Deny Spam
-178.253.110.0/24 Deny Attacks
-185.194.124.0/24 Deny Attacks
-188.133.55.123/32 Deny Attacks
-188.133.106.0/24 Deny Attacks
+178.253.110.42/32 Deny Attacks
+178.253.110.161/32 Deny Attacks
+185.194.124.19/32 Deny Spam
+185.194.124.103/32 Deny Attacks
 Origin: SY
 Profile: Domestic ISP
 Tag: Syrian Telecom
 
 
 # ASN 8881 ("1&1 Versatel Deutschland GmbH").
-# German fibre network. Spam detected from here.
-# Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 488.
-# Updated: 2021.06.02
+# German fibre network. Brute-force, webapp attacks, and spam detected from
+# here. Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 749.
+# Updated: 2022.03.06
 
-82.119.170.0/24 Deny Spam
-82.207.238.245/32 Deny Spam
-82.207.239.3/32 Deny Spam
-83.135.65.222/32 Deny Spam
 87.122.158.152/32 Deny Spam
-87.123.144.59/32 Deny Spam
-88.130.48.96/32 Deny Spam
-88.130.57.136/32 Deny Spam
-88.130.153.17/32 Deny Spam
-88.130.216.129/32 Deny Spam
-88.130.218.165/32 Deny Spam
-89.245.81.154/32 Deny Spam
-89.245.85.251/32 Deny Spam
-89.247.4.13/32 Deny Spam
-89.247.126.217/32 Deny Spam
-89.247.254.207/32 Deny Spam
-92.116.151.155/32 Deny Spam
-92.117.100.78/32 Deny Spam
-134.101.4.75/32 Deny Spam
-213.182.138.224/32 Deny Spam
+87.123.197.0/24 Deny Attacks
+87.123.203.0/24 Deny Attacks
+88.130.53.0/24 Deny Attacks
+88.130.59.0/24 Deny Attacks
+89.246.122.0/24 Deny Attacks
+92.117.139.0/24 Deny Attacks
+94.134.178.0/24 Deny Attacks
 Origin: DE
 Profile: Domestic ISP;Infrastructure/Transit
 Tag: Versatel Deutschland
@@ -16449,7 +16436,7 @@ Tag: DNA Oyj
 # Indian broadband provider. Brute-force and SSH attacks, port scans, hacking,
 # and spam detected from here. Listing just the affected ranges/addresses only.
 # Stop Forum Spam (SFS) listings: 1,393.
-# Updated: 2022.02.10
+# Updated: 2022.02.10 / Modified: 2022.03.02
 
 101.0.32.56/32 Deny Spam
 101.0.35.197/32 Deny Spam
@@ -16469,7 +16456,7 @@ Tag: DNA Oyj
 203.115.91.0/24 Deny Attacks
 210.89.58.0/24 Deny Attacks
 210.89.63.0/24 Deny Attacks
-223.130.28.0/23 Deny Attacks
+223.130.28.0/22 Deny Attacks
 Origin: IN
 Profile: Domestic ISP
 Tag: Netplus Broadband

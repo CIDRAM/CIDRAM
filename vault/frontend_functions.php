@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2022.03.01).
+ * This file: Front-end functions file (last modified: 2022.03.07).
  */
 
 /**
@@ -361,7 +361,7 @@ $CIDRAM['FileManager-RecursiveList'] = function (string $Base) use (&$CIDRAM): a
                     }
                 } elseif (preg_match('~(?:[^|/]\.ht|\.safety$|^salt\.dat$)~i', $ThisNameFixed)) {
                     $Component = $CIDRAM['L10N']->getString('label_fmgr_safety');
-                } elseif (preg_match('~config\.ini$~i', $ThisNameFixed)) {
+                } elseif (preg_match('~config\.yml$~i', $ThisNameFixed)) {
                     $Component = $CIDRAM['L10N']->getString('link_config');
                 } elseif ($CIDRAM['FileManager-IsLogFile']($ThisNameFixed)) {
                     $Component = $CIDRAM['L10N']->getString('link_logs');
@@ -1408,12 +1408,6 @@ $CIDRAM['WP-Ver'] = function () use (&$CIDRAM): void {
         }
     }
 };
-
-/** Used to format numbers according to the specified configuration. */
-$CIDRAM['NumberFormatter'] = new \Maikuolan\Common\NumberFormatter($CIDRAM['Config']['general']['numbers']);
-
-/** Used to ensure correct encoding, hide bad data, etc. */
-$CIDRAM['Demojibakefier'] = new \Maikuolan\Common\Demojibakefier();
 
 /**
  * Generates JavaScript code for localising numbers locally.
@@ -3331,7 +3325,7 @@ $CIDRAM['AuxGenerateFEData'] = function (bool $Mode = false) use (&$CIDRAM): str
     $JSAppend = '';
 
     /** Potential sources. */
-    $Sources = $CIDRAM['GenerateLabels']($CIDRAM['Provide']['Auxiliary Rules']['Sources'], $CIDRAM['RegExLabels']);
+    $Sources = $CIDRAM['GenerateLabels']($CIDRAM['Provide']['Auxiliary Rules']['Sources']);
 
     /** Attempt to parse the auxiliary rules file. */
     if (!isset($CIDRAM['AuxData'])) {
@@ -3847,21 +3841,17 @@ $CIDRAM['AuxGenerateFEData'] = function (bool $Mode = false) use (&$CIDRAM): str
  * Generate select options from an associative array.
  *
  * @param array $Options An associative array of the options to generate.
- * @param string $Trim An optional regex of data to remove from the labels.
  * @param bool $JS Whether generating for JavaScript.
  * @return string The generated options.
  */
-$CIDRAM['GenerateOptions'] = function (array $Options, string $Trim = '', bool $JS = false) use (&$CIDRAM): string {
+$CIDRAM['GenerateOptions'] = function (array $Options, bool $JS = false) use (&$CIDRAM): string {
     $Output = '';
     foreach ($Options as $Value => $Label) {
         if (is_array($Label)) {
-            $Output .= $CIDRAM['GenerateOptions']($Label, $Trim, $JS);
+            $Output .= $CIDRAM['GenerateOptions']($Label, $JS);
             continue;
         }
         $Label = $CIDRAM['L10N']->getString($Label) ?: $Label;
-        if ($Trim) {
-            $Label = preg_replace($Trim, '', $Label);
-        }
         if ($JS) {
             $Output .= "\n  x = document.createElement('option'),\n  x.setAttribute('value', '" . $Value . "'),\n  x.innerHTML = '" . $Label . "',\n  t.appendChild(x),";
         } else {
@@ -3875,20 +3865,16 @@ $CIDRAM['GenerateOptions'] = function (array $Options, string $Trim = '', bool $
  * Generate labels from an associative array.
  *
  * @param array $Options An associative array of the labels to generate.
- * @param string $Trim An optional regex of data to remove from the labels.
  * @return array The generated labels.
  */
-$CIDRAM['GenerateLabels'] = function (array $Options, string $Trim = '') use (&$CIDRAM): array {
+$CIDRAM['GenerateLabels'] = function (array $Options) use (&$CIDRAM): array {
     $Output = [];
     foreach ($Options as $Value => $Label) {
         if (is_array($Label)) {
-            $Output = array_merge($Output, $CIDRAM['GenerateLabels']($Label, $Trim));
+            $Output = array_merge($Output, $CIDRAM['GenerateLabels']($Label));
             continue;
         }
         $Label = $CIDRAM['L10N']->getString($Label) ?: $Label;
-        if ($Trim) {
-            $Label = preg_replace($Trim, '', $Label);
-        }
         $Output[$Value] = $Label;
     }
     return $Output;
@@ -3922,10 +3908,10 @@ $CIDRAM['PopulateMethodsActions'] = function () use (&$CIDRAM): void {
     $CIDRAM['FE']['optActPro'] = sprintf($CIDRAM['L10N']->getString('label_aux_menu_action'), $CIDRAM['L10N']->getString('label_aux_actPro'));
 
     /** Populate sources. */
-    $CIDRAM['FE']['conSources'] = $CIDRAM['GenerateOptions']($CIDRAM['Provide']['Auxiliary Rules']['Sources'], $CIDRAM['RegExLabels']);
+    $CIDRAM['FE']['conSources'] = $CIDRAM['GenerateOptions']($CIDRAM['Provide']['Auxiliary Rules']['Sources']);
 
     /** Populate sources for JavaScript. */
-    $CIDRAM['FE']['conSourcesJS'] = $CIDRAM['GenerateOptions']($CIDRAM['Provide']['Auxiliary Rules']['Sources'], $CIDRAM['RegExLabels'], true);
+    $CIDRAM['FE']['conSourcesJS'] = $CIDRAM['GenerateOptions']($CIDRAM['Provide']['Auxiliary Rules']['Sources'], true);
 };
 
 /**
@@ -4956,7 +4942,7 @@ $CIDRAM['RelativeTime'] = function (int $Time) use (&$CIDRAM): string {
 $CIDRAM['ReplaceLabelWithL10N'] = function (string &$Label) use (&$CIDRAM): void {
     foreach (['', 'response_', 'label_', 'field_'] as $Prefix) {
         if (array_key_exists($Prefix . $Label, $CIDRAM['L10N']->Data)) {
-            $Label = preg_replace($CIDRAM['RegExLabels'], '', $CIDRAM['L10N']->getString($Prefix . $Label));
+            $Label = $CIDRAM['L10N']->getString($Prefix . $Label);
             return;
         }
     }

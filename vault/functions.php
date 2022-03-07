@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2022.02.26).
+ * This file: Functions file (last modified: 2022.03.07).
  */
 
 /** Autoloader for CIDRAM classes. */
@@ -1402,30 +1402,42 @@ $CIDRAM['ReadBytes'] = function (string $In, int $Mode = 0) {
 };
 
 /**
- * Add to page output and block event logfile fields.
+ * Add a page output and block event logfile field.
  *
- * @param string $FieldName Name of the field for internal use (e.g., logging).
- * @param string $ClientFieldName Name of the field for external use (e.g., for
- *      showing to the client when they see the Access Denied page).
- * @param string $FieldData Data for the field.
- * @param bool $Sanitise Whether the data needs to be sanitised against XSS
- *      attacks.
+ * @param string $FieldInternal The internal name for the field.
+ * @param string $FieldName The name of the L10N string for the field.
+ * @param string $FieldData The data for the field.
+ * @param bool $Sanitise Whether the data needs to be sanitised.
+ * @param bool $ShowAtLabels Whether to show the data at the output labels.
  * @return void
  */
-$CIDRAM['AddField'] = function (string $FieldName, string $ClientFieldName, string $FieldData, bool $Sanitise = false) use (&$CIDRAM): void {
+$CIDRAM['AddField'] = function (string $FieldInternal, string $FieldName, string $FieldData, bool $Sanitise = false, bool $ShowAtLabels = true) use (&$CIDRAM): void {
+    if (!strlen($FieldData)) {
+        if (isset($CIDRAM['Fields'][$FieldInternal . ':OmitIfEmpty'])) {
+            return;
+        }
+        $FieldData = '-';
+    }
     $Prepared = $Sanitise ? str_replace(
         ['<', '>', "\r", "\n"],
         ['&lt;', '&gt;', '&#13;', '&#10;'],
         $FieldData
     ) : $FieldData;
-    $Logged = $CIDRAM['Config']['general']['log_sanitisation'] ? $Prepared : $FieldData;
-    $CIDRAM['FieldTemplates']['Logs'] .= $FieldName . $Logged . "\n";
-    $CIDRAM['FieldTemplates']['Output'][] = sprintf(
-        '<span class="textLabel"%s>%s</span>%s<br />',
-        $CIDRAM['L10N-Lang-Attache'],
-        $ClientFieldName,
-        $Prepared
-    );
+    if (isset($CIDRAM['Fields'][$FieldInternal . ':ShowInLogs'])) {
+        $Logged = $CIDRAM['Config']['general']['log_sanitisation'] ? $Prepared : $FieldData;
+        $InternalResolved = $CIDRAM['L10N']->getString($FieldName) ?: $FieldName;
+        $InternalResolved .= $CIDRAM['L10N']->getString('pair_separator') ?: ': ';
+        $CIDRAM['FieldTemplates']['Logs'] .= $InternalResolved . $Logged . "\n";
+    }
+    if ($ShowAtLabels && isset($CIDRAM['Fields'][$FieldInternal . ':ShowInPageOutput'])) {
+        $CIDRAM['FieldTemplates']['Output'][] = sprintf(
+            '<span class="textLabel"%s>%s%s</span>%s<br />',
+            $CIDRAM['L10N-Lang-Attache'],
+            $CIDRAM['Client-L10N']->getString($FieldName) ?: $CIDRAM['L10N']->getString($FieldName) ?: $FieldName,
+            $CIDRAM['Client-L10N']->getString('pair_separator') ?: $CIDRAM['L10N']->getString('pair_separator') ?: ': ',
+            $Prepared
+        );
+    }
 };
 
 /**

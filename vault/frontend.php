@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2022.03.02).
+ * This file: Front-end handler (last modified: 2022.03.07).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -171,9 +171,6 @@ if ($CIDRAM['FE']['CronMode'] !== '') {
 
 /** Regular expression used to separate signature sections and tags. */
 $CIDRAM['RegExTags'] = '~(?<=\n)(?:\n|Expires: \d{4}\.\d\d\.\d\d|Origin: [A-Z]{2}|(?:\#|Tag: |Profile: |Defers to: )[^\n]+| *\/\*\*(?:\n *\*[^\n]*)*\/| *\/\*\*? [^\n*]+\*\/|---\n(?:[^\n:]+:(?:\n +[^\n:]+: [^\n]+)+)+)+\n~';
-
-/** Regular expression used to split labels. */
-$CIDRAM['RegExLabels'] = '~(?: | )?(?:：|:) ?$~';
 
 /** Populated by [Home | Log Out] by default; Replaced by [Log Out] for some specific pages (e.g., the homepage). */
 $CIDRAM['FE']['bNav'] = $CIDRAM['FE']['HomeButton'] . $CIDRAM['FE']['LogoutButton'];
@@ -3470,7 +3467,6 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-test' && $CIDRAM['FE']['Perm
         $CIDRAM['FE']['TestItemLabel'] = $CIDRAM['L10N']->getString('field_ua');
         $CIDRAM['FE']['TestMode'] = 2;
     }
-    $CIDRAM['FE']['TestItemLabel'] = preg_replace($CIDRAM['RegExLabels'], '', $CIDRAM['FE']['TestItemLabel']);
 
     /** IPs were submitted for testing. */
     if (isset($_POST['ip-addr'])) {
@@ -3661,7 +3657,6 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-test' && $CIDRAM['FE']['Perm
 elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-tracking' && $CIDRAM['FE']['Permissions'] === 1) {
     $CIDRAM['FE']['TrackingFilter'] = 'cidram-page=ip-tracking';
     $CIDRAM['FE']['TrackingFilterControls'] = '';
-    $CIDRAM['FE']['TestItemLabel'] = preg_replace($CIDRAM['RegExLabels'], '', $CIDRAM['L10N']->getString('field_ipaddr'));
     $CIDRAM['StateModified'] = false;
     $CIDRAM['FilterSwitch'](
         ['tracking-blocked-already', 'tracking-aux', 'tracking-hide-banned-blocked'],

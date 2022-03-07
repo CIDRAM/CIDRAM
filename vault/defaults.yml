@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Defaults file (last modified: 2022.03.01).
+# This file: Defaults file (last modified: 2022.03.06).
 ##/
 
 Config Defaults:
@@ -128,6 +128,8 @@ Config Defaults:
     CCLookup:OmitIfEmpty
     Verified:ShowInLogs
     Verified:OmitIfEmpty
+    Expired:OmitIfEmpty
+    Ignored:OmitIfEmpty
     Request_Method:ShowInLogs
     Request_Method:OmitIfEmpty
     Hostname:ShowInLogs
@@ -158,7 +160,9 @@ Config Defaults:
     ASNLookup: "field_asnlookup"
     CCLookup: "field_cclookup"
     Verified: "field_verified"
-    Request_Method: "field_Request_Method"
+    Expired: "state_expired"
+    Ignored: "state_ignored"
+    Request_Method: "field_request_method"
     Hostname: "field_hostname"
     CAPTCHA: "field_captcha"
   truncate:
@@ -868,7 +872,9 @@ Provide:
     ASNLookup: "field_asnlookup"
     CCLookup: "field_cclookup"
     Verified: "field_verified"
-   Request_Method: "field_Request_Method"
+    Expired: "state_expired"
+    Ignored: "state_ignored"
+   Request_Method: "field_request_method"
    Hostname: "field_hostname"
    Profile: "field_profile"
    Factors: "CIDR"

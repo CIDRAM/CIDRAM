@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Configuration handler (last modified: 2022.02.23).
+ * This file: Configuration handler (last modified: 2022.03.07).
  */
 
 /** CIDRAM version number (SemVer). */
@@ -162,3 +162,9 @@ if (empty($CIDRAM['Config']['general']['lang'])) {
 
 /** Load CIDRAM core L10N data. */
 $CIDRAM['LoadL10N']($CIDRAM['Vault'] . 'l10n' . DIRECTORY_SEPARATOR . 'core' . DIRECTORY_SEPARATOR);
+
+/** Used to format numbers according to the specified configuration. */
+$CIDRAM['NumberFormatter'] = new \Maikuolan\Common\NumberFormatter($CIDRAM['Config']['general']['numbers']);
+
+/** Used to ensure correct encoding, hide bad data, etc. */
+$CIDRAM['Demojibakefier'] = new \Maikuolan\Common\Demojibakefier();

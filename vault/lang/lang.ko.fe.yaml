@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Korean language data for the front-end (last modified: 2022.03.02).
+# This file: Korean language data for the front-end (last modified: 2022.03.09).
 ##/
 
 Extended Description Bypasses: "기본 서명 우회 일반적으로 기본 패키지에 포함되어 있습니다."
@@ -137,7 +137,7 @@ config_hcaptcha_show_api_message: &ShowAPIMessage "API 메시지를 표시 하�
 config_hcaptcha_show_cookie_warning: &ShowCookieWarning "쿠키 경고 표시 하시겠습니까? True = 예 (Default / 기본 설정); False = 아니오."
 config_hcaptcha_signature_limit: &CaptchaSignatureLimit "보안 문자 제안이 철회되기 전에 허용되는 최대 서명 수입니다. Default (기본 설정) = 1."
 config_hcaptcha_sitekey: *CaptchaDashboard
-config_hcaptcha_usemode: "보안 문자는 언제 제공해야 합니까? 참고\_: 허용 목록에 있거나 확인되고 차단되지 않은 요청은 보안 문자를 작성할 필요가 없습니다."
+config_hcaptcha_usemode: &CaptchaUseMode "보안 문자는 언제 제공해야 합니까? 참고\_: 허용 목록에 있거나 확인되고 차단되지 않은 요청은 보안 문자를 작성할 필요가 없습니다."
 config_legal: "법적 요구 사항 설정."
 config_legal_omit_hostname: "로그에서 호스트 이름을 생략 하시겠습니까? True = 예; False = 아니오 (Default / 기본 설정)."
 config_legal_omit_ip: "로그에서 IP 주소를 생략 하시겠습니까? True = 예; False = 아니오 (Default / 기본 설정). 참고\_: "pseudonymise_ip_addresses"는 "omit_ip"가 "true"일 때 중복됩니다."
@@ -163,7 +163,7 @@ config_recaptcha_show_api_message: *ShowAPIMessage
 config_recaptcha_show_cookie_warning: *ShowCookieWarning
 config_recaptcha_signature_limit: *CaptchaSignatureLimit
 config_recaptcha_sitekey: *CaptchaDashboard
-config_recaptcha_usemode: "보안 문자는 언제 제공해야 합니까? 참고\_: 허용 목록에 있거나 확인되고 차단되지 않은 요청은 보안 문자를 작성할 필요가 없습니다."
+config_recaptcha_usemode: *CaptchaUseMode
 config_signatures: "서명, 서명 파일, 모듈, 등의 설정."
 config_signatures_block_attacks: "공격 및 기타 비정상적인 트래픽과 관련된 CIDR을 차단하시겠습니까? 예: 포트 스캔, 해킹, 취약점 조사, 등등. 문제가있는 경우를 제외하고 일반적으로이를 true로 설정해야합니다."
 config_signatures_block_bogons: "보곤 IP 주소의 CIDR을 차단해야합니까? 당신은 로컬 호스트에서 또는 귀하의 LAN에서 로컬 네트워크에서 연결을 수신 한 경우, 이것은 false로 설정해야합니다. 없는 경우에는이를 true로 설정해야합니다."

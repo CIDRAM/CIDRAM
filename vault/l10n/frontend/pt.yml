@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Portuguese language data for the front-end (last modified: 2022.03.06).
+# This file: Portuguese language data for the front-end (last modified: 2022.03.07).
 ##/
 
 Extended Description Bypasses: "Os arquivos para bypass das assinaturas padrão normalmente incluído com o pacote principal."
@@ -66,6 +66,7 @@ checkbox_label_fields_logs: "Este campo deve aparecer nas entradas de log?"
 checkbox_label_fields_omit: "Omitir este campo quando estiver vazio?"
 checkbox_label_fields_page_output: "Este campo deve aparecer na página "acesso negado"?"
 checkbox_label_stage_enable: "Ativar esta etapa?"
+checkbox_label_stage_infractions: "Contar infrações geradas durante esta etapa para o monitoração de IP?"
 checkbox_label_stage_log_errors: "Registrar algum erro gerado durante esta etapa?"
 config_PHPMailer: "Configuração para PHPMailer (usado para autenticação de dois fatores)."
 config_PHPMailer_add_reply_to_address: "O endereço de resposta a ser citado ao enviar e-mail via SMTP."
@@ -176,7 +177,6 @@ config_signatures_infraction_limit: "Número máximo de infrações que um IP po
 config_signatures_ipv4: "Uma lista dos arquivos de assinaturas IPv4 que CIDRAM deve tentar usar, delimitado por vírgulas."
 config_signatures_ipv6: "Uma lista dos arquivos de assinaturas IPv6 que CIDRAM deve tentar usar, delimitado por vírgulas."
 config_signatures_modules: "Uma lista de arquivos módulo a carregar depois de processamento as assinaturas IPv4/IPv6, delimitado por vírgulas."
-config_signatures_track_mode: "Quando as infrações devem ser contadas? False = Quando os IPs são bloqueados por módulos. True = Quando os IPs são bloqueados por qualquer motivo. Padrão = False."
 config_signatures_tracking_override: "Permitir que os módulos substituem as opções de monitoração? True = Sim [Padrão]; False = Não."
 config_supplementary_cache_options: "Opções de cache suplementares. Nota: Alterar estes valores podem potencialmente fazer você ser estar desconectado."
 config_supplementary_cache_options_enable_apcu: "Especifica se deve tentar usar o APCu para armazenamento em cache. Padrão = True."

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Japanese language data for the front-end (last modified: 2022.03.06).
+# This file: Japanese language data for the front-end (last modified: 2022.03.07).
 ##/
 
 Extended Description Bypasses: "メインパッケージに通常含まれているデフォルト・シグネチャ・バイパス。"
@@ -66,6 +66,7 @@ checkbox_label_fields_logs: "このフィールドはログ・エントリに表
 checkbox_label_fields_omit: "空のときにこのフィールドを省略しますか？"
 checkbox_label_fields_page_output: "このフィールドは「アクセス拒否」ページに表示する必要がありますか？"
 checkbox_label_stage_enable: "この段階を有効にしますか？"
+checkbox_label_stage_infractions: "この段階で発生した違反は、ＩＰトラッキングにカウントしますか？"
 checkbox_label_stage_log_errors: "この段階で発生したエラーをログに記録しますか？"
 config_PHPMailer: "PHPMailerの設定（二要素認証に使用されます）。"
 config_PHPMailer_add_reply_to_address: "ＳＭＴＰ経由で電子Ｅメールを送信するときに引用する返信アドレス。"
@@ -176,7 +177,6 @@ config_signatures_infraction_limit: "ＩＰがＩＰトラッキングによっ�
 config_signatures_ipv4: "ＩＰｖ４シグネチャ・ファイルのリスト（CIDRAMは、​これを使用します）。​これは、​カンマで区切られています。​必要に応じて、​項目を追加することができます。"
 config_signatures_ipv6: "ＩＰｖ６シグネチャ・ファイルのリスト（CIDRAMは、​これを使用します）。​これは、​カンマで区切られています。​必要に応じて、​項目を追加することができます。"
 config_signatures_modules: "ＩＰｖ４/ＩＰｖ６シグネチャをチェックした後にロードするモジュールファイルのリスト。​これは、​カンマで区切られています。"
-config_signatures_track_mode: "違反はいつカウントされるべきですか？​False = ＩＰがモジュールによってブロックされている場合。 True = なんでもの理由でＩＰがブロックされた場合。 Default/デフォルルト = False。"
 config_signatures_tracking_override: "モジュールが追跡オプションをオーバーライドできるようにしますか？ True = はい（Default/デフォルルト）。 False = いいえ。"
 config_supplementary_cache_options: "補足キャッシュ・オプション。 注：これらの値を変更すると、ログアウトする可能性があります。"
 config_supplementary_cache_options_enable_apcu: "キャッシュに「APCu」を使用するかどうかを指定します。 Default/デフォルルト = True。"

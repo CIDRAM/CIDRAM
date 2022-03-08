@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2022.03.07).
+ * This file: Front-end functions file (last modified: 2022.03.08).
  */
 
 /**
@@ -894,22 +894,26 @@ $CIDRAM['SimulateBlockEvent'] = function (string $Addr, bool $Modules = false, b
     /** Populate BlockInfo. */
     $CIDRAM['BlockInfo'] = [
         'ID' => $CIDRAM['GenerateID'](),
+        'ScriptIdent' => $CIDRAM['ScriptIdent'],
+        'DateTime' => 'SimulateBlockEvent',
         'IPAddr' => $Addr,
         'IPAddrResolved' => $CIDRAM['Resolve6to4']($Addr),
         'Query' => !empty($CIDRAM['FE']['custom-query']) ? $CIDRAM['FE']['custom-query'] : 'SimulateBlockEvent',
         'Referrer' => !empty($CIDRAM['FE']['custom-referrer']) ? $CIDRAM['FE']['custom-referrer'] : 'SimulateBlockEvent',
         'UA' => !empty($CIDRAM['FE']['custom-ua']) ? $CIDRAM['FE']['custom-ua'] : 'SimulateBlockEvent',
-        'ReasonMessage' => '',
         'SignatureCount' => 0,
         'Signatures' => '',
         'WhyReason' => '',
+        'ReasonMessage' => '',
+        'rURI' => 'SimulateBlockEvent',
+        'Infractions' => $CIDRAM['Tracking'][$CIDRAM['BlockInfo']['IPAddr']]['Count'] ?? 0,
         'ASNLookup' => 0,
         'CCLookup' => 'XX',
         'Verified' => '',
         'Expired' => '',
         'Ignored' => '',
-        'xmlLang' => $CIDRAM['Config']['general']['lang'],
-        'rURI' => 'SimulateBlockEvent'
+        'Request_Method' => 'SimulateBlockEvent',
+        'xmlLang' => $CIDRAM['Config']['general']['lang']
     ];
     $CIDRAM['BlockInfo']['UALC'] = strtolower($CIDRAM['BlockInfo']['UA']);
 
@@ -947,6 +951,10 @@ $CIDRAM['SimulateBlockEvent'] = function (string $Addr, bool $Modules = false, b
         $CIDRAM['RestoreErrorHandler']();
     }
 
+    if (isset($CIDRAM['Stages']['Tests:Tracking']) && $CIDRAM['BlockInfo']['SignatureCount'] > 0) {
+        $CIDRAM['BlockInfo']['Infractions'] += $CIDRAM['BlockInfo']['SignatureCount'];
+    }
+
     /** Instantiate report orchestrator (used by some modules). */
     $CIDRAM['Reporter'] = new \CIDRAM\Core\Reporter();
 
@@ -973,11 +981,14 @@ $CIDRAM['SimulateBlockEvent'] = function (string $Addr, bool $Modules = false, b
                 return;
             }
             $Module = (strpos($Module, ':') === false) ? $Module : substr($Module, strpos($Module, ':') + 1);
-            $Infractions = $CIDRAM['BlockInfo']['SignatureCount'];
+            $Before = $CIDRAM['BlockInfo']['SignatureCount'];
             if (isset($CIDRAM['ModuleResCache'][$Module]) && is_object($CIDRAM['ModuleResCache'][$Module])) {
-                $CIDRAM['ModuleResCache'][$Module]($Infractions);
+                $CIDRAM['ModuleResCache'][$Module]();
             } elseif (file_exists($CIDRAM['Vault'] . $Module) && is_readable($CIDRAM['Vault'] . $Module)) {
                 require $CIDRAM['Vault'] . $Module;
+            }
+            if (isset($CIDRAM['Stages']['Modules:Tracking']) && $CIDRAM['BlockInfo']['SignatureCount'] > $Before) {
+                $CIDRAM['BlockInfo']['Infractions'] += $CIDRAM['BlockInfo']['SignatureCount'] - $Before;
             }
         });
 
@@ -1011,7 +1022,11 @@ $CIDRAM['SimulateBlockEvent'] = function (string $Addr, bool $Modules = false, b
     /** Process auxiliary rules, if any exist. */
     if ($Aux && empty($CIDRAM['Whitelisted'])) {
         $CIDRAM['InitialiseErrorHandler']();
+        $Before = $CIDRAM['BlockInfo']['SignatureCount'];
         $CIDRAM['Aux']();
+        if (isset($CIDRAM['Stages']['Aux:Tracking']) && $CIDRAM['BlockInfo']['SignatureCount'] > $Before) {
+            $CIDRAM['BlockInfo']['Infractions'] += $CIDRAM['BlockInfo']['SignatureCount'] - $Before;
+        }
         $CIDRAM['AuxErrors'] = $CIDRAM['Errors'];
         $CIDRAM['RestoreErrorHandler']();
     }

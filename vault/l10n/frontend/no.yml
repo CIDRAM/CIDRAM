@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Norwegian language data for the front-end (last modified: 2022.03.06).
+# This file: Norwegian language data for the front-end (last modified: 2022.03.07).
 ##/
 
 Extended Description Bypasses: "Standard-signatur-bypass-filene som normalt følger med hovedpakken."
@@ -66,6 +66,7 @@ checkbox_label_fields_logs: "Skal dette feltet vises i loggoppføringer?"
 checkbox_label_fields_omit: "Utelate dette feltet når det er tomt?"
 checkbox_label_fields_page_output: "Skal dette feltet vises på "tilgang nektet" siden?"
 checkbox_label_stage_enable: "Aktivere dette stadiet?"
+checkbox_label_stage_infractions: "Telle infraksjoner generert i løpet av dette stadiet mot IP-sporing?"
 checkbox_label_stage_log_errors: "Logge noen feil generert i løpet av dette stadiet?"
 config_PHPMailer: "Konfigurasjon for PHPMailer (brukes til tofaktorautentisering)."
 config_PHPMailer_add_reply_to_address: "Svaradressen for å sitere når du sender e-post via SMTP."
@@ -176,7 +177,6 @@ config_signatures_infraction_limit: "Maks antall infraksjoner som en IP har lov 
 config_signatures_ipv4: "En liste over IPv4 signaturfiler som CIDRAM skal forsøke å analysere, separert av kommaer."
 config_signatures_ipv6: "En liste over IPv6 signaturfiler som CIDRAM skal forsøke å analysere, separert av kommaer."
 config_signatures_modules: "En liste over modulfiler som skal lastes etter at du har sjekket IPv4/IPv6-signaturer, separert av kommaer."
-config_signatures_track_mode: "Når skal infraksjoner regnes? False = Når IPer blokkert av moduler. True = Når IPer er blokkert av en eller annen grunn. Standardverdi = False."
 config_signatures_tracking_override: "Tillate moduler å overstyre sporingsalternativene? True = Ja [Standardverdi]; False = Nei."
 config_supplementary_cache_options: "Tilleggsvalg for cache. Merk: Endring av disse verdiene kan potensielt logge deg ut."
 config_supplementary_cache_options_enable_apcu: "Dette angir om skal bruke APCu for caching. Standardverdi = True."

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Polish language data for the front-end (last modified: 2022.03.06).
+# This file: Polish language data for the front-end (last modified: 2022.03.07).
 ##/
 
 Extended Description Bypasses: "Domyślne pliki pomijania podpisów zwykle zawarte w pakiecie głównym."
@@ -66,6 +66,7 @@ checkbox_label_fields_logs: "Czy to pole powinno pojawiać się w logach?"
 checkbox_label_fields_omit: "Pominąć to pole, gdy jest puste?"
 checkbox_label_fields_page_output: "Czy to pole powinno pojawiać się na stronie „dostęp zabroniony”?"
 checkbox_label_stage_enable: "Włączyć ten etap?"
+checkbox_label_stage_infractions: "Wliczać wykroczenia wygenerowane na tym etapie do śledzenie IP?"
 checkbox_label_stage_log_errors: "Zalogować jakiekolwiek błędy wygenerowane na tym etapie?"
 config_PHPMailer: "Konfiguracja dla PHPMailer (używane do uwierzytelniania dwuskładnikowego)."
 config_PHPMailer_add_reply_to_address: "Adres zwrotny do cytowania podczas wysyłania wiadomości e-mail przez SMTP."
@@ -176,7 +177,6 @@ config_signatures_infraction_limit: "Maksymalna liczba wykroczeń, które może 
 config_signatures_ipv4: "Lista plików podpis IPv4, które CIDRAM powinien przetwarzać, oddzielonych przecinkami."
 config_signatures_ipv6: "Lista plików podpis IPv6, które CIDRAM powinien przetwarzać, oddzielonych przecinkami."
 config_signatures_modules: "Lista plików modułu do załadowania po sprawdzeniu podpisów IPv4/IPv6, oddzielonych przecinkami."
-config_signatures_track_mode: "Kiedy należy liczyć wykroczenia? False (Fałszywy) = Gdy adresy IP są blokowane przez moduły. True (Prawdziwe) = Gdy adresy IP są blokowane z jakiegokolwiek powodu. Domyślna = False."
 config_signatures_tracking_override: "Zezwalać modułom na zastępowanie opcji śledzenia? True (Prawdziwe) = Tak [Domyślna]; False (Fałszywy) = Nie."
 config_supplementary_cache_options: "Dodatkowe opcje pamięci podręcznej. Uwaga: Zmiana tych wartości może potencjalnie spowodować wylogowanie."
 config_supplementary_cache_options_enable_apcu: "Określa, czy spróbować użyć APCu do pamięci podręcznej. Domyślna = True."

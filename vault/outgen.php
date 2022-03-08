@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Output generator (last modified: 2022.03.07).
+ * This file: Output generator (last modified: 2022.03.08).
  */
 
 /** Initialise cache. */
@@ -68,25 +68,27 @@ $CIDRAM['Protect'] = (
 
 /** Prepare variables for block information (used if we kill the request). */
 $CIDRAM['BlockInfo'] = [
-    'DateTime' => $CIDRAM['TimeFormat']($CIDRAM['Now'], $CIDRAM['Config']['general']['time_format']),
     'ID' => $CIDRAM['GenerateID'](),
+    'ScriptIdent' => $CIDRAM['ScriptIdent'],
+    'DateTime' => $CIDRAM['TimeFormat']($CIDRAM['Now'], $CIDRAM['Config']['general']['time_format']),
     'IPAddr' => $CIDRAM['IPAddr'],
     'IPAddrResolved' => $CIDRAM['Resolve6to4']($CIDRAM['IPAddr']),
-    'ScriptIdent' => $CIDRAM['ScriptIdent'],
     'favicon' => $CIDRAM['favicon'],
     'favicon_extension' => $CIDRAM['favicon_extension'],
     'Query' => $CIDRAM['Query'],
     'Referrer' => empty($_SERVER['HTTP_REFERER']) ? '' : $_SERVER['HTTP_REFERER'],
     'UA' => empty($_SERVER['HTTP_USER_AGENT']) ? '' : $_SERVER['HTTP_USER_AGENT'],
-    'ReasonMessage' => '',
     'SignatureCount' => 0,
     'Signatures' => '',
     'WhyReason' => '',
+    'ReasonMessage' => '',
+    'Infractions' => $CIDRAM['Tracking'][$CIDRAM['BlockInfo']['IPAddr']]['Count'] ?? 0,
     'ASNLookup' => 0,
     'CCLookup' => 'XX',
     'Verified' => '',
     'Expired' => '',
     'Ignored' => '',
+    'Request_Method' => $_SERVER['REQUEST_METHOD'] ?? '',
     'xmlLang' => $CIDRAM['Config']['general']['lang']
 ];
 $CIDRAM['BlockInfo']['UALC'] = strtolower($CIDRAM['BlockInfo']['UA']);
@@ -163,8 +165,9 @@ if ($CIDRAM['Protect'] && !$CIDRAM['Config']['general']['maintenance_mode'] && i
     $CIDRAM['Stage'] = '';
 }
 
-/** Define whether to track the IP of the current request. */
-$CIDRAM['Trackable'] = $CIDRAM['Config']['signatures']['track_mode'];
+if (isset($CIDRAM['Stages']['Tests:Tracking']) && $CIDRAM['BlockInfo']['SignatureCount'] > 0) {
+    $CIDRAM['BlockInfo']['Infractions'] += $CIDRAM['BlockInfo']['SignatureCount'];
+}
 
 /** Perform forced hostname lookup if this has been enabled. */
 if ($CIDRAM['Config']['general']['force_hostname_lookup']) {
@@ -204,15 +207,17 @@ if ($CIDRAM['Protect'] && !$CIDRAM['Config']['general']['maintenance_mode'] && e
                 return;
             }
             $Module = (strpos($Module, ':') === false) ? $Module : substr($Module, strpos($Module, ':') + 1);
-            $Infractions = $CIDRAM['BlockInfo']['SignatureCount'];
+            $Before = $CIDRAM['BlockInfo']['SignatureCount'];
             if (isset($CIDRAM['ModuleResCache'][$Module]) && is_object($CIDRAM['ModuleResCache'][$Module])) {
-                $CIDRAM['ModuleResCache'][$Module]($Infractions);
+                $CIDRAM['ModuleResCache'][$Module]();
             } elseif (!file_exists($CIDRAM['Vault'] . $Module) || !is_readable($CIDRAM['Vault'] . $Module)) {
                 return;
             } else {
                 require $CIDRAM['Vault'] . $Module;
             }
-            $CIDRAM['Trackable'] = $CIDRAM['Trackable'] ?: ($CIDRAM['BlockInfo']['SignatureCount'] - $Infractions) > 0;
+            if (isset($CIDRAM['Stages']['Modules:Tracking']) && $CIDRAM['BlockInfo']['SignatureCount'] > $Before) {
+                $CIDRAM['BlockInfo']['Infractions'] += $CIDRAM['BlockInfo']['SignatureCount'] - $Before;
+            }
         });
 
         if (
@@ -246,8 +251,13 @@ if ($CIDRAM['Protect'] && !$CIDRAM['Config']['general']['maintenance_mode'] && e
 
     /** Process auxiliary rules, if any exist. */
     if (empty($CIDRAM['Whitelisted']) && isset($CIDRAM['Stages']['Aux:Enable'])) {
+        $CIDRAM['Before'] = $CIDRAM['BlockInfo']['SignatureCount'];
         $CIDRAM['Stage'] = 'Aux';
         $CIDRAM['Aux']();
+        if (isset($CIDRAM['Stages']['Aux:Tracking']) && $CIDRAM['BlockInfo']['SignatureCount'] > $CIDRAM['Before']) {
+            $CIDRAM['BlockInfo']['Infractions'] += $CIDRAM['BlockInfo']['SignatureCount'] - $CIDRAM['Before'];
+        }
+        unset($CIDRAM['Before']);
     }
 
     /** Process all reports (if any exist, and if not whitelisted), and then destroy the reporter. */
@@ -261,20 +271,27 @@ if ($CIDRAM['Protect'] && !$CIDRAM['Config']['general']['maintenance_mode'] && e
 }
 
 /** Process tracking information for the inbound IP. */
-if (!empty($CIDRAM['TestResults']) && $CIDRAM['BlockInfo']['SignatureCount'] && $CIDRAM['Trackable'] && isset($CIDRAM['Stages']['Tracking:Enable'])) {
+if (!empty($CIDRAM['TestResults']) && $CIDRAM['BlockInfo']['Infractions'] > 0 && isset($CIDRAM['Stages']['Tracking:Enable'])) {
     $CIDRAM['Stage'] = 'Tracking';
 
     /** Set tracking expiry. */
     $CIDRAM['TrackTime'] = $CIDRAM['Now'] + ($CIDRAM['Config']['Options']['TrackTime'] ?? $CIDRAM['Config']['signatures']['default_tracktime']);
 
     /** Number of infractions to append. */
-    $CIDRAM['TrackCount'] = $CIDRAM['Config']['Options']['TrackCount'] ?? 1;
+    if (
+        isset($CIDRAM['Tracking'][$CIDRAM['BlockInfo']['IPAddr']]['Count']) &&
+        $CIDRAM['Tracking'][$CIDRAM['BlockInfo']['IPAddr']]['Count'] > $CIDRAM['BlockInfo']['Infractions']
+    ) {
+        $CIDRAM['TrackCount'] = $CIDRAM['Tracking'][$CIDRAM['BlockInfo']['IPAddr']]['Count'] - $CIDRAM['BlockInfo']['Infractions'];
+    } else {
+        $CIDRAM['TrackCount'] = $CIDRAM['BlockInfo']['Infractions'];
+    }
 
     /** Tracking options override. */
     if (!empty($CIDRAM['Tracking options override'])) {
         if ($CIDRAM['Tracking options override'] === 'extended') {
             $CIDRAM['TrackTime'] = $CIDRAM['Now'] + floor($CIDRAM['Config']['signatures']['default_tracktime'] * 52.1428571428571);
-            $CIDRAM['TrackCount'] = 1000;
+            $CIDRAM['TrackCount'] *= 1000;
         } elseif ($CIDRAM['Tracking options override'] === 'default') {
             $CIDRAM['TrackTime'] = $CIDRAM['Now'] + $CIDRAM['Config']['signatures']['default_tracktime'];
             $CIDRAM['TrackCount'] = 1;
@@ -619,7 +636,6 @@ if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
         if (isset($CIDRAM['Tracking'][$CIDRAM['BlockInfo']['IPAddr']]['Count'])) {
             $CIDRAM['BlockInfo']['Infractions'] += $CIDRAM['Tracking'][$CIDRAM['BlockInfo']['IPAddr']]['Count'];
         }
-        $CIDRAM['BlockInfo']['Request_Method'] = $_SERVER['REQUEST_METHOD'] ?? '';
         if (!empty($CIDRAM['Hostname']) && $CIDRAM['Hostname'] !== $CIDRAM['BlockInfo']['IPAddr']) {
             $CIDRAM['BlockInfo']['Hostname'] = $CIDRAM['Hostname'];
         } else {

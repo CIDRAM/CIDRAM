@@ -8,14 +8,19 @@ general:
   Tests:LogErrors
   Modules:Enable
   Modules:LogErrors
+  Modules:Tracking
   SearchEngineVerification:Enable
   SearchEngineVerification:LogErrors
+  SearchEngineVerification:Tracking
   SocialMediaVerification:Enable
   SocialMediaVerification:LogErrors
+  SocialMediaVerification:Tracking
   OtherVerification:Enable
   OtherVerification:LogErrors
+  OtherVerification:Tracking
   Aux:Enable
   Aux:LogErrors
+  Aux:Tracking
   Reporting:Enable
   Reporting:LogErrors
   Tracking:Enable
@@ -146,7 +151,6 @@ signatures:
  modules: ""
  default_tracktime: 604800
  infraction_limit: 10
- track_mode: false
  tracking_override: true
 recaptcha:
  usemode: 0

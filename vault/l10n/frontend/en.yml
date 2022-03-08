@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: English language data for the front-end (last modified: 2022.03.06).
+# This file: English language data for the front-end (last modified: 2022.03.07).
 ##/
 
 Extended Description Bypasses: "The default signature bypass files normally included with the main package."
@@ -66,6 +66,7 @@ checkbox_label_fields_logs: "Should this field appear in log entries?"
 checkbox_label_fields_omit: "Omit this field when it's empty?"
 checkbox_label_fields_page_output: "Should this field appear on the "access denied" page?"
 checkbox_label_stage_enable: "Enable this stage?"
+checkbox_label_stage_infractions: "Should infractions generated during this stage count towards IP tracking?"
 checkbox_label_stage_log_errors: "Log any errors generated during this stage?"
 config_PHPMailer: "Configuration for PHPMailer (used for two-factor authentication)."
 config_PHPMailer_add_reply_to_address: "The reply address to cite when sending email via SMTP."
@@ -176,7 +177,6 @@ config_signatures_infraction_limit: "Maximum number of infractions an IP is allo
 config_signatures_ipv4: "A list of the IPv4 signature files that CIDRAM should attempt to parse, delimited by commas."
 config_signatures_ipv6: "A list of the IPv6 signature files that CIDRAM should attempt to parse, delimited by commas."
 config_signatures_modules: "A list of module files to load after checking the IPv4/IPv6 signatures, delimited by commas."
-config_signatures_track_mode: "When should infractions be counted? False = When IPs are blocked by modules. True = When IPs are blocked for any reason. Default = False."
 config_signatures_tracking_override: "Allow modules to override tracking options? True = Yes [Default]; False = No."
 config_supplementary_cache_options: "Supplementary cache options. Note: Changing these values may potentially log you out."
 config_supplementary_cache_options_enable_apcu: "Specifies whether to try using APCu for caching. Default = True."

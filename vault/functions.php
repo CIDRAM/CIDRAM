@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2022.03.07).
+ * This file: Functions file (last modified: 2022.03.08).
  */
 
 /** Autoloader for CIDRAM classes. */
@@ -1633,7 +1633,11 @@ $CIDRAM['XVerification'] = function (string $Config = '', string $From = '', boo
  * @return void
  */
 $CIDRAM['SearchEngineVerification'] = function () use (&$CIDRAM): void {
+    $Before = $CIDRAM['BlockInfo']['SignatureCount'];
     $CIDRAM['XVerification']('search_engine_verification', 'Search Engine Verification', true);
+    if (isset($CIDRAM['Stages']['SearchEngineVerification:Tracking']) && $CIDRAM['BlockInfo']['SignatureCount'] > $Before) {
+        $CIDRAM['BlockInfo']['Infractions'] += $CIDRAM['BlockInfo']['SignatureCount'] - $Before;
+    }
 };
 
 /**
@@ -1642,7 +1646,11 @@ $CIDRAM['SearchEngineVerification'] = function () use (&$CIDRAM): void {
  * @return void
  */
 $CIDRAM['SocialMediaVerification'] = function () use (&$CIDRAM): void {
+    $Before = $CIDRAM['BlockInfo']['SignatureCount'];
     $CIDRAM['XVerification']('social_media_verification', 'Social Media Verification', false);
+    if (isset($CIDRAM['Stages']['SocialMediaVerification:Tracking']) && $CIDRAM['BlockInfo']['SignatureCount'] > $Before) {
+        $CIDRAM['BlockInfo']['Infractions'] += $CIDRAM['BlockInfo']['SignatureCount'] - $Before;
+    }
 };
 
 /**
@@ -1651,7 +1659,11 @@ $CIDRAM['SocialMediaVerification'] = function () use (&$CIDRAM): void {
  * @return void
  */
 $CIDRAM['OtherVerification'] = function () use (&$CIDRAM): void {
+    $Before = $CIDRAM['BlockInfo']['SignatureCount'];
     $CIDRAM['XVerification']('other_verification', 'Other Verification', false);
+    if (isset($CIDRAM['Stages']['OtherVerification:Tracking']) && $CIDRAM['BlockInfo']['SignatureCount'] > $Before) {
+        $CIDRAM['BlockInfo']['Infractions'] += $CIDRAM['BlockInfo']['SignatureCount'] - $Before;
+    }
 };
 
 /**
@@ -2082,19 +2094,6 @@ $CIDRAM['Aux'] = function () use (&$CIDRAM): void {
     /** Exit procedure early if the rules don't exist. */
     if (!file_exists($CIDRAM['Vault'] . 'auxiliary.yaml')) {
         return;
-    }
-
-    /** Possibly used by some rules, but not used elsewhere. */
-    if (!isset($CIDRAM['Request_Method'])) {
-        $CIDRAM['Request_Method'] = $_SERVER['REQUEST_METHOD'] ?? '';
-    }
-
-    /** Provide previous existing infractions count to the auxiliary rules. */
-    if (isset($CIDRAM['BlockInfo']) && !isset($CIDRAM['BlockInfo']['Infractions']) && !empty($CIDRAM['BlockInfo']['IPAddr'])) {
-        $CIDRAM['BlockInfo']['Infractions'] = 0;
-        if (isset($CIDRAM['Tracking'][$CIDRAM['BlockInfo']['IPAddr']]['Count'])) {
-            $CIDRAM['BlockInfo']['Infractions'] += $CIDRAM['Tracking'][$CIDRAM['BlockInfo']['IPAddr']]['Count'];
-        }
     }
 
     /** Attempt to parse the auxiliary rules file. */

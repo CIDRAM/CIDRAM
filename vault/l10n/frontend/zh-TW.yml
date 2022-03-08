@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (traditional) language data for the front-end (last modified: 2022.03.06).
+# This file: Chinese (traditional) language data for the front-end (last modified: 2022.03.07).
 ##/
 
 Extended Description Bypasses: "標準簽名旁路文件通常包括在主包。"
@@ -66,6 +66,7 @@ checkbox_label_fields_logs: "該字段是否應該出現在日誌條目中？"
 checkbox_label_fields_omit: "為空時忽略此字段？"
 checkbox_label_fields_page_output: "該字段是否應該出現在『拒絕訪問』頁面上？"
 checkbox_label_stage_enable: "啟用此階段？"
+checkbox_label_stage_infractions: "將在此階段產生的違規計入IP跟踪？"
 checkbox_label_stage_log_errors: "記錄在此階段產生的任何錯誤？"
 config_PHPMailer: "PHPMailer的配置（用於雙因素身份驗證）。"
 config_PHPMailer_add_reply_to_address: "通過SMTP發送電子郵件時引用的回复地址。"
@@ -176,7 +177,6 @@ config_signatures_infraction_limit: "從IP最大允許違規數量之前它被�
 config_signatures_ipv4: "列表的IPv4簽名文件，​CIDRAM應該嘗試使用，​用逗號分隔。"
 config_signatures_ipv6: "列表的IPv6簽名文件，​CIDRAM應該嘗試使用，​用逗號分隔。"
 config_signatures_modules: "模塊文件要加載的列表以後檢查簽名IPv4/IPv6，​用逗號分隔。"
-config_signatures_track_mode: "何時應該記錄違規？​False（假）=當IP被模塊阻止時。​True（真）=當IP由於任何原因阻止時。​默認 = False。"
 config_signatures_tracking_override: "允許模塊覆蓋跟踪選項嗎？​True（真）=允許【標準】；False（假）=不允許。"
 config_supplementary_cache_options: "補充緩存選項。​注意：更改這些值可能會使您註銷。"
 config_supplementary_cache_options_enable_apcu: "指定是否嘗試使用APCu進行緩存。​默認 = True。"

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Spanish language data for the front-end (last modified: 2022.03.06).
+# This file: Spanish language data for the front-end (last modified: 2022.03.07).
 ##/
 
 Extended Description Bypasses: "Los archivos para bypass de firmas estándar normalmente se incluyen con el paquete principal."
@@ -66,6 +66,7 @@ checkbox_label_fields_logs: "¿Debería aparecer este campo en las entradas de r
 checkbox_label_fields_omit: "¿Omitir este campo cuando está vacío?"
 checkbox_label_fields_page_output: "¿Debería aparecer este campo en la página "acceso denegado"?"
 checkbox_label_stage_enable: "¿Habilitar esta etapa?"
+checkbox_label_stage_infractions: "¿Las infracciones generadas durante esta etapa deben contar para el seguimiento de IP?"
 checkbox_label_stage_log_errors: "¿Registrar los errores generados durante esta etapa?"
 config_PHPMailer: "Configuración para PHPMailer (utilizado para la autenticación de dos factores)."
 config_PHPMailer_add_reply_to_address: "La dirección de la respuesta para citar cuando se envía un correo electrónico a través de SMTP."
@@ -176,7 +177,6 @@ config_signatures_infraction_limit: "Número máximo de infracciones a las que u
 config_signatures_ipv4: "Una lista de los archivos de firmas IPv4 que CIDRAM debe tratar de utilizar, delimitado por comas."
 config_signatures_ipv6: "Una lista de los archivos de firmas IPv6 que CIDRAM debe tratar de utilizar, delimitado por comas."
 config_signatures_modules: "Una lista de archivos módulo a cargar después de comprobar las firmas IPv4/IPv6, delimitado por comas."
-config_signatures_track_mode: "¿Cuándo se deben contar las infracciones? False = Cuando los IPs están bloqueados por módulos. True = Cuando los IP están bloqueados por cualquier razón. Predefinido = False."
 config_signatures_tracking_override: "¿Permitir que los módulos reemplacen las opciones de seguimiento? True = Sí [Predefinido]; False = No."
 config_supplementary_cache_options: "Opciones de caché suplementarias. Nota: Cambiar estos valores puede potencialmente cerrar la sesión."
 config_supplementary_cache_options_enable_apcu: "Especifica si se intenta utilizar APCu para el almacenamiento en caché. Predefinido = True."

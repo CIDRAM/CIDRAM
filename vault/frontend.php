@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2022.03.07).
+ * This file: Front-end handler (last modified: 2022.03.08).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -1485,20 +1485,31 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
                     }
                     $CIDRAM['ReplaceLabelWithL10N']($CIDRAM['ChoiceValue']);
                     if ($CIDRAM['DirValue']['type'] === 'checkbox') {
+                        if (isset($CIDRAM['DirValue']['nonsense'])) {
+                            $CIDRAM['DirValue']['ThisNonsense'] = array_flip(explode("\n", $CIDRAM['DirValue']['nonsense']));
+                        }
                         if ($CIDRAM['DirValue']['HasLabels']) {
                             foreach ($CIDRAM['DirValue']['labels'] as $CIDRAM['DirValue']['ThisLabelKey'] => $CIDRAM['DirValue']['ThisLabel']) {
                                 $CIDRAM['DirValue']['gridV'] = ($CIDRAM['DirValue']['gridV']) === 'gridVB' ? 'gridVA' : 'gridVB';
-                                $CIDRAM['ThisDir']['FieldOut'] .= sprintf(
-                                    '<div class="gridboxcheckcell %4$s %5$s"><label class="gridlabel"><input%3$s type="checkbox" class="auto" name="%1$s" id="%1$s"%2$s /></label></div>',
-                                    $CIDRAM['ThisDir']['DirLangKey'] . '_' . $CIDRAM['ChoiceKey'] . '_' . $CIDRAM['DirValue']['ThisLabelKey'],
-                                    preg_match(
-                                        '~(?:^|\n)' . preg_quote($CIDRAM['ChoiceKey'] . ':' . $CIDRAM['DirValue']['ThisLabelKey']) . '(?:\n|$)~i',
-                                        $CIDRAM['Config'][$CIDRAM['CatKey']][$CIDRAM['DirKey']]
-                                    ) ? ' checked' : '',
-                                    $CIDRAM['ThisDir']['Trigger'],
-                                    $CIDRAM['DirValue']['gridV'],
-                                    $CIDRAM['DirValue']['gridH']
-                                );
+                                if (isset($CIDRAM['DirValue']['ThisNonsense'][$CIDRAM['ChoiceKey'] . ':' . $CIDRAM['DirValue']['ThisLabelKey']])) {
+                                    $CIDRAM['ThisDir']['FieldOut'] .= sprintf(
+                                        '<div class="gridboxcheckcell %s %s">–</div>',
+                                        $CIDRAM['DirValue']['gridV'],
+                                        $CIDRAM['DirValue']['gridH']
+                                    );
+                                } else {
+                                    $CIDRAM['ThisDir']['FieldOut'] .= sprintf(
+                                        '<div class="gridboxcheckcell %4$s %5$s"><label class="gridlabel"><input%3$s type="checkbox" class="auto" name="%1$s" id="%1$s"%2$s /></label></div>',
+                                        $CIDRAM['ThisDir']['DirLangKey'] . '_' . $CIDRAM['ChoiceKey'] . '_' . $CIDRAM['DirValue']['ThisLabelKey'],
+                                        preg_match(
+                                            '~(?:^|\n)' . preg_quote($CIDRAM['ChoiceKey'] . ':' . $CIDRAM['DirValue']['ThisLabelKey']) . '(?:\n|$)~i',
+                                            $CIDRAM['Config'][$CIDRAM['CatKey']][$CIDRAM['DirKey']]
+                                        ) ? ' checked' : '',
+                                        $CIDRAM['ThisDir']['Trigger'],
+                                        $CIDRAM['DirValue']['gridV'],
+                                        $CIDRAM['DirValue']['gridH']
+                                    );
+                                }
                             }
                             $CIDRAM['ThisDir']['FieldOut'] .= sprintf(
                                 '<div class="gridboxitem %s %s">%s</div>',
@@ -3476,6 +3487,11 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-test' && $CIDRAM['FE']['Perm
         }, explode("\n", $_POST['ip-addr'])));
         natsort($_POST['ip-addr']);
         $CIDRAM['ThisIP'] = [];
+
+        /** Initialise stages. */
+        $CIDRAM['Stages'] = array_flip(explode("\n", $CIDRAM['Config']['general']['stages']));
+
+        /** Iterate through the addresses given to test. */
         foreach ($_POST['ip-addr'] as $CIDRAM['ThisIP']['IPAddress']) {
             if ($CIDRAM['FE']['TestMode'] === 1) {
                 if (!strlen($CIDRAM['ThisIP']['IPAddress'])) {
@@ -3734,6 +3750,11 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-tracking' && $CIDRAM['FE']['
         });
 
         $CIDRAM['ThisTracking'] = [];
+
+        /** Initialise stages. */
+        $CIDRAM['Stages'] = array_flip(explode("\n", $CIDRAM['Config']['general']['stages']));
+
+        /** Iterate through all addresses being currently tracked. */
         foreach ($CIDRAM['Tracking'] as $CIDRAM['ThisTracking']['IPAddr'] => $CIDRAM['ThisTrackingArr']) {
             if (!isset($CIDRAM['ThisTrackingArr']['Time'], $CIDRAM['ThisTrackingArr']['Count'])) {
                 continue;

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Latvian language data for the front-end (last modified: 2022.03.06).
+# This file: Latvian language data for the front-end (last modified: 2022.03.07).
 ##/
 
 Extended Description Bypasses: "Noklusējuma paraksta apiešana faili, kas parasti ir iekļauti galvenajā paketē."
@@ -66,6 +66,7 @@ checkbox_label_fields_logs: "Vai šim laukam vajadzētu parādīties žurnāla i
 checkbox_label_fields_omit: "Vai izlaist šo lauku, kad tas ir tukšs?"
 checkbox_label_fields_page_output: "Vai šim laukam vajadzētu parādīties lapā "piekļuve liegta"?"
 checkbox_label_stage_enable: "Vai iespējot šo posmu?"
+checkbox_label_stage_infractions: "Vai šajā posmā ģenerētie pārkāpumi tiek ņemti vērā IP izsekošanas procesā?"
 checkbox_label_stage_log_errors: "Vai reģistrēt visas šajā posmā radušās kļūdas?"
 config_PHPMailer: "PHPMailer konfigurācija (izmanto divu faktoru autentifikācijai)."
 config_PHPMailer_add_reply_to_address: "Respondenta adrese, ko citēt, nosūtot e-pastu izmantojot SMTP."
@@ -176,7 +177,6 @@ config_signatures_infraction_limit: "Maksimālais IP pieļaujamo pārkāpumu ska
 config_signatures_ipv4: "Ar komatu atdalīts IPv4 paraksta failu saraksts, kuri CIDRAM vajadzētu mēģināt parsēt."
 config_signatures_ipv6: "Ar komatu atdalīts IPv6 paraksta failu saraksts, kuri CIDRAM vajadzētu mēģināt parsēt."
 config_signatures_modules: "Pēc IPv4/IPv6 parakstu pārbaudes ielādējamo moduļu failu saraksts, atdalīts ar komatiem."
-config_signatures_track_mode: "Kad jāskaita pārkāpumi? False (Nepatiess) = Kad moduļi bloķē IPs. True (Patiess) = Kad IP jebkādu iemeslu dēļ tiek bloķēts. Noklusējuma = False."
 config_signatures_tracking_override: "Vai atļaut moduļiem aizstāt izsekošanas opcijas? True (Patiess) = Jā [Noklusējuma]; False (Nepatiess) = Nē."
 config_supplementary_cache_options: "Papildu kešatmiņas iespējas. Piezīme: Mainot šīs vērtības, iespējams, jūs izlogoties."
 config_supplementary_cache_options_enable_apcu: "Norāda, vai kešatmiņā mēģināt izmantot APCu. Noklusējuma = True."

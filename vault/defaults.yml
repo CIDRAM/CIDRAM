@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Defaults file (last modified: 2022.03.06).
+# This file: Defaults file (last modified: 2022.03.08).
 ##/
 
 Config Defaults:
@@ -31,14 +31,19 @@ Config Defaults:
     Tests:LogErrors
     Modules:Enable
     Modules:LogErrors
+    Modules:Tracking
     SearchEngineVerification:Enable
     SearchEngineVerification:LogErrors
+    SearchEngineVerification:Tracking
     SocialMediaVerification:Enable
     SocialMediaVerification:LogErrors
+    SocialMediaVerification:Tracking
     OtherVerification:Enable
     OtherVerification:LogErrors
+    OtherVerification:Tracking
     Aux:Enable
     Aux:LogErrors
+    Aux:Tracking
     Reporting:Enable
     Reporting:LogErrors
     Tracking:Enable
@@ -66,6 +71,7 @@ Config Defaults:
    labels:
     Enable: "checkbox_label_stage_enable"
     LogErrors: "checkbox_label_stage_log_errors"
+    Tracking: "checkbox_label_stage_infractions"
    choices:
     Tests: "stage_tests"
     Modules: "stage_modules"
@@ -85,6 +91,19 @@ Config Defaults:
     Terminate: "stage_terminate"
     AuxRedirect: "stage_auxredirect"
     NonBlockedCAPTCHA: "stage_nonblockedcaptcha"
+   nonsense: |
+    Reporting:Tracking
+    Tracking:Tracking
+    RL:Tracking
+    CAPTCHA:Tracking
+    Statistics:Tracking
+    Webhooks:Tracking
+    PrepareFields:Tracking
+    Output:Tracking
+    WriteLogs:Tracking
+    Terminate:Tracking
+    AuxRedirect:Tracking
+    NonBlockedCAPTCHA:Tracking
   fields:
    type: "checkbox"
    default: |
@@ -534,9 +553,6 @@ Config Defaults:
   infraction_limit:
    type: "int"
    default: 10
-  track_mode:
-   type: "bool"
-   default: false
   tracking_override:
    type: "bool"
    default: true
@@ -874,7 +890,7 @@ Provide:
     Verified: "field_verified"
     Expired: "state_expired"
     Ignored: "state_ignored"
-   Request_Method: "field_request_method"
+    Request_Method: "field_request_method"
    Hostname: "field_hostname"
    Profile: "field_profile"
    Factors: "CIDR"

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Indonesian language data for the front-end (last modified: 2022.03.06).
+# This file: Indonesian language data for the front-end (last modified: 2022.03.07).
 ##/
 
 Extended Description Bypasses: "File untuk bypass tanda tangan standar yang biasanya disertakan dengan paket utama."
@@ -66,6 +66,7 @@ checkbox_label_fields_logs: "Sertakan bidang ini dalam entri log?"
 checkbox_label_fields_omit: "Abaikan bidang ini saat kosong?"
 checkbox_label_fields_page_output: "Sertakan bidang ini di halaman "akses ditolak"?"
 checkbox_label_stage_enable: "Aktifkan tahap ini?"
+checkbox_label_stage_infractions: "Menghitung pelanggaran yang dihasilkan selama tahap ini terhadap pelacakan IP?"
 checkbox_label_stage_log_errors: "Mencatat kesalahan yang dihasilkan selama tahap ini?"
 config_PHPMailer: "Konfigurasi untuk PHPMailer (digunakan untuk otentikasi dua-faktor)."
 config_PHPMailer_add_reply_to_address: "Alamat balasan yang dikutip saat mengirim email melalui SMTP."
@@ -176,7 +177,6 @@ config_signatures_infraction_limit: "Jumlah maksimum pelanggaran IP diperbolehka
 config_signatures_ipv4: "Daftar file tanda tangan IPv4 yang CIDRAM harus berusaha untuk menggunakan, dipisahkan dengan koma."
 config_signatures_ipv6: "Daftar file tanda tangan IPv6 yang CIDRAM harus berusaha untuk menggunakan, dipisahkan dengan koma."
 config_signatures_modules: "Daftar file modul untuk memuat setelah memeriksa tanda tangan IPv4/IPv6, dipisahkan dengan koma."
-config_signatures_track_mode: "Kapan sebaiknya pelanggaran dihitung? False = Ketika IP adalah diblokir oleh modul. True = Ketika IP adalah diblokir untuk alasan apapun. Default = False."
 config_signatures_tracking_override: "Izinkan modul untuk mengganti opsi pelacakan? True = Ya [Default]; False = Tidak."
 config_supplementary_cache_options: "Opsi cache tambahan. Catatan: Mengubah nilai ini berpotensi membuat Anda keluar."
 config_supplementary_cache_options_enable_apcu: "Menentukan apakah akan mencoba menggunakan APCu untuk cache. Default = True."

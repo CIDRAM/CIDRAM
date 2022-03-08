@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Swedish language data for the front-end (last modified: 2022.03.06).
+# This file: Swedish language data for the front-end (last modified: 2022.03.07).
 ##/
 
 Extended Description Bypasses: "Standard bypass-filen som normalt ingår i huvudpaketet."
@@ -66,6 +66,7 @@ checkbox_label_fields_logs: "Ska detta fält visas i loggposter?"
 checkbox_label_fields_omit: "Utelämna det här fältet när det är tomt?"
 checkbox_label_fields_page_output: "Ska den här fältet visas på sidan "nekat tillgång"?"
 checkbox_label_stage_enable: "Aktivera den här skedet?"
+checkbox_label_stage_infractions: "Räkna infraktions som genererats under detta skede mot IP-spårning?"
 checkbox_label_stage_log_errors: "Logga några fel som genererats under detta skede?"
 config_PHPMailer: "Konfiguration för PHPMailer (används för tvåfaktorautentisering)."
 config_PHPMailer_add_reply_to_address: "Svaradressen att citera när du skickar e-post via SMTP."
@@ -176,7 +177,6 @@ config_signatures_infraction_limit: "Maximalt antal infraktions som en IP får m
 config_signatures_ipv4: "En lista över de IPv4 signaturfiler som CIDRAM ska försöka analysera, avgränsas av kommatecken."
 config_signatures_ipv6: "En lista över de IPv6 signaturfiler som CIDRAM ska försöka analysera, avgränsas av kommatecken."
 config_signatures_modules: "En lista över modulfiler som ska laddas efter att ha kontrollerat IPv4/IPv6-signaturerna, avgränsas av kommatecken."
-config_signatures_track_mode: "När ska infraktions räknas? False = När IP-adresser blockeras av moduler. True = När IP-adresser blockeras av någon anledning. Standard = False."
 config_signatures_tracking_override: "Tillåt att moduler åsidosätter spårningsalternativ? True = Ja [Standard]; False = Nej."
 config_supplementary_cache_options: "Kompletterande cache-alternativ. Obs: Om du ändrar dessa värden, du kan vara utloggad."
 config_supplementary_cache_options_enable_apcu: "Detta anger om ska använda APCu för caching. Standard = True."

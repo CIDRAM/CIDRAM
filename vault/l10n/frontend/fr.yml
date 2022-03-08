@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: French language data for the front-end (last modified: 2022.03.06).
+# This file: French language data for the front-end (last modified: 2022.03.07).
 ##/
 
 Extended Description Bypasses: "Les fichiers pour contourner les signatures standard qui sont normalement inclus dans le paquet principal."
@@ -66,6 +66,7 @@ checkbox_label_fields_logs: "Inclure ce champ dans les journaux\_?"
 checkbox_label_fields_omit: "Omettre ce champ lorsqu'il est vide\_?"
 checkbox_label_fields_page_output: "Inclure ce champ sur la page «\_Accès Refusé\_»\_?"
 checkbox_label_stage_enable: "Activer cette étape\_?"
+checkbox_label_stage_infractions: "Compter les infractions générées lors de cette étape dans le surveillance d'IP\_?"
 checkbox_label_stage_log_errors: "Enregistrer les erreurs générées lors de cette étape\_?"
 config_PHPMailer: "Configuration pour PHPMailer (utilisé pour l'authentification à deux facteurs)."
 config_PHPMailer_add_reply_to_address: "L'adresse de réponse à citer lors de l'envoi d'e-mail via SMTP."
@@ -176,7 +177,6 @@ config_signatures_infraction_limit: "Nombre maximal d'infractions qu'une IP est 
 config_signatures_ipv4: "Une liste des fichiers du signatures IPv4 que CIDRAM devrait tenter d'utiliser, délimité par des virgules."
 config_signatures_ipv6: "Une liste des fichiers du signatures IPv6 que CIDRAM devrait tenter d'utiliser, délimité par des virgules."
 config_signatures_modules: "Une liste des fichiers modules à charger après exécuter des signatures IPv4/IPv6, délimité par des virgules."
-config_signatures_track_mode: "Quand faut-il compter les infractions\_? False = Quand les adresses IP sont bloquées par des modules. True = Quand les adresses IP sont bloquées pour une raison quelconque. Défaut = False."
 config_signatures_tracking_override: "Autoriser les modules à remplacer les options de suivi\_? True = Oui [Défaut]\_; False = Non."
 config_supplementary_cache_options: "Options de cache supplémentaires. Remarque\_: La modification de ces valeurs peut potentiellement vous déconnecter."
 config_supplementary_cache_options_enable_apcu: "Spécifie s'il faut essayer d'utiliser APCu pour la mise en cache. Défaut = True."
@@ -598,7 +598,7 @@ switch-hide-non-outdated-set-true: "Masquer non dépassé"
 switch-hide-unused-set-false: "Ne masquer pas inutilisé"
 switch-hide-unused-set-true: "Masquer inutilisé"
 switch-sort-by-name-set-false: "Trier par ID"
-switch-sort-by-name-set-true: ""Trier par nom"
+switch-sort-by-name-set-true: "Trier par nom"
 switch-tracking-aux-set-false: "Ne vérifier pas les règles auxiliaires"
 switch-tracking-aux-set-true: "Vérifier les règles auxiliaires"
 switch-tracking-blocked-already-set-false: "Ne vérifier pas les fichiers de signature"

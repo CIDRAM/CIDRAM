@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Dutch language data for the front-end (last modified: 2022.03.06).
+# This file: Dutch language data for the front-end (last modified: 2022.03.07).
 ##/
 
 Extended Description Bypasses: "De standaard signature rondwegen normaal opgenomen met de primaire pakket."
@@ -66,6 +66,7 @@ checkbox_label_fields_logs: "Moet dit veld in logs verschijnen?"
 checkbox_label_fields_omit: "Weglaten dit veld als het leeg is?"
 checkbox_label_fields_page_output: "Moet dit veld verschijnen op de "toegang geweigerd" pagina?"
 checkbox_label_stage_enable: "Inschakelen deze fase?"
+checkbox_label_stage_infractions: "Moeten overtredingen die gegenereerd door deze fase meetellen voor IP-tracking?"
 checkbox_label_stage_log_errors: "Moeten fouten die gegenereerd door deze fase worden geregistreerd?"
 config_PHPMailer: "Configuratie voor PHPMailer (gebruikt voor tweefactorauthenticatie)."
 config_PHPMailer_add_reply_to_address: "Het antwoordadres voor het verzenden van e-mail via SMTP."
@@ -176,7 +177,6 @@ config_signatures_infraction_limit: "Maximum aantal overtredingen een IP mag wor
 config_signatures_ipv4: "Een lijst van de IPv4 signatuurbestanden dat CIDRAM moet proberen om te gebruiken, afgebakend door komma's."
 config_signatures_ipv6: "Een lijst van de IPv6 signatuurbestanden dat CIDRAM moet proberen om te gebruiken, afgebakend door komma's."
 config_signatures_modules: "Een lijst van module bestanden te laden na verwerking van de IPv4/IPv6 signatures, afgebakend door komma's."
-config_signatures_track_mode: "Wanneer moet overtredingen worden gerekend? False = Wanneer IP's geblokkeerd door modules worden. True = Wanneer IP's om welke reden geblokkeerd worden. Standaard = False."
 config_signatures_tracking_override: "Moeten modules worden toegestaan om opties voor tracking te overschrijven? True = Ja [Standaard]; False = Nee."
 config_supplementary_cache_options: "Aanvullende cache-opties. Opmerking: Als u deze waarden wijzigt, mogelijk bent u uitgelogd."
 config_supplementary_cache_options_enable_apcu: "Dit geeft aan of APCu moet worden gebruikt voor caching. Standaard = True."

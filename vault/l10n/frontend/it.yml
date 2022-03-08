@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Italian language data for the front-end (last modified: 2022.03.06).
+# This file: Italian language data for the front-end (last modified: 2022.03.07).
 ##/
 
 Extended Description Bypasses: "Un file per bypassare alcune delle firme predefinite normalmente inclusi nel pacchetto principale."
@@ -66,6 +66,7 @@ checkbox_label_fields_logs: "Questo campo dovrebbe apparire nelle voci dei regis
 checkbox_label_fields_omit: "Ometti questo campo quando è vuoto?"
 checkbox_label_fields_page_output: "Questo campo dovrebbe apparire nella pagina "accesso negato"?"
 checkbox_label_stage_enable: "Abilitare questa fase?"
+checkbox_label_stage_infractions: "Le infrazioni generati durante questa fase devono essere conteggiate ai fini del tracciamento IP?"
 checkbox_label_stage_log_errors: "Gli errori generati durante questa fase devono essere registrati?"
 config_PHPMailer: "Configurazione per PHPMailer (utilizzato per l'autenticazione a due fattori)."
 config_PHPMailer_add_reply_to_address: "L'indirizzo di risposta per citare quando si invia una posta elettronica tramite SMTP."
@@ -176,7 +177,6 @@ config_signatures_infraction_limit: "Numero massimo di infrazioni un IP è perme
 config_signatures_ipv4: "Un elenco dei file di firma IPv4 che CIDRAM dovrebbe tentare di utilizzare, delimitati da virgole."
 config_signatures_ipv6: "Un elenco dei file di firma IPv6 che CIDRAM dovrebbe tentare di utilizzare, delimitati da virgole."
 config_signatures_modules: "Un elenco di file moduli da caricare dopo l'esecuzione delle firme IPv4/IPv6, delimitati da virgole."
-config_signatures_track_mode: "Quando devono infrazioni essere contati? False = Quando IP sono bloccati da moduli. True = Quando IP sono bloccati per qualsiasi motivo. Predefinito = False."
 config_signatures_tracking_override: "I moduli dovrebbero essere autorizzati a sostituire le opzioni di tracciamento? True = Sì [Predefinito]; False = No."
 config_supplementary_cache_options: "Opzioni di cache supplementari. Nota: La modifica di questi valori potrebbe potenzialmente disconnettersi."
 config_supplementary_cache_options_enable_apcu: "Specifica se provare a utilizzare APCu per la memorizzazione nella cache. Predefinito = True."

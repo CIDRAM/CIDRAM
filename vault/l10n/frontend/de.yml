@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: German language data for the front-end (last modified: 2022.03.06).
+# This file: German language data for the front-end (last modified: 2022.03.07).
 ##/
 
 Extended Description Bypasses: "Die Standard-Signatur-Bypässe, die normalerweise im Hauptpaket enthalten sind."
@@ -66,6 +66,7 @@ checkbox_label_fields_logs: "Soll dieses Feld in Protokolleinträgen erscheinen?
 checkbox_label_fields_omit: "Soll dieses Feld wenn es ist leer weggelassen werden?"
 checkbox_label_fields_page_output: "Soll dieses Feld auf der „Zugriff verweigert“-Seite erscheinen?"
 checkbox_label_stage_enable: "Diese Phase aktivieren?"
+checkbox_label_stage_infractions: "Zählen Verstöße generierte in dieser Phase zum IP-Tracking?"
 checkbox_label_stage_log_errors: "Alle Fehler generierte in dieser Phase protokollieren?"
 config_PHPMailer: "Konfiguration für PHPMailer (für Zwei-Faktor-Authentifizierung verwendet)."
 config_PHPMailer_add_reply_to_address: "Die Antwortadresse, die beim Senden von E-Mails über SMTP verwendet werden soll."
@@ -176,7 +177,6 @@ config_signatures_infraction_limit: "Maximale Anzahl von Verstöße, die eine IP
 config_signatures_ipv4: "Eine Liste der IPv4-Signaturdateien, die CIDRAM zu analysieren versuchen sollte, getrennt durch Kommas. Hier können Sie Einträge hinzufügen, wenn Sie zusätzliche IPv4-Signaturdateien in CIDRAM aufnehmen möchten."
 config_signatures_ipv6: "Eine Liste der IPv6-Signaturdateien, die CIDRAM zu analysieren versuchen sollte, getrennt durch Kommas. Hier können Sie Einträge hinzufügen, wenn Sie zusätzliche IPv6-Signaturdateien in CIDRAM aufnehmen möchten."
 config_signatures_modules: "Eine Liste der Moduldateien zu laden nach der Prüfung der IPv4/IPv6-Signaturen, durch Kommas begrenzt."
-config_signatures_track_mode: "Wann sollten Verstöße gezählt werden? False = Wenn IPs von Modulen blockiert werden. True = Wenn IPs aus irgendeinem anderen Grund blockiert werden. Standardeinstellung = False."
 config_signatures_tracking_override: "Sollten Module erlaubt sein Tracking-Optionen zu überschreiben? True = Ja [Standardeinstellung]; False = Nein."
 config_supplementary_cache_options: "Zusätzliche Cache-Optionen. Hinweis: Das Ändern dieser Werte kann Sie möglicherweise ausloggen."
 config_supplementary_cache_options_enable_apcu: "Dies gibt an, ob APCu für das Caching verwendet werden soll. Standardeinstellung = True."

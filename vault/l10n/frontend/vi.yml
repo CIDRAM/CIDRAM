@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Vietnamese language data for the front-end (last modified: 2022.03.06).
+# This file: Vietnamese language data for the front-end (last modified: 2022.03.07).
 ##/
 
 Extended Description Bypasses: "Các tập tin đường tránh chữ ký mặc định thường bao gồm với gói thầu chính."
@@ -66,6 +66,7 @@ checkbox_label_fields_logs: "Trường này có nên xuất hiện trong các m�
 checkbox_label_fields_omit: "Bỏ qua trường này khi nó trống?"
 checkbox_label_fields_page_output: "Trường này có nên xuất hiện trên trang "truy cập đã bị từ chối" không?"
 checkbox_label_stage_enable: "Bật giai đoạn này?"
+checkbox_label_stage_infractions: "Đếm các vi phạm được tạo ra trong giai đoạn này đối với giám sát IP?"
 checkbox_label_stage_log_errors: "Ghi lại bất kỳ lỗi nào được tạo ra trong giai đoạn này?"
 config_PHPMailer: "Cấu hình cho PHPMailer (được sử dụng để xác thực hai yếu tố)."
 config_PHPMailer_add_reply_to_address: "Địa chỉ trả lời để trích dẫn khi gửi email qua SMTP."
@@ -176,7 +177,6 @@ config_signatures_infraction_limit: "Số lượng tối đa các vi phạm mộ
 config_signatures_ipv4: "Một danh sách các tập tin chữ ký IPv4 mà CIDRAM nên cố gắng để phân tích, ngăn cách bởi dấu phẩy."
 config_signatures_ipv6: "Một danh sách các tập tin chữ ký IPv6 mà CIDRAM nên cố gắng để phân tích, ngăn cách bởi dấu phẩy."
 config_signatures_modules: "Một danh sách các tập tin mô-đun để tải sau khi kiểm tra các chữ ký IPv4/IPv6, ngăn cách bởi dấu phẩy."
-config_signatures_track_mode: "Khi vi phạm cần được tính? False = Khi IP bị chặn bởi các mô-đun. True = Khi IP bị chặn vì lý do bất kỳ. Mặc định = False."
 config_signatures_tracking_override: "Cho phép các mô-đun ghi đè các tùy chọn giám sát? True = Vâng [Mặc định]; False = Không."
 config_supplementary_cache_options: "Tùy chọn bộ nhớ cache bổ sung. Lưu ý: Việc thay đổi các giá trị này có thể khiến bạn bị đăng xuất."
 config_supplementary_cache_options_enable_apcu: "Điều này xác định có nên thử sử dụng APCu để lưu trữ không. Mặc định = True."

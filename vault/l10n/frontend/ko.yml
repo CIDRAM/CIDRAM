@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Korean language data for the front-end (last modified: 2022.03.06).
+# This file: Korean language data for the front-end (last modified: 2022.03.07).
 ##/
 
 Extended Description Bypasses: "기본 서명 우회 일반적으로 기본 패키지에 포함되어 있습니다."
@@ -66,6 +66,7 @@ checkbox_label_fields_logs: "이 필드가 로그 항목에 나타나야 합니�
 checkbox_label_fields_omit: "이 필드가 비어 있으면 생략하시겠습니까?"
 checkbox_label_fields_page_output: "이 필드가 "액세스 거부" 페이지에 나타나야 합니까?"
 checkbox_label_stage_enable: "이 단계를 활성화하시겠습니까?"
+checkbox_label_stage_infractions: "이 단계에서 생성된 위반은 IP 추적에 포함되어야 합니까?"
 checkbox_label_stage_log_errors: "이 단계에서 생성된 오류를 기록하시겠습니까?"
 config_PHPMailer: "PHPMailer 설정 (이중 인증에 사용)."
 config_PHPMailer_add_reply_to_address: "SMTP를 통해 전자 메일을 보낼 때 인용 할 회신 주소입니다."
@@ -176,7 +177,6 @@ config_signatures_infraction_limit: "IP가 IP 추적에 의해 금지되기 전�
 config_signatures_ipv4: "IPv4의 서명 파일 목록 (CIDRAM는 이것을 사용합니다). 이것은 쉼표로 구분되어 있습니다."
 config_signatures_ipv6: "IPv6의 서명 파일 목록 (CIDRAM는 이것을 사용합니다). 이것은 쉼표로 구분되어 있습니다."
 config_signatures_modules: "IPv4/IPv6 서명을 체크 한 후로드 모듈 파일의 목록입니다. 이것은 쉼표로 구분되어 있습니다."
-config_signatures_track_mode: "위반은 언제 계산해야합니까? False = IP가 모듈에 의해 차단되는 경우. True = 뭐든지 이유로 IP가 차단 된 경우. Default (기본값) = False."
 config_signatures_tracking_override: "모듈이 추적 옵션을 재정의하도록 허용하시겠습니까? True = 예 (Default / 기본 설정); False = 아니오."
 config_supplementary_cache_options: "보충 캐시 옵션. 참고\_: 이 값을 변경하면 잠재적으로 로그아웃될 수 있습니다."
 config_supplementary_cache_options_enable_apcu: "캐싱에 APCu를 사용할지 여부를 지정합니다. Default (기본값) = True."

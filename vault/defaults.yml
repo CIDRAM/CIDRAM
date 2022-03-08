@@ -184,6 +184,12 @@ Config Defaults:
     Request_Method: "field_request_method"
     Hostname: "field_hostname"
     CAPTCHA: "field_captcha"
+   nonsense: |
+    ID:OmitIfEmpty
+    ScriptIdent:OmitIfEmpty
+    DateTime:OmitIfEmpty
+    SignatureCount:OmitIfEmpty
+    Infractions:OmitIfEmpty
   truncate:
    type: "kb"
    default: "0KB"

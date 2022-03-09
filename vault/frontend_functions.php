@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2022.03.01).
+ * This file: Front-end functions file (last modified: 2022.03.09).
  */
 
 /**
@@ -354,22 +354,20 @@ $CIDRAM['FileManager-RecursiveList'] = function (string $Base) use (&$CIDRAM): a
                 $Component = $CIDRAM['L10N']->getString('field_filetype_unknown');
                 $ThisNameFixed = str_replace("\\", '/', $ThisName);
                 if (isset($CIDRAM['Components']['Files'][$ThisNameFixed])) {
-                    if (!empty($CIDRAM['Components']['Names'][$CIDRAM['Components']['Files'][$ThisNameFixed]])) {
-                        $Component = $CIDRAM['Components']['Names'][$CIDRAM['Components']['Files'][$ThisNameFixed]];
-                    } else {
-                        $Component = $CIDRAM['Components']['Files'][$ThisNameFixed];
-                    }
+                    $Component = $CIDRAM['Components']['Names'][$CIDRAM['Components']['Files'][$ThisNameFixed]] ?? $CIDRAM['Components']['Files'][$ThisNameFixed];
                 } elseif (preg_match('~(?:[^|/]\.ht|\.safety$|^salt\.dat$)~i', $ThisNameFixed)) {
                     $Component = $CIDRAM['L10N']->getString('label_fmgr_safety');
                 } elseif (preg_match('~config\.ini$~i', $ThisNameFixed)) {
                     $Component = $CIDRAM['L10N']->getString('link_config');
                 } elseif ($CIDRAM['FileManager-IsLogFile']($ThisNameFixed)) {
                     $Component = $CIDRAM['L10N']->getString('link_logs');
-                } elseif (preg_match('/(?:^auxiliary\.yaml|^ignore\.dat|_custom\.dat|\.sig|\.inc)$/i', $ThisNameFixed)) {
+                } elseif ($ThisNameFixed === 'auxiliary.yaml') {
+                    $Component = $CIDRAM['L10N']->getString('link_aux');
+                } elseif (preg_match('/(?:^ignore\.dat|_custom\.dat|\.sig|\.inc)$/i', $ThisNameFixed)) {
                     $Component = $CIDRAM['L10N']->getString('label_fmgr_other_sig');
-                } elseif (preg_match('~(?:\.tmp|\.rollback|^(?:cache|hashes|ipbypass|fe_assets/frontend)\.dat)$~i', $ThisNameFixed)) {
+                } elseif (preg_match('~(?:\.tmp|\.rollback|^(?:cache|hashes|ipbypass|fe_assets/frontend|rl)\.dat)$~i', $ThisNameFixed)) {
                     $Component = $CIDRAM['L10N']->getString('label_fmgr_cache_data');
-                } elseif (preg_match('/\.(?:dat|ya?ml)$/i', $ThisNameFixed)) {
+                } elseif (preg_match('/^(?:components|themes|modules)\.dat$/', $ThisNameFixed)) {
                     $Component = $CIDRAM['L10N']->getString('label_fmgr_updates_metadata');
                 }
                 if (!isset($CIDRAM['Components']['Components'][$Component])) {

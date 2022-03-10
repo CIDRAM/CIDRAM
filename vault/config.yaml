@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Configuration defaults file (last modified: 2022.02.25).
+# This file: Configuration defaults file (last modified: 2022.03.10).
 ##/
 
 Config Defaults:
@@ -592,6 +592,21 @@ Config Defaults:
    type: "url"
    default: ""
    autocomplete: "url"
+  block_event_title:
+   type: "string"
+   default: "CIDRAM"
+   choices:
+    CIDRAM: "CIDRAM"
+    denied: "denied"
+   preview: "allow_other"
+   allow_other: true
+  captcha_title:
+   type: "string"
+   default: "CIDRAM"
+   choices:
+    CIDRAM: "CIDRAM"
+   preview: "allow_other"
+   allow_other: true
  PHPMailer:
   EventLog:
    type: "string"

@@ -720,7 +720,8 @@ if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
                 'GeneratedBy' => isset($CIDRAM['Fields']['ScriptIdent:ShowInPageOutput']) ? sprintf(
                     $CIDRAM['Client-L10N']->getString('generated_by'),
                     '<div id="ScriptIdent" dir="ltr">' . $CIDRAM['ScriptIdent'] . '</div>'
-                ) : ''
+                ) : '',
+                'Title' => $CIDRAM['Client-L10N']->getString($CIDRAM['Config']['template_data']['block_event_title']) ?: $CIDRAM['Config']['template_data']['block_event_title']
             ]
         );
         if (!isset($CIDRAM['Fields']['ReasonMessage:ShowInPageOutput'])) {
@@ -908,6 +909,7 @@ if (isset($CIDRAM['Stages']['NonBlockedCAPTCHA:Enable'])) {
                 $CIDRAM['Client-L10N']->getString('generated_by'),
                 '<div id="ScriptIdent" dir="ltr">' . $CIDRAM['ScriptIdent'] . '</div>'
             ) : '';
+            $CIDRAM['Parsables']['Title'] = $CIDRAM['Client-L10N']->getString($CIDRAM['Config']['template_data']['captcha_title']) ?: $CIDRAM['Config']['template_data']['captcha_title'];
 
             /** Pull relevant client-specified L10N data first. */
             if (!empty($CIDRAM['L10N-Lang-Attache'])) {

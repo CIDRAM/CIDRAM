@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: HCaptcha class (last modified: 2022.02.21).
+ * This file: HCaptcha class (last modified: 2022.03.10).
  */
 
 namespace CIDRAM\Core;
@@ -246,7 +246,7 @@ class HCaptcha extends Captcha
     private function generateTemplateData(string $SiteKey, string $API, bool $CookieWarn = false, bool $ApiMessage = false): string
     {
         header(sprintf(
-            "Content-Security-Policy: default-src 'none';\nconnect-src %2\$s;\nframe-src %2\$s;\nscript-src %1\$s %2\$s;",
+            'Content-Security-Policy: default-src \'none\'; connect-src %2$s; frame-src %2$s; script-src %1$s %2$s;',
             'https://assets.hcaptcha.com',
             'https://hcaptcha.com'
         ));

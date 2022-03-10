@@ -16,6 +16,10 @@
 - Configuration directives `error_log_stages` and `track_mode` have been replaced by a new configuration directive, `stages`. The new configuration directive is capable of providing the same functionality provided previously, as well as some other, new, related functionality (#208, #211).
 - Configuration directive `statistics` has been changed from a boolean to a checkbox, to enable users to specify exactly *which* statistics they want to track. It's also now possible to track non-blocked requests (#204).
 
+#### Bugs fixed.
+- Some specific files were being misclassified by the file manager; Fixed.
+- HCaptcha class was sending invalid headers when generating output; Fixed (#293).
+
 #### Other changes.
 - Improved IP address resolution strategy (#286).
 - Changed the `enable_apcu` default value to `true` and the `prefix` default value to `CIDRAM_`.

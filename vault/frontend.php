@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2022.03.02).
+ * This file: Front-end handler (last modified: 2022.03.11).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -3181,7 +3181,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'range' && $CIDRAM['FE']['Permis
 /** Range Intersector. */
 elseif ($CIDRAM['QueryVars']['cidram-page'] === 'range-intersector' && $CIDRAM['FE']['Permissions'] === 1) {
     /** Page initial prepwork. */
-    $CIDRAM['InitialPrepwork']($CIDRAM['L10N']->getString('link_range_intersector'), $CIDRAM['L10N']->getString('tip_range_intersector'), false);
+    $CIDRAM['InitialPrepwork']($CIDRAM['L10N']->getString('link_range_intersector'), $CIDRAM['L10N']->getString('tip_range_intersector'));
 
     /** Output format. */
     $CIDRAM['OutputFormat'] = (isset($_POST['format']) && $_POST['format'] === 'Netmask') ? 1 : 0;
@@ -3261,7 +3261,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'range-intersector' && $CIDRAM['
 /** Range Subtractor. */
 elseif ($CIDRAM['QueryVars']['cidram-page'] === 'range-subtractor' && $CIDRAM['FE']['Permissions'] === 1) {
     /** Page initial prepwork. */
-    $CIDRAM['InitialPrepwork']($CIDRAM['L10N']->getString('link_range_subtractor'), $CIDRAM['L10N']->getString('tip_range_subtractor'), false);
+    $CIDRAM['InitialPrepwork']($CIDRAM['L10N']->getString('link_range_subtractor'), $CIDRAM['L10N']->getString('tip_range_subtractor'));
 
     /** Output format. */
     $CIDRAM['OutputFormat'] = (isset($_POST['format']) && $_POST['format'] === 'Netmask') ? 1 : 0;
@@ -3343,7 +3343,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'range-subtractor' && $CIDRAM['F
 /** IP Aggregator. */
 elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-aggregator' && $CIDRAM['FE']['Permissions'] === 1) {
     /** Page initial prepwork. */
-    $CIDRAM['InitialPrepwork']($CIDRAM['L10N']->getString('link_ip_aggregator'), $CIDRAM['L10N']->getString('tip_ip_aggregator'), false);
+    $CIDRAM['InitialPrepwork']($CIDRAM['L10N']->getString('link_ip_aggregator'), $CIDRAM['L10N']->getString('tip_ip_aggregator'));
 
     /** Output format. */
     $CIDRAM['OutputFormat'] = (isset($_POST['format']) && $_POST['format'] === 'Netmask') ? 1 : 0;

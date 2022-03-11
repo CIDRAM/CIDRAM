@@ -26,4 +26,5 @@
 - Checkbox configuration directives are now delimited in the configuration by newlines instead of commas.
 - The `Output` stage of the execution chain has been split into four distinct, separate stages for easier configurability and control.
 - Added a mechanism to the front-end IP test and IP tracking pages to enable the copying of IPs displayed there.
+- Added a copy mechanism for the output of all range-based pages.
 - Added two new configuration directives, `block_event_title` and `captcha_title`, allowing users to customise the page title used for block events and CAPTCHA requests (#216).

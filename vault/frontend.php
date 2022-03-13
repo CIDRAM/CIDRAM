@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2022.03.12).
+ * This file: Front-end handler (last modified: 2022.03.13).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -255,10 +255,10 @@ if (!isset($CIDRAM['Stages']['Terminate:Enable'])) {
 $CIDRAM['Warnings'][] = 'Warning: Currently running an unreleased alpha! Breakage is anticipated!';
 
 /** Prepare warnings. */
-$CIDRAM['FE']['Warnings'] = count($CIDRAM['Warnings']) ? "\n<div class=\"center\"><span class=\"warning\">" . implode(
-    "</span><br />\n<span class=\"warning\">",
+$CIDRAM['FE']['Warnings'] = count($CIDRAM['Warnings']) ? "\n<div class=\"center\"><div class=\"warning\">" . implode(
+    "</div>\n<div class=\"warning\">",
     $CIDRAM['Warnings']
-) . '</span></div><hr />' : '';
+) . '</div></div><hr />' : '';
 
 /** Cleanup. */
 unset($CIDRAM['Warnings']);

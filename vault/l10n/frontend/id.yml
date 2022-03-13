@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Indonesian language data for the front-end (last modified: 2022.03.10).
+# This file: Indonesian language data for the front-end (last modified: 2022.03.12).
 ##/
 
 Extended Description Bypasses: "File untuk bypass tanda tangan standar yang biasanya disertakan dengan paket utama."
@@ -112,7 +112,6 @@ config_general_log_sanitisation: "Saat menggunakan halaman log untuk melihat dat
 config_general_logfile: "File yang dapat dibaca oleh manusia untuk mencatat semua upaya akses diblokir. Spesifikasikan nama file, atau biarkan kosong untuk menonaktifkan."
 config_general_logfile_apache: "File yang dalam gaya Apache untuk mencatat semua upaya akses diblokir. Spesifikasikan nama file, atau biarkan kosong untuk menonaktifkan."
 config_general_logfile_serialized: "File serial untuk mencatat semua upaya akses diblokir. Spesifikasikan nama file, atau biarkan kosong untuk menonaktifkan."
-config_general_maintenance_mode: "Aktifkan modus perawatan? True = Ya; False = Tidak [Default]. Nonaktifkan semuanya selain bagian depan. Terkadang berguna saat memperbarui CMS, kerangka kerja, dll."
 config_general_max_login_attempts: "Jumlah maksimum upaya memasukkan ke bagian depan. Default = 5."
 config_general_numbers: "Cara apa yang kamu suka nomor menjadi ditampilkan? Pilih contoh yang paling sesuai untuk Anda."
 config_general_other_verification: "Jika memungkinkan, coba verifikasi jenis permintaan lain (mis., AdSense, pemeriksa SEO, dll)? Saat terdeteksi, permintaan palsu akan diblokir. True = Mengaktifkan [Default]; False = Menonaktifkan."
@@ -556,7 +555,6 @@ state_component_is_active: "Komponen ini aktif."
 state_component_is_inactive: "Komponen ini non-aktif."
 state_component_is_partially_active: "Komponen ini aktif sebagian."
 state_component_is_provisional: "Komponen ini kadang-kadang aktif."
-state_default_password: "Peringatan: Menggunakan kata sandi standar!"
 state_email_sent: "Email berhasil dikirim ke "%s"."
 state_failed_missing: "Tugas gagal karena komponen yang diperlukan tidak tersedia."
 state_fixer: "%s %s."
@@ -568,8 +566,6 @@ state_logged_in: "Dimasuk."
 state_logged_in_2fa_pending: "Dimasuk + 2FA sedang menunggu."
 state_logged_out: "Dikeluar."
 state_logs_access_only: "Akses ke log hanya"
-state_maintenance_mode: "Peringatan: Modus perawatan diaktifkan!"
-state_password_not_valid: "Peringatan: Akun ini tidak menggunakan kata sandi yang valid!"
 state_risk_high: "Tinggi"
 state_risk_low: "Rendah"
 state_risk_medium: "Menengah"
@@ -636,4 +632,12 @@ tip_statistics: "Salam, {username}.<br />Halaman ini menunjukkan beberapa statis
 tip_statistics_disabled: "Catat: Pelacakan statistik saat ini dinonaktifkan, namun dapat diaktifkan melalui halaman konfigurasi."
 tip_updates: "Salam, {username}.<br />Halaman pembaruan memungkinkan Anda untuk menginstal, menguninstal, dan memperbarui berbagai komponen CIDRAM (paket inti, tanda tangan, file L10N, dll)."
 title_login: "Masuk"
-warning_signatures_1: "Peringatan: Tidak ada file tanda tangan yang aktif!"
+warning_default_password: "Peringatan: Menggunakan kata sandi standar!"
+warning_dry_run_mode: "Peringatan: Beroperasi dalam modus lari kering! Saat dalam modus lari kering, permintaan masih diperiksa dan dicatat sebagai acara blokir seperti biasa, tetapi tidak ada yang diblokir."
+warning_ip_tests_disabled: "Peringatan: IP test dinonaktifkan! File tanda tangan tidak dapat digunakan sampai masalah ini diselesaikan."
+warning_maintenance_mode: "Peringatan: Beroperasi dalam modus perawatan! Saat dalam modus perawatan, tidak ada yang diperiksa, dicatat, atau diblokir."
+warning_modules_disabled: "Peringatan: Modul dinonaktifkan! Modul tidak dapat digunakan sampai masalah ini diselesaikan."
+warning_no_active_modules: "Peringatan: Tidak ada modul yang aktif! Modul dapat diaktifkan menggunakan halaman konfigurasi atau pembaruan."
+warning_no_active_signature_files: "Peringatan: Tidak ada file tanda tangan yang aktif! File tanda tangan dapat diaktifkan menggunakan halaman konfigurasi atau pembaruan."
+warning_password_not_valid: "Peringatan: Akun ini tidak menggunakan kata sandi yang valid!"
+warning_termination_disabled: "Peringatan: Penghentian halaman dinonaktifkan! Permintaan tidak dapat diblokir dengan benar sampai masalah ini diselesaikan."

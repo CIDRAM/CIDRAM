@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Polish language data for the front-end (last modified: 2022.03.10).
+# This file: Polish language data for the front-end (last modified: 2022.03.12).
 ##/
 
 Extended Description Bypasses: "Domyślne pliki pomijania podpisów zwykle zawarte w pakiecie głównym."
@@ -112,7 +112,6 @@ config_general_log_sanitisation: "Podczas korzystania ze strony dzienników do p
 config_general_logfile: "Plik czytelny dla człowieka do rejestrowania wszystkich zablokowanych prób dostępu. Podaj nazwę pliku lub pozostaw puste, aby wyłączyć."
 config_general_logfile_apache: "Plik w stylu Apache do rejestrowania wszystkich zablokowanych prób dostępu. Podaj nazwę pliku lub pozostaw puste, aby wyłączyć."
 config_general_logfile_serialized: "Plik szeregowy do rejestrowania wszystkich zablokowanych prób dostępu. Podaj nazwę pliku lub pozostaw puste, aby wyłączyć."
-config_general_maintenance_mode: "Włączyć tryb konserwacji? True (Prawdziwe) = Tak; False (Fałszywy) = Nie [Domyślna]. Wyłącza wszystko oprócz interfejsu użytkownika. Czasami przydatne w przypadku aktualizacji CMS, frameworków, itp."
 config_general_max_login_attempts: "Maksymalna liczba prób zalogowania się do interfejsu użytkownika. Domyślna = 5."
 config_general_numbers: "Jak wolisz wyświetlać liczby? Wybierz przykład, który wygląda najlepiej dla Ciebie."
 config_general_other_verification: "Jeśli to możliwe, spróbuj zweryfikować inne rodzaje żądań (np. AdSense, narzędzia do sprawdzania SEO, itp)? Po wykryciu, sfałszowane żądania zostaną zablokowane. True (Prawdziwe) = Włączyć [Domyślna]; False (Fałszywy) = Wyłączyć."
@@ -571,7 +570,6 @@ state_component_is_active: "Komponent jest aktywny."
 state_component_is_inactive: "Komponent jest nieaktywny."
 state_component_is_partially_active: "Komponent jest częściowo aktywny."
 state_component_is_provisional: "Komponent jest tymczasowy."
-state_default_password: "Ostrzeżenie: Używanie domyślnego hasła!"
 state_email_sent: "E-mail został pomyślnie wysłany na „%s”."
 state_failed_missing: "Zadanie nie powiodło się, ponieważ niezbędny komponent jest niedostępny."
 state_fixer: "%s %s."
@@ -586,8 +584,6 @@ state_logged_in: "Zalogowany."
 state_logged_in_2fa_pending: "Zalogowany + Oczekuje na potwierdzenie 2FA."
 state_logged_out: "Wylogowano."
 state_logs_access_only: "Dostęp tylko do dzienników"
-state_maintenance_mode: "Ostrzeżenie: Tryb konserwacji jest włączony!"
-state_password_not_valid: "Ostrzeżenie: To konto nie używa prawidłowego hasła!"
 state_risk_high: "Wysokie"
 state_risk_low: "Niskie"
 state_risk_medium: "Średnie"
@@ -693,4 +689,12 @@ tip_statistics: "Witaj, {username}.<br />Ta strona pokazuje podstawowe statystyk
 tip_statistics_disabled: "Uwaga: Śledzenie statystyk jest obecnie wyłączone, ale można je włączyć na stronie konfiguracji."
 tip_updates: "Witaj, {username}.<br />Strona aktualizacji pozwala instalować, odinstalowywać i aktualizować różne komponenty CIDRAM (pakiet podstawowy, podpisy, pliki L10N, itp)."
 title_login: "Zaloguj sie"
-warning_signatures_1: "Ostrzeżenie: Żadne pliki podpis nie są aktywne!"
+warning_default_password: "Ostrzeżenie: Używa domyślnego hasła!"
+warning_dry_run_mode: "Ostrzeżenie: Praca w trybie suchobiegu! W trybie suchobiegu żądania są nadal sprawdzane i rejestrowane jako zdarzenia blokowe, jak zwykle, ale nic nie jest blokowane."
+warning_ip_tests_disabled: "Ostrzeżenie: Testy IP są wyłączone! Plików podpisów nie można używać, dopóki problem nie zostanie rozwiązany."
+warning_maintenance_mode: "Ostrzeżenie: Praca w trybie konserwacji! W trybie konserwacji, nic nie jest sprawdzane, rejestrowane, ani blokowane."
+warning_modules_disabled: "Ostrzeżenie: Moduły są wyłączone! Modułów nie można używać, dopóki problem nie zostanie rozwiązany."
+warning_no_active_modules: "Ostrzeżenie: Żadne moduły nie są aktywne! Moduły można aktywować za pomocą stron konfiguracji lub aktualizacji."
+warning_no_active_signature_files: "Ostrzeżenie: Żadne pliki podpisów nie są aktywne! Pliki podpisów można aktywować za pomocą stron konfiguracji lub aktualizacji."
+warning_password_not_valid: "Ostrzeżenie: To konto nie używa prawidłowego hasła!"
+warning_termination_disabled: "Ostrzeżenie: Zakończenie strony jest wyłączone! Żądań nie można prawidłowo zablokować, dopóki problem nie zostanie rozwiązany."

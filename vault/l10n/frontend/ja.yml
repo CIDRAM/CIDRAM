@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Japanese language data for the front-end (last modified: 2022.03.10).
+# This file: Japanese language data for the front-end (last modified: 2022.03.12).
 ##/
 
 Extended Description Bypasses: "メインパッケージに通常含まれているデフォルト・シグネチャ・バイパス。"
@@ -112,7 +112,6 @@ config_general_log_sanitisation: "フロントエンドのログページを使�
 config_general_logfile: "アクセス試行阻止の記録、​人間によって読み取り可能。​ファイル名指定するか、​無効にしたい場合は空白のままにして下さい。"
 config_general_logfile_apache: "アクセス試行阻止の記録、​Apacheスタイル。​ファイル名指定するか、​無効にしたい場合は空白のままにして下さい。"
 config_general_logfile_serialized: "アクセス試行阻止の記録、​シリアル化されました。​ファイル名指定するか、​無効にしたい場合は空白のままにして下さい。"
-config_general_maintenance_mode: "メンテナンス・モードを有効にしますか？ True = はい。 False = いいえ（Default/デフォルルト）。​フロントエンド以外のすべてを無効にします。​ＣＭＳ、フレームワークなどを更新するときに便利です。"
 config_general_max_login_attempts: "ログイン試行の最大回数（フロントエンド）。​Default（デフォルト設定） = ５。"
 config_general_numbers: "どのように数字を表示するのが好きですか？​あなたに一番正しい例を選択してください。"
 config_general_other_verification: "可能な限り、他の種類のリクエストを確認するがありますか（例：AdSense、SEOチェッカー、など）？​検出されると、偽のリクエストはブロックされます。 True = 有効にする（Default/デフォルルト）。 False = 無効にする。"
@@ -556,7 +555,6 @@ state_component_is_active: "コンポーネントがアクティブです。"
 state_component_is_inactive: "コンポーネントが非アクティブです。"
 state_component_is_partially_active: "コンポーネントが部分的にアクティブです。"
 state_component_is_provisional: "コンポーネントが暫定的です。"
-state_default_password: "警告：デフォルトのパスワードを使用して！"
 state_email_sent: "Ｅメールは「%s」に送信されました。"
 state_failed_missing: "必要なコンポーネントが使用できないため、タスクが失敗しました。"
 state_fixer: "%2$s%1$s。"
@@ -568,8 +566,6 @@ state_logged_in: "ログインしました。"
 state_logged_in_2fa_pending: "ログインしました＋２ＦＡを待っています。"
 state_logged_out: "ログアウトしました。"
 state_logs_access_only: "ログのみにアクセス"
-state_maintenance_mode: "警告：メンテナンス・モードが有効になっています！"
-state_password_not_valid: "警告：このアカウントには有効なパスワードを使用していません！"
 state_risk_high: "高い"
 state_risk_low: "低い"
 state_risk_medium: "中程度"
@@ -636,4 +632,12 @@ tip_statistics: "こんにちは、​{username}。​<br />このページに�
 tip_statistics_disabled: "注意：統計トラッキングは現在オフラインですが、コンフィギュレーション・ページで有効にすることができます。"
 tip_updates: "こんにちは、​{username}。​<br />アップデート・ページは、​CIDRAMのさまざまなコンポーネントはインストール、​アンインストール、​更新が可能です（コアパッケージ、​シグネチャ、​Ｌ１０Ｎファイル、​等）。"
 title_login: "ログイン"
-warning_signatures_1: "警告：アクティブ・シグネチャ・ファイルはありません！"
+warning_default_password: "警告：デフォルトのパスワードを使用して！"
+warning_dry_run_mode: "警告：ドライ・ラン・モードで動作中！ドライ・ラン・モードでは、リクエストを通常どおりチェックされ、ブロック・イベントとしてログに記録されますが、ブロックされるものはありません。"
+warning_ip_tests_disabled: "警告：ＩＰテストは無効になっています！これが解決されるまで、シグネチャ・ファイルは利用することはできません。"
+warning_maintenance_mode: "警告：メンテナンス・モードで動作中！メンテナンス・モードでは、何もチェック、ログ記録、またはブロックされません。"
+warning_modules_disabled: "警告：モジュールが無効になっています！これが解決されるまで、モジュールを利用することはできません。"
+warning_no_active_modules: "警告：アクティブな・モジュールはありません！モジュールは、コンフィグレーション・ページまたはアップデート・ページを使用してアクティブ化できます。"
+warning_no_active_signature_files: "警告：アクティブな・シグネチャ・ファイルはありません！シグネチャ・ファイルは、コンフィグレーション・ページまたはアップデート・ページを使用してアクティブ化できます。"
+warning_password_not_valid: "警告：このアカウントには有効なパスワードを使用していません！"
+warning_termination_disabled: "警告：ページの終了が無効になっています！これが解決されるまで、リクエストを適切にブロックすることはできません。"

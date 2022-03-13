@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Turkish language data for the front-end (last modified: 2022.03.10).
+# This file: Turkish language data for the front-end (last modified: 2022.03.12).
 ##/
 
 Extended Description Bypasses: "Varsayılan imza bypass'lar, normalde ana paketle birlikte verilir."
@@ -112,7 +112,6 @@ config_general_log_sanitisation: "Günlük verilerini görüntülemek için ön 
 config_general_logfile: "Engellenen tüm erişim girişimlerini kaydetmek için insanlar tarafından okunabilir dosya. Dosya adı belirtin veya devre dışı bırakmak için boş bırakın."
 config_general_logfile_apache: "Engellenen tüm erişim girişimlerini kaydetmek için Apache tarzı dosya. Dosya adı belirtin veya devre dışı bırakmak için boş bırakın."
 config_general_logfile_serialized: "Engellenen tüm erişim girişimlerini kaydetmek için seri haline getirilmiş dosya. Dosya adı belirtin veya devre dışı bırakmak için boş bırakın."
-config_general_maintenance_mode: "Bakım modunu etkinleştirilsin mi? Doğru/True = Evet; Yanlış/False = Hayır [Varsayılan]. Ön uç haricindeki her şeyi devre dışı bırakır. Bazen CMS'nizi, çerçeveleri vb. güncellenirken yararlıdır."
 config_general_max_login_attempts: "Maksimum giriş denemesi sayısı. Varsayılan = 5."
 config_general_numbers: "Numaraların görüntülenmesini nasıl tercih edersiniz? Size en uygun görünen örneği seçin."
 config_general_other_verification: "Mümkün olan her yerde, diğer istek türlerini doğrulamaya çalışın (ör., AdSense, SEO denetleyicileri, vb)? Tespit edildiğinde, sahte istekler engellenecektir. Doğru/True = Etkinleştir [Varsayılan]; Yanlış/False = devre dışı bırakın."
@@ -557,10 +556,9 @@ state_async_deny: "İzinleriniz uyumsuz eşzamansız istekler gerçekleştirmek 
 state_cache_is_empty: "Önbellek boş."
 state_complete_access: "Tam erişim"
 state_component_is_active: "Bileşen aktiftir."
-state_component_is_inactive: "Bileşen etkin değil."
+state_component_is_inactive: "Bileşen aktif değil."
 state_component_is_partially_active: "Bileşen kısmen aktiftir."
 state_component_is_provisional: "Bileşen geçicidir."
-state_default_password: "Uyarı: Varsayılan şifreyi kullanıyor!"
 state_email_sent: "E-posta başarıyla "%s" olarak gönderildi."
 state_failed_missing: "Gerekli bir bileşen kullanılamaması nedeniyle görev başarısız oldu."
 state_fixer: "$2%s $1%s."
@@ -572,8 +570,6 @@ state_logged_in: "Giriş yapıldı."
 state_logged_in_2fa_pending: "Giriş yapıldı + 2FA beklemede."
 state_logged_out: "Çıkış yapıldı."
 state_logs_access_only: "Sadece girişleri kaydeder"
-state_maintenance_mode: "Uyarı: Bakım modu etkin!"
-state_password_not_valid: "Uyarı: Bu hesap geçerli bir şifre kullanmıyor!"
 state_risk_high: "Yüksek"
 state_risk_low: "Düşük"
 state_risk_medium: "Orta"
@@ -640,4 +636,12 @@ tip_statistics: "Merhaba, {username}.<br />Bu sayfada, CIDRAM kurulumunuzla ilgi
 tip_statistics_disabled: "Not: İstatistik izleme şu anda devre dışı, ancak yapılandırma sayfası aracılığıyla etkinleştirilebilir."
 tip_updates: "Merhaba, {username}.<br />Güncellemeler sayfası, CIDRAM'ın çeşitli bileşenlerini (çekirdek paket, imzalar, L10N dosyaları vb) yüklemenizi, kaldırmanızı ve güncellemenizi sağlar."
 title_login: "Giriş"
-warning_signatures_1: "Uyarı: Hiçbir imza dosyası aktif değil!"
+warning_default_password: "Uyarı: Varsayılan şifreyi kullanıyor!"
+warning_dry_run_mode: "Uyarı: Kuru modunda çalışma! Kuru modundayken, istekler hala kontrol edilir ve engelleme olayları olarak günlüğe kaydedilir, ancak hiçbir şey engellenmez."
+warning_ip_tests_disabled: "Uyarı: IP testleri devre dışı bırakıldı! Bu sorun çözülene kadar, imza dosyaları kullanılamaz."
+warning_maintenance_mode: "Uyarı: Bakım modunda çalışma! Bakım modundayken hiçbir şey kontrol edilmez, günlüğe kaydedilmez, veya engellenmez."
+warning_modules_disabled: "Uyarı: Modüller devre dışı bırakıldı! Bu sorun çözülene kadar, modüller kullanılamaz."
+warning_no_active_modules: "Uyarı: Hiçbir modül aktif değil! Modüller, yapılandırma veya güncellemeler sayfaları kullanılarak etkinleştirilebilir."
+warning_no_active_signature_files: "Uyarı: Hiçbir imza dosyası aktif değil! İmza dosyaları, yapılandırma veya güncellemeler sayfaları kullanılarak etkinleştirilebilir."
+warning_password_not_valid: "Uyarı: Bu hesap geçerli bir şifre kullanmıyor!"
+warning_termination_disabled: "Uyarı: Sayfa sonlandırma devre dışı bırakıldı! Bu sorun çözülene kadar, istekler düzgün şekilde engellenemez."

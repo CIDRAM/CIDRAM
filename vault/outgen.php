@@ -8,20 +8,20 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Output generator (last modified: 2022.03.08).
+ * This file: Output generator (last modified: 2022.03.12).
  */
-
-/** Initialise cache. */
-$CIDRAM['InitialiseCache']();
-
-/** Initialise an error handler. */
-$CIDRAM['InitialiseErrorHandler']();
 
 /** Initialise stages. */
 $CIDRAM['Stages'] = array_flip(explode("\n", $CIDRAM['Config']['general']['stages']));
 
 /** Usable by events to determine which part of the output generator we're at. */
 $CIDRAM['Stage'] = '';
+
+/** Initialise cache. */
+$CIDRAM['InitialiseCache']();
+
+/** Initialise an error handler. */
+$CIDRAM['InitialiseErrorHandler']();
 
 /** Initialise statistics tracked. */
 $CIDRAM['StatisticsTracked'] = array_flip(explode("\n", $CIDRAM['Config']['general']['statistics']));
@@ -109,7 +109,7 @@ $CIDRAM['FieldTemplates'] = $CIDRAM['Config']['template_data'] + [
 ];
 
 /** The normal blocking procedures should occur. */
-if ($CIDRAM['Protect'] && !$CIDRAM['Config']['general']['maintenance_mode'] && isset($CIDRAM['Stages']['Tests:Enable'])) {
+if ($CIDRAM['Protect'] && isset($CIDRAM['Stages']['Tests:Enable'])) {
     $CIDRAM['Stage'] = 'Tests';
 
     /** Run all IPv4/IPv6 tests. */
@@ -175,7 +175,7 @@ if ($CIDRAM['Config']['general']['force_hostname_lookup']) {
 }
 
 /** Executed only if maintenance mode is disabled. */
-if ($CIDRAM['Protect'] && !$CIDRAM['Config']['general']['maintenance_mode'] && empty($CIDRAM['Whitelisted'])) {
+if ($CIDRAM['Protect'] && empty($CIDRAM['Whitelisted'])) {
     /** Instantiate report orchestrator (used by some modules). */
     $CIDRAM['Reporter'] = new \CIDRAM\Core\Reporter();
 
@@ -335,7 +335,7 @@ if (isset($CIDRAM['Stages']['RL:Enable'])) {
     /** Check whether rate limiting is active. */
     $CIDRAM['RL_Active'] = isset($CIDRAM['Stages']['RL:Enable']) && (
         ($CIDRAM['Config']['rate_limiting']['max_requests'] > 0 || $CIDRAM['RL_MaxBandwidth'] > 0) &&
-        ($CIDRAM['Protect'] && !$CIDRAM['Config']['general']['maintenance_mode'] && empty($CIDRAM['Whitelisted']))
+        ($CIDRAM['Protect'] && empty($CIDRAM['Whitelisted']))
     );
 
     if ($CIDRAM['RL_Active'] && isset($CIDRAM['Factors']) && (!$CIDRAM['Config']['rate_limiting']['exceptions'] || (

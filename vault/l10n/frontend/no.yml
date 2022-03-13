@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Norwegian language data for the front-end (last modified: 2022.03.10).
+# This file: Norwegian language data for the front-end (last modified: 2022.03.12).
 ##/
 
 Extended Description Bypasses: "Standard-signatur-bypass-filene som normalt følger med hovedpakken."
@@ -112,7 +112,6 @@ config_general_log_sanitisation: "Når du bruker frontend loggene siden for å v
 config_general_logfile: "Menneskelig-lesbar fil for å logge av alle blokkerte tilgangsforsøk. Angi et filnavn, eller la det være tomt for å deaktivere."
 config_general_logfile_apache: "Apache-stil fil for å logge alle blokkerte tilgangsforsøk. Angi et filnavn, eller la det være tomt for å deaktivere."
 config_general_logfile_serialized: "Serialisert fil å logge av alle blokkerte tilgangsforsøk. Angi et filnavn, eller la det være tomt for å deaktivere."
-config_general_maintenance_mode: "Aktiver vedlikeholdsmodus? True = Ja; False = Nei [Standardverdi]. Deaktiverer alt annet enn frontenden. Noen ganger nyttig for når du oppdaterer CMS, rammeverker, osv."
 config_general_max_login_attempts: "Maksimum antall påloggingsforsøk i front-end. Standard = 5."
 config_general_numbers: "Hvordan foretrekker du at tall vises? Velg eksempelet som passer best for deg."
 config_general_other_verification: "Når det er mulig, prøv å verifisere andre typer forespørsler (f.eks. AdSense, SEO-brikker, osv)? Når oppdaget, vil falske forespørsler bli blokkert. True = Aktiver [Standardverdi]; False = Deaktiver."
@@ -564,7 +563,6 @@ state_component_is_active: "Komponenten er aktiv."
 state_component_is_inactive: "Komponenten er inaktiv."
 state_component_is_partially_active: "Komponenten er delvis aktiv."
 state_component_is_provisional: "Komponent er foreløpig."
-state_default_password: "Advarsel: Bruker standard passordet"
 state_email_sent: "E-post ble sendt til "%s" vellykket."
 state_failed_missing: "Oppgave mislyktes fordi en nødvendig komponent ikke er tilgjengelig."
 state_fixer: "%s %s."
@@ -578,8 +576,6 @@ state_logged_in: "Logget inn."
 state_logged_in_2fa_pending: "Logget inn + 2FA venter."
 state_logged_out: "Logget ut."
 state_logs_access_only: "Bare logger tilgang"
-state_maintenance_mode: "Advarsel: Vedlikeholdsmodus er aktivert!"
-state_password_not_valid: "Advarsel: Denne kontoen bruker ikke et gyldig passord!"
 state_risk_high: "Høy"
 state_risk_low: "Lav"
 state_risk_medium: "Medium"
@@ -668,4 +664,12 @@ tip_statistics: "Hallo, {username}.<br />Denne siden viser noen grunnleggende br
 tip_statistics_disabled: "Merk: Statistikksporing er for øyeblikket deaktivert, men kan aktiveres via konfigurasjonssiden."
 tip_updates: "Hallo, {username}.<br />Oppdateringssiden lar deg installere, avinstallere og oppdatere de forskjellige komponentene i CIDRAM (kjernepakken, signaturer, L10N filer, osv)."
 title_login: "Innloggingssiden"
-warning_signatures_1: "Advarsel: Ingen signaturfiler er aktive!"
+warning_default_password: "Advarsel: Bruker standard passordet!"
+warning_dry_run_mode: "Advarsel: Drift i tørrkjøringsmodus! I tørrkjøringsmodus blir forespørsler fortsatt sjekket og logget som blokkeringshendelser som vanlig, men ingenting er blokkert."
+warning_ip_tests_disabled: "Advarsel: IP-tester er deaktivert! Signaturfiler kan ikke brukes før dette er løst."
+warning_maintenance_mode: "Advarsel: Drift i vedlikeholdsmodus! I vedlikeholdsmodus blir ingenting sjekket, logget, eller blokkert."
+warning_modules_disabled: "Advarsel: Moduler er deaktivert! Moduler kan ikke brukes før dette er løst."
+warning_no_active_modules: "Advarsel: Ingen moduler er aktive! Moduler kan aktiveres ved å bruke konfigurasjonssiden eller oppdateringssiden."
+warning_no_active_signature_files: "Advarsel: Ingen signaturfiler er aktive! Signaturfiler kan aktiveres ved å bruke konfigurasjonssiden eller oppdateringssiden."
+warning_password_not_valid: "Advarsel: Denne kontoen bruker ikke et gyldig passord!"
+warning_termination_disabled: "Advarsel: Sideavslutning er deaktivert! Forespørsler kan ikke blokkeres ordentlig før dette er løst."

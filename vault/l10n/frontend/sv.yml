@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Swedish language data for the front-end (last modified: 2022.03.10).
+# This file: Swedish language data for the front-end (last modified: 2022.03.12).
 ##/
 
 Extended Description Bypasses: "Standard bypass-filen som normalt ingår i huvudpaketet."
@@ -112,7 +112,6 @@ config_general_log_sanitisation: "När du använder loggningssidan för att visa
 config_general_logfile: "Mänsklig läsbar fil för att logga in alla blockerade åtkomstförsök. Ange ett filnamn, eller lämna tomt för att inaktivera."
 config_general_logfile_apache: "Apache-stil fil för att logga in alla blockerade åtkomstförsök. Ange ett filnamn, eller lämna tomt för att inaktivera."
 config_general_logfile_serialized: "Serialiserad fil för att logga alla blockerade åtkomstförsök. Ange ett filnamn, eller lämna tomt för att inaktivera."
-config_general_maintenance_mode: "Aktivera underhållsläge? True = Ja; False = Nej [Standard]. Inaktiverar allt annat än front-end. Ibland användbar för när du uppdaterar dina CMS, frameworks, osv."
 config_general_max_login_attempts: "Maximalt antal inloggningsförsök i front-end. Standard = 5."
 config_general_numbers: "Hur föredrar du nummer som ska visas? Välj det exempel som är mest korrekt för dig."
 config_general_other_verification: "Om det är möjligt, försök att verifiera andra typer av förfrågningar (t.ex. AdSense, SEO-kontroller, osv)? Falska förfrågningar blockeras när de upptäcks. True = Aktivera [Standard]; False = Inaktivera."
@@ -564,7 +563,6 @@ state_component_is_active: "Komponenten är aktiv."
 state_component_is_inactive: "Komponenten är inaktiv."
 state_component_is_partially_active: "Komponenten är delvis aktiv."
 state_component_is_provisional: "Komponenten är provisorisk."
-state_default_password: "Varning: Använder standardlösenordet!"
 state_email_sent: "E-post skickades framgångsrikt till "%s"."
 state_failed_missing: "Uppgiften misslyckades eftersom en nödvändig komponent inte är tillgänglig."
 state_fixer: "%s %s."
@@ -578,8 +576,6 @@ state_logged_in: "Inloggad."
 state_logged_in_2fa_pending: "Inloggad + 2FA väntar."
 state_logged_out: "Utloggad."
 state_logs_access_only: "Kan bara komma åt loggfilerna"
-state_maintenance_mode: "Varning: Underhållsläget är aktiverat!"
-state_password_not_valid: "Varning: Det här kontot använder inte ett giltigt lösenord!"
 state_risk_high: "Hög"
 state_risk_low: "Låg"
 state_risk_medium: "Medium"
@@ -668,4 +664,12 @@ tip_statistics: "Hallå, {username}.<br />Den här sidan visar en viss användar
 tip_statistics_disabled: "Notera: Statistikspårning är för närvarande inaktiverad, men kan aktiveras via konfigurationssidan."
 tip_updates: "Hallå, {username}.<br />Du kan installera, avinstallera och uppdatera de olika komponenterna i CIDRAM (kärnpaketet, signaturer, L10N-filer, osv) med hjälp av uppdateringssidan."
 title_login: "Inloggning"
-warning_signatures_1: "Varning: Inga signaturfiler är aktiva!"
+warning_default_password: "Varning: Använder standardlösenordet!"
+warning_dry_run_mode: "Varning: Fungerar i torrkörningsläge! I torrkörningsläge, förfrågningar fortfarande är kontrolleras och loggas som blockhändelser som vanligt, men ingenting är blockeras."
+warning_ip_tests_disabled: "Varning: IP-tester är inaktiverade! Signaturfiler kan inte användas förrän detta är löst."
+warning_maintenance_mode: "Varning: Fungerar i underhållsläge! I underhållsläge, ingenting är kontrolleras, loggas, eller blockeras."
+warning_modules_disabled: "Varning: Moduler är inaktiverade! Moduler kan inte användas förrän detta är löst."
+warning_no_active_modules: "Varning: Inga moduler är aktiva! Moduler kan aktiveras med hjälp av konfigurationssidan eller uppdateringssidan."
+warning_no_active_signature_files: "Varning: Inga signaturfiler är aktiva! Signaturfiler kan aktiveras med hjälp av konfigurationssidan eller uppdateringssidan."
+warning_password_not_valid: "Varning: Det här kontot använder inte ett giltigt lösenord!"
+warning_termination_disabled: "Varning: Sidavslutning är inaktiverad! Förfrågningar kan inte blockeras ordentligt förrän detta är löst."

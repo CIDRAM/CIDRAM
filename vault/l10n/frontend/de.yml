@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: German language data for the front-end (last modified: 2022.03.10).
+# This file: German language data for the front-end (last modified: 2022.03.12).
 ##/
 
 Extended Description Bypasses: "Die Standard-Signatur-Bypässe, die normalerweise im Hauptpaket enthalten sind."
@@ -112,7 +112,6 @@ config_general_log_sanitisation: "Wenn Sie die Frontend Protokolldateien-Seite v
 config_general_logfile: "Name einer Datei in welcher Menschenlesbar alle blockierten zugriffsversuche protokolliert werden. Geben Sie einen Dateinamen an oder lassen Sie die Option zum Deaktivieren leer."
 config_general_logfile_apache: "Name einer Apache-Stil-Datei in welcher alle blockierten zugriffsversuche protokolliert werden. Geben Sie einen Dateinamen an oder lassen Sie die Option zum Deaktivieren leer."
 config_general_logfile_serialized: "Name einer Datei zu protokollieren alle blockierten Zugriffsversuche (Format ist serialisiert). Geben Sie einen Dateinamen an oder lassen Sie die Option zum Deaktivieren leer."
-config_general_maintenance_mode: "Deaktiviert alles andere als das Frontend. Manchmal nützlich für die Aktualisierung Ihrer CMS, Frameworks, u.s.w. Wartungsmodus aktivieren? True = Ja; False = Nein [Standardeinstellung]."
 config_general_max_login_attempts: "Maximale Anzahl der Versucht zum Anmelden (Frontend). Standardeinstellung = 5."
 config_general_numbers: "Wie willst du Nummern anzeigen? Wählen Sie das Beispiel aus, das Ihnen am besten entspricht."
 config_general_other_verification: "Versuchen Sie nach Möglichkeit, andere Arten von Anfragen zu überprüfen (z.B., AdSense, SEO-Prüfer, u.s.w.)? Wenn erkannt, werden gefälschte Anforderungen blockiert. True = Aktivieren [Standardeinstellung]; False = Deaktivieren."
@@ -566,7 +565,6 @@ state_component_is_active: "Komponente ist aktiv."
 state_component_is_inactive: "Komponente ist inaktiv."
 state_component_is_partially_active: "Komponente ist teilweise aktiv."
 state_component_is_provisional: "Komponente ist vorläufig."
-state_default_password: "Warnung: Verwendet das Standard-Passwort!"
 state_email_sent: "E-Mail wurde erfolgreich an "%s" gesendet."
 state_failed_missing: "Der Vorgang ist fehlgeschlagen, weil eine erforderliche Komponente nicht verfügbar ist."
 state_fixer: "%s %s."
@@ -580,8 +578,6 @@ state_logged_in: "Eingeloggt."
 state_logged_in_2fa_pending: "Eingeloggt + Warten auf 2FA."
 state_logged_out: "Ausgeloggt."
 state_logs_access_only: "Zugriff nur auf Protokolldateien"
-state_maintenance_mode: "Warnung: Wartungsmodus ist aktiviert!"
-state_password_not_valid: "Warnung: Dieses Konto verwendet kein gültiges Passwort!"
 state_risk_high: "Hohes"
 state_risk_low: "Niedriges"
 state_risk_medium: "Mittleres"
@@ -674,4 +670,12 @@ tip_statistics: "Hallo, {username}.<br />Diese Seite zeigt einige grundlegende N
 tip_statistics_disabled: "Hinweis: Die Statistikverfolgung ist derzeit deaktiviert, aber kann über die Konfigurationsseite aktiviert werden."
 tip_updates: "Hallo, {username}.<br />Das Aktualisierungsseite macht es möglich für Sie zu installieren, zu deinstallieren und zu aktualisieren die verschiedenen Komponenten von CIDRAM (das Kernpaket, Signaturen, L10N-Dateien, u.s.w.)."
 title_login: "Einloggen"
-warning_signatures_1: "Warnung: Keine Signaturdateien sind aktiv!"
+warning_default_password: "Warnung: Verwendet das Standard-Passwort!"
+warning_dry_run_mode: "Warnung: Betrieb im Trockenlauf-Modus! Im Trockenlauf-Modus, Anfragen weiterhin wie gewohnt als Blockereignisse geprüft und protokolliert, aber es wird nichts blockiert."
+warning_ip_tests_disabled: "Warnung: IP-Tests sind deaktiviert! Signaturdateien können nicht verwendet werden, bis dies behoben ist."
+warning_maintenance_mode: "Warnung: Betrieb im Wartungsmodus! Im Wartungsmodus wird nichts überprüft, protokolliert, oder blockiert."
+warning_modules_disabled: "Warnung: Module sind deaktiviert! Module können nicht verwendet werden, bis dies behoben ist."
+warning_no_active_modules: "Warnung: Es sind keine Module aktiv! Module können über die Konfigurationsseite oder die Aktualisierungsseite aktiviert werden."
+warning_no_active_signature_files: "Warnung: Es sind keine Signaturdateien aktiv! Signaturdateien können über die Konfigurationsseite oder die Aktualisierungsseite aktiviert werden."
+warning_password_not_valid: "Warnung: Dieses Konto verwendet kein gültiges Passwort!"
+warning_termination_disabled: "Warnung: Anfragebeendigung ist deaktiviert! Anfragen können nicht ordnungsgemäß blockiert werden, bis dies behoben ist."

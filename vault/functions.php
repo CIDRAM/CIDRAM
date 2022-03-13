@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2022.03.08).
+ * This file: Functions file (last modified: 2022.03.12).
  */
 
 /** Autoloader for CIDRAM classes. */
@@ -1591,7 +1591,6 @@ $CIDRAM['DestroyCacheObject'] = function () use (&$CIDRAM): void {
 $CIDRAM['XVerification'] = function (string $Config = '', string $From = '', bool $BypassFlags = false) use (&$CIDRAM): void {
     if (
         empty($CIDRAM['TestResults']) ||
-        $CIDRAM['Config']['general']['maintenance_mode'] ||
         empty($CIDRAM['Config']['general'][$Config]) ||
         !empty($CIDRAM['SkipVerification']) ||
         empty($CIDRAM['BlockInfo']['UALC'])

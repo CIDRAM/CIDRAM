@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Korean language data for the front-end (last modified: 2022.03.10).
+# This file: Korean language data for the front-end (last modified: 2022.03.12).
 ##/
 
 Extended Description Bypasses: "기본 서명 우회 일반적으로 기본 패키지에 포함되어 있습니다."
@@ -112,7 +112,6 @@ config_general_log_sanitisation: "프런트 엔드 로그 페이지를 사용하
 config_general_logfile: "액세스 시도 저지를 기록, 인간에 의해 읽기 가능. 파일 이름을 지정하십시오. 비활성화하려면 비워 둡니다."
 config_general_logfile_apache: "액세스 시도 저지를 기록, Apache 스타일. 파일 이름을 지정하십시오. 비활성화하려면 비워 둡니다."
 config_general_logfile_serialized: "액세스 시도 저지를 기록 직렬화되었습니다. 파일 이름을 지정하십시오. 비활성화하려면 비워 둡니다."
-config_general_maintenance_mode: "유지 관리 모드를 사용 하시겠습니까? True = 예; False = 아니오 (Default / 기본 설정). 프런트 엔드 이외의 모든 것을 비활성화합니다. CMS, 프레임 워크 등을 업데이트 할 때 유용합니다."
 config_general_max_login_attempts: "로그인 시도 최대 횟수입니다 (프론트 엔드). Default / 기본 설정 = 5."
 config_general_numbers: "어떻게 숫자를 표시하는 것을 선호합니까? 가장 정확한 것으로 보이는 예제를 선택하십시오."
 config_general_other_verification: "가능한 한, 다른 요청을 확인하려고 합니까 (예\_: 애드 센스, SEO 검사기, 등등)? 감지되면, 가짜 요청이 차단됩니다. True = 활성화 (Default / 기본 설정); False = 비활성화."
@@ -556,7 +555,6 @@ state_component_is_active: "구성 요소가 활성화됩니다."
 state_component_is_inactive: "구성 요소가 비활성 상태입니다."
 state_component_is_partially_active: "구성 요소가 부분적으로 활성화되었습니다."
 state_component_is_provisional: "구성 요소가 잠정입니다."
-state_default_password: "경고\_: 기본 암호를 사용하여!"
 state_email_sent: "이메일이 "%s"로 전송되었습니다."
 state_failed_missing: "필요한 구성 요소를 사용할 수 없어 작업이 실패했습니다."
 state_fixer: "%2$s %1$s."
@@ -568,8 +566,6 @@ state_logged_in: "로그인 했습니다."
 state_logged_in_2fa_pending: "로그인 했습니다 + 2FA를 기다리는 중."
 state_logged_out: "로그 아웃했습니다."
 state_logs_access_only: "로그에만 액세스"
-state_maintenance_mode: "경고\_: 유지 관리 모드가 활성화되었습니다!"
-state_password_not_valid: "경고\_: 이 계정은 올바른 암호를 사용하지 않습니다!"
 state_risk_high: "높은"
 state_risk_low: "낮은"
 state_risk_medium: "중간"
@@ -636,4 +632,12 @@ tip_statistics: "안녕하세요, {username}.<br />이 페이지는 CIDRAM 설�
 tip_statistics_disabled: "노트\_: 통계 추적은 현재 비활성화되어, 있지만 구성 페이지를 통해 활성화 할 수 있습니다."
 tip_updates: "안녕하세요, {username}.<br />업데이트 페이지는 CIDRAM의 다양한 구성 요소를 설치·제거·업데이트 할 수 있습니다 (코어 패키지·서명·L10N 파일 등)."
 title_login: "로그인"
-warning_signatures_1: "경고\_: 서명 파일이 활성화되어 있지 않습니다!"
+warning_default_password: "경고\_: 기본 암호를 사용하여!"
+warning_dry_run_mode: "경고\_: 드라이런 모드로 작동 중! 드라이런 모드에 있는 동안, 요청은 여전히 확인되고 평소와 같이 차단 이벤트로 기록되지만, 차단된 것은 없습니다."
+warning_ip_tests_disabled: "경고\_: IP 테스트가 비활성화되었습니다! 이 문제가 해결될 때까지, 서명 파일을 사용할 수 없습니다."
+warning_maintenance_mode: "경고\_: 유지 관리 모드로 작동 중! 유지 관리 모드에서는 아무것도 확인, 기록 또는 차단되지 않습니다."
+warning_modules_disabled: "경고\_: 모듈이 비활성화되었습니다! 이 문제가 해결될 때까지, 모듈을 사용할 수 없습니다."
+warning_no_active_modules: "경고\_: 활성화된 모듈이 없습니다! 모듈은 구성 페이지 또는 업데이트 페이지를 사용하여 활성화할 수 있습니다."
+warning_no_active_signature_files: "경고\_: 활성화된 서명 파일이 없습니다! 서명 파일은 구성 페이지 또는 업데이트 페이지를 사용하여 활성화할 수 있습니다."
+warning_password_not_valid: "경고\_: 이 계정은 올바른 암호를 사용하지 않습니다!"
+warning_termination_disabled: "경고\_: 페이지 종료가 비활성화되었습니다! 이 문제가 해결될 때까지, 요청을 제대로 차단할 수 없습니다."

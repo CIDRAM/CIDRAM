@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Vietnamese language data for the front-end (last modified: 2022.03.10).
+# This file: Vietnamese language data for the front-end (last modified: 2022.03.12).
 ##/
 
 Extended Description Bypasses: "Các tập tin đường tránh chữ ký mặc định thường bao gồm với gói thầu chính."
@@ -112,7 +112,6 @@ config_general_log_sanitisation: "Khi sử dụng trang bản ghi để xem dữ
 config_general_logfile: "Tập tin có thể đọc con người cho ghi tất cả các nỗ lực truy cập bị chặn. Chỉ định một tên tập tin, hoặc để trống để vô hiệu hóa."
 config_general_logfile_apache: "Tập tin Apache phong cách cho ghi tất cả các nỗ lực truy cập bị chặn. Chỉ định một tên tập tin, hoặc để trống để vô hiệu hóa."
 config_general_logfile_serialized: "Tập tin tuần tự cho ghi tất cả các nỗ lực truy cập bị chặn. Chỉ định một tên tập tin, hoặc để trống để vô hiệu hóa."
-config_general_maintenance_mode: "Bật chế độ bảo trì? True = Vâng; False = Không [Mặc định]. Vô hiệu hoá mọi thứ khác ngoài các front-end. Đôi khi hữu ích khi cập nhật CMS, framework của bạn, vv."
 config_general_max_login_attempts: "Số lượng tối đa cố gắng đăng nhập front-end. Mặc định = 5."
 config_general_numbers: "Làm thế nào để bạn thích số được hiển thị? Chọn ví dụ có vẻ chính xác nhất cho bạn."
 config_general_other_verification: "Bất cứ khi nào có thể, hãy cố gắng xác minh các loại yêu cầu khác (ví dụ: AdSense, công cụ kiểm tra SEO, vv)? Khi bị phát hiện, các yêu cầu giả mạo sẽ bị chặn. True = Kích hoạt [Mặc định]; False = Vô hiệu hóa."
@@ -556,7 +555,6 @@ state_component_is_active: "Thành phần này đang kích hoạt."
 state_component_is_inactive: "Thành phần này đang vô hiệu hóa."
 state_component_is_partially_active: "Thành phần này đang kích hoạt một phần."
 state_component_is_provisional: "Thành phần này đang thỉnh thoảng hoạt động."
-state_default_password: "Cảnh báo: Nó là sử dụng mật khẩu mặc định!"
 state_email_sent: "Email được gửi thành công tới "%s"."
 state_failed_missing: "Tác vụ không thành công vì không có thành phần cần thiết."
 state_fixer: "%s %s."
@@ -568,8 +566,6 @@ state_logged_in: "Đã đăng nhập."
 state_logged_in_2fa_pending: "Đã đăng nhập + Đang chờ xử lý 2FA."
 state_logged_out: "Đã đăng xuất."
 state_logs_access_only: "Bản ghi truy cập chỉ"
-state_maintenance_mode: "Cảnh báo: Đã bật chế độ bảo trì!"
-state_password_not_valid: "Cảnh báo: Tài khoản này không được sử dụng một mật khẩu hợp lệ!"
 state_risk_high: "Cao"
 state_risk_low: "Thấp"
 state_risk_medium: "Trung bình"
@@ -636,4 +632,12 @@ tip_statistics: "Xin chào, {username}.<br />Trang này cho thấy một số th
 tip_statistics_disabled: "Lưu ý: Giám sát thống kê hiện bị vô hiệu hóa, nhưng có thể được kích hoạt thông qua trang cấu hình."
 tip_updates: "Xin chào, {username}.<br />Trang cập nhật cho phép bạn cài đặt, gỡ bỏ cài đặt, và cập nhật các gói khác nhau cho CIDRAM (các gói cốt lõi, chữ ký, bổ sung, các tập tin L10N, vv)."
 title_login: "Đăng Nhập"
-warning_signatures_1: "Cảnh báo: Không có tập tin chữ ký nào đang hoạt động!"
+warning_default_password: "Cảnh báo: Nó là sử dụng mật khẩu mặc định!"
+warning_dry_run_mode: "Cảnh báo: Đang hoạt động ở chế độ chạy khô! Khi ở chế độ chạy khô, các yêu cầu vẫn được kiểm tra và ghi lại dưới dạng các sự kiện chặn như bình thường, nhưng không có gì bị chặn."
+warning_ip_tests_disabled: "Cảnh báo: Kiểm tra IP bị vô hiệu hóa! Các tập tin chữ ký không thể được sử dụng cho đến khi điều này được giải quyết."
+warning_maintenance_mode: "Cảnh báo: Đang hoạt động ở chế độ bảo trì! Khi ở chế độ bảo trì, không có gì được kiểm tra, ghi nhật ký, hoặc bị chặn."
+warning_modules_disabled: "Cảnh báo: Mô-đun bị vô hiệu hóa! Không thể sử dụng các mô-đun cho đến khi điều này được giải quyết."
+warning_no_active_modules: "Cảnh báo: Không có mô-đun nào đang hoạt động! Mô-đun có thể được kích hoạt bằng cách sử dụng các trang cấu hình hay cập nhật."
+warning_no_active_signature_files: "Cảnh báo: Không có tập tin chữ ký nào đang hoạt động! Tập tin chữ ký có thể được kích hoạt bằng cách sử dụng các trang cấu hình hay cập nhật."
+warning_password_not_valid: "Cảnh báo: Tài khoản này không được sử dụng một mật khẩu hợp lệ!"
+warning_termination_disabled: "Cảnh báo: Tính năng chấm dứt trang bị vô hiệu hóa! Yêu cầu không thể bị chặn đúng cách cho đến khi điều này được giải quyết."

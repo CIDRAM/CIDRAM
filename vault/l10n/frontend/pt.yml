@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Portuguese language data for the front-end (last modified: 2022.03.10).
+# This file: Portuguese language data for the front-end (last modified: 2022.03.12).
 ##/
 
 Extended Description Bypasses: "Os arquivos para bypass das assinaturas padrão normalmente incluído com o pacote principal."
@@ -112,7 +112,6 @@ config_general_log_sanitisation: "Ao usar o front-end página para os arquivos d
 config_general_logfile: "Um arquivo legível por humanos para registrar todas as tentativas de acesso bloqueadas. Especifique o nome de um arquivo, ou deixe em branco para desabilitar."
 config_general_logfile_apache: "Um arquivo no estilo da Apache para registrar todas as tentativas de acesso bloqueadas. Especifique o nome de um arquivo, ou deixe em branco para desabilitar."
 config_general_logfile_serialized: "Um arquivo serializado para registrar todas as tentativas de acesso bloqueadas. Especifique o nome de um arquivo, ou deixe em branco para desabilitar."
-config_general_maintenance_mode: "Ativar o modo de manutenção? True = Sim; False = Não [Padrão]. Desativa tudo além do front-end. Às vezes útil para quando atualiza seu CMS, frameworks, etc."
 config_general_max_login_attempts: "Número máximo de tentativas de login ao front-end. Padrão = 5."
 config_general_numbers: "Como você prefere que os números sejam exibidos? Selecione o exemplo que parece mais correto para você."
 config_general_other_verification: "Sempre que possível, tente verificar outros tipos de solicitações (por exemplo, AdSense, verificadores de SEO, etc)? Quando detectados, as solicitações falsas serão bloqueadas. True = Ativar [Padrão]; False = Desativar."
@@ -566,7 +565,6 @@ state_component_is_active: "Componente está ativo."
 state_component_is_inactive: "Componente está inativo."
 state_component_is_partially_active: "Componente está parcialmente ativo."
 state_component_is_provisional: "Componente está provisório."
-state_default_password: "Atenção: Usando senha padrão!"
 state_email_sent: "E-mail enviado com sucesso para "%s"."
 state_failed_missing: "A tarefa falhou porque um componente necessário está indisponível."
 state_fixer: "%s %s."
@@ -580,8 +578,6 @@ state_logged_in: "Conectado."
 state_logged_in_2fa_pending: "Conectado + 2FA pendentes."
 state_logged_out: "Desconectado."
 state_logs_access_only: "Acesso aos arquivos de registro somente"
-state_maintenance_mode: "Atenção: O modo de manutenção está ativado!"
-state_password_not_valid: "Atenção: Esta conta não está usando uma senha válida!"
 state_risk_high: "Alto"
 state_risk_low: "Baixo"
 state_risk_medium: "Médio"
@@ -674,4 +670,12 @@ tip_statistics: "Olá, {username}.<br />Esta página mostra algumas estatística
 tip_statistics_disabled: "Nota: O monitoramento de estatísticas está desativado atualmente, mas pode ser ativado através da página de configuração."
 tip_updates: "Olá, {username}.<br />A página de atualizações permite que você instale, desinstale, e atualize os vários componentes do CIDRAM (o pacote principal, assinaturas, arquivos de L10N, etc)."
 title_login: "Login"
-warning_signatures_1: "Atenção: Nenhum arquivo de assinaturas está ativo!"
+warning_default_password: "Atenção: Usando a senha padrão!"
+warning_dry_run_mode: "Atenção: Operando no modo de seco! Enquanto no modo de seco, as solicitações ainda são verificados e registrados como eventos de bloqueio como de costume, mas nada é bloqueado."
+warning_ip_tests_disabled: "Atenção: Os testes de IP estão desabilitados! Os arquivos de assinatura não podem ser utilizados até que isso seja resolvido."
+warning_maintenance_mode: "Atenção: Operando em modo de manutenção! Enquanto no modo de manutenção, nada é verificado, registrado, ou bloqueado."
+warning_modules_disabled: "Atenção: Os módulos estão desabilitados! Os módulos não podem ser utilizados até que isso seja resolvido."
+warning_no_active_modules: "Atenção: Nenhum módulo está ativo! Os módulos podem ser ativados usando as páginas de configuração ou atualizações."
+warning_no_active_signature_files: "Atenção: Nenhum arquivo de assinatura está ativo! Os arquivos de assinatura podem ser ativados usando as páginas de configuração ou atualizações."
+warning_password_not_valid: "Atenção: Esta conta não está usando uma senha válida!"
+warning_termination_disabled: "Atenção: O encerramento da página está desativado! As solicitações não podem ser bloqueadas corretamente até que isso seja resolvido."

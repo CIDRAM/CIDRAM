@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Latvian language data for the front-end (last modified: 2022.03.10).
+# This file: Latvian language data for the front-end (last modified: 2022.03.12).
 ##/
 
 Extended Description Bypasses: "Noklusējuma paraksta apiešana faili, kas parasti ir iekļauti galvenajā paketē."
@@ -112,7 +112,6 @@ config_general_log_sanitisation: "Izmantojot logs lapu, lai skatītu log datus, 
 config_general_logfile: "Cilvēkam lasāms fails visu bloķēto piekļuves mēģinājumu reģistrēšanai. Norādiet faila nosaukumu, vai atstājiet tukšu, lai to atspējotu."
 config_general_logfile_apache: "Apache stila fails visu bloķēto piekļuves mēģinājumu reģistrēšanai. Norādiet faila nosaukumu, vai atstājiet tukšu, lai to atspējotu."
 config_general_logfile_serialized: "Sērijveida fails visu bloķēto piekļuves mēģinājumu reģistrēšanai. Norādiet faila nosaukumu, vai atstājiet tukšu, lai to atspējotu."
-config_general_maintenance_mode: "Vai iespējot apkopes režīmu? True (Patiess) = Jā; False (Nepatiess) = Nē [Noklusējuma]. Jūs joprojām varat administrēt, bet viss pārējais ir atspējots. Tas dažreiz var būt noderīgs, atjaunojot CMS, frameworks, utt."
 config_general_max_login_attempts: "Maksimālais ielogošanās mēģinājumu skaits. Noklusējuma = 5."
 config_general_numbers: "Kā jūs izvēlaties skaitļu parādīšanu? Atlasiet piemēru, kas jums šķiet vispareizākais."
 config_general_other_verification: "Cik vien iespējams, mēģiniet pārbaudīt cita veida pieprasījumus (piemēram, AdSense, SEO pārbaudītājus, utt)? Atklājot, viltoti pieprasījumi tiks bloķēti. True (Patiess) = Iespējot [Noklusējuma]; False (Nepatiess) = Atspējot."
@@ -571,7 +570,6 @@ state_component_is_active: "Komponents ir aktīvs."
 state_component_is_inactive: "Komponents ir nav aktīvs."
 state_component_is_partially_active: "Komponents ir daļēji aktīvs."
 state_component_is_provisional: "Komponents ir provizorisku."
-state_default_password: "Brīdinājums: Izmantojot noklusējuma paroli!"
 state_email_sent: "E-pasts veiksmīgi nosūtīts uz "%s"."
 state_failed_missing: "Uzdevums neizdevās, jo nepieciešamais komponents nav pieejams."
 state_fixer: "%s %s."
@@ -586,8 +584,6 @@ state_logged_in: "Ielogojies."
 state_logged_in_2fa_pending: "Ielogojies + Gaidu 2FA."
 state_logged_out: "Izlogojies."
 state_logs_access_only: "Tikai piekļuvei logfailiem"
-state_maintenance_mode: "Brīdinājums: Apkopes režīms ir iespējots!"
-state_password_not_valid: "Brīdinājums: Šis konts neizmanto derīgu paroli."
 state_risk_high: "Augsta"
 state_risk_low: "Zems"
 state_risk_medium: "Vidējs"
@@ -693,4 +689,12 @@ tip_statistics: "Šī lapa parāda dažus pamata statistikas datus par jūsu CID
 tip_statistics_disabled: "Piezīme: Statistikas izsekošana pašlaik ir atspējota, bet to var iespējot, izmantojot konfigurācijas lapu."
 tip_updates: "Atjauninājumu lapa ļauj instalēt, atinstalēt un atjaunināt dažādus CIDRAM komponentus (pamata pakete, paraksti, L10N faili, utt)."
 title_login: "Ielogošanās"
-warning_signatures_1: "Brīdinājums: Neviens paraksta fails nav aktīvs!"
+warning_default_password: "Brīdinājums: Izmantojot noklusējuma paroli!"
+warning_dry_run_mode: "Brīdinājums: Darbojas sausā režīmā! Sausā režīmā pieprasījumi joprojām tiek pārbaudīti un reģistrēti kā bloķēšanas notikumi, kā parasti, taču nekas netiek bloķēts."
+warning_ip_tests_disabled: "Brīdinājums: IP testi ir atspējoti! Kamēr tas nav atrisināts, paraksta failus nevar izmantot."
+warning_maintenance_mode: "Brīdinājums: Darbojas apkopes režīmā! Apkopes režīmā nekas netiek pārbaudīts, reģistrēts, vai bloķēts."
+warning_modules_disabled: "Brīdinājums: Moduļi ir atspējoti! Kamēr tas nav atrisināts, moduļus nevar izmantot."
+warning_no_active_modules: "Brīdinājums: Neviens modulis nav aktīvs! Moduļus var aktivizēt, izmantojot konfigurācijas vai atjauninājumu lapas."
+warning_no_active_signature_files: "Brīdinājums: Neviens paraksta fails nav aktīvs! Paraksta failus var aktivizēt, izmantojot konfigurācijas vai atjauninājumu lapas."
+warning_password_not_valid: "Brīdinājums: Šis konts neizmanto derīgu paroli."
+warning_termination_disabled: "Brīdinājums: Lapas pārtraukšana ir atspējota! Kamēr tas nav atrisināts, pieprasījumus nevar pareizi bloķēt."

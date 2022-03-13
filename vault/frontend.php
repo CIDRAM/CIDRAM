@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2022.03.11).
+ * This file: Front-end handler (last modified: 2022.03.12).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -27,6 +27,9 @@ require $CIDRAM['Vault'] . 'frontend_functions.php';
 
 /** Load CIDRAM front-end L10N data. */
 $CIDRAM['LoadL10N']($CIDRAM['Vault'] . 'l10n' . DIRECTORY_SEPARATOR . 'frontend' . DIRECTORY_SEPARATOR);
+
+/** Initialise stages. */
+$CIDRAM['Stages'] = array_flip(explode("\n", $CIDRAM['Config']['general']['stages']));
 
 /** Set page selector if not already set. */
 if (empty($CIDRAM['QueryVars']['cidram-page'])) {
@@ -178,18 +181,78 @@ $CIDRAM['FE']['bNav'] = $CIDRAM['FE']['HomeButton'] . $CIDRAM['FE']['LogoutButto
 /** To be populated by warnings. */
 $CIDRAM['Warnings'] = [];
 
-/** Warns if maintenance mode is enabled. */
-if ($CIDRAM['Config']['general']['maintenance_mode']) {
-    $CIDRAM['Warnings'][] = $CIDRAM['L10N']->getString('state_maintenance_mode');
+/** Modes for disabled termination. */
+if (!isset($CIDRAM['Stages']['Terminate:Enable'])) {
+    if (isset(
+        $CIDRAM['Stages']['Tests:Enable'],
+        $CIDRAM['Stages']['Modules:Enable'],
+        $CIDRAM['Stages']['SearchEngineVerification:Enable'],
+        $CIDRAM['Stages']['SocialMediaVerification:Enable'],
+        $CIDRAM['Stages']['OtherVerification:Enable'],
+        $CIDRAM['Stages']['Aux:Enable'],
+        $CIDRAM['Stages']['PrepareFields:Enable'],
+        $CIDRAM['Stages']['WriteLogs:Enable']
+    )) {
+        /** Dry run mode. */
+        $CIDRAM['Warnings'][] = $CIDRAM['L10N']->getString('warning_dry_run_mode');
+    } elseif (
+        !isset($CIDRAM['Stages']['Tests:Enable']) &&
+        !isset($CIDRAM['Stages']['Modules:Enable']) &&
+        !isset($CIDRAM['Stages']['SearchEngineVerification:Enable']) &&
+        !isset($CIDRAM['Stages']['SocialMediaVerification:Enable']) &&
+        !isset($CIDRAM['Stages']['OtherVerification:Enable']) &&
+        !isset($CIDRAM['Stages']['Aux:Enable']) &&
+        !isset($CIDRAM['Stages']['Reporting:Enable']) &&
+        !isset($CIDRAM['Stages']['Tracking:Enable']) &&
+        !isset($CIDRAM['Stages']['RL:Enable']) &&
+        !isset($CIDRAM['Stages']['CAPTCHA:Enable']) &&
+        !isset($CIDRAM['Stages']['Statistics:Enable']) &&
+        !isset($CIDRAM['Stages']['Webhooks:Enable']) &&
+        !isset($CIDRAM['Stages']['PrepareFields:Enable']) &&
+        !isset($CIDRAM['Stages']['Output:Enable']) &&
+        !isset($CIDRAM['Stages']['WriteLogs:Enable']) &&
+        !isset($CIDRAM['Stages']['AuxRedirect:Enable']) &&
+        !isset($CIDRAM['Stages']['NonBlockedCAPTCHA:Enable'])
+    ) {
+        /** Maintenance mode. */
+        $CIDRAM['Warnings'][] = $CIDRAM['L10N']->getString('warning_maintenance_mode');
+    } else {
+        /** Termination disabled. */
+        $CIDRAM['Warnings'][] = $CIDRAM['L10N']->getString('warning_termination_disabled');
+    }
+} else {
+    if (isset($CIDRAM['Stages']['Tests:Enable'])) {
+        if (
+            !strlen($CIDRAM['Config']['signatures']['ipv4']) &&
+            !strlen($CIDRAM['Config']['signatures']['ipv6'])
+        ) {
+            /** No active signature files. */
+            $CIDRAM['Warnings'][] = $CIDRAM['L10N']->getString('warning_no_active_signature_files');
+        }
+    } else {
+        if (
+            strlen($CIDRAM['Config']['signatures']['ipv4']) &&
+            strlen($CIDRAM['Config']['signatures']['ipv6'])
+        ) {
+            /** IP tests disabled. */
+            $CIDRAM['Warnings'][] = $CIDRAM['L10N']->getString('warning_ip_tests_disabled');
+        }
+    }
+    if (isset($CIDRAM['Stages']['Modules:Enable'])) {
+        if (!strlen($CIDRAM['Config']['signatures']['modules'])) {
+            /** No active modules. */
+            $CIDRAM['Warnings'][] = $CIDRAM['L10N']->getString('warning_no_active_modules');
+        }
+    } else {
+        if (strlen($CIDRAM['Config']['signatures']['modules'])) {
+            /** Modules disabled. */
+            $CIDRAM['Warnings'][] = $CIDRAM['L10N']->getString('warning_modules_disabled');
+        }
+    }
 }
 
 /** Alpha state warning. */
 $CIDRAM['Warnings'][] = 'Warning: Currently running an unreleased alpha! Breakage is anticipated!';
-
-/** Warns if no signature files are active. */
-if (empty($CIDRAM['Config']['signatures']['ipv4']) && empty($CIDRAM['Config']['signatures']['ipv6'])) {
-    $CIDRAM['Warnings'][] = $CIDRAM['L10N']->getString('warning_signatures_1');
-}
 
 /** Prepare warnings. */
 $CIDRAM['FE']['Warnings'] = count($CIDRAM['Warnings']) ? "\n<div class=\"center\"><span class=\"warning\">" . implode(
@@ -362,9 +425,6 @@ $CIDRAM['ClearExpired']($CIDRAM['FE']['Cache'], $CIDRAM['FE']['Rebuild']);
 
 /** Initialise cache. */
 $CIDRAM['InitialiseCache']();
-
-/** Initialise stages. */
-$CIDRAM['Stages'] = array_flip(explode("\n", $CIDRAM['Config']['general']['stages']));
 
 /** Initialise statistics tracked. */
 $CIDRAM['StatisticsTracked'] = array_flip(explode("\n", $CIDRAM['Config']['general']['statistics']));
@@ -1144,7 +1204,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'accounts' && $CIDRAM['FE']['Per
 
             /** Account password warnings. */
             if ($CIDRAM['RowInfo']['AccPassword'] === $CIDRAM['FE']['DefaultPassword']) {
-                $CIDRAM['RowInfo']['AccWarnings'] .= '<br /><div class="txtRd">' . $CIDRAM['L10N']->getString('state_default_password') . '</div>';
+                $CIDRAM['RowInfo']['AccWarnings'] .= '<br /><div class="txtRd">' . $CIDRAM['L10N']->getString('warning_default_password') . '</div>';
             } elseif ((
                 strlen($CIDRAM['RowInfo']['AccPassword']) !== 60 &&
                 strlen($CIDRAM['RowInfo']['AccPassword']) !== 96 &&
@@ -1159,7 +1219,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'accounts' && $CIDRAM['FE']['Per
                 strlen($CIDRAM['RowInfo']['AccPassword']) === 97 &&
                 !preg_match('/^\$argon2id\$/', $CIDRAM['RowInfo']['AccPassword'])
             )) {
-                $CIDRAM['RowInfo']['AccWarnings'] .= '<br /><div class="txtRd">' . $CIDRAM['L10N']->getString('state_password_not_valid') . '</div>';
+                $CIDRAM['RowInfo']['AccWarnings'] .= '<br /><div class="txtRd">' . $CIDRAM['L10N']->getString('warning_password_not_valid') . '</div>';
             }
 
             /** Logged in notice. */
@@ -3062,7 +3122,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'sections' && $CIDRAM['FE']['Per
         /** Process signature files. */
         $CIDRAM['FE']['Data'] = (
             (empty($CIDRAM['Config']['signatures']['ipv4']) && empty($CIDRAM['Config']['signatures']['ipv6']))
-        ) ? '    <div class="txtRd">' . $CIDRAM['L10N']->getString('warning_signatures_1') . "</div>\n" : $CIDRAM['SectionsHandler'](
+        ) ? '    <div class="txtRd">' . $CIDRAM['L10N']->getString('warning_no_active_signature_files') . "</div>\n" : $CIDRAM['SectionsHandler'](
             array_unique(explode(',', $CIDRAM['Config']['signatures']['ipv4'] . ',' . $CIDRAM['Config']['signatures']['ipv6']))
         );
 

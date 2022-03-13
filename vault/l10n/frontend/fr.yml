@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: French language data for the front-end (last modified: 2022.03.10).
+# This file: French language data for the front-end (last modified: 2022.03.12).
 ##/
 
 Extended Description Bypasses: "Les fichiers pour contourner les signatures standard qui sont normalement inclus dans le paquet principal."
@@ -112,7 +112,6 @@ config_general_log_sanitisation: "Lorsque vous utilisez la page pour les fichier
 config_general_logfile: "Un fichier lisible par l'homme pour enregistrement de toutes les tentatives d'accès bloquées. Spécifier un fichier, ou laisser vide à désactiver."
 config_general_logfile_apache: "Un fichier dans le style d'Apache pour enregistrement de toutes les tentatives d'accès bloquées. Spécifier un fichier, ou laisser vide à désactiver."
 config_general_logfile_serialized: "Un fichier sérialisé pour enregistrement de toutes les tentatives d'accès bloquées. Spécifier un fichier, ou laisser vide à désactiver."
-config_general_maintenance_mode: "Activer le mode de maintenance\_? True = Oui\_; False = Non [Défaut]. Désactive tout autre que l'accès frontal. Parfois utile pour la mise à jour de votre CMS, des frameworks, etc."
 config_general_max_login_attempts: "Nombre maximal de tentatives de connexion (l'accès frontal). Défaut = 5."
 config_general_numbers: "Comment préférez-vous que les nombres soient affichés\_? Sélectionnez l'exemple qui vous paraît le plus approprié."
 config_general_other_verification: "Dans la mesure du possible, essayez de vérifier d'autres types de requêtes (par exemple, AdSense, vérificateurs SEO, etc)\_? Lorsqu'elles sont détectées, les fausses requêtes seront bloquées. True = Activer [Défaut]\_; False = Désactiver."
@@ -193,7 +192,7 @@ config_supplementary_cache_options_redis_host: "Valeur de l'hôte Redis. Défaut
 config_supplementary_cache_options_redis_port: "Valeur du port Redis. Défaut = «\_6379\_»."
 config_supplementary_cache_options_redis_timeout: "Valeur du délai d'attente Redis. Défaut = «\_2.5\_»."
 config_template_data: "Configuration pour les modèles et thèmes."
-config_template_data_block_event_title: "Le titre de la page à afficher pour les événements de bloc."
+config_template_data_block_event_title: "Le titre de la page à afficher pour les événements de blocage."
 config_template_data_captcha_title: "Le titre de la page à afficher pour les requêtes d'un CAPTCHA."
 config_template_data_css_url: "URL de fichier CSS pour les thèmes personnalisés."
 config_template_data_magnification: "Grossissement des fontes. Défaut = 1."
@@ -566,7 +565,6 @@ state_component_is_active: "Le composant est actif."
 state_component_is_inactive: "Le composant est inactif."
 state_component_is_partially_active: "Le composant est partiellement actif."
 state_component_is_provisional: "Le composant est provisoire."
-state_default_password: "Attention\_: Utilisant le mot de passe défaut\_!"
 state_email_sent: "E-mail envoyé avec succès à «\_%s\_»."
 state_failed_missing: "La tâche a échoué car un composant nécessaire n'est pas disponible."
 state_fixer: "%s %s."
@@ -584,8 +582,6 @@ state_logged_in: "Connecté."
 state_logged_in_2fa_pending: "Connecté + 2FA en attente."
 state_logged_out: "Déconnecté."
 state_logs_access_only: "Accès aux fichiers journaux seulement"
-state_maintenance_mode: "Avertissement\_: Le mode de maintenance est activé\_!"
-state_password_not_valid: "Attention\_: Ce compte n'utilise un mot de passe valide\_!"
 state_risk_high: "Élevé"
 state_risk_low: "Faible"
 state_risk_medium: "Moyen"
@@ -674,4 +670,12 @@ tip_statistics: "Bonjour, {username}.<br />Cette page présente certaines statis
 tip_statistics_disabled: "Remarque\_: Le suivi des statistiques est actuellement désactivé, mais peut être activé via la page de configuration."
 tip_updates: "Bonjour, {username}.<br />La page des mises à jour vous permet d'installer, de désinstaller et de mettre à jour les différentes composantes de CIDRAM (le paquet de base, signatures, fichiers de L10N, etc)."
 title_login: "Connexion"
-warning_signatures_1: "Avertissement\_: Il n'y a pas fichiers du signatures actifs."
+warning_default_password: "Attention\_: Utilisant le mot de passe défaut\_!"
+warning_dry_run_mode: "Attention\_: Fonctionnement en mode marche à sec\_! En mode marche à sec, les requêtes sont toujours vérifiées et enregistrées en tant qu'événements de blocage comme d'habitude, mais rien n'est bloqué."
+warning_ip_tests_disabled: "Attention\_: Les tests IP sont désactivés\_! Les fichiers de signature ne peuvent pas être utilisés tant que ce problème n'est pas résolu."
+warning_maintenance_mode: "Attention\_: Fonctionnement en mode maintenance\_! En mode maintenance, rien n'est vérifié, enregistré, ou bloqué."
+warning_modules_disabled: "Attention\_: Les modules sont désactivés\_! Les modules ne peuvent pas être utilisés tant que ce problème n'est pas résolu."
+warning_no_active_modules: "Attention\_: Aucun module n'est actif\_! Les modules peuvent être activés à l'aide des pages de configuration ou de mises à jour."
+warning_no_active_signature_files: "Attention\_: Aucun fichier de signature n'est actif\_! Les fichiers de signature peuvent être activés à l'aide des pages de configuration ou de mises à jour."
+warning_password_not_valid: "Attention\_: Ce compte n'utilise un mot de passe valide\_!"
+warning_termination_disabled: "Attention\_: La fin de la page est désactivée\_! Les requêtes ne peuvent pas être correctement bloquées tant que ce problème n'est pas résolu."

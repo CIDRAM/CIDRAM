@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Arabic language data for the front-end (last modified: 2022.03.10).
+# This file: Arabic language data for the front-end (last modified: 2022.03.12).
 ##/
 
 Extended Description Bypasses: "ملفات الالتفافية التوقيع القياسية المدرجة عادة مع الحزمة الرئيسية."
@@ -112,7 +112,6 @@ config_general_log_sanitisation: "عند استخدام صفحة سجلات ال
 config_general_logfile: "ملف يمكن قراءته بالعين لتسجيل كل محاولات الوصول سدت. تحديد اسم الملف، أو اتركه فارغا لتعطيل."
 config_general_logfile_apache: "ملف على غرار أباتشي لتسجيل كل محاولات الوصول سدت. تحديد اسم الملف، أو اتركه فارغا لتعطيل."
 config_general_logfile_serialized: "ملف تسلسل لتسجيل كل محاولات الوصول سدت. تحديد اسم الملف، أو اتركه فارغا لتعطيل."
-config_general_maintenance_mode: "هل تريد تمكين وضع الصيانة؟ صحيح/True = نعم؛ زائفة/False = لا [افتراضي]. تعطيل كل شيء بخلاف front-end. قد تكون مفيدة أحيانا عند تحديث نظام إدارة المحتوى والأطر وما إلى ذلك."
 config_general_max_login_attempts: "الحد الأقصى لعدد محاولات تسجيل الدخول (front-end). الافتراضي = 5."
 config_general_numbers: "كيف تفضل الأرقام ليتم عرضها؟ حدد المثال الذي يبدو أكثر صحيح لك."
 config_general_other_verification: "حيثما أمكن، حاول التحقق من أنواع الطلبات الأخرى (على سبيل المثال، AdSense، أدوات فحص تحسين محركات البحث، إلخ)؟ عند اكتشافها، سيتم حظر الطلبات المزيفة. صحيح/True = تمكين [افتراضي]؛ زائفة/False = تعطيل."
@@ -560,7 +559,6 @@ state_component_is_active: "المكون نشط."
 state_component_is_inactive: "المكون غير نشط."
 state_component_is_partially_active: "المكون نشط جزئيا."
 state_component_is_provisional: "المكون مؤقت."
-state_default_password: "تحذير: يستخدم الافتراضي كلمه السر!"
 state_email_sent: "تم إرسال البريد الإلكتروني بنجاح إلى "%s"."
 state_failed_missing: "فشلت المهمة لأن المكون الضروري غير متوفر."
 state_fixer: "%s %s."
@@ -574,8 +572,6 @@ state_logged_in: "حاليا على."
 state_logged_in_2fa_pending: "حاليا على + 2FA معلقة."
 state_logged_out: "تسجيل الخروج."
 state_logs_access_only: "سجلات الوصول فقط"
-state_maintenance_mode: "تحذير: تم تمكين وضع الصيانة!"
-state_password_not_valid: " تحذير: هذا الحساب لا يستخدم كلمه السر صالحة!"
 state_risk_high: "عالية"
 state_risk_low: "قليل"
 state_risk_medium: "متوسطة"
@@ -666,4 +662,12 @@ tip_statistics: "مرحبا، {username}.<br />تعرض هذه الصفحة بع
 tip_statistics_disabled: "ملاحظة: يتم تعطيل تتبع الإحصاءات حاليا، ولكن يمكن تمكينه عبر صفحة التكوين."
 tip_updates: "مرحبا، {username}.<br />الصفحة تحديثات يسمح لك لتثبيت، إلغاء، ولتحديث المكونات المختلفة CIDRAM (حزمة الأساسية، التوقيعات، الملفات L10N، إلخ)."
 title_login: "تسجيل الدخول"
-warning_signatures_1: "تحذير: لا ملفات التوقيع نشطة!"
+warning_default_password: "تحذير: يستخدم كلمة المرور الافتراضية!"
+warning_dry_run_mode: "تحذير: تعمل في وضع التشغيل الجاف! أثناء وجودك في وضع التشغيل الجاف، لا يزال يتم فحص الطلبات وتسجيلها كأحداث حظر كالمعتاد، ولكن لا يتم حظر أي شيء."
+warning_ip_tests_disabled: "تحذير: تم تعطيل اختبارات IP! لا يمكن استخدام ملفات التوقيع حتى يتم حل ذلك."
+warning_maintenance_mode: "تحذير: تعمل في وضع الصيانة! أثناء وجودك في وضع الصيانة، لا يتم فحص أي شيء أو تسجيله أو حظره."
+warning_modules_disabled: "تحذير: الوحدات معطلة! لا يمكن استخدام الوحدات النمطية حتى يتم حل ذلك."
+warning_no_active_modules: "تحذير: لا توجد وحدات نشطة! يمكن تنشيط الوحدات النمطية باستخدام صفحات التكوين أو التحديثات."
+warning_no_active_signature_files: "تحذير: لا توجد ملفات توقيع نشطة! يمكن تنشيط ملفات التوقيع باستخدام صفحات التكوين أو التحديثات."
+warning_password_not_valid: " تحذير: هذا الحساب لا يستخدم كلمه السر صالحة!"
+warning_termination_disabled: "تحذير: تم تعطيل إنهاء الصفحة! لا يمكن حظر الطلبات بشكل صحيح حتى يتم حل ذلك."

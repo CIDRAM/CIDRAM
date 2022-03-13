@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2022.03.11).
+ * This file: Front-end handler (last modified: 2022.03.13).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -189,10 +189,10 @@ if (empty($CIDRAM['Config']['signatures']['ipv4']) && empty($CIDRAM['Config']['s
 }
 
 /** Prepare warnings. */
-$CIDRAM['FE']['Warnings'] = count($CIDRAM['Warnings']) ? "\n<div class=\"center\"><span class=\"warning\">" . implode(
-    "</span><br />\n<span class=\"warning\">",
+$CIDRAM['FE']['Warnings'] = count($CIDRAM['Warnings']) ? "\n<div class=\"center\"><div class=\"warning\">" . implode(
+    "</div>\n<div class=\"warning\">",
     $CIDRAM['Warnings']
-) . '</span></div><hr />' : '';
+) . '</div></div><hr />' : '';
 
 /** Cleanup. */
 unset($CIDRAM['Warnings']);

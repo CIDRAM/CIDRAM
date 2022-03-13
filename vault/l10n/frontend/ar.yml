@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Arabic language data for the front-end (last modified: 2022.03.12).
+# This file: Arabic language data for the front-end (last modified: 2022.03.13).
 ##/
 
 Extended Description Bypasses: "ملفات الالتفافية التوقيع القياسية المدرجة عادة مع الحزمة الرئيسية."
@@ -87,7 +87,7 @@ config_bypasses_used: "ما هي التجاوزات التي يجب استخدا
 config_experimental: "غير مستقر / التجريبي!"
 config_general: "التكوين العام (أي التكوين الأساسي لا ينتمي إلى فئات أخرى)."
 config_general_allow_gethostbyaddr_lookup: "السماح بعمليات البحث gethostbyaddr عندما يكون UDP غير متوفر؟ صحيح/True = نعم [افتراضي]؛ زائفة/False = لا."
-config_general_ban_override: "تجاوز "forbid_on_block" متى "infraction_limit" تجاوزت؟ عندما تجاوز: الطلبات الممنوعة بإرجاع صفحة فارغة (لا يتم استخدام ملفات قالب). 200 = لا تجاوز [الافتراضي]. القيم الأخرى هي نفس القيم المتاحة لـ "forbid_on_block"."
+config_general_ban_override: "تجاوز "http_response_header_code" متى "infraction_limit" تجاوزت؟ عندما تجاوز: الطلبات الممنوعة بإرجاع صفحة فارغة (لا يتم استخدام ملفات قالب). 200 = لا تجاوز [الافتراضي]. القيم الأخرى هي نفس القيم المتاحة لـ "http_response_header_code"."
 config_general_config_imports: "قائمة ملفات محددة بفواصل لاستيرادها إلى التكوين الافتراضي لـ CIDRAM. يتم ملؤها عادةً بصفحة التحديثات عند تنشيط المكونات التي تحتاج إليها عند الضرورة. في معظم الحالات، يمكن تجاهله."
 config_general_default_algo: "يحدد الخوارزمية التي سيتم استخدامها لكل كلمات المرور والجلسات المستقبلية. خيارات: PASSWORD_DEFAULT (افتراضي)، PASSWORD_BCRYPT، PASSWORD_ARGON2I (يتطلب PHP &gt;= 7.2.0)، PASSWORD_ARGON2ID (يتطلب PHP &gt;= 7.3.0)."
 config_general_default_dns: "قائمة بفواصل من خوادم DNS لاستخدامها في عمليات البحث عن اسم المضيف. الافتراضي = "8.8.8.8,8.8.4.4" (Google DNS). تحذير: لا تغير هذا إلا إذا كنت تعرف ما تفعلونه!"
@@ -99,9 +99,9 @@ config_general_emailaddr_display_style: "كيف تفضل أن يتم تقديم 
 config_general_error_log: "ملف لتسجيل أي أخطاء غير مميتة المكتشفة. تحديد اسم الملف، أو اتركه فارغا لتعطيل."
 config_general_events: "يتم تحميل الملفات المدرجة هنا مباشرة بعد ملف معالجات الأحداث. يتم ملؤها عادةً بصفحة التحديثات عند تنشيط المكونات التي تحتاج إليها عند الضرورة. في معظم الحالات، يمكن تجاهله."
 config_general_fields: "ضوابط الحقول أثناء أحداث الكتلة (عندما يتم حظر طلب)."
-config_general_forbid_on_block: "ما هي رسالة حالة HTTP التي يجب أن يرسلها CIDRAM عند حظر الطلبات؟ (الرجوع إلى الوثائق لمزيد من المعلومات)."
 config_general_force_hostname_lookup: "فرض بحث اسم المضيف؟ صحيح/True = نعم؛ زائفة/False = لا [افتراضي]. يتم إجراء عمليات البحث عن اسم المضيف عادة على أساس "حسب الحاجة"، ولكن يمكن إجبارها على جميع الطلبات. وقد يكون القيام بذلك مفيدا كوسيلة لتوفير معلومات أكثر تفصيلا في السجلات، ولكن قد يكون له أيضا أثر سلبي طفيف على الأداء."
 config_general_frontend_log: "ملف لتسجيل محاولات الدخول الأمامية. تحديد اسم الملف، أو اتركه فارغا لتعطيل."
+config_general_http_response_header_code: "ما هي رسالة حالة HTTP التي يجب أن يرسلها CIDRAM عند حظر الطلبات؟ (الرجوع إلى الوثائق لمزيد من المعلومات)."
 config_general_ipaddr: "أين يمكن العثور على عنوان IP لربط الطلبات؟ (مفيدة للخدمات مثل لايتكلاود و مثلها). الافتراضي = REMOTE_ADDR. تحذير: لا تغير هذا إلا إذا كنت تعرف ما تفعلونه!"
 config_general_lang: "تحديد اللغة الافتراضية الخاصة بـ CIDRAM."
 config_general_lang_override: "الترجمة وفقًا لـ HTTP_ACCEPT_LANGUAGE كلما أمكن ذلك؟ صحيح/True = نعم [افتراضي]؛ زائفة/False = لا."

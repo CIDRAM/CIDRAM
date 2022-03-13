@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Output generator (last modified: 2022.03.12).
+ * This file: Output generator (last modified: 2022.03.13).
  */
 
 /** Initialise stages. */
@@ -756,13 +756,13 @@ if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
             header('Retry-After: ' . floor($CIDRAM['Config']['rate_limiting']['allowance_period'] * 3600));
             $CIDRAM['HTML'] = '';
         } elseif (!$CIDRAM['Config']['general']['silent_mode']) {
-            /** Fetch appropriate status code based on either "forbid_on_block" or "Aux Status Code". */
+            /** Fetch appropriate status code based on either "http_response_header_code" or "Aux Status Code". */
             if ((
                 !empty($CIDRAM['Aux Status Code']) &&
                 ($CIDRAM['errCode'] = $CIDRAM['Aux Status Code']) > 400 &&
                 $CIDRAM['ThisStatusHTTP'] = $CIDRAM['GetStatusHTTP']($CIDRAM['errCode'])
             ) || (
-                ($CIDRAM['errCode'] = $CIDRAM['Config']['general']['forbid_on_block']) > 400 &&
+                ($CIDRAM['errCode'] = $CIDRAM['Config']['general']['http_response_header_code']) > 400 &&
                 $CIDRAM['ThisStatusHTTP'] = $CIDRAM['GetStatusHTTP']($CIDRAM['errCode'])
             )) {
                 header('HTTP/1.0 ' . $CIDRAM['errCode'] . ' ' . $CIDRAM['ThisStatusHTTP']);

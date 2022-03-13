@@ -4286,7 +4286,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'aux' && $CIDRAM['FE']['Permissi
             '<code dir="ltr">rate_limiting(429)</code>',
             '<code dir="ltr">silent_mode(301)</code>',
             $CIDRAM['L10N']->getString('link_aux') . '<code dir="ltr">(4xx🔄5xx)</code>',
-            '<code dir="ltr">forbid_on_block(xxx)</code>',
+            '<code dir="ltr">http_response_header_code(xxx)</code>',
             $CIDRAM['L10N']->getString('link_aux') . '<code dir="ltr">(30x)</code>',
             $CIDRAM['L10N']->getString('label_other')
         );

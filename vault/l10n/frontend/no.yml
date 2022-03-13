@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Norwegian language data for the front-end (last modified: 2022.03.12).
+# This file: Norwegian language data for the front-end (last modified: 2022.03.13).
 ##/
 
 Extended Description Bypasses: "Standard-signatur-bypass-filene som normalt følger med hovedpakken."
@@ -87,7 +87,7 @@ config_bypasses_used: "Hvilke omkjøringsveier skal brukes?"
 config_experimental: "Ustabil/Eksperimentell!"
 config_general: "Generell konfigurasjon (enhver kjernekonfigurasjon som ikke tilhører andre kategorier)."
 config_general_allow_gethostbyaddr_lookup: "Tillat gethostbyaddr oppslag når UDP er utilgjengelig? True = Ja [Standardverdi]; False = Nei."
-config_general_ban_override: "Overstyr "forbid_on_block" når "infraction_limit" overskrides? Når overstyrende: Blokkerte forespørsler returnerer en tom side (malfiler blir ikke brukt). 200 = Ikke overstyre [Standardverdi]. Andre verdier er de samme som tilgjengelige verdier for "forbid_on_block"."
+config_general_ban_override: "Overstyr "http_response_header_code" når "infraction_limit" overskrides? Når overstyrende: Blokkerte forespørsler returnerer en tom side (malfiler blir ikke brukt). 200 = Ikke overstyre [Standardverdi]. Andre verdier er de samme som tilgjengelige verdier for "http_response_header_code"."
 config_general_config_imports: "En kommaavgrenset liste over filer som skal importeres til CIDRAM-standardkonfigurasjonen. Vanligvis befolket av oppdateringssiden når du aktiverer komponenter som trenger det når det er nødvendig. I de fleste tilfeller kan ignorere det."
 config_general_default_algo: "Definerer hvilken algoritme som skal brukes for alle fremtidige passord og økter. Alternativer: PASSWORD_DEFAULT (standardverdi), PASSWORD_BCRYPT, PASSWORD_ARGON2I (krever PHP &gt;= 7.2.0), PASSWORD_ARGON2ID (krever PHP &gt;= 7.3.0)."
 config_general_default_dns: "En kommaseparert liste over DNS-servere som skal brukes til vertsnavn-oppslag. Standardverdi = "8.8.8.8,8.8.4.4" (Google DNS). ADVARSEL: Ikke endre dette med mindre du vet hva du gjør!"
@@ -99,9 +99,9 @@ config_general_emailaddr_display_style: "Hvordan foretrekker du e-postadressen s
 config_general_error_log: "En fil for logging av eventuelle ikke-fatale feil som er oppdaget. Angi et filnavn, eller la det være tomt for å deaktivere."
 config_general_events: "Filene som er oppført her, lastes inn rett etter hendelsesbehandlerfilen. Vanligvis befolket av oppdateringssiden når du aktiverer komponenter som trenger det når det er nødvendig. I de fleste tilfeller kan ignorere det."
 config_general_fields: "Kontroller for feltene under blokkeringshendelser (når en forespørsel er blokkert)."
-config_general_forbid_on_block: "Hvilken HTTP-statusmelding skal CIDRAM sende når blokkerer forespørsler? (Se dokumentasjonen for mer informasjon)."
 config_general_force_hostname_lookup: "Håndheve vertsnavn-oppslag? True = Ja; False = Nei [Standardverdi]. Vertsnavn-oppslag utføres normalt på en "etter behov" basis, men kan håndheves for alle forespørsler. Å gjøre det kan være nyttig som et middel til å gi mer detaljert informasjon i loggfilene, men kan også ha en litt negativ effekt på ytelsen."
 config_general_frontend_log: "Fil for å logge innloggingsforsøk på frontenden. Angi et filnavn, eller la det være tomt for å deaktivere."
+config_general_http_response_header_code: "Hvilken HTTP-statusmelding skal CIDRAM sende når blokkerer forespørsler? (Se dokumentasjonen for mer informasjon)."
 config_general_ipaddr: "Hvor finner jeg IP-adressen til å koble til forespørsler? (Nyttig for tjenester som Cloudflare og så videre). Standardverdi = REMOTE_ADDR. ADVARSEL: Ikke endre dette med mindre du vet hva du gjør!"
 config_general_lang: "Angi standardspråket for CIDRAM."
 config_general_lang_override: "Lokaliser i henhold til HTTP_ACCEPT_LANGUAGE når det er mulig? True = Ja [Standardverdi]; False = Nei."

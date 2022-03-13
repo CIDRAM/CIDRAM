@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Turkish language data for the front-end (last modified: 2022.03.12).
+# This file: Turkish language data for the front-end (last modified: 2022.03.13).
 ##/
 
 Extended Description Bypasses: "Varsayılan imza bypass'lar, normalde ana paketle birlikte verilir."
@@ -87,7 +87,7 @@ config_bypasses_used: "Hangi bypasslar kullanılmalıdır?"
 config_experimental: "Kararsız/Deneysel!"
 config_general: "Genel yapılandırma (diğer kategorilere ait olmayan herhangi bir çekirdek yapılandırma)."
 config_general_allow_gethostbyaddr_lookup: "UDP kullanılamadığında gethostbyaddr aramalarına izin verilsin mi? Doğru/True = Evet [Varsayılan]; Yanlış/False = Hayır."
-config_general_ban_override: ""infraction_limit" aşıldığında "forbid_on_block"u geçersiz kıl? Geçersiz kılarken: Engellenen istekler boş bir sayfa verir (şablon dosyaları kullanılmaz). 200 = [Varsayılan] değerini geçersiz kılmayın. Diğer değerler "forbid_on_block" için mevcut değerler ile aynıdır."
+config_general_ban_override: ""infraction_limit" aşıldığında "http_response_header_code"u geçersiz kıl? Geçersiz kılarken: Engellenen istekler boş bir sayfa verir (şablon dosyaları kullanılmaz). 200 = [Varsayılan] değerini geçersiz kılmayın. Diğer değerler "http_response_header_code" için mevcut değerler ile aynıdır."
 config_general_config_imports: "CIDRAM varsayılan yapılandırmasına aktarılacak virgülle ayrılmış dosya listesi. Bileşenleri etkinleştirirken genellikle gerektiğinde güncellemeler sayfası tarafından doldurulur. Çoğu durumda, görmezden gelebilir."
 config_general_default_algo: "Gelecekteki tüm şifreler ve oturumlar için hangi algoritmayı kullanacağını tanımlar. Options: PASSWORD_DEFAULT (varsayılan), PASSWORD_BCRYPT, PASSWORD_ARGON2I (PHP &gt;= 7.2.0 gerektirir), PASSWORD_ARGON2ID (PHP &gt;= 7.3.0 gerektirir)."
 config_general_default_dns: "Ana makine adı aramalarda kullanılacak virgülle ayrılmış DNS sunucuları listesi. Varsayılan = "8.8.8.8,8.8.4.4" (Google DNS). UYARI: Ne yaptığınızı bilmiyorsanız bunu değiştirmeyin!"
@@ -99,9 +99,9 @@ config_general_emailaddr_display_style: "E-posta adresinin kullanıcılara sunul
 config_general_error_log: "Ölümcül olmayan hataları kaydetmek için bir dosya. Dosya adı belirtin veya devre dışı bırakmak için boş bırakın."
 config_general_events: "Burada listelenen dosyalar, olay işleyicileri dosyasından hemen sonra yüklenir. Bileşenleri etkinleştirirken genellikle gerektiğinde güncellemeler sayfası tarafından doldurulur. Çoğu durumda, görmezden gelebilir."
 config_general_fields: "Blok olayları sırasında alanlar için kontroller (bir istek engellendiğinde)."
-config_general_forbid_on_block: "İstekleri engellerken hangi HTTP durum iletisinin CIDRAM göndermesi gerekir? (Daha fazla bilgi için belgelere bakın)."
 config_general_force_hostname_lookup: "Hostname aramayı zorla? Doğru/True = Evet; Yanlış/False = Hayır [Varsayılan]. Hostname aramaları normal olarak ihtiyaçlara göre yapılır, ancak tüm istekler için zorla çalıştırılabilir. Bu, günlük dosyalarında daha ayrıntılı bilgi sağlama aracı olarak kullanışlı olabilir, ancak performans üzerinde de olumsuz bir etkisi olabilir."
 config_general_frontend_log: "Ön uç giriş denemelerini kaydetmek için kullanılan dosya. Dosya adı belirtin veya devre dışı bırakmak için boş bırakın."
+config_general_http_response_header_code: "İstekleri engellerken hangi HTTP durum iletisinin CIDRAM göndermesi gerekir? (Daha fazla bilgi için belgelere bakın)."
 config_general_ipaddr: "Bağlama isteklerinin IP adresi nerede bulunur? (Cloudflare ve benzeri hizmetler için yararlıdır). Varsayılan = REMOTE_ADDR. UYARI: Ne yaptığınızı bilmiyorsanız bunu değiştirmeyin!"
 config_general_lang: "CIDRAM için varsayılan dili belirleyin."
 config_general_lang_override: "Mümkün olduğunda, HTTP_ACCEPT_LANGUAGE uyarınca yerelleştirilsin mi? Doğru/True = Evet [Varsayılan]; Yanlış/False = Hayır."

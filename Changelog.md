@@ -16,6 +16,7 @@
 - Configuration directives `error_log_stages` and `track_mode` have been replaced by a new configuration directive, `stages`. The new configuration directive is capable of providing the same functionality provided previously, as well as some other, new, related functionality (#208, #211).
 - Configuration directive `statistics` has been changed from a boolean to a checkbox, to enable users to specify exactly *which* statistics they want to track. It's also now possible to track non-blocked requests (#204).
 - Configuration directive `maintenance_mode` removed. "Maintenance mode" is now implicit (determined by which execution stages are enabled), rather than explicit (determined by its own configuration directive).
+- Configuration directive `forbid_on_block` has been renamed to `http_response_header_code` (#136, #139).
 
 #### Bugs fixed.
 - Some specific files were being misclassified by the file manager; Fixed.

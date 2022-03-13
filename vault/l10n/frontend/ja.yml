@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Japanese language data for the front-end (last modified: 2022.03.12).
+# This file: Japanese language data for the front-end (last modified: 2022.03.13).
 ##/
 
 Extended Description Bypasses: "メインパッケージに通常含まれているデフォルト・シグネチャ・バイパス。"
@@ -87,7 +87,7 @@ config_bypasses_used: "どのバイパスを使用する必要がありますか
 config_experimental: "不安定/実験的！"
 config_general: "全般的な設定（他のカテゴリに属さないの設定）。"
 config_general_allow_gethostbyaddr_lookup: "ＵＤＰが利用できない場合、gethostbyaddrルックアップを許可しますか？ True = はい（Default/デフォルルト）。 False = いいえ。"
-config_general_ban_override: "「infraction_limit」を超えたときに「forbid_on_block」を上書きしますか？​上書きするとき：ブロックされたリクエストは空白のページを返します（テンプレートファイルは使用されません）。​２００ = 上書きしない（Default/デフォルルト）。​他の値は、「forbid_on_block」の利用可能な値と同じです。"
+config_general_ban_override: "「infraction_limit」を超えたときに「http_response_header_code」を上書きしますか？​上書きするとき：ブロックされたリクエストは空白のページを返します（テンプレートファイルは使用されません）。​２００ = 上書きしない（Default/デフォルルト）。​他の値は、「http_response_header_code」の利用可能な値と同じです。"
 config_general_config_imports: "CIDRAMのデフォルト・コンフィグレーションにインポートするファイルのコンマ区切りリスト。​通常、コンポーネントをアクティブ化するときに、アップデート・ページによって必要に応じて入力されます。​ほとんどの場合、それを無視することができます。"
 config_general_default_algo: "将来のすべてのパスワードとセッションに使用するアルゴリズムを定義します。​オプション：​PASSWORD_DEFAULT（Default/デフォルルト）、​PASSWORD_BCRYPT、​PASSWORD_ARGON2I （ＰＨＰ &gt;= 7.2.0 が必要）、​PASSWORD_ARGON2ID （ＰＨＰ &gt;= 7.3.0 が必要）。"
 config_general_default_dns: "ホスト名検索に使用する、​ＤＮＳ（ドメイン・ネーム・システム）サーバーのカンマ区切りリスト。​Default（デフォルルト） = "8.8.8.8,8.8.4.4" （Google DNS）。​注意：あなたが何をしているのか、​分からない限り、​これを変更しないでください。"
@@ -99,9 +99,9 @@ config_general_emailaddr_display_style: "ユーザーに電子Ｅメール・ア
 config_general_error_log: "検出された致命的でないエラーを記録するためのファイル。​ファイル名指定するか、​無効にしたい場合は空白のままにして下さい。"
 config_general_events: "ここにリストされているファイルは、イベント・ハンドラー・ファイルの直後にロードされます。​通常、コンポーネントをアクティブ化するときに、アップデート・ページによって必要に応じて入力されます。​ほとんどの場合、それを無視することができます。"
 config_general_fields: "ブロック・イベント中のために、フィールドのコントロールです （リクエストがブロックされたとき）。"
-config_general_forbid_on_block: "リクエストをブロックするときに、CIDRAMが送信するＨＴＴＰステータス・メッセージはどれですか？​（詳細については、ドキュメントを参照してください）。"
 config_general_force_hostname_lookup: "ホスト名検索を強制しますか？ True = はい。 False = いいえ（Default/デフォルルト）。​ホスト名検索は、通常、「必要に応じて」実行されますが、すべてのリクエストに対して強制することができます。​これは、より詳細な情報をログ・ファイルに提供する手段として有用ですが、パフォーマンスに多少の悪影響を及ぼすこともあります。"
 config_general_frontend_log: "フロントエンド・ログインの試みを記録するためのファイル。​ファイル名指定するか、​無効にしたい場合は空白のままにして下さい。"
+config_general_http_response_header_code: "リクエストをブロックするときに、CIDRAMが送信するＨＴＴＰステータス・メッセージはどれですか？​（詳細については、ドキュメントを参照してください）。"
 config_general_ipaddr: "接続リクエストのＩＰアドレスをどこで見つけるべきかについて（Cloudflareのようなサービスに対して有効）。​Default（デフォルト設定） = REMOTE_ADDR。​注意：あなたが何をしているのか、​分からない限り、​これを変更しないでください。"
 config_general_lang: "CIDRAMのデフォルト言語を設定します。"
 config_general_lang_override: "可能な限り「HTTP_ACCEPT_LANGUAGE」に従ってローカライズしますか？ True = はい（Default/デフォルルト）。 False = いいえ。"

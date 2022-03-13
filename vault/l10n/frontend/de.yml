@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: German language data for the front-end (last modified: 2022.03.12).
+# This file: German language data for the front-end (last modified: 2022.03.13).
 ##/
 
 Extended Description Bypasses: "Die Standard-Signatur-Bypässe, die normalerweise im Hauptpaket enthalten sind."
@@ -87,7 +87,7 @@ config_bypasses_used: "Welche Bypässe sollten verwendet werden?"
 config_experimental: "Instabil/Experimentell!"
 config_general: "Allgemeine Konfiguration (jede Kernkonfiguration, die nicht zu anderen Kategorien gehört)."
 config_general_allow_gethostbyaddr_lookup: "gethostbyaddr-Suche erlauben, wenn UDP nicht verfügbar ist? True = Ja [Standardeinstellung]; False = Nein."
-config_general_ban_override: "Überschreiben "forbid_on_block" Wenn "infraction_limit" überschritten wird? Beim überschreiben: Blockierte Anfragen geben eine leere Seite zurück (Template-Dateien werden nicht verwendet). 200 = Nicht überschreiben [Standardeinstellung]. Andere Werte entsprechen den verfügbaren Werten für "forbid_on_block"."
+config_general_ban_override: "Überschreiben "http_response_header_code" Wenn "infraction_limit" überschritten wird? Beim überschreiben: Blockierte Anfragen geben eine leere Seite zurück (Template-Dateien werden nicht verwendet). 200 = Nicht überschreiben [Standardeinstellung]. Andere Werte entsprechen den verfügbaren Werten für "http_response_header_code"."
 config_general_config_imports: "Eine durch Kommata getrennte Liste von Dateien, die in die CIDRAM-Standardkonfiguration importiert werden sollen. Wird normalerweise von der Aktualisierungsseite nach Bedarf ausgefüllt wenn Komponenten aktiviert werden. In den meisten Fällen kann es ignorieren."
 config_general_default_algo: "Definiert den Algorithmus für alle zukünftigen Passwörter und Sitzungen. Optionen: PASSWORD_DEFAULT (Standardeinstellung), PASSWORD_BCRYPT, PASSWORD_ARGON2I (erfordert PHP &gt;= 7.2.0), PASSWORD_ARGON2ID (erfordert PHP &gt;= 7.3.0)."
 config_general_default_dns: "Eine durch Kommata getrennte Liste von DNS-Servern, die für Hostnamen-Lookups verwendet werden sollen. Standardeinstellung = "8.8.8.8,8.8.4.4" (Google DNS). ACHTUNG: Ändern Sie diesen Wert nur, wenn Sie wissen, was Sie tun!"
@@ -99,9 +99,9 @@ config_general_emailaddr_display_style: "Wie möchten Sie die E-Mail-Adresse fü
 config_general_error_log: "Einer Datei zum Protokollieren aller erkannten Fehler, die nicht schwerwiegend sind. Geben Sie einen Dateinamen an oder lassen Sie die Option zum Deaktivieren leer."
 config_general_events: "Hier aufgelistete Dateien werden direkt nach der Ereignishandlerdatei geladen. Wird normalerweise von der Aktualisierungsseite nach Bedarf ausgefüllt wenn Komponenten aktiviert werden. In den meisten Fällen kann es ignorieren."
 config_general_fields: "Kontrollen für die Felder während Blockereignissen (wenn eine Anfrage blockiert wird)."
-config_general_forbid_on_block: "Welche HTTP-Status-Message sollte CIDRAM senden, wenn Anfragen blockiert werden? (Bitte beachten Sie die Dokumentation)."
 config_general_force_hostname_lookup: "Hostnamen-Suchen werden normalerweise auf einer "wie benötigt"-Basis durchgeführt, können jedoch für alle Anforderungen erzwungen werden. Dies kann nützlich sein, um detailliertere Informationen in der Protokolldateien bereitzustellen, aber auch kann sich leicht negativ auf die Performance auswirken. Erzwinge Hostnamen-Suche? True = Ja; False = Nein [Standardeinstellung]."
 config_general_frontend_log: "Datei für die Protokollierung von Frontend Anmelde-Versuchen. Geben Sie einen Dateinamen an oder lassen Sie die Option zum Deaktivieren leer."
+config_general_http_response_header_code: "Welche HTTP-Status-Message sollte CIDRAM senden, wenn Anfragen blockiert werden? (Bitte beachten Sie die Dokumentation)."
 config_general_ipaddr: "Ort der IP-Adresse der aktuellen Verbindung im gesamten Datenstrom (nützlich für Cloud-Services). Standardeinstellung = REMOTE_ADDR. ACHTUNG: Ändern Sie diesen Wert nur, wenn Sie wissen, was Sie tun!"
 config_general_lang: "Gibt die Standardsprache für CIDRAM an."
 config_general_lang_override: "Nach HTTP_ACCEPT_LANGUAGE lokalisieren wann möglich? True = Ja [Standardeinstellung]; False = Nein."

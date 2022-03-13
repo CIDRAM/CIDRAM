@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Vietnamese language data for the front-end (last modified: 2022.03.12).
+# This file: Vietnamese language data for the front-end (last modified: 2022.03.13).
 ##/
 
 Extended Description Bypasses: "Các tập tin đường tránh chữ ký mặc định thường bao gồm với gói thầu chính."
@@ -87,7 +87,7 @@ config_bypasses_used: "Những đường tránh nào nên được sử dụng?"
 config_experimental: "Không ổn định / Thử nghiệm!"
 config_general: "Cấu hình chung (bất kỳ cấu hình cốt lõi nào không thuộc về các loại khác)."
 config_general_allow_gethostbyaddr_lookup: "Cho phép tra cứu gethostbyaddr khi UDP không khả dụng? True = Vâng [Mặc định]; False = Không."
-config_general_ban_override: "Ghi đè "forbid_on_block" khi "infraction_limit" bị vượt quá? Khi ghi đè: Các yêu cầu bị chặn sản xuất một trang trống (tập tin mẫu không được sử dụng). 200 = Không ghi đè [Mặc định]. Các giá trị khác giống với các giá trị có sẵn cho "forbid_on_block"."
+config_general_ban_override: "Ghi đè "http_response_header_code" khi "infraction_limit" bị vượt quá? Khi ghi đè: Các yêu cầu bị chặn sản xuất một trang trống (tập tin mẫu không được sử dụng). 200 = Không ghi đè [Mặc định]. Các giá trị khác giống với các giá trị có sẵn cho "http_response_header_code"."
 config_general_config_imports: "Danh sách tập tin được phân tách bằng dấu phẩy để nhập vào cấu hình mặc định CIDRAM. Thường được nhập bởi trang cập nhật khi cần thiết khi các thành phần được kích hoạt. Trong hầu hết các trường hợp, có thể bỏ qua nó."
 config_general_default_algo: "Xác định thuật toán nào sẽ sử dụng cho tất cả các mật khẩu và phiên trong tương lai. Tùy chọn: PASSWORD_DEFAULT (mặc định), PASSWORD_BCRYPT, PASSWORD_ARGON2I (yêu cầu PHP &gt;= 7.2.0), PASSWORD_ARGON2ID (yêu cầu PHP &gt;= 7.3.0)."
 config_general_default_dns: "Một dấu phẩy phân cách danh sách các máy chủ DNS để sử dụng cho tra cứu tên máy. Mặc định = "8.8.8.8,8.8.4.4" (Google DNS). CẢNH BÁO: Không thay đổi này, trừ khi bạn biết những gì bạn đang làm!"
@@ -99,9 +99,9 @@ config_general_emailaddr_display_style: "Bạn muốn địa chỉ email đượ
 config_general_error_log: "Một tập tin để ghi lại bất kỳ lỗi không nghiêm trọng được phát hiện. Chỉ định một tên tập tin, hoặc để trống để vô hiệu hóa."
 config_general_events: "Các tập tin được liệt kê ở đây được tải trực tiếp sau tập tin trình xử lý sự kiện. Thường được nhập bởi trang cập nhật khi cần thiết khi các thành phần được kích hoạt. Trong hầu hết các trường hợp, có thể bỏ qua nó."
 config_general_fields: "Kiểm soát các trường trong các sự kiện khối (khi một yêu cầu bị chặn)."
-config_general_forbid_on_block: "Những gì thông báo trạng thái HTTP mà CIDRAM nên gửi khi yêu cầu bị chặn? (Tham khảo tài liệu để biết thêm thông tin)."
 config_general_force_hostname_lookup: "Thực hiện tìm kiếm tên máy chủ cho tất cả các yêu cầu? True = Vâng; False = Không [Mặc định]. Tìm kiếm tên máy chủ thường được thực hiện trên cơ sở cần thiết, nhưng có thể được thực hiện cho tất cả các yêu cầu. Điều này có thể hữu ích như một phương tiện cung cấp thông tin chi tiết hơn trong các tập tin đăng nhập, nhưng cũng có thể có tác động tiêu cực đến hiệu suất."
 config_general_frontend_log: "Tập tin cho ghi cố gắng đăng nhập front-end. Chỉ định một tên tập tin, hoặc để trống để vô hiệu hóa."
+config_general_http_response_header_code: "Những gì thông báo trạng thái HTTP mà CIDRAM nên gửi khi yêu cầu bị chặn? (Tham khảo tài liệu để biết thêm thông tin)."
 config_general_ipaddr: "Nơi để tìm địa chỉ IP của các yêu cầu kết nối? (Hữu ích cho các dịch vụ như Cloudflare và vv). Mặc định = REMOTE_ADDR. CẢNH BÁO: Không thay đổi này, trừ khi bạn biết những gì bạn đang làm!"
 config_general_lang: "Xác định tiếng mặc định cho CIDRAM."
 config_general_lang_override: "Bản địa hóa theo HTTP_ACCEPT_LANGUAGE bất cứ khi nào có thể? True = Vâng [Mặc định]; False = Không."

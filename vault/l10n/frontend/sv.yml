@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Swedish language data for the front-end (last modified: 2022.03.12).
+# This file: Swedish language data for the front-end (last modified: 2022.03.13).
 ##/
 
 Extended Description Bypasses: "Standard bypass-filen som normalt ingår i huvudpaketet."
@@ -87,7 +87,7 @@ config_bypasses_used: "Vilka förbikopplingar ska användas?"
 config_experimental: "Instabil/Experimentell!"
 config_general: "Allmän konfiguration (alla kärnkonfigurationer som inte tillhör andra kategorier)."
 config_general_allow_gethostbyaddr_lookup: "Tillåt gethostbyaddr-uppslag när UDP är otillgänglig? True = Ja [Standard]; False = Nej."
-config_general_ban_override: "Åsidosätta "forbid_on_block" när "infraction_limit" överskrids? När det åsidosätter: Blockerade förfrågningar returnerar en tom sida (mallfiler används inte). 200 = Åsidosätta inte [Standard]. Andra värden är desamma som tillgängliga värden för "forbid_on_block"."
+config_general_ban_override: "Åsidosätta "http_response_header_code" när "infraction_limit" överskrids? När det åsidosätter: Blockerade förfrågningar returnerar en tom sida (mallfiler används inte). 200 = Åsidosätta inte [Standard]. Andra värden är desamma som tillgängliga värden för "http_response_header_code"."
 config_general_config_imports: "En kommaavgränsad lista över filer som ska importeras till CIDRAM-standardkonfigurationen. Befolkas vanligtvis av uppdateringssidan när du aktiverar komponenter som behöver det vid behov. I de flesta fall kan ignorera det."
 config_general_default_algo: "Definierar vilken algoritm som ska användas för alla framtida lösenord och sessioner. Alternativ: PASSWORD_DEFAULT (standard), PASSWORD_BCRYPT, PASSWORD_ARGON2I (kräver PHP &gt;= 7.2.0), PASSWORD_ARGON2ID (kräver PHP &gt;= 7.3.0)."
 config_general_default_dns: "En komma-avgränsad lista över DNS-servrar som ska användas för värdnamnssökningar. Standard = "8.8.8.8,8.8.4.4" (Google DNS). VARNING: Ändra inte detta om du inte vet vad du gör!"
@@ -99,9 +99,9 @@ config_general_emailaddr_display_style: "Hur skulle du föredra att e-postadress
 config_general_error_log: "En fil för att logga eventuella icke-dödliga fel som upptäcks. Ange ett filnamn, eller lämna tomt för att inaktivera."
 config_general_events: "Filer som listas här laddas direkt efter händelsehanteringsfilen. Befolkas vanligtvis av uppdateringssidan när du aktiverar komponenter som behöver det vid behov. I de flesta fall kan ignorera det."
 config_general_fields: "Kontroller för fälten under blockhändelser (när en begäran blockeras)."
-config_general_forbid_on_block: "Vilket HTTP-statusmeddelande ska CIDRAM skicka när blockering förfrågningar? (För mer information finns i dokumentationen)."
 config_general_force_hostname_lookup: "Tvinga värdnamnssökningar? True = Ja; False = Nej [Standard]. Värdnamnssökningar utförs normalt på grundval av nödvändighet, men kan tvingas för alla förfrågningar. Att göra det kan vara användbart som ett medel för att ge mer detaljerad information i loggarna, men kan också ha en något negativ effekt på prestanda."
 config_general_frontend_log: "Fil för att logga in alla försök till inloggningar på front-end. Ange ett filnamn, eller lämna tomt för att inaktivera."
+config_general_http_response_header_code: "Vilket HTTP-statusmeddelande ska CIDRAM skicka när blockering förfrågningar? (För mer information finns i dokumentationen)."
 config_general_ipaddr: "Var hittar du IP-adressen för anslutningsförfrågningar? (Användbar för tjänster som Cloudflare och liknande). Standard = REMOTE_ADDR. VARNING: Ändra inte detta om du inte vet vad du gör!"
 config_general_lang: "Ange standardspråk för CIDRAM."
 config_general_lang_override: "Lokalisera enligt HTTP_ACCEPT_LANGUAGE när det är möjligt? True = Ja [Standard]; False = Nej."

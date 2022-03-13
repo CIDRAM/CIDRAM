@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Korean language data for the front-end (last modified: 2022.03.12).
+# This file: Korean language data for the front-end (last modified: 2022.03.13).
 ##/
 
 Extended Description Bypasses: "기본 서명 우회 일반적으로 기본 패키지에 포함되어 있습니다."
@@ -87,7 +87,7 @@ config_bypasses_used: "어떤 바이 패스를 사용해야 합니까?"
 config_experimental: "불안정/실험적!"
 config_general: "일반 설정 (다른 카테고리에 속하지 않는 설정)."
 config_general_allow_gethostbyaddr_lookup: "UDP를 사용할 수 없을 때 gethostbyaddr 검색을 허용 하시겠습니까? True = 예 (Default / 기본 설정); False = 아니오."
-config_general_ban_override: ""infraction_limit"를 초과하면 "forbid_on_block"를 덮어 쓰시겠습니까? 덮어 쓸 때\_: 차단 된 요청은 빈 페이지를 반환합니다 (템플릿 파일은 사용되지 않습니다). 200 = 덮어 쓰지 (Default / 기본값). 다른 값은 "forbid_on_block"에 사용할 수있는 값과 같습니다."
+config_general_ban_override: ""infraction_limit"를 초과하면 "http_response_header_code"를 덮어 쓰시겠습니까? 덮어 쓸 때\_: 차단 된 요청은 빈 페이지를 반환합니다 (템플릿 파일은 사용되지 않습니다). 200 = 덮어 쓰지 (Default / 기본값). 다른 값은 "http_response_header_code"에 사용할 수있는 값과 같습니다."
 config_general_config_imports: "CIDRAM 기본 구성으로 가져올 쉼표로 구분된 파일 목록입니다. 일반적으로 구성 요소를 활성화할 때 업데이트 페이지에서 필요에 따라 채워집니다. 대부분의 경우 무시할 수 있습니다."
 config_general_default_algo: "향후 모든 암호와 세션에 사용할 알고리즘을 정의합니다. 옵션\_: PASSWORD_DEFAULT (default / 기본 설정), PASSWORD_BCRYPT, PASSWORD_ARGON2I (PHP &gt;= 7.2.0 가 필요합니다), PASSWORD_ARGON2ID (PHP &gt;= 7.3.0 가 필요합니다)."
 config_general_default_dns: "호스트 이름 검색에 사용하는 DNS (도메인 이름 시스템) 서버의 쉼표로 구분 된 목록입니다. Default (기본 설정) = "8.8.8.8,8.8.4.4" (Google DNS). 주의\_: 당신이 무엇을하고 있는지 모르는 한이를 변경하지 마십시오."
@@ -99,9 +99,9 @@ config_general_emailaddr_display_style: "사용자에게 전자 메일 주소를
 config_general_error_log: "치명적이지 않은 오류를 탐지하기위한 파일. 파일 이름을 지정하십시오. 비활성화하려면 비워 둡니다."
 config_general_events: "여기에 나열된 파일은 이벤트 핸들러 파일 바로 다음에 로드됩니다. 일반적으로 구성 요소를 활성화할 때 업데이트 페이지에서 필요에 따라 채워집니다. 대부분의 경우 무시할 수 있습니다."
 config_general_fields: "블록 이벤트 중 필드 제어 (요청이 차단되었을 때)."
-config_general_forbid_on_block: "요청을 차단할 때 CIDRAM이 전송해야하는 HTTP 상태 메시지는 무엇입니까? (자세한 내용은 설명서를 참조하십시오)."
 config_general_force_hostname_lookup: "호스트 이름 검색을 시행 하시겠습니까 (모든 요청)? True = 예; False = 아니오 (Default / 기본 설정). 호스트 이름 검색은 일반적으로 "필요에 따라"수행됩니다, 그러나 모든 요청에 대해 강제 될 수 있습니다. 이는 로그 파일에보다 자세한 정보를 제공하는 데 유용 할 수 있습니다, 그러나 또한 성능에 약간 부정적인 영향을 줄 수 있습니다."
 config_general_frontend_log: "프론트 엔드 로그인 시도를 기록하는 파일. 파일 이름을 지정하십시오. 비활성화하려면 비워 둡니다."
+config_general_http_response_header_code: "요청을 차단할 때 CIDRAM이 전송해야하는 HTTP 상태 메시지는 무엇입니까? (자세한 내용은 설명서를 참조하십시오)."
 config_general_ipaddr: "연결 요청의 IP 주소를 어디에서 찾을 것인가에 대해 (Cloudflare 같은 서비스에 대해 유효). Default (기본 설정) = REMOTE_ADDR. 주의\_: 당신이 무엇을하고 있는지 모르는 한이를 변경하지 마십시오."
 config_general_lang: "CIDRAM의 기본 언어를 설정합니다."
 config_general_lang_override: "가능할 때마다 HTTP_ACCEPT_LANGUAGE에 따라 현지화 하시겠습니까? True = 예 (Default / 기본값); False = 아니오."

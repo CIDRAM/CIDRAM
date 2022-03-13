@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (traditional) language data for the front-end (last modified: 2022.03.12).
+# This file: Chinese (traditional) language data for the front-end (last modified: 2022.03.13).
 ##/
 
 Extended Description Bypasses: "標準簽名旁路文件通常包括在主包。"
@@ -87,7 +87,7 @@ config_bypasses_used: "應該使用哪些繞過？"
 config_experimental: "不穩定/實驗！"
 config_general: "基本配置（任何不屬於其他類別的核心配置）。"
 config_general_allow_gethostbyaddr_lookup: "當UDP不可用時允許gethostbyaddr查找？​True（真）=允許【標準】；False（假）=不允許。"
-config_general_ban_override: "覆蓋『forbid_on_block』當『infraction_limit』已被超過？​當覆蓋：已阻止的請求返回一個空白頁（不使用模板文件）。​200 = 不要覆蓋【標準】。​其他值與『forbid_on_block』的可用值相同。"
+config_general_ban_override: "覆蓋『http_response_header_code』當『infraction_limit』已被超過？​當覆蓋：已阻止的請求返回一個空白頁（不使用模板文件）。​200 = 不要覆蓋【標準】。​其他值與『http_response_header_code』的可用值相同。"
 config_general_config_imports: "要導入CIDRAM默認配置的以逗號分隔的文件列表。​通常在啟用組件時由更新頁面按需填充。​大多數情況下，可以忽略它。"
 config_general_default_algo: "定義要用於所有未來密碼和會話的算法。​選項：​PASSWORD_DEFAULT（標準），​PASSWORD_BCRYPT，​PASSWORD_ARGON2I（需要PHP &gt;= 7.2.0），​PASSWORD_ARGON2ID（需要PHP &gt;= 7.3.0）。"
 config_general_default_dns: "以逗號分隔的DNS服務器列表，​用於主機名查找。​標準 = 『8.8.8.8,8.8.4.4』 (Google DNS)。​警告：不要修改此除非您知道什麼您做著！"
@@ -99,9 +99,9 @@ config_general_emailaddr_display_style: "您希望如何將電子郵件地址呈
 config_general_error_log: "用於記錄檢測到的任何非致命錯誤的文件。​指定一個文件名，​或留空以禁用。"
 config_general_events: "此處列出的文件在事件處理程序文件之後直接加載。​通常在啟用組件時由更新頁面按需填充。​大多數情況下，可以忽略它。"
 config_general_fields: "塊事件期間的字段控件（當請求被阻止時）。"
-config_general_forbid_on_block: "阻止請求時，CIDRAM應發送哪個HTTP狀態消息？ （請參閱文檔以獲取更多信息）。"
 config_general_force_hostname_lookup: "強制主機名查找？​True（真）=跟踪；False（假）=不跟踪【標準】。​主機名查詢通常在『根據需要』的基礎上執行，但可以在所有請求上強制。​這可能會有助於提供日誌文件中更詳細的信息，但也可能會對性能產生輕微的負面影響。"
 config_general_frontend_log: "前端登錄嘗試的錄音文件。​指定一個文件名，​或留空以禁用。"
+config_general_http_response_header_code: "阻止請求時，CIDRAM應發送哪個HTTP狀態消息？ （請參閱文檔以獲取更多信息）。"
 config_general_ipaddr: "在哪裡可以找到連接請求IP地址？​（可以使用為服務例如Cloudflare和類似）。​標準 = REMOTE_ADDR。​警告：不要修改此除非您知道什麼您做著！"
 config_general_lang: "指定標準CIDRAM語言。"
 config_general_lang_override: "盡可能根據HTTP_ACCEPT_LANGUAGE進行本地化？True（真）=進行本地化【標準】；False（假）=不要本地化。"

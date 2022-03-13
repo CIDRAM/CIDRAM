@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (simplified) language data for the front-end (last modified: 2022.03.12).
+# This file: Chinese (simplified) language data for the front-end (last modified: 2022.03.13).
 ##/
 
 Extended Description Bypasses: "标准签名旁路文件通常包括在主包。"
@@ -87,7 +87,7 @@ config_bypasses_used: "应该使用哪些绕过？"
 config_experimental: "不稳定/实验！"
 config_general: "基本配置（任何不属于其他类别的核心配置）。"
 config_general_allow_gethostbyaddr_lookup: "当UDP不可用时允许gethostbyaddr查找？​True（真）=允许【标准】；False（假）=不允许。"
-config_general_ban_override: "覆盖“forbid_on_block”当“infraction_limit”已被超过？​当覆盖：已阻止的请求返回一个空白页（不使用模板文件）。​200 = 不要覆盖【标准】。​其他值与“forbid_on_block”的可用值相同。"
+config_general_ban_override: "覆盖“http_response_header_code”当“infraction_limit”已被超过？​当覆盖：已阻止的请求返回一个空白页（不使用模板文件）。​200 = 不要覆盖【标准】。​其他值与“http_response_header_code”的可用值相同。"
 config_general_config_imports: "要导入CIDRAM默认配置的以逗号分隔的文件列表。​通常在启用组件时由更新页面按需填充。​大多数情况下，可以忽略它。"
 config_general_default_algo: "定义要用于所有未来密码和会话的算法。​选项：​PASSWORD_DEFAULT（标准），​PASSWORD_BCRYPT，​PASSWORD_ARGON2I（需要PHP &gt;= 7.2.0），​PASSWORD_ARGON2ID（需要PHP &gt;= 7.3.0）。"
 config_general_default_dns: "以逗号分隔的DNS服务器列表，​用于主机名查找。​标准 = “8.8.8.8,8.8.4.4” (Google DNS)。​警告：不要修改此除非您知道什么您做着！"
@@ -99,9 +99,9 @@ config_general_emailaddr_display_style: "您希望如何将电子邮件地址呈
 config_general_error_log: "用于记录检测到的任何非致命错误的文件。​指定一个文件名，​或留空以禁用。"
 config_general_events: "此处列出的文件在事件处理程序文件之后直接加载。​通常在启用组件时由更新页面按需填充。​大多数情况下，可以忽略它。"
 config_general_fields: "块事件期间的字段控件（当请求被阻止时）。"
-config_general_forbid_on_block: "阻止请求时，CIDRAM应发送哪个HTTP状态消息？ （请参阅文档以获取更多信息）。"
 config_general_force_hostname_lookup: "强制主机名查找？​True（真）=跟踪；False（假）=不跟踪【标准】。​主机名查询通常在“根据需要”的基础上执行，但可以在所有请求上强制。​这可能会有助于提供日志文件中更详细的信息，但也可能会对性能产生轻微的负面影响。"
 config_general_frontend_log: "前端登录尝试的录音文件。​指定一个文件名，​或留空以禁用。"
+config_general_http_response_header_code: "阻止请求时，CIDRAM应发送哪个HTTP状态消息？ （请参阅文档以获取更多信息）。"
 config_general_ipaddr: "在哪里可以找到连接请求IP地址？​（可以使用为服务例如Cloudflare和类似）。​标准 = REMOTE_ADDR。​警告：不要修改此除非您知道什么您做着！"
 config_general_lang: "指定标准CIDRAM语言。"
 config_general_lang_override: "尽可能根据HTTP_ACCEPT_LANGUAGE进行本地化？True（真）=进行本地化【标准】；False（假）=不要本地化。"

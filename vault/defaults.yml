@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Defaults file (last modified: 2022.03.12).
+# This file: Defaults file (last modified: 2022.03.13).
 ##/
 
 Config Defaults:
@@ -304,7 +304,7 @@ Config Defaults:
     "NGINX Reverse Proxy": "https://docs.nginx.com/nginx/admin-guide/web-server/reverse-proxy/"
     "Squid configuration directive forwarded_for": "http://www.squid-cache.org/Doc/config/forwarded_for/"
     "Forwarded - HTTP | MDN": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Forwarded"
-  forbid_on_block:
+  http_response_header_code:
    type: "int"
    default: 200
    choices:

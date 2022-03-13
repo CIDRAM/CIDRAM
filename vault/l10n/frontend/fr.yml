@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: French language data for the front-end (last modified: 2022.03.12).
+# This file: French language data for the front-end (last modified: 2022.03.13).
 ##/
 
 Extended Description Bypasses: "Les fichiers pour contourner les signatures standard qui sont normalement inclus dans le paquet principal."
@@ -87,7 +87,7 @@ config_bypasses_used: "Lequels contournements faut-il utiliser\_?"
 config_experimental: "Instable/Expérimental\_!"
 config_general: "Configuration générale (toute configuration de base n'appartenant pas à d'autres catégories)."
 config_general_allow_gethostbyaddr_lookup: "Autoriser les recherches par gethostbyaddr lorsque UDP est indisponible\_? True = Oui [Défaut]\_; False = Non."
-config_general_ban_override: "Remplacer «\_forbid_on_block\_» lorsque «\_infraction_limit\_» est dépassé\_? En cas de remplacement\_: Les requêtes bloquées renvoient une page blanche (les fichiers modèles ne sont pas utilisés). 200 = Ne pas remplacer [Défaut]. Les autres valeurs sont les mêmes que les valeurs disponibles pour «\_forbid_on_block\_»."
+config_general_ban_override: "Remplacer «\_http_response_header_code\_» lorsque «\_infraction_limit\_» est dépassé\_? En cas de remplacement\_: Les requêtes bloquées renvoient une page blanche (les fichiers modèles ne sont pas utilisés). 200 = Ne pas remplacer [Défaut]. Les autres valeurs sont les mêmes que les valeurs disponibles pour «\_http_response_header_code\_»."
 config_general_config_imports: "Une liste délimitée par des virgules de fichiers à importer dans la configuration par défaut du CIDRAM. Généralement renseigné par la page des mises à jour lors de l'activation des composants qui en ont besoin si nécessaire. Dans la plupart des cas, peut l'ignorer."
 config_general_default_algo: "Définit quel algorithme utiliser pour tous les mots de passe et les sessions à l'avenir. Options\_: PASSWORD_DEFAULT (défaut), PASSWORD_BCRYPT, PASSWORD_ARGON2I (nécessite PHP &gt;= 7.2.0), PASSWORD_ARGON2ID (nécessite PHP &gt;= 7.3.0)."
 config_general_default_dns: "Une liste délimitée par des virgules de serveurs DNS à utiliser pour les recherches de noms d'hôtes. Par Défaut = «\_8.8.8.8,8.8.4.4\_» (Google DNS). AVERTISSEMENT\_: Ne pas changer si vous ne sais pas ce que vous faites\_!"
@@ -99,9 +99,9 @@ config_general_emailaddr_display_style: "Comment préférez-vous que l'adresse �
 config_general_error_log: "Un fichier pour l'enregistrement des erreurs non fatales détectées. Spécifier un fichier, ou laisser vide à désactiver."
 config_general_events: "Les fichiers répertoriés ici sont chargés directement après le fichier des gestionnaires d'événements. Généralement renseigné par la page des mises à jour lors de l'activation des composants qui en ont besoin si nécessaire. Dans la plupart des cas, peut l'ignorer."
 config_general_fields: "Contrôles des champs lors d'un événement de bloc (lorsqu'une requête est bloquée)."
-config_general_forbid_on_block: "Quel message d'état HTTP devrait être envoyé par CIDRAM lors du blocage des requêtes\_? (Référez-vous à la documentation pour plus d'informations)."
 config_general_force_hostname_lookup: "Forcer les recherches de nom d'hôte\_? True = Oui\_; False = Non [Défaut]. Les recherches de nom d'hôte sont normalement effectuées «\_au besoin\_», mais peuvent être forcées pour toutes les requêtes. Cela peut être utile pour fournir des informations plus détaillées dans les fichiers journaux, mais peut également avoir un effet légèrement négatif sur les performances."
 config_general_frontend_log: "Fichier pour l'enregistrement des tentatives de connexion à l'accès frontal. Spécifier un fichier, ou laisser vide à désactiver."
+config_general_http_response_header_code: "Quel message d'état HTTP devrait être envoyé par CIDRAM lors du blocage des requêtes\_? (Référez-vous à la documentation pour plus d'informations)."
 config_general_ipaddr: "Où trouver l'adresse IP de requêtes\_? (Utile pour services tels que Cloudflare et similaires). Par Défaut = REMOTE_ADDR. AVERTISSEMENT\_: Ne pas changer si vous ne sais pas ce que vous faites\_!"
 config_general_lang: "Spécifiez la langue défaut pour CIDRAM."
 config_general_lang_override: "Localiser selon HTTP_ACCEPT_LANGUAGE autant que possible\_? True = Oui [Défaut]\_; False = Non."

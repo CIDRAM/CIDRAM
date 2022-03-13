@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Polish language data for the front-end (last modified: 2022.03.12).
+# This file: Polish language data for the front-end (last modified: 2022.03.13).
 ##/
 
 Extended Description Bypasses: "Domyślne pliki pomijania podpisów zwykle zawarte w pakiecie głównym."
@@ -87,7 +87,7 @@ config_bypasses_used: "Jakich obwodnic należy użyć?"
 config_experimental: "Niestabilny/Eksperymentalny!"
 config_general: "Ogólna konfiguracja (dowolna konfiguracja podstawowa nienależąca do innych kategorii)."
 config_general_allow_gethostbyaddr_lookup: "Zezwolić na wyszukiwanie gethostbyaddr, gdy UDP jest niedostępny? True (Prawdziwe) = Tak [Domyślna]; False (Fałszywy) = Nie."
-config_general_ban_override: "Zastąpić „forbid_on_block”, gdy zostanie przekroczony „infraction_limit”? Podczas nadpisywania: Zablokowane żądania zwracają pustą stronę (pliki szablonów nie są używane). 200 = Nie zastępuj [Domyślna]. Inne wartości są takie same, jak dostępne wartości dla „forbid_on_block”."
+config_general_ban_override: "Zastąpić „http_response_header_code”, gdy zostanie przekroczony „infraction_limit”? Podczas nadpisywania: Zablokowane żądania zwracają pustą stronę (pliki szablonów nie są używane). 200 = Nie zastępuj [Domyślna]. Inne wartości są takie same, jak dostępne wartości dla „http_response_header_code”."
 config_general_config_imports: "Rozdzielana przecinkami lista plików do zaimportowania do domyślnej konfiguracji CIDRAM. Zwykle wypełniana przez stronę aktualizacji podczas aktywacji składników, które tego potrzebują, gdy jest to konieczne. W większości przypadków można to zignorować."
 config_general_default_algo: "Określa, którego algorytmu należy używać dla wszystkich przyszłych haseł i sesji. Opcje: PASSWORD_DEFAULT (domyślna), PASSWORD_BCRYPT, PASSWORD_ARGON2I (wymaga PHP &gt;= 7.2.0), PASSWORD_ARGON2ID (wymaga PHP &gt;= 7.3.0)."
 config_general_default_dns: "Rozdzielona przecinkami lista serwerów DNS używanych do wyszukiwania nazw hostów. Domyślna = "8.8.8.8,8.8.4.4" (Google DNS). OSTRZEŻENIE: Nie zmieniaj tego, chyba że wiesz, co robisz!"
@@ -99,9 +99,9 @@ config_general_emailaddr_display_style: "Jak wolisz, aby adres e-mail był preze
 config_general_error_log: "Plik służący do rejestrowania wykrytych błędów niekrytycznych. Podaj nazwę pliku lub pozostaw puste, aby wyłączyć."
 config_general_events: "Wymienione tutaj pliki są ładowane bezpośrednio po pliku obsługi zdarzeń. Zwykle wypełniana przez stronę aktualizacji podczas aktywacji składników, które tego potrzebują, gdy jest to konieczne. W większości przypadków można to zignorować."
 config_general_fields: "Kontrole na polach podczas imprez blokowych (gdy żądanie jest zablokowane)."
-config_general_forbid_on_block: "Który komunikat o stanie HTTP powinien wysłać CIDRAM podczas blokowania żądań? (Więcej informacji znajduje się w dokumentacji)."
 config_general_force_hostname_lookup: "Wymuszać wyszukiwanie nazw hostów? True (Prawdziwe) = Tak; False (Fałszywy) = Nie [Domyślna]. Wyszukiwanie nazw hostów jest zwykle wykonywane „na żądanie”, ale można je wymusić dla wszystkich żądań. Może to być przydatne jako sposób na dostarczenie bardziej szczegółowych informacji w plikach dziennika, ale może również mieć nieco negatywny wpływ na wydajność."
 config_general_frontend_log: "Plik do logowania próbuje zalogować się do interfejsu użytkownika. Podaj nazwę pliku lub pozostaw puste, aby wyłączyć."
+config_general_http_response_header_code: "Który komunikat o stanie HTTP powinien wysłać CIDRAM podczas blokowania żądań? (Więcej informacji znajduje się w dokumentacji)."
 config_general_ipaddr: "Gdzie znaleźć adres IP żądań połączenia? (Przydatny w przypadku usług takich jak Cloudflare i podobnych). Domyślna = REMOTE_ADDR. OSTRZEŻENIE: Nie zmieniaj tego, jeśli nie wiesz, co robisz!"
 config_general_lang: "Określ domyślny język dla CIDRAM."
 config_general_lang_override: "Kiedy to możliwe, lokalizuj według HTTP_ACCEPT_LANGUAGE? True (Prawdziwe) = Tak [Domyślna]; False (Fałszywy) = Nie."

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Latvian language data for the front-end (last modified: 2022.03.12).
+# This file: Latvian language data for the front-end (last modified: 2022.03.13).
 ##/
 
 Extended Description Bypasses: "Noklusējuma paraksta apiešana faili, kas parasti ir iekļauti galvenajā paketē."
@@ -87,7 +87,7 @@ config_bypasses_used: "Kuri apvedceļi jāizmanto?"
 config_experimental: "Nestabils/Eksperimentāls!"
 config_general: "Vispārējā konfigurācija (jebkura pamata konfigurācija, kas nepieder citām kategorijām)."
 config_general_allow_gethostbyaddr_lookup: "Vai atļaut meklēt ar gethostbyaddr, kad UDP nav pieejams? True (Patiess) = Jā [Noklusējuma]; False (Nepatiess) = Nē."
-config_general_ban_override: "Vai ignorēt "forbid_on_block", ja tiek pārsniegts "infraction_limit"? Ja tā, bloķētie pieprasījumi atdod tukšu lapu (veidņu faili netiek izmantoti). 200 = Neignorējiet [Noklusējuma]. Citas vērtības ir tādas pašas kā pieejamās vērtības "forbid_on_block"."
+config_general_ban_override: "Vai ignorēt "http_response_header_code", ja tiek pārsniegts "infraction_limit"? Ja tā, bloķētie pieprasījumi atdod tukšu lapu (veidņu faili netiek izmantoti). 200 = Neignorējiet [Noklusējuma]. Citas vērtības ir tādas pašas kā pieejamās vērtības "http_response_header_code"."
 config_general_config_imports: "Ar komatu atdalīts failu saraksts, kas jāimportē CIDRAM noklusējuma konfigurācijā. Parasti aizpilda atjauninājumu lapa, kad tiek aktivizēti komponenti, kuriem tas nepieciešams, kad nepieciešams. Vairumā gadījumu var to ignorēt."
 config_general_default_algo: "Definē, kuru algoritmu izmantot visām turpmākajām parolēm un sesijām. Iespējas: PASSWORD_DEFAULT (noklusējuma), PASSWORD_BCRYPT, PASSWORD_ARGON2I (nepieciešama &gt;= 7.2.0), PASSWORD_ARGON2ID (nepieciešama &gt;= 7.3.0)."
 config_general_default_dns: "Ar komatu atdalīts DNS serveru saraksts, ko izmantot saimniekdatora nosaukuma meklēšanā. Noklusējuma = "8.8.8.8,8.8.4.4" (Google DNS). BRĪDINĀJUMS: Nemainiet to, ja vien nezināt, ko darāt!"
@@ -99,9 +99,9 @@ config_general_emailaddr_display_style: "Kā jūs vēlētos, lai e-pasta adrese 
 config_general_error_log: "Fails reģistrēšanai visas atklātās kļūdas, kas nav fatālas. Norādiet faila nosaukumu, vai atstājiet tukšu, lai to atspējotu."
 config_general_events: "Šeit uzskaitītie faili tiek ielādēti tūlīt pēc notikumu apstrādātāja faila. Parasti aizpilda atjauninājumu lapa, kad tiek aktivizēti komponenti, kuriem tas nepieciešams, kad nepieciešams. Vairumā gadījumu var to ignorēt."
 config_general_fields: "Kontroles mehānisms laukiem bloka notikumu laikā (kad pieprasījums ir bloķēts)."
-config_general_forbid_on_block: "Kurš HTTP statusa ziņojums būtu jāsūta CIDRAM, bloķējot pieprasījumus? (Papildinformāciju skatiet dokumentācijā)."
 config_general_force_hostname_lookup: "Force hostname lookups? True (Patiess) = Jā; False (Nepatiess) = Nē [Noklusējuma]. Hostname lookups are normally performed on an "as needed" basis, but can be forced for all requests. Doing so may be useful as a means of providing more detailed information in the logfiles, but may also have a slightly negative effect on performance."
 config_general_frontend_log: "Fails ielogošanās mēģinājumu reģistrēšanai. Norādiet faila nosaukumu, vai atstājiet tukšu, lai to atspējotu."
+config_general_http_response_header_code: "Kurš HTTP statusa ziņojums būtu jāsūta CIDRAM, bloķējot pieprasījumus? (Papildinformāciju skatiet dokumentācijā)."
 config_general_ipaddr: "Kur atrast savienojošo pieprasījumu IP adresi? (Noderīga tādiem pakalpojumiem kā Cloudflare un tamlīdzīgi). Noklusējuma = REMOTE_ADDR. BRĪDINĀJUMS: Nemainiet to, ja vien nezināt, ko darāt!"
 config_general_lang: "Norādiet CIDRAM noklusējuma valodu."
 config_general_lang_override: "Ja iespējams, lokalizēt saskaņā ar HTTP_ACCEPT_LANGUAGE? True (Patiess) = Jā [Noklusējuma]; False (Nepatiess) = Nē."

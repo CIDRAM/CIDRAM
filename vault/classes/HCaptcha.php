@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: HCaptcha class (last modified: 2022.03.10).
+ * This file: HCaptcha class (last modified: 2022.03.16).
  */
 
 namespace CIDRAM\Core;
@@ -212,14 +212,15 @@ class HCaptcha extends Captcha
         $Truncate = $CIDRAM['ReadBytes']($CIDRAM['Config']['general']['truncate']);
         $WriteMode = (!file_exists($Filename) || $Truncate > 0 && filesize($Filename) >= $Truncate) ? 'wb' : 'ab';
         $Data = sprintf(
-            "%1\$s%2\$s - %3\$s%4\$s - %5\$s%6\$s\n",
+            '%1$s%7$s%2$s - %3$s%7$s%4$s - %5$s%7$s%6$s',
             $this->CIDRAM['L10N']->getString('field_ipaddr'),
             $this->CIDRAM['Config']['legal']['pseudonymise_ip_addresses'] ? $this->CIDRAM['Pseudonymise-IP']($this->CIDRAM['IPAddr']) : $this->CIDRAM['IPAddr'],
             $this->CIDRAM['L10N']->getString('field_datetime'),
             $this->CIDRAM['BlockInfo']['DateTime'],
             $this->CIDRAM['L10N']->getString('field_captcha'),
-            $this->CIDRAM['BlockInfo']['CAPTCHA']
-        );
+            $this->CIDRAM['BlockInfo']['CAPTCHA'],
+            $this->CIDRAM['L10N']->getString('pair_separator')
+        ) . "\n";
 
         /** Adds a second newline to match the standard block events logfile in case of combining the logfiles. */
         if ($this->CIDRAM['Config']['hcaptcha']['logfile'] === $this->CIDRAM['Config']['general']['logfile']) {

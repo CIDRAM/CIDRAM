@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6_isps.dat
 
-# Version: 2022.69.0
-# Last modified: 2022.03.11
+# Version: 2022.74.0
+# Last modified: 2022.03.16
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -297,12 +297,13 @@ Tag: Bharti Airtel
 # Phillipines domestic ISP. Spam, phishing, port scans, hacking, and
 # brute-force attacks detected from here. Listing just the affected
 # ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 342.
-# Updated: 2021.12.07
+# Stop Forum Spam (SFS) listings: 397.
+# Updated: 2022.03.13
 
 2404:3c00:502e:6cf0::/64 Deny Spam
 2404:3c00:502e:fb20::/64 Deny Spam
 2404:3c00:502f:34b0::/64 Deny Spam
+2404:3c00:502f:fa40::/64 Deny Spam
 2404:3c00:c02f:f900::/64 Deny Spam
 Origin: PH
 Profile: Domestic ISP
@@ -651,28 +652,45 @@ Tag: TELEFNICA BRASIL S.A
 # ASNs 10796, 11351, 11426, 11427, 12271, 20001, 20115 ("Charter Communications").
 # United States domestic ISP. Caught probing honeypots. Port scans and spam
 # also detected from here. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 1,050 (AS10796), 1,172 (AS11426), 1,172 (AS11427), 2,623 (AS20115).
-# Updated: 2021.09.09
+# Stop Forum Spam (SFS) listings: 1,309 (AS10796), 849 (AS11351),
+# 1,407 (AS11426), 1,371 (AS11427), 776 (AS12271), 1,755 (AS20001), 2,864 (AS20115).
+# Updated: 2022.03.14
 
-2600:6c4a:4c7f:a071::/64 Deny Spam
-2600:6c55:4c7f:f8b7::/64 Deny Spam
-2600:6c5a:6e7f:f429::/64 Deny Spam
-2600:6c5d:4200:69a1::/64 Deny Spam
-2603:6010:1105:91e4::/64 Deny Spam
-2603:6010:3501:fa00::/64 Deny Spam
-2603:6010:7004:ca8b::/64 Deny Spam
-2603:6011:390a:d46b::/64 Deny Spam
-2603:6080:4913:f918::/64 Deny Spam
+2600:6c52:6d00:c9f::/64 Deny Spam
+2600:6c54:7a00:256e::/64 Deny Spam
+2600:6c55:6a00:3882::/64 Deny Spam
+2600:6c56:567f:f238::/64 Deny Spam
+2600:6c58:757f:e519::/64 Deny Spam
+2600:6c5d:5900:b13b::/64 Deny Spam
+2600:6c5e:497e:f91e::/64 Deny Spam
+2603:6000:c307:9c18::/64 Deny Spam
+2603:6010:5820:14::/64 Deny Spam
+2603:6010:5e2e:9000::/64 Deny Spam
+2603:6010:9700:f400::/64 Deny Spam
+2603:6010:ab01:4700::/64 Deny Spam
+2603:6010:f206:b8e8::/64 Deny Spam
+2603:6011:4940:4b::/64 Deny Spam
+2603:6011:5441:f0d8::/64 Deny Spam
+2603:6080:1e08:bde::/64 Deny Spam
 2603:6080:5f06:f1d0::/64 Deny Spam
-2603:6080:d600:fd19::/64 Deny Spam
-2603:6081:4205:eb2d::/64 Deny Spam
-2603:6081:7a00:4c::/64 Deny Spam
-2603:8080:3303:78a0::/64 Deny Spam
-2603:8080:6a03:53a4::/64 Deny Spam
-2603:8080:bc01:f6f4::/64 Deny Spam
-2603:8081:6506:e6c::/64 Deny Spam
+2603:6080:b742:16b9::/64 Deny Spam
+2603:6081:403:c07d::/64 Deny Spam
+2603:7000:2600:34a7::/64 Deny Spam
+2603:7000:9a03:8699::/64 Deny Spam
+2603:7000:a200:6be1::/64 Deny Spam
+2603:7081:3701:5f00::/64 Deny Spam
+2603:7081:6d41:8000::/64 Deny Spam
+2603:8000:3502:109::/64 Deny Spam
+2603:8000:8001:b672::/64 Deny Spam
+2603:8000:bb01:813f::/64 Deny Spam
+2603:8001:1d43:2100::/64 Deny Spam
+2603:8001:7a01:a1e::/64 Deny Spam
+2603:8001:b803:ee76::/64 Deny Spam
+2603:800c:2b40:9f00::/64 Deny Spam
+2603:8080:d700:fb88::/64 Deny Spam
+2603:8081:3f01:130d::/64 Deny Spam
 Origin: US
-Profile: Domestic ISP
+Profile: Domestic ISP;University
 Tag: Charter Communications
 
 
@@ -747,15 +765,12 @@ Tag: Ote SA
 # "AMX Argentina S.A", "CLARO S.A").
 # A South American ISP caught performing brute-force and webapp attacks, port
 # scans, and spamming. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 466 (AS11664), 186 (AS19037), 4,069 (AS28573).
-# Updated: 2021.10.31
+# Stop Forum Spam (SFS) listings: 680 (AS11664), 172 (AS19037), 3,027 (AS28573).
+# Updated: 2022.03.15
 
-2803:9800:b014:823d::/64 Deny Spam
+2803:9800:908f:80a0::/64 Deny Spam
 Origin: AR
-2804:14c:5b30:8542::/64 Deny Spam
-2804:14d:32d1:8b9d::/64 Deny Spam
-2804:14d:4c85:1579::/64 Deny Spam
-2804:14d:72b3:a1b0::/64 Deny Spam
+2804:14d:3291:4e99::/64 Deny Spam
 Origin: BR
 Profile: Domestic ISP
 Tag: CLARO S.A
@@ -799,67 +814,6 @@ Tag: Hot-Net internet
 Origin: MX
 Profile: Domestic ISP
 Tag: Uninet
-
-
-# ASNs 10796, 11426, 11427, 20001, 20115 ("Charter Communications").
-# United States domestic ISP. Caught probing honeypots. Port scans and spam
-# also detected from here. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 1,132 (AS10796), 1,152 (AS11426), 1,263 (AS11427), 1,799 (AS20001), 2,331 (AS20115).
-# Updated: 2021.12.02
-
-2600:6c40:5b00:252::/64 Deny Spam
-2600:6c50:57f:cd12::/64 Deny Spam
-2600:6c51:657f:a393::/64 Deny Spam
-2600:6c52:6000:59f::/64 Deny Spam
-2600:6c56:6200:451e::/64 Deny Spam
-2600:6c56:7100:2e8f::/64 Deny Spam
-2600:6c58:c00:3b40::/64 Deny Spam
-2600:6c5e:5e7f:ffb8::/64 Deny Spam
-2600:6c64:6d7f:951a::/64 Deny Spam
-2603:6010:2040:9c9c::/64 Deny Spam
-2603:6010:3900:67a::/64 Deny Spam
-2603:6010:4e01:7600::/64 Deny Spam
-2603:6010:6401:8630::/64 Deny Spam
-2603:6010:6e00:36f9::/64 Deny Spam
-2603:6010:7a06:21bc::/64 Deny Spam
-2603:6010:960d:62e9::/64 Deny Spam
-2603:6010:c000:3d35::/64 Deny Spam
-2603:6011:853f:ca00::/64 Deny Spam
-2603:6011:ce03:78bf::/64 Deny Spam
-2603:6011:e13f:ff81::/64 Deny Spam
-2603:6011:f900:2d59::/64 Deny Spam
-2603:6080:3a03:51b2::/64 Deny Spam
-2603:6080:5f06:f1d0::/64 Deny Spam
-2603:6080:9200:50::/64 Deny Spam
-2603:6080:a504:1142::/64 Deny Spam
-2603:6080:ab00:cab3::/64 Deny Spam
-2603:6081:5806:59e4::/64 Deny Spam
-2603:6081:7407:d690::/64 Deny Spam
-2603:6081:7f03:e708::/64 Deny Spam
-2603:6081:8006:7ce::/64 Deny Spam
-2603:6081:8a01:1eee::/64 Deny Spam
-2603:8000:f3b:80d8::/64 Deny Spam
-2603:8000:5f00:7ec::/64 Deny Spam
-2603:8000:6b41:375b::/64 Deny Spam
-2603:8000:8101:920c::/64 Deny Spam
-2603:8000:9701:9076::/64 Deny Spam
-2603:8000:ed03:d19::/64 Deny Spam
-2603:8000:f800:4a10::/64 Deny Spam
-2603:8001:f00:18cf::/64 Deny Spam
-2603:8001:3b02:5109::/64 Deny Spam
-2603:8001:4001:8b03::/64 Deny Spam
-2603:8080:1e02:700::/64 Deny Spam
-2603:8080:8a02:3f4d::/64 Deny Spam
-2603:8080:e902:4800::/64 Deny Spam
-2603:8080:fa00:dda::/64 Deny Spam
-2603:8081:5806:a000::/64 Deny Spam
-2603:8081:6f02:7852::/64 Deny Spam
-2603:8081:7101:1a00::/64 Deny Spam
-2603:8081:7340:2c84::/64 Deny Spam
-2603:8081:7f00:10ad::/64 Deny Spam
-Origin: US
-Profile: Domestic ISP
-Tag: Charter Communications
 
 
 # ASN 58055 ("Extratel Ltd").
@@ -1590,3 +1544,27 @@ Tag: DNA Oyj
 Origin: CA
 Profile: Domestic ISP
 Tag: Rogers
+
+
+# ASN 5483 ("Magyar Telekom plc").
+# Hungarian multiplay ISP. Brute-force, WordPress, and webapp attacks,
+# credential stuffing, port scans, hacking, and spam detected from here.
+# Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 529.
+# Updated: 2022.03.16
+
+2001:4c4c:1142:500::/64 Deny Attacks
+Origin: HU
+Profile: Domestic ISP;Infrastructure/Transit;Multiplay
+Tag: Magyar Telekom plc
+
+
+# ASN 269663 ("CONNECTLINK TECH").
+# Port scans, hacking, and spam detected from here.
+# Manually checked all ranges; All ranges affected.
+# Updated: 2022.03.16
+
+2804:67fc::/32 Deny Attacks
+Origin: BR
+Profile: Commercial;Restricted/Unidentifiable
+Tag: CONNECTLINK TECH

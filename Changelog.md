@@ -17,6 +17,7 @@
 - Configuration directive `statistics` has been changed from a boolean to a checkbox, to enable users to specify exactly *which* statistics they want to track. It's also now possible to track non-blocked requests (#204).
 - Configuration directive `maintenance_mode` removed. "Maintenance mode" is now implicit (determined by which execution stages are enabled), rather than explicit (determined by its own configuration directive).
 - Configuration directive `forbid_on_block` has been renamed to `http_response_header_code` (#136, #139).
+- Default value for `http_response_header_code` has been changed to `403`.
 
 #### Bugs fixed.
 - Some specific files were being misclassified by the file manager; Fixed.

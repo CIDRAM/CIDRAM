@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Defaults file (last modified: 2022.03.13).
+# This file: Defaults file (last modified: 2022.03.16).
 ##/
 
 Config Defaults:
@@ -306,7 +306,7 @@ Config Defaults:
     "Forwarded - HTTP | MDN": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Forwarded"
   http_response_header_code:
    type: "int"
-   default: 200
+   default: 403
    choices:
     200: &200 "200 OK"
     403: &403 "403 Forbidden"

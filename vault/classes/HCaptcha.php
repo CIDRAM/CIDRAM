@@ -247,7 +247,7 @@ class HCaptcha extends Captcha
     {
         header(sprintf(
             'Content-Security-Policy: default-src \'none\'; connect-src %1$s; frame-src %1$s; script-src %1$s \'unsafe-inline\'; style-src \'unsafe-inline\';',
-            '\'self\' https://assets.hcaptcha.com https://hcaptcha.com https://newassets.hcaptcha.com/' 
+            '\'self\' https://assets.hcaptcha.com https://hcaptcha.com https://newassets.hcaptcha.com/'
         ));
         $Script = '<script src="https://hcaptcha.com/1/api.js?onload=onloadCallback&render=explicit" async defer></script>';
         $Script .= '<script type="text/javascript">document.getElementById(\'hostnameoverride\').value=window.location.hostname;</script>';

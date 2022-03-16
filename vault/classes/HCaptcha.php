@@ -247,9 +247,8 @@ class HCaptcha extends Captcha
     private function generateTemplateData(string $SiteKey, string $API, bool $CookieWarn = false, bool $ApiMessage = false): string
     {
         header(sprintf(
-            'Content-Security-Policy: default-src \'none\'; connect-src %2$s; frame-src %2$s; script-src %1$s %2$s;',
-            'https://assets.hcaptcha.com',
-            'https://hcaptcha.com'
+            'Content-Security-Policy: default-src \'none\'; connect-src %1$s; frame-src %1$s; script-src %1$s \'unsafe-inline\'; style-src \'unsafe-inline\';',
+            '\'self\' https://assets.hcaptcha.com https://hcaptcha.com https://newassets.hcaptcha.com/' 
         ));
         $Script = '<script src="https://hcaptcha.com/1/api.js?onload=onloadCallback&render=explicit" async defer></script>';
         $Script .= '<script type="text/javascript">document.getElementById(\'hostnameoverride\').value=window.location.hostname;</script>';
@@ -293,7 +292,7 @@ class HCaptcha extends Captcha
     {
         return sprintf(
             "\n  <script type=\"text/javascript\">var onloadCallback=function(){window.document.hcwidget=hcaptcha.render(%s)%s}</script>",
-            "'hcform',{sitekey:'" . $SiteKey . "', theme:'" . $this->determineTheme() . "'}",
+            "'hcform',{sitekey:'" . $SiteKey . "',theme:'" . $this->determineTheme() . "'}",
             ($API === 'Invisible') ? ';hcaptcha.execute()' : ''
         );
     }

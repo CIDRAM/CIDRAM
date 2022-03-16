@@ -21,6 +21,7 @@
 #### Bugs fixed.
 - Some specific files were being misclassified by the file manager; Fixed.
 - HCaptcha class was sending invalid headers when generating output; Fixed (#293).
+- Wrong CSP headers being set by the HCaptcha class; Fixed (#294).
 
 #### Other changes.
 - Improved IP address resolution strategy (#286).

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2022.03.13).
+ * This file: Front-end handler (last modified: 2022.03.16).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -3878,7 +3878,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-tracking' && $CIDRAM['FE']['
 /** CIDR Calculator. */
 elseif ($CIDRAM['QueryVars']['cidram-page'] === 'cidr-calc' && $CIDRAM['FE']['Permissions'] === 1) {
     /** Page initial prepwork. */
-    $CIDRAM['InitialPrepwork']($CIDRAM['L10N']->getString('link_cidr_calc'), $CIDRAM['L10N']->getString('tip_cidr_calc'), false);
+    $CIDRAM['InitialPrepwork']($CIDRAM['L10N']->getString('link_cidr_calc'), $CIDRAM['L10N']->getString('tip_cidr_calc'));
 
     /** Template for result rows. */
     $CIDRAM['FE']['CalcRow'] = $CIDRAM['ReadFile']($CIDRAM['GetAssetPath']('_cidr_calc_row.html'));
@@ -3910,16 +3910,16 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'cidr-calc' && $CIDRAM['FE']['Pe
             } else {
                 $Last = $CIDRAM['L10N']->getString('response_error');
             }
-            $Arr = ['CIDR' => $CIDR, 'Range' => $First . ' – ' . $Last];
+            $Arr = ['CIDR' => $CIDR, 'ID' => preg_replace('~[^\dA-fa-f]~', '_', $CIDR), 'Range' => $First . ' – ' . $Last];
             $CIDRAM['FE']['Ranges'] .= $CIDRAM['ParseVars']($Arr, $CIDRAM['FE']['CalcRow']);
         });
     }
 
     /** Parse output. */
-    $CIDRAM['FE']['FE_Content'] = $CIDRAM['ParseVars'](
-        $CIDRAM['L10N']->Data + $CIDRAM['FE'],
+    $CIDRAM['FE']['FE_Content'] = $CIDRAM['ParseVars']($CIDRAM['L10N']->Data, $CIDRAM['ParseVars'](
+        $CIDRAM['FE'],
         $CIDRAM['ReadFile']($CIDRAM['GetAssetPath']('_cidr_calc.html'))
-    );
+    ));
 
     /** Send output. */
     echo $CIDRAM['SendOutput']();

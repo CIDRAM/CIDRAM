@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Output generator (last modified: 2022.03.01).
+ * This file: Output generator (last modified: 2022.03.16).
  */
 
 /** Initialise cache. */
@@ -723,10 +723,10 @@ if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
         $CIDRAM['BlockInfo'],
         [
             'L10N-Lang-Attache' => $CIDRAM['L10N-Lang-Attache'],
-            'GeneratedBy' => sprintf(
+            'GeneratedBy' => !$CIDRAM['Config']['general']['hide_version'] ? sprintf(
                 $CIDRAM['Client-L10N']->getString('generated_by'),
                 '<div id="ScriptIdent" dir="ltr">' . $CIDRAM['ScriptIdent'] . '</div>'
-            ),
+            ) : '',
             'Title' => $CIDRAM['Client-L10N']->getString($CIDRAM['Config']['template_data']['block_event_title']) ?: $CIDRAM['Config']['template_data']['block_event_title']
         ]
     );
@@ -914,10 +914,10 @@ if (empty($CIDRAM['CaptchaDone']) && empty($CIDRAM['Whitelisted']) && empty($CID
         /** Parsed to the CAPTCHA's HTML file. */
         $CIDRAM['Parsables'] = array_merge($CIDRAM['FieldTemplates'], $CIDRAM['FieldTemplates'], $CIDRAM['BlockInfo']);
         $CIDRAM['Parsables']['L10N-Lang-Attache'] = $CIDRAM['L10N-Lang-Attache'];
-        $CIDRAM['Parsables']['GeneratedBy'] = sprintf(
+        $CIDRAM['Parsables']['GeneratedBy'] = !$CIDRAM['Config']['general']['hide_version'] ? sprintf(
             $CIDRAM['Client-L10N']->getString('generated_by'),
             '<div id="ScriptIdent" dir="ltr">' . $CIDRAM['ScriptIdent'] . '</div>'
-        );
+        ) : '';
         $CIDRAM['Parsables']['Title'] = $CIDRAM['Client-L10N']->getString($CIDRAM['Config']['template_data']['captcha_title']) ?: $CIDRAM['Config']['template_data']['captcha_title'];
 
         /** Pull relevant client-specified L10N data first. */

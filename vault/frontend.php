@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2022.03.16).
+ * This file: Front-end handler (last modified: 2022.03.17).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -1625,6 +1625,26 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
                 $CIDRAM['ThisDir']['FieldOut'] .= '</small>';
             }
 
+            /** Provide hints, useful for users to better understand the directive at hand. */
+            if (!empty($CIDRAM['DirValue']['hints'])) {
+                $CIDRAM['ThisDir']['Hints'] = $CIDRAM['L10N']->Data[$CIDRAM['DirValue']['hints']] ?? $CIDRAM['DirValue']['hints'];
+                if (!is_array($CIDRAM['ThisDir']['Hints'])) {
+                    $CIDRAM['ThisDir']['Hints'] = [$CIDRAM['ThisDir']['Hints']];
+                }
+                foreach ($CIDRAM['ThisDir']['Hints'] as $CIDRAM['ThisDir']['HintKey'] => $CIDRAM['ThisDir']['HintValue']) {
+                    if (is_int($CIDRAM['ThisDir']['HintKey'])) {
+                        $CIDRAM['ThisDir']['FieldOut'] .= sprintf("\n<br /><br />%s", $CIDRAM['ThisDir']['HintValue']);
+                        continue;
+                    }
+                    $CIDRAM['ThisDir']['FieldOut'] .= sprintf(
+                        "\n<br /><br /><span class=\"s\">%s</span> %s",
+                        $CIDRAM['ThisDir']['HintKey'],
+                        $CIDRAM['ThisDir']['HintValue']
+                    );
+                }
+            }
+
+            /** Provide additional information, useful for users to better understand the directive at hand. */
             if (!empty($CIDRAM['DirValue']['See also']) && is_array($CIDRAM['DirValue']['See also'])) {
                 $CIDRAM['ThisDir']['FieldOut'] .= sprintf("\n<br /><br />%s<ul>\n", $CIDRAM['L10N']->getString('label_see_also'));
                 foreach ($CIDRAM['DirValue']['See also'] as $CIDRAM['DirValue']['Ref key'] => $CIDRAM['DirValue']['Ref link']) {
@@ -1636,6 +1656,8 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
                 }
                 $CIDRAM['ThisDir']['FieldOut'] .= "\n</ul>";
             }
+
+            /** Finalise configuration row. */
             $CIDRAM['FE']['ConfigFields'] .= $CIDRAM['ParseVars'](
                 $CIDRAM['L10N']->Data + $CIDRAM['ThisDir'],
                 $CIDRAM['FE']['ConfigRow']

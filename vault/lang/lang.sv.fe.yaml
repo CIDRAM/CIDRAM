@@ -7,10 +7,10 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Swedish language data for the front-end (last modified: 2022.03.10).
+# This file: Swedish language data for the front-end (last modified: 2022.03.19).
 ##/
 
-Extended Description Bypasses: "Standard bypass-filen som normalt ingår i huvudpaketet."
+Extended Description Bypasses: "Standard-signatur-bypass-filer som normalt ingår i huvudpaketet."
 Extended Description Chart.js: "Gör det möjligt för framsidan att generera cirkeldiagram.<br />{{Links.Chart.js}} är tillgängligt via <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
 Extended Description IPv4: &ExtDesCloud "Blockerar oönskade molntjänster och icke-mänskliga ändpunkter."
 Extended Description IPv4-Bogons: &ExtDesBogons "Blockerar bogon/martian CIDRer."
@@ -37,7 +37,7 @@ Extended Description module_httpver.php: "Gör det möjligt att blockera specifi
 Extended Description module_projecthoneypot.php: "Blockerar förfrågningar från IP-adresser som listas på Project Honeypot."
 Extended Description module_refspam.php: "Blockering baserat på referensspam ger i allmänhet ingen meningsfull säkerhetsfördel, men i vissa fall kan det vara användbart för vissa användare, för att samla in mer information om förfrågningar och för att kunna rapportera det.<br />Genom att installera den här modulen installeras också Symfony polyfyllningar för {{Links.Symfony.Intl/Idn}} och {{Links.Symfony.Mbstring}} (eftersom den här modulen kräver Idn-funktionalitet, som inte alla PHP-installationer tillhandahåller som standard), båda som är tillgängliga via <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a>-licensen."
 Extended Description module_sfs.php: "Skyddar registrerings och inloggningssidor mot IP-adresser som listas av SFS."
-Name Bypasses: "Standard signatur bypasses."
+Name Bypasses: "Standard-signatur-bypasser."
 Name CN_cidram.inc: "Kina IPv4-blocklista"
 Name IPv4: "IPv4 (molntjänster och värdtjänster)."
 Name IPv4-Bogons: "IPv4 (bogons)."
@@ -78,8 +78,8 @@ config_PHPMailer_skip_auth_process: "Genom att ställa in detta direktiv till <c
 config_PHPMailer_smtp_auth: "Detta direktiv bestämmer huruvida du ska autentisera SMTP-sessioner (borde normalt lämna det här ensam)."
 config_PHPMailer_smtp_secure: "Protokollet som ska användas när du skickar e-post via SMTP (TLS eller SSL)."
 config_PHPMailer_username: "Användarnamnet som ska användas när du skickar e-post via SMTP."
-config_bypasses: "Konfiguration för förbikoppling av standardsignatur."
-config_bypasses_used: "Vilka förbikopplingar ska användas?"
+config_bypasses: "Konfiguration för standard-signatur-bypasserna."
+config_bypasses_used: "Vilka bypasser ska användas?"
 config_experimental: "Instabil/Experimentell!"
 config_general: "Allmän konfiguration (alla kärnkonfigurationer som inte tillhör andra kategorier)."
 config_general_allow_gethostbyaddr_lookup: "Tillåt gethostbyaddr-uppslag när UDP är otillgänglig? True = Ja [Standard]; False = Nej."
@@ -317,7 +317,7 @@ info_some_useful_links: |
 label_active_config_file: "Aktiv konfigurationsfil:"
 label_actual: "Aktuell"
 label_aux_actBlk: "blockera"
-label_aux_actByp: "kringgå"
+label_aux_actByp: "bypassera"
 label_aux_actGrl: "grålista"
 label_aux_actLog: "logga inte"
 label_aux_actPro: "profilera"

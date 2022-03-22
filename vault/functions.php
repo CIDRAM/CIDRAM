@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2022.02.21).
+ * This file: Functions file (last modified: 2022.03.22).
  */
 
 /** Autoloader for CIDRAM classes. */
@@ -945,10 +945,9 @@ $CIDRAM['DNS-Resolve'] = function (string $Host, int $Timeout = 5) use (&$CIDRAM
  * @param string|array $Domains Accepted domain/hostname partials.
  * @param string $Friendly A friendly name to use in logfiles.
  * @param array $Options Various options that can be passed to the closure.
- * @return bool Returns true when a determination is successfully made, and
- *      false when a determination isn't able to be made.
+ * @return void
  */
-$CIDRAM['DNS-Reverse-Forward'] = function ($Domains, string $Friendly, array $Options = []) use (&$CIDRAM): bool {
+$CIDRAM['DNS-Reverse-Forward'] = function ($Domains, string $Friendly, array $Options = []) use (&$CIDRAM): void {
     /** Fetch the hostname. */
     if (empty($CIDRAM['Hostname'])) {
         $CIDRAM['Hostname'] = $CIDRAM['DNS-Reverse']($CIDRAM['BlockInfo']['IPAddr']);
@@ -956,7 +955,7 @@ $CIDRAM['DNS-Reverse-Forward'] = function ($Domains, string $Friendly, array $Op
 
     /** Do nothing more if we weren't able to resolve the DNS hostname. */
     if (!$CIDRAM['Hostname'] || $CIDRAM['Hostname'] === $CIDRAM['BlockInfo']['IPAddr']) {
-        return false;
+        return;
     }
 
     /** Flag for whether our checks pass or fail. */
@@ -997,13 +996,13 @@ $CIDRAM['DNS-Reverse-Forward'] = function ($Domains, string $Friendly, array $Op
             ), $CIDRAM['L10N']->getString('why_single_hit_bypass'));
 
             /** Exit. */
-            return true;
+            return;
         }
 
         /** Attempt to resolve. */
         if (!$Resolved = $CIDRAM['DNS-Resolve']($CIDRAM['Hostname'])) {
             /** Failed to resolve. Do nothing else and exit. */
-            return false;
+            return;
         }
 
         /** It's the real deal. */
@@ -1027,29 +1026,16 @@ $CIDRAM['DNS-Reverse-Forward'] = function ($Domains, string $Friendly, array $Op
             ), $CIDRAM['L10N']->getString('why_single_hit_bypass'));
 
             /** Exit. */
-            return true;
+            return;
         }
     }
 
     /** It's a fake; Block it. */
-    $Reason = $CIDRAM['ParseVars'](['ua' => $Friendly], $CIDRAM['L10N']->getString('fake_ua'));
-    $CIDRAM['BlockInfo']['ReasonMessage'] = $Reason;
-    if (!empty($CIDRAM['BlockInfo']['WhyReason'])) {
-        $CIDRAM['BlockInfo']['WhyReason'] .= ', ';
-    }
-    $CIDRAM['BlockInfo']['WhyReason'] .= $Reason;
-    if (!empty($CIDRAM['BlockInfo']['Signatures'])) {
-        $CIDRAM['BlockInfo']['Signatures'] .= ', ';
-    }
-    $Debug = debug_backtrace(DEBUG_BACKTRACE_PROVIDE_OBJECT | DEBUG_BACKTRACE_IGNORE_ARGS, 1)[0];
-    $CIDRAM['BlockInfo']['Signatures'] .= basename($Debug['file']) . ':L' . $Debug['line'];
-    $CIDRAM['BlockInfo']['SignatureCount']++;
+    $Reason = sprintf($CIDRAM['L10N']->getString('Short_Fake_UA'), $Friendly);
+    $CIDRAM['Trigger'](true, $Reason);
 
     /** Reporting. */
     $CIDRAM['Reporter']->report([19], ['Caught masquerading as ' . $Friendly . '.'], $CIDRAM['BlockInfo']['IPAddr']);
-
-    /** Exit. */
-    return true;
 };
 
 /**
@@ -1112,29 +1098,8 @@ $CIDRAM['UA-ASN-Match'] = function ($Origins, string $Friendly, array $Options =
 };
 
 /**
- * Checks whether a country code is expected. If so, tracking is disabled for
- * the IP of the request, and if not, the request is blocked. Has no return
- * value. Will only work as expected if a module or other facility of some
- * kind, capable of performing country code lookups, has been enabled.
- *
- * @param string|array $CCs Accepted country codes.
- * @param string $Friendly A friendly name to use in logfiles.
- * @param array $Options Various options that can be passed to the closure.
- * @return void
- */
-$CIDRAM['UA-CC-Match'] = function ($CCs, string $Friendly, array $Options = []) use (&$CIDRAM): void {
-    /** Guard. */
-    if (empty($CIDRAM['BlockInfo']['CCLookup']) || $CIDRAM['BlockInfo']['CCLookup'] === 'XX') {
-        return;
-    }
-
-    /** Route to matching code. */
-    $CIDRAM['UA-X-Match']($CIDRAM['BlockInfo']['CCLookup'], $CCs, $Friendly, $Options);
-};
-
-/**
- * Routes from UA-IP-Match, UA-ASN-Match, UA-CC-Match (implemented to reduce
- * potential code duplication). Has no return value.
+ * Routes from UA-IP-Match, UA-CIDR-Match, and UA-ASN-Match.
+ * Has no return value.
  *
  * @param mixed $Datapoints The datapoint to be matched.
  * @param string|array $Expected The expected values (per the call origin).
@@ -1173,18 +1138,8 @@ $CIDRAM['UA-X-Match'] = function ($Datapoints, $Expected, string $Friendly, arra
     }
 
     /** Nothing matched. Block it. */
-    $Reason = $CIDRAM['ParseVars'](['ua' => $Friendly], $CIDRAM['L10N']->getString('fake_ua'));
-    $CIDRAM['BlockInfo']['ReasonMessage'] = $Reason;
-    if (!empty($CIDRAM['BlockInfo']['WhyReason'])) {
-        $CIDRAM['BlockInfo']['WhyReason'] .= ', ';
-    }
-    $CIDRAM['BlockInfo']['WhyReason'] .= $Reason;
-    if (!empty($CIDRAM['BlockInfo']['Signatures'])) {
-        $CIDRAM['BlockInfo']['Signatures'] .= ', ';
-    }
-    $Debug = debug_backtrace(DEBUG_BACKTRACE_PROVIDE_OBJECT | DEBUG_BACKTRACE_IGNORE_ARGS, 1)[0];
-    $CIDRAM['BlockInfo']['Signatures'] .= basename($Debug['file']) . ':L' . $Debug['line'];
-    $CIDRAM['BlockInfo']['SignatureCount']++;
+    $Reason = sprintf($CIDRAM['L10N']->getString('Short_Fake_UA'), $Friendly);
+    $CIDRAM['Trigger'](true, $Reason);
 
     /** Reporting. */
     $CIDRAM['Reporter']->report([19], ['Caught masquerading as ' . $Friendly . '.'], $CIDRAM['BlockInfo']['IPAddr']);

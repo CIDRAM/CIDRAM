@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (simplified) language data for the front-end (last modified: 2022.03.13).
+# This file: Chinese (simplified) language data for the front-end (last modified: 2022.03.21).
 ##/
 
 Extended Description Bypasses: "标准签名旁路文件通常包括在主包。"
@@ -62,12 +62,17 @@ Name module_httpver.php: "HTTP版本检查器模块"
 Name module_projecthoneypot.php: "Project Honeypot 模块"
 Name module_refspam.php: "引荐来源垃圾邮件模块"
 Name module_sfs.php: "Stop Forum Spam 模块"
+checkbox_label_block_negatives: "阻止阴性？"
+checkbox_label_block_nonverified: "阻止未验证的请求？"
 checkbox_label_fields_logs: "该字段是否应该出现在日志条目中？"
 checkbox_label_fields_omit: "为空时忽略此字段？"
 checkbox_label_fields_page_output: "该字段是否应该出现在“拒绝访问”页面上？"
+checkbox_label_single_hit_bypass: "允许一击绕过？"
 checkbox_label_stage_enable: "启用此阶段？"
 checkbox_label_stage_infractions: "将在此阶段产生的违规计入IP跟踪？"
 checkbox_label_stage_log_errors: "记录在此阶段产生的任何错误？"
+checkbox_label_untrack_positives: "取消跟踪阳性？"
+checkbox_label_verify: "尝试验证？"
 config_PHPMailer: "PHPMailer的配置（用于双因素身份验证）。"
 config_PHPMailer_add_reply_to_address: "通过SMTP发送电子邮件时引用的回复地址。"
 config_PHPMailer_add_reply_to_name: "通过SMTP发送电子邮件时引用的回复姓名。"
@@ -98,7 +103,7 @@ config_general_emailaddr: "如果您希望，​您可以提供电子邮件地�
 config_general_emailaddr_display_style: "您希望如何将电子邮件地址呈现给用户？"
 config_general_error_log: "用于记录检测到的任何非致命错误的文件。​指定一个文件名，​或留空以禁用。"
 config_general_events: "此处列出的文件在事件处理程序文件之后直接加载。​通常在启用组件时由更新页面按需填充。​大多数情况下，可以忽略它。"
-config_general_fields: "块事件期间的字段控件（当请求被阻止时）。"
+config_general_fields: "用于阻止事件的字段控件（当请求被阻止时）。"
 config_general_force_hostname_lookup: "强制主机名查找？​True（真）=跟踪；False（假）=不跟踪【标准】。​主机名查询通常在“根据需要”的基础上执行，但可以在所有请求上强制。​这可能会有助于提供日志文件中更详细的信息，但也可能会对性能产生轻微的负面影响。"
 config_general_frontend_log: "前端登录尝试的录音文件。​指定一个文件名，​或留空以禁用。"
 config_general_http_response_header_code: "阻止请求时，CIDRAM应发送哪个HTTP状态消息？ （请参阅文档以获取更多信息）。"
@@ -114,13 +119,13 @@ config_general_logfile_apache: "Apache风格文件用于记录所有被拦截的
 config_general_logfile_serialized: "连载的文件用于记录所有被拦截的访问。​指定一个文件名，​或留空以禁用。"
 config_general_max_login_attempts: "最大前端登录尝试次数。​标准=5。"
 config_general_numbers: "您如何喜欢显示数字？​选择最适合示例。"
-config_general_other_verification: "若有可能，尝试验证其他类型的请求（例如，AdSense，SEO检查器，等等）？​当检测到时，伪造的请求将被阻止。​True（真）=启用【标准】；​False（假）=禁用。"
+config_general_other_verification: "用于在可能的情况下，验证其他类型的请求的控件。"
 config_general_protect_frontend: "指定是否应将CIDRAM通常提供的保护应用于前端。​True（真）=是【标准】；False（假）=不是。"
-config_general_search_engine_verification: "尝试验证来自搜索引擎的请求？​验证搜索引擎确保他们不会因超过违规限制而被禁止 （禁止在您的网站上使用搜索引擎通常会有产生负面影响对您的搜索引擎排名，​SEO，​等等）。​当被验证，​搜索引擎可以被阻止，​但不会被禁止。​当不被验证，​他们可以由于超过违规限制而被禁止。​另外，​搜索引擎验证提供保护针对假搜索引擎请求和针对潜在的恶意实体伪装成搜索引擎（当搜索引擎验证是启用，​这些请求将被阻止）。​True（真）=搜索引擎验证是启用【标准】；False（假）=搜索引擎验证是禁用。"
+config_general_search_engine_verification: "用于验证来自搜索引擎的请求的控件。"
 config_general_signatures_update_event_log: "通过前端更新签名时用于记录的文件。​指定一个文件名，​或留空以禁用。"
 config_general_silent_mode: "CIDRAM应该默默重定向被拦截的访问而不是显示该“拒绝访问”页吗？​指定位置至重定向被拦截的访问，​或让它空将其禁用。"
-config_general_social_media_verification: "尝试验证社交媒体请求？​社交媒体验证可以防止虚假社交媒体请求（此类请求将被阻止）。​True（真）=启用社交媒体验证【标准】；​False（假）=禁用社交媒体验证。"
-config_general_stages: "控制执行链的各个阶段（是否启用，是否记录错误，等等）。"
+config_general_social_media_verification: "用于验证来自社交媒体平台的请求的控件。"
+config_general_stages: "用于执行链的各个阶段的控件（是否启用，是否记录错误，等等）。"
 config_general_statistics: "控制要跟踪的统计信息。"
 config_general_time_format: "CIDRAM使用的日期符号格式。​可根据要求增加附加选项。"
 config_general_time_offset: "时区偏移量（分钟）。"
@@ -267,6 +272,9 @@ field_verify_all: "验证全部"
 field_whitelisted_requests: "在白名单中的请求"
 field_your_version: "您的版本"
 header_login: "请登录以继续。"
+hints_verification:
+ "什么是“阳性”和“阴性”？": "在验证请求提供的身份时，成功的结果可以描述为“阳性”或“阴性”。​当所呈现的身份被确认为真实身份时，将被描述为“阳性”。​当所提供的身份被证实为伪造时，将被描述为“阴性”。​但是，不成功的结果（例如，验证失败，或无法确定所提供身份的真实性）不会被描述为“阳性”或“阴性”。​相反，不成功的结果将被简单地描述为未验证。​当没有尝试验证请求提供的身份时，该请求同样会被描述为未验证。​这些术语仅在请求提供的身份被识别的情况下才有意义，因此，在可以进行验证的情况下。​如果提供的身份与上面提供的选项不匹配，或者没有提供身份，则上面提供的选项变得无关。"
+ "什么是“一击绕过”？": "在某些情况下，由于签名文件、模块、或请求的其他条件，可能仍会阻止经过肯定验证的请求，为了避免误报，可能需要绕过。​在绕过旨在处理仅一项违规行为的情况下，这样的绕过可以被描述为“一击绕过”。"
 info_some_useful_links: |
  一些有用的链接：<br />
      <ul class="pieul">

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: French language data for the front-end (last modified: 2022.03.13).
+# This file: French language data for the front-end (last modified: 2022.03.21).
 ##/
 
 Extended Description Bypasses: "Les fichiers pour contourner les signatures standard qui sont normalement inclus dans le paquet principal."
@@ -29,7 +29,7 @@ Extended Description module_abuseipdb.php: "Bloque les requêtes des adresses IP
 Extended Description module_badhosts.php: "Bloque les hôtes fréquemment utilisés par les spammeurs, les hackers et autres entités malveillantes."
 Extended Description module_badhosts_isps.php: "Bloque les hôtes appartenant aux FAI/ISPs fréquemment utilisés par les spammeurs, les hackers et autres entités malveillantes."
 Extended Description module_badtlds.php: "Bloque les hôtes appartenant aux TLDs fréquemment utilisés par les spammeurs, les hackers et autres entités malveillantes."
-Extended Description module_bgpview.php: "Exploite l'API {{Links.BGPView}} pour fournir la possibilité de rechercher des codes de pays et des ASN pour CIDRAM, permettre le blocage ou la mise en liste blanche des ASN et des pays via la configuration CIDRAM, et fournir un moyen de vérification des réseaux sociaux pour vérifier les demandes de Facebook."
+Extended Description module_bgpview.php: "Exploite l'API {{Links.BGPView}} pour fournir la possibilité de rechercher des codes de pays et des ASN pour CIDRAM, permettre le blocage ou la mise en liste blanche des ASN et des pays via la configuration CIDRAM, et fournir un moyen de vérification des réseaux sociaux pour vérifier les requêtes de Facebook."
 Extended Description module_botua.php: "Bloque les agents utilisateurs associés aux bots indésirables et aux activités malveillantes."
 Extended Description module_cookies.php: "Fournit quelques protections limitées contre les cookies dangereux."
 Extended Description module_extras.php: "Fournit quelques protections limitées contre divers vecteurs d'attaque communément utilisé dans les requêtes."
@@ -62,12 +62,17 @@ Name module_httpver.php: "Module de vérification de version HTTP"
 Name module_projecthoneypot.php: "Module Project Honeypot"
 Name module_refspam.php: "Module spam référent"
 Name module_sfs.php: "Module Stop Forum Spam"
+checkbox_label_block_negatives: "Bloquer les négatifs\_?"
+checkbox_label_block_nonverified: "Bloquer les requêtes non vérifiés\_?"
 checkbox_label_fields_logs: "Inclure ce champ dans les journaux\_?"
 checkbox_label_fields_omit: "Omettre ce champ lorsqu'il est vide\_?"
 checkbox_label_fields_page_output: "Inclure ce champ sur la page «\_Accès Refusé\_»\_?"
+checkbox_label_single_hit_bypass: "Autoriser les contournements en un seul coup\_?"
 checkbox_label_stage_enable: "Activer cette étape\_?"
 checkbox_label_stage_infractions: "Compter les infractions générées lors de cette étape dans le surveillance d'IP\_?"
 checkbox_label_stage_log_errors: "Enregistrer les erreurs générées lors de cette étape\_?"
+checkbox_label_untrack_positives: "Annuler le surveillance des positifs\_?"
+checkbox_label_verify: "Essayer de vérifier\_?"
 config_PHPMailer: "Configuration pour PHPMailer (utilisé pour l'authentification à deux facteurs)."
 config_PHPMailer_add_reply_to_address: "L'adresse de réponse à citer lors de l'envoi d'e-mail via SMTP."
 config_PHPMailer_add_reply_to_name: "Le nom pour répondre à citer lors de l'envoi d'e-mail via SMTP."
@@ -114,12 +119,12 @@ config_general_logfile_apache: "Un fichier dans le style d'Apache pour enregistr
 config_general_logfile_serialized: "Un fichier sérialisé pour enregistrement de toutes les tentatives d'accès bloquées. Spécifier un fichier, ou laisser vide à désactiver."
 config_general_max_login_attempts: "Nombre maximal de tentatives de connexion (l'accès frontal). Défaut = 5."
 config_general_numbers: "Comment préférez-vous que les nombres soient affichés\_? Sélectionnez l'exemple qui vous paraît le plus approprié."
-config_general_other_verification: "Dans la mesure du possible, essayez de vérifier d'autres types de requêtes (par exemple, AdSense, vérificateurs SEO, etc)\_? Lorsqu'elles sont détectées, les fausses requêtes seront bloquées. True = Activer [Défaut]\_; False = Désactiver."
+config_general_other_verification: "Contrôles pour vérifier d'autres types de requêtes lorsque cela est possible."
 config_general_protect_frontend: "Spécifie si les protections normalement fournies par CIDRAM doivent être appliquées à l'accès frontal. True = Oui [Défaut]\_; False = Non."
-config_general_search_engine_verification: "Essayez de vérifier les moteurs de recherche\_? Vérification des moteurs de recherche assure qu'ils ne seront pas interdits en raison de dépassement de la limite d'infraction (l'interdiction des moteurs de recherche de votre site web aura généralement un effet négatif sur votre moteur de recherche classement, SEO, etc). Lorsqu'ils sont vérifiés, les moteurs de recherche peuvent être bloqués comme d'habitude, mais ne seront pas interdits. Lorsqu'ils ne sont pas vérifiés, il est possible qu'ils soient interdits en raison du dépassement de la limite d'infraction. Aussi, la vérification des moteurs de recherche offre une protection contre les fausses requêtes des moteurs de recherche et contre les entités potentiellement malveillantes masquer comme moteurs de recherche (ces requêtes seront bloquées lorsque la vérification des moteurs de recherche est activée). True = Activer la vérification du moteurs de recherche [Défaut]\_; False = Désactiver la vérification du moteurs de recherche."
+config_general_search_engine_verification: "Contrôles pour vérifier les requêtes des moteurs de recherche."
 config_general_signatures_update_event_log: "Un fichier pour la journalisation lorsque les signatures sont mises à jour via la page des mises à jour. Spécifier un fichier, ou laisser vide à désactiver."
 config_general_silent_mode: "Devrait CIDRAM rediriger silencieusement les tentatives d'accès bloquées à la place de l'affichage de la page «\_Accès Refusé\_»\_? Si oui, spécifiez l'emplacement pour rediriger les tentatives d'accès bloquées. Si non, laisser cette variable vide."
-config_general_social_media_verification: "Essayez de vérifier des requêtes de médias sociaux\_? La vérification des médias sociaux offre une protection contre les fausses requêtes de médias sociaux (ces requêtes seront bloquées). True = Activer la vérification des médias sociaux [Défaut]\_; False = Désactiver la vérification des médias sociaux."
+config_general_social_media_verification: "Contrôles pour vérifier les requêtes des plateformes de médias sociaux."
 config_general_stages: "Contrôles des étapes de la chaîne d'exécution (s'il est activé, si les erreurs sont enregistrées, etc)."
 config_general_statistics: "Contrôle les informations statistiques à suivre."
 config_general_time_format: "Le format de notation de la date/heure utilisé par CIDRAM. Des options supplémentaires peuvent être ajoutées sur requête."
@@ -263,12 +268,15 @@ field_update_all: "Tout mettre à jour"
 field_update_signatures_files: "Mettre à jour les fichiers de signature"
 field_upload_file: "Télécharger un nouveau fichier"
 field_username: "Nom d'Utilisateur"
-field_verified_requests: "Verified search engine and social media requests"
+field_verified_requests: "Les requêtes vérifiés des moteur de recherche et médias sociaux"
 field_verify: "Vérifier"
 field_verify_all: "Vérifier tous"
-field_whitelisted_requests: "Whitelisted requests"
+field_whitelisted_requests: "Requêtes qui ont été listé blanche"
 field_your_version: "Votre Version"
 header_login: "Merci de vous connecter pour continuer."
+hints_verification:
+ "Que sont les «\_positifs\_» et les «\_négatifs\_»\_?": "Lors de la vérification de l'identité présenté par une requête, un résultat réussi peut être décrit comme «\_positif\_» ou «\_négatif\_». Dans le cas où l'identité présenté est confirmé comme étant la véritable identité, elle serait décrit comme «\_positif\_». Dans le cas où l'identité présenté s'avèrerait falsifié, elle serait décrit comme «\_négatif\_». Cependant, un résultat infructueux (par exemple, la vérification échoue, ou la véracité de l'identité présenté ne peut pas être déterminé) ne serait pas décrit comme «\_positif\_» ou «\_négatif\_». Au lieu, un résultat infructueux serait décrit simplement comme non vérifié. Lorsqu'aucune tentative de vérification de l'identité présenté par une requête n'est effectué, la requête serait également décrit comme non vérifié. Les termes n'ont de sens que dans le contexte où l'identité présenté par une requête est reconnue, et donc, où la vérification est possible. Dans les cas où l'identité présenté ne correspond pas aux options fournies ci-dessus, ou lorsqu'aucune identité n'est présenté, les options fournies ci-dessus deviennent sans objet."
+ "Que sont les «\_contournements en un seul coup\_»\_?": "Dans certains cas, une requête vérifié positive peut toujours être bloquée en raison des fichiers de signature, des modules, ou d'autres conditions de la requête, et des contournements peuvent être nécessaires pour éviter les faux positifs. Dans le cas où un contournement est destiné à traiter exactement une infraction, ni plus ni moins, un tel contournement pourrait être décrit comme «\_contournements en un seul coup\_»."
 info_some_useful_links: |
  Quelques liens utiles :<br />
      <ul class="pieul">

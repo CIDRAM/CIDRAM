@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Latvian language data for the front-end (last modified: 2022.03.13).
+# This file: Latvian language data for the front-end (last modified: 2022.03.21).
 ##/
 
 Extended Description Bypasses: "Noklusējuma paraksta apiešana faili, kas parasti ir iekļauti galvenajā paketē."
@@ -62,12 +62,17 @@ Name module_httpver.php: "HTTP versiju pārbaudītāja modulis"
 Name module_projecthoneypot.php: "Project Honeypot modulis"
 Name module_refspam.php: "Novirzītāja surogātpastu modulis"
 Name module_sfs.php: "Stop Forum Spam modulis"
+checkbox_label_block_negatives: "Vai bloķēt negatīvus?"
+checkbox_label_block_nonverified: "Vai bloķēt nepārbaudītus pieprasījumus?"
 checkbox_label_fields_logs: "Vai šim laukam vajadzētu parādīties žurnāla ierakstos?"
 checkbox_label_fields_omit: "Vai izlaist šo lauku, kad tas ir tukšs?"
 checkbox_label_fields_page_output: "Vai šim laukam vajadzētu parādīties lapā "piekļuve liegta"?"
+checkbox_label_single_hit_bypass: "Vai atļaut viena trāpījuma apvedceļi?"
 checkbox_label_stage_enable: "Vai iespējot šo posmu?"
 checkbox_label_stage_infractions: "Vai šajā posmā ģenerētie pārkāpumi tiek ņemti vērā IP izsekošanas procesā?"
 checkbox_label_stage_log_errors: "Vai reģistrēt visas šajā posmā radušās kļūdas?"
+checkbox_label_untrack_positives: "Vai atcelt pozitīvu izsekošana?"
+checkbox_label_verify: "Vai mēģināt pārbaudīt?"
 config_PHPMailer: "PHPMailer konfigurācija (izmanto divu faktoru autentifikācijai)."
 config_PHPMailer_add_reply_to_address: "Respondenta adrese, ko citēt, nosūtot e-pastu izmantojot SMTP."
 config_PHPMailer_add_reply_to_name: "Respondenta vārds, ko citēt, nosūtot e-pastu izmantojot SMTP."
@@ -114,12 +119,12 @@ config_general_logfile_apache: "Apache stila fails visu bloķēto piekļuves mē
 config_general_logfile_serialized: "Sērijveida fails visu bloķēto piekļuves mēģinājumu reģistrēšanai. Norādiet faila nosaukumu, vai atstājiet tukšu, lai to atspējotu."
 config_general_max_login_attempts: "Maksimālais ielogošanās mēģinājumu skaits. Noklusējuma = 5."
 config_general_numbers: "Kā jūs izvēlaties skaitļu parādīšanu? Atlasiet piemēru, kas jums šķiet vispareizākais."
-config_general_other_verification: "Cik vien iespējams, mēģiniet pārbaudīt cita veida pieprasījumus (piemēram, AdSense, SEO pārbaudītājus, utt)? Atklājot, viltoti pieprasījumi tiks bloķēti. True (Patiess) = Iespējot [Noklusējuma]; False (Nepatiess) = Atspējot."
+config_general_other_verification: "Kontroles cita veida pieprasījumu pārbaudei, ja iespējams."
 config_general_protect_frontend: "Norāda, vai aizsargi, kurus parasti nodrošina CIDRAM, ir jāpiemēro šai administratīvajai saskarnei. True (Patiess) = Jā [Noklusējuma]; False (Nepatiess) = Nē."
-config_general_search_engine_verification: "Vai mēģināt verificēt meklētājprogrammu pieprasījumus? Meklētājprogrammu verifikācija nodrošina, ka tās netiks aizliegtas, pārkāpjot pārkāpuma robežu (meklētājprogrammu aizliegšana no jūsu vietnes parasti negatīvi ietekmē jūsu meklētājprogrammu ranžēšanu, SEO, utt). Pēc verifikācijas meklētājprogrammas var tikt bloķētas kā parasti, bet tās netiks aizliegtas. Ja tas nav verificēts, pārkāpjot pārkāpuma robežu var tos aizliedz. Turklāt meklētājprogrammu verifikācija nodrošina aizsardzību pret viltotiem meklētājprogrammu pieprasījumiem un pret tās, kas tiek maskētas kā meklētājprogrammas (šādi pieprasījumi tiks bloķēti, kad būs iespējota meklētājprogrammu verifikācija). True (Patiess) = Iespējot meklētājprogrammas verifikācija [Noklusējuma]; False (Nepatiess) = Atspējot meklētājprogrammas verifikācija"
+config_general_search_engine_verification: "Kontroles meklētājprogrammas pieprasījumu pārbaudei."
 config_general_signatures_update_event_log: "Fails reģistrēšanai, kad paraksti tiek atjaunināti, izmantojot atjauninājumu lapu. Norādiet faila nosaukumu, vai atstājiet tukšu, lai to atspējotu."
 config_general_silent_mode: "Vai CIDRAM vajadzētu klusībā novirzīt bloķētus piekļuves mēģinājumus, nevis parādīt lapu "piekļuve liegta"? Ja tā, norādiet vietu, uz kuru novirzīt bloķētus piekļuves mēģinājumus. Ja nē, atstājiet šo mainīgo tukšu."
-config_general_social_media_verification: "Vai mēģināt verificēt sociālo mediju pieprasījumus? Sociālo mediju verifikāciju nodrošina aizsardzību pret viltus sociālo mediju pieprasījumiem (šādi pieprasījumi tiks bloķēti). True (Patiess) = Iespējot sociālo mediju verifikācija [Noklusējuma]; False (Nepatiess) = Atspējot sociālo mediju verifikācija."
+config_general_social_media_verification: "Kontroles sociālo mediju platformas pieprasījumu pārbaudei."
 config_general_stages: "Kontroles mehānisms izpildes ķēdes posmiem (vai iespējots, vai tiek reģistrētas kļūdas, utt)."
 config_general_statistics: "Kontrolē, kuru statistikas informāciju izsekot."
 config_general_time_format: "CIDRAM izmantotais datuma/laika apzīmējuma formāts. Pēc pieprasījuma var tikt pievienotas papildu iespējas."
@@ -270,6 +275,9 @@ field_verify_all: "Verificēt visus"
 field_whitelisted_requests: "Baltajā sarakstā iekļautie pieprasījumi"
 field_your_version: "Jūsu Versija"
 header_login: "Lūdzu, ielogoties, lai turpinātu."
+hints_verification:
+ "Kas ir “pozitīvie” un “negatīvie”?": "Pārbaudot pieprasījuma sniegto identitāti, veiksmīgu rezultātu var raksturot kā “pozitīvu” vai “negatīvu”. Kad uzrādītā identitāte tiek apstiprināta kā patiesā identitāte, tā tiks raksturota kā “pozitīva”. Kad tiek apstiprināts, ka uzrādītā identitāte ir viltota, tā tiks raksturota kā “negatīva”. Tomēr, neveiksmīgs iznākums (piemēram, verifikācija neizdodas, vai uzrādītās identitātes patiesumu nevar noteikt) netiks raksturota kā “pozitīvu” vai “negatīvu”. Tā vietā neveiksmīgs rezultāts tiktu raksturots vienkārši kā nepārbaudīts. Ja netiek mēģināts pārbaudīt pieprasījumā norādīto identitāti, pieprasījums tāpat tiks raksturots kā nepārbaudīts. Terminiem ir jēga tikai kontekstā, kurā tiek atpazīta pieprasījumā norādītā identitāte un līdz ar to, ja ir iespējama pārbaude. Ja uzrādītā identitāte neatbilst iepriekš sniegtajām opcijām, vai ja identitāte nav uzrādīta, iepriekš sniegtās iespējas kļūst nepiemērojams."
+ "Kas ir “viena trāpījuma apvedceļi”?": "Dažos gadījumos pozitīvi pārbaudīts pieprasījums joprojām var tikt bloķēts paraksta failu, moduļu, vai citu pieprasījuma nosacījumu dēļ, un var būt nepieciešami apvedceļi, lai izvairītos no viltus pozitīviem rezultātiem. Ja apvedceļš ir paredzēts, lai tiktu galā ar tieši vienu pārkāpumu, ne vairāk un ne mazāk, šādu apvedceļu varētu raksturot kā “viena trāpījuma apvedceļu”."
 info_some_useful_links: |
  Dažas noderīgas saites:<br />
      <ul class="pieul">

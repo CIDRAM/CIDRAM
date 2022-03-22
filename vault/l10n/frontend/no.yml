@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Norwegian language data for the front-end (last modified: 2022.03.13).
+# This file: Norwegian language data for the front-end (last modified: 2022.03.21).
 ##/
 
 Extended Description Bypasses: "Standard-signatur-bypass-filene som normalt følger med hovedpakken."
@@ -37,7 +37,7 @@ Extended Description module_httpver.php: "Gjør det mulig å blokkere spesifikke
 Extended Description module_projecthoneypot.php: "Blokkerer forespørsler fra IP-er oppført på Project Honeypot."
 Extended Description module_refspam.php: "Blokkering basert på referansesøppel vil vanligvis ikke gi noen meningsfull sikkerhetsgevinst, men i noen tilfeller kan det være nyttig for noen brukere, for å samle mer informasjon om forespørsler og for å kunne rapportere det.<br />Ved å installere denne modulen installeres også Symfony-polyfyllene for {{Links.Symfony.Intl/Idn}} og {{Links.Symfony.Mbstring}} (fordi denne modulen krever Idn-funksjonalitet, som ikke alle PHP-installasjoner leverer som standard), begge som er tilgjengelige via <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a> lisensen."
 Extended Description module_sfs.php: "Beskytter registrerings og innloggingssider mot IP-adresser oppført av SFS."
-Name Bypasses: "Standard signatur bypasses."
+Name Bypasses: "Standard-signatur-bypassene."
 Name IPv4: "IPv4 (sky og hosting tjenester)."
 Name IPv4-Bogons: "IPv4 (bogoner)."
 Name IPv4-ISPs: "IPv4 (spam-fylte ISPer)."
@@ -62,12 +62,17 @@ Name module_httpver.php: "HTTP-versjonskontrollmodul"
 Name module_projecthoneypot.php: "Project Honeypot modul"
 Name module_refspam.php: "Henvisende spam modul"
 Name module_sfs.php: "Stop Forum Spam modul"
+checkbox_label_block_negatives: "Blokkere negative?"
+checkbox_label_block_nonverified: "Blokkere ikke-verifiserte forespørsler?"
 checkbox_label_fields_logs: "Skal dette feltet vises i loggoppføringer?"
 checkbox_label_fields_omit: "Utelate dette feltet når det er tomt?"
 checkbox_label_fields_page_output: "Skal dette feltet vises på "tilgang nektet" siden?"
+checkbox_label_single_hit_bypass: "Tillate enkelt-hit bypasser?"
 checkbox_label_stage_enable: "Aktivere dette stadiet?"
 checkbox_label_stage_infractions: "Telle infraksjoner generert i løpet av dette stadiet mot IP-sporing?"
 checkbox_label_stage_log_errors: "Logge noen feil generert i løpet av dette stadiet?"
+checkbox_label_untrack_positives: "Slutte å spore etter positive?"
+checkbox_label_verify: "Prøv å bekrefte?"
 config_PHPMailer: "Konfigurasjon for PHPMailer (brukes til tofaktorautentisering)."
 config_PHPMailer_add_reply_to_address: "Svaradressen for å sitere når du sender e-post via SMTP."
 config_PHPMailer_add_reply_to_name: "Svarnavnet til å sitere når du sender e-post via SMTP."
@@ -82,8 +87,8 @@ config_PHPMailer_skip_auth_process: "Innstilling av dette direktivet til <code>t
 config_PHPMailer_smtp_auth: "Dette direktivet bestemmer om du skal autentisere SMTP-økter (bør vanligvis la det være alene)."
 config_PHPMailer_smtp_secure: "Protokollen som skal brukes når du sender e-post via SMTP (TLS eller SSL)."
 config_PHPMailer_username: "Brukernavnet som skal brukes når du sender e-post via SMTP."
-config_bypasses: "Konfigurasjon for standarden omkjøringsveier av signaturer."
-config_bypasses_used: "Hvilke omkjøringsveier skal brukes?"
+config_bypasses: "Konfigurasjon for standard-signatur-bypassene."
+config_bypasses_used: "Hvilke bypasser skal brukes?"
 config_experimental: "Ustabil/Eksperimentell!"
 config_general: "Generell konfigurasjon (enhver kjernekonfigurasjon som ikke tilhører andre kategorier)."
 config_general_allow_gethostbyaddr_lookup: "Tillat gethostbyaddr oppslag når UDP er utilgjengelig? True = Ja [Standardverdi]; False = Nei."
@@ -114,12 +119,12 @@ config_general_logfile_apache: "Apache-stil fil for å logge alle blokkerte tilg
 config_general_logfile_serialized: "Serialisert fil å logge av alle blokkerte tilgangsforsøk. Angi et filnavn, eller la det være tomt for å deaktivere."
 config_general_max_login_attempts: "Maksimum antall påloggingsforsøk i front-end. Standard = 5."
 config_general_numbers: "Hvordan foretrekker du at tall vises? Velg eksempelet som passer best for deg."
-config_general_other_verification: "Når det er mulig, prøv å verifisere andre typer forespørsler (f.eks. AdSense, SEO-brikker, osv)? Når oppdaget, vil falske forespørsler bli blokkert. True = Aktiver [Standardverdi]; False = Deaktiver."
+config_general_other_verification: "Kontroller for å verifisere andre typer forespørsler der det er mulig."
 config_general_protect_frontend: "Angir om beskyttelsen som normalt leveres av CIDRAM, skal brukes på frontenden. True = Ja [Standardverdi]; False = Nei."
-config_general_search_engine_verification: "Forsøk å bekrefte forespørsler fra søkemotorer? Verifiserende søkemotorer sikrer at de ikke vil bli utestengt som et resultat av å overskride infraksjonsgrensen (utestenging mot søkemotorer fra nettstedet ditt vil vanligvis ha en negativ effekt på søkemotorrangeringen din, SEO, osv). Når verifisert, kan søkemotorer bli blokkert som normalt, men vil ikke bli utestengt. Når det ikke er verifisert, er det mulig for dem å bli utestengt som et resultat av å overskride infraksjonsgrensen. Dess, søkemotor verifisering gir beskyttelse mot falske søkemotor forespørsler og mot potensielt skadelige enheter som later til å være søkemotorer (slike forespørsler vil bli blokkert når søkemotor verifisering er aktivert). True = Aktiver søkemotor verifisering [Standardverdi]; False = Deaktiver søkemotor verifisering."
+config_general_search_engine_verification: "Kontroller for å verifisere forespørsler fra søkemotorer."
 config_general_signatures_update_event_log: "En fil for logging når signaturer oppdateres via frontend. Angi et filnavn, eller la det være tomt for å deaktivere."
 config_general_silent_mode: "Bør CIDRAM stille omdirigere blokkerte tilgangsforsøk i stedet for å vise "Tilgang Nektet" siden? Hvis ja, spesifiser stedet for å omdirigere blokkerte tilgangsforsøk til. Hvis nei, la denne variablen være tom."
-config_general_social_media_verification: "Forsøk å verifisere sosial media forespørsler? Sosial media verifisering gir beskyttelse mot falske sosiale medier forespørsler (slike forespørsler vil bli blokkert). True = Aktiver sosial media verifisering [Standardverdi]; False = Deaktiver sosial media verifisering."
+config_general_social_media_verification: "Kontroller for å verifisere forespørsler fra sosiale medieplattformer."
 config_general_stages: "Kontroller for stadiene i utførelseskjeden (om aktivert, om feil logges, osv)."
 config_general_statistics: "Kontrollerer hvilken statistisk informasjon som skal spores."
 config_general_time_format: "Dato/tid notasjonsformat som brukes av CIDRAM. Ytterligere alternativer kan legges på forespørsel."
@@ -267,6 +272,9 @@ field_verify_all: "Verifisere alt"
 field_whitelisted_requests: "Hvitlistede forespørsler"
 field_your_version: "Din Versjon"
 header_login: "Vennligst logg inn for å fortsette."
+hints_verification:
+ "Hva er "positive" og "negative"?": "Når identiteten presentert av en forespørsel er verifisert, kan et vellykket resultat beskrives som "positiv" eller "negativ". I tilfelle at identiteten som presenteres bekreftes å være den sanne identiteten, den vil bli beskrevet som "positiv". I tilfelle det bekreftes at identiteten som presenteres er forfalsket, den vil bli beskrevet som "negativ". Imidlertid, et mislykket resultat (f.eks., verifisering mislykkes, eller sannheten til identiteten som presenteres ikke kan fastslås) vil ikke beskrives som "positiv" eller "negativ". I stedet, et mislykket resultat vil ganske enkelt beskrives som ikke-verifisert. Når det ikke gjøres noe forsøk på å bekrefte identiteten som presenteres av en forespørsel, forespørselen vil på samme måte bli beskrevet som ikke-verifisert. Begrepene gir mening bare i konteksten der identiteten som presenteres av en forespørsel gjenkjennes, og derfor der verifisering er mulig. I tilfeller der identiteten som presenteres ikke samsvarer med alternativene ovenfor, eller der ingen identitet er presentert, alternativene gitt ovenfor blir irrelevante."
+ "Hva er "enkelt-hit bypasser"?": "I noen tilfeller kan en positiv bekreftet forespørsel fortsatt blokkeres som et resultat av signaturfilene, modulene, eller andre forhold i forespørselen, og bypasser kan være nødvendig for å unngå falske positiver. I tilfellet der en bypass er ment å håndtere nøyaktig ett infraksjon, verken mer eller mindre, slik en bypass kan beskrives som en "enkelt-hit bypass"."
 info_some_useful_links: |
  Noen nyttige lenker:<br />
      <ul class="pieul">
@@ -305,7 +313,7 @@ info_some_useful_links: |
 label_active_config_file: "Aktiv konfigurasjonsfil:"
 label_actual: "Faktiske"
 label_aux_actBlk: "blokkere"
-label_aux_actByp: "omgå"
+label_aux_actByp: "bypassere"
 label_aux_actGrl: "grå liste"
 label_aux_actLog: "ikke logg"
 label_aux_actPro: "profilere"

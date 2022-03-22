@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Indonesian language data for the front-end (last modified: 2022.03.13).
+# This file: Indonesian language data for the front-end (last modified: 2022.03.21).
 ##/
 
 Extended Description Bypasses: "File untuk bypass tanda tangan standar yang biasanya disertakan dengan paket utama."
@@ -62,12 +62,17 @@ Name module_httpver.php: "Modul pemeriksa versi HTTP"
 Name module_projecthoneypot.php: "Modul Project Honeypot"
 Name module_refspam.php: "Modul spam pengarah"
 Name module_sfs.php: "Modul Stop Forum Spam"
+checkbox_label_block_negatives: "Blokir negatif?"
+checkbox_label_block_nonverified: "Blokir permintaan yang tidak diverifikasi?"
 checkbox_label_fields_logs: "Sertakan bidang ini dalam entri log?"
 checkbox_label_fields_omit: "Abaikan bidang ini saat kosong?"
 checkbox_label_fields_page_output: "Sertakan bidang ini di halaman "akses ditolak"?"
+checkbox_label_single_hit_bypass: "Izinkan bypass satu pelanggaran?"
 checkbox_label_stage_enable: "Aktifkan tahap ini?"
 checkbox_label_stage_infractions: "Menghitung pelanggaran yang dihasilkan selama tahap ini terhadap pelacakan IP?"
 checkbox_label_stage_log_errors: "Mencatat kesalahan yang dihasilkan selama tahap ini?"
+checkbox_label_untrack_positives: "Hapus pelacakan untuk positif?"
+checkbox_label_verify: "Mencoba memverifikasi?"
 config_PHPMailer: "Konfigurasi untuk PHPMailer (digunakan untuk otentikasi dua-faktor)."
 config_PHPMailer_add_reply_to_address: "Alamat balasan yang dikutip saat mengirim email melalui SMTP."
 config_PHPMailer_add_reply_to_name: "Nama balasan yang dikutip saat mengirim email melalui SMTP."
@@ -114,12 +119,12 @@ config_general_logfile_apache: "File yang dalam gaya Apache untuk mencatat semua
 config_general_logfile_serialized: "File serial untuk mencatat semua upaya akses diblokir. Spesifikasikan nama file, atau biarkan kosong untuk menonaktifkan."
 config_general_max_login_attempts: "Jumlah maksimum upaya memasukkan ke bagian depan. Default = 5."
 config_general_numbers: "Cara apa yang kamu suka nomor menjadi ditampilkan? Pilih contoh yang paling sesuai untuk Anda."
-config_general_other_verification: "Jika memungkinkan, coba verifikasi jenis permintaan lain (mis., AdSense, pemeriksa SEO, dll)? Saat terdeteksi, permintaan palsu akan diblokir. True = Mengaktifkan [Default]; False = Menonaktifkan."
+config_general_other_verification: "Kontrol untuk memverifikasi jenis permintaan lain jika memungkinkan."
 config_general_protect_frontend: "Menentukan apakah perlindungan biasanya disediakan oleh CIDRAM harus diterapkan pada bagian depan. True = Ya [Default]; False = Tidak."
-config_general_search_engine_verification: "Mencoba memverifikasi permintaan dari mesin pencari? Verifikasi mesin pencari memastikan bahwa mereka tidak akan dilarang sebagai akibat dari melebihi batas pelanggaran (melarang mesin pencari dari situs web Anda biasanya akan memiliki efek negatif pada peringkat mesin pencari Anda, SEO, dll). Ketika diverifikasi, mesin pencari dapat diblokir seperti biasa, tapi tidak akan dilarang. Ketika tidak diverifikasi, itu mungkin bagi mereka untuk dilarang sebagai akibat dari melebihi batas pelanggaran. Juga, verifikasi mesin pencari memberikan proteksi terhadap permintaan mesin pencari palsu dan terhadap entitas yang berpotensi berbahaya yang menyamar sebagai mesin pencari (permintaan tersebut akan diblokir ketika verifikasi mesin pencari diaktifkan). True = Mengaktifkan verifikasi mesin pencari [Default]; False = Menonaktifkan verifikasi mesin pencari."
+config_general_search_engine_verification: "Kontrol untuk memverifikasi permintaan dari mesin pencari."
 config_general_signatures_update_event_log: "File untuk mencatat ketika tanda tangan diperbarui melalui bagian depan. Spesifikasikan nama file, atau biarkan kosong untuk menonaktifkan."
 config_general_silent_mode: "Seharusnya CIDRAM diam-diam mengarahkan diblokir upaya akses bukannya menampilkan halaman "Akses Ditolak"? Jika ya, menentukan lokasi untuk mengarahkan diblokir upaya akses. Jika tidak, kosongkan variabel ini."
-config_general_social_media_verification: "Mencoba memverifikasi permintaan media sosial? Verifikasi media sosial memberikan perlindungan terhadap permintaan media sosial palsu (permintaan semacam ini akan diblokir). True = Mengaktifkan verifikasi media sosial [Default]; False = Mengaktifkan verifikasi media sosial."
+config_general_social_media_verification: "Kontrol untuk memverifikasi permintaan dari platform media sosial."
 config_general_stages: "Kontrol untuk tahapan rantai eksekusi (apakah diaktifkan, apakah kesalahan dicatat, dll)."
 config_general_statistics: "Mengontrol informasi statistik mana yang akan dilacak."
 config_general_time_format: "Format notasi tanggal/waktu yang digunakan oleh CIDRAM. Opsi tambahan dapat ditambahkan atas permintaan."
@@ -261,12 +266,15 @@ field_update_all: "Memperbarui semua"
 field_update_signatures_files: "Memperbarui file tanda tangan"
 field_upload_file: "Mengupload file baru"
 field_username: "Nama Pengguna"
-field_verified_requests: "Verified search engine and social media requests"
+field_verified_requests: "Permintaan yang diverifikasi dari mesin pencari dan media sosial"
 field_verify: "Memverifikasi"
 field_verify_all: "Memverifikasi semua"
-field_whitelisted_requests: "Whitelisted requests"
+field_whitelisted_requests: "Permintaan yang masuk daftar putih"
 field_your_version: "Versi Anda"
 header_login: "Silahkan masuk untuk melanjutkan."
+hints_verification:
+ "Apa itu "positif" dan "negatif"?": "Saat memverifikasi identitas yang disajikan oleh permintaan, hasil yang berhasil dapat digambarkan sebagai "positif" atau "negatif". Ketika identitas yang disajikan dikonfirmasi sebagai identitas sebenarnya, itu akan digambarkan sebagai "positif". Ketika identitas yang disajikan dikonfirmasi untuk dipalsukan, itu akan digambarkan sebagai "negatif". Namun, hasil yang tidak berhasil (misalnya, verifikasi gagal, atau kebenaran identitas yang disajikan tidak dapat ditentukan) tidak akan digambarkan sebagai "positif" atau "negatif". Sebaliknya, hasil yang tidak berhasil akan digambarkan sebagai tidak diverifikasi. Ketika tidak ada upaya untuk memverifikasi identitas yang disajikan oleh permintaan, permintaan tersebut juga akan digambarkan sebagai tidak diverifikasi. Istilah tersebut masuk akal hanya dalam konteks dimana identitas yang disajikan oleh permintaan dikenali, dan jadi, dimana verifikasi dimungkinkan. Jika identitas yang disajikan tidak sesuai dengan opsi yang diberikan di atas, atau jika tidak ada identitas yang disajikan, opsi yang diberikan di atas menjadi tidak relevan."
+ "Apa itu "bypass satu pelanggaran"?": "Dalam beberapa kasus, permintaan diverifikasi secara positif mungkin masih diblokir sebagai akibat dari file tanda tangan, modul, atau kondisi permintaan lainnya, dan bypass mungkin diperlukan untuk menghindari positif palsu. Dalam kasus dimana bypass dimaksudkan untuk menangani tepat satu pelanggaran, tidak lebih dan tidak kurang, bypass seperti itu dapat digambarkan sebagai "bypass satu pelanggaran"."
 info_some_useful_links: |
  Beberapa link yang berguna:<br />
      <ul class="pieul">

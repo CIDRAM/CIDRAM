@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Defaults file (last modified: 2022.03.16).
+# This file: Defaults file (last modified: 2022.03.22).
 ##/
 
 Config Defaults:
@@ -438,14 +438,120 @@ Config Defaults:
    value_preg_filter:
     "~\s~": ""
   search_engine_verification:
-   type: "bool"
-   default: true
+   type: "checkbox"
+   default: |
+    Applebot:Verify
+    Applebot:BlockNegatives
+    Applebot:UntrackPositives
+    Baidu:Verify
+    Baidu:BlockNegatives
+    Baidu:UntrackPositives
+    Bingbot:Verify
+    Bingbot:BlockNegatives
+    Bingbot:SingleHitBypass
+    Bingbot:UntrackPositives
+    DuckDuckBot:Verify
+    DuckDuckBot:BlockNegatives
+    DuckDuckBot:SingleHitBypass
+    DuckDuckBot:UntrackPositives
+    Googlebot:Verify
+    Googlebot:BlockNegatives
+    Googlebot:UntrackPositives
+    MojeekBot:Verify
+    MojeekBot:BlockNegatives
+    MojeekBot:UntrackPositives
+    PetalBot:Verify
+    PetalBot:BlockNegatives
+    PetalBot:UntrackPositives
+    Qwantify:Verify
+    Qwantify:BlockNegatives
+    Qwantify:UntrackPositives
+    SeznamBot:Verify
+    SeznamBot:BlockNegatives
+    SeznamBot:UntrackPositives
+    Sogou:Verify
+    Sogou:BlockNegatives
+    Sogou:UntrackPositives
+    Yahoo:Verify
+    Yahoo:BlockNegatives
+    Yahoo:UntrackPositives
+    Yandex:Verify
+    Yandex:BlockNegatives
+    Yandex:UntrackPositives
+    YoudaoBot:Verify
+    YoudaoBot:BlockNegatives
+    YoudaoBot:UntrackPositives
+   labels:
+    Verify: "checkbox_label_verify"
+    BlockNegatives: "checkbox_label_block_negatives"
+    BlockNonVerified: "checkbox_label_block_nonverified"
+    SingleHitBypass: "checkbox_label_single_hit_bypass"
+    UntrackPositives: "checkbox_label_untrack_positives"
+   choices:
+    Applebot: "Applebot"
+    Baidu: "Baiduspider/百度"
+    Bingbot: "Bingbot"
+    DuckDuckBot: "DuckDuckBot"
+    Googlebot: "Googlebot"
+    MojeekBot: "MojeekBot"
+    PetalBot: "PetalBot"
+    Qwantify: "Qwantify/Bleriot"
+    SeznamBot: "SeznamBot"
+    Sogou: "Sogou/搜狗"
+    Yahoo: "Yahoo/Slurp"
+    Yandex: "Yandex/Яндекс"
+    YoudaoBot: "YoudaoBot"
+   hints: "hints_verification"
   social_media_verification:
-   type: "bool"
-   default: true
+   type: "checkbox"
+   default: |
+    Embedly:Verify
+    Embedly:BlockNegatives
+    Facebook:Verify
+    Facebook:BlockNegatives
+    Facebook:UntrackPositives
+    Pinterest:Verify
+    Pinterest:BlockNegatives
+    Pinterest:UntrackPositives
+    Twitterbot:Verify
+    Twitterbot:BlockNegatives
+    Twitterbot:UntrackPositives
+   labels:
+    Verify: "checkbox_label_verify"
+    BlockNegatives: "checkbox_label_block_negatives"
+    BlockNonVerified: "checkbox_label_block_nonverified"
+    SingleHitBypass: "checkbox_label_single_hit_bypass"
+    UntrackPositives: "checkbox_label_untrack_positives"
+   choices:
+    Embedly: "Embedly"
+    Facebook: "Facebook external hit"
+    Pinterest: "Pinterest"
+    Twitterbot: "Twitterbot"
+   hints: "hints_verification"
   other_verification:
-   type: "bool"
-   default: true
+   type: "checkbox"
+   default: |
+    AdSense:Verify
+    AdSense:BlockNegatives
+    AdSense:UntrackPositives
+    AmazonAdBot:Verify
+    AmazonAdBot:BlockNegatives
+    AmazonAdBot:SingleHitBypass
+    AmazonAdBot:UntrackPositives
+    Grapeshot:Verify
+    Grapeshot:BlockNegatives
+    Grapeshot:UntrackPositives
+   labels:
+    Verify: "checkbox_label_verify"
+    BlockNegatives: "checkbox_label_block_negatives"
+    BlockNonVerified: "checkbox_label_block_nonverified"
+    SingleHitBypass: "checkbox_label_single_hit_bypass"
+    UntrackPositives: "checkbox_label_untrack_positives"
+   choices:
+    AdSense: "AdSense"
+    AmazonAdBot: "AmazonAdBot"
+    Grapeshot: "Oracle Data Cloud Crawler"
+   hints: "hints_verification"
   protect_frontend:
    type: "bool"
    default: true
@@ -874,7 +980,6 @@ Provide:
     enabled: false
   Tracking options override: false
   Suppress output template: false
-  Trackable: true
   Flag Don't Log: false
   Aux Redirect: ""
   Aux Status Code: 200

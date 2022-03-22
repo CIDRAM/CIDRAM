@@ -7,10 +7,10 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Dutch language data for the front-end (last modified: 2022.03.13).
+# This file: Dutch language data for the front-end (last modified: 2022.03.21).
 ##/
 
-Extended Description Bypasses: "De standaard signature rondwegen normaal opgenomen met de primaire pakket."
+Extended Description Bypasses: "De standaard signature bypasses normaal opgenomen met de primaire pakket."
 Extended Description Chart.js: "Hiermee kan de frontend taartdiagrammen genereren.<br />{{Links.Chart.js}} is beschikbaar via de <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
 Extended Description IPv4: &ExtDesCloud "Blokkeert ongewenste cloud-diensten en niet-menselijke eindpunten."
 Extended Description IPv4-Bogons: &ExtDesBogons "Blokkeert bogon/martian CIDR's."
@@ -37,7 +37,7 @@ Extended Description module_httpver.php: "Maakt het mogelijk om specifieke proto
 Extended Description module_projecthoneypot.php: "Blokkeert aanvragen van IP's die worden vermeld op Project Honeypot."
 Extended Description module_refspam.php: "Blokkering op basis van verwijzende spam levert over het algemeen geen betekenisvol beveiligingsvoordeel op, maar in sommige gevallen kan het nuttig zijn voor sommige gebruikers, voor het verzamelen van meer informatie over verzoeken en erover te rapporteren.<br />Door deze module te installeren, worden ook de Symfony-polyfills voor {{Links.Symfony.Intl/Idn}} en {{Links.Symfony.Mbstring}} geïnstalleerd (omdat deze module Idn-functionaliteit vereist, die niet alle PHP-installaties standaard bieden), beide die zijn beschikbaar via de <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a> licentie."
 Extended Description module_sfs.php: "Beschermt registratie en login tegen IP's die door SFS worden vermeld."
-Name Bypasses: "Standaard signature rondwegen."
+Name Bypasses: "Standaard signature bypasses."
 Name IPv4: "IPv4 (cloud en hosting diensten)."
 Name IPv4-Bogons: "IPv4 (bogons)."
 Name IPv4-ISPs: "IPv4 (spammy ISP's)."
@@ -62,12 +62,17 @@ Name module_httpver.php: "HTTP versie controle module"
 Name module_projecthoneypot.php: "Project Honeypot module"
 Name module_refspam.php: "Verwijzersspam module"
 Name module_sfs.php: "Stop Forum Spam module"
+checkbox_label_block_negatives: "Negatieven blokkeren?"
+checkbox_label_block_nonverified: "Niet-geverifieerde verzoeken blokkeren?"
 checkbox_label_fields_logs: "Moet dit veld in logs verschijnen?"
 checkbox_label_fields_omit: "Weglaten dit veld als het leeg is?"
 checkbox_label_fields_page_output: "Moet dit veld verschijnen op de "toegang geweigerd" pagina?"
+checkbox_label_single_hit_bypass: "Enkele-treffer bypasses toestaan?"
 checkbox_label_stage_enable: "Inschakelen deze fase?"
 checkbox_label_stage_infractions: "Moeten overtredingen die gegenereerd door deze fase meetellen voor IP-tracking?"
 checkbox_label_stage_log_errors: "Moeten fouten die gegenereerd door deze fase worden geregistreerd?"
+checkbox_label_untrack_positives: "Tracking annuleren voor positieven?"
+checkbox_label_verify: "Proberen te verifiëren?"
 config_PHPMailer: "Configuratie voor PHPMailer (gebruikt voor tweefactorauthenticatie)."
 config_PHPMailer_add_reply_to_address: "Het antwoordadres voor het verzenden van e-mail via SMTP."
 config_PHPMailer_add_reply_to_name: "De antwoordnaam voor het verzenden van e-mail via SMTP."
@@ -114,12 +119,12 @@ config_general_logfile_apache: "Apache-stijl bestand om alle geblokkeerde toegan
 config_general_logfile_serialized: "Geserialiseerd bestand om alle geblokkeerde toegang pogingen te loggen. Geef een bestandsnaam, of laat leeg om uit te schakelen."
 config_general_max_login_attempts: "Maximum aantal frontend-inlogpogingen. Standaard = 5."
 config_general_numbers: "Hoe verkiest u nummers die worden weergegeven? Selecteer het voorbeeld dat het meest correct voor u lijkt."
-config_general_other_verification: "Probeer waar mogelijk andere soorten verzoeken te verifiëren (b.v., AdSense, SEO-checkers, enz)? Als ze worden gedetecteerd, worden vervalste verzoeken geblokkeerd. True = Inschakelen [Standaard]; False = Uitschakelen."
+config_general_other_verification: "Controles voor het verifiëren van andere soorten verzoeken waar mogelijk."
 config_general_protect_frontend: "Geeft aan of de bescherming die gewoonlijk door CIDRAM is voorzien moet worden toegepast op de frontend. True = Ja [Standaard]; False = Nee."
-config_general_search_engine_verification: "Poging om aanvragen van zoekmachines te bevestigen? Verificatie van zoekmachines zorgt ervoor dat ze niet zullen worden verbannen als gevolg van het overschrijden van de overtreding limiet (verbod op zoekmachines van uw website zal meestal een negatief effect hebben op uw zoekmachine ranking, SEO, enz). Wanneer geverifieerd, zoekmachines kunnen worden geblokkeerd als per normaal, maar zal niet worden verbannen. Wanneer niet geverifieerd, het is mogelijk dat zij worden verbannen ten gevolge van het overschrijden van de overtreding limiet. Bovendien, het verifiëren van zoekmachines biedt bescherming tegen nep-zoekmachine aanvragen en tegen de mogelijk schadelijke entiteiten vermomd als zoekmachines (dergelijke aanvragen zal worden geblokkeerd wanneer het verifiëren van zoekmachines is ingeschakeld). True = Inschakelen het verifiëren van zoekmachines [Standaard]; False = Uitschakelen het verifiëren van zoekmachines."
+config_general_search_engine_verification: "Controles voor het verifiëren van verzoeken van zoekmachines."
 config_general_signatures_update_event_log: "Een bestand om te loggen wanneer signatures worden bijgewerkt via de frontend. Geef een bestandsnaam, of laat leeg om uit te schakelen."
 config_general_silent_mode: "Moet CIDRAM stilletjes redirect geblokkeerd toegang pogingen in plaats van het weergeven van de "Toegang Geweigerd" pagina? Als ja, geef de locatie te redirect geblokkeerd toegang pogingen. Als nee, verlaat deze variabele leeg."
-config_general_social_media_verification: "Poging om aanvragen voor sociale media te verifiëren? Verificatie van sociale media biedt bescherming tegen nep-aanvragen voor sociale media (dergelijke aanvragen worden geblokkeerd). True = Inschakelen verificatie van sociale media [Standaard]; False = Uitschakelen verificatie van sociale media."
+config_general_social_media_verification: "Controles voor het verifiëren van verzoeken van sociale media platforms."
 config_general_stages: "Controles voor de fasen van de uitvoeringsketen (of ingeschakeld, of fouten worden geregistreerd, enz)."
 config_general_statistics: "Bepaalt welke statistische informatie moet worden bijgehouden."
 config_general_time_format: "De datum notatie gebruikt door CIDRAM. Extra opties kunnen worden toegevoegd op aanvraag."
@@ -269,6 +274,9 @@ field_verify_all: "Verifiëren alles"
 field_whitelisted_requests: "Verzoeken gemarkeerd als op de witte lijst"
 field_your_version: "Uw Versie"
 header_login: "Inloggen om verder te gaan."
+hints_verification:
+ "Wat zijn "positieven" en "negatieven"?": "Bij het verifiëren van de identiteit die door een verzoek wordt gepresenteerd, een succesvol resultaat kan worden omschreven als "positief" of "negatief". In het geval dat wordt bevestigd dat de gepresenteerde identiteit de ware identiteit is, deze als "positief" beschreven wordt. In het geval dat wordt bevestigd dat de gepresenteerde identiteit vervalst is, deze als "negatief" beschreven wordt. Een onsuccesvolle uitkomst (b.v., verificatie mislukt, of de juistheid van de gepresenteerde identiteit kan niet worden vastgesteld) wordt echter niet als "positief" of "negatief" beschreven. In plaats daarvan zou een mislukte uitkomst eenvoudigweg als niet-geverifieerd worden beschreven. Als er geen poging wordt gedaan om de identiteit van het verzoek te verifiëren, het verzoek wordt eveneens als niet-geverifieerd beschreven. De termen hebben alleen zin in de context waarin de identiteit van het verzoek wordt herkend, en dus waar verificatie mogelijk is. In gevallen waarin de gepresenteerde identiteit niet overeenkomt met de bovenstaande opties, of waar geen identiteit wordt gepresenteerd, worden de bovenstaande opties irrelevant."
+ "Wat zijn "enkele-treffer bypasses"?": "In sommige gevallen kan een positief-geverifieerd verzoek nog steeds worden geblokkeerd als gevolg van de signatuurbestanden, modules, of andere voorwaarden van het verzoek, en bypasses kunnen nodig zijn om valse positieven te voorkomen. In het geval dat een bypass bedoeld is om precies één overtreding af te handelen, niet meer en niet minder, dergelijke een bypass zou kunnen worden omschreven als een "enkele-treffer bypass"."
 info_some_useful_links: |
  Enkele nuttige links:<br />
      <ul class="pieul">

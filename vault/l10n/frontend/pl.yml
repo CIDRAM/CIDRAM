@@ -7,10 +7,10 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Polish language data for the front-end (last modified: 2022.03.13).
+# This file: Polish language data for the front-end (last modified: 2022.03.21).
 ##/
 
-Extended Description Bypasses: "Domyślne pliki pomijania podpisów zwykle zawarte w pakiecie głównym."
+Extended Description Bypasses: "Domyślne pliki obejścia podpisów zwykle zawarte w pakiecie głównym."
 Extended Description Chart.js: "Umożliwia interfejsowi użytkownika generowanie wykresów kołowych.<br />{{Links.Chart.js}} jest dostępny za pośrednictwem licencji <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a>."
 Extended Description IPv4: &ExtDesCloud "Blokuje niechciane usługi w chmurze i punkty końcowe inne niż ludzkie."
 Extended Description IPv4-Bogons: &ExtDesBogons "Blokuje bogid/marsjańskie CIDR."
@@ -62,12 +62,17 @@ Name module_httpver.php: "Moduł sprawdzania wersji HTTP"
 Name module_projecthoneypot.php: "Moduł Project Honeypot"
 Name module_refspam.php: "Moduł spamu polecającego"
 Name module_sfs.php: "Moduł Stop Forum Spam"
+checkbox_label_block_negatives: "Blokować negatywy?"
+checkbox_label_block_nonverified: "Blokować niezweryfikowane żądania?"
 checkbox_label_fields_logs: "Czy to pole powinno pojawiać się w logach?"
 checkbox_label_fields_omit: "Pominąć to pole, gdy jest puste?"
 checkbox_label_fields_page_output: "Czy to pole powinno pojawiać się na stronie „dostęp zabroniony”?"
+checkbox_label_single_hit_bypass: "Zezwalać na obejście pojedynczych trafień?"
 checkbox_label_stage_enable: "Włączyć ten etap?"
 checkbox_label_stage_infractions: "Wliczać wykroczenia wygenerowane na tym etapie do śledzenie IP?"
 checkbox_label_stage_log_errors: "Zalogować jakiekolwiek błędy wygenerowane na tym etapie?"
+checkbox_label_untrack_positives: "Nie śledzić pozytywów?"
+checkbox_label_verify: "Próbować zweryfikować?"
 config_PHPMailer: "Konfiguracja dla PHPMailer (używane do uwierzytelniania dwuskładnikowego)."
 config_PHPMailer_add_reply_to_address: "Adres zwrotny do cytowania podczas wysyłania wiadomości e-mail przez SMTP."
 config_PHPMailer_add_reply_to_name: "Nazwa odpowiedzi, którą należy podać podczas wysyłania wiadomości e-mail przez SMTP."
@@ -82,7 +87,7 @@ config_PHPMailer_skip_auth_process: "Ustawienie tej dyrektywy na <code>true</cod
 config_PHPMailer_smtp_auth: "Ta dyrektywa określa, czy uwierzytelniać sesje SMTP (zwykle należy je pozostawić w spokoju)."
 config_PHPMailer_smtp_secure: "Protokół używany podczas wysyłania wiadomości e-mail przez SMTP (TLS lub SSL)."
 config_PHPMailer_username: "Nazwa użytkownika używana podczas wysyłania wiadomości e-mail przez SMTP."
-config_bypasses: "Konfiguracja domyślnego pomijania podpisu."
+config_bypasses: "Konfiguracja domyślnego obejścia podpisu."
 config_bypasses_used: "Jakich obwodnic należy użyć?"
 config_experimental: "Niestabilny/Eksperymentalny!"
 config_general: "Ogólna konfiguracja (dowolna konfiguracja podstawowa nienależąca do innych kategorii)."
@@ -114,12 +119,12 @@ config_general_logfile_apache: "Plik w stylu Apache do rejestrowania wszystkich 
 config_general_logfile_serialized: "Plik szeregowy do rejestrowania wszystkich zablokowanych prób dostępu. Podaj nazwę pliku lub pozostaw puste, aby wyłączyć."
 config_general_max_login_attempts: "Maksymalna liczba prób zalogowania się do interfejsu użytkownika. Domyślna = 5."
 config_general_numbers: "Jak wolisz wyświetlać liczby? Wybierz przykład, który wygląda najlepiej dla Ciebie."
-config_general_other_verification: "Jeśli to możliwe, spróbuj zweryfikować inne rodzaje żądań (np. AdSense, narzędzia do sprawdzania SEO, itp)? Po wykryciu, sfałszowane żądania zostaną zablokowane. True (Prawdziwe) = Włączyć [Domyślna]; False (Fałszywy) = Wyłączyć."
+config_general_other_verification: "Kontrolki do weryfikacji innych rodzajów żądań tam, gdzie to możliwe."
 config_general_protect_frontend: "Określa, czy zabezpieczenia zwykle zapewniane przez CIDRAM powinny być stosowane do interfejsu użytkownika. True (Prawdziwe) = Tak [Domyślna]; False (Fałszywy) = Nie."
-config_general_search_engine_verification: "Próbujesz zweryfikować żądania z wyszukiwarek? Weryfikacja wyszukiwarek zapewnia, że nie zostaną zbanowane w wyniku przekroczenia limitu wykroczeń (banowanie wyszukiwarek z twojej strony będzie miało zazwyczaj negatywny wpływ na pozycję w wyszukiwarkach, SEO, itp). Kiedy zweryfikowane, wyszukiwarki można blokować jak zwykle, ale nie zostaną zbanowane. W przypadku braku weryfikacji może zostać zbanowany w wyniku przekroczenia limitu wykroczeń. Ponadto weryfikacja w wyszukiwarkach zapewnia ochronę przed fałszywymi żądaniami wyszukiwarek oraz przed potencjalnie złośliwymi bytami udającymi wyszukiwarki (takie żądania będą zablokowane po włączeniu weryfikacja wyszukiwarek). True (Prawdziwe) = Włącz weryfikację w wyszukiwarce [Domyślna]; False (Fałszywy) = Wyłącz weryfikację w wyszukiwarce."
+config_general_search_engine_verification: "Kontrolki do weryfikacji żądań z wyszukiwarek."
 config_general_signatures_update_event_log: "Plik do rejestrowania, gdy podpisy są aktualizowane za pośrednictwem interfejsu użytkownika. Podaj nazwę pliku lub pozostaw puste, aby wyłączyć."
 config_general_silent_mode: "Czy CIDRAM powinien po cichu przekierowywać zablokowane próby dostępu zamiast wyświetlać stronę „Dostęp Zabroniony”? Jeśli tak, podaj lokalizację, do której mają zostać przekierowane zablokowane próby dostępu. Jeśli nie, pozostaw tę zmienną pustą."
-config_general_social_media_verification: "Próbujesz zweryfikować żądania mediów społecznościowych? Weryfikacja mediów społecznościowych zapewnia ochronę przed fałszywymi żądaniami mediów społecznościowych (takie żądania zostaną zablokowane). True (Prawdziwe) = Włącz weryfikację w mediach społecznościowych [Domyślna]; False (Fałszywy) = Wyłącz weryfikację w mediach społecznościowych."
+config_general_social_media_verification: "Kontrolki do weryfikacji żądań z platform mediów społecznościowych."
 config_general_stages: "Kontrole etapów łańcucha egzekucyjnego (czy włączone, czy błędy są rejestrowane, itp)."
 config_general_statistics: "Kontroluje, które informacje statystyczne należy śledzić."
 config_general_time_format: "Format notacja daty/godziny używany przez CIDRAM. Dodatkowe opcje mogą być dodane na życzenie."
@@ -270,6 +275,9 @@ field_verify_all: "Zweryfikuj wszystko"
 field_whitelisted_requests: "Żądania na białej liście"
 field_your_version: "Twoja Wersja"
 header_login: "Proszę się zalogować, aby kontynuować."
+hints_verification:
+ "Czym są „pozytywy” i „negatywy”?": "Podczas weryfikacji tożsamości przedstawionej przez żądanie, pomyślny wynik można określić jako „pozytywny” lub „negatywny”. W przypadku potwierdzenia, że prezentowana tożsamość jest prawdziwą tożsamością, zostanie ona określona jako „pozytywna”. W przypadku potwierdzenia, że przedstawiona tożsamość jest sfałszowana, zostanie ona określona jako „negatywna”. Jednak nieudany wynik (np. weryfikacja nie powiodła się, lub nie można ustalić prawdziwości przedstawionej tożsamości) nie zostanie opisany jako „pozytywny” lub „negatywny”. Zamiast tego nieudany wynik zostałby opisany po prostu jako niezweryfikowany. Gdy nie zostanie podjęta żadna próba weryfikacji tożsamości przedstawionej przez żądanie, żądanie zostanie również opisane jako niezweryfikowane. Terminy mają sens tylko w kontekście, w którym rozpoznawana jest tożsamość przedstawiona w żądaniu, a zatem tam, gdzie możliwa jest weryfikacja. W przypadku, gdy przedstawiona tożsamość nie pasuje do opcji przedstawionych powyżej, lub gdy tożsamość nie jest przedstawiona, opcje podane powyżej stają się nieistotne."
+ "Czym są „obejście pojedynczych trafień”?": "W niektórych przypadkach pozytywnie zweryfikowane żądanie może nadal zostać zablokowane z powodu plików sygnatur, modułów, lub innych warunków żądania, i obejścia mogą być konieczne w celu uniknięcia fałszywych pozytywów. W przypadku, gdy obejście ma na celu zajęcie się dokładnie jednym wykroczeniem, ni mniej, ni więcej, takie obejście można opisać jako „obejście pojedynczego trafienia”."
 info_some_useful_links: |
  Kilka przydatnych linków:<br />
      <ul class="pieul">
@@ -308,7 +316,7 @@ info_some_useful_links: |
 label_active_config_file: "Aktywny plik konfiguracyjny:"
 label_actual: "Rzeczywisty"
 label_aux_actBlk: "zablokuj"
-label_aux_actByp: "pomiń"
+label_aux_actByp: "obejść"
 label_aux_actGrl: "dokonywać na szarej liście"
 label_aux_actLog: "nie loguj"
 label_aux_actPro: "profilować"

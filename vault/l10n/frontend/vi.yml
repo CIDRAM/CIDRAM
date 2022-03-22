@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Vietnamese language data for the front-end (last modified: 2022.03.13).
+# This file: Vietnamese language data for the front-end (last modified: 2022.03.21).
 ##/
 
 Extended Description Bypasses: "Các tập tin đường tránh chữ ký mặc định thường bao gồm với gói thầu chính."
@@ -62,12 +62,17 @@ Name module_httpver.php: "Mô-đun kiểm tra phiên bản HTTP"
 Name module_projecthoneypot.php: "Mô-đun Project Honeypot"
 Name module_refspam.php: "Mô-đun spam giới thiệu"
 Name module_sfs.php: "Mô-đun Stop Forum Spam"
+checkbox_label_block_negatives: "Chặn tiêu cực?"
+checkbox_label_block_nonverified: "Chặn các yêu cầu chưa được xác minh?"
 checkbox_label_fields_logs: "Trường này có nên xuất hiện trong các mục nhập nhật ký không?"
 checkbox_label_fields_omit: "Bỏ qua trường này khi nó trống?"
 checkbox_label_fields_page_output: "Trường này có nên xuất hiện trên trang "truy cập đã bị từ chối" không?"
+checkbox_label_single_hit_bypass: "Cho phép bỏ qua một cú đánh?"
 checkbox_label_stage_enable: "Bật giai đoạn này?"
 checkbox_label_stage_infractions: "Đếm các vi phạm được tạo ra trong giai đoạn này đối với giám sát IP?"
 checkbox_label_stage_log_errors: "Ghi lại bất kỳ lỗi nào được tạo ra trong giai đoạn này?"
+checkbox_label_untrack_positives: "Ngừng theo dõi tích cực?"
+checkbox_label_verify: "Cố gắng xác minh?"
 config_PHPMailer: "Cấu hình cho PHPMailer (được sử dụng để xác thực hai yếu tố)."
 config_PHPMailer_add_reply_to_address: "Địa chỉ trả lời để trích dẫn khi gửi email qua SMTP."
 config_PHPMailer_add_reply_to_name: "Tên trả lời để trích dẫn khi gửi email qua SMTP."
@@ -114,12 +119,12 @@ config_general_logfile_apache: "Tập tin Apache phong cách cho ghi tất cả 
 config_general_logfile_serialized: "Tập tin tuần tự cho ghi tất cả các nỗ lực truy cập bị chặn. Chỉ định một tên tập tin, hoặc để trống để vô hiệu hóa."
 config_general_max_login_attempts: "Số lượng tối đa cố gắng đăng nhập front-end. Mặc định = 5."
 config_general_numbers: "Làm thế nào để bạn thích số được hiển thị? Chọn ví dụ có vẻ chính xác nhất cho bạn."
-config_general_other_verification: "Bất cứ khi nào có thể, hãy cố gắng xác minh các loại yêu cầu khác (ví dụ: AdSense, công cụ kiểm tra SEO, vv)? Khi bị phát hiện, các yêu cầu giả mạo sẽ bị chặn. True = Kích hoạt [Mặc định]; False = Vô hiệu hóa."
+config_general_other_verification: "Kiểm soát để xác minh các loại yêu cầu khác nếu có thể."
 config_general_protect_frontend: "Chỉ định liệu các bảo vệ thường được cung cấp bởi CIDRAM nên được áp dụng cho các front-end. True = Vâng [Mặc định]; False = Không."
-config_general_search_engine_verification: "Cố gắng xác minh các yêu cầu từ các máy tìm kiếm? Xác minh máy tìm kiếm đảm bảo rằng họ sẽ không bị cấm là kết quả của vượt quá giới các hạn vi phạm (cấm các máy tìm kiếm từ trang web của bạn thường sẽ có một tác động tiêu cực đến các xếp hạng máy tìm kiếm của bạn, SEO, vv). Khi xác minh được kích hoạt, các máy tìm kiếm có thể bị chặn như bình thường, nhưng sẽ không bị cấm. Khi xác minh không được kích hoạt, họ có thể bị cấm như là kết quả của vượt quá giới các hạn vi phạm. Ngoài ra, xác minh máy tìm kiếm cung cấp bảo vệ chống lại các yêu cầu giả máy tìm kiếm và chống lại các thực thể rằng là khả năng độc hại được giả mạo như là các máy tìm kiếm (những yêu cầu này sẽ bị chặn khi xác minh máy tìm kiếm được kích hoạt). True = Kích hoạt xác minh máy tìm kiếm [Mặc định]; False = Vô hiệu hóa xác minh máy tìm kiếm."
+config_general_search_engine_verification: "Kiểm soát để xác minh các yêu cầu từ các máy tìm kiếm."
 config_general_signatures_update_event_log: "Một tập tin để ghi nhật ký khi chữ ký được cập nhật qua front-end. Chỉ định một tên tập tin, hoặc để trống để vô hiệu hóa."
 config_general_silent_mode: "CIDRAM nên âm thầm chuyển hướng cố gắng truy cập bị chặn thay vì hiển thị trang "Truy cập đã bị từ chối"? Nếu vâng, xác định vị trí để chuyển hướng cố gắng truy cập bị chặn để. Nếu không, để cho biến này được trống."
-config_general_social_media_verification: "Cố gắng xác minh yêu cầu truyền thông xã hội? Xác minh truyền thông xã hội cung cấp sự bảo vệ chống lại các yêu cầu truyền thông xã hội giả mạo (các yêu cầu như vậy sẽ bị chặn). True = Kích hoạt xác minh truyền thông xã hội [Mặc định]; False = Vô hiệu hóa xác minh truyền thông xã hội."
+config_general_social_media_verification: "Kiểm soát để xác minh các yêu cầu từ các nền tảng truyền thông xã hội."
 config_general_stages: "Kiểm soát các giai đoạn của chuỗi thực thi (có được bật hay không, có lỗi được ghi lại hay không, vv)."
 config_general_statistics: "Kiểm soát thông tin thống kê cần theo dõi."
 config_general_time_format: "Định dạng ngày tháng sử dụng bởi CIDRAM. Các tùy chọn bổ sung có thể được bổ sung theo yêu cầu."
@@ -261,12 +266,15 @@ field_update_all: "Cập nhật tất cả"
 field_update_signatures_files: "Cập nhật tập tin chữ ký"
 field_upload_file: "Tải lên tập tin mới"
 field_username: "Tên Người Dùng"
-field_verified_requests: "Verified search engine and social media requests"
+field_verified_requests: "Yêu cầu máy tìm kiếm và truyền thông xã hội đã xác minh"
 field_verify: "Xác minh"
 field_verify_all: "Xác minh tất cả"
-field_whitelisted_requests: "Whitelisted requests"
+field_whitelisted_requests: "Yêu cầu trong danh sách trắng"
 field_your_version: "Phiên bản của bạn"
 header_login: "Vui lòng đăng nhập để tiếp tục."
+hints_verification:
+ ""Tích cực" và "tiêu cực" là gì?": "Khi xác minh danh tính được trình bày bởi một yêu cầu, kết quả thành công có thể được mô tả là "tích cực" hoặc "tiêu cực". Trong trường hợp danh tính được trình bày được xác nhận là danh tính thực, danh tính đó sẽ được mô tả là "tích cực". Trong trường hợp danh tính được trình bày được xác nhận là giả mạo, danh tính đó sẽ được mô tả là "tiêu cực". Tuy nhiên, kết quả không thành công (ví dụ: xác minh không thành công, hoặc không thể xác định tính xác thực của danh tính được trình bày) sẽ không được mô tả là "tích cực" hoặc "tiêu cực". Thay vào đó, một kết quả không thành công sẽ được mô tả đơn giản là chưa được xác minh. Khi không có nỗ lực xác minh danh tính mà một yêu cầu đưa ra được thực hiện, thì yêu cầu đó cũng sẽ được mô tả là chưa được xác minh. Các điều khoản chỉ có ý nghĩa trong bối cảnh mà danh tính được trình bày bởi một yêu cầu được công nhận và do đó, khi có thể xác minh. Trong trường hợp danh tính được trình bày không khớp với các tùy chọn được cung cấp ở trên, hoặc khi không có danh tính nào được trình bày, các tùy chọn được cung cấp ở trên trở nên không liên quan."
+ ""Bỏ qua một cú đánh" là gì?": "Trong một số trường hợp, yêu cầu đã được xác minh tích cực vẫn có thể bị chặn do tập tin chữ ký, mô-đun, hoặc các điều kiện khác của yêu cầu, và bỏ qua có thể cần thiết để tránh sai tích cực. Trong trường hợp sai tích cực gây ra chính xác một vi phạm, một bỏ qua như vậy có thể được mô tả là "bỏ qua một cú đánh"."
 info_some_useful_links: |
  Một số liên kết hữu ích:<br />
      <ul class="pieul">

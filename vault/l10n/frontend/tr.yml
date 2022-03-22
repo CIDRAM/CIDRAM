@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Turkish language data for the front-end (last modified: 2022.03.13).
+# This file: Turkish language data for the front-end (last modified: 2022.03.21).
 ##/
 
 Extended Description Bypasses: "Varsayılan imza bypass'lar, normalde ana paketle birlikte verilir."
@@ -62,12 +62,17 @@ Name module_httpver.php: "HTTP sürüm kontrol modülü"
 Name module_projecthoneypot.php: "Project Honeypot modülü"
 Name module_refspam.php: "Yönlendiren spam modülü"
 Name module_sfs.php: "Stop Forum Spam modülü"
+checkbox_label_block_negatives: "Negatifleri engelle?"
+checkbox_label_block_nonverified: "Doğrulanmamış istekler engelle?"
 checkbox_label_fields_logs: "Bu alan günlük girişlerinde görünmeli mi?"
 checkbox_label_fields_omit: "Bu alan boşken atlansın mı?"
 checkbox_label_fields_page_output: "Bu alan "erişim reddedildi" sayfasında görünmeli mi?"
+checkbox_label_single_hit_bypass: "Tek vuruşlu bypasslara izin verilsin mi?"
 checkbox_label_stage_enable: "Bu aşama etkinleştirilsin mi?"
 checkbox_label_stage_infractions: "IP izleme yönelik bu aşamada oluşturulan ihlaller sayılır mı?"
 checkbox_label_stage_log_errors: "Bu aşamada oluşan herhangi bir hata günlüğe kaydedilsin mi?"
+checkbox_label_untrack_positives: "Pozitifler için izleme durdurulsun mu?"
+checkbox_label_verify: "Doğrulamayı dene?"
 config_PHPMailer: "PHPMailer için yapılandırma (iki faktörlü kimlik doğrulama için kullanılır)."
 config_PHPMailer_add_reply_to_address: "SMTP ile e-posta gönderirken kullanılacak cevap adresi."
 config_PHPMailer_add_reply_to_name: "SMTP ile e-posta gönderirken kullanılacak cevap ismi."
@@ -114,12 +119,12 @@ config_general_logfile_apache: "Engellenen tüm erişim girişimlerini kaydetmek
 config_general_logfile_serialized: "Engellenen tüm erişim girişimlerini kaydetmek için seri haline getirilmiş dosya. Dosya adı belirtin veya devre dışı bırakmak için boş bırakın."
 config_general_max_login_attempts: "Maksimum giriş denemesi sayısı. Varsayılan = 5."
 config_general_numbers: "Numaraların görüntülenmesini nasıl tercih edersiniz? Size en uygun görünen örneği seçin."
-config_general_other_verification: "Mümkün olan her yerde, diğer istek türlerini doğrulamaya çalışın (ör., AdSense, SEO denetleyicileri, vb)? Tespit edildiğinde, sahte istekler engellenecektir. Doğru/True = Etkinleştir [Varsayılan]; Yanlış/False = devre dışı bırakın."
+config_general_other_verification: "Mümkün olduğunda diğer türdeki istekleri doğrulamak için kontroller."
 config_general_protect_frontend: "Normal olarak CIDRAM tarafından sağlanan korumaların ön uça uygulanıp uygulanmayacağını belirtir. Doğru/True = Evet [Varsayılan]; Yanlış/False = Hayır."
-config_general_search_engine_verification: "Arama motorlarından gelen istekleri doğrulamaya çalışın? Arama motorlarını doğrulamak, ihlal sınırını aşmanın bir sonucu olarak yasaklanmamasını sağlar (sitenizdeki arama motorlarını yasaklamak genellikle arama motoru sıralaması, SEO, vb. üzerinde olumsuz bir etki yapar). Doğrulandığı zaman, arama motorları normal olarak engellenebilir, ancak yasaklanmaz. Doğrulanmadığı zaman ise, ihlal sınırının aşılmasının bir sonucu olarak yasaklanmaları mümkündür. Buna ek olarak, arama motoru doğrulaması, sahte arama motoru isteklerine ve arama motorları kılığına bürünen potansiyel olarak kötü amaçlı varlıklara karşı koruma sağlar (arama motoru doğrulama etkinleştirildiğinde bu tür istekler engellenir). Doğru/True = Arama motoru doğrulamasını etkinleştir [Varsayılan]; Yanlış/False = Arama motoru doğrulamasını devre dışı bırakın."
+config_general_search_engine_verification: "Arama motorlarından gelen istekleri doğrulamak için kontroller."
 config_general_signatures_update_event_log: "Ön uç aracılığıyla imzalar güncellendiğinde günlüğe kaydedilecek bir dosya. Dosya adı belirtin veya devre dışı bırakmak için boş bırakın."
 config_general_silent_mode: "CIDRAM, "Erişim Reddedildi" sayfasını göstermek yerine, engellenen erişim girişimlerini sessizce yönlendirmeli mi? Yanıt evet ise, engellenen erişim girişimleri için yeniden yönlendirilecek konumu belirtin. Yanıt hayır ise, bu değişkeni boş bırakın."
-config_general_social_media_verification: "Sosyal medya isteklerini doğrulamayı denemek mi istiyorsunuz? Sosyal medya doğrulama, sahte sosyal medya isteklerine karşı koruma sağlar (bu gibi istekler engellenir). True = Sosyal medya doğrulamasını etkinleştir [Varsayılan]; False = Sosyal medya doğrulamasını devre dışı bırak."
+config_general_social_media_verification: "Sosyal medya platformlarından gelen istekleri doğrulamak için kontroller."
 config_general_stages: "Yürütme zincirinin aşamaları için kontroller (etkin olup olmadığı, hataların günlüğe kaydedilip kaydedilmediği, vb)."
 config_general_statistics: "Hangi istatistiksel bilgilerin izleneceğini kontrol eder."
 config_general_time_format: "CIDRAM tarafından kullanılan tarih/saat gösterimi biçimi. İsteğe bağlı olarak ek seçenekler eklenebilir."
@@ -267,6 +272,9 @@ field_verify_all: "Tümünü doğrula"
 field_whitelisted_requests: "Beyaz listeye eklenen istekler"
 field_your_version: "Sürümünüz"
 header_login: "Devam etmek için lütfen giriş yapınız."
+hints_verification:
+ ""Pozitifleri" ve "negatifleri" nedir?": "Bir talep tarafından sunulan kimliği doğrularken, başarılı bir sonuç "pozitif" veya "negatif" olarak tanımlanabilir. Sunulan kimliğin gerçek kimlik olduğu teyit edildiğinde, "pozitif" olarak tanımlanacaktır. Sunulan kimliğin sahte olduğu onaylandığında, "negatif" olarak tanımlanacaktır. Ancak, başarısız bir sonuç (örneğin, doğrulama başarısız olur, veya sunulan kimliğin doğruluğu belirlenemez) "pozitif" veya "negatif" olarak tanımlanmaz. Bunun yerine, başarısız bir sonuç basitçe doğrulanmamış olarak tanımlanır. Bir talep tarafından sunulan kimliği doğrulamak için hiçbir girişimde bulunulmadığında, talep de aynı şekilde doğrulanmamış olarak tanımlanır. Terimler, yalnızca bir talep tarafından sunulan kimliğin tanındığı ve dolayısıyla doğrulamanın mümkün olduğu bağlamda anlamlıdır. Sunulan kimlik, yukarıda belirtilen seçeneklerle eşleşmiyorsa veya herhangi bir kimlik sunulmuyorsa, yukarıda verilen seçenekler alakasız hale gelir."
+ ""Tek vuruşlu bypasslari" nedir?": "Bazı durumlarda, imza dosyaları, modüller, veya isteğin diğer koşulları nedeniyle olumlu doğrulanmış bir istek yine de engellenebilir, ve yanlış pozitifleri önlemek için bypasslar gerekli olabilir. Bir bypass, tam olarak bir ihlalle başa çıkmak için amaçlandığında, ne eksik ne fazla, böyle bir bypass "tek vuruşlu bypass" olarak tanımlanabilir."
 info_some_useful_links: |
  Bazı kullanışlı bağlantılar:<br />
      <ul class="pieul">

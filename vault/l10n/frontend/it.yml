@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Italian language data for the front-end (last modified: 2022.03.13).
+# This file: Italian language data for the front-end (last modified: 2022.03.21).
 ##/
 
 Extended Description Bypasses: "Un file per bypassare alcune delle firme predefinite normalmente inclusi nel pacchetto principale."
@@ -62,12 +62,17 @@ Name module_httpver.php: "Modulo di controllo della versione HTTP"
 Name module_projecthoneypot.php: "Modulo Project Honeypot"
 Name module_refspam.php: "Modulo spam referrer"
 Name module_sfs.php: "Modulo Stop Forum Spam"
+checkbox_label_block_negatives: "Blocca i negativi?"
+checkbox_label_block_nonverified: "Blocca le richieste non verificate?"
 checkbox_label_fields_logs: "Questo campo dovrebbe apparire nelle voci dei registri?"
 checkbox_label_fields_omit: "Ometti questo campo quando è vuoto?"
 checkbox_label_fields_page_output: "Questo campo dovrebbe apparire nella pagina "accesso negato"?"
+checkbox_label_single_hit_bypass: "Consenti bypass a colpo singolo?"
 checkbox_label_stage_enable: "Abilitare questa fase?"
 checkbox_label_stage_infractions: "Le infrazioni generati durante questa fase devono essere conteggiate ai fini del tracciamento IP?"
 checkbox_label_stage_log_errors: "Gli errori generati durante questa fase devono essere registrati?"
+checkbox_label_untrack_positives: "Annulla le tracciamento per i positivi?"
+checkbox_label_verify: "Prova a verificare?"
 config_PHPMailer: "Configurazione per PHPMailer (utilizzato per l'autenticazione a due fattori)."
 config_PHPMailer_add_reply_to_address: "L'indirizzo di risposta per citare quando si invia una posta elettronica tramite SMTP."
 config_PHPMailer_add_reply_to_name: "Il nome per la risposta per citare quando si invia una posta elettronica tramite SMTP."
@@ -114,12 +119,12 @@ config_general_logfile_apache: "Un file nello stile di apache per la registrazio
 config_general_logfile_serialized: "Un file serializzato per la registrazione di tutti i tentativi di accesso bloccati. Specificare un nome di file, o lasciare vuoto per disabilitare."
 config_general_max_login_attempts: "Numero massimo di tentativi di accesso al front-end. Predefinito = 5."
 config_general_numbers: "Come preferisci che i numeri siano visualizzati? Seleziona l'esempio che ti sembra più corretto."
-config_general_other_verification: "Ove possibile, tentare di verificare altri tipi di richieste (ad es., AdSense, controllori SEO, ecc)? Una volta rilevate, le richieste false verranno bloccate. True = Attiva [Predefinito]; False = Disattiva."
+config_general_other_verification: "Controlli per la verifica di altri tipi di richieste ove possibile."
 config_general_protect_frontend: "Specifica se le protezioni normalmente fornite da CIDRAM devono essere applicati al front-end. True = Sì [Predefinito]; False = No."
-config_general_search_engine_verification: "Tentare di verificare le richieste dai motori di ricerca? La verifica dei motori di ricerca assicura che non saranno vietate a seguito del superamento del limite infrazione (vieta dei motori di ricerca dal vostro sito web di solito hanno un effetto negativo sul vostro posizionamento sui motori di ricerca, SEO, ecc). Quando verificato, i motori di ricerca possono essere bloccati come al solito, ma non saranno vietate. Quando non verificato, è possibile per loro di essere vietate a seguito del superamento del limite infrazione. Inoltre, verifica dei motori di ricerca fornisce una protezione contro le richieste dei motori di ricerca falso e contro le entità potenzialmente dannosi mascherato da motori di ricerca (tali richieste verranno bloccate quando la verifica dei motori di ricerca è attivato). True = Attiva la verifica dei motori di ricerca [Predefinito]; False = Disattiva la verifica dei motori di ricerca."
+config_general_search_engine_verification: "Controlli per la verifica delle richieste dai motori di ricerca."
 config_general_signatures_update_event_log: "Un file per la registrazione quando le firme vengono aggiornate tramite il front-end. Specificare un nome di file, o lasciare vuoto per disabilitare."
 config_general_silent_mode: "CIDRAM dovrebbe reindirizzare silenziosamente tutti i tentativi di accesso bloccati invece di visualizzare la pagina "Accesso Negato"? Se si, specificare la localizzazione di reindirizzare i tentativi di accesso bloccati. Se no, lasciare questo variabile vuoto."
-config_general_social_media_verification: "Tentare di verificare le richieste dei social media? La verifica dei social media fornisce protezione contro le false richieste dei social media (tali richieste saranno bloccate). True = Attiva la verifica dei social media [Predefinito]; False = Disattiva la verifica dei social media."
+config_general_social_media_verification: "Controlli per la verifica delle richieste dalle piattaforme dei social media."
 config_general_stages: "Controlli per le fasi della catena di esecuzione (se abilitato, se gli errori sono registrati, ecc)."
 config_general_statistics: "Controlla quali informazioni statistiche tracciare."
 config_general_time_format: "Il formato della data/ora di notazione usata da CIDRAM. Ulteriori opzioni possono essere aggiunti su richiesta."
@@ -267,6 +272,9 @@ field_verify_all: "Verifica tutto"
 field_whitelisted_requests: "Richieste nella lista bianca"
 field_your_version: "La Vostra Versione"
 header_login: "Per favore accedi per continuare."
+hints_verification:
+ "Cosa sono "positivi" e "negativi"?": "Nel verificare l'identità presentata da una richiesta, un esito di successo potrebbe essere descritto come "positivo" o "negativo". Nel caso in cui l'identità presentata fosse confermata come la vera identità, sarebbe descritto come "positivo". Nel caso in cui l'identità presentata fosse confermata come falsificata, sarebbe descritto come "negativo". Tuttavia, un esito senza successo (ad esempio, la verifica è fallita, o non è possibile determinare la veridicità dell'identità presentata) non sarebbe descritto come "positivo" o "negativo". Invece, un esito senza successo verrebbe descritto semplicemente come non verificato. Quando non viene effettuato alcun tentativo di verificare l'identità presentata da una richiesta, la richiesta verrebbe ugualmente descritto come non verificato. I termini hanno senso solo nel contesto in cui viene riconosciuta l'identità presentata da una richiesta e, quindi, dove è possibile la verifica. Nei casi in cui l'identità presentata non corrisponda alle opzioni fornite sopra, o in cui non venga presentata alcuna identità, le opzioni sopra fornite diventano irrilevanti."
+ "Cosa sono i "bypass a colpo singolo"?": "In alcuni casi, una richiesta verificata positivamente potrebbe comunque essere bloccata a causa dei file di firma, dei moduli, o di altre condizioni della richiesta, e potrebbero essere necessari bypass per evitare falsi positivi. Nel caso in cui un bypass sia destinato a trattare esattamente un'infrazione, né più né meno, tale bypass potrebbe essere descritto come un "bypass a colpo singolo"."
 info_some_useful_links: |
  Alcuni link utili:<br />
      <ul class="pieul">

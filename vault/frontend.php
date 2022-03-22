@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2022.03.17).
+ * This file: Front-end handler (last modified: 2022.03.22).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -1196,13 +1196,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
     $CIDRAM['FE']['ConfigRow'] = $CIDRAM['ReadFile']($CIDRAM['GetAssetPath']('_config_row.html'));
 
     $CIDRAM['FE']['Indexes'] = '<ul class="pieul">';
-
-    /** Generate entries for display and regenerate configuration if any changes were submitted. */
-    $CIDRAM['FE']['ConfigFields'] = sprintf(
-        '<style>.showlink::before,.hidelink::before{content:"➖";display:inline-block;margin-%1$s:6px}.hidelink::before{transform:rotate(%2$s)}</style>',
-        $CIDRAM['FE']['FE_Align_Reverse'],
-        $CIDRAM['FE']['45deg']
-    );
+    $CIDRAM['FE']['ConfigFields'] = '';
     $CIDRAM['RegenerateConfig'] = '';
     $CIDRAM['ConfigModified'] = (!empty($CIDRAM['QueryVars']['updated']) && $CIDRAM['QueryVars']['updated'] === 'true');
 
@@ -1228,13 +1222,12 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
         $CIDRAM['RegenerateConfig'] .= "\r\n\r\n";
         $CIDRAM['FE']['ConfigFields'] .= sprintf(
             '<table><tr><td class="ng2"><div id="%1$s-container" class="s">' .
-                '<a class="showlink" id="%1$s-showlink" href="#%1$s-container" onclick="javascript:showid(\'%1$s-hidelink\');hideid(\'%1$s-showlink\');show(\'%1$s-row\')">%1$s</a>' .
-                '<a class="hidelink" id="%1$s-hidelink" %2$s href="#" onclick="javascript:showid(\'%1$s-showlink\');hideid(\'%1$s-hidelink\');hide(\'%1$s-row\')">%1$s</a>' .
-                "%3\$s</div></td></tr></table>\n<span class=\"%1\$s-row\" %2\$s><table>\n",
+            '<a id="%1$sShowLink" class="showlink" href="#%1$s-container" onclick="javascript:toggleconfig(\'%1$sRow\',\'%1$sShowLink\')">%1$s</a>' .
+            '%3$s</div></td></tr></table><span id="%1$sRow" %2$s><table>',
             $CIDRAM['CatKey'],
             'style="display:none"',
             $CIDRAM['CatInfo']
-        );
+        ) . "\n";
         $CIDRAM['CatData'] = '';
         foreach ($CIDRAM['CatValue'] as $CIDRAM['DirKey'] => $CIDRAM['DirValue']) {
             $CIDRAM['ThisDir'] = ['Preview' => '', 'Trigger' => '', 'FieldOut' => '', 'CatKey' => $CIDRAM['CatKey']];
@@ -1248,7 +1241,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
                 $CIDRAM['FromModuleConfigL10N']($CIDRAM['ThisDir']['DirLangKey'] . '_label')
             ) ?: $CIDRAM['DirKey'];
             $CIDRAM['CatData'] .= sprintf(
-                '<li><a onclick="javascript:showid(\'%1$s-hidelink\');hideid(\'%1$s-showlink\');show(\'%1$s-row\')" href="#%2$s">%3$s</a></li>',
+                '<li><a onclick="javascript:toggleconfigNav(\'%1$sRow\',\'%1$sShowLink\')" href="#%2$s">%3$s</a></li>',
                 $CIDRAM['CatKey'],
                 $CIDRAM['ThisDir']['DirLangKey'],
                 $CIDRAM['ThisDir']['Friendly']

@@ -7,3 +7,5 @@ function hide(e){b=document.getElementsByClassName(e);for(var s=0;s<b.length;s++
 function r(e){return document.getElementById(e).innerHTML}
 function w(e,x){document.getElementById(e).innerHTML=x}
 function copySvg(id){if(navigator.clipboard){document.getElementById(id).innerHTML='<svg class="copySvg" width="18" height="19" xmlns="http://www.w3.org/2000/svg"><g><rect class="copyHind" rx="2" stroke="#000" height="12" width="11" y="2" x="5" fill="#fff"/><rect class="copyFore" rx="2" stroke="#000" height="12" width="11" y="5" x="2" fill="#fff"/><line class="copyLine" y2="14" x2="11" y1="14" x1="4" stroke="#000" fill="none"/><line class="copyLine" y2="8" x2="9" y1="8" x1="4" stroke="#000" fill="none"/><line class="copyLine" y2="11" x2="10" y1="11" x1="4" stroke="#000" fill="none"/></g></svg>'}}
+function toggleconfig(e,f){x=document.getElementById(e),y=document.getElementById(f),x.style.display!='none'?(x.style.display='none',y.className='unshownlink'):(x.style.display='inline',y.className='shownlink')}
+function toggleconfigNav(e,f){x=document.getElementById(e),y=document.getElementById(f),x.style.display='inline',y.className='shownlink'}

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Norwegian language data for the front-end (last modified: 2022.03.10).
+# This file: Norwegian language data for the front-end (last modified: 2022.03.19).
 ##/
 
 Extended Description Bypasses: "Standard-signatur-bypass-filene som normalt følger med hovedpakken."
@@ -37,7 +37,7 @@ Extended Description module_httpver.php: "Gjør det mulig å blokkere spesifikke
 Extended Description module_projecthoneypot.php: "Blokkerer forespørsler fra IP-er oppført på Project Honeypot."
 Extended Description module_refspam.php: "Blokkering basert på referansesøppel vil vanligvis ikke gi noen meningsfull sikkerhetsgevinst, men i noen tilfeller kan det være nyttig for noen brukere, for å samle mer informasjon om forespørsler og for å kunne rapportere det.<br />Ved å installere denne modulen installeres også Symfony-polyfyllene for {{Links.Symfony.Intl/Idn}} og {{Links.Symfony.Mbstring}} (fordi denne modulen krever Idn-funksjonalitet, som ikke alle PHP-installasjoner leverer som standard), begge som er tilgjengelige via <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a> lisensen."
 Extended Description module_sfs.php: "Beskytter registrerings og innloggingssider mot IP-adresser oppført av SFS."
-Name Bypasses: "Standard signatur bypasses."
+Name Bypasses: "Standard-signatur-bypassene."
 Name CN_cidram.inc: "Kina IPv4-blokkliste"
 Name IPv4: "IPv4 (sky og hosting tjenester)."
 Name IPv4-Bogons: "IPv4 (bogoner)."
@@ -77,8 +77,8 @@ config_PHPMailer_addReplyToAddress: "Svaradressen for å sitere når du sender e
 config_PHPMailer_addReplyToName: "Svarnavnet til å sitere når du sender e-post via SMTP."
 config_PHPMailer_setFromAddress: "Avsenderadressen for å sitere når du sender e-post via SMTP."
 config_PHPMailer_setFromName: "Avsendernavnet for å sitere når du sender e-post via SMTP."
-config_bypasses: "Konfigurasjon for standarden omkjøringsveier av signaturer."
-config_bypasses_used: "Hvilke omkjøringsveier skal brukes?"
+config_bypasses: "Konfigurasjon for standard-signatur-bypassene."
+config_bypasses_used: "Hvilke bypasser skal brukes?"
 config_experimental: "Ustabil/Eksperimentell!"
 config_general: "Generell konfigurasjon (enhver kjernekonfigurasjon som ikke tilhører andre kategorier)."
 config_general_FrontEndLog: "Fil for å logge innloggingsforsøk på frontenden. Angi et filnavn, eller la det være tomt for å deaktivere."
@@ -317,7 +317,7 @@ info_some_useful_links: |
 label_active_config_file: "Aktiv konfigurasjonsfil:"
 label_actual: "Faktiske"
 label_aux_actBlk: "blokkere"
-label_aux_actByp: "omgå"
+label_aux_actByp: "bypassere"
 label_aux_actGrl: "grå liste"
 label_aux_actLog: "ikke logg"
 label_aux_actPro: "profilere"

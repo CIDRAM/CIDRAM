@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6_isps.dat
 
-# Version: 2022.74.0
-# Last modified: 2022.03.16
+# Version: 2022.81.0
+# Last modified: 2022.03.23
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -90,7 +90,7 @@ Tag: DGN TEKNOLOJI
 # "Scientific-Production Enterprise Information Technologies Ltd").
 # Brute-force, SSH, and webapp attacks, port scans, and spam detected here.
 # Stop Forum Spam (SFS) listings: 3,709 (AS6876), 5 (AS41544), 218 (AS48239).
-# Updated: 2016.07.20 / Modified: 2021.06.28
+# Updated: 2016.07.20 / Modified: 2021.06.28 / Checked: 2022.03.23
 
 2a04:2c00::/29 Deny Attacks
 Origin: UA
@@ -170,59 +170,21 @@ Profile: Domestic ISP;Tor endpoints here
 Tag: Kyivstar
 
 
-# ASN 13188 ("CONTENT DELIVERY NETWORK LTD", A.K.A. "TRIOLAN, UA").
-# Significant source of spam, hack attempts, scraping, etc.
-# Stop Forum Spam (SFS) listings: 30,919.
-# Updated: 2021.06.18
-
-2a03:7380::/39 Deny Spam
-2a03:7380:200::/42 Deny Spam
-2a03:7380:280::/42 Deny Spam
-2a03:7380:300::/40 Deny Spam
-2a03:7380:400::/39 Deny Spam
-2a03:7380:640::/42 Deny Spam
-2a03:7380:680::/42 Deny Spam
-2a03:7380:1e00::/42 Deny Spam
-2a03:7380:1e80::/42 Deny Spam
-2a03:7380:1f40::/42 Deny Spam
-2a03:7380:1f80::/42 Deny Spam
-2a03:7380:2000::/38 Deny Spam
-2a03:7380:2400::/40 Deny Spam
-2a03:7380:2500::/42 Deny Spam
-2a03:7380:2fc0::/42 Deny Spam
-2a03:7380:3000::/40 Deny Spam
-2a03:7380:3140::/42 Deny Spam
-2a03:7380:3180::/41 Deny Spam
-2a03:7380:3200::/42 Deny Spam
-2a03:7380:3800::/42 Deny Spam
-2a03:7380:4000::/41 Deny Spam
-2a03:7380:4080::/42 Deny Spam
-2a03:7380:5400::/41 Deny Spam
-2a03:7380:5480::/42 Deny Spam
-2a03:7380:5840::/42 Deny Spam
-2a03:7380:5c00::/42 Deny Spam
-2a03:7380:5c80::/42 Deny Spam
-2a03:7380:6000::/41 Deny Spam
-2a03:7380:6400::/42 Deny Spam
-2a03:7380:7380::/42 Deny Spam
-Origin: UA
-Profile: Infrastructure/Transit
-Tag: AS13188-CDN-LTD
-
-
 # ASNs 24955, 41704, 60095 ("Orenburgskaya Gorodskaya Set, ZAO").
 # Caught spamming while pretending to be Google. Repeated hack attempts, port
 # scans, probing for hardware vulnerabilities, brute-force and SSH attacks,
 # spam, IoT attacks, and more regularly encountered from here.
-# Stop Forum Spam (SFS) listings: 270,912 (AS24955), 8,165 (AS41704), 774 (AS60095).
-# Updated: 2019.11.08 / Checked: 2021.06.16
+# Stop Forum Spam (SFS) listings: 326,541 (AS24955), 41,704 (AS41704), 619 (AS60095).
+# Updated: 2022.03.17
 
-2a02:1c8::/47 Deny Spam
-2a02:1c8:7::/48 Deny Spam
-2a02:1c8:10::/44 Deny Spam
-2a02:1c8:90::/44 Deny Spam
-2a02:1c8:100::/40 Deny Spam
-2a02:1c8:700::/40 Deny Spam
+2a02:1c8::/47 Deny Attacks
+2a02:1c8:7::/48 Deny Attacks
+2a02:1c8:a::/48 Deny Attacks
+2a02:1c8:10::/44 Deny Attacks
+2a02:1c8:40::/44 Deny Attacks
+2a02:1c8:90::/44 Deny Attacks
+2a02:1c8:100::/40 Deny Attacks
+2a02:1c8:700::/40 Deny Attacks
 Origin: RU
 Profile: Domestic ISP
 Tag: Ufanet
@@ -1035,17 +997,6 @@ Profile: Infrastructure/Transit;Multiplay;Tor endpoints here;Webhosting
 Tag: 31173 Services AB
 
 
-# ASN 30779 ("TRK Cable TV LLC").
-# Ukrainian domestic ISP and cable TV provider. Spam detected from here.
-# Stop Forum Spam (SFS) listings: 4,836.
-# Updated: 2020.11.15 / Checked: 2021.06.05
-
-2001:67c:203c::/48 Deny Spam
-Origin: UA
-Profile: Domestic ISP
-Tag: TRK Cable TV LLC
-
-
 # ASNs 31593, 34187 ("LLC Renome-Service").
 # Ukrainian TV cable provider and a significant source of spam.
 # Stop Forum Spam (SFS) listings: 12,972 (AS31593), 267 (AS34187).
@@ -1055,22 +1006,6 @@ Tag: TRK Cable TV LLC
 Origin: UA
 Profile: Domestic ISP;Multiplay
 Tag: LLC Renome-Service
-
-
-# ASN 26599 ("Telefonica Brasil").
-# Brazilian domestic ISP and an occasional source of spam, SSH and brute-force
-# attacks. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 337.
-# Updated: 2021.06.18
-
-2804:18:875:4adf::/64 Deny Spam
-2804:18:1815:b94a::/64 Deny Spam
-2804:18:4801:e9b::/64 Deny Spam
-2804:18:4848:6e9f::/64 Deny Spam
-2804:18:5026:d58d::/64 Deny Spam
-Origin: BR
-Profile: Domestic ISP
-Tag: Telefonica Brasil
 
 
 # ASN 13030 ("Init7").
@@ -1241,10 +1176,10 @@ Tag: Vodafone Deutschland GmbH
 
 # ASNs 3215, 5511 ("Orange S.A").
 # French domestic ISP. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 1,868 (AS3215), 239 (AS5511).
-# Updated: 2021.06.25
+# Stop Forum Spam (SFS) listings: 2,711 (AS3215), 18 (AS5511).
+# Updated: 2022.03.22
 
-2a01:cb08:8ae5:ee00::/64 Deny Spam
+2a01:cb1c:9d9:5700::/64 Deny Spam
 Origin: FR
 Profile: Domestic ISP;Infrastructure/Transit
 Tag: Orange S.A
@@ -1568,3 +1503,15 @@ Tag: Magyar Telekom plc
 Origin: BR
 Profile: Commercial;Restricted/Unidentifiable
 Tag: CONNECTLINK TECH
+
+
+# ASN 132116 ("Ani Network Pvt Ltd").
+# Indian multiplay network. Ongoing spam campaigns, SSH, and brute-force
+# attacks. Huge source of spam, increasing over time.
+# Stop Forum Spam (SFS) listings: 43,744.
+# Updated: 2022.03.23
+
+2405:e100::/43 Deny Attacks
+Origin: IN
+Profile: Domestic ISP;Multiplay
+Tag: Ani Network Pvt Ltd

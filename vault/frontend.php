@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2022.03.22).
+ * This file: Front-end handler (last modified: 2022.03.24).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -284,13 +284,12 @@ if (!empty($CIDRAM['QueryVars']['cidram-asset'])) {
 /** A simple passthru for the front-end CSS. */
 if ($CIDRAM['QueryVars']['cidram-page'] === 'css') {
     $CIDRAM['AssetPath'] = $CIDRAM['GetAssetPath']('frontend.css');
-    /** Sets mime-type. */
     header('Content-Type: text/css');
     if (!empty($CIDRAM['QueryVars']['theme'])) {
         /** Prevents needlessly reloading static assets. */
         header('Last-Modified: ' . gmdate(DATE_RFC1123, filemtime($CIDRAM['AssetPath'])));
     }
-    /** Sends asset data. */
+    /** Send asset data. */
     echo $CIDRAM['ParseVars']($CIDRAM['L10N']->Data + $CIDRAM['FE'], $CIDRAM['ReadFile']($CIDRAM['AssetPath']));
     die;
 }
@@ -955,12 +954,14 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'icon' && $CIDRAM['FE']['Permiss
 
 /** A simple passthru for the flags CSS. */
 elseif ($CIDRAM['QueryVars']['cidram-page'] === 'flags' && $CIDRAM['FE']['Permissions'] && file_exists($CIDRAM['Vault'] . 'fe_assets/flags.css')) {
-    /** Sets mime-type. */
     header('Content-Type: text/css');
+
     /** Prevents needlessly reloading static assets. */
     header('Last-Modified: ' . gmdate(DATE_RFC1123, filemtime($CIDRAM['Vault'] . 'fe_assets/flags.css')));
-    /** Sends asset data. */
+
+    /** Send asset data. */
     echo $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'fe_assets/flags.css');
+
     die;
 }
 

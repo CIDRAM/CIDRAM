@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2022.03.09).
+ * This file: Front-end functions file (last modified: 2022.03.24).
  */
 
 /**
@@ -2455,7 +2455,7 @@ $CIDRAM['SectionsHandler'] = function (array $Files) use (&$CIDRAM): string {
     $SectionMeta = [];
     $ThisSectionMeta = [];
     foreach ($Files as $File) {
-        $Data = $File && is_readable($CIDRAM['Vault'] . $File) ? $CIDRAM['ReadFile']($CIDRAM['Vault'] . $File) : '';
+        $Data = $CIDRAM['ReadFile']($CIDRAM['Vault'] . $File);
         if (!$Data) {
             continue;
         }
@@ -2707,7 +2707,7 @@ $CIDRAM['RangeTablesIterateFiles'] = function (array &$Arr, array $Files, array 
     }
     foreach ($Files as $File) {
         $File = (strpos($File, ':') === false) ? $File : substr($File, strpos($File, ':') + 1);
-        $Data = $File && is_readable($CIDRAM['Vault'] . $File) ? $CIDRAM['ReadFile']($CIDRAM['Vault'] . $File) : '';
+        $Data = $CIDRAM['ReadFile']($CIDRAM['Vault'] . $File);
         if (!$Data) {
             continue;
         }

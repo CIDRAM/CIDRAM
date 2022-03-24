@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2022.03.22).
+ * This file: Functions file (last modified: 2022.03.24).
  */
 
 /** Autoloader for CIDRAM classes. */
@@ -31,23 +31,17 @@ $CIDRAM['Events'] = new \Maikuolan\Common\Events();
 /**
  * Reads and returns the contents of files.
  *
- * @param string $File Path and filename of the file to read.
- * @return string The file's contents (an empty string on failure).
+ * @param string $File The path and the name of the file to read.
+ * @return string The file's content, or an empty string on failure.
  */
 $CIDRAM['ReadFile'] = function (string $File): string {
-    if (!is_file($File) || !is_readable($File)) {
+    /** Guard. */
+    if (!strlen($File) || !is_file($File) || !is_readable($File)) {
         return '';
     }
-    $Data = '';
-    $Handle = fopen($File, 'rb');
-    if (!is_resource($Handle)) {
-        return '';
-    }
-    while (!feof($Handle)) {
-        $Data .= fread($Handle, \CIDRAM\Core\Constants::FILE_BLOCKSIZE);
-    }
-    fclose($Handle);
-    return $Data;
+
+    $Data = file_get_contents($File);
+    return is_string($Data) ? $Data : '';
 };
 
 /**
@@ -1542,7 +1536,7 @@ $CIDRAM['XVerification'] = function (string $Config = '', string $From = '', boo
         return;
     }
     if (!isset($CIDRAM['VerificationData'])) {
-        if (!$Raw = $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'verification.yaml')) {
+        if (($Raw = $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'verification.yaml')) === '') {
             $CIDRAM['SkipVerification'] = true;
             return;
         }
@@ -1728,7 +1722,7 @@ $CIDRAM['BuildLogPattern'] = function (string $Str, bool $GZ = false): string {
  */
 $CIDRAM['GZCompressFile'] = function (string $File): bool {
     /** Guard. */
-    if (!is_file($File) || !is_readable($File)) {
+    if (!strlen($File) || !is_file($File) || !is_readable($File)) {
         return false;
     }
 

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Latvian language data for the front-end (last modified: 2022.03.21).
+# This file: Latvian language data for the front-end (last modified: 2022.03.28).
 ##/
 
 Extended Description Bypasses: "Noklusējuma paraksta apiešana faili, kas parasti ir iekļauti galvenajā paketē."
@@ -94,7 +94,7 @@ config_general: "Vispārējā konfigurācija (jebkura pamata konfigurācija, kas
 config_general_allow_gethostbyaddr_lookup: "Vai atļaut meklēt ar gethostbyaddr, kad UDP nav pieejams? True (Patiess) = Jā [Noklusējuma]; False (Nepatiess) = Nē."
 config_general_ban_override: "Vai ignorēt "http_response_header_code", ja tiek pārsniegts "infraction_limit"? Ja tā, bloķētie pieprasījumi atdod tukšu lapu (veidņu faili netiek izmantoti). 200 = Neignorējiet [Noklusējuma]. Citas vērtības ir tādas pašas kā pieejamās vērtības "http_response_header_code"."
 config_general_config_imports: "Ar komatu atdalīts failu saraksts, kas jāimportē CIDRAM noklusējuma konfigurācijā. Parasti aizpilda atjauninājumu lapa, kad tiek aktivizēti komponenti, kuriem tas nepieciešams, kad nepieciešams. Vairumā gadījumu var to ignorēt."
-config_general_default_algo: "Definē, kuru algoritmu izmantot visām turpmākajām parolēm un sesijām. Iespējas: PASSWORD_DEFAULT (noklusējuma), PASSWORD_BCRYPT, PASSWORD_ARGON2I (nepieciešama &gt;= 7.2.0), PASSWORD_ARGON2ID (nepieciešama &gt;= 7.3.0)."
+config_general_default_algo: "Definē, kuru algoritmu izmantot visām turpmākajām parolēm un sesijām."
 config_general_default_dns: "Ar komatu atdalīts DNS serveru saraksts, ko izmantot saimniekdatora nosaukuma meklēšanā. Noklusējuma = "8.8.8.8,8.8.4.4" (Google DNS). BRĪDINĀJUMS: Nemainiet to, ja vien nezināt, ko darāt!"
 config_general_default_timeout: "Kādu noklusējuma taimautu izmantot ārējiem pieprasījumiem? Noklusējuma = 12 sekundes."
 config_general_disable_frontend: "Vai atspējot administratīvo piekļuvi, kas izmanto tīmekļa pārlūku? Administratīvā piekļuve, izmantojot tīmekļa pārlūku, var padarīt CIDRAM pārvaldāmāku, taču tas var būt arī potenciāls drošības risks. CIDRAM ieteicams pārvaldīt, izmantojot citus līdzekļus, kad vien iespējams (piemēram, izmantojot FTP), taču administratīvā piekļuve, izmantojot tīmekļa pārlūku, tiek nodrošināta gadījumos, kad citi līdzekļi nav dzīvotspējīgi. Iespējojiet to, ja jums tas ir nepieciešams; Atspējojiet to, ja jums nav. False (Nepatiess) = Iespējojiet to; True (Patiess) = Atspējojiet to [Noklusējuma]."
@@ -143,7 +143,7 @@ config_hcaptcha_show_api_message: &ShowAPIMessage "Rādīt API ziņojumu? True (
 config_hcaptcha_show_cookie_warning: &ShowCookieWarning "Rādīt brīdinājumu par sīkfailu? True (Patiess) = Jā [Noklusējuma]; False (Nepatiess) = Nē."
 config_hcaptcha_signature_limit: &CaptchaSignatureLimit "Maksimālais atļautais parakstu skaits pirms CAPTCHA piedāvājuma atsaukšanas. Noklusējuma = 1."
 config_hcaptcha_sitekey: *CaptchaDashboard
-config_hcaptcha_usemode: &CaptchaUseMode "Kad vajadzētu piedāvāt CAPTCHA? Piezīme: Baltā sarakstā iekļautajiem vai pārbaudītajiem un nebloķētajiem pieprasījumiem nekad nav jāaizpilda CAPTCHA."
+config_hcaptcha_usemode: &CaptchaUseMode "Kad vajadzētu piedāvāt CAPTCHA? Piezīme: Baltā sarakstā iekļautajiem vai pārbaudītajiem un nebloķētajiem pieprasījumiem nekad nav jāaizpilda CAPTCHA. Ņemiet vērā arī: CAPTCHA var nodrošināt noderīgu aizsardzību pret robotprogrammatūrām un dažāda veida ļaunprātīgiem un automatizētiem pieprasījumiem, taču tās nenodrošina nekādu aizsardzību pret ļaunprātīgu cilvēku."
 config_legal: "Juridisko prasību konfigurācija."
 config_legal_privacy_policy: "Attiecīgās privātuma politikas adrese, kas jāparāda visu ģenerēto lapu kājenē. Norādiet URL vai atstājiet tukšu lai to atspējotu."
 config_legal_pseudonymise_ip_addresses: "Pseidonimizēt IP adresi reģistrējoties? True (Patiess) = Jā [Noklusējuma]; False (Nepatiess) = Nē."
@@ -275,6 +275,8 @@ field_verify_all: "Verificēt visus"
 field_whitelisted_requests: "Baltajā sarakstā iekļautie pieprasījumi"
 field_your_version: "Jūsu Versija"
 header_login: "Lūdzu, ielogoties, lai turpinātu."
+hints_asnlookup: "** Nepieciešama ASN uzmeklēšanas funkcionalitāte (piemēram, izmantojot BGPView moduli)."
+hints_ipv6_on_32bit: "Piezīme: Dažās 32 bitu sistēmās IPv6 meklēšana var nedarboties pareizi."
 hints_verification:
  "Kas ir “pozitīvie” un “negatīvie”?": "Pārbaudot pieprasījuma sniegto identitāti, veiksmīgu rezultātu var raksturot kā “pozitīvu” vai “negatīvu”. Kad uzrādītā identitāte tiek apstiprināta kā patiesā identitāte, tā tiks raksturota kā “pozitīva”. Kad tiek apstiprināts, ka uzrādītā identitāte ir viltota, tā tiks raksturota kā “negatīva”. Tomēr, neveiksmīgs iznākums (piemēram, verifikācija neizdodas, vai uzrādītās identitātes patiesumu nevar noteikt) netiks raksturota kā “pozitīvu” vai “negatīvu”. Tā vietā neveiksmīgs rezultāts tiktu raksturots vienkārši kā nepārbaudīts. Ja netiek mēģināts pārbaudīt pieprasījumā norādīto identitāti, pieprasījums tāpat tiks raksturots kā nepārbaudīts. Terminiem ir jēga tikai kontekstā, kurā tiek atpazīta pieprasījumā norādītā identitāte un līdz ar to, ja ir iespējama pārbaude. Ja uzrādītā identitāte neatbilst iepriekš sniegtajām opcijām, vai ja identitāte nav uzrādīta, iepriekš sniegtās iespējas kļūst nepiemērojams."
  "Kas ir “viena trāpījuma apvedceļi”?": "Dažos gadījumos pozitīvi pārbaudīts pieprasījums joprojām var tikt bloķēts paraksta failu, moduļu, vai citu pieprasījuma nosacījumu dēļ, un var būt nepieciešami apvedceļi, lai izvairītos no viltus pozitīviem rezultātiem. Ja apvedceļš ir paredzēts, lai tiktu galā ar tieši vienu pārkāpumu, ne vairāk un ne mazāk, šādu apvedceļu varētu raksturot kā “viena trāpījuma apvedceļu”."

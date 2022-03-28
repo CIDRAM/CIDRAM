@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Polish language data for the front-end (last modified: 2022.03.21).
+# This file: Polish language data for the front-end (last modified: 2022.03.28).
 ##/
 
 Extended Description Bypasses: "Domyślne pliki obejścia podpisów zwykle zawarte w pakiecie głównym."
@@ -94,7 +94,7 @@ config_general: "Ogólna konfiguracja (dowolna konfiguracja podstawowa nienależ
 config_general_allow_gethostbyaddr_lookup: "Zezwolić na wyszukiwanie gethostbyaddr, gdy UDP jest niedostępny? True (Prawdziwe) = Tak [Domyślna]; False (Fałszywy) = Nie."
 config_general_ban_override: "Zastąpić „http_response_header_code”, gdy zostanie przekroczony „infraction_limit”? Podczas nadpisywania: Zablokowane żądania zwracają pustą stronę (pliki szablonów nie są używane). 200 = Nie zastępuj [Domyślna]. Inne wartości są takie same, jak dostępne wartości dla „http_response_header_code”."
 config_general_config_imports: "Rozdzielana przecinkami lista plików do zaimportowania do domyślnej konfiguracji CIDRAM. Zwykle wypełniana przez stronę aktualizacji podczas aktywacji składników, które tego potrzebują, gdy jest to konieczne. W większości przypadków można to zignorować."
-config_general_default_algo: "Określa, którego algorytmu należy używać dla wszystkich przyszłych haseł i sesji. Opcje: PASSWORD_DEFAULT (domyślna), PASSWORD_BCRYPT, PASSWORD_ARGON2I (wymaga PHP &gt;= 7.2.0), PASSWORD_ARGON2ID (wymaga PHP &gt;= 7.3.0)."
+config_general_default_algo: "Określa, którego algorytmu należy używać dla wszystkich przyszłych haseł i sesji."
 config_general_default_dns: "Rozdzielona przecinkami lista serwerów DNS używanych do wyszukiwania nazw hostów. Domyślna = "8.8.8.8,8.8.4.4" (Google DNS). OSTRZEŻENIE: Nie zmieniaj tego, chyba że wiesz, co robisz!"
 config_general_default_timeout: "Domyślny limit czasu używany dla żądań zewnętrznych? Domyślna = 12 sekund."
 config_general_disable_frontend: "Wyłączyć dostęp do interfejsu użytkownika? Interfejs użytkownika może sprawić, że CIDRAM będzie łatwiejszy w zarządzaniu, ale może również stanowić potencjalne zagrożenie bezpieczeństwa. Dostęp do interfejsu użytkownika jest zapewniany dla wygody, ale należy go włączać tylko wtedy, gdy jest to potrzebne. False (Fałszywy) = Włącz dostęp do interfejsu użytkownika; True (Prawdziwe) = Wyłącz dostęp do interfejsu użytkownika [Domyślna]."
@@ -143,7 +143,7 @@ config_hcaptcha_show_api_message: &ShowAPIMessage "Pokaż komunikat API? True (P
 config_hcaptcha_show_cookie_warning: &ShowCookieWarning "Pokaż ostrzeżenie o plikach cookie? True (Prawdziwe) = Tak [Domyślna]; False (Fałszywy) = Nie."
 config_hcaptcha_signature_limit: &CaptchaSignatureLimit "Maksymalna liczba podpisów dozwolona przed wycofaniem oferty CAPTCHA. Domyślna = 1."
 config_hcaptcha_sitekey: *CaptchaDashboard
-config_hcaptcha_usemode: &CaptchaUseMode "Kiedy należy oferować CAPTCHA? Uwaga: Umieszczone na białej liście lub zweryfikowane i niezablokowane żądania nigdy nie muszą kończyć CAPTCHA."
+config_hcaptcha_usemode: &CaptchaUseMode "Kiedy należy oferować CAPTCHA? Uwaga: Umieszczone na białej liście lub zweryfikowane i niezablokowane żądania nigdy nie muszą kończyć CAPTCHA. Uwaga również: CAPTCHA mogą zapewnić użyteczną, dodatkową warstwę ochrony przed botami i różnymi rodzajami złośliwych automatycznych żądań, ale nie zapewnią żadnej ochrony przed złośliwym człowiekiem."
 config_legal: "Konfiguracja wymagań prawnych."
 config_legal_privacy_policy: "Adres odpowiedniej polityki prywatności, która ma być wyświetlana w stopce każdej wygenerowanej strony. Podaj adres URL, lub pozostaw puste, aby wyłączyć."
 config_legal_pseudonymise_ip_addresses: "Pseudonimizować adresy IP podczas logowania? True (Prawdziwe) = Tak [Domyślna]; False (Fałszywy) = Nie."
@@ -275,6 +275,8 @@ field_verify_all: "Zweryfikuj wszystko"
 field_whitelisted_requests: "Żądania na białej liście"
 field_your_version: "Twoja Wersja"
 header_login: "Proszę się zalogować, aby kontynuować."
+hints_asnlookup: "** Wymaga funkcji wyszukiwania ASN (np., przez moduł BGPView)."
+hints_ipv6_on_32bit: "Uwaga: Wyszukiwania IPv6 mogą nie działać poprawnie w niektórych systemach 32-bitowych."
 hints_verification:
  "Czym są „pozytywy” i „negatywy”?": "Podczas weryfikacji tożsamości przedstawionej przez żądanie, pomyślny wynik można określić jako „pozytywny” lub „negatywny”. W przypadku potwierdzenia, że prezentowana tożsamość jest prawdziwą tożsamością, zostanie ona określona jako „pozytywna”. W przypadku potwierdzenia, że przedstawiona tożsamość jest sfałszowana, zostanie ona określona jako „negatywna”. Jednak nieudany wynik (np. weryfikacja nie powiodła się, lub nie można ustalić prawdziwości przedstawionej tożsamości) nie zostanie opisany jako „pozytywny” lub „negatywny”. Zamiast tego nieudany wynik zostałby opisany po prostu jako niezweryfikowany. Gdy nie zostanie podjęta żadna próba weryfikacji tożsamości przedstawionej przez żądanie, żądanie zostanie również opisane jako niezweryfikowane. Terminy mają sens tylko w kontekście, w którym rozpoznawana jest tożsamość przedstawiona w żądaniu, a zatem tam, gdzie możliwa jest weryfikacja. W przypadku, gdy przedstawiona tożsamość nie pasuje do opcji przedstawionych powyżej, lub gdy tożsamość nie jest przedstawiona, opcje podane powyżej stają się nieistotne."
  "Czym są „obejście pojedynczych trafień”?": "W niektórych przypadkach pozytywnie zweryfikowane żądanie może nadal zostać zablokowane z powodu plików sygnatur, modułów, lub innych warunków żądania, i obejścia mogą być konieczne w celu uniknięcia fałszywych pozytywów. W przypadku, gdy obejście ma na celu zajęcie się dokładnie jednym wykroczeniem, ni mniej, ni więcej, takie obejście można opisać jako „obejście pojedynczego trafienia”."

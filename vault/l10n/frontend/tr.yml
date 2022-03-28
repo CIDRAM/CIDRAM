@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Turkish language data for the front-end (last modified: 2022.03.21).
+# This file: Turkish language data for the front-end (last modified: 2022.03.28).
 ##/
 
 Extended Description Bypasses: "Varsayılan imza bypass'lar, normalde ana paketle birlikte verilir."
@@ -94,7 +94,7 @@ config_general: "Genel yapılandırma (diğer kategorilere ait olmayan herhangi 
 config_general_allow_gethostbyaddr_lookup: "UDP kullanılamadığında gethostbyaddr aramalarına izin verilsin mi? Doğru/True = Evet [Varsayılan]; Yanlış/False = Hayır."
 config_general_ban_override: ""infraction_limit" aşıldığında "http_response_header_code"u geçersiz kıl? Geçersiz kılarken: Engellenen istekler boş bir sayfa verir (şablon dosyaları kullanılmaz). 200 = [Varsayılan] değerini geçersiz kılmayın. Diğer değerler "http_response_header_code" için mevcut değerler ile aynıdır."
 config_general_config_imports: "CIDRAM varsayılan yapılandırmasına aktarılacak virgülle ayrılmış dosya listesi. Bileşenleri etkinleştirirken genellikle gerektiğinde güncellemeler sayfası tarafından doldurulur. Çoğu durumda, görmezden gelebilir."
-config_general_default_algo: "Gelecekteki tüm şifreler ve oturumlar için hangi algoritmayı kullanacağını tanımlar. Options: PASSWORD_DEFAULT (varsayılan), PASSWORD_BCRYPT, PASSWORD_ARGON2I (PHP &gt;= 7.2.0 gerektirir), PASSWORD_ARGON2ID (PHP &gt;= 7.3.0 gerektirir)."
+config_general_default_algo: "Gelecekteki tüm şifreler ve oturumlar için hangi algoritmayı kullanacağını tanımlar."
 config_general_default_dns: "Ana makine adı aramalarda kullanılacak virgülle ayrılmış DNS sunucuları listesi. Varsayılan = "8.8.8.8,8.8.4.4" (Google DNS). UYARI: Ne yaptığınızı bilmiyorsanız bunu değiştirmeyin!"
 config_general_default_timeout: "Harici istekler için kullanılacak varsayılan zaman aşımı? Varsayılan = 12 saniye."
 config_general_disable_frontend: "Ön uç erişimini devre dışı bırak? Ön uç erişimi CIDRAM'ın daha yönetilebilir hale getirebilir, ancak potansiyel bir güvenlik riski de oluşturabilir. CIDRAM'ın mümkün olduğunda arka ucundan yönetmesi önerilir, ancak kolaylık sağlamak için ön uç erişimi sağlanmıştır. İhtiyacınız olmadıkça devre dışı bırakın. False = Ön uç erişimini etkinleştir; True = Ön uç erişimini devre dışı bırak [Varsayılan]."
@@ -143,7 +143,7 @@ config_hcaptcha_show_api_message: &ShowAPIMessage "API mesajı göster? Doğru/T
 config_hcaptcha_show_cookie_warning: &ShowCookieWarning "Çerez uyarısını göster? Doğru/True = Evet [Varsayılan]; Yanlış/False = Hayır."
 config_hcaptcha_signature_limit: &CaptchaSignatureLimit "CAPTCHA teklifi geri çekilmeden önce izin verilen maksimum imza sayısı. Varsayılan = 1."
 config_hcaptcha_sitekey: *CaptchaDashboard
-config_hcaptcha_usemode: &CaptchaUseMode "CAPTCHA ne zaman sunulmalı? Not: Beyaz listeye alınmış veya doğrulanmış ve engellenmemiş isteklerin hiçbir zaman bir CAPTCHA tamamlaması gerekmez."
+config_hcaptcha_usemode: &CaptchaUseMode "CAPTCHA ne zaman sunulmalı? Not: Beyaz listeye alınmış veya doğrulanmış ve engellenmemiş isteklerin hiçbir zaman bir CAPTCHA tamamlaması gerekmez. Ayrıca not edin: CAPTCHA'lar, botlara ve çeşitli kötü niyetli otomatik isteklere karşı yararlı ek bir koruma katmanı sağlayabilir, ancak kötü niyetli insanlar karşı herhangi bir koruma sağlamaz."
 config_legal: "Yasal gereklilikler için yapılandırma."
 config_legal_privacy_policy: "Oluşturulan sayfaların alt kısmında görüntülenecek ilgili gizlilik politikasının adresi. Bir URL belirtin veya devre dışı bırakmak için boş bırakın."
 config_legal_pseudonymise_ip_addresses: "Günlük dosyaları yazarken IP adresi "pseudonymize" edilir? Doğru/True = Evet [Varsayılan]; Yanlış/False = Hayır."
@@ -272,6 +272,8 @@ field_verify_all: "Tümünü doğrula"
 field_whitelisted_requests: "Beyaz listeye eklenen istekler"
 field_your_version: "Sürümünüz"
 header_login: "Devam etmek için lütfen giriş yapınız."
+hints_asnlookup: "** ASN arama işlevi gerektirir (örneğin, BGPView modülü aracılığıyla)."
+hints_ipv6_on_32bit: "Not: IPv6 aramaları bazı 32 bit sistemlerde düzgün çalışmayabilir."
 hints_verification:
  ""Pozitifleri" ve "negatifleri" nedir?": "Bir talep tarafından sunulan kimliği doğrularken, başarılı bir sonuç "pozitif" veya "negatif" olarak tanımlanabilir. Sunulan kimliğin gerçek kimlik olduğu teyit edildiğinde, "pozitif" olarak tanımlanacaktır. Sunulan kimliğin sahte olduğu onaylandığında, "negatif" olarak tanımlanacaktır. Ancak, başarısız bir sonuç (örneğin, doğrulama başarısız olur, veya sunulan kimliğin doğruluğu belirlenemez) "pozitif" veya "negatif" olarak tanımlanmaz. Bunun yerine, başarısız bir sonuç basitçe doğrulanmamış olarak tanımlanır. Bir talep tarafından sunulan kimliği doğrulamak için hiçbir girişimde bulunulmadığında, talep de aynı şekilde doğrulanmamış olarak tanımlanır. Terimler, yalnızca bir talep tarafından sunulan kimliğin tanındığı ve dolayısıyla doğrulamanın mümkün olduğu bağlamda anlamlıdır. Sunulan kimlik, yukarıda belirtilen seçeneklerle eşleşmiyorsa veya herhangi bir kimlik sunulmuyorsa, yukarıda verilen seçenekler alakasız hale gelir."
  ""Tek vuruşlu bypasslari" nedir?": "Bazı durumlarda, imza dosyaları, modüller, veya isteğin diğer koşulları nedeniyle olumlu doğrulanmış bir istek yine de engellenebilir, ve yanlış pozitifleri önlemek için bypasslar gerekli olabilir. Bir bypass, tam olarak bir ihlalle başa çıkmak için amaçlandığında, ne eksik ne fazla, böyle bir bypass "tek vuruşlu bypass" olarak tanımlanabilir."

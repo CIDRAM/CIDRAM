@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Swedish language data for the front-end (last modified: 2022.03.21).
+# This file: Swedish language data for the front-end (last modified: 2022.03.28).
 ##/
 
 Extended Description Bypasses: "Standard-signatur-bypass-filer som normalt ingår i huvudpaketet."
@@ -94,7 +94,7 @@ config_general: "Allmän konfiguration (alla kärnkonfigurationer som inte tillh
 config_general_allow_gethostbyaddr_lookup: "Tillåt gethostbyaddr-uppslag när UDP är otillgänglig? True = Ja [Standard]; False = Nej."
 config_general_ban_override: "Åsidosätta "http_response_header_code" när "infraction_limit" överskrids? När det åsidosätter: Blockerade förfrågningar returnerar en tom sida (mallfiler används inte). 200 = Åsidosätta inte [Standard]. Andra värden är desamma som tillgängliga värden för "http_response_header_code"."
 config_general_config_imports: "En kommaavgränsad lista över filer som ska importeras till CIDRAM-standardkonfigurationen. Befolkas vanligtvis av uppdateringssidan när du aktiverar komponenter som behöver det vid behov. I de flesta fall kan ignorera det."
-config_general_default_algo: "Definierar vilken algoritm som ska användas för alla framtida lösenord och sessioner. Alternativ: PASSWORD_DEFAULT (standard), PASSWORD_BCRYPT, PASSWORD_ARGON2I (kräver PHP &gt;= 7.2.0), PASSWORD_ARGON2ID (kräver PHP &gt;= 7.3.0)."
+config_general_default_algo: "Definierar vilken algoritm som ska användas för alla framtida lösenord och sessioner."
 config_general_default_dns: "En komma-avgränsad lista över DNS-servrar som ska användas för värdnamnssökningar. Standard = "8.8.8.8,8.8.4.4" (Google DNS). VARNING: Ändra inte detta om du inte vet vad du gör!"
 config_general_default_timeout: "Standard timeout att använda för externa förfrågningar? Standard = 12 sekunder."
 config_general_disable_frontend: "Inaktivera front-end tillgång? Front-end tillgång kan göra CIDRAM mer hanterbar, men kan också vara en potentiell säkerhetsrisk. Det rekommenderas att hantera CIDRAM via back-end när det är möjligt, men front-end tillgång tillhandahålls när det inte är möjligt. Håll det inaktiverat om du inte behöver det. False = Aktivera front-end tillgång; True = Inaktivera front-end tillgång [Standard]."
@@ -143,7 +143,7 @@ config_hcaptcha_show_api_message: &ShowAPIMessage "Inkludera API-meddelande? Tru
 config_hcaptcha_show_cookie_warning: &ShowCookieWarning "Inkludera cookievarning? True = Ja [Standard]; False = Nej."
 config_hcaptcha_signature_limit: &CaptchaSignatureLimit "Maximalt antal signaturer tillåtna innan CAPTCHA-erbjudandet dras tillbaka. Standard = 1."
 config_hcaptcha_sitekey: *CaptchaDashboard
-config_hcaptcha_usemode: &CaptchaUseMode "När ska CAPTCHA erbjudas? Obs: Vitlistade eller verifierade och icke-blockerade förfrågningar behöver aldrig slutföra en CAPTCHA."
+config_hcaptcha_usemode: &CaptchaUseMode "När ska CAPTCHA erbjudas? Obs: Vitlistade eller verifierade och icke-blockerade förfrågningar behöver aldrig slutföra en CAPTCHA. Också: CAPTCHA-ar kan ge ett användbart, ytterligare skydd mot bots och olika typer av illvilliga automatiska förfrågningar, men ger inget skydd mot illvilliga människor."
 config_legal: "Konfiguration för lagkrav."
 config_legal_privacy_policy: "Adressen till en relevant integritetspolicy som ska visas i sidfoten av genererade sidor. Ange en webbadress, eller lämna tomt för att inaktivera."
 config_legal_pseudonymise_ip_addresses: "Pseudonymisera IP-adresser när loggning? True = Ja [Standard]; False = Nej."
@@ -272,6 +272,8 @@ field_verify_all: "Verifiera allt"
 field_whitelisted_requests: "Vitlistade förfrågningar"
 field_your_version: "Din version"
 header_login: "Snälla logga in för att fortsätta."
+hints_asnlookup: "** Kräver ASN-uppslagsfunktion (t.ex., via BGPView-modulen)."
+hints_ipv6_on_32bit: "Obs: IPv6-sökningar kanske inte fungerar korrekt på vissa 32-bitarssystem."
 hints_verification:
  "Vad är "positiva" och "negativa"?": "När verifiering identiteten som presenteras av en begäran, ett framgångsrikt resultat kan beskrivas som "positiv" eller "negativ". I det fall att den presenterade identiteten bekräftas vara den sanna identiteten, skulle den beskrivas som "positiv". I det fall att den presenterade identiteten bekräftas vara förfalskad, skulle den beskrivas som "negativ". Dock, ett misslyckat resultat (t.ex., verifiering misslyckas, eller det går inte att fastställa sanningshalten i den presenterade identiteten) skulle inte beskrivas som "positiv" eller "negativ". Istället skulle ett misslyckat resultat beskrivas som icke-verifierad. När inget försök att verifiera identiteten som presenteras av en begäran görs, begäran skulle också beskrivas som icke-verifierad. Termerna är meningsfulla endast i det sammanhang där identiteten som presenteras av en begäran erkänns, och därför, där verifiering är möjlig. I de fall där identiteten som presenteras inte matchar alternativen ovan, eller där ingen identitet presenteras, alternativen ovan blir irrelevanta."
  "Vad är "singel-hit bypasser"?": "I vissa fall kan en positivt verifierad begäran fortfarande blockeras som ett resultat av signaturfilerna, modulerna, eller andra villkor för begäran, och bypasser kan vara nödvändiga för att undvika falska positiva resultat. I det fall där en bypass är avsedd att hantera exakt en infraktion, varken mer eller mindre, sådan en bypass kan beskrivas som en "singel-hit bypass"."

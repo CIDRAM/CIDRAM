@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: French language data for the front-end (last modified: 2022.03.21).
+# This file: French language data for the front-end (last modified: 2022.03.28).
 ##/
 
 Extended Description Bypasses: "Les fichiers pour contourner les signatures standard qui sont normalement inclus dans le paquet principal."
@@ -94,7 +94,7 @@ config_general: "Configuration générale (toute configuration de base n'apparte
 config_general_allow_gethostbyaddr_lookup: "Autoriser les recherches par gethostbyaddr lorsque UDP est indisponible\_? True = Oui [Défaut]\_; False = Non."
 config_general_ban_override: "Remplacer «\_http_response_header_code\_» lorsque «\_infraction_limit\_» est dépassé\_? En cas de remplacement\_: Les requêtes bloquées renvoient une page blanche (les fichiers modèles ne sont pas utilisés). 200 = Ne pas remplacer [Défaut]. Les autres valeurs sont les mêmes que les valeurs disponibles pour «\_http_response_header_code\_»."
 config_general_config_imports: "Une liste délimitée par des virgules de fichiers à importer dans la configuration par défaut du CIDRAM. Généralement renseigné par la page des mises à jour lors de l'activation des composants qui en ont besoin si nécessaire. Dans la plupart des cas, peut l'ignorer."
-config_general_default_algo: "Définit quel algorithme utiliser pour tous les mots de passe et les sessions à l'avenir. Options\_: PASSWORD_DEFAULT (défaut), PASSWORD_BCRYPT, PASSWORD_ARGON2I (nécessite PHP &gt;= 7.2.0), PASSWORD_ARGON2ID (nécessite PHP &gt;= 7.3.0)."
+config_general_default_algo: "Définit quel algorithme utiliser pour tous les mots de passe et les sessions à l'avenir."
 config_general_default_dns: "Une liste délimitée par des virgules de serveurs DNS à utiliser pour les recherches de noms d'hôtes. Par Défaut = «\_8.8.8.8,8.8.4.4\_» (Google DNS). AVERTISSEMENT\_: Ne pas changer si vous ne sais pas ce que vous faites\_!"
 config_general_default_timeout: "Délai d'attente par défaut à utiliser pour les requêtes externes\_? Défaut = 12 secondes."
 config_general_disable_frontend: "Désactiver l'accès frontal\_? L'accès frontal peut rendre CIDRAM plus facile à gérer, mais peut aussi être un risque potentiel pour la sécurité. Il est recommandé de gérer CIDRAM via le back-end chaque fois que possible, mais l'accès frontal est prévu pour quand il est impossible. Seulement activer si vous avez besoin. False = Activer l'accès frontal\_; True = Désactiver l'accès frontal [Défaut]."
@@ -143,7 +143,7 @@ config_hcaptcha_show_api_message: &ShowAPIMessage "Afficher le message de l'API\
 config_hcaptcha_show_cookie_warning: &ShowCookieWarning "Afficher l'avertissement concernant les cookies\_? True = Oui [Défaut]\_; False = Non."
 config_hcaptcha_signature_limit: &CaptchaSignatureLimit "Nombre maximum de signatures autorisé avant le retrait de l'offre de CAPTCHA. Défaut = 1."
 config_hcaptcha_sitekey: *CaptchaDashboard
-config_hcaptcha_usemode: &CaptchaUseMode "Quand faut-il offrir le CAPTCHA\_? Remarque\_: Les requêtes sur liste blanche ou vérifiées et non bloquées n'ont jamais besoin de compléter un CAPTCHA."
+config_hcaptcha_usemode: &CaptchaUseMode "Quand faut-il offrir le CAPTCHA\_? Remarque\_: Les requêtes sur liste blanche ou vérifiées et non bloquées n'ont jamais besoin de compléter un CAPTCHA. A noter également\_: Les CAPTCHAs peuvent fournir une couche de protection utile contre les bots et divers types de requêtes automatisées et malveillantes, mais ne fourniront pas aucune protection contre un humain malveillant."
 config_legal: "Configuration pour les exigences légales."
 config_legal_privacy_policy: "L'adresse d'une politique de confidentialité pertinente à afficher dans le pied de page des pages générées. Spécifier une URL, ou laisser vide à désactiver."
 config_legal_pseudonymise_ip_addresses: "Pseudonymiser les adresses IP lors de la journalisation\_? True = Oui [Défaut]\_; False = Non."
@@ -274,6 +274,8 @@ field_verify_all: "Vérifier tous"
 field_whitelisted_requests: "Requêtes qui ont été listé blanche"
 field_your_version: "Votre Version"
 header_login: "Merci de vous connecter pour continuer."
+hints_asnlookup: "** La fonctionnalité de recherche ASN est nécessaire (par exemple, via le module BGPView)."
+hints_ipv6_on_32bit: "Remarque\_: Les recherches IPv6 peuvent ne pas fonctionner correctement sur certains systèmes 32 bits."
 hints_verification:
  "Que sont les «\_positifs\_» et les «\_négatifs\_»\_?": "Lors de la vérification de l'identité présenté par une requête, un résultat réussi peut être décrit comme «\_positif\_» ou «\_négatif\_». Dans le cas où l'identité présenté est confirmé comme étant la véritable identité, elle serait décrit comme «\_positif\_». Dans le cas où l'identité présenté s'avèrerait falsifié, elle serait décrit comme «\_négatif\_». Cependant, un résultat infructueux (par exemple, la vérification échoue, ou la véracité de l'identité présenté ne peut pas être déterminé) ne serait pas décrit comme «\_positif\_» ou «\_négatif\_». Au lieu, un résultat infructueux serait décrit simplement comme non vérifié. Lorsqu'aucune tentative de vérification de l'identité présenté par une requête n'est effectué, la requête serait également décrit comme non vérifié. Les termes n'ont de sens que dans le contexte où l'identité présenté par une requête est reconnue, et donc, où la vérification est possible. Dans les cas où l'identité présenté ne correspond pas aux options fournies ci-dessus, ou lorsqu'aucune identité n'est présenté, les options fournies ci-dessus deviennent sans objet."
  "Que sont les «\_contournements en un seul coup\_»\_?": "Dans certains cas, une requête vérifié positive peut toujours être bloquée en raison des fichiers de signature, des modules, ou d'autres conditions de la requête, et des contournements peuvent être nécessaires pour éviter les faux positifs. Dans le cas où un contournement est destiné à traiter exactement une infraction, ni plus ni moins, un tel contournement pourrait être décrit comme «\_contournements en un seul coup\_»."

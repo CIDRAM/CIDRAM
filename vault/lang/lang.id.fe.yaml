@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Indonesian language data for the front-end (last modified: 2022.03.17).
+# This file: Indonesian language data for the front-end (last modified: 2022.03.28).
 ##/
 
 Extended Description Bypasses: "File untuk bypass tanda tangan standar yang biasanya disertakan dengan paket utama."
@@ -137,7 +137,7 @@ config_hcaptcha_show_api_message: &ShowAPIMessage "Tampilkan pesan API? True = Y
 config_hcaptcha_show_cookie_warning: &ShowCookieWarning "Tampilkan peringatan cookie? True = Ya [Default]; False = Tidak."
 config_hcaptcha_signature_limit: &CaptchaSignatureLimit "Jumlah maksimum tanda tangan yang diperbolehkan sebelum penawaran CAPTCHA ditarik. Default = 1."
 config_hcaptcha_sitekey: *CaptchaDashboard
-config_hcaptcha_usemode: &CaptchaUseMode "Kapan CAPTCHA harus ditawarkan? Catat: Permintaan yang masuk daftar putih atau diverifikasi dan tidak diblokir tidak perlu menyelesaikan CAPTCHA."
+config_hcaptcha_usemode: &CaptchaUseMode "Kapan CAPTCHA harus ditawarkan? Catat: Permintaan yang masuk daftar putih atau diverifikasi dan tidak diblokir tidak perlu menyelesaikan CAPTCHA. Juga mencatat: CAPTCHA dapat memberikan lapisan perlindungan tambahan yang berguna terhadap bot dan berbagai jenis permintaan yang otomatis dan berbahaya, tetapi tidak akan memberikan perlindungan apapun terhadap manusia yang berbahaya."
 config_legal: "Konfigurasi untuk persyaratan hukum."
 config_legal_omit_hostname: "Jangan memasukkan nama host di log? True = Ya; False = Tidak [Default]."
 config_legal_omit_ip: "Jangan memasukkan alamat IP di log? True = Ya; False = Tidak [Default]. Catat: "pseudonymise_ip_addresses" menjadi tidak perlu ketika "omit_ip" adalah "true"."
@@ -279,6 +279,7 @@ field_verify_all: "Memverifikasi semua"
 field_whitelisted_requests: "Permintaan yang masuk daftar putih"
 field_your_version: "Versi Anda"
 header_login: "Silahkan masuk untuk melanjutkan."
+hints_ipv6_on_32bit: "Catatan: Pencarian IPv6 mungkin tidak bekerja dengan benar pada beberapa sistem 32-bit."
 info_some_useful_links: |
  Beberapa link yang berguna:<br />
      <ul class="pieul">

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Latvian language data for the front-end (last modified: 2022.03.10).
+# This file: Latvian language data for the front-end (last modified: 2022.03.28).
 ##/
 
 Extended Description Bypasses: "Noklusējuma paraksta apiešana faili, kas parasti ir iekļauti galvenajā paketē."
@@ -137,7 +137,7 @@ config_hcaptcha_show_api_message: &ShowAPIMessage "Rādīt API ziņojumu? True (
 config_hcaptcha_show_cookie_warning: &ShowCookieWarning "Rādīt brīdinājumu par sīkfailu? True (Patiess) = Jā [Noklusējuma]; False (Nepatiess) = Nē."
 config_hcaptcha_signature_limit: &CaptchaSignatureLimit "Maksimālais atļautais parakstu skaits pirms CAPTCHA piedāvājuma atsaukšanas. Noklusējuma = 1."
 config_hcaptcha_sitekey: *CaptchaDashboard
-config_hcaptcha_usemode: &CaptchaUseMode "Kad vajadzētu piedāvāt CAPTCHA? Piezīme: Baltā sarakstā iekļautajiem vai pārbaudītajiem un nebloķētajiem pieprasījumiem nekad nav jāaizpilda CAPTCHA."
+config_hcaptcha_usemode: &CaptchaUseMode "Kad vajadzētu piedāvāt CAPTCHA? Piezīme: Baltā sarakstā iekļautajiem vai pārbaudītajiem un nebloķētajiem pieprasījumiem nekad nav jāaizpilda CAPTCHA. Ņemiet vērā arī: CAPTCHA var nodrošināt noderīgu aizsardzību pret robotprogrammatūrām un dažāda veida ļaunprātīgiem un automatizētiem pieprasījumiem, taču tās nenodrošina nekādu aizsardzību pret ļaunprātīgu cilvēku."
 config_legal: "Juridisko prasību konfigurācija."
 config_legal_omit_hostname: "Izlaist resursdatori no logfailiem? True (Patiess) = Jā; False (Nepatiess) = Nē [Noklusējuma]."
 config_legal_omit_ip: "Izlaist IP adreses no logfailiem? True (Patiess) = Jā; False (Nepatiess) = Nē [Noklusējuma]. Piezīme: "pseudonymise_ip_addresses" kļūst lieks, kad "omit_ip" ir "true"."
@@ -282,6 +282,7 @@ field_verify_all: "Verificēt visus"
 field_whitelisted_requests: "Baltajā sarakstā iekļautie pieprasījumi"
 field_your_version: "Jūsu Versija"
 header_login: "Lūdzu, ielogoties, lai turpinātu."
+hints_ipv6_on_32bit: "Piezīme: Dažās 32 bitu sistēmās IPv6 meklēšana var nedarboties pareizi."
 info_some_useful_links: |
  Dažas noderīgas saites:<br />
      <ul class="pieul">

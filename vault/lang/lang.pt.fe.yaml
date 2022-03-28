@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Portuguese language data for the front-end (last modified: 2022.03.10).
+# This file: Portuguese language data for the front-end (last modified: 2022.03.28).
 ##/
 
 Extended Description Bypasses: "Os arquivos para bypass das assinaturas padrão normalmente incluído com o pacote principal."
@@ -137,7 +137,7 @@ config_hcaptcha_show_api_message: &ShowAPIMessage "Mostrar mensagem API? True = 
 config_hcaptcha_show_cookie_warning: &ShowCookieWarning "Mostrar aviso de cookie? True = Sim [Padrão]; False = Não."
 config_hcaptcha_signature_limit: &CaptchaSignatureLimit "O número máximo de assinaturas permitidas antes que o CAPTCHA seja retirado. Padrão = 1."
 config_hcaptcha_sitekey: *CaptchaDashboard
-config_hcaptcha_usemode: &CaptchaUseMode "Quando o CAPTCHA deve ser oferecido? Nota: Solicitações na lista branca ou verificadas e não bloqueadas nunca precisam completar um CAPTCHA."
+config_hcaptcha_usemode: &CaptchaUseMode "Quando o CAPTCHA deve ser oferecido? Nota: Solicitações na lista branca ou verificadas e não bloqueadas nunca precisam completar um CAPTCHA. Também: Os CAPTCHAs podem fornecer uma camada de proteção útil contra bots e vários tipos de solicitações automatizadas e maliciosas, mas não fornecerão nenhuma proteção contra humanos maliciosas."
 config_legal: "Configuração para requisitos legais."
 config_legal_omit_hostname: "Omitir nomes de host de logs? True = Sim; False = Não [Padrão]."
 config_legal_omit_ip: "Omitir endereços IP de logs? True = Sim; False = Não [Padrão]. Nota: "pseudonymise_ip_addresses" se torna redundante quando "omit_ip" é "true"."
@@ -281,6 +281,7 @@ field_verify_all: "Verifique tudo"
 field_whitelisted_requests: "Solicitações marcadas como na lista branca"
 field_your_version: "Sua Versão"
 header_login: "Por favor faça o login para continuar."
+hints_ipv6_on_32bit: "Nota: As pesquisas de IPv6 podem não funcionar corretamente em alguns sistemas de 32 bits."
 info_some_useful_links: |
  Alguns links úteis:<br />
      <ul class="pieul">

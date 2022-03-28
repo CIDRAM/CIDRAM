@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Polish language data for the front-end (last modified: 2022.03.19).
+# This file: Polish language data for the front-end (last modified: 2022.03.28).
 ##/
 
 Extended Description Bypasses: "Domyślne pliki obejścia podpisów zwykle zawarte w pakiecie głównym."
@@ -137,7 +137,7 @@ config_hcaptcha_show_api_message: &ShowAPIMessage "Pokaż komunikat API? True (P
 config_hcaptcha_show_cookie_warning: &ShowCookieWarning "Pokaż ostrzeżenie o plikach cookie? True (Prawdziwe) = Tak [Domyślna]; False (Fałszywy) = Nie."
 config_hcaptcha_signature_limit: &CaptchaSignatureLimit "Maksymalna liczba podpisów dozwolona przed wycofaniem oferty CAPTCHA. Domyślna = 1."
 config_hcaptcha_sitekey: *CaptchaDashboard
-config_hcaptcha_usemode: &CaptchaUseMode "Kiedy należy oferować CAPTCHA? Uwaga: Umieszczone na białej liście lub zweryfikowane i niezablokowane żądania nigdy nie muszą kończyć CAPTCHA."
+config_hcaptcha_usemode: &CaptchaUseMode "Kiedy należy oferować CAPTCHA? Uwaga: Umieszczone na białej liście lub zweryfikowane i niezablokowane żądania nigdy nie muszą kończyć CAPTCHA. Uwaga również: CAPTCHA mogą zapewnić użyteczną, dodatkową warstwę ochrony przed botami i różnymi rodzajami złośliwych automatycznych żądań, ale nie zapewnią żadnej ochrony przed złośliwym człowiekiem."
 config_legal: "Konfiguracja wymagań prawnych."
 config_legal_omit_hostname: "Pominąć nazwy hostów podczas logowania? True (Prawdziwe) = Tak; False (Fałszywy) = Nie [Domyślna]."
 config_legal_omit_ip: "Pominąć adresy IP podczas logowania? True (Prawdziwe) = Tak; False (Fałszywy) = Nie [Domyślna]. Uwaga: „pseudonymise_ip_addresses” staje się zbędne, gdy „omit_ip” jest „true”."
@@ -282,6 +282,7 @@ field_verify_all: "Zweryfikuj wszystko"
 field_whitelisted_requests: "Żądania na białej liście"
 field_your_version: "Twoja Wersja"
 header_login: "Proszę się zalogować, aby kontynuować."
+hints_ipv6_on_32bit: "Uwaga: Wyszukiwania IPv6 mogą nie działać poprawnie w niektórych systemach 32-bitowych."
 info_some_useful_links: |
  Kilka przydatnych linków:<br />
      <ul class="pieul">

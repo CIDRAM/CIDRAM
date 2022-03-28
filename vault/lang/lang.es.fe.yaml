@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Spanish language data for the front-end (last modified: 2022.03.10).
+# This file: Spanish language data for the front-end (last modified: 2022.03.28).
 ##/
 
 Extended Description Bypasses: "Los archivos para bypass de firmas estándar normalmente se incluyen con el paquete principal."
@@ -137,7 +137,7 @@ config_hcaptcha_show_api_message: &ShowAPIMessage "¿Mostrar mensaje de API? Tru
 config_hcaptcha_show_cookie_warning: &ShowCookieWarning "¿Mostrar advertencia de cookie? True = Sí [Predefinido]; False = No."
 config_hcaptcha_signature_limit: &CaptchaSignatureLimit "Número máximo de firmas permitidas antes de que se retire la oferta de CAPTCHA. Predefinido = 1."
 config_hcaptcha_sitekey: *CaptchaDashboard
-config_hcaptcha_usemode: &CaptchaUseMode "¿Cuándo se debe ofrecer el CAPTCHA? Nota: Las solicitudes incluidas en la lista blanca o verificadas y no bloqueadas nunca necesitan completar un CAPTCHA."
+config_hcaptcha_usemode: &CaptchaUseMode "¿Cuándo se debe ofrecer el CAPTCHA? Nota: Las solicitudes incluidas en la lista blanca o verificadas y no bloqueadas nunca necesitan completar un CAPTCHA. También tenga en cuenta: Los CAPTCHA pueden proporcionar una capa de protección útil contra bots y varios tipos de solicitudes automatizadas y maliciosas, pero no proporcionán ninguna protección contra humanos maliciosas."
 config_legal: "Configuración para requisitos legales."
 config_legal_omit_hostname: "Omitir nombres de host de los archivos de registro? True = Sí; False = No [Predefinido]."
 config_legal_omit_ip: "Omitir direcciones IP de los archivos de registro? True = Sí; False = No [Predefinido]. Nota: "pseudonymise_ip_addresses" se vuelve redundante cuando "omit_ip" es "true"."
@@ -281,6 +281,7 @@ field_verify_all: "Verificar todo"
 field_whitelisted_requests: "Solicitudes en la lista blanca"
 field_your_version: "Tu Versión"
 header_login: "Por favor iniciar sesión para continuar."
+hints_ipv6_on_32bit: "Nota: Es posible que las búsquedas de IPv6 no funcionen correctamente en algunos sistemas de 32 bits."
 info_some_useful_links: |
  Algunos enlaces útiles:<br />
      <ul class="pieul">

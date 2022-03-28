@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Vietnamese language data for the front-end (last modified: 2022.03.17).
+# This file: Vietnamese language data for the front-end (last modified: 2022.03.28).
 ##/
 
 Extended Description Bypasses: "Các tập tin đường tránh chữ ký mặc định thường bao gồm với gói thầu chính."
@@ -137,7 +137,7 @@ config_hcaptcha_show_api_message: &ShowAPIMessage "Hiển thị thông báo API?
 config_hcaptcha_show_cookie_warning: &ShowCookieWarning "Hiển thị cảnh báo cookie? True = Vâng [Mặc định]; False = Không."
 config_hcaptcha_signature_limit: &CaptchaSignatureLimit "Số lượng chữ ký tối đa được phép trước khi đề nghị CAPTCHA bị rút lại. Mặc định = 1."
 config_hcaptcha_sitekey: *CaptchaDashboard
-config_hcaptcha_usemode: &CaptchaUseMode "Khi nào nên cung cấp CAPTCHA? Lưu ý: Các yêu cầu trong danh sách trắng hay đã xác minh và không bị chặn không cần phải hoàn thành CAPTCHA."
+config_hcaptcha_usemode: &CaptchaUseMode "Khi nào nên cung cấp CAPTCHA? Lưu ý: Các yêu cầu trong danh sách trắng hay đã xác minh và không bị chặn không cần phải hoàn thành CAPTCHA. Cũng lưu ý: CAPTCHA có thể cung cấp một lớp bảo vệ bổ sung, hữu ích chống lại bot và các loại yêu cầu tự động độc hại khác nhau, nhưng sẽ không cung cấp bất kỳ biện pháp bảo vệ nào chống lại con người độc hại."
 config_legal: "Cấu hình cho các yêu cầu pháp lý."
 config_legal_omit_hostname: "Bỏ qua tên máy chủ từ nhật ký? True = Vâng; False = Không [Mặc định]."
 config_legal_omit_ip: "Bỏ qua địa chỉ IP từ nhật ký? True = Vâng; False = Không [Mặc định]. Lưu ý: "pseudonymise_ip_addresses" trở nên dư thừa khi "omit_ip" là "true"."
@@ -279,6 +279,7 @@ field_verify_all: "Xác minh tất cả"
 field_whitelisted_requests: "Yêu cầu trong danh sách trắng"
 field_your_version: "Phiên bản của bạn"
 header_login: "Vui lòng đăng nhập để tiếp tục."
+hints_ipv6_on_32bit: "Lưu ý: Tra cứu IPv6 có thể không hoạt động chính xác trên một số hệ thống 32 bit."
 info_some_useful_links: |
  Một số liên kết hữu ích:<br />
      <ul class="pieul">

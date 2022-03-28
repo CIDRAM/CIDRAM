@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Bangla language data for the front-end (last modified: 2022.03.10).
+# This file: Bangla language data for the front-end (last modified: 2022.03.28).
 ##/
 
 Extended Description Bypasses: "ডিফল্ট স্বাক্ষর বাইপাস ফাইল সাধারণত প্রধান প্যাকেজ সহ অন্তর্ভুক্ত।"
@@ -135,7 +135,7 @@ config_hcaptcha_show_api_message: &ShowAPIMessage "API বার্তা প্
 config_hcaptcha_show_cookie_warning: &ShowCookieWarning "কুকি সতর্কতা দেখান? True = হাঁ [ডিফল্ট]; False = না।"
 config_hcaptcha_signature_limit: &CaptchaSignatureLimit "ক্যাপচা অফার প্রত্যাহারের আগে সর্বাধিক সংখ্যক স্বাক্ষর অনুমোদিত। ডিফল্ট = 1।"
 config_hcaptcha_sitekey: *CaptchaDashboard
-config_hcaptcha_usemode: &CaptchaUseMode "ক্যাপচা কখন দেওয়া উচিত? নোট: শ্বেত তালিকাভুক্ত বা যাচাইকৃত এবং অ-অবরুদ্ধ অনুরোধগুলির জন্য কখনই একটি ক্যাপচেকএ সম্পূর্ণ করার প্রয়োজন হয় না।"
+config_hcaptcha_usemode: &CaptchaUseMode "ক্যাপচা কখন দেওয়া উচিত? নোট: শ্বেত তালিকাভুক্ত বা যাচাইকৃত এবং অ-অবরুদ্ধ অনুরোধগুলির জন্য কখনই একটি ক্যাপচেকএ সম্পূর্ণ করার প্রয়োজন হয় না। এছাড়াও নোট করুন: ক্যাপচাগুলি, বট এবং বিভিন্ন ধরণের দূষিত স্বয়ংক্রিয় অনুরোধগুলির বিরুদ্ধে সুরক্ষার একটি দরকারী স্তর হতে পারে, তবে একটি দূষিত মানুষের বিরুদ্ধে কোনও সুরক্ষা প্রদান করবে না৷"
 config_legal: "আইনী প্রয়োজনীয়তার জন্য কনফিগারেশন।"
 config_legal_omit_hostname: "লগগুলি থেকে হোস্টনামগুলি বাদ দিন? True = হাঁ; False = না [ডিফল্ট]।"
 config_legal_omit_ip: "লগগুলি থেকে আইপি ঠিকানাগুলি বাদ দিন? True = হাঁ; False = না [ডিফল্ট]। দ্রষ্টব্য: "pseudonymise_ip_addresses" অপ্রয়োজনীয় হয় যখন "omit_ip" হল "true"।"
@@ -277,6 +277,7 @@ field_verify_all: "সব যাচাই করুন"
 field_whitelisted_requests: "শ্বেত তালিকাভুক্ত অনুরোধগুলি"
 field_your_version: "আপনার সংস্করণ"
 header_login: "চালিয়ে যেতে দয়া করে লগ ইন করুন।"
+hints_ipv6_on_32bit: "দ্রষ্টব্য: IPv6 লুকআপ কিছু 32-বিট সিস্টেমে সঠিকভাবে কাজ নাও করতে পারে।"
 info_some_useful_links: |
  কিছু দরকারী লিঙ্ক:<br />
      <ul class="pieul">

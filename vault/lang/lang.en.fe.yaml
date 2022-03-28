@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: English language data for the front-end (last modified: 2022.03.10).
+# This file: English language data for the front-end (last modified: 2022.03.28).
 ##/
 
 Extended Description Bypasses: "The default signature bypass files normally included with the main package."
@@ -137,7 +137,7 @@ config_hcaptcha_show_api_message: &ShowAPIMessage "Show API message? True = Yes 
 config_hcaptcha_show_cookie_warning: &ShowCookieWarning "Show cookie warning? True = Yes [Default]; False = No."
 config_hcaptcha_signature_limit: &CaptchaSignatureLimit "Maximum number of signatures allowed before the CAPTCHA offer is withdrawn. Default = 1."
 config_hcaptcha_sitekey: *CaptchaDashboard
-config_hcaptcha_usemode: &CaptchaUseMode "When should the CAPTCHA be offered? Note: Whitelisted or verified and non-blocked requests never need to complete a CAPTCHA."
+config_hcaptcha_usemode: &CaptchaUseMode "When should the CAPTCHA be offered? Note: Whitelisted or verified and non-blocked requests never need to complete a CAPTCHA. Also note: CAPTCHAs can provide a useful, additional layer of protection against bots and various kinds of malicious automated requests, but won't provide any protection against a malicious human."
 config_legal: "Configuration for legal requirements."
 config_legal_omit_hostname: "Omit hostnames from logs? True = Yes; False = No [Default]."
 config_legal_omit_ip: "Omit IP addresses from logs? True = Yes; False = No [Default]. Note: "pseudonymise_ip_addresses" becomes redundant when "omit_ip" is "true"."
@@ -281,6 +281,7 @@ field_verify_all: "Verify all"
 field_whitelisted_requests: "Whitelisted requests"
 field_your_version: "Your Version"
 header_login: "Please log in to continue."
+hints_ipv6_on_32bit: "Note: IPv6 lookups mightn't work correctly on some 32-bit systems."
 info_some_useful_links: |
  Some useful links:<br />
      <ul class="pieul">

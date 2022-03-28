@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Japanese language data for the front-end (last modified: 2022.03.10).
+# This file: Japanese language data for the front-end (last modified: 2022.03.28).
 ##/
 
 Extended Description Bypasses: "メインパッケージに通常含まれているデフォルト・シグネチャ・バイパス。"
@@ -137,7 +137,7 @@ config_hcaptcha_show_api_message: &ShowAPIMessage "ＡＰＩメッセージを�
 config_hcaptcha_show_cookie_warning: &ShowCookieWarning "クッキーの警告を表示しますか？ True = はい（Default/デフォルルト）。 False = いいえ。"
 config_hcaptcha_signature_limit: &CaptchaSignatureLimit "キャプチャが取り消される前に許可されるシグネチャの最大数。​Default/デフォルルト = １。"
 config_hcaptcha_sitekey: *CaptchaDashboard
-config_hcaptcha_usemode: &CaptchaUseMode "キャプチャはいつ提供する必要がありますか？​注：ホワイト・リストされまたは検証済みでブロックされていないリクエストは、キャプチャを完了する必要はありません。"
+config_hcaptcha_usemode: &CaptchaUseMode "キャプチャはいつ提供する必要がありますか？​注：ホワイト・リストされまたは検証済みでブロックされていないリクエストは、キャプチャを完了する必要はありません。​また注意してください：​ＣＡＰＴＣＨＡは、ボットやさまざまな種類の悪意のある自動化されたリクエストに対する有用な追加の保護レイヤーを提供できますが、悪意のある人間に対する保護は提供しません。"
 config_legal: "法的要件の設定。"
 config_legal_omit_hostname: "ログからホスト名を省略しますか？ True = はい。 False = いいえ（Default/デフォルルト）。"
 config_legal_omit_ip: "ログからＩＰアドレスを省略しますか？ True = はい。 False = いいえ（Default/デフォルルト）。​注：「omit_ip」が「true」の場合、「pseudonymise_ip_addresses」は冗長になります。"
@@ -279,6 +279,7 @@ field_verify_all: "すべてを検証する"
 field_whitelisted_requests: "ホワイトリストに登録されたリクエスト"
 field_your_version: "お使いのバージョン"
 header_login: "継続するには、​ログインしてください。"
+hints_ipv6_on_32bit: "注：一部の３２ビットシステムでは、ＩＰｖ６ルックアップが正しく機能しない場合があります。"
 info_some_useful_links: |
  役に立つリンク：<br />
      <ul class="pieul">

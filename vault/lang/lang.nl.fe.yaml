@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Dutch language data for the front-end (last modified: 2022.03.19).
+# This file: Dutch language data for the front-end (last modified: 2022.03.28).
 ##/
 
 Extended Description Bypasses: "De standaard signature bypasses normaal opgenomen met de primaire pakket."
@@ -137,7 +137,7 @@ config_hcaptcha_show_api_message: &ShowAPIMessage "API-bericht weergeven? True =
 config_hcaptcha_show_cookie_warning: &ShowCookieWarning "Cookiewaarschuwing weergeven? True = Ja [Standaard]; False = Nee."
 config_hcaptcha_signature_limit: &CaptchaSignatureLimit "Maximaal aantal toegestane signatures voordat een CAPTCHA-aanbieding wordt ingetrokken. Standaard = 1."
 config_hcaptcha_sitekey: *CaptchaDashboard
-config_hcaptcha_usemode: &CaptchaUseMode "Wanneer moet de CAPTCHA worden aangeboden? Opmerking: Op de witte lijst geplaatste of geverifieerde en niet-geblokkeerde verzoeken hoeven nooit een CAPTCHA in te vullen."
+config_hcaptcha_usemode: &CaptchaUseMode "Wanneer moet de CAPTCHA worden aangeboden? Opmerking: Op de witte lijst geplaatste of geverifieerde en niet-geblokkeerde verzoeken hoeven nooit een CAPTCHA in te vullen. Let ook op: CAPTCHA's kunnen een nuttige, extra beschermingslaag bieden tegen bots en verschillende soorten kwaadwillende geautomatiseerde verzoeken, maar bieden geen enkele bescherming tegen kwaadwillende mensen."
 config_legal: "Configuratie voor wettelijke vereisten."
 config_legal_omit_hostname: "Hostnamen uit logbestanden weglaten? True = Ja; False = Nee [Standaard]."
 config_legal_omit_ip: "IP-adressen uit logbestanden weglaten? True = Ja; False = Nee [Standaard]. Opmerking: "pseudonymise_ip_addresses" wordt overbodig zijn wanneer "omit_ip" "true" is."
@@ -281,6 +281,7 @@ field_verify_all: "Verifiëren alles"
 field_whitelisted_requests: "Verzoeken gemarkeerd als op de witte lijst"
 field_your_version: "Uw Versie"
 header_login: "Inloggen om verder te gaan."
+hints_ipv6_on_32bit: "Opmerking: IPv6-opzoeken mogelijk werken niet correct op sommige 32-bits systemen."
 info_some_useful_links: |
  Enkele nuttige links:<br />
      <ul class="pieul">

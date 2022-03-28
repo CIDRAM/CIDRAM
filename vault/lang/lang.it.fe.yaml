@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Italian language data for the front-end (last modified: 2022.03.10).
+# This file: Italian language data for the front-end (last modified: 2022.03.28).
 ##/
 
 Extended Description Bypasses: "Un file per bypassare alcune delle firme predefinite normalmente inclusi nel pacchetto principale."
@@ -137,7 +137,7 @@ config_hcaptcha_show_api_message: &ShowAPIMessage "Mostra messaggio API? True = 
 config_hcaptcha_show_cookie_warning: &ShowCookieWarning "Mostra avviso sui cookie? True = Sì [Predefinito]; False = No."
 config_hcaptcha_signature_limit: &CaptchaSignatureLimit "Il numero massimo di firme consentito prima che l'offerta di CAPTCHA venga ritirata. Predefinito = 1."
 config_hcaptcha_sitekey: *CaptchaDashboard
-config_hcaptcha_usemode: &CaptchaUseMode "Quando dovrebbe essere offerto il CAPTCHA? Nota: Le richieste nella lista bianca o verificate e non bloccate non devono mai completare un CAPTCHA."
+config_hcaptcha_usemode: &CaptchaUseMode "Quando dovrebbe essere offerto il CAPTCHA? Nota: Le richieste nella lista bianca o verificate e non bloccate non devono mai completare un CAPTCHA. Nota anche: I CAPTCHA possono fornire un utile livello aggiuntivo di protezione contro i bot e vari tipi di richieste automatizzate e dannose, ma non forniscono alcuna protezione contro umani dannosi."
 config_legal: "Configurazione per requisiti legali."
 config_legal_omit_hostname: "Ometti nomi host dai log? True = Sì; False = No [Predefinito]."
 config_legal_omit_ip: "Ometti gli indirizzi IP dai log? True = Sì; False = No [Predefinito]. Nota: "pseudonymise_ip_addresses" diventa ridondante quando "omit_ip" è "true"."
@@ -279,6 +279,7 @@ field_verify_all: "Verifica tutto"
 field_whitelisted_requests: "Richieste nella lista bianca"
 field_your_version: "La Vostra Versione"
 header_login: "Per favore accedi per continuare."
+hints_ipv6_on_32bit: "Nota: Le ricerche IPv6 potrebbero non funzionare correttamente su alcuni sistemi a 32 bit."
 info_some_useful_links: |
  Alcuni link utili:<br />
      <ul class="pieul">

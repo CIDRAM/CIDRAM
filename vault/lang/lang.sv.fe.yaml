@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Swedish language data for the front-end (last modified: 2022.03.19).
+# This file: Swedish language data for the front-end (last modified: 2022.03.28).
 ##/
 
 Extended Description Bypasses: "Standard-signatur-bypass-filer som normalt ingår i huvudpaketet."
@@ -137,7 +137,7 @@ config_hcaptcha_show_api_message: &ShowAPIMessage "Inkludera API-meddelande? Tru
 config_hcaptcha_show_cookie_warning: &ShowCookieWarning "Inkludera cookievarning? True = Ja [Standard]; False = Nej."
 config_hcaptcha_signature_limit: &CaptchaSignatureLimit "Maximalt antal signaturer tillåtna innan CAPTCHA-erbjudandet dras tillbaka. Standard = 1."
 config_hcaptcha_sitekey: *CaptchaDashboard
-config_hcaptcha_usemode: &CaptchaUseMode "När ska CAPTCHA erbjudas? Obs: Vitlistade eller verifierade och icke-blockerade förfrågningar behöver aldrig slutföra en CAPTCHA."
+config_hcaptcha_usemode: &CaptchaUseMode "När ska CAPTCHA erbjudas? Obs: Vitlistade eller verifierade och icke-blockerade förfrågningar behöver aldrig slutföra en CAPTCHA. Också: CAPTCHA-ar kan ge ett användbart, ytterligare skydd mot bots och olika typer av illvilliga automatiska förfrågningar, men ger inget skydd mot illvilliga människor."
 config_legal: "Konfiguration för lagkrav."
 config_legal_omit_hostname: "Utelämna värdnamn från loggar? True = Ja; False = Nej [Standard]."
 config_legal_omit_ip: "Utelämna IP-adresser från loggar? True = Ja; False = Nej [Standard]. Obs: "pseudonymise_ip_addresses" blir överflödigt när "omit_ip" är "true"."
@@ -279,6 +279,7 @@ field_verify_all: "Verifiera allt"
 field_whitelisted_requests: "Vitlistade förfrågningar"
 field_your_version: "Din version"
 header_login: "Snälla logga in för att fortsätta."
+hints_ipv6_on_32bit: "Obs: IPv6-sökningar kanske inte fungerar korrekt på vissa 32-bitarssystem."
 info_some_useful_links: |
  Några användbara länkar:<br />
      <ul class="pieul">

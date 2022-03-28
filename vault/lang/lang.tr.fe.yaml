@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Turkish language data for the front-end (last modified: 2022.03.12).
+# This file: Turkish language data for the front-end (last modified: 2022.03.28).
 ##/
 
 Extended Description Bypasses: "Varsayılan imza bypass'lar, normalde ana paketle birlikte verilir."
@@ -137,7 +137,7 @@ config_hcaptcha_show_api_message: &ShowAPIMessage "API mesajı göster? Doğru/T
 config_hcaptcha_show_cookie_warning: &ShowCookieWarning "Çerez uyarısını göster? Doğru/True = Evet [Varsayılan]; Yanlış/False = Hayır."
 config_hcaptcha_signature_limit: &CaptchaSignatureLimit "CAPTCHA teklifi geri çekilmeden önce izin verilen maksimum imza sayısı. Varsayılan = 1."
 config_hcaptcha_sitekey: *CaptchaDashboard
-config_hcaptcha_usemode: &CaptchaUseMode "CAPTCHA ne zaman sunulmalı? Not: Beyaz listeye alınmış veya doğrulanmış ve engellenmemiş isteklerin hiçbir zaman bir CAPTCHA tamamlaması gerekmez."
+config_hcaptcha_usemode: &CaptchaUseMode "CAPTCHA ne zaman sunulmalı? Not: Beyaz listeye alınmış veya doğrulanmış ve engellenmemiş isteklerin hiçbir zaman bir CAPTCHA tamamlaması gerekmez. Ayrıca not edin: CAPTCHA'lar, botlara ve çeşitli kötü niyetli otomatik isteklere karşı yararlı ek bir koruma katmanı sağlayabilir, ancak kötü niyetli insanlar karşı herhangi bir koruma sağlamaz."
 config_legal: "Yasal gereklilikler için yapılandırma."
 config_legal_omit_hostname: "Ana bilgisayar adlarını günlük dosyalardan hariç tutuluyor mu? Doğru/True = Evet; Yanlış/False = Hayır [Varsayılan]."
 config_legal_omit_ip: "IP adreslerini günlük dosyalardan hariç tutuluyor mu? Doğru/True = Evet; Yanlış/False = Hayır [Varsayılan]. Not: "omit_ip" "true" olduğunda "pseudonymise_ip_addresses" gereksiz hale gelir."
@@ -279,6 +279,7 @@ field_verify_all: "Tümünü doğrula"
 field_whitelisted_requests: "Beyaz listeye eklenen istekler"
 field_your_version: "Sürümünüz"
 header_login: "Devam etmek için lütfen giriş yapınız."
+hints_ipv6_on_32bit: "Not: IPv6 aramaları bazı 32 bit sistemlerde düzgün çalışmayabilir."
 info_some_useful_links: |
  Bazı kullanışlı bağlantılar:<br />
      <ul class="pieul">

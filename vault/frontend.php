@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2022.03.24).
+ * This file: Front-end handler (last modified: 2022.03.28).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -1621,14 +1621,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
 
             /** Provide hints, useful for users to better understand the directive at hand. */
             if (!empty($CIDRAM['DirValue']['hints'])) {
-                if (isset($CIDRAM['L10N']->Data[$CIDRAM['DirValue']['hints']])) {
-                    $CIDRAM['ThisDir']['Hints'] = $CIDRAM['L10N']->Data[$CIDRAM['DirValue']['hints']];
-                } else {
-                    $CIDRAM['ThisDir']['Hints'] = $CIDRAM['DirValue']['hints'];
-                }
-                if (!is_array($CIDRAM['ThisDir']['Hints'])) {
-                    $CIDRAM['ThisDir']['Hints'] = [$CIDRAM['ThisDir']['Hints']];
-                }
+                $CIDRAM['ThisDir']['Hints'] = $CIDRAM['ArrayFromL10NDataToArray']($CIDRAM['DirValue']['hints']);
                 foreach ($CIDRAM['ThisDir']['Hints'] as $CIDRAM['ThisDir']['HintKey'] => $CIDRAM['ThisDir']['HintValue']) {
                     if (is_int($CIDRAM['ThisDir']['HintKey'])) {
                         $CIDRAM['ThisDir']['FieldOut'] .= sprintf("\n<br /><br />%s", $CIDRAM['ThisDir']['HintValue']);

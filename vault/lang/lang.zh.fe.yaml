@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (simplified) language data for the front-end (last modified: 2022.03.10).
+# This file: Chinese (simplified) language data for the front-end (last modified: 2022.03.28).
 ##/
 
 Extended Description Bypasses: "标准签名旁路文件通常包括在主包。"
@@ -137,7 +137,7 @@ config_hcaptcha_show_api_message: &ShowAPIMessage "显示API讯息吗？​True�
 config_hcaptcha_show_cookie_warning: &ShowCookieWarning "显示cookie警告吗？​True（真）=显示【标准】；False（假）=不显示。"
 config_hcaptcha_signature_limit: &CaptchaSignatureLimit "撤销CAPTCHA之前允许的最大签名数。标准 = 1。"
 config_hcaptcha_sitekey: *CaptchaDashboard
-config_hcaptcha_usemode: &CaptchaUseMode "何时应提供CAPTCHA吗？​注意：列入白名单或已验证且未阻止的请求永远不需要完成CAPTCHA。"
+config_hcaptcha_usemode: &CaptchaUseMode "何时应提供CAPTCHA吗？​注意：列入白名单或已验证且未阻止的请求永远不需要完成CAPTCHA。​另请注意：CAPTCHA可以提供有用的保护层，防止机器人和各种恶意自动请求，但不会提供任何针对恶意人类的保护。"
 config_legal: "法律要求的配置。"
 config_legal_omit_hostname: "从日志文件中排除主机名？​True（真）=排除；False（假）=不排除【标准】。"
 config_legal_omit_ip: "从日志文件中排除IP地址？​True（真）=排除；False（假）=不排除【标准】。​注意：“omit_ip”为“true”时，“pseudonymise_ip_addresses”变得不必要。"
@@ -279,6 +279,7 @@ field_verify_all: "验证全部"
 field_whitelisted_requests: "在白名单中的请求"
 field_your_version: "您的版本"
 header_login: "请登录以继续。"
+hints_ipv6_on_32bit: "注意：IPv6查找在某些32位系统上可能无法正常工作。"
 info_some_useful_links: |
  一些有用的链接：<br />
      <ul class="pieul">

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Configuration defaults file (last modified: 2022.03.10).
+# This file: Configuration defaults file (last modified: 2022.03.28).
 ##/
 
 Config Defaults:
@@ -330,6 +330,7 @@ Config Defaults:
   allow_gethostbyaddr_lookup:
    type: "bool"
    default: true
+   hints: "hints_ipv6_on_32bit"
   hide_version:
    type: "bool"
    default: false

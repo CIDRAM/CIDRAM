@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Norwegian language data for the front-end (last modified: 2022.03.19).
+# This file: Norwegian language data for the front-end (last modified: 2022.03.28).
 ##/
 
 Extended Description Bypasses: "Standard-signatur-bypass-filene som normalt følger med hovedpakken."
@@ -137,7 +137,7 @@ config_hcaptcha_show_api_message: &ShowAPIMessage "Inkludere API-melding? True =
 config_hcaptcha_show_cookie_warning: &ShowCookieWarning "Inkludere informasjonskapsel advarsel? True = Ja [Standardverdi]; False = Nei."
 config_hcaptcha_signature_limit: &CaptchaSignatureLimit "Maksimalt antall signaturer tillatt før du trekker tilbake et CAPTCHA-tilbud. Standardverdi = 1."
 config_hcaptcha_sitekey: *CaptchaDashboard
-config_hcaptcha_usemode: &CaptchaUseMode "Når skal CAPTCHA tilbys? Merk: Hvitlistet eller verifiserte og ikke-blokkerte forespørsler trenger aldri å fullføre en CAPTCHA."
+config_hcaptcha_usemode: &CaptchaUseMode "Når skal CAPTCHA tilbys? Merk: Hvitlistet eller verifiserte og ikke-blokkerte forespørsler trenger aldri å fullføre en CAPTCHA. Merk også: CAPTCHA-er kan gi et nyttig, ekstra lag med beskyttelse mot roboter og ulike typer ondsinnede automatiske forespørsler, men vil ikke gi noen beskyttelse mot et ondsinnet menneske."
 config_legal: "Konfigurasjon for juridiske krav."
 config_legal_omit_hostname: "Utelat vertsnavn fra logger? True = Ja; False = Nei [Standardverdi]."
 config_legal_omit_ip: "Utelat IP-adresser fra logger? True = Ja; False = Nei [Standardverdi]. Merk: "pseudonymise_ip_addresses" blir overflødig når "omit_ip" er "true"."
@@ -279,6 +279,7 @@ field_verify_all: "Verifisere alt"
 field_whitelisted_requests: "Hvitlistede forespørsler"
 field_your_version: "Din Versjon"
 header_login: "Vennligst logg inn for å fortsette."
+hints_ipv6_on_32bit: "Merk: IPv6-oppslag fungerer kanskje ikke riktig på enkelte 32-biters systemer."
 info_some_useful_links: |
  Noen nyttige lenker:<br />
      <ul class="pieul">

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: French language data for the front-end (last modified: 2022.03.17).
+# This file: French language data for the front-end (last modified: 2022.03.28).
 ##/
 
 Extended Description Bypasses: "Les fichiers pour contourner les signatures standard qui sont normalement inclus dans le paquet principal."
@@ -137,7 +137,7 @@ config_hcaptcha_show_api_message: &ShowAPIMessage "Afficher le message de l'API\
 config_hcaptcha_show_cookie_warning: &ShowCookieWarning "Afficher l'avertissement concernant les cookies\_? True = Oui [Défaut]\_; False = Non."
 config_hcaptcha_signature_limit: &CaptchaSignatureLimit "Nombre maximum de signatures autorisé avant le retrait de l'offre de CAPTCHA. Défaut = 1."
 config_hcaptcha_sitekey: *CaptchaDashboard
-config_hcaptcha_usemode: &CaptchaUseMode "Quand faut-il offrir le CAPTCHA\_? Remarque\_: Les requêtes sur liste blanche ou vérifiées et non bloquées n'ont jamais besoin de compléter un CAPTCHA."
+config_hcaptcha_usemode: &CaptchaUseMode "Quand faut-il offrir le CAPTCHA\_? Remarque\_: Les requêtes sur liste blanche ou vérifiées et non bloquées n'ont jamais besoin de compléter un CAPTCHA. A noter également\_: Les CAPTCHAs peuvent fournir une couche de protection utile contre les bots et divers types de requêtes automatisées et malveillantes, mais ne fourniront pas aucune protection contre un humain malveillant."
 config_legal: "Configuration pour les exigences légales."
 config_legal_omit_hostname: "Omettre les noms d'hôtes de la journalisation\_? True = Oui\_; False = Non [Défaut]."
 config_legal_omit_ip: "Omettre les adresses IP de la journalisation\_? True = Oui\_; False = Non [Défaut]. Remarque\_: «\_pseudonymise_ip_addresses\_» devient redondant lorsque «\_omit_ip\_» est «\_true\_»."
@@ -281,6 +281,7 @@ field_verify_all: "Vérifier tous"
 field_whitelisted_requests: "Requêtes qui ont été listé blanche"
 field_your_version: "Votre Version"
 header_login: "Merci de vous connecter pour continuer."
+hints_ipv6_on_32bit: "Remarque\_: Les recherches IPv6 peuvent ne pas fonctionner correctement sur certains systèmes 32 bits."
 info_some_useful_links: |
  Quelques liens utiles :<br />
      <ul class="pieul">

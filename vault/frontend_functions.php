@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2022.03.28).
+ * This file: Front-end functions file (last modified: 2022.03.30).
  */
 
 /**
@@ -3314,14 +3314,12 @@ $CIDRAM['SendEmail'] = function (array $Recipients = [], string $Subject = '', s
  * @return int An 8-digit number.
  */
 $CIDRAM['2FA-Number'] = function (): int {
-    if (function_exists('random_int')) {
-        try {
-            $Key = random_int(\CIDRAM\Core\Constants::TWO_FACTOR_MIN_INT, \CIDRAM\Core\Constants::TWO_FACTOR_MAX_INT);
-        } catch (\Exception $e) {
-            $Key = rand(\CIDRAM\Core\Constants::TWO_FACTOR_MIN_INT, \CIDRAM\Core\Constants::TWO_FACTOR_MAX_INT);
-        }
+    try {
+        $Key = random_int(\CIDRAM\Core\Constants::TWO_FACTOR_MIN_INT, \CIDRAM\Core\Constants::TWO_FACTOR_MAX_INT);
+    } catch (\Exception $e) {
+        $Key = rand(\CIDRAM\Core\Constants::TWO_FACTOR_MIN_INT, \CIDRAM\Core\Constants::TWO_FACTOR_MAX_INT);
     }
-    return $Key ?? rand(\CIDRAM\Core\Constants::TWO_FACTOR_MIN_INT, \CIDRAM\Core\Constants::TWO_FACTOR_MAX_INT);
+    return $Key;
 };
 
 /**

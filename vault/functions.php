@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2022.03.24).
+ * This file: Functions file (last modified: 2022.03.30).
  */
 
 /** Autoloader for CIDRAM classes. */
@@ -1247,35 +1247,23 @@ $CIDRAM['Bypass'] = function (bool $Condition, string $ReasonShort, array $Defin
  */
 $CIDRAM['GenerateSalt'] = function (): string {
     $Salt = '';
-    if (function_exists('random_int')) {
-        try {
-            $Length = random_int(\CIDRAM\Core\Constants::GENERATE_SALT_MIN_LEN, \CIDRAM\Core\Constants::GENERATE_SALT_MAX_LEN);
-        } catch (\Exception $e) {
-            $Length = rand(\CIDRAM\Core\Constants::GENERATE_SALT_MIN_LEN, \CIDRAM\Core\Constants::GENERATE_SALT_MAX_LEN);
-        }
-    } else {
+    try {
+        $Length = random_int(\CIDRAM\Core\Constants::GENERATE_SALT_MIN_LEN, \CIDRAM\Core\Constants::GENERATE_SALT_MAX_LEN);
+    } catch (\Exception $e) {
         $Length = rand(\CIDRAM\Core\Constants::GENERATE_SALT_MIN_LEN, \CIDRAM\Core\Constants::GENERATE_SALT_MAX_LEN);
     }
-    if (function_exists('random_bytes')) {
+    try {
+        $Salt = random_bytes($Length);
+    } catch (\Exception $e) {
+        $Salt = '';
+    }
+    if (!strlen($Salt)) {
         try {
-            $Salt = random_bytes($Length);
+            for ($Index = 0; $Index < $Length; $Index++) {
+                $Salt .= chr(random_int(\CIDRAM\Core\Constants::GENERATE_SALT_MIN_CHR, \CIDRAM\Core\Constants::GENERATE_SALT_MAX_CHR));
+            }
         } catch (\Exception $e) {
             $Salt = '';
-        }
-    }
-    if (empty($Salt)) {
-        if (function_exists('random_int')) {
-            try {
-                for ($Index = 0; $Index < $Length; $Index++) {
-                    $Salt .= chr(random_int(\CIDRAM\Core\Constants::GENERATE_SALT_MIN_CHR, \CIDRAM\Core\Constants::GENERATE_SALT_MAX_CHR));
-                }
-            } catch (\Exception $e) {
-                $Salt = '';
-                for ($Index = 0; $Index < $Length; $Index++) {
-                    $Salt .= chr(rand(\CIDRAM\Core\Constants::GENERATE_SALT_MIN_CHR, \CIDRAM\Core\Constants::GENERATE_SALT_MAX_CHR));
-                }
-            }
-        } else {
             for ($Index = 0; $Index < $Length; $Index++) {
                 $Salt .= chr(rand(\CIDRAM\Core\Constants::GENERATE_SALT_MIN_CHR, \CIDRAM\Core\Constants::GENERATE_SALT_MAX_CHR));
             }
@@ -2483,6 +2471,8 @@ $CIDRAM['GenerateID'] = function (): string {
     while (strlen($Time[0]) < 6) {
         $Time[0] = '0' . $Time[0];
     }
+
+    /** PHP >= 7.3 (https://www.php.net/manual/en/function.hrtime.php */
     if (function_exists('hrtime')) {
         try {
             $HRTime = (string)hrtime(true);
@@ -2498,18 +2488,15 @@ $CIDRAM['GenerateID'] = function (): string {
     } else {
         $HRTime = '';
     }
+
     $HRLen = strlen($HRTime);
     $Time = $Time[1] . '-' . $Time[0] . '-' . $HRTime;
     if ($HRLen < 10) {
         $Low = 10 ** (9 - strlen($HRTime));
         $High = ($Low * 10) - 1;
-        if (function_exists('random_int')) {
-            try {
-                $Pad = random_int($Low, $High);
-            } catch (\Exception $Exception) {
-                $Pad = rand($Low, $High);
-            }
-        } else {
+        try {
+            $Pad = random_int($Low, $High);
+        } catch (\Exception $Exception) {
             $Pad = rand($Low, $High);
         }
         $Time .= $Pad;

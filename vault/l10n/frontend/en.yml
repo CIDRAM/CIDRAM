@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: English language data for the front-end (last modified: 2022.03.28).
+# This file: English language data for the front-end (last modified: 2022.04.02).
 ##/
 
 Extended Description Bypasses: "The default signature bypass files normally included with the main package."
@@ -111,7 +111,7 @@ config_general_ipaddr: "Where to find the IP address of connecting requests? (Us
 config_general_lang: "Specify the default language for CIDRAM."
 config_general_lang_override: "Localise according to HTTP_ACCEPT_LANGUAGE whenever possible? True = Yes [Default]; False = No."
 config_general_log_banned_ips: "Include blocked requests from banned IPs in the logfiles? True = Yes [Default]; False = No."
-config_general_log_rotation_action: "Log rotation limits the number of logfiles that should exist at any one time. When new logfiles are created, if the total number of logfiles exceeds the specified limit, the specified action will be performed. You can specify the desired action here. Delete = Delete the oldest logfiles, until the limit is no longer exceeded. Archive = Firstly archive, and then delete the oldest logfiles, until the limit is no longer exceeded."
+config_general_log_rotation_action: "Log rotation limits the number of logfiles that should exist at any one time. When new logfiles are created, if the total number of logfiles exceeds the specified limit, the specified action will be performed. You can specify the desired action here."
 config_general_log_rotation_limit: "Log rotation limits the number of logfiles that should exist at any one time. When new logfiles are created, if the total number of logfiles exceeds the specified limit, the specified action will be performed. You can specify the desired limit here. A value of 0 will disable log rotation."
 config_general_log_sanitisation: "When using the front-end logs page to view log data, CIDRAM sanitises the log data before displaying it, to protect users from XSS attacks and other potential threats that log data could contain. However, by default, data isn't sanitised during logging. This is to ensure that log data is preserved accurately, to aid any heuristic or forensic analysis that might be necessary in the future. However, in the event that a user attempts to read log data using external tools, and if those external tools don't perform their own sanitisation process, the user could be exposed to XSS attacks. If necessary, you can change the default behaviour using this configuration directive. True = Sanitise data when logging it (data is preserved less accurately, but XSS risk is lower). False = Don't sanitise data when logging it (data is preserved more accurately, but XSS risk is higher) [Default]."
 config_general_logfile: "Human readable file for logging all blocked access attempts. Specify a filename, or leave blank to disable."
@@ -232,6 +232,8 @@ field_filetype_unknown: "Unknown"
 field_install: "Install"
 field_latest_version: "Latest Version"
 field_log_in: "Log In"
+field_log_rotation_archive: "Firstly archive, and then delete the oldest logfiles, until the limit is no longer exceeded."
+field_log_rotation_delete: "Delete the oldest logfiles, until the limit is no longer exceeded."
 field_netmask: "Generate output as netmasks"
 field_new_name: "New name:"
 field_nonclickable_text: "Non-clickable text"
@@ -450,7 +452,7 @@ label_your_ua: "Your UA:"
 link_accounts: "Accounts"
 link_aux: "Auxiliary Rules"
 link_cache_data: "Cache Data"
-link_cidr_calc: "CIDR Calculator"
+link_calc: "Calculator"
 link_config: "Configuration"
 link_copy_to_clipboard: "Copy to clipboard"
 link_discussions: "Discussions"
@@ -652,7 +654,7 @@ tip_aux_operators: "Tip: If a condition needs a different kind of operator, you 
 tip_aux_priority: "Priority (highest➡(equal🔄equivalent)➡lowest):"
 tip_aux_webhooks: "When a rule is triggered, CIDRAM will attempt to notify any connected webhooks about the event."
 tip_cache_data: "Hello, {username}.<br />Here you can review the contents of the cache."
-tip_cidr_calc: "Hello, {username}.<br />The CIDR calculator allows you to calculate which CIDRs an IP address is a factor of."
+tip_calc: "Hello, {username}.<br />The calculator allows you to calculate the CIDRs and netmasks of an IP address."
 tip_click_the_component: "Click the component name for more details."
 tip_condition_placeholder: "Specify a value, or leave blank to disregard."
 tip_config: "Hello, {username}.<br />The configuration page allows you to modify the configuration for CIDRAM from the front-end."

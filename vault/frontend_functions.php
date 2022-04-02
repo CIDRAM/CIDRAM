@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2022.03.30).
+ * This file: Front-end functions file (last modified: 2022.04.02).
  */
 
 /**
@@ -600,7 +600,7 @@ $CIDRAM['IsInUse'] = function (array $Component) use (&$CIDRAM): int {
 
 /**
  * Determine the final IP address covered by an IPv4 CIDR. This closure is used
- * by the CIDR Calculator.
+ * by the range calculator.
  *
  * @param string $First The first IP address.
  * @param int $Factor The range number (or CIDR factor number).
@@ -624,7 +624,7 @@ $CIDRAM['IPv4GetLast'] = function (string $First, int $Factor): string {
 
 /**
  * Determine the final IP address covered by an IPv6 CIDR. This closure is used
- * by the CIDR Calculator.
+ * by the range calculator.
  *
  * @param string $First The first IP address.
  * @param int $Factor The range number (or CIDR factor number).

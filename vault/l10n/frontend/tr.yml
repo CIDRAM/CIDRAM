@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Turkish language data for the front-end (last modified: 2022.03.28).
+# This file: Turkish language data for the front-end (last modified: 2022.04.02).
 ##/
 
 Extended Description Bypasses: "Varsayılan imza bypass'lar, normalde ana paketle birlikte verilir."
@@ -111,7 +111,7 @@ config_general_ipaddr: "Bağlama isteklerinin IP adresi nerede bulunur? (Cloudfl
 config_general_lang: "CIDRAM için varsayılan dili belirleyin."
 config_general_lang_override: "Mümkün olduğunda, HTTP_ACCEPT_LANGUAGE uyarınca yerelleştirilsin mi? Doğru/True = Evet [Varsayılan]; Yanlış/False = Hayır."
 config_general_log_banned_ips: "Yasaklanmış IP'lerden engellenen istekleri günlük dosyalarına dahil et? Doğru/True = Evet [Varsayılan]; Yanlış/False = Hayır."
-config_general_log_rotation_action: "Log rotasyonu, herhangi bir zamanda bulunması gereken günlük dosyalarının sayısını sınırlar. Yeni log dosyaları oluşturulduğunda, toplam log dosya sayısı belirtilen sınırı aşarsa, belirtilen eylem gerçekleştirilecektir. İstenen işlemi burada belirtebilirsiniz. Delete = En eski log dosyalarını sil, sınır artık aşılmamış kadar. Archive = Öncelikle dosyayı arşivleyin, ve sonra en eski log dosyalarını sil, sınır artık aşılmamış kadar."
+config_general_log_rotation_action: "Log rotasyonu, herhangi bir zamanda bulunması gereken günlük dosyalarının sayısını sınırlar. Yeni log dosyaları oluşturulduğunda, toplam log dosya sayısı belirtilen sınırı aşarsa, belirtilen eylem gerçekleştirilecektir. İstenen işlemi burada belirtebilirsiniz."
 config_general_log_rotation_limit: "Log rotasyonu, herhangi bir zamanda bulunması gereken günlük dosyalarının sayısını sınırlar. Yeni log dosyaları oluşturulduğunda, toplam log dosya sayısı belirtilen sınırı aşarsa, belirtilen eylem gerçekleştirilecektir. İstenen sınırı burada belirtebilirsiniz. 0 değeri, log rotasyonunu devre dışı bırakır."
 config_general_log_sanitisation: "Günlük verilerini görüntülemek için ön uç günlükler sayfasını kullanırken, CIDRAM, kullanıcıları XSS saldırılarından korumak için, günlük verilerini görüntülemeden önce hazırlar. Ancak bu normalde veriler ilk kaydedildiğinde gerçekleşmez. Bu, gerekli olabilecek gelecekteki analizlere yardımcı olmak için günlük verilerinin doğru bir şekilde korunmasını sağlamaktır. Bununla birlikte, kullanıcı verileri benzer şekilde işlemeyen harici araçları kullanarak günlük verilerini okumaya çalışırsa, kullanıcı XSS saldırılarına maruz kalabilir. Gerekirse, bu yapılandırma direktifini kullanarak varsayılan davranışı değiştirebilirsiniz. True = Veriyi ilk kaydederken hazırlayın (daha az doğru, ancak daha az risk). False = Veriyi ilk kaydederken hazırlamayın (daha doğru, ancak daha risk) [Varsayılan]."
 config_general_logfile: "Engellenen tüm erişim girişimlerini kaydetmek için insanlar tarafından okunabilir dosya. Dosya adı belirtin veya devre dışı bırakmak için boş bırakın."
@@ -232,6 +232,8 @@ field_filetype_unknown: "Bilinmiyor"
 field_install: "Yükle"
 field_latest_version: "En son sürüm"
 field_log_in: "Oturum Aç"
+field_log_rotation_archive: "Öncelikle dosyayı arşivleyin, ve sonra en eski log dosyalarını sil, sınır artık aşılmamış kadar."
+field_log_rotation_delete: "En eski log dosyalarını sil, sınır artık aşılmamış kadar."
 field_netmask: "Ağ maskeler olarak çıktı üretmek"
 field_new_name: "Yeni isim:"
 field_nonclickable_text: "Tıklanmayan metin"
@@ -444,7 +446,7 @@ label_your_ua: "Senin UA:"
 link_accounts: "Hesaplar"
 link_aux: "Yardımcı Kurallar"
 link_cache_data: "Önbellek Verileri"
-link_cidr_calc: "CIDR Hesaplayıcı"
+link_calc: "Hesaplayıcı"
 link_config: "Yapılandırma"
 link_copy_to_clipboard: "Panoya kopyala"
 link_discussions: "Tartışmalar"
@@ -618,7 +620,7 @@ tip_aux_operators: "İpucu: Bir koşulun farklı bir operatöre ihtiyacı varsa,
 tip_aux_priority: "Öncelik (maksimum➡(eşit🔄eşdeğer)➡minimum):"
 tip_aux_webhooks: "Bir kural tetiklendiğinde, CIDRAM, olayla ilgili bağlı webhookları bildirmeye çalışır."
 tip_cache_data: "Merhaba, {username}.<br />Burada önbellek içeriğini inceleyebilirsiniz."
-tip_cidr_calc: "Merhaba, {username}.<br />CIDR hesaplayıcısı, bir IP adresinin faktörünün hangi CIDR'lerin olduğunu hesaplamanızı mümkün kılar."
+tip_calc: "Merhaba, {username}.<br />Hesaplayıcı, bir IP adresinin CIDR'lerini ve ağ maskelerini hesaplamanıza olanak tanır."
 tip_click_the_component: "Daha fazla ayrıntı için bileşen adına tıklayın."
 tip_condition_placeholder: "Bir değer belirtin veya göz ardı etmek için boş bırakın."
 tip_config: "Merhaba, {username}.<br />Yapılandırma sayfası, CIDRAM için yapılandırmayı ön uçtan değiştirmenizi mümkün kılar."

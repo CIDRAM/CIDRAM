@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Italian language data for the front-end (last modified: 2022.03.28).
+# This file: Italian language data for the front-end (last modified: 2022.04.02).
 ##/
 
 Extended Description Bypasses: "Un file per bypassare alcune delle firme predefinite normalmente inclusi nel pacchetto principale."
@@ -111,7 +111,7 @@ config_general_ipaddr: "Dove trovare l'indirizzo IP di collegamento richiesta? (
 config_general_lang: "Specifica la lingua predefinita per CIDRAM."
 config_general_lang_override: "Localizzare secondo HTTP_ACCEPT_LANGUAGE quando possibile? True = Sì [Predefinito]; False = No."
 config_general_log_banned_ips: "Includi richieste bloccate da IP vietati nei file di log? True = Sì [Predefinito]; False = No."
-config_general_log_rotation_action: "La rotazione dei log limita il numero di file di log che dovrebbero esistere in qualsiasi momento. Quando vengono creati nuovi file di log, se il numero totale di file di log supera il limite specificato, verrà eseguita l'azione specificata. Qui puoi specificare l'azione desiderato. Delete = Elimina i file di log più vecchi, finché il limite non viene più superato. Archive = In primo luogo archiviare e quindi, eliminare i file di log più vecchi, finché il limite non viene più superato."
+config_general_log_rotation_action: "La rotazione dei log limita il numero di file di log che dovrebbero esistere in qualsiasi momento. Quando vengono creati nuovi file di log, se il numero totale di file di log supera il limite specificato, verrà eseguita l'azione specificata. Qui puoi specificare l'azione desiderato."
 config_general_log_rotation_limit: "La rotazione dei log limita il numero di file di log che dovrebbero esistere in qualsiasi momento. Quando vengono creati nuovi file di log, se il numero totale di file di log supera il limite specificato, verrà eseguita l'azione specificata. Qui puoi specificare il limite desiderato. Un valore di 0 disabiliterà la rotazione dei log."
 config_general_log_sanitisation: "Quando si utilizza il front-end pagina per i file di log per visualizzare i dati di log, CIDRAM sanitizzará i dati del registro prima di visualizzarli, per proteggere gli utenti dagli attacchi XSS e altre potenziali minacce che i dati di log potrebbero contenere. Tuttavia, per impostazione predefinita, i dati non vengono sanitizzati durante la registrazione. Questo è per garantire che i dati siano conservati in modo accurato, per aiutare qualsiasi analisi euristica che potrebbe essere necessaria in futuro. Tuttavia, nel caso in cui un utente tenti di leggere i dati utilizzando strumenti esterni, e se quegli strumenti esterni non eseguono il loro processo sanificazione, l'utente potrebbe essere esposto agli attacchi XSS. Se necessario, è possibile modificare il comportamento predefinito utilizzando questa direttiva di configurazione. True = Sanitizzare i dati durante la registrazione (i dati vengono conservati in modo meno accurato, ma il rischio XSS è inferiore). False = Non sanitizzare i dati durante la registrazione (i dati vengono conservati in modo più accurato, ma il rischio XSS è più alto) [Predefinito]."
 config_general_logfile: "Un file leggibile dagli umani per la registrazione di tutti i tentativi di accesso bloccati. Specificare un nome di file, o lasciare vuoto per disabilitare."
@@ -232,6 +232,8 @@ field_filetype_unknown: "Sconosciuto"
 field_install: "Installarlo"
 field_latest_version: "Ultima Versione"
 field_log_in: "Accedi"
+field_log_rotation_archive: "In primo luogo archiviare e quindi, eliminare i file di log più vecchi, finché il limite non viene più superato."
+field_log_rotation_delete: "Elimina i file di log più vecchi, finché il limite non viene più superato."
 field_netmask: "Genera output utilizzando la notazione netmask"
 field_new_name: "Nuovo nome:"
 field_nonclickable_text: "Testo non cliccabile"
@@ -446,7 +448,7 @@ label_your_ua: "Il tuo UA:"
 link_accounts: "Utenti"
 link_aux: "Regole Ausiliarie"
 link_cache_data: "Dati della Cache"
-link_cidr_calc: "Calcolatrice CIDR"
+link_calc: "Calcolatrice"
 link_config: "Configurazione"
 link_copy_to_clipboard: "Copia negli appunti"
 link_discussions: "Discussioni"
@@ -646,7 +648,7 @@ tip_aux_operators: "Suggerimento: Se una condizione richiede un diverso tipo di 
 tip_aux_priority: "Priorità (massimo➡(pari🔄equivalente)➡minore):"
 tip_aux_webhooks: "Quando viene attivata una regola, CIDRAM tenterà di notificare eventuali webhook collegati all'evento."
 tip_cache_data: "Salve, {username}.<br />Qui puoi rivedere il contenuto della cache."
-tip_cidr_calc: "Salve, {username}.<br />La calcolatrice CIDR permette di calcolare che cosa CIDR un indirizzo IP appartiene."
+tip_calc: "Salve, {username}.<br />La calcolatrice permette di calcolare i CIDR e le maschere di rete di un indirizzo IP."
 tip_click_the_component: "Fare clic sul nome del componente per ulteriori dettagli."
 tip_condition_placeholder: "Specificare un valore, o lasciare vuoto per ignorare."
 tip_config: "Salve, {username}.<br />La pagina di configurazione permette di modificare la configurazione per CIDRAM dal front-end."

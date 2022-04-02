@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: German language data for the front-end (last modified: 2022.03.28).
+# This file: German language data for the front-end (last modified: 2022.04.02).
 ##/
 
 Extended Description Bypasses: "Die Standard-Signatur-Bypässe, die normalerweise im Hauptpaket enthalten sind."
@@ -111,7 +111,7 @@ config_general_ipaddr: "Ort der IP-Adresse der aktuellen Verbindung im gesamten 
 config_general_lang: "Gibt die Standardsprache für CIDRAM an."
 config_general_lang_override: "Nach HTTP_ACCEPT_LANGUAGE lokalisieren wann möglich? True = Ja [Standardeinstellung]; False = Nein."
 config_general_log_banned_ips: "Sollen auch blockierte Anfragen von verbannten IPs protokolliert werden? True = Ja [Standardeinstellung]; False = Nein."
-config_general_log_rotation_action: "Die Protokollrotation begrenzt die Anzahl der Protokolldateien, die gleichzeitig vorhanden sein sollten. Wenn neue Protokolldateien erstellt werden, und wenn die Gesamtzahl der Protokolldateien den angegebenen Limit überschreitet, wird die angegebene Aktion ausgeführt. Sie können hier die gewünschte Aktion angeben. Delete = Löschen Sie die ältesten Protokolldateien, bis das Limit nicht mehr überschritten wird. Archive = Zuerst archivieren, und dann löschen Sie die ältesten Protokolldateien, bis das Limit nicht mehr überschritten wird."
+config_general_log_rotation_action: "Die Protokollrotation begrenzt die Anzahl der Protokolldateien, die gleichzeitig vorhanden sein sollten. Wenn neue Protokolldateien erstellt werden, und wenn die Gesamtzahl der Protokolldateien den angegebenen Limit überschreitet, wird die angegebene Aktion ausgeführt. Sie können hier die gewünschte Aktion angeben."
 config_general_log_rotation_limit: "Die Protokollrotation begrenzt die Anzahl der Protokolldateien, die gleichzeitig vorhanden sein dürfen. Wenn neue Protokolldateien erstellt werden, und wenn die Gesamtzahl der Protokolldateien den angegebenen Limit überschreitet, wird die angegebene Aktion ausgeführt. Sie können hier das gewünschte Limit angeben. Ein Wert von 0 deaktiviert die Protokollrotation."
 config_general_log_sanitisation: "Wenn Sie die Frontend Protokolldateien-Seite verwenden, um Protokolldaten anzuzeigen, saniert CIDRAM die Protokolldaten vor der Anzeige, um Benutzer vor XSS-Angriffen und anderen potenziellen Bedrohungen zu schützen, die Protokolldaten enthalten könnten. Standardmäßig werden Daten während der Protokollierung jedoch nicht saniert. Dadurch wird sichergestellt, dass die Protokolldaten genau aufbewahrt werden, um eine eventuell erforderliche heuristische oder forensische Analyse zu unterstützen. Falls jedoch ein Benutzer versucht, Protokolldaten mit externen Werkzeuge zu lesen, und wenn diese externen Werkzeuge keinen eigenen Sanierungsprozess durchführen, der Benutzer könnte XSS-Angriffen ausgesetzt sein. Bei Bedarf können Sie das Standardverhalten mithilfe dieser Konfigurationsanweisung ändern. True = Sanieren der Daten, wenn der Daten protokolliert (Daten werden weniger genau aufbewahrt, jedoch das XSS-Risiko ist geringer). False = Sanieren der Daten nicht, wenn der Daten protokolliert (Daten werden genauer aufbewahrt, jedoch das XSS-Risiko ist höher) [Standardeinstellung]."
 config_general_logfile: "Name einer Datei in welcher Menschenlesbar alle blockierten zugriffsversuche protokolliert werden. Geben Sie einen Dateinamen an oder lassen Sie die Option zum Deaktivieren leer."
@@ -232,6 +232,8 @@ field_filetype_unknown: "Unbekannt"
 field_install: "Installieren"
 field_latest_version: "Letzte Version"
 field_log_in: "Einloggen"
+field_log_rotation_archive: "Zuerst archivieren, und dann löschen Sie die ältesten Protokolldateien, bis das Limit nicht mehr überschritten wird."
+field_log_rotation_delete: "Löschen Sie die ältesten Protokolldateien, bis das Limit nicht mehr überschritten wird."
 field_netmask: "Ausgabe als Netzmaske generieren"
 field_new_name: "Neuer Name:"
 field_nonclickable_text: "Nicht klickbarer Text"
@@ -450,7 +452,7 @@ label_your_ua: "Deine UA:"
 link_accounts: "Konten"
 link_aux: "Hilfsregeln"
 link_cache_data: "Datencache"
-link_cidr_calc: "CIDR-Rechner"
+link_calc: "Rechner"
 link_config: "Konfiguration"
 link_copy_to_clipboard: "In die Zwischenablage kopieren"
 link_discussions: "Diskussionen"
@@ -652,7 +654,7 @@ tip_aux_operators: "Hinweis: Wenn eine Bedingung eine andere Art von Operator be
 tip_aux_priority: "Priorität (höchste➡(gleich🔄äquivalent)➡niedrigste):"
 tip_aux_webhooks: "Wenn eine Regel ausgelöst wird, CIDRAM versucht, alle Webhooks verbundenen über das Ereignis zu informieren."
 tip_cache_data: "Hallo, {username}.<br />Hier können Sie den Inhalt des Cache überprüfen."
-tip_cidr_calc: "Hallo, {username}.<br />Mit dem CIDR-Rechner können Sie berechnen, zu welchen CIDRs eine IP-Adresse gehört."
+tip_calc: "Hallo, {username}.<br />Mit dem Rechner können Sie die CIDRs und Netzmasken einer IP-Adresse berechnen."
 tip_click_the_component: "Klicken Sie auf den Komponentennamen, um weitere Informationen zu erhalten."
 tip_condition_placeholder: "Geben Sie einen Wert an, oder lassen Sie das Feld leer, um es zu ignorieren."
 tip_config: "Hallo, {username}.<br />Das Konfigurationsseite macht es möglich zu ändern das Konfiguration für CIDRAM von der Frontend."

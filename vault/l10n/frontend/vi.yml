@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Vietnamese language data for the front-end (last modified: 2022.03.28).
+# This file: Vietnamese language data for the front-end (last modified: 2022.04.02).
 ##/
 
 Extended Description Bypasses: "Các tập tin đường tránh chữ ký mặc định thường bao gồm với gói thầu chính."
@@ -111,7 +111,7 @@ config_general_ipaddr: "Nơi để tìm địa chỉ IP của các yêu cầu k�
 config_general_lang: "Xác định tiếng mặc định cho CIDRAM."
 config_general_lang_override: "Bản địa hóa theo HTTP_ACCEPT_LANGUAGE bất cứ khi nào có thể? True = Vâng [Mặc định]; False = Không."
 config_general_log_banned_ips: "Bao gồm các yêu cầu bị chặn từ các IP bị cấm trong các tập tin đăng nhập? True = Vâng [Mặc định]; False = Không."
-config_general_log_rotation_action: "Xoay vòng nhật ký giới hạn số lượng của tập tin nhật ký có cần tồn tại cùng một lúc. Khi các tập tin nhật ký mới được tạo, nếu tổng số lượng tập tin nhật ký vượt quá giới hạn được chỉ định, hành động được chỉ định sẽ được thực hiện. Bạn có thể chỉ định hành động mong muốn tại đây. Delete = Xóa các tập tin nhật ký cũ nhất, cho đến khi giới hạn không còn vượt quá. Archive = Trước tiên lưu trữ, và sau đó xóa các tập tin nhật ký cũ nhất, cho đến khi giới hạn không còn vượt quá."
+config_general_log_rotation_action: "Xoay vòng nhật ký giới hạn số lượng của tập tin nhật ký có cần tồn tại cùng một lúc. Khi các tập tin nhật ký mới được tạo, nếu tổng số lượng tập tin nhật ký vượt quá giới hạn được chỉ định, hành động được chỉ định sẽ được thực hiện. Bạn có thể chỉ định hành động mong muốn tại đây."
 config_general_log_rotation_limit: "Xoay vòng nhật ký giới hạn số lượng của tập tin nhật ký có cần tồn tại cùng một lúc. Khi các tập tin nhật ký mới được tạo, nếu tổng số lượng tập tin nhật ký vượt quá giới hạn được chỉ định, hành động được chỉ định sẽ được thực hiện. Bạn có thể chỉ định giới hạn mong muốn tại đây. Giá trị 0 sẽ vô hiệu hóa xoay vòng nhật ký."
 config_general_log_sanitisation: "Khi sử dụng trang bản ghi để xem dữ liệu bản ghi, CIDRAM vệ sinh dữ liệu bản ghi trước khi hiển thị nó, để bảo vệ người dùng khỏi các cuộc tấn công XSS và các mối đe dọa tiềm năng khác. Tuy nhiên, theo mặc định, dữ liệu không được vệ sinh trong quá ghi bản ghi. Điều này là để đảm bảo dữ liệu bản ghi được bảo quản chính xác, để hỗ trợ bất kỳ phân tích heuristic hoặc pháp y có thể cần thiết trong tương lai. Tuy nhiên, nếu người dùng cố gắng đọc dữ liệu bản ghi bằng các công cụ bên ngoài, và nếu những công cụ bên ngoài đó không thực hiện quy trình vệ sinh riêng của họ, người dùng có thể tiếp xúc với các cuộc tấn công XSS. Nếu cần, bạn có thể thay đổi hành vi mặc định bằng cách sử dụng chỉ thị cấu hình này. True = Vệ sinh dữ liệu khi ghi nó (dữ liệu được bảo quản ít chính xác hơn, nhưng rủi ro XSS thấp hơn). False = Không vệ sinh dữ liệu khi ghi nó (dữ liệu được bảo quản chính xác hơn, nhưng rủi ro XSS cao hơn) [Mặc định]."
 config_general_logfile: "Tập tin có thể đọc con người cho ghi tất cả các nỗ lực truy cập bị chặn. Chỉ định một tên tập tin, hoặc để trống để vô hiệu hóa."
@@ -232,6 +232,8 @@ field_filetype_unknown: "Không Xác Định"
 field_install: "Cài đặt"
 field_latest_version: "Phiên bản mới nhất"
 field_log_in: "Đăng Nhập"
+field_log_rotation_archive: "Trước tiên lưu trữ, và sau đó xóa các tập tin nhật ký cũ nhất, cho đến khi giới hạn không còn vượt quá."
+field_log_rotation_delete: "Xóa các tập tin nhật ký cũ nhất, cho đến khi giới hạn không còn vượt quá."
 field_netmask: "Tạo đầu ra dưới dạng netmask"
 field_new_name: "Tên mới:"
 field_nonclickable_text: "Văn bản không thể nhấp"
@@ -440,7 +442,7 @@ label_your_ua: "UA của bạn:"
 link_accounts: "Tài khoản"
 link_aux: "Quy tắc phụ trợ"
 link_cache_data: "Dữ liệu cache"
-link_cidr_calc: "Máy tính CIDR"
+link_calc: "Máy tính"
 link_config: "Cấu hình"
 link_copy_to_clipboard: "Sao chép vào clipboard"
 link_discussions: "Thảo luận"
@@ -614,7 +616,7 @@ tip_aux_operators: "Dấu: Nếu một điều kiện cần một loại toán t
 tip_aux_priority: "Sự ưu tiên (cao nhất➡(công bằng🔄tương đương)➡thấp nhất):"
 tip_aux_webhooks: "Khi một quy tắc được đáp ứng, CIDRAM sẽ cố gắng thông báo cho bất kỳ webhooks nào được kết nối về sự kiện này."
 tip_cache_data: "Xin chào, {username}.<br />Ở đây bạn có thể xem lại nội dung của bộ nhớ cache."
-tip_cidr_calc: "Xin chào, {username}.<br />Máy tính CIDR cho phép bạn để tính toán mà các CIDR một địa chỉ IP thuộc về."
+tip_calc: "Xin chào, {username}.<br />Máy tính cho phép bạn để tính toán CIDR và mặt nạ mạng của một địa chỉ IP."
 tip_click_the_component: "Nhấp vào tên thành phần để biết thêm chi tiết."
 tip_condition_placeholder: "Chỉ định một giá trị, hoặc để trống để bỏ qua."
 tip_config: "Xin chào, {username}.<br />Trang cấu hình cho phép bạn chỉnh sửa các cấu hình CIDRAM từ các front-end."

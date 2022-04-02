@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Korean language data for the front-end (last modified: 2022.03.28).
+# This file: Korean language data for the front-end (last modified: 2022.04.02).
 ##/
 
 Extended Description Bypasses: "기본 서명 우회 일반적으로 기본 패키지에 포함되어 있습니다."
@@ -111,7 +111,7 @@ config_general_ipaddr: "연결 요청의 IP 주소를 어디에서 찾을 것인
 config_general_lang: "CIDRAM의 기본 언어를 설정합니다."
 config_general_lang_override: "가능할 때마다 HTTP_ACCEPT_LANGUAGE에 따라 현지화 하시겠습니까? True = 예 (Default / 기본값); False = 아니오."
 config_general_log_banned_ips: "금지 된 IP에서 차단 된 요청을 로그 파일에 포함됩니까? True = 예 (Default / 기본값); False = 아니오."
-config_general_log_rotation_action: "로그 회전은 한 번에 존재해야하는 로그 파일 수를 제한합니다. 새 로그 파일을 만들 때 총 로그, 파일 수가 지정된 제한을 초과하면, 지정된 작업이 수행됩니다. 여기서 원하는 동작을 지정할 수 있습니다. Delete = 제한이 더 이상 초과되지 않을 때까지, 가장 오래된 로그 파일을 삭제하십시오. Archive = 제한이 더 이상 초과되지 않을 때까지, 가장 오래된 로그 파일을 보관 한 다음 삭제하십시오."
+config_general_log_rotation_action: "로그 회전은 한 번에 존재해야하는 로그 파일 수를 제한합니다. 새 로그 파일을 만들 때 총 로그, 파일 수가 지정된 제한을 초과하면, 지정된 작업이 수행됩니다. 여기서 원하는 동작을 지정할 수 있습니다."
 config_general_log_rotation_limit: "로그 회전은 한 번에 존재해야하는 로그 파일 수를 제한합니다. 새 로그 파일을 만들 때 총 로그, 파일 수가 지정된 제한을 초과하면, 지정된 작업이 수행됩니다. 여기서 원하는 한계를 지정할 수 있습니다. 값 0은 로그 회전을 비활성화합니다."
 config_general_log_sanitisation: "프런트 엔드 로그 페이지를 사용하여 로그 데이터를 볼 때, XSS 공격 및 기타 잠재적 인 위협으로부터 사용자를 보호하기 위해 CIDRAM은 로그 데이터를 표시하기 전에 위생 처리합니다. 그러나 기본적으로, 로깅 중에는 데이터가 삭제되지 않습니다. 이렇게하면 로그 데이터가 정확하게 보존됩니다 (앞으로 필요할 수도있는 경험적 또는 법의학 분석에 유용합니다). 그러나, 사용자가 외부 도구를 사용하여 로그 데이터를 읽으려고하면, 외부 도구가 자체 위생 처리를 수행하지 않는 경우, 사용자가 XSS 공격에 노출 될 수 있습니다. 필요한 경우, 이 구성 지정 문을 사용하여 기본 작동을 변경할 수 있습니다. True = 데이터 로깅 할 때 데이터, 위생적으로하다 (기록된 데이터 정확도가 더 낮습니다, 않지만 XSS 위험이 더 낮습니다). False = 데이터 로깅 할 때 데이터, 위생적으로하지 마라 (기록된 데이터 정확도가 더 높습니다, 않지만 XSS 위험이 더 높습니다) (Default / 기본 설정)."
 config_general_logfile: "액세스 시도 저지를 기록, 인간에 의해 읽기 가능. 파일 이름을 지정하십시오. 비활성화하려면 비워 둡니다."
@@ -232,6 +232,8 @@ field_filetype_unknown: "알 수없는"
 field_install: "설치"
 field_latest_version: "최신 버전"
 field_log_in: "로그인"
+field_log_rotation_archive: "제한이 더 이상 초과되지 않을 때까지, 가장 오래된 로그 파일을 보관 한 다음 삭제하십시오."
+field_log_rotation_delete: "제한이 더 이상 초과되지 않을 때까지, 가장 오래된 로그 파일을 삭제하십시오."
 field_netmask: "넷 마스크 사용하여 출력 생성"
 field_new_name: "새 이름\_:"
 field_nonclickable_text: "클릭 할 수없는 텍스트"
@@ -440,7 +442,7 @@ label_your_ua: "당신의 UA\_:"
 link_accounts: "계정"
 link_aux: "보조 규칙"
 link_cache_data: "데이터 캐쉬"
-link_cidr_calc: "CIDR 계산기"
+link_calc: "계산기"
 link_config: "구성"
 link_copy_to_clipboard: "클립 보드에 복사"
 link_discussions: "토론"
@@ -614,7 +616,7 @@ tip_aux_operators: "힌트\_: 조건에 다른 연산자가 필요한 경우, �
 tip_aux_priority: "우선 순위 (최고➡(같은🔄동등한)➡최저한의)\_:"
 tip_aux_webhooks: "규칙이 트리거 되면, CIDRAM은 연결된 웹 훅에 이벤트에 대해 알리려고 시도합니다."
 tip_cache_data: "안녕하세요, {username}.<br />여기서 캐시의 내용을 검토 할 수 있습니다."
-tip_cidr_calc: "안녕하세요, {username}.<br />CIDR 계산기는 IP 주소가 어떻게 CIDR에 속해 있는지를 계산할 수 있습니다."
+tip_calc: "안녕하세요, {username}.<br />계산기를 사용하면 IP 주소의 CIDR 및 넷마스크를 계산할 수 있습니다."
 tip_click_the_component: "자세한 내용은 구성 요소 이름을 클릭하십시오."
 tip_condition_placeholder: "무시할 값을 지정하거나 공백으로 두십시오."
 tip_config: "안녕하세요, {username}.<br />구성 페이지는 프론트 엔드에서 CIDRAM의 설정을 변경할 수 있습니다."

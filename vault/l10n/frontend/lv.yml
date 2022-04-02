@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Latvian language data for the front-end (last modified: 2022.03.28).
+# This file: Latvian language data for the front-end (last modified: 2022.04.02).
 ##/
 
 Extended Description Bypasses: "Noklusējuma paraksta apiešana faili, kas parasti ir iekļauti galvenajā paketē."
@@ -111,7 +111,7 @@ config_general_ipaddr: "Kur atrast savienojošo pieprasījumu IP adresi? (Noder�
 config_general_lang: "Norādiet CIDRAM noklusējuma valodu."
 config_general_lang_override: "Ja iespējams, lokalizēt saskaņā ar HTTP_ACCEPT_LANGUAGE? True (Patiess) = Jā [Noklusējuma]; False (Nepatiess) = Nē."
 config_general_log_banned_ips: "Vai failos iekļaut bloķētus IP pieprasījumus? True (Patiess) = Jā [Noklusējuma]; False (Nepatiess) = Nē."
-config_general_log_rotation_action: "Log rotācija ierobežo to logfailu skaitu, kuriem vajadzētu pastāvēt vienlaikus. Veidojot jaunus logfailus, ja kopējais logfailu skaits pārsniedz noteikto limitu, tiks veikta norādītā darbība. Šeit varat norādīt vēlamo darbību. Delete = Izdzēsiet vecākos logfailus, līdz ierobežojums vairs netiek pārsniegts. Archive = Vispirms arhivējiet un pēc tam izdzēsiet vecākos logfailus, līdz ierobežojums vairs netiek pārsniegts."
+config_general_log_rotation_action: "Log rotācija ierobežo to logfailu skaitu, kuriem vajadzētu pastāvēt vienlaikus. Veidojot jaunus logfailus, ja kopējais logfailu skaits pārsniedz noteikto limitu, tiks veikta norādītā darbība. Šeit varat norādīt vēlamo darbību."
 config_general_log_rotation_limit: "Log rotācija ierobežo to logfailu skaitu, kuriem vajadzētu pastāvēt vienlaikus. Veidojot jaunus logfailus, ja kopējais logfailu skaits pārsniedz noteikto limitu, tiks veikta norādītā darbība. Šeit varat norādīt vēlamo ierobežojumu. Ja vērtība ir 0, tiks atspējota log rotācija."
 config_general_log_sanitisation: "Izmantojot logs lapu, lai skatītu log datus, CIDRAM pirms to parādīšanas sanitizē log datus, lai aizsargātu lietotājus no XSS uzbrukumiem un citiem iespējamiem draudiem, ko varētu saturēt log dati. Tomēr pēc noklusējuma dati reģistrēšanas laikā netiek sanitizēti. Tas ir paredzēts, lai log dati tiktu saglabāti precīzi, lai palīdzētu veikt heiristisko analīzi, kas varētu būt nepieciešama nākotnē. Tomēr, ja lietotājs mēģina nolasīt log datus izmantojot ārējus rīkus, ja šie ārējie rīki neveic savu sanitizācijas procesu, lietotājs var tikt pakļauts XSS uzbrukumiem. Ja nepieciešams, jūs varat mainīt noklusējuma izturēšanos, izmantojot šo konfigurācijas direktīvu. True (Patiess) = Sanitizēt datus reģistrācijas laikā (dati tiek saglabāti mazāk precīzi, bet XSS risks ir mazāks). False (Nepatiess) = Nesanitizēt datus reģistrācijas laikā (dati tiek saglabāti precīzāk, bet XSS risks ir lielāks) [Noklusējuma]."
 config_general_logfile: "Cilvēkam lasāms fails visu bloķēto piekļuves mēģinājumu reģistrēšanai. Norādiet faila nosaukumu, vai atstājiet tukšu, lai to atspējotu."
@@ -232,6 +232,8 @@ field_filetype_unknown: "Nezināms"
 field_install: "Instalējiet"
 field_latest_version: "Jaunākā Versija"
 field_log_in: "Ielogoties"
+field_log_rotation_archive: "Vispirms arhivējiet un pēc tam izdzēsiet vecākos logfailus, līdz ierobežojums vairs netiek pārsniegts."
+field_log_rotation_delete: "Izdzēsiet vecākos logfailus, līdz ierobežojums vairs netiek pārsniegts."
 field_netmask: "Ģenerēt izvadi kā tīkla maskas"
 field_new_name: "Jauns nosaukums:"
 field_nonclickable_text: "Teksts, kuru nevar klikšķināms"
@@ -455,7 +457,7 @@ label_your_ua: "Jūsu lietotāja aģents:"
 link_accounts: "Konti"
 link_aux: "Papildnoteikumi"
 link_cache_data: "Kešatmiņas Dati"
-link_cidr_calc: "CIDR Kalkulators"
+link_calc: "Kalkulators"
 link_config: "Konfigurācija"
 link_copy_to_clipboard: "Kopēt starpliktuvē"
 link_discussions: "Diskusijas"
@@ -671,7 +673,7 @@ tip_aux_operators: "Padoms: Ja kādam stāvoklim nepieciešams cita veida operat
 tip_aux_priority: "Prioritāte (augstākais➡(vienāds🔄ekvivalents)➡zemākais):"
 tip_aux_webhooks: "Kad tiek iedarbināts papildnoteikums, CIDRAM mēģinās paziņot visiem saistītajiem tīmekļa āķiem par notikumu."
 tip_cache_data: "Šeit jūs varat pārskatīt kešatmiņas saturu."
-tip_cidr_calc: "CIDR kalkulators ļauj aprēķināt IP adreses CIDR."
+tip_calc: "Kalkulators ļauj aprēķināt IP adreses CIDR un tīkla maskas."
 tip_click_the_component: "Noklikšķiniet uz komponenta nosaukuma, lai iegūtu sīkāku informāciju."
 tip_condition_placeholder: "Norādiet vērtību vai atstājiet tukšu lai neievērotu."
 tip_config: "Konfigurācijas lapa ļauj mainīt CIDRAM konfigurāciju."

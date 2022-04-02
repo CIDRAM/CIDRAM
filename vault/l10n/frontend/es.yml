@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Spanish language data for the front-end (last modified: 2022.03.28).
+# This file: Spanish language data for the front-end (last modified: 2022.04.02).
 ##/
 
 Extended Description Bypasses: "Los archivos para bypass de firmas estándar normalmente se incluyen con el paquete principal."
@@ -111,7 +111,7 @@ config_general_ipaddr: "¿Dónde puedo encontrar el IP dirección de las solicit
 config_general_lang: "Especifique la predefinido del lenguaje para CIDRAM."
 config_general_lang_override: "¿Localizar según HTTP_ACCEPT_LANGUAGE siempre que sea posible? True = Sí [Predefinido]; False = No."
 config_general_log_banned_ips: "¿Incluir las solicitudes bloqueadas de IPs prohibidos en los archivos de registro? True = Sí [Predefinido]; False = No."
-config_general_log_rotation_action: "La rotación de registros limita la cantidad de archivos de registro que deberían existir al mismo tiempo. Cuando se crean nuevos archivos de registro, si la cantidad total de archivos de registro excede el límite especificado, se realizará la acción especificada. Puede especificar la acción deseada aquí. Delete = Eliminar los archivos de registro más antiguos, hasta que el límite ya no se exceda. Archive = Primero archiva, y luego eliminar los archivos de registro más antiguos, hasta que el límite ya no se exceda."
+config_general_log_rotation_action: "La rotación de registros limita la cantidad de archivos de registro que deberían existir al mismo tiempo. Cuando se crean nuevos archivos de registro, si la cantidad total de archivos de registro excede el límite especificado, se realizará la acción especificada. Puede especificar la acción deseada aquí."
 config_general_log_rotation_limit: "La rotación de registros limita la cantidad de archivos de registro que deberían existir al mismo tiempo. Cuando se crean nuevos archivos de registro, si la cantidad total de archivos de registro excede el límite especificado, se realizará la acción especificada. Puede especificar el límite deseado aquí. Un valor de 0 deshabilitará la rotación de registros."
 config_general_log_sanitisation: "Cuando se utiliza el front-end página de los archivos de registro para ver los datos de registro, CIDRAM sanea los datos de registro antes de mostrarlos, para proteger a los usuarios de los ataques XSS y otras amenazas potenciales que podrían estar contenido dentro de los datos de registro. Pero, de forma predefinida, los datos no se sanean durante el registro. Esto es para asegurar que los datos de registro se conserven con precisión, para ayudar a cualquier análisis heurístico o forense que pueda ser necesario en el futuro. Pero, en el caso de que un usuario intente leer los datos de registro utilizando herramientas externas, y si esas herramientas externas no realizan su propio proceso de saneamiento, el usuario podría estar expuesto a ataques XSS. Si es necesario, puede cambiar el comportamiento predefinido utilizando esta directiva de configuración. True = Sanear datos al registrarlo (los datos se conservan con menos precisión, pero el riesgo de XSS es menor). False = No sanear datos al registrarlo (los datos se conservan con mayor precisión, pero el riesgo de XSS es mayor) [Predefinido]."
 config_general_logfile: "Un archivo legible por humanos para el registro de todos los intentos de acceso bloqueados. Especificar el nombre del archivo, o dejar en blanco para desactivar."
@@ -232,6 +232,8 @@ field_filetype_unknown: "Desconocido"
 field_install: "Instalar"
 field_latest_version: "Ultima Versión"
 field_log_in: "Iniciar Sesión"
+field_log_rotation_archive: "Primero archiva, y luego eliminar los archivos de registro más antiguos, hasta que el límite ya no se exceda."
+field_log_rotation_delete: "Eliminar los archivos de registro más antiguos, hasta que el límite ya no se exceda."
 field_netmask: "Generar salida como netmasks"
 field_new_name: "Nuevo nombre:"
 field_nonclickable_text: "Texto que no se puede hacer clic"
@@ -450,7 +452,7 @@ label_your_ua: "Tu UA:"
 link_accounts: "Cuentas"
 link_aux: "Reglas Auxiliares"
 link_cache_data: "Datos de Caché"
-link_cidr_calc: "Calculadora CIDR"
+link_calc: "Calculadora"
 link_config: "Configuración"
 link_copy_to_clipboard: "Copiar al portapapeles"
 link_discussions: "Discusiones"
@@ -652,7 +654,7 @@ tip_aux_operators: "Nota: Si una condición necesita un tipo de operador diferen
 tip_aux_priority: "Prioridad (mas alta➡(igual🔄equivalente)➡mas baja):"
 tip_aux_webhooks: "Cuando se cumple una regla, CIDRAM intentará notificar a los webhooks conectados sobre el evento."
 tip_cache_data: "Hola, {username}.<br />Aquí puede revisar el contenido de la caché."
-tip_cidr_calc: "Hola, {username}.<br />La calculadora CIDR le permite calcular los CIDR a los que una dirección IP es un factor."
+tip_calc: "Hola, {username}.<br />La calculadora le permite calcular los CIDR y las máscaras de red de una dirección IP."
 tip_click_the_component: "Haga clic en el nombre del componente para más detalles."
 tip_condition_placeholder: "Especifique un valor, o déjelo en blanco para descartarlo."
 tip_config: "Hola, {username}.<br />La página de configuración permite modificar la configuración para CIDRAM desde el front-end."

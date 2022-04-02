@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2022.03.28).
+ * This file: Front-end handler (last modified: 2022.04.02).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -3958,31 +3958,30 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-tracking' && $CIDRAM['FE']['
     }
 }
 
-/** CIDR Calculator. */
-elseif ($CIDRAM['QueryVars']['cidram-page'] === 'cidr-calc' && $CIDRAM['FE']['Permissions'] === 1) {
+/** Range Calculator. */
+elseif ($CIDRAM['QueryVars']['cidram-page'] === 'calc' && $CIDRAM['FE']['Permissions'] === 1) {
     /** Page initial prepwork. */
-    $CIDRAM['InitialPrepwork']($CIDRAM['L10N']->getString('link_cidr_calc'), $CIDRAM['L10N']->getString('tip_cidr_calc'));
+    $CIDRAM['InitialPrepwork']($CIDRAM['L10N']->getString('link_calc'), $CIDRAM['L10N']->getString('tip_calc'));
 
     /** Template for result rows. */
-    $CIDRAM['FE']['CalcRow'] = $CIDRAM['ReadFile']($CIDRAM['GetAssetPath']('_cidr_calc_row.html'));
+    $CIDRAM['FE']['CalcRow'] = $CIDRAM['ReadFile']($CIDRAM['GetAssetPath']('_calc_row.html'));
 
     /** Initialise results data. */
     $CIDRAM['FE']['Ranges'] = '';
 
-    /** IPs were submitted for testing. */
-    if (isset($_POST['cidr'])) {
-        $CIDRAM['FE']['cidr'] = $_POST['cidr'];
-        if ($_POST['cidr'] = preg_replace('~[^\da-f:./]~i', '', $_POST['cidr'])) {
-            if (!$CIDRAM['CIDRs'] = $CIDRAM['ExpandIPv4']($_POST['cidr'])) {
-                $CIDRAM['CIDRs'] = $CIDRAM['ExpandIPv6']($_POST['cidr']);
-            }
+    /** Process the IP address entered for range calculation. */
+    if (isset($_POST['address']) && strlen($_POST['address'])) {
+        $CIDRAM['FE']['address'] = $_POST['address'];
+        if (!$CIDRAM['CIDRs'] = $CIDRAM['ExpandIPv4']($_POST['address'])) {
+            $CIDRAM['CIDRs'] = $CIDRAM['ExpandIPv6']($_POST['address']);
         }
     } else {
-        $CIDRAM['FE']['cidr'] = '';
+        $CIDRAM['FE']['address'] = '';
     }
 
     /** Process CIDRs. */
     if (!empty($CIDRAM['CIDRs'])) {
+        $CIDRAM['Aggregator'] = new \CIDRAM\Aggregator\Aggregator($CIDRAM, 1);
         $CIDRAM['Factors'] = count($CIDRAM['CIDRs']);
         array_walk($CIDRAM['CIDRs'], function ($CIDR, $Key) use (&$CIDRAM): void {
             $First = substr($CIDR, 0, strlen($CIDR) - strlen($Key + 1) - 1);
@@ -3993,15 +3992,18 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'cidr-calc' && $CIDRAM['FE']['Pe
             } else {
                 $Last = $CIDRAM['L10N']->getString('response_error');
             }
-            $Arr = ['CIDR' => $CIDR, 'ID' => preg_replace('~[^\dA-fa-f]~', '_', $CIDR), 'Range' => $First . ' – ' . $Last];
+            $Netmask = $CIDR;
+            $CIDRAM['Aggregator']->convertToNetmasks($Netmask);
+            $Arr = ['CIDR' => $CIDR, 'Netmask' => $Netmask, 'ID' => preg_replace('~[^\dA-fa-f]~', '_', $CIDR), 'Range' => $First . ' – ' . $Last];
             $CIDRAM['FE']['Ranges'] .= $CIDRAM['ParseVars']($Arr, $CIDRAM['FE']['CalcRow']);
         });
+        unset($CIDRAM['Aggregator']);
     }
 
     /** Parse output. */
     $CIDRAM['FE']['FE_Content'] = $CIDRAM['ParseVars']($CIDRAM['L10N']->Data, $CIDRAM['ParseVars'](
         $CIDRAM['FE'],
-        $CIDRAM['ReadFile']($CIDRAM['GetAssetPath']('_cidr_calc.html'))
+        $CIDRAM['ReadFile']($CIDRAM['GetAssetPath']('_calc.html'))
     ));
 
     /** Send output. */

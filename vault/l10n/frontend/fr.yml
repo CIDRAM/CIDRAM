@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: French language data for the front-end (last modified: 2022.03.28).
+# This file: French language data for the front-end (last modified: 2022.04.02).
 ##/
 
 Extended Description Bypasses: "Les fichiers pour contourner les signatures standard qui sont normalement inclus dans le paquet principal."
@@ -111,7 +111,7 @@ config_general_ipaddr: "Où trouver l'adresse IP de requêtes\_? (Utile pour ser
 config_general_lang: "Spécifiez la langue défaut pour CIDRAM."
 config_general_lang_override: "Localiser selon HTTP_ACCEPT_LANGUAGE autant que possible\_? True = Oui [Défaut]\_; False = Non."
 config_general_log_banned_ips: "Inclure les requêtes bloquées provenant d'IP interdites dans les fichiers journaux\_? True = Oui [Défaut]\_; False = Non."
-config_general_log_rotation_action: "La rotation du journal limite le nombre de fichiers journaux qui doivent exister à un moment donné. Lorsque de nouveaux fichiers journaux sont créés, si le nombre total de fichiers journaux dépasse la limite spécifiée, l'action spécifiée sera effectuée. Vous pouvez spécifier l'action souhaitée ici. Delete = Supprimez les fichiers journaux les plus anciens, jusqu'à ce que la limite ne soit plus dépassée. Archive = Tout d'abord archiver, puis supprimez les fichiers journaux les plus anciens, jusqu'à ce que la limite ne soit plus dépassée."
+config_general_log_rotation_action: "La rotation du journal limite le nombre de fichiers journaux qui doivent exister à un moment donné. Lorsque de nouveaux fichiers journaux sont créés, si le nombre total de fichiers journaux dépasse la limite spécifiée, l'action spécifiée sera effectuée. Vous pouvez spécifier l'action souhaitée ici."
 config_general_log_rotation_limit: "La rotation du journal limite le nombre de fichiers journaux qui doivent exister à un moment donné. Lorsque de nouveaux fichiers journaux sont créés, si le nombre total de fichiers journaux dépasse la limite spécifiée, l'action spécifiée sera effectuée. Vous pouvez spécifier la limite souhaitée ici. Une valeur de 0 désactivera la rotation du journal."
 config_general_log_sanitisation: "Lorsque vous utilisez la page pour les fichiers journaux pour afficher les données de journaux, CIDRAM assainit les données de journaux avant de les afficher, pour protéger les utilisateurs contre les attaques XSS et autres menaces potentielles que les données de journalisation peuvent contenir. Cependant, par défaut, les données ne sont pas assainie lors de la journalisation. Cela garantit que les données du journalisation sont conservées avec précision, pour faciliter toute analyse heuristique qui pourrait être nécessaire à l'avenir. Cependant, dans le cas où un utilisateur tente de lire les données du journalisation à l'aide d'outils externes, et si ces outils externes n'effectuent pas leur propre processus d'assainissement, l'utilisateur pourrait être exposé à des attaques XSS. Si nécessaire, vous pouvez modifier le comportement par défaut à l'aide de cette directive de configuration. True = Assainir les données lors de la journalisation (les données sont moins bien préservées, mais le risque XSS est plus faible). False = Ne pas assainir les données lors de la journalisation (les données sont mieux préservées, mais le risque XSS est plus élevé) [Défaut]."
 config_general_logfile: "Un fichier lisible par l'homme pour enregistrement de toutes les tentatives d'accès bloquées. Spécifier un fichier, ou laisser vide à désactiver."
@@ -232,6 +232,8 @@ field_filetype_unknown: "Inconnu"
 field_install: "Installer"
 field_latest_version: "Dernière Version"
 field_log_in: "Connecter"
+field_log_rotation_archive: "Tout d'abord archiver, puis supprimez les fichiers journaux les plus anciens, jusqu'à ce que la limite ne soit plus dépassée."
+field_log_rotation_delete: "Supprimez les fichiers journaux les plus anciens, jusqu'à ce que la limite ne soit plus dépassée."
 field_netmask: "Générer une sortie sous forme de masques de réseau"
 field_new_name: "Nouveau nom\_:"
 field_nonclickable_text: "Texte non-cliquable"
@@ -450,7 +452,7 @@ label_your_ua: "Votre UA\_:"
 link_accounts: "Comptes"
 link_aux: "Règles Auxiliaires"
 link_cache_data: "Données de Cache"
-link_cidr_calc: "Calculatrice CIDR"
+link_calc: "Calculatrice"
 link_config: "Configuration"
 link_copy_to_clipboard: "Copier dans le presse-papier"
 link_discussions: "Discussions"
@@ -652,7 +654,7 @@ tip_aux_operators: "Remarque\_: Si une condition a besoin d'un autre type d'opé
 tip_aux_priority: "Priorité (plus haut➡(égale🔄équivalent)➡plus bas)\_:"
 tip_aux_webhooks: "Lorsqu'une règle est déclenchée, CIDRAM tentera d'informer tous les webhooks connectés de l'événement."
 tip_cache_data: "Bonjour, {username}.<br />Ici vous pouvez revoir le contenu du cache."
-tip_cidr_calc: "Bonjour, {username}.<br />Le calculatrice CIDR vous permet de calculer les CIDR auxquels une adresse IP appartient."
+tip_calc: "Bonjour, {username}.<br />Le calculatrice vous permet de calculer les CIDR et les masques de réseau d'une adresse IP."
 tip_click_the_component: "Cliquez sur le nom du composant pour plus de détails."
 tip_condition_placeholder: "Spécifiez une valeur, ou laissez vide pour ne pas en tenir compte."
 tip_config: "Bonjour, {username}.<br />La page de configuration vous permet de modifier la configuration pour CIDRAM à l'accès frontal."

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (traditional) language data for the front-end (last modified: 2022.03.28).
+# This file: Chinese (traditional) language data for the front-end (last modified: 2022.04.02).
 ##/
 
 Extended Description Bypasses: "標準簽名旁路文件通常包括在主包。"
@@ -111,7 +111,7 @@ config_general_ipaddr: "在哪裡可以找到連接請求IP地址？​（可以
 config_general_lang: "指定標準CIDRAM語言。"
 config_general_lang_override: "盡可能根據HTTP_ACCEPT_LANGUAGE進行本地化？True（真）=進行本地化【標準】；False（假）=不要本地化。"
 config_general_log_banned_ips: "包括IP禁止從阻止請求在日誌文件嗎？​True（真）=是【標準】；False（假）=不是。"
-config_general_log_rotation_action: "日誌輪轉限制了任何時候應該存在的日誌文件的數量。​當新的日誌文件被創建時，如果日誌文件的指定的最大數量已經超過，將執行指定的操作。​您可以在此處指定所需的操作。​『Delete』=刪除最舊的日誌文件，直到不再超出限制。​『Archive』=首先歸檔，然後刪除最舊的日誌文件，直到不再超出限制。"
+config_general_log_rotation_action: "日誌輪轉限制了任何時候應該存在的日誌文件的數量。​當新的日誌文件被創建時，如果日誌文件的指定的最大數量已經超過，將執行指定的操作。​您可以在此處指定所需的操作。"
 config_general_log_rotation_limit: "日誌輪轉限制了任何時候應該存在的日誌文件的數量。​當新的日誌文件被創建時，如果日誌文件的指定的最大數量已經超過，將執行指定的操作。​您可以在此指定所需的限制。​值為『0』將禁用日誌輪轉。"
 config_general_log_sanitisation: "當使用前端日誌頁面查看日誌數據時，CIDRAM在顯示之前清理日誌數據。​這可以保護用戶免受XSS攻擊和其他潛在威脅。​但是，默認情況下，在記錄期間不會清理數據。​這是為了確保准確地保留日誌數據（可以幫助任何未來的啟發式或法醫分析）。​但是，如果用戶嘗試使用外部工具讀取日誌數據，如果這些外部工具不執行自己的清理過程，用戶可能會受到XSS攻擊。​如有必要，可以使用此配置指令更改默認行為。 True = 記錄數據時清理數據（數據保存不太準確，但XSS風險較低）。 False = 記錄數據時不要清理數據（數據保存得更準確，但XSS風險更高）【標準】。"
 config_general_logfile: "人類可讀文件用於記錄所有被攔截的訪問。​指定一個文件名，​或留空以禁用。"
@@ -232,6 +232,8 @@ field_filetype_unknown: "未知"
 field_install: "安裝"
 field_latest_version: "最新版本"
 field_log_in: "登錄"
+field_log_rotation_archive: "首先歸檔，然後刪除最舊的日誌文件，直到不再超出限制。"
+field_log_rotation_delete: "刪除最舊的日誌文件，直到不再超出限制。"
 field_netmask: "以子網掩碼的形式生成輸出"
 field_new_name: "新名稱："
 field_nonclickable_text: "不可點擊的文字"
@@ -441,7 +443,7 @@ label_your_ua: "您的UA："
 link_accounts: "帳戶"
 link_aux: "輔助規則"
 link_cache_data: "緩存數據"
-link_cidr_calc: "CIDR計算器"
+link_calc: "計算器"
 link_config: "配置"
 link_copy_to_clipboard: "複製到剪貼板"
 link_discussions: "討論"
@@ -615,7 +617,7 @@ tip_aux_operators: "暗示：如果條件需要其他類型的運算符，您可
 tip_aux_priority: "優先（最高➡(相同🔄當量)➡最低）："
 tip_aux_webhooks: "當觸發規則時，CIDRAM將嘗試該事件通知所有連接的webhooks。"
 tip_cache_data: "你好，​{username}。<br />在這裡您可以查看緩存的內容。"
-tip_cidr_calc: "你好，​{username}。​<br />CIDR計算器允許您計算IP地址屬於哪個CIDR。"
+tip_calc: "你好，​{username}。​<br />計算器允許您計算IP地址的CIDR和網絡掩碼。"
 tip_click_the_component: "單擊組件名稱以獲取更多詳細信息。"
 tip_condition_placeholder: "指定一個值，或留空以忽略。"
 tip_config: "你好，​{username}。​<br />配置頁面允許您修改CIDRAM配置從前端。"

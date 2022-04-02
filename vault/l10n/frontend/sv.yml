@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Swedish language data for the front-end (last modified: 2022.03.28).
+# This file: Swedish language data for the front-end (last modified: 2022.04.02).
 ##/
 
 Extended Description Bypasses: "Standard-signatur-bypass-filer som normalt ingår i huvudpaketet."
@@ -111,7 +111,7 @@ config_general_ipaddr: "Var hittar du IP-adressen för anslutningsförfrågninga
 config_general_lang: "Ange standardspråk för CIDRAM."
 config_general_lang_override: "Lokalisera enligt HTTP_ACCEPT_LANGUAGE när det är möjligt? True = Ja [Standard]; False = Nej."
 config_general_log_banned_ips: "Inkludera blockerade förfrågningar från förbjudna IP-adresser i loggfilerna? True = Ja [Standard]; False = Nej."
-config_general_log_rotation_action: "Loggrotering begränsar antalet loggfiler som ska existera vid en gång. När nya loggfiler skapas, om det totala antalet loggfiler överstiger den angivna gränsen, den angivna åtgärden kommer att utföras. Du kan ange önskad åtgärd här. Delete = Radera de äldsta loggfilerna, tills gränsen inte längre överskrids. Archive = För det första, arkivera, och sedan radera de äldsta loggfilerna, tills gränsen inte längre överskrids."
+config_general_log_rotation_action: "Loggrotering begränsar antalet loggfiler som ska existera vid en gång. När nya loggfiler skapas, om det totala antalet loggfiler överstiger den angivna gränsen, den angivna åtgärden kommer att utföras. Du kan ange önskad åtgärd här."
 config_general_log_rotation_limit: "Loggrotering begränsar antalet loggfiler som ska existera vid en gång. När nya loggfiler skapas, om det totala antalet loggfiler överstiger den angivna gränsen, den angivna åtgärden kommer att utföras. Du kan ange önskad gräns här. Ett värde på 0 kommer att inaktivera loggroteringen."
 config_general_log_sanitisation: "När du använder loggningssidan för att visa loggdata, CIDRAM sanerar loggdata innan den visas, för att skydda användare mot XSS-attacker och andra potentiella hot som loggdata kan innehålla. Men som standard, data saneras inte under loggning. Det här är för att säkerställa att loggdata bevaras exakt, för att hjälpa någon heuristisk analys som kan vara nödvändig i framtiden. Men om en användare försöker läsa loggdata med hjälp av externa verktyg, och om dessa externa verktyg inte utför sin egen saneringsprocess, användaren kan utsättas för XSS-attacker. Om det behövs kan du ändra standardbeteendet med det här konfigurationsdirektivet. True = Sanera data när loggar data (uppgifterna bevaras mindre exakt, men XSS-risken är lägre). False = Sanera inte data när loggar data (uppgifterna bevaras mer exakt, men XSS-risken är högre) [Standard]."
 config_general_logfile: "Mänsklig läsbar fil för att logga in alla blockerade åtkomstförsök. Ange ett filnamn, eller lämna tomt för att inaktivera."
@@ -232,6 +232,8 @@ field_filetype_unknown: "Okänd"
 field_install: "Installera"
 field_latest_version: "Senaste versionen"
 field_log_in: "Logga in"
+field_log_rotation_archive: "För det första, arkivera, och sedan radera de äldsta loggfilerna, tills gränsen inte längre överskrids."
+field_log_rotation_delete: "Radera de äldsta loggfilerna, tills gränsen inte längre överskrids."
 field_netmask: "Generera utgång som nätmasker"
 field_new_name: "Nytt namn:"
 field_nonclickable_text: "Icke-klickbar text"
@@ -448,7 +450,7 @@ label_your_ua: "Din UA:"
 link_accounts: "Konton"
 link_aux: "Hjälpregler"
 link_cache_data: "Cacherdata"
-link_cidr_calc: "CIDR-Kalkylator"
+link_calc: "Kalkylator"
 link_config: "Konfiguration"
 link_copy_to_clipboard: "Kopiera till urklipp"
 link_discussions: "Diskussioner"
@@ -646,7 +648,7 @@ tip_aux_operators: "Antydan: Om ett villkor behöver en annan typ av operatör, 
 tip_aux_priority: "Prioritet (högsta➡(likvärdig🔄ekvivalent)➡lägst):"
 tip_aux_webhooks: "När en regel utlöses, CIDRAM kommer att försöka meddela alla anslutna webhooks om händelsen."
 tip_cache_data: "Hallå, {username}.<br />Här kan du granska innehållet i cacheminnet."
-tip_cidr_calc: "Hallå, {username}.<br />CIDR-kalkylatorn kan beräkna CIDR-faktorerna för en IP-adress."
+tip_calc: "Hallå, {username}.<br />Kalkylatorn låter dig beräkna CIDR-er och nätmasker för en IP-adress."
 tip_click_the_component: "Klicka på komponentnamnet för mer information."
 tip_condition_placeholder: "Ange ett värde, eller lämna tomma för att bortse från."
 tip_config: "Hallå, {username}.<br />Du kan ändra konfigurationen för CIDRAM från front-enden konfigurationssida."

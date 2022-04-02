@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Polish language data for the front-end (last modified: 2022.03.28).
+# This file: Polish language data for the front-end (last modified: 2022.03.30).
 ##/
 
 Extended Description Bypasses: "Domyślne pliki obejścia podpisów zwykle zawarte w pakiecie głównym."
@@ -105,7 +105,7 @@ config_general_ipaddr: "Gdzie znaleźć adres IP żądań połączenia? (Przydat
 config_general_lang: "Określ domyślny język dla CIDRAM."
 config_general_lang_override: "Kiedy to możliwe, lokalizuj według HTTP_ACCEPT_LANGUAGE? True (Prawdziwe) = Tak [Domyślna]; False (Fałszywy) = Nie."
 config_general_log_banned_ips: "Umieścić zablokowane żądania z zablokowanych adresów IP w plikach dziennika? True (Prawdziwe) = Tak [Domyślna]; False (Fałszywy) = Nie."
-config_general_log_rotation_action: "Rotacja dziennika ogranicza liczbę plików dziennika, które powinny istnieć jednocześnie. Po utworzeniu nowych plików dziennika, jeśli całkowita liczba plików dziennika przekroczy określony limit, zostanie wykonana określona akcja. Tutaj możesz określić żądaną akcję. Delete = Usuń najstarsze pliki dziennika, dopóki limit nie zostanie przekroczony. Archive = Najpierw zarchiwizuj, a następnie usuń najstarsze pliki dziennika, dopóki limit nie zostanie przekroczony."
+config_general_log_rotation_action: "Rotacja dziennika ogranicza liczbę plików dziennika, które powinny istnieć jednocześnie. Po utworzeniu nowych plików dziennika, jeśli całkowita liczba plików dziennika przekroczy określony limit, zostanie wykonana określona akcja. Tutaj możesz określić żądaną akcję."
 config_general_log_rotation_limit: "Rotacja dziennika ogranicza liczbę plików dziennika, które powinny istnieć jednocześnie. Po utworzeniu nowych plików dziennika, jeśli całkowita liczba plików dziennika przekroczy określony limit, zostanie wykonana określona akcja. Tutaj możesz określić żądany limit. Wartość 0 spowoduje wyłączenie rotacja dziennika."
 config_general_log_sanitisation: "Podczas korzystania ze strony dzienników do przeglądania danych dziennika CIDRAM odkaża dane dziennika przed ich wyświetleniem, aby chronić użytkowników przed atakami XSS i innymi potencjalnymi zagrożeniami, które mogą być zawarte w danych dziennika. Jednak domyślnie dane nie są odkażane podczas logowania. Zapewnia to dokładne zachowanie danych dziennika, aby wspomóc każdą analizę heurystyczną, która może być konieczna w przyszłości. Jednak w przypadku, gdy użytkownik próbuje odczytać dane dziennika za pomocą zewnętrznych narzędzi, a jeśli te narzędzia zewnętrzne nie przeprowadzają własnego procesu sanityzacji, użytkownik może być narażony na ataki XSS. W razie potrzeby możesz zmienić domyślne zachowanie za pomocą tej dyrektywy konfiguracyjnej. True (Prawdziwe) = Odkaż dane podczas logowania (dane są przechowywane mniej dokładnie, ale ryzyko XSS jest niższe). False (Fałszywy) = Nie odkaż danych podczas logowania (dane są przechowywane dokładniej, ale ryzyko XSS jest wyższe) [Domyślna]."
 config_general_logfile: "Plik czytelny dla człowieka do rejestrowania wszystkich zablokowanych prób dostępu. Podaj nazwę pliku lub pozostaw puste, aby wyłączyć."
@@ -235,6 +235,8 @@ field_infractions: "Wykroczenia"
 field_install: "Zainstaluj"
 field_latest_version: "Ostatnia Wersja"
 field_log_in: "Zaloguj sie"
+field_log_rotation_archive: "Najpierw zarchiwizuj, a następnie usuń najstarsze pliki dziennika, dopóki limit nie zostanie przekroczony."
+field_log_rotation_delete: "Usuń najstarsze pliki dziennika, dopóki limit nie zostanie przekroczony."
 field_netmask: "Generuj dane wyjściowe jako netmaski"
 field_new_name: "Nowe imię:"
 field_nonclickable_text: "Nie klikalny tekst"

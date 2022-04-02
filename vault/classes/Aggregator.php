@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: IP aggregator (last modified: 2021.10.30).
+ * This file: IP aggregator (last modified: 2022.04.02).
  */
 
 namespace CIDRAM\Aggregator;
@@ -370,7 +370,7 @@ class Aggregator
      * @param string
      * @return void
      */
-    private function convertToNetmasks(string &$In): void
+    public function convertToNetmasks(string &$In): void
     {
         if (isset($this->callbacks['newParse']) && is_callable($this->callbacks['newParse'])) {
             $this->callbacks['newParse'](substr_count($In, "\n"));

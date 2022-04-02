@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6.dat
 
-# Version: 2022.85.0
-# Last modified: 2022.03.27
+# Version: 2022.91.0
+# Last modified: 2022.04.02
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -1096,12 +1096,12 @@ Tag: SingleHop, Inc
 
 
 # ASN 29550 ("eUKhost LTD").
-# Stop Forum Spam (SFS) listings: 22.
-# Updated: 2017.03.19 / Checked: 2021.06.25
+# Stop Forum Spam (SFS) listings: 18.
+# Updated: 2017.03.19 / Checked: 2022.04.02
 
 2a02:af8::/32 Deny Cloud
 Origin: GB
-Profile: Infrastructure/Transit
+Profile: Infrastructure/Transit;Webhosting
 Tag: eUKhost LTD
 
 
@@ -3868,8 +3868,8 @@ Tag: InMotion Hosting, Inc
 
 
 # ASN 53755 ("Input Output Flood LLC").
-# Stop Forum Spam (SFS) listings: 1,657.
-# Updated: 2020.08.11 / Checked: 2021.06.25
+# Stop Forum Spam (SFS) listings: 462.
+# Updated: 2020.08.11 / Checked: 2022.04.02
 
 2a0d:da07::/32 Deny Cloud
 Origin: GB
@@ -9517,7 +9517,7 @@ Tag: combahton GmbH
 
 # ASNs 11572, 39239, 50389, 57872, 60558, 207134, 210266 ("PHOENIX NAP, LLC").
 # Dedicated server/VPN/VPS provider. Also serves proxies.
-# Updated: 2021.06.24
+# Updated: 2021.06.24 / Checked: 2022.04.02
 
 2a01:b960:2307::/48 Deny Cloud
 2a01:b960:230b::/48 Deny Cloud
@@ -10181,6 +10181,41 @@ Tag: Cloud Computing HK Limited
 Origin: IL
 Profile: Commercial;Webhosting
 Tag: Triple C
+
+
+# ASN 32338 ("Hostiserver Ltd").
+# Brute-force attacks, port scans, hacking, and spam detected from here.
+# Stop Forum Spam (SFS) listings: 1.
+# Updated: 2022.04.02
+
+2605:6280::/32 Deny Cloud
+Origin: AI
+2a05:44c0::/32 Deny Cloud
+2a07:68c0::/31 Deny Cloud
+2a07:68c2::/32 Deny Cloud
+2a0b:85c0::/32 Deny Cloud
+2a0e:9480::/32 Deny Cloud
+Origin: CZ
+Profile: Webhosting
+Tag: Hostiserver Ltd
+
+
+# ASN 26548 ("PureVoltage Hosting Inc").
+# Brute-force, SSH, webapp, and phishing attacks, port scans, hacking, and spam
+# detected from here.
+# Stop Forum Spam (SFS) listings: 275.
+# Updated: 2022.04.02
+
+2602:ff96:6::/48 Deny Cloud
+2602:ff96:8::/48 Deny Cloud
+2602:ff96:10::/48 Deny Cloud
+2602:ff96:13::/48 Deny Cloud
+2602:ffc5:500::/40 Deny Cloud
+2604:7a80:1000::/36 Deny Cloud
+2604:7a80:2000::/36 Deny Cloud
+Origin: US
+Profile: Webhosting
+Tag: PureVoltage Hosting Inc
 
 
 # ---

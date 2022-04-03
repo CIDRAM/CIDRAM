@@ -36,3 +36,4 @@
 - Added a "dry run mode" (determined by which execution stages are enabled). While in dry run mode, requests are still checked and logged as block events as per usual, but nothing is blocked (#98, #221).
 - Added warnings for when the IP tests, modules, or page termination stages are disabled, and for when there aren't any active signature files (as long as the IP tests stage is enabled) or any active modules (as long as the modules stage is enabled).
 - The calculator (previously, the "CIDR calculator") now shows both CIDRs and netmasks.
+- At the range tables page, show the IPv4/IPv6 totals side by side, for easier comparison between the two.

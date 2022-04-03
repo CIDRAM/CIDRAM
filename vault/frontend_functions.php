@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2022.03.28).
+ * This file: Front-end functions file (last modified: 2022.04.03).
  */
 
 /**
@@ -2920,7 +2920,6 @@ $CIDRAM['RangeTablesIterateData'] = function (
  * @return string Some JavaScript generated to populate the range tables data.
  */
 $CIDRAM['RangeTablesHandler'] = function (array $IPv4, array $IPv6) use (&$CIDRAM) {
-    $CIDRAM['FE']['rangeCatOptions'] = '';
     $Arr = ['IPv4' => [], 'IPv4-Origin' => [], 'IPv6' => [], 'IPv6-Origin' => []];
     $SigTypes = ['Run', 'Whitelist', 'Greylist', 'Deny'];
     foreach ($SigTypes as $SigType) {
@@ -2958,9 +2957,10 @@ $CIDRAM['RangeTablesHandler'] = function (array $IPv4, array $IPv6) use (&$CIDRA
     $CIDRAM['RangeTablesIterateFiles']($Arr, $IPv6, $SigTypes, 128, 'IPv6');
     $CIDRAM['FE']['Labels'] = '';
     $JS = '';
+    $RangeCatOptions = [];
     foreach ($SigTypes as $SigType) {
         $Class = 'sigtype_' . strtolower($SigType);
-        $CIDRAM['FE']['rangeCatOptions'] .= "\n      <option value=\"" . $Class . '">' . $SigType . '</option>';
+        $RangeCatOptions[] = '<option value="' . $Class . '">' . $SigType . '</option>';
         $CIDRAM['FE']['Labels'] .= '<span style="display:none" class="s ' . $Class . '">' . $CIDRAM['L10N']->getString('label_signature_type') . ' ' . $SigType . '</span>';
         if ($SigType === 'Run') {
             $ZeroPlus = 'txtOe';
@@ -2970,6 +2970,7 @@ $CIDRAM['RangeTablesHandler'] = function (array $IPv4, array $IPv6) use (&$CIDRA
         $CIDRAM['RangeTablesIterateData']($Arr, $Out, $JS, $SigType, 32, 'IPv4', $ZeroPlus, $Class);
         $CIDRAM['RangeTablesIterateData']($Arr, $Out, $JS, $SigType, 128, 'IPv6', $ZeroPlus, $Class);
     }
+    $CIDRAM['FE']['rangeCatOptions'] = implode("\n            ", $RangeCatOptions);
     $CIDRAM['FE']['RangeRows'] = '';
     foreach ([['IPv4', 32], ['IPv6', 128]] as $Build) {
         for ($Range = 1; $Range <= $Build[1]; $Range++) {
@@ -2991,24 +2992,40 @@ $CIDRAM['RangeTablesHandler'] = function (array $IPv4, array $IPv6) use (&$CIDRA
             }
         }
     }
-    foreach (['IPv4', 'IPv6'] as $IPType) {
-        foreach ([
-            [$IPType, $IPType . '/' . $CIDRAM['L10N']->getString('label_total')],
-            [$IPType . '-Ignored', $IPType . '/' . $CIDRAM['L10N']->getString('label_total') . ' (' . $CIDRAM['L10N']->getString('state_ignored') . ')'],
-            [$IPType . '-Total', $IPType . '/' . $CIDRAM['L10N']->getString('label_total') . ' (' . $CIDRAM['L10N']->getString('label_total') . ')']
-        ] as $Label) {
-            $Internal = $Label[0] . '/Total';
-            if (!empty($Out[$Internal])) {
-                foreach ($SigTypes as $SigType) {
-                    $Class = 'sigtype_' . strtolower($SigType);
-                    if (strpos($Out[$Internal], $Class) === false) {
-                        $Out[$Internal] .= '<span style="display:none" class="' . $Class . ' s">-</span>';
-                    }
+    $Loading = $CIDRAM['L10N']->getString('state_loading');
+    foreach ([
+        ['', $CIDRAM['L10N']->getString('label_total')],
+        ['-Ignored', $CIDRAM['L10N']->getString('label_total') . ' (' . $CIDRAM['L10N']->getString('state_ignored') . ')'],
+        ['-Total', $CIDRAM['L10N']->getString('label_total') . ' (' . $CIDRAM['L10N']->getString('label_total') . ')']
+    ] as $Label) {
+        $ThisRight = '<table><tr><td>';
+        $InternalIPv4 = 'IPv4' . $Label[0] . '/Total';
+        $InternalIPv6 = 'IPv6' . $Label[0] . '/Total';
+        if (isset($Out[$InternalIPv4]) && strlen($Out[$InternalIPv4])) {
+            foreach ($SigTypes as $SigType) {
+                $Class = 'sigtype_' . strtolower($SigType);
+                if (strpos($Out[$InternalIPv4], $Class) === false) {
+                    $Out[$InternalIPv4] .= '<span style="display:none" class="' . $Class . ' s">-</span>';
                 }
-                $ThisArr = ['RangeType' => $Label[1], 'NumOfCIDRs' => $Out[$Internal], 'state_loading' => $CIDRAM['L10N']->getString('state_loading')];
-                $CIDRAM['FE']['RangeRows'] .= $CIDRAM['ParseVars']($ThisArr, $CIDRAM['FE']['RangeRow']);
             }
+            $ThisRight .= $Out[$InternalIPv4];
         }
+        $ThisRight .= '</td><td>';
+        if (isset($Out[$InternalIPv6]) && strlen($Out[$InternalIPv6])) {
+            foreach ($SigTypes as $SigType) {
+                $Class = 'sigtype_' . strtolower($SigType);
+                if (strpos($Out[$InternalIPv6], $Class) === false) {
+                    $Out[$InternalIPv6] .= '<span style="display:none" class="' . $Class . ' s">-</span>';
+                }
+            }
+            $ThisRight .= $Out[$InternalIPv6];
+        }
+        $ThisRight .= '</td></tr></table>';
+        $CIDRAM['FE']['RangeRows'] .= $CIDRAM['ParseVars']([
+            'RangeType' => $Label[1],
+            'NumOfCIDRs' => $ThisRight,
+            'state_loading' => $Loading
+        ], $CIDRAM['FE']['RangeRow']);
     }
     return $JS;
 };

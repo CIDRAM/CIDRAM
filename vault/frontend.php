@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2022.04.02).
+ * This file: Front-end handler (last modified: 2022.04.04).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -272,9 +272,8 @@ $CIDRAM['MenuToggle'] = '<script type="text/javascript">' .
     'ut(function(t){t.classList.toggle("caret-up")},200,this)});</script>';
 
 /** Fetch pips data. */
-$CIDRAM['Pips_Path'] = $CIDRAM['GetAssetPath']('pips.php', true);
-if (!empty($CIDRAM['Pips_Path']) && is_readable($CIDRAM['Pips_Path'])) {
-    require $CIDRAM['Pips_Path'];
+if ($CIDRAM['Pips_Path'] = $CIDRAM['GetAssetPath']('pips.yml', true)) {
+    $CIDRAM['YAML']->process($CIDRAM['ReadFile']($CIDRAM['Pips_Path']), $CIDRAM['FE']);
 }
 
 /** A fix for correctly displaying LTR/RTL text. */
@@ -304,14 +303,13 @@ if (empty($CIDRAM['L10N']->Data['Text Direction']) || $CIDRAM['L10N']->Data['Tex
 /** A simple passthru for non-private theme images and related data. */
 if (!empty($CIDRAM['QueryVars']['cidram-asset'])) {
     $CIDRAM['Success'] = false;
-
     if (
         $CIDRAM['FileManager-PathSecurityCheck']($CIDRAM['QueryVars']['cidram-asset']) &&
         !preg_match('~[^\da-z._]~i', $CIDRAM['QueryVars']['cidram-asset'])
     ) {
         $CIDRAM['ThisAsset'] = $CIDRAM['GetAssetPath']($CIDRAM['QueryVars']['cidram-asset'], true);
         if (
-            $CIDRAM['ThisAsset'] &&
+            strlen($CIDRAM['ThisAsset']) &&
             is_readable($CIDRAM['ThisAsset']) &&
             ($CIDRAM['ThisAssetDel'] = strrpos($CIDRAM['ThisAsset'], '.')) !== false
         ) {
@@ -319,7 +317,7 @@ if (!empty($CIDRAM['QueryVars']['cidram-asset'])) {
             if ($CIDRAM['ThisAssetType'] === 'jpeg') {
                 $CIDRAM['ThisAssetType'] = 'jpg';
             }
-            if (preg_match('/^(gif|jpg|png|webp)$/', $CIDRAM['ThisAssetType'])) {
+            if (preg_match('/^(?:gif|jpg|png|webp)$/', $CIDRAM['ThisAssetType'])) {
                 /** Set asset mime-type (images). */
                 header('Content-Type: image/' . $CIDRAM['ThisAssetType']);
                 $CIDRAM['Success'] = true;
@@ -371,10 +369,10 @@ if ($CIDRAM['QueryVars']['cidram-page'] === 'favicon') {
 $CIDRAM['FE']['FormTarget'] = $_POST['cidram-form-target'] ?? '';
 
 /** Used by a safety mechanism against a potential attack vector. */
-$CIDRAM['frontend.dat.safety'] = file_exists($CIDRAM['Vault'] . 'fe_assets/frontend.dat.safety');
+$CIDRAM['frontend.dat.safety'] = file_exists($CIDRAM['Vault'] . 'assets/frontend/frontend.dat.safety');
 
 /** Fetch user list, sessions list, and the front-end cache, or rebuild it if it doesn't exist. */
-if ($CIDRAM['FE']['FrontEndData'] = $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'fe_assets/frontend.dat')) {
+if ($CIDRAM['FE']['FrontEndData'] = $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'assets/frontend/frontend.dat')) {
     $CIDRAM['FE']['Rebuild'] = false;
 } else {
     if ($CIDRAM['frontend.dat.safety']) {
@@ -387,7 +385,7 @@ if ($CIDRAM['FE']['FrontEndData'] = $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'fe_a
 
 /** Engage safety mechanism. */
 if (!$CIDRAM['frontend.dat.safety']) {
-    $CIDRAM['Handle'] = fopen($CIDRAM['Vault'] . 'fe_assets/frontend.dat.safety', 'wb');
+    $CIDRAM['Handle'] = fopen($CIDRAM['Vault'] . 'assets/frontend/frontend.dat.safety', 'wb');
     fwrite($CIDRAM['Handle'], '.');
     fclose($CIDRAM['Handle']);
 }
@@ -990,46 +988,37 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'icon' && $CIDRAM['FE']['Permiss
     if (
         !empty($CIDRAM['QueryVars']['file']) &&
         $CIDRAM['FileManager-PathSecurityCheck']($CIDRAM['QueryVars']['file']) &&
-        file_exists($CIDRAM['Vault'] . $CIDRAM['QueryVars']['file']) &&
         is_readable($CIDRAM['Vault'] . $CIDRAM['QueryVars']['file'])
     ) {
         header('Content-Type: image/x-icon');
         echo $CIDRAM['ReadFile']($CIDRAM['Vault'] . $CIDRAM['QueryVars']['file']);
-    } elseif (!empty($CIDRAM['QueryVars']['icon'])) {
-        $CIDRAM['Icons_Handler_Path'] = $CIDRAM['GetAssetPath']('icons.php');
-        if (is_readable($CIDRAM['Icons_Handler_Path'])) {
-            /** Fetch file manager icons data. */
-            require $CIDRAM['Icons_Handler_Path'];
+    } elseif (
+        !empty($CIDRAM['QueryVars']['icon']) &&
+        $CIDRAM['FileManager-PathSecurityCheck']($CIDRAM['QueryVars']['icon'] . '.gif') &&
+        ($CIDRAM['IconPath'] = $CIDRAM['GetAssetPath']($CIDRAM['QueryVars']['icon'] . '.gif')) &&
+        ($CIDRAM['IconData'] = $CIDRAM['ReadFile']($CIDRAM['IconPath']))
+    ) {
+        /** Set mime-type. */
+        header('Content-Type: image/gif');
 
-            /** Set mime-type. */
-            header('Content-Type: image/gif');
+        /** Prevents needlessly reloading static assets. */
+        header('Last-Modified: ' . gmdate(DATE_RFC1123, filemtime($CIDRAM['IconPath'])));
 
-            /** Prevents needlessly reloading static assets. */
-            if (!empty($CIDRAM['QueryVars']['theme'])) {
-                header('Last-Modified: ' . gmdate(DATE_RFC1123, filemtime($CIDRAM['Icons_Handler_Path'])));
-            }
-
-            /** Send icon data. */
-            if (!empty($CIDRAM['Icons'][$CIDRAM['QueryVars']['icon']])) {
-                echo gzinflate(base64_decode($CIDRAM['Icons'][$CIDRAM['QueryVars']['icon']]));
-            } elseif (!empty($CIDRAM['Icons']['unknown'])) {
-                echo gzinflate(base64_decode($CIDRAM['Icons']['unknown']));
-            }
-        }
+        /** Send icon data. */
+        echo $CIDRAM['IconData'];
     }
-
     die;
 }
 
 /** A simple passthru for the flags CSS. */
-elseif ($CIDRAM['QueryVars']['cidram-page'] === 'flags' && $CIDRAM['FE']['Permissions'] && file_exists($CIDRAM['Vault'] . 'fe_assets/flags.css')) {
+elseif ($CIDRAM['QueryVars']['cidram-page'] === 'flags' && $CIDRAM['FE']['Permissions'] && file_exists($CIDRAM['Vault'] . 'assets/frontend/flags.css')) {
     header('Content-Type: text/css');
 
     /** Prevents needlessly reloading static assets. */
-    header('Last-Modified: ' . gmdate(DATE_RFC1123, filemtime($CIDRAM['Vault'] . 'fe_assets/flags.css')));
+    header('Last-Modified: ' . gmdate(DATE_RFC1123, filemtime($CIDRAM['Vault'] . 'assets/frontend/flags.css')));
 
     /** Send asset data. */
-    echo $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'fe_assets/flags.css');
+    echo $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'assets/frontend/flags.css');
 
     die;
 }
@@ -1783,7 +1772,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'cache-data' && $CIDRAM['FE']['P
 
         /** Array of all cache items from all sources. */
         $CIDRAM['CacheArray'] = [
-            'fe_assets/frontend.dat' => [],
+            'assets/frontend/frontend.dat' => [],
             $CIDRAM['PreferredSource'] => []
         ];
 
@@ -1813,8 +1802,8 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'cache-data' && $CIDRAM['FE']['P
                     $CIDRAM['Config']['general']['time_format']
                 ) : $CIDRAM['L10N']->getString('label_never'));
                 $CIDRAM['Arrayify']($CIDRAM['CacheIndexData'][1]);
-                $CIDRAM['CacheArray']['fe_assets/frontend.dat'][$CIDRAM['ThisCacheEntryName']] = $CIDRAM['CacheIndexData'][1];
-                $CIDRAM['CacheArray']['fe_assets/frontend.dat'][$CIDRAM['ThisCacheEntryName']][
+                $CIDRAM['CacheArray']['assets/frontend/frontend.dat'][$CIDRAM['ThisCacheEntryName']] = $CIDRAM['CacheIndexData'][1];
+                $CIDRAM['CacheArray']['assets/frontend/frontend.dat'][$CIDRAM['ThisCacheEntryName']][
                     $CIDRAM['L10N']->getString('label_expires') ?: 'Expires'
                 ] = $CIDRAM['CacheIndexData'][2];
             }
@@ -1826,11 +1815,11 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'cache-data' && $CIDRAM['FE']['P
             if (empty($CIDRAM['CacheSourceData'])) {
                 continue;
             }
-            $CIDRAM['FE']['CacheData'] .= '<div class="ng1" id="__' . ($CIDRAM['CacheSourceName'] === 'fe_assets/frontend.dat' ? 'FE' : '') . 'Container"><span class="s">' . $CIDRAM['CacheSourceName'] . ' – (<span style="cursor:pointer" onclick="javascript:' . (
-                $CIDRAM['CacheSourceName'] === 'fe_assets/frontend.dat' ? 'fecdd' : 'cdd'
+            $CIDRAM['FE']['CacheData'] .= '<div class="ng1" id="__' . ($CIDRAM['CacheSourceName'] === 'assets/frontend/frontend.dat' ? 'FE' : '') . 'Container"><span class="s">' . $CIDRAM['CacheSourceName'] . ' – (<span style="cursor:pointer" onclick="javascript:' . (
+                $CIDRAM['CacheSourceName'] === 'assets/frontend/frontend.dat' ? 'fecdd' : 'cdd'
             ) . '(\'__\')"><code class="s">' . $CIDRAM['L10N']->getString('field_clear_all') . '</code></span>)</span><br /><br /><ul class="pieul">' . $CIDRAM['ArrayToClickableList'](
                 $CIDRAM['CacheSourceData'],
-                ($CIDRAM['CacheSourceName'] === 'fe_assets/frontend.dat' ? 'fecdd' : 'cdd'),
+                ($CIDRAM['CacheSourceName'] === 'assets/frontend/frontend.dat' ? 'fecdd' : 'cdd'),
                 0,
                 $CIDRAM['CacheSourceName']
             ) . '</ul></div>';
@@ -2761,14 +2750,17 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'file-manager' && $CIDRAM['FE'][
     if (empty($CIDRAM['QueryVars']['show'])) {
         $CIDRAM['FE']['ChartJSPath'] = '';
         $CIDRAM['DoughnutFile'] = '';
-        $CIDRAM['DoughnutPath'] = '';
     } else {
-        if ($CIDRAM['DoughnutPath'] = $CIDRAM['GetAssetPath']('_chartjs.html', true)) {
-            $CIDRAM['DoughnutFile'] = $CIDRAM['ReadFile']($CIDRAM['DoughnutPath']);
+        if (file_exists($CIDRAM['Vault'] . 'assets/frontend/_chartjs.html')) {
+            $CIDRAM['DoughnutFile'] = $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'assets/frontend/_chartjs.html');
         } else {
             $CIDRAM['DoughnutFile'] = '<tr><td class="h4f" colspan="2"><div class="s">{DoughnutHTML}</div></td></tr>';
         }
-        $CIDRAM['FE']['ChartJSPath'] = $CIDRAM['GetAssetPath']('chart.min.js', true) ? '?cidram-asset=chart.min.js&theme=default' : '';
+        if (file_exists($CIDRAM['Vault'] . 'assets/frontend/chart.min.js')) {
+            $CIDRAM['FE']['ChartJSPath'] = '?cidram-asset=chart.min.js';
+        } else {
+            $CIDRAM['FE']['ChartJSPath'] = '';
+        }
     }
 
     /** Set vault path for doughnut display. */
@@ -3032,7 +3024,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'file-manager' && $CIDRAM['FE'][
             $CIDRAM['Components']['ThisName'] .= ' – ' . $CIDRAM['Components']['ThisSize'];
             $CIDRAM['FE']['DoughnutValues'][] = $CIDRAM['Components']['ThisData'];
             $CIDRAM['FE']['DoughnutLabels'][] = $CIDRAM['Components']['ThisName'];
-            if ($CIDRAM['DoughnutPath']) {
+            if (strlen($CIDRAM['FE']['ChartJSPath'])) {
                 $CIDRAM['Components']['ThisColour'] = $CIDRAM['RGB']($CIDRAM['Components']['ThisName']);
                 $CIDRAM['Components']['RGB'] = implode(',', $CIDRAM['Components']['ThisColour']['Values']);
                 $CIDRAM['FE']['DoughnutColours'][] = '#' . $CIDRAM['Components']['ThisColour']['Hash'];
@@ -3069,7 +3061,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'file-manager' && $CIDRAM['FE'][
     }
 
     /** Cleanup. */
-    unset($CIDRAM['DoughnutFile'], $CIDRAM['DoughnutPath'], $CIDRAM['Components']);
+    unset($CIDRAM['DoughnutFile'], $CIDRAM['Components']);
 
     /** Process files data. */
     array_walk($CIDRAM['FilesArray'], function ($ThisFile) use (&$CIDRAM): void {
@@ -3128,7 +3120,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'sections' && $CIDRAM['FE']['Per
             "function(e){hide(c),show(d,'block')},null)}";
 
         /** Add flags CSS. */
-        if ($CIDRAM['FE']['Flags'] = file_exists($CIDRAM['Vault'] . 'fe_assets/flags.css')) {
+        if ($CIDRAM['FE']['Flags'] = file_exists($CIDRAM['Vault'] . 'assets/frontend/flags.css')) {
             $CIDRAM['FE']['OtherHead'] .= "\n  <link rel=\"stylesheet\" type=\"text/css\" href=\"?cidram-page=flags\" />";
         }
 
@@ -3199,7 +3191,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'range' && $CIDRAM['FE']['Permis
     $CIDRAM['FE']['JS'] .= $CIDRAM['Number_L10N_JS']() . "\n";
 
     /** Add flags CSS. */
-    if ($CIDRAM['FE']['Flags'] = file_exists($CIDRAM['Vault'] . 'fe_assets/flags.css')) {
+    if ($CIDRAM['FE']['Flags'] = file_exists($CIDRAM['Vault'] . 'assets/frontend/flags.css')) {
         $CIDRAM['FE']['OtherHead'] .= "\n  <link rel=\"stylesheet\" type=\"text/css\" href=\"?cidram-page=flags\" />";
     }
 
@@ -3245,10 +3237,10 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'range' && $CIDRAM['FE']['Permis
     echo $CIDRAM['SendOutput']();
 }
 
-/** Range Intersector. */
-elseif ($CIDRAM['QueryVars']['cidram-page'] === 'range-intersector' && $CIDRAM['FE']['Permissions'] === 1) {
+/** Intersector. */
+elseif ($CIDRAM['QueryVars']['cidram-page'] === 'intersector' && $CIDRAM['FE']['Permissions'] === 1) {
     /** Page initial prepwork. */
-    $CIDRAM['InitialPrepwork']($CIDRAM['L10N']->getString('link_range_intersector'), $CIDRAM['L10N']->getString('tip_range_intersector'));
+    $CIDRAM['InitialPrepwork']($CIDRAM['L10N']->getString('link_intersector'), $CIDRAM['L10N']->getString('tip_intersector'));
 
     /** Output format. */
     $CIDRAM['OutputFormat'] = (isset($_POST['format']) && $_POST['format'] === 'Netmask') ? 1 : 0;
@@ -3309,7 +3301,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'range-intersector' && $CIDRAM['
     /** Parse output. */
     $CIDRAM['FE']['FE_Content'] = $CIDRAM['ParseVars'](
         $CIDRAM['L10N']->Data + $CIDRAM['FE'],
-        $CIDRAM['ReadFile']($CIDRAM['GetAssetPath']('_range_intersector.html'))
+        $CIDRAM['ReadFile']($CIDRAM['GetAssetPath']('_intersector.html'))
     );
 
     /** Strip output row if input doesn't exist. */
@@ -3325,10 +3317,10 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'range-intersector' && $CIDRAM['
     echo $CIDRAM['SendOutput']();
 }
 
-/** Range Subtractor. */
-elseif ($CIDRAM['QueryVars']['cidram-page'] === 'range-subtractor' && $CIDRAM['FE']['Permissions'] === 1) {
+/** Subtractor. */
+elseif ($CIDRAM['QueryVars']['cidram-page'] === 'subtractor' && $CIDRAM['FE']['Permissions'] === 1) {
     /** Page initial prepwork. */
-    $CIDRAM['InitialPrepwork']($CIDRAM['L10N']->getString('link_range_subtractor'), $CIDRAM['L10N']->getString('tip_range_subtractor'));
+    $CIDRAM['InitialPrepwork']($CIDRAM['L10N']->getString('link_subtractor'), $CIDRAM['L10N']->getString('tip_subtractor'));
 
     /** Output format. */
     $CIDRAM['OutputFormat'] = (isset($_POST['format']) && $_POST['format'] === 'Netmask') ? 1 : 0;
@@ -3391,7 +3383,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'range-subtractor' && $CIDRAM['F
     /** Parse output. */
     $CIDRAM['FE']['FE_Content'] = $CIDRAM['ParseVars'](
         $CIDRAM['L10N']->Data + $CIDRAM['FE'],
-        $CIDRAM['ReadFile']($CIDRAM['GetAssetPath']('_range_subtractor.html'))
+        $CIDRAM['ReadFile']($CIDRAM['GetAssetPath']('_subtractor.html'))
     );
 
     /** Strip output row if input doesn't exist. */
@@ -3407,10 +3399,10 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'range-subtractor' && $CIDRAM['F
     echo $CIDRAM['SendOutput']();
 }
 
-/** IP Aggregator. */
-elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-aggregator' && $CIDRAM['FE']['Permissions'] === 1) {
+/** Aggregator. */
+elseif ($CIDRAM['QueryVars']['cidram-page'] === 'aggregator' && $CIDRAM['FE']['Permissions'] === 1) {
     /** Page initial prepwork. */
-    $CIDRAM['InitialPrepwork']($CIDRAM['L10N']->getString('link_ip_aggregator'), $CIDRAM['L10N']->getString('tip_ip_aggregator'));
+    $CIDRAM['InitialPrepwork']($CIDRAM['L10N']->getString('link_aggregator'), $CIDRAM['L10N']->getString('tip_aggregator'));
 
     /** Output format. */
     $CIDRAM['OutputFormat'] = (isset($_POST['format']) && $_POST['format'] === 'Netmask') ? 1 : 0;
@@ -3487,7 +3479,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-aggregator' && $CIDRAM['FE']
     /** Parse output. */
     $CIDRAM['FE']['FE_Content'] = $CIDRAM['ParseVars'](
         $CIDRAM['L10N']->Data + $CIDRAM['FE'],
-        $CIDRAM['ReadFile']($CIDRAM['GetAssetPath']('_ip_aggregator.html'))
+        $CIDRAM['ReadFile']($CIDRAM['GetAssetPath']('_aggregator.html'))
     );
 
     /** Strip output row if input doesn't exist. */
@@ -3509,7 +3501,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-test' && $CIDRAM['FE']['Perm
     $CIDRAM['InitialPrepwork']($CIDRAM['L10N']->getString('link_ip_test'), $CIDRAM['L10N']->getString('tip_ip_test'));
 
     /** Add flags CSS. */
-    if ($CIDRAM['FE']['Flags'] = file_exists($CIDRAM['Vault'] . 'fe_assets/flags.css')) {
+    if ($CIDRAM['FE']['Flags'] = file_exists($CIDRAM['Vault'] . 'assets/frontend/flags.css')) {
         $CIDRAM['FE']['OtherHead'] .= "\n  <link rel=\"stylesheet\" type=\"text/css\" href=\"?cidram-page=flags\" />";
     }
 
@@ -3775,7 +3767,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-tracking' && $CIDRAM['FE']['
         $CIDRAM['InitialPrepwork']($CIDRAM['L10N']->getString('link_ip_tracking'), $CIDRAM['L10N']->getString('tip_ip_tracking'));
 
         /** Add flags CSS. */
-        if ($CIDRAM['FE']['Flags'] = file_exists($CIDRAM['Vault'] . 'fe_assets/flags.css')) {
+        if ($CIDRAM['FE']['Flags'] = file_exists($CIDRAM['Vault'] . 'assets/frontend/flags.css')) {
             $CIDRAM['FE']['OtherHead'] .= "\n  <link rel=\"stylesheet\" type=\"text/css\" href=\"?cidram-page=flags\" />";
         }
 
@@ -3958,13 +3950,13 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-tracking' && $CIDRAM['FE']['
     }
 }
 
-/** Range Calculator. */
-elseif ($CIDRAM['QueryVars']['cidram-page'] === 'calc' && $CIDRAM['FE']['Permissions'] === 1) {
+/** Calculator. */
+elseif ($CIDRAM['QueryVars']['cidram-page'] === 'calculator' && $CIDRAM['FE']['Permissions'] === 1) {
     /** Page initial prepwork. */
-    $CIDRAM['InitialPrepwork']($CIDRAM['L10N']->getString('link_calc'), $CIDRAM['L10N']->getString('tip_calc'));
+    $CIDRAM['InitialPrepwork']($CIDRAM['L10N']->getString('link_calculator'), $CIDRAM['L10N']->getString('tip_calculator'));
 
     /** Template for result rows. */
-    $CIDRAM['FE']['CalcRow'] = $CIDRAM['ReadFile']($CIDRAM['GetAssetPath']('_calc_row.html'));
+    $CIDRAM['FE']['CalcRow'] = $CIDRAM['ReadFile']($CIDRAM['GetAssetPath']('_calculator_row.html'));
 
     /** Initialise results data. */
     $CIDRAM['FE']['Ranges'] = '';
@@ -4003,7 +3995,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'calc' && $CIDRAM['FE']['Permiss
     /** Parse output. */
     $CIDRAM['FE']['FE_Content'] = $CIDRAM['ParseVars']($CIDRAM['L10N']->Data, $CIDRAM['ParseVars'](
         $CIDRAM['FE'],
-        $CIDRAM['ReadFile']($CIDRAM['GetAssetPath']('_calc.html'))
+        $CIDRAM['ReadFile']($CIDRAM['GetAssetPath']('_calculator.html'))
     ));
 
     /** Send output. */
@@ -4571,7 +4563,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'logs' && $CIDRAM['FE']['Permiss
     $CIDRAM['FE']['FieldSeparator'] = ': ';
 
     /** Add flags CSS. */
-    if ($CIDRAM['FE']['Flags'] = file_exists($CIDRAM['Vault'] . 'fe_assets/flags.css')) {
+    if ($CIDRAM['FE']['Flags'] = file_exists($CIDRAM['Vault'] . 'assets/frontend/flags.css')) {
         $CIDRAM['FE']['OtherHead'] .= "\n  <link rel=\"stylesheet\" type=\"text/css\" href=\"?cidram-page=flags\" />";
     }
 
@@ -5008,7 +5000,7 @@ if ($CIDRAM['FE']['Rebuild']) {
         "USERS\n-----" . $CIDRAM['FE']['UserList'] .
         "\nSESSIONS\n--------" . $CIDRAM['FE']['SessionList'] .
         "\nCACHE\n-----" . $CIDRAM['FE']['Cache'];
-    $CIDRAM['Handle'] = fopen($CIDRAM['Vault'] . 'fe_assets/frontend.dat', 'wb');
+    $CIDRAM['Handle'] = fopen($CIDRAM['Vault'] . 'assets/frontend/frontend.dat', 'wb');
     fwrite($CIDRAM['Handle'], $CIDRAM['FE']['FrontEndData']);
     fclose($CIDRAM['Handle']);
 }

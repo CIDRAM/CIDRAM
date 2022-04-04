@@ -18,6 +18,8 @@
 - Configuration directive `maintenance_mode` removed. "Maintenance mode" is now implicit (determined by which execution stages are enabled), rather than explicit (determined by its own configuration directive).
 - Configuration directive `forbid_on_block` has been renamed to `http_response_header_code` (#136, #139).
 - Default value for `http_response_header_code` has been changed to `403`.
+- Reorganised CIDRAM's file structure, non-executable assets separated into their own directory (front-end and core alike) plus various other small structural changes.
+- Flags.css is now bundled as part of the front-end and thus installed by default, instead of being its own component and not installed by default as was the case before.
 
 #### Bugs fixed.
 - Some specific files were being misclassified by the file manager; Fixed.
@@ -37,3 +39,4 @@
 - Added warnings for when the IP tests, modules, or page termination stages are disabled, and for when there aren't any active signature files (as long as the IP tests stage is enabled) or any active modules (as long as the modules stage is enabled).
 - The calculator (previously, the "CIDR calculator") now shows both CIDRs and netmasks.
 - At the range tables page, show the IPv4/IPv6 totals side by side, for easier comparison between the two.
+- Removed some unused file manager icons and slightly simplified its logic.

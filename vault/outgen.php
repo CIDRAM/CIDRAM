@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Output generator (last modified: 2022.03.13).
+ * This file: Output generator (last modified: 2022.04.04).
  */
 
 /** Initialise stages. */
@@ -202,7 +202,7 @@ if ($CIDRAM['Protect'] && empty($CIDRAM['Whitelisted'])) {
         array_walk($CIDRAM['Modules'], function ($Module) use (&$CIDRAM): void {
             if (
                 !empty($CIDRAM['Whitelisted']) ||
-                preg_match('~^(?:classes|fe_assets)[\x2F\x5C]|\.(css|gif|html?|jpe?g|js|png|ya?ml)$~i', $Module)
+                preg_match('~^(?:assets|classes)[\x2F\x5C]|\.(css|gif|html?|jpe?g|js|png|ya?ml)$~i', $Module)
             ) {
                 return;
             }
@@ -678,7 +678,7 @@ if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
         if (!isset($CIDRAM['template_file'])) {
             $CIDRAM['template_file'] = (
                 !$CIDRAM['FieldTemplates']['css_url']
-            ) ? 'template_' . $CIDRAM['FieldTemplates']['theme'] . '.html' : 'template_custom.html';
+            ) ? 'assets/core/template_' . $CIDRAM['FieldTemplates']['theme'] . '.html' : 'assets/core/template_custom.html';
         }
 
         /** Fallback for themes without default template files. */

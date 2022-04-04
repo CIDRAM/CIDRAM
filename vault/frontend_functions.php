@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2022.04.03).
+ * This file: Front-end functions file (last modified: 2022.04.04).
  */
 
 /**
@@ -336,17 +336,17 @@ $CIDRAM['FileManager-RecursiveList'] = function (string $Base) use (&$CIDRAM): a
         if (preg_match('~^(?:/\.\.|./\.|\.{3})$~', str_replace("\\", '/', substr($Item, -3)))) {
             continue;
         }
-        $Arr[$Key] = ['Filename' => $ThisName];
+        $Arr[$Key] = ['Filename' => $ThisName, 'CanEdit' => false];
         if (is_dir($Item)) {
-            $Arr[$Key]['CanEdit'] = false;
             $Arr[$Key]['Directory'] = true;
             $Arr[$Key]['Filesize'] = 0;
             $Arr[$Key]['Filetype'] = $CIDRAM['L10N']->getString('field_filetype_directory');
             $Arr[$Key]['Icon'] = 'icon=directory';
         } elseif (is_file($Item)) {
-            $Arr[$Key]['CanEdit'] = true;
             $Arr[$Key]['Directory'] = false;
             $Arr[$Key]['Filesize'] = filesize($Item);
+            $Arr[$Key]['Filetype'] = $CIDRAM['L10N']->getString('field_filetype_unknown');
+            $Arr[$Key]['Icon'] = 'icon=text';
             if (isset($CIDRAM['FE']['TotalSize'])) {
                 $CIDRAM['FE']['TotalSize'] += $Arr[$Key]['Filesize'];
             }
@@ -381,77 +381,50 @@ $CIDRAM['FileManager-RecursiveList'] = function (string $Base) use (&$CIDRAM): a
             }
             if (($ExtDel = strrpos($Item, '.')) !== false) {
                 $Ext = strtoupper(substr($Item, $ExtDel + 1));
-                if (!$Ext) {
-                    $Arr[$Key]['Filetype'] = $CIDRAM['L10N']->getString('field_filetype_unknown');
-                    $Arr[$Key]['Icon'] = 'icon=unknown';
+                if (!strlen($Ext)) {
                     $CIDRAM['FormatFilesize']($Arr[$Key]['Filesize']);
                     continue;
                 }
-                $Arr[$Key]['Filetype'] = $CIDRAM['ParseVars'](['EXT' => $Ext], $CIDRAM['L10N']->getString('field_filetype_info'));
+                $Arr[$Key]['Filetype'] = sprintf($CIDRAM['L10N']->getString('field_filetype_info'), $Ext);
                 if ($Ext === 'ICO') {
-                    $Arr[$Key]['CanEdit'] = false;
                     $Arr[$Key]['Icon'] = 'file=' . urlencode($Arr[$Key]['Filename']);
                     $CIDRAM['FormatFilesize']($Arr[$Key]['Filesize']);
                     continue;
                 }
-                if (preg_match(
-                    '/^(?:.?[BGL]Z.?|7Z|A(CE|LZ|P[KP]|R[CJ]?)?|B([AH]|Z2?)|CAB|DMG|' .
-                    'I(CE|SO)|L(HA|Z[HOWX]?)|P(AK|AQ.?|CK|EA)|RZ|S(7Z|EA|EN|FX|IT.?|QX)|' .
-                    'X(P3|Z)|YZ1|Z(IP.?|Z)?|(J|M|PH|R|SH|T|X)AR)$/',
-                    $Ext
-                )) {
-                    $Arr[$Key]['CanEdit'] = false;
-                    $Arr[$Key]['Icon'] = 'icon=archive';
-                } elseif (preg_match('/^[SDX]?HT[AM]L?$/', $Ext)) {
-                    $Arr[$Key]['Icon'] = 'icon=html';
-                } elseif (preg_match('/^(?:CSV|JSON|NEON|SQL|YAML)$/', $Ext)) {
-                    $Arr[$Key]['Icon'] = 'icon=ods';
-                } elseif (preg_match('/^(?:PDF|XDP)$/', $Ext)) {
-                    $Arr[$Key]['CanEdit'] = false;
-                    $Arr[$Key]['Icon'] = 'icon=pdf';
-                } elseif (preg_match('/^DOC[XT]?$/', $Ext)) {
-                    $Arr[$Key]['CanEdit'] = false;
-                    $Arr[$Key]['Icon'] = 'icon=doc';
-                } elseif (preg_match('/^XLS[XT]?$/', $Ext)) {
-                    $Arr[$Key]['CanEdit'] = false;
-                    $Arr[$Key]['Icon'] = 'icon=xls';
-                } elseif (preg_match('/^(?:CSS|JS|OD[BFGPST]|P(HP|PT))$/', $Ext)) {
-                    $Arr[$Key]['Icon'] = 'icon=' . strtolower($Ext);
-                    if (!preg_match('/^(?:CSS|JS|PHP)$/', $Ext)) {
-                        $Arr[$Key]['CanEdit'] = false;
-                    }
-                } elseif (preg_match('/^(?:FLASH|SWF)$/', $Ext)) {
-                    $Arr[$Key]['CanEdit'] = false;
-                    $Arr[$Key]['Icon'] = 'icon=swf';
+                if (preg_match('/^(?:CSV|ODS|XLS[XT]?)$/', $Ext)) {
+                    $Arr[$Key]['Icon'] = 'icon=spreadsheet';
+                } elseif (preg_match('/^(?:ODP|PDF|PP[ST]X?|XDP)$/', $Ext)) {
+                    $Arr[$Key]['Icon'] = 'icon=presentation';
+                } elseif (preg_match('/^(?:DOC[XT]?|ODT|RTF)$/', $Ext)) {
+                    $Arr[$Key]['Icon'] = 'icon=document';
+                } elseif (preg_match('/^(?:[OM]?DB|SQL)$/', $Ext)) {
+                    $Arr[$Key]['Icon'] = 'icon=database';
+                } elseif (preg_match('/^(?:ODF|TEX)$/', $Ext)) {
+                    $Arr[$Key]['Icon'] = 'icon=formulas';
+                } elseif (preg_match('/^ODG$/', $Ext)) {
+                    $Arr[$Key]['Icon'] = 'icon=graphs';
                 } elseif (preg_match(
                     '/^(?:BM[2P]|C(D5|GM)|D(IB|W[FG]|XF)|ECW|FITS|GIF|IMG|J(F?IF?|P[2S]|PE?G?2?|XR)|P(BM|CX|DD|GM|IC|N[GMS]|PM|S[DP])|S(ID|V[AG])|TGA|W(BMP?|EBP|MP)|X(CF|BMP))$/',
                     $Ext
                 )) {
-                    $Arr[$Key]['CanEdit'] = false;
                     $Arr[$Key]['Icon'] = 'icon=image';
                 } elseif (preg_match(
-                    '/^(?:H?264|3GP(P2)?|A(M[CV]|VI)|BIK|D(IVX|V5?)|F([4L][CV]|MV)|GIFV|HLV|' .
-                    'M(4V|OV|P4|PE?G[4V]?|KV|VR)|OGM|V(IDEO|OB)|W(EBM|M[FV]3?)|X(WMV|VID))$/',
+                    '/^(?:H?264|3GP(P2)?|A(M[CV]|VI)|BIK|D(IVX|V5?)|F([4L][CV]|LASH|MV)|GIFV|HLV|' .
+                    'M(4V|OV|P4|PE?G[4V]?|KV|VR)|OGM|SWF|V(IDEO|OB)|W(EBM|M[FV]3?)|X(WMV|VID))$/',
                     $Ext
                 )) {
-                    $Arr[$Key]['CanEdit'] = false;
                     $Arr[$Key]['Icon'] = 'icon=video';
                 } elseif (preg_match(
                     '/^(?:3GA|A(AC|IFF?|SF|U)|CDA|FLAC?|M(P?4A|IDI|KA|P[A23])|OGG|PCM|' .
                     'R(AM?|M[AX])|SWA|W(AVE?|MA))$/',
                     $Ext
                 )) {
-                    $Arr[$Key]['CanEdit'] = false;
                     $Arr[$Key]['Icon'] = 'icon=audio';
-                } elseif (preg_match('/^(?:MD|NFO|RTF|TXT)$/', $Ext)) {
-                    $Arr[$Key]['Icon'] = 'icon=text';
                 }
-            } else {
-                $Arr[$Key]['Filetype'] = $CIDRAM['L10N']->getString('field_filetype_unknown');
+                if (preg_match('/^(?:[BD]AT|CSS|[SDX]?HT[AM]L?|INC|JS|MD|NEON|I?NFO|PHP\d?|PY|TXT|YA?ML)$/', $Ext)) {
+                    $Arr[$Key]['CanEdit'] = true;
+                }
             }
-        }
-        if (empty($Arr[$Key]['Icon'])) {
-            $Arr[$Key]['Icon'] = 'icon=unknown';
         }
         if ($Arr[$Key]['Filesize']) {
             $CIDRAM['FormatFilesize']($Arr[$Key]['Filesize']);

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2022.03.24).
+ * This file: Functions file (last modified: 2022.03.30).
  */
 
 /**
@@ -2483,6 +2483,8 @@ $CIDRAM['GenerateID'] = function () {
     while (strlen($Time[0]) < 6) {
         $Time[0] = '0' . $Time[0];
     }
+
+    /** PHP >= 7.3 (https://www.php.net/manual/en/function.hrtime.php */
     if (function_exists('hrtime')) {
         try {
             $HRTime = (string)hrtime(true);
@@ -2498,6 +2500,7 @@ $CIDRAM['GenerateID'] = function () {
     } else {
         $HRTime = '';
     }
+
     $HRLen = strlen($HRTime);
     $Time = $Time[1] . '-' . $Time[0] . '-' . $HRTime;
     if ($HRLen < 10) {

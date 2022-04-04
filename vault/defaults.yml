@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Defaults file (last modified: 2022.03.30).
+# This file: Defaults file (last modified: 2022.04.04).
 ##/
 
 Config Defaults:
@@ -966,6 +966,7 @@ Config Defaults:
   pdo_dsn:
    type: "string"
    default: "mysql:dbname=cidram;host=localhost;port=3306"
+   hints: "hints_pdo_dsn"
   pdo_username:
    type: "string"
    default: ""

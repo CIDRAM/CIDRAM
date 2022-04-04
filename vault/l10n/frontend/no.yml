@@ -275,6 +275,8 @@ field_whitelisted_requests: "Hvitlistede forespørsler"
 field_your_version: "Din Versjon"
 header_login: "Vennligst logg inn for å fortsette."
 hints_asnlookup: "** Krever ASN-oppslagsfunksjonalitet (f.eks., via BGPView-modulen)."
+hints_pdo_dsn:
+ FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#HOW_TO_USE_PDO" hreflang="en-AU">Hva er en "PDO DSN"? Hvordan kan jeg bruke PDO med CIDRAM?</a></em>"
 hints_ipv6_on_32bit: "Merk: IPv6-oppslag fungerer kanskje ikke riktig på enkelte 32-biters systemer."
 hints_verification:
  "Hva er "positive" og "negative"?": "Når identiteten presentert av en forespørsel er verifisert, kan et vellykket resultat beskrives som "positiv" eller "negativ". I tilfelle at identiteten som presenteres bekreftes å være den sanne identiteten, den vil bli beskrevet som "positiv". I tilfelle det bekreftes at identiteten som presenteres er forfalsket, den vil bli beskrevet som "negativ". Imidlertid, et mislykket resultat (f.eks., verifisering mislykkes, eller sannheten til identiteten som presenteres ikke kan fastslås) vil ikke beskrives som "positiv" eller "negativ". I stedet, et mislykket resultat vil ganske enkelt beskrives som ikke-verifisert. Når det ikke gjøres noe forsøk på å bekrefte identiteten som presenteres av en forespørsel, forespørselen vil på samme måte bli beskrevet som ikke-verifisert. Begrepene gir mening bare i konteksten der identiteten som presenteres av en forespørsel gjenkjennes, og derfor der verifisering er mulig. I tilfeller der identiteten som presenteres ikke samsvarer med alternativene ovenfor, eller der ingen identitet er presentert, alternativene gitt ovenfor blir irrelevante."

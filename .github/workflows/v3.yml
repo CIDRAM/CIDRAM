@@ -1,4 +1,4 @@
-name: v2
+name: v3
 
 on: [push, pull_request]
 
@@ -13,7 +13,7 @@ jobs:
   name: PHP ${{ matrix.php-versions }} on ${{ matrix.operating-system }}
   steps:
   - name: Checkout
-    uses: actions/checkout@v2
+    uses: actions/checkout@v3
 
   - name: Set up PHP
     uses: shivammathur/setup-php@v2

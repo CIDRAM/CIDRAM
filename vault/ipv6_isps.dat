@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6_isps.dat
 
-# Version: 2022.99.0
-# Last modified: 2022.04.11
+# Version: 2022.104.0
+# Last modified: 2022.04.16
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -29,14 +29,16 @@ Tag: Voxility LLC
 # Major domestic ISP from Russia, but also a significant, long-term source of
 # spam, hack attempts, scraping, probing for vulnerabilities, and other kinds
 # of unwanted traffic.
-# Stop Forum Spam (SFS) listings: 532,548 (AS34665), 2,663 (AS44050).
-# Updated: 2021.07.08
+# Stop Forum Spam (SFS) listings: 796,633 (AS34665), 35 (AS44050).
+# Updated: 2022.04.15
 
 2a02:c6c1::/48 Deny Spam
 Origin: GB
 2a00:1d78::/32 Deny Spam
 2a0b:d000::/29 Deny Spam
+2a0c:8700::/29 Deny Spam
 2a0d:1ac3::/32 Deny Spam
+2a0d:8fc0::/29 Deny Spam
 Origin: RU
 Profile: Domestic ISP
 Tag: PIN-AS
@@ -1515,3 +1517,54 @@ Tag: CONNECTLINK TECH
 Origin: IN
 Profile: Domestic ISP;Multiplay
 Tag: Ani Network Pvt Ltd
+
+
+# ASN 52510 ("MI INTERNET SPA").
+# Chilean domestic ISP. Brute-force, telnet, synflood, FTP, and SSH attacks,
+# port scans, hacking, and spam detected from here. Manually checked all
+# ranges; All ranges affected.
+# Stop Forum Spam (SFS) listings: 8.
+# Updated: 2022.04.15
+
+2803:5e40::/32 Deny Attacks
+Origin: CL
+Profile: Domestic ISP
+Tag: MI INTERNET SPA
+
+
+# ASN 10030 ("Celcom Axiata Berhad").
+# Malaysian mobile provider. Webapp attacks, port scans, hacking, and spam
+# detected from here. Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 290.
+# Updated: 2022.04.16
+
+2404:160:8124:532f:cc9:d665:8fc1:c695/128 Deny Attacks
+Origin: MY
+Profile: Domestic ISP
+Tag: Celcom Axiata Berhad
+
+
+# ASN 2527 ("Sony Network Communications Inc").
+# Brute-force, SQLi, DDoS, and webapp attacks, port scans, hacking, and spam
+# detected from here. Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 448.
+# Updated: 2022.04.16
+
+240d:1a:742:dc00::/64 Deny Spam
+240d:1a:910:7c00::/64 Deny Attacks
+Origin: JP
+Profile: Commercial
+Tag: Sony Network
+
+
+# ASN 55430 ("Starhub Ltd").
+# Singaporean mobile provider. Brute-force, SSH, XMLRPC/WordPress, and webapp
+# attacks, port scans, hacking, and spam detected from here.
+# Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 341.
+# Updated: 2022.04.16
+
+2406:3003:2004:2ae3::/64 Deny Spam
+Origin: SG
+Profile: Domestic ISP
+Tag: Starhub Ltd

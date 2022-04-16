@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6.dat
 
-# Version: 2022.99.0
-# Last modified: 2022.04.11
+# Version: 2022.104.0
+# Last modified: 2022.04.16
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -6546,14 +6546,17 @@ Tag: KLAYER LLC
 
 # ASN 25780 ("HugeServer Networks, LLC").
 # Caught trying to hack WordPress sites.
-# Stop Forum Spam (SFS) listings: 241.
-# Updated: 2021.07.11
+# Stop Forum Spam (SFS) listings: 638.
+# Updated: 2022.04.15
 
 2604:34c0::/32 Deny Cloud
 2605:8680::/48 Deny Cloud
 2605:8680:12::/47 Deny Cloud
 2605:8680:fffe::/47 Deny Cloud
 2605:8681::/32 Deny Cloud
+2605:b4c0:550::/48 Deny Cloud
+2605:b4c0:1234::/48 Deny Cloud
+2606:6c40::/32 Deny Cloud
 2a03:a3a0::/32 Deny Cloud
 Origin: US
 Profile: Dedicated;Webhosting
@@ -7884,10 +7887,10 @@ Tag: NetConnex/Coreix
 
 # ASN 7040 ("NETMINDERS DATA SOLUTION").
 # Dedicated data center and a *HUGE* source of spam!
-# Stop Forum Spam (SFS) listings: 498,632.
-# Updated: 2021.07.11
+# Stop Forum Spam (SFS) listings: 186,150.
+# Updated: 2022.04.15
 
-2604:6880::/32 Deny Cloud
+2605:bc40::/32 Deny Cloud
 Origin: CA
 Profile: Dedicated;Infrastructure/Transit;Webhosting
 Tag: NETMINDERS
@@ -8971,8 +8974,8 @@ Tag: The Infrastructure Group B.V
 
 # ASNs 199524, 202422 ("G-Core Labs S.A").
 # Server farm with significant tor endpoints and a significant source of spam.
-# Stop Forum Spam (SFS) listings: 20,243 (AS199524), 1,647 (AS202422).
-# Updated: 2021.11.21
+# Stop Forum Spam (SFS) listings: 28,949 (AS199524), 4,191 (AS202422).
+# Updated: 2022.04.15
 
 2a03:90c0:10::/44 Deny Cloud
 2a03:90c0:20::/43 Deny Cloud
@@ -8987,8 +8990,7 @@ Tag: The Infrastructure Group B.V
 2a03:90c0:240::/42 Deny Cloud
 2a03:90c0:280::/41 Deny Cloud
 2a03:90c0:320::/43 Deny Cloud
-2a03:90c0:350::/44 Deny Cloud
-2a03:90c0:360::/43 Deny Cloud
+2a03:90c0:340::/42 Deny Cloud
 2a03:90c0:380::/42 Deny Cloud
 2a03:90c0:3f0::/44 Deny Cloud
 2a03:90c0:400::/44 Deny Cloud
@@ -8996,20 +8998,23 @@ Tag: The Infrastructure Group B.V
 2a03:90c0:440::/44 Deny Cloud
 2a03:90c0:460::/43 Deny Cloud
 2a03:90c0:4a0::/43 Deny Cloud
-2a03:90c0:4c0::/44 Deny Cloud
+2a03:90c0:4c0::/43 Deny Cloud
 2a03:90c0:4e0::/44 Deny Cloud
-2a03:90c0:500::/42 Deny Cloud
-2a03:90c0:540::/43 Deny Cloud
-2a03:90c0:570::/44 Deny Cloud
+2a03:90c0:500::/41 Deny Cloud
 2a03:90c0:580::/42 Deny Cloud
+2a03:90c0:5d0::/44 Deny Cloud
+2a03:90c0:5e0::/43 Deny Cloud
+2a03:90c0:610::/44 Deny Cloud
 2a03:90c0:9981::/48 Deny Cloud
-2a03:90c0:9990::/48 Deny Cloud
+2a03:90c0:9990::/47 Deny Cloud
 2a03:90c0:9992::/48 Deny Cloud
 2a03:90c0:9994::/46 Deny Cloud
 2a03:90c0:9998::/46 Deny Cloud
 2a03:90c0:999c::/47 Deny Cloud
 2a03:90c0:999f::/48 Deny Cloud
 Origin: LU
+2a11:27c0::/43 Deny Cloud
+Origin: RU
 Profile: Infrastructure/Transit;Tor endpoints here;Webhosting
 Tag: G-Core Labs S.A
 
@@ -10249,6 +10254,97 @@ Tag: Hostiserver Ltd
 Origin: US
 Profile: Webhosting
 Tag: PureVoltage Hosting Inc
+
+
+# ASN 47764 ("LLC VK").
+# Network used by mail.ru; Human endpoints not anticipated from here.
+# Port scans, synfloods, and hacking reported from here (as well as huge
+# amounts of email spam and email scams, though somewhat a moot point given
+# that CIDRAM has nothing to do with mail servers).
+# Stop Forum Spam (SFS) listings: 8.
+# Updated: 2022.04.15
+
+2a00:1148::/29 Deny Cloud
+2a00:a300::/32 Deny Cloud
+2a00:b4c0::/32 Deny Cloud
+Origin: RU
+Profile: Commercial
+Tag: LLC VK
+
+
+# ASN 35112 ("GBN group Ltd").
+# Russian VPS provider. Brute-force, SQLi, and webapp attacks, port scans,
+# hacking, and spam detected from here. Manually checked all ranges; All ranges
+# affected.
+# Stop Forum Spam (SFS) listings: 1.
+# Updated: 2022.04.15
+
+2a0e:7200::/40 Deny Attacks
+Origin: RU
+Profile: Dedicated;Infrastructure/Transit;Webhosting
+Tag: GBN group Ltd
+
+
+# ASNs 54990, 210558 ("1337 Services GmbH").
+# Tor and anonymous cloud services provider. Brute-force, SSH, and mail server
+# attacks, port scans, hacking, and spam detected from here.
+# Stop Forum Spam (SFS) listings: 106 (AS210558).
+# Updated: 2022.04.16
+
+2001:67c:235c::/48 Deny Attacks
+Origin: FI
+Profile: Dedicated;Infrastructure/Transit;Tor endpoints here;Webhosting
+Tag: 1337 Services GmbH
+
+
+# ASN 14315 ("1GSERVERS, LLC").
+# Dedicated servers and bare metal provider. Brute-force, SQLi, and webapp
+# attacks, port scans, hacking, and spam detected from here.
+# Stop Forum Spam (SFS) listings: 13.
+# Updated: 2022.04.16
+
+2605:8340::/32 Deny Cloud
+2605:9d00:0:100::/56 Deny Cloud
+Origin: US
+Profile: Dedicated;Webhosting
+Tag: 1GSERVERS, LLC
+
+
+# ASN 140570 ("Hong Kong Beecloud System Technology Services Limited").
+# Hong Kong computing and data center. Brute-force, XMLRPC/WordPress, and
+# webapp attacks, scanning for vulnerabilities, port scans, hacking, and spam
+# detected from here.
+# Stop Forum Spam (SFS) listings: 88.
+# Updated: 2022.04.16
+
+2001:df3:7580::/48 Deny Cloud
+Origin: HK
+Profile: Infrastructure/Transit
+Tag: Beecloud
+
+
+# ASN 63612 ("Shenzhen Qianhai bird cloud computing Co. Ltd").
+# Chinese computing and data center. Brute-force, SSH, RDP, and webapp attacks,
+# port scans, hacking, and spam detected from here.
+# Stop Forum Spam (SFS) listings: 3,184.
+# Updated: 2022.04.16
+
+2403:2940:1::/48 Deny Cloud
+Origin: CN
+Profile: Infrastructure/Transit
+Tag: Shenzhen Qianhai Bird
+
+
+# ASN 35816 ("Lancom Ltd").
+# Russian webhosting provider. Brute-force, DDoS, and webapp attacks, port
+# scans, hacking, and spam detected from here.
+# Stop Forum Spam (SFS) listings: 2,569.
+# Updated: 2022.04.16
+
+2a02:2b18::/32 Deny Cloud
+Origin: RU
+Profile: Webhosting
+Tag: Lancom Ltd
 
 
 # ---

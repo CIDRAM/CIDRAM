@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2022.03.28).
+ * This file: Front-end handler (last modified: 2022.04.19).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -1441,8 +1441,15 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
                 }
             }
             if (isset($CIDRAM['DirValue']['choices'])) {
-                if ($CIDRAM['DirValue']['type'] === 'checkbox') {
-                    if (isset($CIDRAM['DirValue']['labels']) && is_array($CIDRAM['DirValue']['labels'])) {
+                if (
+                    $CIDRAM['DirValue']['type'] === 'checkbox' ||
+                    (isset($CIDRAM['DirValue']['style']) && $CIDRAM['DirValue']['style'] === 'radio')
+                ) {
+                    if (
+                        $CIDRAM['DirValue']['type'] === 'checkbox' &&
+                        isset($CIDRAM['DirValue']['labels']) &&
+                        is_array($CIDRAM['DirValue']['labels'])
+                    ) {
                         $CIDRAM['DirValue']['gridV'] = 'gridVB';
                         $CIDRAM['ThisDir']['FieldOut'] = sprintf(
                             '<div style="display:grid;margin:auto 38px;grid-template-columns:%s;text-align:%s">',
@@ -1526,6 +1533,32 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
                                 $CIDRAM['DirValue']['gridH']
                             );
                         }
+                    } elseif (isset($CIDRAM['DirValue']['style']) && $CIDRAM['DirValue']['style'] === 'radio') {
+                        if (strpos($CIDRAM['ChoiceValue'], "\n")) {
+                            $CIDRAM['ChoiceValue'] = explode("\n", $CIDRAM['ChoiceValue']);
+                            $CIDRAM['ThisDir']['FieldOut'] .= sprintf(
+                                '<div class="gridboxstretch gridVA %5$s"><label class="gridlabel"><input%4$s type="radio" class="auto" name="%6$s" id="%1$s" value="%7$s"%2$s /></label></div><div class="gridboxstretch %5$s"><label for="%1$s"><span class="s">%3$s</span><br />%8$s</label></div>',
+                                $CIDRAM['ThisDir']['DirLangKey'] . '_' . $CIDRAM['ChoiceKey'],
+                                $CIDRAM['ChoiceKey'] === $CIDRAM['Config'][$CIDRAM['CatKey']][$CIDRAM['DirKey']] ? ' checked' : '',
+                                $CIDRAM['ChoiceValue'][0],
+                                $CIDRAM['ThisDir']['Trigger'],
+                                $CIDRAM['DirValue']['gridH'],
+                                $CIDRAM['ThisDir']['DirLangKey'],
+                                $CIDRAM['ChoiceKey'],
+                                $CIDRAM['ChoiceValue'][1]
+                            );
+                        } else {
+                            $CIDRAM['ThisDir']['FieldOut'] .= sprintf(
+                                '<div class="gridboxcheckcell gridVA %5$s"><label class="gridlabel"><input%4$s type="radio" class="auto" name="%6$s" id="%1$s" value="%7$s"%2$s /></label></div><div class="gridboxitem %5$s"><label for="%1$s" class="s">%3$s</label></div>',
+                                $CIDRAM['ThisDir']['DirLangKey'] . '_' . $CIDRAM['ChoiceKey'],
+                                $CIDRAM['ChoiceKey'] === $CIDRAM['Config'][$CIDRAM['CatKey']][$CIDRAM['DirKey']] ? ' checked' : '',
+                                $CIDRAM['ChoiceValue'],
+                                $CIDRAM['ThisDir']['Trigger'],
+                                $CIDRAM['DirValue']['gridH'],
+                                $CIDRAM['ThisDir']['DirLangKey'],
+                                $CIDRAM['ChoiceKey']
+                            );
+                        }
                     } else {
                         $CIDRAM['ThisDir']['FieldOut'] .= sprintf(
                             '<option style="text-transform:capitalize" value="%1$s"%2$s>%3$s</option>',
@@ -1535,7 +1568,10 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
                         );
                     }
                 }
-                if ($CIDRAM['DirValue']['type'] === 'checkbox') {
+                if (
+                    $CIDRAM['DirValue']['type'] === 'checkbox' ||
+                    (isset($CIDRAM['DirValue']['style']) && $CIDRAM['DirValue']['style'] === 'radio')
+                ) {
                     $CIDRAM['ThisDir']['FieldOut'] .= '</div>';
                 } else {
                     $CIDRAM['ThisDir']['SelectOther'] = !isset($CIDRAM['DirValue']['choices'][$CIDRAM['Config'][$CIDRAM['CatKey']][$CIDRAM['DirKey']]]);

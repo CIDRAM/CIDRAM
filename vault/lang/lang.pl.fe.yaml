@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Polish language data for the front-end (last modified: 2022.04.04).
+# This file: Polish language data for the front-end (last modified: 2022.04.19).
 ##/
 
 Extended Description Bypasses: "Domyślne pliki obejścia podpisów zwykle zawarte w pakiecie głównym."
@@ -97,7 +97,7 @@ config_general_empty_fields: "Jak CIDRAM powinien obsługiwać puste pola podcza
 config_general_error_log: "Plik służący do rejestrowania wykrytych błędów niekrytycznych. Podaj nazwę pliku lub pozostaw puste, aby wyłączyć."
 config_general_error_log_stages: "Lista etapów w łańcuchu wykonania, które powinny mieć zarejestrowane wygenerowane błędy."
 config_general_events: "Wymienione tutaj pliki są ładowane bezpośrednio po pliku obsługi zdarzeń. Zwykle wypełniana przez stronę aktualizacji podczas aktywacji składników, które tego potrzebują, gdy jest to konieczne. W większości przypadków można to zignorować."
-config_general_forbid_on_block: "Który komunikat o stanie HTTP powinien wysłać CIDRAM podczas blokowania żądań? (Więcej informacji znajduje się w dokumentacji)."
+config_general_forbid_on_block: "Który komunikat o stanie HTTP powinien wysłać CIDRAM podczas blokowania żądań?"
 config_general_force_hostname_lookup: "Wymuszać wyszukiwanie nazw hostów? True (Prawdziwe) = Tak; False (Fałszywy) = Nie [Domyślna]. Wyszukiwanie nazw hostów jest zwykle wykonywane „na żądanie”, ale można je wymusić dla wszystkich żądań. Może to być przydatne jako sposób na dostarczenie bardziej szczegółowych informacji w plikach dziennika, ale może również mieć nieco negatywny wpływ na wydajność."
 config_general_frontend_log: "Plik do logowania próbuje zalogować się do interfejsu użytkownika. Podaj nazwę pliku lub pozostaw puste, aby wyłączyć."
 config_general_hide_version: "Ukryć informacje o wersji z dzienników i danych wyjściowych strony? True (Prawdziwe) = Tak; False (Fałszywy) = Nie [Domyślna]."
@@ -284,9 +284,11 @@ field_verify_all: "Zweryfikuj wszystko"
 field_whitelisted_requests: "Żądania na białej liście"
 field_your_version: "Twoja Wersja"
 header_login: "Proszę się zalogować, aby kontynuować."
+hints_default_dns:
+ FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/v2-and-earlier/readme.en.md\#WHAT_CAN_I_USE_FOR_DEFAULT_DNS" hreflang="en-AU">Czego mogę użyć dla „default_dns”?</a></em>"
+hints_ipv6_on_32bit: "Uwaga: Wyszukiwania IPv6 mogą nie działać poprawnie w niektórych systemach 32-bitowych."
 hints_pdo_dsn:
  FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/v2-and-earlier/readme.en.md\#HOW_TO_USE_PDO" hreflang="en-AU">Co to jest „PDO DSN”? Jak mogę używać PDO z CIDRAM?</a></em>"
-hints_ipv6_on_32bit: "Uwaga: Wyszukiwania IPv6 mogą nie działać poprawnie w niektórych systemach 32-bitowych."
 info_some_useful_links: |
  Kilka przydatnych linków:<br />
      <ul class="pieul">
@@ -404,6 +406,12 @@ label_fmgr_total_disk_usage: "Zajęte miejsce na dysku:"
 label_fmgr_total_space: "Całkowite miejsce na dysku:"
 label_fmgr_updates_metadata: "Metadane aktualizacji komponentów"
 label_hide: "Ukryj"
+label_http_response_header_code_200: "200 OK\nDomyślna wartość. Najmniej solidny, ale najbardziej przyjazny dla użytkownika. Zautomatyzowane żądania najprawdopodobniej zinterpretują tę odpowiedź jako wskazanie, że żądanie zakończyło się powodzeniem."
+label_http_response_header_code_403: "403 Forbidden (Zakazana)\nBardziej solidny, ale mniej przyjazny dla użytkownika. Zalecany w większości ogólnych okoliczności."
+label_http_response_header_code_410: "410 Gone (Odszedł)\nMoże powodować problemy podczas rozwiązywania fałszywych alarmów, ponieważ niektóre przeglądarki buforują ten komunikat o stanie i nie wysyłają kolejnych żądań, nawet po odblokowaniu. Może być najbardziej preferowany w niektórych kontekstach, dla niektórych rodzajów ruchu."
+label_http_response_header_code_418: "418 I'm a teapot (Jestem czajnikiem)\nOdniesienia do żartu primaaprilisowego ({{Links.RFC2324}}). Jest bardzo mało prawdopodobne, że zostanie zrozumiany przez żadnego klienta, bota, przeglądarkę, lub w inny sposób. Przewidziane dla rozrywki i wygody, ale ogólnie nie polecane."
+label_http_response_header_code_451: "451 Unavailable For Legal Reasons (Niedostępne ze względów prawnych)\nZalecane przy blokowaniu przede wszystkim ze względów prawnych. Niezalecane w innych kontekstach."
+label_http_response_header_code_503: "503 Service Unavailable (Serwis niedostępny)\nNajbardziej solidny, ale najmniej przyjazny dla użytkownika. Zalecane w przypadku ataków, lub w przypadku wyjątkowo uporczywego niechcianego ruchu."
 label_ignore: "Ignoruj tego"
 label_installed_available: "Zainstalowano/Dostępny"
 label_integrity_check: "Sprawdzanie integralności:"

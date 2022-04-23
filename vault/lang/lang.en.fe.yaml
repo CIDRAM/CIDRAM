@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: English language data for the front-end (last modified: 2022.04.04).
+# This file: English language data for the front-end (last modified: 2022.04.19).
 ##/
 
 Extended Description Bypasses: "The default signature bypass files normally included with the main package."
@@ -97,7 +97,7 @@ config_general_empty_fields: "How should CIDRAM handle empty fields when logging
 config_general_error_log: "A file for logging any non-fatal errors detected. Specify a filename, or leave blank to disable."
 config_general_error_log_stages: "A list of the stages in the execution chain that should have any generated errors logged."
 config_general_events: "Files listed here are loaded directly after the event handlers file. Typically populated by the updates page when activating components which need it when necessary. In most cases, can ignore it."
-config_general_forbid_on_block: "Which HTTP status message should CIDRAM send when blocking requests? (Refer to the documentation for more information)."
+config_general_forbid_on_block: "Which HTTP status message should CIDRAM send when blocking requests?"
 config_general_force_hostname_lookup: "Force hostname lookups? True = Yes; False = No [Default]. Hostname lookups are normally performed on an "as needed" basis, but can be forced for all requests. Doing so may be useful as a means of providing more detailed information in the logfiles, but may also have a slightly negative effect on performance."
 config_general_frontend_log: "File for logging front-end login attempts. Specify a filename, or leave blank to disable."
 config_general_hide_version: "Hide version information from logs and page output? True = Yes; False = No [Default]."
@@ -283,9 +283,11 @@ field_verify_all: "Verify all"
 field_whitelisted_requests: "Whitelisted requests"
 field_your_version: "Your Version"
 header_login: "Please log in to continue."
+hints_default_dns:
+ FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/v2-and-earlier/readme.en.md\#WHAT_CAN_I_USE_FOR_DEFAULT_DNS" hreflang="en-AU">What can I use for "default_dns"?</a></em>"
+hints_ipv6_on_32bit: "Note: IPv6 lookups mightn't work correctly on some 32-bit systems."
 hints_pdo_dsn:
  FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/v2-and-earlier/readme.en.md\#HOW_TO_USE_PDO" hreflang="en-AU">What is a "PDO DSN"? How can I use PDO with CIDRAM?</a></em>"
-hints_ipv6_on_32bit: "Note: IPv6 lookups mightn't work correctly on some 32-bit systems."
 info_some_useful_links: |
  Some useful links:<br />
      <ul class="pieul">
@@ -401,6 +403,12 @@ label_fmgr_total_disk_usage: "Total disk usage:"
 label_fmgr_total_space: "Total disk space:"
 label_fmgr_updates_metadata: "Component updates metadata"
 label_hide: "Hide"
+label_http_response_header_code_200: "200 OK\nDefault value. Least robust, but most user-friendly. Automated requests will most likely interpret this response as indication that the request was successful."
+label_http_response_header_code_403: "403 Forbidden\nMore robust, but less user-friendly. Recommended for most general circumstances."
+label_http_response_header_code_410: "410 Gone\nCould cause problems when resolving false positives, because some browsers will cache this status message and not send subsequent requests, even after having been unblocked. May be the most preferable in some contexts, for certain kinds of traffic."
+label_http_response_header_code_418: "418 I'm a teapot\nReferences an April Fools' joke ({{Links.RFC2324}}). Very unlikely to be understood by any client, bot, browser, or otherwise. Provided for amusement and convenience, but not generally recommended."
+label_http_response_header_code_451: "451 Unavailable For Legal Reasons\nRecommended when blocking primarily for legal reasons. Not recommended in other contexts."
+label_http_response_header_code_503: "503 Service Unavailable\nMost robust, but least user-friendly. Recommended for when under attack, or for when dealing with extremely persistent unwanted traffic."
 label_ignore: "Ignore this"
 label_installed_available: "Installed/Available"
 label_integrity_check: "Integrity check:"

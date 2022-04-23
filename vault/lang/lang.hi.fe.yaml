@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Hindi language data for the front-end (last modified: 2022.04.04).
+# This file: Hindi language data for the front-end (last modified: 2022.04.19).
 ##/
 
 Extended Description Bypasses: "डिफ़ॉल्ट हस्ताक्षर बाईपास फ़ाइलों को सामान्यतः मुख्य पैकेज के साथ शामिल किया गया था।"
@@ -97,7 +97,7 @@ config_general_empty_fields: "ब्लॉक ईवेंट जानकार
 config_general_error_log: "किसी भी गैर घातक त्रुटियों का पता लगाने के लिए एक फ़ाइल। एक फाइल नाम निर्दिष्ट करें, या निष्क्रिय करने के लिए खाली छोड़।"
 config_general_error_log_stages: "निष्पादन श्रृंखला में चरणों की एक सूची जहां त्रुटियों को लॉग किया जाना चाहिए।"
 config_general_events: "यहां सूचीबद्ध फ़ाइलें सीधे ईवेंट हैंडलर फ़ाइल के बाद लोड की जाती हैं। आमतौर पर उन घटकों को सक्रिय करते समय अद्यतन पृष्ठ द्वारा पॉप्युलेट किया जाता है जिनकी आवश्यकता होने पर इसकी आवश्यकता होती है। ज्यादातर मामलों में, इसे अनदेखा कर सकते हैं।"
-config_general_forbid_on_block: "अनुरोधों को अवरुद्ध करते समय CIDRAM को कौन सी HTTP स्थिति संदेश भेजना चाहिए? (अधिक जानकारी के लिए डॉक्यूमेंटेशन का संदर्भ लें)।"
+config_general_forbid_on_block: "अनुरोधों को अवरुद्ध करते समय CIDRAM को कौन सी HTTP स्थिति संदेश भेजना चाहिए?"
 config_general_force_hostname_lookup: "होस्ट नाम लुकअप के लिए मजबूर? True(सच्चे) = हाँ; False(झूठी) = नहीं [डिफ़ॉल्ट]। होस्ट नाम लुकअप सामान्य रूप से "आवश्यकतानुसार" आधार पर किया जाता है, लेकिन इसे सभी अनुरोधों के लिए मजबूर किया जा सकता है। ऐसा करना लॉगफाइल में अधिक विस्तृत जानकारी प्रदान करने के साधन के रूप में उपयोगी हो सकता है, लेकिन प्रदर्शन पर इसका थोड़ा नकारात्मक प्रभाव हो सकता है।"
 config_general_frontend_log: "सामने के अंत में प्रवेश प्रयासों प्रवेश के लिए दायर। एक फाइल नाम निर्दिष्ट करें, या निष्क्रिय करने के लिए खाली छोड़।"
 config_general_hide_version: "लॉग्स और पेज आउटपुट से संस्करण जानकारी छुपाएं? True(सच्चे) = हाँ; False(झूठी) = नहीं [डिफ़ॉल्ट]।"
@@ -283,9 +283,11 @@ field_verify_all: "सभी को सत्यापित करें"
 field_whitelisted_requests: "अनुरोध जो श्वेतसूची में हैं"
 field_your_version: "आपका संस्करण"
 header_login: "जारी रखने के लिए कृपया लॉग इन करें।"
+hints_default_dns:
+ सामान्य प्रश्न।: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/v2-and-earlier/readme.en.md\#WHAT_CAN_I_USE_FOR_DEFAULT_DNS" hreflang="en-AU">मैं "Default_dns" के लिए क्या उपयोग कर सकता हूं?</a></em>"
+hints_ipv6_on_32bit: "नोट: हो सकता है कि कुछ 32-बिट सिस्टम पर IPv6 लुकअप ठीक से काम न करें।"
 hints_pdo_dsn:
  सामान्य प्रश्न।: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/v2-and-earlier/readme.en.md\#HOW_TO_USE_PDO" hreflang="en-AU">"PDO DSN" क्या है? मैं CIDRAM के साथ PDO का उपयोग कैसे कर सकता हूं?</a></em>"
-hints_ipv6_on_32bit: "नोट: हो सकता है कि कुछ 32-बिट सिस्टम पर IPv6 लुकअप ठीक से काम न करें।"
 info_some_useful_links: |
  कुछ उपयोगी लिंक:<br />
      <ul class="pieul">
@@ -401,6 +403,12 @@ label_fmgr_total_disk_usage: "कुल डिस्क उपयोग:"
 label_fmgr_total_space: "कुल डिस्क स्पेस:"
 label_fmgr_updates_metadata: "घटक अद्यतन मेटाडेटा"
 label_hide: "छिपाना"
+label_http_response_header_code_200: "200 OK (ठीक है)\nडिफ़ॉल्ट मान। कम से कम मजबूत, लेकिन अधिकांश उपयोगकर्ता के अनुकूल। स्वचालित अनुरोध इस प्रतिक्रिया की व्याख्या इस संकेत के रूप में करेंगे कि अनुरोध सफल रहा।"
+label_http_response_header_code_403: "403 Forbidden (निषिद्ध)\nअधिक मजबूत, लेकिन कम उपयोगकर्ता के अनुकूल। अधिकांश सामान्य परिस्थितियों के लिए अनुशंसित।"
+label_http_response_header_code_410: "410 Gone (चला गया)\nगलत पॉज़िटिव को हल करते समय समस्याएँ हो सकती हैं, क्योंकि कुछ ब्राउज़र इस स्थिति संदेश को कैश कर देंगे और अनब्लॉक होने के बाद भी बाद के अनुरोध नहीं भेजेंगे। कुछ संदर्भों में, कुछ विशेष प्रकार के ट्रैफ़िक के लिए सबसे बेहतर हो सकता है।"
+label_http_response_header_code_418: "418 I'm a teapot (मैं एक चायदानी हूँ)\nसन्दर्भ एक अप्रैल फूल मजाक ({{Links.RFC2324}})। किसी भी क्लाइंट, बॉट, ब्राउज़र, या अन्यथा द्वारा समझने की संभावना बहुत कम है। मनोरंजन और सुविधा के लिए प्रदान किया जाता है, लेकिन आमतौर पर अनुशंसित नहीं होता है।"
+label_http_response_header_code_451: "451 Unavailable For Legal Reasons (कानूनी कारणों से अनुपलब्ध)\nमुख्य रूप से कानूनी कारणों से अवरुद्ध करते समय अनुशंसित। अन्य संदर्भों में अनुशंसित नहीं है।"
+label_http_response_header_code_503: "503 Service Unavailable (सेवा अनुपलब्ध है)\nसबसे मजबूत, लेकिन कम से कम उपयोगकर्ता के अनुकूल। हमले के दौरान या अत्यधिक लगातार अवांछित ट्रैफ़िक से निपटने के लिए अनुशंसित।"
 label_ignore: "अनदेखा करें"
 label_installed_available: "स्थापित/उपलब्ध है"
 label_integrity_check: "अखंडता की जांच:"

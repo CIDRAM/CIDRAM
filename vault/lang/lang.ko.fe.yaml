@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Korean language data for the front-end (last modified: 2022.04.04).
+# This file: Korean language data for the front-end (last modified: 2022.04.19).
 ##/
 
 Extended Description Bypasses: "기본 서명 우회 일반적으로 기본 패키지에 포함되어 있습니다."
@@ -97,7 +97,7 @@ config_general_empty_fields: "블록 이벤트 정보를 로깅하고 표시 할
 config_general_error_log: "치명적이지 않은 오류를 탐지하기위한 파일. 파일 이름을 지정하십시오. 비활성화하려면 비워 둡니다."
 config_general_error_log_stages: "실행 체인에서 생성 된 오류가 기록되어야하는 단계 목록."
 config_general_events: "여기에 나열된 파일은 이벤트 핸들러 파일 바로 다음에 로드됩니다. 일반적으로 구성 요소를 활성화할 때 업데이트 페이지에서 필요에 따라 채워집니다. 대부분의 경우 무시할 수 있습니다."
-config_general_forbid_on_block: "요청을 차단할 때 CIDRAM이 전송해야하는 HTTP 상태 메시지는 무엇입니까? (자세한 내용은 설명서를 참조하십시오)."
+config_general_forbid_on_block: "요청을 차단할 때 CIDRAM이 전송해야하는 HTTP 상태 메시지는 무엇입니까?"
 config_general_force_hostname_lookup: "호스트 이름 검색을 시행 하시겠습니까 (모든 요청)? True = 예; False = 아니오 (Default / 기본 설정). 호스트 이름 검색은 일반적으로 "필요에 따라"수행됩니다, 그러나 모든 요청에 대해 강제 될 수 있습니다. 이는 로그 파일에보다 자세한 정보를 제공하는 데 유용 할 수 있습니다, 그러나 또한 성능에 약간 부정적인 영향을 줄 수 있습니다."
 config_general_frontend_log: "프론트 엔드 로그인 시도를 기록하는 파일. 파일 이름을 지정하십시오. 비활성화하려면 비워 둡니다."
 config_general_hide_version: "로그 및 페이지 출력에서 버전 정보 숨기기? True = 예; False = 아니오 (Default / 기본 설정)."
@@ -281,9 +281,11 @@ field_verify_all: "모두 검증"
 field_whitelisted_requests: "화이트리스트 된 것으로 표시된 요청"
 field_your_version: "사용 버전"
 header_login: "계속하려면 로그인하십시오."
+hints_default_dns:
+ 자주하는 질문.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/v2-and-earlier/readme.ko.md\#WHAT_CAN_I_USE_FOR_DEFAULT_DNS" hreflang="ko">"default_dns"에 사용할 수있는 항목은 무엇입니까?</a></em>"
+hints_ipv6_on_32bit: "참고\_: IPv6 조회는 일부 32비트 시스템에서 제대로 작동하지 않을 수 있습니다."
 hints_pdo_dsn:
  자주하는 질문.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/v2-and-earlier/readme.ko.md\#HOW_TO_USE_PDO" hreflang="ko">"PDO DSN"은 무엇입니까? CIDRAM과 함께 PDO를 사용하려면 어떻게해야합니까?</a></em>"
-hints_ipv6_on_32bit: "참고\_: IPv6 조회는 일부 32비트 시스템에서 제대로 작동하지 않을 수 있습니다."
 info_some_useful_links: |
  유용한 링크 :<br />
      <ul class="pieul">
@@ -395,6 +397,12 @@ label_fmgr_total_disk_usage: "총 디스크 사용\_:"
 label_fmgr_total_space: "총 디스크 공간\_:"
 label_fmgr_updates_metadata: "구성 요소 업데이트 메타 데이터"
 label_hide: "숨기다"
+label_http_response_header_code_200: "200 OK\n기본값. 가장 덜 강력하지만 가장 사용자 친화적입니다. 자동화된 요청은 이 응답을 요청이 성공했다는 표시로 해석할 가능성이 큽니다."
+label_http_response_header_code_403: "403 Forbidden (금지)\n더 강력하지만, 사용자 친화성은 떨어집니다. 대부분의 일반적인 상황에 권장됩니다."
+label_http_response_header_code_410: "410 Gone (갔다)\n일부 브라우저는 차단 해제된 후에도 이 상태 메시지를 캐시하고 후속 요청을 보내지 않기 때문에 가 양성을 해결할 때 문제를 일으킬 수 있습니다. 어떤 상황에서는 특정 종류의 트래픽에 대해 가장 선호될 수 있습니다."
+label_http_response_header_code_418: "418 I'm a teapot (나는 찻주전자)\n만우절 농담을 참고하여 ({{Links.RFC2324}}). 클라이언트, 로봇, 브라우저, 등이 이해하지 못할 가능성이 매우 높습니다. 오락과 편의를 위해 제공되지만, 일반적으로 권장되지 않습니다."
+label_http_response_header_code_451: "451 Unavailable For Legal Reasons (법적 이유로 사용할 수 없음)\n주로 법적 이유로 차단할 때 권장됩니다. 다른 상황에서는 권장되지 않습니다."
+label_http_response_header_code_503: "503 Service Unavailable (서비스 불가)\n가장 강력하지만 사용자 친화적이지 않습니다. 공격받거나 매우 지속적인 원치 않는 트래픽을 처리할 때 권장됩니다."
 label_ignore: "이것을 무시하십시오"
 label_installed_available: "설치되어있다 / 이용 가능"
 label_integrity_check: "무결성 검사\_:"

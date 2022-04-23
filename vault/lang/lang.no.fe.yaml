@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Norwegian language data for the front-end (last modified: 2022.04.04).
+# This file: Norwegian language data for the front-end (last modified: 2022.04.19).
 ##/
 
 Extended Description Bypasses: "Standard-signatur-bypass-filene som normalt følger med hovedpakken."
@@ -97,7 +97,7 @@ config_general_empty_fields: "Hvordan skal CIDRAM håndtere tomme felter når du
 config_general_error_log: "En fil for logging av eventuelle ikke-fatale feil som er oppdaget. Angi et filnavn, eller la det være tomt for å deaktivere."
 config_general_error_log_stages: "En liste over stadiene i utførelseskjeden som skal ha loggført eventuelle genererte feil."
 config_general_events: "Filene som er oppført her, lastes inn rett etter hendelsesbehandlerfilen. Vanligvis befolket av oppdateringssiden når du aktiverer komponenter som trenger det når det er nødvendig. I de fleste tilfeller kan ignorere det."
-config_general_forbid_on_block: "Hvilken HTTP-statusmelding skal CIDRAM sende når blokkerer forespørsler? (Se dokumentasjonen for mer informasjon)."
+config_general_forbid_on_block: "Hvilken HTTP-statusmelding skal CIDRAM sende når blokkerer forespørsler?"
 config_general_force_hostname_lookup: "Håndheve vertsnavn-oppslag? True = Ja; False = Nei [Standardverdi]. Vertsnavn-oppslag utføres normalt på en "etter behov" basis, men kan håndheves for alle forespørsler. Å gjøre det kan være nyttig som et middel til å gi mer detaljert informasjon i loggfilene, men kan også ha en litt negativ effekt på ytelsen."
 config_general_frontend_log: "Fil for å logge innloggingsforsøk på frontenden. Angi et filnavn, eller la det være tomt for å deaktivere."
 config_general_hide_version: "Skjul versjoninformasjon fra logger og sideutdata? True = Ja; False = Nei [Standardverdi]."
@@ -281,9 +281,11 @@ field_verify_all: "Verifisere alt"
 field_whitelisted_requests: "Hvitlistede forespørsler"
 field_your_version: "Din Versjon"
 header_login: "Vennligst logg inn for å fortsette."
+hints_default_dns:
+ FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/v2-and-earlier/readme.en.md\#WHAT_CAN_I_USE_FOR_DEFAULT_DNS" hreflang="en-AU">Hva kan jeg bruke for "default_dns"?</a></em>"
+hints_ipv6_on_32bit: "Merk: IPv6-oppslag fungerer kanskje ikke riktig på enkelte 32-biters systemer."
 hints_pdo_dsn:
  FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/v2-and-earlier/readme.en.md\#HOW_TO_USE_PDO" hreflang="en-AU">Hva er en "PDO DSN"? Hvordan kan jeg bruke PDO med CIDRAM?</a></em>"
-hints_ipv6_on_32bit: "Merk: IPv6-oppslag fungerer kanskje ikke riktig på enkelte 32-biters systemer."
 info_some_useful_links: |
  Noen nyttige lenker:<br />
      <ul class="pieul">
@@ -399,6 +401,12 @@ label_fmgr_total_disk_usage: "Totalt diskbruk:"
 label_fmgr_total_space: "Totalt diskplass:"
 label_fmgr_updates_metadata: "Komponentoppdateringsmetadata"
 label_hide: "Gjem"
+label_http_response_header_code_200: "200 OK\nStandardverdi. Minst robust, men mest brukervennlig. Automatiserte forespørsler vil mest sannsynlig tolke dette svaret som en indikasjon på at forespørselen var vellykket."
+label_http_response_header_code_403: "403 Forbidden (Forbudt)\nMer robust, men mindre brukervennlig. Anbefalt for de fleste generelle forhold."
+label_http_response_header_code_410: "410 Gone (Borte)\nKan forårsake problemer når du løser falske positiver, fordi noen nettlesere vil bufre denne statusmeldingen og ikke sende påfølgende forespørsler, selv etter å ha blitt opphevet blokkeringen. Kan være den mest foretrukne i noen sammenhenger, for visse typer trafikk."
+label_http_response_header_code_418: "418 I'm a teapot (Jeg er en tekanne)\nRefererer til en aprilsnarr ({{Links.RFC2324}}). Svært usannsynlig å bli forstått av noen klient, bot, nettleser, eller annet. Tilbys for underholdning og bekvemmelighet, men anbefales ikke generelt."
+label_http_response_header_code_451: "451 Unavailable For Legal Reasons (Utilgjengelig av juridiske årsaker)\nAnbefales ved blokkering primært av juridiske årsaker. Anbefales ikke i andre sammenhenger."
+label_http_response_header_code_503: "503 Service Unavailable (Tjenesten er utilgjengelig)\nMest robust, men minst brukervennlig. Anbefalt for angrep, eller for ekstremt vedvarende uønsket trafikk."
 label_ignore: "Ignorere dette"
 label_installed_available: "Installert/Tilgjengelig"
 label_integrity_check: "Integritetskontroll:"

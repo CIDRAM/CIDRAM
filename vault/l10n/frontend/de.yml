@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: German language data for the front-end (last modified: 2022.04.04).
+# This file: German language data for the front-end (last modified: 2022.04.19).
 ##/
 
 Extended Description Bypasses: "Die Standard-Signatur-Bypässe, die normalerweise im Hauptpaket enthalten sind."
@@ -106,7 +106,7 @@ config_general_events: "Hier aufgelistete Dateien werden direkt nach der Ereigni
 config_general_fields: "Kontrollen für die Felder während Blockereignissen (wenn eine Anfrage blockiert wird)."
 config_general_force_hostname_lookup: "Hostnamen-Suchen werden normalerweise auf einer "wie benötigt"-Basis durchgeführt, können jedoch für alle Anforderungen erzwungen werden. Dies kann nützlich sein, um detailliertere Informationen in der Protokolldateien bereitzustellen, aber auch kann sich leicht negativ auf die Performance auswirken. Erzwinge Hostnamen-Suche? True = Ja; False = Nein [Standardeinstellung]."
 config_general_frontend_log: "Datei für die Protokollierung von Frontend Anmelde-Versuchen. Geben Sie einen Dateinamen an oder lassen Sie die Option zum Deaktivieren leer."
-config_general_http_response_header_code: "Welche HTTP-Status-Message sollte CIDRAM senden, wenn Anfragen blockiert werden? (Bitte beachten Sie die Dokumentation)."
+config_general_http_response_header_code: "Welche HTTP-Status-Message sollte CIDRAM senden, wenn Anfragen blockiert werden?"
 config_general_ipaddr: "Ort der IP-Adresse der aktuellen Verbindung im gesamten Datenstrom (nützlich für Cloud-Services). Standardeinstellung = REMOTE_ADDR. ACHTUNG: Ändern Sie diesen Wert nur, wenn Sie wissen, was Sie tun!"
 config_general_lang: "Gibt die Standardsprache für CIDRAM an."
 config_general_lang_override: "Nach HTTP_ACCEPT_LANGUAGE lokalisieren wann möglich? True = Ja [Standardeinstellung]; False = Nein."
@@ -277,9 +277,11 @@ field_whitelisted_requests: "Anfragen die als auf der Whitelist markiert sind"
 field_your_version: "Ihre Version"
 header_login: "Bitte einloggen zum Fortfahren."
 hints_asnlookup: "** Erfordert ASN-Lookup-Funktionalität (z.B., über das BGPView-Modul)."
-hints_pdo_dsn:
- FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.de.md\#HOW_TO_USE_PDO" hreflang="de">Was ist ein "PDO DSN"? Wie kann ich PDO mit CIDRAM verwenden?</a></em>"
+hints_default_dns:
+ FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.de.md\#WHAT_CAN_I_USE_FOR_DEFAULT_DNS" hreflang="de">Was kann ich für „default_dns“ verwenden?</a></em>"
 hints_ipv6_on_32bit: "Hinweis: IPv6-Lookups funktionieren auf einigen 32-Bit-Systemen möglicherweise nicht richtig."
+hints_pdo_dsn:
+ FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.de.md\#HOW_TO_USE_PDO" hreflang="de">Was ist ein „PDO DSN“? Wie kann ich PDO mit CIDRAM verwenden?</a></em>"
 hints_verification:
  "Was sind „Positive“ und „Negative“?": "Das erfolgreiche Ergebnis der Verifizierung der durch eine Anfrage präsentierten Identität könnte als „positiv“ oder „negativ“ beschrieben werden. In dem Fall dass die präsentierte Identität als die wahre Identität bestätigt wird, würde sie als „positiv“ bezeichnet werden. In dem Fall dass die präsentierten Identität als gefälscht bestätigt, würde sie als „negativ“ bezeichnet werden. Ein erfolgloses Ergebnis (z.B., die Verifizierung fehlschlägt, oder die Echtheit der präsentierten Identität kann nicht festgestellt werden) würde jedoch nicht als „positiv“ oder „negativ“ beschrieben. Stattdessen würde ein erfolgloses Ergebnis einfach als nicht verifiziert beschrieben. Wenn kein Versuch unternommen wird für die durch eine Anfrage präsentierte Identität zu verifizieren, würde die Anfrage ebenfalls als nicht verifiziert beschrieben. Die Begriffe sind nur in dem Kontext sinnvoll, in dem die durch eine Anfrage präsentierte Identität anerkannt wird und daher der Verifizierung möglich ist. In dem Fall in denen die präsentierte Identität nicht mit den oben bereitgestellten Optionen übereinstimmt, oder wenn keine Identität präsentiert wird, werden die oben bereitgestellten Optionen irrelevant."
  "Was sind „Single-Hit-Bypässe“?": "In einigen Fällen kann eine positiv verifizierte Anfrage aufgrund der Signaturdateien, Module, oder anderer Bedingungen der Anfrage immer noch blockiert werden, und Bypässe können erforderlich sein um Falsch-Positive zu vermeiden. In dem Fall in dem eine Bypass genau einen Verstoß behandeln beabsichtigt ist, nicht mehr und nicht weniger, könnte solche eine Bypass als „Single-Hit-Bypass“ beschrieben werden."
@@ -399,6 +401,12 @@ label_fmgr_total_disk_usage: "Speicherplatz verwendet insgesamt:"
 label_fmgr_total_space: "Speicherplatz insgesamt:"
 label_fmgr_updates_metadata: "Komponente aktualisiert Metadaten"
 label_hide: "Verstecke"
+label_http_response_header_code_200: "200 OK\nWenigsten robust, aber benutzerfreundlichsten. Automatisierte Anfragen werden dies höchstwahrscheinlich als erfolgreich interpretieren."
+label_http_response_header_code_403: "403 Forbidden (Verboten)\nRobuster, aber weniger benutzerfreundlich. Empfohlen für die meisten allgemeinen Umstände."
+label_http_response_header_code_410: "410 Gone (Gegangen)\nBeim Auflösen von Falsch-Positive können Probleme auftreten, aufgrund einiger Browser diese Statusmeldung zwischenspeichern und keine nachfolgenden Anfragen senden, selbst nachdem sie entsperrt wurden. Kann in einigen Kontexten für bestimmte Arten von Datenverkehr am besten sein."
+label_http_response_header_code_418: "418 I'm a teapot (Ich bin eine Teekanne)\nBezieht sich auf einen Aprilscherz ({{Links.RFC2324}}). Es ist sehr unwahrscheinlich, dass es von einem Client, Bot, Browser, oder anderem verstanden wird. Zur Unterhaltung und Bequemlichkeit bereitgestellt, aber nicht allgemein empfohlen."
+label_http_response_header_code_451: "451 Unavailable For Legal Reasons (Aus rechtlichen Gründen nicht verfügbar)\nEmpfohlen beim Blockieren vor allem aus rechtlichen Gründen. Nicht in anderen Kontexten empfohlen."
+label_http_response_header_code_503: "503 Service Unavailable (Dienst nicht verfügbar)\nRobustesten, aber wenigsten benutzerfreundlich. Empfohlen wenn Sie angegriffen werden, oder wenn Sie mit extrem hartnäckigem unerwünschtem Datenverkehr umgehen."
 label_ignore: "Ignoriere"
 label_installed_available: "Installiert/Verfügbar"
 label_integrity_check: "Integritätsprüfung:"

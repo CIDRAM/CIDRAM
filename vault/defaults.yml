@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Defaults file (last modified: 2022.04.04).
+# This file: Defaults file (last modified: 2022.04.19).
 ##/
 
 Config Defaults:
@@ -308,12 +308,13 @@ Config Defaults:
    type: "int"
    default: 403
    choices:
-    200: &200 "200 OK"
-    403: &403 "403 Forbidden"
-    410: &410 "410 Gone"
-    418: &418 "418 I'm a teapot"
-    451: &451 "451 Unavailable For Legal Reasons"
-    503: &503 "503 Service Unavailable"
+    200: &200 "label_http_response_header_code_200"
+    403: &403 "label_http_response_header_code_403"
+    410: &410 "label_http_response_header_code_410"
+    418: &418 "label_http_response_header_code_418"
+    451: &451 "label_http_response_header_code_451"
+    503: &503 "label_http_response_header_code_503"
+   style: "radio"
   silent_mode:
    type: "url"
    default: ""
@@ -429,6 +430,7 @@ Config Defaults:
     418: *418
     451: *451
     503: *503
+   style: "radio"
   log_banned_ips:
    type: "bool"
    default: true
@@ -437,6 +439,7 @@ Config Defaults:
    default: "8.8.8.8,8.8.4.4"
    value_preg_filter:
     "~\s~": ""
+   hints: "hints_default_dns"
   search_engine_verification:
    type: "checkbox"
    default: |
@@ -1116,6 +1119,7 @@ Links:
  PHPMailer:
   License: "<a href="https://github.com/PHPMailer/PHPMailer/blob/master/LICENSE" dir="ltr" hreflang="en-US" rel="noopener external">LGPLv2.1</a>"
   PHPMailer: "<a href="https://github.com/PHPMailer/PHPMailer" dir="ltr" hreflang="en-US" rel="noopener noreferrer external">PHPMailer</a>"
+ RFC2324: "<a href="https://tools.ietf.org/html/rfc2324" dir="ltr" hreflang="en-US" rel="noopener noreferrer external">RFC 2324</a>"
  SFS: "<a href="https://www.stopforumspam.com/" dir="ltr" rel="noopener noreferrer external">Stop Forum Spam</a>"
  Symfony:
   Intl/Idn: "<a href="https://github.com/symfony/polyfill-intl-idn" dir="ltr" hreflang="en" rel="noopener noreferrer external">Intl/Idn</a>"

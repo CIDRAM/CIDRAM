@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Italian language data for the front-end (last modified: 2022.04.04).
+# This file: Italian language data for the front-end (last modified: 2022.04.19).
 ##/
 
 Extended Description Bypasses: "Un file per bypassare alcune delle firme predefinite normalmente inclusi nel pacchetto principale."
@@ -106,7 +106,7 @@ config_general_events: "I file elencati qui vengono caricati direttamente dopo i
 config_general_fields: "Controlli per i campi durante gli eventi di blocco (quando una richiesta è bloccata)."
 config_general_force_hostname_lookup: "Forzare la ricerca degli nome di host? True = Sì; False = No [Predefinito]. Le ricerche di nome di host vengono normalmente eseguite su base della necessità, ma può essere forzato a tutte le richieste. Ciò può essere utile come mezzo per fornire informazioni più dettagliate nei file di log, ma può anche avere un effetto leggermente negativo sulle prestazioni."
 config_general_frontend_log: "File per la registrazione di tentativi di accesso al front-end. Specificare un nome di file, o lasciare vuoto per disabilitare."
-config_general_http_response_header_code: "Quale messaggio di stato HTTP dovrebbe inviare CIDRAM durante il blocco delle richieste? (Fare riferimento alla documentazione per ulteriori informazioni)."
+config_general_http_response_header_code: "Quale messaggio di stato HTTP dovrebbe inviare CIDRAM durante il blocco delle richieste?"
 config_general_ipaddr: "Dove trovare l'indirizzo IP di collegamento richiesta? (Utile per servizi come Cloudflare e simili). Predefinito = REMOTE_ADDR. AVVISO: Non modificare questa se non sai quello che stai facendo!"
 config_general_lang: "Specifica la lingua predefinita per CIDRAM."
 config_general_lang_override: "Localizzare secondo HTTP_ACCEPT_LANGUAGE quando possibile? True = Sì [Predefinito]; False = No."
@@ -275,9 +275,11 @@ field_whitelisted_requests: "Richieste nella lista bianca"
 field_your_version: "La Vostra Versione"
 header_login: "Per favore accedi per continuare."
 hints_asnlookup: "** Richiede la funzionalità di ricerca ASN (ad es., tramite il modulo BGPView)."
+hints_default_dns:
+ FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.it.md\#WHAT_CAN_I_USE_FOR_DEFAULT_DNS" hreflang="it">Cosa posso usare per "default_dns"?</a></em>"
+hints_ipv6_on_32bit: "Nota: Le ricerche IPv6 potrebbero non funzionare correttamente su alcuni sistemi a 32 bit."
 hints_pdo_dsn:
  FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.it.md\#HOW_TO_USE_PDO" hreflang="it">Che cos'è un "DSN PDO"? Come posso usare PDO con CIDRAM?</a></em>"
-hints_ipv6_on_32bit: "Nota: Le ricerche IPv6 potrebbero non funzionare correttamente su alcuni sistemi a 32 bit."
 hints_verification:
  "Cosa sono "positivi" e "negativi"?": "Nel verificare l'identità presentata da una richiesta, un esito di successo potrebbe essere descritto come "positivo" o "negativo". Nel caso in cui l'identità presentata fosse confermata come la vera identità, sarebbe descritto come "positivo". Nel caso in cui l'identità presentata fosse confermata come falsificata, sarebbe descritto come "negativo". Tuttavia, un esito senza successo (ad esempio, la verifica è fallita, o non è possibile determinare la veridicità dell'identità presentata) non sarebbe descritto come "positivo" o "negativo". Invece, un esito senza successo verrebbe descritto semplicemente come non verificato. Quando non viene effettuato alcun tentativo di verificare l'identità presentata da una richiesta, la richiesta verrebbe ugualmente descritto come non verificato. I termini hanno senso solo nel contesto in cui viene riconosciuta l'identità presentata da una richiesta e, quindi, dove è possibile la verifica. Nei casi in cui l'identità presentata non corrisponda alle opzioni fornite sopra, o in cui non venga presentata alcuna identità, le opzioni sopra fornite diventano irrilevanti."
  "Cosa sono i "bypass a colpo singolo"?": "In alcuni casi, una richiesta verificata positivamente potrebbe comunque essere bloccata a causa dei file di firma, dei moduli, o di altre condizioni della richiesta, e potrebbero essere necessari bypass per evitare falsi positivi. Nel caso in cui un bypass sia destinato a trattare esattamente un'infrazione, né più né meno, tale bypass potrebbe essere descritto come un "bypass a colpo singolo"."
@@ -397,6 +399,12 @@ label_fmgr_total_disk_usage: "Utilizzo del disco totale:"
 label_fmgr_total_space: "Spazio totale su disco:"
 label_fmgr_updates_metadata: "Componente aggiorna metadati"
 label_hide: "Nascondere"
+label_http_response_header_code_200: "200 OK\nMeno robusto, ma più facile da usare. Molto probabilmente le richieste automatiche interpreteranno questa risposta come un'indicazione che la richiesta riuscito."
+label_http_response_header_code_403: "403 Forbidden (Vietato)\nUn po' più robusto, ma un po' meno facile da usare. Consigliato per la maggior parte delle circostanze generali."
+label_http_response_header_code_410: "410 Gone (Andato)\nPotrebbe causare problemi durante la risoluzione dei falsi positivi, perché alcuni browser memorizzano nella cache questo messaggio di stato e non inviano richieste successive, anche dopo essere stati sbloccati. Può essere il più preferibile in alcuni contesti, per specifici tipi di traffico."
+label_http_response_header_code_418: "418 I'm a teapot (Sono una teiera)\nFa riferimento a uno scherzo di pesce d'aprile ({{Links.RFC2324}}). È molto improbabile che venga compreso da qualsiasi client, bot, browser, o altro. Fornito per divertimento e comodità, ma generalmente non consigliato."
+label_http_response_header_code_451: "451 Unavailable For Legal Reasons (Non disponibile per motivi legali)\nConsigliato in caso di blocco principalmente per motivi legali. Non consigliato in altri contesti."
+label_http_response_header_code_503: "503 Service Unavailable (Servizio non disponibile)\nPiù robusto, ma meno facile da usare. Consigliato per quando si è sotto attacco, o quando si ha a che fare con traffico indesiderato estremamente persistente."
 label_ignore: "Ignoralo"
 label_installed_available: "Installato/Disponibile"
 label_integrity_check: "Controllo di integrità:"

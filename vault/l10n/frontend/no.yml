@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Norwegian language data for the front-end (last modified: 2022.04.04).
+# This file: Norwegian language data for the front-end (last modified: 2022.04.19).
 ##/
 
 Extended Description Bypasses: "Standard-signatur-bypass-filene som normalt følger med hovedpakken."
@@ -106,7 +106,7 @@ config_general_events: "Filene som er oppført her, lastes inn rett etter hendel
 config_general_fields: "Kontroller for feltene under blokkeringshendelser (når en forespørsel er blokkert)."
 config_general_force_hostname_lookup: "Håndheve vertsnavn-oppslag? True = Ja; False = Nei [Standardverdi]. Vertsnavn-oppslag utføres normalt på en "etter behov" basis, men kan håndheves for alle forespørsler. Å gjøre det kan være nyttig som et middel til å gi mer detaljert informasjon i loggfilene, men kan også ha en litt negativ effekt på ytelsen."
 config_general_frontend_log: "Fil for å logge innloggingsforsøk på frontenden. Angi et filnavn, eller la det være tomt for å deaktivere."
-config_general_http_response_header_code: "Hvilken HTTP-statusmelding skal CIDRAM sende når blokkerer forespørsler? (Se dokumentasjonen for mer informasjon)."
+config_general_http_response_header_code: "Hvilken HTTP-statusmelding skal CIDRAM sende når blokkerer forespørsler?"
 config_general_ipaddr: "Hvor finner jeg IP-adressen til å koble til forespørsler? (Nyttig for tjenester som Cloudflare og så videre). Standardverdi = REMOTE_ADDR. ADVARSEL: Ikke endre dette med mindre du vet hva du gjør!"
 config_general_lang: "Angi standardspråket for CIDRAM."
 config_general_lang_override: "Lokaliser i henhold til HTTP_ACCEPT_LANGUAGE når det er mulig? True = Ja [Standardverdi]; False = Nei."
@@ -275,9 +275,11 @@ field_whitelisted_requests: "Hvitlistede forespørsler"
 field_your_version: "Din Versjon"
 header_login: "Vennligst logg inn for å fortsette."
 hints_asnlookup: "** Krever ASN-oppslagsfunksjonalitet (f.eks., via BGPView-modulen)."
+hints_default_dns:
+ FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#WHAT_CAN_I_USE_FOR_DEFAULT_DNS" hreflang="en-AU">Hva kan jeg bruke for "default_dns"?</a></em>"
+hints_ipv6_on_32bit: "Merk: IPv6-oppslag fungerer kanskje ikke riktig på enkelte 32-biters systemer."
 hints_pdo_dsn:
  FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#HOW_TO_USE_PDO" hreflang="en-AU">Hva er en "PDO DSN"? Hvordan kan jeg bruke PDO med CIDRAM?</a></em>"
-hints_ipv6_on_32bit: "Merk: IPv6-oppslag fungerer kanskje ikke riktig på enkelte 32-biters systemer."
 hints_verification:
  "Hva er "positive" og "negative"?": "Når identiteten presentert av en forespørsel er verifisert, kan et vellykket resultat beskrives som "positiv" eller "negativ". I tilfelle at identiteten som presenteres bekreftes å være den sanne identiteten, den vil bli beskrevet som "positiv". I tilfelle det bekreftes at identiteten som presenteres er forfalsket, den vil bli beskrevet som "negativ". Imidlertid, et mislykket resultat (f.eks., verifisering mislykkes, eller sannheten til identiteten som presenteres ikke kan fastslås) vil ikke beskrives som "positiv" eller "negativ". I stedet, et mislykket resultat vil ganske enkelt beskrives som ikke-verifisert. Når det ikke gjøres noe forsøk på å bekrefte identiteten som presenteres av en forespørsel, forespørselen vil på samme måte bli beskrevet som ikke-verifisert. Begrepene gir mening bare i konteksten der identiteten som presenteres av en forespørsel gjenkjennes, og derfor der verifisering er mulig. I tilfeller der identiteten som presenteres ikke samsvarer med alternativene ovenfor, eller der ingen identitet er presentert, alternativene gitt ovenfor blir irrelevante."
  "Hva er "enkelt-hit bypasser"?": "I noen tilfeller kan en positiv bekreftet forespørsel fortsatt blokkeres som et resultat av signaturfilene, modulene, eller andre forhold i forespørselen, og bypasser kan være nødvendig for å unngå falske positiver. I tilfellet der en bypass er ment å håndtere nøyaktig ett infraksjon, verken mer eller mindre, slik en bypass kan beskrives som en "enkelt-hit bypass"."
@@ -397,6 +399,12 @@ label_fmgr_total_disk_usage: "Totalt diskbruk:"
 label_fmgr_total_space: "Totalt diskplass:"
 label_fmgr_updates_metadata: "Komponentoppdateringsmetadata"
 label_hide: "Gjem"
+label_http_response_header_code_200: "200 OK\nMinst robust, men mest brukervennlig. Automatiserte forespørsler vil mest sannsynlig tolke dette svaret som en indikasjon på at forespørselen var vellykket."
+label_http_response_header_code_403: "403 Forbidden (Forbudt)\nMer robust, men mindre brukervennlig. Anbefalt for de fleste generelle forhold."
+label_http_response_header_code_410: "410 Gone (Borte)\nKan forårsake problemer når du løser falske positiver, fordi noen nettlesere vil bufre denne statusmeldingen og ikke sende påfølgende forespørsler, selv etter å ha blitt opphevet blokkeringen. Kan være den mest foretrukne i noen sammenhenger, for visse typer trafikk."
+label_http_response_header_code_418: "418 I'm a teapot (Jeg er en tekanne)\nRefererer til en aprilsnarr ({{Links.RFC2324}}). Svært usannsynlig å bli forstått av noen klient, bot, nettleser, eller annet. Tilbys for underholdning og bekvemmelighet, men anbefales ikke generelt."
+label_http_response_header_code_451: "451 Unavailable For Legal Reasons (Utilgjengelig av juridiske årsaker)\nAnbefales ved blokkering primært av juridiske årsaker. Anbefales ikke i andre sammenhenger."
+label_http_response_header_code_503: "503 Service Unavailable (Tjenesten er utilgjengelig)\nMest robust, men minst brukervennlig. Anbefalt for angrep, eller for ekstremt vedvarende uønsket trafikk."
 label_ignore: "Ignorere dette"
 label_installed_available: "Installert/Tilgjengelig"
 label_integrity_check: "Integritetskontroll:"

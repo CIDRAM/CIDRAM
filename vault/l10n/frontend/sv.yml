@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Swedish language data for the front-end (last modified: 2022.04.04).
+# This file: Swedish language data for the front-end (last modified: 2022.04.19).
 ##/
 
 Extended Description Bypasses: "Standard-signatur-bypass-filer som normalt ingår i huvudpaketet."
@@ -106,7 +106,7 @@ config_general_events: "Filer som listas här laddas direkt efter händelsehante
 config_general_fields: "Kontroller för fälten under blockhändelser (när en begäran blockeras)."
 config_general_force_hostname_lookup: "Tvinga värdnamnssökningar? True = Ja; False = Nej [Standard]. Värdnamnssökningar utförs normalt på grundval av nödvändighet, men kan tvingas för alla förfrågningar. Att göra det kan vara användbart som ett medel för att ge mer detaljerad information i loggarna, men kan också ha en något negativ effekt på prestanda."
 config_general_frontend_log: "Fil för att logga in alla försök till inloggningar på front-end. Ange ett filnamn, eller lämna tomt för att inaktivera."
-config_general_http_response_header_code: "Vilket HTTP-statusmeddelande ska CIDRAM skicka när blockering förfrågningar? (För mer information finns i dokumentationen)."
+config_general_http_response_header_code: "Vilket HTTP-statusmeddelande ska CIDRAM skicka när blockering förfrågningar?"
 config_general_ipaddr: "Var hittar du IP-adressen för anslutningsförfrågningar? (Användbar för tjänster som Cloudflare och liknande). Standard = REMOTE_ADDR. VARNING: Ändra inte detta om du inte vet vad du gör!"
 config_general_lang: "Ange standardspråk för CIDRAM."
 config_general_lang_override: "Lokalisera enligt HTTP_ACCEPT_LANGUAGE när det är möjligt? True = Ja [Standard]; False = Nej."
@@ -275,9 +275,11 @@ field_whitelisted_requests: "Vitlistade förfrågningar"
 field_your_version: "Din version"
 header_login: "Snälla logga in för att fortsätta."
 hints_asnlookup: "** Kräver ASN-uppslagsfunktion (t.ex., via BGPView-modulen)."
+hints_default_dns:
+ FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#WHAT_CAN_I_USE_FOR_DEFAULT_DNS" hreflang="en-AU">Vad kan jag använda för "default_dns"?</a></em>"
+hints_ipv6_on_32bit: "Obs: IPv6-sökningar kanske inte fungerar korrekt på vissa 32-bitarssystem."
 hints_pdo_dsn:
  FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#HOW_TO_USE_PDO" hreflang="en-AU">Vad är en "PDO DSN"? Hur kan jag använda PDO med CIDRAM?</a></em>"
-hints_ipv6_on_32bit: "Obs: IPv6-sökningar kanske inte fungerar korrekt på vissa 32-bitarssystem."
 hints_verification:
  "Vad är "positiva" och "negativa"?": "När verifiering identiteten som presenteras av en begäran, ett framgångsrikt resultat kan beskrivas som "positiv" eller "negativ". I det fall att den presenterade identiteten bekräftas vara den sanna identiteten, skulle den beskrivas som "positiv". I det fall att den presenterade identiteten bekräftas vara förfalskad, skulle den beskrivas som "negativ". Dock, ett misslyckat resultat (t.ex., verifiering misslyckas, eller det går inte att fastställa sanningshalten i den presenterade identiteten) skulle inte beskrivas som "positiv" eller "negativ". Istället skulle ett misslyckat resultat beskrivas som icke-verifierad. När inget försök att verifiera identiteten som presenteras av en begäran görs, begäran skulle också beskrivas som icke-verifierad. Termerna är meningsfulla endast i det sammanhang där identiteten som presenteras av en begäran erkänns, och därför, där verifiering är möjlig. I de fall där identiteten som presenteras inte matchar alternativen ovan, eller där ingen identitet presenteras, alternativen ovan blir irrelevanta."
  "Vad är "singel-hit bypasser"?": "I vissa fall kan en positivt verifierad begäran fortfarande blockeras som ett resultat av signaturfilerna, modulerna, eller andra villkor för begäran, och bypasser kan vara nödvändiga för att undvika falska positiva resultat. I det fall där en bypass är avsedd att hantera exakt en infraktion, varken mer eller mindre, sådan en bypass kan beskrivas som en "singel-hit bypass"."
@@ -397,6 +399,12 @@ label_fmgr_total_disk_usage: "Totalt diskanvändning:"
 label_fmgr_total_space: "Totalt diskutrymme:"
 label_fmgr_updates_metadata: "Komponentuppdateringsmetadata"
 label_hide: "Dölja"
+label_http_response_header_code_200: "200 OK\nMinst robust, men mest användarvänlig. Automatiserade förfrågningar kommer med största sannolikhet att tolka detta svar som en indikation på att begäran lyckades."
+label_http_response_header_code_403: "403 Forbidden (Förbjuden)\nMer robust, men mindre användarvänlig. Rekommenderas för de flesta allmänna omständigheter."
+label_http_response_header_code_410: "410 Gone (Borta)\nKan orsaka problem när man löser falska positiva resultat, eftersom vissa webbläsare cachelagrar detta statusmeddelande och inte skickar efterföljande förfrågningar, även efter att ha avblockerats. Kan vara det mest föredragna i vissa sammanhang, för vissa typer av trafik."
+label_http_response_header_code_418: "418 I'm a teapot (Jag är en tekanna)\nRefererar till ett aprilskämt ({{Links.RFC2324}}). Mycket osannolikt att förstås av någon klient, bot, webbläsare, eller annat. Tillhandahålls för underhållning och bekvämlighet, men rekommenderas inte generellt."
+label_http_response_header_code_451: "451 Unavailable For Legal Reasons (Inte tillgänglig av juridiska skäl)\nRekommenderas vid blockering främst av juridiska skäl. Rekommenderas inte i andra sammanhang."
+label_http_response_header_code_503: "503 Service Unavailable (Tjänsten är inte tillgänglig)\nMest robust, men minst användarvänlig. Rekommenderas för när under attacker, eller för extremt ihållande oönskad trafik."
 label_ignore: "Ignorera detta"
 label_installed_available: "Installerad/Tillgängliga"
 label_integrity_check: "Integritetskontroll:"

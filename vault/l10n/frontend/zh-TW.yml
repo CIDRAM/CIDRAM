@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (traditional) language data for the front-end (last modified: 2022.04.04).
+# This file: Chinese (traditional) language data for the front-end (last modified: 2022.04.19).
 ##/
 
 Extended Description Bypasses: "標準簽名旁路文件通常包括在主包。"
@@ -106,7 +106,7 @@ config_general_events: "此處列出的文件在事件處理程序文件之後�
 config_general_fields: "用於阻止事件的字段控件（當請求被阻止時）。"
 config_general_force_hostname_lookup: "強制主機名查找？​True（真）=跟踪；False（假）=不跟踪【標準】。​主機名查詢通常在『根據需要』的基礎上執行，但可以在所有請求上強制。​這可能會有助於提供日誌文件中更詳細的信息，但也可能會對性能產生輕微的負面影響。"
 config_general_frontend_log: "前端登錄嘗試的錄音文件。​指定一個文件名，​或留空以禁用。"
-config_general_http_response_header_code: "阻止請求時，CIDRAM應發送哪個HTTP狀態消息？ （請參閱文檔以獲取更多信息）。"
+config_general_http_response_header_code: "阻止請求時，CIDRAM應發送哪個HTTP狀態消息？"
 config_general_ipaddr: "在哪裡可以找到連接請求IP地址？​（可以使用為服務例如Cloudflare和類似）。​標準 = REMOTE_ADDR。​警告：不要修改此除非您知道什麼您做著！"
 config_general_lang: "指定標準CIDRAM語言。"
 config_general_lang_override: "盡可能根據HTTP_ACCEPT_LANGUAGE進行本地化？True（真）=進行本地化【標準】；False（假）=不要本地化。"
@@ -275,9 +275,11 @@ field_whitelisted_requests: "在白名單中的請求"
 field_your_version: "您的版本"
 header_login: "請登錄以繼續。"
 hints_asnlookup: "** 需要ASN查找功能（例如，通過BGPView模塊）。"
+hints_default_dns:
+ 常問問題。: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.zh-tw.md\#WHAT_CAN_I_USE_FOR_DEFAULT_DNS" hreflang="zh-TW">在『default_dns』中我可以使用什麼？</a></em>"
+hints_ipv6_on_32bit: "注意：IPv6查找在某些32位系統上可能無法正常工作。"
 hints_pdo_dsn:
  常問問題。: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.zh-tw.md\#HOW_TO_USE_PDO" hreflang="zh-TW">『PDO DSN』是什麼？如何能PDO與CIDRAM一起使用？</a></em>"
-hints_ipv6_on_32bit: "注意：IPv6查找在某些32位系統上可能無法正常工作。"
 hints_verification:
  "什麼是『陽性』和『陰性』？": "在驗證請求提供的身份時，成功的結果可以描述為『陽性』或『陰性』。​當所呈現的身份被確認為真實身份時，將被描述為『陽性』。​當所提供的身份被證實為偽造時，將被描述為『陰性』。​但是，不成功的結果（例如，驗證失敗，或無法確定所提供身份的真實性）不會被描述為『陽性』或『陰性』。​相反，不成功的結果將被簡單地描述為未驗證。​當沒有嘗試驗證請求提供的身份時，該請求同樣會被描述為未驗證。​這些術語僅在請求提供的身份被識別的情況下才有意義，因此，在可以進行驗證的情況下。​如果提供的身份與上面提供的選項不匹配，或者沒有提供身份，則上面提供的選項變得無關。"
  "什麼是『一擊繞過』？": "在某些情況下，由於簽名文件、模塊、或請求的其他條件，可能仍會阻止經過肯定驗證的請求，為了避免誤報，可能需要繞過。​在繞過旨在處理僅一項違規行為的情況下，這樣的繞過可以被描述為『一擊繞過』。"
@@ -394,6 +396,12 @@ label_fmgr_total_disk_usage: "總共使用的磁盤空間："
 label_fmgr_total_space: "總磁盤空間："
 label_fmgr_updates_metadata: "組件更新元數據"
 label_hide: "隱藏"
+label_http_response_header_code_200: "200 OK （好的）\n最不健壯，但最用戶友好。​自動請求很可能將此響應解釋為成功。"
+label_http_response_header_code_403: "403 Forbidden （禁止的）\n更健壯，但不太用戶友好。​一般最推薦的。"
+label_http_response_header_code_410: "410 Gone （走了）\n解決假陽性時可能會導致問題，因為某些瀏覽器會緩存此狀態消息並且不會發送後續請求，即使在被解除阻止後也是如此。​在某些情況下可能是最可取的。"
+label_http_response_header_code_418: "418 I'm a teapot （我是一個茶壺）\n引用愚人節的笑話【{{Links.RFC2324}}】。​任何客戶端、機器人、瀏覽器、或其他方式都不太可能理解。​它是為了娛樂和方便而提供的，但是通常不推薦。"
+label_http_response_header_code_451: "451 Unavailable For Legal Reasons （因法律原因不可用）\n主要出於法律原因被阻止時推薦。​不推薦在其他情況下。"
+label_http_response_header_code_503: "503 Service Unavailable （服務不可用）\n最健壯，但最不用戶友好。​推薦用於受到攻擊，或處理極其持久的有害流量時。"
 label_ignore: "忽略這個"
 label_installed_available: "已安裝/可用"
 label_integrity_check: "完整性檢查："

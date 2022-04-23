@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Indonesian language data for the front-end (last modified: 2022.04.04).
+# This file: Indonesian language data for the front-end (last modified: 2022.04.19).
 ##/
 
 Extended Description Bypasses: "File untuk bypass tanda tangan standar yang biasanya disertakan dengan paket utama."
@@ -106,7 +106,7 @@ config_general_events: "File yang terdaftar disini dimuat langsung setelah file 
 config_general_fields: "Kontrol untuk bidang selama acara blokir (ketika permintaan diblokir)."
 config_general_force_hostname_lookup: "Memaksa periksa untuk nama host? True = Ya; False = Tidak [Default]. Periksa untuk nama host biasanya dilakukan pada dasar "sesuai kebutuhan", tapi bisa dipaksakan untuk semua permintaan. Melakukan hal tersebut mungkin berguna sebagai sarana untuk memberikan informasi lebih rinci di log, tapi mungkin juga memiliki sedikit efek negatif pada kinerja."
 config_general_frontend_log: "File untuk mencatat upaya masuk bagian depan. Spesifikasikan nama file, atau biarkan kosong untuk menonaktifkan."
-config_general_http_response_header_code: "Pesan status HTTP mana yang harus dikirim oleh CIDRAM ketika memblokir permintaan? (Lihat dokumentasi untuk informasi lebih lanjut)."
+config_general_http_response_header_code: "Pesan status HTTP mana yang harus dikirim oleh CIDRAM ketika memblokir permintaan?"
 config_general_ipaddr: "Dimana menemukan alamat IP dari permintaan alamat? (Bergunak untuk pelayanan-pelayanan seperti Cloudflare dan sejenisnya). Default = REMOTE_ADDR. PERINGATAN: Jangan ganti ini kecuali Anda tahu apa yang Anda lakukan!"
 config_general_lang: "Tentukan bahasa default untuk CIDRAM."
 config_general_lang_override: "Melokalisasikan sesuai dengan HTTP_ACCEPT_LANGUAGE jika memungkinkan? True = Ya [Default]; False = Tidak."
@@ -275,9 +275,11 @@ field_whitelisted_requests: "Permintaan yang masuk daftar putih"
 field_your_version: "Versi Anda"
 header_login: "Silahkan masuk untuk melanjutkan."
 hints_asnlookup: "** Memerlukan fungsionalitas pencarian ASN (misalnya, melalui modul BGPView)."
+hints_default_dns:
+ FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.id.md\#WHAT_CAN_I_USE_FOR_DEFAULT_DNS" hreflang="id">Apa yang bisa saya gunakan untuk "default_dns"?</a></em>"
+hints_ipv6_on_32bit: "Catatan: Pencarian IPv6 mungkin tidak bekerja dengan benar pada beberapa sistem 32-bit."
 hints_pdo_dsn:
  FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.id.md\#HOW_TO_USE_PDO" hreflang="id">Apa itu "PDO DSN"? Bagaimana saya bisa menggunakan PDO dengan CIDRAM?</a></em>"
-hints_ipv6_on_32bit: "Catatan: Pencarian IPv6 mungkin tidak bekerja dengan benar pada beberapa sistem 32-bit."
 hints_verification:
  "Apa itu "positif" dan "negatif"?": "Saat memverifikasi identitas yang disajikan oleh permintaan, hasil yang berhasil dapat digambarkan sebagai "positif" atau "negatif". Ketika identitas yang disajikan dikonfirmasi sebagai identitas sebenarnya, itu akan digambarkan sebagai "positif". Ketika identitas yang disajikan dikonfirmasi untuk dipalsukan, itu akan digambarkan sebagai "negatif". Namun, hasil yang tidak berhasil (misalnya, verifikasi gagal, atau kebenaran identitas yang disajikan tidak dapat ditentukan) tidak akan digambarkan sebagai "positif" atau "negatif". Sebaliknya, hasil yang tidak berhasil akan digambarkan sebagai tidak diverifikasi. Ketika tidak ada upaya untuk memverifikasi identitas yang disajikan oleh permintaan, permintaan tersebut juga akan digambarkan sebagai tidak diverifikasi. Istilah tersebut masuk akal hanya dalam konteks dimana identitas yang disajikan oleh permintaan dikenali, dan jadi, dimana verifikasi dimungkinkan. Jika identitas yang disajikan tidak sesuai dengan opsi yang diberikan di atas, atau jika tidak ada identitas yang disajikan, opsi yang diberikan di atas menjadi tidak relevan."
  "Apa itu "bypass satu pelanggaran"?": "Dalam beberapa kasus, permintaan diverifikasi secara positif mungkin masih diblokir sebagai akibat dari file tanda tangan, modul, atau kondisi permintaan lainnya, dan bypass mungkin diperlukan untuk menghindari positif palsu. Dalam kasus dimana bypass dimaksudkan untuk menangani tepat satu pelanggaran, tidak lebih dan tidak kurang, bypass seperti itu dapat digambarkan sebagai "bypass satu pelanggaran"."
@@ -393,6 +395,12 @@ label_fmgr_total_disk_usage: "Penggunaan disk total:"
 label_fmgr_total_space: "Ruang disk total:"
 label_fmgr_updates_metadata: "Komponen memperbarui metadata"
 label_hide: "Menyembunyikan"
+label_http_response_header_code_200: "200 OK\nPaling tidak kuat, tetapi paling ramah-pengguna. Permintaan otomatis kemungkinan besar akan menafsirkan respons ini sebagai indikasi bahwa permintaan berhasil."
+label_http_response_header_code_403: "403 Forbidden (Terlarang)\nLebih kuat, tetapi kurang ramah-pengguna. Direkomendasikan untuk kebanyakan keadaan umum."
+label_http_response_header_code_410: "410 Gone (Dipergi)\nDapat menyebabkan masalah saat menyelesaikan kesalahan positif, karena beberapa browser akan menyimpan pesan status ini di cache dan tidak mengirim permintaan berikutnya, bahkan setelah diblokir. Mungkin yang paling disukai dalam beberapa konteks, untuk jenis lalu lintas tertentu."
+label_http_response_header_code_418: "418 I'm a teapot (Saya adalah teko)\nReferensi pada lelucon April Mop ({{Links.RFC2324}}). Probabilitas rendah bahwa akan dipahami oleh klien, bot, browser, atau lainnya. Disediakan untuk hiburan dan kenyamanan, tetapi umumnya tidak direkomendasikan."
+label_http_response_header_code_451: "451 Unavailable For Legal Reasons (Tidak tersedia karena alasan hukum)\nDirekomendasikan saat memblokir terutama karena alasan hukum. Tidak direkomendasikan dalam konteks lain."
+label_http_response_header_code_503: "503 Service Unavailable (Layanan tidak tersedia)\nPaling kuat, tetapi paling tidak ramah-pengguna. Direkomendasikan untuk saat diserang, atau saat berhadapan dengan lalu lintas yang tidak diinginkan yang sangat persisten."
 label_ignore: "Abaikan ini"
 label_installed_available: "Diinstal/Tersedia"
 label_integrity_check: "Pemeriksaan integritas:"

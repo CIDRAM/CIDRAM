@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Vietnamese language data for the front-end (last modified: 2022.04.04).
+# This file: Vietnamese language data for the front-end (last modified: 2022.04.19).
 ##/
 
 Extended Description Bypasses: "Các tập tin đường tránh chữ ký mặc định thường bao gồm với gói thầu chính."
@@ -106,7 +106,7 @@ config_general_events: "Các tập tin được liệt kê ở đây được t�
 config_general_fields: "Kiểm soát các trường trong các sự kiện khối (khi một yêu cầu bị chặn)."
 config_general_force_hostname_lookup: "Thực hiện tìm kiếm tên máy chủ cho tất cả các yêu cầu? True = Vâng; False = Không [Mặc định]. Tìm kiếm tên máy chủ thường được thực hiện trên cơ sở cần thiết, nhưng có thể được thực hiện cho tất cả các yêu cầu. Điều này có thể hữu ích như một phương tiện cung cấp thông tin chi tiết hơn trong các tập tin đăng nhập, nhưng cũng có thể có tác động tiêu cực đến hiệu suất."
 config_general_frontend_log: "Tập tin cho ghi cố gắng đăng nhập front-end. Chỉ định một tên tập tin, hoặc để trống để vô hiệu hóa."
-config_general_http_response_header_code: "Những gì thông báo trạng thái HTTP mà CIDRAM nên gửi khi yêu cầu bị chặn? (Tham khảo tài liệu để biết thêm thông tin)."
+config_general_http_response_header_code: "Những gì thông báo trạng thái HTTP mà CIDRAM nên gửi khi yêu cầu bị chặn?"
 config_general_ipaddr: "Nơi để tìm địa chỉ IP của các yêu cầu kết nối? (Hữu ích cho các dịch vụ như Cloudflare và vv). Mặc định = REMOTE_ADDR. CẢNH BÁO: Không thay đổi này, trừ khi bạn biết những gì bạn đang làm!"
 config_general_lang: "Xác định tiếng mặc định cho CIDRAM."
 config_general_lang_override: "Bản địa hóa theo HTTP_ACCEPT_LANGUAGE bất cứ khi nào có thể? True = Vâng [Mặc định]; False = Không."
@@ -275,9 +275,11 @@ field_whitelisted_requests: "Yêu cầu trong danh sách trắng"
 field_your_version: "Phiên bản của bạn"
 header_login: "Vui lòng đăng nhập để tiếp tục."
 hints_asnlookup: "** Yêu cầu chức năng tra cứu ASN (v.d., thông qua mô-đun BGPView)."
+hints_default_dns:
+ Câu hỏi thường gặp.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.vi.md\#WHAT_CAN_I_USE_FOR_DEFAULT_DNS" hreflang="vi">Những gì tôi có thể sử dụng cho "default_dns"?</a></em>"
+hints_ipv6_on_32bit: "Lưu ý: Tra cứu IPv6 có thể không hoạt động chính xác trên một số hệ thống 32 bit."
 hints_pdo_dsn:
  Câu hỏi thường gặp.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.vi.md\#HOW_TO_USE_PDO" hreflang="vi">"PDO DSN" là gì? Làm cách nào tôi có thể sử dụng PDO với CIDRAM?</a></em>"
-hints_ipv6_on_32bit: "Lưu ý: Tra cứu IPv6 có thể không hoạt động chính xác trên một số hệ thống 32 bit."
 hints_verification:
  ""Tích cực" và "tiêu cực" là gì?": "Khi xác minh danh tính được trình bày bởi một yêu cầu, kết quả thành công có thể được mô tả là "tích cực" hoặc "tiêu cực". Trong trường hợp danh tính được trình bày được xác nhận là danh tính thực, danh tính đó sẽ được mô tả là "tích cực". Trong trường hợp danh tính được trình bày được xác nhận là giả mạo, danh tính đó sẽ được mô tả là "tiêu cực". Tuy nhiên, kết quả không thành công (ví dụ: xác minh không thành công, hoặc không thể xác định tính xác thực của danh tính được trình bày) sẽ không được mô tả là "tích cực" hoặc "tiêu cực". Thay vào đó, một kết quả không thành công sẽ được mô tả đơn giản là chưa được xác minh. Khi không có nỗ lực xác minh danh tính mà một yêu cầu đưa ra được thực hiện, thì yêu cầu đó cũng sẽ được mô tả là chưa được xác minh. Các điều khoản chỉ có ý nghĩa trong bối cảnh mà danh tính được trình bày bởi một yêu cầu được công nhận và do đó, khi có thể xác minh. Trong trường hợp danh tính được trình bày không khớp với các tùy chọn được cung cấp ở trên, hoặc khi không có danh tính nào được trình bày, các tùy chọn được cung cấp ở trên trở nên không liên quan."
  ""Bỏ qua một cú đánh" là gì?": "Trong một số trường hợp, yêu cầu đã được xác minh tích cực vẫn có thể bị chặn do tập tin chữ ký, mô-đun, hoặc các điều kiện khác của yêu cầu, và bỏ qua có thể cần thiết để tránh sai tích cực. Trong trường hợp sai tích cực gây ra chính xác một vi phạm, một bỏ qua như vậy có thể được mô tả là "bỏ qua một cú đánh"."
@@ -393,6 +395,12 @@ label_fmgr_total_disk_usage: "Số lượng sử dụng đĩa trong tổng số:
 label_fmgr_total_space: "Số lượng không gian đĩa trong tổng số:"
 label_fmgr_updates_metadata: "Siêu dữ liệu cho cập nhật thành phần"
 label_hide: "Che giấu"
+label_http_response_header_code_200: "200 OK\nKhông mạnh mẽ, nhưng thân thiện với người dùng nhất. Các yêu cầu tự động rất có thể sẽ diễn giải phản hồi này là dấu hiệu cho thấy yêu cầu đã thành công."
+label_http_response_header_code_403: "403 Forbidden (Bị cấm)\nHơi mạnh mẽ, và thân thiện với người dùng. Được đề xuất cho hầu hết các trường hợp chung."
+label_http_response_header_code_410: "410 Gone (Đã biến mất)\nCó thể gây ra sự cố khi giải quyết các sai tích cực, vì một số trình duyệt sẽ lưu vào bộ nhớ cache thông báo trạng thái này và không gửi các yêu cầu tiếp theo, ngay cả khi đã được bỏ chặn. Có thể thích hợp nhất trong một số ngữ cảnh, đối với một số loại lưu lượng truy cập nhất định."
+label_http_response_header_code_418: "418 I'm a teapot (Tôi là một ấm trà)\nĐiều này đề cập đến một trò đùa ngày cá tháng tư ({{Links.RFC2324}}). Rất khó có thể được hiểu bởi bất kỳ ứng dụng khách, bot, trình duyệt, hoặc cách nào khác. Được cung cấp để giải trí và tiện lợi, nhưng thường không được khuyến khích."
+label_http_response_header_code_451: "451 Unavailable For Legal Reasons (Không có sẵn vì lý do pháp lý)\nĐược đề xuất khi chặn chủ yếu vì lý do pháp lý. Không được khuyến khích trong các ngữ cảnh khác."
+label_http_response_header_code_503: "503 Service Unavailable (Dịch vụ không sẵn có)\nMạnh mẽ nhất, nhưng không thân thiện với người dùng. Được đề xuất khi bị tấn công, hoặc khi xử lý lưu lượng truy cập không mong muốn và cực kỳ dai dẳng."
 label_ignore: "Bỏ qua điều này"
 label_installed_available: "Được cài đặt / Có sẵn"
 label_integrity_check: "Kiểm tra tính toàn vẹn:"

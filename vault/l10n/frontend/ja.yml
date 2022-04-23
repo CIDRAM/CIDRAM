@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Japanese language data for the front-end (last modified: 2022.04.04).
+# This file: Japanese language data for the front-end (last modified: 2022.04.19).
 ##/
 
 Extended Description Bypasses: "メインパッケージに通常含まれているデフォルト・シグネチャ・バイパス。"
@@ -106,7 +106,7 @@ config_general_events: "ここにリストされているファイルは、イ�
 config_general_fields: "ブロック・イベント中のために、フィールドのコントロールです （リクエストがブロックされたとき）。"
 config_general_force_hostname_lookup: "ホスト名検索を強制しますか？ True = はい。 False = いいえ（Default/デフォルルト）。​ホスト名検索は、通常、「必要に応じて」実行されますが、すべてのリクエストに対して強制することができます。​これは、より詳細な情報をログ・ファイルに提供する手段として有用ですが、パフォーマンスに多少の悪影響を及ぼすこともあります。"
 config_general_frontend_log: "フロントエンド・ログインの試みを記録するためのファイル。​ファイル名指定するか、​無効にしたい場合は空白のままにして下さい。"
-config_general_http_response_header_code: "リクエストをブロックするときに、CIDRAMが送信するＨＴＴＰステータス・メッセージはどれですか？​（詳細については、ドキュメントを参照してください）。"
+config_general_http_response_header_code: "リクエストをブロックするときに、CIDRAMが送信するＨＴＴＰステータス・メッセージはどれですか？"
 config_general_ipaddr: "接続リクエストのＩＰアドレスをどこで見つけるべきかについて（Cloudflareのようなサービスに対して有効）。​Default（デフォルト設定） = REMOTE_ADDR。​注意：あなたが何をしているのか、​分からない限り、​これを変更しないでください。"
 config_general_lang: "CIDRAMのデフォルト言語を設定します。"
 config_general_lang_override: "可能な限り「HTTP_ACCEPT_LANGUAGE」に従ってローカライズしますか？ True = はい（Default/デフォルルト）。 False = いいえ。"
@@ -275,9 +275,11 @@ field_whitelisted_requests: "ホワイトリストに登録されたリクエス
 field_your_version: "お使いのバージョン"
 header_login: "継続するには、​ログインしてください。"
 hints_asnlookup: "** ＡＳＮルックアップ機能が必要です（たとえば、BGPViewモジュールを介して）。"
+hints_default_dns:
+ ＦＡＱ。: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.ja.md\#WHAT_CAN_I_USE_FOR_DEFAULT_DNS" hreflang="ja">「default_dns」には何が使えますか？</a></em>"
+hints_ipv6_on_32bit: "注：一部の３２ビットシステムでは、ＩＰｖ６ルックアップが正しく機能しない場合があります。"
 hints_pdo_dsn:
  ＦＡＱ。: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.ja.md\#HOW_TO_USE_PDO" hreflang="ja">「PDO DSN」とは何ですか？​CIDRAMでPDOを使用するにはどうすればよいですか？</a></em>"
-hints_ipv6_on_32bit: "注：一部の３２ビットシステムでは、ＩＰｖ６ルックアップが正しく機能しない場合があります。"
 hints_verification:
  "「陽性」と「陰性」とは何ですか？": "リクエストによって提示されたＩＤを検証する場合、成功した結果は「陽性」または「陰性」と記述できます。​提示されたＩＤが真のＩＤであることが確認された場合、「陽性」と記述されます。​提示されたＩＤが偽物であることが確認された場合、「陰性」と記述されます。​ただし、失敗した結果（たとえば、検証が失敗した、または提示されたＩＤの信憑性を判断できない）は、「陽性」または「陰性」とは記述れません。​代わりに、失敗した結果は単に未確認として記述されます。​リクエストによって提示されたＩＤを検証する試みが行われない場合、リクエストは同様に未検証として記述されます。​この用語は、リクエストによって提示されたＩＤが認識されるコンテキストでのみ意味があります（したがって、検証が可能な場合）。​提示されたＩＤが上記のオプションと一致しない場合、またはＩＤが提示されていない場合、上記のオプションは無関係になります。"
  "「シングル・ヒット・バイパス」とは何ですか？": "場合によっては、シグネチャ・ファイル、モジュール、またはリクエストの他の条件の結果として、肯定的に検証されたリクエストがブロックされることがあります、誤検知を回避するためにバイパスが必要になる場合があります。​バイパスが正確に一つの違反を処理することを目的としている場合、そのようなバイパスは「シングル・ヒット・バイパス」として記述できます。"
@@ -393,6 +395,12 @@ label_fmgr_total_disk_usage: "ディスク使用量の合計："
 label_fmgr_total_space: "ディスク容量の合計："
 label_fmgr_updates_metadata: "コンポーネント・アップデート・メタデータ"
 label_hide: "隠す"
+label_http_response_header_code_200: "200 OK （大丈夫です）\nそれは最小の堅牢が、最もユーザー・フレンドリーです。 自動化されたリクエストは、この応答をリクエストが成功したことを示すものとして解釈する可能性があります。"
+label_http_response_header_code_403: "403 Forbidden （禁断）\nそれはもっと堅牢ですが、少ないユーザー・フレンドリーです。 ほとんどの場合に推奨されます。"
+label_http_response_header_code_410: "410 Gone （なくなっています）\n一部のブラウザは、ブロックが解除された後でも、このステータス・メッセージをキャッシュし、後続のリクエストを送信しないため、偽陽性を解決するときに問題が発生する可能性があります。 特定の種類のトラフィックでは、状況によっては最も望ましい場合があります。"
+label_http_response_header_code_418: "418 I'm a teapot （私はティーポットです）\nエイプリル・フールのジョークを参照しています（{{Links.RFC2324}}）。 クライアント、ボット、ブラウザ、などに理解される可能性はほとんどありません。 娯楽と利便性のために提供されていますが、一般的にはお勧めしません。"
+label_http_response_header_code_451: "451 Unavailable For Legal Reasons （法的な理由で利用できません）\n主に法的な理由でブロックする場合に推奨されます。 他のコンテキストでは推奨されません。"
+label_http_response_header_code_503: "503 Service Unavailable （サービスは利用できません）\nそれは最も堅牢が、最小のユーザー・フレンドリーです。 攻撃を受けている場合、または非常に永続的な不要なトラフィックを処理する場合に推奨されます。"
 label_ignore: "これを無視する"
 label_installed_available: "インストールされている/利用可能です"
 label_integrity_check: "整合性チェック："

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Latvian language data for the front-end (last modified: 2022.04.04).
+# This file: Latvian language data for the front-end (last modified: 2022.04.19).
 ##/
 
 Extended Description Bypasses: "Noklusējuma paraksta apiešana faili, kas parasti ir iekļauti galvenajā paketē."
@@ -106,7 +106,7 @@ config_general_events: "Šeit uzskaitītie faili tiek ielādēti tūlīt pēc no
 config_general_fields: "Kontroles mehānisms laukiem bloka notikumu laikā (kad pieprasījums ir bloķēts)."
 config_general_force_hostname_lookup: "Force hostname lookups? True (Patiess) = Jā; False (Nepatiess) = Nē [Noklusējuma]. Hostname lookups are normally performed on an "as needed" basis, but can be forced for all requests. Doing so may be useful as a means of providing more detailed information in the logfiles, but may also have a slightly negative effect on performance."
 config_general_frontend_log: "Fails ielogošanās mēģinājumu reģistrēšanai. Norādiet faila nosaukumu, vai atstājiet tukšu, lai to atspējotu."
-config_general_http_response_header_code: "Kurš HTTP statusa ziņojums būtu jāsūta CIDRAM, bloķējot pieprasījumus? (Papildinformāciju skatiet dokumentācijā)."
+config_general_http_response_header_code: "Kurš HTTP statusa ziņojums būtu jāsūta CIDRAM, bloķējot pieprasījumus?"
 config_general_ipaddr: "Kur atrast savienojošo pieprasījumu IP adresi? (Noderīga tādiem pakalpojumiem kā Cloudflare un tamlīdzīgi). Noklusējuma = REMOTE_ADDR. BRĪDINĀJUMS: Nemainiet to, ja vien nezināt, ko darāt!"
 config_general_lang: "Norādiet CIDRAM noklusējuma valodu."
 config_general_lang_override: "Ja iespējams, lokalizēt saskaņā ar HTTP_ACCEPT_LANGUAGE? True (Patiess) = Jā [Noklusējuma]; False (Nepatiess) = Nē."
@@ -278,9 +278,11 @@ field_whitelisted_requests: "Baltajā sarakstā iekļautie pieprasījumi"
 field_your_version: "Jūsu Versija"
 header_login: "Lūdzu, ielogoties, lai turpinātu."
 hints_asnlookup: "** Nepieciešama ASN uzmeklēšanas funkcionalitāte (piemēram, izmantojot BGPView moduli)."
+hints_default_dns:
+ FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#WHAT_CAN_I_USE_FOR_DEFAULT_DNS" hreflang="en-AU">Ko es varu izmantot “default_dns”-m?</a></em>"
+hints_ipv6_on_32bit: "Piezīme: Dažās 32 bitu sistēmās IPv6 meklēšana var nedarboties pareizi."
 hints_pdo_dsn:
  FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#HOW_TO_USE_PDO" hreflang="en-AU">Kas ir "PDO DSN"? Kā es varu izmantot PDO ar CIDRAM?</a></em>"
-hints_ipv6_on_32bit: "Piezīme: Dažās 32 bitu sistēmās IPv6 meklēšana var nedarboties pareizi."
 hints_verification:
  "Kas ir “pozitīvie” un “negatīvie”?": "Pārbaudot pieprasījuma sniegto identitāti, veiksmīgu rezultātu var raksturot kā “pozitīvu” vai “negatīvu”. Kad uzrādītā identitāte tiek apstiprināta kā patiesā identitāte, tā tiks raksturota kā “pozitīva”. Kad tiek apstiprināts, ka uzrādītā identitāte ir viltota, tā tiks raksturota kā “negatīva”. Tomēr, neveiksmīgs iznākums (piemēram, verifikācija neizdodas, vai uzrādītās identitātes patiesumu nevar noteikt) netiks raksturota kā “pozitīvu” vai “negatīvu”. Tā vietā neveiksmīgs rezultāts tiktu raksturots vienkārši kā nepārbaudīts. Ja netiek mēģināts pārbaudīt pieprasījumā norādīto identitāti, pieprasījums tāpat tiks raksturots kā nepārbaudīts. Terminiem ir jēga tikai kontekstā, kurā tiek atpazīta pieprasījumā norādītā identitāte un līdz ar to, ja ir iespējama pārbaude. Ja uzrādītā identitāte neatbilst iepriekš sniegtajām opcijām, vai ja identitāte nav uzrādīta, iepriekš sniegtās iespējas kļūst nepiemērojams."
  "Kas ir “viena trāpījuma apvedceļi”?": "Dažos gadījumos pozitīvi pārbaudīts pieprasījums joprojām var tikt bloķēts paraksta failu, moduļu, vai citu pieprasījuma nosacījumu dēļ, un var būt nepieciešami apvedceļi, lai izvairītos no viltus pozitīviem rezultātiem. Ja apvedceļš ir paredzēts, lai tiktu galā ar tieši vienu pārkāpumu, ne vairāk un ne mazāk, šādu apvedceļu varētu raksturot kā “viena trāpījuma apvedceļu”."
@@ -402,6 +404,12 @@ label_fmgr_total_disk_usage: "Kopējais diska lietojums:"
 label_fmgr_total_space: "Kopējā diska vieta:"
 label_fmgr_updates_metadata: "Metadati komponentu atjauninājumiem"
 label_hide: "Slēpt"
+label_http_response_header_code_200: "200 OK (Labi)\nVismaz izturīgs, bet lietotājam draudzīgākais. Automātiskie pieprasījumi, visticamāk, interpretēs šo atbildi kā norādi, ka pieprasījums bija veiksmīgs."
+label_http_response_header_code_403: "403 Forbidden (Aizliegts)\nIzturīgāks, bet mazāk lietotājam draudzīgs. Ieteicams vairumam vispārīgu apstākļu."
+label_http_response_header_code_410: "410 Gone (Pagājis)\nVar rasties problēmas, mēģinot atrisināt viltus pozitīvus, jo dažas pārlūkprogrammas saglabās šo statusa ziņojumu kešatmiņā un nesūtīs turpmākos pieprasījumus pat pēc atbloķēšanas. Dažos kontekstos, noteiktiem satiksmes veidiem, tas var būt vispiemērotākais."
+label_http_response_header_code_418: "418 I'm a teapot (Es esmu tējkanna)\nAtsauces uz 1. aprīļa joku ({{Links.RFC2324}}). Ļoti maz ticams, ka to sapratīs neviens klients, robotprogrammatūra, pārlūkprogramma, vai kas cits. Paredzēts izklaidei un ērtībām, bet parasti nav ieteicams."
+label_http_response_header_code_451: "451 Unavailable For Legal Reasons (Nav pieejams juridisku iemeslu dēļ)\nIeteicams, bloķējot galvenokārt juridisku iemeslu dēļ. Nav ieteicams citos kontekstos."
+label_http_response_header_code_503: "503 Service Unavailable (Pakalpojums nav pieejams)\nVisizturīgākais, bet vismazāk lietotājam draudzīgs. Ieteicams gadījumiem, kad tiek pakļauts uzbrukumam, vai gadījumos, kad tiek risināta ļoti pastāvīga nevēlama satiksme."
 label_ignore: "Ignorēt šo"
 label_installed_available: "Instalēts/Pieejams"
 label_integrity_check: "Integritātes pārbaude:"

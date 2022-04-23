@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: English language data for the front-end (last modified: 2022.04.04).
+# This file: English language data for the front-end (last modified: 2022.04.19).
 ##/
 
 Extended Description Bypasses: "The default signature bypass files normally included with the main package."
@@ -106,7 +106,7 @@ config_general_events: "Files listed here are loaded directly after the event ha
 config_general_fields: "Controls for the fields during block events (when a request is blocked)."
 config_general_force_hostname_lookup: "Force hostname lookups? True = Yes; False = No [Default]. Hostname lookups are normally performed on an "as needed" basis, but can be forced for all requests. Doing so may be useful as a means of providing more detailed information in the logfiles, but may also have a slightly negative effect on performance."
 config_general_frontend_log: "File for logging front-end login attempts. Specify a filename, or leave blank to disable."
-config_general_http_response_header_code: "Which HTTP status message should CIDRAM send when blocking requests? (Refer to the documentation for more information)."
+config_general_http_response_header_code: "Which HTTP status message should CIDRAM send when blocking requests?"
 config_general_ipaddr: "Where to find the IP address of connecting requests? (Useful for services such as Cloudflare and the likes). Default = REMOTE_ADDR. WARNING: Don't change this unless you know what you're doing!"
 config_general_lang: "Specify the default language for CIDRAM."
 config_general_lang_override: "Localise according to HTTP_ACCEPT_LANGUAGE whenever possible? True = Yes [Default]; False = No."
@@ -277,11 +277,12 @@ field_whitelisted_requests: "Whitelisted requests"
 field_your_version: "Your Version"
 header_login: "Please log in to continue."
 hints_asnlookup: "** Requires ASN lookup functionality (e.g., via the BGPView module)."
+hints_default_dns:
+ FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#WHAT_CAN_I_USE_FOR_DEFAULT_DNS" hreflang="en-AU">What can I use for "default_dns"?</a></em>"
+hints_ipv6_on_32bit: "Note: IPv6 lookups mightn't work correctly on some 32-bit systems."
 hints_pdo_dsn:
  FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#HOW_TO_USE_PDO" hreflang="en-AU">What is a "PDO DSN"? How can I use PDO with CIDRAM?</a></em>"
-hints_ipv6_on_32bit: "Note: IPv6 lookups mightn't work correctly on some 32-bit systems."
 hints_verification:
-
  "What are "positives" and "negatives"?": "When verifying the identity presented by a request, a successful outcome could be described as "positive" or "negative". In the case that the identity presented is confirmed to be the true identity, it would be described as "positive". In the case that the identity presented is confirmed to be falsified, it would be described as "negative". However, an unsuccessful outcome (e.g., verification fails, or the veracity of the identity presented isn't able to be determined) would not be described as "positive" or "negative". Instead, an unsuccessful outcome would be described simply as non-verified. When no attempt to verify the identity presented by a request is made, the request would be likewise be described as non-verified. The terms make sense only in the context where the identity presented by a request is recognised, and therefore, where verification is possible. In cases where the identity presented doesn't match the options provided above, or where no identity is presented, the options provided above become irrelevant."
  "What are "single-hit bypasses"?": "In some cases, a positive-verified request may still blocked as a result of the signature files, modules, or other conditions of the request, and bypasses may be necessary in order to avoid false positives. In the case where a bypass is intended to deal with exactly one infraction, no more and no less, such a bypass could be described as a "single-hit bypass"."
 info_some_useful_links: |
@@ -400,6 +401,12 @@ label_fmgr_total_disk_usage: "Total disk usage:"
 label_fmgr_total_space: "Total disk space:"
 label_fmgr_updates_metadata: "Component updates metadata"
 label_hide: "Hide"
+label_http_response_header_code_200: "200 OK\nLeast robust, but most user-friendly. Automated requests will most likely interpret this response as indication that the request was successful."
+label_http_response_header_code_403: "403 Forbidden\nMore robust, but less user-friendly. Recommended for most general circumstances."
+label_http_response_header_code_410: "410 Gone\nCould cause problems when resolving false positives, because some browsers will cache this status message and not send subsequent requests, even after having been unblocked. May be the most preferable in some contexts, for certain kinds of traffic."
+label_http_response_header_code_418: "418 I'm a teapot\nReferences an April Fools' joke ({{Links.RFC2324}}). Very unlikely to be understood by any client, bot, browser, or otherwise. Provided for amusement and convenience, but not generally recommended."
+label_http_response_header_code_451: "451 Unavailable For Legal Reasons\nRecommended when blocking primarily for legal reasons. Not recommended in other contexts."
+label_http_response_header_code_503: "503 Service Unavailable\nMost robust, but least user-friendly. Recommended for when under attack, or for when dealing with extremely persistent unwanted traffic."
 label_ignore: "Ignore this"
 label_installed_available: "Installed/Available"
 label_integrity_check: "Integrity check:"

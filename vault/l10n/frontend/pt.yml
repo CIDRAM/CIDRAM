@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Portuguese language data for the front-end (last modified: 2022.04.04).
+# This file: Portuguese language data for the front-end (last modified: 2022.04.19).
 ##/
 
 Extended Description Bypasses: "Os arquivos para bypass das assinaturas padrão normalmente incluído com o pacote principal."
@@ -106,7 +106,7 @@ config_general_events: "Os arquivos listados aqui são carregados diretamente ap
 config_general_fields: "Controles para os campos durante eventos de bloco (quando uma solicitação é bloqueada)."
 config_general_force_hostname_lookup: "Forçar pesquisas de nome de anfitrião? True = Sim; False = Não [Padrão]. As pesquisas de nome de anfitrião normalmente são realizadas com base na necessidade, mas pode ser forçado para todos os solicitações. Isso pode ser útil como forma de fornecer informações mais detalhadas nos arquivos de log, mas também pode ter um efeito ligeiramente negativo sobre o desempenho."
 config_general_frontend_log: "Arquivo para registrar tentativas de login ao front-end. Especifique o nome de um arquivo, ou deixe em branco para desabilitar."
-config_general_http_response_header_code: "Qual mensagem de status HTTP deve enviar o CIDRAM ao bloquear solicitações? (Consulte a documentação para mais informações)."
+config_general_http_response_header_code: "Qual mensagem de status HTTP deve enviar o CIDRAM ao bloquear solicitações?"
 config_general_ipaddr: "Onde encontrar o IP endereço das solicitações? (Útil por serviços como o Cloudflare e tal). Padrão = REMOTE_ADDR. ATENÇÃO: Não mude isso a menos que você saiba o que está fazendo!"
 config_general_lang: "Especificar o padrão da linguagem por CIDRAM."
 config_general_lang_override: "Localizar de acordo com HTTP_ACCEPT_LANGUAGE sempre que possível? True = Sim [Padrão]; False = Não."
@@ -277,9 +277,11 @@ field_whitelisted_requests: "Solicitações marcadas como na lista branca"
 field_your_version: "Sua Versão"
 header_login: "Por favor faça o login para continuar."
 hints_asnlookup: "** Requer funcionalidade de pesquisa ASN (por exemplo, através do módulo BGPView)."
+hints_default_dns:
+ FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.pt.md\#WHAT_CAN_I_USE_FOR_DEFAULT_DNS" hreflang="pt">O que posso usar para "default_dns"?</a></em>"
+hints_ipv6_on_32bit: "Nota: As pesquisas de IPv6 podem não funcionar corretamente em alguns sistemas de 32 bits."
 hints_pdo_dsn:
  FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.pt.md\#HOW_TO_USE_PDO" hreflang="pt">O que é um "PDO DSN"? Como posso usar o PDO com o CIDRAM?</a></em>"
-hints_ipv6_on_32bit: "Nota: As pesquisas de IPv6 podem não funcionar corretamente em alguns sistemas de 32 bits."
 hints_verification:
  "O que são "positivos" e "negativos"?": "Quando verificando a identidade apresentada por uma solicitação, um resultado bem-sucedido pode ser descrito como "positivo" ou "negativo". Quando a identidade apresentada for confirmada como sendo a verdadeira identidade, ela será descrita como "positiva". Quando a identidade apresentada for confirmada como falsificada, ela será descrita como "negativa". No entanto, um resultado malsucedido (por exemplo, falha na verificação, ou a veracidade da identidade apresentada não pode ser determinada) não seria descrito como "positivo" ou "negativo". Em vez disso, um resultado malsucedido seria descrito simplesmente como não verificado. Quando não for feita nenhuma tentativa de verificar a identidade apresentada por uma solicitação, a solicitação também será descrita como não verificado. Os termos fazem sentido apenas no contexto em que a identidade apresentada por uma solicitação é reconhecida e, portanto, onde a verificação é possível. Nos casos em que a identidade apresentada não corresponde às opções fornecidas acima, ou onde nenhuma identidade é apresentada, as opções fornecidas acima tornam-se irrelevantes."
  "O que são "bypasses de acerto único"?": "Em alguns casos, uma solicitação com verificação positiva ainda pode ser bloqueada como resultado dos arquivos de assinatura, módulos, ou outras condições da solicitação, e bypasses podem ser necessários para evitar falsos positivos. No caso em que um bypass se destina a lidar com exatamente uma infração, nem mais nem menos, tal bypass pode ser descrito como um "bypass de acerto único"."
@@ -399,6 +401,12 @@ label_fmgr_total_disk_usage: "Uso total do disco:"
 label_fmgr_total_space: "Espaço total no disco:"
 label_fmgr_updates_metadata: "Metadados para atualização de componentes"
 label_hide: "Ocultar"
+label_http_response_header_code_200: "200 OK\nMenos robusto, mas mais amigável de usar. As solicitações automatizadas provavelmente interpretarão essa resposta como indicação de que a solicitação foi bem-sucedida."
+label_http_response_header_code_403: "403 Forbidden (Proibido)\nUm pouco mais robusto, mas um pouco menos amigável de usar. Recomendado para a maioria das circunstâncias gerais."
+label_http_response_header_code_410: "410 Gone (Se foi)\nPode causar problemas ao resolver falsos positivos, pois alguns navegadores armazenam em cache essa mensagem de status e não enviam solicitações subsequentes, mesmo após terem sido desbloqueadas. Pode ser o mais preferível em alguns contextos, para certos tipos de tráfego."
+label_http_response_header_code_418: "418 I'm a teapot (Eu sou um bule)\nReferências uma piada de primeiro de abril ({{Links.RFC2324}}). Muito improvável de ser entendido por qualquer cliente, bot, navegador, ou outro. Fornecido para diversão e conveniência, mas geralmente não recomendado."
+label_http_response_header_code_451: "451 Unavailable For Legal Reasons (Indisponível por motivos legais)\nRecomendado ao bloquear principalmente por motivos legais. Não recomendado em outros contextos."
+label_http_response_header_code_503: "503 Service Unavailable (Serviço indisponível)\nMais robusto, mas menos amigável de usar. Recomendado para quando sob ataque, ou para lidar com tráfego indesejado extremamente persistente."
 label_ignore: "Ignore isso"
 label_installed_available: "Instalado/Disponível"
 label_integrity_check: "Verificação de integridade:"

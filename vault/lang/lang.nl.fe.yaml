@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Dutch language data for the front-end (last modified: 2022.04.04).
+# This file: Dutch language data for the front-end (last modified: 2022.04.19).
 ##/
 
 Extended Description Bypasses: "De standaard signature bypasses normaal opgenomen met de primaire pakket."
@@ -98,7 +98,7 @@ config_general_empty_fields: "Hoe moet CIDRAM lege velden afhandelen bij het log
 config_general_error_log: "Een bestand voor het vastleggen van gedetecteerde niet-fatale fouten. Geef een bestandsnaam, of laat leeg om uit te schakelen."
 config_general_error_log_stages: "Een lijst met de fasen in de uitvoeringsketen waarvan gegenereerde fouten moeten worden vastgelegd."
 config_general_events: "De hier vermelde bestanden worden direct na het gebeurtenishandlerbestand geladen. Wordt doorgaans naar behoefte ingevuld door de pagina met updates bij het activeren van componenten. In de meeste gevallen kunt u het negeren."
-config_general_forbid_on_block: "Welk HTTP-statusbericht moet CIDRAM verzenden bij het blokkeren van verzoeken? (Raadpleeg de documentatie voor meer informatie)."
+config_general_forbid_on_block: "Welk HTTP-statusbericht moet CIDRAM verzenden bij het blokkeren van verzoeken?"
 config_general_force_hostname_lookup: "Hostname-opzoekingen afdwingen? True = Ja; False = Nee [Standaard]. Hostname-opzoekingen worden normaal uitgevoerd op basis van noodzaak, maar kan voor alle verzoeken worden gedwongen. Dit kan nuttig zijn als een middel om meer gedetailleerde informatie in de logbestanden te verstrekken, maar kan ook een licht negatief effect hebben op de prestaties."
 config_general_hide_version: "Versleutelingsinformatie uit logs en pagina-uitvoer verbergen? True = Ja; False = Nee [Standaard]."
 config_general_ipaddr: "Waar het IP-adres van het aansluiten verzoek te vinden? (Handig voor diensten zoals Cloudflare en dergelijke). Standaard = REMOTE_ADDR. WAARSCHUWING: Verander dit niet tenzij u weet wat u doet!"
@@ -283,9 +283,11 @@ field_verify_all: "Verifiëren alles"
 field_whitelisted_requests: "Verzoeken gemarkeerd als op de witte lijst"
 field_your_version: "Uw Versie"
 header_login: "Inloggen om verder te gaan."
+hints_default_dns:
+ FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/v2-and-earlier/readme.nl.md\#WHAT_CAN_I_USE_FOR_DEFAULT_DNS" hreflang="nl">Wat kan ik gebruiken voor "default_dns"?</a></em>"
+hints_ipv6_on_32bit: "Opmerking: IPv6-opzoeken mogelijk werken niet correct op sommige 32-bits systemen."
 hints_pdo_dsn:
  FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/v2-and-earlier/readme.nl.md\#HOW_TO_USE_PDO" hreflang="nl">Wat is een "PDO DSN"? Hoe kan ik PDO gebruiken met CIDRAM?</a></em>"
-hints_ipv6_on_32bit: "Opmerking: IPv6-opzoeken mogelijk werken niet correct op sommige 32-bits systemen."
 info_some_useful_links: |
  Enkele nuttige links:<br />
      <ul class="pieul">
@@ -401,6 +403,12 @@ label_fmgr_total_disk_usage: "Totaal schijfgebruik:"
 label_fmgr_total_space: "Totale schijfruimte:"
 label_fmgr_updates_metadata: "Component updates metadata"
 label_hide: "Verbergen"
+label_http_response_header_code_200: "200 OK\nStandaardwaarde. Minst robuust, maar meest gebruiksvriendelijk. Geautomatiseerde verzoeken zullen dit antwoord hoogstwaarschijnlijk interpreteren als een indicatie dat het verzoek was succesvol."
+label_http_response_header_code_403: "403 Forbidden (Verboden)\nRobuuster, maar minder gebruiksvriendelijk. Aanbevolen voor de meeste algemene omstandigheden."
+label_http_response_header_code_410: "410 Gone (Weg)\nKan problemen veroorzaken bij het oplossen van valse positieven, omdat sommige browsers dit statusbericht in de cache opslaan en geen volgende verzoeken verzenden, zelfs niet nadat de blokkering is opgeheven. Kan in sommige contexten, voor bepaalde soorten verkeer, de meeste voorkeur hebben."
+label_http_response_header_code_418: "418 I'm a teapot (Ik ben een theepot)\nVerwijst naar een 1-aprilgrap ({{Links.RFC2324}}). Het is zeer onwaarschijnlijk dat deze door een client, bot, browser, of anderszins wordt begrepen. Geleverd voor amusement en gemak, maar over het algemeen niet aanbevolen."
+label_http_response_header_code_451: "451 Unavailable For Legal Reasons (Om juridische redenen onbeschikbaar)\nAanbevolen bij blokkering voornamelijk om juridische redenen. Niet aanbevolen in andere contexten."
+label_http_response_header_code_503: "503 Service Unavailable (Dienst onbeschikbaar)\nMeest robuust, maar minst gebruiksvriendelijk. Aanbevolen voor wanneer u wordt aangevallen, of wanneer u te maken hebt met extreem hardnekkig ongewenst verkeer."
 label_ignore: "Negeer dit"
 label_installed_available: "Geïnstalleerd/Beschikbaar"
 label_integrity_check: "Integriteitscontrole:"

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Vietnamese language data for the front-end (last modified: 2022.04.04).
+# This file: Vietnamese language data for the front-end (last modified: 2022.04.19).
 ##/
 
 Extended Description Bypasses: "Các tập tin đường tránh chữ ký mặc định thường bao gồm với gói thầu chính."
@@ -98,7 +98,7 @@ config_general_empty_fields: "CIDRAM nên xử lý các trường trống khi gh
 config_general_error_log: "Một tập tin để ghi lại bất kỳ lỗi không nghiêm trọng được phát hiện. Chỉ định một tên tập tin, hoặc để trống để vô hiệu hóa."
 config_general_error_log_stages: "Một danh sách các giai đoạn trong chuỗi thực thi, theo đó bất kỳ lỗi nào được tạo sẽ được ghi lại."
 config_general_events: "Các tập tin được liệt kê ở đây được tải trực tiếp sau tập tin trình xử lý sự kiện. Thường được nhập bởi trang cập nhật khi cần thiết khi các thành phần được kích hoạt. Trong hầu hết các trường hợp, có thể bỏ qua nó."
-config_general_forbid_on_block: "Những gì thông báo trạng thái HTTP mà CIDRAM nên gửi khi yêu cầu bị chặn? (Tham khảo tài liệu để biết thêm thông tin)."
+config_general_forbid_on_block: "Những gì thông báo trạng thái HTTP mà CIDRAM nên gửi khi yêu cầu bị chặn?"
 config_general_force_hostname_lookup: "Thực hiện tìm kiếm tên máy chủ cho tất cả các yêu cầu? True = Vâng; False = Không [Mặc định]. Tìm kiếm tên máy chủ thường được thực hiện trên cơ sở cần thiết, nhưng có thể được thực hiện cho tất cả các yêu cầu. Điều này có thể hữu ích như một phương tiện cung cấp thông tin chi tiết hơn trong các tập tin đăng nhập, nhưng cũng có thể có tác động tiêu cực đến hiệu suất."
 config_general_hide_version: "Ẩn thông tin phiên bản từ nhật ký và đầu ra của trang? True = Vâng; False = Không [Mặc định]."
 config_general_ipaddr: "Nơi để tìm thấy các địa chỉ IP của các yêu cầu kết nối? (Hữu ích cho các dịch vụ như thế Cloudflare và vv). Mặc định = REMOTE_ADDR. CẢNH BÁO: Không thay đổi này trừ khi bạn biết những gì bạn đang làm!"
@@ -281,9 +281,11 @@ field_verify_all: "Xác minh tất cả"
 field_whitelisted_requests: "Yêu cầu trong danh sách trắng"
 field_your_version: "Phiên bản của bạn"
 header_login: "Vui lòng đăng nhập để tiếp tục."
+hints_default_dns:
+ Câu hỏi thường gặp.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/v2-and-earlier/readme.vi.md\#WHAT_CAN_I_USE_FOR_DEFAULT_DNS" hreflang="vi">Những gì tôi có thể sử dụng cho "default_dns"?</a></em>"
+hints_ipv6_on_32bit: "Lưu ý: Tra cứu IPv6 có thể không hoạt động chính xác trên một số hệ thống 32 bit."
 hints_pdo_dsn:
  Câu hỏi thường gặp.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/v2-and-earlier/readme.vi.md\#HOW_TO_USE_PDO" hreflang="vi">"PDO DSN" là gì? Làm cách nào tôi có thể sử dụng PDO với CIDRAM?</a></em>"
-hints_ipv6_on_32bit: "Lưu ý: Tra cứu IPv6 có thể không hoạt động chính xác trên một số hệ thống 32 bit."
 info_some_useful_links: |
  Một số liên kết hữu ích:<br />
      <ul class="pieul">
@@ -395,6 +397,12 @@ label_fmgr_total_disk_usage: "Số lượng sử dụng đĩa trong tổng số:
 label_fmgr_total_space: "Số lượng không gian đĩa trong tổng số:"
 label_fmgr_updates_metadata: "Siêu dữ liệu cho cập nhật thành phần"
 label_hide: "Che giấu"
+label_http_response_header_code_200: "200 OK\nGiá trị mặc định. Không mạnh mẽ, nhưng thân thiện với người dùng nhất. Các yêu cầu tự động rất có thể sẽ diễn giải phản hồi này là dấu hiệu cho thấy yêu cầu đã thành công."
+label_http_response_header_code_403: "403 Forbidden (Bị cấm)\nHơi mạnh mẽ, và thân thiện với người dùng. Được đề xuất cho hầu hết các trường hợp chung."
+label_http_response_header_code_410: "410 Gone (Đã biến mất)\nCó thể gây ra sự cố khi giải quyết các sai tích cực, vì một số trình duyệt sẽ lưu vào bộ nhớ cache thông báo trạng thái này và không gửi các yêu cầu tiếp theo, ngay cả khi đã được bỏ chặn. Có thể thích hợp nhất trong một số ngữ cảnh, đối với một số loại lưu lượng truy cập nhất định."
+label_http_response_header_code_418: "418 I'm a teapot (Tôi là một ấm trà)\nĐiều này đề cập đến một trò đùa ngày cá tháng tư ({{Links.RFC2324}}). Rất khó có thể được hiểu bởi bất kỳ ứng dụng khách, bot, trình duyệt, hoặc cách nào khác. Được cung cấp để giải trí và tiện lợi, nhưng thường không được khuyến khích."
+label_http_response_header_code_451: "451 Unavailable For Legal Reasons (Không có sẵn vì lý do pháp lý)\nĐược đề xuất khi chặn chủ yếu vì lý do pháp lý. Không được khuyến khích trong các ngữ cảnh khác."
+label_http_response_header_code_503: "503 Service Unavailable (Dịch vụ không sẵn có)\nMạnh mẽ nhất, nhưng không thân thiện với người dùng. Được đề xuất khi bị tấn công, hoặc khi xử lý lưu lượng truy cập không mong muốn và cực kỳ dai dẳng."
 label_ignore: "Bỏ qua điều này"
 label_installed_available: "Được cài đặt / Có sẵn"
 label_integrity_check: "Kiểm tra tính toàn vẹn:"

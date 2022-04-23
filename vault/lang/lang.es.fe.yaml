@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Spanish language data for the front-end (last modified: 2022.04.04).
+# This file: Spanish language data for the front-end (last modified: 2022.04.19).
 ##/
 
 Extended Description Bypasses: "Los archivos para bypass de firmas estándar normalmente se incluyen con el paquete principal."
@@ -98,7 +98,7 @@ config_general_empty_fields: "¿Cómo debe manejar CIDRAM los campos vacíos al 
 config_general_error_log: "Un archivo para registrar cualquier error detectado que no sea fatal. Especificar el nombre del archivo, o dejar en blanco para desactivar."
 config_general_error_log_stages: "Una lista de las etapas en la cadena de ejecución que deberían tener todos los errores generados registrados."
 config_general_events: "Los archivos listados aquí se cargan directamente después del archivo de los controladores de eventos. Normalmente se llena con la página de actualizaciones al activar componentes que lo necesitan cuando sea necesario. En la mayoría de los casos, puede ignorarlo."
-config_general_forbid_on_block: "¿Cuál mensaje de estado HTTP debe enviar CIDRAM cuando se bloquean las solicitudes? (Consulte la documentación para más información)."
+config_general_forbid_on_block: "¿Cuál mensaje de estado HTTP debe enviar CIDRAM cuando se bloquean las solicitudes?"
 config_general_force_hostname_lookup: "¿Forzar búsquedas de nombres de host? True = Sí; False = No [Predefinido]. Las búsquedas de nombres de host normalmente se realizan según sea necesario, pero se pueden forzar para todas las solicitudes. Hacerlo puede ser útil como un medio para proporcionar información más detallada en los archivos de registro, pero también puede tener un efecto ligeramente negativo en el rendimiento."
 config_general_hide_version: "¿Ocultar información de la versión de los archivos de registro y la salida de la página? True = Sí; False = No [Predefinido]."
 config_general_ipaddr: "¿Dónde puedo encontrar el IP dirección de las solicitudes entrantes? (Útil para servicios como Cloudflare y tales). Predefinido = REMOTE_ADDR. ¡AVISO: No cambie esto a menos que sepas lo que estás haciendo!"
@@ -283,9 +283,11 @@ field_verify_all: "Verificar todo"
 field_whitelisted_requests: "Solicitudes en la lista blanca"
 field_your_version: "Tu Versión"
 header_login: "Por favor iniciar sesión para continuar."
+hints_default_dns:
+ FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/v2-and-earlier/readme.es.md\#WHAT_CAN_I_USE_FOR_DEFAULT_DNS" hreflang="es">¿Qué puedo usar para "default_dns"?</a></em>"
+hints_ipv6_on_32bit: "Nota: Es posible que las búsquedas de IPv6 no funcionen correctamente en algunos sistemas de 32 bits."
 hints_pdo_dsn:
  FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/v2-and-earlier/readme.es.md\#HOW_TO_USE_PDO" hreflang="es">¿Qué es un "PDO DSN"? Cómo puedo usar PDO con CIDRAM?</a></em>"
-hints_ipv6_on_32bit: "Nota: Es posible que las búsquedas de IPv6 no funcionen correctamente en algunos sistemas de 32 bits."
 info_some_useful_links: |
  Algunos enlaces útiles:<br />
      <ul class="pieul">
@@ -401,6 +403,12 @@ label_fmgr_total_disk_usage: "Uso del disco total:"
 label_fmgr_total_space: "Espacio en disco total:"
 label_fmgr_updates_metadata: "Componente actualiza metadatos"
 label_hide: "Esconder"
+label_http_response_header_code_200: "200 OK\nValor por predefinido. Menos robusto, pero más fácil de usar. Lo más probable que las solicitudes automatizadas interpreten esta respuesta como una indicación de que la solicitud fue exitosa."
+label_http_response_header_code_403: "403 Forbidden (Prohibido)\nUn poco más robusto, pero un poco menos fácil de usar. Recomendado para la mayoría de las circunstancias generales."
+label_http_response_header_code_410: "410 Gone (Ido)\nPodría causar problemas a la hora de resolver falsos positivos, ya que algunos navegadores almacenan en caché este mensaje de estado y no envían solicitudes posteriores, incluso después de haber sido desbloqueados. Puede ser el más preferible en algunos contextos, para ciertos tipos de tráfico."
+label_http_response_header_code_418: "418 I'm a teapot (Soy una tetera)\nHace referencia a una broma del Día de los Inocentes ({{Links.RFC2324}}). Es muy poco probable que cualquier cliente, bot, navegador, u otro lo entiendará. Provisto por diversión y conveniencia, pero generalmente no recomendado."
+label_http_response_header_code_451: "451 Unavailable For Legal Reasons (No disponible por razones legales)\nRecomendado cuando se bloquea principalmente por razones legales. No recomendado en otros contextos."
+label_http_response_header_code_503: "503 Service Unavailable (Servicio no disponible)\nMás robusto, pero menos fácil de usar. Recomendado para cuando está bajo ataque, o para cuando se trata de tráfico no deseado extremadamente persistente."
 label_ignore: "Ignora esto"
 label_installed_available: "Instalado/Disponible"
 label_integrity_check: "Verificación de integridad:"

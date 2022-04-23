@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Italian language data for the front-end (last modified: 2022.04.04).
+# This file: Italian language data for the front-end (last modified: 2022.04.19).
 ##/
 
 Extended Description Bypasses: "Un file per bypassare alcune delle firme predefinite normalmente inclusi nel pacchetto principale."
@@ -98,7 +98,7 @@ config_general_empty_fields: "Come dovrebbe CIDRAM gestire i campi vuoti durante
 config_general_error_log: "Un file per la registrazione di eventuali errori non fatali rilevati. Specificare un nome di file, o lasciare vuoto per disabilitare."
 config_general_error_log_stages: "Un elenco delle fasi nella catena di esecuzione in cui dovrebbero essere registrati eventuali errori generati."
 config_general_events: "I file elencati qui vengono caricati direttamente dopo il file dei gestori di eventi. Tipicamente popolato dalla pagina degli aggiornamenti quando si attivano i componenti che ne hanno bisogno quando necessario. Nella maggior parte dei casi, può ignorarlo."
-config_general_forbid_on_block: "Quale messaggio di stato HTTP dovrebbe inviare CIDRAM durante il blocco delle richieste? (Fare riferimento alla documentazione per ulteriori informazioni)."
+config_general_forbid_on_block: "Quale messaggio di stato HTTP dovrebbe inviare CIDRAM durante il blocco delle richieste?"
 config_general_force_hostname_lookup: "Forzare la ricerca degli nome di host? True = Sì; False = No [Predefinito]. Le ricerche di nome di host vengono normalmente eseguite su base della necessità, ma può essere forzato a tutte le richieste. Ciò può essere utile come mezzo per fornire informazioni più dettagliate nei file di log, ma può anche avere un effetto leggermente negativo sulle prestazioni."
 config_general_hide_version: "Nascondi informazioni sulla versione dai registri e l'output della pagina? True = Sì; False = No [Predefinito]."
 config_general_ipaddr: "Dove trovare l'indirizzo IP di collegamento richiesta? (Utile per servizi come Cloudflare e simili). Predefinito = REMOTE_ADDR. AVVISO: Non modificare questa se non sai quello che stai facendo!"
@@ -281,9 +281,11 @@ field_verify_all: "Verifica tutto"
 field_whitelisted_requests: "Richieste nella lista bianca"
 field_your_version: "La Vostra Versione"
 header_login: "Per favore accedi per continuare."
+hints_default_dns:
+ FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/v2-and-earlier/readme.it.md\#WHAT_CAN_I_USE_FOR_DEFAULT_DNS" hreflang="it">Cosa posso usare per "default_dns"?</a></em>"
+hints_ipv6_on_32bit: "Nota: Le ricerche IPv6 potrebbero non funzionare correttamente su alcuni sistemi a 32 bit."
 hints_pdo_dsn:
  FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/v2-and-earlier/readme.it.md\#HOW_TO_USE_PDO" hreflang="it">Che cos'è un "DSN PDO"? Come posso usare PDO con CIDRAM?</a></em>"
-hints_ipv6_on_32bit: "Nota: Le ricerche IPv6 potrebbero non funzionare correttamente su alcuni sistemi a 32 bit."
 info_some_useful_links: |
  Alcuni link utili:<br />
      <ul class="pieul">
@@ -399,6 +401,12 @@ label_fmgr_total_disk_usage: "Utilizzo del disco totale:"
 label_fmgr_total_space: "Spazio totale su disco:"
 label_fmgr_updates_metadata: "Componente aggiorna metadati"
 label_hide: "Nascondere"
+label_http_response_header_code_200: "200 OK\nValore predefinito. Meno robusto, ma più facile da usare. Molto probabilmente le richieste automatiche interpreteranno questa risposta come un'indicazione che la richiesta riuscito."
+label_http_response_header_code_403: "403 Forbidden (Vietato)\nUn po' più robusto, ma un po' meno facile da usare. Consigliato per la maggior parte delle circostanze generali."
+label_http_response_header_code_410: "410 Gone (Andato)\nPotrebbe causare problemi durante la risoluzione dei falsi positivi, perché alcuni browser memorizzano nella cache questo messaggio di stato e non inviano richieste successive, anche dopo essere stati sbloccati. Può essere il più preferibile in alcuni contesti, per specifici tipi di traffico."
+label_http_response_header_code_418: "418 I'm a teapot (Sono una teiera)\nFa riferimento a uno scherzo di pesce d'aprile ({{Links.RFC2324}}). È molto improbabile che venga compreso da qualsiasi client, bot, browser, o altro. Fornito per divertimento e comodità, ma generalmente non consigliato."
+label_http_response_header_code_451: "451 Unavailable For Legal Reasons (Non disponibile per motivi legali)\nConsigliato in caso di blocco principalmente per motivi legali. Non consigliato in altri contesti."
+label_http_response_header_code_503: "503 Service Unavailable (Servizio non disponibile)\nPiù robusto, ma meno facile da usare. Consigliato per quando si è sotto attacco, o quando si ha a che fare con traffico indesiderato estremamente persistente."
 label_ignore: "Ignoralo"
 label_installed_available: "Installato/Disponibile"
 label_integrity_check: "Controllo di integrità:"

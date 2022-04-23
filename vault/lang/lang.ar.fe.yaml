@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Arabic language data for the front-end (last modified: 2022.04.04).
+# This file: Arabic language data for the front-end (last modified: 2022.04.19).
 ##/
 
 Extended Description Bypasses: "ملفات الالتفافية التوقيع القياسية المدرجة عادة مع الحزمة الرئيسية."
@@ -96,7 +96,7 @@ config_general_empty_fields: "كيف يجب على CIDRAM التعامل مع ا
 config_general_error_log: "ملف لتسجيل أي أخطاء غير مميتة المكتشفة. تحديد اسم الملف، أو اتركه فارغا لتعطيل."
 config_general_error_log_stages: "قائمة المراحل في سلسلة التنفيذ التي بموجبها يجب تسجيل أي أخطاء تم إنشاؤها."
 config_general_events: "يتم تحميل الملفات المدرجة هنا مباشرة بعد ملف معالجات الأحداث. يتم ملؤها عادةً بصفحة التحديثات عند تنشيط المكونات التي تحتاج إليها عند الضرورة. في معظم الحالات، يمكن تجاهله."
-config_general_forbid_on_block: "ما هي رسالة حالة HTTP التي يجب أن يرسلها CIDRAM عند حظر الطلبات؟ (الرجوع إلى الوثائق لمزيد من المعلومات)."
+config_general_forbid_on_block: "ما هي رسالة حالة HTTP التي يجب أن يرسلها CIDRAM عند حظر الطلبات؟"
 config_general_force_hostname_lookup: "فرض بحث اسم المضيف؟ صحيح/True = نعم؛ زائفة/False = لا [افتراضي]. يتم إجراء عمليات البحث عن اسم المضيف عادة على أساس "حسب الحاجة"، ولكن يمكن إجبارها على جميع الطلبات. وقد يكون القيام بذلك مفيدا كوسيلة لتوفير معلومات أكثر تفصيلا في السجلات، ولكن قد يكون له أيضا أثر سلبي طفيف على الأداء."
 config_general_hide_version: "إخفاء معلومات الإصدار من السجلات وإخراج الصفحة؟ صحيح/True = نعم؛ زائفة/False = لا [افتراضي]."
 config_general_ipaddr: "أين يمكن العثور على عنوان IP لربط الطلبات؟ (مفيدة للخدمات مثل لايتكلاود و مثلها). الافتراضي = REMOTE_ADDR. تحذير: لا تغير هذا إلا إذا كنت تعرف ما تفعلونه!"
@@ -279,9 +279,11 @@ field_verify_all: "التحقق من الكل"
 field_whitelisted_requests: "طلبات القائمة البيضاء"
 field_your_version: "الإصدار الخاص بك"
 header_login: "الرجاء تسجيل الدخول للمتابعة."
+hints_default_dns:
+ FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/v2-and-earlier/readme.ar.md\#WHAT_CAN_I_USE_FOR_DEFAULT_DNS" hreflang="ar">ما الذي يمكنني استخدامه لـ "default_dns"؟</a></em>"
+hints_ipv6_on_32bit: "ملاحظة: قد لا تعمل عمليات بحث IPv6 بشكل صحيح على بعض أنظمة 32 بت."
 hints_pdo_dsn:
  FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/v2-and-earlier/readme.ar.md\#HOW_TO_USE_PDO" hreflang="ar">ما هو "PDO DSN"؟ كيف يمكنني استخدام PDO مع CIDRAM؟</a></em>"
-hints_ipv6_on_32bit: "ملاحظة: قد لا تعمل عمليات بحث IPv6 بشكل صحيح على بعض أنظمة 32 بت."
 info_some_useful_links: |
  بعض الروابط المفيدة:<br />
      <ul class="pieul">
@@ -393,6 +395,12 @@ label_fmgr_total_disk_usage: "إجمالي استخدام القرص:"
 label_fmgr_total_space: "إجمالي مساحة القرص:"
 label_fmgr_updates_metadata: "تحديثات البيانات الوصفية للمكون"
 label_hide: "إخفائه"
+label_http_response_header_code_200: "200 OK (حسنا)\nالقيمة الافتراضية. أقل قوة، ولكن الأكثر سهولة في الاستخدام. من المرجح أن تفسر الطلبات الآلية هذه الاستجابة على أنها إشارة إلى نجاح الطلب."
+label_http_response_header_code_403: "403 Forbidden (مُحرَّم)\nأكثر قوة، ولكن أقل سهولة في الاستخدام. موصى به لمعظم الظروف العامة."
+label_http_response_header_code_410: "410 Gone (ذهب)\nيمكن أن يسبب مشاكل عند حل الإيجابيات الخاطئة، لأن بعض المتصفحات سوف تخزن رسالة الحالة هذه مؤقتًا ولا ترسل طلبات لاحقة، حتى بعد إلغاء الحظر. قد يكون الأكثر تفضيلاً في بعض السياقات، لأنواع معينة من حركة المرور."
+label_http_response_header_code_418: "418 I'm a teapot (أنا إبريق شاي)\nيشير إلى نكتة كذبة أبريل ({{Links.RFC2324}}). من غير المحتمل جدًا أن يفهمه أي عميل أو روبوت أو متصفح أو غير ذلك. يتم توفيرها للتسلية والراحة، ولكن لا يوصى بها بشكل عام."
+label_http_response_header_code_451: "451 Unavailable For Legal Reasons (غير متاح لأسباب قانونية)\nيوصى به عند الحظر لأسباب قانونية في المقام الأول. لا ينصح به في سياقات أخرى."
+label_http_response_header_code_503: "503 Service Unavailable (الخدمة غير متوفرة)\nالأكثر قوة، ولكن الأقل سهولة في الاستخدام. يوصى به عند التعرض للهجوم أو عند التعامل مع حركة مرور غير مرغوب فيها بشكل دائم للغاية."
 label_ignore: "تجاهل هذا"
 label_installed_available: "المثبتة/متاح"
 label_integrity_check: "التحقق من النزاهة:"

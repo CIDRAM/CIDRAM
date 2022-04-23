@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Japanese language data for the front-end (last modified: 2022.04.04).
+# This file: Japanese language data for the front-end (last modified: 2022.04.19).
 ##/
 
 Extended Description Bypasses: "メインパッケージに通常含まれているデフォルト・シグネチャ・バイパス。"
@@ -98,7 +98,7 @@ config_general_empty_fields: "ブロック・イベント情報をロギング�
 config_general_error_log: "検出された致命的でないエラーを記録するためのファイル。​ファイル名指定するか、​無効にしたい場合は空白のままにして下さい。"
 config_general_error_log_stages: "生成されたエラーをログに記録する必要がある実行チェーン内のステージのリスト。"
 config_general_events: "ここにリストされているファイルは、イベント・ハンドラー・ファイルの直後にロードされます。​通常、コンポーネントをアクティブ化するときに、アップデート・ページによって必要に応じて入力されます。​ほとんどの場合、それを無視することができます。"
-config_general_forbid_on_block: "リクエストをブロックするときに、CIDRAMが送信するＨＴＴＰステータス・メッセージはどれですか？​（詳細については、ドキュメントを参照してください）。"
+config_general_forbid_on_block: "リクエストをブロックするときに、CIDRAMが送信するＨＴＴＰステータス・メッセージはどれですか？"
 config_general_force_hostname_lookup: "ホスト名検索を強制しますか？ True = はい。 False = いいえ（Default/デフォルルト）。​ホスト名検索は、通常、「必要に応じて」実行されますが、すべてのリクエストに対して強制することができます。​これは、より詳細な情報をログ・ファイルに提供する手段として有用ですが、パフォーマンスに多少の悪影響を及ぼすこともあります。"
 config_general_hide_version: "ログとページ出力からバージョン情報を隠すか？ True = はい。 False = いいえ（Default/デフォルルト）。"
 config_general_ipaddr: "接続リクエストのＩＰアドレスをどこで見つけるべきかについて（Cloudflareのようなサービスに対して有効）。​Default（デフォルト設定） = REMOTE_ADDR。​注意：あなたが何をしているのか、​分からない限り、​これを変更しないでください。"
@@ -281,9 +281,11 @@ field_verify_all: "すべてを検証する"
 field_whitelisted_requests: "ホワイトリストに登録されたリクエスト"
 field_your_version: "お使いのバージョン"
 header_login: "継続するには、​ログインしてください。"
+hints_default_dns:
+ ＦＡＱ。: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/v2-and-earlier/readme.ja.md\#WHAT_CAN_I_USE_FOR_DEFAULT_DNS" hreflang="ja">「default_dns」には何が使えますか？</a></em>"
+hints_ipv6_on_32bit: "注：一部の３２ビットシステムでは、ＩＰｖ６ルックアップが正しく機能しない場合があります。"
 hints_pdo_dsn:
  ＦＡＱ。: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/v2-and-earlier/readme.ja.md\#HOW_TO_USE_PDO" hreflang="ja">「PDO DSN」とは何ですか？​CIDRAMでPDOを使用するにはどうすればよいですか？</a></em>"
-hints_ipv6_on_32bit: "注：一部の３２ビットシステムでは、ＩＰｖ６ルックアップが正しく機能しない場合があります。"
 info_some_useful_links: |
  役に立つリンク：<br />
      <ul class="pieul">
@@ -395,6 +397,12 @@ label_fmgr_total_disk_usage: "ディスク使用量の合計："
 label_fmgr_total_space: "ディスク容量の合計："
 label_fmgr_updates_metadata: "コンポーネント・アップデート・メタデータ"
 label_hide: "隠す"
+label_http_response_header_code_200: "200 OK （大丈夫です）\nデフォルト値。 それは最小の堅牢が、最もユーザー・フレンドリーです。 自動化されたリクエストは、この応答をリクエストが成功したことを示すものとして解釈する可能性があります。"
+label_http_response_header_code_403: "403 Forbidden （禁断）\nそれはもっと堅牢ですが、少ないユーザー・フレンドリーです。 ほとんどの場合に推奨されます。"
+label_http_response_header_code_410: "410 Gone （なくなっています）\n一部のブラウザは、ブロックが解除された後でも、このステータス・メッセージをキャッシュし、後続のリクエストを送信しないため、偽陽性を解決するときに問題が発生する可能性があります。 特定の種類のトラフィックでは、状況によっては最も望ましい場合があります。"
+label_http_response_header_code_418: "418 I'm a teapot （私はティーポットです）\nエイプリル・フールのジョークを参照しています（{{Links.RFC2324}}）。 クライアント、ボット、ブラウザ、などに理解される可能性はほとんどありません。 娯楽と利便性のために提供されていますが、一般的にはお勧めしません。"
+label_http_response_header_code_451: "451 Unavailable For Legal Reasons （法的な理由で利用できません）\n主に法的な理由でブロックする場合に推奨されます。 他のコンテキストでは推奨されません。"
+label_http_response_header_code_503: "503 Service Unavailable （サービスは利用できません）\nそれは最も堅牢が、最小のユーザー・フレンドリーです。 攻撃を受けている場合、または非常に永続的な不要なトラフィックを処理する場合に推奨されます。"
 label_ignore: "これを無視する"
 label_installed_available: "インストールされている/利用可能です"
 label_integrity_check: "整合性チェック："

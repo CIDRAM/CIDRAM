@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6_isps.dat
 
-# Version: 2022.104.0
-# Last modified: 2022.04.16
+# Version: 2022.114.0
+# Last modified: 2022.04.25
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -1324,15 +1324,12 @@ Tag: Abissnet
 # Dutch domestic ISP and phone provider. Brute-force, SSH, webapp, DDoS, and
 # XMLRPC attacks, hacking, port scans, and spam detected from here. Listing
 # just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 585.
-# Updated: 2021.07.19
+# Stop Forum Spam (SFS) listings: 411.
+# Updated: 2022.04.25
 
-2a02:a443:48d9:1::/64 Deny Spam
-2a02:a447:7549:1::/64 Deny Spam
-2a02:a44a:ca8:1::/64 Deny Spam
-2a02:a44c:bee:1::/64 Deny Spam
+2a02:a443:578:1::/64 Deny Spam
 Origin: NL
-Profile: Commercial;Multiplay;Domestic ISP
+Profile: Domestic ISP;Multiplay
 Tag: KPN B.V
 
 
@@ -1568,3 +1565,28 @@ Tag: Sony Network
 Origin: SG
 Profile: Domestic ISP
 Tag: Starhub Ltd
+
+
+# ASN 197019 ("WEDOS Internet, a.s").
+# Czech domestic ISP. Brute-force, SSH, env, and webapp attacks, attempting to
+# execute exploits, port scans, hacking, and spam detected from here.
+# Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 78.
+# Updated: 2022.04.25
+
+2a02:2b88:2:1::/64 Deny Attacks
+Origin: CZ
+Profile: Domestic ISP
+Tag: WEDOS Internet, a.s
+
+
+# ASN 134319 ("Elyzium Technologies Pvt. Ltd").
+# Indian infrastructure provider. Brute-force attacks, hacking, port scans, and
+# spam detected from here. Manually checked all ranges; All ranges affected.
+# Stop Forum Spam (SFS) listings: 291.
+# Updated: 2022.04.25
+
+2001:df2:4480::/48 Deny Attacks
+Origin: IN
+Profile: Infrastructure/Transit
+Tag: Elyzium Technologies

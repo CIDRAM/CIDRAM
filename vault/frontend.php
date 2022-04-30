@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2022.04.19).
+ * This file: Front-end handler (last modified: 2022.04.30).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -1577,28 +1577,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
                             );
                         }
                     } elseif (isset($CIDRAM['DirValue']['style']) && $CIDRAM['DirValue']['style'] === 'radio') {
-                        if ($CIDRAM['DirValue']['HasLabels']) {
-                            foreach ($CIDRAM['DirValue']['labels'] as $CIDRAM['DirValue']['ThisLabelKey'] => $CIDRAM['DirValue']['ThisLabel']) {
-                                $CIDRAM['DirValue']['gridV'] = ($CIDRAM['DirValue']['gridV']) === 'gridVB' ? 'gridVA': 'gridVB';
-                                $CIDRAM['ThisDir']['FieldOut'] .= sprintf(
-                                    '<div class="gridboxcheckcell %4$s %5$s"><label class="gridlabel"><input%3$s type="checkbox" class="auto" name="%1$s" id="%1$s"%2$s /></label></div>',
-                                    $CIDRAM['ThisDir']['DirLangKey'] . '_' . $CIDRAM['ChoiceKey'] . '_' . $CIDRAM['DirValue']['ThisLabelKey'],
-                                    $CIDRAM['Request']->inCsv(
-                                        $CIDRAM['ChoiceKey'] . ':' . $CIDRAM['DirValue']['ThisLabelKey'],
-                                        $CIDRAM['Config'][$CIDRAM['CatKey']][$CIDRAM['DirKey']]
-                                    ) ? ' checked' : '',
-                                    $CIDRAM['ThisDir']['Trigger'],
-                                    $CIDRAM['DirValue']['gridV'],
-                                    $CIDRAM['DirValue']['gridH']
-                                );
-                            }
-                            $CIDRAM['ThisDir']['FieldOut'] .= sprintf(
-                                '<div class="gridboxitem %s %s">%s</div>',
-                                $CIDRAM['DirValue']['gridH'],
-                                (count($CIDRAM['DirValue']['labels']) % 2) === 0 ? 'vrte' : 'vrto',
-                                $CIDRAM['ChoiceValue']
-                            );
-                        } elseif (strpos($CIDRAM['ChoiceValue'], "\n")) {
+                        if (strpos($CIDRAM['ChoiceValue'], "\n")) {
                             $CIDRAM['ChoiceValue'] = explode("\n", $CIDRAM['ChoiceValue']);
                             $CIDRAM['ThisDir']['FieldOut'] .= sprintf(
                                 '<div class="gridboxstretch gridVA %5$s"><label class="gridlabel"><input%4$s type="radio" class="auto" name="%6$s" id="%1$s" value="%7$s"%2$s /></label></div><div class="gridboxstretch %5$s"><label for="%1$s"><span class="s">%3$s</span><br />%8$s</label></div>',
@@ -2644,22 +2623,21 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'fixer' && $CIDRAM['FE']['Permis
     $CIDRAM['FE']['submitButtonVisibility'] = empty($CIDRAM['PreferredSource']) ? ' style="display:none"' : '';
 
     /** Generate a list of currently active signature files. */
-    $CIDRAM['FE']['ActiveSignatureFiles'] = [];
-    foreach ([$CIDRAM['Config']['signatures']['ipv4'], $CIDRAM['Config']['signatures']['ipv6']] as $CIDRAM['SigSource']) {
-        $CIDRAM['SigSource'] = explode(',', $CIDRAM['SigSource']);
-        foreach ($CIDRAM['SigSource'] as $CIDRAM['SigSourceInner']) {
-            $CIDRAM['SigSourceInnerID'] = preg_replace('~[^\da-z]~i', '_', $CIDRAM['SigSourceInner']);
-            $CIDRAM['FE']['ActiveSignatureFiles'][$CIDRAM['SigSourceInner']] = sprintf(
-                '<input type="radio" class="auto" name="sigFile" id="%1$s" value="%2$s" %3$s/><label for="%1$s">%2$s</label><br />',
-                $CIDRAM['SigSourceInnerID'],
-                $CIDRAM['SigSourceInner'],
-                (!empty($_POST['sigFile']) && $_POST['sigFile'] === $CIDRAM['SigSourceInner']) ? 'checked ' : ''
-            );
-        }
+    $CIDRAM['FE']['ActiveSignatureFiles'] = '<div style="display:grid;margin:38px;grid-template-columns:auto">';
+    $CIDRAM['GIClass'] = 'gridHB';
+    foreach (explode(',', $CIDRAM['Config']['signatures']['ipv4'] . ',' . $CIDRAM['Config']['signatures']['ipv6']) as $CIDRAM['SigSource']) {
+        $CIDRAM['GIClass'] = $CIDRAM['GIClass'] !== 'gridHA' ? 'gridHA' : 'gridHB';
+        $CIDRAM['SigSourceID'] = preg_replace('~[^\da-z]~i', '_', $CIDRAM['SigSource']);
+        $CIDRAM['FE']['ActiveSignatureFiles'] .= sprintf(
+            '<div class="gridboxitem %4$s"><span class="s gridlabel"><input type="radio" class="auto" name="sigFile" id="%1$s" value="%2$s" %3$s/><label for="%1$s">%2$s</label></span></div>',
+            $CIDRAM['SigSourceID'],
+            $CIDRAM['SigSource'],
+            (!empty($_POST['sigFile']) && $_POST['sigFile'] === $CIDRAM['SigSource']) ? 'checked ' : '',
+            $CIDRAM['GIClass']
+        );
     }
-    unset($CIDRAM['SigSourceInnerID'], $CIDRAM['SigSourceInner']);
-    ksort($CIDRAM['FE']['ActiveSignatureFiles']);
-    $CIDRAM['FE']['ActiveSignatureFiles'] = implode($CIDRAM['FE']['ActiveSignatureFiles']);
+    $CIDRAM['FE']['ActiveSignatureFiles'] .= '</div>';
+    unset($CIDRAM['SigSourceID'], $CIDRAM['SigSource'], $CIDRAM['GIClass']);
 
     /** Fixer output. */
     $CIDRAM['FE']['FixerOutput'] = '';

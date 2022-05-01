@@ -1,8 +1,8 @@
 # IPv4 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv4.dat
 
-# Version: 2022.114.0
-# Last modified: 2022.04.25
+# Version: 2022.120.0
+# Last modified: 2022.05.01
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -34762,30 +34762,41 @@ Profile: Commercial;Infrastructure/Transit
 Tag: AxcelX Technologies LLC
 
 
-# ASN 44477 ("IP Oleinichenko Denis").
+# ASN 44477 ("STARK INDUSTRIES SOLUTIONS LTD").
 # Webhosting provider and server farm. Caught repeatedly trying to hack into
 # RDP. Caught trying to hack into honeypots.
-# Updated: 2021.07.22
+# Stop Forum Spam (SFS) listings: 2.
+# Updated: 2022.05.01
 
+5.182.39.0/24 Deny Cloud
+Origin: RU
+Profile: Webhosting
+Tag: IP Oleinichenko Denis
+
+
+# ASN 208091 ("XHOST INTERNET SOLUTIONS LP").
+# Webhosting provider and server farm. Caught repeatedly trying to hack into
+# RDP. Caught trying to hack into honeypots.
+# Updated: 2022.05.01
+
+185.73.124.0/23 Deny Cloud
+Origin: EE
 80.66.76.0/24 Deny Cloud
 80.66.88.0/24 Deny Cloud
 87.251.67.0/24 Deny Cloud
 87.251.75.0/24 Deny Cloud
 94.232.40.0/22 Deny Cloud
 94.232.44.0/24 Deny Cloud
-185.202.1.0/24 Deny Cloud
-185.202.2.0/24 Deny Cloud
-193.106.99.0/24 Deny Cloud
 Origin: RU
-Profile: Infrastructure/Transit;Webhosting
-Tag: IP Oleinichenko Denis
+Profile: Webhosting
+Tag: XHOST
 
 
 # ASN 213186 ("Yanoor Islam Khan").
 # FTP brute-force, brute-force, webapp, and XMLRPC attacks, hacking, port
 # scans, bot spoofing, and spam detected from here.
-# Stop Forum Spam (SFS) listings: 39.
-# Updated: 2021.07.28
+# Stop Forum Spam (SFS) listings: 91.
+# Updated: 2021.07.28 / Checked: 2022.05.01
 
 23.154.80.0/24 Deny Attacks
 45.61.146.0/24 Deny Attacks
@@ -34797,29 +34808,26 @@ Tag: Yanoor Islam Khan
 # ASN 63730 ("VNSO TECHNOLOGY COMPANY").
 # Caught hacking WordPress websites, brute-force, SSH, SMB, RDP, XMLRPC, and
 # webapp attacks, hacking, port scans, and spam detected from here.
-# Stop Forum Spam (SFS) listings: 6.
-# Updated: 2021.07.28
+# Stop Forum Spam (SFS) listings: 2,493.
+# Updated: 2022.05.01
 
 103.9.156.0/22 Deny Cloud
 103.161.174.0/23 Deny Cloud
+103.168.36.0/23 Deny Cloud
 Origin: VN
 Profile: Webhosting
 Tag: VNSO TECHNOLOGY COMPANY
 
 
-# ASN 56694 ("LLC Smart Ape").
+# ASNs 56694, 62212 ("LLC Smart Ape", "SmartApe OU").
 # Russian server farm. Brute-force, XMLRPC, and webapp attacks, hacking, port
 # scans, and spam detected from here.
-# Stop Forum Spam (SFS) listings: 2,802.
-# Updated: 2021.07.28
+# Stop Forum Spam (SFS) listings: 1,377 (AS56694).
+# Updated: 2022.05.01
 
-91.199.137.0/24 Deny Cloud
-91.199.147.0/24 Deny Cloud
-91.199.154.0/24 Deny Cloud
-91.199.160.0/24 Deny Cloud
+87.236.146.0/24 Deny Cloud
 94.198.50.0/23 Deny Cloud
 94.198.52.0/22 Deny Cloud
-138.124.186.0/24 Deny Cloud
 152.89.216.0/22 Deny Cloud
 185.9.144.0/22 Deny Cloud
 185.130.248.0/22 Deny Cloud
@@ -34828,16 +34836,23 @@ Tag: VNSO TECHNOLOGY COMPANY
 188.127.248.0/22 Deny Cloud
 188.127.253.0/24 Deny Cloud
 188.127.254.0/23 Deny Cloud
+Origin: EE
+62.76.141.0/24 Deny Cloud
+91.199.137.0/24 Deny Cloud
+91.199.147.0/24 Deny Cloud
+91.199.154.0/24 Deny Cloud
+91.199.160.0/24 Deny Cloud
+185.108.222.0/23 Deny Cloud
 Origin: RU
 Profile: Infrastructure/Transit;Webhosting
 Tag: LLC Smart Ape
 
 
 # ASN 211680 ("NSEC - Sistemas Informaticos, S.A").
-# "93 reported IPs from this subnet for a total of 51,032 reports" (at the time
-# when checked, 2021.07.28). See: abuseipdb.com/check-block/185.180.143.0/24
+# "124 reported IPs from this subnet for a total of 288,593 reports" (as of
+# 2022.05.01). See: abuseipdb.com/check-block/185.180.143.0/24
 # Flooding, DDoS, brute-force attacks, constant port scans, hack attempts, etc.
-# Updated: 2021.07.28
+# Updated: 2021.07.28 / Checked: 2022.05.01
 
 185.180.143.0/24 Deny Attacks
 Origin: PT

@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6.dat
 
-# Version: 2022.114.0
-# Last modified: 2022.04.25
+# Version: 2022.120.0
+# Last modified: 2022.05.01
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -9628,22 +9628,23 @@ Profile: Commercial;Infrastructure/Transit
 Tag: AxcelX Technologies LLC
 
 
-# ASN 44477 ("IP Oleinichenko Denis").
+# ASN 208091 ("XHOST INTERNET SOLUTIONS LP").
 # Webhosting provider and server farm. Caught repeatedly trying to hack into
 # RDP. Caught trying to hack into honeypots.
-# Updated: 2021.07.22
+# Updated: 2022.05.01
 
 2a0c:6900::/32 Deny Cloud
+2a0d:65c0::/29 Deny Cloud
 Origin: RU
-Profile: Infrastructure/Transit;Webhosting
-Tag: IP Oleinichenko Denis
+Profile: Webhosting
+Tag: XHOST
 
 
 # ASN 213186 ("Yanoor Islam Khan").
 # FTP brute-force, brute-force, webapp, and XMLRPC attacks, hacking, port
 # scans, bot spoofing, and spam detected from here.
-# Stop Forum Spam (SFS) listings: 39.
-# Updated: 2021.07.28
+# Stop Forum Spam (SFS) listings: 91.
+# Updated: 2021.07.28 / Checked: 2022.05.01
 
 2a0b:b87:ffd2::/48 Deny Attacks
 Origin: US
@@ -9654,8 +9655,8 @@ Tag: Yanoor Islam Khan
 # ASN 63730 ("VNSO TECHNOLOGY COMPANY").
 # Caught hacking WordPress websites, brute-force, SSH, SMB, RDP, XMLRPC, and
 # webapp attacks, hacking, port scans, and spam detected from here.
-# Stop Forum Spam (SFS) listings: 6.
-# Updated: 2021.07.28
+# Stop Forum Spam (SFS) listings: 2,493.
+# Updated: 2021.07.28 / Checked: 2022.05.01
 
 2405:e0c0::/48 Deny Cloud
 Origin: VN
@@ -9663,13 +9664,15 @@ Profile: Webhosting
 Tag: VNSO TECHNOLOGY COMPANY
 
 
-# ASN 56694 ("LLC Smart Ape").
+# ASNs 56694, 62212 ("LLC Smart Ape", "SmartApe OU").
 # Russian server farm. Brute-force, XMLRPC, and webapp attacks, hacking, port
 # scans, and spam detected from here.
-# Stop Forum Spam (SFS) listings: 2,802.
-# Updated: 2021.07.28
+# Stop Forum Spam (SFS) listings: 1,377 (AS56694).
+# Updated: 2022.05.01
 
 2a06:dd00::/29 Deny Cloud
+2a11:3b80::/29 Deny Cloud
+Origin: EE
 2a0f:3104::/32 Deny Cloud
 Origin: RU
 Profile: Infrastructure/Transit;Webhosting

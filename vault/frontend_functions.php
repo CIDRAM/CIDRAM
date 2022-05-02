@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2022.04.04).
+ * This file: Front-end functions file (last modified: 2022.05.02).
  */
 
 /**
@@ -367,7 +367,7 @@ $CIDRAM['FileManager-RecursiveList'] = function (string $Base) use (&$CIDRAM): a
                     $Component = $CIDRAM['L10N']->getString('label_fmgr_other_sig');
                 } elseif (preg_match('~(?:\.tmp|\.rollback|^(?:cache|hashes|ipbypass|assets/frontend/frontend|rl)\.dat)$~i', $ThisNameFixed)) {
                     $Component = $CIDRAM['L10N']->getString('label_fmgr_cache_data');
-                } elseif (preg_match('/^(?:components|themes|modules)\.dat$/', $ThisNameFixed)) {
+                } elseif ($ThisNameFixed === 'installed.yml') {
                     $Component = $CIDRAM['L10N']->getString('label_fmgr_updates_metadata');
                 }
                 if (!isset($CIDRAM['Components']['Components'][$Component])) {
@@ -446,11 +446,12 @@ $CIDRAM['FileManager-RecursiveList'] = function (string $Base) use (&$CIDRAM): a
 $CIDRAM['FetchComponentsLists'] = function (string $Base, array &$Arr) use (&$CIDRAM): void {
     $Files = new \DirectoryIterator($Base);
     foreach ($Files as $ThisFile) {
-        if (!empty($ThisFile) && preg_match('/\.(?:dat|inc|ya?ml)$/i', $ThisFile)) {
-            $Data = $CIDRAM['ReadFile']($Base . $ThisFile);
-            if ($Data = $CIDRAM['ExtractPage']($Data)) {
-                $CIDRAM['YAML']->process($Data, $Arr);
-            }
+        if (!preg_match('~\.ya?ml$~i', $ThisFile)) {
+            continue;
+        }
+        $Data = $CIDRAM['ReadFile']($Base . $ThisFile);
+        if ($Data = $CIDRAM['ExtractPage']($Data)) {
+            $CIDRAM['YAML']->process($Data, $Arr);
         }
     }
 };
@@ -1612,10 +1613,7 @@ $CIDRAM['UpdatesHandler-Update'] = function ($ID) use (&$CIDRAM): void {
     $ID = array_unique($ID);
     $Congruents = [];
     foreach ($ID as $ThisTarget) {
-        if (!isset(
-            $CIDRAM['Components']['Meta'][$ThisTarget]['Remote'],
-            $CIDRAM['Components']['Meta'][$ThisTarget]['Reannotate']
-        )) {
+        if (!isset($CIDRAM['Components']['Meta'][$ThisTarget]['Remote'])) {
             continue;
         }
         $BytesAdded = 0;
@@ -1634,17 +1632,13 @@ $CIDRAM['UpdatesHandler-Update'] = function ($ID) use (&$CIDRAM): void {
             $CIDRAM['Components']['RemoteMeta'][$ThisTarget]['All Constraints Met'] &&
             !empty($CIDRAM['Components']['RemoteMeta'][$ThisTarget]['Files']['From']) &&
             !empty($CIDRAM['Components']['RemoteMeta'][$ThisTarget]['Files']['To']) &&
-            !empty($CIDRAM['Components']['RemoteMeta'][$ThisTarget]['Reannotate']) &&
-            $CIDRAM['Traverse']($CIDRAM['Components']['RemoteMeta'][$ThisTarget]['Reannotate']) &&
-            ($ThisReannotate = $CIDRAM['Components']['RemoteMeta'][$ThisTarget]['Reannotate']) &&
-            file_exists($CIDRAM['Vault'] . $ThisReannotate) &&
-            ($OldMeta = $CIDRAM['Updater-IO']->readFile($CIDRAM['Vault'] . $ThisReannotate)) &&
+            ($OldMeta = $CIDRAM['Updater-IO']->readFile($CIDRAM['Vault'] . 'installed.yml')) &&
             preg_match("~(\n" . $SafeTarget . ":?)(\n [^\n]*)*\n~i", $OldMeta, $OldMetaMatches) &&
             ($OldMetaMatches = $OldMetaMatches[0]) &&
             preg_match("~(\n" . $SafeTarget . ":?)(\n [^\n]*)*\n~i", $NewMeta, $NewMetaMatches) &&
             ($NewMetaMatches = $NewMetaMatches[0])
         ) {
-            $Congruents[$ThisReannotate] = $NewMeta;
+            $Congruents['installed.yml'] = $NewMeta;
             $CIDRAM['Arrayify']($CIDRAM['Components']['RemoteMeta'][$ThisTarget]['Files']);
             $CIDRAM['Arrayify']($CIDRAM['Components']['RemoteMeta'][$ThisTarget]['Files']['From']);
             $CIDRAM['Arrayify']($CIDRAM['Components']['RemoteMeta'][$ThisTarget]['Files']['To']);
@@ -1797,7 +1791,7 @@ $CIDRAM['UpdatesHandler-Update'] = function ($ID) use (&$CIDRAM): void {
                 }
 
                 /** Assign updated component annotation. */
-                $CIDRAM['Updater-IO']->writeFile($CIDRAM['Vault'] . $ThisReannotate, $NewMeta);
+                $CIDRAM['Updater-IO']->writeFile($CIDRAM['Vault'] . 'installed.yml', $NewMeta);
 
                 $CIDRAM['FE']['state_msg'] .= '<code>' . $ThisTarget . '</code> – ';
                 if (
@@ -1886,9 +1880,8 @@ $CIDRAM['UpdatesHandler-Uninstall'] = function ($ID) use (&$CIDRAM): void {
     if (
         $InUse === 0 &&
         !empty($CIDRAM['Components']['Meta'][$ID]['Files']['To']) &&
-        !empty($CIDRAM['Components']['Meta'][$ID]['Reannotate']) &&
         !empty($CIDRAM['Components']['Meta'][$ID]['Uninstallable']) &&
-        ($OldMeta = $CIDRAM['Updater-IO']->readFile($CIDRAM['Vault'] . $CIDRAM['Components']['Meta'][$ID]['Reannotate'])) &&
+        ($OldMeta = $CIDRAM['Updater-IO']->readFile($CIDRAM['Vault'] . 'installed.yml')) &&
         preg_match("~(\n" . preg_quote($ID) . ":?)(\n [^\n]*)*\n~i", $OldMeta, $OldMetaMatches) &&
         ($OldMetaMatches = $OldMetaMatches[0])
     ) {
@@ -1911,7 +1904,7 @@ $CIDRAM['UpdatesHandler-Uninstall'] = function ($ID) use (&$CIDRAM): void {
             }
             $CIDRAM['DeleteDirectory']($ThisFile);
         }
-        $CIDRAM['Updater-IO']->writeFile($CIDRAM['Vault'] . $CIDRAM['Components']['Meta'][$ID]['Reannotate'], $NewMeta);
+        $CIDRAM['Updater-IO']->writeFile($CIDRAM['Vault'] . 'installed.yml', $NewMeta);
         $CIDRAM['Components']['Meta'][$ID]['Version'] = false;
         $CIDRAM['Components']['Meta'][$ID]['Files'] = false;
         $CIDRAM['FE']['state_msg'] .= $CIDRAM['L10N']->getString('response_component_successfully_uninstalled');
@@ -2268,11 +2261,8 @@ $CIDRAM['UpdatesHandler-Repair'] = function ($ID) use (&$CIDRAM): void {
         $SafeTarget = preg_quote($ThisTarget);
         if (
             !$RepairFailed &&
-            !empty($CIDRAM['Components']['RemoteMeta'][$ThisTarget]['Reannotate']) &&
-            $CIDRAM['Traverse']($CIDRAM['Components']['RemoteMeta'][$ThisTarget]['Reannotate']) &&
-            ($ThisReannotate = $CIDRAM['Components']['RemoteMeta'][$ThisTarget]['Reannotate']) &&
-            file_exists($CIDRAM['Vault'] . $ThisReannotate) &&
-            ($OldMeta = $CIDRAM['Updater-IO']->readFile($CIDRAM['Vault'] . $ThisReannotate)) &&
+            file_exists($CIDRAM['Vault'] . 'installed.yml') &&
+            ($OldMeta = $CIDRAM['Updater-IO']->readFile($CIDRAM['Vault'] . 'installed.yml')) &&
             preg_match("~(\n" . $SafeTarget . ":?)(\n [^\n]*)*\n~i", $OldMeta, $OldMetaMatches) &&
             ($OldMetaMatches = $OldMetaMatches[0]) &&
             ($NewMeta = $RemoteData) &&
@@ -2282,7 +2272,7 @@ $CIDRAM['UpdatesHandler-Repair'] = function ($ID) use (&$CIDRAM): void {
             $NewMeta = str_replace($OldMetaMatches, $NewMetaMatches, $OldMeta);
 
             /** Assign updated component annotation. */
-            $CIDRAM['Updater-IO']->writeFile($CIDRAM['Vault'] . $ThisReannotate, $NewMeta);
+            $CIDRAM['Updater-IO']->writeFile($CIDRAM['Vault'] . 'installed.yml', $NewMeta);
 
             /** Repair operation succeeded. */
             $CIDRAM['FE']['state_msg'] .= $CIDRAM['L10N']->getString('response_repair_process_completed');

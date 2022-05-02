@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2022.04.30).
+ * This file: Front-end handler (last modified: 2022.05.02).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -2347,10 +2347,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && ($CIDRAM['FE']['Per
                 empty($CIDRAM['Components']['ThisComponent']['Remote']) ||
                 empty($CIDRAM['Components']['ThisComponent']['Version']) ||
                 empty($CIDRAM['Components']['ThisComponent']['Files']['From']) ||
-                empty($CIDRAM['Components']['ThisComponent']['Files']['To']) ||
-                empty($CIDRAM['Components']['ThisComponent']['Reannotate']) ||
-                !$CIDRAM['Traverse']($CIDRAM['Components']['ThisComponent']['Reannotate']) ||
-                !file_exists($CIDRAM['Vault'] . $CIDRAM['Components']['ThisComponent']['Reannotate'])
+                empty($CIDRAM['Components']['ThisComponent']['Files']['To'])
             ) {
                 continue;
             }
@@ -2367,28 +2364,6 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && ($CIDRAM['FE']['Per
                 ["/\n Files:(\n  [^\n]*)*\n/i", "/\n Version: [^\n]*\n/i"],
                 "\n",
                 $CIDRAM['Components']['RemoteDataThis'][0]
-            );
-            $CIDRAM['Components']['ReannotateThis'] = $CIDRAM['Updater-IO']->readFile(
-                $CIDRAM['Vault'] . $CIDRAM['Components']['ThisComponent']['Reannotate']
-            );
-            if (!$CIDRAM['ExtractPage']($CIDRAM['Components']['ReannotateThis'])) {
-                continue;
-            }
-            $CIDRAM['ThisOffset'] = [0 => []];
-            $CIDRAM['ThisOffset'][1] = preg_match(
-                '/(\n+)$/',
-                $CIDRAM['Components']['ReannotateThis'],
-                $CIDRAM['ThisOffset'][0]
-            );
-            $CIDRAM['ThisOffset'] = strlen($CIDRAM['ThisOffset'][0][0]) * -1;
-            $CIDRAM['Components']['ReannotateThis'] = substr(
-                $CIDRAM['Components']['ReannotateThis'],
-                0,
-                $CIDRAM['ThisOffset']
-            ) . $CIDRAM['Components']['RemoteDataThis'] . "\n";
-            $CIDRAM['Updater-IO']->writeFile(
-                $CIDRAM['Vault'] . $CIDRAM['Components']['ThisComponent']['Reannotate'],
-                $CIDRAM['Components']['ReannotateThis']
             );
 
             /** Determine whether all dependency constraints have been met. */

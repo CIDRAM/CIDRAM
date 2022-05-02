@@ -79,7 +79,6 @@ general:
   rURI:ShowInPageOutput
   rURI:OmitIfEmpty
   Infractions:ShowInLogs
-  Infractions:OmitIfEmpty
   ASNLookup:ShowInLogs
   ASNLookup:OmitIfEmpty
   CCLookup:ShowInLogs
@@ -116,9 +115,71 @@ general:
  ban_override: 200
  log_banned_ips: true
  default_dns: "8.8.8.8,8.8.4.4"
- search_engine_verification: true
- social_media_verification: true
- other_verification: true
+ search_engine_verification: |
+  Applebot:Verify
+  Applebot:BlockNegatives
+  Applebot:UntrackPositives
+  Baidu:Verify
+  Baidu:BlockNegatives
+  Baidu:UntrackPositives
+  Bingbot:Verify
+  Bingbot:BlockNegatives
+  Bingbot:SingleHitBypass
+  Bingbot:UntrackPositives
+  DuckDuckBot:Verify
+  DuckDuckBot:BlockNegatives
+  DuckDuckBot:SingleHitBypass
+  DuckDuckBot:UntrackPositives
+  Googlebot:Verify
+  Googlebot:BlockNegatives
+  Googlebot:UntrackPositives
+  MojeekBot:Verify
+  MojeekBot:BlockNegatives
+  MojeekBot:UntrackPositives
+  PetalBot:Verify
+  PetalBot:BlockNegatives
+  PetalBot:UntrackPositives
+  Qwantify:Verify
+  Qwantify:BlockNegatives
+  Qwantify:UntrackPositives
+  SeznamBot:Verify
+  SeznamBot:BlockNegatives
+  SeznamBot:UntrackPositives
+  Sogou:Verify
+  Sogou:BlockNegatives
+  Sogou:UntrackPositives
+  Yahoo:Verify
+  Yahoo:BlockNegatives
+  Yahoo:UntrackPositives
+  Yandex:Verify
+  Yandex:BlockNegatives
+  Yandex:UntrackPositives
+  YoudaoBot:Verify
+  YoudaoBot:BlockNegatives
+  YoudaoBot:UntrackPositives
+ social_media_verification: |
+  Embedly:Verify
+  Embedly:BlockNegatives
+  Facebook:Verify
+  Facebook:BlockNegatives
+  Facebook:UntrackPositives
+  Pinterest:Verify
+  Pinterest:BlockNegatives
+  Pinterest:UntrackPositives
+  Twitterbot:Verify
+  Twitterbot:BlockNegatives
+  Twitterbot:UntrackPositives
+ other_verification: |
+  AdSense:Verify
+  AdSense:BlockNegatives
+  AdSense:UntrackPositives
+  AmazonAdBot:Verify
+  AmazonAdBot:BlockNegatives
+  AmazonAdBot:SingleHitBypass
+  AmazonAdBot:UntrackPositives
+  Grapeshot:Verify
+  Grapeshot:BlockNegatives
+  Grapeshot:UntrackPositives
  protect_frontend: true
  default_algo: "PASSWORD_DEFAULT"
  statistics: |
@@ -137,8 +198,8 @@ general:
  config_imports: ""
  events: ""
 signatures:
- ipv4: "ipv4.dat,ipv4_bogons.dat,ipv4_custom.dat,ipv4_isps.dat,ipv4_nonblocking.dat,ipv4_other.dat"
- ipv6: "ipv6.dat,ipv6_bogons.dat,ipv6_custom.dat,ipv6_isps.dat,ipv6_nonblocking.dat,ipv6_other.dat"
+ ipv4: "ipv4.dat,ipv4_bogons.dat,ipv4_isps.dat,ipv4_nonblocking.dat,ipv4_other.dat"
+ ipv6: "ipv6.dat,ipv6_bogons.dat,ipv6_isps.dat,ipv6_nonblocking.dat,ipv6_other.dat"
  block_attacks: true
  block_cloud: true
  block_bogons: false

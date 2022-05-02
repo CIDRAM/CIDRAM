@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2022.04.30).
+ * This file: Front-end handler (last modified: 2022.05.02).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -787,6 +787,9 @@ if ($CIDRAM['FE']['UserState'] === 1) {
 if ($CIDRAM['FE']['UserState'] !== 1 && $CIDRAM['FE']['CronMode'] === '') {
     /** Page initial prepwork. */
     $CIDRAM['InitialPrepwork']($CIDRAM['L10N']->getString('title_login'), '', false);
+
+    /** Hide warnings from non-logged in users. */
+    $CIDRAM['FE']['Warnings'] = '';
 
     if ($CIDRAM['FE']['UserState'] === 2) {
         /** Provide the option to log out (omit home link). */

@@ -1,7 +1,7 @@
 ---
 CIDRAM Core:
  Name: "CIDRAM Core"
- Version: "3.0.0-DEV+22112641"
+ Version: "3.0.0-DEV+22121566"
  Dependencies:
   PHP: ">=7.2"
   Common Classes Package: "^2.9"
@@ -58,14 +58,14 @@ CIDRAM Core:
    - "5b31e618825895cd45981fd336f99be78b0ef5d15ae9db199f1613a49d36fcf2:14912"
    - "a700fb40dba91aa85f16c67e5a3a3993cb84544f0eb7413c9f9a72cc67949b92:2927"
    - "497c824d33616f32ffb136cb16dea30b83eb4049c378dd8d2c7092536ace31b4:7031"
-   - "31eb798014a2b3c104c14e8d8ea06f78ad01f67367d0784f8ae54be6f2ad221f:32456"
+   - "1e808cd2a3d3a29f919593b8e71c0f31c6bc75e9472f38f272b2a6858305f50c:32424"
    - "ab531c0c7b23d53898a3d86d76ba9cffd082fe24cc924384781e09b79ea824c7:9081"
    - "750e57ccb89b6f9364989b900d48ecddd303718d7b76cfdd87626b232ead5e49:104732"
    - "59b0fbabc7c5a79ba10ad86f600b8d12fd9629974a979dc9f15e8cb6a98ea4a2:45890"
    - "8d286bddba39dda8d23b20d8e446ceb387133638c96a6e4501dd7701c540c8c1:6697"
 CIDRAM Front-End:
  Name: "CIDRAM Front-End"
- Version: "3.0.0-DEV+22119000"
+ Version: "3.0.0-DEV+22121566"
  Dependencies:
   PHP: ">=7.2"
   Common Classes Package: "^2.9"
@@ -249,8 +249,8 @@ CIDRAM Front-End:
    - "ff4b5fb5fa3ef1dd699797106173bb3fc53a3a508e8742e74e4b940eb77d9b60:354"
    - "dacc158a41066a6edf9fee8e70ca13194d2632171b8af734c50ab47b79aae552:595"
    - "2bb4f2b6d0c5b1ce9ddbc4bc90ec584300092ba91bafdaf90823f087862d8de7:191734"
-   - "25b070eddd8573b9eb449860920293e5dfb0efcf342f91e1a587b5306d725561:270401"
-   - "04e41aee970936d453691eae183fab55d51c4cfb838150f6aa0ea777386409b2:221084"
+   - "8229a8dd48adc14dc2b2e107a5899737d9830c88cd4046c1bf79f08f0e5c9322:269134"
+   - "a826de2288f83b980e989adef58f7fd49482f3a878e183c935dbee4a5520661c:220169"
 Common Classes Package:
  Name: "Common Classes Package"
  Version: "2.9.0"
@@ -932,7 +932,7 @@ Chart.js:
  Name: "Chart.js"
  Version: "3.7.1"
  Dependencies:
-  CIDRAM Core: "^1.20.0-DEV|>=2.7.0-DEV"
+  CIDRAM Core: "^3"
  Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/installed.yml"
  Uninstallable: true
  Provisional: true
@@ -941,8 +941,8 @@ Chart.js:
    - "https://raw.githubusercontent.com/Maikuolan/Chart.js-Common-Module/master/chart.min.js"
    - "https://raw.githubusercontent.com/Maikuolan/Chart.js-Common-Module/master/_chartjs.html"
   To:
-   - "fe_assets/chart.min.js"
-   - "fe_assets/_chartjs.html"
+   - "assets/frontend/chart.min.js"
+   - "assets/frontend/_chartjs.html"
   Checksum:
    - "12b674f4a9199f38e9a9c6a77b8482cb21ec2805ccbc80fdff1c1b97f02ad697:195090"
    - "615790402dd1f3b88e2dcc5c12e3bbbe59de032cae3b2a9678961b68d351b65e:893"
@@ -1037,21 +1037,6 @@ compat_bunnycdn.php:
    - "13173053705f2586021db2fc97279e6f9661d2034cf6a17038873627fe87e625:2677"
    - "918edd488e556eec018c33269da5e7e094a5a15bc6f6772168b771565fd32add:2259"
  Used with: "modules"
-flags.css:
- Name: "Flags CSS"
- Version: "2022.93.0"
- Dependencies:
-  CIDRAM Core: "^1.13.1|^2.0.1"
- Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/installed.yml"
- Uninstallable: true
- Provisional: true
- Files:
-  From:
-   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM-Extras/master/modules/flags.css"
-  To:
-   - "fe_assets/flags.css"
-  Checksum:
-   - "2bb4f2b6d0c5b1ce9ddbc4bc90ec584300092ba91bafdaf90823f087862d8de7:191734"
 module_abuseipdb.php:
  Name: "AbuseIPDB module"
  False Positive Risk: "Medium"

@@ -41,3 +41,4 @@
 - At the range tables page, show the IPv4/IPv6 totals side by side, for easier comparison between the two.
 - Removed some unused file manager icons and slightly simplified its logic.
 - Added a JavaScript warning to the front-end login.
+- Front-end warnings have been hidden from non-logged in users.

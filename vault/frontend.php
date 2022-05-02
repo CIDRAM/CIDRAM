@@ -855,6 +855,9 @@ if ($CIDRAM['FE']['UserState'] !== 1 && $CIDRAM['FE']['CronMode'] === '') {
     /** Page initial prepwork. */
     $CIDRAM['InitialPrepwork']($CIDRAM['L10N']->getString('title_login'), '', false);
 
+    /** Hide warnings from non-logged in users. */
+    $CIDRAM['FE']['Warnings'] = '';
+
     if ($CIDRAM['FE']['UserState'] === 2) {
         /** Provide the option to log out (omit home link). */
         $CIDRAM['FE']['bNav'] = $CIDRAM['FE']['LogoutButton'];

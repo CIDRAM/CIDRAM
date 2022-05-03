@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2022.05.02).
+ * This file: Front-end functions file (last modified: 2022.05.03).
  */
 
 /**
@@ -146,7 +146,7 @@ $CIDRAM['FormatFilesize'] = function (int &$Filesize) use (&$CIDRAM): void {
  * @param string $Entry Name of the cache entry to be deleted.
  * @return void
  */
-$CIDRAM['FECacheRemove'] = function (string &$Source, bool &$Rebuild, string $Entry) use (&$CIDRAM): void {
+$CIDRAM['FECacheRemove'] = function (?string &$Source, ?bool &$Rebuild, string $Entry) use (&$CIDRAM): void {
     /** Override if using a different preferred caching mechanism. */
     if ($CIDRAM['Cache']->Using && $CIDRAM['Cache']->Using !== 'FF') {
         if ($Entry === '__') {
@@ -186,7 +186,7 @@ $CIDRAM['FECacheRemove'] = function (string &$Source, bool &$Rebuild, string $En
  * @param int $Expires When should the cache entry expire (be deleted).
  * @return void
  */
-$CIDRAM['FECacheAdd'] = function (string &$Source, bool &$Rebuild, string $Entry, string $Data, int $Expires) use (&$CIDRAM): void {
+$CIDRAM['FECacheAdd'] = function (?string &$Source, ?bool &$Rebuild, string $Entry, string $Data, int $Expires) use (&$CIDRAM): void {
     /** Override if using a different preferred caching mechanism. */
     if ($CIDRAM['Cache']->Using && $CIDRAM['Cache']->Using !== 'FF') {
         $CIDRAM['Cache']->setEntry($Entry, $Data, $Expires - $CIDRAM['Now']);
@@ -209,7 +209,7 @@ $CIDRAM['FECacheAdd'] = function (string &$Source, bool &$Rebuild, string $Entry
  * @param string $Entry Name of the cache entry to get.
  * @return string|bool Returned cache entry data (or false on failure).
  */
-$CIDRAM['FECacheGet'] = function (string &$Source, string $Entry) use (&$CIDRAM) {
+$CIDRAM['FECacheGet'] = function (?string &$Source, string $Entry) use (&$CIDRAM) {
     /** Override if using a different preferred caching mechanism. */
     if ($CIDRAM['Cache']->Using && $CIDRAM['Cache']->Using !== 'FF') {
         /** Check whether already fetched for this instance. */
@@ -3010,7 +3010,7 @@ $CIDRAM['InitialPrepwork'] = function (string $Title = '', string $Tips = '', bo
     $CIDRAM['FE']['FE_Title'] = 'CIDRAM – ' . $Title;
 
     /** Fetch and prepare username. */
-    if ($Username = (empty($CIDRAM['FE']['UserRaw']) ? '' : $CIDRAM['FE']['UserRaw'])) {
+    if ($Username = (empty($CIDRAM['FE']['User']) ? '' : $CIDRAM['FE']['User'])) {
         $Username = preg_replace('~^([^<>]+)<[^<>]+>$~', '\1', $Username);
         if (($AtChar = strpos($Username, '@')) !== false) {
             $Username = substr($Username, 0, $AtChar);

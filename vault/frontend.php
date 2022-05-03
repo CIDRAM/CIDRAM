@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2022.05.02).
+ * This file: Front-end handler (last modified: 2022.05.03).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -77,15 +77,6 @@ $CIDRAM['FE'] = [
     /** Current default theme. */
     'theme' => $CIDRAM['Config']['template_data']['theme'],
 
-    /** List of front-end users will be populated here. */
-    'UserList' => "\n",
-
-    /** List of front-end sessions will be populated here. */
-    'SessionList' => "\n",
-
-    /** Cache data will be populated here. */
-    'Cache' => "\n",
-
     /**
      * The current user state.
      * -1 = Attempted and failed to log in.
@@ -95,8 +86,8 @@ $CIDRAM['FE'] = [
      */
     'UserState' => 0,
 
-    /** Taken from either $_POST['username'] or $_COOKIE['CIDRAM-ADMIN'] (the username claimed by the client). */
-    'UserRaw' => '',
+    /** The currently logged in user. */
+    'User' => '',
 
     /**
      * User permissions.
@@ -368,58 +359,6 @@ if ($CIDRAM['QueryVars']['cidram-page'] === 'favicon') {
 /** Set the current request's form target. */
 $CIDRAM['FE']['FormTarget'] = $_POST['cidram-form-target'] ?? '';
 
-/** Used by a safety mechanism against a potential attack vector. */
-$CIDRAM['frontend.dat.safety'] = file_exists($CIDRAM['Vault'] . 'assets/frontend/frontend.dat.safety');
-
-/** Fetch user list, sessions list, and the front-end cache, or rebuild it if it doesn't exist. */
-if ($CIDRAM['FE']['FrontEndData'] = $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'assets/frontend/frontend.dat')) {
-    $CIDRAM['FE']['Rebuild'] = false;
-} else {
-    if ($CIDRAM['frontend.dat.safety']) {
-        header('Content-Type: text/plain');
-        die('[CIDRAM] ' . $CIDRAM['L10N']->getString('security_warning'));
-    }
-    $CIDRAM['FE']['FrontEndData'] = "USERS\n-----\nYWRtaW4=," . $CIDRAM['FE']['DefaultPassword'] . ",1\n\nSESSIONS\n--------\n\nCACHE\n-----\n";
-    $CIDRAM['FE']['Rebuild'] = true;
-}
-
-/** Engage safety mechanism. */
-if (!$CIDRAM['frontend.dat.safety']) {
-    $CIDRAM['Handle'] = fopen($CIDRAM['Vault'] . 'assets/frontend/frontend.dat.safety', 'wb');
-    fwrite($CIDRAM['Handle'], '.');
-    fclose($CIDRAM['Handle']);
-}
-
-$CIDRAM['FE']['UserListPos'] = strpos($CIDRAM['FE']['FrontEndData'], "USERS\n-----\n");
-$CIDRAM['FE']['SessionListPos'] = strpos($CIDRAM['FE']['FrontEndData'], "SESSIONS\n--------\n");
-$CIDRAM['FE']['CachePos'] = strpos($CIDRAM['FE']['FrontEndData'], "CACHE\n-----\n");
-if ($CIDRAM['FE']['UserListPos'] !== false) {
-    $CIDRAM['FE']['UserList'] = substr(
-        $CIDRAM['FE']['FrontEndData'],
-        $CIDRAM['FE']['UserListPos'] + 11,
-        $CIDRAM['FE']['SessionListPos'] - $CIDRAM['FE']['UserListPos'] - 12
-    );
-}
-if ($CIDRAM['FE']['SessionListPos'] !== false) {
-    $CIDRAM['FE']['SessionList'] = substr(
-        $CIDRAM['FE']['FrontEndData'],
-        $CIDRAM['FE']['SessionListPos'] + 17,
-        $CIDRAM['FE']['CachePos'] - $CIDRAM['FE']['SessionListPos'] - 18
-    );
-}
-if ($CIDRAM['FE']['CachePos'] !== false) {
-    $CIDRAM['FE']['Cache'] = substr(
-        $CIDRAM['FE']['FrontEndData'],
-        $CIDRAM['FE']['CachePos'] + 11
-    );
-}
-
-/** Clear expired sessions. */
-$CIDRAM['ClearExpired']($CIDRAM['FE']['SessionList'], $CIDRAM['FE']['Rebuild']);
-
-/** Clear expired cache entries. */
-$CIDRAM['ClearExpired']($CIDRAM['FE']['Cache'], $CIDRAM['FE']['Rebuild']);
-
 /** Initialise cache. */
 $CIDRAM['InitialiseCache']();
 
@@ -454,25 +393,22 @@ if ($CIDRAM['FE']['FormTarget'] === 'login' || $CIDRAM['FE']['CronMode'] !== '')
         $CIDRAM['FE']['state_msg'] = $CIDRAM['L10N']->getString('response_login_username_field_empty');
     } elseif (!empty($_POST['username']) && !empty($_POST['password'])) {
         $CIDRAM['FE']['UserState'] = -1;
-        $CIDRAM['FE']['UserRaw'] = $_POST['username'];
-        $CIDRAM['FE']['User'] = base64_encode($CIDRAM['FE']['UserRaw']);
-        $CIDRAM['FE']['UserPos'] = strpos($CIDRAM['FE']['UserList'], "\n" . $CIDRAM['FE']['User'] . ',');
-
-        if ($CIDRAM['FE']['UserPos'] !== false) {
-            $CIDRAM['FE']['UserOffset'] = $CIDRAM['FE']['UserPos'] + strlen($CIDRAM['FE']['User']) + 2;
-            $CIDRAM['FE']['Password'] = substr(
-                $CIDRAM['FE']['UserList'],
-                $CIDRAM['FE']['UserOffset'],
-                strpos($CIDRAM['FE']['UserList'], "\n", $CIDRAM['FE']['UserOffset']) - $CIDRAM['FE']['UserOffset']
-            );
-            $CIDRAM['FE']['Permissions'] = (int)substr($CIDRAM['FE']['Password'], -1);
-            $CIDRAM['FE']['Password'] = substr($CIDRAM['FE']['Password'], 0, -2);
-            if (password_verify($_POST['password'], $CIDRAM['FE']['Password'])) {
+        $CIDRAM['LP'] = ['ConfigUserPath' => 'user.' . $_POST['username']];
+        if (isset(
+            $CIDRAM['Config'][$CIDRAM['LP']['ConfigUserPath']],
+            $CIDRAM['Config'][$CIDRAM['LP']['ConfigUserPath']]['password'],
+            $CIDRAM['Config'][$CIDRAM['LP']['ConfigUserPath']]['permissions']
+        ) &&
+            !empty($CIDRAM['Config'][$CIDRAM['LP']['ConfigUserPath']]['password']) &&
+            !empty($CIDRAM['Config'][$CIDRAM['LP']['ConfigUserPath']]['permissions'])
+        ) {
+            if (password_verify($_POST['password'], $CIDRAM['Config'][$CIDRAM['LP']['ConfigUserPath']]['password'])) {
                 $CIDRAM['FECacheRemove'](
                     $CIDRAM['FE']['Cache'],
                     $CIDRAM['FE']['Rebuild'],
                     'LoginAttempts' . $CIDRAM['IPAddr']
                 );
+                $CIDRAM['FE']['Permissions'] = $CIDRAM['Config'][$CIDRAM['LP']['ConfigUserPath']]['permissions'];
                 if (($CIDRAM['FE']['Permissions'] === 3 && (
                     $CIDRAM['FE']['CronMode'] === '' || substr($CIDRAM['FE']['UA'], 0, 10) !== 'Cronable v'
                 )) || !($CIDRAM['FE']['Permissions'] > 0 && $CIDRAM['FE']['Permissions'] <= 3)) {
@@ -480,56 +416,62 @@ if ($CIDRAM['FE']['FormTarget'] === 'login' || $CIDRAM['FE']['CronMode'] !== '')
                     $CIDRAM['FE']['state_msg'] = $CIDRAM['L10N']->getString('response_login_wrong_endpoint');
                 } else {
                     if ($CIDRAM['FE']['CronMode'] === '') {
-                        $CIDRAM['FE']['SessionKey'] = hash('md5', $CIDRAM['GenerateSalt']());
+                        $CIDRAM['FE']['SessionKey'] = hash('sha256', $CIDRAM['GenerateSalt']());
                         $CIDRAM['FE']['Cookie'] = $_POST['username'] . $CIDRAM['FE']['SessionKey'];
                         setcookie('CIDRAM-ADMIN', $CIDRAM['FE']['Cookie'], $CIDRAM['Now'] + 604800, '/', $CIDRAM['HostnameOverride'] ?: $CIDRAM['HTTP_HOST'], false, true);
-                        $CIDRAM['FE']['ThisSession'] = $CIDRAM['FE']['User'] . ',' . password_hash(
-                            $CIDRAM['FE']['SessionKey'],
-                            $CIDRAM['DefaultAlgo']
-                        ) . ',' . ($CIDRAM['Now'] + 604800) . "\n";
-                        $CIDRAM['FE']['SessionList'] .= $CIDRAM['FE']['ThisSession'];
+                        $CIDRAM['FE']['ThisSession'] = $_POST['username'] . ',' . password_hash($CIDRAM['FE']['SessionKey'], $CIDRAM['DefaultAlgo']);
 
                         /** Prepare 2FA email. */
-                        if ($CIDRAM['Config']['PHPMailer']['enable_two_factor'] && preg_match('~^.+@.+$~', $CIDRAM['FE']['UserRaw'])) {
-                            $CIDRAM['2FA-State'] = ['Number' => $CIDRAM['2FA-Number']()];
-                            $CIDRAM['2FA-State']['Hash'] = password_hash($CIDRAM['2FA-State']['Number'], $CIDRAM['DefaultAlgo']);
+                        if (
+                            $CIDRAM['Config']['PHPMailer']['enable_two_factor'] &&
+                            preg_match('~^.+@.+$~', $_POST['username']) &&
+                            ($CIDRAM['LP']['TwoFactorMessage'] = $CIDRAM['L10N']->getString('msg_template_2fa')) &&
+                            ($CIDRAM['LP']['TwoFactorSubject'] = $CIDRAM['L10N']->getString('msg_subject_2fa'))
+                        ) {
+                            $CIDRAM['LP']['TwoFactorState'] = ['Number' => $CIDRAM['2FA-Number']()];
+                            $CIDRAM['LP']['TwoFactorState']['Hash'] = password_hash($CIDRAM['LP']['TwoFactorState']['Number'], $CIDRAM['DefaultAlgo']);
                             $CIDRAM['FECacheAdd'](
                                 $CIDRAM['FE']['Cache'],
                                 $CIDRAM['FE']['Rebuild'],
-                                '2FA-State:' . $CIDRAM['FE']['Cookie'],
-                                '0' . $CIDRAM['2FA-State']['Hash'],
+                                'TwoFactorState:' . $CIDRAM['FE']['Cookie'],
+                                '0' . $CIDRAM['LP']['TwoFactorState']['Hash'],
                                 $CIDRAM['Now'] + 600
                             );
-                            $CIDRAM['2FA-State']['Template'] = sprintf(
-                                $CIDRAM['L10N']->getString('msg_template_2fa'),
-                                $CIDRAM['FE']['UserRaw'],
-                                $CIDRAM['2FA-State']['Number']
+                            $CIDRAM['LP']['TwoFactorState']['Template'] = sprintf(
+                                $CIDRAM['LP']['TwoFactorMessage'],
+                                $_POST['username'],
+                                $CIDRAM['LP']['TwoFactorState']['Number']
                             );
-                            if (preg_match('~^[^<>]+<[^<>]+>$~', $CIDRAM['FE']['UserRaw'])) {
-                                $CIDRAM['2FA-State']['Name'] = trim(preg_replace('~^([^<>]+)<[^<>]+>$~', '\1', $CIDRAM['FE']['UserRaw']));
-                                $CIDRAM['2FA-State']['Address'] = trim(preg_replace('~^[^<>]+<([^<>]+)>$~', '\1', $CIDRAM['FE']['UserRaw']));
+                            if (preg_match('~^[^<>]+<[^<>]+>$~', $_POST['username'])) {
+                                $CIDRAM['LP']['TwoFactorState']['Name'] = trim(preg_replace('~^([^<>]+)<[^<>]+>$~', '\1', $_POST['username']));
+                                $CIDRAM['LP']['TwoFactorState']['Address'] = trim(preg_replace('~^[^<>]+<([^<>]+)>$~', '\1', $_POST['username']));
                             } else {
-                                $CIDRAM['2FA-State']['Name'] = trim($CIDRAM['FE']['UserRaw']);
-                                $CIDRAM['2FA-State']['Address'] = $CIDRAM['2FA-State']['Name'];
+                                $CIDRAM['LP']['TwoFactorState']['Name'] = trim($_POST['username']);
+                                $CIDRAM['LP']['TwoFactorState']['Address'] = $CIDRAM['LP']['TwoFactorState']['Name'];
                             }
                             $CIDRAM['SendEmail'](
-                                [['Name' => $CIDRAM['2FA-State']['Name'], 'Address' => $CIDRAM['2FA-State']['Address']]],
-                                $CIDRAM['L10N']->getString('msg_subject_2fa'),
-                                $CIDRAM['2FA-State']['Template'],
-                                strip_tags($CIDRAM['2FA-State']['Template'])
+                                [[
+                                    'Name' => $CIDRAM['LP']['TwoFactorState']['Name'],
+                                    'Address' => $CIDRAM['LP']['TwoFactorState']['Address']
+                                ]],
+                                $CIDRAM['LP']['TwoFactorSubject'],
+                                $CIDRAM['LP']['TwoFactorState']['Template'],
+                                strip_tags($CIDRAM['LP']['TwoFactorState']['Template'])
                             );
                             $CIDRAM['FE']['UserState'] = 2;
-                            unset($CIDRAM['2FA-State']);
                         } else {
                             $CIDRAM['FE']['UserState'] = 1;
+                        }
+
+                        /** Need to set a cache item to correspond with the cookie value. */
+                        if ($CIDRAM['FE']['UserState'] === 1) {
+                            $CIDRAM['Cache']->setEntry($CIDRAM['FE']['Cookie'], $CIDRAM['FE']['ThisSession'], 604800);
+                        } else {
+                            $CIDRAM['FE']['Permissions'] = 0;
                         }
                     } else {
                         $CIDRAM['FE']['UserState'] = 1;
                     }
-                    if ($CIDRAM['FE']['UserState'] !== 1) {
-                        $CIDRAM['FE']['Permissions'] = 0;
-                    }
-                    $CIDRAM['FE']['Rebuild'] = true;
                 }
             } else {
                 $CIDRAM['FE']['Permissions'] = 0;
@@ -538,6 +480,9 @@ if ($CIDRAM['FE']['FormTarget'] === 'login' || $CIDRAM['FE']['CronMode'] !== '')
         } else {
             $CIDRAM['FE']['state_msg'] = $CIDRAM['L10N']->getString('response_login_invalid_username');
         }
+
+        /** Cleanup. */
+        unset($CIDRAM['LP']);
     }
 
     if ($CIDRAM['FE']['state_msg']) {
@@ -580,80 +525,56 @@ if ($CIDRAM['FE']['FormTarget'] === 'login' || $CIDRAM['FE']['CronMode'] !== '')
 /** Determine whether the user has logged in. */
 elseif (!empty($_COOKIE['CIDRAM-ADMIN'])) {
     $CIDRAM['FE']['UserState'] = -1;
-    $CIDRAM['FE']['SessionKey'] = substr($_COOKIE['CIDRAM-ADMIN'], -32);
-    $CIDRAM['FE']['UserRaw'] = substr($_COOKIE['CIDRAM-ADMIN'], 0, -32);
-    $CIDRAM['FE']['User'] = base64_encode($CIDRAM['FE']['UserRaw']);
-    $CIDRAM['FE']['SessionOffset'] = 0;
+    $CIDRAM['LP'] = [];
+    if (
+        ($CIDRAM['LP']['TrySession'] = $CIDRAM['Cache']->getEntry($_COOKIE['CIDRAM-ADMIN'])) &&
+        ($CIDRAM['LP']['SessionDel'] = strpos($CIDRAM['LP']['TrySession'], ',')) !== false
+    ) {
+        $CIDRAM['LP']['SessionHash'] = substr($CIDRAM['LP']['TrySession'], $CIDRAM['LP']['SessionDel'] + 1);
+        $CIDRAM['LP']['SessionUser'] = substr($CIDRAM['LP']['TrySession'], 0, $CIDRAM['LP']['SessionDel']);
+    }
+    if (!empty($CIDRAM['LP']['SessionHash']) && !empty($CIDRAM['LP']['SessionUser'])) {
+        $CIDRAM['LP']['SessionUserLen'] = strlen($CIDRAM['LP']['SessionUser']);
+        $CIDRAM['LP']['SessionKey'] = substr($_COOKIE['CIDRAM-ADMIN'], $CIDRAM['LP']['SessionUserLen']);
+        $CIDRAM['LP']['CookieUser'] = substr($_COOKIE['CIDRAM-ADMIN'], 0, $CIDRAM['LP']['SessionUserLen']);
+        $CIDRAM['LP']['ConfigUserPath'] = 'user.' . $CIDRAM['LP']['CookieUser'];
+        if (
+            $CIDRAM['LP']['CookieUser'] === $CIDRAM['LP']['SessionUser'] &&
+            password_verify($CIDRAM['LP']['SessionKey'], $CIDRAM['LP']['SessionHash']) &&
+            isset(
+                $CIDRAM['Config'][$CIDRAM['LP']['ConfigUserPath']],
+                $CIDRAM['Config'][$CIDRAM['LP']['ConfigUserPath']]['permissions']
+            )
+        ) {
+            $CIDRAM['FE']['Permissions'] = $CIDRAM['Config'][$CIDRAM['LP']['ConfigUserPath']]['permissions'];
+            $CIDRAM['FE']['User'] = $CIDRAM['LP']['SessionUser'];
 
-    if (!empty($CIDRAM['FE']['SessionKey']) && !empty($CIDRAM['FE']['User'])) {
-        $CIDRAM['FE']['UserLen'] = strlen($CIDRAM['FE']['User']);
-        while (($CIDRAM['FE']['SessionPos'] = strpos(
-            $CIDRAM['FE']['SessionList'],
-            "\n" . $CIDRAM['FE']['User'],
-            $CIDRAM['FE']['SessionOffset']
-        )) !== false) {
-            $CIDRAM['FE']['SessionOffset'] = $CIDRAM['FE']['SessionPos'] + $CIDRAM['FE']['UserLen'] + 2;
-            $CIDRAM['FE']['SessionEntry'] = substr(
-                $CIDRAM['FE']['SessionList'],
-                $CIDRAM['FE']['SessionOffset'],
-                $CIDRAM['ZeroMin'](strpos(
-                    $CIDRAM['FE']['SessionList'],
-                    "\n",
-                    $CIDRAM['FE']['SessionOffset']
-                ), $CIDRAM['FE']['SessionOffset'] * -1)
-            );
-            $CIDRAM['FE']['SEDelimiter'] = strrpos($CIDRAM['FE']['SessionEntry'], ',');
-            if ($CIDRAM['FE']['SEDelimiter'] !== false) {
-                $CIDRAM['FE']['Expiry'] = (int)substr($CIDRAM['FE']['SessionEntry'], $CIDRAM['FE']['SEDelimiter'] + 1);
-                $CIDRAM['FE']['UserHash'] = substr($CIDRAM['FE']['SessionEntry'], 0, $CIDRAM['FE']['SEDelimiter']);
-            }
-            if (
-                !empty($CIDRAM['FE']['Expiry']) &&
-                !empty($CIDRAM['FE']['UserHash']) &&
-                ($CIDRAM['FE']['Expiry'] > $CIDRAM['Now']) &&
-                password_verify($CIDRAM['FE']['SessionKey'], $CIDRAM['FE']['UserHash'])
-            ) {
-                $CIDRAM['FE']['UserPos'] = strpos($CIDRAM['FE']['UserList'], "\n" . $CIDRAM['FE']['User'] . ',');
-                if ($CIDRAM['FE']['UserPos'] !== false) {
-                    $CIDRAM['FE']['ThisSession'] = $CIDRAM['FE']['User'] . ',' . $CIDRAM['FE']['SessionEntry'] . "\n";
-                    $CIDRAM['FE']['UserOffset'] = $CIDRAM['FE']['UserPos'] + $CIDRAM['FE']['UserLen'] + 2;
-                    $CIDRAM['FE']['Permissions'] = (int)substr(substr(
-                        $CIDRAM['FE']['UserList'],
-                        $CIDRAM['FE']['UserOffset'],
-                        strpos($CIDRAM['FE']['UserList'], "\n", $CIDRAM['FE']['UserOffset']) - $CIDRAM['FE']['UserOffset']
-                    ), -1);
-
-                    /** Handle 2FA stuff here. */
-                    if ($CIDRAM['Config']['PHPMailer']['enable_two_factor'] && preg_match('~^.+@.+$~', $CIDRAM['FE']['UserRaw'])) {
-                        $CIDRAM['2FA-State'] = $CIDRAM['FECacheGet'](
+            /** Handle 2FA stuff here. */
+            if ($CIDRAM['Config']['PHPMailer']['enable_two_factor'] && preg_match('~^.+@.+$~', $CIDRAM['LP']['SessionUser'])) {
+                $CIDRAM['LP']['TwoFactorState'] = $CIDRAM['Cache']->getEntry('TwoFactorState:' . $_COOKIE['CIDRAM-ADMIN']);
+                $CIDRAM['LP']['Try'] = (int)substr($CIDRAM['LP']['TwoFactorState'], 0, 1);
+                $CIDRAM['FE']['UserState'] = ((int)$CIDRAM['LP']['TwoFactorState'] === 1) ? 1 : 2;
+                if ($CIDRAM['FE']['UserState'] === 2 && $CIDRAM['FE']['FormTarget'] === '2fa' && !empty($_POST['2fa'])) {
+                    /** User has submitted a 2FA code. Attempt to verify it. */
+                    if (password_verify($_POST['2fa'], substr($CIDRAM['LP']['TwoFactorState'], 1))) {
+                        $CIDRAM['FECacheAdd'](
                             $CIDRAM['FE']['Cache'],
-                            '2FA-State:' . $_COOKIE['CIDRAM-ADMIN']
+                            $CIDRAM['FE']['Rebuild'],
+                            'TwoFactorState:' . $_COOKIE['CIDRAM-ADMIN'],
+                            '1',
+                            $CIDRAM['Now'] + 604800
                         );
-                        $CIDRAM['FE']['UserState'] = ((int)$CIDRAM['2FA-State'] === 1) ? 1 : 2;
-                        if ($CIDRAM['FE']['UserState'] === 2 && $CIDRAM['FE']['FormTarget'] === '2fa' && !empty($_POST['2fa'])) {
-                            /** User has submitted a 2FA code. Attempt to verify it. */
-                            if (password_verify($_POST['2fa'], substr($CIDRAM['2FA-State'], 1))) {
-                                $CIDRAM['FECacheAdd'](
-                                    $CIDRAM['FE']['Cache'],
-                                    $CIDRAM['FE']['Rebuild'],
-                                    '2FA-State:' . $_COOKIE['CIDRAM-ADMIN'],
-                                    '1',
-                                    $CIDRAM['Now'] + 604800
-                                );
-                                $CIDRAM['FE']['UserState'] = 1;
-                            }
-                        }
-                        unset($CIDRAM['2FA-State']);
-                    } else {
                         $CIDRAM['FE']['UserState'] = 1;
                     }
-
-                    /** Revert permissions if not authenticated. */
-                    if ($CIDRAM['FE']['UserState'] !== 1) {
-                        $CIDRAM['FE']['Permissions'] = 0;
-                    }
                 }
-                break;
+                unset($CIDRAM['LP']['TwoFactorState']);
+            } else {
+                $CIDRAM['FE']['UserState'] = 1;
+            }
+
+            /** Revert permissions if not authenticated. */
+            if ($CIDRAM['FE']['UserState'] !== 1) {
+                $CIDRAM['FE']['Permissions'] = 0;
             }
         }
     }
@@ -671,7 +592,7 @@ elseif (!empty($_COOKIE['CIDRAM-ADMIN'])) {
                 $CIDRAM['Now'] + $CIDRAM['TimeToAdd']
             );
             if ($CIDRAM['Config']['general']['frontend_log']) {
-                $CIDRAM['FELogger']($CIDRAM['IPAddr'], $CIDRAM['FE']['UserRaw'], $CIDRAM['L10N']->getString('response_2fa_invalid'));
+                $CIDRAM['FELogger']($CIDRAM['IPAddr'], $CIDRAM['FE']['User'], $CIDRAM['L10N']->getString('response_2fa_invalid'));
             }
             $CIDRAM['FE']['state_msg'] = '<div class="txtRd">' . $CIDRAM['L10N']->getString('response_2fa_invalid') . '<br /><br /></div>';
         } else {
@@ -681,10 +602,13 @@ elseif (!empty($_COOKIE['CIDRAM-ADMIN'])) {
                 'Failed2FA' . $CIDRAM['IPAddr']
             );
             if ($CIDRAM['Config']['general']['frontend_log']) {
-                $CIDRAM['FELogger']($CIDRAM['IPAddr'], $CIDRAM['FE']['UserRaw'], $CIDRAM['L10N']->getString('response_2fa_valid'));
+                $CIDRAM['FELogger']($CIDRAM['IPAddr'], $CIDRAM['FE']['User'], $CIDRAM['L10N']->getString('response_2fa_valid'));
             }
         }
     }
+
+    /** Cleanup. */
+    unset($CIDRAM['LP']);
 }
 
 /** The user is attempting an asynchronous request without adequate permissions. */
@@ -698,18 +622,18 @@ if ($CIDRAM['FE']['UserState'] !== 1 && $CIDRAM['FE']['ASYNC']) {
 /** Major version notice. */
 $CIDRAM['MajorVersionNotice'] = '';
 
-/** Only execute this code block for users that are logged in or awaiting two-factor authentication. */
+/** Executed only for users that are logged in or awaiting two-factor authentication. */
 if (($CIDRAM['FE']['UserState'] === 1 || $CIDRAM['FE']['UserState'] === 2) && $CIDRAM['FE']['CronMode'] === '') {
-    /** Log out the user. */
+    /** Log the user out. */
     if ($CIDRAM['QueryVars']['cidram-page'] === 'logout') {
-        $CIDRAM['FE']['SessionList'] = str_ireplace($CIDRAM['FE']['ThisSession'], '', $CIDRAM['FE']['SessionList']);
+        $CIDRAM['Cache']->deleteEntry($CIDRAM['FE']['ThisSession']);
+        $CIDRAM['Cache']->deleteEntry('TwoFactorState:' . $_COOKIE['CIDRAM-ADMIN']);
         $CIDRAM['FE']['ThisSession'] = '';
-        $CIDRAM['FE']['Rebuild'] = true;
+        $CIDRAM['FE']['User'] = '';
         $CIDRAM['FE']['UserState'] = 0;
         $CIDRAM['FE']['Permissions'] = 0;
         setcookie('CIDRAM-ADMIN', '', -1, '/', $CIDRAM['HostnameOverride'] ?: $CIDRAM['HTTP_HOST'], false, true);
-        $CIDRAM['FECacheRemove']($CIDRAM['FE']['Cache'], $CIDRAM['FE']['Rebuild'], '2FA-State:' . $_COOKIE['CIDRAM-ADMIN']);
-        $CIDRAM['FELogger']($CIDRAM['IPAddr'], $CIDRAM['FE']['UserRaw'], $CIDRAM['L10N']->getString('state_logged_out'));
+        $CIDRAM['FELogger']($CIDRAM['IPAddr'], $CIDRAM['FE']['User'], $CIDRAM['L10N']->getString('state_logged_out'));
     }
 
     if ($CIDRAM['FE']['Permissions'] === 1) {
@@ -724,6 +648,9 @@ if (($CIDRAM['FE']['UserState'] === 1 || $CIDRAM['FE']['UserState'] === 2) && $C
             $CIDRAM['L10N']->Data + $CIDRAM['FE'],
             $CIDRAM['ReadFile']($CIDRAM['GetAssetPath']('_nav_logs_access_only.html'))
         );
+    } else {
+        /** No valid navigation state. */
+        $CIDRAM['FE']['nav'] = '';
     }
 }
 
@@ -843,7 +770,7 @@ if ($CIDRAM['FE']['UserState'] === 1) {
     /** Get cached logs link. */
     $CIDRAM['FE']['CachedLogsLink'] = $CIDRAM['FECacheGet'](
         $CIDRAM['FE']['Cache'],
-        'CachedLogsLink-' . $CIDRAM['FE']['UserRaw']
+        'CachedLogsLink-' . $CIDRAM['FE']['User']
     ) ?: '?cidram-page=logs';
 
     /** Cleanup. */
@@ -1046,105 +973,57 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'accounts' && $CIDRAM['FE']['Per
     if ($CIDRAM['FE']['FormTarget'] === 'accounts' && !empty($_POST['do'])) {
         /** Create a new account. */
         if ($_POST['do'] === 'create-account' && !empty($_POST['username']) && !empty($_POST['password']) && !empty($_POST['permissions'])) {
-            $CIDRAM['FE']['NewUser'] = $_POST['username'];
-            $CIDRAM['FE']['NewPass'] = password_hash($_POST['password'], $CIDRAM['DefaultAlgo']);
-            $CIDRAM['FE']['NewPerm'] = (int)$_POST['permissions'];
-            $CIDRAM['FE']['NewUserB64'] = base64_encode($_POST['username']);
-            if (strpos($CIDRAM['FE']['UserList'], "\n" . $CIDRAM['FE']['NewUserB64'] . ',') !== false) {
+            $CIDRAM['Acc'] = [
+                'TryPath' => 'user.' . $_POST['username'],
+                'TryPass' => password_hash($_POST['password'], $CIDRAM['DefaultAlgo']),
+                'TryPermissions' => (int)$_POST['permissions']
+            ];
+            if (isset($CIDRAM['Config'][$CIDRAM['Acc']['TryPath']])) {
                 $CIDRAM['FE']['state_msg'] = $CIDRAM['L10N']->getString('response_accounts_already_exists');
             } else {
-                $CIDRAM['AccountsArray'] = [
-                    'Iterate' => 0,
-                    'Count' => 1,
-                    'ByName' => [$CIDRAM['FE']['NewUser'] =>
-                        $CIDRAM['FE']['NewUserB64'] . ',' .
-                        $CIDRAM['FE']['NewPass'] . ',' .
-                        $CIDRAM['FE']['NewPerm'] . "\n"
-                    ]
-                ];
-                $CIDRAM['FE']['NewLineOffset'] = 0;
-                while (($CIDRAM['FE']['NewLinePos'] = strpos(
-                    $CIDRAM['FE']['UserList'],
-                    "\n",
-                    $CIDRAM['FE']['NewLineOffset'] + 1
-                )) !== false) {
-                    $CIDRAM['FE']['NewLine'] = substr(
-                        $CIDRAM['FE']['UserList'],
-                        $CIDRAM['FE']['NewLineOffset'] + 1,
-                        $CIDRAM['FE']['NewLinePos'] - $CIDRAM['FE']['NewLineOffset']
-                    );
-                    $CIDRAM['RowInfo'] = explode(',', $CIDRAM['FE']['NewLine'], 3);
-                    $CIDRAM['RowInfo'] = base64_decode($CIDRAM['RowInfo'][0]);
-                    $CIDRAM['AccountsArray']['ByName'][$CIDRAM['RowInfo']] = $CIDRAM['FE']['NewLine'];
-                    $CIDRAM['FE']['NewLineOffset'] = $CIDRAM['FE']['NewLinePos'];
+                $CIDRAM['Config'][$CIDRAM['Acc']['TryPath']] = ['password' => $CIDRAM['Acc']['TryPass'], 'permissions' => $CIDRAM['Acc']['TryPermissions']];
+                if ($CIDRAM['UpdateConfiguration']()) {
+                    $CIDRAM['FE']['state_msg'] = $CIDRAM['L10N']->getString('response_accounts_created');
+                } else {
+                    $CIDRAM['FE']['state_msg'] = $CIDRAM['L10N']->getString('response_failed_to_create');
                 }
-                ksort($CIDRAM['AccountsArray']['ByName']);
-                $CIDRAM['FE']['UserList'] = "\n" . implode('', $CIDRAM['AccountsArray']['ByName']);
-                $CIDRAM['FE']['Rebuild'] = true;
-                unset($CIDRAM['AccountsArray']);
-                $CIDRAM['FE']['state_msg'] = $CIDRAM['L10N']->getString('response_accounts_created');
             }
+            unset($CIDRAM['Acc']);
         }
 
         /** Delete an account. */
         if ($_POST['do'] === 'delete-account' && !empty($_POST['username'])) {
-            $CIDRAM['FE']['User64'] = base64_encode($_POST['username']);
-            $CIDRAM['FE']['UserLinePos'] = strpos($CIDRAM['FE']['UserList'], "\n" . $CIDRAM['FE']['User64'] . ',');
-            if ($CIDRAM['FE']['UserLinePos'] === false) {
+            $CIDRAM['Acc'] = 'user.' . $_POST['username'];
+            if (!isset($CIDRAM['Config'][$CIDRAM['Acc']])) {
                 $CIDRAM['FE']['state_msg'] = $CIDRAM['L10N']->getString('response_accounts_doesnt_exist');
             } else {
-                $CIDRAM['FE']['UserLineEndPos'] = strpos($CIDRAM['FE']['UserList'], "\n", $CIDRAM['FE']['UserLinePos'] + 1);
-                if ($CIDRAM['FE']['UserLineEndPos'] !== false) {
-                    $CIDRAM['FE']['UserLine'] = substr(
-                        $CIDRAM['FE']['UserList'],
-                        $CIDRAM['FE']['UserLinePos'] + 1,
-                        $CIDRAM['FE']['UserLineEndPos'] - $CIDRAM['FE']['UserLinePos']
-                    );
-                    $CIDRAM['FE']['UserList'] = str_replace($CIDRAM['FE']['UserLine'], '', $CIDRAM['FE']['UserList']);
-                    $CIDRAM['FE']['Rebuild'] = true;
+                unset($CIDRAM['Config'][$CIDRAM['Acc']]);
+                if ($CIDRAM['UpdateConfiguration']()) {
                     $CIDRAM['FE']['state_msg'] = $CIDRAM['L10N']->getString('response_accounts_deleted');
+                } else {
+                    $CIDRAM['FE']['state_msg'] = $CIDRAM['L10N']->getString('response_failed_to_delete');
                 }
             }
-            $CIDRAM['FE']['UserLinePos'] = strpos($CIDRAM['FE']['SessionList'], "\n" . $CIDRAM['FE']['User64'] . ',');
-            if ($CIDRAM['FE']['UserLinePos'] !== false) {
-                $CIDRAM['FE']['UserLineEndPos'] = strpos($CIDRAM['FE']['SessionList'], "\n", $CIDRAM['FE']['UserLinePos'] + 1);
-                if ($CIDRAM['FE']['UserLineEndPos'] !== false) {
-                    $CIDRAM['FE']['SessionLine'] = substr(
-                        $CIDRAM['FE']['SessionList'],
-                        $CIDRAM['FE']['UserLinePos'] + 1,
-                        $CIDRAM['FE']['UserLineEndPos'] - $CIDRAM['FE']['UserLinePos']
-                    );
-                    $CIDRAM['FE']['SessionList'] = str_replace($CIDRAM['FE']['SessionLine'], '', $CIDRAM['FE']['SessionList']);
-                    $CIDRAM['FE']['Rebuild'] = true;
-                }
-            }
+            unset($CIDRAM['Acc']);
         }
 
         /** Update an account password. */
         if ($_POST['do'] === 'update-password' && !empty($_POST['username']) && !empty($_POST['password'])) {
-            $CIDRAM['FE']['User64'] = base64_encode($_POST['username']);
-            $CIDRAM['FE']['NewPass'] = password_hash($_POST['password'], $CIDRAM['DefaultAlgo']);
-            $CIDRAM['FE']['UserLinePos'] = strpos($CIDRAM['FE']['UserList'], "\n" . $CIDRAM['FE']['User64'] . ',');
-            if ($CIDRAM['FE']['UserLinePos'] === false) {
+            $CIDRAM['Acc'] = [
+                'TryPath' => 'user.' . $_POST['username'],
+                'TryPass' => password_hash($_POST['password'], $CIDRAM['DefaultAlgo'])
+            ];
+            if (!isset($CIDRAM['Config'][$CIDRAM['Acc']['TryPath']])) {
                 $CIDRAM['FE']['state_msg'] = $CIDRAM['L10N']->getString('response_accounts_doesnt_exist');
             } else {
-                $CIDRAM['FE']['UserLineEndPos'] = strpos($CIDRAM['FE']['UserList'], "\n", $CIDRAM['FE']['UserLinePos'] + 1);
-                if ($CIDRAM['FE']['UserLineEndPos'] !== false) {
-                    $CIDRAM['FE']['UserLine'] = substr(
-                        $CIDRAM['FE']['UserList'],
-                        $CIDRAM['FE']['UserLinePos'] + 1,
-                        $CIDRAM['FE']['UserLineEndPos'] - $CIDRAM['FE']['UserLinePos']
-                    );
-                    $CIDRAM['FE']['UserPerm'] = substr($CIDRAM['FE']['UserLine'], -2, 1);
-                    $CIDRAM['FE']['NewUserLine'] =
-                        $CIDRAM['FE']['User64'] . ',' .
-                        $CIDRAM['FE']['NewPass'] . ',' .
-                        $CIDRAM['FE']['UserPerm'] . "\n";
-                    $CIDRAM['FE']['UserList'] = str_replace($CIDRAM['FE']['UserLine'], $CIDRAM['FE']['NewUserLine'], $CIDRAM['FE']['UserList']);
-                    $CIDRAM['FE']['Rebuild'] = true;
+                $CIDRAM['Config'][$CIDRAM['Acc']['TryPath']]['password'] = $CIDRAM['Acc']['TryPass'];
+                if ($CIDRAM['UpdateConfiguration']()) {
                     $CIDRAM['FE']['state_msg'] = $CIDRAM['L10N']->getString('response_accounts_password_updated');
+                } else {
+                    $CIDRAM['FE']['state_msg'] = $CIDRAM['L10N']->getString('response_failed_to_update');
                 }
             }
+            unset($CIDRAM['Acc']);
         }
     }
 
@@ -1170,30 +1049,23 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'accounts' && $CIDRAM['FE']['Per
         $CIDRAM['FE']['Accounts'] = '';
         $CIDRAM['FE']['NewLineOffset'] = 0;
 
-        while (($CIDRAM['FE']['NewLinePos'] = strpos(
-            $CIDRAM['FE']['UserList'],
-            "\n",
-            $CIDRAM['FE']['NewLineOffset'] + 1
-        )) !== false) {
-            $CIDRAM['FE']['NewLine'] = substr(
-                $CIDRAM['FE']['UserList'],
-                $CIDRAM['FE']['NewLineOffset'] + 1,
-                $CIDRAM['FE']['NewLinePos'] - $CIDRAM['FE']['NewLineOffset'] - 1
-            );
-            $CIDRAM['RowInfo'] = ['DelPos' => strpos($CIDRAM['FE']['NewLine'], ','), 'AccWarnings' => ''];
-            $CIDRAM['RowInfo']['AccUsername'] = substr($CIDRAM['FE']['NewLine'], 0, $CIDRAM['RowInfo']['DelPos']);
-            $CIDRAM['RowInfo']['AccPassword'] = substr($CIDRAM['FE']['NewLine'], $CIDRAM['RowInfo']['DelPos'] + 1);
-            $CIDRAM['RowInfo']['AccPermissions'] = (int)substr($CIDRAM['RowInfo']['AccPassword'], -1);
+        foreach ($CIDRAM['Config'] as $CIDRAM['CatKey'] => $CIDRAM['CatValues']) {
+            if (substr($CIDRAM['CatKey'], 0, 5) !== 'user.' || !is_array($CIDRAM['CatValues'])) {
+                continue;
+            }
+            $CIDRAM['RowInfo'] = [
+                'AccUsername' => substr($CIDRAM['CatKey'], 5),
+                'AccPassword' => $CIDRAM['CatValues']['password'] ?? '',
+                'AccPermissions' => $CIDRAM['CatValues']['permissions'] ?? 0,
+                'AccWarnings' => ''
+            ];
             if ($CIDRAM['RowInfo']['AccPermissions'] === 1) {
                 $CIDRAM['RowInfo']['AccPermissions'] = $CIDRAM['L10N']->getString('state_complete_access');
             } elseif ($CIDRAM['RowInfo']['AccPermissions'] === 2) {
                 $CIDRAM['RowInfo']['AccPermissions'] = $CIDRAM['L10N']->getString('state_logs_access_only');
-            } elseif ($CIDRAM['RowInfo']['AccPermissions'] === 3) {
-                $CIDRAM['RowInfo']['AccPermissions'] = 'Cronable';
             } else {
                 $CIDRAM['RowInfo']['AccPermissions'] = $CIDRAM['L10N']->getString('response_error');
             }
-            $CIDRAM['RowInfo']['AccPassword'] = substr($CIDRAM['RowInfo']['AccPassword'], 0, -2);
 
             /** Account password warnings. */
             if ($CIDRAM['RowInfo']['AccPassword'] === $CIDRAM['FE']['DefaultPassword']) {
@@ -1215,20 +1087,14 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'accounts' && $CIDRAM['FE']['Per
                 $CIDRAM['RowInfo']['AccWarnings'] .= '<br /><div class="txtRd">' . $CIDRAM['L10N']->getString('warning_password_not_valid') . '</div>';
             }
 
-            /** Logged in notice. */
-            if (strrpos($CIDRAM['FE']['SessionList'], "\n" . $CIDRAM['RowInfo']['AccUsername'] . ',') !== false) {
-                $CIDRAM['RowInfo']['AccWarnings'] .= '<br /><div class="txtGn">' . $CIDRAM['L10N']->getString('state_logged_in') . '</div>';
-            }
-
             $CIDRAM['RowInfo']['AccID'] = bin2hex($CIDRAM['RowInfo']['AccUsername']);
-            $CIDRAM['RowInfo']['AccUsername'] = htmlentities(base64_decode($CIDRAM['RowInfo']['AccUsername']));
-            $CIDRAM['FE']['NewLineOffset'] = $CIDRAM['FE']['NewLinePos'];
+            $CIDRAM['RowInfo']['AccUsername'] = htmlentities($CIDRAM['RowInfo']['AccUsername']);
             $CIDRAM['FE']['Accounts'] .= $CIDRAM['ParseVars'](
-                $CIDRAM['L10N']->Data + $CIDRAM['RowInfo'],
-                $CIDRAM['FE']['AccountsRow']
+                $CIDRAM['L10N']->Data,
+                $CIDRAM['ParseVars']($CIDRAM['RowInfo'], $CIDRAM['FE']['AccountsRow'])
             );
         }
-        unset($CIDRAM['RowInfo']);
+        unset($CIDRAM['RowInfo'], $CIDRAM['CatValues'], $CIDRAM['CatKey']);
     }
 
     if ($CIDRAM['FE']['ASYNC']) {
@@ -4629,7 +4495,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'logs' && $CIDRAM['FE']['Permiss
         $CIDRAM['FECacheAdd'](
             $CIDRAM['FE']['Cache'],
             $CIDRAM['FE']['Rebuild'],
-            'CachedLogsLink-' . $CIDRAM['FE']['UserRaw'],
+            'CachedLogsLink-' . $CIDRAM['FE']['User'],
             $CIDRAM['FE']['BlockLink'],
             $CIDRAM['Now'] + 31536000
         );
@@ -5001,17 +4867,6 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'logs' && $CIDRAM['FE']['Permiss
 
     /** Send output. */
     echo $CIDRAM['SendOutput']();
-}
-
-/** Rebuild cache. */
-if ($CIDRAM['FE']['Rebuild']) {
-    $CIDRAM['FE']['FrontEndData'] =
-        "USERS\n-----" . $CIDRAM['FE']['UserList'] .
-        "\nSESSIONS\n--------" . $CIDRAM['FE']['SessionList'] .
-        "\nCACHE\n-----" . $CIDRAM['FE']['Cache'];
-    $CIDRAM['Handle'] = fopen($CIDRAM['Vault'] . 'assets/frontend/frontend.dat', 'wb');
-    fwrite($CIDRAM['Handle'], $CIDRAM['FE']['FrontEndData']);
-    fclose($CIDRAM['Handle']);
 }
 
 /** Destroy cache object and some related values. */

@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6_isps.dat
 
-# Version: 2022.114.0
-# Last modified: 2022.04.25
+# Version: 2022.121.0
+# Last modified: 2022.05.02
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -1590,3 +1590,16 @@ Tag: WEDOS Internet, a.s
 Origin: IN
 Profile: Infrastructure/Transit
 Tag: Elyzium Technologies
+
+
+# ASN 3214 ("xTom GmbH").
+# German IaaS provider. Caught probing for vulnerabilities. Brute-force,
+# XMLRPC, SQLi, and webapp attacks, spoofing, port scans, hacking, and spam
+# detected from here. Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 894.
+# Updated: 2022.05.02
+
+2a0b:89c1:4::/64 Deny Spam
+Origin: DE
+Profile: Infrastructure/Transit
+Tag: xTom GmbH

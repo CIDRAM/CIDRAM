@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6.dat
 
-# Version: 2022.120.0
-# Last modified: 2022.05.01
+# Version: 2022.123.0
+# Last modified: 2022.05.04
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -455,8 +455,8 @@ Tag: Webzilla B.V
 
 
 # ASN 53850 ("GorillaServers, Inc").
-# Stop Forum Spam (SFS) listings: 88.
-# Updated: 2016.09.15 / Checked: 2021.08.05
+# Stop Forum Spam (SFS) listings: 82.
+# Updated: 2016.09.15 / Checked: 2022.05.04
 
 2606:c700::/32 Deny Cloud
 Origin: US
@@ -2630,12 +2630,13 @@ Tag: Daniela Agro
 
 
 # ASN 57169 ("EDIS GmbH").
-# Stop Forum Spam (SFS) listings: 607.
-# Updated: 2020.12.15 / Checked: 2021.08.01
+# Stop Forum Spam (SFS) listings: 277.
+# Updated: 2022.05.03
 
 2a03:f80:ad15::/48 Deny Cloud
 2a03:f80:ed15::/48 Deny Cloud
 2a03:f80:ed16::/47 Deny Cloud
+2a03:f80:ed31::/48 Deny Cloud
 2a03:f87:ffff::/48 Deny Cloud
 Origin: AT
 Profile: Infrastructure/Transit;Webhosting
@@ -2771,9 +2772,10 @@ Tag: GHOSTnet GmbH
 
 
 # ASNs 19437, 20454, 32164 ("SECURED SERVERS LLC").
-# Stop Forum Spam (SFS) listings: 3,310 (AS19437), 388 (AS20454).
-# Updated: 2020.12.18 / Checked: 2021.08.05
+# Stop Forum Spam (SFS) listings: 3,008 (AS19437), 468 (AS20454).
+# Updated: 2022.05.04
 
+2602:fc47::/36 Deny Cloud
 2607:ff00:100::/40 Deny Cloud
 2607:ff00:300::/40 Deny Cloud
 Origin: US
@@ -2931,10 +2933,10 @@ Tag: Nazwa.pl
 
 # ASN 18450 ("WebNX, Inc").
 # HUGE amounts of spam, port scans, hack attempts, and other unwanted traffic!
-# Stop Forum Spam (SFS) listings: 10,835.
-# Updated: 2020.12.18 / Checked: 2021.08.05
+# Stop Forum Spam (SFS) listings: 2,852.
+# Updated: 2022.05.04
 
-2604:4d40:4000::/36 Deny Cloud
+2606:c0:1::/48 Deny Cloud
 2607:f2d8::/32 Deny Cloud
 Origin: US
 Profile: Dedicated;Infrastructure/Transit;Webhosting
@@ -4980,11 +4982,13 @@ Tag: B2 Net Solutions
 
 
 # ASNs 24669, 34202, 62240, 206136, 206986 ("Clouvider Limited").
-# Stop Forum Spam (SFS) listings: 3 (AS24669), 32,751 (AS62240).
-# Updated: 2022.04.11
+# Stop Forum Spam (SFS) listings: 41,997 (AS62240).
+# Updated: 2022.05.04
 
 2a02:e00:ffe9::/48 Deny Cloud
 Origin: DE
+2a10:1fc0:7::/48 Deny Cloud
+Origin: EE
 2a04:6400::/29 Deny Cloud
 2a04:92c0::/29 Deny Cloud
 2a06:bdc0::/29 Deny Cloud
@@ -5030,11 +5034,12 @@ Origin: RU
 Origin: SC
 2404:b980::/35 Deny Cloud
 Origin: SG
+2600:b405::/48 Deny Cloud
 2a05:dfc7:6::/48 Deny Cloud
 2a0b:b87:ffd4::/48 Deny Cloud
 2a0b:b87:fff0::/44 Deny Cloud
 Origin: US
-Profile: Dedicated;Infrastructure/Transit;Webhosting
+Profile: Dedicated;Frequent changes;Infrastructure/Transit;Webhosting
 Tag: CloudSRV Limited
 
 
@@ -5177,8 +5182,7 @@ Tag: Nodes Direct
 
 
 # ASN 23352 ("Server Central Network").
-# Stop Forum Spam (SFS) listings: 9.
-# Updated: 2018.04.14 / Checked: 2021.08.01
+# Updated: 2018.04.14 / Checked: 2022.05.03
 
 2001:1838::/32 Deny Cloud
 Origin: US
@@ -5376,14 +5380,13 @@ Tag: Colocation Australia
 
 # ASNs 6295, 7336, 33561, 46691, 54431 ("Lunavi, Inc").
 # Colo and infrastructure provider.
-# Scraping, hack attempts, and port scans regularly detected from here.
-# Updated: 2020.12.15 / Checked: 2021.08.01
+# Scraping, hacking, and port scans detected from here.
+# Updated: 2022.05.03
 
 2607:8200:4000::/36 Deny Cloud
 2607:8200:8000::/36 Deny Cloud
 2607:8200:c000::/36 Deny Cloud
 2607:8200:e000::/36 Deny Cloud
-2620:13b:d000::/44 Deny Cloud
 Origin: US
 Profile: Infrastructure/Transit
 Tag: Lunavi, Inc
@@ -6139,8 +6142,8 @@ Tag: ARDH GLOBAL
 
 # ASN 24971 ("Master Internet s.r.o").
 # Czech IT firm (provides servers, infrastructure, kubernetes clusters, etc).
-# Stop Forum Spam (SFS) listings: 10.
-# Updated: 2021.02.07 / Checked: 2021.10.01
+# Stop Forum Spam (SFS) listings: 22.
+# Updated: 2021.02.07 / Checked: 2022.05.02
 
 2001:678:a50::/48 Deny Cloud
 2001:67c:68::/48 Deny Cloud
@@ -9385,8 +9388,8 @@ Tag: GTHost
 # ASN 35661 ("VIRTUA SYSTEMS SAS").
 # French exchange network. Brute-force and webapp attacks, spam, and hacking
 # detected from here.
-# Stop Forum Spam (SFS) listings: 385.
-# Updated: 2021.08.01
+# Stop Forum Spam (SFS) listings: 354.
+# Updated: 2021.08.01 / Checked: 2022.05.03
 
 2a03:5840::/32 Deny Attacks
 2a07:8dc0::/31 Deny Attacks
@@ -9682,8 +9685,7 @@ Tag: LLC Smart Ape
 # ASN 23336 ("SolidSpace LLC").
 # Brute-force, XMLRPC, webapp attacks, and spam detected from here.
 # Caught trying to hack into WordPress admin pages.
-# Stop Forum Spam (SFS) listings: 2.
-# Updated: 2021.08.01
+# Updated: 2021.08.01 / Checked: 2022.05.03
 
 2607:5f80::/32 Deny Cloud
 Origin: US
@@ -9693,12 +9695,10 @@ Tag: SolidSpace LLC
 
 # ASN 60548 ("Harmony Solutions GmbH").
 # Brute-force, SQLi, and webapp attacks, hacking, port scans, and spam detected
-# from here.
-# Updated: 2021.08.01
+# from here. Dead at last check. Will remove at the next update if no change.
+# Updated: 2022.05.03
 
-2a0c:4ac0:1100::/40 Deny Attacks
-2a0c:4ac0:1200::/40 Deny Attacks
-Origin: DE
+#<redacted>
 Profile: Restricted/Unidentifiable
 Tag: Harmony Solutions GmbH
 
@@ -10348,6 +10348,19 @@ Tag: Shenzhen Qianhai Bird
 Origin: RU
 Profile: Webhosting
 Tag: Lancom Ltd
+
+
+# ASN 210546 ("Miglovets Egor Andreevich").
+# Russian business network. Port scans, hacking, synfloods, and brute-force
+# attacks detected from here.
+# Updated: 2022.05.03
+
+2a0c:b641:540::/44 Deny Attacks
+2a0c:b641:6f0::/46 Deny Attacks
+2a0c:b641:750::/44 Deny Attacks
+Origin: BE
+Profile: Webhosting
+Tag: M.E.Andreevich
 
 
 # ---

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2022.04.04).
+ * This file: Front-end functions file (last modified: 2022.05.05).
  */
 
 /**
@@ -2429,7 +2429,7 @@ $CIDRAM['SectionsHandler'] = function (array $Files) use (&$CIDRAM): string {
     $ThisSectionMeta = [];
     foreach ($Files as $File) {
         $Data = $CIDRAM['ReadFile']($CIDRAM['Vault'] . $File);
-        if (!$Data) {
+        if (strlen($Data) === 0) {
             continue;
         }
         $CIDRAM['NormaliseLinebreaks']($Data);
@@ -2681,7 +2681,7 @@ $CIDRAM['RangeTablesIterateFiles'] = function (array &$Arr, array $Files, array 
     foreach ($Files as $File) {
         $File = (strpos($File, ':') === false) ? $File : substr($File, strpos($File, ':') + 1);
         $Data = $CIDRAM['ReadFile']($CIDRAM['Vault'] . $File);
-        if (!$Data) {
+        if (strlen($Data) === 0) {
             continue;
         }
         if (isset($CIDRAM['FE']['Matrix-Data']) && class_exists('\Maikuolan\Common\Matrix') && function_exists('imagecreatetruecolor')) {

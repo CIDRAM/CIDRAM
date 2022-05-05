@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2022.03.30).
+ * This file: Functions file (last modified: 2022.05.05).
  */
 
 /** Autoloader for CIDRAM classes. */
@@ -268,7 +268,7 @@ $CIDRAM['CheckFactors'] = function (array $Files, array $Factors) use (&$CIDRAM)
         $Files[$FileIndex] = (
             strpos($Files[$FileIndex], ':') === false
         ) ? $Files[$FileIndex] : substr($Files[$FileIndex], strpos($Files[$FileIndex], ':') + 1);
-        if (!$Files[$FileIndex]) {
+        if (strlen($Files[$FileIndex]) === 0) {
             continue;
         }
         if ($Counts['Factors'] === 32) {
@@ -389,10 +389,7 @@ $CIDRAM['CheckFactors'] = function (array $Files, array $Factors) use (&$CIDRAM)
                     ($PosY = strpos($Files[$FileIndex], "\n\n", ($PosX + 1))) &&
                     !substr_count($Files[$FileIndex], "\n\n", $PosA, ($PosX - $PosA + 1))
                 ) {
-                    if (!isset($YAML)) {
-                        $YAML = new \Maikuolan\Common\YAML();
-                    }
-                    $YAML->process(substr($Files[$FileIndex], ($PosX + 5), ($PosY - $PosX - 5)), $CIDRAM['Config']);
+                    $CIDRAM['YAML']->process(substr($Files[$FileIndex], ($PosX + 5), ($PosY - $PosX - 5)), $CIDRAM['Config']);
                 }
                 $LN = ' ("' . $Tag . '", L' . substr_count($Files[$FileIndex], "\n", 0, $PosA) . ':F' . $FileIndex . $Origin . ')';
                 $Signature = substr($Files[$FileIndex], $PosA, ($PosB - $PosA));
@@ -1279,7 +1276,7 @@ $CIDRAM['GenerateSalt'] = function (): string {
  * @return void
  */
 $CIDRAM['ClearExpired'] = function (string &$List, bool &$Check) use (&$CIDRAM): void {
-    if (!$List) {
+    if (strlen($List) === 0) {
         return;
     }
     $End = 0;

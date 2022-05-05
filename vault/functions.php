@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2022.03.30).
+ * This file: Functions file (last modified: 2022.05.05).
  */
 
 /**
@@ -399,10 +399,7 @@ $CIDRAM['CheckFactors'] = function (array $Files, array $Factors) use (&$CIDRAM)
                     ($PosY = strpos($Files[$FileIndex], "\n\n", ($PosX + 1))) &&
                     !substr_count($Files[$FileIndex], "\n\n", $PosA, ($PosX - $PosA + 1))
                 ) {
-                    if (!isset($YAML)) {
-                        $YAML = new \Maikuolan\Common\YAML();
-                    }
-                    $YAML->process(substr($Files[$FileIndex], ($PosX + 5), ($PosY - $PosX - 5)), $CIDRAM['Config']);
+                    $CIDRAM['YAML']->process(substr($Files[$FileIndex], ($PosX + 5), ($PosY - $PosX - 5)), $CIDRAM['Config']);
                 }
                 $LN = ' ("' . $Tag . '", L' . substr_count($Files[$FileIndex], "\n", 0, $PosA) . ':F' . $FileIndex . $Origin . ')';
                 $Signature = substr($Files[$FileIndex], $PosA, ($PosB - $PosA));

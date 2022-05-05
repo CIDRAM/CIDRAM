@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2022.05.02).
+ * This file: Front-end handler (last modified: 2022.05.05).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -1757,8 +1757,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'cache-data' && $CIDRAM['FE']['P
             "orm-target','cdi','do'],null,function(o){hideid(d+'Container')})}window[" .
             "'cidram-form-target']='cache-data';function fecdd(d,n){window.fecdi=d,wi" .
             "ndow.do='delete',$('POST','',['cidram-form-target','fecdi','do'],null,fu" .
-            "nction(o){hideid(d+'FEContainer')})}window['cidram-form-target']='cache-" .
-            "data';";
+            "nction(o){hideid(d+'FEContainer')})};";
 
         /** To be populated by the cache data. */
         $CIDRAM['FE']['CacheData'] = '';

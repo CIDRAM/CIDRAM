@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Configuration handler (last modified: 2022.03.16).
+ * This file: Configuration handler (last modified: 2022.05.05).
  */
 
 /** CIDRAM version number (SemVer). */
@@ -78,13 +78,13 @@ if (
 }
 
 /** Check for supplementary configuration. */
-foreach ($CIDRAM['Supplementary'](
-    ($CIDRAM['Config']['general']['config_imports'] ?? '') . ',' .
-    ($CIDRAM['Config']['signatures']['ipv4'] ?? '') . ',' .
-    ($CIDRAM['Config']['signatures']['ipv6'] ?? '') . ',' .
-    ($CIDRAM['Config']['signatures']['modules'] ?? '')
+foreach (array_merge(
+    $CIDRAM['Supplementary']($CIDRAM['Config']['general']['config_imports'] ?? '', $CIDRAM['Vault']),
+    $CIDRAM['Supplementary']($CIDRAM['Config']['signatures']['ipv4'] ?? '', $CIDRAM['SignaturesPath']),
+    $CIDRAM['Supplementary']($CIDRAM['Config']['signatures']['ipv6'] ?? '', $CIDRAM['SignaturesPath']),
+    $CIDRAM['Supplementary']($CIDRAM['Config']['signatures']['modules'] ?? '', $CIDRAM['ModulesPath'])
 ) as $CIDRAM['Supplement']) {
-    $CIDRAM['YAML']->process($CIDRAM['ReadFile']($CIDRAM['Vault'] . $CIDRAM['Supplement']), $CIDRAM);
+    $CIDRAM['YAML']->process($CIDRAM['ReadFile']($CIDRAM['Supplement']), $CIDRAM);
 }
 
 /** Cleanup. */

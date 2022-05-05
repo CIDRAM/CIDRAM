@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The loader (last modified: 2022.02.21).
+ * This file: The loader (last modified: 2022.05.05).
  */
 
 /**
@@ -29,7 +29,7 @@ if (!defined('CIDRAM')) {
     $CIDRAM = [];
 
     /** Determine the location of the "vault" directory. */
-    $CIDRAM['Vault'] = __DIR__ . '/vault/';
+    $CIDRAM['Vault'] = __DIR__ . DIRECTORY_SEPARATOR . 'vault' . DIRECTORY_SEPARATOR;
 
     /** Kill the script if we can't find the vault directory. */
     if (!is_dir($CIDRAM['Vault'])) {

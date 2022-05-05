@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2022.05.03).
+ * This file: Front-end handler (last modified: 2022.05.05).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -366,19 +366,19 @@ $CIDRAM['InitialiseCache']();
 $CIDRAM['StatisticsTracked'] = array_flip(explode("\n", $CIDRAM['Config']['general']['statistics']));
 
 /** Brute-force security check. */
-if (($CIDRAM['LoginAttempts'] = (int)$CIDRAM['FECacheGet'](
-    $CIDRAM['FE']['Cache'],
-    'LoginAttempts' . $CIDRAM['IPAddr']
-)) && ($CIDRAM['LoginAttempts'] >= $CIDRAM['Config']['general']['max_login_attempts'])) {
+if (
+    ($CIDRAM['LoginAttempts'] = (int)$CIDRAM['Cache']->getEntry('LoginAttempts' . $CIDRAM['IPAddr'])) &&
+    ($CIDRAM['LoginAttempts'] >= $CIDRAM['Config']['general']['max_login_attempts'])
+) {
     header('Content-Type: text/plain');
     die('[CIDRAM] ' . $CIDRAM['L10N']->getString('max_login_attempts_exceeded'));
 }
 
 /** Brute-force security check (2FA). */
-if (($CIDRAM['Failed2FA'] = (int)$CIDRAM['FECacheGet'](
-    $CIDRAM['FE']['Cache'],
-    'Failed2FA' . $CIDRAM['IPAddr']
-)) && ($CIDRAM['Failed2FA'] >= $CIDRAM['Config']['general']['max_login_attempts'])) {
+if (
+    ($CIDRAM['Failed2FA'] = (int)$CIDRAM['Cache']->getEntry('Failed2FA' . $CIDRAM['IPAddr'])) &&
+    ($CIDRAM['Failed2FA'] >= $CIDRAM['Config']['general']['max_login_attempts'])
+) {
     header('Content-Type: text/plain');
     die('[CIDRAM] ' . $CIDRAM['L10N']->getString('max_login_attempts_exceeded'));
 }
@@ -403,11 +403,7 @@ if ($CIDRAM['FE']['FormTarget'] === 'login' || $CIDRAM['FE']['CronMode'] !== '')
             !empty($CIDRAM['Config'][$CIDRAM['LP']['ConfigUserPath']]['permissions'])
         ) {
             if (password_verify($_POST['password'], $CIDRAM['Config'][$CIDRAM['LP']['ConfigUserPath']]['password'])) {
-                $CIDRAM['FECacheRemove'](
-                    $CIDRAM['FE']['Cache'],
-                    $CIDRAM['FE']['Rebuild'],
-                    'LoginAttempts' . $CIDRAM['IPAddr']
-                );
+                $CIDRAM['Cache']->deleteEntry('LoginAttempts' . $CIDRAM['IPAddr']);
                 $CIDRAM['FE']['Permissions'] = $CIDRAM['Config'][$CIDRAM['LP']['ConfigUserPath']]['permissions'];
                 if (($CIDRAM['FE']['Permissions'] === 3 && (
                     $CIDRAM['FE']['CronMode'] === '' || substr($CIDRAM['FE']['UA'], 0, 10) !== 'Cronable v'
@@ -430,13 +426,7 @@ if ($CIDRAM['FE']['FormTarget'] === 'login' || $CIDRAM['FE']['CronMode'] !== '')
                         ) {
                             $CIDRAM['LP']['TwoFactorState'] = ['Number' => $CIDRAM['2FA-Number']()];
                             $CIDRAM['LP']['TwoFactorState']['Hash'] = password_hash($CIDRAM['LP']['TwoFactorState']['Number'], $CIDRAM['DefaultAlgo']);
-                            $CIDRAM['FECacheAdd'](
-                                $CIDRAM['FE']['Cache'],
-                                $CIDRAM['FE']['Rebuild'],
-                                'TwoFactorState:' . $CIDRAM['FE']['Cookie'],
-                                '0' . $CIDRAM['LP']['TwoFactorState']['Hash'],
-                                $CIDRAM['Now'] + 600
-                            );
+                            $CIDRAM['Cache']->setEntry('TwoFactorState:' . $CIDRAM['FE']['Cookie'], '0' . $CIDRAM['LP']['TwoFactorState']['Hash'], 600);
                             $CIDRAM['LP']['TwoFactorState']['Template'] = sprintf(
                                 $CIDRAM['LP']['TwoFactorMessage'],
                                 $_POST['username'],
@@ -488,13 +478,7 @@ if ($CIDRAM['FE']['FormTarget'] === 'login' || $CIDRAM['FE']['CronMode'] !== '')
     if ($CIDRAM['FE']['state_msg']) {
         $CIDRAM['LoginAttempts']++;
         $CIDRAM['TimeToAdd'] = ($CIDRAM['LoginAttempts'] > 4) ? ($CIDRAM['LoginAttempts'] - 4) * 86400 : 86400;
-        $CIDRAM['FECacheAdd'](
-            $CIDRAM['FE']['Cache'],
-            $CIDRAM['FE']['Rebuild'],
-            'LoginAttempts' . $CIDRAM['IPAddr'],
-            $CIDRAM['LoginAttempts'],
-            $CIDRAM['Now'] + $CIDRAM['TimeToAdd']
-        );
+        $CIDRAM['Cache']->setEntry('LoginAttempts' . $CIDRAM['IPAddr'], $CIDRAM['LoginAttempts'], $CIDRAM['TimeToAdd']);
         if ($CIDRAM['Config']['general']['frontend_log']) {
             $CIDRAM['LoggerMessage'] = $CIDRAM['FE']['state_msg'];
         }
@@ -557,13 +541,7 @@ elseif (!empty($_COOKIE['CIDRAM-ADMIN'])) {
                 if ($CIDRAM['FE']['UserState'] === 2 && $CIDRAM['FE']['FormTarget'] === '2fa' && !empty($_POST['2fa'])) {
                     /** User has submitted a 2FA code. Attempt to verify it. */
                     if (password_verify($_POST['2fa'], substr($CIDRAM['LP']['TwoFactorState'], 1))) {
-                        $CIDRAM['FECacheAdd'](
-                            $CIDRAM['FE']['Cache'],
-                            $CIDRAM['FE']['Rebuild'],
-                            'TwoFactorState:' . $_COOKIE['CIDRAM-ADMIN'],
-                            '1',
-                            $CIDRAM['Now'] + 604800
-                        );
+                        $CIDRAM['Cache']->setEntry('TwoFactorState:' . $_COOKIE['CIDRAM-ADMIN'], '1', 604800);
                         $CIDRAM['FE']['UserState'] = 1;
                     }
                 }
@@ -584,23 +562,13 @@ elseif (!empty($_COOKIE['CIDRAM-ADMIN'])) {
         if ($CIDRAM['FE']['UserState'] === 2) {
             $CIDRAM['Failed2FA']++;
             $CIDRAM['TimeToAdd'] = ($CIDRAM['Failed2FA'] > 4) ? ($CIDRAM['Failed2FA'] - 4) * 86400 : 86400;
-            $CIDRAM['FECacheAdd'](
-                $CIDRAM['FE']['Cache'],
-                $CIDRAM['FE']['Rebuild'],
-                'Failed2FA' . $CIDRAM['IPAddr'],
-                $CIDRAM['Failed2FA'],
-                $CIDRAM['Now'] + $CIDRAM['TimeToAdd']
-            );
+            $CIDRAM['Cache']->setEntry('Failed2FA' . $CIDRAM['IPAddr'], $CIDRAM['Failed2FA'], $CIDRAM['TimeToAdd']);
             if ($CIDRAM['Config']['general']['frontend_log']) {
                 $CIDRAM['FELogger']($CIDRAM['IPAddr'], $CIDRAM['FE']['User'], $CIDRAM['L10N']->getString('response_2fa_invalid'));
             }
             $CIDRAM['FE']['state_msg'] = '<div class="txtRd">' . $CIDRAM['L10N']->getString('response_2fa_invalid') . '<br /><br /></div>';
         } else {
-            $CIDRAM['FECacheRemove'](
-                $CIDRAM['FE']['Cache'],
-                $CIDRAM['FE']['Rebuild'],
-                'Failed2FA' . $CIDRAM['IPAddr']
-            );
+            $CIDRAM['Cache']->deleteEntry('Failed2FA' . $CIDRAM['IPAddr']);
             if ($CIDRAM['Config']['general']['frontend_log']) {
                 $CIDRAM['FELogger']($CIDRAM['IPAddr'], $CIDRAM['FE']['User'], $CIDRAM['L10N']->getString('response_2fa_valid'));
             }
@@ -626,7 +594,7 @@ $CIDRAM['MajorVersionNotice'] = '';
 if (($CIDRAM['FE']['UserState'] === 1 || $CIDRAM['FE']['UserState'] === 2) && $CIDRAM['FE']['CronMode'] === '') {
     /** Log the user out. */
     if ($CIDRAM['QueryVars']['cidram-page'] === 'logout') {
-        $CIDRAM['Cache']->deleteEntry($CIDRAM['FE']['ThisSession']);
+        $CIDRAM['Cache']->deleteEntry($_COOKIE['CIDRAM-ADMIN']);
         $CIDRAM['Cache']->deleteEntry('TwoFactorState:' . $_COOKIE['CIDRAM-ADMIN']);
         $CIDRAM['FE']['ThisSession'] = '';
         $CIDRAM['FE']['User'] = '';
@@ -660,9 +628,9 @@ if ($CIDRAM['FE']['UserState'] === 1) {
     $CIDRAM['RemoteVerPath'] = 'https://raw.githubusercontent.com/Maikuolan/Compatibility-Charts/gh-pages/';
 
     /** Fetch remote CIDRAM version information and cache it if necessary. */
-    if (($CIDRAM['Remote-YAML-CIDRAM'] = $CIDRAM['FECacheGet']($CIDRAM['FE']['Cache'], 'cidram-ver.yaml')) === false) {
+    if (($CIDRAM['Remote-YAML-CIDRAM'] = $CIDRAM['Cache']->getEntry('cidram-ver.yaml')) === false) {
         $CIDRAM['Remote-YAML-CIDRAM'] = $CIDRAM['Request']($CIDRAM['RemoteVerPath'] . 'cidram-ver.yaml', [], 8);
-        $CIDRAM['FECacheAdd']($CIDRAM['FE']['Cache'], $CIDRAM['FE']['Rebuild'], 'cidram-ver.yaml', $CIDRAM['Remote-YAML-CIDRAM'] ?: '-', $CIDRAM['Now'] + 86400);
+        $CIDRAM['Cache']->setEntry('cidram-ver.yaml', $CIDRAM['Remote-YAML-CIDRAM'] ?: '-', 86400);
     }
 
     /** Process remote CIDRAM version information. */
@@ -729,9 +697,9 @@ if ($CIDRAM['FE']['UserState'] === 1) {
     unset($CIDRAM['Remote-YAML-CIDRAM-Array'], $CIDRAM['Remote-YAML-CIDRAM']);
 
     /** Fetch remote PHP version information and cache it if necessary. */
-    if (($CIDRAM['Remote-YAML-PHP'] = $CIDRAM['FECacheGet']($CIDRAM['FE']['Cache'], 'php-ver.yaml')) === false) {
+    if (($CIDRAM['Remote-YAML-PHP'] = $CIDRAM['Cache']->getEntry('php-ver.yaml')) === false) {
         $CIDRAM['Remote-YAML-PHP'] = $CIDRAM['Request']($CIDRAM['RemoteVerPath'] . 'php-ver.yaml', [], 8);
-        $CIDRAM['FECacheAdd']($CIDRAM['FE']['Cache'], $CIDRAM['FE']['Rebuild'], 'php-ver.yaml', $CIDRAM['Remote-YAML-PHP'] ?: '-', $CIDRAM['Now'] + 86400);
+        $CIDRAM['Cache']->setEntry('php-ver.yaml', $CIDRAM['Remote-YAML-PHP'] ?: '-', 86400);
     }
 
     /** Process remote PHP version information. */
@@ -768,10 +736,7 @@ if ($CIDRAM['FE']['UserState'] === 1) {
     }
 
     /** Get cached logs link. */
-    $CIDRAM['FE']['CachedLogsLink'] = $CIDRAM['FECacheGet'](
-        $CIDRAM['FE']['Cache'],
-        'CachedLogsLink-' . $CIDRAM['FE']['User']
-    ) ?: '?cidram-page=logs';
+    $CIDRAM['FE']['CachedLogsLink'] = $CIDRAM['Cache']->getEntry('CachedLogsLink-' . $CIDRAM['FE']['User']) ?: '?cidram-page=logs';
 
     /** Cleanup. */
     unset($CIDRAM['Remote-YAML-PHP-Array'], $CIDRAM['Remote-YAML-PHP'], $CIDRAM['ThisBranch'], $CIDRAM['RemoteVerPath']);
@@ -1063,6 +1028,8 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'accounts' && $CIDRAM['FE']['Per
                 $CIDRAM['RowInfo']['AccPermissions'] = $CIDRAM['L10N']->getString('state_complete_access');
             } elseif ($CIDRAM['RowInfo']['AccPermissions'] === 2) {
                 $CIDRAM['RowInfo']['AccPermissions'] = $CIDRAM['L10N']->getString('state_logs_access_only');
+            } elseif ($CIDRAM['RowInfo']['AccPermissions'] === 3) {
+                $CIDRAM['RowInfo']['AccPermissions'] = 'Cronable';
             } else {
                 $CIDRAM['RowInfo']['AccPermissions'] = $CIDRAM['L10N']->getString('response_error');
             }
@@ -1644,15 +1611,11 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'cache-data' && $CIDRAM['FE']['P
 
     if ($CIDRAM['FE']['ASYNC']) {
         /** Delete a cache entry. */
-        if (isset($_POST['do']) && $_POST['do'] === 'delete') {
-            if (!empty($_POST['cdi'])) {
-                if ($_POST['cdi'] === '__') {
-                    $CIDRAM['Cache']->clearCache();
-                } else {
-                    $CIDRAM['Cache']->deleteEntry($_POST['cdi']);
-                }
-            } elseif (!empty($_POST['fecdi'])) {
-                $CIDRAM['FECacheRemove']($CIDRAM['FE']['Cache'], $CIDRAM['FE']['Rebuild'], $_POST['fecdi']);
+        if (isset($_POST['do']) && $_POST['do'] === 'delete' && !empty($_POST['cdi'])) {
+            if ($_POST['cdi'] === '__') {
+                $CIDRAM['Cache']->clearCache();
+            } else {
+                $CIDRAM['Cache']->deleteEntry($_POST['cdi']);
             }
         }
     } else {
@@ -1660,10 +1623,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'cache-data' && $CIDRAM['FE']['P
         $CIDRAM['FE']['JS'] .=
             "function cdd(d,n){window.cdi=d,window.do='delete',$('POST','',['cidram-f" .
             "orm-target','cdi','do'],null,function(o){hideid(d+'Container')})}window[" .
-            "'cidram-form-target']='cache-data';function fecdd(d,n){window.fecdi=d,wi" .
-            "ndow.do='delete',$('POST','',['cidram-form-target','fecdi','do'],null,fu" .
-            "nction(o){hideid(d+'FEContainer')})}window['cidram-form-target']='cache-" .
-            "data';";
+            "'cidram-form-target']='cache-data';";
 
         /** To be populated by the cache data. */
         $CIDRAM['FE']['CacheData'] = '';
@@ -1671,11 +1631,8 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'cache-data' && $CIDRAM['FE']['P
         /** To be populated by the cache data. */
         $CIDRAM['PreferredSource'] = ($CIDRAM['Cache']->Using && $CIDRAM['Cache']->Using !== 'FF') ? $CIDRAM['Cache']->Using : 'cache.dat';
 
-        /** Array of all cache items from all sources. */
-        $CIDRAM['CacheArray'] = [
-            'assets/frontend/frontend.dat' => [],
-            $CIDRAM['PreferredSource'] => []
-        ];
+        /** Array of all cache items. */
+        $CIDRAM['CacheArray'] = [];
 
         /** Get cache index data. */
         foreach ($CIDRAM['Cache']->getAllEntries() as $CIDRAM['ThisCacheName'] => $CIDRAM['ThisCacheItem']) {
@@ -1683,49 +1640,18 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'cache-data' && $CIDRAM['FE']['P
                 continue;
             }
             $CIDRAM['Arrayify']($CIDRAM['ThisCacheItem']);
-            $CIDRAM['CacheArray'][$CIDRAM['PreferredSource']][$CIDRAM['ThisCacheName']] = $CIDRAM['ThisCacheItem'];
+            $CIDRAM['CacheArray'][$CIDRAM['ThisCacheName']] = $CIDRAM['ThisCacheItem'];
         }
-        unset($CIDRAM['ThisCacheName'], $CIDRAM['ThisCacheItem'], $CIDRAM['PreferredSource']);
+        unset($CIDRAM['ThisCacheName'], $CIDRAM['ThisCacheItem']);
 
-        /** Get front-end cache data. */
-        if ($CIDRAM['CacheIndexData'] = $CIDRAM['FE']['Cache']) {
-            foreach (explode("\n", $CIDRAM['CacheIndexData']) as $CIDRAM['CacheIndexData']) {
-                if (!$CIDRAM['CacheIndexData']) {
-                    continue;
-                }
-                $CIDRAM['CacheIndexData'] = explode(',', $CIDRAM['CacheIndexData']);
-                $CIDRAM['ThisCacheEntryName'] = base64_decode($CIDRAM['CacheIndexData'][0]);
-                if (isset($CIDRAM['CacheIndexData'][1])) {
-                    $CIDRAM['CacheIndexData'][1] = base64_decode($CIDRAM['CacheIndexData'][1]);
-                }
-                $CIDRAM['CacheIndexData'][2] = ($CIDRAM['CacheIndexData'][2] >= 0 ? $CIDRAM['TimeFormat'](
-                    $CIDRAM['CacheIndexData'][2],
-                    $CIDRAM['Config']['general']['time_format']
-                ) : $CIDRAM['L10N']->getString('label_never'));
-                $CIDRAM['Arrayify']($CIDRAM['CacheIndexData'][1]);
-                $CIDRAM['CacheArray']['assets/frontend/frontend.dat'][$CIDRAM['ThisCacheEntryName']] = $CIDRAM['CacheIndexData'][1];
-                $CIDRAM['CacheArray']['assets/frontend/frontend.dat'][$CIDRAM['ThisCacheEntryName']][
-                    $CIDRAM['L10N']->getString('label_expires') ?: 'Expires'
-                ] = $CIDRAM['CacheIndexData'][2];
-            }
-        }
-        unset($CIDRAM['ThisCacheEntryName'], $CIDRAM['CacheIndexData']);
-
-        /** Begin processing all cache items from all sources. */
-        foreach ($CIDRAM['CacheArray'] as $CIDRAM['CacheSourceName'] => $CIDRAM['CacheSourceData']) {
-            if (empty($CIDRAM['CacheSourceData'])) {
-                continue;
-            }
-            $CIDRAM['FE']['CacheData'] .= '<div class="ng1" id="__' . ($CIDRAM['CacheSourceName'] === 'assets/frontend/frontend.dat' ? 'FE' : '') . 'Container"><span class="s">' . $CIDRAM['CacheSourceName'] . ' – (<span style="cursor:pointer" onclick="javascript:' . (
-                $CIDRAM['CacheSourceName'] === 'assets/frontend/frontend.dat' ? 'fecdd' : 'cdd'
-            ) . '(\'__\')"><code class="s">' . $CIDRAM['L10N']->getString('field_clear_all') . '</code></span>)</span><br /><br /><ul class="pieul">' . $CIDRAM['ArrayToClickableList'](
-                $CIDRAM['CacheSourceData'],
-                ($CIDRAM['CacheSourceName'] === 'assets/frontend/frontend.dat' ? 'fecdd' : 'cdd'),
-                0,
-                $CIDRAM['CacheSourceName']
-            ) . '</ul></div>';
-        }
-        unset($CIDRAM['CacheSourceData'], $CIDRAM['CacheSourceName'], $CIDRAM['CacheArray']);
+        /** Process all cache items. */
+        $CIDRAM['FE']['CacheData'] .= sprintf(
+            '<div class="ng1" id="__Container"><span class="s">%s – (<span style="cursor:pointer" onclick="javascript:cdd(\'__\')"><code class="s">%s</code></span>)</span><br /><br /><ul class="pieul">%s</ul></div>',
+            $CIDRAM['PreferredSource'],
+            $CIDRAM['L10N']->getString('field_clear_all'),
+            $CIDRAM['ArrayToClickableList']($CIDRAM['CacheArray'], 'cdd', 0, $CIDRAM['PreferredSource'])
+        );
+        unset($CIDRAM['PreferredSource'], $CIDRAM['CacheArray']);
 
         /** Cache is empty. */
         if (!$CIDRAM['FE']['CacheData']) {
@@ -2492,7 +2418,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'fixer' && $CIDRAM['FE']['Permis
             $CIDRAM['FileCache'] = [];
         }
         if (!isset($CIDRAM['FileCache'][$_POST['sigFile']])) {
-            $CIDRAM['FileCache'][$_POST['sigFile']] = $CIDRAM['ReadFile']($CIDRAM['Vault'] . $_POST['sigFile']);
+            $CIDRAM['FileCache'][$_POST['sigFile']] = $CIDRAM['ReadFile']($CIDRAM['SignaturesPath'] . $_POST['sigFile']);
         }
         if (!empty($CIDRAM['FileCache'][$_POST['sigFile']])) {
             $CIDRAM['FE']['FixerOutput'] = $CIDRAM['FileCache'][$_POST['sigFile']];
@@ -3454,7 +3380,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-test' && $CIDRAM['FE']['Perm
                 if (!empty($CIDRAM['AuxErrors'])) {
                     $CIDRAM['AuxErrorCounts'] = [];
                     foreach ($CIDRAM['AuxErrors'] as $CIDRAM['AuxError']) {
-                        $CIDRAM['AuxError'][2] = 'auxiliary.yaml';
+                        $CIDRAM['AuxError'][2] = 'auxiliary.yml';
                         if (!empty($CIDRAM['AuxError'][4])) {
                             $CIDRAM['AuxError'][2] .= ':' . $CIDRAM['AuxError'][4];
                         }
@@ -3988,7 +3914,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'aux' && $CIDRAM['FE']['Permissi
     /** Attempt to parse the auxiliary rules file. */
     if (!isset($CIDRAM['AuxData'])) {
         $CIDRAM['AuxData'] = [];
-        $CIDRAM['YAML']->process($CIDRAM['ReadFile']($CIDRAM['Vault'] . 'auxiliary.yaml'), $CIDRAM['AuxData']);
+        $CIDRAM['YAML']->process($CIDRAM['ReadFile']($CIDRAM['Vault'] . 'auxiliary.yml'), $CIDRAM['AuxData']);
     }
 
     /** Create new auxiliary rule. */
@@ -4116,7 +4042,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'aux' && $CIDRAM['FE']['Permissi
 
         /** Reconstruct and update auxiliary rules data. */
         if ($CIDRAM['NewAuxData'] = $CIDRAM['YAML']->reconstruct($CIDRAM['AuxData'])) {
-            $CIDRAM['Handle'] = fopen($CIDRAM['Vault'] . 'auxiliary.yaml', 'wb');
+            $CIDRAM['Handle'] = fopen($CIDRAM['Vault'] . 'auxiliary.yml', 'wb');
             fwrite($CIDRAM['Handle'], $CIDRAM['NewAuxData']);
             fclose($CIDRAM['Handle']);
         }
@@ -4141,7 +4067,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'aux' && $CIDRAM['FE']['Permissi
 
         /** Process auxiliary rules. */
         $CIDRAM['FE']['Data'] = '      ' . (
-            file_exists($CIDRAM['Vault'] . 'auxiliary.yaml') ?
+            file_exists($CIDRAM['Vault'] . 'auxiliary.yml') ?
             $CIDRAM['AuxGenerateFEData']() :
             '<span class="s">' . $CIDRAM['L10N']->getString('response_aux_none') . '<br /><br /></span>'
         );
@@ -4231,9 +4157,9 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'aux' && $CIDRAM['FE']['Permissi
             unset($CIDRAM['AuxData'][$_POST['auxD']]);
 
             /** Reconstruct and update auxiliary rules data. */
-            if (!$CIDRAM['ReconstructUpdateAuxData']() && file_exists($CIDRAM['Vault'] . 'auxiliary.yaml')) {
+            if (!$CIDRAM['ReconstructUpdateAuxData']() && file_exists($CIDRAM['Vault'] . 'auxiliary.yml')) {
                 /** If auxiliary rules data reconstruction fails, or if it's empty, delete the file. */
-                unlink($CIDRAM['Vault'] . 'auxiliary.yaml');
+                unlink($CIDRAM['Vault'] . 'auxiliary.yml');
             }
 
             /** Confirm successful deletion. */
@@ -4393,7 +4319,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'aux-edit' && $CIDRAM['FE']['Per
 
         /** Reconstruct and update auxiliary rules data. */
         if ($CIDRAM['NewAuxArr'] = $CIDRAM['YAML']->reconstruct($CIDRAM['NewAuxArr'])) {
-            $CIDRAM['Handle'] = fopen($CIDRAM['Vault'] . 'auxiliary.yaml', 'wb');
+            $CIDRAM['Handle'] = fopen($CIDRAM['Vault'] . 'auxiliary.yml', 'wb');
             fwrite($CIDRAM['Handle'], $CIDRAM['NewAuxArr']);
             fclose($CIDRAM['Handle']);
             $CIDRAM['FE']['state_msg'] = $CIDRAM['L10N']->getString('response_aux_updated');
@@ -4492,13 +4418,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'logs' && $CIDRAM['FE']['Permiss
 
     /** Remember search filters. */
     if ($CIDRAM['FE']['Remember'] && $CIDRAM['FE']['BlockLink'] !== $CIDRAM['FE']['CachedLogsLink']) {
-        $CIDRAM['FECacheAdd'](
-            $CIDRAM['FE']['Cache'],
-            $CIDRAM['FE']['Rebuild'],
-            'CachedLogsLink-' . $CIDRAM['FE']['User'],
-            $CIDRAM['FE']['BlockLink'],
-            $CIDRAM['Now'] + 31536000
-        );
+        $CIDRAM['Cache']->setEntry('CachedLogsLink-' . $CIDRAM['FE']['User'], $CIDRAM['FE']['BlockLink'], 31536000);
         $CIDRAM['FE']['FE_Content'] = str_replace(
             ' href="' . $CIDRAM['FE']['CachedLogsLink'] . '">',
             ' href="' . $CIDRAM['FE']['BlockLink'] . '">',

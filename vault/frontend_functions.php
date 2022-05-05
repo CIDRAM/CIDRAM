@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2022.05.03).
+ * This file: Front-end functions file (last modified: 2022.05.05).
  */
 
 /**
@@ -139,105 +139,6 @@ $CIDRAM['FormatFilesize'] = function (int &$Filesize) use (&$CIDRAM): void {
 };
 
 /**
- * Remove an entry from the front-end cache data.
- *
- * @param string $Source Variable containing cache file data.
- * @param bool $Rebuild Flag indicating to rebuild cache file.
- * @param string $Entry Name of the cache entry to be deleted.
- * @return void
- */
-$CIDRAM['FECacheRemove'] = function (?string &$Source, ?bool &$Rebuild, string $Entry) use (&$CIDRAM): void {
-    /** Override if using a different preferred caching mechanism. */
-    if ($CIDRAM['Cache']->Using && $CIDRAM['Cache']->Using !== 'FF') {
-        if ($Entry === '__') {
-            $CIDRAM['Cache']->clearCache();
-        } else {
-            $CIDRAM['Cache']->deleteEntry($Entry);
-        }
-        return;
-    }
-
-    /** Default process for clearing all. */
-    if ($Entry === '__') {
-        $Source = "\n";
-        $Rebuild = true;
-        return;
-    }
-
-    /** Default process. */
-    $Entry64 = base64_encode($Entry);
-    while (($EntryPos = strpos($Source, "\n" . $Entry64 . ',')) !== false) {
-        $EoL = strpos($Source, "\n", $EntryPos + 1);
-        if ($EoL !== false) {
-            $Line = substr($Source, $EntryPos, $EoL - $EntryPos);
-            $Source = str_replace($Line, '', $Source);
-            $Rebuild = true;
-        }
-    }
-};
-
-/**
- * Add an entry to the front-end cache data.
- *
- * @param string $Source Variable containing cache file data.
- * @param bool $Rebuild Flag indicating to rebuild cache file.
- * @param string $Entry Name of the cache entry to be added.
- * @param string $Data Cache entry data (what should be cached).
- * @param int $Expires When should the cache entry expire (be deleted).
- * @return void
- */
-$CIDRAM['FECacheAdd'] = function (?string &$Source, ?bool &$Rebuild, string $Entry, string $Data, int $Expires) use (&$CIDRAM): void {
-    /** Override if using a different preferred caching mechanism. */
-    if ($CIDRAM['Cache']->Using && $CIDRAM['Cache']->Using !== 'FF') {
-        $CIDRAM['Cache']->setEntry($Entry, $Data, $Expires - $CIDRAM['Now']);
-        $CIDRAM['CacheEntry-' . $Entry] = $Data;
-        return;
-    }
-
-    /** Default process. */
-    $CIDRAM['FECacheRemove']($Source, $Rebuild, $Entry);
-    $NewLine = base64_encode($Entry) . ',' . base64_encode($Data) . ',' . $Expires . "\n";
-    $Source .= $NewLine;
-    $Rebuild = true;
-};
-
-/**
- * Get an entry from the front-end cache data.
- *
- * @param string $Source Variable containing cache file data.
- * @param bool $Rebuild Flag indicating to rebuild cache file.
- * @param string $Entry Name of the cache entry to get.
- * @return string|bool Returned cache entry data (or false on failure).
- */
-$CIDRAM['FECacheGet'] = function (?string &$Source, string $Entry) use (&$CIDRAM) {
-    /** Override if using a different preferred caching mechanism. */
-    if ($CIDRAM['Cache']->Using && $CIDRAM['Cache']->Using !== 'FF') {
-        /** Check whether already fetched for this instance. */
-        if (isset($CIDRAM['CacheEntry-' . $Entry])) {
-            return $CIDRAM['CacheEntry-' . $Entry];
-        }
-
-        /** Fetch the cache entry. */
-        return $CIDRAM['CacheEntry-' . $Entry] = $CIDRAM['Cache']->getEntry($Entry);
-    }
-
-    /** Default process. */
-    $Entry = base64_encode($Entry);
-    $EntryPos = strpos($Source, "\n" . $Entry . ',');
-    if ($EntryPos !== false) {
-        $EoL = strpos($Source, "\n", $EntryPos + 1);
-        if ($EoL !== false) {
-            $Line = substr($Source, $EntryPos, $EoL - $EntryPos);
-            $Entry = explode(',', $Line);
-            if (!empty($Entry[1])) {
-                return base64_decode($Entry[1]);
-            }
-        }
-    }
-    return false;
-};
-
-/**
  * Remove sub-arrays from an array.
  *
  * @param array $Arr An array.
@@ -361,7 +262,7 @@ $CIDRAM['FileManager-RecursiveList'] = function (string $Base) use (&$CIDRAM): a
                     $Component = $CIDRAM['L10N']->getString('link_config');
                 } elseif ($CIDRAM['FileManager-IsLogFile']($ThisNameFixed)) {
                     $Component = $CIDRAM['L10N']->getString('link_logs');
-                } elseif ($ThisNameFixed === 'auxiliary.yaml') {
+                } elseif ($ThisNameFixed === 'auxiliary.yml') {
                     $Component = $CIDRAM['L10N']->getString('link_aux');
                 } elseif (preg_match('/(?:^ignore\.dat|_custom\.dat|\.sig|\.inc)$/i', $ThisNameFixed)) {
                     $Component = $CIDRAM['L10N']->getString('label_fmgr_other_sig');
@@ -662,7 +563,7 @@ $CIDRAM['FetchRemote'] = function () use (&$CIDRAM): void {
  * @return void
  */
 $CIDRAM['FetchRemote-ContextFree'] = function (string &$RemoteData, string &$Remote) use (&$CIDRAM): void {
-    $RemoteData = $CIDRAM['FECacheGet']($CIDRAM['FE']['Cache'], $Remote);
+    $RemoteData = $CIDRAM['Cache']->getEntry($Remote);
     if ($RemoteData === false) {
         $RemoteData = $CIDRAM['Request']($Remote);
         if (strtolower(substr($Remote, -2)) === 'gz' && substr($RemoteData, 0, 2) === "\x1F\x8B") {
@@ -671,13 +572,7 @@ $CIDRAM['FetchRemote-ContextFree'] = function (string &$RemoteData, string &$Rem
         if (empty($RemoteData)) {
             $RemoteData = '-';
         }
-        $CIDRAM['FECacheAdd'](
-            $CIDRAM['FE']['Cache'],
-            $CIDRAM['FE']['Rebuild'],
-            $Remote,
-            $RemoteData,
-            $CIDRAM['Now'] + 3600
-        );
+        $CIDRAM['Cache']->setEntry($Remote, $RemoteData, 3600);
     }
 };
 
@@ -712,8 +607,7 @@ $CIDRAM['DeactivateComponent'] = function (string $Type, string $ID) use (&$CIDR
     $CIDRAM['Deactivation'][$Type] = array_unique(array_filter(
         explode(',', $CIDRAM['Deactivation'][$Type]),
         function ($Component) use (&$CIDRAM) {
-            $Component = (strpos($Component, ':') === false) ? $Component : substr($Component, strpos($Component, ':') + 1);
-            return ($Component && file_exists($CIDRAM['Vault'] . $Component));
+            return ($Component = (strpos($Component, ':') === false) ? $Component : substr($Component, strpos($Component, ':') + 1));
         }
     ));
     if (count($CIDRAM['Deactivation'][$Type])) {
@@ -956,8 +850,8 @@ $CIDRAM['SimulateBlockEvent'] = function (string $Addr, bool $Modules = false, b
             $Before = $CIDRAM['BlockInfo']['SignatureCount'];
             if (isset($CIDRAM['ModuleResCache'][$Module]) && is_object($CIDRAM['ModuleResCache'][$Module])) {
                 $CIDRAM['ModuleResCache'][$Module]();
-            } elseif (file_exists($CIDRAM['Vault'] . $Module) && is_readable($CIDRAM['Vault'] . $Module)) {
-                require $CIDRAM['Vault'] . $Module;
+            } elseif (file_exists($CIDRAM['ModulesPath'] . $Module) && is_readable($CIDRAM['ModulesPath'] . $Module)) {
+                require $CIDRAM['ModulesPath'] . $Module;
             }
             if (isset($CIDRAM['Stages']['Modules:Tracking']) && $CIDRAM['BlockInfo']['SignatureCount'] > $Before) {
                 $CIDRAM['BlockInfo']['Infractions'] += $CIDRAM['BlockInfo']['SignatureCount'] - $Before;
@@ -1947,9 +1841,16 @@ $CIDRAM['UpdatesHandler-Activate'] = function ($ID) use (&$CIDRAM): void {
     foreach (['imports', 'events', 'ipv4', 'ipv6', 'modules'] as $Type) {
         $Activation[$Type] = array_unique(array_filter(
             explode(',', $Activation[$Type]),
-            function ($Component) use (&$CIDRAM) {
+            function ($Component) use (&$CIDRAM, $Type) {
                 $Component = (strpos($Component, ':') === false) ? $Component : substr($Component, strpos($Component, ':') + 1);
-                return ($Component && file_exists($CIDRAM['Vault'] . $Component));
+                if ($Type === 'ipv4' || $Type === 'ipv6') {
+                    $Path = $CIDRAM['SignaturesPath'];
+                } elseif ($Type === 'modules') {
+                    $Path = $CIDRAM['ModulesPath'];
+                } else {
+                    $Path = $CIDRAM['Vault'];
+                }
+                return ($Component && file_exists($Path . $Component));
             }
         ));
     }
@@ -2430,8 +2331,8 @@ $CIDRAM['SectionsHandler'] = function (array $Files) use (&$CIDRAM): string {
     $SectionMeta = [];
     $ThisSectionMeta = [];
     foreach ($Files as $File) {
-        $Data = $CIDRAM['ReadFile']($CIDRAM['Vault'] . $File);
-        if (!$Data) {
+        $Data = $CIDRAM['ReadFile']($CIDRAM['SignaturesPath'] . $File);
+        if (strlen($Data) === 0) {
             continue;
         }
         $CIDRAM['NormaliseLinebreaks']($Data);
@@ -2682,8 +2583,8 @@ $CIDRAM['RangeTablesIterateFiles'] = function (array &$Arr, array $Files, array 
     }
     foreach ($Files as $File) {
         $File = (strpos($File, ':') === false) ? $File : substr($File, strpos($File, ':') + 1);
-        $Data = $CIDRAM['ReadFile']($CIDRAM['Vault'] . $File);
-        if (!$Data) {
+        $Data = $CIDRAM['ReadFile']($CIDRAM['SignaturesPath'] . $File);
+        if (strlen($Data) === 0) {
             continue;
         }
         if (isset($CIDRAM['FE']['Matrix-Data']) && class_exists('\Maikuolan\Common\Matrix') && function_exists('imagecreatetruecolor')) {
@@ -3323,7 +3224,7 @@ $CIDRAM['AuxGenerateFEData'] = function (bool $Mode = false) use (&$CIDRAM): str
     /** Attempt to parse the auxiliary rules file. */
     if (!isset($CIDRAM['AuxData'])) {
         $CIDRAM['AuxData'] = [];
-        $CIDRAM['YAML']->process($CIDRAM['ReadFile']($CIDRAM['Vault'] . 'auxiliary.yaml'), $CIDRAM['AuxData']);
+        $CIDRAM['YAML']->process($CIDRAM['ReadFile']($CIDRAM['Vault'] . 'auxiliary.yml'), $CIDRAM['AuxData']);
     }
 
     /** Count entries (needed for offering first and last move options). */
@@ -4823,7 +4724,7 @@ $CIDRAM['SwapAssocArrayElementUpDown'] = function (array $Arr, string $Target, b
  */
 $CIDRAM['ReconstructUpdateAuxData'] = function () use (&$CIDRAM): bool {
     if (($NewAuxData = $CIDRAM['YAML']->reconstruct($CIDRAM['AuxData'])) && strlen($NewAuxData) > 2) {
-        $Handle = fopen($CIDRAM['Vault'] . 'auxiliary.yaml', 'wb');
+        $Handle = fopen($CIDRAM['Vault'] . 'auxiliary.yml', 'wb');
         if ($Handle !== false) {
             fwrite($Handle, $NewAuxData);
             fclose($Handle);

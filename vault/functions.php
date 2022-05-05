@@ -8,13 +8,13 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2022.03.30).
+ * This file: Functions file (last modified: 2022.05.05).
  */
 
 /** Autoloader for CIDRAM classes. */
 spl_autoload_register(function ($Class) {
     $Vendor = (($Pos = strpos($Class, "\\", 1)) === false) ? '' : substr($Class, 0, $Pos);
-    $File = __DIR__ . '/classes/' . ((!$Vendor || $Vendor === 'CIDRAM') ? '' : $Vendor . '/') . (
+    $File = __DIR__ . DIRECTORY_SEPARATOR . 'classes' . DIRECTORY_SEPARATOR . ((!$Vendor || $Vendor === 'CIDRAM') ? '' : $Vendor . DIRECTORY_SEPARATOR) . (
         (($Pos = strrpos($Class, "\\")) === false) ? $Class : substr($Class, $Pos + 1)
     ) . '.php';
     if (is_readable($File)) {
@@ -27,6 +27,17 @@ $CIDRAM['YAML'] = new \Maikuolan\Common\YAML();
 
 /** Instantiate events orchestrator in order to allow malleable logging and etc. */
 $CIDRAM['Events'] = new \Maikuolan\Common\Events();
+
+/** Vault directory. */
+if (!isset($CIDRAM['Vault'])) {
+    $CIDRAM['Vault'] = __DIR__ . DIRECTORY_SEPARATOR;
+}
+
+/** Modules path. */
+$CIDRAM['ModulesPath'] = $CIDRAM['Vault'] . 'modules' . DIRECTORY_SEPARATOR;
+
+/** Signatures path. */
+$CIDRAM['SignaturesPath'] = $CIDRAM['Vault'] . 'signatures' . DIRECTORY_SEPARATOR;
 
 /**
  * Reads and returns the contents of files.
@@ -268,7 +279,7 @@ $CIDRAM['CheckFactors'] = function (array $Files, array $Factors) use (&$CIDRAM)
         $Files[$FileIndex] = (
             strpos($Files[$FileIndex], ':') === false
         ) ? $Files[$FileIndex] : substr($Files[$FileIndex], strpos($Files[$FileIndex], ':') + 1);
-        if (!$Files[$FileIndex]) {
+        if (strlen($Files[$FileIndex]) === 0) {
             continue;
         }
         if ($Counts['Factors'] === 32) {
@@ -280,9 +291,9 @@ $CIDRAM['CheckFactors'] = function (array $Files, array $Factors) use (&$CIDRAM)
         }
         $FileExtension = strtolower(substr($Files[$FileIndex], -4));
         if (!isset($CIDRAM['FileCache'][$Files[$FileIndex]])) {
-            $CIDRAM['FileCache'][$Files[$FileIndex]] = $CIDRAM['ReadFile']($CIDRAM['Vault'] . $Files[$FileIndex]);
+            $CIDRAM['FileCache'][$Files[$FileIndex]] = $CIDRAM['ReadFile']($CIDRAM['SignaturesPath'] . $Files[$FileIndex]);
         }
-        if (!$Files[$FileIndex] = $CIDRAM['FileCache'][$Files[$FileIndex]]) {
+        if (($Files[$FileIndex] = $CIDRAM['FileCache'][$Files[$FileIndex]]) === '') {
             continue;
         }
         if (
@@ -389,10 +400,7 @@ $CIDRAM['CheckFactors'] = function (array $Files, array $Factors) use (&$CIDRAM)
                     ($PosY = strpos($Files[$FileIndex], "\n\n", ($PosX + 1))) &&
                     !substr_count($Files[$FileIndex], "\n\n", $PosA, ($PosX - $PosA + 1))
                 ) {
-                    if (!isset($YAML)) {
-                        $YAML = new \Maikuolan\Common\YAML();
-                    }
-                    $YAML->process(substr($Files[$FileIndex], ($PosX + 5), ($PosY - $PosX - 5)), $CIDRAM['Config']);
+                    $CIDRAM['YAML']->process(substr($Files[$FileIndex], ($PosX + 5), ($PosY - $PosX - 5)), $CIDRAM['Config']);
                 }
                 $LN = ' ("' . $Tag . '", L' . substr_count($Files[$FileIndex], "\n", 0, $PosA) . ':F' . $FileIndex . $Origin . ')';
                 $Signature = substr($Files[$FileIndex], $PosA, ($PosB - $PosA));
@@ -716,9 +724,10 @@ $CIDRAM['Fallback'] = function (array $Fallbacks, array &$Config) use (&$CIDRAM)
  * Check for supplementary configuration.
  *
  * @param string $Source The directive or CSV that we're checking from.
+ * @param string $Path Where configuration files might potentially be found.
  * @return array An array of valid supplementary configuration sources.
  */
-$CIDRAM['Supplementary'] = function (string $Source) use (&$CIDRAM): array {
+$CIDRAM['Supplementary'] = function (string $Source, string $Path = '') use (&$CIDRAM): array {
     $Out = [];
     $Source = explode(',', $Source);
     foreach ($Source as $File) {
@@ -727,8 +736,8 @@ $CIDRAM['Supplementary'] = function (string $Source) use (&$CIDRAM): array {
         }
         $File = substr($File, 0, $DecPos) . '.';
         foreach (['yaml', 'yml'] as $Type) {
-            if (file_exists($CIDRAM['Vault'] . $File . $Type)) {
-                $Out[] = $File . $Type;
+            if (file_exists($Path . $File . $Type)) {
+                $Out[] = $Path . $File . $Type;
                 break;
             }
         }
@@ -1280,7 +1289,7 @@ $CIDRAM['GenerateSalt'] = function (): string {
  * @return void
  */
 $CIDRAM['ClearExpired'] = function (string &$List, bool &$Check) use (&$CIDRAM): void {
-    if (!$List) {
+    if (strlen($List) === 0) {
         return;
     }
     $End = 0;
@@ -1534,7 +1543,7 @@ $CIDRAM['XVerification'] = function (string $From = '', bool $BypassFlags = fals
         return;
     }
     if (!isset($CIDRAM['VerificationData'])) {
-        if (($Raw = $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'verification.yaml')) === '') {
+        if (($Raw = $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'verification.yml')) === '') {
             $CIDRAM['SkipVerification'] = true;
             return;
         }
@@ -2047,14 +2056,14 @@ $CIDRAM['AuxAction'] = function (string $Action, string $Name, string $Reason = 
  */
 $CIDRAM['Aux'] = function () use (&$CIDRAM): void {
     /** Exit procedure early if the rules don't exist. */
-    if (!file_exists($CIDRAM['Vault'] . 'auxiliary.yaml')) {
+    if (!file_exists($CIDRAM['Vault'] . 'auxiliary.yml')) {
         return;
     }
 
     /** Attempt to parse the auxiliary rules file. */
     if (!isset($CIDRAM['AuxData'])) {
         $CIDRAM['AuxData'] = [];
-        $CIDRAM['YAML']->process($CIDRAM['ReadFile']($CIDRAM['Vault'] . 'auxiliary.yaml'), $CIDRAM['AuxData']);
+        $CIDRAM['YAML']->process($CIDRAM['ReadFile']($CIDRAM['Vault'] . 'auxiliary.yml'), $CIDRAM['AuxData']);
     }
 
     /** Iterate through the auxiliary rules. */
@@ -2692,23 +2701,20 @@ $CIDRAM['LoadL10N'] = function (string $Path = '') use (&$CIDRAM): void {
     }
 };
 
-/** Make sure the vault is defined so that tests don't break. */
-if (isset($CIDRAM['Vault'])) {
-    /** Load all default event handlers. */
-    require $CIDRAM['Vault'] . 'event_handlers.php';
+/** Load all default event handlers. */
+require $CIDRAM['Vault'] . 'event_handlers.php';
 
-    /** If there are any componentised events, load those, too. */
-    if (!empty($CIDRAM['Config']['general']['events'])) {
-        $CIDRAM['LoadThese'] = array_unique(explode(',', $CIDRAM['Config']['general']['events']));
-        foreach ($CIDRAM['LoadThese'] as $CIDRAM['LoadThis']) {
-            if (
-                strlen($CIDRAM['LoadThis']) > 0 &&
-                substr($CIDRAM['LoadThis'], -4) === '.php' &&
-                is_readable($CIDRAM['Vault'] . $CIDRAM['LoadThis'])
-            ) {
-                require $CIDRAM['Vault'] . $CIDRAM['LoadThis'];
-            }
+/** If there are any componentised events, load those, too. */
+if (!empty($CIDRAM['Config']['general']['events'])) {
+    $CIDRAM['LoadThese'] = array_unique(explode(',', $CIDRAM['Config']['general']['events']));
+    foreach ($CIDRAM['LoadThese'] as $CIDRAM['LoadThis']) {
+        if (
+            strlen($CIDRAM['LoadThis']) > 0 &&
+            substr($CIDRAM['LoadThis'], -4) === '.php' &&
+            is_readable($CIDRAM['Vault'] . $CIDRAM['LoadThis'])
+        ) {
+            require $CIDRAM['Vault'] . $CIDRAM['LoadThis'];
         }
-        unset($CIDRAM['LoadThis'], $CIDRAM['LoadThese']);
     }
+    unset($CIDRAM['LoadThis'], $CIDRAM['LoadThese']);
 }

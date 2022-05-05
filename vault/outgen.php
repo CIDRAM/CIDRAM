@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Output generator (last modified: 2022.04.04).
+ * This file: Output generator (last modified: 2022.05.05).
  */
 
 /** Initialise stages. */
@@ -210,10 +210,10 @@ if ($CIDRAM['Protect'] && empty($CIDRAM['Whitelisted'])) {
             $Before = $CIDRAM['BlockInfo']['SignatureCount'];
             if (isset($CIDRAM['ModuleResCache'][$Module]) && is_object($CIDRAM['ModuleResCache'][$Module])) {
                 $CIDRAM['ModuleResCache'][$Module]();
-            } elseif (!file_exists($CIDRAM['Vault'] . $Module) || !is_readable($CIDRAM['Vault'] . $Module)) {
+            } elseif (!file_exists($CIDRAM['ModulesPath'] . $Module) || !is_readable($CIDRAM['ModulesPath'] . $Module)) {
                 return;
             } else {
-                require $CIDRAM['Vault'] . $Module;
+                require $CIDRAM['ModulesPath'] . $Module;
             }
             if (isset($CIDRAM['Stages']['Modules:Tracking']) && $CIDRAM['BlockInfo']['SignatureCount'] > $Before) {
                 $CIDRAM['BlockInfo']['Infractions'] += $CIDRAM['BlockInfo']['SignatureCount'] - $Before;

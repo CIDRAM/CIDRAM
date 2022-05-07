@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Configuration handler (last modified: 2022.05.05).
+ * This file: Configuration handler (last modified: 2022.05.07).
  */
 
 /** CIDRAM version number (SemVer). */
@@ -49,12 +49,14 @@ if (empty($CIDRAM['Config Defaults'])) {
 if (isset($GLOBALS['CIDRAM_Config'])) {
     /** Provides a means of running tests with configuration values specific to those tests. */
     $CIDRAM['Config'] = $GLOBALS['CIDRAM_Config'];
-} elseif (is_readable($CIDRAM['Vault'] . 'config.yml')) {
+} else {
     /** Configuration to be populated here. */
     $CIDRAM['Config'] = [];
 
     /** Attempts to parse the standard CIDRAM configuration file. */
-    $CIDRAM['YAML']->process($CIDRAM['ReadFile']($CIDRAM['Vault'] . 'config.yml'), $CIDRAM['Config']);
+    if (is_readable($CIDRAM['Vault'] . 'config.yml')) {
+        $CIDRAM['YAML']->process($CIDRAM['ReadFile']($CIDRAM['Vault'] . 'config.yml'), $CIDRAM['Config']);
+    }
 }
 
 /** Checks for the existence of the HTTP_HOST "configuration overrides file". */

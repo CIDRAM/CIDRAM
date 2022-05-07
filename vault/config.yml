@@ -108,9 +108,7 @@ general:
  numbers: "Latin-1"
  emailaddr: ""
  emailaddr_display_style: "default"
- disable_frontend: true
- max_login_attempts: 5
- frontend_log: ""
+ disable_frontend: false
  signatures_update_event_log: ""
  ban_override: 200
  log_banned_ips: true
@@ -197,6 +195,11 @@ general:
  default_timeout: 12
  config_imports: ""
  events: ""
+frontend:
+ frontend_log: ""
+ max_login_attempts: 5
+ theme: "default"
+ magnification: 1
 signatures:
  ipv4: "ipv4.dat,ipv4_bogons.dat,ipv4_isps.dat,ipv4_nonblocking.dat,ipv4_other.dat"
  ipv6: "ipv6.dat,ipv6_bogons.dat,ipv6_isps.dat,ipv6_nonblocking.dat,ipv6_other.dat"

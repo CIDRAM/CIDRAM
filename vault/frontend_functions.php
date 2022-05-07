@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2022.05.05).
+ * This file: Front-end functions file (last modified: 2022.05.07).
  */
 
 /**
@@ -1201,8 +1201,8 @@ $CIDRAM['Tally'] = function (string $In, string $BlockLink, array $Exclusions = 
  * @return string The asset path.
  */
 $CIDRAM['GetAssetPath'] = function (string $Asset, bool $CanFail = false) use (&$CIDRAM): string {
-    if (file_exists($CIDRAM['Vault'] . 'assets/frontend/' . $CIDRAM['Config']['template_data']['theme'] . '/' . $Asset)) {
-        return $CIDRAM['Vault'] . 'assets/frontend/' . $CIDRAM['Config']['template_data']['theme'] . '/' . $Asset;
+    if (file_exists($CIDRAM['Vault'] . 'assets/frontend/' . $CIDRAM['Config']['frontend']['theme'] . '/' . $Asset)) {
+        return $CIDRAM['Vault'] . 'assets/frontend/' . $CIDRAM['Config']['frontend']['theme'] . '/' . $Asset;
     }
     if (file_exists($CIDRAM['Vault'] . 'assets/frontend/default/' . $Asset)) {
         return $CIDRAM['Vault'] . 'assets/frontend/default/' . $Asset;
@@ -2977,8 +2977,8 @@ $CIDRAM['FileManager-IsLogFile'] = function (string $File) use (&$CIDRAM): bool 
         $Pattern_logfile_serialized = $CIDRAM['BuildLogPattern']($CIDRAM['Config']['general']['logfile_serialized'], true);
     }
     static $Pattern_frontend_log = false;
-    if (!$Pattern_frontend_log && $CIDRAM['Config']['general']['frontend_log']) {
-        $Pattern_frontend_log = $CIDRAM['BuildLogPattern']($CIDRAM['Config']['general']['frontend_log'], true);
+    if (!$Pattern_frontend_log && $CIDRAM['Config']['frontend']['frontend_log']) {
+        $Pattern_frontend_log = $CIDRAM['BuildLogPattern']($CIDRAM['Config']['frontend']['frontend_log'], true);
     }
     static $Pattern_reCAPTCHA_logfile = false;
     if (!$Pattern_reCAPTCHA_logfile && $CIDRAM['Config']['recaptcha']['logfile']) {
@@ -2999,7 +2999,7 @@ $CIDRAM['FileManager-IsLogFile'] = function (string $File) use (&$CIDRAM): bool 
     ) || (
         $CIDRAM['Config']['general']['logfile_serialized'] && preg_match($Pattern_logfile_serialized, $File)
     ) || (
-        $CIDRAM['Config']['general']['frontend_log'] && preg_match($Pattern_frontend_log, $File)
+        $CIDRAM['Config']['frontend']['frontend_log'] && preg_match($Pattern_frontend_log, $File)
     ) || (
         $CIDRAM['Config']['recaptcha']['logfile'] && preg_match($Pattern_reCAPTCHA_logfile, $File)
     ) || (
@@ -3033,8 +3033,8 @@ $CIDRAM['FELogger'] = function (string $IPAddr, string $User, string $Message) u
     /** Guard. */
     if (
         empty($CIDRAM['FE']['DateTime']) ||
-        !$CIDRAM['Config']['general']['frontend_log'] ||
-        !($File = $CIDRAM['BuildPath']($CIDRAM['Vault'] . $CIDRAM['Config']['general']['frontend_log']))
+        !$CIDRAM['Config']['frontend']['frontend_log'] ||
+        !($File = $CIDRAM['BuildPath']($CIDRAM['Vault'] . $CIDRAM['Config']['frontend']['frontend_log']))
     ) {
         return;
     }
@@ -3048,7 +3048,7 @@ $CIDRAM['FELogger'] = function (string $IPAddr, string $User, string $Message) u
     fwrite($Handle, $Data);
     fclose($Handle);
     if ($WriteMode === 'wb') {
-        $CIDRAM['LogRotation']($CIDRAM['Config']['general']['frontend_log']);
+        $CIDRAM['LogRotation']($CIDRAM['Config']['frontend']['frontend_log']);
     }
 };
 

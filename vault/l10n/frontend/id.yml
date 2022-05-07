@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Indonesian language data for the front-end (last modified: 2022.05.04).
+# This file: Indonesian language data for the front-end (last modified: 2022.05.07).
 ##/
 
 Extended Description Bypasses: "File untuk bypass tanda tangan standar yang biasanya disertakan dengan paket utama."
@@ -89,6 +89,11 @@ config_PHPMailer_username: "Nama pengguna yang digunakan saat mengirim email mel
 config_bypasses: "Konfigurasi untuk bypass tanda tangan default."
 config_bypasses_used: "Bypass mana yang harus digunakan?"
 config_experimental: "Tidak stabil / Eksperimental!"
+config_frontend: "Konfigurasi untuk front-end."
+config_frontend_frontend_log: "File untuk mencatat upaya masuk bagian depan. Spesifikasikan nama file, atau biarkan kosong untuk menonaktifkan."
+config_frontend_magnification: &MagnifDesc "Perbesaran font. Default = 1."
+config_frontend_max_login_attempts: "Jumlah maksimum upaya memasukkan ke bagian depan. Default = 5."
+config_frontend_theme: "Tema default yang digunakan untuk front-end."
 config_general: "Konfigurasi umum (konfigurasi inti apapun yang bukan milik kategori lain)."
 config_general_allow_gethostbyaddr_lookup: "Izinkan menggunakan gethostbyaddr saat UDP tidak tersedia? True = Ya [Default]; False = Tidak."
 config_general_ban_override: "Mengesampingkan "http_response_header_code" ketika "infraction_limit" adalah melampaui? Ketika mengesampingkan: Permintaan diblokir menghasilkan halaman kosong (file template tidak digunakan). 200 = Jangan mengesampingkan [Default]. Nilai lainnya sama dengan nilai yang tersedia untuk "http_response_header_code"."
@@ -104,7 +109,6 @@ config_general_error_log: "File untuk mencatat kesalahan tidak fatal yang terdet
 config_general_events: "File yang terdaftar disini dimuat langsung setelah file pengendali acara. Biasanya diisi oleh halaman pembaruan saat mengaktifkan komponen yang membutuhkannya saat diperlukan. Dalam kebanyakan kasus, bisa mengabaikannya."
 config_general_fields: "Kontrol untuk bidang selama acara blokir (ketika permintaan diblokir)."
 config_general_force_hostname_lookup: "Memaksa periksa untuk nama host? True = Ya; False = Tidak [Default]. Periksa untuk nama host biasanya dilakukan pada dasar "sesuai kebutuhan", tapi bisa dipaksakan untuk semua permintaan. Melakukan hal tersebut mungkin berguna sebagai sarana untuk memberikan informasi lebih rinci di log, tapi mungkin juga memiliki sedikit efek negatif pada kinerja."
-config_general_frontend_log: "File untuk mencatat upaya masuk bagian depan. Spesifikasikan nama file, atau biarkan kosong untuk menonaktifkan."
 config_general_http_response_header_code: "Pesan status HTTP mana yang harus dikirim oleh CIDRAM ketika memblokir permintaan?"
 config_general_ipaddr: "Dimana menemukan alamat IP dari permintaan alamat? (Bergunak untuk pelayanan-pelayanan seperti Cloudflare dan sejenisnya). Default = REMOTE_ADDR. PERINGATAN: Jangan ganti ini kecuali Anda tahu apa yang Anda lakukan!"
 config_general_lang: "Tentukan bahasa default untuk CIDRAM."
@@ -116,7 +120,6 @@ config_general_log_sanitisation: "Saat menggunakan halaman log untuk melihat dat
 config_general_logfile: "File yang dapat dibaca oleh manusia untuk mencatat semua upaya akses diblokir. Spesifikasikan nama file, atau biarkan kosong untuk menonaktifkan."
 config_general_logfile_apache: "File yang dalam gaya Apache untuk mencatat semua upaya akses diblokir. Spesifikasikan nama file, atau biarkan kosong untuk menonaktifkan."
 config_general_logfile_serialized: "File serial untuk mencatat semua upaya akses diblokir. Spesifikasikan nama file, atau biarkan kosong untuk menonaktifkan."
-config_general_max_login_attempts: "Jumlah maksimum upaya memasukkan ke bagian depan. Default = 5."
 config_general_numbers: "Cara apa yang kamu suka nomor menjadi ditampilkan? Pilih contoh yang paling sesuai untuk Anda."
 config_general_other_verification: "Kontrol untuk memverifikasi jenis permintaan lain jika memungkinkan."
 config_general_protect_frontend: "Menentukan apakah perlindungan biasanya disediakan oleh CIDRAM harus diterapkan pada bagian depan. True = Ya [Default]; False = Tidak."
@@ -199,8 +202,8 @@ config_template_data: "Konfigurasi untuk template dan tema."
 config_template_data_block_event_title: "Judul halaman yang akan ditampilkan untuk acara blokir."
 config_template_data_captcha_title: "Judul halaman yang akan ditampilkan untuk permintaan CAPTCHA."
 config_template_data_css_url: "URL file CSS untuk tema kustom."
-config_template_data_magnification: "Perbesaran font. Default = 1."
-config_template_data_theme: "Tema default untuk CIDRAM."
+config_template_data_magnification: *MagnifDesc
+config_template_data_theme: "Tema default yang digunakan untuk CIDRAM."
 confirm_action: "Anda yakin ingin "%s"?"
 field_2fa: "Kode 2FA"
 field_activate: "Mengaktifkan"

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (simplified) language data for the front-end (last modified: 2022.05.04).
+# This file: Chinese (simplified) language data for the front-end (last modified: 2022.05.07).
 ##/
 
 Extended Description Bypasses: "标准签名旁路文件通常包括在主包。"
@@ -104,7 +104,7 @@ config_general_error_log: "用于记录检测到的任何非致命错误的文�
 config_general_events: "此处列出的文件在事件处理程序文件之后直接加载。​通常在启用组件时由更新页面按需填充。​大多数情况下，可以忽略它。"
 config_general_fields: "用于阻止事件的字段控件（当请求被阻止时）。"
 config_general_force_hostname_lookup: "强制主机名查找？​True（真）=跟踪；False（假）=不跟踪【标准】。​主机名查询通常在“根据需要”的基础上执行，但可以在所有请求上强制。​这可能会有助于提供日志文件中更详细的信息，但也可能会对性能产生轻微的负面影响。"
-config_general_frontend_log: "前端登录尝试的录音文件。​指定一个文件名，​或留空以禁用。"
+config_frontend_frontend_log: "前端登录尝试的录音文件。​指定一个文件名，​或留空以禁用。"
 config_general_http_response_header_code: "阻止请求时，CIDRAM应发送哪个HTTP状态消息？"
 config_general_ipaddr: "在哪里可以找到连接请求IP地址？​（可以使用为服务例如Cloudflare和类似）。​标准 = REMOTE_ADDR。​警告：不要修改此除非您知道什么您做着！"
 config_general_lang: "指定标准CIDRAM语言。"
@@ -116,7 +116,7 @@ config_general_log_sanitisation: "当使用前端日志页面查看日志数据�
 config_general_logfile: "人类可读文件用于记录所有被拦截的访问。​指定一个文件名，​或留空以禁用。"
 config_general_logfile_apache: "Apache风格文件用于记录所有被拦截的访问。​指定一个文件名，​或留空以禁用。"
 config_general_logfile_serialized: "连载的文件用于记录所有被拦截的访问。​指定一个文件名，​或留空以禁用。"
-config_general_max_login_attempts: "最大前端登录尝试次数。​标准=5。"
+config_frontend_max_login_attempts: "最大前端登录尝试次数。​标准=5。"
 config_general_numbers: "您如何喜欢显示数字？​选择最适合示例。"
 config_general_other_verification: "用于在可能的情况下，验证其他类型的请求的控件。"
 config_general_protect_frontend: "指定是否应将CIDRAM通常提供的保护应用于前端。​True（真）=是【标准】；False（假）=不是。"
@@ -199,8 +199,11 @@ config_template_data: "模板和主题的配置。"
 config_template_data_block_event_title: "为阻止事件显示的页面标题。"
 config_template_data_captcha_title: "为CAPTCHA请求显示的页面标题。"
 config_template_data_css_url: "自定义主题的CSS文件URL。"
-config_template_data_magnification: "字体放大。​标准 = 1。"
+config_frontend_magnification: &MagnifDesc "字体放大。​标准 = 1。"
+config_template_data_magnification: *MagnifDesc
+config_frontend_theme: "用于前端的默认主题。"
 config_template_data_theme: "用于CIDRAM的默认主题。"
+config_frontend: "前端的配置。"
 confirm_action: "你确定要“%s”吗？"
 field_2fa: "2FA代码"
 field_activate: "启用"

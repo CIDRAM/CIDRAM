@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2022.05.05).
+ * This file: Front-end handler (last modified: 2022.05.07).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -47,9 +47,6 @@ $CIDRAM['FE'] = [
     /** Main front-end HTML template file. */
     'Template' => $CIDRAM['ReadFile']($CIDRAM['GetAssetPath']('frontend.html')),
 
-    /** Needed for custom favicons. */
-    'favicon_extension' => $CIDRAM['favicon_extension'],
-
     /** Populated by front-end JavaScript data as per needed. */
     'JS' => '',
 
@@ -63,7 +60,7 @@ $CIDRAM['FE'] = [
     'FE_Lang' => $CIDRAM['Config']['general']['lang'],
 
     /** Font magnification. */
-    'Magnification' => $CIDRAM['Config']['template_data']['magnification'],
+    'magnification' => $CIDRAM['Config']['frontend']['magnification'],
 
     /** Define active configuration file. */
     'ActiveConfigFile' => !empty($CIDRAM['Overrides']) ? $CIDRAM['Domain'] . '.config.yml' : 'config.yml',
@@ -75,7 +72,7 @@ $CIDRAM['FE'] = [
     'ScriptIdent' => $CIDRAM['ScriptIdent'],
 
     /** Current default theme. */
-    'theme' => $CIDRAM['Config']['template_data']['theme'],
+    'theme' => $CIDRAM['Config']['frontend']['theme'],
 
     /**
      * The current user state.
@@ -144,6 +141,9 @@ $CIDRAM['FE'] = [
     'Links.Documentation' => $CIDRAM['Links']['Documentation'],
     'Links.Website' => $CIDRAM['Links']['Website']
 ];
+
+/** CIDRAM front-end favicon. */
+[$CIDRAM['FE']['favicon'], $CIDRAM['FE']['favicon_extension']] = $CIDRAM['FetchFavicon']($CIDRAM['Config']['frontend']['theme']);
 
 /** Trace to determine the type of cron operation. */
 if ($CIDRAM['FE']['CronMode'] !== '') {
@@ -351,8 +351,8 @@ if ($CIDRAM['QueryVars']['cidram-page'] === 'css') {
 
 /** A simple passthru for the favicon. */
 if ($CIDRAM['QueryVars']['cidram-page'] === 'favicon') {
-    header('Content-Type: image/' . $CIDRAM['favicon_extension']);
-    echo base64_decode($CIDRAM['favicon']);
+    header('Content-Type: image/' . $CIDRAM['FE']['favicon_extension']);
+    echo base64_decode($CIDRAM['FE']['favicon']);
     die;
 }
 
@@ -368,7 +368,7 @@ $CIDRAM['StatisticsTracked'] = array_flip(explode("\n", $CIDRAM['Config']['gener
 /** Brute-force security check. */
 if (
     ($CIDRAM['LoginAttempts'] = (int)$CIDRAM['Cache']->getEntry('LoginAttempts' . $CIDRAM['IPAddr'])) &&
-    ($CIDRAM['LoginAttempts'] >= $CIDRAM['Config']['general']['max_login_attempts'])
+    ($CIDRAM['LoginAttempts'] >= $CIDRAM['Config']['frontend']['max_login_attempts'])
 ) {
     header('Content-Type: text/plain');
     die('[CIDRAM] ' . $CIDRAM['L10N']->getString('max_login_attempts_exceeded'));
@@ -377,7 +377,7 @@ if (
 /** Brute-force security check (2FA). */
 if (
     ($CIDRAM['Failed2FA'] = (int)$CIDRAM['Cache']->getEntry('Failed2FA' . $CIDRAM['IPAddr'])) &&
-    ($CIDRAM['Failed2FA'] >= $CIDRAM['Config']['general']['max_login_attempts'])
+    ($CIDRAM['Failed2FA'] >= $CIDRAM['Config']['frontend']['max_login_attempts'])
 ) {
     header('Content-Type: text/plain');
     die('[CIDRAM] ' . $CIDRAM['L10N']->getString('max_login_attempts_exceeded'));
@@ -479,13 +479,13 @@ if ($CIDRAM['FE']['FormTarget'] === 'login' || $CIDRAM['FE']['CronMode'] !== '')
         $CIDRAM['LoginAttempts']++;
         $CIDRAM['TimeToAdd'] = ($CIDRAM['LoginAttempts'] > 4) ? ($CIDRAM['LoginAttempts'] - 4) * 86400 : 86400;
         $CIDRAM['Cache']->setEntry('LoginAttempts' . $CIDRAM['IPAddr'], $CIDRAM['LoginAttempts'], $CIDRAM['TimeToAdd']);
-        if ($CIDRAM['Config']['general']['frontend_log']) {
+        if ($CIDRAM['Config']['frontend']['frontend_log']) {
             $CIDRAM['LoggerMessage'] = $CIDRAM['FE']['state_msg'];
         }
         if ($CIDRAM['FE']['CronMode'] === '') {
             $CIDRAM['FE']['state_msg'] = '<div class="txtRd">' . $CIDRAM['FE']['state_msg'] . '<br /><br /></div>';
         }
-    } elseif ($CIDRAM['Config']['general']['frontend_log']) {
+    } elseif ($CIDRAM['Config']['frontend']['frontend_log']) {
         $CIDRAM['LoggerMessage'] = $CIDRAM['L10N']->getString((
             $CIDRAM['Config']['PHPMailer']['enable_two_factor'] &&
             $CIDRAM['FE']['Permissions'] === 0
@@ -563,13 +563,13 @@ elseif (!empty($_COOKIE['CIDRAM-ADMIN'])) {
             $CIDRAM['Failed2FA']++;
             $CIDRAM['TimeToAdd'] = ($CIDRAM['Failed2FA'] > 4) ? ($CIDRAM['Failed2FA'] - 4) * 86400 : 86400;
             $CIDRAM['Cache']->setEntry('Failed2FA' . $CIDRAM['IPAddr'], $CIDRAM['Failed2FA'], $CIDRAM['TimeToAdd']);
-            if ($CIDRAM['Config']['general']['frontend_log']) {
+            if ($CIDRAM['Config']['frontend']['frontend_log']) {
                 $CIDRAM['FELogger']($CIDRAM['IPAddr'], $CIDRAM['FE']['User'], $CIDRAM['L10N']->getString('response_2fa_invalid'));
             }
             $CIDRAM['FE']['state_msg'] = '<div class="txtRd">' . $CIDRAM['L10N']->getString('response_2fa_invalid') . '<br /><br /></div>';
         } else {
             $CIDRAM['Cache']->deleteEntry('Failed2FA' . $CIDRAM['IPAddr']);
-            if ($CIDRAM['Config']['general']['frontend_log']) {
+            if ($CIDRAM['Config']['frontend']['frontend_log']) {
                 $CIDRAM['FELogger']($CIDRAM['IPAddr'], $CIDRAM['FE']['User'], $CIDRAM['L10N']->getString('response_2fa_valid'));
             }
         }
@@ -1927,10 +1927,11 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && ($CIDRAM['FE']['Per
         if (!empty($CIDRAM['Components']['ThisComponent']['Files']['To'])) {
             $CIDRAM['Activable'] = $CIDRAM['IsActivable']($CIDRAM['Components']['ThisComponent']);
             $CIDRAM['Components']['ThisIsInUse'] = $CIDRAM['IsInUse']($CIDRAM['Components']['ThisComponent']);
-            if (preg_match(
-                '~^(?:theme/' . preg_quote($CIDRAM['Config']['template_data']['theme']) . '|CIDRAM.*|Common Classes Package)$~i',
-                $CIDRAM['Components']['Key']
-            ) || $CIDRAM['Components']['ThisIsInUse'] !== 0) {
+            if (preg_match(sprintf(
+                '~^(?:theme/%s|theme/%s|CIDRAM.*|Common Classes Package)$~i',
+                preg_quote($CIDRAM['Config']['frontend']['theme']),
+                preg_quote($CIDRAM['Config']['template_data']['theme'])
+            ), $CIDRAM['Components']['Key']) || $CIDRAM['Components']['ThisIsInUse'] !== 0) {
                 if ($CIDRAM['Components']['ThisIsInUse'] === -1) {
                     $CIDRAM['AppendToString'](
                         $CIDRAM['Components']['ThisComponent']['StatusOptions'],

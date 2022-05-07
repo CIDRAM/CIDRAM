@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Swedish language data for the front-end (last modified: 2022.05.04).
+# This file: Swedish language data for the front-end (last modified: 2022.05.07).
 ##/
 
 Extended Description Bypasses: "Standard-signatur-bypass-filer som normalt ingår i huvudpaketet."
@@ -89,6 +89,11 @@ config_PHPMailer_username: "Användarnamnet som ska användas när du skickar e-
 config_bypasses: "Konfiguration för standard-signatur-bypasserna."
 config_bypasses_used: "Vilka bypasser ska användas?"
 config_experimental: "Instabil/Experimentell!"
+config_frontend: "Konfiguration för front-enden."
+config_frontend_frontend_log: "Fil för att logga in alla försök till inloggningar på front-end. Ange ett filnamn, eller lämna tomt för att inaktivera."
+config_frontend_magnification: &MagnifDesc "Font förstoring. Standard = 1."
+config_frontend_max_login_attempts: "Maximalt antal inloggningsförsök i front-end. Standard = 5."
+config_frontend_theme: "Standardtemat som ska användas för front-enden."
 config_general: "Allmän konfiguration (alla kärnkonfigurationer som inte tillhör andra kategorier)."
 config_general_allow_gethostbyaddr_lookup: "Tillåt gethostbyaddr-uppslag när UDP är otillgänglig? True = Ja [Standard]; False = Nej."
 config_general_ban_override: "Åsidosätta "http_response_header_code" när "infraction_limit" överskrids? När det åsidosätter: Blockerade förfrågningar returnerar en tom sida (mallfiler används inte). 200 = Åsidosätta inte [Standard]. Andra värden är desamma som tillgängliga värden för "http_response_header_code"."
@@ -104,7 +109,6 @@ config_general_error_log: "En fil för att logga eventuella icke-dödliga fel so
 config_general_events: "Filer som listas här laddas direkt efter händelsehanteringsfilen. Befolkas vanligtvis av uppdateringssidan när du aktiverar komponenter som behöver det vid behov. I de flesta fall kan ignorera det."
 config_general_fields: "Kontroller för fälten under blockhändelser (när en begäran blockeras)."
 config_general_force_hostname_lookup: "Tvinga värdnamnssökningar? True = Ja; False = Nej [Standard]. Värdnamnssökningar utförs normalt på grundval av nödvändighet, men kan tvingas för alla förfrågningar. Att göra det kan vara användbart som ett medel för att ge mer detaljerad information i loggarna, men kan också ha en något negativ effekt på prestanda."
-config_general_frontend_log: "Fil för att logga in alla försök till inloggningar på front-end. Ange ett filnamn, eller lämna tomt för att inaktivera."
 config_general_http_response_header_code: "Vilket HTTP-statusmeddelande ska CIDRAM skicka när blockering förfrågningar?"
 config_general_ipaddr: "Var hittar du IP-adressen för anslutningsförfrågningar? (Användbar för tjänster som Cloudflare och liknande). Standard = REMOTE_ADDR. VARNING: Ändra inte detta om du inte vet vad du gör!"
 config_general_lang: "Ange standardspråk för CIDRAM."
@@ -116,7 +120,6 @@ config_general_log_sanitisation: "När du använder loggningssidan för att visa
 config_general_logfile: "Mänsklig läsbar fil för att logga in alla blockerade åtkomstförsök. Ange ett filnamn, eller lämna tomt för att inaktivera."
 config_general_logfile_apache: "Apache-stil fil för att logga in alla blockerade åtkomstförsök. Ange ett filnamn, eller lämna tomt för att inaktivera."
 config_general_logfile_serialized: "Serialiserad fil för att logga alla blockerade åtkomstförsök. Ange ett filnamn, eller lämna tomt för att inaktivera."
-config_general_max_login_attempts: "Maximalt antal inloggningsförsök i front-end. Standard = 5."
 config_general_numbers: "Hur föredrar du nummer som ska visas? Välj det exempel som är mest korrekt för dig."
 config_general_other_verification: "Kontroller för att verifiera andra typer av förfrågningar där det är möjligt."
 config_general_protect_frontend: "Anger om de skydd som normalt tillhandahålls av CIDRAM ska tillämpas på front-end. True = Ja [Standard]; False = Nej."
@@ -199,8 +202,8 @@ config_template_data: "Konfiguration för mallar och teman."
 config_template_data_block_event_title: "Sidtiteln som ska visas för blockhändelser."
 config_template_data_captcha_title: "Sidtiteln som ska visas för CAPTCHA-förfrågningar."
 config_template_data_css_url: "CSS-filadress för anpassade teman."
-config_template_data_magnification: "Font förstoring. Standard = 1."
-config_template_data_theme: "Standardtema som ska användas för CIDRAM."
+config_template_data_magnification: *MagnifDesc
+config_template_data_theme: "Standardtemat som ska användas för CIDRAM."
 confirm_action: "Är du säker på att du vill "%s"?"
 field_2fa: "2FA-kod"
 field_activate: "Aktivera"

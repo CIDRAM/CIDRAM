@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Polish language data for the front-end (last modified: 2022.05.04).
+# This file: Polish language data for the front-end (last modified: 2022.05.07).
 ##/
 
 Extended Description Bypasses: "Domyślne pliki obejścia podpisów zwykle zawarte w pakiecie głównym."
@@ -89,6 +89,11 @@ config_PHPMailer_username: "Nazwa użytkownika używana podczas wysyłania wiado
 config_bypasses: "Konfiguracja domyślnego obejścia podpisu."
 config_bypasses_used: "Jakich obwodnic należy użyć?"
 config_experimental: "Niestabilny/Eksperymentalny!"
+config_frontend: "Konfiguracja dla interfejsie użytkownika."
+config_frontend_frontend_log: "Plik do logowania próbuje zalogować się do interfejsu użytkownika. Podaj nazwę pliku lub pozostaw puste, aby wyłączyć."
+config_frontend_magnification: &MagnifDesc "Powiększenie czcionki. Domyślna = 1."
+config_frontend_max_login_attempts: "Maksymalna liczba prób zalogowania się do interfejsu użytkownika. Domyślna = 5."
+config_frontend_theme: "Domyślny motyw do użycia w interfejsie użytkownika."
 config_general: "Ogólna konfiguracja (dowolna konfiguracja podstawowa nienależąca do innych kategorii)."
 config_general_allow_gethostbyaddr_lookup: "Zezwolić na wyszukiwanie gethostbyaddr, gdy UDP jest niedostępny? True (Prawdziwe) = Tak [Domyślna]; False (Fałszywy) = Nie."
 config_general_ban_override: "Zastąpić „http_response_header_code”, gdy zostanie przekroczony „infraction_limit”? Podczas nadpisywania: Zablokowane żądania zwracają pustą stronę (pliki szablonów nie są używane). 200 = Nie zastępuj [Domyślna]. Inne wartości są takie same, jak dostępne wartości dla „http_response_header_code”."
@@ -104,7 +109,6 @@ config_general_error_log: "Plik służący do rejestrowania wykrytych błędów 
 config_general_events: "Wymienione tutaj pliki są ładowane bezpośrednio po pliku obsługi zdarzeń. Zwykle wypełniana przez stronę aktualizacji podczas aktywacji składników, które tego potrzebują, gdy jest to konieczne. W większości przypadków można to zignorować."
 config_general_fields: "Kontrole na polach podczas imprez blokowych (gdy żądanie jest zablokowane)."
 config_general_force_hostname_lookup: "Wymuszać wyszukiwanie nazw hostów? True (Prawdziwe) = Tak; False (Fałszywy) = Nie [Domyślna]. Wyszukiwanie nazw hostów jest zwykle wykonywane „na żądanie”, ale można je wymusić dla wszystkich żądań. Może to być przydatne jako sposób na dostarczenie bardziej szczegółowych informacji w plikach dziennika, ale może również mieć nieco negatywny wpływ na wydajność."
-config_general_frontend_log: "Plik do logowania próbuje zalogować się do interfejsu użytkownika. Podaj nazwę pliku lub pozostaw puste, aby wyłączyć."
 config_general_http_response_header_code: "Który komunikat o stanie HTTP powinien wysłać CIDRAM podczas blokowania żądań?"
 config_general_ipaddr: "Gdzie znaleźć adres IP żądań połączenia? (Przydatny w przypadku usług takich jak Cloudflare i podobnych). Domyślna = REMOTE_ADDR. OSTRZEŻENIE: Nie zmieniaj tego, jeśli nie wiesz, co robisz!"
 config_general_lang: "Określ domyślny język dla CIDRAM."
@@ -116,7 +120,6 @@ config_general_log_sanitisation: "Podczas korzystania ze strony dzienników do p
 config_general_logfile: "Plik czytelny dla człowieka do rejestrowania wszystkich zablokowanych prób dostępu. Podaj nazwę pliku lub pozostaw puste, aby wyłączyć."
 config_general_logfile_apache: "Plik w stylu Apache do rejestrowania wszystkich zablokowanych prób dostępu. Podaj nazwę pliku lub pozostaw puste, aby wyłączyć."
 config_general_logfile_serialized: "Plik szeregowy do rejestrowania wszystkich zablokowanych prób dostępu. Podaj nazwę pliku lub pozostaw puste, aby wyłączyć."
-config_general_max_login_attempts: "Maksymalna liczba prób zalogowania się do interfejsu użytkownika. Domyślna = 5."
 config_general_numbers: "Jak wolisz wyświetlać liczby? Wybierz przykład, który wygląda najlepiej dla Ciebie."
 config_general_other_verification: "Kontrolki do weryfikacji innych rodzajów żądań tam, gdzie to możliwe."
 config_general_protect_frontend: "Określa, czy zabezpieczenia zwykle zapewniane przez CIDRAM powinny być stosowane do interfejsu użytkownika. True (Prawdziwe) = Tak [Domyślna]; False (Fałszywy) = Nie."
@@ -199,7 +202,7 @@ config_template_data: "Konfiguracja szablonów i motywów."
 config_template_data_block_event_title: "Tytuł strony do wyświetlenia dla zdarzeń blokujących."
 config_template_data_captcha_title: "Tytuł strony do wyświetlenia dla żądań CAPTCHA."
 config_template_data_css_url: "Adres URL pliku CSS dla niestandardowych motywów."
-config_template_data_magnification: "Powiększenie czcionki. Domyślna = 1."
+config_template_data_magnification: *MagnifDesc
 config_template_data_theme: "Domyślny motyw do użycia dla CIDRAM."
 confirm_action: "Czy na pewno chcesz „%s”?"
 field_2fa: "Kod 2FA"

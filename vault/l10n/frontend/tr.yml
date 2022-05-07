@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Turkish language data for the front-end (last modified: 2022.05.04).
+# This file: Turkish language data for the front-end (last modified: 2022.05.07).
 ##/
 
 Extended Description Bypasses: "Varsayılan imza bypass'lar, normalde ana paketle birlikte verilir."
@@ -89,6 +89,11 @@ config_PHPMailer_username: "SMTP ile e-posta gönderirken kullanılacak kullanı
 config_bypasses: "Varsayılan imza bypass için yapılandırma."
 config_bypasses_used: "Hangi bypasslar kullanılmalıdır?"
 config_experimental: "Kararsız/Deneysel!"
+config_frontend: "Ön uç için yapılandırma."
+config_frontend_frontend_log: "Ön uç giriş denemelerini kaydetmek için kullanılan dosya. Dosya adı belirtin veya devre dışı bırakmak için boş bırakın."
+config_frontend_magnification: &MagnifDesc "Yazı tipi büyütme. Varsayılan = 1."
+config_frontend_max_login_attempts: "Maksimum giriş denemesi sayısı. Varsayılan = 5."
+config_frontend_theme: "Ön uç için kullanılacak varsayılan tema."
 config_general: "Genel yapılandırma (diğer kategorilere ait olmayan herhangi bir çekirdek yapılandırma)."
 config_general_allow_gethostbyaddr_lookup: "UDP kullanılamadığında gethostbyaddr aramalarına izin verilsin mi? Doğru/True = Evet [Varsayılan]; Yanlış/False = Hayır."
 config_general_ban_override: ""infraction_limit" aşıldığında "http_response_header_code"u geçersiz kıl? Geçersiz kılarken: Engellenen istekler boş bir sayfa verir (şablon dosyaları kullanılmaz). 200 = [Varsayılan] değerini geçersiz kılmayın. Diğer değerler "http_response_header_code" için mevcut değerler ile aynıdır."
@@ -104,7 +109,6 @@ config_general_error_log: "Ölümcül olmayan hataları kaydetmek için bir dosy
 config_general_events: "Burada listelenen dosyalar, olay işleyicileri dosyasından hemen sonra yüklenir. Bileşenleri etkinleştirirken genellikle gerektiğinde güncellemeler sayfası tarafından doldurulur. Çoğu durumda, görmezden gelebilir."
 config_general_fields: "Blok olayları sırasında alanlar için kontroller (bir istek engellendiğinde)."
 config_general_force_hostname_lookup: "Hostname aramayı zorla? Doğru/True = Evet; Yanlış/False = Hayır [Varsayılan]. Hostname aramaları normal olarak ihtiyaçlara göre yapılır, ancak tüm istekler için zorla çalıştırılabilir. Bu, günlük dosyalarında daha ayrıntılı bilgi sağlama aracı olarak kullanışlı olabilir, ancak performans üzerinde de olumsuz bir etkisi olabilir."
-config_general_frontend_log: "Ön uç giriş denemelerini kaydetmek için kullanılan dosya. Dosya adı belirtin veya devre dışı bırakmak için boş bırakın."
 config_general_http_response_header_code: "İstekleri engellerken hangi HTTP durum iletisinin CIDRAM göndermesi gerekir?"
 config_general_ipaddr: "Bağlama isteklerinin IP adresi nerede bulunur? (Cloudflare ve benzeri hizmetler için yararlıdır). Varsayılan = REMOTE_ADDR. UYARI: Ne yaptığınızı bilmiyorsanız bunu değiştirmeyin!"
 config_general_lang: "CIDRAM için varsayılan dili belirleyin."
@@ -116,7 +120,6 @@ config_general_log_sanitisation: "Günlük verilerini görüntülemek için ön 
 config_general_logfile: "Engellenen tüm erişim girişimlerini kaydetmek için insanlar tarafından okunabilir dosya. Dosya adı belirtin veya devre dışı bırakmak için boş bırakın."
 config_general_logfile_apache: "Engellenen tüm erişim girişimlerini kaydetmek için Apache tarzı dosya. Dosya adı belirtin veya devre dışı bırakmak için boş bırakın."
 config_general_logfile_serialized: "Engellenen tüm erişim girişimlerini kaydetmek için seri haline getirilmiş dosya. Dosya adı belirtin veya devre dışı bırakmak için boş bırakın."
-config_general_max_login_attempts: "Maksimum giriş denemesi sayısı. Varsayılan = 5."
 config_general_numbers: "Numaraların görüntülenmesini nasıl tercih edersiniz? Size en uygun görünen örneği seçin."
 config_general_other_verification: "Mümkün olduğunda diğer türdeki istekleri doğrulamak için kontroller."
 config_general_protect_frontend: "Normal olarak CIDRAM tarafından sağlanan korumaların ön uça uygulanıp uygulanmayacağını belirtir. Doğru/True = Evet [Varsayılan]; Yanlış/False = Hayır."
@@ -199,7 +202,7 @@ config_template_data: "Şablonlar ve temalar için yapılandırma."
 config_template_data_block_event_title: "Blok olayları için görüntülenecek sayfa başlığı."
 config_template_data_captcha_title: "CAPTCHA istekleri için görüntülenecek sayfa başlığı."
 config_template_data_css_url: "Özel temalar için CSS dosyası URL'si."
-config_template_data_magnification: "Yazı tipi büyütme. Varsayılan = 1."
+config_template_data_magnification: *MagnifDesc
 config_template_data_theme: "CIDRAM için kullanılacak varsayılan tema."
 confirm_action: ""%s" istediğinden emin misin?"
 field_2fa: "2FA kodu"

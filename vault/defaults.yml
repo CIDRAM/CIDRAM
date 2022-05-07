@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Defaults file (last modified: 2022.05.02).
+# This file: Defaults file (last modified: 2022.05.07).
 ##/
 
 Config Defaults:
@@ -411,12 +411,6 @@ Config Defaults:
   disable_frontend:
    type: "bool"
    default: true
-  max_login_attempts:
-   type: "int"
-   default: 5
-  frontend_log:
-   type: "string"
-   default: ""
   signatures_update_event_log:
    type: "string"
    default: ""
@@ -621,6 +615,32 @@ Config Defaults:
    default: ""
    value_preg_filter:
     "~\s~": ""
+ frontend:
+  frontend_log:
+   type: "string"
+   default: ""
+  max_login_attempts:
+   type: "int"
+   default: 5
+  theme:
+   type: "string"
+   default: "default"
+   preview: "allow_other"
+   allow_other: true
+   choices:
+    default: "Default"
+    bluemetal: "Blue Metal"
+    fullmoon: "Full Moon"
+    moss: "Moss"
+    primer: "Primer"
+    primerdark: "Primer Dark"
+    rbi: "Red-Blue Inverted"
+    slate: "Slate"
+   choice_filter: "FilterTheme"
+  magnification:
+   type: "float"
+   step: "any"
+   default: 1
  signatures:
   ipv4:
    type: "string"
@@ -812,7 +832,6 @@ Config Defaults:
     bluemetal: "Blue Metal"
     fullmoon: "Full Moon"
     moss: "Moss"
-    obscured: "Obscured"
     primer: "Primer"
     primerdark: "Primer Dark"
     rbi: "Red-Blue Inverted"
@@ -823,7 +842,6 @@ Config Defaults:
     bluemetal: "dark"
     fullmoon: "dark"
     moss: "light"
-    obscured: "light"
     primer: "light"
     primerdark: "dark"
     rbi: "light"

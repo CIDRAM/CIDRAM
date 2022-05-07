@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2022.05.05).
+ * This file: Functions file (last modified: 2022.05.07).
  */
 
 /** Autoloader for CIDRAM classes. */
@@ -2699,6 +2699,28 @@ $CIDRAM['LoadL10N'] = function (string $Path = '') use (&$CIDRAM): void {
     if (empty($CIDRAM['Client-L10N-Accepted'])) {
         $CIDRAM['Client-L10N-Accepted'] = $CIDRAM['Config']['general']['lang'];
     }
+};
+
+/**
+ * Fetch favicon.
+ *
+ * @param string $Theme The theme to fetch the favicon from.
+ * @return array The base64-encoded favicon and its extension.
+ */
+$CIDRAM['FetchFavicon'] = function (string $Theme = 'default') use (&$CIDRAM): array {
+    foreach (['ico', 'png', 'jpg', 'gif'] as $Extension) {
+        if (!is_readable($CIDRAM['Vault'] . 'favicon_' . $Theme . '.' . $Extension)) {
+            continue;
+        }
+        return [
+            base64_encode($CIDRAM['ReadFile']($CIDRAM['Vault'] . 'favicon_' . $Theme . '.' . $Extension)),
+            $Extension
+        ];
+    }
+    return [
+        'R0lGODlhEAAQAMIBAAAAAGYAAJkAAMz//2YAAGYAAGYAAGYAACH5BAEKAAQALAAAAAAQABAAAANBCLrcKjBK+eKQN76RIb+g0oGewAmiZZbZRppnC0y0BgR4rutK8OWfn2jgI3KKxeHvyBwMkc0kIEp13nZYnGPLSAAAOw==',
+        'gif'
+    ];
 };
 
 /** Load all default event handlers. */

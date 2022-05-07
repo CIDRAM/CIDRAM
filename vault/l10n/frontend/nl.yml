@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Dutch language data for the front-end (last modified: 2022.05.04).
+# This file: Dutch language data for the front-end (last modified: 2022.05.07).
 ##/
 
 Extended Description Bypasses: "De standaard signature bypasses normaal opgenomen met de primaire pakket."
@@ -89,6 +89,11 @@ config_PHPMailer_username: "De gebruikersnaam voor het verzenden van e-mail via 
 config_bypasses: "Configuratie voor de standaard bypasses voor signatures."
 config_bypasses_used: "Welke bypasses moeten worden gebruikt?"
 config_experimental: "Instabiel/Experimenteel!"
+config_frontend: "Configuratie voor de frontend."
+config_frontend_frontend_log: "Bestand om de frontend login pogingen te loggen. Geef een bestandsnaam, of laat leeg om uit te schakelen."
+config_frontend_magnification: &MagnifDesc "Lettergrootte vergroting. Standaard = 1."
+config_frontend_max_login_attempts: "Maximum aantal frontend-inlogpogingen. Standaard = 5."
+config_frontend_theme: "Standaard thema om te gebruiken voor de frontend."
 config_general: "Algemene configuratie (elke kernconfiguratie die niet tot andere categorieën behoort)."
 config_general_allow_gethostbyaddr_lookup: "Zoeken op gethostbyaddr toestaan als UDP niet beschikbaar is? True = Ja [Standaard]; False = Nee."
 config_general_ban_override: "Overrijden "http_response_header_code" wanneer "infraction_limit" wordt overschreden? Wanneer het overrijdt: Geblokkeerde verzoeken retourneert een lege pagina (template bestanden worden niet gebruikt). 200 = Niet overrijden [Standaard]. Andere waarden zijn hetzelfde als de beschikbare waarden voor "http_response_header_code"."
@@ -104,7 +109,6 @@ config_general_error_log: "Een bestand voor het vastleggen van gedetecteerde nie
 config_general_events: "De hier vermelde bestanden worden direct na het gebeurtenishandlerbestand geladen. Wordt doorgaans naar behoefte ingevuld door de pagina met updates bij het activeren van componenten. In de meeste gevallen kunt u het negeren."
 config_general_fields: "Controles voor de velden tijdens blokgebeurtenissen (wanneer een verzoek wordt geblokkeerd)."
 config_general_force_hostname_lookup: "Hostname-opzoekingen afdwingen? True = Ja; False = Nee [Standaard]. Hostname-opzoekingen worden normaal uitgevoerd op basis van noodzaak, maar kan voor alle verzoeken worden gedwongen. Dit kan nuttig zijn als een middel om meer gedetailleerde informatie in de logbestanden te verstrekken, maar kan ook een licht negatief effect hebben op de prestaties."
-config_general_frontend_log: "Bestand om de frontend login pogingen te loggen. Geef een bestandsnaam, of laat leeg om uit te schakelen."
 config_general_http_response_header_code: "Welk HTTP-statusbericht moet CIDRAM verzenden bij het blokkeren van verzoeken?"
 config_general_ipaddr: "Waar het IP-adres van het aansluiten verzoek te vinden? (Handig voor diensten zoals Cloudflare en dergelijke). Standaard = REMOTE_ADDR. WAARSCHUWING: Verander dit niet tenzij u weet wat u doet!"
 config_general_lang: "Geef de standaardtaal voor CIDRAM."
@@ -116,7 +120,6 @@ config_general_log_sanitisation: "Bij gebruik van de frontend logbestanden pagin
 config_general_logfile: "Mensen leesbare bestand om alle geblokkeerde toegang pogingen te loggen. Geef een bestandsnaam, of laat leeg om uit te schakelen."
 config_general_logfile_apache: "Apache-stijl bestand om alle geblokkeerde toegang pogingen te loggen. Geef een bestandsnaam, of laat leeg om uit te schakelen."
 config_general_logfile_serialized: "Geserialiseerd bestand om alle geblokkeerde toegang pogingen te loggen. Geef een bestandsnaam, of laat leeg om uit te schakelen."
-config_general_max_login_attempts: "Maximum aantal frontend-inlogpogingen. Standaard = 5."
 config_general_numbers: "Hoe verkiest u nummers die worden weergegeven? Selecteer het voorbeeld dat het meest correct voor u lijkt."
 config_general_other_verification: "Controles voor het verifiëren van andere soorten verzoeken waar mogelijk."
 config_general_protect_frontend: "Geeft aan of de bescherming die gewoonlijk door CIDRAM is voorzien moet worden toegepast op de frontend. True = Ja [Standaard]; False = Nee."
@@ -199,7 +202,7 @@ config_template_data: "Configuratie voor sjablonen en thema's."
 config_template_data_block_event_title: "De paginatitel die moet worden weergegeven voor blokgebeurtenissen."
 config_template_data_captcha_title: "De paginatitel die moet worden weergegeven voor CAPTCHA-verzoeken."
 config_template_data_css_url: "CSS-bestand URL voor aangepaste thema's."
-config_template_data_magnification: "Lettergrootte vergroting. Standaard = 1."
+config_template_data_magnification: *MagnifDesc
 config_template_data_theme: "Standaard thema om te gebruiken voor CIDRAM."
 confirm_action: "Weet u zeker dat u wilt "%s"?"
 field_2fa: "2FA-code"

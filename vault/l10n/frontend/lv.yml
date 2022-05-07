@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Latvian language data for the front-end (last modified: 2022.05.04).
+# This file: Latvian language data for the front-end (last modified: 2022.05.07).
 ##/
 
 Extended Description Bypasses: "Noklusējuma paraksta apiešana faili, kas parasti ir iekļauti galvenajā paketē."
@@ -89,6 +89,11 @@ config_PHPMailer_username: "Lietotājvārds, kas jāizmanto, nosūtot e-pastu iz
 config_bypasses: "Noklusējuma parakstu apvedceļu konfigurācija."
 config_bypasses_used: "Kuri apvedceļi jāizmanto?"
 config_experimental: "Nestabils/Eksperimentāls!"
+config_frontend: "Priekšgala konfigurācija."
+config_frontend_frontend_log: "Fails ielogošanās mēģinājumu reģistrēšanai. Norādiet faila nosaukumu, vai atstājiet tukšu, lai to atspējotu."
+config_frontend_magnification: &MagnifDesc "Fonta palielinājums. Noklusējuma = 1."
+config_frontend_max_login_attempts: "Maksimālais ielogošanās mēģinājumu skaits. Noklusējuma = 5."
+config_frontend_theme: "Noklusējuma tēma, kas jāizmanto priekšgalam."
 config_general: "Vispārējā konfigurācija (jebkura pamata konfigurācija, kas nepieder citām kategorijām)."
 config_general_allow_gethostbyaddr_lookup: "Vai atļaut meklēt ar gethostbyaddr, kad UDP nav pieejams? True (Patiess) = Jā [Noklusējuma]; False (Nepatiess) = Nē."
 config_general_ban_override: "Vai ignorēt "http_response_header_code", ja tiek pārsniegts "infraction_limit"? Ja tā, bloķētie pieprasījumi atdod tukšu lapu (veidņu faili netiek izmantoti). 200 = Neignorējiet [Noklusējuma]. Citas vērtības ir tādas pašas kā pieejamās vērtības "http_response_header_code"."
@@ -104,7 +109,6 @@ config_general_error_log: "Fails reģistrēšanai visas atklātās kļūdas, kas
 config_general_events: "Šeit uzskaitītie faili tiek ielādēti tūlīt pēc notikumu apstrādātāja faila. Parasti aizpilda atjauninājumu lapa, kad tiek aktivizēti komponenti, kuriem tas nepieciešams, kad nepieciešams. Vairumā gadījumu var to ignorēt."
 config_general_fields: "Kontroles mehānisms laukiem bloka notikumu laikā (kad pieprasījums ir bloķēts)."
 config_general_force_hostname_lookup: "Force hostname lookups? True (Patiess) = Jā; False (Nepatiess) = Nē [Noklusējuma]. Hostname lookups are normally performed on an "as needed" basis, but can be forced for all requests. Doing so may be useful as a means of providing more detailed information in the logfiles, but may also have a slightly negative effect on performance."
-config_general_frontend_log: "Fails ielogošanās mēģinājumu reģistrēšanai. Norādiet faila nosaukumu, vai atstājiet tukšu, lai to atspējotu."
 config_general_http_response_header_code: "Kurš HTTP statusa ziņojums būtu jāsūta CIDRAM, bloķējot pieprasījumus?"
 config_general_ipaddr: "Kur atrast savienojošo pieprasījumu IP adresi? (Noderīga tādiem pakalpojumiem kā Cloudflare un tamlīdzīgi). Noklusējuma = REMOTE_ADDR. BRĪDINĀJUMS: Nemainiet to, ja vien nezināt, ko darāt!"
 config_general_lang: "Norādiet CIDRAM noklusējuma valodu."
@@ -116,7 +120,6 @@ config_general_log_sanitisation: "Izmantojot logs lapu, lai skatītu log datus, 
 config_general_logfile: "Cilvēkam lasāms fails visu bloķēto piekļuves mēģinājumu reģistrēšanai. Norādiet faila nosaukumu, vai atstājiet tukšu, lai to atspējotu."
 config_general_logfile_apache: "Apache stila fails visu bloķēto piekļuves mēģinājumu reģistrēšanai. Norādiet faila nosaukumu, vai atstājiet tukšu, lai to atspējotu."
 config_general_logfile_serialized: "Sērijveida fails visu bloķēto piekļuves mēģinājumu reģistrēšanai. Norādiet faila nosaukumu, vai atstājiet tukšu, lai to atspējotu."
-config_general_max_login_attempts: "Maksimālais ielogošanās mēģinājumu skaits. Noklusējuma = 5."
 config_general_numbers: "Kā jūs izvēlaties skaitļu parādīšanu? Atlasiet piemēru, kas jums šķiet vispareizākais."
 config_general_other_verification: "Kontroles cita veida pieprasījumu pārbaudei, ja iespējams."
 config_general_protect_frontend: "Norāda, vai aizsargi, kurus parasti nodrošina CIDRAM, ir jāpiemēro šai administratīvajai saskarnei. True (Patiess) = Jā [Noklusējuma]; False (Nepatiess) = Nē."
@@ -199,7 +202,7 @@ config_template_data: "Veidņu un tēmu konfigurācija."
 config_template_data_block_event_title: "Lapas nosaukums, kas jāparāda notikumu bloķēšanai."
 config_template_data_captcha_title: "Lapas nosaukums, kas jāparāda CAPTCHA pieprasījumiem."
 config_template_data_css_url: "CSS faila URL pielāgotajām tēmām."
-config_template_data_magnification: "Fonta palielinājums. Noklusējuma = 1."
+config_template_data_magnification: *MagnifDesc
 config_template_data_theme: "Noklusējuma tēma, kas jāizmanto CIDRAM."
 confirm_action: "Vai tiešām vēlaties "%s"?"
 field_2fa: "2FA kods"

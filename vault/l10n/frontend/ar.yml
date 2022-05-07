@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Arabic language data for the front-end (last modified: 2022.05.04).
+# This file: Arabic language data for the front-end (last modified: 2022.05.07).
 ##/
 
 Extended Description Bypasses: "ملفات الالتفافية التوقيع القياسية المدرجة عادة مع الحزمة الرئيسية."
@@ -89,6 +89,11 @@ config_PHPMailer_username: "اسم المستخدم لاستخدامه عند إ
 config_bypasses: "التكوين لتجاوز التوقيع الافتراضي."
 config_bypasses_used: "ما هي التجاوزات التي يجب استخدامها؟"
 config_experimental: "غير مستقر / التجريبي!"
+config_frontend: "التكوين للواجهة الأمامية."
+config_frontend_frontend_log: "ملف لتسجيل محاولات الدخول الأمامية. تحديد اسم الملف، أو اتركه فارغا لتعطيل."
+config_frontend_magnification: &MagnifDesc "تكبير الخط. افتراضي = 1."
+config_frontend_max_login_attempts: "الحد الأقصى لعدد محاولات تسجيل الدخول (front-end). الافتراضي = 5."
+config_frontend_theme: "الموضوع الافتراضي الذي سيتم استخدامه للواجهة الأمامية."
 config_general: "التكوين العام (أي التكوين الأساسي لا ينتمي إلى فئات أخرى)."
 config_general_allow_gethostbyaddr_lookup: "السماح بعمليات البحث gethostbyaddr عندما يكون UDP غير متوفر؟ صحيح/True = نعم [افتراضي]؛ زائفة/False = لا."
 config_general_ban_override: "تجاوز "http_response_header_code" متى "infraction_limit" تجاوزت؟ عندما تجاوز: الطلبات الممنوعة بإرجاع صفحة فارغة (لا يتم استخدام ملفات قالب). 200 = لا تجاوز [الافتراضي]. القيم الأخرى هي نفس القيم المتاحة لـ "http_response_header_code"."
@@ -104,7 +109,6 @@ config_general_error_log: "ملف لتسجيل أي أخطاء غير مميتة
 config_general_events: "يتم تحميل الملفات المدرجة هنا مباشرة بعد ملف معالجات الأحداث. يتم ملؤها عادةً بصفحة التحديثات عند تنشيط المكونات التي تحتاج إليها عند الضرورة. في معظم الحالات، يمكن تجاهله."
 config_general_fields: "ضوابط الحقول أثناء أحداث الكتلة (عندما يتم حظر طلب)."
 config_general_force_hostname_lookup: "فرض بحث اسم المضيف؟ صحيح/True = نعم؛ زائفة/False = لا [افتراضي]. يتم إجراء عمليات البحث عن اسم المضيف عادة على أساس "حسب الحاجة"، ولكن يمكن إجبارها على جميع الطلبات. وقد يكون القيام بذلك مفيدا كوسيلة لتوفير معلومات أكثر تفصيلا في السجلات، ولكن قد يكون له أيضا أثر سلبي طفيف على الأداء."
-config_general_frontend_log: "ملف لتسجيل محاولات الدخول الأمامية. تحديد اسم الملف، أو اتركه فارغا لتعطيل."
 config_general_http_response_header_code: "ما هي رسالة حالة HTTP التي يجب أن يرسلها CIDRAM عند حظر الطلبات؟"
 config_general_ipaddr: "أين يمكن العثور على عنوان IP لربط الطلبات؟ (مفيدة للخدمات مثل لايتكلاود و مثلها). الافتراضي = REMOTE_ADDR. تحذير: لا تغير هذا إلا إذا كنت تعرف ما تفعلونه!"
 config_general_lang: "تحديد اللغة الافتراضية الخاصة بـ CIDRAM."
@@ -116,7 +120,6 @@ config_general_log_sanitisation: "عند استخدام صفحة سجلات ال
 config_general_logfile: "ملف يمكن قراءته بالعين لتسجيل كل محاولات الوصول سدت. تحديد اسم الملف، أو اتركه فارغا لتعطيل."
 config_general_logfile_apache: "ملف على غرار أباتشي لتسجيل كل محاولات الوصول سدت. تحديد اسم الملف، أو اتركه فارغا لتعطيل."
 config_general_logfile_serialized: "ملف تسلسل لتسجيل كل محاولات الوصول سدت. تحديد اسم الملف، أو اتركه فارغا لتعطيل."
-config_general_max_login_attempts: "الحد الأقصى لعدد محاولات تسجيل الدخول (front-end). الافتراضي = 5."
 config_general_numbers: "كيف تفضل الأرقام ليتم عرضها؟ حدد المثال الذي يبدو أكثر صحيح لك."
 config_general_other_verification: "آلية الرقابة للتحقق من أنواع الطلبات الأخرى حيثما أمكن ذلك."
 config_general_protect_frontend: "يحدد ما إذا كانت الحماية التي توفرها عادة CIDRAM يجب أن تطبق الfront-end. صحيح/True = نعم [افتراضي]؛ زائفة/False = لا."
@@ -199,7 +202,7 @@ config_template_data: "التكوين للقوالب والسمات."
 config_template_data_block_event_title: "عنوان الصفحة المراد عرضه لحظر الأحداث."
 config_template_data_captcha_title: "عنوان الصفحة المراد عرضه لطلبات CAPTCHA."
 config_template_data_css_url: "URL ملف CSS لمواضيع مخصصة."
-config_template_data_magnification: "تكبير الخط. افتراضي = 1."
+config_template_data_magnification: *MagnifDesc
 config_template_data_theme: "الموضوع الافتراضي لاستخدام CIDRAM."
 confirm_action: "هل أنت متأكد من أنك تريد "%s"؟"
 field_2fa: "كود 2FA"

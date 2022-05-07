@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Italian language data for the front-end (last modified: 2022.05.04).
+# This file: Italian language data for the front-end (last modified: 2022.05.07).
 ##/
 
 Extended Description Bypasses: "Un file per bypassare alcune delle firme predefinite normalmente inclusi nel pacchetto principale."
@@ -89,6 +89,11 @@ config_PHPMailer_username: "Il nome utente per utilizzare per l'invio di posta e
 config_bypasses: "Configurazione per i bypass di firma predefiniti."
 config_bypasses_used: "Quali bypass dovrebbero essere usati?"
 config_experimental: "Instabile/Sperimentale!"
+config_frontend: "Configurazione per il front-end."
+config_frontend_frontend_log: "File per la registrazione di tentativi di accesso al front-end. Specificare un nome di file, o lasciare vuoto per disabilitare."
+config_frontend_magnification: &MagnifDesc "Ingrandimento del carattere. Predefinito = 1."
+config_frontend_max_login_attempts: "Numero massimo di tentativi di accesso al front-end. Predefinito = 5."
+config_frontend_theme: "Tema predefinito da utilizzare per il front-end."
 config_general: "Configurazione generale (qualsiasi configurazione di base non appartenente ad altre categorie)."
 config_general_allow_gethostbyaddr_lookup: "Consenti ricerche gethostbyaddr quando UDP non è disponibile? True = Sì [Predefinito]; False = No."
 config_general_ban_override: "Sostituire "http_response_header_code" quando "infraction_limit" è superato? Quando si sostituisce: Richieste bloccate restituire una pagina vuota (file di modello non vengono utilizzati). 200 = Non sostituire [Predefinito]. Altri valori sono uguali ai valori disponibili per "http_response_header_code"."
@@ -104,7 +109,6 @@ config_general_error_log: "Un file per la registrazione di eventuali errori non 
 config_general_events: "I file elencati qui vengono caricati direttamente dopo il file dei gestori di eventi. Tipicamente popolato dalla pagina degli aggiornamenti quando si attivano i componenti che ne hanno bisogno quando necessario. Nella maggior parte dei casi, può ignorarlo."
 config_general_fields: "Controlli per i campi durante gli eventi di blocco (quando una richiesta è bloccata)."
 config_general_force_hostname_lookup: "Forzare la ricerca degli nome di host? True = Sì; False = No [Predefinito]. Le ricerche di nome di host vengono normalmente eseguite su base della necessità, ma può essere forzato a tutte le richieste. Ciò può essere utile come mezzo per fornire informazioni più dettagliate nei file di log, ma può anche avere un effetto leggermente negativo sulle prestazioni."
-config_general_frontend_log: "File per la registrazione di tentativi di accesso al front-end. Specificare un nome di file, o lasciare vuoto per disabilitare."
 config_general_http_response_header_code: "Quale messaggio di stato HTTP dovrebbe inviare CIDRAM durante il blocco delle richieste?"
 config_general_ipaddr: "Dove trovare l'indirizzo IP di collegamento richiesta? (Utile per servizi come Cloudflare e simili). Predefinito = REMOTE_ADDR. AVVISO: Non modificare questa se non sai quello che stai facendo!"
 config_general_lang: "Specifica la lingua predefinita per CIDRAM."
@@ -116,7 +120,6 @@ config_general_log_sanitisation: "Quando si utilizza il front-end pagina per i f
 config_general_logfile: "Un file leggibile dagli umani per la registrazione di tutti i tentativi di accesso bloccati. Specificare un nome di file, o lasciare vuoto per disabilitare."
 config_general_logfile_apache: "Un file nello stile di apache per la registrazione di tutti i tentativi di accesso bloccati. Specificare un nome di file, o lasciare vuoto per disabilitare."
 config_general_logfile_serialized: "Un file serializzato per la registrazione di tutti i tentativi di accesso bloccati. Specificare un nome di file, o lasciare vuoto per disabilitare."
-config_general_max_login_attempts: "Numero massimo di tentativi di accesso al front-end. Predefinito = 5."
 config_general_numbers: "Come preferisci che i numeri siano visualizzati? Seleziona l'esempio che ti sembra più corretto."
 config_general_other_verification: "Controlli per la verifica di altri tipi di richieste ove possibile."
 config_general_protect_frontend: "Specifica se le protezioni normalmente fornite da CIDRAM devono essere applicati al front-end. True = Sì [Predefinito]; False = No."
@@ -199,7 +202,7 @@ config_template_data: "Configurazione per modelli e temi."
 config_template_data_block_event_title: "Il titolo della pagina da visualizzare per gli eventi di blocco."
 config_template_data_captcha_title: "Il titolo della pagina da visualizzare per le richieste CAPTCHA."
 config_template_data_css_url: "URL del file CSS per i temi personalizzati."
-config_template_data_magnification: "Ingrandimento del carattere. Predefinito = 1."
+config_template_data_magnification: *MagnifDesc
 config_template_data_theme: "Tema predefinito da utilizzare per CIDRAM."
 confirm_action: "Sei sicuro di voler "%s"?"
 field_2fa: "Codice 2FA"

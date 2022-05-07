@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Output generator (last modified: 2022.05.05).
+ * This file: Output generator (last modified: 2022.05.07).
  */
 
 /** Initialise stages. */
@@ -600,15 +600,6 @@ if ($CIDRAM['L10N']->getString('Text Direction') !== 'rtl') {
 } else {
     $CIDRAM['FieldTemplates']['textBlockAlign'] = 'text-align:right;';
     $CIDRAM['FieldTemplates']['textBlockFloat'] = 'float:right;';
-}
-
-/** Provided for v1-v2 template file backwards compatibility. */
-if (
-    isset($CIDRAM['Config']['template_data']['magnification']) &&
-    !isset($CIDRAM['Config']['template_data']['Magnification'])
-) {
-    unset($CIDRAM['FieldTemplates']['magnification']);
-    $CIDRAM['FieldTemplates']['Magnification'] = $CIDRAM['Config']['template_data']['magnification'];
 }
 
 /** If any signatures were triggered, log it, generate output, then die. */

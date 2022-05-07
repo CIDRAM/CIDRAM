@@ -138,19 +138,7 @@ $CIDRAM['Request']->UserAgent = $CIDRAM['ScriptUA'];
 $CIDRAM['Request']->SendToOut = (defined('DEV_DEBUG_MODE') && DEV_DEBUG_MODE === true);
 
 /** CIDRAM favicon. */
-foreach (['ico', 'png', 'jpg', 'gif'] as $CIDRAM['favicon_extension']) {
-    if (!is_readable($CIDRAM['Vault'] . 'favicon_' . $CIDRAM['Config']['template_data']['theme'] . '.' . $CIDRAM['favicon_extension'])) {
-        continue;
-    }
-    $CIDRAM['favicon'] = base64_encode($CIDRAM['ReadFile'](
-        $CIDRAM['Vault'] . 'favicon_' . $CIDRAM['Config']['template_data']['theme'] . '.' . $CIDRAM['favicon_extension']
-    ));
-}
-if (empty($CIDRAM['favicon'])) {
-    $CIDRAM['favicon'] =
-        'R0lGODlhEAAQAMIBAAAAAGYAAJkAAMz//2YAAGYAAGYAAGYAACH5BAEKAAQALAAAAAAQABAAAANBCLrcKjBK+eKQ' .
-        'N76RIb+g0oGewAmiZZbZRppnC0y0BgR4rutK8OWfn2jgI3KKxeHvyBwMkc0kIEp13nZYnGPLSAAAOw==';
-}
+[$CIDRAM['favicon'], $CIDRAM['favicon_extension']] = $CIDRAM['FetchFavicon']($CIDRAM['Config']['template_data']['theme']);
 
 /** If the language directive is empty, default to English. */
 if (empty($CIDRAM['Config']['general']['lang'])) {

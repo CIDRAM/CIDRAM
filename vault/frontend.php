@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2022.05.07).
+ * This file: Front-end handler (last modified: 2022.05.08).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -1012,7 +1012,20 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'accounts' && $CIDRAM['FE']['Per
 
         $CIDRAM['FE']['AccountsRow'] = $CIDRAM['ReadFile']($CIDRAM['GetAssetPath']('_accounts_row.html'));
         $CIDRAM['FE']['Accounts'] = '';
-        $CIDRAM['FE']['NewLineOffset'] = 0;
+
+        $CIDRAM['LI'] = ['Possible' => []];
+        foreach ($CIDRAM['Cache']->getAllEntries() as $CIDRAM['LI']['KeyName'] => $CIDRAM['LI']['KeyData']) {
+            if (isset($CIDRAM['LI']['KeyData']['Time']) && $CIDRAM['LI']['KeyData']['Time'] > 0 && $CIDRAM['LI']['KeyData']['Time'] < $CIDRAM['Now']) {
+                continue;
+            }
+            if (strlen($CIDRAM['LI']['KeyName']) > 64) {
+                $CIDRAM['LI']['Try'] = substr($CIDRAM['LI']['KeyName'], 0, -64);
+                if (isset($CIDRAM['Config']['user.' . $CIDRAM['LI']['Try']])) {
+                    $CIDRAM['LI']['Possible'][$CIDRAM['LI']['Try']] = true;
+                }
+            }
+        }
+        $CIDRAM['LI'] = $CIDRAM['LI']['Possible'];
 
         foreach ($CIDRAM['Config'] as $CIDRAM['CatKey'] => $CIDRAM['CatValues']) {
             if (substr($CIDRAM['CatKey'], 0, 5) !== 'user.' || !is_array($CIDRAM['CatValues'])) {
@@ -1054,6 +1067,11 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'accounts' && $CIDRAM['FE']['Per
                 $CIDRAM['RowInfo']['AccWarnings'] .= '<br /><div class="txtRd">' . $CIDRAM['L10N']->getString('warning_password_not_valid') . '</div>';
             }
 
+            /** Logged in notice. */
+            if (isset($CIDRAM['LI'][$CIDRAM['RowInfo']['AccUsername']])) {
+                $CIDRAM['RowInfo']['AccWarnings'] .= '<br /><div class="txtGn">' . $CIDRAM['L10N']->getString('state_logged_in') . '</div>';
+            }
+
             $CIDRAM['RowInfo']['AccID'] = bin2hex($CIDRAM['RowInfo']['AccUsername']);
             $CIDRAM['RowInfo']['AccUsername'] = htmlentities($CIDRAM['RowInfo']['AccUsername']);
             $CIDRAM['FE']['Accounts'] .= $CIDRAM['ParseVars'](
@@ -1061,7 +1079,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'accounts' && $CIDRAM['FE']['Per
                 $CIDRAM['ParseVars']($CIDRAM['RowInfo'], $CIDRAM['FE']['AccountsRow'])
             );
         }
-        unset($CIDRAM['RowInfo'], $CIDRAM['CatValues'], $CIDRAM['CatKey']);
+        unset($CIDRAM['RowInfo'], $CIDRAM['CatValues'], $CIDRAM['CatKey'], $CIDRAM['LI']);
     }
 
     if ($CIDRAM['FE']['ASYNC']) {

@@ -46,3 +46,4 @@
 - Removed some unused file manager icons and slightly simplified its logic.
 - Added a JavaScript warning to the front-end login.
 - Front-end warnings have been hidden from non-logged in users.
+- Made the warnings/notices at the front-end accounts page slightly smaller.

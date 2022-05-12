@@ -1,14 +1,13 @@
 ---
 CIDRAM Core:
  Name: "CIDRAM Core"
- Version: "3.0.0-DEV+22121566"
+ Version: "3.0.0-DEV+22131000"
  Dependencies:
   PHP: ">=7.2"
   Common Classes Package: "^2.9"
   CIDRAM Front-End: "^3"
   l10n/{lang}: ">=2022.59.0"
  Changelog: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/Changelog.txt"
- Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/installed.yml"
  When Update Succeeds:
   - "WP-Ver"
  Files:
@@ -16,7 +15,7 @@ CIDRAM Core:
    - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/assets/core/captcha_default.html"
    - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/assets/core/template_custom.html"
    - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/assets/core/template_default.html"
-   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/channels.yaml"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/channels.yml"
    - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/classes/Aggregator.php"
    - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/classes/Captcha.php"
    - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/classes/Constants.php"
@@ -28,12 +27,12 @@ CIDRAM Core:
    - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/event_handlers.php"
    - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/functions.php"
    - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/outgen.php"
-   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/verification.yaml"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/verification.yml"
   To:
    - "assets/core/captcha_default.html"
    - "assets/core/template_custom.html"
    - "assets/core/template_default.html"
-   - "channels.yaml"
+   - "channels.yml"
    - "classes/Aggregator.php"
    - "classes/Captcha.php"
    - "classes/Constants.php"
@@ -45,11 +44,11 @@ CIDRAM Core:
    - "event_handlers.php"
    - "functions.php"
    - "outgen.php"
-   - "verification.yaml"
+   - "verification.yml"
   Checksum:
-   - "90ee5477f0d027589dbc3b85689c750d95b3a6202d95eefef58af08a891a95d5:1947"
+   - "4f31fa6b793c3e3457e416efd6561524f2eeb550094e1d031dd2c1c366e05862:1947"
    - "e48dc4d8b942bc26580caebdfc7ff79bfbb3807003c918c739c9e7dfdb61bf5e:1204"
-   - "67dbe791d181719036b31e00056ac418e2a9633a5ab9d8b82a18369aabe1e6c6:2434"
+   - "d5bcaa7c5760f8ad4860de0c8e02988a92b0c55dfff243c38ab451952af10cbf:2434"
    - "b62c0cf1deeb97c7ee15638f0a4102292a6bab6f0b6b1ee3a1dec7fa485c2e05:1352"
    - "e37f5f80a1eba4f5211a4ddf6258932e56b6ad4da60d36ca470639bebf9c8a78:15618"
    - "8f51724c3b291f043af0e43c34ae0ae513b4a6985a09035238172ca5447aa305:3928"
@@ -57,22 +56,21 @@ CIDRAM Core:
    - "55de7f4ba21680695b3bfd8ab2801308a0af007268eaec3a4064a3a4305d76ef:15458"
    - "5b31e618825895cd45981fd336f99be78b0ef5d15ae9db199f1613a49d36fcf2:14912"
    - "a700fb40dba91aa85f16c67e5a3a3993cb84544f0eb7413c9f9a72cc67949b92:2927"
-   - "497c824d33616f32ffb136cb16dea30b83eb4049c378dd8d2c7092536ace31b4:7031"
-   - "1e808cd2a3d3a29f919593b8e71c0f31c6bc75e9472f38f272b2a6858305f50c:32424"
+   - "eb92ce6e010d75dd8c463042cd651ee99e1c136d6eb38da1a2340f6b191101e7:6631"
+   - "089c2067329a7e5db0940d52dfee186206a7a28a6a60b733c31a9474f9761b8e:32988"
    - "ab531c0c7b23d53898a3d86d76ba9cffd082fe24cc924384781e09b79ea824c7:9081"
-   - "750e57ccb89b6f9364989b900d48ecddd303718d7b76cfdd87626b232ead5e49:104732"
-   - "59b0fbabc7c5a79ba10ad86f600b8d12fd9629974a979dc9f15e8cb6a98ea4a2:45890"
+   - "30d7f498986f80ddcdbe50738511a9ffc3ab785a405e820f4bd90585f4471d81:105766"
+   - "ebfc4ade9327b332c98d117dbc7948f05b1af0dfca1ec50315f2c4ded5d06213:45544"
    - "8d286bddba39dda8d23b20d8e446ceb387133638c96a6e4501dd7701c540c8c1:6697"
 CIDRAM Front-End:
  Name: "CIDRAM Front-End"
- Version: "3.0.0-DEV+22121566"
+ Version: "3.0.0-DEV+22131000"
  Dependencies:
   PHP: ">=7.2"
   Common Classes Package: "^2.9"
   CIDRAM Core: "^3"
   l10n/{lang}: ">=2022.59.0"
  Changelog: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/Changelog.txt"
- Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/installed.yml"
  Files:
   From:
    - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/assets/frontend/default/_2fa.html"
@@ -195,7 +193,7 @@ CIDRAM Front-End:
   Checksum:
    - "cdb91aefd05a3a7fb5d51a81888b4cffab18ce9bb9ede0bb49451f95c2be5e07:528"
    - "dd925fa21d11fdd4eb99f52fde1293d459b79321fcb8ef298a6c58a07dcd7046:2061"
-   - "0fe78bad5499f267b215accbf785c8f97e25414cc734c729cd09f3c979d5c4ac:1424"
+   - "118d87af74811f8363216ea792c4eee6711d466dd9e760ee32dae28c6005115d:1454"
    - "762587e8549980459603625ad19cdf052856b3f696c45fca3815159bf66554c0:1690"
    - "3e0b5f6d8efc134c060ffe20266a38746de6ce8031ce8490d9f54b256b5d05d1:8534"
    - "f08d531b541651951329fa1a15fdef6edf473b26fb4092f645898a7deb2e6b60:392"
@@ -232,7 +230,7 @@ CIDRAM Front-End:
    - "e8e8dfd0cab8d3ed9a383ef421f1ecac4bddf87ceeb4afecd2260465d967fb2f:614"
    - "396a407ffc14b9d8351249e40209ebee6f3b2bf436be95d032367d25b8931b41:347"
    - "f7c085055bd1833de3b5838677152efea0bdd4c64b8a880a7ef0eab7c3194ee0:375"
-   - "05e40b419d6c313bf52d071ed2eb42466a531da9eb29e08af8fdc63432574195:10545"
+   - "2067e8d0ef023bd36605827117aa01bc46797c224832a3d8703661d26c816541:10545"
    - "7bcfd58633fdb260ba85cf908afecebc039931f2e03ab2706c39f8aae8324c6c:880"
    - "01daf90d72e21c8d558fcf13f3f2528d75f0196da96bbd60a136bb5910575dca:379"
    - "4b63cc8f2b859862ac4b439dbc79f5f77e6906f0fab97db1a4b09b3821d5eaa3:1016"
@@ -249,14 +247,13 @@ CIDRAM Front-End:
    - "ff4b5fb5fa3ef1dd699797106173bb3fc53a3a508e8742e74e4b940eb77d9b60:354"
    - "dacc158a41066a6edf9fee8e70ca13194d2632171b8af734c50ab47b79aae552:595"
    - "2bb4f2b6d0c5b1ce9ddbc4bc90ec584300092ba91bafdaf90823f087862d8de7:191734"
-   - "26dd80898b1e4268b6dae4fcd0d209536cd375c57a9fd2af7ffe8755076c47ba:261077"
-   - "89d90d331b4e6afac840905e8867e59924fb9973ae7e5afcaef3c9252083ec8d:220168"
+   - "ba840de4de8106065cb01ee859bbbcc89706957841d41cf8c2428c5256b8a7c1:255466"
+   - "20a7711b567f5050667556be807ecbfb0d970317df9e81bef357c9125567c8bf:215007"
 Common Classes Package:
  Name: "Common Classes Package"
  Version: "2.9.0"
  Dependencies:
   PHP: ">=7.2"
- Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/installed.yml"
  Files:
   From:
    - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/classes/Maikuolan/Cache.php"
@@ -300,19 +297,18 @@ Common Classes Package:
 IPv4:
  Extended Description: "Default IPv4 signatures normally included with the main package. Blocks unwanted cloud services and non-human endpoints."
  False Positive Risk: "Low"
- Version: "2022.123.0"
+ Version: "2022.131.0"
  Dependencies:
   CIDRAM Core: ">=1"
   Bypasses: ">=2021.260.503"
- Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/installed.yml"
  Uninstallable: true
  Files:
   From:
    - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/ipv4.dat"
   To:
-   - "ipv4.dat"
+   - "signatures/ipv4.dat"
   Checksum:
-   - "b8d49229c0a1722fcb3c26ed366df6aa9fcb68c3c42e0c1e27a2ba2234ab1c6e:1025944"
+   - "08f744a44da500bf7092353ae2911cb2b064006c0db591382f91e57e35dbc145:1023570"
  Used with: "ipv4"
 IPv4-Bogons:
  Extended Description: "Default IPv4 signatures normally included with the main package. Blocks bogon/martian CIDRs."
@@ -320,80 +316,75 @@ IPv4-Bogons:
  Version: "2021.166.298"
  Dependencies:
   CIDRAM Core: ">=1"
- Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/installed.yml"
  Uninstallable: true
  Files:
   From:
    - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/ipv4_bogons.dat"
   To:
-   - "ipv4_bogons.dat"
+   - "signatures/ipv4_bogons.dat"
   Checksum:
    - "571b6bc1a2d626fd7c3af56faf0514bf2a594f6717167a98b98e8540f3ed79a1:741"
  Used with: "ipv4"
 IPv4-ISPs:
  Extended Description: "Default IPv4 signatures normally included with the main package. Blocks dangerous and spammy ISPs."
  False Positive Risk: "Medium"
- Version: "2022.123.0"
+ Version: "2022.131.0"
  Dependencies:
   CIDRAM Core: ">=1"
   Bypasses: ">=2021.192.550"
- Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/installed.yml"
  Uninstallable: true
  Files:
   From:
    - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/ipv4_isps.dat"
   To:
-   - "ipv4_isps.dat"
+   - "signatures/ipv4_isps.dat"
   Checksum:
-   - "8b014c3bb553bb2ae62ca5253f06f30473334a59cc67019df150900e73b9895a:508902"
+   - "265463303584e2941d7ba028adda4fb84625c7eb61d6e58e4671ae82fd832f81:509154"
  Used with: "ipv4"
 IPv4-Nonblocking:
  Extended Description: "Default IPv4 non-blocking signatures file."
  Version: "2021.166.298"
  Dependencies:
   CIDRAM Core: ">=1"
- Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/installed.yml"
  Uninstallable: true
  Files:
   From:
    - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/ipv4_nonblocking.dat"
   To:
-   - "ipv4_nonblocking.dat"
+   - "signatures/ipv4_nonblocking.dat"
   Checksum:
    - "ed7590e4def93d9de293410f8827613a832f1efbb3f623350de995a8c858e0ff:641"
  Used with: "ipv4"
 IPv4-Other:
  Extended Description: "Default IPv4 signatures normally included with the main package. Blocks CIDRs for proxies, VPNs, and other miscellaneous unwanted services."
  False Positive Risk: "Medium"
- Version: "2022.56.0"
+ Version: "2022.131.0"
  Dependencies:
   CIDRAM Core: ">=1"
- Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/installed.yml"
  Uninstallable: true
  Files:
   From:
    - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/ipv4_other.dat"
   To:
-   - "ipv4_other.dat"
+   - "signatures/ipv4_other.dat"
   Checksum:
-   - "225a1cd0156364f6064fbab88a83fa2711c89d523f74a9fcb82349592af2cbeb:31662"
+   - "6a3a829cf075f7d291851482f9be08dae4511bf1d8c8b829d65e2d8e1d3bb611:31928"
  Used with: "ipv4"
 IPv6:
  Extended Description: "Default IPv6 signatures normally included with the main package. Blocks unwanted cloud services and non-human endpoints."
  False Positive Risk: "Low"
- Version: "2022.123.0"
+ Version: "2022.131.0"
  Dependencies:
   CIDRAM Core: ">=1"
   Bypasses: ">=2021.260.503"
- Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/installed.yml"
  Uninstallable: true
  Files:
   From:
    - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/ipv6.dat"
   To:
-   - "ipv6.dat"
+   - "signatures/ipv6.dat"
   Checksum:
-   - "942fcf26a586048ff4689e7acbf95178d593cd47b7d749f8800ebf587d648b13:300806"
+   - "57c541cd160884c50bbe3e8e0b2e150cba3dbd4f75cbae82cac5c7643f720361:301333"
  Used with: "ipv6"
 IPv6-Bogons:
  Extended Description: "Default IPv6 signatures normally included with the main package. Blocks bogon/martian CIDRs."
@@ -401,45 +392,42 @@ IPv6-Bogons:
  Version: "2021.166.298"
  Dependencies:
   CIDRAM Core: ">=1"
- Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/installed.yml"
  Uninstallable: true
  Files:
   From:
    - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/ipv6_bogons.dat"
   To:
-   - "ipv6_bogons.dat"
+   - "signatures/ipv6_bogons.dat"
   Checksum:
    - "d032ee14e20c4217721b277b07d6f3bceb29be4332396b2615804977f3c55fdd:954"
  Used with: "ipv6"
 IPv6-ISPs:
  Extended Description: "Default IPv6 signatures normally included with the main package. Blocks dangerous and spammy ISPs."
  False Positive Risk: "Medium"
- Version: "2022.121.0"
+ Version: "2022.131.0"
  Dependencies:
   CIDRAM Core: ">=1"
   Bypasses: ">=2021.192.550"
- Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/installed.yml"
  Uninstallable: true
  Files:
   From:
    - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/ipv6_isps.dat"
   To:
-   - "ipv6_isps.dat"
+   - "signatures/ipv6_isps.dat"
   Checksum:
-   - "fc540e1fee4a71df107a791d4e353aa3b8dd3f953c2736913f77c4bd05dd6221:50204"
+   - "d6034c4a2592885ae9889bd87e54cb2b40035c6b719828f738dc1f7fb950d7d4:49631"
  Used with: "ipv6"
 IPv6-Nonblocking:
  Extended Description: "Default IPv6 non-blocking signatures file."
  Version: "2021.166.298"
  Dependencies:
   CIDRAM Core: ">=1"
- Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/installed.yml"
  Uninstallable: true
  Files:
   From:
    - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/ipv6_nonblocking.dat"
   To:
-   - "ipv6_nonblocking.dat"
+   - "signatures/ipv6_nonblocking.dat"
   Checksum:
    - "2cf0afbe9d80a38e273657841f4185034c7b2044a94533e6a2ee9b1e1a4e3b36:619"
  Used with: "ipv6"
@@ -449,13 +437,12 @@ IPv6-Other:
  Version: "2022.56.0"
  Dependencies:
   CIDRAM Core: ">=1"
- Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/installed.yml"
  Uninstallable: true
  Files:
   From:
    - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/ipv6_other.dat"
   To:
-   - "ipv6_other.dat"
+   - "signatures/ipv6_other.dat"
   Checksum:
    - "824d87fd97d518e9abb76b1ed20d9c9a23a78f9d8b182217ea84c831108416b6:3258"
  Used with: "ipv6"
@@ -464,7 +451,6 @@ Bypasses:
  Dependencies:
   PHP: ">=7.2"
   CIDRAM Core: "^3"
- Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/installed.yml"
  Uninstallable: true
  Files:
   From:
@@ -482,10 +468,9 @@ Bypasses:
 l10n/en:
  Name: "L10N: English"
  Extended Description: "English language data"
- Version: "2022.115.0"
+ Version: "2022.131.0"
  Dependencies:
   CIDRAM Core: "^3"
- Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/installed.yml"
  Files:
   From:
    - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/core/en.yml"
@@ -499,10 +484,9 @@ l10n/en:
 l10n/ar:
  Name: "L10N: العربية"
  Extended Description: "ملفات اللغة العربية"
- Version: "2022.115.0"
+ Version: "2022.131.0"
  Dependencies:
   CIDRAM Core: "^3"
- Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/installed.yml"
  Uninstallable: true
  Files:
   From:
@@ -517,10 +501,9 @@ l10n/ar:
 l10n/bn:
  Name: "L10N: বাংলা"
  Extended Description: "বাংলা ভাষার তথ্য"
- Version: "2022.115.0"
+ Version: "2022.131.0"
  Dependencies:
   CIDRAM Core: "^3"
- Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/installed.yml"
  Uninstallable: true
  Files:
   From:
@@ -535,10 +518,9 @@ l10n/bn:
 l10n/de:
  Name: "L10N: Deutsche"
  Extended Description: "Deutsche Sprachdateien"
- Version: "2022.115.0"
+ Version: "2022.131.0"
  Dependencies:
   CIDRAM Core: "^3"
- Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/installed.yml"
  Uninstallable: true
  Files:
   From:
@@ -553,10 +535,9 @@ l10n/de:
 l10n/es:
  Name: "L10N: Español"
  Extended Description: "Lingüísticos datos Español"
- Version: "2022.115.0"
+ Version: "2022.131.0"
  Dependencies:
   CIDRAM Core: "^3"
- Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/installed.yml"
  Uninstallable: true
  Files:
   From:
@@ -571,10 +552,9 @@ l10n/es:
 l10n/fr:
  Name: "L10N: Français"
  Extended Description: "Linguistiques données en Français"
- Version: "2022.115.0"
+ Version: "2022.131.0"
  Dependencies:
   CIDRAM Core: "^3"
- Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/installed.yml"
  Uninstallable: true
  Files:
   From:
@@ -589,10 +569,9 @@ l10n/fr:
 l10n/hi:
  Name: "L10N: हिंदी"
  Extended Description: "हिंदी भाषा डाटा"
- Version: "2022.115.0"
+ Version: "2022.131.0"
  Dependencies:
   CIDRAM Core: "^3"
- Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/installed.yml"
  Uninstallable: true
  Files:
   From:
@@ -607,10 +586,9 @@ l10n/hi:
 l10n/id:
  Name: "L10N: Bahasa Indonesia"
  Extended Description: "File Bahasa Indonesia"
- Version: "2022.115.0"
+ Version: "2022.131.0"
  Dependencies:
   CIDRAM Core: "^3"
- Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/installed.yml"
  Uninstallable: true
  Files:
   From:
@@ -625,10 +603,9 @@ l10n/id:
 l10n/it:
  Name: "L10N: Italiana"
  Extended Description: "Linguistici dati Italiana"
- Version: "2022.115.0"
+ Version: "2022.131.0"
  Dependencies:
   CIDRAM Core: "^3"
- Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/installed.yml"
  Uninstallable: true
  Files:
   From:
@@ -643,10 +620,9 @@ l10n/it:
 l10n/ja:
  Name: "L10N: 日本語"
  Extended Description: "日本語言語データ"
- Version: "2022.115.0"
+ Version: "2022.131.0"
  Dependencies:
   CIDRAM Core: "^3"
- Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/installed.yml"
  Uninstallable: true
  Files:
   From:
@@ -661,10 +637,9 @@ l10n/ja:
 l10n/ko:
  Name: "L10N: 한국어"
  Extended Description: "한국어 언어 데이터"
- Version: "2022.115.0"
+ Version: "2022.131.0"
  Dependencies:
   CIDRAM Core: "^3"
- Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/installed.yml"
  Uninstallable: true
  Files:
   From:
@@ -679,10 +654,9 @@ l10n/ko:
 l10n/lv:
  Name: "L10N: Latviešu"
  Extended Description: "Latviešu valodas dati"
- Version: "2022.115.0"
+ Version: "2022.131.0"
  Dependencies:
   CIDRAM Core: "^3"
- Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/installed.yml"
  Uninstallable: true
  Files:
   From:
@@ -697,10 +671,9 @@ l10n/lv:
 l10n/nl:
  Name: "L10N: Nederlandse"
  Extended Description: "Nederlandse lokalisatie"
- Version: "2022.115.0"
+ Version: "2022.131.0"
  Dependencies:
   CIDRAM Core: "^3"
- Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/installed.yml"
  Uninstallable: true
  Files:
   From:
@@ -715,10 +688,9 @@ l10n/nl:
 l10n/no:
  Name: "L10N: Norsk"
  Extended Description: "Norsk språkdata"
- Version: "2022.115.0"
+ Version: "2022.131.0"
  Dependencies:
   CIDRAM Core: "^3"
- Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/installed.yml"
  Uninstallable: true
  Files:
   From:
@@ -733,10 +705,9 @@ l10n/no:
 l10n/pl:
  Name: "L10N: Polski"
  Extended Description: "Dane języku polskim"
- Version: "2022.115.0"
+ Version: "2022.131.0"
  Dependencies:
   CIDRAM Core: "^3"
- Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/installed.yml"
  Uninstallable: true
  Files:
   From:
@@ -751,10 +722,9 @@ l10n/pl:
 l10n/pt:
  Name: "L10N: Português"
  Extended Description: "Linguagem dados Português"
- Version: "2022.115.0"
+ Version: "2022.131.0"
  Dependencies:
   CIDRAM Core: "^3"
- Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/installed.yml"
  Uninstallable: true
  Files:
   From:
@@ -769,10 +739,9 @@ l10n/pt:
 l10n/ru:
  Name: "L10N: Русский"
  Extended Description: "Русском языковые файлы"
- Version: "2022.115.0"
+ Version: "2022.131.0"
  Dependencies:
   CIDRAM Core: "^3"
- Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/installed.yml"
  Uninstallable: true
  Files:
   From:
@@ -787,10 +756,9 @@ l10n/ru:
 l10n/sv:
  Name: "L10N: Svenska"
  Extended Description: "Svenska språkdata"
- Version: "2022.115.0"
+ Version: "2022.131.0"
  Dependencies:
   CIDRAM Core: "^3"
- Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/installed.yml"
  Uninstallable: true
  Files:
   From:
@@ -805,10 +773,9 @@ l10n/sv:
 l10n/ta:
  Name: "L10N: தமிழ்"
  Extended Description: "தமிழ் மொழி தரவு"
- Version: "2022.115.0"
+ Version: "2022.131.0"
  Dependencies:
   CIDRAM Core: "^3"
- Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/installed.yml"
  Uninstallable: true
  Files:
   From:
@@ -823,10 +790,9 @@ l10n/ta:
 l10n/th:
  Name: "L10N: ภาษาไทย"
  Extended Description: "ข้อมูลภาษาไทย"
- Version: "2022.115.0"
+ Version: "2022.131.0"
  Dependencies:
   CIDRAM Core: "^3"
- Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/installed.yml"
  Uninstallable: true
  Files:
   From:
@@ -841,10 +807,9 @@ l10n/th:
 l10n/tr:
  Name: "L10N: Türkçe"
  Extended Description: "Türkçe dili verileri"
- Version: "2022.115.0"
+ Version: "2022.131.0"
  Dependencies:
   CIDRAM Core: "^3"
- Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/installed.yml"
  Uninstallable: true
  Files:
   From:
@@ -859,10 +824,9 @@ l10n/tr:
 l10n/ur:
  Name: "L10N: ‏اردو‏"
  Extended Description: "‏اردو‏ زبان فائلوں"
- Version: "2022.115.0"
+ Version: "2022.131.0"
  Dependencies:
   CIDRAM Core: "^3"
- Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/installed.yml"
  Uninstallable: true
  Files:
   From:
@@ -877,10 +841,9 @@ l10n/ur:
 l10n/vi:
  Name: "L10N: Tiếng Việt"
  Extended Description: "Dữ liệu tiếng Việt"
- Version: "2022.115.0"
+ Version: "2022.131.0"
  Dependencies:
   CIDRAM Core: "^3"
- Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/installed.yml"
  Uninstallable: true
  Files:
   From:
@@ -895,10 +858,9 @@ l10n/vi:
 l10n/zh-TW:
  Name: "L10N: 中文（傳統）"
  Extended Description: "中文（傳統）語言數據"
- Version: "2022.115.0"
+ Version: "2022.131.0"
  Dependencies:
   CIDRAM Core: "^3"
- Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/installed.yml"
  Uninstallable: true
  Files:
   From:
@@ -913,10 +875,9 @@ l10n/zh-TW:
 l10n/zh:
  Name: "L10N: 中文（简体）"
  Extended Description: "中文（简体）语言数据"
- Version: "2022.115.0"
+ Version: "2022.131.0"
  Dependencies:
   CIDRAM Core: "^3"
- Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/installed.yml"
  Uninstallable: true
  Files:
   From:
@@ -928,83 +889,27 @@ l10n/zh:
   Checksum:
    - "9b1d93349cbe480dceace63d81272cc54f26d7f8c67fb26539797b0630e012a4:4494"
    - "19ec9ab758f7f73e7e77a8149b63e210aedbb725cf1715fb8f6f92680d6ef401:50915"
-Chart.js:
- Name: "Chart.js"
- Version: "3.7.1"
- Dependencies:
-  CIDRAM Core: "^3"
- Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/installed.yml"
- Uninstallable: true
- Provisional: true
- Files:
-  From:
-   - "https://raw.githubusercontent.com/Maikuolan/Chart.js-Common-Module/master/chart.min.js"
-   - "https://raw.githubusercontent.com/Maikuolan/Chart.js-Common-Module/master/_chartjs.html"
-  To:
-   - "assets/frontend/chart.min.js"
-   - "assets/frontend/_chartjs.html"
-  Checksum:
-   - "12b674f4a9199f38e9a9c6a77b8482cb21ec2805ccbc80fdff1c1b97f02ad697:195090"
-   - "615790402dd1f3b88e2dcc5c12e3bbbe59de032cae3b2a9678961b68d351b65e:893"
-PHPMailer:
- Name: "PHPMailer"
- Version: "6.6.0"
- Dependencies:
-  PHP: ">=5.5"
-  CIDRAM Core: ">=1.13.1"
-  ctype: "*"
-  filter: "*"
-  hash: "*"
- Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/installed.yml"
- Uninstallable: true
- Provisional: true
- Files:
-  From:
-   - "https://raw.githubusercontent.com/PHPMailer/PHPMailer/v6.6.0/src/Exception.php"
-   - "https://raw.githubusercontent.com/PHPMailer/PHPMailer/v6.6.0/src/OAuth.php"
-   - "https://raw.githubusercontent.com/PHPMailer/PHPMailer/v6.6.0/src/PHPMailer.php"
-   - "https://raw.githubusercontent.com/PHPMailer/PHPMailer/v6.6.0/src/POP3.php"
-   - "https://raw.githubusercontent.com/PHPMailer/PHPMailer/v6.6.0/src/SMTP.php"
-  To:
-   - "classes/PHPMailer/Exception.php"
-   - "classes/PHPMailer/OAuth.php"
-   - "classes/PHPMailer/PHPMailer.php"
-   - "classes/PHPMailer/POP3.php"
-   - "classes/PHPMailer/SMTP.php"
-  Checksum:
-   - "655e82ae2e40561a4c125115ffd49fb172a5221fa224bcdb10d41bf72eae9a87:1240"
-   - "3b272d5f1fd9e185ad8daab260ad0b548a679e351701b6b78f80a6e523f1f961:3774"
-   - "af9a69684decbb422f200cc291af39df6eae303d34941737bafba0533d592f41:177425"
-   - "3e762d316dcca19da00da32ac128ff9aa5adfda2d6aaa831945af4191a4b20a1:12112"
-   - "8ed1b3a4fa558db14a5ddc3629d3ab2a0afa8a67a5f90dce545eb0cfdd3681eb:47327"
 Search engines blocker module:
  Name: "Search engines blocker module"
  False Positive Risk: "Medium"
  Version: "2022.67.500"
  Dependencies:
   PHP: ">=5.4"
-  CIDRAM Core: "^2.7"
- Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/installed.yml"
- When Install Succeeds:
-  - "if {Components.Installed Versions.module_baidublocker\\.php}=== else Message The search engines blocker module replaces the Baidu blocker module. Seeing as the search engines blocker module has been successfully installed, the Baidu blocker module will now be uninstalled accordingly."
-  - "if {Components.Installed Versions.module_baidublocker\\.php}=== else UpdatesHandler deactivate-and-uninstall-component module_baidublocker.php"
-  - "if {Components.Installed Versions.module_yandexblocker\\.php}=== else Message The search engines blocker module replaces the Yandex blocker module. Seeing as the search engines blocker module has been successfully installed, the Yandex blocker module will now be uninstalled accordingly."
-  - "if {Components.Installed Versions.module_yandexblocker\\.php}=== else UpdatesHandler deactivate-and-uninstall-component module_yandexblocker.php"
-  - "Message response_please_check_config"
+  CIDRAM Core: "^3"
  Uninstallable: true
  Files:
   From:
-   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM-Extras/master/modules/seblocker.php"
-   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM-Extras/master/modules/seblocker_rules.php"
-   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM-Extras/master/modules/seblocker_ipv4.dat"
-   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM-Extras/master/modules/seblocker_ipv6.dat"
-   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM-Extras/master/modules/seblocker.yml"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/modules/seblocker.php"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/modules/seblocker_rules.php"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/modules/seblocker_ipv4.dat"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/modules/seblocker_ipv6.dat"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/modules/seblocker.yml"
   To:
-   - "seblocker.php"
+   - "modules/seblocker.php"
    - "seblocker_rules.php"
-   - "seblocker_ipv4.dat"
-   - "seblocker_ipv6.dat"
-   - "seblocker.yml"
+   - "signatures/seblocker_ipv4.dat"
+   - "signatures/seblocker_ipv6.dat"
+   - "modules/seblocker.yml"
   Checksum:
    - "842fa881b2ca144b6b6473fde4a12087b85bef7e1174951e4c8e3f73ff99511e:3779"
    - "099b6abb39cdb555a8db55916e82cebf59b1801a1090cfb026dc86b44a639902:2910"
@@ -1017,257 +922,215 @@ Search engines blocker module:
   - "ipv4"
   - "ipv6"
   - "n/a"
-compat_bunnycdn.php:
+BunnyCDN compatibility module:
  Name: "BunnyCDN compatibility module"
  False Positive Risk: "Low"
  Version: "2022.67.0"
  Dependencies:
   PHP: ">=5.4"
-  CIDRAM Core: "^1.13.1|^2.0.1"
- Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/installed.yml"
+  CIDRAM Core: "^3"
  Uninstallable: true
  Files:
   From:
-   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM-Extras/master/modules/compat_bunnycdn.php"
-   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM-Extras/master/modules/compat_bunnycdn.yaml"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/modules/bunnycdn.php"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/modules/bunnycdn.yml"
   To:
-   - "compat_bunnycdn.php"
-   - "compat_bunnycdn.yaml"
+   - "modules/bunnycdn.php"
+   - "modules/bunnycdn.yml"
   Checksum:
    - "13173053705f2586021db2fc97279e6f9661d2034cf6a17038873627fe87e625:2677"
    - "918edd488e556eec018c33269da5e7e094a5a15bc6f6772168b771565fd32add:2259"
  Used with: "modules"
-module_abuseipdb.php:
+AbuseIPDB module:
  Name: "AbuseIPDB module"
  False Positive Risk: "Medium"
  Version: "2022.67.0"
  Dependencies:
   PHP: ">=5.4"
-  CIDRAM Core: "^1.18.1|^2.5.1"
- Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/installed.yml"
+  CIDRAM Core: "^3"
  Uninstallable: true
  Files:
   From:
-   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM-Extras/master/modules/module_abuseipdb.php"
-   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM-Extras/master/modules/module_abuseipdb.yaml"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/modules/abuseipdb.php"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/modules/abuseipdb.yml"
   To:
-   - "module_abuseipdb.php"
-   - "module_abuseipdb.yaml"
+   - "modules/abuseipdb.php"
+   - "modules/abuseipdb.yml"
   Checksum:
    - "2073c0cf728b57e78fab7a45c84629c5f308e654cb24a76d067112ec19b14dbc:7020"
    - "74135795c5d72d50bcd34ccd1c04e130a7a9aa8832b8c499e3f0f80142bb98b3:2248"
  Used with: "modules"
-module_badhosts.php:
+Bad hosts blocker module:
  Name: "Bad hosts blocker module"
  False Positive Risk: "Medium"
  Version: "2022.66.735"
  Dependencies:
   PHP: ">=5.4"
-  CIDRAM Core: ">=1.13.1"
- Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/installed.yml"
+  CIDRAM Core: "^3"
  Uninstallable: true
  Files:
   From:
-   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM-Extras/master/modules/module_badhosts.php"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/modules/badhosts.php"
   To:
-   - "module_badhosts.php"
+   - "modules/badhosts.php"
   Checksum:
    - "f2497c5d5651a77ac9df6e547dc2b2794dc844481e7d808a9348cfcc626cc7a4:16061"
  Used with: "modules"
-module_badhosts_isps.php:
+Bad hosts blocker module (ISPs):
  Name: "Bad hosts blocker module (ISPs)"
  False Positive Risk: "High"
  Version: "2022.66.735"
  Dependencies:
   PHP: ">=5.4"
-  CIDRAM Core: ">=1.13.1"
- Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/installed.yml"
+  CIDRAM Core: "^3"
  Uninstallable: true
  Files:
   From:
-   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM-Extras/master/modules/module_badhosts_isps.php"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/modules/badhosts_isps.php"
   To:
-   - "module_badhosts_isps.php"
+   - "modules/badhosts_isps.php"
   Checksum:
    - "83b4cc59ffe02416cb19b670df97a88f28004e37ce5fed6fd6f4c8c3f99053f6:2629"
  Used with: "modules"
-module_badtlds.php:
+Bad TLDs blocker module:
  Name: "Bad TLDs blocker module"
  False Positive Risk: "Low"
  Version: "2021.95.583"
  Dependencies:
   PHP: ">=5.4"
-  CIDRAM Core: ">=1.13.1"
- Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/installed.yml"
+  CIDRAM Core: "^3"
  Uninstallable: true
  Files:
   From:
-   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM-Extras/master/modules/module_badtlds.php"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/modules/badtlds.php"
   To:
-   - "module_badtlds.php"
+   - "modules/badtlds.php"
   Checksum:
    - "460ec2dfb73cf464d8adfad56d241130461a58f75b3c9dd9fb0be92cf05225c0:2070"
  Used with: "modules"
-module_bgpview.php:
+BGPView module:
  Name: "BGPView module"
  False Positive Risk: "Low"
  Version: "2022.67.500"
  Dependencies:
   PHP: ">=7"
-  CIDRAM Core: "^2.2"
-  l10n/{lang}: ">=2021.139.519"
- Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/installed.yml"
+  CIDRAM Core: "^3"
  Uninstallable: true
  Files:
   From:
-   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM-Extras/master/modules/module_bgpview.php"
-   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM-Extras/master/modules/module_bgpview.yaml"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/modules/bgpview.php"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/modules/bgpview.yml"
   To:
-   - "module_bgpview.php"
-   - "module_bgpview.yaml"
+   - "modules/bgpview.php"
+   - "modules/bgpview.yml"
   Checksum:
    - "6974873a21c4c06bc924f58511a823aab55e03dd9087c6dadeb9e185a0abc170:7766"
    - "b9852991af216e039ee3f7d412ca540543091e5edf5a269ff433c797ffd489fc:1344"
  Used with: "modules"
-module_botua.php:
- Name: "Optional user agents module"
+Bot user agents module:
+ Name: "Bot user agents module"
  False Positive Risk: "Medium"
- Version: "2022.53.500"
+ Version: "2022.130.0"
  Dependencies:
   PHP: ">=5.4"
-  CIDRAM Core: ">=1.13.1"
- Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/installed.yml"
+  CIDRAM Core: "^3"
  Uninstallable: true
  Files:
   From:
-   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM-Extras/master/modules/module_botua.php"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/modules/botua.php"
   To:
-   - "module_botua.php"
+   - "modules/botua.php"
   Checksum:
-   - "02aeeda7c70b64641b108d1da41028ccb20d1f813d9d6e74a136710845643783:22986"
+   - "17b1e8409238b1c56bd82dd6078899a9a67e381ae6144141218b3a294d88e0e8:23844"
  Used with: "modules"
-module_cookies.php:
- Name: "Optional cookie scanner module"
+Cookie scanner module:
+ Name: "Cookie scanner module"
  False Positive Risk: "Low"
  Version: "2021.287.582"
  Dependencies:
   PHP: ">=5.4"
-  CIDRAM Core: ">=1.13.1"
- Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/installed.yml"
+  CIDRAM Core: "^3"
  Uninstallable: true
  Files:
   From:
-   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM-Extras/master/modules/module_cookies.php"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/modules/cookies.php"
   To:
-   - "module_cookies.php"
+   - "modules/cookies.php"
   Checksum:
    - "8c50f81ff702cc3842ad0bb6a0bad7e0013e7dde7d4e434dd1d337aa8feee34c:8361"
  Used with: "modules"
-module_extras.php:
+Optional security extras module:
  Name: "Optional security extras module"
  False Positive Risk: "Medium"
  Version: "2022.67.0"
  Dependencies:
   PHP: ">=5.4"
-  CIDRAM Core: "^1.13.1|^2.0.1"
- Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/installed.yml"
+  CIDRAM Core: "^3"
  Uninstallable: true
  Files:
   From:
-   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM-Extras/master/modules/module_extras.php"
-   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM-Extras/master/modules/module_extras.yaml"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/modules/extras.php"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/modules/extras.yml"
   To:
-   - "module_extras.php"
-   - "module_extras.yaml"
+   - "modules/extras.php"
+   - "modules/extras.yml"
   Checksum:
    - "86699e4c9f26dcfa5675081d3715012986e8fd2ee2e36ea6f56466bf69c90a39:24844"
    - "3ba90e3c835e95f1aa713dd6edf2eddd3177c3852fa44b94420764355517e5b2:1010"
  Used with: "modules"
-module_httpver.php:
+HTTP version checker module:
  Name: "HTTP version checker module"
  False Positive Risk: "Low"
  Version: "2022.67.0"
  Dependencies:
   PHP: ">=5.4"
-  CIDRAM Core: "^1.18|^2.5"
- Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/installed.yml"
+  CIDRAM Core: "^3"
  Uninstallable: true
  Files:
   From:
-   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM-Extras/master/modules/module_httpver.php"
-   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM-Extras/master/modules/module_httpver.yaml"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/modules/httpver.php"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/modules/httpver.yml"
   To:
-   - "module_httpver.php"
-   - "module_httpver.yaml"
+   - "modules/httpver.php"
+   - "modules/httpver.yml"
   Checksum:
    - "e5f7dfe50dda58ac05f37a50bf4a0dad7ff8bc42ddcab60f127e608111c05b61:5176"
    - "e04f8130085641f1d654156ff1001f895e772c0b0f5cedc998eae0eaa31ab2f8:3556"
  Used with: "modules"
-module_projecthoneypot.php:
+Project Honeypot module:
  Name: "Project Honeypot module"
  False Positive Risk: "Medium"
  Version: "2022.67.0"
  Dependencies:
   PHP: ">=5.4"
-  CIDRAM Core: "^1.18|^2.5"
- Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/installed.yml"
+  CIDRAM Core: "^3"
  Uninstallable: true
  Files:
   From:
-   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM-Extras/master/modules/module_projecthoneypot.php"
-   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM-Extras/master/modules/module_projecthoneypot.yaml"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/modules/projecthoneypot.php"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/modules/projecthoneypot.yml"
   To:
-   - "module_projecthoneypot.php"
-   - "module_projecthoneypot.yaml"
+   - "modules/projecthoneypot.php"
+   - "modules/projecthoneypot.yml"
   Checksum:
    - "6e9f0a2c5bba8da117584c243b3b6321e9d3de1a57834997c31dc2847f1ad16f:5770"
    - "5717109e4076a6e1206e78741d81585cb175f409da42c6c4265411f0302348a9:1890"
  Used with: "modules"
-module_refspam.php:
- Name: "Referrer spam module"
- False Positive Risk: "Medium"
- Version: "2022.67.0"
- Dependencies:
-  PHP: ">=5.5"
-  CIDRAM Core: "^1.13.1|^2.0.1"
- Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/installed.yml"
- Uninstallable: true
- Files:
-  From:
-   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM-Extras/master/modules/module_refspam.php"
-   - "https://raw.githubusercontent.com/symfony/polyfill-intl-idn/3bff59ea7047e925be6b7f2059d60af31bb46d6a/Idn.php"
-   - "https://raw.githubusercontent.com/symfony/polyfill-intl-idn/3bff59ea7047e925be6b7f2059d60af31bb46d6a/bootstrap.php"
-   - "https://raw.githubusercontent.com/symfony/polyfill-mbstring/3ed80deaf77c304010e3f637bc1842c85fd6c485/Mbstring.php"
-   - "https://raw.githubusercontent.com/symfony/polyfill-mbstring/3ed80deaf77c304010e3f637bc1842c85fd6c485/bootstrap.php"
-  To:
-   - "module_refspam.php"
-   - "classes/Symfony/Idn.php"
-   - "classes/Symfony/Idn-bootstrap.php"
-   - "classes/Symfony/Mbstring.php"
-   - "classes/Symfony/Mbstring-bootstrap.php"
-  Checksum:
-   - "0c28c325235046a041531276dc67cc7b77674d60363fc3f246647b300865ecec:13365"
-   - "5ef6df1cecc7cd468d1077c41e164c1155c5d84d5ac58193c43c930b18912e52:8750"
-   - "149715bd93cc76d66f16b5430fb7ddff560875d9063fc8d6089b56496fd39164:4610"
-   - "6a41fab9e7100d2ed6c8a49ca93d4c08489a11944b97bb95c9771913d10b84cb:28145"
-   - "d41ea1b39f5da2c767d9fbc220c4c50ef57158794572c27eb9fe5b5a929d44fb:6575"
- Used with: "modules"
-module_sfs.php:
+Stop Forum Spam module:
  Name: "Stop Forum Spam module"
  False Positive Risk: "Low"
  Version: "2022.67.0"
  Dependencies:
   PHP: ">=5.4"
-  CIDRAM Core: "^1.18|^2.5"
- Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/installed.yml"
+  CIDRAM Core: "^3"
  Uninstallable: true
  Files:
   From:
-   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM-Extras/master/modules/module_sfs.php"
-   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM-Extras/master/modules/module_sfs.yaml"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/modules/sfs.php"
+   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/modules/sfs.yml"
   To:
-   - "module_sfs.php"
-   - "module_sfs.yaml"
+   - "modules/sfs.php"
+   - "modules/sfs.yml"
   Checksum:
    - "fc4b430ff5839bad109d351e9923695712f18018a6428529d1bacdbf9d7ae291:3938"
    - "abcd9145804949fb1877b8ba83a48cee83fa36667cb925b1f1c5071d77218406:555"

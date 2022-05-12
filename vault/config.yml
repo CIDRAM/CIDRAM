@@ -200,6 +200,9 @@ frontend:
  max_login_attempts: 5
  theme: "default"
  magnification: 1
+ remotes: |
+  https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/installed.yml
+  https://raw.githubusercontent.com/CIDRAM/CIDRAM-Extras/master/modules/modules.yml
 signatures:
  ipv4: "ipv4.dat,ipv4_bogons.dat,ipv4_isps.dat,ipv4_nonblocking.dat,ipv4_other.dat"
  ipv6: "ipv6.dat,ipv6_bogons.dat,ipv6_isps.dat,ipv6_nonblocking.dat,ipv6_other.dat"

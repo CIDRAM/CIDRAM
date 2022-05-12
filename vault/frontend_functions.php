@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2022.05.07).
+ * This file: Front-end functions file (last modified: 2022.05.12).
  */
 
 /**
@@ -338,22 +338,16 @@ $CIDRAM['FileManager-RecursiveList'] = function (string $Base) use (&$CIDRAM): a
 };
 
 /**
- * Used by the file manager and the updates pages to fetch the components list.
+ * Used by the file manager and the updates pages to fetch the determine which
+ * components are currently installed.
  *
- * @param string $Base The path to the working directory.
  * @param array $Arr The array to use for rendering components file YAML data.
  * @return void
  */
-$CIDRAM['FetchComponentsLists'] = function (string $Base, array &$Arr) use (&$CIDRAM): void {
-    $Files = new \DirectoryIterator($Base);
-    foreach ($Files as $ThisFile) {
-        if (!preg_match('~\.ya?ml$~i', $ThisFile)) {
-            continue;
-        }
-        $Data = $CIDRAM['ReadFile']($Base . $ThisFile);
-        if ($Data = $CIDRAM['ExtractPage']($Data)) {
-            $CIDRAM['YAML']->process($Data, $Arr);
-        }
+$CIDRAM['FetchComponentsLists'] = function (array &$Arr) use (&$CIDRAM): void {
+    $Data = $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'installed.yml');
+    if (strlen($Data)) {
+        $CIDRAM['YAML']->process($Data, $Arr);
     }
 };
 
@@ -547,32 +541,24 @@ $CIDRAM['IPv6GetLast'] = function (string $First, int $Factor): string {
  *
  * @return void
  */
-$CIDRAM['FetchRemote'] = function () use (&$CIDRAM): void {
-    $CIDRAM['Components']['ThisComponent']['RemoteData'] = '';
-    $CIDRAM['FetchRemote-ContextFree'](
-        $CIDRAM['Components']['ThisComponent']['RemoteData'],
-        $CIDRAM['Components']['ThisComponent']['Remote']
-    );
-};
-
-/**
- * Fetch remote data (context-free).
- *
- * @param string $RemoteData Where to put the remote data.
- * @param string $Remote Where to get the remote data.
- * @return void
- */
-$CIDRAM['FetchRemote-ContextFree'] = function (string &$RemoteData, string &$Remote) use (&$CIDRAM): void {
-    $RemoteData = $CIDRAM['Cache']->getEntry($Remote);
-    if ($RemoteData === false) {
-        $RemoteData = $CIDRAM['Request']($Remote);
-        if (strtolower(substr($Remote, -2)) === 'gz' && substr($RemoteData, 0, 2) === "\x1F\x8B") {
-            $RemoteData = gzdecode($RemoteData);
+$CIDRAM['FetchRemotesData'] = function () use (&$CIDRAM): void {
+    $Remotes = explode("\n", $CIDRAM['Config']['frontend']['remotes']);
+    if (!isset($CIDRAM['Components']['RemoteMeta'])) {
+        $CIDRAM['Components']['RemoteMeta'] = [];
+    }
+    foreach ($Remotes as $ThisRemote) {
+        $RemoteData = $CIDRAM['Cache']->getEntry($ThisRemote);
+        if ($RemoteData === false) {
+            $RemoteData = $CIDRAM['Request']($ThisRemote);
+            if (strtolower(substr($ThisRemote, -2)) === 'gz' && substr($RemoteData, 0, 2) === "\x1F\x8B") {
+                $RemoteData = gzdecode($RemoteData);
+            }
+            if (empty($RemoteData)) {
+                $RemoteData = '-';
+            }
+            $CIDRAM['Cache']->setEntry($ThisRemote, $RemoteData, 3600);
         }
-        if (empty($RemoteData)) {
-            $RemoteData = '-';
-        }
-        $CIDRAM['Cache']->setEntry($Remote, $RemoteData, 3600);
+        $CIDRAM['YAML']->process($RemoteData, $CIDRAM['Components']['RemoteMeta']);
     }
 };
 
@@ -1517,8 +1503,6 @@ $CIDRAM['UpdatesHandler-Update'] = function ($ID) use (&$CIDRAM): void {
         if ($Reactivate !== 0) {
             $CIDRAM['UpdatesHandler-Deactivate']($ThisTarget);
         }
-        $NewMeta = '';
-        $CIDRAM['FetchRemote-ContextFree']($NewMeta, $CIDRAM['Components']['Meta'][$ThisTarget]['Remote']);
         $CIDRAM['CheckConstraints']($CIDRAM['Components']['RemoteMeta'][$ThisTarget], true);
         $UpdateFailed = false;
         $SafeTarget = preg_quote($ThisTarget);
@@ -2067,22 +2051,6 @@ $CIDRAM['UpdatesHandler-Repair'] = function ($ID) use (&$CIDRAM): void {
             $CIDRAM['UpdatesHandler-Deactivate']($ThisTarget);
         }
         $CIDRAM['FE']['state_msg'] .= '<code>' . $ThisTarget . '</code> – ';
-        $TempMeta = [];
-        $RemoteData = '';
-        $CIDRAM['FetchRemote-ContextFree']($RemoteData, $CIDRAM['Components']['Meta'][$ThisTarget]['Remote']);
-        if ($Extracted = $CIDRAM['ExtractPage']($RemoteData)) {
-            $CIDRAM['YAML']->process($Extracted, $TempMeta);
-        }
-        if (!isset($CIDRAM['Components']['RemoteMeta'], $CIDRAM['Components']['RemoteMeta'][$ThisTarget])) {
-            if (!isset($CIDRAM['Components']['RemoteMeta'])) {
-                $CIDRAM['Components']['RemoteMeta'] = [];
-            }
-            foreach ($TempMeta as $TempKey => $TempData) {
-                if (!isset($CIDRAM['Components']['RemoteMeta'][$TempKey])) {
-                    $CIDRAM['Components']['RemoteMeta'][$TempKey] = $TempData;
-                }
-            }
-        }
         if (isset(
             $CIDRAM['Components']['RemoteMeta'][$ThisTarget]['Files']['To'],
             $CIDRAM['Components']['RemoteMeta'][$ThisTarget]['Files']['From'],
@@ -4094,19 +4062,6 @@ $CIDRAM['SubtractCIDR'] = function (string $Minuend = '', string $Subtrahend = '
 };
 
 /**
- * Extract page beginning with delimiter from YAML data or an empty string.
- *
- * @param string $Data The YAML data.
- * @return string The extracted YAML page or an empty string on failure.
- */
-$CIDRAM['ExtractPage'] = function (string $Data = ''): string {
-    if (substr($Data, 0, 4) !== "---\n" || substr($Data, -1) !== "\n") {
-        return '';
-    }
-    return substr($Data, 4);
-};
-
-/**
  * A callback closure used by the matrix handler to increment coordinates.
  *
  * @param string $Current The value of the current coordinate.
@@ -4490,8 +4445,8 @@ $CIDRAM['CheckConstraints'] = function (array &$ThisComponent, bool $Source = fa
  * @param array $To Where to set the information.
  * @return void
  */
-$CIDRAM['CheckVersions'] = function (array &$Source, array &$To) use (&$CIDRAM): void {
-    foreach ($Source as $Key => &$Component) {
+$CIDRAM['CheckVersions'] = function (array $Source, array &$To) use (&$CIDRAM): void {
+    foreach ($Source as $Key => $Component) {
         if (!empty($Component['Version']) && !empty($Component['Files']['To'])) {
             $To[$Key] = $Component['Version'];
         }

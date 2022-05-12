@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Defaults file (last modified: 2022.05.07).
+# This file: Defaults file (last modified: 2022.05.08).
 ##/
 
 Config Defaults:
@@ -641,6 +641,11 @@ Config Defaults:
    type: "float"
    step: "any"
    default: 1
+  remotes:
+   type: "string"
+   default: |
+    https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/installed.yml
+    https://raw.githubusercontent.com/CIDRAM/CIDRAM-Extras/master/modules/modules.yml
  signatures:
   ipv4:
    type: "string"

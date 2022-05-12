@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6_isps.dat
 
-# Version: 2022.121.0
-# Last modified: 2022.05.02
+# Version: 2022.131.0
+# Last modified: 2022.05.12
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -360,64 +360,52 @@ Tag: UnderNet LLC
 # Indian domestic ISP. Brute-force, SSH, and webapp attacks, WordPress hack
 # attempts, port scans, and spam detected from here. Listing just the affected
 # ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 5,989 (AS18101), 58,119 (AS55836).
-# Updated: 2021.08.21
+# Stop Forum Spam (SFS) listings: 860 (AS18101), 93,224 (AS55836).
+# Updated: 2022.05.12
 
 2405:201:4:3d0b::/64 Deny Spam
+2405:201:2010:1a0e::/64 Deny Spam
 2405:201:2015:8028::/64 Deny Spam
 2405:201:2015:881b::/64 Deny Spam
-2405:201:4021:a0f7::/64 Deny Spam
-2405:201:4022:3029::/128 Deny Spam
-2405:201:5507:d073::/64 Deny Spam
+2405:201:4021:19e3::/64 Deny Spam
+2405:201:4031:707a::/64 Deny Spam
+2405:201:5c01:6101::/64 Deny Spam
+2405:201:5c01:614e::/64 Deny Spam
+2405:201:5c01:6b62::/64 Deny Spam
 2405:201:5c03:2::/64 Deny Spam
+2405:201:5c05:20cc::/64 Deny Spam
+2405:201:800b:e073::/64 Deny Spam
+2405:201:a402:6835::/64 Deny Spam
+2405:201:a402:68a3::/64 Deny Spam
+2405:201:a402:6994::/64 Deny Spam
 2405:201:e001:703c::/64 Deny Spam
-2405:204:1005:ac9::/64 Deny Spam
-2405:204:1025:2106::/128 Deny Spam
-2405:204:1386:b3f9::/128 Deny Spam
-2405:204:138f:d8ab::/64 Deny Spam
-2405:204:1486:5bd4::/64 Deny Spam
-2405:204:1489:3073::/64 Deny Spam
-2405:204:3101:bfe5::/128 Deny Spam
-2405:204:311c:4ffd::/64 Deny Spam
-2405:204:322c:c976::/64 Deny Spam
-2405:204:322d:e403::/64 Deny Spam
-2405:204:3281:bf41::/64 Deny Spam
-2405:204:329d:7410::/64 Deny Spam
-2405:204:32a7:e60c::/64 Deny Spam
-2405:204:32ac:8158::/64 Deny Spam
-2405:204:331d:fe27::/128 Deny Spam
-2405:204:340d:b850::/64 Deny Spam
-2405:204:3487:dc02::/64 Deny Spam
-2409:4043:19b:4c6b::/128 Deny Spam
+2405:204:101b:1077::/64 Deny Spam
+2405:204:101e:ee09::/64 Deny Spam
+2405:204:1093:440f::/64 Deny Spam
+2405:204:1300:e10b::/64 Deny Spam
+2405:204:138b:ef4e::/64 Deny Spam
+2405:204:30ae:8565::/64 Deny Spam
+2405:204:3320:f396::/64 Deny Spam
+2405:204:3386:7f38::/64 Deny Spam
+2405:204:3408:a947::/64 Deny Spam
+2405:204:528d:3402::/64 Deny Spam
+2409:4041:2d13:d6a3::/64 Deny Spam
 2409:4043:515:6535::/64 Deny Spam
-2409:4043:803:d52a::/64 Deny Spam
-2409:4043:218b:670c::/64 Deny Spam
-2409:4043:2b88:f8b6::/64 Deny Spam
-2409:4043:2c9a:d845::/128 Deny Spam
-2409:4043:2c9f:7494::/64 Deny Spam
-2409:4043:4e95:2f17::/64 Deny Spam
-2409:4050:d96:4391::/64 Deny Spam
-2409:4050:e19:975d::/64 Deny Spam
-2409:4050:e34:f5bd::/64 Deny Spam
-2409:4050:e94:9881::/64 Deny Spam
-2409:4050:e9c:2d39::/128 Deny Spam
-2409:4050:2d80:95de::/64 Deny Spam
-2409:4050:2d99:c16d::/64 Deny Spam
-2409:4050:2db0:c229::/64 Deny Spam
-2409:4050:2db2:f8::/64 Deny Spam
-2409:4050:2dc2:24ab::/64 Deny Spam
-2409:4050:2e03:7714::/128 Deny Spam
-2409:4050:2ec9:90c6::/64 Deny Spam
-2409:4052:240f:1934::/128 Deny Spam
-2409:4052:4e18:a162::/64 Deny Spam
-2409:4053:109:9fd3::/128 Deny Spam
-2409:4053:2e0a:2bae::/64 Deny Spam
-2409:4055:305:184f::/64 Deny Spam
-2409:4060:29e:1d8::/128 Deny Spam
-2409:4061:2c1e:ec02::/128 Deny Spam
-2409:4064:20f:df61::/128 Deny Spam
-2409:4072:6d17:bc80::/64 Deny Spam
-2409:4072:8e95:ee29::/128 Deny Spam
+2409:4050:d98:d91e::/64 Deny Spam
+2409:4050:e06:9428::/64 Deny Spam
+2409:4050:e8f:826f::/64 Deny Spam
+2409:4050:e96:d51f::/64 Deny Spam
+2409:4050:ecc:f2bc::/64 Deny Spam
+2409:4050:2d43:1687::/64 Deny Spam
+2409:4050:2d94:9c06::/64 Deny Spam
+2409:4050:2db8:2dd8::/64 Deny Spam
+2409:4050:2dbb:3051::/64 Deny Spam
+2409:4050:2dcd:5c7a::/64 Deny Spam
+2409:4050:2e1c:c66b::/64 Deny Spam
+2409:4050:2e40:941::/64 Deny Spam
+2409:4050:2e84:6834::/64 Deny Spam
+2409:4050:2e99:c63f::/64 Deny Spam
+2409:4050:2eb8:9c7c::/64 Deny Spam
 Origin: IN
 Profile: Domestic ISP;Infrastructure/Transit
 Tag: Reliance Communications
@@ -713,13 +701,12 @@ Tag: MAXNET TELECOM
 
 
 # ASN 6799 ("Ote SA (Hellenic Telecommunications Organisation)").
-# Greek domestic ISP. Spam, brute-force, and webapp attacks detected from here.
+# Greek domestic ISP. Brute-force, webapp attacks, and spam detected from here.
 # Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 8,048.
-# Updated: 2021.08.11
+# Stop Forum Spam (SFS) listings: 11,375.
+# Updated: 2022.05.09
 
-2a02:587:2960:be00::/64 Deny Spam
-2a02:587:9814:ed70::/64 Deny Spam
+2a02:587:3f03:7654::/64 Deny Spam
 Origin: GR
 Profile: Domestic ISP
 Tag: Ote SA
@@ -753,15 +740,12 @@ Tag: Cellcom Fixed
 
 
 # ASN 12849 ("Hot-Net internet services Ltd").
-# Israeli domestic ISP. Port scans, hack attempts, and spam detected from here.
+# Israeli domestic ISP. Port scans, hacking, and spam detected from here.
 # Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 1,115.
-# Updated: 2021.08.31
+# Stop Forum Spam (SFS) listings: 311.
+# Updated: 2022.05.12
 
-2a00:a040:188:6fcd::/64 Deny Spam
-2a00:a040:197:b0ba::/64 Deny Spam
-2a00:a040:199:640d::/64 Deny Spam
-2a00:a040:1a0:f050::/64 Deny Spam
+2a00:a040:19b:72a::/64 Deny Spam
 Origin: IL
 Profile: Domestic ISP
 Tag: Hot-Net internet
@@ -1337,10 +1321,10 @@ Tag: KPN B.V
 # Dutch domestic ISP and phone provider. Brute-force, SSH attacks, port scans,
 # hacking, and spam detected from here. Listing just the affected
 # ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 11 (AS15480), 837 (AS33915).
-# Updated: 2021.08.07
+# Stop Forum Spam (SFS) listings: 28 (AS15480), 710 (AS33915).
+# Updated: 2022.05.09
 
-2001:1c03:6700:8400::/64 Deny Spam
+2001:1c02:210d:fb00::/64 Deny Spam
 Origin: NL
 Profile: Domestic ISP
 Tag: Vodafone Libertel

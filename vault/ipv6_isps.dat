@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6_isps.dat
 
-# Version: 2022.131.0
-# Last modified: 2022.05.12
+# Version: 2022.135.0
+# Last modified: 2022.05.16
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -409,29 +409,6 @@ Tag: UnderNet LLC
 Origin: IN
 Profile: Domestic ISP;Infrastructure/Transit
 Tag: Reliance Communications
-
-
-# ASN 174 ("Cogent Communications").
-# Brute-force, SSH, and webapp attacks, spam, scraping, etc detected from here.
-# Encompasses and interlaces with a human endpoints, ISPs backbone
-# architecture, etc, as well as various hosting/cloud services.
-# Listing just the affected ranges/addresses only.
-# See:
-# - en.wikipedia.org/wiki/Cogent_Communications
-# - bgpmon.net/large-scale-bgp-hijack-out-of-india/
-# - forums.spybot.info/showthread.php?23632-SPAM-frauds-fakes-and-other-MALWARE-deliveries/page37
-# - dyn.com/blog/mitm-internet-hijacking/
-# Stop Forum Spam (SFS) listings: 43,744.
-# Updated: 2021.11.04
-
-2a07:85c0::/48 Deny Attacks
-2a07:85c1::/48 Deny Attacks
-2a07:85c2::/48 Deny Attacks
-2a07:85c3::/48 Deny Attacks
-2a07:85c5::/48 Deny Attacks
-Origin: SC
-Profile: Infrastructure/Transit;Tor endpoints here;Webhosting
-Tag: Cogent
 
 
 # ASN 198093 ("Foreningen for digitala fri- och rattigheter").
@@ -1102,12 +1079,11 @@ Tag: Telenet BVBA
 # ASNs 3243, 42863 ("MEO - SERVICOS DE COMUNICACOES E MULTIMEDIA S.A").
 # Portuguese domestic ISP. Caught by honeypots. Port scans and hack attempts
 # detected from here. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 975 (AS3243), 61 (AS42863).
-# Updated: 2021.12.09
+# Stop Forum Spam (SFS) listings: 1,231 (AS3243), 48 (AS42863).
+# Updated: 2022.05.16
 
-2001:8a0:6c09:5701::/64 Deny Spam
-2001:8a0:e110:d801::/64 Deny Spam
-2001:8a0:ff80:d600::/64 Deny Spam
+2001:8a0:6057:9b00::/64 Deny Spam
+2001:8a0:ebcb:c000::/64 Deny Spam
 Origin: PT
 Profile: Domestic ISP
 Tag: MEO

@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="{xmlLang}" xml:lang="{xmlLang}" dir="{Text Direction}">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="robots" content="noindex,nofollow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="shortcut icon" type="image/gif" href="data:image/gif;base64,{favicon}" />
+  <title>{Title}</title>{captcha_api_include}
+  <style>
+body,button,input{font-weight:700;font-family:BlinkMacSystemFont,"Segoe UI",'Helvetica','Arial',sans-serif;letter-spacing:1px;text-decoration:none;border-style:none;margin:0;padding:0;white-space:normal;background-color:#f6f8fa;color:#24292e;font-size:calc((12px * {magnification}) + .03vw)}
+body,#wrapper{text-align:center}
+hr{box-sizing:content-box;height:0;overflow:visible;height:0;margin:15px 0;overflow:hidden;background:0 0;border:0;border-bottom:1px solid #dadde1}
+hr::after{display:table;clear:both;content:""}
+hr::before{display:table;content:""}
+#wrapper{background-color:#fff;width:calc(100% - 10px);margin:auto;padding:2px;border:1px #e1e4e8 solid;border-radius:6px}
+#wrapper_inner{width:96%;margin:auto;padding:2px}
+#ScriptIdent{color:#cb2431}
+#footer_inner{font-family:inherit;font-size:calc((12px * {magnification}) + .03vw);letter-spacing:0px;white-space:nowrap;text-align:right}
+#generated_by{color:#000}
+#generated_by,#ScriptIdent{display:inline}
+.gForm{margin-left:auto;margin-right:auto;width:300px}
+button,input{padding-left:2px;padding-right:2px;border-color:rgba(27,31,35,.15);box-shadow:0 1px 0 rgba(27,31,35,.04),inset 0 1px 0 rgba(255,255,255,.25);transition:background-color .2s cubic-bezier(.3,0,.5,1);filter:grayscale(.3);border-radius:6px;}
+button:active,input:active{box-shadow:inset 0 1px 0 rgba(225,228,232,.2);transition:none;filter:grayscale(0)}
+button:disabled,input:disabled{filter:grayscale(1)}
+button:focus,input:focus{outline:1px dotted transparent;outline-offset:2px;box-shadow:0 0 0 3px rgba(3,102,214,.3);filter:grayscale(0)}
+button:hover,input:hover{transition-duration:.1s;text-decoration:none;filter:grayscale(0)}
+button,input[type=button],input[type=submit]{color:#fff;background-color:#22863a}
+input[type=button],input[type=submit]{color:#fff;background-color:#22863a}
+input:not([type=submit]):not([type=reset]):not([type=button]){border:none;height:20px}
+input[type=submit],input[type=reset],input[type=button]{height:20px;padding-top:0;padding-bottom:0}
+  </style>
+</head>
+
+<body>
+  <div id="wrapper">
+    <div id="wrapper_inner">
+      <hr />
+      {captcha_message_automated_traffic}{captcha_div_include}
+      <hr />
+      <div id="footer">
+        <div id="footer_inner">
+          <div id="generated_by"{L10N-Lang-Attache}>{GeneratedBy}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="pp"{L10N-Lang-Attache}>{pp}</div>
+</body>
+
+</html>

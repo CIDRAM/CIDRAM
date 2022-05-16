@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="{xmlLang}" xml:lang="{xmlLang}" dir="{Text Direction}">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="robots" content="noindex,nofollow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="shortcut icon" type="image/gif" href="data:image/gif;base64,{favicon}" />
+  <title>{Title}</title>{captcha_api_include}
+  <style>
+#wrapper{border-style:solid;border-color:#393939;width:calc(100% - 10px);margin:auto;padding:2px;border-top-right-radius:24px;background-color:#2f2f2f}
+body,#wrapper{text-align:center}
+hr,#wrapper{border-width:1px}
+#wrapper_inner{width:96%;margin:auto;padding:2px}
+#denied,#footer_inner,#detected,#textBlock,input,#pp{font-weight:700}
+#denied,#ScriptIdent,input{color:#f52}
+#denied{font-size:calc((20px * {magnification}) + .03vw)}
+#footer_inner,input{font-family:sans-serif,'Verdana','Arial','Helvetica'}
+#footer_inner{font-size:calc((12px * {magnification}) + .03vw);letter-spacing:0px;white-space:nowrap;text-align:right}
+#generated_by{color:#ddd}
+#textBlock{{textBlockAlign}}
+#generated_by,#ScriptIdent{display:inline}
+.textLabel{{textBlockFloat}color:#f90;white-space:pre}
+body{font-family:sans-serif,'Tahoma','Verdana','Arial';font-size:calc((12px * {magnification}) + .03vw);letter-spacing:1px;text-decoration:none;border-style:none;white-space:normal;background-color:#212121;color:#ddd}
+hr{border-style:solid none none;margin:5px 2px 0;padding:2px;color:#999}
+input{filter:brightness(.94);border:1px solid #999;color:#ccc;margin:2px;padding:2px;background:linear-gradient(45deg,rgba(47,47,47,1),rgba(255,255,255,.1));border-radius:0;transition:all .3s ease-out}
+input:active{filter:brightness(1)}
+input:focus,input:hover{filter:brightness(1.3)}
+#results{margin:10px;padding:2px}
+.gForm{margin-left:auto;margin-right:auto;width:300px}
+button,input[type=button],input[type=submit]{border-radius:18px}
+  </style>
+</head>
+
+<body>
+  <div id="wrapper">
+    <div id="wrapper_inner">
+      <hr />
+      <div id="results">
+        <div id="denied"{L10N-Lang-Attache}>{denied}</div>
+      </div>
+      <div id="detected">{ReasonMessage}</div>
+      <div id="mailsupport"{L10N-Lang-Attache}>{EmailAddr}</div>{captcha_div_include}
+      <hr />
+      <div id="textBlock">
+        {Output}
+      </div>
+      <hr />
+      <div id="footer">
+        <div id="footer_inner">
+          <div id="generated_by"{L10N-Lang-Attache}>{GeneratedBy}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="pp"{L10N-Lang-Attache}>{pp}</div>
+</body>
+
+</html>

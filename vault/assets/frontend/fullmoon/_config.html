@@ -1,0 +1,18 @@
+<div class="nav">{nav}</div>
+<hr />
+<div class="s">{state_msg}</div>
+  <form action="?cidram-page=config" method="POST">
+    <input type="hidden" name="updatingConfig" value="1" />
+    <div style="display:none">{Indexes}</div>
+    <table>
+      <tr><td class="ng2"><div class="s">{link_config}</div></td></tr>
+      <tr>
+        <td class="ng1">
+          <div class="s">{tip_see_the_documentation}<hr /><em>{label_active_config_file} <span class="txtRd">{ActiveConfigFile}</span></em><hr /></div>
+          <div class="bNav"><input type="submit" value="{field_update}" /></div>
+        </td>
+      </tr>
+    </table>
+{ConfigFields}
+    <table><tr><td class="ng1"><div class="bNav"><input type="submit" value="{field_update}" /></div></td></tr></table>
+  </form>

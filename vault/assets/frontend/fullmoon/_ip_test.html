@@ -1,0 +1,31 @@
+<div class="nav">{nav}</div>
+<hr />
+<div class="s">{state_msg}</div>
+<table>
+<tr><form action="?cidram-page=ip-test" method="POST">
+  <td class="h3">
+    <div class="center">
+      <textarea name="ip-addr" placeholder="{tip_enter_ips_here}">{ip-addr}</textarea><br />
+      <input type="text" name="custom-ua" placeholder="{tip_custom_ua}" value="{custom-ua}" class="txtf" /><br />
+      <input type="text" name="custom-query" placeholder="{tip_custom_query}" value="{custom-query}" class="txtf" /><br />
+      <input type="text" name="custom-referrer" placeholder="{tip_custom_referrer}" value="{custom-referrer}" class="txtf" />
+    </div>
+  </td>
+  <td class="h3f">
+    <div class="center">
+      <input type="checkbox" name="ModuleSwitch" id="ModuleSwitch" class="auto"{ModuleSwitch} /><label class="s" for="ModuleSwitch">{label_check_modules}</label><br />
+      <input type="checkbox" name="VerificationSwitch" id="VerificationSwitch" class="auto"{VerificationSwitch} /><label class="s" for="VerificationSwitch">{label_check_verification}</label><br />
+      <input type="checkbox" name="AuxSwitch" id="AuxSwitch" class="auto"{AuxSwitch} /><label class="s" for="AuxSwitch">{label_check_aux}</label><br />
+      <br />
+      {tip_ip_test_switches}<br />
+      <br />
+      <input type="submit" value="{field_ok}" />
+    </div>
+  </td>
+</form></tr>
+<tr>
+  <td class="h4"><div class="s">{TestItemLabel}</div></td>
+  <td class="h4f"><div class="s">{field_blocked}</div></td>
+</tr>
+{IPTestResults}
+</table>

@@ -1877,9 +1877,6 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && ($CIDRAM['FE']['Per
                 if ((
                     !empty($CIDRAM['Components']['ThisComponent']['Used with']) &&
                     $CIDRAM['Has']($CIDRAM['Components']['ThisComponent']['Used with'], ['ipv4', 'ipv6'])
-                ) || (
-                    !empty($CIDRAM['Components']['ThisComponent']['Extended Description']) &&
-                    strpos($CIDRAM['Components']['ThisComponent']['Extended Description'], 'signatures-&gt;ipv') !== false
                 )) {
                     $CIDRAM['Components']['OutdatedSignatureFiles'][] = $CIDRAM['Components']['Key'];
                 }
@@ -2127,21 +2124,6 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && ($CIDRAM['FE']['Per
         ) {
             continue;
         }
-        $CIDRAM['Components']['RemoteDataThis'] = [];
-        /*
-        if (!preg_match(
-            "~(\n" . preg_quote($CIDRAM['Components']['Key']) . ":?)(\n [^\n]*)*\n~i",
-            $CIDRAM['Components']['ThisComponent']['RemoteData'],
-            $CIDRAM['Components']['RemoteDataThis']
-        )) {
-            continue;
-        }
-        $CIDRAM['Components']['RemoteDataThis'] = preg_replace(
-            ["/\n Files:(\n  [^\n]*)*\n/i", "/\n Version: [^\n]*\n/i"],
-            "\n",
-            $CIDRAM['Components']['RemoteDataThis'][0]
-        );
-        */
 
         /** Determine whether all dependency constraints have been met. */
         $CIDRAM['CheckConstraints']($CIDRAM['Components']['ThisComponent'], true);

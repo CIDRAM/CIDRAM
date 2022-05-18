@@ -421,7 +421,7 @@ class Aggregator
      * @param string
      * @return void
      */
-    private function convertToNetmasks(string &$In): void
+    public function convertToNetmasks(string &$In): void
     {
         if (isset($this->callbacks['newParse']) && is_callable($this->callbacks['newParse'])) {
             $this->callbacks['newParse'](substr_count($In, "\n"));

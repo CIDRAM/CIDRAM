@@ -28,7 +28,7 @@ $this->Events->addHandler('writeToLog', function (): bool {
     $Truncate = $this->readBytes($this->Configuration['general']['truncate']);
     $Data = !file_exists($Filename) || $Truncate > 0 && filesize($Filename) >= $Truncate ? "\x3c\x3fphp die; \x3f\x3e\n\n" : '';
     $WriteMode = !empty($Data) ? 'wb' : 'ab';
-    $Data .= $this->ParseVars($this->CIDRAM['Parsables'], $this->CIDRAM['FieldTemplates']['Logs'] . "\n");
+    $Data .= $this->parseVars($this->CIDRAM['Parsables'], $this->CIDRAM['FieldTemplates']['Logs'] . "\n");
 
     $File = fopen($Filename, $WriteMode);
     fwrite($File, $Data);

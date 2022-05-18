@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Captcha class (last modified: 2022.03.01).
+ * This file: Captcha class (last modified: 2022.05.18).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -89,8 +89,8 @@ class Captcha
         $this->CIDRAM['BlockInfo']['CAPTCHA'] = $this->CIDRAM['L10N']->getString('state_failed');
 
         /** Append to reCAPTCHA statistics if necessary. */
-        if (isset($this->CIDRAM['Stages']['Statistics:Enable'], $this->CIDRAM['StatisticsTracked']['CAPTCHAs-Failed'])) {
-            $this->CIDRAM['Statistics']['CAPTCHAs-Failed']++;
+        if (isset($this->Stages['Statistics:Enable'], $this->StatisticsTracked['CAPTCHAs-Failed'])) {
+            $this->Statistics['CAPTCHAs-Failed']++;
             $this->CIDRAM['Statistics-Modified'] = true;
         }
     }
@@ -106,8 +106,8 @@ class Captcha
         $this->CIDRAM['BlockInfo']['CAPTCHA'] = $this->CIDRAM['L10N']->getString('state_passed');
 
         /** Append to reCAPTCHA statistics if necessary. */
-        if (isset($this->CIDRAM['Stages']['Statistics:Enable'], $this->CIDRAM['StatisticsTracked']['CAPTCHAs-Passed'])) {
-            $this->CIDRAM['Statistics']['CAPTCHAs-Passed']++;
+        if (isset($this->Stages['Statistics:Enable'], $this->StatisticsTracked['CAPTCHAs-Passed'])) {
+            $this->Statistics['CAPTCHAs-Passed']++;
             $this->CIDRAM['Statistics-Modified'] = true;
         }
     }

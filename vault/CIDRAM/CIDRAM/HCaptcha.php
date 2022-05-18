@@ -92,7 +92,7 @@ class HCaptcha extends Captcha
                         if (strpos($Cookie, "\0") !== false) {
                             $Cookie = str_replace("\0", '', $Cookie);
                         }
-                        $UserHash = password_hash($Cookie, $this->CIDRAM['DefaultAlgo']);
+                        $UserHash = password_hash($Cookie, $this->DefaultAlgo);
                         $Cookie = $UserHash . ',' . base64_encode($UserSalt);
                         setcookie(
                             'CIDRAM',

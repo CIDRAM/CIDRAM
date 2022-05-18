@@ -15,7 +15,7 @@ namespace CIDRAM\CIDRAM;
 
 class Core
 {
-    use Expand;
+    use Expand, Protect;
 
     /**
      * @var string The path to CIDRAM's configuration file.
@@ -135,9 +135,44 @@ class Core
     public $BlockInfo = [];
 
     /**
+     * @var string The current stage of the execution chain.
+     */
+    private $Stage = '';
+
+    /**
+     * @var array The stages of the execution chain.
+     */
+    private $Stages = [];
+
+    /**
+     * @var array The statistics to be tracked.
+     */
+    private $StatisticsTracked = [];
+
+    /**
+     * @var array The current statistics.
+     */
+    private $Statistics = [];
+
+    /**
+     * @var array Request profiling to provide greater nuance for block events.
+     */
+    private $Profiles = [];
+
+    /**
+     * @var array Sometimes used with certain kinds of blocked requests.
+     */
+    private $Webooks = [];
+
+    /**
      * @var array Channels information for request.
      */
     private $Channels = [];
+
+    /**
+     * @var string The default hashing algorithm for CIDRAM to use.
+     */
+    private $DefaultAlgo = '';
 
     /**
      * @var int Default file blocksize (128KB).
@@ -299,7 +334,7 @@ class Core
         }
 
         /** Set default hashing algorithm. */
-        $this->CIDRAM['DefaultAlgo'] = (
+        $this->DefaultAlgo = (
             !empty($this->Configuration['general']['default_algo']) && defined($this->Configuration['general']['default_algo'])
         ) ? constant($this->Configuration['general']['default_algo']) : PASSWORD_DEFAULT;
 
@@ -819,8 +854,8 @@ class Core
         $Values['d'] = (int)$Values['dd'];
         $Values['m'] = (int)$Values['mm'];
         return is_array($In) ? array_map(function (string $Item) use (&$Values): string {
-            return $this->ParseVars($Values, $Item);
-        }, $In) : $this->ParseVars($Values, $In);
+            return $this->parseVars($Values, $Item);
+        }, $In) : $this->parseVars($Values, $In);
     }
 
     /**
@@ -1109,7 +1144,7 @@ class Core
             $URI .= str_shuffle(self::PAD_FOR_DNS)[0];
         }
 
-        if (!$Results = json_decode($this->Request($URI, [], $Timeout), true)) {
+        if (!$Results = json_decode($this->Request->request($URI, [], $Timeout), true)) {
             return '';
         }
         return $this->CIDRAM['DNS-Forwards'][$Host]['IPAddr'] = empty(
@@ -1782,7 +1817,7 @@ class Core
         }
         $Before = $this->BlockInfo['SignatureCount'];
         $this->xVerification('Search Engine Verification', true);
-        if (isset($this->CIDRAM['Stages']['searchEngineVerification:Tracking']) && $this->BlockInfo['SignatureCount'] > $Before) {
+        if (isset($this->Stages['searchEngineVerification:Tracking']) && $this->BlockInfo['SignatureCount'] > $Before) {
             $this->BlockInfo['Infractions'] += $this->BlockInfo['SignatureCount'] - $Before;
         }
     }
@@ -1803,7 +1838,7 @@ class Core
         }
         $Before = $this->BlockInfo['SignatureCount'];
         $this->xVerification('Social Media Verification', false);
-        if (isset($this->CIDRAM['Stages']['socialMediaVerification:Tracking']) && $this->BlockInfo['SignatureCount'] > $Before) {
+        if (isset($this->Stages['socialMediaVerification:Tracking']) && $this->BlockInfo['SignatureCount'] > $Before) {
             $this->BlockInfo['Infractions'] += $this->BlockInfo['SignatureCount'] - $Before;
         }
     }
@@ -1824,7 +1859,7 @@ class Core
         }
         $Before = $this->BlockInfo['SignatureCount'];
         $this->xVerification('Other Verification', false);
-        if (isset($this->CIDRAM['Stages']['otherVerification:Tracking']) && $this->BlockInfo['SignatureCount'] > $Before) {
+        if (isset($this->Stages['otherVerification:Tracking']) && $this->BlockInfo['SignatureCount'] > $Before) {
             $this->BlockInfo['Infractions'] += $this->BlockInfo['SignatureCount'] - $Before;
         }
     }
@@ -2015,8 +2050,8 @@ class Core
         $Err = 0;
         if ($Count > $Limit) {
             asort($Arr, SORT_NUMERIC);
-            $StageRestore = $this->CIDRAM['Stage'] ?? '';
-            $this->CIDRAM['Stage'] = '';
+            $StageRestore = $this->Stage ?? '';
+            $this->Stage = '';
             foreach ($Arr as $Item => $Modified) {
                 if ($Action === 'Archive') {
                     $Err += !$this->gZCompressFile($this->Vault . $Item);
@@ -2030,7 +2065,7 @@ class Core
                     break;
                 }
             }
-            $this->CIDRAM['Stage'] = $StageRestore;
+            $this->Stage = $StageRestore;
         }
         return $Err === 0;
     }
@@ -2180,7 +2215,7 @@ class Core
 
         /** Apply webhooks. */
         if (!empty($Webhooks)) {
-            $this->CIDRAM['Webhooks'] = isset($this->CIDRAM['Webhooks']) ? array_merge($this->CIDRAM['Webhooks'], $Webhooks) : $Webhooks;
+            $this->Webhooks = isset($this->Webhooks) ? array_merge($this->Webhooks, $Webhooks) : $Webhooks;
         }
 
         /** Process other options and special flags. */
@@ -2741,14 +2776,14 @@ class Core
      */
     public function addProfileEntry(string $Entries): void
     {
-        if (!isset($this->CIDRAM['Profile'])) {
-            $this->CIDRAM['Profile'] = [];
+        if (!isset($this->Profiles)) {
+            $this->Profiles = [];
         }
         foreach (explode(';', $Entries) as $Profile) {
-            $this->CIDRAM['Profile'][] = $Profile;
+            $this->Profiles[] = $Profile;
         }
-        sort($this->CIDRAM['Profile'], SORT_STRING);
-        $this->CIDRAM['Profile'] = array_unique($this->CIDRAM['Profile']);
+        sort($this->Profiles, SORT_STRING);
+        $this->Profiles = array_unique($this->Profiles);
     }
 
     /**

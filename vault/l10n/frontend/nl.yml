@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Dutch language data for the front-end (last modified: 2022.05.12).
+# This file: Dutch language data for the front-end (last modified: 2022.05.16).
 ##/
 
 Extended Description Bypasses: "De standaard signature bypasses normaal opgenomen met de primaire pakket."
@@ -102,7 +102,6 @@ config_general_config_imports: "Een door komma's gescheiden lijst met bestanden 
 config_general_default_algo: "Definieert welk algoritme u wilt gebruiken voor alle toekomstige wachtwoorden en sessies."
 config_general_default_dns: "Een door komma's gescheiden lijst met DNS-servers te gebruiken voor de hostnaam lookups. Standaard = "8.8.8.8,8.8.4.4" (Google DNS). WAARSCHUWING: Verander dit niet tenzij u weet wat u doet!"
 config_general_default_timeout: "Standaard time-out om te gebruiken voor externe verzoeken? Standaard = 12 seconden."
-config_general_disable_frontend: "Uitschakelen frontend toegang? frontend toegang kan CIDRAM beter beheersbaar te maken, maar kan ook een potentieel gevaar voor de veiligheid zijn. Het is aan te raden om CIDRAM te beheren via het backend wanneer mogelijk, maar frontend toegang is hier voorzien voor wanneer het niet mogelijk is. Hebben het uitgeschakeld tenzij u het nodig hebt. False = Inschakelen frontend toegang; True = Uitschakelen frontend toegang [Standaard]."
 config_general_disabled_channels: "Dit kan worden gebruikt om te voorkomen dat CIDRAM bepaalde kanalen gebruikt bij het verzenden van verzoeken (b.v., bij het bijwerken, bij het ophalen van metagegevens van componenten, enzovoort)."
 config_general_emailaddr: "Indien u wenst, u kunt een e-mailadres op hier te geven te geven aan de gebruikers als ze geblokkeerd, voor hen te gebruiken als aanspreekpunt voor steun en/of assistentie in het geval dat ze worden onrechte geblokkeerd. WAARSCHUWING: Elke e-mailadres u leveren hier zal zeker worden overgenomen met spambots en schrapers in de loop van zijn wezen die hier gebruikt, en dus, het wordt ten zeerste aanbevolen als u ervoor kiest om een e-mailadres hier te leveren, dat u ervoor zorgen dat het e-mailadres dat u hier leveren is een wegwerp-adres en/of een adres dat u niet de zorg over wordt gespamd (met andere woorden, u waarschijnlijk niet wilt om uw primaire persoonlijk of primaire zakelijke e-mailadressen te gebruik)."
 config_general_emailaddr_display_style: "Hoe zou u het e-mailadres voor gebruikers willen aanbieden?"
@@ -123,7 +122,6 @@ config_general_logfile_apache: "Apache-stijl bestand om alle geblokkeerde toegan
 config_general_logfile_serialized: "Geserialiseerd bestand om alle geblokkeerde toegang pogingen te loggen. Geef een bestandsnaam, of laat leeg om uit te schakelen."
 config_general_numbers: "Hoe verkiest u nummers die worden weergegeven? Selecteer het voorbeeld dat het meest correct voor u lijkt."
 config_general_other_verification: "Controles voor het verifiëren van andere soorten verzoeken waar mogelijk."
-config_general_protect_frontend: "Geeft aan of de bescherming die gewoonlijk door CIDRAM is voorzien moet worden toegepast op de frontend. True = Ja [Standaard]; False = Nee."
 config_general_search_engine_verification: "Controles voor het verifiëren van verzoeken van zoekmachines."
 config_general_signatures_update_event_log: "Een bestand om te loggen wanneer signatures worden bijgewerkt via de frontend. Geef een bestandsnaam, of laat leeg om uit te schakelen."
 config_general_silent_mode: "Moet CIDRAM stilletjes redirect geblokkeerd toegang pogingen in plaats van het weergeven van de "Toegang Geweigerd" pagina? Als ja, geef de locatie te redirect geblokkeerd toegang pogingen. Als nee, verlaat deze variabele leeg."

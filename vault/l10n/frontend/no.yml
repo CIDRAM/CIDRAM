@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Norwegian language data for the front-end (last modified: 2022.05.12).
+# This file: Norwegian language data for the front-end (last modified: 2022.05.16).
 ##/
 
 Extended Description Bypasses: "Standard-signatur-bypass-filene som normalt følger med hovedpakken."
@@ -102,7 +102,6 @@ config_general_config_imports: "En kommaavgrenset liste over filer som skal impo
 config_general_default_algo: "Definerer hvilken algoritme som skal brukes for alle fremtidige passord og økter."
 config_general_default_dns: "En kommaseparert liste over DNS-servere som skal brukes til vertsnavn-oppslag. Standardverdi = "8.8.8.8,8.8.4.4" (Google DNS). ADVARSEL: Ikke endre dette med mindre du vet hva du gjør!"
 config_general_default_timeout: "Standard tidsavbrudd for eksterne forespørsler? Standardverdi = 12 sekunder."
-config_general_disable_frontend: "Deaktiver tilgang til frontenden? Frontend tilgang kan gjøre CIDRAM mer overskuelig, men kan også være en potensiell sikkerhetsrisiko også. Det anbefales å administrere CIDRAM via bakenden når det er mulig, men frontend tilgang er gitt for når det ikke er mulig. Hold den deaktivert med mindre du trenger det. False = Aktiver tilgang til frontenden; True = Deaktiver tilgang til frontenden [Standardverdi]."
 config_general_disabled_channels: "Dette kan brukes til å forhindre CIDRAM i å bruke bestemte kanaler når du sender forespørsler (f.eks, når du oppdaterer, når du henter komponentmetadata, osv)."
 config_general_emailaddr: "Hvis du vil, du kan levere en e-postadresse her for å bli gitt til brukerne når de er blokkert, for dem å bruke som et kontaktpunkt for støtte og/eller assistanse i tilfelle de blir blokkert feilaktig eller i feil. ADVARSEL: Uansett hvilken e-postadresse du leverer her, det vil helt sikkert bli ervervet av spamboter og skraper i løpet av bruken her, og så, det anbefales sterkt at hvis du velger å levere en e-postadresse her, at du sørger for at e-postadressen du oppgir her er en engangsadresse og/eller en adresse som du ikke bryr deg om å bli spammet (dvs., du vil sannsynligvis ikke bruke dine primære personlige eller primære virksomhets e-postadresser)."
 config_general_emailaddr_display_style: "Hvordan foretrekker du e-postadressen som skal presenteres for brukerne?"
@@ -123,7 +122,6 @@ config_general_logfile_apache: "Apache-stil fil for å logge alle blokkerte tilg
 config_general_logfile_serialized: "Serialisert fil å logge av alle blokkerte tilgangsforsøk. Angi et filnavn, eller la det være tomt for å deaktivere."
 config_general_numbers: "Hvordan foretrekker du at tall vises? Velg eksempelet som passer best for deg."
 config_general_other_verification: "Kontroller for å verifisere andre typer forespørsler der det er mulig."
-config_general_protect_frontend: "Angir om beskyttelsen som normalt leveres av CIDRAM, skal brukes på frontenden. True = Ja [Standardverdi]; False = Nei."
 config_general_search_engine_verification: "Kontroller for å verifisere forespørsler fra søkemotorer."
 config_general_signatures_update_event_log: "En fil for logging når signaturer oppdateres via frontend. Angi et filnavn, eller la det være tomt for å deaktivere."
 config_general_silent_mode: "Bør CIDRAM stille omdirigere blokkerte tilgangsforsøk i stedet for å vise "Tilgang Nektet" siden? Hvis ja, spesifiser stedet for å omdirigere blokkerte tilgangsforsøk til. Hvis nei, la denne variablen være tom."

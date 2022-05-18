@@ -22,20 +22,9 @@ set_error_handler(function ($errno, $errstr, $errfile, $errline) {
     exit(1);
 });
 
-// "CIDRAM" constant needed as sanity check for some required files.
-define('CIDRAM', true);
-
-// Global variable for all our closures, plus vault path declaration.
-$CIDRAM = ['Vault' => __DIR__ . DIRECTORY_SEPARATOR . 'vault' . DIRECTORY_SEPARATOR];
-
-// Load each required file or exit immediately if any of them don't exist.
-foreach (['functions.php', 'config.php', 'frontend_functions.php'] as $File) {
-    if (!is_readable($CIDRAM['Vault'] . $File)) {
-        echo $File . '.php is not readable.' . PHP_EOL;
-        exit(2);
-    }
-    require $CIDRAM['Vault'] . $File;
-}
+define('DEV_DEBUG_MODE', true);
+require_once __DIR__ . DIRECTORY_SEPARATOR . 'vault' . DIRECTORY_SEPARATOR . 'loader.php';
+$CIDRAM = new \CIDRAM\CIDRAM\Core();
 
 // Test expand IPv4 factors.
 $Expected = [
@@ -72,7 +61,7 @@ $Expected = [
     '127.0.0.0/31',
     '127.0.0.1/32'
 ];
-if (serialize($Expected) !== serialize($CIDRAM['ExpandIPv4']('127.0.0.1'))) {
+if (serialize($Expected) !== serialize($CIDRAM->expandIpv4('127.0.0.1'))) {
     echo 'ExpandIPv4 failed.' . PHP_EOL;
     exit(3);
 }
@@ -208,7 +197,7 @@ $Expected = [
     '0::/127',
     '0::1/128'
 ];
-if (serialize($Expected) !== serialize($CIDRAM['ExpandIPv6']('::1'))) {
+if (serialize($Expected) !== serialize($CIDRAM->expandIpv6('::1'))) {
     echo 'ExpandIPv6 failed.' . PHP_EOL;
     exit(4);
 }

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Korean language data for the front-end (last modified: 2022.05.12).
+# This file: Korean language data for the front-end (last modified: 2022.05.16).
 ##/
 
 Extended Description Bypasses: "기본 서명 우회 일반적으로 기본 패키지에 포함되어 있습니다."
@@ -102,7 +102,6 @@ config_general_config_imports: "CIDRAM 기본 구성으로 가져올 쉼표로 �
 config_general_default_algo: "향후 모든 암호와 세션에 사용할 알고리즘을 정의합니다."
 config_general_default_dns: "호스트 이름 검색에 사용하는 DNS (도메인 이름 시스템) 서버의 쉼표로 구분 된 목록입니다. Default (기본 설정) = "8.8.8.8,8.8.4.4" (Google DNS). 주의\_: 당신이 무엇을하고 있는지 모르는 한이를 변경하지 마십시오."
 config_general_default_timeout: "외부 요청에 사용할 기본 제한 시간? Default (기본 설정) = 12 초."
-config_general_disable_frontend: "프론트 엔드에 대한 액세스를 비활성화하거나? 프론트 엔드에 대한 액세스는 CIDRAM을 더 쉽게 관리 할 수 있습니다. 상기 그것은 또한 잠재적 인 보안 위험이 될 수 있습니다. 백엔드를 통해 관리하는 것이 좋습니다,하지만 이것이 불가능한 경우 프론트 엔드에 대한 액세스를 제공. 당신이 그것을 필요로하지 않는 한 그것을 해제합니다. <code>false</code> = 프론트 엔드에 대한 액세스를 활성화합니다; <code>true</code> = 프론트 엔드에 대한 액세스를 비활성화합니다 (Default / 기본 설정)."
 config_general_disabled_channels: "이것은 CIDRAM이 요청을 보낼 때 특정 채널을 사용하지 못하게하는 데 사용할 수 있습니다 (예를 들어, 업데이트 할 때, 구성 요소 메타 데이터를 가져올 때, 등등)."
 config_general_emailaddr: "여기에 이메일 주소를 입력하고 사용자가 차단 된 경우 사용자에게 보낼 수 있습니다. 이것은 지원과 지원에 사용할 수 있습니다 (실수로 차단 된 경우 등). 경고\_: 여기에 입력 된 전자 이메일 주소는 아마 스팸 로봇에 의해 취득됩니다. 여기에서 제공되는 전자 이메일 주소는 모든 일회용하는 것이 좋습니다 (예를 들어, 기본 개인 주소 또는 비즈니스 주소를 사용하지 않는 등)."
 config_general_emailaddr_display_style: "사용자에게 전자 메일 주소를 어떻게 표시 하시겠습니까?"
@@ -123,7 +122,6 @@ config_general_logfile_apache: "액세스 시도 저지를 기록, Apache 스타
 config_general_logfile_serialized: "액세스 시도 저지를 기록 직렬화되었습니다. 파일 이름을 지정하십시오. 비활성화하려면 비워 둡니다."
 config_general_numbers: "어떻게 숫자를 표시하는 것을 선호합니까? 가장 정확한 것으로 보이는 예제를 선택하십시오."
 config_general_other_verification: "가능한 경우 다른 종류의 요청을 확인하기 위한 제어입니다."
-config_general_protect_frontend: "CIDRAM 의해 보통 제공되는 보호를 프론트 엔드에 적용할지 여부를 지정합니다. True = 예 (Default / 기본값); False = 아니오."
 config_general_search_engine_verification: "검색 엔진의 요청을 확인하기 위한 컨트롤입니다."
 config_general_signatures_update_event_log: "프런트 엔드임를 통해 서명이 업데이트될 때 로깅을 위한 파일입니다. 파일 이름을 지정하십시오. 비활성화하려면 비워 둡니다."
 config_general_silent_mode: ""액세스 거부" 페이지를 표시하는 대신 CIDRAM는 차단 된 액세스 시도를 자동으로 리디렉션해야합니까? 그렇다면 리디렉션 위치를 지정합니다. 아니오의 경우이 변수를 비워 둡니다."

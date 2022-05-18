@@ -34,7 +34,6 @@ jobs:
     run: |
      lintPaths=()
      lintPaths+=("${GITHUB_WORKSPACE}/vault")
-     lintPaths+=("${GITHUB_WORKSPACE}/loader.php")
      for lintPath in "${lintPaths[@]}"
      do
      for file in `find "$lintPath"`

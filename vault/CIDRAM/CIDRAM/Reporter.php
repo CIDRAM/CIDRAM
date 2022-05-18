@@ -11,7 +11,7 @@
  * This file: Report orchestrator (last modified: 2022.02.21).
  */
 
-namespace CIDRAM\Core;
+namespace CIDRAM\CIDRAM;
 
 class Reporter
 {

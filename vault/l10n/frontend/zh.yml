@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (simplified) language data for the front-end (last modified: 2022.05.12).
+# This file: Chinese (simplified) language data for the front-end (last modified: 2022.05.16).
 ##/
 
 Extended Description Bypasses: "标准签名旁路文件通常包括在主包。"
@@ -102,7 +102,6 @@ config_general_config_imports: "要导入CIDRAM默认配置的以逗号分隔的
 config_general_default_algo: "定义要用于所有未来密码和会话的算法。"
 config_general_default_dns: "以逗号分隔的DNS服务器列表，​用于主机名查找。​标准 = “8.8.8.8,8.8.4.4” (Google DNS)。​警告：不要修改此除非您知道什么您做着！"
 config_general_default_timeout: "用于外部请求的默认超时？ 标准 = 12秒。"
-config_general_disable_frontend: "关闭前端访问吗？​前端访问可以使CIDRAM更易于管理，​但也可能是潜在的安全风险。​建议管理CIDRAM通过后端只要有可能，​但前端访问提供当不可能。​保持关闭除非您需要它。​False（假）=激活前端访问；True（真）=关闭前端访问【标准】。"
 config_general_disabled_channels: "这可用于防止CIDRAM在发送请求时使用特定通道（例如，在更新时，在获取组件元数据时，等等）。"
 config_general_emailaddr: "如果您希望，​您可以提供电子邮件地址这里要给予用户当他们被阻止，​他们使用作为接触点为支持和/或帮助在的情况下他们错误地阻止。​警告:您提供的任何电子邮件地址，​它肯定会被获得通过垃圾邮件机器人和铲运机，​所以，​它强烈推荐如果选择提供一个电子邮件地址这里，​您保证它是一次性的和/或不是很重要（换一种说法，​您可能不希望使用您的主电子邮件地址或您的企业电子邮件地址）。"
 config_general_emailaddr_display_style: "您希望如何将电子邮件地址呈现给用户？"
@@ -123,7 +122,6 @@ config_general_logfile_apache: "Apache风格文件用于记录所有被拦截的
 config_general_logfile_serialized: "连载的文件用于记录所有被拦截的访问。​指定一个文件名，​或留空以禁用。"
 config_general_numbers: "您如何喜欢显示数字？​选择最适合示例。"
 config_general_other_verification: "用于在可能的情况下，验证其他类型的请求的控件。"
-config_general_protect_frontend: "指定是否应将CIDRAM通常提供的保护应用于前端。​True（真）=是【标准】；False（假）=不是。"
 config_general_search_engine_verification: "用于验证来自搜索引擎的请求的控件。"
 config_general_signatures_update_event_log: "通过前端更新签名时用于记录的文件。​指定一个文件名，​或留空以禁用。"
 config_general_silent_mode: "CIDRAM应该默默重定向被拦截的访问而不是显示该“拒绝访问”页吗？​指定位置至重定向被拦截的访问，​或让它空将其禁用。"

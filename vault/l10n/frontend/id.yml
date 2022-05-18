@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Indonesian language data for the front-end (last modified: 2022.05.12).
+# This file: Indonesian language data for the front-end (last modified: 2022.05.16).
 ##/
 
 Extended Description Bypasses: "File untuk bypass tanda tangan standar yang biasanya disertakan dengan paket utama."
@@ -102,7 +102,6 @@ config_general_config_imports: "Sebuah daftar dipisahkan dengan koma untuk file 
 config_general_default_algo: "Mendefinisikan algoritma mana yang akan digunakan untuk semua password dan sesi di masa depan."
 config_general_default_dns: "Sebuah daftar dipisahkan dengan koma dari server DNS yang digunakan untuk pencarian nama host. Default = "8.8.8.8,8.8.4.4" (Google DNS). PERINGATAN: Jangan ganti ini kecuali Anda tahu apa yang Anda lakukan!"
 config_general_default_timeout: "Batas waktu default untuk digunakan untuk permintaan eksternal? Default = 12 detik."
-config_general_disable_frontend: "Menonaktifkan akses bagian depan? Akses bagian depan dapat membuat CIDRAM lebih mudah dikelola, tapi juga dapat menjadi potensial resiko keamanan. Itu direkomendasi untuk mengelola CIDRAM melalui bagian belakang bila mungkin, tapi akses bagian depan yang disediakan untuk saat itu tidak mungkin. Memilikinya dinonaktifkan kecuali jika Anda membutuhkannya. False = Mengaktifkan akses bagian depan; True = Menonaktifkan akses bagian depan [Default]."
 config_general_disabled_channels: "Ini dapat digunakan untuk mencegah CIDRAM dari menggunakan saluran tertentu saat mengirim permintaan (misalnya, saat memperbarui, saat mengambil metadata komponen, dll)."
 config_general_emailaddr: "Jika Anda ingin, Anda dapat menyediakan alamat email sini untuk diberikan kepada pengguna ketika diblokir, bagi mereka untuk menggunakan sebagai metode kontak untuk dukungan dan/atau bantuan untuk dalam hal mereka menjadi diblokir keliru atau diblokir oleh kesalahan. PERINGATAN: Apapun alamat email Anda menyediakan sini akan pasti diperoleh oleh spambots dan pencakar/scrapers ketika digunakan disini, dan karena itu, jika Anda ingin memberikan alamat email disini, itu sangat direkomendasikan Anda memastikan bahwa alamat email yang Anda berikan disini adalah alamat yang dapat dibuang dan/atau adalah alamat Anda tidak keberatan menjadi di-spam (dengan kata lain, Anda mungkin tidak ingin untuk menggunakan Anda alamat email yang personal primer atau bisnis primer)."
 config_general_emailaddr_display_style: "Bagaimana Anda lebih suka alamat email yang akan disajikan kepada pengguna?"
@@ -123,7 +122,6 @@ config_general_logfile_apache: "File yang dalam gaya Apache untuk mencatat semua
 config_general_logfile_serialized: "File serial untuk mencatat semua upaya akses diblokir. Spesifikasikan nama file, atau biarkan kosong untuk menonaktifkan."
 config_general_numbers: "Cara apa yang kamu suka nomor menjadi ditampilkan? Pilih contoh yang paling sesuai untuk Anda."
 config_general_other_verification: "Kontrol untuk memverifikasi jenis permintaan lain jika memungkinkan."
-config_general_protect_frontend: "Menentukan apakah perlindungan biasanya disediakan oleh CIDRAM harus diterapkan pada bagian depan. True = Ya [Default]; False = Tidak."
 config_general_search_engine_verification: "Kontrol untuk memverifikasi permintaan dari mesin pencari."
 config_general_signatures_update_event_log: "File untuk mencatat ketika tanda tangan diperbarui melalui bagian depan. Spesifikasikan nama file, atau biarkan kosong untuk menonaktifkan."
 config_general_silent_mode: "Seharusnya CIDRAM diam-diam mengarahkan diblokir upaya akses bukannya menampilkan halaman "Akses Ditolak"? Jika ya, menentukan lokasi untuk mengarahkan diblokir upaya akses. Jika tidak, kosongkan variabel ini."

@@ -11,7 +11,7 @@
  * This file: Captcha class (last modified: 2022.03.01).
  */
 
-namespace CIDRAM\Core;
+namespace CIDRAM\CIDRAM;
 
 class Captcha
 {

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Portuguese language data for the front-end (last modified: 2022.05.12).
+# This file: Portuguese language data for the front-end (last modified: 2022.05.16).
 ##/
 
 Extended Description Bypasses: "Os arquivos para bypass das assinaturas padrão normalmente incluído com o pacote principal."
@@ -102,7 +102,6 @@ config_general_config_imports: "Uma lista delimitada por vírgulas de arquivos a
 config_general_default_algo: "Define qual algoritmo usar para todas as futuras senhas e sessões."
 config_general_default_dns: "Uma lista delimitada por vírgulas de servidores DNS a serem usados para pesquisas de nomes de host. Padrão = "8.8.8.8,8.8.4.4" (Google DNS). ATENÇÃO: Não mude isso a menos que você saiba o que está fazendo!"
 config_general_default_timeout: "Tempo limite padrão a ser usado para solicitações externas? Padrão = 12 segundos."
-config_general_disable_frontend: "Desativar o acesso front-end? Acesso front-end pode fazer CIDRAM mais manejável, mas também pode ser um risco de segurança potencial, também. É recomendado para gerenciar CIDRAM através do back-end, sempre que possível, mas o acesso front-end é proporcionada para quando não é possível. Mantê-lo desativado, a menos que você precisar. False = Ativar o acesso front-end; True = Desativar o acesso front-end [Padrão]."
 config_general_disabled_channels: "Isso pode ser usado para impedir que o CIDRAM use canais específicos ao enviar solicitações (por exemplo, ao atualizar, ao buscar metadados de componentes, etc)."
 config_general_emailaddr: "Se você desejar, você pode fornecer um endereço de e-mail aqui a ser dado para os usuários quando eles estão bloqueadas, para eles para usar como um ponto de contato para suporte e/ou assistência no caso de eles sendo bloqueado por engano ou em erro. AVISO: Qualquer endereço de e-mail que você fornecer aqui certamente vai ser adquirido por spambots e raspadores/scrapers durante o curso de seu ser usada aqui, e assim, é fortemente recomendado que, se você optar por fornecer um endereço de e-mail aqui, que você garantir que o endereço de email você fornecer aqui é um endereço descartável e/ou um endereço que você não é importante (em outras palavras, você provavelmente não quer usar seu pessoal principal ou negócio principal endereço de e-mail)."
 config_general_emailaddr_display_style: "Como você prefere que o endereço de e-mail seja apresentado aos usuários?"
@@ -123,7 +122,6 @@ config_general_logfile_apache: "Um arquivo no estilo da Apache para registrar to
 config_general_logfile_serialized: "Um arquivo serializado para registrar todas as tentativas de acesso bloqueadas. Especifique o nome de um arquivo, ou deixe em branco para desabilitar."
 config_general_numbers: "Como você prefere que os números sejam exibidos? Selecione o exemplo que parece mais correto para você."
 config_general_other_verification: "Controles para verificar outros tipos de solicitações sempre que possível."
-config_general_protect_frontend: "Especifica se as proteções normalmente fornecidas pelo CIDRAM devem ser aplicadas ao front-end. True = Sim [Padrão]; False = Não."
 config_general_search_engine_verification: "Controles para verificar solicitações de mecanismos de pesquisa."
 config_general_signatures_update_event_log: "Um arquivo para registrar quando as assinaturas são atualizadas por meio do front-end. Especifique o nome de um arquivo, ou deixe em branco para desabilitar."
 config_general_silent_mode: "Deve CIDRAM silenciosamente redirecionar as tentativas de acesso bloqueadas em vez de exibir o "Acesso Negado" página? Se sim, especificar o local para redirecionar as tentativas de acesso bloqueadas para. Se não, deixe esta variável em branco."

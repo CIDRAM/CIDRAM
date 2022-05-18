@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Turkish language data for the front-end (last modified: 2022.05.12).
+# This file: Turkish language data for the front-end (last modified: 2022.05.16).
 ##/
 
 Extended Description Bypasses: "Varsayılan imza bypass'lar, normalde ana paketle birlikte verilir."
@@ -102,7 +102,6 @@ config_general_config_imports: "CIDRAM varsayılan yapılandırmasına aktarıla
 config_general_default_algo: "Gelecekteki tüm şifreler ve oturumlar için hangi algoritmayı kullanacağını tanımlar."
 config_general_default_dns: "Ana makine adı aramalarda kullanılacak virgülle ayrılmış DNS sunucuları listesi. Varsayılan = "8.8.8.8,8.8.4.4" (Google DNS). UYARI: Ne yaptığınızı bilmiyorsanız bunu değiştirmeyin!"
 config_general_default_timeout: "Harici istekler için kullanılacak varsayılan zaman aşımı? Varsayılan = 12 saniye."
-config_general_disable_frontend: "Ön uç erişimini devre dışı bırak? Ön uç erişimi CIDRAM'ın daha yönetilebilir hale getirebilir, ancak potansiyel bir güvenlik riski de oluşturabilir. CIDRAM'ın mümkün olduğunda arka ucundan yönetmesi önerilir, ancak kolaylık sağlamak için ön uç erişimi sağlanmıştır. İhtiyacınız olmadıkça devre dışı bırakın. False = Ön uç erişimini etkinleştir; True = Ön uç erişimini devre dışı bırak [Varsayılan]."
 config_general_disabled_channels: "Bu, istek gönderirken CIDRAM'ın belirli kanalları kullanmasını önlemek için kullanılabilir (örneğin, güncelleme yaparken, bileşen meta verileri alınırken, vb.)."
 config_general_emailaddr: "İsterseniz, kullanıcıları engellediğinde verilecek bir e-posta adresi sağlayabilirsiniz, yanlışlıkla engellendikleri zaman destek için sizinle iletişim kurabilmeleri için. UYARI: Burada tedarik ettiğiniz e-posta adresiniz kesinlikle spambotlar ve sıyırıcılar tarafından edinilecektir. Bu nedenle, tek kullanımlık veya önemsiz bir e-posta adresini seçmeniz kesinlikle önerilir (diğer bir deyişle, büyük olasılıkla birincil kişisel veya birincil iş e-posta adreslerinizi kullanmak istemiyorsunuzdur)."
 config_general_emailaddr_display_style: "E-posta adresinin kullanıcılara sunulmasını nasıl tercih ederdiniz?"
@@ -123,7 +122,6 @@ config_general_logfile_apache: "Engellenen tüm erişim girişimlerini kaydetmek
 config_general_logfile_serialized: "Engellenen tüm erişim girişimlerini kaydetmek için seri haline getirilmiş dosya. Dosya adı belirtin veya devre dışı bırakmak için boş bırakın."
 config_general_numbers: "Numaraların görüntülenmesini nasıl tercih edersiniz? Size en uygun görünen örneği seçin."
 config_general_other_verification: "Mümkün olduğunda diğer türdeki istekleri doğrulamak için kontroller."
-config_general_protect_frontend: "Normal olarak CIDRAM tarafından sağlanan korumaların ön uça uygulanıp uygulanmayacağını belirtir. Doğru/True = Evet [Varsayılan]; Yanlış/False = Hayır."
 config_general_search_engine_verification: "Arama motorlarından gelen istekleri doğrulamak için kontroller."
 config_general_signatures_update_event_log: "Ön uç aracılığıyla imzalar güncellendiğinde günlüğe kaydedilecek bir dosya. Dosya adı belirtin veya devre dışı bırakmak için boş bırakın."
 config_general_silent_mode: "CIDRAM, "Erişim Reddedildi" sayfasını göstermek yerine, engellenen erişim girişimlerini sessizce yönlendirmeli mi? Yanıt evet ise, engellenen erişim girişimleri için yeniden yönlendirilecek konumu belirtin. Yanıt hayır ise, bu değişkeni boş bırakın."

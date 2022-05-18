@@ -8,22 +8,54 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: IP aggregator (last modified: 2022.04.02).
+ * This file: IP aggregator (last modified: 2022.05.18).
  */
 
-namespace CIDRAM\Aggregator;
+namespace CIDRAM\CIDRAM;
 
 class Aggregator
 {
+    use Expand;
+
     /**
      * @var string|array Output.
      */
     public $Output = '';
 
     /**
-     * @var array Access parent scope data, closures, variables, etc.
+     * @var bool Results switch.
      */
-    public $CIDRAM = [];
+    public $Results = false;
+
+    /**
+     * @var int Number of lines for aggregation entered.
+     */
+    public $NumberEntered = 0;
+
+    /**
+     * @var int Number of lines for aggregation rejected.
+     */
+    public $NumberRejected = 0;
+
+    /**
+     * @var int Number of lines for aggregation accepted.
+     */
+    public $NumberAccepted = 0;
+
+    /**
+     * @var int Number of lines aggregated or merged.
+     */
+    public $NumberMerged = 0;
+
+    /**
+     * @var int Number of lines returned.
+     */
+    public $NumberReturned = 0;
+
+    /**
+     * @var int Time consumed while aggregating data.
+     */
+    public $ProcessingTime = 0;
 
     /**
      * @var array Optional callbacks.
@@ -60,12 +92,14 @@ class Aggregator
     /**
      * Constructor.
      *
+     * @param int $Mode Specifies the format to use for Aggregator output.
+     *      0 = CIDR notation [default].
+     *      1 = Netmask notation.
      * @return void
      */
-    public function __construct(array &$CIDRAM, int $Mode = 0)
+    public function __construct(int $Mode = 0)
     {
         $this->constructTables();
-        $this->CIDRAM = &$CIDRAM;
         $this->Mode = $Mode;
     }
 
@@ -79,6 +113,7 @@ class Aggregator
      */
     public function aggregate($In): string
     {
+        $Begin = microtime(true);
         $this->Output = $In;
         $this->stripInvalidCharactersAndSort($this->Output);
         $this->stripInvalidRangesAndSubs($this->Output);
@@ -86,7 +121,23 @@ class Aggregator
         if ($this->Mode === 1) {
             $this->convertToNetmasks($this->Output);
         }
+        $this->ProcessingTime = microtime(true) - $Begin;
         return $this->Output;
+    }
+
+    /**
+     * Resets numbers.
+     *
+     * @return void
+     */
+    public function resetNumbers(): void
+    {
+        $this->NumberEntered = 0;
+        $this->NumberRejected = 0;
+        $this->NumberAccepted = 0;
+        $this->NumberMerged = 0;
+        $this->NumberReturned = 0;
+        $this->ProcessingTime = 0;
     }
 
     /**
@@ -133,18 +184,18 @@ class Aggregator
         if (isset($this->callbacks['newParse']) && is_callable($this->callbacks['newParse'])) {
             $this->callbacks['newParse']($InCount);
         }
-        if (isset($this->CIDRAM['Results'])) {
-            $this->CIDRAM['Results']['In'] = $InCount;
+        if (!empty($this->Results)) {
+            $this->NumberEntered = $InCount;
         }
         unset($InCount);
-        $In = array_filter(array_unique(array_map(function (string $Line): string {
+        $In = array_filter(array_unique(array_map(function ($Line) {
             $Line = preg_replace(['~^(?:#| \*|/\*).*~', '~^[^\da-f:./]*~i', '~[ \t].*$~', '~[^\da-f:./]*$~i'], '', $Line);
             if (isset($this->callbacks['newTick']) && is_callable($this->callbacks['newTick'])) {
                 $this->callbacks['newTick']();
             }
             return (!$Line || !preg_match('~[\da-f:./]+~i', $Line) || preg_match('~[^\da-f:./]+~i', $Line)) ? '' : $Line;
         }, $In)));
-        usort($In, function (string $A, string $B) {
+        usort($In, function ($A, $B) {
             if (($Pos = strpos($A, '/')) !== false) {
                 $ASize = substr($A, $Pos + 1);
                 $A = substr($A, 0, $Pos);
@@ -152,9 +203,9 @@ class Aggregator
                 $ASize = 0;
             }
             $AType = 0;
-            if ($this->CIDRAM['ExpandIPv4']($A, true)) {
+            if ($this->expandIpv4($A, true)) {
                 $AType = 4;
-            } elseif ($this->CIDRAM['ExpandIPv6']($A, true)) {
+            } elseif ($this->expandIpv6($A, true)) {
                 $AType = 6;
             }
             $A = $AType ? inet_pton($A) : false;
@@ -175,9 +226,9 @@ class Aggregator
                 $BSize = 0;
             }
             $BType = 0;
-            if ($this->CIDRAM['ExpandIPv4']($B, true)) {
+            if ($this->expandIpv4($B, true)) {
                 $BType = 4;
-            } elseif ($this->CIDRAM['ExpandIPv6']($B, true)) {
+            } elseif ($this->expandIpv6($B, true)) {
                 $BType = 6;
             }
             $B = $BType ? inet_pton($B) : false;
@@ -275,9 +326,9 @@ class Aggregator
                 }
                 $CIDR = $Line;
             }
-            if (($Size > 0 && $Size <= 32) && ($CIDRs = $this->CIDRAM['ExpandIPv4']($CIDR, false, $Size - 1))) {
+            if (($Size > 0 && $Size <= 32) && ($CIDRs = $this->expandIpv4($CIDR, false, $Size - 1))) {
                 $Type = 4;
-            } elseif (($Size > 0 && $Size <= 128) && ($CIDRs = $this->CIDRAM['ExpandIPv6']($CIDR, false, $Size - 1))) {
+            } elseif (($Size > 0 && $Size <= 128) && ($CIDRs = $this->expandIpv6($CIDR, false, $Size - 1))) {
                 $Type = 6;
             } else {
                 $Out = str_replace("\n" . $Line . "\n", "\n", $Out);
@@ -292,18 +343,18 @@ class Aggregator
             for ($Range = $Size - 2; $Range >= $ThisLow; $Range--) {
                 if (isset($CIDRs[$Range]) && strpos($Out, "\n" . $CIDRs[$Range] . "\n") !== false) {
                     $Out = str_replace("\n" . $CIDRs[$Size - 1] . "\n", "\n", $Out);
-                    if (isset($this->CIDRAM['Results'])) {
-                        $this->CIDRAM['Results']['Merged']++;
+                    if (!empty($this->Results)) {
+                        $this->NumberMerged++;
                     }
                     break;
                 }
             }
         }
         $In = trim($Out);
-        if (isset($this->CIDRAM['Results'])) {
-            $this->CIDRAM['Results']['Out'] = empty($In) ? 0 : substr_count($In, "\n") + 1;
-            $this->CIDRAM['Results']['Rejected'] = $this->CIDRAM['Results']['In'] - $this->CIDRAM['Results']['Out'] - $this->CIDRAM['Results']['Merged'];
-            $this->CIDRAM['Results']['Accepted'] = $this->CIDRAM['Results']['In'] - $this->CIDRAM['Results']['Rejected'];
+        if (!empty($this->Results)) {
+            $this->NumberReturned = empty($In) ? 0 : substr_count($In, "\n") + 1;
+            $this->NumberRejected = $this->NumberEntered - $this->NumberReturned - $this->NumberMerged;
+            $this->NumberAccepted = $this->NumberEntered - $this->NumberRejected;
         }
     }
 
@@ -336,8 +387,8 @@ class Aggregator
                 $RangeSep = strpos($Line, '/');
                 $Size = (int)substr($Line, $RangeSep + 1);
                 $CIDR = substr($Line, 0, $RangeSep);
-                if (!$CIDRs = $this->CIDRAM['ExpandIPv4']($CIDR, false, $Size - 1)) {
-                    $CIDRs = $this->CIDRAM['ExpandIPv6']($CIDR, false, $Size - 1);
+                if (!$CIDRs = $this->expandIpv4($CIDR, false, $Size - 1)) {
+                    $CIDRs = $this->expandIpv6($CIDR, false, $Size - 1);
                 }
                 if ($Line === $PrevLine) {
                     $Out = str_replace("\n" . $PrevLine . "\n" . $Line . "\n", "\n" . $Line . "\n", $Out);
@@ -351,9 +402,9 @@ class Aggregator
                     $Out = str_replace("\n" . $PrevLine . "\n" . $Line . "\n", "\n" . $CIDRs[$Size - 2] . "\n", $Out);
                     $Line = $CIDRs[$Size - 2];
                     $Size--;
-                    if (isset($this->CIDRAM['Results'])) {
-                        $this->CIDRAM['Results']['Merged']++;
-                        $this->CIDRAM['Results']['Out']--;
+                    if (!empty($this->Results)) {
+                        $this->NumberMerged++;
+                        $this->NumberReturned--;
                     }
                 }
             }
@@ -370,7 +421,7 @@ class Aggregator
      * @param string
      * @return void
      */
-    public function convertToNetmasks(string &$In): void
+    private function convertToNetmasks(string &$In): void
     {
         if (isset($this->callbacks['newParse']) && is_callable($this->callbacks['newParse'])) {
             $this->callbacks['newParse'](substr_count($In, "\n"));
@@ -388,7 +439,7 @@ class Aggregator
             }
             $Size = (int)substr($Line, $RangeSep + 1);
             $CIDR = substr($Line, 0, $RangeSep);
-            $Type = ($this->CIDRAM['ExpandIPv4']($CIDR, true)) ? 4 : 6;
+            $Type = ($this->expandIpv4($CIDR, true)) ? 4 : 6;
             if ($Type === 4 && isset($this->TableNetmaskIPv4[$Size])) {
                 $Size = $this->TableNetmaskIPv4[$Size];
             } elseif ($Type === 6 && isset($this->TableNetmaskIPv6[$Size])) {

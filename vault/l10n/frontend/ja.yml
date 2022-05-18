@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Japanese language data for the front-end (last modified: 2022.05.12).
+# This file: Japanese language data for the front-end (last modified: 2022.05.16).
 ##/
 
 Extended Description Bypasses: "メインパッケージに通常含まれているデフォルト・シグネチャ・バイパス。"
@@ -102,7 +102,6 @@ config_general_config_imports: "CIDRAMのデフォルト・コンフィグレー
 config_general_default_algo: "将来のすべてのパスワードとセッションに使用するアルゴリズムを定義します。"
 config_general_default_dns: "ホスト名検索に使用する、​ＤＮＳ（ドメイン・ネーム・システム）サーバーのカンマ区切りリスト。​Default（デフォルルト） = "8.8.8.8,8.8.4.4" （Google DNS）。​注意：あなたが何をしているのか、​分からない限り、​これを変更しないでください。"
 config_general_default_timeout: "外部リクエストに使用するデフォルトのタイムアウト？ Default/デフォルルト = １２秒。"
-config_general_disable_frontend: "フロントエンドへのアクセスを無効にするか？​フロントエンドへのアクセスは、​CIDRAMをより管理しやすくすることができます。​前記、​それはまた、​潜在的なセキュリティリスクになる可能性があります。​バックエンドを経由して管理することをお勧めします、​しかし、​これが不可能な場合、​フロントエンドへのアクセスが提供され。​あなたがそれを必要としない限り、​それを無効にします。​<code>false</code>（偽） = フロントエンドへのアクセスを有効にします；​<code>true</code>（真） = フロントエンドへのアクセスを無効にします（Default/デフォルルト）。"
 config_general_disabled_channels: "これは、要求を送信するときにCIDRAMが特定のチャネルを使用しないようにするために使用できます​（例えば、更新時、コンポーネント・メタデータの取得時、など）。"
 config_general_emailaddr: "ここにＥメールアドレスを入力して、​ユーザーがブロックされているときにユーザーに送信することができます。​これはサポートと支援に使用できます（誤ってブロックされた場合、​等）。​警告：​ここに入力された電子Ｅメールアドレスは、​おそらくスパムロボットによって取得されます。​ここで提供される電子Ｅメールアドレスは、​すべて使い捨てにすることを強く推奨します（例えば、​プライマリ個人アドレスまたはビジネスアドレスを使用しない、​等）。"
 config_general_emailaddr_display_style: "ユーザーに電子Ｅメール・アドレスを提示することをどのように希望しますか？"
@@ -123,7 +122,6 @@ config_general_logfile_apache: "アクセス試行阻止の記録、​Apacheス
 config_general_logfile_serialized: "アクセス試行阻止の記録、​シリアル化されました。​ファイル名指定するか、​無効にしたい場合は空白のままにして下さい。"
 config_general_numbers: "どのように数字を表示するのが好きですか？​あなたに一番正しい例を選択してください。"
 config_general_other_verification: "可能な場合は、他の種類のリクエストを検証するためのコントロール。"
-config_general_protect_frontend: "CIDRAMによって通常提供される保護をフロントエンドに適用するかどうかを指定します。 True = はい（Default/デフォルルト）。 False = いいえ。"
 config_general_search_engine_verification: "検索エンジンからのリクエストを検証するためのコントロール。"
 config_general_signatures_update_event_log: "フロントエンドを介してシグネチャ・ファイルが更新されたときにログに記録するためのファイル。​ファイル名指定するか、​無効にしたい場合は空白のままにして下さい。"
 config_general_silent_mode: "「アクセス拒否」ページを表示する代わりに、​CIDRAMはブロックされたアクセス試行を自動的にリダイレクトする必要がありますか？​はいの場合は、​リダイレクトの場所を指定します。​いいえの場合は、​この変数を空白のままにします。"

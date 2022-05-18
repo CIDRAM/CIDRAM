@@ -408,9 +408,6 @@ Config Defaults:
    choices:
     default: "field_clickable_link"
     noclick: "field_nonclickable_text"
-  disable_frontend:
-   type: "bool"
-   default: true
   signatures_update_event_log:
    type: "string"
    default: ""
@@ -551,9 +548,6 @@ Config Defaults:
     AmazonAdBot: "AmazonAdBot"
     Grapeshot: "Oracle Data Cloud Crawler"
    hints: "hints_verification"
-  protect_frontend:
-   type: "bool"
-   default: true
   default_algo:
    type: "string"
    default: "PASSWORD_DEFAULT"

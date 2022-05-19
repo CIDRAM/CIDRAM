@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Defaults file (last modified: 2022.05.16).
+# This file: Defaults file (last modified: 2022.05.19).
 ##/
 
 Config Defaults:
@@ -348,7 +348,7 @@ Config Defaults:
     vi: "Tiếng Việt"
     zh: "中文（简体）"
     zh-tw: "中文（傳統）"
-   choice_filter: "FilterLang"
+   choice_filter: "filterLang"
   lang_override:
    type: "bool"
    default: true
@@ -556,7 +556,7 @@ Config Defaults:
     PASSWORD_BCRYPT: "PASSWORD_BCRYPT"
     PASSWORD_ARGON2I: "PASSWORD_ARGON2I"
     PASSWORD_ARGON2ID: "PASSWORD_ARGON2ID (PHP >= 7.3.0)"
-   choice_filter: "FilterByDefined"
+   choice_filter: "filterByDefined"
   statistics:
    type: "checkbox"
    default: |
@@ -630,7 +630,7 @@ Config Defaults:
     primerdark: "Primer Dark"
     rbi: "Red-Blue Inverted"
     slate: "Slate"
-   choice_filter: "FilterTheme"
+   choice_filter: "filterThemeFrontEnd"
   magnification:
    type: "float"
    step: "any"
@@ -835,7 +835,7 @@ Config Defaults:
     primerdark: "Primer Dark"
     rbi: "Red-Blue Inverted"
     slate: "Slate"
-   choice_filter: "FilterTheme"
+   choice_filter: "filterThemeCore"
    lightdark:
     default: "light"
     bluemetal: "dark"

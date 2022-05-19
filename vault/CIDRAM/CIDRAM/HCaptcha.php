@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: HCaptcha class (last modified: 2022.05.18).
+ * This file: HCaptcha class (last modified: 2022.05.19).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -303,7 +303,7 @@ class HCaptcha extends Captcha
      */
     private function doResponse(): void
     {
-        $this->Results = $this->Request('https://hcaptcha.com/siteverify', [
+        $this->Results = $this->Request->request('https://hcaptcha.com/siteverify', [
             'secret' => $this->CIDRAM['Config']['hcaptcha']['secret'],
             'response' => $_POST['hc-response'],
             'remoteip' => $this->CIDRAM['IPAddr']

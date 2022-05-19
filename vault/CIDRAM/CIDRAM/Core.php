@@ -8,14 +8,15 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM core (last modified: 2022.05.18).
+ * This file: The CIDRAM core (last modified: 2022.05.19).
  */
 
 namespace CIDRAM\CIDRAM;
 
 class Core
 {
-    use Expand, Protect;
+    use Expand;
+    use Protect;
 
     /**
      * @var string The path to CIDRAM's configuration file.
@@ -81,17 +82,17 @@ class Core
      * @var \Maikuolan\Common\NumberFormatter Used to format numbers according
      *      to the specified configuration.
      */
-    private $NumberFormatter;
+    public $NumberFormatter;
 
     /**
      * @var \Maikuolan\Common\Demojibakefier Ensure correct data encoding.
      */
-    private $Demojibakefier;
+    public $Demojibakefier;
 
     /**
      * @var \CIDRAM\CIDRAM\Reporter Instantiate report orchestrator (used by some modules).
      */
-    private $Reporter;
+    public $Reporter;
 
     /**
      * @var string CIDRAM version number (SemVer).
@@ -137,42 +138,42 @@ class Core
     /**
      * @var string The current stage of the execution chain.
      */
-    private $Stage = '';
+    public $Stage = '';
 
     /**
      * @var array The stages of the execution chain.
      */
-    private $Stages = [];
+    public $Stages = [];
 
     /**
      * @var array The statistics to be tracked.
      */
-    private $StatisticsTracked = [];
+    public $StatisticsTracked = [];
 
     /**
      * @var array The current statistics.
      */
-    private $Statistics = [];
+    public $Statistics = [];
 
     /**
      * @var array Request profiling to provide greater nuance for block events.
      */
-    private $Profiles = [];
+    public $Profiles = [];
 
     /**
      * @var array Sometimes used with certain kinds of blocked requests.
      */
-    private $Webooks = [];
+    public $Webooks = [];
 
     /**
      * @var array Channels information for request.
      */
-    private $Channels = [];
+    public $Channels = [];
 
     /**
      * @var string The default hashing algorithm for CIDRAM to use.
      */
-    private $DefaultAlgo = '';
+    public $DefaultAlgo = '';
 
     /**
      * @var int Default file blocksize (128KB).
@@ -308,7 +309,7 @@ class Core
         }
 
         /** Perform fallbacks and autotyping for missing configuration directives. */
-        $this->Fallback($this->CIDRAM['Config Defaults'], $this->Configuration);
+        $this->fallback($this->CIDRAM['Config Defaults'], $this->Configuration);
 
         /** Fetch the IP address of the current request. */
         $this->ipAddr = (new \Maikuolan\Common\IPHeader($this->Configuration['general']['ipaddr']))->Resolution;
@@ -649,15 +650,15 @@ class Core
                         }
                     }
                     if ($RunExitCode === 4) {
-                        $this->ZeroOutBlockInfo();
+                        $this->zeroOutBlockInfo();
                         break 3;
                     }
                     if ($Category === 'Whitelist' || $RunExitCode === 3) {
-                        $this->ZeroOutBlockInfo(true);
+                        $this->zeroOutBlockInfo(true);
                         break 3;
                     }
                     if ($Category === 'Greylist' || $RunExitCode === 2) {
-                        $this->ZeroOutBlockInfo();
+                        $this->zeroOutBlockInfo();
                         break 2;
                     }
                     if ($Category === 'Deny' && $Signature !== '') {
@@ -722,7 +723,7 @@ class Core
 
         /** Fetch ignore.dat data. */
         if (!isset($this->CIDRAM['Ignore'])) {
-            $this->CIDRAM['Ignore'] = $this->FetchIgnores();
+            $this->CIDRAM['Ignore'] = $this->fetchIgnores();
         }
 
         $this->CIDRAM['Whitelisted'] = false;
@@ -734,7 +735,7 @@ class Core
                 $this->Configuration['signatures']['ipv4']
             ) ? [] : explode(',', $this->Configuration['signatures']['ipv4']);
             try {
-                $IPv4Test = $this->CheckFactors($IPv4Files, $IPv4Factors);
+                $IPv4Test = $this->checkFactors($IPv4Files, $IPv4Factors);
             } catch (\Exception $e) {
                 throw new \Exception($e->getMessage());
             }
@@ -754,7 +755,7 @@ class Core
                 $this->Configuration['signatures']['ipv6']
             ) ? [] : explode(',', $this->Configuration['signatures']['ipv6']);
             try {
-                $IPv6Test = $this->CheckFactors($IPv6Files, $IPv6Factors);
+                $IPv6Test = $this->checkFactors($IPv6Files, $IPv6Factors);
             } catch (\Exception $e) {
                 throw new \Exception($e->getMessage());
             }
@@ -927,7 +928,7 @@ class Core
                     }
                 }
                 if (isset($DData['type'])) {
-                    $this->AutoType($Dir, $DData['type']);
+                    $this->autoType($Dir, $DData['type']);
                 }
             }
         }
@@ -1175,7 +1176,7 @@ class Core
             /** Block non-verified requests. */
             if (isset($this->CIDRAM['VPermissions'][$Friendly . 'BlockNonVerified:'])) {
                 $Reason = sprintf($this->L10N->getString('Short_Unverified_UA'), $Friendly);
-                $this->Trigger(true, $Reason);
+                $this->trigger(true, $Reason);
             }
 
             return;
@@ -1255,7 +1256,7 @@ class Core
 
         /** It's a fake; Block it. */
         $Reason = sprintf($this->L10N->getString('Short_Fake_UA'), $Friendly);
-        $this->Trigger(true, $Reason);
+        $this->trigger(true, $Reason);
 
         /** Reporting. */
         $this->Reporter->report([19], ['Caught masquerading as ' . $Friendly . '.'], $this->BlockInfo['IPAddr']);
@@ -1362,7 +1363,7 @@ class Core
 
         /** Nothing matched. Block it. */
         $Reason = sprintf($this->L10N->getString('Short_Fake_UA'), $Friendly);
-        $this->Trigger(true, $Reason);
+        $this->trigger(true, $Reason);
 
         /** Reporting. */
         $this->Reporter->report([19], ['Caught masquerading as ' . $Friendly . '.'], $this->BlockInfo['IPAddr']);
@@ -1902,7 +1903,7 @@ class Core
         }
 
         /** Applies time/date replacements. */
-        $Path = $this->TimeFormat($this->Now, $Path);
+        $Path = $this->timeFormat($this->Now, $Path);
 
         /** We'll skip is_dir/mkdir calls if open_basedir is populated (to avoid PHP bug #69240). */
         $Restrictions = strlen(ini_get('open_basedir')) > 0;
@@ -2250,18 +2251,18 @@ class Core
 
         /** Whitelist. */
         if ($Action === 'Whitelist' || $RunExitCode === 3) {
-            $this->ZeroOutBlockInfo(true);
+            $this->zeroOutBlockInfo(true);
             return true;
         }
 
         /** Greylist. */
         if ($Action === 'Greylist' || $RunExitCode === 2) {
-            $this->ZeroOutBlockInfo();
+            $this->zeroOutBlockInfo();
         }
 
         /** Block. */
         elseif ($Action === 'Block' || $RunExitCode === 1) {
-            $this->Trigger(true, $Name, $Reason);
+            $this->trigger(true, $Name, $Reason);
             if ($StatusCode > 400) {
                 $this->CIDRAM['Aux Status Code'] = $StatusCode;
             }

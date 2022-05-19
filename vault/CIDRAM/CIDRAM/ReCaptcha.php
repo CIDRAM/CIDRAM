@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: ReCaptcha class (last modified: 2022.05.18).
+ * This file: ReCaptcha class (last modified: 2022.05.19).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -296,7 +296,7 @@ class ReCaptcha extends Captcha
      */
     private function doResponse(): void
     {
-        $this->Results = $this->Request('https://www.google.com/recaptcha/api/siteverify', [
+        $this->Results = $this->Request->request('https://www.google.com/recaptcha/api/siteverify', [
             'secret' => $this->CIDRAM['Config']['recaptcha']['secret'],
             'response' => $_POST['g-recaptcha-response'],
             'remoteip' => $this->CIDRAM['IPAddr']

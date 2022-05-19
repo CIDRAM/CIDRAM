@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Protect traits (last modified: 2022.05.18).
+ * This file: Protect traits (last modified: 2022.05.19).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -71,7 +71,7 @@ trait Protect
         $this->BlockInfo = [
             'ID' => $this->generateId(),
             'ScriptIdent' => $this->ScriptIdent,
-            'DateTime' => $this->TimeFormat($this->Now, $this->Configuration['general']['time_format']),
+            'DateTime' => $this->timeFormat($this->Now, $this->Configuration['general']['time_format']),
             'IPAddr' => $this->ipAddr,
             'IPAddrResolved' => $this->resolve6to4($this->ipAddr),
             'favicon' => $this->CIDRAM['favicon'],
@@ -115,7 +115,7 @@ trait Protect
 
             /** Run all IPv4/IPv6 tests. */
             try {
-                $this->CIDRAM['TestResults'] = $this->RunTests($this->BlockInfo['IPAddr'], true);
+                $this->CIDRAM['TestResults'] = $this->runTests($this->BlockInfo['IPAddr'], true);
             } catch (\Exception $e) {
                 $this->Events->fireEvent('final');
                 die($e->getMessage());
@@ -124,7 +124,7 @@ trait Protect
             /** Run all IPv4/IPv6 tests for resolved IP address if necessary. */
             if ($this->BlockInfo['IPAddrResolved'] && $this->CIDRAM['TestResults'] && empty($this->CIDRAM['Whitelisted'])) {
                 try {
-                    $this->CIDRAM['TestResults'] = $this->RunTests($this->BlockInfo['IPAddrResolved'], true);
+                    $this->CIDRAM['TestResults'] = $this->runTests($this->BlockInfo['IPAddrResolved'], true);
                 } catch (\Exception $e) {
                     $this->Events->fireEvent('final');
                     die($e->getMessage());
@@ -254,7 +254,7 @@ trait Protect
             if (empty($this->CIDRAM['Whitelisted']) && isset($this->Stages['Aux:Enable'])) {
                 $Before = $this->BlockInfo['SignatureCount'];
                 $this->Stage = 'Aux';
-                $this->Aux();
+                $this->aux();
                 if (isset($this->Stages['Aux:Tracking']) && $this->BlockInfo['SignatureCount'] > $Before) {
                     $this->BlockInfo['Infractions'] += $this->BlockInfo['SignatureCount'] - $Before;
                 }
@@ -365,7 +365,7 @@ trait Protect
                             $this->rateLimitClean();
                         }
                         $this->CIDRAM['RL_Usage'] = $this->rateGetUsage();
-                        if ($this->Trigger((
+                        if ($this->trigger((
                             ($RLMaxBandwidth > 0 && $this->CIDRAM['RL_Usage']['Bytes'] >= $RLMaxBandwidth) ||
                             ($this->Configuration['rate_limiting']['max_requests'] > 0 && $this->CIDRAM['RL_Usage']['Requests'] >= $this->Configuration['rate_limiting']['max_requests'])
                         ), $this->L10N->getString('Short_RL'))) {
@@ -568,7 +568,7 @@ trait Protect
                 $this->CIDRAM['Webhook'] = $this->parseVars($this->CIDRAM['ParsedToWebhook'], $this->CIDRAM['Webhook']);
 
                 /** Perform request. */
-                $this->CIDRAM['Webhook'] = $this->Request(
+                $this->CIDRAM['Webhook'] = $this->Request->request(
                     $this->CIDRAM['Webhook'],
                     $this->CIDRAM['WebhookParams'],
                     $this->CIDRAM['WebhookTimeout']

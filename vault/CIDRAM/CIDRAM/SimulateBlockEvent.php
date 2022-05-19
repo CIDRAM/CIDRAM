@@ -1,0 +1,196 @@
+<?php
+/**
+ * This file is an optional extension of the CIDRAM package.
+ * Homepage: https://cidram.github.io/
+ *
+ * CIDRAM COPYRIGHT 2016 and beyond by Caleb Mazalevskis (Maikuolan).
+ *
+ * License: GNU/GPLv2
+ * @see LICENSE.txt
+ *
+ * This file: The CIDRAM updater (last modified: 2022.05.19).
+ */
+
+namespace CIDRAM\CIDRAM;
+
+trait SimulateBlockEvent
+{
+    /**
+     * Simulates block event (used by the IP tracking and IP test pages).
+     *
+     * @param string $Addr The IP address to test against.
+     * @param bool $Modules Specifies whether to test against modules.
+     * @param bool $Aux Specifies whether to test against auxiliary rules.
+     * @param bool $Verification Specifies whether to test against search engine and social media verification.
+     * @return void
+     */
+    public function simulateBlockEvent(string $Addr, bool $Modules = false, bool $Aux = false, bool $Verification = false): void
+    {
+        /** Reset bypass flags (needed to prevent falsing due to search engine verification). */
+        $this->resetBypassFlags();
+
+        /** Initialise SimulateBlockEvent. */
+        foreach ($this->CIDRAM['Provide']['Initialise SimulateBlockEvent'] as $InitialiseKey => $InitialiseValue) {
+            if (is_array($InitialiseValue) && isset($this->CIDRAM[$InitialiseKey]) && is_array($this->CIDRAM[$InitialiseKey])) {
+                $this->CIDRAM[$InitialiseKey] = array_replace_recursive($this->CIDRAM[$InitialiseKey], $InitialiseValue);
+                continue;
+            }
+            $this->CIDRAM[$InitialiseKey] = $InitialiseValue;
+        }
+
+        /** To be populated by webhooks. */
+        $this->Webhooks = [];
+
+        /** Reset request profiling. */
+        $this->Profiles = [];
+
+        /** Reset factors. */
+        $this->CIDRAM['Factors'] = [];
+
+        /** Populate BlockInfo. */
+        $this->BlockInfo = [
+            'ID' => $this->generateId(),
+            'ScriptIdent' => $this->ScriptIdent,
+            'DateTime' => 'SimulateBlockEvent',
+            'IPAddr' => $Addr,
+            'IPAddrResolved' => $this->resolve6to4($Addr),
+            'Query' => !empty($this->CIDRAM['FE']['custom-query']) ? $this->CIDRAM['FE']['custom-query'] : 'SimulateBlockEvent',
+            'Referrer' => !empty($this->CIDRAM['FE']['custom-referrer']) ? $this->CIDRAM['FE']['custom-referrer'] : 'SimulateBlockEvent',
+            'UA' => !empty($this->CIDRAM['FE']['custom-ua']) ? $this->CIDRAM['FE']['custom-ua'] : 'SimulateBlockEvent',
+            'SignatureCount' => 0,
+            'Signatures' => '',
+            'WhyReason' => '',
+            'ReasonMessage' => '',
+            'rURI' => 'SimulateBlockEvent',
+            'Infractions' => $this->CIDRAM['Tracking'][$this->BlockInfo['IPAddr']]['Count'] ?? 0,
+            'ASNLookup' => 0,
+            'CCLookup' => 'XX',
+            'Verified' => '',
+            'Expired' => '',
+            'Ignored' => '',
+            'Request_Method' => 'SimulateBlockEvent',
+            'xmlLang' => $this->Configuration['general']['lang']
+        ];
+        $this->BlockInfo['UALC'] = strtolower($this->BlockInfo['UA']);
+
+        /** Appending query onto the reconstructed URI. */
+        if (!empty($this->CIDRAM['FE']['custom-query'])) {
+            $this->BlockInfo['rURI'] .= '?' . $this->CIDRAM['FE']['custom-query'];
+        }
+
+        if (strlen($Addr)) {
+            /** Catch run errors. */
+            $this->initialiseErrorHandler();
+
+            /** Standard IP check. */
+            try {
+                $this->CIDRAM['Caught'] = false;
+                $this->CIDRAM['TestResults'] = $this->runTests($Addr, true);
+            } catch (\Exception $e) {
+                $this->CIDRAM['Caught'] = true;
+            }
+
+            /** Resolved IP check. */
+            if ($this->BlockInfo['IPAddrResolved']) {
+                if (!empty($this->CIDRAM['ThisIP']['IPAddress'])) {
+                    $this->CIDRAM['ThisIP']['IPAddress'] .= ' (' . $this->BlockInfo['IPAddrResolved'] . ')';
+                }
+                try {
+                    $this->CIDRAM['TestResults'] = ($this->runTests($this->BlockInfo['IPAddrResolved'], true) || $this->CIDRAM['TestResults']);
+                } catch (\Exception $e) {
+                    $this->CIDRAM['Caught'] = true;
+                }
+            }
+
+            /** Prepare run errors. */
+            $this->CIDRAM['RunErrors'] = $this->CIDRAM['Errors'];
+            $this->restoreErrorHandler();
+        }
+
+        if (isset($this->Stages['Tests:Tracking']) && $this->BlockInfo['SignatureCount'] > 0) {
+            $this->BlockInfo['Infractions'] += $this->BlockInfo['SignatureCount'];
+        }
+
+        /** Instantiate report orchestrator (used by some modules). */
+        $this->Reporter = new \CIDRAM\CIDRAM\Reporter();
+
+        /** Execute modules, if any have been enabled. */
+        if ($Modules && $this->Configuration['signatures']['modules'] && empty($this->CIDRAM['Whitelisted'])) {
+            if (!isset($this->CIDRAM['ModuleResCache'])) {
+                $this->CIDRAM['ModuleResCache'] = [];
+            }
+            $this->initialiseErrorHandler();
+            $Modules = explode(',', $this->Configuration['signatures']['modules']);
+            if (!$this->Configuration['signatures']['tracking_override']) {
+                $RestoreTrackingOptionsOverride = $this->CIDRAM['Tracking options override'] ?? '';
+            }
+
+            /**
+             * Doing this with array_walk instead of foreach to ensure that modules
+             * have their own scope and that superfluous data isn't preserved.
+             */
+            array_walk($Modules, function ($Module): void {
+                if (
+                    !empty($this->CIDRAM['Whitelisted']) ||
+                    preg_match('~^(?:assets|classes)[\x2F\x5C]|\.(css|gif|html?|jpe?g|js|png|ya?ml)$~i', $Module)
+                ) {
+                    return;
+                }
+                $Module = (strpos($Module, ':') === false) ? $Module : substr($Module, strpos($Module, ':') + 1);
+                $Before = $this->BlockInfo['SignatureCount'];
+                if (isset($this->CIDRAM['ModuleResCache'][$Module]) && is_object($this->CIDRAM['ModuleResCache'][$Module])) {
+                    $this->CIDRAM['ModuleResCache'][$Module]();
+                } elseif (file_exists($this->ModulesPath . $Module) && is_readable($this->ModulesPath . $Module)) {
+                    require $this->ModulesPath . $Module;
+                }
+                if (isset($this->Stages['Modules:Tracking']) && $this->BlockInfo['SignatureCount'] > $Before) {
+                    $this->BlockInfo['Infractions'] += $this->BlockInfo['SignatureCount'] - $Before;
+                }
+            });
+
+            if (
+                !$this->Configuration['signatures']['tracking_override'] &&
+                !empty($this->CIDRAM['Tracking options override']) &&
+                isset($RestoreTrackingOptionsOverride)
+            ) {
+                $this->CIDRAM['Tracking options override'] = $RestoreTrackingOptionsOverride;
+            }
+
+            $this->CIDRAM['ModuleErrors'] = $this->CIDRAM['Errors'];
+            $this->restoreErrorHandler();
+        }
+
+        /** Execute search engine verification. */
+        if ($Verification && empty($this->CIDRAM['Whitelisted'])) {
+            $this->searchEngineVerification();
+        }
+
+        /** Execute social media verification. */
+        if ($Verification && empty($this->CIDRAM['Whitelisted'])) {
+            $this->socialMediaVerification();
+        }
+
+        /** Execute other verification. */
+        if ($Verification && empty($this->CIDRAM['Whitelisted'])) {
+            $this->otherVerification();
+        }
+
+        /** Process auxiliary rules, if any exist. */
+        if ($Aux && empty($this->CIDRAM['Whitelisted'])) {
+            $this->initialiseErrorHandler();
+            $Before = $this->BlockInfo['SignatureCount'];
+            $this->aux();
+            if (isset($this->Stages['Aux:Tracking']) && $this->BlockInfo['SignatureCount'] > $Before) {
+                $this->BlockInfo['Infractions'] += $this->BlockInfo['SignatureCount'] - $Before;
+            }
+            $this->CIDRAM['AuxErrors'] = $this->CIDRAM['Errors'];
+            $this->restoreErrorHandler();
+        }
+
+        /**
+         * Destroying the reporter (we won't process reports in this case, because we're only simulating block events,
+         * as opposed to checking against actual, real requests; still needed to set it though to prevent errors).
+         */
+        $this->Reporter = null;
+    }
+}

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Captcha class (last modified: 2022.05.18).
+ * This file: Captcha class (last modified: 2022.05.19).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -120,12 +120,12 @@ class Captcha
     public function generateSalt(): string
     {
         if (!file_exists($this->CIDRAM['Vault'] . 'salt.dat')) {
-            $Salt = $this->CIDRAM['GenerateSalt']();
+            $Salt = $this->generateSalt();
             $Handle = fopen($this->CIDRAM['Vault'] . 'salt.dat', 'wb');
             fwrite($Handle, $Salt);
             fclose($Handle);
             return $Salt;
         }
-        return $this->CIDRAM['ReadFile']($this->CIDRAM['Vault'] . 'salt.dat');
+        return $this->readFile($this->CIDRAM['Vault'] . 'salt.dat');
     }
 }

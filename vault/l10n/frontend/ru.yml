@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Russian language data for the front-end (last modified: 2022.05.16).
+# This file: Russian language data for the front-end (last modified: 2022.05.20).
 ##/
 
 Extended Description Bypasses: "Стандартная сигнатуры байпасы, обычно включены в основной пакет."
@@ -72,20 +72,6 @@ checkbox_label_stage_infractions: "Засчитывать нарушения, в
 checkbox_label_stage_log_errors: "Записывать какие-либо ошибки, возникшие на этом этапе?"
 checkbox_label_untrack_positives: "Перестать отслеживать положительные?"
 checkbox_label_verify: "Попробуй проверить?"
-config_PHPMailer: "Конфигурация для PHPMailer (используется для двухфакторной аутентификации)."
-config_PHPMailer_add_reply_to_address: "Адрес ответа для отправки электронной почты через SMTP."
-config_PHPMailer_add_reply_to_name: "Имя ответа для отправки электронной почты через SMTP."
-config_PHPMailer_enable_two_factor: "Эта директива включает/отключает использование 2FA для фронтенд счетов."
-config_PHPMailer_event_log: "Файл для регистрации всех событий в отношении PHPMailer. Задайте имя файлу, или оставьте пустым чтобы деактивировать опцию."
-config_PHPMailer_host: "Хост SMTP используется для исходящей электронной почты."
-config_PHPMailer_password: "Пароль для отправки электронной почты через SMTP."
-config_PHPMailer_port: "Номер порта для исходящей электронной почты. Стандарт = 587."
-config_PHPMailer_set_from_address: "Адрес отправителя для отправки электронной почты через SMTP."
-config_PHPMailer_set_from_name: "Имя отправителя для отправки электронной почты через SMTP."
-config_PHPMailer_skip_auth_process: "Установка этой директивы на <code>true</code> указывает PHPMailer пропустить обычный процесс проверки подлинности, который обычно возникает при отправке электронной почты через SMTP. Этого следует избегать, поскольку пропуская этот процесс может выдать исходящую электронную почту для атак MITM, но может потребоваться в тех случаях, когда этот процесс препятствует подключению PHPMailer к SMTP-серверу."
-config_PHPMailer_smtp_auth: "Эта директива включает/отключает аутентификацию сессия SMTP (обычно ее следует оставить в покое)."
-config_PHPMailer_smtp_secure: "Протокол для при отправке электронной почты через SMTP (TLS или SSL)."
-config_PHPMailer_username: "Имя пользователя для отправки электронной почты через SMTP."
 config_bypasses: "Стандартная конфигурация байпаса сигнатуры."
 config_bypasses_used: "Какие байпасы следует использовать?"
 config_experimental: "Нестабильный/Экспериментальный!"
@@ -148,6 +134,20 @@ config_hcaptcha_usemode: &CaptchaUseMode "Когда следует предла
 config_legal: "Конфигурация для юридических требований."
 config_legal_privacy_policy: "Адрес соответствующей политики конфиденциальности, отображаемый в нижнем колонтитуле любых сгенерированных страниц. Укажите URL-адрес, или оставьте пустым для отключения."
 config_legal_pseudonymise_ip_addresses: "Псевдонимный IP-адреса при записи файлов журнала? True = Да [Стандарт]; False = Нет."
+config_phpmailer: "Конфигурация для PHPMailer (используется для двухфакторной аутентификации)."
+config_phpmailer_add_reply_to_address: "Адрес ответа для отправки электронной почты через SMTP."
+config_phpmailer_add_reply_to_name: "Имя ответа для отправки электронной почты через SMTP."
+config_phpmailer_enable_two_factor: "Эта директива включает/отключает использование 2FA для фронтенд счетов."
+config_phpmailer_event_log: "Файл для регистрации всех событий в отношении PHPMailer. Задайте имя файлу, или оставьте пустым чтобы деактивировать опцию."
+config_phpmailer_host: "Хост SMTP используется для исходящей электронной почты."
+config_phpmailer_password: "Пароль для отправки электронной почты через SMTP."
+config_phpmailer_port: "Номер порта для исходящей электронной почты. Стандарт = 587."
+config_phpmailer_set_from_address: "Адрес отправителя для отправки электронной почты через SMTP."
+config_phpmailer_set_from_name: "Имя отправителя для отправки электронной почты через SMTP."
+config_phpmailer_skip_auth_process: "Установка этой директивы на <code>true</code> указывает PHPMailer пропустить обычный процесс проверки подлинности, который обычно возникает при отправке электронной почты через SMTP. Этого следует избегать, поскольку пропуская этот процесс может выдать исходящую электронную почту для атак MITM, но может потребоваться в тех случаях, когда этот процесс препятствует подключению PHPMailer к SMTP-серверу."
+config_phpmailer_smtp_auth: "Эта директива включает/отключает аутентификацию сессия SMTP (обычно ее следует оставить в покое)."
+config_phpmailer_smtp_secure: "Протокол для при отправке электронной почты через SMTP (TLS или SSL)."
+config_phpmailer_username: "Имя пользователя для отправки электронной почты через SMTP."
 config_rate_limiting: "Конфигурация для ограничения скорости (не рекомендуется для общего пользования)."
 config_rate_limiting_allowance_period: "Количество часов для мониторинга использования. Стандарт = 0."
 config_rate_limiting_exceptions: "Исключения (т.е., запросы, которые не должны ограничиваться). Действует только при включенном ограничении скорости."

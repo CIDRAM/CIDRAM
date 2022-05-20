@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (traditional) language data for the front-end (last modified: 2022.05.16).
+# This file: Chinese (traditional) language data for the front-end (last modified: 2022.05.20).
 ##/
 
 Extended Description Bypasses: "標準簽名旁路文件通常包括在主包。"
@@ -72,20 +72,6 @@ checkbox_label_stage_infractions: "將在此階段產生的違規計入IP跟踪�
 checkbox_label_stage_log_errors: "記錄在此階段產生的任何錯誤？"
 checkbox_label_untrack_positives: "取消跟踪陽性？"
 checkbox_label_verify: "嘗試驗證？"
-config_PHPMailer: "PHPMailer的配置（用於雙因素身份驗證）。"
-config_PHPMailer_add_reply_to_address: "通過SMTP發送電子郵件時引用的回复地址。"
-config_PHPMailer_add_reply_to_name: "通過SMTP發送電子郵件時引用的回複姓名。"
-config_PHPMailer_enable_two_factor: "該指令確定是否將2FA用於前端帳戶。"
-config_PHPMailer_event_log: "用於記錄與PHPMailer相關的所有事件的文件。​指定一個文件名，​或留空以禁用。"
-config_PHPMailer_host: "用於出站電子郵件的SMTP主機。"
-config_PHPMailer_password: "通過SMTP發送電子郵件時使用的密碼。"
-config_PHPMailer_port: "用於出站電子郵件的端口號。​標準=587。"
-config_PHPMailer_set_from_address: "通過SMTP發送電子郵件時引用的發件人地址。"
-config_PHPMailer_set_from_name: "通過SMTP發送電子郵件時引用的發件人姓名。"
-config_PHPMailer_skip_auth_process: "將此指令設置為<code>true</code>會指示PHPMailer跳過通過SMTP發送電子郵件時通常會發生的正常身份驗證過程。​應該避免這種情況，因為跳過此過程可能會將出站電子郵件暴露給MITM攻擊，但在此過程阻止PHPMailer連接到SMTP服務器的情況下可能是必要的。"
-config_PHPMailer_smtp_auth: "此指令確定是否對SMTP會話進行身份驗證（通常應該保持不變）。"
-config_PHPMailer_smtp_secure: "通過SMTP發送電子郵件時使用的協議（TLS或SSL）。"
-config_PHPMailer_username: "通過SMTP發送電子郵件時使用的用戶名。"
 config_bypasses: "默認簽名繞過配置。"
 config_bypasses_used: "應該使用哪些繞過？"
 config_experimental: "不穩定/實驗！"
@@ -148,6 +134,20 @@ config_hcaptcha_usemode: &CaptchaUseMode "何時應提供CAPTCHA嗎？​注意�
 config_legal: "法律要求的配置。"
 config_legal_privacy_policy: "要顯示在任何生成的頁面的頁腳中的相關隱私政策的地址。​指定一個URL，或留空以禁用。"
 config_legal_pseudonymise_ip_addresses: "編寫日誌文件時使用假名的IP地址嗎？​True（真）=使用假名【標準】；False（假）=不使用假名。"
+config_phpmailer: "PHPMailer的配置（用於雙因素身份驗證）。"
+config_phpmailer_add_reply_to_address: "通過SMTP發送電子郵件時引用的回复地址。"
+config_phpmailer_add_reply_to_name: "通過SMTP發送電子郵件時引用的回複姓名。"
+config_phpmailer_enable_two_factor: "該指令確定是否將2FA用於前端帳戶。"
+config_phpmailer_event_log: "用於記錄與PHPMailer相關的所有事件的文件。​指定一個文件名，​或留空以禁用。"
+config_phpmailer_host: "用於出站電子郵件的SMTP主機。"
+config_phpmailer_password: "通過SMTP發送電子郵件時使用的密碼。"
+config_phpmailer_port: "用於出站電子郵件的端口號。​標準=587。"
+config_phpmailer_set_from_address: "通過SMTP發送電子郵件時引用的發件人地址。"
+config_phpmailer_set_from_name: "通過SMTP發送電子郵件時引用的發件人姓名。"
+config_phpmailer_skip_auth_process: "將此指令設置為<code>true</code>會指示PHPMailer跳過通過SMTP發送電子郵件時通常會發生的正常身份驗證過程。​應該避免這種情況，因為跳過此過程可能會將出站電子郵件暴露給MITM攻擊，但在此過程阻止PHPMailer連接到SMTP服務器的情況下可能是必要的。"
+config_phpmailer_smtp_auth: "此指令確定是否對SMTP會話進行身份驗證（通常應該保持不變）。"
+config_phpmailer_smtp_secure: "通過SMTP發送電子郵件時使用的協議（TLS或SSL）。"
+config_phpmailer_username: "通過SMTP發送電子郵件時使用的用戶名。"
 config_rate_limiting: "速率限制的配置（不建議一般使用）。"
 config_rate_limiting_allowance_period: "監視使用情況的小時數。​標準=0。"
 config_rate_limiting_exceptions: "例外（即，不應限制速率的請求）。​僅在啟用速率限制時有效。"

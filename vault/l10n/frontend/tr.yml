@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Turkish language data for the front-end (last modified: 2022.05.16).
+# This file: Turkish language data for the front-end (last modified: 2022.05.20).
 ##/
 
 Extended Description Bypasses: "Varsayılan imza bypass'lar, normalde ana paketle birlikte verilir."
@@ -72,20 +72,6 @@ checkbox_label_stage_infractions: "IP izleme yönelik bu aşamada oluşturulan i
 checkbox_label_stage_log_errors: "Bu aşamada oluşan herhangi bir hata günlüğe kaydedilsin mi?"
 checkbox_label_untrack_positives: "Pozitifler için izleme durdurulsun mu?"
 checkbox_label_verify: "Doğrulamayı dene?"
-config_PHPMailer: "PHPMailer için yapılandırma (iki faktörlü kimlik doğrulama için kullanılır)."
-config_PHPMailer_add_reply_to_address: "SMTP ile e-posta gönderirken kullanılacak cevap adresi."
-config_PHPMailer_add_reply_to_name: "SMTP ile e-posta gönderirken kullanılacak cevap ismi."
-config_PHPMailer_enable_two_factor: "Bu yönerge, ön uç hesapları için 2FA kullanılıp kullanılmayacağını belirler."
-config_PHPMailer_event_log: "PHPMailer ile ilgili tüm olayları günlüğe kaydetmek için bir dosya. Dosya adı belirtin veya devre dışı bırakmak için boş bırakın."
-config_PHPMailer_host: "Giden e-posta için kullanılacak SMTP ana bilgisayarı."
-config_PHPMailer_password: "SMTP ile e-posta gönderirken kullanılacak şifre."
-config_PHPMailer_port: "Giden e-posta için kullanılacak bağlantı noktası numarası. Varsayılan = 587."
-config_PHPMailer_set_from_address: "SMTP ile e-posta gönderirken kullanılacak gönderen adresi."
-config_PHPMailer_set_from_name: "SMTP ile e-posta gönderirken kullanılacak gönderenin adı."
-config_PHPMailer_skip_auth_process: "<code>true</code> olduğunda, PHPMailer normalde SMTP yoluyla e-posta gönderirken oluşan kimlik doğrulama işlemini atlar. Bu işlemin atlanması, giden e-postaları MITM saldırılarına maruz bırakabilir. Bazı durumlarda olsa gerekli olabilir (ör., PHPMailer bir SMTP sunucusuna bağlanamadığında)."
-config_PHPMailer_smtp_auth: "Bu yönerge SMTP oturumlarının doğrulanıp onaylanmayacağını belirler (genellikle bunu yalnız bırakmalısın)."
-config_PHPMailer_smtp_secure: "SMTP ile e-posta gönderirken kullanılacak protokol (TLS veya SSL)."
-config_PHPMailer_username: "SMTP ile e-posta gönderirken kullanılacak kullanıcı adı."
 config_bypasses: "Varsayılan imza bypass için yapılandırma."
 config_bypasses_used: "Hangi bypasslar kullanılmalıdır?"
 config_experimental: "Kararsız/Deneysel!"
@@ -148,6 +134,20 @@ config_hcaptcha_usemode: &CaptchaUseMode "CAPTCHA ne zaman sunulmalı? Not: Beya
 config_legal: "Yasal gereklilikler için yapılandırma."
 config_legal_privacy_policy: "Oluşturulan sayfaların alt kısmında görüntülenecek ilgili gizlilik politikasının adresi. Bir URL belirtin veya devre dışı bırakmak için boş bırakın."
 config_legal_pseudonymise_ip_addresses: "Günlük dosyaları yazarken IP adresi "pseudonymize" edilir? Doğru/True = Evet [Varsayılan]; Yanlış/False = Hayır."
+config_phpmailer: "PHPMailer için yapılandırma (iki faktörlü kimlik doğrulama için kullanılır)."
+config_phpmailer_add_reply_to_address: "SMTP ile e-posta gönderirken kullanılacak cevap adresi."
+config_phpmailer_add_reply_to_name: "SMTP ile e-posta gönderirken kullanılacak cevap ismi."
+config_phpmailer_enable_two_factor: "Bu yönerge, ön uç hesapları için 2FA kullanılıp kullanılmayacağını belirler."
+config_phpmailer_event_log: "PHPMailer ile ilgili tüm olayları günlüğe kaydetmek için bir dosya. Dosya adı belirtin veya devre dışı bırakmak için boş bırakın."
+config_phpmailer_host: "Giden e-posta için kullanılacak SMTP ana bilgisayarı."
+config_phpmailer_password: "SMTP ile e-posta gönderirken kullanılacak şifre."
+config_phpmailer_port: "Giden e-posta için kullanılacak bağlantı noktası numarası. Varsayılan = 587."
+config_phpmailer_set_from_address: "SMTP ile e-posta gönderirken kullanılacak gönderen adresi."
+config_phpmailer_set_from_name: "SMTP ile e-posta gönderirken kullanılacak gönderenin adı."
+config_phpmailer_skip_auth_process: "<code>true</code> olduğunda, PHPMailer normalde SMTP yoluyla e-posta gönderirken oluşan kimlik doğrulama işlemini atlar. Bu işlemin atlanması, giden e-postaları MITM saldırılarına maruz bırakabilir. Bazı durumlarda olsa gerekli olabilir (ör., PHPMailer bir SMTP sunucusuna bağlanamadığında)."
+config_phpmailer_smtp_auth: "Bu yönerge SMTP oturumlarının doğrulanıp onaylanmayacağını belirler (genellikle bunu yalnız bırakmalısın)."
+config_phpmailer_smtp_secure: "SMTP ile e-posta gönderirken kullanılacak protokol (TLS veya SSL)."
+config_phpmailer_username: "SMTP ile e-posta gönderirken kullanılacak kullanıcı adı."
 config_rate_limiting: "Hız sınırlaması için yapılandırma (genel kullanım için önerilmez)."
 config_rate_limiting_allowance_period: "Kullanımı izlemek için saat sayısı. Varsayılan = 0."
 config_rate_limiting_exceptions: "İstisnalar (yani oran sınırlı olmaması gereken istekler). Yalnızca sınırlaması etkin olduğunda geçerlidir."

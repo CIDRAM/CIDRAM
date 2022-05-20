@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Italian language data for the front-end (last modified: 2022.05.16).
+# This file: Italian language data for the front-end (last modified: 2022.05.20).
 ##/
 
 Extended Description Bypasses: "Un file per bypassare alcune delle firme predefinite normalmente inclusi nel pacchetto principale."
@@ -72,20 +72,6 @@ checkbox_label_stage_infractions: "Le infrazioni generati durante questa fase de
 checkbox_label_stage_log_errors: "Gli errori generati durante questa fase devono essere registrati?"
 checkbox_label_untrack_positives: "Annulla le tracciamento per i positivi?"
 checkbox_label_verify: "Prova a verificare?"
-config_PHPMailer: "Configurazione per PHPMailer (utilizzato per l'autenticazione a due fattori)."
-config_PHPMailer_add_reply_to_address: "L'indirizzo di risposta per citare quando si invia una posta elettronica tramite SMTP."
-config_PHPMailer_add_reply_to_name: "Il nome per la risposta per citare quando si invia una posta elettronica tramite SMTP."
-config_PHPMailer_enable_two_factor: "Questa direttiva determina se utilizzare 2FA per gli account front-end."
-config_PHPMailer_event_log: "Un file per registrare tutti gli eventi in relazione a PHPMailer. Specificare un nome di file, o lasciare vuoto per disabilitare."
-config_PHPMailer_host: "L'host SMTP per utilizzare per la posta elettronica in uscita."
-config_PHPMailer_password: "La password per utilizzare per l'invio di posta elettronica tramite SMTP."
-config_PHPMailer_port: "Il numero di porta per utilizzare per la posta elettronica in uscita. Predefinito = 587."
-config_PHPMailer_set_from_address: "L'indirizzo del mittente per citare quando si invia una posta elettronica tramite SMTP."
-config_PHPMailer_set_from_name: "Il nome del mittente per citare quando si invia una posta elettronica tramite SMTP."
-config_PHPMailer_skip_auth_process: "Impostando questa direttiva su <code>true</code>, PHPMailer salta il normale processo di autenticazione che normalmente si verifica quando si invia una posta elettronica via SMTP. Questo dovrebbe essere evitato, perché saltare questo processo potrebbe esporre la posta elettronica in uscita agli attacchi MITM, ma potrebbe essere necessario nei casi in cui questo processo impedisce a PHPMailer di connettersi a un server SMTP."
-config_PHPMailer_smtp_auth: "Questa direttiva determina se autenticare le sessioni SMTP (di solito dovrebbe essere lasciato solo)."
-config_PHPMailer_smtp_secure: "Il protocollo per utilizzare per l'invio di posta elettronica tramite SMTP (TLS o SSL)."
-config_PHPMailer_username: "Il nome utente per utilizzare per l'invio di posta elettronica tramite SMTP."
 config_bypasses: "Configurazione per i bypass di firma predefiniti."
 config_bypasses_used: "Quali bypass dovrebbero essere usati?"
 config_experimental: "Instabile/Sperimentale!"
@@ -148,6 +134,20 @@ config_hcaptcha_usemode: &CaptchaUseMode "Quando dovrebbe essere offerto il CAPT
 config_legal: "Configurazione per requisiti legali."
 config_legal_privacy_policy: "L'indirizzo di una politica sulla privacy pertinente da visualizzare nel piè di pagina delle pagine generate. Specificare un URL, o lasciare vuoto per disabilitare."
 config_legal_pseudonymise_ip_addresses: "Pseudonimizzare gli indirizzi IP durante la scrivono i file di registro? True = Sì [Predefinito]; False = No."
+config_phpmailer: "Configurazione per PHPMailer (utilizzato per l'autenticazione a due fattori)."
+config_phpmailer_add_reply_to_address: "L'indirizzo di risposta per citare quando si invia una posta elettronica tramite SMTP."
+config_phpmailer_add_reply_to_name: "Il nome per la risposta per citare quando si invia una posta elettronica tramite SMTP."
+config_phpmailer_enable_two_factor: "Questa direttiva determina se utilizzare 2FA per gli account front-end."
+config_phpmailer_event_log: "Un file per registrare tutti gli eventi in relazione a PHPMailer. Specificare un nome di file, o lasciare vuoto per disabilitare."
+config_phpmailer_host: "L'host SMTP per utilizzare per la posta elettronica in uscita."
+config_phpmailer_password: "La password per utilizzare per l'invio di posta elettronica tramite SMTP."
+config_phpmailer_port: "Il numero di porta per utilizzare per la posta elettronica in uscita. Predefinito = 587."
+config_phpmailer_set_from_address: "L'indirizzo del mittente per citare quando si invia una posta elettronica tramite SMTP."
+config_phpmailer_set_from_name: "Il nome del mittente per citare quando si invia una posta elettronica tramite SMTP."
+config_phpmailer_skip_auth_process: "Impostando questa direttiva su <code>true</code>, PHPMailer salta il normale processo di autenticazione che normalmente si verifica quando si invia una posta elettronica via SMTP. Questo dovrebbe essere evitato, perché saltare questo processo potrebbe esporre la posta elettronica in uscita agli attacchi MITM, ma potrebbe essere necessario nei casi in cui questo processo impedisce a PHPMailer di connettersi a un server SMTP."
+config_phpmailer_smtp_auth: "Questa direttiva determina se autenticare le sessioni SMTP (di solito dovrebbe essere lasciato solo)."
+config_phpmailer_smtp_secure: "Il protocollo per utilizzare per l'invio di posta elettronica tramite SMTP (TLS o SSL)."
+config_phpmailer_username: "Il nome utente per utilizzare per l'invio di posta elettronica tramite SMTP."
 config_rate_limiting: "Configurazione per la limitazione della velocità (non raccomandato per uso generale)."
 config_rate_limiting_allowance_period: "Il numero di ore per monitorare l'utilizzo. Predefinito = 0."
 config_rate_limiting_exceptions: "Eccezioni (cioè, richieste che non dovrebbero essere limitate). Rilevante solo quando è abilitata la limitazione della velocità."

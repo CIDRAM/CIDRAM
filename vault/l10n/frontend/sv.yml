@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Swedish language data for the front-end (last modified: 2022.05.16).
+# This file: Swedish language data for the front-end (last modified: 2022.05.20).
 ##/
 
 Extended Description Bypasses: "Standard-signatur-bypass-filer som normalt ingår i huvudpaketet."
@@ -72,20 +72,6 @@ checkbox_label_stage_infractions: "Räkna infraktions som genererats under detta
 checkbox_label_stage_log_errors: "Logga några fel som genererats under detta skede?"
 checkbox_label_untrack_positives: "Sluta spåra efter positiva?"
 checkbox_label_verify: "Försök att verifiera?"
-config_PHPMailer: "Konfiguration för PHPMailer (används för tvåfaktorautentisering)."
-config_PHPMailer_add_reply_to_address: "Svaradressen att citera när du skickar e-post via SMTP."
-config_PHPMailer_add_reply_to_name: "Svarnamnet att citera när du skickar e-post via SMTP."
-config_PHPMailer_enable_two_factor: "Detta direktiv bestämmer huruvida du ska använda 2FA för frontend-konton."
-config_PHPMailer_event_log: "En fil för att logga alla händelser i förhållande till PHPMailer. Ange ett filnamn, eller lämna tomt för att inaktivera."
-config_PHPMailer_host: "Den SMTP-värd som används för utgående e-post."
-config_PHPMailer_password: "Lösenordet som ska användas när du skickar e-post via SMTP."
-config_PHPMailer_port: "Portnumret som ska användas för utgående e-post. Standard = 587."
-config_PHPMailer_set_from_address: "Avsändarens adress att citera när du skickar e-post via SMTP."
-config_PHPMailer_set_from_name: "Avsändarens namn för att citera när du skickar e-post via SMTP."
-config_PHPMailer_skip_auth_process: "Genom att ställa in detta direktiv till <code>true</code> instrueras PHPMailer att hoppa över den normala autentiseringsprocessen som normalt uppstår när du skickar e-post via SMTP. Detta bör undvikas, för att hoppa över den här processen kan avslöja utgående e-post till MITM-attacker, men kan vara nödvändigt i fall där denna process hindrar PHPMailer från att ansluta till en SMTP-server."
-config_PHPMailer_smtp_auth: "Detta direktiv bestämmer huruvida du ska autentisera SMTP-sessioner (borde normalt lämna det här ensam)."
-config_PHPMailer_smtp_secure: "Protokollet som ska användas när du skickar e-post via SMTP (TLS eller SSL)."
-config_PHPMailer_username: "Användarnamnet som ska användas när du skickar e-post via SMTP."
 config_bypasses: "Konfiguration för standard-signatur-bypasserna."
 config_bypasses_used: "Vilka bypasser ska användas?"
 config_experimental: "Instabil/Experimentell!"
@@ -148,6 +134,20 @@ config_hcaptcha_usemode: &CaptchaUseMode "När ska CAPTCHA erbjudas? Obs: Vitlis
 config_legal: "Konfiguration för lagkrav."
 config_legal_privacy_policy: "Adressen till en relevant integritetspolicy som ska visas i sidfoten av genererade sidor. Ange en webbadress, eller lämna tomt för att inaktivera."
 config_legal_pseudonymise_ip_addresses: "Pseudonymisera IP-adresser när loggning? True = Ja [Standard]; False = Nej."
+config_phpmailer: "Konfiguration för PHPMailer (används för tvåfaktorautentisering)."
+config_phpmailer_add_reply_to_address: "Svaradressen att citera när du skickar e-post via SMTP."
+config_phpmailer_add_reply_to_name: "Svarnamnet att citera när du skickar e-post via SMTP."
+config_phpmailer_enable_two_factor: "Detta direktiv bestämmer huruvida du ska använda 2FA för frontend-konton."
+config_phpmailer_event_log: "En fil för att logga alla händelser i förhållande till PHPMailer. Ange ett filnamn, eller lämna tomt för att inaktivera."
+config_phpmailer_host: "Den SMTP-värd som används för utgående e-post."
+config_phpmailer_password: "Lösenordet som ska användas när du skickar e-post via SMTP."
+config_phpmailer_port: "Portnumret som ska användas för utgående e-post. Standard = 587."
+config_phpmailer_set_from_address: "Avsändarens adress att citera när du skickar e-post via SMTP."
+config_phpmailer_set_from_name: "Avsändarens namn för att citera när du skickar e-post via SMTP."
+config_phpmailer_skip_auth_process: "Genom att ställa in detta direktiv till <code>true</code> instrueras PHPMailer att hoppa över den normala autentiseringsprocessen som normalt uppstår när du skickar e-post via SMTP. Detta bör undvikas, för att hoppa över den här processen kan avslöja utgående e-post till MITM-attacker, men kan vara nödvändigt i fall där denna process hindrar PHPMailer från att ansluta till en SMTP-server."
+config_phpmailer_smtp_auth: "Detta direktiv bestämmer huruvida du ska autentisera SMTP-sessioner (borde normalt lämna det här ensam)."
+config_phpmailer_smtp_secure: "Protokollet som ska användas när du skickar e-post via SMTP (TLS eller SSL)."
+config_phpmailer_username: "Användarnamnet som ska användas när du skickar e-post via SMTP."
 config_rate_limiting: "Konfiguration för hastighetsbegränsning (rekommenderas inte för allmänt bruk)."
 config_rate_limiting_allowance_period: "Antalet timmar att spåra användningen. Standard = 0."
 config_rate_limiting_exceptions: "Undantagen (d.v.s., förfrågningar som inte bör vara begränsade). Relevant endast när hastighetsbegränsning är aktiverad."

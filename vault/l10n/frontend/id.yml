@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Indonesian language data for the front-end (last modified: 2022.05.16).
+# This file: Indonesian language data for the front-end (last modified: 2022.05.20).
 ##/
 
 Extended Description Bypasses: "File untuk bypass tanda tangan standar yang biasanya disertakan dengan paket utama."
@@ -72,20 +72,6 @@ checkbox_label_stage_infractions: "Menghitung pelanggaran yang dihasilkan selama
 checkbox_label_stage_log_errors: "Mencatat kesalahan yang dihasilkan selama tahap ini?"
 checkbox_label_untrack_positives: "Hapus pelacakan untuk positif?"
 checkbox_label_verify: "Mencoba memverifikasi?"
-config_PHPMailer: "Konfigurasi untuk PHPMailer (digunakan untuk otentikasi dua-faktor)."
-config_PHPMailer_add_reply_to_address: "Alamat balasan yang dikutip saat mengirim email melalui SMTP."
-config_PHPMailer_add_reply_to_name: "Nama balasan yang dikutip saat mengirim email melalui SMTP."
-config_PHPMailer_enable_two_factor: "Direktif ini menentukan apakah akan menggunakan 2FA untuk akun depan."
-config_PHPMailer_event_log: "File untuk mencatat semua kejadian yang terkait dengan PHPMailer. Spesifikasikan nama file, atau biarkan kosong untuk menonaktifkan."
-config_PHPMailer_host: "Host SMTP yang digunakan untuk email keluar."
-config_PHPMailer_password: "Kata sandi yang digunakan saat mengirim email melalui SMTP."
-config_PHPMailer_port: "Nomor port yang digunakan untuk email keluar. Default = 587."
-config_PHPMailer_set_from_address: "Alamat pengirim yang dikutip saat mengirim email melalui SMTP."
-config_PHPMailer_set_from_name: "Nama pengirim yang dikutip saat mengirim email melalui SMTP."
-config_PHPMailer_skip_auth_process: "Pengaturan direktif ini ke <code>true</code> menginstruksikan PHPMailer untuk melewati proses otentikasi normal yang biasanya terjadi ketika mengirim email melalui SMTP. Ini harus dihindari, karena melewatkan proses ini dapat mengekspos email keluar ke serangan MITM, tetapi mungkin diperlukan dalam kasus dimana proses ini mencegah PHPMailer menghubungkan ke server SMTP."
-config_PHPMailer_smtp_auth: "Direktif ini menentukan apakah akan mengotentikasi sesi SMTP (biasanya harus dibiarkan sendiri)."
-config_PHPMailer_smtp_secure: "Protokol yang digunakan saat mengirim email melalui SMTP (TLS atau SSL)."
-config_PHPMailer_username: "Nama pengguna yang digunakan saat mengirim email melalui SMTP."
 config_bypasses: "Konfigurasi untuk bypass tanda tangan default."
 config_bypasses_used: "Bypass mana yang harus digunakan?"
 config_experimental: "Tidak stabil / Eksperimental!"
@@ -148,6 +134,20 @@ config_hcaptcha_usemode: &CaptchaUseMode "Kapan CAPTCHA harus ditawarkan? Catat:
 config_legal: "Konfigurasi untuk persyaratan hukum."
 config_legal_privacy_policy: "Alamat dari kebijakan privasi yang relevan untuk ditampilkan di footer dari setiap halaman yang dihasilkan. Spesifikasikan URL, atau biarkan kosong untuk menonaktifkan."
 config_legal_pseudonymise_ip_addresses: "Pseudonymise alamat IP saat menulis file log? True = Ya [Default]; False = Tidak."
+config_phpmailer: "Konfigurasi untuk PHPMailer (digunakan untuk otentikasi dua-faktor)."
+config_phpmailer_add_reply_to_address: "Alamat balasan yang dikutip saat mengirim email melalui SMTP."
+config_phpmailer_add_reply_to_name: "Nama balasan yang dikutip saat mengirim email melalui SMTP."
+config_phpmailer_enable_two_factor: "Direktif ini menentukan apakah akan menggunakan 2FA untuk akun depan."
+config_phpmailer_event_log: "File untuk mencatat semua kejadian yang terkait dengan PHPMailer. Spesifikasikan nama file, atau biarkan kosong untuk menonaktifkan."
+config_phpmailer_host: "Host SMTP yang digunakan untuk email keluar."
+config_phpmailer_password: "Kata sandi yang digunakan saat mengirim email melalui SMTP."
+config_phpmailer_port: "Nomor port yang digunakan untuk email keluar. Default = 587."
+config_phpmailer_set_from_address: "Alamat pengirim yang dikutip saat mengirim email melalui SMTP."
+config_phpmailer_set_from_name: "Nama pengirim yang dikutip saat mengirim email melalui SMTP."
+config_phpmailer_skip_auth_process: "Pengaturan direktif ini ke <code>true</code> menginstruksikan PHPMailer untuk melewati proses otentikasi normal yang biasanya terjadi ketika mengirim email melalui SMTP. Ini harus dihindari, karena melewatkan proses ini dapat mengekspos email keluar ke serangan MITM, tetapi mungkin diperlukan dalam kasus dimana proses ini mencegah PHPMailer menghubungkan ke server SMTP."
+config_phpmailer_smtp_auth: "Direktif ini menentukan apakah akan mengotentikasi sesi SMTP (biasanya harus dibiarkan sendiri)."
+config_phpmailer_smtp_secure: "Protokol yang digunakan saat mengirim email melalui SMTP (TLS atau SSL)."
+config_phpmailer_username: "Nama pengguna yang digunakan saat mengirim email melalui SMTP."
 config_rate_limiting: "Konfigurasi untuk pembatasan laju (tidak direkomendasikan untuk penggunaan umum)."
 config_rate_limiting_allowance_period: "Jumlah jam untuk memonitor penggunaan. Default = 0."
 config_rate_limiting_exceptions: "Pengecualian (yaitu, permintaan yang seharusnya tidak dibatasi). Hanya relevan ketika pembatasan laju diaktifkan."

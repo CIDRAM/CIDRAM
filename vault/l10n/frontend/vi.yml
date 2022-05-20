@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Vietnamese language data for the front-end (last modified: 2022.05.16).
+# This file: Vietnamese language data for the front-end (last modified: 2022.05.20).
 ##/
 
 Extended Description Bypasses: "Các tập tin đường tránh chữ ký mặc định thường bao gồm với gói thầu chính."
@@ -72,20 +72,6 @@ checkbox_label_stage_infractions: "Đếm các vi phạm được tạo ra trong
 checkbox_label_stage_log_errors: "Ghi lại bất kỳ lỗi nào được tạo ra trong giai đoạn này?"
 checkbox_label_untrack_positives: "Ngừng theo dõi tích cực?"
 checkbox_label_verify: "Cố gắng xác minh?"
-config_PHPMailer: "Cấu hình cho PHPMailer (được sử dụng để xác thực hai yếu tố)."
-config_PHPMailer_add_reply_to_address: "Địa chỉ trả lời để trích dẫn khi gửi email qua SMTP."
-config_PHPMailer_add_reply_to_name: "Tên trả lời để trích dẫn khi gửi email qua SMTP."
-config_PHPMailer_enable_two_factor: "Chỉ thị này xác định có nên sử dụng 2FA cho tài khoản front-end hay không."
-config_PHPMailer_event_log: "Một tập tin để ghi nhật ký tất cả các sự kiện liên quan đến PHPMailer. Chỉ định một tên tập tin, hoặc để trống để vô hiệu hóa."
-config_PHPMailer_host: "Máy chủ SMTP để sử dụng cho email gửi đi."
-config_PHPMailer_password: "Mật khẩu để sử dụng khi gửi email qua SMTP."
-config_PHPMailer_port: "Số cổng để sử dụng cho email gửi đi. Mặc định = 587."
-config_PHPMailer_set_from_address: "Địa chỉ người gửi để trích dẫn khi gửi email qua SMTP."
-config_PHPMailer_set_from_name: "Tên người gửi để trích dẫn khi gửi email qua SMTP."
-config_PHPMailer_skip_auth_process: "Đặt chỉ thị này thành <code>true</code> chỉ thị cho PHPMailer bỏ qua quy trình xác thực thông thường thường xảy ra khi gửi email qua SMTP. Điều này nên tránh, bởi vì bỏ qua quá trình này có thể tiết lộ email gửi đến các cuộc tấn công MITM, nhưng có thể cần thiết trong trường hợp quá trình này ngăn PHPMailer kết nối với máy chủ SMTP."
-config_PHPMailer_smtp_auth: "Chỉ thị này xác định xem có nên xác thực các phiên SMTP (thường nên để lại một mình)."
-config_PHPMailer_smtp_secure: "Giao thức sử dụng khi gửi email qua SMTP (TLS hoặc SSL)."
-config_PHPMailer_username: "Tên người dùng để sử dụng khi gửi email qua SMTP."
 config_bypasses: "Cấu hình cho các đường tránh chữ ký mặc định."
 config_bypasses_used: "Những đường tránh nào nên được sử dụng?"
 config_experimental: "Không ổn định / Thử nghiệm!"
@@ -148,6 +134,20 @@ config_hcaptcha_usemode: &CaptchaUseMode "Khi nào nên cung cấp CAPTCHA? Lưu
 config_legal: "Cấu hình cho các yêu cầu pháp lý."
 config_legal_privacy_policy: "Địa chỉ của chính sách bảo mật liên quan được hiển thị ở chân trang của bất kỳ trang nào được tạo. Chỉ định URL, hoặc để trống để vô hiệu hóa."
 config_legal_pseudonymise_ip_addresses: "Pseudonymise địa chỉ IP khi viết các tập tin nhật ký? True = Vâng [Mặc định]; False = Không."
+config_phpmailer: "Cấu hình cho PHPMailer (được sử dụng để xác thực hai yếu tố)."
+config_phpmailer_add_reply_to_address: "Địa chỉ trả lời để trích dẫn khi gửi email qua SMTP."
+config_phpmailer_add_reply_to_name: "Tên trả lời để trích dẫn khi gửi email qua SMTP."
+config_phpmailer_enable_two_factor: "Chỉ thị này xác định có nên sử dụng 2FA cho tài khoản front-end hay không."
+config_phpmailer_event_log: "Một tập tin để ghi nhật ký tất cả các sự kiện liên quan đến PHPMailer. Chỉ định một tên tập tin, hoặc để trống để vô hiệu hóa."
+config_phpmailer_host: "Máy chủ SMTP để sử dụng cho email gửi đi."
+config_phpmailer_password: "Mật khẩu để sử dụng khi gửi email qua SMTP."
+config_phpmailer_port: "Số cổng để sử dụng cho email gửi đi. Mặc định = 587."
+config_phpmailer_set_from_address: "Địa chỉ người gửi để trích dẫn khi gửi email qua SMTP."
+config_phpmailer_set_from_name: "Tên người gửi để trích dẫn khi gửi email qua SMTP."
+config_phpmailer_skip_auth_process: "Đặt chỉ thị này thành <code>true</code> chỉ thị cho PHPMailer bỏ qua quy trình xác thực thông thường thường xảy ra khi gửi email qua SMTP. Điều này nên tránh, bởi vì bỏ qua quá trình này có thể tiết lộ email gửi đến các cuộc tấn công MITM, nhưng có thể cần thiết trong trường hợp quá trình này ngăn PHPMailer kết nối với máy chủ SMTP."
+config_phpmailer_smtp_auth: "Chỉ thị này xác định xem có nên xác thực các phiên SMTP (thường nên để lại một mình)."
+config_phpmailer_smtp_secure: "Giao thức sử dụng khi gửi email qua SMTP (TLS hoặc SSL)."
+config_phpmailer_username: "Tên người dùng để sử dụng khi gửi email qua SMTP."
 config_rate_limiting: "Cấu hình cho giới hạn tốc độ (không khuyến khích sử dụng chung)."
 config_rate_limiting_allowance_period: "Số giờ để theo dõi việc sử dụng. Mặc định = 0."
 config_rate_limiting_exceptions: "Ngoại lệ (tức là, các yêu cầu không nên giới hạn). Chỉ có hiệu lực khi giới hạn tốc độ được kích hoạt."

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Latvian language data for the front-end (last modified: 2022.05.16).
+# This file: Latvian language data for the front-end (last modified: 2022.05.20).
 ##/
 
 Extended Description Bypasses: "Noklusējuma paraksta apiešana faili, kas parasti ir iekļauti galvenajā paketē."
@@ -72,20 +72,6 @@ checkbox_label_stage_infractions: "Vai šajā posmā ģenerētie pārkāpumi tie
 checkbox_label_stage_log_errors: "Vai reģistrēt visas šajā posmā radušās kļūdas?"
 checkbox_label_untrack_positives: "Vai atcelt pozitīvu izsekošana?"
 checkbox_label_verify: "Vai mēģināt pārbaudīt?"
-config_PHPMailer: "PHPMailer konfigurācija (izmanto divu faktoru autentifikācijai)."
-config_PHPMailer_add_reply_to_address: "Respondenta adrese, ko citēt, nosūtot e-pastu izmantojot SMTP."
-config_PHPMailer_add_reply_to_name: "Respondenta vārds, ko citēt, nosūtot e-pastu izmantojot SMTP."
-config_PHPMailer_enable_two_factor: "Šī direktīva nosaka, vai izmantot 2FA administratīvai piekļuvei."
-config_PHPMailer_event_log: "Visu ar PHPMailer saistīto notikumu reģistrēšanai fails. Norādiet faila nosaukumu, vai atstājiet tukšu, lai to atspējotu."
-config_PHPMailer_host: "SMTP resursdators, kas jāizmanto izejošajam e-pastam."
-config_PHPMailer_password: "Parole, kas jāizmanto, nosūtot e-pastu izmantojot SMTP."
-config_PHPMailer_port: "Porta numurs, kas jāizmanto izejošajam e-pastam. Noklusējuma = 587."
-config_PHPMailer_set_from_address: "Sūtītāja adrese, ko citēt, nosūtot e-pastu izmantojot SMTP."
-config_PHPMailer_set_from_name: "Sūtītāja vārds, ko citēt, nosūtot e-pastu izmantojot SMTP."
-config_PHPMailer_skip_auth_process: "Šīs direktīvas iestatīšana uz <code>true</code> uzdod PHPMailer izlaist parasto autentifikācijas procesu, kas parasti notiek, nosūtot e-pastu izmantojot SMTP. No tā vajadzētu izvairīties, jo, izlaižot šo procesu var pakļaut izejošo e-pastu MITM uzbrukumiem, bet var būt nepieciešams gadījumos, kad šis process neļauj PHPMailer izveidot savienojumu ar SMTP serveri."
-config_PHPMailer_smtp_auth: "Šī direktīva nosaka, vai autentificēt SMTP sesijas (vairumā gadījumu vislabāk atstāt vienatnē)."
-config_PHPMailer_smtp_secure: "Protokols, kas jāizmanto, nosūtot e-pastu izmantojot SMTP (TLS vai SSL)."
-config_PHPMailer_username: "Lietotājvārds, kas jāizmanto, nosūtot e-pastu izmantojot SMTP."
 config_bypasses: "Noklusējuma parakstu apvedceļu konfigurācija."
 config_bypasses_used: "Kuri apvedceļi jāizmanto?"
 config_experimental: "Nestabils/Eksperimentāls!"
@@ -148,6 +134,20 @@ config_hcaptcha_usemode: &CaptchaUseMode "Kad vajadzētu piedāvāt CAPTCHA? Pie
 config_legal: "Juridisko prasību konfigurācija."
 config_legal_privacy_policy: "Attiecīgās privātuma politikas adrese, kas jāparāda visu ģenerēto lapu kājenē. Norādiet URL vai atstājiet tukšu lai to atspējotu."
 config_legal_pseudonymise_ip_addresses: "Pseidonimizēt IP adresi reģistrējoties? True (Patiess) = Jā [Noklusējuma]; False (Nepatiess) = Nē."
+config_phpmailer: "PHPMailer konfigurācija (izmanto divu faktoru autentifikācijai)."
+config_phpmailer_add_reply_to_address: "Respondenta adrese, ko citēt, nosūtot e-pastu izmantojot SMTP."
+config_phpmailer_add_reply_to_name: "Respondenta vārds, ko citēt, nosūtot e-pastu izmantojot SMTP."
+config_phpmailer_enable_two_factor: "Šī direktīva nosaka, vai izmantot 2FA administratīvai piekļuvei."
+config_phpmailer_event_log: "Visu ar PHPMailer saistīto notikumu reģistrēšanai fails. Norādiet faila nosaukumu, vai atstājiet tukšu, lai to atspējotu."
+config_phpmailer_host: "SMTP resursdators, kas jāizmanto izejošajam e-pastam."
+config_phpmailer_password: "Parole, kas jāizmanto, nosūtot e-pastu izmantojot SMTP."
+config_phpmailer_port: "Porta numurs, kas jāizmanto izejošajam e-pastam. Noklusējuma = 587."
+config_phpmailer_set_from_address: "Sūtītāja adrese, ko citēt, nosūtot e-pastu izmantojot SMTP."
+config_phpmailer_set_from_name: "Sūtītāja vārds, ko citēt, nosūtot e-pastu izmantojot SMTP."
+config_phpmailer_skip_auth_process: "Šīs direktīvas iestatīšana uz <code>true</code> uzdod PHPMailer izlaist parasto autentifikācijas procesu, kas parasti notiek, nosūtot e-pastu izmantojot SMTP. No tā vajadzētu izvairīties, jo, izlaižot šo procesu var pakļaut izejošo e-pastu MITM uzbrukumiem, bet var būt nepieciešams gadījumos, kad šis process neļauj PHPMailer izveidot savienojumu ar SMTP serveri."
+config_phpmailer_smtp_auth: "Šī direktīva nosaka, vai autentificēt SMTP sesijas (vairumā gadījumu vislabāk atstāt vienatnē)."
+config_phpmailer_smtp_secure: "Protokols, kas jāizmanto, nosūtot e-pastu izmantojot SMTP (TLS vai SSL)."
+config_phpmailer_username: "Lietotājvārds, kas jāizmanto, nosūtot e-pastu izmantojot SMTP."
 config_rate_limiting: "Likmes ierobežojumu konfigurācija (nav ieteicams vispārējai lietošanai)."
 config_rate_limiting_allowance_period: "Stundu skaits, lai izsekotu lietošanai. Noklusējuma = 0."
 config_rate_limiting_exceptions: "Izņēmumi (t.i., pieprasījumiem, kuriem nevajadzētu būt ierobežotiem). Attiecas tikai tad, ja ir iespējota likmes ierobežošana."

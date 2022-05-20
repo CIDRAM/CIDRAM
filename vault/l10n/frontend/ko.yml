@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Korean language data for the front-end (last modified: 2022.05.16).
+# This file: Korean language data for the front-end (last modified: 2022.05.20).
 ##/
 
 Extended Description Bypasses: "기본 서명 우회 일반적으로 기본 패키지에 포함되어 있습니다."
@@ -72,20 +72,6 @@ checkbox_label_stage_infractions: "이 단계에서 생성된 위반은 IP 추�
 checkbox_label_stage_log_errors: "이 단계에서 생성된 오류를 기록하시겠습니까?"
 checkbox_label_untrack_positives: "포지티브를 추적 해제하시겠습니까?"
 checkbox_label_verify: "검증을 시도?"
-config_PHPMailer: "PHPMailer 설정 (이중 인증에 사용)."
-config_PHPMailer_add_reply_to_address: "SMTP를 통해 전자 메일을 보낼 때 인용 할 회신 주소입니다."
-config_PHPMailer_add_reply_to_name: "SMTP를 통해 이메일을 보낼 때 인용 할 회신 이름입니다."
-config_PHPMailer_enable_two_factor: "이 지시문은 프런트 엔드 계정에 2FA를 사용할지 여부를 결정합니다."
-config_PHPMailer_event_log: "PHPMailer와 관련된 모든 이벤트를 기록하는 파일입니다. 파일 이름을 지정하십시오. 비활성화하려면 비워 둡니다."
-config_PHPMailer_host: "아웃 바운드 전자 메일에 사용할 SMTP 호스트입니다."
-config_PHPMailer_password: "SMTP를 통해 이메일을 보낼 때 사용할 비밀번호입니다."
-config_PHPMailer_port: "아웃 바운드 이메일에 사용할 포트 번호입니다. Default (기본 설정) = 587."
-config_PHPMailer_set_from_address: "SMTP를 통해 전자 메일을 보낼 때 인용 할 보낸 사람 주소입니다."
-config_PHPMailer_set_from_name: "SMTP를 통해 전자 메일을 보낼 때 인용 할 보낸 사람 이름입니다."
-config_PHPMailer_skip_auth_process: "<code>true</code> 일 때, PHPMailer는 전자 메일 전송을위한 SMTP 인증 프로세스를 건너 뛰도록 지시합니다. 이 프로세스를 건너 뛰면 아웃 바운드 전자 메일이 MITM 공격에 노출 될 수 있으므로 피해야합니다. 특정 경우에 필요할 수 있음 (예\_: PHPMailer가 SMTP 서버에 제대로 연결할 수없는 경우)."
-config_PHPMailer_smtp_auth: "이 지시문은 SMTP 세션을 인증할지 여부를 결정합니다 (보통 이것을 무시해야합니다)."
-config_PHPMailer_smtp_secure: "SMTP를 통해 이메일을 보낼 때 사용할 프로토콜 (TLS 또는 SSL)."
-config_PHPMailer_username: "SMTP를 통해 이메일을 보낼 때 사용할 사용자 이름입니다."
 config_bypasses: "기본 서명 바이 패스 구성."
 config_bypasses_used: "어떤 바이 패스를 사용해야 합니까?"
 config_experimental: "불안정/실험적!"
@@ -148,6 +134,20 @@ config_hcaptcha_usemode: &CaptchaUseMode "보안 문자는 언제 제공해야 �
 config_legal: "법적 요구 사항 설정."
 config_legal_privacy_policy: "생성 된 페이지의 꼬리말에 표시 할 관련 개인 정보 정책 방침의 주소입니다. URL 지정, 또는 사용하지 않으려면 비워 두십시오."
 config_legal_pseudonymise_ip_addresses: "로그 파일을 쓸 때 가명으로 하다 IP 주소? True = 예 (Default / 기본 설정); False = 아니오."
+config_phpmailer: "PHPMailer 설정 (이중 인증에 사용)."
+config_phpmailer_add_reply_to_address: "SMTP를 통해 전자 메일을 보낼 때 인용 할 회신 주소입니다."
+config_phpmailer_add_reply_to_name: "SMTP를 통해 이메일을 보낼 때 인용 할 회신 이름입니다."
+config_phpmailer_enable_two_factor: "이 지시문은 프런트 엔드 계정에 2FA를 사용할지 여부를 결정합니다."
+config_phpmailer_event_log: "PHPMailer와 관련된 모든 이벤트를 기록하는 파일입니다. 파일 이름을 지정하십시오. 비활성화하려면 비워 둡니다."
+config_phpmailer_host: "아웃 바운드 전자 메일에 사용할 SMTP 호스트입니다."
+config_phpmailer_password: "SMTP를 통해 이메일을 보낼 때 사용할 비밀번호입니다."
+config_phpmailer_port: "아웃 바운드 이메일에 사용할 포트 번호입니다. Default (기본 설정) = 587."
+config_phpmailer_set_from_address: "SMTP를 통해 전자 메일을 보낼 때 인용 할 보낸 사람 주소입니다."
+config_phpmailer_set_from_name: "SMTP를 통해 전자 메일을 보낼 때 인용 할 보낸 사람 이름입니다."
+config_phpmailer_skip_auth_process: "<code>true</code> 일 때, PHPMailer는 전자 메일 전송을위한 SMTP 인증 프로세스를 건너 뛰도록 지시합니다. 이 프로세스를 건너 뛰면 아웃 바운드 전자 메일이 MITM 공격에 노출 될 수 있으므로 피해야합니다. 특정 경우에 필요할 수 있음 (예\_: PHPMailer가 SMTP 서버에 제대로 연결할 수없는 경우)."
+config_phpmailer_smtp_auth: "이 지시문은 SMTP 세션을 인증할지 여부를 결정합니다 (보통 이것을 무시해야합니다)."
+config_phpmailer_smtp_secure: "SMTP를 통해 이메일을 보낼 때 사용할 프로토콜 (TLS 또는 SSL)."
+config_phpmailer_username: "SMTP를 통해 이메일을 보낼 때 사용할 사용자 이름입니다."
 config_rate_limiting: "속도 제한 설정 (일반적인 사용에는 권장되지 않습니다)."
 config_rate_limiting_allowance_period: "사용량을 모니터 할 시간입니다. Default (기본 설정) = 0."
 config_rate_limiting_exceptions: "예외 (즉, 속도 제한이 없어야하는 요청). 속도 제한이 활성화 된 경우에만 해당됩니다."

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Dutch language data for the front-end (last modified: 2022.05.16).
+# This file: Dutch language data for the front-end (last modified: 2022.05.20).
 ##/
 
 Extended Description Bypasses: "De standaard signature bypasses normaal opgenomen met de primaire pakket."
@@ -72,20 +72,6 @@ checkbox_label_stage_infractions: "Moeten overtredingen die gegenereerd door dez
 checkbox_label_stage_log_errors: "Moeten fouten die gegenereerd door deze fase worden geregistreerd?"
 checkbox_label_untrack_positives: "Tracking annuleren voor positieven?"
 checkbox_label_verify: "Proberen te verifiëren?"
-config_PHPMailer: "Configuratie voor PHPMailer (gebruikt voor tweefactorauthenticatie)."
-config_PHPMailer_add_reply_to_address: "Het antwoordadres voor het verzenden van e-mail via SMTP."
-config_PHPMailer_add_reply_to_name: "De antwoordnaam voor het verzenden van e-mail via SMTP."
-config_PHPMailer_enable_two_factor: "Deze richtlijn bepaalt of 2FA wordt gebruikt voor frontend-accounts."
-config_PHPMailer_event_log: "Een bestand voor het loggen van alle evenementen met betrekking tot PHPMailer. Geef een bestandsnaam, of laat leeg om uit te schakelen."
-config_PHPMailer_host: "De SMTP-host dat moet worden gebruikt voor uitgaande e-mail."
-config_PHPMailer_password: "Het wachtwoord voor het verzenden van e-mail via SMTP."
-config_PHPMailer_port: "Het poortnummer dat moet worden gebruikt voor uitgaande e-mail. Standaard = 587."
-config_PHPMailer_set_from_address: "Het afzenderadres voor het verzenden van e-mail via SMTP."
-config_PHPMailer_set_from_name: "De naam van de afzender voor het verzenden van e-mail via SMTP."
-config_PHPMailer_skip_auth_process: "Wanneer <code>true</code>, geeft PHPMailer opdracht om het verificatieproces over te slaan dat normaal optreedt bij het verzenden van e-mail via SMTP. Dit moet worden vermeden, omdat bij het overslaan van dit verificatieproces uitgaande e-mail aan MITM-aanvallen kan worden blootgesteld, maar kan nodig zijn in gevallen waarin dit verificatieproces verhindert dat PHPMailer verbinding maakt met een SMTP-server."
-config_PHPMailer_smtp_auth: "Deze richtlijn bepaalt of SMTP-sessies moeten worden geverifieerd (moet meestal alleen worden gelaten)."
-config_PHPMailer_smtp_secure: "Het protocol voor het verzenden van e-mail via SMTP (TLS of SSL)."
-config_PHPMailer_username: "De gebruikersnaam voor het verzenden van e-mail via SMTP."
 config_bypasses: "Configuratie voor de standaard bypasses voor signatures."
 config_bypasses_used: "Welke bypasses moeten worden gebruikt?"
 config_experimental: "Instabiel/Experimenteel!"
@@ -148,6 +134,20 @@ config_hcaptcha_usemode: &CaptchaUseMode "Wanneer moet de CAPTCHA worden aangebo
 config_legal: "Configuratie voor wettelijke vereisten."
 config_legal_privacy_policy: "Het adres van een relevant privacybeleid dat moet worden weergegeven in de voettekst van eventuele gegenereerde pagina's. Geef een URL, of laat leeg om uit te schakelen."
 config_legal_pseudonymise_ip_addresses: "Pseudonimiseren de IP-adressen bij het schrijven van logbestanden? True = Ja [Standaard]; False = Nee."
+config_phpmailer: "Configuratie voor PHPMailer (gebruikt voor tweefactorauthenticatie)."
+config_phpmailer_add_reply_to_address: "Het antwoordadres voor het verzenden van e-mail via SMTP."
+config_phpmailer_add_reply_to_name: "De antwoordnaam voor het verzenden van e-mail via SMTP."
+config_phpmailer_enable_two_factor: "Deze richtlijn bepaalt of 2FA wordt gebruikt voor frontend-accounts."
+config_phpmailer_event_log: "Een bestand voor het loggen van alle evenementen met betrekking tot PHPMailer. Geef een bestandsnaam, of laat leeg om uit te schakelen."
+config_phpmailer_host: "De SMTP-host dat moet worden gebruikt voor uitgaande e-mail."
+config_phpmailer_password: "Het wachtwoord voor het verzenden van e-mail via SMTP."
+config_phpmailer_port: "Het poortnummer dat moet worden gebruikt voor uitgaande e-mail. Standaard = 587."
+config_phpmailer_set_from_address: "Het afzenderadres voor het verzenden van e-mail via SMTP."
+config_phpmailer_set_from_name: "De naam van de afzender voor het verzenden van e-mail via SMTP."
+config_phpmailer_skip_auth_process: "Wanneer <code>true</code>, geeft PHPMailer opdracht om het verificatieproces over te slaan dat normaal optreedt bij het verzenden van e-mail via SMTP. Dit moet worden vermeden, omdat bij het overslaan van dit verificatieproces uitgaande e-mail aan MITM-aanvallen kan worden blootgesteld, maar kan nodig zijn in gevallen waarin dit verificatieproces verhindert dat PHPMailer verbinding maakt met een SMTP-server."
+config_phpmailer_smtp_auth: "Deze richtlijn bepaalt of SMTP-sessies moeten worden geverifieerd (moet meestal alleen worden gelaten)."
+config_phpmailer_smtp_secure: "Het protocol voor het verzenden van e-mail via SMTP (TLS of SSL)."
+config_phpmailer_username: "De gebruikersnaam voor het verzenden van e-mail via SMTP."
 config_rate_limiting: "Configuratie voor tarieflimiet (niet aanbevolen voor algemeen gebruik)."
 config_rate_limiting_allowance_period: "Het aantal uren om het gebruik te controleren. Standaard = 0."
 config_rate_limiting_exceptions: "Excepties (d.w.z., verzoeken die moet niet worden beperkt). Alleen relevant wanneer tarieflimiet is ingeschakeld."

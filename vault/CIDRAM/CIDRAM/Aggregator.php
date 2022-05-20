@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: IP aggregator (last modified: 2022.05.18).
+ * This file: The aggregator (last modified: 2022.05.20).
  */
 
 namespace CIDRAM\CIDRAM;

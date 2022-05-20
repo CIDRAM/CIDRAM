@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM updater (last modified: 2022.05.19).
+ * This file: Methods used to simulate block events (last modified: 2022.05.20).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -16,12 +16,13 @@ namespace CIDRAM\CIDRAM;
 trait SimulateBlockEvent
 {
     /**
-     * Simulates block event (used by the IP tracking and IP test pages).
+     * Simulates block events (used by the IP tracking and IP test pages).
      *
      * @param string $Addr The IP address to test against.
      * @param bool $Modules Specifies whether to test against modules.
      * @param bool $Aux Specifies whether to test against auxiliary rules.
-     * @param bool $Verification Specifies whether to test against search engine and social media verification.
+     * @param bool $Verification Specifies whether to test against search
+     *          engine and social media verification.
      * @return void
      */
     public function simulateBlockEvent(string $Addr, bool $Modules = false, bool $Aux = false, bool $Verification = false): void
@@ -54,15 +55,15 @@ trait SimulateBlockEvent
             'DateTime' => 'SimulateBlockEvent',
             'IPAddr' => $Addr,
             'IPAddrResolved' => $this->resolve6to4($Addr),
-            'Query' => !empty($this->CIDRAM['FE']['custom-query']) ? $this->CIDRAM['FE']['custom-query'] : 'SimulateBlockEvent',
-            'Referrer' => !empty($this->CIDRAM['FE']['custom-referrer']) ? $this->CIDRAM['FE']['custom-referrer'] : 'SimulateBlockEvent',
-            'UA' => !empty($this->CIDRAM['FE']['custom-ua']) ? $this->CIDRAM['FE']['custom-ua'] : 'SimulateBlockEvent',
+            'Query' => !empty($this->FE['custom-query']) ? $this->FE['custom-query'] : 'SimulateBlockEvent',
+            'Referrer' => !empty($this->FE['custom-referrer']) ? $this->FE['custom-referrer'] : 'SimulateBlockEvent',
+            'UA' => !empty($this->FE['custom-ua']) ? $this->FE['custom-ua'] : 'SimulateBlockEvent',
             'SignatureCount' => 0,
             'Signatures' => '',
             'WhyReason' => '',
             'ReasonMessage' => '',
             'rURI' => 'SimulateBlockEvent',
-            'Infractions' => $this->CIDRAM['Tracking'][$this->BlockInfo['IPAddr']]['Count'] ?? 0,
+            'Infractions' => $this->CIDRAM['Tracking'][$Addr]['Count'] ?? 0,
             'ASNLookup' => 0,
             'CCLookup' => 'XX',
             'Verified' => '',
@@ -74,8 +75,8 @@ trait SimulateBlockEvent
         $this->BlockInfo['UALC'] = strtolower($this->BlockInfo['UA']);
 
         /** Appending query onto the reconstructed URI. */
-        if (!empty($this->CIDRAM['FE']['custom-query'])) {
-            $this->BlockInfo['rURI'] .= '?' . $this->CIDRAM['FE']['custom-query'];
+        if (!empty($this->FE['custom-query'])) {
+            $this->BlockInfo['rURI'] .= '?' . $this->FE['custom-query'];
         }
 
         if (strlen($Addr)) {

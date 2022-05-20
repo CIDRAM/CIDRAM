@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM updater (last modified: 2022.05.19).
+ * This file: Methods for updating CIDRAM components (last modified: 2022.05.20).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -95,11 +95,11 @@ trait Updater
      */
     private function message(string $Message): void
     {
-        if (isset($this->CIDRAM['FE']['state_msg'])) {
+        if (isset($this->FE['state_msg'])) {
             if ($Try = $this->L10N->getString($Message)) {
                 $Message = $Try;
             }
-            $this->CIDRAM['FE']['state_msg'] .= $Message . '<br />';
+            $this->FE['state_msg'] .= $Message . '<br />';
         }
     }
 
@@ -118,7 +118,7 @@ trait Updater
 
     /**
      * Append one or two values to a string, depending on whether that string is
-     * empty prior to calling the closure (allows cleaner code in some areas).
+     * empty prior to calling the method (allows cleaner code in some areas).
      *
      * @param string $String The string to work with.
      * @param string $Delimit Appended first, if the string is not empty.
@@ -186,7 +186,7 @@ trait Updater
     }
 
     /**
-     * Checks whether a component is in use (front-end closure).
+     * Checks whether a component is in use.
      *
      * @param array $Component An array of the component metadata.
      * @return int 1 when in use.
@@ -403,7 +403,7 @@ trait Updater
      *             0 when the component is not in use.
      *            -1 when the component is *partially* in use.
      */
-    public function componentUpdatePrep(string $Target): int
+    private function componentUpdatePrep(string $Target): int
     {
         if (!empty($this->CIDRAM['Components']['Meta'][$Target]['Files'])) {
             $this->prepareExtendedDescription($this->CIDRAM['Components']['Meta'][$Target]);
@@ -415,31 +415,31 @@ trait Updater
     }
 
     /**
-     * Executes a list of closures or commands when specific conditions are met.
+     * Executes a list of methods or commands when specific conditions are met.
      *
-     * @param string|array $Closures The list of closures or commands to execute.
+     * @param string|array $Methods The list of methods or commands to execute.
      * @param bool $Queue Whether to queue the operation or perform immediately.
      * @return void
      */
-    private function executor($Closures = false, bool $Queue = false): void
+    private function executor($Methods = false, bool $Queue = false): void
     {
-        if ($Queue && $Closures !== false) {
+        if ($Queue && $Methods !== false) {
             /** Guard. */
-            if (empty($this->CIDRAM['executor_Queue']) || !is_array($this->CIDRAM['executor_Queue'])) {
-                $this->CIDRAM['executor_Queue'] = [];
+            if (empty($this->CIDRAM['ExecutorQueue']) || !is_array($this->CIDRAM['ExecutorQueue'])) {
+                $this->CIDRAM['ExecutorQueue'] = [];
             }
 
             /** Add to the executor queue. */
-            $this->CIDRAM['executor_Queue'][] = $Closures;
+            $this->CIDRAM['ExecutorQueue'][] = $Methods;
             return;
         }
 
-        if ($Closures === false && !empty($this->CIDRAM['executor_Queue']) && is_array($this->CIDRAM['executor_Queue'])) {
+        if ($Methods === false && !empty($this->CIDRAM['ExecutorQueue']) && is_array($this->CIDRAM['ExecutorQueue'])) {
             /** We'll iterate an array from the local scope to guard against infinite loops. */
-            $Items = $this->CIDRAM['executor_Queue'];
+            $Items = $this->CIDRAM['ExecutorQueue'];
 
             /** Purge the queue before iterating. */
-            $this->CIDRAM['executor_Queue'] = [];
+            $this->CIDRAM['ExecutorQueue'] = [];
 
             /** Recursively iterate through the executor queue. */
             foreach ($Items as $QueueItem) {
@@ -449,21 +449,21 @@ trait Updater
         }
 
         /** Guard. */
-        $this->arrayify($Closures);
+        $this->arrayify($Methods);
 
-        /** Recursively execute all closures in the current queue item. */
-        foreach ($Closures as $Closure) {
+        /** Recursively execute all methods in the current queue item. */
+        foreach ($Methods as $Method) {
             /** All logic, data traversal, dot notation, etc handled here. */
-            $Closure = $this->CIDRAM['Operation']->ifCompare($this->CIDRAM, $Closure);
+            $Method = $this->CIDRAM['Operation']->ifCompare($this->CIDRAM, $Method);
 
-            if (isset($this->CIDRAM[$Closure]) && is_object($this->CIDRAM[$Closure])) {
-                $this->CIDRAM[$Closure]();
-            } elseif (($Pos = strpos($Closure, ' ')) !== false) {
-                $Params = substr($Closure, $Pos + 1);
-                $Closure = substr($Closure, 0, $Pos);
-                if (isset($this->CIDRAM[$Closure]) && is_object($this->CIDRAM[$Closure])) {
+            if (method_exists($this, $Method)) {
+                $this->{$Method}();
+            } elseif (($Pos = strpos($Method, ' ')) !== false) {
+                $Params = substr($Method, $Pos + 1);
+                $Method = substr($Method, 0, $Pos);
+                if (method_exists($this, $Method)) {
                     $Params = $this->CIDRAM['Operation']->ifCompare($this->CIDRAM, $Params);
-                    $this->CIDRAM[$Closure]($Params);
+                    $this->{$Method}($Params);
                 }
             }
         }
@@ -514,8 +514,8 @@ trait Updater
      */
     private function sortComponents(array $Arr): string
     {
-        $Type = $this->CIDRAM['FE']['sort-by-name'] ?? false;
-        $Order = $this->CIDRAM['FE']['descending-order'] ?? false;
+        $Type = $this->FE['sort-by-name'] ?? false;
+        $Order = $this->FE['descending-order'] ?? false;
         uksort($Arr, function (string $A, string $B) use ($Type, $Order) {
             if (!$Type) {
                 $Priority = '~^(?:CIDRAM|Common Classes Package|IPv[46]|l10n/)~i';
@@ -733,7 +733,7 @@ trait Updater
                         $ThisChecksum = $this->CIDRAM['Components']['RemoteMeta'][$ThisTarget]['Files']['Checksum'][$Iterate];
                         $ThisLen = strlen($ThisFile);
                         if (hash('sha256', $ThisFile) . ':' . $ThisLen !== $ThisChecksum) {
-                            $this->CIDRAM['FE']['state_msg'] .=
+                            $this->FE['state_msg'] .=
                                 '<code>' . $ThisTarget . '</code> – ' .
                                 '<code>' . $ThisFileName . '</code> – ' .
                                 $this->L10N->getString('response_checksum_error') . '<br />';
@@ -749,7 +749,7 @@ trait Updater
                         preg_match('~\.(?:css|dat|gif|inc|jpe?g|php|png|ya?ml|[a-z]{0,2}db)$~i', $ThisFileName) &&
                         !$this->sanityCheck($ThisFileName, $ThisFile)
                     ) {
-                        $this->CIDRAM['FE']['state_msg'] .= sprintf(
+                        $this->FE['state_msg'] .= sprintf(
                             '<code>%s</code> – <code>%s</code> – %s<br />',
                             $ThisTarget,
                             $ThisFileName,
@@ -816,17 +816,17 @@ trait Updater
                         unset($ThisFile, $ThisArr);
                     }
 
-                    $this->CIDRAM['FE']['state_msg'] .= '<code>' . $ThisTarget . '</code> – ';
+                    $this->FE['state_msg'] .= '<code>' . $ThisTarget . '</code> – ';
                     if (
                         empty($this->CIDRAM['Components']['Meta'][$ThisTarget]['Version']) &&
                         empty($this->CIDRAM['Components']['Meta'][$ThisTarget]['Files'])
                     ) {
-                        $this->CIDRAM['FE']['state_msg'] .= $this->L10N->getString('response_component_successfully_installed');
+                        $this->FE['state_msg'] .= $this->L10N->getString('response_component_successfully_installed');
                         if (!empty($this->CIDRAM['Components']['Meta'][$ThisTarget]['When Install Succeeds'])) {
                             $this->executor($this->CIDRAM['Components']['Meta'][$ThisTarget]['When Install Succeeds'], true);
                         }
                     } else {
-                        $this->CIDRAM['FE']['state_msg'] .= $this->L10N->getString('response_component_successfully_updated');
+                        $this->FE['state_msg'] .= $this->L10N->getString('response_component_successfully_updated');
                         if (!empty($this->CIDRAM['Components']['Meta'][$ThisTarget]['When Update Succeeds'])) {
                             $this->executor($this->CIDRAM['Components']['Meta'][$ThisTarget]['When Update Succeeds'], true);
                         }
@@ -853,17 +853,17 @@ trait Updater
                 $UpdateFailed = true;
             }
             if ($UpdateFailed) {
-                $this->CIDRAM['FE']['state_msg'] .= '<code>' . $ThisTarget . '</code> – ';
+                $this->FE['state_msg'] .= '<code>' . $ThisTarget . '</code> – ';
                 if (
                     empty($this->CIDRAM['Components']['Meta'][$ThisTarget]['Version']) &&
                     empty($this->CIDRAM['Components']['Meta'][$ThisTarget]['Files'])
                 ) {
-                    $this->CIDRAM['FE']['state_msg'] .= $this->L10N->getString('response_failed_to_install');
+                    $this->FE['state_msg'] .= $this->L10N->getString('response_failed_to_install');
                     if (!empty($this->CIDRAM['Components']['Meta'][$ThisTarget]['When Install Fails'])) {
                         $this->executor($this->CIDRAM['Components']['Meta'][$ThisTarget]['When Install Fails'], true);
                     }
                 } else {
-                    $this->CIDRAM['FE']['state_msg'] .= $this->L10N->getString('response_failed_to_update');
+                    $this->FE['state_msg'] .= $this->L10N->getString('response_failed_to_update');
                     if (!empty($this->CIDRAM['Components']['Meta'][$ThisTarget]['When Update Fails'])) {
                         $this->executor($this->CIDRAM['Components']['Meta'][$ThisTarget]['When Update Fails'], true);
                     }
@@ -871,8 +871,8 @@ trait Updater
             }
             $this->formatFileSize($BytesAdded);
             $this->formatFileSize($BytesRemoved);
-            $this->CIDRAM['FE']['state_msg'] .= sprintf(
-                $this->CIDRAM['FE']['CronMode'] !== '' ? " « +%s | -%s | %s »\n" : ' <code><span class="txtGn">+%s</span> | <span class="txtRd">-%s</span> | <span class="txtOe">%s</span></code><br />',
+            $this->FE['state_msg'] .= sprintf(
+                $this->FE['CronMode'] !== '' ? " « +%s | -%s | %s »\n" : ' <code><span class="txtGn">+%s</span> | <span class="txtRd">-%s</span> | <span class="txtOe">%s</span></code><br />',
                 $BytesAdded,
                 $BytesRemoved,
                 $this->NumberFormatter->format(microtime(true) - $TimeRequired, 3)
@@ -897,7 +897,7 @@ trait Updater
         $InUse = $this->componentUpdatePrep($ID);
         $BytesRemoved = 0;
         $TimeRequired = microtime(true);
-        $this->CIDRAM['FE']['state_msg'] .= '<code>' . $ID . '</code> – ';
+        $this->FE['state_msg'] .= '<code>' . $ID . '</code> – ';
         if (
             $InUse === 0 &&
             !empty($this->CIDRAM['Components']['Meta'][$ID]['Files']['To']) &&
@@ -919,7 +919,7 @@ trait Updater
                 $this->deleteDirectory($ThisFile);
             }
 
-            $this->CIDRAM['FE']['state_msg'] .= $this->L10N->getString('response_component_successfully_uninstalled');
+            $this->FE['state_msg'] .= $this->L10N->getString('response_component_successfully_uninstalled');
             if (!empty($this->CIDRAM['Components']['Meta'][$ID]['When Uninstall Succeeds'])) {
                 $this->executor($this->CIDRAM['Components']['Meta'][$ID]['When Uninstall Succeeds'], true);
             }
@@ -933,14 +933,14 @@ trait Updater
                 $this->YAML->reconstruct($this->CIDRAM['Components']['Meta'])
             );
         } else {
-            $this->CIDRAM['FE']['state_msg'] .= $this->L10N->getString('response_component_uninstall_error');
+            $this->FE['state_msg'] .= $this->L10N->getString('response_component_uninstall_error');
             if (!empty($this->CIDRAM['Components']['Meta'][$ID]['When Uninstall Fails'])) {
                 $this->executor($this->CIDRAM['Components']['Meta'][$ID]['When Uninstall Fails'], true);
             }
         }
         $this->formatFileSize($BytesRemoved);
-        $this->CIDRAM['FE']['state_msg'] .= sprintf(
-            $this->CIDRAM['FE']['CronMode'] !== '' ? " « -%s | %s »\n" : ' <code><span class="txtRd">-%s</span> | <span class="txtOe">%s</span></code><br />',
+        $this->FE['state_msg'] .= sprintf(
+            $this->FE['CronMode'] !== '' ? " « -%s | %s »\n" : ' <code><span class="txtRd">-%s</span> | <span class="txtOe">%s</span></code><br />',
             $BytesRemoved,
             $this->NumberFormatter->format(microtime(true) - $TimeRequired, 3)
         );
@@ -958,7 +958,7 @@ trait Updater
             $ID = current($ID);
         }
         $Activation = [
-            'Config' => $this->CIDRAM['Updater-IO']->readFile($this->Vault . $this->CIDRAM['FE']['ActiveConfigFile']),
+            'Config' => $this->CIDRAM['Updater-IO']->readFile($this->Vault . $this->FE['ActiveConfigFile']),
             'imports' => $this->Configuration['general']['config_imports'],
             'events' => $this->Configuration['general']['events'],
             'ipv4' => $this->Configuration['signatures']['ipv4'],
@@ -983,7 +983,7 @@ trait Updater
             ));
         }
         $InUse = $this->componentUpdatePrep($ID);
-        $this->CIDRAM['FE']['state_msg'] .= '<code>' . $ID . '</code> – ';
+        $this->FE['state_msg'] .= '<code>' . $ID . '</code> – ';
         if ($InUse !== 1 && !empty($this->CIDRAM['Components']['Meta'][$ID]['Files']['To']) && (
             !empty($this->CIDRAM['Components']['Meta'][$ID]['Used with']) ||
             !empty($this->CIDRAM['Components']['Meta'][$ID]['Extended Description'])
@@ -1039,7 +1039,7 @@ trait Updater
             }
         }
         if (!$Activation['Modified'] || !$Activation['Config']) {
-            $this->CIDRAM['FE']['state_msg'] .= $this->L10N->getString('response_activation_failed') . '<br />';
+            $this->FE['state_msg'] .= $this->L10N->getString('response_activation_failed') . '<br />';
             if (!empty($this->CIDRAM['Components']['Meta'][$ID]['When Activation Fails'])) {
                 $this->executor($this->CIDRAM['Components']['Meta'][$ID]['When Activation Fails'], true);
             }
@@ -1063,8 +1063,8 @@ trait Updater
             $this->Configuration['signatures']['ipv4'] = $Activation['ipv4'];
             $this->Configuration['signatures']['ipv6'] = $Activation['ipv6'];
             $this->Configuration['signatures']['modules'] = $Activation['modules'];
-            $this->CIDRAM['Updater-IO']->writeFile($this->Vault . $this->CIDRAM['FE']['ActiveConfigFile'], $Activation['Config']);
-            $this->CIDRAM['FE']['state_msg'] .= $this->L10N->getString('response_activated') . '<br />';
+            $this->CIDRAM['Updater-IO']->writeFile($this->Vault . $this->FE['ActiveConfigFile'], $Activation['Config']);
+            $this->FE['state_msg'] .= $this->L10N->getString('response_activated') . '<br />';
             if (!empty($this->CIDRAM['Components']['Meta'][$ID]['When Activation Succeeds'])) {
                 $this->executor($this->CIDRAM['Components']['Meta'][$ID]['When Activation Succeeds'], true);
             }
@@ -1103,7 +1103,7 @@ trait Updater
             $ID = current($ID);
         }
         $this->CIDRAM['Deactivation'] = [
-            'Config' => $this->CIDRAM['Updater-IO']->readFile($this->Vault . $this->CIDRAM['FE']['ActiveConfigFile']),
+            'Config' => $this->CIDRAM['Updater-IO']->readFile($this->Vault . $this->FE['ActiveConfigFile']),
             'imports' => $this->Configuration['general']['config_imports'],
             'events' => $this->Configuration['general']['events'],
             'ipv4' => $this->Configuration['signatures']['ipv4'],
@@ -1112,7 +1112,7 @@ trait Updater
             'Modified' => false
         ];
         $InUse = 0;
-        $this->CIDRAM['FE']['state_msg'] .= '<code>' . $ID . '</code> – ';
+        $this->FE['state_msg'] .= '<code>' . $ID . '</code> – ';
         if (!empty($this->CIDRAM['Components']['Meta'][$ID]['Files'])) {
             $this->arrayify($this->CIDRAM['Components']['Meta'][$ID]['Files']);
             $this->arrayify($this->CIDRAM['Components']['Meta'][$ID]['Files']['To']);
@@ -1127,7 +1127,7 @@ trait Updater
             }
         }
         if (!$this->CIDRAM['Deactivation']['Modified'] || !$this->CIDRAM['Deactivation']['Config']) {
-            $this->CIDRAM['FE']['state_msg'] .= $this->L10N->getString('response_deactivation_failed') . '<br />';
+            $this->FE['state_msg'] .= $this->L10N->getString('response_deactivation_failed') . '<br />';
             if (!empty($this->CIDRAM['Components']['Meta'][$ID]['When Deactivation Fails'])) {
                 $this->executor($this->CIDRAM['Components']['Meta'][$ID]['When Deactivation Fails'], true);
             }
@@ -1151,8 +1151,8 @@ trait Updater
             $this->Configuration['signatures']['ipv4'] = $this->CIDRAM['Deactivation']['ipv4'];
             $this->Configuration['signatures']['ipv6'] = $this->CIDRAM['Deactivation']['ipv6'];
             $this->Configuration['signatures']['modules'] = $this->CIDRAM['Deactivation']['modules'];
-            $this->CIDRAM['Updater-IO']->writeFile($this->Vault . $this->CIDRAM['FE']['ActiveConfigFile'], $this->CIDRAM['Deactivation']['Config']);
-            $this->CIDRAM['FE']['state_msg'] .= $this->L10N->getString('response_deactivated') . '<br />';
+            $this->CIDRAM['Updater-IO']->writeFile($this->Vault . $this->FE['ActiveConfigFile'], $this->CIDRAM['Deactivation']['Config']);
+            $this->FE['state_msg'] .= $this->L10N->getString('response_deactivated') . '<br />';
             if (!empty($this->CIDRAM['Components']['Meta'][$ID]['When Deactivation Succeeds'])) {
                 $this->executor($this->CIDRAM['Components']['Meta'][$ID]['When Deactivation Succeeds'], true);
             }
@@ -1184,7 +1184,7 @@ trait Updater
             if ($Reactivate !== 0) {
                 $this->updatesHandlerDeactivate($ThisTarget);
             }
-            $this->CIDRAM['FE']['state_msg'] .= '<code>' . $ThisTarget . '</code> – ';
+            $this->FE['state_msg'] .= '<code>' . $ThisTarget . '</code> – ';
             if (isset(
                 $this->CIDRAM['Components']['RemoteMeta'][$ThisTarget]['Files']['To'],
                 $this->CIDRAM['Components']['RemoteMeta'][$ThisTarget]['Files']['From'],
@@ -1264,7 +1264,7 @@ trait Updater
                 );
 
                 /** Repair operation succeeded. */
-                $this->CIDRAM['FE']['state_msg'] .= $this->L10N->getString('response_repair_process_completed');
+                $this->FE['state_msg'] .= $this->L10N->getString('response_repair_process_completed');
                 if (!empty($this->CIDRAM['Components']['Meta'][$ThisTarget]['When Repair Succeeds'])) {
                     $this->executor($this->CIDRAM['Components']['Meta'][$ThisTarget]['When Repair Succeeds'], true);
                 }
@@ -1272,15 +1272,15 @@ trait Updater
                 $RepairFailed = true;
 
                 /** Repair operation failed. */
-                $this->CIDRAM['FE']['state_msg'] .= $this->L10N->getString('response_repair_process_failed');
+                $this->FE['state_msg'] .= $this->L10N->getString('response_repair_process_failed');
                 if (!empty($this->CIDRAM['Components']['Meta'][$ThisTarget]['When Repair Fails'])) {
                     $this->executor($this->CIDRAM['Components']['Meta'][$ThisTarget]['When Repair Fails'], true);
                 }
             }
             $this->formatFileSize($BytesAdded);
             $this->formatFileSize($BytesRemoved);
-            $this->CIDRAM['FE']['state_msg'] .= sprintf(
-                $this->CIDRAM['FE']['CronMode'] !== '' ? " « +%s | -%s | %s »\n" : ' <code><span class="txtGn">+%s</span> | <span class="txtRd">-%s</span> | <span class="txtOe">%s</span></code><br />',
+            $this->FE['state_msg'] .= sprintf(
+                $this->FE['CronMode'] !== '' ? " « +%s | -%s | %s »\n" : ' <code><span class="txtGn">+%s</span> | <span class="txtRd">-%s</span> | <span class="txtOe">%s</span></code><br />',
                 $BytesAdded,
                 $BytesRemoved,
                 $this->NumberFormatter->format(microtime(true) - $TimeRequired, 3)
@@ -1371,7 +1371,7 @@ trait Updater
                 );
             }
             $Table .= '</blockquote>';
-            $this->CIDRAM['FE']['state_msg'] .= sprintf(
+            $this->FE['state_msg'] .= sprintf(
                 '<div><span class="comCat" style="cursor:pointer"><code>%s</code> – <span class="%s">%s</span></span>%s</div>',
                 $ThisID,
                 ($Passed ? 's' : 'txtRd'),

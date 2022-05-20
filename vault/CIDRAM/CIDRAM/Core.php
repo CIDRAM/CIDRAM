@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM core (last modified: 2022.05.19).
+ * This file: The CIDRAM core (last modified: 2022.05.20).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -125,8 +125,7 @@ class Core
     public $ipAddr = '';
 
     /**
-     * @var array Transitional array for various CIDRAM variables. Retained for
-     *      backwards compatibility with v2 modules and such.
+     * @var array For any working data without dedicated properties.
      */
     public $CIDRAM = [];
 
@@ -824,7 +823,7 @@ class Core
     }
 
     /**
-     * A simple closure for replacing date/time placeholders with corresponding
+     * A simple method for replacing date/time placeholders with corresponding
      * date/time information. Used by the logfiles and some timestamps.
      *
      * @param int $Time A unix timestamp.
@@ -1017,7 +1016,7 @@ class Core
             $Lookup = strrev(preg_replace(['/\:/', '/(.)/'], ['', "\\1\1"], $Lookup)) . "\3ip6\4arpa\0\0\x0c\0\1";
         }
 
-        /** The IP address is.. wrong. Let's exit the closure. */
+        /** The IP address is.. wrong. Let's exit the method. */
         else {
             return $Addr;
         }
@@ -1044,7 +1043,7 @@ class Core
         $this->CIDRAM['DNS-Reverses'][$Addr] = ['Host' => $Addr, 'Time' => $this->Now + 21600];
         $this->CIDRAM['DNS-Reverses-Modified'] = true;
 
-        /** DNS is disabled. Let's exit the closure. */
+        /** DNS is disabled. Let's exit the method. */
         if (!$DNS && !$DNS = $this->Configuration['general']['default_dns']) {
             return ($this->Configuration['general']['allow_gethostbyaddr_lookup']) ? dnsReverseFallback($Addr) : $Addr;
         }
@@ -1071,7 +1070,7 @@ class Core
             }
         }
 
-        /** No response, or failed lookup. Let's exit the closure. */
+        /** No response, or failed lookup. Let's exit the method. */
         if (empty($Response)) {
             return (
                 $this->Configuration['general']['allow_gethostbyaddr_lookup']
@@ -1322,7 +1321,7 @@ class Core
     }
 
     /**
-     * Routes from UA-IP-Match, UA-CIDR-Match, and UA-ASN-Match.
+     * Routes from uaIpMatch, uaCidrMatch, and uaAsnMatch.
      * Has no return value.
      *
      * @param mixed $Datapoints The datapoint to be matched.
@@ -1370,7 +1369,7 @@ class Core
     }
 
     /**
-     * A default closure for handling signature triggers within module files.
+     * The main method for triggering signatures.
      *
      * @param bool $Condition Include any variable or PHP code which can be
      *      evaluated for truthiness. Truthiness is evaluated, and if true, the
@@ -1423,7 +1422,7 @@ class Core
     }
 
     /**
-     * A default closure for handling signature bypasses within module files.
+     * The main method for triggering signature bypasses.
      *
      * @param bool $Condition Include any variable or PHP code which can be
      *      evaluated for truthiness. Truthiness is evaluated, and if true, the
@@ -1759,7 +1758,7 @@ class Core
     }
 
     /**
-     * Master closure for search engine and social media verification.
+     * Master method for search engine and social media verification.
      *
      * @param string $From Where we're seeking the verification data from.
      * @param bool $BypassFlags Whether to check for bypass flags.
@@ -1788,7 +1787,7 @@ class Core
         foreach ($this->CIDRAM['VerificationData'][$From] as $Name => $Values) {
             if (
                 !is_array($Values) ||
-                !isset($this->CIDRAM['VPermissions'][$Name . ':Verify'], $Values['Closure'], $Values['Valid domains']) ||
+                !isset($this->CIDRAM['VPermissions'][$Name . ':Verify'], $Values['Method'], $Values['Valid domains']) ||
                 ($BypassFlags && !empty($Values['Bypass flag']) && !empty($this->CIDRAM[$Values['Bypass flag']]))
             ) {
                 continue;
@@ -1797,7 +1796,7 @@ class Core
                 (!empty($Values['User Agent']) && strpos($this->BlockInfo['UALC'], $Values['User Agent']) !== false) ||
                 (!empty($Values['User Agent Pattern']) && preg_match($Values['User Agent Pattern'], $this->BlockInfo['UALC']))
             ) {
-                $this->CIDRAM[$Values['Closure']]($Values['Valid domains'], $Name);
+                $this->{$Values['Method']}($Values['Valid domains'], $Name);
             }
         }
     }
@@ -2538,7 +2537,7 @@ class Core
     /**
      * Attempt to discern an integer from a supplied string (useful in case the
      * related functionality needs to be expanded in the future, which can be done
-     * as/when needed, and to align the behaviour of the auxiliary rules closures
+     * as/when needed, and to align the behaviour of the auxiliary rules methods
      * with user expectations).
      *
      * @param string $Value The supplied string.
@@ -2842,23 +2841,6 @@ class Core
             'mments-post~',
             $URI
         );
-    }
-
-    /**
-     * Update the configuration.
-     *
-     * @return bool Whether succeeded or failed.
-     */
-    public function updateConfiguration(): bool
-    {
-        $Reconstructed = $this->YAML->reconstruct($this->Configuration);
-        $Handle = fopen($this->Vault . $this->CIDRAM['FE']['ActiveConfigFile'], 'wb');
-        if (!is_resource($Handle)) {
-            return false;
-        }
-        $Err = fwrite($Handle, $Reconstructed);
-        fclose($Handle);
-        return $Err !== false;
     }
 
     /**

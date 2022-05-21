@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM front-end (last modified: 2022.05.20).
+ * This file: The CIDRAM front-end (last modified: 2022.05.21).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -27,6 +27,12 @@ class FrontEnd extends Core
      * @var array For any front-end working data without dedicated properties.
      */
     private $FE = [];
+
+    /**
+     * @var array Used by the updater and file manager to store and work with
+     *      local data about components.
+     */
+    private $Components = [];
 
     /**
      * @var string Whether we're calling CIDRAM through an alternative pathway.
@@ -440,7 +446,7 @@ class FrontEnd extends Core
 
                                 /** Prepare 2FA email. */
                                 if (
-                                    $this->Configuration['PHPMailer']['enable_two_factor'] &&
+                                    $this->Configuration['phpmailer']['enable_two_factor'] &&
                                     preg_match('~^.+@.+$~', $_POST['username']) &&
                                     ($this->FE['LP']['TwoFactorMessage'] = $this->L10N->getString('msg_template_2fa')) &&
                                     ($this->FE['LP']['TwoFactorSubject'] = $this->L10N->getString('msg_subject_2fa'))
@@ -508,7 +514,7 @@ class FrontEnd extends Core
                 }
             } elseif ($this->Configuration['frontend']['frontend_log']) {
                 $this->CIDRAM['LoggerMessage'] = $this->L10N->getString((
-                    $this->Configuration['PHPMailer']['enable_two_factor'] &&
+                    $this->Configuration['phpmailer']['enable_two_factor'] &&
                     $this->FE['Permissions'] === 0
                 ) ? 'state_logged_in_2fa_pending' : 'state_logged_in');
             }
@@ -555,7 +561,7 @@ class FrontEnd extends Core
                     $this->FE['User'] = $this->FE['LP']['SessionUser'];
 
                     /** Handle 2FA stuff here. */
-                    if ($this->Configuration['PHPMailer']['enable_two_factor'] && preg_match('~^.+@.+$~', $this->FE['LP']['SessionUser'])) {
+                    if ($this->Configuration['phpmailer']['enable_two_factor'] && preg_match('~^.+@.+$~', $this->FE['LP']['SessionUser'])) {
                         $this->FE['LP']['TwoFactorState'] = $this->Cache->getEntry('TwoFactorState:' . $_COOKIE['CIDRAM-ADMIN']);
                         $this->FE['LP']['Try'] = (int)substr($this->FE['LP']['TwoFactorState'], 0, 1);
                         $this->FE['UserState'] = ((int)$this->FE['LP']['TwoFactorState'] === 1) ? 1 : 2;
@@ -1727,13 +1733,13 @@ class FrontEnd extends Core
             $this->CIDRAM['Operation'] = new \Maikuolan\Common\Operation();
 
             /** Updates page form boilerplate. */
-            $this->CIDRAM['CFBoilerplate'] =
+            $this->FE['CFBoilerplate'] =
                 '<form action="?%s" method="POST" style="display:inline">' .
                 '<input name="cidram-form-target" type="hidden" value="updates" />' .
                 '<input name="do" type="hidden" value="%s" />';
 
             /** Prepare components metadata working array. */
-            $this->CIDRAM['Components'] = [
+            $this->Components = [
                 'Meta' => [],
                 'Installed Versions' => ['PHP' => PHP_VERSION],
                 'Available Versions' => [],
@@ -1747,15 +1753,18 @@ class FrontEnd extends Core
             $this->fetchRemotesData();
 
             /** Fetch components lists. */
-            $this->readInstalledMetadata($this->CIDRAM['Components']['Meta']);
+            $this->readInstalledMetadata($this->Components['Meta']);
 
             /** Check current versions beforehand (needed for dependency checks). */
-            $this->checkVersions($this->CIDRAM['Components']['Meta'], $this->CIDRAM['Components']['Installed Versions']);
+            $this->checkVersions($this->Components['Meta'], $this->Components['Installed Versions']);
 
             /** Check available versions beforehand (needed for dependency checks). */
-            $this->checkVersions($this->CIDRAM['Components']['RemoteMeta'], $this->CIDRAM['Components']['Available Versions']);
+            $this->checkVersions($this->Components['RemoteMeta'], $this->Components['Available Versions']);
 
             $this->FE['Indexes'] = [];
+
+            /** Calculate shared files. */
+            $this->calculateShared();
 
             /** A form has been submitted. */
             if (empty($this->Alternate) && $this->FE['FormTarget'] === 'updates' && !empty($_POST['do']) && !empty($_POST['ID'])) {
@@ -1775,7 +1784,10 @@ class FrontEnd extends Core
                 }
 
                 /** Check again, since the information might've been updated. */
-                $this->checkVersions($this->CIDRAM['Components']['Meta'], $this->CIDRAM['Components']['Installed Versions']);
+                $this->checkVersions($this->Components['Meta'], $this->Components['Installed Versions']);
+
+                /** Recalculate shared files. */
+                $this->calculateShared();
             }
 
             /** Page initial prepwork. */
@@ -1784,160 +1796,128 @@ class FrontEnd extends Core
             $this->FE['UpdatesRow'] = $this->readFile($this->getAssetPath('_updates_row.html'));
 
             /** Prepare installed component metadata and options for display. */
-            foreach ($this->CIDRAM['Components']['Meta'] as $this->CIDRAM['Components']['Key'] => &$this->CIDRAM['Components']['ThisComponent']) {
+            foreach ($this->Components['Meta'] as $this->Components['Key'] => &$this->Components['ThisComponent']) {
                 /** Skip if component is malformed. */
-                if (empty($this->CIDRAM['Components']['ThisComponent']['Name']) && !$this->L10N->getString('Name ' . $this->CIDRAM['Components']['Key'])) {
-                    $this->CIDRAM['Components']['ThisComponent'] = '';
+                if (empty($this->Components['ThisComponent']['Name']) && !$this->L10N->getString('Name ' . $this->Components['Key'])) {
+                    $this->Components['ThisComponent'] = '';
                     continue;
                 }
 
                 /** Execute any necessary preload instructions. */
-                if (!empty($this->CIDRAM['Components']['ThisComponent']['When Checking'])) {
-                    $this->executor($this->CIDRAM['Components']['ThisComponent']['When Checking']);
+                if (!empty($this->Components['ThisComponent']['When Checking'])) {
+                    $this->executor($this->Components['ThisComponent']['When Checking']);
                 }
 
                 /** Determine whether all dependency constraints have been met. */
-                $this->checkConstraints($this->CIDRAM['Components']['ThisComponent'], false, $this->CIDRAM['Components']['Key']);
+                $this->checkConstraints($this->Components['ThisComponent'], false, $this->Components['Key']);
 
-                $this->prepareName($this->CIDRAM['Components']['ThisComponent'], $this->CIDRAM['Components']['Key']);
-                $this->prepareExtendedDescription($this->CIDRAM['Components']['ThisComponent'], $this->CIDRAM['Components']['Key']);
-                $this->CIDRAM['Components']['ThisComponent']['ID'] = $this->CIDRAM['Components']['Key'];
-                $this->CIDRAM['Components']['ThisComponent']['Options'] = '';
-                $this->CIDRAM['Components']['ThisComponent']['StatusOptions'] = '';
-                $this->CIDRAM['Components']['ThisComponent']['StatClass'] = '';
-                if (empty($this->CIDRAM['Components']['ThisComponent']['Version'])) {
-                    if (empty($this->CIDRAM['Components']['ThisComponent']['Files']['To'])) {
-                        $this->CIDRAM['Components']['ThisComponent']['RowClass'] = 'h2';
-                        $this->CIDRAM['Components']['ThisComponent']['Version'] = $this->L10N->getString('response_updates_not_installed');
-                        $this->CIDRAM['Components']['ThisComponent']['StatClass'] = 'txtRd';
-                        $this->CIDRAM['Components']['ThisComponent']['StatusOptions'] = $this->L10N->getString('response_updates_not_installed');
-                    } else {
-                        $this->CIDRAM['Components']['ThisComponent']['Version'] = $this->L10N->getString('response_updates_unable_to_determine');
-                        $this->CIDRAM['Components']['ThisComponent']['StatClass'] = 's';
-                    }
-                }
-                if (!empty($this->CIDRAM['Components']['ThisComponent']['Files'])) {
-                    $this->arrayify($this->CIDRAM['Components']['ThisComponent']['Files']);
-                    $this->arrayify($this->CIDRAM['Components']['ThisComponent']['Files']['To']);
-                    $this->arrayify($this->CIDRAM['Components']['ThisComponent']['Files']['From']);
-                    if (isset($this->CIDRAM['Components']['ThisComponent']['Files']['Checksum'])) {
-                        $this->arrayify($this->CIDRAM['Components']['ThisComponent']['Files']['Checksum']);
-                    }
-                }
-                if (isset($this->CIDRAM['Components']['Available Versions'][$this->CIDRAM['Components']['Key']])) {
-                    $this->CIDRAM['Components']['ThisComponent']['Latest'] = $this->CIDRAM['Components']['Available Versions'][$this->CIDRAM['Components']['Key']];
+                $this->prepareName($this->Components['ThisComponent'], $this->Components['Key']);
+                $this->prepareExtendedDescription($this->Components['ThisComponent'], $this->Components['Key']);
+                $this->Components['ThisComponent']['ID'] = $this->Components['Key'];
+                $this->Components['ThisComponent']['Options'] = '';
+                $this->Components['ThisComponent']['StatusOptions'] = '';
+                $this->Components['ThisComponent']['StatClass'] = '';
+                if (isset($this->Components['Available Versions'][$this->Components['Key']])) {
+                    $this->Components['ThisComponent']['Latest'] = $this->Components['Available Versions'][$this->Components['Key']];
                 } else {
-                    $this->CIDRAM['Components']['ThisComponent']['Latest'] = $this->L10N->getString('response_updates_unable_to_determine');
-                    $this->CIDRAM['Components']['ThisComponent']['StatClass'] = 's';
+                    $this->Components['ThisComponent']['Latest'] = $this->L10N->getString('response_updates_unable_to_determine');
+                    $this->Components['ThisComponent']['StatClass'] = 's';
                 }
 
                 /** Guard against component metadata missing at the upstream. */
-                if (!isset($this->CIDRAM['Components']['RemoteMeta'][$this->CIDRAM['Components']['Key']])) {
-                    $this->CIDRAM['Components']['RemoteMeta'][$this->CIDRAM['Components']['Key']] = [];
+                if (!isset($this->Components['RemoteMeta'][$this->Components['Key']])) {
+                    $this->Components['RemoteMeta'][$this->Components['Key']] = [];
                 }
 
                 /** Determine whether all dependency constraints have been met. */
-                if (!isset($this->CIDRAM['Components']['RemoteMeta'][$this->CIDRAM['Components']['Key']]['Dependency Status'])) {
-                    $this->checkConstraints($this->CIDRAM['Components']['RemoteMeta'][$this->CIDRAM['Components']['Key']], true);
-                }
-                $this->CIDRAM['Components']['ThisComponent']['Remote Dependency Status'] =
-                    $this->CIDRAM['Components']['RemoteMeta'][$this->CIDRAM['Components']['Key']]['Dependency Status'];
-                $this->CIDRAM['Components']['ThisComponent']['Remote All Constraints Met'] =
-                    $this->CIDRAM['Components']['RemoteMeta'][$this->CIDRAM['Components']['Key']]['All Constraints Met'];
-                if (isset($this->CIDRAM['Components']['RemoteMeta'][$this->CIDRAM['Components']['Key']]['Install Together'])) {
-                    if (!isset($this->CIDRAM['Components']['Install Together'][$this->CIDRAM['Components']['Key']])) {
-                        $this->CIDRAM['Components']['Install Together'][$this->CIDRAM['Components']['Key']] = [];
+                $this->checkConstraints($this->Components['RemoteMeta'][$this->Components['Key']], true);
+                $this->Components['ThisComponent']['Remote Dependency Status'] =
+                    $this->Components['RemoteMeta'][$this->Components['Key']]['Dependency Status'];
+                $this->Components['ThisComponent']['Remote All Constraints Met'] =
+                    $this->Components['RemoteMeta'][$this->Components['Key']]['All Constraints Met'];
+                if (isset($this->Components['RemoteMeta'][$this->Components['Key']]['Install Together'])) {
+                    if (!isset($this->Components['Install Together'][$this->Components['Key']])) {
+                        $this->Components['Install Together'][$this->Components['Key']] = [];
                     }
-                    $this->CIDRAM['Components']['Install Together'][$this->CIDRAM['Components']['Key']] = array_merge(
-                        $this->CIDRAM['Components']['Install Together'][$this->CIDRAM['Components']['Key']],
-                        $this->CIDRAM['Components']['RemoteMeta'][$this->CIDRAM['Components']['Key']]['Install Together']
+                    $this->Components['Install Together'][$this->Components['Key']] = array_merge(
+                        $this->Components['Install Together'][$this->Components['Key']],
+                        $this->Components['RemoteMeta'][$this->Components['Key']]['Install Together']
                     );
                 }
 
-                if (!empty($this->CIDRAM['Components']['RemoteMeta'][$this->CIDRAM['Components']['Key']]['Name'])) {
-                    $this->CIDRAM['Components']['ThisComponent']['Name'] =
-                        $this->CIDRAM['Components']['RemoteMeta'][$this->CIDRAM['Components']['Key']]['Name'];
-                    $this->prepareName($this->CIDRAM['Components']['ThisComponent'], $this->CIDRAM['Components']['Key']);
+                if (!empty($this->Components['RemoteMeta'][$this->Components['Key']]['Name'])) {
+                    $this->Components['ThisComponent']['Name'] =
+                        $this->Components['RemoteMeta'][$this->Components['Key']]['Name'];
+                    $this->prepareName($this->Components['ThisComponent'], $this->Components['Key']);
                 }
                 if (
-                    empty($this->CIDRAM['Components']['ThisComponent']['False Positive Risk']) &&
-                    !empty($this->CIDRAM['Components']['RemoteMeta'][$this->CIDRAM['Components']['Key']]['False Positive Risk'])
+                    empty($this->Components['ThisComponent']['False Positive Risk']) &&
+                    !empty($this->Components['RemoteMeta'][$this->Components['Key']]['False Positive Risk'])
                 ) {
-                    $this->CIDRAM['Components']['ThisComponent']['False Positive Risk'] =
-                        $this->CIDRAM['Components']['RemoteMeta'][$this->CIDRAM['Components']['Key']]['False Positive Risk'];
+                    $this->Components['ThisComponent']['False Positive Risk'] =
+                        $this->Components['RemoteMeta'][$this->Components['Key']]['False Positive Risk'];
                 }
-                if (
-                    empty($this->CIDRAM['Components']['ThisComponent']['Used with']) &&
-                    !empty($this->CIDRAM['Components']['RemoteMeta'][$this->CIDRAM['Components']['Key']]['Used with'])
-                ) {
-                    $this->CIDRAM['Components']['ThisComponent']['Used with'] = $this->CIDRAM['Components']['RemoteMeta'][$this->CIDRAM['Components']['Key']]['Used with'];
+                if (!empty($this->Components['RemoteMeta'][$this->Components['Key']]['Extended Description'])) {
+                    $this->Components['ThisComponent']['Extended Description'] =
+                        $this->Components['RemoteMeta'][$this->Components['Key']]['Extended Description'];
+                    $this->prepareExtendedDescription($this->Components['ThisComponent'], $this->Components['Key']);
                 }
-                if (!empty($this->CIDRAM['Components']['RemoteMeta'][$this->CIDRAM['Components']['Key']]['Extended Description'])) {
-                    $this->CIDRAM['Components']['ThisComponent']['Extended Description'] =
-                        $this->CIDRAM['Components']['RemoteMeta'][$this->CIDRAM['Components']['Key']]['Extended Description'];
-                    $this->prepareExtendedDescription($this->CIDRAM['Components']['ThisComponent'], $this->CIDRAM['Components']['Key']);
-                }
-                if (!$this->CIDRAM['Components']['ThisComponent']['StatClass']) {
-                    if (!empty($this->CIDRAM['Components']['ThisComponent']['Latest']) && $this->CIDRAM['Operation']->singleCompare(
-                        $this->CIDRAM['Components']['ThisComponent']['Version'],
-                        '<' . $this->CIDRAM['Components']['ThisComponent']['Latest']
+                if ($this->Components['ThisComponent']['StatClass'] === '') {
+                    if (!empty($this->Components['ThisComponent']['Latest']) && $this->CIDRAM['Operation']->singleCompare(
+                        $this->Components['ThisComponent']['Version'],
+                        '<' . $this->Components['ThisComponent']['Latest']
                     )) {
-                        $this->CIDRAM['Components']['ThisComponent']['Outdated'] = true;
-                        $this->CIDRAM['Components']['Outdated'][] = $this->CIDRAM['Components']['Key'];
-                        if ((
-                            !empty($this->CIDRAM['Components']['ThisComponent']['Used with']) &&
-                            $this->has($this->CIDRAM['Components']['ThisComponent']['Used with'], ['ipv4', 'ipv6'])
-                        )) {
-                            $this->CIDRAM['Components']['OutdatedSignatureFiles'][] = $this->CIDRAM['Components']['Key'];
+                        $this->Components['ThisComponent']['Outdated'] = true;
+                        $this->Components['Outdated'][] = $this->Components['Key'];
+                        if ($this->Components['Has Signatures'] === true) {
+                            $this->Components['OutdatedSignatureFiles'][] = $this->Components['Key'];
                         }
-                        $this->CIDRAM['Components']['ThisComponent']['RowClass'] = 'r';
-                        $this->CIDRAM['Components']['ThisComponent']['StatClass'] = 'txtRd';
-                        $this->CIDRAM['Components']['ThisComponent']['StatusOptions'] = $this->L10N->getString('response_updates_outdated');
-                        if (!empty($this->CIDRAM['Components']['ThisComponent']['Remote All Constraints Met'])) {
-                            $this->CIDRAM['Components']['ThisComponent']['Options'] .=
+                        $this->Components['ThisComponent']['RowClass'] = 'r';
+                        $this->Components['ThisComponent']['StatClass'] = 'txtRd';
+                        $this->Components['ThisComponent']['StatusOptions'] = $this->L10N->getString('response_updates_outdated');
+                        if (!empty($this->Components['ThisComponent']['Remote All Constraints Met'])) {
+                            $this->Components['ThisComponent']['Options'] .=
                                 '<option value="update-component">' . $this->L10N->getString('field_update') . '</option>';
                         }
                     } else {
-                        $this->CIDRAM['Components']['ThisComponent']['StatClass'] = 'txtGn';
-                        $this->CIDRAM['Components']['ThisComponent']['StatusOptions'] = $this->L10N->getString('response_updates_already_up_to_date');
+                        $this->Components['ThisComponent']['StatClass'] = 'txtGn';
+                        $this->Components['ThisComponent']['StatusOptions'] = $this->L10N->getString('response_updates_already_up_to_date');
                         if (isset(
-                            $this->CIDRAM['Components']['RemoteMeta'][$this->CIDRAM['Components']['Key']]['Files']['To'],
-                            $this->CIDRAM['Components']['RemoteMeta'][$this->CIDRAM['Components']['Key']]['Files']['From'],
-                            $this->CIDRAM['Components']['RemoteMeta'][$this->CIDRAM['Components']['Key']]['Files']['Checksum'],
-                            $this->CIDRAM['Components']['ThisComponent']['Files']['To']
+                            $this->Components['RemoteMeta'][$this->Components['Key']]['Files'],
+                            $this->Components['ThisComponent']['Files']
                         ) && (
-                            $this->CIDRAM['Components']['RemoteMeta'][$this->CIDRAM['Components']['Key']]['Files']['To'] === $this->CIDRAM['Components']['ThisComponent']['Files']['To']
+                            serialize($this->Components['RemoteMeta'][$this->Components['Key']]['Files']) === serialize($this->Components['ThisComponent']['Files'])
                         )) {
-                            $this->CIDRAM['Components']['Repairable'][] = $this->CIDRAM['Components']['Key'];
-                            $this->CIDRAM['Components']['ThisComponent']['Options'] .= '<option value="repair-component">' . $this->L10N->getString('field_repair') . '</option>';
+                            $this->Components['Repairable'][] = $this->Components['Key'];
+                            $this->Components['ThisComponent']['Options'] .= '<option value="repair-component">' . $this->L10N->getString('field_repair') . '</option>';
                         }
                     }
                 }
-                if (!empty($this->CIDRAM['Components']['ThisComponent']['Files']['To'])) {
-                    $this->CIDRAM['Activable'] = $this->isActivable($this->CIDRAM['Components']['ThisComponent']);
-                    $this->CIDRAM['Components']['ThisIsInUse'] = $this->isInUse($this->CIDRAM['Components']['ThisComponent']);
+                if (!empty($this->Components['ThisComponent']['Files'])) {
+                    $this->CIDRAM['Activable'] = $this->isActivable($this->Components['ThisComponent']);
+                    $this->Components['ThisIsInUse'] = $this->isInUse($this->Components['ThisComponent']);
                     if (preg_match(sprintf(
                         '~^(?:theme/%s|theme/%s|CIDRAM.*|Common Classes Package)$~i',
                         preg_quote($this->Configuration['frontend']['theme']),
                         preg_quote($this->Configuration['template_data']['theme'])
-                    ), $this->CIDRAM['Components']['Key']) || $this->CIDRAM['Components']['ThisIsInUse'] !== 0) {
-                        if ($this->CIDRAM['Components']['ThisIsInUse'] === -1) {
+                    ), $this->Components['Key']) || $this->Components['ThisIsInUse'] !== 0) {
+                        if ($this->Components['ThisIsInUse'] === -1) {
                             $this->appendToString(
-                                $this->CIDRAM['Components']['ThisComponent']['StatusOptions'],
+                                $this->Components['ThisComponent']['StatusOptions'],
                                 '<hr />',
                                 '<div class="txtOe">' . $this->L10N->getString('state_component_is_partially_active') . '</div>'
                             );
                         } else {
                             $this->appendToString(
-                                $this->CIDRAM['Components']['ThisComponent']['StatusOptions'],
+                                $this->Components['ThisComponent']['StatusOptions'],
                                 '<hr />',
                                 '<div class="txtGn">' . $this->L10N->getString('state_component_is_active') . '</div>'
                             );
                         }
                         if ($this->CIDRAM['Activable']) {
-                            $this->CIDRAM['Components']['ThisComponent']['Options'] .= '<option value="deactivate-component">' . $this->L10N->getString('field_deactivate') . '</option>';
-                            if (!empty($this->CIDRAM['Components']['ThisComponent']['Uninstallable'])) {
-                                $this->CIDRAM['Components']['ThisComponent']['Options'] .=
+                            $this->Components['ThisComponent']['Options'] .= '<option value="deactivate-component">' . $this->L10N->getString('field_deactivate') . '</option>';
+                            if (!empty($this->Components['ThisComponent']['Uninstallable'])) {
+                                $this->Components['ThisComponent']['Options'] .=
                                     '<option value="deactivate-and-uninstall-component">' .
                                     $this->L10N->getString('field_deactivate') . ' + ' . $this->L10N->getString('field_uninstall') .
                                     '</option>';
@@ -1945,136 +1925,121 @@ class FrontEnd extends Core
                         }
                     } else {
                         if ($this->CIDRAM['Activable']) {
-                            $this->CIDRAM['Components']['ThisComponent']['Options'] .=
+                            $this->Components['ThisComponent']['Options'] .=
                                 '<option value="activate-component">' . $this->L10N->getString('field_activate') . '</option>';
                         }
-                        if (!empty($this->CIDRAM['Components']['ThisComponent']['Uninstallable'])) {
-                            $this->CIDRAM['Components']['ThisComponent']['Options'] .=
+                        if (!empty($this->Components['ThisComponent']['Uninstallable'])) {
+                            $this->Components['ThisComponent']['Options'] .=
                                 '<option value="uninstall-component">' . $this->L10N->getString('field_uninstall') . '</option>';
                         }
                         if (
-                            !empty($this->CIDRAM['Components']['ThisComponent']['Provisional']) ||
-                            ($this->Configuration['general']['lang_override'] && preg_match('~^L10N:~', $this->CIDRAM['Components']['ThisComponent']['Name']))
+                            !empty($this->Components['ThisComponent']['Provisional']) ||
+                            ($this->Configuration['general']['lang_override'] && preg_match('~^L10N:~', $this->Components['ThisComponent']['Name']))
                         ) {
                             $this->appendToString(
-                                $this->CIDRAM['Components']['ThisComponent']['StatusOptions'],
+                                $this->Components['ThisComponent']['StatusOptions'],
                                 '<hr />',
                                 '<div class="txtOe">' . $this->L10N->getString('state_component_is_provisional') . '</div>'
                             );
                         } else {
                             $this->appendToString(
-                                $this->CIDRAM['Components']['ThisComponent']['StatusOptions'],
+                                $this->Components['ThisComponent']['StatusOptions'],
                                 '<hr />',
                                 '<div class="txtRd">' . $this->L10N->getString('state_component_is_inactive') . '</div>'
                             );
                         }
                     }
                 }
-                if (
-                    empty($this->CIDRAM['Components']['ThisComponent']['Files']['To']) &&
-                    !empty($this->CIDRAM['Components']['RemoteMeta'][$this->CIDRAM['Components']['Key']]['Files']['To'])
-                ) {
-                    if (!empty($this->CIDRAM['Components']['ThisComponent']['Remote All Constraints Met'])) {
-                        $this->CIDRAM['Components']['ThisComponent']['Options'] .= '<option value="update-component">' . $this->L10N->getString('field_install') . '</option>';
-                        if ($this->isActivable($this->CIDRAM['Components']['ThisComponent'])) {
-                            $this->CIDRAM['Components']['ThisComponent']['Options'] .=
-                                '<option value="update-and-activate-component">' .
-                                $this->L10N->getString('field_install') . ' + ' . $this->L10N->getString('field_activate') .
-                                '</option>';
+                $this->Components['ThisComponent']['VersionSize'] = 0;
+                $this->Components['ThisComponent']['Options'] .=
+                    '<option value="verify-component" selected>' . $this->L10N->getString('field_verify') . '</option>';
+                $this->Components['Verify'][] = $this->Components['Key'];
+                if (isset($this->Components['ThisComponent']['Files'])) {
+                    foreach ($this->Components['ThisComponent']['Files'] as $ThisFile) {
+                        if (isset($ThisFile['Checksum']) && strlen($ThisFile['Checksum'])) {
+                            if (($Delimiter = strpos($ThisFile['Checksum'], ':')) !== false) {
+                                $this->Components['ThisComponent']['VersionSize'] += (int)substr($ThisFile['Checksum'], $Delimiter + 1);
+                            }
                         }
                     }
                 }
-                $this->CIDRAM['Components']['ThisComponent']['VersionSize'] = 0;
-                if (
-                    !empty($this->CIDRAM['Components']['ThisComponent']['Files']['To']) &&
-                    is_array($this->CIDRAM['Components']['ThisComponent']['Files']['To'])
-                ) {
-                    $this->CIDRAM['Components']['ThisComponent']['Options'] .=
-                        '<option value="verify-component" selected>' . $this->L10N->getString('field_verify') . '</option>';
-                    $this->CIDRAM['Components']['Verify'][] = $this->CIDRAM['Components']['Key'];
-                }
-                if (
-                    !empty($this->CIDRAM['Components']['ThisComponent']['Files']['Checksum']) &&
-                    is_array($this->CIDRAM['Components']['ThisComponent']['Files']['Checksum'])
-                ) {
-                    array_walk($this->CIDRAM['Components']['ThisComponent']['Files']['Checksum'], function ($Checksum): void {
-                        if (!empty($Checksum) && ($Delimiter = strpos($Checksum, ':')) !== false) {
-                            $this->CIDRAM['Components']['ThisComponent']['VersionSize'] += (int)substr($Checksum, $Delimiter + 1);
-                        }
-                    });
-                }
-                if ($this->CIDRAM['Components']['ThisComponent']['VersionSize'] > 0) {
-                    $this->formatFileSize($this->CIDRAM['Components']['ThisComponent']['VersionSize']);
-                    $this->CIDRAM['Components']['ThisComponent']['VersionSize'] = sprintf(
+                if ($this->Components['ThisComponent']['VersionSize'] > 0) {
+                    $this->formatFileSize($this->Components['ThisComponent']['VersionSize']);
+                    $this->Components['ThisComponent']['VersionSize'] = sprintf(
                         '<br />%s %s',
                         $this->L10N->getString('field_size'),
-                        $this->CIDRAM['Components']['ThisComponent']['VersionSize']
+                        $this->Components['ThisComponent']['VersionSize']
                     );
                 } else {
-                    $this->CIDRAM['Components']['ThisComponent']['VersionSize'] = '';
+                    $this->Components['ThisComponent']['VersionSize'] = '';
                 }
-                $this->CIDRAM['Components']['ThisComponent']['LatestSize'] = 0;
-                if (
-                    !empty($this->CIDRAM['Components']['RemoteMeta'][$this->CIDRAM['Components']['Key']]['Files']['Checksum']) &&
-                    is_array($this->CIDRAM['Components']['RemoteMeta'][$this->CIDRAM['Components']['Key']]['Files']['Checksum'])
-                ) {
-                    array_walk($this->CIDRAM['Components']['RemoteMeta'][$this->CIDRAM['Components']['Key']]['Files']['Checksum'], function ($Checksum): void {
-                        if (!empty($Checksum) && ($Delimiter = strpos($Checksum, ':')) !== false) {
-                            $this->CIDRAM['Components']['ThisComponent']['LatestSize'] += (int)substr($Checksum, $Delimiter + 1);
+                $this->Components['ThisComponent']['LatestSize'] = 0;
+                if (isset($this->Components['RemoteMeta'][$this->Components['Key']]['Files'])) {
+                    foreach ($this->Components['RemoteMeta'][$this->Components['Key']]['Files'] as $ThisFile) {
+                        if (isset($ThisFile['Checksum']) && strlen($ThisFile['Checksum'])) {
+                            if (($Delimiter = strpos($ThisFile['Checksum'], ':')) !== false) {
+                                $this->Components['ThisComponent']['LatestSize'] += (int)substr($ThisFile['Checksum'], $Delimiter + 1);
+                            }
                         }
-                    });
+                    }
                 }
-                if ($this->CIDRAM['Components']['ThisComponent']['LatestSize'] > 0) {
-                    $this->formatFileSize($this->CIDRAM['Components']['ThisComponent']['LatestSize']);
-                    $this->CIDRAM['Components']['ThisComponent']['LatestSize'] = sprintf(
+                if ($this->Components['ThisComponent']['LatestSize'] > 0) {
+                    $this->formatFileSize($this->Components['ThisComponent']['LatestSize']);
+                    $this->Components['ThisComponent']['LatestSize'] = sprintf(
                         '<br />%s %s',
                         $this->L10N->getString('field_size'),
-                        $this->CIDRAM['Components']['ThisComponent']['LatestSize']
+                        $this->Components['ThisComponent']['LatestSize']
                     );
                 } else {
-                    $this->CIDRAM['Components']['ThisComponent']['LatestSize'] = '';
+                    $this->Components['ThisComponent']['LatestSize'] = '';
                 }
-                if (!empty($this->CIDRAM['Components']['ThisComponent']['Options'])) {
+                if (!empty($this->Components['ThisComponent']['Options'])) {
                     $this->appendToString(
-                        $this->CIDRAM['Components']['ThisComponent']['StatusOptions'],
+                        $this->Components['ThisComponent']['StatusOptions'],
                         '<hr />',
-                        '<select name="do" class="auto">' . $this->CIDRAM['Components']['ThisComponent']['Options'] .
+                        '<select name="do" class="auto">' . $this->Components['ThisComponent']['Options'] .
                         '</select><input type="submit" value="' . $this->L10N->getString('field_ok') . '" class="auto" />'
                     );
-                    $this->CIDRAM['Components']['ThisComponent']['Options'] = '';
+                    $this->Components['ThisComponent']['Options'] = '';
                 }
 
                 /** Append changelog. */
-                $this->CIDRAM['Components']['ThisComponent']['Changelog'] = empty(
-                    $this->CIDRAM['Components']['ThisComponent']['Changelog']
-                ) ? '' : '<br /><a href="' . $this->CIDRAM['Components']['ThisComponent']['Changelog'] . '" rel="noopener external">Changelog</a>';
+                $this->Components['ThisComponent']['Changelog'] = empty(
+                    $this->Components['ThisComponent']['Changelog']
+                ) ? '' : '<br /><a href="' . $this->Components['ThisComponent']['Changelog'] . '" rel="noopener external">Changelog</a>';
 
-                /** Append filename. */
-                $this->CIDRAM['Components']['ThisComponent']['Filename'] = (
-                    empty($this->CIDRAM['Components']['ThisComponent']['Files']['To']) ||
-                    count($this->CIDRAM['Components']['ThisComponent']['Files']['To']) !== 1
-                ) ? '' : '<br />' . $this->L10N->getString('field_filename') . ' ' . $this->CIDRAM['Components']['ThisComponent']['Files']['To'][0];
+                /** Append filename (downstream). */
+                $this->Components['ThisComponent']['Filename'] = (
+                    empty($this->Components['ThisComponent']['Files']) ||
+                    count($this->Components['ThisComponent']['Files']) !== 1
+                ) ? '' : '<br />' . $this->L10N->getString('field_filename') . ' ' . key($this->Components['ThisComponent']['Files']);
+
+                /** Append filename (upstream). */
+                $this->Components['ThisComponent']['RemoteFilename'] = (
+                    empty($this->Components['RemoteMeta'][$this->Components['Key']]['Files']) ||
+                    count($this->Components['RemoteMeta'][$this->Components['Key']]['Files']) !== 1
+                ) ? '' : '<br />' . $this->L10N->getString('field_filename') . ' ' . key($this->Components['RemoteMeta'][$this->Components['Key']]['Files']);
 
                 /** Finalise entry. */
                 if (
-                    !($this->FE['hide-non-outdated'] && empty($this->CIDRAM['Components']['ThisComponent']['Outdated'])) &&
-                    !($this->FE['hide-unused'] && empty($this->CIDRAM['Components']['ThisComponent']['Files']['To']))
+                    !($this->FE['hide-non-outdated'] && empty($this->Components['ThisComponent']['Outdated'])) &&
+                    !($this->FE['hide-unused'] && empty($this->Components['ThisComponent']['Files']))
                 ) {
-                    if (empty($this->CIDRAM['Components']['ThisComponent']['RowClass'])) {
-                        $this->CIDRAM['Components']['ThisComponent']['RowClass'] = 'h1';
+                    if (empty($this->Components['ThisComponent']['RowClass'])) {
+                        $this->Components['ThisComponent']['RowClass'] = 'h1';
                     }
-                    if (!empty($this->FE['sort-by-name']) && !empty($this->CIDRAM['Components']['ThisComponent']['Name'])) {
-                        $this->CIDRAM['Components']['ThisComponent']['SortKey'] = $this->CIDRAM['Components']['ThisComponent']['Name'];
+                    if (!empty($this->FE['sort-by-name']) && !empty($this->Components['ThisComponent']['Name'])) {
+                        $this->Components['ThisComponent']['SortKey'] = $this->Components['ThisComponent']['Name'];
                     } else {
-                        $this->CIDRAM['Components']['ThisComponent']['SortKey'] = $this->CIDRAM['Components']['Key'];
+                        $this->Components['ThisComponent']['SortKey'] = $this->Components['Key'];
                     }
-                    $this->FE['Indexes'][$this->CIDRAM['Components']['ThisComponent']['SortKey']] = sprintf(
+                    $this->FE['Indexes'][$this->Components['ThisComponent']['SortKey']] = sprintf(
                         "<a href=\"#%s\">%s</a><br /><br />\n      ",
-                        $this->CIDRAM['Components']['ThisComponent']['ID'],
-                        $this->CIDRAM['Components']['ThisComponent']['Name']
+                        $this->Components['ThisComponent']['ID'],
+                        $this->Components['ThisComponent']['Name']
                     );
-                    $this->CIDRAM['Components']['Out'][$this->CIDRAM['Components']['ThisComponent']['SortKey']] = $this->parseVars(
-                        $this->L10N->Data + $this->arrayFlatten($this->CIDRAM['Components']['ThisComponent']) + $this->arrayFlatten($this->FE),
+                    $this->Components['Out'][$this->Components['ThisComponent']['SortKey']] = $this->parseVars(
+                        $this->L10N->Data + $this->arrayFlatten($this->Components['ThisComponent']) + $this->arrayFlatten($this->FE),
                         $this->FE['UpdatesRow']
                     );
                 }
@@ -2084,29 +2049,29 @@ class FrontEnd extends Core
             if (!empty($this->Alternate) && (
                 (
                     $this->FE['CronMode'] === 'Signatures' &&
-                    !empty($this->CIDRAM['Components']['OutdatedSignatureFiles']) &&
-                    ($this->FE['BuildUse'] = 'OutdatedSignatureFiles')
+                    !empty($this->Components['OutdatedSignatureFiles']) &&
+                    ($BuildUse = 'OutdatedSignatureFiles')
                 ) || (
                     $this->FE['CronMode'] !== '' &&
                     $this->FE['CronMode'] !== 'Signatures' &&
-                    !empty($this->CIDRAM['Components']['Outdated']) &&
-                    ($this->FE['BuildUse'] = 'Outdated')
+                    !empty($this->Components['Outdated']) &&
+                    ($BuildUse = 'Outdated')
                 )
             )) {
                 /** Fetch dependency installation triggers. */
-                $this->CIDRAM['Components']['Build'] = $this->CIDRAM['Components'][$this->FE['BuildUse']];
-                foreach ($this->CIDRAM['Components'][$this->FE['BuildUse']] as $this->CIDRAM['Components']['Key']) {
-                    if (isset($this->CIDRAM['Components']['Install Together'][$this->CIDRAM['Components']['Key']])) {
-                        $this->CIDRAM['Components']['Build'] = array_merge(
-                            $this->CIDRAM['Components']['Build'],
-                            $this->CIDRAM['Components']['Install Together'][$this->CIDRAM['Components']['Key']]
+                $this->Components['Build'] = $this->Components[$BuildUse];
+                foreach ($this->Components[$BuildUse] as $this->Components['Key']) {
+                    if (isset($this->Components['Install Together'][$this->Components['Key']])) {
+                        $this->Components['Build'] = array_merge(
+                            $this->Components['Build'],
+                            $this->Components['Install Together'][$this->Components['Key']]
                         );
                     }
                 }
-                $this->CIDRAM['Components'][$this->FE['BuildUse']] = array_unique($this->CIDRAM['Components']['Build']);
+                $this->Components[$BuildUse] = array_unique($this->Components['Build']);
 
                 /** Trigger updates handler. */
-                $this->updatesHandler('update-component', $this->CIDRAM['Components'][$this->FE['BuildUse']]);
+                $this->updatesHandler('update-component', $this->Components[$BuildUse]);
 
                 /** Trigger signatures update log event. */
                 if (!empty($this->CIDRAM['SignaturesUpdateEvent'])) {
@@ -2121,103 +2086,103 @@ class FrontEnd extends Core
                 }
 
                 /** Check again, since the information might've been updated. */
-                $this->checkVersions($this->CIDRAM['Components']['Meta'], $this->CIDRAM['Components']['Installed Versions']);
+                $this->checkVersions($this->Components['Meta'], $this->Components['Installed Versions']);
             }
 
             /** Prepare newly found component metadata and options for display. */
-            foreach ($this->CIDRAM['Components']['RemoteMeta'] as $this->CIDRAM['Components']['Key'] => &$this->CIDRAM['Components']['ThisComponent']) {
+            foreach ($this->Components['RemoteMeta'] as $this->Components['Key'] => &$this->Components['ThisComponent']) {
                 if (
-                    isset($this->CIDRAM['Components']['Meta'][$this->CIDRAM['Components']['Key']]) ||
-                    empty($this->CIDRAM['Components']['ThisComponent']['Version']) ||
-                    empty($this->CIDRAM['Components']['ThisComponent']['Files']['From']) ||
-                    empty($this->CIDRAM['Components']['ThisComponent']['Files']['To'])
+                    isset($this->Components['Meta'][$this->Components['Key']]) ||
+                    empty($this->Components['ThisComponent']['Version']) ||
+                    empty($this->Components['ThisComponent']['Files'])
                 ) {
                     continue;
                 }
 
                 /** Determine whether all dependency constraints have been met. */
-                $this->checkConstraints($this->CIDRAM['Components']['ThisComponent'], true);
-                $this->CIDRAM['Components']['ThisComponent']['Remote Dependency Status'] = $this->CIDRAM['Components']['ThisComponent']['Dependency Status'];
-                $this->CIDRAM['Components']['ThisComponent']['Dependency Status'] = '';
-                $this->CIDRAM['Components']['ThisComponent']['Remote All Constraints Met'] = $this->CIDRAM['Components']['ThisComponent']['All Constraints Met'];
-                if (isset($this->CIDRAM['Components']['ThisComponent']['Install Together'])) {
-                    if (!isset($this->CIDRAM['Components']['Install Together'][$this->CIDRAM['Components']['Key']])) {
-                        $this->CIDRAM['Components']['Install Together'][$this->CIDRAM['Components']['Key']] = [];
+                $this->checkConstraints($this->Components['ThisComponent'], true);
+                $this->Components['ThisComponent']['Remote Dependency Status'] = $this->Components['ThisComponent']['Dependency Status'];
+                $this->Components['ThisComponent']['Dependency Status'] = '';
+                $this->Components['ThisComponent']['Remote All Constraints Met'] = $this->Components['ThisComponent']['All Constraints Met'];
+                if (isset($this->Components['ThisComponent']['Install Together'])) {
+                    if (!isset($this->Components['Install Together'][$this->Components['Key']])) {
+                        $this->Components['Install Together'][$this->Components['Key']] = [];
                     }
-                    $this->CIDRAM['Components']['Install Together'][$this->CIDRAM['Components']['Key']] = array_merge(
-                        $this->CIDRAM['Components']['Install Together'][$this->CIDRAM['Components']['Key']],
-                        $this->CIDRAM['Components']['ThisComponent']['Install Together']
+                    $this->Components['Install Together'][$this->Components['Key']] = array_merge(
+                        $this->Components['Install Together'][$this->Components['Key']],
+                        $this->Components['ThisComponent']['Install Together']
                     );
                 }
 
-                $this->prepareName($this->CIDRAM['Components']['ThisComponent'], $this->CIDRAM['Components']['Key']);
-                $this->prepareExtendedDescription($this->CIDRAM['Components']['ThisComponent'], $this->CIDRAM['Components']['Key']);
-                $this->CIDRAM['Components']['ThisComponent']['ID'] = $this->CIDRAM['Components']['Key'];
-                $this->CIDRAM['Components']['ThisComponent']['Latest'] = $this->CIDRAM['Components']['ThisComponent']['Version'];
-                $this->CIDRAM['Components']['ThisComponent']['Version'] = $this->L10N->getString('response_updates_not_installed');
-                $this->CIDRAM['Components']['ThisComponent']['StatClass'] = 'txtRd';
-                $this->CIDRAM['Components']['ThisComponent']['RowClass'] = 'h2';
-                $this->CIDRAM['Components']['ThisComponent']['VersionSize'] = '';
-                $this->CIDRAM['Components']['ThisComponent']['LatestSize'] = 0;
-                if (
-                    !empty($this->CIDRAM['Components']['ThisComponent']['Files']['Checksum']) &&
-                    is_array($this->CIDRAM['Components']['ThisComponent']['Files']['Checksum'])
-                ) {
-                    foreach ($this->CIDRAM['Components']['ThisComponent']['Files']['Checksum'] as $this->CIDRAM['Components']['ThisChecksum']) {
-                        if (empty($this->CIDRAM['Components']['ThisChecksum'])) {
-                            continue;
-                        }
-                        if (($this->CIDRAM['FilesDelimit'] = strpos($this->CIDRAM['Components']['ThisChecksum'], ':')) !== false) {
-                            $this->CIDRAM['Components']['ThisComponent']['LatestSize'] +=
-                                (int)substr($this->CIDRAM['Components']['ThisChecksum'], $this->CIDRAM['FilesDelimit'] + 1);
+                $this->prepareName($this->Components['ThisComponent'], $this->Components['Key']);
+                $this->prepareExtendedDescription($this->Components['ThisComponent'], $this->Components['Key']);
+                $this->Components['ThisComponent']['ID'] = $this->Components['Key'];
+                $this->Components['ThisComponent']['Latest'] = $this->Components['ThisComponent']['Version'];
+                $this->Components['ThisComponent']['Version'] = $this->L10N->getString('response_updates_not_installed');
+                $this->Components['ThisComponent']['StatClass'] = 'txtRd';
+                $this->Components['ThisComponent']['RowClass'] = 'h2';
+                $this->Components['ThisComponent']['VersionSize'] = '';
+                $this->Components['ThisComponent']['LatestSize'] = 0;
+                if (isset($this->Components['ThisComponent']['Files'])) {
+                    foreach ($this->Components['ThisComponent']['Files'] as $ThisFile) {
+                        if (isset($ThisFile['Checksum']) && strlen($ThisFile['Checksum'])) {
+                            if (($Delimiter = strpos($ThisFile['Checksum'], ':')) !== false) {
+                                $this->Components['ThisComponent']['LatestSize'] += (int)substr($ThisFile['Checksum'], $Delimiter + 1);
+                            }
                         }
                     }
                 }
-                if ($this->CIDRAM['Components']['ThisComponent']['LatestSize'] > 0) {
-                    $this->formatFileSize($this->CIDRAM['Components']['ThisComponent']['LatestSize']);
-                    $this->CIDRAM['Components']['ThisComponent']['LatestSize'] = sprintf(
+                if ($this->Components['ThisComponent']['LatestSize'] > 0) {
+                    $this->formatFileSize($this->Components['ThisComponent']['LatestSize']);
+                    $this->Components['ThisComponent']['LatestSize'] = sprintf(
                         '<br />%s %s',
                         $this->L10N->getString('field_size'),
-                        $this->CIDRAM['Components']['ThisComponent']['LatestSize']
+                        $this->Components['ThisComponent']['LatestSize']
                     );
                 } else {
-                    $this->CIDRAM['Components']['ThisComponent']['LatestSize'] = '';
+                    $this->Components['ThisComponent']['LatestSize'] = '';
                 }
-                $this->CIDRAM['Components']['ThisComponent']['StatusOptions'] = $this->L10N->getString('response_updates_not_installed');
-                if (!empty($this->CIDRAM['Components']['ThisComponent']['Remote All Constraints Met'])) {
-                    $this->CIDRAM['Components']['ThisComponent']['StatusOptions'] .= '<br /><select name="do" class="auto">' .
+                $this->Components['ThisComponent']['StatusOptions'] = $this->L10N->getString('response_updates_not_installed');
+                if (!empty($this->Components['ThisComponent']['Remote All Constraints Met'])) {
+                    $this->Components['ThisComponent']['StatusOptions'] .= '<br /><select name="do" class="auto">' .
                         '<option value="update-component">' . $this->L10N->getString('field_install') . '</option>';
-                    if ($this->isActivable($this->CIDRAM['Components']['ThisComponent'])) {
-                        $this->CIDRAM['Components']['ThisComponent']['StatusOptions'] .=
+                    if ($this->isActivable($this->Components['ThisComponent'])) {
+                        $this->Components['ThisComponent']['StatusOptions'] .=
                             '<option value="update-and-activate-component">' .
                             $this->L10N->getString('field_install') . ' + ' . $this->L10N->getString('field_activate') .
                             '</option>';
                     }
-                    $this->CIDRAM['Components']['ThisComponent']['StatusOptions'] .= '</select><input type="submit" value="' . $this->L10N->getString('field_ok') . '" class="auto" />';
+                    $this->Components['ThisComponent']['StatusOptions'] .= '</select><input type="submit" value="' . $this->L10N->getString('field_ok') . '" class="auto" />';
                 }
 
                 /** Append changelog. */
-                $this->CIDRAM['Components']['ThisComponent']['Changelog'] = empty(
-                    $this->CIDRAM['Components']['ThisComponent']['Changelog']
-                ) ? '' : '<br /><a href="' . $this->CIDRAM['Components']['ThisComponent']['Changelog'] . '" rel="noopener external">Changelog</a>';
+                $this->Components['ThisComponent']['Changelog'] = empty(
+                    $this->Components['ThisComponent']['Changelog']
+                ) ? '' : '<br /><a href="' . $this->Components['ThisComponent']['Changelog'] . '" rel="noopener external">Changelog</a>';
 
-                /** Append filename (empty). */
-                $this->CIDRAM['Components']['ThisComponent']['Filename'] = '';
+                /** Append filename (downstream). */
+                $this->Components['ThisComponent']['Filename'] = '';
+
+                /** Append filename (upstream). */
+                $this->Components['ThisComponent']['RemoteFilename'] = (
+                    empty($this->Components['ThisComponent']['Files']) ||
+                    count($this->Components['ThisComponent']['Files']) !== 1
+                ) ? '' : '<br />' . $this->L10N->getString('field_filename') . ' ' . key($this->Components['ThisComponent']['Files']);
 
                 /** Finalise entry. */
                 if (!$this->FE['hide-unused']) {
-                    if (!empty($this->FE['sort-by-name']) && !empty($this->CIDRAM['Components']['ThisComponent']['Name'])) {
-                        $this->CIDRAM['Components']['ThisComponent']['SortKey'] = $this->CIDRAM['Components']['ThisComponent']['Name'];
+                    if (!empty($this->FE['sort-by-name']) && !empty($this->Components['ThisComponent']['Name'])) {
+                        $this->Components['ThisComponent']['SortKey'] = $this->Components['ThisComponent']['Name'];
                     } else {
-                        $this->CIDRAM['Components']['ThisComponent']['SortKey'] = $this->CIDRAM['Components']['Key'];
+                        $this->Components['ThisComponent']['SortKey'] = $this->Components['Key'];
                     }
-                    $this->FE['Indexes'][$this->CIDRAM['Components']['ThisComponent']['SortKey']] = sprintf(
+                    $this->FE['Indexes'][$this->Components['ThisComponent']['SortKey']] = sprintf(
                         "<a href=\"#%s\">%s</a><br /><br />\n      ",
-                        $this->CIDRAM['Components']['ThisComponent']['ID'],
-                        $this->CIDRAM['Components']['ThisComponent']['Name']
+                        $this->Components['ThisComponent']['ID'],
+                        $this->Components['ThisComponent']['Name']
                     );
-                    $this->CIDRAM['Components']['Out'][$this->CIDRAM['Components']['ThisComponent']['SortKey']] = $this->parseVars(
-                        $this->L10N->Data + $this->arrayFlatten($this->CIDRAM['Components']['ThisComponent']) + $this->arrayFlatten($this->FE),
+                    $this->Components['Out'][$this->Components['ThisComponent']['SortKey']] = $this->parseVars(
+                        $this->L10N->Data + $this->arrayFlatten($this->Components['ThisComponent']) + $this->arrayFlatten($this->FE),
                         $this->FE['UpdatesRow']
                     );
                 }
@@ -2225,53 +2190,53 @@ class FrontEnd extends Core
 
             /** Finalise output and unset working data. */
             $this->FE['Indexes'] = $this->sortComponents($this->FE['Indexes']);
-            $this->FE['Components'] = $this->sortComponents($this->CIDRAM['Components']['Out']);
+            $this->FE['Components'] = $this->sortComponents($this->Components['Out']);
 
-            $this->CIDRAM['Components']['CountOutdated'] = count($this->CIDRAM['Components']['Outdated']);
-            $this->CIDRAM['Components']['CountOutdatedSignatureFiles'] = count($this->CIDRAM['Components']['OutdatedSignatureFiles']);
-            $this->CIDRAM['Components']['CountVerify'] = count($this->CIDRAM['Components']['Verify']);
-            $this->CIDRAM['Components']['CountRepairable'] = count($this->CIDRAM['Components']['Repairable']);
+            $this->Components['CountOutdated'] = count($this->Components['Outdated']);
+            $this->Components['CountOutdatedSignatureFiles'] = count($this->Components['OutdatedSignatureFiles']);
+            $this->Components['CountVerify'] = count($this->Components['Verify']);
+            $this->Components['CountRepairable'] = count($this->Components['Repairable']);
 
             /** Preparing the update all, verify all, repair all buttons. */
             $this->FE['UpdateAll'] = (
-                $this->CIDRAM['Components']['CountOutdated'] ||
-                $this->CIDRAM['Components']['CountOutdatedSignatureFiles'] ||
-                $this->CIDRAM['Components']['CountVerify'] ||
-                $this->CIDRAM['Components']['CountRepairable']
+                $this->Components['CountOutdated'] ||
+                $this->Components['CountOutdatedSignatureFiles'] ||
+                $this->Components['CountVerify'] ||
+                $this->Components['CountRepairable']
             ) ? '<hr />' : '';
 
             /** Instructions to update all signature files (but not necessarily everything). */
-            if ($this->CIDRAM['Components']['CountOutdatedSignatureFiles']) {
-                $this->FE['UpdateAll'] .= sprintf($this->CIDRAM['CFBoilerplate'], $this->FE['UpdatesFormTarget'], 'update-component');
-                foreach ($this->CIDRAM['Components']['OutdatedSignatureFiles'] as $this->CIDRAM['Components']['ThisOutdated']) {
-                    $this->FE['UpdateAll'] .= '<input name="ID[]" type="hidden" value="' . $this->CIDRAM['Components']['ThisOutdated'] . '" />';
+            if ($this->Components['CountOutdatedSignatureFiles']) {
+                $this->FE['UpdateAll'] .= sprintf($this->FE['CFBoilerplate'], $this->FE['UpdatesFormTarget'], 'update-component');
+                foreach ($this->Components['OutdatedSignatureFiles'] as $this->Components['ThisOutdated']) {
+                    $this->FE['UpdateAll'] .= '<input name="ID[]" type="hidden" value="' . $this->Components['ThisOutdated'] . '" />';
                 }
                 $this->FE['UpdateAll'] .= '<input type="submit" value="' . $this->L10N->getString('field_update_signatures_files') . '" class="auto" /></form>';
             }
 
             /** Instructions to update everything at once. */
-            if ($this->CIDRAM['Components']['CountOutdated'] && $this->CIDRAM['Components']['CountOutdated'] !== $this->CIDRAM['Components']['CountOutdatedSignatureFiles']) {
-                $this->FE['UpdateAll'] .= sprintf($this->CIDRAM['CFBoilerplate'], $this->FE['UpdatesFormTarget'], 'update-component');
-                foreach ($this->CIDRAM['Components']['Outdated'] as $this->CIDRAM['Components']['ThisOutdated']) {
-                    $this->FE['UpdateAll'] .= '<input name="ID[]" type="hidden" value="' . $this->CIDRAM['Components']['ThisOutdated'] . '" />';
+            if ($this->Components['CountOutdated'] && $this->Components['CountOutdated'] !== $this->Components['CountOutdatedSignatureFiles']) {
+                $this->FE['UpdateAll'] .= sprintf($this->FE['CFBoilerplate'], $this->FE['UpdatesFormTarget'], 'update-component');
+                foreach ($this->Components['Outdated'] as $this->Components['ThisOutdated']) {
+                    $this->FE['UpdateAll'] .= '<input name="ID[]" type="hidden" value="' . $this->Components['ThisOutdated'] . '" />';
                 }
                 $this->FE['UpdateAll'] .= '<input type="submit" value="' . $this->L10N->getString('field_update_all') . '" class="auto" /></form>';
             }
 
             /** Instructions to repair everything at once. */
-            if ($this->CIDRAM['Components']['CountRepairable']) {
-                $this->FE['UpdateAll'] .= sprintf($this->CIDRAM['CFBoilerplate'], $this->FE['UpdatesFormTarget'], 'repair-component');
-                foreach ($this->CIDRAM['Components']['Repairable'] as $this->CIDRAM['Components']['ThisRepairable']) {
-                    $this->FE['UpdateAll'] .= '<input name="ID[]" type="hidden" value="' . $this->CIDRAM['Components']['ThisRepairable'] . '" />';
+            if ($this->Components['CountRepairable']) {
+                $this->FE['UpdateAll'] .= sprintf($this->FE['CFBoilerplate'], $this->FE['UpdatesFormTarget'], 'repair-component');
+                foreach ($this->Components['Repairable'] as $this->Components['ThisRepairable']) {
+                    $this->FE['UpdateAll'] .= '<input name="ID[]" type="hidden" value="' . $this->Components['ThisRepairable'] . '" />';
                 }
                 $this->FE['UpdateAll'] .= '<input type="submit" value="' . $this->L10N->getString('field_repair_all') . '" class="auto" /></form>';
             }
 
             /** Instructions to verify everything at once. */
-            if ($this->CIDRAM['Components']['CountVerify']) {
-                $this->FE['UpdateAll'] .= sprintf($this->CIDRAM['CFBoilerplate'], $this->FE['UpdatesFormTarget'], 'verify-component');
-                foreach ($this->CIDRAM['Components']['Verify'] as $this->CIDRAM['Components']['ThisVerify']) {
-                    $this->FE['UpdateAll'] .= '<input name="ID[]" type="hidden" value="' . $this->CIDRAM['Components']['ThisVerify'] . '" />';
+            if ($this->Components['CountVerify']) {
+                $this->FE['UpdateAll'] .= sprintf($this->FE['CFBoilerplate'], $this->FE['UpdatesFormTarget'], 'verify-component');
+                foreach ($this->Components['Verify'] as $this->Components['ThisVerify']) {
+                    $this->FE['UpdateAll'] .= '<input name="ID[]" type="hidden" value="' . $this->Components['ThisVerify'] . '" />';
                 }
                 $this->FE['UpdateAll'] .= '<input type="submit" value="' . $this->L10N->getString('field_verify_all') . '" class="auto" /></form>';
             }
@@ -2283,15 +2248,15 @@ class FrontEnd extends Core
             ) . $this->CIDRAM['MenuToggle'];
 
             /** Process dependency installation triggers. */
-            foreach ($this->CIDRAM['Components']['Install Together'] as $this->CIDRAM['Components']['Key'] => $this->CIDRAM['Components']['ID']) {
-                $this->CIDRAM['Components']['Build'] = '';
-                $this->CIDRAM['Components']['ID'] = array_unique($this->CIDRAM['Components']['ID']);
-                foreach ($this->CIDRAM['Components']['ID'] as $this->CIDRAM['Components']['ThisID']) {
-                    $this->CIDRAM['Components']['Build'] .= '<input name="InstallTogether[]" type="hidden" value="' . $this->CIDRAM['Components']['ThisID'] . '" />';
+            foreach ($this->Components['Install Together'] as $this->Components['Key'] => $this->Components['ID']) {
+                $this->Components['Build'] = '';
+                $this->Components['ID'] = array_unique($this->Components['ID']);
+                foreach ($this->Components['ID'] as $this->Components['ThisID']) {
+                    $this->Components['Build'] .= '<input name="InstallTogether[]" type="hidden" value="' . $this->Components['ThisID'] . '" />';
                 }
                 $this->FE['FE_Content'] = str_replace(
-                    '<input name="ID[]" type="hidden" value="' .$this->CIDRAM['Components']['Key'] . '" />',
-                    $this->CIDRAM['Components']['Build'] . '<input name="ID[]" type="hidden" value="' .$this->CIDRAM['Components']['Key'] . '" />',
+                    '<input name="ID[]" type="hidden" value="' .$this->Components['Key'] . '" />',
+                    $this->Components['Build'] . '<input name="ID[]" type="hidden" value="' .$this->Components['Key'] . '" />',
                     $this->FE['FE_Content']
                 );
             }
@@ -2318,8 +2283,8 @@ class FrontEnd extends Core
                     $this->FE['state_msg']
                 )]);
             } elseif (!empty($_POST['do']) && $_POST['do'] === 'get-list' && (
-                $this->CIDRAM['Components']['CountOutdated'] > 0 ||
-                $this->CIDRAM['Components']['CountOutdatedSignatureFiles'] > 0
+                $this->Components['CountOutdated'] > 0 ||
+                $this->Components['CountOutdatedSignatureFiles'] > 0
             )) {
                 /** Returned list of outdated components for Cronable. */
                 echo json_encode([
@@ -2328,13 +2293,13 @@ class FrontEnd extends Core
                         ['[', ']', "\n", "\n---\n"],
                         $this->FE['state_msg']
                     ),
-                    'outdated' => $this->CIDRAM['Components']['CountOutdated'] > 0 ? $this->CIDRAM['Components']['Outdated'] : [],
-                    'outdated_signature_files' => $this->CIDRAM['Components']['CountOutdatedSignatureFiles'] > 0 ? $this->CIDRAM['Components']['OutdatedSignatureFiles'] : []
+                    'outdated' => $this->Components['CountOutdated'] > 0 ? $this->Components['Outdated'] : [],
+                    'outdated_signature_files' => $this->Components['CountOutdatedSignatureFiles'] > 0 ? $this->Components['OutdatedSignatureFiles'] : []
                 ]);
             }
 
             /** Cleanup. */
-            unset($this->CIDRAM['Components'], $this->CIDRAM['CFBoilerplate'], $this->CIDRAM['Operation']);
+            unset($this->FE['CFBoilerplate'], $this->CIDRAM['Operation']);
         }
 
         /** Signature file fixer. */
@@ -2541,7 +2506,7 @@ class FrontEnd extends Core
             $this->FE['VaultPath'] = str_replace("\\", '/', $this->Vault) . '*';
 
             /** Prepare components metadata working array. */
-            $this->CIDRAM['Components'] = ['Files' => [], 'Components' => [], 'ComponentFiles' => [], 'Names' => []];
+            $this->Components = ['Files' => [], 'Components' => [], 'ComponentFiles' => [], 'Names' => []];
 
             /** Show/hide doughnuts link and etc. */
             if (!$DoughnutFile) {
@@ -2552,20 +2517,20 @@ class FrontEnd extends Core
                 $this->FE['ShowHideLink'] = '<a href="?cidram-page=file-manager">' . $this->L10N->getString('label_hide') . '</a>';
 
                 /** Fetch components lists. */
-                $this->readInstalledMetadata($this->CIDRAM['Components']['Components']);
+                $this->readInstalledMetadata($this->Components['Components']);
 
                 /** Identifying file component correlations. */
-                foreach ($this->CIDRAM['Components']['Components'] as $this->CIDRAM['Components']['ThisName'] => &$ThisData) {
-                    if (!empty($ThisData['Files']['To'])) {
-                        $this->arrayify($ThisData['Files']['To']);
-                        foreach ($ThisData['Files']['To'] as $this->CIDRAM['Components']['ThisFile']) {
-                            $this->CIDRAM['Components']['ThisFile'] = str_replace("\\", '/', $this->CIDRAM['Components']['ThisFile']);
-                            $this->CIDRAM['Components']['Files'][$this->CIDRAM['Components']['ThisFile']] = $this->CIDRAM['Components']['ThisName'];
+                foreach ($this->Components['Components'] as $ThisName => &$ThisData) {
+                    if (!empty($ThisData['Files'])) {
+                        $this->arrayify($ThisData['Files']);
+                        foreach ($ThisData['Files'] as $ThisFile => $FileData) {
+                            $ThisFile = str_replace("\\", '/', $ThisFile);
+                            $this->Components['Files'][$ThisFile] = $ThisName;
                         }
                     }
-                    $this->prepareName($ThisData, $this->CIDRAM['Components']['ThisName']);
+                    $this->prepareName($ThisData, $ThisName);
                     if (!empty($ThisData['Name'])) {
-                        $this->CIDRAM['Components']['Names'][$this->CIDRAM['Components']['ThisName']] = $ThisData['Name'];
+                        $this->Components['Names'][$ThisName] = $ThisData['Name'];
                     }
                     $ThisData = 0;
                 }
@@ -2705,9 +2670,9 @@ class FrontEnd extends Core
                             $_POST['content'] = str_replace("\n", "\r\n", $_POST['content']);
                         }
 
-                        $this->CIDRAM['Handle'] = fopen($this->Vault . $_POST['filename'], 'wb');
-                        fwrite($this->CIDRAM['Handle'], $_POST['content']);
-                        fclose($this->CIDRAM['Handle']);
+                        $Handle = fopen($this->Vault . $_POST['filename'], 'wb');
+                        fwrite($Handle, $_POST['content']);
+                        fclose($Handle);
 
                         $this->FE['state_msg'] = $this->L10N->getString('response_file_edited');
                     } else {
@@ -2759,7 +2724,7 @@ class FrontEnd extends Core
                 $this->FE['Doughnut'] = '';
             } else {
                 /** Sort doughnut values. */
-                arsort($this->CIDRAM['Components']['Components']);
+                arsort($this->Components['Components']);
 
                 /** Initialise doughnut values. */
                 $this->FE['DoughnutValues'] = [];
@@ -2774,47 +2739,43 @@ class FrontEnd extends Core
                 $this->FE['DoughnutHTML'] = $this->L10N->getString('tip_click_the_component') . '<br /><ul class="pieul">';
 
                 /** Building doughnut values. */
-                foreach ($this->CIDRAM['Components']['Components'] as $this->CIDRAM['Components']['ThisName'] => $this->CIDRAM['Components']['ThisData']) {
-                    if (empty($this->CIDRAM['Components']['ThisData'])) {
+                foreach ($this->Components['Components'] as $ThisName => $ThisData) {
+                    if (empty($ThisData)) {
                         continue;
                     }
-                    $this->CIDRAM['Components']['ThisSize'] = $this->CIDRAM['Components']['ThisData'];
-                    $this->formatFileSize($this->CIDRAM['Components']['ThisSize']);
-                    $this->CIDRAM['Components']['ThisListed'] = '';
-                    if (!empty($this->CIDRAM['Components']['ComponentFiles'][$this->CIDRAM['Components']['ThisName']])) {
-                        $this->CIDRAM['Components']['ThisComponentFiles'] = &$this->CIDRAM['Components']['ComponentFiles'][$this->CIDRAM['Components']['ThisName']];
-                        arsort($this->CIDRAM['Components']['ThisComponentFiles']);
-                        $this->CIDRAM['Components']['ThisListed'] .= '<ul class="comSub">';
-                        foreach ($this->CIDRAM['Components']['ThisComponentFiles'] as $this->CIDRAM['Components']['ThisFile'] => $this->CIDRAM['Components']['ThisFileSize']) {
-                            $this->formatFileSize($this->CIDRAM['Components']['ThisFileSize']);
-                            $this->CIDRAM['Components']['ThisListed'] .= sprintf(
+                    $ThisSize = $ThisData;
+                    $this->formatFileSize($ThisSize);
+                    $ThisListed = '';
+                    if (!empty($this->Components['ComponentFiles'][$ThisName])) {
+                        $this->Components['ThisComponentFiles'] = &$this->Components['ComponentFiles'][$ThisName];
+                        arsort($this->Components['ThisComponentFiles']);
+                        $ThisListed .= '<ul class="comSub">';
+                        foreach ($this->Components['ThisComponentFiles'] as $ThisFile => $ThisFileSize) {
+                            $this->formatFileSize($ThisFileSize);
+                            $ThisListed .= sprintf(
                                 '<li><span class="txtBl" style="font-size:0.9em">%1$s – %2$s</span></li>',
-                                $this->CIDRAM['Components']['ThisFile'],
-                                $this->CIDRAM['Components']['ThisFileSize']
+                                $ThisFile,
+                                $ThisFileSize
                             );
                         }
-                        $this->CIDRAM['Components']['ThisListed'] .= '</ul>';
+                        $ThisListed .= '</ul>';
                     }
-                    $this->CIDRAM['Components']['ThisName'] .= ' – ' . $this->CIDRAM['Components']['ThisSize'];
-                    $this->FE['DoughnutValues'][] = $this->CIDRAM['Components']['ThisData'];
-                    $this->FE['DoughnutLabels'][] = $this->CIDRAM['Components']['ThisName'];
+                    $ThisName .= ' – ' . $ThisSize;
+                    $this->FE['DoughnutValues'][] = $ThisData;
+                    $this->FE['DoughnutLabels'][] = $ThisName;
                     if (strlen($this->FE['ChartJSPath'])) {
-                        $ThisColour = $this->rgb($this->CIDRAM['Components']['ThisName']);
-                        $this->CIDRAM['Components']['RGB'] = implode(',', $ThisColour['Values']);
+                        $ThisColour = $this->rgb($ThisName);
+                        $RGB = implode(',', $ThisColour['Values']);
                         $this->FE['DoughnutColours'][] = '#' . $ThisColour['Hash'];
                         $this->FE['DoughnutHTML'] .= sprintf(
                             '<li style="background:linear-gradient(90deg,rgba(%1$s,.3),rgba(%1$s,0));color:#%2$s"><span class="comCat"><span class="txtBl">%3$s</span></span>%4$s</li>',
-                            $this->CIDRAM['Components']['RGB'],
+                            $RGB,
                             $ThisColour['Hash'],
-                            $this->CIDRAM['Components']['ThisName'],
-                            $this->CIDRAM['Components']['ThisListed']
+                            $ThisName,
+                            $ThisListed
                         ) . "\n";
                     } else {
-                        $this->FE['DoughnutHTML'] .= sprintf(
-                            '<li><span class="comCat">%1$s</span>%2$s</li>',
-                            $this->CIDRAM['Components']['ThisName'],
-                            $this->CIDRAM['Components']['ThisListed']
-                        ) . "\n";
+                        $this->FE['DoughnutHTML'] .= sprintf('<li><span class="comCat">%1$s</span>%2$s</li>', $ThisName, $ThisListed) . "\n";
                     }
                 }
 
@@ -2833,9 +2794,6 @@ class FrontEnd extends Core
                 /** Finalise doughnut. */
                 $this->FE['Doughnut'] = $this->parseVars($this->L10N->Data + $this->FE, $DoughnutFile);
             }
-
-            /** Cleanup. */
-            unset($ThisColour, $DoughnutFile, $this->CIDRAM['Components']);
 
             /** Process files data. */
             array_walk($this->CIDRAM['FilesArray'], function ($ThisFile): void {
@@ -2928,31 +2886,31 @@ class FrontEnd extends Core
                 echo $this->sendOutput();
             } elseif (isset($_POST['SectionName'], $_POST['Action'])) {
                 /** Fetch current ignores data. */
-                $this->CIDRAM['IgnoreData'] = $this->readFile($this->Vault . 'ignore.dat') ?: '';
+                $IgnoreData = $this->readFile($this->Vault . 'ignore.dat') ?: '';
 
-                if ($_POST['Action'] === 'unignore' && preg_match("~\nIgnore " . $_POST['SectionName'] . "\n~", $this->CIDRAM['IgnoreData'])) {
-                    $this->CIDRAM['IgnoreData'] = preg_replace("~\nIgnore " . $_POST['SectionName'] . "\n~", "\n", $this->CIDRAM['IgnoreData']);
-                    $this->CIDRAM['Handle'] = fopen($this->Vault . 'ignore.dat', 'wb');
-                    fwrite($this->CIDRAM['Handle'], $this->CIDRAM['IgnoreData']);
-                    fclose($this->CIDRAM['Handle']);
-                } elseif ($_POST['Action'] === 'ignore' && !preg_match("~\nIgnore " . $_POST['SectionName'] . "\n~", $this->CIDRAM['IgnoreData'])) {
-                    if (strpos($this->CIDRAM['IgnoreData'], "\n# End front-end generated ignore rules.") === false) {
-                        $this->CIDRAM['IgnoreData'] .= "\n# Begin front-end generated ignore rules.\n# End front-end generated ignore rules.\n";
+                if ($_POST['Action'] === 'unignore' && preg_match("~\nIgnore " . $_POST['SectionName'] . "\n~", $IgnoreData)) {
+                    $IgnoreData = preg_replace("~\nIgnore " . $_POST['SectionName'] . "\n~", "\n", $IgnoreData);
+                    $Handle = fopen($this->Vault . 'ignore.dat', 'wb');
+                    fwrite($Handle, $IgnoreData);
+                    fclose($Handle);
+                } elseif ($_POST['Action'] === 'ignore' && !preg_match("~\nIgnore " . $_POST['SectionName'] . "\n~", $IgnoreData)) {
+                    if (strpos($IgnoreData, "\n# End front-end generated ignore rules.") === false) {
+                        $IgnoreData .= "\n# Begin front-end generated ignore rules.\n# End front-end generated ignore rules.\n";
                     }
-                    $this->CIDRAM['IgnoreData'] = substr($this->CIDRAM['IgnoreData'], 0, strrpos(
-                        $this->CIDRAM['IgnoreData'],
+                    $IgnoreData = substr($IgnoreData, 0, strrpos(
+                        $IgnoreData,
                         "# End front-end generated ignore rules.\n"
-                    )) . 'Ignore ' . $_POST['SectionName'] . "\n" . substr($this->CIDRAM['IgnoreData'], strrpos(
-                        $this->CIDRAM['IgnoreData'],
+                    )) . 'Ignore ' . $_POST['SectionName'] . "\n" . substr($IgnoreData, strrpos(
+                        $IgnoreData,
                         "# End front-end generated ignore rules.\n"
                     ));
-                    $this->CIDRAM['Handle'] = fopen($this->Vault . 'ignore.dat', 'wb');
-                    fwrite($this->CIDRAM['Handle'], $this->CIDRAM['IgnoreData']);
-                    fclose($this->CIDRAM['Handle']);
+                    $Handle = fopen($this->Vault . 'ignore.dat', 'wb');
+                    fwrite($Handle, $IgnoreData);
+                    fclose($Handle);
                 }
 
                 /** Cleanup. */
-                unset($this->CIDRAM['Handle'], $this->CIDRAM['IgnoreData']);
+                unset($Handle, $IgnoreData);
             }
         }
 
@@ -4015,9 +3973,9 @@ class FrontEnd extends Core
 
                 /** Reconstruct and update auxiliary rules data. */
                 if ($this->CIDRAM['NewAuxData'] = $this->YAML->reconstruct($this->CIDRAM['AuxData'])) {
-                    $this->CIDRAM['Handle'] = fopen($this->Vault . 'auxiliary.yml', 'wb');
-                    fwrite($this->CIDRAM['Handle'], $this->CIDRAM['NewAuxData']);
-                    fclose($this->CIDRAM['Handle']);
+                    $Handle = fopen($this->Vault . 'auxiliary.yml', 'wb');
+                    fwrite($Handle, $this->CIDRAM['NewAuxData']);
+                    fclose($Handle);
                 }
 
                 /** Cleanup. */
@@ -4292,9 +4250,9 @@ class FrontEnd extends Core
 
                 /** Reconstruct and update auxiliary rules data. */
                 if ($this->CIDRAM['NewAuxArr'] = $this->YAML->reconstruct($this->CIDRAM['NewAuxArr'])) {
-                    $this->CIDRAM['Handle'] = fopen($this->Vault . 'auxiliary.yml', 'wb');
-                    fwrite($this->CIDRAM['Handle'], $this->CIDRAM['NewAuxArr']);
-                    fclose($this->CIDRAM['Handle']);
+                    $Handle = fopen($this->Vault . 'auxiliary.yml', 'wb');
+                    fwrite($Handle, $this->CIDRAM['NewAuxArr']);
+                    fclose($Handle);
                     $this->FE['state_msg'] = $this->L10N->getString('response_aux_updated');
                 }
                 unset($this->CIDRAM['IterantInner'], $this->CIDRAM['DataInner'], $this->CIDRAM['Iterant']);

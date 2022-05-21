@@ -68,11 +68,11 @@ trait FrontEndMethods
                 if (isset($this->FE['TotalSize'])) {
                     $this->FE['TotalSize'] += $Arr[$Key]['Filesize'];
                 }
-                if (isset($this->CIDRAM['Components']['Components'])) {
+                if (isset($this->Components['Components'])) {
                     $Component = $this->L10N->getString('field_filetype_unknown');
                     $ThisNameFixed = str_replace("\\", '/', $ThisName);
-                    if (isset($this->CIDRAM['Components']['Files'][$ThisNameFixed])) {
-                        $Component = $this->CIDRAM['Components']['Names'][$this->CIDRAM['Components']['Files'][$ThisNameFixed]] ?? $this->CIDRAM['Components']['Files'][$ThisNameFixed];
+                    if (isset($this->Components['Files'][$ThisNameFixed])) {
+                        $Component = $this->Components['Names'][$this->Components['Files'][$ThisNameFixed]] ?? $this->Components['Files'][$ThisNameFixed];
                     } elseif (preg_match('~(?:[^|/]\.ht|\.safety$|^salt\.dat$)~i', $ThisNameFixed)) {
                         $Component = $this->L10N->getString('label_fmgr_safety');
                     } elseif (preg_match('~config\.yml$~i', $ThisNameFixed)) {
@@ -88,14 +88,14 @@ trait FrontEndMethods
                     } elseif ($ThisNameFixed === 'installed.yml') {
                         $Component = $this->L10N->getString('label_fmgr_updates_metadata');
                     }
-                    if (!isset($this->CIDRAM['Components']['Components'][$Component])) {
-                        $this->CIDRAM['Components']['Components'][$Component] = 0;
+                    if (!isset($this->Components['Components'][$Component])) {
+                        $this->Components['Components'][$Component] = 0;
                     }
-                    $this->CIDRAM['Components']['Components'][$Component] += $Arr[$Key]['Filesize'];
-                    if (!isset($this->CIDRAM['Components']['ComponentFiles'][$Component])) {
-                        $this->CIDRAM['Components']['ComponentFiles'][$Component] = [];
+                    $this->Components['Components'][$Component] += $Arr[$Key]['Filesize'];
+                    if (!isset($this->Components['ComponentFiles'][$Component])) {
+                        $this->Components['ComponentFiles'][$Component] = [];
                     }
-                    $this->CIDRAM['Components']['ComponentFiles'][$Component][$ThisNameFixed] = $Arr[$Key]['Filesize'];
+                    $this->Components['ComponentFiles'][$Component][$ThisNameFixed] = $Arr[$Key]['Filesize'];
                 }
                 if (($ExtDel = strrpos($Item, '.')) !== false) {
                     $Ext = strtoupper(substr($Item, $ExtDel + 1));
@@ -627,8 +627,8 @@ trait FrontEndMethods
             $Pattern_HCaptcha_logfile = $this->buildLogPattern($this->Configuration['hcaptcha']['logfile'], true);
         }
         static $Pattern_PHPMailer_EventLog = false;
-        if (!$Pattern_PHPMailer_EventLog && $this->Configuration['PHPMailer']['event_log']) {
-            $Pattern_PHPMailer_EventLog = $this->buildLogPattern($this->Configuration['PHPMailer']['event_log'], true);
+        if (!$Pattern_PHPMailer_EventLog && $this->Configuration['phpmailer']['event_log']) {
+            $Pattern_PHPMailer_EventLog = $this->buildLogPattern($this->Configuration['phpmailer']['event_log'], true);
         }
         return preg_match('~\.log(?:\.gz)?$~', strtolower($File)) || (
             $this->Configuration['general']['logfile'] && preg_match($Pattern_logfile, $File)
@@ -643,7 +643,7 @@ trait FrontEndMethods
         ) || (
             $this->Configuration['hcaptcha']['logfile'] && preg_match($Pattern_HCaptcha_logfile, $File)
         ) || (
-            $this->Configuration['PHPMailer']['event_log'] && preg_match($Pattern_PHPMailer_EventLog, $File)
+            $this->Configuration['phpmailer']['event_log'] && preg_match($Pattern_PHPMailer_EventLog, $File)
         );
     }
 
@@ -733,7 +733,7 @@ trait FrontEndMethods
                 $Mail->SMTPDebug = 0;
 
                 /** Skip authorisation process for some extreme problematic cases. */
-                if ($this->Configuration['PHPMailer']['skip_auth_process']) {
+                if ($this->Configuration['phpmailer']['skip_auth_process']) {
                     $Mail->SMTPOptions = ['ssl' => [
                         'verify_peer' => false,
                         'verify_peer_name' => false,
@@ -742,42 +742,42 @@ trait FrontEndMethods
                 }
 
                 /** Set mail server hostname. */
-                $Mail->Host = $this->Configuration['PHPMailer']['host'];
+                $Mail->Host = $this->Configuration['phpmailer']['host'];
 
                 /** Set the SMTP port. */
-                $Mail->Port = $this->Configuration['PHPMailer']['port'];
+                $Mail->Port = $this->Configuration['phpmailer']['port'];
 
                 /** Set the encryption system to use. */
                 if (
-                    !empty($this->Configuration['PHPMailer']['smtp_secure']) &&
-                    $this->Configuration['PHPMailer']['smtp_secure'] !== '-'
+                    !empty($this->Configuration['phpmailer']['smtp_secure']) &&
+                    $this->Configuration['phpmailer']['smtp_secure'] !== '-'
                 ) {
-                    $Mail->SMTPSecure = $this->Configuration['PHPMailer']['smtp_secure'];
+                    $Mail->SMTPSecure = $this->Configuration['phpmailer']['smtp_secure'];
                 }
 
                 /** Set whether to use SMTP authentication. */
-                $Mail->SMTPAuth = $this->Configuration['PHPMailer']['smtp_auth'];
+                $Mail->SMTPAuth = $this->Configuration['phpmailer']['smtp_auth'];
 
                 /** Set the username to use for SMTP authentication. */
-                $Mail->Username = $this->Configuration['PHPMailer']['username'];
+                $Mail->Username = $this->Configuration['phpmailer']['username'];
 
                 /** Set the password to use for SMTP authentication. */
-                $Mail->Password = $this->Configuration['PHPMailer']['password'];
+                $Mail->Password = $this->Configuration['phpmailer']['password'];
 
                 /** Set the email sender address and name. */
                 $Mail->setFrom(
-                    $this->Configuration['PHPMailer']['set_from_address'],
-                    $this->Configuration['PHPMailer']['set_from_name']
+                    $this->Configuration['phpmailer']['set_from_address'],
+                    $this->Configuration['phpmailer']['set_from_name']
                 );
 
                 /** Set the optional "reply to" address and name. */
                 if (
-                    !empty($this->Configuration['PHPMailer']['add_reply_to_address']) &&
-                    !empty($this->Configuration['PHPMailer']['add_reply_to_name'])
+                    !empty($this->Configuration['phpmailer']['add_reply_to_address']) &&
+                    !empty($this->Configuration['phpmailer']['add_reply_to_name'])
                 ) {
                     $Mail->addReplyTo(
-                        $this->Configuration['PHPMailer']['add_reply_to_address'],
-                        $this->Configuration['PHPMailer']['add_reply_to_name']
+                        $this->Configuration['phpmailer']['add_reply_to_address'],
+                        $this->Configuration['phpmailer']['add_reply_to_name']
                     );
                 }
 

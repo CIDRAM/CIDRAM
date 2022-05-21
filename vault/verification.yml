@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Verification data for search engines and social media (last modified: 2022.03.22).
+# This file: Verification data for search engines and social media (last modified: 2022.05.20).
 ##/
 
 # Additional references: https://udger.com/resources/ua-list/crawlers
@@ -17,7 +17,7 @@ Search Engine Verification:
  # Updated: 2020.02.07 / Checked: 2022.02.18
  Applebot:
   User Agent: "applebot"
-  Closure: "DNS-Reverse-Forward"
+  Method: "dnsReverseForward"
   Valid domains:
    - ".applebot.apple.com"
 
@@ -27,7 +27,7 @@ Search Engine Verification:
  Baidu:
   Bypass flag: "Flag-Bypass-Baidu-Check"
   User Agent: "baiduspider"
-  Closure: "DNS-Reverse-Forward"
+  Method: "dnsReverseForward"
   Valid domains:
    - ".baidu.com"
    - ".baidu.jp"
@@ -38,7 +38,7 @@ Search Engine Verification:
  Bingbot:
   Bypass flag: "Flag-Bypass-Bingbot-Check"
   User Agent Pattern: "~(?:msn|bing)bot|bingpreview~"
-  Closure: "DNS-Reverse-Forward"
+  Method: "dnsReverseForward"
   Valid domains:
    - ".search.msn.com"
   Single hit bypass: true
@@ -47,7 +47,7 @@ Search Engine Verification:
  # Updated: 2022.02.17
  DuckDuckBot:
   User Agent Pattern: "~duckduck(?:go-favicons-)?bot~"
-  Closure: "UA-IP-Match"
+  Method: "uaIpMatch"
   Valid domains:
    - "20.185.79.15"
    - "20.185.79.47"
@@ -70,7 +70,7 @@ Search Engine Verification:
  Googlebot:
   Bypass flag: "Flag-Bypass-Googlebot-Check"
   User Agent: "googlebot"
-  Closure: "DNS-Reverse-Forward"
+  Method: "dnsReverseForward"
   Valid domains:
    - ".google.com"
    - ".googlebot.com"
@@ -79,7 +79,7 @@ Search Engine Verification:
  # Updated: 2020.02.07 / Checked: 2022.02.18
  MojeekBot:
   User Agent: "mojeekbot"
-  Closure: "DNS-Reverse-Forward"
+  Method: "dnsReverseForward"
   Valid domains:
    - ".mojeek.com"
 
@@ -90,7 +90,7 @@ Search Engine Verification:
  PetalBot:
   Bypass flag: "Flag-Bypass-PetalBot-Check"
   User Agent: "petalbot"
-  Closure: "DNS-Reverse-Forward"
+  Method: "dnsReverseForward"
   Valid domains:
    - ".aspiegel.com"
    - ".petalsearch.com"
@@ -99,7 +99,7 @@ Search Engine Verification:
  # Updated: 2020.02.07 / Checked: 2022.02.18
  Qwantify:
   User Agent: "qwantify/bleriot"
-  Closure: "DNS-Reverse-Forward"
+  Method: "dnsReverseForward"
   Valid domains:
    - "search.qwant.com"
 
@@ -107,7 +107,7 @@ Search Engine Verification:
  # Updated: 2020.02.07 / Checked: 2022.02.18
  SeznamBot:
   User Agent: "seznambot"
-  Closure: "DNS-Reverse-Forward"
+  Method: "dnsReverseForward"
   Valid domains:
    - ".seznam.cz"
 
@@ -116,7 +116,7 @@ Search Engine Verification:
  Sogou:
   Bypass flag: "Flag-Bypass-Sogou-Check"
   User Agent: "sogou"
-  Closure: "DNS-Reverse-Forward"
+  Method: "dnsReverseForward"
   Valid domains:
    - ".sogou.com"
 
@@ -124,7 +124,7 @@ Search Engine Verification:
  # Updated: 2020.02.07 / Checked: 2022.02.18
  Yahoo:
   User Agent: "slurp"
-  Closure: "DNS-Reverse-Forward"
+  Method: "dnsReverseForward"
   Valid domains:
    - ".crawl.yahoo.net"
    - ".yse.yahoo.net"
@@ -134,7 +134,7 @@ Search Engine Verification:
  Yandex/Яндекс:
   Bypass flag: "Flag-Bypass-Yandex-Check"
   User Agent: "yandex"
-  Closure: "DNS-Reverse-Forward"
+  Method: "dnsReverseForward"
   Valid domains:
    - ".yandex.com"
    - ".yandex.net"
@@ -144,7 +144,7 @@ Search Engine Verification:
  # Updated: 2020.02.07 / Checked: 2022.02.18
  YoudaoBot:
   User Agent: "youdaobot"
-  Closure: "DNS-Reverse-Forward"
+  Method: "dnsReverseForward"
   Valid domains:
    - ".crawler.youdao.com"
 
@@ -153,7 +153,7 @@ Social Media Verification:
  # Updated: 2018.07.14 / Checked: 2022.02.18
  Embedly:
   User Agent: "embedly"
-  Closure: "DNS-Reverse-Forward"
+  Method: "dnsReverseForward"
   Reverse only: true
   Can modify trackable: false
   Valid domains:
@@ -165,7 +165,7 @@ Social Media Verification:
  # Updated: 2022.02.18
  Facebook external hit:
   User Agent Pattern: "~facebook(?:catalog|externalhit)/(?!1\.1 facebot twitterbot/1\.0)~"
-  Closure: "UA-ASN-Match"
+  Method: "uaAsnMatch"
   Valid domains:
    - "32934"
 
@@ -174,7 +174,7 @@ Social Media Verification:
  # Updated: 2020.02.07 / Checked: 2022.02.18
  Pinterest:
   User Agent: "pinterest"
-  Closure: "DNS-Reverse-Forward"
+  Method: "dnsReverseForward"
   Valid domains:
    - ".pinterest.com"
    - ".pinterestcrawler.com"
@@ -184,7 +184,7 @@ Social Media Verification:
  # Updated: 2022.02.18
  Twitterbot:
   User Agent Pattern: "~(?<!facebookexternalhit/1\.1 facebot )twitterbot~"
-  Closure: "DNS-Reverse-Forward"
+  Method: "dnsReverseForward"
   Valid domains:
    - ".twttr.com"
 
@@ -194,7 +194,7 @@ Other Verification:
  # Updated: 2021.10.01 / Checked: 2022.02.18
  AdSense:
   User Agent: "mediapartners-google"
-  Closure: "DNS-Reverse-Forward"
+  Method: "dnsReverseForward"
   Valid domains:
    - ".google.com"
    - ".googlebot.com"
@@ -205,7 +205,7 @@ Other Verification:
  AmazonAdBot:
   Bypass flag: "Flag-Bypass-AmazonAdBot-Check"
   User Agent Pattern: "~amazonadbot|adbot\.amazon\.com~"
-  Closure: "DNS-Reverse-Forward"
+  Method: "dnsReverseForward"
   Valid domains:
    - ".amazonadbot.com"
   Single hit bypass: true
@@ -214,7 +214,7 @@ Other Verification:
  # Updated: 2021.03.13 / Checked: 2022.02.17
  Oracle Data Cloud Crawler:
   User Agent: "grapeshot"
-  Closure: "UA-CIDR-Match"
+  Method: "uaCidrMatch"
   Valid domains:
    - "132.145.9.5/32"
    - "132.145.11.125/32"

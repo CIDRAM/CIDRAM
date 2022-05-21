@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods for updating CIDRAM components (last modified: 2022.05.20).
+ * This file: Methods for updating CIDRAM components (last modified: 2022.05.21).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -198,60 +198,40 @@ trait Updater
         if (!empty($Component['Name']) && $Component['Name'] === 'L10N: ' . $this->L10N->getString('Local Name')) {
             return 1;
         }
-        if (!isset($Component['Used with'])) {
-            return 0;
-        }
-        $Files = $Component['Files']['To'];
+        $Files = $Component['Files'] ?? [];
         $this->arrayify($Files);
-        if (!isset($Component['Used with'])) {
-            return 0;
-        }
-        $UsedWith = $Component['Used with'];
-        foreach ($Files as $File) {
-            $FileSafe = preg_quote($File);
-            if (is_array($UsedWith)) {
-                $ThisUsedWith = (string)array_shift($UsedWith);
-                if (
-                    $ThisUsedWith !== 'imports' &&
-                    $ThisUsedWith !== 'events' &&
-                    $ThisUsedWith !== 'ipv4' &&
-                    $ThisUsedWith !== 'ipv6' &&
-                    $ThisUsedWith !== 'modules'
-                ) {
-                    continue;
-                }
-            } else {
-                $ThisUsedWith = $UsedWith;
-                if ($ThisUsedWith !== 'imports' && preg_match('~\.ya?ml$~i', $FileSafe)) {
-                    continue;
-                }
-            }
-            if (
-                $ThisUsedWith === 'n/a' ||
-                preg_match('~^$|\.(?:css|gif|html?|jpe?g|js|png)$|^(?:assets|classes)[\x2F\x5C]~i', $File) ||
-                !file_exists($this->Vault . $File)
-            ) {
+        foreach ($Files as $FileName => $FileMeta) {
+            $UsedWith = $FileMeta['Used with'] ?? '';
+            if ((
+                $UsedWith !== 'imports' &&
+                $UsedWith !== 'events' &&
+                $UsedWith !== 'ipv4' &&
+                $UsedWith !== 'ipv6' &&
+                $UsedWith !== 'modules'
+            ) || ($UsedWith !== 'imports' && preg_match('~\.ya?ml$~i', $FileName))) {
                 continue;
             }
-            if (($ThisUsedWith === 'ipv4' || $ThisUsedWith === 'ipv6') && substr($File, 0, 11) === 'signatures/') {
-                $FileSafe = preg_quote(substr($File, 11));
-            } elseif ($ThisUsedWith === 'modules' && substr($File, 0, 8) === 'modules/') {
-                $FileSafe = preg_quote(substr($File, 8));
+            if (($UsedWith === 'ipv4' || $UsedWith === 'ipv6') && substr($FileName, 0, 11) === 'signatures/') {
+                $FileNameSafe = preg_quote(substr($FileName, 11));
+            } elseif ($UsedWith === 'modules' && substr($FileName, 0, 8) === 'modules/') {
+                $FileNameSafe = preg_quote(substr($FileName, 8));
+            } else {
+                $FileNameSafe = preg_quote($FileName);
             }
-            if (($ThisUsedWith === 'imports' && preg_match(
-                '~,(?:[\w\d]+:)?' . $FileSafe . ',~',
+            if (($UsedWith === 'imports' && preg_match(
+                '~,(?:[\w\d]+:)?' . $FileNameSafe . ',~',
                 ',' . $this->Configuration['general']['config_imports'] . ','
-            )) || ($ThisUsedWith === 'events' && preg_match(
-                '~,(?:[\w\d]+:)?' . $FileSafe . ',~',
+            )) || ($UsedWith === 'events' && preg_match(
+                '~,(?:[\w\d]+:)?' . $FileNameSafe . ',~',
                 ',' . $this->Configuration['general']['events'] . ','
-            )) || ($ThisUsedWith === 'ipv4' && preg_match(
-                '~,(?:[\w\d]+:)?' . $FileSafe . ',~',
+            )) || ($UsedWith === 'ipv4' && preg_match(
+                '~,(?:[\w\d]+:)?' . $FileNameSafe . ',~',
                 ',' . $this->Configuration['signatures']['ipv4'] . ','
-            )) || ($ThisUsedWith === 'ipv6' && preg_match(
-                '~,(?:[\w\d]+:)?' . $FileSafe . ',~',
+            )) || ($UsedWith === 'ipv6' && preg_match(
+                '~,(?:[\w\d]+:)?' . $FileNameSafe . ',~',
                 ',' . $this->Configuration['signatures']['ipv6'] . ','
-            )) || ($ThisUsedWith === 'modules' && preg_match(
-                '~,(?:[\w\d]+:)?' . $FileSafe . ',~',
+            )) || ($UsedWith === 'modules' && preg_match(
+                '~,(?:[\w\d]+:)?' . $FileNameSafe . ',~',
                 ',' . $this->Configuration['signatures']['modules'] . ','
             ))) {
                 $Out = (!isset($Out) || $Out === 1) ? 1 : -1;
@@ -270,8 +250,8 @@ trait Updater
     private function fetchRemotesData(): void
     {
         $Remotes = explode("\n", $this->Configuration['frontend']['remotes']);
-        if (!isset($this->CIDRAM['Components']['RemoteMeta'])) {
-            $this->CIDRAM['Components']['RemoteMeta'] = [];
+        if (!isset($this->Components['RemoteMeta'])) {
+            $this->Components['RemoteMeta'] = [];
         }
         foreach ($Remotes as $ThisRemote) {
             $RemoteData = $this->Cache->getEntry($ThisRemote);
@@ -285,7 +265,7 @@ trait Updater
                 }
                 $this->Cache->setEntry($ThisRemote, $RemoteData, 3600);
             }
-            $this->YAML->process($RemoteData, $this->CIDRAM['Components']['RemoteMeta']);
+            $this->YAML->process($RemoteData, $this->Components['RemoteMeta']);
         }
     }
 
@@ -295,56 +275,23 @@ trait Updater
      * @param array $Component An array of the component metadata.
      * @return bool True for when activable; False for when not activable.
      */
-    private function isActivable(array &$Component): bool
+    private function isActivable(array $Component): bool
     {
-        return (
-            !empty($Component['Used with']) &&
-            $this->has($Component['Used with'], ['imports', 'events', 'ipv4', 'ipv6', 'modules'])
-        );
-    }
-
-    /**
-     * Deactivate component.
-     *
-     * @param string $Type Value can be ipv4, ipv6, or modules.
-     * @param string $ID The ID of the component to deactivate.
-     * @return void
-     */
-    private function deactivateComponent(string $Type, string $ID): void
-    {
-        $this->CIDRAM['Deactivation'][$Type] = array_unique(array_filter(
-            explode(',', $this->CIDRAM['Deactivation'][$Type]),
-            function ($Component) {
-                return ($Component = (strpos($Component, ':') === false) ? $Component : substr($Component, strpos($Component, ':') + 1));
+        if (!isset($Component['Files'])) {
+            return false;
+        }
+        foreach ($Component['Files'] as $FileName => $FileMeta) {
+            if (isset($FileMeta['Used with']) && (
+                $FileMeta['Used with'] === 'imports' ||
+                $FileMeta['Used with'] === 'events' ||
+                $FileMeta['Used with'] === 'ipv4' ||
+                $FileMeta['Used with'] === 'ipv6' ||
+                $FileMeta['Used with'] === 'modules'
+            )) {
+                return true;
             }
-        ));
-        if (count($this->CIDRAM['Deactivation'][$Type])) {
-            sort($this->CIDRAM['Deactivation'][$Type]);
         }
-        $this->CIDRAM['Deactivation'][$Type] = ',' . implode(',', $this->CIDRAM['Deactivation'][$Type]) . ',';
-        foreach ($this->CIDRAM['Components']['Meta'][$ID]['Files']['To'] as $File) {
-            $this->CIDRAM['Deactivation'][$Type] = preg_replace(
-                '~,(?:[\w\d]+:)?' . preg_quote($File) . ',~',
-                ',',
-                $this->CIDRAM['Deactivation'][$Type]
-            );
-        }
-        $this->CIDRAM['Deactivation'][$Type] = substr($this->CIDRAM['Deactivation'][$Type], 1, -1);
-        if ($Type === 'imports') {
-            if ($this->CIDRAM['Deactivation']['imports'] !== $this->Configuration['general']['config_imports']) {
-                $this->CIDRAM['Deactivation']['Modified'] = true;
-            }
-            return;
-        }
-        if ($Type === 'events') {
-            if ($this->CIDRAM['Deactivation']['events'] !== $this->Configuration['general']['events']) {
-                $this->CIDRAM['Deactivation']['Modified'] = true;
-            }
-            return;
-        }
-        if ($this->CIDRAM['Deactivation'][$Type] !== $this->Configuration['signatures'][$Type]) {
-            $this->CIDRAM['Deactivation']['Modified'] = true;
-        }
+        return false;
     }
 
     /**
@@ -359,19 +306,8 @@ trait Updater
         $Key = 'Extended Description ' . $Key;
         if (isset($this->L10N->Data[$Key])) {
             $Arr['Extended Description'] = $this->L10N->getString($Key);
-        } elseif (empty($Arr['Extended Description'])) {
+        } elseif (!isset($Arr['Extended Description'])) {
             $Arr['Extended Description'] = '';
-        }
-        if (
-            !empty($Arr['Used with']) &&
-            !is_array($Arr['Used with']) &&
-            strpos($Arr['Extended Description'], '-&gt;') === false
-        ) {
-            $Arr['Extended Description'] .= sprintf(
-                '<br /><em>%s <code>signatures-&gt;%s</code></em>',
-                $this->L10N->getString('label_used_with'),
-                $Arr['Used with']
-            );
         }
         if (!empty($Arr['False Positive Risk'])) {
             if ($Arr['False Positive Risk'] === 'Low') {
@@ -405,13 +341,12 @@ trait Updater
      */
     private function componentUpdatePrep(string $Target): int
     {
-        if (!empty($this->CIDRAM['Components']['Meta'][$Target]['Files'])) {
-            $this->prepareExtendedDescription($this->CIDRAM['Components']['Meta'][$Target]);
-            $this->arrayify($this->CIDRAM['Components']['Meta'][$Target]['Files']);
-            $this->arrayify($this->CIDRAM['Components']['Meta'][$Target]['Files']['To']);
-            return $this->isInUse($this->CIDRAM['Components']['Meta'][$Target]);
+        if (empty($this->Components['Meta'][$Target]['Files'])) {
+            return 0;
         }
-        return 0;
+        $this->prepareExtendedDescription($this->Components['Meta'][$Target]);
+        $this->arrayify($this->Components['Meta'][$Target]['Files']);
+        return $this->isInUse($this->Components['Meta'][$Target]);
     }
 
     /**
@@ -478,7 +413,7 @@ trait Updater
     private function wpVer(): void
     {
         if (
-            !empty($this->CIDRAM['Components']['RemoteMeta']['CIDRAM']['Version']) &&
+            !empty($this->Components['RemoteMeta']['CIDRAM']['Version']) &&
             ($ThisData = $this->CIDRAM['Updater-IO']->readFile($this->Vault . '../cidram.php'))
         ) {
             $PlugHead = "\x3C\x3Fphp\n/**\n * Plugin Name: CIDRAM\n * Version: ";
@@ -486,7 +421,7 @@ trait Updater
                 $PlugHeadEnd = strpos($ThisData, "\n", 45);
                 $this->CIDRAM['Updater-IO']->writeFile(
                     $this->Vault . '../cidram.php',
-                    $PlugHead . $this->CIDRAM['Components']['RemoteMeta']['CIDRAM Core']['Version'] . substr($ThisData, $PlugHeadEnd)
+                    $PlugHead . $this->Components['RemoteMeta']['CIDRAM Core']['Version'] . substr($ThisData, $PlugHeadEnd)
                 );
             }
         }
@@ -580,9 +515,9 @@ trait Updater
             foreach ($ID as $ThisID) {
                 $this->updatesHandlerUpdate([$ThisID]);
                 if (
-                    isset($this->CIDRAM['Components']['Meta'][$ThisID]) &&
-                    $this->isActivable($this->CIDRAM['Components']['Meta'][$ThisID]) &&
-                    $this->isInUse($this->CIDRAM['Components']['Meta'][$ThisID]) !== 1
+                    isset($this->Components['Meta'][$ThisID]) &&
+                    $this->isActivable($this->Components['Meta'][$ThisID]) &&
+                    $this->isInUse($this->Components['Meta'][$ThisID]) !== 1
                 ) {
                     $this->updatesHandlerActivate([$ThisID]);
                 }
@@ -619,9 +554,9 @@ trait Updater
             $this->arrayify($ID);
             foreach ($ID as $ThisID) {
                 if (
-                    isset($this->CIDRAM['Components']['Meta'][$ThisID]) &&
-                    $this->isActivable($this->CIDRAM['Components']['Meta'][$ThisID]) &&
-                    $this->isInUse($this->CIDRAM['Components']['Meta'][$ThisID]) !== 0
+                    isset($this->Components['Meta'][$ThisID]) &&
+                    $this->isActivable($this->Components['Meta'][$ThisID]) &&
+                    $this->isInUse($this->Components['Meta'][$ThisID]) !== 0
                 ) {
                     $this->updatesHandlerDeactivate([$ThisID]);
                 }
@@ -653,199 +588,192 @@ trait Updater
             $BytesAdded = 0;
             $BytesRemoved = 0;
             $TimeRequired = microtime(true);
-            if (isset($this->CIDRAM['Components']['Meta'][$ThisTarget])) {
-                $Reactivate = $this->isInUse($this->CIDRAM['Components']['Meta'][$ThisTarget]);
+            $HasSigs = false;
+            if (isset($this->Components['Meta'][$ThisTarget])) {
+                $Reactivate = $this->isInUse($this->Components['Meta'][$ThisTarget]);
             } else {
                 $Reactivate = 0;
             }
             if ($Reactivate !== 0) {
                 $this->updatesHandlerDeactivate($ThisTarget);
             }
-            $this->checkConstraints($this->CIDRAM['Components']['RemoteMeta'][$ThisTarget], true);
-            $UpdateFailed = false;
+            if (isset($this->Components['RemoteMeta'][$ThisTarget]['Files'])) {
+                $this->checkConstraints($this->Components['RemoteMeta'][$ThisTarget], true);
+                $UpdateFailed = false;
+            } else {
+                $UpdateFailed = true;
+            }
             if (
-                $this->CIDRAM['Components']['RemoteMeta'][$ThisTarget]['All Constraints Met'] &&
-                !empty($this->CIDRAM['Components']['RemoteMeta'][$ThisTarget]['Files']['From']) &&
-                !empty($this->CIDRAM['Components']['RemoteMeta'][$ThisTarget]['Files']['To'])
+                $this->Components['RemoteMeta'][$ThisTarget]['All Constraints Met'] &&
+                isset($this->Components['RemoteMeta'][$ThisTarget]['Files'])
             ) {
-                $this->arrayify($this->CIDRAM['Components']['RemoteMeta'][$ThisTarget]['Files']);
-                $this->arrayify($this->CIDRAM['Components']['RemoteMeta'][$ThisTarget]['Files']['From']);
-                $this->arrayify($this->CIDRAM['Components']['RemoteMeta'][$ThisTarget]['Files']['To']);
-                if (!empty($this->CIDRAM['Components']['RemoteMeta'][$ThisTarget]['Files']['Checksum'])) {
-                    $this->arrayify($this->CIDRAM['Components']['RemoteMeta'][$ThisTarget]['Files']['Checksum']);
-                }
-                $Count = count($this->CIDRAM['Components']['RemoteMeta'][$ThisTarget]['Files']['From']);
+                $this->arrayify($this->Components['RemoteMeta'][$ThisTarget]['Files']);
                 $RemoteFiles = [];
                 $IgnoredFiles = [];
                 $Rollback = false;
-
-                /** Write new and updated files and directories. */
-                for ($Iterate = 0; $Iterate < $Count; $Iterate++) {
-                    if (empty($this->CIDRAM['Components']['RemoteMeta'][$ThisTarget]['Files']['To'][$Iterate])) {
-                        continue;
-                    }
-                    $ThisFileName = $this->CIDRAM['Components']['RemoteMeta'][$ThisTarget]['Files']['To'][$Iterate];
-
-                    /** Rolls back to previous version or uninstalls if an update/install fails. */
-                    if ($Rollback) {
-                        if (
-                            isset($RemoteFiles[$ThisFileName]) &&
-                            !isset($IgnoredFiles[$ThisFileName]) &&
-                            is_readable($this->Vault . $ThisFileName)
-                        ) {
-                            $BytesAdded -= filesize($this->Vault . $ThisFileName);
-                            unlink($this->Vault . $ThisFileName);
-                            if (is_readable($this->Vault . $ThisFileName . '.rollback')) {
-                                $BytesRemoved -= filesize($this->Vault . $ThisFileName . '.rollback');
-                                rename($this->Vault . $ThisFileName . '.rollback', $this->Vault . $ThisFileName);
-                            }
-                        }
-                        continue;
-                    }
-                    if (
-                        !empty($this->CIDRAM['Components']['RemoteMeta'][$ThisTarget]['Files']['Checksum'][$Iterate]) &&
-                        !empty($this->CIDRAM['Components']['Meta'][$ThisTarget]['Files']['Checksum'][$Iterate]) && (
-                            $this->CIDRAM['Components']['RemoteMeta'][$ThisTarget]['Files']['Checksum'][$Iterate] ===
-                            $this->CIDRAM['Components']['Meta'][$ThisTarget]['Files']['Checksum'][$Iterate]
-                        )
-                    ) {
-                        $IgnoredFiles[$ThisFileName] = true;
-                        continue;
-                    }
-                    if (
-                        empty($this->CIDRAM['Components']['RemoteMeta'][$ThisTarget]['Files']['From'][$Iterate]) ||
-                        !($ThisFile = $this->Request->request($this->CIDRAM['Components']['RemoteMeta'][$ThisTarget]['Files']['From'][$Iterate]))
-                    ) {
-                        $Iterate = 0;
-                        $Rollback = true;
-                        continue;
-                    }
-                    if (
-                        strtolower(
-                            substr($this->CIDRAM['Components']['RemoteMeta'][$ThisTarget]['Files']['From'][$Iterate], -2)
-                        ) === 'gz' &&
-                        strtolower(substr($ThisFileName, -2)) !== 'gz' &&
-                        substr($ThisFile, 0, 2) === "\x1F\x8B"
-                    ) {
-                        $ThisFile = gzdecode($ThisFile);
-                    }
-                    if (!empty($this->CIDRAM['Components']['RemoteMeta'][$ThisTarget]['Files']['Checksum'][$Iterate])) {
-                        $ThisChecksum = $this->CIDRAM['Components']['RemoteMeta'][$ThisTarget]['Files']['Checksum'][$Iterate];
-                        $ThisLen = strlen($ThisFile);
-                        if (hash('sha256', $ThisFile) . ':' . $ThisLen !== $ThisChecksum) {
-                            $this->FE['state_msg'] .=
-                                '<code>' . $ThisTarget . '</code> – ' .
-                                '<code>' . $ThisFileName . '</code> – ' .
-                                $this->L10N->getString('response_checksum_error') . '<br />';
-                            if (!empty($this->CIDRAM['Components']['Meta'][$ThisTarget]['On Checksum Error'])) {
-                                $this->executor($this->CIDRAM['Components']['Meta'][$ThisTarget]['On Checksum Error'], true);
-                            }
-                            $Iterate = 0;
-                            $Rollback = true;
+                while (true) {
+                    foreach ($this->Components['RemoteMeta'][$ThisTarget]['Files'] as $FileName => $FileMeta) {
+                        if (strlen($FileName) === 0) {
                             continue;
                         }
-                    }
-                    if (
-                        preg_match('~\.(?:css|dat|gif|inc|jpe?g|php|png|ya?ml|[a-z]{0,2}db)$~i', $ThisFileName) &&
-                        !$this->sanityCheck($ThisFileName, $ThisFile)
-                    ) {
-                        $this->FE['state_msg'] .= sprintf(
-                            '<code>%s</code> – <code>%s</code> – %s<br />',
-                            $ThisTarget,
-                            $ThisFileName,
-                            $this->L10N->getString('response_sanity_1')
-                        );
-                        if (!empty($this->CIDRAM['Components']['Meta'][$ThisTarget]['On Sanity Error'])) {
-                            $this->executor($this->CIDRAM['Components']['Meta'][$ThisTarget]['On Sanity Error'], true);
+
+                        /** Rolls back to previous version or uninstalls if an update/install fails. */
+                        if ($Rollback) {
+                            if (
+                                isset($RemoteFiles[$FileName]) &&
+                                !isset($IgnoredFiles[$FileName]) &&
+                                is_readable($this->Vault . $FileName)
+                            ) {
+                                $BytesAdded -= filesize($this->Vault . $FileName);
+                                unlink($this->Vault . $FileName);
+                                if (is_readable($this->Vault . $FileName . '.rollback')) {
+                                    $BytesRemoved -= filesize($this->Vault . $FileName . '.rollback');
+                                    rename($this->Vault . $FileName . '.rollback', $this->Vault . $FileName);
+                                }
+                            }
+                            continue;
                         }
-                        $Iterate = 0;
-                        $Rollback = true;
-                        continue;
-                    }
-                    $this->buildPath($this->Vault . $ThisFileName);
-                    if (is_readable($this->Vault . $ThisFileName)) {
-                        $BytesRemoved += filesize($this->Vault . $ThisFileName);
-                        if (file_exists($this->Vault . $ThisFileName . '.rollback')) {
-                            $BytesRemoved += filesize($this->Vault . $ThisFileName . '.rollback');
-                            unlink($this->Vault . $ThisFileName . '.rollback');
+                        if (
+                            isset($FileMeta['Checksum']) &&
+                            isset($this->Components['Meta'][$ThisTarget]['Files'][$FileName]['Checksum']) &&
+                            $FileMeta['Checksum'] === $this->Components['Meta'][$ThisTarget]['Files'][$FileName]['Checksum']
+                        ) {
+                            $IgnoredFiles[$FileName] = true;
+                            continue;
                         }
-                        rename($this->Vault . $ThisFileName, $this->Vault . $ThisFileName . '.rollback');
+                        if (
+                            !isset($FileMeta['From']) ||
+                            strlen($FileMeta['From']) === 0 ||
+                            strlen($ThisFile = $this->Request->request($FileMeta['From'])) === 0
+                        ) {
+                            $Rollback = true;
+                            continue 2;
+                        }
+                        if (
+                            strtolower(substr($FileMeta['From'], -2)) === 'gz' &&
+                            strtolower(substr($FileName, -2)) !== 'gz' &&
+                            substr($ThisFile, 0, 2) === "\x1F\x8B"
+                        ) {
+                            $ThisFile = gzdecode($ThisFile);
+                        }
+                        if (isset($FileMeta['Checksum']) && strlen($FileMeta['Checksum'])) {
+                            $ThisLen = strlen($ThisFile);
+                            if (hash('sha256', $ThisFile) . ':' . $ThisLen !== $FileMeta['Checksum']) {
+                                $this->FE['state_msg'] .=
+                                    '<code>' . $ThisTarget . '</code> – ' .
+                                    '<code>' . $FileName . '</code> – ' .
+                                    $this->L10N->getString('response_checksum_error') . '<br />';
+                                if (!empty($this->Components['Meta'][$ThisTarget]['On Checksum Error'])) {
+                                    $this->executor($this->Components['Meta'][$ThisTarget]['On Checksum Error'], true);
+                                }
+                                $Rollback = true;
+                                continue 2;
+                            }
+                        }
+                        if (
+                            preg_match('~\.(?:css|dat|gif|png|ya?ml)$~i', $FileName) &&
+                            !$this->sanityCheck($FileName, $ThisFile)
+                        ) {
+                            $this->FE['state_msg'] .= sprintf(
+                                '<code>%s</code> – <code>%s</code> – %s<br />',
+                                $ThisTarget,
+                                $FileName,
+                                $this->L10N->getString('response_sanity_1')
+                            );
+                            if (!empty($this->Components['Meta'][$ThisTarget]['On Sanity Error'])) {
+                                $this->executor($this->Components['Meta'][$ThisTarget]['On Sanity Error'], true);
+                            }
+                            $Rollback = true;
+                            continue 2;
+                        }
+                        $this->buildPath($this->Vault . $FileName);
+                        if (is_readable($this->Vault . $FileName)) {
+                            $BytesRemoved += filesize($this->Vault . $FileName);
+                            if (file_exists($this->Vault . $FileName . '.rollback')) {
+                                $BytesRemoved += filesize($this->Vault . $FileName . '.rollback');
+                                unlink($this->Vault . $FileName . '.rollback');
+                            }
+                            rename($this->Vault . $FileName, $this->Vault . $FileName . '.rollback');
+                        }
+                        $BytesAdded += strlen($ThisFile);
+                        $Handle = fopen($this->Vault . $FileName, 'wb');
+                        $RemoteFiles[$FileName] = fwrite($Handle, $ThisFile);
+                        $RemoteFiles[$FileName] = true;
+                        fclose($Handle);
+                        if (
+                            isset($FileMeta['Used with']) &&
+                            ($FileMeta['Used with'] === 'ipv4' || $FileMeta['Used with'] === 'ipv6')
+                        ) {
+                            $HasSigs = true;
+                        }
                     }
-                    $BytesAdded += strlen($ThisFile);
-                    $Handle = fopen($this->Vault . $ThisFileName, 'wb');
-                    $RemoteFiles[$ThisFileName] = fwrite($Handle, $ThisFile);
-                    $RemoteFiles[$ThisFileName] = ($RemoteFiles[$ThisFileName] !== false);
-                    fclose($Handle);
-                    $ThisFile = '';
+                    break;
                 }
 
                 if ($Rollback) {
                     /** Prune unwanted empty directories (update/install failure+rollback). */
                     if (
-                        !empty($this->CIDRAM['Components']['RemoteMeta'][$ThisTarget]['Files']['To']) &&
-                        is_array($this->CIDRAM['Components']['RemoteMeta'][$ThisTarget]['Files']['To'])
+                        isset($this->Components['RemoteMeta'][$ThisTarget]['Files']) &&
+                        is_array($this->Components['RemoteMeta'][$ThisTarget]['Files'])
                     ) {
-                        foreach ($this->CIDRAM['Components']['RemoteMeta'][$ThisTarget]['Files']['To'] as $ThisFile) {
-                            if (!empty($ThisFile) && $this->freeFromTraversal($ThisFile)) {
-                                $this->deleteDirectory($ThisFile);
+                        foreach ($this->Components['RemoteMeta'][$ThisTarget]['Files'] as $FileName => $FileMeta) {
+                            if (strlen($FileName) > 0 && $this->freeFromTraversal($FileName)) {
+                                $this->deleteDirectory($FileName);
                             }
                         }
                     }
                     $UpdateFailed = true;
                 } else {
                     /** Prune unwanted files and directories (update/install success). */
-                    if (!empty($this->CIDRAM['Components']['Meta'][$ThisTarget]['Files']['To'])) {
-                        $ThisArr = $this->CIDRAM['Components']['Meta'][$ThisTarget]['Files']['To'];
-                        $this->arrayify($ThisArr);
-                        foreach ($ThisArr as $ThisFile) {
-                            if (!empty($ThisFile) && $this->freeFromTraversal($ThisFile)) {
-                                if (file_exists($this->Vault . $ThisFile . '.rollback')) {
-                                    unlink($this->Vault . $ThisFile . '.rollback');
-                                }
-                                if (
-                                    !isset($RemoteFiles[$ThisFile]) &&
-                                    !isset($IgnoredFiles[$ThisFile]) &&
-                                    file_exists($this->Vault . $ThisFile)
-                                ) {
-                                    $BytesRemoved += filesize($this->Vault . $ThisFile);
-                                    unlink($this->Vault . $ThisFile);
-                                    $this->deleteDirectory($ThisFile);
-                                }
+                    if (isset($this->Components['Meta'][$ThisTarget]['Files'])) {
+                        $this->arrayify($this->Components['Meta'][$ThisTarget]['Files']);
+                        foreach ($this->Components['Meta'][$ThisTarget]['Files'] as $FileName => $FileMeta) {
+                            if (strlen($FileName) === 0 || !$this->freeFromTraversal($FileName)) {
+                                continue;
+                            }
+                            if (file_exists($this->Vault . $FileName . '.rollback')) {
+                                unlink($this->Vault . $FileName . '.rollback');
+                            }
+                            if (
+                                !isset($RemoteFiles[$FileName]) &&
+                                !isset($IgnoredFiles[$FileName]) &&
+                                file_exists($this->Vault . $FileName) &&
+                                (empty($this->Components['Shared'][$FileName]) || $this->Components['Shared'][$FileName] < 2)
+                            ) {
+                                $BytesRemoved += filesize($this->Vault . $FileName);
+                                unlink($this->Vault . $FileName);
+                                $this->deleteDirectory($FileName);
                             }
                         }
-                        unset($ThisFile, $ThisArr);
                     }
 
                     $this->FE['state_msg'] .= '<code>' . $ThisTarget . '</code> – ';
                     if (
-                        empty($this->CIDRAM['Components']['Meta'][$ThisTarget]['Version']) &&
-                        empty($this->CIDRAM['Components']['Meta'][$ThisTarget]['Files'])
+                        empty($this->Components['Meta'][$ThisTarget]['Version']) &&
+                        empty($this->Components['Meta'][$ThisTarget]['Files'])
                     ) {
                         $this->FE['state_msg'] .= $this->L10N->getString('response_component_successfully_installed');
-                        if (!empty($this->CIDRAM['Components']['Meta'][$ThisTarget]['When Install Succeeds'])) {
-                            $this->executor($this->CIDRAM['Components']['Meta'][$ThisTarget]['When Install Succeeds'], true);
+                        if (!empty($this->Components['Meta'][$ThisTarget]['When Install Succeeds'])) {
+                            $this->executor($this->Components['Meta'][$ThisTarget]['When Install Succeeds'], true);
                         }
                     } else {
                         $this->FE['state_msg'] .= $this->L10N->getString('response_component_successfully_updated');
-                        if (!empty($this->CIDRAM['Components']['Meta'][$ThisTarget]['When Update Succeeds'])) {
-                            $this->executor($this->CIDRAM['Components']['Meta'][$ThisTarget]['When Update Succeeds'], true);
+                        if (!empty($this->Components['Meta'][$ThisTarget]['When Update Succeeds'])) {
+                            $this->executor($this->Components['Meta'][$ThisTarget]['When Update Succeeds'], true);
                         }
                     }
 
                     /** Assign updated component meta. */
-                    $this->CIDRAM['Components']['Meta'][$ThisTarget] = $this->CIDRAM['Components']['RemoteMeta'][$ThisTarget];
+                    $this->Components['Meta'][$ThisTarget] = $this->Components['RemoteMeta'][$ThisTarget];
 
                     /** Update the component metadata file. */
                     $this->CIDRAM['Updater-IO']->writeFile(
                         $this->Vault . 'installed.yml',
-                        $this->YAML->reconstruct($this->CIDRAM['Components']['Meta'])
+                        $this->YAML->reconstruct($this->Components['Meta'])
                     );
 
                     /** Set trigger for signatures update event. */
-                    if (
-                        !empty($this->CIDRAM['Components']['Meta'][$ThisTarget]['Used with']) &&
-                        $this->has($this->CIDRAM['Components']['Meta'][$ThisTarget]['Used with'], ['ipv4', 'ipv6'])
-                    ) {
+                    if ($HasSigs) {
                         $this->CIDRAM['SignaturesUpdateEvent'] = $this->Now;
                     }
                 }
@@ -855,17 +783,17 @@ trait Updater
             if ($UpdateFailed) {
                 $this->FE['state_msg'] .= '<code>' . $ThisTarget . '</code> – ';
                 if (
-                    empty($this->CIDRAM['Components']['Meta'][$ThisTarget]['Version']) &&
-                    empty($this->CIDRAM['Components']['Meta'][$ThisTarget]['Files'])
+                    empty($this->Components['Meta'][$ThisTarget]['Version']) &&
+                    empty($this->Components['Meta'][$ThisTarget]['Files'])
                 ) {
                     $this->FE['state_msg'] .= $this->L10N->getString('response_failed_to_install');
-                    if (!empty($this->CIDRAM['Components']['Meta'][$ThisTarget]['When Install Fails'])) {
-                        $this->executor($this->CIDRAM['Components']['Meta'][$ThisTarget]['When Install Fails'], true);
+                    if (!empty($this->Components['Meta'][$ThisTarget]['When Install Fails'])) {
+                        $this->executor($this->Components['Meta'][$ThisTarget]['When Install Fails'], true);
                     }
                 } else {
                     $this->FE['state_msg'] .= $this->L10N->getString('response_failed_to_update');
-                    if (!empty($this->CIDRAM['Components']['Meta'][$ThisTarget]['When Update Fails'])) {
-                        $this->executor($this->CIDRAM['Components']['Meta'][$ThisTarget]['When Update Fails'], true);
+                    if (!empty($this->Components['Meta'][$ThisTarget]['When Update Fails'])) {
+                        $this->executor($this->Components['Meta'][$ThisTarget]['When Update Fails'], true);
                     }
                 }
             }
@@ -900,42 +828,47 @@ trait Updater
         $this->FE['state_msg'] .= '<code>' . $ID . '</code> – ';
         if (
             $InUse === 0 &&
-            !empty($this->CIDRAM['Components']['Meta'][$ID]['Files']['To']) &&
-            !empty($this->CIDRAM['Components']['Meta'][$ID]['Uninstallable'])
+            !empty($this->Components['Meta'][$ID]['Files']) &&
+            !empty($this->Components['Meta'][$ID]['Uninstallable'])
         ) {
+            $this->arrayify($this->Components['Meta'][$ID]['Files']);
+
             /** Iterate through and remove all the component's files. */
-            foreach ($this->CIDRAM['Components']['Meta'][$ID]['Files']['To'] as $ThisFile) {
-                if (empty($ThisFile) || !$this->freeFromTraversal($ThisFile)) {
+            foreach ($this->Components['Meta'][$ID]['Files'] as $FileName => $FileMeta) {
+                if (strlen($FileName) === 0 || !$this->freeFromTraversal($FileName)) {
                     continue;
                 }
-                if (file_exists($this->Vault . $ThisFile)) {
-                    $BytesRemoved += filesize($this->Vault . $ThisFile);
-                    unlink($this->Vault . $ThisFile);
+                if (file_exists($this->Vault . $FileName . '.rollback')) {
+                    $BytesRemoved += filesize($this->Vault . $FileName . '.rollback');
+                    unlink($this->Vault . $FileName . '.rollback');
                 }
-                if (file_exists($this->Vault . $ThisFile . '.rollback')) {
-                    $BytesRemoved += filesize($this->Vault . $ThisFile . '.rollback');
-                    unlink($this->Vault . $ThisFile . '.rollback');
+                if (!empty($this->Components['Shared'][$FileName]) && $this->Components['Shared'][$FileName] > 1) {
+                    continue;
                 }
-                $this->deleteDirectory($ThisFile);
+                if (file_exists($this->Vault . $FileName)) {
+                    $BytesRemoved += filesize($this->Vault . $FileName);
+                    unlink($this->Vault . $FileName);
+                }
+                $this->deleteDirectory($FileName);
             }
 
             $this->FE['state_msg'] .= $this->L10N->getString('response_component_successfully_uninstalled');
-            if (!empty($this->CIDRAM['Components']['Meta'][$ID]['When Uninstall Succeeds'])) {
-                $this->executor($this->CIDRAM['Components']['Meta'][$ID]['When Uninstall Succeeds'], true);
+            if (!empty($this->Components['Meta'][$ID]['When Uninstall Succeeds'])) {
+                $this->executor($this->Components['Meta'][$ID]['When Uninstall Succeeds'], true);
             }
 
             /** Remove downstream meta. */
-            unset($this->CIDRAM['Components']['Meta'][$ID]);
+            unset($this->Components['Meta'][$ID]);
 
             /** Update the component metadata file. */
             $this->CIDRAM['Updater-IO']->writeFile(
                 $this->Vault . 'installed.yml',
-                $this->YAML->reconstruct($this->CIDRAM['Components']['Meta'])
+                $this->YAML->reconstruct($this->Components['Meta'])
             );
         } else {
             $this->FE['state_msg'] .= $this->L10N->getString('response_component_uninstall_error');
-            if (!empty($this->CIDRAM['Components']['Meta'][$ID]['When Uninstall Fails'])) {
-                $this->executor($this->CIDRAM['Components']['Meta'][$ID]['When Uninstall Fails'], true);
+            if (!empty($this->Components['Meta'][$ID]['When Uninstall Fails'])) {
+                $this->executor($this->Components['Meta'][$ID]['When Uninstall Fails'], true);
             }
         }
         $this->formatFileSize($BytesRemoved);
@@ -958,7 +891,6 @@ trait Updater
             $ID = current($ID);
         }
         $Activation = [
-            'Config' => $this->CIDRAM['Updater-IO']->readFile($this->Vault . $this->FE['ActiveConfigFile']),
             'imports' => $this->Configuration['general']['config_imports'],
             'events' => $this->Configuration['general']['events'],
             'ipv4' => $this->Configuration['signatures']['ipv4'],
@@ -984,41 +916,19 @@ trait Updater
         }
         $InUse = $this->componentUpdatePrep($ID);
         $this->FE['state_msg'] .= '<code>' . $ID . '</code> – ';
-        if ($InUse !== 1 && !empty($this->CIDRAM['Components']['Meta'][$ID]['Files']['To']) && (
-            !empty($this->CIDRAM['Components']['Meta'][$ID]['Used with']) ||
-            !empty($this->CIDRAM['Components']['Meta'][$ID]['Extended Description'])
-        )) {
-            $UsedWith = $this->CIDRAM['Components']['Meta'][$ID]['Used with'] ?? '';
-            foreach ($this->CIDRAM['Components']['Meta'][$ID]['Files']['To'] as $File) {
-                $FileSafe = preg_quote($File);
-                if (is_array($UsedWith)) {
-                    $ThisUsedWith = (string)array_shift($UsedWith);
-                } else {
-                    $ThisUsedWith = $UsedWith;
-                    if ($ThisUsedWith !== 'imports' && preg_match('~\.ya?ml$~i', $FileSafe)) {
-                        continue;
-                    }
-                }
-                if (
-                    preg_match('~^$|\.(?:css|gif|html?|jpe?g|js|png)$|^(?:assets|classes)[\x2F\x5C]~i', $File) ||
-                    !file_exists($this->Vault . $File) ||
-                    !$this->freeFromTraversal($File)
-                ) {
+        if ($InUse !== 1 && !empty($this->Components['Meta'][$ID]['Files'])) {
+            foreach ($this->Components['Meta'][$ID]['Files'] as $FileName => $FileMeta) {
+                $UsedWith = $FileMeta['Used with'] ?? '';
+                if ((
+                    $UsedWith !== 'imports' &&
+                    $UsedWith !== 'events' &&
+                    $UsedWith !== 'ipv4' &&
+                    $UsedWith !== 'ipv6' &&
+                    $UsedWith !== 'modules'
+                ) || !file_exists($this->Vault . $File) || !$this->freeFromTraversal($File)) {
                     continue;
                 }
-                if ($ThisUsedWith === '') {
-                    continue;
-                }
-                if (
-                    $ThisUsedWith !== 'imports' &&
-                    $ThisUsedWith !== 'events' &&
-                    $ThisUsedWith !== 'ipv4' &&
-                    $ThisUsedWith !== 'ipv6' &&
-                    $ThisUsedWith !== 'modules'
-                ) {
-                    continue;
-                }
-                $Activation[$ThisUsedWith][] = $File;
+                $Activation[$UsedWith][] = $File;
             }
         }
         foreach (['imports', 'events', 'ipv4', 'ipv6', 'modules'] as $Type) {
@@ -1038,51 +948,43 @@ trait Updater
                 $Activation['Modified'] = true;
             }
         }
-        if (!$Activation['Modified'] || !$Activation['Config']) {
+        if (!$Activation['Modified']) {
             $this->FE['state_msg'] .= $this->L10N->getString('response_activation_failed') . '<br />';
-            if (!empty($this->CIDRAM['Components']['Meta'][$ID]['When Activation Fails'])) {
-                $this->executor($this->CIDRAM['Components']['Meta'][$ID]['When Activation Fails'], true);
+            if (!empty($this->Components['Meta'][$ID]['When Activation Fails'])) {
+                $this->executor($this->Components['Meta'][$ID]['When Activation Fails'], true);
             }
         } else {
-            $EOL = (strpos($Activation['Config'], "\r\n") !== false) ? "\r\n" : "\n";
-            $Activation['Config'] = str_replace([
-                $EOL . "config_imports='" . $this->Configuration['general']['config_imports'] . "'" . $EOL,
-                $EOL . "events='" . $this->Configuration['general']['events'] . "'" . $EOL,
-                $EOL . "ipv4='" . $this->Configuration['signatures']['ipv4'] . "'" . $EOL,
-                $EOL . "ipv6='" . $this->Configuration['signatures']['ipv6'] . "'" . $EOL,
-                $EOL . "modules='" . $this->Configuration['signatures']['modules'] . "'" . $EOL
-            ], [
-                $EOL . "config_imports='" . $Activation['imports'] . "'" . $EOL,
-                $EOL . "events='" . $Activation['events'] . "'" . $EOL,
-                $EOL . "ipv4='" . $Activation['ipv4'] . "'" . $EOL,
-                $EOL . "ipv6='" . $Activation['ipv6'] . "'" . $EOL,
-                $EOL . "modules='" . $Activation['modules'] . "'" . $EOL
-            ], $Activation['Config']);
             $this->Configuration['general']['config_imports'] = $Activation['imports'];
             $this->Configuration['general']['events'] = $Activation['events'];
             $this->Configuration['signatures']['ipv4'] = $Activation['ipv4'];
             $this->Configuration['signatures']['ipv6'] = $Activation['ipv6'];
             $this->Configuration['signatures']['modules'] = $Activation['modules'];
-            $this->CIDRAM['Updater-IO']->writeFile($this->Vault . $this->FE['ActiveConfigFile'], $Activation['Config']);
-            $this->FE['state_msg'] .= $this->L10N->getString('response_activated') . '<br />';
-            if (!empty($this->CIDRAM['Components']['Meta'][$ID]['When Activation Succeeds'])) {
-                $this->executor($this->CIDRAM['Components']['Meta'][$ID]['When Activation Succeeds'], true);
+            if ($this->updateConfiguration()) {
+                $this->FE['state_msg'] .= $this->L10N->getString('response_activated') . '<br />';
+                if (!empty($this->Components['Meta'][$ID]['When Activation Succeeds'])) {
+                    $this->executor($this->Components['Meta'][$ID]['When Activation Succeeds'], true);
+                }
+                $Success = true;
+            } else {
+                $this->FE['state_msg'] .= $this->L10N->getString('response_activation_failed') . '<br />';
+                if (!empty($this->Components['Meta'][$ID]['When Activation Fails'])) {
+                    $this->executor($this->Components['Meta'][$ID]['When Activation Fails'], true);
+                }
             }
-            $Success = true;
         }
 
         /** Deal with dependency activation. */
         if (
             !empty($Success) &&
-            !empty($this->CIDRAM['Components']['Meta'][$ID]['Dependencies']) &&
-            is_array($this->CIDRAM['Components']['Meta'][$ID]['Dependencies'])
+            !empty($this->Components['Meta'][$ID]['Dependencies']) &&
+            is_array($this->Components['Meta'][$ID]['Dependencies'])
         ) {
-            foreach ($this->CIDRAM['Components']['Meta'][$ID]['Dependencies'] as $Dependency => $Constraints) {
+            foreach ($this->Components['Meta'][$ID]['Dependencies'] as $Dependency => $Constraints) {
                 if (
-                    !isset($this->CIDRAM['Components']['Meta'][$Dependency]) ||
-                    empty($this->CIDRAM['Components']['Installed Versions'][$Dependency]) ||
-                    !$this->isActivable($this->CIDRAM['Components']['Meta'][$Dependency]) ||
-                    $this->isInUse($this->CIDRAM['Components']['Meta'][$Dependency]) === 1
+                    !isset($this->Components['Meta'][$Dependency]) ||
+                    empty($this->Components['Installed Versions'][$Dependency]) ||
+                    !$this->isActivable($this->Components['Meta'][$Dependency]) ||
+                    $this->isInUse($this->Components['Meta'][$Dependency]) === 1
                 ) {
                     continue;
                 }
@@ -1103,7 +1005,6 @@ trait Updater
             $ID = current($ID);
         }
         $this->CIDRAM['Deactivation'] = [
-            'Config' => $this->CIDRAM['Updater-IO']->readFile($this->Vault . $this->FE['ActiveConfigFile']),
             'imports' => $this->Configuration['general']['config_imports'],
             'events' => $this->Configuration['general']['events'],
             'ipv4' => $this->Configuration['signatures']['ipv4'],
@@ -1111,50 +1012,61 @@ trait Updater
             'modules' => $this->Configuration['signatures']['modules'],
             'Modified' => false
         ];
-        $InUse = 0;
-        $this->FE['state_msg'] .= '<code>' . $ID . '</code> – ';
-        if (!empty($this->CIDRAM['Components']['Meta'][$ID]['Files'])) {
-            $this->arrayify($this->CIDRAM['Components']['Meta'][$ID]['Files']);
-            $this->arrayify($this->CIDRAM['Components']['Meta'][$ID]['Files']['To']);
-            $ThisComponent = $this->CIDRAM['Components']['Meta'][$ID];
-            $this->prepareExtendedDescription($ThisComponent);
-            $InUse = $this->isInUse($ThisComponent);
-            unset($ThisComponent);
+        foreach (['imports', 'events', 'ipv4', 'ipv6', 'modules'] as $Type) {
+            $this->CIDRAM['Deactivation'][$Type] = array_unique(array_filter(
+                explode(',', $this->CIDRAM['Deactivation'][$Type]),
+                function ($Component) {
+                    return ($Component = (strpos($Component, ':') === false) ? $Component : substr($Component, strpos($Component, ':') + 1));
+                }
+            ));
+            if (count($this->CIDRAM['Deactivation'][$Type])) {
+                sort($this->CIDRAM['Deactivation'][$Type]);
+            }
+            $this->CIDRAM['Deactivation'][$Type] = ',' . implode(',', $this->CIDRAM['Deactivation'][$Type]) . ',';
         }
-        if ($InUse !== 0 && !empty($this->CIDRAM['Components']['Meta'][$ID]['Files']['To'])) {
-            foreach (['imports', 'events', 'ipv4', 'ipv6', 'modules'] as $Type) {
-                $this->deactivateComponent($Type, $ID);
+        $this->FE['state_msg'] .= '<code>' . $ID . '</code> – ';
+        if (!empty($this->Components['Meta'][$ID]['Files'])) {
+            $this->arrayify($this->Components['Meta'][$ID]['Files']);
+            foreach ($this->Components['Meta'][$ID]['Files'] as $FileName => $FileMeta) {
+                $this->CIDRAM['Deactivation'][$Type] = preg_replace(
+                    '~,(?:[\w\d]+:)?' . preg_quote($FileName) . ',~',
+                    ',',
+                    $this->CIDRAM['Deactivation'][$Type]
+                );
+                $this->CIDRAM['Deactivation'][$Type] = substr($this->CIDRAM['Deactivation'][$Type], 1, -1);
             }
         }
-        if (!$this->CIDRAM['Deactivation']['Modified'] || !$this->CIDRAM['Deactivation']['Config']) {
+        if (
+            $this->CIDRAM['Deactivation']['imports'] !== $this->Configuration['general']['config_imports'] ||
+            $this->CIDRAM['Deactivation']['events'] !== $this->Configuration['general']['events'] ||
+            $this->CIDRAM['Deactivation']['ipv4'] !== $this->Configuration['signatures']['ipv4'] ||
+            $this->CIDRAM['Deactivation']['ipv6'] !== $this->Configuration['signatures']['ipv6'] ||
+            $this->CIDRAM['Deactivation']['modules'] !== $this->Configuration['signatures']['modules']
+        ) {
+            $this->CIDRAM['Deactivation']['Modified'] = true;
+        }
+        if (!$this->CIDRAM['Deactivation']['Modified']) {
             $this->FE['state_msg'] .= $this->L10N->getString('response_deactivation_failed') . '<br />';
-            if (!empty($this->CIDRAM['Components']['Meta'][$ID]['When Deactivation Fails'])) {
-                $this->executor($this->CIDRAM['Components']['Meta'][$ID]['When Deactivation Fails'], true);
+            if (!empty($this->Components['Meta'][$ID]['When Deactivation Fails'])) {
+                $this->executor($this->Components['Meta'][$ID]['When Deactivation Fails'], true);
             }
         } else {
-            $EOL = (strpos($this->CIDRAM['Deactivation']['Config'], "\r\n") !== false) ? "\r\n" : "\n";
-            $this->CIDRAM['Deactivation']['Config'] = str_replace([
-                $EOL . "config_imports='" . $this->Configuration['general']['config_imports'] . "'" . $EOL,
-                $EOL . "events='" . $this->Configuration['general']['events'] . "'" . $EOL,
-                $EOL . "ipv4='" . $this->Configuration['signatures']['ipv4'] . "'" . $EOL,
-                $EOL . "ipv6='" . $this->Configuration['signatures']['ipv6'] . "'" . $EOL,
-                $EOL . "modules='" . $this->Configuration['signatures']['modules'] . "'" . $EOL
-            ], [
-                $EOL . "config_imports='" . $this->CIDRAM['Deactivation']['imports'] . "'" . $EOL,
-                $EOL . "events='" . $this->CIDRAM['Deactivation']['events'] . "'" . $EOL,
-                $EOL . "ipv4='" . $this->CIDRAM['Deactivation']['ipv4'] . "'" . $EOL,
-                $EOL . "ipv6='" . $this->CIDRAM['Deactivation']['ipv6'] . "'" . $EOL,
-                $EOL . "modules='" . $this->CIDRAM['Deactivation']['modules'] . "'" . $EOL
-            ], $this->CIDRAM['Deactivation']['Config']);
             $this->Configuration['general']['config_imports'] = $this->CIDRAM['Deactivation']['imports'];
             $this->Configuration['general']['events'] = $this->CIDRAM['Deactivation']['events'];
             $this->Configuration['signatures']['ipv4'] = $this->CIDRAM['Deactivation']['ipv4'];
             $this->Configuration['signatures']['ipv6'] = $this->CIDRAM['Deactivation']['ipv6'];
             $this->Configuration['signatures']['modules'] = $this->CIDRAM['Deactivation']['modules'];
-            $this->CIDRAM['Updater-IO']->writeFile($this->Vault . $this->FE['ActiveConfigFile'], $this->CIDRAM['Deactivation']['Config']);
-            $this->FE['state_msg'] .= $this->L10N->getString('response_deactivated') . '<br />';
-            if (!empty($this->CIDRAM['Components']['Meta'][$ID]['When Deactivation Succeeds'])) {
-                $this->executor($this->CIDRAM['Components']['Meta'][$ID]['When Deactivation Succeeds'], true);
+            if ($this->updateConfiguration()) {
+                $this->FE['state_msg'] .= $this->L10N->getString('response_deactivated') . '<br />';
+                if (!empty($this->Components['Meta'][$ID]['When Deactivation Succeeds'])) {
+                    $this->executor($this->Components['Meta'][$ID]['When Deactivation Succeeds'], true);
+                }
+                $Success = true;
+            } else {
+                $this->FE['state_msg'] .= $this->L10N->getString('response_deactivation_failed') . '<br />';
+                if (!empty($this->Components['Meta'][$ID]['When Deactivation Fails'])) {
+                    $this->executor($this->Components['Meta'][$ID]['When Deactivation Fails'], true);
+                }
             }
         }
 
@@ -1173,108 +1085,117 @@ trait Updater
         $this->arrayify($ID);
         $ID = array_unique($ID);
         foreach ($ID as $ThisTarget) {
-            if (!isset($this->CIDRAM['Components']['Meta'][$ThisTarget]['Files']['To'])) {
+            if (!isset($this->Components['Meta'][$ThisTarget])) {
                 continue;
+            }
+            if (!isset($this->Components['Meta'][$ThisTarget]['Files'])) {
+                $this->Components['Meta'][$ThisTarget]['Files'] = [];
             }
             $BytesAdded = 0;
             $BytesRemoved = 0;
             $TimeRequired = microtime(true);
-            $RepairFailed = false;
-            $Reactivate = $this->isInUse($this->CIDRAM['Components']['Meta'][$ThisTarget]);
+            $Touched = [];
+            if (!isset($this->Components['RemoteMeta'][$ThisTarget]['Files'])) {
+                $RepairFailed = true;
+            } else {
+                $this->arrayify($this->Components['Meta'][$ThisTarget]['Files']);
+                $this->arrayify($this->Components['RemoteMeta'][$ThisTarget]['Files']);
+                $RepairFailed = false;
+            }
+            $Reactivate = $this->isInUse($this->Components['Meta'][$ThisTarget]);
             if ($Reactivate !== 0) {
                 $this->updatesHandlerDeactivate($ThisTarget);
             }
             $this->FE['state_msg'] .= '<code>' . $ThisTarget . '</code> – ';
-            if (isset(
-                $this->CIDRAM['Components']['RemoteMeta'][$ThisTarget]['Files']['To'],
-                $this->CIDRAM['Components']['RemoteMeta'][$ThisTarget]['Files']['From'],
-                $this->CIDRAM['Components']['RemoteMeta'][$ThisTarget]['Files']['Checksum']
-            )) {
-                $this->arrayify($this->CIDRAM['Components']['Meta'][$ThisTarget]['Files']['To']);
-                $this->arrayify($this->CIDRAM['Components']['RemoteMeta'][$ThisTarget]['Files']['To']);
-                $this->arrayify($this->CIDRAM['Components']['RemoteMeta'][$ThisTarget]['Files']['From']);
-                $this->arrayify($this->CIDRAM['Components']['RemoteMeta'][$ThisTarget]['Files']['Checksum']);
-            } else {
-                $RepairFailed = true;
-            }
-            if (
-                !$RepairFailed &&
-                $this->CIDRAM['Components']['Meta'][$ThisTarget]['Files']['To'] === $this->CIDRAM['Components']['RemoteMeta'][$ThisTarget]['Files']['To']
-            ) {
-                $Files = count($this->CIDRAM['Components']['RemoteMeta'][$ThisTarget]['Files']['To']);
-                for ($Iterator = 0; $Iterator < $Files; $Iterator++) {
-                    if (!isset(
-                        $this->CIDRAM['Components']['RemoteMeta'][$ThisTarget]['Files']['To'][$Iterator],
-                        $this->CIDRAM['Components']['RemoteMeta'][$ThisTarget]['Files']['From'][$Iterator],
-                        $this->CIDRAM['Components']['RemoteMeta'][$ThisTarget]['Files']['Checksum'][$Iterator]
-                    ) || !$this->freeFromTraversal($this->Vault . $this->CIDRAM['Components']['RemoteMeta'][$ThisTarget]['Files']['To'][$Iterator])) {
+            if (!$RepairFailed) {
+                foreach ($this->Components['RemoteMeta'][$ThisTarget]['Files'] as $FileName => $FileMeta) {
+                    if (!isset($FileMeta['From'], $FileMeta['Checksum']) || !$this->freeFromTraversal($this->Vault . $FileName)) {
                         $RepairFailed = true;
                         break;
                     }
-                    $RemoteFileTo = $this->CIDRAM['Components']['RemoteMeta'][$ThisTarget]['Files']['To'][$Iterator];
-                    $RemoteFileFrom = $this->CIDRAM['Components']['RemoteMeta'][$ThisTarget]['Files']['From'][$Iterator];
-                    $RemoteChecksum = $this->CIDRAM['Components']['RemoteMeta'][$ThisTarget]['Files']['Checksum'][$Iterator];
-                    if (file_exists($this->Vault . $RemoteFileTo . '.rollback')) {
-                        $BytesRemoved += filesize($this->Vault . $RemoteFileTo . '.rollback');
-                        unlink($this->Vault . $RemoteFileTo . '.rollback');
+                    if (file_exists($this->Vault . $FileName . '.rollback')) {
+                        $BytesRemoved += filesize($this->Vault . $FileName . '.rollback');
+                        unlink($this->Vault . $FileName . '.rollback');
                     }
-                    $LocalFile = $this->readFile($this->Vault . $RemoteFileTo);
+                    $LocalFile = $this->readFile($this->Vault . $FileName);
                     $LocalFileSize = strlen($LocalFile);
-                    if (hash('sha256', $LocalFile) . ':' . $LocalFileSize === $RemoteChecksum) {
+                    if (hash('sha256', $LocalFile) . ':' . $LocalFileSize === $FileMeta['Checksum']) {
+                        $Touched[$FileName] = true;
                         continue;
                     }
-                    $RemoteFile = $this->Request->request($RemoteFileFrom);
+                    $RemoteFile = $this->Request->request($FileMeta['From']);
                     if (
-                        strtolower(substr($RemoteFileFrom, -2)) === 'gz' &&
-                        strtolower(substr($RemoteFileTo, -2)) !== 'gz' &&
+                        strtolower(substr($FileMeta['From'], -2)) === 'gz' &&
+                        strtolower(substr($FileName, -2)) !== 'gz' &&
                         substr($RemoteFile, 0, 2) === "\x1F\x8B"
                     ) {
                         $RemoteFile = gzdecode($RemoteFile);
                     }
                     $RemoteFileSize = strlen($RemoteFile);
-                    if (hash('sha256', $RemoteFile) . ':' . $RemoteFileSize !== $RemoteChecksum || (
-                        preg_match('~\.(?:css|dat|gif|inc|jpe?g|php|png|ya?ml|[a-z]{0,2}db)$~i', $RemoteFileTo) &&
-                        !$this->sanityCheck($RemoteFileTo, $RemoteFile)
+                    if (hash('sha256', $RemoteFile) . ':' . $RemoteFileSize !== $FileMeta['Checksum'] || (
+                        preg_match('~\.(?:css|dat|gif|png|ya?ml)$~i', $FileName) &&
+                        !$this->sanityCheck($FileName, $RemoteFile)
                     )) {
                         $RepairFailed = true;
                         continue;
                     }
-                    $this->buildPath($this->Vault . $RemoteFileTo);
-                    if (file_exists($this->Vault . $RemoteFileTo) && !is_writable($this->Vault . $RemoteFileTo)) {
+                    $this->buildPath($this->Vault . $FileName);
+                    if (file_exists($this->Vault . $FileName) && !is_writable($this->Vault . $FileName)) {
                         $RepairFailed = true;
                         continue;
                     }
-                    $BytesRemoved += $LocalFileSize;
-                    $BytesAdded += $RemoteFileSize;
-                    $Handle = fopen($this->Vault . $RemoteFileTo, 'wb');
+                    $Handle = fopen($this->Vault . $FileName, 'wb');
                     fwrite($Handle, $RemoteFile);
                     fclose($Handle);
+                    $BytesRemoved += $LocalFileSize;
+                    $BytesAdded += $RemoteFileSize;
+                    $Touched[$FileName] = true;
+                }
+                if (!$RepairFailed) {
+                    foreach ($this->Components['Meta'][$ThisTarget]['Files'] as $FileName => $FileMeta) {
+                        if (
+                            strlen($FileName) === 0 ||
+                            !$this->freeFromTraversal($this->Vault . $FileName) ||
+                            !empty($Touched[$FileName]) ||
+                            (!empty($this->Components['Shared'][$FileName]) && $this->Components['Shared'][$FileName] > 1)
+                        ) {
+                            continue;
+                        }
+                        if (file_exists($this->Vault . $FileName . '.rollback')) {
+                            $BytesRemoved += filesize($this->Vault . $FileName . '.rollback');
+                            unlink($this->Vault . $FileName . '.rollback');
+                        }
+                        if (file_exists($this->Vault . $FileName)) {
+                            $BytesRemoved += filesize($this->Vault . $FileName);
+                            unlink($this->Vault . $FileName);
+                        }
+                    }
                 }
             } else {
                 $RepairFailed = true;
             }
             if (!$RepairFailed && is_writable($this->Vault . 'installed.yml')) {
                 /** Replace downstream meta with upstream meta. */
-                $this->CIDRAM['Components']['Meta'][$ThisTarget] = $this->CIDRAM['Components']['RemoteMeta'][$ThisTarget];
+                $this->Components['Meta'][$ThisTarget] = $this->Components['RemoteMeta'][$ThisTarget];
 
                 /** Update the component metadata file. */
                 $this->CIDRAM['Updater-IO']->writeFile(
                     $this->Vault . 'installed.yml',
-                    $this->YAML->reconstruct($this->CIDRAM['Components']['Meta'])
+                    $this->YAML->reconstruct($this->Components['Meta'])
                 );
 
                 /** Repair operation succeeded. */
                 $this->FE['state_msg'] .= $this->L10N->getString('response_repair_process_completed');
-                if (!empty($this->CIDRAM['Components']['Meta'][$ThisTarget]['When Repair Succeeds'])) {
-                    $this->executor($this->CIDRAM['Components']['Meta'][$ThisTarget]['When Repair Succeeds'], true);
+                if (!empty($this->Components['Meta'][$ThisTarget]['When Repair Succeeds'])) {
+                    $this->executor($this->Components['Meta'][$ThisTarget]['When Repair Succeeds'], true);
                 }
             } else {
                 $RepairFailed = true;
 
                 /** Repair operation failed. */
                 $this->FE['state_msg'] .= $this->L10N->getString('response_repair_process_failed');
-                if (!empty($this->CIDRAM['Components']['Meta'][$ThisTarget]['When Repair Fails'])) {
-                    $this->executor($this->CIDRAM['Components']['Meta'][$ThisTarget]['When Repair Fails'], true);
+                if (!empty($this->Components['Meta'][$ThisTarget]['When Repair Fails'])) {
+                    $this->executor($this->Components['Meta'][$ThisTarget]['When Repair Fails'], true);
                 }
             }
             $this->formatFileSize($BytesAdded);
@@ -1303,26 +1224,17 @@ trait Updater
         $ID = array_unique($ID);
         foreach ($ID as $ThisID) {
             $Table = '<blockquote class="ng1 comSub">';
-            if (empty($this->CIDRAM['Components']['Meta'][$ThisID]['Files'])) {
+            if (empty($this->Components['Meta'][$ThisID]['Files'])) {
                 continue;
             }
-            $TheseFiles = $this->CIDRAM['Components']['Meta'][$ThisID]['Files'];
-            if (!empty($TheseFiles['To'])) {
-                $this->arrayify($TheseFiles['To']);
-            }
-            $Count = count($TheseFiles['To']);
-            if (!empty($TheseFiles['Checksum'])) {
-                $this->arrayify($TheseFiles['Checksum']);
-            }
+            $TheseFiles = $this->Components['Meta'][$ThisID]['Files'];
+            $this->arrayify($TheseFiles);
             $Passed = true;
-            for ($Iterate = 0; $Iterate < $Count; $Iterate++) {
-                $ThisFile = $TheseFiles['To'][$Iterate];
+            foreach ($TheseFiles as $ThisFile => $Metadata) {
                 $ThisFileData = $this->readFile($this->Vault . $ThisFile);
 
                 /** Sanity check. */
-                if (
-                    preg_match('~\.(?:css|dat|gif|inc|jpe?g|php|png|ya?ml|[a-z]{0,2}db)$~i', $ThisFile)
-                ) {
+                if (preg_match('~\.(?:css|dat|gif|png|ya?ml)$~i', $ThisFile)) {
                     $Class = $this->sanityCheck($ThisFile, $ThisFileData) ? 'txtGn' : 'txtRd';
                     $Sanity = sprintf('<span class="%s">%s</span>', $Class, $this->L10N->getString(
                         $Class === 'txtGn' ? 'response_passed' : 'response_failed'
@@ -1334,13 +1246,13 @@ trait Updater
                     $Sanity = sprintf('<span class="txtOe">%s</span>', $this->L10N->getString('response_skipped'));
                 }
 
-                $Checksum = empty($TheseFiles['Checksum'][$Iterate]) ? '' : $TheseFiles['Checksum'][$Iterate];
+                $Checksum = $Metadata['Checksum'] ?? '';
                 $Len = strlen($ThisFileData);
                 $HashPartLen = strpos($Checksum, ':') ?: 64;
                 $Actual = hash('sha256', $ThisFileData) . ':' . $Len;
 
                 /** Integrity check. */
-                if ($Checksum) {
+                if (strlen($Checksum)) {
                     if ($Actual !== $Checksum) {
                         $Class = 'txtRd';
                         $Passed = false;
@@ -1397,15 +1309,15 @@ trait Updater
             $ThisComponent['Dependencies'] = ['CIDRAM Core' => '>=' . $ThisComponent['Minimum Required']];
         }
         if (!isset($ThisComponent['Dependencies']) || !is_array($ThisComponent['Dependencies']) || (
-            $Name && !isset($this->CIDRAM['Components']['Installed Versions'][$Name])
+            $Name && !isset($this->Components['Installed Versions'][$Name])
         )) {
             return;
         }
         foreach ($ThisComponent['Dependencies'] as $Dependency => $Constraints) {
             $Dependency = str_replace('{lang}', $this->Configuration['general']['lang'], $Dependency);
             if ($Constraints === 'Latest') {
-                if (isset($this->CIDRAM['Components']['Available Versions'][$Dependency])) {
-                    $Constraints = '>=' . $this->CIDRAM['Components']['Available Versions'][$Dependency];
+                if (isset($this->Components['Available Versions'][$Dependency])) {
+                    $Constraints = '>=' . $this->Components['Available Versions'][$Dependency];
                 }
             }
             if ($Constraints === 'Latest' || strlen($Constraints) < 1) {
@@ -1416,12 +1328,12 @@ trait Updater
                     $this->L10N->getString('response_not_satisfied')
                 );
             } elseif ((
-                isset($this->CIDRAM['Components']['Installed Versions'][$Dependency]) &&
-                $this->CIDRAM['Operation']->singleCompare($this->CIDRAM['Components']['Installed Versions'][$Dependency], $Constraints)
+                isset($this->Components['Installed Versions'][$Dependency]) &&
+                $this->CIDRAM['Operation']->singleCompare($this->Components['Installed Versions'][$Dependency], $Constraints)
             ) || (
                 extension_loaded($Dependency) &&
-                ($this->CIDRAM['Components']['Installed Versions'][$Dependency] = (new \ReflectionExtension($Dependency))->getVersion()) &&
-                $this->CIDRAM['Operation']->singleCompare($this->CIDRAM['Components']['Installed Versions'][$Dependency], $Constraints)
+                ($this->Components['Installed Versions'][$Dependency] = (new \ReflectionExtension($Dependency))->getVersion()) &&
+                $this->CIDRAM['Operation']->singleCompare($this->Components['Installed Versions'][$Dependency], $Constraints)
             )) {
                 $ThisComponent['Dependency Status'] .= sprintf(
                     '<span class="txtGn">%s%s – %s</span><br />',
@@ -1431,8 +1343,8 @@ trait Updater
                 );
             } elseif (
                 $Source &&
-                isset($this->CIDRAM['Components']['Available Versions'][$Dependency]) &&
-                $this->CIDRAM['Operation']->singleCompare($this->CIDRAM['Components']['Available Versions'][$Dependency], $Constraints)
+                isset($this->Components['Available Versions'][$Dependency]) &&
+                $this->CIDRAM['Operation']->singleCompare($this->Components['Available Versions'][$Dependency], $Constraints)
             ) {
                 $ThisComponent['Dependency Status'] .= sprintf(
                     '<span class="txtOe">%s%s – %s</span><br />',
@@ -1473,7 +1385,12 @@ trait Updater
     private function checkVersions(array $Source, array &$To): void
     {
         foreach ($Source as $Key => $Component) {
-            if (!empty($Component['Version']) && !empty($Component['Files']['To'])) {
+            if (
+                !empty($Component['Version']) &&
+                isset($Component['Files']) &&
+                is_array($Component['Files']) &&
+                count($Component['Files'])
+            ) {
                 $To[$Key] = $Component['Version'];
             }
         }
@@ -1505,5 +1422,40 @@ trait Updater
             return false;
         }
         return $Needle === $Haystack;
+    }
+
+    /**
+     * Calculate shared files.
+     *
+     * @return void
+     */
+    private function calculateShared(): void
+    {
+        if (!isset($this->Components['Meta'])) {
+            return;
+        }
+        if (!isset($this->Components['Shared'])) {
+            $this->Components['Shared'] = [];
+        }
+        foreach ($this->Components['Meta'] as &$Component) {
+            if (!isset($Component['Files'])) {
+                continue;
+            }
+            $Component['Has Signatures'] = false;
+            foreach ($Component['Files'] as $FileName => $FileMeta) {
+                if (!isset($this->Components['Shared'][$FileName])) {
+                    $this->Components['Shared'][$FileName] = 0;
+                }
+                $this->Components['Shared'][$FileName]++;
+
+                /** Determine whether this component includes any signature files. */
+                if (isset($FileMeta['Used with']) && (
+                    $FileMeta['Used with'] === 'ipv4' ||
+                    $FileMeta['Used with'] === 'ipv6'
+                )) {
+                    $Component['Has Signatures'] = true;
+                }
+            }
+        }
     }
 }

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2022.05.05).
+ * This file: Front-end handler (last modified: 2022.05.22).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -4066,7 +4066,6 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'statistics' && $CIDRAM['FE']['P
             $CIDRAM['FE'][$CIDRAM['TheseStats'][2]] = 'txtRd';
         } else {
             $CIDRAM['FE'][$CIDRAM['TheseStats'][1]] = 0;
-            $CIDRAM['StatWorking'] = explode(',', $CIDRAM['Config']['signatures'][$CIDRAM['TheseStats'][0]]);
             foreach (explode(',', $CIDRAM['Config']['signatures'][$CIDRAM['TheseStats'][0]]) as $CIDRAM['StatWorking']) {
                 if (strlen($CIDRAM['StatWorking']) && is_readable($CIDRAM['Vault'] . $CIDRAM['StatWorking'])) {
                     $CIDRAM['FE'][$CIDRAM['TheseStats'][1]]++;
@@ -4089,7 +4088,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'statistics' && $CIDRAM['FE']['P
     echo $CIDRAM['SendOutput']();
 
     /** Cleanup. */
-    unset($CIDRAM['StatColour'], $CIDRAM['StatWorking'], $CIDRAM['TheseStats']);
+    unset($CIDRAM['StatWorking'], $CIDRAM['TheseStats']);
 }
 
 /** Auxiliary rules (view mode). */

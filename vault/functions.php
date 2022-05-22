@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2022.05.05).
+ * This file: Functions file (last modified: 2022.05.18).
  */
 
 /**
@@ -2596,8 +2596,7 @@ if (isset($CIDRAM['Vault'])) {
 
     /** If there are any componentised events, load those, too. */
     if (!empty($CIDRAM['Config']['general']['events'])) {
-        $CIDRAM['LoadThese'] = array_unique(explode(',', $CIDRAM['Config']['general']['events']));
-        foreach ($CIDRAM['LoadThese'] as $CIDRAM['LoadThis']) {
+        foreach (array_unique(explode(',', $CIDRAM['Config']['general']['events'])) as $CIDRAM['LoadThis']) {
             if (
                 strlen($CIDRAM['LoadThis']) > 0 &&
                 substr($CIDRAM['LoadThis'], -4) === '.php' &&
@@ -2606,6 +2605,6 @@ if (isset($CIDRAM['Vault'])) {
                 require $CIDRAM['Vault'] . $CIDRAM['LoadThis'];
             }
         }
-        unset($CIDRAM['LoadThis'], $CIDRAM['LoadThese']);
+        unset($CIDRAM['LoadThis']);
     }
 }

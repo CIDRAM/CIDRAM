@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2022.04.04).
+ * This file: Front-end functions file (last modified: 2022.05.20).
  */
 
 /**
@@ -531,12 +531,6 @@ $CIDRAM['IsInUse'] = function (array $Component) use (&$CIDRAM) {
         $CIDRAM['IsolateL10N']($Description, $CIDRAM['Config']['general']['lang']);
     }
     foreach ($Files as $File) {
-        if (
-            preg_match('~^$|\.(?:css|gif|html?|jpe?g|js|png)$|^(?:classes|fe_assets)[\x2F\x5C]~i', $File) ||
-            !file_exists($CIDRAM['Vault'] . $File)
-        ) {
-            continue;
-        }
         $FileSafe = preg_quote($File);
         if (is_array($UsedWith)) {
             $ThisUsedWith = (string)array_shift($UsedWith);
@@ -551,9 +545,15 @@ $CIDRAM['IsInUse'] = function (array $Component) use (&$CIDRAM) {
             }
         } else {
             $ThisUsedWith = $UsedWith;
-            if ($ThisUsedWith !== 'imports' && preg_match('~\.ya?ml$~i', $FileSafe)) {
+            if ($ThisUsedWith !== 'imports' && preg_match('~\.ya?ml$~i', $File)) {
                 continue;
             }
+        }
+        if (
+            preg_match('~^$|\.(?:css|gif|html?|jpe?g|js|png)$|^(?:classes|fe_assets)[\x2F\x5C]~i', $File) ||
+            !file_exists($CIDRAM['Vault'] . $File)
+        ) {
+            continue;
         }
         if (($ThisUsedWith === 'imports' && preg_match(
             '~,(?:[\w\d]+:)?' . $FileSafe . ',~',
@@ -573,7 +573,7 @@ $CIDRAM['IsInUse'] = function (array $Component) use (&$CIDRAM) {
         ))) {
             $Out = (!isset($Out) || $Out === 1) ? 1 : -1;
         } else {
-            $Out = 0;
+            $Out = (!isset($Out) || $Out === 0) ? 0 : -1;
         }
     }
     return isset($Out) ? $Out : 0;
@@ -1746,6 +1746,7 @@ $CIDRAM['UpdatesHandler-Update'] = function ($ID) use (&$CIDRAM) {
                 if (is_readable($CIDRAM['Vault'] . $ThisFileName)) {
                     $BytesRemoved += filesize($CIDRAM['Vault'] . $ThisFileName);
                     if (file_exists($CIDRAM['Vault'] . $ThisFileName . '.rollback')) {
+                        $BytesRemoved += filesize($CIDRAM['Vault'] . $ThisFileName . '.rollback');
                         unlink($CIDRAM['Vault'] . $ThisFileName . '.rollback');
                     }
                     rename($CIDRAM['Vault'] . $ThisFileName, $CIDRAM['Vault'] . $ThisFileName . '.rollback');
@@ -1975,7 +1976,7 @@ $CIDRAM['UpdatesHandler-Activate'] = function ($ID) use (&$CIDRAM) {
                 $ThisUsedWith = (string)array_shift($UsedWith);
             } else {
                 $ThisUsedWith = $UsedWith;
-                if ($ThisUsedWith !== 'imports' && preg_match('~\.ya?ml$~i', $FileSafe)) {
+                if ($ThisUsedWith !== 'imports' && preg_match('~\.ya?ml$~i', $File)) {
                     continue;
                 }
             }
@@ -2411,6 +2412,7 @@ $CIDRAM['UpdatesHandler-Verify'] = function ($ID) use (&$CIDRAM) {
  * Normalise linebreaks.
  *
  * @param string $Data The data to normalise.
+ * @return void
  */
 $CIDRAM['NormaliseLinebreaks'] = function (&$Data) {
     if (strpos($Data, "\r")) {
@@ -2585,6 +2587,7 @@ $CIDRAM['SectionsHandler'] = function (array $Files) use (&$CIDRAM) {
  *
  * @param array $Arr
  * @param int $Range (1-128)
+ * @return void
  */
 $CIDRAM['RangeTablesTallyIPv6'] = function (array &$Arr, $Range) {
     $Order = ceil($Range / 16) - 1;

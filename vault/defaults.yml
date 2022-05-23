@@ -618,10 +618,15 @@ Config Defaults:
     ipv6_other.dat
   modules:
    type: "string"
-   default: ""
+   default: |
+    botua.php
+    cookies.php
+    extras.php
   imports:
    type: "string"
-   default: "bypasses.yml"
+   default: |
+    bypasses.yml
+    extras.yml
   events:
    type: "string"
    default: ""
@@ -755,8 +760,9 @@ Config Defaults:
     200: *200
     403: *403
     418: *418
-    429: &429 "429 Too Many Requests"
+    429: &429 "label_http_response_header_code_429"
     451: *451
+   style: "radio"
  hcaptcha:
   usemode:
    type: "int"
@@ -816,6 +822,7 @@ Config Defaults:
     418: *418
     429: *429
     451: *451
+   style: "radio"
  legal:
   pseudonymise_ip_addresses:
    type: "bool"

@@ -44,6 +44,7 @@
 - HCaptcha class was sending invalid headers when generating output; Fixed (#293).
 - Wrong CSP headers being set by the HCaptcha class; Fixed (#294).
 - Fixed a bottleneck caused by the ReadFile closure (since v3, the readFile method).
+- The `nonblocked_status_code` configuration directive wasn't displaying as intended at the front-end configuration page; Fixed.
 
 #### Other changes.
 - Improved IP address resolution strategy (#286).

@@ -407,6 +407,7 @@ label_http_response_header_code_200: "200 OK\nMenos robusto, mas mais amigável 
 label_http_response_header_code_403: "403 Forbidden (Proibido)\nUm pouco mais robusto, mas um pouco menos amigável de usar. Recomendado para a maioria das circunstâncias gerais."
 label_http_response_header_code_410: "410 Gone (Se foi)\nPode causar problemas ao resolver falsos positivos, pois alguns navegadores armazenam em cache essa mensagem de status e não enviam solicitações subsequentes, mesmo após terem sido desbloqueadas. Pode ser o mais preferível em alguns contextos, para certos tipos de tráfego."
 label_http_response_header_code_418: "418 I'm a teapot (Eu sou um bule)\nReferências uma piada de primeiro de abril ({{Links.RFC2324}}). Muito improvável de ser entendido por qualquer cliente, bot, navegador, ou outro. Fornecido para diversão e conveniência, mas geralmente não recomendado."
+label_http_response_header_code_429: "429 Too Many Requests (Pedidos em excesso)\nRecomendado para limitação de taxa, ao lidar com ataques DDoS, e para prevenção de inundações. Não recomendado em outros contextos."
 label_http_response_header_code_451: "451 Unavailable For Legal Reasons (Indisponível por motivos legais)\nRecomendado ao bloquear principalmente por motivos legais. Não recomendado em outros contextos."
 label_http_response_header_code_503: "503 Service Unavailable (Serviço indisponível)\nMais robusto, mas menos amigável de usar. Recomendado para quando sob ataque, ou para lidar com tráfego indesejado extremamente persistente."
 label_ignore: "Ignore isso"

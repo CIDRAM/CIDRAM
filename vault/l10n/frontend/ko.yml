@@ -401,6 +401,7 @@ label_http_response_header_code_200: "200 OK\n가장 덜 강력하지만 가장 
 label_http_response_header_code_403: "403 Forbidden (금지)\n더 강력하지만, 사용자 친화성은 떨어집니다. 대부분의 일반적인 상황에 권장됩니다."
 label_http_response_header_code_410: "410 Gone (갔다)\n일부 브라우저는 차단 해제된 후에도 이 상태 메시지를 캐시하고 후속 요청을 보내지 않기 때문에 가 양성을 해결할 때 문제를 일으킬 수 있습니다. 어떤 상황에서는 특정 종류의 트래픽에 대해 가장 선호될 수 있습니다."
 label_http_response_header_code_418: "418 I'm a teapot (나는 찻주전자)\n만우절 농담을 참고하여 ({{Links.RFC2324}}). 클라이언트, 로봇, 브라우저, 등이 이해하지 못할 가능성이 매우 높습니다. 오락과 편의를 위해 제공되지만, 일반적으로 권장되지 않습니다."
+label_http_response_header_code_429: "429 Too Many Requests (너무 많은 요청)\n속도 제한, DDoS 공격 처리, 및 홍수 방지에 권장됩니다. 다른 상황에서는 권장되지 않습니다."
 label_http_response_header_code_451: "451 Unavailable For Legal Reasons (법적 이유로 사용할 수 없음)\n주로 법적 이유로 차단할 때 권장됩니다. 다른 상황에서는 권장되지 않습니다."
 label_http_response_header_code_503: "503 Service Unavailable (서비스 불가)\n가장 강력하지만 사용자 친화적이지 않습니다. 공격받거나 매우 지속적인 원치 않는 트래픽을 처리할 때 권장됩니다."
 label_ignore: "이것을 무시하십시오"

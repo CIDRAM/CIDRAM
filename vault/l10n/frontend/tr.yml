@@ -405,6 +405,7 @@ label_http_response_header_code_200: "200 OK (Tamam)\nEn az sağlam, ancak en ku
 label_http_response_header_code_403: "403 Forbidden (Yasaktır)\nDaha sağlam, ancak daha az kullanıcı dostu. Çoğu genel durum için önerilir."
 label_http_response_header_code_410: "410 Gone (Gitti)\nYanlış pozitifleri çözerken sorunlara neden olabilir, çünkü bazı tarayıcılar bu durum mesajını önbelleğe alır ve engelleme kaldırıldıktan sonra bile sonraki istekleri göndermez. Belirli trafik türleri için bazı bağlamlarda en çok tercih edileni olabilir."
 label_http_response_header_code_418: "418 I'm a teapot (Ben bir çaydanlığım)\nBir 1 Nisan şakasına gönderme yapıyor ({{Links.RFC2324}}). Herhangi bir istemci, bot, tarayıcı, veya başka bir şekilde anlaşılması pek olası değildir. Eğlence ve rahatlık için sağlanmıştır, ancak genellikle tavsiye edilmez."
+label_http_response_header_code_429: "429 Too Many Requests (Çok fazla istek)\nHız sınırlaması, DDoS saldırılarıyla uğraşırken, ve sel önleme için önerilir. Diğer bağlamlarda önerilmez."
 label_http_response_header_code_451: "451 Unavailable For Legal Reasons (Yasal sebeplerle kullanılamıyor)\nÖncelikle yasal nedenlerle engelleme yapılırken önerilir. Diğer bağlamlarda önerilmez."
 label_http_response_header_code_503: "503 Service Unavailable (Hizmet kullanılamıyor)\nEn sağlam, ancak en az kullanıcı dostu. Saldırı altındayken veya aşırı derecede kalıcı istenmeyen trafikle uğraşırken önerilir."
 label_ignore: "Bunu görmezden gel"

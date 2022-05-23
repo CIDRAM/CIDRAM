@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (traditional) language data for the front-end (last modified: 2022.05.22).
+# This file: Chinese (traditional) language data for the front-end (last modified: 2022.05.23).
 ##/
 
 Extended Description AbuseIPDB module: "阻止來自AbuseIPDB列出的IP的請求。"
@@ -82,6 +82,7 @@ config_components_ipv6: "IPv6簽名文件。"
 config_components_modules: "模塊。"
 config_experimental: "不穩定/實驗！"
 config_frontend: "前端的配置。"
+config_frontend_enable_two_factor: "該指令確定是否將2FA用於前端帳戶。"
 config_frontend_frontend_log: "前端登錄嘗試的錄音文件。​指定一個文件名，​或留空以禁用。"
 config_frontend_magnification: &MagnifDesc "字體放大。​標準 = 1。"
 config_frontend_max_login_attempts: "最大前端登錄嘗試次數。​標準=5。"
@@ -141,7 +142,6 @@ config_legal_pseudonymise_ip_addresses: "編寫日誌文件時使用假名的IP�
 config_phpmailer: "PHPMailer的配置（用於雙因素身份驗證）。"
 config_phpmailer_add_reply_to_address: "通過SMTP發送電子郵件時引用的回复地址。"
 config_phpmailer_add_reply_to_name: "通過SMTP發送電子郵件時引用的回複姓名。"
-config_phpmailer_enable_two_factor: "該指令確定是否將2FA用於前端帳戶。"
 config_phpmailer_event_log: "用於記錄與PHPMailer相關的所有事件的文件。​指定一個文件名，​或留空以禁用。"
 config_phpmailer_host: "用於出站電子郵件的SMTP主機。"
 config_phpmailer_password: "通過SMTP發送電子郵件時使用的密碼。"
@@ -519,7 +519,6 @@ response_deactivation_failed: "無法停用！"
 response_delete_error: "無法刪除！"
 response_directory_deleted: "文件夾成功刪除！"
 response_directory_renamed: "文件夾成功改名！"
-response_error: "錯誤"
 response_failed: "失敗"
 response_failed_to_install: "無法安裝！"
 response_failed_to_update: "無法更新！"
@@ -579,8 +578,6 @@ state_component_is_active: "組件是活性。"
 state_component_is_inactive: "組件是非活性。"
 state_component_is_partially_active: "組件是部分處於活性。"
 state_component_is_provisional: "組件是有時活性。"
-state_email_sent: "電子郵件已成功發送至『%s』。"
-state_failed_missing: "任務失敗，因為必要的組件不可用。"
 state_fixer: "%2$s%1$s。"
 state_fixer_changed: "進行了%s次更改"
 state_fixer_seconds: "在%s秒內"

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Japanese language data for the front-end (last modified: 2022.05.22).
+# This file: Japanese language data for the front-end (last modified: 2022.05.23).
 ##/
 
 Extended Description AbuseIPDB module: "AbuseIPDBにリストされているＩＰからの要求をブロックします。"
@@ -82,6 +82,7 @@ config_components_ipv6: "ＩＰｖ６シグネチャ・ファイル。"
 config_components_modules: "モジュール。"
 config_experimental: "不安定/実験的！"
 config_frontend: "フロントエンドの設定。"
+config_frontend_enable_two_factor: "このディレクティブは、フロントエンド・アカウントに２ＦＡを使用するかどうかを決定します。"
 config_frontend_frontend_log: "フロントエンド・ログインの試みを記録するためのファイル。​ファイル名指定するか、​無効にしたい場合は空白のままにして下さい。"
 config_frontend_magnification: &MagnifDesc "フォントの倍率。​Default/デフォルルト = １。"
 config_frontend_max_login_attempts: "ログイン試行の最大回数（フロントエンド）。​Default（デフォルト設定） = ５。"
@@ -141,7 +142,6 @@ config_legal_pseudonymise_ip_addresses: "ログ・ファイルを書き込むと
 config_phpmailer: "PHPMailerの設定（二要素認証に使用されます）。"
 config_phpmailer_add_reply_to_address: "ＳＭＴＰ経由で電子Ｅメールを送信するときに引用する返信アドレス。"
 config_phpmailer_add_reply_to_name: "ＳＭＴＰ経由で電子Ｅメールを送信するときに引用する返信名。"
-config_phpmailer_enable_two_factor: "このディレクティブは、フロントエンド・アカウントに２ＦＡを使用するかどうかを決定します。"
 config_phpmailer_event_log: "PHPMailerに関連してすべてのイベントを記録するためのファイル。​ファイル名指定するか、​無効にしたい場合は空白のままにして下さい。"
 config_phpmailer_host: "送信Ｅメールに使用するＳＭＴＰホスト。"
 config_phpmailer_password: "ＳＭＴＰ経由で電子Ｅメールを送信するときに使用するパスワード。"
@@ -518,7 +518,6 @@ response_deactivation_failed: "非アクティブ化に失敗しました！"
 response_delete_error: "削除に失敗しました！"
 response_directory_deleted: "ディレクトリが正常に削除されました！"
 response_directory_renamed: "ディレクトリの名前が変更されました！"
-response_error: "エラー"
 response_failed: "失敗しました"
 response_failed_to_install: "インストールに失敗しました！"
 response_failed_to_update: "アップデートに失敗しました！"
@@ -578,8 +577,6 @@ state_component_is_active: "コンポーネントがアクティブです。"
 state_component_is_inactive: "コンポーネントが非アクティブです。"
 state_component_is_partially_active: "コンポーネントが部分的にアクティブです。"
 state_component_is_provisional: "コンポーネントが暫定的です。"
-state_email_sent: "Ｅメールは「%s」に送信されました。"
-state_failed_missing: "必要なコンポーネントが使用できないため、タスクが失敗しました。"
 state_fixer: "%2$s%1$s。"
 state_fixer_changed: "%sつの変更が行われました"
 state_fixer_seconds: "%s秒で"

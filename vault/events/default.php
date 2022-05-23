@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Event handlers file (last modified: 2022.05.18).
+ * This file: Default event handlers (last modified: 2022.05.23).
  */
 
 /**
@@ -190,32 +190,6 @@ $this->Events->addHandler('final', function (): bool {
     fclose($Handle);
     if ($WriteMode === 'wb') {
         $this->logRotation($this->Configuration['general']['error_log']);
-    }
-    return true;
-});
-
-/**
- * Writes to the PHPMailer event log.
- *
- * @param string $Data What to write.
- * @return bool True on success; False on failure.
- */
-$this->Events->addHandler('writeToPHPMailerEventLog', function (string $Data): bool {
-    /** Guard. */
-    if (
-        $this->Configuration['PHPMailer']['event_log'] === '' ||
-        !($EventLog = $this->buildPath($this->Vault . $this->Configuration['PHPMailer']['event_log']))
-    ) {
-        return false;
-    }
-
-    $Truncate = $this->readBytes($this->Configuration['general']['truncate']);
-    $WriteMode = (!file_exists($EventLog) || $Truncate > 0 && filesize($EventLog) >= $Truncate) ? 'wb' : 'ab';
-    $Handle = fopen($EventLog, $WriteMode);
-    fwrite($Handle, $Data);
-    fclose($Handle);
-    if ($WriteMode === 'wb') {
-        $this->logRotation($this->Configuration['PHPMailer']['event_log']);
     }
     return true;
 });

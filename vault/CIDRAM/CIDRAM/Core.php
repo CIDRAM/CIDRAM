@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM core (last modified: 2022.05.22).
+ * This file: The CIDRAM core (last modified: 2022.05.23).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -225,19 +225,6 @@ class Core
         /** Instantiate events orchestrator in order to allow malleable logging and etc. */
         $this->Events = new \Maikuolan\Common\Events();
 
-        /** Load all default event handlers. */
-        require $this->Vault . 'event_handlers.php';
-
-        /** If there are any componentised events, load those, too. */
-        if (!empty($this->Configuration['components']['events'])) {
-            foreach (array_unique(explode("\n", $this->Configuration['components']['events'])) as $LoadThis) {
-                if (strlen($LoadThis) > 0 && substr($LoadThis, -4) === '.php' && is_readable($this->EventsPath . $LoadThis)) {
-                    require $this->EventsPath . $LoadThis;
-                }
-            }
-            unset($LoadThis);
-        }
-
         /** CIDRAM version number (SemVer). */
         $this->ScriptVersion = '3.0.0';
 
@@ -303,13 +290,26 @@ class Core
             }
         }
 
-        /** Check for supplementary configuration. */
+        /** Load any other configured import data. */
         foreach ($this->supplementary($this->Configuration['components']['imports'] ?? '', $this->ImportsPath) as $Supplement) {
             $this->YAML->process($this->readFile($Supplement), $this->CIDRAM);
         }
 
         /** Perform fallbacks and autotyping for missing configuration directives. */
         $this->fallback($this->CIDRAM['Config Defaults'], $this->Configuration);
+
+        /** Load the default event handlers. */
+        require $this->EventsPath . 'default.php';
+
+        /** Load any other configured event handlers. */
+        if (!empty($this->Configuration['components']['events'])) {
+            foreach (array_unique(explode("\n", $this->Configuration['components']['events'])) as $LoadThis) {
+                if (strlen($LoadThis) > 0 && substr($LoadThis, -4) === '.php' && is_readable($this->EventsPath . $LoadThis)) {
+                    require $this->EventsPath . $LoadThis;
+                }
+            }
+            unset($LoadThis);
+        }
 
         /** Fetch the IP address of the current request. */
         $this->ipAddr = (new \Maikuolan\Common\IPHeader($this->Configuration['general']['ipaddr']))->Resolution;

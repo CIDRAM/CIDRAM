@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Urdu language data for the front-end (last modified: 2022.05.22).
+# This file: Urdu language data for the front-end (last modified: 2022.05.23).
 ##/
 
 Extended Description AbuseIPDB module: "AbuseIPDB میں درج IP کے بلاکس کی درخواستیں."
@@ -82,6 +82,7 @@ config_components_ipv6: "IPv6 دستخطی فائلیں."
 config_components_modules: "ماڈیولز."
 config_experimental: "غیر مستحکم / تجرباتی!"
 config_frontend: "فرنٹ اینڈ کے لیے کنفیگریشن."
+config_frontend_enable_two_factor: "یہ تعین کرتا ہے کہ 2FA استعمال کیا جانا چاہئے."
 config_frontend_frontend_log: "سامنے کے آخر میں لاگ ان کوششوں لاگنگ کے لئے دائر. ایک فائل کا نام کی وضاحت کریں، یا غیر فعال کرنے کو خالی چھوڑ."
 config_frontend_magnification: &MagnifDesc "فونٹ اضافہ. پہلے سے طے شدہ = 1."
 config_frontend_max_login_attempts: "لاگ ان کوششوں کی زیادہ سے زیادہ تعداد (سامنے کے آخر میں). پہلے سے طے شدہ = 5."
@@ -141,7 +142,6 @@ config_legal_pseudonymise_ip_addresses: "لاگ ان کرتے وقت پی ایس
 config_phpmailer: "PHPMailer کی ترتیبات (دو عنصر کی توثیق کے لئے استعمال کیا جاتا ہےn)."
 config_phpmailer_add_reply_to_address: "ای میل بھیجنے پر جواب کا پتہ."
 config_phpmailer_add_reply_to_name: "ای میل بھیجنے پر جواب کا نام."
-config_phpmailer_enable_two_factor: "یہ تعین کرتا ہے کہ 2FA استعمال کیا جانا چاہئے."
 config_phpmailer_event_log: "PHPMailer کے سلسلے میں تمام واقعات کو لاگ ان کرنے کے لئے ایک فائل. ایک فائل کا نام کی وضاحت کریں، یا غیر فعال کرنے کو خالی چھوڑ."
 config_phpmailer_host: "آؤٹ پاؤنڈ ای میل کے لئے استعمال کرنے کے لئے SMTP میزبان."
 config_phpmailer_password: "ای میل بھیجنے کے لئے پاس ورڈ."
@@ -522,7 +522,6 @@ response_deactivation_failed: "غیر فعال کرنے میں ناکام ہو �
 response_delete_error: "حذف کرنے میں ناکام!"
 response_directory_deleted: "ڈائریکٹری کامیابی سے خارج!"
 response_directory_renamed: "ڈائریکٹری کامیابی سے نام تبدیل کر دیا!"
-response_error: "خرابی"
 response_failed: "ناکامی"
 response_failed_to_install: "انسٹال کرنے میں ناکام"
 response_failed_to_update: "اپ ڈیٹ کرنے میں ناکام"
@@ -582,8 +581,6 @@ state_component_is_active: "جزو فعال ہے."
 state_component_is_inactive: "اجزاء غیر فعال ہے."
 state_component_is_partially_active: "جزوی طور پر جزو فعال ہے."
 state_component_is_provisional: "اجزاء عارضی ہے."
-state_email_sent: "ای میل کامیابی سے "%s" پر بھیجا گیا."
-state_failed_missing: "کام ناکام ہوگیا کیونکہ ایک ضروری جزو دستیاب نہیں ہے."
 state_fixer: "%2$s %1$s."
 state_fixer_changed:
  - "%s تبدیلی کی گئی تھی"

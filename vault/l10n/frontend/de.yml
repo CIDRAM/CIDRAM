@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: German language data for the front-end (last modified: 2022.05.22).
+# This file: German language data for the front-end (last modified: 2022.05.23).
 ##/
 
 Extended Description AbuseIPDB module: "Blockiert Anfragen von IPs, die bei AbuseIPDB aufgelistet sind."
@@ -82,6 +82,7 @@ config_components_ipv6: "IPv6-Signaturdateien."
 config_components_modules: "Module."
 config_experimental: "Instabil/Experimentell!"
 config_frontend: "Konfiguration für das Front-End."
+config_frontend_enable_two_factor: "Diese Direktive bestimmt, ob 2FA für Frontend-Konten verwendet werden soll."
 config_frontend_frontend_log: "Datei für die Protokollierung von Frontend Anmelde-Versuchen. Geben Sie einen Dateinamen an oder lassen Sie die Option zum Deaktivieren leer."
 config_frontend_magnification: &MagnifDesc "Schriftvergrößerung. Standardeinstellung = 1."
 config_frontend_max_login_attempts: "Maximale Anzahl der Versucht zum Anmelden (Frontend). Standardeinstellung = 5."
@@ -141,7 +142,6 @@ config_legal_pseudonymise_ip_addresses: "Pseudonymisieren IP-Adressen beim Schre
 config_phpmailer: "Konfiguration für PHPMailer (für Zwei-Faktor-Authentifizierung verwendet)."
 config_phpmailer_add_reply_to_address: "Die Antwortadresse, die beim Senden von E-Mails über SMTP verwendet werden soll."
 config_phpmailer_add_reply_to_name: "Der Name für der Antwort, die beim Senden von E-Mails über SMTP verwendet werden soll."
-config_phpmailer_enable_two_factor: "Diese Direktive bestimmt, ob 2FA für Frontend-Konten verwendet werden soll."
 config_phpmailer_event_log: "Eine Datei zum Protokollieren aller Ereignisse in Bezug auf PHPMailer. Geben Sie einen Dateinamen an oder lassen Sie die Option zum Deaktivieren leer."
 config_phpmailer_host: "Der SMTP-Host zum Senden von ausgehende E-Mails."
 config_phpmailer_password: "Das Passwort zum Senden von E-Mails über SMTP."
@@ -528,7 +528,6 @@ response_deactivation_failed: "Konnte nicht deaktivieren!"
 response_delete_error: "Löschung-Fehler!"
 response_directory_deleted: "Verzeichnis erfolgreich gelöscht!"
 response_directory_renamed: "Verzeichnis erfolgreich umbenannt!"
-response_error: "Fehler"
 response_failed: "Nicht bestanden"
 response_failed_to_install: "Installation fehlgeschlagen!"
 response_failed_to_update: "Aktualisierung fehlgeschlagen!"
@@ -588,8 +587,6 @@ state_component_is_active: "Komponente ist aktiv."
 state_component_is_inactive: "Komponente ist inaktiv."
 state_component_is_partially_active: "Komponente ist teilweise aktiv."
 state_component_is_provisional: "Komponente ist vorläufig."
-state_email_sent: "E-Mail wurde erfolgreich an "%s" gesendet."
-state_failed_missing: "Der Vorgang ist fehlgeschlagen, weil eine erforderliche Komponente nicht verfügbar ist."
 state_fixer: "%s %s."
 state_fixer_changed:
  - "%s Änderung"

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Arabic language data for the front-end (last modified: 2022.05.22).
+# This file: Arabic language data for the front-end (last modified: 2022.05.23).
 ##/
 
 Extended Description AbuseIPDB module: "بحظر الطلبات من عناوين IP المدرجة في AbuseIPDB."
@@ -82,6 +82,7 @@ config_components_ipv6: "ملفات توقيع IPv6."
 config_components_modules: "الوحدات."
 config_experimental: "غير مستقر / التجريبي!"
 config_frontend: "التكوين للواجهة الأمامية."
+config_frontend_enable_two_factor: "يحدد هذا التوجيه ما إذا كان سيتم استخدام 2FA للحسابات front-end أم لا."
 config_frontend_frontend_log: "ملف لتسجيل محاولات الدخول الأمامية. تحديد اسم الملف، أو اتركه فارغا لتعطيل."
 config_frontend_magnification: &MagnifDesc "تكبير الخط. افتراضي = 1."
 config_frontend_max_login_attempts: "الحد الأقصى لعدد محاولات تسجيل الدخول (front-end). الافتراضي = 5."
@@ -141,7 +142,6 @@ config_legal_pseudonymise_ip_addresses: "إخفاء عناوين IP عند كت�
 config_phpmailer: "التكوين ل PHPMailer (تستخدم لمصادقة ثنائية العامل)."
 config_phpmailer_add_reply_to_address: "عنوان الرد للاستشهاد عند إرسال البريد الإلكتروني عبر SMTP."
 config_phpmailer_add_reply_to_name: "اسم الرد للاستشهاد عند إرسال البريد الإلكتروني عبر SMTP."
-config_phpmailer_enable_two_factor: "يحدد هذا التوجيه ما إذا كان سيتم استخدام 2FA للحسابات front-end أم لا."
 config_phpmailer_event_log: "ملف لتسجيل جميع الأحداث المتعلقة ب PHPMailer. تحديد اسم الملف، أو اتركه فارغا لتعطيل."
 config_phpmailer_host: "مضيف SMTP الذي يستخدم للبريد الإلكتروني الصادر."
 config_phpmailer_password: "كلمة المرور لاستخدامها عند إرسال البريد الإلكتروني عبر SMTP."
@@ -522,7 +522,6 @@ response_deactivation_failed: "فشلت في جعله غير نشطة!"
 response_delete_error: "فشلت في حذف!"
 response_directory_deleted: "تم حذف الدليل بنجاح!"
 response_directory_renamed: "تم اعادة تسمية الدليل بنجاح!"
-response_error: "خطأ"
 response_failed: "فشل"
 response_failed_to_install: "فشل التثبيت!"
 response_failed_to_update: "فشل التحديث!"
@@ -582,8 +581,6 @@ state_component_is_active: "المكون نشط."
 state_component_is_inactive: "المكون غير نشط."
 state_component_is_partially_active: "المكون نشط جزئيا."
 state_component_is_provisional: "المكون مؤقت."
-state_email_sent: "تم إرسال البريد الإلكتروني بنجاح إلى "%s"."
-state_failed_missing: "فشلت المهمة لأن المكون الضروري غير متوفر."
 state_fixer: "%s %s."
 state_fixer_changed:
  - "قدم %s التغيير"

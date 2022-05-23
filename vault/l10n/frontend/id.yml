@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Indonesian language data for the front-end (last modified: 2022.05.22).
+# This file: Indonesian language data for the front-end (last modified: 2022.05.23).
 ##/
 
 Extended Description AbuseIPDB module: "Memblokir permintaan dari IP yang terdaftar oleh AbuseIPDB."
@@ -82,6 +82,7 @@ config_components_ipv6: "File tanda tangan IPv6."
 config_components_modules: "Modul."
 config_experimental: "Tidak stabil / Eksperimental!"
 config_frontend: "Konfigurasi untuk front-end."
+config_frontend_enable_two_factor: "Direktif ini menentukan apakah akan menggunakan 2FA untuk akun depan."
 config_frontend_frontend_log: "File untuk mencatat upaya masuk bagian depan. Spesifikasikan nama file, atau biarkan kosong untuk menonaktifkan."
 config_frontend_magnification: &MagnifDesc "Perbesaran font. Default = 1."
 config_frontend_max_login_attempts: "Jumlah maksimum upaya memasukkan ke bagian depan. Default = 5."
@@ -141,7 +142,6 @@ config_legal_pseudonymise_ip_addresses: "Pseudonymise alamat IP saat menulis fil
 config_phpmailer: "Konfigurasi untuk PHPMailer (digunakan untuk otentikasi dua-faktor)."
 config_phpmailer_add_reply_to_address: "Alamat balasan yang dikutip saat mengirim email melalui SMTP."
 config_phpmailer_add_reply_to_name: "Nama balasan yang dikutip saat mengirim email melalui SMTP."
-config_phpmailer_enable_two_factor: "Direktif ini menentukan apakah akan menggunakan 2FA untuk akun depan."
 config_phpmailer_event_log: "File untuk mencatat semua kejadian yang terkait dengan PHPMailer. Spesifikasikan nama file, atau biarkan kosong untuk menonaktifkan."
 config_phpmailer_host: "Host SMTP yang digunakan untuk email keluar."
 config_phpmailer_password: "Kata sandi yang digunakan saat mengirim email melalui SMTP."
@@ -518,7 +518,6 @@ response_deactivation_failed: "Kegagalan penonaktifan!"
 response_delete_error: "Gagal menghapus!"
 response_directory_deleted: "Direktori berhasil dihapus!"
 response_directory_renamed: "Nama direktori berhasil dimodifikasi!"
-response_error: "Kesalahan"
 response_failed: "Gagal"
 response_failed_to_install: "Gagal menginstal!"
 response_failed_to_update: "Gagal memperbarui!"
@@ -578,8 +577,6 @@ state_component_is_active: "Komponen ini aktif."
 state_component_is_inactive: "Komponen ini non-aktif."
 state_component_is_partially_active: "Komponen ini aktif sebagian."
 state_component_is_provisional: "Komponen ini kadang-kadang aktif."
-state_email_sent: "Email berhasil dikirim ke "%s"."
-state_failed_missing: "Tugas gagal karena komponen yang diperlukan tidak tersedia."
 state_fixer: "%s %s."
 state_fixer_changed: "%s perubahan dilakukan"
 state_fixer_seconds: "dalam %s detik"

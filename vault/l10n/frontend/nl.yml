@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Dutch language data for the front-end (last modified: 2022.05.22).
+# This file: Dutch language data for the front-end (last modified: 2022.05.23).
 ##/
 
 Extended Description AbuseIPDB module: "Blokkeert aanvragen van IP's die worden vermeld op AbuseIPDB."
@@ -82,6 +82,7 @@ config_components_ipv6: "IPv6-signatuurbestanden."
 config_components_modules: "Modules."
 config_experimental: "Instabiel/Experimenteel!"
 config_frontend: "Configuratie voor de frontend."
+config_frontend_enable_two_factor: "Deze richtlijn bepaalt of 2FA wordt gebruikt voor frontend-accounts."
 config_frontend_frontend_log: "Bestand om de frontend login pogingen te loggen. Geef een bestandsnaam, of laat leeg om uit te schakelen."
 config_frontend_magnification: &MagnifDesc "Lettergrootte vergroting. Standaard = 1."
 config_frontend_max_login_attempts: "Maximum aantal frontend-inlogpogingen. Standaard = 5."
@@ -141,7 +142,6 @@ config_legal_pseudonymise_ip_addresses: "Pseudonimiseren de IP-adressen bij het 
 config_phpmailer: "Configuratie voor PHPMailer (gebruikt voor tweefactorauthenticatie)."
 config_phpmailer_add_reply_to_address: "Het antwoordadres voor het verzenden van e-mail via SMTP."
 config_phpmailer_add_reply_to_name: "De antwoordnaam voor het verzenden van e-mail via SMTP."
-config_phpmailer_enable_two_factor: "Deze richtlijn bepaalt of 2FA wordt gebruikt voor frontend-accounts."
 config_phpmailer_event_log: "Een bestand voor het loggen van alle evenementen met betrekking tot PHPMailer. Geef een bestandsnaam, of laat leeg om uit te schakelen."
 config_phpmailer_host: "De SMTP-host dat moet worden gebruikt voor uitgaande e-mail."
 config_phpmailer_password: "Het wachtwoord voor het verzenden van e-mail via SMTP."
@@ -528,7 +528,6 @@ response_deactivation_failed: "Mislukt om te deactiveren!"
 response_delete_error: "Mislukt om te verwijderen!"
 response_directory_deleted: "Bestandsmap succesvol verwijderd!"
 response_directory_renamed: "De naam van de bestandsmap met succes veranderd!"
-response_error: "Fout"
 response_failed: "Mislukt"
 response_failed_to_install: "Installatie mislukt!"
 response_failed_to_update: "Update mislukt!"
@@ -588,8 +587,6 @@ state_component_is_active: "Component is actief."
 state_component_is_inactive: "Component is inactief."
 state_component_is_partially_active: "Component is gedeeltelijk actief."
 state_component_is_provisional: "Component is voorlopig."
-state_email_sent: "E-mail succesvol verzonden naar "%s"."
-state_failed_missing: "Taak mislukt omdat een noodzakelijk component niet beschikbaar is."
 state_fixer: "%s %s."
 state_fixer_changed:
  - "Er is %s wijziging aangebracht"

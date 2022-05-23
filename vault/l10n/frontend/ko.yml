@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Korean language data for the front-end (last modified: 2022.05.22).
+# This file: Korean language data for the front-end (last modified: 2022.05.23).
 ##/
 
 Extended Description AbuseIPDB module: "AbuseIPDB에 나열된 IP의 요청을 차단합니다."
@@ -82,6 +82,7 @@ config_components_ipv6: "IPv6 서명 파일."
 config_components_modules: "모듈."
 config_experimental: "불안정/실험적!"
 config_frontend: "프런트 엔드에 대한 구성입니다."
+config_frontend_enable_two_factor: "이 지시문은 프런트 엔드 계정에 2FA를 사용할지 여부를 결정합니다."
 config_frontend_frontend_log: "프론트 엔드 로그인 시도를 기록하는 파일. 파일 이름을 지정하십시오. 비활성화하려면 비워 둡니다."
 config_frontend_magnification: &MagnifDesc "글꼴 배율. Default (기본 설정) = 1."
 config_frontend_max_login_attempts: "로그인 시도 최대 횟수입니다 (프론트 엔드). Default / 기본 설정 = 5."
@@ -141,7 +142,6 @@ config_legal_pseudonymise_ip_addresses: "로그 파일을 쓸 때 가명으로 �
 config_phpmailer: "PHPMailer 설정 (이중 인증에 사용)."
 config_phpmailer_add_reply_to_address: "SMTP를 통해 전자 메일을 보낼 때 인용 할 회신 주소입니다."
 config_phpmailer_add_reply_to_name: "SMTP를 통해 이메일을 보낼 때 인용 할 회신 이름입니다."
-config_phpmailer_enable_two_factor: "이 지시문은 프런트 엔드 계정에 2FA를 사용할지 여부를 결정합니다."
 config_phpmailer_event_log: "PHPMailer와 관련된 모든 이벤트를 기록하는 파일입니다. 파일 이름을 지정하십시오. 비활성화하려면 비워 둡니다."
 config_phpmailer_host: "아웃 바운드 전자 메일에 사용할 SMTP 호스트입니다."
 config_phpmailer_password: "SMTP를 통해 이메일을 보낼 때 사용할 비밀번호입니다."
@@ -518,7 +518,6 @@ response_deactivation_failed: "비활성화에 실패했습니다!"
 response_delete_error: "삭제에 실패했습니다!"
 response_directory_deleted: "디렉토리가 성공적으로 삭제되었습니다!"
 response_directory_renamed: "디렉토리의 이름이 변경되었습니다!"
-response_error: "오류"
 response_failed: "실패했습니다"
 response_failed_to_install: "설치하지 못했습니다!"
 response_failed_to_update: "업데이트하지 못했습니다!"
@@ -578,8 +577,6 @@ state_component_is_active: "구성 요소가 활성화됩니다."
 state_component_is_inactive: "구성 요소가 비활성 상태입니다."
 state_component_is_partially_active: "구성 요소가 부분적으로 활성화되었습니다."
 state_component_is_provisional: "구성 요소가 잠정입니다."
-state_email_sent: "이메일이 "%s"로 전송되었습니다."
-state_failed_missing: "필요한 구성 요소를 사용할 수 없어 작업이 실패했습니다."
 state_fixer: "%2$s %1$s."
 state_fixer_changed: "%s 가지 변경 사항이 작성되었습니다"
 state_fixer_seconds: "%s 초에"

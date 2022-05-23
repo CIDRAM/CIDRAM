@@ -22,6 +22,7 @@
 - Flags.css is now bundled as part of the front-end and thus installed by default, instead of being its own component and not installed by default as was the case before.
 - Caching has been unified. Instead of the front-end having its own, separate cache file (frontend.dat), it now just uses CIDRAM's main cache system, and the "frontend.dat" and "frontend.dat.safety" files don't exist anymore.
 - Completely overhauled the login, sessions, and accounts management system. Account information is now stored within the CIDRAM configuration file, and session information is now handled by CIDRAM's main cache system.
+- Moved all the signature files and modules to their own dedicated directories.
 - Front-end configuration directives split off to their own category, and it's now possible to set the default themes/templates for the front-end and other generated output (e.g., block event page) separately.
 - Removed some of the backwards-compatibility code for older themes/templates.
 - URLs for remotes are now specified by the configuration, instead of by the components metadata. New configuration directive `remotes` added accordingly.
@@ -32,12 +33,17 @@
 - All `components` configuration directives (`ipv4`, `ipv6`, `modules`, `imports`, `events`) now delimit entries by newlines (\x0A), no longer delimiting by commas, thus having them behave more naturally as "lists".
 - Component supplementary configuration can no longer be loaded implicitly, and must now be listed explicitly as an import entry in order to be loaded.
 - Component type can no longer be implicitly discerned from its description, and must now be declared explicitly by its metadata.
+- The overall structure of the CIDRAM codebase has been rearranged, made more classful, and namespaced in entirety, its file structure completely rewritten, no more functions files or similar, said parts of the codebase now existing as traits or classes wherever appropriate in order to better facilitate entrypoint changes and a better API experience.
+- The updater and its internal workings, as well as the overall structure of components metadata, have been completely reworked and rewritten (although with very limited UI changes). Those supplying remotes to the public will need to update their formatting accordingly (the general userbase outside of that won't need to be concerned about these changes).
+- Configuration directive `enable_two_factor` has been moved from the `phpmailer` configuration category to the `frontend` configuration category.
+- PHPMailer further decoupled from the main CIDRAM codebase. Various hooks and bridges between CIDRAM and PHPMailer are now handled by event handlers rather than through hardcoding.
+- Moved all the event handlers and imports to their own dedicated directories.
 
 #### Bugs fixed.
 - Some specific files were being misclassified by the file manager; Fixed.
 - HCaptcha class was sending invalid headers when generating output; Fixed (#293).
 - Wrong CSP headers being set by the HCaptcha class; Fixed (#294).
-- Fixed a bottleneck caused by the ReadFile closure.
+- Fixed a bottleneck caused by the ReadFile closure (since v3, the readFile method).
 
 #### Other changes.
 - Improved IP address resolution strategy (#286).

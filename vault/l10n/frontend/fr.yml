@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: French language data for the front-end (last modified: 2022.05.22).
+# This file: French language data for the front-end (last modified: 2022.05.23).
 ##/
 
 Extended Description AbuseIPDB module: "Bloque les requêtes des adresses IP répertoriées dans AbuseIPDB."
@@ -82,6 +82,7 @@ config_components_ipv6: "Fichiers de signatures IPv6."
 config_components_modules: "Modules."
 config_experimental: "Instable/Expérimental\_!"
 config_frontend: "Configuration pour l'accès frontal."
+config_frontend_enable_two_factor: "Cette directive détermine s'il faut utiliser 2FA pour les comptes frontaux."
 config_frontend_frontend_log: "Fichier pour l'enregistrement des tentatives de connexion à l'accès frontal. Spécifier un fichier, ou laisser vide à désactiver."
 config_frontend_magnification: &MagnifDesc "Grossissement des fontes. Défaut = 1."
 config_frontend_max_login_attempts: "Nombre maximal de tentatives de connexion (l'accès frontal). Défaut = 5."
@@ -141,7 +142,6 @@ config_legal_pseudonymise_ip_addresses: "Pseudonymiser les adresses IP lors de l
 config_phpmailer: "Configuration pour PHPMailer (utilisé pour l'authentification à deux facteurs)."
 config_phpmailer_add_reply_to_address: "L'adresse de réponse à citer lors de l'envoi d'e-mail via SMTP."
 config_phpmailer_add_reply_to_name: "Le nom pour répondre à citer lors de l'envoi d'e-mail via SMTP."
-config_phpmailer_enable_two_factor: "Cette directive détermine s'il faut utiliser 2FA pour les comptes frontaux."
 config_phpmailer_event_log: "Fichier pour l'enregistrement de tous les événements relatifs à PHPMailer. Spécifier un fichier, ou laisser vide à désactiver."
 config_phpmailer_host: "Hôte SMTP à utiliser pour les e-mails sortants."
 config_phpmailer_password: "Le mot de passe à utiliser lors de l'envoi d'e-mail via SMTP."
@@ -528,7 +528,6 @@ response_deactivation_failed: "Échec de la désactivation\_!"
 response_delete_error: "Échec du suppriment\_!"
 response_directory_deleted: "Répertoire supprimé avec succès\_!"
 response_directory_renamed: "Répertoire renommé avec succès\_!"
-response_error: "Erreur"
 response_failed: "Échoué"
 response_failed_to_install: "Échec de l'installation\_!"
 response_failed_to_update: "Échec de la mise à jour\_!"
@@ -588,8 +587,6 @@ state_component_is_active: "Le composant est actif."
 state_component_is_inactive: "Le composant est inactif."
 state_component_is_partially_active: "Le composant est partiellement actif."
 state_component_is_provisional: "Le composant est provisoire."
-state_email_sent: "E-mail envoyé avec succès à «\_%s\_»."
-state_failed_missing: "La tâche a échoué car un composant nécessaire n'est pas disponible."
 state_fixer: "%s %s."
 state_fixer_changed:
  - "Fait %s changement"

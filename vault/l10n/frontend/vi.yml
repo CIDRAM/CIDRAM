@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Vietnamese language data for the front-end (last modified: 2022.05.22).
+# This file: Vietnamese language data for the front-end (last modified: 2022.05.23).
 ##/
 
 Extended Description AbuseIPDB module: "Chặn các yêu cầu từ IP được liệt kê tại AbuseIPDB."
@@ -82,6 +82,7 @@ config_components_ipv6: "Tập tin chữ ký IPv6."
 config_components_modules: "Mô-đun."
 config_experimental: "Không ổn định / Thử nghiệm!"
 config_frontend: "Cấu hình cho front-end."
+config_frontend_enable_two_factor: "Chỉ thị này xác định có nên sử dụng 2FA cho tài khoản front-end hay không."
 config_frontend_frontend_log: "Tập tin cho ghi cố gắng đăng nhập front-end. Chỉ định một tên tập tin, hoặc để trống để vô hiệu hóa."
 config_frontend_magnification: &MagnifDesc "Phóng to chữ. Mặc định = 1."
 config_frontend_max_login_attempts: "Số lượng tối đa cố gắng đăng nhập front-end. Mặc định = 5."
@@ -141,7 +142,6 @@ config_legal_pseudonymise_ip_addresses: "Pseudonymise địa chỉ IP khi viết
 config_phpmailer: "Cấu hình cho PHPMailer (được sử dụng để xác thực hai yếu tố)."
 config_phpmailer_add_reply_to_address: "Địa chỉ trả lời để trích dẫn khi gửi email qua SMTP."
 config_phpmailer_add_reply_to_name: "Tên trả lời để trích dẫn khi gửi email qua SMTP."
-config_phpmailer_enable_two_factor: "Chỉ thị này xác định có nên sử dụng 2FA cho tài khoản front-end hay không."
 config_phpmailer_event_log: "Một tập tin để ghi nhật ký tất cả các sự kiện liên quan đến PHPMailer. Chỉ định một tên tập tin, hoặc để trống để vô hiệu hóa."
 config_phpmailer_host: "Máy chủ SMTP để sử dụng cho email gửi đi."
 config_phpmailer_password: "Mật khẩu để sử dụng khi gửi email qua SMTP."
@@ -518,7 +518,6 @@ response_deactivation_failed: "Không thể vô hiệu hóa!"
 response_delete_error: "Không thể xóa!"
 response_directory_deleted: "Thư mục xóa thành công!"
 response_directory_renamed: "Đổi tên thư mục thành công!"
-response_error: "Lỗi"
 response_failed: "Thất bại"
 response_failed_to_install: "Cài đặt không thành công!"
 response_failed_to_update: "Cập nhật không thành công!"
@@ -578,8 +577,6 @@ state_component_is_active: "Thành phần này đang kích hoạt."
 state_component_is_inactive: "Thành phần này đang vô hiệu hóa."
 state_component_is_partially_active: "Thành phần này đang kích hoạt một phần."
 state_component_is_provisional: "Thành phần này đang thỉnh thoảng hoạt động."
-state_email_sent: "Email được gửi thành công tới "%s"."
-state_failed_missing: "Tác vụ không thành công vì không có thành phần cần thiết."
 state_fixer: "%s %s."
 state_fixer_changed: "Thực hiện %s thay đổi"
 state_fixer_seconds: "trong %s giây"

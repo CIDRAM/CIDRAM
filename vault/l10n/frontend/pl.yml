@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Polish language data for the front-end (last modified: 2022.05.22).
+# This file: Polish language data for the front-end (last modified: 2022.05.23).
 ##/
 
 Extended Description AbuseIPDB module: "Blokuje żądania z adresów IP wymienionych w witrynie AbuseIPDB."
@@ -82,6 +82,7 @@ config_components_ipv6: "Pliki podpisów IPv6."
 config_components_modules: "Moduły."
 config_experimental: "Niestabilny/Eksperymentalny!"
 config_frontend: "Konfiguracja dla interfejsie użytkownika."
+config_frontend_enable_two_factor: "Ta dyrektywa określa, czy użyć 2FA jako interfejsu użytkownika."
 config_frontend_frontend_log: "Plik do logowania próbuje zalogować się do interfejsu użytkownika. Podaj nazwę pliku lub pozostaw puste, aby wyłączyć."
 config_frontend_magnification: &MagnifDesc "Powiększenie czcionki. Domyślna = 1."
 config_frontend_max_login_attempts: "Maksymalna liczba prób zalogowania się do interfejsu użytkownika. Domyślna = 5."
@@ -141,7 +142,6 @@ config_legal_pseudonymise_ip_addresses: "Pseudonimizować adresy IP podczas logo
 config_phpmailer: "Konfiguracja dla PHPMailer (używane do uwierzytelniania dwuskładnikowego)."
 config_phpmailer_add_reply_to_address: "Adres zwrotny do cytowania podczas wysyłania wiadomości e-mail przez SMTP."
 config_phpmailer_add_reply_to_name: "Nazwa odpowiedzi, którą należy podać podczas wysyłania wiadomości e-mail przez SMTP."
-config_phpmailer_enable_two_factor: "Ta dyrektywa określa, czy użyć 2FA jako interfejsu użytkownika."
 config_phpmailer_event_log: "Plik do rejestrowania wszystkich zdarzeń w związku z PHPMailer. Podaj nazwę pliku lub pozostaw puste, aby wyłączyć."
 config_phpmailer_host: "Host SMTP do użycia dla wychodząca wiadomość e-mail."
 config_phpmailer_password: "Hasło używane podczas wysyłania wiadomości e-mail przez SMTP."
@@ -533,7 +533,6 @@ response_deactivation_failed: "Niepowodzenie dezaktywacji!"
 response_delete_error: "Niepowodzenie usuwania!"
 response_directory_deleted: "Sukces usunięcie katalogu!"
 response_directory_renamed: "Sukces zmiany nazwy katalogu!"
-response_error: "Błąd"
 response_failed: "Niepowodzenie"
 response_failed_to_install: "Niepowodzenie instalacji!"
 response_failed_to_update: "Niepowodzenie aktualizacji!"
@@ -593,8 +592,6 @@ state_component_is_active: "Komponent jest aktywny."
 state_component_is_inactive: "Komponent jest nieaktywny."
 state_component_is_partially_active: "Komponent jest częściowo aktywny."
 state_component_is_provisional: "Komponent jest tymczasowy."
-state_email_sent: "E-mail został pomyślnie wysłany na „%s”."
-state_failed_missing: "Zadanie nie powiodło się, ponieważ niezbędny komponent jest niedostępny."
 state_fixer: "%s %s."
 state_fixer_changed:
  - "Dokonał %s zmiana"

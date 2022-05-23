@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Defaults file (last modified: 2022.05.22).
+# This file: Defaults file (last modified: 2022.05.23).
 ##/
 
 Config Defaults:
@@ -656,6 +656,9 @@ Config Defaults:
    default: |
     https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/installed.yml
     https://raw.githubusercontent.com/CIDRAM/CIDRAM-Extras/master/modules/modules.yml
+  enable_two_factor:
+   type: "bool"
+   default: false
  signatures:
   block_attacks:
    type: "bool"

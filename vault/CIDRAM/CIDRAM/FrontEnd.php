@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM front-end (last modified: 2022.05.22).
+ * This file: The CIDRAM front-end (last modified: 2022.05.23).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -446,7 +446,7 @@ class FrontEnd extends Core
 
                                 /** Prepare 2FA email. */
                                 if (
-                                    $this->Configuration['phpmailer']['enable_two_factor'] &&
+                                    $this->Configuration['frontend']['enable_two_factor'] &&
                                     preg_match('~^.+@.+$~', $_POST['username']) &&
                                     ($this->FE['LP']['TwoFactorMessage'] = $this->L10N->getString('msg_template_2fa')) &&
                                     ($this->FE['LP']['TwoFactorSubject'] = $this->L10N->getString('msg_subject_2fa'))
@@ -466,7 +466,9 @@ class FrontEnd extends Core
                                         $this->FE['LP']['TwoFactorState']['Name'] = trim($_POST['username']);
                                         $this->FE['LP']['TwoFactorState']['Address'] = $this->FE['LP']['TwoFactorState']['Name'];
                                     }
-                                    $this->sendEmail(
+                                    $this->Events->fireEvent(
+                                        'sendEmail',
+                                        '',
                                         [[
                                             'Name' => $this->FE['LP']['TwoFactorState']['Name'],
                                             'Address' => $this->FE['LP']['TwoFactorState']['Address']
@@ -514,7 +516,7 @@ class FrontEnd extends Core
                 }
             } elseif ($this->Configuration['frontend']['frontend_log']) {
                 $this->CIDRAM['LoggerMessage'] = $this->L10N->getString((
-                    $this->Configuration['phpmailer']['enable_two_factor'] &&
+                    $this->Configuration['frontend']['enable_two_factor'] &&
                     $this->FE['Permissions'] === 0
                 ) ? 'state_logged_in_2fa_pending' : 'state_logged_in');
             }
@@ -561,7 +563,7 @@ class FrontEnd extends Core
                     $this->FE['User'] = $this->FE['LP']['SessionUser'];
 
                     /** Handle 2FA stuff here. */
-                    if ($this->Configuration['phpmailer']['enable_two_factor'] && preg_match('~^.+@.+$~', $this->FE['LP']['SessionUser'])) {
+                    if ($this->Configuration['frontend']['enable_two_factor'] && preg_match('~^.+@.+$~', $this->FE['LP']['SessionUser'])) {
                         $this->FE['LP']['TwoFactorState'] = $this->Cache->getEntry('TwoFactorState:' . $_COOKIE['CIDRAM-ADMIN']);
                         $this->FE['LP']['Try'] = (int)substr($this->FE['LP']['TwoFactorState'], 0, 1);
                         $this->FE['UserState'] = ((int)$this->FE['LP']['TwoFactorState'] === 1) ? 1 : 2;

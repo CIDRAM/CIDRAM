@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Turkish language data for the front-end (last modified: 2022.05.22).
+# This file: Turkish language data for the front-end (last modified: 2022.05.23).
 ##/
 
 Extended Description AbuseIPDB module: "AbuseIPDB'de listelenen IP'lerden gelen istekleri engeller."
@@ -82,6 +82,7 @@ config_components_ipv6: "IPv6 imza dosyaları."
 config_components_modules: "Modüller."
 config_experimental: "Kararsız/Deneysel!"
 config_frontend: "Ön uç için yapılandırma."
+config_frontend_enable_two_factor: "Bu yönerge, ön uç hesapları için 2FA kullanılıp kullanılmayacağını belirler."
 config_frontend_frontend_log: "Ön uç giriş denemelerini kaydetmek için kullanılan dosya. Dosya adı belirtin veya devre dışı bırakmak için boş bırakın."
 config_frontend_magnification: &MagnifDesc "Yazı tipi büyütme. Varsayılan = 1."
 config_frontend_max_login_attempts: "Maksimum giriş denemesi sayısı. Varsayılan = 5."
@@ -141,7 +142,6 @@ config_legal_pseudonymise_ip_addresses: "Günlük dosyaları yazarken IP adresi 
 config_phpmailer: "PHPMailer için yapılandırma (iki faktörlü kimlik doğrulama için kullanılır)."
 config_phpmailer_add_reply_to_address: "SMTP ile e-posta gönderirken kullanılacak cevap adresi."
 config_phpmailer_add_reply_to_name: "SMTP ile e-posta gönderirken kullanılacak cevap ismi."
-config_phpmailer_enable_two_factor: "Bu yönerge, ön uç hesapları için 2FA kullanılıp kullanılmayacağını belirler."
 config_phpmailer_event_log: "PHPMailer ile ilgili tüm olayları günlüğe kaydetmek için bir dosya. Dosya adı belirtin veya devre dışı bırakmak için boş bırakın."
 config_phpmailer_host: "Giden e-posta için kullanılacak SMTP ana bilgisayarı."
 config_phpmailer_password: "SMTP ile e-posta gönderirken kullanılacak şifre."
@@ -522,7 +522,6 @@ response_deactivation_failed: "Devre dışı bırakılamadı!"
 response_delete_error: "Silinemedi!"
 response_directory_deleted: "Dizin başarıyla silindi!"
 response_directory_renamed: "Dizin başarıyla yeniden adlandırıldı!"
-response_error: "Hata"
 response_failed: "Geçemedi"
 response_failed_to_install: "Yükleme başarısız!"
 response_failed_to_update: "Güncelleme başarısız!"
@@ -582,8 +581,6 @@ state_component_is_active: "Bileşen aktiftir."
 state_component_is_inactive: "Bileşen aktif değil."
 state_component_is_partially_active: "Bileşen kısmen aktiftir."
 state_component_is_provisional: "Bileşen geçicidir."
-state_email_sent: "E-posta başarıyla "%s" olarak gönderildi."
-state_failed_missing: "Gerekli bir bileşen kullanılamaması nedeniyle görev başarısız oldu."
 state_fixer: "$2%s $1%s."
 state_fixer_changed: "%s değişiklik yaptı"
 state_fixer_seconds: "%s saniyede"

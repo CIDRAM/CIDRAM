@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Latvian language data for the front-end (last modified: 2022.05.22).
+# This file: Latvian language data for the front-end (last modified: 2022.05.23).
 ##/
 
 Extended Description AbuseIPDB module: "Bloķē pieprasījumus no IP, kas uzskaitīti vietnē AbuseIPDB."
@@ -82,6 +82,7 @@ config_components_ipv6: "IPv6 paraksta faili."
 config_components_modules: "Moduļi."
 config_experimental: "Nestabils/Eksperimentāls!"
 config_frontend: "Priekšgala konfigurācija."
+config_frontend_enable_two_factor: "Šī direktīva nosaka, vai izmantot 2FA administratīvai piekļuvei."
 config_frontend_frontend_log: "Fails ielogošanās mēģinājumu reģistrēšanai. Norādiet faila nosaukumu, vai atstājiet tukšu, lai to atspējotu."
 config_frontend_magnification: &MagnifDesc "Fonta palielinājums. Noklusējuma = 1."
 config_frontend_max_login_attempts: "Maksimālais ielogošanās mēģinājumu skaits. Noklusējuma = 5."
@@ -141,7 +142,6 @@ config_legal_pseudonymise_ip_addresses: "Pseidonimizēt IP adresi reģistrējoti
 config_phpmailer: "PHPMailer konfigurācija (izmanto divu faktoru autentifikācijai)."
 config_phpmailer_add_reply_to_address: "Respondenta adrese, ko citēt, nosūtot e-pastu izmantojot SMTP."
 config_phpmailer_add_reply_to_name: "Respondenta vārds, ko citēt, nosūtot e-pastu izmantojot SMTP."
-config_phpmailer_enable_two_factor: "Šī direktīva nosaka, vai izmantot 2FA administratīvai piekļuvei."
 config_phpmailer_event_log: "Visu ar PHPMailer saistīto notikumu reģistrēšanai fails. Norādiet faila nosaukumu, vai atstājiet tukšu, lai to atspējotu."
 config_phpmailer_host: "SMTP resursdators, kas jāizmanto izejošajam e-pastam."
 config_phpmailer_password: "Parole, kas jāizmanto, nosūtot e-pastu izmantojot SMTP."
@@ -533,7 +533,6 @@ response_deactivation_failed: "Deaktivizēšana neizdevās!"
 response_delete_error: "Direktorija izdzēšana neizdevās!"
 response_directory_deleted: "Direktorija izdzēšana izdevās!"
 response_directory_renamed: "Direktorija pārdēvēšana izdevās!"
-response_error: "Kļūda"
 response_failed: "Neizdevās"
 response_failed_to_install: "Instalēšanas neizdevās!"
 response_failed_to_update: "Atjaunināšanas neizdevās!"
@@ -593,8 +592,6 @@ state_component_is_active: "Komponents ir aktīvs."
 state_component_is_inactive: "Komponents ir nav aktīvs."
 state_component_is_partially_active: "Komponents ir daļēji aktīvs."
 state_component_is_provisional: "Komponents ir provizorisku."
-state_email_sent: "E-pasts veiksmīgi nosūtīts uz "%s"."
-state_failed_missing: "Uzdevums neizdevās, jo nepieciešamais komponents nav pieejams."
 state_fixer: "%s %s."
 state_fixer_changed:
  - "Veica %s izmaiņu"

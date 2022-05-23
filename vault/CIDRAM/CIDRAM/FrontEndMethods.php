@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: General methods used by the front-end (last modified: 2022.05.20).
+ * This file: General methods used by the front-end (last modified: 2022.05.22).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -1233,5 +1233,28 @@ trait FrontEndMethods
         $Err = fwrite($Handle, $Reconstructed);
         fclose($Handle);
         return $Err !== false;
+    }
+
+    /**
+     * Get path from component type.
+     *
+     * @param string $Type "ipv4", "ipv6", "modules", "imports", or "events".
+     * @return string The path.
+     */
+    private function pathFromComponentType(string $Type): string
+    {
+        if ($Type === 'ipv4' || $Type === 'ipv6') {
+            return $this->SignaturesPath;
+        }
+        if ($Type === 'modules') {
+            return $this->ModulesPath;
+        }
+        if ($Type === 'imports') {
+            return $this->ImportsPath;
+        }
+        if ($Type === 'events') {
+            return $this->EventsPath;
+        }
+        return $this->Vault;
     }
 }

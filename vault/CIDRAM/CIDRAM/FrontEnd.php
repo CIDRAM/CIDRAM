@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM front-end (last modified: 2022.05.21).
+ * This file: The CIDRAM front-end (last modified: 2022.05.22).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -240,28 +240,28 @@ class FrontEnd extends Core
         } else {
             if (isset($this->Stages['Tests:Enable'])) {
                 if (
-                    !strlen($this->Configuration['signatures']['ipv4']) &&
-                    !strlen($this->Configuration['signatures']['ipv6'])
+                    !strlen($this->Configuration['components']['ipv4']) &&
+                    !strlen($this->Configuration['components']['ipv6'])
                 ) {
                     /** No active signature files. */
                     $this->CIDRAM['Warnings'][] = $this->L10N->getString('warning_no_active_signature_files');
                 }
             } else {
                 if (
-                    strlen($this->Configuration['signatures']['ipv4']) &&
-                    strlen($this->Configuration['signatures']['ipv6'])
+                    strlen($this->Configuration['components']['ipv4']) &&
+                    strlen($this->Configuration['components']['ipv6'])
                 ) {
                     /** IP tests disabled. */
                     $this->CIDRAM['Warnings'][] = $this->L10N->getString('warning_ip_tests_disabled');
                 }
             }
             if (isset($this->Stages['Modules:Enable'])) {
-                if (!strlen($this->Configuration['signatures']['modules'])) {
+                if (!strlen($this->Configuration['components']['modules'])) {
                     /** No active modules. */
                     $this->CIDRAM['Warnings'][] = $this->L10N->getString('warning_no_active_modules');
                 }
             } else {
-                if (strlen($this->Configuration['signatures']['modules'])) {
+                if (strlen($this->Configuration['components']['modules'])) {
                     /** Modules disabled. */
                     $this->CIDRAM['Warnings'][] = $this->L10N->getString('warning_modules_disabled');
                 }
@@ -2332,20 +2332,20 @@ class FrontEnd extends Core
 
             /** Generate a list of currently active signature files. */
             $this->FE['ActiveSignatureFiles'] = '<div style="display:grid;margin:38px;grid-template-columns:auto">';
-            $this->CIDRAM['GIClass'] = 'gridHB';
-            foreach (explode(',', $this->Configuration['signatures']['ipv4'] . ',' . $this->Configuration['signatures']['ipv6']) as $this->CIDRAM['SigSource']) {
-                $this->CIDRAM['GIClass'] = $this->CIDRAM['GIClass'] !== 'gridHA' ? 'gridHA' : 'gridHB';
-                $this->CIDRAM['SigSourceID'] = preg_replace('~[^\da-z]~i', '_', $this->CIDRAM['SigSource']);
+            $GIClass = 'gridHB';
+            foreach (explode("\n", $this->Configuration['components']['ipv4'] . "\n" . $this->Configuration['components']['ipv6']) as $SigSource) {
+                $GIClass = $GIClass !== 'gridHA' ? 'gridHA' : 'gridHB';
+                $SigSourceID = preg_replace('~[^\da-z]~i', '_', $SigSource);
                 $this->FE['ActiveSignatureFiles'] .= sprintf(
                     '<div class="gridboxitem %4$s"><span class="s gridlabel"><input type="radio" class="auto" name="sigFile" id="%1$s" value="%2$s" %3$s/><label for="%1$s">%2$s</label></span></div>',
-                    $this->CIDRAM['SigSourceID'],
-                    $this->CIDRAM['SigSource'],
-                    (!empty($_POST['sigFile']) && $_POST['sigFile'] === $this->CIDRAM['SigSource']) ? 'checked ' : '',
-                    $this->CIDRAM['GIClass']
+                    $SigSourceID,
+                    $SigSource,
+                    (!empty($_POST['sigFile']) && $_POST['sigFile'] === $SigSource) ? 'checked ' : '',
+                    $GIClass
                 );
             }
             $this->FE['ActiveSignatureFiles'] .= '</div>';
-            unset($this->CIDRAM['SigSourceID'], $this->CIDRAM['SigSource'], $this->CIDRAM['GIClass']);
+            unset($SigSourceID, $SigSource, $GIClass);
 
             /** Fixer output. */
             $this->FE['FixerOutput'] = '';
@@ -2376,6 +2376,7 @@ class FrontEnd extends Core
                     'Aggregator' => new \CIDRAM\CIDRAM\Aggregator(),
                     'Before' => hash('sha256', $this->FE['FixerOutput']) . ':' . strlen($this->FE['FixerOutput'])
                 ];
+                $Fixer['Aggregator']->Results = true;
                 if (strpos($this->FE['FixerOutput'], "\r") !== false) {
                     $this->FE['FixerOutput'] = str_replace("\r", '', $this->FE['FixerOutput']);
                     $Fixer['Changes']++;
@@ -2383,7 +2384,7 @@ class FrontEnd extends Core
                 $Fixer['StrObject'] = new \Maikuolan\Common\ComplexStringHandler(
                     "\n" . $this->FE['FixerOutput'] . "\n",
                     $this->CIDRAM['RegExTags'],
-                    function ($Data): string {
+                    function ($Data) use (&$Fixer): string {
                         if (!$Data = trim($Data)) {
                             return '';
                         }
@@ -2414,13 +2415,12 @@ class FrontEnd extends Core
                                 }
                                 $EoLPos = $NEoLPos;
                             }
-                            $this->CIDRAM['Results'] = ['In' => 0, 'Rejected' => 0, 'Accepted' => 0, 'Merged' => 0, 'Out' => 0];
                             if ($Set = $Fixer['Aggregator']->aggregate(trim($Set))) {
                                 $Set = preg_replace('~$~m', ' ' . $Previous, $Set);
                                 $Output .= $Set . "\n";
                             }
-                            $Fixer['Changes'] += $this->CIDRAM['Results']['Rejected'];
-                            $Fixer['Changes'] += $this->CIDRAM['Results']['Merged'];
+                            $Fixer['Changes'] += $Fixer['Aggregator']->NumberRejected;
+                            $Fixer['Changes'] += $Fixer['Aggregator']->NumberMerged;
                         }
                         return trim($Output);
                     }
@@ -2858,9 +2858,10 @@ class FrontEnd extends Core
 
                 /** Process signature files. */
                 $this->FE['Data'] = (
-                    (!strlen($this->Configuration['signatures']['ipv4']) && !strlen($this->Configuration['signatures']['ipv6']))
+                    strlen($this->Configuration['components']['ipv4']) === 0 &&
+                    strlen($this->Configuration['components']['ipv6']) === 0
                 ) ? '    <div class="txtRd">' . $this->L10N->getString('warning_no_active_signature_files') . "</div>\n" : $this->sectionsHandler(
-                    array_unique(explode(',', $this->Configuration['signatures']['ipv4'] . ',' . $this->Configuration['signatures']['ipv6']))
+                    array_unique(explode("\n", $this->Configuration['components']['ipv4'] . "\n" . $this->Configuration['components']['ipv6']))
                 );
 
                 /** Calculate and append page load time, and append totals. */
@@ -2935,8 +2936,8 @@ class FrontEnd extends Core
 
             /** Process signature files and fetch returned JavaScript stuff. */
             $this->FE['JSFOOT'] = $this->rangeTablesHandler(
-                array_unique(explode(',', $this->Configuration['signatures']['ipv4'])),
-                array_unique(explode(',', $this->Configuration['signatures']['ipv6']))
+                array_unique(explode("\n", $this->Configuration['components']['ipv4'])),
+                array_unique(explode("\n", $this->Configuration['components']['ipv6']))
             );
 
             /** Process matrix data. */
@@ -2975,15 +2976,15 @@ class FrontEnd extends Core
             $this->initialPrepwork($this->L10N->getString('link_intersector'), $this->L10N->getString('tip_intersector'));
 
             /** Output format. */
-            $this->CIDRAM['OutputFormat'] = (isset($_POST['format']) && $_POST['format'] === 'Netmask') ? 1 : 0;
+            $OutputFormat = (isset($_POST['format']) && $_POST['format'] === 'Netmask') ? 1 : 0;
 
             /** Output format menu. */
             $this->FE['OutputFormat'] = sprintf(
                 '%1$sCIDR" value="CIDR"%2$s%6$sformatCIDR">%3$s</label><br />%1$sNetmask" value="Netmask"%4$s%6$sformatNetmask">%5$s</label>',
                 '<input type="radio" class="auto" name="format" id="format',
-                $this->CIDRAM['OutputFormat'] !== 1 ? ' checked' : '',
+                $OutputFormat !== 1 ? ' checked' : '',
                 $this->L10N->getString('field_cidr'),
-                $this->CIDRAM['OutputFormat'] === 1 ? ' checked' : '',
+                $OutputFormat === 1 ? ' checked' : '',
                 $this->L10N->getString('field_netmask'),
                 ' /><label class="s" for="'
             );
@@ -2997,30 +2998,28 @@ class FrontEnd extends Core
 
             /** Data was submitted for intersection. */
             if (isset($_POST['A'], $_POST['B'])) {
-                $this->CIDRAM['Intersection'] = [
+                $Intersection = [
                     'A' => str_replace("\r", '', trim($_POST['A'])),
                     'B' => str_replace("\r", '', trim($_POST['B']))
                 ];
 
                 /** We'll aggregate the latter set before intersecting it with the former. */
-                $this->CIDRAM['Aggregator'] = new \CIDRAM\CIDRAM\Aggregator();
-                if ($this->CIDRAM['Intersection']['B']) {
-                    $this->CIDRAM['Intersection']['B'] = "\n" . $this->CIDRAM['Aggregator']->aggregate(
-                        $this->CIDRAM['Intersection']['B']
-                    ) . "\n";
+                $Aggregator = new \CIDRAM\CIDRAM\Aggregator();
+                if ($Intersection['B']) {
+                    $Intersection['B'] = "\n" . $Aggregator->aggregate($Intersection['B']) . "\n";
                 }
 
                 /** Beginning intersection process here. */
-                if ($this->CIDRAM['Intersection']['A'] && $this->CIDRAM['Intersection']['B']) {
+                if ($Intersection['A'] && $Intersection['B']) {
                     $this->FE['Intersector_AB'] = $this->intersectCidr(
-                        $this->CIDRAM['Intersection']['A'],
-                        $this->CIDRAM['Intersection']['B'],
-                        $this->CIDRAM['OutputFormat']
+                        $Intersection['A'],
+                        $Intersection['B'],
+                        $OutputFormat
                     );
                 }
 
                 /** Cleanup. */
-                unset($this->CIDRAM['Intersection'], $this->CIDRAM['Aggregator']);
+                unset($Intersection, $Aggregator);
             }
 
             /** Calculate page load time (useful for debugging). */
@@ -3055,15 +3054,15 @@ class FrontEnd extends Core
             $this->initialPrepwork($this->L10N->getString('link_subtractor'), $this->L10N->getString('tip_subtractor'));
 
             /** Output format. */
-            $this->CIDRAM['OutputFormat'] = (isset($_POST['format']) && $_POST['format'] === 'Netmask') ? 1 : 0;
+            $OutputFormat = (isset($_POST['format']) && $_POST['format'] === 'Netmask') ? 1 : 0;
 
             /** Output format menu. */
             $this->FE['OutputFormat'] = sprintf(
                 '%1$sCIDR" value="CIDR"%2$s%6$sformatCIDR">%3$s</label><br />%1$sNetmask" value="Netmask"%4$s%6$sformatNetmask">%5$s</label>',
                 '<input type="radio" class="auto" name="format" id="format',
-                $this->CIDRAM['OutputFormat'] !== 1 ? ' checked' : '',
+                $OutputFormat !== 1 ? ' checked' : '',
                 $this->L10N->getString('field_cidr'),
-                $this->CIDRAM['OutputFormat'] === 1 ? ' checked' : '',
+                $OutputFormat === 1 ? ' checked' : '',
                 $this->L10N->getString('field_netmask'),
                 ' /><label class="s" for="'
             );
@@ -3077,7 +3076,7 @@ class FrontEnd extends Core
 
             /** Data was submitted for subtraction. */
             if (isset($_POST['A'], $_POST['B'])) {
-                $this->CIDRAM['Subtraction'] = [
+                $Subtraction = [
                     'A' => str_replace("\r", '', trim($_POST['A'])),
                     'B' => str_replace("\r", '', trim($_POST['B']))
                 ];
@@ -3085,24 +3084,22 @@ class FrontEnd extends Core
                 /**
                  * We'll aggregate B prior to subtraction for better optimisation.
                  */
-                $this->CIDRAM['Aggregator'] = new \CIDRAM\CIDRAM\Aggregator();
-                if ($this->CIDRAM['Subtraction']['B']) {
-                    $this->CIDRAM['Subtraction']['B'] = $this->CIDRAM['Aggregator']->aggregate(
-                        $this->CIDRAM['Subtraction']['B']
-                    ) . "\n";
+                $Aggregator = new \CIDRAM\CIDRAM\Aggregator();
+                if ($Subtraction['B']) {
+                    $Subtraction['B'] = $Aggregator->aggregate($Subtraction['B']) . "\n";
                 }
 
                 /** Beginning subtraction process here. */
-                if ($this->CIDRAM['Subtraction']['A'] && $this->CIDRAM['Subtraction']['B']) {
+                if ($Subtraction['A'] && $Subtraction['B']) {
                     $this->FE['Subtractor_AB'] = $this->subtractCidr(
-                        $this->CIDRAM['Subtraction']['A'],
-                        $this->CIDRAM['Subtraction']['B'],
-                        $this->CIDRAM['OutputFormat']
+                        $Subtraction['A'],
+                        $Subtraction['B'],
+                        $OutputFormat
                     );
                 }
 
                 /** Cleanup. */
-                unset($this->CIDRAM['Subtraction'], $this->CIDRAM['Aggregator']);
+                unset($Subtraction, $Aggregator);
             }
 
             /** Calculate page load time (useful for debugging). */
@@ -3137,66 +3134,57 @@ class FrontEnd extends Core
             $this->initialPrepwork($this->L10N->getString('link_aggregator'), $this->L10N->getString('tip_aggregator'));
 
             /** Output format. */
-            $this->CIDRAM['OutputFormat'] = (isset($_POST['format']) && $_POST['format'] === 'Netmask') ? 1 : 0;
+            $OutputFormat = (isset($_POST['format']) && $_POST['format'] === 'Netmask') ? 1 : 0;
 
             /** Whether to preserve tags and comments. */
-            $this->CIDRAM['Preserve'] = (isset($_POST['preserve']) && $_POST['preserve'] === 'on') ? 1 : 0;
+            $Preserve = (isset($_POST['preserve']) && $_POST['preserve'] === 'on') ? 1 : 0;
 
             /** Output format menu. */
             $this->FE['OutputFormat'] = sprintf(
                 '%1$sCIDR" value="CIDR"%2$s%6$sformatCIDR">%3$s</label><br />%1$sNetmask" value="Netmask"%4$s%6$sformatNetmask">%5$s</label><br /><input type="checkbox" class="auto" name="preserve" id="preserve"%7$s%6$spreserve">%8$s</label>',
                 '<input type="radio" class="auto" name="format" id="format',
-                $this->CIDRAM['OutputFormat'] !== 1 ? ' checked' : '',
+                $OutputFormat !== 1 ? ' checked' : '',
                 $this->L10N->getString('field_cidr'),
-                $this->CIDRAM['OutputFormat'] === 1 ? ' checked' : '',
+                $OutputFormat === 1 ? ' checked' : '',
                 $this->L10N->getString('field_netmask'),
                 ' /><label class="s" for="',
-                $this->CIDRAM['Preserve'] === 1 ? ' checked' : '',
+                $Preserve === 1 ? ' checked' : '',
                 $this->L10N->getString('field_preserve')
             );
 
             /** Data was submitted for aggregation. */
             if (!empty($_POST['input'])) {
                 $this->FE['input'] = str_replace("\r", '', trim($_POST['input']));
-                $this->CIDRAM['Aggregator'] = new \CIDRAM\CIDRAM\Aggregator($this->CIDRAM['OutputFormat']);
-                if ($this->CIDRAM['Preserve']) {
-                    $this->CIDRAM['NetResults'] = ['In' => 0, 'Rejected' => 0, 'Accepted' => 0, 'Merged' => 0, 'Out' => 0];
-                    $this->CIDRAM['StrObject'] = new \Maikuolan\Common\ComplexStringHandler(
+                $Aggregator = new \CIDRAM\CIDRAM\Aggregator($OutputFormat);
+                $Aggregator->Results = true;
+                if ($Preserve) {
+                    $StrObject = new \Maikuolan\Common\ComplexStringHandler(
                         "\n" . $this->FE['input'] . "\n",
                         $this->CIDRAM['RegExTags'],
                         function ($Data): string {
                             if (!$Data = trim($Data)) {
                                 return '';
                             }
-                            $this->CIDRAM['Results'] = ['In' => 0, 'Rejected' => 0, 'Accepted' => 0, 'Merged' => 0, 'Out' => 0];
-                            $Data = $this->CIDRAM['Aggregator']->aggregate($Data);
-                            $this->CIDRAM['NetResults']['In'] += $this->CIDRAM['Results']['In'];
-                            $this->CIDRAM['NetResults']['Rejected'] += $this->CIDRAM['Results']['Rejected'];
-                            $this->CIDRAM['NetResults']['Accepted'] += $this->CIDRAM['Results']['Accepted'];
-                            $this->CIDRAM['NetResults']['Merged'] += $this->CIDRAM['Results']['Merged'];
-                            $this->CIDRAM['NetResults']['Out'] += $this->CIDRAM['Results']['Out'];
-                            return $Data;
+                            return $Aggregator->aggregate($Data);
                         }
                     );
-                    $this->CIDRAM['StrObject']->iterateClosure(function ($Data) {
+                    $StrObject->iterateClosure(function ($Data) {
                         return "\n" . $Data;
                     }, true);
-                    $this->FE['output'] = trim($this->CIDRAM['StrObject']->recompile());
-                    $this->CIDRAM['Results'] = $this->CIDRAM['NetResults'];
-                    unset($this->CIDRAM['StrObject'], $this->CIDRAM['NetResults']);
+                    $this->FE['output'] = trim($StrObject->recompile());
+                    unset($StrObject);
                 } else {
-                    $this->CIDRAM['Results'] = ['In' => 0, 'Rejected' => 0, 'Accepted' => 0, 'Merged' => 0, 'Out' => 0];
-                    $this->FE['output'] = $this->CIDRAM['Aggregator']->aggregate($this->FE['input']);
+                    $this->FE['output'] = $Aggregator->aggregate($this->FE['input']);
                 }
-                unset($this->CIDRAM['Aggregator']);
                 $this->FE['ResultLine'] = sprintf(
                     $this->L10N->getString('label_results'),
-                    '<span class="txtRd">' . $this->NumberFormatter->format($this->CIDRAM['Results']['In']) . '</span>',
-                    '<span class="txtRd">' . $this->NumberFormatter->format($this->CIDRAM['Results']['Rejected']) . '</span>',
-                    '<span class="txtRd">' . $this->NumberFormatter->format($this->CIDRAM['Results']['Accepted']) . '</span>',
-                    '<span class="txtRd">' . $this->NumberFormatter->format($this->CIDRAM['Results']['Merged']) . '</span>',
-                    '<span class="txtRd">' . $this->NumberFormatter->format($this->CIDRAM['Results']['Out']) . '</span>'
+                    '<span class="txtRd">' . $this->NumberFormatter->format($Aggregator->NumberEntered) . '</span>',
+                    '<span class="txtRd">' . $this->NumberFormatter->format($Aggregator->NumberRejected) . '</span>',
+                    '<span class="txtRd">' . $this->NumberFormatter->format($Aggregator->NumberAccepted) . '</span>',
+                    '<span class="txtRd">' . $this->NumberFormatter->format($Aggregator->NumberMerged) . '</span>',
+                    '<span class="txtRd">' . $this->NumberFormatter->format($Aggregator->NumberReturned) . '</span>'
                 );
+                unset($Aggregator);
             } else {
                 $this->FE['output'] = $this->FE['input'] = '';
             }
@@ -3486,12 +3474,12 @@ class FrontEnd extends Core
 
             /** Temporarily mute signature files if "tracking-blocked-already" is false. */
             if (!$this->FE['tracking-blocked-already']) {
-                $this->CIDRAM['TempMuted'] = [
-                    'IPv4' => $this->Configuration['signatures']['ipv4'],
-                    'IPv6' => $this->Configuration['signatures']['ipv6']
+                $TempMuted = [
+                    'IPv4' => $this->Configuration['components']['ipv4'],
+                    'IPv6' => $this->Configuration['components']['ipv6']
                 ];
-                $this->Configuration['signatures']['ipv4'] = '';
-                $this->Configuration['signatures']['ipv6'] = '';
+                $this->Configuration['components']['ipv4'] = '';
+                $this->Configuration['components']['ipv6'] = '';
             }
 
             if (!$this->FE['ASYNC']) {
@@ -3645,10 +3633,10 @@ class FrontEnd extends Core
             }
 
             /** Restore muted values. */
-            if (isset($this->CIDRAM['TempMuted']['IPv4'], $this->CIDRAM['TempMuted']['IPv6'])) {
-                $this->Configuration['signatures']['ipv4'] = $this->CIDRAM['TempMuted']['IPv4'];
-                $this->Configuration['signatures']['ipv6'] = $this->CIDRAM['TempMuted']['IPv6'];
-                unset($this->CIDRAM['TempMuted']);
+            if (isset($TempMuted['IPv4'], $TempMuted['IPv6'])) {
+                $this->Configuration['components']['ipv4'] = $TempMuted['IPv4'];
+                $this->Configuration['components']['ipv6'] = $TempMuted['IPv6'];
+                unset($TempMuted);
             }
 
             /** Fix status display. */
@@ -3705,7 +3693,7 @@ class FrontEnd extends Core
 
             /** Process CIDRs. */
             if (!empty($this->CIDRAM['CIDRs'])) {
-                $this->CIDRAM['Aggregator'] = new \CIDRAM\CIDRAM\Aggregator(1);
+                $Aggregator = new \CIDRAM\CIDRAM\Aggregator(1);
                 $this->CIDRAM['Factors'] = count($this->CIDRAM['CIDRs']);
                 array_walk($this->CIDRAM['CIDRs'], function ($CIDR, $Key): void {
                     $First = substr($CIDR, 0, strlen($CIDR) - strlen($Key + 1) - 1);
@@ -3717,11 +3705,11 @@ class FrontEnd extends Core
                         $Last = $this->L10N->getString('response_error');
                     }
                     $Netmask = $CIDR;
-                    $this->CIDRAM['Aggregator']->convertToNetmasks($Netmask);
+                    $Aggregator->convertToNetmasks($Netmask);
                     $Arr = ['CIDR' => $CIDR, 'Netmask' => $Netmask, 'ID' => preg_replace('~[^\dA-fa-f]~', '_', $CIDR), 'Range' => $First . ' – ' . $Last];
                     $this->FE['Ranges'] .= $this->parseVars($Arr, $this->FE['CalcRow']);
                 });
-                unset($this->CIDRAM['Aggregator']);
+                unset($Aggregator);
             }
 
             /** Parse output. */
@@ -3774,32 +3762,32 @@ class FrontEnd extends Core
                 ['Passed-Other', 'Passed-Total'],
                 ['CAPTCHAs-Failed', 'CAPTCHAs-Total'],
                 ['CAPTCHAs-Passed', 'CAPTCHAs-Total']
-            ] as $this->CIDRAM['TheseStats']) {
-                if (!isset($this->Stages['Statistics:Enable'], $this->StatisticsTracked[$this->CIDRAM['TheseStats'][0]])) {
-                    $this->FE[$this->CIDRAM['TheseStats'][0]] = $this->L10N->getString('field_not_tracking');
+            ] as $TheseStats) {
+                if (!isset($this->Stages['Statistics:Enable'], $this->StatisticsTracked[$TheseStats[0]])) {
+                    $this->FE[$TheseStats[0]] = $this->L10N->getString('field_not_tracking');
                     continue;
                 }
-                if (!isset($this->FE[$this->CIDRAM['TheseStats'][1]])) {
-                    $this->FE[$this->CIDRAM['TheseStats'][1]] = 0;
+                if (!isset($this->FE[$TheseStats[1]])) {
+                    $this->FE[$TheseStats[1]] = 0;
                 }
                 if (
-                    !isset($this->Statistics[$this->CIDRAM['TheseStats'][0]]) ||
-                    !is_int($this->Statistics[$this->CIDRAM['TheseStats'][0]]) ||
-                    $this->Statistics[$this->CIDRAM['TheseStats'][0]] < 1
+                    !isset($this->Statistics[$TheseStats[0]]) ||
+                    !is_int($this->Statistics[$TheseStats[0]]) ||
+                    $this->Statistics[$TheseStats[0]] < 1
                 ) {
-                    $this->FE[$this->CIDRAM['TheseStats'][0]] = $this->NumberFormatter->format(0);
+                    $this->FE[$TheseStats[0]] = $this->NumberFormatter->format(0);
                 } else {
-                    $this->FE[$this->CIDRAM['TheseStats'][1]] += $this->Statistics[$this->CIDRAM['TheseStats'][0]];
-                    $this->FE[$this->CIDRAM['TheseStats'][0]] = $this->NumberFormatter->format($this->Statistics[$this->CIDRAM['TheseStats'][0]]);
+                    $this->FE[$TheseStats[1]] += $this->Statistics[$TheseStats[0]];
+                    $this->FE[$TheseStats[0]] = $this->NumberFormatter->format($this->Statistics[$TheseStats[0]]);
                 }
             }
 
             /** Fetch and process totals. */
-            foreach (['Blocked-Total', 'Banned-Total', 'Passed-Total', 'CAPTCHAs-Total'] as $this->CIDRAM['TheseStats']) {
-                if (!isset($this->FE[$this->CIDRAM['TheseStats']]) || !is_int($this->FE[$this->CIDRAM['TheseStats']])) {
-                    $this->FE[$this->CIDRAM['TheseStats']] = $this->L10N->getString('field_not_tracking');
+            foreach (['Blocked-Total', 'Banned-Total', 'Passed-Total', 'CAPTCHAs-Total'] as $TheseStats) {
+                if (!isset($this->FE[$TheseStats]) || !is_int($this->FE[$TheseStats])) {
+                    $this->FE[$TheseStats] = $this->L10N->getString('field_not_tracking');
                 } else {
-                    $this->FE[$this->CIDRAM['TheseStats']] = $this->NumberFormatter->format($this->FE[$this->CIDRAM['TheseStats']]);
+                    $this->FE[$TheseStats] = $this->NumberFormatter->format($this->FE[$TheseStats]);
                 }
             }
 
@@ -3808,22 +3796,20 @@ class FrontEnd extends Core
                 ['ipv4', 'Other-ActiveIPv4', 'ClassActiveIPv4'],
                 ['ipv6', 'Other-ActiveIPv6', 'ClassActiveIPv6'],
                 ['modules', 'Other-ActiveModules', 'ClassActiveModules']
-            ] as $this->CIDRAM['TheseStats']) {
-                if (empty($this->Configuration['signatures'][$this->CIDRAM['TheseStats'][0]])) {
-                    $this->FE[$this->CIDRAM['TheseStats'][1]] = $this->NumberFormatter->format(0);
-                    $this->FE[$this->CIDRAM['TheseStats'][2]] = 'txtRd';
+            ] as $TheseStats) {
+                if (empty($this->Configuration['components'][$TheseStats[0]])) {
+                    $this->FE[$TheseStats[1]] = $this->NumberFormatter->format(0);
+                    $this->FE[$TheseStats[2]] = 'txtRd';
                 } else {
-                    $this->FE[$this->CIDRAM['TheseStats'][1]] = 0;
-                    $this->CIDRAM['StatWorking'] = explode(',', $this->Configuration['signatures'][$this->CIDRAM['TheseStats'][0]]);
-                    foreach (explode(',', $this->Configuration['signatures'][$this->CIDRAM['TheseStats'][0]]) as $this->CIDRAM['StatWorking']) {
-                        if (strlen($this->CIDRAM['StatWorking']) && is_readable($this->Vault . $this->CIDRAM['StatWorking'])) {
-                            $this->FE[$this->CIDRAM['TheseStats'][1]]++;
+                    $this->FE[$TheseStats[1]] = 0;
+                    $Path = $this->pathFromComponentType($TheseStats[0]);
+                    foreach (explode("\n", $this->Configuration['components'][$TheseStats[0]]) as $StatWorking) {
+                        if (strlen($StatWorking) && is_readable($Path . $StatWorking)) {
+                            $this->FE[$TheseStats[1]]++;
                         }
                     }
-                    $this->FE[$this->CIDRAM['TheseStats'][1]] = $this->NumberFormatter->format(
-                        $this->FE[$this->CIDRAM['TheseStats'][1]]
-                    );
-                    $this->FE[$this->CIDRAM['TheseStats'][2]] = $this->FE[$this->CIDRAM['TheseStats'][1]] ? 'txtGn' : 'txtRd';
+                    $this->FE[$TheseStats[1]] = $this->NumberFormatter->format($this->FE[$TheseStats[1]]);
+                    $this->FE[$TheseStats[2]] = $this->FE[$TheseStats[1]] ? 'txtGn' : 'txtRd';
                 }
             }
 
@@ -3837,7 +3823,7 @@ class FrontEnd extends Core
             echo $this->sendOutput();
 
             /** Cleanup. */
-            unset($this->CIDRAM['StatColour'], $this->CIDRAM['StatWorking'], $this->CIDRAM['TheseStats']);
+            unset($Path, $StatWorking, $TheseStats);
         }
 
         /** Auxiliary rules (view mode). */

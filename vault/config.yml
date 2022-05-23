@@ -191,7 +191,21 @@ general:
  log_sanitisation: false
  disabled_channels: ""
  default_timeout: 12
- config_imports: "bypasses.yml"
+components:
+ ipv4: |
+  ipv4.dat
+  ipv4_bogons.dat
+  ipv4_isps.dat
+  ipv4_nonblocking.dat
+  ipv4_other.dat
+ ipv6: |
+  ipv6.dat
+  ipv6_bogons.dat
+  ipv6_isps.dat
+  ipv6_nonblocking.dat
+  ipv6_other.dat
+ modules: ""
+ imports: "bypasses.yml"
  events: ""
 frontend:
  frontend_log: ""
@@ -202,8 +216,6 @@ frontend:
   https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/installed.yml
   https://raw.githubusercontent.com/CIDRAM/CIDRAM-Extras/master/modules/modules.yml
 signatures:
- ipv4: "ipv4.dat,ipv4_bogons.dat,ipv4_isps.dat,ipv4_nonblocking.dat,ipv4_other.dat"
- ipv6: "ipv6.dat,ipv6_bogons.dat,ipv6_isps.dat,ipv6_nonblocking.dat,ipv6_other.dat"
  block_attacks: true
  block_cloud: true
  block_bogons: false
@@ -212,7 +224,6 @@ signatures:
  block_malware: true
  block_proxies: false
  block_spam: true
- modules: ""
  default_tracktime: 604800
  infraction_limit: 10
  tracking_override: true

@@ -28,6 +28,10 @@
 - All available CIDRAM themes are to be bundled with CIDRAM as of v3 onward.
 - CIDRAM won't have predefined entrypoints anymore. From v3 onward, you can specify your entrypoints wherever and however you want (details about how to do this will be included in the documentation and applicable installation instructions).
 - The `disable_frontend` and `protect_frontend` configuration directives have been removed. These directives would be irrelevant for v3, because whether the front-end is "disabled" or "protected" for v3 onward would depend entirely on how you build your entrypoints.
+- Configuration directive `config_imports` has been renamed to `imports`, and along with the configuration directives `ipv4`, `ipv6`, `modules`, and `events`, has been moved to a new configuration category, `components`.
+- All `components` configuration directives (`ipv4`, `ipv6`, `modules`, `imports`, `events`) now delimit entries by newlines (\x0A), no longer delimiting by commas, thus having them behave more naturally as "lists".
+- Component supplementary configuration can no longer be loaded implicitly, and must now be listed explicitly as an import entry in order to be loaded.
+- Component type can no longer be implicitly discerned from its description, and must now be declared explicitly by its metadata.
 
 #### Bugs fixed.
 - Some specific files were being misclassified by the file manager; Fixed.
@@ -51,3 +55,4 @@
 - Added a JavaScript warning to the front-end login.
 - Front-end warnings have been hidden from non-logged in users.
 - Made the warnings/notices at the front-end accounts page slightly smaller.
+- The aggregator has been decoupled from its internal references to the CIDRAM working data, bringing it more in line with its stand-alone counterpart.

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods used to simulate block events (last modified: 2022.05.20).
+ * This file: Methods used to simulate block events (last modified: 2022.05.22).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -116,12 +116,12 @@ trait SimulateBlockEvent
         $this->Reporter = new \CIDRAM\CIDRAM\Reporter();
 
         /** Execute modules, if any have been enabled. */
-        if ($Modules && $this->Configuration['signatures']['modules'] && empty($this->CIDRAM['Whitelisted'])) {
+        if ($Modules && $this->Configuration['components']['modules'] && empty($this->CIDRAM['Whitelisted'])) {
             if (!isset($this->CIDRAM['ModuleResCache'])) {
                 $this->CIDRAM['ModuleResCache'] = [];
             }
             $this->initialiseErrorHandler();
-            $Modules = explode(',', $this->Configuration['signatures']['modules']);
+            $Modules = explode("\n", $this->Configuration['components']['modules']);
             if (!$this->Configuration['signatures']['tracking_override']) {
                 $RestoreTrackingOptionsOverride = $this->CIDRAM['Tracking options override'] ?? '';
             }

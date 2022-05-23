@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM core (last modified: 2022.05.20).
+ * This file: The CIDRAM core (last modified: 2022.05.22).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -207,11 +207,17 @@ class Core
         /** Vault directory. */
         $this->Vault = __DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR;
 
+        /** Signatures path. */
+        $this->SignaturesPath = $this->Vault . 'signatures' . DIRECTORY_SEPARATOR;
+
         /** Modules path. */
         $this->ModulesPath = $this->Vault . 'modules' . DIRECTORY_SEPARATOR;
 
-        /** Signatures path. */
-        $this->SignaturesPath = $this->Vault . 'signatures' . DIRECTORY_SEPARATOR;
+        /** Imports path. */
+        $this->ImportsPath = $this->Vault . 'imports' . DIRECTORY_SEPARATOR;
+
+        /** Events path. */
+        $this->EventsPath = $this->Vault . 'events' . DIRECTORY_SEPARATOR;
 
         /** Instantiate YAML object for accessing data reconstruction and processing various YAML files. */
         $this->YAML = new \Maikuolan\Common\YAML();
@@ -223,10 +229,10 @@ class Core
         require $this->Vault . 'event_handlers.php';
 
         /** If there are any componentised events, load those, too. */
-        if (!empty($this->Configuration['general']['events'])) {
-            foreach (array_unique(explode(',', $this->Configuration['general']['events'])) as $LoadThis) {
-                if (strlen($LoadThis) > 0 && substr($LoadThis, -4) === '.php' && is_readable($this->Vault . $LoadThis)) {
-                    require $this->Vault . $LoadThis;
+        if (!empty($this->Configuration['components']['events'])) {
+            foreach (array_unique(explode("\n", $this->Configuration['components']['events'])) as $LoadThis) {
+                if (strlen($LoadThis) > 0 && substr($LoadThis, -4) === '.php' && is_readable($this->EventsPath . $LoadThis)) {
+                    require $this->EventsPath . $LoadThis;
                 }
             }
             unset($LoadThis);
@@ -298,12 +304,7 @@ class Core
         }
 
         /** Check for supplementary configuration. */
-        foreach (array_merge(
-            $this->supplementary($this->Configuration['general']['config_imports'] ?? '', $this->Vault),
-            $this->supplementary($this->Configuration['signatures']['ipv4'] ?? '', $this->SignaturesPath),
-            $this->supplementary($this->Configuration['signatures']['ipv6'] ?? '', $this->SignaturesPath),
-            $this->supplementary($this->Configuration['signatures']['modules'] ?? '', $this->ModulesPath)
-        ) as $Supplement) {
+        foreach ($this->supplementary($this->Configuration['components']['imports'] ?? '', $this->ImportsPath) as $Supplement) {
             $this->YAML->process($this->readFile($Supplement), $this->CIDRAM);
         }
 
@@ -573,8 +574,8 @@ class Core
                     if ($DefersTo = $this->getter($Files[$FileIndex], $PosA, 'Defers to', '')) {
                         $DefersTo = preg_quote($DefersTo);
                         if (
-                            preg_match('~(?:^|,)' . $DefersTo . '(?:$|,)~i', $this->Configuration['signatures']['ipv4']) ||
-                            preg_match('~(?:^|,)' . $DefersTo . '(?:$|,)~i', $this->Configuration['signatures']['ipv6'])
+                            preg_match('~(?:^|\n)' . $DefersTo . '(?:$|\n)~i', $this->Configuration['components']['ipv4']) ||
+                            preg_match('~(?:^|\n)' . $DefersTo . '(?:$|\n)~i', $this->Configuration['components']['ipv6'])
                         ) {
                             continue;
                         }
@@ -730,9 +731,7 @@ class Core
 
         /** Test an IPv4 address. */
         if ($IPv4Factors = $this->expandIpv4($Addr)) {
-            $IPv4Files = empty(
-                $this->Configuration['signatures']['ipv4']
-            ) ? [] : explode(',', $this->Configuration['signatures']['ipv4']);
+            $IPv4Files = explode("\n", $this->Configuration['components']['ipv4']);
             try {
                 $IPv4Test = $this->checkFactors($IPv4Files, $IPv4Factors);
             } catch (\Exception $e) {
@@ -750,9 +749,7 @@ class Core
 
         /** Test an IPv6 address. */
         if ($IPv6Factors = $this->expandIpv6($Addr)) {
-            $IPv6Files = empty(
-                $this->Configuration['signatures']['ipv6']
-            ) ? [] : explode(',', $this->Configuration['signatures']['ipv6']);
+            $IPv6Files = explode("\n", $this->Configuration['components']['ipv6']);
             try {
                 $IPv6Test = $this->checkFactors($IPv6Files, $IPv6Factors);
             } catch (\Exception $e) {
@@ -943,17 +940,10 @@ class Core
     public function supplementary(string $Source, string $Path = ''): array
     {
         $Out = [];
-        $Source = explode(',', $Source);
+        $Source = explode("\n", $Source);
         foreach ($Source as $File) {
-            if (($DecPos = strpos($File, '.')) === false) {
-                continue;
-            }
-            $File = substr($File, 0, $DecPos) . '.';
-            foreach (['yaml', 'yml'] as $Type) {
-                if (file_exists($Path . $File . $Type)) {
-                    $Out[] = $Path . $File . $Type;
-                    break;
-                }
+            if (is_readable($Path . $File)) {
+                $Out[] = $Path . $File;
             }
         }
         return array_unique($Out);

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods for updating CIDRAM components (last modified: 2022.05.21).
+ * This file: Methods for updating CIDRAM components (last modified: 2022.05.22).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -202,38 +202,28 @@ trait Updater
         $this->arrayify($Files);
         foreach ($Files as $FileName => $FileMeta) {
             $UsedWith = $FileMeta['Used with'] ?? '';
-            if ((
-                $UsedWith !== 'imports' &&
-                $UsedWith !== 'events' &&
+            if (
                 $UsedWith !== 'ipv4' &&
                 $UsedWith !== 'ipv6' &&
-                $UsedWith !== 'modules'
-            ) || ($UsedWith !== 'imports' && preg_match('~\.ya?ml$~i', $FileName))) {
+                $UsedWith !== 'modules' &&
+                $UsedWith !== 'imports' &&
+                $UsedWith !== 'events'
+            ) {
                 continue;
             }
             if (($UsedWith === 'ipv4' || $UsedWith === 'ipv6') && substr($FileName, 0, 11) === 'signatures/') {
                 $FileNameSafe = preg_quote(substr($FileName, 11));
-            } elseif ($UsedWith === 'modules' && substr($FileName, 0, 8) === 'modules/') {
+            } elseif (
+                ($UsedWith === 'modules' && substr($FileName, 0, 8) === 'modules/') ||
+                ($UsedWith === 'imports' && substr($FileName, 0, 8) === 'imports/')
+            ) {
                 $FileNameSafe = preg_quote(substr($FileName, 8));
+            } elseif ($UsedWith === 'events' && substr($FileName, 0, 7) === 'events/') {
+                $FileNameSafe = preg_quote(substr($FileName, 7));
             } else {
                 $FileNameSafe = preg_quote($FileName);
             }
-            if (($UsedWith === 'imports' && preg_match(
-                '~,(?:[\w\d]+:)?' . $FileNameSafe . ',~',
-                ',' . $this->Configuration['general']['config_imports'] . ','
-            )) || ($UsedWith === 'events' && preg_match(
-                '~,(?:[\w\d]+:)?' . $FileNameSafe . ',~',
-                ',' . $this->Configuration['general']['events'] . ','
-            )) || ($UsedWith === 'ipv4' && preg_match(
-                '~,(?:[\w\d]+:)?' . $FileNameSafe . ',~',
-                ',' . $this->Configuration['signatures']['ipv4'] . ','
-            )) || ($UsedWith === 'ipv6' && preg_match(
-                '~,(?:[\w\d]+:)?' . $FileNameSafe . ',~',
-                ',' . $this->Configuration['signatures']['ipv6'] . ','
-            )) || ($UsedWith === 'modules' && preg_match(
-                '~,(?:[\w\d]+:)?' . $FileNameSafe . ',~',
-                ',' . $this->Configuration['signatures']['modules'] . ','
-            ))) {
+            if (preg_match('~\n(?:[\w\d]+:)?' . $FileNameSafe . '\n~', "\n" . $this->Configuration['components'][$UsedWith] . "\n")) {
                 $Out = (!isset($Out) || $Out === 1) ? 1 : -1;
             } else {
                 $Out = (!isset($Out) || $Out === 0) ? 0 : -1;
@@ -891,26 +881,19 @@ trait Updater
             $ID = current($ID);
         }
         $Activation = [
-            'imports' => $this->Configuration['general']['config_imports'],
-            'events' => $this->Configuration['general']['events'],
-            'ipv4' => $this->Configuration['signatures']['ipv4'],
-            'ipv6' => $this->Configuration['signatures']['ipv6'],
-            'modules' => $this->Configuration['signatures']['modules'],
+            'ipv4' => $this->Configuration['components']['ipv4'],
+            'ipv6' => $this->Configuration['components']['ipv6'],
+            'modules' => $this->Configuration['components']['modules'],
+            'imports' => $this->Configuration['components']['imports'],
+            'events' => $this->Configuration['components']['events'],
             'Modified' => false
         ];
-        foreach (['imports', 'events', 'ipv4', 'ipv6', 'modules'] as $Type) {
+        foreach (['ipv4', 'ipv6', 'modules', 'imports', 'events'] as $Type) {
             $Activation[$Type] = array_unique(array_filter(
-                explode(',', $Activation[$Type]),
+                explode("\n", $Activation[$Type]),
                 function ($Component) use ($Type) {
                     $Component = (strpos($Component, ':') === false) ? $Component : substr($Component, strpos($Component, ':') + 1);
-                    if ($Type === 'ipv4' || $Type === 'ipv6') {
-                        $Path = $this->SignaturesPath;
-                    } elseif ($Type === 'modules') {
-                        $Path = $this->ModulesPath;
-                    } else {
-                        $Path = $this->Vault;
-                    }
-                    return ($Component && file_exists($Path . $Component));
+                    return (strlen($Component) > 0 && file_exists($this->pathFromComponentType($Type) . $Component));
                 }
             ));
         }
@@ -919,32 +902,24 @@ trait Updater
         if ($InUse !== 1 && !empty($this->Components['Meta'][$ID]['Files'])) {
             foreach ($this->Components['Meta'][$ID]['Files'] as $FileName => $FileMeta) {
                 $UsedWith = $FileMeta['Used with'] ?? '';
-                if ((
-                    $UsedWith !== 'imports' &&
-                    $UsedWith !== 'events' &&
+                if (
                     $UsedWith !== 'ipv4' &&
                     $UsedWith !== 'ipv6' &&
-                    $UsedWith !== 'modules'
-                ) || !file_exists($this->Vault . $File) || !$this->freeFromTraversal($File)) {
+                    $UsedWith !== 'modules' &&
+                    $UsedWith !== 'imports' &&
+                    $UsedWith !== 'events'
+                ) {
                     continue;
                 }
                 $Activation[$UsedWith][] = $File;
             }
         }
-        foreach (['imports', 'events', 'ipv4', 'ipv6', 'modules'] as $Type) {
+        foreach (['ipv4', 'ipv6', 'modules', 'imports', 'events'] as $Type) {
             if (count($Activation[$Type])) {
                 sort($Activation[$Type]);
             }
-            $Activation[$Type] = implode(',', $Activation[$Type]);
-        }
-        if ($Activation['imports'] !== $this->Configuration['general']['config_imports']) {
-            $Activation['Modified'] = true;
-        }
-        if ($Activation['events'] !== $this->Configuration['general']['events']) {
-            $Activation['Modified'] = true;
-        }
-        foreach (['ipv4', 'ipv6', 'modules'] as $Type) {
-            if ($Activation[$Type] !== $this->Configuration['signatures'][$Type]) {
+            $Activation[$Type] = implode("\n", $Activation[$Type]);
+            if ($Activation[$Type] !== $this->Configuration['components'][$Type]) {
                 $Activation['Modified'] = true;
             }
         }
@@ -954,11 +929,11 @@ trait Updater
                 $this->executor($this->Components['Meta'][$ID]['When Activation Fails'], true);
             }
         } else {
-            $this->Configuration['general']['config_imports'] = $Activation['imports'];
-            $this->Configuration['general']['events'] = $Activation['events'];
-            $this->Configuration['signatures']['ipv4'] = $Activation['ipv4'];
-            $this->Configuration['signatures']['ipv6'] = $Activation['ipv6'];
-            $this->Configuration['signatures']['modules'] = $Activation['modules'];
+            $this->Configuration['components']['ipv4'] = $Activation['ipv4'];
+            $this->Configuration['components']['ipv6'] = $Activation['ipv6'];
+            $this->Configuration['components']['modules'] = $Activation['modules'];
+            $this->Configuration['components']['imports'] = $Activation['imports'];
+            $this->Configuration['components']['events'] = $Activation['events'];
             if ($this->updateConfiguration()) {
                 $this->FE['state_msg'] .= $this->L10N->getString('response_activated') . '<br />';
                 if (!empty($this->Components['Meta'][$ID]['When Activation Succeeds'])) {
@@ -1005,16 +980,16 @@ trait Updater
             $ID = current($ID);
         }
         $this->CIDRAM['Deactivation'] = [
-            'imports' => $this->Configuration['general']['config_imports'],
-            'events' => $this->Configuration['general']['events'],
-            'ipv4' => $this->Configuration['signatures']['ipv4'],
-            'ipv6' => $this->Configuration['signatures']['ipv6'],
-            'modules' => $this->Configuration['signatures']['modules'],
+            'ipv4' => $this->Configuration['components']['ipv4'],
+            'ipv6' => $this->Configuration['components']['ipv6'],
+            'modules' => $this->Configuration['components']['modules'],
+            'imports' => $this->Configuration['components']['imports'],
+            'events' => $this->Configuration['components']['events'],
             'Modified' => false
         ];
-        foreach (['imports', 'events', 'ipv4', 'ipv6', 'modules'] as $Type) {
+        foreach (['ipv4', 'ipv6', 'modules', 'imports', 'events'] as $Type) {
             $this->CIDRAM['Deactivation'][$Type] = array_unique(array_filter(
-                explode(',', $this->CIDRAM['Deactivation'][$Type]),
+                explode("\n", $this->CIDRAM['Deactivation'][$Type]),
                 function ($Component) {
                     return ($Component = (strpos($Component, ':') === false) ? $Component : substr($Component, strpos($Component, ':') + 1));
                 }
@@ -1022,26 +997,26 @@ trait Updater
             if (count($this->CIDRAM['Deactivation'][$Type])) {
                 sort($this->CIDRAM['Deactivation'][$Type]);
             }
-            $this->CIDRAM['Deactivation'][$Type] = ',' . implode(',', $this->CIDRAM['Deactivation'][$Type]) . ',';
+            $this->CIDRAM['Deactivation'][$Type] = "\n" . implode("\n", $this->CIDRAM['Deactivation'][$Type]) . "\n";
         }
         $this->FE['state_msg'] .= '<code>' . $ID . '</code> – ';
         if (!empty($this->Components['Meta'][$ID]['Files'])) {
             $this->arrayify($this->Components['Meta'][$ID]['Files']);
             foreach ($this->Components['Meta'][$ID]['Files'] as $FileName => $FileMeta) {
                 $this->CIDRAM['Deactivation'][$Type] = preg_replace(
-                    '~,(?:[\w\d]+:)?' . preg_quote($FileName) . ',~',
-                    ',',
+                    '~\n(?:[\w\d]+:)?' . preg_quote($FileName) . '\n~',
+                    "\n",
                     $this->CIDRAM['Deactivation'][$Type]
                 );
                 $this->CIDRAM['Deactivation'][$Type] = substr($this->CIDRAM['Deactivation'][$Type], 1, -1);
             }
         }
         if (
-            $this->CIDRAM['Deactivation']['imports'] !== $this->Configuration['general']['config_imports'] ||
-            $this->CIDRAM['Deactivation']['events'] !== $this->Configuration['general']['events'] ||
-            $this->CIDRAM['Deactivation']['ipv4'] !== $this->Configuration['signatures']['ipv4'] ||
-            $this->CIDRAM['Deactivation']['ipv6'] !== $this->Configuration['signatures']['ipv6'] ||
-            $this->CIDRAM['Deactivation']['modules'] !== $this->Configuration['signatures']['modules']
+            $this->CIDRAM['Deactivation']['ipv4'] !== $this->Configuration['components']['ipv4'] ||
+            $this->CIDRAM['Deactivation']['ipv6'] !== $this->Configuration['components']['ipv6'] ||
+            $this->CIDRAM['Deactivation']['modules'] !== $this->Configuration['components']['modules'] ||
+            $this->CIDRAM['Deactivation']['imports'] !== $this->Configuration['components']['imports'] ||
+            $this->CIDRAM['Deactivation']['events'] !== $this->Configuration['components']['events']
         ) {
             $this->CIDRAM['Deactivation']['Modified'] = true;
         }
@@ -1051,11 +1026,11 @@ trait Updater
                 $this->executor($this->Components['Meta'][$ID]['When Deactivation Fails'], true);
             }
         } else {
-            $this->Configuration['general']['config_imports'] = $this->CIDRAM['Deactivation']['imports'];
-            $this->Configuration['general']['events'] = $this->CIDRAM['Deactivation']['events'];
-            $this->Configuration['signatures']['ipv4'] = $this->CIDRAM['Deactivation']['ipv4'];
-            $this->Configuration['signatures']['ipv6'] = $this->CIDRAM['Deactivation']['ipv6'];
-            $this->Configuration['signatures']['modules'] = $this->CIDRAM['Deactivation']['modules'];
+            $this->Configuration['components']['ipv4'] = $this->CIDRAM['Deactivation']['ipv4'];
+            $this->Configuration['components']['ipv6'] = $this->CIDRAM['Deactivation']['ipv6'];
+            $this->Configuration['components']['modules'] = $this->CIDRAM['Deactivation']['modules'];
+            $this->Configuration['components']['imports'] = $this->CIDRAM['Deactivation']['imports'];
+            $this->Configuration['components']['events'] = $this->CIDRAM['Deactivation']['events'];
             if ($this->updateConfiguration()) {
                 $this->FE['state_msg'] .= $this->L10N->getString('response_deactivated') . '<br />';
                 if (!empty($this->Components['Meta'][$ID]['When Deactivation Succeeds'])) {

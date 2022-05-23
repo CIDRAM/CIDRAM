@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Protect traits (last modified: 2022.05.19).
+ * This file: Protect traits (last modified: 2022.05.22).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -186,12 +186,12 @@ trait Protect
             }
 
             /** Execute modules, if any have been enabled. */
-            if (empty($this->CIDRAM['Whitelisted']) && $this->Configuration['signatures']['modules'] && isset($this->Stages['Modules:Enable'])) {
+            if (empty($this->CIDRAM['Whitelisted']) && $this->Configuration['components']['modules'] && isset($this->Stages['Modules:Enable'])) {
                 $this->Stage = 'Modules';
                 if (!isset($this->CIDRAM['ModuleResCache'])) {
                     $this->CIDRAM['ModuleResCache'] = [];
                 }
-                $Modules = explode(',', $this->Configuration['signatures']['modules']);
+                $Modules = explode("\n", $this->Configuration['components']['modules']);
                 if (!$this->Configuration['signatures']['tracking_override']) {
                     $this->CIDRAM['Restore tracking options override'] = $this->CIDRAM['Tracking options override'] ?? '';
                 }
@@ -201,10 +201,7 @@ trait Protect
                  * have their own scope and that superfluous data isn't preserved.
                  */
                 array_walk($Modules, function ($Module): void {
-                    if (
-                        !empty($this->CIDRAM['Whitelisted']) ||
-                        preg_match('~^(?:assets|classes)[\x2F\x5C]|\.(css|gif|html?|jpe?g|js|png|ya?ml)$~i', $Module)
-                    ) {
+                    if (!empty($this->CIDRAM['Whitelisted'])) {
                         return;
                     }
                     $Module = (strpos($Module, ':') === false) ? $Module : substr($Module, strpos($Module, ':') + 1);

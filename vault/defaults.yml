@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Defaults file (last modified: 2022.05.20).
+# This file: Defaults file (last modified: 2022.05.22).
 ##/
 
 Config Defaults:
@@ -599,16 +599,32 @@ Config Defaults:
    type: "int"
    default: 12
    preview: "seconds"
-  config_imports:
+ components:
+  ipv4:
+   type: "string"
+   default: |
+    ipv4.dat
+    ipv4_bogons.dat
+    ipv4_isps.dat
+    ipv4_nonblocking.dat
+    ipv4_other.dat
+  ipv6:
+   type: "string"
+   default: |
+    ipv6.dat
+    ipv6_bogons.dat
+    ipv6_isps.dat
+    ipv6_nonblocking.dat
+    ipv6_other.dat
+  modules:
+   type: "string"
+   default: ""
+  imports:
    type: "string"
    default: "bypasses.yml"
-   value_preg_filter:
-    "~\s~": ""
   events:
    type: "string"
    default: ""
-   value_preg_filter:
-    "~\s~": ""
  frontend:
   frontend_log:
    type: "string"
@@ -641,16 +657,6 @@ Config Defaults:
     https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/installed.yml
     https://raw.githubusercontent.com/CIDRAM/CIDRAM-Extras/master/modules/modules.yml
  signatures:
-  ipv4:
-   type: "string"
-   default: "ipv4.dat,ipv4_bogons.dat,ipv4_isps.dat,ipv4_nonblocking.dat,ipv4_other.dat"
-   value_preg_filter:
-    "~\s~": ""
-  ipv6:
-   type: "string"
-   default: "ipv6.dat,ipv6_bogons.dat,ipv6_isps.dat,ipv6_nonblocking.dat,ipv6_other.dat"
-   value_preg_filter:
-    "~\s~": ""
   block_attacks:
    type: "bool"
    default: true
@@ -675,11 +681,6 @@ Config Defaults:
   block_spam:
    type: "bool"
    default: true
-  modules:
-   type: "string"
-   default: ""
-   value_preg_filter:
-    "~\s~": ""
   default_tracktime:
    type: "int"
    default: 604800

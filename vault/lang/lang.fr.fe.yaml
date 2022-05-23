@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: French language data for the front-end (last modified: 2022.05.08).
+# This file: French language data for the front-end (last modified: 2022.05.23).
 ##/
 
 Extended Description Bypasses: "Les fichiers pour contourner les signatures standard qui sont normalement inclus dans le paquet principal."
@@ -407,6 +407,7 @@ label_http_response_header_code_200: "200 OK\nValeur par défaut. Le moins robus
 label_http_response_header_code_403: "403 Forbidden (Interdit)\nPlus robuste, mais moins convivial. Recommandé pour la plupart des circonstances générales."
 label_http_response_header_code_410: "410 Gone (Parti)\nPeut causer des problèmes lors de la résolution des faux positifs, car certains navigateurs mettront en cache ce message d'état et n'enverront pas de requêtes ultérieures, même après avoir été débloqués. Peut être le plus préférable dans certains contextes, pour certains types de trafic."
 label_http_response_header_code_418: "418 I'm a teapot (Je suis une théière)\nFait référence à une blague du poisson d'avril ({{Links.RFC2324}}). Il est très peu probable qu'il soit compris par un client, un bot, un navigateur, ou autre. Fourni pour le divertissement et la commodité, mais généralement pas recommandé."
+label_http_response_header_code_429: "429 Too Many Requests (Trop de requêtes)\nRecommandé pour la limitation du débit, en cas d'attaques DDoS, et pour la prévention des inondations. Non recommandé dans d'autres contextes."
 label_http_response_header_code_451: "451 Unavailable For Legal Reasons (Indisponible pour des raisons légales)\nRecommandé en cas de blocage principalement pour des raisons légales. Non recommandé dans d'autres contextes."
 label_http_response_header_code_503: "503 Service Unavailable (Service indisponible)\nLe plus robuste, mais le moins convivial. Recommandé en cas d'attaque, ou en cas de trafic indésirable extrêmement persistant."
 label_ignore: "Ignorez ceci"

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: English language data for the front-end (last modified: 2022.05.08).
+# This file: English language data for the front-end (last modified: 2022.05.23).
 ##/
 
 Extended Description Bypasses: "The default signature bypass files normally included with the main package."
@@ -407,6 +407,7 @@ label_http_response_header_code_200: "200 OK\nDefault value. Least robust, but m
 label_http_response_header_code_403: "403 Forbidden\nMore robust, but less user-friendly. Recommended for most general circumstances."
 label_http_response_header_code_410: "410 Gone\nCould cause problems when resolving false positives, because some browsers will cache this status message and not send subsequent requests, even after having been unblocked. May be the most preferable in some contexts, for certain kinds of traffic."
 label_http_response_header_code_418: "418 I'm a teapot\nReferences an April Fools' joke ({{Links.RFC2324}}). Very unlikely to be understood by any client, bot, browser, or otherwise. Provided for amusement and convenience, but not generally recommended."
+label_http_response_header_code_429: "429 Too Many Requests\nRecommended for rate limiting, when dealing with DDoS attacks, and for flood prevention. Not recommended in other contexts."
 label_http_response_header_code_451: "451 Unavailable For Legal Reasons\nRecommended when blocking primarily for legal reasons. Not recommended in other contexts."
 label_http_response_header_code_503: "503 Service Unavailable\nMost robust, but least user-friendly. Recommended for when under attack, or for when dealing with extremely persistent unwanted traffic."
 label_ignore: "Ignore this"

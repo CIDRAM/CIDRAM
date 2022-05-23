@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Vietnamese language data for the front-end (last modified: 2022.05.08).
+# This file: Vietnamese language data for the front-end (last modified: 2022.05.23).
 ##/
 
 Extended Description Bypasses: "Các tập tin đường tránh chữ ký mặc định thường bao gồm với gói thầu chính."
@@ -398,11 +398,12 @@ label_fmgr_total_space: "Số lượng không gian đĩa trong tổng số:"
 label_fmgr_updates_metadata: "Siêu dữ liệu cho cập nhật thành phần"
 label_hide: "Che giấu"
 label_http_response_header_code_200: "200 OK\nGiá trị mặc định. Không mạnh mẽ, nhưng thân thiện với người dùng nhất. Các yêu cầu tự động rất có thể sẽ diễn giải phản hồi này là dấu hiệu cho thấy yêu cầu đã thành công."
-label_http_response_header_code_403: "403 Forbidden (Bị cấm)\nHơi mạnh mẽ, và thân thiện với người dùng. Được đề xuất cho hầu hết các trường hợp chung."
+label_http_response_header_code_403: "403 Forbidden (Bị cấm)\nHơi mạnh mẽ, và thân thiện với người dùng. Được khuyến khích cho hầu hết các trường hợp chung."
 label_http_response_header_code_410: "410 Gone (Đã biến mất)\nCó thể gây ra sự cố khi giải quyết các sai tích cực, vì một số trình duyệt sẽ lưu vào bộ nhớ cache thông báo trạng thái này và không gửi các yêu cầu tiếp theo, ngay cả khi đã được bỏ chặn. Có thể thích hợp nhất trong một số ngữ cảnh, đối với một số loại lưu lượng truy cập nhất định."
 label_http_response_header_code_418: "418 I'm a teapot (Tôi là một ấm trà)\nĐiều này đề cập đến một trò đùa ngày cá tháng tư ({{Links.RFC2324}}). Rất khó có thể được hiểu bởi bất kỳ ứng dụng khách, bot, trình duyệt, hoặc cách nào khác. Được cung cấp để giải trí và tiện lợi, nhưng thường không được khuyến khích."
-label_http_response_header_code_451: "451 Unavailable For Legal Reasons (Không có sẵn vì lý do pháp lý)\nĐược đề xuất khi chặn chủ yếu vì lý do pháp lý. Không được khuyến khích trong các ngữ cảnh khác."
-label_http_response_header_code_503: "503 Service Unavailable (Dịch vụ không sẵn có)\nMạnh mẽ nhất, nhưng không thân thiện với người dùng. Được đề xuất khi bị tấn công, hoặc khi xử lý lưu lượng truy cập không mong muốn và cực kỳ dai dẳng."
+label_http_response_header_code_429: "429 Too Many Requests (Quá nhiều yêu cầu)\nĐược khuyến khích cho giới hạn tốc độ, khi đối phó với các cuộc tấn công DDoS, và để ngăn chặn lũ lụt. Không được khuyến khích trong các ngữ cảnh khác."
+label_http_response_header_code_451: "451 Unavailable For Legal Reasons (Không có sẵn vì lý do pháp lý)\nĐược khuyến khích khi chặn chủ yếu vì lý do pháp lý. Không được khuyến khích trong các ngữ cảnh khác."
+label_http_response_header_code_503: "503 Service Unavailable (Dịch vụ không sẵn có)\nMạnh mẽ nhất, nhưng không thân thiện với người dùng. Được khuyến khích khi bị tấn công, hoặc khi xử lý lưu lượng truy cập không mong muốn và cực kỳ dai dẳng."
 label_ignore: "Bỏ qua điều này"
 label_installed_available: "Được cài đặt / Có sẵn"
 label_integrity_check: "Kiểm tra tính toàn vẹn:"

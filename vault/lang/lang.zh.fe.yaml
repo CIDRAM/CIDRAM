@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (simplified) language data for the front-end (last modified: 2022.05.08).
+# This file: Chinese (simplified) language data for the front-end (last modified: 2022.05.23).
 ##/
 
 Extended Description Bypasses: "标准签名旁路文件通常包括在主包。"
@@ -402,6 +402,7 @@ label_http_response_header_code_200: "200 OK （好的）\n默认值。​最不
 label_http_response_header_code_403: "403 Forbidden （禁止的）\n更健壮，但不太用户友好。​一般最推荐的。"
 label_http_response_header_code_410: "410 Gone （走了）\n解决假阳性时可能会导致问题，因为某些浏览器会缓存此状态消息并且不会发送后续请求，即使在被解除阻止后也是如此。​在某些情况下可能是最可取的。"
 label_http_response_header_code_418: "418 I'm a teapot （我是一个茶壶）\n引用愚人节的笑话【{{Links.RFC2324}}】。​任何客户端、机器人、浏览器、或其他方式都不太可能理解。​它是为了娱乐和方便而提供的，但是通常不推荐。"
+label_http_response_header_code_429: "429 Too Many Requests （请求过多）\n推荐用于速率限制、处理DDoS攻击、和防洪。​不推荐在其他情况下。"
 label_http_response_header_code_451: "451 Unavailable For Legal Reasons （因法律原因不可用）\n主要出于法律原因被阻止时推荐。​不推荐在其他情况下。"
 label_http_response_header_code_503: "503 Service Unavailable （服务不可用）\n最健壮，但最不用户友好。​推荐用于受到攻击，或处理极其持久的有害流量时。"
 label_ignore: "忽略这个"

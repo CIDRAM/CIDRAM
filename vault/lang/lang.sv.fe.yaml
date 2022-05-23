@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Swedish language data for the front-end (last modified: 2022.05.12).
+# This file: Swedish language data for the front-end (last modified: 2022.05.23).
 ##/
 
 Extended Description Bypasses: "Standard-signatur-bypass-filer som normalt ingår i huvudpaketet."
@@ -405,6 +405,7 @@ label_http_response_header_code_200: "200 OK\nStandardvärde. Minst robust, men 
 label_http_response_header_code_403: "403 Forbidden (Förbjuden)\nMer robust, men mindre användarvänlig. Rekommenderas för de flesta allmänna omständigheter."
 label_http_response_header_code_410: "410 Gone (Borta)\nKan orsaka problem när man löser falska positiva resultat, eftersom vissa webbläsare cachelagrar detta statusmeddelande och inte skickar efterföljande förfrågningar, även efter att ha avblockerats. Kan vara det mest föredragna i vissa sammanhang, för vissa typer av trafik."
 label_http_response_header_code_418: "418 I'm a teapot (Jag är en tekanna)\nRefererar till ett aprilskämt ({{Links.RFC2324}}). Mycket osannolikt att förstås av någon klient, bot, webbläsare, eller annat. Tillhandahålls för underhållning och bekvämlighet, men rekommenderas inte generellt."
+label_http_response_header_code_429: "429 Too Many Requests (För många förfrågningar)\nRekommenderas för hastighetsbegränsning, vid hantering av DDoS-attacker, och för att förebygga översvämningar. Rekommenderas inte i andra sammanhang."
 label_http_response_header_code_451: "451 Unavailable For Legal Reasons (Inte tillgänglig av juridiska skäl)\nRekommenderas vid blockering främst av juridiska skäl. Rekommenderas inte i andra sammanhang."
 label_http_response_header_code_503: "503 Service Unavailable (Tjänsten är inte tillgänglig)\nMest robust, men minst användarvänlig. Rekommenderas för när under attacker, eller för extremt ihållande oönskad trafik."
 label_ignore: "Ignorera detta"

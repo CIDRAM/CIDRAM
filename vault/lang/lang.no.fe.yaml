@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Norwegian language data for the front-end (last modified: 2022.05.08).
+# This file: Norwegian language data for the front-end (last modified: 2022.05.23).
 ##/
 
 Extended Description Bypasses: "Standard-signatur-bypass-filene som normalt følger med hovedpakken."
@@ -405,6 +405,7 @@ label_http_response_header_code_200: "200 OK\nStandardverdi. Minst robust, men m
 label_http_response_header_code_403: "403 Forbidden (Forbudt)\nMer robust, men mindre brukervennlig. Anbefalt for de fleste generelle forhold."
 label_http_response_header_code_410: "410 Gone (Borte)\nKan forårsake problemer når du løser falske positiver, fordi noen nettlesere vil bufre denne statusmeldingen og ikke sende påfølgende forespørsler, selv etter å ha blitt opphevet blokkeringen. Kan være den mest foretrukne i noen sammenhenger, for visse typer trafikk."
 label_http_response_header_code_418: "418 I'm a teapot (Jeg er en tekanne)\nRefererer til en aprilsnarr ({{Links.RFC2324}}). Svært usannsynlig å bli forstått av noen klient, bot, nettleser, eller annet. Tilbys for underholdning og bekvemmelighet, men anbefales ikke generelt."
+label_http_response_header_code_429: "429 Too Many Requests (For mange forespørsler)\nAnbefalt for hastighetsbegrensning, ved håndtering av DDoS-angrep, og for forebygging av flom. Anbefales ikke i andre sammenhenger."
 label_http_response_header_code_451: "451 Unavailable For Legal Reasons (Utilgjengelig av juridiske årsaker)\nAnbefales ved blokkering primært av juridiske årsaker. Anbefales ikke i andre sammenhenger."
 label_http_response_header_code_503: "503 Service Unavailable (Tjenesten er utilgjengelig)\nMest robust, men minst brukervennlig. Anbefalt for angrep, eller for ekstremt vedvarende uønsket trafikk."
 label_ignore: "Ignorere dette"

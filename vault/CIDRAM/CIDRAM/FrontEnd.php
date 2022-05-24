@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM front-end (last modified: 2022.05.24).
+ * This file: The CIDRAM front-end (last modified: 2022.05.25).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -319,47 +319,47 @@ class FrontEnd extends Core
 
         /** A simple passthru for non-private theme images and related data. */
         if (!empty($this->CIDRAM['QueryVars']['cidram-asset'])) {
-            $this->CIDRAM['Success'] = false;
+            $Success = false;
             if (
                 $this->pathSecurityCheck($this->CIDRAM['QueryVars']['cidram-asset']) &&
                 !preg_match('~[^\da-z._]~i', $this->CIDRAM['QueryVars']['cidram-asset'])
             ) {
-                $this->CIDRAM['ThisAsset'] = $this->getAssetPath($this->CIDRAM['QueryVars']['cidram-asset'], true);
+                $ThisAsset = $this->getAssetPath($this->CIDRAM['QueryVars']['cidram-asset'], true);
                 if (
-                    strlen($this->CIDRAM['ThisAsset']) &&
-                    is_readable($this->CIDRAM['ThisAsset']) &&
-                    ($this->CIDRAM['ThisAssetDel'] = strrpos($this->CIDRAM['ThisAsset'], '.')) !== false
+                    strlen($ThisAsset) &&
+                    is_readable($ThisAsset) &&
+                    ($ThisAssetDel = strrpos($ThisAsset, '.')) !== false
                 ) {
-                    $this->CIDRAM['ThisAssetType'] = strtolower(substr($this->CIDRAM['ThisAsset'], $this->CIDRAM['ThisAssetDel'] + 1));
-                    if ($this->CIDRAM['ThisAssetType'] === 'jpeg') {
-                        $this->CIDRAM['ThisAssetType'] = 'jpg';
+                    $ThisAssetType = strtolower(substr($ThisAsset, $ThisAssetDel + 1));
+                    if ($ThisAssetType === 'jpeg') {
+                        $ThisAssetType = 'jpg';
                     }
-                    if (preg_match('/^(?:gif|jpg|png|webp)$/', $this->CIDRAM['ThisAssetType'])) {
+                    if (preg_match('/^(?:gif|jpg|png|webp)$/', $ThisAssetType)) {
                         /** Set asset mime-type (images). */
-                        header('Content-Type: image/' . $this->CIDRAM['ThisAssetType']);
-                        $this->CIDRAM['Success'] = true;
-                    } elseif ($this->CIDRAM['ThisAssetType'] === 'js') {
+                        header('Content-Type: image/' . $ThisAssetType);
+                        $Success = true;
+                    } elseif ($ThisAssetType === 'js') {
                         /** Set asset mime-type (JavaScript). */
                         header('Content-Type: text/javascript');
-                        $this->CIDRAM['Success'] = true;
+                        $Success = true;
                     }
-                    if ($this->CIDRAM['Success']) {
+                    if ($Success) {
                         if (!empty($this->CIDRAM['QueryVars']['theme'])) {
                             /** Prevents needlessly reloading static assets. */
-                            header('Last-Modified: ' . gmdate(DATE_RFC1123, filemtime($this->CIDRAM['ThisAsset'])));
+                            header('Last-Modified: ' . gmdate(DATE_RFC1123, filemtime($ThisAsset)));
                         }
                         /** Send asset data. */
-                        echo $this->readFile($this->CIDRAM['ThisAsset']);
+                        echo $this->readFile($ThisAsset);
                     }
                 }
             }
 
-            if ($this->CIDRAM['Success']) {
+            if ($Success) {
                 die;
             }
 
             /** Cleanup. */
-            unset($this->CIDRAM['ThisAssetType'], $this->CIDRAM['ThisAssetDel'], $this->CIDRAM['ThisAsset'], $this->CIDRAM['Success']);
+            unset($ThisAssetType, $ThisAssetDel, $ThisAsset, $Success);
         }
 
         /** A simple passthru for the front-end CSS. */
@@ -771,6 +771,9 @@ class FrontEnd extends Core
             unset($this->CIDRAM['Remote-YAML-PHP-Array'], $this->CIDRAM['Remote-YAML-PHP'], $this->CIDRAM['ThisBranch'], $this->CIDRAM['RemoteVerPath']);
         }
 
+        /** Useful for avoiding excessive IO operations when dealing with components. */
+        $this->CIDRAM['Updater-IO'] = new \Maikuolan\Common\DelayedIO();
+
         /** The user hasn't logged in, or hasn't authenticated yet. */
         if ($this->FE['UserState'] !== 1 && $this->FE['CronMode'] === '') {
             /** Page initial prepwork. */
@@ -931,11 +934,10 @@ class FrontEnd extends Core
                 /** Send icon data. */
                 echo $this->CIDRAM['IconData'];
             }
-            die;
         }
 
         /** A simple passthru for the flags CSS. */
-        elseif ($this->CIDRAM['QueryVars']['cidram-page'] === 'flags' && $this->FE['Permissions'] && file_exists($this->Vault . 'assets/frontend/flags.css')) {
+        elseif ($this->CIDRAM['QueryVars']['cidram-page'] === 'flags' && $this->FE['Permissions'] && is_readable($this->Vault . 'assets/frontend/flags.css')) {
             header('Content-Type: text/css');
 
             /** Prevents needlessly reloading static assets. */
@@ -943,8 +945,6 @@ class FrontEnd extends Core
 
             /** Send asset data. */
             echo $this->readFile($this->Vault . 'assets/frontend/flags.css');
-
-            die;
         }
 
         /** Accounts. */
@@ -1728,9 +1728,6 @@ class FrontEnd extends Core
             }
             unset($this->CIDRAM['StateModified']);
 
-            /** Useful for avoiding excessive IO operations when dealing with components. */
-            $this->CIDRAM['Updater-IO'] = new \Maikuolan\Common\DelayedIO();
-
             /** Useful for checking dependency version constraints. */
             $this->CIDRAM['Operation'] = new \Maikuolan\Common\Operation();
 
@@ -2262,9 +2259,6 @@ class FrontEnd extends Core
                     $this->FE['FE_Content']
                 );
             }
-
-            /** Finalise IO operations all at once. */
-            unset($this->CIDRAM['Updater-IO']);
 
             /** Send output. */
             if ($this->FE['CronMode'] === '') {
@@ -4717,6 +4711,9 @@ class FrontEnd extends Core
 
         /** Destroy cache object and some related values. */
         $this->destroyCacheObject();
+
+        /** Finalise IO operations all at once. */
+        unset($this->CIDRAM['Updater-IO']);
 
         /** Print Cronable failure state messages here. */
         if ($this->FE['CronMode'] !== '' && $this->FE['state_msg'] !== '' && $this->FE['UserState'] !== 1) {

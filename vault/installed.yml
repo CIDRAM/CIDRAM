@@ -21,22 +21,22 @@ CIDRAM Core:
    Checksum: "d5bcaa7c5760f8ad4860de0c8e02988a92b0c55dfff243c38ab451952af10cbf:2434"
   CIDRAM/CIDRAM/Captcha.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/CIDRAM/CIDRAM/Captcha.php"
-   Checksum: "d806a9ecd6e99c68b816900ee3e68a5d5045b48c40a303e902ae2da15b8e0666:3850"
+   Checksum: "6ba6dcefcc074462ffc07380b14d8673fd7fbb9c41b7024d977bce7943bb9192:4956"
   CIDRAM/CIDRAM/Core.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/CIDRAM/CIDRAM/Core.php"
-   Checksum: "cbb8824609e4da6e33b87117a95e21048d7e391fce43f7380f5db0777925ee24:118525"
+   Checksum: "5293135f4f3b44223da88d8121f950dcb4fb22aae2a584c92d181cf006f6b28e:117632"
   CIDRAM/CIDRAM/Expand.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/CIDRAM/CIDRAM/Expand.php"
    Checksum: "ef517c735b7121860c15bc3f40d15e5d3d8da075a69dcb510ed2772d2d546eee:5991"
   CIDRAM/CIDRAM/HCaptcha.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/CIDRAM/CIDRAM/HCaptcha.php"
-   Checksum: "ee83a02eabded8c441e062f93bec6139ee56b05ae5a923382d27180f33d1439a:15135"
+   Checksum: "33aa82bf2dff3dd04c15907dadd81d26715df806d0c635a83d1e20f9a03e88d2:15540"
   CIDRAM/CIDRAM/Protect.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/CIDRAM/CIDRAM/Protect.php"
-   Checksum: "519c3860a91cc3428ac21ea154430d232ff4a6f89070eb8689385cf43fdf19db:52462"
+   Checksum: "dc2a9e95d9cc9ed9415a2dbdd2466ca4f05b4d3bf9cef5bf5221ef4c6c02941c:52153"
   CIDRAM/CIDRAM/ReCaptcha.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/CIDRAM/CIDRAM/ReCaptcha.php"
-   Checksum: "dbdb985356101b1abcef8c62f090302858c206a184c33d723ced52bdc526c7d1:14589"
+   Checksum: "dd1f7f8b2382ad4962a8bdf15288307d8192680661752b4ce936c179acdf9a96:14994"
   CIDRAM/CIDRAM/Reporter.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/CIDRAM/CIDRAM/Reporter.php"
    Checksum: "8824caf25e0e70519f157cc41dd0b8a3b0f8e948f275cab3770df0010e381c84:2929"
@@ -48,7 +48,7 @@ CIDRAM Core:
    Checksum: "b62c0cf1deeb97c7ee15638f0a4102292a6bab6f0b6b1ee3a1dec7fa485c2e05:1352"
   defaults.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/defaults.yml"
-   Checksum: "6246434108ae921e756ef97aae0632378cca5508feccf4caf00c761ed43c608b:31949"
+   Checksum: "cd6a5e21d1e6489d770210069140375d138072c9c36d4a791d4e0f600d5046e3:32062"
   loader.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/loader.php"
    Checksum: "2024a633fae0edeff14119bd2308d9599a8651bd1fc877838e3901b72afffdc0:1312"
@@ -793,249 +793,44 @@ l10n/zh:
   l10n/frontend/zh.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/zh.yml"
    Checksum: "4134d2643d0d223577b096230755e07d657e40cdd7b27146fc17c40af1778810:50453"
-Search engines blocker module:
- Name: "Search engines blocker module"
- False Positive Risk: "Medium"
- Version: "2022.67.500"
- Dependencies:
-  PHP: ">=5.4"
-  CIDRAM Core: "^3.0.0-DEV"
- Uninstallable: true
- Files:
-  From:
-   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/modules/seblocker.php"
-   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/modules/seblocker_rules.php"
-   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/modules/seblocker_ipv4.dat"
-   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/modules/seblocker_ipv6.dat"
-   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/modules/seblocker.yml"
-  To:
-   - "modules/seblocker.php"
-   - "seblocker_rules.php"
-   - "signatures/seblocker_ipv4.dat"
-   - "signatures/seblocker_ipv6.dat"
-   - "modules/seblocker.yml"
-  Checksum:
-   - "842fa881b2ca144b6b6473fde4a12087b85bef7e1174951e4c8e3f73ff99511e:3779"
-   - "099b6abb39cdb555a8db55916e82cebf59b1801a1090cfb026dc86b44a639902:2910"
-   - "dd7afe0af88d711d36cd44b2fdefe353ee9cee6ea4e3c061e8f94c68e5a04745:3437"
-   - "d541d415ddb89b318b9f6799e37c12debf3b2026ccb6439d19ae8d4b0cff2ed5:1316"
-   - "09818581d5077cd61165931aa59a2ee1bf84cf29b9586e883adbf74da9b9dfd1:10202"
- Used with:
-  - "modules"
-  - "n/a"
-  - "ipv4"
-  - "ipv6"
-  - "n/a"
-BunnyCDN compatibility module:
- Name: "BunnyCDN compatibility module"
- False Positive Risk: "Low"
- Version: "2022.67.0"
- Dependencies:
-  PHP: ">=5.4"
-  CIDRAM Core: "^3.0.0-DEV"
- Uninstallable: true
- Files:
-  From:
-   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/modules/bunnycdn.php"
-   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/modules/bunnycdn.yml"
-  To:
-   - "modules/bunnycdn.php"
-   - "modules/bunnycdn.yml"
-  Checksum:
-   - "13173053705f2586021db2fc97279e6f9661d2034cf6a17038873627fe87e625:2677"
-   - "918edd488e556eec018c33269da5e7e094a5a15bc6f6772168b771565fd32add:2259"
- Used with: "modules"
-AbuseIPDB module:
- Name: "AbuseIPDB module"
- False Positive Risk: "Medium"
- Version: "2022.67.0"
- Dependencies:
-  PHP: ">=5.4"
-  CIDRAM Core: "^3.0.0-DEV"
- Uninstallable: true
- Files:
-  From:
-   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/modules/abuseipdb.php"
-   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/modules/abuseipdb.yml"
-  To:
-   - "modules/abuseipdb.php"
-   - "modules/abuseipdb.yml"
-  Checksum:
-   - "2073c0cf728b57e78fab7a45c84629c5f308e654cb24a76d067112ec19b14dbc:7020"
-   - "74135795c5d72d50bcd34ccd1c04e130a7a9aa8832b8c499e3f0f80142bb98b3:2248"
- Used with: "modules"
-Bad hosts blocker module:
- Name: "Bad hosts blocker module"
- False Positive Risk: "Medium"
- Version: "2022.66.735"
- Dependencies:
-  PHP: ">=5.4"
-  CIDRAM Core: "^3.0.0-DEV"
- Uninstallable: true
- Files:
-  From:
-   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/modules/badhosts.php"
-  To:
-   - "modules/badhosts.php"
-  Checksum:
-   - "f2497c5d5651a77ac9df6e547dc2b2794dc844481e7d808a9348cfcc626cc7a4:16061"
- Used with: "modules"
-Bad hosts blocker module (ISPs):
- Name: "Bad hosts blocker module (ISPs)"
- False Positive Risk: "High"
- Version: "2022.66.735"
- Dependencies:
-  PHP: ">=5.4"
-  CIDRAM Core: "^3.0.0-DEV"
- Uninstallable: true
- Files:
-  From:
-   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/modules/badhosts_isps.php"
-  To:
-   - "modules/badhosts_isps.php"
-  Checksum:
-   - "83b4cc59ffe02416cb19b670df97a88f28004e37ce5fed6fd6f4c8c3f99053f6:2629"
- Used with: "modules"
-Bad TLDs blocker module:
- Name: "Bad TLDs blocker module"
- False Positive Risk: "Low"
- Version: "2021.95.583"
- Dependencies:
-  PHP: ">=5.4"
-  CIDRAM Core: "^3.0.0-DEV"
- Uninstallable: true
- Files:
-  From:
-   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/modules/badtlds.php"
-  To:
-   - "modules/badtlds.php"
-  Checksum:
-   - "460ec2dfb73cf464d8adfad56d241130461a58f75b3c9dd9fb0be92cf05225c0:2070"
- Used with: "modules"
-BGPView module:
- Name: "BGPView module"
- False Positive Risk: "Low"
- Version: "2022.67.500"
- Dependencies:
-  PHP: ">=7"
-  CIDRAM Core: "^3.0.0-DEV"
- Uninstallable: true
- Files:
-  From:
-   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/modules/bgpview.php"
-   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/modules/bgpview.yml"
-  To:
-   - "modules/bgpview.php"
-   - "modules/bgpview.yml"
-  Checksum:
-   - "6974873a21c4c06bc924f58511a823aab55e03dd9087c6dadeb9e185a0abc170:7766"
-   - "b9852991af216e039ee3f7d412ca540543091e5edf5a269ff433c797ffd489fc:1344"
- Used with: "modules"
 Bot user agents module:
  Name: "Bot user agents module"
  False Positive Risk: "Medium"
- Version: "2022.130.0"
+ Version: "2022.142.0"
  Dependencies:
   PHP: ">=5.4"
   CIDRAM Core: "^3.0.0-DEV"
  Uninstallable: true
  Files:
-  From:
-   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/modules/botua.php"
-  To:
-   - "modules/botua.php"
-  Checksum:
-   - "17b1e8409238b1c56bd82dd6078899a9a67e381ae6144141218b3a294d88e0e8:23844"
- Used with: "modules"
+  modules/botua.php:
+   From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/modules/botua.php"
+   Checksum: "17b1e8409238b1c56bd82dd6078899a9a67e381ae6144141218b3a294d88e0e8:23844"
+   Used with: "modules"
 Cookie scanner module:
  Name: "Cookie scanner module"
  False Positive Risk: "Low"
- Version: "2021.287.582"
+ Version: "2022.142.0"
  Dependencies:
   PHP: ">=5.4"
   CIDRAM Core: "^3.0.0-DEV"
  Uninstallable: true
- Files:
-  From:
-   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/modules/cookies.php"
-  To:
-   - "modules/cookies.php"
-  Checksum:
-   - "8c50f81ff702cc3842ad0bb6a0bad7e0013e7dde7d4e434dd1d337aa8feee34c:8361"
- Used with: "modules"
+  modules/cookies.php:
+   From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/modules/cookies.php"
+   Checksum: "17b1e8409238b1c56bd82dd6078899a9a67e381ae6144141218b3a294d88e0e8:23844"
+   Used with: "modules"
 Optional security extras module:
  Name: "Optional security extras module"
  False Positive Risk: "Medium"
- Version: "2022.67.0"
+ Version: "2022.142.0"
  Dependencies:
   PHP: ">=5.4"
   CIDRAM Core: "^3.0.0-DEV"
  Uninstallable: true
- Files:
-  From:
-   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/modules/extras.php"
-   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/modules/extras.yml"
-  To:
-   - "modules/extras.php"
-   - "modules/extras.yml"
-  Checksum:
-   - "86699e4c9f26dcfa5675081d3715012986e8fd2ee2e36ea6f56466bf69c90a39:24844"
-   - "3ba90e3c835e95f1aa713dd6edf2eddd3177c3852fa44b94420764355517e5b2:1010"
- Used with: "modules"
-HTTP version checker module:
- Name: "HTTP version checker module"
- False Positive Risk: "Low"
- Version: "2022.67.0"
- Dependencies:
-  PHP: ">=5.4"
-  CIDRAM Core: "^3.0.0-DEV"
- Uninstallable: true
- Files:
-  From:
-   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/modules/httpver.php"
-   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/modules/httpver.yml"
-  To:
-   - "modules/httpver.php"
-   - "modules/httpver.yml"
-  Checksum:
-   - "e5f7dfe50dda58ac05f37a50bf4a0dad7ff8bc42ddcab60f127e608111c05b61:5176"
-   - "e04f8130085641f1d654156ff1001f895e772c0b0f5cedc998eae0eaa31ab2f8:3556"
- Used with: "modules"
-Project Honeypot module:
- Name: "Project Honeypot module"
- False Positive Risk: "Medium"
- Version: "2022.67.0"
- Dependencies:
-  PHP: ">=5.4"
-  CIDRAM Core: "^3.0.0-DEV"
- Uninstallable: true
- Files:
-  From:
-   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/modules/projecthoneypot.php"
-   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/modules/projecthoneypot.yml"
-  To:
-   - "modules/projecthoneypot.php"
-   - "modules/projecthoneypot.yml"
-  Checksum:
-   - "6e9f0a2c5bba8da117584c243b3b6321e9d3de1a57834997c31dc2847f1ad16f:5770"
-   - "5717109e4076a6e1206e78741d81585cb175f409da42c6c4265411f0302348a9:1890"
- Used with: "modules"
-Stop Forum Spam module:
- Name: "Stop Forum Spam module"
- False Positive Risk: "Low"
- Version: "2022.67.0"
- Dependencies:
-  PHP: ">=5.4"
-  CIDRAM Core: "^3.0.0-DEV"
- Uninstallable: true
- Files:
-  From:
-   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/modules/sfs.php"
-   - "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/modules/sfs.yml"
-  To:
-   - "modules/sfs.php"
-   - "modules/sfs.yml"
-  Checksum:
-   - "fc4b430ff5839bad109d351e9923695712f18018a6428529d1bacdbf9d7ae291:3938"
-   - "abcd9145804949fb1877b8ba83a48cee83fa36667cb925b1f1c5071d77218406:555"
- Used with: "modules"
+  modules/extras.php:
+   From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/modules/extras.php"
+   Checksum: "17b1e8409238b1c56bd82dd6078899a9a67e381ae6144141218b3a294d88e0e8:23844"
+   Used with: "modules"
+  imports/extras.yml:
+   From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/modules/extras.yml"
+   Checksum: "17b1e8409238b1c56bd82dd6078899a9a67e381ae6144141218b3a294d88e0e8:23844"
+   Used with: "imports"

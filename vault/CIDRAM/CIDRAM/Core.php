@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM core (last modified: 2022.05.23).
+ * This file: The CIDRAM core (last modified: 2022.05.24).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -1491,36 +1491,6 @@ class Core
             }
         }
         return $Salt;
-    }
-
-    /**
-     * Clears expired entries from a list.
-     *
-     * @param string $List The list to clear from.
-     * @param bool $Check A flag indicating when changes have occurred.
-     * @return void
-     */
-    public function clearExpired(string &$List, bool &$Check): void
-    {
-        if (strlen($List) === 0) {
-            return;
-        }
-        $End = 0;
-        while (true) {
-            $Begin = $End;
-            if (!$End = strpos($List, "\n", $Begin + 1)) {
-                break;
-            }
-            $Line = substr($List, $Begin, $End - $Begin);
-            if ($Split = strrpos($Line, ',')) {
-                $Expiry = (int)substr($Line, $Split + 1);
-                if ($Expiry < $this->Now) {
-                    $List = str_replace($Line, '', $List);
-                    $End = 0;
-                    $Check = true;
-                }
-            }
-        }
     }
 
     /**

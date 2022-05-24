@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Captcha class (last modified: 2022.05.19).
+ * This file: Captcha class (last modified: 2022.05.24).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -70,12 +70,12 @@ class Captcha
     public function determineTheme(): string
     {
         if (!isset(
-            $this->CIDRAM['FieldTemplates']['theme'],
-            $this->CIDRAM['Config Defaults']['template_data']['theme']['lightdark'][$this->CIDRAM['FieldTemplates']['theme']]
+            $this->CIDRAM->CIDRAM['FieldTemplates']['theme'],
+            $this->CIDRAM->CIDRAM['Config Defaults']['template_data']['theme']['lightdark'][$this->CIDRAM->CIDRAM['FieldTemplates']['theme']]
         )) {
             return 'light';
         }
-        return $this->CIDRAM['Config Defaults']['template_data']['theme']['lightdark'][$this->CIDRAM['FieldTemplates']['theme']];
+        return $this->CIDRAM->CIDRAM['Config Defaults']['template_data']['theme']['lightdark'][$this->CIDRAM->CIDRAM['FieldTemplates']['theme']];
     }
 
     /**
@@ -86,12 +86,12 @@ class Captcha
     public function generateFailed(): void
     {
         /** Set CAPTCHA status. */
-        $this->CIDRAM['BlockInfo']['CAPTCHA'] = $this->CIDRAM['L10N']->getString('state_failed');
+        $this->CIDRAM->CIDRAM['BlockInfo']['CAPTCHA'] = $this->CIDRAM->L10N->getString('state_failed');
 
         /** Append to reCAPTCHA statistics if necessary. */
-        if (isset($this->Stages['Statistics:Enable'], $this->StatisticsTracked['CAPTCHAs-Failed'])) {
-            $this->Statistics['CAPTCHAs-Failed']++;
-            $this->CIDRAM['Statistics-Modified'] = true;
+        if (isset($this->CIDRAM->Stages['Statistics:Enable'], $this->CIDRAM->StatisticsTracked['CAPTCHAs-Failed'])) {
+            $this->CIDRAM->Statistics['CAPTCHAs-Failed']++;
+            $this->CIDRAM->CIDRAM['Statistics-Modified'] = true;
         }
     }
 
@@ -103,12 +103,12 @@ class Captcha
     public function generatePassed(): void
     {
         /** Set CAPTCHA status. */
-        $this->CIDRAM['BlockInfo']['CAPTCHA'] = $this->CIDRAM['L10N']->getString('state_passed');
+        $this->CIDRAM->CIDRAM['BlockInfo']['CAPTCHA'] = $this->CIDRAM->L10N->getString('state_passed');
 
         /** Append to reCAPTCHA statistics if necessary. */
-        if (isset($this->Stages['Statistics:Enable'], $this->StatisticsTracked['CAPTCHAs-Passed'])) {
-            $this->Statistics['CAPTCHAs-Passed']++;
-            $this->CIDRAM['Statistics-Modified'] = true;
+        if (isset($this->CIDRAM->Stages['Statistics:Enable'], $this->CIDRAM->StatisticsTracked['CAPTCHAs-Passed'])) {
+            $this->CIDRAM->Statistics['CAPTCHAs-Passed']++;
+            $this->CIDRAM->CIDRAM['Statistics-Modified'] = true;
         }
     }
 
@@ -119,13 +119,45 @@ class Captcha
      */
     public function generateSalt(): string
     {
-        if (!file_exists($this->CIDRAM['Vault'] . 'salt.dat')) {
-            $Salt = $this->generateSalt();
-            $Handle = fopen($this->CIDRAM['Vault'] . 'salt.dat', 'wb');
-            fwrite($Handle, $Salt);
-            fclose($Handle);
+        if (!is_readable($this->CIDRAM->Vault . 'salt.dat')) {
+            $Salt = $this->CIDRAM->generateSalt();
+            if (is_writable($this->CIDRAM->Vault)) {
+                $Handle = fopen($this->CIDRAM->Vault . 'salt.dat', 'wb');
+                fwrite($Handle, $Salt);
+                fclose($Handle);
+            }
             return $Salt;
         }
-        return $this->readFile($this->CIDRAM['Vault'] . 'salt.dat');
+        return $this->CIDRAM->readFile($this->CIDRAM->Vault . 'salt.dat');
+    }
+
+    /**
+     * Clears expired entries from a list.
+     *
+     * @param string $List The list to clear from.
+     * @param bool $Check A flag indicating when changes have occurred.
+     * @return void
+     */
+    public function clearExpired(string &$List, bool &$Check): void
+    {
+        if (strlen($List) === 0) {
+            return;
+        }
+        $End = 0;
+        while (true) {
+            $Begin = $End;
+            if (!$End = strpos($List, "\n", $Begin + 1)) {
+                break;
+            }
+            $Line = substr($List, $Begin, $End - $Begin);
+            if ($Split = strrpos($Line, ',')) {
+                $Expiry = (int)substr($Line, $Split + 1);
+                if ($Expiry < $this->CIDRAM->Now) {
+                    $List = str_replace($Line, '', $List);
+                    $End = 0;
+                    $Check = true;
+                }
+            }
+        }
     }
 }

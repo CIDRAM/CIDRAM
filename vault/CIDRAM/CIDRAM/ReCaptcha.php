@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: ReCaptcha class (last modified: 2022.05.19).
+ * This file: ReCaptcha class (last modified: 2022.05.24).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -18,16 +18,18 @@ class ReCaptcha extends Captcha
     /**
      * Constructor.
      *
+     * @param array $CIDRAM The main CIDRAM object passed by reference.
      * @return void
      */
-    public function __construct()
+    public function __construct(&$CIDRAM)
     {
+        $this->CIDRAM = &$CIDRAM;
         $Salt = $this->generateSalt();
 
         /** Refer to the documentation regarding the behaviour of "lockuser". */
-        if ($this->CIDRAM['Config']['recaptcha']['lockuser']) {
-            if (file_exists($this->CIDRAM['Vault'] . 'hashes.dat')) {
-                $HastList = $this->readFile($this->CIDRAM['Vault'] . 'hashes.dat');
+        if ($this->CIDRAM->Configuration['recaptcha']['lockuser']) {
+            if (file_exists($this->CIDRAM->Vault . 'hashes.dat')) {
+                $HastList = $this->CIDRAM->readFile($this->CIDRAM->Vault . 'hashes.dat');
                 $HastListModified = false;
             } else {
                 $HastList = "HASH LIST\n---------\n";
@@ -45,8 +47,8 @@ class ReCaptcha extends Captcha
                 $UserHash = substr($_COOKIE['CIDRAM'], 0, $Split);
                 if (strpos($HastList, "\n" . $UserHash . ',') !== false) {
                     $UserSalt = base64_decode(substr($_COOKIE['CIDRAM'], $Split));
-                    if ($this->CIDRAM['Config']['recaptcha']['lockip']) {
-                        $UserMeld = $this->meld($Salt, $UserSalt, $this->CIDRAM['IPAddr']);
+                    if ($this->CIDRAM->Configuration['recaptcha']['lockip']) {
+                        $UserMeld = $this->meld($Salt, $UserSalt, $this->CIDRAM->ipAddr);
                     } else {
                         $UserMeld = $this->meld($Salt, $UserSalt);
                     }
@@ -64,16 +66,16 @@ class ReCaptcha extends Captcha
             /** Verify whether they've passed, update cookies, generate fields. */
             if ($UserHash && $UserMeld && password_verify($UserMeld, $UserHash)) {
                 $this->Bypass = true;
-                $this->BlockInfo['SignatureCount'] = 0;
+                $this->CIDRAM->BlockInfo['SignatureCount'] = 0;
 
                 /** Fix for infraction escalation bug. */
-                if (isset($this->CIDRAM['Tracking'][$this->BlockInfo['IPAddr']])) {
-                    unset($this->CIDRAM['Tracking'][$this->BlockInfo['IPAddr']]);
-                    $this->CIDRAM['Tracking-Modified'] = true;
+                if (isset($this->CIDRAM->CIDRAM['Tracking'][$this->CIDRAM->BlockInfo['IPAddr']])) {
+                    unset($this->CIDRAM->CIDRAM['Tracking'][$this->CIDRAM->BlockInfo['IPAddr']]);
+                    $this->CIDRAM->CIDRAM['Tracking-Modified'] = true;
                 }
             } else {
                 /** Set CAPTCHA status. */
-                $this->BlockInfo['CAPTCHA'] = $this->CIDRAM['L10N']->getString('state_enabled');
+                $this->CIDRAM->BlockInfo['CAPTCHA'] = $this->CIDRAM->L10N->getString('state_enabled');
 
                 /** We've received a response. */
                 if (isset($_POST['g-recaptcha-response'])) {
@@ -84,8 +86,8 @@ class ReCaptcha extends Captcha
                         $UserSalt = $this->generateSalt();
 
                         /** Generate authentication hash. */
-                        if ($this->CIDRAM['Config']['recaptcha']['lockip']) {
-                            $Cookie = $this->meld($Salt, $UserSalt, $this->CIDRAM['IPAddr']);
+                        if ($this->CIDRAM->Configuration['recaptcha']['lockip']) {
+                            $Cookie = $this->meld($Salt, $UserSalt, $this->CIDRAM->ipAddr);
                         } else {
                             $Cookie = $this->meld($Salt, $UserSalt);
                         }
@@ -97,18 +99,18 @@ class ReCaptcha extends Captcha
                         setcookie(
                             'CIDRAM',
                             $Cookie,
-                            $this->CIDRAM['Now'] + ($this->CIDRAM['Config']['recaptcha']['expiry'] * 3600),
+                            $this->CIDRAM->Now + ($this->CIDRAM->Configuration['recaptcha']['expiry'] * 3600),
                             '/',
-                            $this->CIDRAM['HostnameOverride'] ?: $this->CIDRAM['HTTP_HOST'],
+                            $this->CIDRAM->CIDRAM['HostnameOverride'] ?: $this->CIDRAM->CIDRAM['HTTP_HOST'],
                             false,
                             true
                         );
 
                         /** Reset signature count. */
-                        $this->BlockInfo['SignatureCount'] = 0;
+                        $this->CIDRAM->BlockInfo['SignatureCount'] = 0;
 
                         /** Append to the hash list. */
-                        $HastList .= $UserHash . ',' . ($this->CIDRAM['Now'] + ($this->CIDRAM['Config']['recaptcha']['expiry'] * 3600)) . "\n";
+                        $HastList .= $UserHash . ',' . ($this->CIDRAM->Now + ($this->CIDRAM->Configuration['recaptcha']['expiry'] * 3600)) . "\n";
                         $HastListModified = true;
                         $this->generatePassed();
                     } else {
@@ -121,21 +123,21 @@ class ReCaptcha extends Captcha
                  * Note: Cookie warning IS included here due to expected behaviour when lockuser is TRUE.
                  */
                 $this->generateContainer(
-                    $this->CIDRAM['Config']['recaptcha']['show_cookie_warning'],
-                    $this->CIDRAM['Config']['recaptcha']['show_api_message']
+                    $this->CIDRAM->Configuration['recaptcha']['show_cookie_warning'],
+                    $this->CIDRAM->Configuration['recaptcha']['show_api_message']
                 );
             }
 
             /** Update the hash list if any changes were made. */
             if ($HastListModified) {
-                $Handle = fopen($this->CIDRAM['Vault'] . 'hashes.dat', 'wb');
+                $Handle = fopen($this->CIDRAM->Vault . 'hashes.dat', 'wb');
                 fwrite($Handle, $HastList);
                 fclose($Handle);
             }
         } else {
             /** Attempt to load the IP bypass list. */
-            if (file_exists($this->CIDRAM['Vault'] . 'ipbypass.dat')) {
-                $BypassList = $this->readFile($this->CIDRAM['Vault'] . 'ipbypass.dat');
+            if (file_exists($this->CIDRAM->Vault . 'ipbypass.dat')) {
+                $BypassList = $this->CIDRAM->readFile($this->CIDRAM->Vault . 'ipbypass.dat');
                 $BypassListModified = false;
             } else {
                 $BypassList = "IP BYPASS LIST\n--------------\n";
@@ -149,18 +151,18 @@ class ReCaptcha extends Captcha
              * Verify whether a reCAPTCHA instance has already been completed before
              * for the current IP, populate relevant variables, and generate fields.
              */
-            if (strpos($BypassList, "\n" . $this->CIDRAM['IPAddr'] . ',') !== false) {
+            if (strpos($BypassList, "\n" . $this->CIDRAM->ipAddr . ',') !== false) {
                 $this->Bypass = true;
-                $this->BlockInfo['SignatureCount'] = 0;
+                $this->CIDRAM->BlockInfo['SignatureCount'] = 0;
 
                 /** Fix for infraction escalation bug. */
-                if (isset($this->CIDRAM['Tracking'][$this->BlockInfo['IPAddr']])) {
-                    unset($this->CIDRAM['Tracking'][$this->BlockInfo['IPAddr']]);
-                    $this->CIDRAM['Tracking-Modified'] = true;
+                if (isset($this->CIDRAM->CIDRAM['Tracking'][$this->CIDRAM->BlockInfo['IPAddr']])) {
+                    unset($this->CIDRAM->CIDRAM['Tracking'][$this->CIDRAM->BlockInfo['IPAddr']]);
+                    $this->CIDRAM->CIDRAM['Tracking-Modified'] = true;
                 }
             } else {
                 /** Set CAPTCHA status. */
-                $this->BlockInfo['CAPTCHA'] = $this->CIDRAM['L10N']->getString('state_enabled');
+                $this->CIDRAM->BlockInfo['CAPTCHA'] = $this->CIDRAM->L10N->getString('state_enabled');
 
                 /** We've received a response. */
                 if (isset($_POST['g-recaptcha-response'])) {
@@ -168,11 +170,11 @@ class ReCaptcha extends Captcha
                     $this->doResponse();
                     if ($this->Bypass) {
                         /** Reset signature count. */
-                        $this->BlockInfo['SignatureCount'] = 0;
+                        $this->CIDRAM->BlockInfo['SignatureCount'] = 0;
 
                         /** Append to the IP bypass list. */
-                        $BypassList .= $this->CIDRAM['IPAddr'] . ',' . (
-                            $this->CIDRAM['Now'] + ($this->CIDRAM['Config']['recaptcha']['expiry'] * 3600)
+                        $BypassList .= $this->CIDRAM->ipAddr . ',' . (
+                            $this->CIDRAM->Now + ($this->CIDRAM->Configuration['recaptcha']['expiry'] * 3600)
                         ) . "\n";
                         $BypassListModified = true;
 
@@ -186,12 +188,12 @@ class ReCaptcha extends Captcha
                  * reCAPTCHA template data included if reCAPTCHA isn't being bypassed.
                  * Note: Cookie warning is NOT included here due to expected behaviour when lockuser is FALSE.
                  */
-                $this->generateContainer(false, $this->CIDRAM['Config']['recaptcha']['show_api_message']);
+                $this->generateContainer(false, $this->CIDRAM->Configuration['recaptcha']['show_api_message']);
             }
 
             /** Update the IP bypass list if any changes were made. */
             if ($BypassListModified) {
-                $Handle = fopen($this->CIDRAM['Vault'] . 'ipbypass.dat', 'wb');
+                $Handle = fopen($this->CIDRAM->Vault . 'ipbypass.dat', 'wb');
                 fwrite($Handle, $BypassList);
                 fclose($Handle);
             }
@@ -200,28 +202,28 @@ class ReCaptcha extends Captcha
         /** Guard. */
         if (
             empty($Loggable) ||
-            empty($this->BlockInfo) ||
-            strlen($this->CIDRAM['Config']['recaptcha']['logfile']) === 0 ||
-            !($Filename = $this->buildPath($this->CIDRAM['Vault'] . $this->CIDRAM['Config']['recaptcha']['logfile']))
+            empty($this->CIDRAM->BlockInfo) ||
+            strlen($this->CIDRAM->Configuration['recaptcha']['logfile']) === 0 ||
+            !($Filename = $this->CIDRAM->buildPath($this->CIDRAM->Vault . $this->CIDRAM->Configuration['recaptcha']['logfile']))
         ) {
             return;
         }
 
-        $Truncate = $this->readBytes($this->Configuration['general']['truncate']);
+        $Truncate = $this->CIDRAM->readBytes($this->CIDRAM->Configuration['general']['truncate']);
         $WriteMode = (!file_exists($Filename) || $Truncate > 0 && filesize($Filename) >= $Truncate) ? 'wb' : 'ab';
         $Data = sprintf(
             '%1$s%7$s%2$s - %3$s%7$s%4$s - %5$s%7$s%6$s',
-            $this->CIDRAM['L10N']->getString('field_ipaddr'),
-            $this->CIDRAM['Config']['legal']['pseudonymise_ip_addresses'] ? $this->CIDRAM['Pseudonymise-IP']($this->CIDRAM['IPAddr']) : $this->CIDRAM['IPAddr'],
-            $this->CIDRAM['L10N']->getString('field_datetime'),
-            $this->BlockInfo['DateTime'],
-            $this->CIDRAM['L10N']->getString('field_captcha'),
-            $this->BlockInfo['CAPTCHA'],
-            $this->CIDRAM['L10N']->getString('pair_separator')
+            $this->CIDRAM->L10N->getString('field_ipaddr'),
+            $this->CIDRAM->Configuration['legal']['pseudonymise_ip_addresses'] ? $this->CIDRAM->pseudonymiseIp($this->CIDRAM->ipAddr) : $this->CIDRAM->ipAddr,
+            $this->CIDRAM->L10N->getString('field_datetime'),
+            $this->CIDRAM->BlockInfo['DateTime'],
+            $this->CIDRAM->L10N->getString('field_captcha'),
+            $this->CIDRAM->BlockInfo['CAPTCHA'],
+            $this->CIDRAM->L10N->getString('pair_separator')
         ) . "\n";
 
         /** Adds a second newline to match the standard block events logfile in case of combining the logfiles. */
-        if ($this->CIDRAM['Config']['recaptcha']['logfile'] === $this->CIDRAM['Config']['general']['logfile']) {
+        if ($this->CIDRAM->Configuration['recaptcha']['logfile'] === $this->CIDRAM->Configuration['general']['logfile']) {
             $Data .= "\n";
         }
 
@@ -229,7 +231,7 @@ class ReCaptcha extends Captcha
         fwrite($File, $Data);
         fclose($File);
         if ($WriteMode === 'wb') {
-            $this->logRotation($this->CIDRAM['Config']['recaptcha']['logfile']);
+            $this->CIDRAM->logRotation($this->CIDRAM->Configuration['recaptcha']['logfile']);
         }
     }
 
@@ -296,10 +298,10 @@ class ReCaptcha extends Captcha
      */
     private function doResponse(): void
     {
-        $this->Results = $this->Request->request('https://www.google.com/recaptcha/api/siteverify', [
-            'secret' => $this->CIDRAM['Config']['recaptcha']['secret'],
+        $this->Results = $this->CIDRAM->Request->request('https://www.google.com/recaptcha/api/siteverify', [
+            'secret' => $this->CIDRAM->Configuration['recaptcha']['secret'],
             'response' => $_POST['g-recaptcha-response'],
-            'remoteip' => $this->CIDRAM['IPAddr']
+            'remoteip' => $this->CIDRAM->ipAddr
         ]);
         $this->Bypass = (strpos($this->Results, '"success": true,') !== false);
     }
@@ -318,13 +320,13 @@ class ReCaptcha extends Captcha
             return;
         }
 
-        $this->CIDRAM['FieldTemplates']['captcha_api_include'] = $this->generateCallbackData(
-            $this->CIDRAM['Config']['recaptcha']['sitekey'],
-            $this->CIDRAM['Config']['recaptcha']['api']
+        $this->CIDRAM->CIDRAM['FieldTemplates']['captcha_api_include'] = $this->generateCallbackData(
+            $this->CIDRAM->Configuration['recaptcha']['sitekey'],
+            $this->CIDRAM->Configuration['recaptcha']['api']
         );
-        $this->CIDRAM['FieldTemplates']['captcha_div_include'] = $this->generateTemplateData(
-            $this->CIDRAM['Config']['recaptcha']['sitekey'],
-            $this->CIDRAM['Config']['recaptcha']['api'],
+        $this->CIDRAM->CIDRAM['FieldTemplates']['captcha_div_include'] = $this->generateTemplateData(
+            $this->CIDRAM->Configuration['recaptcha']['sitekey'],
+            $this->CIDRAM->Configuration['recaptcha']['api'],
             $CookieWarn,
             $ApiMessage
         );

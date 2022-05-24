@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Protect traits (last modified: 2022.05.22).
+ * This file: Protect traits (last modified: 2022.05.24).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -396,7 +396,6 @@ trait Protect
                 !empty($this->Configuration['recaptcha']['sitekey']) &&
                 !empty($this->Configuration['recaptcha']['secret']) &&
                 empty($this->CIDRAM['Banned']) &&
-                class_exists('\CIDRAM\CIDRAM\ReCaptcha') &&
                 $this->BlockInfo['SignatureCount'] <= $this->Configuration['recaptcha']['signature_limit'] &&
                 (
                     $this->Configuration['recaptcha']['usemode'] === 1 ||
@@ -410,12 +409,11 @@ trait Protect
                 )
             ) {
                 /** Execute the ReCaptcha class. */
-                $this->CIDRAM['CaptchaDone'] = new \CIDRAM\CIDRAM\ReCaptcha($this->CIDRAM);
+                $CaptchaDone = new ReCaptcha($this);
             } elseif (
                 !empty($this->Configuration['hcaptcha']['sitekey']) &&
                 !empty($this->Configuration['hcaptcha']['secret']) &&
                 empty($this->CIDRAM['Banned']) &&
-                class_exists('\CIDRAM\CIDRAM\HCaptcha') &&
                 $this->BlockInfo['SignatureCount'] <= $this->Configuration['hcaptcha']['signature_limit'] &&
                 (
                     $this->Configuration['hcaptcha']['usemode'] === 1 ||
@@ -429,7 +427,7 @@ trait Protect
                 )
             ) {
                 /** Execute the HCaptcha class. */
-                $this->CIDRAM['CaptchaDone'] = new \CIDRAM\CIDRAM\HCaptcha($this->CIDRAM);
+                $CaptchaDone = new HCaptcha($this);
             }
         }
 
@@ -858,7 +856,7 @@ trait Protect
         /** This code block executed only for non-blocked CAPTCHA configurations. */
         if (isset($this->Stages['NonBlockedCAPTCHA:Enable'])) {
             $this->Stage = 'NonBlockedCAPTCHA';
-            if (empty($this->CIDRAM['CaptchaDone']) && empty($this->CIDRAM['Whitelisted']) && empty($this->BlockInfo['Verified'])) {
+            if (empty($CaptchaDone) && empty($this->CIDRAM['Whitelisted']) && empty($this->BlockInfo['Verified'])) {
                 if (
                     !empty($this->Configuration['recaptcha']['sitekey']) &&
                     !empty($this->Configuration['recaptcha']['secret']) &&
@@ -866,7 +864,7 @@ trait Protect
                     ($this->Configuration['recaptcha']['usemode'] >= 3 && $this->Configuration['recaptcha']['usemode'] <= 5)
                 ) {
                     /** Execute the ReCaptcha class. */
-                    $this->CIDRAM['CaptchaDone'] = new \CIDRAM\CIDRAM\ReCaptcha($this->CIDRAM);
+                    $CaptchaDone = new \CIDRAM\CIDRAM\ReCaptcha($this->CIDRAM);
 
                     $this->CIDRAM['StatusCodeForNonBlocked'] = $this->Configuration['recaptcha']['nonblocked_status_code'];
                 } elseif (
@@ -876,16 +874,16 @@ trait Protect
                     ($this->Configuration['hcaptcha']['usemode'] >= 3 && $this->Configuration['hcaptcha']['usemode'] <= 5)
                 ) {
                     /** Execute the HCaptcha class. */
-                    $this->CIDRAM['CaptchaDone'] = new \CIDRAM\CIDRAM\HCaptcha($this->CIDRAM);
+                    $CaptchaDone = new \CIDRAM\CIDRAM\HCaptcha($this->CIDRAM);
 
                     $this->CIDRAM['StatusCodeForNonBlocked'] = $this->Configuration['hcaptcha']['nonblocked_status_code'];
                 }
 
                 if (
-                    !empty($this->CIDRAM['CaptchaDone']) &&
-                    is_object($this->CIDRAM['CaptchaDone']) &&
-                    isset($this->CIDRAM['CaptchaDone']->Bypass) &&
-                    $this->CIDRAM['CaptchaDone']->Bypass === false
+                    !empty($CaptchaDone) &&
+                    is_object($CaptchaDone) &&
+                    isset($CaptchaDone->Bypass) &&
+                    $CaptchaDone->Bypass === false
                 ) {
                     /** Parsed to the CAPTCHA's HTML file. */
                     $this->CIDRAM['Parsables'] = array_merge($this->CIDRAM['FieldTemplates'], $this->CIDRAM['FieldTemplates'], $this->BlockInfo);

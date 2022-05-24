@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2022.05.22).
+ * This file: Front-end handler (last modified: 2022.05.24).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -2725,11 +2725,26 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'fixer' && $CIDRAM['FE']['Permis
             $CIDRAM['L10N']->getPlural($CIDRAM['Fixer']['Time'], 'state_fixer_seconds'),
             '<span class="txtRd">' . $CIDRAM['NumberFormatter']->format($CIDRAM['Fixer']['Time'], 3) . '</span>'
         )) . '<br /><blockquote><code>' . $CIDRAM['Fixer']['Before'] . '</code><br />↪️<code>' . $CIDRAM['Fixer']['After'] . '</code></blockquote></div>';
-        $CIDRAM['FE']['FixerOutput'] = '<hr />' . $CIDRAM['Fixer'] . '<br /><textarea name="FixerOutput">' . str_replace(
+        $CIDRAM['FE']['FixerOutput'] = '<hr />' . $CIDRAM['Fixer'] . '<br /><textarea name="FixerOutput" id="fixerOutput">' . str_replace(
             ['&', '<', '>'],
             ['&amp;', '&lt;', '&gt;'],
             $CIDRAM['FE']['FixerOutput']
-        ) . '</textarea><br />';
+        ) . '</textarea><br /><br />';
+
+        /** Copy SVG. */
+        $CIDRAM['FE']['FixerOutput'] .= '<span class="s">' . sprintf(
+            '<span id="fxOS" onclick="javascript:if(navigator.clipboard){navigator.cl' .
+            'ipboard.writeText(getElementById(\'fixerOutput\').value);getElementById(' .
+            '\'fxOS_copied\').className=\'sFade\'}else{getElementById(\'fxOS_failed\'' .
+            ').style.className=\'sFade\'}"><script type="text/javascript">copySvg(\'f' .
+            'xOS\');</script></span><span id="fxOS_copied"%1$s">✔️ %2$s</span><span id' .
+            '="fxOS_failed"%1$s">❌ %3$s</span>',
+            ' class="sHide" onanimationend="javascript:this.className=\'sHide\'',
+            $CIDRAM['L10N']->getString('response_copied'),
+            $CIDRAM['L10N']->getString('response_failed'),
+        ) . '</span>';
+
+        /** Cleanup. */
         unset($CIDRAM['Fixer']);
     }
 

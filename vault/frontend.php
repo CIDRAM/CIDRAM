@@ -2741,7 +2741,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'fixer' && $CIDRAM['FE']['Permis
             '="fxOS_failed"%1$s">❌ %3$s</span>',
             ' class="sHide" onanimationend="javascript:this.className=\'sHide\'',
             $CIDRAM['L10N']->getString('response_copied'),
-            $CIDRAM['L10N']->getString('response_failed'),
+            $CIDRAM['L10N']->getString('response_failed')
         ) . '</span>';
 
         /** Cleanup. */

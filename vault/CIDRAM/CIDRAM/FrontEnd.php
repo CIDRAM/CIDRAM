@@ -2480,7 +2480,7 @@ class FrontEnd extends Core
                     '="fxOS_failed"%1$s">❌ %3$s</span>',
                     ' class="sHide" onanimationend="javascript:this.className=\'sHide\'',
                     $this->L10N->getString('response_copied'),
-                    $this->L10N->getString('response_failed'),
+                    $this->L10N->getString('response_failed')
                 ) . '</span>';
 
                 /** Cleanup. */

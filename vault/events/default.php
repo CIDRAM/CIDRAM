@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Default event handlers (last modified: 2022.05.23).
+ * This file: Default event handlers (last modified: 2022.05.25).
  */
 
 /**
@@ -223,6 +223,36 @@ $this->Events->addHandler('writeToSignaturesUpdateEventLog', function (string $D
     fclose($Handle);
     if ($WriteMode === 'wb') {
         $this->logRotation($this->Configuration['general']['signatures_update_event_log']);
+    }
+    return true;
+});
+
+/**
+ * Build default log paths.
+ *
+ * @return true
+ */
+$this->Events->addHandler('isLogFile', function (): bool {
+    if (!isset($this->CIDRAM['LogPatterns'])) {
+        $this->CIDRAM['LogPatterns'] = [];
+    }
+    if (strlen($this->Configuration['general']['logfile'])) {
+        $this->CIDRAM['LogPatterns'][] = $this->buildLogPattern($this->Configuration['general']['logfile'], true);
+    }
+    if (strlen($this->Configuration['general']['logfile_apache'])) {
+        $this->CIDRAM['LogPatterns'][] = $this->buildLogPattern($this->Configuration['general']['logfile_apache'], true);
+    }
+    if (strlen($this->Configuration['general']['logfile_serialized'])) {
+        $this->CIDRAM['LogPatterns'][] = $this->buildLogPattern($this->Configuration['general']['logfile_serialized'], true);
+    }
+    if (strlen($this->Configuration['frontend']['frontend_log'])) {
+        $this->CIDRAM['LogPatterns'][] = $this->buildLogPattern($this->Configuration['frontend']['frontend_log'], true);
+    }
+    if (strlen($this->Configuration['recaptcha']['logfile'])) {
+        $this->CIDRAM['LogPatterns'][] = $this->buildLogPattern($this->Configuration['recaptcha']['logfile'], true);
+    }
+    if (strlen($this->Configuration['hcaptcha']['logfile'])) {
+        $this->CIDRAM['LogPatterns'][] = $this->buildLogPattern($this->Configuration['hcaptcha']['logfile'], true);
     }
     return true;
 });

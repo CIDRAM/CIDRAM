@@ -65,3 +65,4 @@
 - Made the warnings/notices at the front-end accounts page slightly smaller.
 - The aggregator has been decoupled from its internal references to the CIDRAM working data, bringing it more in line with its stand-alone counterpart.
 - Added the copy SVG to the front-end signature file fixer page.
+- Improved log identification strategy.

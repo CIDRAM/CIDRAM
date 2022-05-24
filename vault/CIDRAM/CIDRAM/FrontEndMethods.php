@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: General methods used by the front-end (last modified: 2022.05.23).
+ * This file: General methods used by the front-end (last modified: 2022.05.25).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -602,49 +602,23 @@ trait FrontEndMethods
      */
     private function isLogFile(string $File): bool
     {
-        static $Pattern_logfile = false;
-        if (!$Pattern_logfile && $this->Configuration['general']['logfile']) {
-            $Pattern_logfile = $this->buildLogPattern($this->Configuration['general']['logfile'], true);
+        $FileLC = strtolower($File);
+        if (preg_match('~\.log(?:\.gz)?$~', strtolower($FileLC))) {
+            return true;
         }
-        static $Pattern_logfile_apache = false;
-        if (!$Pattern_logfile_apache && $this->Configuration['general']['logfile_apache']) {
-            $Pattern_logfile_apache = $this->buildLogPattern($this->Configuration['general']['logfile_apache'], true);
+        if ($this->Events->assigned('isLogFile')) {
+            $this->Events->fireEvent('isLogFile');
+            $this->Events->destroyEvent('isLogFile');
         }
-        static $Pattern_logfile_serialized = false;
-        if (!$Pattern_logfile_serialized && $this->Configuration['general']['logfile_serialized']) {
-            $Pattern_logfile_serialized = $this->buildLogPattern($this->Configuration['general']['logfile_serialized'], true);
+        if (!isset($this->CIDRAM['LogPatterns']) || !is_array($this->CIDRAM['LogPatterns'])) {
+            return false;
         }
-        static $Pattern_frontend_log = false;
-        if (!$Pattern_frontend_log && $this->Configuration['frontend']['frontend_log']) {
-            $Pattern_frontend_log = $this->buildLogPattern($this->Configuration['frontend']['frontend_log'], true);
+        foreach ($this->CIDRAM['LogPatterns'] as $LogPattern) {
+            if (preg_match($LogPattern, $FileLC)) {
+                return true;
+            }
         }
-        static $Pattern_reCAPTCHA_logfile = false;
-        if (!$Pattern_reCAPTCHA_logfile && $this->Configuration['recaptcha']['logfile']) {
-            $Pattern_reCAPTCHA_logfile = $this->buildLogPattern($this->Configuration['recaptcha']['logfile'], true);
-        }
-        static $Pattern_HCaptcha_logfile = false;
-        if (!$Pattern_HCaptcha_logfile && $this->Configuration['hcaptcha']['logfile']) {
-            $Pattern_HCaptcha_logfile = $this->buildLogPattern($this->Configuration['hcaptcha']['logfile'], true);
-        }
-        static $Pattern_PHPMailer_EventLog = false;
-        if (!$Pattern_PHPMailer_EventLog && $this->Configuration['phpmailer']['event_log']) {
-            $Pattern_PHPMailer_EventLog = $this->buildLogPattern($this->Configuration['phpmailer']['event_log'], true);
-        }
-        return preg_match('~\.log(?:\.gz)?$~', strtolower($File)) || (
-            $this->Configuration['general']['logfile'] && preg_match($Pattern_logfile, $File)
-        ) || (
-            $this->Configuration['general']['logfile_apache'] && preg_match($Pattern_logfile_apache, $File)
-        ) || (
-            $this->Configuration['general']['logfile_serialized'] && preg_match($Pattern_logfile_serialized, $File)
-        ) || (
-            $this->Configuration['frontend']['frontend_log'] && preg_match($Pattern_frontend_log, $File)
-        ) || (
-            $this->Configuration['recaptcha']['logfile'] && preg_match($Pattern_reCAPTCHA_logfile, $File)
-        ) || (
-            $this->Configuration['hcaptcha']['logfile'] && preg_match($Pattern_HCaptcha_logfile, $File)
-        ) || (
-            $this->Configuration['phpmailer']['event_log'] && preg_match($Pattern_PHPMailer_EventLog, $File)
-        );
+        return false;
     }
 
     /**

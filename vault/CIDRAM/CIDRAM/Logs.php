@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods used by the logs page (last modified: 2022.05.20).
+ * This file: Methods used by the logs page (last modified: 2022.05.24).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -356,14 +356,14 @@ trait Logs
             $StrFunction = 'strpos';
         } else {
             $StrFunction = 'strrpos';
-            $End = ((strlen($Data) - $Needle) * -1) - strlen($this->FE['BlockSeparator']);
+            $End = ((strlen($Data) - $Needle) * -1) - strlen($BlockSeparator);
         }
 
         /** Step with search query. */
         if (strlen($SearchQuery)) {
             return (
                 ($Needle = $StrFunction($Data, (
-                    $this->FE['BlockSeparator'] === "\n\n" ? $this->FE['FieldSeparator'] . $SearchQuery . "\n" : $SearchQuery
+                    $BlockSeparator === "\n\n" ? $this->FE['FieldSeparator'] . $SearchQuery . "\n" : $SearchQuery
                 ), $End)) !== false ||
                 ($Needle = $StrFunction($Data, '("' . $SearchQuery . '", L', $End)) !== false ||
                 (strlen($SearchQuery) === 2 && ($Needle = $StrFunction($Data, '[' . $SearchQuery . ']', $End)) !== false)
@@ -371,7 +371,7 @@ trait Logs
         }
 
         /** Step without search query. */
-        return (($Needle = $StrFunction($Data, $this->FE['BlockSeparator'], $End)) !== false);
+        return (($Needle = $StrFunction($Data, $BlockSeparator, $End)) !== false);
     }
 
     /**

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Swedish language data for the front-end (last modified: 2022.05.23).
+# This file: Swedish language data for the front-end (last modified: 2022.05.24).
 ##/
 
 Extended Description AbuseIPDB module: "Blockerar förfrågningar från IP-adresser som listas på AbuseIPDB."
@@ -81,6 +81,13 @@ config_components_ipv4: "IPv4-signaturfiler."
 config_components_ipv6: "IPv6-signaturfiler."
 config_components_modules: "Moduler."
 config_experimental: "Instabil/Experimentell!"
+config_extras: "Konfiguration för modulen med extra säkerhetstillägg."
+config_extras_signatures: "Vilka typer av signaturer bör hedras?"
+config_extras_signatures_empty_ua: "Tomma användaragenter."
+config_extras_signatures_query: "Signaturer baserade på förfrågningar."
+config_extras_signatures_raw: "Signaturer baserade på obearbetad begäran."
+config_extras_signatures_ruri: "Signaturer baserade på rekonstruerade URIer."
+config_extras_signatures_uri: "Signaturer baserade på begärande URIer."
 config_frontend: "Konfiguration för front-enden."
 config_frontend_enable_two_factor: "Detta direktiv bestämmer huruvida du ska använda 2FA för frontend-konton."
 config_frontend_frontend_log: "Fil för att logga in alla försök till inloggningar på front-end. Ange ett filnamn, eller lämna tomt för att inaktivera."

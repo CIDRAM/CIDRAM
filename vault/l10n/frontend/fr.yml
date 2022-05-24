@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: French language data for the front-end (last modified: 2022.05.23).
+# This file: French language data for the front-end (last modified: 2022.05.24).
 ##/
 
 Extended Description AbuseIPDB module: "Bloque les requêtes des adresses IP répertoriées dans AbuseIPDB."
@@ -81,6 +81,13 @@ config_components_ipv4: "Fichiers de signatures IPv4."
 config_components_ipv6: "Fichiers de signatures IPv6."
 config_components_modules: "Modules."
 config_experimental: "Instable/Expérimental\_!"
+config_extras: "Configuration du module de sécurité en option."
+config_extras_signatures: "Quels types de signatures doivent être honorés\_?"
+config_extras_signatures_empty_ua: "Agents utilisateurs vides."
+config_extras_signatures_query: "Signatures basés sur les requêtes."
+config_extras_signatures_raw: "Signatures basés sur l'entré brute de la requête."
+config_extras_signatures_ruri: "Signatures basés sur des URI reconstruits."
+config_extras_signatures_uri: "Signatures basés sur les URI des requêtes."
 config_frontend: "Configuration pour l'accès frontal."
 config_frontend_enable_two_factor: "Cette directive détermine s'il faut utiliser 2FA pour les comptes frontaux."
 config_frontend_frontend_log: "Fichier pour l'enregistrement des tentatives de connexion à l'accès frontal. Spécifier un fichier, ou laisser vide à désactiver."

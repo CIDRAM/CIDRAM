@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Polish language data for the front-end (last modified: 2022.05.23).
+# This file: Polish language data for the front-end (last modified: 2022.05.24).
 ##/
 
 Extended Description AbuseIPDB module: "Blokuje żądania z adresów IP wymienionych w witrynie AbuseIPDB."
@@ -81,6 +81,13 @@ config_components_ipv4: "Pliki podpisów IPv4."
 config_components_ipv6: "Pliki podpisów IPv6."
 config_components_modules: "Moduły."
 config_experimental: "Niestabilny/Eksperymentalny!"
+config_extras: "Konfiguracja dla modułu opcjonalnych dodatków bezpieczeństwa."
+config_extras_signatures: "Jakie podpisy należy honorować?"
+config_extras_signatures_empty_ua: "Puste klienty użytkownika."
+config_extras_signatures_query: "Podpisy na podstawie zapytań żądań."
+config_extras_signatures_raw: "Podpisy na podstawie danych wejściowych żądania surowego."
+config_extras_signatures_ruri: "Podpisy na podstawie zrekonstruowanych URI."
+config_extras_signatures_uri: "Podpisy na podstawie URI żądania."
 config_frontend: "Konfiguracja dla interfejsie użytkownika."
 config_frontend_enable_two_factor: "Ta dyrektywa określa, czy użyć 2FA jako interfejsu użytkownika."
 config_frontend_frontend_log: "Plik do logowania próbuje zalogować się do interfejsu użytkownika. Podaj nazwę pliku lub pozostaw puste, aby wyłączyć."

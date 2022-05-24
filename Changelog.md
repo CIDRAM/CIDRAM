@@ -38,6 +38,7 @@
 - Configuration directive `enable_two_factor` has been moved from the `phpmailer` configuration category to the `frontend` configuration category.
 - PHPMailer further decoupled from the main CIDRAM codebase. Various hooks and bridges between CIDRAM and PHPMailer are now handled by event handlers rather than through hardcoding.
 - Moved all the event handlers and imports to their own dedicated directories.
+- Most (but not all) available CIDRAM modules are to be bundled with CIDRAM as of v3 onward.
 
 #### Bugs fixed.
 - Some specific files were being misclassified by the file manager; Fixed.

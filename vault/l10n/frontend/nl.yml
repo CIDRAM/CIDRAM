@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Dutch language data for the front-end (last modified: 2022.05.23).
+# This file: Dutch language data for the front-end (last modified: 2022.05.24).
 ##/
 
 Extended Description AbuseIPDB module: "Blokkeert aanvragen van IP's die worden vermeld op AbuseIPDB."
@@ -81,6 +81,13 @@ config_components_ipv4: "IPv4-signatuurbestanden."
 config_components_ipv6: "IPv6-signatuurbestanden."
 config_components_modules: "Modules."
 config_experimental: "Instabiel/Experimenteel!"
+config_extras: "Configuratie voor de module van optionele beveiligingsextra's."
+config_extras_signatures: "Welke soorten signatures moeten worden gehonoreerd?"
+config_extras_signatures_empty_ua: "Lege gebruikersagenten."
+config_extras_signatures_query: "Signatures op basis van verzoekvragen."
+config_extras_signatures_raw: "Signatures op basis van onbewerkte verzoekinvoer."
+config_extras_signatures_ruri: "Signatures op basis van gereconstrueerde URI's."
+config_extras_signatures_uri: "Signatures op basis van verzoek-URI's."
 config_frontend: "Configuratie voor de frontend."
 config_frontend_enable_two_factor: "Deze richtlijn bepaalt of 2FA wordt gebruikt voor frontend-accounts."
 config_frontend_frontend_log: "Bestand om de frontend login pogingen te loggen. Geef een bestandsnaam, of laat leeg om uit te schakelen."

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Japanese language data for the front-end (last modified: 2022.05.23).
+# This file: Japanese language data for the front-end (last modified: 2022.05.24).
 ##/
 
 Extended Description AbuseIPDB module: "AbuseIPDBにリストされているＩＰからの要求をブロックします。"
@@ -81,6 +81,13 @@ config_components_ipv4: "ＩＰｖ４シグネチャ・ファイル。"
 config_components_ipv6: "ＩＰｖ６シグネチャ・ファイル。"
 config_components_modules: "モジュール。"
 config_experimental: "不安定/実験的！"
+config_extras: "オプショナル・セキュリティ・エクストラズ・モジュールの設定。"
+config_extras_signatures: "どのタイプのシグネチャを尊重する必要がありますか？"
+config_extras_signatures_empty_ua: "空のユーザー・エージェント。"
+config_extras_signatures_query: "リクエスト・クエリに基づくシグネチャ。"
+config_extras_signatures_raw: "生のリクエスト入力に基づくシグネチャ。"
+config_extras_signatures_ruri: "再構築されたＵＲＩに基づくシグネチャ。"
+config_extras_signatures_uri: "リクエストＵＲＩに基づくシグネチャ。"
 config_frontend: "フロントエンドの設定。"
 config_frontend_enable_two_factor: "このディレクティブは、フロントエンド・アカウントに２ＦＡを使用するかどうかを決定します。"
 config_frontend_frontend_log: "フロントエンド・ログインの試みを記録するためのファイル。​ファイル名指定するか、​無効にしたい場合は空白のままにして下さい。"

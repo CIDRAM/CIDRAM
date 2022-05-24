@@ -204,8 +204,13 @@ components:
   ipv6_isps.dat
   ipv6_nonblocking.dat
   ipv6_other.dat
- modules: ""
- imports: "bypasses.yml"
+ modules: |
+  botua.php
+  cookies.php
+  extras.php
+ imports: |
+  bypasses.yml
+  extras.yml
  events: ""
 frontend:
  frontend_log: ""
@@ -297,6 +302,13 @@ bypasses:
   Jetpack
   PetalBot
   Pinterest
+extras:
+ signatures: |
+  empty_ua
+  query
+  raw
+  ruri
+  uri
 user.admin:
  password: "$2y$10$FPF5Im9MELEvF5AYuuRMSO.QKoYVpsiu1YU9aDClgrU57XtLof/dK"
  permissions: 1

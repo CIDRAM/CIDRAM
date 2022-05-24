@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (simplified) language data for the front-end (last modified: 2022.05.23).
+# This file: Chinese (simplified) language data for the front-end (last modified: 2022.05.24).
 ##/
 
 Extended Description AbuseIPDB module: "阻止来自AbuseIPDB列出的IP的请求。"
@@ -81,6 +81,13 @@ config_components_ipv4: "IPv4签名文件。"
 config_components_ipv6: "IPv6签名文件。"
 config_components_modules: "模块。"
 config_experimental: "不稳定/实验！"
+config_extras: "可选的安全附加模块配置。"
+config_extras_signatures: "应该尊重哪些类型的签名？"
+config_extras_signatures_empty_ua: "空的用户代理。"
+config_extras_signatures_query: "基于请求查询的签名。"
+config_extras_signatures_raw: "基于原始请求输入的签名。"
+config_extras_signatures_ruri: "基于重构URI的签名。"
+config_extras_signatures_uri: "基于请求URI的签名。"
 config_frontend: "前端的配置。"
 config_frontend_enable_two_factor: "该指令确定是否将2FA用于前端帐户。"
 config_frontend_frontend_log: "前端登录尝试的录音文件。​指定一个文件名，​或留空以禁用。"

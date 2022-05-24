@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Spanish language data for the front-end (last modified: 2022.05.23).
+# This file: Spanish language data for the front-end (last modified: 2022.05.24).
 ##/
 
 Extended Description AbuseIPDB module: "Bloquea las solicitudes de los IP listados en AbuseIPDB."
@@ -81,6 +81,13 @@ config_components_ipv4: "Archivos de firmas IPv4."
 config_components_ipv6: "Archivos de firmas IPv6."
 config_components_modules: "Módulos."
 config_experimental: "¡Inestable/Experimental!"
+config_extras: "Configuración del módulo de extras de seguridad."
+config_extras_signatures: "¿Qué tipos de firmas deben respetarse?"
+config_extras_signatures_empty_ua: "Agentes de usuario vacíos."
+config_extras_signatures_query: "Firmas basadas en consultas de solicitudes."
+config_extras_signatures_raw: "Firmas basadas en la entrada de solicitud sin procesar."
+config_extras_signatures_ruri: "Firmas basadas en URI reconstruidos."
+config_extras_signatures_uri: "Firmas basadas en la URI de solicitudes."
 config_frontend: "Configuración para el front-end."
 config_frontend_enable_two_factor: "Esta directiva determina si se debe usar 2FA para las cuentas del front-end."
 config_frontend_frontend_log: "Archivo para registrar intentos de login al front-end. Especificar el nombre del archivo, o dejar en blanco para desactivar."

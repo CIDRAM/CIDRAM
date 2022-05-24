@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Norwegian language data for the front-end (last modified: 2022.05.23).
+# This file: Norwegian language data for the front-end (last modified: 2022.05.24).
 ##/
 
 Extended Description AbuseIPDB module: "Blokkerer forespørsler fra IP-er oppført på AbuseIPDB."
@@ -81,6 +81,13 @@ config_components_ipv4: "IPv4-signaturfiler."
 config_components_ipv6: "IPv6-signaturfiler."
 config_components_modules: "Moduler."
 config_experimental: "Ustabil/Eksperimentell!"
+config_extras: "Konfigurasjon for modulen med valgfrie sikkerhetstilbehør."
+config_extras_signatures: "Hvilke typer signaturer bør respekteres?"
+config_extras_signatures_empty_ua: "Tomme brukeragenter."
+config_extras_signatures_query: "Signaturer basert på forespørsler."
+config_extras_signatures_raw: "Signaturer basert på rå forespørselsinngang."
+config_extras_signatures_ruri: "Signaturer basert på rekonstruerte URIer."
+config_extras_signatures_uri: "Signaturer basert på forespørsels-URIer."
 config_frontend: "Konfigurasjon for frontenden."
 config_frontend_enable_two_factor: "Dette direktivet bestemmer om du skal bruke 2FA for frontend-kontoer."
 config_frontend_frontend_log: "Fil for å logge innloggingsforsøk på frontenden. Angi et filnavn, eller la det være tomt for å deaktivere."

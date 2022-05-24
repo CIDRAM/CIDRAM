@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Korean language data for the front-end (last modified: 2022.05.23).
+# This file: Korean language data for the front-end (last modified: 2022.05.24).
 ##/
 
 Extended Description AbuseIPDB module: "AbuseIPDB에 나열된 IP의 요청을 차단합니다."
@@ -81,6 +81,13 @@ config_components_ipv4: "IPv4 서명 파일."
 config_components_ipv6: "IPv6 서명 파일."
 config_components_modules: "모듈."
 config_experimental: "불안정/실험적!"
+config_extras: "선택적 보안 추가 모듈 구성."
+config_extras_signatures: "어떤 유형의 서명을 존중해야 합니까?"
+config_extras_signatures_empty_ua: "빈 사용자 에이전트."
+config_extras_signatures_query: "요청 질의를 기반으로 하는 서명."
+config_extras_signatures_raw: "원시 요청 입력을 기반으로 하는 서명."
+config_extras_signatures_ruri: "재구성된 URI를 기반으로 하는 서명."
+config_extras_signatures_uri: "요청 URI를 기반으로 하는 서명."
 config_frontend: "프런트 엔드에 대한 구성입니다."
 config_frontend_enable_two_factor: "이 지시문은 프런트 엔드 계정에 2FA를 사용할지 여부를 결정합니다."
 config_frontend_frontend_log: "프론트 엔드 로그인 시도를 기록하는 파일. 파일 이름을 지정하십시오. 비활성화하려면 비워 둡니다."

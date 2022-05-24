@@ -1,0 +1,28 @@
+##\
+# This file is a part of the CIDRAM package.
+# Homepage: https://cidram.github.io/
+#
+# CIDRAM COPYRIGHT 2016 and beyond by Caleb Mazalevskis (Maikuolan).
+#
+# License: GNU/GPLv2
+# @see LICENSE.txt
+#
+# This file: Optional security extras defaults file (last modified: 2022.05.24).
+##/
+
+Config Defaults:
+ extras:
+  signatures:
+   type: "checkbox"
+   default: |
+    empty_ua
+    query
+    raw
+    ruri
+    uri
+   choices:
+    empty_ua: "config_extras_signatures_empty_ua"
+    query: "config_extras_signatures_query"
+    raw: "config_extras_signatures_raw"
+    ruri: "config_extras_signatures_ruri"
+    uri: "config_extras_signatures_uri"

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM front-end (last modified: 2022.05.23).
+ * This file: The CIDRAM front-end (last modified: 2022.05.24).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -837,7 +837,7 @@ class FrontEnd extends Core
 
             /** Extension availability. */
             $this->FE['Extensions'] = [];
-            $this->FE['ExtensionsCopyData'] = '';
+            $ExtensionsCopyData = '';
             foreach ([
                 ['Lib' => 'pcre', 'Name' => 'PCRE'],
                 ['Lib' => 'curl', 'Name' => 'cURL'],
@@ -852,12 +852,12 @@ class FrontEnd extends Core
                     if (!empty($this->CIDRAM['ThisExtension']['Drivers'])) {
                         $this->CIDRAM['ThisResponse'] .= ', {' . implode(', ', $this->CIDRAM['ThisExtension']['Drivers']) . '}';
                     }
-                    $this->FE['ExtensionsCopyData'] .= $this->ltrInRtf(
+                    $ExtensionsCopyData .= $this->ltrInRtf(
                         sprintf('- %1$s➡%2$s\n', $this->CIDRAM['ThisExtension']['Name'], $this->CIDRAM['ThisResponse'])
                     );
                     $this->CIDRAM['ThisResponse'] = '<span class="txtGn">' . $this->CIDRAM['ThisResponse'] . '</span>';
                 } else {
-                    $this->FE['ExtensionsCopyData'] .= $this->ltrInRtf(
+                    $ExtensionsCopyData .= $this->ltrInRtf(
                         sprintf('- %1$s➡%2$s\n', $this->CIDRAM['ThisExtension']['Name'], $this->L10N->getString('response_no'))
                     );
                     $this->CIDRAM['ThisResponse'] = '<span class="txtRd">' . $this->L10N->getString('response_no') . '</span>';
@@ -894,7 +894,7 @@ class FrontEnd extends Core
                 $this->L10N->getString('label_sapi'),
                 $this->FE['info_sapi'],
                 $this->FE['ExtensionIsAvailable'],
-                $this->FE['ExtensionsCopyData']
+                $ExtensionsCopyData
             );
 
             /** Parse output. */
@@ -2464,11 +2464,26 @@ class FrontEnd extends Core
                     $this->L10N->getPlural($Fixer['Time'], 'state_fixer_seconds'),
                     '<span class="txtRd">' . $this->NumberFormatter->format($Fixer['Time'], 3) . '</span>'
                 )) . '<br /><blockquote><code>' . $Fixer['Before'] . '</code><br />↪️<code>' . $Fixer['After'] . '</code></blockquote></div>';
-                $this->FE['FixerOutput'] = '<hr />' . $Fixer . '<br /><textarea name="FixerOutput">' . str_replace(
+                $this->FE['FixerOutput'] = '<hr />' . $Fixer . '<br /><textarea name="FixerOutput" id="fixerOutput">' . str_replace(
                     ['&', '<', '>'],
                     ['&amp;', '&lt;', '&gt;'],
                     $this->FE['FixerOutput']
-                ) . '</textarea><br />';
+                ) . '</textarea><br /><br />';
+
+                /** Copy SVG. */
+                $this->FE['FixerOutput'] .= '<span class="s">' . sprintf(
+                    '<span id="fxOS" onclick="javascript:if(navigator.clipboard){navigator.cl' .
+                    'ipboard.writeText(getElementById(\'fixerOutput\').value);getElementById(' .
+                    '\'fxOS_copied\').className=\'sFade\'}else{getElementById(\'fxOS_failed\'' .
+                    ').style.className=\'sFade\'}"><script type="text/javascript">copySvg(\'f' .
+                    'xOS\');</script></span><span id="fxOS_copied"%1$s">✔️ %2$s</span><span id' .
+                    '="fxOS_failed"%1$s">❌ %3$s</span>',
+                    ' class="sHide" onanimationend="javascript:this.className=\'sHide\'',
+                    $this->L10N->getString('response_copied'),
+                    $this->L10N->getString('response_failed'),
+                ) . '</span>';
+
+                /** Cleanup. */
                 unset($Fixer);
             }
 
@@ -4368,8 +4383,8 @@ class FrontEnd extends Core
                     $this->FE['FieldSeparator'] = '：';
                 }
 
-                $this->FE['BlockSeparator'] = (strpos($this->FE['logfileData'], "\n\n") !== false) ? "\n\n" : "\n";
-                $this->FE['BlockSepLen'] = strlen($this->FE['BlockSeparator']);
+                $BlockSeparator = (strpos($this->FE['logfileData'], "\n\n") !== false) ? "\n\n" : "\n";
+                $BlockSepLen = strlen($BlockSeparator);
 
                 /** Strip PHP header. */
                 if (substr($this->FE['logfileData'], 0, 15) === "\x3C\x3Fphp die; \x3F\x3E\n\n") {
@@ -4378,10 +4393,10 @@ class FrontEnd extends Core
 
                 /** Reverse entries order for viewing descending entries. */
                 if ($this->FE['SortOrder'] === 'descending') {
-                    $this->FE['logfileData'] = explode($this->FE['BlockSeparator'], $this->FE['logfileData']);
-                    $this->FE['logfileData'] = implode($this->FE['BlockSeparator'], array_reverse($this->FE['logfileData']));
-                    if (substr($this->FE['logfileData'], 0, $this->FE['BlockSepLen']) === $this->FE['BlockSeparator']) {
-                        $this->FE['logfileData'] = substr($this->FE['logfileData'], $this->FE['BlockSepLen']) . $this->FE['BlockSeparator'];
+                    $this->FE['logfileData'] = explode($BlockSeparator, $this->FE['logfileData']);
+                    $this->FE['logfileData'] = implode($BlockSeparator, array_reverse($this->FE['logfileData']));
+                    if (substr($this->FE['logfileData'], 0, $BlockSepLen) === $BlockSeparator) {
+                        $this->FE['logfileData'] = substr($this->FE['logfileData'], $BlockSepLen) . $BlockSeparator;
                     }
                 }
 
@@ -4399,8 +4414,8 @@ class FrontEnd extends Core
                 /** Handle pagination lower boundary. */
                 if ($this->FE['Paginate']) {
                     $this->FE['logfileData'] = $this->splitBeforeLine($this->FE['logfileData'], $this->FE['From']);
-                    $this->FE['EstAft'] = substr_count($this->FE['logfileData'][0], $this->FE['BlockSeparator']);
-                    $this->FE['EstFore'] = substr_count($this->FE['logfileData'][1], $this->FE['BlockSeparator']);
+                    $this->FE['EstAft'] = substr_count($this->FE['logfileData'][0], $BlockSeparator);
+                    $this->FE['EstFore'] = substr_count($this->FE['logfileData'][1], $BlockSeparator);
                     $this->FE['Needle'] = strlen($this->FE['logfileData'][0]);
                     $this->CIDRAM['Iterations'] = 0;
                     while ($this->stepThroughBlocks($this->FE['logfileData'][0], $this->FE['Needle'], 0, $this->FE['SearchQuery'], '<')) {
@@ -4413,7 +4428,7 @@ class FrontEnd extends Core
                         }
                         if (($this->CIDRAM['Iterations'] > $this->FE['PerPage']) && !$this->FE['Previous']) {
                             $this->FE['Previous'] = $this->isolateFirstFieldEntry(
-                                substr($this->FE['logfileData'][0], $this->FE['Needle'] + $this->FE['BlockSepLen']),
+                                substr($this->FE['logfileData'][0], $this->FE['Needle'] + $BlockSepLen),
                                 $this->FE['FieldSeparator']
                             );
                         }
@@ -4442,23 +4457,23 @@ class FrontEnd extends Core
 
                 /** Handle block filtering. */
                 if (!empty($this->FE['logfileData']) && !empty($this->CIDRAM['QueryVars']['search'])) {
-                    $this->FE['NewLogFileData'] = '';
+                    $NewLogFileData = '';
                     $this->FE['Needle'] = 0;
-                    $this->FE['BlockEnd'] = 0;
+                    $BlockEnd = 0;
                     $this->FE['EntryCountPaginated'] = 0;
                     while ($this->stepThroughBlocks(
                         $this->FE['logfileData'],
                         $this->FE['Needle'],
-                        $this->FE['BlockEnd'],
+                        $BlockEnd,
                         $this->FE['SearchQuery']
                     )) {
                         $this->FE['EntryCountBefore']++;
-                        $this->FE['BlockStart'] = strrpos(substr($this->FE['logfileData'], 0, $this->FE['Needle']), $this->FE['BlockSeparator'], $this->FE['BlockEnd']);
-                        $this->FE['BlockEnd'] = strpos($this->FE['logfileData'], $this->FE['BlockSeparator'], $this->FE['Needle']);
+                        $BlockStart = strrpos(substr($this->FE['logfileData'], 0, $this->FE['Needle']), $BlockSeparator, $BlockEnd);
+                        $BlockEnd = strpos($this->FE['logfileData'], $BlockSeparator, $this->FE['Needle']);
                         if ($this->FE['Paginate']) {
                             if (!$this->FE['From']) {
                                 $this->FE['From'] = $this->isolateFirstFieldEntry(
-                                    substr($this->FE['logfileData'], $this->FE['BlockStart'], $this->FE['BlockEnd'] - $this->FE['BlockStart']),
+                                    substr($this->FE['logfileData'], $BlockStart, $BlockEnd - $BlockStart),
                                     $this->FE['FieldSeparator']
                                 );
                             }
@@ -4466,20 +4481,20 @@ class FrontEnd extends Core
                             if ($this->FE['Paginated'] > ($this->FE['PerPage'] + 1)) {
                                 if (!$this->FE['Next']) {
                                     $this->FE['Next'] = $this->isolateFirstFieldEntry(
-                                        substr($this->FE['logfileData'], $this->FE['BlockStart'], $this->FE['BlockEnd'] - $this->FE['BlockStart']),
+                                        substr($this->FE['logfileData'], $BlockStart, $BlockEnd - $BlockStart),
                                         $this->FE['FieldSeparator']
                                     );
                                 }
                                 continue;
                             }
                             $this->FE['EntryCountPaginated']++;
-                            $this->FE['NewLogFileData'] .= substr($this->FE['logfileData'], $this->FE['BlockStart'], $this->FE['BlockEnd'] - $this->FE['BlockStart']);
+                            $NewLogFileData .= substr($this->FE['logfileData'], $BlockStart, $BlockEnd - $BlockStart);
                         } else {
-                            $this->FE['NewLogFileData'] .= substr($this->FE['logfileData'], $this->FE['BlockStart'], $this->FE['BlockEnd'] - $this->FE['BlockStart']);
+                            $NewLogFileData .= substr($this->FE['logfileData'], $BlockStart, $BlockEnd - $BlockStart);
                         }
                     }
-                    $this->FE['logfileData'] = rtrim($this->FE['NewLogFileData']) . $this->FE['BlockSeparator'];
-                    unset($this->FE['Needle'], $this->FE['BlockSeparator'], $this->FE['BlockEnd'], $this->FE['BlockStart'], $this->FE['NewLogFileData']);
+                    $this->FE['logfileData'] = rtrim($NewLogFileData) . $BlockSeparator;
+                    unset($this->FE['Needle'], $BlockSeparator, $BlockEnd, $BlockStart, $NewLogFileData);
                     $this->FE['SearchInfoRender'] = (
                         $this->FE['Flags'] && preg_match('~^[A-Z]{2}$~', $this->FE['SearchQuery'])
                     ) ? '<span class="flag ' . $this->FE['SearchQuery'] . '"><span></span></span>' : '<code>' . $this->FE['SearchQuery'] . '</code>';
@@ -4527,10 +4542,10 @@ class FrontEnd extends Core
                     }
                 } else {
                     if ($this->FE['Paginate']) {
-                        $this->FE['NewLogFileData'] = '';
-                        $this->FE['OriginalLogDataLen'] = strlen($this->FE['logfileData']);
-                        $this->FE['BlockStart'] = 0;
-                        $this->FE['BlockEnd'] = 0;
+                        $NewLogFileData = '';
+                        $OriginalLogDataLen = strlen($this->FE['logfileData']);
+                        $BlockStart = 0;
+                        $BlockEnd = 0;
                         if (!$this->FE['From']) {
                             $this->FE['From'] = $this->isolateFirstFieldEntry(
                                 $this->FE['logfileData'],
@@ -4538,37 +4553,29 @@ class FrontEnd extends Core
                             );
                         }
                         while (true) {
-                            $this->FE['BlockOffset'] = $this->FE['BlockStart'] + $this->FE['BlockSepLen'];
-                            if ($this->FE['BlockOffset'] >= $this->FE['OriginalLogDataLen']) {
+                            $BlockOffset = $BlockStart + $BlockSepLen;
+                            if ($BlockOffset >= $OriginalLogDataLen) {
                                 break;
                             }
-                            $this->FE['BlockEnd'] = strpos($this->FE['logfileData'], $this->FE['BlockSeparator'], $this->FE['BlockStart']);
-                            if ($this->FE['BlockEnd'] === false) {
+                            $BlockEnd = strpos($this->FE['logfileData'], $BlockSeparator, $BlockStart);
+                            if ($BlockEnd === false) {
                                 break;
                             }
-                            $this->FE['NewLogFileData'] .= substr($this->FE['logfileData'], $this->FE['BlockStart'], ($this->FE['BlockEnd'] - $this->FE['BlockStart']) + $this->FE['BlockSepLen']);
+                            $NewLogFileData .= substr($this->FE['logfileData'], $BlockStart, ($BlockEnd - $BlockStart) + $BlockSepLen);
                             $this->FE['Paginated']++;
                             if ($this->FE['Paginated'] > $this->FE['PerPage']) {
                                 if (!$this->FE['Next']) {
                                     $this->FE['Next'] = $this->isolateFirstFieldEntry(
-                                        substr($this->FE['logfileData'], $this->FE['BlockEnd'] + $this->FE['BlockSepLen']),
+                                        substr($this->FE['logfileData'], $BlockEnd + $BlockSepLen),
                                         $this->FE['FieldSeparator']
                                     );
                                 }
                                 break;
                             }
-                            $this->FE['BlockStart'] = $this->FE['BlockEnd'] + $this->FE['BlockSepLen'];
+                            $BlockStart = $BlockEnd + $BlockSepLen;
                         }
-                        $this->FE['logfileData'] = $this->FE['NewLogFileData'];
-                        unset(
-                            $this->FE['BlockOffset'],
-                            $this->FE['BlockSepLen'],
-                            $this->FE['BlockSeparator'],
-                            $this->FE['BlockEnd'],
-                            $this->FE['BlockStart'],
-                            $this->FE['OriginalLogDataLen'],
-                            $this->FE['NewLogFileData']
-                        );
+                        $this->FE['logfileData'] = $NewLogFileData;
+                        unset($BlockOffset, $BlockSepLen, $BlockSeparator, $BlockEnd, $BlockStart, $OriginalLogDataLen, $NewLogFileData);
                     }
                     $this->FE['EntryCount'] = !str_replace("\n", '', $this->FE['logfileData']) ? 0 : (
                         substr_count($this->FE['logfileData'], "\n\n") ?: substr_count($this->FE['logfileData'], "\n")

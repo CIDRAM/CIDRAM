@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6_isps.dat
 
-# Version: 2022.135.0
-# Last modified: 2022.05.16
+# Version: 2022.144.0
+# Last modified: 2022.05.25
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -1563,3 +1563,18 @@ Tag: Elyzium Technologies
 Origin: DE
 Profile: Infrastructure/Transit
 Tag: xTom GmbH
+
+
+# ASNs 132761, 134331 ("Smartlink Solutions Pvt. Ltd").
+# Indian commercial broadband reseller. Port scans, hacking, and spam detected
+# from here. Manually checked all ranges; All ranges affected.
+# Stop Forum Spam (SFS) listings: 10 (AS132761), 492 (AS134331).
+# Updated: 2022.05.25
+
+2402:dc40::/48 Deny Attacks
+2402:dc40:4::/47 Deny Attacks
+2402:dc40:100::/40 Deny Attacks
+2402:dc40:200::/40 Deny Attacks
+Origin: IN
+Profile: Commercial;Domestic ISP;Infrastructure/Transit
+Tag: Smartlink Solutions

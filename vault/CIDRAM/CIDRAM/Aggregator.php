@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The aggregator (last modified: 2022.05.20).
+ * This file: The aggregator (last modified: 2022.05.25).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -121,7 +121,7 @@ class Aggregator
         if ($this->Mode === 1) {
             $this->convertToNetmasks($this->Output);
         }
-        $this->ProcessingTime = microtime(true) - $Begin;
+        $this->ProcessingTime += microtime(true) - $Begin;
         return $this->Output;
     }
 
@@ -185,7 +185,7 @@ class Aggregator
             $this->callbacks['newParse']($InCount);
         }
         if (!empty($this->Results)) {
-            $this->NumberEntered = $InCount;
+            $this->NumberEntered += $InCount;
         }
         unset($InCount);
         $In = array_filter(array_unique(array_map(function ($Line) {
@@ -352,7 +352,7 @@ class Aggregator
         }
         $In = trim($Out);
         if (!empty($this->Results)) {
-            $this->NumberReturned = empty($In) ? 0 : substr_count($In, "\n") + 1;
+            $this->NumberReturned += empty($In) ? 0 : substr_count($In, "\n") + 1;
             $this->NumberRejected = $this->NumberEntered - $this->NumberReturned - $this->NumberMerged;
             $this->NumberAccepted = $this->NumberEntered - $this->NumberRejected;
         }

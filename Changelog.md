@@ -46,6 +46,7 @@
 - Wrong CSP headers being set by the HCaptcha class; Fixed (#294).
 - Fixed a bottleneck caused by the ReadFile closure (since v3, the readFile method).
 - The `nonblocked_status_code` configuration directive wasn't displaying as intended at the front-end configuration page; Fixed.
+- Instead of "GMT", the "Last modified" header given for front-end assets specified "+0000", which some browsers don't understand properly; Fixed.
 
 #### Other changes.
 - Improved IP address resolution strategy (#286).

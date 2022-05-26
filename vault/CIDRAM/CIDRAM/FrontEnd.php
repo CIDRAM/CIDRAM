@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM front-end (last modified: 2022.05.25).
+ * This file: The CIDRAM front-end (last modified: 2022.05.26).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -346,7 +346,7 @@ class FrontEnd extends Core
                     if ($Success) {
                         if (!empty($this->CIDRAM['QueryVars']['theme'])) {
                             /** Prevents needlessly reloading static assets. */
-                            header('Last-Modified: ' . gmdate(DATE_RFC1123, filemtime($ThisAsset)));
+                            header('Last-Modified: ' . gmdate('D, d M Y H:i:s T', filemtime($ThisAsset)));
                         }
                         /** Send asset data. */
                         echo $this->readFile($ThisAsset);
@@ -368,7 +368,7 @@ class FrontEnd extends Core
             header('Content-Type: text/css');
             if (!empty($this->CIDRAM['QueryVars']['theme'])) {
                 /** Prevents needlessly reloading static assets. */
-                header('Last-Modified: ' . gmdate(DATE_RFC1123, filemtime($this->CIDRAM['AssetPath'])));
+                header('Last-Modified: ' . gmdate('D, d M Y H:i:s T', filemtime($this->CIDRAM['AssetPath'])));
             }
             /** Send asset data. */
             echo $this->parseVars($this->L10N->Data + $this->FE, $this->readFile($this->CIDRAM['AssetPath']));
@@ -929,7 +929,7 @@ class FrontEnd extends Core
                 header('Content-Type: image/gif');
 
                 /** Prevents needlessly reloading static assets. */
-                header('Last-Modified: ' . gmdate(DATE_RFC1123, filemtime($this->CIDRAM['IconPath'])));
+                header('Last-Modified: ' . gmdate('D, d M Y H:i:s T', filemtime($this->CIDRAM['IconPath'])));
 
                 /** Send icon data. */
                 echo $this->CIDRAM['IconData'];
@@ -941,7 +941,7 @@ class FrontEnd extends Core
             header('Content-Type: text/css');
 
             /** Prevents needlessly reloading static assets. */
-            header('Last-Modified: ' . gmdate(DATE_RFC1123, filemtime($this->Vault . 'assets/frontend/flags.css')));
+            header('Last-Modified: ' . gmdate('D, d M Y H:i:s T', filemtime($this->Vault . 'assets/frontend/flags.css')));
 
             /** Send asset data. */
             echo $this->readFile($this->Vault . 'assets/frontend/flags.css');

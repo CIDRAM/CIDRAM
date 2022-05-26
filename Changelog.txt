@@ -23,6 +23,10 @@ Detailed version release guidelines for CIDRAM can be found at:
 - [2022.05.24; Maikuolan]: Safer handling of CAPTCHA salts. Added the copy SVG
   to the front-end signature file fixer page.
 
+- [2022.05.26; Bug-fix; Maikuolan]: Instead of "GMT", the "Last modified"
+  header given for front-end assets specified "+0000", which some browsers
+  don't understand properly; Fixed.
+
 === Version/Release 2.9.0 ===
 MINOR RELEASE.
 

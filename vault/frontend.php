@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2022.05.24).
+ * This file: Front-end handler (last modified: 2022.05.26).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -265,7 +265,7 @@ if (!empty($CIDRAM['QueryVars']['cidram-asset'])) {
             if ($CIDRAM['Success']) {
                 if (!empty($CIDRAM['QueryVars']['theme'])) {
                     /** Prevents needlessly reloading static assets. */
-                    header('Last-Modified: ' . gmdate(DATE_RFC1123, filemtime($CIDRAM['ThisAsset'])));
+                    header('Last-Modified: ' . gmdate('D, d M Y H:i:s T', filemtime($CIDRAM['ThisAsset'])));
                 }
                 /** Send asset data. */
                 echo $CIDRAM['ReadFile']($CIDRAM['ThisAsset']);
@@ -287,7 +287,7 @@ if ($CIDRAM['QueryVars']['cidram-page'] === 'css') {
     header('Content-Type: text/css');
     if (!empty($CIDRAM['QueryVars']['theme'])) {
         /** Prevents needlessly reloading static assets. */
-        header('Last-Modified: ' . gmdate(DATE_RFC1123, filemtime($CIDRAM['AssetPath'])));
+        header('Last-Modified: ' . gmdate('D, d M Y H:i:s T', filemtime($CIDRAM['AssetPath'])));
     }
     /** Send asset data. */
     echo $CIDRAM['ParseVars']($CIDRAM['L10N']->Data + $CIDRAM['FE'], $CIDRAM['ReadFile']($CIDRAM['AssetPath']));
@@ -940,7 +940,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'icon' && $CIDRAM['FE']['Permiss
 
             /** Prevents needlessly reloading static assets. */
             if (!empty($CIDRAM['QueryVars']['theme'])) {
-                header('Last-Modified: ' . gmdate(DATE_RFC1123, filemtime($CIDRAM['Icons_Handler_Path'])));
+                header('Last-Modified: ' . gmdate('D, d M Y H:i:s T', filemtime($CIDRAM['Icons_Handler_Path'])));
             }
 
             /** Send icon data. */
@@ -960,7 +960,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'flags' && $CIDRAM['FE']['Permis
     header('Content-Type: text/css');
 
     /** Prevents needlessly reloading static assets. */
-    header('Last-Modified: ' . gmdate(DATE_RFC1123, filemtime($CIDRAM['Vault'] . 'fe_assets/flags.css')));
+    header('Last-Modified: ' . gmdate('D, d M Y H:i:s T', filemtime($CIDRAM['Vault'] . 'fe_assets/flags.css')));
 
     /** Send asset data. */
     echo $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'fe_assets/flags.css');

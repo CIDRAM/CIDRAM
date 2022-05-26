@@ -3015,9 +3015,9 @@ class FrontEnd extends Core
                 ];
 
                 /** We'll aggregate the latter set before intersecting it with the former. */
-                $Aggregator = new \CIDRAM\CIDRAM\Aggregator();
+                $this->CIDRAM['Aggregator'] = new \CIDRAM\CIDRAM\Aggregator();
                 if ($Intersection['B']) {
-                    $Intersection['B'] = "\n" . $Aggregator->aggregate($Intersection['B']) . "\n";
+                    $Intersection['B'] = "\n" . $this->CIDRAM['Aggregator']->aggregate($Intersection['B']) . "\n";
                 }
 
                 /** Beginning intersection process here. */
@@ -3030,7 +3030,7 @@ class FrontEnd extends Core
                 }
 
                 /** Cleanup. */
-                unset($Intersection, $Aggregator);
+                unset($Intersection, $this->CIDRAM['Aggregator']);
             }
 
             /** Calculate page load time (useful for debugging). */
@@ -3095,9 +3095,9 @@ class FrontEnd extends Core
                 /**
                  * We'll aggregate B prior to subtraction for better optimisation.
                  */
-                $Aggregator = new \CIDRAM\CIDRAM\Aggregator();
+                $this->CIDRAM['Aggregator'] = new \CIDRAM\CIDRAM\Aggregator();
                 if ($Subtraction['B']) {
-                    $Subtraction['B'] = $Aggregator->aggregate($Subtraction['B']) . "\n";
+                    $Subtraction['B'] = $this->CIDRAM['Aggregator']->aggregate($Subtraction['B']) . "\n";
                 }
 
                 /** Beginning subtraction process here. */
@@ -3110,7 +3110,7 @@ class FrontEnd extends Core
                 }
 
                 /** Cleanup. */
-                unset($Subtraction, $Aggregator);
+                unset($Subtraction, $this->CIDRAM['Aggregator']);
             }
 
             /** Calculate page load time (useful for debugging). */
@@ -3166,8 +3166,8 @@ class FrontEnd extends Core
             /** Data was submitted for aggregation. */
             if (!empty($_POST['input'])) {
                 $this->FE['input'] = str_replace("\r", '', trim($_POST['input']));
-                $Aggregator = new \CIDRAM\CIDRAM\Aggregator($OutputFormat);
-                $Aggregator->Results = true;
+                $this->CIDRAM['Aggregator'] = new \CIDRAM\CIDRAM\Aggregator($OutputFormat);
+                $this->CIDRAM['Aggregator']->Results = true;
                 if ($Preserve) {
                     $StrObject = new \Maikuolan\Common\ComplexStringHandler(
                         "\n" . $this->FE['input'] . "\n",
@@ -3176,7 +3176,7 @@ class FrontEnd extends Core
                             if (!$Data = trim($Data)) {
                                 return '';
                             }
-                            return $Aggregator->aggregate($Data);
+                            return $this->CIDRAM['Aggregator']->aggregate($Data);
                         }
                     );
                     $StrObject->iterateClosure(function ($Data) {
@@ -3185,17 +3185,17 @@ class FrontEnd extends Core
                     $this->FE['output'] = trim($StrObject->recompile());
                     unset($StrObject);
                 } else {
-                    $this->FE['output'] = $Aggregator->aggregate($this->FE['input']);
+                    $this->FE['output'] = $this->CIDRAM['Aggregator']->aggregate($this->FE['input']);
                 }
                 $this->FE['ResultLine'] = sprintf(
                     $this->L10N->getString('label_results'),
-                    '<span class="txtRd">' . $this->NumberFormatter->format($Aggregator->NumberEntered) . '</span>',
-                    '<span class="txtRd">' . $this->NumberFormatter->format($Aggregator->NumberRejected) . '</span>',
-                    '<span class="txtRd">' . $this->NumberFormatter->format($Aggregator->NumberAccepted) . '</span>',
-                    '<span class="txtRd">' . $this->NumberFormatter->format($Aggregator->NumberMerged) . '</span>',
-                    '<span class="txtRd">' . $this->NumberFormatter->format($Aggregator->NumberReturned) . '</span>'
+                    '<span class="txtRd">' . $this->NumberFormatter->format($this->CIDRAM['Aggregator']->NumberEntered) . '</span>',
+                    '<span class="txtRd">' . $this->NumberFormatter->format($this->CIDRAM['Aggregator']->NumberRejected) . '</span>',
+                    '<span class="txtRd">' . $this->NumberFormatter->format($this->CIDRAM['Aggregator']->NumberAccepted) . '</span>',
+                    '<span class="txtRd">' . $this->NumberFormatter->format($this->CIDRAM['Aggregator']->NumberMerged) . '</span>',
+                    '<span class="txtRd">' . $this->NumberFormatter->format($this->CIDRAM['Aggregator']->NumberReturned) . '</span>'
                 );
-                unset($Aggregator);
+                unset($this->CIDRAM['Aggregator']);
             } else {
                 $this->FE['output'] = $this->FE['input'] = '';
             }

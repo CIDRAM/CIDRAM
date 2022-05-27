@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Urdu language data for the front-end (last modified: 2022.05.24).
+# This file: Urdu language data for the front-end (last modified: 2022.05.26).
 ##/
 
 Extended Description AbuseIPDB module: "AbuseIPDB میں درج IP کے بلاکس کی درخواستیں."
@@ -142,7 +142,7 @@ config_hcaptcha_show_api_message: &ShowAPIMessage "API کا پیغام دکھا�
 config_hcaptcha_show_cookie_warning: &ShowCookieWarning "کوکی انتباہ دکھائیں؟ True (سچے) = جی ہاں [پہلے سے طے شدہ]؛ False (جھوٹی) = نہیں."
 config_hcaptcha_signature_limit: &CaptchaSignatureLimit "CAPTCHA پیش کش واپس لینے سے پہلے دستخطوں کی زیادہ سے زیادہ تعداد کی اجازت. پہلے سے طے شدہ = 1."
 config_hcaptcha_sitekey: *CaptchaDashboard
-config_hcaptcha_usemode: &CaptchaUseMode "CAPTCHA کب پیش کیا جائے؟ نوٹ: وائٹ لسٹڈ یا توثیق شدہ اور غیر مسدود درخواستوں کو کبھی بھی CAPTCHA کو مکمل کرنے کی ضرورت نہیں ہے. یہ بھی نوٹ کریں: کیپچا بوٹس اور مختلف قسم کی بدنیتی پر مبنی خودکار درخواستوں کے خلاف مفید تحفظ فراہم کر سکتے ہیں، لیکن بدنیتی پر مبنی انسان کے خلاف کوئی تحفظ فراہم نہیں کریں گے."
+config_hcaptcha_usemode: &CaptchaUseMode "CAPTCHA کب پیش کیا جائے؟ نوٹ: وائٹ لسٹڈ یا توثیق شدہ اور غیر مسدود درخواستوں کو کبھی بھی CAPTCHA کو مکمل کرنے کی ضرورت نہیں ہے. یہ بھی نوٹ کریں: CAPTCHA بوٹس اور مختلف قسم کی بدنیتی پر مبنی خودکار درخواستوں کے خلاف مفید تحفظ فراہم کر سکتے ہیں، لیکن بدنیتی پر مبنی انسان کے خلاف کوئی تحفظ فراہم نہیں کریں گے."
 config_legal: "قانونی تقاضوں کے لئے ترتیبات."
 config_legal_privacy_policy: "کسی بھی پیدا کردہ صفحات کے فوٹر میں ظاہر ہونے والی متعلقہ رازداری کی پالیسی کا پتہ. ایک URL کی وضاحت کریں، یا غیر فعال کرنے کیلئے خالی چھوڑ دیں."
 config_legal_pseudonymise_ip_addresses: "لاگ ان کرتے وقت پی ایس ڈی نامناسب IP پتے؟ True (سچے) = جی ہاں [پہلے سے طے شدہ]؛ False (جھوٹی) = نہیں."
@@ -179,6 +179,8 @@ config_recaptcha_show_cookie_warning: *ShowCookieWarning
 config_recaptcha_signature_limit: *CaptchaSignatureLimit
 config_recaptcha_sitekey: *CaptchaDashboard
 config_recaptcha_usemode: *CaptchaUseMode
+config_sfs: "Stop Forum Spam ماڈیول کے لیے ترتیب."
+config_sfs_offer_captcha: "جب درخواستیں اس ماڈیول کے ذریعے بلاک کر دی جاتی ہیں تو CAPTCHA پیش کیے جا سکتے ہیں. پہلے سے طے شدہ = True. نوٹ: دیگر ہدایات کو اوور رائڈ نہیں کرتا ہے. CAPTCHA پیش کیے جانے کے لیے، تمام ہدایات کا متفق ہونا ضروری ہے، ضروری کلیدیں ترتیب دی گئی ہیں، وغیرہ. ایسی صورت میں جب CAPTCHA کو عام طور پر پیش کیے جانے کی اجازت ہو، اس ہدایت کو false پر سیٹ کرنا اس ماڈیول کے ذریعے خاص طور پر مسدود کردہ درخواستوں کے لیے CAPTCHA کو پیش کیے جانے سے روکنے کا ایک طریقہ فراہم کرتا ہے."
 config_signatures: "دستخطوں، دستخط فائلوں، ماڈیولز، وغیرہ کے لئے تشکیل."
 config_signatures_block_attacks: "حملوں اور دیگر غیر معمولی ٹریفک سے وابستہ CIDRs کو بلاک کریں؟ مثال کے طور پر، پورٹ اسکین، ہیکنگ، کمزوریوں کی تحقیقات وغیرہ. ایسا کرنے جب آپ کو مسائل کا سامنا ہوتا ہے جب تک، عام طور پر، یہ ہمیشہ سچ کے لئے مقرر کیا جانا چاہئے."
 config_signatures_block_bogons: "بلاک bogon/martian کی CIDRs؟ آپ لوکل ہوسٹ سے، یا اپنے LAN سے اپنے مقامی نیٹ ورک کے اندر سے اپنی ویب سائٹ پر کنکشن، توقع ہے، اس ہدایت کے جھوٹے پر مقرر کیا جائے چاہئے. اگر آپ ان میں ایسے کنکشنوں کی توقع نہیں ہے، تو اس ہدایت صحیح پر سیٹ کیا جانا چاہئے."
@@ -207,7 +209,7 @@ config_supplementary_cache_options_redis_port: "Redis کے لئے بندرگاہ
 config_supplementary_cache_options_redis_timeout: "Redis کے لئے ٹائم آؤٹ. پہلے سے طے شدہ = "2.5"."
 config_template_data: "ٹیمپلیٹس اور تھیمز کی ترتیبات."
 config_template_data_block_event_title: "بلاک ایونٹس کے لیے ظاہر کرنے کے لیے صفحہ کا عنوان."
-config_template_data_captcha_title: "کیپچا کی درخواستوں کے لیے ظاہر کرنے کے لیے صفحہ کا عنوان."
+config_template_data_captcha_title: "CAPTCHA کی درخواستوں کے لیے ظاہر کرنے کے لیے صفحہ کا عنوان."
 config_template_data_css_url: "اپنی مرضی کے موضوعات کے لئے سی ایس ایس فائل URL."
 config_template_data_magnification: *MagnifDesc
 config_template_data_theme: "CIDRAM لئے استعمال کرنے کے لئے مرکزی خیال، موضوع پہلے سے طے شدہ."

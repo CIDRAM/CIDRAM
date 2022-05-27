@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Russian language data for the front-end (last modified: 2022.05.24).
+# This file: Russian language data for the front-end (last modified: 2022.05.26).
 ##/
 
 Extended Description AbuseIPDB module: "Блокирует запросы от IP-адресов, перечисленных в AbuseIPDB."
@@ -179,6 +179,8 @@ config_recaptcha_show_cookie_warning: *ShowCookieWarning
 config_recaptcha_signature_limit: *CaptchaSignatureLimit
 config_recaptcha_sitekey: *CaptchaDashboard
 config_recaptcha_usemode: *CaptchaUseMode
+config_sfs: "Конфигурация модуля Stop Forum Spam."
+config_sfs_offer_captcha: "Когда запросы блокируются этим модулем, может использоваться CAPTCHA. Стандарт = True. Примечание: Другие директивы не переопределяются. Для выдачи CAPTCHA должны быть согласованы все директивы, предоставил необходимые ключи, и т.д. В случае, если CAPTCHA обычно разрешается выдавать, установка этой директивы в false обеспечивает способ предотвращения выдачи CAPTCHA для запросов, заблокированных конкретно этим модулем."
 config_signatures: "Конфигурация для сигнатурей, файлов сигнатурей, модулей и т.д."
 config_signatures_block_attacks: "Блокировать CIDRы, связанные с атаками и другим аномальным трафиком? Например, сканирование портов, взлом, поиск уязвимостей, т.д. Если Вы не испытываете проблем при этом, как правило, эта директива должна быть true."
 config_signatures_block_bogons: "Блокировать марсианин/bogon CIDRы? Если Вы ожидаете посетителей на свой веб-сайт из вашей локальной сети или из локальной сети, эта директива должна быть false. В противном случае, эта директива должна быть true."

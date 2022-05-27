@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Turkish language data for the front-end (last modified: 2022.05.24).
+# This file: Turkish language data for the front-end (last modified: 2022.05.26).
 ##/
 
 Extended Description AbuseIPDB module: "AbuseIPDB'de listelenen IP'lerden gelen istekleri engeller."
@@ -179,6 +179,8 @@ config_recaptcha_show_cookie_warning: *ShowCookieWarning
 config_recaptcha_signature_limit: *CaptchaSignatureLimit
 config_recaptcha_sitekey: *CaptchaDashboard
 config_recaptcha_usemode: *CaptchaUseMode
+config_sfs: "Stop Forum Spam modülü için yapılandırma."
+config_sfs_offer_captcha: "İstekler bu modül tarafından engellendiğinde, CAPTCHA'lar sunulabilir. Varsayılan = True. Not: Diğer yönergeleri geçersiz kılmaz. CAPTCHA'ların sunulması için tüm yönergeler kabul edilmeli, gerekli anahtarlar yapılandırılmalıdır, vb. Normalde CAPTCHA'ların sunulmasına izin verilmesi durumunda, bu yönergeyi false olarak ayarlamak, özellikle bu modül tarafından engellenen istekler için CAPTCHA'ların sunulmasını önlemenin bir yolunu sağlar."
 config_signatures: "İmzalar, imza dosyaları, modüller, vb. için yapılandırma."
 config_signatures_block_attacks: "Saldırılar ve diğer anormal trafikle ilişkili CIDR'leri engelle? Örneğin, bağlantı noktası taramaları, bilgisayar korsanlığı, güvenlik açıklarını araştırma, vb. Bunu yaparken sorun yaşamıyorsanız, genelde bu daima doğruya (true) ayarlanmalıdır."
 config_signatures_block_bogons: "Bogon/martian CIDR'leri engelleyin? Sitenize yerel ağınızdan, yerel hizmet bilgisayarından veya yerel ağınızdan bağlantılar bekliyorsanız, bu yönerge yanlış (false) değerine ayarlanmalıdır. Bu tür bağlantıları beklemiyorsanız, bu yönerge doğru (true) olmalıdır."

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Tamil language data for the front-end (last modified: 2022.05.24).
+# This file: Tamil language data for the front-end (last modified: 2022.05.26).
 ##/
 
 Extended Description AbuseIPDB module: "AbuseIPDBஇல் பட்டியலிடப்பட்ட ஐபி முகவரிகளிடமிருந்து கோரிக்கைகளைத் தடுக்கிறது."
@@ -179,6 +179,8 @@ config_recaptcha_show_cookie_warning: *ShowCookieWarning
 config_recaptcha_signature_limit: *CaptchaSignatureLimit
 config_recaptcha_sitekey: *CaptchaDashboard
 config_recaptcha_usemode: *CaptchaUseMode
+config_sfs: "Stop Forum Spam தொகுதிக்கான உள்ளமைவு."
+config_sfs_offer_captcha: "இந்த தொகுதி மூலம் கோரிக்கைகள் தடுக்கப்படும் போது, CAPTCHAகள் வழங்கப்படலாம். இயல்புநிலை = True. குறிப்பு: மற்ற வழிமுறைகள் மீறாது. CAPTCHAகள் வழங்கப்படுவதற்கு, அனைத்து வழிமுறைகள் ஒப்புக்கொள்ளப்பட வேண்டும், தேவையான விசைகள் உள்ளமைக்கப்பட வேண்டும். CAPTCHAகள் வழங்க அனுமதிக்கப்படும் பட்சத்தில், இந்த வழிமுறைகள் false என அமைப்பது, குறிப்பாக இந்த தொகுதியால் தடுக்கப்பட்ட கோரிக்கைகளுக்கு CAPTCHAகள் வழங்கப்படுவதைத் தடுப்பதற்கான வழியை வழங்குகிறது."
 config_signatures: "கையொப்பங்கள், கையொப்பம் கோப்புகள், தொகுதிகள், போன்றவற்றுக்கான உள்ளமைவு."
 config_signatures_block_attacks: "தாக்குதல்கள் மற்றும் பிற அசாதாரண போக்குவரத்துடன் தொடர்புடைய CIDRகளைத் தடுக்க வேண்டுமா? எ.கா., போர்ட் ஸ்கேன், ஹேக்கிங், பாதிப்புகளை ஆய்வு செய்தல், போன்றவை. பொதுவாக, இது எப்போதும் true என்று அமைக்கப்பட வேண்டும். ஆனால், அதில் ஏதேனும் சிக்கல்கள் ஏற்பட்டால் அதை false என்று அமைக்க வேண்டும்."
 config_signatures_block_bogons: "போகன் CIDRகள் தடுக்க வேண்டுமா? உங்கள் உள்ளூர் நெட்வொர்க்கிலிருந்து, localhostலிருந்து, அல்லது உங்கள் LANலிருந்து உங்கள் வலைத்தளத்திற்கான இணைப்புகளை நீங்கள் எதிர்பார்க்கிறீர்கள் என்றால், இந்த உத்தரவு false அமைக்கப்பட வேண்டும். இதுபோன்ற இணைப்புகளை நீங்கள் எதிர்பார்க்கவில்லை என்றால், இந்த உத்தரவு true என அமைக்கப்பட வேண்டும்."

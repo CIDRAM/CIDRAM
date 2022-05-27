@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Thai language data for the front-end (last modified: 2022.05.24).
+# This file: Thai language data for the front-end (last modified: 2022.05.26).
 ##/
 
 Extended Description AbuseIPDB module: "บล็อกคำขอจาก IP ที่แสดงรายการไว้ที่ AbuseIPDB."
@@ -179,6 +179,8 @@ config_recaptcha_show_cookie_warning: *ShowCookieWarning
 config_recaptcha_signature_limit: *CaptchaSignatureLimit
 config_recaptcha_sitekey: *CaptchaDashboard
 config_recaptcha_usemode: *CaptchaUseMode
+config_sfs: "การกำหนดค่าสำหรับโมดูล Stop Forum Spam."
+config_sfs_offer_captcha: "เมื่อคำขอถูกบล็อกโดยโมดูลนี้ อาจให้บริการ CAPTCHA. ค่าเริ่มต้น = True. หมายเหตุ: ไม่แทนที่คำสั่งอื่นๆ. เพื่อให้ใช้ CAPTCHA ได้ การกำหนดค่าทั้งหมดต้องยอมรับ กำหนดค่าคีย์ที่จำเป็น ฯลฯ. การตั้งค่าคำสั่งนี้เป็น false จะเป็นวิธีการป้องกันไม่ให้ CAPTCHA ถูกให้บริการสำหรับคำขอที่ถูกบล็อกโดยโมดูลนี้โดยเฉพาะ."
 config_signatures: "การกำหนดค่าสำหรับลายเซ็น, ไฟล์ลายเซ็น, โมดูล, ฯลฯ."
 config_signatures_block_attacks: "บล็อก CIDR ที่เกี่ยวข้องกับการโจมตีและการรับส่งข้อมูลที่ผิดปกติอื่น ๆ หรือไม่? เช่น การสแกนพอร์ต การแฮ็ก การตรวจหาช่องโหว่ เป็นต้น. จนกว่าคุณจะประสบปัญหาเมื่อทำเช่นนั้น โดยทั่วไป ควรตั้งค่าเป็น true เสมอ."
 config_signatures_block_bogons: "ปิดกั้น CIDR bogon/ชาวอังคาร? หากคุณคาดหวังว่าจะเชื่อมต่อกับเว็บไซต์ของคุณจากภายในเครือข่ายท้องถิ่นของคุณ จาก localhost หรือจาก LAN ของคุณ คำสั่งนี้ควรตั้งค่าเป็น false. มิฉะนั้น ถ้าคุณไม่คาดหวังการเชื่อมต่อเหล่านี้ คำสั่งนี้ควรตั้งค่าเป็น true."

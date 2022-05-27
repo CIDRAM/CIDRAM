@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Bangla language data for the front-end (last modified: 2022.05.24).
+# This file: Bangla language data for the front-end (last modified: 2022.05.26).
 ##/
 
 Extended Description AbuseIPDB module: "AbuseIPDB এ তালিকাভুক্ত আইপিগুলির থেকে ব্লক অনুরোধ।"
@@ -179,6 +179,8 @@ config_recaptcha_show_cookie_warning: *ShowCookieWarning
 config_recaptcha_signature_limit: *CaptchaSignatureLimit
 config_recaptcha_sitekey: *CaptchaDashboard
 config_recaptcha_usemode: *CaptchaUseMode
+config_sfs: "স্টপ ফোরাম স্প্যাম মডিউলের জন্য কনফিগারেশন।"
+config_sfs_offer_captcha: "যখন অনুরোধ এই মডিউল দ্বারা ব্লক করা হয়, ক্যাপচা পরিবেশন করা হতে পারে। ডিফল্ট = True। দ্রষ্টব্য: অন্যান্য নির্দেশাবলী ওভাররাইড করে না। ক্যাপচা পরিবেশন করার জন্য, সমস্ত নির্দেশ অবশ্যই সম্মত হতে হবে, প্রয়োজনীয় কীগুলি কনফিগার করা হবে, ইত্যাদি। যদি ক্যাপচাগুলিকে সাধারণত পরিবেশন করার অনুমতি দেওয়া হয়, এই নির্দেশটিকে false তে সেট করা এই মডিউল দ্বারা বিশেষভাবে ব্লক করা অনুরোধগুলির জন্য ক্যাপচাগুলি পরিবেশন করা প্রতিরোধ করার একটি উপায় প্রদান করে৷"
 config_signatures: "স্বাক্ষর, স্বাক্ষর ফাইল, মডিউল, ইত্যাদির জন্য কনফিগারেশন।"
 config_signatures_block_attacks: "হামলা এবং অন্যান্য অস্বাভাবিক ট্রাফিকের সাথে যুক্ত CIDRগুলিকে ব্লক করবেন? যেমন, পোর্ট স্ক্যান, হ্যাকিং, দুর্বলতার জন্য অনুসন্ধান, ইত্যাদি। যখন সম্ভব, এবং যদি কোনো সমস্যা না ঘটে, এই true সেট করা উচিত।"
 config_signatures_block_bogons: "bogon/মঙ্গল CIDRগুলি ব্লক কর? আপনার স্থানীয় নেটওয়ার্কে, localhost, LAN, ইত্যাদি থেকে আপনার ওয়েবসাইট সংযোগ, এই নির্দেশটি false হিসাবে সেট করা উচিত। আপনি যদি এই ধরনের সংযোগগুলি আশা না করেন, এই নির্দেশটি true হিসাবে সেট করা উচিত।"

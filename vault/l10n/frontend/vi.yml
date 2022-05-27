@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Vietnamese language data for the front-end (last modified: 2022.05.24).
+# This file: Vietnamese language data for the front-end (last modified: 2022.05.26).
 ##/
 
 Extended Description AbuseIPDB module: "Chặn các yêu cầu từ IP được liệt kê tại AbuseIPDB."
@@ -179,6 +179,8 @@ config_recaptcha_show_cookie_warning: *ShowCookieWarning
 config_recaptcha_signature_limit: *CaptchaSignatureLimit
 config_recaptcha_sitekey: *CaptchaDashboard
 config_recaptcha_usemode: *CaptchaUseMode
+config_sfs: "Cấu hình cho mô-đun Stop Forum Spam."
+config_sfs_offer_captcha: "Khi mô-đun này chặn các yêu cầu, CAPTCHA có thể được phân phát. Mặc định = True. Lưu ý: Sẽ không ghi đè các chỉ thị khác. Để CAPTCHA được phân phát, tất cả các chỉ thị phải đồng ý, các khóa cần thiết được định cấu hình, vv. Trong trường hợp thông thường CAPTCHA sẽ được phép phân phát, việc đặt chỉ thị này thành false sẽ cung cấp một cách để ngăn CAPTCHA được phân phát cho các yêu cầu bị chặn cụ thể bởi mô-đun này."
 config_signatures: "Cấu hình cho chữ ký, tập tin chữ ký, mô-đun, vv."
 config_signatures_block_attacks: "Chặn CIDR liên quan đến các cuộc tấn công và lưu lượng truy cập bất thường khác? Ví dụ, quét cổng, tấn công, dò tìm lỗ hổng bảo mật, vv. Trừ khi bạn gặp vấn đề khi làm như vậy, nói chung, điều này cần phải luôn được true."
 config_signatures_block_bogons: "Chặn CIDR bogon/martian? Nếu bạn mong đợi các kết nối đến trang mạng của bạn từ bên trong mạng nội bộ của bạn, từ localhost, hay từ LAN của bạn, tùy chọn này cần được thiết lập để false. Nếu bạn không mong đợi những kết nối như vậy, tùy chọn này cần được thiết lập để true."

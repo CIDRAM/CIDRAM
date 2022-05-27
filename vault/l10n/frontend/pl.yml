@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Polish language data for the front-end (last modified: 2022.05.24).
+# This file: Polish language data for the front-end (last modified: 2022.05.26).
 ##/
 
 Extended Description AbuseIPDB module: "Blokuje żądania z adresów IP wymienionych w witrynie AbuseIPDB."
@@ -179,6 +179,8 @@ config_recaptcha_show_cookie_warning: *ShowCookieWarning
 config_recaptcha_signature_limit: *CaptchaSignatureLimit
 config_recaptcha_sitekey: *CaptchaDashboard
 config_recaptcha_usemode: *CaptchaUseMode
+config_sfs: "Konfiguracja modułu Stop Forum Spam."
+config_sfs_offer_captcha: "Gdy żądania są blokowane przez ten moduł, mogą zostać wystawione kody CAPTCHA. Domyślna = True. Uwaga: Nie zastępuje innych dyrektyw. Aby można było wystawić CAPTCHA, wszystkie dyrektywy muszą być zgodne, konieczne skonfigurowane klucze, itp. W przypadku, gdyby normalnie zezwalano na wystawianie kodów CAPTCHA, ustawienie tej dyrektywy na wartość false umożliwia zapobieganie wystawianiu kodów CAPTCHA dla żądań zablokowanych specjalnie przez ten moduł."
 config_signatures: "Konfiguracja podpisów, plików podpisów, modułów, itp."
 config_signatures_block_attacks: "Zablokować CIDRy związane z atakami i innym nietypowym ruchem? Np. skanowanie portów, hakowanie, sondowanie podatności, itp. Zazwyczaj powinno to zawsze mieć wartość true, ale w razie problemów może być konieczne ustawienie wartości false."
 config_signatures_block_bogons: "Zablokować CIDRy bogon? Jeśli spodziewasz się połączeń z twoją witryną z sieci lokalnej, localhost lub sieci LAN, w tej dyrektywie należy ustawić wartość false. Jeśli nie oczekujesz takich połączeń, tę dyrektywę należy ustawić na wartość true."

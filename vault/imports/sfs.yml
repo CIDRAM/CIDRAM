@@ -1,0 +1,20 @@
+##\
+# This file is a part of the CIDRAM package.
+# Homepage: https://cidram.github.io/
+#
+# CIDRAM COPYRIGHT 2016 and beyond by Caleb Mazalevskis (Maikuolan).
+#
+# License: GNU/GPLv2
+# @see LICENSE.txt
+#
+# This file: Stop Forum Spam defaults file (last modified: 2022.05.26).
+##/
+
+Config Defaults:
+ sfs:
+  timeout_limit:
+   type: "int"
+   default: 12
+  offer_captcha:
+   type: "bool"
+   default: true

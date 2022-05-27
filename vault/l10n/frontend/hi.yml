@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Hindi language data for the front-end (last modified: 2022.05.24).
+# This file: Hindi language data for the front-end (last modified: 2022.05.26).
 ##/
 
 Extended Description AbuseIPDB module: "AbuseIPDB पर सूचीबद्ध IP से अनुरोध ब्लॉक करता है।"
@@ -179,6 +179,8 @@ config_recaptcha_show_cookie_warning: *ShowCookieWarning
 config_recaptcha_signature_limit: *CaptchaSignatureLimit
 config_recaptcha_sitekey: *CaptchaDashboard
 config_recaptcha_usemode: *CaptchaUseMode
+config_sfs: "Stop Forum Spam मॉड्यूल के लिए कॉन्फ़िगरेशन।"
+config_sfs_offer_captcha: "जब इस मॉड्यूल द्वारा अनुरोधों को अवरुद्ध किया जाता है, तो कैप्चा परोसा जा सकता है। डिफ़ॉल्ट = True। नोट: अन्य निर्देशों को ओवरराइड नहीं करता है। कैप्चा की सेवा के लिए, सभी निर्देशों को सहमत होना चाहिए, आवश्यक कुंजियाँ कॉन्फ़िगर की जानी चाहिए, आदि। इस घटना में कि कैप्चा को सामान्य रूप से सेवा देने की अनुमति दी जाएगी, इस निर्देश को false पर सेट करने से कैप्चा को इस मॉड्यूल द्वारा विशेष रूप से अवरुद्ध अनुरोधों के लिए प्रस्तुत किए जाने से रोकने का एक तरीका मिलता है।"
 config_signatures: "हस्ताक्षर, हस्ताक्षर फाइलें, मॉड्यूल, आदि के लिए कॉन्फ़िगरेशन।"
 config_signatures_block_attacks: "हमलों और अन्य असामान्य ट्रैफ़िक से जुड़े CIDRs को ब्लॉक करें? जैसे, पोर्ट स्कैन, हैकिंग, कमजोरियों की जांच, आदि। ऐसा करने जब आप समस्याओं का सामना होता है जब तक आम तौर पर, यह हमेशा सच के लिए निर्धारित किया जाना चाहिए।"
 config_signatures_block_bogons: "अवरुद्ध bogon/martian की CIDRs? आप स्थानीय होस्ट, या अपने LAN अपने स्थानीय नेटवर्क के भीतर से अपनी वेबसाइट पर कनेक्शन, उम्मीद है, यह नुस्खा के गलत पर सेट किया जाना चाहिए। आप उनमें ऐसे कनेक्शनों की उम्मीद नहीं है, तो यह नुस्खा सही पर सेट किया जाना चाहिए।"

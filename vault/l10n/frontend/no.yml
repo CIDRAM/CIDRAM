@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Norwegian language data for the front-end (last modified: 2022.05.24).
+# This file: Norwegian language data for the front-end (last modified: 2022.05.26).
 ##/
 
 Extended Description AbuseIPDB module: "Blokkerer forespørsler fra IP-er oppført på AbuseIPDB."
@@ -179,6 +179,8 @@ config_recaptcha_show_cookie_warning: *ShowCookieWarning
 config_recaptcha_signature_limit: *CaptchaSignatureLimit
 config_recaptcha_sitekey: *CaptchaDashboard
 config_recaptcha_usemode: *CaptchaUseMode
+config_sfs: "Konfigurasjon for Stop Forum Spam modulen."
+config_sfs_offer_captcha: "Når forespørsler blokkeres av denne modulen, CAPTCHA-er kan bli servert. Standardverdi = True. Merk: Overstyrer ikke andre direktiver. For at CAPTCHA-er skal kunne betjenes, må alle direktiver stemme overens, nødvendige nøkler konfigurert, osv. I tilfelle CAPTCHA-er normalt vil tillates å bli servert, gir det å sette dette direktivet til false en måte å forhindre at CAPTCHA-er blir servert for forespørsler som er blokkert spesifikt av denne modulen."
 config_signatures: "Konfigurasjon for signaturer, signaturfiler, moduler, etc."
 config_signatures_block_attacks: "Blokker CIDRer assosiert med angrep og annen unormal trafikk? F.eks., portskanninger, hacking, undersøkelse av sårbarheter, etc. Med mindre du opplever problemer når du gjør det, bør dette vanligvis alltid settes til true."
 config_signatures_block_bogons: "Blokker bogon/martian CIDRer? Hvis du forventer tilkoblinger til nettstedet ditt fra ditt lokale nettverk, fra localhost eller fra ditt LAN, bør dette direktivet settes til false. Hvis du ikke forventer slike tilkoblinger, bør dette direktivet settes til true."

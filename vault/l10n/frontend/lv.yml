@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Latvian language data for the front-end (last modified: 2022.05.24).
+# This file: Latvian language data for the front-end (last modified: 2022.05.26).
 ##/
 
 Extended Description AbuseIPDB module: "Bloķē pieprasījumus no IP, kas uzskaitīti vietnē AbuseIPDB."
@@ -179,6 +179,8 @@ config_recaptcha_show_cookie_warning: *ShowCookieWarning
 config_recaptcha_signature_limit: *CaptchaSignatureLimit
 config_recaptcha_sitekey: *CaptchaDashboard
 config_recaptcha_usemode: *CaptchaUseMode
+config_sfs: "Stop Forum Spam moduļa konfigurācija."
+config_sfs_offer_captcha: "Ja pieprasījumus bloķē šis modulis, var tikt izdot CAPTCHA. Noklusējuma = True. Piezīme: Neaizstāj citas direktīvas. Lai izdotu CAPTCHA, ir jāsakrīt visām direktīvām, jākonfigurē nepieciešamās atslēgas, utt. Gadījumā, ja parasti ir atļauts izsniegt CAPTCHA, šīs direktīvas iestatīšana uz false nodrošina veidu, kā novērst CAPTCHA izdošanu pieprasījumiem, kurus īpaši bloķē šis modulis."
 config_signatures: "Parakstu, parakstu failu, moduļu, utt konfigurācija."
 config_signatures_block_attacks: "Bloķēt CIDR, kas saistīti ar uzbrukumiem un citu neparastu datplūsmu? Piemēram, ostu skenēšana, uzlaušana, ievainojamību meklēšana, utt. Ja, to darot, jums nav problēmu, parasti tam vienmēr būtu jādefinē kā true/patiesam."
 config_signatures_block_bogons: "Bloķēt bogona/marsa CIDR? Ja paredzat, ka savienojumi ar jūsu vietni notiek no jūsu vietējā tīkla, no localhost, vai no jūsu LAN, šai direktīvai vajadzētu būt false/nepatiesu. Ja jūs neparedzat šos savienojumus, šai direktīvai vajadzētu būt true/patiesai."

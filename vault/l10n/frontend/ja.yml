@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Japanese language data for the front-end (last modified: 2022.05.26).
+# This file: Japanese language data for the front-end (last modified: 2022.05.27).
 ##/
 
 Extended Description AbuseIPDB module: "AbuseIPDBにリストされているＩＰからの要求をブロックします。"
@@ -72,6 +72,11 @@ checkbox_label_stage_infractions: "この段階で発生した違反は、ＩＰ
 checkbox_label_stage_log_errors: "この段階で発生したエラーをログに記録しますか？"
 checkbox_label_untrack_positives: "陽性の追跡をやめますか？"
 checkbox_label_verify: "確認してみますか？"
+config_bgpview: "BGPViewモジュールの設定（CIDRAMにASNおよび国コード検索機能を提供します）。"
+config_bgpview_blocked_asns: "BGPViewモジュールによってブロックされるASNのリスト。"
+config_bgpview_blocked_ccs: "BGPViewモジュールによってブロックされる国（{{Links.ISO.3166}}二桁の国コードで識別）のリスト。"
+config_bgpview_whitelisted_asns: "BGPViewモジュールによってホワイトリストに登録されるASNのリスト。"
+config_bgpview_whitelisted_ccs: "BGPViewモジュールによってホワイトリストに登録される国（{{Links.ISO.3166}}二桁の国コードで識別）のリスト。"
 config_bypasses: "デフォルト・シグネチャ・バイパスのコンフィグレーション。"
 config_bypasses_used: "どのバイパスを使用する必要がありますか？"
 config_components: "CIDRAMによって使用されるコンポーネントをアクティブ化および非アクティブ化するための設定。​通常、アップデート・ページに入力されますが、ここから管理して、より細かく制御したり、アップデート・ページで認識されないカスタム・コンポーネントを管理したりすることもできます。"

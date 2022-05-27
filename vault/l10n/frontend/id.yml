@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Indonesian language data for the front-end (last modified: 2022.05.26).
+# This file: Indonesian language data for the front-end (last modified: 2022.05.27).
 ##/
 
 Extended Description AbuseIPDB module: "Memblokir permintaan dari IP yang terdaftar oleh AbuseIPDB."
@@ -72,6 +72,11 @@ checkbox_label_stage_infractions: "Menghitung pelanggaran yang dihasilkan selama
 checkbox_label_stage_log_errors: "Mencatat kesalahan yang dihasilkan selama tahap ini?"
 checkbox_label_untrack_positives: "Hapus pelacakan untuk positif?"
 checkbox_label_verify: "Mencoba memverifikasi?"
+config_bgpview: "Konfigurasi untuk modul BGPView (menyediakan fasilitas pencarian ASN dan kode negara untuk CIDRAM."
+config_bgpview_blocked_asns: "Daftar ASN yang akan diblokir saat dicocokkan oleh modul BGPView."
+config_bgpview_blocked_ccs: "Daftar negara (diidentifikasi oleh kode negara 2 digit {{Links.ISO.3166}} mereka) yang akan diblokir saat dicocokkan oleh modul BGPView."
+config_bgpview_whitelisted_asns: "Daftar ASN yang akan terdaftar putih saat dicocokkan oleh modul BGPView."
+config_bgpview_whitelisted_ccs: "Daftar negara (diidentifikasi oleh kode negara 2 digit {{Links.ISO.3166}} mereka) yang akan terdaftar putih saat dicocokkan oleh modul BGPView."
 config_bypasses: "Konfigurasi untuk bypass tanda tangan default."
 config_bypasses_used: "Bypass mana yang harus digunakan?"
 config_components: "Konfigurasi untuk pengaktifan dan penonaktifan komponen yang digunakan oleh CIDRAM. Biasanya diisi oleh halaman pembaruan, tetapi juga dapat dikelola dari sini untuk kontrol yang lebih baik dan untuk komponen dipersonalisasi yang tidak dikenali oleh halaman pembaruan."

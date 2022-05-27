@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Russian language data for the front-end (last modified: 2022.05.26).
+# This file: Russian language data for the front-end (last modified: 2022.05.27).
 ##/
 
 Extended Description AbuseIPDB module: "Блокирует запросы от IP-адресов, перечисленных в AbuseIPDB."
@@ -72,6 +72,11 @@ checkbox_label_stage_infractions: "Засчитывать нарушения, в
 checkbox_label_stage_log_errors: "Записывать какие-либо ошибки, возникшие на этом этапе?"
 checkbox_label_untrack_positives: "Перестать отслеживать положительные?"
 checkbox_label_verify: "Попробуй проверить?"
+config_bgpview: "Конфигурация для модуля BGPView (предоставляет средство поиска ASN и кода страны для CIDRAM)."
+config_bgpview_blocked_asns: "Список ASN, которые будут заблокированы при соответствует модулем BGPView."
+config_bgpview_blocked_ccs: "Список стран (идентифицируются их двухзначными кодами стран {{Links.ISO.3166}}), которые будут заблокированы при соответствует модулем BGPView."
+config_bgpview_whitelisted_asns: "Список ASN для включения в белый список при соответствует модулем BGPView."
+config_bgpview_whitelisted_ccs: "Список стран (идентифицируются их двухзначными кодами стран {{Links.ISO.3166}}) для включения в белый список при соответствует модулем BGPView."
 config_bypasses: "Стандартная конфигурация байпаса сигнатуры."
 config_bypasses_used: "Какие байпасы следует использовать?"
 config_components: "Конфигурация для активации и деактивации компонентов, используемых CIDRAM. Обычно заполняется страницей обновлений, но также может управляться отсюда для более точного контроля и для пользовательских компонентов, не распознаваемых страницей обновлений."

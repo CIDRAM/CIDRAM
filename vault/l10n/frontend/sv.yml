@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Swedish language data for the front-end (last modified: 2022.05.26).
+# This file: Swedish language data for the front-end (last modified: 2022.05.27).
 ##/
 
 Extended Description AbuseIPDB module: "Blockerar förfrågningar från IP-adresser som listas på AbuseIPDB."
@@ -72,6 +72,11 @@ checkbox_label_stage_infractions: "Räkna infraktions som genererats under detta
 checkbox_label_stage_log_errors: "Logga några fel som genererats under detta skede?"
 checkbox_label_untrack_positives: "Sluta spåra efter positiva?"
 checkbox_label_verify: "Försök att verifiera?"
+config_bgpview: "Konfiguration för BGPView-modulen (tillhandahåller en ASN- och landskodsökningsfunktion för CIDRAM)."
+config_bgpview_blocked_asns: "En lista över ASNer som ska blockeras när de matchas av BGPView-modulen."
+config_bgpview_blocked_ccs: "En lista över länder (identifieras med sina tvåsiffriga {{Links.ISO.3166}}-landskoder) som ska blockeras när de matchas av BGPView-modulen."
+config_bgpview_whitelisted_asns: "En lista över ASNer som ska vitlistas när de matchas av BGPView-modulen."
+config_bgpview_whitelisted_ccs: "En lista över länder (identifieras med sina tvåsiffriga {{Links.ISO.3166}}-landskoder) som ska vitlistas när de matchas av BGPView-modulen."
 config_bypasses: "Konfiguration för standard-signatur-bypasserna."
 config_bypasses_used: "Vilka bypasser ska användas?"
 config_components: "Konfiguration för aktivering och avaktivering av komponenterna som används av CIDRAM. Fylls vanligtvis av uppdateringssidan, men kan också hanteras härifrån för bättre kontroll och för anpassade komponenter som inte känns igen av uppdateringssidan."

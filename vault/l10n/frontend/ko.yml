@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Korean language data for the front-end (last modified: 2022.05.26).
+# This file: Korean language data for the front-end (last modified: 2022.05.27).
 ##/
 
 Extended Description AbuseIPDB module: "AbuseIPDB에 나열된 IP의 요청을 차단합니다."
@@ -72,6 +72,11 @@ checkbox_label_stage_infractions: "이 단계에서 생성된 위반은 IP 추�
 checkbox_label_stage_log_errors: "이 단계에서 생성된 오류를 기록하시겠습니까?"
 checkbox_label_untrack_positives: "포지티브를 추적 해제하시겠습니까?"
 checkbox_label_verify: "검증을 시도?"
+config_bgpview: "BGPView 모듈 구성 (CIDRAM에 대한 ASN 및 국가 코드 조회 기능을 제공합니다)."
+config_bgpview_blocked_asns: "BGPView 모듈에서 차단할 ASN 목록입니다."
+config_bgpview_blocked_ccs: "BGPView 모듈에서 차단할 국가 목록 ({{Links.ISO.3166}} 2자리 국가 코드로 식별) 목록입니다."
+config_bgpview_whitelisted_asns: "BGPView 모듈에서 화이트리스트에 추가할 ASN 목록입니다."
+config_bgpview_whitelisted_ccs: "BGPView 모듈에서 허용 목록에 추가할 국가 ({{Links.ISO.3166}} 2자리 국가 코드로 식별) 목록입니다."
 config_bypasses: "기본 서명 바이 패스 구성."
 config_bypasses_used: "어떤 바이 패스를 사용해야 합니까?"
 config_components: "CIDRAM에서 사용하는 구성 요소를 활성화 및 비활성화하기 위한 구성입니다. 일반적으로 업데이트 페이지에 의해 채워지지만, 세부 제어 및 업데이트 페이지에서 인식하지 못하는 사용자 지정 구성 요소를 위해 여기에서 관리할 수도 있습니다."

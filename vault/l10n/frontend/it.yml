@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Italian language data for the front-end (last modified: 2022.05.26).
+# This file: Italian language data for the front-end (last modified: 2022.05.27).
 ##/
 
 Extended Description AbuseIPDB module: "Blocca le richieste dagli IP elencati in AbuseIPDB."
@@ -72,6 +72,11 @@ checkbox_label_stage_infractions: "Le infrazioni generati durante questa fase de
 checkbox_label_stage_log_errors: "Gli errori generati durante questa fase devono essere registrati?"
 checkbox_label_untrack_positives: "Annulla le tracciamento per i positivi?"
 checkbox_label_verify: "Prova a verificare?"
+config_bgpview: "Configurazione per il modulo BGPView (fornisce la funzionalità di ricerca del codice ASN e del paese per CIDRAM)."
+config_bgpview_blocked_asns: "Un elenco di ASN che verranno bloccati quando corrispondono dal modulo BGPView."
+config_bgpview_blocked_ccs: "Un elenco di paesi (identificati dai loro codici paese {{Links.ISO.3166}} a 2 cifre) che verranno bloccati quando corrispondono dal modulo BGPView."
+config_bgpview_whitelisted_asns: "Un elenco di ASN da inserire nella lista bianca quando corrispondono dal modulo BGPView."
+config_bgpview_whitelisted_ccs: "Un elenco di paesi (identificati dai loro codici paese {{Links.ISO.3166}} a 2 cifre) da inserire nella lista bianca quando corrispondono dal modulo BGPView."
 config_bypasses: "Configurazione per i bypass di firma predefiniti."
 config_bypasses_used: "Quali bypass dovrebbero essere usati?"
 config_components: "Configurazione per l'attivazione e la disattivazione dei componenti utilizzati da CIDRAM. Tipicamente popolato dalla pagina degli aggiornamenti, ma può anche essere gestito da qui per un controllo più accurato e per componenti personalizzati non riconosciuti dalla pagina degli aggiornamenti."

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (traditional) language data for the front-end (last modified: 2022.05.26).
+# This file: Chinese (traditional) language data for the front-end (last modified: 2022.05.27).
 ##/
 
 Extended Description AbuseIPDB module: "阻止來自AbuseIPDB列出的IP的請求。"
@@ -72,6 +72,11 @@ checkbox_label_stage_infractions: "將在此階段產生的違規計入IP跟踪�
 checkbox_label_stage_log_errors: "記錄在此階段產生的任何錯誤？"
 checkbox_label_untrack_positives: "取消跟踪陽性？"
 checkbox_label_verify: "嘗試驗證？"
+config_bgpview: "BGPView模塊的配置（為CIDRAM提供ASN和國家代碼查找工具）。"
+config_bgpview_blocked_asns: "被BGPView模塊匹配時要阻止的ASN列表。"
+config_bgpview_blocked_ccs: "由BGPView模塊匹配時要阻止的國家列表（由其{{Links.ISO.3166}}兩個字母的國家代碼標識）。"
+config_bgpview_whitelisted_asns: "由BGPView模塊匹配時要列入白名單的ASN列表。"
+config_bgpview_whitelisted_ccs: "由BGPView模塊匹配時要列入白名單的國家列表（由其{{Links.ISO.3166}}兩個字母的國家代碼標識）。"
 config_bypasses: "默認簽名繞過配置。"
 config_bypasses_used: "應該使用哪些繞過？"
 config_components: "CIDRAM使用的組件的啟用和停用的配置。​通常由更新頁面填充，但也可以從此處進行管理，以實現更好的控制以及更新頁面無法識別的自定義組件。"

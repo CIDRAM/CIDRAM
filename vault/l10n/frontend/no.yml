@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Norwegian language data for the front-end (last modified: 2022.05.26).
+# This file: Norwegian language data for the front-end (last modified: 2022.05.27).
 ##/
 
 Extended Description AbuseIPDB module: "Blokkerer forespørsler fra IP-er oppført på AbuseIPDB."
@@ -72,6 +72,11 @@ checkbox_label_stage_infractions: "Telle infraksjoner generert i løpet av dette
 checkbox_label_stage_log_errors: "Logge noen feil generert i løpet av dette stadiet?"
 checkbox_label_untrack_positives: "Slutte å spore etter positive?"
 checkbox_label_verify: "Prøv å bekrefte?"
+config_bgpview: "Konfigurasjon for BGPView-modulen (tilbyr en ASN- og landskodeoppslagsfunksjon for CIDRAM)."
+config_bgpview_blocked_asns: "En liste over ASNer som skal blokkeres når de matchet av BGPView-modulen."
+config_bgpview_blocked_ccs: "En liste over land (identifisert av deres {{Links.ISO.3166}} 2-sifrede landskoder) som skal blokkeres når de matchet av BGPView-modulen."
+config_bgpview_whitelisted_asns: "En liste over ASNer som skal hvitelistes når de matchet av BGPView-modulen."
+config_bgpview_whitelisted_ccs: "En liste over land (identifisert av deres {{Links.ISO.3166}} 2-sifrede landskoder) som skal hvitelistes når de matchet av BGPView-modulen."
 config_bypasses: "Konfigurasjon for standard-signatur-bypassene."
 config_bypasses_used: "Hvilke bypasser skal brukes?"
 config_components: "Konfigurasjon for aktivering og deaktivering av komponentene som brukes av CIDRAM. Fylles vanligvis ut av oppdateringssiden, men kan også administreres herfra for bedre kontroll og for tilpassede komponenter som ikke gjenkjennes av oppdateringssiden."
@@ -292,7 +297,7 @@ hints_ipv6_on_32bit: "Merk: IPv6-oppslag fungerer kanskje ikke riktig på enkelt
 hints_pdo_dsn:
  FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#HOW_TO_USE_PDO" hreflang="en-AU">Hva er en "PDO DSN"? Hvordan kan jeg bruke PDO med CIDRAM?</a></em>"
 hints_verification:
- "Hva er "positive" og "negative"?": "Når identiteten presentert av en forespørsel er verifisert, kan et vellykket resultat beskrives som "positiv" eller "negativ". I tilfelle at identiteten som presenteres bekreftes å være den sanne identiteten, den vil bli beskrevet som "positiv". I tilfelle det bekreftes at identiteten som presenteres er forfalsket, den vil bli beskrevet som "negativ". Imidlertid, et mislykket resultat (f.eks., verifisering mislykkes, eller sannheten til identiteten som presenteres ikke kan fastslås) vil ikke beskrives som "positiv" eller "negativ". I stedet, et mislykket resultat vil ganske enkelt beskrives som ikke-verifisert. Når det ikke gjøres noe forsøk på å bekrefte identiteten som presenteres av en forespørsel, forespørselen vil på samme måte bli beskrevet som ikke-verifisert. Begrepene gir mening bare i konteksten der identiteten som presenteres av en forespørsel gjenkjennes, og derfor der verifisering er mulig. I tilfeller der identiteten som presenteres ikke samsvarer med alternativene ovenfor, eller der ingen identitet er presentert, alternativene gitt ovenfor blir irrelevante."
+ "Hva er "positive" og "negative"?": "Når identiteten presentert av en forespørsel er verifisert, kan et vellykket resultat beskrives som "positiv" eller "negativ". I tilfelle at identiteten som presenteres bekreftes å være den sanne identiteten, den vil bli beskrevet som "positiv". I tilfelle det bekreftes at identiteten som presenteres er forfalsket, den vil bli beskrevet som "negativ". Imidlertid, et mislykket resultat (f.eks., verifisering mislykkes, eller sannheten til identiteten som presenteres ikke kan fastslås) vil ikke beskrives som "positiv" eller "negativ". I stedet, et mislykket resultat vil ganske enkelt beskrives som ikke-verifisert. Når det ikke gjøres noe forsøk på å bekrefte identiteten som presenteres av en forespørsel, forespørselen vil på samme måte bli beskrevet som ikke-verifisert. Begrepene gir mening bare i konteksten der identiteten som presenteres av en forespørsel gjenkjennes, og derfor der verifisering er mulig. I tilfeller der identiteten som presenteres ikke matchet av alternativene ovenfor, eller der ingen identitet er presentert, alternativene gitt ovenfor blir irrelevante."
  "Hva er "enkelt-hit bypasser"?": "I noen tilfeller kan en positiv bekreftet forespørsel fortsatt blokkeres som et resultat av signaturfilene, modulene, eller andre forhold i forespørselen, og bypasser kan være nødvendig for å unngå falske positiver. I tilfellet der en bypass er ment å håndtere nøyaktig ett infraksjon, verken mer eller mindre, slik en bypass kan beskrives som en "enkelt-hit bypass"."
 info_some_useful_links: |
  Noen nyttige lenker:<br />

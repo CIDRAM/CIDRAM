@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Vietnamese language data for the front-end (last modified: 2022.05.26).
+# This file: Vietnamese language data for the front-end (last modified: 2022.05.27).
 ##/
 
 Extended Description AbuseIPDB module: "Chặn các yêu cầu từ IP được liệt kê tại AbuseIPDB."
@@ -72,6 +72,11 @@ checkbox_label_stage_infractions: "Đếm các vi phạm được tạo ra trong
 checkbox_label_stage_log_errors: "Ghi lại bất kỳ lỗi nào được tạo ra trong giai đoạn này?"
 checkbox_label_untrack_positives: "Ngừng theo dõi tích cực?"
 checkbox_label_verify: "Cố gắng xác minh?"
+config_bgpview: "Cấu hình cho mô-đun BGPView (cung cấp cơ sở tra cứu cho ASN và mã quốc gia cho CIDRAM)."
+config_bgpview_blocked_asns: "Danh sách các ASN sẽ bị chặn khi được đối sánh bởi mô-đun BGPView."
+config_bgpview_blocked_ccs: "Danh sách các quốc gia (được xác định bằng mã quốc gia 2 chữ số {{Links.ISO.3166}} của họ) bị chặn khi được đối sánh bởi mô-đun BGPView."
+config_bgpview_whitelisted_asns: "Danh sách các ASN sẽ được đưa vào danh sách trắng khi được đối sánh bởi mô-đun BGPView."
+config_bgpview_whitelisted_ccs: "Danh sách các quốc gia (được xác định bằng mã quốc gia 2 chữ số {{Links.ISO.3166}} của họ) sẽ được đưa vào danh sách trắng khi được đối sánh bởi mô-đun BGPView."
 config_bypasses: "Cấu hình cho các đường tránh chữ ký mặc định."
 config_bypasses_used: "Những đường tránh nào nên được sử dụng?"
 config_components: "Cấu hình để kích hoạt và vô hiệu hóa các thành phần được sử dụng bởi CIDRAM. Thường được điền bởi trang cập nhật, nhưng cũng có thể được quản lý từ đây để kiểm soát tốt hơn và cho các thành phần tùy chỉnh không được công nhận bởi trang cập nhật."

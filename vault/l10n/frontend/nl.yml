@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Dutch language data for the front-end (last modified: 2022.05.26).
+# This file: Dutch language data for the front-end (last modified: 2022.05.27).
 ##/
 
 Extended Description AbuseIPDB module: "Blokkeert aanvragen van IP's die worden vermeld op AbuseIPDB."
@@ -72,6 +72,11 @@ checkbox_label_stage_infractions: "Moeten overtredingen die gegenereerd door dez
 checkbox_label_stage_log_errors: "Moeten fouten die gegenereerd door deze fase worden geregistreerd?"
 checkbox_label_untrack_positives: "Tracking annuleren voor positieven?"
 checkbox_label_verify: "Proberen te verifiëren?"
+config_bgpview: "Configuratie voor de BGPView-module (biedt een zoekfunctie voor ASN en landcodes voor CIDRAM)."
+config_bgpview_blocked_asns: "Een lijst met ASN's die moeten worden geblokkeerd wanneer ze worden gekoppeld mit de BGPView-module."
+config_bgpview_blocked_ccs: "Een lijst met landen (geïdentificeerd door hun {{Links.ISO.3166}} 2-cijferige landcodes) die moeten worden geblokkeerd wanneer ze worden gekoppeld mit de BGPView-module."
+config_bgpview_whitelisted_asns: "Een lijst met ASN's die op de witte lijst moeten worden geplaatst wanneer ze worden gekoppeld mit de BGPView-module."
+config_bgpview_whitelisted_ccs: "Een lijst met landen (geïdentificeerd door hun {{Links.ISO.3166}} 2-cijferige landcodes) die op de witte lijst moeten worden geplaatst wanneer ze worden gekoppeld mit de BGPView-module."
 config_bypasses: "Configuratie voor de standaard bypasses voor signatures."
 config_bypasses_used: "Welke bypasses moeten worden gebruikt?"
 config_components: "Configuratie voor het activeren en het deactiveren van de door CIDRAM gebruikte componenten. Meestal gevuld door de updates-pagina, maar kan ook vanaf hier worden beheerd voor fijnere controle en voor aangepaste componenten die niet worden herkend door de updates-pagina."

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Thai language data for the front-end (last modified: 2022.05.26).
+# This file: Thai language data for the front-end (last modified: 2022.05.27).
 ##/
 
 Extended Description AbuseIPDB module: "บล็อกคำขอจาก IP ที่แสดงรายการไว้ที่ AbuseIPDB."
@@ -72,6 +72,11 @@ checkbox_label_stage_infractions: "นับการละเมิดที่
 checkbox_label_stage_log_errors: "บันทึกข้อผิดพลาดใด ๆ ที่เกิดขึ้นระหว่างขั้นตอนนี้?"
 checkbox_label_untrack_positives: "เลิกติดตามผลบวก?"
 checkbox_label_verify: "ลองตรวจสอบ?"
+config_bgpview: "การกำหนดค่าสำหรับโมดูล BGPView (ให้สิ่งอำนวยความสะดวกในการค้นหา ASN และรหัสประเทศสำหรับ CIDRAM)."
+config_bgpview_blocked_asns: "รายการ ASN ที่จะถูกบล็อกโดยโมดูล BGPView."
+config_bgpview_blocked_ccs: "รายชื่อประเทศ (ระบุด้วยรหัสประเทศ {{Links.ISO.3166}} สองตัวอักษร) ที่จะบล็อกโดยโมดูล BGPView."
+config_bgpview_whitelisted_asns: "รายการ ASN ที่จะอนุญาตพิเศษโดยโมดูล BGPView."
+config_bgpview_whitelisted_ccs: "รายชื่อประเทศ (ระบุด้วยรหัสประเทศ {{Links.ISO.3166}} สองตัวอักษร) ที่จะอนุญาตพิเศษโดยโมดูล BGPView."
 config_bypasses: "การกำหนดค่าสำหรับการข้ามลายเซ็นเริ่มต้น."
 config_bypasses_used: "ควรใช้บายพาสใด?"
 config_components: "การกำหนดค่าสำหรับการเปิดใช้งานและการปิดใช้งานส่วนประกอบที่ใช้โดย CIDRAM. โดยปกติหน้าการอัปเดตจะจัดการสิ่งนี้ แต่สามารถจัดการได้จากที่นี่เพื่อการควบคุมที่ละเอียดยิ่งขึ้นและส่วนประกอบที่กำหนดเอง."

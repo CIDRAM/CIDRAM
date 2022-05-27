@@ -1,0 +1,29 @@
+##\
+# This file is a part of the CIDRAM package.
+# Homepage: https://cidram.github.io/
+#
+# CIDRAM COPYRIGHT 2016 and beyond by Caleb Mazalevskis (Maikuolan).
+#
+# License: GNU/GPLv2
+# @see LICENSE.txt
+#
+# This file: BGPView defaults file (last modified: 2022.05.27).
+##/
+
+Config Defaults:
+ bgpview:
+  blocked_asns:
+   type: "string"
+   default: ""
+  whitelisted_asns:
+   type: "string"
+   default: ""
+  blocked_ccs:
+   type: "string"
+   default: ""
+  whitelisted_ccs:
+   type: "string"
+   default: ""
+  timeout_limit:
+   type: "int"
+   default: 12

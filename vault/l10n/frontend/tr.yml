@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Turkish language data for the front-end (last modified: 2022.05.26).
+# This file: Turkish language data for the front-end (last modified: 2022.05.27).
 ##/
 
 Extended Description AbuseIPDB module: "AbuseIPDB'de listelenen IP'lerden gelen istekleri engeller."
@@ -72,6 +72,11 @@ checkbox_label_stage_infractions: "IP izleme yönelik bu aşamada oluşturulan i
 checkbox_label_stage_log_errors: "Bu aşamada oluşan herhangi bir hata günlüğe kaydedilsin mi?"
 checkbox_label_untrack_positives: "Pozitifler için izleme durdurulsun mu?"
 checkbox_label_verify: "Doğrulamayı dene?"
+config_bgpview: "BGPView modülü için yapılandırma (CIDRAM için bir ASN ve ülke kodu arama olanağı sağlar)."
+config_bgpview_blocked_asns: "BGPView modülü tarafından eşleştirildiğinde engellenecek ASN'lerin listesi."
+config_bgpview_blocked_ccs: "BGPView modülü tarafından eşleştirildiğinde engellenecek ülkelerin listesi ({{Links.ISO.3166}} 2-haneli ülke kodlarıyla tanımlanır)."
+config_bgpview_whitelisted_asns: "BGPView modülü tarafından eşleştirildiğinde beyaz listeye alınacak ASN'lerin listesi."
+config_bgpview_whitelisted_ccs: "BGPView modülü tarafından eşleştirildiğinde beyaz listeye alınacak ülkelerin listesi ({{Links.ISO.3166}} 2-haneli ülke kodlarıyla tanımlanır)."
 config_bypasses: "Varsayılan imza bypass için yapılandırma."
 config_bypasses_used: "Hangi bypasslar kullanılmalıdır?"
 config_components: "CIDRAM tarafından kullanılan bileşenlerin etkinleştirilmesi ve devre dışı bırakılması için yapılandırma. Genellikle güncelleme sayfası tarafından doldurulur, ancak daha hassas kontrol ve güncelleme sayfası tarafından tanınmayan özel bileşenler için buradan da yönetilebilir."

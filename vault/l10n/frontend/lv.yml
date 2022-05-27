@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Latvian language data for the front-end (last modified: 2022.05.26).
+# This file: Latvian language data for the front-end (last modified: 2022.05.27).
 ##/
 
 Extended Description AbuseIPDB module: "Bloķē pieprasījumus no IP, kas uzskaitīti vietnē AbuseIPDB."
@@ -72,6 +72,11 @@ checkbox_label_stage_infractions: "Vai šajā posmā ģenerētie pārkāpumi tie
 checkbox_label_stage_log_errors: "Vai reģistrēt visas šajā posmā radušās kļūdas?"
 checkbox_label_untrack_positives: "Vai atcelt pozitīvu izsekošana?"
 checkbox_label_verify: "Vai mēģināt pārbaudīt?"
+config_bgpview: "BGPView moduļa konfigurācija (nodrošina ASN un valsts koda uzmeklēšanas iespēju CIDRAM)."
+config_bgpview_blocked_asns: "To ASN saraksts, kuras jābloķē, ja tos saskaņo BGPView modulis."
+config_bgpview_blocked_ccs: "To valstu saraksts (identificē ar to {{Links.ISO.3166}} 2-ciparu valsts kodiem), kuras jābloķē, ja tos saskaņo BGPView modulis."
+config_bgpview_whitelisted_asns: "To ASN saraksts, kas jāiekļauj baltajā sarakstā, ja tos saskaņo BGPView modulis."
+config_bgpview_whitelisted_ccs: "To valstu saraksts (identificē ar to {{Links.ISO.3166}} 2-ciparu valsts kodiem), kas jāiekļauj baltajā sarakstā, ja tos saskaņo BGPView modulis."
 config_bypasses: "Noklusējuma parakstu apvedceļu konfigurācija."
 config_bypasses_used: "Kuri apvedceļi jāizmanto?"
 config_components: "CIDRAM izmantoto konfigurācija komponentu aktivizēšanai un deaktivizēšanai. Parasti to aizpilda atjauninājumu lapa, taču to var arī pārvaldīt no šejienes, lai iegūtu precīzāku kontroli un pielāgotus komponentus, ko atjauninājumu lapa neatpazīst."

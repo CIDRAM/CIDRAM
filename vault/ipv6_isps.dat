@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6_isps.dat
 
-# Version: 2022.144.0
-# Last modified: 2022.05.25
+# Version: 2022.146.0
+# Last modified: 2022.05.27
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -988,10 +988,10 @@ Tag: Init7
 # Canadian domestic ISP. Phishing, webapp attacks, spam, and probing for
 # vulnerabilities detected from here. Listing just the affected
 # ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 814.
-# Updated: 2021.09.14
+# Stop Forum Spam (SFS) listings: 1,021.
+# Updated: 2022.05.27
 
-2605:b100:e001:eb3e::/64 Deny Spam
+2605:b100:b1d:76b8::/64 Deny Spam
 Origin: CA
 Profile: Domestic ISP
 Tag: Bell Canada

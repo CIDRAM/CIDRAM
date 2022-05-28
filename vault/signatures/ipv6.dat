@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6.dat
 
-# Version: 2022.144.0
-# Last modified: 2022.05.25
+# Version: 2022.147.0
+# Last modified: 2022.05.28
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -1889,19 +1889,20 @@ Profile: Infrastructure/Transit;Tor endpoints here;Webhosting
 Tag: Performive LLC
 
 
-# ASNs 6659, 8972, 20621, 20738, 20773, 21499, 21501, 25074, 29066, 29486,
-# 31100, 34011, 34088, 35329, 39783, 44273, 61157, 200386 ("Host Europe
-# GmbH", "PlusServer GmbH"). Extremely large international, dedicated
-# webhosting provider, and a significant source of various nefarious traffic
-# over the course of many years including DDoS, XMLRPC/WordPress, SSH, and
-# webapp attacks, phishing, scraping, hacking, spam, and more.
-# Updated: 2021.12.16
+# ASNs 6659, 8972, 20738, 20773, 21499, 21501, 29066, 29486, 34011, 34088,
+# 39783, 44273, 61157, 200386 ("Host Europe GmbH", "PlusServer GmbH").
+# Extremely large international, dedicated webhosting provider, and a
+# significant source of various nefarious traffic over the course of many years
+# including DDoS, XMLRPC/WordPress, SSH, and webapp attacks, phishing,
+# scraping, hacking, spam, and more.
+# Updated: 2022.05.26
 
 2001:830::/32 Deny Cloud
 2001:aa8::/32 Deny Cloud
 2001:1520::/32 Deny Cloud
 2a00:e10::/32 Deny Cloud
 2a00:1158::/32 Deny Cloud
+2a00:1168::/32 Deny Cloud
 2a00:1169::/39 Deny Cloud
 2a00:1c90::/32 Deny Cloud
 2a00:74c0::/32 Deny Cloud
@@ -1912,7 +1913,7 @@ Tag: Performive LLC
 2a02:ad0::/29 Deny Cloud
 2a02:2690::/32 Deny Cloud
 2a02:cbf0::/29 Deny Cloud
-2a02:e740::/29 Deny Cloud
+2a02:e740::/48 Deny Cloud
 2a04:2f80::/29 Deny Cloud
 2a05:c340::/29 Deny Cloud
 2a09:2040::/29 Deny Cloud
@@ -1922,11 +1923,10 @@ Tag: Performive LLC
 Origin: DE
 2a0f:4a00::/29 Deny Cloud
 Origin: SC
-2603:4:e::/47 Deny Cloud
 2603:4:1000::/45 Deny Cloud
 2603:4:1008::/46 Deny Cloud
 2603:4:100c::/47 Deny Cloud
-2603:4:1012::/47 Deny Cloud
+2603:4:1010::/46 Deny Cloud
 2603:4:1200::/48 Deny Cloud
 2603:4:1204::/48 Deny Cloud
 2603:4:1300::/48 Deny Cloud
@@ -1941,12 +1941,11 @@ Origin: SC
 2603:4:1704::/48 Deny Cloud
 2603:5:2100::/40 Deny Cloud
 2603:5:2200::/40 Deny Cloud
-2603:5:2f00::/44 Deny Cloud
 2604:bc80:8000::/33 Deny Cloud
 2607:f208:d310::/44 Deny Cloud
 2607:f208:df05::/48 Deny Cloud
 Origin: US
-Profile: Dedicated;Tor endpoints here;Webhosting
+Profile: Dedicated;Frequent changes;Tor endpoints here;Webhosting
 Tag: Host Europe GmbH
 
 
@@ -4097,32 +4096,34 @@ Tag: NForce Entertainment
 # ASNs 55990, 63655, 131444, 136907, 140723, 141180, 200756, 206204, 206798
 # ("Huawei Cloud Service data center", "Huawei Technologies Co., Ltd", "HUAWEI
 # CLOUDS").
-# Stop Forum Spam (SFS) listings: 369 (AS55990), 1 (AS131444), 432 (AS136907).
-# Updated: 2021.08.31
+# Stop Forum Spam (SFS) listings: 423 (AS55990), 1,374 (AS136907).
+# Updated: 2022.05.27
 
 2407:c080::/36 Run bypasses.php
 2407:c080:1000::/37 Run bypasses.php
+2407:c080:4000::/37 Run bypasses.php
+2407:c080:5000::/37 Run bypasses.php
 2407:c080:7000::/47 Run bypasses.php
 Origin: CN
 2405:f080::/39 Run bypasses.php
 2405:f080:200::/48 Run bypasses.php
 2405:f080:400::/39 Run bypasses.php
 2405:f080:600::/48 Run bypasses.php
-2405:f080:810::/44 Run bypasses.php
+2405:f080:800::/40 Run bypasses.php
 2405:f080:9ff::/48 Run bypasses.php
 2405:f080:e00::/46 Run bypasses.php
 2405:f080:e06::/47 Run bypasses.php
 2405:f080:e08::/46 Run bypasses.php
 2405:f080:1000::/38 Run bypasses.php
 2405:f080:1400::/47 Run bypasses.php
+2405:f080:1500::/40 Run bypasses.php
 2405:f080:1600::/48 Run bypasses.php
 2405:f080:1602::/48 Run bypasses.php
 2405:f080:1e00::/46 Run bypasses.php
 2405:f080:1e0a::/47 Run bypasses.php
 2405:f080:1e0e::/47 Run bypasses.php
 2405:f080:1e10::/44 Run bypasses.php
-2405:f080:2000::/38 Run bypasses.php
-2405:f080:2400::/39 Run bypasses.php
+2405:f080:2000::/37 Run bypasses.php
 2405:f080:2800::/48 Run bypasses.php
 2405:f080:2a00::/48 Run bypasses.php
 2405:f080:2e00::/47 Run bypasses.php
@@ -4719,10 +4720,10 @@ Profile: Dedicated;Infrastructure/Transit;Webhosting
 Tag: Node4 Limited
 
 
-# ASNs 29757, 263179, 394474 ("Webline Services Inc", "Webline Services, S.A", "WhiteLabelColo").
-# Refer scamalytics.com/ip/isp/whitelabelcolo
-# Stop Forum Spam (SFS) listings: 14 (AS29757), 4,459 (AS263179), 20,784 (AS394474).
-# Updated: 2022.02.07
+# ASNs 29757, 35029, 263179, 394474 ("Webline Services Inc", "Webline Services,
+# S.A", "WhiteLabelColo"). Refer scamalytics.com/ip/isp/whitelabelcolo
+# Stop Forum Spam (SFS) listings: 14 (AS29757), 933 (AS263179), 37,882 (AS394474).
+# Updated: 2022.02.07 / Checked: 2022.05.28
 
 2604:d680::/48 Deny Cloud
 2604:d680:5::/48 Deny Cloud
@@ -4732,15 +4733,16 @@ Tag: Webline/WhiteLabel
 
 
 # ASN 34549 ("meerfarbig GmbH & Co. KG").
-# Stop Forum Spam (SFS) listings: 8.
-# Updated: 2021.09.23
+# Stop Forum Spam (SFS) listings: 14.
+# Updated: 2022.05.26
 
 2a00:f820::/29 Deny Cloud
 2a01:360::/29 Deny Cloud
 2a07:6fc0::/29 Deny Cloud
+2a09:0:13::/48 Deny Cloud
+2a0b:f841::/32 Deny Cloud
 2a0f:b80::/29 Deny Cloud
 Origin: DE
-2a06:1287:3000::/44 Deny Cloud
 2a06:6580::/29 Deny Cloud
 2a06:8100::/29 Deny Cloud
 2a06:f500::/29 Deny Cloud
@@ -4748,6 +4750,8 @@ Origin: DE
 2a07:7e00::/29 Deny Cloud
 2a07:8740::/29 Deny Cloud
 Origin: IN
+2a06:1287:3000::/44 Deny Cloud
+Origin: US
 Profile: Dedicated;Infrastructure/Transit;Webhosting
 Tag: meerfarbig
 
@@ -10262,6 +10266,19 @@ Tag: QWARTA LLC
 Origin: EE
 Profile: Restricted/Unidentifiable
 Tag: BlueVPS OU
+
+
+# ASN 38700 ("Companhia de Telecomunicacoes de Macau SARL").
+# Macao commercial network. Brute-force, WordPress/XMLRPC, SSH, FTP, DDoS, DNS,
+# IoT, and webapp attacks, scanning for vulnerabilities, spoofing, port scans,
+# hacking, and spam detected from here.
+# Stop Forum Spam (SFS) listings: 181.
+# Updated: 2022.05.26
+
+2001:f90::/32 Deny Attacks
+Origin: MO
+Profile: Commercial
+Tag: CyberCTM
 
 
 # ---

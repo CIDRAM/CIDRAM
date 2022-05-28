@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM front-end (last modified: 2022.05.26).
+ * This file: The CIDRAM front-end (last modified: 2022.05.28).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -16,6 +16,7 @@ namespace CIDRAM\CIDRAM;
 class FrontEnd extends Core
 {
     use AuxiliaryRules;
+    use CLI;
     use Configuration;
     use FrontEndMethods;
     use Logs;
@@ -40,11 +41,11 @@ class FrontEnd extends Core
     private $Alternate = false;
 
     /**
-     * Construct the CIDRAM core.
+     * View the front-end.
      *
      * @return void
      */
-    public function view()
+    public function view(): void
     {
         /** Checks whether we're calling CIDRAM through an alternative pathway (e.g., Cronable). */
         $this->Alternate = class_exists('\Maikuolan\Cronable\Cronable');

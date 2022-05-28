@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods used to simulate block events (last modified: 2022.05.22).
+ * This file: Methods used to simulate block events (last modified: 2022.05.28).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -131,10 +131,7 @@ trait SimulateBlockEvent
              * have their own scope and that superfluous data isn't preserved.
              */
             array_walk($Modules, function ($Module): void {
-                if (
-                    !empty($this->CIDRAM['Whitelisted']) ||
-                    preg_match('~^(?:assets|classes)[\x2F\x5C]|\.(css|gif|html?|jpe?g|js|png|ya?ml)$~i', $Module)
-                ) {
+                if (!empty($this->CIDRAM['Whitelisted'])) {
                     return;
                 }
                 $Module = (strpos($Module, ':') === false) ? $Module : substr($Module, strpos($Module, ':') + 1);
@@ -193,5 +190,42 @@ trait SimulateBlockEvent
          * as opposed to checking against actual, real requests; still needed to set it though to prevent errors).
          */
         $this->Reporter = null;
+    }
+
+    /**
+     * Public API lookup method.
+     *
+     * @param string|array $Addr An address or array of addresses to look up.
+     * @param bool $Modules True to enable testing against modules.
+     * @param bool $Aux True to enable testing against auxiliary rules.
+     * @param bool $Verification True to verify search engines et al.
+     * @param string $UA An optional custom user agent to cite for the lookup.
+     * @param string $UA An optional custom referrer to cite for the lookup.
+     * @return array The results of the lookup.
+     */
+    public function lookup($Addr = '', bool $Modules = false, bool $Aux = false, bool $Verification = false, string $Query = '', string $Referrer = '', string $UA = ''): array
+    {
+        if (!isset($this->FE)) {
+            $this->FE = [];
+        }
+        if (strlen($Query)) {
+            $this->FE['custom-query'] = $Query;
+        }
+        if (strlen($Referrer)) {
+            $this->FE['custom-referrer'] = $Referrer;
+        }
+        if (strlen($UA)) {
+            $this->FE['custom-ua'] = $UA;
+        }
+        if (is_array($Addr)) {
+            $Results = [];
+            foreach ($Addr as $ThisAddr) {
+                $this->simulateBlockEvent($ThisAddr, $Modules);
+                $Results[$ThisAddr] = $this->BlockInfo;
+            }
+            return $Results;
+        }
+        $this->simulateBlockEvent($Addr, $Modules);
+        return $this->BlockInfo;
     }
 }

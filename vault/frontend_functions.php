@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2022.05.20).
+ * This file: Front-end functions file (last modified: 2022.05.30).
  */
 
 /**
@@ -916,6 +916,11 @@ $CIDRAM['SimulateBlockEvent'] = function (string $Addr, bool $Modules = false, b
         /** Prepare run errors. */
         $CIDRAM['RunErrors'] = $CIDRAM['Errors'];
         $CIDRAM['RestoreErrorHandler']();
+    }
+
+    /** Perform forced hostname lookup if this has been enabled. */
+    if ($CIDRAM['Config']['general']['force_hostname_lookup']) {
+        $CIDRAM['Hostname'] = $CIDRAM['DNS-Reverse']($CIDRAM['BlockInfo']['IPAddrResolved'] ?: $CIDRAM['BlockInfo']['IPAddr']);
     }
 
     /** Instantiate report orchestrator (used by some modules). */

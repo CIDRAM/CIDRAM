@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Bot user agents module (last modified: 2022.05.18).
+ * This file: Bot user agents module (last modified: 2022.05.31).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -173,6 +173,8 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         ), 'Scraper UA'); // 2022.05.11
     }
 
+    $this->trigger(preg_match('~^mozila/~', $UANoSpace), 'Hack attempt'); // 2022.05.31
+
     $this->trigger(preg_match(
         '/(?:007ac9|200please|360spider|3d-ftp|a(?:6-indexer|ccelo|ffinity|ghaven' .
         '|href|ipbot|naly(?:ticsseo|zer)|pp3lewebkit|rtviper|wcheck)|b(?:azqux|en' .
@@ -218,20 +220,20 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
     $this->trigger(preg_match(
         '~\.buzz|a(?:bonti|ccserver|cme.spider|nyevent-http|ppengine)|b(?:abbar\.' .
         'tech|igbozz|lackbird|logsearch|logbot|salsa)|c(?:astlebot|atexplorador|l' .
-        'ickagy|liqzbot|ontextad|orporama|rowsnest|yberpatrol)|(?<!amazona)dbot/|d(?:le_spider' .
-        '|omainappender|umprendertree)|flightdeckreportsbot|g(atheranalyzeprovide' .
-        '|dnplus|imme60|ooglebenjojo)|internetcensus|ips-agent|isitwp|k2spider|ke' .
-        'mvi|lexxebot|livelapbot|lwp|macinroyprivacyauditors|masscan|metaintellig' .
-        'ence|n(?:etcraft|ettrapport|icebot|mapscriptingengine|rsbot)|p(?:4bot|4l' .
-        'oad|acrawler|ageglimpse|arsijoo|egasusmonitoring|hantomjs|hpcrawl|ingdom' .
-        '|rlog)|r(?:arelyused|obo(?:cop|spider)|yze)|s(?:can\.lol|creener|itedoma' .
-        'in|mut|nap(?:preview)?bot|oapclient|ocial(?:ayer|searcher)|oso|pyglass|q' .
-        'uider|treetbot|ynapse)|t(?:omba|weezler)|urlappendbot|w(?:asalive|atchmo' .
-        'use|eb(?:-monitoring|bot|masteraid|money|thumbnail)|hatweb|ikiapiary|in(' .
-        '?:http|inet)|maid\.com|sr-agent|wwtype)|xenu|xovi|zibber|zurichfinancial' .
-        'services|^m$|(?:\W|^)(?:cu|pe)rl(?:\W|$)~',
+        'ickagy|liqzbot|ontextad|orporama|rowsnest|yberpatrol)|(?<!amazona)dbot/|' .
+        'd(?:le_spider|omainappender|umprendertree)|flightdeckreportsbot|g(athera' .
+        'nalyzeprovide|dnplus|imme60|ooglebenjojo)|internetcensus|ips-agent|isitw' .
+        'p|k2spider|kemvi|lexxebot|livelapbot|lwp|macinroyprivacyauditors|masscan' .
+        '|metaintelligence|n(?:etcraft|ettrapport|icebot|mapscriptingengine|rsbot' .
+        ')|p(?:4bot|4load|acrawler|ageglimpse|arsijoo|egasusmonitoring|hantomjs|h' .
+        'pcrawl|ingdom|rlog)|r(?:arelyused|obo(?:cop|spider)|yze)|s(?:can\.lol|cr' .
+        'eener|itedomain|mut|nap(?:preview)?bot|oapclient|ocial(?:ayer|searcher)|' .
+        'oso|pyglass|quider|treetbot|ynapse)|t(?:omba|weezler)|urlappendbot|w(?:a' .
+        'salive|atchmouse|eb(?:-monitoring|bot|masteraid|money|thumbnail)|hatweb|' .
+        'ikiapiary|in(?:http|inet)|maid\.com|sr-agent|wwtype)|xenu|xovi|zibber|zu' .
+        'richfinancialservices|^m$|(?:\W|^)(?:cu|pe)rl(?:\W|$)|gtbdfffgtb.?$~',
         $UANoSpace
-    ), 'Unauthorised'); // 2021.09.18
+    ), 'Unauthorised'); // 2022.05.31
 
     $this->trigger(preg_match(
         '~^(?!linkedinbot).*http-?(?:agent|client)~',

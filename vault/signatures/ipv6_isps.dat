@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6_isps.dat
 
-# Version: 2022.146.0
-# Last modified: 2022.05.27
+# Version: 2022.152.0
+# Last modified: 2022.06.02
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -46,8 +46,8 @@ Tag: PIN-AS
 
 # ASN 35804 ("PP SKS-LUGAN").
 # Ukrainian domestic ISP. Port scans, hacking, and spam detected from here.
-# Stop Forum Spam (SFS) listings: 264.
-# Updated: 2016.03.30 / Modified: 2021.11.06
+# Stop Forum Spam (SFS) listings: 94.
+# Updated: 2016.03.30 / Modified: 2021.11.06 / Checked: 2022.05.29
 
 2a00:ede0::/32 Deny Attacks
 Origin: UA
@@ -962,8 +962,8 @@ Tag: 31173 Services AB
 
 # ASNs 31593, 34187 ("LLC Renome-Service").
 # Ukrainian TV cable provider and a significant source of spam.
-# Stop Forum Spam (SFS) listings: 12,972 (AS31593), 267 (AS34187).
-# Updated: 2020.11.21 / Checked: 2021.06.16
+# Stop Forum Spam (SFS) listings: 4,784 (AS31593), 45 (AS34187).
+# Updated: 2020.11.21 / Checked: 2022.06.02
 
 2a03:1240::/48 Deny Spam
 Origin: UA
@@ -1578,3 +1578,41 @@ Tag: xTom GmbH
 Origin: IN
 Profile: Commercial;Domestic ISP;Infrastructure/Transit
 Tag: Smartlink Solutions
+
+
+# ASN 12874 ("Fastweb SpA").
+# Italian multiplay internet and mobile provider. Port scans, hacking, webapp
+# attacks, and spam detected from here.
+# Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 896.
+# Updated: 2022.06.01
+
+2001:b07:6454:90d7::/64 Deny Spam
+2001:b07:6460:9e5f::/64 Deny Spam
+Origin: IT
+Profile: Domestic ISP;Multiplay
+Tag: Fastweb SpA
+
+
+# ASN 5432 ("Proximus NV").
+# Belgian mobile and ISP. Brute-force attacks, port scans, hacking, and spam
+# detected from here. Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 548.
+# Updated: 2022.06.02
+
+2a02:a03f:e988:1d00::/64 Deny Spam
+Origin: BE
+Profile: Domestic ISP;Multiplay
+Tag: Proximus NV
+
+
+# ASN 44244 ("Iran Cell Service and Communication Company").
+# Iranian mobile and ISP. Port scans, hacking, and spam detected from here.
+# Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 262.
+# Updated: 2022.06.02
+
+2a01:5ec0:2006:d44c::/64 Deny Spam
+Origin: IR
+Profile: Domestic ISP;Multiplay
+Tag: Iran Cell

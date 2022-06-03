@@ -1,6 +1,6 @@
 CIDRAM Core:
  Name: "CIDRAM Core"
- Version: "3.0.0-DEV+22151000"
+ Version: "3.0.0-DEV+22153000"
  Dependencies:
   PHP: ">=7.2"
   Common Classes Package: "^2.9"
@@ -24,7 +24,7 @@ CIDRAM Core:
    Checksum: "6ba6dcefcc074462ffc07380b14d8673fd7fbb9c41b7024d977bce7943bb9192:4956"
   CIDRAM/CIDRAM/Core.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/CIDRAM/CIDRAM/Core.php"
-   Checksum: "5293135f4f3b44223da88d8121f950dcb4fb22aae2a584c92d181cf006f6b28e:117632"
+   Checksum: "85f66878b430cc9a612c7238e50fb45d79568db04f93299b94dbdcc8f67f005e:115669"
   CIDRAM/CIDRAM/Expand.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/CIDRAM/CIDRAM/Expand.php"
    Checksum: "ef517c735b7121860c15bc3f40d15e5d3d8da075a69dcb510ed2772d2d546eee:5991"
@@ -33,7 +33,7 @@ CIDRAM Core:
    Checksum: "33aa82bf2dff3dd04c15907dadd81d26715df806d0c635a83d1e20f9a03e88d2:15540"
   CIDRAM/CIDRAM/Protect.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/CIDRAM/CIDRAM/Protect.php"
-   Checksum: "dc2a9e95d9cc9ed9415a2dbdd2466ca4f05b4d3bf9cef5bf5221ef4c6c02941c:52153"
+   Checksum: "402b7c7cc2ba122756c4d09ac7f98c34a35c424b20c1479f460799207afe8427:54169"
   CIDRAM/CIDRAM/ReCaptcha.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/CIDRAM/CIDRAM/ReCaptcha.php"
    Checksum: "dd1f7f8b2382ad4962a8bdf15288307d8192680661752b4ce936c179acdf9a96:14994"
@@ -57,7 +57,7 @@ CIDRAM Core:
    Checksum: "81d4e41c24b339debda49eb6c2faf5f76d3663217c1e347bdde26229550949a2:6637"
 CIDRAM Front-End:
  Name: "CIDRAM Front-End"
- Version: "3.0.0-DEV+22149000"
+ Version: "3.0.0-DEV+22153000"
  Dependencies:
   PHP: ">=7.2"
   Common Classes Package: "^2.9"
@@ -241,13 +241,13 @@ CIDRAM Front-End:
    Checksum: "03d26f775be6f4426ffc92b703566380594efa8b4af37cdc6347b46ac5448875:35909"
   CIDRAM/CIDRAM/CLI.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/CIDRAM/CIDRAM/CLI.php"
-   Checksum: "fd168e7eb4bc4d58ba9f66c282d72f82601716136245a7f366b05f6b4085bf42:27961"
+   Checksum: "e835e18d8424056f1226eb82bbd096e298c5bb39274a9a671c9b3b2419767f2b:28021"
   CIDRAM/CIDRAM/Configuration.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/CIDRAM/CIDRAM/Configuration.php"
    Checksum: "6b22e672a6bd9f6d628cbdd46e5eefd53131eba345127058b3ffc63981b25be7:3606"
   CIDRAM/CIDRAM/FrontEnd.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/CIDRAM/CIDRAM/FrontEnd.php"
-   Checksum: "279ab0ebb0a6b3fc24c1ddda4ed8a310926b1d48de8587f35008bf33b3effe2b:274421"
+   Checksum: "e8ea194a061edffd661c4ea872c6d9e56c270f90d47dc3817cac1c093aa1a78b:274486"
   CIDRAM/CIDRAM/FrontEndMethods.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/CIDRAM/CIDRAM/FrontEndMethods.php"
    Checksum: "2f708cf7827924cd5a600d13a262ea6197e4279b00cf3746ec9281d116270510:46774"
@@ -827,14 +827,14 @@ Bad hosts blocker module:
 Bad TLDs blocker module:
  Name: "Bad TLDs blocker module"
  False Positive Risk: "Low"
- Version: "2022.146.0"
+ Version: "2022.153.0"
  Dependencies:
   CIDRAM Core: "^3.0.0-DEV"
  Uninstallable: true
  Files:
   modules/badtlds.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/modules/badtlds.php"
-   Checksum: "a9e1ca24c73e5708d397352db9de699f0c61135838a806f12f1123a78a13d2ae:1851"
+   Checksum: "8e61096fe540de9de6046dd761c0c30a2165521d5fe252b34e9d8e9d0537fc3a:1896"
    Used with: "modules"
 BGPView module:
  Name: "BGPView module"

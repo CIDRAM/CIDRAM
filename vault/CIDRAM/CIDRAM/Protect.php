@@ -8,13 +8,53 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Protect traits (last modified: 2022.05.24).
+ * This file: Protect traits (last modified: 2022.05.30).
  */
 
 namespace CIDRAM\CIDRAM;
 
 trait Protect
 {
+    /**
+     * Add a page output and block event logfile field.
+     *
+     * @param string $FieldInternal The internal name for the field.
+     * @param string $FieldName The name of the L10N string for the field.
+     * @param string $FieldData The data for the field.
+     * @param bool $Sanitise Whether the data needs to be sanitised.
+     * @param bool $ShowAtLabels Whether to show the data at the output labels.
+     * @return void
+     */
+    private function addField(string $FieldInternal, string $FieldName, string $FieldData, bool $Sanitise = false, bool $ShowAtLabels = true): void
+    {
+        if (!strlen($FieldData)) {
+            if (isset($this->CIDRAM['Fields'][$FieldInternal . ':OmitIfEmpty'])) {
+                return;
+            }
+            $FieldData = '-';
+        }
+        $Prepared = $Sanitise ? str_replace(
+            ['<', '>', "\r", "\n"],
+            ['&lt;', '&gt;', '&#13;', '&#10;'],
+            $FieldData
+        ) : $FieldData;
+        if (isset($this->CIDRAM['Fields'][$FieldInternal . ':ShowInLogs'])) {
+            $Logged = $this->Configuration['general']['log_sanitisation'] ? $Prepared : $FieldData;
+            $InternalResolved = $this->L10N->getString($FieldName) ?: $FieldName;
+            $InternalResolved .= $this->L10N->getString('pair_separator') ?: ': ';
+            $this->CIDRAM['FieldTemplates']['Logs'] .= $InternalResolved . $Logged . "\n";
+        }
+        if ($ShowAtLabels && isset($this->CIDRAM['Fields'][$FieldInternal . ':ShowInPageOutput'])) {
+            $this->CIDRAM['FieldTemplates']['Output'][] = sprintf(
+                '<span class="textLabel"%s>%s%s</span>%s<br />',
+                $this->CIDRAM['L10N-Lang-Attache'],
+                $this->CIDRAM['Client-L10N']->getString($FieldName) ?: $this->L10N->getString($FieldName) ?: $FieldName,
+                $this->CIDRAM['Client-L10N']->getString('pair_separator') ?: $this->L10N->getString('pair_separator') ?: ': ',
+                $Prepared
+            );
+        }
+    }
+
     /**
      * Called via the main Core instance in order to begin the execution chain.
      *
@@ -172,7 +212,7 @@ trait Protect
 
         /** Perform forced hostname lookup if this has been enabled. */
         if ($this->Configuration['general']['force_hostname_lookup']) {
-            $this->CIDRAM['Hostname'] = dnsReverse($this->BlockInfo['IPAddrResolved'] ?: $this->BlockInfo['IPAddr']);
+            $this->CIDRAM['Hostname'] = $this->dnsReverse($this->BlockInfo['IPAddrResolved'] ?: $this->BlockInfo['IPAddr']);
         }
 
         /** Executed only if maintenance mode is disabled. */

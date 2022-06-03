@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM front-end (last modified: 2022.05.28).
+ * This file: The CIDRAM front-end (last modified: 2022.06.02).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -857,17 +857,17 @@ class FrontEnd extends Core
                         $this->CIDRAM['ThisResponse'] .= ', {' . implode(', ', $this->CIDRAM['ThisExtension']['Drivers']) . '}';
                     }
                     $ExtensionsCopyData .= $this->ltrInRtf(
-                        sprintf('- %1$s➡%2$s\n', $this->CIDRAM['ThisExtension']['Name'], $this->CIDRAM['ThisResponse'])
+                        sprintf('- %s➡%s\n', $this->CIDRAM['ThisExtension']['Name'], $this->CIDRAM['ThisResponse'])
                     );
                     $this->CIDRAM['ThisResponse'] = '<span class="txtGn">' . $this->CIDRAM['ThisResponse'] . '</span>';
                 } else {
                     $ExtensionsCopyData .= $this->ltrInRtf(
-                        sprintf('- %1$s➡%2$s\n', $this->CIDRAM['ThisExtension']['Name'], $this->L10N->getString('response_no'))
+                        sprintf('- %s➡%s\n', $this->CIDRAM['ThisExtension']['Name'], $this->L10N->getString('response_no'))
                     );
                     $this->CIDRAM['ThisResponse'] = '<span class="txtRd">' . $this->L10N->getString('response_no') . '</span>';
                 }
                 $this->FE['Extensions'][] = '    <li><small>' . $this->ltrInRtf(sprintf(
-                    '%1$s➡%2$s',
+                    '%s➡%s',
                     $this->CIDRAM['ThisExtension']['Name'],
                     $this->CIDRAM['ThisResponse']
                 )) . '</small></li>';
@@ -1479,7 +1479,7 @@ class FrontEnd extends Core
                                 }
                             } else {
                                 $ThisDir['FieldOut'] .= sprintf(
-                                    '<option style="text-transform:capitalize" value="%1$s"%2$s>%3$s</option>',
+                                    '<option style="text-transform:capitalize" value="%s"%s>%s</option>',
                                     $ChoiceKey,
                                     $ChoiceKey === $this->Configuration[$CatKey][$DirKey] ? ' selected' : '',
                                     $ChoiceValue
@@ -1596,7 +1596,7 @@ class FrontEnd extends Core
                             $ThisDir['FieldOut'] .= sprintf(
                                 '<li><a dir="ltr" href="%s">%s</a></li>',
                                 $DirValue['Ref link'],
-                                $DirValue['Ref key']
+                                $this->L10N->Data[$DirValue['Ref key']] ?? $DirValue['Ref key']
                             );
                         }
                         $ThisDir['FieldOut'] .= "\n</ul>";
@@ -1610,7 +1610,7 @@ class FrontEnd extends Core
                 }
                 $CatKeyFriendly = $this->L10N->getString('config_' . $CatKey . '_label') ?: $CatKey;
                 $this->FE['Indexes'] .= sprintf(
-                    '<li><span class="comCat">%1$s</span><ul class="comSub">%2$s</ul></li>',
+                    '<li><span class="comCat">%s</span><ul class="comSub">%s</ul></li>',
                     $CatKeyFriendly,
                     $CatData
                 );
@@ -2765,7 +2765,7 @@ class FrontEnd extends Core
                         foreach ($this->Components['ThisComponentFiles'] as $ThisFile => $ThisFileSize) {
                             $this->formatFileSize($ThisFileSize);
                             $ThisListed .= sprintf(
-                                '<li><span class="txtBl" style="font-size:0.9em">%1$s – %2$s</span></li>',
+                                '<li><span class="txtBl" style="font-size:0.9em">%s – %s</span></li>',
                                 $ThisFile,
                                 $ThisFileSize
                             );
@@ -3705,7 +3705,7 @@ class FrontEnd extends Core
 
             /** Process CIDRs. */
             if (!empty($this->CIDRAM['CIDRs'])) {
-                $Aggregator = new \CIDRAM\CIDRAM\Aggregator(1);
+                $this->CIDRAM['Aggregator'] = new \CIDRAM\CIDRAM\Aggregator(1);
                 $this->CIDRAM['Factors'] = count($this->CIDRAM['CIDRs']);
                 array_walk($this->CIDRAM['CIDRs'], function ($CIDR, $Key): void {
                     $First = substr($CIDR, 0, strlen($CIDR) - strlen($Key + 1) - 1);
@@ -3717,11 +3717,11 @@ class FrontEnd extends Core
                         $Last = $this->L10N->getString('response_error');
                     }
                     $Netmask = $CIDR;
-                    $Aggregator->convertToNetmasks($Netmask);
+                    $this->CIDRAM['Aggregator']->convertToNetmasks($Netmask);
                     $Arr = ['CIDR' => $CIDR, 'Netmask' => $Netmask, 'ID' => preg_replace('~[^\dA-fa-f]~', '_', $CIDR), 'Range' => $First . ' – ' . $Last];
                     $this->FE['Ranges'] .= $this->parseVars($Arr, $this->FE['CalcRow']);
                 });
-                unset($Aggregator);
+                unset($this->CIDRAM['Aggregator']);
             }
 
             /** Parse output. */

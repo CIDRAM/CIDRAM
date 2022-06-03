@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: CIDRAM CLI mode (last modified: 2022.05.28).
+ * This file: CIDRAM CLI mode (last modified: 2022.06.01).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -377,15 +377,15 @@ To quit, type \"q\", \"quit\", or \"exit\" and press enter:
                     /** Process CIDRs. */
                     if (!empty($this->CIDRAM['CIDRs'])) {
                         $this->CIDRAM['Factors'] = count($this->CIDRAM['CIDRs']);
-                        array_walk($this->CIDRAM['CIDRs'], function ($CIDR, $Key) use (&$CIDRAM) {
+                        array_walk($this->CIDRAM['CIDRs'], function ($CIDR, $Key) {
                             if ($Chain) {
                                 $Chain .= $CIDR . "\n";
                             } else {
                                 $First = substr($CIDR, 0, strlen($CIDR) - strlen($Key + 1) - 1);
                                 if ($this->CIDRAM['Factors'] === 32) {
-                                    $Last = $this->CIDRAM['IPv4GetLast']($First, $Key + 1);
+                                    $Last = $this->ipv4GetLast($First, $Key + 1);
                                 } elseif ($this->CIDRAM['Factors'] === 128) {
-                                    $Last = $this->CIDRAM['IPv6GetLast']($First, $Key + 1);
+                                    $Last = $this->ipv6GetLast($First, $Key + 1);
                                 } else {
                                     $Last = $this->L10N->getString('response_error');
                                 }
@@ -404,13 +404,12 @@ To quit, type \"q\", \"quit\", or \"exit\" and press enter:
             /** Aggregate IPs/CIDRs. */
             if ($Cmd === 'aggregate' || substr($Cmd, 0, 10) === 'aggregate=') {
                 echo $this->L10N->getString('link_ip_aggregator') . "\n===\n";
-                $OutputFormat = (substr($Cmd, 10) === 'netmasks') ? 1 : 0;
-                $this->CIDRAM['Aggregator'] = new \CIDRAM\Aggregator\Aggregator($CIDRAM, $OutputFormat);
+                $this->CIDRAM['Aggregator'] = new \CIDRAM\CIDRAM\Aggregator(substr($Cmd, 10) === 'netmasks' ? 1 : 0);
+                $this->CIDRAM['Aggregator']->Results = true;
                 $Data = implode("\n", $Data);
                 $Data = str_replace("\r", '', trim($Data));
-                $Results = ['Parse' => 0, 'Tick' => 0, 'Measure' => 0];
-                $Timer = 0;
-                $this->CIDRAM['Aggregator']->callbacks['newParse'] = function ($Measure) {
+                $Results = ['Timer' => 0, 'Parse' => 0, 'Tick' => 0, 'Measure' => 0];
+                $this->CIDRAM['Aggregator']->callbacks['newParse'] = function ($Measure) use (&$Results) {
                     if ($Results['Parse'] !== 0) {
                         $Memory = memory_get_usage();
                         $this->formatFileSize($Memory);
@@ -420,16 +419,16 @@ To quit, type \"q\", \"quit\", or \"exit\" and press enter:
                     $Results['Parse']++;
                     $Results['Tick'] = 0;
                     $Results['Timer'] = 0;
-                    $Results['Measure'] = $Measure ?: $this->CIDRAM['Aggregator']->In;
+                    $Results['Measure'] = $Measure ?: $this->CIDRAM['Aggregator']->NumberEntered;
                 };
-                $this->CIDRAM['Aggregator']->callbacks['newTick'] = function () {
+                $this->CIDRAM['Aggregator']->callbacks['newTick'] = function () use (&$Results) {
                     $Results['Tick']++;
-                    $Timer++;
+                    $Results['Timer']++;
                     if ($Results['Tick'] >= $Results['Measure']) {
                         $Results['Measure']++;
                     }
-                    if ($Timer > 25) {
-                        $Timer = 0;
+                    if ($Results['Timer'] > 25) {
+                        $Results['Timer'] = 0;
                         $Percent = $this->NumberFormatter->format(($Results['Tick'] / $Results['Measure']) * 100, 2);
                         echo "\rParse " . $this->NumberFormatter->format($Results['Parse']) . ' ... ' . $Percent . '%';
                     }
@@ -440,18 +439,18 @@ To quit, type \"q\", \"quit\", or \"exit\" and press enter:
                 echo "\rParse " . $this->NumberFormatter->format($Results['Parse']) . ' ... ' . $this->NumberFormatter->format(100, 2) . '% (' . $this->timeFormat(time(), $this->Configuration['general']['time_format']) . ') <RAM: ' . $Results['Memory'] . ">\n\n";
                 echo sprintf(
                     $this->L10N->getString('label_results'),
-                    $this->NumberFormatter->format($this->CIDRAM['Aggregator']->In),
-                    $this->NumberFormatter->format($this->CIDRAM['Aggregator']->Rejected),
-                    $this->NumberFormatter->format($this->CIDRAM['Aggregator']->Accepted),
-                    $this->NumberFormatter->format($this->CIDRAM['Aggregator']->Merged),
-                    $this->NumberFormatter->format($this->CIDRAM['Aggregator']->Out)
+                    $this->NumberFormatter->format($this->CIDRAM['Aggregator']->NumberEntered),
+                    $this->NumberFormatter->format($this->CIDRAM['Aggregator']->NumberRejected),
+                    $this->NumberFormatter->format($this->CIDRAM['Aggregator']->NumberAccepted),
+                    $this->NumberFormatter->format($this->CIDRAM['Aggregator']->NumberMerged),
+                    $this->NumberFormatter->format($this->CIDRAM['Aggregator']->NumberReturned)
                 ) . "\n\n";
                 if ($Chain) {
                     $Chain .= $Data;
                 } else {
                     echo $Data . "\n\n";
                 }
-                unset($Results, $Timer, $this->CIDRAM['Aggregator'], $OutputFormat);
+                unset($Results, $this->CIDRAM['Aggregator']);
                 continue;
             }
 
@@ -481,14 +480,14 @@ To quit, type \"q\", \"quit\", or \"exit\" and press enter:
                 echo $this->L10N->getString('link_fixer') . "\n===\n";
                 $Data = implode("\n", $Data);
                 $Fixer = [
-                    'Aggregator' => new \CIDRAM\Aggregator\Aggregator($CIDRAM),
+                    'Aggregator' => new \CIDRAM\CIDRAM\Aggregator(),
                     'Before' => hash('sha256', $Data) . ':' . strlen($Data),
                     'Timer' => 0,
                     'Parse' => 0,
                     'Tick' => 0,
                     'Measure' => 0,
                 ];
-                $Fixer['Aggregator']->callbacks['newParse'] = function ($Measure) {
+                $Fixer['Aggregator']->callbacks['newParse'] = function ($Measure) use (&$Fixer) {
                     if ($Fixer['Parse'] !== 0) {
                         $Memory = memory_get_usage();
                         $this->formatFileSize($Memory);
@@ -500,7 +499,7 @@ To quit, type \"q\", \"quit\", or \"exit\" and press enter:
                     $Fixer['Timer'] = 0;
                     $Fixer['Measure'] = $Measure;
                 };
-                $Fixer['Aggregator']->callbacks['newTick'] = function () {
+                $Fixer['Aggregator']->callbacks['newTick'] = function () use (&$Fixer) {
                     $Fixer['Tick']++;
                     $Fixer['Timer']++;
                     if ($Fixer['Tick'] >= $Fixer['Measure']) {

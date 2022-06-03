@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Bad TLDs blocker module (last modified: 2022.05.18).
+ * This file: Bad TLDs blocker module (last modified: 2022.05.30).
  *
  * False positive risk (an approximate, rough estimate only): « [x]Low [ ]Medium [ ]High »
  */
@@ -32,7 +32,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
 
     /** Fetch hostname. */
     if (empty($this->CIDRAM['Hostname'])) {
-        $this->CIDRAM['Hostname'] = dnsReverse($this->BlockInfo['IPAddr']);
+        $this->CIDRAM['Hostname'] = $this->dnsReverse($this->BlockInfo['IPAddrResolved'] ?: $this->BlockInfo['IPAddr']);
     }
 
     /** Safety mechanism against false positives caused by failed lookups. */

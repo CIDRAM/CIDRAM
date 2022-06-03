@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2022.05.26).
+ * This file: Front-end handler (last modified: 2022.06.02).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -865,17 +865,17 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === '' && $CIDRAM['FE']['CronMode'] 
                 $CIDRAM['ThisResponse'] .= ', {' . implode(', ', $CIDRAM['ThisExtension']['Drivers']) . '}';
             }
             $CIDRAM['FE']['ExtensionsCopyData'] .= $CIDRAM['LTRinRTF'](
-                sprintf('- %1$s➡%2$s\n', $CIDRAM['ThisExtension']['Name'], $CIDRAM['ThisResponse'])
+                sprintf('- %s➡%s\n', $CIDRAM['ThisExtension']['Name'], $CIDRAM['ThisResponse'])
             );
             $CIDRAM['ThisResponse'] = '<span class="txtGn">' . $CIDRAM['ThisResponse'] . '</span>';
         } else {
             $CIDRAM['FE']['ExtensionsCopyData'] .= $CIDRAM['LTRinRTF'](
-                sprintf('- %1$s➡%2$s\n', $CIDRAM['ThisExtension']['Name'], $CIDRAM['L10N']->getString('response_no'))
+                sprintf('- %s➡%s\n', $CIDRAM['ThisExtension']['Name'], $CIDRAM['L10N']->getString('response_no'))
             );
             $CIDRAM['ThisResponse'] = '<span class="txtRd">' . $CIDRAM['L10N']->getString('response_no') . '</span>';
         }
         $CIDRAM['FE']['Extensions'][] = '    <li><small>' . $CIDRAM['LTRinRTF'](sprintf(
-            '%1$s➡%2$s',
+            '%s➡%s',
             $CIDRAM['ThisExtension']['Name'],
             $CIDRAM['ThisResponse']
         )) . '</small></li>';
@@ -1564,7 +1564,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
                         }
                     } else {
                         $CIDRAM['ThisDir']['FieldOut'] .= sprintf(
-                            '<option style="text-transform:capitalize" value="%1$s"%2$s>%3$s</option>',
+                            '<option style="text-transform:capitalize" value="%s"%s>%s</option>',
                             $CIDRAM['ChoiceKey'],
                             $CIDRAM['ChoiceKey'] === $CIDRAM['Config'][$CIDRAM['CatKey']][$CIDRAM['DirKey']] ? ' selected' : '',
                             $CIDRAM['ChoiceValue']
@@ -1678,6 +1678,9 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
             if (!empty($CIDRAM['DirValue']['See also']) && is_array($CIDRAM['DirValue']['See also'])) {
                 $CIDRAM['ThisDir']['FieldOut'] .= sprintf("\n<br /><br />%s<ul>\n", $CIDRAM['L10N']->getString('label_see_also'));
                 foreach ($CIDRAM['DirValue']['See also'] as $CIDRAM['DirValue']['Ref key'] => $CIDRAM['DirValue']['Ref link']) {
+                    if (isset($CIDRAM['L10N']->Data[$CIDRAM['DirValue']['Ref key']])) {
+                        $CIDRAM['DirValue']['Ref key'] = $CIDRAM['L10N']->Data[$CIDRAM['DirValue']['Ref key']];
+                    }
                     $CIDRAM['ThisDir']['FieldOut'] .= sprintf(
                         '<li><a dir="ltr" href="%s">%s</a></li>',
                         $CIDRAM['DirValue']['Ref link'],
@@ -1697,7 +1700,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
             $CIDRAM['FromModuleConfigL10N']('config_' . $CIDRAM['CatKey'] . '_label')
         ) ?: $CIDRAM['CatKey'];
         $CIDRAM['FE']['Indexes'] .= sprintf(
-            '<li><span class="comCat">%1$s</span><ul class="comSub">%2$s</ul></li>',
+            '<li><span class="comCat">%s</span><ul class="comSub">%s</ul></li>',
             $CIDRAM['CatKeyFriendly'],
             $CIDRAM['CatData']
         );
@@ -3028,7 +3031,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'file-manager' && $CIDRAM['FE'][
                 foreach ($CIDRAM['Components']['ThisComponentFiles'] as $CIDRAM['Components']['ThisFile'] => $CIDRAM['Components']['ThisFileSize']) {
                     $CIDRAM['FormatFilesize']($CIDRAM['Components']['ThisFileSize']);
                     $CIDRAM['Components']['ThisListed'] .= sprintf(
-                        '<li><span class="txtBl" style="font-size:0.9em">%1$s – %2$s</span></li>',
+                        '<li><span class="txtBl" style="font-size:0.9em">%s – %s</span></li>',
                         $CIDRAM['Components']['ThisFile'],
                         $CIDRAM['Components']['ThisFileSize']
                     );

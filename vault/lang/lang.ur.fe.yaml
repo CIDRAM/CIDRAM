@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Urdu language data for the front-end (last modified: 2022.05.23).
+# This file: Urdu language data for the front-end (last modified: 2022.05.26).
 ##/
 
 Extended Description Bypasses: "پہلے سے طے شدہ دستخطی بائی پاس فائلوں کو عام طور پر بنیادی پیکیج کے ساتھ شامل تھے."
@@ -137,7 +137,7 @@ config_hcaptcha_show_api_message: &ShowAPIMessage "API کا پیغام دکھا�
 config_hcaptcha_show_cookie_warning: &ShowCookieWarning "کوکی انتباہ دکھائیں؟ True (سچے) = جی ہاں [پہلے سے طے شدہ]؛ False (جھوٹی) = نہیں."
 config_hcaptcha_signature_limit: &CaptchaSignatureLimit "CAPTCHA پیش کش واپس لینے سے پہلے دستخطوں کی زیادہ سے زیادہ تعداد کی اجازت. پہلے سے طے شدہ = 1."
 config_hcaptcha_sitekey: *CaptchaDashboard
-config_hcaptcha_usemode: &CaptchaUseMode "CAPTCHA کب پیش کیا جائے؟ نوٹ: وائٹ لسٹڈ یا توثیق شدہ اور غیر مسدود درخواستوں کو کبھی بھی CAPTCHA کو مکمل کرنے کی ضرورت نہیں ہے. یہ بھی نوٹ کریں: کیپچا بوٹس اور مختلف قسم کی بدنیتی پر مبنی خودکار درخواستوں کے خلاف مفید تحفظ فراہم کر سکتے ہیں، لیکن بدنیتی پر مبنی انسان کے خلاف کوئی تحفظ فراہم نہیں کریں گے."
+config_hcaptcha_usemode: &CaptchaUseMode "CAPTCHA کب پیش کیا جائے؟ نوٹ: وائٹ لسٹڈ یا توثیق شدہ اور غیر مسدود درخواستوں کو کبھی بھی CAPTCHA کو مکمل کرنے کی ضرورت نہیں ہے. یہ بھی نوٹ کریں: CAPTCHA بوٹس اور مختلف قسم کی بدنیتی پر مبنی خودکار درخواستوں کے خلاف مفید تحفظ فراہم کر سکتے ہیں، لیکن بدنیتی پر مبنی انسان کے خلاف کوئی تحفظ فراہم نہیں کریں گے."
 config_legal: "قانونی تقاضوں کے لئے ترتیبات."
 config_legal_omit_hostname: "لاگ فائلوں سے میزبانوں کو خارج کردیں؟ True (سچے) = جی ہاں؛ False (جھوٹی) = نہیں [پہلے سے طے شدہ]."
 config_legal_omit_ip: "لاگ فائلوں سے IP پتے کو خارج کردیں؟ True (سچے) = جی ہاں؛ False (جھوٹی) = نہیں [پہلے سے طے شدہ]. نوٹ: "pseudonymise_ip_addresses" بے شمار ہو جاتا ہے جب "omit_ip" "true" ہے."
@@ -196,7 +196,7 @@ config_supplementary_cache_options_redis_port: "Redis کے لئے بندرگاہ
 config_supplementary_cache_options_redis_timeout: "Redis کے لئے ٹائم آؤٹ. پہلے سے طے شدہ = "2.5"."
 config_template_data: "ٹیمپلیٹس اور تھیمز کی ترتیبات."
 config_template_data_block_event_title: "بلاک ایونٹس کے لیے ظاہر کرنے کے لیے صفحہ کا عنوان."
-config_template_data_captcha_title: "کیپچا کی درخواستوں کے لیے ظاہر کرنے کے لیے صفحہ کا عنوان."
+config_template_data_captcha_title: "CAPTCHA کی درخواستوں کے لیے ظاہر کرنے کے لیے صفحہ کا عنوان."
 config_template_data_css_url: "اپنی مرضی کے موضوعات کے لئے سی ایس ایس فائل URL."
 config_template_data_magnification: "فونٹ اضافہ. پہلے سے طے شدہ = 1."
 config_template_data_theme: "CIDRAM لئے استعمال کرنے کے لئے مرکزی خیال، موضوع پہلے سے طے شدہ."

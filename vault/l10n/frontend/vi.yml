@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Vietnamese language data for the front-end (last modified: 2022.05.27).
+# This file: Vietnamese language data for the front-end (last modified: 2022.06.02).
 ##/
 
 Extended Description AbuseIPDB module: "Chặn các yêu cầu từ IP được liệt kê tại AbuseIPDB."
@@ -72,6 +72,15 @@ checkbox_label_stage_infractions: "Đếm các vi phạm được tạo ra trong
 checkbox_label_stage_log_errors: "Ghi lại bất kỳ lỗi nào được tạo ra trong giai đoạn này?"
 checkbox_label_untrack_positives: "Ngừng theo dõi tích cực?"
 checkbox_label_verify: "Cố gắng xác minh?"
+config_abuseipdb: "Cấu hình cho mô-đun AbuseIPDB."
+config_abuseipdb_api_key: &EnterAPIKey "Vui lòng nhập khóa API của bạn tại đây."
+config_abuseipdb_build_profiles_from_usage_type: "Xây dựng hồ sơ bằng cách sử dụng loại sử dụng do API trả về? False = Không. True = Vâng. Mặc định = True."
+config_abuseipdb_lookup_strategy: &WhenToLookup "Những yêu cầu nào nên thực hiện tra cứu?"
+config_abuseipdb_max_age_in_days: "Tuổi tối đa tính theo ngày mà các báo cáo sẽ được xem xét khi thực hiện tra cứu (phải là một số từ 1 đến 365). Mặc định = 365."
+config_abuseipdb_max_cs_for_captcha: "Điểm tin cậy tối đa cho phép CAPTCHA được phân phát (phải là một số từ 0 đến 100). Mặc định = 10."
+config_abuseipdb_minimum_confidence_score: "Điểm tin cậy tối thiểu bắt buộc để CIDRAM chặn địa chỉ IP (phải là một số từ 0 đến 100). Mặc định = 50."
+config_abuseipdb_minimum_total_reports: "Cần có tổng số báo cáo tối thiểu để CIDRAM chặn địa chỉ IP. Mặc định = 1."
+config_abuseipdb_report_back: "Cho phép CIDRAM báo cáo hành vi xấu đã phát hiện trở lại AbuseIPDB bằng cách sử dụng khóa API của bạn? Mặc định = False."
 config_bgpview: "Cấu hình cho mô-đun BGPView (cung cấp cơ sở tra cứu cho ASN và mã quốc gia cho CIDRAM)."
 config_bgpview_blocked_asns: "Danh sách các ASN sẽ bị chặn khi được đối sánh bởi mô-đun BGPView."
 config_bgpview_blocked_ccs: "Danh sách các quốc gia (được xác định bằng mã quốc gia 2 chữ số {{Links.ISO.3166}} của họ) bị chặn khi được đối sánh bởi mô-đun BGPView."
@@ -164,6 +173,13 @@ config_phpmailer_skip_auth_process: "Đặt chỉ thị này thành <code>true</
 config_phpmailer_smtp_auth: "Chỉ thị này xác định xem có nên xác thực các phiên SMTP (thường nên để lại một mình)."
 config_phpmailer_smtp_secure: "Giao thức sử dụng khi gửi email qua SMTP (TLS hoặc SSL)."
 config_phpmailer_username: "Tên người dùng để sử dụng khi gửi email qua SMTP."
+config_projecthoneypot: "Cấu hình cho mô-đun Project Honeypot."
+config_projecthoneypot_api_key: *EnterAPIKey
+config_projecthoneypot_lookup_strategy: *WhenToLookup
+config_projecthoneypot_max_age_in_days: "Tuổi tối đa tính theo ngày mà các báo cáo sẽ được xem xét khi thực hiện tra cứu. Mặc định = 365."
+config_projecthoneypot_max_ts_for_captcha: "Điểm đe dọa tối đa được phép để được phân phát CAPTCHA (phải là một số từ 1 đến 100). Mặc định = 10."
+config_projecthoneypot_minimum_threat_score: "Điểm số mối đe dọa tối thiểu cần thiết để CIDRAM chặn một địa chỉ IP (phải là một số từ 1 đến 100). Mặc định = 10."
+config_projecthoneypot_report_back: "Cho phép CIDRAM báo cáo hành vi xấu đã phát hiện trở lại Project Honeypot bằng cách sử dụng khóa API của bạn? Mặc định = False."
 config_rate_limiting: "Cấu hình cho giới hạn tốc độ (không khuyến khích sử dụng chung)."
 config_rate_limiting_allowance_period: "Số giờ để theo dõi việc sử dụng. Mặc định = 0."
 config_rate_limiting_exceptions: "Ngoại lệ (tức là, các yêu cầu không nên giới hạn). Chỉ có hiệu lực khi giới hạn tốc độ được kích hoạt."
@@ -441,6 +457,9 @@ label_preferred_source: "Nguồn ưu tiên:"
 label_previous: "Trước:"
 label_range_tools: "Phạm vi công cụ"
 label_remember: "Nhớ lại"
+label_requests_all: "Tất cả các yêu cầu.\nNghiêm ngặt hơn, nhưng cũng có nhiều khả năng dẫn đến các giới hạn và hạn ngạch bị vượt quá nhanh hơn nhiều, có khả năng dẫn đến việc bị khóa dịch vụ khi cần thiết nhất. Ngoài ra, mặc dù kết quả tra cứu luôn được lưu vào bộ nhớ cache, nhưng nó vẫn có thể tác động tiêu cực đến hiệu suất trang web trong một số trường hợp. Có thể cần thiết trong một số trường hợp, nhưng thường không được khuyến khích."
+label_requests_none: "Không phải bất kỳ.\nNếu bạn chỉ muốn sử dụng mô-đun cho mục đích báo cáo mà không cần tra cứu gì, hãy sử dụng mô-đun này."
+label_requests_sensitive_pages: "Yêu cầu chỉ dành cho các trang nhạy cảm (ví dụ: trang đăng nhập, biểu mẫu đăng ký, vv).\nÍt nghiêm ngặt hơn, nhưng thận trọng hơn về hạn ngạch và giới hạn, và ít có khả năng tác động tiêu cực đến hiệu suất. Chiến lược được khuyến khích trong hầu hết các trường hợp."
 label_results: "Các kết quả (%s trong – %s từ chối – %s chấp nhận – %s sáp nhập – %s ngoài):"
 label_sanity_check: "Kiểm tra an toàn:"
 label_sapi: "SAPI đang được dùng:"
@@ -478,6 +497,7 @@ link_discussions: "Thảo luận"
 link_documentation: "Tài liệu"
 link_file_manager: "Quản lý tập tin"
 link_fixer: "Tập tin chữ ký sửa chữa"
+link_get_api_key: "Nếu bạn chưa có khóa API, hãy nhấp vào đây để lấy khóa."
 link_home: "Trang chủ"
 link_intersector: "Giao nhau"
 link_ip_test: "Kiểm tra IP"

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Indonesian language data for the front-end (last modified: 2022.05.27).
+# This file: Indonesian language data for the front-end (last modified: 2022.06.02).
 ##/
 
 Extended Description AbuseIPDB module: "Memblokir permintaan dari IP yang terdaftar oleh AbuseIPDB."
@@ -72,6 +72,15 @@ checkbox_label_stage_infractions: "Menghitung pelanggaran yang dihasilkan selama
 checkbox_label_stage_log_errors: "Mencatat kesalahan yang dihasilkan selama tahap ini?"
 checkbox_label_untrack_positives: "Hapus pelacakan untuk positif?"
 checkbox_label_verify: "Mencoba memverifikasi?"
+config_abuseipdb: "Konfigurasi untuk modul AbuseIPDB."
+config_abuseipdb_api_key: &EnterAPIKey "Silahkan masukkan kunci API Anda disini."
+config_abuseipdb_build_profiles_from_usage_type: "Buat profil menggunakan jenis penggunaan yang dikembalikan oleh API? False = Tidak. True = Ya. Default = True."
+config_abuseipdb_lookup_strategy: &WhenToLookup "Untuk permintaan mana pencarian harus dilakukan?"
+config_abuseipdb_max_age_in_days: "Usia maksimum dalam hari dimana laporan akan dipertimbangkan saat melakukan pencarian (harus berupa angka diantara 1 dan 365). Default = 365."
+config_abuseipdb_max_cs_for_captcha: "Skor kepercayaan maksimum yang diizinkan untuk CAPTCHA disajikan (harus berupa angka diantara 0 dan 100). Default = 10."
+config_abuseipdb_minimum_confidence_score: "Skor kepercayaan minimum yang diperlukan agar CIDRAM dapat memblokir alamat IP (harus berupa angka diantara 0 dan 100). Default = 50."
+config_abuseipdb_minimum_total_reports: "Jumlah minimum total laporan yang diperlukan agar CIDRAM dapat memblokir alamat IP. Default = 1."
+config_abuseipdb_report_back: "Izinkan CIDRAM untuk melaporkan perilaku buruk yang terdeteksi kembali ke AbuseIPDB menggunakan kunci API Anda? Default = False."
 config_bgpview: "Konfigurasi untuk modul BGPView (menyediakan fasilitas pencarian ASN dan kode negara untuk CIDRAM."
 config_bgpview_blocked_asns: "Daftar ASN yang akan diblokir saat dicocokkan oleh modul BGPView."
 config_bgpview_blocked_ccs: "Daftar negara (diidentifikasi oleh kode negara 2 digit {{Links.ISO.3166}} mereka) yang akan diblokir saat dicocokkan oleh modul BGPView."
@@ -164,6 +173,13 @@ config_phpmailer_skip_auth_process: "Pengaturan direktif ini ke <code>true</code
 config_phpmailer_smtp_auth: "Direktif ini menentukan apakah akan mengotentikasi sesi SMTP (biasanya harus dibiarkan sendiri)."
 config_phpmailer_smtp_secure: "Protokol yang digunakan saat mengirim email melalui SMTP (TLS atau SSL)."
 config_phpmailer_username: "Nama pengguna yang digunakan saat mengirim email melalui SMTP."
+config_projecthoneypot: "Konfigurasi untuk modul Project Honeypot."
+config_projecthoneypot_api_key: *EnterAPIKey
+config_projecthoneypot_lookup_strategy: *WhenToLookup
+config_projecthoneypot_max_age_in_days: "Usia maksimum dalam hari dimana laporan akan dipertimbangkan saat melakukan pencarian. Default = 365."
+config_projecthoneypot_max_ts_for_captcha: "Skor ancaman maksimum yang diizinkan untuk CAPTCHA disajikan (harus berupa angka diantara 1 dan 100). Default = 10."
+config_projecthoneypot_minimum_threat_score: "Skor ancaman minimum yang diperlukan agar CIDRAM memblokir alamat IP (harus berupa angka diantara 1 dan 100). Default = 10."
+config_projecthoneypot_report_back: "Izinkan CIDRAM untuk melaporkan perilaku buruk yang terdeteksi kembali ke Project Honeypot menggunakan kunci API Anda? Default = False."
 config_rate_limiting: "Konfigurasi untuk pembatasan laju (tidak direkomendasikan untuk penggunaan umum)."
 config_rate_limiting_allowance_period: "Jumlah jam untuk memonitor penggunaan. Default = 0."
 config_rate_limiting_exceptions: "Pengecualian (yaitu, permintaan yang seharusnya tidak dibatasi). Hanya relevan ketika pembatasan laju diaktifkan."
@@ -441,6 +457,9 @@ label_preferred_source: "Sumber yang disukai:"
 label_previous: "Sebelumnya:"
 label_range_tools: "Alat rentang"
 label_remember: "Ingat"
+label_requests_all: "Setiap permintaan.\nLebih ketat dan menyeluruh, tetapi juga lebih mungkin menghasilkan batas dan kuota terpenuhi lebih cepat, berpotensi mengakibatkan terkuncinya layanan saat paling dibutuhkan. Selain itu, meskipun hasil pencarian selalu di-cache, tetap saja hal itu dapat berdampak negatif pada kinerja situs web dalam beberapa kasus. Mungkin diperlukan dalam beberapa kasus, tetapi umumnya tidak direkomendasikan."
+label_requests_none: "Tidak satupun.\nJika Anda ingin menggunakan modul hanya untuk tujuan pelaporan, tanpa mencari apapun, gunakan ini."
+label_requests_sensitive_pages: "Permintaan hanya untuk halaman sensitif (misalnya, halaman login, formulir pendaftaran, dll).\nKurang ketat dan menyeluruh, tetapi lebih konservatif dalam hal kuota dan batasan, dan kecil kemungkinannya untuk berdampak negatif pada kinerja. Strategi yang direkomendasikan dalam banyak kasus."
 label_results: "Hasil (%s dimasukkan – %s ditolak – %s diterima – %s digabungkan – %s keluaran):"
 label_sanity_check: "Pemeriksaan kewarasan:"
 label_sapi: "SAPI digunakan:"
@@ -478,6 +497,7 @@ link_discussions: "Diskusi"
 link_documentation: "Dokumentasi"
 link_file_manager: "File Manager"
 link_fixer: "Alat perbaikan file tanda tangan"
+link_get_api_key: "Jika Anda belum memiliki kunci API, klik disini untuk mendapatkannya."
 link_home: "Halaman Utama"
 link_intersector: "Intersektor"
 link_ip_test: "IP Test"

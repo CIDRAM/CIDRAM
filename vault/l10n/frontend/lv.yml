@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Latvian language data for the front-end (last modified: 2022.05.27).
+# This file: Latvian language data for the front-end (last modified: 2022.06.02).
 ##/
 
 Extended Description AbuseIPDB module: "Bloķē pieprasījumus no IP, kas uzskaitīti vietnē AbuseIPDB."
@@ -72,6 +72,15 @@ checkbox_label_stage_infractions: "Vai šajā posmā ģenerētie pārkāpumi tie
 checkbox_label_stage_log_errors: "Vai reģistrēt visas šajā posmā radušās kļūdas?"
 checkbox_label_untrack_positives: "Vai atcelt pozitīvu izsekošana?"
 checkbox_label_verify: "Vai mēģināt pārbaudīt?"
+config_abuseipdb: "AbuseIPDB moduļa konfigurācija."
+config_abuseipdb_api_key: &EnterAPIKey "Lūdzu, ievadiet šeit savu API atslēgu."
+config_abuseipdb_build_profiles_from_usage_type: "Vai veidot profilus, izmantojot API atgriezto lietošanas veidu? False = Nē. True = Jā. Noklusējuma = True."
+config_abuseipdb_lookup_strategy: &WhenToLookup "Kuriem pieprasījumiem ir jāveic meklēšana?"
+config_abuseipdb_max_age_in_days: "Maksimālais vecums dienās, kad pārskati jāņem vērā, veicot meklēšanu (jābūt skaitlim no 1 līdz 365). Noklusējuma = 365."
+config_abuseipdb_max_cs_for_captcha: "Maksimālais uzticamības rādītājs, kas atļauts, lai saņemtu CAPTCHA (jābūt skaitlim no 0 līdz 100). Noklusējuma = 10."
+config_abuseipdb_minimum_confidence_score: "Minimālais ticamības rādītājs, kas nepieciešams, lai CIDRAM bloķētu IP adresi (jābūt skaitlim no 0 līdz 100). Noklusējuma = 50."
+config_abuseipdb_minimum_total_reports: "Minimālais kopējais pārskatu skaits, kas nepieciešams, lai CIDRAM bloķētu IP adresi. Noklusējuma = 1."
+config_abuseipdb_report_back: "Vai atļaut CIDRAM ziņot par konstatēto sliktu darbību atpakaļ AbuseIPDB, izmantojot jūsu API atslēgu? Noklusējuma = False."
 config_bgpview: "BGPView moduļa konfigurācija (nodrošina ASN un valsts koda uzmeklēšanas iespēju CIDRAM)."
 config_bgpview_blocked_asns: "To ASN saraksts, kuras jābloķē, ja tos saskaņo BGPView modulis."
 config_bgpview_blocked_ccs: "To valstu saraksts (identificē ar to {{Links.ISO.3166}} 2-ciparu valsts kodiem), kuras jābloķē, ja tos saskaņo BGPView modulis."
@@ -164,6 +173,13 @@ config_phpmailer_skip_auth_process: "Šīs direktīvas iestatīšana uz <code>tr
 config_phpmailer_smtp_auth: "Šī direktīva nosaka, vai autentificēt SMTP sesijas (vairumā gadījumu vislabāk atstāt vienatnē)."
 config_phpmailer_smtp_secure: "Protokols, kas jāizmanto, nosūtot e-pastu izmantojot SMTP (TLS vai SSL)."
 config_phpmailer_username: "Lietotājvārds, kas jāizmanto, nosūtot e-pastu izmantojot SMTP."
+config_projecthoneypot: "Project Honeypot moduļa konfigurācija."
+config_projecthoneypot_api_key: *EnterAPIKey
+config_projecthoneypot_lookup_strategy: *WhenToLookup
+config_projecthoneypot_max_age_in_days: "Maksimālais vecums dienās, kad pārskati jāņem vērā, veicot meklēšanu. Noklusējuma = 365."
+config_projecthoneypot_max_ts_for_captcha: "Maksimālais apdraudējuma rādītājs, kas atļauts, lai saņemtu CAPTCHA (jābūt skaitlim no 1 līdz 100). Noklusējuma = 10."
+config_projecthoneypot_minimum_threat_score: "Minimālais apdraudējuma rādītājs, kas nepieciešams, lai CIDRAM bloķētu IP adresi (jābūt skaitlim no 1 līdz 100). Noklusējuma = 10."
+config_projecthoneypot_report_back: "Vai atļaut CIDRAM ziņot par konstatēto sliktu darbību atpakaļ Project Honeypot, izmantojot jūsu API atslēgu? Noklusējuma = False."
 config_rate_limiting: "Likmes ierobežojumu konfigurācija (nav ieteicams vispārējai lietošanai)."
 config_rate_limiting_allowance_period: "Stundu skaits, lai izsekotu lietošanai. Noklusējuma = 0."
 config_rate_limiting_exceptions: "Izņēmumi (t.i., pieprasījumiem, kuriem nevajadzētu būt ierobežotiem). Attiecas tikai tad, ja ir iespējota likmes ierobežošana."
@@ -450,6 +466,9 @@ label_preferred_source: "Vēlamais avots:"
 label_previous: "Iepriekšējais:"
 label_range_tools: "Diapazona instrumenti"
 label_remember: "Atcerieties"
+label_requests_all: "Katrs pieprasījums.\nStingrāka un rūpīgāka, taču arī lielāka iespējamība, ka ierobežojumi un kvotas tiks sasniegtas daudz ātrāk, kā rezultātā pakalpojums var tikt izslēgts, kad tas ir visvairāk nepieciešams. Turklāt, lai gan uzmeklēšanas rezultāti vienmēr tiek saglabāti kešatmiņā, dažos gadījumos tas tomēr var negatīvi ietekmēt vietnes veiktspēju. Dažos gadījumos var būt nepieciešams, bet parasti tas nav ieteicams."
+label_requests_none: "Neviena.\nJa vēlaties izmantot moduli tikai pārskatu sniegšanai, neko nemeklējot, izmantojiet šo."
+label_requests_sensitive_pages: "Pieprasījumi tikai sensitīvām lapām (piem., ielogošanās lapām, reģistrācijas veidlapām, utt).\nMazāk stingrs un rūpīgs, taču konservatīvāks kvotu un ierobežojumu ziņā un mazāk ticams, ka tas negatīvi ietekmēs vietnes veiktspēju. Vairumā gadījumu ieteicamā stratēģija."
 label_results: "Rezultāti (%s ievadīti – %s noraidīti – %s pieņemti – %s apvienoti – %s atdoti):"
 label_sanity_check: "Saprāta pārbaude:"
 label_sapi: "Izmantotā SAPI:"
@@ -493,6 +512,7 @@ link_discussions: "Diskusijas"
 link_documentation: "Dokumentācija"
 link_file_manager: "Failu Menedžeris"
 link_fixer: "Paraksta faila fiksētājs"
+link_get_api_key: "Ja jums tāda vēl nav API atslēgas, noklikšķiniet šeit, lai to iegūtu."
 link_home: "Mājas"
 link_intersector: "Krustojums"
 link_ip_test: "IP Pārbaude"

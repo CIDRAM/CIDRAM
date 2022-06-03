@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (simplified) language data for the front-end (last modified: 2022.05.27).
+# This file: Chinese (simplified) language data for the front-end (last modified: 2022.06.02).
 ##/
 
 Extended Description AbuseIPDB module: "阻止来自AbuseIPDB列出的IP的请求。"
@@ -72,6 +72,15 @@ checkbox_label_stage_infractions: "将在此阶段产生的违规计入IP跟踪�
 checkbox_label_stage_log_errors: "记录在此阶段产生的任何错误？"
 checkbox_label_untrack_positives: "取消跟踪阳性？"
 checkbox_label_verify: "尝试验证？"
+config_abuseipdb: "AbuseIPDB模块的配置。"
+config_abuseipdb_api_key: &EnterAPIKey "请在此处输入您的API密钥。"
+config_abuseipdb_build_profiles_from_usage_type: "使用API返回的使用类型构建分类？ False = 不要使用。 True = 使用。 标准 = True。"
+config_abuseipdb_lookup_strategy: &WhenToLookup "应该为哪些请求执行查找？"
+config_abuseipdb_max_age_in_days: "执行查找时将考虑报告的最长天数（必须是1到365之间的数字）。标准=365。"
+config_abuseipdb_max_cs_for_captcha: "为了提供CAPTCHA的目的最大置信度分数（必须是0到100之间的数字）。标准=10。"
+config_abuseipdb_minimum_confidence_score: "为了让CIDRAM阻止IP地址所需的最低置信度分数（必须是0到100之间的数字）。标准=50。"
+config_abuseipdb_minimum_total_reports: "为了让CIDRAM阻止IP地址所需的最小总报告数。标准=1。"
+config_abuseipdb_report_back: "允许CIDRAM使用您的API密钥将检测到的不良行为报告回AbuseIPDB马？标准=False。"
 config_bgpview: "BGPView模块的配置（为CIDRAM提供ASN和国家代码查找工具）。"
 config_bgpview_blocked_asns: "被BGPView模块匹配时要阻止的ASN列表。"
 config_bgpview_blocked_ccs: "由BGPView模块匹配时要阻止的国家列表（由其{{Links.ISO.3166}}两个字母的国家代码标识）。"
@@ -164,6 +173,13 @@ config_phpmailer_skip_auth_process: "将此指令设置为<code>true</code>会�
 config_phpmailer_smtp_auth: "此指令确定是否对SMTP会话进行身份验证（通常应该保持不变）。"
 config_phpmailer_smtp_secure: "通过SMTP发送电子邮件时使用的协议（TLS或SSL）。"
 config_phpmailer_username: "通过SMTP发送电子邮件时使用的用户名。"
+config_projecthoneypot: "Project Honeypot模块的配置。"
+config_projecthoneypot_api_key: *EnterAPIKey
+config_projecthoneypot_lookup_strategy: *WhenToLookup
+config_projecthoneypot_max_age_in_days: "执行查找时将考虑报告的最长天数。标准=365。"
+config_projecthoneypot_max_ts_for_captcha: "为了提供CAPTCHA的目的最大威胁分数（必须是1到100之间的数字）。标准=10。"
+config_projecthoneypot_minimum_threat_score: "为了让CIDRAM阻止IP地址所需的最低威胁分数（必须是1到100之间的数字）。标准=10。"
+config_projecthoneypot_report_back: "允许CIDRAM使用您的API密钥将检测到的不良行为报告回Project Honeypot马？标准=False。"
 config_rate_limiting: "速率限制的配置（不建议一般使用）。"
 config_rate_limiting_allowance_period: "监视使用情况的小时数。​标准=0。"
 config_rate_limiting_exceptions: "例外（即，不应限制速率的请求）。​仅在启用速率限制时有效。"
@@ -442,6 +458,9 @@ label_preferred_source: "首选来源："
 label_previous: "以前的："
 label_range_tools: "范围工具"
 label_remember: "记得"
+label_requests_all: "所有请求。\n更严格和彻底，但也可能更快地达到配额，可能导致被锁定在服务之外。​此外，尽管结果被缓存，但在某些情况下仍可能对网站性能产生负面影响。​在某些情况下可能是必要的，但通常不推荐。"
+label_requests_none: "不要执行。\n使用如果您只想将该模块用于报告目的，而不是检查结果。"
+label_requests_sensitive_pages: "仅对敏感页面的请求（例如，登录页面，注册表单，等等）。\n不那么严格和彻底，但在配额和限制方面更加保守，并且不太可能对性能产生负面影响。​大多数情况下推荐的策略。"
 label_results: "结果 （%s 输入 – %s 拒绝 – %s 公认 – %s 合并 – %s 产量）："
 label_sanity_check: "安全检查："
 label_sapi: "目前使用SAPI："
@@ -479,6 +498,7 @@ link_discussions: "讨论"
 link_documentation: "文档"
 link_file_manager: "文件管理器"
 link_fixer: "签名文件修复工具"
+link_get_api_key: "如果您还没有API密钥，请单击此处获取。"
 link_home: "主页"
 link_intersector: "相交仪"
 link_ip_test: "IP测试"

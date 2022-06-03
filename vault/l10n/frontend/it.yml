@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Italian language data for the front-end (last modified: 2022.05.27).
+# This file: Italian language data for the front-end (last modified: 2022.06.02).
 ##/
 
 Extended Description AbuseIPDB module: "Blocca le richieste dagli IP elencati in AbuseIPDB."
@@ -72,6 +72,15 @@ checkbox_label_stage_infractions: "Le infrazioni generati durante questa fase de
 checkbox_label_stage_log_errors: "Gli errori generati durante questa fase devono essere registrati?"
 checkbox_label_untrack_positives: "Annulla le tracciamento per i positivi?"
 checkbox_label_verify: "Prova a verificare?"
+config_abuseipdb: "Configurazione per il modulo AbuseIPDB."
+config_abuseipdb_api_key: &EnterAPIKey "Inserisci qui la vostra chiave API."
+config_abuseipdb_build_profiles_from_usage_type: "Creare profili utilizzando il tipo di utilizzo restituito dall'API? False = No. True = Sì. Predefinito = True."
+config_abuseipdb_lookup_strategy: &WhenToLookup "Per quali richieste devono essere eseguite le ricerche?"
+config_abuseipdb_max_age_in_days: "L'età massima in giorni per cui verranno presi in considerazione i rapporti durante l'esecuzione delle ricerche (deve essere un numero compreso tra 1 e 365). Predefinito = 365."
+config_abuseipdb_max_cs_for_captcha: "Il punteggio di confidenza massimo consentito per i CAPTCHA da servire (deve essere un numero compreso tra 0 e 100). Predefinito = 10."
+config_abuseipdb_minimum_confidence_score: "Il punteggio di affidabilità minimo richiesto affinché CIDRAM blocca un indirizzo IP (deve essere un numero compreso tra 0 e 100). Predefinito = 50."
+config_abuseipdb_minimum_total_reports: "Il numero minimo di rapporti totali necessari affinché CIDRAM blocca un indirizzo IP. Predefinito = 1."
+config_abuseipdb_report_back: "Consenti a CIDRAM di rapportare il comportamento errato rilevato su AbuseIPDB utilizzando la vostra chiave API? Predefinito = False."
 config_bgpview: "Configurazione per il modulo BGPView (fornisce la funzionalità di ricerca del codice ASN e del paese per CIDRAM)."
 config_bgpview_blocked_asns: "Un elenco di ASN che verranno bloccati quando corrispondono dal modulo BGPView."
 config_bgpview_blocked_ccs: "Un elenco di paesi (identificati dai loro codici paese {{Links.ISO.3166}} a 2 cifre) che verranno bloccati quando corrispondono dal modulo BGPView."
@@ -164,6 +173,13 @@ config_phpmailer_skip_auth_process: "Impostando questa direttiva su <code>true</
 config_phpmailer_smtp_auth: "Questa direttiva determina se autenticare le sessioni SMTP (di solito dovrebbe essere lasciato solo)."
 config_phpmailer_smtp_secure: "Il protocollo per utilizzare per l'invio di posta elettronica tramite SMTP (TLS o SSL)."
 config_phpmailer_username: "Il nome utente per utilizzare per l'invio di posta elettronica tramite SMTP."
+config_projecthoneypot: "Configurazione per il modulo Project Honeypot."
+config_projecthoneypot_api_key: *EnterAPIKey
+config_projecthoneypot_lookup_strategy: *WhenToLookup
+config_projecthoneypot_max_age_in_days: "L'età massima in giorni per cui verranno presi in considerazione i rapporti durante l'esecuzione delle ricerche. Predefinito = 365."
+config_projecthoneypot_max_ts_for_captcha: "Il punteggio massimo di minaccia consentito per ricevere un CAPTCHA (deve essere un numero compreso tra 1 e 100). Predefinito = 10."
+config_projecthoneypot_minimum_threat_score: "Il punteggio minimo di minaccia richiesto affinché CIDRAM blocca un indirizzo IP (deve essere un numero compreso tra 1 e 100). Predefinito = 10."
+config_projecthoneypot_report_back: "Consenti a CIDRAM di rapportare il comportamento errato rilevato su Project Honeypot utilizzando la vostra chiave API? Predefinito = False."
 config_rate_limiting: "Configurazione per la limitazione della velocità (non raccomandato per uso generale)."
 config_rate_limiting_allowance_period: "Il numero di ore per monitorare l'utilizzo. Predefinito = 0."
 config_rate_limiting_exceptions: "Eccezioni (cioè, richieste che non dovrebbero essere limitate). Rilevante solo quando è abilitata la limitazione della velocità."
@@ -445,6 +461,9 @@ label_preferred_source: "Fonte preferita:"
 label_previous: "Precedente:"
 label_range_tools: "Strumenti per le gamme"
 label_remember: "Ricorda"
+label_requests_all: "Ogni richiesta.\nPiù rigoroso e completo, ma anche più probabile che portino al raggiungimento di limiti e quote molto più rapidamente, con conseguente potenziale blocco del servizio quando è più necessario. Inoltre, sebbene i risultati della ricerca siano sempre memorizzati nella cache, in alcuni casi potrebbero comunque incida negativamente sulle prestazioni del sito Web. Può essere necessario in alcuni casi, ma generalmente non consigliato."
+label_requests_none: "Nessuno.\nSe si desidera utilizzare il modulo solo a scopo di reportistica, senza cercare nulla, utilizzare questo."
+label_requests_sensitive_pages: "Richieste solo per pagine sensibili (ad es., pagine di accesso, moduli di registrazione, ecc).\nMeno rigoroso e completo, ma più prudente in termini di quote e limiti, e meno probabile che incida negativamente sulla performance. La strategia consigliata nella maggior parte dei casi."
 label_results: "Risultati (%s in – %s rifiutato – %s accettato – %s combinato – %s su):"
 label_sanity_check: "Controllo sanitario:"
 label_sapi: "SAPI utilizzata:"
@@ -484,6 +503,7 @@ link_discussions: "Discussioni"
 link_documentation: "Documentazione"
 link_file_manager: "File Manager"
 link_fixer: "Fissatore per i file di firme"
+link_get_api_key: "Se non disponi già di una chiave API, fai clic qui per ottenerla."
 link_home: "Pagina Principale"
 link_intersector: "Intersettore"
 link_ip_test: "Test di IP"

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Thai language data for the front-end (last modified: 2022.05.27).
+# This file: Thai language data for the front-end (last modified: 2022.06.02).
 ##/
 
 Extended Description AbuseIPDB module: "บล็อกคำขอจาก IP ที่แสดงรายการไว้ที่ AbuseIPDB."
@@ -72,6 +72,15 @@ checkbox_label_stage_infractions: "นับการละเมิดที่
 checkbox_label_stage_log_errors: "บันทึกข้อผิดพลาดใด ๆ ที่เกิดขึ้นระหว่างขั้นตอนนี้?"
 checkbox_label_untrack_positives: "เลิกติดตามผลบวก?"
 checkbox_label_verify: "ลองตรวจสอบ?"
+config_abuseipdb: "การกำหนดค่าสำหรับโมดูล AbuseIPDB."
+config_abuseipdb_api_key: &EnterAPIKey "โปรดป้อนคีย์ API ของคุณที่นี่."
+config_abuseipdb_build_profiles_from_usage_type: "สร้างโปรไฟล์โดยใช้ประเภทการใช้งานที่ส่งคืนโดย API หรือไม่? False = ไม่. True = ใช่. ค่าเริ่มต้น = True."
+config_abuseipdb_lookup_strategy: &WhenToLookup "คำขอใดควรทำการค้นหา?"
+config_abuseipdb_max_age_in_days: "อายุสูงสุดเป็นจำนวนวันสำหรับรายงานที่ต้องพิจารณาเมื่อทำการค้นหา (ต้องเป็นตัวเลขระหว่าง 1 ถึง 365). ค่าเริ่มต้น = 365."
+config_abuseipdb_max_cs_for_captcha: "คะแนนความเชื่อมั่นสูงสุดที่อนุญาตให้ใช้ CAPTCHA ได้ (ต้องเป็นตัวเลขระหว่าง 0 ถึง 100). ค่าเริ่มต้น = 10."
+config_abuseipdb_minimum_confidence_score: "คะแนนความเชื่อมั่นขั้นต่ำที่จำเป็นสำหรับ CIDRAM เพื่อบล็อกที่อยู่ IP (ต้องเป็นตัวเลขระหว่าง 0 ถึง 100). ค่าเริ่มต้น = 50."
+config_abuseipdb_minimum_total_reports: "จำนวนขั้นต่ำของรายงานทั้งหมดที่จำเป็นสำหรับ CIDRAM เพื่อบล็อกที่อยู่ IP. ค่าเริ่มต้น = 1."
+config_abuseipdb_report_back: "อนุญาตให้ CIDRAM รายงานพฤติกรรมที่ไม่ดีที่ตรวจพบกลับไปที่ AbuseIPDB โดยใช้คีย์ API ของคุณหรือไม่? ค่าเริ่มต้น = False."
 config_bgpview: "การกำหนดค่าสำหรับโมดูล BGPView (ให้สิ่งอำนวยความสะดวกในการค้นหา ASN และรหัสประเทศสำหรับ CIDRAM)."
 config_bgpview_blocked_asns: "รายการ ASN ที่จะถูกบล็อกโดยโมดูล BGPView."
 config_bgpview_blocked_ccs: "รายชื่อประเทศ (ระบุด้วยรหัสประเทศ {{Links.ISO.3166}} สองตัวอักษร) ที่จะบล็อกโดยโมดูล BGPView."
@@ -164,6 +173,13 @@ config_phpmailer_skip_auth_process: "เมื่อ <code>true</code>, PHPMaile
 config_phpmailer_smtp_auth: "กำหนดว่าเซสชัน SMTP ควรได้รับการตรวจสอบสิทธิ์หรือไม่ (ควรปล่อยให้อยู่คนเดียว)."
 config_phpmailer_smtp_secure: "โปรโตคอลสำหรับการส่งอีเมล (TLS หรือ SSL)."
 config_phpmailer_username: "ชื่อผู้ใช้สำหรับเมื่อส่งอีเมล."
+config_projecthoneypot: "การกำหนดค่าสำหรับโมดูล Project Honeypot."
+config_projecthoneypot_api_key: *EnterAPIKey
+config_projecthoneypot_lookup_strategy: *WhenToLookup
+config_projecthoneypot_max_age_in_days: "อายุสูงสุดเป็นจำนวนวันสำหรับรายงานที่ต้องพิจารณาเมื่อทำการค้นหา. ค่าเริ่มต้น = 365."
+config_projecthoneypot_max_ts_for_captcha: "คะแนนภัยคุกคามสูงสุดที่อนุญาตให้ใช้ CAPTCHA (ต้องเป็นตัวเลขระหว่าง 1 ถึง 100). ค่าเริ่มต้น = 10."
+config_projecthoneypot_minimum_threat_score: "คะแนนภัยคุกคามขั้นต่ำที่จำเป็นสำหรับ CIDRAM เพื่อบล็อกที่อยู่ IP (ต้องเป็นตัวเลขระหว่าง 1 ถึง 100). ค่าเริ่มต้น = 10."
+config_projecthoneypot_report_back: "อนุญาตให้ CIDRAM รายงานพฤติกรรมที่ไม่ดีที่ตรวจพบกลับไปที่ Project Honeypot โดยใช้คีย์ API ของคุณหรือไม่? ค่าเริ่มต้น = False."
 config_rate_limiting: "การกำหนดค่าสำหรับการ จำกัด อัตรา (ไม่แนะนำสำหรับการใช้งานทั่วไป)."
 config_rate_limiting_allowance_period: "จำนวนชั่วโมงในการติดตามการใช้งาน. ค่าเริ่มต้น = 0."
 config_rate_limiting_exceptions: "ข้อยกเว้น (นั่นคือ คำขอที่ไม่ควรถูก จำกัด). มีความเกี่ยวข้องเฉพาะเมื่อเปิดใช้งานการ จำกัด อัตรา."
@@ -441,6 +457,9 @@ label_preferred_source: "แหล่งที่ต้องการ:"
 label_previous: "ก่อนหน้า:"
 label_range_tools: "เครื่องมือวัดระยะ"
 label_remember: "จำไว้"
+label_requests_all: "คำขอทั้งหมด.\nเข้มงวดและทั่วถึงมากขึ้น แต่ยังมีแนวโน้มที่จะเข้าถึงโควต้าได้เร็วกว่า ซึ่งอาจส่งผลให้ถูกล็อกไม่ให้ใช้บริการ. นอกจากนี้ แม้ว่าผลลัพธ์จะถูกแคช แต่ก็ยังอาจส่งผลเสียต่อประสิทธิภาพของเว็บไซต์ในบางกรณี. อาจจำเป็นในบางกรณี แต่ไม่แนะนำโดยทั่วไป."
+label_requests_none: "ไม่มี.\nหากคุณต้องการใช้โมดูลเพื่อจุดประสงค์ในการรายงานเท่านั้น โดยไม่ต้องค้นหา ให้ใช้สิ่งนี้."
+label_requests_sensitive_pages: "ขอเพจที่ละเอียดอ่อนเท่านั้น (เช่น หน้าเข้าสู่ระบบ แบบฟอร์มลงทะเบียน ฯลฯ).\nไม่เข้มงวดและละเอียดถี่ถ้วน แต่ระมัดระวังมากขึ้นในแง่ของโควต้าและขีดจำกัด และมีโอกาสน้อยที่จะส่งผลเสียต่อประสิทธิภาพการทำงาน. กลยุทธ์ที่แนะนำในกรณีส่วนใหญ่."
 label_results: "ผล (%s ใน – %s ปฏิเสธ – %s ได้รับการยอมรับ – %s รวม – %s ออก):"
 label_sanity_check: "การตรวจสอบความปลอดภัย:"
 label_sapi: "SAPI ในการใช้งาน:"
@@ -478,6 +497,7 @@ link_discussions: "การสนทนา"
 link_documentation: "เอกสาร"
 link_file_manager: "ตัวจัดการไฟล์"
 link_fixer: "เครื่องมือซ่อมแซมไฟล์ลายเซ็น"
+link_get_api_key: "หากคุณยังไม่มีคีย์ API คลิกที่นี่เพื่อรับคีย์."
 link_home: "โฮมเพจ"
 link_intersector: "ตัวตัดช่วง"
 link_ip_test: "ทดสอบ IP"

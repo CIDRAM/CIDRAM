@@ -1,0 +1,43 @@
+##\
+# This file is a part of the CIDRAM package.
+# Homepage: https://cidram.github.io/
+#
+# CIDRAM COPYRIGHT 2016 and beyond by Caleb Mazalevskis (Maikuolan).
+#
+# License: GNU/GPLv2
+# @see LICENSE.txt
+#
+# This file: Project Honeypot defaults file (last modified: 2022.06.02).
+##/
+
+Config Defaults:
+ projecthoneypot:
+  api_key:
+   type: "string"
+   default: ""
+   See also:
+    Project Honeypot Terms of Service.: "https://www.projecthoneypot.org/terms_of_service_use.php"
+    link_get_api_key: "https://www.projecthoneypot.org/httpbl_configure.php"
+  max_age_in_days:
+   type: "int"
+   default: 365
+  minimum_threat_score:
+   type: "int"
+   default: 10
+  max_ts_for_captcha:
+   type: "int"
+   default: 10
+  report_back:
+   type: "bool"
+   default: false
+  lookup_strategy:
+   type: "int"
+   default: 2
+   choices:
+    0: "label_requests_none"
+    1: "label_requests_all"
+    2: "label_requests_sensitive_pages"
+   style: "radio"
+  timeout_limit:
+   type: "int"
+   default: 5

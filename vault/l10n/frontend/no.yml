@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Norwegian language data for the front-end (last modified: 2022.05.27).
+# This file: Norwegian language data for the front-end (last modified: 2022.06.02).
 ##/
 
 Extended Description AbuseIPDB module: "Blokkerer forespørsler fra IP-er oppført på AbuseIPDB."
@@ -72,6 +72,15 @@ checkbox_label_stage_infractions: "Telle infraksjoner generert i løpet av dette
 checkbox_label_stage_log_errors: "Logge noen feil generert i løpet av dette stadiet?"
 checkbox_label_untrack_positives: "Slutte å spore etter positive?"
 checkbox_label_verify: "Prøv å bekrefte?"
+config_abuseipdb: "Konfigurasjon for AbuseIPDB-modulen."
+config_abuseipdb_api_key: &EnterAPIKey "Vennligst skriv inn API-nøkkelen din her."
+config_abuseipdb_build_profiles_from_usage_type: "Bygge profiler med brukstypen som returneres av APIen? False = Nei. True = Ja. Standardverdi = True."
+config_abuseipdb_lookup_strategy: &WhenToLookup "Hvilke forespørsler skal oppslag utføres for?"
+config_abuseipdb_max_age_in_days: "Den maksimale alderen i dager som rapporter vil bli vurdert for når du utfører oppslag (må være et tall mellom 1 og 365). Standardverdi = 365."
+config_abuseipdb_max_cs_for_captcha: "Den maksimale konfidenspoengsummen tillatt for å bli servert en CAPTCHA (må være et tall mellom 0 og 100). Standardverdi = 10."
+config_abuseipdb_minimum_confidence_score: "Minste konfidenspoengsummen som kreves for at CIDRAM skal blokkere en IP-adresse (må være et tall mellom 0 og 100). Standardverdi = 50."
+config_abuseipdb_minimum_total_reports: "Minimum antall totalt rapporter som kreves for at CIDRAM skal blokkere en IP-adresse. Standardverdi = 1."
+config_abuseipdb_report_back: "Tillate at CIDRAM rapporterer oppdaget dårlig oppførsel tilbake til AbuseIPDB ved å bruke API-nøkkelen din? Standardverdi = False."
 config_bgpview: "Konfigurasjon for BGPView-modulen (tilbyr en ASN- og landskodeoppslagsfunksjon for CIDRAM)."
 config_bgpview_blocked_asns: "En liste over ASNer som skal blokkeres når de matchet av BGPView-modulen."
 config_bgpview_blocked_ccs: "En liste over land (identifisert av deres {{Links.ISO.3166}} 2-sifrede landskoder) som skal blokkeres når de matchet av BGPView-modulen."
@@ -164,6 +173,13 @@ config_phpmailer_skip_auth_process: "Innstilling av dette direktivet til <code>t
 config_phpmailer_smtp_auth: "Dette direktivet bestemmer om du skal autentisere SMTP-økter (bør vanligvis la det være alene)."
 config_phpmailer_smtp_secure: "Protokollen som skal brukes når du sender e-post via SMTP (TLS eller SSL)."
 config_phpmailer_username: "Brukernavnet som skal brukes når du sender e-post via SMTP."
+config_projecthoneypot: "Konfigurasjon for Project Honeypot-modulen."
+config_projecthoneypot_api_key: *EnterAPIKey
+config_projecthoneypot_lookup_strategy: *WhenToLookup
+config_projecthoneypot_max_age_in_days: "Maksimal alder i dager som rapporter vil bli vurdert for når du utfører oppslag. Standardverdi = 365."
+config_projecthoneypot_max_ts_for_captcha: "Maksimal trusselpoengsum tillatt for å bli servert en CAPTCHA (må være et tall mellom 1 og 100). Standardverdi = 10."
+config_projecthoneypot_minimum_threat_score: "Minimum trusselpoengsum som kreves for at CIDRAM skal blokkere en IP-adresse (må være et tall mellom 1 og 100). Standardverdi = 10."
+config_projecthoneypot_report_back: "Tillate at CIDRAM rapporterer oppdaget dårlig oppførsel tilbake til Project Honeypot ved å bruke API-nøkkelen din? Standardverdi = False."
 config_rate_limiting: "Konfigurasjon for hastighetsbegrensning (anbefales ikke til generell bruk)."
 config_rate_limiting_allowance_period: "Antall timer for å spore bruken. Standardverdi = 0."
 config_rate_limiting_exceptions: "Unntak (dvs, forespørsler som ikke bør være hastighetsbegrenset). Relevant bare når hastighetsbegrensning er aktivert."
@@ -445,6 +461,9 @@ label_preferred_source: "Foretrukket kilde:"
 label_previous: "Tidligere:"
 label_range_tools: "Rekkevidde verktøy"
 label_remember: "Huske"
+label_requests_all: "Hver forespørsel.\nMer strenge og grundige, men også mer sannsynlig å resultere i at grenser og kvoter blir oppfylt mye raskere, noe som potensielt kan resultere i å bli utestengt fra tjenesten når det er mest nødvendig. Også, selv om oppslagsresultater alltid bufres uansett, det kan likevel ha negativ innvirkning på nettstedets ytelse i noen tilfeller. Kan være nødvendig i noen tilfeller, men generelt anbefales ikke."
+label_requests_none: "Ingen.\nHvis du vil bruke modulen kun til rapporteringsformål, uten å slå opp noe, bruk denne."
+label_requests_sensitive_pages: "Kun forespørsler om sensitive sider (f.eks., innloggingssiden, registreringsskjemaer, etc).\nMindre strenge og grundige, men mer konservative når det gjelder kvoter og grenser, og mindre sannsynlighet for å påvirke ytelsen negativt. Den anbefalte strategien i de fleste tilfeller."
 label_results: "Resultater (%s i – %s avvist – %s akseptert – %s sammensmeltet – %s ut):"
 label_sanity_check: "Sikkerhetskontroll:"
 label_sapi: "SAPI brukt:"
@@ -486,6 +505,7 @@ link_discussions: "Diskusjoner"
 link_documentation: "Dokumentasjon"
 link_file_manager: "Filbehandler"
 link_fixer: "Signaturfilfikseren"
+link_get_api_key: "Hvis du ikke allerede har en API-nøkkel, klikk her for å få en."
 link_home: "Hjem"
 link_intersector: "Kryssverktøy"
 link_ip_test: "IP-Test"

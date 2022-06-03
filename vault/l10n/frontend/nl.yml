@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Dutch language data for the front-end (last modified: 2022.05.27).
+# This file: Dutch language data for the front-end (last modified: 2022.06.02).
 ##/
 
 Extended Description AbuseIPDB module: "Blokkeert aanvragen van IP's die worden vermeld op AbuseIPDB."
@@ -72,6 +72,15 @@ checkbox_label_stage_infractions: "Moeten overtredingen die gegenereerd door dez
 checkbox_label_stage_log_errors: "Moeten fouten die gegenereerd door deze fase worden geregistreerd?"
 checkbox_label_untrack_positives: "Tracking annuleren voor positieven?"
 checkbox_label_verify: "Proberen te verifiëren?"
+config_abuseipdb: "Configuratie voor de AbuseIPDB-module."
+config_abuseipdb_api_key: &EnterAPIKey "Voer hier uw API-sleutel."
+config_abuseipdb_build_profiles_from_usage_type: "Profielen bouwen met het gebruikstype dat door de API wordt geretourneerd? False = Nee. True = Ja. Standaard = True."
+config_abuseipdb_lookup_strategy: &WhenToLookup "Voor welke verzoeken moeten zoekopdrachten worden uitgevoerd?"
+config_abuseipdb_max_age_in_days: "De maximale leeftijd in dagen waarvoor rapporten worden overwogen bij het uitvoeren van zoekopdrachten (moet een getal zijn tussen 1 en 365). Standaard = 365."
+config_abuseipdb_max_cs_for_captcha: "De maximale betrouwbaarheidsscore die is toegestaan voor een CAPTCHA (moet een getal zijn tussen 0 en 100). Standaard = 10."
+config_abuseipdb_minimum_confidence_score: "De minimale betrouwbaarheidsscore die vereist is om CIDRAM een IP-adres te blokkeren (moet een getal zijn tussen 0 en 100). Standaard = 50."
+config_abuseipdb_minimum_total_reports: "Het minimale totale aantal rapporten dat nodig is om CIDRAM een IP-adres te blokkeren. Standaard = 1."
+config_abuseipdb_report_back: "Sta CIDRAM toe om gedetecteerd slecht gedrag te melden terug aan AbuseIPDB met behulp van uw API-sleutel? Standaard = False."
 config_bgpview: "Configuratie voor de BGPView-module (biedt een zoekfunctie voor ASN en landcodes voor CIDRAM)."
 config_bgpview_blocked_asns: "Een lijst met ASN's die moeten worden geblokkeerd wanneer ze worden gekoppeld mit de BGPView-module."
 config_bgpview_blocked_ccs: "Een lijst met landen (geïdentificeerd door hun {{Links.ISO.3166}} 2-cijferige landcodes) die moeten worden geblokkeerd wanneer ze worden gekoppeld mit de BGPView-module."
@@ -164,6 +173,13 @@ config_phpmailer_skip_auth_process: "Wanneer <code>true</code>, geeft PHPMailer 
 config_phpmailer_smtp_auth: "Deze richtlijn bepaalt of SMTP-sessies moeten worden geverifieerd (moet meestal alleen worden gelaten)."
 config_phpmailer_smtp_secure: "Het protocol voor het verzenden van e-mail via SMTP (TLS of SSL)."
 config_phpmailer_username: "De gebruikersnaam voor het verzenden van e-mail via SMTP."
+config_projecthoneypot: "Configuratie voor de Project Honeypot-module."
+config_projecthoneypot_api_key: *EnterAPIKey
+config_projecthoneypot_lookup_strategy: *WhenToLookup
+config_projecthoneypot_max_age_in_days: "De maximale leeftijd in dagen waarvoor rapporten worden overwogen bij het uitvoeren van zoekopdrachten. Standaard = 365."
+config_projecthoneypot_max_ts_for_captcha: "De maximale dreigingsscore die is toegestaan voor een CAPTCHA (moet een getal zijn tussen 1 en 100). Standaard = 10."
+config_projecthoneypot_minimum_threat_score: "De minimale dreigingsscore die vereist is om CIDRAM een IP-adres te blokkeren (moet een getal zijn tussen 1 en 100). Standaard = 10."
+config_projecthoneypot_report_back: "Sta CIDRAM toe om gedetecteerd slecht gedrag te melden terug aan Project Honeypot met behulp van uw API-sleutel? Standaard = False."
 config_rate_limiting: "Configuratie voor tarieflimiet (niet aanbevolen voor algemeen gebruik)."
 config_rate_limiting_allowance_period: "Het aantal uren om het gebruik te controleren. Standaard = 0."
 config_rate_limiting_exceptions: "Excepties (d.w.z., verzoeken die moet niet worden beperkt). Alleen relevant wanneer tarieflimiet is ingeschakeld."
@@ -447,6 +463,9 @@ label_preferred_source: "Voorkeursbron:"
 label_previous: "Vorig:"
 label_range_tools: "Bereik tools"
 label_remember: "Onthouden"
+label_requests_all: "Elk verzoek.\nStrenger en grondiger, maar het is ook waarschijnlijker dat limieten en quota veel sneller worden gehaald, wat kan leiden dat de service wordt buitengesloten wanneer dat het meest nodig is. Ook, hoewel opzoekresultaten altijd in de cache worden opgeslagen, dit kan in sommige gevallen toch een negatieve invloed hebben op de prestaties van de website. Kan in sommige gevallen nodig zijn, maar wordt het over algemeen niet aanbevolen."
+label_requests_none: "Geen.\nAls u de module alleen voor rapportagedoeleinden wilt gebruiken, zonder iets op te zoeken, gebruik deze."
+label_requests_sensitive_pages: "Alleen verzoeken voor gevoelige pagina's (b.v., inlogpagina's, registratieformulieren, enz).\nMinder streng en grondig, maar conservatiever in termen van quota en limieten, en minder waarschijnlijk een negatieve invloed op de prestaties te hebben. De aanbevolen strategie in de meeste gevallen."
 label_results: "Resultaten (%s in – %s verworpen – %s aanvaard – %s samengevoegd – %s uit):"
 label_sanity_check: "Gezondheidscontrole:"
 label_sapi: "SAPI gebruikt:"
@@ -488,6 +507,7 @@ link_discussions: "Discussies"
 link_documentation: "Documentatie"
 link_file_manager: "Bestandsbeheer"
 link_fixer: "Signatuurbestanden-fixeer"
+link_get_api_key: "Als u nog geen API-sleutel hebt, klik hier om een te krijgen."
 link_home: "Startpagina"
 link_intersector: "Intersector"
 link_ip_test: "IP Test"

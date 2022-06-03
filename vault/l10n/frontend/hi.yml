@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Hindi language data for the front-end (last modified: 2022.05.27).
+# This file: Hindi language data for the front-end (last modified: 2022.06.02).
 ##/
 
 Extended Description AbuseIPDB module: "AbuseIPDB पर सूचीबद्ध IP से अनुरोध ब्लॉक करता है।"
@@ -72,6 +72,15 @@ checkbox_label_stage_infractions: "IP ट्रैकिंग के लिए 
 checkbox_label_stage_log_errors: "इस चरण के दौरान उत्पन्न कोई त्रुटि लॉग करें?"
 checkbox_label_untrack_positives: "सकारात्मक अनट्रैक करें?"
 checkbox_label_verify: "सत्यापित करने का प्रयास करें?"
+config_abuseipdb: "AbuseIPDB मॉड्यूल के लिए कॉन्फ़िगरेशन।"
+config_abuseipdb_api_key: &EnterAPIKey "कृपया यहां अपनी API कुंजी दर्ज करें।"
+config_abuseipdb_build_profiles_from_usage_type: "API द्वारा लौटाए गए उपयोग प्रकार का उपयोग करके प्रोफाइल बनाएं? True(सच्चे) = हाँ [डिफ़ॉल्ट]; False(झूठी) = नहीं।"
+config_abuseipdb_lookup_strategy: &WhenToLookup "लुकअप किन अनुरोधों के लिए किया जाना चाहिए?"
+config_abuseipdb_max_age_in_days: "लुकअप करते समय रिपोर्ट के लिए दिनों में अधिकतम आयु पर विचार किया जाना चाहिए (1 और 365 के बीच की कोई संख्या होनी चाहिए)। डिफ़ॉल्ट = 365।"
+config_abuseipdb_max_cs_for_captcha: "कैप्चा परोसने के लिए अधिकतम विश्वास स्कोर की अनुमति है (0 और 100 के बीच की कोई संख्या होनी चाहिए)। डिफ़ॉल्ट = 10।"
+config_abuseipdb_minimum_confidence_score: "CIDRAM के लिए IP पते को अवरुद्ध करने के लिए आवश्यक न्यूनतम आत्मविश्वास स्कोर (0 और 100 के बीच की कोई संख्या होनी चाहिए)। डिफ़ॉल्ट = 50।"
+config_abuseipdb_minimum_total_reports: "CIDRAM के लिए IP पते को ब्लॉक करने के लिए आवश्यक कुल रिपोर्ट की न्यूनतम संख्या। डिफ़ॉल्ट = 1।"
+config_abuseipdb_report_back: "CIDRAM को आपकी API कुंजी का उपयोग करके गलत व्यवहार का पता लगाने के लिए वापस AbuseIPDB को रिपोर्ट करने की अनुमति दें? डिफ़ॉल्ट = False।"
 config_bgpview: "BGPView मॉड्यूल के लिए कॉन्फ़िगरेशन (CIDRAM के लिए ASN और देश कोड देखने की सुविधा प्रदान करता है)।"
 config_bgpview_blocked_asns: "BGPView मॉड्यूल द्वारा मिलान किए जाने पर अवरुद्ध किए जाने वाले ASN की सूची।"
 config_bgpview_blocked_ccs: "BGPView मॉड्यूल द्वारा मिलान किए जाने पर अवरोधित किए जाने वाले देशों की सूची (उनके {{Links.ISO.3166}} 2-अंकीय देश कोड द्वारा पहचाना जाता है)।"
@@ -164,6 +173,13 @@ config_phpmailer_skip_auth_process: "इस निर्देश को <code>t
 config_phpmailer_smtp_auth: "यह निर्देश निर्धारित करता है कि SMTP सत्र प्रमाणित करना है या नहीं (आपको आमतौर पर इसे अकेला छोड़ देना चाहिए)।"
 config_phpmailer_smtp_secure: "ईमेल भेजने के दौरान उपयोग करने के लिए प्रोटोकॉल (TLS या SSL)।"
 config_phpmailer_username: "ईमेल भेजने समय उपयोग करने के लिए उपयोगकर्ता नाम।"
+config_projecthoneypot: "Project Honeypot मॉड्यूल के लिए कॉन्फ़िगरेशन।"
+config_projecthoneypot_api_key: *EnterAPIKey
+config_projecthoneypot_lookup_strategy: *WhenToLookup
+config_projecthoneypot_max_age_in_days: "लुकअप करते समय रिपोर्ट के लिए दिनों में अधिकतम आयु पर विचार किया जाना चाहिए। डिफ़ॉल्ट = 365।"
+config_projecthoneypot_max_ts_for_captcha: "कैप्चा परोसने के लिए अधिकतम खतरा स्कोर की अनुमति है (1 और 100 के बीच की कोई संख्या होनी चाहिए)। डिफ़ॉल्ट = 10।"
+config_projecthoneypot_minimum_threat_score: "CIDRAM के लिए IP पते को ब्लॉक करने के लिए आवश्यक न्यूनतम खतरा स्कोर (1 और 100 के बीच की कोई संख्या होनी चाहिए)। डिफ़ॉल्ट = 10।"
+config_projecthoneypot_report_back: "CIDRAM को आपकी API कुंजी का उपयोग करके गलत व्यवहार का पता लगाने के लिए वापस Project Honeypot को रिपोर्ट करने की अनुमति दें? डिफ़ॉल्ट = False।"
 config_rate_limiting: "दर सीमित करने के लिए कॉन्फ़िगरेशन (सामान्य उपयोग के लिए अनुशंसित नहीं है)।"
 config_rate_limiting_allowance_period: "उपयोग को ट्रैक करने के लिए घंटों की संख्या। डिफ़ॉल्ट = "0"।"
 config_rate_limiting_exceptions: "अपवाद (अर्थात, अनुरोध जो दर सीमित नहीं होने चाहिए)। केवल एक प्रभाव है जब दर सीमित करने में सक्षम है।"
@@ -447,6 +463,9 @@ label_preferred_source: "पसंदीदा स्रोत:"
 label_previous: "पहले का:"
 label_range_tools: "रेंज टूल्स"
 label_remember: "याद"
+label_requests_all: "हर अनुरोध।\nअधिक कठोर और संपूर्ण, लेकिन इसके परिणामस्वरूप सीमाएं और कोटा अधिक तेज़ी से पूरा होने की संभावना भी अधिक होती है, जिसके परिणामस्वरूप संभावित रूप से सबसे अधिक आवश्यकता होने पर सेवा को बंद कर दिया जाता है। इसके अलावा, हालांकि लुकअप परिणाम हमेशा कैश किए जाते हैं, फिर भी यह कुछ मामलों में वेबसाइट के प्रदर्शन को नकारात्मक रूप से प्रभावित कर सकता है। कुछ मामलों में आवश्यक हो सकता है, लेकिन आमतौर पर अनुशंसित नहीं।"
+label_requests_none: "कोई भी नहीं।\nयदि आप बिना लुकअप, केवल रिपोर्टिंग उद्देश्यों के लिए मॉड्यूल का उपयोग करना चाहते हैं, तो इसका उपयोग करें।"
+label_requests_sensitive_pages: "केवल संवेदनशील पृष्ठों के लिए अनुरोध (उदाहरण के लिए, लॉगिन पेज, पंजीकरण फॉर्म, आदि)।\nकम कठोर और संपूर्ण, लेकिन कोटा और सीमाओं के संदर्भ में अधिक रूढ़िवादी, और प्रदर्शन को नकारात्मक रूप से प्रभावित करने की संभावना कम है। ज्यादातर मामलों में अनुशंसित रणनीति।"
 label_results: "परिणाम (%s में प्रवेश किया – %s अस्वीकृत – %s स्वीकृत – %s मर्ज किए गए – %s आउटपुट किया):"
 label_sanity_check: "स्वास्थ्य की जांच:"
 label_sapi: "SAPI का इस्तेमाल किया:"
@@ -486,6 +505,7 @@ link_discussions: "चर्चाएँ"
 link_documentation: "डॉक्यूमेंटेशन"
 link_file_manager: "फाइल प्रबंधक"
 link_fixer: "हस्ताक्षर फ़ाइल फिक्सर"
+link_get_api_key: "यदि आपके पास पहले से API कुंजी नहीं है, तो उसे प्राप्त करने के लिए यहां क्लिक करें।"
 link_home: "होमपेज"
 link_intersector: "इंटरसेक्टोर"
 link_ip_test: "IP परीक्षण"

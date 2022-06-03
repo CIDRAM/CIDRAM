@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Japanese language data for the front-end (last modified: 2022.05.27).
+# This file: Japanese language data for the front-end (last modified: 2022.06.02).
 ##/
 
 Extended Description AbuseIPDB module: "AbuseIPDBにリストされているＩＰからの要求をブロックします。"
@@ -72,6 +72,15 @@ checkbox_label_stage_infractions: "この段階で発生した違反は、ＩＰ
 checkbox_label_stage_log_errors: "この段階で発生したエラーをログに記録しますか？"
 checkbox_label_untrack_positives: "陽性の追跡をやめますか？"
 checkbox_label_verify: "確認してみますか？"
+config_abuseipdb: "AbuseIPDBモジュールの設定。"
+config_abuseipdb_api_key: &EnterAPIKey "ここにＡＰＩキーを入力してください。"
+config_abuseipdb_build_profiles_from_usage_type: "ＡＰＩによって返される使用タイプを使用してプロファイルを作成しますか？ True = はい（Default/デフォルルト）。 False = いいえ。"
+config_abuseipdb_lookup_strategy: &WhenToLookup "どのリクエストに対してルックアップを実行する必要がありますか？"
+config_abuseipdb_max_age_in_days: "ルックアップを実行するときに考慮されるレポートの最大経過日数（１から３６５までの数値である必要があります）。​Default/デフォルルト = 365。"
+config_abuseipdb_max_cs_for_captcha: "キャプチャを提供できるに許可された最大の信頼スコア（０から１００までの数値である必要があります）。​Default/デフォルルト = 10。"
+config_abuseipdb_minimum_confidence_score: "CIDRAMがＩＰアドレスをブロックするために必要な最小信頼スコア（０から１００までの数値である必要があります）。​Default/デフォルルト = 50。"
+config_abuseipdb_minimum_total_reports: "CIDRAMがＩＰアドレスをブロックするために必要な合計レポートの最小数。​Default/デフォルルト = 1。"
+config_abuseipdb_report_back: "CIDRAMがＡＰＩキーを使用して、検出された不正な動作をAbuseIPDBに報告できるようにしますか？​Default/デフォルルト = False。"
 config_bgpview: "BGPViewモジュールの設定（CIDRAMにASNおよび国コード検索機能を提供します）。"
 config_bgpview_blocked_asns: "BGPViewモジュールによってブロックされるASNのリスト。"
 config_bgpview_blocked_ccs: "BGPViewモジュールによってブロックされる国（{{Links.ISO.3166}}二桁の国コードで識別）のリスト。"
@@ -164,8 +173,15 @@ config_phpmailer_skip_auth_process: "このディレクティブを<code>true</c
 config_phpmailer_smtp_auth: "このディレクティブは、ＳＭＴＰセッションを認証するかどうかを決定します（通常はそれをそのまま残すべきです）。"
 config_phpmailer_smtp_secure: "ＳＭＴＰ経由で電子Ｅメールを送信するときに使用するプロトコル（ＴＬＳまたはＳＳＬ）。"
 config_phpmailer_username: "ＳＭＴＰ経由で電子Ｅメールを送信するときに使用するユーザー名。"
+config_projecthoneypot: "Project Honeypotモジュールの設定。"
+config_projecthoneypot_api_key: *EnterAPIKey
+config_projecthoneypot_lookup_strategy: *WhenToLookup
+config_projecthoneypot_max_age_in_days: "ルックアップを実行するときに考慮されるレポートの最大経過日数。​Default/デフォルルト = 365。"
+config_projecthoneypot_max_ts_for_captcha: "キャプチャを提供できる最大の脅威スコア（１から１００までの数値である必要があります）。​Default/デフォルルト = 10。"
+config_projecthoneypot_minimum_threat_score: "CIDRAMがＩＰアドレスをブロックするために必要な最小脅威スコア（１から１００までの数値である必要があります）。​Default/デフォルルト = 10。"
+config_projecthoneypot_report_back: "CIDRAMがＡＰＩキーを使用して、検出された不正な動作をProject Honeypotに報告できるようにしますか？​Default/デフォルルト = False。"
 config_rate_limiting: "レート制限の設定（一般的な使用には推奨されません）。"
-config_rate_limiting_allowance_period: "使用状況を監視する時間数。​Default/デフォルルト = 0."
+config_rate_limiting_allowance_period: "使用状況を監視する時間数。​Default/デフォルルト = 0。"
 config_rate_limiting_exceptions: "例外（すなわち、レート制限されるべきではないリクエスト）。​レート制限が有効な場合にのみ効果があります。"
 config_rate_limiting_max_bandwidth: "将来の要求に対してレート制限を有効にする前の許容期間内に許容される最大帯域幅。​０の値は、このタイプのレート制限を無効にします。​Default/デフォルルト = 0KB。"
 config_rate_limiting_max_requests: "将来の要求に対してレート制限を有効にする前に、許容期間内に許可される要求の最大数。​０の値は、このタイプのレート制限を無効にします。​Default/デフォルルト = 0。"
@@ -441,6 +457,9 @@ label_preferred_source: "優先ソース："
 label_previous: "前："
 label_range_tools: "範囲ツール"
 label_remember: "覚えて"
+label_requests_all: "すべてのリクエスト。\nより厳格で徹底的ですが、制限と割り当てがはるかに迅速に満たされる可能性が高く、最も必要なときにサービスからロックアウトされる可能性があります。​また、ルックアップの結果は常にキャッシュされますが、それでも場合によってはウェブサイトのパフォーマンスに悪影響を与える可能性があります。​場合によっては必要になることもありますが、一般的にはお勧めしません。"
+label_requests_none: "しない。\nモジュールをレポート目的でのみ使用する場合し、何も調べない場合は、これを使用しますください。"
+label_requests_sensitive_pages: "機密ページのみのリクエスト（例：ログイン・ページ、登録フォーム、など）。\nそれほど厳格で徹底的ではありませんが、割り当てと制限の点でより保守的であり、パフォーマンスに悪影響を与える可能性は低くなります。​ほとんどの場合、推奨される戦略です。"
 label_results: "結果 （%s が入力された – %s が拒否された – %s が受け入れられた – %s が合併した – %s 出力された）："
 label_sanity_check: "サニティ・チェック："
 label_sapi: "使用されたＳＡＰＩ："
@@ -478,6 +497,7 @@ link_discussions: "ディスカッション"
 link_documentation: "ドキュメンテーション"
 link_file_manager: "ファイル・マネージャー"
 link_fixer: "シグネチャ・ファイルのフィクサー"
+link_get_api_key: "ＡＰＩキーをまだお持ちでない場合は、ここをクリックして取得してください。"
 link_home: "ホーム"
 link_intersector: "インタセクター"
 link_ip_test: "ＩＰテスト"

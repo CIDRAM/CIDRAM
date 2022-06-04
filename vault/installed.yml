@@ -1,6 +1,6 @@
 CIDRAM Core:
  Name: "CIDRAM Core"
- Version: "3.0.0-DEV+22153000"
+ Version: "3.0.0-DEV+22154000"
  Dependencies:
   PHP: ">=7.2"
   Common Classes Package: "^2.9"
@@ -24,19 +24,19 @@ CIDRAM Core:
    Checksum: "6ba6dcefcc074462ffc07380b14d8673fd7fbb9c41b7024d977bce7943bb9192:4956"
   CIDRAM/CIDRAM/Core.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/CIDRAM/CIDRAM/Core.php"
-   Checksum: "85f66878b430cc9a612c7238e50fb45d79568db04f93299b94dbdcc8f67f005e:115669"
+   Checksum: "4b9b41ccd0c9e98bdac5aa8f26ed9abe335eeeecfaa30439afd8354d33943762:113987"
   CIDRAM/CIDRAM/Expand.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/CIDRAM/CIDRAM/Expand.php"
    Checksum: "ef517c735b7121860c15bc3f40d15e5d3d8da075a69dcb510ed2772d2d546eee:5991"
   CIDRAM/CIDRAM/HCaptcha.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/CIDRAM/CIDRAM/HCaptcha.php"
-   Checksum: "33aa82bf2dff3dd04c15907dadd81d26715df806d0c635a83d1e20f9a03e88d2:15540"
+   Checksum: "87af72d0107e5f0e49a18105905ca0f56c847b85b6552fc77773f4ce944ee01a:15548"
   CIDRAM/CIDRAM/Protect.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/CIDRAM/CIDRAM/Protect.php"
-   Checksum: "402b7c7cc2ba122756c4d09ac7f98c34a35c424b20c1479f460799207afe8427:54169"
+   Checksum: "60edfcac4adb325c1bcc3abf1653b380fdad6cdcb50c49af49e02aa6076317e2:53947"
   CIDRAM/CIDRAM/ReCaptcha.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/CIDRAM/CIDRAM/ReCaptcha.php"
-   Checksum: "dd1f7f8b2382ad4962a8bdf15288307d8192680661752b4ce936c179acdf9a96:14994"
+   Checksum: "fff85a7c7e0696e06ee2ebfe3622f805c7d785641a8e8e74ec2aed285d305b77:15002"
   CIDRAM/CIDRAM/Reporter.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/CIDRAM/CIDRAM/Reporter.php"
    Checksum: "8824caf25e0e70519f157cc41dd0b8a3b0f8e948f275cab3770df0010e381c84:2929"
@@ -57,7 +57,7 @@ CIDRAM Core:
    Checksum: "81d4e41c24b339debda49eb6c2faf5f76d3663217c1e347bdde26229550949a2:6637"
 CIDRAM Front-End:
  Name: "CIDRAM Front-End"
- Version: "3.0.0-DEV+22153000"
+ Version: "3.0.0-DEV+22154000"
  Dependencies:
   PHP: ">=7.2"
   Common Classes Package: "^2.9"
@@ -247,10 +247,10 @@ CIDRAM Front-End:
    Checksum: "6b22e672a6bd9f6d628cbdd46e5eefd53131eba345127058b3ffc63981b25be7:3606"
   CIDRAM/CIDRAM/FrontEnd.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/CIDRAM/CIDRAM/FrontEnd.php"
-   Checksum: "e8ea194a061edffd661c4ea872c6d9e56c270f90d47dc3817cac1c093aa1a78b:274486"
+   Checksum: "53a4a935fc7543c8ee0befb0f207b37ad6d4fad1936f3e062cc9164f3cbe3b7f:273402"
   CIDRAM/CIDRAM/FrontEndMethods.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/CIDRAM/CIDRAM/FrontEndMethods.php"
-   Checksum: "2f708cf7827924cd5a600d13a262ea6197e4279b00cf3746ec9281d116270510:46774"
+   Checksum: "77de5c0db36185f352bc2b10083eabf8905daaee83fcc2f82f48e7d108e8df29:47794"
   CIDRAM/CIDRAM/Logs.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/CIDRAM/CIDRAM/Logs.php"
    Checksum: "c183b97722b45b91031b336d253a533bd7ab8c020cd4a5c0eccd41d267c9146b:17710"
@@ -259,7 +259,7 @@ CIDRAM Front-End:
    Checksum: "d30c197c512402f539f17b72a5a131416d95c9c78613b4aaec5fc3bb586794dc:39163"
   CIDRAM/CIDRAM/SimulateBlockEvent.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/CIDRAM/CIDRAM/SimulateBlockEvent.php"
-   Checksum: "9a4e154646eb9a86c9a5eb422b199f090c0fc68d78d7c080b48a78816b800e82:10049"
+   Checksum: "6d486182575d9d890f3457c4b472a7ae49370312eeaa7b2529ca4bd7f1af0ccb:10427"
   CIDRAM/CIDRAM/Updater.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/CIDRAM/CIDRAM/Updater.php"
    Checksum: "e8529d53fc7f89148aba7dcbf62d5e0ebe2cead1c8b4dbd4eec81ad5a2403554:62564"
@@ -450,7 +450,7 @@ Bypasses:
 l10n/ar:
  Name: "L10N: العربية"
  Extended Description: "ملفات اللغة العربية"
- Version: "2022.146.0"
+ Version: "2022.154.0"
  Dependencies:
   CIDRAM Core: "^3.0.0-DEV"
  Uninstallable: true
@@ -460,11 +460,11 @@ l10n/ar:
    Checksum: "81c5f52c6736dce3cc4e809f705bfbd27af8de408657dd51cef57d9ca2e4dea0:5475"
   l10n/frontend/ar.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/ar.yml"
-   Checksum: "3764b57c22e4f1cbe441d40d5de8f811a7bb42f54862cee28a9973e010ab8a1b:74539"
+   Checksum: "fa998ef90851d8612d0597aa473fb74115f7c278d830ce34210306fdcbbad232:78463"
 l10n/bn:
  Name: "L10N: বাংলা"
  Extended Description: "বাংলা ভাষার তথ্য"
- Version: "2022.146.0"
+ Version: "2022.154.0"
  Dependencies:
   CIDRAM Core: "^3.0.0-DEV"
  Uninstallable: true
@@ -474,11 +474,11 @@ l10n/bn:
    Checksum: "e66aee72646d3bfa336cc90de7755b03814f95b285d77a0afcd7a522c00544dd:10744"
   l10n/frontend/bn.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/bn.yml"
-   Checksum: "b1c19e593e6b7f8b7bc9e06ac3c943b0b7d4841cf5bcf55b21e3093bfc15332b:110008"
+   Checksum: "69d3f3ebc4c1eb7274a7f0b2b15d8d996d39b972f06bca0065a2defa3f5d1144:115799"
 l10n/de:
  Name: "L10N: Deutsche"
  Extended Description: "Deutsche Sprachdateien"
- Version: "2022.146.0"
+ Version: "2022.154.0"
  Dependencies:
   CIDRAM Core: "^3.0.0-DEV"
  Uninstallable: true
@@ -488,11 +488,11 @@ l10n/de:
    Checksum: "fba3c7ae7904e19386cb0f6bb90e27325c188aca0c6ffdc8609183335780b0d9:5635"
   l10n/frontend/de.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/de.yml"
-   Checksum: "5ab9b706e019b610c31bf24062c14ec26adc3293274e7ec50f734577e742fb38:62142"
+   Checksum: "63155c2caccc1d20592dc57e20b8f0a9b3363b97177cab44ad08df41415ebf3a:65334"
 l10n/en:
  Name: "L10N: English"
  Extended Description: "English language data"
- Version: "2022.146.0"
+ Version: "2022.154.0"
  Dependencies:
   CIDRAM Core: "^3.0.0-DEV"
  Files:
@@ -501,11 +501,11 @@ l10n/en:
    Checksum: "d60fd5ad27a6a9cee8cae961365bb15b14efab36401f63f1823e8514fa948a26:4984"
   l10n/frontend/en.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/en.yml"
-   Checksum: "4e19404f6dde6b427a0acc6304f86604400686370d402b41fff4d03c5a887f49:54710"
+   Checksum: "f7223409748941bae6306fd6986274fcff4d17d69cf3ba16c8049708864f17f9:57448"
 l10n/es:
  Name: "L10N: Español"
  Extended Description: "Lingüísticos datos Español"
- Version: "2022.146.0"
+ Version: "2022.154.0"
  Dependencies:
   CIDRAM Core: "^3.0.0-DEV"
  Uninstallable: true
@@ -515,11 +515,11 @@ l10n/es:
    Checksum: "90f8b124df8e58e6805be6199973f2e6e6ffd45bbb7969ddadda5eed5ecc08e9:5445"
   l10n/frontend/es.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/es.yml"
-   Checksum: "a95b8489637146d858ae0863867ec5f7ec3296de38a311592bc74f1b95cf1134:62552"
+   Checksum: "b933f442909a91d819b15103fdd70ab3bb499ca10717a42135555d3625943608:65519"
 l10n/fr:
  Name: "L10N: Français"
  Extended Description: "Linguistiques données en Français"
- Version: "2022.146.0"
+ Version: "2022.154.0"
  Dependencies:
   CIDRAM Core: "^3.0.0-DEV"
  Uninstallable: true
@@ -529,11 +529,11 @@ l10n/fr:
    Checksum: "cb10ba77b46f304d3c9566a89bc65bf2618c93003a0defc700d5d0f94be419fe:5716"
   l10n/frontend/fr.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/fr.yml"
-   Checksum: "c65030dee5975ef027820443a8efaf4cd5ed3b9bd2fb1483f1e807c12e6eeb9b:64220"
+   Checksum: "248b3f7fcdd331e2a98fc63a5168468c341a25dbde82b776a3034f262d689f03:67284"
 l10n/hi:
  Name: "L10N: हिंदी"
  Extended Description: "हिंदी भाषा डाटा"
- Version: "2022.146.0"
+ Version: "2022.154.0"
  Dependencies:
   CIDRAM Core: "^3.0.0-DEV"
  Uninstallable: true
@@ -543,11 +543,11 @@ l10n/hi:
    Checksum: "f475bfdfd8411f6a99a739777f7f4f2fd4ea179d2da1c4fa48c665ff498d1e58:9785"
   l10n/frontend/hi.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/hi.yml"
-   Checksum: "ae8ded7900c9bb3291b8a8e201f1fdc31f64cea9751c7e08acc431cdae4b6da2:110984"
+   Checksum: "7a2a04cf2f72c394eeece5845309038320706001a117a3af900aec31b76ecff3:116882"
 l10n/id:
  Name: "L10N: Bahasa Indonesia"
  Extended Description: "File Bahasa Indonesia"
- Version: "2022.146.0"
+ Version: "2022.154.0"
  Dependencies:
   CIDRAM Core: "^3.0.0-DEV"
  Uninstallable: true
@@ -557,11 +557,11 @@ l10n/id:
    Checksum: "9dae192712bd259797870ca5cbf591e95de599622fc649741c9c0197b6595834:5294"
   l10n/frontend/id.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/id.yml"
-   Checksum: "39e28a5224e2ec4f2af30345ee36cac665edb251e7be6c9535d44d6eddfba585:57966"
+   Checksum: "d67d04b32070817be9d8cd8fba57bc059a7bb29b1a5a304d3d3d702df984d556:60816"
 l10n/it:
  Name: "L10N: Italiana"
  Extended Description: "Linguistici dati Italiana"
- Version: "2022.146.0"
+ Version: "2022.154.0"
  Dependencies:
   CIDRAM Core: "^3.0.0-DEV"
  Uninstallable: true
@@ -571,11 +571,11 @@ l10n/it:
    Checksum: "6b993d84ee1903ba98f643db9e9abe25e4bd9b523ef8d2ccdfce9c61702cb5b9:5570"
   l10n/frontend/it.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/it.yml"
-   Checksum: "8174de76b089aa4757bf89316cdd8c5cc75a8b97e2a3a21c2a3f5e3386c3ea0d:61219"
+   Checksum: "3b8900babaf93222273c8183eab9cedb584c82ee8a24496489973aada7d41265:64258"
 l10n/ja:
  Name: "L10N: 日本語"
  Extended Description: "日本語言語データ"
- Version: "2022.146.0"
+ Version: "2022.154.0"
  Dependencies:
   CIDRAM Core: "^3.0.0-DEV"
  Uninstallable: true
@@ -585,11 +585,11 @@ l10n/ja:
    Checksum: "60af788b4341f069a100e07000dbc18edfeec7e0835f02a9008622b5b8fb0d0e:6370"
   l10n/frontend/ja.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/ja.yml"
-   Checksum: "f138cde44f769ab15f3b146289b2bb2b9bcdaa924a7e94ebca5f1454093cae73:74975"
+   Checksum: "3c3637db429d0ea94bcf11a949e5b53d15f69b035951f7aaa1cf9fce5a0f8808:78659"
 l10n/ko:
  Name: "L10N: 한국어"
  Extended Description: "한국어 언어 데이터"
- Version: "2022.146.0"
+ Version: "2022.154.0"
  Dependencies:
   CIDRAM Core: "^3.0.0-DEV"
  Uninstallable: true
@@ -599,11 +599,11 @@ l10n/ko:
    Checksum: "d15293207356998de4def6de41018b2a7f772ec2d11ff1c9dd13a5366f2b9dae:5184"
   l10n/frontend/ko.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/ko.yml"
-   Checksum: "4f68e966aa6cdd0dac4174c160232982186d4935dfa47a0a1dcbe58d12ef2200:62180"
+   Checksum: "8f22cf9e3516c9fc21ed4c5a94b8199b42cdbcc9aa956631635a7dab7c2a609d:65245"
 l10n/lv:
  Name: "L10N: Latviešu"
  Extended Description: "Latviešu valodas dati"
- Version: "2022.146.0"
+ Version: "2022.154.0"
  Dependencies:
   CIDRAM Core: "^3.0.0-DEV"
  Uninstallable: true
@@ -613,11 +613,11 @@ l10n/lv:
    Checksum: "9b282d532c33941a46167be2f2e73dd72b46f82652fd757bae9b49589d2a9a36:5471"
   l10n/frontend/lv.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/lv.yml"
-   Checksum: "b9dab3ddd73e47ef92846462ee0f095788f9d4f23218c160c462593ef7c568ba:60013"
+   Checksum: "00c73b602d7118791218fd6ef8e112e9d465416e4a757e00bec8e7f46a74c78d:62947"
 l10n/nl:
  Name: "L10N: Nederlandse"
  Extended Description: "Nederlandse lokalisatie"
- Version: "2022.146.0"
+ Version: "2022.154.0"
  Dependencies:
   CIDRAM Core: "^3.0.0-DEV"
  Uninstallable: true
@@ -627,11 +627,11 @@ l10n/nl:
    Checksum: "b5e59130036a418729875dd31f9e1636d6a3e47227fc7863f10a971db8c6ca50:5355"
   l10n/frontend/nl.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/nl.yml"
-   Checksum: "f6338c3c61d90e7d150cb0efba98040b1a45ad8c7485754663fe76195a8cd036:59930"
+   Checksum: "a9628056d7a5eb7ec51de6860372c4550737d7c78d35317c9e835be77fbfa549:62872"
 l10n/no:
  Name: "L10N: Norsk"
  Extended Description: "Norsk språkdata"
- Version: "2022.146.0"
+ Version: "2022.154.0"
  Dependencies:
   CIDRAM Core: "^3.0.0-DEV"
  Uninstallable: true
@@ -641,11 +641,11 @@ l10n/no:
    Checksum: "8ef70bb875bcb099c3a770120d061b3bd0823ce104fa8c704466710b536f9873:5261"
   l10n/frontend/no.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/no.yml"
-   Checksum: "f1e41ec8da07459481b302419764b8947bd17ab70420f09a690a8a30674a8470:56801"
+   Checksum: "598e1ec516ff1992fa3e7fae5ab0720edef032a9ba53a362f8a60d672cc7cff4:59683"
 l10n/pl:
  Name: "L10N: Polski"
  Extended Description: "Dane języku polskim"
- Version: "2022.146.0"
+ Version: "2022.154.0"
  Dependencies:
   CIDRAM Core: "^3.0.0-DEV"
  Uninstallable: true
@@ -655,11 +655,11 @@ l10n/pl:
    Checksum: "f5825761af27c89193e184a49a649a47094081f55db986218418d3eb64464ff0:5659"
   l10n/frontend/pl.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/pl.yml"
-   Checksum: "93900e6f3f00486fb5a1becfe9ce9109f8838544eb677e6fe4b922513751baec:61354"
+   Checksum: "a007970246ec088ee82ef1721805b107bbecc7fbcb175dceb353623fc61951da:64304"
 l10n/pt:
  Name: "L10N: Português"
  Extended Description: "Linguagem dados Português"
- Version: "2022.146.0"
+ Version: "2022.154.0"
  Dependencies:
   CIDRAM Core: "^3.0.0-DEV"
  Uninstallable: true
@@ -669,11 +669,11 @@ l10n/pt:
    Checksum: "1673a27d0712327ff10819ded8af56f81790b3a2c47b88c014d91d1736c0d4a4:5365"
   l10n/frontend/pt.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/pt.yml"
-   Checksum: "e5f3230d806bf24cfd6d4e54a5e25d54dfaaa6d6d9543aef8ff2101bdaf2964b:61079"
+   Checksum: "c4ad4dc15c81dd2e1ab85b0dcda8956e46293798d38f1b21daa5d8ff2e3d0053:64024"
 l10n/ru:
  Name: "L10N: Русский"
  Extended Description: "Русском языковые файлы"
- Version: "2022.146.0"
+ Version: "2022.154.0"
  Dependencies:
   CIDRAM Core: "^3.0.0-DEV"
  Uninstallable: true
@@ -683,11 +683,11 @@ l10n/ru:
    Checksum: "99da9db9a08ff858965d0b89c41b28c11d847f41212db28583d3ebb5d85c0cf7:8287"
   l10n/frontend/ru.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/ru.yml"
-   Checksum: "ba0631b7f27d46eada8e3d7aecb82aae8380052fc6d1c7b974535d73722dcedc:89858"
+   Checksum: "5b16a392a1c337c72bee194c76bbbf9b56fb8e33a7f5cceb298ac6755a058e3f:94317"
 l10n/sv:
  Name: "L10N: Svenska"
  Extended Description: "Svenska språkdata"
- Version: "2022.146.0"
+ Version: "2022.154.0"
  Dependencies:
   CIDRAM Core: "^3.0.0-DEV"
  Uninstallable: true
@@ -697,11 +697,11 @@ l10n/sv:
    Checksum: "587ea40d45bc1533e672b0059e6d7364326d9957b5231f7f87f43eabf9bd7ba3:5348"
   l10n/frontend/sv.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/sv.yml"
-   Checksum: "b81b36c442cda346e58846a2044e68c786eb9225a8efc5e0fbe68394cdd3086e:58191"
+   Checksum: "16bab8a2c3ae97099195e922cb1600a55c3311f8a1ff49a9ada5641e69ecbd95:61007"
 l10n/ta:
  Name: "L10N: தமிழ்"
  Extended Description: "தமிழ் மொழி தரவு"
- Version: "2022.146.0"
+ Version: "2022.154.0"
  Dependencies:
   CIDRAM Core: "^3.0.0-DEV"
  Uninstallable: true
@@ -711,11 +711,11 @@ l10n/ta:
    Checksum: "5ecd8bcf7c005649ae6fe8be40e76ef98dc3e8c54ff9ed0e0fa96e19b3ac61c2:11735"
   l10n/frontend/ta.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/ta.yml"
-   Checksum: "2923893980eb5af9d6f5b0f837095843f96c4a6d9ceafe84acb327a6e1e7b494:128768"
+   Checksum: "d41669a5a3b46dd8d3b09aff00e468e41d3cfc3736dc1efada8c733b654756b1:135584"
 l10n/th:
  Name: "L10N: ภาษาไทย"
  Extended Description: "ข้อมูลภาษาไทย"
- Version: "2022.146.0"
+ Version: "2022.154.0"
  Dependencies:
   CIDRAM Core: "^3.0.0-DEV"
  Uninstallable: true
@@ -725,11 +725,11 @@ l10n/th:
    Checksum: "162655da5f2df25487b71b953879135f0fe3a6a60edbba96ac289e0dc1621e99:9539"
   l10n/frontend/th.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/th.yml"
-   Checksum: "1658fca32fe0b9c05437ba627a0952082c2530b6159319855ad4d3d9b4b3b963:101077"
+   Checksum: "74ac7a44f17b9e59794ad9ddff23a50a78a7978c7f9be8af3f6651d8313e90f6:106285"
 l10n/tr:
  Name: "L10N: Türkçe"
  Extended Description: "Türkçe dili verileri"
- Version: "2022.146.0"
+ Version: "2022.154.0"
  Dependencies:
   CIDRAM Core: "^3.0.0-DEV"
  Uninstallable: true
@@ -739,11 +739,11 @@ l10n/tr:
    Checksum: "c901fa7070f7a1fd5f0e86425c7a343c00d3832e0406b30a09b5c77a1a5e5349:5533"
   l10n/frontend/tr.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/tr.yml"
-   Checksum: "a93073d5b005cf14ba512d2141a08a9c8db20943acd0c20aeb3d646e6346983b:60140"
+   Checksum: "5e352496f5849dc6a9ff2ee570dfdbd5cf18d87fb95c112d376abfa30867b898:63158"
 l10n/ur:
  Name: "L10N: ‏اردو‏"
  Extended Description: "‏اردو‏ زبان فائلوں"
- Version: "2022.146.0"
+ Version: "2022.154.0"
  Dependencies:
   CIDRAM Core: "^3.0.0-DEV"
  Uninstallable: true
@@ -753,11 +753,11 @@ l10n/ur:
    Checksum: "845009f6e6347dad0bc6fd6a2599c4a472982bcab1a27b0c3e5dc554278d25c1:7542"
   l10n/frontend/ur.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/ur.yml"
-   Checksum: "b7a74740216ddd057526db785965befb698ce9127a712db3477a678dbdc73ebd:79916"
+   Checksum: "d5931c8fe4a10bd889a66192d56d03e177e80873d2c27546a08b1a57f3117e24:84026"
 l10n/vi:
  Name: "L10N: Tiếng Việt"
  Extended Description: "Dữ liệu tiếng Việt"
- Version: "2022.146.0"
+ Version: "2022.154.0"
  Dependencies:
   CIDRAM Core: "^3.0.0-DEV"
  Uninstallable: true
@@ -767,11 +767,11 @@ l10n/vi:
    Checksum: "2d1bc40208d8f74c00d9b831140c1bf35dcf5df6177ede267cff9961a898f533:6590"
   l10n/frontend/vi.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/vi.yml"
-   Checksum: "b440b90c99b7d28e1e737a6e135cbe9659447338fa3b1561d884d34091a57d26:68737"
+   Checksum: "dddba0daa3e87d0df4a628f9bbf5e2bd267478697f1f8a8a6b667a382f867fee:72062"
 l10n/zh-TW:
  Name: "L10N: 中文（傳統）"
  Extended Description: "中文（傳統）語言數據"
- Version: "2022.146.0"
+ Version: "2022.154.0"
  Dependencies:
   CIDRAM Core: "^3.0.0-DEV"
  Uninstallable: true
@@ -781,11 +781,11 @@ l10n/zh-TW:
    Checksum: "da48df1eca526d7c16ab25c6349acb0d2e52d4d0bde0e56f5a4a3cd6e1f7e402:4658"
   l10n/frontend/zh-TW.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/zh-TW.yml"
-   Checksum: "5053e74e85fb5158bbb57c97e7b55a7079b76a0e4d696c97d41daf354e3df0a3:51914"
+   Checksum: "f3ee5020f2d3c9e9c28a5365b808b08f33060b3ff085bcbe6dbc1d2c797c99ee:54293"
 l10n/zh:
  Name: "L10N: 中文（简体）"
  Extended Description: "中文（简体）语言数据"
- Version: "2022.146.0"
+ Version: "2022.154.0"
  Dependencies:
   CIDRAM Core: "^3.0.0-DEV"
  Uninstallable: true
@@ -795,11 +795,11 @@ l10n/zh:
    Checksum: "73fd2b0230c8bc1d3773580011c1f7c5630062294334f800e7047ab7159d8cf4:4654"
   l10n/frontend/zh.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/zh.yml"
-   Checksum: "26420e4d1a4f7db8b0988382b74beaed51ac4e43a9353691c759b3af8eb1abd0:51901"
+   Checksum: "ae1c1d8b3e1179366910176fb648047aaf684887eb8c8153f7687e519be89d9b:54280"
 AbuseIPDB module:
  Name: "AbuseIPDB module"
  False Positive Risk: "Medium"
- Version: "2022.153.0"
+ Version: "2022.154.0"
  Dependencies:
   CIDRAM Core: "^3.0.0-DEV"
  Uninstallable: true
@@ -810,36 +810,36 @@ AbuseIPDB module:
    Used with: "imports"
   modules/abuseipdb.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/modules/abuseipdb.php"
-   Checksum: "2ee00a4fc58b13e3315a9a029ca5bb8d765859c682044fb90eb082234b22abe0:6799"
+   Checksum: "3aee02ee926006b08b7c93c982beff2f95aa50dd35aece377946f037f734f8e4:7177"
    Used with: "modules"
 Bad hosts blocker module:
  Name: "Bad hosts blocker module"
  False Positive Risk: "Medium"
- Version: "2022.146.0"
+ Version: "2022.154.0"
  Dependencies:
   CIDRAM Core: "^3.0.0-DEV"
  Uninstallable: true
  Files:
   modules/badhosts.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/modules/badhosts.php"
-   Checksum: "6b201d184c82ea99959b6bfd03760dcd690284a9a807ff6441431dc51f2b99fc:15846"
+   Checksum: "5cb332ec5b895d362a4a6ac976c9da2279ebb78eaa155c619f7845ac335b5bdc:15839"
    Used with: "modules"
 Bad TLDs blocker module:
  Name: "Bad TLDs blocker module"
  False Positive Risk: "Low"
- Version: "2022.153.0"
+ Version: "2022.154.0"
  Dependencies:
   CIDRAM Core: "^3.0.0-DEV"
  Uninstallable: true
  Files:
   modules/badtlds.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/modules/badtlds.php"
-   Checksum: "8e61096fe540de9de6046dd761c0c30a2165521d5fe252b34e9d8e9d0537fc3a:1896"
+   Checksum: "c51110a9764c24b7ea6ebabc4ea7faa07af0cd0d0bc7b6693821b942341cda8a:1889"
    Used with: "modules"
 BGPView module:
  Name: "BGPView module"
  False Positive Risk: "Low"
- Version: "2022.146.0"
+ Version: "2022.154.0"
  Dependencies:
   CIDRAM Core: "^3.0.0-DEV"
  Uninstallable: true
@@ -850,7 +850,7 @@ BGPView module:
    Used with: "imports"
   modules/bgpview.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/modules/bgpview.php"
-   Checksum: "3df1de29b6c065b79b96ba7f674a646576022a242da1d487092a9f1336a68816:7984"
+   Checksum: "7c4eddb798ef77632fa39c664a0532ae2e3b772d0ca3e2ac1af46d0e2ebc4b32:8116"
    Used with: "modules"
 Bot user agents module:
  Name: "Bot user agents module"
@@ -912,23 +912,23 @@ Optional security extras module:
 Project Honeypot module:
  Name: "Project Honeypot module"
  False Positive Risk: "Medium"
- Version: "2022.153.0"
+ Version: "2022.154.0"
  Dependencies:
   CIDRAM Core: "^3.0.0-DEV"
  Uninstallable: true
  Files:
   imports/projecthoneypot.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/imports/projecthoneypot.yml"
-   Checksum: "d3d066b270368e160796b3a9f510affc34502280fe8977c05be71a7b59b9eb2d:974"
+   Checksum: "8057d93232d3c36a681a35ab5f2c0401b3050683f800c9b685cf7bdaf87e7b49:925"
    Used with: "imports"
   modules/projecthoneypot.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/modules/projecthoneypot.php"
-   Checksum: "dee235ce991e5a823d66f70f97e0c6a40bacde9b948c29c4bd710e5340abaa64:5518"
+   Checksum: "0f9c1834ee5154c9c97e79aa78db361d63550b42dc928344b3318439ff540fa0:6136"
    Used with: "modules"
 Stop Forum Spam module:
  Name: "Stop Forum Spam module"
  False Positive Risk: "Low"
- Version: "2022.146.0"
+ Version: "2022.154.0"
  Dependencies:
   CIDRAM Core: "^3.0.0-DEV"
  Uninstallable: true
@@ -939,5 +939,5 @@ Stop Forum Spam module:
    Used with: "imports"
   modules/sfs.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/modules/sfs.php"
-   Checksum: "b6e7231c66ad6e6f567fad8f1d4606a09b00c98697144421af069dac098c7d25:3686"
+   Checksum: "add06a045a285193212f3611eaee28189cab42ea095c516f5f4efdc0e99f9d8c:4066"
    Used with: "modules"

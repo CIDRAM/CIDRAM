@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Dutch language data for the front-end (last modified: 2022.06.02).
+# This file: Dutch language data for the front-end (last modified: 2022.06.04).
 ##/
 
 Extended Description AbuseIPDB module: "Blokkeert aanvragen van IP's die worden vermeld op AbuseIPDB."
@@ -179,7 +179,6 @@ config_projecthoneypot_lookup_strategy: *WhenToLookup
 config_projecthoneypot_max_age_in_days: "De maximale leeftijd in dagen waarvoor rapporten worden overwogen bij het uitvoeren van zoekopdrachten. Standaard = 365."
 config_projecthoneypot_max_ts_for_captcha: "De maximale dreigingsscore die is toegestaan voor een CAPTCHA (moet een getal zijn tussen 1 en 100). Standaard = 10."
 config_projecthoneypot_minimum_threat_score: "De minimale dreigingsscore die vereist is om CIDRAM een IP-adres te blokkeren (moet een getal zijn tussen 1 en 100). Standaard = 10."
-config_projecthoneypot_report_back: "Sta CIDRAM toe om gedetecteerd slecht gedrag te melden terug aan Project Honeypot met behulp van uw API-sleutel? Standaard = False."
 config_rate_limiting: "Configuratie voor tarieflimiet (niet aanbevolen voor algemeen gebruik)."
 config_rate_limiting_allowance_period: "Het aantal uren om het gebruik te controleren. Standaard = 0."
 config_rate_limiting_exceptions: "Excepties (d.w.z., verzoeken die moet niet worden beperkt). Alleen relevant wanneer tarieflimiet is ingeschakeld."

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: General methods used by the front-end (last modified: 2022.05.25).
+ * This file: General methods used by the front-end (last modified: 2022.06.04).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -691,17 +691,16 @@ trait FrontEndMethods
      * @param string $ParentKey An optional key of the parent data source.
      * @return string The generated clickable list.
      */
-    public function arrayToClickableList(array $Arr = [], string $DeleteKey = '', int $Depth = 0, string $ParentKey = ''): string
+    private function arrayToClickableList(array $Arr = [], string $DeleteKey = '', int $Depth = 0, string $ParentKey = ''): string
     {
         $Output = '';
         $Count = count($Arr);
-        $Prefix = substr($DeleteKey, 0, 2) === 'fe' ? 'FE' : '';
         foreach ($Arr as $Key => $Value) {
             if (is_string($Value) && !$this->Demojibakefier->checkConformity($Value)) {
                 continue;
             }
             $Delete = ($Depth === 0) ? ' – (<span style="cursor:pointer" onclick="javascript:' . $DeleteKey . '(\'' . addslashes($Key) . '\')"><code class="s">' . $this->L10N->getString('field_delete') . '</code></span>)' : '';
-            $Output .= ($Depth === 0 ? '<span id="' . $Key . $Prefix . 'Container">' : '') . '<li>';
+            $Output .= ($Depth === 0 ? '<span id="' . $Key . 'Container">' : '') . '<li>';
             if (!is_array($Value)) {
                 if (substr($Value, 0, 2) === '{"' && substr($Value, -2) === '"}') {
                     $Try = json_decode($Value, true);
@@ -1090,5 +1089,33 @@ trait FrontEndMethods
             return $this->EventsPath;
         }
         return $this->Vault;
+    }
+
+    /**
+     * Get a limited subset of all available cache entries.
+     *
+     * @param string $Pattern The pattern for which entries to return.
+     * @param string $Replacement An optional replacement for entry names.
+     * @param ?callable $Sort An optional callable to sort entries.
+     * @return array An array of matching entries.
+     */
+    private function getAllEntriesWhere(string $Pattern, string $Replacement = '', ?callable $Sort): array
+    {
+        $Out = [];
+        foreach ($this->Cache->getAllEntries() as $EntryName => $EntryData) {
+            if (isset($EntryData['Time']) && $EntryData['Time'] > 0 && $EntryData['Time'] < $this->Now) {
+                continue;
+            }
+            if (preg_match($Pattern, $EntryName)) {
+                if ($Replacement !== '') {
+                    $EntryName = preg_replace($Pattern, $Replacement, $EntryName);
+                }
+                $Out[$EntryName] = $EntryData;
+            }
+        }
+        if ($Sort !== null && is_callable($Sort)) {
+            uasort($Out, $Sort);
+        }
+        return $Out;
     }
 }

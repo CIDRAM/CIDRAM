@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Project Honeypot module (last modified: 2022.05.18).
+ * This file: Project Honeypot module (last modified: 2022.06.04).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -21,7 +21,7 @@ if (!isset($this->CIDRAM['ModuleResCache'])) {
 /** Defining as closure for later recall (no params; no return value). */
 $this->CIDRAM['ModuleResCache'][$Module] = function () {
     /** Guard. */
-    if (empty($this->BlockInfo['IPAddr'])) {
+    if (empty($this->BlockInfo['IPAddr']) || $this->Configuration['projecthoneypot']['lookup_strategy'] === 0) {
         return;
     }
 
@@ -46,92 +46,94 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
     $LCURI = preg_replace('/\s/', '', strtolower($this->BlockInfo['rURI']));
 
     /** If the request isn't attempting to access a sensitive page (login, registration page, etc), exit. */
-    if (!$this->Configuration['projecthoneypot']['lookup_strategy'] && !$this->isSensitive($LCURI)) {
+    if ($this->Configuration['projecthoneypot']['lookup_strategy'] !== 1 && !$this->isSensitive($LCURI)) {
         return;
     }
 
-    /** Marks for use with reCAPTCHA and hCAPTCHA. */
-    $EnableCaptcha = ['recaptcha' => ['enabled' => true], 'hcaptcha' => ['enabled' => true]];
-
-    /** Local Project Honeypot cache entry expiry time (successful lookups). */
-    $Expiry = $this->Now + 604800;
-
-    /** Local Project Honeypot cache entry expiry time (failed lookups). */
-    $ExpiryFailed = $this->Now + 3600;
-
-    /** Build local Project Honeypot cache if it doesn't already exist. */
-    $this->initialiseCacheSection('Project Honeypot');
+    /** Check whether the lookup limit has been exceeded. */
+    if (!isset($this->CIDRAM['Project Honeypot-429'])) {
+        $this->CIDRAM['Project Honeypot-429'] = $this->Cache->getEntry('Project Honeypot-429') ? true : false;
+    }
 
     /**
      * Only execute if not already blocked for some other reason, if the IP is valid, if not from a private or reserved
      * range, and if the lookup limit hasn't already been exceeded (reduces superfluous lookups).
      */
     if (
-        isset($this->CIDRAM['Project Honeypot']['429']) ||
+        $this->CIDRAM['Project Honeypot-429'] ||
         !$this->honourLookup() ||
         filter_var($this->BlockInfo['IPAddr'], FILTER_VALIDATE_IP, FILTER_FLAG_NO_PRIV_RANGE | FILTER_FLAG_NO_RES_RANGE) === false
     ) {
         return;
     }
 
+    /** Marks for use with reCAPTCHA and hCAPTCHA. */
+    $EnableCaptcha = ['recaptcha' => ['enabled' => true], 'hcaptcha' => ['enabled' => true]];
+
     /** Executed if there aren't any cache entries corresponding to the IP of the request. */
-    if (!isset($this->CIDRAM['Project Honeypot'][$this->BlockInfo['IPAddr']])) {
-        /** Build the lookup query. */
-        $Lookup = preg_replace(
-            '~^(\d+)\.(\d+)\.(\d+)\.(\d+)$~',
-            $this->Configuration['projecthoneypot']['api_key'] . '.\4.\3.\2.\1.dnsbl.httpbl.org',
-            $this->BlockInfo['IPAddrResolved'] ?: $this->BlockInfo['IPAddr']
-        );
+    if (!isset($this->CIDRAM['Project Honeypot-' . $this->BlockInfo['IPAddr']])) {
+        $this->CIDRAM['Project Honeypot-' . $this->BlockInfo['IPAddr']] = $this->Cache->getEntry('Project Honeypot-' . $this->BlockInfo['IPAddr']);
+        if ($this->CIDRAM['Project Honeypot-' . $this->BlockInfo['IPAddr']] === false) {
+            /** Build the lookup query. */
+            $Lookup = preg_replace(
+                '~^(\d+)\.(\d+)\.(\d+)\.(\d+)$~',
+                $this->Configuration['projecthoneypot']['api_key'] . '.\4.\3.\2.\1.dnsbl.httpbl.org',
+                $this->BlockInfo['IPAddr']
+            );
 
-        /** Perform Project Honeypot lookup. */
-        $Data = dnsResolve($Lookup, $this->Configuration['projecthoneypot']['timeout_limit']);
+            /** Perform Project Honeypot lookup. */
+            $Data = $this->dnsResolve($Lookup, $this->Configuration['projecthoneypot']['timeout_limit']);
 
-        if ($this->Request->MostRecentStatusCode === 429) {
-            /** Lookup limit has been exceeded. */
-            $this->CIDRAM['Project Honeypot']['429'] = ['Time' => $Expiry];
-        } else {
-            /**
-             * Validate or substitute.
-             *
-             * @link https://www.projecthoneypot.org/httpbl_api.php
-             */
-            if (preg_match('~^127\.\d+\.\d+\.\d+$~', $Data)) {
-                $Data = explode('.', $Data);
-                $Data = [
-                    'Days since last activity' => $Data[1],
-                    'Threat score' => $Data[2],
-                    'Type of visitor' => $Data[3],
-                    'Time' => $Expiry
-                ];
+            if ($this->Request->MostRecentStatusCode === 429) {
+                /** Lookup limit has been exceeded. */
+                $this->Cache->setEntry('Project Honeypot-429', true, 604800);
+                $this->CIDRAM['Project Honeypot-429'] = true;
             } else {
-                $Data = [
-                    'Days since last activity' => -1,
-                    'Threat score' => -1,
-                    'Type of visitor' => -1,
-                    'Time' => $ExpiryFailed
-                ];
+                /**
+                 * Validate or substitute.
+                 *
+                 * @link https://www.projecthoneypot.org/httpbl_api.php
+                 */
+                if (preg_match('~^127\.\d+\.\d+\.\d+$~', $Data)) {
+                    $Data = explode('.', $Data);
+                    $this->CIDRAM['Project Honeypot-' . $this->BlockInfo['IPAddr']] = [
+                        'Days since last activity' => $Data[1],
+                        'Threat score' => $Data[2],
+                        'Type of visitor' => $Data[3]
+                    ];
+                    $this->Cache->setEntry(
+                        'Project Honeypot-' . $this->BlockInfo['IPAddr'],
+                        $this->CIDRAM['Project Honeypot-' . $this->BlockInfo['IPAddr']],
+                        604800
+                    );
+                } else {
+                    $this->CIDRAM['Project Honeypot-' . $this->BlockInfo['IPAddr']] = [
+                        'Days since last activity' => -1,
+                        'Threat score' => -1,
+                        'Type of visitor' => -1
+                    ];
+                    $this->Cache->setEntry(
+                        'Project Honeypot-' . $this->BlockInfo['IPAddr'],
+                        $this->CIDRAM['Project Honeypot-' . $this->BlockInfo['IPAddr']],
+                        3600
+                    );
+                }
             }
-
-            /** Generate local Project Honeypot cache entry. */
-            $this->CIDRAM['Project Honeypot'][$this->BlockInfo['IPAddr']] = $Data;
         }
-
-        /** Cache update flag. */
-        $this->CIDRAM['Project Honeypot-Modified'] = true;
     }
 
     /** Block the request if the IP is listed by Project Honeypot. */
     $this->trigger(
         (
-            $this->CIDRAM['Project Honeypot'][$this->BlockInfo['IPAddr']]['Threat score'] >= $this->Configuration['projecthoneypot']['minimum_threat_score'] &&
-            $this->CIDRAM['Project Honeypot'][$this->BlockInfo['IPAddr']]['Days since last activity'] <= $this->Configuration['projecthoneypot']['max_age_in_days']
+            $this->CIDRAM['Project Honeypot-' . $this->BlockInfo['IPAddr']]['Threat score'] >= $this->Configuration['projecthoneypot']['minimum_threat_score'] &&
+            $this->CIDRAM['Project Honeypot-' . $this->BlockInfo['IPAddr']]['Days since last activity'] <= $this->Configuration['projecthoneypot']['max_age_in_days']
         ),
         'Project Honeypot Lookup',
         $this->L10N->getString('ReasonMessage_Generic') . '<br />' . sprintf(
             $this->L10N->getString('request_removal'),
-            'https://www.projecthoneypot.org/ip_' . ($this->BlockInfo['IPAddrResolved'] ?: $this->BlockInfo['IPAddr'])
+            'https://www.projecthoneypot.org/ip_' . $this->BlockInfo['IPAddr']
         ),
-        $this->CIDRAM['Project Honeypot'][$this->BlockInfo['IPAddr']]['Threat score'] <= $this->Configuration['projecthoneypot']['max_ts_for_captcha'] ? $EnableCaptcha : []
+        $this->CIDRAM['Project Honeypot-' . $this->BlockInfo['IPAddr']]['Threat score'] <= $this->Configuration['projecthoneypot']['max_ts_for_captcha'] ? $EnableCaptcha : []
     );
 };
 

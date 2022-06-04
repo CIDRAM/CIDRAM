@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Protect traits (last modified: 2022.05.30).
+ * This file: Protect traits (last modified: 2022.06.04).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -88,7 +88,6 @@ trait Protect
 
         /** Initialise statistics if necessary. */
         if (isset($this->Stages['Statistics:Enable'])) {
-            $this->initialiseCacheSection('Statistics');
             if (!isset($this->Statistics['Other-Since'])) {
                 $this->Statistics = [
                     'Other-Since' => $this->Now,
@@ -117,13 +116,12 @@ trait Protect
             'favicon' => $this->CIDRAM['favicon'],
             'favicon_extension' => $this->CIDRAM['favicon_extension'],
             'Query' => $this->CIDRAM['Query'],
-            'Referrer' => empty($_SERVER['HTTP_REFERER']) ? '' : $_SERVER['HTTP_REFERER'],
-            'UA' => empty($_SERVER['HTTP_USER_AGENT']) ? '' : $_SERVER['HTTP_USER_AGENT'],
+            'Referrer' => $_SERVER['HTTP_REFERER'] ?? '',
+            'UA' => $_SERVER['HTTP_USER_AGENT'] ?? '',
             'SignatureCount' => 0,
             'Signatures' => '',
             'WhyReason' => '',
             'ReasonMessage' => '',
-            'Infractions' => $this->CIDRAM['Tracking'][$this->BlockInfo['IPAddr']]['Count'] ?? 0,
             'ASNLookup' => 0,
             'CCLookup' => 'XX',
             'Verified' => '',
@@ -132,6 +130,16 @@ trait Protect
             'Request_Method' => $_SERVER['REQUEST_METHOD'] ?? '',
             'xmlLang' => $this->Configuration['general']['lang']
         ];
+        if (isset($this->CIDRAM['Tracking-' . $this->BlockInfo['IPAddr']])) {
+            $this->BlockInfo['Infractions'] = $this->CIDRAM['Tracking-' . $this->BlockInfo['IPAddr']];
+        } else {
+            if (($Try = $this->Cache->getEntry('Tracking-' . $this->BlockInfo['IPAddr'])) === false) {
+                $this->BlockInfo['Infractions'] = 0;
+            } else {
+                $this->BlockInfo['Infractions'] = $Try;
+            }
+        }
+        $AtRunTimeInfractions = $this->BlockInfo['Infractions'];
         $this->BlockInfo['UALC'] = strtolower($this->BlockInfo['UA']);
         $this->BlockInfo['rURI'] = (
             (!empty($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https') ||
@@ -186,17 +194,18 @@ trait Protect
              */
             elseif (isset($this->Stages['Tracking:Enable'])) {
                 $this->Stage = 'Tracking';
-                if (($this->BlockInfo['IPAddr'] && isset(
-                    $this->CIDRAM['Tracking'][$this->BlockInfo['IPAddr']],
-                    $this->CIDRAM['Tracking'][$this->BlockInfo['IPAddr']]['Count']
-                ) && (
-                    $this->CIDRAM['Tracking'][$this->BlockInfo['IPAddr']]['Count'] >= $this->Configuration['signatures']['infraction_limit']
-                )) || ($this->BlockInfo['IPAddrResolved'] && isset(
-                    $this->CIDRAM['Tracking'][$this->BlockInfo['IPAddrResolved']],
-                    $this->CIDRAM['Tracking'][$this->BlockInfo['IPAddrResolved']]['Count']
-                ) && (
-                    $this->CIDRAM['Tracking'][$this->BlockInfo['IPAddrResolved']]['Count'] >= $this->Configuration['signatures']['infraction_limit']
-                ))) {
+                $DoBan = false;
+                $Try = $this->CIDRAM['Tracking-' . $this->BlockInfo['IPAddr']] ?? $this->Cache->getEntry('Tracking-' . $this->BlockInfo['IPAddr']);
+                if ($Try !== false && $Try >= $this->Configuration['signatures']['infraction_limit']) {
+                    $DoBan = true;
+                }
+                if ($this->BlockInfo['IPAddr'] !== $this->BlockInfo['IPAddrResolved']) {
+                    $Try = $this->CIDRAM['Tracking-' . $this->BlockInfo['IPAddr']] ?? $this->Cache->getEntry('Tracking-' . $this->BlockInfo['IPAddr']);
+                    if ($Try !== false && $Try >= $this->Configuration['signatures']['infraction_limit']) {
+                        $DoBan = true;
+                    }
+                }
+                if ($DoBan) {
                     $this->CIDRAM['Banned'] = true;
                     $this->BlockInfo['ReasonMessage'] = $this->L10N->getString('ReasonMessage_Banned');
                     $this->BlockInfo['WhyReason'] = $this->L10N->getString('Short_Banned');
@@ -313,14 +322,11 @@ trait Protect
             $this->Stage = 'Tracking';
 
             /** Set tracking expiry. */
-            $this->CIDRAM['TrackTime'] = $this->Now + ($this->Configuration['Options']['TrackTime'] ?? $this->Configuration['signatures']['default_tracktime']);
+            $this->CIDRAM['TrackTime'] = $this->Configuration['Options']['TrackTime'] ?? $this->Configuration['signatures']['default_tracktime'];
 
             /** Number of infractions to append. */
-            if (
-                isset($this->CIDRAM['Tracking'][$this->BlockInfo['IPAddr']]['Count']) &&
-                $this->CIDRAM['Tracking'][$this->BlockInfo['IPAddr']]['Count'] > $this->BlockInfo['Infractions']
-            ) {
-                $this->CIDRAM['TrackCount'] = $this->CIDRAM['Tracking'][$this->BlockInfo['IPAddr']]['Count'] - $this->BlockInfo['Infractions'];
+            if ($AtRunTimeInfractions > $this->BlockInfo['Infractions']) {
+                $this->CIDRAM['TrackCount'] = $AtRunTimeInfractions - $this->BlockInfo['Infractions'];
             } else {
                 $this->CIDRAM['TrackCount'] = $this->BlockInfo['Infractions'];
             }
@@ -328,31 +334,31 @@ trait Protect
             /** Tracking options override. */
             if (!empty($this->CIDRAM['Tracking options override'])) {
                 if ($this->CIDRAM['Tracking options override'] === 'extended') {
-                    $this->CIDRAM['TrackTime'] = $this->Now + floor($this->Configuration['signatures']['default_tracktime'] * 52.1428571428571);
+                    $this->CIDRAM['TrackTime'] = floor($this->Configuration['signatures']['default_tracktime'] * 52.1428571428571);
                     $this->CIDRAM['TrackCount'] *= 1000;
                 } elseif ($this->CIDRAM['Tracking options override'] === 'default') {
-                    $this->CIDRAM['TrackTime'] = $this->Now + $this->Configuration['signatures']['default_tracktime'];
+                    $this->CIDRAM['TrackTime'] = $this->Configuration['signatures']['default_tracktime'];
                     $this->CIDRAM['TrackCount'] = 1;
                 }
             }
 
-            if (isset(
-                $this->CIDRAM['Tracking'][$this->BlockInfo['IPAddr']]['Count'],
-                $this->CIDRAM['Tracking'][$this->BlockInfo['IPAddr']]['Time']
-            )) {
-                $this->CIDRAM['Tracking'][$this->BlockInfo['IPAddr']]['Count'] += $this->CIDRAM['TrackCount'];
-                if ($this->CIDRAM['TrackTime'] > $this->CIDRAM['Tracking'][$this->BlockInfo['IPAddr']]['Time']) {
-                    $this->CIDRAM['Tracking'][$this->BlockInfo['IPAddr']]['Time'] = $this->CIDRAM['TrackTime'];
+            if (isset($this->CIDRAM['Tracking-' . $this->BlockInfo['IPAddr']])) {
+                $this->CIDRAM['Tracking-' . $this->BlockInfo['IPAddr']] += $this->CIDRAM['TrackCount'];
+                /*
+                if ($this->CIDRAM['TrackTime'] > $this->CIDRAM['Tracking-' . $this->BlockInfo['IPAddr']]['Time']) {
+                    $this->CIDRAM['Tracking-' . $this->BlockInfo['IPAddr']]['Time'] = $this->CIDRAM['TrackTime'];
                 }
+                */
             } else {
-                $this->CIDRAM['Tracking'][$this->BlockInfo['IPAddr']] = [
-                    'Count' => $this->CIDRAM['TrackCount'],
-                    'Time' => $this->CIDRAM['TrackTime']
-                ];
+                $this->CIDRAM['Tracking-' . $this->BlockInfo['IPAddr']] = $this->CIDRAM['TrackCount'];
             }
-            $this->CIDRAM['Tracking-Modified'] = true;
+            $this->Cache->setEntry(
+                'Tracking-' . $this->BlockInfo['IPAddr'],
+                $this->CIDRAM['Tracking-' . $this->BlockInfo['IPAddr']],
+                $this->CIDRAM['TrackTime']
+            );
 
-            if ($this->CIDRAM['Tracking'][$this->BlockInfo['IPAddr']]['Count'] >= $this->Configuration['signatures']['infraction_limit']) {
+            if ($this->CIDRAM['Tracking-' . $this->BlockInfo['IPAddr']] >= $this->Configuration['signatures']['infraction_limit']) {
                 $this->CIDRAM['Banned'] = true;
             }
 
@@ -421,7 +427,6 @@ trait Protect
                     }, 1);
                     register_shutdown_function(function () {
                         $this->rateLimitWriteEvent($this->CIDRAM['RL_Capture'], $this->CIDRAM['RL_Size']);
-                        $this->destroyCacheObject();
                         ob_end_flush();
                     });
                 }
@@ -541,11 +546,6 @@ trait Protect
             }
         }
 
-        /** Destroy cache object and some related values. */
-        if (empty($this->CIDRAM['RL_Capture'])) {
-            $this->destroyCacheObject();
-        }
-
         /** Process webhooks. */
         if (isset($this->Stages['Webhooks:Enable']) && !empty($this->Webhooks) || !empty($this->Configuration['Webhook']['URL'])) {
             $this->Stage = 'Webhooks';
@@ -656,8 +656,8 @@ trait Protect
                 $this->CIDRAM['Fields'] = array_flip(explode("\n", $this->Configuration['general']['fields']));
 
                 $this->BlockInfo['Infractions'] = 0;
-                if (isset($this->CIDRAM['Tracking'][$this->BlockInfo['IPAddr']]['Count'])) {
-                    $this->BlockInfo['Infractions'] += $this->CIDRAM['Tracking'][$this->BlockInfo['IPAddr']]['Count'];
+                if (isset($this->CIDRAM['Tracking-' . $this->BlockInfo['IPAddr']])) {
+                    $this->BlockInfo['Infractions'] += $this->CIDRAM['Tracking-' . $this->BlockInfo['IPAddr']];
                 }
                 if (!empty($this->CIDRAM['Hostname']) && $this->CIDRAM['Hostname'] !== $this->BlockInfo['IPAddr']) {
                     $this->BlockInfo['Hostname'] = $this->CIDRAM['Hostname'];

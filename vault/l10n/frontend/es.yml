@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Spanish language data for the front-end (last modified: 2022.06.02).
+# This file: Spanish language data for the front-end (last modified: 2022.06.04).
 ##/
 
 Extended Description AbuseIPDB module: "Bloquea las solicitudes de los IP listados en AbuseIPDB."
@@ -179,7 +179,6 @@ config_projecthoneypot_lookup_strategy: *WhenToLookup
 config_projecthoneypot_max_age_in_days: "La antigüedad máxima en días para la que se tendrán en cuenta los informes al realizar búsquedas. Predefinido = 365."
 config_projecthoneypot_max_ts_for_captcha: "La puntuación de amenaza máxima permitida para recibir un CAPTCHA (debe ser un número entre 1 y 100). Predefinido = 10."
 config_projecthoneypot_minimum_threat_score: "La puntuación mínimo de amenaza requerido para que CIDRAM bloquee una dirección IP (debe ser un número entre 1 y 100). Predefinido = 10."
-config_projecthoneypot_report_back: "¿Permitir que CIDRAM informe el mal comportamiento detectado al Proyecto Honeypot usando su clave API? Predefinido = False."
 config_rate_limiting: "Configuración para limitar la velocidad de acceso (no recomendado para uso general)."
 config_rate_limiting_allowance_period: "El número de horas para monitorear el uso. Predefinido = 0."
 config_rate_limiting_exceptions: "Excepciones (es decir, solicitudes que no deberían limitada). Relevante solo cuando la limitación de velocidad está habilitada."

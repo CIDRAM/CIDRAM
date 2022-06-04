@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: English language data for the front-end (last modified: 2022.06.02).
+# This file: English language data for the front-end (last modified: 2022.06.04).
 ##/
 
 Extended Description AbuseIPDB module: "Blocks requests from IPs listed at AbuseIPDB."
@@ -179,7 +179,6 @@ config_projecthoneypot_lookup_strategy: *WhenToLookup
 config_projecthoneypot_max_age_in_days: "The maximum age in days for which reports will be considered when performing lookups. Default = 365."
 config_projecthoneypot_max_ts_for_captcha: "The maximum threat score allowed for being served a CAPTCHA (must be a number between 1 and 100). Default = 10."
 config_projecthoneypot_minimum_threat_score: "The minimum threat score required in order for CIDRAM to block an IP address (must be a number between 1 and 100). Default = 10."
-config_projecthoneypot_report_back: "Allow CIDRAM to report detected bad behaviour back to Project Honeypot using your API key? Default = False."
 config_rate_limiting: "Configuration for rate limiting (not recommended for general use)."
 config_rate_limiting_allowance_period: "The number of hours to track usage. Default = 0."
 config_rate_limiting_exceptions: "Exceptions (i.e., requests which shouldn't be rate limited). Relevant only when rate limiting is enabled."

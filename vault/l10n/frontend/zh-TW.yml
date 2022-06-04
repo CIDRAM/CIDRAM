@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (traditional) language data for the front-end (last modified: 2022.06.02).
+# This file: Chinese (traditional) language data for the front-end (last modified: 2022.06.04).
 ##/
 
 Extended Description AbuseIPDB module: "阻止來自AbuseIPDB列出的IP的請求。"
@@ -179,7 +179,6 @@ config_projecthoneypot_lookup_strategy: *WhenToLookup
 config_projecthoneypot_max_age_in_days: "執行查找時將考慮報告的最長天數。標準=365。"
 config_projecthoneypot_max_ts_for_captcha: "為了提供CAPTCHA的目的最大威脅分數（必須是1到100之間的數字）。標準=10。"
 config_projecthoneypot_minimum_threat_score: "為了讓CIDRAM阻止IP地址所需的最低威脅分數（必須是1到100之間的數字）。標準=10。"
-config_projecthoneypot_report_back: "允許CIDRAM使用您的API密鑰將檢測到的不良行為報告回Project Honeypot馬？標準=False。"
 config_rate_limiting: "速率限制的配置（不建議一般使用）。"
 config_rate_limiting_allowance_period: "監視使用情況的小時數。​標準=0。"
 config_rate_limiting_exceptions: "例外（即，不應限制速率的請求）。​僅在啟用速率限制時有效。"

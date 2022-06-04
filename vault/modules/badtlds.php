@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Bad TLDs blocker module (last modified: 2022.05.30).
+ * This file: Bad TLDs blocker module (last modified: 2022.06.04).
  *
  * False positive risk (an approximate, rough estimate only): « [x]Low [ ]Medium [ ]High »
  */
@@ -26,7 +26,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
     }
 
     /** Don't continue if compatibility indicators exist. */
-    if (strpos($this->BlockInfo['Signatures'], 'compat_bunnycdn.php') !== false) {
+    if (strpos($this->BlockInfo['Signatures'], 'bunnycdn.php') !== false) {
         return;
     }
 

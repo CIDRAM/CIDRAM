@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: HCaptcha class (last modified: 2022.05.24).
+ * This file: HCaptcha class (last modified: 2022.06.04).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -69,8 +69,8 @@ class HCaptcha extends Captcha
                 $this->CIDRAM->BlockInfo['SignatureCount'] = 0;
 
                 /** Fix for infraction escalation bug. */
-                if (isset($this->CIDRAM->CIDRAM['Tracking'][$this->CIDRAM->BlockInfo['IPAddr']])) {
-                    unset($this->CIDRAM->CIDRAM['Tracking'][$this->CIDRAM->BlockInfo['IPAddr']]);
+                if (isset($this->CIDRAM->CIDRAM['Tracking-' . $this->CIDRAM->BlockInfo['IPAddr']])) {
+                    unset($this->CIDRAM->CIDRAM['Tracking-' . $this->CIDRAM->BlockInfo['IPAddr']]);
                     $this->CIDRAM->CIDRAM['Tracking-Modified'] = true;
                 }
             } else {
@@ -156,8 +156,8 @@ class HCaptcha extends Captcha
                 $this->CIDRAM->BlockInfo['SignatureCount'] = 0;
 
                 /** Fix for infraction escalation bug. */
-                if (isset($this->CIDRAM->CIDRAM['Tracking'][$this->CIDRAM->BlockInfo['IPAddr']])) {
-                    unset($this->CIDRAM->CIDRAM['Tracking'][$this->CIDRAM->BlockInfo['IPAddr']]);
+                if (isset($this->CIDRAM->CIDRAM['Tracking-' . $this->CIDRAM->BlockInfo['IPAddr']])) {
+                    unset($this->CIDRAM->CIDRAM['Tracking-' . $this->CIDRAM->BlockInfo['IPAddr']]);
                     $this->CIDRAM->CIDRAM['Tracking-Modified'] = true;
                 }
             } else {

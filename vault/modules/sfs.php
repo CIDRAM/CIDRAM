@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Stop Forum Spam module (last modified: 2022.05.18).
+ * This file: Stop Forum Spam module (last modified: 2022.06.04).
  *
  * False positive risk (an approximate, rough estimate only): « [x]Low [ ]Medium [ ]High »
  */
@@ -33,62 +33,64 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         return;
     }
 
-    /** Marks for use with reCAPTCHA and hCAPTCHA. */
-    $EnableCaptcha = ['recaptcha' => ['enabled' => true], 'hcaptcha' => ['enabled' => true]];
-
-    /** Local SFS cache entry expiry time (successful lookups). */
-    $Expiry = $this->Now + 604800;
-
-    /** Local SFS cache entry expiry time (failed lookups). */
-    $ExpiryFailed = $this->Now + 3600;
-
-    /** Build local SFS cache if it doesn't already exist. */
-    $this->initialiseCacheSection('SFS');
+    /** Check whether the lookup limit has been exceeded. */
+    if (!isset($this->CIDRAM['SFS-429'])) {
+        $this->CIDRAM['SFS-429'] = $this->Cache->getEntry('SFS-429') ? true : false;
+    }
 
     /**
      * Only execute if not already blocked for some other reason, if the IP is valid, if not from a private or reserved
      * range, and if the lookup limit hasn't already been exceeded (reduces superfluous lookups).
      */
     if (
-        isset($this->CIDRAM['SFS']['429']) ||
+        $this->CIDRAM['SFS-429'] ||
         !$this->honourLookup() ||
         filter_var($this->BlockInfo['IPAddr'], FILTER_VALIDATE_IP, FILTER_FLAG_NO_PRIV_RANGE | FILTER_FLAG_NO_RES_RANGE) === false
     ) {
         return;
     }
 
+    /** Marks for use with reCAPTCHA and hCAPTCHA. */
+    $EnableCaptcha = ['recaptcha' => ['enabled' => true], 'hcaptcha' => ['enabled' => true]];
+
     /** Executed if there aren't any cache entries corresponding to the IP of the request. */
-    if (!isset($this->CIDRAM['SFS'][$this->BlockInfo['IPAddr']])) {
-        /** Perform SFS lookup. */
-        $Lookup = $this->Request->request('https://www.stopforumspam.com/api', [
-            'ip' => $this->BlockInfo['IPAddr'],
-            'f' => 'serial'
-        ], $this->Configuration['sfs']['timeout_limit']);
+    if (!isset($this->CIDRAM['SFS-' . $this->BlockInfo['IPAddr']])) {
+        $this->CIDRAM['SFS-' . $this->BlockInfo['IPAddr']] = $this->Cache->getEntry('SFS-' . $this->BlockInfo['IPAddr']);
+        if ($this->CIDRAM['SFS-' . $this->BlockInfo['IPAddr']] === false) {
+            /** Perform SFS lookup. */
+            $Lookup = $this->Request->request(
+                'https://www.stopforumspam.com/api',
+                ['ip' => $this->BlockInfo['IPAddr'], 'f' => 'serial'],
+                $this->Configuration['sfs']['timeout_limit']
+            );
 
-        if ($this->Request->MostRecentStatusCode === 429) {
-            /** Lookup limit has been exceeded. */
-            $this->CIDRAM['SFS']['429'] = ['Time' => $Expiry];
-        } else {
-            /** Generate local SFS cache entry. */
-            $this->CIDRAM['SFS'][$this->BlockInfo['IPAddr']] = (
-                strpos($Lookup, 's:7:"success";') !== false &&
-                strpos($Lookup, 's:2:"ip";') !== false
-            ) ? [
-                'Listed' => (strpos($Lookup, '"appears";i:1;') !== false),
-                'Time' => $Expiry
-            ] : [
-                'Listed' => false,
-                'Time' => $ExpiryFailed
-            ];
+            if ($this->Request->MostRecentStatusCode === 429) {
+                /** Lookup limit has been exceeded. */
+                $this->Cache->setEntry('SFS-429', true, 604800);
+                $this->CIDRAM['SFS-429'] = true;
+            } else {
+                /** Generate local SFS cache entry. */
+                if ((strpos($Lookup, 's:7:"success";') !== false) && (strpos($Lookup, 's:2:"ip";') !== false)) {
+                    $this->CIDRAM['SFS-' . $this->BlockInfo['IPAddr']] = (strpos($Lookup, '"appears";i:1;') !== false);
+                    $Expiry = 604800;
+                } else {
+                    $this->CIDRAM['SFS-' . $this->BlockInfo['IPAddr']] = false;
+                    $Expiry = 3600;
+                }
+
+                /** Update cache. */
+                $this->Cache->setEntry(
+                    'SFS-' . $this->BlockInfo['IPAddr'],
+                    $this->CIDRAM['SFS-' . $this->BlockInfo['IPAddr']],
+                    $Expiry
+                );
+            }
         }
-
-        /** Cache update flag. */
-        $this->CIDRAM['SFS-Modified'] = true;
     }
 
     /** Block the request if the IP is listed by SFS. */
     $this->trigger(
-        !empty($this->CIDRAM['SFS'][$this->BlockInfo['IPAddr']]['Listed']),
+        !empty($this->CIDRAM['SFS-' . $this->BlockInfo['IPAddr']]['Listed']),
         'SFS Lookup',
         $this->L10N->getString('ReasonMessage_Generic') . '<br />' . sprintf($this->L10N->getString('request_removal'), 'https://www.stopforumspam.com/removal'),
         $this->Configuration['sfs']['offer_captcha'] ? $EnableCaptcha : []

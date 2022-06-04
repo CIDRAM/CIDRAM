@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Turkish language data for the front-end (last modified: 2022.06.02).
+# This file: Turkish language data for the front-end (last modified: 2022.06.04).
 ##/
 
 Extended Description AbuseIPDB module: "AbuseIPDB'de listelenen IP'lerden gelen istekleri engeller."
@@ -179,7 +179,6 @@ config_projecthoneypot_lookup_strategy: *WhenToLookup
 config_projecthoneypot_max_age_in_days: "Aramalar yapılırken raporların dikkate alınması için gün cinsinden maksimum yaş. Varsayılan = 365."
 config_projecthoneypot_max_ts_for_captcha: "Bir CAPTCHA için izin verilen maksimum tehdit puanı (1 ile 100 arasında bir sayı olmalıdır). Varsayılan = 10."
 config_projecthoneypot_minimum_threat_score: "CIDRAM'ın bir IP adresini engellemesi için gereken minimum tehdit puanı (1 ile 100 arasında bir sayı olmalıdır). Varsayılan = 10."
-config_projecthoneypot_report_back: "CIDRAM'ın API anahtarınızı kullanarak algılanan kötü davranışı Project Honeypot'ye geri bildirmesine izin verilsin mi? Varsayılan = False."
 config_rate_limiting: "Hız sınırlaması için yapılandırma (genel kullanım için önerilmez)."
 config_rate_limiting_allowance_period: "Kullanımı izlemek için saat sayısı. Varsayılan = 0."
 config_rate_limiting_exceptions: "İstisnalar (yani oran sınırlı olmaması gereken istekler). Yalnızca sınırlaması etkin olduğunda geçerlidir."

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: BunnyCDN compatibility module (last modified: 2022.05.18).
+ * This file: BunnyCDN compatibility module (last modified: 2022.06.04).
  *
  * False positive risk (an approximate, rough estimate only): « [x]Low [ ]Medium [ ]High »
  */
@@ -25,23 +25,20 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         return;
     }
 
-    /** Instantiate API cache. */
-    $this->initialiseCacheSection('API');
-
     /** Fetch BunnyCDN IP list. */
-    if (!isset($this->CIDRAM['API']['BunnyCDN'], $this->CIDRAM['API']['BunnyCDN']['Data'])) {
-        $this->CIDRAM['API']['BunnyCDN'] = [
-            'Data' => $this->Request->request('https://bunnycdn.com/api/system/edgeserverlist') ?: '',
-            'Time' => $this->Now + 345600
-        ];
-        $this->CIDRAM['API-Modified'] = true;
+    if (!isset($this->CIDRAM['BunnyCDN'])) {
+        $this->CIDRAM['BunnyCDN'] = $this->Cache->getEntry('BunnyCDN');
+        if ($this->CIDRAM['BunnyCDN'] === false) {
+            $this->CIDRAM['BunnyCDN'] = $this->Request->request('https://bunnycdn.com/api/system/edgeserverlist') ?: '';
+            $this->Cache->setEntry('BunnyCDN', $this->CIDRAM['BunnyCDN'], 345600);
+        }
     }
 
     /** Converts the raw data from the BunnyCDN API to an array. */
-    $IPList = (substr($this->CIDRAM['API']['BunnyCDN']['Data'], 0, 1) === '<') ? array_filter(
-        explode('<>', preg_replace('~<[^<>]+>~', '<>', $this->CIDRAM['API']['BunnyCDN']['Data']))
+    $IPList = (substr($this->CIDRAM['BunnyCDN'], 0, 1) === '<') ? array_filter(
+        explode('<>', preg_replace('~<[^<>]+>~', '<>', $this->CIDRAM['BunnyCDN']))
     ) : (array_filter(
-        explode(',', preg_replace('~["\'\[\]]~', '', $this->CIDRAM['API']['BunnyCDN']['Data']))
+        explode(',', preg_replace('~["\'\[\]]~', '', $this->CIDRAM['BunnyCDN']))
     ) ?: '');
 
     /** Execute configured action for positive matches against the BunnyCDN IP list. */

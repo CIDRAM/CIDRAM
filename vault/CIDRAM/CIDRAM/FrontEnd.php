@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM front-end (last modified: 2022.06.02).
+ * This file: The CIDRAM front-end (last modified: 2022.06.04).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -3518,130 +3518,127 @@ class FrontEnd extends Core
             if (isset($_POST['IPAddr'])) {
                 $this->CIDRAM['Cleared'] = false;
                 if ($_POST['IPAddr'] === '*') {
-                    $this->CIDRAM['Tracking'] = [];
                     $this->CIDRAM['Cleared'] = true;
-                } elseif (isset($this->CIDRAM['Tracking'][$_POST['IPAddr']])) {
-                    unset($this->CIDRAM['Tracking'][$_POST['IPAddr']]);
+                } elseif (isset($this->CIDRAM['Tracking-' . $_POST['IPAddr']])) {
+                    unset($this->CIDRAM['Tracking-' . $_POST['IPAddr']]);
                     $this->CIDRAM['Cleared'] = true;
                 }
                 if ($this->CIDRAM['Cleared']) {
                     $this->FE['state_msg'] = $this->L10N->getString('response_tracking_cleared');
-                    $this->CIDRAM['Tracking-Modified'] = true;
                 }
                 unset($this->CIDRAM['Cleared']);
             }
 
-            /** Count currently tracked IPs. */
-            $this->FE['TrackingCount'] = count($this->CIDRAM['Tracking']);
-            $this->FE['TrackingCount'] = sprintf(
-                $this->L10N->getPlural($this->FE['TrackingCount'], 'state_tracking'),
-                '<span class="txtRd">' . $this->NumberFormatter->format($this->FE['TrackingCount']) . '</span>'
-            );
-
             if (!$this->FE['ASYNC']) {
-                uasort($this->CIDRAM['Tracking'], function ($A, $B): int {
-                    if (empty($A['Time']) || empty($B['Time']) || $A['Time'] === $B['Time']) {
-                        return 0;
-                    }
-                    return ($A['Time'] < $B['Time']) ? -1 : 1;
-                });
-
-                $this->CIDRAM['ThisTracking'] = [];
+                $ThisTracking = [];
 
                 /** Initialise stages. */
                 $this->Stages = array_flip(explode("\n", $this->Configuration['general']['stages']));
 
+                /** Get all IP tracking entries. */
+                $Entries = $this->getAllEntriesWhere('~^Tracking-(.+)$~', '\1', function ($A, $B): int {
+                    return ($A['Time'] < $B['Time']) ? -1 : 1;
+                });
+
+                /** Count currently tracked IPs. */
+                $this->FE['TrackingCount'] = count($Entries);
+                $this->FE['TrackingCount'] = sprintf(
+                    $this->L10N->getPlural($this->FE['TrackingCount'], 'state_tracking'),
+                    '<span class="txtRd">' . $this->NumberFormatter->format($this->FE['TrackingCount']) . '</span>'
+                );
+
                 /** Iterate through all addresses being currently tracked. */
-                foreach ($this->CIDRAM['Tracking'] as $this->CIDRAM['ThisTracking']['IPAddr'] => $this->CIDRAM['ThisTrackingArr']) {
-                    if (!isset($this->CIDRAM['ThisTrackingArr']['Time'], $this->CIDRAM['ThisTrackingArr']['Count'])) {
+                foreach ($Entries as $ThisTracking['IPAddr'] => $ThisTrackingArray) {
+                    /** Guard. */
+                    if (!isset($ThisTrackingArray['Time'], $ThisTrackingArray['Data'])) {
                         continue;
                     }
 
                     /** Check whether normally blocked by signature files and/or auxiliary rules. */
                     if ($this->FE['tracking-blocked-already'] || $this->FE['tracking-aux']) {
-                        $this->simulateBlockEvent($this->CIDRAM['ThisTracking']['IPAddr'], false, $this->FE['tracking-aux'], false);
-                        $this->CIDRAM['ThisTracking']['Blocked'] = ($this->CIDRAM['Caught'] || $this->BlockInfo['SignatureCount']);
+                        $this->simulateBlockEvent($ThisTracking['IPAddr'], false, $this->FE['tracking-aux'], false);
+                        $ThisTracking['Blocked'] = ($this->CIDRAM['Caught'] || $this->BlockInfo['SignatureCount']);
                     } else {
-                        $this->CIDRAM['ThisTracking']['Blocked'] = false;
+                        $ThisTracking['Blocked'] = false;
                     }
 
                     /** Hide banned/blocked IPs. */
                     if ($this->FE['tracking-hide-banned-blocked'] && (
-                        $this->CIDRAM['ThisTracking']['Blocked'] || $this->CIDRAM['ThisTrackingArr']['Count'] >= $this->Configuration['signatures']['infraction_limit']
+                        $ThisTracking['Blocked'] || $ThisTrackingArray['Data'] >= $this->Configuration['signatures']['infraction_limit']
                     )) {
                         continue;
                     }
-                    $this->CIDRAM['ThisTracking']['IPID'] = bin2hex($this->CIDRAM['ThisTracking']['IPAddr']);
+                    $ThisTracking['IPID'] = bin2hex($ThisTracking['IPAddr']);
 
                     /** Set clearing option. */
-                    $this->CIDRAM['ThisTracking']['Options'] = (
-                        $this->CIDRAM['ThisTrackingArr']['Count'] > 0
+                    $ThisTracking['Options'] = (
+                        $ThisTrackingArray['Data'] > 0
                     ) ?
                         '<input type="button" class="auto" onclick="javascript:{window[\'IPAddr\']=\'' .
-                        $this->CIDRAM['ThisTracking']['IPAddr'] .
+                        $ThisTracking['IPAddr'] .
                         '\';$(\'POST\',\'\',[\'IPAddr\'],function(){w(\'stateMsg\',\'' .
                         $this->L10N->getString('state_loading') . '\')},function(e){w(\'stateMsg\',e);hideid(\'' .
-                        $this->CIDRAM['ThisTracking']['IPID'] . '\')},function(e){w(\'stateMsg\',e)})}" value="' .
+                        $ThisTracking['IPID'] . '\')},function(e){w(\'stateMsg\',e)})}" value="' .
                         $this->L10N->getString('field_clear') . '" />'
                     : '';
 
                     /** When the entry expires. */
-                    $this->CIDRAM['ThisTracking']['Expiry'] = $this->timeFormat(
-                        $this->CIDRAM['ThisTrackingArr']['Time'],
+                    $ThisTracking['Expiry'] = $this->timeFormat(
+                        $ThisTrackingArray['Time'],
                         $this->Configuration['general']['time_format']
-                    ) . '<br />(' . $this->relativeTime($this->CIDRAM['ThisTrackingArr']['Time']) . ')';
+                    ) . '<br />(' . $this->relativeTime($ThisTrackingArray['Time']) . ')';
 
-                    if ($this->CIDRAM['ThisTrackingArr']['Count'] >= $this->Configuration['signatures']['infraction_limit']) {
-                        $this->CIDRAM['ThisTracking']['StatClass'] = 'txtRd';
-                        $this->CIDRAM['ThisTracking']['Status'] = $this->L10N->getString('field_banned');
-                    } elseif ($this->CIDRAM['ThisTrackingArr']['Count'] >= ($this->Configuration['signatures']['infraction_limit'] / 2)) {
-                        $this->CIDRAM['ThisTracking']['StatClass'] = 'txtOe';
-                        $this->CIDRAM['ThisTracking']['Status'] = $this->L10N->getString('field_tracking');
+                    if ($ThisTrackingArray['Data'] >= $this->Configuration['signatures']['infraction_limit']) {
+                        $ThisTracking['StatClass'] = 'txtRd';
+                        $ThisTracking['Status'] = $this->L10N->getString('field_banned');
+                    } elseif ($ThisTrackingArray['Data'] >= ($this->Configuration['signatures']['infraction_limit'] / 2)) {
+                        $ThisTracking['StatClass'] = 'txtOe';
+                        $ThisTracking['Status'] = $this->L10N->getString('field_tracking');
                     } else {
-                        $this->CIDRAM['ThisTracking']['StatClass'] = 's';
-                        $this->CIDRAM['ThisTracking']['Status'] = $this->L10N->getString('field_tracking');
+                        $ThisTracking['StatClass'] = 's';
+                        $ThisTracking['Status'] = $this->L10N->getString('field_tracking');
                     }
-                    if ($this->CIDRAM['ThisTracking']['Blocked']) {
-                        $this->CIDRAM['ThisTracking']['StatClass'] = 'txtRd';
-                        $this->CIDRAM['ThisTracking']['Status'] .= '/' . $this->L10N->getString('field_blocked');
+                    if ($ThisTracking['Blocked']) {
+                        $ThisTracking['StatClass'] = 'txtRd';
+                        $ThisTracking['Status'] .= '/' . $this->L10N->getString('field_blocked');
                     }
-                    $this->CIDRAM['ThisTracking']['Status'] .= ' – ' . $this->NumberFormatter->format($this->CIDRAM['ThisTrackingArr']['Count'], 0);
-                    $this->CIDRAM['ThisTracking']['TrackingFilter'] = $this->FE['TrackingFilter'];
+                    $ThisTracking['Status'] .= ' – ' . $this->NumberFormatter->format($ThisTrackingArray['Data'], 0);
+                    $ThisTracking['TrackingFilter'] = $this->FE['TrackingFilter'];
                     if (!empty($this->FE['CachedLogsLink']) && strpos($this->FE['CachedLogsLink'], 'logfile=') !== false) {
-                        $this->CIDRAM['ThisTracking']['IPAddr'] = sprintf(
+                        $ThisTracking['IPAddr'] = sprintf(
                             '<a href="%s&search=%s">%s</a>',
                             $this->FE['CachedLogsLink'],
-                            str_replace('=', '_', base64_encode($this->CIDRAM['ThisTracking']['IPAddr'])),
-                            $this->CIDRAM['ThisTracking']['IPAddr']
+                            str_replace('=', '_', base64_encode($ThisTracking['IPAddr'])),
+                            $ThisTracking['IPAddr']
                         );
                     }
                     if (
                         isset($this->BlockInfo['SignatureCount'], $this->BlockInfo['WhyReason']) &&
                         strlen($this->BlockInfo['WhyReason'])
                     ) {
-                        $this->CIDRAM['ThisTracking']['Status'] .= '<hr /><em>' . $this->BlockInfo['WhyReason'] . '</em>';
+                        $ThisTracking['Status'] .= '<hr /><em>' . $this->BlockInfo['WhyReason'] . '</em>';
                         if (
                             $this->FE['Flags'] &&
-                            preg_match_all('~\[([A-Z]{2})\]~', $this->CIDRAM['ThisTracking']['Status'], $this->CIDRAM['ThisTracking']['Matches']) &&
-                            !empty($this->CIDRAM['ThisTracking']['Matches'][1])
+                            preg_match_all('~\[([A-Z]{2})\]~', $ThisTracking['Status'], $ThisTracking['Matches']) &&
+                            !empty($ThisTracking['Matches'][1])
                         ) {
-                            foreach ($this->CIDRAM['ThisTracking']['Matches'][1] as $this->CIDRAM['ThisTracking']['ThisMatch']) {
-                                $this->CIDRAM['ThisTracking']['Status'] = str_replace(
-                                    '[' . $this->CIDRAM['ThisTracking']['ThisMatch'] . ']',
-                                    '<span class="flag ' . $this->CIDRAM['ThisTracking']['ThisMatch'] . '"><span></span></span>',
-                                    $this->CIDRAM['ThisTracking']['Status']
+                            foreach ($ThisTracking['Matches'][1] as $ThisTracking['ThisMatch']) {
+                                $ThisTracking['Status'] = str_replace(
+                                    '[' . $ThisTracking['ThisMatch'] . ']',
+                                    '<span class="flag ' . $ThisTracking['ThisMatch'] . '"><span></span></span>',
+                                    $ThisTracking['Status']
                                 );
                             }
                         }
-                        unset($this->CIDRAM['ThisTracking']['Matches'], $this->CIDRAM['ThisTracking']['ThisMatch']);
+                        unset($ThisTracking['Matches'], $ThisTracking['ThisMatch']);
                     }
-                    $this->CIDRAM['ThisTracking']['ID'] = preg_replace('~[^\dA-Za-z]~', '_', $this->CIDRAM['ThisTracking']['IPAddr']);
+                    $ThisTracking['ID'] = preg_replace('~[^\dA-Za-z]~', '_', $ThisTracking['IPAddr']);
                     $this->FE['TrackingData'] .= $this->parseVars(
-                        $this->L10N->Data + $this->CIDRAM['ThisTracking'],
+                        $this->L10N->Data + $ThisTracking,
                         $this->FE['TrackingRow']
                     );
                 }
-                unset($this->CIDRAM['ThisTrackingArr'], $this->CIDRAM['ThisTracking']);
+                unset($ThisTrackingArray, $ThisTracking);
             }
 
             /** Restore muted values. */
@@ -3753,7 +3750,7 @@ class FrontEnd extends Core
                 $this->FE['state_msg'] .= $this->L10N->getString('response_statistics_cleared') . '<br />';
             } elseif (isset($this->Stages['Statistics:Enable'])) {
                 /** Initialise statistics. */
-                $this->initialiseCacheSection('Statistics');
+                // $this->initialiseCacheSection('Statistics');
             }
 
             /** Statistics have been counted since... */
@@ -4709,9 +4706,6 @@ class FrontEnd extends Core
             /** Send output. */
             echo $this->sendOutput();
         }
-
-        /** Destroy cache object and some related values. */
-        $this->destroyCacheObject();
 
         /** Finalise IO operations all at once. */
         unset($this->CIDRAM['Updater-IO']);

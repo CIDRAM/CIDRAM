@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Bad hosts blocker module (last modified: 2022.05.24).
+ * This file: Bad hosts blocker module (last modified: 2022.06.04).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -29,7 +29,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
     $Before = $this->BlockInfo['SignaturesCount'] ?? 0;
 
     /** Don't continue if compatibility indicators exist. */
-    if (strpos($this->BlockInfo['Signatures'], 'compat_bunnycdn.php') !== false) {
+    if (strpos($this->BlockInfo['Signatures'], 'bunnycdn.php') !== false) {
         return;
     }
 

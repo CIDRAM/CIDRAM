@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods used to simulate block events (last modified: 2022.05.30).
+ * This file: Methods used to simulate block events (last modified: 2022.06.04).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -63,7 +63,6 @@ trait SimulateBlockEvent
             'WhyReason' => '',
             'ReasonMessage' => '',
             'rURI' => 'SimulateBlockEvent',
-            'Infractions' => $this->CIDRAM['Tracking'][$Addr]['Count'] ?? 0,
             'ASNLookup' => 0,
             'CCLookup' => 'XX',
             'Verified' => '',
@@ -72,6 +71,15 @@ trait SimulateBlockEvent
             'Request_Method' => 'SimulateBlockEvent',
             'xmlLang' => $this->Configuration['general']['lang']
         ];
+        if (isset($this->CIDRAM['Tracking-' . $this->BlockInfo['IPAddr']])) {
+            $this->BlockInfo['Infractions'] = $this->CIDRAM['Tracking-' . $this->BlockInfo['IPAddr']];
+        } else {
+            if (($Try = $this->Cache->getEntry('Tracking-' . $this->BlockInfo['IPAddr'])) === false) {
+                $this->BlockInfo['Infractions'] = 0;
+            } else {
+                $this->BlockInfo['Infractions'] = $Try;
+            }
+        }
         $this->BlockInfo['UALC'] = strtolower($this->BlockInfo['UA']);
 
         /** Appending query onto the reconstructed URI. */

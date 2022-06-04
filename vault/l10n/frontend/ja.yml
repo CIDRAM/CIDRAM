@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Japanese language data for the front-end (last modified: 2022.06.02).
+# This file: Japanese language data for the front-end (last modified: 2022.06.04).
 ##/
 
 Extended Description AbuseIPDB module: "AbuseIPDBにリストされているＩＰからの要求をブロックします。"
@@ -179,7 +179,6 @@ config_projecthoneypot_lookup_strategy: *WhenToLookup
 config_projecthoneypot_max_age_in_days: "ルックアップを実行するときに考慮されるレポートの最大経過日数。​Default/デフォルルト = 365。"
 config_projecthoneypot_max_ts_for_captcha: "キャプチャを提供できる最大の脅威スコア（１から１００までの数値である必要があります）。​Default/デフォルルト = 10。"
 config_projecthoneypot_minimum_threat_score: "CIDRAMがＩＰアドレスをブロックするために必要な最小脅威スコア（１から１００までの数値である必要があります）。​Default/デフォルルト = 10。"
-config_projecthoneypot_report_back: "CIDRAMがＡＰＩキーを使用して、検出された不正な動作をProject Honeypotに報告できるようにしますか？​Default/デフォルルト = False。"
 config_rate_limiting: "レート制限の設定（一般的な使用には推奨されません）。"
 config_rate_limiting_allowance_period: "使用状況を監視する時間数。​Default/デフォルルト = 0。"
 config_rate_limiting_exceptions: "例外（すなわち、レート制限されるべきではないリクエスト）。​レート制限が有効な場合にのみ効果があります。"

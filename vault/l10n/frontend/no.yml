@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Norwegian language data for the front-end (last modified: 2022.06.02).
+# This file: Norwegian language data for the front-end (last modified: 2022.06.04).
 ##/
 
 Extended Description AbuseIPDB module: "Blokkerer forespørsler fra IP-er oppført på AbuseIPDB."
@@ -179,7 +179,6 @@ config_projecthoneypot_lookup_strategy: *WhenToLookup
 config_projecthoneypot_max_age_in_days: "Maksimal alder i dager som rapporter vil bli vurdert for når du utfører oppslag. Standardverdi = 365."
 config_projecthoneypot_max_ts_for_captcha: "Maksimal trusselpoengsum tillatt for å bli servert en CAPTCHA (må være et tall mellom 1 og 100). Standardverdi = 10."
 config_projecthoneypot_minimum_threat_score: "Minimum trusselpoengsum som kreves for at CIDRAM skal blokkere en IP-adresse (må være et tall mellom 1 og 100). Standardverdi = 10."
-config_projecthoneypot_report_back: "Tillate at CIDRAM rapporterer oppdaget dårlig oppførsel tilbake til Project Honeypot ved å bruke API-nøkkelen din? Standardverdi = False."
 config_rate_limiting: "Konfigurasjon for hastighetsbegrensning (anbefales ikke til generell bruk)."
 config_rate_limiting_allowance_period: "Antall timer for å spore bruken. Standardverdi = 0."
 config_rate_limiting_exceptions: "Unntak (dvs, forespørsler som ikke bør være hastighetsbegrenset). Relevant bare når hastighetsbegrensning er aktivert."

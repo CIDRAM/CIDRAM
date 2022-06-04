@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Vietnamese language data for the front-end (last modified: 2022.06.02).
+# This file: Vietnamese language data for the front-end (last modified: 2022.06.04).
 ##/
 
 Extended Description AbuseIPDB module: "Chặn các yêu cầu từ IP được liệt kê tại AbuseIPDB."
@@ -179,7 +179,6 @@ config_projecthoneypot_lookup_strategy: *WhenToLookup
 config_projecthoneypot_max_age_in_days: "Tuổi tối đa tính theo ngày mà các báo cáo sẽ được xem xét khi thực hiện tra cứu. Mặc định = 365."
 config_projecthoneypot_max_ts_for_captcha: "Điểm đe dọa tối đa được phép để được phân phát CAPTCHA (phải là một số từ 1 đến 100). Mặc định = 10."
 config_projecthoneypot_minimum_threat_score: "Điểm số mối đe dọa tối thiểu cần thiết để CIDRAM chặn một địa chỉ IP (phải là một số từ 1 đến 100). Mặc định = 10."
-config_projecthoneypot_report_back: "Cho phép CIDRAM báo cáo hành vi xấu đã phát hiện trở lại Project Honeypot bằng cách sử dụng khóa API của bạn? Mặc định = False."
 config_rate_limiting: "Cấu hình cho giới hạn tốc độ (không khuyến khích sử dụng chung)."
 config_rate_limiting_allowance_period: "Số giờ để theo dõi việc sử dụng. Mặc định = 0."
 config_rate_limiting_exceptions: "Ngoại lệ (tức là, các yêu cầu không nên giới hạn). Chỉ có hiệu lực khi giới hạn tốc độ được kích hoạt."

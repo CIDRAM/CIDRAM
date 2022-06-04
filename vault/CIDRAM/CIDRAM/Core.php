@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM core (last modified: 2022.05.30).
+ * This file: The CIDRAM core (last modified: 2022.06.04).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -970,8 +970,8 @@ class Core
         }
 
         /** We've already got it cached. We can return the results early. */
-        if (isset($this->CIDRAM['DNS-Reverses'][$Addr]['Host'])) {
-            return $this->CIDRAM['DNS-Reverses'][$Addr]['Host'];
+        if (isset($this->CIDRAM['DnsReverses-' . $Addr], $this->CIDRAM['DnsReverses-' . $Addr]['Host'])) {
+            return $this->CIDRAM['DnsReverses-' . $Addr]['Host'];
         }
 
         /** The IP address is IPv4. */
@@ -1018,7 +1018,7 @@ class Core
 
         /** Use gethostbyaddr if enabled and if we anticipate UDP failing. */
         if (!$this->CIDRAM['Root'] && $this->Configuration['general']['allow_gethostbyaddr_lookup']) {
-            return dnsReverseFallback($Addr);
+            return $this->dnsReverseFallback($Addr);
         }
 
         /** Some safety mechanisms. */
@@ -1030,12 +1030,9 @@ class Core
             return $Addr;
         }
 
-        $this->CIDRAM['DNS-Reverses'][$Addr] = ['Host' => $Addr, 'Time' => $this->Now + 21600];
-        $this->CIDRAM['DNS-Reverses-Modified'] = true;
-
         /** DNS is disabled. Let's exit the method. */
         if (!$DNS && !$DNS = $this->Configuration['general']['default_dns']) {
-            return ($this->Configuration['general']['allow_gethostbyaddr_lookup']) ? dnsReverseFallback($Addr) : $Addr;
+            return $this->Configuration['general']['allow_gethostbyaddr_lookup'] ? $this->dnsReverseFallback($Addr) : $Addr;
         }
 
         /** Expand list of lookup servers. */
@@ -1049,7 +1046,6 @@ class Core
             if (!empty($Response) || !$Server) {
                 break;
             }
-
             $Handle = fsockopen('udp://' . $Server, 53);
             if ($Handle !== false) {
                 fwrite($Handle, $LeftPad . $Lookup);
@@ -1062,9 +1058,13 @@ class Core
 
         /** No response, or failed lookup. Let's exit the method. */
         if (empty($Response)) {
-            return (
-                $this->Configuration['general']['allow_gethostbyaddr_lookup']
-            ) ? dnsReverseFallback($Addr) : ($this->CIDRAM['DNS-Reverses'][$Addr]['Host'] = $Addr);
+            if ($this->Configuration['general']['allow_gethostbyaddr_lookup']) {
+                return $this->dnsReverseFallback($Addr);
+            } else {
+                $this->CIDRAM['DnsReverses-' . $Addr] = ['Host' => $Addr];
+                $this->Cache->setEntry('DnsReverses-' . $Addr, $this->CIDRAM['DnsReverses-' . $Addr], 21600);
+                return $this->CIDRAM['DnsReverses-' . $Addr]['Host'];
+            }
         }
 
         /** We got a response! Now let's process it accordingly. */
@@ -1080,9 +1080,9 @@ class Core
                 $Pos += 1 + $Len;
             }
         }
-
-        /** Return results. */
-        return $this->CIDRAM['DNS-Reverses'][$Addr]['Host'] = preg_replace('/[^:\da-z._~-]/i', '', $Host) ?: $Addr;
+        $this->CIDRAM['DnsReverses-' . $Addr] = ['Host' => preg_replace('/[^:\da-z._~-]/i', '', $Host) ?: $Addr];
+        $this->Cache->setEntry('DnsReverses-' . $Addr, $this->CIDRAM['DnsReverses-' . $Addr], 21600);
+        return $this->CIDRAM['DnsReverses-' . $Addr]['Host'];
     }
 
     /**
@@ -1093,11 +1093,9 @@ class Core
      */
     public function dnsReverseFallback(string $Addr): string
     {
-        $this->CIDRAM['DNS-Reverses'][$Addr] = ['Host' => $Addr, 'Time' => $this->Now + 21600];
-        $this->CIDRAM['DNS-Reverses-Modified'] = true;
-
-        /** Return results. */
-        return $this->CIDRAM['DNS-Reverses'][$Addr]['Host'] = preg_replace('/[^:\da-z._~-]/i', '', gethostbyaddr($Addr)) ?: $Addr;
+        $this->CIDRAM['DnsReverses-' . $Addr] = ['Host' => preg_replace('/[^:\da-z._~-]/i', '', gethostbyaddr($Addr)) ?: $Addr];
+        $this->Cache->setEntry('DnsReverses-' . $Addr, $this->CIDRAM['DnsReverses-' . $Addr], 21600);
+        return $this->CIDRAM['DnsReverses-' . $Addr]['Host'];
     }
 
     /**
@@ -1113,16 +1111,13 @@ class Core
      */
     public function dnsResolve(string $Host, int $Timeout = 5): string
     {
-        if (isset($this->CIDRAM['DNS-Forwards'][$Host]['IPAddr'])) {
-            return $this->CIDRAM['DNS-Forwards'][$Host]['IPAddr'];
+        if (isset($this->CIDRAM['DnsForwards-' . $Host])) {
+            return $this->CIDRAM['DnsForwards-' . $Host];
         }
         $Host = urlencode($Host);
         if (($HostLen = strlen($Host)) > 253) {
             return '';
         }
-
-        $this->CIDRAM['DNS-Forwards'][$Host] = ['IPAddr' => '', 'Time' => $this->Now + 21600];
-        $this->CIDRAM['DNS-Forwards-Modified'] = true;
 
         $URI = 'https://dns.google.com/resolve?name=' . urlencode($Host) . '&random_padding=';
         $PadLen = 204 - $HostLen;
@@ -1133,13 +1128,14 @@ class Core
             $PadLen--;
             $URI .= str_shuffle(self::PAD_FOR_DNS)[0];
         }
-
-        if (!$Results = json_decode($this->Request->request($URI, [], $Timeout), true)) {
-            return '';
+        $Results = json_decode($this->Request->request($URI, [], $Timeout), true);
+        if (empty($Results) || empty($Results['Answer'][0]['data'])) {
+            $this->CIDRAM['DnsForwards-' . $Host] = '';
+        } else {
+            $this->CIDRAM['DnsForwards-' . $Host] = preg_replace('/[^\da-f.:]/i', '', $Results['Answer'][0]['data']);
         }
-        return $this->CIDRAM['DNS-Forwards'][$Host]['IPAddr'] = empty(
-            $Results['Answer'][0]['data']
-        ) ? '' : preg_replace('/[^\da-f.:]/i', '', $Results['Answer'][0]['data']);
+        $this->Cache->setEntry('DnsForwards-' . $Host, $this->CIDRAM['DnsForwards-' . $Host], 21600);
+        return $this->CIDRAM['DnsForwards-' . $Host];
     }
 
     /**
@@ -1213,7 +1209,7 @@ class Core
             }
 
             /** Attempt to resolve. */
-            if (!$Resolved = dnsResolve($this->CIDRAM['Hostname'])) {
+            if (!$Resolved = $this->dnsResolve($this->CIDRAM['Hostname'])) {
                 /** Failed to resolve. Do nothing else and exit. */
                 return;
             }
@@ -1621,60 +1617,6 @@ class Core
                 die;
             }
         }
-
-        $this->CIDRAM['AtCacheDestroyUnset'] = [];
-        $this->initialiseCacheSection('Tracking');
-        $this->initialiseCacheSection('DNS-Forwards');
-        $this->initialiseCacheSection('DNS-Reverses');
-    }
-
-    /**
-     * Initialise a cache section.
-     *
-     * @param string $SectionName The name of the cache section.
-     * @return void
-     */
-    public function initialiseCacheSection(string $SectionName): void
-    {
-        /** Guard. */
-        if (empty($SectionName) || isset($this->CIDRAM[$SectionName], $this->CIDRAM[$SectionName . '-Modified'])) {
-            return;
-        }
-
-        /** Mark for unsetting at cache destruction. */
-        $this->CIDRAM['AtCacheDestroyUnset'][] = $SectionName;
-
-        /** Section modified flag. */
-        $this->CIDRAM[$SectionName . '-Modified'] = false;
-
-        /** Fetch currently stored and clear expired entries. */
-        if ($this->CIDRAM[$SectionName] = $this->Cache->getEntry($SectionName)) {
-            if (is_array($this->CIDRAM[$SectionName]) && $this->Cache->clearExpired($this->CIDRAM[$SectionName])) {
-                $this->CIDRAM[$SectionName . '-Modified'] = true;
-            }
-        }
-
-        /** Set default empty array. */
-        if ($this->CIDRAM[$SectionName] === false) {
-            $this->CIDRAM[$SectionName] = [];
-            $this->CIDRAM[$SectionName . '-Modified'] = true;
-        }
-    }
-
-    /**
-     * Destroy cache object and some related values.
-     *
-     * @return void
-     */
-    public function destroyCacheObject(): void
-    {
-        foreach ($this->CIDRAM['AtCacheDestroyUnset'] as $DestroyThis) {
-            if ($this->CIDRAM[$DestroyThis . '-Modified']) {
-                $this->Cache->setEntry($DestroyThis, $this->CIDRAM[$DestroyThis], 0);
-            }
-            unset($this->CIDRAM[$DestroyThis . '-Modified'], $this->CIDRAM[$DestroyThis]);
-        }
-        unset($this->CIDRAM['AtCacheDestroyUnset'], $this->Cache);
     }
 
     /**

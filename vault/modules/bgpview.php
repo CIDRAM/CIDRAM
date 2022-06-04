@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: BGPView module (last modified: 2022.05.27).
+ * This file: BGPView module (last modified: 2022.06.04).
  *
  * False positive risk (an approximate, rough estimate only): « [x]Low [ ]Medium [ ]High »
  */
@@ -33,12 +33,6 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         return;
     }
 
-    /** Local BGPView cache entry expiry time (successful lookups). */
-    $Expiry = $this->Now + 604800;
-
-    /** Build local BGPView cache if it doesn't already exist. */
-    $this->initialiseCacheSection('BGPView');
-
     $InCache = false;
 
     /** Expand factors for this origin. */
@@ -50,7 +44,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
             continue;
         }
         foreach ($Factors as $Factor) {
-            if (!isset($this->CIDRAM['BGPView'][$Factor])) {
+            if (!isset($this->CIDRAM['BGPView-' . $Factor])) {
                 continue;
             }
             $InCache = true;
@@ -70,31 +64,39 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
             substr($Lookup, -2) === '}}'
         ) ? json_decode($Lookup, true) : false;
         $Low = strpos($this->BlockInfo['IPAddr'], ':') !== false ? 128 : 32;
-        $this->CIDRAM['BGPView'][$this->BlockInfo['IPAddr'] . '/' . $Low] = ['ASN' => -1, 'CC' => 'XX', 'Time' => $Expiry];
-        $this->CIDRAM['BGPView-Modified'] = true;
         if (is_array($Lookup) && isset($Lookup['data'])) {
-            if (isset($Lookup['data']['prefixes']) && is_array($Lookup['data']['prefixes'])) {
-                foreach ($Lookup['data']['prefixes'] as $Prefix) {
-                    $Factor = isset($Prefix['prefix']) ? $Prefix['prefix'] : false;
-                    $ASN = isset($Prefix['asn']['asn']) ? $Prefix['asn']['asn'] : false;
-                    $CC = isset($Prefix['asn']['country_code']) ? $Prefix['asn']['country_code'] : 'XX';
-                    if ($Factor && $ASN) {
-                        $this->CIDRAM['BGPView'][$Factor] = ['ASN' => $ASN, 'CC' => $CC, 'Time' => $Expiry];
-                    }
-                }
-            }
             if (
                 isset($Lookup['data']['rir_allocation']) &&
                 is_array($Lookup['data']['rir_allocation']) &&
-                isset($Lookup['data']['rir_allocation']['country_code'], $Lookup['data']['rir_allocation']['prefix'])
+                isset($Lookup['data']['rir_allocation']['prefix'])
             ) {
-                $Prefix = $Lookup['data']['rir_allocation']['prefix'];
-                if (isset($this->CIDRAM['BGPView'][$Prefix])) {
-                    $this->CIDRAM['BGPView'][$Prefix]['CC'] = $Lookup['data']['rir_allocation']['country_code'];
-                } else {
-                    $this->CIDRAM['BGPView'][$Prefix] = ['CC' => $Lookup['data']['rir_allocation']['country_code']];
+                $TryForRir = $Lookup['data']['rir_allocation']['prefix'];
+            } else {
+                $TryForRir = '';
+            }
+            if (isset($Lookup['data']['prefixes']) && is_array($Lookup['data']['prefixes'])) {
+                foreach ($Lookup['data']['prefixes'] as $Prefix) {
+                    $Factor = $Prefix['prefix'] ?? '';
+                    $ASN = $Prefix['asn']['asn'] ?? '';
+                    $CC = $Prefix['asn']['country_code'] ?? 'XX';
+                    if ($Factor && $ASN) {
+                        $this->CIDRAM['BGPView-' . $Factor] = ['ASN' => $ASN, 'CC' => $CC];
+                        if ($TryForRir === $Factor) {
+                            $CC = $Lookup['data']['rir_allocation']['country_code'] ?? $CC;
+                            $TryForRir = '';
+                        }
+                        $this->Cache->setEntry('BGPView-' . $Factor, ['ASN' => $ASN, 'CC' => $CC], 604800);
+                    }
                 }
             }
+            if ($TryForRir !== '') {
+                $this->CIDRAM['BGPView-' . $TryForRir] = ['CC' => $Lookup['data']['rir_allocation']['country_code']];
+                $this->Cache->setEntry('BGPView-' . $TryForRir, $this->CIDRAM['BGPView-' . $TryForRir], 604800);
+            }
+        }
+        if (!isset($this->CIDRAM['BGPView-' . $this->BlockInfo['IPAddr'] . '/' . $Low])) {
+            $this->CIDRAM['BGPView-' . $this->BlockInfo['IPAddr'] . '/' . $Low] = ['ASN' => -1, 'CC' => 'XX'];
+            $this->Cache->setEntry('BGPView-' . $this->BlockInfo['IPAddr'] . '/' . $Low, ['ASN' => -1, 'CC' => 'XX'], 604800);
         }
     }
 
@@ -104,25 +106,28 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
             continue;
         }
         foreach ($Factors as $Factor) {
-            if (!isset($this->CIDRAM['BGPView'][$Factor])) {
+            if (!isset($this->CIDRAM['BGPView-' . $Factor])) {
+                $this->CIDRAM['BGPView-' . $Factor] = $this->Cache->getEntry('BGPView-' . $Factor);
+            }
+            if ($this->CIDRAM['BGPView-' . $Factor] === false) {
                 continue;
             }
 
             /** Act based on ASN. */
-            if (!empty($this->CIDRAM['BGPView'][$Factor]['ASN'])) {
+            if (!empty($this->CIDRAM['BGPView-' . $Factor]['ASN'])) {
                 /** Populate ASN lookup information. */
-                if ($this->CIDRAM['BGPView'][$Factor]['ASN'] > 0) {
-                    $this->BlockInfo['ASNLookup'] = $this->CIDRAM['BGPView'][$Factor]['ASN'];
+                if ($this->CIDRAM['BGPView-' . $Factor]['ASN'] > 0) {
+                    $this->BlockInfo['ASNLookup'] = $this->CIDRAM['BGPView-' . $Factor]['ASN'];
                 }
 
                 /** Origin is whitelisted. */
-                if (preg_match('~(?:^|\n)' . preg_quote($this->CIDRAM['BGPView'][$Factor]['ASN']) . '(?:$|\n)~', $this->CIDRAM['BGPConfig']['whitelisted_asns'])) {
+                if (isset($this->CIDRAM['BGPConfig']['whitelisted_asns'][$this->CIDRAM['BGPView-' . $Factor]['ASN']])) {
                     $this->ZeroOutBlockInfo(true);
                     break 2;
                 }
 
                 /** Origin is blocked. */
-                if (preg_match('~(?:^|\n)' . preg_quote($this->CIDRAM['BGPView'][$Factor]['ASN']) . '(?:$|\n)~', $this->CIDRAM['BGPConfig']['blocked_asns'])) {
+                if (isset($this->CIDRAM['BGPConfig']['blocked_asns'][$this->CIDRAM['BGPView-' . $Factor]['ASN']])) {
                     $this->BlockInfo['ReasonMessage'] = $this->L10N->getString('ReasonMessage_Generic');
                     if (!empty($this->BlockInfo['WhyReason'])) {
                         $this->BlockInfo['WhyReason'] .= ', ';
@@ -130,7 +135,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
                     $this->BlockInfo['WhyReason'] .= sprintf(
                         '%s (BGPView, "%d")',
                         $this->L10N->getString('Short_Generic'),
-                        $this->CIDRAM['BGPView'][$Factor]['ASN']
+                        $this->CIDRAM['BGPView-' . $Factor]['ASN']
                     );
                     if (!empty($this->BlockInfo['Signatures'])) {
                         $this->BlockInfo['Signatures'] .= ', ';
@@ -141,29 +146,29 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
             }
 
             /** Act based on CC. */
-            if (!empty($this->CIDRAM['BGPView'][$Factor]['CC']) && empty($CCDone)) {
+            if (!empty($this->CIDRAM['BGPView-' . $Factor]['CC']) && empty($CCDone)) {
                 /** Populate country code lookup information. */
-                if ($this->CIDRAM['BGPView'][$Factor]['CC'] !== 'XX') {
-                    $this->BlockInfo['CCLookup'] = $this->CIDRAM['BGPView'][$Factor]['CC'];
+                if ($this->CIDRAM['BGPView-' . $Factor]['CC'] !== 'XX') {
+                    $this->BlockInfo['CCLookup'] = $this->CIDRAM['BGPView-' . $Factor]['CC'];
                     $CCDone = true;
                 }
 
                 /** Origin is whitelisted. */
-                if (preg_match('~(?:^|\n)' . preg_quote($this->CIDRAM['BGPView'][$Factor]['CC']) . '(?:$|\n)~', $this->CIDRAM['BGPConfig']['whitelisted_ccs'])) {
+                if (isset($this->CIDRAM['BGPConfig']['whitelisted_ccs'][$this->CIDRAM['BGPView-' . $Factor]['CC']])) {
                     $this->ZeroOutBlockInfo(true);
                     break 2;
                 }
 
                 /** Origin is blocked. */
-                if (preg_match('~(?:^|\n)' . preg_quote($this->CIDRAM['BGPView'][$Factor]['CC']) . '(?:$|\n)~', $this->CIDRAM['BGPConfig']['blocked_ccs'])) {
+                if (isset($this->CIDRAM['BGPConfig']['blocked_ccs'][$this->CIDRAM['BGPView-' . $Factor]['CC']])) {
                     $this->BlockInfo['ReasonMessage'] = sprintf(
                         $this->L10N->getString('why_no_access_allowed_from'),
-                        $this->CIDRAM['BGPView'][$Factor]['CC']
+                        $this->CIDRAM['BGPView-' . $Factor]['CC']
                     );
                     if (!empty($this->BlockInfo['WhyReason'])) {
                         $this->BlockInfo['WhyReason'] .= ', ';
                     }
-                    $this->BlockInfo['WhyReason'] .= sprintf('CC (BGPView, "%s")', $this->CIDRAM['BGPView'][$Factor]['CC']);
+                    $this->BlockInfo['WhyReason'] .= sprintf('CC (BGPView, "%s")', $this->CIDRAM['BGPView-' . $Factor]['CC']);
                     if (!empty($this->BlockInfo['Signatures'])) {
                         $this->BlockInfo['Signatures'] .= ', ';
                     }

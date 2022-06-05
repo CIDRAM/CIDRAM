@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Indonesian language data for the front-end (last modified: 2022.06.04).
+# This file: Indonesian language data for the front-end (last modified: 2022.06.05).
 ##/
 
 Extended Description AbuseIPDB module: "Memblokir permintaan dari IP yang terdaftar oleh AbuseIPDB."
@@ -113,7 +113,7 @@ config_general: "Konfigurasi umum (konfigurasi inti apapun yang bukan milik kate
 config_general_allow_gethostbyaddr_lookup: "Izinkan menggunakan gethostbyaddr saat UDP tidak tersedia? True = Ya [Default]; False = Tidak."
 config_general_ban_override: "Mengesampingkan "http_response_header_code" ketika "infraction_limit" adalah melampaui? Ketika mengesampingkan: Permintaan diblokir menghasilkan halaman kosong (file template tidak digunakan). 200 = Jangan mengesampingkan [Default]. Nilai lainnya sama dengan nilai yang tersedia untuk "http_response_header_code"."
 config_general_default_algo: "Mendefinisikan algoritma mana yang akan digunakan untuk semua password dan sesi di masa depan."
-config_general_default_dns: "Sebuah daftar dipisahkan dengan koma dari server DNS yang digunakan untuk pencarian nama host. Default = "8.8.8.8,8.8.4.4" (Google DNS). PERINGATAN: Jangan ganti ini kecuali Anda tahu apa yang Anda lakukan!"
+config_general_default_dns: "Daftar server DNS yang digunakan untuk pencarian nama host. PERINGATAN: Jangan ganti ini kecuali Anda tahu apa yang Anda lakukan!"
 config_general_default_timeout: "Batas waktu default untuk digunakan untuk permintaan eksternal? Default = 12 detik."
 config_general_disabled_channels: "Ini dapat digunakan untuk mencegah CIDRAM dari menggunakan saluran tertentu saat mengirim permintaan (misalnya, saat memperbarui, saat mengambil metadata komponen, dll)."
 config_general_emailaddr: "Jika Anda ingin, Anda dapat menyediakan alamat email sini untuk diberikan kepada pengguna ketika diblokir, bagi mereka untuk menggunakan sebagai metode kontak untuk dukungan dan/atau bantuan untuk dalam hal mereka menjadi diblokir keliru atau diblokir oleh kesalahan. PERINGATAN: Apapun alamat email Anda menyediakan sini akan pasti diperoleh oleh spambots dan pencakar/scrapers ketika digunakan disini, dan karena itu, jika Anda ingin memberikan alamat email disini, itu sangat direkomendasikan Anda memastikan bahwa alamat email yang Anda berikan disini adalah alamat yang dapat dibuang dan/atau adalah alamat Anda tidak keberatan menjadi di-spam (dengan kata lain, Anda mungkin tidak ingin untuk menggunakan Anda alamat email yang personal primer atau bisnis primer)."

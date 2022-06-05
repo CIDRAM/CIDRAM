@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Latvian language data for the front-end (last modified: 2022.06.04).
+# This file: Latvian language data for the front-end (last modified: 2022.06.05).
 ##/
 
 Extended Description AbuseIPDB module: "Bloķē pieprasījumus no IP, kas uzskaitīti vietnē AbuseIPDB."
@@ -113,7 +113,7 @@ config_general: "Vispārējā konfigurācija (jebkura pamata konfigurācija, kas
 config_general_allow_gethostbyaddr_lookup: "Vai atļaut meklēt ar gethostbyaddr, kad UDP nav pieejams? True (Patiess) = Jā [Noklusējuma]; False (Nepatiess) = Nē."
 config_general_ban_override: "Vai ignorēt "http_response_header_code", ja tiek pārsniegts "infraction_limit"? Ja tā, bloķētie pieprasījumi atdod tukšu lapu (veidņu faili netiek izmantoti). 200 = Neignorējiet [Noklusējuma]. Citas vērtības ir tādas pašas kā pieejamās vērtības "http_response_header_code"."
 config_general_default_algo: "Definē, kuru algoritmu izmantot visām turpmākajām parolēm un sesijām."
-config_general_default_dns: "Ar komatu atdalīts DNS serveru saraksts, ko izmantot saimniekdatora nosaukuma meklēšanā. Noklusējuma = "8.8.8.8,8.8.4.4" (Google DNS). BRĪDINĀJUMS: Nemainiet to, ja vien nezināt, ko darāt!"
+config_general_default_dns: "DNS serveru saraksts, ko izmantot saimniekdatora nosaukuma meklēšanā. BRĪDINĀJUMS: Nemainiet to, ja vien nezināt, ko darāt!"
 config_general_default_timeout: "Kādu noklusējuma taimautu izmantot ārējiem pieprasījumiem? Noklusējuma = 12 sekundes."
 config_general_disabled_channels: "To var izmantot, lai neļautu CIDRAM izmantot noteiktus kanālus nosūtot pieprasījumus (piemēram, atjauninot, ienesot komponentu metadatus, utt)."
 config_general_emailaddr: "Ja vēlaties, šeit varat norādīt e-pasta adresi, kas lietotājiem tiks piešķirta, kad viņi tiks bloķēti, lai viņi tos izmantotu kā kontaktpunktu atbalsta un/vai palīdzības saņemšanai gadījumā, ja tie tiek bloķēti kļūdaini. BRĪDINĀJUMS: Neatkarīgi no tā, kādu e-pasta adresi jūs šeit norādāt, visticamāk, redzēs surogāt izplatītāji un skrāpji, tāpēc ir stingri ieteicams, lai jebkura šeit norādītā e-pasta adrese būtu vienreiz lietojama un/vai adrese, kuru jūs ļoti nemīlat (citiem vārdiem sakot, iespējams, jūs nevēlaties izmantot savas galvenās personiskās vai galvenā uzņēmuma e-pasta adreses)."

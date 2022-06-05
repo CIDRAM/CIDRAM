@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM core (last modified: 2022.06.04).
+ * This file: The CIDRAM core (last modified: 2022.06.05).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -1031,12 +1031,12 @@ class Core
         }
 
         /** DNS is disabled. Let's exit the method. */
-        if (!$DNS && !$DNS = $this->Configuration['general']['default_dns']) {
+        if (strlen($DNS) === 0 && strlen($this->Configuration['general']['default_dns']) === 0) {
             return $this->Configuration['general']['allow_gethostbyaddr_lookup'] ? $this->dnsReverseFallback($Addr) : $Addr;
         }
 
         /** Expand list of lookup servers. */
-        $DNS = explode(',', $DNS);
+        $DNS = explode("\n", $this->Configuration['general']['default_dns']);
 
         /** UDP padding. */
         $LeftPad = str_pad(rand(0, 99), 2, '0', STR_PAD_LEFT) . "\1\0\0\1\0\0\0\0\0\0";

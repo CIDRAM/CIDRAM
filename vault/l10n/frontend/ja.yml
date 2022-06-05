@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Japanese language data for the front-end (last modified: 2022.06.04).
+# This file: Japanese language data for the front-end (last modified: 2022.06.05).
 ##/
 
 Extended Description AbuseIPDB module: "AbuseIPDBにリストされているＩＰからの要求をブロックします。"
@@ -113,7 +113,7 @@ config_general: "全般的な設定（他のカテゴリに属さないの設定
 config_general_allow_gethostbyaddr_lookup: "ＵＤＰが利用できない場合、gethostbyaddrルックアップを許可しますか？ True = はい（Default/デフォルルト）。 False = いいえ。"
 config_general_ban_override: "「infraction_limit」を超えたときに「http_response_header_code」を上書きしますか？​上書きするとき：ブロックされたリクエストは空白のページを返します（テンプレートファイルは使用されません）。​２００ = 上書きしない（Default/デフォルルト）。​他の値は、「http_response_header_code」の利用可能な値と同じです。"
 config_general_default_algo: "将来のすべてのパスワードとセッションに使用するアルゴリズムを定義します。"
-config_general_default_dns: "ホスト名検索に使用する、​ＤＮＳ（ドメイン・ネーム・システム）サーバーのカンマ区切りリスト。​Default（デフォルルト） = "8.8.8.8,8.8.4.4" （Google DNS）。​注意：あなたが何をしているのか、​分からない限り、​これを変更しないでください。"
+config_general_default_dns: "ホスト名検索に使用する、​ＤＮＳ（ドメイン・ネーム・システム）サーバーのリスト。​注意：あなたが何をしているのか、​分からない限り、​これを変更しないでください。"
 config_general_default_timeout: "外部リクエストに使用するデフォルトのタイムアウト？ Default/デフォルルト = １２秒。"
 config_general_disabled_channels: "これは、要求を送信するときにCIDRAMが特定のチャネルを使用しないようにするために使用できます​（例えば、更新時、コンポーネント・メタデータの取得時、など）。"
 config_general_emailaddr: "ここにＥメールアドレスを入力して、​ユーザーがブロックされているときにユーザーに送信することができます。​これはサポートと支援に使用できます（誤ってブロックされた場合、​等）。​警告：​ここに入力された電子Ｅメールアドレスは、​おそらくスパムロボットによって取得されます。​ここで提供される電子Ｅメールアドレスは、​すべて使い捨てにすることを強く推奨します（例えば、​プライマリ個人アドレスまたはビジネスアドレスを使用しない、​等）。"

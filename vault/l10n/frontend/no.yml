@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Norwegian language data for the front-end (last modified: 2022.06.04).
+# This file: Norwegian language data for the front-end (last modified: 2022.06.05).
 ##/
 
 Extended Description AbuseIPDB module: "Blokkerer forespørsler fra IP-er oppført på AbuseIPDB."
@@ -113,7 +113,7 @@ config_general: "Generell konfigurasjon (enhver kjernekonfigurasjon som ikke til
 config_general_allow_gethostbyaddr_lookup: "Tillat gethostbyaddr oppslag når UDP er utilgjengelig? True = Ja [Standardverdi]; False = Nei."
 config_general_ban_override: "Overstyr "http_response_header_code" når "infraction_limit" overskrides? Når overstyrende: Blokkerte forespørsler returnerer en tom side (malfiler blir ikke brukt). 200 = Ikke overstyre [Standardverdi]. Andre verdier er de samme som tilgjengelige verdier for "http_response_header_code"."
 config_general_default_algo: "Definerer hvilken algoritme som skal brukes for alle fremtidige passord og økter."
-config_general_default_dns: "En kommaseparert liste over DNS-servere som skal brukes til vertsnavn-oppslag. Standardverdi = "8.8.8.8,8.8.4.4" (Google DNS). ADVARSEL: Ikke endre dette med mindre du vet hva du gjør!"
+config_general_default_dns: "En liste over DNS-servere som skal brukes til vertsnavn-oppslag. ADVARSEL: Ikke endre dette med mindre du vet hva du gjør!"
 config_general_default_timeout: "Standard tidsavbrudd for eksterne forespørsler? Standardverdi = 12 sekunder."
 config_general_disabled_channels: "Dette kan brukes til å forhindre CIDRAM i å bruke bestemte kanaler når du sender forespørsler (f.eks, når du oppdaterer, når du henter komponentmetadata, osv)."
 config_general_emailaddr: "Hvis du vil, du kan levere en e-postadresse her for å bli gitt til brukerne når de er blokkert, for dem å bruke som et kontaktpunkt for støtte og/eller assistanse i tilfelle de blir blokkert feilaktig eller i feil. ADVARSEL: Uansett hvilken e-postadresse du leverer her, det vil helt sikkert bli ervervet av spamboter og skraper i løpet av bruken her, og så, det anbefales sterkt at hvis du velger å levere en e-postadresse her, at du sørger for at e-postadressen du oppgir her er en engangsadresse og/eller en adresse som du ikke bryr deg om å bli spammet (dvs., du vil sannsynligvis ikke bruke dine primære personlige eller primære virksomhets e-postadresser)."

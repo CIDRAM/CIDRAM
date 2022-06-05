@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (traditional) language data for the front-end (last modified: 2022.06.04).
+# This file: Chinese (traditional) language data for the front-end (last modified: 2022.06.05).
 ##/
 
 Extended Description AbuseIPDB module: "阻止來自AbuseIPDB列出的IP的請求。"
@@ -113,7 +113,7 @@ config_general: "基本配置（任何不屬於其他類別的核心配置）。
 config_general_allow_gethostbyaddr_lookup: "當UDP不可用時允許gethostbyaddr查找？​True（真）=允許【標準】；False（假）=不允許。"
 config_general_ban_override: "覆蓋『http_response_header_code』當『infraction_limit』已被超過？​當覆蓋：已阻止的請求返回一個空白頁（不使用模板文件）。​200 = 不要覆蓋【標準】。​其他值與『http_response_header_code』的可用值相同。"
 config_general_default_algo: "定義要用於所有未來密碼和會話的算法。"
-config_general_default_dns: "以逗號分隔的DNS服務器列表，​用於主機名查找。​標準 = 『8.8.8.8,8.8.4.4』 (Google DNS)。​警告：不要修改此除非您知道什麼您做著！"
+config_general_default_dns: "DNS服務器列表，​用於主機名查找。​警告：不要修改此除非您知道什麼您做著！"
 config_general_default_timeout: "用於外部請求的默認超時？ 標準 = 12秒。"
 config_general_disabled_channels: "這可用於防止CIDRAM在發送請求時使用特定通道（例如，在更新時，在獲取組件元數據時，等等）。"
 config_general_emailaddr: "如果您希望，​您可以提供電子郵件地址這裡要給予用戶當他們被阻止，​他們使用作為接觸點為支持和/或幫助在的情況下他們錯誤地阻止。​警告:您提供的任何電子郵件地址，​它肯定會被獲得通過垃圾郵件機器人和鏟運機，​所以，​它強烈推薦如果選擇提供一個電子郵件地址這裡，​您保證它是一次性的和/或不是很重要（換一種說法，​您可能不希望使用您的主電子郵件地址或您的企業電子郵件地址）。"

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Defaults file (last modified: 2022.06.01).
+# This file: Defaults file (last modified: 2022.06.05).
 ##/
 
 Config Defaults:
@@ -428,9 +428,9 @@ Config Defaults:
    default: true
   default_dns:
    type: "string"
-   default: "8.8.8.8,8.8.4.4"
-   value_preg_filter:
-    "~\s~": ""
+   default: |
+    8.8.8.8
+    8.8.4.4
    hints: "hints_default_dns"
   search_engine_verification:
    type: "checkbox"

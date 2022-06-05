@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Optional security extras module (last modified: 2022.05.24).
+ * This file: Optional security extras module (last modified: 2022.06.05).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -361,14 +361,12 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
 
         /** Probing for webshells/backdoors. */
         if ($this->trigger(preg_match(
-            '~^/*(?:' .
+            '~^(?:' .
             'old/wp-admin/install\.php|' .
+            'shell\?cd|' .
             'test/wp-includes/wlwmanifest\.xml|' .
             'vendor/phpunit/phpunit/src/Util/PHP/(?:eval-stdin|kill)\.php' .
-            ')~i',
-            $LCReqURI
-        ) || preg_match(
-            '~(?:' .
+            ')|(?:' .
             'c(?:9|10)\d+|gh[0o]st|gzismexv|h6ss|icesword|itsec|p[Hh]p(?:1|_niu_\d+|版iisspy|大马|一句话(?:木马|扫描脚本程序)?)|' .
             'poison|session91|shell|silic|tk(?:_dencode_\d+)?|' .
             'webshell-[a-z\d]+|wloymzuk|wso\d\.\d\.\d|xiaom|xw|zone_hackbar(?:_beutify_other)?' .
@@ -376,22 +374,27 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
             $LCReqURI
         ), 'Probing for webshells/backdoors')) {
             $this->Reporter->report([15, 21], ['Caught probing for webshells/backdoors.'], $this->BlockInfo['IPAddr']);
-        } // 2019.08.12 mod 2020.11.29
+        } // 2022.06.05
 
         /** Probing for exposed Git data. */
-        if ($this->trigger(preg_match('~^/*\.git~i', $LCReqURI), 'Probing for exposed git data')) {
+        if ($this->trigger(preg_match('~\.git(?:$|\W)~i', $LCReqURI), 'Probing for exposed git data')) {
             $this->Reporter->report([15, 21], ['Caught probing for exposed git data.'], $this->BlockInfo['IPAddr']);
-        } // 2019.08.12
+        } // 2022.06.05
 
         /** Probing for exposed SSH data. */
-        if ($this->trigger(preg_match('~^/*\.ssh~i', $LCReqURI), 'Probing for exposed SSH data')) {
+        if ($this->trigger(preg_match('~^\.ssh(?:$|\W)~i', $LCReqURI), 'Probing for exposed SSH data')) {
             $this->Reporter->report([15, 22], ['Caught probing for exposed SSH data.'], $this->BlockInfo['IPAddr']);
-        } // 2019.08.12
+        } // 2022.06.05
 
         /** Probing for vulnerable routers. */
-        if ($this->trigger(preg_match('~^/*HNAP1~i', $LCReqURI), 'Probing for vulnerable routers')) {
+        if ($this->trigger(preg_match('~(?:^|\W)HNAP1~i', $LCReqURI), 'Probing for vulnerable routers')) {
             $this->Reporter->report([15, 23], ['Caught probing for vulnerable routers.'], $this->BlockInfo['IPAddr']);
-        } // 2019.08.12
+        } // 2022.06.05
+
+        /** Probing for vulnerable webapps. */
+        if ($this->trigger(preg_match('~cgi-bin/(?:web)?login\.cgi(?:$|\?)~i', $LCReqURI), 'Probing for vulnerable webapps')) {
+            $this->Reporter->report([15, 21], ['Caught probing for vulnerable webapps.'], $this->BlockInfo['IPAddr']);
+        } // 2022.06.05
     }
 };
 

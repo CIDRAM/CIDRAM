@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6_isps.dat
 
-# Version: 2022.152.0
-# Last modified: 2022.06.02
+# Version: 2022.154.0
+# Last modified: 2022.06.04
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -102,8 +102,8 @@ Tag: TeNeT
 
 # ASN 31252 ("Starnet Servicii SRL").
 # Moldovan multiplay business ISP. Spam, malware, hacking, etc detected here.
-# Stop Forum Spam (SFS) listings: 10,254.
-# Updated: 2017.03.11 / Modified: 2019.11.02 / Checked: 2021.07.08
+# Stop Forum Spam (SFS) listings: 5,178.
+# Updated: 2017.03.11 / Modified: 2019.11.02 / Checked: 2022.06.04
 
 2a00:9900::/29 Deny Spam
 2a01:320::/29 Deny Spam
@@ -879,17 +879,6 @@ Tag: Sky UK Limited
 Origin: GB
 Profile: Domestic ISP
 Tag: British Telecom PLC
-
-
-# ASN 53022 ("BROSEGHINI LTDA EPP").
-# Brazilian domestic ISP. DDoS, SSH and brute-force attacks detected
-# originating from this network.
-# Updated: 2020.06.11 / Checked: 2021.07.14
-
-2804:31fc::/32 Deny Attacks
-Origin: BR
-Profile: Domestic ISP
-Tag: BROSEGHINI LTDA EPP
 
 
 # ASN 7018 ("AT&T Services, Inc").

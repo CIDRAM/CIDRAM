@@ -1,6 +1,6 @@
 CIDRAM Core:
  Name: "CIDRAM Core"
- Version: "3.0.0-DEV+22154000"
+ Version: "3.0.0-DEV+22155000"
  Dependencies:
   PHP: ">=7.2"
   Common Classes Package: "^2.9"
@@ -57,7 +57,7 @@ CIDRAM Core:
    Checksum: "81d4e41c24b339debda49eb6c2faf5f76d3663217c1e347bdde26229550949a2:6637"
 CIDRAM Front-End:
  Name: "CIDRAM Front-End"
- Version: "3.0.0-DEV+22154000"
+ Version: "3.0.0-DEV+22155000"
  Dependencies:
   PHP: ">=7.2"
   Common Classes Package: "^2.9"
@@ -799,7 +799,7 @@ l10n/zh:
 AbuseIPDB module:
  Name: "AbuseIPDB module"
  False Positive Risk: "Medium"
- Version: "2022.154.0"
+ Version: "2022.156.0"
  Dependencies:
   CIDRAM Core: "^3.0.0-DEV"
  Uninstallable: true
@@ -810,7 +810,7 @@ AbuseIPDB module:
    Used with: "imports"
   modules/abuseipdb.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/modules/abuseipdb.php"
-   Checksum: "3aee02ee926006b08b7c93c982beff2f95aa50dd35aece377946f037f734f8e4:7177"
+   Checksum: "ebc63e9df4cf5715dfc59c8a54bff0b2bd8013356ff6bee7ff4d09b03044b7ea:7689"
    Used with: "modules"
 Bad hosts blocker module:
  Name: "Bad hosts blocker module"
@@ -839,7 +839,7 @@ Bad TLDs blocker module:
 BGPView module:
  Name: "BGPView module"
  False Positive Risk: "Low"
- Version: "2022.154.0"
+ Version: "2022.156.0"
  Dependencies:
   CIDRAM Core: "^3.0.0-DEV"
  Uninstallable: true
@@ -850,7 +850,7 @@ BGPView module:
    Used with: "imports"
   modules/bgpview.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/modules/bgpview.php"
-   Checksum: "7c4eddb798ef77632fa39c664a0532ae2e3b772d0ca3e2ac1af46d0e2ebc4b32:8116"
+   Checksum: "5b86ec14750bf35a3a810291ae266aaa7588208c51d8b715e1097037c65ef694:8907"
    Used with: "modules"
 Bot user agents module:
  Name: "Bot user agents module"
@@ -912,7 +912,7 @@ Optional security extras module:
 Project Honeypot module:
  Name: "Project Honeypot module"
  False Positive Risk: "Medium"
- Version: "2022.154.0"
+ Version: "2022.156.0"
  Dependencies:
   CIDRAM Core: "^3.0.0-DEV"
  Uninstallable: true
@@ -923,12 +923,12 @@ Project Honeypot module:
    Used with: "imports"
   modules/projecthoneypot.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/modules/projecthoneypot.php"
-   Checksum: "0f9c1834ee5154c9c97e79aa78db361d63550b42dc928344b3318439ff540fa0:6136"
+   Checksum: "0c38b1fe4109c80613bd1fae1aa67cca29fc67cb29f6c1ae3d6ed338527f1d2a:6170"
    Used with: "modules"
 Stop Forum Spam module:
  Name: "Stop Forum Spam module"
  False Positive Risk: "Low"
- Version: "2022.154.0"
+ Version: "2022.156.0"
  Dependencies:
   CIDRAM Core: "^3.0.0-DEV"
  Uninstallable: true
@@ -939,5 +939,5 @@ Stop Forum Spam module:
    Used with: "imports"
   modules/sfs.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/modules/sfs.php"
-   Checksum: "add06a045a285193212f3611eaee28189cab42ea095c516f5f4efdc0e99f9d8c:4066"
+   Checksum: "e94d5e50b433ed560f03736920501f8dc50acb6236dfef8629444d436f877b93:4475"
    Used with: "modules"

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Project Honeypot module (last modified: 2022.06.04).
+ * This file: Project Honeypot module (last modified: 2022.06.06).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -35,17 +35,23 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
     }
 
     /**
-     * We can't perform lookups without an API key, so we should check for that,
-     * too.
+     * We can't perform lookups without an API key, so we should check for
+     * that, too.
      */
-    if (empty($this->Configuration['projecthoneypot']['api_key'])) {
+    if (!strlen($this->Configuration['projecthoneypot']['api_key'])) {
         return;
     }
 
-    /** Normalised, lower-cased request URI; Used to determine whether the module needs to do anything for the request. */
+    /**
+     * Normalised, lower-cased request URI; Used to determine whether the
+     * module needs to do anything for the request.
+     */
     $LCURI = preg_replace('/\s/', '', strtolower($this->BlockInfo['rURI']));
 
-    /** If the request isn't attempting to access a sensitive page (login, registration page, etc), exit. */
+    /**
+     * If the request isn't attempting to access a sensitive page (login,
+     * registration page, etc), exit.
+     */
     if ($this->Configuration['projecthoneypot']['lookup_strategy'] !== 1 && !$this->isSensitive($LCURI)) {
         return;
     }
@@ -56,8 +62,9 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
     }
 
     /**
-     * Only execute if not already blocked for some other reason, if the IP is valid, if not from a private or reserved
-     * range, and if the lookup limit hasn't already been exceeded (reduces superfluous lookups).
+     * Only execute if not already blocked for some other reason, if the IP is
+     * valid, if not from a private or reserved range, and if the lookup limit
+     * hasn't already been exceeded (reduces superfluous lookups).
      */
     if (
         $this->CIDRAM['Project Honeypot-429'] ||
@@ -71,7 +78,10 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
     $EnableCaptcha = ['recaptcha' => ['enabled' => true], 'hcaptcha' => ['enabled' => true]];
 
     /** Executed if there aren't any cache entries corresponding to the IP of the request. */
-    if (!isset($this->CIDRAM['Project Honeypot-' . $this->BlockInfo['IPAddr']])) {
+    if (
+        !isset($this->CIDRAM['Project Honeypot-' . $this->BlockInfo['IPAddr']]) ||
+        $this->CIDRAM['Project Honeypot-' . $this->BlockInfo['IPAddr']] === false
+    ) {
         $this->CIDRAM['Project Honeypot-' . $this->BlockInfo['IPAddr']] = $this->Cache->getEntry('Project Honeypot-' . $this->BlockInfo['IPAddr']);
         if ($this->CIDRAM['Project Honeypot-' . $this->BlockInfo['IPAddr']] === false) {
             /** Build the lookup query. */
@@ -88,36 +98,37 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
                 /** Lookup limit has been exceeded. */
                 $this->Cache->setEntry('Project Honeypot-429', true, 604800);
                 $this->CIDRAM['Project Honeypot-429'] = true;
+                return;
+            }
+
+            /**
+             * Validate or substitute.
+             *
+             * @link https://www.projecthoneypot.org/httpbl_api.php
+             */
+            if (preg_match('~^127\.\d+\.\d+\.\d+$~', $Data)) {
+                $Data = explode('.', $Data);
+                $this->CIDRAM['Project Honeypot-' . $this->BlockInfo['IPAddr']] = [
+                    'Days since last activity' => $Data[1],
+                    'Threat score' => $Data[2],
+                    'Type of visitor' => $Data[3]
+                ];
+                $this->Cache->setEntry(
+                    'Project Honeypot-' . $this->BlockInfo['IPAddr'],
+                    $this->CIDRAM['Project Honeypot-' . $this->BlockInfo['IPAddr']],
+                    604800
+                );
             } else {
-                /**
-                 * Validate or substitute.
-                 *
-                 * @link https://www.projecthoneypot.org/httpbl_api.php
-                 */
-                if (preg_match('~^127\.\d+\.\d+\.\d+$~', $Data)) {
-                    $Data = explode('.', $Data);
-                    $this->CIDRAM['Project Honeypot-' . $this->BlockInfo['IPAddr']] = [
-                        'Days since last activity' => $Data[1],
-                        'Threat score' => $Data[2],
-                        'Type of visitor' => $Data[3]
-                    ];
-                    $this->Cache->setEntry(
-                        'Project Honeypot-' . $this->BlockInfo['IPAddr'],
-                        $this->CIDRAM['Project Honeypot-' . $this->BlockInfo['IPAddr']],
-                        604800
-                    );
-                } else {
-                    $this->CIDRAM['Project Honeypot-' . $this->BlockInfo['IPAddr']] = [
-                        'Days since last activity' => -1,
-                        'Threat score' => -1,
-                        'Type of visitor' => -1
-                    ];
-                    $this->Cache->setEntry(
-                        'Project Honeypot-' . $this->BlockInfo['IPAddr'],
-                        $this->CIDRAM['Project Honeypot-' . $this->BlockInfo['IPAddr']],
-                        3600
-                    );
-                }
+                $this->CIDRAM['Project Honeypot-' . $this->BlockInfo['IPAddr']] = [
+                    'Days since last activity' => -1,
+                    'Threat score' => -1,
+                    'Type of visitor' => -1
+                ];
+                $this->Cache->setEntry(
+                    'Project Honeypot-' . $this->BlockInfo['IPAddr'],
+                    $this->CIDRAM['Project Honeypot-' . $this->BlockInfo['IPAddr']],
+                    3600
+                );
             }
         }
     }

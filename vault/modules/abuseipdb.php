@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: AbuseIPDB module (last modified: 2022.06.04).
+ * This file: AbuseIPDB module (last modified: 2022.06.06).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -25,10 +25,24 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         return;
     }
 
-    /** Normalised, lower-cased request URI; Used to determine whether the module needs to do anything for the request. */
+    /**
+     * We can't perform lookups without an API key, so we should check for
+     * that, too.
+     */
+    if (!strlen($this->Configuration['abuseipdb']['api_key'])) {
+        return;
+    }
+
+    /**
+     * Normalised, lower-cased request URI; Used to determine whether the
+     * module needs to do anything for the request.
+     */
     $LCURI = preg_replace('/\s/', '', strtolower($this->BlockInfo['rURI']));
 
-    /** If the request isn't attempting to access a sensitive page (login, registration page, etc), exit. */
+    /**
+     * If the request isn't attempting to access a sensitive page (login,
+     * registration page, etc), exit.
+     */
     if ($this->Configuration['abuseipdb']['lookup_strategy'] !== 1 && !$this->isSensitive($LCURI)) {
         return;
     }
@@ -55,7 +69,10 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
     $EnableCaptcha = ['recaptcha' => ['enabled' => true], 'hcaptcha' => ['enabled' => true]];
 
     /** Executed if there aren't any cache entries corresponding to the IP of the request. */
-    if (!isset($this->CIDRAM['AbuseIPDB-' . $this->BlockInfo['IPAddr']])) {
+    if (
+        !isset($this->CIDRAM['AbuseIPDB-' . $this->BlockInfo['IPAddr']]) ||
+        $this->CIDRAM['AbuseIPDB-' . $this->BlockInfo['IPAddr']] === false
+    ) {
         $this->CIDRAM['AbuseIPDB-' . $this->BlockInfo['IPAddr']] = $this->Cache->getEntry('AbuseIPDB-' . $this->BlockInfo['IPAddr']);
         if ($this->CIDRAM['AbuseIPDB-' . $this->BlockInfo['IPAddr']] === false) {
             /** Perform AbuseIPDB lookup. */
@@ -70,40 +87,49 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
                 /** Lookup limit has been exceeded. */
                 $this->Cache->setEntry('AbuseIPDB-429', true, 604800);
                 $this->CIDRAM['AbuseIPDB-429'] = true;
-            } else {
-                /** Validate or substitute. */
-                $Lookup = strpos($Lookup, '"abuseConfidenceScore":') !== false ? (json_decode($Lookup, true) ?: []) : [];
-
-                /** Generate local AbuseIPDB cache entry. */
-                $this->CIDRAM['AbuseIPDB-' . $this->BlockInfo['IPAddr']] = $Lookup['data'];
-
-                /** Ensure confidence score. */
-                if (!isset($this->CIDRAM['AbuseIPDB-' . $this->BlockInfo['IPAddr']]['abuseConfidenceScore'])) {
-                    $this->CIDRAM['AbuseIPDB-' . $this->BlockInfo['IPAddr']]['abuseConfidenceScore'] = 0;
-                }
-
-                /** Ensure total reports. */
-                if (!isset($this->CIDRAM['AbuseIPDB-' . $this->BlockInfo['IPAddr']]['totalReports'])) {
-                    $this->CIDRAM['AbuseIPDB-' . $this->BlockInfo['IPAddr']]['totalReports'] = 0;
-                }
-
-                /** Check whether whitelisted. */
-                $this->CIDRAM['AbuseIPDB-' . $this->BlockInfo['IPAddr']]['isWhitelisted'] = !empty($Lookup['data']['isWhitelisted']);
-
-                /** Update cache. */
-                $this->Cache->setEntry(
-                    'AbuseIPDB-' . $this->BlockInfo['IPAddr'],
-                    $this->CIDRAM['AbuseIPDB-' . $this->BlockInfo['IPAddr']],
-                    $this->CIDRAM['AbuseIPDB-' . $this->BlockInfo['IPAddr']]['abuseConfidenceScore'] < 1 ? 3600 : 604800
-                );
+                return;
             }
+
+            /** Validate or substitute. */
+            $Lookup = strpos($Lookup, '"abuseConfidenceScore":') !== false ? (json_decode($Lookup, true) ?: []) : [];
+
+            /** Generate local AbuseIPDB cache entry. */
+            $this->CIDRAM['AbuseIPDB-' . $this->BlockInfo['IPAddr']] = $Lookup['data'];
+
+            /** Ensure confidence score. */
+            if (!isset($this->CIDRAM['AbuseIPDB-' . $this->BlockInfo['IPAddr']]['abuseConfidenceScore'])) {
+                $this->CIDRAM['AbuseIPDB-' . $this->BlockInfo['IPAddr']]['abuseConfidenceScore'] = 0;
+            }
+
+            /** Ensure total reports. */
+            if (!isset($this->CIDRAM['AbuseIPDB-' . $this->BlockInfo['IPAddr']]['totalReports'])) {
+                $this->CIDRAM['AbuseIPDB-' . $this->BlockInfo['IPAddr']]['totalReports'] = 0;
+            }
+
+            /** Check whether whitelisted. */
+            $this->CIDRAM['AbuseIPDB-' . $this->BlockInfo['IPAddr']]['isWhitelisted'] = !empty($Lookup['data']['isWhitelisted']);
+
+            /** Update cache. */
+            $this->Cache->setEntry(
+                'AbuseIPDB-' . $this->BlockInfo['IPAddr'],
+                $this->CIDRAM['AbuseIPDB-' . $this->BlockInfo['IPAddr']],
+                $this->CIDRAM['AbuseIPDB-' . $this->BlockInfo['IPAddr']]['abuseConfidenceScore'] < 1 ? 3600 : 604800
+            );
         }
+    }
+
+    /** Guard. */
+    if (
+        !isset($this->CIDRAM['AbuseIPDB-' . $this->BlockInfo['IPAddr']]) ||
+        !is_array($this->CIDRAM['AbuseIPDB-' . $this->BlockInfo['IPAddr']])
+    ) {
+        return;
     }
 
     /** Block the request if the IP is listed by AbuseIPDB. */
     $this->trigger(
         (
-            !$this->CIDRAM['AbuseIPDB-' . $this->BlockInfo['IPAddr']]['isWhitelisted'] &&
+            $this->CIDRAM['AbuseIPDB-' . $this->BlockInfo['IPAddr']]['isWhitelisted'] === false &&
             $this->CIDRAM['AbuseIPDB-' . $this->BlockInfo['IPAddr']]['abuseConfidenceScore'] >= $this->Configuration['abuseipdb']['minimum_confidence_score'] &&
             $this->CIDRAM['AbuseIPDB-' . $this->BlockInfo['IPAddr']]['totalReports'] >= $this->Configuration['abuseipdb']['minimum_total_reports']
         ),

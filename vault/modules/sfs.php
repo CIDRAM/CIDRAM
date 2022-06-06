@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Stop Forum Spam module (last modified: 2022.06.04).
+ * This file: Stop Forum Spam module (last modified: 2022.06.06).
  *
  * False positive risk (an approximate, rough estimate only): « [x]Low [ ]Medium [ ]High »
  */
@@ -25,10 +25,16 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         return;
     }
 
-    /** Normalised, lower-cased request URI; Used to determine whether the module needs to do anything for the request. */
+    /**
+     * Normalised, lower-cased request URI; Used to determine whether the
+     * module needs to do anything for the request.
+     */
     $LCURI = preg_replace('/\s/', '', strtolower($this->BlockInfo['rURI']));
 
-    /** If the request isn't attempting to access a sensitive page (login, registration page, etc), exit. */
+    /**
+     * If the request isn't attempting to access a sensitive page (login,
+     * registration page, etc), exit.
+     */
     if (!$this->isSensitive($LCURI)) {
         return;
     }
@@ -39,8 +45,9 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
     }
 
     /**
-     * Only execute if not already blocked for some other reason, if the IP is valid, if not from a private or reserved
-     * range, and if the lookup limit hasn't already been exceeded (reduces superfluous lookups).
+     * Only execute if not already blocked for some other reason, if the IP is
+     * valid, if not from a private or reserved range, and if the lookup limit
+     * hasn't already been exceeded (reduces superfluous lookups).
      */
     if (
         $this->CIDRAM['SFS-429'] ||
@@ -54,7 +61,10 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
     $EnableCaptcha = ['recaptcha' => ['enabled' => true], 'hcaptcha' => ['enabled' => true]];
 
     /** Executed if there aren't any cache entries corresponding to the IP of the request. */
-    if (!isset($this->CIDRAM['SFS-' . $this->BlockInfo['IPAddr']])) {
+    if (
+        !isset($this->CIDRAM['SFS-' . $this->BlockInfo['IPAddr']]) ||
+        $this->CIDRAM['SFS-' . $this->BlockInfo['IPAddr']] === false
+    ) {
         $this->CIDRAM['SFS-' . $this->BlockInfo['IPAddr']] = $this->Cache->getEntry('SFS-' . $this->BlockInfo['IPAddr']);
         if ($this->CIDRAM['SFS-' . $this->BlockInfo['IPAddr']] === false) {
             /** Perform SFS lookup. */
@@ -68,29 +78,39 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
                 /** Lookup limit has been exceeded. */
                 $this->Cache->setEntry('SFS-429', true, 604800);
                 $this->CIDRAM['SFS-429'] = true;
-            } else {
-                /** Generate local SFS cache entry. */
-                if ((strpos($Lookup, 's:7:"success";') !== false) && (strpos($Lookup, 's:2:"ip";') !== false)) {
-                    $this->CIDRAM['SFS-' . $this->BlockInfo['IPAddr']] = (strpos($Lookup, '"appears";i:1;') !== false);
-                    $Expiry = 604800;
-                } else {
-                    $this->CIDRAM['SFS-' . $this->BlockInfo['IPAddr']] = false;
-                    $Expiry = 3600;
-                }
-
-                /** Update cache. */
-                $this->Cache->setEntry(
-                    'SFS-' . $this->BlockInfo['IPAddr'],
-                    $this->CIDRAM['SFS-' . $this->BlockInfo['IPAddr']],
-                    $Expiry
-                );
+                return;
             }
+
+            /** Generate local SFS cache entry. */
+            if ((strpos($Lookup, 's:7:"success";') !== false) && (strpos($Lookup, 's:2:"ip";') !== false)) {
+                if (preg_match('~"frequency";i:(\d+);"~i', $Lookup, $Frequency)) {
+                    $Frequency = (int)$Frequency;
+                } else {
+                    $Frequency = 0;
+                }
+                $this->CIDRAM['SFS-' . $this->BlockInfo['IPAddr']] = $Frequency;
+                $Expiry = 604800;
+            } else {
+                $this->CIDRAM['SFS-' . $this->BlockInfo['IPAddr']] = 0;
+                $Expiry = 3600;
+            }
+
+            /** Update cache. */
+            $this->Cache->setEntry(
+                'SFS-' . $this->BlockInfo['IPAddr'],
+                $this->CIDRAM['SFS-' . $this->BlockInfo['IPAddr']],
+                $Expiry
+            );
         }
     }
 
     /** Block the request if the IP is listed by SFS. */
     $this->trigger(
-        !empty($this->CIDRAM['SFS-' . $this->BlockInfo['IPAddr']]['Listed']),
+        (
+            isset($this->CIDRAM['SFS-' . $this->BlockInfo['IPAddr']]) &&
+            is_int($this->CIDRAM['SFS-' . $this->BlockInfo['IPAddr']]) &&
+            $this->CIDRAM['SFS-' . $this->BlockInfo['IPAddr']] > 0
+        ),
         'SFS Lookup',
         $this->L10N->getString('ReasonMessage_Generic') . '<br />' . sprintf($this->L10N->getString('request_removal'), 'https://www.stopforumspam.com/removal'),
         $this->Configuration['sfs']['offer_captcha'] ? $EnableCaptcha : []

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: BGPView module (last modified: 2022.06.04).
+ * This file: BGPView module (last modified: 2022.06.06).
  *
  * False positive risk (an approximate, rough estimate only): « [x]Low [ ]Medium [ ]High »
  */
@@ -35,16 +35,40 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
 
     $InCache = false;
 
+    /** Check whether the lookup limit has been exceeded. */
+    if (!isset($this->CIDRAM['BGPView-429'])) {
+        $this->CIDRAM['BGPView-429'] = $this->Cache->getEntry('BGPView-429') ? true : false;
+    }
+
+    /**
+     * Only execute if the IP is valid, if not from a private or reserved
+     * range, and if the lookup limit hasn't already been exceeded (reduces
+     * superfluous lookups).
+     */
+    if (
+        $this->CIDRAM['BGPView-429'] ||
+        filter_var($this->BlockInfo['IPAddr'], FILTER_VALIDATE_IP, FILTER_FLAG_NO_PRIV_RANGE | FILTER_FLAG_NO_RES_RANGE) === false
+    ) {
+        return;
+    }
+
     /** Expand factors for this origin. */
     $Expanded = [$this->expandIpv4($this->BlockInfo['IPAddr']), $this->expandIpv6($this->BlockInfo['IPAddr'])];
+    $ToCheck = [];
+    if (is_array($Expanded[0]) && count($Expanded[0]) === 32) {
+        $ToCheck[] = array_slice($Expanded[0], 23);
+    }
+    if (is_array($Expanded[1]) && count($Expanded[1]) === 128) {
+        $ToCheck[] = array_slice($Expanded[0], 47);
+    }
 
     /** Check whether we've already performed a lookup for this origin. */
-    foreach ($Expanded as $Factors) {
-        if (!is_array($Factors)) {
-            continue;
-        }
+    foreach ($ToCheck as $Factors) {
         foreach ($Factors as $Factor) {
             if (!isset($this->CIDRAM['BGPView-' . $Factor])) {
+                $this->CIDRAM['BGPView-' . $Factor] = $this->Cache->getEntry('BGPView-' . $Factor);
+            }
+            if ($this->CIDRAM['BGPView-' . $Factor] === false) {
                 continue;
             }
             $InCache = true;
@@ -59,44 +83,48 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
             [],
             $this->Configuration['bgpview']['timeout_limit'] ?? 12
         );
+
+        if ($this->Request->MostRecentStatusCode !== 200) {
+            /** Lookup limit has been exceeded. */
+            $this->Cache->setEntry('BGPView-429', true, 14400);
+            $this->CIDRAM['BGPView-429'] = true;
+            return;
+        }
+
         $Lookup = (
             substr($Lookup, 0, 63) === '{"status":"ok","status_message":"Query was successful","data":{' &&
             substr($Lookup, -2) === '}}'
         ) ? json_decode($Lookup, true) : false;
         $Low = strpos($this->BlockInfo['IPAddr'], ':') !== false ? 128 : 32;
-        if (is_array($Lookup) && isset($Lookup['data'])) {
-            if (
-                isset($Lookup['data']['rir_allocation']) &&
-                is_array($Lookup['data']['rir_allocation']) &&
-                isset($Lookup['data']['rir_allocation']['prefix'])
-            ) {
-                $TryForRir = $Lookup['data']['rir_allocation']['prefix'];
-            } else {
-                $TryForRir = '';
-            }
-            if (isset($Lookup['data']['prefixes']) && is_array($Lookup['data']['prefixes'])) {
-                foreach ($Lookup['data']['prefixes'] as $Prefix) {
-                    $Factor = $Prefix['prefix'] ?? '';
-                    $ASN = $Prefix['asn']['asn'] ?? '';
-                    $CC = $Prefix['asn']['country_code'] ?? 'XX';
-                    if ($Factor && $ASN) {
-                        $this->CIDRAM['BGPView-' . $Factor] = ['ASN' => $ASN, 'CC' => $CC];
-                        if ($TryForRir === $Factor) {
-                            $CC = $Lookup['data']['rir_allocation']['country_code'] ?? $CC;
-                            $TryForRir = '';
-                        }
-                        $this->Cache->setEntry('BGPView-' . $Factor, ['ASN' => $ASN, 'CC' => $CC], 604800);
+
+        /** Lookup failed. */
+        if (!is_array($Lookup) || !isset($Lookup['data'])) {
+            return;
+        }
+
+        $TryForRir = (
+            isset($Lookup['data']['rir_allocation']) &&
+            is_array($Lookup['data']['rir_allocation']) &&
+            isset($Lookup['data']['rir_allocation']['prefix'])
+        ) ? $Lookup['data']['rir_allocation']['prefix'] : '';
+        if (isset($Lookup['data']['prefixes']) && is_array($Lookup['data']['prefixes'])) {
+            foreach ($Lookup['data']['prefixes'] as $Prefix) {
+                $Factor = $Prefix['prefix'] ?? '';
+                $ASN = $Prefix['asn']['asn'] ?? '';
+                $CC = $Prefix['asn']['country_code'] ?? 'XX';
+                if ($Factor && $ASN) {
+                    if ($TryForRir === $Factor) {
+                        $CC = $Lookup['data']['rir_allocation']['country_code'] ?? $CC;
+                        $TryForRir = '';
                     }
+                    $this->CIDRAM['BGPView-' . $Factor] = ['ASN' => $ASN, 'CC' => $CC];
+                    $this->Cache->setEntry('BGPView-' . $Factor, ['ASN' => $ASN, 'CC' => $CC], 604800);
                 }
             }
-            if ($TryForRir !== '') {
-                $this->CIDRAM['BGPView-' . $TryForRir] = ['CC' => $Lookup['data']['rir_allocation']['country_code']];
-                $this->Cache->setEntry('BGPView-' . $TryForRir, $this->CIDRAM['BGPView-' . $TryForRir], 604800);
-            }
         }
-        if (!isset($this->CIDRAM['BGPView-' . $this->BlockInfo['IPAddr'] . '/' . $Low])) {
-            $this->CIDRAM['BGPView-' . $this->BlockInfo['IPAddr'] . '/' . $Low] = ['ASN' => -1, 'CC' => 'XX'];
-            $this->Cache->setEntry('BGPView-' . $this->BlockInfo['IPAddr'] . '/' . $Low, ['ASN' => -1, 'CC' => 'XX'], 604800);
+        if ($TryForRir !== '') {
+            $this->CIDRAM['BGPView-' . $TryForRir] = ['CC' => $Lookup['data']['rir_allocation']['country_code'] ?? 'XX'];
+            $this->Cache->setEntry('BGPView-' . $TryForRir, $this->CIDRAM['BGPView-' . $TryForRir], 604800);
         }
     }
 

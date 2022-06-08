@@ -1,8 +1,8 @@
 # IPv4 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv4.dat
 
-# Version: 2022.154.0
-# Last modified: 2022.06.04
+# Version: 2022.158.0
+# Last modified: 2022.06.08
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -37839,6 +37839,29 @@ Tag: Facts Online Pvt Ltd
 Origin: US
 Profile: Dedicated;Infrastructure/Transit;Webhosting
 Tag: Hop One Networks LLC
+
+
+# ASN 15828 ("Blue Diamond Network Co., Ltd").
+# Iranian webhosting provider. Brute-force attacks detected from here.
+# Updated: 2022.06.08
+
+5.34.204.0/24 Deny Attacks
+5.34.207.0/24 Deny Attacks
+Origin: IR
+Profile: Webhosting
+Tag: Blue Diamond
+
+
+# Orphaned from any current BGP records (should be dead!), but still
+# nonetheless seeing current reports for inbound brute-force attacks from these
+# ranges, so someone somewhere must still be routing these, I suppose.
+# Updated: 2022.06.08
+
+5.34.205.0/24 Deny Attacks
+5.34.206.0/24 Deny Attacks
+Origin: IR
+Profile: Webhosting;Orphaned
+Tag: Orphaned/Iran/Attacks
 
 
 # ---

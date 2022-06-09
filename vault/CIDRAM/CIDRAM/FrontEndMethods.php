@@ -47,7 +47,7 @@ trait FrontEndMethods
         $Arr = [];
         $Key = -1;
         $Offset = strlen($Base);
-        $List = new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator($Base), \RecursiveIteratorIterator::SELF_FIRST);
+        $List = new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator($Base, \RecursiveDirectoryIterator::FOLLOW_SYMLINKS), \RecursiveIteratorIterator::SELF_FIRST);
         foreach ($List as $Item => $List) {
             $Key++;
             $ThisName = substr($Item, $Offset);

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Dutch language data for the front-end (last modified: 2022.06.05).
+# This file: Dutch language data for the front-end (last modified: 2022.06.08).
 ##/
 
 Extended Description AbuseIPDB module: "Blokkeert aanvragen van IP's die worden vermeld op AbuseIPDB."
@@ -90,7 +90,7 @@ config_bypasses: "Configuratie voor de standaard bypasses voor signatures."
 config_bypasses_used: "Welke bypasses moeten worden gebruikt?"
 config_components: "Configuratie voor het activeren en het deactiveren van de door CIDRAM gebruikte componenten. Meestal gevuld door de updates-pagina, maar kan ook vanaf hier worden beheerd voor fijnere controle en voor aangepaste componenten die niet worden herkend door de updates-pagina."
 config_components_events: "Evenement-Behandelaars. Meestal gebruikt om de manier waarop CIDRAM zich intern gedraagt te wijzigen of om extra functionaliteit te bieden."
-config_components_imports: "Invoer. Meestal gebruikt om de configuratie-informatie van een component aan CIDRAM te leveren."
+config_components_imports: "Import. Meestal gebruikt om de configuratie-informatie van een component aan CIDRAM te leveren."
 config_components_ipv4: "IPv4-signatuurbestanden."
 config_components_ipv6: "IPv6-signatuurbestanden."
 config_components_modules: "Modules."
@@ -451,10 +451,12 @@ label_never: "Nooit"
 label_next: "Volgende:"
 label_os: "Besturingssysteem gebruikt:"
 label_other: "Anders"
-label_other-ActiveIPv4: "Actieve IPv4 signatuurbestanden"
-label_other-ActiveIPv6: "Actieve IPv6 signatuurbestanden"
-label_other-ActiveModules: "Actieve modules"
-label_other-Since: "Begin datum"
+label_other_active_events: "Actieve evenementen"
+label_other_active_imports: "Actieve import"
+label_other_active_ipv4: "Actieve IPv4 signatuurbestanden"
+label_other_active_ipv6: "Actieve IPv6 signatuurbestanden"
+label_other_active_modules: "Actieve modules"
+label_other_since: "Begin datum"
 label_paginate: "Pagineren"
 label_passed: "Verzoeken toegestaan"
 label_php: "PHP versie gebruikt:"

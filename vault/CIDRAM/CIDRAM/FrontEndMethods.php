@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: General methods used by the front-end (last modified: 2022.06.04).
+ * This file: General methods used by the front-end (last modified: 2022.06.09).
  */
 
 namespace CIDRAM\CIDRAM;

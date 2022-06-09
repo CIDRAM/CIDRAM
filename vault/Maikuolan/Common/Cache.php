@@ -1,6 +1,6 @@
 <?php
 /**
- * A simple, unified cache handler (last modified: 2022.02.21).
+ * A simple, unified cache handler (last modified: 2022.06.09).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -426,7 +426,7 @@ class Cache
      *
      * @param string $Key The name of the cache entry to set.
      * @param mixed $Value The value of the cache entry to set.
-     * @param int $TTL The number of seconds that the cache entry should persist.
+     * @param int $TTL The number of seconds that the cache entry should live.
      * @return bool True on success; False on failure.
      */
     public function setEntry(string $Key, $Value, int $TTL = 3600): bool
@@ -493,8 +493,14 @@ class Cache
             }
             return false;
         }
-        if ($this->Using === 'Memcached' || $this->Using === 'Redis') {
+        if ($this->Using === 'Memcached') {
             if ($this->WorkingData->delete($Entry)) {
+                return $this->Modified = true;
+            }
+            return false;
+        }
+        if ($this->Using === 'Redis') {
+            if ($this->WorkingData->del($Entry)) {
                 return $this->Modified = true;
             }
             return false;
@@ -513,6 +519,161 @@ class Cache
             }
         }
         return false;
+    }
+
+    /**
+     * Delete a limited subset of all cache entries.
+     *
+     * @param string $Pattern The pattern for which entries to delete.
+     * @return bool True on success; False on failure.
+     */
+    public function deleteAllEntriesWhere(string $Pattern): bool
+    {
+        if ($this->Using === 'APCu') {
+            if (strlen($this->Prefix)) {
+                $Pattern = preg_replace('~(?!\\\\)\^~', '^' . $this->Prefix, $Pattern);
+            }
+            $Try = new \APCUIterator($Pattern);
+            if ($Try->getTotalCount() > 0 && apcu_delete($Try)) {
+                return $this->Modified = true;
+            }
+            return false;
+        }
+        $Failure = false;
+        $Hit = false;
+        foreach ($this->getAllEntries() as $EntryName => $EntryData) {
+            if (preg_match($Pattern, $EntryName)) {
+                $Hit = true;
+                if (!$this->deleteEntry($EntryName)) {
+                    $Failure = true;
+                }
+            }
+        }
+        return ($Hit && !$Failure);
+    }
+
+    /**
+     * Increment an integer cache entry.
+     *
+     * @param string $Key The name of the cache entry to increment.
+     * @param int $Value The value to increment.
+     * @param int $TTL The number of seconds that the cache entry should live.
+     * @return bool True on success; False on failure.
+     */
+    public function incEntry(string $Key, int $Value = 1, int $TTL = 0): bool
+    {
+        if ($this->Using !== 'PDO') {
+            $Key = $this->Prefix . $Key;
+            $this->enforceKeyLimit($Key);
+        }
+        $Success = null;
+        if ($this->Using === 'APCu') {
+            apcu_inc($Key, $Value, $Success, $TTL);
+        } elseif ($this->Using === 'Memcached') {
+            if ($TTL >= 2592000) {
+                $TTL += time();
+            }
+            $Success = $this->WorkingData->increment($Key, $Value, 1, $TTL);
+        } elseif ($this->Using === 'Redis') {
+            $Success = $this->WorkingData->incrBy($Key, $Value);
+        } elseif ($this->Using === 'PDO') {
+            if ($TTL > 0) {
+                $TTL += time();
+            }
+            $Previous = $this->getEntry($Key);
+            if (is_numeric($Previous)) {
+                $Value += $Previous;
+            }
+            $Key = $this->Prefix . $Key;
+            $this->enforceKeyLimit($Key);
+            $PDO = $this->WorkingData->prepare(self::SET_QUERY);
+            if ($PDO !== false && $PDO->execute([':key' => $Key, ':data' => $Value, ':time' => $TTL])) {
+                $Success = ($PDO->rowCount() > 0);
+            }
+        } elseif (is_array($this->WorkingData)) {
+            if (
+                isset($this->WorkingData[$Key]) &&
+                is_array($this->WorkingData[$Key]) &&
+                isset($this->WorkingData[$Key]['Data']) &&
+                is_numeric($this->WorkingData[$Key]['Data'])
+            ) {
+                $Value += $this->WorkingData[$Key]['Data'];
+            }
+            if ($TTL > 0) {
+                $TTL += time();
+                $this->WorkingData[$Key] = ['Data' => $Value, 'Time' => $TTL];
+            } else {
+                $this->WorkingData[$Key] = $Value;
+            }
+            $Success = true;
+        }
+        if ($Success === null || $Success === false) {
+            return false;
+        }
+        $this->Modified = true;
+        return true;
+    }
+
+    /**
+     * Decrement an integer cache entry.
+     *
+     * @param string $Key The name of the cache entry to decrement.
+     * @param int $Value The value to decrement.
+     * @param int $TTL The number of seconds that the cache entry should live.
+     * @return bool True on success; False on failure.
+     */
+    public function decEntry(string $Key, int $Value = 1, int $TTL = 0): bool
+    {
+        if ($this->Using !== 'PDO') {
+            $Key = $this->Prefix . $Key;
+            $this->enforceKeyLimit($Key);
+        }
+        $Success = null;
+        if ($this->Using === 'APCu') {
+            apcu_dec($Key, $Value, $Success, $TTL);
+        } elseif ($this->Using === 'Memcached') {
+            if ($TTL >= 2592000) {
+                $TTL += time();
+            }
+            $Success = $this->WorkingData->decrement($Key, $Value, 1, $TTL);
+        } elseif ($this->Using === 'Redis') {
+            $Success = $this->WorkingData->decrBy($Key, $Value);
+        } elseif ($this->Using === 'PDO') {
+            if ($TTL > 0) {
+                $TTL += time();
+            }
+            $Previous = $this->getEntry($Key);
+            if (is_numeric($Previous)) {
+                $Value -= $Previous;
+            }
+            $Key = $this->Prefix . $Key;
+            $this->enforceKeyLimit($Key);
+            $PDO = $this->WorkingData->prepare(self::SET_QUERY);
+            if ($PDO !== false && $PDO->execute([':key' => $Key, ':data' => $Value, ':time' => $TTL])) {
+                $Success = ($PDO->rowCount() > 0);
+            }
+        } elseif (is_array($this->WorkingData)) {
+            if (
+                isset($this->WorkingData[$Key]) &&
+                is_array($this->WorkingData[$Key]) &&
+                isset($this->WorkingData[$Key]['Data']) &&
+                is_numeric($this->WorkingData[$Key]['Data'])
+            ) {
+                $Value -= $this->WorkingData[$Key]['Data'];
+            }
+            if ($TTL > 0) {
+                $TTL += time();
+                $this->WorkingData[$Key] = ['Data' => $Value, 'Time' => $TTL];
+            } else {
+                $this->WorkingData[$Key] = $Value;
+            }
+            $Success = true;
+        }
+        if ($Success === null || $Success === false) {
+            return false;
+        }
+        $this->Modified = true;
+        return true;
     }
 
     /**

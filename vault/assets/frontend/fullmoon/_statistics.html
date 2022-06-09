@@ -4,7 +4,7 @@
 <table><tr><td class="spanner">
   <form id="statForm" action="?cidram-page=statistics" method="POST">
     <input name="ClearStats" type="hidden" value="1" />
-    <input type="button" value="{link_copy_to_clipboard}" class="auto" onclick="javascript:if(navigator.clipboard){var doCopy='{label_blocked}\nIPv4 – {Blocked-IPv4}\nIPv6 – {Blocked-IPv6}\n{label_other} – {Blocked-Other}\n{label_total} – {Blocked-Total}\n\n{label_banned}\nIPv4 – {Banned-IPv4}\nIPv6 – {Banned-IPv6}\n{label_total} – {Banned-Total}\n\n{label_captcha}\n{state_failed} – {CAPTCHAs-Failed}\n{state_passed} – {CAPTCHAs-Passed}\n{label_total} – {CAPTCHAs-Total}\n\n{label_other}\n{label_other-Since} – {Other-Since}\n{label_other-ActiveIPv4} – {Other-ActiveIPv4}\n{label_other-ActiveIPv6} – {Other-ActiveIPv6}\n{label_other-ActiveModules} – {Other-ActiveModules}\n';navigator.clipboard.writeText(doCopy);alert(doCopy)}else{alert('{response_failed}')}" />
+    <input type="button" value="{link_copy_to_clipboard}" class="auto" onclick="javascript:if(navigator.clipboard){var doCopy='{label_blocked}\nIPv4 – {Blocked-IPv4}\nIPv6 – {Blocked-IPv6}\n{label_other} – {Blocked-Other}\n{label_total} – {Blocked-Total}\n\n{label_banned}\nIPv4 – {Banned-IPv4}\nIPv6 – {Banned-IPv6}\n{label_total} – {Banned-Total}\n\n{label_captcha}\n{state_failed} – {CAPTCHAs-Failed}\n{state_passed} – {CAPTCHAs-Passed}\n{label_total} – {CAPTCHAs-Total}\n\n{label_other}\n{label_other_since} – {Other-Since}\n{label_other_active_ipv4} – {Other-ActiveIPv4}\n{label_other_active_ipv6} – {Other-ActiveIPv6}\n{label_other_active_modules} – {Other-ActiveModules}\n';navigator.clipboard.writeText(doCopy);alert(doCopy)}else{alert('{response_failed}')}" />
     <input type="button" value="{field_clear_all}" class="auto" onclick="{Confirm-ClearAll}" />
   </form>
 </td></tr></table>
@@ -71,19 +71,27 @@
   </tr>
   <tr><td class="center h4f" colspan="2"><div class="s">{label_other}</div></td></tr>
   <tr>
-    <td class="h3"><div class="s">{label_other-Since}</div></td>
+    <td class="h3"><div class="s">{label_other_since}</div></td>
     <td class="h3f"><div class="s">{Other-Since}</div></td>
   </tr>
   <tr>
-    <td class="h3"><div class="s">{label_other-ActiveIPv4}</div></td>
+    <td class="h3"><div class="s">{label_other_active_ipv4}</div></td>
     <td class="h3f"><div class="{ClassActiveIPv4}">{Other-ActiveIPv4}</div></td>
   </tr>
   <tr>
-    <td class="h3"><div class="s">{label_other-ActiveIPv6}</div></td>
+    <td class="h3"><div class="s">{label_other_active_ipv6}</div></td>
     <td class="h3f"><div class="{ClassActiveIPv6}">{Other-ActiveIPv6}</div></td>
   </tr>
   <tr>
-    <td class="h3"><div class="s">{label_other-ActiveModules}</div></td>
+    <td class="h3"><div class="s">{label_other_active_modules}</div></td>
     <td class="h3f"><div class="{ClassActiveModules}">{Other-ActiveModules}</div></td>
+  </tr>
+  <tr>
+    <td class="h3"><div class="s">{label_other_active_imports}</div></td>
+    <td class="h3f"><div class="{ClassActiveImports}">{Other-ActiveImports}</div></td>
+  </tr>
+  <tr>
+    <td class="h3"><div class="s">{label_other_active_events}</div></td>
+    <td class="h3f"><div class="{ClassActiveEvents}">{Other-ActiveEvents}</div></td>
   </tr>
 </table>

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM front-end (last modified: 2022.06.04).
+ * This file: The CIDRAM front-end (last modified: 2022.06.09).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -1669,26 +1669,26 @@ class FrontEnd extends Core
                 $PreferredSource = ($this->Cache->Using && $this->Cache->Using !== 'FF') ? $this->Cache->Using : 'cache.dat';
 
                 /** Array of all cache items. */
-                $this->CIDRAM['CacheArray'] = [];
+                $CacheArray = [];
 
                 /** Get cache index data. */
-                foreach ($this->Cache->getAllEntries() as $this->CIDRAM['ThisCacheName'] => $this->CIDRAM['ThisCacheItem']) {
-                    if (isset($this->CIDRAM['ThisCacheItem']['Time']) && $this->CIDRAM['ThisCacheItem']['Time'] > 0 && $this->CIDRAM['ThisCacheItem']['Time'] < $this->Now) {
+                foreach ($this->Cache->getAllEntries() as $ThisCacheName => $ThisCacheItem) {
+                    if (isset($ThisCacheItem['Time']) && $ThisCacheItem['Time'] > 0 && $ThisCacheItem['Time'] < $this->Now) {
                         continue;
                     }
-                    $this->arrayify($this->CIDRAM['ThisCacheItem']);
-                    $this->CIDRAM['CacheArray'][$this->CIDRAM['ThisCacheName']] = $this->CIDRAM['ThisCacheItem'];
+                    $this->arrayify($ThisCacheItem);
+                    $CacheArray[$ThisCacheName] = $ThisCacheItem;
                 }
-                unset($this->CIDRAM['ThisCacheName'], $this->CIDRAM['ThisCacheItem']);
+                unset($ThisCacheName, $ThisCacheItem);
 
                 /** Process all cache items. */
                 $this->FE['CacheData'] .= sprintf(
                     '<div class="ng1" id="__Container"><span class="s">%s – (<span style="cursor:pointer" onclick="javascript:cdd(\'__\')"><code class="s">%s</code></span>)</span><br /><br /><ul class="pieul">%s</ul></div>',
                     $PreferredSource,
                     $this->L10N->getString('field_clear_all'),
-                    $this->arrayToClickableList($this->CIDRAM['CacheArray'], 'cdd', 0, $PreferredSource)
+                    $this->arrayToClickableList($CacheArray, 'cdd', 0, $PreferredSource)
                 );
-                unset($PreferredSource, $this->CIDRAM['CacheArray']);
+                unset($PreferredSource, $CacheArray);
 
                 /** Cache is empty. */
                 if (!$this->FE['CacheData']) {
@@ -2532,19 +2532,18 @@ class FrontEnd extends Core
                 $this->readInstalledMetadata($this->Components['Components']);
 
                 /** Identifying file component correlations. */
-                foreach ($this->Components['Components'] as $ThisName => &$ThisData) {
-                    if (!empty($ThisData['Files'])) {
-                        $this->arrayify($ThisData['Files']);
-                        foreach ($ThisData['Files'] as $ThisFile => $FileData) {
+                foreach ($this->Components['Components'] as $ComponentName => &$ComponentData) {
+                    if (isset($ComponentData['Files']) && is_array($ComponentData['Files'])) {
+                        foreach ($ComponentData['Files'] as $ThisFile => $FileData) {
                             $ThisFile = str_replace("\\", '/', $ThisFile);
-                            $this->Components['Files'][$ThisFile] = $ThisName;
+                            $this->Components['Files'][$ThisFile] = $ComponentName;
                         }
                     }
-                    $this->prepareName($ThisData, $ThisName);
-                    if (!empty($ThisData['Name'])) {
-                        $this->Components['Names'][$ThisName] = $ThisData['Name'];
+                    $this->prepareName($ComponentData, $ComponentName);
+                    if (isset($ComponentData['Name']) && strlen($ComponentData['Name'])) {
+                        $this->Components['Names'][$ComponentName] = $ComponentData['Name'];
                     }
-                    $ThisData = 0;
+                    $ComponentData = 0;
                 }
             }
 
@@ -2751,43 +2750,40 @@ class FrontEnd extends Core
                 $this->FE['DoughnutHTML'] = $this->L10N->getString('tip_click_the_component') . '<br /><ul class="pieul">';
 
                 /** Building doughnut values. */
-                foreach ($this->Components['Components'] as $ThisName => $ThisData) {
-                    if (empty($ThisData)) {
-                        continue;
-                    }
-                    $ThisSize = $ThisData;
-                    $this->formatFileSize($ThisSize);
-                    $ThisListed = '';
-                    if (!empty($this->Components['ComponentFiles'][$ThisName])) {
-                        $this->Components['ThisComponentFiles'] = &$this->Components['ComponentFiles'][$ThisName];
-                        arsort($this->Components['ThisComponentFiles']);
-                        $ThisListed .= '<ul class="comSub">';
-                        foreach ($this->Components['ThisComponentFiles'] as $ThisFile => $ThisFileSize) {
+                foreach ($this->Components['Components'] as $ComponentName => $ComponentData) {
+                    $ComponentSize = $ComponentData;
+                    $this->formatFileSize($ComponentSize);
+                    $Listed = '';
+                    if (!empty($this->Components['ComponentFiles'][$ComponentName])) {
+                        $ThisComponentFiles = &$this->Components['ComponentFiles'][$ComponentName];
+                        arsort($ThisComponentFiles);
+                        $Listed .= '<ul class="comSub">';
+                        foreach ($ThisComponentFiles as $ThisFile => $ThisFileSize) {
                             $this->formatFileSize($ThisFileSize);
-                            $ThisListed .= sprintf(
+                            $Listed .= sprintf(
                                 '<li><span class="txtBl" style="font-size:0.9em">%s – %s</span></li>',
                                 $ThisFile,
                                 $ThisFileSize
                             );
                         }
-                        $ThisListed .= '</ul>';
+                        $Listed .= '</ul>';
                     }
-                    $ThisName .= ' – ' . $ThisSize;
-                    $this->FE['DoughnutValues'][] = $ThisData;
-                    $this->FE['DoughnutLabels'][] = $ThisName;
+                    $ComponentName .= ' – ' . $ComponentSize;
+                    $this->FE['DoughnutValues'][] = $ComponentData;
+                    $this->FE['DoughnutLabels'][] = $ComponentName;
                     if (strlen($this->FE['ChartJSPath'])) {
-                        $ThisColour = $this->rgb($ThisName);
+                        $ThisColour = $this->rgb($ComponentName);
                         $RGB = implode(',', $ThisColour['Values']);
                         $this->FE['DoughnutColours'][] = '#' . $ThisColour['Hash'];
                         $this->FE['DoughnutHTML'] .= sprintf(
                             '<li style="background:linear-gradient(90deg,rgba(%1$s,.3),rgba(%1$s,0));color:#%2$s"><span class="comCat"><span class="txtBl">%3$s</span></span>%4$s</li>',
                             $RGB,
                             $ThisColour['Hash'],
-                            $ThisName,
-                            $ThisListed
+                            $ComponentName,
+                            $Listed
                         ) . "\n";
                     } else {
-                        $this->FE['DoughnutHTML'] .= sprintf('<li><span class="comCat">%1$s</span>%2$s</li>', $ThisName, $ThisListed) . "\n";
+                        $this->FE['DoughnutHTML'] .= sprintf('<li><span class="comCat">%1$s</span>%2$s</li>', $ComponentName, $Listed) . "\n";
                     }
                 }
 
@@ -3515,18 +3511,11 @@ class FrontEnd extends Core
             $this->FE['Confirm-ClearAll'] = $this->generateConfirmation($this->L10N->getString('field_clear_all'), 'trackForm');
 
             /** Clear/revoke IP tracking for an IP address. */
-            if (isset($_POST['IPAddr'])) {
-                $this->CIDRAM['Cleared'] = false;
-                if ($_POST['IPAddr'] === '*') {
-                    $this->CIDRAM['Cleared'] = true;
-                } elseif (isset($this->CIDRAM['Tracking-' . $_POST['IPAddr']])) {
-                    unset($this->CIDRAM['Tracking-' . $_POST['IPAddr']]);
-                    $this->CIDRAM['Cleared'] = true;
-                }
-                if ($this->CIDRAM['Cleared']) {
-                    $this->FE['state_msg'] = $this->L10N->getString('response_tracking_cleared');
-                }
-                unset($this->CIDRAM['Cleared']);
+            if (isset($_POST['IPAddr']) && (
+                ($_POST['IPAddr'] === '*' && $this->Cache->deleteAllEntriesWhere('~^Tracking-(.+)$~')) ||
+                $this->Cache->deleteEntry('Tracking-' . $_POST['IPAddr'])
+            )) {
+                $this->FE['state_msg'] = $this->L10N->getString('response_tracking_cleared');
             }
 
             if (!$this->FE['ASYNC']) {
@@ -3736,8 +3725,18 @@ class FrontEnd extends Core
             /** Page initial prepwork. */
             $this->initialPrepwork($this->L10N->getString('link_statistics'), $this->L10N->getString('tip_statistics'), false);
 
-            /** Display how to enable statistics if currently disabled. */
-            if (!isset($this->Stages['Statistics:Enable'])) {
+            if (isset($this->Stages['Statistics:Enable'])) {
+                /** Statistics have been counted since... */
+                if (($Since = $this->Cache->getEntry('Statistics-Since')) === false) {
+                    $Since = $this->Now;
+                    $this->Cache->setEntry('Statistics-Since', $Since, 0);
+                }
+                $this->FE['Other-Since'] = $this->timeFormat($Since, $this->Configuration['general']['time_format']);
+                unset($Since);
+            } else {
+                $this->FE['Other-Since'] = '-';
+
+                /** Display how to enable statistics if currently disabled. */
                 $this->FE['state_msg'] .= '<span class="txtRd">' . $this->L10N->getString('tip_statistics_disabled') . '</span><br />';
             }
 
@@ -3745,19 +3744,9 @@ class FrontEnd extends Core
             $this->FE['Confirm-ClearAll'] = $this->generateConfirmation($this->L10N->getString('field_clear_all'), 'statForm');
 
             /** Clear statistics. */
-            if (!empty($_POST['ClearStats'])) {
-                $this->Cache->deleteEntry('Statistics');
+            if (!empty($_POST['ClearStats']) && $this->Cache->deleteAllEntriesWhere('~^Statistics-(.+)$~')) {
                 $this->FE['state_msg'] .= $this->L10N->getString('response_statistics_cleared') . '<br />';
-            } elseif (isset($this->Stages['Statistics:Enable'])) {
-                /** Initialise statistics. */
-                // $this->initialiseCacheSection('Statistics');
             }
-
-            /** Statistics have been counted since... */
-            $this->FE['Other-Since'] = empty($this->Statistics['Other-Since']) ? '-' : $this->timeFormat(
-                $this->Statistics['Other-Since'],
-                $this->Configuration['general']['time_format']
-            );
 
             /** Fetch and process various statistics. */
             foreach ([
@@ -3772,39 +3761,32 @@ class FrontEnd extends Core
                 ['CAPTCHAs-Failed', 'CAPTCHAs-Total'],
                 ['CAPTCHAs-Passed', 'CAPTCHAs-Total']
             ] as $TheseStats) {
-                if (!isset($this->Stages['Statistics:Enable'], $this->StatisticsTracked[$TheseStats[0]])) {
-                    $this->FE[$TheseStats[0]] = $this->L10N->getString('field_not_tracking');
-                    continue;
-                }
                 if (!isset($this->FE[$TheseStats[1]])) {
                     $this->FE[$TheseStats[1]] = 0;
                 }
-                if (
-                    !isset($this->Statistics[$TheseStats[0]]) ||
-                    !is_int($this->Statistics[$TheseStats[0]]) ||
-                    $this->Statistics[$TheseStats[0]] < 1
-                ) {
-                    $this->FE[$TheseStats[0]] = $this->NumberFormatter->format(0);
-                } else {
-                    $this->FE[$TheseStats[1]] += $this->Statistics[$TheseStats[0]];
-                    $this->FE[$TheseStats[0]] = $this->NumberFormatter->format($this->Statistics[$TheseStats[0]]);
+                $Try = $this->Cache->getEntry('Statistics-' . $TheseStats[0]);
+                if (!is_int($Try) || $Try < 1) {
+                    $Try = (int)$Try;
+                }
+                $this->FE[$TheseStats[1]] += $Try;
+                $this->FE[$TheseStats[0]] = $this->NumberFormatter->format($Try);
+                if (!isset($this->Stages['Statistics:Enable'], $this->StatisticsTracked[$TheseStats[0]])) {
+                    $this->FE[$TheseStats[0]] .= ' – ' . $this->L10N->getString('field_not_tracking');
                 }
             }
 
             /** Fetch and process totals. */
             foreach (['Blocked-Total', 'Banned-Total', 'Passed-Total', 'CAPTCHAs-Total'] as $TheseStats) {
-                if (!isset($this->FE[$TheseStats]) || !is_int($this->FE[$TheseStats])) {
-                    $this->FE[$TheseStats] = $this->L10N->getString('field_not_tracking');
-                } else {
-                    $this->FE[$TheseStats] = $this->NumberFormatter->format($this->FE[$TheseStats]);
-                }
+                $this->FE[$TheseStats] = $this->NumberFormatter->format($this->FE[$TheseStats]);
             }
 
             /** Active signature files. */
             foreach ([
                 ['ipv4', 'Other-ActiveIPv4', 'ClassActiveIPv4'],
                 ['ipv6', 'Other-ActiveIPv6', 'ClassActiveIPv6'],
-                ['modules', 'Other-ActiveModules', 'ClassActiveModules']
+                ['modules', 'Other-ActiveModules', 'ClassActiveModules'],
+                ['imports', 'Other-ActiveImports', 'ClassActiveImports'],
+                ['events', 'Other-ActiveEvents', 'ClassActiveEvents']
             ] as $TheseStats) {
                 if (empty($this->Configuration['components'][$TheseStats[0]])) {
                     $this->FE[$TheseStats[1]] = $this->NumberFormatter->format(0);
@@ -3832,7 +3814,7 @@ class FrontEnd extends Core
             echo $this->sendOutput();
 
             /** Cleanup. */
-            unset($Path, $StatWorking, $TheseStats);
+            unset($Path, $StatWorking, $Try, $TheseStats);
         }
 
         /** Auxiliary rules (view mode). */

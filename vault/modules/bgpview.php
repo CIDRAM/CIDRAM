@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: BGPView module (last modified: 2022.06.06).
+ * This file: BGPView module (last modified: 2022.06.08).
  *
  * False positive risk (an approximate, rough estimate only): « [x]Low [ ]Medium [ ]High »
  */
@@ -96,6 +96,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
             substr($Lookup, -2) === '}}'
         ) ? json_decode($Lookup, true) : false;
         $Low = strpos($this->BlockInfo['IPAddr'], ':') !== false ? 128 : 32;
+        $this->Cache->setEntry('BGPView-' . $this->BlockInfo['IPAddr'] . '/' . $Low, ['ASN' => 0, 'CC' => 'XX'], 604800);
 
         /** Lookup failed. */
         if (!is_array($Lookup) || !isset($Lookup['data'])) {

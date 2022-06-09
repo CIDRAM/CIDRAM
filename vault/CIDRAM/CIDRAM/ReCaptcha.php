@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: ReCaptcha class (last modified: 2022.06.04).
+ * This file: ReCaptcha class (last modified: 2022.06.09).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -67,12 +67,7 @@ class ReCaptcha extends Captcha
             if ($UserHash && $UserMeld && password_verify($UserMeld, $UserHash)) {
                 $this->Bypass = true;
                 $this->CIDRAM->BlockInfo['SignatureCount'] = 0;
-
-                /** Fix for infraction escalation bug. */
-                if (isset($this->CIDRAM->CIDRAM['Tracking-' . $this->CIDRAM->BlockInfo['IPAddr']])) {
-                    unset($this->CIDRAM->CIDRAM['Tracking-' . $this->CIDRAM->BlockInfo['IPAddr']]);
-                    $this->CIDRAM->CIDRAM['Tracking-Modified'] = true;
-                }
+                $this->CIDRAM->Cache->deleteEntry('Tracking-' . $this->CIDRAM->BlockInfo['IPAddr']);
             } else {
                 /** Set CAPTCHA status. */
                 $this->CIDRAM->BlockInfo['CAPTCHA'] = $this->CIDRAM->L10N->getString('state_enabled');
@@ -154,12 +149,7 @@ class ReCaptcha extends Captcha
             if (strpos($BypassList, "\n" . $this->CIDRAM->ipAddr . ',') !== false) {
                 $this->Bypass = true;
                 $this->CIDRAM->BlockInfo['SignatureCount'] = 0;
-
-                /** Fix for infraction escalation bug. */
-                if (isset($this->CIDRAM->CIDRAM['Tracking-' . $this->CIDRAM->BlockInfo['IPAddr']])) {
-                    unset($this->CIDRAM->CIDRAM['Tracking-' . $this->CIDRAM->BlockInfo['IPAddr']]);
-                    $this->CIDRAM->CIDRAM['Tracking-Modified'] = true;
-                }
+                $this->CIDRAM->Cache->deleteEntry('Tracking-' . $this->CIDRAM->BlockInfo['IPAddr']);
             } else {
                 /** Set CAPTCHA status. */
                 $this->CIDRAM->BlockInfo['CAPTCHA'] = $this->CIDRAM->L10N->getString('state_enabled');

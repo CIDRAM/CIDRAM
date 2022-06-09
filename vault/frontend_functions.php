@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2022.05.30).
+ * This file: Front-end functions file (last modified: 2022.06.09).
  */
 
 /**
@@ -329,7 +329,7 @@ $CIDRAM['FileManager-RecursiveList'] = function (string $Base) use (&$CIDRAM): a
     $Arr = [];
     $Key = -1;
     $Offset = strlen($Base);
-    $List = new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator($Base), \RecursiveIteratorIterator::SELF_FIRST);
+    $List = new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator($Base, \RecursiveDirectoryIterator::FOLLOW_SYMLINKS), \RecursiveIteratorIterator::SELF_FIRST);
     foreach ($List as $Item => $List) {
         $Key++;
         $ThisName = substr($Item, $Offset);
@@ -490,7 +490,7 @@ $CIDRAM['FileManager-PathSecurityCheck'] = function (string $Path): bool {
  */
 $CIDRAM['Logs-RecursiveList'] = function (string $Base) use (&$CIDRAM): array {
     $Arr = [];
-    $List = new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator($Base), \RecursiveIteratorIterator::SELF_FIRST);
+    $List = new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator($Base, \RecursiveDirectoryIterator::FOLLOW_SYMLINKS), \RecursiveIteratorIterator::SELF_FIRST);
     foreach ($List as $Item => $List) {
         $ThisName = str_replace("\\", '/', substr($Item, strlen($Base)));
         if (!is_file($Item) || !is_readable($Item) || is_dir($Item) || !$CIDRAM['FileManager-IsLogFile']($ThisName)) {

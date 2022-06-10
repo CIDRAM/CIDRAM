@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: General methods used by the front-end (last modified: 2022.06.09).
+ * This file: General methods used by the front-end (last modified: 2022.06.10).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -1099,7 +1099,7 @@ trait FrontEndMethods
      * @param ?callable $Sort An optional callable to sort entries.
      * @return array An array of matching entries.
      */
-    private function getAllEntriesWhere(string $Pattern, string $Replacement = '', ?callable $Sort): array
+    public function getAllEntriesWhere(string $Pattern, string $Replacement = '', ?callable $Sort): array
     {
         $Out = [];
         foreach ($this->Cache->getAllEntries() as $EntryName => $EntryData) {

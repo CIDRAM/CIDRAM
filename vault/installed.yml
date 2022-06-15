@@ -3,12 +3,13 @@ CIDRAM Core:
  Version: "3.0.0-DEV+22165000"
  Dependencies:
   PHP: ">=7.2"
-  Common Classes Package: "^2.9.1-DEV"
   CIDRAM Front-End: "^3.0.0-DEV"
-  l10n/{lang}: ">=2022.142"
+  Common Classes Package: "^2.9.1-DEV"
+  l10n/core/{lang}: ">=2022.142"
  Changelog: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/Changelog.md"
  When Update Succeeds:
   - "wpVer"
+ Uninstallable: false
  Files:
   assets/core/captcha_default.html:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/assets/core/captcha_default.html"
@@ -60,10 +61,12 @@ CIDRAM Front-End:
  Version: "3.0.0-DEV+22165000"
  Dependencies:
   PHP: ">=7.2"
-  Common Classes Package: "^2.9.1-DEV"
   CIDRAM Core: "^3.0.0-DEV"
-  l10n/{lang}: ">=2022.142"
+  Common Classes Package: "^2.9.1-DEV"
+  l10n/core/{lang}: ">=2022.142"
+  l10n/frontend/{lang}: ">=2022.142"
  Changelog: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/Changelog.md"
+ Uninstallable: false
  Files:
   assets/frontend/default/_2fa.html:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/assets/frontend/default/_2fa.html"
@@ -244,10 +247,10 @@ CIDRAM Front-End:
    Checksum: "e835e18d8424056f1226eb82bbd096e298c5bb39274a9a671c9b3b2419767f2b:28021"
   CIDRAM/CIDRAM/Configuration.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/CIDRAM/CIDRAM/Configuration.php"
-   Checksum: "6b22e672a6bd9f6d628cbdd46e5eefd53131eba345127058b3ffc63981b25be7:3606"
+   Checksum: "67b0cd992546d2cd10f2206845d5bc13acdef89923067e066d49bb9d4d4e863e:3499"
   CIDRAM/CIDRAM/FrontEnd.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/CIDRAM/CIDRAM/FrontEnd.php"
-   Checksum: "af0ec9a29792ae6ba7999d44e99887463526162d1fe896db49a5588198bd1722:272738"
+   Checksum: "f219b4cb953826e84287365b4f00778b529529298d7c44ab6d4be30d036b65f4:274223"
   CIDRAM/CIDRAM/FrontEndMethods.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/CIDRAM/CIDRAM/FrontEndMethods.php"
    Checksum: "c4580ce078368924f0b2ee34c688834cb58852abb11dedb133eb20a3294837b9:49487"
@@ -262,12 +265,13 @@ CIDRAM Front-End:
    Checksum: "6d486182575d9d890f3457c4b472a7ae49370312eeaa7b2529ca4bd7f1af0ccb:10427"
   CIDRAM/CIDRAM/Updater.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/CIDRAM/CIDRAM/Updater.php"
-   Checksum: "e8529d53fc7f89148aba7dcbf62d5e0ebe2cead1c8b4dbd4eec81ad5a2403554:62564"
+   Checksum: "636b3a94c3a1462255639b0ab44e5d648cbfef7e7d23f657cdc2c3ffc3d5b830:62627"
 Common Classes Package:
  Name: "Common Classes Package"
  Version: "2.9.1-DEV+22165000"
  Dependencies:
   PHP: ">=7.2"
+ Uninstallable: false
  Files:
   Maikuolan/Common/Cache.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/classes/Maikuolan/Cache.php"
@@ -311,9 +315,7 @@ IPv4:
  False Positive Risk: "Low"
  Version: "2022.165.0"
  Dependencies:
-  CIDRAM Core: ">=1"
   Bypasses: ">=2022.140"
- Uninstallable: true
  Files:
   signatures/ipv4.dat:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/ipv4.dat"
@@ -324,8 +326,6 @@ IPv4-Bogons:
  False Positive Risk: "Low"
  Version: "2022.154.0"
  Dependencies:
-  CIDRAM Core: ">=1"
- Uninstallable: true
  Files:
   signatures/ipv4_bogons.dat:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/ipv4_bogons.dat"
@@ -336,9 +336,7 @@ IPv4-ISPs:
  False Positive Risk: "Medium"
  Version: "2022.165.0"
  Dependencies:
-  CIDRAM Core: ">=1"
   Bypasses: ">=2022.140"
- Uninstallable: true
  Files:
   signatures/ipv4_isps.dat:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/ipv4_isps.dat"
@@ -348,8 +346,6 @@ IPv4-Nonblocking:
  Extended Description: "Default IPv4 non-blocking signatures file."
  Version: "2021.166.298"
  Dependencies:
-  CIDRAM Core: ">=1"
- Uninstallable: true
  Files:
   signatures/ipv4_nonblocking.dat:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/ipv4_nonblocking.dat"
@@ -362,8 +358,6 @@ IPv4-Other:
  False Positive Risk: "Medium"
  Version: "2022.150.0"
  Dependencies:
-  CIDRAM Core: ">=1"
- Uninstallable: true
  Files:
   signatures/ipv4_other.dat:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/ipv4_other.dat"
@@ -375,9 +369,7 @@ IPv6:
  False Positive Risk: "Low"
  Version: "2022.165.0"
  Dependencies:
-  CIDRAM Core: ">=1"
   Bypasses: ">=2022.140"
- Uninstallable: true
  Files:
   signatures/ipv6.dat:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/ipv6.dat"
@@ -388,8 +380,6 @@ IPv6-Bogons:
  False Positive Risk: "Low"
  Version: "2022.154.0"
  Dependencies:
-  CIDRAM Core: ">=1"
- Uninstallable: true
  Files:
   signatures/ipv6_bogons.dat:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/ipv6_bogons.dat"
@@ -400,9 +390,7 @@ IPv6-ISPs:
  False Positive Risk: "Medium"
  Version: "2022.165.0"
  Dependencies:
-  CIDRAM Core: ">=1"
   Bypasses: ">=2022.140"
- Uninstallable: true
  Files:
   signatures/ipv6_isps.dat:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/ipv6_isps.dat"
@@ -412,8 +400,6 @@ IPv6-Nonblocking:
  Extended Description: "Default IPv6 non-blocking signatures file."
  Version: "2021.166.298"
  Dependencies:
-  CIDRAM Core: ">=1"
- Uninstallable: true
  Files:
   signatures/ipv6_nonblocking.dat:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/ipv6_nonblocking.dat"
@@ -426,8 +412,6 @@ IPv6-Other:
  False Positive Risk: "Low"
  Version: "2022.56.0"
  Dependencies:
-  CIDRAM Core: ">=1"
- Uninstallable: true
  Files:
   signatures/ipv6_other.dat:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/ipv6_other.dat"
@@ -438,7 +422,6 @@ Bypasses:
  Dependencies:
   PHP: ">=7.2"
   CIDRAM Core: "^3.0.0-DEV"
- Uninstallable: true
  Files:
   bypasses.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/bypasses.php"
@@ -447,362 +430,362 @@ Bypasses:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/bypasses.yml"
    Checksum: "dd8d3fac46cb10d973bce6037c1facc751fb4a74d7bf09d5cd68348a5ad46512:832"
    Used with: "imports"
-l10n/ar:
- Name: "L10N: العربية"
- Extended Description: "ملفات اللغة العربية"
- Version: "2022.154.0"
- Dependencies:
-  CIDRAM Core: "^3.0.0-DEV"
- Uninstallable: true
+l10n/core/ar:
+ Extended Description: "التعريب العربي"
+ Version: "2022.165.0"
  Files:
   l10n/core/ar.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/core/ar.yml"
    Checksum: "81c5f52c6736dce3cc4e809f705bfbd27af8de408657dd51cef57d9ca2e4dea0:5475"
-  l10n/frontend/ar.yml:
-   From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/ar.yml"
-   Checksum: "fa998ef90851d8612d0597aa473fb74115f7c278d830ce34210306fdcbbad232:78463"
-l10n/bn:
- Name: "L10N: বাংলা"
- Extended Description: "বাংলা ভাষার তথ্য"
- Version: "2022.154.0"
- Dependencies:
-  CIDRAM Core: "^3.0.0-DEV"
- Uninstallable: true
+l10n/core/bn:
+ Extended Description: "বাংলা স্থানীয়করণ"
+ Version: "2022.165.0"
  Files:
   l10n/core/bn.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/core/bn.yml"
    Checksum: "e66aee72646d3bfa336cc90de7755b03814f95b285d77a0afcd7a522c00544dd:10744"
-  l10n/frontend/bn.yml:
-   From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/bn.yml"
-   Checksum: "69d3f3ebc4c1eb7274a7f0b2b15d8d996d39b972f06bca0065a2defa3f5d1144:115799"
-l10n/de:
- Name: "L10N: Deutsche"
- Extended Description: "Deutsche Sprachdateien"
- Version: "2022.154.0"
- Dependencies:
-  CIDRAM Core: "^3.0.0-DEV"
- Uninstallable: true
+l10n/core/de:
+ Extended Description: "Deutsche Lokalisierung"
+ Version: "2022.165.0"
  Files:
   l10n/core/de.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/core/de.yml"
    Checksum: "fba3c7ae7904e19386cb0f6bb90e27325c188aca0c6ffdc8609183335780b0d9:5635"
-  l10n/frontend/de.yml:
-   From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/de.yml"
-   Checksum: "63155c2caccc1d20592dc57e20b8f0a9b3363b97177cab44ad08df41415ebf3a:65334"
-l10n/en:
- Name: "L10N: English"
- Extended Description: "English language data"
- Version: "2022.154.0"
- Dependencies:
-  CIDRAM Core: "^3.0.0-DEV"
+l10n/core/en:
+ Extended Description: "English localisation"
+ Version: "2022.165.0"
+ Uninstallable: false
  Files:
   l10n/core/en.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/core/en.yml"
    Checksum: "d60fd5ad27a6a9cee8cae961365bb15b14efab36401f63f1823e8514fa948a26:4984"
-  l10n/frontend/en.yml:
-   From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/en.yml"
-   Checksum: "f7223409748941bae6306fd6986274fcff4d17d69cf3ba16c8049708864f17f9:57448"
-l10n/es:
- Name: "L10N: Español"
- Extended Description: "Lingüísticos datos Español"
- Version: "2022.154.0"
- Dependencies:
-  CIDRAM Core: "^3.0.0-DEV"
- Uninstallable: true
+l10n/core/es:
+ Extended Description: "Localización en Español"
+ Version: "2022.165.0"
  Files:
   l10n/core/es.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/core/es.yml"
    Checksum: "90f8b124df8e58e6805be6199973f2e6e6ffd45bbb7969ddadda5eed5ecc08e9:5445"
-  l10n/frontend/es.yml:
-   From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/es.yml"
-   Checksum: "b933f442909a91d819b15103fdd70ab3bb499ca10717a42135555d3625943608:65519"
-l10n/fr:
- Name: "L10N: Français"
- Extended Description: "Linguistiques données en Français"
- Version: "2022.154.0"
- Dependencies:
-  CIDRAM Core: "^3.0.0-DEV"
- Uninstallable: true
+l10n/core/fr:
+ Extended Description: "Localisation Française"
+ Version: "2022.165.0"
  Files:
   l10n/core/fr.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/core/fr.yml"
    Checksum: "cb10ba77b46f304d3c9566a89bc65bf2618c93003a0defc700d5d0f94be419fe:5716"
-  l10n/frontend/fr.yml:
-   From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/fr.yml"
-   Checksum: "248b3f7fcdd331e2a98fc63a5168468c341a25dbde82b776a3034f262d689f03:67284"
-l10n/hi:
- Name: "L10N: हिंदी"
- Extended Description: "हिंदी भाषा डाटा"
- Version: "2022.154.0"
- Dependencies:
-  CIDRAM Core: "^3.0.0-DEV"
- Uninstallable: true
+l10n/core/hi:
+ Extended Description: "हिंदी भाषा स्थानीयकरण"
+ Version: "2022.165.0"
  Files:
   l10n/core/hi.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/core/hi.yml"
    Checksum: "f475bfdfd8411f6a99a739777f7f4f2fd4ea179d2da1c4fa48c665ff498d1e58:9785"
-  l10n/frontend/hi.yml:
-   From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/hi.yml"
-   Checksum: "7a2a04cf2f72c394eeece5845309038320706001a117a3af900aec31b76ecff3:116882"
-l10n/id:
- Name: "L10N: Bahasa Indonesia"
- Extended Description: "File Bahasa Indonesia"
- Version: "2022.154.0"
- Dependencies:
-  CIDRAM Core: "^3.0.0-DEV"
- Uninstallable: true
+l10n/core/id:
+ Extended Description: "Lokalisasi di Bahasa indonesia"
+ Version: "2022.165.0"
  Files:
   l10n/core/id.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/core/id.yml"
    Checksum: "9dae192712bd259797870ca5cbf591e95de599622fc649741c9c0197b6595834:5294"
-  l10n/frontend/id.yml:
-   From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/id.yml"
-   Checksum: "d67d04b32070817be9d8cd8fba57bc059a7bb29b1a5a304d3d3d702df984d556:60816"
-l10n/it:
- Name: "L10N: Italiana"
- Extended Description: "Linguistici dati Italiana"
- Version: "2022.154.0"
- Dependencies:
-  CIDRAM Core: "^3.0.0-DEV"
- Uninstallable: true
+l10n/core/it:
+ Extended Description: "Localizzazione Italiana"
+ Version: "2022.165.0"
  Files:
   l10n/core/it.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/core/it.yml"
    Checksum: "6b993d84ee1903ba98f643db9e9abe25e4bd9b523ef8d2ccdfce9c61702cb5b9:5570"
-  l10n/frontend/it.yml:
-   From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/it.yml"
-   Checksum: "3b8900babaf93222273c8183eab9cedb584c82ee8a24496489973aada7d41265:64258"
-l10n/ja:
- Name: "L10N: 日本語"
- Extended Description: "日本語言語データ"
- Version: "2022.154.0"
- Dependencies:
-  CIDRAM Core: "^3.0.0-DEV"
- Uninstallable: true
+l10n/core/ja:
+ Extended Description: "日本語ローカリゼーション"
+ Version: "2022.165.0"
  Files:
   l10n/core/ja.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/core/ja.yml"
    Checksum: "60af788b4341f069a100e07000dbc18edfeec7e0835f02a9008622b5b8fb0d0e:6370"
-  l10n/frontend/ja.yml:
-   From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/ja.yml"
-   Checksum: "3c3637db429d0ea94bcf11a949e5b53d15f69b035951f7aaa1cf9fce5a0f8808:78659"
-l10n/ko:
- Name: "L10N: 한국어"
- Extended Description: "한국어 언어 데이터"
- Version: "2022.154.0"
- Dependencies:
-  CIDRAM Core: "^3.0.0-DEV"
- Uninstallable: true
+l10n/core/ko:
+ Extended Description: "한국어 현지화"
+ Version: "2022.165.0"
  Files:
   l10n/core/ko.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/core/ko.yml"
    Checksum: "d15293207356998de4def6de41018b2a7f772ec2d11ff1c9dd13a5366f2b9dae:5184"
-  l10n/frontend/ko.yml:
-   From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/ko.yml"
-   Checksum: "8f22cf9e3516c9fc21ed4c5a94b8199b42cdbcc9aa956631635a7dab7c2a609d:65245"
-l10n/lv:
- Name: "L10N: Latviešu"
- Extended Description: "Latviešu valodas dati"
- Version: "2022.154.0"
- Dependencies:
-  CIDRAM Core: "^3.0.0-DEV"
- Uninstallable: true
+l10n/core/lv:
+ Extended Description: "Latviešu lokalizācija"
+ Version: "2022.165.0"
  Files:
   l10n/core/lv.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/core/lv.yml"
    Checksum: "9b282d532c33941a46167be2f2e73dd72b46f82652fd757bae9b49589d2a9a36:5471"
-  l10n/frontend/lv.yml:
-   From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/lv.yml"
-   Checksum: "00c73b602d7118791218fd6ef8e112e9d465416e4a757e00bec8e7f46a74c78d:62947"
-l10n/nl:
- Name: "L10N: Nederlandse"
+l10n/core/nl:
  Extended Description: "Nederlandse lokalisatie"
- Version: "2022.154.0"
- Dependencies:
-  CIDRAM Core: "^3.0.0-DEV"
- Uninstallable: true
+ Version: "2022.165.0"
  Files:
   l10n/core/nl.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/core/nl.yml"
    Checksum: "b5e59130036a418729875dd31f9e1636d6a3e47227fc7863f10a971db8c6ca50:5355"
-  l10n/frontend/nl.yml:
-   From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/nl.yml"
-   Checksum: "a9628056d7a5eb7ec51de6860372c4550737d7c78d35317c9e835be77fbfa549:62872"
-l10n/no:
- Name: "L10N: Norsk"
- Extended Description: "Norsk språkdata"
- Version: "2022.154.0"
- Dependencies:
-  CIDRAM Core: "^3.0.0-DEV"
- Uninstallable: true
+l10n/core/no:
+ Extended Description: "Norsk lokalisering"
+ Version: "2022.165.0"
  Files:
   l10n/core/no.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/core/no.yml"
    Checksum: "8ef70bb875bcb099c3a770120d061b3bd0823ce104fa8c704466710b536f9873:5261"
-  l10n/frontend/no.yml:
-   From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/no.yml"
-   Checksum: "598e1ec516ff1992fa3e7fae5ab0720edef032a9ba53a362f8a60d672cc7cff4:59683"
-l10n/pl:
- Name: "L10N: Polski"
- Extended Description: "Dane języku polskim"
- Version: "2022.154.0"
- Dependencies:
-  CIDRAM Core: "^3.0.0-DEV"
- Uninstallable: true
+l10n/core/pl:
+ Extended Description: "Polska lokalizacja"
+ Version: "2022.165.0"
  Files:
   l10n/core/pl.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/core/pl.yml"
    Checksum: "f5825761af27c89193e184a49a649a47094081f55db986218418d3eb64464ff0:5659"
-  l10n/frontend/pl.yml:
-   From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/pl.yml"
-   Checksum: "a007970246ec088ee82ef1721805b107bbecc7fbcb175dceb353623fc61951da:64304"
-l10n/pt:
- Name: "L10N: Português"
- Extended Description: "Linguagem dados Português"
- Version: "2022.154.0"
- Dependencies:
-  CIDRAM Core: "^3.0.0-DEV"
- Uninstallable: true
+l10n/core/pt:
+ Extended Description: "Localização portuguesa"
+ Version: "2022.165.0"
  Files:
   l10n/core/pt.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/core/pt.yml"
    Checksum: "1673a27d0712327ff10819ded8af56f81790b3a2c47b88c014d91d1736c0d4a4:5365"
-  l10n/frontend/pt.yml:
-   From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/pt.yml"
-   Checksum: "c4ad4dc15c81dd2e1ab85b0dcda8956e46293798d38f1b21daa5d8ff2e3d0053:64024"
-l10n/ru:
- Name: "L10N: Русский"
- Extended Description: "Русском языковые файлы"
- Version: "2022.154.0"
- Dependencies:
-  CIDRAM Core: "^3.0.0-DEV"
- Uninstallable: true
+l10n/core/ru:
+ Extended Description: "Русском локализация"
+ Version: "2022.165.0"
  Files:
   l10n/core/ru.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/core/ru.yml"
    Checksum: "99da9db9a08ff858965d0b89c41b28c11d847f41212db28583d3ebb5d85c0cf7:8287"
-  l10n/frontend/ru.yml:
-   From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/ru.yml"
-   Checksum: "5b16a392a1c337c72bee194c76bbbf9b56fb8e33a7f5cceb298ac6755a058e3f:94317"
-l10n/sv:
- Name: "L10N: Svenska"
- Extended Description: "Svenska språkdata"
- Version: "2022.154.0"
- Dependencies:
-  CIDRAM Core: "^3.0.0-DEV"
- Uninstallable: true
+l10n/core/sv:
+ Extended Description: "Svensk lokalisering"
+ Version: "2022.165.0"
  Files:
   l10n/core/sv.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/core/sv.yml"
    Checksum: "587ea40d45bc1533e672b0059e6d7364326d9957b5231f7f87f43eabf9bd7ba3:5348"
-  l10n/frontend/sv.yml:
-   From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/sv.yml"
-   Checksum: "16bab8a2c3ae97099195e922cb1600a55c3311f8a1ff49a9ada5641e69ecbd95:61007"
-l10n/ta:
- Name: "L10N: தமிழ்"
- Extended Description: "தமிழ் மொழி தரவு"
- Version: "2022.154.0"
- Dependencies:
-  CIDRAM Core: "^3.0.0-DEV"
- Uninstallable: true
+l10n/core/ta:
+ Extended Description: "தமிழ் உள்ளூர்மயமாக்கல்"
+ Version: "2022.165.0"
  Files:
   l10n/core/ta.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/core/ta.yml"
    Checksum: "5ecd8bcf7c005649ae6fe8be40e76ef98dc3e8c54ff9ed0e0fa96e19b3ac61c2:11735"
-  l10n/frontend/ta.yml:
-   From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/ta.yml"
-   Checksum: "d41669a5a3b46dd8d3b09aff00e468e41d3cfc3736dc1efada8c733b654756b1:135584"
-l10n/th:
- Name: "L10N: ภาษาไทย"
- Extended Description: "ข้อมูลภาษาไทย"
- Version: "2022.154.0"
- Dependencies:
-  CIDRAM Core: "^3.0.0-DEV"
- Uninstallable: true
+l10n/core/th:
+ Extended Description: "การแปลภาษาไทย"
+ Version: "2022.165.0"
  Files:
   l10n/core/th.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/core/th.yml"
    Checksum: "162655da5f2df25487b71b953879135f0fe3a6a60edbba96ac289e0dc1621e99:9539"
-  l10n/frontend/th.yml:
-   From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/th.yml"
-   Checksum: "74ac7a44f17b9e59794ad9ddff23a50a78a7978c7f9be8af3f6651d8313e90f6:106285"
-l10n/tr:
- Name: "L10N: Türkçe"
- Extended Description: "Türkçe dili verileri"
- Version: "2022.154.0"
- Dependencies:
-  CIDRAM Core: "^3.0.0-DEV"
- Uninstallable: true
+l10n/core/tr:
+ Extended Description: "Türkçe yerelleştirme"
+ Version: "2022.165.0"
  Files:
   l10n/core/tr.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/core/tr.yml"
    Checksum: "c901fa7070f7a1fd5f0e86425c7a343c00d3832e0406b30a09b5c77a1a5e5349:5533"
-  l10n/frontend/tr.yml:
-   From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/tr.yml"
-   Checksum: "5e352496f5849dc6a9ff2ee570dfdbd5cf18d87fb95c112d376abfa30867b898:63158"
-l10n/ur:
- Name: "L10N: ‏اردو‏"
- Extended Description: "‏اردو‏ زبان فائلوں"
- Version: "2022.154.0"
- Dependencies:
-  CIDRAM Core: "^3.0.0-DEV"
- Uninstallable: true
+l10n/core/ur:
+ Extended Description: "‏اردو لوکلائزیشن"
+ Version: "2022.165.0"
  Files:
   l10n/core/ur.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/core/ur.yml"
    Checksum: "845009f6e6347dad0bc6fd6a2599c4a472982bcab1a27b0c3e5dc554278d25c1:7542"
-  l10n/frontend/ur.yml:
-   From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/ur.yml"
-   Checksum: "d5931c8fe4a10bd889a66192d56d03e177e80873d2c27546a08b1a57f3117e24:84026"
-l10n/vi:
- Name: "L10N: Tiếng Việt"
- Extended Description: "Dữ liệu tiếng Việt"
- Version: "2022.154.0"
- Dependencies:
-  CIDRAM Core: "^3.0.0-DEV"
- Uninstallable: true
+l10n/core/vi:
+ Extended Description: "Bản địa hóa tiếng Việt"
+ Version: "2022.165.0"
  Files:
   l10n/core/vi.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/core/vi.yml"
    Checksum: "2d1bc40208d8f74c00d9b831140c1bf35dcf5df6177ede267cff9961a898f533:6590"
-  l10n/frontend/vi.yml:
-   From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/vi.yml"
-   Checksum: "dddba0daa3e87d0df4a628f9bbf5e2bd267478697f1f8a8a6b667a382f867fee:72062"
-l10n/zh-TW:
- Name: "L10N: 中文（傳統）"
+l10n/core/zh-TW:
  Extended Description: "中文（傳統）語言數據"
- Version: "2022.154.0"
- Dependencies:
-  CIDRAM Core: "^3.0.0-DEV"
- Uninstallable: true
+ Version: "2022.165.0"
  Files:
   l10n/core/zh-TW.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/core/zh-TW.yml"
    Checksum: "da48df1eca526d7c16ab25c6349acb0d2e52d4d0bde0e56f5a4a3cd6e1f7e402:4658"
-  l10n/frontend/zh-TW.yml:
-   From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/zh-TW.yml"
-   Checksum: "f3ee5020f2d3c9e9c28a5365b808b08f33060b3ff085bcbe6dbc1d2c797c99ee:54293"
-l10n/zh:
- Name: "L10N: 中文（简体）"
+l10n/core/zh:
  Extended Description: "中文（简体）语言数据"
- Version: "2022.154.0"
- Dependencies:
-  CIDRAM Core: "^3.0.0-DEV"
- Uninstallable: true
+ Version: "2022.165.0"
  Files:
   l10n/core/zh.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/core/zh.yml"
    Checksum: "73fd2b0230c8bc1d3773580011c1f7c5630062294334f800e7047ab7159d8cf4:4654"
+l10n/frontend/ar:
+ Extended Description: "التعريب العربي"
+ Version: "2022.165.0"
+ Files:
+  l10n/frontend/ar.yml:
+   From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/ar.yml"
+   Checksum: "d209d710bb40e6d0e21972794ee0fa27f6d31bac29c7284967fb69620c68f945:78517"
+l10n/frontend/bn:
+ Extended Description: "বাংলা স্থানীয়করণ"
+ Version: "2022.165.0"
+ Files:
+  l10n/frontend/bn.yml:
+   From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/bn.yml"
+   Checksum: "97af2c96f8de6ea7893191c42cbb2105b7b66a34e89fc28eb707fce4dd5ceb94:115855"
+l10n/frontend/de:
+ Extended Description: "Deutsche Lokalisierung"
+ Version: "2022.165.0"
+ Files:
+  l10n/frontend/de.yml:
+   From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/de.yml"
+   Checksum: "e6ecc2900bffc71dedee463b06a8b6e245eb11fc53b67c2f199eb35b4f512429:65351"
+l10n/frontend/en:
+ Extended Description: "English localisation"
+ Version: "2022.165.0"
+ Uninstallable: false
+ Files:
+  l10n/frontend/en.yml:
+   From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/en.yml"
+   Checksum: "3ae33f57a22bcd3c1b611a8dad4a9035677dad4e237f6a2dbae635185998489b:57481"
+l10n/frontend/es:
+ Extended Description: "Localización en Español"
+ Version: "2022.165.0"
+ Files:
+  l10n/frontend/es.yml:
+   From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/es.yml"
+   Checksum: "8bd92ac4d8ae15e00af41f5539d45627de6667585b6f7c5e1b7950983c6858dd:65552"
+l10n/frontend/fr:
+ Extended Description: "Localisation Française"
+ Version: "2022.165.0"
+ Files:
+  l10n/frontend/fr.yml:
+   From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/fr.yml"
+   Checksum: "1e59847f5a2241e2211c75bc6660dc8c8831f58bb525bd2383473c52f8f07ff2:67305"
+l10n/frontend/hi:
+ Extended Description: "हिंदी भाषा स्थानीयकरण"
+ Version: "2022.165.0"
+ Files:
+  l10n/frontend/hi.yml:
+   From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/hi.yml"
+   Checksum: "fcc131200067fc74a9411e5676f84b0c856e5435ccb999ef19185c3c4eb4aeef:116903"
+l10n/frontend/id:
+ Extended Description: "Lokalisasi di Bahasa indonesia"
+ Version: "2022.165.0"
+ Files:
+  l10n/frontend/id.yml:
+   From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/id.yml"
+   Checksum: "18eabb0cdd6e8be47af4f44599beffb5e7494c4d38f3862fb5c73d6ec4178d09:60825"
+l10n/frontend/it:
+ Extended Description: "Localizzazione Italiana"
+ Version: "2022.165.0"
+ Files:
+  l10n/frontend/it.yml:
+   From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/it.yml"
+   Checksum: "eb350c68e9282d4600c3f6a65a1c84615ecc1fb8cc3e94713493724e53c293b9:64285"
+l10n/frontend/ja:
+ Extended Description: "日本語ローカリゼーション"
+ Version: "2022.165.0"
+ Files:
+  l10n/frontend/ja.yml:
+   From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/ja.yml"
+   Checksum: "545e6a643a9ab25d5f71425ca92039b619fee1d41fd48732228cf93286dc8660:78712"
+l10n/frontend/ko:
+ Extended Description: "한국어 현지화"
+ Version: "2022.165.0"
+ Files:
+  l10n/frontend/ko.yml:
+   From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/ko.yml"
+   Checksum: "ec16eda426ad777649e20b37cafd24583cd986e4bc8edcf3e9d1398b15706322:65265"
+l10n/frontend/lv:
+ Extended Description: "Latviešu lokalizācija"
+ Version: "2022.165.0"
+ Files:
+  l10n/frontend/lv.yml:
+   From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/lv.yml"
+   Checksum: "11c6c394194f6abd74a52b86d2a91aa39c0e29509498ba61f12f9af30b9b81fc:62976"
+l10n/frontend/nl:
+ Extended Description: "Nederlandse lokalisatie"
+ Version: "2022.165.0"
+ Files:
+  l10n/frontend/nl.yml:
+   From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/nl.yml"
+   Checksum: "48d0b605f5087c066c7a705db5f4d19455e6ceee6d312168713e3235f952f1fb:62901"
+l10n/frontend/no:
+ Extended Description: "Norsk lokalisering"
+ Version: "2022.165.0"
+ Files:
+  l10n/frontend/no.yml:
+   From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/no.yml"
+   Checksum: "d5333f422f91b4315cb3d112274cae6157130bbac0b0abffaa760c19d2d35e80:59716"
+l10n/frontend/pl:
+ Extended Description: "Polska lokalizacja"
+ Version: "2022.165.0"
+ Files:
+  l10n/frontend/pl.yml:
+   From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/pl.yml"
+   Checksum: "f5d348dbea652fd151b35b9a2cf029f941668f618587359bece11e0c9db86450:64332"
+l10n/frontend/pt:
+ Extended Description: "Localização portuguesa"
+ Version: "2022.165.0"
+ Files:
+  l10n/frontend/pt.yml:
+   From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/pt.yml"
+   Checksum: "4c6076028b1edc131af206d18f0ae2cafd4678cf2832f9b6b9c11b53c4846e7c:64055"
+l10n/frontend/ru:
+ Extended Description: "Русском локализация"
+ Version: "2022.165.0"
+ Files:
+  l10n/frontend/ru.yml:
+   From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/ru.yml"
+   Checksum: "1f345e78f1a59794e69f77a951920ee761cba023950b8627a294d6a0f87eda2e:94352"
+l10n/frontend/sv:
+ Extended Description: "Svensk lokalisering"
+ Version: "2022.165.0"
+ Files:
+  l10n/frontend/sv.yml:
+   From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/sv.yml"
+   Checksum: "705a0fc5b4819bdf588502cdde56c2f05e2fff301866a72f2fc56fddca83edac:61043"
+l10n/frontend/ta:
+ Extended Description: "தமிழ் உள்ளூர்மயமாக்கல்"
+ Version: "2022.165.0"
+ Files:
+  l10n/frontend/ta.yml:
+   From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/ta.yml"
+   Checksum: "b838dd7462dc2dfa618c3878d88b1d67096b24ac9a64b9c7c44ab5d685f63405:135589"
+l10n/frontend/th:
+ Extended Description: "การแปลภาษาไทย"
+ Version: "2022.165.0"
+ Files:
+  l10n/frontend/th.yml:
+   From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/th.yml"
+   Checksum: "465a77f26cbe16cd7d263bc64c50f552507ac0d638507394befcd51daf760fb8:106344"
+l10n/frontend/tr:
+ Extended Description: "Türkçe yerelleştirme"
+ Version: "2022.165.0"
+ Files:
+  l10n/frontend/tr.yml:
+   From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/tr.yml"
+   Checksum: "996ee6e0e7535cc29d22299f47beb84516f8f2db3edde3a3c778a0b2ebbf7562:63187"
+l10n/frontend/ur:
+ Extended Description: "‏اردو لوکلائزیشن"
+ Version: "2022.165.0"
+ Files:
+  l10n/frontend/ur.yml:
+   From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/ur.yml"
+   Checksum: "c81367a88bd7eb0dbd75cfefe0b0332e679cb6b0ff5d54620e309f4e4f3eae12:84048"
+l10n/frontend/vi:
+ Extended Description: "Bản địa hóa tiếng Việt"
+ Version: "2022.165.0"
+ Files:
+  l10n/frontend/vi.yml:
+   From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/vi.yml"
+   Checksum: "748e498aad2bb7579e0a69bd88d8d1ed267abff11376efccca16495b8f6c5cfc:72097"
+l10n/frontend/zh-TW:
+ Extended Description: "傳統中文本地化"
+ Version: "2022.165.0"
+ Files:
+  l10n/frontend/zh-TW.yml:
+   From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/zh-TW.yml"
+   Checksum: "60785b7cafbfb261bfe78383ba06f794f7d030d90eccaaab2d76be76d9698b35:54314"
+l10n/frontend/zh:
+ Extended Description: "简体中文本地化"
+ Version: "2022.165.0"
+ Files:
   l10n/frontend/zh.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/zh.yml"
-   Checksum: "ae1c1d8b3e1179366910176fb648047aaf684887eb8c8153f7687e519be89d9b:54280"
+   Checksum: "6aaf2c0d1683cf332f191cb751a9d37a3abfdb6756b6358f62866dd8e16859e1:54301"
 AbuseIPDB module:
  Name: "AbuseIPDB module"
  False Positive Risk: "Medium"
  Version: "2022.159.0"
- Dependencies:
-  CIDRAM Core: "^3.0.0-DEV"
- Uninstallable: true
  Files:
   imports/abuseipdb.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/imports/abuseipdb.yml"
@@ -816,9 +799,6 @@ Bad hosts blocker module:
  Name: "Bad hosts blocker module"
  False Positive Risk: "Medium"
  Version: "2022.154.0"
- Dependencies:
-  CIDRAM Core: "^3.0.0-DEV"
- Uninstallable: true
  Files:
   modules/badhosts.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/modules/badhosts.php"
@@ -828,9 +808,6 @@ Bad TLDs blocker module:
  Name: "Bad TLDs blocker module"
  False Positive Risk: "Low"
  Version: "2022.154.0"
- Dependencies:
-  CIDRAM Core: "^3.0.0-DEV"
- Uninstallable: true
  Files:
   modules/badtlds.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/modules/badtlds.php"
@@ -840,9 +817,6 @@ BGPView module:
  Name: "BGPView module"
  False Positive Risk: "Low"
  Version: "2022.156.0"
- Dependencies:
-  CIDRAM Core: "^3.0.0-DEV"
- Uninstallable: true
  Files:
   imports/bgpview.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/imports/bgpview.yml"
@@ -856,9 +830,6 @@ Bot user agents module:
  Name: "Bot user agents module"
  False Positive Risk: "Medium"
  Version: "2022.150.0"
- Dependencies:
-  CIDRAM Core: "^3.0.0-DEV"
- Uninstallable: true
  Files:
   modules/botua.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/modules/botua.php"
@@ -868,9 +839,6 @@ BunnyCDN compatibility module:
  Name: "BunnyCDN compatibility module"
  False Positive Risk: "Low"
  Version: "2022.67.0"
- Dependencies:
-  CIDRAM Core: "^3.0.0-DEV"
- Uninstallable: true
  Files:
   From:
    imports/bunnycdn.yml:
@@ -885,9 +853,6 @@ Cookie scanner module:
  Name: "Cookie scanner module"
  False Positive Risk: "Low"
  Version: "2022.142.0"
- Dependencies:
-  CIDRAM Core: "^3.0.0-DEV"
- Uninstallable: true
  Files:
   modules/cookies.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/modules/cookies.php"
@@ -897,9 +862,6 @@ Optional security extras module:
  Name: "Optional security extras module"
  False Positive Risk: "Medium"
  Version: "2022.155.400"
- Dependencies:
-  CIDRAM Core: "^3.0.0-DEV"
- Uninstallable: true
  Files:
   imports/extras.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/imports/extras.yml"
@@ -913,9 +875,6 @@ Project Honeypot module:
  Name: "Project Honeypot module"
  False Positive Risk: "Medium"
  Version: "2022.156.0"
- Dependencies:
-  CIDRAM Core: "^3.0.0-DEV"
- Uninstallable: true
  Files:
   imports/projecthoneypot.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/imports/projecthoneypot.yml"
@@ -929,9 +888,6 @@ Stop Forum Spam module:
  Name: "Stop Forum Spam module"
  False Positive Risk: "Low"
  Version: "2022.156.0"
- Dependencies:
-  CIDRAM Core: "^3.0.0-DEV"
- Uninstallable: true
  Files:
   imports/sfs.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/imports/sfs.yml"

@@ -1799,10 +1799,9 @@ class FrontEnd extends Core
 
             /** Prepare installed component metadata and options for display. */
             foreach ($this->Components['Meta'] as $this->Components['Key'] => &$this->Components['ThisComponent']) {
-                /** Skip if component is malformed. */
+                /** Fall back to component key if the component's name isn't defined. */
                 if (empty($this->Components['ThisComponent']['Name']) && !$this->L10N->getString('Name ' . $this->Components['Key'])) {
-                    $this->Components['ThisComponent'] = '';
-                    continue;
+                    $this->Components['ThisComponent']['Name'] = $this->Components['Key'];
                 }
 
                 /** Execute any necessary preload instructions. */
@@ -1918,7 +1917,7 @@ class FrontEnd extends Core
                         }
                         if ($this->CIDRAM['Activable']) {
                             $this->Components['ThisComponent']['Options'] .= '<option value="deactivate-component">' . $this->L10N->getString('field_deactivate') . '</option>';
-                            if (!empty($this->Components['ThisComponent']['Uninstallable'])) {
+                            if (!isset($this->Components['ThisComponent']['Uninstallable']) || $this->Components['ThisComponent']['Uninstallable'] !== false) {
                                 $this->Components['ThisComponent']['Options'] .=
                                     '<option value="deactivate-and-uninstall-component">' .
                                     $this->L10N->getString('field_deactivate') . ' + ' . $this->L10N->getString('field_uninstall') .
@@ -1930,13 +1929,13 @@ class FrontEnd extends Core
                             $this->Components['ThisComponent']['Options'] .=
                                 '<option value="activate-component">' . $this->L10N->getString('field_activate') . '</option>';
                         }
-                        if (!empty($this->Components['ThisComponent']['Uninstallable'])) {
+                        if (!isset($this->Components['ThisComponent']['Uninstallable']) || $this->Components['ThisComponent']['Uninstallable'] !== false) {
                             $this->Components['ThisComponent']['Options'] .=
                                 '<option value="uninstall-component">' . $this->L10N->getString('field_uninstall') . '</option>';
                         }
                         if (
                             !empty($this->Components['ThisComponent']['Provisional']) ||
-                            ($this->Configuration['general']['lang_override'] && preg_match('~^L10N:~', $this->Components['ThisComponent']['Name']))
+                            ($this->Configuration['general']['lang_override'] && preg_match('~^l10n/~', $this->Components['ThisComponent']['Name']))
                         ) {
                             $this->appendToString(
                                 $this->Components['ThisComponent']['StatusOptions'],
@@ -2035,8 +2034,15 @@ class FrontEnd extends Core
                     } else {
                         $this->Components['ThisComponent']['SortKey'] = $this->Components['Key'];
                     }
-                    $this->FE['Indexes'][$this->Components['ThisComponent']['SortKey']] = sprintf(
-                        "<a href=\"#%s\">%s</a><br /><br />\n      ",
+                    $this->FE['Indexes'][$this->Components['ThisComponent']['SortKey']] = '';
+                    if (isset($PreviousIndex)) {
+                        if (substr($PreviousIndex, 0, 6) !== substr($this->Components['ThisComponent']['ID'], 0, 6)) {
+                            $this->FE['Indexes'][$this->Components['ThisComponent']['SortKey']] .= '<br />';
+                        }
+                    }
+                    $PreviousIndex = $this->Components['ThisComponent']['ID'];
+                    $this->FE['Indexes'][$this->Components['ThisComponent']['SortKey']] .= sprintf(
+                        "<a href=\"#%s\">%s</a><br />\n      ",
                         $this->Components['ThisComponent']['ID'],
                         $this->Components['ThisComponent']['Name']
                     );
@@ -2099,6 +2105,11 @@ class FrontEnd extends Core
                     empty($this->Components['ThisComponent']['Files'])
                 ) {
                     continue;
+                }
+
+                /** Fall back to component key if the component's name isn't defined. */
+                if (empty($this->Components['ThisComponent']['Name']) && !$this->L10N->getString('Name ' . $this->Components['Key'])) {
+                    $this->Components['ThisComponent']['Name'] = $this->Components['Key'];
                 }
 
                 /** Determine whether all dependency constraints have been met. */
@@ -2178,8 +2189,15 @@ class FrontEnd extends Core
                     } else {
                         $this->Components['ThisComponent']['SortKey'] = $this->Components['Key'];
                     }
-                    $this->FE['Indexes'][$this->Components['ThisComponent']['SortKey']] = sprintf(
-                        "<a href=\"#%s\">%s</a><br /><br />\n      ",
+                    $this->FE['Indexes'][$this->Components['ThisComponent']['SortKey']] = '';
+                    if (isset($PreviousIndex)) {
+                        if (substr($PreviousIndex, 0, 6) !== substr($this->Components['ThisComponent']['ID'], 0, 6)) {
+                            $this->FE['Indexes'][$this->Components['ThisComponent']['SortKey']] .= '<br />';
+                        }
+                    }
+                    $PreviousIndex = $this->Components['ThisComponent']['ID'];
+                    $this->FE['Indexes'][$this->Components['ThisComponent']['SortKey']] .= sprintf(
+                        "<a href=\"#%s\">%s</a><br />\n      ",
                         $this->Components['ThisComponent']['ID'],
                         $this->Components['ThisComponent']['Name']
                     );

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Japanese language data for the front-end (last modified: 2022.06.08).
+# This file: Japanese language data for the front-end (last modified: 2022.06.15).
 ##/
 
 Extended Description AbuseIPDB module: "AbuseIPDBにリストされているＩＰからの要求をブロックします。"
@@ -86,6 +86,8 @@ config_bgpview_blocked_asns: "BGPViewモジュールによってブロックさ�
 config_bgpview_blocked_ccs: "BGPViewモジュールによってブロックされる国（{{Links.ISO.3166}}二桁の国コードで識別）のリスト。"
 config_bgpview_whitelisted_asns: "BGPViewモジュールによってホワイトリストに登録されるASNのリスト。"
 config_bgpview_whitelisted_ccs: "BGPViewモジュールによってホワイトリストに登録される国（{{Links.ISO.3166}}二桁の国コードで識別）のリスト。"
+config_bunnycdn: "BunnyCDN互換性モジュールの設定。"
+config_bunnycdn_positive_action: "BunnyCDNからの要求に遭遇した場合、CIDRAMはどのアクションを実行する必要がありますか？ デフォルト・アクション = バイパスする。"
 config_bypasses: "デフォルト・シグネチャ・バイパスのコンフィギュレーション。"
 config_bypasses_used: "どのバイパスを使用する必要がありますか？"
 config_components: "CIDRAMによって使用されるコンポーネントをアクティブ化および非アクティブ化するための設定。​通常、アップデート・ページに入力されますが、ここから管理して、より細かく制御したり、アップデート・ページで認識されないカスタム・コンポーネントを管理したりすることもできます。"
@@ -399,6 +401,7 @@ label_backup_location: "リポジトリ・バックアップの場所（緊急�
 label_banned: "禁止されたリクエスト"
 label_blocked: "ブロックされたリクエスト"
 label_branch: "ブランチ最新安定："
+label_bypass_the_request: "Trigger a bypass.\nSubtracts one count from the number of signatures triggered, as long as at least one signature has already been triggered. Recommended for dealing with simple false positives potentially caused by the default signature files."
 label_captcha: "キャプチャの試み"
 label_check_aux: "補助ルールに対してもテストします。"
 label_check_modules: "モジュールに対してもテストします。"
@@ -425,6 +428,7 @@ label_fmgr_safety: "安全メカニズム"
 label_fmgr_total_disk_usage: "ディスク使用量の合計："
 label_fmgr_total_space: "ディスク容量の合計："
 label_fmgr_updates_metadata: "コンポーネント・アップデート・メタデータ"
+label_greylist_the_request: "Greylist the request.\nResets the number of signatures triggered, but continues processing the request. Recommended when you don't want to whitelist the request, but need something more substantial than triggering a bypass."
 label_hide: "隠す"
 label_http_response_header_code_200: "200 OK （大丈夫です）\nそれは最小の堅牢が、最もユーザー・フレンドリーです。 自動化されたリクエストは、この応答をリクエストが成功したことを示すものとして解釈する可能性があります。"
 label_http_response_header_code_403: "403 Forbidden （禁断）\nそれはもっと堅牢ですが、少ないユーザー・フレンドリーです。 ほとんどの場合に推奨されます。"
@@ -485,6 +489,7 @@ label_usemode_blkd: "ブロックされ、シグネチャの制限内であり�
 label_usemode_blkd_mrkd: "ブロックされ、シグネチャの制限内であり、使用するために特別にマークされている、禁止されていない場合のみ。"
 label_usemode_not_blkd: "ブロックされていない場合のみ。"
 label_usemode_not_blkd_mrkd: "ブロックされていない場合、またはシグネチャの制限内であり、使用するために特別にマークされている場合のみ。"
+label_whitelist_the_request: "Whitelist the request.\nResets the number of signatures triggered, and aborts any further processing of the request. Guarantees that CIDRAM will never block the request."
 label_your_ip: "あなたのＩＰ："
 label_your_ua: "あなたのＵＡ："
 link_accounts: "アカウント"

@@ -1898,7 +1898,7 @@ class FrontEnd extends Core
                     $this->CIDRAM['Activable'] = $this->isActivable($this->Components['ThisComponent']);
                     $this->Components['ThisIsInUse'] = $this->isInUse($this->Components['ThisComponent']);
                     if (preg_match(sprintf(
-                        '~^(?:theme/%s|theme/%s|CIDRAM.*|Common Classes Package)$~i',
+                        '~^(?:theme/(?:%s|%s)|CIDRAM.*|Common Classes Package)$~i',
                         preg_quote($this->Configuration['frontend']['theme']),
                         preg_quote($this->Configuration['template_data']['theme'])
                     ), $this->Components['Key']) || $this->Components['ThisIsInUse'] !== 0) {

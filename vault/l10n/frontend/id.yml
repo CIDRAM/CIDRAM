@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Indonesian language data for the front-end (last modified: 2022.06.08).
+# This file: Indonesian language data for the front-end (last modified: 2022.06.15).
 ##/
 
 Extended Description AbuseIPDB module: "Memblokir permintaan dari IP yang terdaftar oleh AbuseIPDB."
@@ -86,6 +86,8 @@ config_bgpview_blocked_asns: "Daftar ASN yang akan diblokir saat dicocokkan oleh
 config_bgpview_blocked_ccs: "Daftar negara (diidentifikasi oleh kode negara 2 digit {{Links.ISO.3166}} mereka) yang akan diblokir saat dicocokkan oleh modul BGPView."
 config_bgpview_whitelisted_asns: "Daftar ASN yang akan terdaftar putih saat dicocokkan oleh modul BGPView."
 config_bgpview_whitelisted_ccs: "Daftar negara (diidentifikasi oleh kode negara 2 digit {{Links.ISO.3166}} mereka) yang akan terdaftar putih saat dicocokkan oleh modul BGPView."
+config_bunnycdn: "Konfigurasi untuk modul kompatibilitas BunnyCDN."
+config_bunnycdn_positive_action: "Tindakan mana yang harus dilakukan CIDRAM saat menangani permintaan dari BunnyCDN? Tindakan default = Melewatinya."
 config_bypasses: "Konfigurasi untuk bypass tanda tangan default."
 config_bypasses_used: "Bypass mana yang harus digunakan?"
 config_components: "Konfigurasi untuk pengaktifan dan penonaktifan komponen yang digunakan oleh CIDRAM. Biasanya diisi oleh halaman pembaruan, tetapi juga dapat dikelola dari sini untuk kontrol yang lebih baik dan untuk komponen dipersonalisasi yang tidak dikenali oleh halaman pembaruan."
@@ -399,6 +401,7 @@ label_backup_location: "Lokasi cadangan repositori (dalam keadaan darurat, atau 
 label_banned: "Permintaan dilarang"
 label_blocked: "Permintaan diblokir"
 label_branch: "Cabang terbaru stabil:"
+label_bypass_the_request: "Trigger a bypass.\nSubtracts one count from the number of signatures triggered, as long as at least one signature has already been triggered. Recommended for dealing with simple false positives potentially caused by the default signature files."
 label_captcha: "Upaya CAPTCHA"
 label_check_aux: "Juga menguji terhadap aturan tambahan."
 label_check_modules: "Juga menguji terhadap modul."
@@ -425,6 +428,7 @@ label_fmgr_safety: "Mekanisme keamanan"
 label_fmgr_total_disk_usage: "Penggunaan disk total:"
 label_fmgr_total_space: "Ruang disk total:"
 label_fmgr_updates_metadata: "Komponen memperbarui metadata"
+label_greylist_the_request: "Greylist the request.\nResets the number of signatures triggered, but continues processing the request. Recommended when you don't want to whitelist the request, but need something more substantial than triggering a bypass."
 label_hide: "Menyembunyikan"
 label_http_response_header_code_200: "200 OK\nPaling tidak kuat, tetapi paling ramah-pengguna. Permintaan otomatis kemungkinan besar akan menafsirkan respons ini sebagai indikasi bahwa permintaan berhasil."
 label_http_response_header_code_403: "403 Forbidden (Terlarang)\nLebih kuat, tetapi kurang ramah-pengguna. Direkomendasikan untuk kebanyakan keadaan umum."
@@ -485,6 +489,7 @@ label_usemode_blkd: "Hanya jika diblokir, dalam batas tanda tangan, dan tidak di
 label_usemode_blkd_mrkd: "Hanya jika diblokir, ditandai khusus untuk digunakan, dalam batas tanda tangan, dan tidak dilarang."
 label_usemode_not_blkd: "Hanya jika tidak diblokir."
 label_usemode_not_blkd_mrkd: "Hanya jika tidak diblokir, atau jika ditandai khusus untuk digunakan, dalam batas tanda tangan, dan tidak dilarang."
+label_whitelist_the_request: "Whitelist the request.\nResets the number of signatures triggered, and aborts any further processing of the request. Guarantees that CIDRAM will never block the request."
 label_your_ip: "IP Anda:"
 label_your_ua: "UA Anda:"
 link_accounts: "Akun"

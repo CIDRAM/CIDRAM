@@ -901,17 +901,24 @@ trait Updater
         $this->FE['state_msg'] .= '<code>' . $ID . '</code> – ';
         if ($InUse !== 1 && !empty($this->Components['Meta'][$ID]['Files'])) {
             foreach ($this->Components['Meta'][$ID]['Files'] as $FileName => $FileMeta) {
-                $UsedWith = $FileMeta['Used with'] ?? '';
                 if (
-                    $UsedWith !== 'ipv4' &&
-                    $UsedWith !== 'ipv6' &&
-                    $UsedWith !== 'modules' &&
-                    $UsedWith !== 'imports' &&
-                    $UsedWith !== 'events'
+                    !isset($FileMeta['Used with']) ||
+                    $FileMeta['Used with'] !== 'ipv4' &&
+                    $FileMeta['Used with'] !== 'ipv6' &&
+                    $FileMeta['Used with'] !== 'modules' &&
+                    $FileMeta['Used with'] !== 'imports' &&
+                    $FileMeta['Used with'] !== 'events'
                 ) {
                     continue;
                 }
-                $Activation[$UsedWith][] = $File;
+                if ($FileMeta['Used with'] === 'modules' || $FileMeta['Used with'] === 'imports') {
+                    $FileName = substr($FileName, 8);
+                } elseif ($FileMeta['Used with'] === 'events') {
+                    $FileName = substr($FileName, 7);
+                } else {
+                    $FileName = substr($FileName, 11);
+                }
+                $Activation[$FileMeta['Used with']][] = $FileName;
             }
         }
         foreach (['ipv4', 'ipv6', 'modules', 'imports', 'events'] as $Type) {
@@ -1003,13 +1010,27 @@ trait Updater
         if (!empty($this->Components['Meta'][$ID]['Files'])) {
             $this->arrayify($this->Components['Meta'][$ID]['Files']);
             foreach ($this->Components['Meta'][$ID]['Files'] as $FileName => $FileMeta) {
-                $this->CIDRAM['Deactivation'][$Type] = preg_replace(
+                if (!isset($FileMeta['Used with'])) {
+                    continue;
+                }
+                if ($FileMeta['Used with'] === 'ipv4' || $FileMeta['Used with'] === 'ipv6') {
+                    $FileName = substr($FileName, 11);
+                } elseif ($FileMeta['Used with'] === 'modules' || $FileMeta['Used with'] === 'imports') {
+                    $FileName = substr($FileName, 8);
+                } elseif ($FileMeta['Used with'] === 'events') {
+                    $FileName = substr($FileName, 7);
+                } else {
+                    continue;
+                }
+                $this->CIDRAM['Deactivation'][$FileMeta['Used with']] = preg_replace(
                     '~\n(?:[\w\d]+:)?' . preg_quote($FileName) . '\n~',
                     "\n",
-                    $this->CIDRAM['Deactivation'][$Type]
+                    $this->CIDRAM['Deactivation'][$FileMeta['Used with']]
                 );
-                $this->CIDRAM['Deactivation'][$Type] = substr($this->CIDRAM['Deactivation'][$Type], 1, -1);
             }
+        }
+        foreach (['ipv4', 'ipv6', 'modules', 'imports', 'events'] as $Type) {
+            $this->CIDRAM['Deactivation'][$Type] = substr($this->CIDRAM['Deactivation'][$Type], 1, -1);
         }
         if (
             $this->CIDRAM['Deactivation']['ipv4'] !== $this->Configuration['components']['ipv4'] ||

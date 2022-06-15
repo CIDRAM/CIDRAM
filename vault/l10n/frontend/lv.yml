@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Latvian language data for the front-end (last modified: 2022.06.08).
+# This file: Latvian language data for the front-end (last modified: 2022.06.15).
 ##/
 
 Extended Description AbuseIPDB module: "Bloķē pieprasījumus no IP, kas uzskaitīti vietnē AbuseIPDB."
@@ -86,6 +86,8 @@ config_bgpview_blocked_asns: "To ASN saraksts, kuras jābloķē, ja tos saskaņo
 config_bgpview_blocked_ccs: "To valstu saraksts (identificē ar to {{Links.ISO.3166}} 2-ciparu valsts kodiem), kuras jābloķē, ja tos saskaņo BGPView modulis."
 config_bgpview_whitelisted_asns: "To ASN saraksts, kas jāiekļauj baltajā sarakstā, ja tos saskaņo BGPView modulis."
 config_bgpview_whitelisted_ccs: "To valstu saraksts (identificē ar to {{Links.ISO.3166}} 2-ciparu valsts kodiem), kas jāiekļauj baltajā sarakstā, ja tos saskaņo BGPView modulis."
+config_bunnycdn: "BunnyCDN saderības moduļa konfigurācija."
+config_bunnycdn_positive_action: "Kura darbība CIDRAM jāveic, kad tiek saņemts pieprasījums no BunnyCDN? Noklusējuma darbība = Apietu."
 config_bypasses: "Noklusējuma parakstu apvedceļu konfigurācija."
 config_bypasses_used: "Kuri apvedceļi jāizmanto?"
 config_components: "CIDRAM izmantoto konfigurācija komponentu aktivizēšanai un deaktivizēšanai. Parasti to aizpilda atjauninājumu lapa, taču to var arī pārvaldīt no šejienes, lai iegūtu precīzāku kontroli un pielāgotus komponentus, ko atjauninājumu lapa neatpazīst."
@@ -402,6 +404,7 @@ label_backup_location: "Repozitorija rezerves vietas (ārkārtas gadījumā vai 
 label_banned: "Aizliegto pieprasījumu skaits"
 label_blocked: "Bloķēto pieprasījumu skaits"
 label_branch: "Jaunākā stabilā (uz šīs "branch"):"
+label_bypass_the_request: "Trigger a bypass.\nSubtracts one count from the number of signatures triggered, as long as at least one signature has already been triggered. Recommended for dealing with simple false positives potentially caused by the default signature files."
 label_captcha: "CAPTCHA mēģinājumi"
 label_check_aux: "Pārbaudiet arī palīgnoteikumus."
 label_check_modules: "Pārbaudiet arī moduļus."
@@ -434,6 +437,7 @@ label_fmgr_safety: "Drošības mehānismi"
 label_fmgr_total_disk_usage: "Kopējais diska lietojums:"
 label_fmgr_total_space: "Kopējā diska vieta:"
 label_fmgr_updates_metadata: "Metadati komponentu atjauninājumiem"
+label_greylist_the_request: "Greylist the request.\nResets the number of signatures triggered, but continues processing the request. Recommended when you don't want to whitelist the request, but need something more substantial than triggering a bypass."
 label_hide: "Slēpt"
 label_http_response_header_code_200: "200 OK (Labi)\nVismaz izturīgs, bet lietotājam draudzīgākais. Automātiskie pieprasījumi, visticamāk, interpretēs šo atbildi kā norādi, ka pieprasījums bija veiksmīgs."
 label_http_response_header_code_403: "403 Forbidden (Aizliegts)\nIzturīgāks, bet mazāk lietotājam draudzīgs. Ieteicams vairumam vispārīgu apstākļu."
@@ -500,6 +504,7 @@ label_usemode_blkd: "Tikai tad, kad bloķēts, parakstu ierobežojumu robežās,
 label_usemode_blkd_mrkd: "Tikai tad, kad bloķēts, īpaši marķēts lietošanai, parakstu ierobežojumu robežās, un nav aizliegts."
 label_usemode_not_blkd: "Tikai tad, ja tas nav bloķēts."
 label_usemode_not_blkd_mrkd: "Tikai tad, ja tas nav bloķēts, vai kad īpaši marķēts lietošanai, parakstu ierobežojumu robežās, un nav aizliegts."
+label_whitelist_the_request: "Whitelist the request.\nResets the number of signatures triggered, and aborts any further processing of the request. Guarantees that CIDRAM will never block the request."
 label_your_ip: "Jūsu IP:"
 label_your_ua: "Jūsu lietotāja aģents:"
 link_accounts: "Konti"

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Turkish language data for the front-end (last modified: 2022.06.08).
+# This file: Turkish language data for the front-end (last modified: 2022.06.15).
 ##/
 
 Extended Description AbuseIPDB module: "AbuseIPDB'de listelenen IP'lerden gelen istekleri engeller."
@@ -86,6 +86,8 @@ config_bgpview_blocked_asns: "BGPView modülü tarafından eşleştirildiğinde 
 config_bgpview_blocked_ccs: "BGPView modülü tarafından eşleştirildiğinde engellenecek ülkelerin listesi ({{Links.ISO.3166}} 2-haneli ülke kodlarıyla tanımlanır)."
 config_bgpview_whitelisted_asns: "BGPView modülü tarafından eşleştirildiğinde beyaz listeye alınacak ASN'lerin listesi."
 config_bgpview_whitelisted_ccs: "BGPView modülü tarafından eşleştirildiğinde beyaz listeye alınacak ülkelerin listesi ({{Links.ISO.3166}} 2-haneli ülke kodlarıyla tanımlanır)."
+config_bunnycdn: "BunnyCDN uyumluluk modülü için yapılandırma."
+config_bunnycdn_positive_action: "CIDRAM, BunnyCDN'den bir istekle karşılaştığında hangi eylemi gerçekleştirmelidir? Varsayılan aksiyon = Atlayın."
 config_bypasses: "Varsayılan imza bypass için yapılandırma."
 config_bypasses_used: "Hangi bypasslar kullanılmalıdır?"
 config_components: "CIDRAM tarafından kullanılan bileşenlerin etkinleştirilmesi ve devre dışı bırakılması için yapılandırma. Genellikle güncelleme sayfası tarafından doldurulur, ancak daha hassas kontrol ve güncelleme sayfası tarafından tanınmayan özel bileşenler için buradan da yönetilebilir."
@@ -95,7 +97,7 @@ config_components_ipv4: "IPv4 imza dosyaları."
 config_components_ipv6: "IPv6 imza dosyaları."
 config_components_modules: "Modüller."
 config_experimental: "Kararsız/Deneysel!"
-config_extras: "İsteğe bağlı güvenlik ekstraları modülü yapılandırması."
+config_extras: "İsteğe bağlı güvenlik ekstraları modülü için yapılandırma."
 config_extras_signatures: "Hangi tür imzalar onurlandırılmalıdır?"
 config_extras_signatures_empty_ua: "Boş kullanıcı aracıları."
 config_extras_signatures_query: "İstek sorgularına dayalı imzalar."
@@ -399,6 +401,7 @@ label_backup_location: "Repository yedek konumları (acil bir durumda, ya da her
 label_banned: "Yasaklı istekler"
 label_blocked: "Engellenen istekler"
 label_branch: "Branşı en yeni kararlı:"
+label_bypass_the_request: "Trigger a bypass.\nSubtracts one count from the number of signatures triggered, as long as at least one signature has already been triggered. Recommended for dealing with simple false positives potentially caused by the default signature files."
 label_captcha: "CAPTCHA denemeler"
 label_check_aux: "Ayrıca yardımcı kurallara karşıda test edin."
 label_check_modules: "Ayrıca modülleri karşıda test edin."
@@ -429,6 +432,7 @@ label_fmgr_safety: "Güvenlik mekanizmaları"
 label_fmgr_total_disk_usage: "Toplam disk kullanımı:"
 label_fmgr_total_space: "Toplam disk alanı:"
 label_fmgr_updates_metadata: "Bileşen güncellemeleri meta verileri"
+label_greylist_the_request: "Greylist the request.\nResets the number of signatures triggered, but continues processing the request. Recommended when you don't want to whitelist the request, but need something more substantial than triggering a bypass."
 label_hide: "Saklamak"
 label_http_response_header_code_200: "200 OK (Tamam)\nEn az sağlam, ancak en kullanıcı dostu. Otomatik istekler, büyük olasılıkla bu yanıtı, isteğin başarılı olduğunun göstergesi olarak yorumlayacaktır."
 label_http_response_header_code_403: "403 Forbidden (Yasaktır)\nDaha sağlam, ancak daha az kullanıcı dostu. Çoğu genel durum için önerilir."
@@ -489,6 +493,7 @@ label_usemode_blkd: "Yalnızca engellendiğinde, imza sınırı dahilindeyken, v
 label_usemode_blkd_mrkd: "Yalnızca engellendiğinde, kullanım için özel olarak işaretlendiğinde, imza sınırı dahilindeyken, ve yasaklanmadığında."
 label_usemode_not_blkd: "Yalnızca engellenmediğinde."
 label_usemode_not_blkd_mrkd: "Yalnızca engellenmediğinde, veya kullanım için özel olarak işaretlendiğinde, imza sınırı dahilindeyken, ve yasaklanmadığında."
+label_whitelist_the_request: "Whitelist the request.\nResets the number of signatures triggered, and aborts any further processing of the request. Guarantees that CIDRAM will never block the request."
 label_your_ip: "Senin IP:"
 label_your_ua: "Senin UA:"
 link_accounts: "Hesaplar"

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (simplified) language data for the front-end (last modified: 2022.06.08).
+# This file: Chinese (simplified) language data for the front-end (last modified: 2022.06.15).
 ##/
 
 Extended Description AbuseIPDB module: "阻止来自AbuseIPDB列出的IP的请求。"
@@ -86,6 +86,8 @@ config_bgpview_blocked_asns: "被BGPView模块匹配时要阻止的ASN列表。"
 config_bgpview_blocked_ccs: "由BGPView模块匹配时要阻止的国家列表（由其{{Links.ISO.3166}}两个字母的国家代码标识）。"
 config_bgpview_whitelisted_asns: "由BGPView模块匹配时要列入白名单的ASN列表。"
 config_bgpview_whitelisted_ccs: "由BGPView模块匹配时要列入白名单的国家列表（由其{{Links.ISO.3166}}两个字母的国家代码标识）。"
+config_bunnycdn: "BunnyCDN兼容性模块配置。"
+config_bunnycdn_positive_action: "CIDRAM遇到BunnyCDN的请求时应该执行什么动作？ 默认操作 = 绕行。"
 config_bypasses: "默认签名绕过配置。"
 config_bypasses_used: "应该使用哪些绕过？"
 config_components: "CIDRAM使用的组件的启用和停用的配置。​通常由更新页面填充，但也可以从此处进行管理，以实现更好的控制以及更新页面无法识别的自定义组件。"
@@ -400,6 +402,7 @@ label_backup_location: "存储库备份位置（在紧急情况下，或如果�
 label_banned: "请求已禁止"
 label_blocked: "请求已阻止"
 label_branch: "分支最新稳定："
+label_bypass_the_request: "触发旁路。\n只要至少已经触发了一个签名，就从触发的签名数中减去一个计数。推荐用于处理可能由默认签名文件引起的简单假阳性。"
 label_captcha: "CAPTCHA尝试"
 label_check_aux: "也用辅助规则进行测试。"
 label_check_modules: "也用模块进行测试。"
@@ -426,6 +429,7 @@ label_fmgr_safety: "安全机制"
 label_fmgr_total_disk_usage: "总共使用的磁盘空间："
 label_fmgr_total_space: "总磁盘空间："
 label_fmgr_updates_metadata: "组件更新元数据"
+label_greylist_the_request: "Greylist the request.\nResets the number of signatures triggered, but continues processing the request. Recommended when you don't want to whitelist the request, but need something more substantial than triggering a bypass."
 label_hide: "隐藏"
 label_http_response_header_code_200: "200 OK （好的）\n最不健壮，但最用户友好。​自动请求很可能将此响应解释为成功。"
 label_http_response_header_code_403: "403 Forbidden （禁止的）\n更健壮，但不太用户友好。​一般最推荐的。"
@@ -486,6 +490,7 @@ label_usemode_blkd: "仅当被阻止时，在签名限制之内，并且不被�
 label_usemode_blkd_mrkd: "仅当被阻止时，专门标明使用时，在签名限制之内，并且不被禁止。"
 label_usemode_not_blkd: "仅在不被阻止时。"
 label_usemode_not_blkd_mrkd: "仅在不被阻止时，或专门标明使用时，在签名限制之内，并且不被禁止。"
+label_whitelist_the_request: "Whitelist the request.\nResets the number of signatures triggered, and aborts any further processing of the request. Guarantees that CIDRAM will never block the request."
 label_your_ip: "您的IP："
 label_your_ua: "您的UA："
 link_accounts: "帐户"

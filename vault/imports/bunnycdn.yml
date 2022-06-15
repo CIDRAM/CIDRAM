@@ -1,0 +1,22 @@
+##\
+# This file is a part of the CIDRAM package.
+# Homepage: https://cidram.github.io/
+#
+# CIDRAM COPYRIGHT 2016 and beyond by Caleb Mazalevskis (Maikuolan).
+#
+# License: GNU/GPLv2
+# @see LICENSE.txt
+#
+# This file: BunnyCDN compatibility defaults file (last modified: 2022.06.15).
+##/
+
+Config Defaults:
+ bunnycdn:
+  positive_action:
+   type: "string"
+   default: "bypass"
+   choices:
+    bypass: "label_bypass_the_request"
+    greylist: "label_greylist_the_request"
+    whitelist: "label_whitelist_the_request"
+   style: "radio"

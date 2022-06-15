@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Russian language data for the front-end (last modified: 2022.06.08).
+# This file: Russian language data for the front-end (last modified: 2022.06.15).
 ##/
 
 Extended Description AbuseIPDB module: "Блокирует запросы от IP-адресов, перечисленных в AbuseIPDB."
@@ -86,6 +86,8 @@ config_bgpview_blocked_asns: "Список ASN, которые будут заб
 config_bgpview_blocked_ccs: "Список стран (идентифицируются их двухзначными кодами стран {{Links.ISO.3166}}), которые будут заблокированы при соответствует модулем BGPView."
 config_bgpview_whitelisted_asns: "Список ASN для включения в белый список при соответствует модулем BGPView."
 config_bgpview_whitelisted_ccs: "Список стран (идентифицируются их двухзначными кодами стран {{Links.ISO.3166}}) для включения в белый список при соответствует модулем BGPView."
+config_bunnycdn: "Конфигурация для модуля совместимости BunnyCDN."
+config_bunnycdn_positive_action: "Какое действие должен выполнить CIDRAM при получении запроса от BunnyCDN? Стандартное действие = Обходите."
 config_bypasses: "Стандартная конфигурация байпаса сигнатуры."
 config_bypasses_used: "Какие байпасы следует использовать?"
 config_components: "Конфигурация для активации и деактивации компонентов, используемых CIDRAM. Обычно заполняется страницей обновлений, но также может управляться отсюда для более точного контроля и для пользовательских компонентов, не распознаваемых страницей обновлений."
@@ -402,6 +404,7 @@ label_backup_location: "Расположение резервных хранил
 label_banned: "Запросы запрещенный"
 label_blocked: "Запросы блокированный"
 label_branch: "Ветвь последние стабильный:"
+label_bypass_the_request: "Trigger a bypass.\nSubtracts one count from the number of signatures triggered, as long as at least one signature has already been triggered. Recommended for dealing with simple false positives potentially caused by the default signature files."
 label_captcha: "Попытки CAPTCHA"
 label_check_aux: "Также протестируйте дополнительные правила."
 label_check_modules: "Также протестируйте модули."
@@ -434,6 +437,7 @@ label_fmgr_safety: "Механизмы безопасности"
 label_fmgr_total_disk_usage: "Все использование диска:"
 label_fmgr_total_space: "Емкость диска:"
 label_fmgr_updates_metadata: "Метаданные обновлений компонентов"
+label_greylist_the_request: "Greylist the request.\nResets the number of signatures triggered, but continues processing the request. Recommended when you don't want to whitelist the request, but need something more substantial than triggering a bypass."
 label_hide: "Скрывать"
 label_http_response_header_code_200: "200 OK (Хорошо)\nНаименее надежный, но наиболее удобный для пользователя. Автоматизированные запросы, скорее всего, интерпретируют этот ответ как указание на то, что запрос был выполнен успешно."
 label_http_response_header_code_403: "403 Forbidden (Запрещено)\nБолее надежен, но менее удобен в использовании. Рекомендуется для большинства общих обстоятельств."
@@ -500,6 +504,7 @@ label_usemode_blkd: "Только когда блокировке, в преде
 label_usemode_blkd_mrkd: "Только когда заблокирован, специально помечен для использования, в пределах лимита сигнатурей, и не забанен."
 label_usemode_not_blkd: "Только когда не заблокирован."
 label_usemode_not_blkd_mrkd: "Только когда не заблокирован, или специально помечен для использования, в пределах лимита сигнатурей, и не забанен."
+label_whitelist_the_request: "Whitelist the request.\nResets the number of signatures triggered, and aborts any further processing of the request. Guarantees that CIDRAM will never block the request."
 label_your_ip: "Ваш IP:"
 label_your_ua: "Ваш UA:"
 link_accounts: "Аккаунта"

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: French language data for the front-end (last modified: 2022.06.08).
+# This file: French language data for the front-end (last modified: 2022.06.15).
 ##/
 
 Extended Description AbuseIPDB module: "Bloque les requêtes des adresses IP répertoriées dans AbuseIPDB."
@@ -86,6 +86,8 @@ config_bgpview_blocked_asns: "Une liste des ASN à bloquer lorsqu'ils sont mis e
 config_bgpview_blocked_ccs: "Une liste des pays (identifiés par leurs codes pays {{Links.ISO.3166}} à 2 chiffres) à bloquer lorsqu'ils sont mis en correspondance par le module BGPView."
 config_bgpview_whitelisted_asns: "Une liste des ASN à ajouter à la liste blanche lorsqu'ils sont mis en correspondance par le module BGPView."
 config_bgpview_whitelisted_ccs: "Une liste de pays (identifiés par leurs codes pays {{Links.ISO.3166}} à 2 chiffres) à ajouter à la liste blanche lorsqu'ils sont mis en correspondance par le module BGPView."
+config_bunnycdn: "Configuration pour le module de compatibilité BunnyCDN."
+config_bunnycdn_positive_action: "Quelle action le CIDRAM doit-il effectuer lorsqu'il rencontre une requête de BunnyCDN\_? Action par défaut = Contourner."
 config_bypasses: "Configuration pour les contournements de signatures défaut."
 config_bypasses_used: "Lequels contournements faut-il utiliser\_?"
 config_components: "Configuration pour l'activation et la désactivation des composants utilisés par le CIDRAM. Généralement rempli par la page des mises à jour, mais peut également être géré à partir d'ici pour un contrôle plus précis et pour les composants personnalisés non reconnus par la page des mises à jour."
@@ -401,6 +403,7 @@ label_backup_location: "Emplacements de sauvegarde du référentiel (en cas d'ur
 label_banned: "Requêtes interdites"
 label_blocked: "Requêtes bloquées"
 label_branch: "Dernier stable de branche\_:"
+label_bypass_the_request: "Trigger a bypass.\nSubtracts one count from the number of signatures triggered, as long as at least one signature has already been triggered. Recommended for dealing with simple false positives potentially caused by the default signature files."
 label_captcha: "Tentatives de CAPTCHA"
 label_check_aux: "Tester également contre les règles auxiliaires."
 label_check_modules: "Tester également contre les modules."
@@ -431,6 +434,7 @@ label_fmgr_safety: "Mécanismes de sécurité"
 label_fmgr_total_disk_usage: "Utilisation du disque totale\_:"
 label_fmgr_total_space: "Espace disque total\_:"
 label_fmgr_updates_metadata: "Métadonnées pour la mise à jour des composants"
+label_greylist_the_request: "Greylist the request.\nResets the number of signatures triggered, but continues processing the request. Recommended when you don't want to whitelist the request, but need something more substantial than triggering a bypass."
 label_hide: "Cacher"
 label_http_response_header_code_200: "200 OK\nLe moins robuste, mais le plus convivial. Les requêtes automatisées très probablement interpréteront cette réponse comme une indication que la requête a réussi."
 label_http_response_header_code_403: "403 Forbidden (Interdit)\nPlus robuste, mais moins convivial. Recommandé pour la plupart des circonstances générales."
@@ -495,6 +499,7 @@ label_usemode_blkd: "Seulement lorsqu'il est bloqué, dans la limite de signatur
 label_usemode_blkd_mrkd: "Seulement lorsqu'il est bloqué, spécialement marqué pour l'utilisation, dans la limite de signatures, et non interdit."
 label_usemode_not_blkd: "Seulement lorsqu'il n'est pas bloqué."
 label_usemode_not_blkd_mrkd: "Seulement lorsqu'il n'est pas bloqué, ou lorsqu'il sont spécialement marqué pour l'utilisation, dans la limite de signatures, et non interdit."
+label_whitelist_the_request: "Whitelist the request.\nResets the number of signatures triggered, and aborts any further processing of the request. Guarantees that CIDRAM will never block the request."
 label_your_ip: "Votre adresse IP\_:"
 label_your_ua: "Votre UA\_:"
 link_accounts: "Comptes"

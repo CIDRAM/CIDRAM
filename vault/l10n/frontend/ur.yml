@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Urdu language data for the front-end (last modified: 2022.06.08).
+# This file: Urdu language data for the front-end (last modified: 2022.06.15).
 ##/
 
 Extended Description AbuseIPDB module: "AbuseIPDB میں درج IP کے بلاکس کی درخواستیں."
@@ -86,6 +86,8 @@ config_bgpview_blocked_asns: "BGPView ماڈیول کے ذریعے بلاک کی
 config_bgpview_blocked_ccs: "BGPView ماڈیول کے ذریعے بلاک کیے جانے والے ممالک کی فہرست (ان کے {{Links.ISO.3166}} دو حرفی کنٹری کوڈز سے شناخت کی گئی ہے)."
 config_bgpview_whitelisted_asns: "BGPView ماڈیول کے ذریعے وائٹ لسٹ کیے جانے والے ASNs کی فہرست."
 config_bgpview_whitelisted_ccs: "BGPView ماڈیول کے ذریعے وائٹ لسٹ کیے جانے والے ممالک کی فہرست (ان کے {{Links.ISO.3166}} دو حرفی کنٹری کوڈز سے شناخت کی گئی ہے)."
+config_bunnycdn: "BunnyCDN مطابقت ماڈیول کنفیگریشن."
+config_bunnycdn_positive_action: "BunnyCDN کی درخواست کا سامنا کرنا پڑتا ہے تو CIDRAM کو کون سا عمل کرنا چاہئے؟ پہلے سے طے شدہ کارروائی = بائی پاس."
 config_bypasses: "پہلے سے طے شدہ دستخط کو نظرانداز کرنے کیلئے تشکیل."
 config_bypasses_used: "کون سے بائی پاس کو استعمال کیا جانا چاہئے؟"
 config_components: "CIDRAM کی طرف سے استعمال ہونے والے اجزاء کو چالو کرنے اور غیر فعال کرنے کے لئے ترتیب. عام طور پر اپ ڈیٹس صفحہ کے ذریعے آباد ہوتا ہے، لیکن بہتر کنٹرول کے لیے اور اپ ڈیٹس صفحہ کے ذریعے پہچانے جانے والے حسب ضرورت اجزاء کے لیے بھی یہاں سے منظم کیا جا سکتا ہے."
@@ -399,6 +401,7 @@ label_backup_location: "مخزن بیک اپ مقامات (ہنگامی حالت
 label_banned: "کی درخواستیں کالعدم"
 label_blocked: "کی درخواستیں بلاک"
 label_branch: "شاخ تازہ ترین مستحکم:"
+label_bypass_the_request: "Trigger a bypass.\nSubtracts one count from the number of signatures triggered, as long as at least one signature has already been triggered. Recommended for dealing with simple false positives potentially caused by the default signature files."
 label_captcha: "کوششیں CAPTCHA"
 label_check_aux: "معاون قوانین کے خلاف بھی ٹیسٹ کریں."
 label_check_modules: "ماڈیولز کے خلاف بھی ٹیسٹ کریں."
@@ -429,6 +432,7 @@ label_fmgr_safety: "سیفٹی کے طریقہ کار"
 label_fmgr_total_disk_usage: "کل ڈسک استعمال:"
 label_fmgr_total_space: "کل ڈسک کی جگہ:"
 label_fmgr_updates_metadata: "اجزاء اپ ڈیٹ میٹا ڈیٹا"
+label_greylist_the_request: "Greylist the request.\nResets the number of signatures triggered, but continues processing the request. Recommended when you don't want to whitelist the request, but need something more substantial than triggering a bypass."
 label_hide: "چھپائیں"
 label_http_response_header_code_200: "200 OK (ٹھیک ہے)\nکم سے کم مضبوط، لیکن سب سے زیادہ صارف دوست. خودکار درخواستیں غالباً اس جواب کی تشریح کریں گی کہ درخواست کامیاب تھی."
 label_http_response_header_code_403: "403 Forbidden (ممنوعہ)\nزیادہ مضبوط، لیکن کم صارف دوست. زیادہ تر عام حالات کے لیے تجویز کردہ."
@@ -489,6 +493,7 @@ label_usemode_blkd: "صرف اس صورت میں جب بلاک ہوجائے، د
 label_usemode_blkd_mrkd: "صرف اس صورت میں جب بلاک ہو، استعمال کے لئے خصوصی طور پر نشان زد، دستخطوں کی حد میں ہو، اور پابندی نہیں ہو."
 label_usemode_not_blkd: "صرف اس وقت جب بلاک نہیں کیا جاتا ہے."
 label_usemode_not_blkd_mrkd: "صرف اس وقت جب بلاک نہ ہوا ہو، یا جب استعمال کے لئے خاص طور پر نشان زد کیا گیا ہو، دستخطوں کی حد میں ہو، اور پابندی نہ ہو."
+label_whitelist_the_request: "Whitelist the request.\nResets the number of signatures triggered, and aborts any further processing of the request. Guarantees that CIDRAM will never block the request."
 label_your_ip: "آپ کے IP:"
 label_your_ua: "آپ کے UA:"
 link_accounts: "اکاؤنٹس"

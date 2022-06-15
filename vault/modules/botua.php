@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Bot user agents module (last modified: 2022.05.31).
+ * This file: Bot user agents module (last modified: 2022.06.16).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -301,6 +301,11 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
      * @link https://isc.sans.edu/forums/diary/MGLNDD+Scans/28458/
      */
     $this->trigger(preg_match('~^MGLNDD_~i', $UANoSpace), 'Attempting to expose honeypots'); // 2022.05.08
+
+    /**
+     * @link https://github.com/CIDRAM/CIDRAM/issues/315
+     */
+    $this->trigger(strpos($UANoSpace, 'seekport') !== false, 'Unauthorised'); // 2022.06.16
 
     /** These signatures can set extended tracking options. */
     if (

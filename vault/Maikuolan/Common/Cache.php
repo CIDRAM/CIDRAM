@@ -835,6 +835,7 @@ class Cache
     {
         $Cleared = false;
         $Updated = [];
+        $Now = time();
         foreach ($Data as $Key => $Value) {
             if (is_array($Value)) {
                 foreach ($Value as &$SubValue) {
@@ -845,7 +846,7 @@ class Cache
                     }
                 }
             }
-            if (!is_array($Value) || !isset($Value['Time']) || $Value['Time'] > time()) {
+            if (!is_array($Value) || !isset($Value['Time']) || $Value['Time'] > $Now) {
                 $Updated[$Key] = $Value;
             } else {
                 $Cleared = true;

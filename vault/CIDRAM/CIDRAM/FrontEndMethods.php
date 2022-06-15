@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: General methods used by the front-end (last modified: 2022.06.10).
+ * This file: General methods used by the front-end (last modified: 2022.06.15).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -693,14 +693,50 @@ trait FrontEndMethods
      */
     private function arrayToClickableList(array $Arr = [], string $DeleteKey = '', int $Depth = 0, string $ParentKey = ''): string
     {
+        if ($Depth === 0) {
+            $this->CIDRAM['ListGroups'] = [];
+            $NewArr = [];
+            foreach ($Arr as $Key => $Value) {
+                $Matches = [];
+                if (preg_match('~^([^-]+)-(.+)$~', $Key, $Matches) && !isset($Arr[$Matches[1]])) {
+                    if (!isset($NewArr[$Matches[1]])) {
+                        $NewArr[$Matches[1]] = [];
+                        $this->CIDRAM['ListGroups'][$Matches[1]] = true;
+                    }
+                    $NewArr[$Matches[1]][$Matches[2]] = $Value;
+                    continue;
+                }
+                $NewArr[$Key] = $Value;
+            }
+            $Arr = $NewArr;
+            unset($NewArr);
+        }
         $Output = '';
         $Count = count($Arr);
         foreach ($Arr as $Key => $Value) {
             if (is_string($Value) && !$this->Demojibakefier->checkConformity($Value)) {
                 continue;
             }
-            $Delete = ($Depth === 0) ? ' – (<span style="cursor:pointer" onclick="javascript:' . $DeleteKey . '(\'' . addslashes($Key) . '\')"><code class="s">' . $this->L10N->getString('field_delete') . '</code></span>)' : '';
-            $Output .= ($Depth === 0 ? '<span id="' . $Key . 'Container">' : '') . '<li>';
+            if ($Depth === 1 && isset($this->CIDRAM['ListGroups'][$ParentKey])) {
+                $Delete = sprintf(
+                    ' – (<span style="cursor:pointer" onclick="javascript:%s(\'%s\')"><code class="s">%s</code></span>)',
+                    $DeleteKey,
+                    addslashes($ParentKey . '-' . $Key),
+                    $this->L10N->getString('field_delete')
+                );
+                $Output .= '<span id="' . $ParentKey . '-' . $Key . 'Container">';
+            } elseif ($Depth === 0) {
+                $Delete = sprintf(
+                    ' – (<span style="cursor:pointer" onclick="javascript:%s(\'%s\')"><code class="s">%s</code></span>)',
+                    $DeleteKey,
+                    (isset($this->CIDRAM['ListGroups'][$Key]) ? '^' : '') . addslashes($Key),
+                    $this->L10N->getString('field_delete')
+                );
+                $Output .= '<span id="' . $Key . 'Container">';
+            } else {
+                $Delete = '';
+            }
+            $Output .= '<li>';
             if (!is_array($Value)) {
                 if (substr($Value, 0, 2) === '{"' && substr($Value, -2) === '"}') {
                     $Try = json_decode($Value, true);
@@ -711,9 +747,9 @@ trait FrontEndMethods
                     preg_match('~\.ya?ml$~i', $Key) ||
                     (preg_match('~^(?:Data|\d+)$~', $Key) && preg_match('~\.ya?ml$~i', $ParentKey))
                 ) {
-                    $Try = new \Maikuolan\Common\YAML();
-                    if ($Try->process($Value, $Try->Data) && !empty($Try->Data)) {
-                        $Value = $Try->Data;
+                    $Try = [];
+                    if ($this->YAML->process($Value, $Try) && !empty($Try)) {
+                        $Value = $Try;
                     }
                 } elseif (substr($Value, 0, 2) === '["' && substr($Value, -2) === '"]' && strpos($Value, '","') !== false) {
                     $Value = explode('","', substr($Value, 2, -2));
@@ -731,8 +767,7 @@ trait FrontEndMethods
                     }
                 }
                 $Output .= '<span class="comCat"><code class="s">' . str_replace(['<', '>'], ['&lt;', '&gt;'], $Key) . '</code></span>' . $Delete . '<ul class="comSub">';
-                $Output .= $this->arrayToClickableList($Value, $DeleteKey, $Depth + 1, $Key);
-                $Output .= '</ul>';
+                $Output .= $this->arrayToClickableList($Value, $DeleteKey, $Depth + 1, $Key) . '</ul>';
             } else {
                 if ($Key === 'Time' && preg_match('~^\d+$~', $Value)) {
                     $Key = $this->L10N->getString('label_expires');
@@ -742,7 +777,15 @@ trait FrontEndMethods
                 $Text = ($Count === 1 && $Key === 0) ? $Value : $Key . ($Class === 's' ? ' => ' : ' ') . $Value;
                 $Output .= '<code class="' . $Class . '" style="word-wrap:break-word;word-break:break-all">' . str_replace(['<', '>'], ['&lt;', '&gt;'], $Text) . '</code>' . $Delete;
             }
-            $Output .= '</li>' . ($Depth === 0 ? '<br /></span>' : '');
+            $Output .= '</li>';
+            if ($Depth === 1 && isset($this->CIDRAM['ListGroups'][$ParentKey])) {
+                $Output .= '</span>';
+            } elseif ($Depth === 0) {
+                $Output .= '<br /></span>';
+            }
+        }
+        if ($Depth === 0) {
+            unset($this->CIDRAM['ListGroups']);
         }
         return $Output;
     }
@@ -1099,7 +1142,7 @@ trait FrontEndMethods
      * @param ?callable $Sort An optional callable to sort entries.
      * @return array An array of matching entries.
      */
-    public function getAllEntriesWhere(string $Pattern, string $Replacement = '', ?callable $Sort): array
+    public function getAllEntriesWhere(string $Pattern, string $Replacement = '', ?callable $Sort = null): array
     {
         $Out = [];
         foreach ($this->Cache->getAllEntries() as $EntryName => $EntryData) {

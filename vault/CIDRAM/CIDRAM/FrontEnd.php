@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM front-end (last modified: 2022.06.09).
+ * This file: The CIDRAM front-end (last modified: 2022.06.15).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -1651,6 +1651,8 @@ class FrontEnd extends Core
                 if (isset($_POST['do']) && $_POST['do'] === 'delete' && !empty($_POST['cdi'])) {
                     if ($_POST['cdi'] === '__') {
                         $this->Cache->clearCache();
+                    } elseif (substr($_POST['cdi'], 0, 1) === '^') {
+                        $this->Cache->deleteAllEntriesWhere('~' . $_POST['cdi'] . '-(.+)$~');
                     } else {
                         $this->Cache->deleteEntry($_POST['cdi']);
                     }
@@ -1658,9 +1660,9 @@ class FrontEnd extends Core
             } else {
                 /** Append async globals. */
                 $this->FE['JS'] .=
-                    "function cdd(d,n){window.cdi=d,window.do='delete',$('POST','',['cidram-f" .
-                    "orm-target','cdi','do'],null,function(o){hideid(d+'Container')})}window[" .
-                    "'cidram-form-target']='cache-data';";
+                    "function cdd(d){window.cdi=d,window.do='delete',$('POST','',['cidram-for" .
+                    "m-target','cdi','do'],null,function(o){if(d.substring(0,1)==='^'){d=d.su" .
+                    "bstr(1)}hideid(d+'Container')})}window['cidram-form-target']='cache-data';";
 
                 /** To be populated by the cache data. */
                 $this->FE['CacheData'] = '';

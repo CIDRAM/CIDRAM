@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Protect traits (last modified: 2022.06.09).
+ * This file: Protect traits (last modified: 2022.06.15).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -88,26 +88,8 @@ trait Protect
 
         /** Initialise statistics if necessary. */
         if (isset($this->Stages['Statistics:Enable'])) {
-            if (($Try = $this->Cache->getEntry('Statistics-Since')) === false) {
+            if ($this->Cache->getEntry('Statistics-Since') === false) {
                 $this->Cache->setEntry('Statistics-Since', $this->Now, 0);
-            }
-            foreach ([
-                'Blocked-IPv4',
-                'Blocked-IPv6',
-                'Blocked-Other',
-                'Banned-IPv4',
-                'Banned-IPv6',
-                'Passed-IPv4',
-                'Passed-IPv6',
-                'Passed-Other',
-                'CAPTCHAs-Failed',
-                'CAPTCHAs-Passed'
-            ] as $Try) {
-                if (!isset($this->StatisticsTracked[$Try])) {
-                    if (($Try = $this->Cache->getEntry('Statistics-' . $Try)) === false) {
-                        $this->Cache->setEntry('Statistics-' . $Try, 0, 0);
-                    }
-                }
             }
         }
 

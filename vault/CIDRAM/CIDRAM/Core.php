@@ -1739,7 +1739,7 @@ class Core
         }
 
         foreach ($this->CIDRAM['VerificationData']['Search Engine Verification'] as $Values) {
-            if (!empty($Values['Bypass flag'])) {
+            if (strlen($Values['Bypass flag'])) {
                 $this->CIDRAM[$Values['Bypass flag']] = false;
             }
         }
@@ -2087,11 +2087,15 @@ class Core
                     continue;
                 }
                 foreach ($FlagData['Sets'] as $SetKey => $SetData) {
-                    if (is_array($SetData)) {
-                        $this->CIDRAM[$SetKey] = array_replace_recursive($this->CIDRAM[$SetKey], $SetData);
+                    if (!property_exists($this, $SetKey)) {
                         continue;
                     }
-                    $this->CIDRAM[$SetKey] = $SetData;
+                    $Property = &$this->$SetKey;
+                    if (is_array($SetData) && is_array($Property)) {
+                        $Property = array_replace_recursive($Property, $SetData);
+                        continue;
+                    }
+                    $Property = $SetData;
                 }
             }
         }
@@ -2249,34 +2253,40 @@ class Core
                 if (!empty($Data[$Mode]['But not if matches'])) {
                     /** Iterate through sources. */
                     foreach ($this->CIDRAM['Provide']['Auxiliary Rules']['Sources'] as $SourceArrKey => $SourceArr) {
+                        if (!property_exists($this, $SourceArrKey)) {
+                            continue;
+                        }
+                        $Property = &$this->$SourceArrKey;
                         if (is_array($SourceArr)) {
+                            if (!is_array($Property)) {
+                                continue;
+                            }
                             foreach ($SourceArr as $SourceKey => $Source) {
-                                if (isset(
-                                    $Data[$Mode]['But not if matches'][$SourceKey],
-                                    $this->CIDRAM[$SourceArrKey][$SourceKey]
-                                )) {
-                                    if (!is_array($Data[$Mode]['But not if matches'][$SourceKey])) {
-                                        $Data[$Mode]['But not if matches'][$SourceKey] = [$Data[$Mode]['But not if matches'][$SourceKey]];
-                                    }
-                                    foreach ($Data[$Mode]['But not if matches'][$SourceKey] as $Value) {
-                                        /** Perform match. */
-                                        if ($this->auxMatch($Value, $this->CIDRAM[$SourceArrKey][$SourceKey], $Method)) {
-                                            continue 4;
-                                        }
+                                if (!isset($Data[$Mode]['But not if matches'][$SourceKey], $Property[$SourceKey])) {
+                                    continue;
+                                }
+                                if (!is_array($Data[$Mode]['But not if matches'][$SourceKey])) {
+                                    $Data[$Mode]['But not if matches'][$SourceKey] = [$Data[$Mode]['But not if matches'][$SourceKey]];
+                                }
+                                foreach ($Data[$Mode]['But not if matches'][$SourceKey] as $Value) {
+                                    /** Perform match. */
+                                    if ($this->auxMatch($Value, $Property[$SourceKey], $Method)) {
+                                        continue 4;
                                     }
                                 }
                             }
                             continue;
                         }
-                        if (isset($Data[$Mode]['But not if matches'][$SourceArrKey], $this->CIDRAM[$SourceArrKey])) {
-                            if (!is_array($Data[$Mode]['But not if matches'][$SourceArrKey])) {
-                                $Data[$Mode]['But not if matches'][$SourceArrKey] = [$Data[$Mode]['But not if matches'][$SourceArrKey]];
-                            }
-                            foreach ($Data[$Mode]['But not if matches'][$SourceArrKey] as $Value) {
-                                /** Perform match. */
-                                if ($this->auxMatch($Value, $this->CIDRAM[$SourceArrKey], $Method)) {
-                                    continue 3;
-                                }
+                        if (!isset($Data[$Mode]['But not if matches'][$SourceArrKey])) {
+                            continue;
+                        }
+                        if (!is_array($Data[$Mode]['But not if matches'][$SourceArrKey])) {
+                            $Data[$Mode]['But not if matches'][$SourceArrKey] = [$Data[$Mode]['But not if matches'][$SourceArrKey]];
+                        }
+                        foreach ($Data[$Mode]['But not if matches'][$SourceArrKey] as $Value) {
+                            /** Perform match. */
+                            if ($this->auxMatch($Value, $Property, $Method)) {
+                                continue 3;
                             }
                         }
                     }
@@ -2286,52 +2296,58 @@ class Core
                 if (!empty($Data[$Mode]['If matches'])) {
                     /** Iterate through sources. */
                     foreach ($this->CIDRAM['Provide']['Auxiliary Rules']['Sources'] as $SourceArrKey => $SourceArr) {
+                        if (!property_exists($this, $SourceArrKey)) {
+                            continue;
+                        }
+                        $Property = &$this->$SourceArrKey;
                         if (is_array($SourceArr)) {
+                            if (!is_array($Property)) {
+                                continue;
+                            }
                             foreach ($SourceArr as $SourceKey => $Source) {
-                                if (isset(
-                                    $Data[$Mode]['If matches'][$SourceKey],
-                                    $this->CIDRAM[$SourceArrKey][$SourceKey]
-                                )) {
-                                    if (!is_array($Data[$Mode]['If matches'][$SourceKey])) {
-                                        $Data[$Mode]['If matches'][$SourceKey] = [$Data[$Mode]['If matches'][$SourceKey]];
-                                    }
-                                    foreach ($Data[$Mode]['If matches'][$SourceKey] as $Value) {
-                                        /** Perform match. */
-                                        if ($this->auxMatch($Value, $this->CIDRAM[$SourceArrKey][$SourceKey], $Method)) {
-                                            $Matched = true;
-                                            if ($Logic === 'All') {
-                                                continue;
-                                            }
-                                            if ($this->auxAction($Mode, $Name, $Reason, $Target, $StatusCode, $Webhooks, $Flags, $Run)) {
-                                                return;
-                                            }
-                                            continue 4;
-                                        } elseif ($Logic === 'All') {
-                                            continue 4;
+                                if (!isset($Data[$Mode]['If matches'][$SourceKey], $Property[$SourceKey])) {
+                                    continue;
+                                }
+                                if (!is_array($Data[$Mode]['If matches'][$SourceKey])) {
+                                    $Data[$Mode]['If matches'][$SourceKey] = [$Data[$Mode]['If matches'][$SourceKey]];
+                                }
+                                foreach ($Data[$Mode]['If matches'][$SourceKey] as $Value) {
+                                    /** Perform match. */
+                                    if ($this->auxMatch($Value, $Property[$SourceKey], $Method)) {
+                                        $Matched = true;
+                                        if ($Logic === 'All') {
+                                            continue;
                                         }
+                                        if ($this->auxAction($Mode, $Name, $Reason, $Target, $StatusCode, $Webhooks, $Flags, $Run)) {
+                                            return;
+                                        }
+                                        continue 4;
+                                    } elseif ($Logic === 'All') {
+                                        continue 4;
                                     }
                                 }
                             }
                             continue;
                         }
-                        if (isset($Data[$Mode]['If matches'][$SourceArrKey], $this->CIDRAM[$SourceArrKey])) {
-                            if (!is_array($Data[$Mode]['If matches'][$SourceArrKey])) {
-                                $Data[$Mode]['If matches'][$SourceArrKey] = [$Data[$Mode]['If matches'][$SourceArrKey]];
-                            }
-                            foreach ($Data[$Mode]['If matches'][$SourceArrKey] as $Value) {
-                                /** Perform match. */
-                                if ($this->auxMatch($Value, $this->CIDRAM[$SourceArrKey], $Method)) {
-                                    $Matched = true;
-                                    if ($Logic === 'All') {
-                                        continue;
-                                    }
-                                    if ($this->auxAction($Mode, $Name, $Reason, $Target, $StatusCode, $Webhooks, $Flags, $Run)) {
-                                        return;
-                                    }
-                                    continue 3;
-                                } elseif ($Logic === 'All') {
-                                    continue 3;
+                        if (!isset($Data[$Mode]['If matches'][$SourceArrKey])) {
+                            continue;
+                        }
+                        if (!is_array($Data[$Mode]['If matches'][$SourceArrKey])) {
+                            $Data[$Mode]['If matches'][$SourceArrKey] = [$Data[$Mode]['If matches'][$SourceArrKey]];
+                        }
+                        foreach ($Data[$Mode]['If matches'][$SourceArrKey] as $Value) {
+                            /** Perform match. */
+                            if ($this->auxMatch($Value, $Property, $Method)) {
+                                $Matched = true;
+                                if ($Logic === 'All') {
+                                    continue;
                                 }
+                                if ($this->auxAction($Mode, $Name, $Reason, $Target, $StatusCode, $Webhooks, $Flags, $Run)) {
+                                    return;
+                                }
+                                continue 3;
+                            } elseif ($Logic === 'All') {
+                                continue 3;
                             }
                         }
                     }
@@ -2638,9 +2654,6 @@ class Core
      */
     public function addProfileEntry(string $Entries): void
     {
-        if (!isset($this->Profiles)) {
-            $this->Profiles = [];
-        }
         foreach (explode(';', $Entries) as $Profile) {
             $this->Profiles[] = $Profile;
         }

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods used to simulate block events (last modified: 2022.06.04).
+ * This file: Methods used to simulate block events (last modified: 2022.06.16).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -32,11 +32,14 @@ trait SimulateBlockEvent
 
         /** Initialise SimulateBlockEvent. */
         foreach ($this->CIDRAM['Provide']['Initialise SimulateBlockEvent'] as $InitialiseKey => $InitialiseValue) {
-            if (is_array($InitialiseValue) && isset($this->CIDRAM[$InitialiseKey]) && is_array($this->CIDRAM[$InitialiseKey])) {
-                $this->CIDRAM[$InitialiseKey] = array_replace_recursive($this->CIDRAM[$InitialiseKey], $InitialiseValue);
+            if (!property_exists($this, $InitialiseKey)) {
                 continue;
             }
-            $this->CIDRAM[$InitialiseKey] = $InitialiseValue;
+            if (is_array($InitialiseValue) && isset($this->$InitialiseKey) && is_array($this->$InitialiseKey)) {
+                $this->$InitialiseKey = array_replace_recursive($this->$InitialiseKey, $InitialiseValue);
+                continue;
+            }
+            $this->$InitialiseKey = $InitialiseValue;
         }
 
         /** To be populated by webhooks. */

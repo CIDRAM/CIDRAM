@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Defaults file (last modified: 2022.06.05).
+# This file: Defaults file (last modified: 2022.06.16).
 ##/
 
 Config Defaults:
@@ -959,17 +959,18 @@ Config Defaults:
    autocomplete: "current-password"
 Provide:
  Initialise SimulateBlockEvent:
-  Config:
+  CIDRAM:
+   Tracking options override: false
+   Suppress output template: false
+   Flag Don't Log: false
+   Aux Redirect: ""
+   Aux Status Code: 200
+   Hostname: ""
+  Configuration:
    recaptcha:
     enabled: false
    hcaptcha:
     enabled: false
-  Tracking options override: false
-  Suppress output template: false
-  Flag Don't Log: false
-  Aux Redirect: ""
-  Aux Status Code: 200
-  Hostname: ""
  Auxiliary Rules:
   Modes:
    - "Whitelist"
@@ -1000,9 +1001,10 @@ Provide:
     Expired: "state_expired"
     Ignored: "state_ignored"
     Request_Method: "field_request_method"
-   Hostname: "field_hostname"
-   Profile: "field_profile"
-   Factors: "CIDR"
+   Profiles: "field_profile"
+   CIDRAM:
+    Hostname: "field_hostname"
+    Factors: "CIDR"
   Flags:
    reCAPTCHA:
     Mark for use with reCAPTCHA:
@@ -1102,5 +1104,4 @@ Links:
  SFS: "<a href="https://www.stopforumspam.com/" dir="ltr" rel="noopener noreferrer external">Stop Forum Spam</a>"
  Symfony:
   Intl/Idn: "<a href="https://github.com/symfony/polyfill-intl-idn" dir="ltr" hreflang="en" rel="noopener noreferrer external">Intl/Idn</a>"
-  Mbstring: "<a href="https://github.com/symfony/polyfill-mbstring" dir="ltr" hreflang="en" rel="noopener noreferrer external">Mbstring</a>"
  Website: "<a id="websitelink" href="https://cidram.github.io/" hreflang="en-US" rel="noopener external">cidram.github.io</a>"

@@ -1,6 +1,6 @@
 <?php
 /**
- * Matrix handler (last modified: 2022.02.21).
+ * Matrix handler (last modified: 2022.06.16).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -196,7 +196,7 @@ class Matrix
      * @param array $Data Other data optionally passed to the callback.
      * @return \Generator
      */
-    private function iterateCallbackGeneratorInner(array &$Matrix, array &$Indexes, int $Depth, string $KeyRoot = '', callable $Callback, array $Data): \Generator
+    private function iterateCallbackGeneratorInner(array &$Matrix, array &$Indexes, int $Depth, string $KeyRoot, callable $Callback, array $Data): \Generator
     {
         /** Get current indexes. */
         $Index = $Indexes[$Depth];

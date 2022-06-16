@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM core (last modified: 2022.06.05).
+ * This file: The CIDRAM core (last modified: 2022.06.16).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -402,7 +402,7 @@ class Core
             return '';
         }
         foreach ($Needles as $Key => $Value) {
-            if (!is_array($Value)) {
+            if (!is_array($Value) && $Value !== null) {
                 $Haystack = str_replace('{' . $Key . '}', $Value, $Haystack);
             }
         }

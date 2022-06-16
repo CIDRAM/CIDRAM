@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2022.06.02).
+ * This file: Front-end handler (last modified: 2022.06.15).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -1756,11 +1756,11 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'cache-data' && $CIDRAM['FE']['P
     } else {
         /** Append async globals. */
         $CIDRAM['FE']['JS'] .=
-            "function cdd(d,n){window.cdi=d,window.do='delete',$('POST','',['cidram-f" .
-            "orm-target','cdi','do'],null,function(o){hideid(d+'Container')})}window[" .
-            "'cidram-form-target']='cache-data';function fecdd(d,n){window.fecdi=d,wi" .
-            "ndow.do='delete',$('POST','',['cidram-form-target','fecdi','do'],null,fu" .
-            "nction(o){hideid(d+'FEContainer')})};";
+            "function cdd(d){window.cdi=d,window.do='delete',$('POST','',['cidram-for" .
+            "m-target','cdi','do'],null,function(o){hideid(d+'Container')})}window['c" .
+            "idram-form-target']='cache-data';function fecdd(d){window.fecdi=d,window" .
+            ".do='delete',$('POST','',['cidram-form-target','fecdi','do'],null,functi" .
+            "on(o){hideid(d+'FEContainer')})};";
 
         /** To be populated by the cache data. */
         $CIDRAM['FE']['CacheData'] = '';

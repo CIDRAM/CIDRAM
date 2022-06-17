@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2022.06.15).
+ * This file: Front-end handler (last modified: 2022.06.17).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -136,9 +136,6 @@ $CIDRAM['FE'] = [
     /** Will be populated by the page title. */
     'FE_Title' => '',
 
-    /** Background gradient for "leave it as it is" auxiliary rules option. */
-    'Empty' => 'background:linear-gradient(90deg,rgba(128,128,255,0.5),rgba(0,0,64,0));',
-
     /** Used by the auxiliary rules from and expiry fields. */
     'Y-m-d' => date('Y-m-d', $CIDRAM['Now']),
 
@@ -220,9 +217,10 @@ if (empty($CIDRAM['L10N']->Data['Text Direction']) || $CIDRAM['L10N']->Data['Tex
     $CIDRAM['FE']['PIP_Input'] = $CIDRAM['FE']['PIP_Right'];
     $CIDRAM['FE']['PIP_Input_Valid'] = $CIDRAM['FE']['PIP_Right_Valid'];
     $CIDRAM['FE']['PIP_Input_Invalid'] = $CIDRAM['FE']['PIP_Right_Invalid'];
-    $CIDRAM['FE']['Gradient_Degree'] = 90;
     $CIDRAM['FE']['Half_Border'] = 'solid solid none none';
     $CIDRAM['FE']['45deg'] = '45deg';
+    $CIDRAM['FE']['90deg'] = '90deg';
+    $CIDRAM['FE']['Empty'] = 'background:linear-gradient(90deg,rgba(128,128,255,0.5),rgba(0,0,64,0));';
 } else {
     $CIDRAM['FE']['FE_Align'] = 'right';
     $CIDRAM['FE']['FE_Align_Reverse'] = 'left';
@@ -230,9 +228,10 @@ if (empty($CIDRAM['L10N']->Data['Text Direction']) || $CIDRAM['L10N']->Data['Tex
     $CIDRAM['FE']['PIP_Input'] = $CIDRAM['FE']['PIP_Left'];
     $CIDRAM['FE']['PIP_Input_Valid'] = $CIDRAM['FE']['PIP_Left_Valid'];
     $CIDRAM['FE']['PIP_Input_Invalid'] = $CIDRAM['FE']['PIP_Left_Invalid'];
-    $CIDRAM['FE']['Gradient_Degree'] = 270;
     $CIDRAM['FE']['Half_Border'] = 'solid none none solid';
     $CIDRAM['FE']['45deg'] = '-45deg';
+    $CIDRAM['FE']['90deg'] = '270deg';
+    $CIDRAM['FE']['Empty'] = 'background:linear-gradient(90deg,rgba(0,0,64,0),rgba(128,128,255,0.5));';
 }
 
 /** A simple passthru for non-private theme images and related data. */
@@ -3046,11 +3045,13 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'file-manager' && $CIDRAM['FE'][
                 $CIDRAM['Components']['RGB'] = implode(',', $CIDRAM['Components']['ThisColour']['Values']);
                 $CIDRAM['FE']['DoughnutColours'][] = '#' . $CIDRAM['Components']['ThisColour']['Hash'];
                 $CIDRAM['FE']['DoughnutHTML'] .= sprintf(
-                    '<li style="background:linear-gradient(90deg,rgba(%1$s,.3),rgba(%1$s,0));color:#%2$s"><span class="comCat"><span class="txtBl">%3$s</span></span>%4$s</li>',
+                    '<li style="background:linear-gradient(90deg,rgba(%1$s,%5$s),rgba(%1$s,%6$s));color:#%2$s"><span class="comCat"><span class="txtBl">%3$s</span></span>%4$s</li>',
                     $CIDRAM['Components']['RGB'],
                     $CIDRAM['Components']['ThisColour']['Hash'],
                     $CIDRAM['Components']['ThisName'],
-                    $CIDRAM['Components']['ThisListed']
+                    $CIDRAM['Components']['ThisListed'],
+                    $CIDRAM['FE']['FE_Align'] === 'left' ? '.3' : '0',
+                    $CIDRAM['FE']['FE_Align'] === 'left' ? '0' : '.3'
                 ) . "\n";
             } else {
                 $CIDRAM['FE']['DoughnutHTML'] .= sprintf(

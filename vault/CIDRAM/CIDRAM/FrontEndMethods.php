@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: General methods used by the front-end (last modified: 2022.06.16).
+ * This file: General methods used by the front-end (last modified: 2022.06.17).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -648,7 +648,7 @@ trait FrontEndMethods
         /** Guard. */
         if (
             empty($this->FE['DateTime']) ||
-            !$this->Configuration['frontend']['frontend_log'] ||
+            !strlen($this->Configuration['frontend']['frontend_log']) ||
             !($File = $this->buildPath($this->Vault . $this->Configuration['frontend']['frontend_log']))
         ) {
             return;
@@ -775,7 +775,9 @@ trait FrontEndMethods
                 }
                 $Class = ($Key === $this->L10N->getString('field_size') || $Key === $this->L10N->getString('label_expires')) ? 'txtRd' : 's';
                 $Text = ($Count === 1 && $Key === 0) ? $Value : $Key . ($Class === 's' ? ' => ' : ' ') . $Value;
-                $Output .= '<code class="' . $Class . '" style="word-wrap:break-word;word-break:break-all">' . str_replace(['<', '>'], ['&lt;', '&gt;'], $Text) . '</code>' . $Delete;
+                $Output .= '<code class="' . $Class . '" style="word-wrap:break-word;word-break:break-all">' . $this->ltrInRtf(
+                    str_replace(['<', '>'], ['&lt;', '&gt;'], $Text)
+                ) . '</code>' . $Delete;
             }
             $Output .= '</li>';
             if ($Depth === 1 && isset($this->CIDRAM['ListGroups'][$ParentKey])) {
@@ -834,8 +836,7 @@ trait FrontEndMethods
     {
         /** Get direction. */
         $Direction = (
-            !isset($this->L10N) ||
-            empty($this->L10N->Data['Text Direction']) ||
+            !isset($this->L10N->Data['Text Direction']) ||
             $this->L10N->Data['Text Direction'] !== 'rtl'
         ) ? 'ltr' : 'rtl';
 
@@ -847,8 +848,8 @@ trait FrontEndMethods
         /** Modify the string to better suit RTL directionality and return it. */
         while (true) {
             $NewString = preg_replace(
-                ['~^(.+)-&gt;(.+)$~i', '~^(.+)➡(.+)$~i'],
-                ['\2&lt;-\1', '\2⬅\1'],
+                ['~^(.+)( +)-&gt;( +)(.+)$~i', '~^(.+)-&gt;(.+)$~i', '~^(.+)( +)➡( +)(.+)$~i', '~^(.+)➡(.+)$~i', '~^(.+)( +)=&gt;( +)(.+)$~i', '~^(.+)=&gt;(.+)$~i'],
+                ['\4\2&lt;-\3\1', '\2&lt;-\1', '\4\2⬅\3\1', '\2⬅\1', '\4\2&lt;=\3\1', '\2&lt;=\1'],
                 $String
             );
             if ($NewString === $String) {

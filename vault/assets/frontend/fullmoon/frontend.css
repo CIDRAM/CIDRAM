@@ -44,10 +44,10 @@ a:hover,a:active,a:focus{color:#fff7bc}
 .h2,.h4,code{background-color:rgba(86,89,92,.5)}
 .h3,.h3f,.h4,.h4f{width:50%}
 code,.nav{font-family:'Courier New',Courier,'Arial'}
-.ng1,.h1f,.h3f{background:linear-gradient({Gradient_Degree}deg,rgba(103,106,109,.5),#555)}
-.ng2,.h2f,.h4f{background:linear-gradient({Gradient_Degree}deg,rgba(86,89,92,.5),#444)}
+.ng1,.h1f,.h3f{background:linear-gradient({90deg},rgba(103,106,109,.5),#555)}
+.ng2,.h2f,.h4f{background:linear-gradient({90deg},rgba(86,89,92,.5),#444)}
 .hFd:hover,.r{background-color:rgba(120,89,92,.5)}
-.rf{background:linear-gradient({Gradient_Degree}deg,rgba(120,89,92,.5),#644)}
+.rf{background:linear-gradient({90deg},rgba(120,89,92,.5),#644)}
 .branchline{border-style:none none solid none;border-width:1px;border-color:#aaa}
 .txtBl{color:#000}
 .txtGn{color:#b4de7d}
@@ -126,14 +126,14 @@ input[type=checkbox]+label,input[type=radio]+label,input[type=radio]+label,.grid
 .gridboxcheckcell>input[type=checkbox],.gridboxcheckcell>input[type=radio],.gridlabel>input[type=checkbox],.gridlabel>input[type=radio]{position:relative;top:1px}
 .gridlabel{display:block;height:100%;width:100%}
 .gridlabel:hover{background-color:rgba(255,255,255,.25);filter:brightness(1.25)}
-.gridHA.vrte,.gridHA:not(.gridVA):not(.gridVB):not(.vrto){background:linear-gradient(90deg,rgba(0,0,0,.125) 0 40%,rgba(0,0,0,0) 80%)}
-.gridHA.vrto{background:linear-gradient(90deg,rgba(0,0,0,.125) 0 25%,rgba(0,0,0,0) 50%)}
+.gridHA.vrte,.gridHA:not(.gridVA):not(.gridVB):not(.vrto){background:linear-gradient({90deg},rgba(0,0,0,.125) 0 40%,rgba(0,0,0,0) 80%)}
+.gridHA.vrto{background:linear-gradient({90deg},rgba(0,0,0,.125) 0 25%,rgba(0,0,0,0) 50%)}
 .gridHA.gridVA{background-color:rgba(0,0,0,.125)}
 .gridHA.gridVB{background-color:rgba(127,110,85,.3)}
 .gridVB:not(.gridHA){background-color:rgba(251,191,127,.35)}
 .configMatrixLabel.gridVB{background:linear-gradient(0deg,rgba(251,191,127,.35),rgba(0,0,0,0))}
 .warning::before,.warning::after{content:"⚠️";font-size:24px;display:inline;line-height:100%;position:relative;top:2px}
-.warning{display:inline-block;margin:4px;font-weight:700;color:#e7ab7d;background:linear-gradient(90deg,rgba(128,92,0,0) 0,rgba(128,92,0,.8) 20% 80%,rgba(128,92,0,0) 100%);line-height:100%}
+.warning{display:inline-block;margin:4px;font-weight:700;color:#e7ab7d;background:linear-gradient({90deg},rgba(128,92,0,0) 0,rgba(128,92,0,.8) 20% 80%,rgba(128,92,0,0) 100%);line-height:100%}
 .gridlabel,.copySvg{transition:all .2s ease-out}
 .copySvg{position:relative;top:-3px;stroke-width:1px;stroke-linecap:round}
 .copySvg:hover{filter:brightness(1.2);cursor:pointer}

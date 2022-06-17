@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM front-end (last modified: 2022.06.15).
+ * This file: The CIDRAM front-end (last modified: 2022.06.17).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -157,9 +157,6 @@ class FrontEnd extends Core
             /** Will be populated by the page title. */
             'FE_Title' => '',
 
-            /** Background gradient for "leave it as it is" auxiliary rules option. */
-            'Empty' => 'background:linear-gradient(90deg,rgba(128,128,255,0.5),rgba(0,0,64,0));',
-
             /** Used by the auxiliary rules from and expiry fields. */
             'Y-m-d' => date('Y-m-d', $this->Now),
 
@@ -303,9 +300,10 @@ class FrontEnd extends Core
             $this->FE['PIP_Input'] = $this->FE['PIP_Right'];
             $this->FE['PIP_Input_Valid'] = $this->FE['PIP_Right_Valid'];
             $this->FE['PIP_Input_Invalid'] = $this->FE['PIP_Right_Invalid'];
-            $this->FE['Gradient_Degree'] = 90;
             $this->FE['Half_Border'] = 'solid solid none none';
             $this->FE['45deg'] = '45deg';
+            $this->FE['90deg'] = '90deg';
+            $this->FE['Empty'] = 'background:linear-gradient(90deg,rgba(128,128,255,0.5),rgba(0,0,64,0));';
         } else {
             $this->FE['FE_Align'] = 'right';
             $this->FE['FE_Align_Reverse'] = 'left';
@@ -313,9 +311,10 @@ class FrontEnd extends Core
             $this->FE['PIP_Input'] = $this->FE['PIP_Left'];
             $this->FE['PIP_Input_Valid'] = $this->FE['PIP_Left_Valid'];
             $this->FE['PIP_Input_Invalid'] = $this->FE['PIP_Left_Invalid'];
-            $this->FE['Gradient_Degree'] = 270;
             $this->FE['Half_Border'] = 'solid none none solid';
             $this->FE['45deg'] = '-45deg';
+            $this->FE['90deg'] = '270deg';
+            $this->FE['Empty'] = 'background:linear-gradient(90deg,rgba(0,0,64,0),rgba(128,128,255,0.5));';
         }
 
         /** A simple passthru for non-private theme images and related data. */
@@ -510,30 +509,26 @@ class FrontEnd extends Core
                 $this->CIDRAM['TimeToAdd'] = ($this->CIDRAM['LoginAttempts'] > 4) ? ($this->CIDRAM['LoginAttempts'] - 4) * 86400 : 86400;
                 $this->Cache->setEntry('LoginAttempts' . $this->ipAddr, $this->CIDRAM['LoginAttempts'], $this->CIDRAM['TimeToAdd']);
                 if ($this->Configuration['frontend']['frontend_log']) {
-                    $this->CIDRAM['LoggerMessage'] = $this->FE['state_msg'];
+                    $LoggerMessage = $this->FE['state_msg'];
                 }
                 if ($this->FE['CronMode'] === '') {
                     $this->FE['state_msg'] = '<div class="txtRd">' . $this->FE['state_msg'] . '<br /><br /></div>';
                 }
             } elseif ($this->Configuration['frontend']['frontend_log']) {
-                $this->CIDRAM['LoggerMessage'] = $this->L10N->getString((
+                $LoggerMessage = $this->L10N->getString((
                     $this->Configuration['frontend']['enable_two_factor'] &&
                     $this->FE['Permissions'] === 0
                 ) ? 'state_logged_in_2fa_pending' : 'state_logged_in');
             }
 
             /** Safer for the front-end logger. */
-            $this->CIDRAM['NameToLog'] = preg_replace('~[\x00-\x1F]~', '', $_POST['username'] ?? '');
+            $NameToLog = preg_replace('~[\x00-\x1F]~', '', $_POST['username'] ?? '');
 
             /** Handle front-end logging. */
-            $this->frontendLogger(
-                $this->ipAddr,
-                $this->CIDRAM['NameToLog'],
-                $this->CIDRAM['LoggerMessage'] ?? ''
-            );
+            $this->frontendLogger($this->ipAddr, $NameToLog, $LoggerMessage ?? '');
 
             /** Cleanup. */
-            unset($this->CIDRAM['NameToLog'], $this->CIDRAM['LoggerMessage']);
+            unset($NameToLog, $LoggerMessage);
         }
 
         /** Determine whether the user has logged in. */
@@ -2796,11 +2791,13 @@ class FrontEnd extends Core
                         $RGB = implode(',', $ThisColour['Values']);
                         $this->FE['DoughnutColours'][] = '#' . $ThisColour['Hash'];
                         $this->FE['DoughnutHTML'] .= sprintf(
-                            '<li style="background:linear-gradient(90deg,rgba(%1$s,.3),rgba(%1$s,0));color:#%2$s"><span class="comCat"><span class="txtBl">%3$s</span></span>%4$s</li>',
+                            '<li style="background:linear-gradient(90deg,rgba(%1$s,%5$s),rgba(%1$s,%6$s));color:#%2$s"><span class="comCat"><span class="txtBl">%3$s</span></span>%4$s</li>',
                             $RGB,
                             $ThisColour['Hash'],
                             $ComponentName,
-                            $Listed
+                            $Listed,
+                            $this->FE['FE_Align'] === 'left' ? '.3' : '0',
+                            $this->FE['FE_Align'] === 'left' ? '0' : '.3'
                         ) . "\n";
                     } else {
                         $this->FE['DoughnutHTML'] .= sprintf('<li><span class="comCat">%1$s</span>%2$s</li>', $ComponentName, $Listed) . "\n";

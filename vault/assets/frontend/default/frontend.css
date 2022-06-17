@@ -48,10 +48,10 @@ a:active,a:focus{color:red}
 .h3,.h3f,.h4,.h4f{width:50%}
 .nav{font-size:calc((14px * {magnification}) + .03vw);width:20%;letter-spacing:calc(1px + .03vw)}
 .nav:lang(ja){letter-spacing:-1px}
-.ng1,.h1f,.h3f{background:linear-gradient({Gradient_Degree}deg,#eee,#ccc)}
-.ng2,.h2f,.h4f{background:linear-gradient({Gradient_Degree}deg,#ddd,#bbb)}
+.ng1,.h1f,.h3f{background:linear-gradient({90deg},#eee,#ccc)}
+.ng2,.h2f,.h4f{background:linear-gradient({90deg},#ddd,#bbb)}
 .hFd:hover,.r{background-color:#fda}
-.rf{background:linear-gradient({Gradient_Degree}deg,#fda,#fa6)}
+.rf{background:linear-gradient({90deg},#fda,#fa6)}
 .right{padding:20px;width:80%}
 .branchline{border-style:none none solid none;border-width:1px;border-color:#900}
 .txtBl{color:#000}
@@ -144,14 +144,14 @@ input[type=checkbox]+label,input[type=radio]+label,input[type=radio]+label,.grid
 .gridboxcheckcell>input[type=checkbox],.gridboxcheckcell>input[type=radio],.gridlabel>input[type=checkbox],.gridlabel>input[type=radio]{position:relative;top:1px}
 .gridlabel{display:block;height:100%;width:100%}
 .gridlabel:hover{background-color:rgba(255,255,255,.25);filter:brightness(1.25)}
-.gridHA.vrte,.gridHA:not(.gridVA):not(.gridVB):not(.vrto){background:linear-gradient(90deg,rgba(0,0,0,.125) 0 40%,rgba(0,0,0,0) 80%)}
-.gridHA.vrto{background:linear-gradient(90deg,rgba(0,0,0,.125) 0 25%,rgba(0,0,0,0) 50%)}
+.gridHA.vrte,.gridHA:not(.gridVA):not(.gridVB):not(.vrto){background:linear-gradient({90deg},rgba(0,0,0,.125) 0 40%,rgba(0,0,0,0) 80%)}
+.gridHA.vrto{background:linear-gradient({90deg},rgba(0,0,0,.125) 0 25%,rgba(0,0,0,0) 50%)}
 .gridHA.gridVA{background-color:rgba(0,0,0,.125)}
 .gridHA.gridVB{background-color:rgba(127,110,85,.6)}
 .gridVB:not(.gridHA){background-color:rgba(251,191,127,.7)}
 .configMatrixLabel.gridVB{background:linear-gradient(0deg,rgba(251,191,127,.7),rgba(0,0,0,0))}
 .warning::before,.warning::after{content:"⚠️";font-size:24px;display:inline;line-height:100%;position:relative;top:2px}
-.warning{display:inline-block;margin:4px;font-weight:700;color:red;background:linear-gradient(90deg,rgba(255,192,0,0) 0,rgba(255,192,0,.8) 20% 80%,rgba(255,192,0,0) 100%);line-height:100%}
+.warning{display:inline-block;margin:4px;font-weight:700;color:red;background:linear-gradient({90deg},rgba(255,192,0,0) 0,rgba(255,192,0,.8) 20% 80%,rgba(255,192,0,0) 100%);line-height:100%}
 .gridlabel,.copySvg{transition:all .2s ease-out}
 .copySvg{position:relative;top:-3px;stroke-width:1px;stroke-linecap:round}
 .copySvg:hover{filter:brightness(1.2);cursor:pointer}

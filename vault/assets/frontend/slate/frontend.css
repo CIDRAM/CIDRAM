@@ -48,10 +48,10 @@ a:hover,a:active,a:focus{color:#fc6}
 .h3,.h3f,.h4,.h4f{width:50%}
 .nav{font-size:calc((14px * {magnification}) + .03vw);width:20%;letter-spacing:calc(1px + .03vw)}
 .nav:lang(ja){letter-spacing:-1px}
-.ng1,.h1f,.h3f{background:linear-gradient({Gradient_Degree}deg,#555,#3c3c3c)}
-.ng2,.h2f,.h4f{background:linear-gradient({Gradient_Degree}deg,#444,#363636)}
+.ng1,.h1f,.h3f{background:linear-gradient({90deg},#555,#3c3c3c)}
+.ng2,.h2f,.h4f{background:linear-gradient({90deg},#444,#363636)}
 .hFd:hover,.r{background-color:#c63}
-.rf{background:linear-gradient({Gradient_Degree}deg,#c63,#e97)}
+.rf{background:linear-gradient({90deg},#c63,#e97)}
 .right{padding:20px;width:80%}
 .branchline{border-style:none none solid none;border-width:1px;border-color:#999}
 .txtBl{color:#ddd}
@@ -144,14 +144,14 @@ input[type=checkbox]+label,input[type=radio]+label,input[type=radio]+label,.grid
 .gridboxcheckcell>input[type=checkbox],.gridboxcheckcell>input[type=radio],.gridlabel>input[type=checkbox],.gridlabel>input[type=radio]{position:relative;top:1px}
 .gridlabel{display:block;height:100%;width:100%}
 .gridlabel:hover{background-color:rgba(255,255,255,.1);filter:brightness(1.25)}
-.gridHA.vrte,.gridHA:not(.gridVA):not(.gridVB):not(.vrto){background:linear-gradient(90deg,rgba(0,0,0,.125) 0 40%,rgba(0,0,0,0) 80%)}
-.gridHA.vrto{background:linear-gradient(90deg,rgba(0,0,0,.125) 0 25%,rgba(0,0,0,0) 50%)}
+.gridHA.vrte,.gridHA:not(.gridVA):not(.gridVB):not(.vrto){background:linear-gradient({90deg},rgba(0,0,0,.125) 0 40%,rgba(0,0,0,0) 80%)}
+.gridHA.vrto{background:linear-gradient({90deg},rgba(0,0,0,.125) 0 25%,rgba(0,0,0,0) 50%)}
 .gridHA.gridVA{background-color:rgba(0,0,0,.125)}
 .gridHA.gridVB{background-color:rgba(112,110,100,.5)}
 .gridVB:not(.gridHA){background-color:rgba(236,191,142,.6)}
 .configMatrixLabel.gridVB{background:linear-gradient(0deg,rgba(236,191,142,.6),rgba(0,0,0,0))}
 .warning::before,.warning::after{content:"⚠️";font-size:24px;display:inline;line-height:100%;position:relative;top:2px}
-.warning{display:inline-block;margin:4px;font-weight:700;color:#f52;background:linear-gradient(90deg,rgba(60,60,60,0) 0,rgba(85,85,85,.8) 20% 80%,rgba(60,60,60,0) 100%);line-height:100%}
+.warning{display:inline-block;margin:4px;font-weight:700;color:#f52;background:linear-gradient({90deg},rgba(60,60,60,0) 0,rgba(85,85,85,.8) 20% 80%,rgba(60,60,60,0) 100%);line-height:100%}
 .gridlabel,.copySvg{transition:all .2s ease-out}
 .copySvg{position:relative;top:-3px;stroke-width:1px;stroke-linecap:round}
 .copySvg:hover{filter:brightness(1.2);cursor:pointer}

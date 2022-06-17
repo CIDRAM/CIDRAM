@@ -70,3 +70,4 @@
 - Added the copy SVG to the front-end signature file fixer page.
 - Improved log identification strategy.
 - Following symlinks for RecursiveDirectoryIterator instances enabled.
+- Slightly improved RTL support.

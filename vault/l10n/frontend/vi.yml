@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Vietnamese language data for the front-end (last modified: 2022.06.15).
+# This file: Vietnamese language data for the front-end (last modified: 2022.06.16).
 ##/
 
 Extended Description AbuseIPDB module: "Chặn các yêu cầu từ IP được liệt kê tại AbuseIPDB."
@@ -33,7 +33,7 @@ Extended Description IPv6-Other: *ExtDesOther
 Extended Description Optional security extras module: "Cung cấp một số bảo vệ hạn chế chống vectơ tấn công khác nhau thường được sử dụng trong các yêu cầu."
 Extended Description PHPMailer: "Cần thiết để sử dụng bất kỳ chức năng nào liên quan đến việc gửi email.<br />{{Links.PHPMailer.PHPMailer}} có sẵn qua giấy phép {{Links.PHPMailer.License}}."
 Extended Description Project Honeypot module: "Chặn các yêu cầu từ IP được liệt kê tại Project Honeypot."
-Extended Description Referrer spam module: "Chặn dựa trên spam giới thiệu thường không cung cấp bất kỳ lợi ích bảo mật có ý nghĩa nào, nhưng trong một số trường hợp, có thể hữu ích cho một số người dùng, để thu thập thêm thông tin về các yêu cầu và để có thể báo cáo nó.<br />Bằng cách cài đặt mô-đun này, các polyfill Symfony cho {{Links.Symfony.Intl/Idn}} và {{Links.Symfony.Mbstring}} cũng sẽ được cài đặt (bởi vì mô-đun này yêu cầu chức năng "Idn", và không phải tất cả các cài đặt PHP cung cấp nó theo mặc định). Cả hai đều có sẵn thông qua giấy phép <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a>."
+Extended Description Referrer spam module: "Chặn dựa trên spam giới thiệu thường không cung cấp bất kỳ lợi ích bảo mật có ý nghĩa nào, nhưng trong một số trường hợp, có thể hữu ích cho một số người dùng, để thu thập thêm thông tin về các yêu cầu và để có thể báo cáo nó.<br />Bằng cách cài đặt mô-đun này, các polyfill Symfony cho {{Links.Symfony.Intl/Idn}} cũng sẽ được cài đặt (bởi vì mô-đun này yêu cầu chức năng "Idn", và không phải tất cả các cài đặt PHP cung cấp nó theo mặc định). Có sẵn thông qua giấy phép <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a>."
 Extended Description Search engines blocker module: "Cung cấp khả năng chặn các máy tìm kiếm có thể có vấn đề đối với một số trang web (ví dụ, Baidu, Sogou, Yandex, vv)."
 Extended Description Stop Forum Spam module: "Bảo vệ các trang đăng ký và đăng nhập đối với các địa chỉ IP do SFS liệt kê."
 Name AbuseIPDB module: "Mô-đun AbuseIPDB"
@@ -87,7 +87,7 @@ config_bgpview_blocked_ccs: "Danh sách các quốc gia (được xác định b
 config_bgpview_whitelisted_asns: "Danh sách các ASN sẽ được đưa vào danh sách trắng khi được đối sánh bởi mô-đun BGPView."
 config_bgpview_whitelisted_ccs: "Danh sách các quốc gia (được xác định bằng mã quốc gia 2 chữ số {{Links.ISO.3166}} của họ) sẽ được đưa vào danh sách trắng khi được đối sánh bởi mô-đun BGPView."
 config_bunnycdn: "Cấu hình cho mô-đun tương thích BunnyCDN."
-config_bunnycdn_positive_action: "CIDRAM nên thực hiện hành động nào khi gặp yêu cầu từ BunnyCDN? Hành động mặc định = Đi qua."
+config_bunnycdn_positive_action: "CIDRAM nên thực hiện hành động nào khi gặp yêu cầu từ BunnyCDN? Hành động mặc định = Đường tránh."
 config_bypasses: "Cấu hình cho các đường tránh chữ ký mặc định."
 config_bypasses_used: "Những đường tránh nào nên được sử dụng?"
 config_components: "Cấu hình để kích hoạt và vô hiệu hóa các thành phần được sử dụng bởi CIDRAM. Thường được điền bởi trang cập nhật, nhưng cũng có thể được quản lý từ đây để kiểm soát tốt hơn và cho các thành phần tùy chỉnh không được công nhận bởi trang cập nhật."
@@ -401,7 +401,7 @@ label_backup_location: "Vị trí sao lưu kho lưu trữ (trong trường hợp
 label_banned: "Yêu cầu bị cấm"
 label_blocked: "Yêu cầu bị chặn"
 label_branch: "Chi nhánh ổn định mới nhất:"
-label_bypass_the_request: "Trigger a bypass.\nSubtracts one count from the number of signatures triggered, as long as at least one signature has already been triggered. Recommended for dealing with simple false positives potentially caused by the default signature files."
+label_bypass_the_request: "Kích hoạt một đường tránh.\nTrừ một số cho số chữ ký được kích hoạt, miễn là ít nhất một chữ ký đã được kích hoạt. Được khuyến khích cho xử lý các trường hợp sai tích cực đơn giản có thể được gây ra bởi các tập tin chữ ký mặc định."
 label_captcha: "CAPTCHA nỗ lực"
 label_check_aux: "Cũng kiểm tra đối với các quy tắc phụ trợ."
 label_check_modules: "Cũng kiểm tra đối với mô-đun."
@@ -428,7 +428,7 @@ label_fmgr_safety: "Cơ chế an toàn"
 label_fmgr_total_disk_usage: "Số lượng sử dụng đĩa trong tổng số:"
 label_fmgr_total_space: "Số lượng không gian đĩa trong tổng số:"
 label_fmgr_updates_metadata: "Siêu dữ liệu cho cập nhật thành phần"
-label_greylist_the_request: "Greylist the request.\nResets the number of signatures triggered, but continues processing the request. Recommended when you don't want to whitelist the request, but need something more substantial than triggering a bypass."
+label_greylist_the_request: "Danh sách xám các yêu cầu.\nĐặt lại số lượng chữ ký được kích hoạt, nhưng vẫn tiếp tục xử lý yêu cầu. Được khuyến khích khi bạn không muốn đưa yêu cầu vào danh sách trắng, nhưng cần điều gì đó thực chất hơn kích hoạt trường hợp."
 label_hide: "Che giấu"
 label_http_response_header_code_200: "200 OK\nKhông mạnh mẽ, nhưng thân thiện với người dùng nhất. Các yêu cầu tự động rất có thể sẽ diễn giải phản hồi này là dấu hiệu cho thấy yêu cầu đã thành công."
 label_http_response_header_code_403: "403 Forbidden (Bị cấm)\nHơi mạnh mẽ, và thân thiện với người dùng. Được khuyến khích cho hầu hết các trường hợp chung."
@@ -489,7 +489,7 @@ label_usemode_blkd: "Chỉ khi bị chặn, trong giới hạn chữ ký, và kh
 label_usemode_blkd_mrkd: "Chỉ khi bị chặn, được đánh dấu đặc biệt để sử dụng, trong giới hạn chữ ký, và không bị cấm."
 label_usemode_not_blkd: "Chỉ khi không bị chặn."
 label_usemode_not_blkd_mrkd: "Chỉ khi không bị chặn, hoặc khi được đánh dấu đặc biệt để sử dụng, trong giới hạn chữ ký, và không bị cấm."
-label_whitelist_the_request: "Whitelist the request.\nResets the number of signatures triggered, and aborts any further processing of the request. Guarantees that CIDRAM will never block the request."
+label_whitelist_the_request: "Danh sách trắng các yêu cầu.\nĐặt lại số lượng chữ ký được kích hoạt, và hủy bỏ mọi quá trình xử lý yêu cầu tiếp theo. Đảm bảo rằng CIDRAM sẽ không bao giờ chặn yêu cầu."
 label_your_ip: "IP của bạn:"
 label_your_ua: "UA của bạn:"
 link_accounts: "Tài khoản"

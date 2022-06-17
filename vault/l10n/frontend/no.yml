@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Norwegian language data for the front-end (last modified: 2022.06.15).
+# This file: Norwegian language data for the front-end (last modified: 2022.06.16).
 ##/
 
 Extended Description AbuseIPDB module: "Blokkerer forespørsler fra IP-er oppført på AbuseIPDB."
@@ -33,7 +33,7 @@ Extended Description IPv6-Other: *ExtDesOther
 Extended Description Optional security extras module: "Gir noen begrensede beskyttelser mot ulike angrepsvektorer som ofte brukes i forespørsler."
 Extended Description PHPMailer: "Kreves for bruk av funksjonalitet som innebærer sending av e-post.<br />{{Links.PHPMailer.PHPMailer}} er tilgjengelig via {{Links.PHPMailer.License}}-lisensen."
 Extended Description Project Honeypot module: "Blokkerer forespørsler fra IP-er oppført på Project Honeypot."
-Extended Description Referrer spam module: "Blokkering basert på referansesøppel vil vanligvis ikke gi noen meningsfull sikkerhetsgevinst, men i noen tilfeller kan det være nyttig for noen brukere, for å samle mer informasjon om forespørsler og for å kunne rapportere det.<br />Ved å installere denne modulen installeres også Symfony-polyfyllene for {{Links.Symfony.Intl/Idn}} og {{Links.Symfony.Mbstring}} (fordi denne modulen krever Idn-funksjonalitet, som ikke alle PHP-installasjoner leverer som standard), begge som er tilgjengelige via <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a> lisensen."
+Extended Description Referrer spam module: "Blokkering basert på referansesøppel vil vanligvis ikke gi noen meningsfull sikkerhetsgevinst, men i noen tilfeller kan det være nyttig for noen brukere, for å samle mer informasjon om forespørsler og for å kunne rapportere det.<br />Ved å installere denne modulen installeres også Symfony-polyfyllene for {{Links.Symfony.Intl/Idn}} (fordi denne modulen krever Idn-funksjonalitet, som ikke alle PHP-installasjoner leverer som standard), tilgjengelige via <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a> lisensen."
 Extended Description Search engines blocker module: "Gir muligheten til å blokkere søkemotorer som kan være problematiske for noen nettsteder (f.eks., Baidu, Sogou, Yandex, osv)."
 Extended Description Stop Forum Spam module: "Beskytter registrerings og innloggingssider mot IP-adresser oppført av SFS."
 Name AbuseIPDB module: "AbuseIPDB modul"
@@ -401,7 +401,7 @@ label_backup_location: "Repository backup steder (i nødstilfelle, eller hvis al
 label_banned: "Forespørsler utestengt"
 label_blocked: "Forespørsler blokkert"
 label_branch: "Branch siste stabile:"
-label_bypass_the_request: "Trigger a bypass.\nSubtracts one count from the number of signatures triggered, as long as at least one signature has already been triggered. Recommended for dealing with simple false positives potentially caused by the default signature files."
+label_bypass_the_request: "Utløs en bypass.\nTrekker én telling fra antallet signaturer som er utløst, så lenge minst én signatur allerede er utløst. Anbefalt for å håndtere enkle falske positiver som potensielt kan forårsakes av standard signaturfilene."
 label_captcha: "CAPTCHA forsøk"
 label_check_aux: "Test også mot tilleggsregler."
 label_check_modules: "Test også mot moduler."
@@ -432,7 +432,7 @@ label_fmgr_safety: "Sikkerhetsmekanismer"
 label_fmgr_total_disk_usage: "Totalt diskbruk:"
 label_fmgr_total_space: "Totalt diskplass:"
 label_fmgr_updates_metadata: "Komponentoppdateringsmetadata"
-label_greylist_the_request: "Greylist the request.\nResets the number of signatures triggered, but continues processing the request. Recommended when you don't want to whitelist the request, but need something more substantial than triggering a bypass."
+label_greylist_the_request: "Grålister forespørselen.\nTilbakestiller antallet signaturer som er utløst, men fortsetter å behandle forespørselen. Anbefales når du ikke vil hvitelister forespørselen, men trenger noe mer omfattende enn å utløse en bypass."
 label_hide: "Gjem"
 label_http_response_header_code_200: "200 OK\nMinst robust, men mest brukervennlig. Automatiserte forespørsler vil mest sannsynlig tolke dette svaret som en indikasjon på at forespørselen var vellykket."
 label_http_response_header_code_403: "403 Forbidden (Forbudt)\nMer robust, men mindre brukervennlig. Anbefalt for de fleste generelle forhold."
@@ -497,7 +497,7 @@ label_usemode_blkd: "Bare når det er blokkert, innenfor signaturgrensen, og ikk
 label_usemode_blkd_mrkd: "Bare når det er blokkert, spesielt merket for bruk, innenfor signaturgrensen, og ikke utestengt."
 label_usemode_not_blkd: "Bare når det ikke blokkert."
 label_usemode_not_blkd_mrkd: "Bare når det ikke blokkert, eller når det spesielt merket for bruk, innenfor signaturgrensen, og ikke utestengt."
-label_whitelist_the_request: "Whitelist the request.\nResets the number of signatures triggered, and aborts any further processing of the request. Guarantees that CIDRAM will never block the request."
+label_whitelist_the_request: "Hvitelister forespørselen.\nTilbakestiller antallet signaturer som er utløst, og aborterer eventuell videre behandling av forespørselen. Garanterer at CIDRAM aldri vil blokkere forespørselen."
 label_your_ip: "Din IP:"
 label_your_ua: "Din UA:"
 link_accounts: "Kontoer"

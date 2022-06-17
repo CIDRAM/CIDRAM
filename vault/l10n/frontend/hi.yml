@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Hindi language data for the front-end (last modified: 2022.06.15).
+# This file: Hindi language data for the front-end (last modified: 2022.06.16).
 ##/
 
 Extended Description AbuseIPDB module: "AbuseIPDB पर सूचीबद्ध IP से अनुरोध ब्लॉक करता है।"
@@ -33,7 +33,7 @@ Extended Description IPv6-Other: *ExtDesOther
 Extended Description Optional security extras module: "आम तौर पर अनुरोधों में उपयोग किए गए विभिन्न हमले वाले वैक्टर के खिलाफ कुछ सीमित सुरक्षा प्रदान करता है।"
 Extended Description PHPMailer: "ईमेल भेजने में शामिल किसी भी कार्यक्षमता का उपयोग करने के लिए आवश्यक है।<br />{{Links.PHPMailer.PHPMailer}} {{Links.PHPMailer.License}} लाइसेंस के माध्यम से उपलब्ध है।"
 Extended Description Project Honeypot module: "Project Honeypot पर सूचीबद्ध IP से अनुरोध ब्लॉक करता है।"
-Extended Description Referrer spam module: "रेफरल स्पैम पर आधारित ब्लॉकिंग आम तौर पर कोई सार्थक सुरक्षा लाभ प्रदान नहीं करेगा, लेकिन कुछ मामलों में, कुछ उपयोगकर्ताओं के लिए उपयोगी हो सकता है, अनुरोधों के बारे में अधिक जानकारी इकट्ठा करने के लिए, और इसे रिपोर्ट करने में सक्षम होने के लिए।<br />इस मॉड्यूल को स्थापित करने से {{Links.Symfony.Intl/Idn}} और {{Links.Symfony.Mbstring}} के लिए Symfony Polyfill स्थापित होते हैं (क्योंकि इस मॉड्यूल में Idn कार्यक्षमता की आवश्यकता होती है, जो डिफ़ॉल्ट रूप से सभी PHP संस्थापन प्रदान नहीं करते हैं), दोनों जो <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a> लाइसेंस के माध्यम से उपलब्ध हैं।"
+Extended Description Referrer spam module: "रेफरल स्पैम पर आधारित ब्लॉकिंग आम तौर पर कोई सार्थक सुरक्षा लाभ प्रदान नहीं करेगा, लेकिन कुछ मामलों में, कुछ उपयोगकर्ताओं के लिए उपयोगी हो सकता है, अनुरोधों के बारे में अधिक जानकारी इकट्ठा करने के लिए, और इसे रिपोर्ट करने में सक्षम होने के लिए।<br />इस मॉड्यूल को स्थापित करने से {{Links.Symfony.Intl/Idn}} के लिए Symfony Polyfill स्थापित होते हैं (क्योंकि इस मॉड्यूल में Idn कार्यक्षमता की आवश्यकता होती है, जो डिफ़ॉल्ट रूप से सभी PHP संस्थापन प्रदान नहीं करते हैं), <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a> लाइसेंस के माध्यम से उपलब्ध हैं।"
 Extended Description Search engines blocker module: "खोज इंजन को ब्लॉक करने की क्षमता प्रदान करता है जो कुछ वेबसाइटों के लिए समस्याग्रस्त हो सकता है (जैसे, Baidu, Sogou, Yandex, आदि)।"
 Extended Description Stop Forum Spam module: "एसएफएस द्वारा सूचीबद्ध IP पते से पंजीकरण और लॉगिन पृष्ठ की सुरक्षा करता है।"
 Name AbuseIPDB module: "AbuseIPDB मॉड्यूल"
@@ -403,7 +403,7 @@ label_backup_location: "रिपोजिटरी बैकअप स्था
 label_banned: "अनुरोध प्रतिबंधित"
 label_blocked: "अनुरोध अवरुद्ध"
 label_branch: "शाखा नवीनतम स्थिर:"
-label_bypass_the_request: "Trigger a bypass.\nSubtracts one count from the number of signatures triggered, as long as at least one signature has already been triggered. Recommended for dealing with simple false positives potentially caused by the default signature files."
+label_bypass_the_request: "एक बाईपास ट्रिगर करें।\nयदि कम से कम एक हस्ताक्षर पहले ही ट्रिगर किया जा चुका है, तो ट्रिगर किए गए हस्ताक्षरों की संख्या से एक गिनती घटा देता है। डिफ़ॉल्ट हस्ताक्षर फ़ाइलों के कारण संभावित रूप से सरल झूठी सकारात्मकता से निपटने के लिए अनुशंसित।"
 label_captcha: "CAPTCHA प्रयास"
 label_check_aux: "सहायक नियमों के खिलाफ भी परीक्षण करें।"
 label_check_modules: "भी मॉड्यूल के खिलाफ भी परीक्षण करें।"
@@ -434,7 +434,7 @@ label_fmgr_safety: "सुरक्षा तंत्र"
 label_fmgr_total_disk_usage: "कुल डिस्क उपयोग:"
 label_fmgr_total_space: "कुल डिस्क स्पेस:"
 label_fmgr_updates_metadata: "कंपोनेंट अपडेट्स मेटाडेटा"
-label_greylist_the_request: "Greylist the request.\nResets the number of signatures triggered, but continues processing the request. Recommended when you don't want to whitelist the request, but need something more substantial than triggering a bypass."
+label_greylist_the_request: "अनुरोध को ग्रे सूचीबद्ध के रूप में मानें।\nट्रिगर किए गए हस्ताक्षरों की संख्या को रीसेट करता है, लेकिन अनुरोध को संसाधित करना जारी रखता है। इसका सुझाव तब दिया जाता है जब आप अनुरोध को सफेद सूचीबद्ध के रूप में मानें नहीं करना चाहते हैं, लेकिन बाईपास को ट्रिगर करने से अधिक प्रभावी चीज़ की आवश्यकता होती है।"
 label_hide: "छिपाना"
 label_http_response_header_code_200: "200 OK (ठीक है)\nकम से कम मजबूत, लेकिन अधिकांश उपयोगकर्ता के अनुकूल। स्वचालित अनुरोध इस प्रतिक्रिया की व्याख्या इस संकेत के रूप में करेंगे कि अनुरोध सफल रहा।"
 label_http_response_header_code_403: "403 Forbidden (निषिद्ध)\nअधिक मजबूत, लेकिन कम उपयोगकर्ता के अनुकूल। अधिकांश सामान्य परिस्थितियों के लिए अनुशंसित।"
@@ -497,7 +497,7 @@ label_usemode_blkd: "केवल जब अवरुद्ध है, हस्
 label_usemode_blkd_mrkd: "केवल जब अवरुद्ध है, हस्ताक्षर सीमा के भीतर, विशेष रूप से उपयोग के लिए चिह्नित, और प्रतिबंधित नहीं है।"
 label_usemode_not_blkd: "केवल जब अवरुद्ध नहीं है।"
 label_usemode_not_blkd_mrkd: "केवल जब अवरुद्ध नहीं है, या जब विशेष रूप से उपयोग के लिए चिह्नित किया गया है, हस्ताक्षर सीमा के भीतर हो, और प्रतिबंधित नहीं है।"
-label_whitelist_the_request: "Whitelist the request.\nResets the number of signatures triggered, and aborts any further processing of the request. Guarantees that CIDRAM will never block the request."
+label_whitelist_the_request: "अनुरोध को सफेद सूचीबद्ध के रूप में मानें।\nट्रिगर किए गए हस्ताक्षरों की संख्या को रीसेट करता है, और अनुरोध की आगे की प्रक्रिया को रोकता है। गारंटी देता है कि CIDRAM कभी भी अनुरोध को ब्लॉक नहीं करेगा।"
 label_your_ip: "तुम्हारी IP:"
 label_your_ua: "तुम्हारी UA:"
 link_accounts: "खातों"

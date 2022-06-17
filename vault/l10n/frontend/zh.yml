@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (simplified) language data for the front-end (last modified: 2022.06.15).
+# This file: Chinese (simplified) language data for the front-end (last modified: 2022.06.16).
 ##/
 
 Extended Description AbuseIPDB module: "阻止来自AbuseIPDB列出的IP的请求。"
@@ -33,7 +33,7 @@ Extended Description IPv6-Other: *ExtDesOther
 Extended Description Optional security extras module: "提供一些有限的保护针对各种攻击向量常用于请求。"
 Extended Description PHPMailer: "使用涉及发送电子邮件的任何功能时需要。<br />{{Links.PHPMailer.PHPMailer}}可通过{{Links.PHPMailer.License}}许可证获得。"
 Extended Description Project Honeypot module: "阻止来自Project Honeypot列出的IP的请求。"
-Extended Description Referrer spam module: "基于引荐来源垃圾邮件阻止通常不会提供任何有意义的安全利益，但在某些情况下，对某些用户可能有用，用于收集有关请求的更多信息，以及能够报告它。<br />通过安装此模块，还将安装用于{{Links.Symfony.Intl/Idn}}和{{Links.Symfony.Mbstring}}的Symfony polyfills（因为此模块需要Idn功能性，但并非所有PHP安装都默认提供该功能性）。​这两个都可以通过<a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a>许可获得。"
+Extended Description Referrer spam module: "基于引荐来源垃圾邮件阻止通常不会提供任何有意义的安全利益，但在某些情况下，对某些用户可能有用，用于收集有关请求的更多信息，以及能够报告它。<br />通过安装此模块，还将安装用于{{Links.Symfony.Intl/Idn}}的Symfony polyfills（因为此模块需要Idn功能性，但并非所有PHP安装都默认提供该功能性）。​可以通过<a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a>许可获得。"
 Extended Description Search engines blocker module: "搜索引擎（例如，百度、搜狗、Yandex 、等等）可能会导致某些网站出现问题。​这个模块可以阻止那些搜索引擎。"
 Extended Description Stop Forum Spam module: "防止通过SFS列出的IP地址访问注册和登录页面。"
 Name AbuseIPDB module: "AbuseIPDB 模块"
@@ -429,7 +429,7 @@ label_fmgr_safety: "安全机制"
 label_fmgr_total_disk_usage: "总共使用的磁盘空间："
 label_fmgr_total_space: "总磁盘空间："
 label_fmgr_updates_metadata: "组件更新元数据"
-label_greylist_the_request: "Greylist the request.\nResets the number of signatures triggered, but continues processing the request. Recommended when you don't want to whitelist the request, but need something more substantial than triggering a bypass."
+label_greylist_the_request: "将请求列入灰名单。\n重置触发的签名数量，但继续处理请求。​当您不想将请求列入白名单，但需要比触发的绕过更实质的时推荐使用。"
 label_hide: "隐藏"
 label_http_response_header_code_200: "200 OK （好的）\n最不健壮，但最用户友好。​自动请求很可能将此响应解释为成功。"
 label_http_response_header_code_403: "403 Forbidden （禁止的）\n更健壮，但不太用户友好。​一般最推荐的。"
@@ -490,7 +490,7 @@ label_usemode_blkd: "仅当被阻止时，在签名限制之内，并且不被�
 label_usemode_blkd_mrkd: "仅当被阻止时，专门标明使用时，在签名限制之内，并且不被禁止。"
 label_usemode_not_blkd: "仅在不被阻止时。"
 label_usemode_not_blkd_mrkd: "仅在不被阻止时，或专门标明使用时，在签名限制之内，并且不被禁止。"
-label_whitelist_the_request: "Whitelist the request.\nResets the number of signatures triggered, and aborts any further processing of the request. Guarantees that CIDRAM will never block the request."
+label_whitelist_the_request: "将请求列入白名单。\n重置触发的签名数量，并中止对请求的任何进一步处理。​保证CIDRAM永远不会阻止请求。"
 label_your_ip: "您的IP："
 label_your_ua: "您的UA："
 link_accounts: "帐户"

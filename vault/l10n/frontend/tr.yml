@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Turkish language data for the front-end (last modified: 2022.06.15).
+# This file: Turkish language data for the front-end (last modified: 2022.06.16).
 ##/
 
 Extended Description AbuseIPDB module: "AbuseIPDB'de listelenen IP'lerden gelen istekleri engeller."
@@ -33,7 +33,7 @@ Extended Description IPv6-Other: *ExtDesOther
 Extended Description Optional security extras module: "İsteklerde yaygın olarak kullanılan çeşitli saldırı vektörlerine karşı bazı sınırlı koruma sağlar."
 Extended Description PHPMailer: "E-posta göndermeyi içeren herhangi bir işlev kullanmak için gereklidir.<br />{{Links.PHPMailer.PHPMailer}}, {{Links.PHPMailer.License}} lisansı üzerinden kullanılabilir."
 Extended Description Project Honeypot module: "Project Honeypot'de listelenen IP'lerden gelen istekleri engeller."
-Extended Description Referrer spam module: "Yönlendiren spam'e dayalı engelleme genellikle anlamlı bir güvenlik avantajı sağlamaz, ancak bazı durumlarda, bazı kullanıcılar için istekler hakkında daha fazla bilgi toplamak ve bunu rapor edebilmek için yararlı olabilir.<br />Bu modülün yüklenmesi, {{Links.Symfony.Intl/Idn}} ve {{Links.Symfony.Mbstring}} için Symfony çoklu dolgularını da yükler (çünkü bu modül, tüm PHP kurulumlarının varsayılan olarak sağlamadığı Idn işlevselliği gerektirir), her ikisi de <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a> lisansı ile kullanılabilir."
+Extended Description Referrer spam module: "Yönlendiren spam'e dayalı engelleme genellikle anlamlı bir güvenlik avantajı sağlamaz, ancak bazı durumlarda, bazı kullanıcılar için istekler hakkında daha fazla bilgi toplamak ve bunu rapor edebilmek için yararlı olabilir.<br />Bu modülün yüklenmesi, {{Links.Symfony.Intl/Idn}} için Symfony çoklu dolgularını da yükler (çünkü bu modül, tüm PHP kurulumlarının varsayılan olarak sağlamadığı Idn işlevselliği gerektirir), <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a> lisansı ile kullanılabilir."
 Extended Description Search engines blocker module: "Bazı web siteleri için sorunlu olabilecek arama motorlarını (örneğin, Baidu, Sogou, Yandex, vb) engelleme yeteneği sağlar."
 Extended Description Stop Forum Spam module: "SFS tarafından listelenen IP'lere karşı kayıt ve oturum açma sayfalarını korur."
 Name AbuseIPDB module: "AbuseIPDB modülü"
@@ -401,7 +401,7 @@ label_backup_location: "Repository yedek konumları (acil bir durumda, ya da her
 label_banned: "Yasaklı istekler"
 label_blocked: "Engellenen istekler"
 label_branch: "Branşı en yeni kararlı:"
-label_bypass_the_request: "Trigger a bypass.\nSubtracts one count from the number of signatures triggered, as long as at least one signature has already been triggered. Recommended for dealing with simple false positives potentially caused by the default signature files."
+label_bypass_the_request: "Bir baypas tetikleyin.\nEn az bir imza zaten tetiklenmiş olduğu sürece, tetiklenen imza sayısından bir sayı çıkarır. Varsayılan imza dosyalarının neden olabileceği basit yanlış pozitiflerle başa çıkmak için önerilir."
 label_captcha: "CAPTCHA denemeler"
 label_check_aux: "Ayrıca yardımcı kurallara karşıda test edin."
 label_check_modules: "Ayrıca modülleri karşıda test edin."
@@ -432,7 +432,7 @@ label_fmgr_safety: "Güvenlik mekanizmaları"
 label_fmgr_total_disk_usage: "Toplam disk kullanımı:"
 label_fmgr_total_space: "Toplam disk alanı:"
 label_fmgr_updates_metadata: "Bileşen güncellemeleri meta verileri"
-label_greylist_the_request: "Greylist the request.\nResets the number of signatures triggered, but continues processing the request. Recommended when you don't want to whitelist the request, but need something more substantial than triggering a bypass."
+label_greylist_the_request: "İsteği gri listeye alın.\nTetiklenen imzaların sayısını sıfırlar, ancak isteği işlemeye devam eder. İsteği beyaz listeye eklemek istemediğiniz, ancak bir baypas tetiklemekten daha önemli bir şeye ihtiyacınız olduğunda önerilir."
 label_hide: "Saklamak"
 label_http_response_header_code_200: "200 OK (Tamam)\nEn az sağlam, ancak en kullanıcı dostu. Otomatik istekler, büyük olasılıkla bu yanıtı, isteğin başarılı olduğunun göstergesi olarak yorumlayacaktır."
 label_http_response_header_code_403: "403 Forbidden (Yasaktır)\nDaha sağlam, ancak daha az kullanıcı dostu. Çoğu genel durum için önerilir."
@@ -493,7 +493,7 @@ label_usemode_blkd: "Yalnızca engellendiğinde, imza sınırı dahilindeyken, v
 label_usemode_blkd_mrkd: "Yalnızca engellendiğinde, kullanım için özel olarak işaretlendiğinde, imza sınırı dahilindeyken, ve yasaklanmadığında."
 label_usemode_not_blkd: "Yalnızca engellenmediğinde."
 label_usemode_not_blkd_mrkd: "Yalnızca engellenmediğinde, veya kullanım için özel olarak işaretlendiğinde, imza sınırı dahilindeyken, ve yasaklanmadığında."
-label_whitelist_the_request: "Whitelist the request.\nResets the number of signatures triggered, and aborts any further processing of the request. Guarantees that CIDRAM will never block the request."
+label_whitelist_the_request: "İsteği beyaz listeye alın.\nTetiklenen imzaların sayısını sıfırlar, ve isteğin daha fazla işlenmesini iptal eder. CIDRAM'ın isteği asla engellemeyeceğini garanti eder."
 label_your_ip: "Senin IP:"
 label_your_ua: "Senin UA:"
 link_accounts: "Hesaplar"

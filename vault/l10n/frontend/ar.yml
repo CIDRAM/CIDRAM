@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Arabic language data for the front-end (last modified: 2022.06.15).
+# This file: Arabic language data for the front-end (last modified: 2022.06.16).
 ##/
 
 Extended Description AbuseIPDB module: "بحظر الطلبات من عناوين IP المدرجة في AbuseIPDB."
@@ -33,7 +33,7 @@ Extended Description IPv6-Other: *ExtDesOther
 Extended Description Optional security extras module: "يوفر بعض الحماية محدودة ضد مختلف ناقلات هجوم تستخدم عادة في طلبات."
 Extended Description PHPMailer: "مطلوب لاستخدام أي وظيفة تتضمن إرسال البريد الإلكتروني.<br />{{Links.PHPMailer.PHPMailer}} متاح عبر الترخيص الرخصه {{Links.PHPMailer.License}}."
 Extended Description Project Honeypot module: "بحظر الطلبات من عناوين IP المدرجة في Project Honeypot."
-Extended Description Referrer spam module: "لا يوفر الحظر بناءً على الإحالة غير المرغوب فيها عمومًا أي فائدة أمنية ذات مغزى، ولكن في بعض الحالات، قد يكون مفيدًا لبعض المستخدمين، ولجمع مزيد من المعلومات حول الطلبات، وللتمكن من الإبلاغ عنها.<br />يؤدي تثبيت هذه المكون النمطية أيضًا إلى تثبيت polyfill لـ Symfony لـ {{Links.Symfony.Intl/Idn}} و {{Links.Symfony.Mbstring}} (لأن هذه المكون تتطلب وظيفة Idn، والتي لا توفرها جميع عمليات تثبيت PHP بشكل افتراضي)، كلاهما متاح عبر ترخيص <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a>."
+Extended Description Referrer spam module: "لا يوفر الحظر بناءً على الإحالة غير المرغوب فيها عمومًا أي فائدة أمنية ذات مغزى، ولكن في بعض الحالات، قد يكون مفيدًا لبعض المستخدمين، ولجمع مزيد من المعلومات حول الطلبات، وللتمكن من الإبلاغ عنها.<br />يؤدي تثبيت هذه المكون النمطية أيضًا إلى تثبيت polyfill لـ Symfony لـ {{Links.Symfony.Intl/Idn}} (لأن هذه المكون تتطلب وظيفة Idn، والتي لا توفرها جميع عمليات تثبيت PHP بشكل افتراضي)، متاح عبر ترخيص <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a>."
 Extended Description Search engines blocker module: "يوفر القدرة على حظر محركات البحث التي قد تكون مشكلة لبعض مواقع الويب (على سبيل المثال، Baidu، Sogou، Yandex، إلخ)."
 Extended Description Stop Forum Spam module: "يحمي تسجيل صفحات ضد عناوين IP المدرجة من قبل SFS."
 Name AbuseIPDB module: "AbuseIPDB المكون"
@@ -401,7 +401,7 @@ label_backup_location: "مواقع النسخ الاحتياطي مستودع (�
 label_banned: "طلبات محظورة "
 label_blocked: "الطلبات المحظورة"
 label_branch: "فرع أحدث مستقرة:"
-label_bypass_the_request: "Trigger a bypass.\nSubtracts one count from the number of signatures triggered, as long as at least one signature has already been triggered. Recommended for dealing with simple false positives potentially caused by the default signature files."
+label_bypass_the_request: "تشغيل تجاوز.\nيطرح عددًا واحدًا من عدد التوقيعات التي تم تشغيلها، طالما تم بالفعل تشغيل توقيع واحد على الأقل. يوصى به للتعامل مع الإيجابيات الخاطئة البسيطة التي قد تكون ناجمة عن ملفات التوقيع الافتراضية."
 label_captcha: "محاولات CAPTCHA"
 label_check_aux: "أيضا اختبار ضد و القواعد الإضافية."
 label_check_modules: "أيضا اختبار ضد وحدات."
@@ -428,7 +428,7 @@ label_fmgr_safety: "آليات السلامة"
 label_fmgr_total_disk_usage: "إجمالي استخدام القرص:"
 label_fmgr_total_space: "إجمالي مساحة القرص:"
 label_fmgr_updates_metadata: "تحديثات البيانات الوصفية للمكون"
-label_greylist_the_request: "Greylist the request.\nResets the number of signatures triggered, but continues processing the request. Recommended when you don't want to whitelist the request, but need something more substantial than triggering a bypass."
+label_greylist_the_request: "القائمة الرمادية.\nيعيد تعيين عدد التوقيعات التي تم تشغيلها، ولكنه يستمر في معالجة الطلب. يوصى به عندما لا تريد إدراج الطلب في القائمة البيضاء، لكنك تحتاج إلى محتوى أكثر من تجاوز."
 label_hide: "إخفائه"
 label_http_response_header_code_200: "200 OK (حسنا)\nأقل قوة، ولكن الأكثر سهولة في الاستخدام. من المرجح أن تفسر الطلبات الآلية هذه الاستجابة على أنها إشارة إلى نجاح الطلب."
 label_http_response_header_code_403: "403 Forbidden (مُحرَّم)\nأكثر قوة، ولكن أقل سهولة في الاستخدام. موصى به لمعظم الظروف العامة."
@@ -493,7 +493,7 @@ label_usemode_blkd: "فقط عندما يتم مسدود، ضمن حدود ال�
 label_usemode_blkd_mrkd: "فقط عندما يتم مسدود، ويتم تمييزها خصيصًا للاستخدام، وضمن حدود التواقيع، وليس محظور."
 label_usemode_not_blkd: "فقط عندما لا يتم مسدود."
 label_usemode_not_blkd_mrkd: "فقط عندما لا يتم مسدود، أو عندما يتم تمييزها خصيصًا للاستخدام، وضمن حدود التواقيع، وليس محظور."
-label_whitelist_the_request: "Whitelist the request.\nResets the number of signatures triggered, and aborts any further processing of the request. Guarantees that CIDRAM will never block the request."
+label_whitelist_the_request: "القائمة البيضاء.\nيعيد تعيين عدد التوقيعات التي تم تشغيلها، ويحبط أي معالجة إضافية للطلب. يضمن أن CIDRAM لن تمنع الطلب أبدًا."
 label_your_ip: "عنوان IP الخاص بك:"
 label_your_ua: "وكيل المستخدم الخاص بك:"
 link_accounts: "حسابات"

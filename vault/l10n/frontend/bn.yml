@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Bangla language data for the front-end (last modified: 2022.06.15).
+# This file: Bangla language data for the front-end (last modified: 2022.06.16).
 ##/
 
 Extended Description AbuseIPDB module: "AbuseIPDB এ তালিকাভুক্ত আইপিগুলির থেকে ব্লক অনুরোধ।"
@@ -33,7 +33,7 @@ Extended Description IPv6-Other: *ExtDesOther
 Extended Description Optional security extras module: "অনুরোধগুলি সাধারণত ব্যবহৃত বিভিন্ন আক্রমণ ভেক্টরগুলির বিরুদ্ধে কিছু সীমিত সুরক্ষা প্রদান করে।"
 Extended Description PHPMailer: "ইমেল কার্যকারিতা পাঠানোর জন্য প্রয়োজনীয়।<br />{{Links.PHPMailer.PHPMailer}} {{Links.PHPMailer.License}} লাইসেন্সের মাধ্যমে উপলব্ধ।"
 Extended Description Project Honeypot module: "Project Honeypot এ তালিকাভুক্ত আইপিগুলির থেকে ব্লক অনুরোধ।"
-Extended Description Referrer spam module: "রেফারার স্প্যামের উপর ভিত্তি করে ব্লক করা সাধারণত কোনও অর্থবহ সুরক্ষা সুবিধা দেয় না, তবে কিছু ক্ষেত্রে এটি কিছু ব্যবহারকারীর পক্ষে কার্যকর হতে পারে, অনুরোধ সম্পর্কে আরও তথ্য সংগ্রহ করার জন্য, এবং এটি প্রতিবেদন করতে সক্ষম হওয়ার জন্য।<br />এই মডিউলটি ইনস্টল করা {{Links.Symfony.Intl/Idn}} এবং {{Links.Symfony.Mbstring}} এর জন্য Symfony polyfillগুলি ইনস্টল করে (কারণ এই মডিউলটির জন্য Idn কার্যকারিতা প্রয়োজন, যা সমস্ত PHP ইনস্টলেশন ডিফল্টরূপে সরবরাহ করে না), উভয়ই <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a> লাইসেন্সের মাধ্যমে উপলব্ধ।"
+Extended Description Referrer spam module: "রেফারার স্প্যামের উপর ভিত্তি করে ব্লক করা সাধারণত কোনও অর্থবহ সুরক্ষা সুবিধা দেয় না, তবে কিছু ক্ষেত্রে এটি কিছু ব্যবহারকারীর পক্ষে কার্যকর হতে পারে, অনুরোধ সম্পর্কে আরও তথ্য সংগ্রহ করার জন্য, এবং এটি প্রতিবেদন করতে সক্ষম হওয়ার জন্য।<br />এই মডিউলটি ইনস্টল করা {{Links.Symfony.Intl/Idn}} এর জন্য Symfony polyfillগুলি ইনস্টল করে (কারণ এই মডিউলটির জন্য Idn কার্যকারিতা প্রয়োজন, যা সমস্ত PHP ইনস্টলেশন ডিফল্টরূপে সরবরাহ করে না), <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a> লাইসেন্সের মাধ্যমে উপলব্ধ।"
 Extended Description Search engines blocker module: "অনুসন্ধান ইঞ্জিনগুলি ব্লক করার ক্ষমতা সরবরাহ করে যা কিছু ওয়েবসাইটের জন্য সমস্যাযুক্ত হতে পারে (যেমন, Baidu, Sogou, Yandex, ইত্যাদি)।"
 Extended Description Stop Forum Spam module: "SFS দ্বারা তালিকাভুক্ত আইপিগুলির বিরুদ্ধে রেজিস্ট্রেশন এবং লগইন পেজ রক্ষা করে।"
 Name AbuseIPDB module: "AbuseIPDB মডিউল"
@@ -401,7 +401,7 @@ label_backup_location: "সংগ্রহস্থল ব্যাকআপ অ
 label_banned: "অনুরোধ নিষিদ্ধ"
 label_blocked: "অনুরোধ অবরুদ্ধ"
 label_branch: "শাখা সর্বশেষ স্থিতিশীল:"
-label_bypass_the_request: "Trigger a bypass.\nSubtracts one count from the number of signatures triggered, as long as at least one signature has already been triggered. Recommended for dealing with simple false positives potentially caused by the default signature files."
+label_bypass_the_request: "একটি বাইপাস ট্রিগার করুন।\nযদি অন্তত একটি স্বাক্ষর ইতিমধ্যেই ট্রিগার হয়ে থাকে, তাহলে ট্রিগার করা স্বাক্ষরের সংখ্যা থেকে একটি বিয়োগ করে। সম্ভাব্য ডিফল্ট স্বাক্ষর ফাইল দ্বারা সৃষ্ট সাধারণ মিথ্যা ইতিবাচক মোকাবেলা করার জন্য প্রস্তাবিত।"
 label_captcha: "CAPTCHA প্রচেষ্টা"
 label_check_aux: "এছাড়াও অক্সিলিয়ারি নিয়ম বিরুদ্ধে পরীক্ষা করুন।"
 label_check_modules: "এছাড়াও মডিউলগুলির বিরুদ্ধে পরীক্ষা করুন।"
@@ -428,7 +428,7 @@ label_fmgr_safety: "নিরাপত্তা প্রক্রিয়া"
 label_fmgr_total_disk_usage: "মোট ডিস্ক ব্যবহার:"
 label_fmgr_total_space: "মোট ডিস্ক স্থান:"
 label_fmgr_updates_metadata: "কম্পোনেন্ট আপডেট মেটাডেটা"
-label_greylist_the_request: "Greylist the request.\nResets the number of signatures triggered, but continues processing the request. Recommended when you don't want to whitelist the request, but need something more substantial than triggering a bypass."
+label_greylist_the_request: "অনুরোধটি ধূসরা তালিকাভুক্ত করুন।\nট্রিগারকৃত স্বাক্ষরের সংখ্যা পুনরায় সেট করে, কিন্তু অনুরোধ প্রক্রিয়াকরণ চালিয়ে যায়। আপনি যখন অনুরোধটি সাদা তালিকাভুক্ত করতে চান না তখন প্রস্তাবিত, কিন্তু একটি বাইপাসের চেয়ে আরও উল্লেখযোগ্য কিছু প্রয়োজন৷।"
 label_hide: "লুকান"
 label_http_response_header_code_200: "200 OK (ঠিক আছে)\nসর্বনিম্ন শক্তিশালী, কিন্তু সবচেয়ে ব্যবহারকারী-বান্ধব। স্বয়ংক্রিয় অনুরোধগুলি সম্ভবত এই প্রতিক্রিয়াটিকে ইঙ্গিত হিসাবে ব্যাখ্যা করবে যে অনুরোধটি সফল হয়েছে৷।"
 label_http_response_header_code_403: "403 Forbidden (নিষিদ্ধ)\nআরও শক্তিশালী, কিন্তু কম ব্যবহারকারী-বান্ধব। সর্বাধিক সাধারণ পরিস্থিতিতে জন্য প্রস্তাবিত৷।"
@@ -489,7 +489,7 @@ label_usemode_blkd: "শুধুমাত্র যখন অবরুদ্ধ
 label_usemode_blkd_mrkd: "শুধুমাত্র যখন অবরুদ্ধ হলেই, বিশেষভাবে ব্যবহারের জন্য চিহ্নিত করা, স্বাক্ষর সীমাতে থাকে, এবং নিষিদ্ধ হয় না।"
 label_usemode_not_blkd: "শুধুমাত্র যখন অবরুদ্ধ না হলে।"
 label_usemode_not_blkd_mrkd: "শুধুমাত্র যখন অবরুদ্ধ না হলে, বা বিশেষভাবে ব্যবহারের জন্য চিহ্নিত করা, স্বাক্ষর সীমাতে থাকে, এবং নিষিদ্ধ হয় না।"
-label_whitelist_the_request: "Whitelist the request.\nResets the number of signatures triggered, and aborts any further processing of the request. Guarantees that CIDRAM will never block the request."
+label_whitelist_the_request: "অনুরোধটি সাদা তালিকাভুক্ত করুন।\nট্রিগারকৃত স্বাক্ষরের সংখ্যা পুনরায় সেট করে এবং অনুরোধের পরবর্তী প্রক্রিয়াকরণ বাতিল করে। গ্যারান্টি দেয় যে CIDRAM অনুরোধটি কখনই ব্লক করবে না।"
 label_your_ip: "আপনার IP:"
 label_your_ua: "আপনার UA:"
 link_accounts: "অ্যাকাউন্ট"

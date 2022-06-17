@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Korean language data for the front-end (last modified: 2022.06.15).
+# This file: Korean language data for the front-end (last modified: 2022.06.16).
 ##/
 
 Extended Description AbuseIPDB module: "AbuseIPDB에 나열된 IP의 요청을 차단합니다."
@@ -33,7 +33,7 @@ Extended Description IPv6-Other: *ExtDesOther
 Extended Description Optional security extras module: "요청에서 자주 사용되는 공격 경로에 대해 몇 가지 제한된 보호를 제공합니다."
 Extended Description PHPMailer: "이메일 전송과 관련된 기능 사용에 필요합니다.<br />{{Links.PHPMailer.PHPMailer}}는 {{Links.PHPMailer.License}} 라이센스를 통해 사용 가능합니다."
 Extended Description Project Honeypot module: "Project Honeypot에 나열된 IP의 요청을 차단합니다."
-Extended Description Referrer spam module: "리퍼러 스팸에 기반한 차단은 일반적으로 의미 있는 보안 이점을 제공하지 않습니다, 그러나 어떤 경우에는, 요청에 대한 추가 정보를 수집하고 보고서를 생성하는 데 유용 할 수 있습니다.<br />이 모듈을 설치하면, {{Links.Symfony.Intl/Idn}}및 {{Links.Symfony.Mbstring}}에 대한 Symfony 폴리 필도 설치됩니다 (이 모듈에는 Idn 기능이 필요하기 때문에 및, 모든 PHP 설치에서 기본적으로 제공하는 것은 아닙니다). 둘 다 <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a>라이센스를 통해 사용 가능합니다."
+Extended Description Referrer spam module: "리퍼러 스팸에 기반한 차단은 일반적으로 의미 있는 보안 이점을 제공하지 않습니다, 그러나 어떤 경우에는, 요청에 대한 추가 정보를 수집하고 보고서를 생성하는 데 유용 할 수 있습니다.<br />이 모듈을 설치하면, {{Links.Symfony.Intl/Idn}}에 대한 Symfony 폴리 필도 설치됩니다 (이 모듈에는 Idn 기능이 필요하기 때문에 및, 모든 PHP 설치에서 기본적으로 제공하는 것은 아닙니다). <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a>라이센스를 통해 사용 가능합니다."
 Extended Description Search engines blocker module: "일부 웹 사이트에서 문제가 될 수 있는 검색 엔진을 (예\_: Baidu, Sogou, Yandex, 등등), 차단하는 기능을 제공합니다."
 Extended Description Stop Forum Spam module: "SFS가 나열한 IP에 대한 등록 및 로그인 페이지를 보호합니다."
 Name AbuseIPDB module: "AbuseIPDB 모듈"
@@ -401,7 +401,7 @@ label_backup_location: "저장소 백업 위치 (비상사태의 경우, 또는 
 label_banned: "금지된 요청"
 label_blocked: "차단된 요청"
 label_branch: "분기 최신 안정\_:"
-label_bypass_the_request: "Trigger a bypass.\nSubtracts one count from the number of signatures triggered, as long as at least one signature has already been triggered. Recommended for dealing with simple false positives potentially caused by the default signature files."
+label_bypass_the_request: "바이패스를 트리거합니다.\n하나 이상의 서명이 이미 트리거 된 경우 트리거 된 서명 수에서 하나의 카운트를 뺍니다. 기본 서명 파일로 인해 발생할 수 있는 단순 오탄지 처리에 권장됩니다."
 label_captcha: "CAPTCHA 완료 시도"
 label_check_aux: "또한 보조 규칙에 대해 테스트하십시오."
 label_check_modules: "모듈에 대해서도 테스트하십시오."
@@ -428,7 +428,7 @@ label_fmgr_safety: "안전 장치"
 label_fmgr_total_disk_usage: "총 디스크 사용\_:"
 label_fmgr_total_space: "총 디스크 공간\_:"
 label_fmgr_updates_metadata: "구성 요소 업데이트 메타 데이터"
-label_greylist_the_request: "Greylist the request.\nResets the number of signatures triggered, but continues processing the request. Recommended when you don't want to whitelist the request, but need something more substantial than triggering a bypass."
+label_greylist_the_request: "요청을 그레이리스트에합니다.\n트리거 된 서명 수를 재설정하지만, 요청 처리를 계속합니다. 요청을 화이트리스트에하고 싶지 않지만, 우회를 트리거 하는 것보다 더 실질적인 것이 필요할 때 권장됩니다."
 label_hide: "숨기다"
 label_http_response_header_code_200: "200 OK\n가장 덜 강력하지만 가장 사용자 친화적입니다. 자동화된 요청은 이 응답을 요청이 성공했다는 표시로 해석할 가능성이 큽니다."
 label_http_response_header_code_403: "403 Forbidden (금지)\n더 강력하지만, 사용자 친화성은 떨어집니다. 대부분의 일반적인 상황에 권장됩니다."
@@ -489,7 +489,7 @@ label_usemode_blkd: "차단되었을, 서명 한도 내고 금지되지 않으�
 label_usemode_blkd_mrkd: "차단되었을, 특별히 사용 표시, 서명 한도 내고 금지되지 않으면 때만."
 label_usemode_not_blkd: "차단되지 때만."
 label_usemode_not_blkd_mrkd: "차단되지 않은 경우, 또는 특별히 사용 표시, 서명 한도 내고 금지되지 않으면 때만."
-label_whitelist_the_request: "Whitelist the request.\nResets the number of signatures triggered, and aborts any further processing of the request. Guarantees that CIDRAM will never block the request."
+label_whitelist_the_request: "요청을 화이트리스트합니다.\n트리거 된 서명 수를 재설정하고 추가 요청 처리를 중단합니다. CIDRAM이 요청을 차단하지 않을 것임을 보장합니다."
 label_your_ip: "당신의 IP\_:"
 label_your_ua: "당신의 UA\_:"
 link_accounts: "계정"

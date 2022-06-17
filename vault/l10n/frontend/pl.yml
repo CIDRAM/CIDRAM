@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Polish language data for the front-end (last modified: 2022.06.15).
+# This file: Polish language data for the front-end (last modified: 2022.06.16).
 ##/
 
 Extended Description AbuseIPDB module: "Blokuje żądania z adresów IP wymienionych w witrynie AbuseIPDB."
@@ -33,7 +33,7 @@ Extended Description IPv6-Other: *ExtDesOther
 Extended Description Optional security extras module: "Zapewnia pewne ograniczone zabezpieczenia przed różnymi wektorami ataków powszechnie używanymi w żądaniach."
 Extended Description PHPMailer: "Wymagane do korzystania z dowolnej funkcji związanej z wysyłaniem wiadomości e-mail.<br />{{Links.PHPMailer.PHPMailer}} jest dostępny za pośrednictwem licencji {{Links.PHPMailer.License}}."
 Extended Description Project Honeypot module: "Blokuje żądania z adresów IP wymienionych w Project Honeypot."
-Extended Description Referrer spam module: "Blokowanie na podstawie spamu odsyłającego zwykle nie zapewnia żadnych znaczących korzyści bezpieczeństwa, ale w niektórych przypadkach może być przydatne dla niektórych użytkowników, do gromadzenia dodatkowych informacji na temat żądań i możliwości ich zgłaszania.<br />Zainstalowanie tego modułu powoduje również zainstalowanie polifillów Symfony dla {{Links.Symfony.Intl/Idn}} i {{Links.Symfony.Mbstring}} (ponieważ ten moduł wymaga funkcjonalności Idn, której domyślnie nie zapewniają wszystkie instalacje PHP), oba które są dostępne za pośrednictwem licencji <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a>."
+Extended Description Referrer spam module: "Blokowanie na podstawie spamu odsyłającego zwykle nie zapewnia żadnych znaczących korzyści bezpieczeństwa, ale w niektórych przypadkach może być przydatne dla niektórych użytkowników, do gromadzenia dodatkowych informacji na temat żądań i możliwości ich zgłaszania.<br />Zainstalowanie tego modułu powoduje również zainstalowanie polifillów Symfony dla {{Links.Symfony.Intl/Idn}} (ponieważ ten moduł wymaga funkcjonalności Idn, której domyślnie nie zapewniają wszystkie instalacje PHP), dostępne za pośrednictwem licencji <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a>."
 Extended Description Search engines blocker module: "Zapewnia możliwość blokowania wyszukiwarek, co może być problematyczne dla niektórych stron internetowych (n.p., Baidu, Sogou, Yandex, itp)."
 Extended Description Stop Forum Spam module: "Chroni strony rejestracji i logowania przed adresami IP wymienionymi przez SFS."
 Name AbuseIPDB module: "Moduł AbuseIPDB"
@@ -318,7 +318,7 @@ hints_pdo_dsn:
  FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#HOW_TO_USE_PDO" hreflang="en-AU">Co to jest „PDO DSN”? Jak mogę używać PDO z CIDRAM?</a></em>"
 hints_verification:
  "Czym są „pozytywy” i „negatywy”?": "Podczas weryfikacji tożsamości przedstawionej przez żądanie, pomyślny wynik można określić jako „pozytywny” lub „negatywny”. W przypadku potwierdzenia, że prezentowana tożsamość jest prawdziwą tożsamością, zostanie ona określona jako „pozytywna”. W przypadku potwierdzenia, że przedstawiona tożsamość jest sfałszowana, zostanie ona określona jako „negatywna”. Jednak nieudany wynik (np. weryfikacja nie powiodła się, lub nie można ustalić prawdziwości przedstawionej tożsamości) nie zostanie opisany jako „pozytywny” lub „negatywny”. Zamiast tego nieudany wynik zostałby opisany po prostu jako niezweryfikowany. Gdy nie zostanie podjęta żadna próba weryfikacji tożsamości przedstawionej przez żądanie, żądanie zostanie również opisane jako niezweryfikowane. Terminy mają sens tylko w kontekście, w którym rozpoznawana jest tożsamość przedstawiona w żądaniu, a zatem tam, gdzie możliwa jest weryfikacja. W przypadku, gdy przedstawiona tożsamość nie pasuje do opcji przedstawionych powyżej, lub gdy tożsamość nie jest przedstawiona, opcje podane powyżej stają się nieistotne."
- "Czym są „obejście pojedynczych trafień”?": "W niektórych przypadkach pozytywnie zweryfikowane żądanie może nadal zostać zablokowane z powodu plików sygnatur, modułów, lub innych warunków żądania, i obejścia mogą być konieczne w celu uniknięcia fałszywych pozytywów. W przypadku, gdy obejście ma na celu zajęcie się dokładnie jednym wykroczeniem, ni mniej, ni więcej, takie obejście można opisać jako „obejście pojedynczego trafienia”."
+ "Czym są „obejście pojedynczych trafień”?": "W niektórych przypadkach pozytywnie zweryfikowane żądanie może nadal zostać zablokowane z powodu plików podpis, modułów, lub innych warunków żądania, i obejścia mogą być konieczne w celu uniknięcia fałszywych pozytywów. W przypadku, gdy obejście ma na celu zajęcie się dokładnie jednym wykroczeniem, ni mniej, ni więcej, takie obejście można opisać jako „obejście pojedynczego trafienia”."
 info_some_useful_links: |
  Kilka przydatnych linków:<br />
      <ul class="pieul">
@@ -404,7 +404,7 @@ label_backup_location: "Lokalizacje kopii zapasowych repozytorium (w nagłym wyp
 label_banned: "Żądania zbanowane"
 label_blocked: "Żądania zablokowane"
 label_branch: "Oddział najnowsza stabilna:"
-label_bypass_the_request: "Trigger a bypass.\nSubtracts one count from the number of signatures triggered, as long as at least one signature has already been triggered. Recommended for dealing with simple false positives potentially caused by the default signature files."
+label_bypass_the_request: "Uruchom obejście.\nJeśli przynajmniej jedna podpisa została już wyzwolona, odejmuje jedną liczbę od liczby wyzwolonych podpis. Zalecane do obsługi prostych fałszywych alarmów potencjalnie spowodowanych przez domyślne pliki podpis."
 label_captcha: "Próby CAPTCHA"
 label_check_aux: "Testuj także z reguły pomocnicze."
 label_check_modules: "Testuj także z modułami."
@@ -437,7 +437,7 @@ label_fmgr_safety: "Mechanizmy bezpieczeństwa"
 label_fmgr_total_disk_usage: "Zajęte miejsce na dysku:"
 label_fmgr_total_space: "Całkowite miejsce na dysku:"
 label_fmgr_updates_metadata: "Metadane aktualizacji komponentów"
-label_greylist_the_request: "Greylist the request.\nResets the number of signatures triggered, but continues processing the request. Recommended when you don't want to whitelist the request, but need something more substantial than triggering a bypass."
+label_greylist_the_request: "Traktuj żądanie jako umieszczone na szarej liście.\nResetuje liczbę wyzwolonych podpisów, ale kontynuuje przetwarzanie żądania. Polecane, gdy nie chcesz traktować żądania jako umieszczonego na białej liście, ale potrzebujesz czegoś bardziej istotnego niż uruchomienie obejścia."
 label_hide: "Ukryj"
 label_http_response_header_code_200: "200 OK\nNajmniej solidny, ale najbardziej przyjazny dla użytkownika. Zautomatyzowane żądania najprawdopodobniej zinterpretują tę odpowiedź jako wskazanie, że żądanie zakończyło się powodzeniem."
 label_http_response_header_code_403: "403 Forbidden (Zakazana)\nBardziej solidny, ale mniej przyjazny dla użytkownika. Zalecany w większości ogólnych okoliczności."
@@ -504,7 +504,7 @@ label_usemode_blkd: "Kiedy jest zablokowany, mieści się w limicie podpisów, i
 label_usemode_blkd_mrkd: "Kiedy jest zablokowany, specjalnie oznaczony do użytku, mieści się w limicie podpisów, i nie jest zbanowany."
 label_usemode_not_blkd: "Kiedy nie jest zablokowany."
 label_usemode_not_blkd_mrkd: "Kiedy nie jest zablokowany, lub kiedy specjalnie oznaczony do użytku, mieści się w limicie podpisów, i nie jest zbanowany."
-label_whitelist_the_request: "Whitelist the request.\nResets the number of signatures triggered, and aborts any further processing of the request. Guarantees that CIDRAM will never block the request."
+label_whitelist_the_request: "Traktuj żądanie jako umieszczone na białej liście.\nResetuje liczbę wyzwolonych podpisów i przerywa dalsze przetwarzanie żądania. Gwarantuje, że CIDRAM nigdy nie zablokuje żądania."
 label_your_ip: "Twój IP:"
 label_your_ua: "Twój UA:"
 link_accounts: "Konta"

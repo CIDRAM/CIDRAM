@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Indonesian language data for the front-end (last modified: 2022.06.15).
+# This file: Indonesian language data for the front-end (last modified: 2022.06.16).
 ##/
 
 Extended Description AbuseIPDB module: "Memblokir permintaan dari IP yang terdaftar oleh AbuseIPDB."
@@ -33,7 +33,7 @@ Extended Description IPv6-Other: *ExtDesOther
 Extended Description Optional security extras module: "Menyediakan beberapa perlindungan terbatas terhadap berbagai vektor serangan umum digunakan dalam permintaan."
 Extended Description PHPMailer: "Diperlukan untuk menggunakan fungsionalitas apapun yang melibatkan pengiriman email.<br />{{Links.PHPMailer.PHPMailer}} tersedia melalui lisensi {{Links.PHPMailer.License}}."
 Extended Description Project Honeypot module: "Memblokir permintaan dari IP yang terdaftar oleh Project Honeypot."
-Extended Description Referrer spam module: "Memblokir berdasarkan spam pengarah umumnya tidak akan memberikan manfaat keamanan yang berarti, tetapi dalam beberapa kasus, dapat bermanfaat bagi beberapa pengguna, untuk mengumpulkan lebih banyak informasi tentang permintaan, dan untuk dapat melaporkannya.<br />Menginstal modul ini juga menginstal polyfill Symfony untuk {{Links.Symfony.Intl/Idn}} dan {{Links.Symfony.Mbstring}} (karena modul ini memerlukan fungsionalitas Idn, yang tidak semua instalasi PHP menyediakan secara default), keduanya tersedia melalui lisensi <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a>."
+Extended Description Referrer spam module: "Memblokir berdasarkan spam pengarah umumnya tidak akan memberikan manfaat keamanan yang berarti, tetapi dalam beberapa kasus, dapat bermanfaat bagi beberapa pengguna, untuk mengumpulkan lebih banyak informasi tentang permintaan, dan untuk dapat melaporkannya.<br />Menginstal modul ini juga menginstal polyfill Symfony untuk {{Links.Symfony.Intl/Idn}} (karena modul ini memerlukan fungsionalitas Idn, yang tidak semua instalasi PHP menyediakan secara default), tersedia melalui lisensi <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a>."
 Extended Description Search engines blocker module: "Menyediakan kemampuan untuk memblokir mesin pencari yang mungkin bermasalah untuk beberapa situs web (mis., Baidu, Sogou, Yandex, dll)."
 Extended Description Stop Forum Spam module: "Melindungi halaman pendaftaran dan login terhadap IP yang terdaftar oleh SFS."
 Name AbuseIPDB module: "Modul AbuseIPDB"
@@ -401,7 +401,7 @@ label_backup_location: "Lokasi cadangan repositori (dalam keadaan darurat, atau 
 label_banned: "Permintaan dilarang"
 label_blocked: "Permintaan diblokir"
 label_branch: "Cabang terbaru stabil:"
-label_bypass_the_request: "Trigger a bypass.\nSubtracts one count from the number of signatures triggered, as long as at least one signature has already been triggered. Recommended for dealing with simple false positives potentially caused by the default signature files."
+label_bypass_the_request: "Memicu bypass.\nMengurangi satu hitungan dari jumlah tanda tangan yang dipicu, selama setidaknya satu tanda tangan telah dipicu. Direkomendasikan untuk menangani kesalahan positif sederhana yang berpotensi disebabkan oleh file tanda tangan default."
 label_captcha: "Upaya CAPTCHA"
 label_check_aux: "Juga menguji terhadap aturan tambahan."
 label_check_modules: "Juga menguji terhadap modul."
@@ -428,7 +428,7 @@ label_fmgr_safety: "Mekanisme keamanan"
 label_fmgr_total_disk_usage: "Penggunaan disk total:"
 label_fmgr_total_space: "Ruang disk total:"
 label_fmgr_updates_metadata: "Komponen memperbarui metadata"
-label_greylist_the_request: "Greylist the request.\nResets the number of signatures triggered, but continues processing the request. Recommended when you don't want to whitelist the request, but need something more substantial than triggering a bypass."
+label_greylist_the_request: "Mendaftar abu-abu permintaan.\nReset jumlah tanda tangan yang dipicu, tetapi terus memproses permintaan. Direkomendasikan saat Anda tidak ingin mendaftar permintaan putih, tetapi membutuhkan sesuatu yang lebih substansial daripada memicu bypass."
 label_hide: "Menyembunyikan"
 label_http_response_header_code_200: "200 OK\nPaling tidak kuat, tetapi paling ramah-pengguna. Permintaan otomatis kemungkinan besar akan menafsirkan respons ini sebagai indikasi bahwa permintaan berhasil."
 label_http_response_header_code_403: "403 Forbidden (Terlarang)\nLebih kuat, tetapi kurang ramah-pengguna. Direkomendasikan untuk kebanyakan keadaan umum."
@@ -489,7 +489,7 @@ label_usemode_blkd: "Hanya jika diblokir, dalam batas tanda tangan, dan tidak di
 label_usemode_blkd_mrkd: "Hanya jika diblokir, ditandai khusus untuk digunakan, dalam batas tanda tangan, dan tidak dilarang."
 label_usemode_not_blkd: "Hanya jika tidak diblokir."
 label_usemode_not_blkd_mrkd: "Hanya jika tidak diblokir, atau jika ditandai khusus untuk digunakan, dalam batas tanda tangan, dan tidak dilarang."
-label_whitelist_the_request: "Whitelist the request.\nResets the number of signatures triggered, and aborts any further processing of the request. Guarantees that CIDRAM will never block the request."
+label_whitelist_the_request: "Mendaftar putih permintaan.\nReset jumlah tanda tangan yang dipicu, dan membatalkan pemrosesan permintaan lebih lanjut. Menjamin bahwa CIDRAM tidak akan pernah memblokir permintaan."
 label_your_ip: "IP Anda:"
 label_your_ua: "UA Anda:"
 link_accounts: "Akun"

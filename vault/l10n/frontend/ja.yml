@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Japanese language data for the front-end (last modified: 2022.06.15).
+# This file: Japanese language data for the front-end (last modified: 2022.06.16).
 ##/
 
 Extended Description AbuseIPDB module: "AbuseIPDBにリストされているＩＰからの要求をブロックします。"
@@ -33,7 +33,7 @@ Extended Description IPv6-Other: *ExtDesOther
 Extended Description Optional security extras module: "リクエストでよく使用される攻撃経路に対して、​いくつかの制限された保護を提供します。"
 Extended Description PHPMailer: "電子Ｅメールの送信を含む機能の使用に必要です。<br />「{{Links.PHPMailer.PHPMailer}}」は、「{{Links.PHPMailer.License}}」ライセンスを介して利用可能です。"
 Extended Description Project Honeypot module: "Project HoneypotにリストされているＩＰからの要求をブロックします。"
-Extended Description Referrer spam module: "リファラー・スパムに基づくブロックは、通常、有意義なセキュリティ上の利点を提供しません、ただし、場合によっては、リクエストに関する詳細情報の収集、およびレポートの作成に役立つ可能性があります。<br />このモジュールをインストールすると、{{Links.Symfony.Intl/Idn}}と{{Links.Symfony.Mbstring}}のSymfonyポリフィルもインストールされます（このモジュールは「Idn」機能を必要とするためが、すべてのPHPインストールがデフォルトで提供するわけではありません）。​どちらも、<a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a>ライセンスを通じて入手できます。"
+Extended Description Referrer spam module: "リファラー・スパムに基づくブロックは、通常、有意義なセキュリティ上の利点を提供しません、ただし、場合によっては、リクエストに関する詳細情報の収集、およびレポートの作成に役立つ可能性があります。<br />このモジュールをインストールすると、{{Links.Symfony.Intl/Idn}}のSymfonyポリフィルもインストールされます（このモジュールは「Idn」機能を必要とするためが、すべてのＰＨＰインストールがデフォルトで提供するわけではありません）。​<a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">ＭＩＴ</a>ライセンスを通じて入手できます。"
 Extended Description Search engines blocker module: "一部のウェブサイトで問題となる可能性のある検索エンジンを（例：Baidu、Sogou、Yandexなど）ブロックする機能を提供します。"
 Extended Description Stop Forum Spam module: "ＳＦＳによってリストされたＩＰに対して登録ページとログインページを保護します。"
 Name AbuseIPDB module: "AbuseIPDB モジュール"
@@ -401,7 +401,7 @@ label_backup_location: "リポジトリ・バックアップの場所（緊急�
 label_banned: "禁止されたリクエスト"
 label_blocked: "ブロックされたリクエスト"
 label_branch: "ブランチ最新安定："
-label_bypass_the_request: "Trigger a bypass.\nSubtracts one count from the number of signatures triggered, as long as at least one signature has already been triggered. Recommended for dealing with simple false positives potentially caused by the default signature files."
+label_bypass_the_request: "バイパスをトリガーします。\n少なくとも１つのシグネチャがすでにトリガーされている限り、トリガーされたシグネチャの数から１カウントを減算します。​デフォルトのシグネチャ・ファイルによって引き起こされる可能性のある単純な偽陽性を処理するために推奨されます。"
 label_captcha: "キャプチャの試み"
 label_check_aux: "補助ルールに対してもテストします。"
 label_check_modules: "モジュールに対してもテストします。"
@@ -428,7 +428,7 @@ label_fmgr_safety: "安全メカニズム"
 label_fmgr_total_disk_usage: "ディスク使用量の合計："
 label_fmgr_total_space: "ディスク容量の合計："
 label_fmgr_updates_metadata: "コンポーネント・アップデート・メタデータ"
-label_greylist_the_request: "Greylist the request.\nResets the number of signatures triggered, but continues processing the request. Recommended when you don't want to whitelist the request, but need something more substantial than triggering a bypass."
+label_greylist_the_request: "リクエストをグレイリストします。\nトリガーされたシグネチャの数をリセットしますが、要求の処理を続行します。​リクエストをホワイトリストしたくないが、バイパスをトリガーするよりも実質的なものが必要な場合に推奨されます。"
 label_hide: "隠す"
 label_http_response_header_code_200: "200 OK （大丈夫です）\nそれは最小の堅牢が、最もユーザー・フレンドリーです。 自動化されたリクエストは、この応答をリクエストが成功したことを示すものとして解釈する可能性があります。"
 label_http_response_header_code_403: "403 Forbidden （禁断）\nそれはもっと堅牢ですが、少ないユーザー・フレンドリーです。 ほとんどの場合に推奨されます。"
@@ -489,7 +489,7 @@ label_usemode_blkd: "ブロックされ、シグネチャの制限内であり�
 label_usemode_blkd_mrkd: "ブロックされ、シグネチャの制限内であり、使用するために特別にマークされている、禁止されていない場合のみ。"
 label_usemode_not_blkd: "ブロックされていない場合のみ。"
 label_usemode_not_blkd_mrkd: "ブロックされていない場合、またはシグネチャの制限内であり、使用するために特別にマークされている場合のみ。"
-label_whitelist_the_request: "Whitelist the request.\nResets the number of signatures triggered, and aborts any further processing of the request. Guarantees that CIDRAM will never block the request."
+label_whitelist_the_request: "リクエストをホワイトリストします。\nトリガーされたシグネチャの数をリセットし、リクエストのそれ以上の処理を中止します。​CIDRAMがリクエストをブロックしないことを保証します。"
 label_your_ip: "あなたのＩＰ："
 label_your_ua: "あなたのＵＡ："
 link_accounts: "アカウント"

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Dutch language data for the front-end (last modified: 2022.06.15).
+# This file: Dutch language data for the front-end (last modified: 2022.06.16).
 ##/
 
 Extended Description AbuseIPDB module: "Blokkeert aanvragen van IP's die worden vermeld op AbuseIPDB."
@@ -33,7 +33,7 @@ Extended Description IPv6-Other: *ExtDesOther
 Extended Description Optional security extras module: "Biedt een beperkte bescherming tegen verschillende aanvalsvectoren vaak gebruikt in aanvragen."
 Extended Description PHPMailer: "Vereist voor het gebruik van functionaliteit die het verzenden van e-mail vereisen.<br />{{Links.PHPMailer.PHPMailer}} is beschikbaar via de {{Links.PHPMailer.License}}-licentie."
 Extended Description Project Honeypot module: "Blokkeert aanvragen van IP's die worden vermeld op Project Honeypot."
-Extended Description Referrer spam module: "Blokkering op basis van verwijzende spam levert over het algemeen geen betekenisvol beveiligingsvoordeel op, maar in sommige gevallen kan het nuttig zijn voor sommige gebruikers, voor het verzamelen van meer informatie over verzoeken en erover te rapporteren.<br />Door deze module te installeren, worden ook de Symfony-polyfills voor {{Links.Symfony.Intl/Idn}} en {{Links.Symfony.Mbstring}} geïnstalleerd (omdat deze module Idn-functionaliteit vereist, die niet alle PHP-installaties standaard bieden), beide die zijn beschikbaar via de <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a> licentie."
+Extended Description Referrer spam module: "Blokkering op basis van verwijzende spam levert over het algemeen geen betekenisvol beveiligingsvoordeel op, maar in sommige gevallen kan het nuttig zijn voor sommige gebruikers, voor het verzamelen van meer informatie over verzoeken en erover te rapporteren.<br />Door deze module te installeren, worden ook de Symfony-polyfills voor {{Links.Symfony.Intl/Idn}} geïnstalleerd (omdat deze module Idn-functionaliteit vereist, die niet alle PHP-installaties standaard bieden), beschikbaar via de <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a> licentie."
 Extended Description Search engines blocker module: "Biedt de mogelijkheid om zoekmachines te blokkeren, wat voor sommige websites problematisch kan zijn (b.v., Baidu, Sogou, Yandex, enz)."
 Extended Description Stop Forum Spam module: "Beschermt registratie en login tegen IP's die door SFS worden vermeld."
 Name AbuseIPDB module: "AbuseIPDB module"
@@ -403,7 +403,7 @@ label_backup_location: "Repository backup locaties (in geval van nood, of als al
 label_banned: "Verzoeken verbannen"
 label_blocked: "Verzoeken geblokkeerd"
 label_branch: "Branch laatste stabiele:"
-label_bypass_the_request: "Trigger a bypass.\nSubtracts one count from the number of signatures triggered, as long as at least one signature has already been triggered. Recommended for dealing with simple false positives potentially caused by the default signature files."
+label_bypass_the_request: "Trigger een bypass.\nTrekt één telling af van het aantal getriggerde signatures, zolang er minstens één signature is al getriggerd. Aanbevolen voor het omgaan met eenvoudige valse positieven die mogelijk worden veroorzaakt door de standaard signatuurbestanden."
 label_captcha: "CAPTCHA pogingen"
 label_check_aux: "Test ook tegen hulpregels."
 label_check_modules: "Test ook tegen modules."
@@ -434,7 +434,7 @@ label_fmgr_safety: "Veiligheidsmechanismen"
 label_fmgr_total_disk_usage: "Totaal schijfgebruik:"
 label_fmgr_total_space: "Totale schijfruimte:"
 label_fmgr_updates_metadata: "Component updates metadata"
-label_greylist_the_request: "Greylist the request.\nResets the number of signatures triggered, but continues processing the request. Recommended when you don't want to whitelist the request, but need something more substantial than triggering a bypass."
+label_greylist_the_request: "Behandel het verzoek als op de grijze lijst.\nStelt het aantal getriggerde signatures in op nul, maar gaat door met het verwerken van het verzoek. Aanbevolen wanneer u het verzoek niet als op de witte lijst wilt behandelen, maar iets meer substantieel nodig hebt dan het triggeren van een bypass."
 label_hide: "Verbergen"
 label_http_response_header_code_200: "200 OK\nMinst robuust, maar meest gebruiksvriendelijk. Geautomatiseerde verzoeken zullen dit antwoord hoogstwaarschijnlijk interpreteren als een indicatie dat het verzoek was succesvol."
 label_http_response_header_code_403: "403 Forbidden (Verboden)\nRobuuster, maar minder gebruiksvriendelijk. Aanbevolen voor de meeste algemene omstandigheden."
@@ -499,7 +499,7 @@ label_usemode_blkd: "Alleen wanneer geblokkeerd, binnen de signatures limiet, en
 label_usemode_blkd_mrkd: "Alleen wanneer geblokkeerd, speciaal gemarkeerd voor gebruik, binnen de signatures limiet, en niet verbannen."
 label_usemode_not_blkd: "Alleen wanneer niet geblokkeerd."
 label_usemode_not_blkd_mrkd: "Alleen wanneer niet geblokkeerd, of wanneer speciaal gemarkeerd voor gebruik, binnen de signatures limiet, en niet verbannen."
-label_whitelist_the_request: "Whitelist the request.\nResets the number of signatures triggered, and aborts any further processing of the request. Guarantees that CIDRAM will never block the request."
+label_whitelist_the_request: "Behandel het verzoek als op de witte lijst.\nStelt het aantal getriggerde signatures in op nul, en breekt elke verdere verwerking van het verzoek af. Garandeert dat CIDRAM het verzoek nooit zal blokkeren."
 label_your_ip: "Je IP:"
 label_your_ua: "Je UA:"
 link_accounts: "Accounts"

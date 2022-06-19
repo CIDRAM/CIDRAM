@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods used for auxiliary rules (last modified: 2022.05.20).
+ * This file: Methods used for auxiliary rules (last modified: 2022.06.19).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -630,10 +630,10 @@ trait AuxiliaryRules
      */
     private function updateAuxData(): bool
     {
-        if (($NewAuxData = $this->YAML->reconstruct($this->CIDRAM['AuxData'])) && strlen($NewAuxData) > 2) {
+        if (($NewAuxArr = $this->YAML->reconstruct($this->CIDRAM['AuxData'])) && strlen($NewAuxArr) > 2) {
             $Handle = fopen($this->Vault . 'auxiliary.yml', 'wb');
             if ($Handle !== false) {
-                fwrite($Handle, $NewAuxData);
+                fwrite($Handle, $NewAuxArr);
                 fclose($Handle);
                 return true;
             }

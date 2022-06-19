@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM front-end (last modified: 2022.06.17).
+ * This file: The CIDRAM front-end (last modified: 2022.06.19).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -238,31 +238,27 @@ class FrontEnd extends Core
         } else {
             if (isset($this->Stages['Tests:Enable'])) {
                 if (
-                    !strlen($this->Configuration['components']['ipv4']) &&
-                    !strlen($this->Configuration['components']['ipv6'])
+                    $this->Configuration['components']['ipv4'] === '' &&
+                    $this->Configuration['components']['ipv6'] === ''
                 ) {
                     /** No active signature files. */
                     $this->CIDRAM['Warnings'][] = $this->L10N->getString('warning_no_active_signature_files');
                 }
-            } else {
-                if (
-                    strlen($this->Configuration['components']['ipv4']) &&
-                    strlen($this->Configuration['components']['ipv6'])
-                ) {
-                    /** IP tests disabled. */
-                    $this->CIDRAM['Warnings'][] = $this->L10N->getString('warning_ip_tests_disabled');
-                }
+            } elseif (
+                $this->Configuration['components']['ipv4'] === '' &&
+                $this->Configuration['components']['ipv6'] === ''
+            ) {
+                /** IP tests disabled. */
+                $this->CIDRAM['Warnings'][] = $this->L10N->getString('warning_ip_tests_disabled');
             }
             if (isset($this->Stages['Modules:Enable'])) {
-                if (!strlen($this->Configuration['components']['modules'])) {
+                if ($this->Configuration['components']['modules'] === '') {
                     /** No active modules. */
                     $this->CIDRAM['Warnings'][] = $this->L10N->getString('warning_no_active_modules');
                 }
-            } else {
-                if (strlen($this->Configuration['components']['modules'])) {
-                    /** Modules disabled. */
-                    $this->CIDRAM['Warnings'][] = $this->L10N->getString('warning_modules_disabled');
-                }
+            } elseif ($this->Configuration['components']['modules'] === '') {
+                /** Modules disabled. */
+                $this->CIDRAM['Warnings'][] = $this->L10N->getString('warning_modules_disabled');
             }
         }
 
@@ -3304,7 +3300,7 @@ class FrontEnd extends Core
                 /** Iterate through the addresses given to test. */
                 foreach ($_POST['ip-addr'] as $this->CIDRAM['ThisIP']['IPAddress']) {
                     if ($this->FE['TestMode'] === 1) {
-                        if (!strlen($this->CIDRAM['ThisIP']['IPAddress'])) {
+                        if (strlen($this->CIDRAM['ThisIP']['IPAddress']) === 0) {
                             continue;
                         }
                         $this->simulateBlockEvent($this->CIDRAM['ThisIP']['IPAddress'], $this->CIDRAM['ModuleSwitch'], $this->CIDRAM['AuxSwitch'], $this->CIDRAM['VerificationSwitch']);
@@ -4119,67 +4115,67 @@ class FrontEnd extends Core
 
             /** Update auxiliary rules. */
             if (isset($_POST, $_POST['rulePriority']) && is_array($_POST['rulePriority'])) {
-                $this->CIDRAM['NewAuxArr'] = [];
-                foreach ($_POST['rulePriority'] as $this->CIDRAM['Iterant'] => $this->CIDRAM['Priority']) {
+                $NewAuxArr = [];
+                foreach ($_POST['rulePriority'] as $Iterant => $Priority) {
                     if (
-                        !isset($_POST['ruleName'][$this->CIDRAM['Iterant']]) ||
-                        !strlen($_POST['ruleName'][$this->CIDRAM['Iterant']]) ||
-                        $_POST['ruleName'][$this->CIDRAM['Iterant']] === ' '
+                        !isset($_POST['ruleName'][$Iterant]) ||
+                        !strlen($_POST['ruleName'][$Iterant]) ||
+                        $_POST['ruleName'][$Iterant] === ' '
                     ) {
                         continue;
                     }
-                    $this->CIDRAM['NewAuxArr'][$_POST['ruleName'][$this->CIDRAM['Iterant']]] = ['Priority' => $this->CIDRAM['Priority']];
-                    if (!empty($_POST['mtd'][$this->CIDRAM['Iterant']])) {
-                        if ($_POST['mtd'][$this->CIDRAM['Iterant']] === 'mtdReg') {
-                            $this->CIDRAM['NewAuxArr'][$_POST['ruleName'][$this->CIDRAM['Iterant']]]['Method'] = 'RegEx';
-                        } elseif ($_POST['mtd'][$this->CIDRAM['Iterant']] === 'mtdWin') {
-                            $this->CIDRAM['NewAuxArr'][$_POST['ruleName'][$this->CIDRAM['Iterant']]]['Method'] = 'WinEx';
+                    $NewAuxArr[$_POST['ruleName'][$Iterant]] = ['Priority' => $Priority];
+                    if (!empty($_POST['mtd'][$Iterant])) {
+                        if ($_POST['mtd'][$Iterant] === 'mtdReg') {
+                            $NewAuxArr[$_POST['ruleName'][$Iterant]]['Method'] = 'RegEx';
+                        } elseif ($_POST['mtd'][$Iterant] === 'mtdWin') {
+                            $NewAuxArr[$_POST['ruleName'][$Iterant]]['Method'] = 'WinEx';
                         }
                     }
-                    if (!empty($_POST['Notes'][$this->CIDRAM['Iterant']])) {
-                        $this->CIDRAM['NewAuxArr'][$_POST['ruleName'][$this->CIDRAM['Iterant']]]['Notes'] = $_POST['Notes'][$this->CIDRAM['Iterant']];
+                    if (!empty($_POST['Notes'][$Iterant])) {
+                        $NewAuxArr[$_POST['ruleName'][$Iterant]]['Notes'] = $_POST['Notes'][$Iterant];
                     }
-                    if (!empty($_POST['logic'][$this->CIDRAM['Iterant']])) {
-                        $this->CIDRAM['NewAuxArr'][$_POST['ruleName'][$this->CIDRAM['Iterant']]]['Logic'] = $_POST['logic'][$this->CIDRAM['Iterant']];
+                    if (!empty($_POST['logic'][$Iterant])) {
+                        $NewAuxArr[$_POST['ruleName'][$Iterant]]['Logic'] = $_POST['logic'][$Iterant];
                     }
-                    if (!empty($_POST['ruleReason'][$this->CIDRAM['Iterant']])) {
-                        $this->CIDRAM['NewAuxArr'][$_POST['ruleName'][$this->CIDRAM['Iterant']]]['Reason'] = $_POST['ruleReason'][$this->CIDRAM['Iterant']];
+                    if (!empty($_POST['ruleReason'][$Iterant])) {
+                        $NewAuxArr[$_POST['ruleName'][$Iterant]]['Reason'] = $_POST['ruleReason'][$Iterant];
                     }
-                    if (!empty($_POST['ruleTarget'][$this->CIDRAM['Iterant']])) {
-                        $this->CIDRAM['NewAuxArr'][$_POST['ruleName'][$this->CIDRAM['Iterant']]]['Target'] = $_POST['ruleTarget'][$this->CIDRAM['Iterant']];
+                    if (!empty($_POST['ruleTarget'][$Iterant])) {
+                        $NewAuxArr[$_POST['ruleName'][$Iterant]]['Target'] = $_POST['ruleTarget'][$Iterant];
                     }
-                    if (!empty($_POST['ruleRun'][$this->CIDRAM['Iterant']])) {
-                        $this->CIDRAM['NewAuxArr'][$_POST['ruleName'][$this->CIDRAM['Iterant']]]['Run'] = ['File' => $_POST['ruleRun'][$this->CIDRAM['Iterant']]];
+                    if (!empty($_POST['ruleRun'][$Iterant])) {
+                        $NewAuxArr[$_POST['ruleName'][$Iterant]]['Run'] = ['File' => $_POST['ruleRun'][$Iterant]];
                     }
-                    if (!empty($_POST['from'][$this->CIDRAM['Iterant']])) {
-                        $this->CIDRAM['NewAuxArr'][$_POST['ruleName'][$this->CIDRAM['Iterant']]]['From'] = $_POST['from'][$this->CIDRAM['Iterant']];
+                    if (!empty($_POST['from'][$Iterant])) {
+                        $NewAuxArr[$_POST['ruleName'][$Iterant]]['From'] = $_POST['from'][$Iterant];
                     }
-                    if (!empty($_POST['expiry'][$this->CIDRAM['Iterant']])) {
-                        $this->CIDRAM['NewAuxArr'][$_POST['ruleName'][$this->CIDRAM['Iterant']]]['Expiry'] = $_POST['expiry'][$this->CIDRAM['Iterant']];
+                    if (!empty($_POST['expiry'][$Iterant])) {
+                        $NewAuxArr[$_POST['ruleName'][$Iterant]]['Expiry'] = $_POST['expiry'][$Iterant];
                     }
-                    if (!empty($_POST['statusCode'][$this->CIDRAM['Iterant']])) {
-                        $this->CIDRAM['NewAuxArr'][$_POST['ruleName'][$this->CIDRAM['Iterant']]]['Status Code'] = $_POST['statusCode'][$this->CIDRAM['Iterant']];
+                    if (!empty($_POST['statusCode'][$Iterant])) {
+                        $NewAuxArr[$_POST['ruleName'][$Iterant]]['Status Code'] = $_POST['statusCode'][$Iterant];
                     }
-                    $this->CIDRAM['NewAuxArr'][$_POST['ruleName'][$this->CIDRAM['Iterant']]]['Action'] = $_POST['act'][$this->CIDRAM['Iterant']] ?? '';
-                    if ($this->CIDRAM['NewAuxArr'][$_POST['ruleName'][$this->CIDRAM['Iterant']]]['Action'] !== 'actRun') {
-                        unset($this->CIDRAM['NewAuxArr'][$_POST['ruleName'][$this->CIDRAM['Iterant']]]['Run']);
+                    $NewAuxArr[$_POST['ruleName'][$Iterant]]['Action'] = $_POST['act'][$Iterant] ?? '';
+                    if ($NewAuxArr[$_POST['ruleName'][$Iterant]]['Action'] !== 'actRun') {
+                        unset($NewAuxArr[$_POST['ruleName'][$Iterant]]['Run']);
                     }
-                    $this->CIDRAM['NewAuxArr'][$_POST['ruleName'][$this->CIDRAM['Iterant']]]['SourceType'] = $_POST['conSourceType'][$this->CIDRAM['Iterant']] ?? '';
-                    $this->CIDRAM['NewAuxArr'][$_POST['ruleName'][$this->CIDRAM['Iterant']]]['IfOrNot'] = $_POST['conIfOrNot'][$this->CIDRAM['Iterant']] ?? '';
-                    $this->CIDRAM['NewAuxArr'][$_POST['ruleName'][$this->CIDRAM['Iterant']]]['SourceValue'] = $_POST['conSourceValue'][$this->CIDRAM['Iterant']] ?? '';
+                    $NewAuxArr[$_POST['ruleName'][$Iterant]]['SourceType'] = $_POST['conSourceType'][$Iterant] ?? '';
+                    $NewAuxArr[$_POST['ruleName'][$Iterant]]['IfOrNot'] = $_POST['conIfOrNot'][$Iterant] ?? '';
+                    $NewAuxArr[$_POST['ruleName'][$Iterant]]['SourceValue'] = $_POST['conSourceValue'][$Iterant] ?? '';
                     foreach ($this->CIDRAM['Provide']['Auxiliary Rules']['Flags'] as $this->CIDRAM['FlagSetName'] => $this->CIDRAM['FlagSet']) {
                         $this->CIDRAM['FlagSetKey'] = preg_replace('~[^A-Za-z]~', '', $this->CIDRAM['FlagSetName']);
-                        if (!empty($_POST[$this->CIDRAM['FlagSetKey']][$this->CIDRAM['Iterant']])) {
+                        if (!empty($_POST[$this->CIDRAM['FlagSetKey']][$Iterant])) {
                             foreach ($this->CIDRAM['FlagSet'] as $this->CIDRAM['FlagName'] => $this->CIDRAM['FlagData']) {
-                                if ($_POST[$this->CIDRAM['FlagSetKey']][$this->CIDRAM['Iterant']] === $this->CIDRAM['FlagName']) {
-                                    $this->CIDRAM['NewAuxArr'][$_POST['ruleName'][$this->CIDRAM['Iterant']]][$this->CIDRAM['FlagName']] = true;
+                                if ($_POST[$this->CIDRAM['FlagSetKey']][$Iterant] === $this->CIDRAM['FlagName']) {
+                                    $NewAuxArr[$_POST['ruleName'][$Iterant]][$this->CIDRAM['FlagName']] = true;
                                 }
                             }
                         }
                     }
                 }
                 unset($this->CIDRAM['FlagData'], $this->CIDRAM['FlagName'], $this->CIDRAM['FlagSetKey'], $this->CIDRAM['FlagSetName'], $this->CIDRAM['FlagSet']);
-                uasort($this->CIDRAM['NewAuxArr'], function ($A, $B): int {
+                uasort($NewAuxArr, function ($A, $B): int {
                     if ($A['Priority'] === $B['Priority']) {
                         return 0;
                     }
@@ -4191,65 +4187,65 @@ class FrontEnd extends Core
                     }
                     return $A['Priority'] < $B['Priority'] ? -1 : 1;
                 });
-                foreach ($this->CIDRAM['NewAuxArr'] as $this->CIDRAM['Iterant'] => &$this->CIDRAM['Data']) {
-                    if ($this->CIDRAM['Data']['Action'] === 'actWhl') {
-                        $this->CIDRAM['Data']['Action'] = 'Whitelist';
-                    } elseif ($this->CIDRAM['Data']['Action'] === 'actGrl') {
-                        $this->CIDRAM['Data']['Action'] = 'Greylist';
-                    } elseif ($this->CIDRAM['Data']['Action'] === 'actBlk') {
-                        $this->CIDRAM['Data']['Action'] = 'Block';
-                    } elseif ($this->CIDRAM['Data']['Action'] === 'actByp') {
-                        $this->CIDRAM['Data']['Action'] = 'Bypass';
-                    } elseif ($this->CIDRAM['Data']['Action'] === 'actLog') {
-                        $this->CIDRAM['Data']['Action'] = 'Don\'t log';
-                    } elseif ($this->CIDRAM['Data']['Action'] === 'actRdr') {
-                        $this->CIDRAM['Data']['Action'] = 'Redirect';
-                    } elseif ($this->CIDRAM['Data']['Action'] === 'actRun') {
-                        $this->CIDRAM['Data']['Action'] = 'Run';
-                    } elseif ($this->CIDRAM['Data']['Action'] === 'actPro') {
-                        $this->CIDRAM['Data']['Action'] = 'Profile';
+                foreach ($NewAuxArr as $Iterant => &$ThisAuxData) {
+                    if ($ThisAuxData['Action'] === 'actWhl') {
+                        $ThisAuxData['Action'] = 'Whitelist';
+                    } elseif ($ThisAuxData['Action'] === 'actGrl') {
+                        $ThisAuxData['Action'] = 'Greylist';
+                    } elseif ($ThisAuxData['Action'] === 'actBlk') {
+                        $ThisAuxData['Action'] = 'Block';
+                    } elseif ($ThisAuxData['Action'] === 'actByp') {
+                        $ThisAuxData['Action'] = 'Bypass';
+                    } elseif ($ThisAuxData['Action'] === 'actLog') {
+                        $ThisAuxData['Action'] = 'Don\'t log';
+                    } elseif ($ThisAuxData['Action'] === 'actRdr') {
+                        $ThisAuxData['Action'] = 'Redirect';
+                    } elseif ($ThisAuxData['Action'] === 'actRun') {
+                        $ThisAuxData['Action'] = 'Run';
+                    } elseif ($ThisAuxData['Action'] === 'actPro') {
+                        $ThisAuxData['Action'] = 'Profile';
                     }
-                    if (is_array($this->CIDRAM['Data']['SourceType'])) {
-                        foreach ($this->CIDRAM['Data']['SourceType'] as $this->CIDRAM['IterantInner'] => $this->CIDRAM['DataInner']) {
+                    if (is_array($ThisAuxData['SourceType'])) {
+                        foreach ($ThisAuxData['SourceType'] as $IterantInner => $DataInner) {
                             if (!isset(
-                                $this->CIDRAM['Data']['IfOrNot'][$this->CIDRAM['IterantInner']],
-                                $this->CIDRAM['Data']['SourceValue'][$this->CIDRAM['IterantInner']]
-                            ) || $this->CIDRAM['Data']['SourceValue'][$this->CIDRAM['IterantInner']] === '') {
+                                $ThisAuxData['IfOrNot'][$IterantInner],
+                                $ThisAuxData['SourceValue'][$IterantInner]
+                            ) || $ThisAuxData['SourceValue'][$IterantInner] === '') {
                                 continue;
                             }
-                            if (!isset($this->CIDRAM['Data'][$this->CIDRAM['Data']['Action']])) {
-                                $this->CIDRAM['Data'][$this->CIDRAM['Data']['Action']] = [];
+                            if (!isset($ThisAuxData[$ThisAuxData['Action']])) {
+                                $ThisAuxData[$ThisAuxData['Action']] = [];
                             }
-                            if ($this->CIDRAM['Data']['IfOrNot'][$this->CIDRAM['IterantInner']] === 'If') {
-                                if (!isset($this->CIDRAM['Data'][$this->CIDRAM['Data']['Action']]['If matches'])) {
-                                    $this->CIDRAM['Data'][$this->CIDRAM['Data']['Action']]['If matches'] = [];
+                            if ($ThisAuxData['IfOrNot'][$IterantInner] === 'If') {
+                                if (!isset($ThisAuxData[$ThisAuxData['Action']]['If matches'])) {
+                                    $ThisAuxData[$ThisAuxData['Action']]['If matches'] = [];
                                 }
-                                if (!isset($this->CIDRAM['Data'][$this->CIDRAM['Data']['Action']]['If matches'][$this->CIDRAM['DataInner']])) {
-                                    $this->CIDRAM['Data'][$this->CIDRAM['Data']['Action']]['If matches'][$this->CIDRAM['DataInner']] = [];
+                                if (!isset($ThisAuxData[$ThisAuxData['Action']]['If matches'][$DataInner])) {
+                                    $ThisAuxData[$ThisAuxData['Action']]['If matches'][$DataInner] = [];
                                 }
-                                $this->CIDRAM['Data'][$this->CIDRAM['Data']['Action']]['If matches'][$this->CIDRAM['DataInner']][] = $this->CIDRAM['Data']['SourceValue'][$this->CIDRAM['IterantInner']];
-                            } elseif ($this->CIDRAM['Data']['IfOrNot'][$this->CIDRAM['IterantInner']] === 'Not') {
-                                if (!isset($this->CIDRAM['Data'][$this->CIDRAM['Data']['Action']]['But not if matches'])) {
-                                    $this->CIDRAM['Data'][$this->CIDRAM['Data']['Action']]['But not if matches'] = [];
+                                $ThisAuxData[$ThisAuxData['Action']]['If matches'][$DataInner][] = $ThisAuxData['SourceValue'][$IterantInner];
+                            } elseif ($ThisAuxData['IfOrNot'][$IterantInner] === 'Not') {
+                                if (!isset($ThisAuxData[$ThisAuxData['Action']]['But not if matches'])) {
+                                    $ThisAuxData[$ThisAuxData['Action']]['But not if matches'] = [];
                                 }
-                                if (!isset($this->CIDRAM['Data'][$this->CIDRAM['Data']['Action']]['But not if matches'][$this->CIDRAM['DataInner']])) {
-                                    $this->CIDRAM['Data'][$this->CIDRAM['Data']['Action']]['But not if matches'][$this->CIDRAM['DataInner']] = [];
+                                if (!isset($ThisAuxData[$ThisAuxData['Action']]['But not if matches'][$DataInner])) {
+                                    $ThisAuxData[$ThisAuxData['Action']]['But not if matches'][$DataInner] = [];
                                 }
-                                $this->CIDRAM['Data'][$this->CIDRAM['Data']['Action']]['But not if matches'][$this->CIDRAM['DataInner']][] = $this->CIDRAM['Data']['SourceValue'][$this->CIDRAM['IterantInner']];
+                                $ThisAuxData[$ThisAuxData['Action']]['But not if matches'][$DataInner][] = $ThisAuxData['SourceValue'][$IterantInner];
                             }
                         }
                     }
-                    unset($this->CIDRAM['Data']['Priority'], $this->CIDRAM['Data']['SourceType'], $this->CIDRAM['Data']['IfOrNot'], $this->CIDRAM['Data']['SourceValue'], $this->CIDRAM['Data']['Action']);
+                    unset($ThisAuxData['Priority'], $ThisAuxData['SourceType'], $ThisAuxData['IfOrNot'], $ThisAuxData['SourceValue'], $ThisAuxData['Action']);
                 }
 
                 /** Reconstruct and update auxiliary rules data. */
-                if ($this->CIDRAM['NewAuxArr'] = $this->YAML->reconstruct($this->CIDRAM['NewAuxArr'])) {
+                if ($NewAuxArr = $this->YAML->reconstruct($NewAuxArr)) {
                     $Handle = fopen($this->Vault . 'auxiliary.yml', 'wb');
-                    fwrite($Handle, $this->CIDRAM['NewAuxArr']);
+                    fwrite($Handle, $NewAuxArr);
                     fclose($Handle);
                     $this->FE['state_msg'] = $this->L10N->getString('response_aux_updated');
                 }
-                unset($this->CIDRAM['IterantInner'], $this->CIDRAM['DataInner'], $this->CIDRAM['Iterant']);
+                unset($ThisAuxData, $DataInner, $Iterant, $IterantInner, $NewAuxArr, $Priority);
             }
 
             /** Process auxiliary rules. */
@@ -4374,8 +4370,8 @@ class FrontEnd extends Core
                     $this->FE['FieldSeparator'] = '：';
                 }
 
-                $BlockSeparator = (strpos($this->FE['logfileData'], "\n\n") !== false) ? "\n\n" : "\n";
-                $BlockSepLen = strlen($BlockSeparator);
+                $this->CIDRAM['BlockSeparator'] = (strpos($this->FE['logfileData'], "\n\n") !== false) ? "\n\n" : "\n";
+                $BlockSepLen = strlen($this->CIDRAM['BlockSeparator']);
 
                 /** Strip PHP header. */
                 if (substr($this->FE['logfileData'], 0, 15) === "\x3C\x3Fphp die; \x3F\x3E\n\n") {
@@ -4384,10 +4380,10 @@ class FrontEnd extends Core
 
                 /** Reverse entries order for viewing descending entries. */
                 if ($this->FE['SortOrder'] === 'descending') {
-                    $this->FE['logfileData'] = explode($BlockSeparator, $this->FE['logfileData']);
-                    $this->FE['logfileData'] = implode($BlockSeparator, array_reverse($this->FE['logfileData']));
-                    if (substr($this->FE['logfileData'], 0, $BlockSepLen) === $BlockSeparator) {
-                        $this->FE['logfileData'] = substr($this->FE['logfileData'], $BlockSepLen) . $BlockSeparator;
+                    $this->FE['logfileData'] = explode($this->CIDRAM['BlockSeparator'], $this->FE['logfileData']);
+                    $this->FE['logfileData'] = implode($this->CIDRAM['BlockSeparator'], array_reverse($this->FE['logfileData']));
+                    if (substr($this->FE['logfileData'], 0, $BlockSepLen) === $this->CIDRAM['BlockSeparator']) {
+                        $this->FE['logfileData'] = substr($this->FE['logfileData'], $BlockSepLen) . $this->CIDRAM['BlockSeparator'];
                     }
                 }
 
@@ -4405,8 +4401,8 @@ class FrontEnd extends Core
                 /** Handle pagination lower boundary. */
                 if ($this->FE['Paginate']) {
                     $this->FE['logfileData'] = $this->splitBeforeLine($this->FE['logfileData'], $this->FE['From']);
-                    $this->FE['EstAft'] = substr_count($this->FE['logfileData'][0], $BlockSeparator);
-                    $this->FE['EstFore'] = substr_count($this->FE['logfileData'][1], $BlockSeparator);
+                    $this->FE['EstAft'] = substr_count($this->FE['logfileData'][0], $this->CIDRAM['BlockSeparator']);
+                    $this->FE['EstFore'] = substr_count($this->FE['logfileData'][1], $this->CIDRAM['BlockSeparator']);
                     $this->FE['Needle'] = strlen($this->FE['logfileData'][0]);
                     $this->CIDRAM['Iterations'] = 0;
                     while ($this->stepThroughBlocks($this->FE['logfileData'][0], $this->FE['Needle'], 0, $this->FE['SearchQuery'], '<')) {
@@ -4459,8 +4455,8 @@ class FrontEnd extends Core
                         $this->FE['SearchQuery']
                     )) {
                         $this->FE['EntryCountBefore']++;
-                        $BlockStart = strrpos(substr($this->FE['logfileData'], 0, $this->FE['Needle']), $BlockSeparator, $BlockEnd);
-                        $BlockEnd = strpos($this->FE['logfileData'], $BlockSeparator, $this->FE['Needle']);
+                        $BlockStart = strrpos(substr($this->FE['logfileData'], 0, $this->FE['Needle']), $this->CIDRAM['BlockSeparator'], $BlockEnd);
+                        $BlockEnd = strpos($this->FE['logfileData'], $this->CIDRAM['BlockSeparator'], $this->FE['Needle']);
                         if ($this->FE['Paginate']) {
                             if (!$this->FE['From']) {
                                 $this->FE['From'] = $this->isolateFirstFieldEntry(
@@ -4484,8 +4480,8 @@ class FrontEnd extends Core
                             $NewLogFileData .= substr($this->FE['logfileData'], $BlockStart, $BlockEnd - $BlockStart);
                         }
                     }
-                    $this->FE['logfileData'] = rtrim($NewLogFileData) . $BlockSeparator;
-                    unset($this->FE['Needle'], $BlockSeparator, $BlockEnd, $BlockStart, $NewLogFileData);
+                    $this->FE['logfileData'] = rtrim($NewLogFileData) . $this->CIDRAM['BlockSeparator'];
+                    unset($this->FE['Needle'], $this->CIDRAM['BlockSeparator'], $BlockEnd, $BlockStart, $NewLogFileData);
                     $this->FE['SearchInfoRender'] = (
                         $this->FE['Flags'] && preg_match('~^[A-Z]{2}$~', $this->FE['SearchQuery'])
                     ) ? '<span class="flag ' . $this->FE['SearchQuery'] . '"><span></span></span>' : '<code>' . $this->FE['SearchQuery'] . '</code>';
@@ -4548,7 +4544,7 @@ class FrontEnd extends Core
                             if ($BlockOffset >= $OriginalLogDataLen) {
                                 break;
                             }
-                            $BlockEnd = strpos($this->FE['logfileData'], $BlockSeparator, $BlockStart);
+                            $BlockEnd = strpos($this->FE['logfileData'], $this->CIDRAM['BlockSeparator'], $BlockStart);
                             if ($BlockEnd === false) {
                                 break;
                             }
@@ -4566,7 +4562,7 @@ class FrontEnd extends Core
                             $BlockStart = $BlockEnd + $BlockSepLen;
                         }
                         $this->FE['logfileData'] = $NewLogFileData;
-                        unset($BlockOffset, $BlockSepLen, $BlockSeparator, $BlockEnd, $BlockStart, $OriginalLogDataLen, $NewLogFileData);
+                        unset($BlockOffset, $BlockSepLen, $this->CIDRAM['BlockSeparator'], $BlockEnd, $BlockStart, $OriginalLogDataLen, $NewLogFileData);
                     }
                     $this->FE['EntryCount'] = !str_replace("\n", '', $this->FE['logfileData']) ? 0 : (
                         substr_count($this->FE['logfileData'], "\n\n") ?: substr_count($this->FE['logfileData'], "\n")

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: General methods used by the front-end (last modified: 2022.06.17).
+ * This file: General methods used by the front-end (last modified: 2022.06.19).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -99,7 +99,7 @@ trait FrontEndMethods
                 }
                 if (($ExtDel = strrpos($Item, '.')) !== false) {
                     $Ext = strtoupper(substr($Item, $ExtDel + 1));
-                    if (!strlen($Ext)) {
+                    if ($Ext === '') {
                         $this->formatFileSize($Arr[$Key]['Filesize']);
                         continue;
                     }
@@ -648,7 +648,7 @@ trait FrontEndMethods
         /** Guard. */
         if (
             empty($this->FE['DateTime']) ||
-            !strlen($this->Configuration['frontend']['frontend_log']) ||
+            $this->Configuration['frontend']['frontend_log'] === '' ||
             !($File = $this->buildPath($this->Vault . $this->Configuration['frontend']['frontend_log']))
         ) {
             return;

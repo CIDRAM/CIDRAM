@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Protect traits (last modified: 2022.06.15).
+ * This file: Protect traits (last modified: 2022.06.19).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -27,7 +27,7 @@ trait Protect
      */
     private function addField(string $FieldInternal, string $FieldName, string $FieldData, bool $Sanitise = false, bool $ShowAtLabels = true): void
     {
-        if (!strlen($FieldData)) {
+        if ($FieldData === '') {
             if (isset($this->CIDRAM['Fields'][$FieldInternal . ':OmitIfEmpty'])) {
                 return;
             }

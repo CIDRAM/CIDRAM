@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods used by the range tables page (last modified: 2022.05.20).
+ * This file: Methods used by the range tables page (last modified: 2022.06.19).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -545,7 +545,7 @@ trait RangeTables
             }
             $Line = substr($Source, $SPos, $FPos - $SPos);
             $SPos = $FPos + 1;
-            if (!strlen($Line) || substr($Line, 0, 1) === '#') {
+            if ($Line === '' || substr($Line, 0, 1) === '#') {
                 continue;
             }
             $Matches = [];

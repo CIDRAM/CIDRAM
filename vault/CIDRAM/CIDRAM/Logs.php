@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods used by the logs page (last modified: 2022.05.24).
+ * This file: Methods used by the logs page (last modified: 2022.06.19).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -58,16 +58,16 @@ trait Logs
         $In = "\n" . $In;
         $Len = strlen($In);
         $Caret = 0;
-        $BlockSeparator = (strpos($In, "<br />\n<br />\n") !== false) ? "<br />\n<br />\n" : "<br />\n";
-        $BlockSeparatorLen = strlen($BlockSeparator);
+        $this->CIDRAM['BlockSeparator'] = (strpos($In, "<br />\n<br />\n") !== false) ? "<br />\n<br />\n" : "<br />\n";
+        $BlockSeparatorLen = strlen($this->CIDRAM['BlockSeparator']);
         while ($Caret < $Len) {
             $Remainder = $Len - $Caret;
             if ($Remainder < self::MAX_BLOCKSIZE && $Remainder < ini_get('pcre.backtrack_limit')) {
-                $Section = substr($In, $Caret) . $BlockSeparator;
+                $Section = substr($In, $Caret) . $this->CIDRAM['BlockSeparator'];
                 $Caret = $Len;
             } else {
-                $SectionLen = strrpos(substr($In, $Caret, self::MAX_BLOCKSIZE), $BlockSeparator);
-                $Section = substr($In, $Caret, $SectionLen) . $BlockSeparator;
+                $SectionLen = strrpos(substr($In, $Caret, self::MAX_BLOCKSIZE), $this->CIDRAM['BlockSeparator']);
+                $Section = substr($In, $Caret, $SectionLen) . $this->CIDRAM['BlockSeparator'];
                 $Caret += $SectionLen;
             }
             preg_match_all('~(&lt;\?(?:(?!&lt;\?)[^\n])+\?&gt;|<\?(?:(?!<\?)[^\n])+\?>|\{\?(?:(?!\{\?)[^\n])+\?\})~i', $Section, $Parts);
@@ -170,7 +170,7 @@ trait Logs
         while ($BlockEnd !== false) {
             $Darken = empty($Darken);
             $Style = '<div class="h' . ($Darken ? 'B' : 'W') . ' hFd fW">';
-            $BlockEnd = strpos($Out, $BlockSeparator, $BlockStart);
+            $BlockEnd = strpos($Out, $this->CIDRAM['BlockSeparator'], $BlockStart);
             $In[] = $Style . substr($Out, $BlockStart, $BlockEnd - $BlockStart + $BlockSeparatorLen) . '</div>';
             $BlockStart = $BlockEnd + $BlockSeparatorLen;
         }
@@ -300,7 +300,7 @@ trait Logs
         if ($Len < 1) {
             return ['', ''];
         }
-        if (!strlen($Boundary)) {
+        if ($Boundary === '') {
             return ['', $Data];
         }
         $BPos = strpos($Data, $Boundary);
@@ -347,7 +347,7 @@ trait Logs
     private function stepThroughBlocks(string $Data, &$Needle, $End, string $SearchQuery = '', string $Direction = '>'): bool
     {
         /** Guard. */
-        if (!is_int($End) || !strlen($Data) || ($Direction !== '<' && $Direction !== '>')) {
+        if (!is_int($End) || $Data === '' || ($Direction !== '<' && $Direction !== '>')) {
             return false;
         }
 
@@ -356,14 +356,14 @@ trait Logs
             $StrFunction = 'strpos';
         } else {
             $StrFunction = 'strrpos';
-            $End = ((strlen($Data) - $Needle) * -1) - strlen($BlockSeparator);
+            $End = ((strlen($Data) - $Needle) * -1) - strlen($this->CIDRAM['BlockSeparator']);
         }
 
         /** Step with search query. */
         if (strlen($SearchQuery)) {
             return (
                 ($Needle = $StrFunction($Data, (
-                    $BlockSeparator === "\n\n" ? $this->FE['FieldSeparator'] . $SearchQuery . "\n" : $SearchQuery
+                    $this->CIDRAM['BlockSeparator'] === "\n\n" ? $this->FE['FieldSeparator'] . $SearchQuery . "\n" : $SearchQuery
                 ), $End)) !== false ||
                 ($Needle = $StrFunction($Data, '("' . $SearchQuery . '", L', $End)) !== false ||
                 (strlen($SearchQuery) === 2 && ($Needle = $StrFunction($Data, '[' . $SearchQuery . ']', $End)) !== false)
@@ -371,7 +371,7 @@ trait Logs
         }
 
         /** Step without search query. */
-        return (($Needle = $StrFunction($Data, $BlockSeparator, $End)) !== false);
+        return (($Needle = $StrFunction($Data, $this->CIDRAM['BlockSeparator'], $End)) !== false);
     }
 
     /**

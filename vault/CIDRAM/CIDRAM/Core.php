@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM core (last modified: 2022.06.16).
+ * This file: The CIDRAM core (last modified: 2022.06.19).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -380,7 +380,7 @@ class Core
     public function readFile(string $File): string
     {
         /** Guard. */
-        if (!strlen($File) || !is_file($File) || !is_readable($File)) {
+        if ($File === '' || !is_file($File) || !is_readable($File)) {
             return '';
         }
 
@@ -1376,7 +1376,7 @@ class Core
         if (!$Condition) {
             return false;
         }
-        if (!strlen($ReasonLong)) {
+        if ($ReasonLong === '') {
             $ReasonLong = $this->L10N->getString('denied');
         }
         if (count($DefineOptions) > 0) {
@@ -1759,7 +1759,7 @@ class Core
     public function buildPath(string $Path, bool $PointsToFile = true): string
     {
         /** Input guard. */
-        if (!strlen($Path)) {
+        if ($Path === '') {
             return '';
         }
 
@@ -1863,7 +1863,7 @@ class Core
     public function gZCompressFile(string $File): bool
     {
         /** Guard. */
-        if (!strlen($File) || !is_file($File) || !is_readable($File)) {
+        if ($File === '' || !is_file($File) || !is_readable($File)) {
             return false;
         }
 

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2022.06.17).
+ * This file: Front-end handler (last modified: 2022.06.19).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -3565,7 +3565,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-test' && $CIDRAM['FE']['Perm
         $CIDRAM['ThisIP'] = [];
         foreach ($_POST['ip-addr'] as $CIDRAM['ThisIP']['IPAddress']) {
             if ($CIDRAM['FE']['TestMode'] === 1) {
-                if (!strlen($CIDRAM['ThisIP']['IPAddress'])) {
+                if ($CIDRAM['ThisIP']['IPAddress'] === '') {
                     continue;
                 }
                 $CIDRAM['SimulateBlockEvent']($CIDRAM['ThisIP']['IPAddress'], $CIDRAM['ModuleSwitch'], $CIDRAM['AuxSwitch'], $CIDRAM['VerificationSwitch']);

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2022.06.16).
+ * This file: Functions file (last modified: 2022.06.19).
  */
 
 /** Autoloader for CIDRAM classes. */
@@ -36,7 +36,7 @@ $CIDRAM['Events'] = new \Maikuolan\Common\Events();
  */
 $CIDRAM['ReadFile'] = function (string $File): string {
     /** Guard. */
-    if (!strlen($File) || !is_file($File) || !is_readable($File)) {
+    if ($File === '' || !is_file($File) || !is_readable($File)) {
         return '';
     }
 
@@ -1607,7 +1607,7 @@ $CIDRAM['ResetBypassFlags'] = function () use (&$CIDRAM): void {
  */
 $CIDRAM['BuildPath'] = function (string $Path, bool $PointsToFile = true) use (&$CIDRAM): string {
     /** Input guard. */
-    if (!strlen($Path)) {
+    if ($Path === '') {
         return '';
     }
 
@@ -1707,7 +1707,7 @@ $CIDRAM['BuildLogPattern'] = function (string $Str, bool $GZ = false): string {
  */
 $CIDRAM['GZCompressFile'] = function (string $File): bool {
     /** Guard. */
-    if (!strlen($File) || !is_file($File) || !is_readable($File)) {
+    if ($File === '' || !is_file($File) || !is_readable($File)) {
         return false;
     }
 

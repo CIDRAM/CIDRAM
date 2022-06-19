@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2022.06.17).
+ * This file: Front-end functions file (last modified: 2022.06.19).
  */
 
 /**
@@ -381,7 +381,7 @@ $CIDRAM['FileManager-RecursiveList'] = function (string $Base) use (&$CIDRAM): a
             }
             if (($ExtDel = strrpos($Item, '.')) !== false) {
                 $Ext = strtoupper(substr($Item, $ExtDel + 1));
-                if (!strlen($Ext)) {
+                if ($Ext === '') {
                     $CIDRAM['FormatFilesize']($Arr[$Key]['Filesize']);
                     continue;
                 }
@@ -4313,7 +4313,7 @@ $CIDRAM['Matrix-Create-Generator'] = function (string &$Source) use (&$CIDRAM): 
         }
         $Line = substr($Source, $SPos, $FPos - $SPos);
         $SPos = $FPos + 1;
-        if (!strlen($Line) || substr($Line, 0, 1) === '#') {
+        if ($Line === '' || substr($Line, 0, 1) === '#') {
             continue;
         }
         $Matches = [];
@@ -4686,7 +4686,7 @@ $CIDRAM['SplitBeforeLine'] = function (string $Data, string $Boundary): array {
     if ($Len < 1) {
         return ['', ''];
     }
-    if (!strlen($Boundary)) {
+    if ($Boundary === '') {
         return ['', $Data];
     }
     $BPos = strpos($Data, $Boundary);
@@ -4731,7 +4731,7 @@ $CIDRAM['IsolateFirstFieldEntry'] = function (string $Block, string $Separator):
  */
 $CIDRAM['StepBlock'] = function (string $Data, &$Needle, $End, string $SearchQuery = '', string $Direction = '>') use (&$CIDRAM): bool {
     /** Guard. */
-    if (!is_int($End) || !strlen($Data) || ($Direction !== '<' && $Direction !== '>')) {
+    if (!is_int($End) || $Data === '' || ($Direction !== '<' && $Direction !== '>')) {
         return false;
     }
 
@@ -4843,10 +4843,10 @@ $CIDRAM['SwapAssocArrayElementUpDown'] = function (array $Arr, string $Target, b
  * @return bool True when succeeded.
  */
 $CIDRAM['ReconstructUpdateAuxData'] = function () use (&$CIDRAM): bool {
-    if (($NewAuxData = $CIDRAM['YAML']->reconstruct($CIDRAM['AuxData'])) && strlen($NewAuxData) > 2) {
+    if (($NewAuxArr = $CIDRAM['YAML']->reconstruct($CIDRAM['AuxData'])) && strlen($NewAuxArr) > 2) {
         $Handle = fopen($CIDRAM['Vault'] . 'auxiliary.yaml', 'wb');
         if ($Handle !== false) {
-            fwrite($Handle, $NewAuxData);
+            fwrite($Handle, $NewAuxArr);
             fclose($Handle);
             return true;
         }

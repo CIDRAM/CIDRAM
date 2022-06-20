@@ -1146,11 +1146,8 @@ class Core
     }
 
     /**
-     * Used to identify when bots ghost/masquerade as popular search engines and
-     * social media tools. Tracking is disabled for legitimate requests, while
-     * ghosted/faked requests are blocked. If DNS is unresolvable and/or if a bot's
-     * identity can't be verified, no action is taken (i.e., tracking isn't messed
-     * with and the request isn't blocked).
+     * Used to identify bots ghosting/masquerading as search engines, crawlers,
+     * social media tools, etc.
      *
      * @param string|array $Domains Accepted domain/hostname partials.
      * @param string $Friendly A friendly name to use in logfiles.
@@ -1217,8 +1214,16 @@ class Core
             }
 
             /** Attempt to resolve. */
-            if (!$Resolved = $this->dnsResolve($this->CIDRAM['Hostname'])) {
-                /** Failed to resolve. Do nothing else and exit. */
+            $Resolved = $this->dnsResolve($this->CIDRAM['Hostname']);
+
+            /** Failed to resolve. */
+            if ($Resolved === '') {
+                /** Block non-verified requests. */
+                if (isset($this->CIDRAM['VPermissions'][$Friendly . ':BlockNonVerified'])) {
+                    $Reason = sprintf($this->L10N->getString('Short_Unverified_UA'), $Friendly);
+                    $this->trigger(true, $Reason);
+                }
+
                 return;
             }
 
@@ -1248,8 +1253,10 @@ class Core
         }
 
         /** It's a fake; Block it. */
-        $Reason = sprintf($this->L10N->getString('Short_Fake_UA'), $Friendly);
-        $this->trigger(true, $Reason);
+        if (isset($this->CIDRAM['VPermissions'][$Friendly . ':BlockNegatives'])) {
+            $Reason = sprintf($this->L10N->getString('Short_Fake_UA'), $Friendly);
+            $this->trigger(true, $Reason);
+        }
 
         /** Reporting. */
         $this->Reporter->report([19], ['Caught masquerading as ' . $Friendly . '.'], $this->BlockInfo['IPAddr']);
@@ -1357,8 +1364,10 @@ class Core
         }
 
         /** Nothing matched. Block it. */
-        $Reason = sprintf($this->L10N->getString('Short_Fake_UA'), $Friendly);
-        $this->trigger(true, $Reason);
+        if (isset($this->CIDRAM['VPermissions'][$Friendly . ':BlockNegatives'])) {
+            $Reason = sprintf($this->L10N->getString('Short_Fake_UA'), $Friendly);
+            $this->trigger(true, $Reason);
+        }
 
         /** Reporting. */
         $this->Reporter->report([19], ['Caught masquerading as ' . $Friendly . '.'], $this->BlockInfo['IPAddr']);
@@ -1659,7 +1668,7 @@ class Core
         foreach ($this->CIDRAM['VerificationData'][$From] as $Name => $Values) {
             if (
                 !is_array($Values) ||
-                !isset($this->CIDRAM['VPermissions'][$Name . ':Verify'], $Values['Method'], $Values['Valid domains']) ||
+                !isset($Values['Method'], $Values['Valid domains']) ||
                 ($BypassFlags && !empty($Values['Bypass flag']) && !empty($this->CIDRAM[$Values['Bypass flag']]))
             ) {
                 continue;
@@ -1668,7 +1677,12 @@ class Core
                 (!empty($Values['User Agent']) && strpos($this->BlockInfo['UALC'], $Values['User Agent']) !== false) ||
                 (!empty($Values['User Agent Pattern']) && preg_match($Values['User Agent Pattern'], $this->BlockInfo['UALC']))
             ) {
-                $this->{$Values['Method']}($Values['Valid domains'], $Name, $Values);
+                if (isset($this->CIDRAM['VPermissions'][$Name . ':Verify'])) {
+                    $this->{$Values['Method']}($Values['Valid domains'], $Name, $Values);
+                } elseif (isset($this->CIDRAM['VPermissions'][$Name . ':BlockNonVerified'])) {
+                    $Reason = sprintf($this->L10N->getString('Short_Unverified_UA'), $Name);
+                    $this->trigger(true, $Reason);
+                }
             }
         }
     }

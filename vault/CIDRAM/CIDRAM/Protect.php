@@ -263,19 +263,19 @@ trait Protect
 
         /** Execute search engine verification. */
         if (empty($this->CIDRAM['Whitelisted']) && isset($this->Stages['SearchEngineVerification:Enable'])) {
-            $this->Stage = 'searchEngineVerification';
+            $this->Stage = 'SearchEngineVerification';
             $this->searchEngineVerification();
         }
 
         /** Execute social media verification. */
         if (empty($this->CIDRAM['Whitelisted']) && isset($this->Stages['SocialMediaVerification:Enable'])) {
-            $this->Stage = 'socialMediaVerification';
+            $this->Stage = 'SocialMediaVerification';
             $this->socialMediaVerification();
         }
 
         /** Execute other verification. */
         if (empty($this->CIDRAM['Whitelisted']) && isset($this->Stages['OtherVerification:Enable'])) {
-            $this->Stage = 'otherVerification';
+            $this->Stage = 'OtherVerification';
             $this->otherVerification();
         }
 

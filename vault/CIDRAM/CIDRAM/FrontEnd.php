@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM front-end (last modified: 2022.06.19).
+ * This file: The CIDRAM front-end (last modified: 2022.06.21).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -201,9 +201,9 @@ class FrontEnd extends Core
             if (isset(
                 $this->Stages['Tests:Enable'],
                 $this->Stages['Modules:Enable'],
-                $this->Stages['searchEngineVerification:Enable'],
-                $this->Stages['socialMediaVerification:Enable'],
-                $this->Stages['otherVerification:Enable'],
+                $this->Stages['SearchEngineVerification:Enable'],
+                $this->Stages['SocialMediaVerification:Enable'],
+                $this->Stages['OtherVerification:Enable'],
                 $this->Stages['Aux:Enable'],
                 $this->Stages['PrepareFields:Enable'],
                 $this->Stages['WriteLogs:Enable']
@@ -213,9 +213,9 @@ class FrontEnd extends Core
             } elseif (
                 !isset($this->Stages['Tests:Enable']) &&
                 !isset($this->Stages['Modules:Enable']) &&
-                !isset($this->Stages['searchEngineVerification:Enable']) &&
-                !isset($this->Stages['socialMediaVerification:Enable']) &&
-                !isset($this->Stages['otherVerification:Enable']) &&
+                !isset($this->Stages['SearchEngineVerification:Enable']) &&
+                !isset($this->Stages['SocialMediaVerification:Enable']) &&
+                !isset($this->Stages['OtherVerification:Enable']) &&
                 !isset($this->Stages['Aux:Enable']) &&
                 !isset($this->Stages['Reporting:Enable']) &&
                 !isset($this->Stages['Tracking:Enable']) &&
@@ -3573,16 +3573,15 @@ class FrontEnd extends Core
                     $ThisTracking['IPID'] = bin2hex($ThisTracking['IPAddr']);
 
                     /** Set clearing option. */
-                    $ThisTracking['Options'] = (
-                        $ThisTrackingArray['Data'] > 0
-                    ) ?
-                        '<input type="button" class="auto" onclick="javascript:{window[\'IPAddr\']=\'' .
-                        $ThisTracking['IPAddr'] .
-                        '\';$(\'POST\',\'\',[\'IPAddr\'],function(){w(\'stateMsg\',\'' .
-                        $this->L10N->getString('state_loading') . '\')},function(e){w(\'stateMsg\',e);hideid(\'' .
-                        $ThisTracking['IPID'] . '\')},function(e){w(\'stateMsg\',e)})}" value="' .
-                        $this->L10N->getString('field_clear') . '" />'
-                    : '';
+                    $ThisTracking['Options'] = sprintf(
+                        '<input type="button" class="auto" onclick="javascript:{window[\'IPAddr\']=\'%s\';' .
+                        '$(\'POST\',\'\',[\'IPAddr\'],function(){w(\'stateMsg\',\'%s\')},function(e){w(\'stateMsg\',e);' .
+                        'hideid(\'%s\')},function(e){w(\'stateMsg\',e)})}" value="%s" />',
+                        $ThisTracking['IPAddr'],
+                        $this->L10N->getString('state_loading'),
+                        $ThisTracking['IPID'],
+                        $this->L10N->getString('field_clear')
+                    );
 
                     /** When the entry expires. */
                     $ThisTracking['Expiry'] = $this->timeFormat(

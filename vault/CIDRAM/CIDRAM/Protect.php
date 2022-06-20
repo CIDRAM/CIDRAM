@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Protect traits (last modified: 2022.06.20).
+ * This file: Protect traits (last modified: 2022.06.21).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -119,12 +119,10 @@ trait Protect
         ];
         if (isset($this->CIDRAM['Tracking-' . $this->BlockInfo['IPAddr']])) {
             $this->BlockInfo['Infractions'] = $this->CIDRAM['Tracking-' . $this->BlockInfo['IPAddr']];
+        } elseif (($Try = $this->Cache->getEntry('Tracking-' . $this->BlockInfo['IPAddr'])) === false) {
+            $this->BlockInfo['Infractions'] = 0;
         } else {
-            if (($Try = $this->Cache->getEntry('Tracking-' . $this->BlockInfo['IPAddr'])) === false) {
-                $this->BlockInfo['Infractions'] = 0;
-            } else {
-                $this->BlockInfo['Infractions'] = $Try;
-            }
+            $this->BlockInfo['Infractions'] = $Try;
         }
         $AtRunTimeInfractions = $this->BlockInfo['Infractions'];
         $this->BlockInfo['UALC'] = strtolower($this->BlockInfo['UA']);
@@ -211,101 +209,103 @@ trait Protect
             $this->CIDRAM['Hostname'] = $this->dnsReverse($this->BlockInfo['IPAddrResolved'] ?: $this->BlockInfo['IPAddr']);
         }
 
-        /** Executed only if maintenance mode is disabled. */
-        if (empty($this->CIDRAM['Whitelisted'])) {
-            /** Instantiate report orchestrator (used by some modules). */
-            $this->Reporter = new \CIDRAM\CIDRAM\Reporter();
+        /** Instantiate report orchestrator (used by some modules). */
+        $this->Reporter = new \CIDRAM\CIDRAM\Reporter();
 
-            /** Identify proxy connections (conjunctive reporting element). */
-            if (strpos($this->BlockInfo['WhyReason'], $this->L10N->getString('Short_Proxy')) !== false) {
-                $this->Reporter->report([9, 13], [], $this->BlockInfo['IPAddr']);
-            }
-
-            /** Execute modules, if any have been enabled. */
-            if (empty($this->CIDRAM['Whitelisted']) && $this->Configuration['components']['modules'] && isset($this->Stages['Modules:Enable'])) {
-                $this->Stage = 'Modules';
-                if (!isset($this->CIDRAM['ModuleResCache'])) {
-                    $this->CIDRAM['ModuleResCache'] = [];
-                }
-                $Modules = explode("\n", $this->Configuration['components']['modules']);
-                if (!$this->Configuration['signatures']['tracking_override']) {
-                    $this->CIDRAM['Restore tracking options override'] = $this->CIDRAM['Tracking options override'] ?? '';
-                }
-
-                /**
-                 * Doing this with array_walk instead of foreach to ensure that modules
-                 * have their own scope and that superfluous data isn't preserved.
-                 */
-                array_walk($Modules, function ($Module): void {
-                    if (!empty($this->CIDRAM['Whitelisted'])) {
-                        return;
-                    }
-                    $Module = (strpos($Module, ':') === false) ? $Module : substr($Module, strpos($Module, ':') + 1);
-                    $Before = $this->BlockInfo['SignatureCount'];
-                    if (isset($this->CIDRAM['ModuleResCache'][$Module]) && is_object($this->CIDRAM['ModuleResCache'][$Module])) {
-                        $this->CIDRAM['ModuleResCache'][$Module]();
-                    } elseif (!file_exists($this->ModulesPath . $Module) || !is_readable($this->ModulesPath . $Module)) {
-                        return;
-                    } else {
-                        require $this->ModulesPath . $Module;
-                    }
-                    if (isset($this->Stages['Modules:Tracking']) && $this->BlockInfo['SignatureCount'] > $Before) {
-                        $this->BlockInfo['Infractions'] += $this->BlockInfo['SignatureCount'] - $Before;
-                    }
-                });
-
-                if (
-                    !$this->Configuration['signatures']['tracking_override'] &&
-                    !empty($this->CIDRAM['Tracking options override']) &&
-                    isset($this->CIDRAM['Restore tracking options override'])
-                ) {
-                    $this->CIDRAM['Tracking options override'] = $this->CIDRAM['Restore tracking options override'];
-                    unset($this->CIDRAM['Restore tracking options override']);
-                }
-                unset($Modules);
-            }
-
-            /** Execute search engine verification. */
-            if (empty($this->CIDRAM['Whitelisted']) && isset($this->Stages['searchEngineVerification:Enable'])) {
-                $this->Stage = 'searchEngineVerification';
-                $this->searchEngineVerification();
-            }
-
-            /** Execute social media verification. */
-            if (empty($this->CIDRAM['Whitelisted']) && isset($this->Stages['socialMediaVerification:Enable'])) {
-                $this->Stage = 'socialMediaVerification';
-                $this->socialMediaVerification();
-            }
-
-            /** Execute other verification. */
-            if (empty($this->CIDRAM['Whitelisted']) && isset($this->Stages['otherVerification:Enable'])) {
-                $this->Stage = 'otherVerification';
-                $this->otherVerification();
-            }
-
-            /** Process auxiliary rules, if any exist. */
-            if (empty($this->CIDRAM['Whitelisted']) && isset($this->Stages['Aux:Enable'])) {
-                $Before = $this->BlockInfo['SignatureCount'];
-                $this->Stage = 'Aux';
-                $this->aux();
-                if (isset($this->Stages['Aux:Tracking']) && $this->BlockInfo['SignatureCount'] > $Before) {
-                    $this->BlockInfo['Infractions'] += $this->BlockInfo['SignatureCount'] - $Before;
-                }
-                unset($Before);
-            }
-
-            /** Process all reports (if any exist, and if not whitelisted), and then destroy the reporter. */
-            if (empty($this->CIDRAM['Whitelisted']) && isset($this->Stages['Reporting:Enable'])) {
-                $this->Stage = 'Reporting';
-                $this->Reporter->process();
-            }
-
-            /** Cleanup. */
-            $this->Reporter = null;
+        /** Identify proxy connections (conjunctive reporting element). */
+        if (strpos($this->BlockInfo['WhyReason'], $this->L10N->getString('Short_Proxy')) !== false) {
+            $this->Reporter->report([9, 13], [], $this->BlockInfo['IPAddr']);
         }
 
+        /** Execute modules, if any have been enabled. */
+        if (empty($this->CIDRAM['Whitelisted']) && $this->Configuration['components']['modules'] && isset($this->Stages['Modules:Enable'])) {
+            $this->Stage = 'Modules';
+            if (!isset($this->CIDRAM['ModuleResCache'])) {
+                $this->CIDRAM['ModuleResCache'] = [];
+            }
+            $Modules = explode("\n", $this->Configuration['components']['modules']);
+            if (!$this->Configuration['signatures']['tracking_override']) {
+                $this->CIDRAM['Restore tracking options override'] = $this->CIDRAM['Tracking options override'] ?? '';
+            }
+
+            /**
+             * Doing this with array_walk instead of foreach to ensure that modules
+             * have their own scope and that superfluous data isn't preserved.
+             */
+            array_walk($Modules, function ($Module): void {
+                if (!empty($this->CIDRAM['Whitelisted'])) {
+                    return;
+                }
+                $Module = (strpos($Module, ':') === false) ? $Module : substr($Module, strpos($Module, ':') + 1);
+                $Before = $this->BlockInfo['SignatureCount'];
+                if (isset($this->CIDRAM['ModuleResCache'][$Module]) && is_object($this->CIDRAM['ModuleResCache'][$Module])) {
+                    $this->CIDRAM['ModuleResCache'][$Module]();
+                } elseif (!file_exists($this->ModulesPath . $Module) || !is_readable($this->ModulesPath . $Module)) {
+                    return;
+                } else {
+                    require $this->ModulesPath . $Module;
+                }
+                if (isset($this->Stages['Modules:Tracking']) && $this->BlockInfo['SignatureCount'] > $Before) {
+                    $this->BlockInfo['Infractions'] += $this->BlockInfo['SignatureCount'] - $Before;
+                }
+            });
+
+            if (
+                !$this->Configuration['signatures']['tracking_override'] &&
+                !empty($this->CIDRAM['Tracking options override']) &&
+                isset($this->CIDRAM['Restore tracking options override'])
+            ) {
+                $this->CIDRAM['Tracking options override'] = $this->CIDRAM['Restore tracking options override'];
+                unset($this->CIDRAM['Restore tracking options override']);
+            }
+            unset($Modules);
+        }
+
+        /** Execute search engine verification. */
+        if (empty($this->CIDRAM['Whitelisted']) && isset($this->Stages['SearchEngineVerification:Enable'])) {
+            $this->Stage = 'searchEngineVerification';
+            $this->searchEngineVerification();
+        }
+
+        /** Execute social media verification. */
+        if (empty($this->CIDRAM['Whitelisted']) && isset($this->Stages['SocialMediaVerification:Enable'])) {
+            $this->Stage = 'socialMediaVerification';
+            $this->socialMediaVerification();
+        }
+
+        /** Execute other verification. */
+        if (empty($this->CIDRAM['Whitelisted']) && isset($this->Stages['OtherVerification:Enable'])) {
+            $this->Stage = 'otherVerification';
+            $this->otherVerification();
+        }
+
+        /** Process auxiliary rules, if any exist. */
+        if (empty($this->CIDRAM['Whitelisted']) && isset($this->Stages['Aux:Enable'])) {
+            $Before = $this->BlockInfo['SignatureCount'];
+            $this->Stage = 'Aux';
+            $this->aux();
+            if (isset($this->Stages['Aux:Tracking']) && $this->BlockInfo['SignatureCount'] > $Before) {
+                $this->BlockInfo['Infractions'] += $this->BlockInfo['SignatureCount'] - $Before;
+            }
+            unset($Before);
+        }
+
+        /** Process all reports (if any exist, and if not whitelisted), and then destroy the reporter. */
+        if (empty($this->CIDRAM['Whitelisted']) && isset($this->Stages['Reporting:Enable'])) {
+            $this->Stage = 'Reporting';
+            $this->Reporter->process();
+        }
+
+        /** Cleanup. */
+        $this->Reporter = null;
+
         /** Process tracking information for the inbound IP. */
-        if (!empty($this->CIDRAM['TestResults']) && $this->BlockInfo['Infractions'] > 0 && isset($this->Stages['Tracking:Enable'])) {
+        if (!empty($this->CIDRAM['TestResults']) && (
+            (isset($this->CIDRAM['Trackable']) && $this->CIDRAM['Trackable'] === true) ||
+            (isset($this->Stages['Tracking:Enable']) && $this->BlockInfo['Infractions'] > 0 && (
+                !isset($this->CIDRAM['Trackable']) || $this->CIDRAM['Trackable'] !== false
+            ))
+        )) {
             $this->Stage = 'Tracking';
 
             /** Set tracking expiry. */
@@ -349,6 +349,9 @@ trait Protect
 
             /** Cleanup. */
             unset($this->CIDRAM['TrackCount'], $this->CIDRAM['TrackTime']);
+        } elseif (isset($this->CIDRAM['Trackable']) && $this->CIDRAM['Trackable'] === false) {
+            /** Untrack IP address. */
+            $this->Cache->deleteEntry('Tracking-' . $this->BlockInfo['IPAddr']);
         }
 
         /**

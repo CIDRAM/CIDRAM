@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM core (last modified: 2022.06.20).
+ * This file: The CIDRAM core (last modified: 2022.06.21).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -973,6 +973,10 @@ class Core
         if (isset($this->CIDRAM['DnsReverses-' . $Addr], $this->CIDRAM['DnsReverses-' . $Addr]['Host'])) {
             return $this->CIDRAM['DnsReverses-' . $Addr]['Host'];
         }
+        if (($Try = $this->Cache->getEntry('DnsReverses-' . $Addr)) !== false && is_array($Try) && isset($Try['Host'])) {
+            $this->CIDRAM['DnsReverses-' . $Addr] = $Try;
+            return $Try['Host'];
+        }
 
         /** The IP address is IPv4. */
         if (strpos($Addr, '.') !== false && strpos($Addr, ':') === false && preg_match(
@@ -1114,6 +1118,9 @@ class Core
         if (isset($this->CIDRAM['DnsForwards-' . $Host])) {
             return $this->CIDRAM['DnsForwards-' . $Host];
         }
+        if (($Try = $this->Cache->getEntry('DnsForwards-' . $Host)) !== false) {
+            return $this->CIDRAM['DnsForwards-' . $Host] = $Try;
+        }
         $Host = urlencode($Host);
         if (($HostLen = strlen($Host)) > 253) {
             return '';
@@ -1147,9 +1154,10 @@ class Core
      *
      * @param string|array $Domains Accepted domain/hostname partials.
      * @param string $Friendly A friendly name to use in logfiles.
+     * @param array $Values Verification data for the entity being verified.
      * @return void
      */
-    public function dnsReverseForward($Domains, string $Friendly): void
+    public function dnsReverseForward($Domains, string $Friendly, array $Values): void
     {
         /** Fetch the hostname. */
         if (empty($this->CIDRAM['Hostname'])) {
@@ -1185,9 +1193,9 @@ class Core
         /** Successfully passed. */
         if ($Pass) {
             /** We're only reversing; Don't resolve. */
-            if (!empty($Options['Reverse only'])) {
-                /** Disable tracking. */
-                if (!empty($Options['Can modify trackable'])) {
+            if (!empty($Values['Reverse only'])) {
+                /** Untrack positives. */
+                if (isset($this->CIDRAM['VPermissions'][$Friendly . ':UntrackPositives'])) {
                     $this->CIDRAM['Trackable'] = false;
                 }
 
@@ -1216,8 +1224,8 @@ class Core
 
             /** It's the real deal. */
             if ($Resolved === $this->BlockInfo['IPAddr']) {
-                /** Disable tracking. */
-                if (!empty($Options['Can modify trackable'])) {
+                /** Untrack positives. */
+                if (isset($this->CIDRAM['VPermissions'][$Friendly . ':UntrackPositives'])) {
                     $this->CIDRAM['Trackable'] = false;
                 }
 
@@ -1253,9 +1261,10 @@ class Core
      *
      * @param string|array $Expected Accepted/Expected IPs.
      * @param string $Friendly A friendly name to use in logfiles.
+     * @param array $Values Verification data for the entity being verified.
      * @return void
      */
-    public function uaIpMatch($Expected, string $Friendly): void
+    public function uaIpMatch($Expected, string $Friendly, array $Values): void
     {
         /** Guard. */
         if (empty($this->BlockInfo['IPAddr'])) {
@@ -1272,9 +1281,10 @@ class Core
      *
      * @param string|array $Expected Accepted/Expected CIDRs.
      * @param string $Friendly A friendly name to use in logfiles.
+     * @param array $Values Verification data for the entity being verified.
      * @return void
      */
-    public function uaCidrMatch($Expected, string $Friendly): void
+    public function uaCidrMatch($Expected, string $Friendly, array $Values): void
     {
         /** Guard. */
         if (empty($this->CIDRAM['Factors'])) {
@@ -1293,9 +1303,10 @@ class Core
      *
      * @param string|array $Origins Accepted originating ASNs.
      * @param string $Friendly A friendly name to use in logfiles.
+     * @param array $Values Verification data for the entity being verified.
      * @return void
      */
-    public function uaAsnMatch($Origins, string $Friendly): void
+    public function uaAsnMatch($Origins, string $Friendly, array $Values): void
     {
         /** Guard. */
         if (empty($this->BlockInfo['ASNLookup']) || $this->BlockInfo['ASNLookup'] < 1) {
@@ -1657,7 +1668,7 @@ class Core
                 (!empty($Values['User Agent']) && strpos($this->BlockInfo['UALC'], $Values['User Agent']) !== false) ||
                 (!empty($Values['User Agent Pattern']) && preg_match($Values['User Agent Pattern'], $this->BlockInfo['UALC']))
             ) {
-                $this->{$Values['Method']}($Values['Valid domains'], $Name);
+                $this->{$Values['Method']}($Values['Valid domains'], $Name, $Values);
             }
         }
     }
@@ -1678,7 +1689,7 @@ class Core
         }
         $Before = $this->BlockInfo['SignatureCount'];
         $this->xVerification('Search Engine Verification', true);
-        if (isset($this->Stages['searchEngineVerification:Tracking']) && $this->BlockInfo['SignatureCount'] > $Before) {
+        if (isset($this->Stages['SearchEngineVerification:Tracking']) && $this->BlockInfo['SignatureCount'] > $Before) {
             $this->BlockInfo['Infractions'] += $this->BlockInfo['SignatureCount'] - $Before;
         }
     }
@@ -1699,7 +1710,7 @@ class Core
         }
         $Before = $this->BlockInfo['SignatureCount'];
         $this->xVerification('Social Media Verification', false);
-        if (isset($this->Stages['socialMediaVerification:Tracking']) && $this->BlockInfo['SignatureCount'] > $Before) {
+        if (isset($this->Stages['SocialMediaVerification:Tracking']) && $this->BlockInfo['SignatureCount'] > $Before) {
             $this->BlockInfo['Infractions'] += $this->BlockInfo['SignatureCount'] - $Before;
         }
     }
@@ -1720,7 +1731,7 @@ class Core
         }
         $Before = $this->BlockInfo['SignatureCount'];
         $this->xVerification('Other Verification', false);
-        if (isset($this->Stages['otherVerification:Tracking']) && $this->BlockInfo['SignatureCount'] > $Before) {
+        if (isset($this->Stages['OtherVerification:Tracking']) && $this->BlockInfo['SignatureCount'] > $Before) {
             $this->BlockInfo['Infractions'] += $this->BlockInfo['SignatureCount'] - $Before;
         }
     }

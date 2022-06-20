@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Protect traits (last modified: 2022.06.19).
+ * This file: Protect traits (last modified: 2022.06.20).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -312,11 +312,7 @@ trait Protect
             $this->CIDRAM['TrackTime'] = $this->Configuration['Options']['TrackTime'] ?? $this->Configuration['signatures']['default_tracktime'];
 
             /** Number of infractions to append. */
-            if ($AtRunTimeInfractions > $this->BlockInfo['Infractions']) {
-                $this->CIDRAM['TrackCount'] = $AtRunTimeInfractions - $this->BlockInfo['Infractions'];
-            } else {
-                $this->CIDRAM['TrackCount'] = $this->BlockInfo['Infractions'];
-            }
+            $this->CIDRAM['TrackCount'] = $this->BlockInfo['Infractions'] - $AtRunTimeInfractions;
 
             /** Tracking options override. */
             if (!empty($this->CIDRAM['Tracking options override'])) {

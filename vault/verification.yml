@@ -7,11 +7,20 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Verification data for search engines and social media (last modified: 2022.05.20).
+# This file: Verification data (last modified: 2022.06.20).
 ##/
 
 # Additional references: https://udger.com/resources/ua-list/crawlers
 Search Engine Verification:
+ # https://developer.amazon.com/support/amazonbot
+ # https://github.com/CIDRAM/CIDRAM/issues/317
+ # Updated: 2022.06.20
+ Amazonbot:
+  User Agent: "amazonbot"
+  Method: "dnsReverseForward"
+  Valid domains:
+   - ".crawl.amazonbot.amazon"
+
  # https://discussions.apple.com/thread/7090135
  # https://support.apple.com/en-gb/HT204683
  # Updated: 2020.02.07 / Checked: 2022.02.18
@@ -41,29 +50,25 @@ Search Engine Verification:
   Method: "dnsReverseForward"
   Valid domains:
    - ".search.msn.com"
-  Single hit bypass: true
 
  # https://duckduckgo.com/duckduckbot
- # Updated: 2022.02.17
+ # Updated: 2022.06.20
  DuckDuckBot:
   User Agent Pattern: "~duckduck(?:go-favicons-)?bot~"
   Method: "uaIpMatch"
   Valid domains:
-   - "20.185.79.15"
-   - "20.185.79.47"
    - "20.191.45.212"
-   - "40.76.162.191"
-   - "40.76.162.208"
-   - "40.76.162.247"
-   - "40.76.163.7"
-   - "40.76.163.23"
-   - "40.76.173.151"
    - "40.88.21.235"
-   - "52.142.24.149"
+   - "40.76.173.151"
+   - "40.76.163.7"
+   - "20.185.79.47"
    - "52.142.26.175"
-   - "54.208.102.37"
-   - "107.21.1.8"
-  Single hit bypass: true
+   - "20.185.79.15"
+   - "52.142.24.149"
+   - "40.76.162.208"
+   - "40.76.163.23"
+   - "40.76.162.191"
+   - "40.76.162.247"
 
  # https://support.google.com/webmasters/answer/80553?hl=en
  # Updated: 2018.07.14 / Checked: 2022.02.18
@@ -155,7 +160,6 @@ Social Media Verification:
   User Agent: "embedly"
   Method: "dnsReverseForward"
   Reverse only: true
-  Can modify trackable: false
   Valid domains:
    - "embed.ly"
 
@@ -208,7 +212,6 @@ Other Verification:
   Method: "dnsReverseForward"
   Valid domains:
    - ".amazonadbot.com"
-  Single hit bypass: true
 
  # https://www.oracle.com/corporate/acquisitions/grapeshot/crawler.html
  # Updated: 2021.03.13 / Checked: 2022.02.17

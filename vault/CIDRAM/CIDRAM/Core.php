@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM core (last modified: 2022.06.19).
+ * This file: The CIDRAM core (last modified: 2022.06.20).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -1157,9 +1157,9 @@ class Core
         }
 
         /** Resolve the DNS hostname. */
-        if (!$this->CIDRAM['Hostname'] || $this->CIDRAM['Hostname'] === $this->BlockInfo['IPAddr']) {
+        if (strlen($this->CIDRAM['Hostname']) === 0 || $this->CIDRAM['Hostname'] === $this->BlockInfo['IPAddr']) {
             /** Block non-verified requests. */
-            if (isset($this->CIDRAM['VPermissions'][$Friendly . 'BlockNonVerified:'])) {
+            if (isset($this->CIDRAM['VPermissions'][$Friendly . ':BlockNonVerified'])) {
                 $Reason = sprintf($this->L10N->getString('Short_Unverified_UA'), $Friendly);
                 $this->trigger(true, $Reason);
             }
@@ -1196,12 +1196,12 @@ class Core
                     $this->BlockInfo['Verified'] = $Friendly;
                 }
 
-                /** Single hit bypass. */
+                /** Single-hit bypass. */
                 $this->bypass((
-                    !empty($Options['Single hit bypass']) &&
+                    isset($this->CIDRAM['VPermissions'][$Friendly . ':SingleHitBypass']) &&
                     isset($this->BlockInfo['SignatureCount'], $this->BlockInfo['WhyReason']) &&
                     $this->BlockInfo['SignatureCount'] === 1 &&
-                    strpos($this->BlockInfo['WhyReason'], '-IPv4') !== false
+                    preg_match('~, L\d+:F\d+,~', $this->BlockInfo['WhyReason'])
                 ), $this->L10N->getString('why_single_hit_bypass'));
 
                 /** Exit. */
@@ -1226,12 +1226,12 @@ class Core
                     $this->BlockInfo['Verified'] = $Friendly;
                 }
 
-                /** Single hit bypass. */
+                /** Single-hit bypass. */
                 $this->bypass((
-                    !empty($Options['Single hit bypass']) &&
+                    isset($this->CIDRAM['VPermissions'][$Friendly . ':SingleHitBypass']) &&
                     isset($this->BlockInfo['SignatureCount'], $this->BlockInfo['WhyReason']) &&
                     $this->BlockInfo['SignatureCount'] === 1 &&
-                    strpos($this->BlockInfo['WhyReason'], '-IPv4') !== false
+                    preg_match('~, L\d+:F\d+,~', $this->BlockInfo['WhyReason'])
                 ), $this->L10N->getString('why_single_hit_bypass'));
 
                 /** Exit. */
@@ -1263,7 +1263,7 @@ class Core
         }
 
         /** Route to matching code. */
-        uaXMatch($this->BlockInfo['IPAddr'], $Expected, $Friendly);
+        $this->uaXMatch($this->BlockInfo['IPAddr'], $Expected, $Friendly);
     }
 
     /**
@@ -1282,7 +1282,7 @@ class Core
         }
 
         /** Route to matching code. */
-        uaXMatch($this->CIDRAM['Factors'], $Expected, $Friendly);
+        $this->uaXMatch($this->CIDRAM['Factors'], $Expected, $Friendly);
     }
 
     /**
@@ -1303,19 +1303,18 @@ class Core
         }
 
         /** Route to matching code. */
-        uaXMatch($this->BlockInfo['ASNLookup'], $Origins, $Friendly);
+        $this->uaXMatch($this->BlockInfo['ASNLookup'], $Origins, $Friendly);
     }
 
     /**
-     * Routes from uaIpMatch, uaCidrMatch, and uaAsnMatch.
-     * Has no return value.
+     * Routes from uaIpMatch, uaCidrMatch, and uaAsnMatch. Has no return value.
      *
      * @param mixed $Datapoints The datapoint to be matched.
      * @param string|array $Expected The expected values (per the call origin).
      * @param string $Friendly A friendly name to use in logfiles.
      * @return void
      */
-    public function uaXMatch($Datapoints, $Expected, string $Friendly): void
+    private function uaXMatch($Datapoints, $Expected, string $Friendly): void
     {
         $this->arrayify($Datapoints);
         $this->arrayify($Expected);
@@ -1323,8 +1322,8 @@ class Core
         /** Compare the actual value from the request against the expected values. */
         foreach ($Datapoints as $Datapoint) {
             if (in_array($Datapoint, $Expected)) {
-                /** Disable tracking (if there are matches, and if relevant). */
-                if (!empty($Options['Can modify trackable'])) {
+                /** Untrack positives. */
+                if (isset($this->CIDRAM['VPermissions'][$Friendly . ':UntrackPositives'])) {
                     $this->CIDRAM['Trackable'] = false;
                 }
 
@@ -1333,15 +1332,15 @@ class Core
                     $this->BlockInfo['Verified'] = $Friendly;
                 }
 
-                /** Single hit bypass. */
+                /** Single-hit bypass. */
                 $this->bypass((
-                    !empty($Options['Single hit bypass']) &&
+                    isset($this->CIDRAM['VPermissions'][$Friendly . ':SingleHitBypass']) &&
                     isset($this->BlockInfo['SignatureCount'], $this->BlockInfo['WhyReason']) &&
                     $this->BlockInfo['SignatureCount'] === 1 &&
-                    strpos($this->BlockInfo['WhyReason'], '-IPv4') !== false
+                    preg_match('~, L\d+:F\d+,~', $this->BlockInfo['WhyReason'])
                 ), $this->L10N->getString('why_single_hit_bypass'));
 
-                /** Successfully matched; Exit. */
+                /** Exit. */
                 return;
             }
         }
@@ -1626,7 +1625,7 @@ class Core
      * @param bool $BypassFlags Whether to check for bypass flags.
      * @return void
      */
-    public function xVerification(string $From = '', bool $BypassFlags = false): void
+    private function xVerification(string $From = '', bool $BypassFlags = false): void
     {
         if (
             empty($this->CIDRAM['TestResults']) ||

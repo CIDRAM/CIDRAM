@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Defaults file (last modified: 2022.06.16).
+# This file: Defaults file (last modified: 2022.06.20).
 ##/
 
 Config Defaults:
@@ -435,6 +435,10 @@ Config Defaults:
   search_engine_verification:
    type: "checkbox"
    default: |
+    Amazonbot:Verify
+    Amazonbot:BlockNegatives
+    Amazonbot:SingleHitBypass
+    Amazonbot:UntrackPositives
     Applebot:Verify
     Applebot:BlockNegatives
     Applebot:UntrackPositives
@@ -483,6 +487,7 @@ Config Defaults:
     SingleHitBypass: "checkbox_label_single_hit_bypass"
     UntrackPositives: "checkbox_label_untrack_positives"
    choices:
+    Amazonbot: "Amazonbot"
     Applebot: "Applebot"
     Baidu: "Baiduspider/百度"
     Bingbot: "Bingbot"

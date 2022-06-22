@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2022.06.17).
+ * This file: Front-end handler (last modified: 2022.06.22).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -3639,6 +3639,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-test' && $CIDRAM['FE']['Perm
                     unset($CIDRAM['RunName'], $CIDRAM['RunError'], $CIDRAM['RunErrorCounts'], $CIDRAM['RunErrors']);
                 }
             } elseif ($CIDRAM['BlockInfo']['SignatureCount']) {
+                $CIDRAM['BlockInfo']['WhyReason'] = preg_replace('~(?<=</span>\),|]\),)( )(?=[\dA-Za-z])~', '<br />', $CIDRAM['BlockInfo']['WhyReason']);
                 $CIDRAM['ThisIP']['YesNo'] = $CIDRAM['L10N']->getString('response_yes') . ' – ' . $CIDRAM['BlockInfo']['WhyReason'];
                 $CIDRAM['ThisIP']['StatClass'] = 'txtRd';
                 if (

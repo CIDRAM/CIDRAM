@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM front-end (last modified: 2022.06.21).
+ * This file: The CIDRAM front-end (last modified: 2022.06.22).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -3382,6 +3382,7 @@ class FrontEnd extends Core
                             unset($this->CIDRAM['RunName'], $this->CIDRAM['RunError'], $this->CIDRAM['RunErrorCounts'], $this->CIDRAM['RunErrors']);
                         }
                     } elseif ($this->BlockInfo['SignatureCount']) {
+                        $this->BlockInfo['WhyReason'] = preg_replace('~(?<=</span>\),|]\),)( )(?=[\dA-Za-z])~', '<br />', $this->BlockInfo['WhyReason']);
                         $this->CIDRAM['ThisIP']['YesNo'] = $this->L10N->getString('response_yes') . ' – ' . $this->BlockInfo['WhyReason'];
                         $this->CIDRAM['ThisIP']['StatClass'] = 'txtRd';
                         if (

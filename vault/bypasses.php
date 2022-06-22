@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Default signature bypasses (last modified: 2022.01.22).
+ * This file: Default signature bypasses (last modified: 2022.06.22).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -194,6 +194,33 @@ $CIDRAM['RunParamResCache']['bypasses.php'] = function (array $Factors = [], int
             preg_match('~duckduck(?:go-favicons-)?bot~', $CIDRAM['BlockInfo']['UALC'])
         ) {
             return 4;
+        }
+    }
+
+    /** Google bypasses. */
+    if ($Tag === 'Google LLC') {
+        /**
+         * Googlebot bypass.
+         */
+        if ($CIDRAM['Request']->inCsv('Googlebot', $CIDRAM['Config']['bypasses']['used'])) {
+            if (empty($CIDRAM['Hostname'])) {
+                $CIDRAM['Hostname'] = $CIDRAM['DNS-Reverse']($CIDRAM['BlockInfo']['IPAddr']);
+            }
+            if (preg_match('~\.google(?:bot)?\.com$~i', $CIDRAM['Hostname'])) {
+                return 2;
+            }
+        }
+
+        /**
+         * Google Fiber bypass.
+         */
+        if ($CIDRAM['Request']->inCsv('GoogleFiber', $CIDRAM['Config']['bypasses']['used'])) {
+            if (empty($CIDRAM['Hostname'])) {
+                $CIDRAM['Hostname'] = $CIDRAM['DNS-Reverse']($CIDRAM['BlockInfo']['IPAddr']);
+            }
+            if (preg_match('~\.googlefiber\.net$~i', $CIDRAM['Hostname'])) {
+                return 2;
+            }
         }
     }
 

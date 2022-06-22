@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Turkish language data for the front-end (last modified: 2022.06.16).
+# This file: Turkish language data for the front-end (last modified: 2022.06.22).
 ##/
 
 Extended Description AbuseIPDB module: "AbuseIPDB'de listelenen IP'lerden gelen istekleri engeller."
@@ -110,6 +110,7 @@ config_frontend_frontend_log: "Ön uç giriş denemelerini kaydetmek için kulla
 config_frontend_magnification: &MagnifDesc "Yazı tipi büyütme. Varsayılan = 1."
 config_frontend_max_login_attempts: "Maksimum giriş denemesi sayısı. Varsayılan = 5."
 config_frontend_remotes: "Güncelleyici tarafından bileşen meta verilerini almak için kullanılan adreslerin listesi. Bunun yeni bir ana sürüme yükseltme yaparken, veya güncellemeler için yeni bir kaynak alırken ayarlanması gerekebilir, ancak normal şartlar altında olduğu gibi bırakılmalıdır."
+config_frontend_signatures_update_event_log: "Ön uç aracılığıyla imzalar güncellendiğinde günlüğe kaydedilecek bir dosya. Dosya adı belirtin veya devre dışı bırakmak için boş bırakın."
 config_frontend_theme: "Ön uç için kullanılacak varsayılan tema."
 config_general: "Genel yapılandırma (diğer kategorilere ait olmayan herhangi bir çekirdek yapılandırma)."
 config_general_allow_gethostbyaddr_lookup: "UDP kullanılamadığında gethostbyaddr aramalarına izin verilsin mi? Doğru/True = Evet [Varsayılan]; Yanlış/False = Hayır."
@@ -137,7 +138,6 @@ config_general_logfile_serialized: "Engellenen tüm erişim girişimlerini kayde
 config_general_numbers: "Numaraların görüntülenmesini nasıl tercih edersiniz? Size en uygun görünen örneği seçin."
 config_general_other_verification: "Mümkün olduğunda diğer türdeki istekleri doğrulamak için kontroller."
 config_general_search_engine_verification: "Arama motorlarından gelen istekleri doğrulamak için kontroller."
-config_general_signatures_update_event_log: "Ön uç aracılığıyla imzalar güncellendiğinde günlüğe kaydedilecek bir dosya. Dosya adı belirtin veya devre dışı bırakmak için boş bırakın."
 config_general_silent_mode: "CIDRAM, "Erişim Reddedildi" sayfasını göstermek yerine, engellenen erişim girişimlerini sessizce yönlendirmeli mi? Yanıt evet ise, engellenen erişim girişimleri için yeniden yönlendirilecek konumu belirtin. Yanıt hayır ise, bu değişkeni boş bırakın."
 config_general_social_media_verification: "Sosyal medya platformlarından gelen istekleri doğrulamak için kontroller."
 config_general_stages: "Yürütme zincirinin aşamaları için kontroller (etkin olup olmadığı, hataların günlüğe kaydedilip kaydedilmediği, vb)."
@@ -525,10 +525,9 @@ logs_no_logfiles_available: "Günlük dosyası yok."
 max_login_attempts_exceeded: "Maksimum giriş denemesi aşıldı; Erişim reddedildi."
 msg_subject_2fa: "2FA (İki Faktörlü Kimlik Doğrulama)"
 msg_template_2fa: |
- <center><p>Merhaba, %1$s.<br />
- <br />
+ <center><p>Merhaba, %s.<br /><br />
  CIDRAM ön ucuna giriş yapmak için 2FA kodunuz:</p>
- <h1>%2$s</h1>
+ <h1>%s</h1>
  <p>Bu kod 10 dakika içinde sona eriyor.</p></center>
 notice_new_major_version: "Bildirim: %s artık kullanılabilir (%s kullanıyorsunuz). Bu sürümün minimum PHP gereksinimini karşılıyorsunuz. Ancak, güncelleme için bazı manuel adımlar gereklidir."
 previewer_days: "Gün"

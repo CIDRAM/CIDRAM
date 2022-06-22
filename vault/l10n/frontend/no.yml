@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Norwegian language data for the front-end (last modified: 2022.06.16).
+# This file: Norwegian language data for the front-end (last modified: 2022.06.22).
 ##/
 
 Extended Description AbuseIPDB module: "Blokkerer forespørsler fra IP-er oppført på AbuseIPDB."
@@ -110,6 +110,7 @@ config_frontend_frontend_log: "Fil for å logge innloggingsforsøk på frontende
 config_frontend_magnification: &MagnifDesc "Font forstørrelse. Standardverdi = 1."
 config_frontend_max_login_attempts: "Maksimum antall påloggingsforsøk i front-end. Standard = 5."
 config_frontend_remotes: "En liste over adressene som brukes av oppdateringssystemet for å hente komponentmetadata. Dette må kanskje justeres når du oppgraderer til en ny hovedversjon, eller når du anskaffer en ny kilde for oppdateringer, men bør under normale omstendigheter stå i fred."
+config_frontend_signatures_update_event_log: "En fil for logging når signaturer oppdateres via frontend. Angi et filnavn, eller la det være tomt for å deaktivere."
 config_frontend_theme: "Standard tema som skal brukes for frontenden."
 config_general: "Generell konfigurasjon (enhver kjernekonfigurasjon som ikke tilhører andre kategorier)."
 config_general_allow_gethostbyaddr_lookup: "Tillat gethostbyaddr oppslag når UDP er utilgjengelig? True = Ja [Standardverdi]; False = Nei."
@@ -137,7 +138,6 @@ config_general_logfile_serialized: "Serialisert fil å logge av alle blokkerte t
 config_general_numbers: "Hvordan foretrekker du at tall vises? Velg eksempelet som passer best for deg."
 config_general_other_verification: "Kontroller for å verifisere andre typer forespørsler der det er mulig."
 config_general_search_engine_verification: "Kontroller for å verifisere forespørsler fra søkemotorer."
-config_general_signatures_update_event_log: "En fil for logging når signaturer oppdateres via frontend. Angi et filnavn, eller la det være tomt for å deaktivere."
 config_general_silent_mode: "Bør CIDRAM stille omdirigere blokkerte tilgangsforsøk i stedet for å vise "Tilgang Nektet" siden? Hvis ja, spesifiser stedet for å omdirigere blokkerte tilgangsforsøk til. Hvis nei, la denne variablen være tom."
 config_general_social_media_verification: "Kontroller for å verifisere forespørsler fra sosiale medieplattformer."
 config_general_stages: "Kontroller for stadiene i utførelseskjeden (om aktivert, om feil logges, osv)."
@@ -529,10 +529,9 @@ logs_no_logfiles_available: "Ingen loggfiler tilgjengelig."
 max_login_attempts_exceeded: "Maks antall påloggingsforsøk er overskredet; Tilgang nektet."
 msg_subject_2fa: "2FA (2-Faktorautentisering)"
 msg_template_2fa: |
- <center><p>Hallo, %1$s.<br />
- <br />
+ <center><p>Hallo, %s.<br /><br />
  Din 2FA-kode for å logge inn i CIDRAM-fronten:</p>
- <h1>%2$s</h1>
+ <h1>%s</h1>
  <p>Denne koden utløper om 10 minutter.</p></center>
 notice_new_major_version: "Notis: %s er nå tilgjengelig (du bruker %s). Du oppfyller denne versjonens minimum PHP-krav. Noen manuelle trinn kreves imidlertid for å oppdatere."
 previewer_days: "Dager"

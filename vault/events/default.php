@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Default event handlers (last modified: 2022.05.25).
+ * This file: Default event handlers (last modified: 2022.06.22).
  */
 
 /**
@@ -203,14 +203,14 @@ $this->Events->addHandler('final', function (): bool {
 $this->Events->addHandler('writeToSignaturesUpdateEventLog', function (string $Data): bool {
     /** Guard. */
     if (
-        $this->Configuration['general']['signatures_update_event_log'] === '' ||
-        !($UpdatesLog = $this->buildPath($this->Vault . $this->Configuration['general']['signatures_update_event_log']))
+        $this->Configuration['frontend']['signatures_update_event_log'] === '' ||
+        !($UpdatesLog = $this->buildPath($this->Vault . $this->Configuration['frontend']['signatures_update_event_log']))
     ) {
         return false;
     }
 
     /** Add lines based on whether the path is shared with other logs. */
-    if ($this->Configuration['general']['signatures_update_event_log'] === $this->Configuration['general']['logfile']) {
+    if ($this->Configuration['frontend']['signatures_update_event_log'] === $this->Configuration['general']['logfile']) {
         $Data .= "\n\n";
     } else {
         $Data .= "\n";
@@ -222,7 +222,7 @@ $this->Events->addHandler('writeToSignaturesUpdateEventLog', function (string $D
     fwrite($Handle, $Data);
     fclose($Handle);
     if ($WriteMode === 'wb') {
-        $this->logRotation($this->Configuration['general']['signatures_update_event_log']);
+        $this->logRotation($this->Configuration['frontend']['signatures_update_event_log']);
     }
     return true;
 });

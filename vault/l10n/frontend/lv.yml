@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Latvian language data for the front-end (last modified: 2022.06.15).
+# This file: Latvian language data for the front-end (last modified: 2022.06.22).
 ##/
 
 Extended Description AbuseIPDB module: "Bloķē pieprasījumus no IP, kas uzskaitīti vietnē AbuseIPDB."
@@ -33,7 +33,7 @@ Extended Description IPv6-Other: *ExtDesOther
 Extended Description Optional security extras module: "Nodrošina ierobežotu aizsardzību pret dažādiem uzbrukumu vektoriem, kurus parasti izmanto pieprasījumos."
 Extended Description PHPMailer: "Nepieciešams jebkuras funkcijas izmantošanai, kas saistīta ar e-pasta sūtīšanu.<br />{{Links.PHPMailer.PHPMailer}} ir pieejams caur {{Links.PHPMailer.License}} licenci."
 Extended Description Project Honeypot module: "Bloķē pieprasījumus no IP, kas uzskaitīti vietnē Project Honeypot."
-Extended Description Referrer spam module: "Bloķēšana, pamatojoties uz novirzītāja surogātpastu, parasti nesniegs nozīmīgus drošības ieguvumus, taču dažos gadījumos tas varētu būt noderīgs dažiem lietotājiem, lai savāktu vairāk informācijas par pieprasījumiem un par iespēju par to ziņot.<br />Instalējot šo moduli, tiek instalēti arī Symfony polifilmi {{Links.Symfony.Intl/Idn}} un {{Links.Symfony.Mbstring}} (jo šim modulim ir nepieciešama Idn funkcionalitāte, ko ne visas PHP instalācijas nodrošina pēc noklusējuma), abi ir pieejami, izmantojot <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a> licenci."
+Extended Description Referrer spam module: "Bloķēšana, pamatojoties uz novirzītāja surogātpastu, parasti nesniegs nozīmīgus drošības ieguvumus, taču dažos gadījumos tas varētu būt noderīgs dažiem lietotājiem, lai savāktu vairāk informācijas par pieprasījumiem un par iespēju par to ziņot.<br />Instalējot šo moduli, tiek instalēti arī Symfony polifilmi {{Links.Symfony.Intl/Idn}} (jo šim modulim ir nepieciešama Idn funkcionalitāte, ko ne visas PHP instalācijas nodrošina pēc noklusējuma), ir pieejami, izmantojot <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a> licenci."
 Extended Description Search engines blocker module: "Nodrošina iespēju bloķēt meklētājprogrammas, kas var būt problemātiskas dažām vietnēm (piemēram, Baidu, Sogou, Yandex, utt)."
 Extended Description Stop Forum Spam module: "Aizsargā reģistrācijas un ielogošanās lapas pret SFS uzskaitītajiem IP."
 Name AbuseIPDB module: "AbuseIPDB modulis"
@@ -110,6 +110,7 @@ config_frontend_frontend_log: "Fails ielogošanās mēģinājumu reģistrēšana
 config_frontend_magnification: &MagnifDesc "Fonta palielinājums. Noklusējuma = 1."
 config_frontend_max_login_attempts: "Maksimālais ielogošanās mēģinājumu skaits. Noklusējuma = 5."
 config_frontend_remotes: "Adreses, ko atjauninātājs izmanto komponentu metadatu iegūšanai. Iespējams, tas būs jāpielāgo, veicot jaunināšanu uz jaunu galveno versiju, vai iegūstot jaunu atjauninājumu avotu, taču parastos apstākļos to vajadzētu atstāt mierā."
+config_frontend_signatures_update_event_log: "Fails reģistrēšanai, kad paraksti tiek atjaunināti, izmantojot atjauninājumu lapu. Norādiet faila nosaukumu, vai atstājiet tukšu, lai to atspējotu."
 config_frontend_theme: "Noklusējuma tēma, kas jāizmanto priekšgalam."
 config_general: "Vispārējā konfigurācija (jebkura pamata konfigurācija, kas nepieder citām kategorijām)."
 config_general_allow_gethostbyaddr_lookup: "Vai atļaut meklēt ar gethostbyaddr, kad UDP nav pieejams? True (Patiess) = Jā [Noklusējuma]; False (Nepatiess) = Nē."
@@ -137,7 +138,6 @@ config_general_logfile_serialized: "Sērijveida fails visu bloķēto piekļuves 
 config_general_numbers: "Kā jūs izvēlaties skaitļu parādīšanu? Atlasiet piemēru, kas jums šķiet vispareizākais."
 config_general_other_verification: "Kontroles cita veida pieprasījumu pārbaudei, ja iespējams."
 config_general_search_engine_verification: "Kontroles meklētājprogrammas pieprasījumu pārbaudei."
-config_general_signatures_update_event_log: "Fails reģistrēšanai, kad paraksti tiek atjaunināti, izmantojot atjauninājumu lapu. Norādiet faila nosaukumu, vai atstājiet tukšu, lai to atspējotu."
 config_general_silent_mode: "Vai CIDRAM vajadzētu klusībā novirzīt bloķētus piekļuves mēģinājumus, nevis parādīt lapu "piekļuve liegta"? Ja tā, norādiet vietu, uz kuru novirzīt bloķētus piekļuves mēģinājumus. Ja nē, atstājiet šo mainīgo tukšu."
 config_general_social_media_verification: "Kontroles sociālo mediju platformas pieprasījumu pārbaudei."
 config_general_stages: "Kontroles mehānisms izpildes ķēdes posmiem (vai iespējots, vai tiek reģistrētas kļūdas, utt)."
@@ -404,7 +404,7 @@ label_backup_location: "Repozitorija rezerves vietas (ārkārtas gadījumā vai 
 label_banned: "Aizliegto pieprasījumu skaits"
 label_blocked: "Bloķēto pieprasījumu skaits"
 label_branch: "Jaunākā stabilā (uz šīs "branch"):"
-label_bypass_the_request: "Trigger a bypass.\nSubtracts one count from the number of signatures triggered, as long as at least one signature has already been triggered. Recommended for dealing with simple false positives potentially caused by the default signature files."
+label_bypass_the_request: "Ieslēgt apvedceļu.\nJa vismaz viens paraksts jau ir saskaitīts, atņem vienu no saskaitīto parakstu skaita. Ieteicams, lai tiktu galā ar vienkāršiem viltus pozitīviem gadījumiem, ko var izraisīt noklusējuma paraksta faili."
 label_captcha: "CAPTCHA mēģinājumi"
 label_check_aux: "Pārbaudiet arī palīgnoteikumus."
 label_check_modules: "Pārbaudiet arī moduļus."
@@ -437,7 +437,7 @@ label_fmgr_safety: "Drošības mehānismi"
 label_fmgr_total_disk_usage: "Kopējais diska lietojums:"
 label_fmgr_total_space: "Kopējā diska vieta:"
 label_fmgr_updates_metadata: "Metadati komponentu atjauninājumiem"
-label_greylist_the_request: "Greylist the request.\nResets the number of signatures triggered, but continues processing the request. Recommended when you don't want to whitelist the request, but need something more substantial than triggering a bypass."
+label_greylist_the_request: "Apstrādājiet pieprasījumu kā pelēka sarakstā.\nAtiestata parakstu skaitu, bet turpina pieprasījuma apstrādi. Ieteicams, ja nevēlaties apstrādājiet pieprasījumu kā baltajā sarakstā, bet nepieciešams kaut kas būtiskāks par apvedceļu."
 label_hide: "Slēpt"
 label_http_response_header_code_200: "200 OK (Labi)\nVismaz izturīgs, bet lietotājam draudzīgākais. Automātiskie pieprasījumi, visticamāk, interpretēs šo atbildi kā norādi, ka pieprasījums bija veiksmīgs."
 label_http_response_header_code_403: "403 Forbidden (Aizliegts)\nIzturīgāks, bet mazāk lietotājam draudzīgs. Ieteicams vairumam vispārīgu apstākļu."
@@ -504,7 +504,7 @@ label_usemode_blkd: "Tikai tad, kad bloķēts, parakstu ierobežojumu robežās,
 label_usemode_blkd_mrkd: "Tikai tad, kad bloķēts, īpaši marķēts lietošanai, parakstu ierobežojumu robežās, un nav aizliegts."
 label_usemode_not_blkd: "Tikai tad, ja tas nav bloķēts."
 label_usemode_not_blkd_mrkd: "Tikai tad, ja tas nav bloķēts, vai kad īpaši marķēts lietošanai, parakstu ierobežojumu robežās, un nav aizliegts."
-label_whitelist_the_request: "Whitelist the request.\nResets the number of signatures triggered, and aborts any further processing of the request. Guarantees that CIDRAM will never block the request."
+label_whitelist_the_request: "Apstrādājiet pieprasījumu kā baltajā sarakstā.\nAtiestata parakstu skaitu, un pārtrauc jebkādu turpmāku pieprasījuma apstrādi. Garantē, ka CIDRAM nekad nebloķēs pieprasījumu."
 label_your_ip: "Jūsu IP:"
 label_your_ua: "Jūsu lietotāja aģents:"
 link_accounts: "Konti"
@@ -536,10 +536,9 @@ logs_no_logfiles_available: "Neviens logfails nav pieejams."
 max_login_attempts_exceeded: "Pārsniegts maksimālais ielogošanās mēģinājumu skaits; Piekļuve liegta."
 msg_subject_2fa: "Divu-Faktoru Autentifikācija"
 msg_template_2fa: |
- <center><p>Sveiks, %1$s.<br />
- <br />
+ <center><p>Sveiks, %s.<br /><br />
  Jūsu divu-faktoru autentifikācijas kods, lai ielogotos CIDRAM:</p>
- <h1>%2$s</h1>
+ <h1>%s</h1>
  <p>Šis kods zaudē spēku 10 minūtēs.</p></center>
 notice_new_major_version: "Paziņojums: Tagad ir pieejama %s (jūs izmantojat %s). Jūs atbilstat šīs versijas minimālajām PHP prasībām. Tomēr ir jāveic dažas manuālās darbības, lai atjauninātu."
 previewer_days: "Dienas"

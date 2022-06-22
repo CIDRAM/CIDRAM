@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Swedish language data for the front-end (last modified: 2022.06.16).
+# This file: Swedish language data for the front-end (last modified: 2022.06.22).
 ##/
 
 Extended Description AbuseIPDB module: "Blockerar förfrågningar från IP-adresser som listas på AbuseIPDB."
@@ -110,6 +110,7 @@ config_frontend_frontend_log: "Fil för att logga in alla försök till inloggni
 config_frontend_magnification: &MagnifDesc "Font förstoring. Standard = 1."
 config_frontend_max_login_attempts: "Maximalt antal inloggningsförsök i front-end. Standard = 5."
 config_frontend_remotes: "En lista över adresserna som används av uppdateraren för att hämta komponentmetadata. Detta kan behöva justeras när du uppgraderar till en ny huvudversion, eller när du skaffar en ny källa för uppdateringar, men bör under normala omständigheter lämnas ifred."
+config_frontend_signatures_update_event_log: "En fil för loggning när signaturer uppdateras via frontend. Ange ett filnamn, eller lämna tomt för att inaktivera."
 config_frontend_theme: "Standardtemat som ska användas för front-enden."
 config_general: "Allmän konfiguration (alla kärnkonfigurationer som inte tillhör andra kategorier)."
 config_general_allow_gethostbyaddr_lookup: "Tillåt gethostbyaddr-uppslag när UDP är otillgänglig? True = Ja [Standard]; False = Nej."
@@ -137,7 +138,6 @@ config_general_logfile_serialized: "Serialiserad fil för att logga alla blocker
 config_general_numbers: "Hur föredrar du nummer som ska visas? Välj det exempel som är mest korrekt för dig."
 config_general_other_verification: "Kontroller för att verifiera andra typer av förfrågningar där det är möjligt."
 config_general_search_engine_verification: "Kontroller för att verifiera förfrågningar från sökmotorer."
-config_general_signatures_update_event_log: "En fil för loggning när signaturer uppdateras via frontend. Ange ett filnamn, eller lämna tomt för att inaktivera."
 config_general_silent_mode: "Ska CIDRAM utföra tyst omdirigering av blockerade åtkomstförsök istället för att visa sidan "Nekat Tillgång"? Om ja, ange platsen för omdirigering av blockerade åtkomstförsök. Om nej, lämna denna variabel tom."
 config_general_social_media_verification: "Kontroller för att verifiera förfrågningar från sociala medieplattformar."
 config_general_stages: "Kontroller för stadierna i utförandekedjan (om aktiverat, om fel loggas, osv)."
@@ -529,10 +529,9 @@ logs_no_logfiles_available: "Inga loggfiler finns tillgängliga."
 max_login_attempts_exceeded: "Maximalt antal inloggningsförsök överskreds; Nekat tillgång."
 msg_subject_2fa: "Tvåfaktorsautentisering"
 msg_template_2fa: |
- <center><p>Hallå, %1$s.<br />
- <br />
+ <center><p>Hallå, %s.<br /><br />
  Din 2FA-kod för att logga in i CIDRAM front-end:</p>
- <h1>%2$s</h1>
+ <h1>%s</h1>
  <p>Denna kod löper ut om 10 minuter.</p></center>
 notice_new_major_version: "Notera: %s är nu tillgängligt (du använder %s). Du uppfyller denna versions minsta PHP-krav. Vissa manuella steg krävs dock för att uppdatera."
 previewer_days: "Dagar"

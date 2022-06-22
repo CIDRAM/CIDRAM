@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Polish language data for the front-end (last modified: 2022.06.16).
+# This file: Polish language data for the front-end (last modified: 2022.06.22).
 ##/
 
 Extended Description AbuseIPDB module: "Blokuje żądania z adresów IP wymienionych w witrynie AbuseIPDB."
@@ -110,6 +110,7 @@ config_frontend_frontend_log: "Plik do logowania próbuje zalogować się do int
 config_frontend_magnification: &MagnifDesc "Powiększenie czcionki. Domyślna = 1."
 config_frontend_max_login_attempts: "Maksymalna liczba prób zalogowania się do interfejsu użytkownika. Domyślna = 5."
 config_frontend_remotes: "Lista adresów używanych przez aktualizator do pobierania metadanych komponentu. Może to wymagać dostosowania podczas aktualizacji do nowej wersji głównej, lub podczas nabywania nowego źródła aktualizacji, ale w normalnych okolicznościach należy to pozostawić w spokoju."
+config_frontend_signatures_update_event_log: "Plik do rejestrowania, gdy podpisy są aktualizowane za pośrednictwem interfejsu użytkownika. Podaj nazwę pliku lub pozostaw puste, aby wyłączyć."
 config_frontend_theme: "Domyślny motyw do użycia w interfejsie użytkownika."
 config_general: "Ogólna konfiguracja (dowolna konfiguracja podstawowa nienależąca do innych kategorii)."
 config_general_allow_gethostbyaddr_lookup: "Zezwolić na wyszukiwanie gethostbyaddr, gdy UDP jest niedostępny? True (Prawdziwe) = Tak [Domyślna]; False (Fałszywy) = Nie."
@@ -137,7 +138,6 @@ config_general_logfile_serialized: "Plik szeregowy do rejestrowania wszystkich z
 config_general_numbers: "Jak wolisz wyświetlać liczby? Wybierz przykład, który wygląda najlepiej dla Ciebie."
 config_general_other_verification: "Kontrolki do weryfikacji innych rodzajów żądań tam, gdzie to możliwe."
 config_general_search_engine_verification: "Kontrolki do weryfikacji żądań z wyszukiwarek."
-config_general_signatures_update_event_log: "Plik do rejestrowania, gdy podpisy są aktualizowane za pośrednictwem interfejsu użytkownika. Podaj nazwę pliku lub pozostaw puste, aby wyłączyć."
 config_general_silent_mode: "Czy CIDRAM powinien po cichu przekierowywać zablokowane próby dostępu zamiast wyświetlać stronę „Dostęp Zabroniony”? Jeśli tak, podaj lokalizację, do której mają zostać przekierowane zablokowane próby dostępu. Jeśli nie, pozostaw tę zmienną pustą."
 config_general_social_media_verification: "Kontrolki do weryfikacji żądań z platform mediów społecznościowych."
 config_general_stages: "Kontrole etapów łańcucha egzekucyjnego (czy włączone, czy błędy są rejestrowane, itp)."
@@ -536,10 +536,9 @@ logs_no_logfiles_available: "Brak dostępnych plików dziennika."
 max_login_attempts_exceeded: "Przekroczono maksymalną liczbę prób logowania; Dostęp zabroniony."
 msg_subject_2fa: "Uwierzytelnianie Dwuskładnikowe"
 msg_template_2fa: |
- <center><p>Cześć, %1$s.<br />
- <br />
+ <center><p>Cześć, %s.<br /><br />
  Twój dwuskładnikowy kod uwierzytelniający do logowania do interfejsu CIDRAM:</p>
- <h1>%2$s</h1>
+ <h1>%s</h1>
  <p>Ten kod wygasa za 10 minut.</p></center>
 notice_new_major_version: "Ogłoszenie: %s jest już dostępny (używasz %s). Spełniasz minimalne wymagania PHP dla tej wersji. Jednak do zaktualizowania wymagane są ręczne kroki."
 previewer_days: "Dni"

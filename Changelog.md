@@ -40,6 +40,7 @@
 - Moved all the event handlers and imports to their own dedicated directories.
 - Most (but not all) available CIDRAM modules are to be bundled with CIDRAM as of v3 onward.
 - There's no longer any need for an external API or CLI script for CIDRAM, as these are both bundled into CIDRAM itself as of v3 onward.
+- Configuration directives `max_login_attempts` and `signatures_update_event_log` have been moved from the `general` configuration category to the `frontend` configuration category.
 
 #### Bugs fixed.
 - Some specific files were being misclassified by the file manager; Fixed.

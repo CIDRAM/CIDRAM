@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: German language data for the front-end (last modified: 2022.06.16).
+# This file: German language data for the front-end (last modified: 2022.06.22).
 ##/
 
 Extended Description AbuseIPDB module: "Blockiert Anfragen von IPs, die bei AbuseIPDB aufgelistet sind."
@@ -110,6 +110,7 @@ config_frontend_frontend_log: "Datei für die Protokollierung von Frontend Anmel
 config_frontend_magnification: &MagnifDesc "Schriftvergrößerung. Standardeinstellung = 1."
 config_frontend_max_login_attempts: "Maximale Anzahl der Versucht zum Anmelden (Frontend). Standardeinstellung = 5."
 config_frontend_remotes: "Eine Liste der Adressen an denen der Updater Komponenten-Metadaten abruft. Dies muss möglicherweise beim Upgrade auf eine neue Hauptversion oder beim Erwerb einer neuen Quelle für Updates angepasst werden, aber sollte unter normalen Umständen in Ruhe gelassen werden."
+config_frontend_signatures_update_event_log: "Einer Datei zum Protokollieren wenn Signaturen über das Front-End aktualisiert werden. Geben Sie einen Dateinamen an oder lassen Sie die Option zum Deaktivieren leer."
 config_frontend_theme: "Standard-Thema für das Front-End zu verwenden."
 config_general: "Allgemeine Konfiguration (jede Kernkonfiguration, die nicht zu anderen Kategorien gehört)."
 config_general_allow_gethostbyaddr_lookup: "gethostbyaddr-Suche erlauben, wenn UDP nicht verfügbar ist? True = Ja [Standardeinstellung]; False = Nein."
@@ -137,7 +138,6 @@ config_general_logfile_serialized: "Name einer Datei zu protokollieren alle bloc
 config_general_numbers: "Wie willst du Nummern anzeigen? Wählen Sie das Beispiel aus, das Ihnen am besten entspricht."
 config_general_other_verification: "Kontrollen für die Verifizierung die anderer Arten von Anfragen sofern möglich."
 config_general_search_engine_verification: "Kontrollen für die Verifizierung von Anfragen von Suchmaschinen."
-config_general_signatures_update_event_log: "Einer Datei zum Protokollieren wenn Signaturen über das Front-End aktualisiert werden. Geben Sie einen Dateinamen an oder lassen Sie die Option zum Deaktivieren leer."
 config_general_silent_mode: "Anstatt die „Zugriff verweigert“ Meldung auszugeben, sollte CIDRAM leise die Zugriffe umleiten? Wenn ja, geben Sie den Speicherort an auf welchen die Zugriffe umgeleitet werden sollen. Wenn nein, diese Variable leer lassen."
 config_general_social_media_verification: "Kontrollen für die Verifizierung von Anfragen von Social-Media-Plattformen."
 config_general_stages: "Kontrollen für die Phasen der Ausführungskette (ob aktiviert, ob Fehler protokolliert, u.s.w.)."
@@ -531,10 +531,9 @@ logs_no_logfiles_available: "Keine Protokolldateien vorhanden."
 max_login_attempts_exceeded: "Maximale Anzahl der Versucht zu einloggen überschritten; Zugriff verweigert."
 msg_subject_2fa: "Zwei-Faktor-Authentifizierung"
 msg_template_2fa: |
- <center><p>Hallo, %1$s.<br />
- <br />
+ <center><p>Hallo, %s.<br /><br />
  Ihr Zwei-Faktor-Authentifizierungscode für die Einloggen am CIDRAM Frontend:</p>
- <h1>%2$s</h1>
+ <h1>%s</h1>
  <p>Dieser Code läuft in 10 Minuten ab.</p></center>
 notice_new_major_version: "Beachten: %s ist jetzt verfügbar (Sie verwenden %s). Sie erfüllen die Mindestanforderungen für PHP für diese Version. Einige manuelle Schritte erforderlich jedoch zum Aktualisieren."
 previewer_days: "Tage"

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Indonesian language data for the front-end (last modified: 2022.06.16).
+# This file: Indonesian language data for the front-end (last modified: 2022.06.22).
 ##/
 
 Extended Description AbuseIPDB module: "Memblokir permintaan dari IP yang terdaftar oleh AbuseIPDB."
@@ -110,6 +110,7 @@ config_frontend_frontend_log: "File untuk mencatat upaya masuk bagian depan. Spe
 config_frontend_magnification: &MagnifDesc "Perbesaran font. Default = 1."
 config_frontend_max_login_attempts: "Jumlah maksimum upaya memasukkan ke bagian depan. Default = 5."
 config_frontend_remotes: "Daftar alamat yang digunakan oleh pembaru untuk mengambil metadata komponen. Ini mungkin perlu disesuaikan saat memutakhirkan ke versi utama baru, atau saat memperoleh sumber baru untuk pembaruan, tetapi dalam keadaan normal harus dibiarkan saja."
+config_frontend_signatures_update_event_log: "File untuk mencatat ketika tanda tangan diperbarui melalui bagian depan. Spesifikasikan nama file, atau biarkan kosong untuk menonaktifkan."
 config_frontend_theme: "Tema default yang digunakan untuk front-end."
 config_general: "Konfigurasi umum (konfigurasi inti apapun yang bukan milik kategori lain)."
 config_general_allow_gethostbyaddr_lookup: "Izinkan menggunakan gethostbyaddr saat UDP tidak tersedia? True = Ya [Default]; False = Tidak."
@@ -137,7 +138,6 @@ config_general_logfile_serialized: "File serial untuk mencatat semua upaya akses
 config_general_numbers: "Cara apa yang kamu suka nomor menjadi ditampilkan? Pilih contoh yang paling sesuai untuk Anda."
 config_general_other_verification: "Kontrol untuk memverifikasi jenis permintaan lain jika memungkinkan."
 config_general_search_engine_verification: "Kontrol untuk memverifikasi permintaan dari mesin pencari."
-config_general_signatures_update_event_log: "File untuk mencatat ketika tanda tangan diperbarui melalui bagian depan. Spesifikasikan nama file, atau biarkan kosong untuk menonaktifkan."
 config_general_silent_mode: "Seharusnya CIDRAM diam-diam mengarahkan diblokir upaya akses bukannya menampilkan halaman "Akses Ditolak"? Jika ya, menentukan lokasi untuk mengarahkan diblokir upaya akses. Jika tidak, kosongkan variabel ini."
 config_general_social_media_verification: "Kontrol untuk memverifikasi permintaan dari platform media sosial."
 config_general_stages: "Kontrol untuk tahapan rantai eksekusi (apakah diaktifkan, apakah kesalahan dicatat, dll)."
@@ -521,10 +521,9 @@ logs_no_logfiles_available: "Tidak ada log tersedia."
 max_login_attempts_exceeded: "Jumlah maksimum upaya untuk memasukkan tercapai; Akses ditolak."
 msg_subject_2fa: "Otentikasi Dua-Faktor"
 msg_template_2fa: |
- <center><p>Salam, %1$s.<br />
- <br />
+ <center><p>Salam, %s.<br /><br />
  Kode otentikasi dua-faktor Anda untuk masuk ke depan CIDRAM:</p>
- <h1>%2$s</h1>
+ <h1>%s</h1>
  <p>Kode ini berakhir dalam 10 menit.</p></center>
 notice_new_major_version: "Perhatian: %s sekarang tersedia (Anda menggunakan %s). Anda memenuhi persyaratan PHP minimum versi ini. Namun, beberapa langkah manual diperlukan untuk memperbarui."
 previewer_days: "Hari"

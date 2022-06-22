@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Hindi language data for the front-end (last modified: 2022.06.16).
+# This file: Hindi language data for the front-end (last modified: 2022.06.22).
 ##/
 
 Extended Description AbuseIPDB module: "AbuseIPDB पर सूचीबद्ध IP से अनुरोध ब्लॉक करता है।"
@@ -110,6 +110,7 @@ config_frontend_frontend_log: "सामने के अंत में प्
 config_frontend_magnification: &MagnifDesc "फ़ॉन्ट बढ़ाई। डिफ़ॉल्ट = "1"।"
 config_frontend_max_login_attempts: "फ्रंट-एंड लॉगिन प्रयासों की अधिकतम संख्या। डिफ़ॉल्ट = 5।"
 config_frontend_remotes: "कंपोनेंट मेटाडेटा लाने के लिए अद्यतनकर्ता द्वारा उपयोग किए गए पतों की सूची। नए प्रमुख संस्करण में अपग्रेड करते समय, या अपडेट के लिए नया स्रोत प्राप्त करते समय इसे समायोजित करने की आवश्यकता हो सकती है, लेकिन सामान्य परिस्थितियों में इसे अकेला छोड़ दिया जाना चाहिए।"
+config_frontend_signatures_update_event_log: "फ्रंट-एंड के माध्यम से हस्ताक्षर अद्यतन किए जाने पर लॉगिंग के लिए एक फ़ाइल। एक फाइल नाम निर्दिष्ट करें, या निष्क्रिय करने के लिए खाली छोड़।"
 config_frontend_theme: "फ़्रंट-एंड के लिए उपयोग करने के लिए डिफ़ॉल्ट थीम।"
 config_general: "सामान्य कॉन्फ़िगरेशन (कॉन्फ़िगरेशन जो अन्य श्रेणियों से संबंधित नहीं है)।"
 config_general_allow_gethostbyaddr_lookup: "जब UDP अनुपलब्ध हो तो gethostbyaddr लुकअप की अनुमति दें? True(सच्चे) = हाँ [डिफ़ॉल्ट]; False(झूठी) = नहीं।"
@@ -137,7 +138,6 @@ config_general_logfile_serialized: "सभी अवरुद्ध पहुँ
 config_general_numbers: "आप संख्याओं को प्रदर्शित करने के लिए कैसे पसंद करते हैं? उदाहरण का चयन करें जो आपके लिए सबसे सही लग रहा है।"
 config_general_other_verification: "जहां संभव हो अन्य प्रकार के अनुरोधों को सत्यापित करने के लिए नियंत्रण।"
 config_general_search_engine_verification: "खोज इंजन से अनुरोध सत्यापित करने के लिए नियंत्रण।"
-config_general_signatures_update_event_log: "फ्रंट-एंड के माध्यम से हस्ताक्षर अद्यतन किए जाने पर लॉगिंग के लिए एक फ़ाइल। एक फाइल नाम निर्दिष्ट करें, या निष्क्रिय करने के लिए खाली छोड़।"
 config_general_silent_mode: "चुपचाप CIDRAM चाहिए "पहुँच नहीं हुई" पेज प्रदर्शित ब्लॉक पहुँच प्रयासों को दिशानिर्देश देने के बजाय? हाँ तो, अवरुद्ध पहुँच प्रयासों को दिशानिर्देश देने के स्थान विवरण। कोई तो चर खाली छोड़।"
 config_general_social_media_verification: "सोशल मीडिया प्लेटफॉर्म से अनुरोधों को सत्यापित करने के लिए नियंत्रण।"
 config_general_stages: "निष्पादन श्रृंखला के चरणों के लिए नियंत्रण (सक्षम किया गया है, क्या त्रुटियां लॉग की गई हैं, आदि)।"
@@ -529,10 +529,9 @@ logs_no_logfiles_available: "कोई लॉग फाइल उपलब्ध
 max_login_attempts_exceeded: "लॉगिन प्रयासों की अधिकतम संख्या पार हो गई; पहुंच अस्वीकृत।"
 msg_subject_2fa: "दो तरीकों से प्रमाणीकरण"
 msg_template_2fa: |
- <center><p>हैलो, %1$s।<br />
- <br />
+ <center><p>हैलो, %s।<br /><br />
  CIDRAM सामने के अंत में लॉग इन करने के लिए आपका दो तरीकों से प्रमाणीकरण कोड:</p>
- <h1>%2$s</h1>
+ <h1>%s</h1>
  <p>यह कोड 10 मिनट में समाप्त हो जाता है।</p></center>
 notice_new_major_version: "सूचना: %s अब उपलब्ध है (आप %s का उपयोग कर रहे हैं)। आप इस संस्करण की न्यूनतम PHP आवश्यकता को पूरा करते हैं। हालाँकि, अपडेट करने के लिए कुछ मैनुअल चरणों की आवश्यकता होती है।"
 previewer_days: "दिन"

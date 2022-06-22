@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Portuguese language data for the front-end (last modified: 2022.06.16).
+# This file: Portuguese language data for the front-end (last modified: 2022.06.22).
 ##/
 
 Extended Description AbuseIPDB module: "Bloqueia solicitações de IPs listados no AbuseIPDB."
@@ -110,6 +110,7 @@ config_frontend_frontend_log: "Arquivo para registrar tentativas de login ao fro
 config_frontend_magnification: &MagnifDesc "Ampliação de fonte. Padrão = 1."
 config_frontend_max_login_attempts: "Número máximo de tentativas de login ao front-end. Padrão = 5."
 config_frontend_remotes: "Uma lista dos endereços usados pelo atualizador para buscar metadados de componentes. Isso pode precisar ser ajustado ao atualizar para uma nova versão principal, ou ao adquirir uma nova fonte para atualizações, mas em circunstâncias normais deve ser deixado de lado."
+config_frontend_signatures_update_event_log: "Um arquivo para registrar quando as assinaturas são atualizadas por meio do front-end. Especifique o nome de um arquivo, ou deixe em branco para desabilitar."
 config_frontend_theme: "Tema padrão a ser usado para o front-end."
 config_general: "Configuração geral (qualquer configuração principal que não pertença a outras categorias)."
 config_general_allow_gethostbyaddr_lookup: "Permitir pesquisas gethostbyaddr quando o UDP não está disponível? True = Sim [Padrão]; False = Não."
@@ -137,7 +138,6 @@ config_general_logfile_serialized: "Um arquivo serializado para registrar todas 
 config_general_numbers: "Como você prefere que os números sejam exibidos? Selecione o exemplo que parece mais correto para você."
 config_general_other_verification: "Controles para verificar outros tipos de solicitações sempre que possível."
 config_general_search_engine_verification: "Controles para verificar solicitações de mecanismos de pesquisa."
-config_general_signatures_update_event_log: "Um arquivo para registrar quando as assinaturas são atualizadas por meio do front-end. Especifique o nome de um arquivo, ou deixe em branco para desabilitar."
 config_general_silent_mode: "Deve CIDRAM silenciosamente redirecionar as tentativas de acesso bloqueadas em vez de exibir o "Acesso Negado" página? Se sim, especificar o local para redirecionar as tentativas de acesso bloqueadas para. Se não, deixe esta variável em branco."
 config_general_social_media_verification: "Controles para verificar solicitações de plataformas de mídia social."
 config_general_stages: "Controles para as etapas da cadeia de execução (se ativado, se os erros são registrados, etc)."
@@ -531,10 +531,9 @@ logs_no_logfiles_available: "Não quaisquer arquivos de registro disponíveis."
 max_login_attempts_exceeded: "Número máximo de tentativas de login foi excedido; Acesso negado."
 msg_subject_2fa: "Autenticação de dois fatores"
 msg_template_2fa: |
- <center><p>Olá, %1$s.<br />
- <br />
+ <center><p>Olá, %s.<br /><br />
  Seu código de autenticação de dois fatores para efetuar login no front-end CIDRAM:</p>
- <h1>%2$s</h1>
+ <h1>%s</h1>
  <p>Este código expira em 10 minutos.</p></center>
 notice_new_major_version: "Aviso: O %s está agora disponível (você está usando o %s). Você atende aos requisitos mínimos de PHP desta versão. No entanto, algumas etapas manuais são necessárias para atualizar."
 previewer_days: "Dias"

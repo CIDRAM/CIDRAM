@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (traditional) language data for the front-end (last modified: 2022.06.16).
+# This file: Chinese (traditional) language data for the front-end (last modified: 2022.06.22).
 ##/
 
 Extended Description AbuseIPDB module: "阻止來自AbuseIPDB列出的IP的請求。"
@@ -110,6 +110,7 @@ config_frontend_frontend_log: "前端登錄嘗試的錄音文件。​指定一�
 config_frontend_magnification: &MagnifDesc "字體放大。​標準 = 1。"
 config_frontend_max_login_attempts: "最大前端登錄嘗試次數。​標準=5。"
 config_frontend_remotes: "更新系統用於獲取組件元數據的地址列表。​這可能需要在升級到新的主要版本時進行調整，或者在獲取新的更新源時進行調整，但在正常情況下應該不理會。"
+config_frontend_signatures_update_event_log: "通過前端更新簽名時用於記錄的文件。​指定一個文件名，​或留空以禁用。"
 config_frontend_theme: "用於前端的默認主題。"
 config_general: "基本配置（任何不屬於其他類別的核心配置）。"
 config_general_allow_gethostbyaddr_lookup: "當UDP不可用時允許gethostbyaddr查找？​True（真）=允許【標準】；False（假）=不允許。"
@@ -137,7 +138,6 @@ config_general_logfile_serialized: "連載的文件用於記錄所有被攔截�
 config_general_numbers: "您如何喜歡顯示數字？​選擇最適合示例。"
 config_general_other_verification: "用於在可能的情況下，驗證其他類型的請求的控件。"
 config_general_search_engine_verification: "用於驗證來自搜索引擎的請求的控件。"
-config_general_signatures_update_event_log: "通過前端更新簽名時用於記錄的文件。​指定一個文件名，​或留空以禁用。"
 config_general_silent_mode: "CIDRAM應該默默重定向被攔截的訪問而不是顯示該『拒絕訪問』頁嗎？​指定位置至重定向被攔截的訪問，​或讓它空將其禁用。"
 config_general_social_media_verification: "用於驗證來自社交媒體平台的請求的控件。"
 config_general_stages: "用於執行鏈的各個階段的控件（是否啟用，是否記錄錯誤，等等）。"
@@ -522,10 +522,9 @@ logs_no_logfiles_available: "沒有日誌可用。"
 max_login_attempts_exceeded: "最大登錄嘗試次數已經超過；拒絕訪問。"
 msg_subject_2fa: "2FA（雙因素身份驗證）"
 msg_template_2fa: |
- <center><p>你好，%1$s。<br />
- <br />
+ <center><p>你好，%s。<br /><br />
  用於登錄CIDRAM前端的2FA代碼：</p>
- <h1>%2$s</h1>
+ <h1>%s</h1>
  <p>此代碼將在10分鐘後到期。</p></center>
 notice_new_major_version: "通知：%s現在可用（您正在使用%s）。​您滿足此版本的最低PHP要求。​但是，需要一些手動步驟來更新。"
 previewer_days: "天"

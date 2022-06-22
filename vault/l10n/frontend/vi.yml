@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Vietnamese language data for the front-end (last modified: 2022.06.16).
+# This file: Vietnamese language data for the front-end (last modified: 2022.06.22).
 ##/
 
 Extended Description AbuseIPDB module: "Chặn các yêu cầu từ IP được liệt kê tại AbuseIPDB."
@@ -110,6 +110,7 @@ config_frontend_frontend_log: "Tập tin cho ghi cố gắng đăng nhập front
 config_frontend_magnification: &MagnifDesc "Phóng to chữ. Mặc định = 1."
 config_frontend_max_login_attempts: "Số lượng tối đa cố gắng đăng nhập front-end. Mặc định = 5."
 config_frontend_remotes: "Danh sách các địa chỉ được trình cập nhật sử dụng để tìm nạp siêu dữ liệu thành phần. Điều này có thể cần được điều chỉnh khi nâng cấp lên phiên bản chính mới, hoặc khi tìm một nguồn mới để cập nhật, nhưng trong các trường hợp bình thường thì nên để nguyên."
+config_frontend_signatures_update_event_log: "Một tập tin để ghi nhật ký khi chữ ký được cập nhật qua front-end. Chỉ định một tên tập tin, hoặc để trống để vô hiệu hóa."
 config_frontend_theme: "Chủ đề mặc định để sử dụng cho front-end."
 config_general: "Cấu hình chung (bất kỳ cấu hình cốt lõi nào không thuộc về các loại khác)."
 config_general_allow_gethostbyaddr_lookup: "Cho phép tra cứu gethostbyaddr khi UDP không khả dụng? True = Vâng [Mặc định]; False = Không."
@@ -137,7 +138,6 @@ config_general_logfile_serialized: "Tập tin tuần tự cho ghi tất cả cá
 config_general_numbers: "Làm thế nào để bạn thích số được hiển thị? Chọn ví dụ có vẻ chính xác nhất cho bạn."
 config_general_other_verification: "Kiểm soát để xác minh các loại yêu cầu khác nếu có thể."
 config_general_search_engine_verification: "Kiểm soát để xác minh các yêu cầu từ các máy tìm kiếm."
-config_general_signatures_update_event_log: "Một tập tin để ghi nhật ký khi chữ ký được cập nhật qua front-end. Chỉ định một tên tập tin, hoặc để trống để vô hiệu hóa."
 config_general_silent_mode: "CIDRAM nên âm thầm chuyển hướng cố gắng truy cập bị chặn thay vì hiển thị trang "Truy cập đã bị từ chối"? Nếu vâng, xác định vị trí để chuyển hướng cố gắng truy cập bị chặn để. Nếu không, để cho biến này được trống."
 config_general_social_media_verification: "Kiểm soát để xác minh các yêu cầu từ các nền tảng truyền thông xã hội."
 config_general_stages: "Kiểm soát các giai đoạn của chuỗi thực thi (có được bật hay không, có lỗi được ghi lại hay không, vv)."
@@ -521,10 +521,9 @@ logs_no_logfiles_available: "Không có bản ghi có sẵn."
 max_login_attempts_exceeded: "Số lượng tối đa cố gắng đăng nhập đã bị vượt quá; Truy cập đã bị từ chối."
 msg_subject_2fa: "2FA (Xác thực hai yếu tố)"
 msg_template_2fa: |
- <center><p>Xin chào, %1$s.<br />
- <br />
+ <center><p>Xin chào, %s.<br /><br />
  Mã 2FA của bạn để đăng nhập vào front-end của CIDRAM:</p>
- <h1>%2$s</h1>
+ <h1>%s</h1>
  <p>Mã này hết hạn sau 10 phút.</p></center>
 notice_new_major_version: "Ghi chú: %s hiện có sẵn (bạn đang sử dụng %s). Bạn đáp ứng yêu cầu PHP tối thiểu của phiên bản này. Tuy nhiên, một số bước thủ công được cần thiết để cập nhật."
 previewer_days: "Ngày"

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Defaults file (last modified: 2022.06.21).
+# This file: Defaults file (last modified: 2022.06.22).
 ##/
 
 Config Defaults:
@@ -409,9 +409,6 @@ Config Defaults:
    choices:
     default: "field_clickable_link"
     noclick: "field_nonclickable_text"
-  signatures_update_event_log:
-   type: "string"
-   default: ""
   ban_override:
    type: "int"
    default: 200
@@ -638,6 +635,9 @@ Config Defaults:
    default: ""
  frontend:
   frontend_log:
+   type: "string"
+   default: ""
+  signatures_update_event_log:
    type: "string"
    default: ""
   max_login_attempts:

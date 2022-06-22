@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Dutch language data for the front-end (last modified: 2022.06.16).
+# This file: Dutch language data for the front-end (last modified: 2022.06.22).
 ##/
 
 Extended Description AbuseIPDB module: "Blokkeert aanvragen van IP's die worden vermeld op AbuseIPDB."
@@ -110,6 +110,7 @@ config_frontend_frontend_log: "Bestand om de frontend login pogingen te loggen. 
 config_frontend_magnification: &MagnifDesc "Lettergrootte vergroting. Standaard = 1."
 config_frontend_max_login_attempts: "Maximum aantal frontend-inlogpogingen. Standaard = 5."
 config_frontend_remotes: "Een lijst met de adressen die door de updater worden gebruikt om metagegevens van componenten op te halen. Dit moet mogelijk worden aangepast bij het upgraden naar een nieuwe hoofdversie, of bij het verkrijgen van een nieuwe bron voor updates, maar onder normale omstandigheden moet dit met rust worden gelaten."
+config_frontend_signatures_update_event_log: "Een bestand om te loggen wanneer signatures worden bijgewerkt via de frontend. Geef een bestandsnaam, of laat leeg om uit te schakelen."
 config_frontend_theme: "Standaard thema om te gebruiken voor de frontend."
 config_general: "Algemene configuratie (elke kernconfiguratie die niet tot andere categorieën behoort)."
 config_general_allow_gethostbyaddr_lookup: "Zoeken op gethostbyaddr toestaan als UDP niet beschikbaar is? True = Ja [Standaard]; False = Nee."
@@ -137,7 +138,6 @@ config_general_logfile_serialized: "Geserialiseerd bestand om alle geblokkeerde 
 config_general_numbers: "Hoe verkiest u nummers die worden weergegeven? Selecteer het voorbeeld dat het meest correct voor u lijkt."
 config_general_other_verification: "Controles voor het verifiëren van andere soorten verzoeken waar mogelijk."
 config_general_search_engine_verification: "Controles voor het verifiëren van verzoeken van zoekmachines."
-config_general_signatures_update_event_log: "Een bestand om te loggen wanneer signatures worden bijgewerkt via de frontend. Geef een bestandsnaam, of laat leeg om uit te schakelen."
 config_general_silent_mode: "Moet CIDRAM stilletjes redirect geblokkeerd toegang pogingen in plaats van het weergeven van de "Toegang Geweigerd" pagina? Als ja, geef de locatie te redirect geblokkeerd toegang pogingen. Als nee, verlaat deze variabele leeg."
 config_general_social_media_verification: "Controles voor het verifiëren van verzoeken van sociale media platforms."
 config_general_stages: "Controles voor de fasen van de uitvoeringsketen (of ingeschakeld, of fouten worden geregistreerd, enz)."
@@ -531,10 +531,9 @@ logs_no_logfiles_available: "Geen logbestanden beschikbaar."
 max_login_attempts_exceeded: "Maximum aantal inlogpogingen overschreden; Toegang geweigerd."
 msg_subject_2fa: "2FA (Twee-Factor Authenticatie)"
 msg_template_2fa: |
- <center><p>Hallo, %1$s.<br />
- <br />
+ <center><p>Hallo, %s.<br /><br />
  Uw 2FA-code voor in te loggen bij de frontend van CIDRAM:</p>
- <h1>%2$s</h1>
+ <h1>%s</h1>
  <p>Deze code verloopt over 10 minuten.</p></center>
 notice_new_major_version: "Notitie: %s is nu beschikbaar (u gebruikt %s). U voldoet aan de minimale PHP-vereiste van deze versie. Er zijn echter enkele handmatige stappen vereist om bij te werken."
 previewer_days: "Dagen"

@@ -240,15 +240,15 @@ CIDRAM:
    - "ee98b16e3880618a5fbf6b7e70f89eb1dbd36ea4d83a91f0b0060f8830d461bc:1661"
    - "e48dc4d8b942bc26580caebdfc7ff79bfbb3807003c918c739c9e7dfdb61bf5e:1204"
    - "67dbe791d181719036b31e00056ac418e2a9633a5ab9d8b82a18369aabe1e6c6:2434"
-   - "4f8fe87fada704182672edb2210b934825465f6f2552c89fbf12107fc7d161c0:6896"
+   - "ba889c15128068cf5241bf1ef2f09788fc7edc3acd3140a891d311cfcc2f5fbd:6948"
  Reannotate: "components.dat"
 IPv4:
  Extended Description: "Default IPv4 signatures normally included with the main package. Blocks unwanted cloud services and non-human endpoints."
  False Positive Risk: "Low"
- Version: "2022.165.0"
+ Version: "2022.172.0"
  Dependencies:
   CIDRAM Core: ">=1"
-  Bypasses: ">=2021.260.503"
+  Bypasses: ">=2022.172"
  Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat"
  Uninstallable: true
  Files:
@@ -257,7 +257,7 @@ IPv4:
   To:
    - "ipv4.dat"
   Checksum:
-   - "889fce8353e4489960fe027fa7567398c3bad245efb5f481938ba51b5c4fa8aa:1048608"
+   - "5acab35ab7e222f91114fde7f256e64583fc9d2e8cec9cc61b50eee6addfff7a:1057014"
  Used with: "ipv4"
  Reannotate: "components.dat"
 IPv4-Bogons:
@@ -280,10 +280,10 @@ IPv4-Bogons:
 IPv4-ISPs:
  Extended Description: "Default IPv4 signatures normally included with the main package. Blocks dangerous and spammy ISPs."
  False Positive Risk: "Medium"
- Version: "2022.165.0"
+ Version: "2022.172.0"
  Dependencies:
   CIDRAM Core: ">=1"
-  Bypasses: ">=2021.192.550"
+  Bypasses: ">=2022.172"
  Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat"
  Uninstallable: true
  Files:
@@ -292,7 +292,7 @@ IPv4-ISPs:
   To:
    - "ipv4_isps.dat"
   Checksum:
-   - "a0cb1dee5ab6e8eb9e62f226f82a7ea156a8a6682af5d30ec2073e65c839dca3:541646"
+   - "1d028b1bec609725f1358f6e9f428c4bbed6acc9fe681256d05a027bf9ef85b4:545555"
  Used with: "ipv4"
  Reannotate: "components.dat"
 IPv4-Nonblocking:
@@ -331,10 +331,10 @@ IPv4-Other:
 IPv6:
  Extended Description: "Default IPv6 signatures normally included with the main package. Blocks unwanted cloud services and non-human endpoints."
  False Positive Risk: "Low"
- Version: "2022.165.0"
+ Version: "2022.172.0"
  Dependencies:
   CIDRAM Core: ">=1"
-  Bypasses: ">=2021.260.503"
+  Bypasses: ">=2022.172"
  Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat"
  Uninstallable: true
  Files:
@@ -343,7 +343,7 @@ IPv6:
   To:
    - "ipv6.dat"
   Checksum:
-   - "0415246b9e455434cdfff854efaf4f2157fc43912ba428344ad572d60040bc43:299600"
+   - "d03f115b721012171bfc7a6061a3c8ef69e4e378a51a3b6af13696339807798c:302367"
  Used with: "ipv6"
  Reannotate: "components.dat"
 IPv6-Bogons:
@@ -366,10 +366,10 @@ IPv6-Bogons:
 IPv6-ISPs:
  Extended Description: "Default IPv6 signatures normally included with the main package. Blocks dangerous and spammy ISPs."
  False Positive Risk: "Medium"
- Version: "2022.165.0"
+ Version: "2022.172.0"
  Dependencies:
   CIDRAM Core: ">=1"
-  Bypasses: ">=2021.192.550"
+  Bypasses: ">=2022.172"
  Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v1/vault/components.dat"
  Uninstallable: true
  Files:
@@ -378,7 +378,7 @@ IPv6-ISPs:
   To:
    - "ipv6_isps.dat"
   Checksum:
-   - "3fa8f65b250b2db39805a43d278916edfa2f47c2886cc3ff6cb56f2f0e7a9035:51016"
+   - "4d9e7c4fae3a95b8652c73295253ebe3ab18c5a843c295cc1ffa4441665e7652:51139"
  Used with: "ipv6"
  Reannotate: "components.dat"
 IPv6-Nonblocking:
@@ -415,7 +415,7 @@ IPv6-Other:
  Used with: "ipv6"
  Reannotate: "components.dat"
 Bypasses:
- Version: "2022.21.500"
+ Version: "2022.172.0"
  Dependencies:
   PHP: ">=5.4"
   CIDRAM Core: "^1.19.1"
@@ -429,8 +429,8 @@ Bypasses:
    - "bypasses.php"
    - "bypasses.yml"
   Checksum:
-   - "65572d136121f870cf66bbed1da41bda313fe0d6e4bd2df4c5fd6d504ee6b155:10624"
-   - "2a64230b87bc71c0901c7d306ea06035be0ffc290d36d94048f5fe300004710d:917"
+   - "f7cec3f161c5cb808761cdfc57bb0515beaa37860a37329e23ba85cd4d78bae3:11555"
+   - "a33f59cd3d33861edbcbdea04d82121fecfdb4079f5ded007e62ed67d437021f:998"
  Used with:
   - "n/a"
   - "imports"

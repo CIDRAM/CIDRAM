@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Default signature bypasses (last modified: 2022.05.21).
+ * This file: Default signature bypasses (last modified: 2022.06.22).
  */
 
 /** Prevents execution from outside of the checkFactors method. */
@@ -170,6 +170,33 @@ $this->CIDRAM['RunParamResCache']['bypasses.php'] = function (array $Factors = [
          */
         if (isset($Bypasses['DuckDuckBot']) && preg_match('~duckduck(?:go-favicons-)?bot~', $this->BlockInfo['UALC'])) {
             return 4;
+        }
+    }
+
+    /** Google bypasses. */
+    if ($Tag === 'Google LLC') {
+        /**
+         * Googlebot bypass.
+         */
+        if (isset($Bypasses['Googlebot'])) {
+            if (empty($this->CIDRAM['Hostname'])) {
+                $this->CIDRAM['Hostname'] = $this->dnsReverse($this->BlockInfo['IPAddr']);
+            }
+            if (preg_match('~\.google(?:bot)?\.com$~i', $this->CIDRAM['Hostname'])) {
+                return 2;
+            }
+        }
+
+        /**
+         * Google Fiber bypass.
+         */
+        if (isset($Bypasses['GoogleFiber'])) {
+            if (empty($this->CIDRAM['Hostname'])) {
+                $this->CIDRAM['Hostname'] = $this->dnsReverse($this->BlockInfo['IPAddr']);
+            }
+            if (preg_match('~\.googlefiber\.net$~i', $this->CIDRAM['Hostname'])) {
+                return 2;
+            }
         }
     }
 

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Bad hosts blocker module (last modified: 2022.06.04).
+ * This file: Bad hosts blocker module (last modified: 2022.06.22).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -111,9 +111,9 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
     $this->trigger(preg_match('~brandaffinity~', $HN), 'Hostile/SLAPP'); // 2018.09.15
 
     $this->trigger(preg_match(
-        '~i(?:g|nsite)\.com\.br$|terra\.cl$|(?:\.(?:appian|bc\.googleusercontent|' .
-        'cloud|ctera|dyn|emc|force|fsfreeware|gnip|gridlayer|hosting|icims|panora' .
-        'ma|parallels|quest|thegridlayer|voda|vultr|webzilla|workday)|10gen|12des' .
+        '~i(?:g|nsite)\.com\.br$|terra\.cl$|(?:\.(?:appian|cloud|ctera|dyn|emc|fo' .
+        'rce|fsfreeware|gnip|gridlayer|hosting|icims|panorama|parallels|quest|the' .
+        'gridlayer|voda|vultr|webzilla|workday)|10gen|12des' .
         'igner|3leafsystems|3tera|a(?:ccentrainc|conex|dvologix|gathon|ltornetwor' .
         'ks|mericanforeclosures|mitive|pp(?:irio|istry|jet|nexus|renda|spot|zero)' .
         '|ptana|riasystems|rjuna|rtofdefence|sterdata|syanka|uthenticnetworks|zat' .
@@ -155,7 +155,12 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         'eamhost|ipxserver|linode|money(?:mattersnow|tech\.mg)|productsnetworksx|' .
         'psychz|requestedoffers|scopehosts|s(?:p?lice|teep)host|happyoffer\.club$~',
         $HN
-    ), 'Cloud Service / Server Farm'); // 2021.06.28
+    ), 'Cloud Service / Server Farm'); // 2022.06.22
+
+    $this->trigger(preg_match(
+        '~\.google(?:domains|usercontent)\.com$~',
+        $HN
+    ), 'Google user content not permitted here'); // 2022.06.22
 
     $this->trigger(preg_match(
         '/(?:\.above|shared-server|jkserv)\.net$|akpackaging\.net|(?:academi' .

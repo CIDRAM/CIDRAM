@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6_isps.dat
 
-# Version: 2022.172.0
-# Last modified: 2022.06.22
+# Version: 2022.174.0
+# Last modified: 2022.06.24
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -586,18 +586,6 @@ Tag: Comcast Spam IPs
 Origin: US
 Profile: Commercial;Domestic ISP;Infrastructure/Transit;Multiplay;Tor endpoints here;University;Webhosting
 Tag: Cox Spam IPs
-
-
-# ASN 27699 ("TELEFNICA BRASIL S.A").
-# Brazilian domestic ISP. Spam and hack attempts detected from here.
-# Listing just the affected address/ranges only.
-# Stop Forum Spam (SFS) listings: 2,211.
-# Updated: 2021.11.30
-
-2804:431:cff0:b97e::/64 Deny Spam
-Origin: BR
-Profile: Domestic ISP
-Tag: TELEFNICA BRASIL S.A
 
 
 # ASNs 10796, 11351, 11426, 11427, 12271, 20001, 20115, 33363 ("Charter Communications").

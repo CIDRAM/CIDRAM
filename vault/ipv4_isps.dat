@@ -1,8 +1,8 @@
 # IPv4 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv4_isps.dat
 
-# Version: 2022.174.0
-# Last modified: 2022.06.24
+# Version: 2022.180.0
+# Last modified: 2022.06.30
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -406,59 +406,65 @@ Tag: TELEBUCARAMANGA
 # ASN 16322 ("Pars Online PJS").
 # Brute-force, DDoS, SSH, XMLRPC, and webapp attacks, port scans, sniffing for
 # vulnerabilities, and spam detected from here.
-# Stop Forum Spam (SFS) listings: 130.
-# Updated: 2021.09.14
+# Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 796.
+# Updated: 2022.06.30
 
-31.214.132.0/23 Deny Attacks
-31.214.146.0/23 Deny Attacks
-31.214.154.0/24 Deny Attacks
+31.214.154.199/32 Deny Attacks
+31.214.154.237/32 Deny Attacks
 31.214.168.0/21 Deny Attacks
-31.214.200.0/23 Deny Attacks
-31.214.228.0/22 Deny Attacks
 31.214.248.0/21 Deny Attacks
-37.10.64.0/22 Deny Attacks
-37.10.109.0/24 Deny Attacks
-37.10.117.0/24 Deny Attacks
-37.228.131.0/24 Deny Attacks
-37.228.133.0/24 Deny Attacks
-37.228.135.0/24 Deny Attacks
-37.228.136.0/22 Deny Attacks
+37.228.136.74/32 Deny Attacks
+37.228.138.83/32 Deny Attacks
+37.228.138.150/32 Deny Attacks
 46.41.192.0/18 Deny Attacks
-46.62.128.0/17 Deny Attacks
+46.62.160.0/19 Deny Attacks
+46.62.216.74/32 Deny Attacks
+46.62.220.47/32 Deny Attacks
+46.62.220.67/32 Deny Attacks
+46.62.250.197/32 Deny Attacks
 46.167.128.0/19 Deny Attacks
-46.224.160.0/19 Deny Attacks
-46.224.192.0/18 Deny Attacks
-46.225.0.0/18 Deny Attacks
-46.225.160.0/19 Deny Attacks
-46.225.192.0/19 Deny Attacks
-46.251.224.0/24 Deny Attacks
-46.251.226.0/24 Deny Attacks
-46.251.237.0/24 Deny Attacks
-77.42.0.0/18 Deny Attacks
-82.99.192.0/18 Deny Attacks
-87.107.134.0/24 Deny Attacks
-91.98.0.0/15 Deny Attacks
-95.156.222.0/23 Deny Attacks
-95.156.233.0/24 Deny Attacks
-95.156.234.0/23 Deny Attacks
-95.156.236.0/23 Deny Attacks
-95.156.248.0/23 Deny Attacks
-109.230.192.0/23 Deny Attacks
-109.230.200.0/24 Deny Attacks
+46.224.192.198/32 Deny Attacks
+46.224.200.254/32 Deny Attacks
+46.224.237.212/32 Deny Attacks
+46.224.237.227/32 Deny Attacks
+46.224.238.84/32 Deny Attacks
+46.224.239.119/32 Deny Attacks
+46.224.240.0/24 Deny Attacks
+46.224.241.103/32 Deny Attacks
+46.224.242.93/32 Deny Attacks
+46.224.243.0/24 Deny Attacks
+46.224.244.27/32 Deny Attacks
+46.251.226.50/32 Deny Attacks
+82.99.203.76/32 Deny Attacks
+82.99.204.99/32 Deny Attacks
+82.99.204.198/32 Deny Attacks
+91.99.100.173/32 Deny Attacks
+91.99.100.218/32 Deny Attacks
+95.156.233.224/32 Deny Attacks
+95.156.248.112/32 Deny Attacks
+95.156.248.129/32 Deny Attacks
+95.156.248.157/32 Deny Attacks
+109.230.192.119/32 Deny Attacks
 109.230.204.0/22 Deny Attacks
-109.230.221.0/24 Deny Attacks
-109.230.223.0/24 Deny Attacks
 109.230.242.0/24 Deny Attacks
 109.230.246.0/23 Deny Attacks
 109.230.251.0/24 Deny Attacks
 134.255.196.0/23 Deny Attacks
-134.255.200.0/21 Deny Attacks
-134.255.245.0/24 Deny Attacks
-134.255.246.0/24 Deny Attacks
+134.255.200.58/32 Deny Attacks
+134.255.201.6/32 Deny Attacks
+134.255.202.0/24 Deny Attacks
+134.255.203.13/32 Deny Attacks
+134.255.204.61/32 Deny Attacks
+134.255.204.165/32 Deny Attacks
+134.255.205.20/32 Deny Attacks
+134.255.205.70/32 Deny Attacks
+134.255.205.199/32 Deny Attacks
+134.255.207.108/32 Deny Attacks
+134.255.207.135/32 Deny Attacks
 178.169.0.0/19 Deny Attacks
-185.10.71.0/24 Deny Attacks
-185.13.228.0/22 Deny Attacks
-213.217.32.0/19 Deny Attacks
+185.13.230.77/32 Deny Attacks
+185.13.231.228/32 Deny Attacks
 Origin: IR
 Profile: Domestic ISP
 Tag: Pars Online PJS
@@ -9606,11 +9612,12 @@ Tag: CMC Telecom
 # ASN 206358 ('N.P.SH "ISP - Broadcast"').
 # Albanian domestic ISP. Brute-force, phpMyAdmin, webapp attacks, and spam
 # detected from here. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 47.
-# Updated: 2021.12.07
+# Stop Forum Spam (SFS) listings: 16.
+# Updated: 2022.06.26
 
-185.188.216.93/32 Deny Attacks
-185.188.218.0/23 Deny Attacks
+185.188.218.14/32 Deny Attacks
+185.188.218.200/32 Deny Attacks
+185.188.219.0/24 Deny Attacks
 Origin: AL
 Profile: Domestic ISP
 Tag: N.P.SH
@@ -11555,11 +11562,11 @@ Tag: Intech Online
 
 # ASN 786 ("Jisc Services Limited").
 # Malware, webapp attacks, and spam detected from some specific addresses here.
-# Stop Forum Spam (SFS) listings: 53.
-# Updated: 2021.09.14
+# Improvements sufficient for removal at last check. Will reassess at next check.
+# Stop Forum Spam (SFS) listings: 84.
+# Updated: 2022.06.30
 
-144.82.9.69/32 Deny Spam
-193.62.42.46/32 Deny Attacks
+#<redacted>
 Origin: GB
 Profile: Infrastructure/Transit;University
 Tag: Jisc Services Limited
@@ -13305,21 +13312,21 @@ Tag: ELY COM SRL
 # ASN 11830 ("Instituto Costarricense de Electricidad y Telecom").
 # Costa Rican domestic ISP. Spam and hack attempts detected from here.
 # Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 123.
-# Updated: 2021.09.16
+# Stop Forum Spam (SFS) listings: 166.
+# Updated: 2022.06.30
 
-181.193.97.222/32 Deny Spam
-181.193.102.102/32 Deny Spam
-181.193.121.50/32 Deny Spam
-181.193.140.2/32 Deny Spam
-181.193.142.6/32 Deny Spam
-201.191.4.0/24 Deny Attacks
-201.191.57.109/32 Deny Spam
-201.191.97.143/32 Deny Spam
-201.192.7.32/32 Deny Spam
-201.193.180.14/32 Deny Spam
-201.200.4.0/24 Deny Attacks
-201.204.168.0/24 Deny Attacks
+181.193.142.6/32 Deny Attacks
+181.193.142.114/32 Deny Attacks
+201.191.4.17/32 Deny Attacks
+201.191.4.201/32 Deny Attacks
+201.200.4.41/32 Deny Attacks
+201.200.4.44/32 Deny Attacks
+201.200.4.68/32 Deny Attacks
+201.203.100.227/32 Deny Spam
+201.204.47.68/32 Deny Spam
+201.204.168.4/32 Deny Attacks
+201.204.168.47/32 Deny Attacks
+201.204.168.127/32 Deny Attacks
 201.206.141.102/32 Deny Spam
 Origin: CR
 Profile: Domestic ISP
@@ -19225,3 +19232,19 @@ Tag: R.R PROVEDOR
 Origin: BO
 Profile: Domestic ISP
 Tag: EntelNet
+
+
+# ASN 328884 ("BLUE ITS BUSINESS SOLUTIONS (PTY) LTD").
+# Port scans, hacking, and spam detected from here.
+# For now, listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 61.
+# Updated: 2022.06.29
+
+102.219.40.178/32 Deny Attacks
+102.219.43.25/32 Deny Attacks
+102.219.43.39/32 Deny Attacks
+102.219.43.64/32 Deny Attacks
+102.219.43.98/32 Deny Attacks
+Origin: ZA
+Profile: Commercial
+Tag: BLUE ITS BUSINESS SOLUTIONS

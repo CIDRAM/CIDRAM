@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Norwegian language data for the front-end (last modified: 2022.06.22).
+# This file: Norwegian language data for the front-end (last modified: 2022.06.30).
 ##/
 
 Extended Description AbuseIPDB module: "Blokkerer forespørsler fra IP-er oppført på AbuseIPDB."
@@ -121,20 +121,12 @@ config_general_default_timeout: "Standard tidsavbrudd for eksterne forespørsler
 config_general_disabled_channels: "Dette kan brukes til å forhindre CIDRAM i å bruke bestemte kanaler når du sender forespørsler (f.eks, når du oppdaterer, når du henter komponentmetadata, osv)."
 config_general_emailaddr: "Hvis du vil, du kan levere en e-postadresse her for å bli gitt til brukerne når de er blokkert, for dem å bruke som et kontaktpunkt for støtte og/eller assistanse i tilfelle de blir blokkert feilaktig eller i feil. ADVARSEL: Uansett hvilken e-postadresse du leverer her, det vil helt sikkert bli ervervet av spamboter og skraper i løpet av bruken her, og så, det anbefales sterkt at hvis du velger å levere en e-postadresse her, at du sørger for at e-postadressen du oppgir her er en engangsadresse og/eller en adresse som du ikke bryr deg om å bli spammet (dvs., du vil sannsynligvis ikke bruke dine primære personlige eller primære virksomhets e-postadresser)."
 config_general_emailaddr_display_style: "Hvordan foretrekker du e-postadressen som skal presenteres for brukerne?"
-config_general_error_log: "En fil for logging av eventuelle ikke-fatale feil som er oppdaget. Angi et filnavn, eller la det være tomt for å deaktivere."
 config_general_fields: "Kontroller for feltene under blokkeringshendelser (når en forespørsel er blokkert)."
 config_general_force_hostname_lookup: "Håndheve vertsnavn-oppslag? True = Ja; False = Nei [Standardverdi]. Vertsnavn-oppslag utføres normalt på en "etter behov" basis, men kan håndheves for alle forespørsler. Å gjøre det kan være nyttig som et middel til å gi mer detaljert informasjon i loggfilene, men kan også ha en litt negativ effekt på ytelsen."
 config_general_http_response_header_code: "Hvilken HTTP-statusmelding skal CIDRAM sende når blokkerer forespørsler?"
 config_general_ipaddr: "Hvor finner jeg IP-adressen til å koble til forespørsler? (Nyttig for tjenester som Cloudflare og så videre). Standardverdi = REMOTE_ADDR. ADVARSEL: Ikke endre dette med mindre du vet hva du gjør!"
 config_general_lang: "Angi standardspråket for CIDRAM."
 config_general_lang_override: "Lokaliser i henhold til HTTP_ACCEPT_LANGUAGE når det er mulig? True = Ja [Standardverdi]; False = Nei."
-config_general_log_banned_ips: "Inkluder blokkerte forespørsler fra utestengt IP-adresser i loggfilene? True = Ja [Standardverdi]; False = Nei."
-config_general_log_rotation_action: "Loggrotasjon begrenser antall loggfiler som bør eksistere til enhver tid. Når nye loggfiler blir opprettet, hvis det totale antall loggfiler overskrider den angitte grensen, den angitte handlingen vil bli utført. Du kan angi ønsket handling her."
-config_general_log_rotation_limit: "Loggrotasjon begrenser antall loggfiler som bør eksistere til enhver tid. Når nye loggfiler blir opprettet, hvis det totale antall loggfiler overskrider den angitte grensen, den angitte handlingen vil bli utført. Du kan angi ønsket grense her. En verdi på 0 deaktiverer loggrotasjon."
-config_general_log_sanitisation: "Når du bruker frontend loggene siden for å vise loggdata, CIDRAM sanitiserer loggdataene før de vises, for å beskytte brukere mot XSS-angrep og andre mulige trusler som loggdataene kan inneholde. Men som standard, data blir ikke sanitisert under logging. Dette er for å sikre at loggdata blir bevart nøyaktig, for å hjelpe enhver heuristisk analyse som kan være nødvendig i fremtiden. Men hvis en bruker forsøker å lese loggdata ved hjelp av eksterne verktøy, og hvis de eksterne verktøyene ikke utfører sin egen sanitetsprosess, brukeren kan bli utsatt for XSS-angrep. Om nødvendig kan du endre standardoppførselen ved hjelp av dette konfigurasjonsdirektivet. True = Sanitiser data når du logger på det (dataene blir bevart mindre nøyaktig, men XSS-risikoen er lavere). False = Ikke sanitiser data når du logger på det (dataene blir bevart mer nøyaktig, men XSS-risikoen er høyere) [Standardverdi]."
-config_general_logfile: "Menneskelig-lesbar fil for å logge av alle blokkerte tilgangsforsøk. Angi et filnavn, eller la det være tomt for å deaktivere."
-config_general_logfile_apache: "Apache-stil fil for å logge alle blokkerte tilgangsforsøk. Angi et filnavn, eller la det være tomt for å deaktivere."
-config_general_logfile_serialized: "Serialisert fil å logge av alle blokkerte tilgangsforsøk. Angi et filnavn, eller la det være tomt for å deaktivere."
 config_general_numbers: "Hvordan foretrekker du at tall vises? Velg eksempelet som passer best for deg."
 config_general_other_verification: "Kontroller for å verifisere andre typer forespørsler der det er mulig."
 config_general_search_engine_verification: "Kontroller for å verifisere forespørsler fra søkemotorer."
@@ -145,13 +137,12 @@ config_general_statistics: "Kontrollerer hvilken statistisk informasjon som skal
 config_general_time_format: "Dato/tid notasjonsformat som brukes av CIDRAM. Ytterligere alternativer kan legges på forespørsel."
 config_general_time_offset: "Tidssone forskjøvet i minutter."
 config_general_timezone: "Dette brukes til å spesifisere tidssonen som skal brukes (f.eks, Africa/Cairo, America/New_York, Asia/Tokyo, Australia/Perth, Europe/Berlin, Pacific/Guam, etc). Spesifiser "SYSTEM" for å la PHP håndtere dette for deg automatisk."
-config_general_truncate: "Skjær loggfiler når de kommer til en viss størrelse? Verdi er den maksimale størrelsen i B/KB/MB/GB/TB som en loggfil kan vokse til før den blir avkortet. Standardverdi på 0KB deaktiverer avkorting (loggfilene kan vokse på ubestemt tid). Merk: Gjelder for individuelle loggfiler! Størrelsen på loggfiler anses ikke kollektivt."
 config_hcaptcha: "Konfigurasjon for HCaptcha (gir en måte for mennesker å gjenvinne tilgang når de blokkeres)."
 config_hcaptcha_api: &CaptchaAPI "Hvilken API skal du bruke?"
 config_hcaptcha_expiry: &CaptchaExpiry "Antall timer for å huske CAPTCHA-forekomster. Standardverdi = 720 (1 måned)."
+config_hcaptcha_hcaptcha_log: &CaptchaLogFile "Logg på alle CAPTCHA-forsøk? Hvis ja, spesifiser navnet som skal brukes til loggfilen. Hvis nei, la denne variablen være tom."
 config_hcaptcha_lockip: &CaptchaLockIP "Lås CAPTCHA til IP-adresser?"
 config_hcaptcha_lockuser: &CaptchaLockUser "Lås CAPTCHA til brukere?"
-config_hcaptcha_logfile: &CaptchaLogfile "Logg på alle CAPTCHA-forsøk? Hvis ja, spesifiser navnet som skal brukes til loggfilen. Hvis nei, la denne variablen være tom."
 config_hcaptcha_nonblocked_status_code: &CaptchaNonblockedStatusCode "Hvilken statuskode skal brukes når CAPTCHA vises til forespørsler som ikke er blokkert?"
 config_hcaptcha_secret: &CaptchaDashboard "Denne verdien finner du i dashbordet for CAPTCHA-tjenesten din."
 config_hcaptcha_show_api_message: &ShowAPIMessage "Inkludere API-melding? True = Ja [Standardverdi]; False = Nei."
@@ -162,6 +153,16 @@ config_hcaptcha_usemode: &CaptchaUseMode "Når skal CAPTCHA tilbys? Merk: Hvitli
 config_legal: "Konfigurasjon for juridiske krav."
 config_legal_privacy_policy: "Adressen til en relevant personvernpolicy som skal vises i bunnteksten til genererte sider. Angi en nettadresse, eller la det være tomt for å deaktivere."
 config_legal_pseudonymise_ip_addresses: "Pseudonymisere IP-adresser når du logger? True = Ja [Standardverdi]; False = Nei."
+config_logging: "Konfigurasjon knyttet til logging (unntatt det som gjelder for andre kategorier)."
+config_logging_apache_style_log: "Apache-stil fil for å logge alle blokkerte tilgangsforsøk. Angi et filnavn, eller la det være tomt for å deaktivere."
+config_logging_error_log: "En fil for logging av eventuelle ikke-fatale feil som er oppdaget. Angi et filnavn, eller la det være tomt for å deaktivere."
+config_logging_log_banned_ips: "Inkluder blokkerte forespørsler fra utestengt IP-adresser i loggfilene? True = Ja [Standardverdi]; False = Nei."
+config_logging_log_rotation_action: "Loggrotasjon begrenser antall loggfiler som bør eksistere til enhver tid. Når nye loggfiler blir opprettet, hvis det totale antall loggfiler overskrider den angitte grensen, den angitte handlingen vil bli utført. Du kan angi ønsket handling her."
+config_logging_log_rotation_limit: "Loggrotasjon begrenser antall loggfiler som bør eksistere til enhver tid. Når nye loggfiler blir opprettet, hvis det totale antall loggfiler overskrider den angitte grensen, den angitte handlingen vil bli utført. Du kan angi ønsket grense her. En verdi på 0 deaktiverer loggrotasjon."
+config_logging_log_sanitisation: "Når du bruker frontend loggene siden for å vise loggdata, CIDRAM sanitiserer loggdataene før de vises, for å beskytte brukere mot XSS-angrep og andre mulige trusler som loggdataene kan inneholde. Men som standard, data blir ikke sanitisert under logging. Dette er for å sikre at loggdata blir bevart nøyaktig, for å hjelpe enhver heuristisk analyse som kan være nødvendig i fremtiden. Men hvis en bruker forsøker å lese loggdata ved hjelp av eksterne verktøy, og hvis de eksterne verktøyene ikke utfører sin egen sanitetsprosess, brukeren kan bli utsatt for XSS-angrep. Om nødvendig kan du endre standardoppførselen ved hjelp av dette konfigurasjonsdirektivet. True = Sanitiser data når du logger på det (dataene blir bevart mindre nøyaktig, men XSS-risikoen er lavere). False = Ikke sanitiser data når du logger på det (dataene blir bevart mer nøyaktig, men XSS-risikoen er høyere) [Standardverdi]."
+config_logging_serialised_log: "Serialisert fil å logge av alle blokkerte tilgangsforsøk. Angi et filnavn, eller la det være tomt for å deaktivere."
+config_logging_standard_log: "Menneskelig-lesbar fil for å logge av alle blokkerte tilgangsforsøk. Angi et filnavn, eller la det være tomt for å deaktivere."
+config_logging_truncate: "Skjær loggfiler når de kommer til en viss størrelse? Verdi er den maksimale størrelsen i B/KB/MB/GB/TB som en loggfil kan vokse til før den blir avkortet. Standardverdi på 0KB deaktiverer avkorting (loggfilene kan vokse på ubestemt tid). Merk: Gjelder for individuelle loggfiler! Størrelsen på loggfiler anses ikke kollektivt."
 config_phpmailer: "Konfigurasjon for PHPMailer (brukes til tofaktorautentisering)."
 config_phpmailer_add_reply_to_address: "Svaradressen for å sitere når du sender e-post via SMTP."
 config_phpmailer_add_reply_to_name: "Svarnavnet til å sitere når du sender e-post via SMTP."
@@ -193,8 +194,8 @@ config_recaptcha_api: *CaptchaAPI
 config_recaptcha_expiry: *CaptchaExpiry
 config_recaptcha_lockip: *CaptchaLockIP
 config_recaptcha_lockuser: *CaptchaLockUser
-config_recaptcha_logfile: *CaptchaLogfile
 config_recaptcha_nonblocked_status_code: *CaptchaNonblockedStatusCode
+config_recaptcha_recaptcha_log: *CaptchaLogFile
 config_recaptcha_secret: *CaptchaDashboard
 config_recaptcha_show_api_message: *ShowAPIMessage
 config_recaptcha_show_cookie_warning: *ShowCookieWarning

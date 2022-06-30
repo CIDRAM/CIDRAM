@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (traditional) language data for the front-end (last modified: 2022.06.22).
+# This file: Chinese (traditional) language data for the front-end (last modified: 2022.06.30).
 ##/
 
 Extended Description AbuseIPDB module: "阻止來自AbuseIPDB列出的IP的請求。"
@@ -121,20 +121,12 @@ config_general_default_timeout: "用於外部請求的默認超時？ 標準 = 1
 config_general_disabled_channels: "這可用於防止CIDRAM在發送請求時使用特定通道（例如，在更新時，在獲取組件元數據時，等等）。"
 config_general_emailaddr: "如果您希望，​您可以提供電子郵件地址這裡要給予用戶當他們被阻止，​他們使用作為接觸點為支持和/或幫助在的情況下他們錯誤地阻止。​警告:您提供的任何電子郵件地址，​它肯定會被獲得通過垃圾郵件機器人和鏟運機，​所以，​它強烈推薦如果選擇提供一個電子郵件地址這裡，​您保證它是一次性的和/或不是很重要（換一種說法，​您可能不希望使用您的主電子郵件地址或您的企業電子郵件地址）。"
 config_general_emailaddr_display_style: "您希望如何將電子郵件地址呈現給用戶？"
-config_general_error_log: "用於記錄檢測到的任何非致命錯誤的文件。​指定一個文件名，​或留空以禁用。"
 config_general_fields: "用於阻止事件的字段控件（當請求被阻止時）。"
 config_general_force_hostname_lookup: "強制主機名查找？​True（真）=跟踪；False（假）=不跟踪【標準】。​主機名查詢通常在『根據需要』的基礎上執行，但可以在所有請求上強制。​這可能會有助於提供日誌文件中更詳細的信息，但也可能會對性能產生輕微的負面影響。"
 config_general_http_response_header_code: "阻止請求時，CIDRAM應發送哪個HTTP狀態消息？"
 config_general_ipaddr: "在哪裡可以找到連接請求IP地址？​（可以使用為服務例如Cloudflare和類似）。​標準 = REMOTE_ADDR。​警告：不要修改此除非您知道什麼您做著！"
 config_general_lang: "指定標準CIDRAM語言。"
 config_general_lang_override: "盡可能根據HTTP_ACCEPT_LANGUAGE進行本地化？True（真）=進行本地化【標準】；False（假）=不要本地化。"
-config_general_log_banned_ips: "包括IP禁止從阻止請求在日誌文件嗎？​True（真）=是【標準】；False（假）=不是。"
-config_general_log_rotation_action: "日誌輪轉限制了任何時候應該存在的日誌文件的數量。​當新的日誌文件被創建時，如果日誌文件的指定的最大數量已經超過，將執行指定的操作。​您可以在此處指定所需的操作。"
-config_general_log_rotation_limit: "日誌輪轉限制了任何時候應該存在的日誌文件的數量。​當新的日誌文件被創建時，如果日誌文件的指定的最大數量已經超過，將執行指定的操作。​您可以在此指定所需的限制。​值為『0』將禁用日誌輪轉。"
-config_general_log_sanitisation: "當使用前端日誌頁面查看日誌數據時，CIDRAM在顯示之前清理日誌數據。​這可以保護用戶免受XSS攻擊和其他潛在威脅。​但是，默認情況下，在記錄期間不會清理數據。​這是為了確保准確地保留日誌數據（可以幫助任何未來的啟發式或法醫分析）。​但是，如果用戶嘗試使用外部工具讀取日誌數據，如果這些外部工具不執行自己的清理過程，用戶可能會受到XSS攻擊。​如有必要，可以使用此配置指令更改默認行為。 True = 記錄數據時清理數據（數據保存不太準確，但XSS風險較低）。 False = 記錄數據時不要清理數據（數據保存得更準確，但XSS風險更高）【標準】。"
-config_general_logfile: "人類可讀文件用於記錄所有被攔截的訪問。​指定一個文件名，​或留空以禁用。"
-config_general_logfile_apache: "Apache風格文件用於記錄所有被攔截的訪問。​指定一個文件名，​或留空以禁用。"
-config_general_logfile_serialized: "連載的文件用於記錄所有被攔截的訪問。​指定一個文件名，​或留空以禁用。"
 config_general_numbers: "您如何喜歡顯示數字？​選擇最適合示例。"
 config_general_other_verification: "用於在可能的情況下，驗證其他類型的請求的控件。"
 config_general_search_engine_verification: "用於驗證來自搜索引擎的請求的控件。"
@@ -145,13 +137,12 @@ config_general_statistics: "控制要跟踪的統計信息。"
 config_general_time_format: "CIDRAM使用的日期符號格式。​可根據要求增加附加選項。"
 config_general_time_offset: "時區偏移量（分鐘）。"
 config_general_timezone: "這用於指定要使用的時區​（例如，Africa/Cairo，America/New_York，Asia/Tokyo，Australia/Perth，Europe/Berlin，Pacific/Guam，等等）。​指定『SYSTEM』使PHP自動為您處理。"
-config_general_truncate: "截斷日誌文件當他們達到一定的大小嗎？​值是在B/KB/MB/GB/TB，​是日誌文件允許的最大大小直到它被截斷。​默認值為『0KB』將禁用截斷（日誌文件可以無限成長）。​注意：適用於單個日誌文件！​日誌文件大小不被算集體的。"
 config_hcaptcha: "HCaptcha的配置（為人們提供了一種在受阻時重新獲得訪問權限的方法）。"
 config_hcaptcha_api: &CaptchaAPI "使用哪個API？"
 config_hcaptcha_expiry: &CaptchaExpiry "記得CAPTCHA多少小時？ 標準 = 720 （1個月）。"
+config_hcaptcha_hcaptcha_log: &CaptchaLogFile "記錄所有的CAPTCHA的嘗試？​要做到這一點，​指定一個文件名到使用。​如果不，​離開這個變量為空白。"
 config_hcaptcha_lockip: &CaptchaLockIP "應該CAPTCHA鎖定到IP？"
 config_hcaptcha_lockuser: &CaptchaLockUser "應該CAPTCHA鎖定到用戶？"
-config_hcaptcha_logfile: &CaptchaLogfile "記錄所有的CAPTCHA的嘗試？​要做到這一點，​指定一個文件名到使用。​如果不，​離開這個變量為空白。"
 config_hcaptcha_nonblocked_status_code: &CaptchaNonblockedStatusCode "向未阻止的請求顯示CAPTCHA時應使用哪個狀態代碼？"
 config_hcaptcha_secret: &CaptchaDashboard "可以在您的CAPTCHA服務的儀表板中找到該值。"
 config_hcaptcha_show_api_message: &ShowAPIMessage "顯示API訊息嗎？​True（真）=顯示【標準】；False（假）=不顯示。"
@@ -162,6 +153,16 @@ config_hcaptcha_usemode: &CaptchaUseMode "何時應提供CAPTCHA嗎？​注意�
 config_legal: "法律要求的配置。"
 config_legal_privacy_policy: "要顯示在任何生成的頁面的頁腳中的相關隱私政策的地址。​指定一個URL，或留空以禁用。"
 config_legal_pseudonymise_ip_addresses: "編寫日誌文件時使用假名的IP地址嗎？​True（真）=使用假名【標準】；False（假）=不使用假名。"
+config_logging: "與日誌相關的配置（與其他類別相關的被排除）。"
+config_logging_apache_style_log: "Apache風格文件用於記錄所有被攔截的訪問。​指定一個文件名，​或留空以禁用。"
+config_logging_error_log: "用於記錄檢測到的任何非致命錯誤的文件。​指定一個文件名，​或留空以禁用。"
+config_logging_log_banned_ips: "包括IP禁止從阻止請求在日誌文件嗎？​True（真）=是【標準】；False（假）=不是。"
+config_logging_log_rotation_action: "日誌輪轉限制了任何時候應該存在的日誌文件的數量。​當新的日誌文件被創建時，如果日誌文件的指定的最大數量已經超過，將執行指定的操作。​您可以在此處指定所需的操作。"
+config_logging_log_rotation_limit: "日誌輪轉限制了任何時候應該存在的日誌文件的數量。​當新的日誌文件被創建時，如果日誌文件的指定的最大數量已經超過，將執行指定的操作。​您可以在此指定所需的限制。​值為『0』將禁用日誌輪轉。"
+config_logging_log_sanitisation: "當使用前端日誌頁面查看日誌數據時，CIDRAM在顯示之前清理日誌數據。​這可以保護用戶免受XSS攻擊和其他潛在威脅。​但是，默認情況下，在記錄期間不會清理數據。​這是為了確保准確地保留日誌數據（可以幫助任何未來的啟發式或法醫分析）。​但是，如果用戶嘗試使用外部工具讀取日誌數據，如果這些外部工具不執行自己的清理過程，用戶可能會受到XSS攻擊。​如有必要，可以使用此配置指令更改默認行為。 True = 記錄數據時清理數據（數據保存不太準確，但XSS風險較低）。 False = 記錄數據時不要清理數據（數據保存得更準確，但XSS風險更高）【標準】。"
+config_logging_serialised_log: "連載的文件用於記錄所有被攔截的訪問。​指定一個文件名，​或留空以禁用。"
+config_logging_standard_log: "人類可讀文件用於記錄所有被攔截的訪問。​指定一個文件名，​或留空以禁用。"
+config_logging_truncate: "截斷日誌文件當他們達到一定的大小嗎？​值是在B/KB/MB/GB/TB，​是日誌文件允許的最大大小直到它被截斷。​默認值為『0KB』將禁用截斷（日誌文件可以無限成長）。​注意：適用於單個日誌文件！​日誌文件大小不被算集體的。"
 config_phpmailer: "PHPMailer的配置（用於雙因素身份驗證）。"
 config_phpmailer_add_reply_to_address: "通過SMTP發送電子郵件時引用的回复地址。"
 config_phpmailer_add_reply_to_name: "通過SMTP發送電子郵件時引用的回複姓名。"
@@ -193,8 +194,8 @@ config_recaptcha_api: *CaptchaAPI
 config_recaptcha_expiry: *CaptchaExpiry
 config_recaptcha_lockip: *CaptchaLockIP
 config_recaptcha_lockuser: *CaptchaLockUser
-config_recaptcha_logfile: *CaptchaLogfile
 config_recaptcha_nonblocked_status_code: *CaptchaNonblockedStatusCode
+config_recaptcha_recaptcha_log: *CaptchaLogFile
 config_recaptcha_secret: *CaptchaDashboard
 config_recaptcha_show_api_message: *ShowAPIMessage
 config_recaptcha_show_cookie_warning: *ShowCookieWarning

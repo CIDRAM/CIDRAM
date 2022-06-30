@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: English language data for the front-end (last modified: 2022.06.22).
+# This file: English language data for the front-end (last modified: 2022.06.30).
 ##/
 
 Extended Description AbuseIPDB module: "Blocks requests from IPs listed at AbuseIPDB."
@@ -121,20 +121,12 @@ config_general_default_timeout: "Default timeout to use for external requests? D
 config_general_disabled_channels: "This can be used to prevent CIDRAM from using particular channels when sending requests (e.g., when updating, when fetching component metadata, etc)."
 config_general_emailaddr: "If you wish, you can supply an email address here to be given to users when they're blocked, for them to use as a point of contact for support and/or assistance for in the event of them being blocked mistakenly or in error. WARNING: Whatever email address you supply here will most certainly be acquired by spambots and scrapers during the course of its being used here, and so, it's strongly recommended that if you choose to supply an email address here, that you ensure that the email address you supply here is a disposable address and/or an address that you don't mind being spammed (in other words, you probably don't want to use your primary personal or primary business email addresses)."
 config_general_emailaddr_display_style: "How would you prefer the email address to be presented to users?"
-config_general_error_log: "A file for logging any non-fatal errors detected. Specify a filename, or leave blank to disable."
 config_general_fields: "Controls for the fields during block events (when a request is blocked)."
-config_general_force_hostname_lookup: "Force hostname lookups? True = Yes; False = No [Default]. Hostname lookups are normally performed on an "as needed" basis, but can be forced for all requests. Doing so may be useful as a means of providing more detailed information in the logfiles, but may also have a slightly negative effect on performance."
+config_general_force_hostname_lookup: "Force hostname lookups? True = Yes; False = No [Default]. Hostname lookups are normally performed on an "as needed" basis, but can be forced for all requests. Doing so may be useful as a means of providing more detailed information in the log files, but may also have a slightly negative effect on performance."
 config_general_http_response_header_code: "Which HTTP status message should CIDRAM send when blocking requests?"
 config_general_ipaddr: "Where to find the IP address of connecting requests? (Useful for services such as Cloudflare and the likes). Default = REMOTE_ADDR. WARNING: Don't change this unless you know what you're doing!"
 config_general_lang: "Specify the default language for CIDRAM."
 config_general_lang_override: "Localise according to HTTP_ACCEPT_LANGUAGE whenever possible? True = Yes [Default]; False = No."
-config_general_log_banned_ips: "Include blocked requests from banned IPs in the logfiles? True = Yes [Default]; False = No."
-config_general_log_rotation_action: "Log rotation limits the number of logfiles that should exist at any one time. When new logfiles are created, if the total number of logfiles exceeds the specified limit, the specified action will be performed. You can specify the desired action here."
-config_general_log_rotation_limit: "Log rotation limits the number of logfiles that should exist at any one time. When new logfiles are created, if the total number of logfiles exceeds the specified limit, the specified action will be performed. You can specify the desired limit here. A value of 0 will disable log rotation."
-config_general_log_sanitisation: "When using the front-end logs page to view log data, CIDRAM sanitises the log data before displaying it, to protect users from XSS attacks and other potential threats that log data could contain. However, by default, data isn't sanitised during logging. This is to ensure that log data is preserved accurately, to aid any heuristic or forensic analysis that might be necessary in the future. However, in the event that a user attempts to read log data using external tools, and if those external tools don't perform their own sanitisation process, the user could be exposed to XSS attacks. If necessary, you can change the default behaviour using this configuration directive. True = Sanitise data when logging it (data is preserved less accurately, but XSS risk is lower). False = Don't sanitise data when logging it (data is preserved more accurately, but XSS risk is higher) [Default]."
-config_general_logfile: "Human readable file for logging all blocked access attempts. Specify a filename, or leave blank to disable."
-config_general_logfile_apache: "Apache-style file for logging all blocked access attempts. Specify a filename, or leave blank to disable."
-config_general_logfile_serialized: "Serialised file for logging all blocked access attempts. Specify a filename, or leave blank to disable."
 config_general_numbers: "How do you prefer numbers to be displayed? Select the example that looks the most correct to you."
 config_general_other_verification: "Controls for verifying other kinds of requests where possible."
 config_general_search_engine_verification: "Controls for verifying requests from search engines."
@@ -145,13 +137,12 @@ config_general_statistics: "Controls which statistical information to track."
 config_general_time_format: "The date/time notation format used by CIDRAM. Additional options may be added upon request."
 config_general_time_offset: "Timezone offset in minutes."
 config_general_timezone: "This is used to specify the timezone to use (e.g., Africa/Cairo, America/New_York, Asia/Tokyo, Australia/Perth, Europe/Berlin, Pacific/Guam, etc). Specify "SYSTEM" to let PHP handle this for you automatically."
-config_general_truncate: "Truncate logfiles when they reach a certain size? Value is the maximum size in B/KB/MB/GB/TB that a logfile may grow to before being truncated. The default value of 0KB disables truncation (logfiles can grow indefinitely). Note: Applies to individual logfiles! The size of logfiles is not considered collectively."
 config_hcaptcha: "Configuration for HCaptcha (provides a way for humans to regain access when blocked)."
 config_hcaptcha_api: &CaptchaAPI "Which API to use?"
 config_hcaptcha_expiry: &CaptchaExpiry "Number of hours to remember CAPTCHA instances. Default = 720 (1 month)."
+config_hcaptcha_hcaptcha_log: &CaptchaLogFile "Log all CAPTCHA attempts? If yes, specify the name to use for the log file. If no, leave this variable blank."
 config_hcaptcha_lockip: &CaptchaLockIP "Lock CAPTCHA to IPs?"
 config_hcaptcha_lockuser: &CaptchaLockUser "Lock CAPTCHA to users?"
-config_hcaptcha_logfile: &CaptchaLogfile "Log all CAPTCHA attempts? If yes, specify the name to use for the logfile. If no, leave this variable blank."
 config_hcaptcha_nonblocked_status_code: &CaptchaNonblockedStatusCode "Which status code should be used when displaying CAPTCHAs to non-blocked requests?"
 config_hcaptcha_secret: &CaptchaDashboard "This value can be found in the dashboard for your CAPTCHA service."
 config_hcaptcha_show_api_message: &ShowAPIMessage "Show API message? True = Yes [Default]; False = No."
@@ -162,6 +153,16 @@ config_hcaptcha_usemode: &CaptchaUseMode "When should the CAPTCHA be offered? No
 config_legal: "Configuration for legal requirements."
 config_legal_privacy_policy: "The address of a relevant privacy policy to be displayed in the footer of any generated pages. Specify a URL, or leave blank to disable."
 config_legal_pseudonymise_ip_addresses: "Pseudonymise IP addresses when logging? True = Yes [Default]; False = No."
+config_logging: "Configuration related to logging (excluding that applicable to other categories)."
+config_logging_apache_style_log: "Apache-style file for logging all blocked access attempts. Specify a filename, or leave blank to disable."
+config_logging_error_log: "A file for logging any non-fatal errors detected. Specify a filename, or leave blank to disable."
+config_logging_log_banned_ips: "Include blocked requests from banned IPs in logs? True = Yes [Default]; False = No."
+config_logging_log_rotation_action: "Log rotation limits the number of log files that should exist at any one time. When new log files are created, if the total number of log files exceeds the specified limit, the specified action will be performed. You can specify the desired action here."
+config_logging_log_rotation_limit: "Log rotation limits the number of log files that should exist at any one time. When new log files are created, if the total number of log files exceeds the specified limit, the specified action will be performed. You can specify the desired limit here. A value of 0 will disable log rotation."
+config_logging_log_sanitisation: "When using the front-end logs page to view log data, CIDRAM sanitises the log data before displaying it, to protect users from XSS attacks and other potential threats that log data could contain. However, by default, data isn't sanitised during logging. This is to ensure that log data is preserved accurately, to aid any heuristic or forensic analysis that might be necessary in the future. However, in the event that a user attempts to read log data using external tools, and if those external tools don't perform their own sanitisation process, the user could be exposed to XSS attacks. If necessary, you can change the default behaviour using this configuration directive. True = Sanitise data when logging it (data is preserved less accurately, but XSS risk is lower). False = Don't sanitise data when logging it (data is preserved more accurately, but XSS risk is higher) [Default]."
+config_logging_serialised_log: "Serialised file for logging all blocked access attempts. Specify a filename, or leave blank to disable."
+config_logging_standard_log: "Human-readable file for logging all blocked access attempts. Specify a filename, or leave blank to disable."
+config_logging_truncate: "Truncate log files when they reach a certain size? Value is the maximum size in B/KB/MB/GB/TB that a log file may grow to before being truncated. The default value of 0KB disables truncation (log files can grow indefinitely). Note: Applies to individual log files! The size of log files is not considered collectively."
 config_phpmailer: "Configuration for PHPMailer (used for two-factor authentication)."
 config_phpmailer_add_reply_to_address: "The reply address to cite when sending email via SMTP."
 config_phpmailer_add_reply_to_name: "The reply name to cite when sending email via SMTP."
@@ -193,8 +194,8 @@ config_recaptcha_api: *CaptchaAPI
 config_recaptcha_expiry: *CaptchaExpiry
 config_recaptcha_lockip: *CaptchaLockIP
 config_recaptcha_lockuser: *CaptchaLockUser
-config_recaptcha_logfile: *CaptchaLogfile
 config_recaptcha_nonblocked_status_code: *CaptchaNonblockedStatusCode
+config_recaptcha_recaptcha_log: *CaptchaLogFile
 config_recaptcha_secret: *CaptchaDashboard
 config_recaptcha_show_api_message: *ShowAPIMessage
 config_recaptcha_show_cookie_warning: *ShowCookieWarning
@@ -265,8 +266,8 @@ field_filetype_unknown: "Unknown"
 field_install: "Install"
 field_latest_version: "Latest Version"
 field_log_in: "Log In"
-field_log_rotation_archive: "Firstly archive, and then delete the oldest logfiles, until the limit is no longer exceeded."
-field_log_rotation_delete: "Delete the oldest logfiles, until the limit is no longer exceeded."
+field_log_rotation_archive: "Firstly archive, and then delete the oldest log files, until the limit is no longer exceeded."
+field_log_rotation_delete: "Delete the oldest log files, until the limit is no longer exceeded."
 field_netmask: "Generate output as netmasks"
 field_new_name: "New name:"
 field_nonclickable_text: "Non-clickable text"
@@ -525,9 +526,9 @@ link_sections_list: "Sections List"
 link_statistics: "Statistics"
 link_subtractor: "Subtractor"
 link_updates: "Updates"
-logs_logfile_doesnt_exist: "Selected logfile doesn't exist!"
-logs_no_logfile_selected: "No logfile selected."
-logs_no_logfiles_available: "No logfiles available."
+logs_logfile_doesnt_exist: "Selected log file doesn't exist!"
+logs_no_logfile_selected: "No log file selected."
+logs_no_logfiles_available: "No log files available."
 max_login_attempts_exceeded: "Maximum number of login attempts exceeded; Access denied."
 msg_subject_2fa: "Two-Factor Authentication"
 msg_template_2fa: |
@@ -721,7 +722,7 @@ tip_intersector: "Hello, {username}.<br />The intersector can be used to determi
 tip_ip_test: "Hello, {username}.<br />The IP test page allows you to test whether IP addresses are blocked by the currently installed signatures."
 tip_ip_test_switches: "(When not selected, only the signature files will be tested against)."
 tip_ip_tracking: "Hello, {username}.<br />The IP tracking page allows you to check the tracking status of IP addresses, to check which of them have been banned, and to unban/untrack them if you want to do so."
-tip_logs: "Hello, {username}.<br />Select a logfile from the list below to view the contents of that logfile."
+tip_logs: "Hello, {username}.<br />Select a log file from the list below to view the contents of that log file."
 tip_range: "Hello, {username}.<br />This page shows some basic statistical information about the IP ranges covered by the currently active signature files."
 tip_sections_list: "Hello, {username}.<br />This page lists which sections exist in the currently active signature files."
 tip_see_the_documentation: "See the <a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#SECTION5" hreflang="en" rel="noopener external">documentation</a> for information about the various configuration directives and their purposes."

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Turkish language data for the front-end (last modified: 2022.06.22).
+# This file: Turkish language data for the front-end (last modified: 2022.06.30).
 ##/
 
 Extended Description AbuseIPDB module: "AbuseIPDB'de listelenen IP'lerden gelen istekleri engeller."
@@ -121,20 +121,12 @@ config_general_default_timeout: "Harici istekler için kullanılacak varsayılan
 config_general_disabled_channels: "Bu, istek gönderirken CIDRAM'ın belirli kanalları kullanmasını önlemek için kullanılabilir (örneğin, güncelleme yaparken, bileşen meta verileri alınırken, vb)."
 config_general_emailaddr: "İsterseniz, kullanıcıları engellediğinde verilecek bir e-posta adresi sağlayabilirsiniz, yanlışlıkla engellendikleri zaman destek için sizinle iletişim kurabilmeleri için. UYARI: Burada tedarik ettiğiniz e-posta adresiniz kesinlikle spambotlar ve sıyırıcılar tarafından edinilecektir. Bu nedenle, tek kullanımlık veya önemsiz bir e-posta adresini seçmeniz kesinlikle önerilir (diğer bir deyişle, büyük olasılıkla birincil kişisel veya birincil iş e-posta adreslerinizi kullanmak istemiyorsunuzdur)."
 config_general_emailaddr_display_style: "E-posta adresinin kullanıcılara sunulmasını nasıl tercih ederdiniz?"
-config_general_error_log: "Ölümcül olmayan hataları kaydetmek için bir dosya. Dosya adı belirtin veya devre dışı bırakmak için boş bırakın."
 config_general_fields: "Blok olayları sırasında alanlar için kontroller (bir istek engellendiğinde)."
 config_general_force_hostname_lookup: "Hostname aramayı zorla? Doğru/True = Evet; Yanlış/False = Hayır [Varsayılan]. Hostname aramaları normal olarak ihtiyaçlara göre yapılır, ancak tüm istekler için zorla çalıştırılabilir. Bu, günlük dosyalarında daha ayrıntılı bilgi sağlama aracı olarak kullanışlı olabilir, ancak performans üzerinde de olumsuz bir etkisi olabilir."
 config_general_http_response_header_code: "İstekleri engellerken hangi HTTP durum iletisinin CIDRAM göndermesi gerekir?"
 config_general_ipaddr: "Bağlama isteklerinin IP adresi nerede bulunur? (Cloudflare ve benzeri hizmetler için yararlıdır). Varsayılan = REMOTE_ADDR. UYARI: Ne yaptığınızı bilmiyorsanız bunu değiştirmeyin!"
 config_general_lang: "CIDRAM için varsayılan dili belirleyin."
 config_general_lang_override: "Mümkün olduğunda, HTTP_ACCEPT_LANGUAGE uyarınca yerelleştirilsin mi? Doğru/True = Evet [Varsayılan]; Yanlış/False = Hayır."
-config_general_log_banned_ips: "Yasaklanmış IP'lerden engellenen istekleri günlük dosyalarına dahil et? Doğru/True = Evet [Varsayılan]; Yanlış/False = Hayır."
-config_general_log_rotation_action: "Log rotasyonu, herhangi bir zamanda bulunması gereken günlük dosyalarının sayısını sınırlar. Yeni log dosyaları oluşturulduğunda, toplam log dosya sayısı belirtilen sınırı aşarsa, belirtilen eylem gerçekleştirilecektir. İstenen işlemi burada belirtebilirsiniz."
-config_general_log_rotation_limit: "Log rotasyonu, herhangi bir zamanda bulunması gereken günlük dosyalarının sayısını sınırlar. Yeni log dosyaları oluşturulduğunda, toplam log dosya sayısı belirtilen sınırı aşarsa, belirtilen eylem gerçekleştirilecektir. İstenen sınırı burada belirtebilirsiniz. 0 değeri, log rotasyonunu devre dışı bırakır."
-config_general_log_sanitisation: "Günlük verilerini görüntülemek için ön uç günlükler sayfasını kullanırken, CIDRAM, kullanıcıları XSS saldırılarından korumak için, günlük verilerini görüntülemeden önce hazırlar. Ancak bu normalde veriler ilk kaydedildiğinde gerçekleşmez. Bu, gerekli olabilecek gelecekteki analizlere yardımcı olmak için günlük verilerinin doğru bir şekilde korunmasını sağlamaktır. Bununla birlikte, kullanıcı verileri benzer şekilde işlemeyen harici araçları kullanarak günlük verilerini okumaya çalışırsa, kullanıcı XSS saldırılarına maruz kalabilir. Gerekirse, bu yapılandırma direktifini kullanarak varsayılan davranışı değiştirebilirsiniz. True = Veriyi ilk kaydederken hazırlayın (daha az doğru, ancak daha az risk). False = Veriyi ilk kaydederken hazırlamayın (daha doğru, ancak daha risk) [Varsayılan]."
-config_general_logfile: "Engellenen tüm erişim girişimlerini kaydetmek için insanlar tarafından okunabilir dosya. Dosya adı belirtin veya devre dışı bırakmak için boş bırakın."
-config_general_logfile_apache: "Engellenen tüm erişim girişimlerini kaydetmek için Apache tarzı dosya. Dosya adı belirtin veya devre dışı bırakmak için boş bırakın."
-config_general_logfile_serialized: "Engellenen tüm erişim girişimlerini kaydetmek için seri haline getirilmiş dosya. Dosya adı belirtin veya devre dışı bırakmak için boş bırakın."
 config_general_numbers: "Numaraların görüntülenmesini nasıl tercih edersiniz? Size en uygun görünen örneği seçin."
 config_general_other_verification: "Mümkün olduğunda diğer türdeki istekleri doğrulamak için kontroller."
 config_general_search_engine_verification: "Arama motorlarından gelen istekleri doğrulamak için kontroller."
@@ -145,13 +137,12 @@ config_general_statistics: "Hangi istatistiksel bilgilerin izleneceğini kontrol
 config_general_time_format: "CIDRAM tarafından kullanılan tarih/saat gösterimi biçimi. İsteğe bağlı olarak ek seçenekler eklenebilir."
 config_general_time_offset: "Dakika cinsinden zaman dilimi farkı."
 config_general_timezone: "Kullanılacak saat dilimini belirtir (örneğin, Africa/Cairo, America/New_York, Asia/Tokyo, Australia/Perth, Europe/Berlin, Pacific/Guam, vb). PHP'nin bunu sizin için otomatik olarak yapmasına izin vermek için "SYSTEM" i belirtin."
-config_general_truncate: "Belirli bir boyuta ulaştığında günlük dosyalarını kesin? Değer, bir günlük dosyasının kesilmeden önce büyüyebileceği B/KB/MB/GB/TB cinsinden maksimum boyuttur. Varsayılan 0KB değeri, kesmeyi devre dışı bırakır (günlük dosyaları sınırsız büyüyebilir). Not: Tek tek kayıt dosyaları için geçerlidir! Günlük dosyalarının boyutu toplam olarak alınmaz."
 config_hcaptcha: "HCaptcha için yapılandırma (engellendiğinde insanlara erişimi yeniden kazanmaları için bir yol sağlar)."
 config_hcaptcha_api: &CaptchaAPI "Hangi API'yı kullanacaksınız?"
 config_hcaptcha_expiry: &CaptchaExpiry "CAPTCHA örneklerini hatırlamak için saat sayısı. Varsayılan = 720 (1 ay)."
+config_hcaptcha_hcaptcha_log: &CaptchaLogFile "Tüm CAPTCHA denemelerini günlüğe yaz? Yanıt evet ise, günlük dosyası için kullanılacak adı belirtin. Yanıt hayır ise, bu değişkeni boş bırakın."
 config_hcaptcha_lockip: &CaptchaLockIP "CAPTCHA'yı IP'lere kilitle?"
 config_hcaptcha_lockuser: &CaptchaLockUser "CAPTCHA kullanıcılara kilitle?"
-config_hcaptcha_logfile: &CaptchaLogfile "Tüm CAPTCHA denemelerini günlüğe yaz? Yanıt evet ise, günlük dosyası için kullanılacak adı belirtin. Yanıt hayır ise, bu değişkeni boş bırakın."
 config_hcaptcha_nonblocked_status_code: &CaptchaNonblockedStatusCode "Engellenmemiş isteklere CAPTCHA'lar görüntülenirken hangi durum kodu kullanılmalıdır?"
 config_hcaptcha_secret: &CaptchaDashboard "Bu değer, CAPTCHA hizmetinizin kontrol panelinde bulunabilir."
 config_hcaptcha_show_api_message: &ShowAPIMessage "API mesajı göster? Doğru/True = Evet [Varsayılan]; Yanlış/False = Hayır."
@@ -162,6 +153,16 @@ config_hcaptcha_usemode: &CaptchaUseMode "CAPTCHA ne zaman sunulmalı? Not: Beya
 config_legal: "Yasal gereklilikler için yapılandırma."
 config_legal_privacy_policy: "Oluşturulan sayfaların alt kısmında görüntülenecek ilgili gizlilik politikasının adresi. Bir URL belirtin veya devre dışı bırakmak için boş bırakın."
 config_legal_pseudonymise_ip_addresses: "Günlük dosyaları yazarken IP adresi "pseudonymize" edilir? Doğru/True = Evet [Varsayılan]; Yanlış/False = Hayır."
+config_logging: "Günlüğe kaydetme ile ilgili yapılandırma (diğer kategoriler için geçerli olanlar hariç)."
+config_logging_apache_style_log: "Engellenen tüm erişim girişimlerini kaydetmek için Apache tarzı dosya. Dosya adı belirtin veya devre dışı bırakmak için boş bırakın."
+config_logging_error_log: "Ölümcül olmayan hataları kaydetmek için bir dosya. Dosya adı belirtin veya devre dışı bırakmak için boş bırakın."
+config_logging_log_banned_ips: "Yasaklanmış IP'lerden engellenen istekleri günlük dosyalarına dahil et? Doğru/True = Evet [Varsayılan]; Yanlış/False = Hayır."
+config_logging_log_rotation_action: "Log rotasyonu, herhangi bir zamanda bulunması gereken günlük dosyalarının sayısını sınırlar. Yeni log dosyaları oluşturulduğunda, toplam log dosya sayısı belirtilen sınırı aşarsa, belirtilen eylem gerçekleştirilecektir. İstenen işlemi burada belirtebilirsiniz."
+config_logging_log_rotation_limit: "Log rotasyonu, herhangi bir zamanda bulunması gereken günlük dosyalarının sayısını sınırlar. Yeni log dosyaları oluşturulduğunda, toplam log dosya sayısı belirtilen sınırı aşarsa, belirtilen eylem gerçekleştirilecektir. İstenen sınırı burada belirtebilirsiniz. 0 değeri, log rotasyonunu devre dışı bırakır."
+config_logging_log_sanitisation: "Günlük verilerini görüntülemek için ön uç günlükler sayfasını kullanırken, CIDRAM, kullanıcıları XSS saldırılarından korumak için, günlük verilerini görüntülemeden önce hazırlar. Ancak bu normalde veriler ilk kaydedildiğinde gerçekleşmez. Bu, gerekli olabilecek gelecekteki analizlere yardımcı olmak için günlük verilerinin doğru bir şekilde korunmasını sağlamaktır. Bununla birlikte, kullanıcı verileri benzer şekilde işlemeyen harici araçları kullanarak günlük verilerini okumaya çalışırsa, kullanıcı XSS saldırılarına maruz kalabilir. Gerekirse, bu yapılandırma direktifini kullanarak varsayılan davranışı değiştirebilirsiniz. True = Veriyi ilk kaydederken hazırlayın (daha az doğru, ancak daha az risk). False = Veriyi ilk kaydederken hazırlamayın (daha doğru, ancak daha risk) [Varsayılan]."
+config_logging_serialised_log: "Engellenen tüm erişim girişimlerini kaydetmek için seri haline getirilmiş dosya. Dosya adı belirtin veya devre dışı bırakmak için boş bırakın."
+config_logging_standard_log: "Engellenen tüm erişim girişimlerini kaydetmek için insanlar tarafından okunabilir dosya. Dosya adı belirtin veya devre dışı bırakmak için boş bırakın."
+config_logging_truncate: "Belirli bir boyuta ulaştığında günlük dosyalarını kesin? Değer, bir günlük dosyasının kesilmeden önce büyüyebileceği B/KB/MB/GB/TB cinsinden maksimum boyuttur. Varsayılan 0KB değeri, kesmeyi devre dışı bırakır (günlük dosyaları sınırsız büyüyebilir). Not: Tek tek kayıt dosyaları için geçerlidir! Günlük dosyalarının boyutu toplam olarak alınmaz."
 config_phpmailer: "PHPMailer için yapılandırma (iki faktörlü kimlik doğrulama için kullanılır)."
 config_phpmailer_add_reply_to_address: "SMTP ile e-posta gönderirken kullanılacak cevap adresi."
 config_phpmailer_add_reply_to_name: "SMTP ile e-posta gönderirken kullanılacak cevap ismi."
@@ -193,8 +194,8 @@ config_recaptcha_api: *CaptchaAPI
 config_recaptcha_expiry: *CaptchaExpiry
 config_recaptcha_lockip: *CaptchaLockIP
 config_recaptcha_lockuser: *CaptchaLockUser
-config_recaptcha_logfile: *CaptchaLogfile
 config_recaptcha_nonblocked_status_code: *CaptchaNonblockedStatusCode
+config_recaptcha_recaptcha_log: *CaptchaLogFile
 config_recaptcha_secret: *CaptchaDashboard
 config_recaptcha_show_api_message: *ShowAPIMessage
 config_recaptcha_show_cookie_warning: *ShowCookieWarning

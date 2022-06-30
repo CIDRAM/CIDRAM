@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: ReCaptcha class (last modified: 2022.06.09).
+ * This file: ReCaptcha class (last modified: 2022.06.30).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -193,13 +193,13 @@ class ReCaptcha extends Captcha
         if (
             empty($Loggable) ||
             empty($this->CIDRAM->BlockInfo) ||
-            strlen($this->CIDRAM->Configuration['recaptcha']['logfile']) === 0 ||
-            !($Filename = $this->CIDRAM->buildPath($this->CIDRAM->Vault . $this->CIDRAM->Configuration['recaptcha']['logfile']))
+            strlen($this->CIDRAM->Configuration['recaptcha']['recaptcha_log']) === 0 ||
+            !($Filename = $this->CIDRAM->buildPath($this->CIDRAM->Vault . $this->CIDRAM->Configuration['recaptcha']['recaptcha_log']))
         ) {
             return;
         }
 
-        $Truncate = $this->CIDRAM->readBytes($this->CIDRAM->Configuration['general']['truncate']);
+        $Truncate = $this->CIDRAM->readBytes($this->CIDRAM->Configuration['logging']['truncate']);
         $WriteMode = (!file_exists($Filename) || $Truncate > 0 && filesize($Filename) >= $Truncate) ? 'wb' : 'ab';
         $Data = sprintf(
             '%1$s%7$s%2$s - %3$s%7$s%4$s - %5$s%7$s%6$s',
@@ -212,8 +212,8 @@ class ReCaptcha extends Captcha
             $this->CIDRAM->L10N->getString('pair_separator')
         ) . "\n";
 
-        /** Adds a second newline to match the standard block events logfile in case of combining the logfiles. */
-        if ($this->CIDRAM->Configuration['recaptcha']['logfile'] === $this->CIDRAM->Configuration['general']['logfile']) {
+        /** Adds a second new line in case of combined log files. */
+        if ($this->CIDRAM->Configuration['recaptcha']['recaptcha_log'] === $this->CIDRAM->Configuration['logging']['standard_log']) {
             $Data .= "\n";
         }
 
@@ -221,7 +221,7 @@ class ReCaptcha extends Captcha
         fwrite($File, $Data);
         fclose($File);
         if ($WriteMode === 'wb') {
-            $this->CIDRAM->logRotation($this->CIDRAM->Configuration['recaptcha']['logfile']);
+            $this->CIDRAM->logRotation($this->CIDRAM->Configuration['recaptcha']['recaptcha_log']);
         }
     }
 

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Polish language data for the front-end (last modified: 2022.06.22).
+# This file: Polish language data for the front-end (last modified: 2022.06.30).
 ##/
 
 Extended Description AbuseIPDB module: "Blokuje żądania z adresów IP wymienionych w witrynie AbuseIPDB."
@@ -121,20 +121,12 @@ config_general_default_timeout: "Domyślny limit czasu używany dla żądań zew
 config_general_disabled_channels: "Można tego użyć, aby zapobiec korzystaniu przez CIDRAM z określonych kanałów podczas wysyłania żądań (n.p., podczas aktualizacji, podczas pobierania metadanych komponentu, itp)."
 config_general_emailaddr: "Jeśli chcesz, możesz podać tutaj adres e-mail, który zostanie podany użytkownikom, gdy zostaną zablokowani, aby mogli oni używać go jako punktu kontaktowego w celu uzyskania wsparcia i pomocy w przypadku błędu. OSTRZEŻENIE: Każdy podany tutaj adres e-mail z pewnością zostanie pozyskany przez robotów spamujących i skrobaków w trakcie jego używania, dlatego zdecydowanie zaleca się, aby w przypadku podania tutaj adresu e-mail upewnić się, że podany tutaj adres e-mail jest adresem jednorazowym lub adres, który nie przeszkadza być poddane spamem (innymi słowy, prawdopodobnie nie chcesz używać swoich głównych osobistych lub głównych firmowych adresów e-mail)."
 config_general_emailaddr_display_style: "Jak wolisz, aby adres e-mail był prezentowany użytkownikom?"
-config_general_error_log: "Plik służący do rejestrowania wykrytych błędów niekrytycznych. Podaj nazwę pliku lub pozostaw puste, aby wyłączyć."
 config_general_fields: "Kontrole na polach podczas imprez blokowych (gdy żądanie jest zablokowane)."
 config_general_force_hostname_lookup: "Wymuszać wyszukiwanie nazw hostów? True (Prawdziwe) = Tak; False (Fałszywy) = Nie [Domyślna]. Wyszukiwanie nazw hostów jest zwykle wykonywane „na żądanie”, ale można je wymusić dla wszystkich żądań. Może to być przydatne jako sposób na dostarczenie bardziej szczegółowych informacji w plikach dziennika, ale może również mieć nieco negatywny wpływ na wydajność."
 config_general_http_response_header_code: "Który komunikat o stanie HTTP powinien wysłać CIDRAM podczas blokowania żądań?"
 config_general_ipaddr: "Gdzie znaleźć adres IP żądań połączenia? (Przydatny w przypadku usług takich jak Cloudflare i podobnych). Domyślna = REMOTE_ADDR. OSTRZEŻENIE: Nie zmieniaj tego, jeśli nie wiesz, co robisz!"
 config_general_lang: "Określ domyślny język dla CIDRAM."
 config_general_lang_override: "Kiedy to możliwe, lokalizuj według HTTP_ACCEPT_LANGUAGE? True (Prawdziwe) = Tak [Domyślna]; False (Fałszywy) = Nie."
-config_general_log_banned_ips: "Umieścić zablokowane żądania z zablokowanych adresów IP w plikach dziennika? True (Prawdziwe) = Tak [Domyślna]; False (Fałszywy) = Nie."
-config_general_log_rotation_action: "Rotacja dziennika ogranicza liczbę plików dziennika, które powinny istnieć jednocześnie. Po utworzeniu nowych plików dziennika, jeśli całkowita liczba plików dziennika przekroczy określony limit, zostanie wykonana określona akcja. Tutaj możesz określić żądaną akcję."
-config_general_log_rotation_limit: "Rotacja dziennika ogranicza liczbę plików dziennika, które powinny istnieć jednocześnie. Po utworzeniu nowych plików dziennika, jeśli całkowita liczba plików dziennika przekroczy określony limit, zostanie wykonana określona akcja. Tutaj możesz określić żądany limit. Wartość 0 spowoduje wyłączenie rotacja dziennika."
-config_general_log_sanitisation: "Podczas korzystania ze strony dzienników do przeglądania danych dziennika CIDRAM odkaża dane dziennika przed ich wyświetleniem, aby chronić użytkowników przed atakami XSS i innymi potencjalnymi zagrożeniami, które mogą być zawarte w danych dziennika. Jednak domyślnie dane nie są odkażane podczas logowania. Zapewnia to dokładne zachowanie danych dziennika, aby wspomóc każdą analizę heurystyczną, która może być konieczna w przyszłości. Jednak w przypadku, gdy użytkownik próbuje odczytać dane dziennika za pomocą zewnętrznych narzędzi, a jeśli te narzędzia zewnętrzne nie przeprowadzają własnego procesu sanityzacji, użytkownik może być narażony na ataki XSS. W razie potrzeby możesz zmienić domyślne zachowanie za pomocą tej dyrektywy konfiguracyjnej. True (Prawdziwe) = Odkaż dane podczas logowania (dane są przechowywane mniej dokładnie, ale ryzyko XSS jest niższe). False (Fałszywy) = Nie odkaż danych podczas logowania (dane są przechowywane dokładniej, ale ryzyko XSS jest wyższe) [Domyślna]."
-config_general_logfile: "Plik czytelny dla człowieka do rejestrowania wszystkich zablokowanych prób dostępu. Podaj nazwę pliku lub pozostaw puste, aby wyłączyć."
-config_general_logfile_apache: "Plik w stylu Apache do rejestrowania wszystkich zablokowanych prób dostępu. Podaj nazwę pliku lub pozostaw puste, aby wyłączyć."
-config_general_logfile_serialized: "Plik szeregowy do rejestrowania wszystkich zablokowanych prób dostępu. Podaj nazwę pliku lub pozostaw puste, aby wyłączyć."
 config_general_numbers: "Jak wolisz wyświetlać liczby? Wybierz przykład, który wygląda najlepiej dla Ciebie."
 config_general_other_verification: "Kontrolki do weryfikacji innych rodzajów żądań tam, gdzie to możliwe."
 config_general_search_engine_verification: "Kontrolki do weryfikacji żądań z wyszukiwarek."
@@ -145,13 +137,12 @@ config_general_statistics: "Kontroluje, które informacje statystyczne należy �
 config_general_time_format: "Format notacja daty/godziny używany przez CIDRAM. Dodatkowe opcje mogą być dodane na życzenie."
 config_general_time_offset: "Przesunięcie strefy czasowej w minutach."
 config_general_timezone: "Służy do określania używanej strefy czasowej (na przykład, Africa/Cairo, America/New_York, Asia/Tokyo, Australia/Perth, Europe/Berlin, Pacific/Guam, itp). Podaj „SYSTEM”, aby PHP mógł to zrobić automatycznie."
-config_general_truncate: "Obciąć pliki dziennika, gdy osiągną określony rozmiar? Wartość to maksymalny rozmiar w B/KB/MB/GB/TB, do którego plik dziennika może się powiększyć, zanim zostanie obcięty. Domyślna wartość 0KB wyłącza obcinanie (pliki dziennika mogą rosnąć w nieskończoność). Uwaga: Dotyczy pojedynczych plików dziennika! Rozmiar plików dziennika nie jest rozpatrywany łącznie."
 config_hcaptcha: "Konfiguracja HCaptcha (zapewnia ludziom możliwość odzyskania dostępu po zablokowaniu)."
 config_hcaptcha_api: &CaptchaAPI "Którego interfejsu API użyć?"
 config_hcaptcha_expiry: &CaptchaExpiry "Liczba godzin do zapamiętania instancji CAPTCHA. Domyślna = 720 (1 miesiąc)."
+config_hcaptcha_hcaptcha_log: &CaptchaLogFile "Zalogować wszystkie próby CAPTCHA? Jeśli tak, podaj nazwę pliku do logowania. Jeśli nie, pozostaw tę zmienną pustą."
 config_hcaptcha_lockip: &CaptchaLockIP "Przywiąż CAPTCHA do adresów IP?"
 config_hcaptcha_lockuser: &CaptchaLockUser "Przywiąż CAPTCHA z użytkownikami?"
-config_hcaptcha_logfile: &CaptchaLogfile "Zalogować wszystkie próby CAPTCHA? Jeśli tak, podaj nazwę pliku do logowania. Jeśli nie, pozostaw tę zmienną pustą."
 config_hcaptcha_nonblocked_status_code: &CaptchaNonblockedStatusCode "Którego kodu stanu należy używać podczas wyświetlania CAPTCHA dla niezablokowanych żądań?"
 config_hcaptcha_secret: &CaptchaDashboard "Wartość tę można znaleźć na pulpicie nawigacyjnym usługi CAPTCHA."
 config_hcaptcha_show_api_message: &ShowAPIMessage "Pokaż komunikat API? True (Prawdziwe) = Tak [Domyślna]; False (Fałszywy) = Nie."
@@ -162,6 +153,16 @@ config_hcaptcha_usemode: &CaptchaUseMode "Kiedy należy oferować CAPTCHA? Uwaga
 config_legal: "Konfiguracja wymagań prawnych."
 config_legal_privacy_policy: "Adres odpowiedniej polityki prywatności, która ma być wyświetlana w stopce każdej wygenerowanej strony. Podaj adres URL, lub pozostaw puste, aby wyłączyć."
 config_legal_pseudonymise_ip_addresses: "Pseudonimizować adresy IP podczas logowania? True (Prawdziwe) = Tak [Domyślna]; False (Fałszywy) = Nie."
+config_logging: "Konfiguracja związana z logowaniem (z wyłączeniem tego, które ma zastosowanie do innych kategorii)."
+config_logging_apache_style_log: "Plik w stylu Apache do rejestrowania wszystkich zablokowanych prób dostępu. Podaj nazwę pliku lub pozostaw puste, aby wyłączyć."
+config_logging_error_log: "Plik służący do rejestrowania wykrytych błędów niekrytycznych. Podaj nazwę pliku lub pozostaw puste, aby wyłączyć."
+config_logging_log_banned_ips: "Umieścić zablokowane żądania z zablokowanych adresów IP w plikach dziennika? True (Prawdziwe) = Tak [Domyślna]; False (Fałszywy) = Nie."
+config_logging_log_rotation_action: "Rotacja dziennika ogranicza liczbę plików dziennika, które powinny istnieć jednocześnie. Po utworzeniu nowych plików dziennika, jeśli całkowita liczba plików dziennika przekroczy określony limit, zostanie wykonana określona akcja. Tutaj możesz określić żądaną akcję."
+config_logging_log_rotation_limit: "Rotacja dziennika ogranicza liczbę plików dziennika, które powinny istnieć jednocześnie. Po utworzeniu nowych plików dziennika, jeśli całkowita liczba plików dziennika przekroczy określony limit, zostanie wykonana określona akcja. Tutaj możesz określić żądany limit. Wartość 0 spowoduje wyłączenie rotacja dziennika."
+config_logging_log_sanitisation: "Podczas korzystania ze strony dzienników do przeglądania danych dziennika CIDRAM odkaża dane dziennika przed ich wyświetleniem, aby chronić użytkowników przed atakami XSS i innymi potencjalnymi zagrożeniami, które mogą być zawarte w danych dziennika. Jednak domyślnie dane nie są odkażane podczas logowania. Zapewnia to dokładne zachowanie danych dziennika, aby wspomóc każdą analizę heurystyczną, która może być konieczna w przyszłości. Jednak w przypadku, gdy użytkownik próbuje odczytać dane dziennika za pomocą zewnętrznych narzędzi, a jeśli te narzędzia zewnętrzne nie przeprowadzają własnego procesu sanityzacji, użytkownik może być narażony na ataki XSS. W razie potrzeby możesz zmienić domyślne zachowanie za pomocą tej dyrektywy konfiguracyjnej. True (Prawdziwe) = Odkaż dane podczas logowania (dane są przechowywane mniej dokładnie, ale ryzyko XSS jest niższe). False (Fałszywy) = Nie odkaż danych podczas logowania (dane są przechowywane dokładniej, ale ryzyko XSS jest wyższe) [Domyślna]."
+config_logging_serialised_log: "Plik szeregowy do rejestrowania wszystkich zablokowanych prób dostępu. Podaj nazwę pliku lub pozostaw puste, aby wyłączyć."
+config_logging_standard_log: "Plik czytelny dla człowieka do rejestrowania wszystkich zablokowanych prób dostępu. Podaj nazwę pliku lub pozostaw puste, aby wyłączyć."
+config_logging_truncate: "Obciąć pliki dziennika, gdy osiągną określony rozmiar? Wartość to maksymalny rozmiar w B/KB/MB/GB/TB, do którego plik dziennika może się powiększyć, zanim zostanie obcięty. Domyślna wartość 0KB wyłącza obcinanie (pliki dziennika mogą rosnąć w nieskończoność). Uwaga: Dotyczy pojedynczych plików dziennika! Rozmiar plików dziennika nie jest rozpatrywany łącznie."
 config_phpmailer: "Konfiguracja dla PHPMailer (używane do uwierzytelniania dwuskładnikowego)."
 config_phpmailer_add_reply_to_address: "Adres zwrotny do cytowania podczas wysyłania wiadomości e-mail przez SMTP."
 config_phpmailer_add_reply_to_name: "Nazwa odpowiedzi, którą należy podać podczas wysyłania wiadomości e-mail przez SMTP."
@@ -193,8 +194,8 @@ config_recaptcha_api: *CaptchaAPI
 config_recaptcha_expiry: *CaptchaExpiry
 config_recaptcha_lockip: *CaptchaLockIP
 config_recaptcha_lockuser: *CaptchaLockUser
-config_recaptcha_logfile: *CaptchaLogfile
 config_recaptcha_nonblocked_status_code: *CaptchaNonblockedStatusCode
+config_recaptcha_recaptcha_log: *CaptchaLogFile
 config_recaptcha_secret: *CaptchaDashboard
 config_recaptcha_show_api_message: *ShowAPIMessage
 config_recaptcha_show_cookie_warning: *ShowCookieWarning

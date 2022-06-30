@@ -8,24 +8,24 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Default event handlers (last modified: 2022.06.22).
+ * This file: Default event handlers (last modified: 2022.06.30).
  */
 
 /**
- * Writes to the standard logfile.
+ * Writes to the standard log file.
  *
  * @return bool True on success; False on failure.
  */
 $this->Events->addHandler('writeToLog', function (): bool {
     /** Guard. */
     if (
-        $this->Configuration['general']['logfile'] === '' ||
-        !($Filename = $this->buildPath($this->Vault . $this->Configuration['general']['logfile']))
+        $this->Configuration['logging']['standard_log'] === '' ||
+        !($Filename = $this->buildPath($this->Vault . $this->Configuration['logging']['standard_log']))
     ) {
         return false;
     }
 
-    $Truncate = $this->readBytes($this->Configuration['general']['truncate']);
+    $Truncate = $this->readBytes($this->Configuration['logging']['truncate']);
     $Data = !file_exists($Filename) || $Truncate > 0 && filesize($Filename) >= $Truncate ? "\x3c\x3fphp die; \x3f\x3e\n\n" : '';
     $WriteMode = !empty($Data) ? 'wb' : 'ab';
     $Data .= $this->parseVars($this->CIDRAM['Parsables'], $this->CIDRAM['FieldTemplates']['Logs'] . "\n");
@@ -34,13 +34,13 @@ $this->Events->addHandler('writeToLog', function (): bool {
     fwrite($File, $Data);
     fclose($File);
     if ($WriteMode === 'wb') {
-        $this->logRotation($this->Configuration['general']['logfile']);
+        $this->logRotation($this->Configuration['logging']['standard_log']);
     }
     return true;
 });
 
 /**
- * Writes to the Apache-style logfile.
+ * Writes to the Apache-style log file.
  *
  * @return bool True on success; False on failure.
  */
@@ -48,8 +48,8 @@ $this->Events->addHandler('writeToLog', function (): bool {
     /** Guard. */
     if (
         empty($this->BlockInfo) ||
-        $this->Configuration['general']['logfile_apache'] === '' ||
-        !($Filename = $this->buildPath($this->Vault . $this->Configuration['general']['logfile_apache']))
+        $this->Configuration['logging']['apache_style_log'] === '' ||
+        !($Filename = $this->buildPath($this->Vault . $this->Configuration['logging']['apache_style_log']))
     ) {
         return false;
     }
@@ -66,20 +66,20 @@ $this->Events->addHandler('writeToLog', function (): bool {
         $this->BlockInfo['Referrer'] ?? '-',
         $this->BlockInfo['UA'] ?? '-'
     );
-    $Truncate = $this->readBytes($this->Configuration['general']['truncate']);
+    $Truncate = $this->readBytes($this->Configuration['logging']['truncate']);
     $WriteMode = !file_exists($Filename) || $Truncate > 0 && filesize($Filename) >= $Truncate ? 'wb' : 'ab';
 
     $File = fopen($Filename, $WriteMode);
     fwrite($File, $Data);
     fclose($File);
     if ($WriteMode === 'wb') {
-        $this->logRotation($this->Configuration['general']['logfile_apache']);
+        $this->logRotation($this->Configuration['logging']['apache_style_log']);
     }
     return true;
 });
 
 /**
- * Writes to the serialised logfile.
+ * Writes to the serialised log file.
  *
  * @return bool True on success; False on failure.
  */
@@ -87,8 +87,8 @@ $this->Events->addHandler('writeToLog', function (): bool {
     /** Guard. */
     if (
         empty($this->BlockInfo) ||
-        $this->Configuration['general']['logfile_serialized'] === '' ||
-        !($Filename = $this->buildPath($this->Vault . $this->Configuration['general']['logfile_serialized']))
+        $this->Configuration['logging']['serialised_log'] === '' ||
+        !($Filename = $this->buildPath($this->Vault . $this->Configuration['logging']['serialised_log']))
     ) {
         return false;
     }
@@ -101,14 +101,14 @@ $this->Events->addHandler('writeToLog', function (): bool {
         return !(is_string($Value) && empty($Value));
     });
 
-    $Truncate = $this->readBytes($this->Configuration['general']['truncate']);
+    $Truncate = $this->readBytes($this->Configuration['logging']['truncate']);
     $WriteMode = !file_exists($Filename) || $Truncate > 0 && filesize($Filename) >= $Truncate ? 'wb' : 'ab';
 
     $File = fopen($Filename, $WriteMode);
     fwrite($File, serialize($BlockInfo) . "\n");
     fclose($File);
     if ($WriteMode === 'wb') {
-        $this->logRotation($this->Configuration['general']['logfile_serialized']);
+        $this->logRotation($this->Configuration['logging']['serialised_log']);
     }
     return true;
 });
@@ -121,7 +121,7 @@ $this->Events->addHandler('writeToLog', function (): bool {
 $this->Events->addHandler('error', function (string $Data): bool {
     /** Guard. */
     if (
-        $this->Configuration['general']['error_log'] === '' ||
+        $this->Configuration['logging']['error_log'] === '' ||
         !isset($this->CIDRAM['Stage'], $this->CIDRAM['Stages'], $this->CIDRAM['Stages'][$this->CIDRAM['Stage'] . ':LogErrors'])
     ) {
         return false;
@@ -170,13 +170,13 @@ $this->Events->addHandler('final', function (): bool {
     /** Guard. */
     if (
         !isset($this->CIDRAM['Pending-Error-Log-Data']) ||
-        $this->Configuration['general']['error_log'] === '' ||
-        !($File = $this->buildPath($this->Vault . $this->Configuration['general']['error_log']))
+        $this->Configuration['logging']['error_log'] === '' ||
+        !($File = $this->buildPath($this->Vault . $this->Configuration['logging']['error_log']))
     ) {
         return false;
     }
 
-    $Truncate = $this->readBytes($this->Configuration['general']['truncate']);
+    $Truncate = $this->readBytes($this->Configuration['logging']['truncate']);
     if (!file_exists($File) || !filesize($File) || $Truncate > 0 && filesize($File) >= $Truncate) {
         $WriteMode = 'wb';
         $Data = $this->L10N->getString('error_log_header') . "\n=====\n" . $this->CIDRAM['Pending-Error-Log-Data'];
@@ -189,7 +189,7 @@ $this->Events->addHandler('final', function (): bool {
     fwrite($Handle, $Data);
     fclose($Handle);
     if ($WriteMode === 'wb') {
-        $this->logRotation($this->Configuration['general']['error_log']);
+        $this->logRotation($this->Configuration['logging']['error_log']);
     }
     return true;
 });
@@ -210,13 +210,13 @@ $this->Events->addHandler('writeToSignaturesUpdateEventLog', function (string $D
     }
 
     /** Add lines based on whether the path is shared with other logs. */
-    if ($this->Configuration['frontend']['signatures_update_event_log'] === $this->Configuration['general']['logfile']) {
+    if ($this->Configuration['frontend']['signatures_update_event_log'] === $this->Configuration['logging']['standard_log']) {
         $Data .= "\n\n";
     } else {
         $Data .= "\n";
     }
 
-    $Truncate = $this->readBytes($this->Configuration['general']['truncate']);
+    $Truncate = $this->readBytes($this->Configuration['logging']['truncate']);
     $WriteMode = (!file_exists($UpdatesLog) || $Truncate > 0 && filesize($UpdatesLog) >= $Truncate) ? 'wb' : 'ab';
     $Handle = fopen($UpdatesLog, $WriteMode);
     fwrite($Handle, $Data);
@@ -236,23 +236,26 @@ $this->Events->addHandler('isLogFile', function (): bool {
     if (!isset($this->CIDRAM['LogPatterns'])) {
         $this->CIDRAM['LogPatterns'] = [];
     }
-    if (strlen($this->Configuration['general']['logfile'])) {
-        $this->CIDRAM['LogPatterns'][] = $this->buildLogPattern($this->Configuration['general']['logfile'], true);
+    if ($this->Configuration['logging']['standard_log'] !== '') {
+        $this->CIDRAM['LogPatterns'][] = $this->buildLogPattern($this->Configuration['logging']['standard_log'], true);
     }
-    if (strlen($this->Configuration['general']['logfile_apache'])) {
-        $this->CIDRAM['LogPatterns'][] = $this->buildLogPattern($this->Configuration['general']['logfile_apache'], true);
+    if ($this->Configuration['logging']['apache_style_log'] !== '') {
+        $this->CIDRAM['LogPatterns'][] = $this->buildLogPattern($this->Configuration['logging']['apache_style_log'], true);
     }
-    if (strlen($this->Configuration['general']['logfile_serialized'])) {
-        $this->CIDRAM['LogPatterns'][] = $this->buildLogPattern($this->Configuration['general']['logfile_serialized'], true);
+    if ($this->Configuration['logging']['serialised_log'] !== '') {
+        $this->CIDRAM['LogPatterns'][] = $this->buildLogPattern($this->Configuration['logging']['serialised_log'], true);
     }
-    if (strlen($this->Configuration['frontend']['frontend_log'])) {
+    if ($this->Configuration['logging']['error_log'] !== '') {
+        $this->CIDRAM['LogPatterns'][] = $this->buildLogPattern($this->Configuration['logging']['serialised_log'], true);
+    }
+    if ($this->Configuration['frontend']['frontend_log'] !== '') {
         $this->CIDRAM['LogPatterns'][] = $this->buildLogPattern($this->Configuration['frontend']['frontend_log'], true);
     }
-    if (strlen($this->Configuration['recaptcha']['logfile'])) {
-        $this->CIDRAM['LogPatterns'][] = $this->buildLogPattern($this->Configuration['recaptcha']['logfile'], true);
+    if ($this->Configuration['recaptcha']['recaptcha_log'] !== '') {
+        $this->CIDRAM['LogPatterns'][] = $this->buildLogPattern($this->Configuration['recaptcha']['recaptcha_log'], true);
     }
-    if (strlen($this->Configuration['hcaptcha']['logfile'])) {
-        $this->CIDRAM['LogPatterns'][] = $this->buildLogPattern($this->Configuration['hcaptcha']['logfile'], true);
+    if ($this->Configuration['hcaptcha']['hcaptcha_log'] !== '') {
+        $this->CIDRAM['LogPatterns'][] = $this->buildLogPattern($this->Configuration['hcaptcha']['hcaptcha_log'], true);
     }
     return true;
 });

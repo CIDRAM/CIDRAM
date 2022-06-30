@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Protect traits (last modified: 2022.06.21).
+ * This file: Protect traits (last modified: 2022.06.30).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -16,7 +16,7 @@ namespace CIDRAM\CIDRAM;
 trait Protect
 {
     /**
-     * Add a page output and block event logfile field.
+     * Adds a field to the page output and the block event log.
      *
      * @param string $FieldInternal The internal name for the field.
      * @param string $FieldName The name of the L10N string for the field.
@@ -39,7 +39,7 @@ trait Protect
             $FieldData
         ) : $FieldData;
         if (isset($this->CIDRAM['Fields'][$FieldInternal . ':ShowInLogs'])) {
-            $Logged = $this->Configuration['general']['log_sanitisation'] ? $Prepared : $FieldData;
+            $Logged = $this->Configuration['logging']['log_sanitisation'] ? $Prepared : $FieldData;
             $InternalResolved = $this->L10N->getString($FieldName) ?: $FieldName;
             $InternalResolved .= $this->L10N->getString('pair_separator') ?: ': ';
             $this->CIDRAM['FieldTemplates']['Logs'] .= $InternalResolved . $Logged . "\n";
@@ -134,7 +134,7 @@ trait Protect
         $this->BlockInfo['rURI'] .= $this->CIDRAM['HTTP_HOST'] ?: 'Unknown.Host';
         $this->BlockInfo['rURI'] .= $_SERVER['REQUEST_URI'] ?? '/';
 
-        /** Initialise page output and block event logfile fields. */
+        /** Initialise page output and block event log fields. */
         $this->CIDRAM['FieldTemplates'] = $this->Configuration['template_data'] + [
             'Logs' => '',
             'Output' => [],
@@ -843,7 +843,7 @@ trait Protect
                  * been disabled, or if the "Don't Log" flag has been set.
                  */
                 if (empty($this->CIDRAM['Flag Don\'t Log']) && (
-                    $this->Configuration['general']['log_banned_ips'] || empty($this->CIDRAM['Banned'])
+                    $this->Configuration['logging']['log_banned_ips'] || empty($this->CIDRAM['Banned'])
                 )) {
                     /** Write to logs. */
                     $this->Events->fireEvent('writeToLog');

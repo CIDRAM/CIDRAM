@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM core (last modified: 2022.06.21).
+ * This file: The CIDRAM core (last modified: 2022.06.30).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -821,7 +821,7 @@ class Core
 
     /**
      * A simple method for replacing date/time placeholders with corresponding
-     * date/time information. Used by the logfiles and some timestamps.
+     * date/time information. Used by logging and some timestamps.
      *
      * @param int $Time A unix timestamp.
      * @param string|array $In An input or an array of inputs to manipulate.
@@ -1150,7 +1150,7 @@ class Core
      * social media tools, etc.
      *
      * @param string|array $Domains Accepted domain/hostname partials.
-     * @param string $Friendly A friendly name to use in logfiles.
+     * @param string $Friendly A friendly name to use when logging.
      * @param array $Values Verification data for the entity being verified.
      * @return void
      */
@@ -1267,7 +1267,7 @@ class Core
      * being checked, and if not, the request is blocked. Has no return value.
      *
      * @param string|array $Expected Accepted/Expected IPs.
-     * @param string $Friendly A friendly name to use in logfiles.
+     * @param string $Friendly A friendly name to use when logging.
      * @param array $Values Verification data for the entity being verified.
      * @return void
      */
@@ -1287,7 +1287,7 @@ class Core
      * being checked, and if not, the request is blocked. Has no return value.
      *
      * @param string|array $Expected Accepted/Expected CIDRs.
-     * @param string $Friendly A friendly name to use in logfiles.
+     * @param string $Friendly A friendly name to use when logging.
      * @param array $Values Verification data for the entity being verified.
      * @return void
      */
@@ -1309,7 +1309,7 @@ class Core
      * capable of performing ASN lookups, has been enabled.
      *
      * @param string|array $Origins Accepted originating ASNs.
-     * @param string $Friendly A friendly name to use in logfiles.
+     * @param string $Friendly A friendly name to use when logging.
      * @param array $Values Verification data for the entity being verified.
      * @return void
      */
@@ -1329,7 +1329,7 @@ class Core
      *
      * @param mixed $Datapoints The datapoint to be matched.
      * @param string|array $Expected The expected values (per the call origin).
-     * @param string $Friendly A friendly name to use in logfiles.
+     * @param string $Friendly A friendly name to use when logging.
      * @return void
      */
     private function uaXMatch($Datapoints, $Expected, string $Friendly): void
@@ -1380,7 +1380,7 @@ class Core
      *      evaluated for truthiness. Truthiness is evaluated, and if true, the
      *      signature is "triggered". If false, the signature is *not* "triggered".
      * @param string $ReasonShort Cited in the "Why Blocked" field when the
-     *      signature is triggered and thus included within logfile entries.
+     *      signature is triggered and thus included within log entries.
      * @param string $ReasonLong Message displayed to the user/client when blocked,
      *      to explain why they've been blocked. Optional. Defaults to the standard
      *      "Access Denied!" message.
@@ -1433,11 +1433,12 @@ class Core
      *      evaluated for truthiness. Truthiness is evaluated, and if true, the
      *      bypass is "triggered". If false, the bypass is *not* "triggered".
      * @param string $ReasonShort Cited in the "Why Blocked" field when the
-     *      bypass is triggered (included within logfile entries if there are still
+     *      bypass is triggered (included within log entries if there are still
      *      other preexisting signatures which have otherwise been triggered).
-     * @param array $DefineOptions An optional array containing key/value pairs,
-     *      used to define configuration options specific to the request instance.
-     *      Configuration options will be applied when the bypass is triggered.
+     * @param array $DefineOptions An optional array containing key/value
+     *      pairs, used to define configuration options specific to the request
+     *      instance. Configuration options will be applied when the bypass is
+     *      triggered.
      * @return bool Returns true if the bypass was triggered, and false if it
      *      wasn't. Should correspond to the truthiness of $Condition.
      */
@@ -1911,13 +1912,15 @@ class Core
     /**
      * Log rotation.
      *
-     * @param string $Pattern What to identify logfiles by (should be supplied via the relevant logging directive).
-     * @return bool False when log rotation is disabled or errors occur; True otherwise.
+     * @param string $Pattern What to identify logs by (should be supplied via
+     *      the relevant logging directive).
+     * @return bool False when log rotation is disabled or errors occur; True
+     *      otherwise.
      */
     public function logRotation(string $Pattern): bool
     {
-        $Limit = $this->Configuration['general']['log_rotation_limit'] ?? 0;
-        $Action = $this->Configuration['general']['log_rotation_action'] ?? '';
+        $Limit = $this->Configuration['logging']['log_rotation_limit'] ?? 0;
+        $Action = $this->Configuration['logging']['log_rotation_action'] ?? '';
         if ($Limit < 1 || ($Action !== 'Delete' && $Action !== 'Archive')) {
             return false;
         }

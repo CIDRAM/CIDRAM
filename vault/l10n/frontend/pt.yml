@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Portuguese language data for the front-end (last modified: 2022.06.22).
+# This file: Portuguese language data for the front-end (last modified: 2022.06.30).
 ##/
 
 Extended Description AbuseIPDB module: "Bloqueia solicitações de IPs listados no AbuseIPDB."
@@ -121,20 +121,12 @@ config_general_default_timeout: "Tempo limite padrão a ser usado para solicita�
 config_general_disabled_channels: "Isso pode ser usado para impedir que o CIDRAM use canais específicos ao enviar solicitações (por exemplo, ao atualizar, ao buscar metadados de componentes, etc)."
 config_general_emailaddr: "Se você desejar, você pode fornecer um endereço de e-mail aqui a ser dado para os usuários quando eles estão bloqueadas, para eles para usar como um ponto de contato para suporte e/ou assistência no caso de eles sendo bloqueado por engano ou em erro. AVISO: Qualquer endereço de e-mail que você fornecer aqui certamente vai ser adquirido por spambots e raspadores/scrapers durante o curso de seu ser usada aqui, e assim, é fortemente recomendado que, se você optar por fornecer um endereço de e-mail aqui, que você garantir que o endereço de email você fornecer aqui é um endereço descartável e/ou um endereço que você não é importante (em outras palavras, você provavelmente não quer usar seu pessoal principal ou negócio principal endereço de e-mail)."
 config_general_emailaddr_display_style: "Como você prefere que o endereço de e-mail seja apresentado aos usuários?"
-config_general_error_log: "Um arquivo para registrar erros detectados que não são fatais. Especifique o nome de um arquivo, ou deixe em branco para desabilitar."
 config_general_fields: "Controles para os campos durante eventos de bloco (quando uma solicitação é bloqueada)."
 config_general_force_hostname_lookup: "Forçar pesquisas de nome de anfitrião? True = Sim; False = Não [Padrão]. As pesquisas de nome de anfitrião normalmente são realizadas com base na necessidade, mas pode ser forçado para todos os solicitações. Isso pode ser útil como forma de fornecer informações mais detalhadas nos arquivos de log, mas também pode ter um efeito ligeiramente negativo sobre o desempenho."
 config_general_http_response_header_code: "Qual mensagem de status HTTP deve enviar o CIDRAM ao bloquear solicitações?"
 config_general_ipaddr: "Onde encontrar o IP endereço das solicitações? (Útil por serviços como o Cloudflare e tal). Padrão = REMOTE_ADDR. ATENÇÃO: Não mude isso a menos que você saiba o que está fazendo!"
 config_general_lang: "Especificar o padrão da linguagem por CIDRAM."
 config_general_lang_override: "Localizar de acordo com HTTP_ACCEPT_LANGUAGE sempre que possível? True = Sim [Padrão]; False = Não."
-config_general_log_banned_ips: "Incluir solicitações bloqueadas de IPs banidas nos arquivos de log? True = Sim [Padrão]; False = Não."
-config_general_log_rotation_action: "A rotação de log limita o número de arquivos de log que devem existir a qualquer momento. Quando novos arquivos de log são criados, se o número total de arquivos de log exceder o limite especificado, a ação especificada será executada. Você pode especificar a ação desejada aqui."
-config_general_log_rotation_limit: "A rotação de log limita o número de arquivos de log que devem existir a qualquer momento. Quando novos arquivos de log são criados, se o número total de arquivos de log exceder o limite especificado, a ação especificada será executada. Você pode especificar o limite desejado aqui. Um valor de 0 desativará a rotação de log."
-config_general_log_sanitisation: "Ao usar o front-end página para os arquivos de registro para exibir dados de log, o CIDRAM sanitiza os dados de log antes de exibi-los, para proteger os usuários contra ataques XSS e outras ameaças potenciais que os dados de log podem conter. No entanto, por padrão, os dados não são sanitizados durante o registro. Isso é para assegurar que os dados de log sejam preservados com precisão, para auxiliar qualquer análise heurística ou forense que possa ser necessária no futuro. No entanto, no caso de um usuário tentar ler dados de log usando ferramentas externas, e se essas ferramentas externas não realizarem seu próprio processo de sanitização, o usuário pode estar exposto a ataques XSS. Se necessário, você pode alterar o comportamento padrão usando esta diretiva de configuração. True = Sanitize dados ao registrá-lo (os dados são preservados com menos precisão, mas o risco de XSS é menor). False = Não sanitize dados ao registrá-lo (os dados são preservados com mais precisão, mas o risco de XSS é maior) [Padrão]."
-config_general_logfile: "Um arquivo legível por humanos para registrar todas as tentativas de acesso bloqueadas. Especifique o nome de um arquivo, ou deixe em branco para desabilitar."
-config_general_logfile_apache: "Um arquivo no estilo da Apache para registrar todas as tentativas de acesso bloqueadas. Especifique o nome de um arquivo, ou deixe em branco para desabilitar."
-config_general_logfile_serialized: "Um arquivo serializado para registrar todas as tentativas de acesso bloqueadas. Especifique o nome de um arquivo, ou deixe em branco para desabilitar."
 config_general_numbers: "Como você prefere que os números sejam exibidos? Selecione o exemplo que parece mais correto para você."
 config_general_other_verification: "Controles para verificar outros tipos de solicitações sempre que possível."
 config_general_search_engine_verification: "Controles para verificar solicitações de mecanismos de pesquisa."
@@ -145,13 +137,12 @@ config_general_statistics: "Controla quais informações estatísticas rastrear.
 config_general_time_format: "O formato de notação de data/tempo utilizado pelo CIDRAM. Opções adicionais podem ser adicionadas mediante solicitação."
 config_general_time_offset: "Deslocamento do fuso horário em minutos."
 config_general_timezone: "Isso é usado para especificar o fuso horário a ser usado (por exemplo, Africa/Cairo, America/New_York, Asia/Tokyo, Australia/Perth, Europe/Berlin, Pacific/Guam, etc). Especifique "SYSTEM" para permitir que o PHP lide com isso automaticamente."
-config_general_truncate: "Truncar arquivos de log quando atingem um determinado tamanho? Valor é o tamanho máximo em B/KB/MB/GB/TB que um arquivo de log pode crescer antes de ser truncado. O valor padrão de 0KB desativa o truncamento (arquivos de log podem crescer indefinidamente). Nota: Aplica-se a arquivos de log individuais! O tamanho dos arquivos de log não é considerado coletivamente."
 config_hcaptcha: "Configuração para HCaptcha (fornece uma maneira para os humanos recuperarem o acesso quando bloqueados)."
 config_hcaptcha_api: &CaptchaAPI "Qual API usar?"
 config_hcaptcha_expiry: &CaptchaExpiry "Número de horas para lembrar instâncias CAPTCHA. Padrão = 720 (1 mês)."
+config_hcaptcha_hcaptcha_log: &CaptchaLogFile "Registrar todas as tentativas de CAPTCHA? Se sim, especificar o nome a ser usado para o arquivo de log. Se não, deixe esta variável em branco."
 config_hcaptcha_lockip: &CaptchaLockIP "Ligar CAPTCHA para IPs?"
 config_hcaptcha_lockuser: &CaptchaLockUser "Ligar CAPTCHA para os usuários?"
-config_hcaptcha_logfile: &CaptchaLogfile "Registrar todas as tentativas de CAPTCHA? Se sim, especificar o nome a ser usado para o arquivo de registro. Se não, deixe esta variável em branco."
 config_hcaptcha_nonblocked_status_code: &CaptchaNonblockedStatusCode "Qual código de status deve ser usado ao exibir CAPTCHAs para solicitações não bloqueadas?"
 config_hcaptcha_secret: &CaptchaDashboard "Esse valor pode ser encontrado no painel de seu serviço de CAPTCHA."
 config_hcaptcha_show_api_message: &ShowAPIMessage "Mostrar mensagem API? True = Sim [Padrão]; False = Não."
@@ -162,6 +153,16 @@ config_hcaptcha_usemode: &CaptchaUseMode "Quando o CAPTCHA deve ser oferecido? N
 config_legal: "Configuração para requisitos legais."
 config_legal_privacy_policy: "O endereço de uma política de privacidade relevante a ser exibida no rodapé de qualquer página gerada. Especifique um URL, ou deixe em branco para desabilitar."
 config_legal_pseudonymise_ip_addresses: "Pseudonimiza endereços IP ao escrever os arquivos de log? True = Sim [Padrão]; False = Não."
+config_logging: "Configuração relacionada ao log (excluindo o que é aplicável a outras categorias)."
+config_logging_apache_style_log: "Um arquivo no estilo da Apache para registrar todas as tentativas de acesso bloqueadas. Especifique o nome de um arquivo, ou deixe em branco para desabilitar."
+config_logging_error_log: "Um arquivo para registrar erros detectados que não são fatais. Especifique o nome de um arquivo, ou deixe em branco para desabilitar."
+config_logging_log_banned_ips: "Incluir solicitações bloqueadas de IPs banidas nos arquivos de log? True = Sim [Padrão]; False = Não."
+config_logging_log_rotation_action: "A rotação de log limita o número de arquivos de log que devem existir a qualquer momento. Quando novos arquivos de log são criados, se o número total de arquivos de log exceder o limite especificado, a ação especificada será executada. Você pode especificar a ação desejada aqui."
+config_logging_log_rotation_limit: "A rotação de log limita o número de arquivos de log que devem existir a qualquer momento. Quando novos arquivos de log são criados, se o número total de arquivos de log exceder o limite especificado, a ação especificada será executada. Você pode especificar o limite desejado aqui. Um valor de 0 desativará a rotação de log."
+config_logging_log_sanitisation: "Ao usar o front-end página para os arquivos de log para exibir dados de log, o CIDRAM sanitiza os dados de log antes de exibi-los, para proteger os usuários contra ataques XSS e outras ameaças potenciais que os dados de log podem conter. No entanto, por padrão, os dados não são sanitizados durante o registro. Isso é para assegurar que os dados de log sejam preservados com precisão, para auxiliar qualquer análise heurística ou forense que possa ser necessária no futuro. No entanto, no caso de um usuário tentar ler dados de log usando ferramentas externas, e se essas ferramentas externas não realizarem seu próprio processo de sanitização, o usuário pode estar exposto a ataques XSS. Se necessário, você pode alterar o comportamento padrão usando esta diretiva de configuração. True = Sanitize dados ao registrá-lo (os dados são preservados com menos precisão, mas o risco de XSS é menor). False = Não sanitize dados ao registrá-lo (os dados são preservados com mais precisão, mas o risco de XSS é maior) [Padrão]."
+config_logging_serialised_log: "Um arquivo serializado para registrar todas as tentativas de acesso bloqueadas. Especifique o nome de um arquivo, ou deixe em branco para desabilitar."
+config_logging_standard_log: "Um arquivo legível por humanos para registrar todas as tentativas de acesso bloqueadas. Especifique o nome de um arquivo, ou deixe em branco para desabilitar."
+config_logging_truncate: "Truncar arquivos de log quando atingem um determinado tamanho? Valor é o tamanho máximo em B/KB/MB/GB/TB que um arquivo de log pode crescer antes de ser truncado. O valor padrão de 0KB desativa o truncamento (arquivos de log podem crescer indefinidamente). Nota: Aplica-se a arquivos de log individuais! O tamanho dos arquivos de log não é considerado coletivamente."
 config_phpmailer: "Configuração para PHPMailer (usado para autenticação de dois fatores)."
 config_phpmailer_add_reply_to_address: "O endereço de resposta a ser citado ao enviar e-mail via SMTP."
 config_phpmailer_add_reply_to_name: "O nome da resposta a ser citado ao enviar e-mail via SMTP."
@@ -193,8 +194,8 @@ config_recaptcha_api: *CaptchaAPI
 config_recaptcha_expiry: *CaptchaExpiry
 config_recaptcha_lockip: *CaptchaLockIP
 config_recaptcha_lockuser: *CaptchaLockUser
-config_recaptcha_logfile: *CaptchaLogfile
 config_recaptcha_nonblocked_status_code: *CaptchaNonblockedStatusCode
+config_recaptcha_recaptcha_log: *CaptchaLogFile
 config_recaptcha_secret: *CaptchaDashboard
 config_recaptcha_show_api_message: *ShowAPIMessage
 config_recaptcha_show_cookie_warning: *ShowCookieWarning
@@ -519,15 +520,15 @@ link_intersector: "Intersetor"
 link_ip_test: "Teste IP"
 link_ip_tracking: "Monitoração IP"
 link_log_out: "Sair"
-link_logs: "Arquivos de Registro"
+link_logs: "Arquivos de Log"
 link_range: "Tabelas de Alcance"
 link_sections_list: "Lista de Seções"
 link_statistics: "Estatisticas"
 link_subtractor: "Subtrator"
 link_updates: "Atualizações"
-logs_logfile_doesnt_exist: "Arquivo de registro selecionado não existe!"
-logs_no_logfile_selected: "Não qualquer arquivo de registro selecionado."
-logs_no_logfiles_available: "Não quaisquer arquivos de registro disponíveis."
+logs_logfile_doesnt_exist: "O arquivo de log selecionado não existe!"
+logs_no_logfile_selected: "Não qualquer arquivo de log selecionado."
+logs_no_logfiles_available: "Não quaisquer arquivos de log disponíveis."
 max_login_attempts_exceeded: "Número máximo de tentativas de login foi excedido; Acesso negado."
 msg_subject_2fa: "Autenticação de dois fatores"
 msg_template_2fa: |
@@ -637,7 +638,7 @@ state_loadtime: "Solicitação de página concluída em %s segundos."
 state_logged_in: "Conectado."
 state_logged_in_2fa_pending: "Conectado + 2FA pendentes."
 state_logged_out: "Desconectado."
-state_logs_access_only: "Acesso aos arquivos de registro somente"
+state_logs_access_only: "Acesso aos arquivos de log somente"
 state_risk_high: "Alto"
 state_risk_low: "Baixo"
 state_risk_medium: "Médio"
@@ -721,7 +722,7 @@ tip_intersector: "Olá, {username}.<br />O intersetor pode ser usado para determ
 tip_ip_test: "Olá, {username}.<br />A página para teste IP permite que você teste se os endereços IP são bloqueados pelas assinaturas atualmente instaladas."
 tip_ip_test_switches: "(Quando não selecionado, somente os arquivos de assinatura serão testados contra)."
 tip_ip_tracking: "Olá, {username}.<br />A página de monitoração IP permite verificar o status de monitoração de endereços IP, para verificar quais deles foram banidos, e para cancelar monitoração para eles se você quiser fazê-lo."
-tip_logs: "Olá, {username}.<br />Selecionar um arquivo de registro da lista abaixo para visualizar o conteúdo do arquivo de registro."
+tip_logs: "Olá, {username}.<br />Selecionar um arquivo de log da lista abaixo para visualizar o conteúdo desse arquivo de log."
 tip_range: "Olá, {username}.<br />Esta página mostra algumas informações estatísticas básicas sobre os IPs abrangidos pelos arquivos de assinatura ativos no momento."
 tip_sections_list: "Olá, {username}.<br />Esta página lista quais seções existem nos arquivos de assinatura atualmente ativos."
 tip_see_the_documentation: "Consulte a <a href="https://github.com/CIDRAM/Docs/blob/master/readme.pt.md\#SECTION5" hreflang="pt" rel="noopener external">documentação</a> para obter informações sobre as várias diretrizes de configuração e seus objetivos."

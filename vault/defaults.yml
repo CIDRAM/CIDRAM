@@ -7,23 +7,11 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Defaults file (last modified: 2022.06.22).
+# This file: Defaults file (last modified: 2022.06.30).
 ##/
 
 Config Defaults:
  general:
-  logfile:
-   type: "string"
-   default: ""
-  logfile_apache:
-   type: "string"
-   default: ""
-  logfile_serialized:
-   type: "string"
-   default: ""
-  error_log:
-   type: "string"
-   default: ""
   stages:
    type: "checkbox"
    default: |
@@ -190,20 +178,6 @@ Config Defaults:
     DateTime:OmitIfEmpty
     SignatureCount:OmitIfEmpty
     Infractions:OmitIfEmpty
-  truncate:
-   type: "kb"
-   default: "0KB"
-   preview: "kb"
-  log_rotation_limit:
-   type: "int"
-   default: 0
-  log_rotation_action:
-   type: "string"
-   default: "Delete"
-   choices:
-    Delete: "field_log_rotation_delete"
-    Archive: "field_log_rotation_archive"
-   style: "radio"
   timezone:
    type: "timezone"
    default: "SYSTEM"
@@ -420,9 +394,6 @@ Config Defaults:
     451: *451
     503: *503
    style: "radio"
-  log_banned_ips:
-   type: "bool"
-   default: true
   default_dns:
    type: "string"
    default: |
@@ -590,9 +561,6 @@ Config Defaults:
    type: "bool"
    default: true
    hints: "hints_ipv6_on_32bit"
-  log_sanitisation:
-   type: "bool"
-   default: false
   disabled_channels:
    type: "checkbox"
    default: ""
@@ -635,6 +603,39 @@ Config Defaults:
   events:
    type: "string"
    default: ""
+ logging:
+  standard_log:
+   type: "string"
+   default: ""
+  apache_style_log:
+   type: "string"
+   default: ""
+  serialised_log:
+   type: "string"
+   default: ""
+  error_log:
+   type: "string"
+   default: ""
+  truncate:
+   type: "kb"
+   default: "0KB"
+   preview: "kb"
+  log_rotation_limit:
+   type: "int"
+   default: 0
+  log_rotation_action:
+   type: "string"
+   default: "Delete"
+   choices:
+    Delete: "field_log_rotation_delete"
+    Archive: "field_log_rotation_archive"
+   style: "radio"
+  log_banned_ips:
+   type: "bool"
+   default: true
+  log_sanitisation:
+   type: "bool"
+   default: false
  frontend:
   frontend_log:
    type: "string"
@@ -743,7 +744,7 @@ Config Defaults:
    step: "any"
    default: 720
    preview: "hours"
-  logfile:
+  recaptcha_log:
    type: "string"
    default: ""
   signature_limit:
@@ -803,7 +804,7 @@ Config Defaults:
    step: "any"
    default: 720
    preview: "hours"
-  logfile:
+  hcaptcha_log:
    type: "string"
    default: ""
   signature_limit:
@@ -1055,7 +1056,7 @@ Provide:
      Decoration: *RedMiddle
      Sets:
       Configuration:
-       general: {logfile: "", logfile_apache: "", logfile_serialized: ""}
+       logging: {standard_log: "", apache_style_log: "", serialised_log: ""}
    IP Tracking:
     Forcibly enable IP tracking:
      Label: "label_aux_special_ip_tracking_enable"

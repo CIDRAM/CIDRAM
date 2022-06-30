@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Spanish language data for the front-end (last modified: 2022.06.22).
+# This file: Spanish language data for the front-end (last modified: 2022.06.30).
 ##/
 
 Extended Description AbuseIPDB module: "Bloquea las solicitudes de los IP listados en AbuseIPDB."
@@ -121,20 +121,12 @@ config_general_default_timeout: "¿Tiempo de espera predeterminado para usar en 
 config_general_disabled_channels: "Esto se puede usar para evitar que CIDRAM use canales particulares al enviar solicitudes (por ejemplo, al actualizar, al obtener metadatos de componentes, etc)."
 config_general_emailaddr: "Si deseado, usted puede suministrar una dirección de correo electrónico aquí que se dará a los usuarios cuando ellos están bloqueadas, para ellos utilizar como un punto de contacto para soporte y/o asistencia para el caso de ellos están bloqueadas por error. ADVERTENCIA: Cualquiera que sea la dirección de correo electrónico que usted suministrar aquí, que será sin duda adquirida por spambots y raspadores/scrapers durante el curso de su siendo utilizar aquí, y entonces, se recomienda encarecidamente que si eliges para suministrar una dirección de correo electrónico aquí, que se asegura de que la dirección de correo electrónico usted suministrar aquí es una dirección desechable y/o una dirección que usted no se preocupan por para ser bombardeado por correo (en otras palabras, es probable que usted no quiere utilizar sus correos electrónicos personal principal o comercio principal)."
 config_general_emailaddr_display_style: "¿Cómo prefieres que la dirección de correo electrónico sea presentada a los usuarios?"
-config_general_error_log: "Un archivo para registrar cualquier error detectado que no sea fatal. Especificar el nombre del archivo, o dejar en blanco para desactivar."
 config_general_fields: "Controles para los campos durante eventos de bloque (cuando se bloquea una solicitud)."
 config_general_force_hostname_lookup: "¿Forzar búsquedas de nombres de host? True = Sí; False = No [Predefinido]. Las búsquedas de nombres de host normalmente se realizan según sea necesario, pero se pueden forzar para todas las solicitudes. Hacerlo puede ser útil como un medio para proporcionar información más detallada en los archivos de registro, pero también puede tener un efecto ligeramente negativo en el rendimiento."
 config_general_http_response_header_code: "¿Cuál mensaje de estado HTTP debe enviar CIDRAM cuando se bloquean las solicitudes?"
 config_general_ipaddr: "¿Dónde puedo encontrar el IP dirección de las solicitudes entrantes? (Útil para servicios como Cloudflare y tales). Predefinido = REMOTE_ADDR. ¡AVISO: No cambie esto a menos que sepas lo que estás haciendo!"
 config_general_lang: "Especifique la predefinido del lenguaje para CIDRAM."
 config_general_lang_override: "¿Localizar según HTTP_ACCEPT_LANGUAGE siempre que sea posible? True = Sí [Predefinido]; False = No."
-config_general_log_banned_ips: "¿Incluir las solicitudes bloqueadas de IPs prohibidos en los archivos de registro? True = Sí [Predefinido]; False = No."
-config_general_log_rotation_action: "La rotación de registros limita la cantidad de archivos de registro que deberían existir al mismo tiempo. Cuando se crean nuevos archivos de registro, si la cantidad total de archivos de registro excede el límite especificado, se realizará la acción especificada. Puede especificar la acción deseada aquí."
-config_general_log_rotation_limit: "La rotación de registros limita la cantidad de archivos de registro que deberían existir al mismo tiempo. Cuando se crean nuevos archivos de registro, si la cantidad total de archivos de registro excede el límite especificado, se realizará la acción especificada. Puede especificar el límite deseado aquí. Un valor de 0 deshabilitará la rotación de registros."
-config_general_log_sanitisation: "Cuando se utiliza el front-end página de los archivos de registro para ver los datos de registro, CIDRAM sanea los datos de registro antes de mostrarlos, para proteger a los usuarios de los ataques XSS y otras amenazas potenciales que podrían estar contenido dentro de los datos de registro. Pero, de forma predefinida, los datos no se sanean durante el registro. Esto es para asegurar que los datos de registro se conserven con precisión, para ayudar a cualquier análisis heurístico o forense que pueda ser necesario en el futuro. Pero, en el caso de que un usuario intente leer los datos de registro utilizando herramientas externas, y si esas herramientas externas no realizan su propio proceso de saneamiento, el usuario podría estar expuesto a ataques XSS. Si es necesario, puede cambiar el comportamiento predefinido utilizando esta directiva de configuración. True = Sanear datos al registrarlo (los datos se conservan con menos precisión, pero el riesgo de XSS es menor). False = No sanear datos al registrarlo (los datos se conservan con mayor precisión, pero el riesgo de XSS es mayor) [Predefinido]."
-config_general_logfile: "Un archivo legible por humanos para el registro de todos los intentos de acceso bloqueados. Especificar el nombre del archivo, o dejar en blanco para desactivar."
-config_general_logfile_apache: "Un archivo en el estilo de Apache para el registro de todos los intentos de acceso bloqueados. Especificar el nombre del archivo, o dejar en blanco para desactivar."
-config_general_logfile_serialized: "Un archivo serializado para el registro de todos los intentos de acceso bloqueados. Especificar el nombre del archivo, o dejar en blanco para desactivar."
 config_general_numbers: "¿Cómo prefieres los números que se muestran? Seleccione el ejemplo que le parezca más correcto."
 config_general_other_verification: "Controles para verificar otros tipos de solicitudes cuando sea posible."
 config_general_search_engine_verification: "Controles para verificar las solicitudes de los motores de búsqueda."
@@ -145,13 +137,12 @@ config_general_statistics: "Controla qué información estadística rastrear."
 config_general_time_format: "El formato de notación de fecha/hora usado por CIDRAM. Se pueden añadir opciones adicionales bajo petición."
 config_general_time_offset: "Desplazamiento del huso horario en minutos."
 config_general_timezone: "Esto se usa para especificar la zona horaria a usar (por ejemplo, Africa/Cairo, America/New_York, Asia/Tokyo, Australia/Perth, Europe/Berlin, Pacific/Guam, etc). Especifique "SYSTEM" para permitir que PHP maneje esto automáticamente."
-config_general_truncate: "¿Truncar archivos de registro cuando alcanzan cierto tamaño? Valor es el tamaño máximo en B/KB/MB/GB/TB que un archivo de registro puede crecer antes de ser truncado. El valor predeterminado de 0KB deshabilita el truncamiento (archivos de registro pueden crecer indefinidamente). Nota: ¡Se aplica a archivos de registro individuales! El tamaño de los archivos de registro no se considera colectivamente."
 config_hcaptcha: "Configuración para HCaptcha (proporciona una forma para que los humanos recuperen el acceso cuando están bloqueados)."
 config_hcaptcha_api: &CaptchaAPI "¿Qué API usar?"
 config_hcaptcha_expiry: &CaptchaExpiry "Número de horas para recordar instancias de CAPTCHA. Predefinido = 720 (1 mes)."
+config_hcaptcha_hcaptcha_log: &CaptchaLogFile "Registrar todos los intentos de CAPTCHA? En caso afirmativo, especifique el nombre que se utilizará para el archivo de registro. Si no, dejar esta variable en blanco."
 config_hcaptcha_lockip: &CaptchaLockIP "Ligar CAPTCHA a los IPs?"
 config_hcaptcha_lockuser: &CaptchaLockUser "Ligar CAPTCHA a los usuarios?"
-config_hcaptcha_logfile: &CaptchaLogfile "Registrar todos los intentos de CAPTCHA? En caso afirmativo, especifique el nombre que se utilizará para el archivo de registro. Si no, dejar esta variable en blanco."
 config_hcaptcha_nonblocked_status_code: &CaptchaNonblockedStatusCode "¿Qué código de estado se debe usar al mostrar CAPTCHA a solicitudes no bloqueadas?"
 config_hcaptcha_secret: &CaptchaDashboard "Este valor se puede encontrar en el panel de control de su servicio de CAPTCHA."
 config_hcaptcha_show_api_message: &ShowAPIMessage "¿Mostrar mensaje de API? True = Sí [Predefinido]; False = No."
@@ -162,6 +153,16 @@ config_hcaptcha_usemode: &CaptchaUseMode "¿Cuándo se debe ofrecer el CAPTCHA? 
 config_legal: "Configuración para requisitos legales."
 config_legal_privacy_policy: "La dirección de una política de privacidad relevante que se mostrará en el pie de página de cualquier página generada. Especificar una URL, o dejar en blanco para desactivar."
 config_legal_pseudonymise_ip_addresses: "¿Seudonimizar las direcciones IP cuando al escribir archivos de registro? True = Sí [Predefinido]; False = No."
+config_logging: "Configuración relacionada con el registro (excluyendo lo que es aplicable a otras categorías)."
+config_logging_apache_style_log: "Un archivo en el estilo de Apache para el registro de todos los intentos de acceso bloqueados. Especificar el nombre del archivo, o dejar en blanco para desactivar."
+config_logging_error_log: "Un archivo para registrar cualquier error detectado que no sea fatal. Especificar el nombre del archivo, o dejar en blanco para desactivar."
+config_logging_log_banned_ips: "¿Incluir las solicitudes bloqueadas de IPs prohibidos en los archivos de registro? True = Sí [Predefinido]; False = No."
+config_logging_log_rotation_action: "La rotación de registros limita la cantidad de archivos de registro que deberían existir al mismo tiempo. Cuando se crean nuevos archivos de registro, si la cantidad total de archivos de registro excede el límite especificado, se realizará la acción especificada. Puede especificar la acción deseada aquí."
+config_logging_log_rotation_limit: "La rotación de registros limita la cantidad de archivos de registro que deberían existir al mismo tiempo. Cuando se crean nuevos archivos de registro, si la cantidad total de archivos de registro excede el límite especificado, se realizará la acción especificada. Puede especificar el límite deseado aquí. Un valor de 0 deshabilitará la rotación de registros."
+config_logging_log_sanitisation: "Cuando se utiliza el front-end página de los archivos de registro para ver los datos de registro, CIDRAM sanea los datos de registro antes de mostrarlos, para proteger a los usuarios de los ataques XSS y otras amenazas potenciales que podrían estar contenido dentro de los datos de registro. Pero, de forma predefinida, los datos no se sanean durante el registro. Esto es para asegurar que los datos de registro se conserven con precisión, para ayudar a cualquier análisis heurístico o forense que pueda ser necesario en el futuro. Pero, en el caso de que un usuario intente leer los datos de registro utilizando herramientas externas, y si esas herramientas externas no realizan su propio proceso de saneamiento, el usuario podría estar expuesto a ataques XSS. Si es necesario, puede cambiar el comportamiento predefinido utilizando esta directiva de configuración. True = Sanear datos al registrarlo (los datos se conservan con menos precisión, pero el riesgo de XSS es menor). False = No sanear datos al registrarlo (los datos se conservan con mayor precisión, pero el riesgo de XSS es mayor) [Predefinido]."
+config_logging_serialised_log: "Un archivo serializado para el registro de todos los intentos de acceso bloqueados. Especificar el nombre del archivo, o dejar en blanco para desactivar."
+config_logging_standard_log: "Un archivo legible por humanos para el registro de todos los intentos de acceso bloqueados. Especificar el nombre del archivo, o dejar en blanco para desactivar."
+config_logging_truncate: "¿Truncar archivos de registro cuando alcanzan cierto tamaño? Valor es el tamaño máximo en B/KB/MB/GB/TB que un archivo de registro puede crecer antes de ser truncado. El valor predeterminado de 0KB deshabilita el truncamiento (archivos de registro pueden crecer indefinidamente). Nota: ¡Se aplica a archivos de registro individuales! El tamaño de los archivos de registro no se considera colectivamente."
 config_phpmailer: "Configuración para PHPMailer (utilizado para la autenticación de dos factores)."
 config_phpmailer_add_reply_to_address: "La dirección de la respuesta para citar cuando se envía un correo electrónico a través de SMTP."
 config_phpmailer_add_reply_to_name: "El nombre de la respuesta para citar cuando se envía un correo electrónico a través de SMTP."
@@ -193,8 +194,8 @@ config_recaptcha_api: *CaptchaAPI
 config_recaptcha_expiry: *CaptchaExpiry
 config_recaptcha_lockip: *CaptchaLockIP
 config_recaptcha_lockuser: *CaptchaLockUser
-config_recaptcha_logfile: *CaptchaLogfile
 config_recaptcha_nonblocked_status_code: *CaptchaNonblockedStatusCode
+config_recaptcha_recaptcha_log: *CaptchaLogFile
 config_recaptcha_secret: *CaptchaDashboard
 config_recaptcha_show_api_message: *ShowAPIMessage
 config_recaptcha_show_cookie_warning: *ShowCookieWarning

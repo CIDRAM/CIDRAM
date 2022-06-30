@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Indonesian language data for the front-end (last modified: 2022.06.22).
+# This file: Indonesian language data for the front-end (last modified: 2022.06.30).
 ##/
 
 Extended Description AbuseIPDB module: "Memblokir permintaan dari IP yang terdaftar oleh AbuseIPDB."
@@ -115,26 +115,18 @@ config_frontend_theme: "Tema default yang digunakan untuk front-end."
 config_general: "Konfigurasi umum (konfigurasi inti apapun yang bukan milik kategori lain)."
 config_general_allow_gethostbyaddr_lookup: "Izinkan menggunakan gethostbyaddr saat UDP tidak tersedia? True = Ya [Default]; False = Tidak."
 config_general_ban_override: "Mengesampingkan "http_response_header_code" ketika "infraction_limit" adalah melampaui? Ketika mengesampingkan: Permintaan diblokir menghasilkan halaman kosong (file template tidak digunakan). 200 = Jangan mengesampingkan [Default]. Nilai lainnya sama dengan nilai yang tersedia untuk "http_response_header_code"."
-config_general_default_algo: "Mendefinisikan algoritma mana yang akan digunakan untuk semua password dan sesi di masa depan."
+config_general_default_algo: "Mendefinisikan algoritma mana yang akan digunakan untuk semua kata sandi dan sesi di masa depan."
 config_general_default_dns: "Daftar server DNS yang digunakan untuk pencarian nama host. PERINGATAN: Jangan ganti ini kecuali Anda tahu apa yang Anda lakukan!"
 config_general_default_timeout: "Batas waktu default untuk digunakan untuk permintaan eksternal? Default = 12 detik."
 config_general_disabled_channels: "Ini dapat digunakan untuk mencegah CIDRAM dari menggunakan saluran tertentu saat mengirim permintaan (misalnya, saat memperbarui, saat mengambil metadata komponen, dll)."
 config_general_emailaddr: "Jika Anda ingin, Anda dapat menyediakan alamat email sini untuk diberikan kepada pengguna ketika diblokir, bagi mereka untuk menggunakan sebagai metode kontak untuk dukungan dan/atau bantuan untuk dalam hal mereka menjadi diblokir keliru atau diblokir oleh kesalahan. PERINGATAN: Apapun alamat email Anda menyediakan sini akan pasti diperoleh oleh spambots dan pencakar/scrapers ketika digunakan disini, dan karena itu, jika Anda ingin memberikan alamat email disini, itu sangat direkomendasikan Anda memastikan bahwa alamat email yang Anda berikan disini adalah alamat yang dapat dibuang dan/atau adalah alamat Anda tidak keberatan menjadi di-spam (dengan kata lain, Anda mungkin tidak ingin untuk menggunakan Anda alamat email yang personal primer atau bisnis primer)."
 config_general_emailaddr_display_style: "Bagaimana Anda lebih suka alamat email yang akan disajikan kepada pengguna?"
-config_general_error_log: "File untuk mencatat kesalahan tidak fatal yang terdeteksi. Spesifikasikan nama file, atau biarkan kosong untuk menonaktifkan."
 config_general_fields: "Kontrol untuk bidang selama acara blokir (ketika permintaan diblokir)."
 config_general_force_hostname_lookup: "Memaksa periksa untuk nama host? True = Ya; False = Tidak [Default]. Periksa untuk nama host biasanya dilakukan pada dasar "sesuai kebutuhan", tapi bisa dipaksakan untuk semua permintaan. Melakukan hal tersebut mungkin berguna sebagai sarana untuk memberikan informasi lebih rinci di log, tapi mungkin juga memiliki sedikit efek negatif pada kinerja."
 config_general_http_response_header_code: "Pesan status HTTP mana yang harus dikirim oleh CIDRAM ketika memblokir permintaan?"
 config_general_ipaddr: "Dimana menemukan alamat IP dari permintaan alamat? (Bergunak untuk pelayanan-pelayanan seperti Cloudflare dan sejenisnya). Default = REMOTE_ADDR. PERINGATAN: Jangan ganti ini kecuali Anda tahu apa yang Anda lakukan!"
 config_general_lang: "Tentukan bahasa default untuk CIDRAM."
 config_general_lang_override: "Melokalisasikan sesuai dengan HTTP_ACCEPT_LANGUAGE jika memungkinkan? True = Ya [Default]; False = Tidak."
-config_general_log_banned_ips: "Termasuk permintaan diblokir dari IP dilarang dalam file log? True = Ya [Default]; False = Tidak."
-config_general_log_rotation_action: "Rotasi log membatasi jumlah file log yang seharusnya ada pada satu waktu. Ketika file log baru dibuat, jika jumlah total file log melebihi batas yang ditentukan, tindakan yang ditentukan akan dilakukan. Anda dapat menentukan tindakan yang diinginkan disini."
-config_general_log_rotation_limit: "Rotasi log membatasi jumlah file log yang seharusnya ada pada satu waktu. Ketika file log baru dibuat, jika jumlah total file log melebihi batas yang ditentukan, tindakan yang ditentukan akan dilakukan. Anda dapat menentukan batas yang diinginkan disini. Nilai 0 akan menonaktifkan rotasi log."
-config_general_log_sanitisation: "Saat menggunakan halaman log untuk melihat data log, CIDRAM mensanitasikan data log sebelum menampilkannya, untuk melindungi pengguna dari serangan XSS dan potensi ancaman lain yang bisa terkandung dalam data. Namun, secara default, data tidak disanitasi selama pencatatan. Ini untuk memastikan bahwa data log dicatatan secara akurat, untuk membantu analisis heuristik atau forensik yang mungkin diperlukan di masa depan. Namun, jika pengguna mencoba membaca data log menggunakan alat eksternal, dan jika alat eksternal itu tidak melakukan proses sanitasi sendiri, pengguna bisa terkena serangan XSS. Jika perlu, Anda dapat mengubah perilaku default menggunakan direktif konfigurasi ini. True = Mensanitasikan data saat mencatatnya (data disimpan kurang akurat, tetapi risiko XSS lebih rendah). False = Jangan mensanitasikan data saat mencatatnya (data disimpan lebih akurat, tetapi risiko XSS lebih tinggi) [Default]."
-config_general_logfile: "File yang dapat dibaca oleh manusia untuk mencatat semua upaya akses diblokir. Spesifikasikan nama file, atau biarkan kosong untuk menonaktifkan."
-config_general_logfile_apache: "File yang dalam gaya Apache untuk mencatat semua upaya akses diblokir. Spesifikasikan nama file, atau biarkan kosong untuk menonaktifkan."
-config_general_logfile_serialized: "File serial untuk mencatat semua upaya akses diblokir. Spesifikasikan nama file, atau biarkan kosong untuk menonaktifkan."
 config_general_numbers: "Cara apa yang kamu suka nomor menjadi ditampilkan? Pilih contoh yang paling sesuai untuk Anda."
 config_general_other_verification: "Kontrol untuk memverifikasi jenis permintaan lain jika memungkinkan."
 config_general_search_engine_verification: "Kontrol untuk memverifikasi permintaan dari mesin pencari."
@@ -145,13 +137,12 @@ config_general_statistics: "Mengontrol informasi statistik mana yang akan dilaca
 config_general_time_format: "Format notasi tanggal/waktu yang digunakan oleh CIDRAM. Opsi tambahan dapat ditambahkan atas permintaan."
 config_general_time_offset: "Offset zona waktu dalam hitungan menit."
 config_general_timezone: "Ini digunakan untuk menentukan zona waktu yang akan digunakan (misalnya, Africa/Cairo, America/New_York, Asia/Tokyo, Australia/Perth, Europe/Berlin, Pacific/Guam, dll). Menentukan "SYSTEM" untuk membiarkan PHP menangani ini untuk Anda secara otomatis."
-config_general_truncate: "Memotong file log ketika mereka mencapai ukuran tertentu? Nilai adalah ukuran maksimum dalam B/KB/MB/GB/TB yang bisa ditambahkan untuk file log sebelum dipotong. Nilai default 0KB menonaktifkan pemotongan (file log dapat tumbuh tanpa batas waktu). Catat: Berlaku untuk file log individu! Ukuran file log tidak dianggap secara kolektif."
 config_hcaptcha: "Konfigurasi untuk HCaptcha (menyediakan cara bagi manusia untuk mendapatkan kembali akses ketika diblokir)."
 config_hcaptcha_api: &CaptchaAPI "API mana yang akan digunakan?"
 config_hcaptcha_expiry: &CaptchaExpiry "Jumlah jam untuk mengingat instansi CAPTCHA. Default = 720 (1 bulan)."
+config_hcaptcha_hcaptcha_log: &CaptchaLogFile "Mencatat hasil semua instansi CAPTCHA? Jika ya, tentukan nama untuk menggunakan untuk file catatan. Jika tidak, variabel ini harus kosong."
 config_hcaptcha_lockip: &CaptchaLockIP "Kunci CAPTCHA ke IP?"
 config_hcaptcha_lockuser: &CaptchaLockUser "Kunci CAPTCHA ke pengguna?"
-config_hcaptcha_logfile: &CaptchaLogfile "Mencatat hasil semua instansi CAPTCHA? Jika ya, tentukan nama untuk menggunakan untuk file catatan. Jika tidak, variabel ini harus kosong."
 config_hcaptcha_nonblocked_status_code: &CaptchaNonblockedStatusCode "Kode status mana yang harus digunakan saat menampilkan CAPTCHA ke permintaan yang tidak diblokir?"
 config_hcaptcha_secret: &CaptchaDashboard "Nilai ini dapat ditemukan di dashboard untuk layanan CAPTCHA Anda."
 config_hcaptcha_show_api_message: &ShowAPIMessage "Tampilkan pesan API? True = Ya [Default]; False = Tidak."
@@ -162,6 +153,16 @@ config_hcaptcha_usemode: &CaptchaUseMode "Kapan CAPTCHA harus ditawarkan? Catat:
 config_legal: "Konfigurasi untuk persyaratan hukum."
 config_legal_privacy_policy: "Alamat dari kebijakan privasi yang relevan untuk ditampilkan di footer dari setiap halaman yang dihasilkan. Spesifikasikan URL, atau biarkan kosong untuk menonaktifkan."
 config_legal_pseudonymise_ip_addresses: "Pseudonymise alamat IP saat menulis file log? True = Ya [Default]; False = Tidak."
+config_logging: "Konfigurasi yang terkait dengan pencatatan (tidak termasuk yang berlaku untuk kategori lain)."
+config_logging_apache_style_log: "File yang dalam gaya Apache untuk mencatat semua upaya akses diblokir. Spesifikasikan nama file, atau biarkan kosong untuk menonaktifkan."
+config_logging_error_log: "File untuk mencatat kesalahan tidak fatal yang terdeteksi. Spesifikasikan nama file, atau biarkan kosong untuk menonaktifkan."
+config_logging_log_banned_ips: "Termasuk permintaan diblokir dari IP dilarang dalam file log? True = Ya [Default]; False = Tidak."
+config_logging_log_rotation_action: "Rotasi log membatasi jumlah file log yang seharusnya ada pada satu waktu. Ketika file log baru dibuat, jika jumlah total file log melebihi batas yang ditentukan, tindakan yang ditentukan akan dilakukan. Anda dapat menentukan tindakan yang diinginkan disini."
+config_logging_log_rotation_limit: "Rotasi log membatasi jumlah file log yang seharusnya ada pada satu waktu. Ketika file log baru dibuat, jika jumlah total file log melebihi batas yang ditentukan, tindakan yang ditentukan akan dilakukan. Anda dapat menentukan batas yang diinginkan disini. Nilai 0 akan menonaktifkan rotasi log."
+config_logging_log_sanitisation: "Saat menggunakan halaman log untuk melihat data log, CIDRAM mensanitasikan data log sebelum menampilkannya, untuk melindungi pengguna dari serangan XSS dan potensi ancaman lain yang bisa terkandung dalam data. Namun, secara default, data tidak disanitasi selama pencatatan. Ini untuk memastikan bahwa data log dicatatan secara akurat, untuk membantu analisis heuristik atau forensik yang mungkin diperlukan di masa depan. Namun, jika pengguna mencoba membaca data log menggunakan alat eksternal, dan jika alat eksternal itu tidak melakukan proses sanitasi sendiri, pengguna bisa terkena serangan XSS. Jika perlu, Anda dapat mengubah perilaku default menggunakan direktif konfigurasi ini. True = Mensanitasikan data saat mencatatnya (data disimpan kurang akurat, tetapi risiko XSS lebih rendah). False = Jangan mensanitasikan data saat mencatatnya (data disimpan lebih akurat, tetapi risiko XSS lebih tinggi) [Default]."
+config_logging_serialised_log: "File serial untuk mencatat semua upaya akses diblokir. Spesifikasikan nama file, atau biarkan kosong untuk menonaktifkan."
+config_logging_standard_log: "File yang dapat dibaca oleh manusia untuk mencatat semua upaya akses diblokir. Spesifikasikan nama file, atau biarkan kosong untuk menonaktifkan."
+config_logging_truncate: "Memotong file log ketika mereka mencapai ukuran tertentu? Nilai adalah ukuran maksimum dalam B/KB/MB/GB/TB yang bisa ditambahkan untuk file log sebelum dipotong. Nilai default 0KB menonaktifkan pemotongan (file log dapat tumbuh tanpa batas waktu). Catat: Berlaku untuk file log individu! Ukuran file log tidak dianggap secara kolektif."
 config_phpmailer: "Konfigurasi untuk PHPMailer (digunakan untuk otentikasi dua-faktor)."
 config_phpmailer_add_reply_to_address: "Alamat balasan yang dikutip saat mengirim email melalui SMTP."
 config_phpmailer_add_reply_to_name: "Nama balasan yang dikutip saat mengirim email melalui SMTP."
@@ -193,8 +194,8 @@ config_recaptcha_api: *CaptchaAPI
 config_recaptcha_expiry: *CaptchaExpiry
 config_recaptcha_lockip: *CaptchaLockIP
 config_recaptcha_lockuser: *CaptchaLockUser
-config_recaptcha_logfile: *CaptchaLogfile
 config_recaptcha_nonblocked_status_code: *CaptchaNonblockedStatusCode
+config_recaptcha_recaptcha_log: *CaptchaLogFile
 config_recaptcha_secret: *CaptchaDashboard
 config_recaptcha_show_api_message: *ShowAPIMessage
 config_recaptcha_show_cookie_warning: *ShowCookieWarning

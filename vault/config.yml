@@ -1,8 +1,4 @@
 general:
- logfile: ""
- logfile_apache: ""
- logfile_serialized: ""
- error_log: ""
  stages: |
   Tests:Enable
   Tests:LogErrors
@@ -94,9 +90,6 @@ general:
   Hostname:OmitIfEmpty
   CAPTCHA:ShowInLogs
   CAPTCHA:OmitIfEmpty
- truncate: "0KB"
- log_rotation_limit: 0
- log_rotation_action: "Delete"
  timezone: "SYSTEM"
  time_offset: 0
  time_format: "{Day}, {dd} {Mon} {yyyy} {hh}:{ii}:{ss} {tz}"
@@ -109,7 +102,6 @@ general:
  emailaddr: ""
  emailaddr_display_style: "default"
  ban_override: 200
- log_banned_ips: true
  default_dns: |
   8.8.8.8
   8.8.4.4
@@ -195,7 +187,6 @@ general:
   CAPTCHAs-Passed
  force_hostname_lookup: false
  allow_gethostbyaddr_lookup: true
- log_sanitisation: false
  disabled_channels: ""
  default_timeout: 12
 components:
@@ -219,6 +210,16 @@ components:
   bypasses.yml
   extras.yml
  events: ""
+logging:
+ standard_log: ""
+ apache_style_log: ""
+ serialised_log: ""
+ error_log: ""
+ truncate: "0KB"
+ log_rotation_limit: 0
+ log_rotation_action: "Delete"
+ log_banned_ips: true
+ log_sanitisation: false
 frontend:
  frontend_log: ""
  signatures_update_event_log: ""
@@ -248,7 +249,7 @@ recaptcha:
  sitekey: ""
  secret: ""
  expiry: 720
- logfile: ""
+ recaptcha_log: ""
  signature_limit: 1
  api: "V2"
  show_cookie_warning: true
@@ -261,7 +262,7 @@ hcaptcha:
  sitekey: ""
  secret: ""
  expiry: 720
- logfile: ""
+ hcaptcha_log: ""
  signature_limit: 1
  api: "V1"
  show_cookie_warning: true

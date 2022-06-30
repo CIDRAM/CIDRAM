@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Japanese language data for the front-end (last modified: 2022.06.22).
+# This file: Japanese language data for the front-end (last modified: 2022.06.30).
 ##/
 
 Extended Description AbuseIPDB module: "AbuseIPDBにリストされているＩＰからの要求をブロックします。"
@@ -121,20 +121,12 @@ config_general_default_timeout: "外部リクエストに使用するデフォ�
 config_general_disabled_channels: "これは、要求を送信するときにCIDRAMが特定のチャネルを使用しないようにするために使用できます​（例えば、更新時、コンポーネント・メタデータの取得時、など）。"
 config_general_emailaddr: "ここにＥメールアドレスを入力して、​ユーザーがブロックされているときにユーザーに送信することができます。​これはサポートと支援に使用できます（誤ってブロックされた場合、​等）。​警告：​ここに入力された電子Ｅメールアドレスは、​おそらくスパムロボットによって取得されます。​ここで提供される電子Ｅメールアドレスは、​すべて使い捨てにすることを強く推奨します（例えば、​プライマリ個人アドレスまたはビジネスアドレスを使用しない、​等）。"
 config_general_emailaddr_display_style: "ユーザーに電子Ｅメール・アドレスを提示することをどのように希望しますか？"
-config_general_error_log: "検出された致命的でないエラーを記録するためのファイル。​ファイル名指定するか、​無効にしたい場合は空白のままにして下さい。"
 config_general_fields: "ブロック・イベント中のために、フィールドのコントロールです （リクエストがブロックされたとき）。"
 config_general_force_hostname_lookup: "ホスト名検索を強制しますか？ True = はい。 False = いいえ（Default/デフォルルト）。​ホスト名検索は、通常、「必要に応じて」実行されますが、すべてのリクエストに対して強制することができます。​これは、より詳細な情報をログ・ファイルに提供する手段として有用ですが、パフォーマンスに多少の悪影響を及ぼすこともあります。"
 config_general_http_response_header_code: "リクエストをブロックするときに、CIDRAMが送信するＨＴＴＰステータス・メッセージはどれですか？"
 config_general_ipaddr: "接続リクエストのＩＰアドレスをどこで見つけるべきかについて（Cloudflareのようなサービスに対して有効）。​Default（デフォルト設定） = REMOTE_ADDR。​注意：あなたが何をしているのか、​分からない限り、​これを変更しないでください。"
 config_general_lang: "CIDRAMのデフォルト言語を設定します。"
 config_general_lang_override: "可能な限り「HTTP_ACCEPT_LANGUAGE」に従ってローカライズしますか？ True = はい（Default/デフォルルト）。 False = いいえ。"
-config_general_log_banned_ips: "禁止されたＩＰからブロックされたリクエストをログ・ファイルに含めますか？ True = はい（Default/デフォルルト）。 False = いいえ。"
-config_general_log_rotation_action: "ログ・ローテーションは、一度に存在する必要があるログ・ファイルの数を制限します。​新しいログ・ファイルが作成されると、ログ・ファイルの総数が指定された制限を超えると、指定されたアクションが実行されます。​ここで希望のアクションを指定できます。"
-config_general_log_rotation_limit: "ログ・ローテーションは、一度に存在する必要があるログ・ファイルの数を制限します。​新しいログ・ファイルが作成されると、ログ・ファイルの総数が指定された制限を超えると、指定されたアクションが実行されます。​ここで希望の制限を指定することができます。​値「0」は、ログ・ローテーションを無効にします。"
-config_general_log_sanitisation: "フロントエンドのログページを使用してログデータを表示する場合、ＸＳＳ攻撃やその他の潜在的な脅威からユーザーを保護する、CIDRAMはログデータを表示前にサニタイズします。​ただし、デフォルトでは、データはロギング中にサニタイズされません。​これは、ログデータが正確に記録されるようにするためです（将来必要になる可能性があるヒューリスティックまたはフォレンジック分析に役立ちます）。​ただし、ユーザーが外部ツールを使用してログデータを読み込もうとした場合、それらの外部ツールが独自のサニティゼーション・プロセスを実行しない場合、ユーザーがＸＳＳ攻撃にさらされる可能性があります。​必要に応じて、このコンフィギュレーション・ディレクティブを使ってデフォルトの動作を変更することができます。 True = データを記録するときは、それをサニタイズして（記録データの精度はもっと低いですが、ＸＳＳリスクはもっと低いです）。 False = データを記録するときは、それをサニタイズしない（記録データの精度はもっと高いですが、ＸＳＳリスクはもっと高いです）。 Default/デフォルルト = False。"
-config_general_logfile: "アクセス試行阻止の記録、​人間によって読み取り可能。​ファイル名指定するか、​無効にしたい場合は空白のままにして下さい。"
-config_general_logfile_apache: "アクセス試行阻止の記録、​Apacheスタイル。​ファイル名指定するか、​無効にしたい場合は空白のままにして下さい。"
-config_general_logfile_serialized: "アクセス試行阻止の記録、​シリアル化されました。​ファイル名指定するか、​無効にしたい場合は空白のままにして下さい。"
 config_general_numbers: "どのように数字を表示するのが好きですか？​あなたに一番正しい例を選択してください。"
 config_general_other_verification: "可能な場合は、他の種類のリクエストを検証するためのコントロール。"
 config_general_search_engine_verification: "検索エンジンからのリクエストを検証するためのコントロール。"
@@ -145,13 +137,12 @@ config_general_statistics: "追跡する統計情報を制御します。"
 config_general_time_format: "CIDRAMで使用される日付表記形式。​追加のオプションがリクエストに応じて追加される場合があります。"
 config_general_time_offset: "タイムゾーン・オフセット（分）。"
 config_general_timezone: "使用するタイムゾーンを指定します​（例えば、「Africa/Cairo」、「America/New_York」、「Asia/Tokyo」、「Australia/Perth」、「Europe/Berlin」、「Pacific/Guam」、等等）。​「SYSTEM」を指定すると、ＰＨＰがこれを自動的に処理します。"
-config_general_truncate: "ログ・ファイルが一定のサイズに達したら切り詰めますか？​値は、​ログ・ファイルが切り捨てられる前に大きくなる可能性があるＢ/ＫＢ/ＭＢ/ＧＢ/ＴＢ単位の最大サイズです。​デフォルト値の０ＫＢは切り捨てを無効にします （ログ・ファイルは無期限に拡張できます）。​注：個々のログ・ファイルに適用されます。​ログ・ファイルのサイズは一括して考慮されません。"
 config_hcaptcha: "HCaptchaの設定（ブロックされたときに人間がアクセスを取り戻す方法を提供します）。"
 config_hcaptcha_api: &CaptchaAPI "どのＡＰＩを使用するのですか？"
 config_hcaptcha_expiry: &CaptchaExpiry "キャプチャ・インスタンスを覚えておく時間数。 Default（デフォルルト） = ７２０（１ヶ月）。"
+config_hcaptcha_hcaptcha_log: &CaptchaLogFile "キャプチャ試行の記録。​ファイル名指定するか、​無効にしたい場合は空白のままにして下さい。"
 config_hcaptcha_lockip: &CaptchaLockIP "キャプチャをＩＰにロックしますか？"
 config_hcaptcha_lockuser: &CaptchaLockUser "キャプチャをユーザーにロックしますか？"
-config_hcaptcha_logfile: &CaptchaLogfile "キャプチャ試行の記録。​ファイル名指定するか、​無効にしたい場合は空白のままにして下さい。"
 config_hcaptcha_nonblocked_status_code: &CaptchaNonblockedStatusCode "ブロックされていないリクエストにキャプチャを表示する場合、どのステータス・コードを使用する必要がありますか？"
 config_hcaptcha_secret: &CaptchaDashboard "この値は、キャプチャ・サービスのダッシュボードに表示されます。"
 config_hcaptcha_show_api_message: &ShowAPIMessage "ＡＰＩメッセージを表示しますか？ True = はい（Default/デフォルルト）。 False = いいえ。"
@@ -162,6 +153,16 @@ config_hcaptcha_usemode: &CaptchaUseMode "キャプチャはいつ提供する�
 config_legal: "法的要件の設定。"
 config_legal_privacy_policy: "生成されたページのフッターに表示される関連プライバシー・ポリシーのアドレス。​ＵＲＬを指定するか、無効にしたい場合は空白のままにして下さい。"
 config_legal_pseudonymise_ip_addresses: "ログ・ファイルを書き込むときにＩＰアドレス偽名化するか「プセユードニマイズ」？ True = はい（Default/デフォルルト）。 False = いいえ。"
+config_logging: "ロギングに関連するコンフィギュレーション（他のカテゴリに該当するものを除く）。"
+config_logging_apache_style_log: "アクセス試行阻止の記録、​Apacheスタイル。​ファイル名指定するか、​無効にしたい場合は空白のままにして下さい。"
+config_logging_error_log: "検出された致命的でないエラーを記録するためのファイル。​ファイル名指定するか、​無効にしたい場合は空白のままにして下さい。"
+config_logging_log_banned_ips: "禁止されたＩＰからブロックされたリクエストをログ・ファイルに含めますか？ True = はい（Default/デフォルルト）。 False = いいえ。"
+config_logging_log_rotation_action: "ログ・ローテーションは、一度に存在する必要があるログ・ファイルの数を制限します。​新しいログ・ファイルが作成されると、ログ・ファイルの総数が指定された制限を超えると、指定されたアクションが実行されます。​ここで希望のアクションを指定できます。"
+config_logging_log_rotation_limit: "ログ・ローテーションは、一度に存在する必要があるログ・ファイルの数を制限します。​新しいログ・ファイルが作成されると、ログ・ファイルの総数が指定された制限を超えると、指定されたアクションが実行されます。​ここで希望の制限を指定することができます。​値「0」は、ログ・ローテーションを無効にします。"
+config_logging_log_sanitisation: "フロントエンドのログページを使用してログデータを表示する場合、ＸＳＳ攻撃やその他の潜在的な脅威からユーザーを保護する、CIDRAMはログデータを表示前にサニタイズします。​ただし、デフォルトでは、データはロギング中にサニタイズされません。​これは、ログデータが正確に記録されるようにするためです（将来必要になる可能性があるヒューリスティックまたはフォレンジック分析に役立ちます）。​ただし、ユーザーが外部ツールを使用してログデータを読み込もうとした場合、それらの外部ツールが独自のサニティゼーション・プロセスを実行しない場合、ユーザーがＸＳＳ攻撃にさらされる可能性があります。​必要に応じて、このコンフィギュレーション・ディレクティブを使ってデフォルトの動作を変更することができます。 True = データを記録するときは、それをサニタイズして（記録データの精度はもっと低いですが、ＸＳＳリスクはもっと低いです）。 False = データを記録するときは、それをサニタイズしない（記録データの精度はもっと高いですが、ＸＳＳリスクはもっと高いです）。 Default/デフォルルト = False。"
+config_logging_serialised_log: "アクセス試行阻止の記録、​シリアル化されました。​ファイル名指定するか、​無効にしたい場合は空白のままにして下さい。"
+config_logging_standard_log: "アクセス試行阻止の記録、​人間によって読み取り可能。​ファイル名指定するか、​無効にしたい場合は空白のままにして下さい。"
+config_logging_truncate: "ログ・ファイルが一定のサイズに達したら切り詰めますか？​値は、​ログ・ファイルが切り捨てられる前に大きくなる可能性があるＢ/ＫＢ/ＭＢ/ＧＢ/ＴＢ単位の最大サイズです。​デフォルト値の０ＫＢは切り捨てを無効にします （ログ・ファイルは無期限に拡張できます）。​注：個々のログ・ファイルに適用されます。​ログ・ファイルのサイズは一括して考慮されません。"
 config_phpmailer: "PHPMailerの設定（二要素認証に使用されます）。"
 config_phpmailer_add_reply_to_address: "ＳＭＴＰ経由で電子Ｅメールを送信するときに引用する返信アドレス。"
 config_phpmailer_add_reply_to_name: "ＳＭＴＰ経由で電子Ｅメールを送信するときに引用する返信名。"
@@ -193,8 +194,8 @@ config_recaptcha_api: *CaptchaAPI
 config_recaptcha_expiry: *CaptchaExpiry
 config_recaptcha_lockip: *CaptchaLockIP
 config_recaptcha_lockuser: *CaptchaLockUser
-config_recaptcha_logfile: *CaptchaLogfile
 config_recaptcha_nonblocked_status_code: *CaptchaNonblockedStatusCode
+config_recaptcha_recaptcha_log: *CaptchaLogFile
 config_recaptcha_secret: *CaptchaDashboard
 config_recaptcha_show_api_message: *ShowAPIMessage
 config_recaptcha_show_cookie_warning: *ShowCookieWarning

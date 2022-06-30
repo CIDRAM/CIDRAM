@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Latvian language data for the front-end (last modified: 2022.06.22).
+# This file: Latvian language data for the front-end (last modified: 2022.06.30).
 ##/
 
 Extended Description AbuseIPDB module: "Bloķē pieprasījumus no IP, kas uzskaitīti vietnē AbuseIPDB."
@@ -121,20 +121,12 @@ config_general_default_timeout: "Kādu noklusējuma taimautu izmantot ārējiem 
 config_general_disabled_channels: "To var izmantot, lai neļautu CIDRAM izmantot noteiktus kanālus nosūtot pieprasījumus (piemēram, atjauninot, ienesot komponentu metadatus, utt)."
 config_general_emailaddr: "Ja vēlaties, šeit varat norādīt e-pasta adresi, kas lietotājiem tiks piešķirta, kad viņi tiks bloķēti, lai viņi tos izmantotu kā kontaktpunktu atbalsta un/vai palīdzības saņemšanai gadījumā, ja tie tiek bloķēti kļūdaini. BRĪDINĀJUMS: Neatkarīgi no tā, kādu e-pasta adresi jūs šeit norādāt, visticamāk, redzēs surogāt izplatītāji un skrāpji, tāpēc ir stingri ieteicams, lai jebkura šeit norādītā e-pasta adrese būtu vienreiz lietojama un/vai adrese, kuru jūs ļoti nemīlat (citiem vārdiem sakot, iespējams, jūs nevēlaties izmantot savas galvenās personiskās vai galvenā uzņēmuma e-pasta adreses)."
 config_general_emailaddr_display_style: "Kā jūs vēlētos, lai e-pasta adrese tiktu parādīta lietotājiem?"
-config_general_error_log: "Fails reģistrēšanai visas atklātās kļūdas, kas nav fatālas. Norādiet faila nosaukumu, vai atstājiet tukšu, lai to atspējotu."
 config_general_fields: "Kontroles mehānisms laukiem bloka notikumu laikā (kad pieprasījums ir bloķēts)."
 config_general_force_hostname_lookup: "Force hostname lookups? True (Patiess) = Jā; False (Nepatiess) = Nē [Noklusējuma]. Hostname lookups are normally performed on an "as needed" basis, but can be forced for all requests. Doing so may be useful as a means of providing more detailed information in the logfiles, but may also have a slightly negative effect on performance."
 config_general_http_response_header_code: "Kurš HTTP statusa ziņojums būtu jāsūta CIDRAM, bloķējot pieprasījumus?"
 config_general_ipaddr: "Kur atrast savienojošo pieprasījumu IP adresi? (Noderīga tādiem pakalpojumiem kā Cloudflare un tamlīdzīgi). Noklusējuma = REMOTE_ADDR. BRĪDINĀJUMS: Nemainiet to, ja vien nezināt, ko darāt!"
 config_general_lang: "Norādiet CIDRAM noklusējuma valodu."
 config_general_lang_override: "Ja iespējams, lokalizēt saskaņā ar HTTP_ACCEPT_LANGUAGE? True (Patiess) = Jā [Noklusējuma]; False (Nepatiess) = Nē."
-config_general_log_banned_ips: "Vai failos iekļaut bloķētus IP pieprasījumus? True (Patiess) = Jā [Noklusējuma]; False (Nepatiess) = Nē."
-config_general_log_rotation_action: "Log rotācija ierobežo to logfailu skaitu, kuriem vajadzētu pastāvēt vienlaikus. Veidojot jaunus logfailus, ja kopējais logfailu skaits pārsniedz noteikto limitu, tiks veikta norādītā darbība. Šeit varat norādīt vēlamo darbību."
-config_general_log_rotation_limit: "Log rotācija ierobežo to logfailu skaitu, kuriem vajadzētu pastāvēt vienlaikus. Veidojot jaunus logfailus, ja kopējais logfailu skaits pārsniedz noteikto limitu, tiks veikta norādītā darbība. Šeit varat norādīt vēlamo ierobežojumu. Ja vērtība ir 0, tiks atspējota log rotācija."
-config_general_log_sanitisation: "Izmantojot logs lapu, lai skatītu log datus, CIDRAM pirms to parādīšanas sanitizē log datus, lai aizsargātu lietotājus no XSS uzbrukumiem un citiem iespējamiem draudiem, ko varētu saturēt log dati. Tomēr pēc noklusējuma dati reģistrēšanas laikā netiek sanitizēti. Tas ir paredzēts, lai log dati tiktu saglabāti precīzi, lai palīdzētu veikt heiristisko analīzi, kas varētu būt nepieciešama nākotnē. Tomēr, ja lietotājs mēģina nolasīt log datus izmantojot ārējus rīkus, ja šie ārējie rīki neveic savu sanitizācijas procesu, lietotājs var tikt pakļauts XSS uzbrukumiem. Ja nepieciešams, jūs varat mainīt noklusējuma izturēšanos, izmantojot šo konfigurācijas direktīvu. True (Patiess) = Sanitizēt datus reģistrācijas laikā (dati tiek saglabāti mazāk precīzi, bet XSS risks ir mazāks). False (Nepatiess) = Nesanitizēt datus reģistrācijas laikā (dati tiek saglabāti precīzāk, bet XSS risks ir lielāks) [Noklusējuma]."
-config_general_logfile: "Cilvēkam lasāms fails visu bloķēto piekļuves mēģinājumu reģistrēšanai. Norādiet faila nosaukumu, vai atstājiet tukšu, lai to atspējotu."
-config_general_logfile_apache: "Apache stila fails visu bloķēto piekļuves mēģinājumu reģistrēšanai. Norādiet faila nosaukumu, vai atstājiet tukšu, lai to atspējotu."
-config_general_logfile_serialized: "Sērijveida fails visu bloķēto piekļuves mēģinājumu reģistrēšanai. Norādiet faila nosaukumu, vai atstājiet tukšu, lai to atspējotu."
 config_general_numbers: "Kā jūs izvēlaties skaitļu parādīšanu? Atlasiet piemēru, kas jums šķiet vispareizākais."
 config_general_other_verification: "Kontroles cita veida pieprasījumu pārbaudei, ja iespējams."
 config_general_search_engine_verification: "Kontroles meklētājprogrammas pieprasījumu pārbaudei."
@@ -145,13 +137,12 @@ config_general_statistics: "Kontrolē, kuru statistikas informāciju izsekot."
 config_general_time_format: "CIDRAM izmantotais datuma/laika apzīmējuma formāts. Pēc pieprasījuma var tikt pievienotas papildu iespējas."
 config_general_time_offset: "Laika joslas nobīde minūtēs."
 config_general_timezone: "To izmanto, lai norādītu izmantojamo laika joslu (piemēram, Africa/Cairo, America/New_York, Asia/Tokyo, Australia/Perth, Europe/Berlin, Pacific/Guam, utt). Norādiet “SYSTEM”, lai PHP varētu rīkoties ar to automātiski."
-config_general_truncate: "Saīsināt logfailus, kad tie sasniedz noteiktu lielumu? Vērtība ir maksimālais lielums B/KB/MB/GB/TB, līdz logfailam var izaugt pirms saīsināšanas. Noklusējuma vērtība 0KB atspējo saīsināšanu (logfaili var pieaugt bezgalīgi). Piezīme: Attiecas uz indivīdiem logfailiem! Logfailu lielums netiek skaitīts kolektīvi."
 config_hcaptcha: "HCaptcha konfigurācija (nodrošina veidu, kā cilvēki var atgūt piekļuvi, kad tā ir bloķēta)."
 config_hcaptcha_api: &CaptchaAPI "Kuru API izmantot?"
 config_hcaptcha_expiry: &CaptchaExpiry "Stundu skaits, lai atcerētos CAPTCHA instances. Noklusējuma = 720 (1 mēnesis)."
+config_hcaptcha_hcaptcha_log: &CaptchaLogFile "Vai reģistrēt visus CAPTCHA mēģinājumus? Ja tā, norādiet vārdu, kuru izmantosit logfailam. Ja nē, atstājiet šo mainīgo tukšu."
 config_hcaptcha_lockip: &CaptchaLockIP "Vai saistīt CAPTCHA uz IPs?"
 config_hcaptcha_lockuser: &CaptchaLockUser "Vai saistīt CAPTCHA uz lietotājiem?"
-config_hcaptcha_logfile: &CaptchaLogfile "Vai reģistrēt visus CAPTCHA mēģinājumus? Ja tā, norādiet vārdu, kuru izmantosit logfailam. Ja nē, atstājiet šo mainīgo tukšu."
 config_hcaptcha_nonblocked_status_code: &CaptchaNonblockedStatusCode "Kurš statusa kods ir jāizmanto, parādot CAPTCHA bloķētiem pieprasījumiem?"
 config_hcaptcha_secret: &CaptchaDashboard "Šī vērtība ir atrodama jūsu CAPTCHA pakalpojuma informācijas panelī."
 config_hcaptcha_show_api_message: &ShowAPIMessage "Rādīt API ziņojumu? True (Patiess) = Jā [Noklusējuma]; False (Nepatiess) = Nē."
@@ -162,6 +153,16 @@ config_hcaptcha_usemode: &CaptchaUseMode "Kad vajadzētu piedāvāt CAPTCHA? Pie
 config_legal: "Juridisko prasību konfigurācija."
 config_legal_privacy_policy: "Attiecīgās privātuma politikas adrese, kas jāparāda visu ģenerēto lapu kājenē. Norādiet URL vai atstājiet tukšu lai to atspējotu."
 config_legal_pseudonymise_ip_addresses: "Pseidonimizēt IP adresi reģistrējoties? True (Patiess) = Jā [Noklusējuma]; False (Nepatiess) = Nē."
+config_logging: "Ar reģistrēšanu saistīta konfigurācija (izņemot to, kas attiecas uz citām kategorijām)."
+config_logging_apache_style_log: "Apache stila fails visu bloķēto piekļuves mēģinājumu reģistrēšanai. Norādiet faila nosaukumu, vai atstājiet tukšu, lai to atspējotu."
+config_logging_error_log: "Fails reģistrēšanai visas atklātās kļūdas, kas nav fatālas. Norādiet faila nosaukumu, vai atstājiet tukšu, lai to atspējotu."
+config_logging_log_banned_ips: "Vai failos iekļaut bloķētus IP pieprasījumus? True (Patiess) = Jā [Noklusējuma]; False (Nepatiess) = Nē."
+config_logging_log_rotation_action: "Log rotācija ierobežo to logfailu skaitu, kuriem vajadzētu pastāvēt vienlaikus. Veidojot jaunus logfailus, ja kopējais logfailu skaits pārsniedz noteikto limitu, tiks veikta norādītā darbība. Šeit varat norādīt vēlamo darbību."
+config_logging_log_rotation_limit: "Log rotācija ierobežo to logfailu skaitu, kuriem vajadzētu pastāvēt vienlaikus. Veidojot jaunus logfailus, ja kopējais logfailu skaits pārsniedz noteikto limitu, tiks veikta norādītā darbība. Šeit varat norādīt vēlamo ierobežojumu. Ja vērtība ir 0, tiks atspējota log rotācija."
+config_logging_log_sanitisation: "Izmantojot logs lapu, lai skatītu log datus, CIDRAM pirms to parādīšanas sanitizē log datus, lai aizsargātu lietotājus no XSS uzbrukumiem un citiem iespējamiem draudiem, ko varētu saturēt log dati. Tomēr pēc noklusējuma dati reģistrēšanas laikā netiek sanitizēti. Tas ir paredzēts, lai log dati tiktu saglabāti precīzi, lai palīdzētu veikt heiristisko analīzi, kas varētu būt nepieciešama nākotnē. Tomēr, ja lietotājs mēģina nolasīt log datus izmantojot ārējus rīkus, ja šie ārējie rīki neveic savu sanitizācijas procesu, lietotājs var tikt pakļauts XSS uzbrukumiem. Ja nepieciešams, jūs varat mainīt noklusējuma izturēšanos, izmantojot šo konfigurācijas direktīvu. True (Patiess) = Sanitizēt datus reģistrācijas laikā (dati tiek saglabāti mazāk precīzi, bet XSS risks ir mazāks). False (Nepatiess) = Nesanitizēt datus reģistrācijas laikā (dati tiek saglabāti precīzāk, bet XSS risks ir lielāks) [Noklusējuma]."
+config_logging_serialised_log: "Sērijveida fails visu bloķēto piekļuves mēģinājumu reģistrēšanai. Norādiet faila nosaukumu, vai atstājiet tukšu, lai to atspējotu."
+config_logging_standard_log: "Cilvēkam lasāms fails visu bloķēto piekļuves mēģinājumu reģistrēšanai. Norādiet faila nosaukumu, vai atstājiet tukšu, lai to atspējotu."
+config_logging_truncate: "Saīsināt logfailus, kad tie sasniedz noteiktu lielumu? Vērtība ir maksimālais lielums B/KB/MB/GB/TB, līdz logfailam var izaugt pirms saīsināšanas. Noklusējuma vērtība 0KB atspējo saīsināšanu (logfaili var pieaugt bezgalīgi). Piezīme: Attiecas uz indivīdiem logfailiem! Logfailu lielums netiek skaitīts kolektīvi."
 config_phpmailer: "PHPMailer konfigurācija (izmanto divu faktoru autentifikācijai)."
 config_phpmailer_add_reply_to_address: "Respondenta adrese, ko citēt, nosūtot e-pastu izmantojot SMTP."
 config_phpmailer_add_reply_to_name: "Respondenta vārds, ko citēt, nosūtot e-pastu izmantojot SMTP."
@@ -193,8 +194,8 @@ config_recaptcha_api: *CaptchaAPI
 config_recaptcha_expiry: *CaptchaExpiry
 config_recaptcha_lockip: *CaptchaLockIP
 config_recaptcha_lockuser: *CaptchaLockUser
-config_recaptcha_logfile: *CaptchaLogfile
 config_recaptcha_nonblocked_status_code: *CaptchaNonblockedStatusCode
+config_recaptcha_recaptcha_log: *CaptchaLogFile
 config_recaptcha_secret: *CaptchaDashboard
 config_recaptcha_show_api_message: *ShowAPIMessage
 config_recaptcha_show_cookie_warning: *ShowCookieWarning

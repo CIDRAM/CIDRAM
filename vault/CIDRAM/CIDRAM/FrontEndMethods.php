@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: General methods used by the front-end (last modified: 2022.06.19).
+ * This file: General methods used by the front-end (last modified: 2022.06.30).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -594,11 +594,11 @@ trait FrontEndMethods
     }
 
     /**
-     * Confirm whether a file is a logfile (used by the file manager and the
+     * Confirm whether a file is a log file (used by the file manager and the
      * logs page).
      *
      * @param string $File The path/name of the file to be confirmed.
-     * @return bool True if it's a logfile; False if it isn't.
+     * @return bool True if it's a log file; False if it isn't.
      */
     private function isLogFile(string $File): bool
     {
@@ -636,7 +636,7 @@ trait FrontEndMethods
     }
 
     /**
-     * A quicker way to add entries to the front-end logfile.
+     * A quicker way to add entries to the front-end logs file.
      *
      * @param string $IPAddr The IP address triggering the log event.
      * @param string $User The user triggering the log event.
@@ -657,7 +657,7 @@ trait FrontEndMethods
         $Data = $this->Configuration['legal']['pseudonymise_ip_addresses'] ? $this->pseudonymiseIp($IPAddr) : $IPAddr;
         $Data .= ' - ' . $this->FE['DateTime'] . ' - "' . $User . '" - ' . $Message . "\n";
 
-        $Truncate = $this->readBytes($this->Configuration['general']['truncate']);
+        $Truncate = $this->readBytes($this->Configuration['logging']['truncate']);
         $WriteMode = (!file_exists($File) || $Truncate > 0 && filesize($File) >= $Truncate) ? 'wb' : 'ab';
         $Handle = fopen($File, $WriteMode);
         fwrite($Handle, $Data);

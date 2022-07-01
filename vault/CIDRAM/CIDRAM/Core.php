@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM core (last modified: 2022.06.30).
+ * This file: The CIDRAM core (last modified: 2022.07.01).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -205,7 +205,7 @@ class Core
     public function __construct()
     {
         /** Vault directory. */
-        $this->Vault = __DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR;
+        $this->Vault = $this->canonical(__DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR);
 
         /** Signatures path. */
         $this->SignaturesPath = $this->Vault . 'signatures' . DIRECTORY_SEPARATOR;
@@ -2867,5 +2867,20 @@ class Core
             'R0lGODlhEAAQAMIBAAAAAGYAAJkAAMz//2YAAGYAAGYAAGYAACH5BAEKAAQALAAAAAAQABAAAANBCLrcKjBK+eKQN76RIb+g0oGewAmiZZbZRppnC0y0BgR4rutK8OWfn2jgI3KKxeHvyBwMkc0kIEp13nZYnGPLSAAAOw==',
             'gif'
         ];
+    }
+
+    /**
+     * Get canonical path (but not checking whether it's real).
+     *
+     * @param string $Path The path to check.
+     * @return string The canonicalised path.
+     */
+    private function canonical(string $Path): string
+    {
+        $Path = str_replace("\\", '/', $Path);
+        while (preg_match('~/[^/]+/\.\./|/\./|/{2,}~', $Path)) {
+            $Path = preg_replace(['~/[^/]+/\.\./|/\./~', '~/{2,}~'], '/', $Path);
+        }
+        return $Path;
     }
 }

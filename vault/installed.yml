@@ -1,6 +1,6 @@
 CIDRAM Core:
  Name: "CIDRAM Core"
- Version: "3.0.0-DEV+22180000"
+ Version: "3.0.0-DEV+22181000"
  Dependencies:
   PHP: ">=7.2"
   CIDRAM Front-End: "Latest"
@@ -25,7 +25,7 @@ CIDRAM Core:
    Checksum: "2095e246231d1304c61751fb04ef1441a22ced408062747dda5fab2c4ae38ed7:4854"
   CIDRAM/CIDRAM/Core.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/CIDRAM/CIDRAM/Core.php"
-   Checksum: "54726c302884e3a2638651588969adb347958bdd945f17dadb65f5702d406a51:115821"
+   Checksum: "8fda05c0e3b3eac5be7c523d35238a9c5bc7533f00af60cfb85e40f97d3f5d65:116310"
   CIDRAM/CIDRAM/Expand.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/CIDRAM/CIDRAM/Expand.php"
    Checksum: "ef517c735b7121860c15bc3f40d15e5d3d8da075a69dcb510ed2772d2d546eee:5991"
@@ -58,7 +58,7 @@ CIDRAM Core:
    Checksum: "801a2bcf32e3da46d4690c38b9e96251bbb9156844e66e23868d217b0fd110ac:6691"
 CIDRAM Front-End:
  Name: "CIDRAM Front-End"
- Version: "3.0.0-DEV+22180000"
+ Version: "3.0.0-DEV+22181000"
  Dependencies:
   PHP: ">=7.2"
   CIDRAM Core: "Latest"
@@ -250,7 +250,7 @@ CIDRAM Front-End:
    Checksum: "67b0cd992546d2cd10f2206845d5bc13acdef89923067e066d49bb9d4d4e863e:3499"
   CIDRAM/CIDRAM/FrontEnd.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/CIDRAM/CIDRAM/FrontEnd.php"
-   Checksum: "c5168ef7d0488e552e81d755cf8b9944be53d32d98f8a4658e696cdc45a91027:272507"
+   Checksum: "7473a84ee77f9d2ecf31ba3d4c6752f7e36d76ca370ae376dd0e993db8b829be:272452"
   CIDRAM/CIDRAM/FrontEndMethods.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/CIDRAM/CIDRAM/FrontEndMethods.php"
    Checksum: "af3f8146032c349e7524dfb7d1afb2a4bdcbc31f96f6c3f53472af4b9dced3cf:49688"
@@ -265,7 +265,7 @@ CIDRAM Front-End:
    Checksum: "83be6753943fac73d8477fba415a660220afcc84c5b3c8db1f1a0f417b335f26:10445"
   CIDRAM/CIDRAM/Updater.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/CIDRAM/CIDRAM/Updater.php"
-   Checksum: "69f77db3d41070c8cdcc698ea1f5c0c1cfb704f5babd2e554efdf31ffaa02b2a:63797"
+   Checksum: "526b40e7184d911b4b7ccf8fb03f91296dd3dc1184a761bb0c0fc0643d7b17ed:65037"
 Common Classes Package:
  Name: "Common Classes Package"
  Version: "2.9.1-DEV+22166000"
@@ -325,7 +325,6 @@ IPv4-Bogons:
  Extended Description: "Default IPv4 signatures normally included with the main package. Blocks bogon/martian CIDRs."
  False Positive Risk: "Low"
  Version: "2022.154.0"
- Dependencies:
  Files:
   signatures/ipv4_bogons.dat:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/ipv4_bogons.dat"
@@ -345,7 +344,6 @@ IPv4-ISPs:
 IPv4-Nonblocking:
  Extended Description: "Default IPv4 non-blocking signatures file."
  Version: "2021.166.298"
- Dependencies:
  Files:
   signatures/ipv4_nonblocking.dat:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/ipv4_nonblocking.dat"
@@ -357,7 +355,6 @@ IPv4-Other:
   unwanted services.
  False Positive Risk: "Medium"
  Version: "2022.150.0"
- Dependencies:
  Files:
   signatures/ipv4_other.dat:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/ipv4_other.dat"
@@ -379,7 +376,6 @@ IPv6-Bogons:
  Extended Description: "Default IPv6 signatures normally included with the main package. Blocks bogon/martian CIDRs."
  False Positive Risk: "Low"
  Version: "2022.154.0"
- Dependencies:
  Files:
   signatures/ipv6_bogons.dat:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/ipv6_bogons.dat"
@@ -399,7 +395,6 @@ IPv6-ISPs:
 IPv6-Nonblocking:
  Extended Description: "Default IPv6 non-blocking signatures file."
  Version: "2021.166.298"
- Dependencies:
  Files:
   signatures/ipv6_nonblocking.dat:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/ipv6_nonblocking.dat"
@@ -411,7 +406,6 @@ IPv6-Other:
   unwanted services.
  False Positive Risk: "Low"
  Version: "2022.56.0"
- Dependencies:
  Files:
   signatures/ipv6_other.dat:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/ipv6_other.dat"

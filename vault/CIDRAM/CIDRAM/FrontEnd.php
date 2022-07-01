@@ -1861,7 +1861,7 @@ class FrontEnd extends Core
                     )) {
                         $this->Components['ThisComponent']['Outdated'] = true;
                         $this->Components['Outdated'][] = $this->Components['Key'];
-                        if ($this->Components['Has Signatures'] === true) {
+                        if ($this->Components['ThisComponent']['Has Signatures'] === true) {
                             $this->Components['OutdatedSignatureFiles'][] = $this->Components['Key'];
                         }
                         $this->Components['ThisComponent']['RowClass'] = 'r';

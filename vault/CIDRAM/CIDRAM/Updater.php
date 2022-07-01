@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods for updating CIDRAM components (last modified: 2022.06.15).
+ * This file: Methods for updating CIDRAM components (last modified: 2022.07.01).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -180,7 +180,7 @@ trait Updater
     private function readInstalledMetadata(array &$Arr): void
     {
         $Data = $this->CIDRAM['Updater-IO']->readFile($this->Vault . 'installed.yml');
-        if (strlen($Data)) {
+        if ($Data !== '') {
             $this->YAML->process($Data, $Arr);
         }
     }
@@ -757,10 +757,7 @@ trait Updater
                     $this->Components['Meta'][$ThisTarget] = $this->Components['RemoteMeta'][$ThisTarget];
 
                     /** Update the component metadata file. */
-                    $this->CIDRAM['Updater-IO']->writeFile(
-                        $this->Vault . 'installed.yml',
-                        $this->YAML->reconstruct($this->Components['Meta'])
-                    );
+                    $this->updateComponentMetadataFile($this->Components['Meta'], $BytesRemoved, $BytesAdded);
 
                     /** Set trigger for signatures update event. */
                     if ($HasSigs) {
@@ -851,10 +848,7 @@ trait Updater
             unset($this->Components['Meta'][$ID]);
 
             /** Update the component metadata file. */
-            $this->CIDRAM['Updater-IO']->writeFile(
-                $this->Vault . 'installed.yml',
-                $this->YAML->reconstruct($this->Components['Meta'])
-            );
+            $this->updateComponentMetadataFile($this->Components['Meta'], $BytesRemoved);
         } else {
             $this->FE['state_msg'] .= $this->L10N->getString('response_component_uninstall_error');
             if (!empty($this->Components['Meta'][$ID]['When Uninstall Fails'])) {
@@ -1106,6 +1100,7 @@ trait Updater
             if (!$RepairFailed) {
                 foreach ($this->Components['RemoteMeta'][$ThisTarget]['Files'] as $FileName => $FileMeta) {
                     if (!isset($FileMeta['From'], $FileMeta['Checksum']) || !$this->freeFromTraversal($this->Vault . $FileName)) {
+                        echo $this->Vault . $FileName;die;
                         $RepairFailed = true;
                         break;
                     }
@@ -1175,10 +1170,7 @@ trait Updater
                 $this->Components['Meta'][$ThisTarget] = $this->Components['RemoteMeta'][$ThisTarget];
 
                 /** Update the component metadata file. */
-                $this->CIDRAM['Updater-IO']->writeFile(
-                    $this->Vault . 'installed.yml',
-                    $this->YAML->reconstruct($this->Components['Meta'])
-                );
+                $this->updateComponentMetadataFile($this->Components['Meta'], $BytesRemoved, $BytesAdded);
 
                 /** Repair operation succeeded. */
                 $this->FE['state_msg'] .= $this->L10N->getString('response_repair_process_completed');
@@ -1430,9 +1422,7 @@ trait Updater
         if (!isset($this->Components['Meta'])) {
             return;
         }
-        if (!isset($this->Components['Shared'])) {
-            $this->Components['Shared'] = [];
-        }
+        $this->Components['Shared'] = [];
         foreach ($this->Components['Meta'] as &$Component) {
             if (!isset($Component['Files'])) {
                 continue;
@@ -1445,13 +1435,54 @@ trait Updater
                 $this->Components['Shared'][$FileName]++;
 
                 /** Determine whether this component includes any signature files. */
-                if (isset($FileMeta['Used with']) && (
-                    $FileMeta['Used with'] === 'ipv4' ||
-                    $FileMeta['Used with'] === 'ipv6'
-                )) {
+                if (isset($FileMeta['Used with']) && ($FileMeta['Used with'] === 'ipv4' || $FileMeta['Used with'] === 'ipv6')) {
                     $Component['Has Signatures'] = true;
                 }
             }
         }
+    }
+
+    /**
+     * Update the component metadata file.
+     *
+     * @param array $Metadata What to update it with.
+     * @param int $BytesRemoved The number of bytes removed.
+     * @param int $BytesAdded The number of bytes added (optional).
+     * @return void
+     */
+    private function updateComponentMetadataFile(array $Metadata, int &$BytesRemoved, ?int &$BytesAdded = null): void
+    {
+        /** Remove any temporary data that doesn't need to be stored. */
+        foreach ($Metadata as $Key => &$Data) {
+            unset(
+                $Data['All Constraints Met'],
+                $Data['Dependency Status'],
+                $Data['Has Signatures'],
+                $Data['Remote All Constraints Met'],
+                $Data['Remote Dependency Status']
+            );
+            foreach ($Data as $DataKey => $InnerData) {
+                if ($InnerData === null) {
+                    unset($Data[$DataKey]);
+                }
+            }
+        }
+
+        /** Reconstruct the metadata. */
+        $Metadata = $this->YAML->reconstruct($Metadata);
+
+        $SizeDiff = strlen($Metadata) - strlen($this->CIDRAM['Updater-IO']->readFile($this->Vault . 'installed.yml'));
+        if ($SizeDiff > 0) {
+            if ($BytesAdded === null) {
+                $BytesRemoved -= $SizeDiff;
+            } else {
+                $BytesAdded += $SizeDiff;
+            }
+        } elseif ($SizeDiff < 0) {
+            $BytesRemoved -= $SizeDiff;
+        }
+
+        /** Write to the file. */
+        $this->CIDRAM['Updater-IO']->writeFile($this->Vault . 'installed.yml', $Metadata);
     }
 }

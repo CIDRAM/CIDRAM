@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM front-end (last modified: 2022.06.22).
+ * This file: The CIDRAM front-end (last modified: 2022.07.01).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -1823,10 +1823,10 @@ class FrontEnd extends Core
 
                 /** Determine whether all dependency constraints have been met. */
                 $this->checkConstraints($this->Components['RemoteMeta'][$this->Components['Key']], true);
-                $this->Components['ThisComponent']['Remote Dependency Status'] =
-                    $this->Components['RemoteMeta'][$this->Components['Key']]['Dependency Status'];
-                $this->Components['ThisComponent']['Remote All Constraints Met'] =
-                    $this->Components['RemoteMeta'][$this->Components['Key']]['All Constraints Met'];
+                foreach (['Dependency Status', 'All Constraints Met'] as $CopyItem) {
+                    $this->Components['ThisComponent']['Remote ' . $CopyItem] = $this->Components['RemoteMeta'][$this->Components['Key']][$CopyItem] ?? '';
+                }
+                unset($CopyItem);
                 if (isset($this->Components['RemoteMeta'][$this->Components['Key']]['Install Together'])) {
                     if (!isset($this->Components['Install Together'][$this->Components['Key']])) {
                         $this->Components['Install Together'][$this->Components['Key']] = [];

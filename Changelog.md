@@ -42,6 +42,7 @@
 - There's no longer any need for an external API or CLI script for CIDRAM, as these are both bundled into CIDRAM itself as of v3 onward.
 - Configuration directives `max_login_attempts` and `signatures_update_event_log` have been moved from the `general` configuration category to the `frontend` configuration category.
 - Configuration directives `standard_log`, `apache_style_log`, `serialised_log`, `error_log`, `truncate`, `log_rotation_limit`, `log_rotation_action`, `log_banned_ips`, and `log_sanitisation` have been moved to a new configuration category, `logging`.
+- Configuration directives for CAPTCHA logging have been renamed.
 
 #### Bugs fixed.
 - Some specific files were being misclassified by the file manager; Fixed.

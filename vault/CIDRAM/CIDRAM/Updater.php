@@ -1100,7 +1100,6 @@ trait Updater
             if (!$RepairFailed) {
                 foreach ($this->Components['RemoteMeta'][$ThisTarget]['Files'] as $FileName => $FileMeta) {
                     if (!isset($FileMeta['From'], $FileMeta['Checksum']) || !$this->freeFromTraversal($this->Vault . $FileName)) {
-                        echo $this->Vault . $FileName;die;
                         $RepairFailed = true;
                         break;
                     }
@@ -1454,6 +1453,9 @@ trait Updater
     {
         /** Remove any temporary data that doesn't need to be stored. */
         foreach ($Metadata as $Key => &$Data) {
+            if (!is_array($Data)) {
+                continue;
+            }
             unset(
                 $Data['All Constraints Met'],
                 $Data['Dependency Status'],

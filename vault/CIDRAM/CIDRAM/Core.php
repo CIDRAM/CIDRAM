@@ -2879,7 +2879,7 @@ class Core
     {
         $Path = str_replace("\\", '/', $Path);
         while (preg_match('~/[^/]+/\.\./|/\./|/{2,}~', $Path)) {
-            $Path = preg_replace(['~/[^/]+/\.\./|/\./~', '~/{2,}~'], '/', $Path);
+            $Path = preg_replace('~/[^/]+/\.\./|/\./|/{2,}~', '/', $Path);
         }
         return $Path;
     }

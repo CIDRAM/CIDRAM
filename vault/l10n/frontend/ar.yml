@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Arabic language data for the front-end (last modified: 2022.06.30).
+# This file: Arabic language data for the front-end (last modified: 2022.07.02).
 ##/
 
 Extended Description AbuseIPDB module: "بحظر الطلبات من عناوين IP المدرجة في AbuseIPDB."
@@ -128,10 +128,7 @@ config_general_ipaddr: "أين يمكن العثور على عنوان IP لرب
 config_general_lang: "تحديد اللغة الافتراضية الخاصة بـ CIDRAM."
 config_general_lang_override: "الترجمة وفقًا لـ HTTP_ACCEPT_LANGUAGE كلما أمكن ذلك؟ صحيح/True = نعم [افتراضي]؛ زائفة/False = لا."
 config_general_numbers: "كيف تفضل الأرقام ليتم عرضها؟ حدد المثال الذي يبدو أكثر صحيح لك."
-config_general_other_verification: "آلية الرقابة للتحقق من أنواع الطلبات الأخرى حيثما أمكن ذلك."
-config_general_search_engine_verification: "آلية الرقابة للتحقق من الطلبات الواردة من محركات البحث."
 config_general_silent_mode: "يجب CIDRAM إعادة توجيه بصمت محاولات وصول مرفوض بدلا من عرض الصفحة "تم رفض الوصول"؟ اذا نعم، تحديد الموقع لإعادة توجيه محاولات وصول مرفوض. ان لم، ترك هذا الحقل فارغا."
-config_general_social_media_verification: "آلية الرقابة للتحقق من الطلبات الواردة من منصات التواصل الاجتماعي."
 config_general_stages: "ضوابط لمراحل سلسلة التنفيذ (سواء تم التمكين، أو تسجيل الأخطاء، وما إلى ذلك)."
 config_general_statistics: "يتحكم في المعلومات الإحصائية التي يجب تتبعها."
 config_general_time_format: "شكل التواريخ المستخدم من قبل CIDRAM. ويمكن إضافة خيارات إضافية عند الطلب."
@@ -236,6 +233,10 @@ config_template_data_captcha_title: "عنوان الصفحة المراد عرض
 config_template_data_css_url: "URL ملف CSS لمواضيع مخصصة."
 config_template_data_magnification: *MagnifDesc
 config_template_data_theme: "الموضوع الافتراضي لاستخدام CIDRAM."
+config_verification: "التكوين للتحقق من مصدر الطلبات."
+config_verification_other: "آلية الرقابة للتحقق من أنواع الطلبات الأخرى حيثما أمكن ذلك."
+config_verification_search_engines: "آلية الرقابة للتحقق من الطلبات الواردة من محركات البحث."
+config_verification_social_media: "آلية الرقابة للتحقق من الطلبات الواردة من منصات التواصل الاجتماعي."
 confirm_action: "هل أنت متأكد من أنك تريد "%s"؟"
 field_2fa: "كود 2FA"
 field_activate: "جعله نشطة"

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Indonesian language data for the front-end (last modified: 2022.06.30).
+# This file: Indonesian language data for the front-end (last modified: 2022.07.02).
 ##/
 
 Extended Description AbuseIPDB module: "Memblokir permintaan dari IP yang terdaftar oleh AbuseIPDB."
@@ -126,12 +126,9 @@ config_general_force_hostname_lookup: "Memaksa periksa untuk nama host? True = Y
 config_general_http_response_header_code: "Pesan status HTTP mana yang harus dikirim oleh CIDRAM ketika memblokir permintaan?"
 config_general_ipaddr: "Dimana menemukan alamat IP dari permintaan alamat? (Bergunak untuk pelayanan-pelayanan seperti Cloudflare dan sejenisnya). Default = REMOTE_ADDR. PERINGATAN: Jangan ganti ini kecuali Anda tahu apa yang Anda lakukan!"
 config_general_lang: "Tentukan bahasa default untuk CIDRAM."
-config_general_lang_override: "Melokalisasikan sesuai dengan HTTP_ACCEPT_LANGUAGE jika memungkinkan? True = Ya [Default]; False = Tidak."
+config_general_lang_override: "Melokalisasikan sesuai dengan HTTP_ACCEPT_LANGUAGE jika/bila memungkinkan? True = Ya [Default]; False = Tidak."
 config_general_numbers: "Cara apa yang kamu suka nomor menjadi ditampilkan? Pilih contoh yang paling sesuai untuk Anda."
-config_general_other_verification: "Kontrol untuk memverifikasi jenis permintaan lain jika memungkinkan."
-config_general_search_engine_verification: "Kontrol untuk memverifikasi permintaan dari mesin pencari."
 config_general_silent_mode: "Seharusnya CIDRAM diam-diam mengarahkan diblokir upaya akses bukannya menampilkan halaman "Akses Ditolak"? Jika ya, menentukan lokasi untuk mengarahkan diblokir upaya akses. Jika tidak, kosongkan variabel ini."
-config_general_social_media_verification: "Kontrol untuk memverifikasi permintaan dari platform media sosial."
 config_general_stages: "Kontrol untuk tahapan rantai eksekusi (apakah diaktifkan, apakah kesalahan dicatat, dll)."
 config_general_statistics: "Mengontrol informasi statistik mana yang akan dilacak."
 config_general_time_format: "Format notasi tanggal/waktu yang digunakan oleh CIDRAM. Opsi tambahan dapat ditambahkan atas permintaan."
@@ -236,6 +233,10 @@ config_template_data_captcha_title: "Judul halaman yang akan ditampilkan untuk p
 config_template_data_css_url: "URL file CSS untuk tema kustom."
 config_template_data_magnification: *MagnifDesc
 config_template_data_theme: "Tema default yang digunakan untuk CIDRAM."
+config_verification: "Konfigurasi untuk memverifikasi dari mana permintaan berasal."
+config_verification_other: "Kontrol untuk memverifikasi jenis permintaan lain jika/bila memungkinkan."
+config_verification_search_engines: "Kontrol untuk memverifikasi permintaan dari mesin pencari."
+config_verification_social_media: "Kontrol untuk memverifikasi permintaan dari platform media sosial."
 confirm_action: "Anda yakin ingin "%s"?"
 field_2fa: "Kode 2FA"
 field_activate: "Mengaktifkan"

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Vietnamese language data for the front-end (last modified: 2022.06.30).
+# This file: Vietnamese language data for the front-end (last modified: 2022.07.02).
 ##/
 
 Extended Description AbuseIPDB module: "Chặn các yêu cầu từ IP được liệt kê tại AbuseIPDB."
@@ -128,10 +128,7 @@ config_general_ipaddr: "Nơi để tìm địa chỉ IP của các yêu cầu k�
 config_general_lang: "Xác định tiếng mặc định cho CIDRAM."
 config_general_lang_override: "Bản địa hóa theo HTTP_ACCEPT_LANGUAGE bất cứ khi nào có thể? True = Vâng [Mặc định]; False = Không."
 config_general_numbers: "Làm thế nào để bạn thích số được hiển thị? Chọn ví dụ có vẻ chính xác nhất cho bạn."
-config_general_other_verification: "Kiểm soát để xác minh các loại yêu cầu khác nếu có thể."
-config_general_search_engine_verification: "Kiểm soát để xác minh các yêu cầu từ các máy tìm kiếm."
 config_general_silent_mode: "CIDRAM nên âm thầm chuyển hướng cố gắng truy cập bị chặn thay vì hiển thị trang "Truy cập đã bị từ chối"? Nếu vâng, xác định vị trí để chuyển hướng cố gắng truy cập bị chặn để. Nếu không, để cho biến này được trống."
-config_general_social_media_verification: "Kiểm soát để xác minh các yêu cầu từ các nền tảng truyền thông xã hội."
 config_general_stages: "Kiểm soát các giai đoạn của chuỗi thực thi (có được bật hay không, có lỗi được ghi lại hay không, vv)."
 config_general_statistics: "Kiểm soát thông tin thống kê cần theo dõi."
 config_general_time_format: "Định dạng ngày tháng sử dụng bởi CIDRAM. Các tùy chọn bổ sung có thể được bổ sung theo yêu cầu."
@@ -236,6 +233,10 @@ config_template_data_captcha_title: "Tiêu đề trang để hiển thị cho c�
 config_template_data_css_url: "URL của tập tin CSS cho các chủ đề tùy chỉnh."
 config_template_data_magnification: *MagnifDesc
 config_template_data_theme: "Chủ đề mặc định để sử dụng cho CIDRAM."
+config_verification: "Cấu hình để xác minh yêu cầu bắt nguồn từ đâu."
+config_verification_other: "Kiểm soát để xác minh các loại yêu cầu khác nếu có thể."
+config_verification_search_engines: "Kiểm soát để xác minh các yêu cầu từ các máy tìm kiếm."
+config_verification_social_media: "Kiểm soát để xác minh các yêu cầu từ các nền tảng truyền thông xã hội."
 confirm_action: "Bạn có chắc chắn muốn "%s" không?"
 field_2fa: "Mã 2FA"
 field_activate: "Kích hoạt"

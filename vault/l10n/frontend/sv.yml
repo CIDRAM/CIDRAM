@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Swedish language data for the front-end (last modified: 2022.06.30).
+# This file: Swedish language data for the front-end (last modified: 2022.07.02).
 ##/
 
 Extended Description AbuseIPDB module: "Blockerar förfrågningar från IP-adresser som listas på AbuseIPDB."
@@ -128,10 +128,7 @@ config_general_ipaddr: "Var hittar du IP-adressen för anslutningsförfrågninga
 config_general_lang: "Ange standardspråk för CIDRAM."
 config_general_lang_override: "Lokalisera enligt HTTP_ACCEPT_LANGUAGE när det är möjligt? True = Ja [Standard]; False = Nej."
 config_general_numbers: "Hur föredrar du nummer som ska visas? Välj det exempel som är mest korrekt för dig."
-config_general_other_verification: "Kontroller för att verifiera andra typer av förfrågningar där det är möjligt."
-config_general_search_engine_verification: "Kontroller för att verifiera förfrågningar från sökmotorer."
 config_general_silent_mode: "Ska CIDRAM utföra tyst omdirigering av blockerade åtkomstförsök istället för att visa sidan "Nekat Tillgång"? Om ja, ange platsen för omdirigering av blockerade åtkomstförsök. Om nej, lämna denna variabel tom."
-config_general_social_media_verification: "Kontroller för att verifiera förfrågningar från sociala medieplattformar."
 config_general_stages: "Kontroller för stadierna i utförandekedjan (om aktiverat, om fel loggas, osv)."
 config_general_statistics: "Styr vilken statistisk information som ska spåras."
 config_general_time_format: "Datum/tid notationsformat som används av CIDRAM. Ytterligare alternativ kan läggas till på begäran."
@@ -236,6 +233,10 @@ config_template_data_captcha_title: "Sidtiteln som ska visas för CAPTCHA-förfr
 config_template_data_css_url: "CSS-filadress för anpassade teman."
 config_template_data_magnification: *MagnifDesc
 config_template_data_theme: "Standardtemat som ska användas för CIDRAM."
+config_verification: "Konfiguration för att verifiera var förfrågningar kommer ifrån."
+config_verification_other: "Kontroller för att verifiera andra typer av förfrågningar där det är möjligt."
+config_verification_search_engines: "Kontroller för att verifiera förfrågningar från sökmotorer."
+config_verification_social_media: "Kontroller för att verifiera förfrågningar från sociala medieplattformar."
 confirm_action: "Är du säker på att du vill "%s"?"
 field_2fa: "2FA-kod"
 field_activate: "Aktivera"

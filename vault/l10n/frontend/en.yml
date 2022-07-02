@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: English language data for the front-end (last modified: 2022.06.30).
+# This file: English language data for the front-end (last modified: 2022.07.02).
 ##/
 
 Extended Description AbuseIPDB module: "Blocks requests from IPs listed at AbuseIPDB."
@@ -128,10 +128,7 @@ config_general_ipaddr: "Where to find the IP address of connecting requests? (Us
 config_general_lang: "Specify the default language for CIDRAM."
 config_general_lang_override: "Localise according to HTTP_ACCEPT_LANGUAGE whenever possible? True = Yes [Default]; False = No."
 config_general_numbers: "How do you prefer numbers to be displayed? Select the example that looks the most correct to you."
-config_general_other_verification: "Controls for verifying other kinds of requests where possible."
-config_general_search_engine_verification: "Controls for verifying requests from search engines."
 config_general_silent_mode: "Should CIDRAM silently redirect blocked access attempts instead of displaying the "Access Denied" page? If yes, specify the location to redirect blocked access attempts to. If no, leave this variable blank."
-config_general_social_media_verification: "Controls for verifying requests from social media platforms."
 config_general_stages: "Controls for the stages of the execution chain (whether enabled, whether errors are logged, etc)."
 config_general_statistics: "Controls which statistical information to track."
 config_general_time_format: "The date/time notation format used by CIDRAM. Additional options may be added upon request."
@@ -236,6 +233,10 @@ config_template_data_captcha_title: "The page title to display for CAPTCHA reque
 config_template_data_css_url: "CSS file URL for custom themes."
 config_template_data_magnification: *MagnifDesc
 config_template_data_theme: "The default theme to use for CIDRAM."
+config_verification: "Configuration for verifying where requests originate from."
+config_verification_other: "Controls for verifying other kinds of requests where possible."
+config_verification_search_engines: "Controls for verifying requests from search engines."
+config_verification_social_media: "Controls for verifying requests from social media platforms."
 confirm_action: "Are you sure you want to "%s"?"
 field_2fa: "2FA code"
 field_activate: "Activate"

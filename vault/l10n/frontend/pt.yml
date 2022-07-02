@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Portuguese language data for the front-end (last modified: 2022.06.30).
+# This file: Portuguese language data for the front-end (last modified: 2022.07.02).
 ##/
 
 Extended Description AbuseIPDB module: "Bloqueia solicitações de IPs listados no AbuseIPDB."
@@ -128,10 +128,7 @@ config_general_ipaddr: "Onde encontrar o IP endereço das solicitações? (Útil
 config_general_lang: "Especificar o padrão da linguagem por CIDRAM."
 config_general_lang_override: "Localizar de acordo com HTTP_ACCEPT_LANGUAGE sempre que possível? True = Sim [Padrão]; False = Não."
 config_general_numbers: "Como você prefere que os números sejam exibidos? Selecione o exemplo que parece mais correto para você."
-config_general_other_verification: "Controles para verificar outros tipos de solicitações sempre que possível."
-config_general_search_engine_verification: "Controles para verificar solicitações de mecanismos de pesquisa."
 config_general_silent_mode: "Deve CIDRAM silenciosamente redirecionar as tentativas de acesso bloqueadas em vez de exibir o "Acesso Negado" página? Se sim, especificar o local para redirecionar as tentativas de acesso bloqueadas para. Se não, deixe esta variável em branco."
-config_general_social_media_verification: "Controles para verificar solicitações de plataformas de mídia social."
 config_general_stages: "Controles para as etapas da cadeia de execução (se ativado, se os erros são registrados, etc)."
 config_general_statistics: "Controla quais informações estatísticas rastrear."
 config_general_time_format: "O formato de notação de data/tempo utilizado pelo CIDRAM. Opções adicionais podem ser adicionadas mediante solicitação."
@@ -236,6 +233,10 @@ config_template_data_captcha_title: "O título da página a ser exibido para sol
 config_template_data_css_url: "URL de arquivo CSS para temas personalizados."
 config_template_data_magnification: *MagnifDesc
 config_template_data_theme: "Tema padrão a ser usado para CIDRAM."
+config_verification: "Configuração para verificar a origem das solicitações."
+config_verification_other: "Controles para verificar outros tipos de solicitações sempre que possível."
+config_verification_search_engines: "Controles para verificar solicitações de mecanismos de pesquisa."
+config_verification_social_media: "Controles para verificar solicitações de plataformas de mídia social."
 confirm_action: "Você tem certeza que quer "%s"?"
 field_2fa: "Código 2FA"
 field_activate: "Ativar"

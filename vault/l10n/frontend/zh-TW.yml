@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (traditional) language data for the front-end (last modified: 2022.06.30).
+# This file: Chinese (traditional) language data for the front-end (last modified: 2022.07.02).
 ##/
 
 Extended Description AbuseIPDB module: "阻止來自AbuseIPDB列出的IP的請求。"
@@ -128,10 +128,7 @@ config_general_ipaddr: "在哪裡可以找到連接請求IP地址？​（可以
 config_general_lang: "指定標準CIDRAM語言。"
 config_general_lang_override: "盡可能根據HTTP_ACCEPT_LANGUAGE進行本地化？True（真）=進行本地化【標準】；False（假）=不要本地化。"
 config_general_numbers: "您如何喜歡顯示數字？​選擇最適合示例。"
-config_general_other_verification: "用於在可能的情況下，驗證其他類型的請求的控件。"
-config_general_search_engine_verification: "用於驗證來自搜索引擎的請求的控件。"
 config_general_silent_mode: "CIDRAM應該默默重定向被攔截的訪問而不是顯示該『拒絕訪問』頁嗎？​指定位置至重定向被攔截的訪問，​或讓它空將其禁用。"
-config_general_social_media_verification: "用於驗證來自社交媒體平台的請求的控件。"
 config_general_stages: "用於執行鏈的各個階段的控件（是否啟用，是否記錄錯誤，等等）。"
 config_general_statistics: "控制要跟踪的統計信息。"
 config_general_time_format: "CIDRAM使用的日期符號格式。​可根據要求增加附加選項。"
@@ -236,6 +233,10 @@ config_template_data_captcha_title: "為CAPTCHA請求顯示的頁面標題。"
 config_template_data_css_url: "自定義主題的CSS文件URL。"
 config_template_data_magnification: *MagnifDesc
 config_template_data_theme: "用於CIDRAM的默認主題。"
+config_verification: "請求來源驗證配置。"
+config_verification_other: "用於在可能的情況下，驗證其他類型的請求的控件。"
+config_verification_search_engines: "用於驗證來自搜索引擎的請求的控件。"
+config_verification_social_media: "用於驗證來自社交媒體平台的請求的控件。"
 confirm_action: "你確定要『%s』嗎？"
 field_2fa: "2FA代碼"
 field_activate: "啟用"

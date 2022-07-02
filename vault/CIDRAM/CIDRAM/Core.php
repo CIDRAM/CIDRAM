@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM core (last modified: 2022.07.01).
+ * This file: The CIDRAM core (last modified: 2022.07.02).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -1700,7 +1700,7 @@ class Core
             if (!isset($this->CIDRAM['VPermissions'])) {
                 $this->CIDRAM['VPermissions'] = [];
             }
-            $this->CIDRAM['VPermissions'] += array_flip(explode("\n", $this->Configuration['general']['search_engine_verification']));
+            $this->CIDRAM['VPermissions'] += array_flip(explode("\n", $this->Configuration['verification']['search_engines']));
         }
         $Before = $this->BlockInfo['SignatureCount'];
         $this->xVerification('Search Engine Verification', true);
@@ -1721,7 +1721,7 @@ class Core
             if (!isset($this->CIDRAM['VPermissions'])) {
                 $this->CIDRAM['VPermissions'] = [];
             }
-            $this->CIDRAM['VPermissions'] += array_flip(explode("\n", $this->Configuration['general']['social_media_verification']));
+            $this->CIDRAM['VPermissions'] += array_flip(explode("\n", $this->Configuration['verification']['social_media']));
         }
         $Before = $this->BlockInfo['SignatureCount'];
         $this->xVerification('Social Media Verification', false);
@@ -1742,7 +1742,7 @@ class Core
             if (!isset($this->CIDRAM['VPermissions'])) {
                 $this->CIDRAM['VPermissions'] = [];
             }
-            $this->CIDRAM['VPermissions'] += array_flip(explode("\n", $this->Configuration['general']['other_verification']));
+            $this->CIDRAM['VPermissions'] += array_flip(explode("\n", $this->Configuration['verification']['other']));
         }
         $Before = $this->BlockInfo['SignatureCount'];
         $this->xVerification('Other Verification', false);

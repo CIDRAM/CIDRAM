@@ -43,6 +43,7 @@
 - Configuration directives `max_login_attempts` and `signatures_update_event_log` have been moved from the `general` configuration category to the `frontend` configuration category.
 - Configuration directives `standard_log`, `apache_style_log`, `serialised_log`, `error_log`, `truncate`, `log_rotation_limit`, `log_rotation_action`, `log_banned_ips`, and `log_sanitisation` have been moved to a new configuration category, `logging`.
 - Configuration directives for CAPTCHA logging have been renamed.
+- Configuration directives `search_engines`, `social_media`, and `other` have been moved to a new configuration category, `verification`.
 
 #### Bugs fixed.
 - Some specific files were being misclassified by the file manager; Fixed.

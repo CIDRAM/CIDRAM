@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Polish language data for the front-end (last modified: 2022.06.30).
+# This file: Polish language data for the front-end (last modified: 2022.07.02).
 ##/
 
 Extended Description AbuseIPDB module: "Blokuje żądania z adresów IP wymienionych w witrynie AbuseIPDB."
@@ -128,10 +128,7 @@ config_general_ipaddr: "Gdzie znaleźć adres IP żądań połączenia? (Przydat
 config_general_lang: "Określ domyślny język dla CIDRAM."
 config_general_lang_override: "Kiedy to możliwe, lokalizuj według HTTP_ACCEPT_LANGUAGE? True (Prawdziwe) = Tak [Domyślna]; False (Fałszywy) = Nie."
 config_general_numbers: "Jak wolisz wyświetlać liczby? Wybierz przykład, który wygląda najlepiej dla Ciebie."
-config_general_other_verification: "Kontrolki do weryfikacji innych rodzajów żądań tam, gdzie to możliwe."
-config_general_search_engine_verification: "Kontrolki do weryfikacji żądań z wyszukiwarek."
 config_general_silent_mode: "Czy CIDRAM powinien po cichu przekierowywać zablokowane próby dostępu zamiast wyświetlać stronę „Dostęp Zabroniony”? Jeśli tak, podaj lokalizację, do której mają zostać przekierowane zablokowane próby dostępu. Jeśli nie, pozostaw tę zmienną pustą."
-config_general_social_media_verification: "Kontrolki do weryfikacji żądań z platform mediów społecznościowych."
 config_general_stages: "Kontrole etapów łańcucha egzekucyjnego (czy włączone, czy błędy są rejestrowane, itp)."
 config_general_statistics: "Kontroluje, które informacje statystyczne należy śledzić."
 config_general_time_format: "Format notacja daty/godziny używany przez CIDRAM. Dodatkowe opcje mogą być dodane na życzenie."
@@ -236,6 +233,10 @@ config_template_data_captcha_title: "Tytuł strony do wyświetlenia dla żądań
 config_template_data_css_url: "Adres URL pliku CSS dla niestandardowych motywów."
 config_template_data_magnification: *MagnifDesc
 config_template_data_theme: "Domyślny motyw do użycia dla CIDRAM."
+config_verification: "Konfiguracja do weryfikacji skąd pochodzą żądania."
+config_verification_other: "Kontrolki do weryfikacji innych rodzajów żądań tam, gdzie to możliwe."
+config_verification_search_engines: "Kontrolki do weryfikacji żądań z wyszukiwarek."
+config_verification_social_media: "Kontrolki do weryfikacji żądań z platform mediów społecznościowych."
 confirm_action: "Czy na pewno chcesz „%s”?"
 field_2fa: "Kod 2FA"
 field_activate: "Aktywuj"

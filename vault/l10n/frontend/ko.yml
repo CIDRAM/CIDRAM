@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Korean language data for the front-end (last modified: 2022.06.30).
+# This file: Korean language data for the front-end (last modified: 2022.07.02).
 ##/
 
 Extended Description AbuseIPDB module: "AbuseIPDB에 나열된 IP의 요청을 차단합니다."
@@ -128,10 +128,7 @@ config_general_ipaddr: "연결 요청의 IP 주소를 어디에서 찾을 것인
 config_general_lang: "CIDRAM의 기본 언어를 설정합니다."
 config_general_lang_override: "가능할 때마다 HTTP_ACCEPT_LANGUAGE에 따라 현지화 하시겠습니까? True = 예 (Default / 기본값); False = 아니오."
 config_general_numbers: "어떻게 숫자를 표시하는 것을 선호합니까? 가장 정확한 것으로 보이는 예제를 선택하십시오."
-config_general_other_verification: "가능한 경우 다른 종류의 요청을 확인하기 위한 제어입니다."
-config_general_search_engine_verification: "검색 엔진의 요청을 확인하기 위한 컨트롤입니다."
 config_general_silent_mode: ""액세스 거부" 페이지를 표시하는 대신 CIDRAM는 차단 된 액세스 시도를 자동으로 리디렉션해야합니까? 그렇다면 리디렉션 위치를 지정합니다. 아니오의 경우이 변수를 비워 둡니다."
-config_general_social_media_verification: "소셜 미디어 플랫폼의 요청을 확인하기 위한 컨트롤입니다."
 config_general_stages: "실행 체인의 단계에 대한 제어 (활성화 여부, 오류 기록 여부, 등등)."
 config_general_statistics: "추적할 통계 정보를 제어합니다."
 config_general_time_format: "CIDRAM에서 사용되는 날짜 형식. 추가 옵션이 요청에 따라 추가 될 수 있습니다."
@@ -236,6 +233,10 @@ config_template_data_captcha_title: "CAPTCHA 요청에 대해 표시할 페이�
 config_template_data_css_url: "사용자 정의 테마의 CSS 파일 URL입니다."
 config_template_data_magnification: *MagnifDesc
 config_template_data_theme: "CIDRAM에 사용할 기본 테마."
+config_verification: "요청의 출처를 확인하기 위한 구성."
+config_verification_other: "가능한 경우 다른 종류의 요청을 확인하기 위한 제어입니다."
+config_verification_search_engines: "검색 엔진의 요청을 확인하기 위한 컨트롤입니다."
+config_verification_social_media: "소셜 미디어 플랫폼의 요청을 확인하기 위한 컨트롤입니다."
 confirm_action: ""%s"하시겠습니까?"
 field_2fa: "2FA 코드"
 field_activate: "활성화"

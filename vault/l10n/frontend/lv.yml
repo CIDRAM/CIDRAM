@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Latvian language data for the front-end (last modified: 2022.06.30).
+# This file: Latvian language data for the front-end (last modified: 2022.07.02).
 ##/
 
 Extended Description AbuseIPDB module: "Bloķē pieprasījumus no IP, kas uzskaitīti vietnē AbuseIPDB."
@@ -128,10 +128,7 @@ config_general_ipaddr: "Kur atrast savienojošo pieprasījumu IP adresi? (Noder�
 config_general_lang: "Norādiet CIDRAM noklusējuma valodu."
 config_general_lang_override: "Ja iespējams, lokalizēt saskaņā ar HTTP_ACCEPT_LANGUAGE? True (Patiess) = Jā [Noklusējuma]; False (Nepatiess) = Nē."
 config_general_numbers: "Kā jūs izvēlaties skaitļu parādīšanu? Atlasiet piemēru, kas jums šķiet vispareizākais."
-config_general_other_verification: "Kontroles cita veida pieprasījumu pārbaudei, ja iespējams."
-config_general_search_engine_verification: "Kontroles meklētājprogrammas pieprasījumu pārbaudei."
 config_general_silent_mode: "Vai CIDRAM vajadzētu klusībā novirzīt bloķētus piekļuves mēģinājumus, nevis parādīt lapu "piekļuve liegta"? Ja tā, norādiet vietu, uz kuru novirzīt bloķētus piekļuves mēģinājumus. Ja nē, atstājiet šo mainīgo tukšu."
-config_general_social_media_verification: "Kontroles sociālo mediju platformas pieprasījumu pārbaudei."
 config_general_stages: "Kontroles mehānisms izpildes ķēdes posmiem (vai iespējots, vai tiek reģistrētas kļūdas, utt)."
 config_general_statistics: "Kontrolē, kuru statistikas informāciju izsekot."
 config_general_time_format: "CIDRAM izmantotais datuma/laika apzīmējuma formāts. Pēc pieprasījuma var tikt pievienotas papildu iespējas."
@@ -236,6 +233,10 @@ config_template_data_captcha_title: "Lapas nosaukums, kas jāparāda CAPTCHA pie
 config_template_data_css_url: "CSS faila URL pielāgotajām tēmām."
 config_template_data_magnification: *MagnifDesc
 config_template_data_theme: "Noklusējuma tēma, kas jāizmanto CIDRAM."
+config_verification: "Konfigurācija, lai pārbaudītu, no kurienes tiek saņemti pieprasījumi."
+config_verification_other: "Kontroles cita veida pieprasījumu pārbaudei, ja iespējams."
+config_verification_search_engines: "Kontroles meklētājprogrammas pieprasījumu pārbaudei."
+config_verification_social_media: "Kontroles sociālo mediju platformas pieprasījumu pārbaudei."
 confirm_action: "Vai tiešām vēlaties "%s"?"
 field_2fa: "2FA kods"
 field_activate: "Aktivizējiet"

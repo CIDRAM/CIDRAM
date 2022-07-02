@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Italian language data for the front-end (last modified: 2022.06.30).
+# This file: Italian language data for the front-end (last modified: 2022.07.02).
 ##/
 
 Extended Description AbuseIPDB module: "Blocca le richieste dagli IP elencati in AbuseIPDB."
@@ -128,10 +128,7 @@ config_general_ipaddr: "Dove trovare l'indirizzo IP di collegamento richiesta? (
 config_general_lang: "Specifica la lingua predefinita per CIDRAM."
 config_general_lang_override: "Localizzare secondo HTTP_ACCEPT_LANGUAGE quando possibile? True = Sì [Predefinito]; False = No."
 config_general_numbers: "Come preferisci che i numeri siano visualizzati? Seleziona l'esempio che ti sembra più corretto."
-config_general_other_verification: "Controlli per la verifica di altri tipi di richieste ove possibile."
-config_general_search_engine_verification: "Controlli per la verifica delle richieste dai motori di ricerca."
 config_general_silent_mode: "CIDRAM dovrebbe reindirizzare silenziosamente tutti i tentativi di accesso bloccati invece di visualizzare la pagina "Accesso Negato"? Se si, specificare la localizzazione di reindirizzare i tentativi di accesso bloccati. Se no, lasciare questo variabile vuoto."
-config_general_social_media_verification: "Controlli per la verifica delle richieste dalle piattaforme dei social media."
 config_general_stages: "Controlli per le fasi della catena di esecuzione (se abilitato, se gli errori sono registrati, ecc)."
 config_general_statistics: "Controlla quali informazioni statistiche tracciare."
 config_general_time_format: "Il formato della data/ora di notazione usata da CIDRAM. Ulteriori opzioni possono essere aggiunti su richiesta."
@@ -236,6 +233,10 @@ config_template_data_captcha_title: "Il titolo della pagina da visualizzare per 
 config_template_data_css_url: "URL del file CSS per i temi personalizzati."
 config_template_data_magnification: *MagnifDesc
 config_template_data_theme: "Tema predefinito da utilizzare per CIDRAM."
+config_verification: "Configurazione per verificare da dove provengono le richieste."
+config_verification_other: "Controlli per la verifica di altri tipi di richieste ove possibile."
+config_verification_search_engines: "Controlli per la verifica delle richieste dai motori di ricerca."
+config_verification_social_media: "Controlli per la verifica delle richieste dalle piattaforme dei social media."
 confirm_action: "Sei sicuro di voler "%s"?"
 field_2fa: "Codice 2FA"
 field_activate: "Attivarlo"

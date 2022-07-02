@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: French language data for the front-end (last modified: 2022.06.30).
+# This file: French language data for the front-end (last modified: 2022.07.02).
 ##/
 
 Extended Description AbuseIPDB module: "Bloque les requêtes des adresses IP répertoriées dans AbuseIPDB."
@@ -128,10 +128,7 @@ config_general_ipaddr: "Où trouver l'adresse IP de requêtes\_? (Utile pour ser
 config_general_lang: "Spécifiez la langue défaut pour CIDRAM."
 config_general_lang_override: "Localiser selon HTTP_ACCEPT_LANGUAGE autant que possible\_? True = Oui [Défaut]\_; False = Non."
 config_general_numbers: "Comment préférez-vous que les nombres soient affichés\_? Sélectionnez l'exemple qui vous paraît le plus approprié."
-config_general_other_verification: "Contrôles pour vérifier d'autres types de requêtes lorsque cela est possible."
-config_general_search_engine_verification: "Contrôles pour vérifier les requêtes des moteurs de recherche."
 config_general_silent_mode: "Devrait CIDRAM rediriger silencieusement les tentatives d'accès bloquées à la place de l'affichage de la page «\_Accès Refusé\_»\_? Si oui, spécifiez l'emplacement pour rediriger les tentatives d'accès bloquées. Si non, laisser cette variable vide."
-config_general_social_media_verification: "Contrôles pour vérifier les requêtes des plateformes de médias sociaux."
 config_general_stages: "Contrôles des étapes de la chaîne d'exécution (s'il est activé, si les erreurs sont enregistrées, etc)."
 config_general_statistics: "Contrôle les informations statistiques à suivre."
 config_general_time_format: "Le format de notation de la date/heure utilisé par CIDRAM. Des options supplémentaires peuvent être ajoutées sur requête."
@@ -236,6 +233,10 @@ config_template_data_captcha_title: "Le titre de la page à afficher pour les re
 config_template_data_css_url: "URL de fichier CSS pour les thèmes personnalisés."
 config_template_data_magnification: *MagnifDesc
 config_template_data_theme: "Le thème à utiliser par défaut pour CIDRAM."
+config_verification: "Configuration pour vérifier d'où proviennent les requêtes."
+config_verification_other: "Contrôles pour vérifier d'autres types de requêtes lorsque cela est possible."
+config_verification_search_engines: "Contrôles pour vérifier les requêtes des moteurs de recherche."
+config_verification_social_media: "Contrôles pour vérifier les requêtes des plateformes de médias sociaux."
 confirm_action: "Êtes-vous sûr de vouloir «\_%s\_»\_?"
 field_2fa: "Code 2FA"
 field_activate: "Activer"

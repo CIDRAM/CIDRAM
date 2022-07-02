@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Dutch language data for the front-end (last modified: 2022.06.30).
+# This file: Dutch language data for the front-end (last modified: 2022.07.02).
 ##/
 
 Extended Description AbuseIPDB module: "Blokkeert aanvragen van IP's die worden vermeld op AbuseIPDB."
@@ -128,10 +128,7 @@ config_general_ipaddr: "Waar het IP-adres van het aansluiten verzoek te vinden? 
 config_general_lang: "Geef de standaardtaal voor CIDRAM."
 config_general_lang_override: "Waar mogelijk lokaliseren volgens HTTP_ACCEPT_LANGUAGE? True = Ja [Standaard]; False = Nee."
 config_general_numbers: "Hoe verkiest u nummers die worden weergegeven? Selecteer het voorbeeld dat het meest correct voor u lijkt."
-config_general_other_verification: "Controles voor het verifiëren van andere soorten verzoeken waar mogelijk."
-config_general_search_engine_verification: "Controles voor het verifiëren van verzoeken van zoekmachines."
 config_general_silent_mode: "Moet CIDRAM stilletjes redirect geblokkeerd toegang pogingen in plaats van het weergeven van de "Toegang Geweigerd" pagina? Als ja, geef de locatie te redirect geblokkeerd toegang pogingen. Als nee, verlaat deze variabele leeg."
-config_general_social_media_verification: "Controles voor het verifiëren van verzoeken van sociale media platforms."
 config_general_stages: "Controles voor de fasen van de uitvoeringsketen (of ingeschakeld, of fouten worden geregistreerd, enz)."
 config_general_statistics: "Bepaalt welke statistische informatie moet worden bijgehouden."
 config_general_time_format: "De datum notatie gebruikt door CIDRAM. Extra opties kunnen worden toegevoegd op aanvraag."
@@ -236,6 +233,10 @@ config_template_data_captcha_title: "De paginatitel die moet worden weergegeven 
 config_template_data_css_url: "CSS-bestand URL voor aangepaste thema's."
 config_template_data_magnification: *MagnifDesc
 config_template_data_theme: "Standaard thema om te gebruiken voor CIDRAM."
+config_verification: "Configuratie om te verifiëren waar verzoeken vandaan komen."
+config_verification_other: "Controles voor het verifiëren van andere soorten verzoeken waar mogelijk."
+config_verification_search_engines: "Controles voor het verifiëren van verzoeken van zoekmachines."
+config_verification_social_media: "Controles voor het verifiëren van verzoeken van sociale media platforms."
 confirm_action: "Weet u zeker dat u wilt "%s"?"
 field_2fa: "2FA-code"
 field_activate: "Activeren"

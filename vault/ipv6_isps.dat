@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6_isps.dat
 
-# Version: 2022.174.0
-# Last modified: 2022.06.24
+# Version: 2022.184.0
+# Last modified: 2022.07.04
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -483,8 +483,8 @@ Tag: Free SAS
 # ASN 8359 ("MTS PJSC").
 # Caught trying to hack WordPress sites, a significant amount of other
 # unsavoury behaviour detected, and a significant source of spam.
-# Stop Forum Spam (SFS) listings: 10,743.
-# Updated: 2022.06.22
+# Stop Forum Spam (SFS) listings: 10,313.
+# Updated: 2022.07.04
 
 2a00:f00::/32 Deny Spam
 2a00:13fb::/40 Deny Spam
@@ -493,11 +493,12 @@ Tag: Free SAS
 2a00:1fa0::/29 Deny Spam
 2a00:8580::/40 Deny Spam
 2a01:8043::/40 Deny Spam
+2a01:8046::/36 Deny Spam
 2a02:28::/29 Deny Spam
 2a02:3f8:7::/48 Deny Spam
 2a03:7203::/40 Deny Spam
 Origin: RU
-Profile: Commercial
+Profile: Domestic ISP;Infrastructure/Transit;Multiplay
 Tag: MTS PJSC
 
 
@@ -508,7 +509,7 @@ Tag: MTS PJSC
 
 2804:12d8::/32 Deny Spam
 Origin: BR
-Profile: Domestic ISP
+Profile: Domestic ISP;Infrastructure/Transit;Multiplay
 Tag: Star Telecom S/A
 
 
@@ -666,7 +667,7 @@ Tag: Atria Convergence
 
 # ASN 39608 ("Lanet Network Ltd").
 # A Ukrainian domestic ISP and a significant source of spam.
-# Stop Forum Spam (SFS) listings: 1,316.
+# Stop Forum Spam (SFS) listings: 1,022.
 # Updated: 2020.02.14 / Checked: 2021.09.21
 
 2a01:5800::/32 Deny Spam
@@ -1315,18 +1316,6 @@ Tag: KPN B.V
 Origin: NL
 Profile: Domestic ISP
 Tag: Vodafone Libertel
-
-
-# ASN 12302 ("Vodafone Romania S.A").
-# Romanian mobile provider. Forum spam and other strange traffic sometimes seen
-# from here. Listing just the affected addresses/ranges only.
-# Stop Forum Spam (SFS) listings: 549.
-# Updated: 2021.09.22
-
-2a04:241b:8104:6600::/64 Deny Spam
-Origin: RO
-Profile: Domestic ISP
-Tag: Vodafone Romania
 
 
 # ASN 58972 ("RadioLAN spol. s r.o").

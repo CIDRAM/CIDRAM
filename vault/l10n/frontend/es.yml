@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Spanish language data for the front-end (last modified: 2022.07.02).
+# This file: Spanish language data for the front-end (last modified: 2022.07.03).
 ##/
 
 Extended Description AbuseIPDB module: "Bloquea las solicitudes de los IP listados en AbuseIPDB."
@@ -61,6 +61,7 @@ Name Project Honeypot module: "Módulo Project Honeypot"
 Name Referrer spam module: "Módulo de spam de referencia"
 Name Search engines blocker module: "Módulo bloqueador de motores de búsqueda"
 Name Stop Forum Spam module: "Módulo Stop Forum Spam"
+checkbox_label_block_it: "Bloquearlo."
 checkbox_label_block_negatives: "¿Bloquear negativos?"
 checkbox_label_block_nonverified: "¿Bloquear solicitudes no verificados?"
 checkbox_label_fields_logs: "¿Debería aparecer este campo en las entradas de registro?"
@@ -202,16 +203,9 @@ config_recaptcha_usemode: *CaptchaUseMode
 config_sfs: "Configuración para el módulo Stop Forum Spam."
 config_sfs_offer_captcha: "Cuando las solicitudes están bloqueadas por este módulo, se pueden servir CAPTCHA. Predefinido = True. Nota: No reemplaza otras directivas. Para que se sirvan los CAPTCHA, todas las directivas deben estar de acuerdo, las claves necesarias configuradas, etc. En el caso de que normalmente se permite CAPTCHA, establecer esta directiva en false proporciona una forma de evitar que se entreguen CAPTCHA para solicitudes bloqueadas específicamente por este módulo."
 config_signatures: "Configuración para firmas, archivos de firma, módulos, etc."
-config_signatures_block_attacks: "¿Bloquear CIDRs asociados con ataques y otro tráfico anormal? Por ejemplo, escaneos de puertos, piratería, sondeo de vulnerabilidades, etc. A menos que experimentar problemas cuando hacerlo, en general, esto siempre debe establecerse para true."
-config_signatures_block_bogons: "¿Bloquear CIDRs identificados como bogons/martians? Si usted espera conexiones a su sitio web desde dentro de su red local, desde localhost, o desde su LAN, esta directiva debe ser establecido para false. Si usted no espera estos tipos de conexiones, esta directiva debe ser establecido para true."
-config_signatures_block_cloud: "¿Bloquear CIDRs identificados como pertenecientes de servicios de webhosting o servicios en la nube? Si usted operar un servicio de un API desde su sitio web o si usted espera otros sitios web para conectarse a su sitio web, esta directiva debe ser establecido para false. Si usted no espera esta, esta directiva debe ser establecido para true."
-config_signatures_block_generic: "¿Bloquear CIDRs recomendado generalmente para las listas negras? Esto abarca todos las firmas que no están marcadas como parte de cualquiera de los otros mas especifico categorías de firmas."
-config_signatures_block_legal: "¿Bloquear CIDRs en respuesta a obligaciones legales? Esta directiva normalmente no debería tener ningún efecto, porque CIDRAM no asocia ningún CIDR con "obligaciones legales" como estándar, pero existe aunque como una medida de control adicional en beneficio de cualquier archivo de firmas o módulo personalizado que pueda existir por razones legales."
-config_signatures_block_malware: "¿Bloquear CIDRs asociados con el malware? Esto incluye servidores de C&C, máquinas infectadas, máquinas involucradas en la distribución de malware, etc."
-config_signatures_block_proxies: "¿Bloquear CIDRs identificados como pertenecientes a los servicios de proxy o VPNs? Si requiere que los usuarios puedan acceder a su sitio web a partir de los servicios de proxy o VPNs, esta directiva debe ser establecido para false. Alternativamente, Si usted no requiere servicios de proxy o VPNs, esta directiva debe ser establecido para true como un medio para mejorar la seguridad."
-config_signatures_block_spam: "¿Bloquear CIDRs identificado como siendo de alto riesgo para el spam? A menos que experimentar problemas cuando hacerlo, en general, esto siempre debe establecerse para true."
 config_signatures_default_tracktime: "¿Cuántos segundos para realizar el seguimiento de las IP prohibidas por los módulos? Predefinido = 604800 (1 semana)."
 config_signatures_infraction_limit: "Número máximo de infracciones a las que un IP puede incurrir antes de ser prohibido por el rastreo IP. Predefinido = 10."
+config_signatures_shorthand: "Controla qué hacer con una solicitud cuando hay una coincidencia positiva con una firma que utiliza las palabras abreviadas dadas."
 config_signatures_tracking_override: "¿Permitir que los módulos reemplacen las opciones de seguimiento? True = Sí [Predefinido]; False = No."
 config_supplementary_cache_options: "Opciones de caché suplementarias. Nota: Cambiar estos valores puede potencialmente cerrar la sesión."
 config_supplementary_cache_options_enable_apcu: "Especifica si se intenta utilizar APCu para el almacenamiento en caché. Predefinido = True."
@@ -317,6 +311,15 @@ hints_default_dns:
 hints_ipv6_on_32bit: "Nota: Es posible que las búsquedas de IPv6 no funcionen correctamente en algunos sistemas de 32 bits."
 hints_pdo_dsn:
  FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.es.md\#HOW_TO_USE_PDO" hreflang="es">¿Qué es un "PDO DSN"? Cómo puedo usar PDO con CIDRAM?</a></em>"
+hints_shorthand:
+ 0.: "Si su sitio web necesita acceso a través de LAN o localhost, no bloquee esto. De lo contrario, puedes bloquear esto."
+ 1.: "Ninguno de los archivos de firma predeterminados usa esto, pero no obstante, es soportado en caso que pueda ser útil para algunos usuarios."
+ 2.: "Si necesita que los usuarios puedan acceder a su sitio web a través de proxies, no bloquee esto. De lo contrario, puedes bloquear esto."
+ 3.: "El uso directo en las firmas no es soportados, pero se puede invocar por otros medios en circunstancias particulares."
+ 4.: "Se refiere a los casos en que las palabras abreviadas no se usan en absoluto, o no son reconocidas por CIDRAM."
+ Uno por firma.: "Una firma puede invocar múltiples perfiles, pero puede usar solo una palabra abreviada. Es posible que varias palabras abreviadas sean adecuadas, pero como solo se puede usar una, apuntamos de usar siempre las más adecuadas."
+ Prioridad.: "Una opción seleccionada siempre tiene prioridad sobre una opción no seleccionada. Por ejemplo, si hay varias palabras abreviadas en juego, pero solo una de ellas está configurada como bloqueada, la solicitud seguirá bloqueada."
+ Puntos finales humanos y servicios en la nube.: "Servicio en la nube puede referirse a proveedores de alojamiento web, granjas de servidores, centros de datos, o una serie de otras cosas. Punto final humano se refiere a los medios por los cuales un humano accede a internet, por ejemplo, a través de un proveedor de servicios de internet. Una red generalmente proporciona solo uno u otro, pero a veces puede proporcionar ambos. Apuntamos nunca identificar puntos finales humanos potenciales como servicios en la nube. Por lo tanto, un servicio en la nube puede identificarse como algo más si su rango es compartido por puntos finales humanos conocidos. Del mismo modo, apuntamos identificar siempre los servicios en la nube, cuyos rangos no son compartidos por ningún punto final humano conocido, como servicios en la nube. Por lo tanto, una solicitud identificada explícitamente como un servicio en la nube probablemente no comparta su rango con ningún punto final humano conocido. Asimismo, una solicitud identificada explícitamente por ataques o riesgo de spam probablemente los comparta. Sin embargo, internet siempre está en constante cambio, los propósitos de las redes cambian con el tiempo, y los rangos siempre se compran o venden, así que manténgase consciente y vigilante a los falsos positivos."
 hints_verification:
  "¿Qué son "positivos" y "negativos"?": "Cuando verificando la identidad presentada por una solicitud, un resultado exitoso podría describirse como "positivo" o "negativo". Cuando se confirma que la identidad presentada es la verdadera identidad, se describiría como "positiva". Cuando se confirma que la identidad presentada es falsa, se describirá como "negativa". Sin embargo, un resultado fallido (por ejemplo, la verificación falló, o no se puede determinar la veracidad de la identidad presentada) no se describiría como "positivo" o "negativo". En cambio, un resultado fallido se describiría simplemente como no verificado. Cuando no se intenta verificar la identidad presentada por una solicitud, la solicitud también se describiría como no verificado. Los términos tienen sentido solo en el contexto en el que se reconoce la identidad presentada por una solicitud y, por lo tanto, donde la verificación es posible. En los casos en que la identidad presentada no coincida con las opciones proporcionadas anteriormente, o cuando no se presente ninguna identidad, las opciones proporcionadas anteriormente se vuelven irrelevantes."
  "¿Qué son los "bypasses de un solo golpe"?": "En algunos casos, una solicitud con verificación positiva aún puede bloquearse como resultado de los archivos de firma, módulos, u otras condiciones de la solicitud, y las bypasses pueden ser necesarias para evitar falsos positivos. En el caso de que una bypass esté destinada a tratar exactamente una infracción, ni más ni menos, dicha bypass podría describirse como una "bypass de un solo golpe"."

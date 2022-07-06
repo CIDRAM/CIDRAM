@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Norwegian language data for the front-end (last modified: 2022.07.02).
+# This file: Norwegian language data for the front-end (last modified: 2022.07.03).
 ##/
 
 Extended Description AbuseIPDB module: "Blokkerer forespørsler fra IP-er oppført på AbuseIPDB."
@@ -61,6 +61,7 @@ Name Project Honeypot module: "Project Honeypot modul"
 Name Referrer spam module: "Henvisende spam modul"
 Name Search engines blocker module: "Søkemotorer blokkeringsmodul"
 Name Stop Forum Spam module: "Stop Forum Spam modul"
+checkbox_label_block_it: "Blokker det."
 checkbox_label_block_negatives: "Blokkere negative?"
 checkbox_label_block_nonverified: "Blokkere ikke-verifiserte forespørsler?"
 checkbox_label_fields_logs: "Skal dette feltet vises i loggoppføringer?"
@@ -202,16 +203,9 @@ config_recaptcha_usemode: *CaptchaUseMode
 config_sfs: "Konfigurasjon for Stop Forum Spam modulen."
 config_sfs_offer_captcha: "Når forespørsler blokkeres av denne modulen, CAPTCHA-er kan bli servert. Standardverdi = True. Merk: Overstyrer ikke andre direktiver. For at CAPTCHA-er skal kunne betjenes, må alle direktiver stemme overens, nødvendige nøkler konfigurert, osv. I tilfelle CAPTCHA-er normalt vil tillates å bli servert, gir det å sette dette direktivet til false en måte å forhindre at CAPTCHA-er blir servert for forespørsler som er blokkert spesifikt av denne modulen."
 config_signatures: "Konfigurasjon for signaturer, signaturfiler, moduler, etc."
-config_signatures_block_attacks: "Blokker CIDRer assosiert med angrep og annen unormal trafikk? F.eks., portskanninger, hacking, undersøkelse av sårbarheter, etc. Med mindre du opplever problemer når du gjør det, bør dette vanligvis alltid settes til true."
-config_signatures_block_bogons: "Blokker bogon/martian CIDRer? Hvis du forventer tilkoblinger til nettstedet ditt fra ditt lokale nettverk, fra localhost eller fra ditt LAN, bør dette direktivet settes til false. Hvis du ikke forventer slike tilkoblinger, bør dette direktivet settes til true."
-config_signatures_block_cloud: "Blokker CIDRer identifisert som tilhørende web-verter og sky-tjenester? Hvis du driver en API-tjeneste fra nettstedet ditt eller hvis du forventer at andre nettsteder skal koble til nettstedet ditt, bør dette settes til false. Hvis du ikke gjør det, da bør dette direktivet settes til true."
-config_signatures_block_generic: "Blokker CIDRer anbefales vanligvis for svarteliste? Dette dekker alle signaturer som ikke er merket som en del av noen av de andre mer spesifikke signaturkategoriene."
-config_signatures_block_legal: "Blokker CIDRer som svar på juridiske forpliktelser? Dette direktivet bør normalt ikke ha noen effekt, fordi CIDRAM ikke som standard forbinder noen CIDRer med "juridiske forpliktelser" som standard, men det eksisterer likevel som et ekstra kontrollmål til fordel for eventuelle tilpassede signaturfiler eller moduler som kan eksistere av juridiske årsaker."
-config_signatures_block_malware: "Blokker CIDRer knyttet til skadelig programvare? Dette inkluderer C&C-servere, infiserte maskiner, maskiner involvert i distribusjon av skadelig programvare, osv."
-config_signatures_block_proxies: "Blokker CIDRer som er identifisert som tilhørende proxy-tjenester eller VPNer? Hvis du trenger at brukerne skal kunne få tilgang til nettstedet ditt fra proxy-tjenester og VPNer, bør dette settes til false. Ellers, hvis du ikke trenger proxy-tjenester eller VPNer, bør dette direktivet settes til true som et middel til å forbedre sikkerheten."
-config_signatures_block_spam: "Blokker CIDRer som er utsatt for høy risiko for spam? Med mindre du opplever problemer når du gjør det, bør dette vanligvis alltid settes til true."
 config_signatures_default_tracktime: "Hvor mange sekunder å spore IPer som er utestengt av moduler. Standardverdi = 604800 (1 uke)."
 config_signatures_infraction_limit: "Maks antall infraksjoner som en IP har lov til å pådra seg før den er utestengt av IP-sporing. Standardverdi = 10."
+config_signatures_shorthand: "Kontrollerer hva bør gjøres med en forespørsel når det er en positiv match mot en signatur som bruker de gitte stenografiordene."
 config_signatures_tracking_override: "Tillate moduler å overstyre sporingsalternativene? True = Ja [Standardverdi]; False = Nei."
 config_supplementary_cache_options: "Tilleggsvalg for cache. Merk: Endring av disse verdiene kan potensielt logge deg ut."
 config_supplementary_cache_options_enable_apcu: "Dette angir om skal bruke APCu for caching. Standardverdi = True."
@@ -315,6 +309,15 @@ hints_default_dns:
 hints_ipv6_on_32bit: "Merk: IPv6-oppslag fungerer kanskje ikke riktig på enkelte 32-biters systemer."
 hints_pdo_dsn:
  FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#HOW_TO_USE_PDO" hreflang="en-AU">Hva er en "PDO DSN"? Hvordan kan jeg bruke PDO med CIDRAM?</a></em>"
+hints_shorthand:
+ 0.: "Hvis nettstedet ditt trenger tilgang via LAN eller localhost, ikke blokker dette. Ellers, du kan blokkere dette."
+ 1.: "Ingen av standard signaturfilene bruker dette, men det støttes likevel i tilfelle det kan være nyttig for noen brukere."
+ 2.: "Hvis du trenger at brukere skal kunne få tilgang til nettstedet ditt via proxyer, ikke blokker dette. Ellers, du kan blokkere dette."
+ 3.: "Direkte bruk i signaturer støttes ikke, men det kan påkalles på andre måter under spesielle omstendigheter."
+ 4.: "Refererer til tilfeller der stenografiord ikke brukes i det hele tatt, eller ikke gjenkjennes av CIDRAM."
+ En per signatur.: "En signatur kan påkalle flere profiler, men kan bare bruke ett stenografiord. Det er mulig at flere stenografiord kan være passende, men sidan bare ett kan brukes, vi sikte å alltid bruke bare de mest passende."
+ Prioritet.: "Et valgt alternativ har alltid prioritet over et alternativ som ikke er valgt. F.eks., hvis flere stenografiord er i spill, men bare ett av dem er satt til å være blokkert, forespørselen vil fortsatt bli blokkert."
+ Menneskelige endepunkter og skytjenester.: "Skytjeneste kan referere til webhotellleverandører, serverfarmer, datasentre, eller en rekke andre ting. Menneskelig endepunkt refererer til måten et menneske får tilgang til internett, f.eks., ved hjelp av en internettleverandør. Et nettverk gir vanligvis bare det ene eller det andre, men kan noen ganger gir begge. Vi sikte å aldri identifisere potensielle menneskelige endepunkter som skytjenester. Derfor en skytjeneste kan identifiseres som noe annet hvis adressene er deles av kjente menneskelige endepunkter. På samme måte, vi sikte å alltid identifisere skytjenester, hvis adressene ikke deles av noen kjente menneskelige endepunkter, som skytjenester. Derfor en forespørsel som er eksplisitt identifisert som en skytjeneste sannsynligvis ikke deler adresser med noen kjente menneskelige endepunkter. På samme måte, en forespørsel som er eksplisitt identifisert av angrep eller spam risiko sannsynligvis deler dem. Imidlertid, internett er alltid i endring, formålet med nettverk endres over tid, og adresser blir alltid kjøpt eller solgt, så vær bevisst og på vakt med hensyn til falske positiver."
 hints_verification:
  "Hva er "positive" og "negative"?": "Når identiteten presentert av en forespørsel er verifisert, kan et vellykket resultat beskrives som "positiv" eller "negativ". I tilfelle at identiteten som presenteres bekreftes å være den sanne identiteten, den vil bli beskrevet som "positiv". I tilfelle det bekreftes at identiteten som presenteres er forfalsket, den vil bli beskrevet som "negativ". Imidlertid, et mislykket resultat (f.eks., verifisering mislykkes, eller sannheten til identiteten som presenteres ikke kan fastslås) vil ikke beskrives som "positiv" eller "negativ". I stedet, et mislykket resultat vil ganske enkelt beskrives som ikke-verifisert. Når det ikke gjøres noe forsøk på å bekrefte identiteten som presenteres av en forespørsel, forespørselen vil på samme måte bli beskrevet som ikke-verifisert. Begrepene gir mening bare i konteksten der identiteten som presenteres av en forespørsel gjenkjennes, og derfor der verifisering er mulig. I tilfeller der identiteten som presenteres ikke matchet av alternativene ovenfor, eller der ingen identitet er presentert, alternativene gitt ovenfor blir irrelevante."
  "Hva er "enkelt-hit bypasser"?": "I noen tilfeller kan en positiv bekreftet forespørsel fortsatt blokkeres som et resultat av signaturfilene, modulene, eller andre forhold i forespørselen, og bypasser kan være nødvendig for å unngå falske positiver. I tilfellet der en bypass er ment å håndtere nøyaktig ett infraksjon, verken mer eller mindre, slik en bypass kan beskrives som en "enkelt-hit bypass"."

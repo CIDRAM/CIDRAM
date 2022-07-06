@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Italian language data for the front-end (last modified: 2022.07.02).
+# This file: Italian language data for the front-end (last modified: 2022.07.03).
 ##/
 
 Extended Description AbuseIPDB module: "Blocca le richieste dagli IP elencati in AbuseIPDB."
@@ -61,6 +61,7 @@ Name Project Honeypot module: "Modulo Project Honeypot"
 Name Referrer spam module: "Modulo spam referrer"
 Name Search engines blocker module: "Modulo bloccante dei motori di ricerca"
 Name Stop Forum Spam module: "Modulo Stop Forum Spam"
+checkbox_label_block_it: "Bloccalo."
 checkbox_label_block_negatives: "Blocca i negativi?"
 checkbox_label_block_nonverified: "Blocca le richieste non verificate?"
 checkbox_label_fields_logs: "Questo campo dovrebbe apparire nelle voci dei registri?"
@@ -202,16 +203,9 @@ config_recaptcha_usemode: *CaptchaUseMode
 config_sfs: "Configurazione per il modulo Stop Forum Spam."
 config_sfs_offer_captcha: "Quando le richieste vengono bloccate da questo modulo, possono essere serviti CAPTCHA. Predefinito = True. Nota: Non sovrascrive altre direttive. Affinché i CAPTCHA vengano serviti, tutte le direttive devono essere d'accordo, le chiavi necessarie configurate, ecc. Nel caso in cui i CAPTCHA possano essere normalmente serviti, l'impostazione di questa direttiva su false fornisce un modo per impedire che i CAPTCHA vengano serviti per richieste bloccate specificamente da questo modulo."
 config_signatures: "Configurazione per firme, file di firma, moduli, ecc."
-config_signatures_block_attacks: "Blocca i CIDR associati ad attacchi e altro traffico anomalo? Ad esempio, scansioni delle porte, hacking, rilevamento di vulnerabilità, ecc. A meno che si sperimentare problemi quando si fa così, generalmente, questo dovrebbe essere sempre impostata su true."
-config_signatures_block_bogons: "Blocca i CIDR bogone/marziano? Se aspetta i collegamenti al suo sito dall'interno della rete locale, da localhost, o dalla LAN, questa direttiva deve essere impostata su false. Se si non aspetta queste tali connessioni, questa direttiva deve essere impostata su true."
-config_signatures_block_cloud: "Blocca i CIDR identificati come appartenente alla servizi webhosting/cloud? Se si utilizza un servizio di API dal suo sito o se si aspetta altri siti a collegare al suo sito, questa direttiva deve essere impostata su false. Se non, questa direttiva deve essere impostata su true."
-config_signatures_block_generic: "Blocca i CIDR generalmente consigliati per la lista nera? Questo copre qualsiasi firme che non sono contrassegnate come parte del qualsiasi delle altre più specifiche categorie di firme."
-config_signatures_block_legal: "Blocca i CIDR in risposta agli obblighi legali? Normalmente, questa direttiva non dovrebbe avere alcun effetto, poiché CIDRAM non associa alcun CIDR a "obblighi legali" per impostazione predefinita, ma esiste comunque come misura di controllo aggiuntiva a vantaggio di eventuali file di firme o moduli personalizzati che potrebbero esistere per motivi legali."
-config_signatures_block_malware: "Blocca i CIDR associati al malware? Ciò include server C&C, macchine infette, macchine coinvolte nella distribuzione di malware, ecc."
-config_signatures_block_proxies: "Blocca i CIDR identificati come appartenente a servizi proxy o VPN? Se si richiede che gli utenti siano in grado di accedere al suo sito web dai servizi proxy o VPN, questa direttiva deve essere impostata su false. Altrimenti, se non hanno bisogno di servizi proxy o VPN, questa direttiva deve essere impostata su true come un mezzo per migliorare la sicurezza."
-config_signatures_block_spam: "Blocca i CIDR identificati come alto rischio per spam? A meno che si sperimentare problemi quando si fa così, generalmente, questo dovrebbe essere sempre impostata su true."
 config_signatures_default_tracktime: "Quanti secondi per tracciare IP vietati dai moduli. Predefinito = 604800 (1 settimana)."
 config_signatures_infraction_limit: "Numero massimo di infrazioni un IP è permesso di incorrere prima di essere vietato dalle tracciamento IP. Predefinito = 10."
+config_signatures_shorthand: "Controlla cosa fare con una richiesta quando c'è una corrispondenza positiva con una firma che utilizza le parole abbreviate fornite."
 config_signatures_tracking_override: "I moduli dovrebbero essere autorizzati a sostituire le opzioni di tracciamento? True = Sì [Predefinito]; False = No."
 config_supplementary_cache_options: "Opzioni di cache supplementari. Nota: La modifica di questi valori potrebbe potenzialmente disconnettersi."
 config_supplementary_cache_options_enable_apcu: "Specifica se provare a utilizzare APCu per la memorizzazione nella cache. Predefinito = True."
@@ -315,6 +309,15 @@ hints_default_dns:
 hints_ipv6_on_32bit: "Nota: Le ricerche IPv6 potrebbero non funzionare correttamente su alcuni sistemi a 32 bit."
 hints_pdo_dsn:
  FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.it.md\#HOW_TO_USE_PDO" hreflang="it">Che cos'è un "DSN PDO"? Come posso usare PDO con CIDRAM?</a></em>"
+hints_shorthand:
+ 0.: "Se il tuo sito web necessita di accesso tramite LAN o localhost, non bloccarlo. Altrimenti, puoi bloccarlo."
+ 1.: "Nessuno dei file di firma predefiniti lo utilizza, ma è comunque supportato nel caso in cui possa essere utile per alcuni utenti."
+ 2.: "Se hai bisogno che gli utenti possano accedere al tuo sito web tramite proxy, non bloccarlo. Altrimenti, puoi bloccarlo."
+ 3.: "L'utilizzo diretto nelle firme non è supportato, ma può essere invocato con altri mezzi in circostanze particolari."
+ 4.: "Si riferisce a casi in cui le parole abbreviate non vengono utilizzate affatto, o non vengono riconosciute da CIDRAM."
+ Uno per firma.: "Una firma può invocare più profili, ma può utilizzare solo una parola abbreviata. È possibile che più parole abbreviate possano essere adatte, ma poiché solo una può essere utilizzata, miriamo a utilizzare sempre solo le più adatte."
+ Priorità.: "Un'opzione selezionata ha sempre la priorità su un'opzione non selezionata. Ad esempio, se sono in gioco più parole abbreviate ma solo una di esse è impostata come bloccata, la richiesta sarà comunque bloccata."
+ Punti finali umani e servizi cloud.: "Il servizio cloud può fare riferimento a provider di web hosting, server farm, data center, o una serie di altre cose. Punto finale umano si riferisce ai mezzi con cui un umano accede a internet, ad esempio tramite un provider di servizi internet. Una rete di solito fornisce solo l'uno o l'altro, ma a volte può fornire entrambi. Miriamo a non identificare mai potenziali punti finali umani come servizi cloud. Pertanto, un servizio cloud può essere identificato come qualcos'altro se il suo gamme è condiviso da punti finali umani noti. Allo stesso modo, miriamo a identificare sempre i servizi cloud, i cui gamme non sono condivisi da alcun punto finale umano noto, come servizi cloud. Pertanto, una richiesta identificata esplicitamente come servizio cloud probabilmente non condivide il suo gamme con nessun punto finale umano noto. Allo stesso modo, una richiesta identificata esplicitamente da attacchi o rischio per lo spam probabilmente li condivide. Tuttavia, internet è sempre in evoluzione, gli scopi delle reti cambiano nel tempo, e le gamme vengono sempre acquistate o vendute, quindi rimani consapevole e vigile riguardo ai falsi positivi."
 hints_verification:
  "Cosa sono "positivi" e "negativi"?": "Nel verificare l'identità presentata da una richiesta, un esito di successo potrebbe essere descritto come "positivo" o "negativo". Nel caso in cui l'identità presentata fosse confermata come la vera identità, sarebbe descritto come "positivo". Nel caso in cui l'identità presentata fosse confermata come falsificata, sarebbe descritto come "negativo". Tuttavia, un esito senza successo (ad esempio, la verifica è fallita, o non è possibile determinare la veridicità dell'identità presentata) non sarebbe descritto come "positivo" o "negativo". Invece, un esito senza successo verrebbe descritto semplicemente come non verificato. Quando non viene effettuato alcun tentativo di verificare l'identità presentata da una richiesta, la richiesta verrebbe ugualmente descritto come non verificato. I termini hanno senso solo nel contesto in cui viene riconosciuta l'identità presentata da una richiesta e, quindi, dove è possibile la verifica. Nei casi in cui l'identità presentata non corrisponda alle opzioni fornite sopra, o in cui non venga presentata alcuna identità, le opzioni sopra fornite diventano irrilevanti."
  "Cosa sono i "bypass a colpo singolo"?": "In alcuni casi, una richiesta verificata positivamente potrebbe comunque essere bloccata a causa dei file di firma, dei moduli, o di altre condizioni della richiesta, e potrebbero essere necessari bypass per evitare falsi positivi. Nel caso in cui un bypass sia destinato a trattare esattamente un'infrazione, né più né meno, tale bypass potrebbe essere descritto come un "bypass a colpo singolo"."

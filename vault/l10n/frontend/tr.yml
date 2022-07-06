@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Turkish language data for the front-end (last modified: 2022.07.02).
+# This file: Turkish language data for the front-end (last modified: 2022.07.03).
 ##/
 
 Extended Description AbuseIPDB module: "AbuseIPDB'de listelenen IP'lerden gelen istekleri engeller."
@@ -61,6 +61,7 @@ Name Project Honeypot module: "Project Honeypot modülü"
 Name Referrer spam module: "Yönlendiren spam modülü"
 Name Search engines blocker module: "Arama motorları engelleyici modülü"
 Name Stop Forum Spam module: "Stop Forum Spam modülü"
+checkbox_label_block_it: "Blokla."
 checkbox_label_block_negatives: "Negatifleri engelle?"
 checkbox_label_block_nonverified: "Doğrulanmamış istekler engelle?"
 checkbox_label_fields_logs: "Bu alan günlük girişlerinde görünmeli mi?"
@@ -202,16 +203,9 @@ config_recaptcha_usemode: *CaptchaUseMode
 config_sfs: "Stop Forum Spam modülü için yapılandırma."
 config_sfs_offer_captcha: "İstekler bu modül tarafından engellendiğinde, CAPTCHA'lar sunulabilir. Varsayılan = True. Not: Diğer yönergeleri geçersiz kılmaz. CAPTCHA'ların sunulması için tüm yönergeler kabul edilmeli, gerekli anahtarlar yapılandırılmalıdır, vb. Normalde CAPTCHA'ların sunulmasına izin verilmesi durumunda, bu yönergeyi false olarak ayarlamak, özellikle bu modül tarafından engellenen istekler için CAPTCHA'ların sunulmasını önlemenin bir yolunu sağlar."
 config_signatures: "İmzalar, imza dosyaları, modüller, vb. için yapılandırma."
-config_signatures_block_attacks: "Saldırılar ve diğer anormal trafikle ilişkili CIDR'leri engelle? Örneğin, bağlantı noktası taramaları, bilgisayar korsanlığı, güvenlik açıklarını araştırma, vb. Bunu yaparken sorun yaşamıyorsanız, genelde bu daima doğruya (true) ayarlanmalıdır."
-config_signatures_block_bogons: "Bogon/martian CIDR'leri engelleyin? Sitenize yerel ağınızdan, yerel hizmet bilgisayarından veya yerel ağınızdan bağlantılar bekliyorsanız, bu yönerge yanlış (false) değerine ayarlanmalıdır. Bu tür bağlantıları beklemiyorsanız, bu yönerge doğru (true) olmalıdır."
-config_signatures_block_cloud: "Webhosting/bulut hizmetlerine ait olarak tanımlanan CIDR'leri engelle? Sitenizden bir API hizmeti işletiyorsanız veya diğer web sitelerinin web sitenize bağlanmasını bekliyorsanız, bu yanlışa (false) ayarlanmalıdır. Aksi takdirde, bu yönergenin doğruya (true) ayarlanması gerekir."
-config_signatures_block_generic: "Çoğu zaman kara liste için tavsiye edilen CIDR'ler engelle? Bu, diğer daha belirgin imza kategorilerinin herhangi birinin parçası olarak işaretlenmeyen tüm imzaları kapsar."
-config_signatures_block_legal: "Yasal yükümlülüklere yanıt olarak CIDR'leri engelleyin? Bu yönerge normalde herhangi bir etkiye sahip olmamalıdır CIDRAM, herhangi bir CIDR'yi varsayılan olarak "yasal yükümlülükler" ile ilişkilendirmediğinden. Ancak, yasal nedenlerden dolayı mevcut olabilecek herhangi bir özel imza dosyasının veya modülünün faydası için ek bir kontrol önlemi olarak mevcuttur."
-config_signatures_block_malware: "Kötü amaçlı yazılımlarla ilişkili CIDR'leri engelle? Buna, C&C sunucuları, virüs bulaşmış makineler, kötü amaçlı yazılım dağıtımında yer alan makineler vb. dahildir."
-config_signatures_block_proxies: "Vekil servisler veya VPN'ler ait olduğu saptanan CIDR'leri engelle? Kullanıcıların, sitenize vekil servislerinden ve VPN'lerinden erişebilmelerini istiyorsanız, bu, yanlışa (false) ayarlanmalıdır. Aksi takdirde, vekil servisler veya VPN'ler gereksinim duymuyorsanız, bu yönergenin güvenliği artırmak için doğruya (true) ayarlanması gerekir."
-config_signatures_block_spam: "Yüksek riskli çöp posta olarak sahtanan CIDR'leri enğelle? Bunu yaparken sorun yaşamıyorsanız, genelde bu daima doğruya (true) ayarlanmalıdır."
 config_signatures_default_tracktime: "Modüller tarafından yasaklanan IP'leri izlemek için kaç saniye. Varsayılan = 604800 (1 hafta)."
 config_signatures_infraction_limit: "IP izlemesi tarafından yasaklanmadan önce bir IPnin uğrayacağı maksimum ihlal sayısı. Varsayılan = 10."
+config_signatures_shorthand: "Verilen kısa sözcükleri kullanan bir imzayla olumlu bir eşleşme olduğunda bir istekle ne yapılacağını kontrol eder."
 config_signatures_tracking_override: "Modüllerin izleme seçeneklerini geçersiz kılmasına izin verilsin mi? Doğru/True = Evet [Varsayılan]; Yanlış/False = Hayır."
 config_supplementary_cache_options: "Ek önbellek seçenekleri. Not: Bu değerlerin değiştirilmesi, oturumunuzu kapatmanıza neden olabilir."
 config_supplementary_cache_options_enable_apcu: "Önbelleğe almak için APCu kullanmaya çalışılıp kullanılmayacağını belirtir. Varsayılan = True."
@@ -315,6 +309,15 @@ hints_default_dns:
 hints_ipv6_on_32bit: "Not: IPv6 aramaları bazı 32 bit sistemlerde düzgün çalışmayabilir."
 hints_pdo_dsn:
  FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#HOW_TO_USE_PDO" hreflang="en-AU">"PDO DSN" nedir? PDO'yu CIDRAM ile nasıl kullanabilirim?</a></em>"
+hints_shorthand:
+ 0.: "Web sitenize LAN veya localhost üzerinden erişim gerekiyorsa, bunu engellemeyin. Aksi takdirde, bunu engelleyebilirsiniz."
+ 1.: "Varsayılan imza dosyalarının hiçbiri bunu kullanmaz, ancak yine de bazı kullanıcılar için yararlı olabileceği ihtimaline karşı desteklenir."
+ 2.: "Kullanıcıların proxy'ler aracılığıyla web sitenize erişmesine ihtiyacınız varsa, bunu engellemeyin. Aksi takdirde, bunu engelleyebilirsiniz."
+ 3.: "İmzalarda doğrudan kullanım desteklenmez, ancak belirli durumlarda başka yollarla çağrılabilir."
+ 4.: "Kısa sözcüklerin hiç kullanılmadığı veya CIDRAM tarafından tanınmadığı durumları ifade eder."
+ İmza başına bir tane.: "Bir imza, birden çok profili çağırabilir, ancak yalnızca bir kısa sözcüğü kullanabilir. Birden fazla kısa sözcüğün uygun olması mümkündür, ancak yalnızca biri kullanılabildiğinden, her zaman yalnızca en uygun olanı kullanmayı amaçlıyoruz."
+ Öncelik.: "Seçilmiş bir seçenek her zaman seçilmemiş bir seçenek göre önceliklidir. Örneğin, birden fazla kısa sözcüğü oyundaysa ancak bunlardan yalnızca biri engellenmiş olarak ayarlanmışsa, istek yine de engellenecektir."
+ İnsan uç noktaları ve bulut hizmetleri.: "Bulut hizmeti, web barındırma sağlayıcılarına, sunucu çiftliklerine, veri merkezlerine, veya bir dizi başka şeye atıfta bulunabilir. İnsan uç noktası, bir insanın internete (örneğin, bir internet servis sağlayıcısı aracılığıyla) erişmesi anlamına gelir. Bir ağ genellikle yalnızca birini veya diğerini sağlar, ancak bazen ikisini birden sağlayabilir. Potansiyel insan uç noktalarını asla bulut hizmetleri olarak tanımlamamayı hedefliyoruz. Bu nedenle, aralığı bilinen insan uç noktaları tarafından paylaşılıyorsa, bir bulut hizmeti başka bir şey olarak tanımlanabilir. Aynı şekilde, aralıkları bilinen hiçbir insan uç noktası tarafından paylaşılmayan bulut hizmetlerini her zaman bulut hizmetleri olarak tanımlamayı hedefliyoruz. Bu nedenle, bulut hizmeti olarak tanımlanan bir istek, muhtemelen aralığını bilinen herhangi bir insan uç noktasıyla paylaşmaz. Aynı şekilde, saldırılar veya istenmeyen eposta riski tarafından tanımlanan bir istek muhtemelen bunları paylaşır. Bununla birlikte, internet her zaman akış halindedir, ağların amaçları zamanla değişir, ve aralıklar her zaman alınır ve satılır, bu nedenle yanlış pozitifler konusunda bilinçli ve tetikte olun."
 hints_verification:
  ""Pozitifleri" ve "negatifleri" nedir?": "Bir talep tarafından sunulan kimliği doğrularken, başarılı bir sonuç "pozitif" veya "negatif" olarak tanımlanabilir. Sunulan kimliğin gerçek kimlik olduğu teyit edildiğinde, "pozitif" olarak tanımlanacaktır. Sunulan kimliğin sahte olduğu onaylandığında, "negatif" olarak tanımlanacaktır. Ancak, başarısız bir sonuç (örneğin, doğrulama başarısız olur, veya sunulan kimliğin doğruluğu belirlenemez) "pozitif" veya "negatif" olarak tanımlanmaz. Bunun yerine, başarısız bir sonuç basitçe doğrulanmamış olarak tanımlanır. Bir talep tarafından sunulan kimliği doğrulamak için hiçbir girişimde bulunulmadığında, talep de aynı şekilde doğrulanmamış olarak tanımlanır. Terimler, yalnızca bir talep tarafından sunulan kimliğin tanındığı ve dolayısıyla doğrulamanın mümkün olduğu bağlamda anlamlıdır. Sunulan kimlik, yukarıda belirtilen seçeneklerle eşleşmiyorsa veya herhangi bir kimlik sunulmuyorsa, yukarıda verilen seçenekler alakasız hale gelir."
  ""Tek vuruşlu bypasslari" nedir?": "Bazı durumlarda, imza dosyaları, modüller, veya isteğin diğer koşulları nedeniyle olumlu doğrulanmış bir istek yine de engellenebilir, ve yanlış pozitifleri önlemek için bypasslar gerekli olabilir. Bir bypass, tam olarak bir ihlalle başa çıkmak için amaçlandığında, ne eksik ne fazla, böyle bir bypass "tek vuruşlu bypass" olarak tanımlanabilir."

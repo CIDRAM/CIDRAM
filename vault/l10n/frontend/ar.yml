@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Arabic language data for the front-end (last modified: 2022.07.02).
+# This file: Arabic language data for the front-end (last modified: 2022.07.03).
 ##/
 
 Extended Description AbuseIPDB module: "بحظر الطلبات من عناوين IP المدرجة في AbuseIPDB."
@@ -61,6 +61,7 @@ Name Project Honeypot module: "Project Honeypot المكون"
 Name Referrer spam module: "المكون للإحالة البريد المزعج"
 Name Search engines blocker module: "وحدة مانع محركات البحث"
 Name Stop Forum Spam module: "Stop Forum Spam المكون"
+checkbox_label_block_it: "منعه."
 checkbox_label_block_negatives: "حظر السلبيات؟"
 checkbox_label_block_nonverified: "حظر الطلبات التي لم يتم التحقق منها؟"
 checkbox_label_fields_logs: "هل يجب أن يظهر هذا الحقل في إدخالات السجل؟"
@@ -202,16 +203,9 @@ config_recaptcha_usemode: *CaptchaUseMode
 config_sfs: "التكوين للوحدة Stop Forum Spam."
 config_sfs_offer_captcha: "عندما يتم حظر الطلبات بواسطة هذه الوحدة، قد يتم تقديم كابتشا. افتراضي = True. ملاحظة: لا يتم تجاوز التوجيهات الأخرى. لكي يتم تقديم اختبارات كابتشا، يجب أن توافق جميع التوجيهات، ويتم تكوين المفاتيح الضرورية، وما إلى ذلك. في حالة السماح عادةً بتقديم اختبارات كابتشا، فإن تعيين هذا التوجيه على false يوفر طريقة لمنع تقديم كابتشا للطلبات المحظورة على وجه التحديد بواسطة هذه الوحدة."
 config_signatures: "التكوين للتوقيعات، ملفات التوقيع، الوحدات النمطية، إلخ."
-config_signatures_block_attacks: "منع CIDRs المرتبطة بالهجمات وحركة المرور غير الطبيعية الأخرى؟ على سبيل المثال، عمليات فحص المنافذ والقرصنة والتحقيق في نقاط الضعف، وما إلى ذلك. عندما يكون ذلك ممكنا، عموما، وهذا ينبغي دائما أن يتم تعيين إلى true."
-config_signatures_block_bogons: "منع CIDRs المريخ/bogon؟ إذا كنت تتوقع اتصالات إلى موقع الويب الخاص بك من خلال الشبكة المحلية، هذا يجب أن يتم تعيين إلى false. ان لم، هذا يجب أن يتم تعيين إلى true."
-config_signatures_block_cloud: "منع CIDRs التي تم تحديدها على أنها تنتمي إلى خدمات سحابية/الاستضافة؟ إذا كنت تعمل على خدمة API من موقع الويب الخاص بك، أو إذا كنت تتوقع مواقع أخرى للاتصال موقع الويب الخاص بك، هذا يجب أن يتم تعيين إلى false. إذا لم تقم بذلك، ثم، فإنه يجب تعيين إلى true."
-config_signatures_block_generic: "منع CIDRs الموصى بها عموما للالقائمة السوداء؟ وهذا يشمل أي التوقيعات التي ليست جزءا من الفئات الأخرى."
-config_signatures_block_legal: "منع CIDRs ردا على الالتزامات القانونية؟ لا يجب أن يكون لهذا التوجيه عادة أي تأثير، لأن CIDRAM لا تربط أي CIDR مع "التزامات قانونية"، ولكنها موجودة كإجراء تحكم إضافي لصالح أي ملفات أو وحدات توقيع مخصصة قد تكون موجودة لأسباب قانونية."
-config_signatures_block_malware: "منع CIDRs المرتبطة بالبرامج الضارة؟ وهذا يشمل خوادم C&C، والآلات المصابة، والآلات المستخدمة في توزيع البرامج الضارة، وما إلى ذلك."
-config_signatures_block_proxies: "منع CIDRs التي تم تحديدها على أنها تنتمي إلى خدمات وكيل أو شبكات VPN؟ إذا كنت تحتاج إلى أن يكون المستخدمون قادرين على الوصول إلى موقع الويب الخاص بك من خدمات بروكسي أو شبكات VPN، هذا يجب أن يتم تعيين إلى false. ان لم، هذا يجب تعيين إلى true كوسيلة لتحسين الأمن."
-config_signatures_block_spam: "منع CIDRs التي تم تحديدها على أنها مخاطر البريد المزعج؟ عندما يكون ذلك ممكنا، عموما، وهذا ينبغي دائما أن يتم تعيين إلى true."
 config_signatures_default_tracktime: "كم ثانية لتعقب IP حظرت من قبل وحدات. افتراضي = 604800 (1 أسبوع)."
 config_signatures_infraction_limit: "يسمح الحد الأقصى لعدد المخالفات IP يمكن أن تتكبد قبل أن يتم حظره من قبل تتبع IP. افتراضي = 10."
+config_signatures_shorthand: "ضوابط لما يجب فعله بالطلب عندما يكون هناك تطابق إيجابي مع توقيع يستخدم الكلمات المختصرة المحددة."
 config_signatures_tracking_override: "هل تسمح للوحدات النمطية بتجاوز خيارات التتبع؟ صحيح/True = نعم [افتراضي]؛ زائفة/False = لا."
 config_supplementary_cache_options: "خيارات ذاكرة التخزين المؤقت التكميلية. ملاحظة: قد يؤدي تغيير هذه القيم إلى تسجيل خروجك."
 config_supplementary_cache_options_enable_apcu: "يحدد هذا ما إذا كنت تريد استخدام APCu للتخزين المؤقت. افتراضي = True (صحيح)."
@@ -315,6 +309,15 @@ hints_default_dns:
 hints_ipv6_on_32bit: "ملاحظة: قد لا تعمل عمليات بحث IPv6 بشكل صحيح على بعض أنظمة 32 بت."
 hints_pdo_dsn:
  FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.ar.md\#HOW_TO_USE_PDO" hreflang="ar">ما هو "PDO DSN"؟ كيف يمكنني استخدام PDO مع CIDRAM؟</a></em>"
+hints_shorthand:
+ 0.: "If your website needs access via LAN or localhost, don't block this. Otherwise though, you can block this."
+ 1.: "The standard signature files don't use this, but it remains supported in case it might be useful for some users."
+ 2.: "If you need users to be able to access your website via proxies, don't block this. Otherwise though, you can block this."
+ 3.: "Direct usage within signatures isn't supported, but it may be invoked by other means in particular circumstances."
+ 4.: "Refers to cases where shorthand words aren't used at all, or aren't recognised by CIDRAM."
+ One per signature.: "A signature may invoke multiple profiles, but can use only one shorthand word. It's possible that multiple shorthand words may be suitable, but as only one can be used, we aim to always use only the most suitable."
+ Priority.: "An option selected always takes priority over an option not selected. E.g., if multiple shorthand words are in play but only one of them is set as being blocked, the request will still be blocked."
+ Human endpoints and cloud services.: "Cloud service may refer to webhosting providers, server farms, data centers, or a number of other things. Human endpoint refers to the means by which a human accesses the internet, such as by way of an internet service provider. A network usually provides just one or the other, but may sometimes provide both. We aim to never identify potential human endpoints as cloud services. Therefore, a cloud service may be identified as something else if its range is shared by known human endpoints. Likewise, we aim to always identify cloud services, whose ranges are not shared by any known human endpoints, as cloud services. Therefore, a request identified explicitly as a cloud service probably doesn't share its range with any known human endpoints. Likewise, a request identified explicitly by attacks or spam probably does share them. However, the internet is always in flux, the purposes of networks changes over time, and ranges are always being bought or sold, so remain cognisant and vigilant in regards to false positives."
 hints_verification:
  "ما هي "الإيجابيات" و "السلبيات"؟": "عند التحقق من الهوية المقدمة من خلال الطلب، يمكن وصف النتيجة الناجحة بأنها "إيجابية" أو "سلبية". عندما يتم التأكد من أن الهوية المقدمة هي الهوية الحقيقية، فإنها توصف بأنها "إيجابية". عندما يتم التأكد من تزوير الهوية المقدمة، توصف بأنها "سلبية". ومع ذلك، فإن النتيجة غير الناجحة (على سبيل المثال، فشل التحقق، أو عدم إمكانية تحديد صحة الهوية المقدمة) لن يتم وصفها بأنها "إيجابية" أو "سلبية". بدلاً من ذلك، يمكن وصف النتيجة غير الناجحة ببساطة بأنها لم يتم التحقق منها. عندما لا يتم إجراء أي محاولة للتحقق من الهوية المقدمة من خلال طلب ما، فسيتم وصف الطلب بالمثل بأنه لم يتم التحقق منه. لا تكون المصطلحات منطقية إلا في السياق الذي يتم فيه التعرف على الهوية المقدمة من خلال الطلب، وبالتالي، حيث يكون التحقق ممكنًا. إذا كانت الهوية المقدمة لا تتطابق مع الخيارات المذكورة أعلاه، أو إذا لم يتم تقديم هوية، فإن الخيارات المقدمة أعلاه تصبح غير ملائمة."
  "ما هي "التجاوزات بضربة واحدة"؟": "في بعض الحالات، قد يظل طلب التحقق الإيجابي محظورًا نتيجة لملفات التوقيع أو الوحدات النمطية أو الشروط الأخرى للطلب، وقد تكون التجاوزات ضرورية لتجنب الإيجابيات الخاطئة. عندما يكون القصد من التجاوز التعامل مع مخالفة واحدة بالضبط، لا أكثر ولا أقل، يمكن وصف هذا التجاوز بأنه "التجاوزات بضربة واحدة"."

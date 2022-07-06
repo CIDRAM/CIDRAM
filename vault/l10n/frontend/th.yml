@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Thai language data for the front-end (last modified: 2022.07.02).
+# This file: Thai language data for the front-end (last modified: 2022.07.03).
 ##/
 
 Extended Description AbuseIPDB module: "บล็อกคำขอจาก IP ที่แสดงรายการไว้ที่ AbuseIPDB."
@@ -61,6 +61,7 @@ Name Project Honeypot module: "โมดูล Project Honeypot"
 Name Referrer spam module: "โมดูลสแปมผู้อ้างอิง"
 Name Search engines blocker module: "โมดูลตัวบล็อกเครื่องมือค้นหา"
 Name Stop Forum Spam module: "โมดูล Stop Forum Spam"
+checkbox_label_block_it: "บล็อคเลย."
 checkbox_label_block_negatives: "บล็อกเชิงลบ?"
 checkbox_label_block_nonverified: "บล็อกคำขอที่ไม่ได้รับการยืนยันใช่ไหม?"
 checkbox_label_fields_logs: "ช่องนี้ควรปรากฏในรายการบันทึกหรือไม่?"
@@ -202,16 +203,9 @@ config_recaptcha_usemode: *CaptchaUseMode
 config_sfs: "การกำหนดค่าสำหรับโมดูล Stop Forum Spam."
 config_sfs_offer_captcha: "เมื่อคำขอถูกบล็อกโดยโมดูลนี้ อาจให้บริการ CAPTCHA. ค่าเริ่มต้น = True. หมายเหตุ: ไม่แทนที่คำสั่งอื่นๆ. เพื่อให้ใช้ CAPTCHA ได้ การกำหนดค่าทั้งหมดต้องยอมรับ กำหนดค่าคีย์ที่จำเป็น ฯลฯ. การตั้งค่าคำสั่งนี้เป็น false จะเป็นวิธีการป้องกันไม่ให้ CAPTCHA ถูกให้บริการสำหรับคำขอที่ถูกบล็อกโดยโมดูลนี้โดยเฉพาะ."
 config_signatures: "การกำหนดค่าสำหรับลายเซ็น, ไฟล์ลายเซ็น, โมดูล, ฯลฯ."
-config_signatures_block_attacks: "บล็อก CIDR ที่เกี่ยวข้องกับการโจมตีและการรับส่งข้อมูลที่ผิดปกติอื่น ๆ หรือไม่? เช่น การสแกนพอร์ต การแฮ็ก การตรวจหาช่องโหว่ เป็นต้น. จนกว่าคุณจะประสบปัญหาเมื่อทำเช่นนั้น โดยทั่วไป ควรตั้งค่าเป็น true เสมอ."
-config_signatures_block_bogons: "ปิดกั้น CIDR bogon/ชาวอังคาร? หากคุณคาดหวังว่าจะเชื่อมต่อกับเว็บไซต์ของคุณจากภายในเครือข่ายท้องถิ่นของคุณ จาก localhost หรือจาก LAN ของคุณ คำสั่งนี้ควรตั้งค่าเป็น false. มิฉะนั้น ถ้าคุณไม่คาดหวังการเชื่อมต่อเหล่านี้ คำสั่งนี้ควรตั้งค่าเป็น true."
-config_signatures_block_cloud: "ปิดกั้น CIDR เป็นของ webhosting หรือบริการคลาวด์? ถ้าคุณทำงานบริการ API จากเว็บไซต์ของคุณหรือถ้าคุณคาดหวังเว็บไซต์อื่นเพื่อเชื่อมต่อกับเว็บไซต์ของคุณ คำสั่งนี้ควรตั้งค่าเป็น false. มิฉะนั้น คำสั่งนี้ควรตั้งค่าเป็น true."
-config_signatures_block_generic: "ปิดกั้น CIDR ที่อยู่ในบัญชีดำ? นี้ครอบคลุมลายเซ็นใดไม่ได้ทำเครื่องหมายของหมวดหมู่ที่เฉพาะเจาะจง."
-config_signatures_block_legal: "ปิดกั้น CIDR เพื่อตอบสนองต่อข้อผูกมัดทางกฎหมายหรือไม่? คำสั่งนี้ไม่ควรได้ตามปกติมีผลใด ๆ เนื่องจาก CIDRAM ไม่ได้เชื่อมโยง CIDR กับ "ข้อผูกมัดทางกฎหมาย" ตามค่าเริ่มต้น แต่ยังคงมีอยู่เป็นมาตรการควบคุมเพิ่มเติมเพื่อประโยชน์ของไฟล์ลายเซ็นที่กำหนดเองหรือโมดูลที่อาจมีเหตุผลทางกฎหมาย."
-config_signatures_block_malware: "ปิดกั้น CIDR ที่เกี่ยวข้องกับมัลแวร์หรือไม่? ซึ่งรวมถึงเซิร์ฟเวอร์ C&C เครื่องที่ติดเชื้อ เครื่องที่เกี่ยวข้องกับการแจกจ่ายมัลแวร์ ฯลฯ."
-config_signatures_block_proxies: "ปิดกั้น CIDR ที่ระบุว่าเป็นของบริการพร็อกซีหรือ VPN หรือไม่? หากผู้ใช้ของคุณต้องการเข้าถึงเว็บไซต์ของคุณจากบริการพร็อกซีและ VPN ควรตั้งค่าเป็น false. มิฉะนั้น ถ้าคุณไม่ต้องการบริการพร็อกซี่หรือ VPN ควรตั้งค่าเป็น true เพื่อเพิ่มความปลอดภัย."
-config_signatures_block_spam: "ปิดกั้น CIDR ที่เกี่ยวข้องกับสแปมหรือไม่? จนกว่าคุณจะประสบปัญหาเมื่อทำเช่นนั้น โดยทั่วไป ควรตั้งค่าเป็น true เสมอ."
 config_signatures_default_tracktime: "เท่าไหร่วินาทีที่การติดตาม IP ที่ห้ามโดยโมดูล? ค่าเริ่มต้น = 604800 (1 สัปดาห์)."
 config_signatures_infraction_limit: "จำนวนสูงสุดของการละเมิดที่ IP ได้รับอนุญาตให้เกิดขึ้นก่อนที่จะถูกห้ามโดยการติดตาม IP. ค่าเริ่มต้น = 10."
+config_signatures_shorthand: "ควบคุมว่าจะทำอย่างไรกับคำขอเมื่อมีการจับคู่เชิงบวกกับลายเซ็นซึ่งใช้คำชวเลขที่ระบุ."
 config_signatures_tracking_override: "อนุญาตให้โมดูลแทนที่ตัวเลือกการติดตามหรือไม่? True = หยุดใช้ [ค่าเริ่มต้น]; False = ไม่หยุดใช้."
 config_supplementary_cache_options: "ตัวเลือกแคชเสริม. หมายเหตุ: การเปลี่ยนแปลงค่าเหล่านี้อาจทำให้คุณออกจากระบบได้."
 config_supplementary_cache_options_enable_apcu: "สิ่งนี้ระบุว่าจะใช้ APCu สำหรับการแคชหรือไม่. ค่าเริ่มต้น = True."
@@ -315,6 +309,15 @@ hints_default_dns:
 hints_ipv6_on_32bit: "หมายเหตุ: การค้นหา IPv6 อาจทำงานไม่ถูกต้องบนระบบ 32 บิตบางระบบ."
 hints_pdo_dsn:
  คำถามที่พบบ่อย.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#HOW_TO_USE_PDO" hreflang="en-AU">"PDO DSN" คืออะไร? ฉันจะใช้ PDO กับ CIDRAM ได้อย่างไร?</a></em>"
+hints_shorthand:
+ 0.: "If your website needs access via LAN or localhost, don't block this. Otherwise though, you can block this."
+ 1.: "The standard signature files don't use this, but it remains supported in case it might be useful for some users."
+ 2.: "If you need users to be able to access your website via proxies, don't block this. Otherwise though, you can block this."
+ 3.: "Direct usage within signatures isn't supported, but it may be invoked by other means in particular circumstances."
+ 4.: "Refers to cases where shorthand words aren't used at all, or aren't recognised by CIDRAM."
+ One per signature.: "A signature may invoke multiple profiles, but can use only one shorthand word. It's possible that multiple shorthand words may be suitable, but as only one can be used, we aim to always use only the most suitable."
+ Priority.: "An option selected always takes priority over an option not selected. E.g., if multiple shorthand words are in play but only one of them is set as being blocked, the request will still be blocked."
+ Human endpoints and cloud services.: "Cloud service may refer to webhosting providers, server farms, data centers, or a number of other things. Human endpoint refers to the means by which a human accesses the internet, such as by way of an internet service provider. A network usually provides just one or the other, but may sometimes provide both. We aim to never identify potential human endpoints as cloud services. Therefore, a cloud service may be identified as something else if its range is shared by known human endpoints. Likewise, we aim to always identify cloud services, whose ranges are not shared by any known human endpoints, as cloud services. Therefore, a request identified explicitly as a cloud service most likely doesn't share its range with any known human endpoints. Likewise, a request identified explicitly by attacks or spam most likely does share them. However, the internet is always in flux, the purposes of networks changes over time, and ranges are always being bought or sold, so remain cognisant and vigilant in regards to false positives."
 hints_verification:
  ""ผลบวก" และ "เชิงลบ" คืออะไร?": "เมื่อตรวจสอบตัวตนที่แสดงโดยคำขอ ผลลัพธ์ที่ประสบความสำเร็จสามารถอธิบายได้ว่าเป็น "ผลบวก" หรือ "เชิงลบ". เมื่อตัวตนที่นำเสนอได้รับการยืนยันว่าเป็นตัวตนที่แท้จริง จะถูกอธิบายว่าเป็น "ผลบวก". เมื่อข้อมูลประจำตัวที่แสดงได้รับการยืนยันว่าเป็นเท็จ จะถูกอธิบายว่าเป็น "เชิงลบ". อย่างไรก็ตาม ผลลัพธ์ที่ไม่ประสบความสำเร็จจะไม่ถูกอธิบายว่าเป็น "ผลบวก" หรือ "เชิงลบ". ผลลัพธ์ดังกล่าวจะถูกอธิบายว่าไม่ได้รับการยืนยัน. เมื่อไม่มีการพยายามยืนยันตัวตนที่แสดงโดยคำขอ คำขอจะถูกอธิบายว่าไม่ได้รับการยืนยันเช่นเดียวกัน. คำนี้มีความหมายเฉพาะในบริบทที่การระบุตัวตนที่แสดงนั้นเป็นที่ยอมรับและตรวจสอบได้. หากข้อมูลประจำตัวที่แสดงไม่ตรงกับตัวเลือกที่ให้ไว้ด้านบน หรือหากไม่มีการแสดงข้อมูลประจำตัว ตัวเลือกที่ให้ไว้ด้านบนจะไม่เกี่ยวข้อง."
  ""บายพาสแบบตีเดียว" คืออะไร?": "ในบางกรณี คำขอที่ยืนยันแล้วในเชิงบวกอาจยังคงถูกบล็อกเนื่องจากไฟล์ลายเซ็น โมดูล หรือเงื่อนไขอื่นๆ ของคำขอ และอาจจำเป็นต้องบายพาสเพื่อหลีกเลี่ยงผลบวกที่ผิดพลาด. เมื่อบายพาสมีวัตถุประสงค์เพื่อจัดการกับการละเมิดเพียงครั้งเดียว การเลี่ยงผ่านดังกล่าวสามารถอธิบายได้ว่าเป็น "บายพาสแบบตีเดียว"."

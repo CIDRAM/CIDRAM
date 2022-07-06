@@ -550,6 +550,36 @@ Config Defaults:
    type: "bool"
    default: false
  signatures:
+  shorthand:
+   type: "checkbox"
+   default: |
+    Attacks:Block
+    Cloud:Block
+    Generic:Block
+    Legal:Block
+    Malware:Block
+    Spam:Block
+    Other:Block
+   labels:
+    Block: "checkbox_label_block_it"
+   choices:
+    Attacks: "Short_Attacks"
+    Bogon: "⁰ {Short_Bogon}"
+    Cloud: "Short_Cloud"
+    Generic: "Short_Generic"
+    Legal: "¹ {Short_Legal}"
+    Malware: "Short_Malware"
+    Proxy: "² {Short_Proxy}"
+    Spam: "Short_Spam"
+    Banned: "³ {Short_Banned}"
+    BadIP: "³ {Short_BadIP}"
+    RL: "³ {Short_RL}"
+    Other: "⁴ {label_other}"
+   nonsense: |
+    Banned:Block
+    BadIP:Block
+    RL:Block
+   hints: "hints_shorthand"
   block_attacks:
    type: "bool"
    default: true

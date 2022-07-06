@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Tamil language data for the front-end (last modified: 2022.07.02).
+# This file: Tamil language data for the front-end (last modified: 2022.07.03).
 ##/
 
 Extended Description AbuseIPDB module: "AbuseIPDBஇல் பட்டியலிடப்பட்ட ஐபி முகவரிகளிடமிருந்து கோரிக்கைகளைத் தடுக்கிறது."
@@ -61,6 +61,7 @@ Name Project Honeypot module: "Project Honeypot தொகுதி"
 Name Referrer spam module: "குறிப்பு ஸ்பேம் தொகுதி"
 Name Search engines blocker module: "தேடுபொறிகள் தடுப்பான் தொகுதி"
 Name Stop Forum Spam module: "Stop Forum Spam தொகுதி"
+checkbox_label_block_it: "அதை தடு."
 checkbox_label_block_negatives: "எதிர்மறைகளைத் தடுக்கவா?"
 checkbox_label_block_nonverified: "சரிபார்க்கப்படாத கோரிக்கைகளைத் தடுக்கவா?"
 checkbox_label_fields_logs: "பதிவு உள்ளீடுகளில் இந்தப் புலம் தோன்ற வேண்டுமா?"
@@ -202,16 +203,9 @@ config_recaptcha_usemode: *CaptchaUseMode
 config_sfs: "Stop Forum Spam தொகுதிக்கான உள்ளமைவு."
 config_sfs_offer_captcha: "இந்த தொகுதி மூலம் கோரிக்கைகள் தடுக்கப்படும் போது, CAPTCHAகள் வழங்கப்படலாம். இயல்புநிலை = True. குறிப்பு: மற்ற வழிமுறைகள் மீறாது. CAPTCHAகள் வழங்கப்படுவதற்கு, அனைத்து வழிமுறைகள் ஒப்புக்கொள்ளப்பட வேண்டும், தேவையான விசைகள் உள்ளமைக்கப்பட வேண்டும். CAPTCHAகள் வழங்க அனுமதிக்கப்படும் பட்சத்தில், இந்த வழிமுறைகள் false என அமைப்பது, குறிப்பாக இந்த தொகுதியால் தடுக்கப்பட்ட கோரிக்கைகளுக்கு CAPTCHAகள் வழங்கப்படுவதைத் தடுப்பதற்கான வழியை வழங்குகிறது."
 config_signatures: "கையொப்பங்கள், கையொப்பம் கோப்புகள், தொகுதிகள், போன்றவற்றுக்கான உள்ளமைவு."
-config_signatures_block_attacks: "தாக்குதல்கள் மற்றும் பிற அசாதாரண போக்குவரத்துடன் தொடர்புடைய CIDRகளைத் தடுக்க வேண்டுமா? எ.கா., போர்ட் ஸ்கேன், ஹேக்கிங், பாதிப்புகளை ஆய்வு செய்தல், போன்றவை. பொதுவாக, இது எப்போதும் true என்று அமைக்கப்பட வேண்டும். ஆனால், அதில் ஏதேனும் சிக்கல்கள் ஏற்பட்டால் அதை false என்று அமைக்க வேண்டும்."
-config_signatures_block_bogons: "போகன் CIDRகள் தடுக்க வேண்டுமா? உங்கள் உள்ளூர் நெட்வொர்க்கிலிருந்து, localhostலிருந்து, அல்லது உங்கள் LANலிருந்து உங்கள் வலைத்தளத்திற்கான இணைப்புகளை நீங்கள் எதிர்பார்க்கிறீர்கள் என்றால், இந்த உத்தரவு false அமைக்கப்பட வேண்டும். இதுபோன்ற இணைப்புகளை நீங்கள் எதிர்பார்க்கவில்லை என்றால், இந்த உத்தரவு true என அமைக்கப்பட வேண்டும்."
-config_signatures_block_cloud: "வெப் ஹோஸ்டிங் அல்லது கிளவுட் சேவைகளுக்கு சொந்தமானவை என அடையாளம் காணப்பட்ட CIDRகளைத் தடுக்க வேண்டுமா? உங்கள் வலைத்தளத்திலிருந்து API சேவையை இயக்கினால் அல்லது பிற வலைத்தளங்கள் உங்கள் வலைத்தளத்துடன் இணைக்கப்படும் என்று நீங்கள் எதிர்பார்க்கிறீர்கள் என்றால், இது false என்று அமைக்கப்பட வேண்டும். இல்லையென்றால், இந்த உத்தரவு true என்று அமைக்கப்பட வேண்டும்."
-config_signatures_block_generic: "தடுப்பு பட்டியலுக்கு பொதுவாக பரிந்துரைக்கப்பட்ட CIDRகளைத் தடுக்க வேண்டுமா? இது வேறு எந்த குறிப்பிட்ட கையொப்ப வகைகளின் ஒரு பகுதியாக குறிக்கப்படாத எந்த கையொப்பங்களையும் உள்ளடக்கியது."
-config_signatures_block_legal: "சட்டப்பூர்வ கடமைகளுக்கு பதிலளிக்கும் வகையில் CIDRகளைத் தடுக்க வேண்டுமா? இந்த உத்தரவு பொதுவாக எந்த விளைவையும் ஏற்படுத்தக் கூடாது, ஏனெனில் CIDRAM எந்த CIDRகளையும் முன்னிருப்பாக "சட்டபூர்வமான கடமைகளுடன்" தொடர்புபடுத்தாது, ஆயினும்கூட, சட்டப்பூர்வ காரணங்களுக்காக இருக்கக்கூடிய எந்தவொரு தனிப்பயன் கையொப்பக் கோப்புகள் அல்லது தொகுதிகளின் நன்மைக்கான கூடுதல் கட்டுப்பாட்டு நடவடிக்கையாக இது உள்ளது."
-config_signatures_block_malware: "தீம்பொருளுடன் தொடர்புடைய CIDRகள் தடுக்க வேண்டுமா? C&C சேவையகங்கள், பாதிக்கப்பட்ட இயந்திரங்கள், தீம்பொருள் விநியோகத்தில் ஈடுபடும் இயந்திரங்கள், போன்றவை இதில் அடங்கும்."
-config_signatures_block_proxies: "ப்ராக்ஸி சேவைகளைச் சேர்ந்தவர்கள் அல்லது VPNகளைச் சேர்ந்தவர்கள் என அடையாளம் காணப்பட்ட CIDRகளைத் தடுக்க வேண்டுமா? பயனர்கள் உங்கள் வலைத்தளத்தை ப்ராக்ஸி சேவைகள் மற்றும் VPNகளில் இருந்து அணுக முடியும் வேண்டும் என்றால், இந்த உத்தரவு false என அமைக்கப்பட வேண்டும். ப்ராக்ஸி சேவைகள் மற்றும் VPNகள் தேவையில்லை என்றால், பாதுகாப்பை மேம்படுத்துவதற்கான வழிமுறையாக இந்த உத்தரவு true என அமைக்கப்பட வேண்டும்."
-config_signatures_block_spam: "அதிக ஸ்பேம் ஆபத்து என அடையாளம் காணப்பட்ட CIDRகளைத் தடுக்க வேண்டுமா? பொதுவாக, இது எப்போதும் true என்று அமைக்கப்பட வேண்டும். ஆனால், அதில் ஏதேனும் சிக்கல்கள் ஏற்பட்டால் அதை false என்று அமைக்க வேண்டும்."
 config_signatures_default_tracktime: "தொகுதிகள் தடைசெய்த ஐபிக்களைக் கண்காணிக்க எத்தனை வினாடிகள். இயல்புநிலை = 604800 (1 வாரம்)."
 config_signatures_infraction_limit: "ஐபி கண்காணிப்பால் தடைசெய்யப்படுவதற்கு முன்னர் அதிகபட்ச எண்ணிக்கையிலான மீறல்கள் ஐபி ஏற்பட அனுமதிக்கப்படுகிறது. இயல்புநிலை = 10."
+config_signatures_shorthand: "கொடுக்கப்பட்ட சுருக்கெழுத்துச் சொற்களைப் பயன்படுத்தும் கையொப்பத்திற்கு நேர்மறைப் பொருத்தம் இருக்கும்போது கோரிக்கையை என்ன செய்வது என்பதைக் கட்டுப்படுத்துகிறது."
 config_signatures_tracking_override: "கண்காணிப்பு விருப்பங்களை மாற்ற தொகுதிகள் அனுமதிக்கவா? True (உண்மை) = ஆம் [இயல்புநிலை]; False (தவறான) = இல்லை."
 config_supplementary_cache_options: "தற்காலிக சேமிப்புக்கான துணை விருப்பங்கள். குறிப்பு: இந்த மதிப்புகளை மாற்றுவது உங்களை வெளியேற்றும் வாய்ப்புள்ளது."
 config_supplementary_cache_options_enable_apcu: "தற்காலிக சேமிப்புக்கான APCu ஐப் பயன்படுத்த முயற்சிக்கலாமா என்பதைக் குறிப்பிடுகிறது. இயல்புநிலை = True (உண்மை)."
@@ -317,6 +311,15 @@ hints_default_dns:
 hints_ipv6_on_32bit: "குறிப்பு: சில 32-பிட் கணினிகளில் IPv6 தேடல்கள் சரியாக வேலை செய்யாமல் போகலாம்."
 hints_pdo_dsn:
  அடிக்கடி கேட்கப்படும் கேள்விகள்.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#HOW_TO_USE_PDO" hreflang="en-AU">"PDO DSN" என்றால் என்ன? CIDRAM உடன் PDO ஐ எவ்வாறு பயன்படுத்துவது?</a></em>"
+hints_shorthand:
+ 0.: "உங்கள் இணையதளத்திற்கு LAN அல்லது localhost வழியாக அணுகல் தேவைப்பட்டால், இதைத் தடுக்க வேண்டாம். இல்லையெனில், நீங்கள் இதைத் தடுக்கலாம்."
+ 1.: "நிலையான கையொப்பக் கோப்புகள் இதைப் பயன்படுத்துவதில்லை, ஆனால் சில பயனர்களுக்குப் பயனுள்ளதாக இருக்கும் பட்சத்தில் இது ஆதரிக்கப்படும்."
+ 2.: "பயனர்கள் உங்கள் இணையதளத்தை ப்ராக்ஸிகள் மூலம் அணுக வேண்டுமெனில், இதைத் தடுக்க வேண்டாம். இல்லையெனில், நீங்கள் இதைத் தடுக்கலாம்."
+ 3.: "கையொப்பங்களுக்குள் நேரடியான பயன்பாடு ஆதரிக்கப்படவில்லை, ஆனால் குறிப்பிட்ட சூழ்நிலைகளில் இது வேறு வழிகளில் பயன்படுத்தப்படலாம்."
+ 4.: "Refers to cases where shorthand words aren't used at all, or aren't recognised by CIDRAM."
+ One per signature.: "A signature may invoke multiple profiles, but can use only one shorthand word. It's possible that multiple shorthand words may be suitable, but as only one can be used, we aim to always use only the most suitable."
+ Priority.: "An option selected always takes priority over an option not selected. E.g., if multiple shorthand words are in play but only one of them is set as being blocked, the request will still be blocked."
+ Human endpoints and cloud services.: "Cloud service may refer to webhosting providers, server farms, data centers, or a number of other things. Human endpoint refers to the means by which a human accesses the internet, such as by way of an internet service provider. A network usually provides just one or the other, but may sometimes provide both. We aim to never identify potential human endpoints as cloud services. Therefore, a cloud service may be identified as something else if its range is shared by known human endpoints. Likewise, we aim to always identify cloud services, whose ranges are not shared by any known human endpoints, as cloud services. Therefore, a request identified explicitly as a cloud service most likely doesn't share its range with any known human endpoints. Likewise, a request identified explicitly by attacks or spam most likely does share them. However, the internet is always in flux, the purposes of networks changes over time, and ranges are always being bought or sold, so remain cognisant and vigilant in regards to false positives."
 hints_verification:
  ""நேர்மறை" மற்றும் "எதிர்மறை" என்றால் என்ன?": "கோரிக்கையால் வழங்கப்பட்ட அடையாளத்தைச் சரிபார்க்கும் போது, வெற்றிகரமான முடிவை "நேர்மறை" அல்லது "எதிர்மறை" என்று விவரிக்கலாம். வழங்கப்பட்ட அடையாளம் உண்மையான அடையாளம் என உறுதிப்படுத்தப்படும் போது, அது "நேர்மறை" என்று விவரிக்கப்படும். வழங்கப்பட்ட அடையாளம் பொய்யானது என உறுதிசெய்யப்பட்டால், அது "எதிர்மறை" என்று விவரிக்கப்படும். இருப்பினும், தோல்வியுற்ற விளைவு (எ.கா., சரிபார்ப்பு தோல்வியுற்றது அல்லது வழங்கப்பட்ட அடையாளத்தின் உண்மைத்தன்மையைக் கண்டறிய முடியவில்லை) "நேர்மறை" அல்லது "எதிர்மறை" என்று விவரிக்கப்படாது. மாறாக, தோல்வியுற்ற விளைவு வெறுமனே சரிபார்க்கப்படாததாக விவரிக்கப்படும். கோரிக்கையின் மூலம் வழங்கப்பட்ட அடையாளத்தை சரிபார்க்க எந்த முயற்சியும் செய்யப்படாதபோது, கோரிக்கை சரிபார்க்கப்படாததாக விவரிக்கப்படும். கோரிக்கையின் மூலம் வழங்கப்பட்ட அடையாளம் அங்கீகரிக்கப்படும் சூழலில் மட்டுமே விதிமுறைகள் அர்த்தமுள்ளதாக இருக்கும், எனவே, சரிபார்ப்பு சாத்தியமாகும். வழங்கப்பட்ட அடையாளம் மேலே வழங்கப்பட்ட விருப்பங்களுடன் பொருந்தவில்லை என்றால் அல்லது அடையாளம் காட்டப்படவில்லை எனில், மேலே வழங்கப்பட்ட விருப்பங்கள் பொருத்தமற்றதாகிவிடும்."
  ""சிங்கிள்-ஹிட் பைபாஸ்களை" என்றால் என்ன?": "சில சந்தர்ப்பங்களில், கையொப்பக் கோப்புகள், தொகுதிகள், அல்லது கோரிக்கையின் பிற நிபந்தனைகளின் விளைவாக நேர்மறையான சரிபார்க்கப்பட்ட கோரிக்கை இன்னும் தடுக்கப்படலாம், மற்றும் தவறான நேர்மறைகளைத் தவிர்ப்பதற்கு பைபாஸ்கள் தேவைப்படலாம். ஒரு பைபாஸ் சரியாக ஒரு மீறலைச் சமாளிக்கும் நோக்கம் கொண்டால், அதிகமாகவும் குறைவாகவும் இல்லை, அத்தகைய பைபாஸ் "சிங்கிள்-ஹிட் பைபாஸ்" என்று விவரிக்கப்படலாம்."

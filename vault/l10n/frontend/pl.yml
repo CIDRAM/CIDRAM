@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Polish language data for the front-end (last modified: 2022.07.02).
+# This file: Polish language data for the front-end (last modified: 2022.07.03).
 ##/
 
 Extended Description AbuseIPDB module: "Blokuje żądania z adresów IP wymienionych w witrynie AbuseIPDB."
@@ -61,6 +61,7 @@ Name Project Honeypot module: "Moduł Project Honeypot"
 Name Referrer spam module: "Moduł spamu polecającego"
 Name Search engines blocker module: "Moduł blokowania wyszukiwarek"
 Name Stop Forum Spam module: "Moduł Stop Forum Spam"
+checkbox_label_block_it: "Zablokuj to."
 checkbox_label_block_negatives: "Blokować negatywy?"
 checkbox_label_block_nonverified: "Blokować niezweryfikowane żądania?"
 checkbox_label_fields_logs: "Czy to pole powinno pojawiać się w logach?"
@@ -202,16 +203,9 @@ config_recaptcha_usemode: *CaptchaUseMode
 config_sfs: "Konfiguracja modułu Stop Forum Spam."
 config_sfs_offer_captcha: "Gdy żądania są blokowane przez ten moduł, mogą zostać wystawione kody CAPTCHA. Domyślna = True. Uwaga: Nie zastępuje innych dyrektyw. Aby można było wystawić CAPTCHA, wszystkie dyrektywy muszą być zgodne, konieczne skonfigurowane klucze, itp. W przypadku, gdyby normalnie zezwalano na wystawianie kodów CAPTCHA, ustawienie tej dyrektywy na wartość false umożliwia zapobieganie wystawianiu kodów CAPTCHA dla żądań zablokowanych specjalnie przez ten moduł."
 config_signatures: "Konfiguracja podpisów, plików podpisów, modułów, itp."
-config_signatures_block_attacks: "Zablokować CIDRy związane z atakami i innym nietypowym ruchem? Np. skanowanie portów, hakowanie, sondowanie podatności, itp. Zazwyczaj powinno to zawsze mieć wartość true, ale w razie problemów może być konieczne ustawienie wartości false."
-config_signatures_block_bogons: "Zablokować CIDRy bogon? Jeśli spodziewasz się połączeń z twoją witryną z sieci lokalnej, localhost lub sieci LAN, w tej dyrektywie należy ustawić wartość false. Jeśli nie oczekujesz takich połączeń, tę dyrektywę należy ustawić na wartość true."
-config_signatures_block_cloud: "Zablokować CIDRy zidentyfikowane jako należące do usług hostingowych lub usług w chmurze? Jeśli korzystasz z usługi API ze swojej witryny lub jeśli oczekujesz, że inne witryny połączą się z twoją witryną, należy ustawić na false. Jeśli nie, to tę dyrektywę należy ustawić na true."
-config_signatures_block_generic: "Zablokować CIDRy ogólnie zalecane na czarnej liście? Obejmuje to wszelkie podpisy, które nie są oznaczone jako należące do żadnej z bardziej szczegółowych kategorii podpisów."
-config_signatures_block_legal: "Zablokować CIDRy w odpowiedzi na zobowiązania prawne? Dyrektywa ta zwykle nie powinna mieć żadnego skutku, ponieważ CIDRAM domyślnie nie wiąże żadnych CIDR z „zobowiązaniami prawnymi”, istnieje jednak jako dodatkowy środek kontroli na korzyść niestandardowych plików lub modułów podpisu, które mogą istnieć z przyczyn prawnych."
-config_signatures_block_malware: "Zablokować CIDRy związane ze złośliwym oprogramowaniem? Obejmuje to serwery kontroli, zainfekowane maszyny, maszyny biorące udział w dystrybucji złośliwego oprogramowania, itp."
-config_signatures_block_proxies: "Zablokować CIDRy zidentyfikowane jako należące do usług proxy lub VPN? Jeśli potrzebujesz, aby użytkownicy mogli uzyskać dostęp do twojej witryny z usług proxy i VPN, niniejsza dyrektywa powinna mieć wartość false. W przeciwnym razie, jeśli nie potrzebujesz dostępu z usług proxy lub VPN, niniejsza dyrektywa powinna być true jako środek poprawy bezpieczeństwa."
-config_signatures_block_spam: "Zablokować CIDRy zidentyfikowane jako wysokie ryzyko spamu? Zazwyczaj powinno to zawsze mieć wartość true, ale w razie problemów może być konieczne ustawienie wartości false."
 config_signatures_default_tracktime: "Ile sekund na śledzenie adresów IP zablokowanych przez moduły. Domyślna = 604800 (1 tydzień)."
 config_signatures_infraction_limit: "Maksymalna liczba wykroczeń, które może ponieść IP, zanim zostanie zablokowane przez śledzenie IP. Domyślna = 10."
+config_signatures_shorthand: "Kontroluje, co zrobić z żądaniem, gdy istnieje pozytywne dopasowanie do podpisu, który wykorzystuje podane skrócone słowa."
 config_signatures_tracking_override: "Zezwalać modułom na zastępowanie opcji śledzenia? True (Prawdziwe) = Tak [Domyślna]; False (Fałszywy) = Nie."
 config_supplementary_cache_options: "Dodatkowe opcje pamięci podręcznej. Uwaga: Zmiana tych wartości może potencjalnie spowodować wylogowanie."
 config_supplementary_cache_options_enable_apcu: "Określa, czy spróbować użyć APCu do pamięci podręcznej. Domyślna = True."
@@ -318,6 +312,15 @@ hints_default_dns:
 hints_ipv6_on_32bit: "Uwaga: Wyszukiwania IPv6 mogą nie działać poprawnie w niektórych systemach 32-bitowych."
 hints_pdo_dsn:
  FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#HOW_TO_USE_PDO" hreflang="en-AU">Co to jest „PDO DSN”? Jak mogę używać PDO z CIDRAM?</a></em>"
+hints_shorthand:
+ 0.: "Jeśli Twoja witryna wymaga dostępu przez LAN lub localhost, nie blokuj tego. W przeciwnym razie możesz to zablokować."
+ 1.: "Domyślne pliki podpis nie używają tego, ale mimo to jest są obsługiwane, ponieważ mogą być przydatne dla niektórych użytkowników."
+ 2.: "Jeśli potrzebujesz, aby użytkownicy mogli uzyskać dostęp do Twojej witryny za pośrednictwem serwerów proxy, nie blokuj tego. W przeciwnym razie możesz to zablokować."
+ 3.: "Bezpośrednie użycie w podpisach nie jest obsługiwane, ale w szczególnych okolicznościach może być wywoływane w inny sposób."
+ 4.: "Odnosi się do przypadków, w których skrócone słowa w ogóle nie są używane lub nie są rozpoznawane przez CIDRAM."
+ Jeden na podpis.: "Podpis może odwoływać się do wielu profili, ale może używać tylko jednego skróconego słowa. Możliwe, że wiele skróconych słów może być odpowiednich, ale ponieważ można użyć tylko jednego, staramy się zawsze używać tylko najbardziej odpowiednich."
+ Priorytet.: "Wybrana opcja zawsze ma pierwszeństwo przed opcją niewybraną. Np., jeśli w grze jest wiele skróconych słów, ale tylko jedno z nich jest ustawione jako zablokowane, żądanie nadal będzie blokowane."
+ Ludzkie punkty końcowe i usługi w chmurze.: "Usługa w chmurze może odnosić się do dostawców hostingu, farm serwerów, centrów danych, lub wielu innych rzeczy. Ludzki punkt końcowy odnosi się do sposobu, w jaki człowiek uzyskuje dostęp do Internetu, na przykład za pośrednictwem dostawcy usług internetowych. Sieć zwykle zapewnia tylko jedno lub drugie, ale czasami może zapewniać oba. Staramy się nigdy nie identyfikować potencjalnych ludzkich punktów końcowych jako usług w chmurze. W związku z tym usługa w chmurze może być identyfikowana jako coś innego, jeśli jej zakres jest współdzielony przez znane ludzkie punkty końcowe. Podobnie staramy się zawsze identyfikować usługi w chmurze, których zakresy nie są współdzielone przez żadne znane ludzkie punkty końcowe, jako usługi w chmurze. W związku z tym żądanie zidentyfikowane jawnie jako usługa w chmurze prawdopodobnie nie udostępnia swojego zakresu żadnym znanym ludzkim punktom końcowym. Podobnie żądanie zidentyfikowane w sposób jawny przez ataki lub ryzyko spam prawdopodobnie je udostępnia. Jednak, internet zawsze się zmienia, cele sieci zmieniają się w czasie, a zakresy są zawsze kupowane lub sprzedawane, więc zachowaj ostrożność i czujność w odniesieniu do fałszywych pozytywów."
 hints_verification:
  "Czym są „pozytywy” i „negatywy”?": "Podczas weryfikacji tożsamości przedstawionej przez żądanie, pomyślny wynik można określić jako „pozytywny” lub „negatywny”. W przypadku potwierdzenia, że prezentowana tożsamość jest prawdziwą tożsamością, zostanie ona określona jako „pozytywna”. W przypadku potwierdzenia, że przedstawiona tożsamość jest sfałszowana, zostanie ona określona jako „negatywna”. Jednak nieudany wynik (np. weryfikacja nie powiodła się, lub nie można ustalić prawdziwości przedstawionej tożsamości) nie zostanie opisany jako „pozytywny” lub „negatywny”. Zamiast tego nieudany wynik zostałby opisany po prostu jako niezweryfikowany. Gdy nie zostanie podjęta żadna próba weryfikacji tożsamości przedstawionej przez żądanie, żądanie zostanie również opisane jako niezweryfikowane. Terminy mają sens tylko w kontekście, w którym rozpoznawana jest tożsamość przedstawiona w żądaniu, a zatem tam, gdzie możliwa jest weryfikacja. W przypadku, gdy przedstawiona tożsamość nie pasuje do opcji przedstawionych powyżej, lub gdy tożsamość nie jest przedstawiona, opcje podane powyżej stają się nieistotne."
  "Czym są „obejście pojedynczych trafień”?": "W niektórych przypadkach pozytywnie zweryfikowane żądanie może nadal zostać zablokowane z powodu plików podpis, modułów, lub innych warunków żądania, i obejścia mogą być konieczne w celu uniknięcia fałszywych pozytywów. W przypadku, gdy obejście ma na celu zajęcie się dokładnie jednym wykroczeniem, ni mniej, ni więcej, takie obejście można opisać jako „obejście pojedynczego trafienia”."

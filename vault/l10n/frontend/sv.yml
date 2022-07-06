@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Swedish language data for the front-end (last modified: 2022.07.02).
+# This file: Swedish language data for the front-end (last modified: 2022.07.03).
 ##/
 
 Extended Description AbuseIPDB module: "Blockerar förfrågningar från IP-adresser som listas på AbuseIPDB."
@@ -61,6 +61,7 @@ Name Project Honeypot module: "Project Honeypot modul"
 Name Referrer spam module: "Referensspam-modul"
 Name Search engines blocker module: "Blockeringsmodul för sökmotorer"
 Name Stop Forum Spam module: "Stop Forum Spam modul"
+checkbox_label_block_it: "Blockera den."
 checkbox_label_block_negatives: "Blockera negativa?"
 checkbox_label_block_nonverified: "Blockera icke-verifierade förfrågningar?"
 checkbox_label_fields_logs: "Ska detta fält visas i loggposter?"
@@ -202,16 +203,9 @@ config_recaptcha_usemode: *CaptchaUseMode
 config_sfs: "Konfiguration för modulen Stop Forum Spam."
 config_sfs_offer_captcha: "När förfrågningar blockeras av denna modul kan CAPTCHAer utfärdas. Standard = True. Obs: Åsidosätter inte andra direktiv. För att CAPTCHAer ska kunna utfärdas måste alla direktiv överensstämma, nödvändiga nycklar konfigurerade, etc. I händelse av att CAPTCHAer normalt skulle tillåtas att utfärdas, inställning av detta direktiv till false ger ett sätt att förhindra att CAPTCHAer utfärdas för förfrågningar som specifikt blockeras av denna modul."
 config_signatures: "Konfiguration för signaturer, signaturfiler, moduler, osv."
-config_signatures_block_attacks: "Blockera CIDRer i samband med attacker och annan onormal trafik? T.ex., portskanningar, hackning, undersökning av sårbarheter, etc. Om du inte upplever problem när du gör det, bör det alltid vara true."
-config_signatures_block_bogons: "Blockera bogon/martian CIDRer? Om du förväntar dig anslutningar till din webbplats från ditt lokala nätverk, från localhost eller från ditt LAN, detta direktiv borde vara false. Om du inte förväntar dig sådana anslutningar, detta direktiv borde vara true."
-config_signatures_block_cloud: "Blockera CIDRer identifierade som tillhör webbhotell/molntjänster? Om du använder en API-tjänst från din webbplats eller om du förväntar dig att andra webbplatser ska ansluta till din webbplats, detta direktiv borde vara false. Annars, detta direktiv borde vara true."
-config_signatures_block_generic: "Blockera CIDRer rekommenderas generellt för svartlistning? Detta omfattar alla signaturer som inte är markerade som en del av någon av de andra mer specifika signaturkategorierna."
-config_signatures_block_legal: "Blockera CIDRer som svar på lagliga skyldigheter? Detta direktiv borde normalt inte ha någon effekt, eftersom CIDRAM inte som standard kopplar samman några CIDR med "lagliga skyldigheter", men det finns ändå som en extra kontrollåtgärd till förmån för eventuella anpassade signaturfiler eller moduler som kan existera av juridiska skäl."
-config_signatures_block_malware: "Blockera CIDRer i samband med skadlig kod? Detta inkluderar C&C-servrar, infekterade maskiner, maskiner som är involverade i distribution av skadlig kod, osv."
-config_signatures_block_proxies: "Blockera CIDRer identifierade som tillhör proxytjänster eller VPNer? Om du behöver att användare ska kunna komma åt din webbplats från proxytjänster och VPNer, detta direktiv borde vara false. Annars, om du inte behöver proxytjänster eller VPNer, detta direktiv borde vara true som ett sätt att förbättra säkerheten."
-config_signatures_block_spam: "Blockera CIDRer identifierade som högrisk för spam? Om du inte upplever problem när du gör det, bör det alltid vara true."
 config_signatures_default_tracktime: "Hur många sekunder spåra IP-adresser som är förbjudna av moduler. Standard = 604800 (1 vecka)."
 config_signatures_infraction_limit: "Maximalt antal infraktions som en IP får medföra innan den är förbjuden av IP-spårning. Standard = 10."
+config_signatures_shorthand: "Kontrollerar vad som ska göras med en förfrågan när det finns en positiv matchning mot en signatur som använder de givna förkortningsorden."
 config_signatures_tracking_override: "Tillåt att moduler åsidosätter spårningsalternativ? True = Ja [Standard]; False = Nej."
 config_supplementary_cache_options: "Kompletterande cache-alternativ. Obs: Om du ändrar dessa värden, du kan vara utloggad."
 config_supplementary_cache_options_enable_apcu: "Detta anger om ska använda APCu för caching. Standard = True."
@@ -315,6 +309,15 @@ hints_default_dns:
 hints_ipv6_on_32bit: "Obs: IPv6-sökningar kanske inte fungerar korrekt på vissa 32-bitarssystem."
 hints_pdo_dsn:
  FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#HOW_TO_USE_PDO" hreflang="en-AU">Vad är en "PDO DSN"? Hur kan jag använda PDO med CIDRAM?</a></em>"
+hints_shorthand:
+ 0.: "Om din webbplats behöver åtkomst via LAN eller localhost, inte blockera detta. Annars du kan blockera detta."
+ 1.: "Ingen av standardsignaturfilerna använder detta, men det stöds ändå i så fall det kan vara användbart för vissa användare."
+ 2.: "Om du behöver användare för att kunna komma åt din webbplats via proxyservrar, inte blockera detta. Annars du kan blockera detta."
+ 3.: "Direkt användning i signaturer stöds inte, men det kan åberopas på annat sätt under särskilda omständigheter."
+ 4.: "Avser fall där förkortningsord inte används alls, eller inte känns igen av CIDRAM."
+ En per signatur.: "En signatur kan anropa flera profiler, men kan bara använda ett förkortat ord. Det är möjligt att flera förkortningsord kan vara lämpliga, men eftersom endast ett kan användas, vi strävar efter att alltid använda endast de mest lämpliga."
+ Prioritet.: "Ett valt alternativ har alltid prioritet framför ett alternativ som inte är valt. T.ex., om flera förkortningsord är i spel men bara ett av dem är satts att vara blockerat, begäran kommer fortfarande att blockeras."
+ Mänskliga slutpunkter och molntjänster.: "Molntjänst kan hänvisa till webbhotellleverantörer, serverfarmar, datacenter, eller ett antal andra saker. Mänsklig slutpunkt hänvisar till hur en människa kommer åt internet, till exempel via en internetleverantör. Ett nätverk tillhandahåller vanligtvis bara det ena eller det andra, men kan ibland tillhandahålla båda. Vi strävar efter att aldrig identifiera potentiella mänskliga slutpunkter som molntjänster. Därför en molntjänst kan identifieras som något annat om dess räckvidd delas av kända mänskliga slutpunkter. Likaså, vi strävar efter att alltid identifiera molntjänster, vars räckvidd inte delas av några kända mänskliga slutpunkter, som molntjänster. Därför en begäran som uttryckligen identifieras som en molntjänst förmodligen inte delar sitt räckvidd med några kända mänskliga slutpunkter. Likaså, en begäran som identifieras explicit av attacker eller spam risk förmodligen delar dem. Internet är dock alltid i förändring, syftet med nätverk förändras över tiden, och räckvidd köps eller säljs alltid, så förbli medveten och vaksam när det gäller risken för falska positiva."
 hints_verification:
  "Vad är "positiva" och "negativa"?": "När verifiering identiteten som presenteras av en begäran, ett framgångsrikt resultat kan beskrivas som "positiv" eller "negativ". I det fall att den presenterade identiteten bekräftas vara den sanna identiteten, skulle den beskrivas som "positiv". I det fall att den presenterade identiteten bekräftas vara förfalskad, skulle den beskrivas som "negativ". Dock, ett misslyckat resultat (t.ex., verifiering misslyckas, eller det går inte att fastställa sanningshalten i den presenterade identiteten) skulle inte beskrivas som "positiv" eller "negativ". Istället skulle ett misslyckat resultat beskrivas som icke-verifierad. När inget försök att verifiera identiteten som presenteras av en begäran görs, begäran skulle också beskrivas som icke-verifierad. Termerna är meningsfulla endast i det sammanhang där identiteten som presenteras av en begäran erkänns, och därför, där verifiering är möjlig. I de fall där identiteten som presenteras inte matchar alternativen ovan, eller där ingen identitet presenteras, alternativen ovan blir irrelevanta."
  "Vad är "singel-hit bypasser"?": "I vissa fall kan en positivt verifierad begäran fortfarande blockeras som ett resultat av signaturfilerna, modulerna, eller andra villkor för begäran, och bypasser kan vara nödvändiga för att undvika falska positiva resultat. I det fall där en bypass är avsedd att hantera exakt en infraktion, varken mer eller mindre, sådan en bypass kan beskrivas som en "singel-hit bypass"."

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Latvian language data for the front-end (last modified: 2022.07.02).
+# This file: Latvian language data for the front-end (last modified: 2022.07.03).
 ##/
 
 Extended Description AbuseIPDB module: "Bloķē pieprasījumus no IP, kas uzskaitīti vietnē AbuseIPDB."
@@ -61,6 +61,7 @@ Name Project Honeypot module: "Project Honeypot modulis"
 Name Referrer spam module: "Novirzītāja surogātpastu modulis"
 Name Search engines blocker module: "Meklētājprogrammu bloķētāja modulis"
 Name Stop Forum Spam module: "Stop Forum Spam modulis"
+checkbox_label_block_it: "Bloķējiet to."
 checkbox_label_block_negatives: "Vai bloķēt negatīvus?"
 checkbox_label_block_nonverified: "Vai bloķēt nepārbaudītus pieprasījumus?"
 checkbox_label_fields_logs: "Vai šim laukam vajadzētu parādīties žurnāla ierakstos?"
@@ -202,16 +203,9 @@ config_recaptcha_usemode: *CaptchaUseMode
 config_sfs: "Stop Forum Spam moduļa konfigurācija."
 config_sfs_offer_captcha: "Ja pieprasījumus bloķē šis modulis, var tikt izdot CAPTCHA. Noklusējuma = True. Piezīme: Neaizstāj citas direktīvas. Lai izdotu CAPTCHA, ir jāsakrīt visām direktīvām, jākonfigurē nepieciešamās atslēgas, utt. Gadījumā, ja parasti ir atļauts izsniegt CAPTCHA, šīs direktīvas iestatīšana uz false nodrošina veidu, kā novērst CAPTCHA izdošanu pieprasījumiem, kurus īpaši bloķē šis modulis."
 config_signatures: "Parakstu, parakstu failu, moduļu, utt konfigurācija."
-config_signatures_block_attacks: "Bloķēt CIDR, kas saistīti ar uzbrukumiem un citu neparastu datplūsmu? Piemēram, ostu skenēšana, uzlaušana, ievainojamību meklēšana, utt. Ja, to darot, jums nav problēmu, parasti tam vienmēr būtu jādefinē kā true/patiesam."
-config_signatures_block_bogons: "Bloķēt bogona/marsa CIDR? Ja paredzat, ka savienojumi ar jūsu vietni notiek no jūsu vietējā tīkla, no localhost, vai no jūsu LAN, šai direktīvai vajadzētu būt false/nepatiesu. Ja jūs neparedzat šos savienojumus, šai direktīvai vajadzētu būt true/patiesai."
-config_signatures_block_cloud: "Bloķēt CIDR, kas identificēti kā tīmekļa mitināšanas un mākoņa pakalpojumi? Ja savā vietnē izmantojat API pakalpojumu vai ja paredzat, ka citas vietnes izveidos savienojumu ar jūsu vietni, tas jāiestata kā false/nepatiess. Pretējā gadījumā, šai direktīvai vajadzētu būt true/patiesai."
-config_signatures_block_generic: "Bloķēt CIDR, ko parasti ieteicams iekļaut melnajā sarakstā? Tas attiecas uz visiem parakstiem, kas nav atzīmēti kā daļa no kādas citas specifiskākas parakstu kategorijas."
-config_signatures_block_legal: "Bloķēt CIDR, atbildot uz juridiskām saistībām? Šai direktīvai parasti nevajadzētu būt nekādas ietekmes, jo CIDRAM pēc noklusējuma nevienu CIDR nesaista ar "juridiskām saistībām", bet tas tomēr pastāv kā papildu kontroles pasākums visu pielāgoto paraksta failu vai moduļu labā, kas varētu pastāvēt juridisku iemeslu dēļ."
-config_signatures_block_malware: "Bloķēt CIDR, kas saistīti ar ļaunprātīgu programmatūru? Tas ietver C&C serverus, inficētas mašīnas, ļaunprātīgas programmatūras izplatīšanā iesaistītas mašīnas, utt."
-config_signatures_block_proxies: "Bloķēt CIDR, kas identificēti kā starpniekserveri vai VPN pakalpojumi? Ja jums ir nepieciešams, lai lietotāji varētu piekļūt jūsu vietnei no starpniekservera pakalpojumiem un VPN, šai direktīvai vajadzētu būt false/nepatiesu. Pretējā gadījumā, ja jums nav nepieciešami starpniekservera pakalpojumi vai VPN, šī direktīva ir jāiestata kā true/patiess kā drošības uzlabošanas līdzeklis."
-config_signatures_block_spam: "Bloķēt CIDR, kas atzīti par paaugstinātu surogātpasta risku? Ja, to darot, jums nav problēmu, parasti tam vienmēr būtu jādefinē kā true/patiesam."
 config_signatures_default_tracktime: "Cik sekundes izsekot IP, kurus aizliegts moduļi. Noklusējuma = 604800 (1 nedēļa)."
 config_signatures_infraction_limit: "Maksimālais IP pieļaujamo pārkāpumu skaits, pirms tas tiek aizliegts ar IP izsekošanu. Noklusējuma = 10."
+config_signatures_shorthand: "Kontrolē, kā rīkoties ar pieprasījumu, ja ir pozitīva atbilstība parakstam, kurā izmantoti norādītie īsie vārdi."
 config_signatures_tracking_override: "Vai atļaut moduļiem aizstāt izsekošanas opcijas? True (Patiess) = Jā [Noklusējuma]; False (Nepatiess) = Nē."
 config_supplementary_cache_options: "Papildu kešatmiņas iespējas. Piezīme: Mainot šīs vērtības, iespējams, jūs izlogoties."
 config_supplementary_cache_options_enable_apcu: "Norāda, vai kešatmiņā mēģināt izmantot APCu. Noklusējuma = True."
@@ -318,6 +312,15 @@ hints_default_dns:
 hints_ipv6_on_32bit: "Piezīme: Dažās 32 bitu sistēmās IPv6 meklēšana var nedarboties pareizi."
 hints_pdo_dsn:
  FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#HOW_TO_USE_PDO" hreflang="en-AU">Kas ir "PDO DSN"? Kā es varu izmantot PDO ar CIDRAM?</a></em>"
+hints_shorthand:
+ 0.: "Ja jūsu vietnei ir nepieciešama piekļuve, izmantojot LAN vai localhost, nebloķējiet to. Pretējā gadījumā jūs varat to bloķēt."
+ 1.: "Neviens no noklusējuma paraksta failiem to neizmanto, taču tas tiek atbalstīts, gadījumā ja tas varētu būt noderīgi dažiem lietotājiem."
+ 2.: "Ja jums ir nepieciešams, lai lietotāji varētu piekļūt jūsu vietnei, izmantojot starpniekserveri, nebloķējiet to. Pretējā gadījumā jūs varat to bloķēt."
+ 3.: "Tieša lietošana parakstos netiek atbalstīta, taču īpašos apstākļos to var izsaukt ar citiem līdzekļiem."
+ 4.: "Gadījumi, kad īsie vārdi netiek izmantoti vispār, vai CIDRAM tos neatpazīst."
+ Viens par katru parakstu.: "Paraksts var izsaukt vairākus profilus, bet var izmantot tikai vienu īsu vārdu. Iespējams, ka piemēroti var būt vairāki īsie vārdi, taču, jo var izmantot tikai vienu, mēs vienmēr cenšamies izmantot tikai vispiemērotāko."
+ Prioritāte.: "Atlasītai opcijai vienmēr ir prioritāte pār neatlasīto opciju. Piemēram, ja ir spēkā vairāki īsie vārdi, bet tikai viens no tiem ir iestatīts kā bloķēts, pieprasījums joprojām tiks bloķēts."
+ Cilvēka galapunkti un mākoņpakalpojumi.: "Mākoņpakalpojums var attiekties uz tīmekļa mitināšanas pakalpojumu sniedzējiem, serveru fermām, datu centriem, vai daudzām citām lietām. Cilvēka galapunkts attiecas uz līdzekļiem, ar kuriem cilvēks piekļūst internetam, piemēram, izmantojot interneta pakalpojumu sniedzēju. Tīkls parasti nodrošina tikai vienu vai otru, bet dažreiz var nodrošināt abus. Mēs cenšamies potenciālos cilvēku galapunktus nekad neidentificēt kā mākoņpakalpojumus. Tāpēc mākoņpakalpojumu var identificēt kā kaut ko citu, ja tā diapazons ir kopīgs zināmiem cilvēka galapunktiem. Tāpat mēs cenšamies vienmēr identificēt mākoņpakalpojumus, kuru diapazoni nav kopīgs nevienam zināmam cilvēka galapunktam, kā mākoņpakalpojumus. Tāpēc pieprasījums, kas ir skaidri identificēts kā mākoņpakalpojums, visticamāk, nedala savu diapazonu ar zināmiem cilvēka galapunktiem. Tāpat arī pieprasījums, kas skaidri identificēts ar uzbrukumiem vai surogātpastu risks, visticamāk, tos kopīgo. Tomēr, internets vienmēr mainās, tīklu mērķi laika gaitā mainās, un diapazoni vienmēr tiek pirkti vai pārdoti, tāpēc esiet apzinīgs un modrs attiecībā uz viltus pozitīviem."
 hints_verification:
  "Kas ir “pozitīvie” un “negatīvie”?": "Pārbaudot pieprasījuma sniegto identitāti, veiksmīgu rezultātu var raksturot kā “pozitīvu” vai “negatīvu”. Kad uzrādītā identitāte tiek apstiprināta kā patiesā identitāte, tā tiks raksturota kā “pozitīva”. Kad tiek apstiprināts, ka uzrādītā identitāte ir viltota, tā tiks raksturota kā “negatīva”. Tomēr, neveiksmīgs iznākums (piemēram, verifikācija neizdodas, vai uzrādītās identitātes patiesumu nevar noteikt) netiks raksturota kā “pozitīvu” vai “negatīvu”. Tā vietā neveiksmīgs rezultāts tiktu raksturots vienkārši kā nepārbaudīts. Ja netiek mēģināts pārbaudīt pieprasījumā norādīto identitāti, pieprasījums tāpat tiks raksturots kā nepārbaudīts. Terminiem ir jēga tikai kontekstā, kurā tiek atpazīta pieprasījumā norādītā identitāte un līdz ar to, ja ir iespējama pārbaude. Ja uzrādītā identitāte neatbilst iepriekš sniegtajām opcijām, vai ja identitāte nav uzrādīta, iepriekš sniegtās iespējas kļūst nepiemērojams."
  "Kas ir “viena trāpījuma apvedceļi”?": "Dažos gadījumos pozitīvi pārbaudīts pieprasījums joprojām var tikt bloķēts paraksta failu, moduļu, vai citu pieprasījuma nosacījumu dēļ, un var būt nepieciešami apvedceļi, lai izvairītos no viltus pozitīviem rezultātiem. Ja apvedceļš ir paredzēts, lai tiktu galā ar tieši vienu pārkāpumu, ne vairāk un ne mazāk, šādu apvedceļu varētu raksturot kā “viena trāpījuma apvedceļu”."

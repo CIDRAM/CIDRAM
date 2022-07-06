@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: French language data for the front-end (last modified: 2022.07.02).
+# This file: French language data for the front-end (last modified: 2022.07.03).
 ##/
 
 Extended Description AbuseIPDB module: "Bloque les requêtes des adresses IP répertoriées dans AbuseIPDB."
@@ -61,6 +61,7 @@ Name Project Honeypot module: "Module Project Honeypot"
 Name Referrer spam module: "Module spam référent"
 Name Search engines blocker module: "Module de blocage des moteurs de recherche"
 Name Stop Forum Spam module: "Module Stop Forum Spam"
+checkbox_label_block_it: "Bloque le."
 checkbox_label_block_negatives: "Bloquer les négatifs\_?"
 checkbox_label_block_nonverified: "Bloquer les requêtes non vérifiés\_?"
 checkbox_label_fields_logs: "Inclure ce champ dans les journaux\_?"
@@ -202,16 +203,9 @@ config_recaptcha_usemode: *CaptchaUseMode
 config_sfs: "Configuration du module Stop Forum Spam."
 config_sfs_offer_captcha: "Lorsque les requêtes sont bloquées par ce module, des CAPTCHA peuvent être servis. Défaut = True. Remarque\_: Ne remplace pas les autres directives. Pour que les CAPTCHA soient servis, toutes les directives doivent être d'accord, les clés nécessaires configurées, etc. Dans le cas où les CAPTCHA seraient normalement autorisés à être servis, définir cette directive sur false fournit un moyen d'empêcher les CAPTCHA d'être servis pour les requêtes bloquées spécifiquement par ce module."
 config_signatures: "Configuration pour les signatures, fichiers de signatures, modules, etc."
-config_signatures_block_attacks: "Bloquer les CIDRs associés aux attaques et autres trafics anormaux\_? Par exemple, les analyses de ports, le piratage, la recherche de vulnérabilités, etc. Sauf si vous rencontrez des problèmes quand vous faire, en généralement, cette directive devrait toujours être fixé comme true."
-config_signatures_block_bogons: "Bloquer les CIDRs bogon/martian\_? Si vous attendre connexions à votre site web à partir de dans votre réseau local, à partir de localhost, ou à partir de votre LAN, cette directive devrait être fixé sur false. Si vous ne attendez pas à ces telles connexions, cette directive doit être fixé comme true."
-config_signatures_block_cloud: "Bloquer les CIDRs identifié comme appartenant aux services d'hébergement/cloud\_? Si vous utilisez un service d'API à partir de votre site web ou si vous attendez d'autres sites à connecter avec votre site web, cette directive devrait être fixé sur false. Si vous ne pas, puis, cette directive doit être fixé comme true."
-config_signatures_block_generic: "Bloquer les CIDRs recommandé en généralement pour les listes noires\_? Cela couvre toutes les signatures qui ne sont pas marqué comme étant partie de l'autre plus spécifique catégories de signatures."
-config_signatures_block_legal: "Bloquer les CIDRs en réponse à des obligations légales\_? Cette directive ne devrait normalement pas avoir d'effet, car CIDRAM n'associe aucun CIDR avec des «\_obligations légales\_» par défaut, mais il existe néanmoins comme une mesure de contrôle supplémentaire au profit de tous les fichiers de signatures personnalisées ou des modules qui pourraient exister pour des raisons légales."
-config_signatures_block_malware: "Bloquer les CIDRs associés à des logiciels malveillants\_? Cela inclut les serveurs C&C, les machines infectées, les machines impliquées dans la distribution de logiciels malveillants, etc."
-config_signatures_block_proxies: "Bloquer les CIDRs identifié comme appartenant aux services proxy ou VPNs\_? Si vous avez besoin que les utilisateurs puissent accéder à votre site web à partir des services de proxy ou des VPNs, cette directive devrait être fixé sur false. Autrement, si vous n'avez besoin pas des services de proxy ou des VPNs, cette directive devrait être fixé sur true comme moyen d'améliorer la sécurité."
-config_signatures_block_spam: "Bloquer les CIDRs identifié comme étant risque élevé pour le spam\_? Sauf si vous rencontrez des problèmes quand vous faire, en généralement, cette directive devrait toujours être fixé comme true."
 config_signatures_default_tracktime: "Combien de secondes pour suivre les IP interdites par les modules. Défaut = 604800 (1 semaine)."
 config_signatures_infraction_limit: "Nombre maximal d'infractions qu'une IP est autorisée à engager avant d'être interdite par la surveillance des IPs. Défaut = 10."
+config_signatures_shorthand: "Contrôle ce qu'il faut faire avec une requête lorsqu'il y a une correspondance positive avec une signature qui utilise les mots abrégés donnés."
 config_signatures_tracking_override: "Autoriser les modules à remplacer les options de suivi\_? True = Oui [Défaut]\_; False = Non."
 config_supplementary_cache_options: "Options de cache supplémentaires. Remarque\_: La modification de ces valeurs peut potentiellement vous déconnecter."
 config_supplementary_cache_options_enable_apcu: "Spécifie s'il faut essayer d'utiliser APCu pour la mise en cache. Défaut = True."
@@ -317,6 +311,15 @@ hints_default_dns:
 hints_ipv6_on_32bit: "Remarque\_: Les recherches IPv6 peuvent ne pas fonctionner correctement sur certains systèmes 32 bits."
 hints_pdo_dsn:
  FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.fr.md\#HOW_TO_USE_PDO" hreflang="fr">Qu'est-ce qu'un «\_PDO DSN\_»\_? Comment utiliser PDO avec CIDRAM\_?</a></em>"
+hints_shorthand:
+ 0.: "Si votre site Web a besoin d'accès via LAN ou localhost, ne bloquez pas cela. Sinon, vous pouvez bloquer cela."
+ 1.: "Aucun des fichiers de signature défaut n'utilisent pas cela, mais il est néanmoins supporté au cas où cela pourrait être utile à certains utilisateurs."
+ 2.: "Si vous avez besoin que les utilisateurs puissent accéder à votre site Web via des proxys, ne bloquez pas cela. Sinon, vous pouvez bloquer cela."
+ 3.: "L'utilisation directe dans les signatures n'est pas supporté, mais elle peut être invoqué par d'autres moyens dans des circonstances particulières."
+ 4.: "Fait référence aux cas où les mots abrégés ne sont pas du tout utilisés, ou ne sont pas reconnus par le CIDRAM."
+ Un par signature.: "Une signature peut invoquer plusieurs profils, mais ne peut utiliser qu'un seul mot abrégé. Il est possible que plusieurs mots abrégés sont appropriés, mais comme un seul peut être utilisé, nous efforçons de toujours n'utiliser que le plus approprié."
+ Priorité.: "Une option sélectionnée est toujours prioritaire sur une option non sélectionnée. Par exemple, si plusieurs mots abrégés sont en jeu mais qu'un seul d'entre eux est défini comme étant bloqué, la demande sera toujours bloqué."
+ Points de terminaison humains et services de cloud.: "Service de cloud peut faire référence aux fournisseurs d'hébergement Web, aux fermes de serveurs, aux centres de données, ou à un certain nombre d'autres choses. Point de terminaison humain fait référence aux moyens par lesquels un humain accède à Internet, par exemple, par le biais d'un fournisseur de services internet. Un réseau ne fournit généralement que l'un ou l'autre, mais peut parfois fournir les deux. Nous visons à ne jamais identifier les points de terminaison humains potentiels comme des services de cloud. Par conséquent, un service de cloud peut être identifié comme autre chose si sa gamme est partagé par des points de terminaison humains connus. À l'inverse, nous visons à toujours identifier les services de cloud, dont les gammes ne sont partagés par aucun point de terminaison humain connu, comme des services de cloud. Par conséquent, une requête identifié explicitement comme un service de cloud ne partage probablement pas sa gamme avec des points de terminaison humains connus. De même, une requête identifié explicitement par des attaques ou des spam risque les partage probablement. Cela dit, l'internet est toujours en mouvement, les objectifs des réseaux changent avec le temps, et les gammes sont toujours achetés ou vendues, alors restez conscient et vigilant en ce qui concerne les faux positifs."
 hints_verification:
  "Que sont les «\_positifs\_» et les «\_négatifs\_»\_?": "Lors de la vérification de l'identité présenté par une requête, un résultat réussi peut être décrit comme «\_positif\_» ou «\_négatif\_». Dans le cas où l'identité présenté est confirmé comme étant la véritable identité, elle serait décrit comme «\_positif\_». Dans le cas où l'identité présenté s'avèrerait falsifié, elle serait décrit comme «\_négatif\_». Cependant, un résultat infructueux (par exemple, la vérification échoue, ou la véracité de l'identité présenté ne peut pas être déterminé) ne serait pas décrit comme «\_positif\_» ou «\_négatif\_». Au lieu, un résultat infructueux serait décrit simplement comme non vérifié. Lorsqu'aucune tentative de vérification de l'identité présenté par une requête n'est effectué, la requête serait également décrit comme non vérifié. Les termes n'ont de sens que dans le contexte où l'identité présenté par une requête est reconnue, et donc, où la vérification est possible. Dans les cas où l'identité présenté ne correspond pas aux options fournies ci-dessus, ou lorsqu'aucune identité n'est présenté, les options fournies ci-dessus deviennent sans objet."
  "Que sont les «\_contournements en un seul coup\_»\_?": "Dans certains cas, une requête vérifié positive peut toujours être bloquée en raison des fichiers de signature, des modules, ou d'autres conditions de la requête, et des contournements peuvent être nécessaires pour éviter les faux positifs. Dans le cas où un contournement est destiné à traiter exactement une infraction, ni plus ni moins, un tel contournement pourrait être décrit comme «\_contournements en un seul coup\_»."

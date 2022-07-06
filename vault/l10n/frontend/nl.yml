@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Dutch language data for the front-end (last modified: 2022.07.02).
+# This file: Dutch language data for the front-end (last modified: 2022.07.03).
 ##/
 
 Extended Description AbuseIPDB module: "Blokkeert aanvragen van IP's die worden vermeld op AbuseIPDB."
@@ -61,6 +61,7 @@ Name Project Honeypot module: "Project Honeypot module"
 Name Referrer spam module: "Verwijzersspam module"
 Name Search engines blocker module: "Blokkermodule voor zoekmachines"
 Name Stop Forum Spam module: "Stop Forum Spam module"
+checkbox_label_block_it: "Blokkeer het."
 checkbox_label_block_negatives: "Negatieven blokkeren?"
 checkbox_label_block_nonverified: "Niet-geverifieerde verzoeken blokkeren?"
 checkbox_label_fields_logs: "Moet dit veld in logs verschijnen?"
@@ -202,16 +203,9 @@ config_recaptcha_usemode: *CaptchaUseMode
 config_sfs: "Configuratie voor de Stop Forum Spam module."
 config_sfs_offer_captcha: "Wanneer verzoeken door deze module worden geblokkeerd, CAPTCHA's kunnen worden geleverd. Standaard = True. Opmerking: Heeft geen voorrang op andere richtlijnen. Om CAPTCHA's te kunnen bedienen, moeten alle richtlijnen overeenkomen, de benodigde sleutels zijn geconfigureerd, enz. In het geval dat CAPTCHA's normaal zouden mogen worden geleverd, biedt het instellen van deze richtlijn op false een manier om te voorkomen dat CAPTCHA's worden geleverd voor verzoeken die specifiek door deze module worden geblokkeerd."
 config_signatures: "Configuratie voor signatures, signatuurbestanden, modules, enz."
-config_signatures_block_attacks: "Blokkeren CIDR's die verband houden met aanvallen en ander abnormaal verkeer? B.v., poortscans, hacken, zoeken naar kwetsbaarheden, etc. Tenzij u problemen ondervindt wanneer u dit doet, in algemeen, dit moet altijd worden ingesteld op true."
-config_signatures_block_bogons: "Blokkeren bogon/martian CIDR's? Als u verwacht aansluitingen om uw website vanuit uw lokale netwerk, vanuit localhost, of vanuit uw LAN, dit richtlijn moet worden ingesteld op false. Als u niet verwacht deze aansluitingen, dit richtlijn moet worden ingesteld op true."
-config_signatures_block_cloud: "Blokkeren CIDR's geïdentificeerd als behorend tot webhosting/cloud-diensten? Als u een api te bedienen vanaf uw website of als u verwacht dat andere websites aan te sluiten op uw website, dit richtlijn moet worden ingesteld op false. Als u niet, dan, dit richtlijn moet worden ingesteld op true."
-config_signatures_block_generic: "Blokkeren CIDR's algemeen aanbevolen voor blacklisting? Dit omvat alle signatures die niet zijn gemarkeerd als onderdeel van elke van de andere, meer specifieke signature categorieën."
-config_signatures_block_legal: "Blokkeren CIDR's als reactie op wettelijke verplichtingen? Dit richtlijn zou normaal gesproken geen effect moeten hebben, omdat CIDRAM als standaard geen CIDR's met "wettelijke verplichtingen" associeert, maar het bestaat niettemin als een extra beheersmaatregel ten behoeve van eventuele aangepaste signatuurbestanden of modules die mogelijk bestaan om wettelijke redenen."
-config_signatures_block_malware: "Blokkeren CIDR's die zijn gekoppeld aan malware? Dit omvat C&C-servers, geïnfecteerde machines, machines die betrokken zijn bij de distributie van malware, enz."
-config_signatures_block_proxies: "Blokkeren CIDR's geïdentificeerd als behorend tot proxy-services of VPN's? Als u vereisen dat gebruikers kan toegang tot uw website van proxy-services en VPN's, dit richtlijn moet worden ingesteld op false. Anders, als u geen proxy-services of VPN's nodig, dit richtlijn moet worden ingesteld op true als een middel ter verbetering van de beveiliging."
-config_signatures_block_spam: "Blokkeren CIDR's geïdentificeerd als zijnde hoog risico voor spam? Tenzij u problemen ondervindt wanneer u dit doet, in algemeen, dit moet altijd worden ingesteld op true."
 config_signatures_default_tracktime: "Hoeveel seconden om IP's verbannen door modules te volgen. Standaard = 604800 (1 week)."
 config_signatures_infraction_limit: "Maximum aantal overtredingen een IP mag worden gesteld voordat hij wordt verbannen door IP-tracking. Standaard = 10."
+config_signatures_shorthand: "Controles voor wat te doen met een verzoek wanneer er een positieve overeenkomst is met een signature die de gegeven stenowoorden gebruikt."
 config_signatures_tracking_override: "Moeten modules worden toegestaan om opties voor tracking te overschrijven? True = Ja [Standaard]; False = Nee."
 config_supplementary_cache_options: "Aanvullende cache-opties. Opmerking: Als u deze waarden wijzigt, mogelijk bent u uitgelogd."
 config_supplementary_cache_options_enable_apcu: "Dit geeft aan of APCu moet worden gebruikt voor caching. Standaard = True."
@@ -317,6 +311,15 @@ hints_default_dns:
 hints_ipv6_on_32bit: "Opmerking: IPv6-opzoeken mogelijk werken niet correct op sommige 32-bits systemen."
 hints_pdo_dsn:
  FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.nl.md\#HOW_TO_USE_PDO" hreflang="nl">Wat is een "PDO DSN"? Hoe kan ik PDO gebruiken met CIDRAM?</a></em>"
+hints_shorthand:
+ 0.: "Als uw website nodig toegang via LAN of localhost, blokkeer dit dan niet. Anders u kunt dit blokkeren."
+ 1.: "Geen van de standaard signatuurbestanden gebruikt dit, maar het wordt niettemin ondersteund voor het geval het voor sommige gebruikers nuttig kan zijn."
+ 2.: "Als uw gebruikers nodig toegang tot uw website via proxy's, blokkeer dit dan niet. Anders u kunt dit blokkeren."
+ 3.: "Direct gebruik in signatures wordt niet ondersteund, maar kan in bepaalde omstandigheden op andere manieren worden aangeroepen."
+ 4.: "Verwijst naar gevallen waarin stenowoorden helemaal niet worden gebruikt, of niet worden herkend door CIDRAM."
+ Eén per signature.: "Een signature kan meerdere profielen oproepen, maar kan slechts één stenowoord gebruiken. Het is mogelijk dat meerdere stenowoorden geschikt zijn, maar aangezien er maar één kan worden gebruikt, we streven ernaar altijd alleen de meest geschikte te gebruiken."
+ Prioriteit.: "Een geselecteerde optie heeft altijd voorrang op een niet geselecteerde optie. B.v., als er meerdere stenowoorden in het spel zijn, maar slechts één ervan als geblokkeerd is ingesteld, wordt het verzoek nog steeds geblokkeerd."
+ Menselijke eindpunten en cloud services.: "Cloud service kan verwijzen naar webhosting providers, server farms, data centers of een aantal andere dingen. Menselijk eindpunt verwijst naar de manier waarop een mens toegang krijgt tot internet, b.v., via een internetprovider. Een netwerk biedt meestal slechts een of het ander, maar kan soms beide bieden. We streven ernaar om potentiële menselijke eindpunten nooit als cloudservices te identificeren. Daarom een cloud service kan worden geïdentificeerd als iets anders als het bereik wordt gedeeld door bekende menselijke eindpunten. Evenzo, we streven ernaar om cloud services, waarvan het bereik niet wordt gedeeld door bekende menselijke eindpunten, altijd als cloud services te identificeren. Daarom een aanvraag dat expliciet als een cloud service wordt geïdentificeerd waarschijnlijk niet deelt het bereik met bekende menselijke eindpunten. Evenzo, een verzoek dat expliciet wordt geïdentificeerd door aanvallen of spam risico waarschijnlijk deelt het bereik. Het internet is echter altijd in beweging, de doeleinden van netwerken veranderen in de loop van de tijd, en bereik worden altijd gekocht of verkocht, dus blijf bewust en waakzaam met betrekking tot valse positieven."
 hints_verification:
  "Wat zijn "positieven" en "negatieven"?": "Bij het verifiëren van de identiteit die door een verzoek wordt gepresenteerd, een succesvol resultaat kan worden omschreven als "positief" of "negatief". In het geval dat wordt bevestigd dat de gepresenteerde identiteit de ware identiteit is, deze als "positief" beschreven wordt. In het geval dat wordt bevestigd dat de gepresenteerde identiteit vervalst is, deze als "negatief" beschreven wordt. Een onsuccesvolle uitkomst (b.v., verificatie mislukt, of de juistheid van de gepresenteerde identiteit kan niet worden vastgesteld) wordt echter niet als "positief" of "negatief" beschreven. In plaats daarvan zou een mislukte uitkomst eenvoudigweg als niet-geverifieerd worden beschreven. Als er geen poging wordt gedaan om de identiteit van het verzoek te verifiëren, het verzoek wordt eveneens als niet-geverifieerd beschreven. De termen hebben alleen zin in de context waarin de identiteit van het verzoek wordt herkend, en dus waar verificatie mogelijk is. In gevallen waarin de gepresenteerde identiteit niet overeenkomt met de bovenstaande opties, of waar geen identiteit wordt gepresenteerd, worden de bovenstaande opties irrelevant."
  "Wat zijn "enkele-treffer bypasses"?": "In sommige gevallen kan een positief-geverifieerd verzoek nog steeds worden geblokkeerd als gevolg van de signatuurbestanden, modules, of andere voorwaarden van het verzoek, en bypasses kunnen nodig zijn om valse positieven te voorkomen. In het geval dat een bypass bedoeld is om precies één overtreding af te handelen, niet meer en niet minder, dergelijke een bypass zou kunnen worden omschreven als een "enkele-treffer bypass"."

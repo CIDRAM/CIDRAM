@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Bangla language data for the front-end (last modified: 2022.07.02).
+# This file: Bangla language data for the front-end (last modified: 2022.07.03).
 ##/
 
 Extended Description AbuseIPDB module: "AbuseIPDB এ তালিকাভুক্ত আইপিগুলির থেকে ব্লক অনুরোধ।"
@@ -61,6 +61,7 @@ Name Project Honeypot module: "Project Honeypot মডিউল"
 Name Referrer spam module: "রেফারার স্প্যাম মডিউল"
 Name Search engines blocker module: "অনুসন্ধান ইঞ্জিনসমূহ ব্লকার মডিউল"
 Name Stop Forum Spam module: "Stop Forum Spam মডিউল"
+checkbox_label_block_it: "ব্লক করুন।"
 checkbox_label_block_negatives: "নেতিবাচক ব্লক করবেন?"
 checkbox_label_block_nonverified: "অ-যাচাইকৃত অনুরোধগুলি ব্লক করবেন?"
 checkbox_label_fields_logs: "এই ক্ষেত্রটি কি লগ এন্ট্রিতে উপস্থিত হওয়া উচিত?"
@@ -202,16 +203,9 @@ config_recaptcha_usemode: *CaptchaUseMode
 config_sfs: "স্টপ ফোরাম স্প্যাম মডিউলের জন্য কনফিগারেশন।"
 config_sfs_offer_captcha: "যখন অনুরোধ এই মডিউল দ্বারা ব্লক করা হয়, ক্যাপচা পরিবেশন করা হতে পারে। ডিফল্ট = True। দ্রষ্টব্য: অন্যান্য নির্দেশাবলী ওভাররাইড করে না। ক্যাপচা পরিবেশন করার জন্য, সমস্ত নির্দেশ অবশ্যই সম্মত হতে হবে, প্রয়োজনীয় কীগুলি কনফিগার করা হবে, ইত্যাদি। যদি ক্যাপচাগুলিকে সাধারণত পরিবেশন করার অনুমতি দেওয়া হয়, এই নির্দেশটিকে false তে সেট করা এই মডিউল দ্বারা বিশেষভাবে ব্লক করা অনুরোধগুলির জন্য ক্যাপচাগুলি পরিবেশন করা প্রতিরোধ করার একটি উপায় প্রদান করে৷।"
 config_signatures: "স্বাক্ষর, স্বাক্ষর ফাইল, মডিউল, ইত্যাদির জন্য কনফিগারেশন।"
-config_signatures_block_attacks: "হামলা এবং অন্যান্য অস্বাভাবিক ট্রাফিকের সাথে যুক্ত CIDRগুলিকে ব্লক করবেন? যেমন, পোর্ট স্ক্যান, হ্যাকিং, দুর্বলতার জন্য অনুসন্ধান, ইত্যাদি। যখন সম্ভব, এবং যদি কোনো সমস্যা না ঘটে, এই true সেট করা উচিত।"
-config_signatures_block_bogons: "bogon/মঙ্গল CIDRগুলি ব্লক কর? আপনার স্থানীয় নেটওয়ার্কে, localhost, LAN, ইত্যাদি থেকে আপনার ওয়েবসাইট সংযোগ, এই নির্দেশটি false হিসাবে সেট করা উচিত। আপনি যদি এই ধরনের সংযোগগুলি আশা না করেন, এই নির্দেশটি true হিসাবে সেট করা উচিত।"
-config_signatures_block_cloud: "ওয়েব হোস্টিং এবং ক্লাউড পরিষেবাগুলির সাথে সম্পর্কিত হিসাবে CIDRগুলি ব্লক কর? আপনি যদি আপনার ওয়েবসাইট থেকে একটি API সেবা পরিচালনা করেন, অথবা যদি আপনি অন্য ওয়েবসাইটে আপনার ওয়েবসাইট সংযোগ করতে আশা, এই false সেট করা উচিত। অন্যভাবে, যদি না, এই true সেট করা উচিত।"
-config_signatures_block_generic: "ব্ল্যাকলিস্টের জন্য CIDRগুলি সুপারিশ করেছে ব্লক কর? এটি কোন স্বাক্ষর বিবেচনা করে যা অন্য কোনও অংশ হিসাবে চিহ্নিত করা হয় না।"
-config_signatures_block_legal: "আইনি বাধ্যবাধকতা প্রতিক্রিয়া হিসেবে CIDRগুলি ব্লক কর? এই নির্দেশটি সাধারণত কোন প্রভাব না থাকা উচিত, কারণ CIDRAM ডিফল্ট হিসাবে "আইনি বাধ্যবাধকতা" সঙ্গে কোনো CIDR সংযুক্ত না, কিন্তু এটি কোনও স্বনির্ধারিত স্বাক্ষর ফাইল বা মডিউলগুলির সুবিধা জন্য একটি অতিরিক্ত নিয়ন্ত্রণ পরিমাপ হিসাবে বিদ্যমান যা আইনি কারণগুলির জন্য বিদ্যমান হতে পারে।"
-config_signatures_block_malware: "ম্যালওয়ারের সাথে সংযুক্ত CIDRগুলি ব্লক কর? এটি C&C সার্ভার, সংক্রমিত মেশিন, ম্যালওয়্যার বিতরণ ইত্যাদি জড়িত মেশিনগুলি অন্তর্ভুক্ত করে।"
-config_signatures_block_proxies: "প্রক্সি পরিষেবাগুলির বা VPNগুলির সাথে সম্পর্কিত হিসাবে চিহ্নিত CIDRগুলি ব্লক কর? আপনি ব্যবহারকারীদের পরিষেবাগুলি এবং VPNগুলি থেকে আপনার ওয়েবসাইট অ্যাক্সেস করতে সক্ষম হবে যদি প্রয়োজন, এই false সেট করা উচিত। অন্যভাবে, যদি না, এই true সেট করা উচিত (যদি true নির্ধারণ করা হয়, তাহলে নিরাপত্তা আরো ভালো হবে)।"
-config_signatures_block_spam: "স্প্যামাররা সাথে যুক্ত CIDRগুলি ব্লক কর? যখন সম্ভব, এবং যদি কোনো সমস্যা না ঘটে, এই true সেট করা উচিত।"
 config_signatures_default_tracktime: "মডিউল দ্বারা নিষিদ্ধ আইপি ঠিকানাগুলি কতগুলি সেকেন্ডের ট্র্যাক করা উচিত। ডিফল্ট = 604800 (1 সপ্তাহ)।"
 config_signatures_infraction_limit: "আইপি ট্র্যাকিং দ্বারা এটি নিষিদ্ধ হওয়ার আগে একটি আইপি দ্বারা অনুমোদিত লঙ্ঘনটিকে সর্বাধিক সংখ্যা। ডিফল্ট = "10"।"
+config_signatures_shorthand: "প্রদত্ত শর্টহ্যান্ড শব্দগুলি ব্যবহার করে এমন একটি স্বাক্ষরের সাথে একটি ইতিবাচক মিল থাকলে একটি অনুরোধের সাথে কী করতে হবে তা নিয়ন্ত্রণ করে৷"
 config_signatures_tracking_override: "মডিউলগুলিকে ট্র্যাকিং বিকল্পগুলি ওভাররাইড করার অনুমতি দেবেন? True = হাঁ [ডিফল্ট]; False = না।"
 config_supplementary_cache_options: "পরিপূরক ক্যাচিং বিকল্পগুলি। দ্রষ্টব্য: এই মানগুলি পরিবর্তন করলে সম্ভবত আপনি লগ আউট হতে পারেন৷।"
 config_supplementary_cache_options_enable_apcu: "এই ক্যাশিং জন্য APCu ব্যবহার কিনা তা নির্দিষ্ট করে। ডিফল্ট = True।"
@@ -315,6 +309,15 @@ hints_default_dns:
 hints_ipv6_on_32bit: "দ্রষ্টব্য: IPv6 লুকআপ কিছু 32-বিট সিস্টেমে সঠিকভাবে কাজ নাও করতে পারে।"
 hints_pdo_dsn:
  FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#HOW_TO_USE_PDO" hreflang="en-AU">একটি "PDO DSN" কি? আমি কিভাবে CIDRAM এর সাথে PDO ব্যবহার করতে পারি?</a></em>"
+hints_shorthand:
+ 0.: "যদি আপনার ওয়েবসাইটের LAN বা লোকালহোস্টের মাধ্যমে অ্যাক্সেসের প্রয়োজন হয়, তাহলে এটি ব্লক করবেন না। অন্যথায়, আপনি এটি ব্লক করতে পারেন।"
+ 1.: "ডিফল্ট স্বাক্ষর ফাইলগুলির মধ্যে কোনটি এটি ব্যবহার করে না, তবে এটি কিছু ব্যবহারকারীর জন্য উপযোগী হতে পারে ক্ষেত্রে এটি সমর্থিত।"
+ 2.: "যদি আপনার ব্যবহারকারীদের প্রক্সির মাধ্যমে আপনার ওয়েবসাইট অ্যাক্সেস করতে সক্ষম হতে হয়, তাহলে এটি ব্লক করবেন না। অন্যথায়, আপনি এটি ব্লক করতে পারেন।"
+ 3.: "স্বাক্ষরের মধ্যে সরাসরি ব্যবহার সমর্থিত নয়, তবে বিশেষ পরিস্থিতিতে এটি অন্য উপায়ে আহ্বান করা যেতে পারে।"
+ 4.: "Refers to cases where shorthand words aren't used at all, or aren't recognised by CIDRAM."
+ One per signature.: "A signature may invoke multiple profiles, but can use only one shorthand word. It's possible that multiple shorthand words may be suitable, but as only one can be used, we aim to always use only the most suitable."
+ Priority.: "An option selected always takes priority over an option not selected. E.g., if multiple shorthand words are in play but only one of them is set as being blocked, the request will still be blocked."
+ Human endpoints and cloud services.: "Cloud service may refer to webhosting providers, server farms, data centers, or a number of other things. Human endpoint refers to the means by which a human accesses the internet, such as by way of an internet service provider. A network usually provides just one or the other, but may sometimes provide both. We aim to never identify potential human endpoints as cloud services. Therefore, a cloud service may be identified as something else if its range is shared by known human endpoints. Likewise, we aim to always identify cloud services, whose ranges are not shared by any known human endpoints, as cloud services. Therefore, a request identified explicitly as a cloud service most likely doesn't share its range with any known human endpoints. Likewise, a request identified explicitly by attacks or spam most likely does share them. However, the internet is always in flux, the purposes of networks changes over time, and ranges are always being bought or sold, so remain cognisant and vigilant in regards to false positives."
 hints_verification:
  ""ইতিবাচক" এবং "নেতিবাচক" কি?": "একটি অনুরোধ দ্বারা উপস্থাপিত পরিচয় যাচাই করার সময়, একটি সফল ফলাফলকে "ইতিবাচক" বা "নেতিবাচক" হিসাবে বর্ণনা করা যেতে পারে। উপস্থাপিত পরিচয়টি সত্য পরিচয় বলে নিশ্চিত হলে, এটিকে "ইতিবাচক" হিসাবে বর্ণনা করা হবে। উপস্থাপিত পরিচয় মিথ্যা বলে নিশ্চিত করা হলে, এটি "নেতিবাচক" হিসাবে বর্ণনা করা হবে। যাইহোক, একটি অসফল ফলাফল (যেমন, যাচাইকরণ ব্যর্থ হয়, বা উপস্থাপিত পরিচয়ের সত্যতা নির্ধারণ করা যায় না) "ইতিবাচক" বা "নেতিবাচক" হিসাবে বর্ণনা করা হবে না। পরিবর্তে, একটি অসফল ফলাফলকে অ-যাচাই করা হিসাবে বর্ণনা করা হবে। যখন একটি অনুরোধ দ্বারা উপস্থাপিত পরিচয় যাচাই করার কোন চেষ্টা করা হয় না, তখন অনুরোধটিকে অ-যাচাই করা হিসাবে বর্ণনা করা হবে। শর্তাবলী শুধুমাত্র সেই প্রেক্ষাপটে বোঝা যায় যেখানে একটি অনুরোধ দ্বারা উপস্থাপিত পরিচয় স্বীকৃত হয়, এবং সেইজন্য, যেখানে যাচাই করা সম্ভব। যদি উপস্থাপিত পরিচয়টি উপরে প্রদত্ত বিকল্পগুলির সাথে মেলে না, বা যদি কোন পরিচয় উপস্থাপন করা না হয়, তাহলে উপরে প্রদত্ত বিকল্পগুলি অপ্রাসঙ্গিক হয়ে যায়।"
  ""একক-হিট বাইপাস" কি?": "কিছু ক্ষেত্রে, স্বাক্ষর ফাইল, মডিউল, বা অনুরোধের অন্যান্য শর্তের ফলে একটি ইতিবাচক-যাচাই করা অনুরোধ এখনও অবরুদ্ধ হতে পারে, এবং মিথ্যা ইতিবাচক এড়াতে বাইপাস প্রয়োজন হতে পারে। যখন একটি বাইপাস ঠিক একটি লঙ্ঘন মোকাবেলা করার উদ্দেশ্যে করা হয়, কম নয় এবং নয়, এই ধরনের বাইপাসকে "একক-হিট বাইপাস" হিসাবে বর্ণনা করা যেতে পারে।"

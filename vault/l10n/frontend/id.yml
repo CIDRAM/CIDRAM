@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Indonesian language data for the front-end (last modified: 2022.07.02).
+# This file: Indonesian language data for the front-end (last modified: 2022.07.03).
 ##/
 
 Extended Description AbuseIPDB module: "Memblokir permintaan dari IP yang terdaftar oleh AbuseIPDB."
@@ -61,6 +61,7 @@ Name Project Honeypot module: "Modul Project Honeypot"
 Name Referrer spam module: "Modul spam pengarah"
 Name Search engines blocker module: "Modul pemblokir mesin pencari"
 Name Stop Forum Spam module: "Modul Stop Forum Spam"
+checkbox_label_block_it: "Blokir."
 checkbox_label_block_negatives: "Blokir negatif?"
 checkbox_label_block_nonverified: "Blokir permintaan yang tidak diverifikasi?"
 checkbox_label_fields_logs: "Sertakan bidang ini dalam entri log?"
@@ -202,16 +203,9 @@ config_recaptcha_usemode: *CaptchaUseMode
 config_sfs: "Konfigurasi untuk modul Stop Forum Spam."
 config_sfs_offer_captcha: "Ketika permintaan diblokir oleh modul ini, CAPTCHA dapat disajikan. Default = True. Catatan: Tidak mengesampingkan direktif lain. Agar CAPTCHA disajikan, semua direktif harus setuju, kunci yang diperlukan harus dikonfigurasi, dll. Jika CAPTCHA biasanya diizinkan untuk disajikan, menyetel direktif ini ke false menyediakan cara untuk mencegah CAPTCHA disajikan untuk permintaan yang diblokir secara khusus oleh modul ini."
 config_signatures: "Konfigurasi untuk tanda tangan, file tanda tangan, modul, dll."
-config_signatures_block_attacks: "Memblokir CIDR yang terkait dengan serangan dan lalu lintas abnormal lainnya? Misalnya, pemindaian port, peretasan, pemeriksaan kerentanan, dll. Kecuali jika Anda mengalami masalah ketika melakukan itu, umumnya, ini harus selalu didefinisikan untuk true/benar."
-config_signatures_block_bogons: "Memblokir CIDR bogon/martian? Jika Anda mengharapkan koneksi ke website Anda dari dalam jaringan lokal Anda, dari localhost, atau dari LAN Anda, direktif ini harus didefinisikan untuk false/palsu. Jika Anda tidak mengharapkan ini, direktif ini harus didefinisikan untuk true/benar."
-config_signatures_block_cloud: "Memblokir CIDR yang diidentifikasi sebagai milik webhosting dan/atau layanan cloud? Jika Anda mengoperasikan layanan API dari website Anda atau jika Anda mengharapkan website lain untuk menghubungkan ke website Anda, direktif ini harus didefinisikan untuk false/palsu. Jika Anda tidak, maka, direktif ini harus didefinisikan untuk true/benar."
-config_signatures_block_generic: "Memblokir CIDR umumnya direkomendasikan untuk mendaftar hitam? Ini mencakup tanda tangan apapun yang tidak ditandai sebagai bagian dari apapun lainnya kategori tanda tangan lebih spesifik."
-config_signatures_block_legal: "Memblokir CIDR sebagai respons terhadap kewajiban hukum? Direktif ini seharusnya tidak memiliki efek apapun, karena CIDRAM tidak menghubungkan CIDR apapun dengan "kewajiban hukum" secara default, tetapi tetap ada sebagai ukuran kontrol tambahan untuk kepentingan file tanda tangan atau modul dipersonalisasi yang mungkin ada karena alasan hukum."
-config_signatures_block_malware: "Memblokir CIDR yang terkait dengan malware? Ini termasuk server C&C, mesin yang terinfeksi, mesin yang terlibat dalam distribusi malware, dll."
-config_signatures_block_proxies: "Memblokir CIDR yang diidentifikasi sebagai milik layanan proxy atau VPN? Jika Anda membutuhkan bahwa pengguna dapat mengakses situs web Anda dari layanan proxy atau VPN, direktif ini harus didefinisikan untuk false/palsu. Jika Anda tidak membutuhkannya, direktif ini harus didefinisikan untuk true/benar sebagai sarana untuk meningkatkan keamanan."
-config_signatures_block_spam: "Memblokir CIDR yang diidentifikasi sebagai beresiko tinggi karena spam? Kecuali jika Anda mengalami masalah ketika melakukan itu, umumnya, ini harus selalu didefinisikan untuk true/benar."
 config_signatures_default_tracktime: "Berapa banyak detik untuk melacak IP dilarang oleh modul. Default = 604800 (1 seminggu)."
 config_signatures_infraction_limit: "Jumlah maksimum pelanggaran IP diperbolehkan untuk dikenakan sebelum dilarang oleh pelacakan IP. Default = 10."
+config_signatures_shorthand: "Kontrol untuk apa yang harus dilakukan dengan permintaan jika/ketika ada kecocokan yang positif dengan tanda tangan yang menggunakan kata-kata singkat yang diberikan."
 config_signatures_tracking_override: "Izinkan modul untuk mengganti opsi pelacakan? True = Ya [Default]; False = Tidak."
 config_supplementary_cache_options: "Opsi cache tambahan. Catatan: Mengubah nilai ini berpotensi membuat Anda keluar."
 config_supplementary_cache_options_enable_apcu: "Menentukan apakah akan mencoba menggunakan APCu untuk cache. Default = True."
@@ -315,6 +309,15 @@ hints_default_dns:
 hints_ipv6_on_32bit: "Catatan: Pencarian IPv6 mungkin tidak bekerja dengan benar pada beberapa sistem 32-bit."
 hints_pdo_dsn:
  FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.id.md\#HOW_TO_USE_PDO" hreflang="id">Apa itu "PDO DSN"? Bagaimana saya bisa menggunakan PDO dengan CIDRAM?</a></em>"
+hints_shorthand:
+ 0.: "Jika situs web Anda memerlukan akses melalui LAN atau localhost, jangan blokir ini. Jika tidak memerlukannya, Anda dapat memblokir ini."
+ 1.: "Tidak ada file tanda tangan default yang menggunakan ini, tapi tetap didukung dalam kasus mungkin berguna untuk beberapa pengguna."
+ 2.: "Jika Anda memerlukan pengguna untuk dapat mengakses situs web Anda melalui proxy, jangan blokir ini. Jika tidak memerlukannya, Anda dapat memblokir ini."
+ 3.: "Penggunaan langsung dalam tanda tangan tidak didukung, tetapi mungkin dipanggil dengan cara lain dalam keadaan tertentu."
+ 4.: "Mengacu pada kasus dimana kata-kata singkat tidak digunakan sama sekali, atau tidak dikenali oleh CIDRAM."
+ Satu per tanda tangan.: "Tanda tangan dapat memanggil beberapa profil, tetapi hanya dapat menggunakan satu kata singkat. Ada kemungkinan bahwa beberapa kata singkat mungkin cocok, tetapi karena hanya satu dapat digunakan, kami bertujuan untuk selalu menggunakan hanya yang paling cocok."
+ Prioritas.: "Opsi yang dipilih selalu diprioritaskan daripada opsi yang tidak dipilih. Misalnya, jika beberapa kata-kata singkat sedang di tangan, tetapi hanya satu yang disetel sebagai diblokir, permintaan akan tetap diblokir."
+ Titik akhir manusia dan layanan komputasi awan.: "Layanan komputasi awan dapat merujuk ke penyedia hosting web, server farm, pusat data, atau sejumlah hal lainnya. Titik akhir manusia mengacu pada cara manusia mengakses internet, seperti melalui penyedia layanan internet. Jaringan biasanya menyediakan hanya satu atau lain, tetapi kadang-kadang dapat menyediakan keduanya. Kami bertujuan untuk tidak pernah mengidentifikasi titik akhir manusia potensial sebagai layanan komputasi awan. Demikian, layanan komputasi awan dapat diidentifikasi sebagai sesuatu lain jika rentangnya dibagi oleh titik akhir manusia yang dikenal. Dengan cara yang sama, kami bertujuan untuk selalu mengidentifikasi layanan cloud, yang rentangnya tidak dibagikan oleh titik akhir manusia yang dikenal, sebagai layanan komputasi awan. Akibatnya, permintaan yang diidentifikasi eksplisit sebagai layanan komputasi awan paling mungkin tidak berbagi rentangnya dengan titik akhir manusia yang diketahui. Demikian juga, permintaan yang diidentifikasi eksplisit oleh serangan atau oleh risiko spam paling mungkin membagikannya. Namun, internet selalu berubah, tujuan jaringan berubah dari waktu ke waktu, dan rentang-rentang selalu dibeli atau dijual, jadi tetaplah sadar dan waspada dalam hal positif palsu."
 hints_verification:
  "Apa itu "positif" dan "negatif"?": "Saat memverifikasi identitas yang disajikan oleh permintaan, hasil yang berhasil dapat digambarkan sebagai "positif" atau "negatif". Ketika identitas yang disajikan dikonfirmasi sebagai identitas sebenarnya, itu akan digambarkan sebagai "positif". Ketika identitas yang disajikan dikonfirmasi untuk dipalsukan, itu akan digambarkan sebagai "negatif". Namun, hasil yang tidak berhasil (misalnya, verifikasi gagal, atau kebenaran identitas yang disajikan tidak dapat ditentukan) tidak akan digambarkan sebagai "positif" atau "negatif". Sebaliknya, hasil yang tidak berhasil akan digambarkan sebagai tidak diverifikasi. Ketika tidak ada upaya untuk memverifikasi identitas yang disajikan oleh permintaan, permintaan tersebut juga akan digambarkan sebagai tidak diverifikasi. Istilah tersebut masuk akal hanya dalam konteks dimana identitas yang disajikan oleh permintaan dikenali, dan jadi, dimana verifikasi dimungkinkan. Jika identitas yang disajikan tidak sesuai dengan opsi yang diberikan di atas, atau jika tidak ada identitas yang disajikan, opsi yang diberikan di atas menjadi tidak relevan."
  "Apa itu "bypass satu pelanggaran"?": "Dalam beberapa kasus, permintaan diverifikasi secara positif mungkin masih diblokir sebagai akibat dari file tanda tangan, modul, atau kondisi permintaan lainnya, dan bypass mungkin diperlukan untuk menghindari positif palsu. Dalam kasus dimana bypass dimaksudkan untuk menangani tepat satu pelanggaran, tidak lebih dan tidak kurang, bypass seperti itu dapat digambarkan sebagai "bypass satu pelanggaran"."

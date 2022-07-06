@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: English language data for the front-end (last modified: 2022.07.02).
+# This file: English language data for the front-end (last modified: 2022.07.03).
 ##/
 
 Extended Description AbuseIPDB module: "Blocks requests from IPs listed at AbuseIPDB."
@@ -61,6 +61,7 @@ Name Project Honeypot module: "Project Honeypot module"
 Name Referrer spam module: "Referrer spam module"
 Name Search engines blocker module: "Search engines blocker module"
 Name Stop Forum Spam module: "Stop Forum Spam module"
+checkbox_label_block_it: "Block it."
 checkbox_label_block_negatives: "Block negatives?"
 checkbox_label_block_nonverified: "Block non-verified requests?"
 checkbox_label_fields_logs: "Should this field appear in log entries?"
@@ -202,16 +203,9 @@ config_recaptcha_usemode: *CaptchaUseMode
 config_sfs: "Configuration for the Stop Forum Spam module."
 config_sfs_offer_captcha: "When requests are blocked by this module, CAPTCHAs may be served. Default = True. Note: Doesn't override other directives. For CAPTCHAs to be served, all directives must agree, necessary keys configured, etc. In the event that CAPTCHAs would normally be permitted to be served, setting this directive to false provides a way to prevent CAPTCHAs being served for requests blocked specifically by this module."
 config_signatures: "Configuration for signatures, signature files, modules, etc."
-config_signatures_block_attacks: "Block CIDRs associated with attacks and other abnormal traffic? E.g., port scans, hacking, probing for vulnerabilities, etc. Unless you experience problems when doing so, generally, this should always be set to true."
-config_signatures_block_bogons: "Block bogon/martian CIDRs? If you expect connections to your website from within your local network, from localhost, or from your LAN, this directive should be set to false. If you don't expect these such connections, this directive should be set to true."
-config_signatures_block_cloud: "Block CIDRs identified as belonging to webhosting/cloud services? If you operate an API service from your website or if you expect other websites to connect to your website, this should be set to false. If you don't, then, this directive should be set to true."
-config_signatures_block_generic: "Block CIDRs generally recommended for blacklisting? This covers any signatures that aren't marked as being part of any of the other more specific signature categories."
-config_signatures_block_legal: "Block CIDRs in response to legal obligations? This directive shouldn't normally have any effect, because CIDRAM doesn't associate any CIDRs with "legal obligations" by default, but it exists nonetheless as an additional control measure for the benefit of any custom signature files or modules that might exist for legal reasons."
-config_signatures_block_malware: "Block CIDRs associated with malware? This includes C&C servers, infected machines, machines involved in malware distribution, etc."
-config_signatures_block_proxies: "Block CIDRs identified as belonging to proxy services or VPNs? If you require that users be able to access your website from proxy services and VPNs, this directive should be set to false. Otherwise, if you don't require proxy services or VPNs, this directive should be set to true as a means of improving security."
-config_signatures_block_spam: "Block CIDRs identified as being high-risk for spam? Unless you experience problems when doing so, generally, this should always be set to true."
 config_signatures_default_tracktime: "How many seconds to track IPs banned by modules. Default = 604800 (1 week)."
 config_signatures_infraction_limit: "Maximum number of infractions an IP is allowed to incur before it is banned by IP tracking. Default = 10."
+config_signatures_shorthand: "Controls for what to do with a request when there's a positive match against a signature which utilises the given shorthand words."
 config_signatures_tracking_override: "Allow modules to override tracking options? True = Yes [Default]; False = No."
 config_supplementary_cache_options: "Supplementary cache options. Note: Changing these values may potentially log you out."
 config_supplementary_cache_options_enable_apcu: "Specifies whether to try using APCu for caching. Default = True."
@@ -317,6 +311,15 @@ hints_default_dns:
 hints_ipv6_on_32bit: "Note: IPv6 lookups mightn't work correctly on some 32-bit systems."
 hints_pdo_dsn:
  FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#HOW_TO_USE_PDO" hreflang="en-AU">What is a "PDO DSN"? How can I use PDO with CIDRAM?</a></em>"
+hints_shorthand:
+ 0.: "If your website needs access via LAN or localhost, don't block this. Otherwise though, you can block this."
+ 1.: "None of the default signature files use this, but it's supported nonetheless in case it might be useful for some users."
+ 2.: "If you need users to be able to access your website via proxies, don't block this. Otherwise though, you can block this."
+ 3.: "Direct usage in signatures isn't supported, but it may be invoked by other means in particular circumstances."
+ 4.: "Refers to cases where shorthand words aren't used at all, or aren't recognised by CIDRAM."
+ One per signature.: "A signature may invoke multiple profiles, but can use only one shorthand word. It's possible that multiple shorthand words may be suitable, but as only one can be used, we aim to always use only the most suitable."
+ Priority.: "An option selected always takes priority over an option not selected. E.g., if multiple shorthand words are in play but only one of them is set as being blocked, the request will still be blocked."
+ Human endpoints and cloud services.: "Cloud service may refer to webhosting providers, server farms, data centers, or any number of other things. Human endpoint refers to the means by which a human accesses the internet, such as by way of an internet service provider. A network usually provides just one or the other, but may sometimes provide both. We aim to never identify potential human endpoints as cloud services. Therefore, a cloud service may be identified as something else if its range is shared by known human endpoints. Conversely, we aim to always identify cloud services, whose ranges are not shared by any known human endpoints, as cloud services. Therefore, a request identified explicitly as a cloud service probably doesn't share its range with any known human endpoints. Likewise, a request identified explicitly by attacks or spam probably does. However, the internet is always in flux, the purposes of networks changes over time, and ranges are always being bought or sold, so remain cognisant and vigilant in regards to false positives."
 hints_verification:
  "What are "positives" and "negatives"?": "When verifying the identity presented by a request, a successful outcome could be described as "positive" or "negative". In the case that the identity presented is confirmed to be the true identity, it would be described as "positive". In the case that the identity presented is confirmed to be falsified, it would be described as "negative". However, an unsuccessful outcome (e.g., verification fails, or the veracity of the identity presented isn't able to be determined) would not be described as "positive" or "negative". Instead, an unsuccessful outcome would be described simply as non-verified. When no attempt to verify the identity presented by a request is made, the request would be likewise be described as non-verified. The terms make sense only in the context where the identity presented by a request is recognised, and therefore, where verification is possible. In cases where the identity presented doesn't match the options provided above, or where no identity is presented, the options provided above become irrelevant."
  "What are "single-hit bypasses"?": "In some cases, a positive-verified request may still blocked as a result of the signature files, modules, or other conditions of the request, and bypasses may be necessary in order to avoid false positives. In the case where a bypass is intended to deal with exactly one infraction, no more and no less, such a bypass could be described as a "single-hit bypass"."

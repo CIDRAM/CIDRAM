@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (traditional) language data for the front-end (last modified: 2022.07.02).
+# This file: Chinese (traditional) language data for the front-end (last modified: 2022.07.03).
 ##/
 
 Extended Description AbuseIPDB module: "阻止來自AbuseIPDB列出的IP的請求。"
@@ -61,6 +61,7 @@ Name Project Honeypot module: "Project Honeypot 模塊"
 Name Referrer spam module: "引薦來源垃圾郵件模塊"
 Name Search engines blocker module: "搜索引擎阻塞模塊"
 Name Stop Forum Spam module: "Stop Forum Spam 模塊"
+checkbox_label_block_it: "阻止它。"
 checkbox_label_block_negatives: "阻止陰性？"
 checkbox_label_block_nonverified: "阻止未驗證的請求？"
 checkbox_label_fields_logs: "該字段是否應該出現在日誌條目中？"
@@ -202,16 +203,9 @@ config_recaptcha_usemode: *CaptchaUseMode
 config_sfs: "Stop Forum Spam模塊的配置。"
 config_sfs_offer_captcha: "當此模塊阻止請求時，可能會提供驗證碼。​標準 = True。​注意：它不會覆蓋其他指令。​要提供驗證碼，所有指令必須一致，必要的密鑰必須配置，等等。​在通常允許提供驗證碼的情況下，將此指令設置為『false』可以防止為該模塊專門阻止的請求提供驗證碼。"
 config_signatures: "簽名，簽名文件，模塊，等的配置。"
-config_signatures_block_attacks: "阻止攻擊和其他異常流量相關的CIDR嗎？​例如，端口掃描、黑客攻擊、漏洞探測、等等。​除非您遇到問題當這樣做，​通常，​這應該被設置為『true』（真）。"
-config_signatures_block_bogons: "阻止bogon(『ㄅㄡㄍㄛㄋ』)/martian（​『火星』）CIDR嗎？​如果您希望連接到您的網站從您的本地網絡/本地主機/localhost/LAN/等等，​這應該被設置為『false』（假）。​如果不，​這應該被設置為『true』（真）。"
-config_signatures_block_cloud: "阻止CIDR認定為屬於虛擬主機或云服務嗎？​如果您操作一個API服務從您的網站或如果您預計其他網站連接到您的網站，​這應該被設置為『false』（假）。​如果不，​這應該被設置為『true』（真）。"
-config_signatures_block_generic: "阻止CIDR一般建議對於黑名單嗎？​這包括簽名不標記為的一章节任何其他更具體簽名類別。"
-config_signatures_block_legal: "阻止CIDR因為法律義務嗎？​這個指令通常不應該有任何作用，因為CIDRAM默認情況下不會將任何CIDR與『法律義務』相關聯，​但它作為一個額外的控制措施存在，以利於任何可能因法律原因而存在的自定義簽名文件或模塊。"
-config_signatures_block_malware: "阻止與惡意軟件相關的CIDR嗎？​這包括C&C服務器，受感染的機器，涉及惡意軟件分發的機器，等等。"
-config_signatures_block_proxies: "阻止CIDR認定為屬於代理服務或VPN嗎？​如果您需要該用戶可以訪問您的網站從代理服務和VPN，​這應該被設置為『false』（假）。​除此以外，​如果您不需要代理服務或VPN，​這應該被設置為『true』（真）作為一個方式以提高安全性。"
-config_signatures_block_spam: "阻止高風險垃圾郵件CIDR嗎？​除非您遇到問題當這樣做，​通常，​這應該被設置為『true』（真）。"
 config_signatures_default_tracktime: "多少秒鐘來跟踪模塊禁止的IP。​標準 = 604800 （1週）。"
 config_signatures_infraction_limit: "從IP最大允許違規數量之前它被禁止。​標準=10。"
+config_signatures_shorthand: "當與使用給定速記詞的簽名匹配時，控制如何處理請求。"
 config_signatures_tracking_override: "允許模塊覆蓋跟踪選項嗎？​True（真）=允許【標準】；False（假）=不允許。"
 config_supplementary_cache_options: "補充緩存選項。​注意：更改這些值可能會使您註銷。"
 config_supplementary_cache_options_enable_apcu: "指定是否嘗試使用APCu進行緩存。​默認 = True。"
@@ -315,6 +309,15 @@ hints_default_dns:
 hints_ipv6_on_32bit: "注意：IPv6查找在某些32位系統上可能無法正常工作。"
 hints_pdo_dsn:
  常問問題。: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.zh-tw.md\#HOW_TO_USE_PDO" hreflang="zh-TW">『PDO DSN』是什麼？如何能PDO與CIDRAM一起使用？</a></em>"
+hints_shorthand:
+ 0.: "如果您的網站需要通過LAN或localhost訪問，不要阻止它。​否則，您可以阻止它。"
+ 1.: "標準簽名文件不使用它，但它仍然受支持，因為它可能對某些用戶有用。"
+ 2.: "如果您需要用戶能夠通過代理訪問您的網站，不要阻止它。​否則，您可以阻止它。"
+ 3.: "不支持直接在簽名中使用，但在特定情況下可以通過其他方式調用。"
+ 4.: "當速記詞不使用或CIDRAM不識別時。"
+ 對於每個簽名只有一個。: "簽名可以調用多個分類，但只能使用一個速記詞。​多個速記詞可能是合適的，但由於只能使用一個，我們試圖始終只使用最合適的。"
+ 優先。: "選定的選項始終優先於未選定的選項。​例如，如果多個速記詞是生效的，但只有一個被設置為被阻止，則請求仍將被阻止。"
+ 人類端點和雲服務。: "雲服務可能是指虛擬主機提供商、服務器場、數據中心、或許多其他事物。​人類端點是指人類訪問互聯網的方式，例如，通過互聯網服務提供商。​網絡通常只提供一個或另一個，但有時可能同時提供兩者。​我們試圖不將潛在的人類端點識別為雲服務。​因此，如果雲服務的範圍由已知的人類端點共享，則可以將其識別為其他東西。​同樣，如果範圍不被任何已知的人類端點共享，我們會試圖始終將雲服務識別為雲服務。​因此，明確標識為雲服務的請求很可能不會與任何已知的人類端點共享其範圍。​同樣，由攻擊或垃圾郵件的風險明確識別的請求很可能共享範圍。​然而，互聯網總是在不斷變化，網絡的目的可以改變，範圍總是被買賣，所以關於假陽性的保持有意識和警惕。"
 hints_verification:
  "什麼是『陽性』和『陰性』？": "在驗證請求提供的身份時，成功的結果可以描述為『陽性』或『陰性』。​當所呈現的身份被確認為真實身份時，將被描述為『陽性』。​當所提供的身份被證實為偽造時，將被描述為『陰性』。​但是，不成功的結果（例如，驗證失敗，或無法確定所提供身份的真實性）不會被描述為『陽性』或『陰性』。​相反，不成功的結果將被簡單地描述為未驗證。​當沒有嘗試驗證請求提供的身份時，該請求同樣會被描述為未驗證。​這些術語僅在請求提供的身份被識別的情況下才有意義，因此，在可以進行驗證的情況下。​如果提供的身份與上面提供的選項不匹配，或者沒有提供身份，則上面提供的選項變得無關。"
  "什麼是『一擊繞過』？": "在某些情況下，由於簽名文件、模塊、或請求的其他條件，可能仍會阻止經過肯定驗證的請求，為了避免誤報，可能需要繞過。​在繞過旨在處理僅一項違規行為的情況下，這樣的繞過可以被描述為『一擊繞過』。"

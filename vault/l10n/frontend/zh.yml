@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (simplified) language data for the front-end (last modified: 2022.07.02).
+# This file: Chinese (simplified) language data for the front-end (last modified: 2022.07.03).
 ##/
 
 Extended Description AbuseIPDB module: "阻止来自AbuseIPDB列出的IP的请求。"
@@ -61,6 +61,7 @@ Name Project Honeypot module: "Project Honeypot 模块"
 Name Referrer spam module: "引荐来源垃圾邮件模块"
 Name Search engines blocker module: "搜索引擎阻塞模块"
 Name Stop Forum Spam module: "Stop Forum Spam 模块"
+checkbox_label_block_it: "阻止它。"
 checkbox_label_block_negatives: "阻止阴性？"
 checkbox_label_block_nonverified: "阻止未验证的请求？"
 checkbox_label_fields_logs: "该字段是否应该出现在日志条目中？"
@@ -202,16 +203,9 @@ config_recaptcha_usemode: *CaptchaUseMode
 config_sfs: "Stop Forum Spam模块的配置。"
 config_sfs_offer_captcha: "当此模块阻止请求时，可能会提供验证码。​标准 = True。​注意：它不会覆盖其他指令。​要提供验证码，所有指令必须一致，必要的密钥必须配置，等等。​在通常允许提供验证码的情况下，将此指令设置为“false”可以防止为该模块专门阻止的请求提供验证码。"
 config_signatures: "签名，签名文件，模块，等的配置。"
-config_signatures_block_attacks: "阻止攻击和其他异常流量相关的CIDR吗？​例如，端口扫描、黑客攻击、漏洞探测、等等。​除非您遇到问题当这样做，​通常，​这应该被设置为“true”（真）。"
-config_signatures_block_bogons: "阻止bogon(“ㄅㄡㄍㄛㄋ”)/martian（“火星”）CIDR吗？​如果您希望连接到您的网站从您的本地网络/本地主机/localhost/LAN/等等，​这应该被设置为“false”（假）。​如果不，​这应该被设置为“true”（真）。"
-config_signatures_block_cloud: "阻止CIDR认定为属于虚拟主机或云服务吗？​如果您操作一个API服务从您的网站或如果您预计其他网站连接到您的网站，​这应该被设置为“false”（假）。​如果不，​这应该被设置为“true”（真）。"
-config_signatures_block_generic: "阻止CIDR一般建议对于黑名单吗？​这包括签名不标记为的一章节任何其他更具体签名类别。"
-config_signatures_block_legal: "阻止CIDR因为法律义务吗？​这个指令通常不应该有任何作用，因为CIDRAM默认情况下不会将任何CIDR与“法律义务”相关联，​但它作为一个额外的控制措施存在，以利于任何可能因法律原因而存在的自定义签名文件或模块。"
-config_signatures_block_malware: "阻止与恶意软件相关的CIDR吗？​这包括C&C服务器，受感染的机器，涉及恶意软件分发的机器，等等。"
-config_signatures_block_proxies: "阻止CIDR认定为属于代理服务或VPN吗？​如果您需要该用户可以访问您的网站从代理服务和VPN，​这应该被设置为“false”（假）。​除此以外，​如果您不需要代理服务或VPN，​这应该被设置为“true”（真）作为一个方式以提高安全性。"
-config_signatures_block_spam: "阻止高风险垃圾邮件CIDR吗？​除非您遇到问题当这样做，​通常，​这应该被设置为“true”（真）。"
 config_signatures_default_tracktime: "多少秒钟来跟踪模块禁止的IP。​标准 = 604800 （1周）。"
 config_signatures_infraction_limit: "从IP最大允许违规数量之前它被禁止。​标准=10。"
+config_signatures_shorthand: "当与使用给定速记词的签名匹配时，控制如何处理请求。"
 config_signatures_tracking_override: "允许模块覆盖跟踪选项吗？​True（真）=允许【标准】；False（假）=不允许。"
 config_supplementary_cache_options: "补充缓存选项。​注意：更改这些值可能会使您注销。"
 config_supplementary_cache_options_enable_apcu: "指定是否尝试使用APCu进行缓存。​标准 = True。"
@@ -315,6 +309,15 @@ hints_default_dns:
 hints_ipv6_on_32bit: "注意：IPv6查找在某些32位系统上可能无法正常工作。"
 hints_pdo_dsn:
  常问问题。: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.zh.md\#HOW_TO_USE_PDO" hreflang="zh-CN">“PDO DSN”是什么？如何能PDO与CIDRAM一起使用？</a></em>"
+hints_shorthand:
+ 0.: "如果您的网站需要通过LAN或localhost访问，不要阻止它。​否则，您可以阻止它。"
+ 1.: "标准签名文件不使用它，但它仍然受支持，因为它可能对某些用户有用。"
+ 2.: "如果您需要用户能够通过代理访问您的网站，不要阻止它。​否则，您可以阻止它。"
+ 3.: "不支持直接在签名中使用，但在特定情况下可以通过其他方式调用。"
+ 4.: "当速记词不使用或CIDRAM不识别时。"
+ 对于每个签名只有一个。: "签名可以调用多个分类，但只能使用一个速记词。​多个速记词可能是合适的，但由于只能使用一个，我们试图始终只使用最合适的。"
+ 优先。: "选定的选项始终优先于未选定的选项。​例如，如果多个速记词是生效的，但只有一个被设置为被阻止，则请求仍将被阻止。"
+ 人类端点和云服务。: "云服务可能是指虚拟主机提供商、服务器场、数据中心、或许多其他事物。​人类端点是指人类访问互联网的方式，例如，通过互联网服务提供商。​网络通常只提供一个或另一个，但有时可能同时提供两者。​我们试图不将潜在的人类端点识别为云服务。​因此，如果云服务的范围由已知的人类端点共享，则可以将其识别为其他东西。​同样，如果范围不被任何已知的人类端点共享，我们会试图始终将云服务识别为云服务。​因此，明确标识为云服务的请求很可能不会与任何已知的人类端点共享其范围。​同样，由攻击或垃圾邮件的风险明确识别的请求很可能共享范围。​然而，互联网总是在不断变化，网络的目的可以改变，范围总是被买卖，所以关于假阳性的保持有意识和警惕。"
 hints_verification:
  "什么是“阳性”和“阴性”？": "在验证请求提供的身份时，成功的结果可以描述为“阳性”或“阴性”。​当所呈现的身份被确认为真实身份时，将被描述为“阳性”。​当所提供的身份被证实为伪造时，将被描述为“阴性”。​但是，不成功的结果（例如，验证失败，或无法确定所提供身份的真实性）不会被描述为“阳性”或“阴性”。​相反，不成功的结果将被简单地描述为未验证。​当没有尝试验证请求提供的身份时，该请求同样会被描述为未验证。​这些术语仅在请求提供的身份被识别的情况下才有意义，因此，在可以进行验证的情况下。​如果提供的身份与上面提供的选项不匹配，或者没有提供身份，则上面提供的选项变得无关。"
  "什么是“一击绕过”？": "在某些情况下，由于签名文件、模块、或请求的其他条件，可能仍会阻止经过肯定验证的请求，为了避免误报，可能需要绕过。​在绕过旨在处理仅一项违规行为的情况下，这样的绕过可以被描述为“一击绕过”。"

@@ -5,7 +5,7 @@ Non-strict:
  Logic: "Any"
  Profile:
   If matches:
-   Profile:
+   Profiles:
     - "Amateur Radio"
     - "Domestic ISP"
     - "Fixed Line ISP"
@@ -16,7 +16,7 @@ Non-strict:
     - "Tor endpoints here"
     - "University"
   But not if matches:
-   Profile:
+   Profiles:
     - "Blacklisted"
     - "Redlisted"
 Mark non-strict for use with CAPTCHA:
@@ -30,7 +30,7 @@ Mark non-strict for use with CAPTCHA:
  Mark for use with HCaptcha: true
  Profile:
   If matches:
-   Profile:
+   Profiles:
     - "Non-strict"
    SignatureCount:
     - "<=1"

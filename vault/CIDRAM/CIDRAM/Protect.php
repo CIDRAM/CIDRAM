@@ -691,7 +691,7 @@ trait Protect
                 if (!isset($this->CIDRAM['template_file'])) {
                     $this->CIDRAM['template_file'] = sprintf(
                         'assets/core/template_%s.html',
-                        $this->CIDRAM['FieldTemplates']['css_url'] === '' ? 'custom' : $this->CIDRAM['FieldTemplates']['theme']
+                        $this->CIDRAM['FieldTemplates']['css_url'] === '' ? $this->CIDRAM['FieldTemplates']['theme'] : 'custom'
                     );
                 }
 

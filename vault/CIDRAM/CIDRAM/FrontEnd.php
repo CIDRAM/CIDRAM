@@ -4020,14 +4020,15 @@ class FrontEnd extends Core
 
                 /** Priority information about status codes. */
                 $this->FE['Priority_Status_Codes'] = sprintf(
-                    '%2$s%1$s%3$s%1$s%4$s%1$s%5$s%1$s%6$s%1$s%7$s%1$s%8$s',
+                    '%2$s%1$s%3$s%1$s%4$s%1$s%5$s%1$s%6$s%1$s%7$s%1$s%8$s%1$s%9$s',
                     $this->L10N->Data['Text Direction'] !== 'rtl' ? '➡' : '⬅',
+                    '<code dir="ltr">silent_mode(301)</code>',
                     '<code dir="ltr">ban_override(4xx🔄5xx)</code>',
                     '<code dir="ltr">rate_limiting(429)</code>',
-                    '<code dir="ltr">silent_mode(301)</code>',
                     $this->L10N->getString('link_aux') . '<code dir="ltr">(4xx🔄5xx)</code>',
-                    '<code dir="ltr">http_response_header_code(xxx)</code>',
+                    '<code dir="ltr">http_response_header_code(4xx🔄5xx)</code>',
                     $this->L10N->getString('link_aux') . '<code dir="ltr">(30x)</code>',
+                    '<code dir="ltr">nonblocked_status_code(4xx)</code>',
                     $this->L10N->getString('label_other')
                 );
 

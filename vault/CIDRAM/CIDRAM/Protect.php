@@ -756,6 +756,14 @@ trait Protect
                 $this->CIDRAM['Parsables'] += $this->L10N->Data;
 
                 if (!$this->Configuration['general']['silent_mode']) {
+                    /** Enforce output template suppression. */
+                    if (
+                        (!empty($this->CIDRAM['Banned']) && isset($this->Shorthand['Banned:Suppress'])) ||
+                        (!empty($this->CIDRAM['RL_Status']) && isset($this->Shorthand['RL:Suppress']))
+                    ) {
+                        $this->CIDRAM['Suppress output template'] = true;
+                    }
+
                     /** Fetch appropriate HTTP status code. */
                     if (
                         !empty($this->CIDRAM['Banned']) &&
@@ -766,9 +774,6 @@ trait Protect
                         header('HTTP/1.0 ' . $this->CIDRAM['errCode'] . ' ' . $this->CIDRAM['ThisStatusHTTP']);
                         header('HTTP/1.1 ' . $this->CIDRAM['errCode'] . ' ' . $this->CIDRAM['ThisStatusHTTP']);
                         header('Status: ' . $this->CIDRAM['errCode'] . ' ' . $this->CIDRAM['ThisStatusHTTP']);
-                        if (isset($this->Shorthand['Banned:Suppress'])) {
-                            $this->CIDRAM['Suppress output template'] = true;
-                        }
                     } elseif (
                         !empty($this->CIDRAM['RL_Status']) &&
                         $this->BlockInfo['SignatureCount'] === 1
@@ -778,9 +783,6 @@ trait Protect
                         header('HTTP/1.1 429 ' . $this->CIDRAM['RL_Status']);
                         header('Status: 429 ' . $this->CIDRAM['RL_Status']);
                         header('Retry-After: ' . floor($this->Configuration['rate_limiting']['allowance_period'] * 3600));
-                        if (isset($this->Shorthand['RL:Suppress'])) {
-                            $this->CIDRAM['Suppress output template'] = true;
-                        }
                     } elseif ((
                         !empty($this->CIDRAM['Aux Status Code']) &&
                         ($this->CIDRAM['errCode'] = $this->CIDRAM['Aux Status Code']) > 400 &&

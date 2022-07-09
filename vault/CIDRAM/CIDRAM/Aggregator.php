@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The aggregator (last modified: 2022.05.25).
+ * This file: The aggregator (last modified: 2022.07.09).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -138,6 +138,41 @@ class Aggregator
         $this->NumberMerged = 0;
         $this->NumberReturned = 0;
         $this->ProcessingTime = 0;
+    }
+
+    /**
+     * Optionally converts output to netmask notation.
+     *
+     * @param string
+     * @return void
+     */
+    public function convertToNetmasks(string &$In): void
+    {
+        if (isset($this->callbacks['newParse']) && is_callable($this->callbacks['newParse'])) {
+            $this->callbacks['newParse'](substr_count($In, "\n"));
+        }
+        $In = $Out = "\n" . $In . "\n";
+        $Offset = 0;
+        while (($NewLine = strpos($In, "\n", $Offset)) !== false) {
+            if (isset($this->callbacks['newTick']) && is_callable($this->callbacks['newTick'])) {
+                $this->callbacks['newTick']();
+            }
+            $Line = substr($In, $Offset, $NewLine - $Offset);
+            $Offset = $NewLine + 1;
+            if (!$Line || ($RangeSep = strpos($Line, '/')) === false) {
+                continue;
+            }
+            $Size = (int)substr($Line, $RangeSep + 1);
+            $CIDR = substr($Line, 0, $RangeSep);
+            $Type = ($this->expandIpv4($CIDR, true)) ? 4 : 6;
+            if ($Type === 4 && isset($this->TableNetmaskIPv4[$Size])) {
+                $Size = $this->TableNetmaskIPv4[$Size];
+            } elseif ($Type === 6 && isset($this->TableNetmaskIPv6[$Size])) {
+                $Size = $this->TableNetmaskIPv6[$Size];
+            }
+            $Out = str_replace("\n" . $Line . "\n", "\n" . $CIDR . '/' . $Size . "\n", $Out);
+        }
+        $In = trim($Out);
     }
 
     /**
@@ -413,40 +448,5 @@ class Aggregator
                 break;
             }
         }
-    }
-
-    /**
-     * Optionally converts output to netmask notation.
-     *
-     * @param string
-     * @return void
-     */
-    public function convertToNetmasks(string &$In): void
-    {
-        if (isset($this->callbacks['newParse']) && is_callable($this->callbacks['newParse'])) {
-            $this->callbacks['newParse'](substr_count($In, "\n"));
-        }
-        $In = $Out = "\n" . $In . "\n";
-        $Offset = 0;
-        while (($NewLine = strpos($In, "\n", $Offset)) !== false) {
-            if (isset($this->callbacks['newTick']) && is_callable($this->callbacks['newTick'])) {
-                $this->callbacks['newTick']();
-            }
-            $Line = substr($In, $Offset, $NewLine - $Offset);
-            $Offset = $NewLine + 1;
-            if (!$Line || ($RangeSep = strpos($Line, '/')) === false) {
-                continue;
-            }
-            $Size = (int)substr($Line, $RangeSep + 1);
-            $CIDR = substr($Line, 0, $RangeSep);
-            $Type = ($this->expandIpv4($CIDR, true)) ? 4 : 6;
-            if ($Type === 4 && isset($this->TableNetmaskIPv4[$Size])) {
-                $Size = $this->TableNetmaskIPv4[$Size];
-            } elseif ($Type === 6 && isset($this->TableNetmaskIPv6[$Size])) {
-                $Size = $this->TableNetmaskIPv6[$Size];
-            }
-            $Out = str_replace("\n" . $Line . "\n", "\n" . $CIDR . '/' . $Size . "\n", $Out);
-        }
-        $In = trim($Out);
     }
 }

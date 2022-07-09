@@ -1342,55 +1342,6 @@ class Core
     }
 
     /**
-     * Routes from uaIpMatch, uaCidrMatch, and uaAsnMatch. Has no return value.
-     *
-     * @param mixed $Datapoints The datapoint to be matched.
-     * @param string|array $Expected The expected values (per the call origin).
-     * @param string $Friendly A friendly name to use when logging.
-     * @return void
-     */
-    private function uaXMatch($Datapoints, $Expected, string $Friendly): void
-    {
-        $this->arrayify($Datapoints);
-        $this->arrayify($Expected);
-
-        /** Compare the actual value from the request against the expected values. */
-        foreach ($Datapoints as $Datapoint) {
-            if (in_array($Datapoint, $Expected)) {
-                /** Untrack positives. */
-                if (isset($this->CIDRAM['VPermissions'][$Friendly . ':UntrackPositives'])) {
-                    $this->CIDRAM['Trackable'] = false;
-                }
-
-                /** Populate "verified" field. */
-                if (isset($this->BlockInfo['Verified'])) {
-                    $this->BlockInfo['Verified'] = $Friendly;
-                }
-
-                /** Single-hit bypass. */
-                $this->bypass((
-                    isset($this->CIDRAM['VPermissions'][$Friendly . ':SingleHitBypass']) &&
-                    isset($this->BlockInfo['SignatureCount'], $this->BlockInfo['WhyReason']) &&
-                    $this->BlockInfo['SignatureCount'] === 1 &&
-                    preg_match('~, L\d+:F\d+,~', $this->BlockInfo['WhyReason'])
-                ), $this->L10N->getString('why_single_hit_bypass'));
-
-                /** Exit. */
-                return;
-            }
-        }
-
-        /** Nothing matched. Block it. */
-        if (isset($this->CIDRAM['VPermissions'][$Friendly . ':BlockNegatives'])) {
-            $Reason = sprintf($this->L10N->getString('Short_Fake_UA'), $Friendly);
-            $this->trigger(true, $Reason);
-        }
-
-        /** Reporting. */
-        $this->Reporter->report([19], ['Caught masquerading as ' . $Friendly . '.'], $this->BlockInfo['IPAddr']);
-    }
-
-    /**
      * The main method for triggering signatures.
      *
      * @param bool $Condition Include any variable or PHP code which can be
@@ -1652,55 +1603,6 @@ class Core
                 header('Status: 503 ' . $Status);
                 header('Retry-After: 3600');
                 die;
-            }
-        }
-    }
-
-    /**
-     * Master method for search engine and social media verification.
-     *
-     * @param string $From Where we're seeking the verification data from.
-     * @param bool $BypassFlags Whether to check for bypass flags.
-     * @return void
-     */
-    private function xVerification(string $From = '', bool $BypassFlags = false): void
-    {
-        if (
-            empty($this->CIDRAM['TestResults']) ||
-            isset($this->CIDRAM['SkipVerification']) ||
-            empty($this->BlockInfo['UALC'])
-        ) {
-            return;
-        }
-        if (!isset($this->CIDRAM['VerificationData'])) {
-            if (($Raw = $this->readFile($this->Vault . 'verification.yml')) === '') {
-                $this->CIDRAM['SkipVerification'] = true;
-                return;
-            }
-            $this->CIDRAM['VerificationData'] = [];
-            $this->YAML->process($Raw, $this->CIDRAM['VerificationData']);
-        }
-        if (!isset($this->CIDRAM['VerificationData'][$From])) {
-            return;
-        }
-        foreach ($this->CIDRAM['VerificationData'][$From] as $Name => $Values) {
-            if (
-                !is_array($Values) ||
-                !isset($Values['Method'], $Values['Valid domains']) ||
-                ($BypassFlags && !empty($Values['Bypass flag']) && !empty($this->CIDRAM[$Values['Bypass flag']]))
-            ) {
-                continue;
-            }
-            if (
-                (!empty($Values['User Agent']) && strpos($this->BlockInfo['UALC'], $Values['User Agent']) !== false) ||
-                (!empty($Values['User Agent Pattern']) && preg_match($Values['User Agent Pattern'], $this->BlockInfo['UALC']))
-            ) {
-                if (isset($this->CIDRAM['VPermissions'][$Name . ':Verify'])) {
-                    $this->{$Values['Method']}($Values['Valid domains'], $Name, $Values);
-                } elseif (isset($this->CIDRAM['VPermissions'][$Name . ':BlockNonVerified'])) {
-                    $Reason = sprintf($this->L10N->getString('Short_Unverified_UA'), $Name);
-                    $this->trigger(true, $Reason);
-                }
             }
         }
     }
@@ -2884,6 +2786,104 @@ class Core
             'R0lGODlhEAAQAMIBAAAAAGYAAJkAAMz//2YAAGYAAGYAAGYAACH5BAEKAAQALAAAAAAQABAAAANBCLrcKjBK+eKQN76RIb+g0oGewAmiZZbZRppnC0y0BgR4rutK8OWfn2jgI3KKxeHvyBwMkc0kIEp13nZYnGPLSAAAOw==',
             'gif'
         ];
+    }
+
+    /**
+     * Routes from uaIpMatch, uaCidrMatch, and uaAsnMatch. Has no return value.
+     *
+     * @param mixed $Datapoints The datapoint to be matched.
+     * @param string|array $Expected The expected values (per the call origin).
+     * @param string $Friendly A friendly name to use when logging.
+     * @return void
+     */
+    private function uaXMatch($Datapoints, $Expected, string $Friendly): void
+    {
+        $this->arrayify($Datapoints);
+        $this->arrayify($Expected);
+
+        /** Compare the actual value from the request against the expected values. */
+        foreach ($Datapoints as $Datapoint) {
+            if (in_array($Datapoint, $Expected)) {
+                /** Untrack positives. */
+                if (isset($this->CIDRAM['VPermissions'][$Friendly . ':UntrackPositives'])) {
+                    $this->CIDRAM['Trackable'] = false;
+                }
+
+                /** Populate "verified" field. */
+                if (isset($this->BlockInfo['Verified'])) {
+                    $this->BlockInfo['Verified'] = $Friendly;
+                }
+
+                /** Single-hit bypass. */
+                $this->bypass((
+                    isset($this->CIDRAM['VPermissions'][$Friendly . ':SingleHitBypass']) &&
+                    isset($this->BlockInfo['SignatureCount'], $this->BlockInfo['WhyReason']) &&
+                    $this->BlockInfo['SignatureCount'] === 1 &&
+                    preg_match('~, L\d+:F\d+,~', $this->BlockInfo['WhyReason'])
+                ), $this->L10N->getString('why_single_hit_bypass'));
+
+                /** Exit. */
+                return;
+            }
+        }
+
+        /** Nothing matched. Block it. */
+        if (isset($this->CIDRAM['VPermissions'][$Friendly . ':BlockNegatives'])) {
+            $Reason = sprintf($this->L10N->getString('Short_Fake_UA'), $Friendly);
+            $this->trigger(true, $Reason);
+        }
+
+        /** Reporting. */
+        $this->Reporter->report([19], ['Caught masquerading as ' . $Friendly . '.'], $this->BlockInfo['IPAddr']);
+    }
+
+    /**
+     * Master method for search engine and social media verification.
+     *
+     * @param string $From Where we're seeking the verification data from.
+     * @param bool $BypassFlags Whether to check for bypass flags.
+     * @return void
+     */
+    private function xVerification(string $From = '', bool $BypassFlags = false): void
+    {
+        if (
+            empty($this->CIDRAM['TestResults']) ||
+            isset($this->CIDRAM['SkipVerification']) ||
+            empty($this->BlockInfo['UALC'])
+        ) {
+            return;
+        }
+        if (!isset($this->CIDRAM['VerificationData'])) {
+            if (($Raw = $this->readFile($this->Vault . 'verification.yml')) === '') {
+                $this->CIDRAM['SkipVerification'] = true;
+                return;
+            }
+            $this->CIDRAM['VerificationData'] = [];
+            $this->YAML->process($Raw, $this->CIDRAM['VerificationData']);
+        }
+        if (!isset($this->CIDRAM['VerificationData'][$From])) {
+            return;
+        }
+        foreach ($this->CIDRAM['VerificationData'][$From] as $Name => $Values) {
+            if (
+                !is_array($Values) ||
+                !isset($Values['Method'], $Values['Valid domains']) ||
+                ($BypassFlags && !empty($Values['Bypass flag']) && !empty($this->CIDRAM[$Values['Bypass flag']]))
+            ) {
+                continue;
+            }
+            if (
+                (!empty($Values['User Agent']) && strpos($this->BlockInfo['UALC'], $Values['User Agent']) !== false) ||
+                (!empty($Values['User Agent Pattern']) && preg_match($Values['User Agent Pattern'], $this->BlockInfo['UALC']))
+            ) {
+                if (isset($this->CIDRAM['VPermissions'][$Name . ':Verify'])) {
+                    $this->{$Values['Method']}($Values['Valid domains'], $Name, $Values);
+                } elseif (isset($this->CIDRAM['VPermissions'][$Name . ':BlockNonVerified'])) {
+                    $Reason = sprintf($this->L10N->getString('Short_Unverified_UA'), $Name);
+                    $this->trigger(true, $Reason);
+                }
+            }
+        }
     }
 
     /**

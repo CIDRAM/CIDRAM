@@ -8,13 +8,41 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: General methods used by the front-end (last modified: 2022.06.30).
+ * This file: General methods used by the front-end (last modified: 2022.07.09).
  */
 
 namespace CIDRAM\CIDRAM;
 
 trait FrontEndMethods
 {
+    /**
+     * Get a limited subset of all available cache entries.
+     *
+     * @param string $Pattern The pattern for which entries to return.
+     * @param string $Replacement An optional replacement for entry names.
+     * @param ?callable $Sort An optional callable to sort entries.
+     * @return array An array of matching entries.
+     */
+    public function getAllEntriesWhere(string $Pattern, string $Replacement = '', ?callable $Sort = null): array
+    {
+        $Out = [];
+        foreach ($this->Cache->getAllEntries() as $EntryName => $EntryData) {
+            if (isset($EntryData['Time']) && $EntryData['Time'] > 0 && $EntryData['Time'] < $this->Now) {
+                continue;
+            }
+            if (preg_match($Pattern, $EntryName)) {
+                if ($Replacement !== '') {
+                    $EntryName = preg_replace($Pattern, $Replacement, $EntryName);
+                }
+                $Out[$EntryName] = $EntryData;
+            }
+        }
+        if ($Sort !== null && is_callable($Sort)) {
+            uasort($Out, $Sort);
+        }
+        return $Out;
+    }
+
     /**
      * Format filesize information.
      *
@@ -1133,33 +1161,5 @@ trait FrontEndMethods
             return $this->EventsPath;
         }
         return $this->Vault;
-    }
-
-    /**
-     * Get a limited subset of all available cache entries.
-     *
-     * @param string $Pattern The pattern for which entries to return.
-     * @param string $Replacement An optional replacement for entry names.
-     * @param ?callable $Sort An optional callable to sort entries.
-     * @return array An array of matching entries.
-     */
-    public function getAllEntriesWhere(string $Pattern, string $Replacement = '', ?callable $Sort = null): array
-    {
-        $Out = [];
-        foreach ($this->Cache->getAllEntries() as $EntryName => $EntryData) {
-            if (isset($EntryData['Time']) && $EntryData['Time'] > 0 && $EntryData['Time'] < $this->Now) {
-                continue;
-            }
-            if (preg_match($Pattern, $EntryName)) {
-                if ($Replacement !== '') {
-                    $EntryName = preg_replace($Pattern, $Replacement, $EntryName);
-                }
-                $Out[$EntryName] = $EntryData;
-            }
-        }
-        if ($Sort !== null && is_callable($Sort)) {
-            uasort($Out, $Sort);
-        }
-        return $Out;
     }
 }

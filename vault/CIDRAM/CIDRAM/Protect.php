@@ -400,7 +400,11 @@ trait Protect
         }
 
         /** This code block only executed if signatures were triggered. */
-        if (isset($this->Stages['CAPTCHA:Enable']) && $this->BlockInfo['SignatureCount'] > 0) {
+        if (
+            isset($this->Stages['CAPTCHA:Enable']) &&
+            $this->BlockInfo['SignatureCount'] > 0 &&
+            !$this->hasProfile(['BadIP', 'Blacklisted', 'Redlisted'])
+        ) {
             $this->Stage = 'CAPTCHA';
 
             if (

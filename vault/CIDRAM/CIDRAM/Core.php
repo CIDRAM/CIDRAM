@@ -2608,6 +2608,33 @@ class Core
     }
 
     /**
+     * Checks whether the instance has a profile.
+     *
+     * @param string|array $Profile The profile to check.
+     * @return bool True if it has it; False if it doesn't.
+     */
+    public function hasProfile($Profile): bool
+    {
+        if (is_array($Profile)) {
+            foreach ($Profile as $Checking) {
+                if ($this->hasProfile($Checking)) {
+                    return true;
+                }
+            }
+            return false;
+        }
+        if (!is_string($Profile)) {
+            return false;
+        }
+        foreach ($this->Profiles as $Has) {
+            if ($Has === $Profile) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /**
      * Determine, based on current signature count and on whether any CAPTCHA
      * solutions are enabled, whether to honour API lookups. Ensures compatibility
      * with modules written with v3 code in mind.

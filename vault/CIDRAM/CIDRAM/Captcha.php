@@ -8,12 +8,12 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Captcha class (last modified: 2022.06.09).
+ * This file: Captcha class (last modified: 2022.07.09).
  */
 
 namespace CIDRAM\CIDRAM;
 
-class Captcha
+abstract class Captcha
 {
     /**
      * @var string Verification results.

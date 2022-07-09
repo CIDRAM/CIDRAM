@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM front-end (last modified: 2022.07.01).
+ * This file: The CIDRAM front-end (last modified: 2022.07.09).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -56,6 +56,11 @@ class FrontEnd extends Core
         /** Initialise stages. */
         if ($this->Stages === []) {
             $this->Stages = array_flip(explode("\n", $this->Configuration['general']['stages']));
+        }
+
+        /** Initialise shorthand options. */
+        if ($this->Shorthand === []) {
+            $this->Shorthand = array_flip(explode("\n", $this->Configuration['signatures']['shorthand']));
         }
 
         /** Set page selector if not already set. */
@@ -1353,8 +1358,8 @@ class FrontEnd extends Core
                             if (isset($DirValue['labels']) && is_array($DirValue['labels'])) {
                                 $DirValue['gridV'] = 'gridVB';
                                 $ThisDir['FieldOut'] = sprintf(
-                                    '<div style="display:grid;margin:auto 38px;grid-template-columns:%s;text-align:%s">',
-                                    str_repeat('auto ', count($DirValue['labels'])) . 'auto',
+                                    '<div style="display:grid;margin:auto 38px;grid-template-columns:repeat(%s) auto;text-align:%s">',
+                                    count($DirValue['labels']) . ',minmax(0, 1fr)',
                                     $this->FE['FE_Align']
                                 );
                                 $DirValue['HasLabels'] = true;
@@ -3297,6 +3302,9 @@ class FrontEnd extends Core
                 /** Initialise stages. */
                 $this->Stages = array_flip(explode("\n", $this->Configuration['general']['stages']));
 
+                /** Initialise shorthand options. */
+                $this->Shorthand = array_flip(explode("\n", $this->Configuration['signatures']['shorthand']));
+
                 /** Iterate through the addresses given to test. */
                 foreach ($_POST['ip-addr'] as $this->CIDRAM['ThisIP']['IPAddress']) {
                     if ($this->FE['TestMode'] === 1) {
@@ -3537,6 +3545,9 @@ class FrontEnd extends Core
 
                 /** Initialise stages. */
                 $this->Stages = array_flip(explode("\n", $this->Configuration['general']['stages']));
+
+                /** Initialise shorthand options. */
+                $this->Shorthand = array_flip(explode("\n", $this->Configuration['signatures']['shorthand']));
 
                 /** Get all IP tracking entries. */
                 $Entries = $this->getAllEntriesWhere('~^Tracking-(.+)$~', '\1', function ($A, $B): int {

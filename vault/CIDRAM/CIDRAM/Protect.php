@@ -62,6 +62,17 @@ trait Protect
      */
     public function protect()
     {
+        /** Attach client-accepted L10N declaration. */
+        if ($this->Configuration['general']['lang'] === $this->CIDRAM['Client-L10N-Accepted']) {
+            $this->CIDRAM['L10N-Lang-Attache'] = '';
+        } else {
+            $this->CIDRAM['L10N-Lang-Attache'] = sprintf(
+                ' lang="%s" dir="%s"',
+                $this->CIDRAM['Client-L10N-Accepted'],
+                $this->CIDRAM['Client-L10N']->Data['Text Direction'] ?? 'ltr'
+            );
+        }
+
         /** Initialise stages. */
         $this->Stages = array_flip(explode("\n", $this->Configuration['general']['stages']));
 
@@ -819,7 +830,7 @@ trait Protect
                                     'ClickHereLink' => $this->BlockInfo['EmailAddr']
                                 ], $this->CIDRAM['Client-L10N']->getString('Support_Email')) . '</p>';
                             } elseif ($this->Configuration['general']['emailaddr_display_style'] === 'noclick') {
-                                $this->BlockInfo['EmailAddr'] = "\n  <p class=\"detected\">" . $this->parseVars([
+                                $this->BlockInfo['EmailAddr'] = "\n  <p class=\"detected\" dir=\"ltr\">" . $this->parseVars([
                                     'EmailAddr' => str_replace(
                                         '@',
                                         '<img src="data:image/gif;base64,R0lGODdhCQAKAIABAAAAAP///ywAAAAACQAKAAACE4yPAcsG+ZR7kcp6pWY4Hb54SAEAOw==" alt="@" />',

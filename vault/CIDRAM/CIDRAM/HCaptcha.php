@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: HCaptcha class (last modified: 2022.06.30).
+ * This file: HCaptcha class (last modified: 2022.07.09).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -243,7 +243,7 @@ class HCaptcha extends Captcha
         $Script = '<script src="https://hcaptcha.com/1/api.js?onload=onloadCallback&render=explicit" async defer></script>';
         $Script .= '<script type="text/javascript">document.getElementById(\'hostnameoverride\').value=window.location.hostname;</script>';
         return $API === 'Invisible' ? sprintf(
-            "\n<hr />\n<p class=\"detected\">%s%s<br /></p>\n" .
+            "\n<hr />\n<p class=\"detected\"%s>%s%s<br /></p>\n" .
             '<div class="gForm">' .
                 '<div id="hcform" class="h-captcha" data-sitekey="%s" data-theme="%s" data-callback="onSubmitCallback" data-size="invisible"></div>' .
             "</div>\n" .
@@ -251,19 +251,21 @@ class HCaptcha extends Captcha
                 '<input id="rData" type="hidden" name="hc-response" value="" />%s' .
             "</form>\n" .
             "<script type=\"text/javascript\">function onSubmitCallback(token){document.getElementById('rData').value=hcaptcha.getResponse(window.document.hcwidget);document.getElementById('gF').submit()}</script>\n",
+            $this->CIDRAM->CIDRAM['L10N-Lang-Attache'],
             $ApiMessage ? '{captcha_message_invisible}' : '',
             $CookieWarn ? '<br />{captcha_cookie_warning}' : '',
             $SiteKey,
             $this->determineTheme(),
             $this->TemplateInsert
         ) . $Script . "\n" : sprintf(
-            "\n<hr />\n<p class=\"detected\">%s%s<br /></p>\n" .
+            "\n<hr />\n<p class=\"detected\"%s>%s%s<br /></p>\n" .
             '<form method="POST" action="" class="gForm">' .
                 '<input id="rData" type="hidden" name="hc-response" value="" />' .
                 '<div id="hcform" data-theme="%s" data-callback="onSubmitCallback"></div>' .
                 '<div>%s<input type="submit" value="{label_submit}" /></div>' .
             "</form>\n" .
             "<script type=\"text/javascript\">function onSubmitCallback(token){document.getElementById('rData').value=hcaptcha.getResponse(window.document.hcwidget)}</script>\n",
+            $this->CIDRAM->CIDRAM['L10N-Lang-Attache'],
             $ApiMessage ? '{captcha_message}' : '',
             $CookieWarn ? '<br />{captcha_cookie_warning}' : '',
             $this->determineTheme(),

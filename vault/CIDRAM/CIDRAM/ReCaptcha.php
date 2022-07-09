@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: ReCaptcha class (last modified: 2022.06.30).
+ * This file: ReCaptcha class (last modified: 2022.07.09).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -239,7 +239,7 @@ class ReCaptcha extends Captcha
         $Script = '<script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>';
         $Script .= '<script type="text/javascript">document.getElementById(\'hostnameoverride\').value=window.location.hostname;</script>';
         return $API === 'Invisible' ? sprintf(
-            "\n<hr />\n<p class=\"detected\">%s%s<br /></p>\n" .
+            "\n<hr />\n<p class=\"detected\"%s>%s%s<br /></p>\n" .
             '<div class="gForm">' .
                 '<div id="gForm" class="g-recaptcha" data-sitekey="%s" data-theme="%s" data-callback="onSubmitCallback" data-size="invisible"></div>' .
             "</div>\n" .
@@ -247,16 +247,18 @@ class ReCaptcha extends Captcha
                 '<input id="rData" type="hidden" name="g-recaptcha-response" value="" />%s' .
             "</form>\n" .
             "<script type=\"text/javascript\">function onSubmitCallback(token){document.getElementById('rData').value=token;document.getElementById('gF').submit()}</script>\n",
+            $this->CIDRAM->CIDRAM['L10N-Lang-Attache'],
             $ApiMessage ? '{captcha_message_invisible}' : '',
             $CookieWarn ? '<br />{captcha_cookie_warning}' : '',
             $SiteKey,
             $this->determineTheme(),
             $this->TemplateInsert
         ) . $Script . "\n" : sprintf(
-            "\n<hr />\n<p class=\"detected\">%s%s<br /></p>\n" .
+            "\n<hr />\n<p class=\"detected\"%s>%s%s<br /></p>\n" .
             '<form method="POST" action="" class="gForm" onsubmit="javascript:grecaptcha.execute()">' .
                 '<div id="gForm" data-theme="%s"></div><div>%s<input type="submit" value="{label_submit}" /></div>' .
             "</form>\n",
+            $this->CIDRAM->CIDRAM['L10N-Lang-Attache'],
             $ApiMessage ? '{captcha_message}' : '',
             $CookieWarn ? '<br />{captcha_cookie_warning}' : '',
             $this->determineTheme(),

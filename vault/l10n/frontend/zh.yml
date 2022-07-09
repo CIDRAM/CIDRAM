@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (simplified) language data for the front-end (last modified: 2022.07.03).
+# This file: Chinese (simplified) language data for the front-end (last modified: 2022.07.09).
 ##/
 
 Extended Description AbuseIPDB module: "阻止来自AbuseIPDB列出的IP的请求。"
@@ -67,10 +67,12 @@ checkbox_label_block_nonverified: "阻止未验证的请求？"
 checkbox_label_fields_logs: "该字段是否应该出现在日志条目中？"
 checkbox_label_fields_omit: "为空时忽略此字段？"
 checkbox_label_fields_page_output: "该字段是否应该出现在“拒绝访问”页面上？"
+checkbox_label_profile_it: "分类它。"
 checkbox_label_single_hit_bypass: "允许一击绕过？"
 checkbox_label_stage_enable: "启用此阶段？"
 checkbox_label_stage_infractions: "将在此阶段产生的违规计入IP跟踪？"
 checkbox_label_stage_log_errors: "记录在此阶段产生的任何错误？"
+checkbox_label_suppress: "被阻止时，禁止输出模板。"
 checkbox_label_untrack_positives: "取消跟踪阳性？"
 checkbox_label_verify: "尝试验证？"
 config_abuseipdb: "AbuseIPDB模块的配置。"
@@ -203,7 +205,7 @@ config_recaptcha_usemode: *CaptchaUseMode
 config_sfs: "Stop Forum Spam模块的配置。"
 config_sfs_offer_captcha: "当此模块阻止请求时，可能会提供验证码。​标准 = True。​注意：它不会覆盖其他指令。​要提供验证码，所有指令必须一致，必要的密钥必须配置，等等。​在通常允许提供验证码的情况下，将此指令设置为“false”可以防止为该模块专门阻止的请求提供验证码。"
 config_signatures: "签名，签名文件，模块，等的配置。"
-config_signatures_default_tracktime: "多少秒钟来跟踪模块禁止的IP。​标准 = 604800 （1周）。"
+config_signatures_default_tracktime: "应该跟踪多少秒IP地址。​标准 = 604800 （1周）。"
 config_signatures_infraction_limit: "从IP最大允许违规数量之前它被禁止。​标准=10。"
 config_signatures_shorthand: "当与使用给定速记词的签名匹配时，控制如何处理请求。"
 config_signatures_tracking_override: "允许模块覆盖跟踪选项吗？​True（真）=允许【标准】；False（假）=不允许。"

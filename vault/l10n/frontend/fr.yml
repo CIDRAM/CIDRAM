@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: French language data for the front-end (last modified: 2022.07.03).
+# This file: French language data for the front-end (last modified: 2022.07.09).
 ##/
 
 Extended Description AbuseIPDB module: "Bloque les requêtes des adresses IP répertoriées dans AbuseIPDB."
@@ -61,16 +61,18 @@ Name Project Honeypot module: "Module Project Honeypot"
 Name Referrer spam module: "Module spam référent"
 Name Search engines blocker module: "Module de blocage des moteurs de recherche"
 Name Stop Forum Spam module: "Module Stop Forum Spam"
-checkbox_label_block_it: "Bloque le."
+checkbox_label_block_it: "Bloquez le."
 checkbox_label_block_negatives: "Bloquer les négatifs\_?"
 checkbox_label_block_nonverified: "Bloquer les requêtes non vérifiés\_?"
 checkbox_label_fields_logs: "Inclure ce champ dans les journaux\_?"
 checkbox_label_fields_omit: "Omettre ce champ lorsqu'il est vide\_?"
 checkbox_label_fields_page_output: "Inclure ce champ sur la page «\_Accès Refusé\_»\_?"
+checkbox_label_profile_it: "Profilez le."
 checkbox_label_single_hit_bypass: "Autoriser les contournements en un seul coup\_?"
 checkbox_label_stage_enable: "Activer cette étape\_?"
 checkbox_label_stage_infractions: "Compter les infractions générées lors de cette étape dans le surveillance d'IP\_?"
 checkbox_label_stage_log_errors: "Enregistrer les erreurs générées lors de cette étape\_?"
+checkbox_label_suppress: "Lorsqu'il est bloqué, supprime le modèle de sortie."
 checkbox_label_untrack_positives: "Annuler le surveillance des positifs\_?"
 checkbox_label_verify: "Essayer de vérifier\_?"
 config_abuseipdb: "Configuration pour le module AbusIPDB."
@@ -203,7 +205,7 @@ config_recaptcha_usemode: *CaptchaUseMode
 config_sfs: "Configuration du module Stop Forum Spam."
 config_sfs_offer_captcha: "Lorsque les requêtes sont bloquées par ce module, des CAPTCHA peuvent être servis. Défaut = True. Remarque\_: Ne remplace pas les autres directives. Pour que les CAPTCHA soient servis, toutes les directives doivent être d'accord, les clés nécessaires configurées, etc. Dans le cas où les CAPTCHA seraient normalement autorisés à être servis, définir cette directive sur false fournit un moyen d'empêcher les CAPTCHA d'être servis pour les requêtes bloquées spécifiquement par ce module."
 config_signatures: "Configuration pour les signatures, fichiers de signatures, modules, etc."
-config_signatures_default_tracktime: "Combien de secondes pour suivre les IP interdites par les modules. Défaut = 604800 (1 semaine)."
+config_signatures_default_tracktime: "Combien de secondes les adresses IP doivent être suivies. Défaut = 604800 (1 semaine)."
 config_signatures_infraction_limit: "Nombre maximal d'infractions qu'une IP est autorisée à engager avant d'être interdite par la surveillance des IPs. Défaut = 10."
 config_signatures_shorthand: "Contrôle ce qu'il faut faire avec une requête lorsqu'il y a une correspondance positive avec une signature qui utilise les mots abrégés donnés."
 config_signatures_tracking_override: "Autoriser les modules à remplacer les options de suivi\_? True = Oui [Défaut]\_; False = Non."
@@ -398,7 +400,7 @@ label_aux_special_ip_tracking_disable: "Désactiver le surveillance d'IP par la 
 label_aux_special_ip_tracking_enable: "Activer le surveillance d'IP par la force"
 label_aux_special_recaptcha_disable: "Désactiver reCAPTCHA par la force"
 label_aux_special_recaptcha_mark: "Marquer pour une utilisation avec reCAPTCHA"
-label_aux_special_suppress: "Supprimer le modèle de sortie"
+label_aux_special_suppress: "Supprime le modèle de sortie"
 label_aux_special_suppress_logging: "Supprimer la journalisation"
 label_aux_special_tracking_default: "Appliquer les options de surveillance d'IP défaut"
 label_aux_special_tracking_extended: "Appliquer les options de surveillance d'IP étendues"

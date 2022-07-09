@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Bot user agents module (last modified: 2022.06.21).
+ * This file: Bot user agents module (last modified: 2022.07.07).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -206,7 +206,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
 
     $this->trigger(strpos($UANoSpace, 'catch') !== false, 'Risky UA'); // 2017.01.13
 
-    if ($this->Configuration['signatures']['block_proxies']) {
+    if (isset($this->Shorthand['Proxy:Block'])) {
         $this->trigger((strpos($UANoSpace, 'anonymous') !== false || strpos($UANoSpace, 'vpngate') !== false), 'Proxy UA'); // 2017.01.13 mod 2021.05.18
     }
 

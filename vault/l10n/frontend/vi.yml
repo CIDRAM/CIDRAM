@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Vietnamese language data for the front-end (last modified: 2022.07.03).
+# This file: Vietnamese language data for the front-end (last modified: 2022.07.09).
 ##/
 
 Extended Description AbuseIPDB module: "Chặn các yêu cầu từ IP được liệt kê tại AbuseIPDB."
@@ -67,10 +67,12 @@ checkbox_label_block_nonverified: "Chặn các yêu cầu chưa được xác mi
 checkbox_label_fields_logs: "Trường này có nên xuất hiện trong các mục nhập nhật ký không?"
 checkbox_label_fields_omit: "Bỏ qua trường này khi nó trống?"
 checkbox_label_fields_page_output: "Trường này có nên xuất hiện trên trang "truy cập đã bị từ chối" không?"
+checkbox_label_profile_it: "Hồ sơ nó."
 checkbox_label_single_hit_bypass: "Cho phép bỏ qua một cú đánh?"
 checkbox_label_stage_enable: "Bật giai đoạn này?"
 checkbox_label_stage_infractions: "Đếm các vi phạm được tạo ra trong giai đoạn này đối với giám sát IP?"
 checkbox_label_stage_log_errors: "Ghi lại bất kỳ lỗi nào được tạo ra trong giai đoạn này?"
+checkbox_label_suppress: "Khi bị chặn, đàn áp mẫu đầu ra."
 checkbox_label_untrack_positives: "Ngừng theo dõi tích cực?"
 checkbox_label_verify: "Cố gắng xác minh?"
 config_abuseipdb: "Cấu hình cho mô-đun AbuseIPDB."
@@ -203,7 +205,7 @@ config_recaptcha_usemode: *CaptchaUseMode
 config_sfs: "Cấu hình cho mô-đun Stop Forum Spam."
 config_sfs_offer_captcha: "Khi mô-đun này chặn các yêu cầu, CAPTCHA có thể được phân phát. Mặc định = True. Lưu ý: Sẽ không ghi đè các chỉ thị khác. Để CAPTCHA được phân phát, tất cả các chỉ thị phải đồng ý, các khóa cần thiết được định cấu hình, vv. Trong trường hợp thông thường CAPTCHA sẽ được phép phân phát, việc đặt chỉ thị này thành false sẽ cung cấp một cách để ngăn CAPTCHA được phân phát cho các yêu cầu bị chặn cụ thể bởi mô-đun này."
 config_signatures: "Cấu hình cho chữ ký, tập tin chữ ký, mô-đun, vv."
-config_signatures_default_tracktime: "Có bao nhiêu giây để giám sát các IP bị cấm bởi các mô-đun. Mặc định = 604800 (1 tuần)."
+config_signatures_default_tracktime: "Địa chỉ IP sẽ được giám sát trong bao nhiêu giây. Mặc định = 604800 (1 tuần)."
 config_signatures_infraction_limit: "Số lượng tối đa các vi phạm một IP được phép chịu trước khi nó bị cấm bởi các giám sát IP. Mặc định = 10."
 config_signatures_shorthand: "Kiểm soát những việc cần làm với một yêu cầu khi có sự trùng khớp tích cực với một chữ ký sử dụng các từ viết tắt đã cho."
 config_signatures_tracking_override: "Cho phép các mô-đun ghi đè các tùy chọn giám sát? True = Vâng [Mặc định]; False = Không."

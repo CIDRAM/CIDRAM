@@ -160,17 +160,28 @@ frontend:
   https://raw.githubusercontent.com/CIDRAM/CIDRAM-Extras/master/modules/modules.yml
  enable_two_factor: false
 signatures:
- block_attacks: true
- block_cloud: true
- block_bogons: false
- block_generic: true
- block_legal: true
- block_malware: true
- block_proxies: false
- block_spam: true
  default_tracktime: 604800
  infraction_limit: 10
  tracking_override: true
+ shorthand: |
+  Attacks:Block
+  Attacks:Profile
+  Bogon:Profile
+  Cloud:Block
+  Cloud:Profile
+  Generic:Block
+  Generic:Profile
+  Legal:Block
+  Legal:Profile
+  Malware:Block
+  Malware:Profile
+  Proxy:Profile
+  Spam:Block
+  Spam:Profile
+  Banned:Suppress
+  RL:Suppress
+  Other:Block
+  Other:Profile
 verification:
  search_engines: |
   Amazonbot:Verify

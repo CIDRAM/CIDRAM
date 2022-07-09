@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Korean language data for the front-end (last modified: 2022.07.03).
+# This file: Korean language data for the front-end (last modified: 2022.07.09).
 ##/
 
 Extended Description AbuseIPDB module: "AbuseIPDB에 나열된 IP의 요청을 차단합니다."
@@ -67,10 +67,12 @@ checkbox_label_block_nonverified: "검증되지 않은 요청을 차단하시겠
 checkbox_label_fields_logs: "이 필드가 로그 항목에 나타나야 합니까?"
 checkbox_label_fields_omit: "이 필드가 비어 있으면 생략하시겠습니까?"
 checkbox_label_fields_page_output: "이 필드가 "액세스 거부" 페이지에 나타나야 합니까?"
+checkbox_label_profile_it: "프로필을."
 checkbox_label_single_hit_bypass: "단일 히트 바이 패스를 허용하시겠습니까?"
 checkbox_label_stage_enable: "이 단계를 활성화하시겠습니까?"
 checkbox_label_stage_infractions: "이 단계에서 생성된 위반은 IP 추적에 포함되어야 합니까?"
 checkbox_label_stage_log_errors: "이 단계에서 생성된 오류를 기록하시겠습니까?"
+checkbox_label_suppress: "차단되면, 출력 템플릿을 억제합니다."
 checkbox_label_untrack_positives: "포지티브를 추적 해제하시겠습니까?"
 checkbox_label_verify: "검증을 시도?"
 config_abuseipdb: "AbuseIPDB 모듈 구성."
@@ -203,7 +205,7 @@ config_recaptcha_usemode: *CaptchaUseMode
 config_sfs: "Stop Forum Spam 모듈에 대한 구성입니다."
 config_sfs_offer_captcha: "이 모듈에 의해 요청이 차단되면, 보안 문자가 제공될 수 있습니다. Default (기본값) = True. 참고\_: 다른 지시문을 무시하지 않습니다. CAPTCHA가 제공되려면, 모든 지시문이 동의해야 하고, 필요한 키가 구성되어야 합니다. CAPTCHA가 제공되도록 허용되는 경우, 이 지시문을 false로 설정하면 이 모듈에서 특별히 차단된 요청에 대해 CAPTCHA가 제공되지 않도록 방지할 수 있습니다."
 config_signatures: "서명, 서명 파일, 모듈, 등의 설정."
-config_signatures_default_tracktime: "모듈에 의해 금지 된 IP를 추적하는 초. Default (기본값) = 604800 (1 주)."
+config_signatures_default_tracktime: "IP 주소를 추적해야 하는 시간(초)입니다. Default (기본값) = 604800 (1 주)."
 config_signatures_infraction_limit: "IP가 IP 추적에 의해 금지되기 전에 발생하는 것이 허용된다 위반의 최대 수. Default (기본값) = 10."
 config_signatures_shorthand: "주어진 속기 단어를 사용하는 서명에 대해 긍정적인 일치가 있을 때 요청을 처리하는 방법을 제어합니다."
 config_signatures_tracking_override: "모듈이 추적 옵션을 재정의하도록 허용하시겠습니까? True = 예 (Default / 기본 설정); False = 아니오."

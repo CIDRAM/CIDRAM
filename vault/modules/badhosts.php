@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Bad hosts blocker module (last modified: 2022.06.24).
+ * This file: Bad hosts blocker module (last modified: 2022.07.07).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -256,7 +256,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
      */
     if (
         !$this->BlockInfo['SignatureCount'] &&
-        $this->Configuration['signatures']['block_proxies'] &&
+        isset($this->Shorthand['Proxy:Block']) &&
 
         // Prevents matching against Facebook requests (updated 2020.02.07).
         !preg_match('~^fwdproxy-.*\.fbsv\.net$~i', $HN) &&
@@ -271,7 +271,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
     ) {
         if ($this->trigger(preg_match('~(?<!\w)tor(?!\w)|anonym|makesecure\.nl$|proxy~i', $HN), 'Proxy host')) {
             $this->addProfileEntry('Tor endpoints here');
-        } // 2021.03.18
+        } // 2021.03.18 mod 2022.07.07
     }
 
     /** WordPress cronjob bypass. */

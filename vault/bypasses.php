@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Default signature bypasses (last modified: 2022.06.22).
+ * This file: Default signature bypasses (last modified: 2022.07.07).
  */
 
 /** Prevents execution from outside of the checkFactors method. */
@@ -50,8 +50,8 @@ $this->CIDRAM['RunParamResCache']['bypasses.php'] = function (array $Factors = [
 
         /** ADSL hostnames (should fall under "spam" directive, since not a cloud service). */
         if (preg_match('~(?:dsl\.ovh|ovhtelecom)\.fr$~i', $this->CIDRAM['Hostname'])) {
-            /** Return early if "block_spam" is false. */
-            if (!$this->Configuration['signatures']['block_spam']) {
+            /** Return early if spam signatures aren't set to be blocked. */
+            if (!isset($this->Shorthand['Spam:Block'])) {
                 return;
             }
 
@@ -71,8 +71,8 @@ $this->CIDRAM['RunParamResCache']['bypasses.php'] = function (array $Factors = [
             return;
         }
 
-        /** Return early if "block_cloud" is false. */
-        if (!$this->Configuration['signatures']['block_cloud']) {
+        /** Return early if cloud signatures aren't set to be blocked. */
+        if (!isset($this->Shorthand['Cloud:Block'])) {
             return;
         }
 
@@ -92,8 +92,11 @@ $this->CIDRAM['RunParamResCache']['bypasses.php'] = function (array $Factors = [
         return;
     }
 
-    /** Skip further processing if the "block_cloud" directive is false, or if no section tag has been defined. */
-    if (!$this->Configuration['signatures']['block_cloud'] || !$Tag) {
+    /**
+     * Skip further processing if cloud signatures aren't set to be blocked, or
+     * if no section tag has been defined.
+     */
+    if (!isset($this->Shorthand['Cloud:Block']) || !$Tag) {
         return;
     }
 

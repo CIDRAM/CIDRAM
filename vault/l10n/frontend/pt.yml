@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Portuguese language data for the front-end (last modified: 2022.07.03).
+# This file: Portuguese language data for the front-end (last modified: 2022.07.09).
 ##/
 
 Extended Description AbuseIPDB module: "Bloqueia solicitações de IPs listados no AbuseIPDB."
@@ -61,16 +61,18 @@ Name Project Honeypot module: "Módulo Project Honeypot"
 Name Referrer spam module: "Módulo de spam de referência"
 Name Search engines blocker module: "Módulo bloqueador de motores de busca"
 Name Stop Forum Spam module: "Módulo Stop Forum Spam"
-checkbox_label_block_it: "Bloqueie."
+checkbox_label_block_it: "Bloquear-o."
 checkbox_label_block_negatives: "Bloquear negativos?"
 checkbox_label_block_nonverified: "Bloquear solicitações não verificados?"
 checkbox_label_fields_logs: "Este campo deve aparecer nas entradas de log?"
 checkbox_label_fields_omit: "Omitir este campo quando estiver vazio?"
 checkbox_label_fields_page_output: "Este campo deve aparecer na página "acesso negado"?"
+checkbox_label_profile_it: "Perfilar-o."
 checkbox_label_single_hit_bypass: "Permitir bypasses de acerto único?"
 checkbox_label_stage_enable: "Ativar esta etapa?"
 checkbox_label_stage_infractions: "Contar infrações geradas durante esta etapa para o monitoração de IP?"
 checkbox_label_stage_log_errors: "Registrar algum erro gerado durante esta etapa?"
+checkbox_label_suppress: "Quando bloqueado, suprime o modelo de saída."
 checkbox_label_untrack_positives: "Cancelar o monitoramento de positivos?"
 checkbox_label_verify: "Tente verificar?"
 config_abuseipdb: "Configuração para o módulo AbuseIPDB."
@@ -203,7 +205,7 @@ config_recaptcha_usemode: *CaptchaUseMode
 config_sfs: "Configuração para o módulo Stop Forum Spam."
 config_sfs_offer_captcha: "Quando as solicitações são bloqueadas por este módulo, CAPTCHAs podem ser emitidos. Padrão = True. Nota: Não substitui outras diretivas. Para que os CAPTCHAs sejam emitidos, todas as diretivas devem estar de acordo, as chaves necessárias configuradas, etc. No caso de CAPTCHAs normalmente tenham permissão para serem emitidos, definir essa diretiva como false fornece uma maneira de impedir que os CAPTCHAs sejam emitidos para solicitações bloqueadas especificamente por este módulo."
 config_signatures: "Configuração para assinaturas, arquivos de assinatura, módulos, etc."
-config_signatures_default_tracktime: "Quantos segundos para rastrear IPs banidos por módulos. Padrão = 604800 (1 semana)."
+config_signatures_default_tracktime: "Por quantos segundos os endereços IP devem ser rastreados. Padrão = 604800 (1 semana)."
 config_signatures_infraction_limit: "Número máximo de infrações que um IP pode incorrer antes de ser banido por monitoração IP. Padrão = 10."
 config_signatures_shorthand: "Controla o que fazer com uma solicitação quando há uma correspondência positiva com uma assinatura que utiliza as palavras curtas fornecidas."
 config_signatures_tracking_override: "Permitir que os módulos substituem as opções de monitoração? True = Sim [Padrão]; False = Não."
@@ -398,7 +400,7 @@ label_aux_special_ip_tracking_disable: "Desative forçosamente o monitoração d
 label_aux_special_ip_tracking_enable: "Ative forçosamente o monitoração de IP"
 label_aux_special_recaptcha_disable: "Desative forçosamente o reCAPTCHA"
 label_aux_special_recaptcha_mark: "Marcar para uso com reCAPTCHA"
-label_aux_special_suppress: "Suprimir o modelo de saída"
+label_aux_special_suppress: "Suprime o modelo de saída"
 label_aux_special_suppress_logging: "Suprimir o registro"
 label_aux_special_tracking_default: "Aplicar opções do monitoração de IP padrão"
 label_aux_special_tracking_extended: "Aplicar opções do monitoração de IP estendido"

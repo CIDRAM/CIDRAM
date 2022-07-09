@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Spanish language data for the front-end (last modified: 2022.07.03).
+# This file: Spanish language data for the front-end (last modified: 2022.07.09).
 ##/
 
 Extended Description AbuseIPDB module: "Bloquea las solicitudes de los IP listados en AbuseIPDB."
@@ -67,10 +67,12 @@ checkbox_label_block_nonverified: "¿Bloquear solicitudes no verificados?"
 checkbox_label_fields_logs: "¿Debería aparecer este campo en las entradas de registro?"
 checkbox_label_fields_omit: "¿Omitir este campo cuando está vacío?"
 checkbox_label_fields_page_output: "¿Debería aparecer este campo en la página "acceso denegado"?"
+checkbox_label_profile_it: "Perfilarlo."
 checkbox_label_single_hit_bypass: "¿Permitir bypasses de un solo golpe?"
 checkbox_label_stage_enable: "¿Habilitar esta etapa?"
 checkbox_label_stage_infractions: "¿Las infracciones generadas durante esta etapa deben contar para el seguimiento de IP?"
 checkbox_label_stage_log_errors: "¿Registrar los errores generados durante esta etapa?"
+checkbox_label_suppress: "Cuando está bloqueado, suprime la plantilla de salida."
 checkbox_label_untrack_positives: "¿No rastrear positivos?"
 checkbox_label_verify: "¿Intentar verificar?"
 config_abuseipdb: "Configuración para el módulo AbuseIPDB."
@@ -203,7 +205,7 @@ config_recaptcha_usemode: *CaptchaUseMode
 config_sfs: "Configuración para el módulo Stop Forum Spam."
 config_sfs_offer_captcha: "Cuando las solicitudes están bloqueadas por este módulo, se pueden servir CAPTCHA. Predefinido = True. Nota: No reemplaza otras directivas. Para que se sirvan los CAPTCHA, todas las directivas deben estar de acuerdo, las claves necesarias configuradas, etc. En el caso de que normalmente se permite CAPTCHA, establecer esta directiva en false proporciona una forma de evitar que se entreguen CAPTCHA para solicitudes bloqueadas específicamente por este módulo."
 config_signatures: "Configuración para firmas, archivos de firma, módulos, etc."
-config_signatures_default_tracktime: "¿Cuántos segundos para realizar el seguimiento de las IP prohibidas por los módulos? Predefinido = 604800 (1 semana)."
+config_signatures_default_tracktime: "Durante cuántos segundos se deben seguir las direcciones IP. Predefinido = 604800 (1 semana)."
 config_signatures_infraction_limit: "Número máximo de infracciones a las que un IP puede incurrir antes de ser prohibido por el rastreo IP. Predefinido = 10."
 config_signatures_shorthand: "Controla qué hacer con una solicitud cuando hay una coincidencia positiva con una firma que utiliza las palabras abreviadas dadas."
 config_signatures_tracking_override: "¿Permitir que los módulos reemplacen las opciones de seguimiento? True = Sí [Predefinido]; False = No."
@@ -398,7 +400,7 @@ label_aux_special_ip_tracking_disable: "Desactivar a la fuerza el rastreo IP"
 label_aux_special_ip_tracking_enable: "Activar a la fuerza el rastreo IP"
 label_aux_special_recaptcha_disable: "Desactivar a la fuerza reCAPTCHA"
 label_aux_special_recaptcha_mark: "Marca para usar con reCAPTCHA"
-label_aux_special_suppress: "Suprimir plantilla de salida"
+label_aux_special_suppress: "Suprime la plantilla de salida"
 label_aux_special_suppress_logging: "Suprimir registro"
 label_aux_special_tracking_default: "Establecer opciones del rastreo IP predeterminadas"
 label_aux_special_tracking_extended: "Establecer opciones del rastreo IP extendidas"

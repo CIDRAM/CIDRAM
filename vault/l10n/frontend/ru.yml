@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Russian language data for the front-end (last modified: 2022.07.03).
+# This file: Russian language data for the front-end (last modified: 2022.07.09).
 ##/
 
 Extended Description AbuseIPDB module: "Блокирует запросы от IP-адресов, перечисленных в AbuseIPDB."
@@ -67,10 +67,12 @@ checkbox_label_block_nonverified: "Блокировать непроверенн
 checkbox_label_fields_logs: "Должно ли это поле отображаться в записях журнала?"
 checkbox_label_fields_omit: "Пропустить это поле, если оно пустое?"
 checkbox_label_fields_page_output: "Должно ли это поле отображаться на странице «Доступ Закрыт»?"
+checkbox_label_profile_it: "Профилируйте это."
 checkbox_label_single_hit_bypass: "Разрешить байпасы отдельных нарушений?"
 checkbox_label_stage_enable: "Включить этот этап?"
 checkbox_label_stage_infractions: "Засчитывать нарушения, возникшие на этом этапе, в отслеживания IP?"
 checkbox_label_stage_log_errors: "Записывать какие-либо ошибки, возникшие на этом этапе?"
+checkbox_label_suppress: "При блокировке, подавить шаблон вывода."
 checkbox_label_untrack_positives: "Перестать отслеживать положительные?"
 checkbox_label_verify: "Попробуй проверить?"
 config_abuseipdb: "Конфигурация для модуля AbuseIPDB."
@@ -203,7 +205,7 @@ config_recaptcha_usemode: *CaptchaUseMode
 config_sfs: "Конфигурация модуля Stop Forum Spam."
 config_sfs_offer_captcha: "Когда запросы блокируются этим модулем, может использоваться CAPTCHA. Стандарт = True. Примечание: Другие директивы не переопределяются. Для выдачи CAPTCHA должны быть согласованы все директивы, предоставил необходимые ключи, и т.д. В случае, если CAPTCHA обычно разрешается выдавать, установка этой директивы в false обеспечивает способ предотвращения выдачи CAPTCHA для запросов, заблокированных конкретно этим модулем."
 config_signatures: "Конфигурация для сигнатурей, файлов сигнатурей, модулей и т.д."
-config_signatures_default_tracktime: "Сколько секунд чтобы отслеживать IP-адреса, запрещенные модулями. Стандарт = 604800 (1 неделя)."
+config_signatures_default_tracktime: "Сколько секунд IP-адреса должны отслеживаться. Стандарт = 604800 (1 неделя)."
 config_signatures_infraction_limit: "Максимальное число нарушений IP-разрешено брать на себя, прежде чем она запрещена отслеживание IP. Стандарт = 10."
 config_signatures_shorthand: "Управляет что делать с запросом, когда есть положительное совпадение с сигнатурю, в которой используются заданные сокращенные слова."
 config_signatures_tracking_override: "Разрешить модулям переопределять параметры отслеживания? True = Да [Стандарт]; False = Нет."

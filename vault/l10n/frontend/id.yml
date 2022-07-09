@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Indonesian language data for the front-end (last modified: 2022.07.03).
+# This file: Indonesian language data for the front-end (last modified: 2022.07.09).
 ##/
 
 Extended Description AbuseIPDB module: "Memblokir permintaan dari IP yang terdaftar oleh AbuseIPDB."
@@ -61,16 +61,18 @@ Name Project Honeypot module: "Modul Project Honeypot"
 Name Referrer spam module: "Modul spam pengarah"
 Name Search engines blocker module: "Modul pemblokir mesin pencari"
 Name Stop Forum Spam module: "Modul Stop Forum Spam"
-checkbox_label_block_it: "Blokir."
+checkbox_label_block_it: "Memblokirnya."
 checkbox_label_block_negatives: "Blokir negatif?"
 checkbox_label_block_nonverified: "Blokir permintaan yang tidak diverifikasi?"
 checkbox_label_fields_logs: "Sertakan bidang ini dalam entri log?"
 checkbox_label_fields_omit: "Abaikan bidang ini saat kosong?"
 checkbox_label_fields_page_output: "Sertakan bidang ini di halaman "akses ditolak"?"
+checkbox_label_profile_it: "Memprofilkannya."
 checkbox_label_single_hit_bypass: "Izinkan bypass satu pelanggaran?"
 checkbox_label_stage_enable: "Aktifkan tahap ini?"
 checkbox_label_stage_infractions: "Menghitung pelanggaran yang dihasilkan selama tahap ini terhadap pelacakan IP?"
 checkbox_label_stage_log_errors: "Mencatat kesalahan yang dihasilkan selama tahap ini?"
+checkbox_label_suppress: "Saat diblokir, menekan template output."
 checkbox_label_untrack_positives: "Hapus pelacakan untuk positif?"
 checkbox_label_verify: "Mencoba memverifikasi?"
 config_abuseipdb: "Konfigurasi untuk modul AbuseIPDB."
@@ -203,7 +205,7 @@ config_recaptcha_usemode: *CaptchaUseMode
 config_sfs: "Konfigurasi untuk modul Stop Forum Spam."
 config_sfs_offer_captcha: "Ketika permintaan diblokir oleh modul ini, CAPTCHA dapat disajikan. Default = True. Catatan: Tidak mengesampingkan direktif lain. Agar CAPTCHA disajikan, semua direktif harus setuju, kunci yang diperlukan harus dikonfigurasi, dll. Jika CAPTCHA biasanya diizinkan untuk disajikan, menyetel direktif ini ke false menyediakan cara untuk mencegah CAPTCHA disajikan untuk permintaan yang diblokir secara khusus oleh modul ini."
 config_signatures: "Konfigurasi untuk tanda tangan, file tanda tangan, modul, dll."
-config_signatures_default_tracktime: "Berapa banyak detik untuk melacak IP dilarang oleh modul. Default = 604800 (1 seminggu)."
+config_signatures_default_tracktime: "Berapa detik alamat IP harus dilacak. Default = 604800 (1 seminggu)."
 config_signatures_infraction_limit: "Jumlah maksimum pelanggaran IP diperbolehkan untuk dikenakan sebelum dilarang oleh pelacakan IP. Default = 10."
 config_signatures_shorthand: "Kontrol untuk apa yang harus dilakukan dengan permintaan jika/ketika ada kecocokan yang positif dengan tanda tangan yang menggunakan kata-kata singkat yang diberikan."
 config_signatures_tracking_override: "Izinkan modul untuk mengganti opsi pelacakan? True = Ya [Default]; False = Tidak."

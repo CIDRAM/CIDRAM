@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Protect traits (last modified: 2022.06.30).
+ * This file: Protect traits (last modified: 2022.07.09).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -64,6 +64,9 @@ trait Protect
     {
         /** Initialise stages. */
         $this->Stages = array_flip(explode("\n", $this->Configuration['general']['stages']));
+
+        /** Initialise shorthand options. */
+        $this->Shorthand = array_flip(explode("\n", $this->Configuration['signatures']['shorthand']));
 
         /** Usable by events to determine which part of the output generator we're at. */
         $this->Stage = '';
@@ -171,6 +174,10 @@ trait Protect
                 $this->BlockInfo['ReasonMessage'] = $this->L10N->getString('ReasonMessage_BadIP');
                 $this->BlockInfo['WhyReason'] = $this->L10N->getString('Short_BadIP');
                 $this->BlockInfo['SignatureCount']++;
+                $this->addProfileEntry('BadIP');
+                if (isset($this->Shorthand['BadIP:Suppress'])) {
+                    $this->CIDRAM['Suppress output template'] = true;
+                }
             }
 
             /**
@@ -682,9 +689,10 @@ trait Protect
 
                 /** Determine which template file to use, if this hasn't already been determined. */
                 if (!isset($this->CIDRAM['template_file'])) {
-                    $this->CIDRAM['template_file'] = (
-                        !$this->CIDRAM['FieldTemplates']['css_url']
-                    ) ? 'assets/core/template_' . $this->CIDRAM['FieldTemplates']['theme'] . '.html' : 'assets/core/template_custom.html';
+                    $this->CIDRAM['template_file'] = sprintf(
+                        'assets/core/template_%s.html',
+                        $this->CIDRAM['FieldTemplates']['css_url'] === '' ? 'custom' : $this->CIDRAM['FieldTemplates']['theme']
+                    );
                 }
 
                 /** Fallback for themes without default template files. */
@@ -747,23 +755,33 @@ trait Protect
                 /** Append default L10N data. */
                 $this->CIDRAM['Parsables'] += $this->L10N->Data;
 
-                if (!empty($this->CIDRAM['Banned']) && $this->Configuration['general']['ban_override'] > 400 && (
-                    $this->CIDRAM['ThisStatusHTTP'] = $this->getStatusHTTP($this->Configuration['general']['ban_override'])
-                )) {
-                    $this->CIDRAM['errCode'] = $this->Configuration['general']['ban_override'];
-                    header('HTTP/1.0 ' . $this->CIDRAM['errCode'] . ' ' . $this->CIDRAM['ThisStatusHTTP']);
-                    header('HTTP/1.1 ' . $this->CIDRAM['errCode'] . ' ' . $this->CIDRAM['ThisStatusHTTP']);
-                    header('Status: ' . $this->CIDRAM['errCode'] . ' ' . $this->CIDRAM['ThisStatusHTTP']);
-                    $HTML = '';
-                } elseif (!empty($this->CIDRAM['RL_Status']) && ($this->BlockInfo['SignatureCount'] * 1) === 1) {
-                    header('HTTP/1.0 429 ' . $this->CIDRAM['RL_Status']);
-                    header('HTTP/1.1 429 ' . $this->CIDRAM['RL_Status']);
-                    header('Status: 429 ' . $this->CIDRAM['RL_Status']);
-                    header('Retry-After: ' . floor($this->Configuration['rate_limiting']['allowance_period'] * 3600));
-                    $HTML = '';
-                } elseif (!$this->Configuration['general']['silent_mode']) {
-                    /** Fetch appropriate status code based on either "http_response_header_code" or "Aux Status Code". */
-                    if ((
+                if (!$this->Configuration['general']['silent_mode']) {
+                    /** Fetch appropriate HTTP status code. */
+                    if (
+                        !empty($this->CIDRAM['Banned']) &&
+                        $this->Configuration['general']['ban_override'] > 400 &&
+                        ($this->CIDRAM['ThisStatusHTTP'] = $this->getStatusHTTP($this->Configuration['general']['ban_override']))
+                    ) {
+                        $this->CIDRAM['errCode'] = $this->Configuration['general']['ban_override'];
+                        header('HTTP/1.0 ' . $this->CIDRAM['errCode'] . ' ' . $this->CIDRAM['ThisStatusHTTP']);
+                        header('HTTP/1.1 ' . $this->CIDRAM['errCode'] . ' ' . $this->CIDRAM['ThisStatusHTTP']);
+                        header('Status: ' . $this->CIDRAM['errCode'] . ' ' . $this->CIDRAM['ThisStatusHTTP']);
+                        if (isset($this->Shorthand['Banned:Suppress'])) {
+                            $this->CIDRAM['Suppress output template'] = true;
+                        }
+                    } elseif (
+                        !empty($this->CIDRAM['RL_Status']) &&
+                        $this->BlockInfo['SignatureCount'] === 1
+                    ) {
+                        $this->CIDRAM['errCode'] = 429;
+                        header('HTTP/1.0 429 ' . $this->CIDRAM['RL_Status']);
+                        header('HTTP/1.1 429 ' . $this->CIDRAM['RL_Status']);
+                        header('Status: 429 ' . $this->CIDRAM['RL_Status']);
+                        header('Retry-After: ' . floor($this->Configuration['rate_limiting']['allowance_period'] * 3600));
+                        if (isset($this->Shorthand['RL:Suppress'])) {
+                            $this->CIDRAM['Suppress output template'] = true;
+                        }
+                    } elseif ((
                         !empty($this->CIDRAM['Aux Status Code']) &&
                         ($this->CIDRAM['errCode'] = $this->CIDRAM['Aux Status Code']) > 400 &&
                         $this->CIDRAM['ThisStatusHTTP'] = $this->getStatusHTTP($this->CIDRAM['errCode'])
@@ -780,7 +798,7 @@ trait Protect
 
                     if (!empty($this->CIDRAM['Suppress output template'])) {
                         $HTML = '';
-                    } elseif (!$this->CIDRAM['template_file'] || !file_exists($this->Vault . $this->CIDRAM['template_file'])) {
+                    } elseif (!file_exists($this->Vault . $this->CIDRAM['template_file'])) {
                         header('Content-Type: text/plain');
                         $HTML = '[CIDRAM] ' . $this->CIDRAM['Client-L10N']->getString('denied');
                     } else {
@@ -818,11 +836,10 @@ trait Protect
                         );
 
                         /** Generate HTML output. */
-                        $HTML = $this->parseVars([
-                            'EmailAddr' => $this->BlockInfo['EmailAddr']
-                        ], $this->parseVars($this->CIDRAM['Parsables'], $this->readFile(
-                            $this->Vault . $this->CIDRAM['template_file']
-                        )));
+                        $HTML = $this->parseVars(
+                            ['EmailAddr' => $this->BlockInfo['EmailAddr']],
+                            $this->parseVars($this->CIDRAM['Parsables'], $this->readFile($this->Vault . $this->CIDRAM['template_file']))
+                        );
                     }
                 } else {
                     $this->CIDRAM['errCode'] = 301;

@@ -44,6 +44,7 @@
 - Configuration directives `standard_log`, `apache_style_log`, `serialised_log`, `error_log`, `truncate`, `log_rotation_limit`, `log_rotation_action`, `log_banned_ips`, and `log_sanitisation` have been moved to a new configuration category, `logging`.
 - Configuration directives for CAPTCHA logging have been renamed.
 - Configuration directives `search_engines`, `social_media`, and `other` have been moved to a new configuration category, `verification`.
+- Configuration directives `block_attacks`, `block_cloud`, `block_bogons`, `block_generic`, `block_legal`, `block_malware`, `block_proxies`, and `block_spam` have been replaced by a new configuration directive, `shorthand`. The new configuration directive is capable of providing the same functionality provided previously, as well as some other, new, related functionality.
 
 #### Bugs fixed.
 - Some specific files were being misclassified by the file manager; Fixed.

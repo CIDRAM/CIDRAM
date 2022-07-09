@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Defaults file (last modified: 2022.07.02).
+# This file: Defaults file (last modified: 2022.07.09).
 ##/
 
 Config Defaults:
@@ -554,14 +554,27 @@ Config Defaults:
    type: "checkbox"
    default: |
     Attacks:Block
+    Attacks:Profile
+    Bogon:Profile
     Cloud:Block
+    Cloud:Profile
     Generic:Block
+    Generic:Profile
     Legal:Block
+    Legal:Profile
     Malware:Block
+    Malware:Profile
+    Proxy:Profile
     Spam:Block
+    Spam:Profile
+    Banned:Suppress
+    RL:Suppress
     Other:Block
+    Other:Profile
    labels:
     Block: "checkbox_label_block_it"
+    Profile: "checkbox_label_profile_it"
+    Suppress: "checkbox_label_suppress"
    choices:
     Attacks: "Short_Attacks"
     Bogon: "⁰ {Short_Bogon}"
@@ -577,33 +590,12 @@ Config Defaults:
     Other: "⁴ {label_other}"
    nonsense: |
     Banned:Block
+    Banned:Profile
     BadIP:Block
+    BadIP:Profile
     RL:Block
+    RL:Profile
    hints: "hints_shorthand"
-  block_attacks:
-   type: "bool"
-   default: true
-  block_cloud:
-   type: "bool"
-   default: true
-  block_bogons:
-   type: "bool"
-   default: false
-  block_generic:
-   type: "bool"
-   default: true
-  block_legal:
-   type: "bool"
-   default: true
-  block_malware:
-   type: "bool"
-   default: true
-  block_proxies:
-   type: "bool"
-   default: false
-  block_spam:
-   type: "bool"
-   default: true
   default_tracktime:
    type: "int"
    default: 604800

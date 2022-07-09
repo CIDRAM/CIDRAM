@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Dutch language data for the front-end (last modified: 2022.07.03).
+# This file: Dutch language data for the front-end (last modified: 2022.07.09).
 ##/
 
 Extended Description AbuseIPDB module: "Blokkeert aanvragen van IP's die worden vermeld op AbuseIPDB."
@@ -67,10 +67,12 @@ checkbox_label_block_nonverified: "Niet-geverifieerde verzoeken blokkeren?"
 checkbox_label_fields_logs: "Moet dit veld in logs verschijnen?"
 checkbox_label_fields_omit: "Weglaten dit veld als het leeg is?"
 checkbox_label_fields_page_output: "Moet dit veld verschijnen op de "toegang geweigerd" pagina?"
+checkbox_label_profile_it: "Profileer het."
 checkbox_label_single_hit_bypass: "Enkele-treffer bypasses toestaan?"
 checkbox_label_stage_enable: "Inschakelen deze fase?"
 checkbox_label_stage_infractions: "Moeten overtredingen die gegenereerd door deze fase meetellen voor IP-tracking?"
 checkbox_label_stage_log_errors: "Moeten fouten die gegenereerd door deze fase worden geregistreerd?"
+checkbox_label_suppress: "Wanneer geblokkeerd, onderdrukken de uitvoersjabloon."
 checkbox_label_untrack_positives: "Tracking annuleren voor positieven?"
 checkbox_label_verify: "Proberen te verifiëren?"
 config_abuseipdb: "Configuratie voor de AbuseIPDB-module."
@@ -203,7 +205,7 @@ config_recaptcha_usemode: *CaptchaUseMode
 config_sfs: "Configuratie voor de Stop Forum Spam module."
 config_sfs_offer_captcha: "Wanneer verzoeken door deze module worden geblokkeerd, CAPTCHA's kunnen worden geleverd. Standaard = True. Opmerking: Heeft geen voorrang op andere richtlijnen. Om CAPTCHA's te kunnen bedienen, moeten alle richtlijnen overeenkomen, de benodigde sleutels zijn geconfigureerd, enz. In het geval dat CAPTCHA's normaal zouden mogen worden geleverd, biedt het instellen van deze richtlijn op false een manier om te voorkomen dat CAPTCHA's worden geleverd voor verzoeken die specifiek door deze module worden geblokkeerd."
 config_signatures: "Configuratie voor signatures, signatuurbestanden, modules, enz."
-config_signatures_default_tracktime: "Hoeveel seconden om IP's verbannen door modules te volgen. Standaard = 604800 (1 week)."
+config_signatures_default_tracktime: "Hoeveel seconden IP-adressen moeten worden gevolgd. Standaard = 604800 (1 week)."
 config_signatures_infraction_limit: "Maximum aantal overtredingen een IP mag worden gesteld voordat hij wordt verbannen door IP-tracking. Standaard = 10."
 config_signatures_shorthand: "Controles voor wat te doen met een verzoek wanneer er een positieve overeenkomst is met een signature die de gegeven stenowoorden gebruikt."
 config_signatures_tracking_override: "Moeten modules worden toegestaan om opties voor tracking te overschrijven? True = Ja [Standaard]; False = Nee."
@@ -398,8 +400,8 @@ label_aux_special_ip_tracking_disable: "Schakel IP-tracking gedwongen uit"
 label_aux_special_ip_tracking_enable: "Schakel IP-tracking gedwongen in"
 label_aux_special_recaptcha_disable: "Schakel reCAPTCHA gedwongen uit"
 label_aux_special_recaptcha_mark: "Markeer voor gebruik met reCAPTCHA"
-label_aux_special_suppress: "Onderdruk uitvoersjabloon"
-label_aux_special_suppress_logging: "Onderdruk logboekregistratie"
+label_aux_special_suppress: "Onderdrukken de uitvoersjabloon"
+label_aux_special_suppress_logging: "Onderdrukken logboekregistratie"
 label_aux_special_tracking_default: "Dwing standaard IP-trackingopties af"
 label_aux_special_tracking_extended: "Dwing uitgebreide IP-trackingopties af"
 label_aux_target: "Waar te redirect het verzoek:"

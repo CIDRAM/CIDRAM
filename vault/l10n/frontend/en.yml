@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: English language data for the front-end (last modified: 2022.07.03).
+# This file: English language data for the front-end (last modified: 2022.07.09).
 ##/
 
 Extended Description AbuseIPDB module: "Blocks requests from IPs listed at AbuseIPDB."
@@ -67,10 +67,12 @@ checkbox_label_block_nonverified: "Block non-verified requests?"
 checkbox_label_fields_logs: "Should this field appear in log entries?"
 checkbox_label_fields_omit: "Omit this field when it's empty?"
 checkbox_label_fields_page_output: "Should this field appear on the "access denied" page?"
+checkbox_label_profile_it: "Profile it."
 checkbox_label_single_hit_bypass: "Allow single-hit bypasses?"
 checkbox_label_stage_enable: "Enable this stage?"
 checkbox_label_stage_infractions: "Should infractions generated during this stage count towards IP tracking?"
 checkbox_label_stage_log_errors: "Log any errors generated during this stage?"
+checkbox_label_suppress: "When blocked, suppress output template."
 checkbox_label_untrack_positives: "Untrack positives?"
 checkbox_label_verify: "Attempt to verify?"
 config_abuseipdb: "Configuration for the AbuseIPDB module."
@@ -203,7 +205,7 @@ config_recaptcha_usemode: *CaptchaUseMode
 config_sfs: "Configuration for the Stop Forum Spam module."
 config_sfs_offer_captcha: "When requests are blocked by this module, CAPTCHAs may be served. Default = True. Note: Doesn't override other directives. For CAPTCHAs to be served, all directives must agree, necessary keys configured, etc. In the event that CAPTCHAs would normally be permitted to be served, setting this directive to false provides a way to prevent CAPTCHAs being served for requests blocked specifically by this module."
 config_signatures: "Configuration for signatures, signature files, modules, etc."
-config_signatures_default_tracktime: "How many seconds to track IPs banned by modules. Default = 604800 (1 week)."
+config_signatures_default_tracktime: "How many seconds IP addresses should be tracked for. Default = 604800 (1 week)."
 config_signatures_infraction_limit: "Maximum number of infractions an IP is allowed to incur before it is banned by IP tracking. Default = 10."
 config_signatures_shorthand: "Controls for what to do with a request when there's a positive match against a signature which utilises the given shorthand words."
 config_signatures_tracking_override: "Allow modules to override tracking options? True = Yes [Default]; False = No."

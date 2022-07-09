@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Italian language data for the front-end (last modified: 2022.07.03).
+# This file: Italian language data for the front-end (last modified: 2022.07.09).
 ##/
 
 Extended Description AbuseIPDB module: "Blocca le richieste dagli IP elencati in AbuseIPDB."
@@ -67,10 +67,12 @@ checkbox_label_block_nonverified: "Blocca le richieste non verificate?"
 checkbox_label_fields_logs: "Questo campo dovrebbe apparire nelle voci dei registri?"
 checkbox_label_fields_omit: "Ometti questo campo quando è vuoto?"
 checkbox_label_fields_page_output: "Questo campo dovrebbe apparire nella pagina "accesso negato"?"
+checkbox_label_profile_it: "Profilalo."
 checkbox_label_single_hit_bypass: "Consenti bypass a colpo singolo?"
 checkbox_label_stage_enable: "Abilitare questa fase?"
 checkbox_label_stage_infractions: "Le infrazioni generati durante questa fase devono essere conteggiate ai fini del tracciamento IP?"
 checkbox_label_stage_log_errors: "Gli errori generati durante questa fase devono essere registrati?"
+checkbox_label_suppress: "Quando bloccato, sopprima il modello di output."
 checkbox_label_untrack_positives: "Annulla le tracciamento per i positivi?"
 checkbox_label_verify: "Prova a verificare?"
 config_abuseipdb: "Configurazione per il modulo AbuseIPDB."
@@ -203,7 +205,7 @@ config_recaptcha_usemode: *CaptchaUseMode
 config_sfs: "Configurazione per il modulo Stop Forum Spam."
 config_sfs_offer_captcha: "Quando le richieste vengono bloccate da questo modulo, possono essere serviti CAPTCHA. Predefinito = True. Nota: Non sovrascrive altre direttive. Affinché i CAPTCHA vengano serviti, tutte le direttive devono essere d'accordo, le chiavi necessarie configurate, ecc. Nel caso in cui i CAPTCHA possano essere normalmente serviti, l'impostazione di questa direttiva su false fornisce un modo per impedire che i CAPTCHA vengano serviti per richieste bloccate specificamente da questo modulo."
 config_signatures: "Configurazione per firme, file di firma, moduli, ecc."
-config_signatures_default_tracktime: "Quanti secondi per tracciare IP vietati dai moduli. Predefinito = 604800 (1 settimana)."
+config_signatures_default_tracktime: "Per quanti secondi devono essere tracciati gli indirizzi IP. Predefinito = 604800 (1 settimana)."
 config_signatures_infraction_limit: "Numero massimo di infrazioni un IP è permesso di incorrere prima di essere vietato dalle tracciamento IP. Predefinito = 10."
 config_signatures_shorthand: "Controlla cosa fare con una richiesta quando c'è una corrispondenza positiva con una firma che utilizza le parole abbreviate fornite."
 config_signatures_tracking_override: "I moduli dovrebbero essere autorizzati a sostituire le opzioni di tracciamento? True = Sì [Predefinito]; False = No."

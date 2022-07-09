@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Polish language data for the front-end (last modified: 2022.07.03).
+# This file: Polish language data for the front-end (last modified: 2022.07.09).
 ##/
 
 Extended Description AbuseIPDB module: "Blokuje żądania z adresów IP wymienionych w witrynie AbuseIPDB."
@@ -67,10 +67,12 @@ checkbox_label_block_nonverified: "Blokować niezweryfikowane żądania?"
 checkbox_label_fields_logs: "Czy to pole powinno pojawiać się w logach?"
 checkbox_label_fields_omit: "Pominąć to pole, gdy jest puste?"
 checkbox_label_fields_page_output: "Czy to pole powinno pojawiać się na stronie „dostęp zabroniony”?"
+checkbox_label_profile_it: "Profiluj to."
 checkbox_label_single_hit_bypass: "Zezwalać na obejście pojedynczych trafień?"
 checkbox_label_stage_enable: "Włączyć ten etap?"
 checkbox_label_stage_infractions: "Wliczać wykroczenia wygenerowane na tym etapie do śledzenie IP?"
 checkbox_label_stage_log_errors: "Zalogować jakiekolwiek błędy wygenerowane na tym etapie?"
+checkbox_label_suppress: "Po zablokowaniu, pomiń szablon wyjściowy."
 checkbox_label_untrack_positives: "Nie śledzić pozytywów?"
 checkbox_label_verify: "Próbować zweryfikować?"
 config_abuseipdb: "Konfiguracja dla modułu AbuseIPDB."
@@ -203,7 +205,7 @@ config_recaptcha_usemode: *CaptchaUseMode
 config_sfs: "Konfiguracja modułu Stop Forum Spam."
 config_sfs_offer_captcha: "Gdy żądania są blokowane przez ten moduł, mogą zostać wystawione kody CAPTCHA. Domyślna = True. Uwaga: Nie zastępuje innych dyrektyw. Aby można było wystawić CAPTCHA, wszystkie dyrektywy muszą być zgodne, konieczne skonfigurowane klucze, itp. W przypadku, gdyby normalnie zezwalano na wystawianie kodów CAPTCHA, ustawienie tej dyrektywy na wartość false umożliwia zapobieganie wystawianiu kodów CAPTCHA dla żądań zablokowanych specjalnie przez ten moduł."
 config_signatures: "Konfiguracja podpisów, plików podpisów, modułów, itp."
-config_signatures_default_tracktime: "Ile sekund na śledzenie adresów IP zablokowanych przez moduły. Domyślna = 604800 (1 tydzień)."
+config_signatures_default_tracktime: "Ile sekund mają być śledzone adresy IP. Domyślna = 604800 (1 tydzień)."
 config_signatures_infraction_limit: "Maksymalna liczba wykroczeń, które może ponieść IP, zanim zostanie zablokowane przez śledzenie IP. Domyślna = 10."
 config_signatures_shorthand: "Kontroluje, co zrobić z żądaniem, gdy istnieje pozytywne dopasowanie do podpisu, który wykorzystuje podane skrócone słowa."
 config_signatures_tracking_override: "Zezwalać modułom na zastępowanie opcji śledzenia? True (Prawdziwe) = Tak [Domyślna]; False (Fałszywy) = Nie."

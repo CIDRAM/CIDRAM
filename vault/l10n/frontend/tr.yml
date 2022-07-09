@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Turkish language data for the front-end (last modified: 2022.07.03).
+# This file: Turkish language data for the front-end (last modified: 2022.07.09).
 ##/
 
 Extended Description AbuseIPDB module: "AbuseIPDB'de listelenen IP'lerden gelen istekleri engeller."
@@ -61,16 +61,18 @@ Name Project Honeypot module: "Project Honeypot modülü"
 Name Referrer spam module: "Yönlendiren spam modülü"
 Name Search engines blocker module: "Arama motorları engelleyici modülü"
 Name Stop Forum Spam module: "Stop Forum Spam modülü"
-checkbox_label_block_it: "Blokla."
+checkbox_label_block_it: "Isteği engelle."
 checkbox_label_block_negatives: "Negatifleri engelle?"
 checkbox_label_block_nonverified: "Doğrulanmamış istekler engelle?"
 checkbox_label_fields_logs: "Bu alan günlük girişlerinde görünmeli mi?"
 checkbox_label_fields_omit: "Bu alan boşken atlansın mı?"
 checkbox_label_fields_page_output: "Bu alan "erişim reddedildi" sayfasında görünmeli mi?"
+checkbox_label_profile_it: "Profil ekleyin."
 checkbox_label_single_hit_bypass: "Tek vuruşlu bypasslara izin verilsin mi?"
 checkbox_label_stage_enable: "Bu aşama etkinleştirilsin mi?"
 checkbox_label_stage_infractions: "IP izleme yönelik bu aşamada oluşturulan ihlaller sayılır mı?"
 checkbox_label_stage_log_errors: "Bu aşamada oluşan herhangi bir hata günlüğe kaydedilsin mi?"
+checkbox_label_suppress: "Engellendiğinde, çıktı şablonunu bastırmak."
 checkbox_label_untrack_positives: "Pozitifler için izleme durdurulsun mu?"
 checkbox_label_verify: "Doğrulamayı dene?"
 config_abuseipdb: "AbuseIPDB modülü için yapılandırma."
@@ -203,7 +205,7 @@ config_recaptcha_usemode: *CaptchaUseMode
 config_sfs: "Stop Forum Spam modülü için yapılandırma."
 config_sfs_offer_captcha: "İstekler bu modül tarafından engellendiğinde, CAPTCHA'lar sunulabilir. Varsayılan = True. Not: Diğer yönergeleri geçersiz kılmaz. CAPTCHA'ların sunulması için tüm yönergeler kabul edilmeli, gerekli anahtarlar yapılandırılmalıdır, vb. Normalde CAPTCHA'ların sunulmasına izin verilmesi durumunda, bu yönergeyi false olarak ayarlamak, özellikle bu modül tarafından engellenen istekler için CAPTCHA'ların sunulmasını önlemenin bir yolunu sağlar."
 config_signatures: "İmzalar, imza dosyaları, modüller, vb. için yapılandırma."
-config_signatures_default_tracktime: "Modüller tarafından yasaklanan IP'leri izlemek için kaç saniye. Varsayılan = 604800 (1 hafta)."
+config_signatures_default_tracktime: "IP adreslerinin kaç saniye boyunca izlenmesi gerektiği. Varsayılan = 604800 (1 hafta)."
 config_signatures_infraction_limit: "IP izlemesi tarafından yasaklanmadan önce bir IPnin uğrayacağı maksimum ihlal sayısı. Varsayılan = 10."
 config_signatures_shorthand: "Verilen kısa sözcükleri kullanan bir imzayla olumlu bir eşleşme olduğunda bir istekle ne yapılacağını kontrol eder."
 config_signatures_tracking_override: "Modüllerin izleme seçeneklerini geçersiz kılmasına izin verilsin mi? Doğru/True = Evet [Varsayılan]; Yanlış/False = Hayır."
@@ -362,7 +364,7 @@ label_aux_actBlk: "engelleyin"
 label_aux_actByp: "atlayın"
 label_aux_actGrl: "gri listeye ekleyin"
 label_aux_actLog: "kaydetme"
-label_aux_actPro: "profilini çıkarın"
+label_aux_actPro: "için profilini ekleyin"
 label_aux_actRdr: "yönlendir (engellemeden)"
 label_aux_actRun: "işlemek için bir dosya çalıştırın"
 label_aux_actWhl: "beyaz listeye ekleyin"

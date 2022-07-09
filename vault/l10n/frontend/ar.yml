@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Arabic language data for the front-end (last modified: 2022.07.03).
+# This file: Arabic language data for the front-end (last modified: 2022.07.09).
 ##/
 
 Extended Description AbuseIPDB module: "بحظر الطلبات من عناوين IP المدرجة في AbuseIPDB."
@@ -67,10 +67,12 @@ checkbox_label_block_nonverified: "حظر الطلبات التي لم يتم ا
 checkbox_label_fields_logs: "هل يجب أن يظهر هذا الحقل في إدخالات السجل؟"
 checkbox_label_fields_omit: "حذف هذا الحقل عندما يكون فارغا؟"
 checkbox_label_fields_page_output: "هل يجب أن يظهر هذا الحقل في صفحة "الوصول مرفوض"؟"
+checkbox_label_profile_it: "صنفه."
 checkbox_label_single_hit_bypass: "السماح بتجاوز ضربة واحدة؟"
 checkbox_label_stage_enable: "تمكين هذه المرحلة؟"
 checkbox_label_stage_infractions: "هل يجب احتساب المخالفات التي تم إنشاؤها خلال هذه المرحلة لتتبع IP؟"
 checkbox_label_stage_log_errors: "سجل أي أخطاء ولدت خلال هذه المرحلة؟"
+checkbox_label_suppress: "عند حظره، قم بإيقاف قالب الإخراج."
 checkbox_label_untrack_positives: "التوقف عن تتبع الإيجابيات؟"
 checkbox_label_verify: "محاولة التحقق؟"
 config_abuseipdb: "التكوين لوحدة AbuseIPDB."
@@ -203,9 +205,9 @@ config_recaptcha_usemode: *CaptchaUseMode
 config_sfs: "التكوين للوحدة Stop Forum Spam."
 config_sfs_offer_captcha: "عندما يتم حظر الطلبات بواسطة هذه الوحدة، قد يتم تقديم كابتشا. افتراضي = True. ملاحظة: لا يتم تجاوز التوجيهات الأخرى. لكي يتم تقديم اختبارات كابتشا، يجب أن توافق جميع التوجيهات، ويتم تكوين المفاتيح الضرورية، وما إلى ذلك. في حالة السماح عادةً بتقديم اختبارات كابتشا، فإن تعيين هذا التوجيه على false يوفر طريقة لمنع تقديم كابتشا للطلبات المحظورة على وجه التحديد بواسطة هذه الوحدة."
 config_signatures: "التكوين للتوقيعات، ملفات التوقيع، الوحدات النمطية، إلخ."
-config_signatures_default_tracktime: "كم ثانية لتعقب IP حظرت من قبل وحدات. افتراضي = 604800 (1 أسبوع)."
+config_signatures_default_tracktime: "كم ثانية لتعقب تتبع عناوين IP. افتراضي = 604800 (1 أسبوع)."
 config_signatures_infraction_limit: "يسمح الحد الأقصى لعدد المخالفات IP يمكن أن تتكبد قبل أن يتم حظره من قبل تتبع IP. افتراضي = 10."
-config_signatures_shorthand: "ضوابط لما يجب فعله بالطلب عندما يكون هناك تطابق إيجابي مع توقيع يستخدم الكلمات المختصرة المحددة."
+config_signatures_shorthand: "ضوابط لما يجب فعله بالطلب عندما يكون هناك تطابق إيجابي مع توقيع يستخدم كلمات قصيرة المحددة."
 config_signatures_tracking_override: "هل تسمح للوحدات النمطية بتجاوز خيارات التتبع؟ صحيح/True = نعم [افتراضي]؛ زائفة/False = لا."
 config_supplementary_cache_options: "خيارات ذاكرة التخزين المؤقت التكميلية. ملاحظة: قد يؤدي تغيير هذه القيم إلى تسجيل خروجك."
 config_supplementary_cache_options_enable_apcu: "يحدد هذا ما إذا كنت تريد استخدام APCu للتخزين المؤقت. افتراضي = True (صحيح)."
@@ -310,14 +312,14 @@ hints_ipv6_on_32bit: "ملاحظة: قد لا تعمل عمليات بحث IPv6 
 hints_pdo_dsn:
  FAQ.: "<em><a href="https://github.com/CIDRAM/Docs/blob/master/readme.ar.md\#HOW_TO_USE_PDO" hreflang="ar">ما هو "PDO DSN"؟ كيف يمكنني استخدام PDO مع CIDRAM؟</a></em>"
 hints_shorthand:
- 0.: "If your website needs access via LAN or localhost, don't block this. Otherwise though, you can block this."
- 1.: "The standard signature files don't use this, but it remains supported in case it might be useful for some users."
- 2.: "If you need users to be able to access your website via proxies, don't block this. Otherwise though, you can block this."
- 3.: "Direct usage within signatures isn't supported, but it may be invoked by other means in particular circumstances."
- 4.: "Refers to cases where shorthand words aren't used at all, or aren't recognised by CIDRAM."
- One per signature.: "A signature may invoke multiple profiles, but can use only one shorthand word. It's possible that multiple shorthand words may be suitable, but as only one can be used, we aim to always use only the most suitable."
- Priority.: "An option selected always takes priority over an option not selected. E.g., if multiple shorthand words are in play but only one of them is set as being blocked, the request will still be blocked."
- Human endpoints and cloud services.: "Cloud service may refer to webhosting providers, server farms, data centers, or a number of other things. Human endpoint refers to the means by which a human accesses the internet, such as by way of an internet service provider. A network usually provides just one or the other, but may sometimes provide both. We aim to never identify potential human endpoints as cloud services. Therefore, a cloud service may be identified as something else if its range is shared by known human endpoints. Likewise, we aim to always identify cloud services, whose ranges are not shared by any known human endpoints, as cloud services. Therefore, a request identified explicitly as a cloud service probably doesn't share its range with any known human endpoints. Likewise, a request identified explicitly by attacks or spam probably does share them. However, the internet is always in flux, the purposes of networks changes over time, and ranges are always being bought or sold, so remain cognisant and vigilant in regards to false positives."
+ 0.: "إذا كان موقع الويب الخاص بك يحتاج إلى الوصول عبر LAN أو localhost، فلا منعه. إذا لم تكن هناك حاجة، يمكنك منعه."
+ 1.: "ملفات التوقيع القياسية لا تستخدم هذا، لكنه يظل مدعومًا في حالة ما إذا كان مفيدًا لبعض المستخدمين."
+ 2.: "إذا كنت تريد أن يتمكن المستخدمون من الوصول إلى موقع الويب الخاص بك عبر الوكلاء، فلا منعه. إذا لم تكن هناك حاجة، يمكنك منعه."
+ 3.: "لا يتم دعم الاستخدام المباشر داخل التواقيع، ولكن قد يتم استدعاؤه بوسائل أخرى في ظروف معينة."
+ 4.: "الحالات التي لا تستخدم فيها الكلمات القصيرة، أو لا يتعرف عليها CIDRAM."
+ واحد لكل توقيع.: "قد يستدعي التوقيع عدة ملفات تعريف، لكن يمكنه استخدام كلمة قصيرة واحدة فقط. قد تكون الكلمات القصيرة المتعددة مناسبة، ولكن يمكن استخدام كلمة واحدة فقط، لذلك نحاول دائمًا استخدام الأنسب فقط."
+ أولوية.: "دائمًا ما يكون للخيار المحدد الأولوية على الخيار غير المحدد. على سبيل المثال، إذا كانت هناك عدة كلمات القصيرة سارية المفعول ولكن تم تعيين كلمة واحدة فقط على أنها محظورة، فسيظل الطلب محظورًا."
+ نقاط النهاية البشرية والخدمات السحابية.: "قد تشير الخدمة السحابية إلى موفري خدمات الاستضافة على الويب، أو مزارع الخوادم، أو مراكز البيانات، أو عدد من الأشياء الأخرى. تشير نقطة النهاية البشرية إلى الوسائل التي يصل بها الإنسان إلى الإنترنت، على سبيل المثال عن طريق مزود خدمة الإنترنت. عادةً ما توفر الشبكة واحدًا أو الآخر فقط، ولكنها قد توفر الاثنين معًا في بعض الأحيان. نحن نحاول عدم تحديد نقاط النهاية البشرية المحتملة على أنها خدمات سحابية. لذلك، يمكن تعريف الخدمة السحابية على أنها شيء آخر إذا كان نطاقها مشتركًا بواسطة نقاط نهاية بشرية معروفة. وبالمثل، نحاول دائمًا تحديد الخدمات السحابية، التي لا تتم مشاركة نطاقاتها بواسطة أي نقاط نهاية بشرية معروفة، على أنها خدمات سحابية. لذلك، فإن الطلب الذي تم تحديده على أنه خدمة سحابية على الأرجح لا يشارك نطاقه مع أي نقاط نهاية بشرية معروفة. وبالمثل، فإن الطلب الذي تم تحديده صراحةً من خلال الهجمات أو البريد العشوائي على الأرجح يقوم بمشاركتها. ومع ذلك، فإن الإنترنت دائمًا في حالة تغير مستمر، وتتغير أغراض الشبكات بمرور الوقت، ويتم دائمًا شراء أو بيعها النطاقات، لذلك كن مدركًا ويقظًا فيما يتعلق بالإيجابيات الخاطئة."
 hints_verification:
  "ما هي "الإيجابيات" و "السلبيات"؟": "عند التحقق من الهوية المقدمة من خلال الطلب، يمكن وصف النتيجة الناجحة بأنها "إيجابية" أو "سلبية". عندما يتم التأكد من أن الهوية المقدمة هي الهوية الحقيقية، فإنها توصف بأنها "إيجابية". عندما يتم التأكد من تزوير الهوية المقدمة، توصف بأنها "سلبية". ومع ذلك، فإن النتيجة غير الناجحة (على سبيل المثال، فشل التحقق، أو عدم إمكانية تحديد صحة الهوية المقدمة) لن يتم وصفها بأنها "إيجابية" أو "سلبية". بدلاً من ذلك، يمكن وصف النتيجة غير الناجحة ببساطة بأنها لم يتم التحقق منها. عندما لا يتم إجراء أي محاولة للتحقق من الهوية المقدمة من خلال طلب ما، فسيتم وصف الطلب بالمثل بأنه لم يتم التحقق منه. لا تكون المصطلحات منطقية إلا في السياق الذي يتم فيه التعرف على الهوية المقدمة من خلال الطلب، وبالتالي، حيث يكون التحقق ممكنًا. إذا كانت الهوية المقدمة لا تتطابق مع الخيارات المذكورة أعلاه، أو إذا لم يتم تقديم هوية، فإن الخيارات المقدمة أعلاه تصبح غير ملائمة."
  "ما هي "التجاوزات بضربة واحدة"؟": "في بعض الحالات، قد يظل طلب التحقق الإيجابي محظورًا نتيجة لملفات التوقيع أو الوحدات النمطية أو الشروط الأخرى للطلب، وقد تكون التجاوزات ضرورية لتجنب الإيجابيات الخاطئة. عندما يكون القصد من التجاوز التعامل مع مخالفة واحدة بالضبط، لا أكثر ولا أقل، يمكن وصف هذا التجاوز بأنه "التجاوزات بضربة واحدة"."
@@ -396,7 +398,7 @@ label_aux_special_ip_tracking_disable: "قم بتعطيل تتبع IP بالقو
 label_aux_special_ip_tracking_enable: "قم بتمكين تتبع IP بالقوة"
 label_aux_special_recaptcha_disable: "قم بتعطيل reCAPTCHA بالقوة"
 label_aux_special_recaptcha_mark: "ضع علامة للاستخدام مع reCAPTCHA"
-label_aux_special_suppress: "قمع قالب الإخراج"
+label_aux_special_suppress: "قم بإيقاف قالب الإخراج"
 label_aux_special_suppress_logging: "قمع تسجيل"
 label_aux_special_tracking_default: "فرض خيارات تتبع IP الافتراضية"
 label_aux_special_tracking_extended: "فرض خيارات تتبع IP الموسعة"

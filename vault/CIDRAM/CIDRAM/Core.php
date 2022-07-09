@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM core (last modified: 2022.07.02).
+ * This file: The CIDRAM core (last modified: 2022.07.09).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -143,6 +143,11 @@ class Core
      * @var array The stages of the execution chain.
      */
     public $Stages = [];
+
+    /**
+     * @var array Shorthand options affect how standard signatures behave.
+     */
+    public $Shorthand = [];
 
     /**
      * @var array The statistics to be tracked.
@@ -662,37 +667,49 @@ class Core
                         break 2;
                     }
                     if ($Category === 'Deny' && $Signature !== '') {
-                        $DenyMatched = false;
-                        foreach ([
-                            ['Type' => 'Attacks', 'Config' => 'block_attacks', 'ReasonLong' => 'ReasonMessage_Attacks', 'ReasonShort' => 'Short_Attacks'],
-                            ['Type' => 'Bogon', 'Config' => 'block_bogons', 'ReasonLong' => 'ReasonMessage_Bogon', 'ReasonShort' => 'Short_Bogon'],
-                            ['Type' => 'Cloud', 'Config' => 'block_cloud', 'ReasonLong' => 'ReasonMessage_Cloud', 'ReasonShort' => 'Short_Cloud'],
-                            ['Type' => 'Generic', 'Config' => 'block_generic', 'ReasonLong' => 'ReasonMessage_Generic', 'ReasonShort' => 'Short_Generic'],
-                            ['Type' => 'Legal', 'Config' => 'block_legal', 'ReasonLong' => 'ReasonMessage_Legal', 'ReasonShort' => 'Short_Legal'],
-                            ['Type' => 'Malware', 'Config' => 'block_malware', 'ReasonLong' => 'ReasonMessage_Malware', 'ReasonShort' => 'Short_Malware'],
-                            ['Type' => 'Proxy', 'Config' => 'block_proxies', 'ReasonLong' => 'ReasonMessage_Proxy', 'ReasonShort' => 'Short_Proxy'],
-                            ['Type' => 'Spam', 'Config' => 'block_spam', 'ReasonLong' => 'ReasonMessage_Spam', 'ReasonShort' => 'Short_Spam']
-                        ] as $Params) {
-                            if ($Signature === $Params['Type']) {
-                                if (empty($this->Configuration['signatures'][$Params['Config']])) {
-                                    continue 2;
-                                }
-                                $this->BlockInfo['ReasonMessage'] = $this->L10N->getString($Params['ReasonLong']);
-                                if (!empty($this->BlockInfo['WhyReason'])) {
-                                    $this->BlockInfo['WhyReason'] .= ', ';
-                                }
-                                $this->BlockInfo['WhyReason'] .= $this->L10N->getString($Params['ReasonShort']) . $LN;
-                                $this->addProfileEntry($Params['Type']);
-                                $DenyMatched = true;
-                                break;
+                        if (
+                            isset($this->CIDRAM['Config Defaults']['signatures']['shorthand']['choices'][$Signature]) &&
+                            !isset($this->CIDRAM['Config Defaults']['signatures']['shorthand']['nonsense'][$Signature . ':Profile'])
+                        ) {
+                            if (isset($this->Shorthand[$Signature . ':Profile'])) {
+                                $this->addProfileEntry($Signature);
                             }
+                        } elseif (isset($this->Shorthand['Other:Profile'])) {
+                            $this->addProfileEntry($Signature);
                         }
-                        if (!$DenyMatched) {
+                        $DenyMatched = false;
+                        if (
+                            isset($this->CIDRAM['Config Defaults']['signatures']['shorthand']['choices'][$Signature]) &&
+                            !isset($this->CIDRAM['Config Defaults']['signatures']['shorthand']['nonsense'][$Signature . ':Block'])
+                        ) {
+                            if (!isset($this->Shorthand[$Signature . ':Block'])) {
+                                continue;
+                            }
+                            $this->BlockInfo['ReasonMessage'] = $this->L10N->getString('ReasonMessage_' . $Signature) ?: $Signature;
+                            if (!empty($this->BlockInfo['WhyReason'])) {
+                                $this->BlockInfo['WhyReason'] .= ', ';
+                            }
+                            $this->BlockInfo['WhyReason'] .= ($this->L10N->getString('Short_' . $Signature) ?: $Signature) . $LN;
+                            $DenyMatched = true;
+                            if (isset($this->Shorthand[$Signature . ':Suppress'])) {
+                                $this->CIDRAM['Suppress output template'] = true;
+                            }
+                        } else {
+                            if (!isset($this->Shorthand['Other:Block'])) {
+                                continue;
+                            }
                             $this->BlockInfo['ReasonMessage'] = $Signature;
                             if (!empty($this->BlockInfo['WhyReason'])) {
                                 $this->BlockInfo['WhyReason'] .= ', ';
                             }
                             $this->BlockInfo['WhyReason'] .= $Signature . $LN;
+                            $DenyMatched = true;
+                            if (isset($this->Shorthand['Other:Suppress'])) {
+                                $this->CIDRAM['Suppress output template'] = true;
+                            }
+                        }
+                        if (!$DenyMatched) {
+                            continue;
                         }
                         if (!empty($this->BlockInfo['Signatures'])) {
                             $this->BlockInfo['Signatures'] .= ', ';

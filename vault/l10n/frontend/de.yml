@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: German language data for the front-end (last modified: 2022.07.03).
+# This file: German language data for the front-end (last modified: 2022.07.09).
 ##/
 
 Extended Description AbuseIPDB module: "Blockiert Anfragen von IPs, die bei AbuseIPDB aufgelistet sind."
@@ -61,16 +61,18 @@ Name Project Honeypot module: "Project Honeypot-Modul"
 Name Referrer spam module: "Referrer-Spam-Modul"
 Name Search engines blocker module: "Suchmaschinen-Blocker-Modul"
 Name Stop Forum Spam module: "Stop Forum Spam Modul"
-checkbox_label_block_it: "Blockiere es."
+checkbox_label_block_it: "Blockieren es."
 checkbox_label_block_negatives: "Negative blockieren?"
 checkbox_label_block_nonverified: "Nicht verifizierte Anfragen blockieren?"
 checkbox_label_fields_logs: "Soll dieses Feld in Protokolleinträgen erscheinen?"
 checkbox_label_fields_omit: "Soll dieses Feld wenn es ist leer weggelassen werden?"
 checkbox_label_fields_page_output: "Soll dieses Feld auf der „Zugriff verweigert“-Seite erscheinen?"
+checkbox_label_profile_it: "Profilieren es."
 checkbox_label_single_hit_bypass: "Single-Hit-Bypass zulassen?"
 checkbox_label_stage_enable: "Diese Phase aktivieren?"
 checkbox_label_stage_infractions: "Zählen Verstöße generierte in dieser Phase zum IP-Tracking?"
 checkbox_label_stage_log_errors: "Alle Fehler generierte in dieser Phase protokollieren?"
+checkbox_label_suppress: "Wenn blockiert, Ausgabevorlage unterdrücken."
 checkbox_label_untrack_positives: "Beenden das Tracking für Positive?"
 checkbox_label_verify: "Versuchen zu verifizieren?"
 config_abuseipdb: "Konfiguration für das AbuseIPDB-Modul."
@@ -203,7 +205,7 @@ config_recaptcha_usemode: *CaptchaUseMode
 config_sfs: "Konfiguration für das Stop Forum Spam Modul."
 config_sfs_offer_captcha: "Wenn Anfragen von diesem Modul blockiert werden, können CAPTCHAs bereitgestellt werden. Standardeinstellung = True. Hinweis: Überschreibt keine anderen Direktiven. Damit CAPTCHAs geliefert werden können, müssen alle Direktiven übereinstimmen, erforderliche Schlüssel konfiguriert sein, u.s.w. In dem Fall dass CAPTCHAs normalerweise zugelassen würden, die Einsetzung dieser Direktive auf „false“ bietet eine Möglichkeit für CAPTCHAs verhindert werden für den Anfragen die speziell von diesem Modul blockiert werden."
 config_signatures: "Konfiguration für Signaturen, Signaturdateien, Module, u.s.w."
-config_signatures_default_tracktime: "Wie viele Sekunden sollen durch Module blockierte IPs getrackt werden? Standardeinstellung = 604800 (1 Woche)."
+config_signatures_default_tracktime: "Wie viele Sekunden sollen IP-Adressen getrackt werden. Standardeinstellung = 604800 (1 Woche)."
 config_signatures_infraction_limit: "Maximale Anzahl von Verstöße, die eine IP zulassen darf, bevor sie durch IP-Tracking verbannt ist. Standardeinstellung = 10."
 config_signatures_shorthand: "Kontrollen für was mit einer Anfrage zu tun wenn es gibt eine positive Übereinstimmung mit einer Signatur die die angegebenen Kurzwörter verwendet."
 config_signatures_tracking_override: "Sollten Module erlaubt sein Tracking-Optionen zu überschreiben? True = Ja [Standardeinstellung]; False = Nein."

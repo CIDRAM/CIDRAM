@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Japanese language data for the front-end (last modified: 2022.07.03).
+# This file: Japanese language data for the front-end (last modified: 2022.07.09).
 ##/
 
 Extended Description AbuseIPDB module: "AbuseIPDBにリストされているＩＰからの要求をブロックします。"
@@ -67,10 +67,12 @@ checkbox_label_block_nonverified: "未確認のリクエストをブロックし
 checkbox_label_fields_logs: "このフィールドはログ・エントリに表示する必要がありますか？"
 checkbox_label_fields_omit: "空のときにこのフィールドを省略しますか？"
 checkbox_label_fields_page_output: "このフィールドは「アクセス拒否」ページに表示する必要がありますか？"
+checkbox_label_profile_it: "それをプロファイルします。"
 checkbox_label_single_hit_bypass: "シングル・ヒット・バイパスを許可しますか？"
 checkbox_label_stage_enable: "この段階を有効にしますか？"
 checkbox_label_stage_infractions: "この段階で発生した違反は、ＩＰトラッキングにカウントしますか？"
 checkbox_label_stage_log_errors: "この段階で発生したエラーをログに記録しますか？"
+checkbox_label_suppress: "ブロックされている場合、出力テンプレートを抑制します。"
 checkbox_label_untrack_positives: "陽性の追跡をやめますか？"
 checkbox_label_verify: "確認してみますか？"
 config_abuseipdb: "AbuseIPDBモジュールの設定。"
@@ -203,7 +205,7 @@ config_recaptcha_usemode: *CaptchaUseMode
 config_sfs: "Stop Forum Spam モジュールの設定。"
 config_sfs_offer_captcha: "このモジュールによってリクエストがブロックされた場合、CAPTCHAを提供できます。 Default（デフォルト設定） = True。 注：他のディレクティブをオーバーライドしません。 CAPTCHAを提供するには、すべてのディレクティブが同意し、必要なキーが構成されている必要があります。 CAPTCHAの提供が通常許可される場合、このディレクティブをfalseに設定すると、このモジュールによって特別にブロックされたリクエストに対してCAPTCHAが提供されないようにする方法が提供されます。"
 config_signatures: "シグネチャ、シグネチャ・ファイル、モジュール、などの設定。"
-config_signatures_default_tracktime: "モジュールによって禁止されているＩＰを追跡する秒数。​Default（デフォルト設定） = ６０４８００（１週間）。"
+config_signatures_default_tracktime: "ＩＰアドレスを追跡する必要がある秒数。​Default（デフォルト設定） = ６０４８００（１週間）。"
 config_signatures_infraction_limit: "ＩＰがＩＰトラッキングによって禁止される前に発生することが、​許される違反の最大数。​Default（デフォルト設定） = １０。"
 config_signatures_shorthand: "与えられた速記語を利用するシグネチャに対してポジティブ・マッチがある場合に、要求をどう処理するかを制御のためです。"
 config_signatures_tracking_override: "モジュールが追跡オプションをオーバーライドできるようにしますか？ True = はい（Default/デフォルルト）。 False = いいえ。"

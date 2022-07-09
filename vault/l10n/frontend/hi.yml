@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Hindi language data for the front-end (last modified: 2022.07.03).
+# This file: Hindi language data for the front-end (last modified: 2022.07.09).
 ##/
 
 Extended Description AbuseIPDB module: "AbuseIPDB पर सूचीबद्ध IP से अनुरोध ब्लॉक करता है।"
@@ -61,16 +61,18 @@ Name Project Honeypot module: "Project Honeypot मॉड्यूल"
 Name Referrer spam module: "रेफ़रर स्पैम मॉड्यूल"
 Name Search engines blocker module: "खोज इंजन अवरोधक मॉड्यूल"
 Name Stop Forum Spam module: "Stop Forum Spam मॉड्यूल"
-checkbox_label_block_it: "अवरुद्ध करें।"
+checkbox_label_block_it: "इसे अवरुद्ध करें।"
 checkbox_label_block_negatives: "नकारात्मक ब्लॉक करें?"
 checkbox_label_block_nonverified: "गैर-सत्यापित अनुरोधों को ब्लॉक करें?"
 checkbox_label_fields_logs: "क्या यह फ़ील्ड लॉग प्रविष्टियों में दिखाई देनी चाहिए?"
 checkbox_label_fields_omit: "खाली होने पर इस फ़ील्ड को छोड़ दें?"
 checkbox_label_fields_page_output: "क्या यह फ़ील्ड "पहुंच अस्वीकृत" पृष्ठ पर दिखाई देनी चाहिए?"
+checkbox_label_profile_it: "इसे प्रोफाइल करें।"
 checkbox_label_single_hit_bypass: "सिंगल-हिट बाईपास की अनुमति दें?"
 checkbox_label_stage_enable: "इस चरण को सक्षम करें?"
 checkbox_label_stage_infractions: "IP ट्रैकिंग के लिए इस चरण के दौरान उत्पन्न उल्लंघन की गणना करें?"
 checkbox_label_stage_log_errors: "इस चरण के दौरान उत्पन्न कोई त्रुटि लॉग करें?"
+checkbox_label_suppress: "अवरुद्ध होने पर, आउटपुट टेम्पलेट का दमन।"
 checkbox_label_untrack_positives: "सकारात्मक अनट्रैक करें?"
 checkbox_label_verify: "सत्यापित करने का प्रयास करें?"
 config_abuseipdb: "AbuseIPDB मॉड्यूल के लिए कॉन्फ़िगरेशन।"
@@ -203,7 +205,7 @@ config_recaptcha_usemode: *CaptchaUseMode
 config_sfs: "Stop Forum Spam मॉड्यूल के लिए कॉन्फ़िगरेशन।"
 config_sfs_offer_captcha: "जब इस मॉड्यूल द्वारा अनुरोधों को अवरुद्ध किया जाता है, तो कैप्चा परोसा जा सकता है। डिफ़ॉल्ट = True। नोट: अन्य निर्देशों को ओवरराइड नहीं करता है। कैप्चा की सेवा के लिए, सभी निर्देशों को सहमत होना चाहिए, आवश्यक कुंजियाँ कॉन्फ़िगर की जानी चाहिए, आदि। इस घटना में कि कैप्चा को सामान्य रूप से सेवा देने की अनुमति दी जाएगी, इस निर्देश को false पर सेट करने से कैप्चा को इस मॉड्यूल द्वारा विशेष रूप से अवरुद्ध अनुरोधों के लिए प्रस्तुत किए जाने से रोकने का एक तरीका मिलता है।"
 config_signatures: "हस्ताक्षर, हस्ताक्षर फाइलें, मॉड्यूल, आदि के लिए कॉन्फ़िगरेशन।"
-config_signatures_default_tracktime: "मॉड्यूल द्वारा प्रतिबंधित IP ट्रैक करने सेकंड कितने। डिफ़ॉल्ट = 604800 (1 सप्ताह)।"
+config_signatures_default_tracktime: "कितने सेकंड के लिए IP एड्रेस को ट्रैक किया जाना चाहिए। डिफ़ॉल्ट = 604800 (1 सप्ताह)।"
 config_signatures_infraction_limit: "मिथकों की अधिकतम संख्या एक IP इससे पहले किया जाता है IP ट्रैकिंग से प्रतिबंध लागू करने की अनुमति है। डिफ़ॉल्ट = "10"।"
 config_signatures_shorthand: "जब दिए गए शॉर्टहैंड शब्दों का उपयोग करने वाले हस्ताक्षर के खिलाफ सकारात्मक मिलान होता है, तो अनुरोध के साथ क्या करना है, इसके लिए नियंत्रण।"
 config_signatures_tracking_override: "मॉड्यूल को ट्रैकिंग विकल्पों को ओवरराइड करने दें? True(सच्चे) = हाँ [डिफ़ॉल्ट]; False(झूठी) = नहीं।"

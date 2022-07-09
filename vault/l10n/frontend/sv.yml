@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Swedish language data for the front-end (last modified: 2022.07.03).
+# This file: Swedish language data for the front-end (last modified: 2022.07.09).
 ##/
 
 Extended Description AbuseIPDB module: "Blockerar förfrågningar från IP-adresser som listas på AbuseIPDB."
@@ -67,10 +67,12 @@ checkbox_label_block_nonverified: "Blockera icke-verifierade förfrågningar?"
 checkbox_label_fields_logs: "Ska detta fält visas i loggposter?"
 checkbox_label_fields_omit: "Utelämna det här fältet när det är tomt?"
 checkbox_label_fields_page_output: "Ska den här fältet visas på sidan "nekat tillgång"?"
+checkbox_label_profile_it: "Profilera det."
 checkbox_label_single_hit_bypass: "Tillåta singel-hit bypasser?"
 checkbox_label_stage_enable: "Aktivera den här skedet?"
 checkbox_label_stage_infractions: "Räkna infraktions som genererats under detta skede mot IP-spårning?"
 checkbox_label_stage_log_errors: "Logga några fel som genererats under detta skede?"
+checkbox_label_suppress: "När blockerad, undertryck utmatningsmallen."
 checkbox_label_untrack_positives: "Sluta spåra efter positiva?"
 checkbox_label_verify: "Försök att verifiera?"
 config_abuseipdb: "Konfiguration för AbuseIPDB-modulen."
@@ -203,7 +205,7 @@ config_recaptcha_usemode: *CaptchaUseMode
 config_sfs: "Konfiguration för modulen Stop Forum Spam."
 config_sfs_offer_captcha: "När förfrågningar blockeras av denna modul kan CAPTCHAer utfärdas. Standard = True. Obs: Åsidosätter inte andra direktiv. För att CAPTCHAer ska kunna utfärdas måste alla direktiv överensstämma, nödvändiga nycklar konfigurerade, etc. I händelse av att CAPTCHAer normalt skulle tillåtas att utfärdas, inställning av detta direktiv till false ger ett sätt att förhindra att CAPTCHAer utfärdas för förfrågningar som specifikt blockeras av denna modul."
 config_signatures: "Konfiguration för signaturer, signaturfiler, moduler, osv."
-config_signatures_default_tracktime: "Hur många sekunder spåra IP-adresser som är förbjudna av moduler. Standard = 604800 (1 vecka)."
+config_signatures_default_tracktime: "Hur många sekunder IP-adresser ska spåras. Standard = 604800 (1 vecka)."
 config_signatures_infraction_limit: "Maximalt antal infraktions som en IP får medföra innan den är förbjuden av IP-spårning. Standard = 10."
 config_signatures_shorthand: "Kontrollerar vad som ska göras med en förfrågan när det finns en positiv matchning mot en signatur som använder de givna förkortningsorden."
 config_signatures_tracking_override: "Tillåt att moduler åsidosätter spårningsalternativ? True = Ja [Standard]; False = Nej."
@@ -396,7 +398,7 @@ label_aux_special_ip_tracking_disable: "Inaktivera IP-spårning med våld"
 label_aux_special_ip_tracking_enable: "Aktivera IP-spårning med våld"
 label_aux_special_recaptcha_disable: "Inaktivera reCAPTCHA med våld"
 label_aux_special_recaptcha_mark: "Markera för användning med reCAPTCHA"
-label_aux_special_suppress: "Undertryck utmatningsmall"
+label_aux_special_suppress: "Undertryck utmatningsmallen"
 label_aux_special_suppress_logging: "Undertryck loggning"
 label_aux_special_tracking_default: "Tillämpa standard IP-spårningsalternativ"
 label_aux_special_tracking_extended: "Tillämpa utökade IP-spårningsalternativ"

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2022.06.22).
+ * This file: Front-end handler (last modified: 2022.07.09).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -1454,8 +1454,8 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
                     ) {
                         $CIDRAM['DirValue']['gridV'] = 'gridVB';
                         $CIDRAM['ThisDir']['FieldOut'] = sprintf(
-                            '<div style="display:grid;margin:auto 38px;grid-template-columns:%s;text-align:%s">',
-                            str_repeat('auto ', count($CIDRAM['DirValue']['labels'])) . 'auto',
+                            '<div style="display:grid;margin:auto 38px;grid-template-columns:repeat(%s) auto;text-align:%s">',
+                            count($CIDRAM['DirValue']['labels']) . ',minmax(0, 1fr)',
                             $CIDRAM['FE']['FE_Align']
                         );
                         $CIDRAM['DirValue']['HasLabels'] = true;

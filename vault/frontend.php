@@ -1460,7 +1460,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
                         );
                         $CIDRAM['DirValue']['HasLabels'] = true;
                         foreach ($CIDRAM['DirValue']['labels'] as $CIDRAM['DirValue']['ThisLabel']) {
-                            $CIDRAM['DirValue']['gridV'] = ($CIDRAM['DirValue']['gridV']) === 'gridVB' ? 'gridVA': 'gridVB';
+                            $CIDRAM['DirValue']['gridV'] = ($CIDRAM['DirValue']['gridV']) === 'gridVB' ? 'gridVA' : 'gridVB';
                             $CIDRAM['ReplaceLabelWithL10N']($CIDRAM['DirValue']['ThisLabel']);
                             $CIDRAM['ThisDir']['FieldOut'] .= sprintf(
                                 '<div class="gridboxitem configMatrixLabel %s">%s</div>',
@@ -1494,7 +1494,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
                         }
                     }
                     $CIDRAM['DirValue']['gridV'] = 'gridVB';
-                    $CIDRAM['DirValue']['gridH'] = ($CIDRAM['DirValue']['gridH']) === 'gridHB' ? 'gridHA': 'gridHB';
+                    $CIDRAM['DirValue']['gridH'] = ($CIDRAM['DirValue']['gridH']) === 'gridHB' ? 'gridHA' : 'gridHB';
                     $CIDRAM['ChoiceValue'] = $CIDRAM['TimeFormat']($CIDRAM['Now'], $CIDRAM['ChoiceValue']);
                     if (strpos($CIDRAM['ChoiceValue'], '{') !== false) {
                         $CIDRAM['ChoiceValue'] = $CIDRAM['ParseVars']($CIDRAM['L10N']->Data, $CIDRAM['ChoiceValue']);
@@ -1503,7 +1503,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
                     if ($CIDRAM['DirValue']['type'] === 'checkbox') {
                         if ($CIDRAM['DirValue']['HasLabels']) {
                             foreach ($CIDRAM['DirValue']['labels'] as $CIDRAM['DirValue']['ThisLabelKey'] => $CIDRAM['DirValue']['ThisLabel']) {
-                                $CIDRAM['DirValue']['gridV'] = ($CIDRAM['DirValue']['gridV']) === 'gridVB' ? 'gridVA': 'gridVB';
+                                $CIDRAM['DirValue']['gridV'] = ($CIDRAM['DirValue']['gridV']) === 'gridVB' ? 'gridVA' : 'gridVB';
                                 $CIDRAM['ThisDir']['FieldOut'] .= sprintf(
                                     '<div class="gridboxcheckcell %4$s %5$s"><label class="gridlabel"><input%3$s type="checkbox" class="auto" name="%1$s" id="%1$s"%2$s /></label></div>',
                                     $CIDRAM['ThisDir']['DirLangKey'] . '_' . $CIDRAM['ChoiceKey'] . '_' . $CIDRAM['DirValue']['ThisLabelKey'],

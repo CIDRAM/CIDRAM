@@ -76,3 +76,4 @@
 - Improved log identification strategy.
 - Following symlinks for RecursiveDirectoryIterator instances enabled.
 - Slightly improved RTL support.
+- Added the ability to enable/disable auxiliary rules (#318).

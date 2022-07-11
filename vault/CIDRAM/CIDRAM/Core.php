@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM core (last modified: 2022.07.09).
+ * This file: The CIDRAM core (last modified: 2022.07.11).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -2127,7 +2127,7 @@ class Core
         /** Iterate through the auxiliary rules. */
         foreach ($this->CIDRAM['AuxData'] as $Name => $Data) {
             /** Safety. */
-            if (!is_array($Data) || empty($Data)) {
+            if (!is_array($Data) || empty($Data) || !empty($Data['Disable this rule'])) {
                 continue;
             }
 

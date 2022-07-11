@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM front-end (last modified: 2022.07.09).
+ * This file: The CIDRAM front-end (last modified: 2022.07.11).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -2830,7 +2830,7 @@ class FrontEnd extends Core
                     $ThisFile['ThisOptions'] .= sprintf($Base, 'rename-file', $ThisFile['Directory'] && !$ThisFile['CanEdit'] ? ' selected' : '', $this->L10N->getString('field_rename_file'));
                 }
                 if ($ThisFile['CanEdit']) {
-                    $ThisFile['ThisOptions'] .= sprintf($Base, 'edit-file', ' selected', $this->L10N->getString('field_edit_file'));
+                    $ThisFile['ThisOptions'] .= sprintf($Base, 'edit-file', ' selected', $this->L10N->getString('field_edit'));
                 }
                 if (!$ThisFile['Directory']) {
                     $ThisFile['ThisOptions'] .= sprintf($Base, 'download-file', $ThisFile['CanEdit'] ? '' : ' selected', $this->L10N->getString('field_download_file'));
@@ -4083,37 +4083,42 @@ class FrontEnd extends Core
 
                 /** Send output. */
                 echo $this->sendOutput();
-            } else {
+            } elseif (isset($_POST['auxD'], $this->CIDRAM['AuxData'][$_POST['auxD']])) {
                 /** Delete an auxiliary rule. */
-                if (isset($_POST['auxD'], $this->CIDRAM['AuxData'][$_POST['auxD']])) {
-                    /** Destroy the target rule data array. */
-                    unset($this->CIDRAM['AuxData'][$_POST['auxD']]);
+                unset($this->CIDRAM['AuxData'][$_POST['auxD']]);
 
-                    /** Reconstruct and update auxiliary rules data. */
-                    if (!$this->updateAuxData() && file_exists($this->Vault . 'auxiliary.yml')) {
-                        /** If auxiliary rules data reconstruction fails, or if it's empty, delete the file. */
-                        unlink($this->Vault . 'auxiliary.yml');
-                    }
-
-                    /** Confirm successful deletion. */
-                    echo sprintf($this->L10N->getString('response_aux_rule_deleted_successfully'), $_POST['auxD']);
-                } elseif (isset($_POST['auxT'])) {
-                    /** Move an auxiliary rule to the top of the list. */
-                    $this->CIDRAM['AuxData'] = $this->swapAssociativeArrayElements($this->CIDRAM['AuxData'], $_POST['auxT'], false);
-                    $this->updateAuxData();
-                } elseif (isset($_POST['auxB'])) {
-                    /** Move an auxiliary rule to the bottom of the list. */
-                    $this->CIDRAM['AuxData'] = $this->swapAssociativeArrayElements($this->CIDRAM['AuxData'], $_POST['auxB'], true);
-                    $this->updateAuxData();
-                } elseif (isset($_POST['auxMU'])) {
-                    /** Move an auxiliary rule up one position. */
-                    $this->CIDRAM['AuxData'] = $this->swapAssociativeArrayElementsByOne($this->CIDRAM['AuxData'], $_POST['auxMU'], false);
-                    $this->updateAuxData();
-                } elseif (isset($_POST['auxMD'])) {
-                    /** Move an auxiliary rule down one position. */
-                    $this->CIDRAM['AuxData'] = $this->swapAssociativeArrayElementsByOne($this->CIDRAM['AuxData'], $_POST['auxMD'], true);
-                    $this->updateAuxData();
+                /** Reconstruct and update auxiliary rules data. */
+                if (!$this->updateAuxData() && file_exists($this->Vault . 'auxiliary.yml')) {
+                    /** If auxiliary rules data reconstruction fails, or if it's empty, delete the file. */
+                    unlink($this->Vault . 'auxiliary.yml');
                 }
+
+                /** Confirm successful deletion. */
+                echo sprintf($this->L10N->getString('response_aux_rule_deleted_successfully'), $_POST['auxD']);
+            } elseif (isset($_POST['auxT'])) {
+                /** Move an auxiliary rule to the top of the list. */
+                $this->CIDRAM['AuxData'] = $this->swapAssociativeArrayElements($this->CIDRAM['AuxData'], $_POST['auxT'], false);
+                $this->updateAuxData();
+            } elseif (isset($_POST['auxB'])) {
+                /** Move an auxiliary rule to the bottom of the list. */
+                $this->CIDRAM['AuxData'] = $this->swapAssociativeArrayElements($this->CIDRAM['AuxData'], $_POST['auxB'], true);
+                $this->updateAuxData();
+            } elseif (isset($_POST['auxMU'])) {
+                /** Move an auxiliary rule up one position. */
+                $this->CIDRAM['AuxData'] = $this->swapAssociativeArrayElementsByOne($this->CIDRAM['AuxData'], $_POST['auxMU'], false);
+                $this->updateAuxData();
+            } elseif (isset($_POST['auxMD'])) {
+                /** Move an auxiliary rule down one position. */
+                $this->CIDRAM['AuxData'] = $this->swapAssociativeArrayElementsByOne($this->CIDRAM['AuxData'], $_POST['auxMD'], true);
+                $this->updateAuxData();
+            } elseif (isset($_POST['auxDR'], $this->CIDRAM['AuxData'][$_POST['auxDR']])) {
+                /** Disable an auxiliary rule. */
+                $this->CIDRAM['AuxData'][$_POST['auxDR']]['Disable this rule'] = true;
+                $this->updateAuxData();
+            } elseif (isset($_POST['auxER'], $this->CIDRAM['AuxData'][$_POST['auxER']])) {
+                /** Enable an auxiliary rule. */
+                unset($this->CIDRAM['AuxData'][$_POST['auxER']]['Disable this rule']);
+                $this->updateAuxData();
             }
         }
 

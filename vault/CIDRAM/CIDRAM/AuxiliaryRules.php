@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods used for auxiliary rules (last modified: 2022.06.19).
+ * This file: Methods used for auxiliary rules (last modified: 2022.07.11).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -360,172 +360,178 @@ trait AuxiliaryRules
                 /** Finish writing new rule. */
                 $Output .= '</div>';
                 $Current++;
-            } else {
-                /** Figure out which options are available for the rule. */
-                $Options = ['(<span style="cursor:pointer" onclick="javascript:%s(\'' . addslashes($Name) . '\',\'' . $RuleClass . '\')"><code class="s">%s</code></span>)'];
-                $Options['delRule'] = sprintf($Options[0], 'delRule', $this->L10N->getString('field_delete'));
-                if ($Count > 1) {
-                    if ($Current !== 1) {
-                        if ($Current !== 2) {
-                            $Options['moveUp'] = sprintf($Options[0], 'moveUp', $this->L10N->getString('label_aux_move_up'));
-                        }
-                        $Options['moveToTop'] = sprintf($Options[0], 'moveToTop', $this->L10N->getString('label_aux_move_top'));
-                    }
-                    if ($Current !== $Count) {
-                        if ($Current !== ($Count - 1)) {
-                            $Options['moveDown'] = sprintf($Options[0], 'moveDown', $this->L10N->getString('label_aux_move_down'));
-                        }
-                        $Options['moveToBottom'] = sprintf($Options[0], 'moveToBottom', $this->L10N->getString('label_aux_move_bottom'));
-                    }
-                }
-                unset($Options[0]);
-                $Options = ' – ' . implode(' ', $Options);
+                continue;
+            }
 
-                /** Begin generating rule output. */
+            /** Figure out which options are available for the rule (view mode). */
+            $Options = ['(<span style="cursor:pointer" onclick="javascript:%s(\'' . addslashes($Name) . '\',\'' . $RuleClass . '\')"><code class="s">%s</code></span>)'];
+            $Options['delRule'] = sprintf($Options[0], 'delRule', $this->L10N->getString('field_delete'));
+            if (empty($Data['Disable this rule'])) {
+                $Options['disableRule'] = sprintf($Options[0], 'disableRule', $this->L10N->getString('label_aux_special_disable'));
+            } else {
+                $Options['enableRule'] = sprintf($Options[0], 'enableRule', $this->L10N->getString('label_aux_special_enable'));
+            }
+            if ($Count > 1) {
+                if ($Current !== 1) {
+                    if ($Current !== 2) {
+                        $Options['moveUp'] = sprintf($Options[0], 'moveUp', $this->L10N->getString('label_aux_move_up'));
+                    }
+                    $Options['moveToTop'] = sprintf($Options[0], 'moveToTop', $this->L10N->getString('label_aux_move_top'));
+                }
+                if ($Current !== $Count) {
+                    if ($Current !== ($Count - 1)) {
+                        $Options['moveDown'] = sprintf($Options[0], 'moveDown', $this->L10N->getString('label_aux_move_down'));
+                    }
+                    $Options['moveToBottom'] = sprintf($Options[0], 'moveToBottom', $this->L10N->getString('label_aux_move_bottom'));
+                }
+            }
+            unset($Options[0]);
+            $Options = ' – ' . implode(' ', $Options);
+
+            /** Begin generating rule output. */
+            $Output .= sprintf(
+                '%1$s<li class="%2$s"><span class="comCat s">%3$s</span>%4$s%5$s%1$s  <ul class="comSub">',
+                "\n      ",
+                $RuleClass,
+                $Name,
+                $Options,
+                isset($Data['Notes']) ? '<div class="iCntn"><em>' . str_replace(['<', '>', "\n"], ['&lt;', '&gt;', "<br />\n"], $Data['Notes']) . '</em></div>' : ''
+            );
+
+            /** Additional details about the rule to print to the page (e.g., detailed block reason). */
+            foreach ([
+                ['Reason', 'label_aux_reason'],
+                ['Target', 'label_aux_target'],
+                ['Webhooks', 'label_aux_webhooks']
+            ] as $Details) {
+                if (!empty($Data[$Details[0]]) && $Label = $this->L10N->getString($Details[1])) {
+                    if (is_array($Data[$Details[0]])) {
+                        $Data[$Details[0]] = implode('</div><div class="iCntn">', $Data[$Details[0]]);
+                    }
+                    $Output .= "\n          <li><div class=\"iCntr\"><div class=\"iLabl s\">" . $Label . '</div><div class="iCntn">' . $Data[$Details[0]] . '</div></div></li>';
+                }
+            }
+
+            /** Populate from and expiry. */
+            foreach ([
+                ['From', 'label_aux_from'],
+                ['Expiry', 'label_aux_expiry']
+            ] as $Details) {
+                if (!empty($Data[$Details[0]]) && $Label = $this->L10N->getString($Details[1])) {
+                    if (preg_match('~^(\d{4})[.-](\d\d)[.-](\d\d)$~', $Data[$Details[0]], $Details[2])) {
+                        $Data[$Details[0]] .= ' (' . $this->relativeTime(
+                            mktime(0, 0, 0, (int)$Details[2][2], (int)$Details[2][3], (int)$Details[2][1])
+                        ) . ')';
+                    }
+                    $Output .= "\n          <li><div class=\"iCntr\"><div class=\"iLabl s\">" . $Label . '</div><div class="iCntn">' . $Data[$Details[0]] . '</div></div></li>';
+                }
+            }
+
+            /** Display the status code to be applied. */
+            if (!empty($Data['Status Code']) && $Data['Status Code'] > 200 && $StatusCode = $this->getStatusHTTP($Data['Status Code'])) {
+                $Output .= "\n          <li><div class=\"iCntr\"><div class=\"iLabl s\">" . $this->L10N->getString('label_aux_http_status_code_override') . '</div><div class="iCntn">' . $Data['Status Code'] . ' ' . $StatusCode . '</div></div></li>';
+            }
+
+            /** Iterate through actions. */
+            foreach ([
+                ['Whitelist', 'optActWhl'],
+                ['Greylist', 'optActGrl'],
+                ['Block', 'optActBlk'],
+                ['Bypass', 'optActByp'],
+                ['Don\'t log', 'optActLog'],
+                ['Redirect', 'optActRdr'],
+                ['Run', 'optActRun'],
+                ['Profile', 'optActPro']
+            ] as $Action) {
+                /** Skip action if the current rule doesn't use this action. */
+                if (empty($Data[$Action[0]])) {
+                    continue;
+                }
+
+                /** Show the appropriate label for this action. */
                 $Output .= sprintf(
-                    '%1$s<li class="%2$s"><span class="comCat s">%3$s</span>%4$s%5$s%1$s  <ul class="comSub">',
-                    "\n      ",
-                    $RuleClass,
-                    $Name,
-                    $Options,
-                    isset($Data['Notes']) ? '<div class="iCntn"><em>' . str_replace(['<', '>', "\n"], ['&lt;', '&gt;', "<br />\n"], $Data['Notes']) . '</em></div>' : ''
+                    '%1$s<li>%1$s  <div class="iCntr">%1$s    <div class="iLabl s">%2$s</div>',
+                    "\n          ",
+                    $this->FE[$Action[1]]
                 );
 
-                /** Additional details about the rule to print to the page (e.g., detailed block reason). */
-                foreach ([
-                    ['Reason', 'label_aux_reason'],
-                    ['Target', 'label_aux_target'],
-                    ['Webhooks', 'label_aux_webhooks']
-                ] as $Details) {
-                    if (!empty($Data[$Details[0]]) && $Label = $this->L10N->getString($Details[1])) {
-                        if (is_array($Data[$Details[0]])) {
-                            $Data[$Details[0]] = implode('</div><div class="iCntn">', $Data[$Details[0]]);
+                /** List all "not equals" conditions . */
+                if (!empty($Data[$Action[0]]['But not if matches'])) {
+                    /** Iterate through sources. */
+                    foreach ($Data[$Action[0]]['But not if matches'] as $Source => $Values) {
+                        $ThisSource = $Sources[$Source] ?? $Source;
+                        if (!is_array($Values)) {
+                            $Values = [$Values];
                         }
-                        $Output .= "\n          <li><div class=\"iCntr\"><div class=\"iLabl s\">" . $Label . '</div><div class="iCntn">' . $Data[$Details[0]] . '</div></div></li>';
+                        foreach ($Values as $Value) {
+                            if ($Value === '') {
+                                $Value = '&nbsp;';
+                            }
+                            $Operator = $this->operatorFromAuxValue($Value, true);
+                            $Output .= "\n              <div class=\"iCntn\"><span style=\"float:" . $this->FE['FE_Align'] . '">' . $ThisSource . '&nbsp;' . $Operator . '&nbsp;</span><code>' . $Value . '</code></div>';
+                        }
                     }
                 }
 
-                /** Populate from and expiry. */
-                foreach ([
-                    ['From', 'label_aux_from'],
-                    ['Expiry', 'label_aux_expiry']
-                ] as $Details) {
-                    if (!empty($Data[$Details[0]]) && $Label = $this->L10N->getString($Details[1])) {
-                        if (preg_match('~^(\d{4})[.-](\d\d)[.-](\d\d)$~', $Data[$Details[0]], $Details[2])) {
-                            $Data[$Details[0]] .= ' (' . $this->relativeTime(
-                                mktime(0, 0, 0, (int)$Details[2][2], (int)$Details[2][3], (int)$Details[2][1])
-                            ) . ')';
+                /** List all "equals" conditions . */
+                if (!empty($Data[$Action[0]]['If matches'])) {
+                    /** Iterate through sources. */
+                    foreach ($Data[$Action[0]]['If matches'] as $Source => $Values) {
+                        $ThisSource = isset($Sources[$Source]) ? $Sources[$Source] : $Source;
+                        if (!is_array($Values)) {
+                            $Values = [$Values];
                         }
-                        $Output .= "\n          <li><div class=\"iCntr\"><div class=\"iLabl s\">" . $Label . '</div><div class="iCntn">' . $Data[$Details[0]] . '</div></div></li>';
+                        foreach ($Values as $Value) {
+                            if ($Value === '') {
+                                $Value = '&nbsp;';
+                            }
+                            $Operator = $this->operatorFromAuxValue($Value);
+                            $Output .= "\n              <div class=\"iCntn\"><span style=\"float:" . $this->FE['FE_Align'] . '">' . $ThisSource . '&nbsp;' . $Operator . '&nbsp;</span><code>' . $Value . '</code></div>';
+                        }
                     }
                 }
 
-                /** Display the status code to be applied. */
-                if (!empty($Data['Status Code']) && $Data['Status Code'] > 200 && $StatusCode = $this->getStatusHTTP($Data['Status Code'])) {
-                    $Output .= "\n          <li><div class=\"iCntr\"><div class=\"iLabl s\">" . $this->L10N->getString('label_aux_http_status_code_override') . '</div><div class="iCntn">' . $Data['Status Code'] . ' ' . $StatusCode . '</div></div></li>';
-                }
+                /** Finish writing conditions list. */
+                $Output .= "\n            </div>\n          </li>";
+            }
 
-                /** Iterate through actions. */
-                foreach ([
-                    ['Whitelist', 'optActWhl'],
-                    ['Greylist', 'optActGrl'],
-                    ['Block', 'optActBlk'],
-                    ['Bypass', 'optActByp'],
-                    ['Don\'t log', 'optActLog'],
-                    ['Redirect', 'optActRdr'],
-                    ['Run', 'optActRun'],
-                    ['Profile', 'optActPro']
-                ] as $Action) {
-                    /** Skip action if the current rule doesn't use this action. */
-                    if (empty($Data[$Action[0]])) {
+            /** Cite the file to run. */
+            if (!empty($Data['Run']['File']) && $Label = $this->L10N->getString('label_aux_run')) {
+                $Output .= "\n            <li><div class=\"iCntr\"><div class=\"iLabl s\">" . $Label . '</div><div class="iCntn">' . $Data['Run']['File'] . '</div></div></li>';
+            }
+
+            /** Display other options and special flags. */
+            $Flags = [];
+            foreach ($this->CIDRAM['Provide']['Auxiliary Rules']['Flags'] as $FlagSetName => $FlagSet) {
+                foreach ($FlagSet as $FlagName => $FlagData) {
+                    if (!is_array($FlagData) || empty($FlagData['Label'])) {
                         continue;
                     }
-
-                    /** Show the appropriate label for this action. */
-                    $Output .= sprintf(
-                        '%1$s<li>%1$s  <div class="iCntr">%1$s    <div class="iLabl s">%2$s</div>',
-                        "\n          ",
-                        $this->FE[$Action[1]]
-                    );
-
-                    /** List all "not equals" conditions . */
-                    if (!empty($Data[$Action[0]]['But not if matches'])) {
-                        /** Iterate through sources. */
-                        foreach ($Data[$Action[0]]['But not if matches'] as $Source => $Values) {
-                            $ThisSource = $Sources[$Source] ?? $Source;
-                            if (!is_array($Values)) {
-                                $Values = [$Values];
-                            }
-                            foreach ($Values as $Value) {
-                                if ($Value === '') {
-                                    $Value = '&nbsp;';
-                                }
-                                $Operator = $this->operatorFromAuxValue($Value, true);
-                                $Output .= "\n              <div class=\"iCntn\"><span style=\"float:" . $this->FE['FE_Align'] . '">' . $ThisSource . '&nbsp;' . $Operator . '&nbsp;</span><code>' . $Value . '</code></div>';
-                            }
-                        }
-                    }
-
-                    /** List all "equals" conditions . */
-                    if (!empty($Data[$Action[0]]['If matches'])) {
-                        /** Iterate through sources. */
-                        foreach ($Data[$Action[0]]['If matches'] as $Source => $Values) {
-                            $ThisSource = isset($Sources[$Source]) ? $Sources[$Source] : $Source;
-                            if (!is_array($Values)) {
-                                $Values = [$Values];
-                            }
-                            foreach ($Values as $Value) {
-                                if ($Value === '') {
-                                    $Value = '&nbsp;';
-                                }
-                                $Operator = $this->operatorFromAuxValue($Value);
-                                $Output .= "\n              <div class=\"iCntn\"><span style=\"float:" . $this->FE['FE_Align'] . '">' . $ThisSource . '&nbsp;' . $Operator . '&nbsp;</span><code>' . $Value . '</code></div>';
-                            }
-                        }
-                    }
-
-                    /** Finish writing conditions list. */
-                    $Output .= "\n            </div>\n          </li>";
-                }
-
-                /** Cite the file to run. */
-                if (!empty($Data['Run']['File']) && $Label = $this->L10N->getString('label_aux_run')) {
-                    $Output .= "\n            <li><div class=\"iCntr\"><div class=\"iLabl s\">" . $Label . '</div><div class="iCntn">' . $Data['Run']['File'] . '</div></div></li>';
-                }
-
-                /** Display other options and special flags. */
-                $Flags = [];
-                foreach ($this->CIDRAM['Provide']['Auxiliary Rules']['Flags'] as $FlagSetName => $FlagSet) {
-                    foreach ($FlagSet as $FlagName => $FlagData) {
-                        if (!is_array($FlagData) || empty($FlagData['Label'])) {
-                            continue;
-                        }
-                        $Label = $this->L10N->getString($FlagData['Label']) ?: $FlagData['Label'];
-                        if (!empty($Data[$FlagName])) {
-                            $Flags[] = $Label;
-                        }
+                    $Label = $this->L10N->getString($FlagData['Label']) ?: $FlagData['Label'];
+                    if (!empty($Data[$FlagName])) {
+                        $Flags[] = $Label;
                     }
                 }
-                if (count($Flags)) {
-                    $Output .= "\n            <li><div class=\"iCntr\"><div class=\"iLabl s\">" . $this->L10N->getString('label_aux_special') . '</div><div class="iCntn">' . implode('<br />', $Flags) . '</div></div></li>';
-                }
-
-                /** Show the method to be used. */
-                $Output .= "\n          <li><div class=\"iCntr\"><div class=\"iLabl\"><em>" . (isset($Data['Method']) ? (
-                    $Data['Method'] === 'RegEx' ? $this->FE['optMtdReg'] : (
-                        $Data['Method'] === 'WinEx' ? $this->FE['optMtdWin'] : $this->FE['optMtdStr']
-                    )
-                ) : $this->FE['optMtdStr']) . '</em></div></div></li>';
-
-                /** Describe matching logic used. */
-                $Output .= "\n          <li><div class=\"iCntr\"><div class=\"iLabl\"><em>" . $this->L10N->getString(
-                    (!empty($Data['Logic']) && $Data['Logic'] !== 'Any') ? 'label_aux_logic_all' : 'label_aux_logic_any'
-                ) . '</em></div></div></li>';
-
-                /** Finish writing new rule. */
-                $Output .= "\n        </ul>\n      </li>";
-                $Current++;
             }
+            if (count($Flags)) {
+                $Output .= "\n            <li><div class=\"iCntr\"><div class=\"iLabl s\">" . $this->L10N->getString('label_aux_special') . '</div><div class="iCntn">' . implode('<br />', $Flags) . '</div></div></li>';
+            }
+
+            /** Show the method to be used. */
+            $Output .= "\n          <li><div class=\"iCntr\"><div class=\"iLabl\"><em>" . (isset($Data['Method']) ? (
+                $Data['Method'] === 'RegEx' ? $this->FE['optMtdReg'] : (
+                    $Data['Method'] === 'WinEx' ? $this->FE['optMtdWin'] : $this->FE['optMtdStr']
+                )
+            ) : $this->FE['optMtdStr']) . '</em></div></div></li>';
+
+            /** Describe matching logic used. */
+            $Output .= "\n          <li><div class=\"iCntr\"><div class=\"iLabl\"><em>" . $this->L10N->getString(
+                (!empty($Data['Logic']) && $Data['Logic'] !== 'Any') ? 'label_aux_logic_all' : 'label_aux_logic_any'
+            ) . '</em></div></div></li>';
+
+            /** Finish writing new rule. */
+            $Output .= "\n        </ul>\n      </li>";
+            $Current++;
         }
 
         /** Update button after. */

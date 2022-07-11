@@ -29,6 +29,18 @@ function moveDown(a, i) {
   })
 }
 
+function disableRule(a, i) {
+  window.auxDR = a, $('POST', '', ['auxDR'], null, function(a) {
+    window.location.reload()
+  })
+}
+
+function enableRule(a, i) {
+  window.auxER = a, $('POST', '', ['auxER'], null, function(a) {
+    window.location.reload()
+  })
+}
+
 function onAuxActionChange(e, p, i) {
   if (i.length > 0) {
     var statusCode = document.querySelector('input[name="statusCode['+i+']"]:checked').value || 200;

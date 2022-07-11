@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2022.07.09).
+ * This file: Front-end handler (last modified: 2022.07.11).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -3090,7 +3090,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'file-manager' && $CIDRAM['FE'][
             $ThisFile['ThisOptions'] .= sprintf($Base, 'rename-file', $ThisFile['Directory'] && !$ThisFile['CanEdit'] ? ' selected' : '', $CIDRAM['L10N']->getString('field_rename_file'));
         }
         if ($ThisFile['CanEdit']) {
-            $ThisFile['ThisOptions'] .= sprintf($Base, 'edit-file', ' selected', $CIDRAM['L10N']->getString('field_edit_file'));
+            $ThisFile['ThisOptions'] .= sprintf($Base, 'edit-file', ' selected', $CIDRAM['L10N']->getString('field_edit'));
         }
         if (!$ThisFile['Directory']) {
             $ThisFile['ThisOptions'] .= sprintf($Base, 'download-file', $ThisFile['CanEdit'] ? '' : ' selected', $CIDRAM['L10N']->getString('field_download_file'));
@@ -4344,37 +4344,42 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'aux' && $CIDRAM['FE']['Permissi
 
         /** Send output. */
         echo $CIDRAM['SendOutput']();
-    } else {
+    } elseif (isset($_POST['auxD'], $CIDRAM['AuxData'][$_POST['auxD']])) {
         /** Delete an auxiliary rule. */
-        if (isset($_POST['auxD'], $CIDRAM['AuxData'][$_POST['auxD']])) {
-            /** Destroy the target rule data array. */
-            unset($CIDRAM['AuxData'][$_POST['auxD']]);
+        unset($CIDRAM['AuxData'][$_POST['auxD']]);
 
-            /** Reconstruct and update auxiliary rules data. */
-            if (!$CIDRAM['ReconstructUpdateAuxData']() && file_exists($CIDRAM['Vault'] . 'auxiliary.yaml')) {
-                /** If auxiliary rules data reconstruction fails, or if it's empty, delete the file. */
-                unlink($CIDRAM['Vault'] . 'auxiliary.yaml');
-            }
-
-            /** Confirm successful deletion. */
-            echo sprintf($CIDRAM['L10N']->getString('response_aux_rule_deleted_successfully'), $_POST['auxD']);
-        } elseif (isset($_POST['auxT'])) {
-            /** Move an auxiliary rule to the top of the list. */
-            $CIDRAM['AuxData'] = $CIDRAM['SwapAssocArrayElementTopBottom']($CIDRAM['AuxData'], $_POST['auxT'], false);
-            $CIDRAM['ReconstructUpdateAuxData']();
-        } elseif (isset($_POST['auxB'])) {
-            /** Move an auxiliary rule to the bottom of the list. */
-            $CIDRAM['AuxData'] = $CIDRAM['SwapAssocArrayElementTopBottom']($CIDRAM['AuxData'], $_POST['auxB'], true);
-            $CIDRAM['ReconstructUpdateAuxData']();
-        } elseif (isset($_POST['auxMU'])) {
-            /** Move an auxiliary rule up one position. */
-            $CIDRAM['AuxData'] = $CIDRAM['SwapAssocArrayElementUpDown']($CIDRAM['AuxData'], $_POST['auxMU'], false);
-            $CIDRAM['ReconstructUpdateAuxData']();
-        } elseif (isset($_POST['auxMD'])) {
-            /** Move an auxiliary rule down one position. */
-            $CIDRAM['AuxData'] = $CIDRAM['SwapAssocArrayElementUpDown']($CIDRAM['AuxData'], $_POST['auxMD'], true);
-            $CIDRAM['ReconstructUpdateAuxData']();
+        /** Reconstruct and update auxiliary rules data. */
+        if (!$CIDRAM['ReconstructUpdateAuxData']() && file_exists($CIDRAM['Vault'] . 'auxiliary.yaml')) {
+            /** If auxiliary rules data reconstruction fails, or if it's empty, delete the file. */
+            unlink($CIDRAM['Vault'] . 'auxiliary.yaml');
         }
+
+        /** Confirm successful deletion. */
+        echo sprintf($CIDRAM['L10N']->getString('response_aux_rule_deleted_successfully'), $_POST['auxD']);
+    } elseif (isset($_POST['auxT'])) {
+        /** Move an auxiliary rule to the top of the list. */
+        $CIDRAM['AuxData'] = $CIDRAM['SwapAssocArrayElementTopBottom']($CIDRAM['AuxData'], $_POST['auxT'], false);
+        $CIDRAM['ReconstructUpdateAuxData']();
+    } elseif (isset($_POST['auxB'])) {
+        /** Move an auxiliary rule to the bottom of the list. */
+        $CIDRAM['AuxData'] = $CIDRAM['SwapAssocArrayElementTopBottom']($CIDRAM['AuxData'], $_POST['auxB'], true);
+        $CIDRAM['ReconstructUpdateAuxData']();
+    } elseif (isset($_POST['auxMU'])) {
+        /** Move an auxiliary rule up one position. */
+        $CIDRAM['AuxData'] = $CIDRAM['SwapAssocArrayElementUpDown']($CIDRAM['AuxData'], $_POST['auxMU'], false);
+        $CIDRAM['ReconstructUpdateAuxData']();
+    } elseif (isset($_POST['auxMD'])) {
+        /** Move an auxiliary rule down one position. */
+        $CIDRAM['AuxData'] = $CIDRAM['SwapAssocArrayElementUpDown']($CIDRAM['AuxData'], $_POST['auxMD'], true);
+        $CIDRAM['ReconstructUpdateAuxData']();
+    } elseif (isset($_POST['auxDR'], $CIDRAM['AuxData'][$_POST['auxDR']])) {
+        /** Disable an auxiliary rule. */
+        $CIDRAM['AuxData'][$_POST['auxDR']]['Disable this rule'] = true;
+        $CIDRAM['ReconstructUpdateAuxData']();
+    } elseif (isset($_POST['auxER'], $CIDRAM['AuxData'][$_POST['auxER']])) {
+        /** Enable an auxiliary rule. */
+        unset($CIDRAM['AuxData'][$_POST['auxER']]['Disable this rule']);
+        $CIDRAM['ReconstructUpdateAuxData']();
     }
 }
 

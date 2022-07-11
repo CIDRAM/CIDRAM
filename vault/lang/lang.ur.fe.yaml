@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Urdu language data for the front-end (last modified: 2022.05.26).
+# This file: Urdu language data for the front-end (last modified: 2022.07.11).
 ##/
 
 Extended Description Bypasses: "پہلے سے طے شدہ دستخطی بائی پاس فائلوں کو عام طور پر بنیادی پیکیج کے ساتھ شامل تھے."
@@ -130,7 +130,7 @@ config_hcaptcha_api: &CaptchaAPI "کون سا API استعمال کرنے کے �
 config_hcaptcha_expiry: &CaptchaExpiry "گھنٹوں کی تعداد CAPTCHA کے واقعات کو یاد کرنے. پہلے سے طے شدہ = 720 (1 ماہ)."
 config_hcaptcha_lockip: &CaptchaLockIP "ئی پی ایس کے لئے ہیتی لاک؟"
 config_hcaptcha_lockuser: &CaptchaLockUser "صارفین کے لئے ہیتی لاک؟"
-config_hcaptcha_logfile: &CaptchaLogfile "تمام CAPTCHA کے کوششوں لاگ؟ اگر ہاں، logfile پر کے لئے استعمال کرنے کا نام کی وضاحت. کوئی تو اس متغیر خالی چھوڑ دیں."
+config_hcaptcha_logfile: &CaptchaLogfile "تمام CAPTCHA کے کوششوں لاگ؟ اگر ہاں، تو لاگ فائل کے لیے استعمال کرنے کے لیے نام کی وضاحت کریں. اگر نہیں، تو اس متغیر کو خالی چھوڑ دیں."
 config_hcaptcha_nonblocked_status_code: &CaptchaNonblockedStatusCode "غیر مسدود درخواستوں پر CAPTCHA کی نمائش کرتے وقت کون سا اسٹیٹس کوڈ استعمال کرنا چاہئے؟"
 config_hcaptcha_secret: &CaptchaDashboard "یہ قدر آپ کے CAPTCHA خدمت کے لئے ڈیش بورڈ میں مل سکتی ہے."
 config_hcaptcha_show_api_message: &ShowAPIMessage "API کا پیغام دکھائیں؟ True (سچے) = جی ہاں [پہلے سے طے شدہ]؛ False (جھوٹی) = نہیں."
@@ -221,7 +221,7 @@ field_deactivate: "بے عمل"
 field_delete: "حذف کریں"
 field_delete_account: "کھاتہ مٹا دو"
 field_download_file: "لوڈ"
-field_edit_file: "میں ترمیم کریں"
+field_edit: "میں ترمیم کریں"
 field_execution_order: "عمل درآمد:"
 field_expiry: "ختم ہونے"
 field_false: "False (غلط)"
@@ -327,7 +327,7 @@ label_aux_actBlk: "بلاک"
 label_aux_actByp: "بائی پاس"
 label_aux_actGrl: "گرینسٹسٹ"
 label_aux_actLog: "لاگ نہ کریں"
-label_aux_actPro: "درجہ بند کریں"
+label_aux_actPro: "پروفائل"
 label_aux_actRdr: "ری ڈائریکٹ (بلاک کیے بغیر)"
 label_aux_actRun: "کو سنبھالنے کے لئے ایک فائل چلائیں"
 label_aux_actWhl: "وائٹسٹسٹ"
@@ -355,6 +355,8 @@ label_aux_reason: "جب صارف کو دی گئی ہے تو بلاک کی گئی
 label_aux_run: "پھانسی دینے والی فائل کا نام:"
 label_aux_special: "دوسرے اختیارات اور خصوصی جھنڈے:"
 label_aux_special_default_state: "اسے جیسا چھوڑ دیں (کچھ مقرر نہ کریں)"
+label_aux_special_disable: "اس اصول کو غیر فعال کریں"
+label_aux_special_enable: "اس اصول کو فعال کریں"
 label_aux_special_hcaptcha_disable: "زبردستی HCaptcha کو غیر فعال کریں"
 label_aux_special_hcaptcha_mark: "HCaptcha کے ساتھ استعمال کیلئے نشان زد کریں"
 label_aux_special_ip_tracking_disable: "زبردستی IP ٹریکنگ کو غیر فعال کریں"

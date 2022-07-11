@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Configuration defaults file (last modified: 2022.06.01).
+# This file: Configuration defaults file (last modified: 2022.07.11).
 ##/
 
 Config Defaults:
@@ -861,6 +861,12 @@ Provide:
      Decoration: &OrangeMiddle "background-color:rgba(255,153,0,0.5);"
      Sets:
       Tracking options override: "default"
+   Disable this rule:
+    Empty:
+     Decoration: *RedLeft
+    Disable this rule:
+     Label: "label_aux_special_disable"
+     Decoration: *RedMiddle
 Links:
  AbuseIPDB: "<a href="https://abuseipdb.com/" dir="ltr" hreflang="en-US" rel="noopener noreferrer external">AbuseIPDB</a>"
  BGPView: "<a href="https://bgpview.io/" dir="ltr" hreflang="en-US" rel="noopener noreferrer external">BGPView</a>"

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Indonesian language data for the front-end (last modified: 2022.05.23).
+# This file: Indonesian language data for the front-end (last modified: 2022.07.11).
 ##/
 
 Extended Description Bypasses: "File untuk bypass tanda tangan standar yang biasanya disertakan dengan paket utama."
@@ -85,7 +85,7 @@ config_general_FrontEndLog: "File untuk mencatat upaya masuk bagian depan. Spesi
 config_general_allow_gethostbyaddr_lookup: "Izinkan menggunakan gethostbyaddr saat UDP tidak tersedia? True = Ya [Default]; False = Tidak."
 config_general_ban_override: "Mengesampingkan "forbid_on_block" ketika "infraction_limit" adalah melampaui? Ketika mengesampingkan: Permintaan diblokir menghasilkan halaman kosong (file template tidak digunakan). 200 = Jangan mengesampingkan [Default]. Nilai lainnya sama dengan nilai yang tersedia untuk "forbid_on_block"."
 config_general_config_imports: "Sebuah daftar dipisahkan dengan koma untuk file untuk mengimpor ke konfigurasi default CIDRAM. Biasanya diisi oleh halaman pembaruan saat mengaktifkan komponen yang membutuhkannya saat diperlukan. Dalam kebanyakan kasus, bisa mengabaikannya."
-config_general_default_algo: "Mendefinisikan algoritma mana yang akan digunakan untuk semua password dan sesi di masa depan. Opsi: PASSWORD_DEFAULT (default), PASSWORD_BCRYPT, PASSWORD_ARGON2I (membutuhkan PHP &gt;= 7.2.0), PASSWORD_ARGON2ID (membutuhkan PHP &gt;= 7.3.0)."
+config_general_default_algo: "Mendefinisikan algoritma mana yang akan digunakan untuk semua kata sandi dan sesi di masa depan. Opsi: PASSWORD_DEFAULT (default), PASSWORD_BCRYPT, PASSWORD_ARGON2I (membutuhkan PHP &gt;= 7.2.0), PASSWORD_ARGON2ID (membutuhkan PHP &gt;= 7.3.0)."
 config_general_default_dns: "Sebuah daftar dipisahkan dengan koma dari server DNS yang digunakan untuk pencarian nama host. Default = "8.8.8.8,8.8.4.4" (Google DNS). PERINGATAN: Jangan ganti ini kecuali Anda tahu apa yang Anda lakukan!"
 config_general_default_timeout: "Batas waktu default untuk digunakan untuk permintaan eksternal? Default = 12 detik."
 config_general_disable_cli: "Menonaktifkan modus CLI? Modus CLI diaktifkan secara default, tapi kadang-kadang dapat mengganggu alat pengujian tertentu (seperti PHPUnit, sebagai contoh) dan aplikasi CLI berbasis lainnya. Jika Anda tidak perlu menonaktifkan modus CLI, Anda harus mengabaikan direktif ini. False = Mengaktifkan modus CLI [Default]; True = Menonaktifkan modus CLI."
@@ -103,7 +103,7 @@ config_general_force_hostname_lookup: "Memaksa periksa untuk nama host? True = Y
 config_general_hide_version: "Sembunyikan informasi versi dari log dan output halaman? True = Ya; False = Tidak [Default]."
 config_general_ipaddr: "Dimana menemukan alamat IP dari permintaan alamat? (Bergunak untuk pelayanan-pelayanan seperti Cloudflare dan sejenisnya). Default = REMOTE_ADDR. PERINGATAN: Jangan ganti ini kecuali Anda tahu apa yang Anda lakukan!"
 config_general_lang: "Tentukan bahasa default untuk CIDRAM."
-config_general_lang_override: "Melokalisasikan sesuai dengan HTTP_ACCEPT_LANGUAGE jika memungkinkan? True = Ya [Default]; False = Tidak."
+config_general_lang_override: "Melokalisasikan sesuai dengan HTTP_ACCEPT_LANGUAGE jika/bila memungkinkan? True = Ya [Default]; False = Tidak."
 config_general_log_banned_ips: "Termasuk permintaan diblokir dari IP dilarang dalam file log? True = Ya [Default]; False = Tidak."
 config_general_log_rotation_action: "Rotasi log membatasi jumlah file log yang seharusnya ada pada satu waktu. Ketika file log baru dibuat, jika jumlah total file log melebihi batas yang ditentukan, tindakan yang ditentukan akan dilakukan. Anda dapat menentukan tindakan yang diinginkan disini."
 config_general_log_rotation_limit: "Rotasi log membatasi jumlah file log yang seharusnya ada pada satu waktu. Ketika file log baru dibuat, jika jumlah total file log melebihi batas yang ditentukan, tindakan yang ditentukan akan dilakukan. Anda dapat menentukan batas yang diinginkan disini. Nilai 0 akan menonaktifkan rotasi log."
@@ -114,7 +114,7 @@ config_general_logfileSerialized: "File serial untuk mencatat semua upaya akses 
 config_general_maintenance_mode: "Aktifkan modus perawatan? True = Ya; False = Tidak [Default]. Nonaktifkan semuanya selain bagian depan. Terkadang berguna saat memperbarui CMS, kerangka kerja, dll."
 config_general_max_login_attempts: "Jumlah maksimum upaya memasukkan ke bagian depan. Default = 5."
 config_general_numbers: "Cara apa yang kamu suka nomor menjadi ditampilkan? Pilih contoh yang paling sesuai untuk Anda."
-config_general_other_verification: "Jika memungkinkan, coba verifikasi jenis permintaan lain (mis., AdSense, pemeriksa SEO, dll)? Saat terdeteksi, permintaan palsu akan diblokir. True = Mengaktifkan [Default]; False = Menonaktifkan."
+config_general_other_verification: "jika/bila memungkinkan, coba verifikasi jenis permintaan lain (mis., AdSense, pemeriksa SEO, dll)? Saat terdeteksi, permintaan palsu akan diblokir. True = Mengaktifkan [Default]; False = Menonaktifkan."
 config_general_protect_frontend: "Menentukan apakah perlindungan biasanya disediakan oleh CIDRAM harus diterapkan pada bagian depan. True = Ya [Default]; False = Tidak."
 config_general_search_engine_verification: "Mencoba memverifikasi permintaan dari mesin pencari? Verifikasi mesin pencari memastikan bahwa mereka tidak akan dilarang sebagai akibat dari melebihi batas pelanggaran (melarang mesin pencari dari situs web Anda biasanya akan memiliki efek negatif pada peringkat mesin pencari Anda, SEO, dll). Ketika diverifikasi, mesin pencari dapat diblokir seperti biasa, tapi tidak akan dilarang. Ketika tidak diverifikasi, itu mungkin bagi mereka untuk dilarang sebagai akibat dari melebihi batas pelanggaran. Juga, verifikasi mesin pencari memberikan proteksi terhadap permintaan mesin pencari palsu dan terhadap entitas yang berpotensi berbahaya yang menyamar sebagai mesin pencari (permintaan tersebut akan diblokir ketika verifikasi mesin pencari diaktifkan). True = Mengaktifkan verifikasi mesin pencari [Default]; False = Menonaktifkan verifikasi mesin pencari."
 config_general_signatures_update_event_log: "File untuk mencatat ketika tanda tangan diperbarui melalui bagian depan. Spesifikasikan nama file, atau biarkan kosong untuk menonaktifkan."
@@ -221,7 +221,7 @@ field_deactivate: "Menonaktifkan"
 field_delete: "Menghapus"
 field_delete_account: "Hapus Akun"
 field_download_file: "Mendownload"
-field_edit_file: "Mengedit"
+field_edit: "Mengedit"
 field_execution_order: "Urutan eksekusi:"
 field_expiry: "Kadaluarsa"
 field_false: "False (Palsu)"
@@ -355,6 +355,8 @@ label_aux_reason: "Alasan diberikan kepada pengguna saat diblokir:"
 label_aux_run: "Nama file yang akan dieksekusi:"
 label_aux_special: "Opsi lain dan bendera khusus:"
 label_aux_special_default_state: "Biarkan apa adanya (jangan atur apapun)"
+label_aux_special_disable: "Nonaktifkan aturan ini"
+label_aux_special_enable: "Aktifkan aturan ini"
 label_aux_special_hcaptcha_disable: "Nonaktifkan HCaptcha secara paksa"
 label_aux_special_hcaptcha_mark: "Tandai untuk digunakan dengan HCaptcha"
 label_aux_special_ip_tracking_disable: "Nonaktifkan pelacakan IP secara paksa"

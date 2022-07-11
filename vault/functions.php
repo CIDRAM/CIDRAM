@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2022.06.19).
+ * This file: Functions file (last modified: 2022.07.11).
  */
 
 /** Autoloader for CIDRAM classes. */
@@ -2028,7 +2028,7 @@ $CIDRAM['Aux'] = function () use (&$CIDRAM): void {
     /** Iterate through the auxiliary rules. */
     foreach ($CIDRAM['AuxData'] as $Name => $Data) {
         /** Safety. */
-        if (!is_array($Data) || empty($Data)) {
+        if (!is_array($Data) || empty($Data) || !empty($Data['Disable this rule'])) {
             continue;
         }
 

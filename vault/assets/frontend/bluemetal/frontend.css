@@ -162,3 +162,5 @@ input[type=checkbox]+label,input[type=radio]+label,input[type=radio]+label,.grid
 .shownlink::before{animation:forRotate .5s ease-out 1;animation-fill-mode:both}
 .unshownlink::before{animation:revRotate .5s ease-out 1;animation-fill-mode:both}
 .subNav{text-align:center;font-size:calc((10px * {magnification}) + .03vw);color:rgba(204,221,238,.6);text-shadow:2px 2px 1px rgba(255,255,255,.2)}
+.fBlur{filter:contrast(.8) blur(.5px);transition:all .3s ease-out}
+.fBlur:hover,.fBlur:active{filter:contrast(1) blur(0)}

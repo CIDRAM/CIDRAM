@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2022.07.11).
+ * This file: Front-end functions file (last modified: 2022.07.12).
  */
 
 /**
@@ -3691,7 +3691,7 @@ $CIDRAM['AuxGenerateFEData'] = function (bool $Mode = false) use (&$CIDRAM): str
         $Output .= sprintf(
             '%1$s<li class="%2$s"><span class="comCat s">%3$s</span>%4$s%5$s%1$s  <ul class="comSub">',
             "\n      ",
-            $RuleClass,
+            $RuleClass . (empty($Data['Disable this rule']) ? '' : ' hB fBlur"'),
             $Name,
             $Options,
             isset($Data['Notes']) ? '<div class="iCntn"><em>' . str_replace(['<', '>', "\n"], ['&lt;', '&gt;', "<br />\n"], $Data['Notes']) . '</em></div>' : ''

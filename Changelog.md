@@ -78,3 +78,4 @@
 - Following symlinks for RecursiveDirectoryIterator instances enabled.
 - Slightly improved RTL support.
 - Added the ability to enable/disable auxiliary rules (#318).
+- The path to the cache file can now be customised.

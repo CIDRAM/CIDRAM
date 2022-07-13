@@ -59,6 +59,11 @@ class Core
     public $AssetsPath = '';
 
     /**
+     * @var array The path to use for flatfile caching if enabled.
+     */
+    public $CachePath = '';
+
+    /**
      * @var \Maikuolan\Common\YAML An object for handling YAML data.
      */
     public $YAML;
@@ -405,6 +410,9 @@ class Core
 
         /** Used to ensure correct encoding, hide bad data, etc. */
         $this->Demojibakefier = new \Maikuolan\Common\Demojibakefier();
+
+        /** Set optional custom path to the CIDRAM cache file. */
+        $this->CachePath = $CachePath === '' ? $this->Vault . 'cache.dat' : $CachePath;
     }
 
     /**
@@ -1620,7 +1628,7 @@ class Core
         $this->Cache->PDOdsn = $this->Configuration['supplementary_cache_options']['pdo_dsn'];
         $this->Cache->PDOusername = $this->Configuration['supplementary_cache_options']['pdo_username'];
         $this->Cache->PDOpassword = $this->Configuration['supplementary_cache_options']['pdo_password'];
-        $this->Cache->FFDefault = $this->Vault . 'cache.dat';
+        $this->Cache->FFDefault = $this->CachePath;
 
         if (!$this->Cache->connect()) {
             $this->Events->fireEvent('final');

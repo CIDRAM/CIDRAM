@@ -1130,6 +1130,9 @@ trait FrontEndMethods
      */
     private function updateConfiguration(): bool
     {
+        if ($this->FE['ActiveConfigFile'] === '' || !is_writable($this->FE['ActiveConfigFile'])) {
+            return false;
+        }
         $Reconstructed = $this->YAML->reconstruct($this->Configuration);
         $Handle = fopen($this->Vault . $this->FE['ActiveConfigFile'], 'wb');
         if (!is_resource($Handle)) {

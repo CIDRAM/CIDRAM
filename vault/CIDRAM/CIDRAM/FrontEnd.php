@@ -105,7 +105,7 @@ class FrontEnd extends Core
             'magnification' => $this->Configuration['frontend']['magnification'],
 
             /** Define active configuration file. */
-            'ActiveConfigFile' => !empty($this->CIDRAM['Overrides']) ? $this->CIDRAM['Domain'] . '.config.yml' : 'config.yml',
+            'ActiveConfigFile' => $this->ConfigurationPath,
 
             /** Current time and date. */
             'DateTime' => $this->timeFormat($this->Now, $this->Configuration['general']['time_format']),

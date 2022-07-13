@@ -45,6 +45,7 @@
 - Configuration directives for CAPTCHA logging have been renamed.
 - Configuration directives `search_engines`, `social_media`, and `other` have been moved to a new configuration category, `verification`.
 - Configuration directives `block_attacks`, `block_cloud`, `block_bogons`, `block_generic`, `block_legal`, `block_malware`, `block_proxies`, and `block_spam` have been replaced by a new configuration directive, `shorthand`. The new configuration directive is capable of providing the same functionality provided previously, as well as some other, new, related functionality.
+- Configuration can't be injected directly via globals anymore. Instead, paths to files containing any configuration external to CIDRAM's own configuration files can now be specified via the Core's constructor.
 
 #### Bugs fixed.
 - Some specific files were being misclassified by the file manager; Fixed.

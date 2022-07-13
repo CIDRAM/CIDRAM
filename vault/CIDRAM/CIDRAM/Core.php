@@ -232,10 +232,13 @@ class Core
     /**
      * Construct the CIDRAM core.
      *
+     * @param string $ConfigurationPath An optional custom path to the CIDRAM
+     *      configuration file.
+     * @param string $CachePath An optional custom path to the CIDRAM cache
+     *      file (only has an effect when using flatfile caching).
      * @return void
      */
-    public function __construct()
-    {
+    public function __construct(string $ConfigurationPath = '', string $CachePath = '') {
         /** Vault directory. */
         $this->Vault = $this->canonical(__DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR);
 
@@ -292,16 +295,20 @@ class Core
             die('[CIDRAM] Configuration defaults file is corrupt! Can\'t continue until this is resolved.');
         }
 
-        if (isset($GLOBALS['CIDRAM_Config'])) {
-            /** Provides a means of running tests with configuration values specific to those tests. */
-            $this->Configuration = $GLOBALS['CIDRAM_Config'];
-        } else {
-            /** Configuration to be populated here. */
-            $this->Configuration = [];
+        /** Configuration to be populated here. */
+        $this->Configuration = [];
 
+        if ($ConfigurationPath !== '' && is_readable($ConfigurationPath)) {
+            /** Attempts to parse custom-defined CIDRAM configuration file. */
+            if ($this->YAML->process($this->readFile($ConfigurationPath), $this->Configuration)) {
+                /** Declare the configuration file used. */
+                $this->ConfigurationPath = $this->canonical($ConfigurationPath);
+            }
+        } elseif (is_readable($this->Vault . 'config.yml')) {
             /** Attempts to parse the standard CIDRAM configuration file. */
-            if (is_readable($this->Vault . 'config.yml')) {
-                $this->YAML->process($this->readFile($this->Vault . 'config.yml'), $this->Configuration);
+            if ($this->YAML->process($this->readFile($this->Vault . 'config.yml'), $this->Configuration)) {
+                /** Declare the configuration file used. */
+                $this->ConfigurationPath = $this->canonical($this->Vault . 'config.yml');
             }
         }
 
@@ -313,15 +320,9 @@ class Core
             is_readable($this->Vault . $this->CIDRAM['Domain'] . '.config.yml')
         ) {
             /** Attempts to parse the overrides file found (this is configuration specific to the requested domain). */
-            if ($this->YAML->process($this->readFile($this->Vault . $this->CIDRAM['Domain'] . '.config.yml'), $this->CIDRAM['Overrides'])) {
-                array_walk($this->CIDRAM['Overrides'], function ($Keys, $Category) {
-                    foreach ($Keys as $Directive => $Value) {
-                        $this->Configuration[$Category][$Directive] = $Value;
-                    }
-                });
-                $this->CIDRAM['Overrides'] = true;
-            } else {
-                $this->CIDRAM['Overrides'] = false;
+            if ($this->YAML->process($this->readFile($this->Vault . $this->CIDRAM['Domain'] . '.config.yml'), $this->Configuration)) {
+                /** Declare the configuration file used. */
+                $this->ConfigurationPath = $this->canonical($this->Vault . $this->CIDRAM['Domain'] . '.config.yml');
             }
         }
 

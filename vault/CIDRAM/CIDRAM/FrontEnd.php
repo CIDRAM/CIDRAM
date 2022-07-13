@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM front-end (last modified: 2022.07.11).
+ * This file: The CIDRAM front-end (last modified: 2022.07.13).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -39,6 +39,16 @@ class FrontEnd extends Core
      * @var string Whether we're calling CIDRAM through an alternative pathway.
      */
     private $Alternate = false;
+
+    /**
+     * @var string Lowest possible two-factor authentication code.
+     */
+    private const TWO_FACTOR_MIN_INT = 10000000;
+
+    /**
+     * @var string Highest possible two-factor authentication code.
+     */
+    private const TWO_FACTOR_MAX_INT = 99999999;
 
     /**
      * View the front-end.
@@ -365,14 +375,14 @@ class FrontEnd extends Core
 
         /** A simple passthru for the front-end CSS. */
         if ($this->CIDRAM['QueryVars']['cidram-page'] === 'css') {
-            $this->CIDRAM['AssetPath'] = $this->getAssetPath('frontend.css');
+            $AssetPath = $this->getAssetPath('frontend.css');
             header('Content-Type: text/css');
             if (!empty($this->CIDRAM['QueryVars']['theme'])) {
                 /** Prevents needlessly reloading static assets. */
-                header('Last-Modified: ' . gmdate('D, d M Y H:i:s T', filemtime($this->CIDRAM['AssetPath'])));
+                header('Last-Modified: ' . gmdate('D, d M Y H:i:s T', filemtime($AssetPath)));
             }
             /** Send asset data. */
-            echo $this->parseVars($this->L10N->Data + $this->FE, $this->readFile($this->CIDRAM['AssetPath']));
+            echo $this->parseVars($this->L10N->Data + $this->FE, $this->readFile($AssetPath));
             die;
         }
 
@@ -934,14 +944,14 @@ class FrontEnd extends Core
         }
 
         /** A simple passthru for the flags CSS. */
-        elseif ($this->CIDRAM['QueryVars']['cidram-page'] === 'flags' && $this->FE['Permissions'] && is_readable($this->Vault . 'assets/frontend/flags.css')) {
+        elseif ($this->CIDRAM['QueryVars']['cidram-page'] === 'flags' && $this->FE['Permissions'] && is_readable($this->AssetsPath . 'frontend/flags.css')) {
             header('Content-Type: text/css');
 
             /** Prevents needlessly reloading static assets. */
-            header('Last-Modified: ' . gmdate('D, d M Y H:i:s T', filemtime($this->Vault . 'assets/frontend/flags.css')));
+            header('Last-Modified: ' . gmdate('D, d M Y H:i:s T', filemtime($this->AssetsPath . 'frontend/flags.css')));
 
             /** Send asset data. */
-            echo $this->readFile($this->Vault . 'assets/frontend/flags.css');
+            echo $this->readFile($this->AssetsPath . 'frontend/flags.css');
         }
 
         /** Accounts. */
@@ -2518,12 +2528,12 @@ class FrontEnd extends Core
                 $this->FE['ChartJSPath'] = '';
                 $DoughnutFile = '';
             } else {
-                if (file_exists($this->Vault . 'assets/frontend/_chartjs.html')) {
-                    $DoughnutFile = $this->readFile($this->Vault . 'assets/frontend/_chartjs.html');
+                if (file_exists($this->AssetsPath . 'frontend/_chartjs.html')) {
+                    $DoughnutFile = $this->readFile($this->AssetsPath . 'frontend/_chartjs.html');
                 } else {
                     $DoughnutFile = '<tr><td class="h4f" colspan="2"><div class="s">{DoughnutHTML}</div></td></tr>';
                 }
-                if (file_exists($this->Vault . 'assets/frontend/chart.min.js')) {
+                if (file_exists($this->AssetsPath . 'frontend/chart.min.js')) {
                     $this->FE['ChartJSPath'] = '?cidram-asset=chart.min.js';
                 } else {
                     $this->FE['ChartJSPath'] = '';
@@ -2878,7 +2888,7 @@ class FrontEnd extends Core
                     "function(e){hide(c),show(d,'block')},null)}";
 
                 /** Add flags CSS. */
-                if ($this->FE['Flags'] = file_exists($this->Vault . 'assets/frontend/flags.css')) {
+                if ($this->FE['Flags'] = file_exists($this->AssetsPath . 'frontend/flags.css')) {
                     $this->FE['OtherHead'] .= "\n  <link rel=\"stylesheet\" type=\"text/css\" href=\"?cidram-page=flags\" />";
                 }
 
@@ -2950,7 +2960,7 @@ class FrontEnd extends Core
             $this->FE['JS'] .= $this->numberL10nJs() . "\n";
 
             /** Add flags CSS. */
-            if ($this->FE['Flags'] = file_exists($this->Vault . 'assets/frontend/flags.css')) {
+            if ($this->FE['Flags'] = file_exists($this->AssetsPath . 'frontend/flags.css')) {
                 $this->FE['OtherHead'] .= "\n  <link rel=\"stylesheet\" type=\"text/css\" href=\"?cidram-page=flags\" />";
             }
 
@@ -3247,7 +3257,7 @@ class FrontEnd extends Core
             $this->initialPrepwork($this->L10N->getString('link_ip_test'), $this->L10N->getString('tip_ip_test'));
 
             /** Add flags CSS. */
-            if ($this->FE['Flags'] = file_exists($this->Vault . 'assets/frontend/flags.css')) {
+            if ($this->FE['Flags'] = file_exists($this->AssetsPath . 'frontend/flags.css')) {
                 $this->FE['OtherHead'] .= "\n  <link rel=\"stylesheet\" type=\"text/css\" href=\"?cidram-page=flags\" />";
             }
 
@@ -3517,7 +3527,7 @@ class FrontEnd extends Core
                 $this->initialPrepwork($this->L10N->getString('link_ip_tracking'), $this->L10N->getString('tip_ip_tracking'));
 
                 /** Add flags CSS. */
-                if ($this->FE['Flags'] = file_exists($this->Vault . 'assets/frontend/flags.css')) {
+                if ($this->FE['Flags'] = file_exists($this->AssetsPath . 'frontend/flags.css')) {
                     $this->FE['OtherHead'] .= "\n  <link rel=\"stylesheet\" type=\"text/css\" href=\"?cidram-page=flags\" />";
                 }
 
@@ -4302,7 +4312,7 @@ class FrontEnd extends Core
             $this->FE['FieldSeparator'] = ': ';
 
             /** Add flags CSS. */
-            if ($this->FE['Flags'] = file_exists($this->Vault . 'assets/frontend/flags.css')) {
+            if ($this->FE['Flags'] = file_exists($this->AssetsPath . 'frontend/flags.css')) {
                 $this->FE['OtherHead'] .= "\n  <link rel=\"stylesheet\" type=\"text/css\" href=\"?cidram-page=flags\" />";
             }
 

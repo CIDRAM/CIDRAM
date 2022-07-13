@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: General methods used by the front-end (last modified: 2022.07.09).
+ * This file: General methods used by the front-end (last modified: 2022.07.13).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -111,7 +111,7 @@ trait FrontEndMethods
                         $Component = $this->L10N->getString('link_aux');
                     } elseif (preg_match('/(?:^ignore\.dat|_custom\.dat|\.sig|\.inc)$/i', $ThisNameFixed)) {
                         $Component = $this->L10N->getString('label_fmgr_other_sig');
-                    } elseif (preg_match('~(?:\.tmp|\.rollback|^(?:cache|hashes|ipbypass|assets/frontend/frontend|rl)\.dat)$~i', $ThisNameFixed)) {
+                    } elseif (preg_match('~(?:\.tmp|\.rollback|^(?:cache|hashes|ipbypass|rl)\.dat)$~i', $ThisNameFixed)) {
                         $Component = $this->L10N->getString('label_fmgr_cache_data');
                     } elseif ($ThisNameFixed === 'installed.yml') {
                         $Component = $this->L10N->getString('label_fmgr_updates_metadata');
@@ -307,14 +307,14 @@ trait FrontEndMethods
      */
     private function getAssetPath(string $Asset, bool $CanFail = false): string
     {
-        if (file_exists($this->Vault . 'assets/frontend/' . $this->Configuration['frontend']['theme'] . '/' . $Asset)) {
-            return $this->Vault . 'assets/frontend/' . $this->Configuration['frontend']['theme'] . '/' . $Asset;
+        if (file_exists($this->AssetsPath . 'frontend/' . $this->Configuration['frontend']['theme'] . '/' . $Asset)) {
+            return $this->AssetsPath . 'frontend/' . $this->Configuration['frontend']['theme'] . '/' . $Asset;
         }
-        if (file_exists($this->Vault . 'assets/frontend/default/' . $Asset)) {
-            return $this->Vault . 'assets/frontend/default/' . $Asset;
+        if (file_exists($this->AssetsPath . 'frontend/default/' . $Asset)) {
+            return $this->AssetsPath . 'frontend/default/' . $Asset;
         }
-        if (file_exists($this->Vault . 'assets/frontend/' . $Asset)) {
-            return $this->Vault . 'assets/frontend/' . $Asset;
+        if (file_exists($this->AssetsPath . 'frontend/' . $Asset)) {
+            return $this->AssetsPath . 'frontend/' . $Asset;
         }
         if ($CanFail) {
             return '';

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Protect traits (last modified: 2022.07.09).
+ * This file: Protect traits (last modified: 2022.07.13).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -665,7 +665,7 @@ trait Protect
                 /** Determine which template file to use, if this hasn't already been determined. */
                 if (!isset($this->CIDRAM['template_file'])) {
                     $this->CIDRAM['template_file'] = sprintf(
-                        'assets/core/template_%s.html',
+                        'core/template_%s.html',
                         $this->CIDRAM['FieldTemplates']['css_url'] === '' ? $this->CIDRAM['FieldTemplates']['theme'] : 'custom'
                     );
                 }
@@ -674,7 +674,7 @@ trait Protect
                 if (
                     $this->CIDRAM['FieldTemplates']['theme'] !== 'default' &&
                     !$this->CIDRAM['FieldTemplates']['css_url'] &&
-                    !file_exists($this->Vault . $this->CIDRAM['template_file'])
+                    !file_exists($this->AssetsPath . $this->CIDRAM['template_file'])
                 ) {
                     $this->CIDRAM['template_file'] = 'template_default.html';
                 }
@@ -775,7 +775,7 @@ trait Protect
 
                     if (!empty($this->CIDRAM['Suppress output template'])) {
                         $HTML = '';
-                    } elseif (!file_exists($this->Vault . $this->CIDRAM['template_file'])) {
+                    } elseif (!file_exists($this->AssetsPath . $this->CIDRAM['template_file'])) {
                         header('Content-Type: text/plain');
                         $HTML = '[CIDRAM] ' . $this->CIDRAM['Client-L10N']->getString('denied');
                     } else {
@@ -815,7 +815,7 @@ trait Protect
                         /** Generate HTML output. */
                         $HTML = $this->parseVars(
                             ['EmailAddr' => $this->BlockInfo['EmailAddr']],
-                            $this->parseVars($this->CIDRAM['Parsables'], $this->readFile($this->Vault . $this->CIDRAM['template_file']))
+                            $this->parseVars($this->CIDRAM['Parsables'], $this->readFile($this->AssetsPath . $this->CIDRAM['template_file']))
                         );
                     }
                 } else {

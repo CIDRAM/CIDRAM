@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM core (last modified: 2022.07.11).
+ * This file: The CIDRAM core (last modified: 2022.07.13).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -34,14 +34,29 @@ class Core
     public $Vault = '';
 
     /**
-     * @var array The path to the modules.
+     * @var array The path for signature files.
+     */
+    public $SignaturesPath = '';
+
+    /**
+     * @var array The path for modules.
      */
     public $ModulesPath = '';
 
     /**
-     * @var array The path to the modules.
+     * @var array The path for imports.
      */
-    public $SignaturesPath = '';
+    public $ImportsPath = '';
+
+    /**
+     * @var array The path for events.
+     */
+    public $EventsPath = '';
+
+    /**
+     * @var array The path for assets.
+     */
+    public $AssetsPath = '';
 
     /**
      * @var \Maikuolan\Common\YAML An object for handling YAML data.
@@ -184,9 +199,24 @@ class Core
      */
     public const FILE_BLOCKSIZE = 131072;
 
+    /**
+     * @var int Minimum salt length (used by the generateSalt() method).
+     */
     public const GENERATE_SALT_MIN_LEN = 32;
+
+    /**
+     * @var int Maximum salt length (used by the generateSalt() method).
+     */
     public const GENERATE_SALT_MAX_LEN = 72;
+
+    /**
+     * @var int Earliest permitted byte (used by the generateSalt() method).
+     */
     public const GENERATE_SALT_MIN_CHR = 1;
+
+    /**
+     * @var int Latest permitted byte (used by the generateSalt() method).
+     */
     public const GENERATE_SALT_MAX_CHR = 255;
 
     /**
@@ -195,12 +225,9 @@ class Core
     public const MAX_BLOCKSIZE = 65536;
 
     /**
-     * @var string Default file blocksize (128KB).
+     * @var string Used by dnsResolve() when padding out Google DNS requests.
      */
-    public const PAD_FOR_DNS = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz-._~';
-
-    public const TWO_FACTOR_MIN_INT = 10000000;
-    public const TWO_FACTOR_MAX_INT = 99999999;
+    private const PAD_FOR_DNS = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz-._~';
 
     /**
      * Construct the CIDRAM core.
@@ -223,6 +250,9 @@ class Core
 
         /** Events path. */
         $this->EventsPath = $this->Vault . 'events' . DIRECTORY_SEPARATOR;
+
+        /** Assets path. */
+        $this->AssetsPath = $this->Vault . 'assets' . DIRECTORY_SEPARATOR;
 
         /** Instantiate YAML object for accessing data reconstruction and processing various YAML files. */
         $this->YAML = new \Maikuolan\Common\YAML();

@@ -1,6 +1,6 @@
 <?php
 /**
- * A simple, unified cache handler (last modified: 2022.06.09).
+ * A simple, unified cache handler (last modified: 2022.07.13).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -98,6 +98,11 @@ class Cache
     public $Exceptions = [];
 
     /**
+     * @var bool Whether to allow permissions to be enforced.
+     */
+    public $AllowEnforcingPermissions = true;
+
+    /**
      * @var bool Whether the cache has been modified since instantiation as far as we know.
      */
     private $Modified = false;
@@ -165,7 +170,7 @@ class Cache
      *      be needed by some implementations to ensure compatibility).
      * @link https://github.com/Maikuolan/Common/tags
      */
-    public const VERSION = '2.9.0';
+    public const VERSION = '2.9.1';
 
     /**
      * Construct object and set working data if needed.
@@ -272,56 +277,34 @@ class Cache
             }
             unset($PDO);
         }
-        if ($this->FFDefault) {
-            if (is_file($this->FFDefault)) {
-                if (is_readable($this->FFDefault) && is_writable($this->FFDefault)) {
-                    $this->Using = 'FF';
-                    if (!$Filesize = filesize($this->FFDefault)) {
-                        $this->WorkingData = [];
-                        return $this->Modified = true;
-                    }
-                    $Data = '';
-                    $Handle = false;
-                    $Start = time();
-                    while (true) {
-                        $Handle = fopen($this->FFDefault, 'rb');
-                        if ($Handle !== false || (time() - $Start) > self::FLOCK_TIMEOUT) {
-                            break;
-                        }
-                    }
-                    if ($Handle === false) {
-                        return false;
-                    }
-                    $Locked = false;
-                    while (true) {
-                        if ($Locked = flock($Handle, LOCK_EX | LOCK_NB) || (time() - $Start) > self::FLOCK_TIMEOUT) {
-                            break;
-                        }
-                    }
-                    if (!$Locked) {
-                        fclose($Handle);
-                        return false;
-                    }
-                    while (!feof($Handle)) {
-                        $Data .= fread($Handle, self::BLOCKSIZE);
-                    }
-                    flock($Handle, LOCK_UN);
-                    fclose($Handle);
-                    $Data = $Data ? unserialize($Data) : [];
-                    $this->WorkingData = is_array($Data) ? $Data : [];
-                    return true;
-                }
-            } else {
-                $Parent = dirname($this->FFDefault);
-                if (is_dir($Parent) && is_readable($Parent) && is_writable($Parent)) {
-                    $this->WorkingData = [];
-                    $this->Using = 'FF';
-                    return $this->Modified = true;
-                }
-            }
+        if (!is_string($this->FFDefault) || $this->FFDefault === '') {
+            return is_array($this->WorkingData);
+        }
+        $Parent = dirname($this->FFDefault);
+        if (!$this->tryEnforcePermissions($Parent)) {
             return false;
         }
-        return is_array($this->WorkingData);
+        if (is_file($this->FFDefault)) {
+            if (!is_readable($this->FFDefault) || !is_writable($this->FFDefault)) {
+                return false;
+            }
+            $this->Using = 'FF';
+            $Filesize = filesize($this->FFDefault);
+            if ($Filesize < 1) {
+                $this->WorkingData = [];
+                return $this->Modified = true;
+            }
+            $Data = file_get_contents($this->FFDefault);
+            $Data = (is_string($Data) && $Data !== '') ? unserialize($Data) : [];
+            $this->WorkingData = is_array($Data) ? $Data : [];
+            return true;
+        }
+        if (is_dir($Parent) && is_readable($Parent) && is_writable($Parent)) {
+            $this->WorkingData = [];
+            $this->Using = 'FF';
+            return $this->Modified = true;
+        }
+        return false;
     }
 
     /**
@@ -974,5 +957,26 @@ class Cache
             }
             $Key = hash('sha512', $Key);
         }
+    }
+
+    /**
+     * Try to enforce the permissions necessary to read and write a file.
+     *
+     * @param string $Directory The directory we're attempting to set
+     *      permissions for.
+     * @return bool True when successful or when not needed; False on failure.
+     */
+    private function tryEnforcePermissions(string $Directory): bool
+    {
+        if ($Directory === '' || !is_dir($Directory)) {
+            return false;
+        }
+        if (is_readable($Directory) && is_writable($Directory)) {
+            return true;
+        }
+        if (!$this->AllowEnforcingPermissions) {
+            return false;
+        }
+        return chmod($Directory, 0755);
     }
 }

@@ -277,9 +277,6 @@ class FrontEnd extends Core
             }
         }
 
-        /** Alpha state warning. */
-        $this->CIDRAM['Warnings'][] = 'Warning: Currently running an unreleased alpha! Breakage is anticipated!';
-
         /** Prepare warnings. */
         $this->FE['Warnings'] = count($this->CIDRAM['Warnings']) ? "\n<div class=\"center\"><div class=\"warning\">" . implode(
             "</div>\n<div class=\"warning\">",

@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6_isps.dat
 
-# Version: 2022.184.0
-# Last modified: 2022.07.04
+# Version: 2022.194.0
+# Last modified: 2022.07.14
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -341,12 +341,11 @@ Tag: ER-Telecom Holding
 # ASN 137432 ("BKB Network").
 # Caught using automated hacktools to try hacking into honeypots.
 # Stop Forum Spam (SFS) listings: 4.
-# Updated: 2021.11.04 / Checked: 2021.12.31
+# Updated: 2022.07.14
 
 2402:68c0:a000::/36 Deny Attacks
-2402:68c0:c000::/36 Deny Attacks
 Origin: BD
-Profile: Domestic ISP;Multiplay;Infrastructure/Transit
+Profile: Domestic ISP;Multiplay
 Tag: BKB Network
 
 
@@ -361,17 +360,6 @@ Tag: BKB Network
 Origin: UA
 Profile: Domestic ISP
 Tag: SKORUK ANDRIY OLEKSANDROVYCH
-
-
-# ASN 41435 ("UnderNet LLC").
-# Ukrainian domestic ISP. Caught attempting to hack WordPress sites.
-# Stop Forum Spam (SFS) listings: 280.
-# Updated: 2021.09.09 / Modified: 2021.11.04 / Checked: 2021.12.31
-
-2a0d:9880::/29 Deny Attacks
-Origin: UA
-Profile: Domestic ISP
-Tag: UnderNet LLC
 
 
 # ASNs 18101, 55836 ("Reliance Communications Ltd").
@@ -713,18 +701,6 @@ Origin: AR
 Origin: BR
 Profile: Domestic ISP
 Tag: CLARO S.A
-
-
-# ASN 1680 ("Cellcom Fixed Line Communication L.P").
-# Israeli domestic ISP and a source of spam.
-# Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 951.
-# Updated: 2021.10.12
-
-2001:4df7:1:31ea::/64 Deny Spam
-Origin: IL
-Profile: Domestic ISP
-Tag: Cellcom Fixed
 
 
 # ASN 12849 ("Hot-Net internet services Ltd").
@@ -1444,10 +1420,10 @@ Tag: Rogers
 # Hungarian multiplay ISP. Brute-force, WordPress, and webapp attacks,
 # credential stuffing, port scans, hacking, and spam detected from here.
 # Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 529.
-# Updated: 2022.03.16
+# Stop Forum Spam (SFS) listings: 517.
+# Updated: 2022.07.11
 
-2001:4c4c:1142:500::/64 Deny Attacks
+2a00:1110:203:ab46::/64 Deny Spam
 Origin: HU
 Profile: Domestic ISP;Infrastructure/Transit;Multiplay
 Tag: Magyar Telekom plc
@@ -1616,3 +1592,17 @@ Tag: Proximus NV
 Origin: IR
 Profile: Domestic ISP;Multiplay
 Tag: Iran Cell
+
+
+# ASN 13999 ("Mega Cable, S.A. de C.V").
+# Suspected Mexican domestic ISP (but homepage isn't available to confirm).
+# Port scans, hacking, and spam detected from here.
+# Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 319.
+# Updated: 2022.07.11
+
+2806:262:489:17d::/64 Deny Spam
+2806:264:5481:9ac::/64 Deny Spam
+Origin: MX
+Profile: Domestic ISP;Restricted/Unidentifiable
+Tag: Mega Cable

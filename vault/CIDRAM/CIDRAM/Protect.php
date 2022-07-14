@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Protect traits (last modified: 2022.07.13).
+ * This file: Protect traits (last modified: 2022.07.14).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -287,46 +287,57 @@ trait Protect
             $this->Stage = 'Tracking';
 
             /** Set tracking expiry. */
-            $this->CIDRAM['TrackTime'] = $this->Configuration['Options']['TrackTime'] ?? $this->Configuration['signatures']['default_tracktime'];
+            $TrackTime = $this->Configuration['Options']['TrackTime'] ?? $this->Configuration['signatures']['default_tracktime'];
 
             /** Number of infractions to append. */
-            $this->CIDRAM['TrackCount'] = $this->BlockInfo['Infractions'] - $AtRunTimeInfractions;
+            $TrackCount = $this->BlockInfo['Infractions'] - $AtRunTimeInfractions;
+
+            /** Minimum expiry time for updating the IP tracking cache entry. */
+            $MinimumTime = $this->Cache->getEntry('Tracking-' . $this->BlockInfo['IPAddr'] . '-MinimumTime') ?: 0;
 
             /** Tracking options override. */
             if (!empty($this->CIDRAM['Tracking options override'])) {
                 if ($this->CIDRAM['Tracking options override'] === 'extended') {
-                    $this->CIDRAM['TrackTime'] = floor($this->Configuration['signatures']['default_tracktime'] * 52.1428571428571);
-                    $this->CIDRAM['TrackCount'] *= 1000;
+                    $TrackTime = floor($this->Configuration['signatures']['default_tracktime'] * 52.1428571428571);
+                    $TrackCount *= 1000;
+                    if ($this->CIDRAM['Banned'] && $TrackCount >= 2000) {
+                        $TrackCount -= 1000;
+                        $PreventAmplification = true;
+                    }
                 } elseif ($this->CIDRAM['Tracking options override'] === 'default') {
-                    $this->CIDRAM['TrackTime'] = $this->Configuration['signatures']['default_tracktime'];
-                    $this->CIDRAM['TrackCount'] = 1;
+                    $TrackTime = $this->Configuration['signatures']['default_tracktime'];
+                    $TrackCount = 1;
                 }
+            }
+            if (!isset($PreventAmplification) && $this->CIDRAM['Banned'] && $TrackCount >= 2) {
+                $TrackCount -= 1;
             }
 
             if (isset($this->CIDRAM['Tracking-' . $this->BlockInfo['IPAddr']])) {
-                $this->CIDRAM['Tracking-' . $this->BlockInfo['IPAddr']] += $this->CIDRAM['TrackCount'];
+                $this->CIDRAM['Tracking-' . $this->BlockInfo['IPAddr']] += $TrackCount;
             } elseif (($Try = $this->Cache->getEntry('Tracking-' . $this->BlockInfo['IPAddr'])) === false) {
-                $this->CIDRAM['Tracking-' . $this->BlockInfo['IPAddr']] = $this->CIDRAM['TrackCount'];
+                $this->CIDRAM['Tracking-' . $this->BlockInfo['IPAddr']] = $TrackCount;
             } else {
-                $this->CIDRAM['Tracking-' . $this->BlockInfo['IPAddr']] = $Try + $this->CIDRAM['TrackCount'];
+                $this->CIDRAM['Tracking-' . $this->BlockInfo['IPAddr']] = $Try + $TrackCount;
             }
-            /* // AAA
-            if ($this->CIDRAM['TrackTime'] > $this->CIDRAM['Tracking-' . $this->BlockInfo['IPAddr']]['Time']) {
-                $this->CIDRAM['Tracking-' . $this->BlockInfo['IPAddr']]['Time'] = $this->CIDRAM['TrackTime'];
+
+            if ($MinimumTime > $TrackTime) {
+                $TrackTime = $MinimumTime;
             }
-            */
+
+            /** Track minimum tracking time. */
+            $this->Cache->setEntry('Tracking-' . $this->BlockInfo['IPAddr'] . '-MinimumTime', $TrackTime, $TrackTime);
+
+            /** Track infractions. */
             $this->Cache->setEntry(
                 'Tracking-' . $this->BlockInfo['IPAddr'],
                 $this->CIDRAM['Tracking-' . $this->BlockInfo['IPAddr']],
-                $this->CIDRAM['TrackTime']
+                $TrackTime
             );
 
             if ($this->CIDRAM['Tracking-' . $this->BlockInfo['IPAddr']] >= $this->Configuration['signatures']['infraction_limit']) {
                 $this->CIDRAM['Banned'] = true;
             }
-
-            /** Cleanup. */
-            unset($this->CIDRAM['TrackCount'], $this->CIDRAM['TrackTime']);
         } elseif (isset($this->CIDRAM['Trackable']) && $this->CIDRAM['Trackable'] === false) {
             /** Untrack IP address. */
             $this->Cache->deleteEntry('Tracking-' . $this->BlockInfo['IPAddr']);

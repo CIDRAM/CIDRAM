@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM front-end (last modified: 2022.07.13).
+ * This file: The CIDRAM front-end (last modified: 2022.07.14).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -1658,7 +1658,7 @@ class FrontEnd extends Core
                     if ($_POST['cdi'] === '__') {
                         $this->Cache->clearCache();
                     } elseif (substr($_POST['cdi'], 0, 1) === '^') {
-                        $this->Cache->deleteAllEntriesWhere('~' . $_POST['cdi'] . '-(.+)$~');
+                        $this->Cache->deleteAllEntriesWhere('~' . $_POST['cdi'] . '-~');
                     } else {
                         $this->Cache->deleteEntry($_POST['cdi']);
                     }
@@ -3544,9 +3544,10 @@ class FrontEnd extends Core
 
             /** Clear/revoke IP tracking for an IP address. */
             if (isset($_POST['IPAddr']) && (
-                ($_POST['IPAddr'] === '*' && $this->Cache->deleteAllEntriesWhere('~^Tracking-(.+)$~')) ||
+                ($_POST['IPAddr'] === '*' && $this->Cache->deleteAllEntriesWhere('~^Tracking-~')) ||
                 $this->Cache->deleteEntry('Tracking-' . $_POST['IPAddr'])
             )) {
+                $this->Cache->deleteEntry('Tracking-' . $_POST['IPAddr'] . '-MinimumTime');
                 $this->FE['state_msg'] = $this->L10N->getString('response_tracking_cleared');
             }
 
@@ -3560,7 +3561,7 @@ class FrontEnd extends Core
                 $this->Shorthand = array_flip(explode("\n", $this->Configuration['signatures']['shorthand']));
 
                 /** Get all IP tracking entries. */
-                $Entries = $this->getAllEntriesWhere('~^Tracking-(.+)$~', '\1', function ($A, $B): int {
+                $Entries = $this->getAllEntriesWhere('~^Tracking-(.+)(?<!-MinimumTime)$~', '\1', function ($A, $B): int {
                     return ($A['Time'] < $B['Time']) ? -1 : 1;
                 });
 
@@ -3778,7 +3779,7 @@ class FrontEnd extends Core
             $this->FE['Confirm-ClearAll'] = $this->generateConfirmation($this->L10N->getString('field_clear_all'), 'statForm');
 
             /** Clear statistics. */
-            if (!empty($_POST['ClearStats']) && $this->Cache->deleteAllEntriesWhere('~^Statistics-(.+)$~')) {
+            if (!empty($_POST['ClearStats']) && $this->Cache->deleteAllEntriesWhere('~^Statistics-~')) {
                 $this->FE['state_msg'] .= $this->L10N->getString('response_statistics_cleared') . '<br />';
             }
 

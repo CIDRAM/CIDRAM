@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: General methods used by the front-end (last modified: 2022.07.13).
+ * This file: General methods used by the front-end (last modified: 2022.07.14).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -1130,11 +1130,11 @@ trait FrontEndMethods
      */
     private function updateConfiguration(): bool
     {
-        if ($this->FE['ActiveConfigFile'] === '' || !is_writable($this->FE['ActiveConfigFile'])) {
+        if (!is_file($this->FE['ActiveConfigFile']) || !is_writable($this->FE['ActiveConfigFile'])) {
             return false;
         }
         $Reconstructed = $this->YAML->reconstruct($this->Configuration);
-        $Handle = fopen($this->Vault . $this->FE['ActiveConfigFile'], 'wb');
+        $Handle = fopen($this->FE['ActiveConfigFile'], 'wb');
         if (!is_resource($Handle)) {
             return false;
         }

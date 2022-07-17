@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: ReCaptcha class (last modified: 2022.07.09).
+ * This file: ReCaptcha class (last modified: 2022.07.17).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -68,6 +68,7 @@ class ReCaptcha extends Captcha
                 $this->Bypass = true;
                 $this->CIDRAM->BlockInfo['SignatureCount'] = 0;
                 $this->CIDRAM->Cache->deleteEntry('Tracking-' . $this->CIDRAM->BlockInfo['IPAddr']);
+                $this->CIDRAM->Cache->deleteEntry('Tracking-' . $this->CIDRAM->BlockInfo['IPAddr'] . '-MinimumTime');
             } else {
                 /** Set CAPTCHA status. */
                 $this->CIDRAM->BlockInfo['CAPTCHA'] = $this->CIDRAM->L10N->getString('state_enabled');
@@ -150,6 +151,7 @@ class ReCaptcha extends Captcha
                 $this->Bypass = true;
                 $this->CIDRAM->BlockInfo['SignatureCount'] = 0;
                 $this->CIDRAM->Cache->deleteEntry('Tracking-' . $this->CIDRAM->BlockInfo['IPAddr']);
+                $this->CIDRAM->Cache->deleteEntry('Tracking-' . $this->CIDRAM->BlockInfo['IPAddr'] . '-MinimumTime');
             } else {
                 /** Set CAPTCHA status. */
                 $this->CIDRAM->BlockInfo['CAPTCHA'] = $this->CIDRAM->L10N->getString('state_enabled');

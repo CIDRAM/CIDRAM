@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Protect traits (last modified: 2022.07.14).
+ * This file: Protect traits (last modified: 2022.07.17).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -280,9 +280,12 @@ trait Protect
         /** Process tracking information for the inbound IP. */
         if (!empty($this->CIDRAM['TestResults']) && (
             (isset($this->CIDRAM['Trackable']) && $this->CIDRAM['Trackable'] === true) ||
-            (isset($this->Stages['Tracking:Enable']) && $this->BlockInfo['Infractions'] > 0 && (
-                !isset($this->CIDRAM['Trackable']) || $this->CIDRAM['Trackable'] !== false
-            ))
+            (
+                isset($this->Stages['Tracking:Enable']) &&
+                $this->BlockInfo['Infractions'] > 0 &&
+                $this->BlockInfo['SignatureCount'] > 0 &&
+                (!isset($this->CIDRAM['Trackable']) || $this->CIDRAM['Trackable'] !== false)
+            )
         )) {
             $this->Stage = 'Tracking';
 
@@ -341,6 +344,7 @@ trait Protect
         } elseif (isset($this->CIDRAM['Trackable']) && $this->CIDRAM['Trackable'] === false) {
             /** Untrack IP address. */
             $this->Cache->deleteEntry('Tracking-' . $this->BlockInfo['IPAddr']);
+            $this->Cache->deleteEntry('Tracking-' . $this->BlockInfo['IPAddr'] . '-MinimumTime');
         }
 
         /**

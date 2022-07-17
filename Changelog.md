@@ -79,3 +79,4 @@
 - Slightly improved RTL support.
 - Added the ability to enable/disable auxiliary rules (#318).
 - The path to the cache file can now be customised.
+- Made IPs at the IP test page searchable.

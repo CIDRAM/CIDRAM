@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM front-end (last modified: 2022.07.14).
+ * This file: The CIDRAM front-end (last modified: 2022.07.17).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -1664,8 +1664,9 @@ class FrontEnd extends Core
                 /** Append async globals. */
                 $this->FE['JS'] .=
                     "function cdd(d){window.cdi=d,window.do='delete',$('POST','',['cidram-for" .
-                    "m-target','cdi','do'],null,function(o){if(d.substring(0,1)==='^'){d=d.su" .
-                    "bstr(1)}hideid(d+'Container')})}window['cidram-form-target']='cache-data';";
+                    "m-target','cdi','do'],null,function(o){'__'===d?window.location=window.l" .
+                    "ocation.href.split('?')[0]:'^'===d.substring(0,1)&&(d=d.substr(1)),hidei" .
+                    "d(d+'Container')})}window['cidram-form-target']='cache-data';";
 
                 /** To be populated by the cache data. */
                 $this->FE['CacheData'] = '';
@@ -1688,8 +1689,12 @@ class FrontEnd extends Core
 
                 /** Process all cache items. */
                 $this->FE['CacheData'] .= sprintf(
-                    '<div class="ng1" id="__Container"><span class="s">%s – (<span style="cursor:pointer" onclick="javascript:cdd(\'__\')"><code class="s">%s</code></span>)</span><br /><br /><ul class="pieul">%s</ul></div>',
+                    '<div class="ng1" id="__Container"><span class="s">%s – (<span style="cursor:pointer" onclick="javascript:confirm(\'%s\')&&cdd(\'__\')"><code class="s">%s</code></span>)</span><br /><br /><ul class="pieul">%s</ul></div>',
                     $PreferredSource,
+                    str_replace(["'", '"'], ["\'", '\x22'], sprintf(
+                        $this->L10N->getString('confirm_action'),
+                        $this->L10N->getString('field_clear_all')
+                    ) . '\n' . $this->L10N->getString('warning_will_log_out_all_users')),
                     $this->L10N->getString('field_clear_all'),
                     $this->arrayToClickableList($CacheArray, 'cdd', 0, $PreferredSource)
                 );

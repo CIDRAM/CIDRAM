@@ -153,7 +153,7 @@ input[type=checkbox]+label,input[type=radio]+label,input[type=radio]+label,.grid
 .warning::before,.warning::after{content:"⚠️";font-size:24px;display:inline;line-height:100%;position:relative;top:2px}
 .warning{display:inline-block;margin:4px;font-weight:700;color:red;background:linear-gradient({90deg},rgba(255,192,0,0) 0,rgba(255,192,0,.8) 20% 80%,rgba(255,192,0,0) 100%);line-height:100%}
 .gridlabel,.copySvg{transition:all .2s ease-out}
-.copySvg{position:relative;top:-3px;stroke-width:1px;stroke-linecap:round}
+.copySvg{stroke-width:1px;stroke-linecap:round;transform:translate3d(-1px,-3px,-1px)}
 .copySvg:hover{filter:brightness(1.2);cursor:pointer}
 .copyHind,.copyFore,.copyLine{stroke:#033;fill:#eee}
 @keyframes sFadeFrames{0%{opacity:1}100%{opacity:0}}

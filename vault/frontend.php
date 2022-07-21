@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2022.07.17).
+ * This file: Front-end handler (last modified: 2022.07.21).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -3086,7 +3086,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'file-manager' && $CIDRAM['FE'][
         $Base = '<option value="%s"%s>%s</option>';
         $ThisFile['ThisOptions'] = '';
         if (!$ThisFile['Directory'] || $CIDRAM['IsDirEmpty']($CIDRAM['Vault'] . $ThisFile['Filename'])) {
-            $ThisFile['ThisOptions'] .= sprintf($Base, 'delete-file', '', $CIDRAM['L10N']->getString('field_delete'));
+            $ThisFile['ThisOptions'] .= sprintf($Base, 'delete-file', ' class="txtRd"', $CIDRAM['L10N']->getString('field_delete'));
             $ThisFile['ThisOptions'] .= sprintf($Base, 'rename-file', $ThisFile['Directory'] && !$ThisFile['CanEdit'] ? ' selected' : '', $CIDRAM['L10N']->getString('field_rename_file'));
         }
         if ($ThisFile['CanEdit']) {

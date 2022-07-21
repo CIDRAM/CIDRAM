@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM front-end (last modified: 2022.07.17).
+ * This file: The CIDRAM front-end (last modified: 2022.07.21).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -2838,7 +2838,7 @@ class FrontEnd extends Core
                 $Base = '<option value="%s"%s>%s</option>';
                 $ThisFile['ThisOptions'] = '';
                 if (!$ThisFile['Directory'] || $this->isDirEmpty($this->Vault . $ThisFile['Filename'])) {
-                    $ThisFile['ThisOptions'] .= sprintf($Base, 'delete-file', '', $this->L10N->getString('field_delete'));
+                    $ThisFile['ThisOptions'] .= sprintf($Base, 'delete-file', ' class="txtRd"', $this->L10N->getString('field_delete'));
                     $ThisFile['ThisOptions'] .= sprintf($Base, 'rename-file', $ThisFile['Directory'] && !$ThisFile['CanEdit'] ? ' selected' : '', $this->L10N->getString('field_rename_file'));
                 }
                 if ($ThisFile['CanEdit']) {

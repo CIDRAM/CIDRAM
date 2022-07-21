@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6_isps.dat
 
-# Version: 2022.194.0
-# Last modified: 2022.07.14
+# Version: 2022.201.0
+# Last modified: 2022.07.21
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -1010,22 +1010,6 @@ Profile: Domestic ISP
 Tag: Phaholyothin Rd
 
 
-# ASN 852 ("TELUS Communications Inc").
-# Major Canadian domestic ISP. Spam and brute-force attacks detected from here.
-# Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 566.
-# Updated: 2021.10.05
-
-2001:569:5036:5900::/64 Deny Spam
-2001:569:be95:5e00::/64 Deny Spam
-2001:569:fa1e:3200::/64 Deny Spam
-2001:56b:dc05:6a00::/64 Deny Spam
-2001:56b:dcbc:300::/64 Deny Spam
-Origin: CA
-Profile: Domestic ISP
-Tag: TELUS Communications Inc
-
-
 # ASN 34757 ("Sibirskie Seti Ltd").
 # Russian domestic ISP. A frequent source of hacking, brute-force, SSH, and
 # webapp attacks. Listing whole ASN.
@@ -1076,19 +1060,23 @@ Profile: Domestic ISP
 Tag: CAMBODIAN SINGMENG TELEMEDIA
 
 
-# ASN 134674 ("TATA SKY BROADBAND PRIVATE LIMITED").
+# ASNs 45820, 134674 ("TATA SKY BROADBAND PRIVATE LIMITED").
 # Indian domestic ISP. WordPress attacks, hacking, port scans, and spam
 # detected from here. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 2,801.
-# Updated: 2021.10.20
+# Stop Forum Spam (SFS) listings: 2,161 (AS45820), 939 (AS134674).
+# Updated: 2022.07.17
 
-2402:e280:212b:3ae::/64 Deny Spam
-2402:e280:2205:18::/64 Deny Spam
-2402:e280:2300:2c8b::/64 Deny Spam
+2402:e280:224b:14b::/64 Deny Spam
 2402:e280:2308:8e::/64 Deny Spam
-2402:e280:2310:17::/64 Deny Spam
+2402:e280:230d:4af::/64 Deny Spam
+2402:e280:230e:76::/64 Deny Spam
+2402:e280:230e:2a2::/64 Deny Spam
 2402:e280:2314:5c::/64 Deny Spam
-2402:e280:3d6e:105a::/64 Deny Spam
+2402:e280:2315:85::/64 Deny Spam
+2402:e280:231f:12a::/64 Deny Spam
+2402:e280:3d66:1be::/64 Deny Spam
+2402:e280:3e2f:28d::/64 Deny Spam
+2402:e280:3e64:148::/64 Deny Spam
 Origin: IN
 Profile: Domestic ISP
 Tag: TATA SKY BROADBAND PRIVATE LIMITED
@@ -1140,8 +1128,8 @@ Tag: Orange S.A
 # universities in Europe route through this ASN, with mostly human endpoints.
 # Spam, port scans, hack attempts, brute-force, and SSH attacks detected from
 # here. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 2,565.
-# Updated: 2021.05.20 / Checked: 2022.02.14
+# Stop Forum Spam (SFS) listings: 1,519.
+# Updated: 2021.05.20 / Checked: 2022.07.17
 
 2a00:5ba0:10:2242::/64 Deny Attacks
 Origin: DE

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Optional security extras module (last modified: 2022.06.05).
+ * This file: Optional security extras module (last modified: 2022.07.21).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -232,11 +232,6 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
     if ($this->CIDRAM['ExtrasHonoured']['raw'] && $RawInput) {
         $RawInputSafe = strtolower(preg_replace('/[\s\x00-\x1f\x7f-\xff]/', '', $RawInput));
 
-        $this->trigger(
-            !$is_WP_plugin && preg_match('/[\x00-\x1f\x7f-\xff"#\'-);<>\[\]]/', $RawInput),
-            'Non-escaped characters in POST'
-        ); // 2017.10.23
-
         $this->trigger(preg_match('/charcode\(88,83,83\)/', $RawInputSafe), 'Hack attempt'); // 2017.03.01
         $this->trigger((
             strpos($RawInputSafe, '<?xml') !== false &&
@@ -308,8 +303,6 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
             $this->Reporter->report([15], ['Hack attempt detected.'], $this->BlockInfo['IPAddr']);
         } elseif (strpos($this->BlockInfo['WhyReason'], 'Nesting attack') !== false) {
             $this->Reporter->report([15], ['Nesting attack detected.'], $this->BlockInfo['IPAddr']);
-        } elseif (strpos($this->BlockInfo['WhyReason'], 'Non-escaped characters in POST') !== false) {
-            $this->Reporter->report([19], ['Non-escaped characters in POST detected (bot indicator).'], $this->BlockInfo['IPAddr']);
         } elseif (strpos($this->BlockInfo['WhyReason'], 'Null truncation attempt') !== false) {
             $this->Reporter->report([15], ['Null truncation attempt detected.'], $this->BlockInfo['IPAddr']);
         } elseif (strpos($this->BlockInfo['WhyReason'], 'Overflow attempt') !== false) {

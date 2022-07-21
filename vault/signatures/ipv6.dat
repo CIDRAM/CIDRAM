@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6.dat
 
-# Version: 2022.194.0
-# Last modified: 2022.07.14
+# Version: 2022.201.0
+# Last modified: 2022.07.21
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -6517,8 +6517,8 @@ Tag: Quintex
 
 # ASN 29889 ("Fast Serv Networks, LLC").
 # Dedicated host; evidence of unauthorised access attempts; spam events.
-# Stop Forum Spam (SFS) listings: 22.
-# Updated: 2019.06.10 / Checked: 2021.09.09
+# Stop Forum Spam (SFS) listings: 323.
+# Updated: 2019.06.10 / Checked: 2022.07.17
 
 2602:fffa::/36 Deny Cloud
 2620:100:5007::/48 Deny Cloud
@@ -7961,7 +7961,7 @@ Tag: OOO Patent-Media
 
 # ASN 20052 ("Arbor Networks, Inc").
 # Vulnerability scanner + unwanted traffic.
-# Updated: 2020.06.22 / Checked: 2021.09.09
+# Updated: 2020.06.22 / Checked: 2022.07.17
 
 2620:11e:1000::/48 Deny Cloud
 Origin: US
@@ -8529,8 +8529,8 @@ Tag: Vhost Meremeta Ltd
 # ASNs 16880, 36421 ("Trend Micro Incorporated").
 # Follows their users around, attempting to access restricted/private areas of
 # websites.
-# Stop Forum Spam (SFS) listings: 4 (AS16880).
-# Updated: 2021.01.11 / Checked: 2021.09.09
+# Stop Forum Spam (SFS) listings: 2 (AS16880).
+# Updated: 2021.01.11 / Checked: 2022.07.17
 
 2620:101:402d::/48 Deny Cloud
 2620:101:4034::/47 Deny Cloud
@@ -10561,6 +10561,31 @@ Tag: Tube-Hosting
 Origin: US
 Profile: Dedicated;Infrastructure/Transit
 Tag: NetInformatik Inc
+
+
+# ASN 55688 ("PT. Beon Intermedia").
+# Indonesian dedicated webhosting provider. Brute-force and SSH attacks, web
+# scraping, port scans, and hacking detected from here.
+# Stop Forum Spam (SFS) listings: 2.
+# Updated: 2022.07.17
+
+2001:df4:3b00::/48 Deny Cloud
+2406:a040:ff01::/48 Deny Cloud
+Origin: ID
+Profile: Dedicated;Webhosting
+Tag: Beon Intermedia
+
+
+# ASN 13706 ("CompleteWeb.Net LLC").
+# Brute-force and webapp attacks, hacking, port scans, and spam detected here.
+# Stop Forum Spam (SFS) listings: 1.
+# Updated: 2022.07.21
+
+2605:3e00::/32 Deny Cloud
+2607:fc18::/36 Deny Cloud
+Origin: US
+Profile: Dedicated;Webhosting
+Tag: CompleteWeb.Net LLC
 
 
 # ---

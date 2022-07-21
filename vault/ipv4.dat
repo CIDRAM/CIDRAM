@@ -1,8 +1,8 @@
 # IPv4 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv4.dat
 
-# Version: 2022.194.0
-# Last modified: 2022.07.14
+# Version: 2022.201.0
+# Last modified: 2022.07.21
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -20884,7 +20884,7 @@ Tag: Selectel Ltd
 
 # ASN 42868 ("Niobe Bilisim Teknolojileri Yazilim San. Tic. Ltd. Sti").
 # Caught trying to DDoS SFS.
-# Updated: 2018.06.30 / Checked: 2021.09.09
+# Updated: 2018.06.30 / Checked: 2022.07.17
 
 77.245.144.0/20 Deny Cloud
 185.87.252.0/22 Deny Cloud
@@ -26304,8 +26304,8 @@ Tag: Quintex
 
 # ASN 29889 ("Fast Serv Networks, LLC").
 # Dedicated host; evidence of unauthorised access attempts; spam events.
-# Stop Forum Spam (SFS) listings: 22.
-# Updated: 2019.06.10 / Checked: 2021.09.09
+# Stop Forum Spam (SFS) listings: 323.
+# Updated: 2019.06.10 / Checked: 2022.07.17
 
 74.115.208.0/21 Deny Cloud
 74.116.40.0/22 Deny Cloud
@@ -29418,7 +29418,7 @@ Tag: UAB CONSILIUM OPTIMUM
 
 # ASN 20052 ("Arbor Networks, Inc").
 # Vulnerability scanner + unwanted traffic.
-# Updated: 2020.06.22 / Checked: 2021.09.09
+# Updated: 2020.06.22 / Checked: 2022.07.17
 
 146.88.240.0/24 Deny Cloud
 216.130.192.0/21 Deny Cloud
@@ -31897,7 +31897,7 @@ Tag: Des Capital B.V
 
 # ASN 58294 ("CloudWall Ltd").
 # FTP brute-force attacks, RDP attacks, port scans, etc detected from here.
-# Updated: 2021.01.05 / Checked: 2021.09.09
+# Updated: 2021.01.05 / Checked: 2022.07.17
 
 195.230.23.0/24 Deny Attacks
 Origin: BG
@@ -31919,15 +31919,14 @@ Tag: Vhost Meremeta Ltd
 # ASNs 16880, 36421 ("Trend Micro Incorporated").
 # Follows their users around, attempting to access restricted/private areas of
 # websites.
-# Stop Forum Spam (SFS) listings: 4 (AS16880).
-# Updated: 2021.01.11 / Checked: 2021.09.09
+# Stop Forum Spam (SFS) listings: 2 (AS16880).
+# Updated: 2022.07.17
 
 150.70.0.0/20 Deny Cloud
 150.70.31.0/24 Deny Cloud
 150.70.48.0/20 Deny Cloud
 150.70.80.0/20 Deny Cloud
 150.70.160.0/19 Deny Cloud
-150.70.192.0/21 Deny Cloud
 150.70.224.0/20 Deny Cloud
 Origin: JP
 202.3.185.0/24 Deny Cloud
@@ -38270,7 +38269,7 @@ Tag: Z.P.Vladimirovich
 # AdSense, or Google Fibre, only the ranges/addresses known to be affected will
 # be listed here.
 # Stop Forum Spam (SFS) listings: 2,726 (AS15169), 2,619 (AS396982).
-# Updated: 2022.06.22
+# Updated: 2022.06.22 / Modified: 2022.07.21
 
 34.3.0.0/23 Run bypasses.php
 34.3.4.0/24 Run bypasses.php
@@ -38366,6 +38365,7 @@ Tag: Z.P.Vladimirovich
 130.41.85.0/24 Run bypasses.php
 142.250.141.0/24 Run bypasses.php
 198.235.24.0/24 Run bypasses.php
+205.210.31.0/24 Run bypasses.php
 208.127.91.0/24 Run bypasses.php
 209.85.214.0/24 Run bypasses.php
 Origin: US
@@ -38530,6 +38530,47 @@ Origin: HK
 Origin: US
 Profile: Webhosting
 Tag: High Family Technology
+
+
+# ASN 55688 ("PT. Beon Intermedia").
+# Indonesian dedicated webhosting provider. Brute-force and SSH attacks, web
+# scraping, port scans, and hacking detected from here.
+# Stop Forum Spam (SFS) listings: 2.
+# Updated: 2022.07.17
+
+101.50.0.0/22 Deny Cloud
+103.27.206.0/23 Deny Cloud
+103.56.148.0/23 Deny Cloud
+103.157.96.0/23 Deny Cloud
+103.163.138.0/23 Deny Cloud
+103.166.156.0/23 Deny Cloud
+Origin: ID
+Profile: Dedicated;Webhosting
+Tag: Beon Intermedia
+
+
+# ASN 13706 ("CompleteWeb.Net LLC").
+# Brute-force and webapp attacks, hacking, port scans, and spam detected here.
+# Stop Forum Spam (SFS) listings: 1.
+# Updated: 2022.07.21
+
+147.124.194.0/24 Deny Cloud
+199.101.199.0/24 Deny Cloud
+204.235.60.0/22 Deny Cloud
+216.226.128.0/23 Deny Cloud
+216.226.131.0/24 Deny Cloud
+216.226.132.0/23 Deny Cloud
+216.226.134.0/24 Deny Cloud
+216.226.136.0/24 Deny Cloud
+216.226.139.0/24 Deny Cloud
+216.226.142.0/23 Deny Cloud
+216.226.144.0/21 Deny Cloud
+216.226.152.0/22 Deny Cloud
+216.226.156.0/23 Deny Cloud
+216.226.158.0/24 Deny Cloud
+Origin: US
+Profile: Dedicated;Webhosting
+Tag: CompleteWeb.Net LLC
 
 
 # ---

@@ -3664,28 +3664,32 @@ $CIDRAM['AuxGenerateFEData'] = function (bool $Mode = false) use (&$CIDRAM): str
         }
 
         /** Figure out which options are available for the rule (view mode). */
-        $Options = ['(<span style="cursor:pointer" onclick="javascript:confirm(\'%s\')&&%s(\'' . addslashes($Name) . '\',\'' . $RuleClass . '\')"><code class="s">%s</code></span>)'];
-        $Options['delRule'] = sprintf($Options[0], 'delRule', $CIDRAM['L10N']->getString('field_delete'));
+        $Options = ['(<span style="cursor:pointer" onclick="javascript:%s(\'' . addslashes($Name) . '\',\'' . $RuleClass . '\')"><code class="s">%s</code></span>)'];
         if (empty($Data['Disable this rule'])) {
-            $Options['disableRule'] = sprintf($Options[0], 'disableRule', $CIDRAM['L10N']->getString('label_aux_special_disable'));
+            $Options['disableRule'] = sprintf($Options[0], 'disableRule', '<span style="position:relative;top:-2px" class="txtRd">⏸</span>' . $CIDRAM['L10N']->getString('label_aux_special_disable'));
         } else {
-            $Options['enableRule'] = sprintf($Options[0], 'enableRule', $CIDRAM['L10N']->getString('label_aux_special_enable'));
+            $Options['enableRule'] = sprintf($Options[0], 'enableRule', '<span style="position:relative;top:-3px" class="txtGn">▶</span>' . $CIDRAM['L10N']->getString('label_aux_special_enable'));
         }
         if ($Count > 1) {
             if ($Current !== 1) {
                 if ($Current !== 2) {
-                    $Options['moveUp'] = sprintf($Options[0], 'moveUp', $CIDRAM['L10N']->getString('label_aux_move_up'));
+                    $Options['moveUp'] = sprintf($Options[0], 'moveUp', '<span class="txtBl">↑</span>' . $CIDRAM['L10N']->getString('label_aux_move_up'));
                 }
-                $Options['moveToTop'] = sprintf($Options[0], 'moveToTop', $CIDRAM['L10N']->getString('label_aux_move_top'));
+                $Options['moveToTop'] = sprintf($Options[0], 'moveToTop', '<span class="txtBl">↑↑</span>' . $CIDRAM['L10N']->getString('label_aux_move_top'));
             }
             if ($Current !== $Count) {
                 if ($Current !== ($Count - 1)) {
-                    $Options['moveDown'] = sprintf($Options[0], 'moveDown', $CIDRAM['L10N']->getString('label_aux_move_down'));
+                    $Options['moveDown'] = sprintf($Options[0], 'moveDown', '<span class="txtBl">↓</span>' . $CIDRAM['L10N']->getString('label_aux_move_down'));
                 }
-                $Options['moveToBottom'] = sprintf($Options[0], 'moveToBottom', $CIDRAM['L10N']->getString('label_aux_move_bottom'));
+                $Options['moveToBottom'] = sprintf($Options[0], 'moveToBottom', '<span class="txtBl">↓↓</span>' . $CIDRAM['L10N']->getString('label_aux_move_bottom'));
             }
         }
         unset($Options[0]);
+        $Options['delRule'] = sprintf(
+            '(<span style="cursor:pointer" onclick="javascript:confirm(\'%s\')&&delRule(\'' . addslashes($Name) . '\',\'' . $RuleClass . '\')"><code class="s"><span class="txtRd">⌧</span>%s</code></span>)',
+            str_replace(["'", '"'], ["\'", '\x22'], sprintf($CIDRAM['L10N']->getString('confirm_delete'), $Name)),
+            $CIDRAM['L10N']->getString('field_delete')
+        );
         $Options = ' – ' . implode(' ', $Options);
 
         /** Begin generating rule output. */

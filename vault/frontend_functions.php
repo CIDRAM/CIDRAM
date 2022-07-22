@@ -3969,7 +3969,7 @@ $CIDRAM['ArrayToClickableList'] = function (array $Arr = [], $DeleteKey = '', $D
         if (is_string($Value) && !$CIDRAM['Demojibakefier']->checkConformity($Value)) {
             continue;
         }
-        $Delete = ($Depth === 0) ? ' – (<span style="cursor:pointer" onclick="javascript:' . $DeleteKey . '(\'' . addslashes($Key) . '\')"><code class="s">' . $CIDRAM['L10N']->getString('field_delete') . '</code></span>)' : '';
+        $Delete = ($Depth === 0) ? ' – (<span style="cursor:pointer" onclick="javascript:' . $DeleteKey . '(\'' . addslashes($Key) . '\')"><code class="s"><span class="txtRd">⌧</span>' . $CIDRAM['L10N']->getString('field_delete') . '</code></span>)' : '';
         $Output .= ($Depth === 0 ? '<span id="' . $Key . $Prefix . 'Container">' : '') . '<li>';
         if (is_string($Value)) {
             if (substr($Value, 0, 2) === '{"' && substr($Value, -2) === '"}') {

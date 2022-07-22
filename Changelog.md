@@ -80,3 +80,4 @@
 - Added the ability to enable/disable auxiliary rules (#318).
 - The path to the cache file can now be customised.
 - Made IPs at the IP test page searchable.
+- At the updater, when a checksum error occurs, the difference between the actual and the expected will be displayed now.

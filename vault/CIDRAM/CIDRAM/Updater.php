@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods for updating CIDRAM components (last modified: 2022.07.01).
+ * This file: Methods for updating CIDRAM components (last modified: 2022.07.22).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -647,12 +647,18 @@ trait Updater
                             $ThisFile = gzdecode($ThisFile);
                         }
                         if (isset($FileMeta['Checksum']) && strlen($FileMeta['Checksum'])) {
-                            $ThisLen = strlen($ThisFile);
-                            if (hash('sha256', $ThisFile) . ':' . $ThisLen !== $FileMeta['Checksum']) {
-                                $this->FE['state_msg'] .=
-                                    '<code>' . $ThisTarget . '</code> – ' .
-                                    '<code>' . $FileName . '</code> – ' .
-                                    $this->L10N->getString('response_checksum_error') . '<br />';
+                            $Expected = hash('sha256', $ThisFile) . ':' . strlen($ThisFile);
+                            if ($Expected !== $FileMeta['Checksum']) {
+                                $this->FE['state_msg'] .= sprintf(
+                                    '<code>%s</code> – <code>%s</code> – %s<br />%s – <code class="txtRd">%s</code><br />%s – <code class="txtRd">%s</code><br />',
+                                    $ThisTarget,
+                                    $FileName,
+                                    $this->L10N->getString('response_checksum_error'),
+                                    $this->L10N->getString('label_actual'),
+                                    $FileMeta['Checksum'],
+                                    $this->L10N->getString('label_expected'),
+                                    $Expected
+                                );
                                 if (!empty($this->Components['Meta'][$ThisTarget]['On Checksum Error'])) {
                                     $this->executor($this->Components['Meta'][$ThisTarget]['On Checksum Error'], true);
                                 }

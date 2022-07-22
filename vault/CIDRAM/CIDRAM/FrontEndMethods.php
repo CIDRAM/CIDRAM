@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: General methods used by the front-end (last modified: 2022.07.14).
+ * This file: General methods used by the front-end (last modified: 2022.07.22).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -747,7 +747,7 @@ trait FrontEndMethods
             }
             if ($Depth === 1 && isset($this->CIDRAM['ListGroups'][$ParentKey])) {
                 $Delete = sprintf(
-                    ' – (<span style="cursor:pointer" onclick="javascript:%s(\'%s\')"><code class="s">%s</code></span>)',
+                    ' – (<span style="cursor:pointer" onclick="javascript:%s(\'%s\')"><code class="s"><span class="txtRd">⌧</span>%s</code></span>)',
                     $DeleteKey,
                     addslashes($ParentKey . '-' . $Key),
                     $this->L10N->getString('field_delete')
@@ -755,7 +755,7 @@ trait FrontEndMethods
                 $Output .= '<span id="' . $ParentKey . '-' . $Key . 'Container">';
             } elseif ($Depth === 0) {
                 $Delete = sprintf(
-                    ' – (<span style="cursor:pointer" onclick="javascript:%s(\'%s\')"><code class="s">%s</code></span>)',
+                    ' – (<span style="cursor:pointer" onclick="javascript:%s(\'%s\')"><code class="s"><span class="txtRd">⌧</span>%s</code></span>)',
                     $DeleteKey,
                     (isset($this->CIDRAM['ListGroups'][$Key]) ? '^' : '') . addslashes($Key),
                     $this->L10N->getString('field_delete')

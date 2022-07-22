@@ -81,3 +81,4 @@
 - The path to the cache file can now be customised.
 - Made IPs at the IP test page searchable.
 - At the updater, when a checksum error occurs, the difference between the actual and the expected will be displayed now.
+- Confirmation is now sought before engaging an attempt to delete an auxiliary rule, and the option moved to the far right to reduce the risk of engaging by accident.

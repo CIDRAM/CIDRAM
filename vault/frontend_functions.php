@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2022.07.12).
+ * This file: Front-end functions file (last modified: 2022.07.22).
  */
 
 /**
@@ -2939,9 +2939,10 @@ $CIDRAM['RangeTablesHandler'] = function (array $IPv4, array $IPv6) use (&$CIDRA
     $CIDRAM['FE']['Labels'] = '';
     $JS = '';
     $RangeCatOptions = [];
+    $Styling = ['Run' => ' class="txtOe"', 'Whitelist' => ' class="txtGn"', 'Greylist' => ' class="txtGn"', 'Deny' => ' class="txtRd"'];
     foreach ($SigTypes as $SigType) {
         $Class = 'sigtype_' . strtolower($SigType);
-        $RangeCatOptions[] = '<option value="' . $Class . '">' . $SigType . '</option>';
+        $RangeCatOptions[] = '<option value="' . $Class . '"' . (isset($Styling[$SigType]) ? $Styling[$SigType] : '') . '>' . $SigType . '</option>';
         $CIDRAM['FE']['Labels'] .= '<span style="display:none" class="s ' . $Class . '">' . $CIDRAM['L10N']->getString('label_signature_type') . ' ' . $SigType . '</span>';
         if ($SigType === 'Run') {
             $ZeroPlus = 'txtOe';
@@ -3678,7 +3679,7 @@ $CIDRAM['AuxGenerateFEData'] = function ($Mode = false) use (&$CIDRAM) {
         }
 
         /** Figure out which options are available for the rule (view mode). */
-        $Options = ['(<span style="cursor:pointer" onclick="javascript:%s(\'' . addslashes($Name) . '\',\'' . $RuleClass . '\')"><code class="s">%s</code></span>)'];
+        $Options = ['(<span style="cursor:pointer" onclick="javascript:confirm(\'%s\')&&%s(\'' . addslashes($Name) . '\',\'' . $RuleClass . '\')"><code class="s">%s</code></span>)'];
         $Options['delRule'] = sprintf($Options[0], 'delRule', $CIDRAM['L10N']->getString('field_delete'));
         if (empty($Data['Disable this rule'])) {
             $Options['disableRule'] = sprintf($Options[0], 'disableRule', $CIDRAM['L10N']->getString('label_aux_special_disable'));

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM core (last modified: 2022.07.13).
+ * This file: The CIDRAM core (last modified: 2022.07.24).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -243,7 +243,8 @@ class Core
      *      file (only has an effect when using flatfile caching).
      * @return void
      */
-    public function __construct(string $ConfigurationPath = '', string $CachePath = '') {
+    public function __construct(string $ConfigurationPath = '', string $CachePath = '')
+    {
         /** Vault directory. */
         $this->Vault = $this->canonical(__DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR);
 

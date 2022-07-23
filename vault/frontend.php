@@ -1233,7 +1233,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
         ) . "\n";
         $CIDRAM['CatData'] = '';
         foreach ($CIDRAM['CatValue'] as $CIDRAM['DirKey'] => $CIDRAM['DirValue']) {
-            $CIDRAM['ThisDir'] = ['Preview' => '', 'Trigger' => '', 'FieldOut' => '', 'CatKey' => $CIDRAM['CatKey']];
+            $CIDRAM['ThisDir'] = ['Reset' => '', 'Preview' => '', 'Trigger' => '', 'FieldOut' => '', 'CatKey' => $CIDRAM['CatKey']];
             if (empty($CIDRAM['DirValue']['type']) || !isset($CIDRAM['Config'][$CIDRAM['CatKey']][$CIDRAM['DirKey']])) {
                 continue;
             }
@@ -1515,6 +1515,14 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
                                     $CIDRAM['DirValue']['gridV'],
                                     $CIDRAM['DirValue']['gridH']
                                 );
+                                $CIDRAM['ThisDir']['Reset'] .= sprintf(
+                                    'document.getElementById(\'%s\').checked=%s;',
+                                    $CIDRAM['ThisDir']['DirLangKey'] . '_' . $CIDRAM['ChoiceKey'] . '_' . $CIDRAM['DirValue']['ThisLabelKey'],
+                                    isset($CIDRAM['Config']['Config Defaults'][$CIDRAM['CatKey']][$CIDRAM['DirKey']]['default']) && $CIDRAM['Request']->inCsv(
+                                        $CIDRAM['ChoiceKey'] . ':' . $CIDRAM['DirValue']['ThisLabelKey'],
+                                        $CIDRAM['Config']['Config Defaults'][$CIDRAM['CatKey']][$CIDRAM['DirKey']]['default']
+                                    ) ? 'true' : 'false',
+                                );
                             }
                             $CIDRAM['ThisDir']['FieldOut'] .= sprintf(
                                 '<div class="gridboxitem %s %s">%s</div>',
@@ -1533,6 +1541,14 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
                                 $CIDRAM['ChoiceValue'],
                                 $CIDRAM['ThisDir']['Trigger'],
                                 $CIDRAM['DirValue']['gridH']
+                            );
+                            $CIDRAM['ThisDir']['Reset'] .= sprintf(
+                                'document.getElementById(\'%s\').checked=%s;',
+                                $CIDRAM['ThisDir']['DirLangKey'] . '_' . $CIDRAM['ChoiceKey'],
+                                isset($CIDRAM['Config']['Config Defaults'][$CIDRAM['CatKey']][$CIDRAM['DirKey']]['default']) && $CIDRAM['Request']->inCsv(
+                                    $CIDRAM['ChoiceKey'],
+                                    $CIDRAM['Config']['Config Defaults'][$CIDRAM['CatKey']][$CIDRAM['DirKey']]['default']
+                                ) ? 'true' : 'false',
                             );
                         }
                     } elseif (isset($CIDRAM['DirValue']['style']) && $CIDRAM['DirValue']['style'] === 'radio') {
@@ -1561,6 +1577,15 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
                                 $CIDRAM['ChoiceKey']
                             );
                         }
+                        if (
+                            isset($CIDRAM['Config']['Config Defaults'][$CIDRAM['CatKey']][$CIDRAM['DirKey']]['default']) &&
+                            $CIDRAM['ChoiceKey'] === $CIDRAM['Config']['Config Defaults'][$CIDRAM['CatKey']][$CIDRAM['DirKey']]['default']
+                        ) {
+                            $CIDRAM['ThisDir']['Reset'] .= sprintf(
+                                'document.getElementById(\'%s\').checked=true;',
+                                $CIDRAM['ThisDir']['DirLangKey'] . '_' . $CIDRAM['ChoiceKey']
+                            );
+                        }
                     } else {
                         $CIDRAM['ThisDir']['FieldOut'] .= sprintf(
                             '<option style="text-transform:capitalize" value="%s"%s>%s</option>',
@@ -1568,6 +1593,16 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
                             $CIDRAM['ChoiceKey'] === $CIDRAM['Config'][$CIDRAM['CatKey']][$CIDRAM['DirKey']] ? ' selected' : '',
                             $CIDRAM['ChoiceValue']
                         );
+                        if (
+                            isset($CIDRAM['Config']['Config Defaults'][$CIDRAM['CatKey']][$CIDRAM['DirKey']]['default']) &&
+                            $CIDRAM['ChoiceKey'] === $CIDRAM['Config']['Config Defaults'][$CIDRAM['CatKey']][$CIDRAM['DirKey']]['default']
+                        ) {
+                            $CIDRAM['ThisDir']['Reset'] .= sprintf(
+                                'document.getElementById(\'%s_field\').value=\'%s\';',
+                                $CIDRAM['ThisDir']['DirLangKey'],
+                                addcslashes($CIDRAM['ChoiceKey'], "\n'\"\\")
+                            );
+                        }
                     }
                 }
                 if (
@@ -1596,6 +1631,11 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
                     ($CIDRAM['Config'][$CIDRAM['CatKey']][$CIDRAM['DirKey']] ? ' selected' : ''),
                     ($CIDRAM['Config'][$CIDRAM['CatKey']][$CIDRAM['DirKey']] ? '' : ' selected')
                 );
+                $CIDRAM['ThisDir']['Reset'] .= sprintf(
+                    'document.getElementById(\'%s_field\').value=\'%s\';',
+                    $CIDRAM['ThisDir']['DirLangKey'],
+                    empty($CIDRAM['Config']['Config Defaults'][$CIDRAM['CatKey']][$CIDRAM['DirKey']]['default']) ? 'false' : 'true'
+                );
             } elseif (in_array($CIDRAM['DirValue']['type'], ['float', 'int'], true)) {
                 $CIDRAM['ThisDir']['FieldOut'] = sprintf(
                     '<input type="number" name="%1$s" id="%1$s_field" value="%2$s"%3$s%4$s%5$s />',
@@ -1605,6 +1645,13 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
                     $CIDRAM['ThisDir']['Trigger'],
                     ($CIDRAM['DirValue']['type'] === 'int' ? ' inputmode="numeric"' : '')
                 );
+                if (isset($CIDRAM['Config']['Config Defaults'][$CIDRAM['CatKey']][$CIDRAM['DirKey']]['default'])) {
+                    $CIDRAM['ThisDir']['Reset'] .= sprintf(
+                        'document.getElementById(\'%s_field\').value=%s;',
+                        $CIDRAM['ThisDir']['DirLangKey'],
+                        $CIDRAM['Config']['Config Defaults'][$CIDRAM['CatKey']][$CIDRAM['DirKey']]['default']
+                    );
+                }
             } elseif ($CIDRAM['DirValue']['type'] === 'url' || (
                 empty($CIDRAM['DirValue']['autocomplete']) && $CIDRAM['DirValue']['type'] === 'string'
             )) {
@@ -1615,6 +1662,13 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
                     $CIDRAM['ThisDir']['Trigger'],
                     $CIDRAM['Config'][$CIDRAM['CatKey']][$CIDRAM['DirKey']]
                 );
+                if (isset($CIDRAM['Config']['Config Defaults'][$CIDRAM['CatKey']][$CIDRAM['DirKey']]['default'])) {
+                    $CIDRAM['ThisDir']['Reset'] .= sprintf(
+                        'document.getElementById(\'%s_field\').value=\'%s\';',
+                        $CIDRAM['ThisDir']['DirLangKey'],
+                        addcslashes($CIDRAM['Config']['Config Defaults'][$CIDRAM['CatKey']][$CIDRAM['DirKey']]['default'], "\n'\"\\")
+                    );
+                }
             } else {
                 $CIDRAM['ThisDir']['FieldOut'] = sprintf(
                     '<input type="text" name="%1$s" id="%1$s_field" value="%2$s"%3$s%4$s />',
@@ -1623,6 +1677,13 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
                     $CIDRAM['ThisDir']['autocomplete'],
                     $CIDRAM['ThisDir']['Trigger']
                 );
+                if (isset($CIDRAM['Config']['Config Defaults'][$CIDRAM['CatKey']][$CIDRAM['DirKey']]['default'])) {
+                    $CIDRAM['ThisDir']['Reset'] .= sprintf(
+                        'document.getElementById(\'%s_field\').value=\'%s\';',
+                        $CIDRAM['ThisDir']['DirLangKey'],
+                        addcslashes($CIDRAM['Config']['Config Defaults'][$CIDRAM['CatKey']][$CIDRAM['DirKey']]['default'], "\n'\"\\")
+                    );
+                }
             }
             $CIDRAM['ThisDir']['FieldOut'] .= $CIDRAM['ThisDir']['Preview'];
 
@@ -1687,6 +1748,15 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
                     );
                 }
                 $CIDRAM['ThisDir']['FieldOut'] .= "\n</ul>";
+            }
+
+            /** Reset to defaults. */
+            if ($CIDRAM['ThisDir']['Reset'] !== '') {
+                $CIDRAM['ThisDir']['FieldOut'] .= sprintf(
+                    '<br /><br /><input type="button" class="reset" onclick="javascript:%s" value="↺ %s" />',
+                    $CIDRAM['ThisDir']['Reset'],
+                    $CIDRAM['L10N']->getString('field_reset')
+                );
             }
 
             /** Finalise configuration row. */

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2022.07.21).
+ * This file: Front-end handler (last modified: 2022.07.24).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -1521,7 +1521,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
                                     isset($CIDRAM['Config']['Config Defaults'][$CIDRAM['CatKey']][$CIDRAM['DirKey']]['default']) && $CIDRAM['Request']->inCsv(
                                         $CIDRAM['ChoiceKey'] . ':' . $CIDRAM['DirValue']['ThisLabelKey'],
                                         $CIDRAM['Config']['Config Defaults'][$CIDRAM['CatKey']][$CIDRAM['DirKey']]['default']
-                                    ) ? 'true' : 'false',
+                                    ) ? 'true' : 'false'
                                 );
                             }
                             $CIDRAM['ThisDir']['FieldOut'] .= sprintf(
@@ -1548,7 +1548,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
                                 isset($CIDRAM['Config']['Config Defaults'][$CIDRAM['CatKey']][$CIDRAM['DirKey']]['default']) && $CIDRAM['Request']->inCsv(
                                     $CIDRAM['ChoiceKey'],
                                     $CIDRAM['Config']['Config Defaults'][$CIDRAM['CatKey']][$CIDRAM['DirKey']]['default']
-                                ) ? 'true' : 'false',
+                                ) ? 'true' : 'false'
                             );
                         }
                     } elseif (isset($CIDRAM['DirValue']['style']) && $CIDRAM['DirValue']['style'] === 'radio') {

@@ -1168,7 +1168,7 @@ class FrontEnd extends Core
                 ) . "\n";
                 $CatData = '';
                 foreach ($CatValue as $DirKey => $DirValue) {
-                    $ThisDir = ['Preview' => '', 'Trigger' => '', 'FieldOut' => '', 'CatKey' => $CatKey];
+                    $ThisDir = ['Reset' => '', 'Preview' => '', 'Trigger' => '', 'FieldOut' => '', 'CatKey' => $CatKey];
                     if (empty($DirValue['type']) || !isset($this->Configuration[$CatKey][$DirKey])) {
                         continue;
                     }
@@ -1433,6 +1433,14 @@ class FrontEnd extends Core
                                                 $DirValue['gridV'],
                                                 $DirValue['gridH']
                                             );
+                                            $ThisDir['Reset'] .= sprintf(
+                                                'document.getElementById(\'%s\').checked=%s;',
+                                                $ThisDir['DirLangKey'] . '_' . $ChoiceKey . '_' . $DirValue['ThisLabelKey'],
+                                                isset($this->CIDRAM['Config Defaults'][$CatKey][$DirKey]['default']) && preg_match(
+                                                    '~(?:^|\n)' . preg_quote($ChoiceKey . ':' . $DirValue['ThisLabelKey']) . '(?:\n|$)~i',
+                                                    $this->CIDRAM['Config Defaults'][$CatKey][$DirKey]['default']
+                                                ) ? 'true' : 'false',
+                                            );
                                         }
                                     }
                                     $ThisDir['FieldOut'] .= sprintf(
@@ -1452,6 +1460,14 @@ class FrontEnd extends Core
                                         $ChoiceValue,
                                         $ThisDir['Trigger'],
                                         $DirValue['gridH']
+                                    );
+                                    $ThisDir['Reset'] .= sprintf(
+                                        'document.getElementById(\'%s\').checked=%s;',
+                                        $ThisDir['DirLangKey'] . '_' . $ChoiceKey,
+                                        isset($this->CIDRAM['Config Defaults'][$CatKey][$DirKey]['default']) && preg_match(
+                                            '~(?:^|\n)' . preg_quote($ChoiceKey) . '(?:\n|$)~i',
+                                            $this->CIDRAM['Config Defaults'][$CatKey][$DirKey]['default']
+                                        ) ? 'true' : 'false',
                                     );
                                 }
                             } elseif (isset($DirValue['style']) && $DirValue['style'] === 'radio') {
@@ -1480,6 +1496,15 @@ class FrontEnd extends Core
                                         $ChoiceKey
                                     );
                                 }
+                                if (
+                                    isset($this->CIDRAM['Config Defaults'][$CatKey][$DirKey]['default']) &&
+                                    $ChoiceKey === $this->CIDRAM['Config Defaults'][$CatKey][$DirKey]['default']
+                                ) {
+                                    $ThisDir['Reset'] .= sprintf(
+                                        'document.getElementById(\'%s\').checked=true;',
+                                        $ThisDir['DirLangKey'] . '_' . $ChoiceKey
+                                    );
+                                }
                             } else {
                                 $ThisDir['FieldOut'] .= sprintf(
                                     '<option style="text-transform:capitalize" value="%s"%s>%s</option>',
@@ -1487,6 +1512,16 @@ class FrontEnd extends Core
                                     $ChoiceKey === $this->Configuration[$CatKey][$DirKey] ? ' selected' : '',
                                     $ChoiceValue
                                 );
+                                if (
+                                    isset($this->CIDRAM['Config Defaults'][$CatKey][$DirKey]['default']) &&
+                                    $ChoiceKey === $this->CIDRAM['Config Defaults'][$CatKey][$DirKey]['default']
+                                ) {
+                                    $ThisDir['Reset'] .= sprintf(
+                                        'document.getElementById(\'%s_field\').value=\'%s\';',
+                                        $ThisDir['DirLangKey'],
+                                        addcslashes($ChoiceKey, "\n'\"\\")
+                                    );
+                                }
                             }
                         }
                         if (
@@ -1515,6 +1550,11 @@ class FrontEnd extends Core
                             ($this->Configuration[$CatKey][$DirKey] ? ' selected' : ''),
                             ($this->Configuration[$CatKey][$DirKey] ? '' : ' selected')
                         );
+                        $ThisDir['Reset'] .= sprintf(
+                            'document.getElementById(\'%s_field\').value=\'%s\';',
+                            $ThisDir['DirLangKey'],
+                            empty($this->CIDRAM['Config Defaults'][$CatKey][$DirKey]['default']) ? 'false' : 'true'
+                        );
                     } elseif (in_array($DirValue['type'], ['float', 'int'], true)) {
                         $ThisDir['FieldOut'] = sprintf(
                             '<input type="number" name="%1$s" id="%1$s_field" value="%2$s"%3$s%4$s%5$s />',
@@ -1524,6 +1564,13 @@ class FrontEnd extends Core
                             $ThisDir['Trigger'],
                             ($DirValue['type'] === 'int' ? ' inputmode="numeric"' : '')
                         );
+                        if (isset($this->CIDRAM['Config Defaults'][$CatKey][$DirKey]['default'])) {
+                            $ThisDir['Reset'] .= sprintf(
+                                'document.getElementById(\'%s_field\').value=%s;',
+                                $ThisDir['DirLangKey'],
+                                $this->CIDRAM['Config Defaults'][$CatKey][$DirKey]['default']
+                            );
+                        }
                     } elseif ($DirValue['type'] === 'url' || (
                         empty($DirValue['autocomplete']) && $DirValue['type'] === 'string'
                     )) {
@@ -1534,6 +1581,13 @@ class FrontEnd extends Core
                             $ThisDir['Trigger'],
                             $this->Configuration[$CatKey][$DirKey]
                         );
+                        if (isset($this->CIDRAM['Config Defaults'][$CatKey][$DirKey]['default'])) {
+                            $ThisDir['Reset'] .= sprintf(
+                                'document.getElementById(\'%s_field\').value=\'%s\';',
+                                $ThisDir['DirLangKey'],
+                                addcslashes($this->CIDRAM['Config Defaults'][$CatKey][$DirKey]['default'], "\n'\"\\")
+                            );
+                        }
                     } else {
                         $ThisDir['FieldOut'] = sprintf(
                             '<input type="text" name="%1$s" id="%1$s_field" value="%2$s"%3$s%4$s />',
@@ -1542,6 +1596,13 @@ class FrontEnd extends Core
                             $ThisDir['autocomplete'],
                             $ThisDir['Trigger']
                         );
+                        if (isset($this->CIDRAM['Config Defaults'][$CatKey][$DirKey]['default'])) {
+                            $ThisDir['Reset'] .= sprintf(
+                                'document.getElementById(\'%s_field\').value=\'%s\';',
+                                $ThisDir['DirLangKey'],
+                                addcslashes($this->CIDRAM['Config Defaults'][$CatKey][$DirKey]['default'], "\n'\"\\")
+                            );
+                        }
                     }
                     $ThisDir['FieldOut'] .= $ThisDir['Preview'];
 
@@ -1603,6 +1664,15 @@ class FrontEnd extends Core
                             );
                         }
                         $ThisDir['FieldOut'] .= "\n</ul>";
+                    }
+
+                    /** Reset to defaults. */
+                    if ($ThisDir['Reset'] !== '') {
+                        $ThisDir['FieldOut'] .= sprintf(
+                            '<br /><br /><input type="button" class="reset" onclick="javascript:%s" value="↺ %s" />',
+                            $ThisDir['Reset'],
+                            $this->L10N->getString('field_reset')
+                        );
                     }
 
                     /** Finalise configuration row. */

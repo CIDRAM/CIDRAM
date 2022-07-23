@@ -170,3 +170,5 @@ input[type=text][pattern]:invalid:not(input[type=text]:placeholder-shown){backgr
 .subNav{text-align:center;font-size:calc((10px * {magnification}) + .03vw);color:rgba(36,41,46,.6);text-shadow:2px 2px 1px rgba(0,0,0,.2)}
 .fBlur{filter:contrast(.8) blur(.5px);transition:all .3s ease-out}
 .fBlur:hover,.fBlur:active{filter:contrast(1) blur(0)}
+input[type=button].reset{box-shadow:none;background:none;cursor:pointer;border:none;padding:0 12px 0 12px;margin:0;width:auto;color:#cb2431}
+input[type=button].reset:hover,input[type=button].reset:active{color:#f88}

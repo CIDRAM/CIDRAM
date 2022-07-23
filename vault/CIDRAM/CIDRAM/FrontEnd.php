@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM front-end (last modified: 2022.07.21).
+ * This file: The CIDRAM front-end (last modified: 2022.07.24).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -1439,7 +1439,7 @@ class FrontEnd extends Core
                                                 isset($this->CIDRAM['Config Defaults'][$CatKey][$DirKey]['default']) && preg_match(
                                                     '~(?:^|\n)' . preg_quote($ChoiceKey . ':' . $DirValue['ThisLabelKey']) . '(?:\n|$)~i',
                                                     $this->CIDRAM['Config Defaults'][$CatKey][$DirKey]['default']
-                                                ) ? 'true' : 'false',
+                                                ) ? 'true' : 'false'
                                             );
                                         }
                                     }
@@ -1467,7 +1467,7 @@ class FrontEnd extends Core
                                         isset($this->CIDRAM['Config Defaults'][$CatKey][$DirKey]['default']) && preg_match(
                                             '~(?:^|\n)' . preg_quote($ChoiceKey) . '(?:\n|$)~i',
                                             $this->CIDRAM['Config Defaults'][$CatKey][$DirKey]['default']
-                                        ) ? 'true' : 'false',
+                                        ) ? 'true' : 'false'
                                     );
                                 }
                             } elseif (isset($DirValue['style']) && $DirValue['style'] === 'radio') {

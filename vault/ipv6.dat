@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6.dat
 
-# Version: 2022.201.0
-# Last modified: 2022.07.21
+# Version: 2022.204.0
+# Last modified: 2022.07.24
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -4582,15 +4582,15 @@ Tag: Cloud Sigma
 
 
 # ASN 3064 ("Affinity Internet, Inc").
-# Stop Forum Spam (SFS) listings: 1,656.
-# Updated: 2017.10.23 / Checked: 2022.02.07
+# Stop Forum Spam (SFS) listings: 2.
+# Updated: 2017.10.23 / Checked: 2022.07.22
 
 2407:2080::/32 Deny Cloud
 Origin: AU
 2602:ff82::/48 Deny Cloud
 2606:7e00:ff00::/40 Deny Cloud
 Origin: US
-Profile: Tor endpoints here
+Profile: Advertiser;Tor endpoints here
 Tag: Affinity Internet, Inc
 
 
@@ -6506,12 +6506,12 @@ Tag: Next Layer
 # ASN 62744 ("Quintex Alliance Consulting").
 # Caught probing honeypots for vulnerabilities + significant source of spam.
 # Subtract 44.0.0.0/9, 44.128.0.0/10 (clean).
-# Stop Forum Spam (SFS) listings: 62,732.
-# Updated: 2019.05.25 / Checked: 2022.02.07
+# Stop Forum Spam (SFS) listings: 41,720.
+# Updated: 2019.05.25 / Checked: 2022.07.22
 
 2620:7:6000::/47 Deny Cloud
 Origin: US
-Profile: Tor endpoints here
+Profile: Restricted/Unidentifiable;Tor endpoints here
 Tag: Quintex
 
 
@@ -9467,16 +9467,19 @@ Profile: Webhosting
 Tag: Websupport s.r.o
 
 
-# ASNs 24940, 37153 ("Hetzner Online GmbH").
-# Stop Forum Spam (SFS) listings: 42,361 (AS24940), 37 (AS37153).
-# Updated: 2022.03.06
+# ASNs 24940, 37153, 212317, 213230 ("Hetzner Online GmbH").
+# Stop Forum Spam (SFS) listings: 40,302 (AS24940), 24 (AS37153), 801 (AS213230).
+# Updated: 2022.07.24
 
-2001:67c:1164::/48 Deny Cloud
+2a11:840:32::/48 Deny Cloud
+Origin: CA
 2a01:4f8::/31 Deny Cloud
+2a01:4ff::/39 Deny Cloud
 2a01:4ff:ff01::/48 Deny Cloud
 2a01:b140::/29 Deny Cloud
 2a06:be80::/29 Deny Cloud
 2a0e:2c80::/29 Deny Cloud
+2a11:48c0::/29 Deny Cloud
 2a11:e980::/29 Deny Cloud
 2a12:e00::/29 Deny Cloud
 Origin: DE
@@ -9825,8 +9828,8 @@ Tag: SYNLINQ
 # ASN 44679 ("INVITE Systems SRL").
 # Romanian marketing firm. Brute-force, SQLi, XMLRPC, and webapp attacks,
 # hacking, credential stuffing, port scans, and spam detected from here.
-# Stop Forum Spam (SFS) listings: 235.
-# Updated: 2021.10.20
+# Stop Forum Spam (SFS) listings: 3,725.
+# Updated: 2021.10.20 / Checked: 2022.07.22
 
 2a02:2160:8000::/36 Deny Attacks
 Origin: RO

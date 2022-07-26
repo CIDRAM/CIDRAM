@@ -1,8 +1,8 @@
 # IPv4 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv4.dat
 
-# Version: 2022.201.0
-# Last modified: 2022.07.21
+# Version: 2022.204.0
+# Last modified: 2022.07.24
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -17035,8 +17035,8 @@ Tag: Cloud Sigma
 
 
 # ASN 3064 ("Affinity Internet, Inc").
-# Stop Forum Spam (SFS) listings: 1,656.
-# Updated: 2020.12.15 / Checked: 2022.02.07
+# Stop Forum Spam (SFS) listings: 2.
+# Updated: 2020.12.15 / Checked: 2022.07.22
 
 117.74.96.0/20 Deny Cloud
 Origin: AU
@@ -17060,7 +17060,7 @@ Origin: GB
 64.41.102.0/23 Deny Cloud
 64.41.116.0/23 Deny Cloud
 64.41.122.0/24 Deny Cloud
-64.41.126.0/23 Deny Cloud
+64.41.126.0/24 Deny Cloud
 64.66.156.0/24 Deny Cloud
 64.66.158.0/24 Deny Cloud
 64.70.128.0/17 Deny Cloud
@@ -17110,7 +17110,7 @@ Origin: GB
 216.219.128.0/17 Deny Cloud
 216.230.192.0/24 Deny Cloud
 Origin: US
-Profile: Tor endpoints here
+Profile: Advertiser;Tor endpoints here
 Tag: Affinity Internet, Inc
 
 
@@ -26291,14 +26291,15 @@ Tag: Next Layer
 # ASN 62744 ("Quintex Alliance Consulting").
 # Caught probing honeypots for vulnerabilities + significant source of spam.
 # Subtract 44.0.0.0/9, 44.128.0.0/10 (clean).
-# Stop Forum Spam (SFS) listings: 62,732.
-# Updated: 2022.02.07
+# Stop Forum Spam (SFS) listings: 41,720.
+# Updated: 2022.07.22
 
+23.130.104.0/22 Deny Cloud
 199.249.223.0/24 Deny Cloud
 199.249.224.0/23 Deny Cloud
 199.249.230.0/23 Deny Cloud
 Origin: US
-Profile: Tor endpoints here
+Profile: Restricted/Unidentifiable;Tor endpoints here
 Tag: Quintex
 
 
@@ -28541,7 +28542,7 @@ Tag: Network Dedicated SAS
 # ASN 133618 ("Trellian Pty. Limited").
 # Cloud provider for marketing and advertising.
 # Brute-force, SSH, SQLi, and IoT attacks detected from here.
-# Updated: 2016.03.16 / Modified: 2020.02.25 / Checked: 2021.11.27
+# Updated: 2016.03.16 / Modified: 2020.02.25 / Checked: 2022.07.22
 
 103.224.182.0/23 Deny Cloud
 103.224.212.0/23 Deny Cloud
@@ -34745,14 +34746,16 @@ Profile: Webhosting
 Tag: Websupport s.r.o
 
 
-# ASNs 24940, 37153 ("Hetzner Online GmbH").
-# Stop Forum Spam (SFS) listings: 42,361 (AS24940), 37 (AS37153).
-# Updated: 2022.03.06
+# ASNs 24940, 37153, 212317, 213230 ("Hetzner Online GmbH").
+# Stop Forum Spam (SFS) listings: 40,302 (AS24940), 24 (AS37153), 801 (AS213230).
+# Updated: 2022.07.24
 
 83.219.100.0/22 Deny Cloud
 Origin: CH
 5.9.0.0/16 Deny Cloud
 5.75.128.0/17 Deny Cloud
+5.78.0.0/16 Deny Cloud
+5.161.0.0/16 Deny Cloud
 23.88.0.0/17 Deny Cloud
 45.15.120.0/22 Deny Cloud
 46.4.0.0/16 Deny Cloud
@@ -34768,6 +34771,7 @@ Origin: CH
 91.190.240.0/21 Deny Cloud
 91.233.8.0/22 Deny Cloud
 94.130.0.0/16 Deny Cloud
+94.154.121.0/24 Deny Cloud
 95.216.0.0/15 Deny Cloud
 116.202.0.0/15 Deny Cloud
 128.140.0.0/17 Deny Cloud
@@ -34799,6 +34803,7 @@ Origin: CH
 185.171.224.0/22 Deny Cloud
 185.189.228.0/22 Deny Cloud
 185.209.124.0/22 Deny Cloud
+185.213.45.0/24 Deny Cloud
 185.216.237.0/24 Deny Cloud
 185.226.99.0/24 Deny Cloud
 185.228.8.0/23 Deny Cloud
@@ -34808,7 +34813,6 @@ Origin: CH
 193.25.170.0/23 Deny Cloud
 193.110.6.0/23 Deny Cloud
 193.163.198.0/24 Deny Cloud
-193.223.77.0/24 Deny Cloud
 194.35.12.0/23 Deny Cloud
 194.62.106.0/24 Deny Cloud
 194.233.145.0/24 Deny Cloud
@@ -34832,7 +34836,7 @@ Origin: MX
 Origin: RU
 169.239.152.0/22 Deny Cloud
 196.251.94.0/23 Deny Cloud
-196.251.96.0/24 Deny Cloud
+196.251.96.0/22 Deny Cloud
 196.251.113.0/24 Deny Cloud
 196.251.114.0/23 Deny Cloud
 196.251.116.0/22 Deny Cloud
@@ -36140,14 +36144,13 @@ Tag: SYNLINQ
 # ASN 44679 ("INVITE Systems SRL").
 # Romanian marketing firm. Brute-force, SQLi, XMLRPC, and webapp attacks,
 # hacking, credential stuffing, port scans, and spam detected from here.
-# Stop Forum Spam (SFS) listings: 235.
-# Updated: 2021.10.20
+# Stop Forum Spam (SFS) listings: 3,725.
+# Updated: 2022.07.22
 
 81.180.244.0/24 Deny Attacks
 84.239.4.0/24 Deny Attacks
 84.239.8.0/23 Deny Attacks
 84.239.11.0/24 Deny Attacks
-84.239.13.0/24 Deny Attacks
 84.239.14.0/23 Deny Attacks
 84.239.27.0/24 Deny Attacks
 84.239.32.0/21 Deny Attacks

@@ -1,8 +1,8 @@
 # IPv6 signatures file (CIDRs for proxies, VPNs and other miscellaneous unwanted services).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6_other.dat
 
-# Version: 2022.56.0
-# Last modified: 2022.02.26
+# Version: 2022.202.0
+# Last modified: 2022.07.22
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -11,29 +11,32 @@
 
 # ---
 # ASN 205100 ("F3 Netze e.V").
-# Provides tor exit nodes. A significant source of spam.
+# Tor provider. Huge amounts of brute-force, SSH, webapp, WordPress/XMLRPC,
+# DDoS, and phishing attacks, hacking, port scans, sniffing for
+# vulnerabilities, IMAP flooding, and spam detected from here.
 # Caught masquerading as Baidu while sniffing for vulnerabilities.
-# Stop Forum Spam (SFS) listings: 143,634.
-# Updated: 2021.08.26 / Checked: 2022.02.26
+# Stop Forum Spam (SFS) listings: 88,221.
+# Updated: 2021.08.26 / Modified: 2022.07.22
 
-2a0b:f4c0::/40 Deny Proxy
-2a0b:f4c0:100::/48 Deny Proxy
-2a0b:f4c0:16c::/48 Deny Proxy
-2a0b:f4c0:1a4::/48 Deny Proxy
-2a0b:f4c0:1b4::/48 Deny Proxy
-2a0b:f4c0:400::/48 Deny Proxy
+2a0b:f4c0::/40 Deny Attacks
+2a0b:f4c0:100::/48 Deny Attacks
+2a0b:f4c0:16c::/48 Deny Attacks
+2a0b:f4c0:1a4::/48 Deny Attacks
+2a0b:f4c0:1b4::/48 Deny Attacks
+2a0b:f4c0:400::/48 Deny Attacks
 Origin: DE
 Profile: Tor endpoints here
 Tag: F3 Netze e.V
 
 
 # ASN 396507 ("Emerald Onion").
-# Anonymous tor endpoints here; Significant source of spam.
+# Tor provider. Significant source of spam.
 # Caught masquerading as Baidu while sniffing for vulnerabilities.
-# Stop Forum Spam (SFS) listings: 25,653.
-# Updated: 2019.05.03 / Checked: 2022.02.26
+# Stop Forum Spam (SFS) listings: 12,018.
+# Updated: 2022.07.22
 
-2620:18c::/36 Deny Proxy
+2620:18c:1::/48 Deny Proxy
+2620:18c:f1::/48 Deny Proxy
 Origin: US
 Profile: Tor endpoints here
 Tag: Emerald Onion
@@ -42,7 +45,7 @@ Tag: Emerald Onion
 # Octopusnet VPN (mostly from AS44724, but we'll update via announces instead,
 # because we don't need to block the entire ASN, and there could be stray CIDRs
 # too). Proxy service with a history of spam events.
-# Updated: 2019.12.14 / Checked: 2021.12.23
+# Updated: 2019.12.14 / Checked: 2022.07.22
 
 2a04:db80::/32 Deny Proxy
 Origin: RU

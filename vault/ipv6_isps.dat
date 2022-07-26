@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6_isps.dat
 
-# Version: 2022.201.0
-# Last modified: 2022.07.21
+# Version: 2022.206.0
+# Last modified: 2022.07.26
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -512,18 +512,6 @@ Tag: Star Telecom S/A
 Origin: RU
 Profile: Domestic ISP
 Tag: PJSC Moscow city
-
-
-# ASN 17971 ("TM-VADS DC Hosting").
-# A Malaysian multiplay network (offers primarily webhosting), but also a
-# source of brute-force and SSH attacks. Listing just the affected
-# ranges/addresses for now, plus confirmed hoster/cloud ranges.
-# Updated: 2021.02.07 / Checked: 2021.09.24
-
-2401:b000::/32 Deny Cloud
-Origin: MY
-Profile: Domestic ISP;Multiplay;Webhosting
-Tag: TM-VADS DC Hosting
 
 
 # ASNs 7725, 7922, 33661, 33668 ("Comcast Cable Communications, LLC").

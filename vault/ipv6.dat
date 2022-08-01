@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6.dat
 
-# Version: 2022.204.0
-# Last modified: 2022.07.24
+# Version: 2022.212.0
+# Last modified: 2022.08.01
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -2980,8 +2980,8 @@ Tag: Sia Nano IT
 
 # ASNs 8987, 14618, 16509 ("Amazon.com, Inc").
 # Refer also ip-ranges.amazonaws.com/ip-ranges.json
-# Stop Forum Spam (SFS) listings: 1 (AS8987), 18,802 (AS14618), 39,542 (AS16509).
-# Updated: 2022.05.16
+# Stop Forum Spam (SFS) listings: 1 (AS8987), 21,394 (AS14618), 41,100 (AS16509).
+# Updated: 2022.08.01
 
 2a11:5ec0::/48 Run bypasses.php
 Origin: AT
@@ -2990,6 +2990,8 @@ Origin: AT
 2401:1d80:3000::/47 Run bypasses.php
 2403:5f40:ca05::/48 Run bypasses.php
 2403:b300::/32 Run bypasses.php
+2407:30c0:100::/44 Run bypasses.php
+2407:30c0:110::/47 Run bypasses.php
 Origin: AU
 2a0b:8780::/48 Run bypasses.php
 Origin: BE
@@ -3015,10 +3017,14 @@ Origin: CA
 2a00:4bc0:2128::/46 Run bypasses.php
 2a00:4bc0:212c::/47 Run bypasses.php
 2a00:4bc0:212e::/48 Run bypasses.php
-2a00:4bc0:2130::/46 Run bypasses.php
-2a00:4bc0:2134::/47 Run bypasses.php
+2a00:4bc0:2130::/45 Run bypasses.php
+2a00:4bc0:2138::/46 Run bypasses.php
+2a00:4bc0:213c::/48 Run bypasses.php
 2a06:56c1:1000::/48 Run bypasses.php
+2a06:e881:650f::/48 Run bypasses.php
 2a06:e881:73ff::/48 Run bypasses.php
+2a06:e881:9200::/48 Run bypasses.php
+2a06:e881:9308::/48 Run bypasses.php
 Origin: CH
 2001:678:f64::/48 Run bypasses.php
 2a00:18e0:5::/48 Run bypasses.php
@@ -3036,6 +3042,7 @@ Origin: CH
 2a0a:d880:102::/48 Run bypasses.php
 2a0b:4080::/48 Run bypasses.php
 2a0b:6c81::/32 Run bypasses.php
+2a0d:2146:848a::/48 Run bypasses.php
 2a0f:340::/29 Run bypasses.php
 2a10:2307:ffff::/48 Run bypasses.php
 2a10:a100::/32 Run bypasses.php
@@ -3049,7 +3056,6 @@ Origin: DK
 2a12:1b80::/32 Run bypasses.php
 2a12:7280::/29 Run bypasses.php
 Origin: EE
-2001:678:2cc::/48 Run bypasses.php
 2001:67c:b4::/48 Run bypasses.php
 2001:67c:788::/48 Run bypasses.php
 2a00:e20:143::/48 Run bypasses.php
@@ -3060,12 +3066,22 @@ Origin: EE
 2a0a:2b00:20::/48 Run bypasses.php
 2a0b:4581::/48 Run bypasses.php
 2a0e:a780::/36 Run bypasses.php
+2a10:a700:100::/48 Run bypasses.php
+2a12:fc0::/44 Run bypasses.php
+2a13:2e00::/45 Run bypasses.php
+2a13:2e00:8::/47 Run bypasses.php
+2a13:2e00:40::/45 Run bypasses.php
+2a13:2e00:48::/47 Run bypasses.php
+2a13:2e01:9::/48 Run bypasses.php
+2a13:2e01:49::/48 Run bypasses.php
 Origin: GB
+2a05:d000:1000::/40 Run bypasses.php
 2a05:d000:2000::/40 Run bypasses.php
 2a05:d000:6000::/40 Run bypasses.php
 2a05:d000:a000::/40 Run bypasses.php
 2a05:d000:c000::/40 Run bypasses.php
 2a05:d000:e000::/40 Run bypasses.php
+2a05:d011::/36 Run bypasses.php
 2a05:d012::/36 Run bypasses.php
 2a05:d014::/35 Run bypasses.php
 2a05:d016::/36 Run bypasses.php
@@ -3073,6 +3089,7 @@ Origin: GB
 2a05:d01a::/36 Run bypasses.php
 2a05:d01c::/36 Run bypasses.php
 2a05:d01e::/36 Run bypasses.php
+2a05:d03a:1000::/40 Run bypasses.php
 2a05:d03a:2000::/40 Run bypasses.php
 2a05:d03a:4000::/40 Run bypasses.php
 2a05:d03a:6000::/40 Run bypasses.php
@@ -3091,6 +3108,9 @@ Origin: GB
 2a05:d050:4080::/44 Run bypasses.php
 2a05:d050:40a0::/44 Run bypasses.php
 2a05:d050:40c0::/44 Run bypasses.php
+2a05:d050:5040::/44 Run bypasses.php
+2a05:d050:5080::/44 Run bypasses.php
+2a05:d050:50c0::/44 Run bypasses.php
 2a05:d050:6040::/44 Run bypasses.php
 2a05:d050:6080::/44 Run bypasses.php
 2a05:d050:60c0::/44 Run bypasses.php
@@ -3121,15 +3141,19 @@ Origin: IT
 2400:6700::/32 Run bypasses.php
 Origin: JP
 2001:678:264::/48 Run bypasses.php
+2001:67c:144::/48 Run bypasses.php
 2a02:ef80::/48 Run bypasses.php
 2a03:5640:f000::/42 Run bypasses.php
 2a03:5640:f040::/48 Run bypasses.php
 2a03:5640:f042::/48 Run bypasses.php
+2a03:5640:f045::/48 Run bypasses.php
+2a03:5640:f046::/48 Run bypasses.php
 2a03:5640:f100::/42 Run bypasses.php
 2a03:5640:f143::/48 Run bypasses.php
 2a03:5640:f144::/47 Run bypasses.php
 2a03:5640:f200::/43 Run bypasses.php
 2a03:5640:f220::/45 Run bypasses.php
+2a03:5640:f228::/48 Run bypasses.php
 2a03:5640:f302::/48 Run bypasses.php
 2a03:5640:f500::/48 Run bypasses.php
 2a03:5640:f502::/47 Run bypasses.php
@@ -3139,17 +3163,20 @@ Origin: JP
 2a03:5640:f513::/48 Run bypasses.php
 2a03:5640:f514::/46 Run bypasses.php
 2a03:5640:f518::/47 Run bypasses.php
+2a03:5640:f51a::/48 Run bypasses.php
 2a03:5640:f530::/47 Run bypasses.php
 2a03:5640:f532::/48 Run bypasses.php
 2a03:5640:f560::/48 Run bypasses.php
-2a04:b902::/32 Run bypasses.php
 2a04:b907::/47 Run bypasses.php
+2a0f:e380::/48 Run bypasses.php
 2a12:3e40::/48 Run bypasses.php
 Origin: NL
 2403:e040:8000::/33 Run bypasses.php
 Origin: NZ
 2a11:bd80::/32 Run bypasses.php
 Origin: PT
+2a0f:e040:2::/48 Run bypasses.php
+Origin: SC
 2a10:ba00:bee5::/48 Run bypasses.php
 Origin: SE
 2001:df3:5580::/48 Run bypasses.php
@@ -3162,6 +3189,7 @@ Origin: TW
 2406:da00:1000::/40 Run bypasses.php
 2406:da00:2000::/40 Run bypasses.php
 2406:da00:6000::/40 Run bypasses.php
+2406:da00:7000::/40 Run bypasses.php
 2406:da00:9000::/40 Run bypasses.php
 2406:da00:a000::/40 Run bypasses.php
 2406:da00:e000::/40 Run bypasses.php
@@ -3170,6 +3198,7 @@ Origin: TW
 2406:da12::/36 Run bypasses.php
 2406:da14::/36 Run bypasses.php
 2406:da16::/36 Run bypasses.php
+2406:da17::/36 Run bypasses.php
 2406:da18::/36 Run bypasses.php
 2406:da19::/36 Run bypasses.php
 2406:da1a::/36 Run bypasses.php
@@ -3179,6 +3208,7 @@ Origin: TW
 2406:da70:2000::/40 Run bypasses.php
 2406:da70:4000::/40 Run bypasses.php
 2406:da70:6000::/40 Run bypasses.php
+2406:da70:7000::/40 Run bypasses.php
 2406:da70:8000::/40 Run bypasses.php
 2406:da70:9000::/40 Run bypasses.php
 2406:da70:a000::/40 Run bypasses.php
@@ -3310,6 +3340,7 @@ Origin: TW
 2600:1fa0:e040::/44 Run bypasses.php
 2600:1fa0:e080::/44 Run bypasses.php
 2600:1fa0:e0c0::/44 Run bypasses.php
+2600:3300::/26 Run bypasses.php
 2600:9000:1000::/48 Run bypasses.php
 2600:9000:1003::/48 Run bypasses.php
 2600:9000:1030::/48 Run bypasses.php
@@ -3417,13 +3448,14 @@ Origin: TW
 2600:9000:11d2::/47 Run bypasses.php
 2600:9000:11d4::/46 Run bypasses.php
 2600:9000:11d8::/48 Run bypasses.php
-2600:9000:11db::/48 Run bypasses.php
-2600:9000:11dc::/48 Run bypasses.php
+2600:9000:11da::/47 Run bypasses.php
+2600:9000:11dc::/47 Run bypasses.php
 2600:9000:11df::/48 Run bypasses.php
 2600:9000:11e0::/47 Run bypasses.php
+2600:9000:11e2::/48 Run bypasses.php
+2600:9000:11e4::/47 Run bypasses.php
 2600:9000:11e6::/48 Run bypasses.php
-2600:9000:1e01::/48 Run bypasses.php
-2600:9000:1e02::/47 Run bypasses.php
+2600:9000:1e00::/46 Run bypasses.php
 2600:9000:1e05::/48 Run bypasses.php
 2600:9000:1e08::/47 Run bypasses.php
 2600:9000:1e0c::/47 Run bypasses.php
@@ -3433,23 +3465,28 @@ Origin: TW
 2600:9000:1e1c::/46 Run bypasses.php
 2600:9000:1e20::/47 Run bypasses.php
 2600:9000:1e23::/48 Run bypasses.php
-2600:9000:1e25::/48 Run bypasses.php
-2600:9000:1e26::/47 Run bypasses.php
+2600:9000:1e24::/46 Run bypasses.php
 2600:9000:1e28::/47 Run bypasses.php
+2600:9000:1e2a::/48 Run bypasses.php
+2600:9000:1e2c::/48 Run bypasses.php
 2600:9000:1e2e::/48 Run bypasses.php
 2600:9000:1e32::/47 Run bypasses.php
 2600:9000:1e34::/47 Run bypasses.php
 2600:9000:1e36::/48 Run bypasses.php
 2600:9000:1e38::/47 Run bypasses.php
 2600:9000:1e3c::/47 Run bypasses.php
-2600:9000:1e41::/48 Run bypasses.php
+2600:9000:1e3f::/48 Run bypasses.php
+2600:9000:1e40::/47 Run bypasses.php
 2600:9000:1e42::/48 Run bypasses.php
-2600:9000:1e47::/48 Run bypasses.php
+2600:9000:1e45::/48 Run bypasses.php
+2600:9000:1e46::/47 Run bypasses.php
 2600:9000:1e49::/48 Run bypasses.php
 2600:9000:1e4a::/48 Run bypasses.php
 2600:9000:1e4f::/48 Run bypasses.php
-2600:9000:1e50::/48 Run bypasses.php
+2600:9000:1e50::/47 Run bypasses.php
+2600:9000:1e54::/47 Run bypasses.php
 2600:9000:1e56::/48 Run bypasses.php
+2600:9000:1e5d::/48 Run bypasses.php
 2600:9000:2000::/45 Run bypasses.php
 2600:9000:2008::/46 Run bypasses.php
 2600:9000:200c::/47 Run bypasses.php
@@ -3544,12 +3581,13 @@ Origin: TW
 2600:9000:2300::/45 Run bypasses.php
 2600:9000:2308::/46 Run bypasses.php
 2600:9000:230c::/48 Run bypasses.php
+2600:9000:230f::/48 Run bypasses.php
 2600:9000:2310::/47 Run bypasses.php
 2600:9000:2312::/48 Run bypasses.php
 2600:9000:2314::/46 Run bypasses.php
-2600:9000:2318::/48 Run bypasses.php
-2600:9000:231b::/48 Run bypasses.php
+2600:9000:2318::/46 Run bypasses.php
 2600:9000:231c::/48 Run bypasses.php
+2600:9000:231f::/48 Run bypasses.php
 2600:9000:2320::/48 Run bypasses.php
 2600:9000:2322::/47 Run bypasses.php
 2600:9000:2324::/46 Run bypasses.php
@@ -3567,23 +3605,32 @@ Origin: TW
 2600:9000:2350::/46 Run bypasses.php
 2600:9000:2354::/48 Run bypasses.php
 2600:9000:2356::/47 Run bypasses.php
+2600:9000:2358::/48 Run bypasses.php
 2600:9000:235b::/48 Run bypasses.php
 2600:9000:235c::/46 Run bypasses.php
-2600:9000:2360::/46 Run bypasses.php
-2600:9000:2364::/47 Run bypasses.php
-2600:9000:2366::/48 Run bypasses.php
+2600:9000:2360::/45 Run bypasses.php
 2600:9000:2368::/48 Run bypasses.php
 2600:9000:236a::/47 Run bypasses.php
-2600:9000:236e::/47 Run bypasses.php
+2600:9000:236c::/46 Run bypasses.php
 2600:9000:2370::/44 Run bypasses.php
-2600:9000:2381::/48 Run bypasses.php
-2600:9000:2384::/46 Run bypasses.php
-2600:9000:2388::/45 Run bypasses.php
+2600:9000:2380::/44 Run bypasses.php
+2600:9000:2391::/48 Run bypasses.php
+2600:9000:2392::/48 Run bypasses.php
 2600:9000:2394::/48 Run bypasses.php
+2600:9000:2396::/48 Run bypasses.php
+2600:9000:2398::/46 Run bypasses.php
+2600:9000:239c::/48 Run bypasses.php
+2600:9000:239f::/48 Run bypasses.php
 2600:9000:23c0::/46 Run bypasses.php
-2600:9000:23c4::/48 Run bypasses.php
+2600:9000:23c4::/47 Run bypasses.php
+2600:9000:23c7::/48 Run bypasses.php
+2600:9000:23ca::/47 Run bypasses.php
 2600:9000:23d0::/46 Run bypasses.php
 2600:9000:23d4::/48 Run bypasses.php
+2600:9000:23e1::/48 Run bypasses.php
+2600:9000:23e3::/48 Run bypasses.php
+2600:9000:23e4::/48 Run bypasses.php
+2600:9000:23e7::/48 Run bypasses.php
 2600:9000:2452::/48 Run bypasses.php
 2600:9000:245a::/47 Run bypasses.php
 2600:9000:2461::/48 Run bypasses.php
@@ -3592,6 +3639,14 @@ Origin: TW
 2600:9000:2488::/48 Run bypasses.php
 2600:9000:248c::/46 Run bypasses.php
 2600:9000:2490::/46 Run bypasses.php
+2600:9000:24c0::/45 Run bypasses.php
+2600:9000:24d0::/45 Run bypasses.php
+2600:9000:24e0::/46 Run bypasses.php
+2600:9000:24e4::/47 Run bypasses.php
+2600:9000:24e8::/47 Run bypasses.php
+2600:9000:24f0::/46 Run bypasses.php
+2600:9000:24f4::/47 Run bypasses.php
+2600:9000:24f8::/47 Run bypasses.php
 2600:9000:5300::/45 Run bypasses.php
 2600:9000:a100::/48 Run bypasses.php
 2600:9000:a102::/48 Run bypasses.php
@@ -3612,6 +3667,10 @@ Origin: TW
 2600:9000:f140::/48 Run bypasses.php
 2600:9000:f150::/48 Run bypasses.php
 2600:9000:f530::/47 Run bypasses.php
+2600:f000::/48 Run bypasses.php
+2600:f000:8000::/48 Run bypasses.php
+2600:f00c::/48 Run bypasses.php
+2600:f00c:8000::/48 Run bypasses.php
 2602:806:7008::/46 Run bypasses.php
 2602:806:700c::/47 Run bypasses.php
 2602:806:700e::/48 Run bypasses.php
@@ -3625,7 +3684,10 @@ Origin: TW
 2602:80a:200c::/48 Run bypasses.php
 2602:80c::/47 Run bypasses.php
 2602:80c:4::/48 Run bypasses.php
-2602:80f:9000::/48 Run bypasses.php
+2602:80f:9000::/47 Run bypasses.php
+2602:80f:9002::/48 Run bypasses.php
+2602:810:6009::/48 Run bypasses.php
+2602:fb6a:110::/48 Run bypasses.php
 2602:fb7b:3f::/48 Run bypasses.php
 2602:fba8:f00::/48 Run bypasses.php
 2602:fbd0:10::/47 Run bypasses.php
@@ -3649,6 +3711,13 @@ Origin: TW
 2602:fdeb:13::/48 Run bypasses.php
 2602:fdeb:14::/46 Run bypasses.php
 2602:fdeb:18::/47 Run bypasses.php
+2602:fdeb:20::/46 Run bypasses.php
+2602:fdeb:24::/47 Run bypasses.php
+2602:fdeb:27::/48 Run bypasses.php
+2602:fdeb:28::/47 Run bypasses.php
+2602:fdeb:30::/45 Run bypasses.php
+2602:fdeb:38::/47 Run bypasses.php
+2602:fdeb:40::/48 Run bypasses.php
 2604:bc40:6000::/48 Run bypasses.php
 2604:bc40:6110::/48 Run bypasses.php
 2604:f700::/47 Run bypasses.php
@@ -3658,6 +3727,7 @@ Origin: TW
 2605:9cc0:378::/48 Run bypasses.php
 2605:9cc0:40c::/48 Run bypasses.php
 2605:9cc0:450::/48 Run bypasses.php
+2605:9cc0:1ff0::/48 Run bypasses.php
 2605:a7c0:100::/45 Run bypasses.php
 2605:a7c0:108::/46 Run bypasses.php
 2605:a7c0:10c::/47 Run bypasses.php
@@ -3678,6 +3748,7 @@ Origin: TW
 2605:a7c0:15c::/47 Run bypasses.php
 2605:dd40:8260::/44 Run bypasses.php
 2605:dd40:8570::/44 Run bypasses.php
+2605:dd40:8700::/44 Run bypasses.php
 2605:dd40:8880::/44 Run bypasses.php
 2605:dd40:8990::/44 Run bypasses.php
 2605:dd40:8f00::/44 Run bypasses.php
@@ -3712,11 +3783,14 @@ Origin: TW
 2620:104:6003::/48 Run bypasses.php
 2620:107:3001::/48 Run bypasses.php
 2620:107:300f::/48 Run bypasses.php
+2620:107:4002::/47 Run bypasses.php
+2620:107:4004::/47 Run bypasses.php
 2620:108:7000::/44 Run bypasses.php
 2620:108:d000::/44 Run bypasses.php
 2620:116:800a::/47 Run bypasses.php
 2620:116:800c::/47 Run bypasses.php
 2620:116:800e::/48 Run bypasses.php
+2620:119:b00f::/48 Run bypasses.php
 2620:121:5070::/47 Run bypasses.php
 2620:123:20f9::/48 Run bypasses.php
 2620:131:1065::/48 Run bypasses.php
@@ -4030,9 +4104,8 @@ Tag: i3d B.V
 
 
 # ASNs 50673, 208685, 211895 ("Serverius Holding B.V").
-# Data center, colo, etc.
-# Stop Forum Spam (SFS) listings: 1,182 (AS50673), 6 (AS211895).
-# Updated: 2021.11.27
+# Stop Forum Spam (SFS) listings: 1,856 (AS50673), 169 (AS211895).
+# Updated: 2022.08.01
 
 2a0d:f300::/32 Deny Cloud
 Origin: AT
@@ -4045,10 +4118,8 @@ Origin: IN
 2a0c:480::/32 Deny Cloud
 Origin: LT
 2001:67c:b0::/48 Deny Cloud
-2001:7f8:b7::/48 Deny Cloud
 2a00:1ca8::/32 Deny Cloud
 2a00:1caa::/32 Deny Cloud
-2a00:8ee0::/32 Deny Cloud
 2a00:dfa0::/32 Deny Cloud
 2a02:1680::/32 Deny Cloud
 2a02:40c0:1000::/48 Deny Cloud
@@ -4431,13 +4502,13 @@ Tag: D.E.Tech
 # ASNs 29873, 30380, 46606, 49392, 51659, 62729, 394695, 398343 ("The
 # Endurance International Group, Inc").
 # See also: onlinetoolsexpert.com/full-list-of-eig-web-hosting-companies/
-# Updated: 2022.03.11
+# Updated: 2022.08.01
 
 2a00:b700::/46 Deny Cloud
 2a00:b700:4::/47 Deny Cloud
 2a00:b700:f::/48 Deny Cloud
 2a00:b701::/32 Deny Cloud
-2a00:b702::/31 Deny Cloud
+2a00:b702::/32 Deny Cloud
 2a00:b704::/30 Deny Cloud
 2a06:1307::/32 Deny Cloud
 2a0d:3c43::/32 Deny Cloud
@@ -4857,12 +4928,13 @@ Tag: B2 Net Solutions
 
 
 # ASNs 24669, 34202, 62240, 206136, 206986 ("Clouvider Limited").
-# Stop Forum Spam (SFS) listings: 41,997 (AS62240).
-# Updated: 2022.05.04
+# Stop Forum Spam (SFS) listings: 74,364 (AS62240).
+# Updated: 2022.08.01
 
 2a02:e00:ffe9::/48 Deny Cloud
 Origin: DE
 2a10:1fc0:7::/48 Deny Cloud
+2a10:1fc0:a::/48 Deny Cloud
 Origin: EE
 2a04:6400::/29 Deny Cloud
 2a04:92c0::/29 Deny Cloud
@@ -4890,21 +4962,23 @@ Origin: IN
 2a10:240::/29 Deny Cloud
 2a10:740::/29 Deny Cloud
 2a10:840::/29 Deny Cloud
-2a10:bc0::/29 Deny Cloud
+2a10:bc1::/32 Deny Cloud
+2a10:bc2::/32 Deny Cloud
+2a10:bc7:4000::/34 Deny Cloud
+2a10:bc7:c000::/34 Deny Cloud
 2a11:58c0::/29 Deny Cloud
 Origin: LT
 2a06:2d40:2::/48 Deny Cloud
 Origin: NL
 2a09:3704::/32 Deny Cloud
 2a0a:f584::/32 Deny Cloud
+2a0c:7b84::/32 Deny Cloud
 2a0d:3c46::/32 Deny Cloud
 2a0e:eec5::/32 Deny Cloud
 2a0e:fb45::/32 Deny Cloud
 2a0f:3101::/32 Deny Cloud
 Origin: RU
 2a0f:140::/30 Deny Cloud
-2a0f:1201::/32 Deny Cloud
-2a0f:2100:171::/48 Deny Cloud
 2a0f:e6c2::/32 Deny Cloud
 Origin: SC
 2404:b980::/35 Deny Cloud
@@ -5218,13 +5292,13 @@ Tag: Oy Creanova Hosting
 
 # ASNs 43647, 49505, 50340, 61976 ("Selectel Ltd").
 # Data center + server farm; SSH and brute-force attacks; A source of spam.
-# Stop Forum Spam (SFS) listings: 77,669 (AS49505), 3,080 (AS50340), 8 (AS61976).
-# Updated: 2022.01.16 / Checked: 2022.06.15
+# Stop Forum Spam (SFS) listings: 56,297 (AS49505), 4,629 (AS50340), 8 (AS61976).
+# Updated: 2022.08.01
 
 2a00:ab00::/32 Deny Cloud
 Origin: RU
 2a0d:1642:1::/48 Deny Cloud
-Origin: SC
+Origin: VG
 Profile: Dedicated;Infrastructure/Transit;Webhosting
 Tag: Selectel Ltd
 
@@ -8493,9 +8567,11 @@ Tag: Beijing Baidu Netcom
 # port scanning encountered from this network. Caught by honeypots searching
 # for vulnerable login systems. Has been hitting my honeypots for a number of
 # years now on a daily basis.
-# Stop Forum Spam (SFS) listings: 18 (AS47869), 4,039 (AS211252), 1,709 (AS213035), 367 (AS399471).
-# Updated: 2022.03.02 / Checked: 2022.04.10
+# Stop Forum Spam (SFS) listings: 18 (AS47869), 2,465 (AS211252), 935 (AS213035), 366 (AS399471).
+# Updated: 2022.08.01
 
+2803:8080::/32 Deny Cloud
+Origin: AR
 2001:678:730::/48 Deny Cloud
 Origin: BE
 2a07:3b80::/29 Deny Cloud
@@ -8508,7 +8584,8 @@ Origin: NL
 Origin: SE
 2604:bc0:2::/48 Deny Cloud
 2604:bc0:8::/48 Deny Cloud
-2606:3f40::/32 Deny Cloud
+2606:3f40::/47 Deny Cloud
+2606:3f40:2::/48 Deny Cloud
 2606:ed00::/32 Deny Cloud
 2a07:5c0::/29 Deny Cloud
 Origin: US
@@ -9591,6 +9668,22 @@ Profile: Commercial;Infrastructure/Transit
 Tag: AxcelX Technologies LLC
 
 
+# ASNs 44222, 44477, 44676 ("Nuno Felgueiras", "STARK INDUSTRIES SOLUTIONS
+# LTD", "Perviy TSOD LLC"). Webhosting provider and server farm. Caught
+# repeatedly trying to hack into RDP. Caught trying to hack into honeypots.
+# Stop Forum Spam (SFS) listings: 8 (AS44222), 2 (AS44477), 414 (AS44676).
+# Updated: 2022.08.01
+
+2a0b:cf40::/31 Deny Cloud
+2a0b:cf42::/32 Deny Cloud
+2a11:3800::/29 Deny Cloud
+2a11:3c00::/32 Deny Cloud
+2a11:4c00::/29 Deny Cloud
+Origin: MD
+Profile: Webhosting
+Tag: IP Oleinichenko Denis
+
+
 # ASN 208091 ("XHOST INTERNET SOLUTIONS LP").
 # Webhosting provider and server farm. Caught repeatedly trying to hack into
 # RDP. Caught trying to hack into honeypots.
@@ -10591,13 +10684,40 @@ Profile: Dedicated;Webhosting
 Tag: CompleteWeb.Net LLC
 
 
+# ASN 200313 ("IT WEB LTD").
+# Russian webhosting provider based in the British Virgin Islands. Brute-force,
+# SSH, and webapp attacks, port scans, and spam detected from here.
+# Stop Forum Spam (SFS) listings: 139.
+# Updated: 2022.08.01
+
+2a0d:1640::/32 Deny Cloud
+2a0d:63c0::/31 Deny Cloud
+Origin: VG
+Profile: Webhosting
+Tag: IT WEB LTD
+
+
+# ASNs 204603, 210352 ("Partner LLC").
+# Russian webhosting provider. Brute-force, SSH, and webapp attacks, port
+# scans, and spam detected from here.
+# Stop Forum Spam (SFS) listings: 2 (AS204603), 1,536 (AS210352).
+# Updated: 2022.08.01
+
+2a00:b703:fff1::/48 Deny Cloud
+2a00:b703:fff2::/48 Deny Cloud
+2a05:546::/32 Deny Cloud
+Origin: RU
+Profile: Webhosting
+Tag: Partner LLC
+
+
 # ---
 # Microsoft Azure IPv6 CIDRs.
 # Refer microsoft.com/en-us/download/details.aspx?id=56519
 # Refer microsoft.com/en-us/download/details.aspx?id=57062
 # Refer microsoft.com/en-us/download/details.aspx?id=57063
 # Refer microsoft.com/en-us/download/details.aspx?id=57064
-# Updated: 2022.06.01
+# Updated: 2022.08.01
 
 2404:7940::/47 Run bypasses.php
 2404:7940:3::/48 Run bypasses.php
@@ -10620,7 +10740,8 @@ Tag: CompleteWeb.Net LLC
 2406:e500:2500:10::/64 Run bypasses.php
 2406:e500:2501::/59 Run bypasses.php
 2406:e500:2501:20::/61 Run bypasses.php
-2406:e500:2501:28::/64 Run bypasses.php
+2406:e500:2501:28::/63 Run bypasses.php
+2406:e500:2501:2a::/64 Run bypasses.php
 2406:e500:2600::/46 Run bypasses.php
 2406:e500:4400::/40 Run bypasses.php
 2406:e500:4800::/63 Run bypasses.php
@@ -10665,6 +10786,7 @@ Origin: DE
 2001:489a:3606::/48 Run bypasses.php
 2602:fd5e:1::/63 Run bypasses.php
 2602:fd5e:1:2::/64 Run bypasses.php
+2602:fd5e:2::/57 Run bypasses.php
 2603:1000::/47 Run bypasses.php
 2603:1000:3::/48 Run bypasses.php
 2603:1000:4::/47 Run bypasses.php
@@ -10784,17 +10906,15 @@ Origin: DE
 2603:1030:8::/48 Run bypasses.php
 2603:1030:9::/55 Run bypasses.php
 2603:1030:9:200::/57 Run bypasses.php
-2603:1030:9:280::/59 Run bypasses.php
-2603:1030:9:2a0::/60 Run bypasses.php
-2603:1030:9:2b0::/62 Run bypasses.php
-2603:1030:9:2b4::/63 Run bypasses.php
-2603:1030:9:2b6::/64 Run bypasses.php
+2603:1030:9:280::/58 Run bypasses.php
+2603:1030:9:2c0::/63 Run bypasses.php
+2603:1030:9:2c2::/64 Run bypasses.php
 2603:1030:a::/47 Run bypasses.php
 2603:1030:d::/48 Run bypasses.php
 2603:1030:e::/47 Run bypasses.php
 2603:1030:10::/47 Run bypasses.php
 2603:1030:12::/48 Run bypasses.php
-2603:1030:13::/56 Run bypasses.php
+2603:1030:13::/55 Run bypasses.php
 2603:1030:100::/59 Run bypasses.php
 2603:1030:100:20::/62 Run bypasses.php
 2603:1030:100:24::/63 Run bypasses.php
@@ -10814,11 +10934,8 @@ Origin: DE
 2603:1030:400::/48 Run bypasses.php
 2603:1030:401::/55 Run bypasses.php
 2603:1030:401:200::/56 Run bypasses.php
-2603:1030:401:300::/58 Run bypasses.php
-2603:1030:401:340::/59 Run bypasses.php
-2603:1030:401:360::/61 Run bypasses.php
-2603:1030:401:368::/63 Run bypasses.php
-2603:1030:401:36a::/64 Run bypasses.php
+2603:1030:401:300::/57 Run bypasses.php
+2603:1030:401:380::/62 Run bypasses.php
 2603:1030:402::/47 Run bypasses.php
 2603:1030:405::/48 Run bypasses.php
 2603:1030:406::/47 Run bypasses.php
@@ -10842,14 +10959,8 @@ Origin: DE
 2603:1030:608::/47 Run bypasses.php
 2603:1030:800::/48 Run bypasses.php
 2603:1030:802::/47 Run bypasses.php
-2603:1030:804::/56 Run bypasses.php
-2603:1030:804:100::/57 Run bypasses.php
-2603:1030:804:180::/58 Run bypasses.php
-2603:1030:804:1c0::/59 Run bypasses.php
-2603:1030:804:1e0::/60 Run bypasses.php
-2603:1030:804:1f0::/61 Run bypasses.php
-2603:1030:804:1f8::/62 Run bypasses.php
-2603:1030:804:1fc::/64 Run bypasses.php
+2603:1030:804::/55 Run bypasses.php
+2603:1030:804:200::/64 Run bypasses.php
 2603:1030:805::/48 Run bypasses.php
 2603:1030:806::/47 Run bypasses.php
 2603:1030:809::/48 Run bypasses.php
@@ -10866,6 +10977,7 @@ Origin: DE
 2603:1030:b03::/48 Run bypasses.php
 2603:1030:b04::/47 Run bypasses.php
 2603:1030:b06::/48 Run bypasses.php
+2603:1030:b07::/56 Run bypasses.php
 2603:1030:c00::/48 Run bypasses.php
 2603:1030:c02::/47 Run bypasses.php
 2603:1030:c04::/46 Run bypasses.php
@@ -11007,8 +11119,9 @@ Origin: DE
 2603:1061:1000::/46 Run bypasses.php
 2603:1061:1004::/59 Run bypasses.php
 2603:1061:1004:20::/60 Run bypasses.php
-2603:1061:1004:30::/63 Run bypasses.php
-2603:1061:1004:32::/64 Run bypasses.php
+2603:1061:1004:30::/62 Run bypasses.php
+2603:1061:1004:34::/63 Run bypasses.php
+2603:1061:1004:36::/64 Run bypasses.php
 2603:1062:2::/55 Run bypasses.php
 2603:1063:8::/56 Run bypasses.php
 2603:1063:9::/56 Run bypasses.php

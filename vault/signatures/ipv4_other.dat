@@ -1,8 +1,8 @@
 # IPv4 signatures file (CIDRs for proxies, VPNs and other miscellaneous unwanted services).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv4_other.dat
 
-# Version: 2022.202.0
-# Last modified: 2022.07.22
+# Version: 2022.216.0
+# Last modified: 2022.08.05
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -1176,49 +1176,54 @@ Tag: Web2Objects LLC
 
 
 # ASN 197640 ("OverPlay.Net LP").
-# A paid VPN provider and a source of spam.
-# Stop Forum Spam (SFS) listings: 3,405.
-# Updated: 2021.02.07 / Checked: 2021.09.24
+# A paid VPN provider. Brute-force and SQLi attacks, port scans, hacking, and
+# spam detected from here.
+# Stop Forum Spam (SFS) listings: 690.
+# Updated: 2022.08.05
 
-185.147.213.0/24 Deny Proxy
+185.147.213.0/24 Deny Attacks
 Origin: US
-Profile: Infrastructure/Transit
+Profile: Infrastructure/Transit;Tor endpoints here
 Tag: OverPlay.Net LP
 
 
 # ASN 209854 ("Surfshark Ltd").
 # A paid VPN provider. Brute-force and SSH attacks detected from here.
-# Stop Forum Spam (SFS) listings: 343.
-# Updated: 2021.11.03
+# Stop Forum Spam (SFS) listings: 500.
+# Updated: 2022.08.05
 
-31.169.120.0/22 Deny Proxy
-45.129.32.0/24 Deny Proxy
-45.134.224.0/24 Deny Proxy
-83.97.112.0/22 Deny Proxy
-176.227.240.0/23 Deny Proxy
+31.169.120.0/22 Deny Attacks
+45.129.32.0/24 Deny Attacks
+45.134.224.0/24 Deny Attacks
+83.97.112.0/22 Deny Attacks
+176.227.240.0/23 Deny Attacks
 Origin: DE
-194.41.112.0/23 Deny Proxy
-194.41.114.0/24 Deny Proxy
+196.44.118.0/24 Deny Attacks
+Origin: GH
+194.41.112.0/23 Deny Attacks
+194.41.114.0/24 Deny Attacks
 Origin: LT
-45.95.242.0/24 Deny Proxy
-45.130.137.0/24 Deny Proxy
-45.130.139.0/24 Deny Proxy
-45.149.3.0/24 Deny Proxy
-62.197.144.0/20 Deny Proxy
-91.190.100.0/24 Deny Proxy
-91.190.102.0/23 Deny Proxy
-91.206.168.0/24 Deny Proxy
-92.62.120.0/22 Deny Proxy
-94.154.124.0/24 Deny Proxy
-185.244.139.0/24 Deny Proxy
-193.218.35.0/24 Deny Proxy
-194.26.131.0/24 Deny Proxy
-194.169.168.0/22 Deny Proxy
-212.119.32.0/22 Deny Proxy
+45.95.242.0/24 Deny Attacks
+45.130.137.0/24 Deny Attacks
+45.135.184.0/24 Deny Attacks
+45.149.3.0/24 Deny Attacks
+62.197.144.0/20 Deny Attacks
+91.190.100.0/22 Deny Attacks
+91.206.168.0/24 Deny Attacks
+92.62.120.0/22 Deny Attacks
+94.154.124.0/24 Deny Attacks
+185.244.139.0/24 Deny Attacks
+193.218.35.0/24 Deny Attacks
+194.26.131.0/24 Deny Attacks
+194.169.168.0/22 Deny Attacks
+212.119.32.0/22 Deny Attacks
+213.109.151.0/24 Deny Attacks
 Origin: NL
-92.249.36.0/22 Deny Proxy
+113.203.221.0/24 Deny Attacks
+Origin: PK
+92.249.36.0/22 Deny Attacks
 Origin: VG
-Profile: Infrastructure/Transit
+Profile: Infrastructure/Transit;Tor endpoints here
 Tag: Surfshark Ltd
 
 
@@ -1232,3 +1237,21 @@ Tag: Surfshark Ltd
 Origin: HU
 Profile: Tor endpoints here
 Tag: ONION NETWORKS LTD
+
+
+# ASN 398355 ("Data Ideas llc").
+# Tor provider. Brute-force and webapp attacks, port scans, hacking, and spam
+# detected from here.
+# Stop Forum Spam (SFS) listings: 9,583.
+# Updated: 2022.08.05
+
+23.128.248.0/24 Deny Attacks
+38.81.163.0/24 Deny Proxy
+38.87.162.0/24 Deny Proxy
+64.112.124.0/22 Deny Proxy
+104.167.240.0/22 Deny Proxy
+144.172.118.0/23 Deny Attacks
+207.2.120.0/22 Deny Proxy
+Origin: US
+Profile: Tor endpoints here
+Tag: Data Ideas llc

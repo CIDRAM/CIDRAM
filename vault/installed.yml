@@ -313,13 +313,13 @@ IPv4:
  Extended Description: >
   Default IPv4 signatures normally included with the main package. Blocks unwanted cloud services and non-human endpoints.
  False Positive Risk: "Low"
- Version: "2022.212.0"
+ Version: "2022.216.0"
  Dependencies:
   Bypasses: ">=2022.172"
  Files:
   signatures/ipv4.dat:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/signatures/ipv4.dat"
-   Checksum: "23ddc61107c1551ed2d720096946aa5c60a4e9f27e7aa0c79c22942a5fc39e74:1083037"
+   Checksum: "5fc4b10e75ac016c6479a1226094eb0bf85a8ce0cfdcf1dd689343542d40f167:1096377"
    Used with: "ipv4"
 IPv4-Bogons:
  Extended Description: "Default IPv4 signatures normally included with the main package. Blocks bogon/martian CIDRs."
@@ -333,13 +333,13 @@ IPv4-Bogons:
 IPv4-ISPs:
  Extended Description: "Default IPv4 signatures normally included with the main package. Blocks dangerous and spammy ISPs."
  False Positive Risk: "Medium"
- Version: "2022.212.0"
+ Version: "2022.216.0"
  Dependencies:
   Bypasses: ">=2022.172"
  Files:
   signatures/ipv4_isps.dat:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/signatures/ipv4_isps.dat"
-   Checksum: "f58993739134f664cb6af244d39c45e4da8c338ee9a25416ccbe70aae715a956:572978"
+   Checksum: "5babdf5e8f8e79cf1b52bb14add196790850ef4d43143d05b9150be1b78aae86:579280"
    Used with: "ipv4"
 IPv4-Nonblocking:
  Extended Description: "Default IPv4 non-blocking signatures file."
@@ -354,23 +354,23 @@ IPv4-Other:
   Default IPv4 signatures normally included with the main package. Blocks CIDRs for proxies, VPNs, and other miscellaneous
   unwanted services.
  False Positive Risk: "Medium"
- Version: "2022.202.0"
+ Version: "2022.216.0"
  Files:
   signatures/ipv4_other.dat:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/signatures/ipv4_other.dat"
-   Checksum: "3fdeccdd37d09f47201cb7f34dbc15c157c4047be4a080417b9fe9d08d4b632c:32348"
+   Checksum: "07537a2fd8b8fb33548dbe508efe2bb5b127b065803eb7eb6f141fe73064d8c8:33003"
    Used with: "ipv4"
 IPv6:
  Extended Description: >
   Default IPv6 signatures normally included with the main package. Blocks unwanted cloud services and non-human endpoints.
  False Positive Risk: "Low"
- Version: "2022.212.0"
+ Version: "2022.216.0"
  Dependencies:
   Bypasses: ">=2022.172"
  Files:
   signatures/ipv6.dat:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/signatures/ipv6.dat"
-   Checksum: "aec60e597b261ed2b411a3fd93823289cb4297a283ed84b1b8e542a6079e3298:309063"
+   Checksum: "2bd021f85407b74df5c4aac38cdc5bd0aa474811333255b0c9913cd2bb7b4deb:310298"
    Used with: "ipv6"
 IPv6-Bogons:
  Extended Description: "Default IPv6 signatures normally included with the main package. Blocks bogon/martian CIDRs."
@@ -384,13 +384,13 @@ IPv6-Bogons:
 IPv6-ISPs:
  Extended Description: "Default IPv6 signatures normally included with the main package. Blocks dangerous and spammy ISPs."
  False Positive Risk: "Medium"
- Version: "2022.212.0"
+ Version: "2022.216.0"
  Dependencies:
   Bypasses: ">=2022.172"
  Files:
   signatures/ipv6_isps.dat:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/signatures/ipv6_isps.dat"
-   Checksum: "6e85403520829117ad42e3c72ce10e9162b0571a3b6ac1590f9d76a2c30fa8a4:50063"
+   Checksum: "27c24688c64637efe8b9ba8b383c598c147f0a9a9c3728b88eb6f0ade230a775:48550"
    Used with: "ipv6"
 IPv6-Nonblocking:
  Extended Description: "Default IPv6 non-blocking signatures file."
@@ -405,11 +405,11 @@ IPv6-Other:
   Default IPv6 signatures normally included with the main package. Blocks CIDRs for proxies, VPNs, and other miscellaneous
   unwanted services.
  False Positive Risk: "Low"
- Version: "2022.202.0"
+ Version: "2022.216.0"
  Files:
   signatures/ipv6_other.dat:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/signatures/ipv6_other.dat"
-   Checksum: "2e91dd741322884ab25f8a5878d1cc640efc65b4b048d471f84d7939cc66247d:3409"
+   Checksum: "92cdaae7144859a54aa037c1b2f63c481a365b67bb92921350fec7c30c17a755:3984"
    Used with: "ipv6"
 Bypasses:
  Version: "2022.204.0"

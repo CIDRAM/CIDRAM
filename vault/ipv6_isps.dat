@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6_isps.dat
 
-# Version: 2022.212.0
-# Last modified: 2022.08.01
+# Version: 2022.216.0
+# Last modified: 2022.08.05
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -320,24 +320,6 @@ Profile: Domestic ISP;Government
 Tag: UARNet
 
 
-# ASNs 8331, 9049, 12768, 12772, 16179, 20807, 21311, 21335, 21353, 21442, 24588,
-# 25408, 25446, 30868, 31363, 31483, 31484, 31494, 31585, 31692, 34145, 34150,
-# 34533, 34590, 34925, 39028, 39435, 41002, 41403, 41661, 41668, 41682, 41727,
-# 41754, 41786, 41843, 41854, 42113, 42116, 42145, 42368, 42631, 42682, 42683,
-# 43478, 44727, 45051, 47111, 47398, 47659, 47911, 48201, 48532, 49048, 49874,
-# 50498, 50512, 50542, 50543, 50544, 51035, 51570, 51604, 51645, 51819, 52207,
-# 56330, 56377, 56420, 56969, 56981, 57026, 57041, 57044, 57079, 57378, 58189,
-# 59713, 62287, 197585, 198295, 201495 ('JSC "ER-Telecom Holding"').
-# Major Russian domestic ISP in Russia. Currently listing only the most
-# severely offending ranges in the network.
-# Updated: 2021.09.21
-
-2a02:2698:5024:1b81::/64 Deny Spam
-Origin: RU
-Profile: Domestic ISP
-Tag: ER-Telecom Holding
-
-
 # ASN 137432 ("BKB Network").
 # Caught using automated hacktools to try hacking into honeypots.
 # Stop Forum Spam (SFS) listings: 4.
@@ -639,18 +621,6 @@ Tag: TOTAL PLAY TELECOMUNICACIONES
 Origin: IN
 Profile: Domestic ISP
 Tag: Atria Convergence
-
-
-# ASN 39608 ("Lanet Network Ltd").
-# A Ukrainian domestic ISP and a significant source of spam.
-# Stop Forum Spam (SFS) listings: 1,022.
-# Updated: 2020.02.14 / Checked: 2021.09.21
-
-2a01:5800::/32 Deny Spam
-2a01:bf20::/32 Deny Spam
-Origin: UA
-Profile: Domestic ISP
-Tag: Lanet Network Ltd
 
 
 # ASN 34700 ("MAXNET TELECOM, LTD").
@@ -982,46 +952,31 @@ Tag: OVH Systems
 
 
 # ASNs 45430, 133481 ("SBN-IIG/AWN-IIG transit provider", "AIS Fibre").
-# Thai transit provider and domestic ISP. WordPress attacks, brute-force
-# attacks, SSH attacks, and spam detected from here. Listing just the affected
-# ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 766 (AS45430), 1,205 (AS133481).
-# Updated: 2021.10.12
+# Thai transit provider and domestic ISP. Brute-force, SSH, and
+# WordPress/XMLRPC attacks, port scans, hacking, and spam detected from here.
+# Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 498 (AS45430), 27,481 (AS133481).
+# Updated: 2022.08.05
 
-2405:9800:b620:57e3::/64 Deny Spam
-2405:9800:b920:b384::/64 Deny Spam
-2405:9800:b930:48cd::/64 Deny Spam
-2405:9800:b930:7443::/64 Deny Spam
-2405:9800:ba11:d4c2::/64 Deny Spam
+2405:9800:b510:6150::/64 Deny Spam
+2405:9800:b511:85a2::/64 Deny Spam
+2405:9800:b921:b835::/64 Deny Spam
+2405:9800:b930:ffb3::/64 Deny Spam
 Origin: TH
-Profile: Domestic ISP
+Profile: Domestic ISP;Infrastructure/Transit;Multiplay
 Tag: Phaholyothin Rd
 
 
 # ASN 34757 ("Sibirskie Seti Ltd").
 # Russian domestic ISP. A frequent source of hacking, brute-force, SSH, and
 # webapp attacks. Listing whole ASN.
-# Stop Forum Spam (SFS) listings: 370.
-# Updated: 2021.02.20 / Checked: 2021.10.12
+# Stop Forum Spam (SFS) listings: 45.
+# Updated: 2021.02.20 / Checked: 2022.08.05
 
 2a00:bfc0::/35 Deny Attacks
 Origin: RU
 Profile: Domestic ISP
 Tag: Sibirskie Seti Ltd
-
-
-# ASN 6848 ("Telenet BVBA").
-# Dutch/Belgian domestic ISP. Some addresses caught spamming and port scanning.
-# Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 836.
-# Updated: 2021.10.12
-
-2a02:1808:200:15db::/64 Deny Spam
-2a02:1810:4e36:2200::/64 Deny Spam
-2a02:1811:5178:c100::/64 Deny Spam
-Origin: BE
-Profile: Domestic ISP
-Tag: Telenet BVBA
 
 
 # ASNs 3243, 42863 ("MEO - SERVICOS DE COMUNICACOES E MULTIMEDIA S.A").

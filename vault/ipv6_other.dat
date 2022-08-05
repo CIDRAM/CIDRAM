@@ -1,8 +1,8 @@
 # IPv6 signatures file (CIDRs for proxies, VPNs and other miscellaneous unwanted services).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6_other.dat
 
-# Version: 2022.202.0
-# Last modified: 2022.07.22
+# Version: 2022.216.0
+# Last modified: 2022.08.05
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -91,22 +91,43 @@ Tag: Web2Objects LLC
 
 
 # ASN 197640 ("OverPlay.Net LP").
-# A paid VPN provider and a source of spam.
-# Stop Forum Spam (SFS) listings: 3,405.
-# Updated: 2021.02.07 / Checked: 2021.09.24
+# A paid VPN provider. Brute-force and SQLi attacks, port scans, hacking, and
+# spam detected from here.
+# Stop Forum Spam (SFS) listings: 690.
+# Updated: 2021.02.07 / Checked: 2022.08.05
 
-2a03:efc0:500::/40 Deny Proxy
+2a03:efc0:500::/40 Deny Attacks
 Origin: US
-Profile: Infrastructure/Transit
+Profile: Infrastructure/Transit;Tor endpoints here
 Tag: OverPlay.Net LP
 
 
 # ASN 209854 ("Surfshark Ltd").
 # A paid VPN provider. Brute-force and SSH attacks detected from here.
-# Stop Forum Spam (SFS) listings: 343.
-# Updated: 2021.04.16 / Checked: 2021.11.03
+# Stop Forum Spam (SFS) listings: 500.
+# Updated: 2021.04.16 / Checked: 2022.08.05
 
 2a09:a700::/29 Deny Proxy
 Origin: VG
-Profile: Infrastructure/Transit
+Profile: Infrastructure/Transit;Tor endpoints here
 Tag: Surfshark Ltd
+
+
+# ASN 398355 ("Data Ideas llc").
+# Tor provider. Brute-force and webapp attacks, port scans, hacking, and spam
+# detected from here.
+# Stop Forum Spam (SFS) listings: 9,583.
+# Updated: 2022.08.05
+
+2a0e:b107:14ff::/48 Deny Proxy
+Origin: CH
+2400:3e20::/36 Deny Proxy
+Origin: SE
+2001:550:3402::/48 Deny Proxy
+2602:fbdf::/36 Deny Proxy
+2602:fc05::/40 Deny Proxy
+2602:fccf::/36 Deny Proxy
+2605:6400:d814::/48 Deny Proxy
+Origin: US
+Profile: Tor endpoints here
+Tag: Data Ideas llc

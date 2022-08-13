@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6_isps.dat
 
-# Version: 2022.216.0
-# Last modified: 2022.08.05
+# Version: 2022.224.0
+# Last modified: 2022.08.13
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -173,6 +173,20 @@ Profile: Domestic ISP;Tor endpoints here
 Tag: Kyivstar
 
 
+# ASNs 7552, 24086, 37620, 133606, 262210, 327799, 327885 ("Viettel Corporation").
+# Vietnamese ISP also serving Cameroon, East Timor, Peru, Burundi, and
+# Tanzania. Brute-force and SSH attacks, port scans, hacking, and spam detected
+# from here. Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 14,076 (AS7552), 2,888 (AS24086),
+# 46 (AS37620), 77 (AS262210), 46 (AS327799), 18 (AS327885).
+# Updated: 2022.08.13
+
+2401:d800:fb58:383::/64 Deny Spam
+Origin: VN
+Profile: Domestic ISP;Infrastructure/Transit;Multiplay;Tor endpoints here
+Tag: Viettel Corporation
+
+
 # ASNs 24955, 41704, 60095 ("Orenburgskaya Gorodskaya Set, ZAO").
 # Caught spamming while pretending to be Google. Repeated hack attempts, port
 # scans, probing for hardware vulnerabilities, brute-force and SSH attacks,
@@ -329,19 +343,6 @@ Tag: UARNet
 Origin: BD
 Profile: Domestic ISP;Multiplay
 Tag: BKB Network
-
-
-# ASN 196777 ("SKORUK ANDRIY OLEKSANDROVYCH").
-# Ukrainian domestic ISP (supposedly). Spambots from here caught by honeypots.
-# Hacking, port scans, brute-force attacks and other unwanted traffic also
-# detected from here.
-# Stop Forum Spam (SFS) listings: 1,197.
-# Updated: 2021.02.23 / Checked: 2021.10.12
-
-2a10:a380::/29 Deny Spam
-Origin: UA
-Profile: Domestic ISP
-Tag: SKORUK ANDRIY OLEKSANDROVYCH
 
 
 # ASNs 18101, 55836 ("Reliance Communications Ltd").
@@ -1223,19 +1224,6 @@ Tag: KPN B.V
 Origin: NL
 Profile: Domestic ISP
 Tag: Vodafone Libertel
-
-
-# ASN 58972 ("RadioLAN spol. s r.o").
-# Slovakian multiplay ISP. Brute-force, DDoS, and SSH attacks, port scans,
-# hacking, and spam detected from here. Listing just the affected
-# ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 252.
-# Updated: 2021.10.31
-
-2a0b:f100:48:66::/64 Deny Spam
-Origin: SK
-Profile: Domestic ISP;Multiplay
-Tag: RadioLAN
 
 
 # ASN 7029 ("Windstream Communications LLC").

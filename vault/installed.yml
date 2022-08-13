@@ -313,13 +313,13 @@ IPv4:
  Extended Description: >
   Default IPv4 signatures normally included with the main package. Blocks unwanted cloud services and non-human endpoints.
  False Positive Risk: "Low"
- Version: "2022.216.0"
+ Version: "2022.224.0"
  Dependencies:
   Bypasses: ">=2022.172"
  Files:
   signatures/ipv4.dat:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/signatures/ipv4.dat"
-   Checksum: "5fc4b10e75ac016c6479a1226094eb0bf85a8ce0cfdcf1dd689343542d40f167:1096377"
+   Checksum: "3c4ce8b33fed7b81baa7a5818ceb369ebcc2a88b89ea32eb5f29dcf09cd3ebce:1090696"
    Used with: "ipv4"
 IPv4-Bogons:
  Extended Description: "Default IPv4 signatures normally included with the main package. Blocks bogon/martian CIDRs."
@@ -333,13 +333,13 @@ IPv4-Bogons:
 IPv4-ISPs:
  Extended Description: "Default IPv4 signatures normally included with the main package. Blocks dangerous and spammy ISPs."
  False Positive Risk: "Medium"
- Version: "2022.216.0"
+ Version: "2022.224.0"
  Dependencies:
   Bypasses: ">=2022.172"
  Files:
   signatures/ipv4_isps.dat:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/signatures/ipv4_isps.dat"
-   Checksum: "5babdf5e8f8e79cf1b52bb14add196790850ef4d43143d05b9150be1b78aae86:579280"
+   Checksum: "a4de3f5d400bfd7d3874d2a362e01d092af8329022a388acd11c4b5a5aebf26c:590539"
    Used with: "ipv4"
 IPv4-Nonblocking:
  Extended Description: "Default IPv4 non-blocking signatures file."
@@ -354,23 +354,23 @@ IPv4-Other:
   Default IPv4 signatures normally included with the main package. Blocks CIDRs for proxies, VPNs, and other miscellaneous
   unwanted services.
  False Positive Risk: "Medium"
- Version: "2022.216.0"
+ Version: "2022.224.0"
  Files:
   signatures/ipv4_other.dat:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/signatures/ipv4_other.dat"
-   Checksum: "07537a2fd8b8fb33548dbe508efe2bb5b127b065803eb7eb6f141fe73064d8c8:33003"
+   Checksum: "09bdb8f61cde2743585034f6d17b823a27c3022fe38f87b8e47ab46f18e2bb6a:33025"
    Used with: "ipv4"
 IPv6:
  Extended Description: >
   Default IPv6 signatures normally included with the main package. Blocks unwanted cloud services and non-human endpoints.
  False Positive Risk: "Low"
- Version: "2022.216.0"
+ Version: "2022.224.0"
  Dependencies:
   Bypasses: ">=2022.172"
  Files:
   signatures/ipv6.dat:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/signatures/ipv6.dat"
-   Checksum: "2bd021f85407b74df5c4aac38cdc5bd0aa474811333255b0c9913cd2bb7b4deb:310298"
+   Checksum: "b6c05bce1be1535455fbfcce15a1714250b52fde667e572c7a467648c16934a1:310618"
    Used with: "ipv6"
 IPv6-Bogons:
  Extended Description: "Default IPv6 signatures normally included with the main package. Blocks bogon/martian CIDRs."
@@ -384,13 +384,13 @@ IPv6-Bogons:
 IPv6-ISPs:
  Extended Description: "Default IPv6 signatures normally included with the main package. Blocks dangerous and spammy ISPs."
  False Positive Risk: "Medium"
- Version: "2022.216.0"
+ Version: "2022.224.0"
  Dependencies:
   Bypasses: ">=2022.172"
  Files:
   signatures/ipv6_isps.dat:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/signatures/ipv6_isps.dat"
-   Checksum: "27c24688c64637efe8b9ba8b383c598c147f0a9a9c3728b88eb6f0ade230a775:48550"
+   Checksum: "541d5f574614480d473475b93b800d06ea34c67df3d2817b0329ae4a371f9ac6:48385"
    Used with: "ipv6"
 IPv6-Nonblocking:
  Extended Description: "Default IPv6 non-blocking signatures file."
@@ -405,11 +405,11 @@ IPv6-Other:
   Default IPv6 signatures normally included with the main package. Blocks CIDRs for proxies, VPNs, and other miscellaneous
   unwanted services.
  False Positive Risk: "Low"
- Version: "2022.216.0"
+ Version: "2022.224.0"
  Files:
   signatures/ipv6_other.dat:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/signatures/ipv6_other.dat"
-   Checksum: "92cdaae7144859a54aa037c1b2f63c481a365b67bb92921350fec7c30c17a755:3984"
+   Checksum: "fcd1335263e82e275151e948bf2fcf91e1b10c9a2228e370e7ee5c1f9dea200a:4006"
    Used with: "ipv6"
 Bypasses:
  Version: "2022.204.0"
@@ -475,7 +475,7 @@ l10n/core/hi:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/core/hi.yml"
    Checksum: "f475bfdfd8411f6a99a739777f7f4f2fd4ea179d2da1c4fa48c665ff498d1e58:9785"
 l10n/core/id:
- Extended Description: "Lokalisasi di Bahasa indonesia"
+ Extended Description: "Lokalisasi di Bahasa Indonesia"
  Version: "2022.165.0"
  Files:
   l10n/core/id.yml:
@@ -508,6 +508,13 @@ l10n/core/lv:
  Files:
   l10n/core/lv.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/core/lv.yml"
+   Checksum: "9b282d532c33941a46167be2f2e73dd72b46f82652fd757bae9b49589d2a9a36:5471"
+l10n/core/ms:
+ Extended Description: "Penyetempatan Bahasa Melayu"
+ Version: "2022.165.0"
+ Files:
+  l10n/core/ms.yml:
+   From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/core/ms.yml"
    Checksum: "9b282d532c33941a46167be2f2e73dd72b46f82652fd757bae9b49589d2a9a36:5471"
 l10n/core/nl:
  Extended Description: "Nederlandse lokalisatie"
@@ -651,7 +658,7 @@ l10n/frontend/hi:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/hi.yml"
    Checksum: "3a3b82971f3473ada030cd1e446c653744d8b4d0c8db1f762a92df2d22ee00e1:121987"
 l10n/frontend/id:
- Extended Description: "Lokalisasi di Bahasa indonesia"
+ Extended Description: "Lokalisasi di Bahasa Indonesia"
  Version: "2022.203.0"
  Files:
   l10n/frontend/id.yml:
@@ -684,6 +691,13 @@ l10n/frontend/lv:
  Files:
   l10n/frontend/lv.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/lv.yml"
+   Checksum: "62c2bd8df3a684592717097461a2a137a426332411bd4d4229f153998704b3c2:64726"
+l10n/frontend/ms:
+ Extended Description: "Penyetempatan Bahasa Melayu"
+ Version: "2022.203.0"
+ Files:
+  l10n/frontend/ms.yml:
+   From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/ms.yml"
    Checksum: "62c2bd8df3a684592717097461a2a137a426332411bd4d4229f153998704b3c2:64726"
 l10n/frontend/nl:
  Extended Description: "Nederlandse lokalisatie"

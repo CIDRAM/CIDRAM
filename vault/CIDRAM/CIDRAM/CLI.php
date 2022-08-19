@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: CIDRAM CLI mode (last modified: 2022.06.01).
+ * This file: CIDRAM CLI mode (last modified: 2022.08.20).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -145,7 +145,6 @@ To quit, type \"q\", \"quit\", or \"exit\" and press enter:
                 if ($Chain) {
                     $Data = explode("\n", substr($StdInClean, strlen($Cmd) + 1));
                 } else {
-
                     /** Multiline detection. */
                     if ($ML = (
                         substr($StdInClean, strlen($Cmd) + 1, 1) === '"' &&

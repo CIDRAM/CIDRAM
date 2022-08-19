@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM front-end (last modified: 2022.07.24).
+ * This file: The CIDRAM front-end (last modified: 2022.08.19).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -1150,6 +1150,11 @@ class FrontEnd extends Core
             /** For required extensions, classes, etc. */
             $ReqsLookupCache = [];
 
+            /** Rebuilding in order to strip out orphaned data. */
+            if (isset($_POST['orphaned'])) {
+                $NewConfig = [];
+            }
+
             /** Iterate through configuration defaults. */
             foreach ($this->CIDRAM['Config Defaults'] as $CatKey => $CatValue) {
                 if (!is_array($CatValue)) {
@@ -1680,6 +1685,14 @@ class FrontEnd extends Core
                         $this->L10N->Data + $ThisDir,
                         $this->FE['ConfigRow']
                     );
+
+                    /** Rebuilding in order to strip out orphaned data. */
+                    if (isset($NewConfig)) {
+                        if (!isset($NewConfig[$CatKey])) {
+                            $NewConfig[$CatKey] = [];
+                        }
+                        $NewConfig[$CatKey][$DirKey] = $this->Configuration[$CatKey][$DirKey];
+                    }
                 }
                 $CatKeyFriendly = $this->L10N->getString('config_' . $CatKey . '_label') ?: $CatKey;
                 $this->FE['Indexes'] .= sprintf(
@@ -1694,7 +1707,17 @@ class FrontEnd extends Core
             unset($ReqsLookupCache);
 
             /** Update the currently active configuration file if any changes were made. */
-            if ($this->CIDRAM['ConfigModified']) {
+            if ($this->CIDRAM['ConfigModified'] || isset($NewConfig)) {
+                if (isset($NewConfig)) {
+                    foreach ($this->Configuration as $CatKey => $CatValue) {
+                        if (substr($CatKey, 0, 5) !== 'user.') {
+                            continue;
+                        }
+                        $NewConfig[$CatKey] = $CatValue;
+                    }
+                    $this->Configuration = $NewConfig;
+                    unset($NewConfig);
+                }
                 if ($this->updateConfiguration()) {
                     $this->FE['state_msg'] = $this->L10N->getString('response_configuration_updated');
                 } else {

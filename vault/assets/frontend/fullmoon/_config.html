@@ -9,10 +9,13 @@
       <tr>
         <td class="ng1">
           <div class="s">{tip_see_the_documentation}<hr /><em>{label_active_config_file} <span class="txtRd">{ActiveConfigFile}</span></em><hr /></div>
-          <div class="bNav"><input type="submit" value="{field_update}" /></div>
+          <div class="bNav">
+            <input type="submit" value="{field_update}" /><br />
+            <br />
+            <input type="checkbox" name="orphaned" id="orphaned" class="auto" /><label class="s" for="orphaned">{checkbox_delete_orphaned_values}</label>
+          </div>
         </td>
       </tr>
     </table>
 {ConfigFields}
-    <table><tr><td class="ng1"><div class="bNav"><input type="submit" value="{field_update}" /></div></td></tr></table>
   </form>

@@ -7,7 +7,21 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Spanish language data for the front-end (last modified: 2022.07.22).
+# This file: Spanish language data for the front-end (last modified: 2022.07.28).
+#
+# Regarding translations: My native language is English. Because this is a free
+# and open-source hobby project which generates zero income, and translatable
+# content is likely to change as the features and functionality supported by
+# the project changes, it doesn't make sense for me to spend money for
+# translations. Because I'm the sole author/developer/maintainer for the
+# project and I'm not a ployglot, any translations I produce are very likely to
+# contain errors. Sorry, but realistically, that won't ever change. If you find
+# any such errors/typos/mistakes/etc, your assistance to correct them would be
+# very much appreciated. Pull requests are invited and encouraged. Otherwise,
+# if you find these errors too much to handle, just stick with the original
+# English source. If a translation is irredeemably incomprehensible, let me
+# know which, and I can delete it. If you're not sure how to perform pull
+# requests, ask. I can help.
 ##/
 
 Extended Description Bypasses: "Los archivos para bypass de firmas estándar normalmente se incluyen con el paquete principal."
@@ -85,7 +99,7 @@ config_general: "Configuración general (cualquier configuración que no pertene
 config_general_allow_gethostbyaddr_lookup: "¿Permitir búsquedas gethostbyaddr cuando UDP no está disponible? True = Sí [Predefinido]; False = No."
 config_general_ban_override: "Anular "forbid_on_block" cuando "infraction_limit" es excedido? Cuando se anula: Las solicitudes bloqueadas devuelven una página en blanco (los archivos templates no se utilizan). 200 = No anular [Predefinido]. Otros valores son los mismos que los valores disponibles para "forbid_on_block"."
 config_general_config_imports: "Una lista delimitada por comas de archivos para importar a la configuración predeterminada de CIDRAM. Normalmente se llena con la página de actualizaciones al activar componentes que lo necesitan cuando sea necesario. En la mayoría de los casos, puede ignorarlo."
-config_general_default_algo: "Define qué algoritmo utilizar para todas las contraseñas y sesiones en el futuro. Opciones: PASSWORD_DEFAULT (predefinido), PASSWORD_BCRYPT, PASSWORD_ARGON2I (requiere PHP &gt;= 7.2.0), PASSWORD_ARGON2ID (requiere PHP &gt;= 7.3.0)."
+config_general_default_algo: "Define qué algoritmo utilizar para todas las contraseñas y sesiones en el futuro. Opciones: PASSWORD_DEFAULT (predefinido), PASSWORD_BCRYPT, PASSWORD_ARGON2I, PASSWORD_ARGON2ID (requiere PHP &gt;= 7.3.0)."
 config_general_default_dns: "Una lista delimitada por comas de los servidores DNS que se utilizarán para las búsquedas de nombres del host. Predefinido = "8.8.8.8,8.8.4.4" (Google DNS). ¡AVISO: No cambie esto a menos que sepas lo que estás haciendo!"
 config_general_default_timeout: "¿Tiempo de espera predeterminado para usar en solicitudes externas? Predeterminado = 12 segundos."
 config_general_disable_frontend: "¿Desactivar el acceso front-end? El acceso front-end puede hacer CIDRAM más manejable, pero también puede ser un riesgo de seguridad. Se recomienda administrar CIDRAM a través del back-end cuando sea posible, pero el acceso front-end se proporciona para cuando no es posible. Mantenerlo desactivado a menos que lo necesite. False = Activar el acceso front-end; True = Desactivar el acceso front-end [Predefinido]."
@@ -201,7 +215,7 @@ config_template_data_css_url: "URL del archivo CSS para temas personalizados."
 config_template_data_magnification: "Ampliación de fuente. Predefinido = 1."
 config_template_data_theme: "Tema predefinido a utilizar para CIDRAM."
 confirm_action: "¿Estás seguro de que quieres "%s"?"
-confirm_delete: "¿Estás seguro de que quieres borrar "%s"?"
+confirm_delete: "¿Estás seguro de que quieres eliminar "%s"?"
 field_2fa: "Código 2FA"
 field_Request_Method: "Método de solicitud"
 field_activate: "Activar"
@@ -219,7 +233,7 @@ field_component: "Componente"
 field_confirm: "Confirmar"
 field_create_new_account: "Crear Nueva Cuenta"
 field_deactivate: "Desactivar"
-field_delete: "Borrar"
+field_delete: "Eliminar"
 field_delete_account: "Eliminar Cuenta"
 field_download_file: "Descargar"
 field_edit: "Editar"
@@ -494,10 +508,9 @@ logs_no_logfiles_available: "Ningún archivos de registro disponibles."
 max_login_attempts_exceeded: "Número máximo de intentos de login excedido; Acceso denegado."
 msg_subject_2fa: "Autenticación de dos factores"
 msg_template_2fa: |
- <center><p>Hola, %1$s.<br />
- <br />
+ <center><p>Hola, %s.<br /><br />
  Su código de autenticación de dos factores para iniciar sesión en el front-end de CIDRAM:</p>
- <h1>%2$s</h1>
+ <h1>%s</h1>
  <p>Este código vence en 10 minutos.</p></center>
 notice_click_here: "Haga clic aquí para más información."
 notice_new_major_version: "Aviso: %s ahora está disponible (está utilizando %s). Cumple con los requisitos mínimos de PHP de esta versión. Sin embargo, se requieren algunos pasos manuales para actualizar."
@@ -652,7 +665,7 @@ time_years_from_now:
  - "%s años a partir de ahora"
 tip_2fa_sent: "Se ha enviado un correo electrónico con un código de autenticación de dos factores a su dirección de correo electrónico. Confirme este código a continuación para obtener acceso al front-end. Si no recibió este correo electrónico, intente cerrar la sesión, espere 10 minutos, y vuelva a iniciar sesión para recibir un nuevo correo electrónico que contenga un nuevo código."
 tip_accounts: "Hola, {username}.<br />La página de cuentas permite controlar controlar quién puede acceder al CIDRAM front-end."
-tip_aux: "Hola, {username}.<br />Puede usar esta página para crear, borrar y modificar reglas auxiliares para CIDRAM."
+tip_aux: "Hola, {username}.<br />Puede usar esta página para crear, eliminar, y modificar reglas auxiliares para CIDRAM."
 tip_aux_operators: "Nota: Si una condición necesita un tipo de operador diferente, puedes agregarlo al inicio de su valor (requiere comparación directa de cadenas)."
 tip_aux_priority: "Prioridad (mas alta➡(igual🔄equivalente)➡mas baja):"
 tip_aux_webhooks: "Cuando se cumple una regla, CIDRAM intentará notificar a los webhooks conectados sobre el evento."

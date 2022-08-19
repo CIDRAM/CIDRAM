@@ -7,7 +7,21 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Bangla language data for the front-end (last modified: 2022.07.22).
+# This file: Bangla language data for the front-end (last modified: 2022.07.28).
+#
+# Regarding translations: My native language is English. Because this is a free
+# and open-source hobby project which generates zero income, and translatable
+# content is likely to change as the features and functionality supported by
+# the project changes, it doesn't make sense for me to spend money for
+# translations. Because I'm the sole author/developer/maintainer for the
+# project and I'm not a ployglot, any translations I produce are very likely to
+# contain errors. Sorry, but realistically, that won't ever change. If you find
+# any such errors/typos/mistakes/etc, your assistance to correct them would be
+# very much appreciated. Pull requests are invited and encouraged. Otherwise,
+# if you find these errors too much to handle, just stick with the original
+# English source. If a translation is irredeemably incomprehensible, let me
+# know which, and I can delete it. If you're not sure how to perform pull
+# requests, ask. I can help.
 ##/
 
 Extended Description Bypasses: "ডিফল্ট স্বাক্ষর বাইপাস ফাইল সাধারণত প্রধান প্যাকেজ সহ অন্তর্ভুক্ত।"
@@ -83,7 +97,7 @@ config_general: "সাধারণ কনফিগারেশন (অন্য
 config_general_allow_gethostbyaddr_lookup: "যখন UDP অনুপলব্ধ হয় তখন gethostbyaddr সন্ধানগুলি মঞ্জুর করুন? True = হাঁ [ডিফল্ট]; False = না।"
 config_general_ban_override: "যখন "infraction_limit" অতিক্রম করা হয় তখন "forbid_on_block" ওভাররাইড করে? ওভাররাইড করার সময়: ব্লক করা অনুরোধগুলি একটি ফাঁকা পৃষ্ঠাটি ফেরত পাঠায় (টেমপ্লেট ফাইল ব্যবহার করা হয় না)। 200 = ওভাররাইড করবেন না [ডিফল্ট]। অন্যান্য মানগুলি "forbid_on_block" এর জন্য উপলব্ধ মানগুলির মতই।"
 config_general_config_imports: "CIDRAM ডিফল্ট কনফিগারেশনে আমদানি করার জন্য একটি কমা সীমিত ফাইলের তালিকা। যখনই প্রয়োজন হয়, এমন উপাদানগুলি সক্রিয় করার সময় সাধারণত আপডেট পৃষ্ঠা দ্বারা পপুলিটেড। বেশিরভাগ ক্ষেত্রে, এটিকে উপেক্ষা করতে পারেন।"
-config_general_default_algo: "সব ভবিষ্যত পাসওয়ার্ড এবং সেশন জন্য ব্যবহার করে অ্যালগরিদম সংজ্ঞায়িত করে। বিকল্প: PASSWORD_DEFAULT (ডিফল্ট), PASSWORD_BCRYPT, PASSWORD_ARGON2I (PHP &gt;= 7.2.0 প্রয়োজন), PASSWORD_ARGON2ID (PHP &gt;= 7.3.0 প্রয়োজন)।"
+config_general_default_algo: "সব ভবিষ্যত পাসওয়ার্ড এবং সেশন জন্য ব্যবহার করে অ্যালগরিদম সংজ্ঞায়িত করে। বিকল্প: PASSWORD_DEFAULT (ডিফল্ট), PASSWORD_BCRYPT, PASSWORD_ARGON2I, PASSWORD_ARGON2ID (PHP &gt;= 7.3.0 প্রয়োজন)।"
 config_general_default_dns: "হোস্টনামগুলি দেখার জন্য ডিএনএস সার্ভারগুলির একটি কমা দ্বারা পৃথক তালিকা। ডিফল্ট = "8.8.8.8,8.8.4.4" (Google DNS)। সতর্কতা: আপনি কি করছেন তা না জানলে তা পরিবর্তন করবেন না!"
 config_general_default_timeout: "বাহ্যিক অনুরোধগুলির জন্য ডিফল্ট সময়সীমা ব্যবহার করবেন? ডিফল্ট = 12 সেকেন্ড।"
 config_general_disable_frontend: "ফ্রন্ট-এন্ড অ্যাক্সেস অক্ষম করুন? ফ্রন্ট-এন্ড অ্যাক্সেস CIDRAM আরও পরিচালনযোগ্য করতে পারে, কিন্তু এটি একটি সম্ভাব্য নিরাপত্তার ঝুঁকিও হতে পারে। এটি সম্ভব হলে ব্যাক-এন্ডের মাধ্যমে CIDRAM পরিচালনার জন্য সুপারিশ করা হয়, তবে সুবিধার জন্য ফ্রন্ট-এন্ড অ্যাক্সেসও প্রদান করা হয়। যদি এটির প্রয়োজন হয় না তবে এটি অক্ষম রাখুন। False = ফ্রন্ট-এন্ড অ্যাক্সেস সক্ষম করুন; True = ফ্রন্ট-এন্ড অ্যাক্সেস অক্ষম করুন [ডিফল্ট]।"
@@ -482,10 +496,9 @@ logs_no_logfiles_available: "কোন লগ ফাইল উপলব্ধ।
 max_login_attempts_exceeded: "লগইন প্রচেষ্টা সর্বাধিক সংখ্যা অতিক্রম করেছে; প্রবেশাধিকার অস্বীকার।"
 msg_subject_2fa: "দুই-ফ্যাক্টর প্রমাণীকরণ"
 msg_template_2fa: |
- <center><p>হ্যালো, %1$s।<br />
- <br />
+ <center><p>হ্যালো, %s।<br /><br />
  CIDRAM ফ্রন্ট-এন্ড প্রবেশের জন্য আপনার দুই-ফ্যাক্টর প্রমাণীকরণ কোড:</p>
- <h1>%2$s</h1>
+ <h1>%s</h1>
  <p>এই কোডটি 10 মিনিটের মধ্যে মেয়াদ শেষ হয়ে যায়।</p></center>
 notice_click_here: "আরও তথ্যের জন্য এখানে ক্লিক করুন।"
 notice_new_major_version: "বিজ্ঞপ্তি: %s এখন উপলভ্য (আপনি %s ব্যবহার করছেন)। আপনি এই সংস্করণটির সর্বনিম্ন PHP প্রয়োজনীয়তা পূরণ করেন। তবে আপডেট করার জন্য কিছু ম্যানুয়াল পদক্ষেপের প্রয়োজন।"

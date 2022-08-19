@@ -7,13 +7,26 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Thai language data for the front-end (last modified: 2022.07.22).
+# This file: Thai language data for the front-end (last modified: 2022.08.19).
+#
+# Regarding translations: My native language is English. Because this is a free
+# and open-source hobby project which generates zero income, and translatable
+# content is likely to change as the features and functionality supported by
+# the project changes, it doesn't make sense for me to spend money for
+# translations. Because I'm the sole author/developer/maintainer for the
+# project and I'm not a ployglot, any translations I produce are very likely to
+# contain errors. Sorry, but realistically, that won't ever change. If you find
+# any such errors/typos/mistakes/etc, your assistance to correct them would be
+# very much appreciated. Pull requests are invited and encouraged. Otherwise,
+# if you find these errors too much to handle, just stick with the original
+# English source. If a translation is irredeemably incomprehensible, let me
+# know which, and I can delete it. If you're not sure how to perform pull
+# requests, ask. I can help.
 ##/
 
 Extended Description AbuseIPDB module: "บล็อกคำขอจาก IP ที่แสดงรายการไว้ที่ AbuseIPDB."
 Extended Description BGPView module: "ใช้ {{Links.BGPView}} เพื่อจัดเตรียมความสามารถในการค้นหา ASN และรหัสประเทศสำหรับ CIDRAM การเปิดใช้งาน ASN และประเทศต่างๆให้ถูกบล็อกหรืออนุญาตผ่านการกำหนดค่า CIDRAM และจัดหาวิธีสำหรับการตรวจสอบเครือข่ายสังคมออนไลน์เพื่อยืนยันคำขอ Facebook."
 Extended Description Bad TLDs blocker module: "บล็อกโฮสต์ของ TLD ที่มักใช้โดยผู้ส่งสแปม แฮ็กเกอร์ และบุคคลอื่น ๆ ที่ไม่เป็นไปตามหลักเกณฑ์."
-Extended Description Bad hosts blocker module (ISPs): "บล็อกโฮสต์ของ ISP ที่มักใช้โดยผู้ส่งสแปม แฮ็กเกอร์ และบุคคลอื่น ๆ ที่ไม่เป็นไปตามหลักเกณฑ์."
 Extended Description Bad hosts blocker module: "บล็อกโฮสต์ที่มักใช้โดยผู้ส่งสแปม แฮ็กเกอร์ และบุคคลอื่น ๆ ที่ไม่เป็นไปตามหลักเกณฑ์."
 Extended Description Bot user agents module: "บล็อกตัวแทนผู้ใช้ที่เกี่ยวข้องกับบอทและกิจกรรมที่ไม่เป็นที่ต้องการ."
 Extended Description Bypasses: "ไฟล์บายพาสลายเซ็นเริ่มต้นที่รวมอยู่ในแพคเกจหลัก."
@@ -34,12 +47,10 @@ Extended Description Optional security extras module: "ให้การป้�
 Extended Description PHPMailer: "จำเป็นสำหรับการใช้ฟังก์ชันใด ๆ ที่เกี่ยวข้องกับการส่งอีเมล.<br />{{Links.PHPMailer.PHPMailer}} สามารถใช้ได้ผ่านทางใบอนุญาต {{Links.PHPMailer.License}}."
 Extended Description Project Honeypot module: "บล็อกคำขอจาก IP ที่แสดงรายการไว้ที่ Project Honeypot."
 Extended Description Referrer spam module: "การปิดกั้นโดยอ้างอิงจากสแปมอ้างอิงจะไม่ให้ประโยชน์ด้านความปลอดภัยที่มีความหมาย แต่ในบางกรณีอาจมีประโยชน์สำหรับผู้ใช้บางคน เพื่อรวบรวมข้อมูลเพิ่มเติมเกี่ยวกับคำขอและเพื่อให้สามารถรายงานได้.<br />การติดตั้งโมดูลนี้ยังติดตั้ง Symfony polyfills สำหรับ {{Links.Symfony.Intl/Idn}} (เพราะโมดูลนี้ต้องการฟังก์ชั่น Idn ซึ่งการติดตั้ง PHP ทั้งหมดไม่ได้มีให้ตามค่าเริ่มต้น) มีให้ใช้ผ่านทางใบอนุญาต <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a>."
-Extended Description Search engines blocker module: "ให้ความสามารถในการบล็อกเครื่องมือค้นหาที่อาจมีปัญหาสำหรับบางเว็บไซต์ (เช่น., Baidu, Sogou, Yandex, ฯลฯ)."
 Extended Description Stop Forum Spam module: "ปกป้องหน้าการลงทะเบียนและเข้าสู่ระบบต่อต้าน IP ที่ระบุโดย SFS."
 Name AbuseIPDB module: "โมดูล AbuseIPDB"
 Name BGPView module: "โมดูล BGPView"
 Name Bad TLDs blocker module: "โมดูลป้องกัน TLD ที่เป็นอันตราย"
-Name Bad hosts blocker module (ISPs): "โมดูลป้องกันโฮสต์ที่เป็นอันตราย (ผู้ให้บริการอินเทอร์เน็ต)"
 Name Bad hosts blocker module: "โมดูลป้องกันโฮสต์ที่เป็นอันตราย"
 Name Bot user agents module: "โมดูลตัวแทนผู้ใช้บอท"
 Name BunnyCDN compatibility module: "โมดูลความเข้ากัน BunnyCDN"
@@ -59,8 +70,8 @@ Name IPv6-Other: "IPv6 (พร็อกซี, VPN, ฯลฯ)."
 Name Optional security extras module: "โมดูลเสริมความปลอดภัยเพิ่มเติม"
 Name Project Honeypot module: "โมดูล Project Honeypot"
 Name Referrer spam module: "โมดูลสแปมผู้อ้างอิง"
-Name Search engines blocker module: "โมดูลตัวบล็อกเครื่องมือค้นหา"
 Name Stop Forum Spam module: "โมดูล Stop Forum Spam"
+checkbox_delete_orphaned_values: "ลบค่าที่ถูกละเลย."
 checkbox_label_block_it: "บล็อคมัน."
 checkbox_label_block_negatives: "บล็อกเชิงลบ?"
 checkbox_label_block_nonverified: "บล็อกคำขอที่ไม่ได้รับการยืนยันใช่ไหม?"

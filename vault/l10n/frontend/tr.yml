@@ -7,13 +7,26 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Turkish language data for the front-end (last modified: 2022.07.22).
+# This file: Turkish language data for the front-end (last modified: 2022.08.19).
+#
+# Regarding translations: My native language is English. Because this is a free
+# and open-source hobby project which generates zero income, and translatable
+# content is likely to change as the features and functionality supported by
+# the project changes, it doesn't make sense for me to spend money for
+# translations. Because I'm the sole author/developer/maintainer for the
+# project and I'm not a ployglot, any translations I produce are very likely to
+# contain errors. Sorry, but realistically, that won't ever change. If you find
+# any such errors/typos/mistakes/etc, your assistance to correct them would be
+# very much appreciated. Pull requests are invited and encouraged. Otherwise,
+# if you find these errors too much to handle, just stick with the original
+# English source. If a translation is irredeemably incomprehensible, let me
+# know which, and I can delete it. If you're not sure how to perform pull
+# requests, ask. I can help.
 ##/
 
 Extended Description AbuseIPDB module: "AbuseIPDB'de listelenen IP'lerden gelen istekleri engeller."
 Extended Description BGPView module: "CIDRAM için ASN ve ülke kodu arama olanağı sağlamak için {{Links.BGPView}} API'den yararlanır, ASN'lerin ve ülkelerin CIDRAM yapılandırması aracılığıyla engellenmesini veya beyaz listeye eklenmesini sağlamak, ve Facebook isteklerini doğrulamak için sosyal ağ doğrulaması için bir araç sağlamak."
 Extended Description Bad TLDs blocker module: "Spam gönderenler, bilgisayar korsanları ve diğer haince varlıklar tarafından sıkça TLD'lere ait kullanılan ana bilgisayarları engeller."
-Extended Description Bad hosts blocker module (ISPs): "Spam gönderenler, bilgisayar korsanları ve diğer haince varlıklar tarafından sıkça ISP'lere ait kullanılan ana bilgisayarları engeller."
 Extended Description Bad hosts blocker module: "Spam gönderenler, bilgisayar korsanları ve diğer haince varlıklar tarafından sıkça kullanılan ana bilgisayarları engeller."
 Extended Description Bot user agents module: "İstenmeyen botlar ve nefret dolu faaliyetlerle ilişkili kullanıcı aracılarını engeller."
 Extended Description Bypasses: "Varsayılan imza bypass'lar, normalde ana paketle birlikte verilir."
@@ -34,12 +47,10 @@ Extended Description Optional security extras module: "İsteklerde yaygın olara
 Extended Description PHPMailer: "E-posta göndermeyi içeren herhangi bir işlev kullanmak için gereklidir.<br />{{Links.PHPMailer.PHPMailer}}, {{Links.PHPMailer.License}} lisansı üzerinden kullanılabilir."
 Extended Description Project Honeypot module: "Project Honeypot'de listelenen IP'lerden gelen istekleri engeller."
 Extended Description Referrer spam module: "Yönlendiren spam'e dayalı engelleme genellikle anlamlı bir güvenlik avantajı sağlamaz, ancak bazı durumlarda, bazı kullanıcılar için istekler hakkında daha fazla bilgi toplamak ve bunu rapor edebilmek için yararlı olabilir.<br />Bu modülün yüklenmesi, {{Links.Symfony.Intl/Idn}} için Symfony çoklu dolgularını da yükler (çünkü bu modül, tüm PHP kurulumlarının varsayılan olarak sağlamadığı Idn işlevselliği gerektirir), <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a> lisansı ile kullanılabilir."
-Extended Description Search engines blocker module: "Bazı web siteleri için sorunlu olabilecek arama motorlarını (örneğin, Baidu, Sogou, Yandex, vb) engelleme yeteneği sağlar."
 Extended Description Stop Forum Spam module: "SFS tarafından listelenen IP'lere karşı kayıt ve oturum açma sayfalarını korur."
 Name AbuseIPDB module: "AbuseIPDB modülü"
 Name BGPView module: "BGPView modülü"
 Name Bad TLDs blocker module: "Kötü TLD engelleyici modülü"
-Name Bad hosts blocker module (ISPs): "Kötü ana engelleyici modülü (ISS'ler)"
 Name Bad hosts blocker module: "Kötü ana engelleyici modülü"
 Name Bot user agents module: "Bot kullanıcı aracıları modülü"
 Name BunnyCDN compatibility module: "BunnyCDN uyumluluk modülü"
@@ -59,8 +70,8 @@ Name IPv6-Other: "IPv6 (proxy, VPN'ler, vb)."
 Name Optional security extras module: "İsteğe bağlı güvenlik ekstrası modülü"
 Name Project Honeypot module: "Project Honeypot modülü"
 Name Referrer spam module: "Yönlendiren spam modülü"
-Name Search engines blocker module: "Arama motorları engelleyici modülü"
 Name Stop Forum Spam module: "Stop Forum Spam modülü"
+checkbox_delete_orphaned_values: "Artık değerleri silin."
 checkbox_label_block_it: "Isteği engelle."
 checkbox_label_block_negatives: "Negatifleri engelle?"
 checkbox_label_block_nonverified: "Doğrulanmamış istekler engelle?"

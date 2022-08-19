@@ -7,13 +7,26 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: English language data for the front-end (last modified: 2022.07.22).
+# This file: English language data for the front-end (last modified: 2022.08.19).
+#
+# Regarding translations: My native language is English. Because this is a free
+# and open-source hobby project which generates zero income, and translatable
+# content is likely to change as the features and functionality supported by
+# the project changes, it doesn't make sense for me to spend money for
+# translations. Because I'm the sole author/developer/maintainer for the
+# project and I'm not a ployglot, any translations I produce are very likely to
+# contain errors. Sorry, but realistically, that won't ever change. If you find
+# any such errors/typos/mistakes/etc, your assistance to correct them would be
+# very much appreciated. Pull requests are invited and encouraged. Otherwise,
+# if you find these errors too much to handle, just stick with the original
+# English source. If a translation is irredeemably incomprehensible, let me
+# know which, and I can delete it. If you're not sure how to perform pull
+# requests, ask. I can help.
 ##/
 
 Extended Description AbuseIPDB module: "Blocks requests from IPs listed at AbuseIPDB."
 Extended Description BGPView module: "Leverages the {{Links.BGPView}} API to provide an ASN and country code lookup facility for CIDRAM, enabling ASNs and countries to be blocked or whitelisted via the CIDRAM configuration, and providing a means for social networking verification to verify Facebook requests."
 Extended Description Bad TLDs blocker module: "Blocks hosts belonging to TLDs frequently used by spammers, hackers, and other nefarious entities."
-Extended Description Bad hosts blocker module (ISPs): "Blocks hosts belonging to ISPs frequently used by spammers, hackers, and other nefarious entities."
 Extended Description Bad hosts blocker module: "Blocks hosts frequently used by spammers, hackers, and other nefarious entities."
 Extended Description Bot user agents module: "Blocks user agents associated with unwanted bots and nefarious activity."
 Extended Description Bypasses: "The default signature bypass files normally included with the main package."
@@ -34,12 +47,10 @@ Extended Description Optional security extras module: "Provides some limited pro
 Extended Description PHPMailer: "Required for using any functionality that involves sending email.<br />{{Links.PHPMailer.PHPMailer}} is available via the {{Links.PHPMailer.License}} license."
 Extended Description Project Honeypot module: "Blocks requests from IPs listed at Project Honeypot."
 Extended Description Referrer spam module: "Blocking based on referrer spam won't generally provide any meaningful security benefit, but in some cases, could be useful for some users, for gathering more information about requests, and for being able to report it.<br />Installing this module also installs the Symfony polyfills for {{Links.Symfony.Intl/Idn}} (because this module requires Idn functionality, which not all PHP installations provide by default), available via the <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT license</a>."
-Extended Description Search engines blocker module: "Provides the ability to block search engines which may be problematic for some websites (e.g., Baidu, Sogou, Yandex, etc)."
 Extended Description Stop Forum Spam module: "Protects registration and login pages against IPs listed by SFS."
 Name AbuseIPDB module: "AbuseIPDB module"
 Name BGPView module: "BGPView module"
 Name Bad TLDs blocker module: "Bad TLDs blocker module"
-Name Bad hosts blocker module (ISPs): "Bad hosts blocker module (ISPs)"
 Name Bad hosts blocker module: "Bad hosts blocker module"
 Name Bot user agents module: "Bot user agents module"
 Name BunnyCDN compatibility module: "BunnyCDN compatibility module"
@@ -59,8 +70,8 @@ Name IPv6-Other: "IPv6 (proxies, VPNs, etc)."
 Name Optional security extras module: "Optional security extras module"
 Name Project Honeypot module: "Project Honeypot module"
 Name Referrer spam module: "Referrer spam module"
-Name Search engines blocker module: "Search engines blocker module"
 Name Stop Forum Spam module: "Stop Forum Spam module"
+checkbox_delete_orphaned_values: "Delete orphaned values."
 checkbox_label_block_it: "Block it."
 checkbox_label_block_negatives: "Block negatives?"
 checkbox_label_block_nonverified: "Block non-verified requests?"

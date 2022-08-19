@@ -7,13 +7,26 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Russian language data for the front-end (last modified: 2022.07.22).
+# This file: Russian language data for the front-end (last modified: 2022.08.19).
+#
+# Regarding translations: My native language is English. Because this is a free
+# and open-source hobby project which generates zero income, and translatable
+# content is likely to change as the features and functionality supported by
+# the project changes, it doesn't make sense for me to spend money for
+# translations. Because I'm the sole author/developer/maintainer for the
+# project and I'm not a ployglot, any translations I produce are very likely to
+# contain errors. Sorry, but realistically, that won't ever change. If you find
+# any such errors/typos/mistakes/etc, your assistance to correct them would be
+# very much appreciated. Pull requests are invited and encouraged. Otherwise,
+# if you find these errors too much to handle, just stick with the original
+# English source. If a translation is irredeemably incomprehensible, let me
+# know which, and I can delete it. If you're not sure how to perform pull
+# requests, ask. I can help.
 ##/
 
 Extended Description AbuseIPDB module: "Блокирует запросы от IP-адресов, перечисленных в AbuseIPDB."
 Extended Description BGPView module: "Использует API {{Links.BGPView}} для предоставления средства поиска для ASN и коды страны для CIDRAM, таким образом, позволяя блокировать или вносить белый список ASN и стран через конфигурацию CIDRAM, и предоставление средств для проверки в социальных сетях для проверки запросов Facebook."
 Extended Description Bad TLDs blocker module: "Блокирует хосты, принадлежащие ДВУ, часто используемые спамерами, хакерами и другими гнусными объектами."
-Extended Description Bad hosts blocker module (ISPs): "Блокирует хосты, принадлежащие интернет-провайдерам, часто используемые спамерами, хакерами и другими гнусными объектами."
 Extended Description Bad hosts blocker module: "Блокирует хосты, часто используемые спамерами, хакерами и другими гнусными объектами."
 Extended Description Bot user agents module: "Блокирует пользовательские агенты, связанные с нежелательными ботами и нечестной деятельностью."
 Extended Description Bypasses: "Стандартная сигнатуры байпасы, обычно включены в основной пакет."
@@ -34,12 +47,10 @@ Extended Description Optional security extras module: "Обеспечивает 
 Extended Description PHPMailer: "Требуется для использования любых функций, связанных с отправкой электронной почты.<br />{{Links.PHPMailer.PHPMailer}} доступен через лицензию {{Links.PHPMailer.License}}."
 Extended Description Project Honeypot module: "Блокирует запросы от IP-адресов, перечисленных в Project Honeypot."
 Extended Description Referrer spam module: "Блокировка, основанная на реферальный спам, как правило, не дает сколько-нибудь значимого преимущества безопасности, но в некоторых случаях может быть полезным для некоторых пользователей, для сбора дополнительной информации о запросах и для возможности сообщить об этом.<br />Установка этого модуля также устанавливает полифилы Symfony для {{Links.Symfony.Intl/Idn}} (потому что этот модуль требует функциональности Idn, которую не все установки PHP предоставляют по умолчанию), доступно через лицензию <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a>."
-Extended Description Search engines blocker module: "Предоставляет возможность блокировать поисковые системы, что может быть проблематичным для некоторых веб-сайтов (например, Baidu, Sogou, Яндекс, и т.д.)."
 Extended Description Stop Forum Spam module: "Защищает страницы регистрации и входа в систему от IP-адресов, перечисленных в SFS."
 Name AbuseIPDB module: "Модуль AbuseIPDB"
 Name BGPView module: "Модуль BGPView"
 Name Bad TLDs blocker module: "Модуль блокатор для плохие ДВУ"
-Name Bad hosts blocker module (ISPs): "Модуль блокатор для плохие хосты (интернет-провайдеры)"
 Name Bad hosts blocker module: "Модуль блокатор для плохие хосты"
 Name Bot user agents module: "Модуль пользовательских агентов бота"
 Name BunnyCDN compatibility module: "Модуль совместимости BunnyCDN"
@@ -59,14 +70,14 @@ Name IPv6-Other: "IPv6 (прокси, VPN, и т.д.)."
 Name Optional security extras module: "Модуль необязательный дополнительные безопасности"
 Name Project Honeypot module: "Модуль Project Honeypot"
 Name Referrer spam module: "Реферальный спам модуль"
-Name Search engines blocker module: "Модуль блокатор поисковых систем"
 Name Stop Forum Spam module: "Модуль Stop Forum Spam"
+checkbox_delete_orphaned_values: "Удалить потерянные значения."
 checkbox_label_block_it: "Заблокируйте это."
 checkbox_label_block_negatives: "Блокировать отрицательные?"
 checkbox_label_block_nonverified: "Блокировать непроверенные запросы?"
 checkbox_label_fields_logs: "Должно ли это поле отображаться в записях журнала?"
 checkbox_label_fields_omit: "Пропустить это поле, если оно пустое?"
-checkbox_label_fields_page_output: "Должно ли это поле отображаться на странице «Доступ Закрыт»?"
+checkbox_label_fields_page_output: "Должно ли это поле отображаться на странице «доступ запрещен»?"
 checkbox_label_profile_it: "Профилируйте это."
 checkbox_label_single_hit_bypass: "Разрешить байпасы отдельных нарушений?"
 checkbox_label_stage_enable: "Включить этот этап?"
@@ -131,7 +142,7 @@ config_general_ipaddr: "Место IP-адреса актуального сое
 config_general_lang: "Задаёт CIDRAM стандарт языка."
 config_general_lang_override: "Локализовать в соответствии с HTTP_ACCEPT_LANGUAGE, когда это возможно? True = Да [Стандарт]; False = Нет."
 config_general_numbers: "Как Вы предпочитаете номера для отображения? Выберите пример, который выглядит наиболее правильным для вас."
-config_general_silent_mode: "Должен CIDRAM молча перенаправить заблокированные попытки доступа вместо отображения страницы «Доступ Закрыт»? Если да, указать местоположение для перенаправления блокировал попытки доступа. Если нет, оставить эту переменную пустым."
+config_general_silent_mode: "Должен CIDRAM молча перенаправить заблокированные попытки доступа вместо отображения страницы «доступ запрещен»? Если да, указать местоположение для перенаправления блокировал попытки доступа. Если нет, оставить эту переменную пустым."
 config_general_stages: "Элементы управления этапами цепочки выполнения (состояние, регистрация ошибок, и т.д.)."
 config_general_statistics: "Определяет, какую статистическую информацию отслеживать."
 config_general_time_format: "Формат нотации даты, используемый CIDRAM. Дополнительные опции могут быть добавлены по запросу."

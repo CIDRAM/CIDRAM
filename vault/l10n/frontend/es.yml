@@ -7,13 +7,26 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Spanish language data for the front-end (last modified: 2022.07.22).
+# This file: Spanish language data for the front-end (last modified: 2022.08.19).
+#
+# Regarding translations: My native language is English. Because this is a free
+# and open-source hobby project which generates zero income, and translatable
+# content is likely to change as the features and functionality supported by
+# the project changes, it doesn't make sense for me to spend money for
+# translations. Because I'm the sole author/developer/maintainer for the
+# project and I'm not a ployglot, any translations I produce are very likely to
+# contain errors. Sorry, but realistically, that won't ever change. If you find
+# any such errors/typos/mistakes/etc, your assistance to correct them would be
+# very much appreciated. Pull requests are invited and encouraged. Otherwise,
+# if you find these errors too much to handle, just stick with the original
+# English source. If a translation is irredeemably incomprehensible, let me
+# know which, and I can delete it. If you're not sure how to perform pull
+# requests, ask. I can help.
 ##/
 
 Extended Description AbuseIPDB module: "Bloquea las solicitudes de los IP listados en AbuseIPDB."
 Extended Description BGPView module: "Aprovecha la {{Links.BGPView}} API para proporcionar un servicio para buscar códigos de país y ASN para CIDRAM, permitiendo que los ASN y los países se bloqueen o incluyan en la lista blanca a través de la configuración CIDRAM, y proporcionando un medio para la verificación de redes sociales para verificar las solicitudes de Facebook."
 Extended Description Bad TLDs blocker module: "Bloquea los hosts que pertenecen a los TLD utilizados con frecuencia por los spammers, los hackers y otras entidades nefastas."
-Extended Description Bad hosts blocker module (ISPs): "Bloquea los hosts que pertenecen a los ISP utilizados con frecuencia por los spammers, los hackers y otras entidades nefastas."
 Extended Description Bad hosts blocker module: "Bloquea los hosts utilizados con frecuencia por spammers, hackers y otras entidades nefastas."
 Extended Description Bot user agents module: "Bloquea los agentes de usuario asociados con bots no deseados y actividad infame."
 Extended Description Bypasses: "Los archivos para bypass de firmas estándar normalmente se incluyen con el paquete principal."
@@ -34,12 +47,10 @@ Extended Description Optional security extras module: "Proporciona algunas prote
 Extended Description PHPMailer: "Requerido para usar cualquier funcionalidad que implique el envío de correo electrónico.<br />{{Links.PHPMailer.PHPMailer}} está disponible a través de la licencia {{Links.PHPMailer.License}}."
 Extended Description Project Honeypot module: "Bloquea las solicitudes de los IP listados en Project Honeypot."
 Extended Description Referrer spam module: "El bloqueo basado en spam de referencia generalmente no proporcionará ningún beneficio de seguridad significativo, pero en algunos casos, podría ser útil para algunos usuarios, para recopilar más información sobre solicitudes y para poder reporta los.<br />La instalación de este módulo también instala los polyfills de Symfony para {{Links.Symfony.Intl/Idn}} (porque este módulo requiere la funcionalidad Idn, que no todas las instalaciones de PHP proporcionan de manera predeterminada), disponibles a través de la licencia <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a>."
-Extended Description Search engines blocker module: "Proporciona la capacidad de bloquear motores de búsqueda que pueden ser problemáticos para algunos sitios web (por ejemplo, Baidu, Sogou, Yandex, etc)."
 Extended Description Stop Forum Spam module: "Protege las páginas de registro y de inicio de sesión de las IP listadas por SFS."
 Name AbuseIPDB module: "Módulo AbuseIPDB"
 Name BGPView module: "Módulo BGPView"
 Name Bad TLDs blocker module: "Módulo bloqueador de TLDs malos"
-Name Bad hosts blocker module (ISPs): "Módulo bloqueador de hosts malos (ISPs)"
 Name Bad hosts blocker module: "Módulo bloqueador de hosts malos"
 Name Bot user agents module: "Módulo de agentes de usuario para bots"
 Name BunnyCDN compatibility module: "BunnyCDN módulo de compatibilidad"
@@ -59,8 +70,8 @@ Name IPv6-Other: "IPv6 (proxies, VPNs, etc)."
 Name Optional security extras module: "Extras de seguridad módulo opcional"
 Name Project Honeypot module: "Módulo Project Honeypot"
 Name Referrer spam module: "Módulo de spam de referencia"
-Name Search engines blocker module: "Módulo bloqueador de motores de búsqueda"
 Name Stop Forum Spam module: "Módulo Stop Forum Spam"
+checkbox_delete_orphaned_values: "Eliminar valores huérfanos."
 checkbox_label_block_it: "Bloquearlo."
 checkbox_label_block_negatives: "¿Bloquear negativos?"
 checkbox_label_block_nonverified: "¿Bloquear solicitudes no verificados?"
@@ -234,7 +245,7 @@ config_verification_other: "Controles para verificar otros tipos de solicitudes 
 config_verification_search_engines: "Controles para verificar las solicitudes de los motores de búsqueda."
 config_verification_social_media: "Controles para verificar las solicitudes de las plataformas de redes sociales."
 confirm_action: "¿Estás seguro de que quieres "%s"?"
-confirm_delete: "¿Estás seguro de que quieres borrar "%s"?"
+confirm_delete: "¿Estás seguro de que quieres eliminar "%s"?"
 field_2fa: "Código 2FA"
 field_activate: "Activar"
 field_add_more_conditions: "Añadir más condiciones"
@@ -249,7 +260,7 @@ field_component: "Componente"
 field_confirm: "Confirmar"
 field_create_new_account: "Crear Nueva Cuenta"
 field_deactivate: "Desactivar"
-field_delete: "Borrar"
+field_delete: "Eliminar"
 field_delete_account: "Eliminar Cuenta"
 field_download_file: "Descargar"
 field_edit: "Editar"
@@ -708,7 +719,7 @@ time_years_from_now:
 tip_2fa_sent: "Se ha enviado un correo electrónico con un código de autenticación de dos factores a su dirección de correo electrónico. Confirme este código a continuación para obtener acceso al front-end. Si no recibió este correo electrónico, intente cerrar la sesión, espere 10 minutos, y vuelva a iniciar sesión para recibir un nuevo correo electrónico que contenga un nuevo código."
 tip_accounts: "Hola, {username}.<br />La página de cuentas permite controlar controlar quién puede acceder al CIDRAM front-end."
 tip_aggregator: "Hola, {username}.<br />El agregador permite expresar IPs, CIDRs, y máscaras de red en la forma más pequeña posible. Introduzca los datos que desea agregar y pulse "OK"."
-tip_aux: "Hola, {username}.<br />Puede usar esta página para crear, borrar y modificar reglas auxiliares para CIDRAM."
+tip_aux: "Hola, {username}.<br />Puede usar esta página para crear, eliminar, y modificar reglas auxiliares para CIDRAM."
 tip_aux_operators: "Nota: Si una condición necesita un tipo de operador diferente, puedes agregarlo al inicio de su valor (requiere comparación directa de cadenas)."
 tip_aux_priority: "Prioridad (mas alta➡(igual🔄equivalente)➡mas baja):"
 tip_aux_webhooks: "Cuando se cumple una regla, CIDRAM intentará notificar a los webhooks conectados sobre el evento."

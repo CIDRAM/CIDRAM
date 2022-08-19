@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods used by the configuration page and configuration filters (last modified: 2022.07.13).
+ * This file: Methods used by the configuration page and configuration filters (last modified: 2022.08.11).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -22,7 +22,7 @@ trait Configuration
      * @param string $ChoiceKey Language code.
      * @return bool Valid/Invalid.
      */
-    private function filterLang(string $ChoiceKey): bool
+    private function filterL10N(string $ChoiceKey): bool
     {
         $FrontEnd = $this->Vault . 'l10n' . DIRECTORY_SEPARATOR . 'frontend' . DIRECTORY_SEPARATOR . $ChoiceKey;
         return is_readable($FrontEnd . '.yml') && is_file($FrontEnd . '.yml');

@@ -7,13 +7,26 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (simplified) language data for the front-end (last modified: 2022.07.22).
+# This file: Chinese (simplified) language data for the front-end (last modified: 2022.08.19).
+#
+# Regarding translations: My native language is English. Because this is a free
+# and open-source hobby project which generates zero income, and translatable
+# content is likely to change as the features and functionality supported by
+# the project changes, it doesn't make sense for me to spend money for
+# translations. Because I'm the sole author/developer/maintainer for the
+# project and I'm not a ployglot, any translations I produce are very likely to
+# contain errors. Sorry, but realistically, that won't ever change. If you find
+# any such errors/typos/mistakes/etc, your assistance to correct them would be
+# very much appreciated. Pull requests are invited and encouraged. Otherwise,
+# if you find these errors too much to handle, just stick with the original
+# English source. If a translation is irredeemably incomprehensible, let me
+# know which, and I can delete it. If you're not sure how to perform pull
+# requests, ask. I can help.
 ##/
 
 Extended Description AbuseIPDB module: "阻止来自AbuseIPDB列出的IP的请求。"
 Extended Description BGPView module: "利用{{Links.BGPView}} API为CIDRAM提供ASN和国家代码查找功能，提供通过CIDRAM配置一种ASN和国家被阻止或列入白名单的方法，并提供一种用于社交媒体验证的方式来验证Facebook请求。"
 Extended Description Bad TLDs blocker module: "阻止垃圾邮件发送者，黑客，和其他恶意实体经常使用的主机的TLD。"
-Extended Description Bad hosts blocker module (ISPs): "阻止垃圾邮件发送者，黑客，和其他恶意实体经常使用的ISP拥有的主机。"
 Extended Description Bad hosts blocker module: "阻止垃圾邮件发送者，黑客，和其他恶意实体经常使用的主机。"
 Extended Description Bot user agents module: "阻止不需要的机器人和恶意活动相关联的用户代理。"
 Extended Description Bypasses: "标准签名旁路文件通常包括在主包。"
@@ -34,12 +47,10 @@ Extended Description Optional security extras module: "提供一些有限的保�
 Extended Description PHPMailer: "使用涉及发送电子邮件的任何功能时需要。<br />{{Links.PHPMailer.PHPMailer}}可通过{{Links.PHPMailer.License}}许可证获得。"
 Extended Description Project Honeypot module: "阻止来自Project Honeypot列出的IP的请求。"
 Extended Description Referrer spam module: "基于引荐来源垃圾邮件阻止通常不会提供任何有意义的安全利益，但在某些情况下，对某些用户可能有用，用于收集有关请求的更多信息，以及能够报告它。<br />通过安装此模块，还将安装用于{{Links.Symfony.Intl/Idn}}的Symfony polyfills（因为此模块需要Idn功能性，但并非所有PHP安装都默认提供该功能性）。​可以通过<a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a>许可获得。"
-Extended Description Search engines blocker module: "搜索引擎（例如，百度、搜狗、Yandex 、等等）可能会导致某些网站出现问题。​这个模块可以阻止那些搜索引擎。"
 Extended Description Stop Forum Spam module: "防止通过SFS列出的IP地址访问注册和登录页面。"
 Name AbuseIPDB module: "AbuseIPDB 模块"
 Name BGPView module: "BGPView 模块"
 Name Bad TLDs blocker module: "坏TLD阻塞模块"
-Name Bad hosts blocker module (ISPs): "坏主机阻塞模块（ISP）"
 Name Bad hosts blocker module: "坏主机阻塞模块"
 Name Bot user agents module: "机器人用户代理模块"
 Name BunnyCDN compatibility module: "BunnyCDN兼容模块"
@@ -59,8 +70,8 @@ Name IPv6-Other: "IPv6（代理，VPN，等等）。"
 Name Optional security extras module: "可选安全附加模块"
 Name Project Honeypot module: "Project Honeypot 模块"
 Name Referrer spam module: "引荐来源垃圾邮件模块"
-Name Search engines blocker module: "搜索引擎阻塞模块"
 Name Stop Forum Spam module: "Stop Forum Spam 模块"
+checkbox_delete_orphaned_values: "删除孤立值。"
 checkbox_label_block_it: "阻止它。"
 checkbox_label_block_negatives: "阻止阴性？"
 checkbox_label_block_nonverified: "阻止未验证的请求？"

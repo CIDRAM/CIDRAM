@@ -7,13 +7,26 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Japanese language data for the front-end (last modified: 2022.07.22).
+# This file: Japanese language data for the front-end (last modified: 2022.08.19).
+#
+# Regarding translations: My native language is English. Because this is a free
+# and open-source hobby project which generates zero income, and translatable
+# content is likely to change as the features and functionality supported by
+# the project changes, it doesn't make sense for me to spend money for
+# translations. Because I'm the sole author/developer/maintainer for the
+# project and I'm not a ployglot, any translations I produce are very likely to
+# contain errors. Sorry, but realistically, that won't ever change. If you find
+# any such errors/typos/mistakes/etc, your assistance to correct them would be
+# very much appreciated. Pull requests are invited and encouraged. Otherwise,
+# if you find these errors too much to handle, just stick with the original
+# English source. If a translation is irredeemably incomprehensible, let me
+# know which, and I can delete it. If you're not sure how to perform pull
+# requests, ask. I can help.
 ##/
 
 Extended Description AbuseIPDB module: "AbuseIPDBにリストされているＩＰからの要求をブロックします。"
 Extended Description BGPView module: "{{Links.BGPView}}のＡＰＩを活用して、ＣＩＤＲＡＭのためにＡＳＮおよび国コード検索機能を提供します。​ＣＩＤＲＡＭコンフィギュレーションを介して、ＡＳＮと国をブロックまたはホワイトリストに登録できます。​Facebookリクエストを検証する、ソーシャル・メディア・ベリフィケーションの手段を提供します。"
 Extended Description Bad TLDs blocker module: "スパマー、ハッカー、その他の悪意のあるエンティティによって頻繁に使用されるＴＬＤに属するホストをブロックします。"
-Extended Description Bad hosts blocker module (ISPs): "スパマー、ハッカー、その他の悪意のあるエンティティによって頻繁に使用されるＩＳＰに属するホストをブロックします。"
 Extended Description Bad hosts blocker module: "スパマー、ハッカー、およびその他の悪意のあるエンティティによって頻繁に使用されるホストをブロックします。"
 Extended Description Bot user agents module: "望ましくないボットや悪意のあるアクティビティに関連付けられたユーザー・エージェントをブロックします。"
 Extended Description Bypasses: "メインパッケージに通常含まれているデフォルト・シグネチャ・バイパス。"
@@ -34,12 +47,10 @@ Extended Description Optional security extras module: "リクエストでよく�
 Extended Description PHPMailer: "電子Ｅメールの送信を含む機能の使用に必要です。<br />「{{Links.PHPMailer.PHPMailer}}」は、「{{Links.PHPMailer.License}}」ライセンスを介して利用可能です。"
 Extended Description Project Honeypot module: "Project HoneypotにリストされているＩＰからの要求をブロックします。"
 Extended Description Referrer spam module: "リファラー・スパムに基づくブロックは、通常、有意義なセキュリティ上の利点を提供しません、ただし、場合によっては、リクエストに関する詳細情報の収集、およびレポートの作成に役立つ可能性があります。<br />このモジュールをインストールすると、{{Links.Symfony.Intl/Idn}}のSymfonyポリフィルもインストールされます（このモジュールは「Idn」機能を必要とするためが、すべてのＰＨＰインストールがデフォルトで提供するわけではありません）。​<a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">ＭＩＴ</a>ライセンスを通じて入手できます。"
-Extended Description Search engines blocker module: "一部のウェブサイトで問題となる可能性のある検索エンジンを（例：Baidu、Sogou、Yandexなど）ブロックする機能を提供します。"
 Extended Description Stop Forum Spam module: "ＳＦＳによってリストされたＩＰに対して登録ページとログインページを保護します。"
 Name AbuseIPDB module: "AbuseIPDB モジュール"
 Name BGPView module: "BGPView モジュール"
 Name Bad TLDs blocker module: "危険なホストＴＬＤブロッカー・モジュール"
-Name Bad hosts blocker module (ISPs): "危険なホスト・ブロッカー・モジュール（ＩＳＰ）"
 Name Bad hosts blocker module: "危険なホスト・ブロッカー・モジュール"
 Name Bot user agents module: "ボット・ユーザー・エージェント・モジュール"
 Name BunnyCDN compatibility module: "BunnyCDN互換モジュール"
@@ -59,8 +70,8 @@ Name IPv6-Other: "ＩＰｖ６（プロキシ、​ＶＰＮ、​およびそ�
 Name Optional security extras module: "オプショナル・セキュリティ・エクストラス・モジュール"
 Name Project Honeypot module: "Project Honeypot モジュール"
 Name Referrer spam module: "リファラー・スパム・モジュール"
-Name Search engines blocker module: "検索エンジン・ブロッカー・モジュール"
 Name Stop Forum Spam module: "Stop Forum Spam モジュール"
+checkbox_delete_orphaned_values: "孤立した値を削除します。"
 checkbox_label_block_it: "それをブロックします。"
 checkbox_label_block_negatives: "陰性をブロックしますか？"
 checkbox_label_block_nonverified: "未確認のリクエストをブロックしますか？"

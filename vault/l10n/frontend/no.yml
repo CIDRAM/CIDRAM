@@ -7,13 +7,26 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Norwegian language data for the front-end (last modified: 2022.07.22).
+# This file: Norwegian language data for the front-end (last modified: 2022.08.19).
+#
+# Regarding translations: My native language is English. Because this is a free
+# and open-source hobby project which generates zero income, and translatable
+# content is likely to change as the features and functionality supported by
+# the project changes, it doesn't make sense for me to spend money for
+# translations. Because I'm the sole author/developer/maintainer for the
+# project and I'm not a ployglot, any translations I produce are very likely to
+# contain errors. Sorry, but realistically, that won't ever change. If you find
+# any such errors/typos/mistakes/etc, your assistance to correct them would be
+# very much appreciated. Pull requests are invited and encouraged. Otherwise,
+# if you find these errors too much to handle, just stick with the original
+# English source. If a translation is irredeemably incomprehensible, let me
+# know which, and I can delete it. If you're not sure how to perform pull
+# requests, ask. I can help.
 ##/
 
 Extended Description AbuseIPDB module: "Blokkerer forespørsler fra IP-er oppført på AbuseIPDB."
 Extended Description BGPView module: "Utnytter {{Links.BGPView}} API for å tilby et ASN og landkode oppslag funksjonalitet for CIDRAM, slik at ASNer og land kan blokkeres eller hvitelister via CIDRAM-konfigurasjonen, og tilveiebringe et middel for verifisering av sosiale nettverk for å bekrefte Facebook-forespørsler."
 Extended Description Bad TLDs blocker module: "Blokker vertene som tilhører TLDer ofte brukt av spammere, hackere og andre farlige enheter."
-Extended Description Bad hosts blocker module (ISPs): "Blokker vertene som tilhører Internett-leverandører ofte brukt av spammere, hackere og andre farlige enheter."
 Extended Description Bad hosts blocker module: "Blokker vertene ofte brukt av spammere, hackere og andre farlige enheter."
 Extended Description Bot user agents module: "Blokkerer brukeragenter assosiert med uønskede bots og ufarlig aktivitet."
 Extended Description Bypasses: "Standard-signatur-bypass-filene som normalt følger med hovedpakken."
@@ -34,12 +47,10 @@ Extended Description Optional security extras module: "Gir noen begrensede besky
 Extended Description PHPMailer: "Kreves for bruk av funksjonalitet som innebærer sending av e-post.<br />{{Links.PHPMailer.PHPMailer}} er tilgjengelig via {{Links.PHPMailer.License}}-lisensen."
 Extended Description Project Honeypot module: "Blokkerer forespørsler fra IP-er oppført på Project Honeypot."
 Extended Description Referrer spam module: "Blokkering basert på referansesøppel vil vanligvis ikke gi noen meningsfull sikkerhetsgevinst, men i noen tilfeller kan det være nyttig for noen brukere, for å samle mer informasjon om forespørsler og for å kunne rapportere det.<br />Ved å installere denne modulen installeres også Symfony-polyfyllene for {{Links.Symfony.Intl/Idn}} (fordi denne modulen krever Idn-funksjonalitet, som ikke alle PHP-installasjoner leverer som standard), tilgjengelige via <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a> lisensen."
-Extended Description Search engines blocker module: "Gir muligheten til å blokkere søkemotorer som kan være problematiske for noen nettsteder (f.eks., Baidu, Sogou, Yandex, osv)."
 Extended Description Stop Forum Spam module: "Beskytter registrerings og innloggingssider mot IP-adresser oppført av SFS."
 Name AbuseIPDB module: "AbuseIPDB modul"
 Name BGPView module: "BGPView modul"
 Name Bad TLDs blocker module: "Dårlig TLDs blokkeringsmodul"
-Name Bad hosts blocker module (ISPs): "Dårlig vertene blokkeringsmodul (ISPs)"
 Name Bad hosts blocker module: "Dårlig vertene blokkeringsmodul"
 Name Bot user agents module: "Bot-brukeragentmodul"
 Name BunnyCDN compatibility module: "BunnyCDN kompatibilitetsmodul"
@@ -59,8 +70,8 @@ Name IPv6-Other: "IPv6 (proxyer, VPN, etc)."
 Name Optional security extras module: "Valgfrie sikkerhetstilleggsmodul"
 Name Project Honeypot module: "Project Honeypot modul"
 Name Referrer spam module: "Henvisende spam modul"
-Name Search engines blocker module: "Søkemotorer blokkeringsmodul"
 Name Stop Forum Spam module: "Stop Forum Spam modul"
+checkbox_delete_orphaned_values: "Slett foreldreløse verdier."
 checkbox_label_block_it: "Blokker det."
 checkbox_label_block_negatives: "Blokkere negative?"
 checkbox_label_block_nonverified: "Blokkere ikke-verifiserte forespørsler?"

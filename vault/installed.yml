@@ -49,7 +49,7 @@ CIDRAM Core:
    Checksum: "b62c0cf1deeb97c7ee15638f0a4102292a6bab6f0b6b1ee3a1dec7fa485c2e05:1352"
   defaults.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/defaults.yml"
-   Checksum: "cec004899b497771a6fd2901e83fc0c9e10e9ed21e73da83bae80f503c1841d2:32922"
+   Checksum: "0dbeea27fd4ccc49143fb11747578b4b4234521832ce4cf174f374da3db3903f:32946"
   loader.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/loader.php"
    Checksum: "2024a633fae0edeff14119bd2308d9599a8651bd1fc877838e3901b72afffdc0:1312"
@@ -64,7 +64,7 @@ CIDRAM Front-End:
   CIDRAM Core: "Latest"
   Common Classes Package: "^2.9.1"
   l10n/core/{lang}: ">=2022.142"
-  l10n/frontend/{lang}: ">=2022.191"
+  l10n/frontend/{lang}: ">=2022.230"
  Changelog: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/Changelog.md"
  Uninstallable: false
  Files:
@@ -247,7 +247,7 @@ CIDRAM Front-End:
    Checksum: "e835e18d8424056f1226eb82bbd096e298c5bb39274a9a671c9b3b2419767f2b:28021"
   CIDRAM/CIDRAM/Configuration.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/CIDRAM/CIDRAM/Configuration.php"
-   Checksum: "4dc10c2688a62244acdc86c52461a109df9dacd4807e7861f3f18c09baad7412:3495"
+   Checksum: "d5999ccbbe0c2abeb10d56452fb791adb0515466d3f3aa537486b7c79d7178d0:3495"
   CIDRAM/CIDRAM/FrontEnd.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/CIDRAM/CIDRAM/FrontEnd.php"
    Checksum: "2000a0df529aaf0c34a3bc1d516db96da39f6f635fcadc425e1935315128f569:279473"
@@ -426,370 +426,391 @@ Bypasses:
    Used with: "imports"
 l10n/core/ar:
  Extended Description: "التعريب العربي"
- Version: "2022.165.0"
+ Version: "2022.230.0"
  Files:
   l10n/core/ar.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/core/ar.yml"
-   Checksum: "81c5f52c6736dce3cc4e809f705bfbd27af8de408657dd51cef57d9ca2e4dea0:5475"
+   Checksum: "2265bfccb75dc08545b17f94c3ae09fe0d9d73e82e84797690e31b8649f848b3:6428"
 l10n/core/bn:
  Extended Description: "বাংলা স্থানীয়করণ"
- Version: "2022.189.0"
+ Version: "2022.230.0"
  Files:
   l10n/core/bn.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/core/bn.yml"
-   Checksum: "b78fe15bca2a5a6ff43c533e3bfe1bd566de1dce34d8b88a1df4cc2ba4a9ad39:10753"
+   Checksum: "fae5dccaf267f9b676c935001e6f20e6b71850f84cd61a70f0db086ee9496f67:11706"
 l10n/core/de:
  Extended Description: "Deutsche Lokalisierung"
- Version: "2022.165.0"
+ Version: "2022.230.0"
  Files:
   l10n/core/de.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/core/de.yml"
-   Checksum: "fba3c7ae7904e19386cb0f6bb90e27325c188aca0c6ffdc8609183335780b0d9:5635"
+   Checksum: "34f657ffa4b1edae7dd65982c106bf50b10ec0475f2e5d8fdd4d9fac5371dd3a:6587"
 l10n/core/en:
  Extended Description: "English localisation"
- Version: "2022.165.0"
+ Version: "2022.230.0"
  Uninstallable: false
  Files:
   l10n/core/en.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/core/en.yml"
-   Checksum: "d60fd5ad27a6a9cee8cae961365bb15b14efab36401f63f1823e8514fa948a26:4984"
+   Checksum: "92a52c7580923a30c232ec813cf4aadf5f9a6e4bed4316f7d84591abec812d96:5937"
 l10n/core/es:
  Extended Description: "Localización en Español"
- Version: "2022.165.0"
+ Version: "2022.230.0"
  Files:
   l10n/core/es.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/core/es.yml"
-   Checksum: "90f8b124df8e58e6805be6199973f2e6e6ffd45bbb7969ddadda5eed5ecc08e9:5445"
+   Checksum: "50d8bccd1e24a1ef3819ef9a335aa5b671ffc063cea1352f5afd7d83d98fe3ce:6395"
+l10n/core/fa:
+ Extended Description: "بومی سازی در فارسی"
+ Version: "2022.230.0"
+ Files:
+  l10n/core/fa.yml:
+   From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/core/fa.yml"
+   Checksum: "f185ada593c439bfe13d67f606fcfb8f7a1de8536f875e79524d64bd27cde925:7772"
 l10n/core/fr:
  Extended Description: "Localisation Française"
- Version: "2022.165.0"
+ Version: "2022.230.0"
  Files:
   l10n/core/fr.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/core/fr.yml"
-   Checksum: "cb10ba77b46f304d3c9566a89bc65bf2618c93003a0defc700d5d0f94be419fe:5716"
+   Checksum: "ea59c0d375b410de54357695d5e3468728fc7dc65faefbc082465878ebf2514a:6666"
+l10n/core/he:
+ Extended Description: "לוקליזציה עברית"
+ Version: "2022.230.0"
+ Files:
+  l10n/core/he.yml:
+   From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/core/he.yml"
+   Checksum: "7ff10acfdc7d03c5fedf8477dc3c4c452b1b334084c9075325eefb252473737a:6990"
 l10n/core/hi:
  Extended Description: "हिंदी भाषा स्थानीयकरण"
- Version: "2022.165.0"
+ Version: "2022.230.0"
  Files:
   l10n/core/hi.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/core/hi.yml"
-   Checksum: "f475bfdfd8411f6a99a739777f7f4f2fd4ea179d2da1c4fa48c665ff498d1e58:9785"
+   Checksum: "f92b8098ba85635aba7de43a49d8070509f2162c8a0b59fffb4ae2961aa36dd3:10738"
 l10n/core/id:
  Extended Description: "Lokalisasi di Bahasa Indonesia"
- Version: "2022.165.0"
+ Version: "2022.230.0"
  Files:
   l10n/core/id.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/core/id.yml"
-   Checksum: "9dae192712bd259797870ca5cbf591e95de599622fc649741c9c0197b6595834:5294"
+   Checksum: "e9ddc89ee21357aeca7cb2c3433e615578d13245efc38b9c042c90daa18a9858:6266"
 l10n/core/it:
  Extended Description: "Localizzazione Italiana"
- Version: "2022.165.0"
+ Version: "2022.230.0"
  Files:
   l10n/core/it.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/core/it.yml"
-   Checksum: "6b993d84ee1903ba98f643db9e9abe25e4bd9b523ef8d2ccdfce9c61702cb5b9:5570"
+   Checksum: "a551530ddac0543c5a54bec3a81fbb13ee1ebd7aeb1e1bdc79d4cd79c5f116aa:6522"
 l10n/core/ja:
  Extended Description: "日本語ローカリゼーション"
- Version: "2022.165.0"
+ Version: "2022.230.0"
  Files:
   l10n/core/ja.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/core/ja.yml"
-   Checksum: "60af788b4341f069a100e07000dbc18edfeec7e0835f02a9008622b5b8fb0d0e:6370"
+   Checksum: "2f8b0031b202e5655e751269a5474b879f417d4111b4da2eb573c05273f2097a:7323"
 l10n/core/ko:
  Extended Description: "한국어 현지화"
- Version: "2022.165.0"
+ Version: "2022.230.0"
  Files:
   l10n/core/ko.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/core/ko.yml"
-   Checksum: "d15293207356998de4def6de41018b2a7f772ec2d11ff1c9dd13a5366f2b9dae:5184"
+   Checksum: "626762b6b85ae5cfc99864c0930a91ed6e2bd37eab29b3c81a06efff05828448:6137"
 l10n/core/lv:
  Extended Description: "Latviešu lokalizācija"
- Version: "2022.165.0"
+ Version: "2022.230.0"
  Files:
   l10n/core/lv.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/core/lv.yml"
-   Checksum: "9b282d532c33941a46167be2f2e73dd72b46f82652fd757bae9b49589d2a9a36:5471"
+   Checksum: "b31b8421cd699e9642bb2b95617bf9542540ef6a786cc694958c01778c639f5e:6424"
 l10n/core/ms:
  Extended Description: "Penyetempatan Bahasa Melayu"
- Version: "2022.165.0"
+ Version: "2022.230.0"
  Files:
   l10n/core/ms.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/core/ms.yml"
-   Checksum: "9b282d532c33941a46167be2f2e73dd72b46f82652fd757bae9b49589d2a9a36:5471"
+   Checksum: "355e7cd2004f7c240a3841e55e606612420512ca6978d90e183f13d524f49a08:6332"
 l10n/core/nl:
  Extended Description: "Nederlandse lokalisatie"
- Version: "2022.165.0"
+ Version: "2022.230.0"
  Files:
   l10n/core/nl.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/core/nl.yml"
-   Checksum: "b5e59130036a418729875dd31f9e1636d6a3e47227fc7863f10a971db8c6ca50:5355"
+   Checksum: "c05c8fe8033ffa901bd9ea7ba7388ad8b5a75ea65a2ebf82b005f195d89d447e:6307"
 l10n/core/no:
  Extended Description: "Norsk lokalisering"
- Version: "2022.165.0"
+ Version: "2022.230.0"
  Files:
   l10n/core/no.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/core/no.yml"
-   Checksum: "8ef70bb875bcb099c3a770120d061b3bd0823ce104fa8c704466710b536f9873:5261"
+   Checksum: "2807bc18af18632de4111c3921230b4c32fe9a5f8c44b78cd0dfec43105a7fb5:6214"
 l10n/core/pl:
  Extended Description: "Polska lokalizacja"
- Version: "2022.165.0"
+ Version: "2022.230.0"
  Files:
   l10n/core/pl.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/core/pl.yml"
-   Checksum: "f5825761af27c89193e184a49a649a47094081f55db986218418d3eb64464ff0:5659"
+   Checksum: "626690f8899210568802540cdfb86bd7a87718830a22f410f825fc153d220e6e:6612"
 l10n/core/pt:
  Extended Description: "Localização portuguesa"
- Version: "2022.165.0"
+ Version: "2022.230.0"
  Files:
   l10n/core/pt.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/core/pt.yml"
-   Checksum: "1673a27d0712327ff10819ded8af56f81790b3a2c47b88c014d91d1736c0d4a4:5365"
+   Checksum: "1768c98c946e1c20b93086cf7799ec1eaccdfd7684b8f7e1cbff63266de44b81:6317"
 l10n/core/ru:
  Extended Description: "Русском локализация"
- Version: "2022.165.0"
+ Version: "2022.230.0"
  Files:
   l10n/core/ru.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/core/ru.yml"
-   Checksum: "99da9db9a08ff858965d0b89c41b28c11d847f41212db28583d3ebb5d85c0cf7:8287"
+   Checksum: "f47a9712b0e5530f6411b8acb2fd8e34fbc2d0ff57f3e3cda97d327c1bf4d589:9248"
 l10n/core/sv:
  Extended Description: "Svensk lokalisering"
- Version: "2022.165.0"
+ Version: "2022.230.0"
  Files:
   l10n/core/sv.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/core/sv.yml"
-   Checksum: "587ea40d45bc1533e672b0059e6d7364326d9957b5231f7f87f43eabf9bd7ba3:5348"
+   Checksum: "c2f0b0ca00314afedfb25197cce4ee070db4df69e5381dcc0e6d9bcfb1d94b9a:6301"
 l10n/core/ta:
  Extended Description: "தமிழ் உள்ளூர்மயமாக்கல்"
- Version: "2022.165.0"
+ Version: "2022.230.0"
  Files:
   l10n/core/ta.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/core/ta.yml"
-   Checksum: "5ecd8bcf7c005649ae6fe8be40e76ef98dc3e8c54ff9ed0e0fa96e19b3ac61c2:11735"
+   Checksum: "edbc748cf9937432d8e6f9be5c015c8376645dea77d59ada5cdd50df68b19cb4:12688"
 l10n/core/th:
  Extended Description: "การแปลภาษาไทย"
- Version: "2022.165.0"
+ Version: "2022.230.0"
  Files:
   l10n/core/th.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/core/th.yml"
-   Checksum: "162655da5f2df25487b71b953879135f0fe3a6a60edbba96ac289e0dc1621e99:9539"
+   Checksum: "13c6457abf9a320efa8bd6e79a7876e13f0af5802abad8aab98e0597528bb4f8:10492"
 l10n/core/tr:
  Extended Description: "Türkçe yerelleştirme"
- Version: "2022.165.0"
+ Version: "2022.230.0"
  Files:
   l10n/core/tr.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/core/tr.yml"
-   Checksum: "c901fa7070f7a1fd5f0e86425c7a343c00d3832e0406b30a09b5c77a1a5e5349:5533"
+   Checksum: "69c01f41cfbc10c55fd5a130c1e3186e063e05da8eb8b06be86bb607882f2cfd:6486"
+l10n/core/uk:
+ Extended Description: "Локалізація Українською мовою"
+ Version: "2022.230.0"
+ Files:
+  l10n/core/uk.yml:
+   From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/core/uk.yml"
+   Checksum: "f83694391f800cfe5045b3b1968f0df42cf7a5f4464a0ecc7b1bdd80765eefa3:9161"
 l10n/core/ur:
  Extended Description: "‏اردو لوکلائزیشن"
- Version: "2022.165.0"
+ Version: "2022.230.0"
  Files:
   l10n/core/ur.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/core/ur.yml"
-   Checksum: "845009f6e6347dad0bc6fd6a2599c4a472982bcab1a27b0c3e5dc554278d25c1:7542"
+   Checksum: "5ccce4cdcf7aba0dbafda30a7f46f2ffd484948ecd2a5a4b59c6c8933409ebc9:8495"
 l10n/core/vi:
  Extended Description: "Bản địa hóa tiếng Việt"
- Version: "2022.165.0"
+ Version: "2022.230.0"
  Files:
   l10n/core/vi.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/core/vi.yml"
-   Checksum: "2d1bc40208d8f74c00d9b831140c1bf35dcf5df6177ede267cff9961a898f533:6590"
+   Checksum: "2613a2d68f2489529c659878d4fb57e4bb79c1ef84d0ace224a2fdb8a4d70aeb:7543"
 l10n/core/zh-TW:
  Extended Description: "中文（傳統）語言數據"
- Version: "2022.165.0"
+ Version: "2022.230.0"
  Files:
   l10n/core/zh-TW.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/core/zh-TW.yml"
-   Checksum: "da48df1eca526d7c16ab25c6349acb0d2e52d4d0bde0e56f5a4a3cd6e1f7e402:4658"
+   Checksum: "5789fad27ba006371f68624a4f88d5f6d2121a41a197b829d38c6983bb9ce473:5611"
 l10n/core/zh:
  Extended Description: "中文（简体）语言数据"
- Version: "2022.165.0"
+ Version: "2022.230.0"
  Files:
   l10n/core/zh.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/core/zh.yml"
-   Checksum: "73fd2b0230c8bc1d3773580011c1f7c5630062294334f800e7047ab7159d8cf4:4654"
+   Checksum: "31f41beb37ec383146e766d46ef0056168c7ee52122c8e60ceae834f2570594f:5607"
 l10n/frontend/ar:
  Extended Description: "التعريب العربي"
- Version: "2022.203.0"
+ Version: "2022.230.0"
  Files:
   l10n/frontend/ar.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/ar.yml"
-   Checksum: "3d678d4807f03843aae5df9e3272f7811f6c46e9c8cbcc70dc24229f041fb80b:81391"
+   Checksum: "fa2224a44e40f871c3e5b285d1fa081bcfb8b204cfe80308c6e5c1e35bf5de24:81653"
 l10n/frontend/bn:
  Extended Description: "বাংলা স্থানীয়করণ"
- Version: "2022.203.0"
+ Version: "2022.230.0"
  Files:
   l10n/frontend/bn.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/bn.yml"
-   Checksum: "5cac3870124af1f7be7f88e33964a3c32e8d5f048e40aa52289ea23595128462:120910"
+   Checksum: "c0deb348676c3cd2a050a5a0a4c0f6b7af7bc4e683699013f653a17807e07d41:120987"
 l10n/frontend/de:
  Extended Description: "Deutsche Lokalisierung"
- Version: "2022.203.0"
+ Version: "2022.230.0"
  Files:
   l10n/frontend/de.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/de.yml"
-   Checksum: "eaa25389172cef66028dfe9a277e1c00b830e2cac79aa0cbb51cc1eb663ce197:67365"
+   Checksum: "87174337fa04068b23d3874b4d03b370cf7acab28db6231f0bdc4cb92a5be3b2:67855"
 l10n/frontend/en:
  Extended Description: "English localisation"
- Version: "2022.203.0"
+ Version: "2022.230.0"
  Uninstallable: false
  Files:
   l10n/frontend/en.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/en.yml"
-   Checksum: "b2206cf03ba7879edce2911fda62ef8e353b145c597e5db4b6ac617007d5832f:59094"
+   Checksum: "cff31303b39051f6e4fe732380d2ef29d00f5551fe30560a990380c27beb4e24:59634"
 l10n/frontend/es:
  Extended Description: "Localización en Español"
- Version: "2022.203.0"
+ Version: "2022.230.0"
  Files:
   l10n/frontend/es.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/es.yml"
-   Checksum: "57852abb3040f2cdf731113d5b75caa144b0d768b34f5d1badc9514a7321a10e:67329"
+   Checksum: "63cacf0ae2698862322434ec40b57f50eef64e97502fd2ecad1188ea19419ba1:67800"
 l10n/frontend/fr:
  Extended Description: "Localisation Française"
- Version: "2022.203.0"
+ Version: "2022.230.0"
  Files:
   l10n/frontend/fr.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/fr.yml"
-   Checksum: "c7424756cc30307de026c600b14e8c7aad40c8936a63e65c0f3ede1fec2e6275:69227"
+   Checksum: "c0398fda40c490bbc46ec22e689d5b8d5f9b2583e45842dfeb0a7df4bd615602:69680"
 l10n/frontend/hi:
  Extended Description: "हिंदी भाषा स्थानीयकरण"
- Version: "2022.203.0"
+ Version: "2022.230.0"
  Files:
   l10n/frontend/hi.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/hi.yml"
-   Checksum: "3a3b82971f3473ada030cd1e446c653744d8b4d0c8db1f762a92df2d22ee00e1:121987"
+   Checksum: "ee717e9bc2062947b4fd5d9574c8ff6e532c5853567773197c2a379c23acb472:122023"
 l10n/frontend/id:
  Extended Description: "Lokalisasi di Bahasa Indonesia"
- Version: "2022.203.0"
+ Version: "2022.230.0"
  Files:
   l10n/frontend/id.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/id.yml"
-   Checksum: "2e5128bf1ac953ce24e882e20646434c0a7326c629d49493080a828d35031905:62655"
+   Checksum: "ad0e53eb8bca991d421e5a7af88b0b70045669b301332dbfa96ffbfa8bae2a6f:63231"
 l10n/frontend/it:
  Extended Description: "Localizzazione Italiana"
- Version: "2022.203.0"
+ Version: "2022.230.0"
  Files:
   l10n/frontend/it.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/it.yml"
-   Checksum: "8f0cf8bffca19ae2996f6f7163d0d069333980999690e6a64fe7565b85dc55fc:66011"
+   Checksum: "27f876a2ddba9fd710e9f67ae470aced1e57c3b6b95cb75a6c9322ec2252d1e0:66500"
 l10n/frontend/ja:
  Extended Description: "日本語ローカリゼーション"
- Version: "2022.203.0"
+ Version: "2022.230.0"
  Files:
   l10n/frontend/ja.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/ja.yml"
-   Checksum: "dbca7e3f97f306a3b1ffa51faf17a1cec9e428f8ba3579287f9569815516f9a3:81763"
+   Checksum: "3d5ce878a4ac4cb461ad563d765363c70833d0c5150d8e49224712eaa6716cf2:82136"
 l10n/frontend/ko:
  Extended Description: "한국어 현지화"
- Version: "2022.203.0"
+ Version: "2022.230.0"
  Files:
   l10n/frontend/ko.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/ko.yml"
-   Checksum: "eb4145a12c5ffaf166583a82591662ea0ed7c4551f37b91f2fdd3db2910faf86:67586"
+   Checksum: "d770161367b73f75a1f39139623054f00263a64eb37d1c49ecd8b0dc2847c30b:68088"
 l10n/frontend/lv:
  Extended Description: "Latviešu lokalizācija"
- Version: "2022.203.0"
+ Version: "2022.230.0"
  Files:
   l10n/frontend/lv.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/lv.yml"
-   Checksum: "62c2bd8df3a684592717097461a2a137a426332411bd4d4229f153998704b3c2:64726"
+   Checksum: "879d165a1af12f020e4ab74214fc411784be4a8c24c77f864105c951a06e321b:65191"
 l10n/frontend/ms:
  Extended Description: "Penyetempatan Bahasa Melayu"
- Version: "2022.203.0"
+ Version: "2022.230.0"
  Files:
   l10n/frontend/ms.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/ms.yml"
-   Checksum: "62c2bd8df3a684592717097461a2a137a426332411bd4d4229f153998704b3c2:64726"
+   Checksum: "faa7dd7b761638e8a77d4526a50fcb55deb49b3411e24b1fc72e76309779038d:63705"
 l10n/frontend/nl:
  Extended Description: "Nederlandse lokalisatie"
- Version: "2022.203.0"
+ Version: "2022.230.0"
  Files:
   l10n/frontend/nl.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/nl.yml"
-   Checksum: "159d9c87567cf4852a46d85787ea0723443f473913fc40884dcebfdd9452092a:64811"
+   Checksum: "22a8f0776a57ba0e83747ac47bd0d253ef34300febb286bfbb430262e9c2f14d:65329"
 l10n/frontend/no:
  Extended Description: "Norsk lokalisering"
- Version: "2022.203.0"
+ Version: "2022.230.0"
  Files:
   l10n/frontend/no.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/no.yml"
-   Checksum: "a53065f7495662318d5923dedec41cc2a5a7b1b51741a9ef097c57d13632d882:61383"
+   Checksum: "ac4a5aecd9611645c63166189388cd8341fd862461074a77e339f2155189d887:61901"
 l10n/frontend/pl:
  Extended Description: "Polska lokalizacja"
- Version: "2022.203.0"
+ Version: "2022.230.0"
  Files:
   l10n/frontend/pl.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/pl.yml"
-   Checksum: "dc3eb1ff1d1cb412140eb676ba2d55fb62fc0beba97123b039e54e6629ae2e41:66242"
+   Checksum: "6fefcc8372ec9cba76c3fe62d183af0a229a0899788f6390c520ae2e92f9a120:66755"
 l10n/frontend/pt:
  Extended Description: "Localização portuguesa"
- Version: "2022.203.0"
+ Version: "2022.230.0"
  Files:
   l10n/frontend/pt.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/pt.yml"
-   Checksum: "718dab3e0731d6a99684627e62d019f14c35919b53b3ec71226e20f274930022:65933"
+   Checksum: "61885a00534b07e3bc11916474a3619c61fd21fef2af4dfd5b0e9146802fcc47:66421"
 l10n/frontend/ru:
  Extended Description: "Русском локализация"
- Version: "2022.203.0"
+ Version: "2022.230.0"
  Files:
   l10n/frontend/ru.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/ru.yml"
-   Checksum: "807956cb626fef1924bb2f3ec92004ca3aeaa4416370c78b92ca014c802b5b2a:97680"
+   Checksum: "c9dbc05d28583e7a9479fde5e94e75c48665539ac98fd1b01e58623d09aadfec:97883"
 l10n/frontend/sv:
  Extended Description: "Svensk lokalisering"
- Version: "2022.203.0"
+ Version: "2022.230.0"
  Files:
   l10n/frontend/sv.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/sv.yml"
-   Checksum: "9c323962c76e2dc2d2b56a2ad5f51f805767fd975c406ca076cca539882dba76:62869"
+   Checksum: "1d7ca5f2039728e7fb70704d818c335addb0d42a46d2d66b2dd07c1dc4db5c19:63364"
 l10n/frontend/ta:
  Extended Description: "தமிழ் உள்ளூர்மயமாக்கல்"
- Version: "2022.203.0"
+ Version: "2022.230.0"
  Files:
   l10n/frontend/ta.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/ta.yml"
-   Checksum: "f23fb982991826e0d2e3e802ba35fb62d293b6fd776975f52aa026f59955a0b3:140239"
+   Checksum: "5a91a94b258390e6c4d5ed0141b4d0cf78f841c9700a7978f08ba25a1424d01a:140242"
 l10n/frontend/th:
  Extended Description: "การแปลภาษาไทย"
- Version: "2022.203.0"
+ Version: "2022.230.0"
  Files:
   l10n/frontend/th.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/th.yml"
-   Checksum: "cbf5ff9bfdffd292cf445d0ed9d274fb6f87627d35347aebb537166ed44f76d5:109536"
+   Checksum: "5b326d5ffd3b1ff85f6bffc18ad09b12e279b5c12775d3798682210637430d8a:109623"
 l10n/frontend/tr:
  Extended Description: "Türkçe yerelleştirme"
- Version: "2022.203.0"
+ Version: "2022.230.0"
  Files:
   l10n/frontend/tr.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/tr.yml"
-   Checksum: "bb15324ff4b8e9ed0e5487078b83433ad46eccb76869f6452395ea3d0b5d9810:65059"
+   Checksum: "8c1f240b54322cf921a7124bd782ab5ca4f60747ccdd71f00de6cf698110af92:65528"
 l10n/frontend/ur:
  Extended Description: "‏اردو لوکلائزیشن"
- Version: "2022.203.0"
+ Version: "2022.230.0"
  Files:
   l10n/frontend/ur.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/ur.yml"
-   Checksum: "546550e9f712cd4c7c289168a136e3a2c4ddd07c12c8cb6e0536e6a3cb2b4287:87095"
+   Checksum: "e78f30298a267a923d6bde963515bd191fc8b042bbb8d658cbcf4e97bab33367:87405"
 l10n/frontend/vi:
  Extended Description: "Bản địa hóa tiếng Việt"
- Version: "2022.203.0"
+ Version: "2022.230.0"
  Files:
   l10n/frontend/vi.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/vi.yml"
-   Checksum: "8d9eb6587dbc870a0af7bd142ea4a61be571463984ba2401a0a84a4899d9c404:74610"
+   Checksum: "6edd88085058ed3113c66475b33d0eb7be30cd99945495125b38a9566c8e31b9:75054"
 l10n/frontend/zh-TW:
  Extended Description: "傳統中文本地化"
- Version: "2022.203.0"
+ Version: "2022.230.0"
  Files:
   l10n/frontend/zh-TW.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/zh-TW.yml"
-   Checksum: "ccae0337fab9637d8f3fb09a66ec11572cbe1b88860bf6edfcc6f6cc1ae005c8:55450"
+   Checksum: "0460c3bedb5ba6c98437d665096bf462c807323d57034e87e8603b3aed3633b6:55964"
 l10n/frontend/zh:
  Extended Description: "简体中文本地化"
- Version: "2022.203.0"
+ Version: "2022.230.0"
  Files:
   l10n/frontend/zh.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/l10n/frontend/zh.yml"
-   Checksum: "dead34f95837c5c3edc2d4897bab5c0c54fc126c739c91c5f1a733972abb760e:55440"
+   Checksum: "8b1065a9a3f8335d0f55dcab10bcf93daf41a41141028d06d6ea6ccf079f4a15:55954"
 AbuseIPDB module:
  Name: "AbuseIPDB module"
  False Positive Risk: "Medium"

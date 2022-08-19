@@ -7,13 +7,26 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Korean language data for the front-end (last modified: 2022.07.22).
+# This file: Korean language data for the front-end (last modified: 2022.08.19).
+#
+# Regarding translations: My native language is English. Because this is a free
+# and open-source hobby project which generates zero income, and translatable
+# content is likely to change as the features and functionality supported by
+# the project changes, it doesn't make sense for me to spend money for
+# translations. Because I'm the sole author/developer/maintainer for the
+# project and I'm not a ployglot, any translations I produce are very likely to
+# contain errors. Sorry, but realistically, that won't ever change. If you find
+# any such errors/typos/mistakes/etc, your assistance to correct them would be
+# very much appreciated. Pull requests are invited and encouraged. Otherwise,
+# if you find these errors too much to handle, just stick with the original
+# English source. If a translation is irredeemably incomprehensible, let me
+# know which, and I can delete it. If you're not sure how to perform pull
+# requests, ask. I can help.
 ##/
 
 Extended Description AbuseIPDB module: "AbuseIPDB에 나열된 IP의 요청을 차단합니다."
 Extended Description BGPView module: "{{Links.BGPView}} API를 활용하여 CIDRAM에 대한 ASN 및 국가 코드 조회 기능 제공. CIDRAM 구성을 통해 ASN 및 국가를 차단 또는 허용 할 수 있습니다. Facebook 요청을 확인하기 위한 소셜 네트워킹 확인 수단 제공."
 Extended Description Bad TLDs blocker module: "스팸 발송자, 해커 및 기타 사기꾼이 자주 사용하는 TLD에 속한 호스트를 차단합니다."
-Extended Description Bad hosts blocker module (ISPs): "스팸 발송자, 해커 및 기타 사기꾼이 자주 사용하는 ISP에 속한 호스트를 차단합니다."
 Extended Description Bad hosts blocker module: "스패머, 해커 및 기타 사기꾼이 자주 사용하는 호스트를 차단합니다."
 Extended Description Bot user agents module: "원치 않는 봇과 관련없는 사용자 에이전트를 차단합니다."
 Extended Description Bypasses: "기본 서명 우회 일반적으로 기본 패키지에 포함되어 있습니다."
@@ -34,12 +47,10 @@ Extended Description Optional security extras module: "요청에서 자주 사�
 Extended Description PHPMailer: "이메일 전송과 관련된 기능 사용에 필요합니다.<br />{{Links.PHPMailer.PHPMailer}}는 {{Links.PHPMailer.License}} 라이센스를 통해 사용 가능합니다."
 Extended Description Project Honeypot module: "Project Honeypot에 나열된 IP의 요청을 차단합니다."
 Extended Description Referrer spam module: "리퍼러 스팸에 기반한 차단은 일반적으로 의미 있는 보안 이점을 제공하지 않습니다, 그러나 어떤 경우에는, 요청에 대한 추가 정보를 수집하고 보고서를 생성하는 데 유용 할 수 있습니다.<br />이 모듈을 설치하면, {{Links.Symfony.Intl/Idn}}에 대한 Symfony 폴리 필도 설치됩니다 (이 모듈에는 Idn 기능이 필요하기 때문에 및, 모든 PHP 설치에서 기본적으로 제공하는 것은 아닙니다). <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a>라이센스를 통해 사용 가능합니다."
-Extended Description Search engines blocker module: "일부 웹 사이트에서 문제가 될 수 있는 검색 엔진을 (예\_: Baidu, Sogou, Yandex, 등등), 차단하는 기능을 제공합니다."
 Extended Description Stop Forum Spam module: "SFS가 나열한 IP에 대한 등록 및 로그인 페이지를 보호합니다."
 Name AbuseIPDB module: "AbuseIPDB 모듈"
 Name BGPView module: "BGPView 모듈"
 Name Bad TLDs blocker module: "위험한 TLD 차단 모듈"
-Name Bad hosts blocker module (ISPs): "위험한 호스트 차단 모듈 (ISP)"
 Name Bad hosts blocker module: "위험한 호스트 차단 모듈"
 Name Bot user agents module: "봇 사용자 에이전트 모듈"
 Name BunnyCDN compatibility module: "BunnyCDN 호환성 모듈"
@@ -59,8 +70,8 @@ Name IPv6-Other: "IPv6 (프록시, VPN, 등)."
 Name Optional security extras module: "선택적 보안 엑스트라 스 모듈"
 Name Project Honeypot module: "Project Honeypot 모듈"
 Name Referrer spam module: "리퍼러 스팸 모듈"
-Name Search engines blocker module: "검색 엔진 차단기 모듈"
 Name Stop Forum Spam module: "Stop Forum Spam 모듈"
+checkbox_delete_orphaned_values: "분리된 값을 삭제합니다."
 checkbox_label_block_it: "차단하세요."
 checkbox_label_block_negatives: "네거티브를 차단하시겠습니까?"
 checkbox_label_block_nonverified: "검증되지 않은 요청을 차단하시겠습니까?"

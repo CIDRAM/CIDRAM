@@ -7,13 +7,26 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Italian language data for the front-end (last modified: 2022.07.22).
+# This file: Italian language data for the front-end (last modified: 2022.08.19).
+#
+# Regarding translations: My native language is English. Because this is a free
+# and open-source hobby project which generates zero income, and translatable
+# content is likely to change as the features and functionality supported by
+# the project changes, it doesn't make sense for me to spend money for
+# translations. Because I'm the sole author/developer/maintainer for the
+# project and I'm not a ployglot, any translations I produce are very likely to
+# contain errors. Sorry, but realistically, that won't ever change. If you find
+# any such errors/typos/mistakes/etc, your assistance to correct them would be
+# very much appreciated. Pull requests are invited and encouraged. Otherwise,
+# if you find these errors too much to handle, just stick with the original
+# English source. If a translation is irredeemably incomprehensible, let me
+# know which, and I can delete it. If you're not sure how to perform pull
+# requests, ask. I can help.
 ##/
 
 Extended Description AbuseIPDB module: "Blocca le richieste dagli IP elencati in AbuseIPDB."
 Extended Description BGPView module: "Sfrutta l'API {{Links.BGPView}} per fornire funzionalità di ricerca di ASN e codici paese per CIDRAM, abilitando a ASN e paesi di essere bloccati o autorizzati nella configurazione CIDRAM, e fornire un mezzo per la verifica dei social network per verificare le richieste di Facebook."
 Extended Description Bad TLDs blocker module: "Blocca gli host appartenenti agli TLD utilizzati frequentemente da spammer, hacker e altre entità malvagie."
-Extended Description Bad hosts blocker module (ISPs): "Blocca gli host appartenenti agli ISP utilizzati frequentemente da spammer, hacker e altre entità malvagie."
 Extended Description Bad hosts blocker module: "Blocca gli host utilizzati frequentemente da spammer, hacker e altre entità nefande."
 Extended Description Bot user agents module: "Blocca gli agenti utente associati a bot indesiderati e attività nefande."
 Extended Description Bypasses: "Un file per bypassare alcune delle firme predefinite normalmente inclusi nel pacchetto principale."
@@ -34,12 +47,10 @@ Extended Description Optional security extras module: "Fornisce alcune protezion
 Extended Description PHPMailer: "Richiesto per l'utilizzo di qualsiasi funzionalità che implica l'invio di posta elettronica.<br />{{Links.PHPMailer.PHPMailer}} è disponibile tramite la licenza {{Links.PHPMailer.License}}."
 Extended Description Project Honeypot module: "Blocca le richieste dagli IP elencati in Project Honeypot."
 Extended Description Referrer spam module: "Il blocco basato sullo spam dei referrer in genere non offre alcun vantaggio significativo in termini di sicurezza, ma in alcuni casi potrebbe essere utile per alcuni utenti, per raccogliere maggiori informazioni sulle richieste e per poterle segnalare.<br />L'installazione di questo modulo installa anche i polyfill di Symfony per {{Links.Symfony.Intl/Idn}} (perché questo modulo richiede la funzionalità Idn, che non tutte le installazioni PHP forniscono per impostazione predefinita), disponibili tramite la licenza <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a>."
-Extended Description Search engines blocker module: "Fornisce la possibilità di bloccare i motori di ricerca che potrebbero essere problematici per alcuni siti Web (ad es., Baidu, Sogou, Yandex, ecc)."
 Extended Description Stop Forum Spam module: "Protegge le pagine di registrazione e di accesso agli IP elencati da SFS."
 Name AbuseIPDB module: "Modulo AbuseIPDB"
 Name BGPView module: "Modulo BGPView"
 Name Bad TLDs blocker module: "Modulo bloccante di cattivi TLD"
-Name Bad hosts blocker module (ISPs): "Modulo bloccante di cattivi host (ISP)"
 Name Bad hosts blocker module: "Modulo bloccante di cattivi host"
 Name Bot user agents module: "Modulo per gli user agent dei bot"
 Name BunnyCDN compatibility module: "BunnyCDN modulo di compatibilità"
@@ -59,8 +70,8 @@ Name IPv6-Other: "IPv6 (proxy, VPN, ecc)."
 Name Optional security extras module: "Modulo opzionale per gli extra di sicurezza"
 Name Project Honeypot module: "Modulo Project Honeypot"
 Name Referrer spam module: "Modulo spam referrer"
-Name Search engines blocker module: "Modulo bloccante dei motori di ricerca"
 Name Stop Forum Spam module: "Modulo Stop Forum Spam"
+checkbox_delete_orphaned_values: "Elimina i valori orfani."
 checkbox_label_block_it: "Bloccalo."
 checkbox_label_block_negatives: "Blocca i negativi?"
 checkbox_label_block_nonverified: "Blocca le richieste non verificate?"

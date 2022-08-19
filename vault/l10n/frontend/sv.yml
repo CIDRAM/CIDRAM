@@ -7,13 +7,26 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Swedish language data for the front-end (last modified: 2022.07.22).
+# This file: Swedish language data for the front-end (last modified: 2022.08.19).
+#
+# Regarding translations: My native language is English. Because this is a free
+# and open-source hobby project which generates zero income, and translatable
+# content is likely to change as the features and functionality supported by
+# the project changes, it doesn't make sense for me to spend money for
+# translations. Because I'm the sole author/developer/maintainer for the
+# project and I'm not a ployglot, any translations I produce are very likely to
+# contain errors. Sorry, but realistically, that won't ever change. If you find
+# any such errors/typos/mistakes/etc, your assistance to correct them would be
+# very much appreciated. Pull requests are invited and encouraged. Otherwise,
+# if you find these errors too much to handle, just stick with the original
+# English source. If a translation is irredeemably incomprehensible, let me
+# know which, and I can delete it. If you're not sure how to perform pull
+# requests, ask. I can help.
 ##/
 
 Extended Description AbuseIPDB module: "Blockerar förfrågningar från IP-adresser som listas på AbuseIPDB."
 Extended Description BGPView module: "Utnyttjar {{Links.BGPView}} API för att tillhandahålla sökfunktioner för ASNer och landskoder för CIDRAM, så att ASNer och länder kan blockeras eller listas med vitlista via CIDRAM-konfigurationen, och tillhandahålla ett sätt för verifiering av socialt nätverk för att verifiera Facebook-förfrågningar."
 Extended Description Bad TLDs blocker module: "Blockerar värdar som tillhör toppdomäner som ofta används av spammare, hackare och andra skändlig enheter."
-Extended Description Bad hosts blocker module (ISPs): "Blockerar värdar som tillhör internetleverantörer som ofta används av spammare, hackare och andra skändlig enheter."
 Extended Description Bad hosts blocker module: "Blockar värdar som ofta används av spammare, hackare och andra skändlig enheter."
 Extended Description Bot user agents module: "Blockerar användaragenter associerade med oönskade bots och nöjesaktivitet."
 Extended Description Bypasses: "Standard-signatur-bypass-filer som normalt ingår i huvudpaketet."
@@ -34,12 +47,10 @@ Extended Description Optional security extras module: "Ger vissa begränsade sky
 Extended Description PHPMailer: "Krävs för att använda någon funktionalitet som involverar att skicka e-post.<br />{{Links.PHPMailer.PHPMailer}} är tillgängligt via {{Links.PHPMailer.License}}-licensen."
 Extended Description Project Honeypot module: "Blockerar förfrågningar från IP-adresser som listas på Project Honeypot."
 Extended Description Referrer spam module: "Blockering baserat på referensspam ger i allmänhet ingen meningsfull säkerhetsfördel, men i vissa fall kan det vara användbart för vissa användare, för att samla in mer information om förfrågningar och för att kunna rapportera det.<br />Genom att installera den här modulen installeras också Symfony polyfyllningar för {{Links.Symfony.Intl/Idn}} (eftersom den här modulen kräver Idn-funktionalitet, som inte alla PHP-installationer tillhandahåller som standard), tillgängliga via <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a>-licensen."
-Extended Description Search engines blocker module: "Ger möjlighet att blockera sökmotorer som kan vara problematiska för vissa webbplatser (t.ex., Baidu, Sogou, Yandex, etc)."
 Extended Description Stop Forum Spam module: "Skyddar registrerings och inloggningssidor mot IP-adresser som listas av SFS."
 Name AbuseIPDB module: "AbuseIPDB modul"
 Name BGPView module: "BGPView modul"
 Name Bad TLDs blocker module: "Dåliga toppdomäner blockeringsmodul"
-Name Bad hosts blocker module (ISPs): "Dåliga värdar blockeringsmodul (internetleverantörer)"
 Name Bad hosts blocker module: "Dåliga värdar blockeringsmodul"
 Name Bot user agents module: "Modul för botanvändaragenter"
 Name BunnyCDN compatibility module: "BunnyCDN-kompatibilitetsmodul"
@@ -59,8 +70,8 @@ Name IPv6-Other: "IPv6 (proxytjänster, VPNer, osv)."
 Name Optional security extras module: "Valfri säkerhetstillbehörsmodul"
 Name Project Honeypot module: "Project Honeypot modul"
 Name Referrer spam module: "Referensspam-modul"
-Name Search engines blocker module: "Blockeringsmodul för sökmotorer"
 Name Stop Forum Spam module: "Stop Forum Spam modul"
+checkbox_delete_orphaned_values: "Ta bort föräldralösa värden."
 checkbox_label_block_it: "Blockera den."
 checkbox_label_block_negatives: "Blockera negativa?"
 checkbox_label_block_nonverified: "Blockera icke-verifierade förfrågningar?"

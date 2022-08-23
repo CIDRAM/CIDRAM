@@ -1,8 +1,8 @@
 # IPv4 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv4.dat
 
-# Version: 2022.224.0
-# Last modified: 2022.08.13
+# Version: 2022.234.0
+# Last modified: 2022.08.23
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -1102,19 +1102,31 @@ Profile: Dedicated;Webhosting
 Tag: Masterhost
 
 
-# ASNs 26496, 30083, 398107 ("GoDaddy.com, LLC").
-# Stop Forum Spam (SFS) listings: 2,687 (AS26496), 455 (AS30083).
-# Updated: 2022.07.06
+# ASNs 26496, 30083, 397513, 397514, 397516, 397520, 397521, 397522, 398101,
+# 398104, 398106, 398107, 398108, 398109, 398110, 398786, 398788, 398789,
+# 398791 ("GoDaddy.com, LLC").
+# Stop Forum Spam (SFS) listings: 2,702 (AS26496), 461 (AS30083),
+# 2,842 (AS398101), 5 (AS398108), 17 (AS398110), 12 (AS398789), 1 (AS398791).
+# Updated: 2022.08.23
 
+92.204.128.0/20 Deny Cloud
+92.204.144.0/21 Deny Cloud
 185.85.48.0/23 Deny Cloud
 Origin: DE
+103.66.180.0/22 Deny Cloud
+103.244.112.0/22 Deny Cloud
+Origin: HK
 185.201.18.0/24 Deny Cloud
 Origin: NL
 43.255.152.0/22 Deny Cloud
 103.1.172.0/22 Deny Cloud
+103.44.220.0/24 Deny Cloud
+103.87.189.0/24 Deny Cloud
+103.87.190.0/23 Deny Cloud
 118.139.160.0/19 Deny Cloud
 148.66.128.0/19 Deny Cloud
 182.50.128.0/19 Deny Cloud
+202.3.13.0/24 Deny Cloud
 203.124.96.0/19 Deny Cloud
 Origin: SG
 23.229.128.0/17 Deny Cloud
@@ -1122,36 +1134,64 @@ Origin: SG
 50.30.32.0/20 Deny Cloud
 50.62.0.0/15 Deny Cloud
 64.202.160.0/19 Deny Cloud
+64.207.144.0/20 Deny Cloud
+64.207.176.0/20 Deny Cloud
 68.178.128.0/17 Deny Cloud
 69.64.32.0/19 Deny Cloud
+70.32.64.0/22 Deny Cloud
+70.32.72.0/21 Deny Cloud
+70.32.80.0/20 Deny Cloud
+70.32.96.0/20 Deny Cloud
+72.10.32.0/21 Deny Cloud
+72.10.48.0/21 Deny Cloud
 72.167.0.0/16 Deny Cloud
 97.74.0.0/16 Deny Cloud
 104.238.64.0/18 Deny Cloud
 107.180.0.0/17 Deny Cloud
 132.148.0.0/16 Deny Cloud
-148.72.0.0/16 Deny Cloud
+148.72.0.0/17 Deny Cloud
+148.72.128.0/18 Deny Cloud
+148.72.204.0/22 Deny Cloud
+148.72.208.0/21 Deny Cloud
+148.72.220.0/22 Deny Cloud
+148.72.224.0/19 Deny Cloud
+160.153.27.0/24 Deny Cloud
+160.153.32.0/19 Deny Cloud
 160.153.64.0/18 Deny Cloud
 166.62.0.0/17 Deny Cloud
 173.201.0.0/16 Deny Cloud
 173.224.112.0/20 Deny Cloud
 184.168.0.0/16 Deny Cloud
+192.155.96.0/21 Deny Cloud
 192.169.128.0/17 Deny Cloud
 192.186.192.0/18 Deny Cloud
 198.12.128.0/17 Deny Cloud
 198.71.128.0/17 Deny Cloud
 199.189.84.0/22 Deny Cloud
 199.217.112.0/21 Deny Cloud
+205.186.128.0/19 Deny Cloud
+205.186.160.0/21 Deny Cloud
 207.38.80.0/20 Deny Cloud
 208.109.4.0/22 Deny Cloud
 208.109.8.0/21 Deny Cloud
+208.109.16.0/20 Deny Cloud
 208.109.32.0/19 Deny Cloud
 208.109.64.0/18 Deny Cloud
 208.109.128.0/20 Deny Cloud
+208.109.147.0/24 Deny Cloud
+208.109.148.0/23 Deny Cloud
+208.109.150.0/24 Deny Cloud
+208.109.152.0/23 Deny Cloud
+208.109.156.0/22 Deny Cloud
 208.109.160.0/19 Deny Cloud
 208.109.192.0/18 Deny Cloud
 209.126.96.0/19 Deny Cloud
 209.239.112.0/20 Deny Cloud
 216.69.128.0/18 Deny Cloud
+216.70.64.0/21 Deny Cloud
+216.70.80.0/20 Deny Cloud
+216.70.96.0/20 Deny Cloud
+216.70.112.0/21 Deny Cloud
 Origin: US
 Profile: Dedicated;Tor endpoints here;Webhosting
 Tag: GoDaddy.com, LLC
@@ -26694,11 +26734,11 @@ Tag: ALMOUROLTEC
 
 
 # ASN 51048 ("Next Connex Ltd").
-# Some reports of weird access attempts. Cloud/infrastructure provider. Some
-# evidence of possible unwanted bot activity from this ASN; not confirmed. Not
-# many records available.
-# Stop Forum Spam (SFS) listings: 2.
-# Updated: 2021.10.15
+# Server farm. Numerous port scans and hack attempts detected from here at the
+# beginning of this year (2022), but nothing detected since the past 6 months
+# now. Possible candidate for future removal.
+# Stop Forum Spam (SFS) listings: 1.
+# Updated: 2022.08.23
 
 31.210.24.0/21 Deny Cloud
 64.253.32.0/19 Deny Cloud
@@ -26706,7 +26746,6 @@ Tag: ALMOUROLTEC
 185.83.168.0/22 Deny Cloud
 185.136.244.0/22 Deny Cloud
 Origin: GB
-149.6.125.0/24 Deny Cloud
 154.59.136.0/21 Deny Cloud
 154.59.152.0/21 Deny Cloud
 Origin: US

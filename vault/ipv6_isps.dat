@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6_isps.dat
 
-# Version: 2022.224.0
-# Last modified: 2022.08.13
+# Version: 2022.234.0
+# Last modified: 2022.08.23
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -157,7 +157,7 @@ Tag: STARNET S.R.L
 2402:8100:3920:15a9::/64 Deny Spam
 2402:8100:3a34:db09::/64 Deny Spam
 Origin: IN
-Profile: Domestic ISP;Multiplay
+Profile: Domestic ISP;Mobile ISP
 Tag: Idea Cellular
 
 
@@ -205,20 +205,6 @@ Tag: Viettel Corporation
 Origin: RU
 Profile: Domestic ISP
 Tag: Ufanet
-
-
-# ASN 3462 ("Data Communication Business Group").
-# Taiwanese domestic ISP and business network. DDoS, FTP brute-force, and
-# webapp attacks, hacking, spam, and port scans detected from here. Listing
-# just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 17,450.
-# Updated: 2021.08.05 / Checked: 2022.01.15
-
-2001:b011:5c01:5827::/64 Deny Attacks
-2001:b011:7c03:4395::/64 Deny Attacks
-Origin: TW
-Profile: Domestic ISP;Commercial;Multiplay;Tor endpoints here;Webhosting
-Tag: DCBG
 
 
 # ASNs 9498, 9730, 24560, 37140, 45609, 132045 ("Bharti Airtel").
@@ -878,7 +864,7 @@ Tag: AT&T Services, Inc
 2607:fb90:e329:62b2::/64 Deny Spam
 2607:fb91:bd07:4b66::/64 Deny Spam
 Origin: US
-Profile: Domestic ISP;Multiplay
+Profile: Domestic ISP;Mobile ISP;Multiplay
 Tag: T-Mobile USA, Inc
 
 
@@ -1104,7 +1090,7 @@ Tag: Xs4all Internet BV
 2001:861:5580:f7d0::/64 Deny Spam
 2a04:cec0:10f5:7569::/64 Deny Spam
 Origin: FR
-Profile: Domestic ISP
+Profile: Domestic ISP;Mobile ISP
 Tag: Bouygues Telecom SA
 
 
@@ -1118,7 +1104,7 @@ Tag: Bouygues Telecom SA
 2a04:4a43:463f:f40b::/64 Deny Spam
 2a04:4a43:497f:e291::/64 Deny Spam
 Origin: GB
-Profile: Domestic ISP
+Profile: Mobile ISP
 Tag: Hutchison 3G UK Limited
 
 
@@ -1405,7 +1391,7 @@ Tag: MI INTERNET SPA
 
 2404:160:8124:532f:cc9:d665:8fc1:c695/128 Deny Attacks
 Origin: MY
-Profile: Domestic ISP
+Profile: Mobile ISP
 Tag: Celcom Axiata Berhad
 
 
@@ -1431,7 +1417,7 @@ Tag: Sony Network
 
 2406:3003:2004:2ae3::/64 Deny Spam
 Origin: SG
-Profile: Domestic ISP
+Profile: Mobile ISP
 Tag: Starhub Ltd
 
 
@@ -1498,7 +1484,7 @@ Tag: Smartlink Solutions
 2001:b07:6454:90d7::/64 Deny Spam
 2001:b07:6460:9e5f::/64 Deny Spam
 Origin: IT
-Profile: Domestic ISP;Multiplay
+Profile: Domestic ISP;Mobile ISP;Multiplay
 Tag: Fastweb SpA
 
 
@@ -1510,7 +1496,7 @@ Tag: Fastweb SpA
 
 2a02:a03f:e988:1d00::/64 Deny Spam
 Origin: BE
-Profile: Domestic ISP;Multiplay
+Profile: Domestic ISP;Mobile ISP
 Tag: Proximus NV
 
 
@@ -1522,7 +1508,7 @@ Tag: Proximus NV
 
 2a01:5ec0:2006:d44c::/64 Deny Spam
 Origin: IR
-Profile: Domestic ISP;Multiplay
+Profile: Domestic ISP;Mobile ISP
 Tag: Iran Cell
 
 

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Bot user agents module (last modified: 2022.07.09).
+ * This file: Bot user agents module (last modified: 2022.08.28).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -229,29 +229,28 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
     ), 'Malware UA'); // 2017.04.23
 
     $this->trigger(preg_match(
-        '~\.buzz|a(?:bonti|ccserver|cme.spider|nyevent-http|ppengine)|b(?:abbar\.' .
-        'tech|igbozz|lackbird|logsearch|logbot|salsa)|c(?:astlebot|atexplorador|l' .
-        'ickagy|liqzbot|ontextad|orporama|rowsnest|yberpatrol)|(?<!amazona)dbot/|' .
-        'd(?:le_spider|omainappender|umprendertree)|flightdeckreportsbot|g(athera' .
-        'nalyzeprovide|dnplus|imme60|ooglebenjojo)|internetcensus|ips-agent|isitw' .
-        'p|k2spider|kemvi|lexxebot|livelapbot|lwp|macinroyprivacyauditors|masscan' .
-        '|metaintelligence|n(?:etcraft|ettrapport|icebot|mapscriptingengine|rsbot' .
-        ')|p(?:4bot|4load|acrawler|ageglimpse|arsijoo|egasusmonitoring|hantomjs|h' .
-        'pcrawl|ingdom|rlog)|r(?:arelyused|obo(?:cop|spider)|yze)|s(?:can\.lol|cr' .
-        'eener|itedomain|mut|nap(?:preview)?bot|oapclient|ocial(?:ayer|searcher)|' .
-        'oso|pyglass|quider|treetbot|ynapse)|t(?:omba|weezler)|urlappendbot|w(?:a' .
-        'salive|atchmouse|eb(?:-monitoring|bot|masteraid|money|thumbnail)|hatweb|' .
-        'ikiapiary|in(?:http|inet)|maid\.com|sr-agent|wwtype)|xenu|xovi|zibber|zu' .
-        'richfinancialservices|^m$|(?:\W|^)(?:cu|pe)rl(?:\W|$)|gtbdfffgtb.?$~',
+        '~\.buzz|(?<!amazona)dbot/|^m$|(?:\W|^)(?:cu|pe)rl(?:\W|$)|gtbdfffgtb.?$|^(?!linkedinbot).*http-?(?:agent|client)|' .
+        'a(?:bonti|ccserver|cme.spider|nyevent-http|ppengine)|' .
+        'b(?:abbar\.tech|igbozz|lackbird|logsearch|logbot|salsa)|' .
+        'c(?:astlebot|atexplorador|lickagy|liqzbot|ontextad|orporama|rowsnest|yberpatrol)|' .
+        'd(?:le_spider|omainappender|umprendertree)|' .
+        'flightdeckreportsbot|fluid/|' .
+        'g(?:atheranalyzeprovide|dnplus|imme60|ooglebenjojo)|' .
+        'internetcensus|ips-agent|isitwp|' .
+        'k2spider|kemvi|' .
+        'leak\.info|lexxebot|livelapbot|lwp|' .
+        'macinroyprivacyauditors|masscan|metaintelligence|' .
+        'n(?:etcraft|ettrapport|icebot|mapscriptingengine|rsbot)|' .
+        'p(?:4bot|4load|acrawler|ageglimpse|arsijoo|egasusmonitoring|hantomjs|hpcrawl|ingdom|rlog)|' .
+        'r(?:arelyused|obo(?:cop|spider)|yze)|' .
+        's(?:can\.lol|creener|itedomain|mut|nap(?:preview)?bot|oapclient|ocial(?:ayer|searcher)|oso|pyglass|quider|treetbot|ynapse)|' .
+        't(?:impi|omba|weezler)|' .
+        'urlappendbot|' .
+        'w(?:asalive|atchmouse|eb(?:-monitoring|bot|masteraid|money|thumbnail)|hatweb|ikiapiary|in(?:http|inet)|maid\.com|sr-agent|wwtype)|' .
+        'xenu|xovi|' .
+        'zibber|zurichfinancialservices~',
         $UANoSpace
-    ), 'Unauthorised'); // 2022.05.31
-
-    $this->trigger(preg_match(
-        '~^(?!linkedinbot).*http-?(?:agent|client)~',
-        $UANoSpace
-    ), 'Unauthorised'); // 2021.07.20
-
-    $this->trigger(preg_match('~fluid/|leak\.info~', $UANoSpace), 'Unauthorised'); // 2022.06.21
+    ), 'Unauthorised'); // 2022.08.28
 
     $this->trigger(preg_match(
         '~^(?:bot|java|msie|windows-live-social-object-extractor)|\((?:java|\w\:\d{2,})~',

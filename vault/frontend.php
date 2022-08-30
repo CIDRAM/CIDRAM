@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2022.07.24).
+ * This file: Front-end handler (last modified: 2022.08.30).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -1224,9 +1224,9 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
         }
         $CIDRAM['RegenerateConfig'] .= "\r\n\r\n";
         $CIDRAM['FE']['ConfigFields'] .= sprintf(
-            '<table><tr><td class="ng2"><div id="%1$s-container" class="s">' .
+            '<table class="tablend"><tr><td class="ng2"><div id="%1$s-container" class="s">' .
             '<a id="%1$sShowLink" class="showlink" href="#%1$s-container" onclick="javascript:toggleconfig(\'%1$sRow\',\'%1$sShowLink\')">%1$s</a>' .
-            '%3$s</div></td></tr></table><span id="%1$sRow" %2$s><table>',
+            '%3$s</div></td></tr></table><span id="%1$sRow" %2$s><table class="tablend">',
             $CIDRAM['CatKey'],
             'style="display:none"',
             $CIDRAM['CatInfo']
@@ -1613,7 +1613,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
                 } else {
                     $CIDRAM['ThisDir']['SelectOther'] = !isset($CIDRAM['DirValue']['choices'][$CIDRAM['Config'][$CIDRAM['CatKey']][$CIDRAM['DirKey']]]);
                     $CIDRAM['ThisDir']['FieldOut'] .= empty($CIDRAM['DirValue']['allow_other']) ? '</select>' : sprintf(
-                        '<option value="Other"%1$s>%2$s</option></select> <input type="text"%3$s class="auto" name="%4$s" id="%4$s_field" value="%5$s" />',
+                        '<option value="Other"%1$s>%2$s</option></select><input type="text"%3$s class="auto" name="%4$s" id="%4$s_field" value="%5$s" />',
                         $CIDRAM['ThisDir']['SelectOther'] ? ' selected' : '',
                         $CIDRAM['L10N']->getString('label_other'),
                         $CIDRAM['ThisDir']['SelectOther'] ? '' : ' style="display:none"',

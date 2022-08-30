@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM front-end (last modified: 2022.08.19).
+ * This file: The CIDRAM front-end (last modified: 2022.08.30).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -1164,9 +1164,9 @@ class FrontEnd extends Core
                     $CatInfo = '<br /><em>' . $CatInfo . '</em>';
                 }
                 $this->FE['ConfigFields'] .= sprintf(
-                    '<table><tr><td class="ng2"><div id="%1$s-container" class="s">' .
+                    '<table class="tablend"><tr><td class="ng2"><div id="%1$s-container" class="s">' .
                     '<a id="%1$sShowLink" class="showlink" href="#%1$s-container" onclick="javascript:toggleconfig(\'%1$sRow\',\'%1$sShowLink\')">%1$s</a>' .
-                    '%3$s</div></td></tr></table><span id="%1$sRow" %2$s><table>',
+                    '%3$s</div></td></tr></table><span id="%1$sRow" %2$s><table class="tablend">',
                     $CatKey,
                     'style="display:none"',
                     $CatInfo
@@ -1537,7 +1537,7 @@ class FrontEnd extends Core
                         } else {
                             $ThisDir['SelectOther'] = !isset($DirValue['choices'][$this->Configuration[$CatKey][$DirKey]]);
                             $ThisDir['FieldOut'] .= empty($DirValue['allow_other']) ? '</select>' : sprintf(
-                                '<option value="Other"%1$s>%2$s</option></select> <input type="text"%3$s class="auto" name="%4$s" id="%4$s_field" value="%5$s" />',
+                                '<option value="Other"%1$s>%2$s</option></select><input type="text"%3$s class="auto" name="%4$s" id="%4$s_field" value="%5$s" />',
                                 $ThisDir['SelectOther'] ? ' selected' : '',
                                 $this->L10N->getString('label_other'),
                                 $ThisDir['SelectOther'] ? '' : ' style="display:none"',

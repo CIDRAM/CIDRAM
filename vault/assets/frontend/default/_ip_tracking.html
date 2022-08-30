@@ -15,12 +15,26 @@
         <input onclick="{Confirm-ClearAll}" type="button" value="{field_clear_all}" class="auto" />
       </form>
     </td></tr></table>
-    <table>
+    <table class="tablend">
     <tr>
       <td class="h2"><div class="s">{field_ipaddr}</div></td>
       <td class="h2 big"><div class="s">{field_status} – {field_infractions}</div></td>
       <td class="h2 big"><div class="s">{field_expiry}</div></td>
       <td class="h2f"><div class="s">{field_options}</div></td>
+    </tr>
+    <tr id="addRow">
+      <td class="h1"><input type="text" class="txtf" name="addNewAddress" placeholder="{tip_enter_ip_here}" /></td>
+      <td class="h1 big"><input type="text" class="txtf" name="addNewInfractions" placeholder="{tip_number_of_infractions}" value="1" /></td>
+      <td class="h1 big">
+        <select name="addNewExpiryMenu" id="addNewExpiryMenu" onchange="javascript:addNewExpiryMenuFunction();" onkeyup="javascript:addNewExpiryMenuFunction();">
+          <option value="Normal">{NormalExpiry}</option>
+          <option value="Extended">{ExtendedExpiry}</option>
+          <option value="Other" onselect>{label_other}</option>
+        </select>
+        <input type="text" class="txtf" id="addNewExpiryOther" name="addNewExpiryOther" placeholder="{tip_expiry_placeholder}" />
+        <script type="text/javascript">function addNewExpiryMenuFunction(){var e=document.getElementById?document.getElementById('addNewExpiryMenu').value:document.all&&!document.getElementById?document.all.addNewExpiryMenu.value:'';e=='Other'?(showid('addNewExpiryOther'),hideid('addNewExpiryMenu')):(hideid('addNewExpiryOther'),showid('addNewExpiryMenu'))};hideid('addNewExpiryOther');</script>
+      </td>
+      <td class="h1f"><input type="submit" value="{field_add_to_tracking}" class="auto" /></td>
     </tr>
 {TrackingData}
     </table>

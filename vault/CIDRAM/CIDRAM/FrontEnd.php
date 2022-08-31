@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM front-end (last modified: 2022.08.30).
+ * This file: The CIDRAM front-end (last modified: 2022.09.01).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -1203,10 +1203,7 @@ class FrontEnd extends Core
                         if (in_array($DirValue['type'], ['bool', 'float', 'int', 'kb', 'string', 'timezone', 'email', 'url'], true)) {
                             $this->autoType($_POST[$ThisDir['DirLangKey']], $DirValue['type']);
                         }
-                        if (!preg_match('/[^\x20-\xFF"\']/', $_POST[$ThisDir['DirLangKey']]) && (
-                            !isset($DirValue['choices']) ||
-                            isset($DirValue['choices'][$_POST[$ThisDir['DirLangKey']]])
-                        )) {
+                        if (!isset($DirValue['choices']) || isset($DirValue['choices'][$_POST[$ThisDir['DirLangKey']]])) {
                             $this->CIDRAM['ConfigModified'] = true;
                             $this->Configuration[$CatKey][$DirKey] = $_POST[$ThisDir['DirLangKey']];
                         } elseif (

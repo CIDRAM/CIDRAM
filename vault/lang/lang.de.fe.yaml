@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: German language data for the front-end (last modified: 2022.07.28).
+# This file: German language data for the front-end (last modified: 2022.08.30).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -97,7 +97,7 @@ config_experimental: "Instabil/Experimentell!"
 config_general: "Allgemeine Konfiguration (jede Kernkonfiguration, die nicht zu anderen Kategorien gehört)."
 config_general_FrontEndLog: "Datei für die Protokollierung von Frontend Anmelde-Versuchen. Geben Sie einen Dateinamen an oder lassen Sie die Option zum Deaktivieren leer."
 config_general_allow_gethostbyaddr_lookup: "gethostbyaddr-Suche erlauben, wenn UDP nicht verfügbar ist? True = Ja [Standardeinstellung]; False = Nein."
-config_general_ban_override: "Überschreiben „forbid_on_block“ Wenn „infraction_limit“ überschritten wird? Beim überschreiben: Blockierte Anfragen geben eine leere Seite zurück (Template-Dateien werden nicht verwendet). 200 = Nicht überschreiben [Standardeinstellung]. Andere Werte entsprechen den verfügbaren Werten für „forbid_on_block“."
+config_general_ban_override: "Überschreiben „forbid_on_block“ wenn „infraction_limit“ überschritten wird? Beim überschreiben: Blockierte Anfragen geben eine leere Seite zurück (Template-Dateien werden nicht verwendet). 200 = Nicht überschreiben [Standardeinstellung]. Andere Werte entsprechen den verfügbaren Werten für „forbid_on_block“."
 config_general_config_imports: "Eine durch Kommata getrennte Liste von Dateien, die in die CIDRAM-Standardkonfiguration importiert werden sollen. Wird normalerweise von der Aktualisierungsseite nach Bedarf ausgefüllt wenn Komponenten aktiviert werden. In den meisten Fällen kann es ignorieren."
 config_general_default_algo: "Definiert den Algorithmus für alle zukünftigen Passwörter und Sitzungen. Optionen: PASSWORD_DEFAULT (Standardeinstellung), PASSWORD_BCRYPT, PASSWORD_ARGON2I (erfordert PHP &gt;= 7.2.0), PASSWORD_ARGON2ID (erfordert PHP &gt;= 7.3.0)."
 config_general_default_dns: "Eine durch Kommata getrennte Liste von DNS-Servern, die für Hostnamen-Lookups verwendet werden sollen. Standardeinstellung = "8.8.8.8,8.8.4.4" (Google DNS). ACHTUNG: Ändern Sie diesen Wert nur, wenn Sie wissen, was Sie tun!"
@@ -220,6 +220,7 @@ field_2fa: "2FA-Code"
 field_Request_Method: "Methode anfordern"
 field_activate: "Aktivieren"
 field_add_more_conditions: "Fügen Sie mehr Bedingungen"
+field_add_to_tracking: "Fügen Sie zum Tracking"
 field_add_webhook: "Fügen Sie ein Webhook"
 field_asnlookup: "ASN-Suche"
 field_banned: "Verbannt"
@@ -680,6 +681,7 @@ tip_custom_ua: "Geben Sie hier der User Agent (optional)."
 tip_enter_input_here: "Geben Sie hier Ihre Eingabe ein."
 tip_enter_ip_here: "Geben Sie hier eine IP."
 tip_enter_ips_here: "Geben Sie hier IPs."
+tip_expiry_placeholder: "Anzahl der Sekunden bis zum Ablauf."
 tip_fe_cookie_warning: "Hinweis: CIDRAM verwendet einen Cookie zum Authentifizieren von Logins. Mit der Einloggen, Sie sich damit einverstanden, dass ein Cookie von Ihrem Browser erstellt und gespeichert wird."
 tip_file_manager: "Hallo, {username}.<br />Mit dem Dateimanager können Sie Dateien löschen, bearbeiten, hochladen und herunterladen. Mit Vorsicht verwenden (Können Sie Ihre Installation mit diesem brechen)."
 tip_fixer: "Hallo, {username}.<br />Mit dem Signaturdatei-Fixierer können potenzielle Probleme in Signaturdateien erkannt und behoben werden."
@@ -689,6 +691,7 @@ tip_ip_test: "Hallo, {username}.<br />Das IP-Test-Seite macht es möglich zu pr�
 tip_ip_test_switches: "(Wenn nicht ausgewählt, werden nur die Signaturdateien getestet)."
 tip_ip_tracking: "Hallo, {username}.<br />Auf der Seite IP-Tracking können Sie den Tracking-Status für IP-Adressen überprüfen, welche von ihnen verbannt wurden, und Sie können das Tracking für sie widerrufen, wenn Sie dies tun möchten."
 tip_logs: "Hallo, {username}.<br />Wählen Sie eine Protokolldatei aus der folgenden Liste um den Inhalt dieser Protokolldatei anzuzeigen."
+tip_number_of_infractions: "Wie viele Verstöße zu gelten."
 tip_range: "Hallo, {username}.<br />Diese Seite enthält einige grundlegende statistische Informationen zu den IP-Bereichen, die von den derzeit aktiven Signaturdateien abgedeckt werden."
 tip_range_intersector: "Hallo, {username}.<br />Der Durchschnittwerkzeug kann verwendet werden, um die gemeinsamen Faktoren aus zwei Sätzen von Bereichen zu bestimmen."
 tip_range_subtractor: "Hallo, {username}.<br />Der Subtrahierer kann verwendet werden, um einen Bereich von IPs/CIDRs von einem anderen zu subtrahieren."

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Vietnamese language data for the front-end (last modified: 2022.08.19).
+# This file: Vietnamese language data for the front-end (last modified: 2022.09.01).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -128,7 +128,7 @@ config_frontend_signatures_update_event_log: "Một tập tin để ghi nhật k
 config_frontend_theme: "Chủ đề mặc định để sử dụng cho front-end."
 config_general: "Cấu hình chung (bất kỳ cấu hình cốt lõi nào không thuộc về các loại khác)."
 config_general_allow_gethostbyaddr_lookup: "Cho phép tra cứu gethostbyaddr khi UDP không khả dụng? True = Vâng [Mặc định]; False = Không."
-config_general_ban_override: "Ghi đè "http_response_header_code" khi "infraction_limit" bị vượt quá? Khi ghi đè: Các yêu cầu bị chặn sản xuất một trang trống (tập tin mẫu không được sử dụng). 200 = Không ghi đè [Mặc định]. Các giá trị khác giống với các giá trị có sẵn cho "http_response_header_code"."
+config_general_ban_override: "Ghi đè "http_response_header_code" khi "infraction_limit" bị vượt quá? 200 = Không ghi đè [Mặc định]. Các giá trị khác giống với các giá trị có sẵn cho "http_response_header_code"."
 config_general_default_algo: "Xác định thuật toán nào sẽ sử dụng cho tất cả các mật khẩu và phiên trong tương lai."
 config_general_default_dns: "Danh sách các máy chủ DNS để sử dụng cho tra cứu tên máy. CẢNH BÁO: Không thay đổi này, trừ khi bạn biết những gì bạn đang làm!"
 config_general_default_timeout: "Thời gian chờ mặc định để sử dụng cho các yêu cầu bên ngoài? Mặc định = 12 giây."
@@ -249,6 +249,7 @@ confirm_delete: "Bạn có chắc chắn muốn xóa "%s" không?"
 field_2fa: "Mã 2FA"
 field_activate: "Kích hoạt"
 field_add_more_conditions: "Thêm các điều kiện khác"
+field_add_to_tracking: "Thêm vào giám sát"
 field_add_webhook: "Thêm webhook"
 field_banned: "Bị cấm"
 field_blocked: "Bị Chặn"
@@ -696,6 +697,7 @@ tip_custom_ua: "Nhập đại lý người sử dụng (user agent) ở đây (t
 tip_enter_input_here: "Nhập đầu vào ở đây."
 tip_enter_ip_here: "Nhập IP ở đây."
 tip_enter_ips_here: "Nhập IP ở đây."
+tip_expiry_placeholder: "Số giây cho đến khi hết hạn."
 tip_fe_cookie_warning: "Lưu ý: CIDRAM sử dụng một cookie để xác thực đăng nhập. Bằng cách đăng nhập, bạn đồng ý cho cookie được tạo và lưu trữ bởi trình duyệt của bạn."
 tip_file_manager: "Xin chào, {username}.<br />Quản lý tập tin cho phép bạn xóa bỏ, chỉnh sửa, tải lên, và tải về các tập tin. Sử dụng thận trọng (bạn có thể phá vỡ cài đặt của bạn với điều này)."
 tip_fixer: "Xin chào, {username}.<br />Tập tin chữ ký sửa chữa cung cấp một cách để phát hiện và khắc phục các sự cố tiềm ẩn trong các tập tin chữ ký."
@@ -705,6 +707,7 @@ tip_ip_test: "Xin chào, {username}.<br />Trang kiểm tra IP cho phép bạn ki
 tip_ip_test_switches: "(Khi không được chọn, chỉ các tập tin chữ ký sẽ được kiểm tra chống lại)."
 tip_ip_tracking: "Xin chào, {username}.<br />Các trang cho giám sát IP cho phép bạn kiểm tra tình trạng giám sát các địa chỉ IP, để kiểm tra mà trong số họ đã bị cấm, và hủy bỏ giám sát họ nếu bạn muốn làm như vậy."
 tip_logs: "Xin chào, {username}.<br />Chọn một bản ghi từ danh sách dưới đây để xem nội dung của bản ghi này."
+tip_number_of_infractions: "Có bao nhiêu vi phạm để áp dụng."
 tip_range: "Xin chào, {username}.<br />Trang này hiển thị một số thông tin thống kê cơ bản về các phạm vi IP được bao phủ bởi các tập tin chữ ký đang hoạt động."
 tip_sections_list: "Xin chào, {username}.<br />Trang này liệt kê những phần nào tồn tại trong các tập tin chữ ký đang kích hoạt."
 tip_see_the_documentation: "Xem <a href="https://github.com/CIDRAM/Docs/blob/master/readme.vi.md\#SECTION5" hreflang="vi" rel="noopener external">tài liệu</a> để biết thông tin về các chỉ thị cấu hình khác nhau và mục đích của họ."

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Dutch language data for the front-end (last modified: 2022.08.19).
+# This file: Dutch language data for the front-end (last modified: 2022.09.01).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -128,7 +128,7 @@ config_frontend_signatures_update_event_log: "Een bestand om te loggen wanneer s
 config_frontend_theme: "Standaard thema om te gebruiken voor de frontend."
 config_general: "Algemene configuratie (elke kernconfiguratie die niet tot andere categorieën behoort)."
 config_general_allow_gethostbyaddr_lookup: "Zoeken op gethostbyaddr toestaan als UDP niet beschikbaar is? True = Ja [Standaard]; False = Nee."
-config_general_ban_override: "Overrijden "http_response_header_code" wanneer "infraction_limit" wordt overschreden? Wanneer het overrijdt: Geblokkeerde verzoeken retourneert een lege pagina (template bestanden worden niet gebruikt). 200 = Niet overrijden [Standaard]. Andere waarden zijn hetzelfde als de beschikbare waarden voor "http_response_header_code"."
+config_general_ban_override: "Overrijden "http_response_header_code" wanneer "infraction_limit" wordt overschreden? 200 = Niet overrijden [Standaard]. Andere waarden zijn hetzelfde als de beschikbare waarden voor "http_response_header_code"."
 config_general_default_algo: "Definieert welk algoritme u wilt gebruiken voor alle toekomstige wachtwoorden en sessies."
 config_general_default_dns: "Een lijst met DNS-servers te gebruiken voor de hostnaam lookups. WAARSCHUWING: Verander dit niet tenzij u weet wat u doet!"
 config_general_default_timeout: "Standaard time-out om te gebruiken voor externe verzoeken? Standaard = 12 seconden."
@@ -249,6 +249,7 @@ confirm_delete: "Weet u zeker dat u "%s" wilt verwijderen?"
 field_2fa: "2FA-code"
 field_activate: "Activeren"
 field_add_more_conditions: "Voeg meer toevoegen"
+field_add_to_tracking: "Toevoegen aan tracking"
 field_add_webhook: "Webhook toevoegen"
 field_banned: "Verbannen"
 field_blocked: "Geblokkeerd"
@@ -726,6 +727,7 @@ tip_custom_ua: "Voer hier user agent in (optioneel)."
 tip_enter_input_here: "Voer hier gegevens in."
 tip_enter_ip_here: "Vul hier een IP."
 tip_enter_ips_here: "Voer hier de IP's."
+tip_expiry_placeholder: "Aantal seconden tot de vervaltijd."
 tip_fe_cookie_warning: "Notitie: CIDRAM gebruikt een cookie om aanmeldingen te verifiëren. Door in te loggen, geeft u uw toestemming voor het maken en opslaan van een cookie door uw browser."
 tip_file_manager: "Hallo, {username}.<br />De bestandsbeheer stelt u in staat om te verwijderen, bewerken, uploaden en downloaden van bestanden. Gebruik met voorzichtigheid (kon u uw installatie breken met deze)."
 tip_fixer: "Hallo, {username}.<br />De signatuurbestanden-fixeer biedt een manier om potentiële problemen in signatuurbestanden te detecteren en op te lossen."
@@ -735,6 +737,7 @@ tip_ip_test: "Hallo, {username}.<br />De IP test pagina stelt u in staat om te t
 tip_ip_test_switches: "(Wanneer niet geselecteerd, worden alleen de signatuurbestanden getest tegen)."
 tip_ip_tracking: "Hallo, {username}.<br />Met het IP-Tracking pagina, is het mogelijk om de tracking status van IP-adressen te controleren, en u kunt zien welke zijn verbannen, en om te annuleren de tracking van hen als u wilt doen."
 tip_logs: "Hallo, {username}.<br />Selecteer een logbestand uit de onderstaande lijst om de inhoud van de logbestand te bekijken."
+tip_number_of_infractions: "Hoeveel overtredingen toe te passen."
 tip_range: "Hallo, {username}.<br />Deze pagina toont enige statistische basisinformatie over de IP-reeksen die worden bestreken door de actieve signatuurbestanden."
 tip_sections_list: "Hallo, {username}.<br />Deze pagina geeft een overzicht van de secties die bestaan in de actieve signatuurbestanden."
 tip_see_the_documentation: "Zie de <a href="https://github.com/CIDRAM/Docs/blob/master/readme.nl.md\#SECTION5" hreflang="nl" rel="noopener external">documentatie</a> voor informatie over de verschillende configuratie richtlijnen en hun doeleinden."

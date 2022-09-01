@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Turkish language data for the front-end (last modified: 2022.08.19).
+# This file: Turkish language data for the front-end (last modified: 2022.09.01).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -128,7 +128,7 @@ config_frontend_signatures_update_event_log: "Ön uç aracılığıyla imzalar g
 config_frontend_theme: "Ön uç için kullanılacak varsayılan tema."
 config_general: "Genel yapılandırma (diğer kategorilere ait olmayan herhangi bir çekirdek yapılandırma)."
 config_general_allow_gethostbyaddr_lookup: "UDP kullanılamadığında gethostbyaddr aramalarına izin verilsin mi? Doğru/True = Evet [Varsayılan]; Yanlış/False = Hayır."
-config_general_ban_override: ""infraction_limit" aşıldığında "http_response_header_code"u geçersiz kıl? Geçersiz kılarken: Engellenen istekler boş bir sayfa verir (şablon dosyaları kullanılmaz). 200 = [Varsayılan] değerini geçersiz kılmayın. Diğer değerler "http_response_header_code" için mevcut değerler ile aynıdır."
+config_general_ban_override: ""infraction_limit" aşıldığında "http_response_header_code"u geçersiz kıl? 200 = [Varsayılan] değerini geçersiz kılmayın. Diğer değerler "http_response_header_code" için mevcut değerler ile aynıdır."
 config_general_default_algo: "Gelecekteki tüm şifreler ve oturumlar için hangi algoritmayı kullanacağını tanımlar."
 config_general_default_dns: "Ana makine adı aramalarda kullanılacak DNS sunucuları listesi. UYARI: Ne yaptığınızı bilmiyorsanız bunu değiştirmeyin!"
 config_general_default_timeout: "Harici istekler için kullanılacak varsayılan zaman aşımı? Varsayılan = 12 saniye."
@@ -249,6 +249,7 @@ confirm_delete: ""%s"yı silmek istediğinizden emin misiniz?"
 field_2fa: "2FA kodu"
 field_activate: "Etkinleştir"
 field_add_more_conditions: "Daha fazla koşul ekle"
+field_add_to_tracking: "İzlemeye ekle"
 field_add_webhook: "Web kanca ekle"
 field_banned: "Yasaklandı"
 field_blocked: "Engellendi"
@@ -700,6 +701,7 @@ tip_custom_ua: "Buraya user agent girin (isteğe)."
 tip_enter_input_here: "Verileri buraya girin."
 tip_enter_ip_here: "IP'yi buraya girin."
 tip_enter_ips_here: "IP'leri buraya girin."
+tip_expiry_placeholder: "Süresi dolana kadar geçen saniye sayısı."
 tip_fe_cookie_warning: "Not: CIDRAM, oturum açma kimlik doğrulamasında çerez kullanır. Oturum açarak, tarayıcınız tarafından oluşturulacak ve saklanacak bir çerez için onayınızı verirsiniz."
 tip_file_manager: "Merhaba, {username}.<br />Dosya yöneticisi dosyalarınızı silmenizi, düzenlemenizi, yüklemenizi ve indirmenizi sağlar. Dikkatli kullanın (kurulumunuzu bununla bozabilirsiniz)."
 tip_fixer: "Merhaba, {username}.<br />İmza dosya tamircisi, imza dosyalarındaki olası sorunları tespit etmek ve çözmek için bir yol sağlar."
@@ -709,6 +711,7 @@ tip_ip_test: "Merhaba, {username}.<br />IP test sayfası, şu anda yüklü olan 
 tip_ip_test_switches: "(Seçilmediğinde, yalnızca imza dosyaları test edilecektir)."
 tip_ip_tracking: "Merhaba, {username}.<br />IP izleme sayfası, IP adreslerinin izleme durumunu kontrol etmenizi, hangilerinin yasak olduğunu kontrol etmenizi ve isterseniz bunların yasaklanmasını/izlemensini kaldırmanızı kontrol etmenizi sağlar."
 tip_logs: "Merhaba, {username}.<br />Bu günlük dosyasının içeriğini görüntülemek için aşağıdaki listeden bir günlük dosyası seçin."
+tip_number_of_infractions: "Kaç tane ihlal yapılacak."
 tip_range: "Merhaba, {username}.<br />Bu sayfa, şu anda aktif imza dosyalarının kapsadığı IP aralıkları hakkında bazı temel istatistiksel bilgileri göstermektedir."
 tip_sections_list: "Merhaba, {username}.<br />Bu sayfa şu anda etkin olan imza dosyalarında hangi bölümlerin bulunduğunu listeler."
 tip_see_the_documentation: "Çeşitli yapılandırma yönergeleri ve amaçlarıyla ilgili bilgi için <a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#SECTION5" hreflang="en" rel="noopener external">belgelere</a> bakın."

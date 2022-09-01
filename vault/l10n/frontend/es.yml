@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Spanish language data for the front-end (last modified: 2022.08.19).
+# This file: Spanish language data for the front-end (last modified: 2022.09.01).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -128,7 +128,7 @@ config_frontend_signatures_update_event_log: "Un archivo para registrar cuando l
 config_frontend_theme: "Tema predefinido a utilizar para el front-end."
 config_general: "Configuración general (cualquier configuración que no pertenezca a otras categorías)."
 config_general_allow_gethostbyaddr_lookup: "¿Permitir búsquedas gethostbyaddr cuando UDP no está disponible? True = Sí [Predefinido]; False = No."
-config_general_ban_override: "Anular "http_response_header_code" cuando "infraction_limit" es excedido? Cuando se anula: Las solicitudes bloqueadas devuelven una página en blanco (los archivos templates no se utilizan). 200 = No anular [Predefinido]. Otros valores son los mismos que los valores disponibles para "http_response_header_code"."
+config_general_ban_override: "Anular "http_response_header_code" cuando "infraction_limit" es excedido? 200 = No anular [Predefinido]. Otros valores son los mismos que los valores disponibles para "http_response_header_code"."
 config_general_default_algo: "Define qué algoritmo utilizar para todas las contraseñas y sesiones en el futuro."
 config_general_default_dns: "Una lista de los servidores DNS que se utilizarán para las búsquedas de nombres del host. ¡AVISO: No cambie esto a menos que sepas lo que estás haciendo!"
 config_general_default_timeout: "¿Tiempo de espera predeterminado para usar en solicitudes externas? Predeterminado = 12 segundos."
@@ -249,6 +249,7 @@ confirm_delete: "¿Estás seguro de que quieres eliminar "%s"?"
 field_2fa: "Código 2FA"
 field_activate: "Activar"
 field_add_more_conditions: "Añadir más condiciones"
+field_add_to_tracking: "Agregar al seguimiento"
 field_add_webhook: "Añadir webhook"
 field_banned: "Prohibido"
 field_blocked: "Bloqueado"
@@ -734,6 +735,7 @@ tip_custom_ua: "Ingrese el agente de usuario (user agent) aquí (opcional)."
 tip_enter_input_here: "Ingrese la entrada aquí."
 tip_enter_ip_here: "Ingrese un IP aquí."
 tip_enter_ips_here: "Ingrese IPs aquí."
+tip_expiry_placeholder: "Número de segundos hasta que expire."
 tip_fe_cookie_warning: "Nota: CIDRAM usa una cookie para autenticar los inicios de sesión. Al iniciar sesión, usted da su consentimiento para que su navegador cree y almacene una cookie."
 tip_file_manager: "Hola, {username}.<br />El administración de archivos permite eliminar, editar, subir y descargar de archivos. Utilizar con precaución (podría romper su instalación con esto)."
 tip_fixer: "Hola, {username}.<br />El fijador de archivos de firmas proporciona una manera de detectar y solucionar problemas potenciales en los archivos de firmas."
@@ -743,6 +745,7 @@ tip_ip_test: "Hola, {username}.<br />La página para prueba IP permite pruebar s
 tip_ip_test_switches: "(Cuando no se selecciona, solo los archivos de firma se probarán contra)."
 tip_ip_tracking: "Hola, {username}.<br />La página de rastreo IP le permite comprobar el estado de seguimiento de las direcciones IP, para comprobar cuál de ellos ha sido prohibido, y anular el seguimiento de ellos si desea hacerlo."
 tip_logs: "Hola, {username}.<br />Seleccionar un archivo de registro de la lista siguiente para ver el contenido de ese archivo de registro."
+tip_number_of_infractions: "Cuantas infracciones incurrir."
 tip_range: "Hola, {username}.<br />Esta página muestra información estadística básica sobre los rangos de IP cubiertos por los archivos de firma actualmente activos."
 tip_sections_list: "Hola, {username}.<br />Esta página enumera qué secciones existen en los archivos de firma actualmente activos."
 tip_see_the_documentation: "Ver la <a href="https://github.com/CIDRAM/Docs/blob/master/readme.es.md\#SECTION5" hreflang="es" rel="noopener external">documentación</a> para obtener información sobre las distintas directivas de la configuración y sus propósitos."

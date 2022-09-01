@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Korean language data for the front-end (last modified: 2022.08.19).
+# This file: Korean language data for the front-end (last modified: 2022.09.01).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -128,7 +128,7 @@ config_frontend_signatures_update_event_log: "프런트 엔드임를 통해 서�
 config_frontend_theme: "프런트 엔드에 사용할 기본 테마."
 config_general: "일반 설정 (다른 카테고리에 속하지 않는 설정)."
 config_general_allow_gethostbyaddr_lookup: "UDP를 사용할 수 없을 때 gethostbyaddr 검색을 허용 하시겠습니까? True = 예 (Default / 기본 설정); False = 아니오."
-config_general_ban_override: ""infraction_limit"를 초과하면 "http_response_header_code"를 덮어 쓰시겠습니까? 덮어 쓸 때\_: 차단 된 요청은 빈 페이지를 반환합니다 (템플릿 파일은 사용되지 않습니다). 200 = 덮어 쓰지 (Default / 기본값). 다른 값은 "http_response_header_code"에 사용할 수있는 값과 같습니다."
+config_general_ban_override: ""infraction_limit"를 초과하면 "http_response_header_code"를 덮어 쓰시겠습니까? 200 = 덮어 쓰지 (Default / 기본값). 다른 값은 "http_response_header_code"에 사용할 수있는 값과 같습니다."
 config_general_default_algo: "향후 모든 암호와 세션에 사용할 알고리즘을 정의합니다."
 config_general_default_dns: "호스트 이름 검색에 사용하는 DNS (도메인 이름 시스템) 서버의 목록입니다. 주의\_: 당신이 무엇을하고 있는지 모르는 한이를 변경하지 마십시오."
 config_general_default_timeout: "외부 요청에 사용할 기본 제한 시간? Default (기본 설정) = 12 초."
@@ -249,6 +249,7 @@ confirm_delete: ""%s"를 삭제하시겠습니까?"
 field_2fa: "2FA 코드"
 field_activate: "활성화"
 field_add_more_conditions: "조건 추가"
+field_add_to_tracking: "추적에 추가"
 field_add_webhook: "웹훅 추가"
 field_banned: "금지 된"
 field_blocked: "차단 된셨습니까?"
@@ -696,6 +697,7 @@ tip_custom_ua: "여기에 사용자 에이전트를 입력하십시오 (선택 �
 tip_enter_input_here: "여기에 데이터를 입력하십시오."
 tip_enter_ip_here: "여기에 IP를 입력하십시오."
 tip_enter_ips_here: "여기에 IP를 입력하십시오."
+tip_expiry_placeholder: "만료까지 남은 시간(초)입니다."
 tip_fe_cookie_warning: "노트\_: CIDRAM은 쿠키를 사용하여 로그인을 인증합니다. 로그인하면, 브라우저에서 쿠키를 만들고 저장하는 것에 동의하게됩니다."
 tip_file_manager: "안녕하세요, {username}.<br />파일 관리자를 사용하여 파일을 삭제, 편집, 업로드, 다운로드 할 수 있습니다. 신중하게 사용하는 (이것을 사용하여 설치를 끊을 수 있습니다)."
 tip_fixer: "안녕하세요, {username}.<br />서명 파일 해결 프로그램은 서명 파일의 잠재적인 문제를 감지하고 수정하는 방법을 제공합니다."
@@ -705,6 +707,7 @@ tip_ip_test: "안녕하세요, {username}.<br />IP 테스트 페이지는 IP 주
 tip_ip_test_switches: "(선택하지 않으면 서명 파일 만 테스트됩니다)."
 tip_ip_tracking: "안녕하세요, {username}.<br />IP 추적 페이지에서 IP 주소 추적 상태를 확인할 수 있습니다. 당신이 금지되어있는 것을 확인 할 수 있으며, 원한다면 당신은 추적을 취소 할 수 있습니다."
 tip_logs: "안녕하세요, {username}.<br />로그의 내용을 보려면 다음 목록에서 로그를 선택합니다."
+tip_number_of_infractions: "얼마나 많은 위반이 발생합니다."
 tip_range: "안녕하세요, {username}.<br />이 페이지는 현재 활성화 된 서명 파일에서 다루는 IP 범위에 대한 몇 가지 기본 통계 정보를 보여줍니다."
 tip_sections_list: "안녕하세요, {username}.<br />이 페이지는 현재 활성화 된 서명 파일에 존재하는 섹션을 나열합니다."
 tip_see_the_documentation: "설정 지시어에 대한 자세한 내용은 <a href="https://github.com/CIDRAM/Docs/blob/master/readme.ko.md\#SECTION5" hreflang="ko" rel="noopener external">문서를</a> 참조하십시오."

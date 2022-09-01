@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (simplified) language data for the front-end (last modified: 2022.08.19).
+# This file: Chinese (simplified) language data for the front-end (last modified: 2022.09.01).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -128,7 +128,7 @@ config_frontend_signatures_update_event_log: "通过前端更新签名时用于�
 config_frontend_theme: "用于前端的默认主题。"
 config_general: "基本配置（任何不属于其他类别的核心配置）。"
 config_general_allow_gethostbyaddr_lookup: "当UDP不可用时允许gethostbyaddr查找？​True（真）=允许【标准】；False（假）=不允许。"
-config_general_ban_override: "覆盖“http_response_header_code”当“infraction_limit”已被超过？​当覆盖：已阻止的请求返回一个空白页（不使用模板文件）。​200 = 不要覆盖【标准】。​其他值与“http_response_header_code”的可用值相同。"
+config_general_ban_override: "覆盖“http_response_header_code”当“infraction_limit”已被超过？ 200 = 不要覆盖【标准】。​其他值与“http_response_header_code”的可用值相同。"
 config_general_default_algo: "定义要用于所有未来密码和会话的算法。"
 config_general_default_dns: "DNS服务器列表，​用于主机名查找。​警告：不要修改此除非您知道什么您做着！"
 config_general_default_timeout: "用于外部请求的默认超时？ 标准 = 12秒。"
@@ -249,6 +249,7 @@ confirm_delete: "您确定要删除“%s”吗？"
 field_2fa: "2FA代码"
 field_activate: "启用"
 field_add_more_conditions: "添加更多条件"
+field_add_to_tracking: "添加到跟踪"
 field_add_webhook: "添加webhook"
 field_banned: "禁止"
 field_blocked: "已阻止"
@@ -697,6 +698,7 @@ tip_custom_ua: "在这里时输入用户代理【user agent】（可选的）。
 tip_enter_input_here: "在这里时输入数据。"
 tip_enter_ip_here: "在这里时输入IP。"
 tip_enter_ips_here: "在这里时输入IP。"
+tip_expiry_placeholder: "直到它过期的秒数。"
 tip_fe_cookie_warning: "注意：CIDRAM使用cookie来验证登录。​通过登录，您同意您的浏览器创建和存储cookie。"
 tip_file_manager: "你好，​{username}。​<br />文件管理器允许您删除，​编辑，​上传和下载文件。​小心使用（您可以用这个破坏您的安装）。"
 tip_fixer: "你好，​{username}。<br />签名文件修复工具提供了一种检测和修复签名文件中潜在问题的方法。"
@@ -706,6 +708,7 @@ tip_ip_test: "你好，​{username}。​<br />IP测试页面允许您测试是
 tip_ip_test_switches: "（如果未选中的，只有签名文件将被测试）。"
 tip_ip_tracking: "你好，​{username}。​<br />IP跟踪页面允许您检查IP地址跟踪状态，​检查哪些IP已被禁止，​而如果您想这样做，​对撤消他们的跟踪。"
 tip_logs: "你好，​{username}。​<br />选择一个日志从下面的列表以查看那个日志的内容。"
+tip_number_of_infractions: "有多少违规行为。"
 tip_range: "你好，​{username}。<br />本页面显示了有关当前活性签名文件覆盖的IP范围的一些基本统计信息。"
 tip_sections_list: "你好，​{username}。<br />此页面列出当前活动签名文件中存在哪些章节。"
 tip_see_the_documentation: "请参阅<a href="https://github.com/CIDRAM/Docs/blob/master/readme.zh.md\#SECTION5" hreflang="zh-CN" rel="noopener external">文档</a>以获取有关各种配置指令的信息和他们的目的。"

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: German language data for the front-end (last modified: 2022.08.19).
+# This file: German language data for the front-end (last modified: 2022.09.01).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -128,7 +128,7 @@ config_frontend_signatures_update_event_log: "Einer Datei zum Protokollieren wen
 config_frontend_theme: "Standard-Thema für das Front-End zu verwenden."
 config_general: "Allgemeine Konfiguration (jede Kernkonfiguration, die nicht zu anderen Kategorien gehört)."
 config_general_allow_gethostbyaddr_lookup: "gethostbyaddr-Suche erlauben, wenn UDP nicht verfügbar ist? True = Ja [Standardeinstellung]; False = Nein."
-config_general_ban_override: "Überschreiben „http_response_header_code“ Wenn „infraction_limit“ überschritten wird? Beim überschreiben: Blockierte Anfragen geben eine leere Seite zurück (Template-Dateien werden nicht verwendet). 200 = Nicht überschreiben [Standardeinstellung]. Andere Werte entsprechen den verfügbaren Werten für „http_response_header_code“."
+config_general_ban_override: "Überschreiben „http_response_header_code“ wenn „infraction_limit“ überschritten wird? 200 = Nicht überschreiben [Standardeinstellung]. Andere Werte entsprechen den verfügbaren Werten für „http_response_header_code“."
 config_general_default_algo: "Definiert den Algorithmus für alle zukünftigen Passwörter und Sitzungen."
 config_general_default_dns: "Eine Liste von DNS-Servern, die für Hostnamen-Lookups verwendet werden sollen. ACHTUNG: Ändern Sie diesen Wert nur, wenn Sie wissen, was Sie tun!"
 config_general_default_timeout: "Standardzeitlimit für externe Anforderungen? Standardeinstellung = 12 Sekunden."
@@ -249,6 +249,7 @@ confirm_delete: "Möchten Sie wirklich „%s“ zu löschen?"
 field_2fa: "2FA-Code"
 field_activate: "Aktivieren"
 field_add_more_conditions: "Fügen Sie mehr Bedingungen"
+field_add_to_tracking: "Fügen Sie zum Tracking"
 field_add_webhook: "Fügen Sie ein Webhook"
 field_banned: "Verbannt"
 field_blocked: "Blockiert"
@@ -734,6 +735,7 @@ tip_custom_ua: "Geben Sie hier der User Agent (optional)."
 tip_enter_input_here: "Geben Sie hier Ihre Eingabe ein."
 tip_enter_ip_here: "Geben Sie hier eine IP."
 tip_enter_ips_here: "Geben Sie hier IPs."
+tip_expiry_placeholder: "Anzahl der Sekunden bis zum Ablauf."
 tip_fe_cookie_warning: "Hinweis: CIDRAM verwendet einen Cookie zum Authentifizieren von Logins. Mit der Einloggen, Sie sich damit einverstanden, dass ein Cookie von Ihrem Browser erstellt und gespeichert wird."
 tip_file_manager: "Hallo, {username}.<br />Mit dem Dateimanager können Sie Dateien löschen, bearbeiten, hochladen und herunterladen. Mit Vorsicht verwenden (Können Sie Ihre Installation mit diesem brechen)."
 tip_fixer: "Hallo, {username}.<br />Mit dem Signaturdatei-Fixierer können potenzielle Probleme in Signaturdateien erkannt und behoben werden."
@@ -743,6 +745,7 @@ tip_ip_test: "Hallo, {username}.<br />Das IP-Test-Seite macht es möglich zu pr�
 tip_ip_test_switches: "(Wenn nicht ausgewählt, werden nur die Signaturdateien getestet)."
 tip_ip_tracking: "Hallo, {username}.<br />Auf der Seite IP-Tracking können Sie den Tracking-Status für IP-Adressen überprüfen, welche von ihnen verbannt wurden, und Sie können das Tracking für sie widerrufen, wenn Sie dies tun möchten."
 tip_logs: "Hallo, {username}.<br />Wählen Sie eine Protokolldatei aus der folgenden Liste um den Inhalt dieser Protokolldatei anzuzeigen."
+tip_number_of_infractions: "Wie viele Verstöße zu gelten."
 tip_range: "Hallo, {username}.<br />Diese Seite enthält einige grundlegende statistische Informationen zu den IP-Bereichen, die von den derzeit aktiven Signaturdateien abgedeckt werden."
 tip_sections_list: "Hallo, {username}.<br />Auf dieser Seite wird aufgelistet, welche Sektionen in den derzeit aktiven Signaturdateien vorhanden sind."
 tip_see_the_documentation: "Siehe die <a href="https://github.com/CIDRAM/Docs/blob/master/readme.de.md\#SECTION5" hreflang="de" rel="noopener external">Dokumentation</a> für Informationen über den verschiedenen Konfigurationseinstellungen und ihren Zwecken."

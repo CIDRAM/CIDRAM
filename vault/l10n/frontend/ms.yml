@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Malay language data for the front-end (last modified: 2022.08.19).
+# This file: Malay language data for the front-end (last modified: 2022.09.01).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -128,7 +128,7 @@ config_frontend_signatures_update_event_log: "Fail untuk pengelogan apabila tand
 config_frontend_theme: "Tema lalai yang digunakan untuk bahagian hadapan."
 config_general: "Konfigurasi generik (sebarang konfigurasi teras yang bukan tergolong dalam kategori lain)."
 config_general_allow_gethostbyaddr_lookup: "Benarkan menggunakan gethostbyaddr apabila UDP tidak tersedia? True = Ya [Lalai]; False = Tidak."
-config_general_ban_override: "Mengatasi "http_response_header_code" apabila "infraction_limit" melebihi? Apabila mengatasikan: Permintaan yang disekat mengembalikan halaman kosong (fail templat tidak digunakan). 200 = Jangan mengatasikan [Lalai]. Nilai lain adalah sama dengan nilai yang tersedia untuk "http_response_header_code"."
+config_general_ban_override: "Mengatasi "http_response_header_code" apabila "infraction_limit" melebihi? 200 = Jangan mengatasikan [Lalai]. Nilai lain adalah sama dengan nilai yang tersedia untuk "http_response_header_code"."
 config_general_default_algo: "Mentakrifkan algoritma yang hendak digunakan untuk semua kata laluan dan sesi masa depan."
 config_general_default_dns: "Senarai pelayan DNS yang digunakan untuk carian nama hos. AMARAN: Jangan ganti ini melainkan anda tahu apa yang anda lakukan!"
 config_general_default_timeout: "Tamat masa lalai yang digunakan untuk permintaan luaran? Lalai = 12 saat."
@@ -248,8 +248,9 @@ confirm_action: "Adakah anda pasti mahu "%s"?"
 confirm_delete: "Adakah anda pasti mahu memadamkan "%s"?"
 field_2fa: "Kod 2FA"
 field_activate: "Aktifkan"
-field_add_more_conditions: "Tambah lagi syarat"
-field_add_webhook: "Tambah webhook"
+field_add_more_conditions: "Tambahkan lagi syarat"
+field_add_to_tracking: "Tambahkan pada penjejakan"
+field_add_webhook: "Tambahkan webhook"
 field_banned: "Dilarang"
 field_blocked: "Disekat"
 field_cidr: "Hasilkan output menggunakan tatatanda CIDR"
@@ -334,7 +335,7 @@ hints_shorthand:
  Titik akhir manusia dan perkhidmatan pengkomputeran awan.: "Perkhidmatan pengkomputeran awan mungkin merujuk kepada penyedia pengehosan web, ladang pelayan, pusat data, atau sebarang perkara lain. Titik akhir manusia merujuk kepada cara manusia mengakses internet, seperti melalui penyedia perkhidmatan internet. Rangkaian biasanya menyediakan hanya satu atau lain, tetapi kadangkala mungkin menyediakan kedua-duanya. Kami menyasarkan untuk tidak mengenal pasti titik akhir manusia berpotensi sebagai perkhidmatan pengkomputeran awan. Justeru, perkhidmatan pengkomputeran awan boleh dikenal pasti sebagai sesuatu yang lain jika julatnya dikongsi oleh titik akhir manusia diketahui. Dengan cara yang sama, kami menyasarkan untuk sentiasa mengenal pasti perkhidmatan pengkomputeran awan, yang julatnya tidak dikongsi oleh mana-mana titik akhir manusia diketahui, sebagai perkhidmatan pengkomputeran awan. Akibatnya, permintaan yang dikenal pasti secara eksplisit sebagai perkhidmatan pengkomputeran awan kemungkinan besar tidak berkongsi julatnya dengan mana-mana titik akhir manusia diketahui. Begitu juga, permintaan yang dikenal pasti secara eksplisit oleh serangan atau oleh risiko spam kemungkinan besar berkongsi julatnya. Walau bagaimanapun, internet sentiasa berubah-ubah, tujuan rangkaian berubah dari semasa ke semasa, dan julat sentiasa dibeli atau dijual, jadi kekal sedar dan berwaspada dalam hal positif palsu."
 hints_verification:
  "Apakah "positif" dan "negatif"?": "Apabila mengesahkan identiti yang dibentangkan oleh permintaan, hasil yang berjaya boleh digambarkan sebagai "positif" atau "negatif". Sekiranya identiti yang dibentangkan disahkan sebagai identiti sebenar, ia akan disifatkan sebagai "positif". Sekiranya identiti yang dibentangkan disahkan sebagai dipalsukan, ia akan disifatkan sebagai "negatif". Walau bagaimanapun, hasil yang tidak berjaya (cth., pengesahan gagal, atau kesahihan identiti yang dibentangkan tidak dapat ditentukan) tidak akan digambarkan sebagai "positif" atau "negatif". Sebaliknya, hasil yang tidak berjaya akan digambarkan hanya sebagai tidak disahkan. Apabila tiada percubaan untuk mengesahkan identiti yang dibentangkan oleh permintaan, permintaan tersebut juga akan disifatkan sebagai tidak disahkan. Istilah tersebut masuk akal hanya dalam konteks dimana identiti yang dibentangkan oleh permintaan diiktiraf, dan jadi, dimana pengesahan kemungkinan. Dalam kes dimana identiti yang dibentangkan tidak sepadan dengan pilihan yang disediakan di atas, atau dimana tiada identiti dibentangkan, pilihan yang disediakan di atas menjadi tidak relevan."
- "Apakah "pintasan satu pukulan"?": "Dalam sesetengah kes, permintaan yang disahkan sebagai positif mungkin masih disekat akibat daripada fail tandatangan, modul, atau syarat lain daripada permintaan, dan pintasan mungkin diperlukan untuk mengelakkan positif palsu. Dalam kes dimana pintasan bertujuan untuk menangani tepat satu pelanggaran, tidak lebih dan tidak kurang, pintasan sedemikian boleh digambarkan sebagai "pintasan satu pukulan"."
+ "Apakah "pintasan satu pukulan"?": "Dalam sesetengah kes, permintaan yang disahkan sebagai positif mungkin masih disekat akibat daripada fail tandatangan, modul, atau syarat lain daripada permintaan, dan pintasan mungkin diperlukan untuk mengelakkan positif palsu. Dalam kes dimana pintasan bertujuan menangani tepat satu pelanggaran, tidak lebih dan tidak kurang, pintasan sedemikian boleh digambarkan sebagai "pintasan satu pukulan"."
 info_some_useful_links: |
  Beberapa pautan yang berguna:<br />
      <ul class="pieul">
@@ -678,7 +679,7 @@ time_seconds_ago: "%s saat yang lalu"
 time_seconds_from_now: "%s saat dari sekarang"
 time_years_ago: "%s tahun yang lalu"
 time_years_from_now: "%s tahun dari sekarang"
-tip_2fa_sent: "E-mel yang mengandungi kod pengesahan dua-faktor telah dihantar ke alamat e-mel anda. Sila sahkan kod ini dibawah untuk mendapatkan akses kepada bahagian hadapan. Jika anda tidak menerima e-mel ini, cuba log keluar, tunggu selama 10 minit, dan log masuk semula untuk menerima e-mel baharu yang mengandungi kod baharu."
+tip_2fa_sent: "E-mel yang mengandungi kod pengesahan dua-faktor telah dihantar ke alamat e-mel anda. Sila sahkan kod ini di bawah untuk mendapatkan akses kepada bahagian hadapan. Jika anda tidak menerima e-mel ini, cuba log keluar, tunggu selama 10 minit, dan log masuk semula untuk menerima e-mel baharu yang mengandungi kod baharu."
 tip_accounts: "Salam, {username}.<br />Halaman akaun membolehkan anda mengawal siapa yang boleh mengakses bahagian hadapan CIDRAM."
 tip_aggregator: "Salam, {username}.<br />Agregator membolehkan anda ekspresikan IP, CIDR, dan topeng bersih dengan cara yang paling kecil. Masukkan data yang hendak diagregatkan dan tekan "OK"."
 tip_aux: "Salam, {username}.<br />Anda boleh menggunakan halaman ini untuk membuat, memadam, dan mengubah suai peraturan tambahan untuk CIDRAM."
@@ -696,6 +697,7 @@ tip_custom_ua: "Masukkan ejen pengguna (user agent) disini (pilihan)."
 tip_enter_input_here: "Masukkan input disini."
 tip_enter_ip_here: "Masukkan IP disini."
 tip_enter_ips_here: "Masukkan IP disini."
+tip_expiry_placeholder: "Bilangan saat sehingga tamat tempoh."
 tip_fe_cookie_warning: "Nota: CIDRAM menggunakan kuki untuk mengesahkan log masuk. Apabila anda log masuk, anda memberikan persetujuan anda untuk kuki dibuat dan disimpan oleh penyemak imbas anda."
 tip_file_manager: "Salam, {username}.<br />Pengurus fail membolehkan anda memadam, mengedit, memuat naik, dan memuat turun fail. Gunakan dengan berhati-hati (anda boleh memecahkan pemasangan anda dengan ini)."
 tip_fixer: "Salam, {username}.<br />Pembetul fail tandatangan menyediakan cara untuk mengesan dan menyelesaikan masalah yang berpotensi dalam fail tandatangan."
@@ -704,7 +706,8 @@ tip_intersector: "Salam, {username}.<br />Intersektor boleh digunakan untuk mene
 tip_ip_test: "Salam, {username}.<br />Halaman ujian IP membolehkan anda menguji sama ada alamat IP disekat oleh tandatangan yang sedang dipasang."
 tip_ip_test_switches: "(Apabila tidak dipilih, hanya fail tandatangan akan diuji terhadap)."
 tip_ip_tracking: "Salam, {username}.<br />Halaman penjejakan IP membolehkan anda untuk menyemak status penjejakan alamat IP, untuk menyemak yang mana antara mereka telah diharamkan, dan untuk menyahlarang/menyahjejaknya jika anda mahu berbuat demikian."
-tip_logs: "Salam, {username}.<br />Pilih fail log daripada senarai dibawah untuk melihat kandungan fail log tersebut."
+tip_logs: "Salam, {username}.<br />Pilih fail log daripada senarai di bawah untuk melihat kandungan fail log tersebut."
+tip_number_of_infractions: "Berapa banyak pelanggaran yang perlu dilakukan."
 tip_range: "Salam, {username}.<br />Halaman ini menunjukkan beberapa maklumat statistik asas tentang julat IP yang diliputi oleh fail tandatangan yang sedang aktif."
 tip_sections_list: "Salam, {username}.<br />Halaman ini menyenaraikan bahagian mana yang wujud dalam fail tandatangan yang sedang aktif."
 tip_see_the_documentation: "Lihat <a href="https://github.com/CIDRAM/Docs/blob/master/readme.id.md\#SECTION5" hreflang="id" rel="noopener external">dokumentasi</a> untuk mendapatkan maklumat tentang pelbagai arahan konfigurasi dan tujuannya."

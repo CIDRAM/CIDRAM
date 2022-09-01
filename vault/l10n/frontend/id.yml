@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Indonesian language data for the front-end (last modified: 2022.08.19).
+# This file: Indonesian language data for the front-end (last modified: 2022.09.01).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -128,7 +128,7 @@ config_frontend_signatures_update_event_log: "File untuk mencatat ketika tanda t
 config_frontend_theme: "Tema default yang digunakan untuk front-end."
 config_general: "Konfigurasi umum (konfigurasi inti apapun yang bukan milik kategori lain)."
 config_general_allow_gethostbyaddr_lookup: "Izinkan menggunakan gethostbyaddr saat UDP tidak tersedia? True = Ya [Default]; False = Tidak."
-config_general_ban_override: "Mengesampingkan "http_response_header_code" ketika "infraction_limit" adalah melampaui? Ketika mengesampingkan: Permintaan diblokir menghasilkan halaman kosong (file template tidak digunakan). 200 = Jangan mengesampingkan [Default]. Nilai lainnya sama dengan nilai yang tersedia untuk "http_response_header_code"."
+config_general_ban_override: "Mengesampingkan "http_response_header_code" ketika "infraction_limit" adalah melampaui? 200 = Jangan mengesampingkan [Default]. Nilai lainnya sama dengan nilai yang tersedia untuk "http_response_header_code"."
 config_general_default_algo: "Mendefinisikan algoritma mana yang akan digunakan untuk semua kata sandi dan sesi di masa depan."
 config_general_default_dns: "Daftar server DNS yang digunakan untuk pencarian nama host. PERINGATAN: Jangan ganti ini kecuali Anda tahu apa yang Anda lakukan!"
 config_general_default_timeout: "Batas waktu default yang digunakan untuk permintaan eksternal? Default = 12 detik."
@@ -249,6 +249,7 @@ confirm_delete: "Anda yakin ingin menghapus "%s"?"
 field_2fa: "Kode 2FA"
 field_activate: "Mengaktifkan"
 field_add_more_conditions: "Tambahkan lebih banyak kondisi"
+field_add_to_tracking: "Tambahkan ke pelacakan"
 field_add_webhook: "Tambahkan webhook"
 field_banned: "Dilarang"
 field_blocked: "Diblokir"
@@ -696,6 +697,7 @@ tip_custom_ua: "Masukkan agen pengguna (user agent) disini (opsional)."
 tip_enter_input_here: "Masukkan input disini."
 tip_enter_ip_here: "Masukkan IP disini."
 tip_enter_ips_here: "Masukkan IP disini."
+tip_expiry_placeholder: "Jumlah detik hingga kedaluwarsa."
 tip_fe_cookie_warning: "Catat: CIDRAM menggunakan cookie untuk mengotentikasi semua login. Saat kamu masuk, Anda memberikan izin agar cookie dibuat dan disimpan oleh browser Anda."
 tip_file_manager: "Salam, {username}.<br />File manager memungkinkan Anda untuk menghapus, mengedit, mengupload, dan mendownload file. Gunakan dengan hati-hati (Anda bisa istirahat instalasi Anda dengan ini)."
 tip_fixer: "Salam, {username}.<br />Alat perbaikan file tanda tangan menyediakan cara untuk mendeteksi dan memperbaiki potensi masalah dalam file tanda tangan."
@@ -705,6 +707,7 @@ tip_ip_test: "Salam, {username}.<br />Halaman IP test memungkinkan Anda untuk me
 tip_ip_test_switches: "(Bila tidak dipilih, hanya file tanda tangan akan diuji terhadap)."
 tip_ip_tracking: "Salam, {username}.<br />Halaman pelacakan IP memungkinkan Anda untuk memeriksa status pelacakan alamat IP, untuk memeriksa yang mereka telah dilarang, dan mencabut pelacakan untuk mereka jika Anda ingin melakukan."
 tip_logs: "Salam, {username}.<br />Pilih log dari daftar dibawah untuk melihat isi log."
+tip_number_of_infractions: "Berapa banyak pelanggaran yang harus dilakukan."
 tip_range: "Salam, {username}.<br />Halaman ini menunjukkan beberapa informasi statistik dasar tentang rentang IP yang dicakup oleh file tanda tangan yang saat ini aktif."
 tip_sections_list: "Salam, {username}.<br />Halaman ini mencantumkan bagian yang ada di file tanda tangan yang aktif saat ini."
 tip_see_the_documentation: "Lihat <a href="https://github.com/CIDRAM/Docs/blob/master/readme.id.md\#SECTION5" hreflang="id" rel="noopener external">dokumentasi</a> untuk informasi tentang berbagai direktif konfigurasi dan tujuan mereka."

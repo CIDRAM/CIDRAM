@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Norwegian language data for the front-end (last modified: 2022.08.19).
+# This file: Norwegian language data for the front-end (last modified: 2022.09.01).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -128,7 +128,7 @@ config_frontend_signatures_update_event_log: "En fil for logging når signaturer
 config_frontend_theme: "Standard tema som skal brukes for frontenden."
 config_general: "Generell konfigurasjon (enhver kjernekonfigurasjon som ikke tilhører andre kategorier)."
 config_general_allow_gethostbyaddr_lookup: "Tillat gethostbyaddr oppslag når UDP er utilgjengelig? True = Ja [Standardverdi]; False = Nei."
-config_general_ban_override: "Overstyr "http_response_header_code" når "infraction_limit" overskrides? Når overstyrende: Blokkerte forespørsler returnerer en tom side (malfiler blir ikke brukt). 200 = Ikke overstyre [Standardverdi]. Andre verdier er de samme som tilgjengelige verdier for "http_response_header_code"."
+config_general_ban_override: "Overstyr "http_response_header_code" når "infraction_limit" overskrides? 200 = Ikke overstyre [Standardverdi]. Andre verdier er de samme som tilgjengelige verdier for "http_response_header_code"."
 config_general_default_algo: "Definerer hvilken algoritme som skal brukes for alle fremtidige passord og økter."
 config_general_default_dns: "En liste over DNS-servere som skal brukes til vertsnavn-oppslag. ADVARSEL: Ikke endre dette med mindre du vet hva du gjør!"
 config_general_default_timeout: "Standard tidsavbrudd for eksterne forespørsler? Standardverdi = 12 sekunder."
@@ -249,6 +249,7 @@ confirm_delete: "Er du sikker på at du vil slette "%s"?"
 field_2fa: "2FA kode"
 field_activate: "Aktiver"
 field_add_more_conditions: "Legg til en ny betingelse"
+field_add_to_tracking: "Legg til sporing"
 field_add_webhook: "Legg til nettkrok"
 field_banned: "Utestengt"
 field_blocked: "Blokkert"
@@ -728,6 +729,7 @@ tip_custom_ua: "Skriv inn brukeragent (user agent) her (valgfritt)."
 tip_enter_input_here: "Skriv inn innspill her."
 tip_enter_ip_here: "Skriv inn IP her."
 tip_enter_ips_here: "Skriv inn IPer her."
+tip_expiry_placeholder: "Antall sekunder til den utløper."
 tip_fe_cookie_warning: "Merk: CIDRAM bruker en informasjonskapsel for å godkjenne innlogginger. Ved å logge inn, gir du ditt samtykke til at en informasjonskapsel skal opprettes og lagres av nettleseren din."
 tip_file_manager: "Hallo, {username}.<br />Filbehandleren lar deg slette, redigere, laste opp og laste ned filer. Bruk med forsiktighet (du kan ødelegge installasjonen din med dette)."
 tip_fixer: "Hallo, {username}.<br />Signaturfilfikseren gir en måte å oppdage og fikse potensielle problemer i signaturfiler."
@@ -737,6 +739,7 @@ tip_ip_test: "Hallo, {username}.<br />IP-testsiden lar deg teste om IP-adresser 
 tip_ip_test_switches: "(Når ikke valgt, blir bare signaturfiler testet mot)."
 tip_ip_tracking: "Hallo, {username}.<br />IP-sporing-siden lar deg sjekke sporingsstatus for IP-adresser, for å sjekke hvilken av dem som er blitt utestengt, og å oppheve utestengt status eller slutte å spore hvis du vil gjøre det."
 tip_logs: "Hallo, {username}.<br />Velg en loggfil fra listen nedenfor for å se innholdet i den loggfilen."
+tip_number_of_infractions: "Hvor mange overtredelser å pådra."
 tip_range: "Hallo, {username}.<br />Denne siden viser noen grunnleggende statistiske opplysninger om signaturene som dekkes av de aktive signaturfilene."
 tip_sections_list: "Hallo, {username}.<br />Denne siden viser hvilke seksjoner som finnes i de aktive signaturfilene."
 tip_see_the_documentation: "Se <a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#SECTION5" hreflang="en" rel="noopener external">dokumentasjonen</a> for informasjon om de ulike konfigurasjonsdirektiver og deres formål."

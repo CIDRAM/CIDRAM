@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Polish language data for the front-end (last modified: 2022.08.19).
+# This file: Polish language data for the front-end (last modified: 2022.09.01).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -128,7 +128,7 @@ config_frontend_signatures_update_event_log: "Plik do rejestrowania, gdy podpisy
 config_frontend_theme: "Domyślny motyw do użycia w interfejsie użytkownika."
 config_general: "Ogólna konfiguracja (dowolna konfiguracja podstawowa nienależąca do innych kategorii)."
 config_general_allow_gethostbyaddr_lookup: "Zezwolić na wyszukiwanie gethostbyaddr, gdy UDP jest niedostępny? True (Prawdziwe) = Tak [Domyślna]; False (Fałszywy) = Nie."
-config_general_ban_override: "Zastąpić „http_response_header_code”, gdy zostanie przekroczony „infraction_limit”? Podczas nadpisywania: Zablokowane żądania zwracają pustą stronę (pliki szablonów nie są używane). 200 = Nie zastępuj [Domyślna]. Inne wartości są takie same, jak dostępne wartości dla „http_response_header_code”."
+config_general_ban_override: "Zastąpić „http_response_header_code”, gdy zostanie przekroczony „infraction_limit”? 200 = Nie zastępuj [Domyślna]. Inne wartości są takie same, jak dostępne wartości dla „http_response_header_code”."
 config_general_default_algo: "Określa, którego algorytmu należy używać dla wszystkich przyszłych haseł i sesji."
 config_general_default_dns: "Lista serwerów DNS używanych do wyszukiwania nazw hostów. OSTRZEŻENIE: Nie zmieniaj tego, chyba że wiesz, co robisz!"
 config_general_default_timeout: "Domyślny limit czasu używany dla żądań zewnętrznych? Domyślna = 12 sekund."
@@ -249,6 +249,7 @@ confirm_delete: "Czy na pewno chcesz usunąć „%s”?"
 field_2fa: "Kod 2FA"
 field_activate: "Aktywuj"
 field_add_more_conditions: "Dodaj więcej warunków"
+field_add_to_tracking: "Dodaj do śledzenia"
 field_add_webhook: "Dodaj hak internetowy"
 field_banned: "Zbanowany"
 field_blocked: "Zablokowany"
@@ -753,6 +754,7 @@ tip_custom_ua: "Wprowadź agent użytkownika tutaj (opcjonalnie)."
 tip_enter_input_here: "Wprowadź dane tutaj."
 tip_enter_ip_here: "Wprowadź adres IP tutaj."
 tip_enter_ips_here: "Wprowadź adresy IP tutaj."
+tip_expiry_placeholder: "Liczba sekund do wygaśnięcia."
 tip_fe_cookie_warning: "Uwaga: CIDRAM wykorzystuje plik cookie do uwierzytelnienia logowania. Logując się, wyrażasz zgodę na utworzenie i przechowywanie plików cookie przez przeglądarkę."
 tip_file_manager: "Witaj, {username}.<br />Menedżer plików umożliwia usuwanie, edycję, przesyłanie i pobieranie plików. Używaj z rozwagą (to może zepsuć twoja instalację)."
 tip_fixer: "Witaj, {username}.<br />Narzędzie do naprawy plików podpis umożliwia wykrywanie i naprawianie potencjalnych problemów w plikach podpis."
@@ -762,6 +764,7 @@ tip_ip_test: "Witaj, {username}.<br />Strona testowa IP pozwala sprawdzić, czy 
 tip_ip_test_switches: "(Jeśli ta opcja nie jest zaznaczona, tylko pliki podpis będą testowane)."
 tip_ip_tracking: "Witaj, {username}.<br />Strona śledzenia IP pozwala sprawdzić status śledzenia adresów IP, sprawdzić, które z nich zostały zbanowane, a także odblokować/wyśledzić je, jeśli chcesz to zrobić."
 tip_logs: "Witaj, {username}.<br />Wybierz plik dziennika z poniższej listy, aby wyświetlić zawartość tego pliku dziennika."
+tip_number_of_infractions: "Ile wykroczeń ponieść."
 tip_range: "Witaj, {username}.<br />Ta strona pokazuje podstawowe informacje statystyczne o zakresach adresów IP objętych obecnie aktywnymi plikami podpis."
 tip_sections_list: "Witaj, {username}.<br />Ta strona zawiera listę sekcji, które istnieją w aktualnie aktywnych plikach podpis."
 tip_see_the_documentation: "Informacje na temat różnych dyrektyw konfiguracyjnych i ich celów można znaleźć w <a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#SECTION5" hreflang="en" rel="noopener external">dokumentacji</a>."

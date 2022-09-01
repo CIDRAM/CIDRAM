@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Latvian language data for the front-end (last modified: 2022.08.19).
+# This file: Latvian language data for the front-end (last modified: 2022.09.01).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -128,7 +128,7 @@ config_frontend_signatures_update_event_log: "Fails reģistrēšanai, kad paraks
 config_frontend_theme: "Noklusējuma tēma, kas jāizmanto priekšgalam."
 config_general: "Vispārējā konfigurācija (jebkura pamata konfigurācija, kas nepieder citām kategorijām)."
 config_general_allow_gethostbyaddr_lookup: "Vai atļaut meklēt ar gethostbyaddr, kad UDP nav pieejams? True (Patiess) = Jā [Noklusējuma]; False (Nepatiess) = Nē."
-config_general_ban_override: "Vai ignorēt "http_response_header_code", ja tiek pārsniegts "infraction_limit"? Ja tā, bloķētie pieprasījumi atdod tukšu lapu (veidņu faili netiek izmantoti). 200 = Neignorējiet [Noklusējuma]. Citas vērtības ir tādas pašas kā pieejamās vērtības "http_response_header_code"."
+config_general_ban_override: "Vai ignorēt "http_response_header_code", ja tiek pārsniegts "infraction_limit"? 200 = Neignorējiet [Noklusējuma]. Citas vērtības ir tādas pašas kā pieejamās vērtības "http_response_header_code"."
 config_general_default_algo: "Definē, kuru algoritmu izmantot visām turpmākajām parolēm un sesijām."
 config_general_default_dns: "DNS serveru saraksts, ko izmantot saimniekdatora nosaukuma meklēšanā. BRĪDINĀJUMS: Nemainiet to, ja vien nezināt, ko darāt!"
 config_general_default_timeout: "Kādu noklusējuma taimautu izmantot ārējiem pieprasījumiem? Noklusējuma = 12 sekundes."
@@ -249,6 +249,7 @@ confirm_delete: "Vai tiešām vēlaties izdzēst "%s"?"
 field_2fa: "2FA kods"
 field_activate: "Aktivizējiet"
 field_add_more_conditions: "Pievienojiet vairāk nosacījumu"
+field_add_to_tracking: "Pievienot izsekošanai"
 field_add_webhook: "Pievienojiet tīmekļa āķis"
 field_banned: "Aizliegts"
 field_blocked: "Bloķēts"
@@ -753,6 +754,7 @@ tip_custom_ua: "Šeit ievadiet lietotāja aģentu (nav obligāti)."
 tip_enter_input_here: "Šeit ievadiet ievadi."
 tip_enter_ip_here: "Šeit ievadiet IP adresi."
 tip_enter_ips_here: "Šeit ievadiet IP adreses."
+tip_expiry_placeholder: "Sekunžu skaits līdz derīguma termiņa beigām."
 tip_fe_cookie_warning: "Piezīme: CIDRAM izmanto sīkfailu, lai autentificētu ielogošanās informāciju. Ielogoties, jūs dodat piekrišanu sīkdatnes izveidošanai un saglabāšanai jūsu pārlūkprogrammā."
 tip_file_manager: "Failu menedžeris ļauj izdzēst, rediģēt, augšupielādēt un lejupielādēt failus. Lietojiet piesardzīgi (ar to jūs varētu sabojāt instalāciju)."
 tip_fixer: "Paraksta faila fiksētājs nodrošina veidu, kā atklāt un novērst parakstu failu iespējamās problēmas."
@@ -761,6 +763,7 @@ tip_ip_test: "IP testa lapa ļauj jums pārbaudīt, vai IP adreses bloķē pašl
 tip_ip_test_switches: "(Ja tas nav atlasīts, tiks pārbaudīti tikai paraksta faili)."
 tip_ip_tracking: "IP izsekošanas lapa ļauj jums pārbaudīt IP adrešu izsekošanas statusu, pārbaudīt kuras no tām ir aizliegtas, un ja vēlaties, pārtraukt to aizliegšanu un izsekošanu."
 tip_logs: "Zemāk redzamajā sarakstā atlasiet logfailu, lai skatītu šī faila saturu."
+tip_number_of_infractions: "Cik pārkāpumu jāpiemēro."
 tip_range: "Šajā lapā parādīta pamata statistikas informācija par IP diapazoniem, uz kuriem attiecas pašlaik aktīvie paraksta faili."
 tip_intersector: "Krustojuma var izmantot, lai noteiktu kopīgos faktorus no diviem diapazonu komplektiem."
 tip_subtractor: "Atdalītāju var izmantot, lai atņemtu vienu IP/CIDR/tīkla maskas diapazonu no cita."

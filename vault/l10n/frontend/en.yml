@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: English language data for the front-end (last modified: 2022.08.19).
+# This file: English language data for the front-end (last modified: 2022.09.01).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -128,7 +128,7 @@ config_frontend_signatures_update_event_log: "A file for logging when signatures
 config_frontend_theme: "The default theme to use for the front-end."
 config_general: "General configuration (any core configuration not belonging to other categories)."
 config_general_allow_gethostbyaddr_lookup: "Allow gethostbyaddr lookups when UDP is unavailable? True = Yes [Default]; False = No."
-config_general_ban_override: "Override "http_response_header_code" when "infraction_limit" is exceeded? When overriding: Blocked requests return a blank page (template files aren't used). 200 = Don't override [Default]. Other values are the same as the available values for "http_response_header_code"."
+config_general_ban_override: "Override "http_response_header_code" when "infraction_limit" is exceeded? 200 = Don't override [Default]. Other values are the same as the available values for "http_response_header_code"."
 config_general_default_algo: "Defines which algorithm to use for all future passwords and sessions."
 config_general_default_dns: "A list of DNS servers to use for hostname lookups. WARNING: Don't change this unless you know what you're doing!"
 config_general_default_timeout: "Default timeout to use for external requests? Default = 12 seconds."
@@ -249,6 +249,7 @@ confirm_delete: "Are you sure you want to delete "%s"?"
 field_2fa: "2FA code"
 field_activate: "Activate"
 field_add_more_conditions: "Add more conditions"
+field_add_to_tracking: "Add to tracking"
 field_add_webhook: "Add webhook"
 field_banned: "Banned"
 field_blocked: "Blocked"
@@ -734,6 +735,7 @@ tip_custom_ua: "Enter user agent here (optional)."
 tip_enter_input_here: "Enter input here."
 tip_enter_ip_here: "Enter IP here."
 tip_enter_ips_here: "Enter IPs here."
+tip_expiry_placeholder: "Number of seconds until it expires."
 tip_fe_cookie_warning: "Note: CIDRAM uses a cookie to authenticate logins. By logging in, you give your consent for a cookie to be created and stored by your browser."
 tip_file_manager: "Hello, {username}.<br />The file manager allows you to delete, edit, upload, and download files. Use with caution (you could break your installation with this)."
 tip_fixer: "Hello, {username}.<br />The signature file fixer provides a way to detect and fix potential problems in signature files."
@@ -743,6 +745,7 @@ tip_ip_test: "Hello, {username}.<br />The IP test page allows you to test whethe
 tip_ip_test_switches: "(When not selected, only the signature files will be tested against)."
 tip_ip_tracking: "Hello, {username}.<br />The IP tracking page allows you to check the tracking status of IP addresses, to check which of them have been banned, and to unban/untrack them if you want to do so."
 tip_logs: "Hello, {username}.<br />Select a log file from the list below to view the contents of that log file."
+tip_number_of_infractions: "How many infractions to incur."
 tip_range: "Hello, {username}.<br />This page shows some basic statistical information about the IP ranges covered by the currently active signature files."
 tip_sections_list: "Hello, {username}.<br />This page lists which sections exist in the currently active signature files."
 tip_see_the_documentation: "See the <a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#SECTION5" hreflang="en" rel="noopener external">documentation</a> for information about the various configuration directives and their purposes."

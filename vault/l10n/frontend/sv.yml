@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Swedish language data for the front-end (last modified: 2022.08.19).
+# This file: Swedish language data for the front-end (last modified: 2022.09.01).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -128,7 +128,7 @@ config_frontend_signatures_update_event_log: "En fil för loggning när signatur
 config_frontend_theme: "Standardtemat som ska användas för front-enden."
 config_general: "Allmän konfiguration (alla kärnkonfigurationer som inte tillhör andra kategorier)."
 config_general_allow_gethostbyaddr_lookup: "Tillåt gethostbyaddr-uppslag när UDP är otillgänglig? True = Ja [Standard]; False = Nej."
-config_general_ban_override: "Åsidosätta "http_response_header_code" när "infraction_limit" överskrids? När det åsidosätter: Blockerade förfrågningar returnerar en tom sida (mallfiler används inte). 200 = Åsidosätta inte [Standard]. Andra värden är desamma som tillgängliga värden för "http_response_header_code"."
+config_general_ban_override: "Åsidosätta "http_response_header_code" när "infraction_limit" överskrids? 200 = Åsidosätta inte [Standard]. Andra värden är desamma som tillgängliga värden för "http_response_header_code"."
 config_general_default_algo: "Definierar vilken algoritm som ska användas för alla framtida lösenord och sessioner."
 config_general_default_dns: "En lista över DNS-servrar som ska användas för värdnamnssökningar. VARNING: Ändra inte detta om du inte vet vad du gör!"
 config_general_default_timeout: "Standard timeout att använda för externa förfrågningar? Standard = 12 sekunder."
@@ -249,6 +249,7 @@ confirm_delete: "Är du säker på att du vill radera "%s"?"
 field_2fa: "2FA-kod"
 field_activate: "Aktivera"
 field_add_more_conditions: "Lägg till fler villkor"
+field_add_to_tracking: "Lägg till spårning"
 field_add_webhook: "Lägg till en webhook"
 field_banned: "Förbjudna"
 field_blocked: "Blockerad"
@@ -728,6 +729,7 @@ tip_custom_ua: "Ange användaragent (user agent) här (valfritt)."
 tip_enter_input_here: "Ange inmatning här."
 tip_enter_ip_here: "Ange IP-adress här."
 tip_enter_ips_here: "Ange IP-adresser här."
+tip_expiry_placeholder: "Antal sekunder till utgången."
 tip_fe_cookie_warning: "Notera: CIDRAM använder en cookie för att autentisera inloggningar. Genom att logga in, ger du ditt samtycke till att en cookie ska skapas och lagras av din webbläsare."
 tip_file_manager: "Hallå, {username}.<br />Du kan radera, redigera, ladda upp och ladda ner filer med hjälp av filhanteraren. Använd med försiktighet (du kan bryta din installation med detta)."
 tip_fixer: "Hallå, {username}.<br />Signaturfilfixaren ger ett sätt att upptäcka och åtgärda eventuella problem i signaturfiler."
@@ -737,6 +739,7 @@ tip_ip_test: "Hallå, {username}.<br />Du kan testa om IP-adresser blockeras av 
 tip_ip_test_switches: "(När den inte är vald, endast signaturfiler kommer att testas mot)."
 tip_ip_tracking: "Hallå, {username}.<br />Med hjälp av IP-spårningssidan, du kan kontrollera vilka IP-adresser som spåras, vilka har blivit förbjudna, och du kan återkalla spårning och förbud om du vill."
 tip_logs: "Hallå, {username}.<br />Välj en loggfil från listan nedan för att se innehållet i den loggfilen."
+tip_number_of_infractions: "Hur många överträdelser som ska tillämpas."
 tip_range: "Hallå, {username}.<br />Den här sidan visar några grundläggande statistiska uppgifter om de signaturer som omfattas av de aktuella aktiva signaturfilerna."
 tip_sections_list: "Hallå, {username}.<br />Den här sidan visar vilka sektioner som finns i de aktuella aktiva signaturfilerna."
 tip_see_the_documentation: "Se <a href="https://github.com/CIDRAM/Docs/blob/master/readme.en.md\#SECTION5" hreflang="en" rel="noopener external">dokumentationen</a> för information om de olika konfigurationsdirektiven och deras ändamål."

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2022.08.30).
+ * This file: Front-end handler (last modified: 2022.09.01).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -3858,25 +3858,53 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-tracking' && $CIDRAM['FE']['
     /** Initialise variables. */
     $CIDRAM['FE']['TrackingData'] = '';
     $CIDRAM['FE']['TrackingCount'] = '';
+    $CIDRAM['FE']['NormalExpiryValue'] = $CIDRAM['Now'] + $CIDRAM['Config']['signatures']['default_tracktime'];
+    $CIDRAM['FE']['NormalExpiry'] = $CIDRAM['RelativeTime']($CIDRAM['FE']['NormalExpiryValue']);
+    $CIDRAM['FE']['ExtendedExpiryValue'] = $CIDRAM['Now'] + floor($CIDRAM['Config']['signatures']['default_tracktime'] * 52.1428571428571);
+    $CIDRAM['FE']['ExtendedExpiry'] = $CIDRAM['RelativeTime']($CIDRAM['FE']['ExtendedExpiryValue']);
+    $CIDRAM['FE']['1HourLabel'] = $CIDRAM['RelativeTime']($CIDRAM['Now'] + 3600);
+    $CIDRAM['FE']['1DayLabel'] = $CIDRAM['RelativeTime']($CIDRAM['Now'] + 86400);
+    $CIDRAM['FE']['1WeekLabel'] = $CIDRAM['RelativeTime']($CIDRAM['Now'] + 604800);
+    $CIDRAM['FE']['1MonthLabel'] = $CIDRAM['RelativeTime']($CIDRAM['Now'] + 2592000);
+    $CIDRAM['FE']['1YearLabel'] = $CIDRAM['RelativeTime']($CIDRAM['Now'] + 31557600);
 
     /** Generate confirm button. */
     $CIDRAM['FE']['Confirm-ClearAll'] = $CIDRAM['GenerateConfirm']($CIDRAM['L10N']->getString('field_clear_all'), 'trackForm');
 
-    /** Clear/revoke IP tracking for an IP address. */
+    /** Clear, or remove an IP address from tracking. */
     if (isset($_POST['IPAddr'])) {
-        $CIDRAM['Cleared'] = false;
         if ($_POST['IPAddr'] === '*') {
             $CIDRAM['Tracking'] = [];
-            $CIDRAM['Cleared'] = true;
+            $CIDRAM['Tracking-Modified'] = true;
+            $CIDRAM['FE']['state_msg'] = $CIDRAM['L10N']->getString('response_tracking_cleared');
         } elseif (isset($CIDRAM['Tracking'][$_POST['IPAddr']])) {
             unset($CIDRAM['Tracking'][$_POST['IPAddr']]);
-            $CIDRAM['Cleared'] = true;
-        }
-        if ($CIDRAM['Cleared']) {
-            $CIDRAM['FE']['state_msg'] = $CIDRAM['L10N']->getString('response_tracking_cleared');
             $CIDRAM['Tracking-Modified'] = true;
+            $CIDRAM['FE']['state_msg'] = sprintf($CIDRAM['L10N']->getString('response_tracking_removed'), $_POST['IPAddr']);
         }
-        unset($CIDRAM['Cleared']);
+    }
+
+    /** Add an IP address to tracking. */
+    if (isset($_POST['addNewAddress'], $_POST['addNewInfractions'], $_POST['addNewExpiryMenu'])) {
+        if ($CIDRAM['FE']['state_msg']) {
+            $CIDRAM['FE']['state_msg'] .= "<br />\n";
+        }
+        if ($CIDRAM['ExpandIPv4']($_POST['addNewAddress'], true) || $CIDRAM['ExpandIPv6']($_POST['addNewAddress'], true)) {
+            $CIDRAM['Tracking'][$_POST['addNewAddress']] = [];
+            if ($_POST['addNewExpiryMenu'] === 'Extended') {
+                $CIDRAM['Tracking'][$_POST['addNewAddress']]['Time'] = floor($CIDRAM['Config']['signatures']['default_tracktime'] * 52.1428571428571);
+            } elseif ($_POST['addNewExpiryMenu'] === 'Other' && isset($_POST['addNewExpiryOther'])) {
+                $CIDRAM['Tracking'][$_POST['addNewAddress']]['Time'] = $_POST['addNewExpiryOther'];
+            } else {
+                $CIDRAM['Tracking'][$_POST['addNewAddress']]['Time'] = $CIDRAM['Config']['signatures']['default_tracktime'];
+            }
+            $CIDRAM['Tracking'][$_POST['addNewAddress']]['Time'] += $CIDRAM['Now'];
+            $CIDRAM['Tracking'][$_POST['addNewAddress']]['Count'] = $_POST['addNewInfractions'];
+            $CIDRAM['Tracking-Modified'] = true;
+            $CIDRAM['FE']['state_msg'] .= sprintf($CIDRAM['L10N']->getString('response_tracking_added'), $_POST['addNewAddress']);
+        } else {
+            $CIDRAM['FE']['state_msg'] .= $CIDRAM['L10N']->getString('Short_BadIP') . '!';
+        }
     }
 
     /** Count currently tracked IPs. */

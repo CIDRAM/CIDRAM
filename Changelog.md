@@ -84,3 +84,4 @@
 - Confirmation is now sought before engaging an attempt to delete an auxiliary rule, and the option moved to the far right to reduce the risk of engaging by accident (#333).
 - Added the ability to reset specific parts of the configuration back to their defaults (#331).
 - Added L10N support for some additional languages.
+- IPs can now be added to tracking manually (#310).

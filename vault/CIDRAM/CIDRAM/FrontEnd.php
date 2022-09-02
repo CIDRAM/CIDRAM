@@ -3640,17 +3640,46 @@ class FrontEnd extends Core
             /** Initialise variables. */
             $this->FE['TrackingData'] = '';
             $this->FE['TrackingCount'] = '';
+            $this->FE['NormalExpiry'] = $this->relativeTime($this->Now + $this->Configuration['signatures']['default_tracktime']);
+            $this->FE['ExtendedExpiry'] = $this->relativeTime($this->Now + floor($this->Configuration['signatures']['default_tracktime'] * 52.1428571428571));
+            $this->FE['1HourLabel'] = $this->relativeTime($this->Now + 3600);
+            $this->FE['1DayLabel'] = $this->relativeTime($this->Now + 86400);
+            $this->FE['1WeekLabel'] = $this->relativeTime($this->Now + 604800);
+            $this->FE['1MonthLabel'] = $this->relativeTime($this->Now + 2592000);
+            $this->FE['1YearLabel'] = $this->relativeTime($this->Now + 31557600);
 
             /** Generate confirm button. */
             $this->FE['Confirm-ClearAll'] = $this->generateConfirmation($this->L10N->getString('field_clear_all'), 'trackForm');
 
-            /** Clear/revoke IP tracking for an IP address. */
-            if (isset($_POST['IPAddr']) && (
-                ($_POST['IPAddr'] === '*' && $this->Cache->deleteAllEntriesWhere('~^Tracking-~')) ||
-                $this->Cache->deleteEntry('Tracking-' . $_POST['IPAddr'])
-            )) {
-                $this->Cache->deleteEntry('Tracking-' . $_POST['IPAddr'] . '-MinimumTime');
-                $this->FE['state_msg'] = $this->L10N->getString('response_tracking_cleared');
+            /** Clear, or remove an IP address from tracking. */
+            if (isset($_POST['IPAddr'])) {
+                if ($_POST['IPAddr'] === '*' && $this->Cache->deleteAllEntriesWhere('~^Tracking-~')) {
+                    $this->FE['state_msg'] = $this->L10N->getString('response_tracking_cleared');
+                } elseif ($this->Cache->deleteEntry('Tracking-' . $_POST['IPAddr'])) {
+                    $this->Cache->deleteEntry('Tracking-' . $_POST['IPAddr'] . '-MinimumTime');
+                    $this->FE['state_msg'] = sprintf($this->L10N->getString('response_tracking_removed'), $_POST['IPAddr']);
+                }
+            }
+
+            /** Add an IP address to tracking. */
+            if (isset($_POST['addNewAddress'], $_POST['addNewInfractions'], $_POST['addNewExpiryMenu'])) {
+                if ($this->FE['state_msg']) {
+                    $this->FE['state_msg'] .= "<br />\n";
+                }
+                if ($this->expandIpv4($_POST['addNewAddress'], true) || $this->expandIpv6($_POST['addNewAddress'], true)) {
+                    if ($_POST['addNewExpiryMenu'] === 'Extended') {
+                        $TrackTime = floor($this->Configuration['signatures']['default_tracktime'] * 52.1428571428571);
+                    } elseif ($_POST['addNewExpiryMenu'] === 'Other' && isset($_POST['addNewExpiryOther'])) {
+                        $TrackTime = $_POST['addNewExpiryOther'];
+                    } else {
+                        $TrackTime = $this->Configuration['signatures']['default_tracktime'];
+                    }
+                    $this->Cache->setEntry('Tracking-' . $_POST['addNewAddress'], $_POST['addNewInfractions'], $TrackTime);
+                    $this->Cache->setEntry('Tracking-' . $_POST['addNewAddress'] . '-MinimumTime', $TrackTime, $TrackTime);
+                    $this->FE['state_msg'] .= sprintf($this->L10N->getString('response_tracking_added'), $_POST['addNewAddress']);
+                } else {
+                    $this->FE['state_msg'] .= $this->L10N->getString('Short_BadIP') . '!';
+                }
             }
 
             if (!$this->FE['ASYNC']) {

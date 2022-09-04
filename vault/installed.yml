@@ -313,13 +313,13 @@ IPv4:
  Extended Description: >
   Default IPv4 signatures normally included with the main package. Blocks unwanted cloud services and non-human endpoints.
  False Positive Risk: "Low"
- Version: "2022.239.0"
+ Version: "2022.246.0"
  Dependencies:
   Bypasses: ">=2022.172"
  Files:
   signatures/ipv4.dat:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/signatures/ipv4.dat"
-   Checksum: "b7fa48672859a718871436d599e21380fc32c2623094839d4e85bc4a8d7e31ec:1096899"
+   Checksum: "e2aeee5fe3f776b6541f08ce834c52c0782f7edc84650e262fafb2b3e59452e1:1098272"
    Used with: "ipv4"
 IPv4-Bogons:
  Extended Description: "Default IPv4 signatures normally included with the main package. Blocks bogon/martian CIDRs."
@@ -333,13 +333,13 @@ IPv4-Bogons:
 IPv4-ISPs:
  Extended Description: "Default IPv4 signatures normally included with the main package. Blocks dangerous and spammy ISPs."
  False Positive Risk: "Medium"
- Version: "2022.239.0"
+ Version: "2022.246.0"
  Dependencies:
   Bypasses: ">=2022.172"
  Files:
   signatures/ipv4_isps.dat:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/signatures/ipv4_isps.dat"
-   Checksum: "f6fc9a3e5659b41c47c56340ae560dbdbf2f69468f935f779f3fea4ae4980c23:607010"
+   Checksum: "4e2b78c5a00c1e421a198e83b7fe4706267212bca801f439d3c43e390a0f5a7d:611457"
    Used with: "ipv4"
 IPv4-Nonblocking:
  Extended Description: "Default IPv4 non-blocking signatures file."
@@ -364,13 +364,13 @@ IPv6:
  Extended Description: >
   Default IPv6 signatures normally included with the main package. Blocks unwanted cloud services and non-human endpoints.
  False Positive Risk: "Low"
- Version: "2022.239.0"
+ Version: "2022.246.0"
  Dependencies:
   Bypasses: ">=2022.172"
  Files:
   signatures/ipv6.dat:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/signatures/ipv6.dat"
-   Checksum: "c24bd4b797807c6c4813f1f448de116a2bffbfc0602dbe9af12f7db40d14a993:309852"
+   Checksum: "3153acfed67acdd2d1cdb4f3cdb011bdcb87a87819e9d2c9b6a6faa463b83fd0:313269"
    Used with: "ipv6"
 IPv6-Bogons:
  Extended Description: "Default IPv6 signatures normally included with the main package. Blocks bogon/martian CIDRs."
@@ -384,13 +384,13 @@ IPv6-Bogons:
 IPv6-ISPs:
  Extended Description: "Default IPv6 signatures normally included with the main package. Blocks dangerous and spammy ISPs."
  False Positive Risk: "Medium"
- Version: "2022.239.0"
+ Version: "2022.246.0"
  Dependencies:
   Bypasses: ">=2022.172"
  Files:
   signatures/ipv6_isps.dat:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/signatures/ipv6_isps.dat"
-   Checksum: "27a5deec7129cf1b365a0f832c39edb7283eb02bd86a5e47daf0b435fbde193d:47874"
+   Checksum: "8d7bf7eb470397138a2f876d4af84483e524ca85792c64fd24f3a0ba3270e840:47643"
    Used with: "ipv6"
 IPv6-Nonblocking:
  Extended Description: "Default IPv6 non-blocking signatures file."

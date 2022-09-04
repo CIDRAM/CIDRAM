@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6_isps.dat
 
-# Version: 2022.239.0
-# Last modified: 2022.08.28
+# Version: 2022.246.0
+# Last modified: 2022.09.04
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -517,19 +517,17 @@ Tag: Comcast Spam IPs
 # Peering exchange provider in the United States. Spamming, scraping,
 # brute-force and SSH attacks, hack attempts, and other unwanted traffic
 # detected from here. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 14,691.
-# Updated: 2022.01.16
+# Stop Forum Spam (SFS) listings: 23,378.
+# Updated: 2022.08.29
 
-2600:8800:c87:b700::/64 Deny Spam
-2600:8800:1694:dc00::/64 Deny Spam
-2600:8800:2400:24a0::/64 Deny Spam
-2600:8800:4880:1810::/64 Deny Spam
-2600:8801:be00:80f0::/64 Deny Spam
-2600:8803:3409:d00::/64 Deny Spam
-2600:8804:4908:fd00::/64 Deny Spam
-2600:8805:5c16:cd00::/64 Deny Spam
-2600:8806:8308:3200::/64 Deny Spam
-2600:8807:2c00:3e00::/64 Deny Spam
+2001:579:8d0:e10::/64 Deny Spam
+2600:8800:7004:5e00::/64 Deny Spam
+2600:8801:2b0b:e200::/64 Deny Spam
+2600:8801:db0b:1200::/64 Deny Spam
+2600:8803:5a02:6800::/64 Deny Spam
+2600:8806:4:2100::/64 Deny Spam
+2600:8807:84c6:100::/64 Deny Spam
+2600:8807:bc08:b600::/64 Deny Spam
 Origin: US
 Profile: Commercial;Domestic ISP;Infrastructure/Transit;Multiplay;Tor endpoints here;University;Webhosting
 Tag: Cox Spam IPs
@@ -726,51 +724,20 @@ Tag: Telstra Corporation
 # ASN 5607 ("Sky UK Limited").
 # UK domestic ISP / broadband provider. Spam and Mirai detected here.
 # Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 3,478.
-# Updated: 2021.12.10
+# Stop Forum Spam (SFS) listings: 3,215.
+# Updated: 2022.08.29
 
-2a02:c7c:21d:e400::/64 Deny Spam
-2a02:c7c:1033:f100::/64 Deny Spam
-2a02:c7c:1a28:4300::/64 Deny Spam
-2a02:c7d:4e9f:300::/64 Deny Spam
-2a02:c7d:5216:5a00::/64 Deny Spam
-2a02:c7d:b49e:6400::/64 Deny Spam
-2a02:c7d:b5fd:9600::/64 Deny Spam
-2a02:c7d:c5d8:e600::/64 Deny Spam
-2a02:c7d:f23e:1900::/64 Deny Spam
-2a02:c7e:796:df00::/64 Deny Spam
-2a02:c7e:a8f:1300::/64 Deny Spam
-2a02:c7e:e4a:8100::/64 Deny Spam
-2a02:c7e:1259:d00::/64 Deny Spam
-2a02:c7e:12f6:7900::/64 Deny Spam
-2a02:c7e:1a78:9400::/64 Deny Spam
-2a02:c7e:1ba0:cb00::/64 Deny Spam
-2a02:c7e:38ea:2e00::/64 Deny Spam
-2a02:c7e:3a46:1800::/64 Deny Spam
-2a02:c7e:3ac4:5d00::/64 Deny Spam
-2a02:c7f:c77:4100::/64 Deny Spam
-2a02:c7f:193b:ed00::/64 Deny Spam
-2a02:c7f:1e34:e600::/64 Deny Spam
-2a02:c7f:262b:ae00::/64 Deny Spam
-2a02:c7f:3ae3:700::/64 Deny Spam
-2a02:c7f:7698:5d00::/64 Deny Spam
-2a02:c7f:7731:1f00::/64 Deny Spam
-2a02:c7f:8a97:9600::/64 Deny Spam
-2a02:c7f:9041:ad00::/64 Deny Spam
-2a02:c7f:9b1a:e200::/64 Deny Spam
-2a02:c7f:9c6a:9b00::/64 Deny Spam
-2a02:c7f:9d79:2c00::/64 Deny Spam
+2a02:c7c:5ade:2f00::/64 Deny Spam
+2a02:c7c:70c2:5200::/64 Deny Spam
+2a02:c7c:be88:4b00::/64 Deny Spam
+2a02:c7e:651:7b00::/64 Deny Spam
+2a02:c7e:1caa:8200::/64 Deny Spam
+2a02:c7e:4d76:f500::/64 Deny Spam
+2a02:c7e:574b:b100::/64 Deny Spam
+2a02:c7f:1989:7300::/64 Deny Spam
+2a02:c7f:4170:2000::/64 Deny Spam
 2a02:c7f:a099:3b00::/64 Deny Spam
-2a02:c7f:ae17:6c00::/64 Deny Spam
-2a02:c7f:ae2b:f700::/64 Deny Spam
-2a02:c7f:b42d:8f00::/64 Deny Spam
-2a02:c7f:bb31:a100::/64 Deny Spam
-2a02:c7f:d28d:8e00::/64 Deny Spam
-2a02:c7f:e579:dc00::/64 Deny Spam
-2a02:c7f:e5cc:6500::/64 Deny Spam
-2a02:c7f:e5e9::/64 Deny Spam
-2a02:c7f:ecbd:300::/64 Deny Spam
-2a02:c7f:ee94:5b00::/64 Deny Spam
+2a02:c7f:cb2c:ed00::/64 Deny Spam
 Origin: GB
 Profile: Domestic ISP
 Tag: Sky UK Limited
@@ -1523,3 +1490,31 @@ Tag: Mega Cable
 Origin: DE
 Profile: Domestic ISP
 Tag: Deutsche Telekom AG
+
+
+# ASN 701 ("Verizon Business/UUnet").
+# US domestic ISP. Honeypot attacks, tor endpoints, port scans, malware, and
+# spam detected from here. Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 3,591.
+# Updated: 2022.08.29
+
+2600:4040:1e97:800::/64 Deny Spam
+2600:4040:4457:9c00::/64 Deny Spam
+2600:4040:ac0d:7700::/64 Deny Spam
+Origin: US
+Profile: Domestic ISP;Tor endpoints here
+Tag: Verizon Business/UUnet
+
+
+# ASN 28649 ("Desktop Sigmanet Comunicaï¿½ï¿½o Multimï¿½dia SA").
+# Brazilian multiplay provider. Brute-force, SSH, and webapp attacks, port
+# scans, hacking, and spam detected from here. Listing just the affected
+# ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 84.
+# Updated: 2022.09.04
+
+2804:868:d041:2895::/64 Deny Spam
+2804:868:d042:480d::/64 Deny Spam
+Origin: BR
+Profile: Domestic ISP;Multiplay
+Tag: Desktop Sigmanet

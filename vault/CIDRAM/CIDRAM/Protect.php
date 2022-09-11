@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Protect traits (last modified: 2022.07.17).
+ * This file: Protect traits (last modified: 2022.09.11).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -423,8 +423,8 @@ trait Protect
             $this->Stage = 'CAPTCHA';
 
             if (
-                !empty($this->Configuration['recaptcha']['sitekey']) &&
-                !empty($this->Configuration['recaptcha']['secret']) &&
+                $this->Configuration['recaptcha']['sitekey'] !== '' &&
+                $this->Configuration['recaptcha']['secret'] !== '' &&
                 empty($this->CIDRAM['Banned']) &&
                 $this->BlockInfo['SignatureCount'] <= $this->Configuration['recaptcha']['signature_limit'] &&
                 (
@@ -441,8 +441,8 @@ trait Protect
                 /** Execute the ReCaptcha class. */
                 $CaptchaDone = new ReCaptcha($this);
             } elseif (
-                !empty($this->Configuration['hcaptcha']['sitekey']) &&
-                !empty($this->Configuration['hcaptcha']['secret']) &&
+                $this->Configuration['hcaptcha']['sitekey'] !== '' &&
+                $this->Configuration['hcaptcha']['secret'] !== '' &&
                 empty($this->CIDRAM['Banned']) &&
                 $this->BlockInfo['SignatureCount'] <= $this->Configuration['hcaptcha']['signature_limit'] &&
                 (
@@ -890,8 +890,8 @@ trait Protect
             $this->Stage = 'NonBlockedCAPTCHA';
             if (empty($CaptchaDone) && empty($this->CIDRAM['Whitelisted']) && empty($this->BlockInfo['Verified'])) {
                 if (
-                    !empty($this->Configuration['recaptcha']['sitekey']) &&
-                    !empty($this->Configuration['recaptcha']['secret']) &&
+                    $this->Configuration['recaptcha']['sitekey'] !== '' &&
+                    $this->Configuration['recaptcha']['secret'] !== '' &&
                     class_exists('\CIDRAM\CIDRAM\ReCaptcha') &&
                     ($this->Configuration['recaptcha']['usemode'] >= 3 && $this->Configuration['recaptcha']['usemode'] <= 5)
                 ) {
@@ -900,8 +900,8 @@ trait Protect
 
                     $this->CIDRAM['StatusCodeForNonBlocked'] = $this->Configuration['recaptcha']['nonblocked_status_code'];
                 } elseif (
-                    !empty($this->Configuration['hcaptcha']['sitekey']) &&
-                    !empty($this->Configuration['hcaptcha']['secret']) &&
+                    $this->Configuration['hcaptcha']['sitekey'] !== '' &&
+                    $this->Configuration['hcaptcha']['secret'] !== '' &&
                     class_exists('\CIDRAM\CIDRAM\HCaptcha') &&
                     ($this->Configuration['hcaptcha']['usemode'] >= 3 && $this->Configuration['hcaptcha']['usemode'] <= 5)
                 ) {

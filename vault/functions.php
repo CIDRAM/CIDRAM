@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2022.07.11).
+ * This file: Functions file (last modified: 2022.09.11).
  */
 
 /**
@@ -2581,10 +2581,10 @@ $CIDRAM['HonourLookup'] = function () use (&$CIDRAM) {
  */
 $CIDRAM['IsSensitive'] = function ($URI) {
     return preg_match(
-        '~/(comprofiler|user)/(login|register)|=(activate|login|regist(er|ration' .
-        ')|signup)|act(ion)?=(edit|reg)|(activate|confirm|login|newuser|reg(ist(' .
-        'er|ration))?|sign(in|up))(\.php|=)|special:userlogin&|verifyemail|wp-co' .
-        'mments-post~',
+        '~/(?:comprofiler|user)/(?:contact|login|register)|=(?:activate|contact|' .
+        'login|regist(?:er|ration)|signup)|act(?:ion)?=(?:edit|reg)|(?:activate|' .
+        'con(?:firm|tact)|login|newuser|reg(?:ist(?:er|ration))?|signin|signup)(' .
+        '?:\.php|=)|special:userlogin&|verifyemail|wp-comments-post~i',
         $URI
     );
 };

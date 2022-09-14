@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6.dat
 
-# Version: 2022.246.0
-# Last modified: 2022.09.04
+# Version: 2022.256.0
+# Last modified: 2022.09.14
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -8891,11 +8891,10 @@ Tag: Inios Oy
 
 # ASN 42331 ("PE Freehost").
 # Webhosting provider caught hacking and performing webapp attacks.
-# Stop Forum Spam (SFS) listings: 519.
-# Updated: 2021.03.02 / Checked: 2021.10.18
+# Stop Forum Spam (SFS) listings: 185.
+# Updated: 2022.09.14
 
 2a01:8140::/32 Deny Cloud
-2a04:1740::/29 Deny Cloud
 2a07:8e00::/29 Deny Cloud
 Origin: UA
 Profile: Webhosting
@@ -8977,15 +8976,15 @@ Tag: BOHO BEACH CLUB S.A
 
 # ASNs 61003, 62563 ("GLOBALTELEHOST Corp").
 # Dedicated webhosting provider; Spam and port scans detected from here.
-# Stop Forum Spam (SFS) listings: 92 (AS61003), 827 (AS62563).
-# Updated: 2021.11.03
+# Stop Forum Spam (SFS) listings: 101 (AS61003), 1,674 (AS62563).
+# Updated: 2022.09.12
 
 2602:fec3::/39 Deny Cloud
 2602:fec3:200::/40 Deny Cloud
 2602:fec3:f00::/40 Deny Cloud
 Origin: CA
-2a09:1d80::/29 Deny Cloud
-Origin: LT
+2a0f:e7c0::/29 Deny Cloud
+Origin: SC
 2604:86c0:f000::/40 Deny Cloud
 Origin: US
 Profile: Dedicated;Webhosting
@@ -9435,15 +9434,22 @@ Profile: Infrastructure/Transit;Tor endpoints here
 Tag: VIRTUA SYSTEMS SAS
 
 
-# ASNs 209132, 209272 ("Alviva Holding Limited").
-# Commercial network. Port scans, hacking, brute-force, and webapp attacks
-# detected from here.
-# Stop Forum Spam (SFS) listings: 8 (AS209132).
-# Updated: 2021.05.11 / Checked: 2022.05.09
+# ASNs 48721, 209132, 209272, 209588, 267784 ("Alviva Holding Limited",
+# "Flyservers S.A"). Commercial network. Port scans, hacking, brute-force, and
+# webapp attacks detected from here.
+# Stop Forum Spam (SFS) listings: 7 (AS48721), 8 (AS209132), 1 (AS209272),
+# 1,581 (AS209588), 135 (AS267784).
+# Updated: 2022.09.12
 
-2a09:1d40::/48 Deny Attacks
+2a09:1d40::/48 Deny Cloud
 Origin: LB
-Profile: Commercial;Webhosting
+2a10:9100:3::/48 Deny Cloud
+2a10:9100:5::/48 Deny Cloud
+2a10:9100:7::/48 Deny Cloud
+2a10:9100:9::/48 Deny Cloud
+2a10:9107:f000::/36 Deny Cloud
+Origin: PA
+Profile: Commercial;Dedicated;Webhosting
 Tag: Alviva Holding Limited
 
 
@@ -10748,6 +10754,18 @@ Tag: Host-Telecom
 Origin: IR
 Profile: Infrastructure/Transit;Webhosting
 Tag: HostIran
+
+
+# ASN 211298 ("Constantine Cybersecurity Ltd").
+# Conducts "internet research". More than 500,000+ reported instances of port
+# scans from here. Heavy hitter, floods of useless traffic, and reports of
+# hacking and other unwanted traffic detected from here.
+# Updated: 2022.09.12
+
+2a06:4880::/32 Deny Cloud
+Origin: GB
+Profile: Commercial
+Tag: cyber.casa
 
 
 # ---

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Portuguese language data for the front-end (last modified: 2022.09.01).
+# This file: Portuguese language data for the front-end (last modified: 2022.09.13).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -338,6 +338,37 @@ hints_shorthand:
 hints_verification:
  "O que são "positivos" e "negativos"?": "Quando verificando a identidade apresentada por uma solicitação, um resultado bem-sucedido pode ser descrito como "positivo" ou "negativo". Quando a identidade apresentada for confirmada como sendo a verdadeira identidade, ela será descrita como "positiva". Quando a identidade apresentada for confirmada como falsificada, ela será descrita como "negativa". No entanto, um resultado malsucedido (por exemplo, falha na verificação, ou a veracidade da identidade apresentada não pode ser determinada) não seria descrito como "positivo" ou "negativo". Em vez disso, um resultado malsucedido seria descrito simplesmente como não verificado. Quando não for feita nenhuma tentativa de verificar a identidade apresentada por uma solicitação, a solicitação também será descrita como não verificado. Os termos fazem sentido apenas no contexto em que a identidade apresentada por uma solicitação é reconhecida e, portanto, onde a verificação é possível. Nos casos em que a identidade apresentada não corresponde às opções fornecidas acima, ou onde nenhuma identidade é apresentada, as opções fornecidas acima tornam-se irrelevantes."
  "O que são "bypasses de acerto único"?": "Em alguns casos, uma solicitação com verificação positiva ainda pode ser bloqueada como resultado dos arquivos de assinatura, módulos, ou outras condições da solicitação, e bypasses podem ser necessários para evitar falsos positivos. No caso em que um bypass se destina a lidar com exatamente uma infração, nem mais nem menos, tal bypass pode ser descrito como um "bypass de acerto único"."
+info_cli_by_default_ips: |
+ Por padrão, os IPs são testados contras todos os arquivos de assinatura, todos
+ os módulos, todas as regras auxiliares, bem como a verificação de mídia social
+ e mecanismo de pesquisa. Porém, você pode desativar opcionalmente, por IP,
+ testando contra os módulos com --no-mod, testando contra as regras auxiliares
+ com --no-aux, e testando contra a verificação das mídias sociais e do
+ mecanismo de pesquisa com --no-ssv, como segue:
+info_cli_cidram_cli_mod: "CIDRAM modo CLI."
+info_cli_ipv4_ipv6_are_: |
+ IPv4/IPv6 são ambos suportados. A entrada multilinha é possível para todas as
+ operações do modo CLI (por exemplo, para testar vários endereços IP em uma
+ única operação) usando aspas, como segue:
+info_cli_or_depending_o: |
+ Ou, dependendo se você prefere encadear do primeiro ao último, ou do último ao
+ primeiro:
+info_cli_or_to_aggregat: "Ou, para agregá-los como máscaras de rede:"
+info_cli_or_using_comma: "Ou, usando vírgulas em vez de multilinhas (faz exatamente a mesma coisa):"
+info_cli_the_signature_: "O fixador de assinatura também pode ser usado via CLI:"
+info_cli_to_calculate_c: "Para calcular CIDRs de um endereço IP:"
+info_cli_to_test_whethe: "Para testar se um endereço IP está bloqueado pelo CIDRAM:"
+info_cli_to_quit_type_q: "Para sair, digite "q", "quit", ou "exit", e pressione enter."
+info_cli_you_can_also_a: "Você também pode agregar IPs e CIDRs:"
+info_cli_you_can_also_c: |
+ Você também pode encadear comandos juntos (o exemplo lê alguns arquivos,
+ agrega seu conteúdo, e grava os dados agregados em output.dat):
+info_cli_you_can_also_r: "Você também pode ler a partir de arquivos:"
+info_cli_you_can_also_u: |
+ Você também pode usar vírgulas se quiser (isso é tratado da mesma forma que
+ usar várias linhas, mas você não precisará usar aspas, e não misturar os dois):
+info_cli_you_can_also_w: "Você também pode gravar em arquivos:"
+info_cli_you_can_print_: "Você pode imprimir dados na tela (às vezes útil ao encadear comandos):"
 info_some_useful_links: |
  Alguns links úteis:<br />
      <ul class="pieul">

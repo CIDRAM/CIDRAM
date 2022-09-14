@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: German language data for the front-end (last modified: 2022.09.01).
+# This file: German language data for the front-end (last modified: 2022.09.13).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -338,6 +338,43 @@ hints_shorthand:
 hints_verification:
  "Was sind „Positive“ und „Negative“?": "Das erfolgreiche Ergebnis der Verifizierung der durch eine Anfrage präsentierten Identität könnte als „positiv“ oder „negativ“ beschrieben werden. In dem Fall dass die präsentierte Identität als die wahre Identität bestätigt wird, würde sie als „positiv“ bezeichnet werden. In dem Fall dass die präsentierten Identität als gefälscht bestätigt, würde sie als „negativ“ bezeichnet werden. Ein erfolgloses Ergebnis (z.B., die Verifizierung fehlschlägt, oder die Echtheit der präsentierten Identität kann nicht festgestellt werden) würde jedoch nicht als „positiv“ oder „negativ“ beschrieben. Stattdessen würde ein erfolgloses Ergebnis einfach als nicht verifiziert beschrieben. Wenn kein Versuch unternommen wird für die durch eine Anfrage präsentierte Identität zu verifizieren, würde die Anfrage ebenfalls als nicht verifiziert beschrieben. Die Begriffe sind nur in dem Kontext sinnvoll, in dem die durch eine Anfrage präsentierte Identität anerkannt wird und daher der Verifizierung möglich ist. In dem Fall in denen die präsentierte Identität nicht mit den oben bereitgestellten Optionen übereinstimmt, oder wenn keine Identität präsentiert wird, werden die oben bereitgestellten Optionen irrelevant."
  "Was sind „Single-Hit-Bypässe“?": "In einigen Fällen kann eine positiv verifizierte Anfrage aufgrund der Signaturdateien, Module, oder anderer Bedingungen der Anfrage immer noch blockiert werden, und Bypässe können erforderlich sein um Falsch-Positive zu vermeiden. In dem Fall in dem eine Bypass genau einen Verstoß behandeln beabsichtigt ist, nicht mehr und nicht weniger, könnte solche eine Bypass als „Single-Hit-Bypass“ beschrieben werden."
+info_cli_by_default_ips: |
+ Standardmäßig werden IPs gegen alle Signaturdateien, alle Module, alle
+ Hilfsregeln, sowie Social Media und Suchmaschinen Verifizierung getestet.
+ Sie können jedoch optional auf IP-Basis die Prüfung gegen Module mit --no-mod,
+ die Prüfung gegen Hilfsregeln mit --no-aux, und die Prüfung gegen Social Media
+ und Suchmaschinen Verifizierung mit --no-ssv deaktivieren, so gemacht:
+info_cli_cidram_cli_mod: "CIDRAM CLI-Modus."
+info_cli_ipv4_ipv6_are_: |
+ IPv4/IPv6 werden beide unterstützt. Eine mehrzeilige Eingabe ist für alle
+ Operationen im CLI-Modus möglich (z.B., um mehrere IP-Adressen in einer
+ einzigen Operation zu testen), indem Sie Anführungszeichen verwenden, so
+ gemacht:
+info_cli_or_depending_o: |
+ Oder, ob Sie es vorziehen, vom ersten zum letzten oder vom letzten zum ersten
+ zu verketten:
+info_cli_or_to_aggregat: "Oder, um sie als Netzmasken zu aggregierten:"
+info_cli_or_using_comma: "Oder, Kommas anstelle von Mehrzeilige zu verwenden (macht genau dasselbe):"
+info_cli_the_signature_: "Der Signaturdatei-Fixierer kann auch über CLI verwendet werden:"
+info_cli_to_calculate_c: "So berechnen Sie CIDRs von einer IP-Adresse:"
+info_cli_to_test_whethe: "So testen Sie ob eine IP-Adresse von CIDRAM blockiert wird:"
+info_cli_to_quit_type_q: |
+ So beenden, geben Sie „q“, „quit“, oder „exit“ ein, und drücken Sie dann die
+ Eingabetaste.
+info_cli_you_can_also_a: "Sie können IPs und CIDRs auch wie folgt aggregieren:"
+info_cli_you_can_also_c: |
+ Sie können auch Befehle miteinander verketten (das Beispiel liest aus einigen
+ Dateien, aggregiert ihren Inhalt, und schreibt dann die aggregierten Daten in
+ output.dat):
+info_cli_you_can_also_r: "Sie können auch aus Dateien wie folgt lesen:"
+info_cli_you_can_also_u: |
+ Sie können auch stattdessen Kommas verwenden wenn Sie möchten (dies wird
+ genauso behandelt wie die Verwendung von Mehrzeilige, aber Sie brauchen keine
+ Anführungszeichen verwenden, und beides nicht miteinander mischen):
+info_cli_you_can_also_w: "Sie können auch wie folgt in Dateien schreiben:"
+info_cli_you_can_print_: |
+ Sie können Daten auf den Bildschirm drucken (manchmal nützlich beim Verketten
+ von Befehlen), so gemacht:
 info_some_useful_links: |
  Einige nützliche Links:<br />
      <ul class="pieul">

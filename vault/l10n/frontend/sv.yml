@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Swedish language data for the front-end (last modified: 2022.09.01).
+# This file: Swedish language data for the front-end (last modified: 2022.09.13).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -336,6 +336,42 @@ hints_shorthand:
 hints_verification:
  "Vad är "positiva" och "negativa"?": "När verifiering identiteten som presenteras av en begäran, ett framgångsrikt resultat kan beskrivas som "positiv" eller "negativ". I det fall att den presenterade identiteten bekräftas vara den sanna identiteten, skulle den beskrivas som "positiv". I det fall att den presenterade identiteten bekräftas vara förfalskad, skulle den beskrivas som "negativ". Dock, ett misslyckat resultat (t.ex., verifiering misslyckas, eller det går inte att fastställa sanningshalten i den presenterade identiteten) skulle inte beskrivas som "positiv" eller "negativ". Istället skulle ett misslyckat resultat beskrivas som icke-verifierad. När inget försök att verifiera identiteten som presenteras av en begäran görs, begäran skulle också beskrivas som icke-verifierad. Termerna är meningsfulla endast i det sammanhang där identiteten som presenteras av en begäran erkänns, och därför, där verifiering är möjlig. I de fall där identiteten som presenteras inte matchar alternativen ovan, eller där ingen identitet presenteras, alternativen ovan blir irrelevanta."
  "Vad är "singel-hit bypasser"?": "I vissa fall kan en positivt verifierad begäran fortfarande blockeras som ett resultat av signaturfilerna, modulerna, eller andra villkor för begäran, och bypasser kan vara nödvändiga för att undvika falska positiva resultat. I det fall där en bypass är avsedd att hantera exakt en infraktion, varken mer eller mindre, sådan en bypass kan beskrivas som en "singel-hit bypass"."
+info_cli_by_default_ips: |
+ Som standard testas IPer mot alla signaturfiler, alla moduler, alla
+ hjälpregler, samt verifiering av sociala medier och sökmotorer. Däremot, du
+ kan valfritt inaktivera, på en per-IP-basis, kontroll mot moduler med
+ --no-mod, kontroll mot hjälpregler med --no-aux, och kontroll mot verifiering
+ av sociala medier och sökmotorer med --no-ssv, såhär:
+info_cli_cidram_cli_mod: "CIDRAM CLI-läge."
+info_cli_ipv4_ipv6_are_: |
+ IPv4/IPv6 stöds båda. Flerlinjeingång är möjlig för alla CLI-lägesoperationer
+ (t.ex., för att testa flera IP-adresser i en enda operation) genom att använda
+ citattecken, såhär:
+info_cli_or_depending_o: |
+ Eller, beroende på om du föredrar att kedja först till sist, eller sist till
+ först:
+info_cli_or_to_aggregat: "Eller, för att aggregera dem som nätmasker:"
+info_cli_or_using_comma: |
+ Eller, genom att använda kommatecken istället för flerlinjer (gör exakt samma
+ sak):
+info_cli_the_signature_: "Signaturfilfixaren kan också användas via CLI:"
+info_cli_to_calculate_c: "För att beräkna CIDR från en IP-adress:"
+info_cli_to_test_whethe: "För att testar om en IP-adress är blockerad av CIDRAM:"
+info_cli_to_quit_type_q: "För att avsluta, skriv "q", "quit", eller "exit", och tryck sedan på enter."
+info_cli_you_can_also_a: "Du kan också aggregera IPer och CIDRer såhär:"
+info_cli_you_can_also_c: |
+ Du kan också koppla ihop kommandon (exemplet läser från vissa filer,
+ aggregerar deras innehåll, och skriver sedan den aggregerade datan till
+ output.dat):
+info_cli_you_can_also_r: "Du kan också läsa från filer som såhär:"
+info_cli_you_can_also_u: |
+ Du kan också använda kommatecken istället om du vill (detta behandlas på samma
+ sätt som att använda flerlinjer, men du behöver inte använda citattecken, och
+ blanda inte båda tillsammans):
+info_cli_you_can_also_w: "Du kan också skriva till filer såhär:"
+info_cli_you_can_print_: |
+ Du kan skriva ut data till skärmen såhär (ibland användbart när du kopplar
+ ihop kommandon):
 info_some_useful_links: |
  Några användbara länkar:<br />
      <ul class="pieul">

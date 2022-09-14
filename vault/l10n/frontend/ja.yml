@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Japanese language data for the front-end (last modified: 2022.09.01).
+# This file: Japanese language data for the front-end (last modified: 2022.09.13).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -336,6 +336,39 @@ hints_shorthand:
 hints_verification:
  "「陽性」と「陰性」とは何ですか？": "リクエストによって提示されたＩＤを検証する場合、成功した結果は「陽性」または「陰性」と記述できます。​提示されたＩＤが真のＩＤであることが確認された場合、「陽性」と記述されます。​提示されたＩＤが偽物であることが確認された場合、「陰性」と記述されます。​ただし、失敗した結果（たとえば、検証が失敗した、または提示されたＩＤの信憑性を判断できない）は、「陽性」または「陰性」とは記述れません。​代わりに、失敗した結果は単に未確認として記述されます。​リクエストによって提示されたＩＤを検証する試みが行われない場合、リクエストは同様に未検証として記述されます。​この用語は、リクエストによって提示されたＩＤが認識されるコンテキストでのみ意味があります（したがって、検証が可能な場合）。​提示されたＩＤが上記のオプションと一致しない場合、またはＩＤが提示されていない場合、上記のオプションは無関係になります。"
  "「シングル・ヒット・バイパス」とは何ですか？": "場合によっては、シグネチャ・ファイル、モジュール、またはリクエストの他の条件の結果として、肯定的に検証されたリクエストがブロックされることがあります、誤検知を回避するためにバイパスが必要になる場合があります。​バイパスが正確に一つの違反を処理することを目的としている場合、そのようなバイパスは「シングル・ヒット・バイパス」として記述できます。"
+info_cli_by_default_ips: |
+ ＩＰアドレスは、すべてのシグネチャ・ファイル、すべてのモジュール、
+ すべての補助ルール、およびソーシャル・メディアと検索エンジンの検証に
+ 対してテストされます。 「--no-mod」でモジュールに対するチェック、
+ 「--no-aux」で補助ルールに対するチェック、「--no-ssv」でソーシャル ・メディアと
+ 検索エンジンの検証に対するチェックを無効にできます：
+info_cli_cidram_cli_mod: "CIDRAM CLI モード。"
+info_cli_ipv4_ipv6_are_: |
+ IPv4/IPv6の両方がサポートされています。引用符を使用して、
+ すべてのＣＬＩモード操作で複数行の入力が可能です（たとえば、
+ 一回の操作で複数のＩＰアドレスをテストする場合）：
+info_cli_or_depending_o: "最初から最後にチェーンするか、最後から最初にチェーンする、選択はあなた次第です："
+info_cli_or_to_aggregat: "それらをネットマスクとして集約するには："
+info_cli_or_using_comma: "複数行の代わりにカンマを使用します（まったく同じことを行います）："
+info_cli_the_signature_: "シグネチャ・ファイルのフィクサーは、ＣＬＩ経由で使用できます："
+info_cli_to_calculate_c: "ＩＰアドレスからＣＩＤＲを計算するには："
+info_cli_to_test_whethe: "ＩＰアドレスがCIDRAMによってブロックされているかどうかをテストするには："
+info_cli_to_quit_type_q: |
+ 終了するには、「q」、「quit」、または「exit」と入力して、
+ 「Enter」キーを押します。
+info_cli_you_can_also_a: "ＩＰとＣＩＤＲを集約することもできます："
+info_cli_you_can_also_c: |
+ コマンドを連鎖させることができます（この例では、いくつかのファイルから読み取り、
+ そのコンテンツを集約してから、集約されたデータを「output.dat」に書き込みます）：
+info_cli_you_can_also_r: "ファイルから読み取ることができます："
+info_cli_you_can_also_u: |
+ 必要に応じて、代わりにカンマを使用できます（これは複数行を
+ 使用するのと同じように扱われますが、引用符を使用する必要はなく、
+ 両方を混ぜないでください）：
+info_cli_you_can_also_w: "ファイルに書き込むことができます："
+info_cli_you_can_print_: |
+ データを画面に出力できます（コマンドを連鎖するときは
+ 時々役に立つことができます）：
 info_some_useful_links: |
  役に立つリンク：<br />
      <ul class="pieul">

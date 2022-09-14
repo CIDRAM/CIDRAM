@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: English language data for the front-end (last modified: 2022.09.01).
+# This file: English language data for the front-end (last modified: 2022.09.13).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -338,6 +338,37 @@ hints_shorthand:
 hints_verification:
  "What are "positives" and "negatives"?": "When verifying the identity presented by a request, a successful outcome could be described as "positive" or "negative". In the case that the identity presented is confirmed to be the true identity, it would be described as "positive". In the case that the identity presented is confirmed to be falsified, it would be described as "negative". However, an unsuccessful outcome (e.g., verification fails, or the veracity of the identity presented isn't able to be determined) would not be described as "positive" or "negative". Instead, an unsuccessful outcome would be described simply as non-verified. When no attempt to verify the identity presented by a request is made, the request would be likewise be described as non-verified. The terms make sense only in the context where the identity presented by a request is recognised, and therefore, where verification is possible. In cases where the identity presented doesn't match the options provided above, or where no identity is presented, the options provided above become irrelevant."
  "What are "single-hit bypasses"?": "In some cases, a positive-verified request may still blocked as a result of the signature files, modules, or other conditions of the request, and bypasses may be necessary in order to avoid false positives. In the case where a bypass is intended to deal with exactly one infraction, no more and no less, such a bypass could be described as a "single-hit bypass"."
+info_cli_by_default_ips: |
+ By default, IPs are tested against all signature files, all modules, all
+ auxiliary rules, *and* against social media and search engine verification.
+ However, you can optionally disable, on a per-IP basis, checking against
+ modules with --no-mod, checking against auxiliary rules with --no-aux, and
+ checking against social media and search engine verification with --no-ssv,
+ like so:
+info_cli_cidram_cli_mod: "CIDRAM CLI mode."
+info_cli_ipv4_ipv6_are_: |
+ IPv4/IPv6 are both supported. Multiline input is possible for *all* CLI mode
+ operations (e.g., to test multiple IP addresses in a single operation) by
+ using quotes, like so:
+info_cli_or_depending_o: "Or, depending on whether you'd prefer to chain first to last, or last to first:"
+info_cli_or_to_aggregat: "Or, to aggregate them as netmasks:"
+info_cli_or_using_comma: "Or, using commas instead of multilines (does exactly the same thing):"
+info_cli_the_signature_: "The signature fixer can be used via CLI, too:"
+info_cli_to_calculate_c: "To calculate CIDRs from an IP address:"
+info_cli_to_test_whethe: "To test whether an IP address is blocked by CIDRAM:"
+info_cli_to_quit_type_q: "To quit, type "q", "quit", or "exit", then press enter."
+info_cli_you_can_also_a: "You can also aggregate IPs and CIDRs like so:"
+info_cli_you_can_also_c: |
+ You can also chain commands together (the example reads from some files,
+ aggregates their content, then writes the aggregated data to output.dat):
+info_cli_you_can_also_r: "You can also read from files like so:"
+info_cli_you_can_also_u: |
+ You can also use commas instead if you want (this is treated the same as using
+ multilines, but you won't need to use quotes, and don't mix both together):
+info_cli_you_can_also_w: "You can also write to files like so:"
+info_cli_you_can_print_: |
+ You can print data to the screen like so (sometimes useful when chaining
+ commands):
 info_some_useful_links: |
  Some useful links:<br />
      <ul class="pieul">

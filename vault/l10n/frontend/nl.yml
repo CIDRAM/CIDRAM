@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Dutch language data for the front-end (last modified: 2022.09.01).
+# This file: Dutch language data for the front-end (last modified: 2022.09.13).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -338,6 +338,41 @@ hints_shorthand:
 hints_verification:
  "Wat zijn "positieven" en "negatieven"?": "Bij het verifiëren van de identiteit die door een verzoek wordt gepresenteerd, een succesvol resultaat kan worden omschreven als "positief" of "negatief". In het geval dat wordt bevestigd dat de gepresenteerde identiteit de ware identiteit is, deze als "positief" beschreven wordt. In het geval dat wordt bevestigd dat de gepresenteerde identiteit vervalst is, deze als "negatief" beschreven wordt. Een onsuccesvolle uitkomst (b.v., verificatie mislukt, of de juistheid van de gepresenteerde identiteit kan niet worden vastgesteld) wordt echter niet als "positief" of "negatief" beschreven. In plaats daarvan zou een mislukte uitkomst eenvoudigweg als niet-geverifieerd worden beschreven. Als er geen poging wordt gedaan om de identiteit van het verzoek te verifiëren, het verzoek wordt eveneens als niet-geverifieerd beschreven. De termen hebben alleen zin in de context waarin de identiteit van het verzoek wordt herkend, en dus waar verificatie mogelijk is. In gevallen waarin de gepresenteerde identiteit niet overeenkomt met de bovenstaande opties, of waar geen identiteit wordt gepresenteerd, worden de bovenstaande opties irrelevant."
  "Wat zijn "enkele-treffer bypasses"?": "In sommige gevallen kan een positief-geverifieerd verzoek nog steeds worden geblokkeerd als gevolg van de signatuurbestanden, modules, of andere voorwaarden van het verzoek, en bypasses kunnen nodig zijn om valse positieven te voorkomen. In het geval dat een bypass bedoeld is om precies één overtreding af te handelen, niet meer en niet minder, dergelijke een bypass zou kunnen worden omschreven als een "enkele-treffer bypass"."
+info_cli_by_default_ips: |
+ Standaard worden IP's getest tegen alle signatuurbestanden, alle modules, alle
+ aanvullende regels, evenals verificatie van sociale media en zoekmachines. U
+ kunt echter optioneel, per IP, het controleren op modules uitschakelen met
+ --no-mod, het controleren op aanvullende regels uitschakelen met --no-aux, en
+ het controleren op sociale media en zoekmachine verificatie uitschakelen met
+ --no-ssv:
+info_cli_cidram_cli_mod: "CIDRAM CLI-modus."
+info_cli_ipv4_ipv6_are_: |
+ IPv4/IPv6 worden beide ondersteund. Multilijnen-invoer is mogelijk voor alle
+ bewerkingen in de CLI-modus (b.v., om meerdere IP-adressen in één bewerking te
+ testen) door aanhalingstekens te gebruiken:
+info_cli_or_depending_o: |
+ Of, afhankelijk van of u de voorkeur geeft aan de eerste aan de laatste, of de
+ laatste aan de eerste:
+info_cli_or_to_aggregat: "Of, om ze samen te aggregeren als netmaskers:"
+info_cli_or_using_comma: "Of, komma's gebruiken in plaats van multilijnen (doet precies hetzelfde):"
+info_cli_the_signature_: "De signatuurbestanden-fixeer kan ook via CLI worden gebruikt:"
+info_cli_to_calculate_c: "Om te CIDR's berekenen vanaf een IP-adres:"
+info_cli_to_test_whethe: "Om te testen of een IP-adres wordt geblokkeerd door CIDRAM:"
+info_cli_to_quit_type_q: "Om te stoppen, typt u "q", "quit", of "exit", en drukt u vervolgens op enter."
+info_cli_you_can_also_a: "U kunt ook IP's en CIDR's als volgt aggregeren:"
+info_cli_you_can_also_c: |
+ U kunt ook koppel de commando's aan elkaar (het voorbeeld leest uit sommige
+ bestanden, aggregeert hun inhoud, en schrijft vervolgens de geaggregeerde
+ gegevens naar output.dat):
+info_cli_you_can_also_r: "U kunt ook als volgt uit bestanden lezen:"
+info_cli_you_can_also_u: |
+ U kunt ook in plaats daarvan komma's gebruiken als u wilt (dit wordt op
+ dezelfde manier behandeld als het gebruik van multilijnen, maar u hoeft geen
+ aanhalingstekens te gebruiken, en meng beide niet door elkaar):
+info_cli_you_can_also_w: "U kunt ook als volgt naar bestanden schrijven:"
+info_cli_you_can_print_: |
+ U kunt als volgt gegevens naar het scherm afdrukken (soms handig bij het
+ koppelen van commando's):
 info_some_useful_links: |
  Enkele nuttige links:<br />
      <ul class="pieul">
@@ -427,7 +462,7 @@ label_blocked: "Verzoeken geblokkeerd"
 label_branch: "Branch laatste stabiele:"
 label_bypass_the_request: "Trigger een bypass.\nTrekt één telling af van het aantal getriggerde signatures, zolang er minstens één signature is al getriggerd. Aanbevolen voor het omgaan met eenvoudige valse positieven die mogelijk worden veroorzaakt door de standaard signatuurbestanden."
 label_captcha: "CAPTCHA pogingen"
-label_check_aux: "Test ook tegen hulpregels."
+label_check_aux: "Test ook tegen aanvullende regels."
 label_check_modules: "Test ook tegen modules."
 label_check_verification: "Test ook tegen verificatie van zoekmachines en sociale media."
 label_checkbox: "Selectievakje"
@@ -577,7 +612,7 @@ response_activation_failed: "Mislukt om te activeren!"
 response_aux_none: "Er zijn momenteel geen aanvullende regels."
 response_aux_rule_created_successfully: "Nieuwe aanvullende regel, "%s", succesvol aangemaakt."
 response_aux_rule_deleted_successfully: "Aanvullende regel, "%s", succesvol verwijderd."
-response_aux_updated: "Hulpregels zijn succesvol gewijzigd."
+response_aux_updated: "Aanvullende regels zijn succesvol gewijzigd."
 response_checksum_error: "Checksum fout! Bestand afgewezen!"
 response_component_successfully_installed: "Component succesvol geïnstalleerd."
 response_component_successfully_uninstalled: "Component succesvol verwijderd."
@@ -626,8 +661,8 @@ response_upload_error: "Mislukt om te uploaden!"
 response_verification_failed: "Verificatie mislukt! Component kan beschadigd zijn."
 response_verification_success: "Verificatie succes! Geen problemen gevonden."
 response_yes: "Ja"
-stage_aux: "Voer hulpregels"
-stage_auxredirect: "Omleiden volgens hulpregels"
+stage_aux: "Voer aanvullende regels"
+stage_auxredirect: "Omleiden volgens aanvullende regels"
 stage_captcha: "Voeg CAPTCHA's (geblokkeerde verzoeken)"
 stage_modules: "Voer de modules"
 stage_nonblockedcaptcha: "Voeg CAPTCHA's (niet-geblokkeerde verzoeken)"

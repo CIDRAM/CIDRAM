@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Norwegian language data for the front-end (last modified: 2022.09.01).
+# This file: Norwegian language data for the front-end (last modified: 2022.09.13).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -24,7 +24,7 @@
 # requests, ask. I can help.
 ##/
 
-Extended Description AbuseIPDB module: "Blokkerer forespørsler fra IP-er oppført på AbuseIPDB."
+Extended Description AbuseIPDB module: "Blokkerer forespørsler fra IPer oppført på AbuseIPDB."
 Extended Description BGPView module: "Utnytter {{Links.BGPView}} API for å tilby et ASN og landkode oppslag funksjonalitet for CIDRAM, slik at ASNer og land kan blokkeres eller hvitelister via CIDRAM-konfigurasjonen, og tilveiebringe et middel for verifisering av sosiale nettverk for å bekrefte Facebook-forespørsler."
 Extended Description Bad TLDs blocker module: "Blokker vertene som tilhører TLDer ofte brukt av spammere, hackere og andre farlige enheter."
 Extended Description Bad hosts blocker module: "Blokker vertene ofte brukt av spammere, hackere og andre farlige enheter."
@@ -45,7 +45,7 @@ Extended Description IPv6-Nonblocking: *ExtDesNonblocking
 Extended Description IPv6-Other: *ExtDesOther
 Extended Description Optional security extras module: "Gir noen begrensede beskyttelser mot ulike angrepsvektorer som ofte brukes i forespørsler."
 Extended Description PHPMailer: "Kreves for bruk av funksjonalitet som innebærer sending av e-post.<br />{{Links.PHPMailer.PHPMailer}} er tilgjengelig via {{Links.PHPMailer.License}}-lisensen."
-Extended Description Project Honeypot module: "Blokkerer forespørsler fra IP-er oppført på Project Honeypot."
+Extended Description Project Honeypot module: "Blokkerer forespørsler fra IPer oppført på Project Honeypot."
 Extended Description Referrer spam module: "Blokkering basert på referansesøppel vil vanligvis ikke gi noen meningsfull sikkerhetsgevinst, men i noen tilfeller kan det være nyttig for noen brukere, for å samle mer informasjon om forespørsler og for å kunne rapportere det.<br />Ved å installere denne modulen installeres også Symfony-polyfyllene for {{Links.Symfony.Intl/Idn}} (fordi denne modulen krever Idn-funksjonalitet, som ikke alle PHP-installasjoner leverer som standard), tilgjengelige via <a href="https://opensource.org/licenses/MIT" hreflang="en-US" rel="noopener noreferrer external">MIT</a> lisensen."
 Extended Description Stop Forum Spam module: "Beskytter registrerings og innloggingssider mot IP-adresser oppført av SFS."
 Name AbuseIPDB module: "AbuseIPDB modul"
@@ -336,6 +336,40 @@ hints_shorthand:
 hints_verification:
  "Hva er "positive" og "negative"?": "Når identiteten presentert av en forespørsel er verifisert, kan et vellykket resultat beskrives som "positiv" eller "negativ". I tilfelle at identiteten som presenteres bekreftes å være den sanne identiteten, den vil bli beskrevet som "positiv". I tilfelle det bekreftes at identiteten som presenteres er forfalsket, den vil bli beskrevet som "negativ". Imidlertid, et mislykket resultat (f.eks., verifisering mislykkes, eller sannheten til identiteten som presenteres ikke kan fastslås) vil ikke beskrives som "positiv" eller "negativ". I stedet, et mislykket resultat vil ganske enkelt beskrives som ikke-verifisert. Når det ikke gjøres noe forsøk på å bekrefte identiteten som presenteres av en forespørsel, forespørselen vil på samme måte bli beskrevet som ikke-verifisert. Begrepene gir mening bare i konteksten der identiteten som presenteres av en forespørsel gjenkjennes, og derfor der verifisering er mulig. I tilfeller der identiteten som presenteres ikke matchet av alternativene ovenfor, eller der ingen identitet er presentert, alternativene gitt ovenfor blir irrelevante."
  "Hva er "enkelt-hit bypasser"?": "I noen tilfeller kan en positiv bekreftet forespørsel fortsatt blokkeres som et resultat av signaturfilene, modulene, eller andre forhold i forespørselen, og bypasser kan være nødvendig for å unngå falske positiver. I tilfellet der en bypass er ment å håndtere nøyaktig ett infraksjon, verken mer eller mindre, slik en bypass kan beskrives som en "enkelt-hit bypass"."
+info_cli_by_default_ips: |
+ Som standard testes IPer mot alle signaturfiler, alle moduler, alle
+ hjelperegler, samt sosiale medier og søkemotor verifisering. Imidlertid, du
+ kan valgfritt deaktivere, på en per-IP-basis, sjekk mot moduler med --no-mod,
+ sjekk mot hjelperegler med --no-aux, og sjekk mot sosiale medier og søkemotor
+ verifisering med --no-ssv:
+info_cli_cidram_cli_mod: "CIDRAM CLI-modus."
+info_cli_ipv4_ipv6_are_: |
+ IPv4/IPv6 støttes begge. Flerlinjeinngang er mulig for alle CLI-modus
+ operasjoner (f.eks., for å teste flere IP-adresser i en enkelt operasjon) ved
+ å bruke anførselstegn:
+info_cli_or_depending_o: |
+ Eller, avhengig av om du foretrekker å kjede først til sist, eller sist til
+ først:
+info_cli_or_to_aggregat: "Eller, for å aggregat dem som nettmasker:"
+info_cli_or_using_comma: "Eller, å bruke komma i stedet for multilinjer (gjør nøyaktig det samme):"
+info_cli_the_signature_: "Signaturfilfikseren kan også brukes via CLI:"
+info_cli_to_calculate_c: "For å beregne CIDRer fra en IP-adresse:"
+info_cli_to_test_whethe: "For å teste om en IP-adresse er blokkert av CIDRAM:"
+info_cli_to_quit_type_q: "For å avslutte, skriv "q", "quit", eller "exit", og trykk deretter på enter."
+info_cli_you_can_also_a: "Du kan også aggregat IPer og CIDRer slik:"
+info_cli_you_can_also_c: |
+ Du kan også lenke kommandoer sammen (eksemplet leser fra noen filer,
+ aggregater innholdet deres, og skriver deretter de aggregerte dataene til
+ output.dat):
+info_cli_you_can_also_r: "Du kan også lese fra filer som slik:"
+info_cli_you_can_also_u: |
+ Du kan også bruke komma i stedet hvis du vil (dette behandles på samme måte
+ som å bruke flere linjer, men du trenger ikke å bruke anførselstegn, og ikke
+ bland begge sammen):
+info_cli_you_can_also_w: "Du kan også skrive til filer slik:"
+info_cli_you_can_print_: |
+ Du kan skrive ut data til skjermen slik (noen ganger nyttig når du kjeder
+ sammen kommandoer):
 info_some_useful_links: |
  Noen nyttige lenker:<br />
      <ul class="pieul">

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Korean language data for the front-end (last modified: 2022.09.01).
+# This file: Korean language data for the front-end (last modified: 2022.09.13).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -336,6 +336,37 @@ hints_shorthand:
 hints_verification:
  ""긍정적"과 "부정적"이란 무엇입니까?": "요청으로 제시된 신원을 확인할 때 성공적인 결과는 "긍정적" 또는 "부정적"으로 설명될 수 있습니다. 제시한 신분이 실제 신분으로 확인되면 "긍정적"으로 기재됩니다. 제시한 신원이 위조된 것으로 확인되는 경우 "부정적"으로 기재됩니다. 그러나, 실패한 결과는 (예\_: 확인에 실패하거나, 제시된 신원의 진실성을 확인할 수 없음) "긍정적" 또는 "부정적"으로 설명되지 않습니다. 대신, 실패한 결과는 단순히 검증되지 않은 것으로 설명됩니다. 요청으로 제시된 신원을 확인하려는 시도가 없을 때 요청은 마찬가지로 확인되지 않은 것으로 설명됩니다. 이 용어는 요청으로 제공된 신원이 인식되고 따라서 검증이 가능한 상황에서만 의미가 있습니다. 이 용어는 요청으로 제공된 신원이 인식되고 따라서 검증이 가능한 상황에서만 의미가 있습니다."
  ""단일 히트 바이 패스"란 무엇입니까?": "어떤 경우에는 서명 파일, 모듈, 또는 기타 요청 조건으로 인해 긍정적으로 확인된 요청이 여전히 차단될 수 있으며 소 탐을 피하고자 바이 패스가 필요할 수 있습니다. 바이패스가 정확히 하나의 위반을 처리하도록 의도된 경우 이러한 바이패스는 "단일 히트 바이 패스"로 설명될 수 있습니다."
+info_cli_by_default_ips: |
+ IP 주소는 모든 서명 파일, 모든 모듈, 모든 보조 규칙, 소셜 미디어 및
+ 검색 엔진 검증에 대해 테스트 됩니다. --no-mod를 사용하여 모듈에 대한 검사를
+ 비활성화하고, --no-aux를 사용하여 보조 규칙에 대해 검사를 비활성화하고,
+ --no-ssv를 사용하여 소셜 미디어 및 검색 엔진 확인에 대해 검사를
+ 비활성화할 수 있습니다.
+info_cli_cidram_cli_mod: "CIDRAM CLI 모드."
+info_cli_ipv4_ipv6_are_: |
+ IPv4/IPv6이 모두 지원됩니다.
+ 따옴표를 사용하여 모든 CLI 모드 작업에 대해 여러 줄 입력이 가능합니다
+ (단일 작업에서 여러 IP 주소를 테스트하는 데 사용할 수 있습니다) :
+info_cli_or_depending_o: |
+ 처음에서 마지막으로 연결하려는지 또는 마지막에서 처음으로 연결하는
+ 것을 선호하는지에 따라 :
+info_cli_or_to_aggregat: "넷마스크로 집계하려면 다음을 수행합니다\_:"
+info_cli_or_using_comma: "여러 줄 대신 쉼표 사용 (정확히 동일한 작업 수행)\_:"
+info_cli_the_signature_: "서명 해결사는 CLI를 통해 사용할 수 있습니다\_:"
+info_cli_to_calculate_c: "IP 주소에서 CIDR을 계산하려면\_:"
+info_cli_to_test_whethe: "IP 주소가 CIDRAM에 의해 차단되는지 테스트하려면\_:"
+info_cli_to_quit_type_q: "종료하려면, "q", "quit", 또는 "exit"를 입력한 다음 Enter 키를 누릅니다."
+info_cli_you_can_also_a: "IP 및 CIDR을 집계할 수 있습니다\_:"
+info_cli_you_can_also_c: |
+ 명령을 함께 연결할 수 있습니다 (예제는 일부 파일에서 읽고, 내용을 집계한,
+ 다음 집계된 데이터를 output.dat에 씁니다) :
+info_cli_you_can_also_r: "파일에서 읽을 수 있습니다\_:"
+info_cli_you_can_also_u: |
+ 원하는 경우 쉼표를 대신 사용할 수 있습니다 (이것은 여러 줄을 사용하는 것과
+ 동일하게 처리되지만, 따옴표를 사용할 필요가 없으며, 둘을 함께 사용하지
+ 마십시오) :
+info_cli_you_can_also_w: "파일에 쓸 수 있습니다\_:"
+info_cli_you_can_print_: "화면에 데이터를 인쇄할 수 있습니다 (때로는 명령을 연결할 때 유용함)\_:"
 info_some_useful_links: |
  유용한 링크 :<br />
      <ul class="pieul">

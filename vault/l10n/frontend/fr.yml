@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: French language data for the front-end (last modified: 2022.09.01).
+# This file: French language data for the front-end (last modified: 2022.09.13).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -338,6 +338,46 @@ hints_shorthand:
 hints_verification:
  "Que sont les «\_positifs\_» et les «\_négatifs\_»\_?": "Lors de la vérification de l'identité présenté par une requête, un résultat réussi peut être décrit comme «\_positif\_» ou «\_négatif\_». Dans le cas où l'identité présenté est confirmé comme étant la véritable identité, elle serait décrit comme «\_positif\_». Dans le cas où l'identité présenté s'avèrerait falsifié, elle serait décrit comme «\_négatif\_». Cependant, un résultat infructueux (par exemple, la vérification échoue, ou la véracité de l'identité présenté ne peut pas être déterminé) ne serait pas décrit comme «\_positif\_» ou «\_négatif\_». Au lieu, un résultat infructueux serait décrit simplement comme non vérifié. Lorsqu'aucune tentative de vérification de l'identité présenté par une requête n'est effectué, la requête serait également décrit comme non vérifié. Les termes n'ont de sens que dans le contexte où l'identité présenté par une requête est reconnue, et donc, où la vérification est possible. Dans les cas où l'identité présenté ne correspond pas aux options fournies ci-dessus, ou lorsqu'aucune identité n'est présenté, les options fournies ci-dessus deviennent sans objet."
  "Que sont les «\_contournements en un seul coup\_»\_?": "Dans certains cas, une requête vérifié positive peut toujours être bloquée en raison des fichiers de signature, des modules, ou d'autres conditions de la requête, et des contournements peuvent être nécessaires pour éviter les faux positifs. Dans le cas où un contournement est destiné à traiter exactement une infraction, ni plus ni moins, un tel contournement pourrait être décrit comme «\_contournements en un seul coup\_»."
+info_cli_by_default_ips: |
+ Par défaut, les adresses IP sont testés par rapport à tous les fichiers de
+ signature, tous les modules, toutes les règles auxiliaires, ainsi que la
+ vérification des médias sociaux et des moteurs de recherche. Mais, vous pouvez
+ désactiver, sur une base de l'IP, les tests par rapport aux modules avec
+ --no-mod, les tests par rapport aux règles auxiliaires avec --no-aux, et les
+ tests des médias sociaux et des moteurs de recherche avec --no-ssv, comme
+ ceci :
+info_cli_cidram_cli_mod: "Mode CLI de CIDRAM."
+info_cli_ipv4_ipv6_are_: |
+ IPv4/IPv6 sont tous deux supportés. L'entré multiligne est possible pour
+ toutes les opérations en mode CLI (par exemple, pour tester plusieurs adresses
+ IP en une seule opération) en utilisant des guillemets, comme ceci :
+info_cli_or_depending_o: |
+ Ou, selon que vous préférez enchaîner du premier au dernier, ou du dernier au
+ premier :
+info_cli_or_to_aggregat: "Ou, pour les agréger sous forme de masques de réseau\_:"
+info_cli_or_using_comma: |
+ Ou, en utilisant des virgules au lieu des multilignes (fait exactement la même
+ chose) :
+info_cli_the_signature_: |
+ Le fixateur de signature peut également être utilisé via CLI :
+info_cli_to_calculate_c: "Pour calculer les CIDR à partir d'une adresse IP\_:"
+info_cli_to_test_whethe: "Pour tester si une adresse IP est bloqué par CIDRAM\_:"
+info_cli_to_quit_type_q: "Pour quitter, tapez «\_q\_», «\_quit\_», ou «\_exit\_», puis appuyez sur entrée."
+info_cli_you_can_also_a: "Vous pouvez également agréger les IP et les CIDR comme suit\_:"
+info_cli_you_can_also_c: |
+ Vous pouvez également enchaîner les commandes (l'exemple lit à partir de
+ certains fichiers, agrège leur contenu, puis écrit les donnés agrégés dans
+ output.dat) :
+info_cli_you_can_also_r: "Vous pouvez également lire à partir de fichiers comme ceci\_:"
+info_cli_you_can_also_u: |
+ Vous pouvez également utiliser des virgules au lieu si vous le souhaitez (ceci
+ est traité de la même manière que l'utilisation de multilignes, mais vous
+ n'aurez pas besoin d'utiliser des guillemets, et ne mélangez pas les deux
+ ensemble) :
+info_cli_you_can_also_w: "Vous pouvez également écrire dans des fichiers comme ceci\_:"
+info_cli_you_can_print_: |
+ Vous pouvez imprimer des données à l'écran comme ceci (parfois utile lors de
+ l'enchaînement de commandes) :
 info_some_useful_links: |
  Quelques liens utiles :<br />
      <ul class="pieul">

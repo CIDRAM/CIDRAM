@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Latvian language data for the front-end (last modified: 2022.09.01).
+# This file: Latvian language data for the front-end (last modified: 2022.09.13).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -111,7 +111,7 @@ config_components_ipv4: "IPv4 paraksta faili."
 config_components_ipv6: "IPv6 paraksta faili."
 config_components_modules: "Moduļi."
 config_experimental: "Nestabils/Eksperimentāls!"
-config_extras: "Papildu drošības papildu moduļa konfigurācija."
+config_extras: "Drošības papildu moduļa konfigurācija."
 config_extras_signatures: "Kāda veida paraksti ir jāgodā?"
 config_extras_signatures_empty_ua: "Tukši lietotāju aģenti."
 config_extras_signatures_query: "Paraksti, pamatojoties uz pieprasījuma vaicājumiem."
@@ -339,6 +339,38 @@ hints_shorthand:
 hints_verification:
  "Kas ir “pozitīvie” un “negatīvie”?": "Pārbaudot pieprasījuma sniegto identitāti, veiksmīgu rezultātu var raksturot kā “pozitīvu” vai “negatīvu”. Kad uzrādītā identitāte tiek apstiprināta kā patiesā identitāte, tā tiks raksturota kā “pozitīva”. Kad tiek apstiprināts, ka uzrādītā identitāte ir viltota, tā tiks raksturota kā “negatīva”. Tomēr, neveiksmīgs iznākums (piemēram, verifikācija neizdodas, vai uzrādītās identitātes patiesumu nevar noteikt) netiks raksturota kā “pozitīvu” vai “negatīvu”. Tā vietā neveiksmīgs rezultāts tiktu raksturots vienkārši kā nepārbaudīts. Ja netiek mēģināts pārbaudīt pieprasījumā norādīto identitāti, pieprasījums tāpat tiks raksturots kā nepārbaudīts. Terminiem ir jēga tikai kontekstā, kurā tiek atpazīta pieprasījumā norādītā identitāte un līdz ar to, ja ir iespējama pārbaude. Ja uzrādītā identitāte neatbilst iepriekš sniegtajām opcijām, vai ja identitāte nav uzrādīta, iepriekš sniegtās iespējas kļūst nepiemērojams."
  "Kas ir “viena trāpījuma apvedceļi”?": "Dažos gadījumos pozitīvi pārbaudīts pieprasījums joprojām var tikt bloķēts paraksta failu, moduļu, vai citu pieprasījuma nosacījumu dēļ, un var būt nepieciešami apvedceļi, lai izvairītos no viltus pozitīviem rezultātiem. Ja apvedceļš ir paredzēts, lai tiktu galā ar tieši vienu pārkāpumu, ne vairāk un ne mazāk, šādu apvedceļu varētu raksturot kā “viena trāpījuma apvedceļu”."
+info_cli_by_default_ips: |
+ Pēc noklusējuma IP tiek pārbaudīti attiecībā pret visiem paraksta failiem,
+ visiem moduļiem, visiem palīgnoteikumiem, kā arī sociālo mediju un
+ meklētājprogrammu verifikāciju. Tomēr pēc izvēles varat atspējot, pamatojoties
+ uz katru IP, pārbaudi pret moduļiem ar --no-mod, pārbaudi pret
+ palīgnoteikumiem ar --no-aux, un pārbaudi pret sociālo mediju un
+ meklētājprogrammas verifikāciju ar --no-ssv, piemēram:
+info_cli_cidram_cli_mod: "CIDRAM CLI režīms."
+info_cli_ipv4_ipv6_are_: |
+ Tiek atbalstīti abi IPv4/IPv6. Daudzrindu ievade ir iespējama visām CLI režīma
+ darbībām (piemēram, lai pārbaudītu vairākas IP adreses vienā darbībā),
+ izmantojot pēdiņas, piemēram:
+info_cli_or_depending_o: |
+ Vai arī atkarībā no vai vēlaties izveidot ķēdi no pirmā līdz pēdējam vai
+ pēdējo līdz pirmajam:
+info_cli_or_to_aggregat: "Vai, lai tās apkopotu kā tīkla maskas:"
+info_cli_or_using_comma: "Vai, izmantojot komatus daudzrindu vietā (dara tieši to pašu):"
+info_cli_the_signature_: "Paraksta faila fiksētājs var izmantot arī, izmantojot CLI:"
+info_cli_to_calculate_c: "Lai aprēķinātu CIDR no IP adreses:"
+info_cli_to_test_whethe: "Lai pārbaudītu, vai CIDRAM bloķē IP adresi:"
+info_cli_to_quit_type_q: "Lai beigtu, ierakstiet "q", "quit", vai "exit", un pēc tam nospiediet enter."
+info_cli_you_can_also_a: "Varat arī apkopot IP un CIDR, piemēram:"
+info_cli_you_can_also_c: |
+ Varat arī apvienot komandas (piemērs nolasa dažus failus, apkopo to saturu, un
+ pēc tam ieraksta apkopotos datus failā output.dat):
+info_cli_you_can_also_r: "Varat arī lasīt no failiem, piemēram:"
+info_cli_you_can_also_u: |
+ Ja vēlaties, tā vietā varat izmantot komatus arī (tas tiek uzskatīts tāpat kā
+ daudzrindu lietošana, taču jums nav jāizmanto pēdiņas, un nevajag jaukt abus
+ kopā):
+info_cli_you_can_also_w: "Varat arī rakstīt failos, piemēram:"
+info_cli_you_can_print_: "Varat drukāt datus ekrānā šādi (dažreiz tas ir noderīgi, savienojot komandas):"
 info_some_useful_links: |
  Dažas noderīgas saites:<br />
      <ul class="pieul">
@@ -384,26 +416,26 @@ label_aux_actPro: "profilēts"
 label_aux_actRdr: "novirzīt (bez bloķēšanas)"
 label_aux_actRun: "jāapstrādā ar failu"
 label_aux_actWhl: "iekļauts baltajā sarakstā"
-label_aux_create_new_rule: "Izveidojiet jaunu papildnoteikumu"
+label_aux_create_new_rule: "Izveidojiet jaunu palīgnoteikumu"
 label_aux_expiry: "Kad noteikumam jābeidzas (neobligāti):"
 label_aux_from: "Kad noteikumam jāsākas (neobligāti):"
 label_aux_http_status_code_override: "HTTP statusa koda aizstāšana:"
-label_aux_logic_all: "Lai iedarbinātu papildnoteikumu, ir jāizpilda visi nosacījumi."
-label_aux_logic_any: "Jebkuri "vienāds" (=) nosacījumi var iedarbināt papildnoteikumu, ar nosacījumu, ka arī ir izpildīti visi "nav vienāds" (≠) nosacījumi."
+label_aux_logic_all: "Lai iedarbinātu palīgnoteikumu, ir jāizpilda visi nosacījumi."
+label_aux_logic_any: "Jebkuri "vienāds" (=) nosacījumi var iedarbināt palīgnoteikumu, ar nosacījumu, ka arī ir izpildīti visi "nav vienāds" (≠) nosacījumi."
 label_aux_menu_action: "Ja ir izpildīti šādi nosacījumi, pieprasījums ir %s."
 label_aux_menu_method: "Izmantojiet %s, lai pārbaudītu nosacījumi."
 label_aux_mode_edit: "Rediģēšanas režīms"
 label_aux_mode_view: "Skatīšanās režīms"
-label_aux_modify_rule: "Modificēt papildnoteikumu"
-label_aux_move_bottom: "Pārvietojiet papildnoteikumu uz apakšā"
+label_aux_modify_rule: "Modificēt palīgnoteikumu"
+label_aux_move_bottom: "Pārvietojiet palīgnoteikumu uz apakšā"
 label_aux_move_down: "Ej lejā"
-label_aux_move_top: "Pārvietojiet papildnoteikumu uz augšpusē"
+label_aux_move_top: "Pārvietojiet palīgnoteikumu uz augšpusē"
 label_aux_move_up: "Ej augšā"
 label_aux_mtdReg: "regulāras izteiksmes"
 label_aux_mtdStr: "tiešs stīgu salīdzinājums"
 label_aux_mtdWin: "Windows stila aizstājējzīmes"
 label_aux_name: "Jaunā noteikuma nosaukums:"
-label_aux_notes: "Piezīmes (redzams tikai šajā lapā, un neietekmē papildnoteikumu):"
+label_aux_notes: "Piezīmes (redzams tikai šajā lapā, un neietekmē palīgnoteikumu):"
 label_aux_reason: "Lietotājam bloķēšanas iemesls:"
 label_aux_run: "Izpildāmā faila nosaukums:"
 label_aux_special: "Citas iespējas un īpašie karodziņi:"
@@ -531,7 +563,7 @@ label_your_ip: "Jūsu IP:"
 label_your_ua: "Jūsu lietotāja aģents:"
 link_accounts: "Konti"
 link_aggregator: "Apkopotājs"
-link_aux: "Papildnoteikumi"
+link_aux: "Palīgnoteikumi"
 link_cache_data: "Kešatmiņas Dati"
 link_calculator: "Kalkulators"
 link_config: "Konfigurācija"
@@ -579,10 +611,10 @@ response_accounts_doesnt_exist: "Šis konts nepastāv."
 response_accounts_password_updated: "Parole ir atjaunināta!"
 response_activated: "Aktivizēšana izdevās."
 response_activation_failed: "Aktivizēšana neizdevās!"
-response_aux_none: "Pašlaik nav neviena papildnoteikuma."
-response_aux_rule_created_successfully: "Jauns papildnoteikums "%s" ir izveidots."
-response_aux_rule_deleted_successfully: "Papildnoteikums "%s" ir izdzēsts."
-response_aux_updated: "Papildnoteikumi veiksmīgi atjaunināti."
+response_aux_none: "Pašlaik nav neviena palīgnoteikuma."
+response_aux_rule_created_successfully: "Jauns palīgnoteikums "%s" ir izveidots."
+response_aux_rule_deleted_successfully: "Palīgnoteikums "%s" ir izdzēsts."
+response_aux_updated: "Palīgnoteikumi veiksmīgi atjaunināti."
 response_checksum_error: "Kontrolsummas kļūda! Fails noraidīts!"
 response_component_successfully_installed: "Komponents instalēšana izdevās."
 response_component_successfully_uninstalled: "Komponents atinstalēšana izdevās."
@@ -632,7 +664,7 @@ response_verification_failed: "Verifikācija neizdevās! Komponents var būt boj
 response_verification_success: "Verifikācija izdevās! Netika atrasta neviena problēma."
 response_yes: "Jā"
 stage_aux: "Izpildīt palīgnoteikumus"
-stage_auxredirect: "Pāradresēt saskaņā ar papildnoteikumiem"
+stage_auxredirect: "Pāradresēt saskaņā ar palīgnoteikumiem"
 stage_captcha: "Izvietojiet CAPTCHA (bloķēti pieprasījumi)"
 stage_modules: "Izpildīt moduļus"
 stage_nonblockedcaptcha: "Izvietojiet CAPTCHA (nebloķēti pieprasījumi)"
@@ -684,8 +716,8 @@ switch-hide-unused-set-false: "Neslēpiet neizmantotu"
 switch-hide-unused-set-true: "Paslēpiet neizmantotu"
 switch-sort-by-name-set-false: "Kārtot pēc ID"
 switch-sort-by-name-set-true: "Kārtot pēc nosaukuma"
-switch-tracking-aux-set-false: "Nepārbaudiet ar papildnoteikumiem"
-switch-tracking-aux-set-true: "Pārbaudiet ar papildnoteikumiem"
+switch-tracking-aux-set-false: "Nepārbaudiet ar palīgnoteikumiem"
+switch-tracking-aux-set-true: "Pārbaudiet ar palīgnoteikumiem"
 switch-tracking-blocked-already-set-false: "Nepārbaudiet ar paraksta failiem"
 switch-tracking-blocked-already-set-true: "Pārbaudiet ar paraksta failiem"
 switch-tracking-hide-banned-blocked-set-false: "Neslēpiet aizliegtos/bloķētos IP"
@@ -741,10 +773,10 @@ time_years_from_now:
 tip_2fa_sent: "Uz jūsu e-pasta adresi ir nosūtīts e-pasts ar divu faktoru autentifikācijas kodu. Lūdzu, apstipriniet šo kodu zemāk, lai ielogotos. Ja nesaņēmāt šo e-pastu, mēģiniet izlogoties, nogaidiet 10 minūtes, un ielogoties vēlreiz, lai saņemtu jaunu e-pastu ar jaunu kodu."
 tip_accounts: "Kontu lapa ļauj jums kontrolēt, kurš var ielogoties CIDRAM."
 tip_aggregator: "Apkopotājs ļauj jums izteikt IP, CIDR, un tīkla maskas iespējami mazākā veidā. Ievadiet apkopojamos datus un nospiediet "Labi"."
-tip_aux: "Varat izmantot šo lapu, lai izveidotu, izdzēstu un mainītu CIDRAM papildnoteikumus."
+tip_aux: "Varat izmantot šo lapu, lai izveidotu, izdzēstu, un mainītu CIDRAM palīgnoteikumus."
 tip_aux_operators: "Padoms: Ja kādam stāvoklim nepieciešams cita veida operators, to var pievienot tā vērtības sākumam (nepieciešama tieša stīgu salīdzināšana)."
 tip_aux_priority: "Prioritāte (augstākais➡(vienāds🔄ekvivalents)➡zemākais):"
-tip_aux_webhooks: "Kad tiek iedarbināts papildnoteikums, CIDRAM mēģinās paziņot visiem saistītajiem tīmekļa āķiem par notikumu."
+tip_aux_webhooks: "Kad tiek iedarbināts palīgnoteikums, CIDRAM mēģinās paziņot visiem saistītajiem tīmekļa āķiem par notikumu."
 tip_cache_data: "Šeit jūs varat pārskatīt kešatmiņas saturu."
 tip_calculator: "Kalkulators ļauj aprēķināt IP adreses CIDR un tīkla maskas."
 tip_click_the_component: "Noklikšķiniet uz komponenta nosaukuma, lai iegūtu sīkāku informāciju."

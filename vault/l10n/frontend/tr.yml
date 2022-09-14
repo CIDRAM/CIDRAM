@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Turkish language data for the front-end (last modified: 2022.09.01).
+# This file: Turkish language data for the front-end (last modified: 2022.09.13).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -336,6 +336,40 @@ hints_shorthand:
 hints_verification:
  ""Pozitifleri" ve "negatifleri" nedir?": "Bir talep tarafından sunulan kimliği doğrularken, başarılı bir sonuç "pozitif" veya "negatif" olarak tanımlanabilir. Sunulan kimliğin gerçek kimlik olduğu teyit edildiğinde, "pozitif" olarak tanımlanacaktır. Sunulan kimliğin sahte olduğu onaylandığında, "negatif" olarak tanımlanacaktır. Ancak, başarısız bir sonuç (örneğin, doğrulama başarısız olur, veya sunulan kimliğin doğruluğu belirlenemez) "pozitif" veya "negatif" olarak tanımlanmaz. Bunun yerine, başarısız bir sonuç basitçe doğrulanmamış olarak tanımlanır. Bir talep tarafından sunulan kimliği doğrulamak için hiçbir girişimde bulunulmadığında, talep de aynı şekilde doğrulanmamış olarak tanımlanır. Terimler, yalnızca bir talep tarafından sunulan kimliğin tanındığı ve dolayısıyla doğrulamanın mümkün olduğu bağlamda anlamlıdır. Sunulan kimlik, yukarıda belirtilen seçeneklerle eşleşmiyorsa veya herhangi bir kimlik sunulmuyorsa, yukarıda verilen seçenekler alakasız hale gelir."
  ""Tek vuruşlu bypasslari" nedir?": "Bazı durumlarda, imza dosyaları, modüller, veya isteğin diğer koşulları nedeniyle olumlu doğrulanmış bir istek yine de engellenebilir, ve yanlış pozitifleri önlemek için bypasslar gerekli olabilir. Bir bypass, tam olarak bir ihlalle başa çıkmak için amaçlandığında, ne eksik ne fazla, böyle bir bypass "tek vuruşlu bypass" olarak tanımlanabilir."
+info_cli_by_default_ips: |
+ Varsayılan olarak, IP'ler tüm imza dosyalarına, tüm modüllere, tüm yardımcı
+ kurallara, ve ayrıca sosyal medya ve arama motoru doğrulamasına karşı test
+ edilir. Ancak, isteğe bağlı olarak IP bazında, --no-mod ile modüllere karşı
+ denetimi, --no-aux ile yardımcı kurallara karşı denetimi, ve --no-ssv ile
+ sosyal medya ve arama motoru doğrulamasına karşı denetimi devre dışı
+ bırakabilirsiniz, şöyle:
+info_cli_cidram_cli_mod: "CIDRAM CLI modu."
+info_cli_ipv4_ipv6_are_: |
+ IPv4/IPv6 her ikisi de desteklenir. Tüm CLI modu işlemleri için (örneğin, tek
+ bir işlemde birden fazla IP adresini test etmek için) tırnak işaretleri
+ kullanarak çok satırlı giriş mümkündür:
+info_cli_or_depending_o: |
+ Veya, ilkten sona mı yoksa sondan birinciye mi zincirlemeyi tercih ettiğinize
+ bağlı olarak:
+info_cli_or_to_aggregat: "Veya, bunları ağ maskesi olarak toplamak için:"
+info_cli_or_using_comma: "Veya, çok satırlı yerine virgül kullanmak (tamamen aynı şeyi yapar):"
+info_cli_the_signature_: "İmza dosya tamircisi, CLI aracılığıyla da kullanılabilir:"
+info_cli_to_calculate_c: "Bir IP adresinden CIDR'leri hesaplamak için:"
+info_cli_to_test_whethe: "Bir IP adresinin CIDRAM tarafından engellenip engellenmediğini test etmek için:"
+info_cli_to_quit_type_q: "Çıkmak için, "q", "quit", veya "exit" yazıp enter tuşuna basın."
+info_cli_you_can_also_a: "IP'leri ve CIDR'leri şu şekilde de toplayabilirsiniz:"
+info_cli_you_can_also_c: |
+ Ayrıca komutları birlikte zincirleyebilirsiniz (örnek bazı dosyalardan okur,
+ içeriklerini toplar, ve ardından toplanan verileri output.dat'a yazar):
+info_cli_you_can_also_r: "Ayrıca aşağıdaki gibi dosyalardan da okuyabilirsiniz:"
+info_cli_you_can_also_u: |
+ İsterseniz bunun yerine virgül de kullanabilirsiniz (bu, çok satırlı
+ kullanmakla aynı şekilde değerlendirilir, ancak tırnak işaretleri kullanmanıza
+ gerek yoktur, ve ikisini birlikte karıştırmayın):
+info_cli_you_can_also_w: "Ayrıca aşağıdaki gibi dosyalara da yazabilirsiniz:"
+info_cli_you_can_print_: |
+ Verileri ekrana şu şekilde yazdırabilirsiniz (bazen komutları zincirlerken
+ kullanışlıdır):
 info_some_useful_links: |
  Bazı kullanışlı bağlantılar:<br />
      <ul class="pieul">

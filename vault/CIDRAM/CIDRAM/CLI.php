@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: CIDRAM CLI mode (last modified: 2022.08.20).
+ * This file: CIDRAM CLI mode (last modified: 2022.09.11).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -35,78 +35,36 @@ trait CLI
         $this->loadL10N($this->Vault . 'l10n' . DIRECTORY_SEPARATOR . 'frontend' . DIRECTORY_SEPARATOR);
 
         /** Show basic information. */
-        echo "\rCIDRAM CLI mode.
-
-To test whether an IP address is blocked by CIDRAM:
->> test xxx.xxx.xxx.xxx
-
-To calculate CIDRs from an IP address:
->> cidrs xxx.xxx.xxx.xxx
-
-IPv4/IPv6 are both supported. Multiline input is possible for *all* CLI mode
-operations (e.g., to test multiple IP addresses in a single operation) by using
-quotes, like so:
->> test \"xxx.xxx.xxx.xxx
->> yyy.yyy.yyy.yyy
->> 2002::1
->> zzz.zzz.zzz.zzz\"
-
-You can also use commas instead if you want (this is treated the same as using
-multilines, but you won't need to use quotes, and don't mix both together):
->> test xxx.xxx.xxx.xxx,yyy.yyy.yyy.yyy,2002::1,zzz.zzz.zzz.zzz
-
-By default, IPs are tested against all signature files, all modules, all
-auxiliary rules, *and* against social media and search engine verification.
-However, you can optionally disable, on a per-IP basis, checking against
-modules with --no-mod, checking against auxiliary rules with --no-aux, and
-checking against social media and search engine verification with --no-ssv,
-like so:
->> test \"aaa.aaa.aaa.aaa --no-mod
->> bbb.bbb.bbb.bbb --no-aux
->> ccc.ccc.ccc.ccc --no-ssv
->> ddd.ddd.ddd.ddd --no-mod --no-aux --no-ssv\"
-
-You can also read from files like so:
->> fread \"file1.dat
->> file2.dat
->> file3.dat\"
-
-You can also write to files like so:
->> fwrite=file.dat
-
-You can also aggregate IPs and CIDRs like so:
->> aggregate \"1.2.3.4/32
->> 1.2.3.5/32
->> 1.2.3.6/32
->> 1.2.3.7/32\"
-
-Or, to aggregate them as netmasks:
->> aggregate=netmasks \"1.2.3.4/32
->> 1.2.3.5/32\"
-
-You can also chain commands together like so (this example reads from some
-files, aggregates their content, then writes the aggregated data to output.dat):
->> fread>aggregate>fwrite=output.dat \"input1.dat
->> input2.dat
->> input3.dat\"
-
-Or, depending on whether you'd prefer to chain first to last, or last to first:
->> fwrite=output.dat<aggregate<fread \"input1.dat
->> input2.dat
->> input3.dat\"
-
-Or, using commas instead of multilines (does exactly the same thing):
->> fread>aggregate>fwrite=output.dat input1.dat,input2.dat,input3.dat
-
-You can print data to the screen like so (this can sometimes be useful when
-chaining commands):
->> print Hello World
-
-You can also utilise CIDRAM's signature fixer facility via CLI:
->> fread>fix>fwrite=fixed.dat broken.dat
-
-To quit, type \"q\", \"quit\", or \"exit\" and press enter:
->> q\n\n";
+        echo sprintf(
+            "\r%s\n\n%s\n>> test xxx.xxx.xxx.xxx\n\n%s\n>> cidrs xxx.xxx.xxx.xxx\n\n" .
+            "%s\n>> test \"xxx.xxx.xxx.xxx\n>> yyy.yyy.yyy.yyy\n>> 2002::1\n>> zzz.zzz.zzz.zzz\"\n\n" .
+            "%s\n>> test xxx.xxx.xxx.xxx,yyy.yyy.yyy.yyy,2002::1,zzz.zzz.zzz.zzz\n\n%s\n" .
+            ">> test \"aaa.aaa.aaa.aaa --no-mod\n>> bbb.bbb.bbb.bbb --no-aux\n>> ccc.ccc.ccc.ccc --no-ssv\n" .
+            ">> ddd.ddd.ddd.ddd --no-mod --no-aux --no-ssv\"\n\n" .
+            "%s\n>> fread \"file1.dat\n>> file2.dat\n>> file3.dat\"\n\n%s\n>> fwrite=file.dat\n\n" .
+            "%s\n>> aggregate \"1.2.3.4/32\n>> 1.2.3.5/32\n>> 1.2.3.6/32\n>> 1.2.3.7/32\"\n\n" .
+            "%s\n>> aggregate=netmasks \"1.2.3.4/32\n>> 1.2.3.5/32\"\n\n" .
+            "%s\n>> fread>aggregate>fwrite=output.dat \"input1.dat\n>> input2.dat\n>> input3.dat\"\n\n" .
+            "%s\n>> fwrite=output.dat<aggregate<fread \"input1.dat\n>> input2.dat\n>> input3.dat\"\n\n" .
+            "%s\n>> fread>aggregate>fwrite=output.dat input1.dat,input2.dat,input3.dat\n\n" .
+            "%s\n>> print Hello World\n\n%s\n>> fread>fix>fwrite=fixed.dat broken.dat\n\n%s\n\n",
+            $this->L10N->getString('info_cli_cidram_cli_mod'),
+            $this->L10N->getString('info_cli_to_test_whethe'),
+            $this->L10N->getString('info_cli_to_calculate_c'),
+            $this->L10N->getString('info_cli_ipv4_ipv6_are_'),
+            $this->L10N->getString('info_cli_you_can_also_u'),
+            $this->L10N->getString('info_cli_by_default_ips'),
+            $this->L10N->getString('info_cli_you_can_also_r'),
+            $this->L10N->getString('info_cli_you_can_also_w'),
+            $this->L10N->getString('info_cli_you_can_also_a'),
+            $this->L10N->getString('info_cli_or_to_aggregat'),
+            $this->L10N->getString('info_cli_you_can_also_c'),
+            $this->L10N->getString('info_cli_or_depending_o'),
+            $this->L10N->getString('info_cli_or_using_comma'),
+            $this->L10N->getString('info_cli_you_can_print_'),
+            $this->L10N->getString('info_cli_the_signature_'),
+            $this->L10N->getString('info_cli_to_quit_type_q')
+        );
 
         $this->initialiseCache();
         $this->resetBypassFlags();
@@ -185,7 +143,7 @@ To quit, type \"q\", \"quit\", or \"exit\" and press enter:
             }
 
             /** Exit CLI-mode. */
-            if ($Cmd === 'quit' || $Cmd === 'q' || $Cmd === 'exit') {
+            if (preg_match('~^(?:(?:[Qq]|ԛ)(?:[Uu][Ii][Tt])?|[Ee][Xx][Ii][Tt])$~', $Cmd)) {
                 break;
             }
 

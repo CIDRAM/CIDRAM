@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Italian language data for the front-end (last modified: 2022.09.01).
+# This file: Italian language data for the front-end (last modified: 2022.09.13).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -336,6 +336,42 @@ hints_shorthand:
 hints_verification:
  "Cosa sono "positivi" e "negativi"?": "Nel verificare l'identità presentata da una richiesta, un esito di successo potrebbe essere descritto come "positivo" o "negativo". Nel caso in cui l'identità presentata fosse confermata come la vera identità, sarebbe descritto come "positivo". Nel caso in cui l'identità presentata fosse confermata come falsificata, sarebbe descritto come "negativo". Tuttavia, un esito senza successo (ad esempio, la verifica è fallita, o non è possibile determinare la veridicità dell'identità presentata) non sarebbe descritto come "positivo" o "negativo". Invece, un esito senza successo verrebbe descritto semplicemente come non verificato. Quando non viene effettuato alcun tentativo di verificare l'identità presentata da una richiesta, la richiesta verrebbe ugualmente descritto come non verificato. I termini hanno senso solo nel contesto in cui viene riconosciuta l'identità presentata da una richiesta e, quindi, dove è possibile la verifica. Nei casi in cui l'identità presentata non corrisponda alle opzioni fornite sopra, o in cui non venga presentata alcuna identità, le opzioni sopra fornite diventano irrilevanti."
  "Cosa sono i "bypass a colpo singolo"?": "In alcuni casi, una richiesta verificata positivamente potrebbe comunque essere bloccata a causa dei file di firma, dei moduli, o di altre condizioni della richiesta, e potrebbero essere necessari bypass per evitare falsi positivi. Nel caso in cui un bypass sia destinato a trattare esattamente un'infrazione, né più né meno, tale bypass potrebbe essere descritto come un "bypass a colpo singolo"."
+info_cli_by_default_ips: |
+ Normalmente, gli IP vengono testati rispetto a tutti i file di firma, tutti i
+ moduli, tutte le regole ausiliarie, nonché la verifica dei social media e dei
+ motori di ricerca. Tuttavia, puoi opzionalmente disabilitare, in base all'IP,
+ il testare dei moduli con --no-mod, il testare delle regole ausiliarie con
+ --no-aux, e il testare dei social media e della verifica dei motori di ricerca
+ con --no-ssv, così:
+info_cli_cidram_cli_mod: "CIDRAM modalità CLI."
+info_cli_ipv4_ipv6_are_: |
+ IPv4/IPv6 sono entrambi supportati. L'ingresso multilinea è possibile per
+ tutte le operazioni in modalità CLI (ad esempio, per testare più indirizzi IP
+ in un'unica operazione) usando le virgolette, così:
+info_cli_or_depending_o: |
+ Oppure, a seconda che tu preferisca concatenare dal primo all'ultimo o
+ dall'ultimo al primo:
+info_cli_or_to_aggregat: "Oppure, per aggregarli come maschere di rete:"
+info_cli_or_using_comma: |
+ Oppure, usando le virgole invece delle multilinee (fa esattamente la stessa
+ cosa):
+info_cli_the_signature_: "Il fissatore di firme può essere utilizzato anche tramite CLI:"
+info_cli_to_calculate_c: "Per calcolare i CIDR da un indirizzo IP:"
+info_cli_to_test_whethe: "Per testare se un indirizzo IP è bloccato da CIDRAM:"
+info_cli_to_quit_type_q: "Per uscire, digita "q", "quit", o "exit", quindi premi enter."
+info_cli_you_can_also_a: "Puoi anche aggregare IP e CIDR in questo modo:"
+info_cli_you_can_also_c: |
+ Puoi anche concatenare i comandi insieme (l'esempio legge da alcuni file, ne
+ aggrega il contenuto, quindi scrive i dati aggregati in output.dat):
+info_cli_you_can_also_r: "Puoi anche leggere da file in questo modo:"
+info_cli_you_can_also_u: |
+ Puoi anche usare le virgole se vuoi (questo viene trattato come l'utilizzo di
+ multilinee, ma non sarà necessario utilizzare virgolette, e non mescolare
+ entrambi insieme):
+info_cli_you_can_also_w: "Puoi anche scrivere su file in questo modo:"
+info_cli_you_can_print_: |
+ Puoi stampare i dati sullo schermo in questo modo (a volte utile quando si
+ concatenano i comandi):
 info_some_useful_links: |
  Alcuni link utili:<br />
      <ul class="pieul">

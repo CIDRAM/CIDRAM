@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Vietnamese language data for the front-end (last modified: 2022.09.01).
+# This file: Vietnamese language data for the front-end (last modified: 2022.09.13).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -336,6 +336,40 @@ hints_shorthand:
 hints_verification:
  ""Tích cực" và "tiêu cực" là gì?": "Khi xác minh danh tính được trình bày bởi một yêu cầu, kết quả thành công có thể được mô tả là "tích cực" hoặc "tiêu cực". Trong trường hợp danh tính được trình bày được xác nhận là danh tính thực, danh tính đó sẽ được mô tả là "tích cực". Trong trường hợp danh tính được trình bày được xác nhận là giả mạo, danh tính đó sẽ được mô tả là "tiêu cực". Tuy nhiên, kết quả không thành công (ví dụ: xác minh không thành công, hoặc không thể xác định tính xác thực của danh tính được trình bày) sẽ không được mô tả là "tích cực" hoặc "tiêu cực". Thay vào đó, một kết quả không thành công sẽ được mô tả đơn giản là chưa được xác minh. Khi không có nỗ lực xác minh danh tính mà một yêu cầu đưa ra được thực hiện, thì yêu cầu đó cũng sẽ được mô tả là chưa được xác minh. Các điều khoản chỉ có ý nghĩa trong bối cảnh mà danh tính được trình bày bởi một yêu cầu được công nhận và do đó, khi có thể xác minh. Trong trường hợp danh tính được trình bày không khớp với các tùy chọn được cung cấp ở trên, hoặc khi không có danh tính nào được trình bày, các tùy chọn được cung cấp ở trên trở nên không liên quan."
  ""Bỏ qua một cú đánh" là gì?": "Trong một số trường hợp, yêu cầu đã được xác minh tích cực vẫn có thể bị chặn do tập tin chữ ký, mô-đun, hoặc các điều kiện khác của yêu cầu, và bỏ qua có thể cần thiết để tránh sai tích cực. Trong trường hợp sai tích cực gây ra chính xác một vi phạm, một bỏ qua như vậy có thể được mô tả là "bỏ qua một cú đánh"."
+info_cli_by_default_ips: |
+ Theo mặc định, các IP được kiểm tra dựa trên tất cả các tập tin chữ ký, tất cả
+ các mô-đun, tất cả các quy tắc phụ trợ, cũng như xác minh truyền thông xã hội
+ và máy tìm kiếm. Tuy nhiên, bạn có thể tùy chọn vô hiệu hóa, trên cơ sở mỗi
+ IP, kiểm tra mô-đun với --no-mod, kiểm tra quy tắc phụ trợ với --no-aux, và
+ kiểm tra xác minh truyền thông xã máy tìm kiếm với --no-ssv, như vậy:
+info_cli_cidram_cli_mod: "CIDRAM chế độ CLI."
+info_cli_ipv4_ipv6_are_: |
+ IPv4/IPv6 đều được hỗ trợ. Có thể có nhiều dòng đầu vào cho tất cả các
+ hoạt động của chế độ CLI (v.d., để kiểm tra nhiều địa chỉ IP trong một
+ hoạt động) bằng cách sử dụng dấu ngoặc kép, như vậy:
+info_cli_or_depending_o: |
+ Hoặc, tùy thuộc vào việc bạn muốn xâu chuỗi đầu tiên đến cuối cùng, hay
+ cuối cùng đến đầu tiên:
+info_cli_or_to_aggregat: "Hoặc, để tổng hợp chúng dưới dạng mặt nạ mạng:"
+info_cli_or_using_comma: "Hoặc, để sử dụng dấu phẩy thay vì nhiều dòng (nó làm điều tương tự):"
+info_cli_the_signature_: "Sửa chữa tập tin chữ ký cũng có thể được sử dụng thông qua CLI:"
+info_cli_to_calculate_c: "Để tính toán CIDR từ địa chỉ IP:"
+info_cli_to_test_whethe: "Để kiểm tra xem một địa chỉ IP có bị chặn bởi CIDRAM hay không:"
+info_cli_to_quit_type_q: "Để thoát, hãy nhập "q", "thoát", hoặc "thoát", sau đó nhấn enter."
+info_cli_you_can_also_a: "Bạn cũng có thể tổng hợp các IP và CIDR như vậy:"
+info_cli_you_can_also_c: |
+ Bạn cũng có thể xâu chuỗi các lệnh lại với nhau (ví dụ này đọc từ một số
+ tập tin, tổng hợp nội dung của chúng, sau đó ghi dữ liệu tổng hợp vào
+ output.dat):
+info_cli_you_can_also_r: "Bạn cũng có thể đọc từ các tập tin như vậy:"
+info_cli_you_can_also_u: |
+ Bạn cũng có thể sử dụng dấu phẩy thay vì nếu bạn muốn (điều này được xử lý
+ giống như sử dụng nhiều dòng, nhưng bạn sẽ không cần sử dụng dấu ngoặc kép, và
+ không kết hợp cả hai với nhau):
+info_cli_you_can_also_w: "Bạn cũng có thể ghi vào các tập tin như vậy:"
+info_cli_you_can_print_: |
+ Bạn có thể in dữ liệu ra màn hình như vậy (đôi khi hữu ích khi xâu chuỗi các
+ lệnh):
 info_some_useful_links: |
  Một số liên kết hữu ích:<br />
      <ul class="pieul">
@@ -524,7 +558,7 @@ link_copy_to_clipboard: "Sao chép vào clipboard"
 link_discussions: "Thảo luận"
 link_documentation: "Tài liệu"
 link_file_manager: "Quản lý tập tin"
-link_fixer: "Tập tin chữ ký sửa chữa"
+link_fixer: "Sửa chữa tập tin chữ ký"
 link_get_api_key: "Nếu bạn chưa có khóa API, hãy nhấp vào đây để lấy khóa."
 link_home: "Trang chủ"
 link_intersector: "Giao nhau"
@@ -702,7 +736,7 @@ tip_enter_ips_here: "Nhập IP ở đây."
 tip_expiry_placeholder: "Số giây cho đến khi hết hạn."
 tip_fe_cookie_warning: "Lưu ý: CIDRAM sử dụng một cookie để xác thực đăng nhập. Bằng cách đăng nhập, bạn đồng ý cho cookie được tạo và lưu trữ bởi trình duyệt của bạn."
 tip_file_manager: "Xin chào, {username}.<br />Quản lý tập tin cho phép bạn xóa bỏ, chỉnh sửa, tải lên, và tải về các tập tin. Sử dụng thận trọng (bạn có thể phá vỡ cài đặt của bạn với điều này)."
-tip_fixer: "Xin chào, {username}.<br />Tập tin chữ ký sửa chữa cung cấp một cách để phát hiện và khắc phục các sự cố tiềm ẩn trong các tập tin chữ ký."
+tip_fixer: "Xin chào, {username}.<br />Sửa chữa tập tin chữ ký cung cấp một cách để phát hiện và khắc phục các sự cố tiềm ẩn trong các tập tin chữ ký."
 tip_home: "Xin chào, {username}.<br />Đây là trang chủ cho các front-end CIDRAM. Chọn một liên kết từ thực đơn bên trái để tiếp tục."
 tip_intersector: "Xin chào, {username}.<br />Giao nhau có thể được sử dụng để xác định các yếu tố chung từ hai tập hợp phạm vi."
 tip_ip_test: "Xin chào, {username}.<br />Trang kiểm tra IP cho phép bạn kiểm tra nếu địa chỉ IP bị chặn bằng các chữ ký hiện đang được cài đặt."

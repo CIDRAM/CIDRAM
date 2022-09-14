@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Polish language data for the front-end (last modified: 2022.09.01).
+# This file: Polish language data for the front-end (last modified: 2022.09.13).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -339,6 +339,40 @@ hints_shorthand:
 hints_verification:
  "Czym są „pozytywy” i „negatywy”?": "Podczas weryfikacji tożsamości przedstawionej przez żądanie, pomyślny wynik można określić jako „pozytywny” lub „negatywny”. W przypadku potwierdzenia, że prezentowana tożsamość jest prawdziwą tożsamością, zostanie ona określona jako „pozytywna”. W przypadku potwierdzenia, że przedstawiona tożsamość jest sfałszowana, zostanie ona określona jako „negatywna”. Jednak nieudany wynik (np. weryfikacja nie powiodła się, lub nie można ustalić prawdziwości przedstawionej tożsamości) nie zostanie opisany jako „pozytywny” lub „negatywny”. Zamiast tego nieudany wynik zostałby opisany po prostu jako niezweryfikowany. Gdy nie zostanie podjęta żadna próba weryfikacji tożsamości przedstawionej przez żądanie, żądanie zostanie również opisane jako niezweryfikowane. Terminy mają sens tylko w kontekście, w którym rozpoznawana jest tożsamość przedstawiona w żądaniu, a zatem tam, gdzie możliwa jest weryfikacja. W przypadku, gdy przedstawiona tożsamość nie pasuje do opcji przedstawionych powyżej, lub gdy tożsamość nie jest przedstawiona, opcje podane powyżej stają się nieistotne."
  "Czym są „obejście pojedynczych trafień”?": "W niektórych przypadkach pozytywnie zweryfikowane żądanie może nadal zostać zablokowane z powodu plików podpis, modułów, lub innych warunków żądania, i obejścia mogą być konieczne w celu uniknięcia fałszywych pozytywów. W przypadku, gdy obejście ma na celu zajęcie się dokładnie jednym wykroczeniem, ni mniej, ni więcej, takie obejście można opisać jako „obejście pojedynczego trafienia”."
+info_cli_by_default_ips: |
+ Domyślnie adresy IP są testowane pod kątem wszystkich plików podpisów,
+ wszystkich modułów, wszystkich reguł pomocniczych, a także weryfikacji mediów
+ społecznościowych i wyszukiwarek. Możesz jednak opcjonalnie wyłączyć, na
+ podstawie IP, sprawdzanie modułów za pomocą --no-mod, sprawdzanie reguł
+ pomocniczych za pomocą --no-aux, oraz sprawdzanie pod kątem weryfikacji w
+ mediach społecznościowych i wyszukiwarkach za pomocą --no-ssv, jak tak:
+info_cli_cidram_cli_mod: "CIDRAM tryb CLI."
+info_cli_ipv4_ipv6_are_: |
+ Obsługiwane są oba IPv4/IPv6. Wprowadzanie wielowierszowe jest możliwe dla
+ wszystkich operacji w trybie CLI (np., testowanie wielu adresów IP w jednej
+ operacji) za pomocą cudzysłowów, tak jak:
+info_cli_or_depending_o: |
+ Lub, w zależności od tego, czy wolisz łączyć łańcuch od pierwszego do
+ ostatniego, czy od ostatniego do pierwszego:
+info_cli_or_to_aggregat: "Lub, aby zagregować je jako maski sieci:"
+info_cli_or_using_comma: "Lub, używając przecinków zamiast wielowierszowe (robi dokładnie to samo):"
+info_cli_the_signature_: "Narzędzie do naprawiania podpisów może być również używane przez CLI:"
+info_cli_to_calculate_c: "Aby obliczyć CIDR z adresu IP:"
+info_cli_to_test_whethe: "Aby sprawdzić, czy adres IP jest blokowany przez CIDRAM:"
+info_cli_to_quit_type_q: "Aby wyjść, wpisz „q”, „quit”, lub „exit”, a następnie naciśnij enter."
+info_cli_you_can_also_a: "Możesz także agregować adresy IP i CIDR w następujący sposób:"
+info_cli_you_can_also_c: |
+ Możesz także łączyć polecenia razem (przykład odczytuje z niektórych plików,
+ agreguje ich zawartość, a następnie zapisuje zagregowane dane do output.dat):
+info_cli_you_can_also_r: "Możesz także czytać z plików tak jak:"
+info_cli_you_can_also_u: |
+ Możesz również użyć przecinków, jeśli chcesz (jest to traktowane tak samo, jak
+ używanie wielowierszowe, ale nie musisz używać cudzysłowów, i nie mieszaj ich
+ razem):
+info_cli_you_can_also_w: "Możesz także pisać do plików, tak jak:"
+info_cli_you_can_print_: |
+ Możesz wydrukować dane na ekranie w ten sposób (czasami przydatne podczas
+ łączenia poleceń):
 info_some_useful_links: |
  Kilka przydatnych linków:<br />
      <ul class="pieul">

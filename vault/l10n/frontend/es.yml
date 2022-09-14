@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Spanish language data for the front-end (last modified: 2022.09.01).
+# This file: Spanish language data for the front-end (last modified: 2022.09.13).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -338,6 +338,40 @@ hints_shorthand:
 hints_verification:
  "¿Qué son "positivos" y "negativos"?": "Cuando verificando la identidad presentada por una solicitud, un resultado exitoso podría describirse como "positivo" o "negativo". Cuando se confirma que la identidad presentada es la verdadera identidad, se describiría como "positiva". Cuando se confirma que la identidad presentada es falsa, se describirá como "negativa". Sin embargo, un resultado fallido (por ejemplo, la verificación falló, o no se puede determinar la veracidad de la identidad presentada) no se describiría como "positivo" o "negativo". En cambio, un resultado fallido se describiría simplemente como no verificado. Cuando no se intenta verificar la identidad presentada por una solicitud, la solicitud también se describiría como no verificado. Los términos tienen sentido solo en el contexto en el que se reconoce la identidad presentada por una solicitud y, por lo tanto, donde la verificación es posible. En los casos en que la identidad presentada no coincida con las opciones proporcionadas anteriormente, o cuando no se presente ninguna identidad, las opciones proporcionadas anteriormente se vuelven irrelevantes."
  "¿Qué son los "bypasses de un solo golpe"?": "En algunos casos, una solicitud con verificación positiva aún puede bloquearse como resultado de los archivos de firma, módulos, u otras condiciones de la solicitud, y las bypasses pueden ser necesarias para evitar falsos positivos. En el caso de que una bypass esté destinada a tratar exactamente una infracción, ni más ni menos, dicha bypass podría describirse como una "bypass de un solo golpe"."
+info_cli_by_default_ips: |
+ De forma predeterminada, las direcciones IP se prueban con todos los archivos
+ de firma, todos los módulos, todas las reglas auxiliares, así como con la
+ verificación de redes sociales y motores de búsqueda. Pero, puede deshabilitar
+ opcionalmente, por IP, verificar los módulos con --no-mod, verificar las
+ reglas auxiliares con --no-aux, y verificar las redes sociales y la
+ verificación del motor de búsqueda con --no-ssv, como así:
+info_cli_cidram_cli_mod: "CIDRAM modo CLI."
+info_cli_ipv4_ipv6_are_: |
+ IPv4/IPv6 son soportados ambos. La entrada multilínea es posible para todas
+ las operaciones del modo CLI (por ejemplo, para probar múltiples direcciones
+ IP en una sola operación) usando comillas, como así:
+info_cli_or_depending_o: |
+ O, dependiendo de si prefiere encadenar del primero al último, o del último al
+ primero:
+info_cli_or_to_aggregat: "O, para agregarlos como máscaras de red:"
+info_cli_or_using_comma: "O, usando comas en lugar de líneas múltiples (hace exactamente lo mismo):"
+info_cli_the_signature_: "El fijador de firmas también se puede usar a través de CLI:"
+info_cli_to_calculate_c: "Para calcular los CIDR desde una dirección IP:"
+info_cli_to_test_whethe: "Para probar si una dirección IP está bloqueada por CIDRAM:"
+info_cli_to_quit_type_q: "Para salir, escriba "q", "quit" o "exit", luego presione enter."
+info_cli_you_can_also_a: "También puede agregar IP y CIDR de esta manera:"
+info_cli_you_can_also_c: |
+ También puede encadenar comandos juntos (el ejemplo lee algunos archivos,
+ agrega su contenido, y luego escribe los datos agregados en output.dat):
+info_cli_you_can_also_r: "También puede leer archivos como así:"
+info_cli_you_can_also_u: |
+ También puedes usar comas en su lugar si quieres (esto se trata de la misma
+ manera que usar líneas múltiples, pero no necesitará usar comillas, y no
+ mezcle ambos):
+info_cli_you_can_also_w: "También puede escribir en archivos como así:"
+info_cli_you_can_print_: |
+ Puede imprimir datos en la pantalla como así (a veces útil al encadenar
+ comandos):
 info_some_useful_links: |
  Algunos enlaces útiles:<br />
      <ul class="pieul">

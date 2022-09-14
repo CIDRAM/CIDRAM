@@ -1,8 +1,8 @@
 # IPv4 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv4.dat
 
-# Version: 2022.246.0
-# Last modified: 2022.09.04
+# Version: 2022.256.0
+# Last modified: 2022.09.14
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -29947,8 +29947,8 @@ Tag: ServeTheWorld AS
 
 # ASN 43700 ("UAB CONSILIUM OPTIMUM").
 # Vulnerability scanner + unwanted traffic.
-# Stop Forum Spam (SFS) listings: 105.
-# Updated: 2020.04.27 / Modified: 2021.02.02 / Checked: 2021.10.13
+# Stop Forum Spam (SFS) listings: 3.
+# Updated: 2020.04.27 / Modified: 2021.02.02 / Checked: 2022.09.14
 
 31.172.224.0/22 Deny Cloud
 45.84.244.0/22 Deny Cloud
@@ -33371,8 +33371,8 @@ Tag: Inios Oy
 
 # ASN 42331 ("PE Freehost").
 # Webhosting provider caught hacking and performing webapp attacks.
-# Stop Forum Spam (SFS) listings: 519.
-# Updated: 2021.03.02 / Checked: 2021.10.18
+# Stop Forum Spam (SFS) listings: 185.
+# Updated: 2021.03.02 / Checked: 2022.09.14
 
 91.206.30.0/23 Deny Cloud
 178.20.152.0/21 Deny Cloud
@@ -33388,7 +33388,7 @@ Tag: PE Freehost
 # ASN 396882 ("N3XTWORK LLC").
 # Webhosting provider. Weird requests encountered from here with unknown purpose.
 # No homepage available; No reports anywhere; No additional information found.
-# Updated: 2021.03.02 / Checked: 2021.10.18
+# Updated: 2021.03.02 / Checked: 2022.09.14
 
 206.166.228.0/24 Deny Cloud
 206.166.232.0/23 Deny Cloud
@@ -33548,8 +33548,8 @@ Tag: ARABIAN INTERNET CO.LTD
 
 # ASNs 61003, 62563 ("GLOBALTELEHOST Corp").
 # Dedicated webhosting provider; Spam and port scans detected from here.
-# Stop Forum Spam (SFS) listings: 92 (AS61003), 827 (AS62563).
-# Updated: 2021.03.10 / Checked: 2021.11.03
+# Stop Forum Spam (SFS) listings: 101 (AS61003), 1,674 (AS62563).
+# Updated: 2022.09.12
 
 134.195.196.0/22 Deny Cloud
 158.51.120.0/22 Deny Cloud
@@ -33558,8 +33558,12 @@ Origin: CA
 193.108.116.0/23 Deny Cloud
 193.108.118.0/24 Deny Cloud
 Origin: DE
-194.26.27.0/24 Deny Cloud
+192.166.226.0/24 Deny Cloud
+Origin: NL
+45.135.12.0/22 Deny Cloud
 Origin: RU
+193.106.249.0/24 Deny Cloud
+Origin: UA
 38.111.114.0/24 Deny Cloud
 185.177.229.0/24 Deny Cloud
 Origin: US
@@ -35137,24 +35141,37 @@ Profile: Commercial
 Tag: Logitel Ltd
 
 
-# ASNs 209132, 209272 ("Alviva Holding Limited").
-# Commercial network. Port scans, hacking, brute-force, and webapp attacks
-# detected from here.
-# Stop Forum Spam (SFS) listings: 8 (AS209132).
-# Updated: 2021.08.07 / Checked: 2022.05.09
+# ASNs 48721, 209132, 209272, 209588, 267784 ("Alviva Holding Limited",
+# "Flyservers S.A"). Commercial network. Port scans, hacking, brute-force, and
+# webapp attacks detected from here.
+# Stop Forum Spam (SFS) listings: 7 (AS48721), 8 (AS209132), 1 (AS209272),
+# 1,581 (AS209588), 135 (AS267784).
+# Updated: 2022.09.12
 
-88.214.26.0/23 Deny Attacks
+179.60.147.0/24 Deny Cloud
+Origin: BZ
+88.214.26.0/23 Deny Cloud
 Origin: DE
-45.129.137.0/24 Deny Attacks
+45.129.137.0/24 Deny Cloud
+147.78.47.0/24 Deny Cloud
 Origin: LB
-45.227.252.0/24 Deny Attacks
+141.98.9.0/24 Deny Cloud
+Origin: LT
+45.227.254.0/24 Deny Cloud
+141.98.81.0/24 Deny Cloud
+141.98.82.0/23 Deny Cloud
+194.165.16.0/23 Deny Cloud
 Origin: PA
-92.118.36.0/24 Deny Attacks
-185.232.67.0/24 Deny Attacks
+92.118.36.0/24 Deny Cloud
+185.232.67.0/24 Deny Cloud
 Origin: RO
-46.161.40.0/24 Deny Attacks
+46.161.40.0/24 Deny Cloud
+81.19.135.0/24 Deny Cloud
+81.19.136.0/24 Deny Cloud
 Origin: RU
-Profile: Commercial;Webhosting
+193.57.40.0/24 Deny Cloud
+Origin: UA
+Profile: Commercial;Dedicated;Webhosting
 Tag: Alviva Holding Limited
 
 
@@ -39705,6 +39722,30 @@ Tag: HostIran
 Origin: IL
 Profile: Webhosting
 Tag: Star Network
+
+
+# ASN 211298 ("Constantine Cybersecurity Ltd").
+# Conducts "internet research". More than 500,000+ reported instances of port
+# scans from here. Heavy hitter, floods of useless traffic, and reports of
+# hacking and other unwanted traffic detected from here.
+# Updated: 2022.09.12
+
+87.236.176.0/24 Deny Cloud
+193.163.125.0/24 Deny Cloud
+Origin: GB
+Profile: Commercial
+Tag: cyber.casa
+
+
+# ASN 198718 ("AO SEVERSVJAZ").
+# Russian server farm. Brute-force, SSH, and telnet attacks, port scans, and
+# hacking detected from here.
+# Updated: 2022.09.12
+
+176.121.208.0/20 Deny Cloud
+Origin: RU
+Profile: Dedicated;Webhosting
+Tag: AO SEVERSVJAZ
 
 
 # ---

@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6_isps.dat
 
-# Version: 2022.246.0
-# Last modified: 2022.09.04
+# Version: 2022.254.0
+# Last modified: 2022.09.12
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -662,11 +662,15 @@ Tag: Hot-Net internet
 # ASNs 6332, 8151 ("Uninet S.A. de C.V").
 # Mexican domestic ISP. Brute-force attacks, port scans, and spam detected from
 # here. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 98 (AS6332), 4,355 (AS8151).
-# Updated: 2022.01.20
+# Stop Forum Spam (SFS) listings: 89 (AS6332), 2,828 (AS8151).
+# Updated: 2022.09.12
 
+2806:1016:a:12f2::/64 Deny Spam
 2806:1016:a:57d0::/64 Deny Spam
-2806:108e:22:52f2::/64 Deny Spam
+2806:103e:c:864d::/64 Deny Spam
+2806:108e:12:3d4b::/64 Deny Spam
+2806:10ae:13:219f::/64 Deny Spam
+2806:10ae:13:63ad::/64 Deny Spam
 Origin: MX
 Profile: Domestic ISP
 Tag: Uninet
@@ -934,14 +938,16 @@ Profile: Domestic ISP
 Tag: Sibirskie Seti Ltd
 
 
-# ASNs 3243, 42863 ("MEO - SERVICOS DE COMUNICACOES E MULTIMEDIA S.A").
+# ASNs 3243, 15525, 42863 ("MEO - SERVICOS DE COMUNICACOES E MULTIMEDIA S.A").
 # Portuguese domestic ISP. Caught by honeypots. Port scans and hack attempts
 # detected from here. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 1,231 (AS3243), 48 (AS42863).
-# Updated: 2022.05.16
+# Stop Forum Spam (SFS) listings: 1,185 (AS3243), 47 (AS15525), 48 (AS42863).
+# Updated: 2022.09.12
 
 2001:8a0:6057:9b00::/64 Deny Spam
-2001:8a0:ebcb:c000::/64 Deny Spam
+2001:8a0:6a0d:d600::/64 Deny Spam
+2001:8a0:6a7e:ae00::/64 Deny Spam
+2001:8a0:e7c2:ba00::/64 Deny Spam
 Origin: PT
 Profile: Domestic ISP
 Tag: MEO

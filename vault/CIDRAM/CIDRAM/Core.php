@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM core (last modified: 2022.09.11).
+ * This file: The CIDRAM core (last modified: 2022.09.15).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -2726,7 +2726,7 @@ class Core
             '~/(?:comprofiler|user)/(?:contact|login|register)|=(?:activate|contact|' .
             'login|regist(?:er|ration)|signup)|act(?:ion)?=(?:edit|reg)|(?:activate|' .
             'con(?:firm|tact)|login|newuser|reg(?:ist(?:er|ration))?|signin|signup)(' .
-            '?:\.php|=)|special:userlogin&|verifyemail|wp-comments-post~i',
+            '?:\.php|[/=])|special:userlogin&|verifyemail|wp-comments-post~i',
             $URI
         );
     }

@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6_isps.dat
 
-# Version: 2022.254.0
-# Last modified: 2022.09.12
+# Version: 2022.258.0
+# Last modified: 2022.09.16
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -10,21 +10,6 @@
 
 
 # ---
-# ASN 3223 ("Voxility LLC").
-# Infrastructure provider. Various server farms, ISPs, webhosts, etc route
-# through here. Spam and other unwanted traffic detected from here.
-# Stop Forum Spam (SFS) listings: 1,241.
-# Updated: 2021.11.21
-
-2a03:5180::/44 Deny Spam
-2a03:5180:10::/47 Deny Spam
-Origin: RO
-2602:ff84:8::/48 Deny Spam
-Origin: US
-Profile: Frequent changes;Infrastructure/Transit;Tor endpoints here
-Tag: Voxility LLC
-
-
 # ASNs 34665, 44050 ("Petersburg Internet Network ltd").
 # Major domestic ISP from Russia, but also a significant, long-term source of
 # spam, hack attempts, scraping, probing for vulnerabilities, and other kinds
@@ -693,17 +678,11 @@ Tag: Extratel Ltd
 # European international 5G and fibre provider. Brute-force, WordPress, and
 # webapp attacks, port scans, email harvestors, and spam detected from here.
 # Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 8,269.
-# Updated: 2021.11.21
+# Stop Forum Spam (SFS) listings: 1,457.
+# Updated: 2022.09.16
 
-2a02:8084:2165:7780::/64 Deny Spam
-2a02:8084:5140:1a00::/64 Deny Spam
-2a02:8085:81be:b380::/64 Deny Spam
-Origin: IE
-2a02:a311:a23e:c180::/64 Deny Spam
-2a02:a31d:820f:6d00::/64 Deny Spam
-Origin: PL
-2a02:ab04:2b44::/48 Deny Spam
+2a02:ab04:241:2900::/64 Deny Spam
+2a02:ab04:2b44:ce00::/64 Deny Spam
 Origin: SK
 Profile: Domestic ISP;Infrastructure/Transit;Multiplay;Tor endpoints here
 Tag: Liberty Global
@@ -1524,3 +1503,16 @@ Tag: Verizon Business/UUnet
 Origin: BR
 Profile: Domestic ISP;Multiplay
 Tag: Desktop Sigmanet
+
+
+# ASN 4787 ("PT Cyberindo Aditama").
+# Indonesian fibre provider. Brute-force, SMTP, and webapp attacks, port scans,
+# credential stuffing, hacking, and spam detected from here.
+# Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 520.
+# Updated: 2022.09.16
+
+2405:8180:203:d960::/64 Deny Attacks
+Origin: ID
+Profile: Domestic ISP;Multiplay
+Tag: PT Cyberindo Aditama

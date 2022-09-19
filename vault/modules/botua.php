@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Bot user agents module (last modified: 2022.08.28).
+ * This file: Bot user agents module (last modified: 2022.09.19).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -199,7 +199,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         'h(?:arvest|eritrix|olmes|ttp(?:fetcher|unit)|ttrack)|' .
         'i(?:mage(?:.fetcher|walker)|linkscrawler|nagist|ndocom|nfluencebot|track)|jakarta|jike|' .
         'k(?:eywenbot|eywordsearchtool|imengi|kman)|' .
-        'l(?:arbin|ink(?:dex|walker)|iperhey|(?:t|ush)bot)|' .
+        'l(?:abjs\.pro|arbin|ink(?:dex|walker)|iperhey|(?:t|ush)bot)|' .
         'm(?:ahiti|ahonie|attters|egaindex|iabot|lbot|oreover|ormor|ot-v980|oz\.com|rchrome|ulticrawler)|' .
         'n(?:eofonie|etestate|ewsbot|extgensearchbot|ineconnections)|' .
         'o(?:afcrawl|fflinenavigator|odlebot|ptimizer)|' .
@@ -213,7 +213,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         'xtractorpro|' .
         'yoofind~',
         $UANoSpace
-    ), 'Backlink/SEO/Scraper UA'); // 2022.07.09
+    ), 'Backlink/SEO/Scraper UA'); // 2022.09.19
 
     $this->trigger(strpos($UANoSpace, 'catch') !== false, 'Risky UA'); // 2017.01.13
 

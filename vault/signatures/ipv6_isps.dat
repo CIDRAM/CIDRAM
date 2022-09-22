@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6_isps.dat
 
-# Version: 2022.258.0
-# Last modified: 2022.09.16
+# Version: 2022.263.0
+# Last modified: 2022.09.21
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -1176,33 +1176,6 @@ Profile: Domestic ISP;Infrastructure/Transit;Multiplay;University
 Tag: Windstream
 
 
-# ASN 23243 ("COMCEL GUATEMALA S.A").
-# Guatemalan domestic ISP. Webapp attacks, hacking, and spam detected from
-# here. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 131.
-# Updated: 2021.11.27
-
-2803:c800:40ba:3b6b::/64 Deny Spam
-Origin: GT
-Profile: Domestic ISP
-Tag: COMCEL GUATEMALA S.A
-
-
-# ASN 14080 ("Telmex Colombia S.A").
-# Colombian domestic ISP. Port scans and spam detected from here.
-# Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 1,980.
-# Updated: 2021.11.29
-
-2800:484:1088:e100::/64 Deny Spam
-2800:484:4074:ae00::/64 Deny Spam
-2800:484:4984:1800::/64 Deny Spam
-2800:484:4f8a:746c::/64 Deny Spam
-Origin: CO
-Profile: Domestic ISP
-Tag: Telmex Colombia S.A
-
-
 # ASN 27887 ("WIND Telecom S.A").
 # Dominican domestic ISP. Port scans, hacking, and spam detected from here.
 # Manually checked all ranges; All ranges affected.
@@ -1516,3 +1489,15 @@ Tag: Desktop Sigmanet
 Origin: ID
 Profile: Domestic ISP;Multiplay
 Tag: PT Cyberindo Aditama
+
+
+# ASN 21246 ("IPKO Telecommunications LLC").
+# Albanian domestic ISP. Port scans, hacking, and spam detected from here.
+# Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 429.
+# Updated: 2022.09.21
+
+2a03:4b80:b71f:da90::/64 Deny Spam
+Origin: AL
+Profile: Domestic ISP;Mobile ISP
+Tag: IPKO

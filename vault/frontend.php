@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2022.09.01).
+ * This file: Front-end handler (last modified: 2022.09.23).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -2862,25 +2862,25 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'file-manager' && $CIDRAM['FE'][
     } else {
         $CIDRAM['FE']['FMgrFormTarget'] = 'cidram-page=file-manager&show=true';
         $CIDRAM['FE']['ShowHideLink'] = '<a href="?cidram-page=file-manager">' . $CIDRAM['L10N']->getString('label_hide') . '</a>';
+    }
 
-        /** Fetch components lists. */
-        $CIDRAM['FetchComponentsLists']($CIDRAM['Vault'], $CIDRAM['Components']['Components']);
+    /** Fetch components lists. */
+    $CIDRAM['FetchComponentsLists']($CIDRAM['Vault'], $CIDRAM['Components']['Components']);
 
-        /** Identifying file component correlations. */
-        foreach ($CIDRAM['Components']['Components'] as $CIDRAM['Components']['ThisName'] => &$CIDRAM['Components']['ThisData']) {
-            if (!empty($CIDRAM['Components']['ThisData']['Files']['To'])) {
-                $CIDRAM['Arrayify']($CIDRAM['Components']['ThisData']['Files']['To']);
-                foreach ($CIDRAM['Components']['ThisData']['Files']['To'] as $CIDRAM['Components']['ThisFile']) {
-                    $CIDRAM['Components']['ThisFile'] = str_replace("\\", '/', $CIDRAM['Components']['ThisFile']);
-                    $CIDRAM['Components']['Files'][$CIDRAM['Components']['ThisFile']] = $CIDRAM['Components']['ThisName'];
-                }
+    /** Identifying file component correlations. */
+    foreach ($CIDRAM['Components']['Components'] as $CIDRAM['Components']['ThisName'] => &$CIDRAM['Components']['ThisData']) {
+        if (!empty($CIDRAM['Components']['ThisData']['Files']['To'])) {
+            $CIDRAM['Arrayify']($CIDRAM['Components']['ThisData']['Files']['To']);
+            foreach ($CIDRAM['Components']['ThisData']['Files']['To'] as $CIDRAM['Components']['ThisFile']) {
+                $CIDRAM['Components']['ThisFile'] = str_replace("\\", '/', $CIDRAM['Components']['ThisFile']);
+                $CIDRAM['Components']['Files'][$CIDRAM['Components']['ThisFile']] = $CIDRAM['Components']['ThisName'];
             }
-            $CIDRAM['PrepareName']($CIDRAM['Components']['ThisData'], $CIDRAM['Components']['ThisName']);
-            if (!empty($CIDRAM['Components']['ThisData']['Name'])) {
-                $CIDRAM['Components']['Names'][$CIDRAM['Components']['ThisName']] = $CIDRAM['Components']['ThisData']['Name'];
-            }
-            $CIDRAM['Components']['ThisData'] = 0;
         }
+        $CIDRAM['PrepareName']($CIDRAM['Components']['ThisData'], $CIDRAM['Components']['ThisName']);
+        if (!empty($CIDRAM['Components']['ThisData']['Name'])) {
+            $CIDRAM['Components']['Names'][$CIDRAM['Components']['ThisName']] = $CIDRAM['Components']['ThisData']['Name'];
+        }
+        $CIDRAM['Components']['ThisData'] = 0;
     }
 
     /** Upload a new file. */
@@ -2932,19 +2932,21 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'file-manager' && $CIDRAM['FE'][
         /** Delete a file. */
         if ($_POST['do'] === 'delete-file') {
             if (is_dir($CIDRAM['Vault'] . $_POST['filename'])) {
-                if ($CIDRAM['IsDirEmpty']($CIDRAM['Vault'] . $_POST['filename'])) {
-                    rmdir($CIDRAM['Vault'] . $_POST['filename']);
+                if (
+                    $CIDRAM['IsDirEmpty']($CIDRAM['Vault'] . $_POST['filename']) &&
+                    rmdir($CIDRAM['Vault'] . $_POST['filename'])
+                ) {
                     $CIDRAM['FE']['state_msg'] = $CIDRAM['L10N']->getString('response_directory_deleted');
                 } else {
                     $CIDRAM['FE']['state_msg'] = $CIDRAM['L10N']->getString('response_delete_error');
                 }
-            } else {
-                unlink($CIDRAM['Vault'] . $_POST['filename']);
-
+            } elseif (unlink($CIDRAM['Vault'] . $_POST['filename'])) {
                 /** Remove empty directories. */
                 $CIDRAM['DeleteDirectory']($_POST['filename']);
 
                 $CIDRAM['FE']['state_msg'] = $CIDRAM['L10N']->getString('response_file_deleted');
+            } else {
+                $CIDRAM['FE']['state_msg'] = $CIDRAM['L10N']->getString('response_delete_error');
             }
         }
 
@@ -2965,13 +2967,14 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'file-manager' && $CIDRAM['FE'][
                     is_readable($CIDRAM['Vault'] . $_POST['filename_new'])
                 ) {
                     if (is_dir($CIDRAM['Vault'] . $_POST['filename_new'])) {
-                        if ($CIDRAM['IsDirEmpty']($CIDRAM['Vault'] . $_POST['filename_new'])) {
-                            rmdir($CIDRAM['Vault'] . $_POST['filename_new']);
-                        } else {
+                        if (
+                            !$CIDRAM['IsDirEmpty']($CIDRAM['Vault'] . $_POST['filename_new']) ||
+                            !rmdir($CIDRAM['Vault'] . $_POST['filename_new'])
+                        ) {
                             $CIDRAM['SafeToContinue'] = false;
                         }
-                    } else {
-                        unlink($CIDRAM['Vault'] . $_POST['filename_new']);
+                    } elseif (!unlink($CIDRAM['Vault'] . $_POST['filename_new'])) {
+                        $CIDRAM['SafeToContinue'] = false;
                     }
                 }
 
@@ -2988,8 +2991,10 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'file-manager' && $CIDRAM['FE'][
                         $CIDRAM['FE']['state_msg'] = $CIDRAM['L10N']->getString(
                             is_dir($CIDRAM['Vault'] . $_POST['filename_new']) ? 'response_directory_renamed' : 'response_file_renamed'
                         );
+                    } else {
+                        $CIDRAM['FE']['state_msg'] = $CIDRAM['L10N']->getString('response_rename_error');
                     }
-                } elseif (!$CIDRAM['FE']['state_msg']) {
+                } else {
                     $CIDRAM['FE']['state_msg'] = $CIDRAM['L10N']->getString('response_rename_error');
                 }
             } else {
@@ -3026,6 +3031,14 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'file-manager' && $CIDRAM['FE'][
                 $CIDRAM['FE']['FE_Title'] .= ' – ' . $_POST['filename'];
                 $CIDRAM['FE']['filename'] = $_POST['filename'];
                 $CIDRAM['FE']['content'] = htmlentities($CIDRAM['ReadFile']($CIDRAM['Vault'] . $_POST['filename']));
+
+                /** Component update file overwrite warning. */
+                if (isset($CIDRAM['Components']['Files'][$_POST['filename']])) {
+                    $CIDRAM['FE']['state_msg'] = sprintf(
+                        $CIDRAM['L10N']->getString('warning_file_overwritten'),
+                        $CIDRAM['Components']['Files'][$_POST['filename']]
+                    );
+                }
 
                 /** Parse output. */
                 $CIDRAM['FE']['FE_Content'] = $CIDRAM['ParseVars'](

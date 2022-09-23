@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Vietnamese language data for the front-end (last modified: 2022.09.13).
+# This file: Vietnamese language data for the front-end (last modified: 2022.09.22).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -278,7 +278,7 @@ field_latest_version: "Phiên bản mới nhất"
 field_log_in: "Đăng Nhập"
 field_log_rotation_archive: "Trước tiên lưu trữ, và sau đó xóa các tập tin nhật ký cũ nhất, cho đến khi giới hạn không còn vượt quá."
 field_log_rotation_delete: "Xóa các tập tin nhật ký cũ nhất, cho đến khi giới hạn không còn vượt quá."
-field_netmask: "Tạo đầu ra dưới dạng netmask"
+field_netmask: "Tạo đầu ra dưới dạng mặt nạ mạng"
 field_new_name: "Tên mới:"
 field_nonclickable_text: "Văn bản không thể nhấp"
 field_not_tracking: "Không giám sát."
@@ -300,6 +300,7 @@ field_size: "Kích thước tổng:"
 field_size_GB: "GB"
 field_size_KB: "KB"
 field_size_MB: "MB"
+field_size_PB: "PB"
 field_size_TB: "TB"
 field_size_bytes: "byte"
 field_status: "Tình Trạng"
@@ -501,6 +502,7 @@ label_invisible: "Vô hình"
 label_is_available: "%s có sẵn (%s)."
 label_is_available_class: "%s có sẵn."
 label_is_not_available: "%s không có sẵn."
+label_netmask: "Mặt nạ mạng"
 label_never: "Không bao giờ"
 label_next: "Kế tiếp:"
 label_os: "Hệ điều hành đang được dùng:"
@@ -603,6 +605,8 @@ response_aux_rule_created_successfully: "Quy tắc phụ trợ mới, "%s", đã
 response_aux_rule_deleted_successfully: "Quy tắc phụ trợ, "%s", đã được xóa thành công."
 response_aux_updated: "Các quy tắc phụ trợ đã được cập nhật thành công."
 response_checksum_error: "Kiểm tra lỗi! Tập tin đã bị từ chối!"
+response_cli_bad_chain: "Xin lỗi, lệnh %s không thể được xâu chuỗi theo cách đó."
+response_cli_bad_command: "Xin lỗi, tôi không hiểu câu lệnh này."
 response_component_successfully_installed: "Thành phần cài đặt thành công."
 response_component_successfully_uninstalled: "Thành phần gỡ bỏ cài đặt thành công."
 response_component_successfully_updated: "Thành phần cập nhật thành công."
@@ -754,6 +758,7 @@ tip_updates: "Xin chào, {username}.<br />Trang cập nhật cho phép bạn cà
 title_login: "Đăng Nhập"
 warning_default_password: "Cảnh báo: Nó là sử dụng mật khẩu mặc định!"
 warning_dry_run_mode: "Cảnh báo: Đang hoạt động ở chế độ chạy khô! Khi ở chế độ chạy khô, các yêu cầu vẫn được kiểm tra và ghi lại dưới dạng các sự kiện chặn như bình thường, nhưng không có gì bị chặn."
+warning_file_overwritten: "Cảnh báo: Tập tin bạn hiện đang chỉnh sửa thuộc về thành phần, "%s". Bất kỳ thay đổi nào được thực hiện đối với tập tin này rất có thể bị ghi đè vào lần tiếp theo thành phần đó được cập nhật."
 warning_ip_tests_disabled: "Cảnh báo: Kiểm tra IP bị vô hiệu hóa! Các tập tin chữ ký không thể được sử dụng cho đến khi điều này được giải quyết."
 warning_javascript_required: "Cảnh báo: Một số chức năng yêu cầu JavaScript. Để đảm bảo rằng toàn bộ giao diện hoạt động như mong đợi, bạn nên bật JavaScript."
 warning_maintenance_mode: "Cảnh báo: Đang hoạt động ở chế độ bảo trì! Khi ở chế độ bảo trì, không có gì được kiểm tra, ghi nhật ký, hoặc bị chặn."

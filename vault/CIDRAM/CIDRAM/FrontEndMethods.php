@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: General methods used by the front-end (last modified: 2022.07.22).
+ * This file: General methods used by the front-end (last modified: 2022.09.23).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -51,12 +51,12 @@ trait FrontEndMethods
      */
     private function formatFileSize(int &$Filesize): void
     {
-        $Scale = ['field_size_bytes', 'field_size_KB', 'field_size_MB', 'field_size_GB', 'field_size_TB'];
+        $Scale = ['field_size_bytes', 'field_size_KB', 'field_size_MB', 'field_size_GB', 'field_size_TB', 'field_size_PB'];
         $Iterate = 0;
         while ($Filesize > 1024) {
             $Filesize /= 1024;
             $Iterate++;
-            if ($Iterate > 3) {
+            if ($Iterate > 4) {
                 break;
             }
         }
@@ -82,7 +82,7 @@ trait FrontEndMethods
             if (preg_match('~^(?:/\.\.|./\.|\.{3})$~', str_replace("\\", '/', substr($Item, -3)))) {
                 continue;
             }
-            $Arr[$Key] = ['Filename' => $ThisName, 'CanEdit' => false];
+            $Arr[$Key] = ['Filename' => $this->canonical($ThisName), 'CanEdit' => false];
             if (is_dir($Item)) {
                 $Arr[$Key]['Directory'] = true;
                 $Arr[$Key]['Filesize'] = 0;
@@ -98,22 +98,21 @@ trait FrontEndMethods
                 }
                 if (isset($this->Components['Components'])) {
                     $Component = $this->L10N->getString('field_filetype_unknown');
-                    $ThisNameFixed = str_replace("\\", '/', $ThisName);
-                    if (isset($this->Components['Files'][$ThisNameFixed])) {
-                        $Component = $this->Components['Names'][$this->Components['Files'][$ThisNameFixed]] ?? $this->Components['Files'][$ThisNameFixed];
-                    } elseif (preg_match('~(?:[^|/]\.ht|\.safety$|^salt\.dat$)~i', $ThisNameFixed)) {
+                    if (isset($this->Components['Files'][$Arr[$Key]['Filename']])) {
+                        $Component = $this->Components['Names'][$this->Components['Files'][$Arr[$Key]['Filename']]] ?? $this->Components['Files'][$Arr[$Key]['Filename']];
+                    } elseif (preg_match('~(?:[^|/]\.ht|\.safety$|^salt\.dat$)~i', $Arr[$Key]['Filename'])) {
                         $Component = $this->L10N->getString('label_fmgr_safety');
-                    } elseif (preg_match('~config\.yml$~i', $ThisNameFixed)) {
+                    } elseif (preg_match('~config\.yml$~i', $Arr[$Key]['Filename'])) {
                         $Component = $this->L10N->getString('link_config');
-                    } elseif ($this->isLogFile($ThisNameFixed)) {
+                    } elseif ($this->isLogFile($Arr[$Key]['Filename'])) {
                         $Component = $this->L10N->getString('link_logs');
-                    } elseif ($ThisNameFixed === 'auxiliary.yml') {
+                    } elseif ($Arr[$Key]['Filename'] === 'auxiliary.yml') {
                         $Component = $this->L10N->getString('link_aux');
-                    } elseif (preg_match('/(?:^ignore\.dat|_custom\.dat|\.sig|\.inc)$/i', $ThisNameFixed)) {
+                    } elseif (preg_match('/(?:^ignore\.dat|_custom\.dat|\.sig|\.inc)$/i', $Arr[$Key]['Filename'])) {
                         $Component = $this->L10N->getString('label_fmgr_other_sig');
-                    } elseif (preg_match('~(?:\.tmp|\.rollback|^(?:cache|hashes|ipbypass|rl)\.dat)$~i', $ThisNameFixed)) {
+                    } elseif (preg_match('~(?:\.tmp|\.rollback|^(?:cache|hashes|ipbypass|rl)\.dat)$~i', $Arr[$Key]['Filename'])) {
                         $Component = $this->L10N->getString('label_fmgr_cache_data');
-                    } elseif ($ThisNameFixed === 'installed.yml') {
+                    } elseif ($Arr[$Key]['Filename'] === 'installed.yml') {
                         $Component = $this->L10N->getString('label_fmgr_updates_metadata');
                     }
                     if (!isset($this->Components['Components'][$Component])) {
@@ -123,7 +122,7 @@ trait FrontEndMethods
                     if (!isset($this->Components['ComponentFiles'][$Component])) {
                         $this->Components['ComponentFiles'][$Component] = [];
                     }
-                    $this->Components['ComponentFiles'][$Component][$ThisNameFixed] = $Arr[$Key]['Filesize'];
+                    $this->Components['ComponentFiles'][$Component][$Arr[$Key]['Filename']] = $Arr[$Key]['Filesize'];
                 }
                 if (($ExtDel = strrpos($Item, '.')) !== false) {
                     $Ext = strtoupper(substr($Item, $ExtDel + 1));

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Italian language data for the front-end (last modified: 2022.09.13).
+# This file: Italian language data for the front-end (last modified: 2022.09.22).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -300,6 +300,7 @@ field_size: "Dimensione Totale:"
 field_size_GB: "GB"
 field_size_KB: "KB"
 field_size_MB: "MB"
+field_size_PB: "PB"
 field_size_TB: "TB"
 field_size_bytes: "byte"
 field_status: "Status"
@@ -507,6 +508,7 @@ label_invisible: "Invisibile"
 label_is_available: "%s è disponibile (%s)."
 label_is_available_class: "%s è disponibile."
 label_is_not_available: "%s non è disponibile."
+label_netmask: "Maschera di rete"
 label_never: "Mai"
 label_next: "Prossima:"
 label_os: "Sistema operativo utilizzata:"
@@ -611,6 +613,8 @@ response_aux_rule_created_successfully: "Nuova regola ausiliaria, "%s", creata c
 response_aux_rule_deleted_successfully: "Regola ausiliaria, "%s", cancellata con successo."
 response_aux_updated: "Regole ausiliarie aggiornate con successo."
 response_checksum_error: "Errore di checksum! File rifiutato!"
+response_cli_bad_chain: "Il comando %s non può essere concatenato in questo modo, mi dispiace."
+response_cli_bad_command: "Non capisco quel comando, mi dispiace."
 response_component_successfully_installed: "Componente installato con successo."
 response_component_successfully_uninstalled: "Componente disinstallato con successo."
 response_component_successfully_updated: "Componente aggiornato con successo."
@@ -788,6 +792,7 @@ tip_updates: "Salve, {username}.<br />La pagina degli aggiornamenti permette di 
 title_login: "Accedi"
 warning_default_password: "Avvertimento: Utilizzando la password predefinita!"
 warning_dry_run_mode: "Avvertimento: Operando in modalità di secco! Durante il funzionamento in modalità di secco, le richieste vengono comunque controllate e registrate come eventi di blocco come al solito, ma nulla viene bloccato."
+warning_file_overwritten: "Avvertimento: Il file che stai attualmente modificando appartiene al componente "%s". È molto probabile che tutte le modifiche apportate a questo file vengano sovrascritte al successivo aggiornamento del componente."
 warning_ip_tests_disabled: "Avvertimento: I test IP sono disabilitati! I file di firma non possono essere utilizzati finché questo non viene risolto."
 warning_javascript_required: "Avvertimento: Alcune funzionalità del front-end richiedono JavaScript. Per garantire che l'intero front-end si comporti come previsto, si consiglia di abilitare JavaScript."
 warning_maintenance_mode: "Avvertimento: Operando in modalità di manutenzione! Durante il funzionamento in modalità di manutenzione, nulla viene controllato, registrato, o bloccato."

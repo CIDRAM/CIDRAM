@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Norwegian language data for the front-end (last modified: 2022.09.13).
+# This file: Norwegian language data for the front-end (last modified: 2022.09.22).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -300,6 +300,7 @@ field_size: "Total størrelse:"
 field_size_GB: "GB"
 field_size_KB: "KB"
 field_size_MB: "MB"
+field_size_PB: "PB"
 field_size_TB: "TB"
 field_size_bytes: "byte"
 field_status: "Status"
@@ -505,6 +506,7 @@ label_invisible: "Usynlig"
 label_is_available: "%s er tilgjengelig (%s)."
 label_is_available_class: "%s er tilgjengelig."
 label_is_not_available: "%s er ikke tilgjengelig."
+label_netmask: "Nettmaske"
 label_never: "Aldri"
 label_next: "Neste:"
 label_os: "Operativsystem brukt:"
@@ -611,6 +613,8 @@ response_aux_rule_created_successfully: "Ny tilleggsregel, "%s", opprettet velly
 response_aux_rule_deleted_successfully: "Tilleggsregel, "%s", slettet vellykket."
 response_aux_updated: "Tilleggsregler er oppdatert."
 response_checksum_error: "Checksum feil! Fil avvist!"
+response_cli_bad_chain: "%s-kommandoen kan ikke lenkes på den måten, beklager."
+response_cli_bad_command: "Jeg forstår ikke den kommandoen, beklager."
 response_component_successfully_installed: "Komponent installert."
 response_component_successfully_uninstalled: "Komponent avinstallert."
 response_component_successfully_updated: "Komponent oppdatert."
@@ -786,6 +790,7 @@ tip_updates: "Hallo, {username}.<br />Oppdateringssiden lar deg installere, avin
 title_login: "Innloggingssiden"
 warning_default_password: "Advarsel: Bruker standard passordet!"
 warning_dry_run_mode: "Advarsel: Drift i tørrkjøringsmodus! I tørrkjøringsmodus blir forespørsler fortsatt sjekket og logget som blokkeringshendelser som vanlig, men ingenting er blokkert."
+warning_file_overwritten: "Advarsel: Filen du for øyeblikket redigerer tilhører komponenten "%s". Eventuelle endringer i denne filen vil sannsynligvis bli overskrevet neste gang den komponenten oppdateres."
 warning_ip_tests_disabled: "Advarsel: IP-tester er deaktivert! Signaturfiler kan ikke brukes før dette er løst."
 warning_javascript_required: "Advarsel: Noen frontend-funksjonalitet krever JavaScript. For å sikre at hele frontenden oppfører seg som forventet, anbefales det å aktivere JavaScript."
 warning_maintenance_mode: "Advarsel: Drift i vedlikeholdsmodus! I vedlikeholdsmodus blir ingenting sjekket, logget, eller blokkert."

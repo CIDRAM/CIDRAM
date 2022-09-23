@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: CIDRAM CLI mode (last modified: 2022.09.11).
+ * This file: CIDRAM CLI mode (last modified: 2022.09.15).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -161,7 +161,7 @@ trait CLI
                     continue;
                 }
                 $Chain = '';
-                echo "The print command can't be chained in that way, sorry.\n\n";
+                echo sprintf($this->L10N->getString('response_cli_bad_chain'), 'print') . "\n\n";
                 continue;
             }
 
@@ -172,7 +172,7 @@ trait CLI
                     continue;
                 }
                 if ($Chain) {
-                    echo "The fwrite command can't be chained in that way, sorry.\n\n";
+                    echo sprintf($this->L10N->getString('response_cli_bad_chain'), 'fwrite') . "\n\n";
                     continue;
                 }
                 $WriteTo = substr($Cmd, 7);
@@ -418,7 +418,7 @@ trait CLI
                     continue;
                 }
                 if ($Chain) {
-                    echo "The matrix command can't be chained in that way, sorry.\n\n";
+                    echo sprintf($this->L10N->getString('response_cli_bad_chain'), 'matrix') . "\n\n";
                     continue;
                 }
                 $WriteTo = substr($Cmd, 7);
@@ -555,7 +555,7 @@ trait CLI
             $Chain = '';
 
             /** Let the user know that the current command isn't valid. */
-            echo "I don't understand that command, sorry.\n\n";
+            echo $this->L10N->getString('response_cli_bad_command') . "\n\n";
         }
         die;
     }

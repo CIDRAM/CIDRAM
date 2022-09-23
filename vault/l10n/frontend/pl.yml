@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Polish language data for the front-end (last modified: 2022.09.13).
+# This file: Polish language data for the front-end (last modified: 2022.09.22).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -300,6 +300,7 @@ field_size: "Całkowity Rozmiar:"
 field_size_GB: "GB"
 field_size_KB: "KB"
 field_size_MB: "MB"
+field_size_PB: "PB"
 field_size_TB: "TB"
 field_size_bytes:
  - "bajt"
@@ -510,6 +511,7 @@ label_invisible: "Niewidzialny"
 label_is_available: "%s jest dostępny (%s)."
 label_is_available_class: "%s jest dostępny."
 label_is_not_available: "%s nie jest dostępny."
+label_netmask: "Maska sieci"
 label_never: "Nigdy"
 label_next: "Następny:"
 label_os: "Używany system operacyjny:"
@@ -618,6 +620,8 @@ response_aux_rule_created_successfully: "Sukces tworzenia nowej reguły pomocnic
 response_aux_rule_deleted_successfully: "Sukces usunięcie reguły pomocniczej „%s”."
 response_aux_updated: "Reguły pomocnicze zostały pomyślnie zaktualizowane."
 response_checksum_error: "Błąd sumy kontrolnej! Plik odrzucony!"
+response_cli_bad_chain: "Przepraszam, polecenie %s nie może być połączone w ten sposób."
+response_cli_bad_command: "Przepraszam, nie rozumiem tego polecenia."
 response_component_successfully_installed: "Sukces instalowanie komponentu."
 response_component_successfully_uninstalled: "Sukces odinstalowanie komponentu."
 response_component_successfully_updated: "Sukces aktualizacji komponentu."
@@ -811,6 +815,7 @@ tip_updates: "Witaj, {username}.<br />Strona aktualizacji pozwala instalować, o
 title_login: "Zaloguj sie"
 warning_default_password: "Ostrzeżenie: Używa domyślnego hasła!"
 warning_dry_run_mode: "Ostrzeżenie: Praca w trybie suchobiegu! W trybie suchobiegu żądania są nadal sprawdzane i rejestrowane jako zdarzenia blokowe, jak zwykle, ale nic nie jest blokowane."
+warning_file_overwritten: "Ostrzeżenie: Plik, który aktualnie edytujesz, należy do komponentu „%s”. Wszelkie zmiany wprowadzone w tym pliku z dużym prawdopodobieństwem zostaną nadpisane przy następnej aktualizacji tego komponent."
 warning_ip_tests_disabled: "Ostrzeżenie: Testy IP są wyłączone! Plików podpisów nie można używać, dopóki problem nie zostanie rozwiązany."
 warning_javascript_required: "Ostrzeżenie: Niektóre funkcjonalność wymagają JavaScript. Aby upewnić się, że cały interfejs zachowuje się zgodnie z oczekiwaniami, zalecane jest włączenie JavaScript."
 warning_maintenance_mode: "Ostrzeżenie: Praca w trybie konserwacji! W trybie konserwacji, nic nie jest sprawdzane, rejestrowane, ani blokowane."

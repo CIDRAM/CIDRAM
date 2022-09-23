@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Dutch language data for the front-end (last modified: 2022.09.13).
+# This file: Dutch language data for the front-end (last modified: 2022.09.22).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -300,6 +300,7 @@ field_size: "Totale Grootte:"
 field_size_GB: "GB"
 field_size_KB: "KB"
 field_size_MB: "MB"
+field_size_PB: "PB"
 field_size_TB: "TB"
 field_size_bytes:
  - "byte"
@@ -508,6 +509,7 @@ label_invisible: "Onzichtbaar"
 label_is_available: "%s is beschikbaar (%s)."
 label_is_available_class: "%s is beschikbaar."
 label_is_not_available: "%s is niet beschikbaar."
+label_netmask: "Netmasker"
 label_never: "Nooit"
 label_next: "Volgende:"
 label_os: "Besturingssysteem gebruikt:"
@@ -614,6 +616,8 @@ response_aux_rule_created_successfully: "Nieuwe aanvullende regel, "%s", succesv
 response_aux_rule_deleted_successfully: "Aanvullende regel, "%s", succesvol verwijderd."
 response_aux_updated: "Aanvullende regels zijn succesvol gewijzigd."
 response_checksum_error: "Checksum fout! Bestand afgewezen!"
+response_cli_bad_chain: "Het %s-commando kan niet op die manier worden geketend, sorry."
+response_cli_bad_command: "Ik begrijp niet dat bevel, sorry."
 response_component_successfully_installed: "Component succesvol geïnstalleerd."
 response_component_successfully_uninstalled: "Component succesvol verwijderd."
 response_component_successfully_updated: "Component succesvol gewijzigd."
@@ -785,6 +789,7 @@ tip_updates: "Hallo, {username}.<br />De updates pagina stelt u in staat om de v
 title_login: "Inloggen"
 warning_default_password: "Waarschuwing: Gebruikt de standaard wachtwoord!"
 warning_dry_run_mode: "Waarschuwing: Werken in droogloopmodus! In de droogloopmodus worden verzoeken nog steeds zoals gewoonlijk gecontroleerd en vastgelegd als blokgebeurtenissen, maar er wordt niets geblokkeerd."
+warning_file_overwritten: "Waarschuwing: Het bestand dat u momenteel aan het bewerken bent, behoort tot de component "%s". Alle wijzigingen die in dit bestand zijn aangebracht, zullen zeer waarschijnlijk worden overschreven de volgende keer dat dat component wordt bijgewerkt."
 warning_ip_tests_disabled: "Waarschuwing: IP-tests zijn uitgeschakeld! Signatuurbestanden kunnen pas worden gebruikt als dit is opgelost."
 warning_javascript_required: "Waarschuwing: Voor sommige frontend functionaliteit is JavaScript vereist. Om ervoor te zorgen dat de gehele frontend zich naar verwachting gedraagt, wordt het inschakelen van JavaScript aanbevolen."
 warning_maintenance_mode: "Waarschuwing: Werken in onderhoudsmodus! In de onderhoudsmodus wordt er niets gecontroleerd, geregistreerd, of geblokkeerd."

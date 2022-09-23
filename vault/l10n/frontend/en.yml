@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: English language data for the front-end (last modified: 2022.09.13).
+# This file: English language data for the front-end (last modified: 2022.09.22).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -300,6 +300,7 @@ field_size: "Total Size:"
 field_size_GB: "GB"
 field_size_KB: "KB"
 field_size_MB: "MB"
+field_size_PB: "PB"
 field_size_TB: "TB"
 field_size_bytes:
  - "byte"
@@ -504,6 +505,7 @@ label_invisible: "Invisible"
 label_is_available: "%s is available (%s)."
 label_is_available_class: "%s is available."
 label_is_not_available: "%s is not available."
+label_netmask: "Netmask"
 label_never: "Never"
 label_next: "Next:"
 label_os: "Operating system used:"
@@ -610,6 +612,8 @@ response_aux_rule_created_successfully: "New auxiliary rule, "%s", created succe
 response_aux_rule_deleted_successfully: "Auxiliary rule, "%s", deleted successfully."
 response_aux_updated: "Auxiliary rules successfully updated."
 response_checksum_error: "Checksum error! File rejected!"
+response_cli_bad_chain: "The %s command can't be chained in that way, sorry."
+response_cli_bad_command: "I don't understand that command, sorry."
 response_component_successfully_installed: "Component successfully installed."
 response_component_successfully_uninstalled: "Component successfully uninstalled."
 response_component_successfully_updated: "Component successfully updated."
@@ -789,6 +793,7 @@ tip_updates: "Hello, {username}.<br />The updates page allows you to install, un
 title_login: "Login"
 warning_default_password: "Warning: Using the default password!"
 warning_dry_run_mode: "Warning: Operating in dry run mode! While in dry run mode, requests are still checked and logged as block events as per usual, but nothing is blocked."
+warning_file_overwritten: "Warning: The file you're currently editing belongs to the component, "%s". Any changes made to this file are very likely to be overwritten the next time that component is updated."
 warning_ip_tests_disabled: "Warning: IP tests are disabled! Signature files can't be utilised until this is resolved."
 warning_javascript_required: "Warning: Some front-end functionality requires JavaScript. To ensure that the entire front-end behaves as expected, enabling JavaScript is recommended."
 warning_maintenance_mode: "Warning: Operating in maintenance mode! While in maintenance mode, nothing is checked, logged, or blocked."

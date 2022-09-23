@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Korean language data for the front-end (last modified: 2022.09.13).
+# This file: Korean language data for the front-end (last modified: 2022.09.22).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -300,6 +300,7 @@ field_size: "전체 크기\_:"
 field_size_GB: "GB"
 field_size_KB: "KB"
 field_size_MB: "MB"
+field_size_PB: "PB"
 field_size_TB: "TB"
 field_size_bytes: "바이트"
 field_status: "상태"
@@ -498,6 +499,7 @@ label_invisible: "보이지 않음"
 label_is_available: "%s를 사용할 수 있습니다 (%s)."
 label_is_available_class: "%s를 사용할 수 있습니다."
 label_is_not_available: "%s는 사용할 수 없습니다."
+label_netmask: "넷마스크"
 label_never: "못"
 label_next: "다음\_:"
 label_os: "사용된 운영 체제\_:"
@@ -600,6 +602,8 @@ response_aux_rule_created_successfully: "새 보조 규칙 "%s"가 성공적으�
 response_aux_rule_deleted_successfully: "보조 규칙 "%s"가 성공적으로 삭제되었습니다."
 response_aux_updated: "보조 규칙이 성공적으로 업데이트되었습니다."
 response_checksum_error: "체크섬 오류! 파일이 거부되었습니다!"
+response_cli_bad_chain: "미안 해요, %s 명령은 그런 식으로 연결할 수 없습니다."
+response_cli_bad_command: "미안 해요, 명령을 이해할 수 없습니다."
 response_component_successfully_installed: "구성 요소의 설치에 성공했습니다."
 response_component_successfully_uninstalled: "구성 요소의 제거는 성공했습니다."
 response_component_successfully_updated: "구성 요소의 업데이트에 성공했습니다!"
@@ -751,6 +755,7 @@ tip_updates: "안녕하세요, {username}.<br />업데이트 페이지는 CIDRAM
 title_login: "로그인"
 warning_default_password: "경고\_: 기본 암호를 사용하여!"
 warning_dry_run_mode: "경고\_: 드라이런 모드로 작동 중! 드라이런 모드에 있는 동안, 요청은 여전히 확인되고 평소와 같이 차단 이벤트로 기록되지만, 차단된 것은 없습니다."
+warning_file_overwritten: "경고\_: 현재 편집 중인 파일은 "%s" 구성요소에 속합니다. 이 파일에 대한 모든 변경 사항은 다음에 해당 구성 요소가 업데이트될 때 덮어쓸 가능성이 매우 높습니다."
 warning_ip_tests_disabled: "경고\_: IP 테스트가 비활성화되었습니다! 이 문제가 해결될 때까지, 서명 파일을 사용할 수 없습니다."
 warning_javascript_required: "경고\_: 일부 프런트 엔드 기능에는 JavaScript가 필요합니다. 전체 프런트 엔드가 예상대로 작동하도록 하려면 JavaScript를 활성화하는 것이 좋습니다."
 warning_maintenance_mode: "경고\_: 유지 관리 모드로 작동 중! 유지 관리 모드에서는 아무것도 확인, 기록 또는 차단되지 않습니다."

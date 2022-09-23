@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Swedish language data for the front-end (last modified: 2022.09.13).
+# This file: Swedish language data for the front-end (last modified: 2022.09.22).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -300,6 +300,7 @@ field_size: "Total storlek:"
 field_size_GB: "GB"
 field_size_KB: "KB"
 field_size_MB: "MB"
+field_size_PB: "PB"
 field_size_TB: "TB"
 field_size_bytes: "byte"
 field_status: "Status"
@@ -507,6 +508,7 @@ label_invisible: "Osynlig"
 label_is_available: "%s är tillgänglig (%s)."
 label_is_available_class: "%s är tillgänglig."
 label_is_not_available: "%s är inte tillgänglig."
+label_netmask: "Nätmask"
 label_never: "Aldrig"
 label_next: "Nästa:"
 label_os: "Operativsystem som används:"
@@ -613,6 +615,8 @@ response_aux_rule_created_successfully: "Ny hjälpregel, "%s", skapades framgån
 response_aux_rule_deleted_successfully: "Hjälpregel, "%s", raderas framgångsrikt."
 response_aux_updated: "Hjälpregler har uppdaterats."
 response_checksum_error: "Checksumfel! Filen avvisas!"
+response_cli_bad_chain: "Kommandot %s kan inte kedjan på det sättet, ursäkta."
+response_cli_bad_command: "Jag förstår inte det kommandot, ursäkta."
 response_component_successfully_installed: "Komponent har installerats framgångsrikt."
 response_component_successfully_uninstalled: "Komponent har avinstallerats framgångsrikt."
 response_component_successfully_updated: "Komponent har uppdaterats framgångsrikt."
@@ -788,6 +792,7 @@ tip_updates: "Hallå, {username}.<br />Du kan installera, avinstallera och uppda
 title_login: "Inloggning"
 warning_default_password: "Varning: Använder standardlösenordet!"
 warning_dry_run_mode: "Varning: Fungerar i torrkörningsläge! I torrkörningsläge, förfrågningar fortfarande är kontrolleras och loggas som blockhändelser som vanligt, men ingenting är blockeras."
+warning_file_overwritten: "Varning: Filen du för närvarande redigerar tillhör komponenten "%s". Alla ändringar som görs i den här filen kommer med stor sannolikhet att skrivas över nästa gång den komponenten uppdateras."
 warning_ip_tests_disabled: "Varning: IP-tester är inaktiverade! Signaturfiler kan inte användas förrän detta är löst."
 warning_javascript_required: "Varning: Vissa frontend-funktionalitet kräver JavaScript. För att säkerställa att hela gränssnittet beter sig som förväntat, rekommenderas att aktivera JavaScript."
 warning_maintenance_mode: "Varning: Fungerar i underhållsläge! I underhållsläge, ingenting är kontrolleras, loggas, eller blockeras."

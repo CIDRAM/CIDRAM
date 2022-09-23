@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: French language data for the front-end (last modified: 2022.09.13).
+# This file: French language data for the front-end (last modified: 2022.09.22).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -300,6 +300,7 @@ field_size: "Taille totale\_:"
 field_size_GB: "Go"
 field_size_KB: "Ko"
 field_size_MB: "Mo"
+field_size_PB: "PB"
 field_size_TB: "To"
 field_size_bytes:
  - "octet"
@@ -513,6 +514,7 @@ label_invisible: "Invisible"
 label_is_available: "%s est disponible (%s)."
 label_is_available_class: "%s est disponible."
 label_is_not_available: "%s n'est pas disponible."
+label_netmask: "Masque de réseau"
 label_never: "Jamais"
 label_next: "Prochaine\_:"
 label_os: "Système opérateur utilisée\_:"
@@ -615,10 +617,12 @@ response_accounts_password_updated: "Mot de passe mis à jour avec succès\_!"
 response_activated: "Activé avec succès."
 response_activation_failed: "Échec de l'activation\_!"
 response_aux_none: "Il n'y a actuellement aucune règle auxiliaire."
-response_aux_rule_created_successfully: "Nouvelle règle auxiliaire, "%s", créée avec succès."
-response_aux_rule_deleted_successfully: "Règle auxiliaire, "%s", supprimée avec succès."
+response_aux_rule_created_successfully: "Nouvelle règle auxiliaire, «\_%s\_», créée avec succès."
+response_aux_rule_deleted_successfully: "Règle auxiliaire, «\_%s\_», supprimée avec succès."
 response_aux_updated: "Règles auxiliaires mises à jour avec succès."
 response_checksum_error: "Erreur checksum\_! Fichier rejeté\_!"
+response_cli_bad_chain: "La commande %s ne peut pas être enchaîné de cette façon, désolé."
+response_cli_bad_command: "Je ne comprends pas cette commande, désolé."
 response_component_successfully_installed: "Composant installé avec succès."
 response_component_successfully_uninstalled: "Composant désinstallé avec succès."
 response_component_successfully_updated: "Composant mise à jour avec succès."
@@ -798,6 +802,7 @@ tip_updates: "Bonjour, {username}.<br />La page des mises à jour vous permet d'
 title_login: "Connexion"
 warning_default_password: "Attention\_: Utilisant le mot de passe défaut\_!"
 warning_dry_run_mode: "Attention\_: Fonctionnement en mode marche à sec\_! En mode marche à sec, les requêtes sont toujours vérifiées et enregistrées en tant qu'événements de blocage comme d'habitude, mais rien n'est bloqué."
+warning_file_overwritten: "Attention\_: Le fichier que vous modifiez actuellement appartient au composant «\_%s\_». Toute modification apporté à ce fichier sera très probablement écrasé lors de la prochaine mise à jour de ce composant."
 warning_ip_tests_disabled: "Attention\_: Les tests IP sont désactivés\_! Les fichiers de signature ne peuvent pas être utilisés tant que ce problème n'est pas résolu."
 warning_javascript_required: "Attention\_: Certaines fonctionnalités nécessitent JavaScript. Pour garantir que l'ensemble de l'interface se comporte comme prévu, il est recommandé d'activer JavaScript."
 warning_maintenance_mode: "Attention\_: Fonctionnement en mode maintenance\_! En mode maintenance, rien n'est vérifié, enregistré, ou bloqué."

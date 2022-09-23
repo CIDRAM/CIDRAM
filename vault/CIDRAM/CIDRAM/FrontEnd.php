@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM front-end (last modified: 2022.09.01).
+ * This file: The CIDRAM front-end (last modified: 2022.09.23).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -2645,30 +2645,30 @@ class FrontEnd extends Core
             } else {
                 $this->FE['FMgrFormTarget'] = 'cidram-page=file-manager&show=true';
                 $this->FE['ShowHideLink'] = '<a href="?cidram-page=file-manager">' . $this->L10N->getString('label_hide') . '</a>';
+            }
 
-                /** Fetch components lists. */
-                $this->readInstalledMetadata($this->Components['Components']);
+            /** Fetch components lists. */
+            $this->readInstalledMetadata($this->Components['Components']);
 
-                /** Identifying file component correlations. */
-                foreach ($this->Components['Components'] as $ComponentName => &$ComponentData) {
-                    if (isset($ComponentData['Files']) && is_array($ComponentData['Files'])) {
-                        foreach ($ComponentData['Files'] as $ThisFile => $FileData) {
-                            $ThisFile = str_replace("\\", '/', $ThisFile);
-                            $this->Components['Files'][$ThisFile] = $ComponentName;
-                        }
+            /** Identifying file component correlations. */
+            foreach ($this->Components['Components'] as $ComponentName => &$ComponentData) {
+                if (isset($ComponentData['Files']) && is_array($ComponentData['Files'])) {
+                    foreach ($ComponentData['Files'] as $ThisFile => $FileData) {
+                        $ThisFile = $this->canonical($ThisFile);
+                        $this->Components['Files'][$ThisFile] = $ComponentName;
                     }
-                    $this->prepareName($ComponentData, $ComponentName);
-                    if (isset($ComponentData['Name']) && strlen($ComponentData['Name'])) {
-                        $this->Components['Names'][$ComponentName] = $ComponentData['Name'];
-                    }
-                    $ComponentData = 0;
                 }
+                $this->prepareName($ComponentData, $ComponentName);
+                if (isset($ComponentData['Name']) && strlen($ComponentData['Name'])) {
+                    $this->Components['Names'][$ComponentName] = $ComponentData['Name'];
+                }
+                $ComponentData = 0;
             }
 
             /** Upload a new file. */
             if (isset($_POST['do']) && $_POST['do'] === 'upload-file' && isset($_FILES['upload-file']['name'])) {
                 /** Check whether safe. */
-                $this->CIDRAM['SafeToContinue'] = (
+                $SafeToContinue = (
                     basename($_FILES['upload-file']['name']) === $_FILES['upload-file']['name'] &&
                     $this->pathSecurityCheck($_FILES['upload-file']['name']) &&
                     isset($_FILES['upload-file']['tmp_name'], $_FILES['upload-file']['error']) &&
@@ -2678,12 +2678,12 @@ class FrontEnd extends Core
                 );
 
                 /** If the filename already exists, delete the old file before moving the new file. */
-                if ($this->CIDRAM['SafeToContinue'] && is_readable($this->Vault . $_FILES['upload-file']['name'])) {
+                if ($SafeToContinue && is_readable($this->Vault . $_FILES['upload-file']['name'])) {
                     if (is_dir($this->Vault . $_FILES['upload-file']['name'])) {
                         if ($this->isDirEmpty($this->Vault . $_FILES['upload-file']['name'])) {
                             rmdir($this->Vault . $_FILES['upload-file']['name']);
                         } else {
-                            $this->CIDRAM['SafeToContinue'] = false;
+                            $SafeToContinue = false;
                         }
                     } else {
                         unlink($this->Vault . $_FILES['upload-file']['name']);
@@ -2691,7 +2691,7 @@ class FrontEnd extends Core
                 }
 
                 /** Move the newly uploaded file to the designated location. */
-                if ($this->CIDRAM['SafeToContinue']) {
+                if ($SafeToContinue) {
                     if (rename($_FILES['upload-file']['tmp_name'], $this->Vault . $_FILES['upload-file']['name'])) {
                         $this->FE['state_msg'] = $this->L10N->getString('response_file_uploaded');
                         header('HTTP/1.0 201 Created');
@@ -2714,19 +2714,21 @@ class FrontEnd extends Core
                 /** Delete a file. */
                 if ($_POST['do'] === 'delete-file') {
                     if (is_dir($this->Vault . $_POST['filename'])) {
-                        if ($this->isDirEmpty($this->Vault . $_POST['filename'])) {
-                            rmdir($this->Vault . $_POST['filename']);
+                        if (
+                            $this->isDirEmpty($this->Vault . $_POST['filename']) &&
+                            rmdir($this->Vault . $_POST['filename'])
+                        ) {
                             $this->FE['state_msg'] = $this->L10N->getString('response_directory_deleted');
                         } else {
                             $this->FE['state_msg'] = $this->L10N->getString('response_delete_error');
                         }
-                    } else {
-                        unlink($this->Vault . $_POST['filename']);
-
+                    } elseif (unlink($this->Vault . $_POST['filename'])) {
                         /** Remove empty directories. */
                         $this->deleteDirectory($_POST['filename']);
 
                         $this->FE['state_msg'] = $this->L10N->getString('response_file_deleted');
+                    } else {
+                        $this->FE['state_msg'] = $this->L10N->getString('response_delete_error');
                     }
                 }
 
@@ -2734,7 +2736,7 @@ class FrontEnd extends Core
                 if ($_POST['do'] === 'rename-file' && isset($_POST['filename'])) {
                     if (isset($_POST['filename_new'])) {
                         /** Check whether safe. */
-                        $this->CIDRAM['SafeToContinue'] = (
+                        $SafeToContinue = (
                             $this->pathSecurityCheck($_POST['filename']) &&
                             $this->pathSecurityCheck($_POST['filename_new']) &&
                             $_POST['filename'] !== $_POST['filename_new']
@@ -2742,23 +2744,24 @@ class FrontEnd extends Core
 
                         /** If the destination already exists, delete it before renaming the new file. */
                         if (
-                            $this->CIDRAM['SafeToContinue'] &&
+                            $SafeToContinue &&
                             file_exists($this->Vault . $_POST['filename_new']) &&
                             is_readable($this->Vault . $_POST['filename_new'])
                         ) {
                             if (is_dir($this->Vault . $_POST['filename_new'])) {
-                                if ($this->isDirEmpty($this->Vault . $_POST['filename_new'])) {
-                                    rmdir($this->Vault . $_POST['filename_new']);
-                                } else {
-                                    $this->CIDRAM['SafeToContinue'] = false;
+                                if (
+                                    !$this->isDirEmpty($this->Vault . $_POST['filename_new']) ||
+                                    !rmdir($this->Vault . $_POST['filename_new'])
+                                ) {
+                                    $SafeToContinue = false;
                                 }
-                            } else {
-                                unlink($this->Vault . $_POST['filename_new']);
+                            } elseif (!unlink($this->Vault . $_POST['filename_new'])) {
+                                $SafeToContinue = false;
                             }
                         }
 
                         /** Rename the file. */
-                        if ($this->CIDRAM['SafeToContinue']) {
+                        if ($SafeToContinue) {
                             /** Add parent directories. */
                             $this->buildPath($this->Vault . $_POST['filename_new']);
 
@@ -2770,8 +2773,10 @@ class FrontEnd extends Core
                                 $this->FE['state_msg'] = $this->L10N->getString(
                                     is_dir($this->Vault . $_POST['filename_new']) ? 'response_directory_renamed' : 'response_file_renamed'
                                 );
+                            } else {
+                                $this->FE['state_msg'] = $this->L10N->getString('response_rename_error');
                             }
-                        } elseif (!$this->FE['state_msg']) {
+                        } else {
                             $this->FE['state_msg'] = $this->L10N->getString('response_rename_error');
                         }
                     } else {
@@ -2808,6 +2813,14 @@ class FrontEnd extends Core
                         $this->FE['FE_Title'] .= ' – ' . $_POST['filename'];
                         $this->FE['filename'] = $_POST['filename'];
                         $this->FE['content'] = htmlentities($this->readFile($this->Vault . $_POST['filename']));
+
+                        /** Component update file overwrite warning. */
+                        if (isset($this->Components['Files'][$_POST['filename']])) {
+                            $this->FE['state_msg'] = sprintf(
+                                $this->L10N->getString('warning_file_overwritten'),
+                                $this->Components['Files'][$_POST['filename']]
+                            );
+                        }
 
                         /** Parse output. */
                         $this->FE['FE_Content'] = $this->parseVars(

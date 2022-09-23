@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Japanese language data for the front-end (last modified: 2022.09.13).
+# This file: Japanese language data for the front-end (last modified: 2022.09.22).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -300,6 +300,7 @@ field_size: "合計サイズ："
 field_size_GB: "GB"
 field_size_KB: "KB"
 field_size_MB: "MB"
+field_size_PB: "PB"
 field_size_TB: "TB"
 field_size_bytes: "バイト"
 field_status: "状態"
@@ -398,7 +399,7 @@ info_some_useful_links: |
        <li><span class="comCat">情報および学習用リソース。</span>
          <ul class="comSub">
            <li>{{Links.PHP.Earth.Website}} – ＰＨＰ学習リソースとディスカッション。</li>
-           <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">脆弱性チャート</a> – さまざまなパッケージの安全で安全でないバージョンを一覧表示する（HHVM、PHP、phpMyAdmin、Python等）。</li>
+           <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">脆弱性チャート</a> – さまざまなパッケージの安全で安全でないバージョンを一覧表示する（ＰＨＰ、ＨＨＶＭ、ｐｈｐＭｙＡｄｍｉｎ、Ｐｙｔｈｏｎ、等）。</li>
            <li><a href="https://maikuolan.github.io/Compatibility-Charts/" hreflang="en-AU" rel="noopener noreferrer external">互換性チャート</a> – さまざまなパッケージの互換性情報を一覧表示します（CIDRAM、phpMussel、等）。</li>
          </ul>
        </li>
@@ -500,6 +501,7 @@ label_invisible: "インビジブル"
 label_is_available: "%s は使用できます（%s）。"
 label_is_available_class: "%s は使用できます。"
 label_is_not_available: "%s は使用できません。"
+label_netmask: "ネットマスク"
 label_never: "決して"
 label_next: "次："
 label_os: "使用されたオペレーティングシステム："
@@ -602,6 +604,8 @@ response_aux_rule_created_successfully: "新しい補助ルール、「%s」が�
 response_aux_rule_deleted_successfully: "補助ルール、「%s」が、削除されました。"
 response_aux_updated: "補助ルールが正常に更新されました。"
 response_checksum_error: "チェックサム・エラー！​ファイルが拒否されました！"
+response_cli_bad_chain: "すみませんが、%sコマンドは、このように連鎖することはできません。"
+response_cli_bad_command: "すみませんが、コマンドが理解できません。"
 response_component_successfully_installed: "コンポーネントのインストールに成功しました。"
 response_component_successfully_uninstalled: "コンポーネントのアンインストールは成功しました。"
 response_component_successfully_updated: "コンポーネントのアップデートに成功しました！"
@@ -753,6 +757,7 @@ tip_updates: "こんにちは、​{username}。​<br />アップデート・�
 title_login: "ログイン"
 warning_default_password: "警告：デフォルトのパスワードを使用して！"
 warning_dry_run_mode: "警告：ドライ・ラン・モードで動作中！ドライ・ラン・モードでは、リクエストを通常どおりチェックされ、ブロック・イベントとしてログに記録されますが、ブロックされるものはありません。"
+warning_file_overwritten: "警告：この現在編集中のファイルは、コンポーネント「%s」に属しています。このファイルに加えられた変更は、次回そのコンポーネントが更新されたときに上書きされる可能性が高いです。"
 warning_ip_tests_disabled: "警告：ＩＰテストは無効になっています！これが解決されるまで、シグネチャ・ファイルは利用することはできません。"
 warning_javascript_required: "警告：一部のフロントエンド機能性にはJavaScriptが必要です。フロントエンドの全体が期待どおりに動作するようにするには、JavaScriptを有効にすることをお勧めします。"
 warning_maintenance_mode: "警告：メンテナンス・モードで動作中！メンテナンス・モードでは、何もチェック、ログ記録、またはブロックされません。"

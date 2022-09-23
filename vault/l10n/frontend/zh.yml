@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (simplified) language data for the front-end (last modified: 2022.09.01).
+# This file: Chinese (simplified) language data for the front-end (last modified: 2022.09.22).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -278,7 +278,7 @@ field_latest_version: "最新版本"
 field_log_in: "登录"
 field_log_rotation_archive: "首先归档，然后删除最旧的日志文件，直到不再超出限制。"
 field_log_rotation_delete: "删除最旧的日志文件，直到不再超出限制。"
-field_netmask: "以子网掩码的形式生成输出"
+field_netmask: "以子网络掩码的形式生成输出"
 field_new_name: "新名称："
 field_nonclickable_text: "不可点击的文字"
 field_not_tracking: "没有跟踪。"
@@ -300,6 +300,7 @@ field_size: "总大小："
 field_size_GB: "GB"
 field_size_KB: "KB"
 field_size_MB: "MB"
+field_size_PB: "PB"
 field_size_TB: "TB"
 field_size_bytes: "字节"
 field_status: "状态"
@@ -336,6 +337,31 @@ hints_shorthand:
 hints_verification:
  "什么是“阳性”和“阴性”？": "在验证请求提供的身份时，成功的结果可以描述为“阳性”或“阴性”。​当所呈现的身份被确认为真实身份时，将被描述为“阳性”。​当所提供的身份被证实为伪造时，将被描述为“阴性”。​但是，不成功的结果（例如，验证失败，或无法确定所提供身份的真实性）不会被描述为“阳性”或“阴性”。​相反，不成功的结果将被简单地描述为未验证。​当没有尝试验证请求提供的身份时，该请求同样会被描述为未验证。​这些术语仅在请求提供的身份被识别的情况下才有意义，因此，在可以进行验证的情况下。​如果提供的身份与上面提供的选项不匹配，或者没有提供身份，则上面提供的选项变得无关。"
  "什么是“一击绕过”？": "在某些情况下，由于签名文件、模块、或请求的其他条件，可能仍会阻止经过肯定验证的请求，为了避免误报，可能需要绕过。​在绕过旨在处理仅一项违规行为的情况下，这样的绕过可以被描述为“一击绕过”。"
+info_cli_by_default_ips: |
+ IP地址针对所有签名文件、所有模块、所有辅助规则、以及社交媒体和搜索引擎验证进行
+ 测试。您可以使用 --no-mod 禁用对模块的检查，使用 --no-aux 禁用对辅助规则的
+ 检查，以及使用 --no-ssv 禁用对社交媒体和搜索引擎验证的检查：
+info_cli_cidram_cli_mod: "CIDRAM CLI模式。"
+info_cli_ipv4_ipv6_are_: |
+ IPv4/IPv6均受支持。通过使用引号，所有CLI模式操作（例如，
+ 在单个操作中测试多个IP地址）都可以进行多行输入：
+info_cli_or_depending_o: "取决于您是喜欢从头到尾，还是从尾到头："
+info_cli_or_to_aggregat: "为了将它们聚合为网络掩码："
+info_cli_or_using_comma: "使用逗号而不是多行（它做同样的事情）："
+info_cli_the_signature_: "可以通过CLI使用签名修复工具："
+info_cli_to_calculate_c: "为了从IP地址计算CIDR："
+info_cli_to_test_whethe: "为了测试是否IP地址被CIDRAM阻止："
+info_cli_to_quit_type_q: "为了退出，请键入“q”、“quit”、或“exit”，然后按Enter。"
+info_cli_you_can_also_a: "您可以聚合IP和CIDR："
+info_cli_you_can_also_c: |
+ 您可以将命令链接在一起（该示例从一些文件中读取，聚合它们的内容，
+ 然后将聚合的数据写入output.dat）：
+info_cli_you_can_also_r: "您可以从文件中读取："
+info_cli_you_can_also_u: |
+ 如果您想，您可以使用逗号代替（与多行相同，但您不需要使用引号，
+ 并且不要将两者混合在一起）：
+info_cli_you_can_also_w: "您可以写入文件："
+info_cli_you_can_print_: "您可以将数据打印到屏幕上（有时在链接命令时有用）："
 info_some_useful_links: |
  一些有用的链接：<br />
      <ul class="pieul">
@@ -366,7 +392,7 @@ info_some_useful_links: |
        <li><span class="comCat">信息和学习资源。</span>
          <ul class="comSub">
            <li>{{Links.PHP.Earth.Website}} – PHP学习资源和讨论。</li>
-           <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">脆弱性图表</a> – 列出各种软件包的安全/不安全版本（HHVM，PHP，phpMyAdmin，Python等等）。</li>
+           <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">脆弱性图表</a> – 列出各种软件包的安全/不安全版本（HHVM，PHP，phpMyAdmin，Python，等等）。</li>
            <li><a href="https://maikuolan.github.io/Compatibility-Charts/" hreflang="en-AU" rel="noopener noreferrer external">兼容性图表</a> – 列出各种软件包的兼容性信息（CIDRAM，phpMussel，等等）。</li>
          </ul>
        </li>
@@ -468,6 +494,7 @@ label_invisible: "不可见的"
 label_is_available: "%s可用（%s）。"
 label_is_available_class: "%s可用。"
 label_is_not_available: "%s不可用。"
+label_netmask: "网络掩码"
 label_never: "决不"
 label_next: "下一个："
 label_os: "目前使用操作系统："
@@ -570,6 +597,8 @@ response_aux_rule_created_successfully: "新辅助规则“%s”创建成功。"
 response_aux_rule_deleted_successfully: "辅助规则“%s”删除成功。"
 response_aux_updated: "辅助规则已成功更新。"
 response_checksum_error: "校验和错误！​文件拒绝！"
+response_cli_bad_chain: "%s命令不能以这种方式链接，对不起。"
+response_cli_bad_command: "我不明白的命令，对不起。"
 response_component_successfully_installed: "组件成功安装。"
 response_component_successfully_uninstalled: "组件成功卸载。"
 response_component_successfully_updated: "组件成功更新。"
@@ -721,6 +750,7 @@ tip_updates: "你好，​{username}。​<br />更新页面允许您安装，�
 title_login: "登录"
 warning_default_password: "警告：它使用标准密码！"
 warning_dry_run_mode: "警告：在空运行模式下运行！在空运行模式下，请求仍会像往常一样被检查并记录为阻止事件，但没有任何内容被阻塞。"
+warning_file_overwritten: "警告：您当前正在编辑的文件属于组件“%s”。对该文件所做的任何更改很可能会在下次更新该组件时被覆盖。"
 warning_ip_tests_disabled: "警告：IP测试被禁用！在解决此问题之前，无法使用签名文件。"
 warning_javascript_required: "警告：一些前端功能需要JavaScript。为确保整个前端按预期运行，建议启用JavaScript。"
 warning_maintenance_mode: "警告：在维护模式下运行！在维护模式下，不会检查、记录、或阻止任何内容。"

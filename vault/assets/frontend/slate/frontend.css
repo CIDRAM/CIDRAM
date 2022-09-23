@@ -7,6 +7,7 @@ img.ico{width:16px;height:16px;border:0;filter:grayscale(60%) hue-rotate(45deg) 
 select,input,textarea{background:linear-gradient({45deg},rgba(47,47,47,1),rgba(255,255,255,.1));border:1px solid #999;color:#ccc;margin:2px;padding:2px;transition:all .3s ease-out}
 option{background-color:#2f2f2f}
 input,select{width:150px;background-repeat:no-repeat;background-position:top {FE_Align_Reverse}}
+input[type=submit]:not(.auto),input[type=button]:not(.auto){width:auto;min-width:150px}
 input.auto,select.auto{width:auto;padding-left:10px;padding-right:10px}
 input[type=image]{width:inherit;border:inherit}
 input[type=password]{background-image:url(data:image/gif;base64,{PIP_Key})}

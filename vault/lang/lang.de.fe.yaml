@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: German language data for the front-end (last modified: 2022.08.30).
+# This file: German language data for the front-end (last modified: 2022.09.22).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -201,7 +201,7 @@ config_supplementary_cache_options_enable_pdo: "Dies gibt an, ob PDO für das Ca
 config_supplementary_cache_options_enable_redis: "Dies gibt an, ob Redis für das Caching verwendet werden soll. Standardeinstellung = False."
 config_supplementary_cache_options_memcached_host: "Memcached Hostwert. Standardeinstellung = „localhost“."
 config_supplementary_cache_options_memcached_port: "Memcached Portwert. Standardeinstellung = „11211“."
-config_supplementary_cache_options_pdo_dsn: "PDO DSN-Wert. Standardeinstellung = "mysql:dbname=cidram;host=localhost;port=3306"."
+config_supplementary_cache_options_pdo_dsn: "PDO DSN-Wert. Standardeinstellung = „mysql:dbname=cidram;host=localhost;port=3306“."
 config_supplementary_cache_options_pdo_password: "PDO Passwort."
 config_supplementary_cache_options_pdo_username: "PDO Nutzername."
 config_supplementary_cache_options_prefix: "Dieser Wert hier wird zu allen Cache-Eintragsschlüsseln vorangestellt. Standardmäßig leer. Wenn mehrere Installationen auf demselben Server vorhanden sind, kann dies nützlich sein, um ihre Caches getrennt zu halten."
@@ -277,6 +277,7 @@ field_size: "Gesamtgröße:"
 field_size_GB: "GB"
 field_size_KB: "KB"
 field_size_MB: "MB"
+field_size_PB: "PB"
 field_size_TB: "TB"
 field_size_bytes:
  - "Byte"
@@ -405,8 +406,8 @@ label_displaying:
  - "%s Eintrag angezeigt."
  - "%s Einträge angezeigt."
 label_displaying_that_cite:
- - "%s Eintrag mit "%s" angezeigt."
- - "%s Einträge mit "%s" angezeigt."
+ - "%s Eintrag mit „%s“ angezeigt."
+ - "%s Einträge mit „%s“ angezeigt."
 label_entries_per_page: "Einträge pro Seite:"
 label_expected: "Erwartet"
 label_expires: "Läuft ab:"
@@ -463,7 +464,7 @@ label_see_also: "Siehe auch:"
 label_show: "Zeig"
 label_signature_type: "Signaturtyp:"
 label_stable: "Neueste stabil:"
-label_starting_from: "Beginnend mit "%s"."
+label_starting_from: "Beginnend mit „%s“."
 label_sysinfo: "System Information:"
 label_textmode: "Textformatierung:"
 label_textmode_fancy: "Schick"
@@ -532,8 +533,8 @@ response_accounts_password_updated: "Passwort erfolgreich aktualisiert!"
 response_activated: "Erfolgreich aktiviert."
 response_activation_failed: "Konnte nicht aktivieren!"
 response_aux_none: "Derzeit gibt es keine Hilfsregeln."
-response_aux_rule_created_successfully: "Neue Hilfsregel, "%s", wurde erfolgreich erstellt."
-response_aux_rule_deleted_successfully: "Hilfsregel, "%s", erfolgreich gelöscht."
+response_aux_rule_created_successfully: "Neue Hilfsregel, „%s“, wurde erfolgreich erstellt."
+response_aux_rule_deleted_successfully: "Hilfsregel, „%s“, erfolgreich gelöscht."
 response_aux_updated: "Hilfsregeln erfolgreich aktualisiert."
 response_checksum_error: "Prüfsummenfehler! Datei abgelehnt!"
 response_component_successfully_installed: "Komponente erfolgreich installiert."
@@ -593,7 +594,7 @@ state_component_is_inactive: "Komponente ist inaktiv."
 state_component_is_partially_active: "Komponente ist teilweise aktiv."
 state_component_is_provisional: "Komponente ist vorläufig."
 state_default_password: "Warnung: Verwendet das Standard-Passwort!"
-state_email_sent: "E-Mail wurde erfolgreich an "%s" gesendet."
+state_email_sent: "E-Mail wurde erfolgreich an „%s“ gesendet."
 state_failed_missing: "Der Vorgang ist fehlgeschlagen, weil eine erforderliche Komponente nicht verfügbar ist."
 state_fixer: "%s %s."
 state_fixer_changed:
@@ -703,5 +704,6 @@ tip_statistics: "Hallo, {username}.<br />Diese Seite zeigt einige grundlegende N
 tip_statistics_disabled: "Hinweis: Die Statistikverfolgung ist derzeit deaktiviert, aber kann über die Konfigurationsseite aktiviert werden."
 tip_updates: "Hallo, {username}.<br />Das Aktualisierungsseite macht es möglich für Sie zu installieren, zu deinstallieren und zu aktualisieren die verschiedenen Komponenten von CIDRAM (das Kernpaket, Signaturen, L10N-Dateien, u.s.w.)."
 title_login: "Einloggen"
+warning_file_overwritten: "Warnung: Die aktuell bearbeitete Datei gehört zur Komponente „%s“. Alle an dieser Datei vorgenommenen Änderungen werden sehr wahrscheinlich überschrieben, wenn diese Komponente nächste aktualisiert wird."
 warning_javascript_required: "Warnung: Einige Front-End-Funktionalität erfordern JavaScript. Um sicherzustellen dass sich das gesamte Front-End wie erwartet verhält, wird die Aktivierung von JavaScript empfohlen."
 warning_signatures_1: "Warnung: Keine Signaturdateien sind aktiv!"

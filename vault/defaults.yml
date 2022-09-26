@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Defaults file (last modified: 2022.09.22).
+# This file: Defaults file (last modified: 2022.09.25).
 ##/
 
 Config Defaults:
@@ -543,6 +543,12 @@ Config Defaults:
    type: "float"
    step: "any"
    default: 1
+  custom_header:
+   type: "string"
+   default: ""
+  custom_footer:
+   type: "string"
+   default: ""
   remotes:
    type: "string"
    default: |
@@ -913,6 +919,12 @@ Config Defaults:
     CIDRAM: "CIDRAM"
    preview: "allow_other"
    allow_other: true
+  custom_header:
+   type: "string"
+   default: ""
+  custom_footer:
+   type: "string"
+   default: ""
  rate_limiting:
   max_bandwidth:
    type: "kb"

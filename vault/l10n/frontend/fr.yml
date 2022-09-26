@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: French language data for the front-end (last modified: 2022.09.22).
+# This file: French language data for the front-end (last modified: 2022.09.25).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -119,6 +119,8 @@ config_extras_signatures_raw: "Signatures basés sur l'entré brute de la requê
 config_extras_signatures_ruri: "Signatures basés sur des URI reconstruits."
 config_extras_signatures_uri: "Signatures basés sur les URI des requêtes."
 config_frontend: "Configuration pour l'accès frontal."
+config_frontend_custom_footer: "Inséré en tant que HTML au tout bas de toutes les pages frontales. Cela peut être utile si vous souhaitez inclure une notice légale, un lien de contact, des informations commerciales, ou similaires sur toutes ces pages."
+config_frontend_custom_header: "Inséré en tant que HTML au tout début de toutes les pages frontales. Cela peut être utile si vous souhaitez inclure un logo de site Web, un en-tête personnalisé, des scripts, ou similaires sur toutes ces pages."
 config_frontend_enable_two_factor: "Cette directive détermine s'il faut utiliser 2FA pour les comptes frontaux."
 config_frontend_frontend_log: "Fichier pour l'enregistrement des tentatives de connexion à l'accès frontal. Spécifier un fichier, ou laisser vide à désactiver."
 config_frontend_magnification: &MagnifDesc "Grossissement des fontes. Défaut = 1."
@@ -238,6 +240,8 @@ config_template_data: "Configuration pour les modèles et thèmes."
 config_template_data_block_event_title: "Le titre de la page à afficher pour les événements de blocage."
 config_template_data_captcha_title: "Le titre de la page à afficher pour les requêtes d'un CAPTCHA."
 config_template_data_css_url: "URL de fichier CSS pour les thèmes personnalisés."
+config_template_data_custom_footer: "Inséré en tant que HTML au tout bas de toutes les pages «\_accès refusé\_». Cela peut être utile si vous souhaitez inclure une notice légale, un lien de contact, des informations commerciales, ou similaires sur toutes ces pages."
+config_template_data_custom_header: "Inséré en tant que HTML au tout début de toutes les pages «\_accès refusé\_». Cela peut être utile si vous souhaitez inclure un logo de site Web, un en-tête personnalisé, des scripts, ou similaires sur toutes ces pages."
 config_template_data_magnification: *MagnifDesc
 config_template_data_theme: "Le thème à utiliser par défaut pour CIDRAM."
 config_verification: "Configuration pour vérifier d'où proviennent les requêtes."

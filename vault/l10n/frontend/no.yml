@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Norwegian language data for the front-end (last modified: 2022.09.22).
+# This file: Norwegian language data for the front-end (last modified: 2022.09.25).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -119,6 +119,8 @@ config_extras_signatures_raw: "Signaturer basert på rå forespørselsinngang."
 config_extras_signatures_ruri: "Signaturer basert på rekonstruerte URIer."
 config_extras_signatures_uri: "Signaturer basert på forespørsels-URIer."
 config_frontend: "Konfigurasjon for frontenden."
+config_frontend_custom_footer: "Sett inn som HTML helt i slutten av alle frontend-sider. Dette kan være nyttig i tilfelle du ønsker å inkludere en juridisk melding, kontaktlenke, forretningsinformasjon, eller lignende på alle slike sider."
+config_frontend_custom_header: "Sett inn som HTML helt i begynnelsen av alle frontend-sider. Dette kan være nyttig i tilfelle du ønsker å inkludere en nettsidelogo, personlig overskrift, skript, eller lignende på alle slike sider."
 config_frontend_enable_two_factor: "Dette direktivet bestemmer om du skal bruke 2FA for frontend-kontoer."
 config_frontend_frontend_log: "Fil for å logge innloggingsforsøk på frontenden. Angi et filnavn, eller la det være tomt for å deaktivere."
 config_frontend_magnification: &MagnifDesc "Font forstørrelse. Standardverdi = 1."
@@ -238,6 +240,8 @@ config_template_data: "Konfigurasjon for maler og temaer."
 config_template_data_block_event_title: "Sidetittelen som skal vises for blokkhendelser."
 config_template_data_captcha_title: "Sidetittelen som skal vises for CAPTCHA-forespørsler."
 config_template_data_css_url: "URL for CSS-fil for tilpassede temaer."
+config_template_data_custom_footer: "Sett inn som HTML helt i slutten av alle "tilgang nektet"-sider. Dette kan være nyttig i tilfelle du ønsker å inkludere en juridisk melding, kontaktlenke, forretningsinformasjon, eller lignende på alle slike sider."
+config_template_data_custom_header: "Sett inn som HTML helt i begynnelsen av alle "tilgang nektet"-sider. Dette kan være nyttig i tilfelle du ønsker å inkludere en nettsidelogo, personlig overskrift, skript, eller lignende på alle slike sider."
 config_template_data_magnification: *MagnifDesc
 config_template_data_theme: "Standard tema som skal brukes til CIDRAM."
 config_verification: "Konfigurasjon for å bekrefte hvor forespørsler kommer fra."

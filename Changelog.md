@@ -85,3 +85,4 @@
 - Added the ability to reset specific parts of the configuration back to their defaults (#331).
 - Added L10N support for some additional languages.
 - IPs can now be added to tracking manually (#310).
+- Custom headers/footers for front-end pages, CAPTCHAs, and the access denied page now be set directly via configuration (#312, #328).

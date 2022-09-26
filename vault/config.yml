@@ -155,6 +155,8 @@ frontend:
  max_login_attempts: 5
  theme: "default"
  magnification: 1
+ custom_header: ""
+ custom_footer: ""
  remotes: |
   https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/installed.yml
   https://raw.githubusercontent.com/CIDRAM/CIDRAM-Extras/master/modules/modules.yml
@@ -289,6 +291,8 @@ template_data:
  css_url: ""
  block_event_title: "CIDRAM"
  captcha_title: "CIDRAM"
+ custom_header: ""
+ custom_footer: ""
 rate_limiting:
  max_bandwidth: "0KB"
  max_requests: 0

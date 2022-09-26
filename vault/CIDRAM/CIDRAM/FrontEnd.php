@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM front-end (last modified: 2022.09.23).
+ * This file: The CIDRAM front-end (last modified: 2022.09.25).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -94,6 +94,12 @@ class FrontEnd extends Core
 
             /** Populated by any other header data required for the request (usually nothing). */
             'OtherHead' => '',
+
+            /** Custom header data. */
+            'CustomHeader' => $this->Configuration['frontend']['custom_header'],
+
+            /** Custom footer data. */
+            'CustomFooter' => $this->Configuration['frontend']['custom_footer'],
 
             /** Default password hash ("password"). */
             'DefaultPassword' => '$2y$10$FPF5Im9MELEvF5AYuuRMSO.QKoYVpsiu1YU9aDClgrU57XtLof/dK',

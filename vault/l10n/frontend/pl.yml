@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Polish language data for the front-end (last modified: 2022.09.22).
+# This file: Polish language data for the front-end (last modified: 2022.09.25).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -119,6 +119,8 @@ config_extras_signatures_raw: "Podpisy na podstawie danych wejściowych żądani
 config_extras_signatures_ruri: "Podpisy na podstawie zrekonstruowanych URI."
 config_extras_signatures_uri: "Podpisy na podstawie URI żądania."
 config_frontend: "Konfiguracja dla interfejsie użytkownika."
+config_frontend_custom_footer: "Wstawiany jako HTML na końcu wszystkich stron dla interfejsu użytkownika. Może to być przydatne w przypadku, gdy chcesz umieścić informację prawną, link kontaktowy, informacje biznesowe, lub podobne informacje na wszystkich takich stronach."
+config_frontend_custom_header: "Wstawiony jako HTML na początku wszystkich stron dla interfejsu użytkownika. Może to być przydatne w przypadku, gdy chcesz umieścić logo witryny, spersonalizowany nagłówek, skrypty, itp. na wszystkich takich stronach."
 config_frontend_enable_two_factor: "Ta dyrektywa określa, czy użyć 2FA jako interfejsu użytkownika."
 config_frontend_frontend_log: "Plik do logowania próbuje zalogować się do interfejsu użytkownika. Podaj nazwę pliku lub pozostaw puste, aby wyłączyć."
 config_frontend_magnification: &MagnifDesc "Powiększenie czcionki. Domyślna = 1."
@@ -238,6 +240,8 @@ config_template_data: "Konfiguracja szablonów i motywów."
 config_template_data_block_event_title: "Tytuł strony do wyświetlenia dla zdarzeń blokujących."
 config_template_data_captcha_title: "Tytuł strony do wyświetlenia dla żądań CAPTCHA."
 config_template_data_css_url: "Adres URL pliku CSS dla niestandardowych motywów."
+config_template_data_custom_footer: "Wstawiany jako HTML na końcu wszystkich stron z „dostęp zabroniony”. Może to być przydatne w przypadku, gdy chcesz umieścić informację prawną, link kontaktowy, informacje biznesowe, lub podobne informacje na wszystkich takich stronach."
+config_template_data_custom_header: "Wstawiany jako HTML na początku wszystkich stron z „dostęp zabroniony”. Może to być przydatne w przypadku, gdy chcesz umieścić logo witryny, spersonalizowany nagłówek, skrypty, itp. na wszystkich takich stronach."
 config_template_data_magnification: *MagnifDesc
 config_template_data_theme: "Domyślny motyw do użycia dla CIDRAM."
 config_verification: "Konfiguracja do weryfikacji skąd pochodzą żądania."

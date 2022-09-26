@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Protect traits (last modified: 2022.09.11).
+ * This file: Protect traits (last modified: 2022.09.25).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -110,6 +110,8 @@ trait Protect
 
         /** Initialise page output and block event log fields. */
         $this->CIDRAM['FieldTemplates'] = $this->Configuration['template_data'] + [
+            'CustomHeader' => $this->Configuration['template_data']['custom_header'],
+            'CustomFooter' => $this->Configuration['template_data']['custom_footer'],
             'Logs' => '',
             'Output' => [],
             'captcha_api_include' => '',

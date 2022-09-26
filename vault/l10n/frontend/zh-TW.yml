@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (traditional) language data for the front-end (last modified: 2022.09.22).
+# This file: Chinese (traditional) language data for the front-end (last modified: 2022.09.25).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -119,6 +119,8 @@ config_extras_signatures_raw: "基於原始請求輸入的簽名。"
 config_extras_signatures_ruri: "基於重構URI的簽名。"
 config_extras_signatures_uri: "基於請求URI的簽名。"
 config_frontend: "前端的配置。"
+config_frontend_custom_footer: "在所有前端頁面的末尾作為HTML插入。​如果您想在所有此類頁面中包含法律聲明、聯繫鏈接、業務信息、或類似，這可能會很有用。"
+config_frontend_custom_header: "在所有前端頁面的開頭作為HTML插入。​如果您想在所有此類頁面中包含網站徽標、個性化標題、腳本、或類似，這可能會很有用。"
 config_frontend_enable_two_factor: "該指令確定是否將2FA用於前端帳戶。"
 config_frontend_frontend_log: "前端登錄嘗試的錄音文件。​指定一個文件名，​或留空以禁用。"
 config_frontend_magnification: &MagnifDesc "字體放大。​標準 = 1。"
@@ -238,6 +240,8 @@ config_template_data: "模板和主題的配置。"
 config_template_data_block_event_title: "為阻止事件顯示的頁面標題。"
 config_template_data_captcha_title: "為CAPTCHA請求顯示的頁面標題。"
 config_template_data_css_url: "自定義主題的CSS文件URL。"
+config_template_data_custom_footer: "在所有『拒絕訪問』頁面的末尾作為HTML插入。​如果您想在所有此類頁面中包含法律聲明、聯繫鏈接、業務信息、或類似，這可能會很有用。"
+config_template_data_custom_header: "在所有『拒絕訪問』頁面的開頭作為HTML插入。​如果您想在所有此類頁面中包含網站徽標、個性化標題、腳本、或類似，這可能會很有用。"
 config_template_data_magnification: *MagnifDesc
 config_template_data_theme: "用於CIDRAM的默認主題。"
 config_verification: "請求來源驗證配置。"

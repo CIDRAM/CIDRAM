@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM front-end (last modified: 2022.09.25).
+ * This file: The CIDRAM front-end (last modified: 2022.09.26).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -2619,7 +2619,7 @@ class FrontEnd extends Core
         /** File Manager. */
         elseif ($this->CIDRAM['QueryVars']['cidram-page'] === 'file-manager' && $this->FE['Permissions'] === 1) {
             /** Page initial prepwork. */
-            $this->initialPrepwork($this->L10N->getString('link_file_manager'), $this->L10N->getString('tip_file_manager'), false);
+            $this->initialPrepwork($this->L10N->getString('link_file_manager'), $this->L10N->getString('tip_file_manager'));
 
             /** Load doughnut template file upon request. */
             if (empty($this->CIDRAM['QueryVars']['show'])) {
@@ -2826,6 +2826,19 @@ class FrontEnd extends Core
                                 $this->L10N->getString('warning_file_overwritten'),
                                 $this->Components['Files'][$_POST['filename']]
                             );
+                        }
+
+                        /** PHP file warning. */
+                        if (preg_match('~\.php$~i', $_POST['filename'])) {
+                            $this->FE['JS'] .= "\nfunction wfp(d){};";
+                            if ($this->FE['state_msg'] !== '') {
+                                $this->FE['state_msg'] .= '<br />';
+                            }
+                            $this->FE['state_msg'] .= $this->L10N->getString('warning_file_php');
+                        } else {
+                            $this->FE['JS'] .= "\nfunction wfp(d){d.includes('<?php')?showid('wfps'):hideid('wfps')};";
+                            $this->FE['state_msg'] .= $this->FE['state_msg'] !== '' ? '<span id="wfps"><br />' : '<span id="wfps">';
+                            $this->FE['state_msg'] .= $this->L10N->getString('warning_file_php') . '</span>';
                         }
 
                         /** Parse output. */

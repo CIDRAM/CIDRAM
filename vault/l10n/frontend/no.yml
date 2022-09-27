@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Norwegian language data for the front-end (last modified: 2022.09.25).
+# This file: Norwegian language data for the front-end (last modified: 2022.09.26).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -134,7 +134,7 @@ config_general_ban_override: "Overstyr "http_response_header_code" når "infract
 config_general_default_algo: "Definerer hvilken algoritme som skal brukes for alle fremtidige passord og økter."
 config_general_default_dns: "En liste over DNS-servere som skal brukes til vertsnavn-oppslag. ADVARSEL: Ikke endre dette med mindre du vet hva du gjør!"
 config_general_default_timeout: "Standard tidsavbrudd for eksterne forespørsler? Standardverdi = 12 sekunder."
-config_general_disabled_channels: "Dette kan brukes til å forhindre CIDRAM i å bruke bestemte kanaler når du sender forespørsler (f.eks, når du oppdaterer, når du henter komponentmetadata, osv)."
+config_general_disabled_channels: "Dette kan brukes til å forhindre CIDRAM i å bruke bestemte kanaler når du sender forespørsler (f.eks., når du oppdaterer, når du henter komponentmetadata, osv)."
 config_general_emailaddr: "Hvis du vil, du kan levere en e-postadresse her for å bli gitt til brukerne når de er blokkert, for dem å bruke som et kontaktpunkt for støtte og/eller assistanse i tilfelle de blir blokkert feilaktig eller i feil. ADVARSEL: Uansett hvilken e-postadresse du leverer her, det vil helt sikkert bli ervervet av spamboter og skraper i løpet av bruken her, og så, det anbefales sterkt at hvis du velger å levere en e-postadresse her, at du sørger for at e-postadressen du oppgir her er en engangsadresse og/eller en adresse som du ikke bryr deg om å bli spammet (dvs., du vil sannsynligvis ikke bruke dine primære personlige eller primære virksomhets e-postadresser)."
 config_general_emailaddr_display_style: "Hvordan foretrekker du e-postadressen som skal presenteres for brukerne?"
 config_general_fields: "Kontroller for feltene under blokkeringshendelser (når en forespørsel er blokkert)."
@@ -149,7 +149,7 @@ config_general_stages: "Kontroller for stadiene i utførelseskjeden (om aktivert
 config_general_statistics: "Kontrollerer hvilken statistisk informasjon som skal spores."
 config_general_time_format: "Dato/tid notasjonsformat som brukes av CIDRAM. Ytterligere alternativer kan legges på forespørsel."
 config_general_time_offset: "Tidssone forskjøvet i minutter."
-config_general_timezone: "Dette brukes til å spesifisere tidssonen som skal brukes (f.eks, Africa/Cairo, America/New_York, Asia/Tokyo, Australia/Perth, Europe/Berlin, Pacific/Guam, etc). Spesifiser "SYSTEM" for å la PHP håndtere dette for deg automatisk."
+config_general_timezone: "Dette brukes til å spesifisere tidssonen som skal brukes (f.eks., Africa/Cairo, America/New_York, Asia/Tokyo, Australia/Perth, Europe/Berlin, Pacific/Guam, etc). Spesifiser "SYSTEM" for å la PHP håndtere dette for deg automatisk."
 config_hcaptcha: "Konfigurasjon for HCaptcha (gir en måte for mennesker å gjenvinne tilgang når de blokkeres)."
 config_hcaptcha_api: &CaptchaAPI "Hvilken API skal du bruke?"
 config_hcaptcha_expiry: &CaptchaExpiry "Antall timer for å huske CAPTCHA-forekomster. Standardverdi = 720 (1 måned)."
@@ -794,6 +794,7 @@ tip_updates: "Hallo, {username}.<br />Oppdateringssiden lar deg installere, avin
 title_login: "Innloggingssiden"
 warning_default_password: "Advarsel: Bruker standard passordet!"
 warning_dry_run_mode: "Advarsel: Drift i tørrkjøringsmodus! I tørrkjøringsmodus blir forespørsler fortsatt sjekket og logget som blokkeringshendelser som vanlig, men ingenting er blokkert."
+warning_file_php: "Advarsel: Noen sikkerhetsløsninger for webhotell har vært kjent for å automatisk forby IP-adresser når de oppdager PHP-koder i forespørsler (f.eks., når du prøver å endre PHP-filer via en nettleser). CIDRAM har ingen mulighet til å vite om webhotell tjenesten din bruker en slik sikkerhetsløsning. For å unngå slike problemer, anbefales det å ikke redigere PHP-filer på en slik måte når det er mulig."
 warning_file_overwritten: "Advarsel: Filen du for øyeblikket redigerer tilhører komponenten "%s". Eventuelle endringer i denne filen vil sannsynligvis bli overskrevet neste gang den komponenten oppdateres."
 warning_ip_tests_disabled: "Advarsel: IP-tester er deaktivert! Signaturfiler kan ikke brukes før dette er løst."
 warning_javascript_required: "Advarsel: Noen frontend-funksjonalitet krever JavaScript. For å sikre at hele frontenden oppfører seg som forventet, anbefales det å aktivere JavaScript."

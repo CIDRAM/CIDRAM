@@ -86,3 +86,4 @@
 - Added L10N support for some additional languages.
 - IPs can now be added to tracking manually (#310).
 - Custom headers/footers for front-end pages, CAPTCHAs, and the access denied page now be set directly via configuration (#312, #328).
+- Added warnings to the edit file feature of the file manager regarding editing PHP files directly via browsers and regarding editing files which belong to components.

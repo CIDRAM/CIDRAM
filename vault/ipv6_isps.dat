@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv6_isps.dat
 
-# Version: 2022.263.0
-# Last modified: 2022.09.21
+# Version: 2022.269.0
+# Last modified: 2022.09.27
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -149,9 +149,10 @@ Tag: Idea Cellular
 # ASNs 12530, 15895, 35081 ('"Kyivstar" PJSC').
 # Absolutely **INSANE** levels of spam coming from this network!! Shouldn't
 # ever, ever let them through, if at all possible.
-# Stop Forum Spam (SFS) listings: 11,025 (AS12530), 77,191 (AS15895).
-# Updated: 2021.03.09 / Checked: 2021.10.22
+# Stop Forum Spam (SFS) listings: 16,357 (AS12530), 24,966 (AS15895).
+# Updated: 2022.09.27
 
+2a02:8a8::/32 Deny Spam
 2a02:2378::/32 Deny Spam
 Origin: UA
 Profile: Domestic ISP;Tor endpoints here
@@ -457,11 +458,10 @@ Tag: Star Telecom S/A
 
 # ASN 25513 ("PJSC Moscow city telephone network").
 # Russian domestic ISP and a significant source of forum and blog spam.
-# Stop Forum Spam (SFS) listings: 11,626.
-# Updated: 2021.02.27 / Checked: 2021.10.15
+# Stop Forum Spam (SFS) listings: 9,851.
+# Updated: 2022.09.27
 
 2a00:1370::/32 Deny Spam
-2a03:6505:2000:6::/64 Deny Spam
 2a03:af60::/32 Deny Spam
 Origin: RU
 Profile: Domestic ISP
@@ -932,17 +932,6 @@ Profile: Domestic ISP
 Tag: MEO
 
 
-# ASN 45429 ("CAMBODIAN SINGMENG TELEMEDIA CO., LTD").
-# Cambodian domestic ISP. Brute-force, SSH attacks, and spam detected here.
-# Stop Forum Spam (SFS) listings: 325.
-# Updated: 2021.03.03 / Checked: 2021.10.22
-
-2404:700::/32 Deny Attacks
-Origin: KH
-Profile: Domestic ISP
-Tag: CAMBODIAN SINGMENG TELEMEDIA
-
-
 # ASNs 45820, 134674 ("TATA SKY BROADBAND PRIVATE LIMITED").
 # Indian domestic ISP. WordPress attacks, hacking, port scans, and spam
 # detected from here. Listing just the affected ranges/addresses only.
@@ -997,10 +986,10 @@ Tag: PenTeleData Inc
 
 # ASNs 3215, 5511 ("Orange S.A").
 # French domestic/mobile ISP. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 2,711 (AS3215), 18 (AS5511).
-# Updated: 2022.03.22
+# Stop Forum Spam (SFS) listings: 2,095 (AS3215), 51 (AS5511).
+# Updated: 2022.09.26
 
-2a01:cb1c:9d9:5700::/64 Deny Spam
+2a01:cb05:8f91:9700::/64 Deny Spam
 Origin: FR
 Profile: Domestic ISP;Mobile ISP
 Tag: Orange S.A
@@ -1267,6 +1256,20 @@ Tag: Magyar Telekom plc
 Origin: BR
 Profile: Commercial;Restricted/Unidentifiable
 Tag: CONNECTLINK TECH
+
+
+# ASN 9534 ("Binariang Berhad").
+# Malaysian broadband provider. Port scans, hacking, and spam detected from
+# here. Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 304.
+# Updated: 2022.09.27
+
+2001:d08:de:c81f::/64 Deny Spam
+2001:d08:de:dbd9::/64 Deny Spam
+2001:d08:de:f1e2::/64 Deny Spam
+Origin: MY
+Profile: Domestic ISP
+Tag: Binariang Berhad
 
 
 # ASN 132116 ("Ani Network Pvt Ltd").

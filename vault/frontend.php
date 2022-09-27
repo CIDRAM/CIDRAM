@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2022.09.23).
+ * This file: Front-end handler (last modified: 2022.09.26).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -2833,7 +2833,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'fixer' && $CIDRAM['FE']['Permis
 /** File Manager. */
 elseif ($CIDRAM['QueryVars']['cidram-page'] === 'file-manager' && $CIDRAM['FE']['Permissions'] === 1) {
     /** Page initial prepwork. */
-    $CIDRAM['InitialPrepwork']($CIDRAM['L10N']->getString('link_file_manager'), $CIDRAM['L10N']->getString('tip_file_manager'), false);
+    $CIDRAM['InitialPrepwork']($CIDRAM['L10N']->getString('link_file_manager'), $CIDRAM['L10N']->getString('tip_file_manager'));
 
     /** Load doughnut template file upon request. */
     if (empty($CIDRAM['QueryVars']['show'])) {
@@ -3038,6 +3038,19 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'file-manager' && $CIDRAM['FE'][
                         $CIDRAM['L10N']->getString('warning_file_overwritten'),
                         $CIDRAM['Components']['Files'][$_POST['filename']]
                     );
+                }
+
+                /** PHP file warning. */
+                if (preg_match('~\.php$~i', $_POST['filename'])) {
+                    $CIDRAM['FE']['JS'] .= "\nfunction wfp(d){};";
+                    if ($CIDRAM['FE']['state_msg'] !== '') {
+                        $CIDRAM['FE']['state_msg'] .= '<br />';
+                    }
+                    $CIDRAM['FE']['state_msg'] .= $CIDRAM['L10N']->getString('warning_file_php');
+                } else {
+                    $CIDRAM['FE']['JS'] .= "\nfunction wfp(d){d.includes('<?php')?showid('wfps'):hideid('wfps')};";
+                    $CIDRAM['FE']['state_msg'] .= $CIDRAM['FE']['state_msg'] !== '' ? '<span id="wfps"><br />' : '<span id="wfps">';
+                    $CIDRAM['FE']['state_msg'] .= $CIDRAM['L10N']->getString('warning_file_php') . '</span>';
                 }
 
                 /** Parse output. */

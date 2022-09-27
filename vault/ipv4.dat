@@ -1,8 +1,8 @@
 # IPv4 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v2/vault/ipv4.dat
 
-# Version: 2022.264.0
-# Last modified: 2022.09.22
+# Version: 2022.269.0
+# Last modified: 2022.09.27
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -25817,8 +25817,8 @@ Tag: O.M.C. C.C. LTD
 
 # ASN 54456 ("CloudAccess.net, LLC").
 # Some reports of hack attempts, spamming, etc at AbuseIPDB.
-# Stop Forum Spam (SFS) listings: 6.
-# Updated: 2021.12.02
+# Stop Forum Spam (SFS) listings: 4.
+# Updated: 2021.12.02 / Checked: 2022.09.27
 
 104.37.84.0/22 Deny Cloud
 199.116.76.0/22 Deny Cloud
@@ -39902,6 +39902,18 @@ Profile: Webhosting
 Tag: Beijing Tiantexin
 
 
+# ASN 8641 ('LLC "Nauka-Svyaz"').
+# Port scans and hacking detected from here. Possible legitimate services also
+# operating from here though. Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 3.
+# Updated: 2022.09.26
+
+84.47.134.205/32 Deny Cloud
+Origin: RU
+Profile: Commercial
+Tag: Nauka-Svyaz
+
+
 # ---
 # Orphaned from any current BGP records (should be dead!), but still
 # nonetheless seeing current reports for inbound brute-force attacks from these
@@ -39935,6 +39947,33 @@ Tag: Orphaned/Iran/Attacks
 Origin: US
 Profile: Webhosting;Orphaned
 Tag: Orphaned/US/Attacks
+
+
+# ASNs 57523, 207566 ("Chang Way Technologies Co. Limited").
+# Brute-force, SSH, and webapp attacks, port scans, hacking, and spam detected
+# from here.
+# Stop Forum Spam (SFS) listings: 20 (AS57523), 18 (AS207566).
+# Updated: 2022.09.23
+
+91.240.118.0/24 Deny Cloud
+92.255.57.0/24 Deny Cloud
+92.255.85.0/24 Deny Cloud
+185.7.214.0/24 Deny Cloud
+Origin: HK
+45.93.20.0/24 Deny Cloud
+62.233.50.0/24 Deny Cloud
+91.213.138.0/24 Deny Cloud
+91.241.19.0/24 Deny Cloud
+152.89.196.0/24 Deny Cloud
+152.89.198.0/24 Deny Cloud
+176.111.174.0/24 Deny Cloud
+185.11.61.0/24 Deny Cloud
+185.81.68.0/24 Deny Cloud
+185.122.204.0/24 Deny Cloud
+195.226.194.0/24 Deny Cloud
+Origin: RU
+Profile: Restricted/Unidentifiable;Webhosting
+Tag: Chang Way Tech
 
 
 # ---

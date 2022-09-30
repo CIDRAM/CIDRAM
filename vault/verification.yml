@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Verification data (last modified: 2022.09.14).
+# This file: Verification data (last modified: 2022.10.01).
 ##/
 
 # Additional references: https://udger.com/resources/ua-list/crawlers
@@ -186,9 +186,10 @@ Social Media Verification:
 
  # https://udger.com/resources/ua-list/bot-detail?bot=Twitterbot#id6168
  # https://github.com/CIDRAM/CIDRAM/issues/263
- # Updated: 2022.02.18
+ # https://github.com/CIDRAM/CIDRAM/issues/341
+ # Updated: 2022.10.01
  Twitterbot:
-  User Agent Pattern: "~(?<!facebookexternalhit/1\.1 facebot )twitterbot~"
+  User Agent Pattern: "~(?<!^telegrambot \(like )(?<!^facebookexternalhit/1\.1 facebot )twitterbot~"
   Method: "dnsReverseForward"
   Valid domains:
    - ".twttr.com"
